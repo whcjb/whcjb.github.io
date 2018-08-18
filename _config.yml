@@ -12,7 +12,7 @@ github_repo: "https://github.com/whcjb/whcjb.github.io.git" # you code repositor
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "如需进一步了解，请联系邮箱"
-sidebar-avatar: /img/about-bg-desk.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+#sidebar-avatar: /img/about-bg-desk.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
