@@ -103,3 +103,6 @@ friends: [
         href: "http://brc.bensmark.org/brc/Pages/web/Home.aspx"
     },
 ]
+# 自动生成sitemap
+sitemap:
+path: sitemap.xml
