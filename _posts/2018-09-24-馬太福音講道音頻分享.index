@@ -14,6 +14,9 @@ tags:								#标签
 <video width="320" height="120" controls>
     <source src="/img/耶稣是基督.mp3" type="video/mp4">
 </video>
+<video width="320" height="240" controls>
+    <source src="/img/耶稣是基督.mp3" type="video/mp4">
+</video>
 
 
 
