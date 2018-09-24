@@ -26,11 +26,5 @@ div align=life>
 
 
 <div align=life> 
-<iframe frameborder="no" marginwidth="0" marginheight="0" width=400 height=140 src="/img/Sleep Away.mp3;auto=0;height=66"></iframe>
+<iframe frameborder="no" marginwidth="0" marginheight="0" width=400 height=140 src="/img/Sleep Away.mp3&amp;auto=0&amp;height=66"></iframe>
 </div>
-
-test
-<div align=life> 
-<iframe frameborder="no" marginwidth="0" marginheight="0" width=400 height=140 src="https://github.com/whcjb/whcjb.github.io/blob/master/img/Sleep%20Away.mp3&auto=0&height=66"></iframe>
-</div>
-
