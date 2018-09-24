@@ -24,11 +24,10 @@ div align=life>
 </div>
 -->
 
-<!--不顯示
+
 <div align=life> 
-<iframe frameborder="no" marginwidth="0" marginheight="0" width=400 height=140 src="/img/Sleep Away.mp3&auto=0&height=66"></iframe>
+<iframe frameborder="no" marginwidth="0" marginheight="0" width=400 height=140 src="/img/Sleep Away.mp3" auto=0 height=66"></iframe>
 </div>
--->
 
 
 test 1 2
