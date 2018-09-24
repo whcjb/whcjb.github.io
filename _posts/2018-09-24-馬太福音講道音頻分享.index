@@ -11,7 +11,7 @@ tags:								#标签
 ---
 
 測試音頻加載。<br>
-<video width="320" height="240" controls>
+<video width="320" height="20" controls>
     <source src="/img/耶稣是基督.mp3" type="video/mp4">
 </video>
 
