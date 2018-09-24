@@ -13,7 +13,7 @@ tags:								#标签
 測試音頻加載。<br>
 
 <video width="320" height="240" controls>
-    <source src="/img/" type="video/mp4">
+    <source src="/img/" type="video/mp3">
 </video>
 
 
