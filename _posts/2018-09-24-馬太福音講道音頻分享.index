@@ -10,11 +10,11 @@ tags:								#标签
     - 講道音頻
 ---
 
+測試音頻加載。<br>
 
-
-測試音頻加載。
-
-
+<video width="320" height="240" controls>
+    <source src="/img/" type="video/mp4">
+</video>
 
 
 
@@ -43,6 +43,4 @@ div align=life>
 </video>
 -->
 
-<video width="320" height="240" controls>
-    <source src="/img/Sleep Away.mp3" type="video/mp4">
-</video>
+
