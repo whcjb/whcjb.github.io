@@ -79,6 +79,6 @@ PYEOF
 
 python3 /Users/yanpeifa/Documents/whcjb.github.io/scripts/update-recent.py
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] committing $REL" >> "$LOG"
-git add "$REL" "$IMG_PATH" _data/recent.yml
+git add "$REL" "$IMG_PATH" _data/ pages/
 git commit -m "feat: add $BOOK chapter $CHAP" >> "$LOG" 2>&1
 echo "[$(date '+%Y-%m-%d %H:%M:%S')] done" >> "$LOG"
