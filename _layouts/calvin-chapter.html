@@ -45,7 +45,13 @@ layout: default
                 {% endif %}
             </ul>
 
-            <div style="text-align:center; margin-top:32px;">
+            {% if page.date %}
+            <p style="text-align:center; color:#999; font-size:13px; margin-top:24px;">
+                发布于 {{ page.date | date: "%Y年%-m月%-d日" }}
+            </p>
+            {% endif %}
+
+            <div style="text-align:center; margin-top:12px;">
                 <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/" class="btn btn-default">
                     &larr; 返回{{ page.book_name }}章节列表
                 </a>
