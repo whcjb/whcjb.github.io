@@ -27,35 +27,34 @@ layout: default
             {{ content }}
 
             <hr>
-            <ul class="pager">
-                {% if page.chapter > 1 %}
-                <li class="previous">
-                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.chapter | minus: 1 }}/">
+            {% assign next_ch = page.chapter | plus: 1 %}
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                <div style="flex:1; text-align:left;">
+                    {% if page.chapter > 1 %}
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.chapter | minus: 1 }}/" class="btn btn-default btn-sm">
                         &larr; 第{{ page.chapter | minus: 1 }}章
                     </a>
-                </li>
-                {% endif %}
-                {% assign next_ch = page.chapter | plus: 1 %}
-                {% if next_ch <= page.total_chapters %}
-                <li class="next">
-                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ next_ch }}/">
+                    {% endif %}
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/" class="btn btn-default btn-sm">
+                        返回{{ page.book_name }}目录
+                    </a>
+                </div>
+                <div style="flex:1; text-align:right;">
+                    {% if next_ch <= page.total_chapters %}
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ next_ch }}/" class="btn btn-default btn-sm">
                         第{{ next_ch }}章 &rarr;
                     </a>
-                </li>
-                {% endif %}
-            </ul>
+                    {% endif %}
+                </div>
+            </div>
 
             {% if page.date %}
-            <p style="text-align:center; color:#999; font-size:13px; margin-top:24px;">
+            <p style="text-align:center; color:#999; font-size:13px; margin-top:20px;">
                 发布于 {{ page.date | date: "%Y年%-m月%-d日 %H:%M" }}
             </p>
             {% endif %}
-
-            <div style="text-align:center; margin-top:12px;">
-                <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/" class="btn btn-default">
-                    &larr; 返回{{ page.book_name }}章节列表
-                </a>
-            </div>
 
         </div>
     </div>
