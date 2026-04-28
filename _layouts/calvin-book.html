@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_name }}</h1>
+                    <span class="subheading">加尔文圣经注释</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="margin-bottom:24px;">
+                <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+            </p>
+
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
+                {{ page.book_name }} · 章节目录
+            </h3>
+
+            <div class="row">
+                {% for i in (1..page.chapters) %}
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="calvin-chapter-btn">
+                        第 {{ i }} 章
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.calvin-chapter-btn {
+    display: block;
+    padding: 8px 6px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+.calvin-chapter-btn:hover {
+    background: #0085a1;
+    border-color: #0085a1;
+    color: #fff !important;
+}
+</style>

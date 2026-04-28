@@ -1,0 +1,141 @@
+old_testament:
+  - id: genesis
+    name: 创世记
+    chapters: 50
+  - id: exodus
+    name: 出埃及记
+    chapters: 40
+  - id: leviticus
+    name: 利未记
+    chapters: 27
+  - id: numbers
+    name: 民数记
+    chapters: 36
+  - id: deuteronomy
+    name: 申命记
+    chapters: 34
+  - id: joshua
+    name: 约书亚记
+    chapters: 24
+  - id: psalms
+    name: 诗篇
+    chapters: 150
+  - id: isaiah
+    name: 以赛亚书
+    chapters: 66
+  - id: jeremiah
+    name: 耶利米书
+    chapters: 52
+  - id: lamentations
+    name: 耶利米哀歌
+    chapters: 5
+  - id: ezekiel
+    name: 以西结书
+    chapters: 48
+  - id: daniel
+    name: 但以理书
+    chapters: 12
+  - id: hosea
+    name: 何西阿书
+    chapters: 14
+  - id: joel
+    name: 约珥书
+    chapters: 3
+  - id: amos
+    name: 阿摩司书
+    chapters: 9
+  - id: obadiah
+    name: 俄巴底亚书
+    chapters: 1
+  - id: jonah
+    name: 约拿书
+    chapters: 4
+  - id: micah
+    name: 弥迦书
+    chapters: 7
+  - id: nahum
+    name: 那鸿书
+    chapters: 3
+  - id: habakkuk
+    name: 哈巴谷书
+    chapters: 3
+  - id: zephaniah
+    name: 西番雅书
+    chapters: 3
+  - id: haggai
+    name: 哈该书
+    chapters: 2
+  - id: zechariah
+    name: 撒迦利亚书
+    chapters: 14
+  - id: malachi
+    name: 玛拉基书
+    chapters: 4
+
+new_testament:
+  - id: harmony
+    name: 对观福音和谐（太、可、路）
+    chapters: 28
+  - id: john
+    name: 约翰福音
+    chapters: 21
+  - id: acts
+    name: 使徒行传
+    chapters: 28
+  - id: romans
+    name: 罗马书
+    chapters: 16
+  - id: 1corinthians
+    name: 哥林多前书
+    chapters: 16
+  - id: 2corinthians
+    name: 哥林多后书
+    chapters: 13
+  - id: galatians
+    name: 加拉太书
+    chapters: 6
+  - id: ephesians
+    name: 以弗所书
+    chapters: 6
+  - id: philippians
+    name: 腓立比书
+    chapters: 4
+  - id: colossians
+    name: 歌罗西书
+    chapters: 4
+  - id: 1thessalonians
+    name: 帖撒罗尼迦前书
+    chapters: 5
+  - id: 2thessalonians
+    name: 帖撒罗尼迦后书
+    chapters: 3
+  - id: 1timothy
+    name: 提摩太前书
+    chapters: 6
+  - id: 2timothy
+    name: 提摩太后书
+    chapters: 4
+  - id: titus
+    name: 提多书
+    chapters: 3
+  - id: philemon
+    name: 腓利门书
+    chapters: 1
+  - id: hebrews
+    name: 希伯来书
+    chapters: 13
+  - id: james
+    name: 雅各书
+    chapters: 5
+  - id: 1peter
+    name: 彼得前书
+    chapters: 5
+  - id: 2peter
+    name: 彼得后书
+    chapters: 3
+  - id: 1john
+    name: 约翰一书
+    chapters: 5
+  - id: jude
+    name: 犹大书
+    chapters: 1

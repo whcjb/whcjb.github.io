@@ -1,0 +1,86 @@
+---
+layout: default
+title: 加尔文圣经注释
+description: 约翰·加尔文（John Calvin）圣经注释全集
+header-img: img/post-bg-2015.jpg
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>加尔文圣经注释</h1>
+                    <span class="subheading">约翰·加尔文（John Calvin）著</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p class="text-muted" style="margin-bottom:30px;">
+                约翰·加尔文（1509–1564）是改革宗神学最重要的奠基者之一，其圣经注释以严谨的文法分析、忠实于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。点击任意书卷查看章节列表。
+            </p>
+
+            <!-- 旧约 -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">旧　约</h3>
+            <div class="row calvin-book-grid" style="margin-bottom:40px;">
+                {% for book in site.data.calvin_books.old_testament %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
+                        {{ book.name }}
+                        <small>（{{ book.chapters }}章）</small>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- 新约 -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">新　约</h3>
+            <div class="row calvin-book-grid">
+                {% for book in site.data.calvin_books.new_testament %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
+                        {{ book.name }}
+                        <small>（{{ book.chapters }}章）</small>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.calvin-book-btn {
+    display: block;
+    padding: 10px 12px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: background 0.2s, border-color 0.2s;
+}
+.calvin-book-btn:hover {
+    background: #0085a1;
+    border-color: #0085a1;
+    color: #fff !important;
+}
+.calvin-book-btn small {
+    display: block;
+    color: #999;
+    font-size: 12px;
+}
+.calvin-book-btn:hover small {
+    color: rgba(255,255,255,0.8);
+}
+</style>
