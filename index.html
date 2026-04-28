@@ -3,25 +3,13 @@ layout: page
 description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。 他們栽於耶和華的殿中，發旺在我們神的院裡。-詩篇92:12-13"
 ---
 
-{% assign calvin_pages = site.pages | where: "layout", "calvin-chapter" %}
-{% assign all_items = site.posts | concat: calvin_pages | sort: "date" | reverse %}
-
-{% for item in all_items limit: 3 %}
+{% for item in site.data.recent %}
 <div class="post-preview">
-    {% if item.book_id %}
-    <a href="{{ site.baseurl }}/calvin/{{ item.book_id }}/{{ item.chapter }}/">
-        <h2 class="post-title">{{ item.book_name }} 第{{ item.chapter }}章</h2>
-        <h3 class="post-subtitle">加尔文圣经注释</h3>
-    </a>
-    <p class="post-meta">发布于 {{ item.date | date: "%Y年%-m月%-d日 %H:%M" }}</p>
-    {% else %}
-    <a href="{{ item.url | prepend: site.baseurl }}">
+    <a href="{{ site.baseurl }}{{ item.url }}">
         <h2 class="post-title">{{ item.title }}</h2>
-        {% if item.subtitle %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
-        <div class="post-content-preview">{{ item.content | strip_html | truncate:200 }}</div>
+        {% if item.subtitle != "" %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
     </a>
-    <p class="post-meta">Posted by {% if item.author %}{{ item.author }}{% else %}{{ site.title }}{% endif %} on {{ item.date | date: "%B %-d, %Y" }}</p>
-    {% endif %}
+    <p class="post-meta">发布于 {{ item.date }}</p>
 </div>
 <hr>
 {% endfor %}
