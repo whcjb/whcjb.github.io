@@ -4,7 +4,7 @@ and pages/N/index.html for all content pages."""
 import os, re, shutil
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PER_PAGE = 3
+PER_PAGE = 100
 
 def parse_fm(content):
     m = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
