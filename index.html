@@ -3,16 +3,30 @@ layout: page
 description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。 他們栽於耶和華的殿中，發旺在我們神的院裡。-詩篇92:12-13"
 ---
 
-{% for item in site.data.recent %}
-<div class="post-preview">
-    <a href="{{ site.baseurl }}{{ item.url }}">
-        <h2 class="post-title">{{ item.title }}</h2>
-        {% if item.subtitle != "" %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
-    </a>
-    <p class="post-meta">发布于 {{ item.date }}</p>
-</div>
-<hr>
-{% endfor %}
+{% if paginator.page == 1 %}
+    {% for item in site.data.recent %}
+    <div class="post-preview">
+        <a href="{{ site.baseurl }}{{ item.url }}">
+            <h2 class="post-title">{{ item.title }}</h2>
+            {% if item.subtitle != "" %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
+        </a>
+        <p class="post-meta">发布于 {{ item.date }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+{% else %}
+    {% for post in paginator.posts %}
+    <div class="post-preview">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+            <h2 class="post-title">{{ post.title }}</h2>
+            {% if post.subtitle %}<h3 class="post-subtitle">{{ post.subtitle }}</h3>{% endif %}
+            <div class="post-content-preview">{{ post.content | strip_html | truncate:200 }}</div>
+        </a>
+        <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
+    </div>
+    <hr>
+    {% endfor %}
+{% endif %}
 
 <!-- Pager -->
 {% if paginator.total_pages > 1 %}
