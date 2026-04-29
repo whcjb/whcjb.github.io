@@ -16,9 +16,9 @@ layout: default
     </div>
 </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+<div id="mhenry-outer" class="container">
+    <div class="row" id="mhenry-row">
+        <div id="mhenry-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
             <p style="margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
@@ -60,6 +60,164 @@ layout: default
             </p>
             {% endif %}
 
+            <!-- Calvin compare button -->
+            <div style="text-align:center; margin-top:28px; padding-top:20px; border-top:1px dashed #D7C4A3;">
+                <button id="calvin-compare-btn" onclick="toggleCalvinCompare()"
+                        style="padding:8px 22px; background:#e8f4f8; border:1px solid #0085a1; border-radius:3px;
+                               color:#0085a1; cursor:pointer; font-size:14px; font-weight:bold; letter-spacing:.03em;">
+                    加尔文注释
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Calvin side panel (hidden until activated) -->
+        <div id="calvin-col" style="display:none;" class="col-md-6">
+            <div id="calvin-col-inner" style="padding-left:8px; border-left:3px solid #0085a1; min-height:200px;">
+                <div id="calvin-content-area"></div>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+/* Split mode styles */
+#mhenry-outer.split-mode {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 20px;
+}
+#mhenry-row.split-mode {
+    display: flex;
+    align-items: flex-start;
+}
+#mhenry-col.split-mode {
+    float: none;
+    width: 50%;
+    margin-left: 0;
+    padding-right: 20px;
+    border-right: 1px dashed #e0e0e0;
+    box-sizing: border-box;
+}
+#calvin-col.split-mode {
+    float: none;
+    width: 50%;
+    display: block !important;
+    box-sizing: border-box;
+}
+/* Calvin panel header */
+.calvin-panel-header {
+    position: sticky;
+    top: 60px;
+    background: #fff;
+    z-index: 10;
+    padding: 10px 0 8px;
+    border-bottom: 2px solid #0085a1;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.calvin-panel-header h4 {
+    margin: 0;
+    color: #0085a1;
+    font-size: 15px;
+}
+.calvin-close-btn {
+    background: none;
+    border: 1px solid #0085a1;
+    border-radius: 3px;
+    color: #0085a1;
+    cursor: pointer;
+    padding: 2px 10px;
+    font-size: 12px;
+}
+.calvin-close-btn:hover { background: #0085a1; color: #fff; }
+@media (max-width: 767px) {
+    #mhenry-col.split-mode, #calvin-col.split-mode {
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+    }
+    #mhenry-row.split-mode { flex-direction: column; }
+    #calvin-col.split-mode { border-left: none; border-top: 3px solid #0085a1; margin-top: 24px; }
+}
+</style>
+
+<script>
+var _calvinLoaded = false;
+
+async function toggleCalvinCompare() {
+    var btn    = document.getElementById('calvin-compare-btn');
+    var outer  = document.getElementById('mhenry-outer');
+    var row    = document.getElementById('mhenry-row');
+    var col    = document.getElementById('mhenry-col');
+    var calCol = document.getElementById('calvin-col');
+
+    // ── Close split mode ──────────────────────────────────
+    if (outer.classList.contains('split-mode')) {
+        outer.classList.remove('split-mode');
+        row.classList.remove('split-mode');
+        col.classList.remove('split-mode');
+        calCol.classList.remove('split-mode');
+        calCol.style.display = 'none';
+        col.className = col.className
+            .replace('split-mode','')
+            .trim();
+        // restore original bootstrap classes
+        col.className = 'col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container';
+        btn.textContent = '加尔文注释';
+        return;
+    }
+
+    // ── Fetch Calvin content (once) ───────────────────────
+    if (!_calvinLoaded) {
+        btn.textContent = '加载中…';
+        btn.disabled = true;
+        var contentArea = document.getElementById('calvin-content-area');
+
+        try {
+            var calvinUrl = '{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.chapter }}/';
+            var resp = await fetch(calvinUrl);
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            var html = await resp.text();
+            var parser = new DOMParser();
+            var doc = parser.parseFromString(html, 'text/html');
+            var postContainer = doc.querySelector('.post-container');
+
+            if (postContainer) {
+                // Remove the nav buttons row from fetched content
+                var navBar = postContainer.querySelector('div[style*="justify-content:space-between"]');
+                if (navBar) navBar.remove();
+                var backLink = postContainer.querySelector('p[style*="margin-bottom:24px"]');
+                if (backLink) backLink.remove();
+                contentArea.innerHTML = postContainer.innerHTML;
+            } else {
+                contentArea.innerHTML = '<p style="color:#aaa; padding:40px 0; text-align:center;">本章暂无加尔文注释内容。</p>';
+            }
+        } catch(e) {
+            contentArea.innerHTML = '<p style="color:#aaa; padding:40px 0; text-align:center;">加尔文注释暂未收录本章。</p>';
+        }
+
+        // Insert sticky header with close button
+        var header = document.createElement('div');
+        header.className = 'calvin-panel-header';
+        header.innerHTML = '<h4>加尔文注释 · {{ page.book_name }}第{{ page.chapter }}章</h4>'
+            + '<button class="calvin-close-btn" onclick="toggleCalvinCompare()">关闭对比 ×</button>';
+        document.getElementById('calvin-col-inner').prepend(header);
+
+        _calvinLoaded = true;
+        btn.disabled = false;
+    }
+
+    // ── Activate split mode ───────────────────────────────
+    outer.classList.add('split-mode');
+    row.classList.add('split-mode');
+    col.className = 'post-container split-mode';
+    calCol.classList.add('split-mode');
+    btn.textContent = '关闭对比';
+
+    // Scroll back to top of content area
+    outer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
