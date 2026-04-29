@@ -37,6 +37,8 @@ layout: default
 
             {% if page.book_id == "quest" %}
             {% assign sections_list = "preface,foreword,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18" | split: "," %}
+            {% elsif page.book_id == "ephesians" %}
+            {% assign sections_list = "preface,introduction,1,2,3,4,5,6" | split: "," %}
             {% else %}
             {% assign sections_list = "foreword,preface,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" | split: "," %}
             {% endif %}
@@ -194,6 +196,22 @@ aside.reading-footnotes sup {
     line-height: 1.8;
     margin: 0;
     text-indent: 0;
+}
+
+/* Calvin commentary verse block */
+.calvin-verse {
+    background: #F7F3EC;
+    border-left: 4px solid #8B7355;
+    padding: 12px 18px;
+    margin: 0 0 24px 0;
+    border-radius: 2px;
+}
+.calvin-verse p {
+    color: #4A3728;
+    line-height: 1.9;
+    margin: 0;
+    text-indent: 0;
+    font-size: 0.97em;
 }
 </style>
 
