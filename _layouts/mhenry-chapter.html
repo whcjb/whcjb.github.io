@@ -20,9 +20,14 @@ layout: default
     <div class="row" id="mhenry-row">
         <div id="mhenry-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-            <p style="margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
-            </p>
+                <button onclick="toggleCalvinCompare()"
+                        style="padding:5px 16px; background:#e8f4f8; border:1px solid #0085a1; border-radius:3px;
+                               color:#0085a1; cursor:pointer; font-size:13px; font-weight:bold;">
+                    对比注释
+                </button>
+            </div>
 
             {{ content }}
 
