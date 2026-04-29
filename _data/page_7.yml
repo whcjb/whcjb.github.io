@@ -1,25 +1,50 @@
-- type: calvin
-  title: "诗篇 第53章"
-  subtitle: "加尔文圣经注释"
-  url: "/calvin/psalms/53/"
-  date: "2026-04-28"
-- type: calvin
-  title: "诗篇 第54章"
-  subtitle: "加尔文圣经注释"
-  url: "/calvin/psalms/54/"
-  date: "2026-04-28"
-- type: post
-  title: "圣約神學                                # 标题"
-  subtitle: ""
-  url: "/2018/10/08/圣約神學/"
-  date: "2018-10-08"
-- type: post
-  title: "認識 神的計劃                             # 标题"
-  subtitle: "圣約神學素描               #副标题"
-  url: "/2018/10/07/認識 神的計劃-圣約神學素描/"
-  date: "2018-10-07"
-- type: post
-  title: "南山圣約归正教会介绍                          # 标题"
-  subtitle: "位于深圳南山区的改革宗教会               #副标题"
-  url: "/2018/08/18/网站建成首发博客/"
-  date: "2018-08-18"
+- type: mhenry
+  title: "诗篇 第63章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/63/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第64章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/64/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第65章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/65/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第66章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/66/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第67章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/67/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第68章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/68/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第69章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/69/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第7章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/7/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第70章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/70/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第71章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/71/"
+  date: "2026-04-29"
