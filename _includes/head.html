@@ -3,11 +3,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ site.description }}">
+    <meta name="description" content="{{ page.description | default: site.description }}">
     <meta name="keywords"  content="{{ site.keyword }}">
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
-    
-    <title>{% if page.title %}{{ page.title }} - {{ site.SEOTitle }}{% else %}{{ site.SEOTitle }}{% endif %}</title>
+
+    {% if page.layout == 'calvin-chapter' %}
+    <title>{{ page.book_name }}第{{ page.chapter }}章 - 加尔文圣经注释 - {{ site.SEOTitle }}</title>
+    {% elsif page.layout == 'calvin-book' %}
+    <title>{{ page.book_name }} - 加尔文圣经注释 - {{ site.SEOTitle }}</title>
+    {% elsif page.layout == 'mhenry-chapter' %}
+    <title>{{ page.book_name }}第{{ page.chapter }}章 - 马太亨利圣经注释 - {{ site.SEOTitle }}</title>
+    {% elsif page.layout == 'mhenry-book' %}
+    <title>{{ page.book_name }} - 马太亨利圣经注释 - {{ site.SEOTitle }}</title>
+    {% elsif page.title %}
+    <title>{{ page.title }} - {{ site.SEOTitle }}</title>
+    {% else %}
+    <title>{{ site.SEOTitle }}</title>
+    {% endif %}
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="{{ site.baseurl }}/pwa/manifest.json">

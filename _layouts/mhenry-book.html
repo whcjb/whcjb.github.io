@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}post-bg-2015.jpg{% endif %}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -56,29 +56,28 @@ layout: default
 .mhenry-chapter-btn {
     display: block;
     padding: 8px 6px;
-    background: #FEFAF3;
-    border: 1px solid #D7C4A3;
+    background: #F5F5F5;
+    border: 1px solid #DDD;
     border-radius: 3px;
-    color: #7B5E3A !important;
+    color: #BBB !important;
     text-decoration: none !important;
     font-size: 13px;
     text-align: center;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
-}
-.mhenry-chapter-btn:hover {
-    background: #C9922A;
-    border-color: #C9922A;
-    color: #fff !important;
+    cursor: default;
+    pointer-events: none;
 }
 .mhenry-chapter-btn--has-content {
     background: #FFF8E1;
     border: 2px solid #C9922A;
     color: #7B5E3A !important;
     font-weight: bold;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .mhenry-chapter-btn--has-content:hover {
-    background: #8B5E3A;
-    border-color: #8B5E3A;
+    background: #C9922A;
+    border-color: #C9922A;
     color: #fff !important;
 }
 </style>
