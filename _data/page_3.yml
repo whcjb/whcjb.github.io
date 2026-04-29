@@ -1,4 +1,9 @@
 - type: calvin
+  title: "诗篇 第45章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/45/"
+  date: "2026-04-28"
+- type: calvin
   title: "诗篇 第46章"
   subtitle: "加尔文圣经注释"
   url: "/calvin/psalms/46/"
@@ -43,8 +48,3 @@
   subtitle: "加尔文圣经注释"
   url: "/calvin/psalms/54/"
   date: "2026-04-28"
-- type: post
-  title: "圣約神學                                # 标题"
-  subtitle: ""
-  url: "/2018/10/08/圣約神學/"
-  date: "2018-10-08"
