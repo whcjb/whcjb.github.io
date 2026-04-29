@@ -1,0 +1,114 @@
+---
+layout: default
+title: 马太亨利圣经注释
+description: 马太亨利（Matthew Henry）圣经注释全集
+header-img: img/post-bg-2015.jpg
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>马太亨利圣经注释</h1>
+                    <span class="subheading">马太亨利（Matthew Henry）著</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p class="text-muted" style="margin-bottom:30px;">
+                马太亨利（1662–1714）是英国非国教派牧师，其《圣经注释》覆盖圣经全卷，以深入的经文解析、丰富的实用应用和敬虔的属灵洞见著称，数百年来深受信徒喜爱。点击任意书卷查看章节列表。
+            </p>
+
+            {% assign all_mhenry_pages = site.pages | where: "layout", "mhenry-chapter" %}
+            {% assign books_with_content = all_mhenry_pages | map: "book_id" | uniq %}
+
+            <!-- 旧约 -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">旧　约</h3>
+            <div class="row mhenry-book-grid" style="margin-bottom:40px;">
+                {% for book in site.data.mhenry_books.old_testament %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    {% if books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">
+                    {% else %}
+                    <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn">
+                    {% endif %}
+                        {{ book.name }}
+                        <small>（{{ book.chapters }}章）</small>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- 新约 -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">新　约</h3>
+            <div class="row mhenry-book-grid">
+                {% for book in site.data.mhenry_books.new_testament %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    {% if books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">
+                    {% else %}
+                    <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn">
+                    {% endif %}
+                        {{ book.name }}
+                        <small>（{{ book.chapters }}章）</small>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.mhenry-book-btn {
+    display: block;
+    padding: 10px 12px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 14px;
+    line-height: 1.4;
+    transition: background 0.2s, border-color 0.2s;
+}
+.mhenry-book-btn:hover {
+    background: #0085a1;
+    border-color: #0085a1;
+    color: #fff !important;
+}
+.mhenry-book-btn small {
+    display: block;
+    color: #999;
+    font-size: 12px;
+}
+.mhenry-book-btn:hover small {
+    color: rgba(255,255,255,0.8);
+}
+.mhenry-book-btn--has-content {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32 !important;
+    font-weight: bold;
+}
+.mhenry-book-btn--has-content small {
+    color: #66bb6a;
+}
+.mhenry-book-btn--has-content:hover {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #fff !important;
+}
+.mhenry-book-btn--has-content:hover small {
+    color: rgba(255,255,255,0.8);
+}
+</style>

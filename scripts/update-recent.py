@@ -31,6 +31,20 @@ for root, dirs, files in os.walk(os.path.join(REPO, 'calvin')):
             'date': fm['date'],
         })
 
+# Matthew Henry chapters
+for root, dirs, files in os.walk(os.path.join(REPO, 'mhenry')):
+    for f in sorted(files):
+        if not f.endswith('.md'): continue
+        fm = parse_fm(open(os.path.join(root, f)).read())
+        if not fm.get('date'): continue
+        items.append({
+            'type': 'mhenry',
+            'title': f"{fm['book_name']} 第{fm['chapter']}章",
+            'subtitle': '马太亨利圣经注释',
+            'url': f"/mhenry/{fm['book_id']}/{fm['chapter']}/",
+            'date': fm['date'],
+        })
+
 # Blog posts
 for f in os.listdir(os.path.join(REPO, '_posts')):
     if not f.endswith('.md'): continue

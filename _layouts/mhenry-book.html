@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_name }}</h1>
+                    <span class="subheading">马太亨利圣经注释</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="margin-bottom:24px;">
+                <a href="{{ site.baseurl }}/mhenry/">&larr; 返回书卷列表</a>
+            </p>
+
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
+                {{ page.book_name }} · 章节目录
+            </h3>
+
+            {% assign book_chapters = site.pages | where: "book_id", page.book_id | where: "layout", "mhenry-chapter" %}
+            {% assign chapter_nums = book_chapters | map: "chapter" %}
+            <div class="row">
+                {% for i in (1..page.chapters) %}
+                {% if chapter_nums contains i %}
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content">
+                        第 {{ i }} 章
+                    </a>
+                </div>
+                {% else %}
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn">
+                        第 {{ i }} 章
+                    </a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.mhenry-chapter-btn {
+    display: block;
+    padding: 8px 6px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+.mhenry-chapter-btn:hover {
+    background: #0085a1;
+    border-color: #0085a1;
+    color: #fff !important;
+}
+.mhenry-chapter-btn--has-content {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32 !important;
+    font-weight: bold;
+}
+.mhenry-chapter-btn--has-content:hover {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #fff !important;
+}
+</style>
