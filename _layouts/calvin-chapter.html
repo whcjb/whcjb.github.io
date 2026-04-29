@@ -22,11 +22,18 @@ layout: default
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
-                <button onclick="toggleMhenryCompare()"
-                        style="padding:5px 16px; background:#FFF8E1; border:1px solid #C9922A; border-radius:3px;
-                               color:#7B5E3A; cursor:pointer; font-size:13px; font-weight:bold;">
-                    对比注释
-                </button>
+                <div style="display:flex; align-items:center; gap:8px;">
+                    <div class="font-size-ctrl" title="调节字号">
+                        <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
+                        <button onclick="resetFontSize()" aria-label="默认字号">A</button>
+                        <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
+                    </div>
+                    <button onclick="toggleMhenryCompare()"
+                            style="padding:5px 16px; background:#FFF8E1; border:1px solid #C9922A; border-radius:3px;
+                                   color:#7B5E3A; cursor:pointer; font-size:13px; font-weight:bold;">
+                        对比注释
+                    </button>
+                </div>
             </div>
 
             {{ content }}
@@ -83,6 +90,27 @@ layout: default
 </div>
 
 <style>
+/* ── Font size control ───────────────────────────────── */
+.font-size-ctrl {
+    display: inline-flex;
+    border: 1px solid #0085a1;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.font-size-ctrl button {
+    background: #e8f4f8;
+    border: none;
+    border-right: 1px solid #0085a1;
+    color: #0085a1;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 9px;
+    line-height: 1;
+}
+.font-size-ctrl button:last-child { border-right: none; }
+.font-size-ctrl button:hover { background: #0085a1; color: #fff; }
+
 /* ── Split mode ─────────────────────────────────────── */
 #calvin-outer.split-mode {
     max-width: 100%;
@@ -241,4 +269,28 @@ async function toggleMhenryCompare() {
     var outerTop = outer.getBoundingClientRect().top + window.pageYOffset - navH;
     window.scrollTo({ top: outerTop, behavior: 'smooth' });
 }
+
+// ── Font size control ─────────────────────────────────
+var FONT_KEY = 'reading-font-size';
+var FONT_DEFAULT = 16;
+var FONT_MIN = 12;
+var FONT_MAX = 24;
+
+function applyFontSize(size) {
+    document.getElementById('calvin-col').style.fontSize = size + 'px';
+}
+function adjustFontSize(delta) {
+    var current = parseInt(localStorage.getItem(FONT_KEY) || FONT_DEFAULT);
+    var next = Math.min(FONT_MAX, Math.max(FONT_MIN, current + delta));
+    localStorage.setItem(FONT_KEY, next);
+    applyFontSize(next);
+}
+function resetFontSize() {
+    localStorage.setItem(FONT_KEY, FONT_DEFAULT);
+    applyFontSize(FONT_DEFAULT);
+}
+(function() {
+    var saved = parseInt(localStorage.getItem(FONT_KEY));
+    if (saved && saved >= FONT_MIN && saved <= FONT_MAX) applyFontSize(saved);
+})();
 </script>
