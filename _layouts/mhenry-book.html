@@ -24,8 +24,8 @@ layout: default
                 <a href="{{ site.baseurl }}/mhenry/">&larr; 返回书卷列表</a>
             </p>
 
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
-                {{ page.book_name }} · 章节目录
+            <h3 style="border-bottom: 2px solid #C9922A; padding-bottom:8px; margin-bottom:20px; color:#5D3A1A; letter-spacing:.04em;">
+                ❧ {{ page.book_name }} · 章节目录
             </h3>
 
             {% assign book_chapters = site.pages | where: "book_id", page.book_id | where: "layout", "mhenry-chapter" %}
@@ -56,29 +56,29 @@ layout: default
 .mhenry-chapter-btn {
     display: block;
     padding: 8px 6px;
-    background: #f8f8f8;
-    border: 1px solid #e0e0e0;
-    border-radius: 4px;
-    color: #333 !important;
+    background: #FEFAF3;
+    border: 1px solid #D7C4A3;
+    border-radius: 3px;
+    color: #7B5E3A !important;
     text-decoration: none !important;
     font-size: 13px;
     text-align: center;
-    transition: background 0.2s, border-color 0.2s;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .mhenry-chapter-btn:hover {
-    background: #0085a1;
-    border-color: #0085a1;
+    background: #C9922A;
+    border-color: #C9922A;
     color: #fff !important;
 }
 .mhenry-chapter-btn--has-content {
-    background: #e8f5e9;
-    border-color: #4caf50;
-    color: #2e7d32 !important;
+    background: #FFF8E1;
+    border: 2px solid #C9922A;
+    color: #7B5E3A !important;
     font-weight: bold;
 }
 .mhenry-chapter-btn--has-content:hover {
-    background: #4caf50;
-    border-color: #4caf50;
+    background: #8B5E3A;
+    border-color: #8B5E3A;
     color: #fff !important;
 }
 </style>

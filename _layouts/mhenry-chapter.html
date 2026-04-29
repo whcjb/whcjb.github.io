@@ -26,24 +26,28 @@ layout: default
 
             {{ content }}
 
-            <hr>
+            <div style="text-align:center; color:#C9922A; font-size:20px; margin:24px 0 8px;">❧</div>
+            <hr style="border-color:#D7C4A3; margin-top:0;">
             {% assign next_ch = page.chapter | plus: 1 %}
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
                 <div style="flex:1; text-align:left;">
                     {% if page.chapter > 1 %}
-                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ page.chapter | minus: 1 }}/" class="btn btn-default btn-sm">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ page.chapter | minus: 1 }}/"
+                       style="display:inline-block; padding:6px 14px; background:#FEFAF3; border:1px solid #C9922A; border-radius:3px; color:#7B5E3A !important; text-decoration:none; font-size:13px;">
                         &larr; 第{{ page.chapter | minus: 1 }}章
                     </a>
                     {% endif %}
                 </div>
                 <div style="flex:1; text-align:center;">
-                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/" class="btn btn-default btn-sm">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/"
+                       style="display:inline-block; padding:6px 14px; background:#C9922A; border:1px solid #C9922A; border-radius:3px; color:#fff !important; text-decoration:none; font-size:13px;">
                         返回{{ page.book_name }}目录
                     </a>
                 </div>
                 <div style="flex:1; text-align:right;">
                     {% if next_ch <= page.total_chapters %}
-                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ next_ch }}/" class="btn btn-default btn-sm">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ next_ch }}/"
+                       style="display:inline-block; padding:6px 14px; background:#FEFAF3; border:1px solid #C9922A; border-radius:3px; color:#7B5E3A !important; text-decoration:none; font-size:13px;">
                         第{{ next_ch }}章 &rarr;
                     </a>
                     {% endif %}
@@ -51,7 +55,7 @@ layout: default
             </div>
 
             {% if page.date %}
-            <p style="text-align:center; color:#999; font-size:13px; margin-top:20px;">
+            <p style="text-align:center; color:#A0856A; font-size:13px; margin-top:20px; font-style:italic;">
                 发布于 {{ page.date | date: "%Y年%-m月%-d日 %H:%M" }}
             </p>
             {% endif %}
