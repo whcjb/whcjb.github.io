@@ -1,20 +1,50 @@
+- type: mhenry
+  title: "诗篇 第71章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/71/"
+  date: "2026-04-29"
+- type: mhenry
+  title: "诗篇 第72章"
+  subtitle: "马太亨利圣经注释"
+  url: "/mhenry/psalms/72/"
+  date: "2026-04-29"
 - type: calvin
-  title: "诗篇 第54章"
+  title: "诗篇 第65章"
   subtitle: "加尔文圣经注释"
-  url: "/calvin/psalms/54/"
-  date: "2026-04-28"
-- type: post
-  title: "圣約神學                                # 标题"
-  subtitle: ""
-  url: "/2018/10/08/圣約神學/"
-  date: "2018-10-08"
-- type: post
-  title: "認識 神的計劃                             # 标题"
-  subtitle: "圣約神學素描               #副标题"
-  url: "/2018/10/07/認識 神的計劃-圣約神學素描/"
-  date: "2018-10-07"
-- type: post
-  title: "南山圣約归正教会介绍                          # 标题"
-  subtitle: "位于深圳南山区的改革宗教会               #副标题"
-  url: "/2018/08/18/网站建成首发博客/"
-  date: "2018-08-18"
+  url: "/calvin/psalms/65/"
+  date: "2026-04-28 18:40"
+- type: calvin
+  title: "诗篇 第64章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/64/"
+  date: "2026-04-28 18:29"
+- type: calvin
+  title: "诗篇 第63章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/63/"
+  date: "2026-04-28 18:15"
+- type: calvin
+  title: "诗篇 第62章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/62/"
+  date: "2026-04-28 18:06"
+- type: calvin
+  title: "诗篇 第61章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/61/"
+  date: "2026-04-28 17:52"
+- type: calvin
+  title: "诗篇 第60章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/60/"
+  date: "2026-04-28 17:43"
+- type: calvin
+  title: "诗篇 第59章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/59/"
+  date: "2026-04-28 17:23"
+- type: calvin
+  title: "诗篇 第58章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/58/"
+  date: "2026-04-28 17:16"
