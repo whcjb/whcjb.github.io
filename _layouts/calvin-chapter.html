@@ -8,7 +8,11 @@ layout: default
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="site-heading">
+                    {% if page.section_title %}
+                    <h1>{{ page.book_name }}　{{ page.section_title }}</h1>
+                    {% else %}
                     <h1>{{ page.book_name }} 第{{ page.chapter }}章</h1>
+                    {% endif %}
                     <span class="subheading">加尔文圣经注释</span>
                 </div>
             </div>
@@ -39,6 +43,30 @@ layout: default
             {{ content }}
 
             <hr>
+            {% if page.sections_list %}
+            {% assign sec_list = page.sections_list | split: "," %}
+            {% assign cur_idx = 0 %}
+            {% for s in sec_list %}{% if s == page.section %}{% assign cur_idx = forloop.index0 %}{% endif %}{% endfor %}
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                <div style="flex:1; text-align:left;">
+                    {% if cur_idx > 0 %}
+                    {% assign prev_idx = cur_idx | minus: 1 %}
+                    {% assign prev_sec = sec_list[prev_idx] %}
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ prev_sec }}/" class="btn btn-default btn-sm">&larr; 上一节</a>
+                    {% endif %}
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/" class="btn btn-default btn-sm">返回{{ page.book_name }}目录</a>
+                </div>
+                <div style="flex:1; text-align:right;">
+                    {% assign next_idx = cur_idx | plus: 1 %}
+                    {% assign next_sec = sec_list[next_idx] %}
+                    {% if next_sec %}
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ next_sec }}/" class="btn btn-default btn-sm">下一节 &rarr;</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% else %}
             {% assign next_ch = page.chapter | plus: 1 %}
             <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
                 <div style="flex:1; text-align:left;">
@@ -61,6 +89,7 @@ layout: default
                     {% endif %}
                 </div>
             </div>
+            {% endif %}
 
             {% if page.date %}
             <p style="text-align:center; color:#999; font-size:13px; margin-top:20px;">
