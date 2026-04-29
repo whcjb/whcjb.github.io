@@ -39,6 +39,8 @@ layout: default
             {% assign sections_list = "preface,foreword,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18" | split: "," %}
             {% elsif page.book_id == "ephesians" %}
             {% assign sections_list = "preface,introduction,1,2,3,4,5,6" | split: "," %}
+            {% elsif page.book_id == "commentaries" %}
+            {% assign sections_list = "editors_preface,preface,introduction,1,2,3,4,5,6,7,8,9" | split: "," %}
             {% else %}
             {% assign sections_list = "foreword,preface,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" | split: "," %}
             {% endif %}
@@ -196,6 +198,60 @@ aside.reading-footnotes sup {
     line-height: 1.8;
     margin: 0;
     text-indent: 0;
+}
+
+/* Bilingual block (Calvin commentaries) */
+.bilingual-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+    margin-bottom: 1.3em;
+    align-items: start;
+}
+.bilingual-block .zh-text {
+    line-height: 1.95;
+    margin: 0;
+    text-indent: 0;
+    color: #333;
+}
+.bilingual-block .en-text {
+    line-height: 1.85;
+    margin: 0;
+    text-indent: 0;
+    color: #555;
+    font-size: 0.93em;
+    font-family: Georgia, "Times New Roman", serif;
+    border-left: 2px solid #d0dce8;
+    padding-left: 14px;
+}
+.calvin-com-heading {
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #2C4A6E;
+    border-left: 3px solid #5B8DB8;
+    padding-left: 10px;
+    margin: 28px 0 4px 0;
+    text-indent: 0;
+}
+.calvin-com-heading-en {
+    font-size: 0.85em;
+    color: #888;
+    font-style: italic;
+    margin: 0 0 20px 13px;
+    display: block;
+}
+@media (max-width: 767px) {
+    .bilingual-block {
+        grid-template-columns: 1fr;
+    }
+    .bilingual-block .en-text {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px dashed #ccc;
+        padding-top: 8px;
+        margin-top: 6px;
+        font-size: 0.9em;
+    }
 }
 
 /* Calvin commentary verse block */
