@@ -5,7 +5,7 @@ book_name: 以弗所书
 section: "preface"
 section_title: "译者序"
 sections_list: "preface,introduction,1,2,3,4,5,6"
-header-img: img/calvin-bg-ephesians.jpg
+header-img: calvin-bg-ephesians.jpg
 date: 2026-04-29 16:11
 ---
 
