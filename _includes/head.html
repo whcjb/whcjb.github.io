@@ -62,6 +62,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- Reading font size: apply before render to avoid flash -->
+    <script>
+    (function(){
+        var s=parseInt(localStorage.getItem('reading-font-size'));
+        if(s&&s>=12&&s<=24) document.documentElement.style.setProperty('--reading-font-size',s+'px');
+    })();
+    </script>
+
     <!-- ga & ba script hoook -->
     <script></script>
 </head>

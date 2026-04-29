@@ -95,6 +95,7 @@ layout: default
 
 <style>
 /* ── Font size control ───────────────────────────────── */
+#mhenry-col { font-size: var(--reading-font-size, 16px); }
 .font-size-ctrl {
     display: inline-flex;
     border: 1px solid #C9922A;
@@ -292,7 +293,7 @@ var FONT_MIN = 12;
 var FONT_MAX = 24;
 
 function applyFontSize(size) {
-    document.getElementById('mhenry-col').style.fontSize = size + 'px';
+    document.documentElement.style.setProperty('--reading-font-size', size + 'px');
 }
 function adjustFontSize(delta) {
     var current = parseInt(localStorage.getItem(FONT_KEY) || FONT_DEFAULT);
@@ -304,8 +305,4 @@ function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
 }
-(function() {
-    var saved = parseInt(localStorage.getItem(FONT_KEY));
-    if (saved && saved >= FONT_MIN && saved <= FONT_MAX) applyFontSize(saved);
-})();
 </script>
