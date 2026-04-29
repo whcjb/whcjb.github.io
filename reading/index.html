@@ -22,50 +22,86 @@ header-img: img/post-bg-2015.jpg
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
             <p class="text-muted" style="margin-bottom:36px;">
-                收录改革宗传统经典著作，供教会肢体研读。点击作者进入其著作列表。
+                收录改革宗传统经典著作，供教会肢体研读。
             </p>
 
-            <h3 class="reading-author-heading">❧ 作　者</h3>
+            <!-- ── 约翰·慕理 ── -->
+            <div class="reading-author-block">
+                <div class="reading-author-name">
+                    约翰·慕理
+                    <span class="reading-author-en">John Murray</span>
+                    <span class="reading-author-years">1898–1975</span>
+                </div>
+                <div class="reading-author-desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</div>
 
-            <a href="{{ site.baseurl }}/reading/murray/" class="reading-author-card">
-                <div class="reading-author-card__name">约翰·慕理 <span class="reading-author-card__en">John Murray</span></div>
-                <div class="reading-author-card__years">1898–1975</div>
-                <div class="reading-author-card__desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</div>
-                <div class="reading-author-card__books">1 部著作</div>
-            </a>
+                <div class="reading-books">
+                    <a href="{{ site.baseurl }}/reading/murray/principles/" class="reading-book-item">
+                        <div class="reading-book-item__title">正直生活要道</div>
+                        <div class="reading-book-item__sub">圣经伦理面面观 · Principles of Conduct · 1957年 · 译：乔兰山以姐</div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 新增作者时在此处继续追加 reading-author-block -->
 
         </div>
     </div>
 </div>
 
 <style>
-.reading-author-heading {
-    border-bottom: 2px solid #5B8DB8;
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-    color: #2C4A6E;
-    letter-spacing: .05em;
+.reading-author-block {
+    margin-bottom: 40px;
+    border-top: 3px solid #5B8DB8;
+    padding-top: 16px;
 }
-.reading-author-card {
-    display: block;
-    padding: 18px 20px;
-    background: #EBF3FA;
-    border: 1px solid #AECDE8;
-    border-left: 5px solid #5B8DB8;
-    border-radius: 3px;
-    text-decoration: none !important;
+.reading-author-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2C4A6E;
+    margin-bottom: 4px;
+}
+.reading-author-en {
+    font-size: 13px;
+    font-weight: normal;
+    color: #5B8DB8;
+    margin-left: 8px;
+}
+.reading-author-years {
+    font-size: 12px;
+    font-weight: normal;
+    color: #999;
+    margin-left: 6px;
+}
+.reading-author-desc {
+    font-size: 13px;
+    color: #777;
     margin-bottom: 14px;
+}
+.reading-books {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.reading-book-item {
+    display: block;
+    padding: 10px 16px;
+    background: #EBF3FA;
+    border-left: 4px solid #5B8DB8;
+    border-radius: 2px;
+    text-decoration: none !important;
     transition: background 0.15s;
 }
-.reading-author-card:hover { background: #5B8DB8; border-left-color: #2C4A6E; }
-.reading-author-card__name { font-size: 17px; font-weight: bold; color: #2C4A6E; }
-.reading-author-card:hover .reading-author-card__name { color: #fff; }
-.reading-author-card__en { font-size: 13px; font-weight: normal; color: #5B8DB8; margin-left: 8px; }
-.reading-author-card:hover .reading-author-card__en { color: rgba(255,255,255,0.8); }
-.reading-author-card__years { font-size: 12px; color: #888; margin-top: 2px; }
-.reading-author-card:hover .reading-author-card__years { color: rgba(255,255,255,0.7); }
-.reading-author-card__desc { font-size: 13px; color: #555; margin-top: 6px; }
-.reading-author-card:hover .reading-author-card__desc { color: rgba(255,255,255,0.9); }
-.reading-author-card__books { font-size: 12px; color: #5B8DB8; margin-top: 6px; font-weight: bold; }
-.reading-author-card:hover .reading-author-card__books { color: rgba(255,255,255,0.8); }
+.reading-book-item:hover { background: #5B8DB8; border-left-color: #2C4A6E; }
+.reading-book-item__title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #2C4A6E;
+}
+.reading-book-item:hover .reading-book-item__title { color: #fff; }
+.reading-book-item__sub {
+    font-size: 12px;
+    color: #888;
+    margin-top: 3px;
+}
+.reading-book-item:hover .reading-book-item__sub { color: rgba(255,255,255,0.8); }
 </style>
