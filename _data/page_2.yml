@@ -1,4 +1,9 @@
 - type: calvin
+  title: "诗篇 第55章"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms/55/"
+  date: "2026-04-28 17:05"
+- type: calvin
   title: "诗篇 第56章"
   subtitle: "加尔文圣经注释"
   url: "/calvin/psalms/56/"
@@ -42,9 +47,4 @@
   title: "诗篇 第43章"
   subtitle: "加尔文圣经注释"
   url: "/calvin/psalms/43/"
-  date: "2026-04-28"
-- type: calvin
-  title: "诗篇 第44章"
-  subtitle: "加尔文圣经注释"
-  url: "/calvin/psalms/44/"
   date: "2026-04-28"
