@@ -7,7 +7,7 @@ book_title: 正直生活要道
 section: "preface"
 section_title: "前言"
 header-img: img/post-bg-2015.jpg
-date: 2026-04-29
+date: 2026-04-29 14:22
 ---
 
 <p>这本圣经伦理学研究的预备与出版源自 1953 年的一次机会，那年秋天加州帕萨迪纳市的富勒神学院（Fuller Theological Seminary）邀请我担任学院 1955年佩顿讲坛（Payton Lectures）的讲员，我接受了此次邀请，于 1955 年三月在富勒神学院的佩顿讲坛上作了五次演讲，本书就是这系列演讲的显著扩充。</p>

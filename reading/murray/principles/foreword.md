@@ -7,7 +7,7 @@ book_title: 正直生活要道
 section: "foreword"
 section_title: "序（巴刻）"
 header-img: img/post-bg-2015.jpg
-date: 2026-04-29
+date: 2026-04-29 14:22
 ---
 
 <p>序巴 刻 (J.I.Packer)倘若约翰.慕理被赋予路易斯那样耀眼的文学天分，或是查理斯.霍奇那样具有冲击力的辞藻，他的名字一定会闪耀在过去半世纪，慕理必算为当代最出色的改革宗神学家。</p>
