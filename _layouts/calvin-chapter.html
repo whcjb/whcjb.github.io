@@ -16,9 +16,9 @@ layout: default
     </div>
 </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+<div id="calvin-outer" class="container">
+    <div class="row" id="calvin-row">
+        <div id="calvin-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
             <p style="margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
@@ -56,6 +56,184 @@ layout: default
             </p>
             {% endif %}
 
+            <!-- Mhenry compare button -->
+            <div style="text-align:center; margin-top:28px; padding-top:20px; border-top:1px dashed #ddd;">
+                <button id="mhenry-compare-btn" onclick="toggleMhenryCompare()"
+                        style="padding:8px 22px; background:#FFF8E1; border:1px solid #C9922A; border-radius:3px;
+                               color:#7B5E3A; cursor:pointer; font-size:14px; font-weight:bold; letter-spacing:.03em;">
+                    马太亨利注释
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Mhenry side panel (hidden until activated) -->
+        <div id="mhenry-compare-col" style="display:none;">
+            <!-- .mhenry-panel-header inserted by JS -->
+            <div id="mhenry-col-inner">
+                <div id="mhenry-content-area"></div>
+            </div>
         </div>
     </div>
 </div>
+
+<style>
+/* ── Split mode ─────────────────────────────────────── */
+#calvin-outer.split-mode {
+    max-width: 100%;
+    width: 100%;
+    padding: 0 12px;
+}
+#calvin-row.split-mode {
+    position: sticky;
+    top: 54px;
+    height: calc(100vh - 54px);
+    display: flex;
+    overflow: hidden;
+    margin: 0;
+}
+#calvin-col.split-mode {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    padding: 16px 20px 40px 0;
+    border-right: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    float: none !important;
+    width: auto !important;
+    margin-left: 0 !important;
+}
+#mhenry-compare-col.split-mode {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    display: flex !important;
+    flex-direction: column;
+    box-sizing: border-box;
+    float: none !important;
+    width: auto !important;
+}
+.mhenry-panel-header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    padding: 10px 0 8px 20px;
+    border-bottom: 2px solid #C9922A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.mhenry-panel-header h4 {
+    margin: 0;
+    color: #7B5E3A;
+    font-size: 15px;
+}
+.mhenry-close-btn {
+    background: none;
+    border: 1px solid #C9922A;
+    border-radius: 3px;
+    color: #7B5E3A;
+    cursor: pointer;
+    padding: 2px 10px;
+    font-size: 12px;
+    margin-right: 8px;
+}
+.mhenry-close-btn:hover { background: #C9922A; color: #fff; }
+#mhenry-col-inner {
+    flex: 1;
+    padding: 16px 8px 40px 20px;
+    border-left: 3px solid #C9922A;
+    min-height: 0;
+}
+@media (max-width: 767px) {
+    #calvin-row.split-mode {
+        position: static;
+        height: auto;
+        flex-direction: column;
+        overflow: visible;
+    }
+    #calvin-col.split-mode, #mhenry-compare-col.split-mode {
+        height: auto;
+        overflow-y: visible;
+        width: 100% !important;
+        padding-right: 0;
+        border-right: none;
+    }
+    #mhenry-compare-col.split-mode { border-top: 3px solid #C9922A; margin-top: 24px; }
+}
+</style>
+
+<script>
+var _mhenryLoaded = false;
+
+async function toggleMhenryCompare() {
+    var btn   = document.getElementById('mhenry-compare-btn');
+    var outer = document.getElementById('calvin-outer');
+    var row   = document.getElementById('calvin-row');
+    var col   = document.getElementById('calvin-col');
+    var mhCol = document.getElementById('mhenry-compare-col');
+
+    // ── Close split mode ──────────────────────────────────
+    if (outer.classList.contains('split-mode')) {
+        outer.classList.remove('split-mode');
+        row.classList.remove('split-mode');
+        col.className = 'col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container';
+        mhCol.classList.remove('split-mode');
+        mhCol.style.display = 'none';
+        btn.textContent = '马太亨利注释';
+        return;
+    }
+
+    // ── Fetch Matthew Henry content (once) ───────────────
+    if (!_mhenryLoaded) {
+        btn.textContent = '加载中…';
+        btn.disabled = true;
+        var contentArea = document.getElementById('mhenry-content-area');
+
+        try {
+            var mhenryUrl = '{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ page.chapter }}/';
+            var resp = await fetch(mhenryUrl);
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            var html = await resp.text();
+            var doc = new DOMParser().parseFromString(html, 'text/html');
+            var postContainer = doc.querySelector('.post-container');
+
+            if (postContainer) {
+                var navBar = postContainer.querySelector('div[style*="justify-content:space-between"]');
+                if (navBar) navBar.remove();
+                var backLink = postContainer.querySelector('p[style*="margin-bottom:24px"]');
+                if (backLink) backLink.remove();
+                var compareSection = postContainer.querySelector('#calvin-compare-btn');
+                if (compareSection) compareSection.closest('div[style*="border-top"]').remove();
+                contentArea.innerHTML = postContainer.innerHTML;
+            } else {
+                contentArea.innerHTML = '<p style="color:#aaa; padding:40px 0; text-align:center;">本章暂无马太亨利注释内容。</p>';
+            }
+        } catch(e) {
+            contentArea.innerHTML = '<p style="color:#aaa; padding:40px 0; text-align:center;">马太亨利注释暂未收录本章。</p>';
+        }
+
+        var header = document.createElement('div');
+        header.className = 'mhenry-panel-header';
+        header.innerHTML = '<h4>❧ 马太亨利注释 · {{ page.book_name }}第{{ page.chapter }}章</h4>'
+            + '<button class="mhenry-close-btn" onclick="toggleMhenryCompare()">关闭对比 ×</button>';
+        mhCol.prepend(header);
+
+        _mhenryLoaded = true;
+        btn.disabled = false;
+    }
+
+    // ── Activate split mode ───────────────────────────────
+    outer.classList.add('split-mode');
+    row.classList.add('split-mode');
+    col.className = 'post-container split-mode';
+    mhCol.classList.add('split-mode');
+    btn.textContent = '关闭对比';
+
+    var navH = 54;
+    var outerTop = outer.getBoundingClientRect().top + window.pageYOffset - navH;
+    window.scrollTo({ top: outerTop, behavior: 'smooth' });
+}
+</script>
