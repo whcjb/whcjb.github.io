@@ -1,0 +1,131 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}post-bg-2015.jpg{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_title }}</h1>
+                    <span class="subheading">{{ page.author_name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div id="reading-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+                <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/">&larr; 返回目录</a>
+                <div class="font-size-ctrl" title="调节字号">
+                    <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
+                    <button onclick="resetFontSize()" aria-label="默认字号">A</button>
+                    <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
+                </div>
+            </div>
+
+            <h2 class="reading-section-title">{{ page.section_title }}</h2>
+
+            <div class="reading-content">{{ content }}</div>
+
+            <hr style="margin-top:40px;">
+
+            {% assign sections_list = "foreword,preface,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" | split: "," %}
+            {% assign current_idx = 0 %}
+            {% for s in sections_list %}
+                {% if s == page.section %}{% assign current_idx = forloop.index0 %}{% endif %}
+            {% endfor %}
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:16px;">
+                <div style="flex:1; text-align:left;">
+                    {% if current_idx > 0 %}
+                    {% assign prev_idx = current_idx | minus: 1 %}
+                    {% assign prev_sec = sections_list[prev_idx] %}
+                    <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/{{ prev_sec }}/" class="btn btn-default btn-sm">&larr; 上一节</a>
+                    {% endif %}
+                </div>
+                <div style="flex:1; text-align:center;">
+                    <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/" class="btn btn-default btn-sm">返回目录</a>
+                </div>
+                <div style="flex:1; text-align:right;">
+                    {% assign next_idx = current_idx | plus: 1 %}
+                    {% assign next_sec = sections_list[next_idx] %}
+                    {% if next_sec %}
+                    <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/{{ next_sec }}/" class="btn btn-default btn-sm">下一节 &rarr;</a>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if page.date %}
+            <p style="text-align:center; color:#999; font-size:13px; margin-top:20px;">
+                发布于 {{ page.date | date: "%Y年%-m月%-d日" }}
+            </p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+<style>
+#reading-col { font-size: var(--reading-font-size, 16px); }
+
+.reading-section-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2C4A6E;
+    border-bottom: 2px solid #5B8DB8;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
+}
+
+.reading-content {
+    line-height: 2;
+    color: #333;
+    white-space: pre-wrap;
+    font-family: "STSong", "SimSun", "宋体", serif;
+    word-break: break-word;
+}
+
+.font-size-ctrl {
+    display: inline-flex;
+    border: 1px solid #5B8DB8;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.font-size-ctrl button {
+    background: #EBF3FA;
+    border: none;
+    border-right: 1px solid #5B8DB8;
+    color: #2C5F8A;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 9px;
+    line-height: 1;
+}
+.font-size-ctrl button:last-child { border-right: none; }
+.font-size-ctrl button:hover { background: #5B8DB8; color: #fff; }
+</style>
+
+<script>
+var FONT_KEY = 'reading-font-size';
+var FONT_DEFAULT = 16, FONT_MIN = 12, FONT_MAX = 24;
+function applyFontSize(size) {
+    document.documentElement.style.setProperty('--reading-font-size', size + 'px');
+}
+function adjustFontSize(delta) {
+    var current = parseInt(localStorage.getItem(FONT_KEY) || FONT_DEFAULT);
+    var next = Math.min(FONT_MAX, Math.max(FONT_MIN, current + delta));
+    localStorage.setItem(FONT_KEY, next);
+    applyFontSize(next);
+}
+function resetFontSize() {
+    localStorage.setItem(FONT_KEY, FONT_DEFAULT);
+    applyFontSize(FONT_DEFAULT);
+}
+</script>
