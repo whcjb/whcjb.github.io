@@ -1,0 +1,76 @@
+---
+layout: default
+title: 提摩太后书注释
+header-img: psalm-bg-mountain.jpg
+---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>提摩太后书</h1>
+                    <span class="subheading">加尔文圣经注释</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="margin-bottom:24px;">
+                <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+            </p>
+
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
+                提摩太后书 · 章节目录
+            </h3>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/2timothy/introduction/" class="calvin-chapter-btn calvin-chapter-btn--has-content">绪论</a>
+                </div>
+                {% for i in (1..4) %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/2timothy/{{ i }}/" class="calvin-chapter-btn calvin-chapter-btn--has-content">第 {{ i }} 章</a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.calvin-chapter-btn {
+    display: block;
+    padding: 8px 6px;
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    color: #333 !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    text-align: center;
+    transition: background 0.2s, border-color 0.2s;
+}
+.calvin-chapter-btn:hover {
+    background: #0085a1;
+    border-color: #0085a1;
+    color: #fff !important;
+}
+.calvin-chapter-btn--has-content {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32 !important;
+    font-weight: bold;
+}
+.calvin-chapter-btn--has-content:hover {
+    background: #4caf50;
+    border-color: #4caf50;
+    color: #fff !important;
+}
+</style>

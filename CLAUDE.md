@@ -68,4 +68,5 @@ Push to `master` branch → GitHub Pages auto-builds and deploys. No CI needed.
 
 ## Content Conventions
 
-- **date 字段必须精确到分钟**：所有 reading 章节（`reading/*/` 下的 `.md` 文件）的 front matter `date` 字段格式固定为 `YYYY-MM-DD HH:MM`，不得只写日期。生成或修改这类文件时无需用户提醒，直接写入分钟级别时间戳。
+- **date 字段必须精确到分钟**：所有 reading 章节（`reading/*/` 下的 `.md` 文件）和 calvin 章节的 front matter `date` 字段格式固定为 `YYYY-MM-DD HH:MM`，不得只写日期。生成或修改这类文件时无需用户提醒，直接写入分钟级别时间戳。
+- **date 字段必须使用真实时间**：新建文件时，`date` 字段必须使用当前的真实时间（通过 `date '+%Y-%m-%d %H:%M'` 获取），不得使用虚假或固定的时间戳。已有文件的时间不要修改。
