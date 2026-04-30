@@ -28,11 +28,12 @@
                     <li>
                         <a href="{{ site.baseurl }}/reading/">属灵阅读</a>
                     </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/about/">信仰告白</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/tags/">關於我們</a>
+                    <li class="nav-dropdown" id="aboutDropdown">
+                        <a href="javascript:void(0)" onclick="toggleAboutMenu(event)">關於我們 <span class="caret"></span></a>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="{{ site.baseurl }}/tags/">關於我們</a></li>
+                            <li><a href="{{ site.baseurl }}/about/">信仰告白</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -91,5 +92,56 @@
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
         __HuxNav__.close();
+        // close dropdown if clicking outside
+        var dd = document.getElementById('aboutDropdown');
+        if (dd && !dd.contains(e.target)) {
+            dd.classList.remove('open');
+        }
     })
+
+    function toggleAboutMenu(e) {
+        e.stopPropagation();
+        var dd = document.getElementById('aboutDropdown');
+        dd.classList.toggle('open');
+    }
 </script>
+<style>
+.nav-dropdown { position: relative; }
+.nav-dropdown > a .caret {
+    display: inline-block;
+    width: 0; height: 0;
+    margin-left: 4px;
+    vertical-align: middle;
+    border-top: 4px solid;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+.nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    min-width: 140px;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    padding: 5px 0;
+    margin-top: 2px;
+    z-index: 1000;
+    list-style: none;
+}
+.nav-dropdown.open .nav-dropdown-menu { display: block; }
+.nav-dropdown-menu li a {
+    display: block;
+    padding: 6px 18px;
+    color: #333 !important;
+    font-size: 14px;
+    text-decoration: none !important;
+    white-space: nowrap;
+}
+.nav-dropdown-menu li a:hover {
+    background: #f5f5f5;
+    color: #0085a1 !important;
+}
+</style>
