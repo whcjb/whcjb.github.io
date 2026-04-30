@@ -136,14 +136,11 @@ def detect_marker(line: str, after_blank: bool = True) -> tuple[str | None, str 
     m = re.match(r'^(I{1,3}V?|IV|VI{0,3}|[IVX]+)\.\s*(.*)', s)
     if m and len(m.group(1)) <= 4:
         return 'l1', m.group(1) + '.', m.group(2)
-    # 1. 2. 3. and （1）（2） only after blank line
+    # 1. 2. 3. only after blank line (（N） kept inline, too many false positives)
     if after_blank:
         m = re.match(r'^(\d{1,2})\.\s*(?!\d|：)(.*)', s)
         if m:
             return 'l2', m.group(1) + '.', m.group(2)
-        m = re.match(r'^（(\d{1,2})）\s*(.*)', s)
-        if m:
-            return 'l3', '（' + m.group(1) + '）', m.group(2)
     return None, None, s
 
 
@@ -363,12 +360,41 @@ def format_file(filepath: str) -> bool:
             out.append('')
             in_unit = False
 
+    first_verse_seen = False
+
     for si, (seg_type, seg_content) in enumerate(segments):
         seg_content = seg_content.strip()
         if not seg_content:
             continue
 
+        # Wrap text before first verse as overview
+        if seg_type == 'text' and not first_verse_seen:
+            # Process line by line, but wrap non-heading content in overview div
+            text_lines = seg_content.split('\n')
+            overview_lines: list[str] = []
+            for tl in text_lines:
+                tl = tl.strip()
+                if not tl:
+                    continue
+                if is_chapter_heading(tl):
+                    close_all()
+                    out.append('')
+                    out.append(f'## {tl}')
+                    out.append('')
+                    prev_blank = True
+                else:
+                    overview_lines.append(tl)
+            if overview_lines:
+                out.append('')
+                out.append('<div class="mh-overview">')
+                out.append(' '.join(overview_lines))
+                out.append('</div>')
+                out.append('')
+            prev_blank = True
+            continue
+
         if seg_type == 'verse':
+            first_verse_seen = True
             close_unit()
             close_all()
             verse_text = ' '.join(seg_content.split())

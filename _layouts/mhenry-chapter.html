@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}post-bg-2015.jpg{% endif %}')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}psalm-bg-mountain.jpg{% endif %}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -94,6 +94,30 @@ layout: default
 </div>
 
 <style>
+/* ── Chapter overview/summary ──────────────────────── */
+.mh-overview {
+    margin: 0 0 28px 0;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #f8f5ef 0%, #f0ebe0 100%);
+    border: 1px solid #d8cfbf;
+    border-top: 4px solid #C9922A;
+    border-radius: 0 0 8px 8px;
+    color: #5a4a35;
+    line-height: 2;
+    font-size: 0.95em;
+    position: relative;
+}
+.mh-overview::before {
+    content: '本章综述';
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #C9922A;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
 /* ── Verse+Commentary unit ─────────────────────────── */
 .mh-unit {
     margin: 28px 0;
@@ -114,7 +138,8 @@ layout: default
     color: #4A3728;
     line-height: 1.9;
     font-size: 0.97em;
-    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-family: "STHeiti", "SimHei", "微软雅黑", "黑体", sans-serif;
+    font-weight: bold;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
     max-height: 25vh;
     overflow: hidden;
@@ -153,7 +178,8 @@ layout: default
     color: #4A3728;
     line-height: 1.9;
     font-size: 0.97em;
-    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    font-family: "STHeiti", "SimHei", "微软雅黑", "黑体", sans-serif;
+    font-weight: bold;
 }
 .mh-unit-body {
     padding: 16px 20px;

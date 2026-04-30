@@ -2,11 +2,11 @@
 layout: default
 title: 加尔文圣经注释
 description: 约翰·加尔文（John Calvin）圣经注释全集
-header-img: img/post-bg-2015.jpg
+header-img: img/psalm-bg-mountain.jpg
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -27,7 +27,7 @@ header-img: img/post-bg-2015.jpg
                 约翰·加尔文（1509–1564）是改革宗神学最重要的奠基者之一，其圣经注释以严谨的文法分析、忠实于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。点击任意书卷查看章节列表。
             </p>
 
-            {% assign all_chapter_pages = site.pages | where_exp: "p", "p.book_id" %}
+            {% assign all_chapter_pages = site.pages | where: "layout", "calvin-chapter" %}
             {% assign books_with_content = all_chapter_pages | map: "book_id" | uniq %}
 
             <!-- 旧约 -->

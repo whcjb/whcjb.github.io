@@ -65,3 +65,7 @@ Comments use **Gitalk** (GitHub Issues–backed). Config is in `_config.yml` und
 ## Deployment
 
 Push to `master` branch → GitHub Pages auto-builds and deploys. No CI needed.
+
+## Content Conventions
+
+- **date 字段必须精确到分钟**：所有 reading 章节（`reading/*/` 下的 `.md` 文件）的 front matter `date` 字段格式固定为 `YYYY-MM-DD HH:MM`，不得只写日期。生成或修改这类文件时无需用户提醒，直接写入分钟级别时间戳。

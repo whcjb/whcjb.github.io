@@ -5,7 +5,7 @@ book_name: 以弗所书
 section: "introduction"
 section_title: "绪论"
 sections_list: "preface,introduction,1,2,3,4,5,6"
-header-img: calvin-bg-ephesians.jpg
+header-img: psalm-bg-valley.jpg
 date: 2026-04-29 16:11
 ---
 

@@ -6,7 +6,7 @@ book_id: commentaries
 book_title: 加尔文：圣经注释
 section: "editors_preface"
 section_title: "编者序言"
-header-img: calvin-bg-commentaries.jpg
+header-img: psalm-bg-mountain.jpg
 date: 2026-04-29 16:57
 ---
 

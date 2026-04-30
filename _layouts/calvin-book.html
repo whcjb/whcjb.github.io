@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/post-bg-2015.jpg')">
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -28,7 +28,8 @@ layout: default
                 {{ page.book_name }} · 章节目录
             </h3>
 
-            {% assign book_chapters = site.pages | where: "book_id", page.book_id %}
+            {% assign calvin_pages = site.pages | where: "layout", "calvin-chapter" %}
+            {% assign book_chapters = calvin_pages | where: "book_id", page.book_id %}
             {% assign chapter_nums = book_chapters | map: "chapter" %}
             <div class="row">
                 {% for i in (1..page.chapters) %}
