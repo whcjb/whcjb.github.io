@@ -141,10 +141,13 @@ layout: default
     font-family: "STHeiti", "SimHei", "微软雅黑", "黑体", sans-serif;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    max-height: 25vh;
+    max-height: 8vh;
     overflow: hidden;
     cursor: pointer;
     transition: max-height 0.3s ease;
+    padding: 14px 18px;
+    font-size: 0.97em;
+    line-height: 1.9;
 }
 .mh-unit > .mh-verse.expanded {
     max-height: none;
@@ -463,12 +466,11 @@ function resetFontSize() {
     applyFontSize(FONT_DEFAULT);
 }
 
-// ── Verse expand/collapse ────────────────────────────
+// ── Verse click to expand/collapse ───────────────────
 (function initVerseToggle() {
     var verses = document.querySelectorAll('.mh-unit > .mh-verse');
     for (var i = 0; i < verses.length; i++) {
         var v = verses[i];
-        // Check if content fits within max-height (25vh)
         if (v.scrollHeight <= v.clientHeight + 5) {
             v.classList.add('fits');
         }
