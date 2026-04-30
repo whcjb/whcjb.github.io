@@ -26,17 +26,43 @@ layout: default
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
-                <div style="display:flex; align-items:center; gap:8px;">
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <div class="bg-color-ctrl" title="背景色">
+                        <button onclick="setBgColor('#C7EDCC')" class="bg-swatch" style="background:#C7EDCC;" aria-label="豆沙绿"></button>
+                        <button onclick="setBgColor('#FAF0DC')" class="bg-swatch" style="background:#FAF0DC;" aria-label="羊皮纸"></button>
+                        <button onclick="setBgColor('#EAEAEF')" class="bg-swatch" style="background:#EAEAEF;" aria-label="淡灰蓝"></button>
+                        <button onclick="setBgColor('#F5E6CC')" class="bg-swatch" style="background:#F5E6CC;" aria-label="暖杏色"></button>
+                        <button onclick="setBgColor('#E3EDCD')" class="bg-swatch" style="background:#E3EDCD;" aria-label="浅草绿"></button>
+                        <button onclick="setBgColor('#FFFFFF')" class="bg-swatch bg-swatch--white" style="background:#FFFFFF;" aria-label="纯白"></button>
+                    </div>
                     <div class="font-size-ctrl" title="调节字号">
                         <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
                         <button onclick="resetFontSize()" aria-label="默认字号">A</button>
                         <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
                     </div>
+                    <button id="typo-toggle-btn">标记错字</button><span id="typo-count"></span>
                     <button onclick="toggleMhenryCompare()"
                             style="padding:5px 16px; background:#FFF8E1; border:1px solid #C9922A; border-radius:3px;
                                    color:#7B5E3A; cursor:pointer; font-size:13px; font-weight:bold;">
                         对比注释
                     </button>
+                </div>
+            </div>
+
+            <div class="tts-bar" id="ttsBar">
+                <div class="tts-controls">
+                    <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
+                    <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
+                    <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" title="停止" style="display:none;">&#9632; 停止</button>
+                    <label class="tts-speed" title="语速">
+                        <span>语速</span>
+                        <input type="range" id="ttsSpeedRange" min="0.5" max="2" step="0.1" value="1" onchange="ttsSetSpeed(this.value)">
+                        <span id="ttsSpeedVal">1.0x</span>
+                    </label>
+                </div>
+                <div class="tts-progress" id="ttsProgress" onclick="ttsClickProgress(event)">
+                    <div class="tts-progress-fill" id="ttsProgressFill"></div>
+                    <span class="tts-progress-text" id="ttsProgressText">0/0</span>
                 </div>
             </div>
 
@@ -348,4 +374,64 @@ function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
 }
+
+// ── Background color ─────────────────────────────────
+var BG_KEY = 'reading-bg-color';
+function applyBgColor(color) {
+    document.documentElement.style.setProperty('--reading-bg-color', color);
+    var swatches = document.querySelectorAll('.bg-swatch');
+    for (var i = 0; i < swatches.length; i++) {
+        if (rgbToHex(swatches[i].style.backgroundColor) === color.toUpperCase()) {
+            swatches[i].classList.add('active');
+        } else { swatches[i].classList.remove('active'); }
+    }
+}
+function setBgColor(color) { localStorage.setItem(BG_KEY, color); applyBgColor(color); }
+function rgbToHex(rgb) {
+    if (rgb.charAt(0) === '#') return rgb.toUpperCase();
+    var m = rgb.match(/(\d+)/g); if (!m) return '';
+    return '#' + ((1 << 24) + (+m[0] << 16) + (+m[1] << 8) + +m[2]).toString(16).slice(1).toUpperCase();
+}
+(function(){ var s = localStorage.getItem(BG_KEY); if (s) applyBgColor(s); })();
+
+// ── TTS ──────────────────────────────────────────────
+var TTS_SPEED_KEY = 'reading-tts-speed';
+var ttsChunks=[], ttsIndex=0, ttsPlaying=false, ttsPaused=false, ttsKeepAlive=null, ttsGeneration=0;
+function ttsGetSpeed(){ return parseFloat(localStorage.getItem(TTS_SPEED_KEY)||'1'); }
+function ttsSetSpeed(v){ v=parseFloat(v); localStorage.setItem(TTS_SPEED_KEY,v); document.getElementById('ttsSpeedVal').textContent=v.toFixed(1)+'x'; if(ttsPlaying){var i=ttsIndex;ttsStop();ttsPlayFrom(i);} }
+function ttsBuildChunks(){ var el=document.getElementById('calvin-col'); if(!el)return[]; var nodes=el.querySelectorAll('p,h3,li,blockquote'); var c=[]; for(var i=0;i<nodes.length;i++){var t=nodes[i].innerText.trim();if(t.length>0)c.push({text:t,el:nodes[i]});} return c; }
+function ttsHighlight(el){ var o=document.querySelectorAll('.tts-highlight'); for(var i=0;i<o.length;i++)o[i].classList.remove('tts-highlight'); if(el){el.classList.add('tts-highlight');el.scrollIntoView({behavior:'smooth',block:'center'});} }
+function ttsUpdateProgress(i,t){ var b=document.getElementById('ttsProgress'),f=document.getElementById('ttsProgressFill'),x=document.getElementById('ttsProgressText'); if(!b)return; if(t<=0){b.classList.remove('visible');return;} b.classList.add('visible'); f.style.width=Math.round(((i+1)/t)*100)+'%'; x.textContent=(i+1)+' / '+t; }
+function ttsClickProgress(e){ if(!ttsPlaying&&!ttsPaused)return; if(!ttsChunks.length)return; var b=document.getElementById('ttsProgress'),r=b.getBoundingClientRect(); var i=Math.floor(((e.clientX-r.left)/r.width)*ttsChunks.length); ttsPlayFrom(Math.max(0,Math.min(i,ttsChunks.length-1))); }
+function ttsStartKeepAlive(){ ttsStopKeepAlive(); ttsKeepAlive=setInterval(function(){if(speechSynthesis.speaking&&!speechSynthesis.paused){speechSynthesis.pause();speechSynthesis.resume();}},10000); }
+function ttsStopKeepAlive(){ if(ttsKeepAlive){clearInterval(ttsKeepAlive);ttsKeepAlive=null;} }
+function ttsSpeakChunk(i){ if(i>=ttsChunks.length){ttsStop();return;} ttsIndex=i; ttsUpdateProgress(i,ttsChunks.length); var c=ttsChunks[i],g=ttsGeneration,u=new SpeechSynthesisUtterance(c.text); u.lang='zh-CN';u.rate=ttsGetSpeed(); u.onstart=function(){if(g!==ttsGeneration)return;ttsHighlight(c.el);}; u.onend=function(){if(g!==ttsGeneration)return;ttsHighlight(null);if(ttsPlaying&&!ttsPaused)ttsSpeakChunk(i+1);}; u.onerror=function(){if(g!==ttsGeneration)return;ttsHighlight(null);if(ttsPlaying&&!ttsPaused)ttsSpeakChunk(i+1);}; speechSynthesis.speak(u); }
+function ttsPlayFrom(i){ if(!window.speechSynthesis){alert('浏览器不支持语音朗读');return;} ttsGeneration++;speechSynthesis.cancel();ttsChunks=ttsBuildChunks();if(!ttsChunks.length)return;if(i>=ttsChunks.length)i=0;ttsIndex=i;ttsPlaying=true;ttsPaused=false;ttsUpdateUI('playing');ttsStartKeepAlive();ttsSpeakChunk(i); }
+function ttsPlay(){ if(ttsPaused){speechSynthesis.resume();ttsPaused=false;ttsPlaying=true;ttsUpdateUI('playing');ttsStartKeepAlive();return;} ttsPlayFrom(0); }
+function ttsPause(){ if(ttsPlaying&&!ttsPaused){speechSynthesis.pause();ttsPaused=true;ttsUpdateUI('paused');ttsStopKeepAlive();} }
+function ttsStop(){ ttsGeneration++;speechSynthesis.cancel();ttsPlaying=false;ttsPaused=false;ttsIndex=0;ttsHighlight(null);ttsUpdateUI('stopped');ttsStopKeepAlive();var b=document.getElementById('ttsProgress');if(b)b.classList.remove('visible'); }
+function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.getElementById('ttsPauseBtn'),t=document.getElementById('ttsStopBtn'),b=document.getElementById('ttsProgress'); if(s==='playing'){p.style.display='none';a.style.display='';t.style.display='';if(b)b.classList.add('visible');} else if(s==='paused'){p.style.display='';p.innerHTML='&#9654; 继续';a.style.display='none';t.style.display='';} else{p.style.display='';p.innerHTML='&#9654; 朗读';a.style.display='none';t.style.display='none';if(b)b.classList.remove('visible');} }
+(function(){ if(window.speechSynthesis)speechSynthesis.cancel(); var sp=ttsGetSpeed(),r=document.getElementById('ttsSpeedRange'),l=document.getElementById('ttsSpeedVal'); if(r)r.value=sp;if(l)l.textContent=sp.toFixed(1)+'x'; if(!window.speechSynthesis){var b=document.getElementById('ttsBar');if(b)b.style.display='none';} window.addEventListener('beforeunload',function(){speechSynthesis.cancel();}); })();
 </script>
+
+<style>
+#calvin-col { background: var(--reading-bg-color, #fff); border-radius: 6px; }
+.bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
+.bg-swatch { width:22px;height:22px;border:2px solid transparent;border-radius:50%;cursor:pointer;padding:0;outline:none;box-shadow:0 0 0 1px rgba(0,0,0,0.12); }
+.bg-swatch:hover { box-shadow:0 0 0 2px #0085a1; }
+.bg-swatch.active { border-color:#2C4A6E;box-shadow:0 0 0 2px #0085a1; }
+.bg-swatch--white { box-shadow:0 0 0 1px rgba(0,0,0,0.25); }
+.tts-bar { display:flex;flex-direction:column;gap:8px;margin-bottom:20px;padding:8px 14px;background:rgba(0,133,161,0.06);border:1px solid rgba(0,133,161,0.2);border-radius:4px; }
+.tts-controls { display:flex;align-items:center;gap:10px;flex-wrap:wrap; }
+.tts-btn { background:#0085a1;color:#fff;border:none;border-radius:3px;padding:5px 14px;font-size:13px;cursor:pointer;font-weight:bold; }
+.tts-btn:hover { background:#006680; }
+.tts-speed { display:flex;align-items:center;gap:6px;font-size:12px;color:#555;margin-left:auto; }
+.tts-speed input[type="range"] { width:80px;accent-color:#0085a1; }
+.tts-progress { position:relative;width:100%;height:0;background:#d0e8ee;border-radius:10px;overflow:hidden;cursor:pointer;opacity:0;transition:height 0.3s,opacity 0.3s; }
+.tts-progress.visible { height:20px;opacity:1; }
+.tts-progress-fill { height:100%;width:0%;background:linear-gradient(90deg,#0085a1,#004d60);border-radius:10px;transition:width 0.3s; }
+.tts-progress-text { position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff;text-shadow:0 0 3px rgba(0,0,0,0.4);pointer-events:none; }
+.tts-highlight { background:rgba(0,133,161,0.12);border-radius:2px; }
+</style>
+<link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
+<script src="{{ site.baseurl }}/js/typo-marker.js"></script>
