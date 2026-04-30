@@ -6,7 +6,7 @@ book_id: principles
 book_title: 正直生活要道
 section: "preface"
 section_title: "前言"
-header-img: img/post-bg-2015.jpg
+header-img: reading-murray-preface.jpg
 date: 2026-04-29 14:22
 ---
 

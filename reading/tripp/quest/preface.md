@@ -6,7 +6,7 @@ book_id: quest
 book_title: 寻求更大的事
 section: "preface"
 section_title: "自序　先求他的国"
-header-img: img/post-bg-2015.jpg
+header-img: reading-tripp-preface.jpg
 date: 2026-04-29 15:28
 ---
 
