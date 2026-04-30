@@ -94,6 +94,81 @@ layout: default
 </div>
 
 <style>
+/* ── Scripture verse block (warm brown, italic font) ── */
+.mh-verse {
+    background: #F7F3EC;
+    border-left: 4px solid #C9922A;
+    padding: 14px 18px;
+    margin: 20px 0;
+    border-radius: 2px;
+    color: #4A3728;
+    line-height: 1.9;
+    font-size: 0.97em;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+
+/* ── Outline I. II. III. (blue heading) ────────────── */
+.mh-l1 {
+    margin: 28px 0 12px 0;
+    padding: 0 0 8px 0;
+    border-bottom: 2px solid #0085a1;
+    line-height: 1.9;
+}
+.mh-l1 > .mh-label {
+    display: inline-block;
+    font-weight: bold;
+    color: #fff;
+    background: #0085a1;
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.95em;
+    margin-right: 8px;
+}
+
+/* ── Outline 1. 2. 3. (teal tinted) ───────────────── */
+.mh-l2 {
+    margin: 14px 0 8px 1.2em;
+    padding: 8px 14px 8px 16px;
+    background: rgba(0,133,161,0.04);
+    border-radius: 4px;
+    line-height: 1.9;
+}
+.mh-l2 > .mh-label {
+    display: inline-block;
+    font-weight: bold;
+    color: #0085a1;
+    min-width: 1.8em;
+}
+
+/* ── Outline （1）（2）（3）(dashed indent) ──────── */
+.mh-l3 {
+    margin: 8px 0 6px 2.5em;
+    padding: 6px 12px;
+    line-height: 1.9;
+    border-left: 2px dashed #b0c4d8;
+}
+.mh-l3 > .mh-label {
+    font-weight: bold;
+    color: #5a8aab;
+    margin-right: 4px;
+}
+
+/* ── Footnotes ──────────────────────────────────────── */
+.mhenry-footnotes {
+    margin-top: 40px;
+    border-top: 1px solid #D7C4A3;
+    padding-top: 14px;
+    font-size: 0.82em;
+    color: #7B5E3A;
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: 1.7;
+}
+.mhenry-footnotes sup {
+    font-weight: bold;
+    color: #C9922A;
+    margin-right: 4px;
+}
+
 /* ── Font size control ───────────────────────────────── */
 #mhenry-col { font-size: var(--reading-font-size, 16px); }
 .font-size-ctrl {
@@ -305,4 +380,5 @@ function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
 }
+
 </script>
