@@ -42,14 +42,20 @@ layout: default
             <h2 class="reading-section-title">{{ page.section_title }}</h2>
 
             <div class="tts-bar" id="ttsBar">
-                <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
-                <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
-                <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" title="停止" style="display:none;">&#9632; 停止</button>
-                <label class="tts-speed" title="语速">
-                    <span>语速</span>
-                    <input type="range" id="ttsSpeedRange" min="0.5" max="2" step="0.1" value="1" onchange="ttsSetSpeed(this.value)">
-                    <span id="ttsSpeedVal">1.0x</span>
-                </label>
+                <div class="tts-controls">
+                    <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
+                    <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
+                    <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" title="停止" style="display:none;">&#9632; 停止</button>
+                    <label class="tts-speed" title="语速">
+                        <span>语速</span>
+                        <input type="range" id="ttsSpeedRange" min="0.5" max="2" step="0.1" value="1" onchange="ttsSetSpeed(this.value)">
+                        <span id="ttsSpeedVal">1.0x</span>
+                    </label>
+                </div>
+                <div class="tts-progress" id="ttsProgress" onclick="ttsClickProgress(event)">
+                    <div class="tts-progress-fill" id="ttsProgressFill"></div>
+                    <span class="tts-progress-text" id="ttsProgressText">0/0</span>
+                </div>
             </div>
 
             <div class="reading-content">{{ content }}</div>
@@ -102,7 +108,6 @@ layout: default
 
 <style>
 #reading-col {
-    font-size: var(--reading-font-size, 16px);
     background: var(--reading-bg-color, #C7EDCC);
     padding: 24px 30px;
     border-radius: 6px;
@@ -119,13 +124,18 @@ layout: default
 
 .tts-bar {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
     margin-bottom: 20px;
     padding: 8px 14px;
     background: rgba(91,141,184,0.08);
     border: 1px solid rgba(91,141,184,0.25);
     border-radius: 4px;
+}
+.tts-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     flex-wrap: wrap;
 }
 .tts-btn {
@@ -152,12 +162,50 @@ layout: default
     width: 80px;
     accent-color: #5B8DB8;
 }
+.tts-progress {
+    position: relative;
+    width: 100%;
+    height: 0;
+    background: #d9e4ee;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+.tts-progress.visible {
+    height: 20px;
+    opacity: 1;
+}
+.tts-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #5B8DB8, #2C4A6E);
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+.tts-progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 3px rgba(0,0,0,0.4);
+    pointer-events: none;
+}
 .tts-highlight {
     background: rgba(91,141,184,0.15);
     border-radius: 2px;
 }
 
 .reading-content {
+    font-size: var(--reading-font-size, 16px);
     color: #333;
     font-family: "STSong", "SimSun", "宋体", serif;
     word-break: break-word;
@@ -406,10 +454,12 @@ function rgbToHex(rgb) {
 
 /* ── TTS 语音朗读 ── */
 var TTS_SPEED_KEY = 'reading-tts-speed';
-var ttsUtterances = [];
+var ttsChunks = [];
 var ttsIndex = 0;
 var ttsPlaying = false;
 var ttsPaused = false;
+var ttsKeepAlive = null;
+var ttsGeneration = 0;
 
 function ttsGetSpeed() {
     return parseFloat(localStorage.getItem(TTS_SPEED_KEY) || '1');
@@ -419,18 +469,26 @@ function ttsSetSpeed(val) {
     val = parseFloat(val);
     localStorage.setItem(TTS_SPEED_KEY, val);
     document.getElementById('ttsSpeedVal').textContent = val.toFixed(1) + 'x';
-    if (ttsPlaying) { ttsStop(); ttsPlay(); }
+    if (ttsPlaying) {
+        var idx = ttsIndex;
+        ttsStop();
+        ttsPlayFrom(idx);
+    }
 }
 
 function ttsBuildChunks() {
     var el = document.querySelector('.reading-content');
     if (!el) return [];
-    var paragraphs = el.querySelectorAll('p, h3, li, .calvin-verse p, .bilingual-block .zh-text');
+    var nodes = el.querySelectorAll('p, h3, li');
     var chunks = [];
-    for (var i = 0; i < paragraphs.length; i++) {
-        var text = paragraphs[i].innerText.trim();
+    for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        if (node.closest && node.closest('.calvin-verse') && node.tagName === 'P') {
+            if (node.parentElement.querySelector('p') !== node) continue;
+        }
+        var text = node.innerText.trim();
         if (text.length > 0) {
-            chunks.push({ text: text, el: paragraphs[i] });
+            chunks.push({ text: text, el: node });
         }
     }
     if (chunks.length === 0) {
@@ -449,84 +507,158 @@ function ttsHighlight(el) {
     }
 }
 
+function ttsStartKeepAlive() {
+    ttsStopKeepAlive();
+    ttsKeepAlive = setInterval(function() {
+        if (speechSynthesis.speaking && !speechSynthesis.paused) {
+            speechSynthesis.pause();
+            speechSynthesis.resume();
+        }
+    }, 10000);
+}
+
+function ttsStopKeepAlive() {
+    if (ttsKeepAlive) { clearInterval(ttsKeepAlive); ttsKeepAlive = null; }
+}
+
+function ttsUpdateProgress(index, total) {
+    var bar = document.getElementById('ttsProgress');
+    var fill = document.getElementById('ttsProgressFill');
+    var text = document.getElementById('ttsProgressText');
+    if (!bar) return;
+    if (total <= 0) { bar.classList.remove('visible'); return; }
+    bar.classList.add('visible');
+    var pct = Math.round(((index + 1) / total) * 100);
+    fill.style.width = pct + '%';
+    text.textContent = (index + 1) + ' / ' + total;
+}
+
+function ttsClickProgress(e) {
+    if (!ttsPlaying && !ttsPaused) return;
+    if (ttsChunks.length === 0) return;
+    var bar = document.getElementById('ttsProgress');
+    var rect = bar.getBoundingClientRect();
+    var ratio = (e.clientX - rect.left) / rect.width;
+    var idx = Math.floor(ratio * ttsChunks.length);
+    idx = Math.max(0, Math.min(idx, ttsChunks.length - 1));
+    ttsPlayFrom(idx);
+}
+
 function ttsSpeakChunk(index) {
-    if (index >= ttsUtterances.length) { ttsStop(); return; }
+    if (index >= ttsChunks.length) { ttsStop(); return; }
     ttsIndex = index;
-    var chunk = ttsUtterances[index];
+    ttsUpdateProgress(index, ttsChunks.length);
+    var chunk = ttsChunks[index];
+    var gen = ttsGeneration;
     var u = new SpeechSynthesisUtterance(chunk.text);
     u.lang = 'zh-CN';
     u.rate = ttsGetSpeed();
-    u.onstart = function() { ttsHighlight(chunk.el); };
+    u.onstart = function() {
+        if (gen !== ttsGeneration) return;
+        ttsHighlight(chunk.el);
+    };
     u.onend = function() {
+        if (gen !== ttsGeneration) return;
         ttsHighlight(null);
-        if (ttsPlaying) ttsSpeakChunk(index + 1);
+        if (ttsPlaying && !ttsPaused) ttsSpeakChunk(index + 1);
     };
     u.onerror = function() {
+        if (gen !== ttsGeneration) return;
         ttsHighlight(null);
-        if (ttsPlaying) ttsSpeakChunk(index + 1);
+        if (ttsPlaying && !ttsPaused) ttsSpeakChunk(index + 1);
     };
     speechSynthesis.speak(u);
 }
 
-function ttsPlay() {
+function ttsPlayFrom(index) {
     if (!window.speechSynthesis) { alert('您的浏览器不支持语音朗读'); return; }
+    ttsGeneration++;
+    speechSynthesis.cancel();
+    ttsChunks = ttsBuildChunks();
+    if (ttsChunks.length === 0) return;
+    if (index >= ttsChunks.length) index = 0;
+    ttsIndex = index;
+    ttsPlaying = true;
+    ttsPaused = false;
+    ttsUpdateUI('playing');
+    ttsStartKeepAlive();
+    ttsSpeakChunk(index);
+}
+
+function ttsPlay() {
     if (ttsPaused) {
         speechSynthesis.resume();
         ttsPaused = false;
         ttsPlaying = true;
         ttsUpdateUI('playing');
+        ttsStartKeepAlive();
         return;
     }
-    speechSynthesis.cancel();
-    ttsUtterances = ttsBuildChunks();
-    if (ttsUtterances.length === 0) return;
-    ttsIndex = 0;
-    ttsPlaying = true;
-    ttsPaused = false;
-    ttsUpdateUI('playing');
-    ttsSpeakChunk(0);
+    ttsChunks = ttsBuildChunks();
+    ttsPlayFrom(0);
 }
 
 function ttsPause() {
     if (ttsPlaying && !ttsPaused) {
         speechSynthesis.pause();
         ttsPaused = true;
-        ttsPlaying = true;
         ttsUpdateUI('paused');
+        ttsStopKeepAlive();
     }
 }
 
 function ttsStop() {
+    ttsGeneration++;
     speechSynthesis.cancel();
     ttsPlaying = false;
     ttsPaused = false;
     ttsIndex = 0;
     ttsHighlight(null);
     ttsUpdateUI('stopped');
+    ttsStopKeepAlive();
+    var bar = document.getElementById('ttsProgress');
+    if (bar) bar.classList.remove('visible');
+}
+
+function ttsJumpTo(el) {
+    if (!ttsPlaying && !ttsPaused) return;
+    for (var i = 0; i < ttsChunks.length; i++) {
+        if (ttsChunks[i].el === el || ttsChunks[i].el.contains(el) || el.contains(ttsChunks[i].el)) {
+            ttsPlayFrom(i);
+            return;
+        }
+    }
 }
 
 function ttsUpdateUI(state) {
     var playBtn = document.getElementById('ttsPlayBtn');
     var pauseBtn = document.getElementById('ttsPauseBtn');
     var stopBtn = document.getElementById('ttsStopBtn');
+    var progressBar = document.getElementById('ttsProgress');
     if (state === 'playing') {
         playBtn.style.display = 'none';
         pauseBtn.style.display = '';
         stopBtn.style.display = '';
+        if (progressBar) progressBar.classList.add('visible');
     } else if (state === 'paused') {
         playBtn.style.display = '';
         playBtn.innerHTML = '&#9654; 继续';
         pauseBtn.style.display = 'none';
         stopBtn.style.display = '';
+        if (progressBar) progressBar.classList.add('visible');
     } else {
         playBtn.style.display = '';
         playBtn.innerHTML = '&#9654; 朗读';
         pauseBtn.style.display = 'none';
         stopBtn.style.display = 'none';
+        if (progressBar) progressBar.classList.remove('visible');
     }
 }
 
 (function ttsInit() {
+    if (window.speechSynthesis) {
+        speechSynthesis.cancel();
+    }
     var speed = ttsGetSpeed();
     var range = document.getElementById('ttsSpeedRange');
     if (range) { range.value = speed; }
@@ -535,6 +667,27 @@ function ttsUpdateUI(state) {
     if (!window.speechSynthesis) {
         var bar = document.getElementById('ttsBar');
         if (bar) bar.style.display = 'none';
+        return;
+    }
+    window.addEventListener('beforeunload', function() {
+        speechSynthesis.cancel();
+    });
+    window.addEventListener('pagehide', function() {
+        speechSynthesis.cancel();
+    });
+    var content = document.querySelector('.reading-content');
+    if (content) {
+        content.addEventListener('click', function(e) {
+            if (!ttsPlaying && !ttsPaused) return;
+            var target = e.target;
+            while (target && target !== content) {
+                if (target.matches('p, h3, li')) {
+                    ttsJumpTo(target);
+                    return;
+                }
+                target = target.parentElement;
+            }
+        });
     }
 })();
 </script>

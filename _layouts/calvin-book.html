@@ -56,25 +56,24 @@ layout: default
 .calvin-chapter-btn {
     display: block;
     padding: 8px 6px;
-    background: #f8f8f8;
-    border: 1px solid #e0e0e0;
+    background: #6b7b8d;
+    border: 1px solid #5a6a7a;
     border-radius: 4px;
-    color: #333 !important;
+    color: rgba(255,255,255,0.7) !important;
     text-decoration: none !important;
     font-size: 13px;
     text-align: center;
     transition: background 0.2s, border-color 0.2s;
-}
-.calvin-chapter-btn:hover {
-    background: #0085a1;
-    border-color: #0085a1;
-    color: #fff !important;
+    pointer-events: none;
+    cursor: default;
 }
 .calvin-chapter-btn--has-content {
     background: #e8f5e9;
     border-color: #4caf50;
     color: #2e7d32 !important;
     font-weight: bold;
+    pointer-events: auto;
+    cursor: pointer;
 }
 .calvin-chapter-btn--has-content:hover {
     background: #4caf50;
