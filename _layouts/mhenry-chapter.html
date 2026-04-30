@@ -22,7 +22,15 @@ layout: default
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
-                <div style="display:flex; align-items:center; gap:8px;">
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <div class="bg-color-ctrl" title="背景色">
+                        <button onclick="setBgColor('#C7EDCC')" class="bg-swatch" style="background:#C7EDCC;" aria-label="豆沙绿"></button>
+                        <button onclick="setBgColor('#FAF0DC')" class="bg-swatch" style="background:#FAF0DC;" aria-label="羊皮纸"></button>
+                        <button onclick="setBgColor('#EAEAEF')" class="bg-swatch" style="background:#EAEAEF;" aria-label="淡灰蓝"></button>
+                        <button onclick="setBgColor('#F5E6CC')" class="bg-swatch" style="background:#F5E6CC;" aria-label="暖杏色"></button>
+                        <button onclick="setBgColor('#E3EDCD')" class="bg-swatch" style="background:#E3EDCD;" aria-label="浅草绿"></button>
+                        <button onclick="setBgColor('#FFFFFF')" class="bg-swatch bg-swatch--white" style="background:#FFFFFF;" aria-label="纯白"></button>
+                    </div>
                     <div class="font-size-ctrl" title="调节字号">
                         <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
                         <button onclick="resetFontSize()" aria-label="默认字号">A</button>
@@ -33,6 +41,23 @@ layout: default
                                    color:#0085a1; cursor:pointer; font-size:13px; font-weight:bold;">
                         对比注释
                     </button>
+                </div>
+            </div>
+
+            <div class="tts-bar" id="ttsBar">
+                <div class="tts-controls">
+                    <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
+                    <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
+                    <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" title="停止" style="display:none;">&#9632; 停止</button>
+                    <label class="tts-speed" title="语速">
+                        <span>语速</span>
+                        <input type="range" id="ttsSpeedRange" min="0.5" max="2" step="0.1" value="1" onchange="ttsSetSpeed(this.value)">
+                        <span id="ttsSpeedVal">1.0x</span>
+                    </label>
+                </div>
+                <div class="tts-progress" id="ttsProgress" onclick="ttsClickProgress(event)">
+                    <div class="tts-progress-fill" id="ttsProgressFill"></div>
+                    <span class="tts-progress-text" id="ttsProgressText">0/0</span>
                 </div>
             </div>
 
@@ -94,6 +119,55 @@ layout: default
 </div>
 
 <style>
+/* ── Background color control ─────────────────────── */
+#mhenry-col {
+    background: var(--reading-bg-color, #fff);
+    border-radius: 6px;
+}
+.bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
+.bg-swatch {
+    width:22px; height:22px; border:2px solid transparent; border-radius:50%;
+    cursor:pointer; padding:0; outline:none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+}
+.bg-swatch:hover { box-shadow:0 0 0 2px #C9922A; }
+.bg-swatch.active { border-color:#7B5E3A; box-shadow:0 0 0 2px #C9922A; }
+.bg-swatch--white { box-shadow:0 0 0 1px rgba(0,0,0,0.25); }
+
+/* ── TTS bar ──────────────────────────────────────── */
+.tts-bar {
+    display:flex; flex-direction:column; gap:8px;
+    margin-bottom:20px; padding:8px 14px;
+    background:rgba(201,146,42,0.08); border:1px solid rgba(201,146,42,0.25); border-radius:4px;
+}
+.tts-controls { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.tts-btn {
+    background:#C9922A; color:#fff; border:none; border-radius:3px;
+    padding:5px 14px; font-size:13px; cursor:pointer; font-weight:bold;
+    transition:background 0.15s;
+}
+.tts-btn:hover { background:#7B5E3A; }
+.tts-speed { display:flex; align-items:center; gap:6px; font-size:12px; color:#7B5E3A; margin-left:auto; }
+.tts-speed input[type="range"] { width:80px; accent-color:#C9922A; }
+.tts-progress {
+    position:relative; width:100%; height:0;
+    background:#e8dcc8; border-radius:10px; overflow:hidden;
+    cursor:pointer; opacity:0; transition:height 0.3s ease, opacity 0.3s ease;
+}
+.tts-progress.visible { height:20px; opacity:1; }
+.tts-progress-fill {
+    height:100%; width:0%; background:linear-gradient(90deg,#C9922A,#7B5E3A);
+    border-radius:10px; transition:width 0.3s ease;
+}
+.tts-progress-text {
+    position:absolute; top:0; left:0; right:0; bottom:0;
+    display:flex; align-items:center; justify-content:center;
+    font-size:11px; font-weight:bold; color:#fff;
+    text-shadow:0 0 3px rgba(0,0,0,0.4); pointer-events:none;
+}
+.tts-highlight { background:rgba(201,146,42,0.15); border-radius:2px; }
+
 /* ── Chapter overview/summary ──────────────────────── */
 .mh-overview {
     margin: 0 0 28px 0;
@@ -450,7 +524,7 @@ async function toggleCalvinCompare() {
 var FONT_KEY = 'reading-font-size';
 var FONT_DEFAULT = 16;
 var FONT_MIN = 12;
-var FONT_MAX = 24;
+var FONT_MAX = 32;
 
 function applyFontSize(size) {
     document.documentElement.style.setProperty('--reading-font-size', size + 'px');
@@ -517,6 +591,174 @@ function resetFontSize() {
             }
             cur.parentNode.removeChild(cur);
         }
+    }
+})();
+
+// ── Background color ─────────────────────────────────
+var BG_KEY = 'reading-bg-color';
+var BG_DEFAULT = '#FFFFFF';
+function applyBgColor(color) {
+    document.documentElement.style.setProperty('--reading-bg-color', color);
+    var swatches = document.querySelectorAll('.bg-swatch');
+    for (var i = 0; i < swatches.length; i++) {
+        if (rgbToHex(swatches[i].style.backgroundColor) === color.toUpperCase()) {
+            swatches[i].classList.add('active');
+        } else {
+            swatches[i].classList.remove('active');
+        }
+    }
+}
+function setBgColor(color) {
+    localStorage.setItem(BG_KEY, color);
+    applyBgColor(color);
+}
+function rgbToHex(rgb) {
+    if (rgb.charAt(0) === '#') return rgb.toUpperCase();
+    var m = rgb.match(/(\d+)/g);
+    if (!m) return '';
+    return '#' + ((1 << 24) + (+m[0] << 16) + (+m[1] << 8) + +m[2]).toString(16).slice(1).toUpperCase();
+}
+(function() {
+    var saved = localStorage.getItem(BG_KEY);
+    if (saved) applyBgColor(saved);
+})();
+
+// ── TTS 语音朗读 ─────────────────────────────────────
+var TTS_SPEED_KEY = 'reading-tts-speed';
+var ttsChunks = [];
+var ttsIndex = 0;
+var ttsPlaying = false;
+var ttsPaused = false;
+var ttsKeepAlive = null;
+var ttsGeneration = 0;
+
+function ttsGetSpeed() { return parseFloat(localStorage.getItem(TTS_SPEED_KEY) || '1'); }
+function ttsSetSpeed(val) {
+    val = parseFloat(val);
+    localStorage.setItem(TTS_SPEED_KEY, val);
+    document.getElementById('ttsSpeedVal').textContent = val.toFixed(1) + 'x';
+    if (ttsPlaying) { var idx = ttsIndex; ttsStop(); ttsPlayFrom(idx); }
+}
+function ttsBuildChunks() {
+    var el = document.getElementById('mhenry-col');
+    if (!el) return [];
+    var nodes = el.querySelectorAll('p, .mh-verse, .mh-l1, .mh-l2, .mh-overview, h3, li');
+    var chunks = [];
+    for (var i = 0; i < nodes.length; i++) {
+        var text = nodes[i].innerText.trim();
+        if (text.length > 0) chunks.push({ text: text, el: nodes[i] });
+    }
+    return chunks;
+}
+function ttsHighlight(el) {
+    var old = document.querySelectorAll('.tts-highlight');
+    for (var i = 0; i < old.length; i++) old[i].classList.remove('tts-highlight');
+    if (el) { el.classList.add('tts-highlight'); el.scrollIntoView({ behavior:'smooth', block:'center' }); }
+}
+function ttsUpdateProgress(index, total) {
+    var bar = document.getElementById('ttsProgress');
+    var fill = document.getElementById('ttsProgressFill');
+    var text = document.getElementById('ttsProgressText');
+    if (!bar) return;
+    if (total <= 0) { bar.classList.remove('visible'); return; }
+    bar.classList.add('visible');
+    fill.style.width = Math.round(((index+1)/total)*100) + '%';
+    text.textContent = (index+1) + ' / ' + total;
+}
+function ttsClickProgress(e) {
+    if (!ttsPlaying && !ttsPaused) return;
+    if (ttsChunks.length === 0) return;
+    var bar = document.getElementById('ttsProgress');
+    var rect = bar.getBoundingClientRect();
+    var idx = Math.floor(((e.clientX - rect.left) / rect.width) * ttsChunks.length);
+    idx = Math.max(0, Math.min(idx, ttsChunks.length - 1));
+    ttsPlayFrom(idx);
+}
+function ttsStartKeepAlive() {
+    ttsStopKeepAlive();
+    ttsKeepAlive = setInterval(function() {
+        if (speechSynthesis.speaking && !speechSynthesis.paused) { speechSynthesis.pause(); speechSynthesis.resume(); }
+    }, 10000);
+}
+function ttsStopKeepAlive() { if (ttsKeepAlive) { clearInterval(ttsKeepAlive); ttsKeepAlive = null; } }
+function ttsSpeakChunk(index) {
+    if (index >= ttsChunks.length) { ttsStop(); return; }
+    ttsIndex = index;
+    ttsUpdateProgress(index, ttsChunks.length);
+    var chunk = ttsChunks[index];
+    var gen = ttsGeneration;
+    var u = new SpeechSynthesisUtterance(chunk.text);
+    u.lang = 'zh-CN'; u.rate = ttsGetSpeed();
+    u.onstart = function() { if (gen !== ttsGeneration) return; ttsHighlight(chunk.el); };
+    u.onend = function() { if (gen !== ttsGeneration) return; ttsHighlight(null); if (ttsPlaying && !ttsPaused) ttsSpeakChunk(index+1); };
+    u.onerror = function() { if (gen !== ttsGeneration) return; ttsHighlight(null); if (ttsPlaying && !ttsPaused) ttsSpeakChunk(index+1); };
+    speechSynthesis.speak(u);
+}
+function ttsPlayFrom(index) {
+    if (!window.speechSynthesis) { alert('您的浏览器不支持语音朗读'); return; }
+    ttsGeneration++;
+    speechSynthesis.cancel();
+    ttsChunks = ttsBuildChunks();
+    if (ttsChunks.length === 0) return;
+    if (index >= ttsChunks.length) index = 0;
+    ttsIndex = index; ttsPlaying = true; ttsPaused = false;
+    ttsUpdateUI('playing'); ttsStartKeepAlive(); ttsSpeakChunk(index);
+}
+function ttsPlay() {
+    if (ttsPaused) { speechSynthesis.resume(); ttsPaused = false; ttsPlaying = true; ttsUpdateUI('playing'); ttsStartKeepAlive(); return; }
+    ttsPlayFrom(0);
+}
+function ttsPause() {
+    if (ttsPlaying && !ttsPaused) { speechSynthesis.pause(); ttsPaused = true; ttsUpdateUI('paused'); ttsStopKeepAlive(); }
+}
+function ttsStop() {
+    ttsGeneration++; speechSynthesis.cancel();
+    ttsPlaying = false; ttsPaused = false; ttsIndex = 0;
+    ttsHighlight(null); ttsUpdateUI('stopped'); ttsStopKeepAlive();
+    var bar = document.getElementById('ttsProgress'); if (bar) bar.classList.remove('visible');
+}
+function ttsJumpTo(el) {
+    if (!ttsPlaying && !ttsPaused) return;
+    for (var i = 0; i < ttsChunks.length; i++) {
+        if (ttsChunks[i].el === el || ttsChunks[i].el.contains(el) || el.contains(ttsChunks[i].el)) { ttsPlayFrom(i); return; }
+    }
+}
+function ttsUpdateUI(state) {
+    var playBtn = document.getElementById('ttsPlayBtn');
+    var pauseBtn = document.getElementById('ttsPauseBtn');
+    var stopBtn = document.getElementById('ttsStopBtn');
+    var progressBar = document.getElementById('ttsProgress');
+    if (state === 'playing') {
+        playBtn.style.display = 'none'; pauseBtn.style.display = ''; stopBtn.style.display = '';
+        if (progressBar) progressBar.classList.add('visible');
+    } else if (state === 'paused') {
+        playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 继续'; pauseBtn.style.display = 'none'; stopBtn.style.display = '';
+        if (progressBar) progressBar.classList.add('visible');
+    } else {
+        playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 朗读'; pauseBtn.style.display = 'none'; stopBtn.style.display = 'none';
+        if (progressBar) progressBar.classList.remove('visible');
+    }
+}
+(function ttsInit() {
+    if (window.speechSynthesis) { speechSynthesis.cancel(); }
+    var speed = ttsGetSpeed();
+    var range = document.getElementById('ttsSpeedRange');
+    if (range) range.value = speed;
+    var label = document.getElementById('ttsSpeedVal');
+    if (label) label.textContent = speed.toFixed(1) + 'x';
+    if (!window.speechSynthesis) { var bar = document.getElementById('ttsBar'); if (bar) bar.style.display = 'none'; return; }
+    window.addEventListener('beforeunload', function() { speechSynthesis.cancel(); });
+    window.addEventListener('pagehide', function() { speechSynthesis.cancel(); });
+    var content = document.getElementById('mhenry-col');
+    if (content) {
+        content.addEventListener('click', function(e) {
+            if (!ttsPlaying && !ttsPaused) return;
+            var target = e.target;
+            while (target && target !== content) {
+                if (target.matches('p, .mh-verse, .mh-l1, .mh-l2, h3, li')) { ttsJumpTo(target); return; }
+                target = target.parentElement;
+            }
+        });
     }
 })();
 
