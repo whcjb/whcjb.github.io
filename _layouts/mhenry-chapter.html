@@ -104,7 +104,7 @@ layout: default
 }
 .mh-unit > .mh-verse {
     position: sticky;
-    top: 54px; /* below fixed navbar */
+    top: 0;
     z-index: 5;
     background: #F7F3EC;
     border-left: 4px solid #C9922A;
@@ -116,6 +116,33 @@ layout: default
     font-size: 0.97em;
     font-family: "STKaiti", "KaiTi", "楷体", serif;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    max-height: 25vh;
+    overflow: hidden;
+    cursor: pointer;
+    transition: max-height 0.3s ease;
+}
+.mh-unit > .mh-verse.expanded {
+    max-height: none;
+}
+.mh-unit > .mh-verse:not(.expanded)::after {
+    content: '点击展开全文 ▼';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #C9922A;
+    font-family: sans-serif;
+    padding-top: 6px;
+    background: linear-gradient(transparent 0%, #F7F3EC 60%);
+    margin: -20px -18px 0;
+    padding: 24px 18px 8px;
+    position: relative;
+}
+/* Hide the expand hint if content fits */
+.mh-unit > .mh-verse.fits:not(.expanded)::after {
+    display: none;
+}
+.mh-unit > .mh-verse.fits {
+    cursor: default;
 }
 .mh-verse {
     background: #F7F3EC;
@@ -409,6 +436,22 @@ function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
 }
+
+// ── Verse expand/collapse ────────────────────────────
+(function initVerseToggle() {
+    var verses = document.querySelectorAll('.mh-unit > .mh-verse');
+    for (var i = 0; i < verses.length; i++) {
+        var v = verses[i];
+        // Check if content fits within max-height (25vh)
+        if (v.scrollHeight <= v.clientHeight + 5) {
+            v.classList.add('fits');
+        }
+        v.addEventListener('click', function() {
+            if (this.classList.contains('fits')) return;
+            this.classList.toggle('expanded');
+        });
+    }
+})();
 
 // Merge adjacent .mh-verse divs into one (Jekyll may insert <p> between them)
 (function mhMergeVerses() {
