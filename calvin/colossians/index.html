@@ -1,0 +1,69 @@
+---
+layout: default
+title: 歌罗西书 - 加尔文圣经注释
+header-img: psalm-bg-mountain.jpg
+---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>歌罗西书</h1>
+                    <span class="subheading">加尔文圣经注释 · 陈凤 译</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p style="margin-bottom:24px;">
+                <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+            </p>
+
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">序言部分</h3>
+            <div class="row" style="margin-bottom:24px;">
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/colossians/preface/" class="calvin-chapter-btn calvin-chapter-btn--has-content">纲要</a>
+                </div>
+            </div>
+
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">歌罗西书 · 章节目录</h3>
+
+            {% assign calvin_pages = site.pages | where: "layout", "calvin-chapter" %}
+            {% assign book_chapters = calvin_pages | where: "book_id", "colossians" %}
+            {% assign chapter_nums = book_chapters | map: "chapter" %}
+            <div class="row">
+                {% for i in (1..4) %}
+                {% if chapter_nums contains i %}
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/colossians/{{ i }}/" class="calvin-chapter-btn calvin-chapter-btn--has-content">第 {{ i }} 章</a>
+                </div>
+                {% else %}
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/colossians/{{ i }}/" class="calvin-chapter-btn">第 {{ i }} 章</a>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+.calvin-chapter-btn {
+    display: block; padding: 8px 6px; background: #6b7b8d; border: 1px solid #5a6a7a;
+    border-radius: 4px; color: rgba(255,255,255,0.7) !important; text-decoration: none !important;
+    font-size: 13px; text-align: center; pointer-events: none; cursor: default;
+}
+.calvin-chapter-btn--has-content {
+    background: #e8f5e9; border-color: #4caf50; color: #2e7d32 !important;
+    font-weight: bold; pointer-events: auto; cursor: pointer;
+}
+.calvin-chapter-btn--has-content:hover { background: #4caf50; color: #fff !important; }
+</style>
