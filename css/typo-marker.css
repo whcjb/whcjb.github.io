@@ -1,0 +1,115 @@
+/* Typo Marker Styles */
+#typo-toggle-btn {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 4px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.2s;
+}
+#typo-toggle-btn.active {
+    background: #e74c3c;
+    border-color: #c0392b;
+    color: #fff;
+}
+#typo-count {
+    display: none;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* Typo mode cursor */
+body.typo-mode .reading-content,
+body.typo-mode .post-container,
+body.typo-mode #mhenry-col {
+    cursor: text;
+}
+body.typo-mode .reading-content ::selection,
+body.typo-mode .post-container ::selection,
+body.typo-mode #mhenry-col ::selection {
+    background: rgba(231, 76, 60, 0.3);
+}
+
+/* Marked text */
+.typo-marked {
+    background: rgba(231, 76, 60, 0.2);
+    border-bottom: 2px wavy #e74c3c;
+    cursor: help;
+}
+
+/* Popup */
+#typo-popup {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 12px 14px;
+    width: 240px;
+    font-size: 13px;
+}
+#typo-popup.visible { display: block; }
+.typo-popup-title {
+    font-weight: bold;
+    color: #e74c3c;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+.typo-popup-row {
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.typo-popup-row label {
+    font-size: 12px;
+    color: #888;
+    flex-shrink: 0;
+}
+#typo-original {
+    color: #e74c3c;
+    font-weight: bold;
+    word-break: break-all;
+}
+#typo-fix {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 4px 8px;
+    font-size: 13px;
+    outline: none;
+}
+#typo-fix:focus { border-color: #e74c3c; }
+.typo-popup-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+.typo-popup-actions button {
+    flex: 1;
+    padding: 5px 0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+#typo-submit {
+    background: #e74c3c;
+    color: #fff;
+}
+#typo-submit:hover { background: #c0392b; }
+#typo-cancel {
+    background: #f0f0f0;
+    color: #666;
+}
+#typo-cancel:hover { background: #ddd; }

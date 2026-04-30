@@ -36,6 +36,7 @@ layout: default
                         <button onclick="resetFontSize()" aria-label="默认字号">A</button>
                         <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
                     </div>
+                    <button id="typo-toggle-btn">标记错字</button><span id="typo-count"></span>
                     <button onclick="toggleCalvinCompare()"
                             style="padding:5px 16px; background:#e8f4f8; border:1px solid #0085a1; border-radius:3px;
                                    color:#0085a1; cursor:pointer; font-size:13px; font-weight:bold;">
@@ -763,3 +764,5 @@ function ttsUpdateUI(state) {
 })();
 
 </script>
+<link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
+<script src="{{ site.baseurl }}/js/typo-marker.js"></script>

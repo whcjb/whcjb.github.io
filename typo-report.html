@@ -1,0 +1,90 @@
+---
+layout: default
+title: 错别字标记汇总
+---
+
+<div class="container" style="margin-top:80px; margin-bottom:60px;">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <h2>错别字标记汇总</h2>
+            <p class="text-muted">读者在阅读过程中标记的错别字和修正建议。数据存储在浏览器本地。</p>
+
+            <div style="margin-bottom:20px;">
+                <button onclick="exportMarks()" style="padding:6px 16px; background:#0085a1; color:#fff; border:none; border-radius:3px; cursor:pointer; font-size:13px;">导出为文本</button>
+                <button onclick="clearMarks()" style="padding:6px 16px; background:#e74c3c; color:#fff; border:none; border-radius:3px; cursor:pointer; font-size:13px; margin-left:8px;">清空所有标记</button>
+                <span id="mark-total" style="margin-left:12px; color:#888; font-size:13px;"></span>
+            </div>
+
+            <table id="marks-table" style="width:100%; border-collapse:collapse; font-size:14px;">
+                <thead>
+                    <tr style="background:#f5f5f5; text-align:left;">
+                        <th style="padding:8px; border-bottom:2px solid #ddd;">页面</th>
+                        <th style="padding:8px; border-bottom:2px solid #ddd;">原文</th>
+                        <th style="padding:8px; border-bottom:2px solid #ddd;">修正建议</th>
+                        <th style="padding:8px; border-bottom:2px solid #ddd;">时间</th>
+                        <th style="padding:8px; border-bottom:2px solid #ddd;">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="marks-body"></tbody>
+            </table>
+
+            <p id="no-marks" style="color:#aaa; text-align:center; padding:40px 0; display:none;">暂无标记</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function loadMarks() {
+    try { return JSON.parse(localStorage.getItem('typo_marks') || '[]'); } catch(e) { return []; }
+}
+function saveMarks(marks) {
+    localStorage.setItem('typo_marks', JSON.stringify(marks));
+}
+function renderTable() {
+    var marks = loadMarks();
+    var tbody = document.getElementById('marks-body');
+    var noMarks = document.getElementById('no-marks');
+    var total = document.getElementById('mark-total');
+    tbody.innerHTML = '';
+    total.textContent = marks.length + ' 条标记';
+    if (!marks.length) { noMarks.style.display = ''; return; }
+    noMarks.style.display = 'none';
+    marks.forEach(function(m, i) {
+        var tr = document.createElement('tr');
+        tr.style.borderBottom = '1px solid #eee';
+        var shortPage = m.page.replace(/\/index\.html$/, '').replace(/\/$/, '');
+        var time = m.time ? new Date(m.time).toLocaleString('zh-CN') : '-';
+        tr.innerHTML =
+            '<td style="padding:8px;"><a href="' + m.page + '" style="color:#0085a1; font-size:12px;">' + shortPage + '</a></td>' +
+            '<td style="padding:8px; color:#e74c3c; font-weight:bold;">' + (m.original || '') + '</td>' +
+            '<td style="padding:8px; color:#27ae60; font-weight:bold;">' + (m.fix || '') + '</td>' +
+            '<td style="padding:8px; color:#888; font-size:12px;">' + time + '</td>' +
+            '<td style="padding:8px;"><button onclick="deleteMark(' + i + ')" style="background:none; border:1px solid #ddd; border-radius:3px; padding:2px 8px; cursor:pointer; font-size:11px; color:#888;">删除</button></td>';
+        tbody.appendChild(tr);
+    });
+}
+function deleteMark(index) {
+    var marks = loadMarks();
+    marks.splice(index, 1);
+    saveMarks(marks);
+    renderTable();
+}
+function clearMarks() {
+    if (!confirm('确定清空所有标记？')) return;
+    saveMarks([]);
+    renderTable();
+}
+function exportMarks() {
+    var marks = loadMarks();
+    if (!marks.length) { alert('暂无标记'); return; }
+    var text = marks.map(function(m) {
+        return '页面: ' + m.page + '\n原文: ' + m.original + '\n修正: ' + m.fix + '\n时间: ' + m.time + '\n';
+    }).join('\n---\n');
+    var blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'typo-marks-' + new Date().toISOString().slice(0,10) + '.txt';
+    a.click();
+}
+renderTable();
+</script>
