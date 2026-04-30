@@ -94,7 +94,29 @@ layout: default
 </div>
 
 <style>
-/* ── Scripture verse block (warm brown, italic font) ── */
+/* ── Verse+Commentary unit ─────────────────────────── */
+.mh-unit {
+    margin: 28px 0;
+    border: 1px solid #e0d5c5;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    position: relative;
+}
+.mh-unit > .mh-verse {
+    position: sticky;
+    top: 54px; /* below fixed navbar */
+    z-index: 5;
+    background: #F7F3EC;
+    border-left: 4px solid #C9922A;
+    border-radius: 6px 6px 0 0;
+    padding: 14px 18px;
+    margin: 0;
+    color: #4A3728;
+    line-height: 1.9;
+    font-size: 0.97em;
+    font-family: "STKaiti", "KaiTi", "楷体", serif;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
 .mh-verse {
     background: #F7F3EC;
     border-left: 4px solid #C9922A;
@@ -105,6 +127,13 @@ layout: default
     line-height: 1.9;
     font-size: 0.97em;
     font-family: "STKaiti", "KaiTi", "楷体", serif;
+}
+.mh-unit-body {
+    padding: 16px 20px;
+    border-left: 4px solid #e8e0d0;
+    background: #fff;
+    line-height: 1.9;
+    border-radius: 0 0 6px 6px;
 }
 
 /* ── Outline I. II. III. (blue heading) ────────────── */
@@ -380,5 +409,44 @@ function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
 }
+
+// Merge adjacent .mh-verse divs into one (Jekyll may insert <p> between them)
+(function mhMergeVerses() {
+    var verses = document.querySelectorAll('.mh-verse');
+    for (var i = verses.length - 1; i > 0; i--) {
+        var cur = verses[i];
+        var prev = verses[i - 1];
+        // Check if they are adjacent (only empty text/p nodes between them)
+        var node = prev.nextSibling;
+        var adjacent = true;
+        while (node && node !== cur) {
+            if (node.nodeType === 1) {
+                // Element node: only allow empty <p> tags
+                if (node.tagName === 'P' && node.textContent.trim() === '') {
+                    node = node.nextSibling;
+                    continue;
+                }
+                adjacent = false;
+                break;
+            } else if (node.nodeType === 3 && node.textContent.trim() !== '') {
+                adjacent = false;
+                break;
+            }
+            node = node.nextSibling;
+        }
+        if (adjacent) {
+            // Merge: append cur's content to prev, remove empty nodes and cur
+            prev.innerHTML = prev.innerHTML.trimEnd() + ' ' + cur.innerHTML.trimStart();
+            // Remove nodes between prev and cur
+            node = prev.nextSibling;
+            while (node && node !== cur) {
+                var next = node.nextSibling;
+                node.parentNode.removeChild(node);
+                node = next;
+            }
+            cur.parentNode.removeChild(cur);
+        }
+    }
+})();
 
 </script>

@@ -81,8 +81,14 @@ def get_verse_keywords(book_id: str, chapter: int) -> tuple[list[str], list[str]
 _PUNCT_RE = re.compile(r'[，。；：！？、「」『』（）\(\)【】""''《》〈〉·\s]')
 
 
+_NORMALIZE_MAP = str.maketrans({
+    '著': '着', '它': '他', '牠': '他', '祂': '他', '妳': '你', '裏': '里', '裡': '里',
+    '麽': '么', '甚': '什', '衹': '只', '祇': '只', '噁': '恶',
+})
+
+
 def _strip_punct(s: str) -> str:
-    return _PUNCT_RE.sub('', s)
+    return _PUNCT_RE.sub('', s).translate(_NORMALIZE_MAP)
 
 
 def text_contains_verse_start(text: str, keywords: list[str], verse_num: int) -> bool:
@@ -141,10 +147,121 @@ def detect_marker(line: str, after_blank: bool = True) -> tuple[str | None, str 
     return None, None, s
 
 
+
 def extract_fm_field(fm: str, field: str) -> str:
-    """Extract a field value from YAML front matter."""
     m = re.search(r'^' + field + r':\s*(.+)$', fm, re.MULTILINE)
     return m.group(1).strip().strip('"\'') if m else ''
+
+
+def _fulltext_find_end(haystack: str, needle_tail: str) -> int:
+    """Find position right AFTER needle_tail ends in haystack (punct-stripped matching).
+    Returns -1 if not found."""
+    clean_h = _strip_punct(haystack)
+    clean_n = _strip_punct(needle_tail)
+    if not clean_n or len(clean_n) < 4:
+        return -1
+    idx = clean_h.find(clean_n)
+    if idx < 0:
+        return -1
+    target_ci = idx + len(clean_n)
+    ci = 0
+    for oi, ch in enumerate(haystack):
+        if _strip_punct(ch):
+            ci += 1
+            if ci == target_ci:
+                pos = oi + 1
+                while pos < len(haystack) and haystack[pos] in '。！？」）)\u3000 \n\r':
+                    pos += 1
+                return pos
+    return -1
+
+
+def _get_full_verses(book_id: str, chapter: int) -> list[str]:
+    """Get simplified full text of each verse (0-indexed: [0]=verse1)."""
+    bible = load_bible()
+    abbrev = BOOK_ID_MAP.get(book_id)
+    if not abbrev or abbrev not in bible:
+        return []
+    chapters = bible[abbrev]
+    if chapter < 1 or chapter > len(chapters):
+        return []
+    return [_t2s.convert(v.replace(' ', '').replace('\u3000', '')) for v in chapters[chapter - 1]]
+
+
+def _find_verse_regions(full_text: str, verses: list[str]) -> list[tuple[int, int]]:
+    """Find all scripture quotation regions in full_text by matching each verse's
+    start keyword against "N keyword" patterns in text, then using verse end text
+    to find where each verse ends. Consecutive verses are merged into one region.
+    Returns sorted list of (start_pos, end_pos)."""
+    if not verses:
+        return []
+
+    total_v = len(verses)
+    # Build start/end keywords per verse
+    skws = [_strip_punct(v)[:10] for v in verses]
+    ekws = [_strip_punct(v)[-10:] for v in verses]
+
+    # Step 1: locate each verse's position by searching for "N <verse_start>"
+    found: list[tuple[int, int, int]] = []  # (vnum_1based, start_pos, end_pos)
+
+    for vi in range(total_v):
+        vnum = vi + 1
+        skw = skws[vi]
+        if not skw or len(skw) < 4:
+            continue
+        # Search for verse number prefix pattern
+        for m in re.finditer(r'(?:^|(?<=[\s，。；！？」）\]]))' + str(vnum) + r'\s+', full_text):
+            after = _strip_punct(full_text[m.start():m.start() + 50])
+            if skw[:5] in after[:25]:
+                # Found verse start. Find end using last 15 chars of verse.
+                search_start = m.start()
+                max_range = int(len(verses[vi]) * 1.5) + 60
+                region = full_text[search_start:search_start + max_range]
+                v_tail = verses[vi][-20:] if len(verses[vi]) > 20 else verses[vi]
+                e_off = _fulltext_find_end(region, v_tail)
+                if e_off > 0:
+                    found.append((vnum, m.start(), search_start + e_off))
+                else:
+                    # Fallback: approximate end
+                    found.append((vnum, m.start(), search_start + min(len(verses[vi]) + 80, max_range)))
+                break
+
+    if not found:
+        return []
+
+    # Step 2: sort by position and merge consecutive verses into blocks
+    found.sort(key=lambda x: x[1])
+    blocks: list[tuple[int, int, int]] = []  # (start_pos, approx_end, last_vnum)
+    cs, ce, cl = found[0][1], found[0][2], found[0][0]
+
+    for vnum, s, e in found[1:]:
+        if vnum <= cl + 2 and s <= ce + 80:
+            ce = max(ce, e)
+            cl = max(cl, vnum)
+        else:
+            blocks.append((cs, ce, cl))
+            cs, ce, cl = s, e, vnum
+    blocks.append((cs, ce, cl))
+
+    # Step 3: for each block, re-find the precise end using last verse's full tail
+    regions: list[tuple[int, int]] = []
+    for bs, be, last_v in blocks:
+        if last_v <= total_v:
+            # Calculate total expected length of all verses in block
+            block_verses_len = sum(len(verses[vi]) for vi in range(total_v) if any(
+                f[0] == vi + 1 and f[1] >= bs and f[1] <= be for f in found
+            ))
+            max_range = int(block_verses_len * 1.5) + 100
+            region = full_text[bs:bs + max_range]
+            v_tail = verses[last_v - 1][-20:] if len(verses[last_v - 1]) > 20 else verses[last_v - 1]
+            e_off = _fulltext_find_end(region, v_tail)
+            if e_off > 0:
+                regions.append((bs, min(bs + e_off, len(full_text))))
+                continue
+        # Fallback
+        regions.append((bs, min(be, len(full_text))))
+
+    return regions
 
 
 def format_file(filepath: str) -> bool:
@@ -155,240 +272,158 @@ def format_file(filepath: str) -> bool:
     if not fm:
         return False
 
-    # Get book_id and chapter from front matter for Bible matching
     book_id = extract_fm_field(fm, 'book_id')
     chapter_str = extract_fm_field(fm, 'chapter')
     chapter = int(chapter_str) if chapter_str.isdigit() else 0
-    verse_start_kw, verse_end_kw = get_verse_keywords(book_id, chapter) if book_id and chapter else ([], [])
-    total_verses = len(verse_start_kw)
+    verses = _get_full_verses(book_id, chapter) if book_id and chapter else []
 
     lines = body.split('\n')
-    out: list[str] = []
-    footnotes: list[tuple[str, str]] = []
-    open_divs: list[str] = []  # stack of open div levels
-    i = 0
-    total = len(lines)
 
-    def close_all_divs() -> None:
+    # --- Pass 1: remove date markers, collect footnotes ---
+    clean_lines: list[str] = []
+    footnotes: list[tuple[str, str]] = []
+    i = 0
+    while i < len(lines):
+        s = lines[i].strip()
+        if is_date_marker(s):
+            i += 1
+            continue
+        if is_footnote_num(s):
+            fn_num = s
+            k = len(clean_lines) - 1
+            while k >= 0 and clean_lines[k].strip() == '':
+                k -= 1
+            if k >= 0 and len(clean_lines[k].strip()) <= 160 and not clean_lines[k].strip().startswith(('<', '>', '#')):
+                footnotes.append((fn_num, clean_lines[k].strip()))
+                clean_lines[k] = ''
+                i += 1
+                continue
+            fl: list[str] = []
+            j = i + 1
+            while j < len(lines) and not lines[j].strip():
+                j += 1
+            while j < len(lines):
+                ns = lines[j].strip()
+                if not ns or is_chapter_heading(ns):
+                    break
+                fl.append(ns)
+                j += 1
+                if len(fl) >= 4:
+                    break
+            if fl and len(' '.join(fl)) <= 300:
+                footnotes.append((fn_num, ' '.join(fl)))
+                i = j
+                continue
+        clean_lines.append(lines[i])
+        i += 1
+
+    clean_text = '\n'.join(clean_lines)
+
+    # --- Pass 2: find verse regions ---
+    regions = _find_verse_regions(clean_text, verses)
+
+    # --- Pass 3: split into segments ---
+    segments: list[tuple[str, str]] = []
+    last_pos = 0
+    for rs, re_ in regions:
+        if rs > last_pos:
+            segments.append(('text', clean_text[last_pos:rs]))
+        segments.append(('verse', clean_text[rs:re_]))
+        last_pos = re_
+    if last_pos < len(clean_text):
+        segments.append(('text', clean_text[last_pos:]))
+
+    # --- Pass 4: format output ---
+    out: list[str] = []
+    open_divs: list[str] = []
+    prev_blank = True
+
+    def close_all() -> None:
         while open_divs:
             open_divs.pop()
             out.append('</div>')
             out.append('')
 
-    def close_to_level(target: str) -> None:
-        """Close divs until we reach same or higher level than target."""
-        level_order = {'l1': 1, 'l2': 2, 'l3': 3}
-        target_n = level_order.get(target, 0)
-        while open_divs and level_order.get(open_divs[-1], 0) >= target_n:
+    def close_to(target: str) -> None:
+        order = {'l1': 1, 'l2': 2, 'l3': 3}
+        tn = order.get(target, 0)
+        while open_divs and order.get(open_divs[-1], 0) >= tn:
             open_divs.pop()
             out.append('</div>')
             out.append('')
 
-    prev_blank = True  # treat start of file as after blank
-    while i < total:
-        line = lines[i]
-        stripped = line.strip()
+    in_unit = False
 
-        # Empty line
-        if not stripped:
-            if out and out[-1] != '':
+    def close_unit() -> None:
+        nonlocal in_unit
+        if in_unit:
+            close_all()
+            out.append('</div>')  # close mh-unit-body
+            out.append('</div>')  # close mh-unit
+            out.append('')
+            in_unit = False
+
+    for si, (seg_type, seg_content) in enumerate(segments):
+        seg_content = seg_content.strip()
+        if not seg_content:
+            continue
+
+        if seg_type == 'verse':
+            close_unit()
+            close_all()
+            verse_text = ' '.join(seg_content.split())
+            # Check if next segment is commentary (text) — if so, wrap in unit
+            has_following_text = (si + 1 < len(segments) and segments[si + 1][0] == 'text'
+                                 and segments[si + 1][1].strip())
+            if has_following_text:
+                out.append('')
+                out.append('<div class="mh-unit">')
+                out.append('<div class="mh-verse">')
+                out.append(verse_text)
+                out.append('</div>')
+                out.append('<div class="mh-unit-body">')
+                out.append('')
+                in_unit = True
+            else:
+                out.append('')
+                out.append('<div class="mh-verse">')
+                out.append(verse_text)
+                out.append('</div>')
                 out.append('')
             prev_blank = True
-            i += 1
-            continue
-
-        # Remove PDF headers
-        if is_date_marker(stripped):
-            i += 1
-            continue
-
-        # Footnote number (standalone)
-        if is_footnote_num(stripped):
-            fn_num = stripped.strip()
-            fn_found = False
-            # Look backward for footnote text
-            k = len(out) - 1
-            while k >= 0 and out[k] == '':
-                k -= 1
-            if k >= 0 and len(out[k]) <= 160 and not out[k].startswith(('<', '>', '#')):
-                fn_text = out[k]
-                out[k] = ''
-                footnotes.append((fn_num, fn_text))
-                fn_found = True
-
-            if not fn_found:
-                # Look forward
-                fn_lines: list[str] = []
-                j = i + 1
-                while j < total and not lines[j].strip():
-                    j += 1
-                while j < total:
-                    ns = lines[j].strip()
-                    if not ns or is_verse_start(lines[j]) or is_chapter_heading(ns):
-                        break
-                    fn_lines.append(ns)
-                    j += 1
-                    if len(fn_lines) >= 4:
-                        break
-                if fn_lines:
-                    fn_text = ' '.join(fn_lines)
-                    if len(fn_text) <= 300:
-                        footnotes.append((fn_num, fn_text))
-                        i = j
-                        continue
-            else:
-                i += 1
-                continue
-
-        # Chapter heading
-        if is_chapter_heading(stripped):
-            close_all_divs()
-            out.append('')
-            out.append(f'## {stripped}')
-            out.append('')
-            i += 1
-            continue
-
-        # Verse block: use Bible text to determine boundaries
-        if is_verse_start(stripped):
-            verse_lines = [stripped]
-            all_text = stripped
-            # Find which verse number started this block
-            m_start = re.match(r'^(\d{1,3})\s', stripped)
-            start_verse = int(m_start.group(1)) if m_start else 1
-            # Find highest verse num mentioned so far in accumulated text
-            seen_nums = [int(x) for x in re.findall(r'(?:^|[\s。；！？」）\]])(\d{1,3})\s+', all_text)]
-            max_seen = max(seen_nums) if seen_nums else start_verse
-
-            j = i + 1
-            while j < total:
-                ns = lines[j].strip()
-                if not ns:
-                    # Skip blanks, but peek for more verses
-                    pk = j + 1
-                    while pk < total and not lines[pk].strip():
-                        pk += 1
-                    if pk < total and is_verse_start(lines[pk]):
-                        j = pk
-                        continue
-                    break
-                if is_verse_start(ns):
-                    verse_lines.append(ns)
-                    all_text += ' ' + ns
-                    new_nums = [int(x) for x in re.findall(r'(?:^|[\s。；！？」）\]])(\d{1,3})\s+', ns)]
-                    if new_nums:
-                        max_seen = max(max_seen, max(new_nums))
-                    j += 1
-                elif not re.match(r'^\d', ns) and not is_chapter_heading(ns):
-                    marker_check = detect_marker(ns)
-                    if marker_check[0] is not None:
-                        break
-                    # Use Bible text: check if any remaining verse (max_seen+1 .. total_verses)
-                    # starts in this line or the next few lines
-                    should_absorb = False
-                    # Build lookahead: include tail of last absorbed verse + this line + next lines
-                    # (handles case where verse keyword spans the line break)
-                    last_tail = verse_lines[-1].strip()[-30:]  # last 30 chars of previous line
-                    lookahead = last_tail + ns
-                    for la in range(1, 6):
-                        if j + la < total and lines[j + la].strip():
-                            lookahead += ' ' + lines[j + la].strip()
-                    # Check if current verse (max_seen) content continues into this line
-                    # by checking if the next verse (max_seen+1) keyword appears
-                    # Check 1: does lookahead contain start of a next verse?
-                    for vn in range(max_seen, min(max_seen + 10, total_verses + 1)):
-                        if text_contains_verse_start(lookahead, verse_start_kw, vn):
-                            should_absorb = True
-                            break
-                    # Check 2: does the current verse's end keyword appear in lookahead?
-                    # (handles case where continuation is the tail of current verse)
-                    if not should_absorb and max_seen >= 1 and max_seen <= len(verse_end_kw):
-                        end_kw_check = verse_end_kw[max_seen - 1]
-                        if end_kw_check and end_kw_check in _strip_punct(lookahead):
-                            should_absorb = True
-                    # Also absorb very short tail lines (< 15 chars)
-                    if len(ns) <= 15:
-                        should_absorb = True
-
-                    if should_absorb:
-                        verse_lines[-1] += ' ' + ns
-                        all_text += ' ' + ns
-                        new_nums = [int(x) for x in re.findall(r'(?:^|[\s。；！？」）\]])(\d{1,3})\s+', ns)]
-                        if new_nums:
-                            max_seen = max(max_seen, max(new_nums))
-                        j += 1
-                    else:
-                        break
+        else:
+            for tl in seg_content.split('\n'):
+                tl = tl.strip()
+                if not tl:
+                    if out and out[-1] != '':
+                        out.append('')
+                    prev_blank = True
+                    continue
+                if is_chapter_heading(tl):
+                    close_unit()
+                    close_all()
+                    out.append('')
+                    out.append(f'## {tl}')
+                    out.append('')
+                    prev_blank = True
+                    continue
+                level, label, rest = detect_marker(tl, after_blank=prev_blank)
+                if level:
+                    close_to(level)
+                    out.append('')
+                    out.append(f'<div class="mh-{level}"><span class="mh-label">{label}</span>')
+                    out.append('')
+                    open_divs.append(level)
+                    if rest:
+                        out.append(rest)
+                    prev_blank = False
                 else:
-                    break
+                    out.append(tl)
+                    prev_blank = False
 
-            # Post-trim: find the end of the last complete verse using end keywords
-            # Join all verse text, find where last verse ends, split off trailing commentary
-            full_verse_text = ' '.join(verse_lines)
-            trimmed = full_verse_text
-            leftover = ''
-            if verse_end_kw and max_seen >= 1 and max_seen <= len(verse_end_kw):
-                end_kw = verse_end_kw[max_seen - 1]
-                clean_full = _strip_punct(full_verse_text)
-                if end_kw and end_kw in clean_full:
-                    # Find the position of end keyword in original text
-                    # Map back: find each char of end_kw in full_verse_text
-                    pos = 0
-                    kw_idx = 0
-                    for ci, ch in enumerate(full_verse_text):
-                        if _strip_punct(ch) == '':
-                            continue
-                        if ch == end_kw[kw_idx] or _strip_punct(ch) == end_kw[kw_idx]:
-                            kw_idx += 1
-                            if kw_idx == len(end_kw):
-                                pos = ci + 1
-                                break
-                        else:
-                            kw_idx = 0
-                            if ch == end_kw[0] or _strip_punct(ch) == end_kw[0]:
-                                kw_idx = 1
-                    if pos > 0:
-                        # Find the next sentence-ending punctuation after pos
-                        end_pos = pos
-                        while end_pos < len(full_verse_text) and full_verse_text[end_pos] in '。」）) \n':
-                            end_pos += 1
-                        trimmed = full_verse_text[:end_pos].strip()
-                        leftover = full_verse_text[end_pos:].strip()
+    close_unit()
+    close_all()
 
-            close_all_divs()
-            out.append('')
-            out.append('<div class="mh-verse">')
-            out.append(trimmed)
-            out.append('</div>')
-            out.append('')
-            if leftover:
-                out.append(leftover)
-                out.append('')
-            i = j
-            continue
-
-        # Check for outline marker at start of line
-        level, label, rest = detect_marker(stripped, after_blank=prev_blank)
-        if level:
-            close_to_level(level)
-            out.append('')
-            out.append(f'<div class="mh-{level}"><span class="mh-label">{label}</span>')
-            out.append('')
-            open_divs.append(level)
-            if rest:
-                out.append(rest)
-            prev_blank = False
-            i += 1
-            continue
-
-        # Regular text
-        out.append(stripped)
-        prev_blank = False
-        i += 1
-
-    close_all_divs()
-
-    # Footnotes
     if footnotes:
         out.append('')
         out.append('<aside class="mhenry-footnotes">')
@@ -396,17 +431,16 @@ def format_file(filepath: str) -> bool:
             out.append(f'<p><sup>{fn_num}</sup> {fn_text}</p>')
         out.append('</aside>')
 
-    # Clean consecutive blanks
     cleaned: list[str] = []
-    prev_blank = False
+    pb = False
     for line in out:
         if line == '':
-            if not prev_blank:
+            if not pb:
                 cleaned.append('')
-            prev_blank = True
+            pb = True
         else:
             cleaned.append(line)
-            prev_blank = False
+            pb = False
 
     new_content = fm + '\n\n' + '\n'.join(cleaned).strip() + '\n'
     if new_content != content:
@@ -434,7 +468,6 @@ def main() -> None:
         try:
             if format_file(fp):
                 changed += 1
-                print(f'  formatted: {os.path.relpath(fp, MHENRY_DIR)}')
         except Exception as e:
             print(f'  ERROR {os.path.relpath(fp, MHENRY_DIR)}: {e}')
     print(f'Done. {changed}/{len(files)} updated.')
