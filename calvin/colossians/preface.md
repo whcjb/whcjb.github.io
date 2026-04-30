@@ -4,6 +4,7 @@ book_id: colossians
 book_name: 歌罗西书
 chapter: 0
 total_chapters: 4
+section_title: 纲要
 header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:54
 ---

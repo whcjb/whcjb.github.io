@@ -4,6 +4,7 @@ book_id: romans
 book_name: 罗马书
 chapter: 0
 total_chapters: 16
+section_title: 罗马书梗概
 header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:49
 ---
