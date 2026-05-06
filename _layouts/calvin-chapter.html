@@ -432,6 +432,204 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
 .tts-progress-fill { height:100%;width:0%;background:linear-gradient(90deg,#0085a1,#004d60);border-radius:10px;transition:width 0.3s; }
 .tts-progress-text { position:absolute;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:bold;color:#fff;text-shadow:0 0 3px rgba(0,0,0,0.4);pointer-events:none; }
 .tts-highlight { background:rgba(0,133,161,0.12);border-radius:2px; }
+
+/* ── Calvin Overview (综述) ──────────────────────── */
+.calvin-overview {
+    margin: 0 0 28px 0;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, #eef4f8 0%, #e0ecf4 100%);
+    border: 1px solid #b8d0e0;
+    border-top: 4px solid #0085a1;
+    border-radius: 0 0 8px 8px;
+    color: #2c4a6e;
+    line-height: 2;
+    font-size: 0.95em;
+    position: relative;
+}
+.calvin-overview::before {
+    content: '本章综述 · 加尔文';
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: #0085a1;
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+}
+
+/* ── Calvin Verse+Commentary Unit ────────────────── */
+.calvin-unit {
+    margin: 28px 0;
+    border: 1px solid #b8d0e0;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.calvin-unit > .calvin-verse {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: #1a5276;
+    color: #e8f0f6;
+    border-radius: 6px 6px 0 0;
+    padding: 14px 18px;
+    margin: 0;
+    line-height: 1.9;
+    font-size: 0.95em;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    max-height: 8vh;
+    overflow: hidden;
+    cursor: pointer;
+    transition: max-height 0.3s ease;
+}
+.calvin-unit > .calvin-verse.expanded {
+    max-height: none;
+}
+.calvin-unit > .calvin-verse:not(.expanded)::after {
+    content: '点击展开经文 ▼';
+    display: block;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.6);
+    font-family: sans-serif;
+    font-weight: normal;
+    padding-top: 4px;
+    background: linear-gradient(transparent 0%, #1a5276 60%);
+    margin: -16px -18px 0;
+    padding: 20px 18px 6px;
+    position: relative;
+}
+.calvin-unit > .calvin-verse.fits:not(.expanded)::after { display: none; }
+.calvin-unit > .calvin-verse.fits { cursor: default; }
+.calvin-unit-body {
+    padding: 16px 20px;
+    border-left: 4px solid #b8d0e0;
+    background: #fff;
+    line-height: 1.9;
+    border-radius: 0 0 6px 6px;
+}
+
+/* ── Standalone verse (not in unit) ──────────────── */
+.calvin-verse-standalone {
+    background: #1a5276;
+    color: #e8f0f6;
+    border-left: 4px solid #0085a1;
+    padding: 14px 18px;
+    margin: 20px 0;
+    border-radius: 4px;
+    line-height: 1.9;
+    font-size: 0.95em;
+    font-weight: bold;
+}
+
+/* ── Section heading (## 71:1-4) ─────────────────── */
+.calvin-section-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #0085a1;
+    border-bottom: 2px solid #0085a1;
+    padding-bottom: 6px;
+    margin: 0 0 0 0;
+}
 </style>
+
+<script>
+// ── Calvin content auto-formatting ──────────────────
+(function calvinFormat() {
+    var col = document.getElementById('calvin-col');
+    if (!col) return;
+    var container = col.querySelector('.post-container') || col;
+
+    // Find all direct children elements
+    var children = Array.from(container.children);
+    if (!children.length) return;
+
+    // Phase 1: Identify overview (text before first <h2> or <hr>)
+    var overviewNodes = [];
+    var firstH2 = null;
+    for (var i = 0; i < children.length; i++) {
+        var el = children[i];
+        if (el.tagName === 'H2' || (el.tagName === 'HR')) {
+            firstH2 = el;
+            break;
+        }
+        if (el.tagName === 'P' && el.textContent.trim().length > 20) {
+            overviewNodes.push(el);
+        }
+    }
+
+    // Wrap overview
+    if (overviewNodes.length > 0) {
+        var overviewDiv = document.createElement('div');
+        overviewDiv.className = 'calvin-overview';
+        overviewNodes[0].parentNode.insertBefore(overviewDiv, overviewNodes[0]);
+        overviewNodes.forEach(function(n) { overviewDiv.appendChild(n); });
+    }
+
+    // Phase 2: Find H2 sections and wrap verse+commentary in units
+    var h2s = container.querySelectorAll('h2');
+    h2s.forEach(function(h2) {
+        // Style the H2
+        h2.classList.add('calvin-section-title');
+
+        // Find the <strong>/<p> with bold text right after H2 = verse
+        var verseEl = null;
+        var commentaryEls = [];
+        var node = h2.nextElementSibling;
+
+        while (node) {
+            // Check if this is the next H2 or HR (section boundary)
+            if (node.tagName === 'H2' || node.tagName === 'HR') break;
+
+            // Check if this is a verse paragraph (contains <strong> as first/main child)
+            if (!verseEl && node.tagName === 'P') {
+                var strong = node.querySelector('strong');
+                if (strong && strong.textContent.length > node.textContent.length * 0.5) {
+                    verseEl = node;
+                    node = node.nextElementSibling;
+                    continue;
+                }
+            }
+
+            commentaryEls.push(node);
+            node = node.nextElementSibling;
+        }
+
+        if (verseEl) {
+            // Create unit wrapper
+            var unit = document.createElement('div');
+            unit.className = 'calvin-unit';
+
+            // Verse div
+            var verseDiv = document.createElement('div');
+            verseDiv.className = 'calvin-verse';
+            verseDiv.innerHTML = verseEl.innerHTML;
+
+            // Body div
+            var bodyDiv = document.createElement('div');
+            bodyDiv.className = 'calvin-unit-body';
+            commentaryEls.forEach(function(el) {
+                bodyDiv.appendChild(el);
+            });
+
+            unit.appendChild(verseDiv);
+            unit.appendChild(bodyDiv);
+
+            // Insert unit after H2, remove original verse paragraph
+            h2.after(unit);
+            verseEl.remove();
+
+            // Click to expand/collapse
+            if (verseDiv.scrollHeight <= verseDiv.clientHeight + 5) {
+                verseDiv.classList.add('fits');
+            }
+            verseDiv.addEventListener('click', function() {
+                if (this.classList.contains('fits')) return;
+                this.classList.toggle('expanded');
+            });
+        }
+    });
+})();
+</script>
+
 <link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
 <script src="{{ site.baseurl }}/js/typo-marker.js"></script>
