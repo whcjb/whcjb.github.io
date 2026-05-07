@@ -628,15 +628,32 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
         paras.forEach(function(p) {
             var text = p.innerHTML;
             // Match pattern: N．经文 at start of paragraph
-            var match = text.match(/^(\d+)．([^。]+。)/);
+            var match = text.match(/^(\d+)．(.*)/);
             if (match) {
                 var num = match[1];
-                var quote = match[2];
-                var rest = text.substring(match[0].length);
+                var afterNum = match[2];
+                var quote, rest;
+                // Check for explicit **bold** markers (from OCR or manual)
+                var boldMatch = afterNum.match(/^\s*\*\*(.+?)\*\*(.*)/);
+                if (boldMatch) {
+                    quote = boldMatch[1];
+                    rest = boldMatch[2];
+                } else {
+                    // Fallback: match up to first space or common break character
+                    // This gives a short keyword rather than full sentence
+                    var shortMatch = afterNum.match(/^([^\s，。；]{1,20})\s*(.*)/);
+                    if (shortMatch) {
+                        quote = shortMatch[1];
+                        rest = shortMatch[2];
+                    } else {
+                        quote = afterNum.substring(0, 10);
+                        rest = afterNum.substring(10);
+                    }
+                }
                 var wrapper = document.createElement('div');
                 wrapper.className = 'calvin-verse-anno';
                 wrapper.innerHTML = '<span class="calvin-verse-num">' + num + '</span>' +
-                    '<span class="calvin-verse-quote">' + quote + '</span>' +
+                    '<span class="calvin-verse-quote">' + quote + '</span> ' +
                     rest;
                 p.parentNode.replaceChild(wrapper, p);
             }
