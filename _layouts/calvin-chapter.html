@@ -632,29 +632,22 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
             if (match) {
                 var num = match[1];
                 var afterNum = match[2];
-                var quote, rest;
-                // Check for explicit **bold** markers (from OCR or manual)
-                var boldMatch = afterNum.match(/^\s*\*\*(.+?)\*\*(.*)/);
+                var quote = '', rest = afterNum;
+                // Check for explicit **bold** markers
+                var boldMatch = afterNum.match(/^\s*<strong>(.+?)<\/strong>(.*)/);
                 if (boldMatch) {
                     quote = boldMatch[1];
                     rest = boldMatch[2];
-                } else {
-                    // Fallback: match up to first space or common break character
-                    // This gives a short keyword rather than full sentence
-                    var shortMatch = afterNum.match(/^([^\s，。；]{1,20})\s*(.*)/);
-                    if (shortMatch) {
-                        quote = shortMatch[1];
-                        rest = shortMatch[2];
-                    } else {
-                        quote = afterNum.substring(0, 10);
-                        rest = afterNum.substring(10);
-                    }
                 }
                 var wrapper = document.createElement('div');
                 wrapper.className = 'calvin-verse-anno';
-                wrapper.innerHTML = '<span class="calvin-verse-num">' + num + '</span>' +
-                    '<span class="calvin-verse-quote">' + quote + '</span> ' +
-                    rest;
+                var html = '<span class="calvin-verse-num">' + num + '</span>';
+                if (quote) {
+                    html += '<span class="calvin-verse-quote">' + quote + '</span> ' + rest;
+                } else {
+                    html += ' ' + afterNum;
+                }
+                wrapper.innerHTML = html;
                 p.parentNode.replaceChild(wrapper, p);
             }
         });
