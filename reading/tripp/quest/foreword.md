@@ -7,7 +7,7 @@ book_title: 寻求更大的事
 section: "foreword"
 section_title: "自序　先求他的国"
 header-img: reading-tripp-foreword.jpg
-date: 2026-05-07 14:40
+date: 2026-05-07 14:43
 ---
 
 <p>有些书专门探讨一个特定主题；有些书提供某方面的生活技巧；还有些书记载个人的经验或生命历程；其他的书则写些好笑或悲伤的故事。</p>
