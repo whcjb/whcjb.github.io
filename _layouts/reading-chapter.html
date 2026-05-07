@@ -187,7 +187,7 @@ layout: default
 .tts-progress-fill {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #5B8DB8, #2C4A6E);
+    background: #5B8DB8;
     border-radius: 10px;
     transition: width 0.3s ease;
 }
@@ -339,6 +339,63 @@ aside.reading-footnotes sup {
     line-height: 1.8;
     margin: 0;
     text-indent: 0;
+}
+
+/* 挑战巅峰 card (章末挑战) */
+.reading-challenge-card {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 75%;
+    padding: 28px 24px;
+    border: 2px dashed #8B7355;
+    border-radius: 10px;
+    background: rgba(139,115,85,0.06);
+}
+.reading-challenge-card .challenge-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #8B7355;
+    letter-spacing: 0.2em;
+    margin-bottom: 16px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.reading-challenge-card .challenge-text {
+    font-size: 1.05em;
+    color: #5a4a35;
+    line-height: 2;
+    font-style: italic;
+}
+
+/* Q reflection card (章末反思问题) */
+.reading-q-card {
+    text-align: center;
+    margin: 40px auto;
+    max-width: 70%;
+    padding: 32px 24px;
+    background: radial-gradient(circle at center, rgba(184,134,11,0.08) 0%, transparent 70%);
+    border: 1px dashed #B8860B;
+    border-radius: 12px;
+    position: relative;
+}
+.reading-q-card .q-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #e8dcc8 0%, #d4c4a8 100%);
+    color: #6b5a3e;
+    font-family: Georgia, serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.reading-q-card .q-text {
+    font-size: 1.1em;
+    color: #5a4a35;
+    font-style: italic;
+    line-height: 1.8;
 }
 
 /* Bilingual block (Calvin commentaries) */

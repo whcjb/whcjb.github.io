@@ -437,7 +437,7 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
 .calvin-overview {
     margin: 0 0 28px 0;
     padding: 20px 24px;
-    background: linear-gradient(135deg, var(--reading-bg-color, #eef4f8) 0%, #e0ecf4 100%);
+    background: var(--reading-bg-color, #eef4f8);
     border: 1px solid #b8d0e0;
     border-top: 4px solid #0085a1;
     border-radius: 0 0 8px 8px;
@@ -493,7 +493,7 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
     font-family: sans-serif;
     font-weight: normal;
     padding-top: 4px;
-    background: linear-gradient(transparent 0%, #1a5276 60%);
+    background: #1a5276;
     margin: -16px -18px 0;
     padding: 20px 18px 6px;
     position: relative;
@@ -530,6 +530,62 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
     padding-bottom: 6px;
     margin: 0 0 0 0;
 }
+
+/* ── Footnote styling ──────────────────────────────── */
+.calvin-footnote {
+    background: #f0f4f7;
+    border-left: 3px solid #0085a1;
+    padding: 8px 14px;
+    margin: 10px 0;
+    font-size: 0.85em;
+    color: #4a6a7a;
+    line-height: 1.8;
+    border-radius: 0 4px 4px 0;
+}
+.calvin-footnote .fn-marker {
+    display: inline-block;
+    background: #0085a1;
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: bold;
+    width: 1.4em;
+    height: 1.4em;
+    line-height: 1.4em;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+/* ── Verse annotation with number label ──────────── */
+.calvin-verse-anno {
+    border-top: 1px solid #d0dce8;
+    padding-top: 14px;
+    margin-top: 16px;
+}
+.calvin-verse-anno:first-child {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+.calvin-verse-num {
+    display: inline-block;
+    background: #0085a1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.85em;
+    padding: 1px 8px;
+    border-radius: 3px;
+    margin-right: 6px;
+    min-width: 1.5em;
+    text-align: center;
+}
+.calvin-verse-quote {
+    display: inline;
+    color: #1a5276;
+    font-weight: bold;
+    font-size: 0.95em;
+}
 </style>
 
 <script>
@@ -564,6 +620,68 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
         overviewNodes[0].parentNode.insertBefore(overviewDiv, overviewNodes[0]);
         overviewNodes.forEach(function(n) { overviewDiv.appendChild(n); });
     }
+
+    // Phase 1b: Process verse annotations (N．经文引用。注释内容)
+    // within .calvin-unit-body paragraphs
+    function processVerseAnnotations(bodyEl) {
+        var paras = bodyEl.querySelectorAll('p');
+        paras.forEach(function(p) {
+            var text = p.innerHTML;
+            // Match pattern: N．经文 at start of paragraph
+            var match = text.match(/^(\d+)．([^。]+。)/);
+            if (match) {
+                var num = match[1];
+                var quote = match[2];
+                var rest = text.substring(match[0].length);
+                var wrapper = document.createElement('div');
+                wrapper.className = 'calvin-verse-anno';
+                wrapper.innerHTML = '<span class="calvin-verse-num">' + num + '</span>' +
+                    '<span class="calvin-verse-quote">' + quote + '</span>' +
+                    rest;
+                p.parentNode.replaceChild(wrapper, p);
+            }
+        });
+    }
+
+    // Phase 1c: Detect and style footnotes
+    // Footnotes: paragraphs starting with circled numbers (①②...) that contain
+    // translator/editor notes (——*注) or foreign language quotes
+    var circledRe = /^[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟]/;
+    var footnoteRe = /——.{0,6}注|——中文|——编者/;
+    var foreignQuoteRe = /^[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑲⑳]\s*[""\u201c]/;
+    function processFootnotes(el) {
+        var paras = el.querySelectorAll('p');
+        paras.forEach(function(p) {
+            var text = p.textContent;
+            if (!circledRe.test(text)) return;
+            var isFootnote = footnoteRe.test(text) || foreignQuoteRe.test(text);
+            if (!isFootnote && text.length < 120 && /——/.test(text)) isFootnote = true;
+            if (isFootnote) {
+                var html = p.innerHTML;
+                var marker = html.charAt(0);
+                var rest = html.substring(1).replace(/^\s*/, '');
+                var div = document.createElement('div');
+                div.className = 'calvin-footnote';
+                div.innerHTML = '<span class="fn-marker">' + marker + '</span>' + rest;
+                p.parentNode.replaceChild(div, p);
+            }
+        });
+        // Also handle lines starting with * that are footnotes (e.g. "* 此中译本...")
+        var allP = el.querySelectorAll('p');
+        allP.forEach(function(p) {
+            var text = p.textContent.trim();
+            if (/^\*\s/.test(text) && footnoteRe.test(text)) {
+                var html = p.innerHTML.replace(/^\*\s*/, '');
+                var div = document.createElement('div');
+                div.className = 'calvin-footnote';
+                div.innerHTML = '<span class="fn-marker">*</span>' + html;
+                p.parentNode.replaceChild(div, p);
+            }
+        });
+    }
+
+    // Run footnote detection on entire container before structural formatting
+    processFootnotes(container);
 
     // Phase 2: Find H2 sections and wrap verse+commentary in units
     var h2s = container.querySelectorAll('h2');
@@ -613,6 +731,7 @@ function ttsUpdateUI(s){ var p=document.getElementById('ttsPlayBtn'),a=document.
 
             unit.appendChild(verseDiv);
             unit.appendChild(bodyDiv);
+            processVerseAnnotations(bodyDiv);
 
             // Insert unit after H2, remove original verse paragraph
             h2.after(unit);
