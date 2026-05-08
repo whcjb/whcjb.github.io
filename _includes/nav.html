@@ -150,42 +150,51 @@
     color: #0085a1 !important;
 }
 
-/* Hide-on-scroll-down / show-on-scroll-up */
-.navbar-custom {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.navbar-custom.nav-hidden {
-    transform: translateY(-100%);
-    box-shadow: none !important;
+/* Hide-on-scroll-down / show-on-scroll-up — mobile only */
+@media only screen and (max-width: 1169px) {
+    .navbar-custom {
+        top: 0;
+        -webkit-transition: top 0.3s ease;
+        transition: top 0.3s ease;
+    }
+    .navbar-custom.nav-hidden {
+        top: -60px !important;
+    }
 }
 </style>
 
 <script>
 (function() {
-    var lastY = 0;
     var navbar = document.querySelector('.navbar-custom');
     if (!navbar) return;
-    // Show navbar at top of page always
-    window.addEventListener('scroll', function() {
-        var y = window.scrollY || window.pageYOffset;
-        if (y < 60) {
-            // Near top: always show
+
+    var lastY   = window.scrollY || window.pageYOffset;
+    var ticking = false;
+
+    function update(y) {
+        if (y < 80) {
             navbar.classList.remove('nav-hidden');
-        } else if (y > lastY + 4) {
-            // Scrolling down: hide
+        } else if (y > lastY + 6) {
             navbar.classList.add('nav-hidden');
-            // Also close mobile menu if open
-            var nb = document.querySelector('#huxblog_navbar');
+            // close mobile dropdown if open
+            var nb = document.getElementById('huxblog_navbar');
             if (nb && nb.className.indexOf('in') >= 0) {
                 nb.className = ' ';
-                var collapse = document.querySelector('.navbar-collapse');
-                if (collapse) collapse.style.height = '0px';
+                var col = document.querySelector('.navbar-collapse');
+                if (col) col.style.height = '0px';
             }
-        } else if (y < lastY - 4) {
-            // Scrolling up: show
+        } else if (y < lastY - 6) {
             navbar.classList.remove('nav-hidden');
         }
         lastY = y;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function() {
+        if (ticking) return;
+        ticking = true;
+        var y = window.scrollY || window.pageYOffset;
+        requestAnimationFrame(function() { update(y); });
     }, { passive: true });
 })();
 </script>
