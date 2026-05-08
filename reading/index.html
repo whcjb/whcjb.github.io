@@ -17,133 +17,179 @@ header-img: reading-bg-main.jpg
     </div>
 </header>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-            <p class="text-muted" style="margin-bottom:36px;">
-                收录改革宗传统经典著作，供教会肢体研读。
-            </p>
-
-            <!-- ── 约翰·慕理 ── -->
-            <div class="reading-author-block">
-                <div class="reading-author-name">
-                    约翰·慕理
-                    <span class="reading-author-en">John Murray</span>
-                    <span class="reading-author-years">1898–1975</span>
-                </div>
-                <div class="reading-author-desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</div>
-
-                <div class="reading-books">
-                    <a href="{{ site.baseurl }}/reading/murray/principles/" class="reading-book-item">
-                        <div class="reading-book-item__title">正直生活要道</div>
-                        <div class="reading-book-item__sub">圣经伦理面面观 · Principles of Conduct · 1957年 · 译：乔兰山以姐</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ── 保罗·区普 ── -->
-            <div class="reading-author-block">
-                <div class="reading-author-name">
-                    保罗·区普
-                    <span class="reading-author-en">Paul David Tripp</span>
-                    <span class="reading-author-years">1950–</span>
-                </div>
-                <div class="reading-author-desc">美国宾州威斯敏斯特神学院兼职教授，牧者与演说家</div>
-
-                <div class="reading-books">
-                    <a href="{{ site.baseurl }}/reading/tripp/quest/" class="reading-book-item">
-                        <div class="reading-book-item__title">寻求更大的事</div>
-                        <div class="reading-book-item__sub">神的国？我的国？· A Quest for More · 2007年 · 译：陆钿孙铁男</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- ── 约翰·加尔文 ── -->
-            <div class="reading-author-block">
-                <div class="reading-author-name">
-                    约翰·加尔文
-                    <span class="reading-author-en">John Calvin</span>
-                    <span class="reading-author-years">1509–1564</span>
-                </div>
-                <div class="reading-author-desc">法国改革宗神学家，日内瓦教会领袖，加尔文主义奠基人</div>
-
-                <div class="reading-books">
-                    <a href="{{ site.baseurl }}/reading/calvin/romans/" class="reading-book-item">
-                        <div class="reading-book-item__title">加尔文罗马书注释</div>
-                        <div class="reading-book-item__sub">Commentary on Romans · 译：赵中辉、宋华忠</div>
-                    </a>
-                    <a href="{{ site.baseurl }}/reading/calvin/colossians/" class="reading-book-item">
-                        <div class="reading-book-item__title">加尔文歌罗西书注释</div>
-                        <div class="reading-book-item__sub">Commentary on Colossians · 译：陈凤</div>
-                    </a>
-                    <a href="{{ site.baseurl }}/reading/calvin/gospel_harmony/" class="reading-book-item">
-                        <div class="reading-book-item__title">加尔文福音书注释</div>
-                        <div class="reading-book-item__sub">Commentary on Matthew, Mark, Luke · Volume 2</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 新增作者时在此处继续追加 reading-author-block -->
-
-        </div>
-    </div>
-</div>
-
 <style>
-.reading-author-block {
-    margin-bottom: 40px;
-    border-top: 3px solid #5B8DB8;
-    padding-top: 16px;
+.reading-page { max-width: 780px; margin: 0 auto; padding: 32px 16px 60px; }
+.shelf-section { margin-bottom: 40px; }
+.shelf-author-row { display:flex; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+.shelf-author-name { font-size:16px; font-weight:bold; color:#2C3E50; }
+.shelf-author-en   { font-size:12px; color:#999; }
+.shelf-author-desc { font-size:12px; color:#bbb; width:100%; margin-top:1px; }
+.bookshelf-wrap {
+    background: linear-gradient(180deg,#f7f2e8 0%,#ece4d0 100%);
+    border-radius: 6px 6px 0 0;
+    padding: 16px 16px 0;
+    display: flex; align-items: flex-end; gap: 5px; flex-wrap: wrap;
+    min-height: 180px;
 }
-.reading-author-name {
-    font-size: 18px;
-    font-weight: bold;
-    color: #2C4A6E;
-    margin-bottom: 4px;
+.shelf-board {
+    height: 13px;
+    background: linear-gradient(180deg,#A07830 0%,#7A5518 100%);
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
-.reading-author-en {
-    font-size: 13px;
-    font-weight: normal;
-    color: #5B8DB8;
-    margin-left: 8px;
+.book-spine {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    width: 88px; height: 280px;
+    border-radius: 3px 2px 2px 3px;
+    writing-mode: vertical-rl; text-orientation: mixed;
+    padding: 10px 0; text-decoration: none !important;
+    position: relative; gap: 6px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2), inset -3px 0 6px rgba(0,0,0,0.1);
+    overflow: visible; flex-shrink: 0; text-align: center;
 }
-.reading-author-years {
-    font-size: 12px;
-    font-weight: normal;
-    color: #999;
-    margin-left: 6px;
+.spine-title {
+    font-size: 16px; font-weight: bold; line-height: 1.3; letter-spacing: 0.05em;
 }
-.reading-author-desc {
-    font-size: 13px;
-    color: #777;
-    margin-bottom: 14px;
+.spine-meta {
+    font-size: 11px; opacity: 0.72; line-height: 1.3; letter-spacing: 0.02em;
 }
-.reading-books {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+.book-spine::before {
+    content:''; position:absolute; left:0; top:0; bottom:0; width:5px;
+    background:rgba(255,255,255,0.2); border-radius:3px 0 0 3px;
 }
-.reading-book-item {
-    display: block;
-    padding: 10px 16px;
-    background: #EBF3FA;
-    border-left: 4px solid #5B8DB8;
-    border-radius: 2px;
+.book-spine:hover { transform:translateY(-12px); box-shadow:4px 0 18px rgba(0,0,0,0.3),inset -3px 0 6px rgba(0,0,0,0.1); z-index:10; }
+.spine-tip {
+    display: none; position: absolute;
+    bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+    background: rgba(28,28,28,0.96); color: #fff;
+    font-size: 12px; font-weight: normal;
+    writing-mode: horizontal-tb; white-space: normal; text-align: center;
+    padding: 7px 12px; border-radius: 5px; z-index: 100;
+    pointer-events: none; line-height: 1.7;
+    min-width: 120px; max-width: 200px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+.spine-tip::after {
+    content:''; position:absolute; top:100%; left:50%; transform:translateX(-50%);
+    border:6px solid transparent; border-top-color:rgba(28,28,28,0.96);
+}
+.book-spine:hover .spine-tip { display: block; }
+
+/* ── Author index bar ── */
+.author-index {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 32px;
+}
+.author-tag {
+    display: inline-flex; flex-direction: column;
+    padding: 8px 14px; border-radius: 6px;
+    border: 1.5px solid #ddd;
+    background: #fafafa;
     text-decoration: none !important;
-    transition: background 0.15s;
+    transition: border-color .15s, background .15s, transform .15s;
+    cursor: pointer;
 }
-.reading-book-item:hover { background: #5B8DB8; border-left-color: #2C4A6E; }
-.reading-book-item__title {
-    font-size: 15px;
-    font-weight: bold;
-    color: #2C4A6E;
+.author-tag:hover {
+    border-color: #C9922A; background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
 }
-.reading-book-item:hover .reading-book-item__title { color: #fff; }
-.reading-book-item__sub {
-    font-size: 12px;
-    color: #888;
-    margin-top: 3px;
-}
-.reading-book-item:hover .reading-book-item__sub { color: rgba(255,255,255,0.8); }
+.author-tag-cn  { font-size: 14px; font-weight: bold; color: #2C3E50; }
+.author-tag-en  { font-size: 11px; color: #aaa; margin-top: 2px; }
 </style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="reading-page" style="padding-top:0;">
+
+        <!-- 作者索引 -->
+        <div style="font-size:13px;font-weight:bold;letter-spacing:.1em;color:#999;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid #f0ebe3;">作者列表</div>
+        <div class="author-index">
+          <a class="author-tag" href="#murray">
+            <span class="author-tag-cn">约翰·慕理</span>
+            <span class="author-tag-en">John Murray</span>
+          </a>
+          <a class="author-tag" href="#tripp">
+            <span class="author-tag-cn">保罗·区普</span>
+            <span class="author-tag-en">Paul David Tripp</span>
+          </a>
+          <a class="author-tag" href="#calvin">
+            <span class="author-tag-cn">约翰·加尔文</span>
+            <span class="author-tag-en">John Calvin</span>
+          </a>
+        </div>
+
+        <!-- 约翰·慕理 -->
+        <div class="shelf-section" id="murray">
+          <div class="shelf-author-row">
+            <span class="shelf-author-name">约翰·慕理</span>
+            <span class="shelf-author-en">John Murray · 1898–1975</span>
+            <span class="shelf-author-desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</span>
+          </div>
+          <div class="bookshelf-wrap">
+            <a href="{{ site.baseurl }}/reading/murray/principles/" class="book-spine"
+               style="background:linear-gradient(155deg,#2E5D8E,#1A3A5C);color:#E8F4FF;">
+              <span class="spine-title">正直生活要道</span>
+              <span class="spine-meta">圣经伦理面面观<br>Principles of Conduct<br>1957 · 译：乔兰山以姐</span>
+              <span class="spine-tip">正直生活要道<br>圣经伦理面面观<br>Principles of Conduct · 1957<br>译：乔兰山以姐</span>
+            </a>
+          </div>
+          <div class="shelf-board"></div>
+        </div>
+
+        <!-- 保罗·区普 -->
+        <div class="shelf-section" id="tripp">
+          <div class="shelf-author-row">
+            <span class="shelf-author-name">保罗·区普</span>
+            <span class="shelf-author-en">Paul David Tripp · 1950–</span>
+            <span class="shelf-author-desc">威斯敏斯特神学院兼职教授，牧者与演说家</span>
+          </div>
+          <div class="bookshelf-wrap">
+            <a href="{{ site.baseurl }}/reading/tripp/quest/" class="book-spine"
+               style="background:linear-gradient(155deg,#8B3A8B,#5C1F5C);color:#F5E8FF;">
+              <span class="spine-title">寻求更大的事</span>
+              <span class="spine-meta">神的国？我的国？<br>A Quest for More<br>2007 · 译：陆钿孙铁男</span>
+              <span class="spine-tip">寻求更大的事<br>神的国？我的国？<br>A Quest for More · 2007<br>译：陆钿孙铁男</span>
+            </a>
+          </div>
+          <div class="shelf-board"></div>
+        </div>
+
+        <!-- 约翰·加尔文 -->
+        <div class="shelf-section" id="calvin">
+          <div class="shelf-author-row">
+            <span class="shelf-author-name">约翰·加尔文</span>
+            <span class="shelf-author-en">John Calvin · 1509–1564</span>
+            <span class="shelf-author-desc">法国改革宗神学家，日内瓦教会领袖，加尔文主义奠基人</span>
+          </div>
+          <div class="bookshelf-wrap">
+            <a href="{{ site.baseurl }}/reading/calvin/romans/" class="book-spine"
+               style="background:linear-gradient(155deg,#1B6B20,#0D3B10);color:#E8F5E9;">
+              <span class="spine-title">罗马书注释</span>
+              <span class="spine-meta">Commentary on Romans<br>译：赵中辉、宋华忠</span>
+              <span class="spine-tip">加尔文罗马书注释<br>Commentary on Romans<br>译：赵中辉、宋华忠</span>
+            </a>
+            <a href="{{ site.baseurl }}/reading/calvin/colossians/" class="book-spine"
+               style="background:linear-gradient(155deg,#2E7D32,#1B5E20);color:#F1F8E9;">
+              <span class="spine-title">歌罗西书注释</span>
+              <span class="spine-meta">Commentary on<br>Colossians<br>译：陈凤</span>
+              <span class="spine-tip">加尔文歌罗西书注释<br>Commentary on Colossians<br>译：陈凤</span>
+            </a>
+            <a href="{{ site.baseurl }}/reading/calvin/gospel_harmony/" class="book-spine"
+               style="background:linear-gradient(155deg,#558B2F,#2E7D32);color:#F9FBE7;">
+              <span class="spine-title">福音书注释</span>
+              <span class="spine-meta">Commentary on<br>Matthew, Mark, Luke<br>Vol.2</span>
+              <span class="spine-tip">加尔文福音书注释<br>Commentary on Matthew, Mark, Luke · Vol.2</span>
+            </a>
+          </div>
+          <div class="shelf-board"></div>
+        </div>
+
+        <!-- 新增作者：在此处追加 shelf-section -->
+
+      </div>
+    </div>
+  </div>
+</div>

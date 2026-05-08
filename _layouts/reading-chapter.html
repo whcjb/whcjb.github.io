@@ -857,3 +857,57 @@ function ttsUpdateUI(state) {
 </script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
 <script src="{{ site.baseurl }}/js/typo-marker.js"></script>
+
+<style>
+#reading-resume-bar {
+    display: none;
+    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+    background: rgba(44,74,110,0.95); color: #fff;
+    font-size: 13px; padding: 10px 20px; border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    z-index: 9999; white-space: nowrap;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+#reading-resume-bar:hover { background: rgba(44,74,110,1); }
+</style>
+<div id="reading-resume-bar">↩ 继续上次阅读</div>
+
+<script>
+(function() {
+    var SCROLL_PREFIX = 'reading-scroll:';
+    var key = SCROLL_PREFIX + window.location.pathname;
+    var saved = parseInt(localStorage.getItem(key) || '0', 10);
+    var bar = document.getElementById('reading-resume-bar');
+    var scrollTimer = null;
+    var resumed = false;
+
+    // Save scroll position (debounced)
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimer);
+        scrollTimer = setTimeout(function() {
+            var pos = window.scrollY || window.pageYOffset;
+            if (pos > 100) {
+                localStorage.setItem(key, pos);
+            } else {
+                localStorage.removeItem(key);
+            }
+        }, 400);
+    });
+
+    // Show resume bar if there's a saved position > 200px
+    if (saved > 200) {
+        bar.style.display = 'block';
+        bar.addEventListener('click', function() {
+            bar.style.opacity = '0';
+            setTimeout(function() { bar.style.display = 'none'; }, 300);
+            window.scrollTo({ top: saved, behavior: 'smooth' });
+        });
+        // Auto-hide after 8 seconds
+        setTimeout(function() {
+            bar.style.opacity = '0';
+            setTimeout(function() { bar.style.display = 'none'; }, 300);
+        }, 8000);
+    }
+})();
+</script>
