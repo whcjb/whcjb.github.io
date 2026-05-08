@@ -120,32 +120,40 @@ self.addEventListener('fetch', event => {
 
   // Skip some of cross-origin requests, like those for Google Analytics.
   if (HOSTNAME_WHITELIST.indexOf(new URL(event.request.url).hostname) > -1) {
-    
-    // Redirect in SW manually fixed github pages 404s on repo?blah 
-    if(shouldRedirect(event.request)){
+
+    // Redirect in SW manually fixed github pages 404s on repo?blah
+    if (shouldRedirect(event.request)) {
       event.respondWith(Response.redirect(getRedirectUrl(event.request)))
       return;
     }
 
-    // Stale-while-revalidate 
-    // similar to HTTP's stale-while-revalidate: https://www.mnot.net/blog/2007/12/12/stale
-    // Upgrade from Jake's to Surma's: https://gist.github.com/surma/eb441223daaedf880801ad80006389f1
+    // HTML navigation requests: network-first (always fresh), fall back to cache offline
+    if (isNavigationReq(event.request)) {
+      event.respondWith(
+        fetch(event.request, {cache: "no-store"})
+          .then(resp => {
+            // Update cache with fresh response
+            const copy = resp.clone();
+            caches.open(RUNTIME).then(cache => cache.put(event.request, copy));
+            return resp;
+          })
+          .catch(_ => caches.match(event.request).then(r => r || caches.match(‘offline.html’)))
+      );
+      return;
+    }
+
+    // Static assets: stale-while-revalidate
     const cached = caches.match(event.request);
     const fixedUrl = getFixedUrl(event.request);
     const fetched = fetch(fixedUrl, {cache: "no-store"});
     const fetchedCopy = fetched.then(resp => resp.clone());
 
-    // Call respondWith() with whatever we get first.
-    // If the fetch fails (e.g disconnected), wait for the cache.
-    // If there’s nothing in cache, wait for the fetch. 
-    // If neither yields a response, return offline pages.
     event.respondWith(
       Promise.race([fetched.catch(_ => cached), cached])
         .then(resp => resp || fetched)
-        .catch(_ => caches.match('offline.html'))
+        .catch(_ => caches.match(‘offline.html’))
     );
 
-    // Update the cache with the version we fetched (only for ok status)
     event.waitUntil(
       Promise.all([fetchedCopy, caches.open(RUNTIME)])
         .then(([response, cache]) => response.ok && cache.put(event.request, response))
