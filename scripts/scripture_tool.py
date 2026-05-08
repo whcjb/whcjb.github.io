@@ -196,7 +196,14 @@ def process_block(block: str) -> str:
     bible_text = "".join(verses)
     before_last_ref = inner[:last_match.start()].strip()
 
-    if verses and before_last_ref and _char_overlap(before_last_ref, bible_text) > 0.42:
+    # A quote wrapped in 「」 is an inline citation, not a standalone block.
+    # Block quotes in Chinese Reformed books are NOT wrapped in 「」 marks.
+    # Key heuristic: if before_last_ref ends with a closing quote mark (」or 』),
+    # the citation is embedded inline in narrative text.
+    stripped_before = before_last_ref.strip()
+    is_inline_quoted = bool(re.search(r'[」』][。？！…]*$', stripped_before))
+
+    if verses and before_last_ref and not is_inline_quoted and _char_overlap(before_last_ref, bible_text) > 0.42:
         # Standalone block: find if there is any intro text before the scripture
         # Look for a natural sentence boundary before the quote
         # Heuristic: if before_last_ref starts with 「 it might have intro + quote
