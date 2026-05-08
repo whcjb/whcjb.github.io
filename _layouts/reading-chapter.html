@@ -397,32 +397,64 @@ blockquote.reading-verse p {
     margin: 0;
 }
 
-/* Inline footnote (注1 style) */
-p.reading-footnote {
-    font-size: 0.82em;
-    color: #888;
-    border-top: 1px solid #ddd;
-    margin-top: 32px;
-    padding-top: 6px;
-    text-indent: 0;
-    line-height: 1.7;
-}
+/* Inline footnote placeholder — hidden until JS moves it to bottom */
+p.reading-footnote { display: none; }
 
+/* ── Footnote section at page bottom ── */
 aside.reading-footnotes {
-    margin-top: 40px;
-    border-top: 1px solid #ddd;
-    padding-top: 12px;
-    font-size: 0.85em;
+    margin-top: 48px;
+    padding-top: 0;
+    font-size: 0.82em;
     color: #666;
-    line-height: 1.6;
+    line-height: 1.75;
 }
-aside.reading-footnotes p {
-    margin-bottom: 0.5em;
+.fn-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    color: #9b7d4a;
+    font-size: 0.85em;
+    letter-spacing: 0.15em;
+}
+.fn-section-title::before,
+.fn-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #d4b896;
+}
+aside.reading-footnotes .fn-item {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 8px;
     text-indent: 0;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.03);
+    transition: background 0.15s;
 }
-aside.reading-footnotes sup {
+aside.reading-footnotes .fn-item:hover {
+    background: rgba(184,134,11,0.07);
+}
+aside.reading-footnotes .fn-num {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    background: #9b7d4a;
+    color: #fff;
+    font-size: 0.78em;
     font-weight: bold;
-    margin-right: 4px;
+    border-radius: 50%;
+    line-height: 1;
+}
+aside.reading-footnotes .fn-text {
+    flex: 1;
+    color: #555;
 }
 
 /* 超越心语 quote box (tripp/quest) */
@@ -458,31 +490,6 @@ aside.reading-footnotes sup {
     text-indent: 0;
 }
 
-/* Footnote styling (reading pages) */
-.reading-footnote {
-    background: rgba(0,0,0,0.05);
-    border-left: 3px solid #8B7355;
-    padding: 8px 14px;
-    margin: 10px 0;
-    font-size: 0.82em;
-    color: #666;
-    line-height: 1.7;
-    border-radius: 0 4px 4px 0;
-}
-.reading-footnote .fn-marker {
-    display: inline-block;
-    background: #8B7355;
-    color: #fff;
-    font-size: 0.8em;
-    font-weight: bold;
-    width: 1.4em;
-    height: 1.4em;
-    line-height: 1.4em;
-    text-align: center;
-    border-radius: 50%;
-    margin-right: 4px;
-    vertical-align: middle;
-}
 
 /* 挑战巅峰 card (章末挑战) */
 .reading-challenge-card {
@@ -917,7 +924,7 @@ function ttsUpdateUI(state) {
     });
 })();
 
-// Move footnotes to bottom of page
+// Move footnotes to bottom of page with styled markup
 (function() {
     var content = document.querySelector('.reading-content');
     var hr = document.querySelector('#reading-col > hr');
@@ -926,14 +933,28 @@ function ttsUpdateUI(state) {
     if (!fns.length) return;
     var aside = document.createElement('aside');
     aside.className = 'reading-footnotes';
-    var title = document.createElement('p');
-    title.style.cssText = 'font-weight:bold; color:#666; margin-bottom:8px;';
-    title.textContent = '注释';
-    aside.appendChild(title);
-    fns.forEach(function(fn) {
-        var p = document.createElement('p');
-        p.innerHTML = fn.innerHTML;
-        aside.appendChild(p);
+    // Section title with flanking lines
+    var titleDiv = document.createElement('div');
+    titleDiv.className = 'fn-section-title';
+    titleDiv.textContent = '注 釋';
+    aside.appendChild(titleDiv);
+    fns.forEach(function(fn, i) {
+        var raw = fn.textContent.trim();
+        // Parse leading 註N / 注N → number badge + body text
+        var m = raw.match(/^[註注](\d+)\s*/);
+        var num = m ? m[1] : String(i + 1);
+        var body = m ? raw.slice(m[0].length) : raw;
+        var item = document.createElement('div');
+        item.className = 'fn-item';
+        var badge = document.createElement('span');
+        badge.className = 'fn-num';
+        badge.textContent = num;
+        var text = document.createElement('span');
+        text.className = 'fn-text';
+        text.textContent = body;
+        item.appendChild(badge);
+        item.appendChild(text);
+        aside.appendChild(item);
         fn.remove();
     });
     hr.insertAdjacentElement('afterend', aside);
