@@ -310,24 +310,37 @@ layout: default
     background: rgba(139,115,85,0.04);
 }
 
-/* Block-level scripture quote (full verse paragraph) */
+/* Block-level scripture quote — looked up from 和合本 */
 .scripture-block {
-    margin: 16px 0;
-    padding: 14px 20px;
-    background: rgba(139,69,19,0.06);
+    margin: 24px 0 24px 1.5em;
+    padding: 14px 20px 10px;
+    background: rgba(184,134,11,0.06);
     border-left: 4px solid #B8860B;
     border-radius: 0 6px 6px 0;
-    color: #5a3e1b;
-    font-style: italic;
-    line-height: 2;
+    line-height: 2.1;
+    font-family: "STSong", "SimSun", "宋体", serif;
+}
+.scripture-block .scripture-text {
+    display: block;
+    color: #3a2a10;
+    font-size: 0.97em;
+}
+.scripture-block .sv {
+    display: block;
 }
 .scripture-block .scripture-ref {
     display: block;
     text-align: right;
-    font-size: 0.85em;
+    font-size: 0.82em;
     color: #8B7355;
     margin-top: 8px;
     font-style: normal;
+    letter-spacing: 0.03em;
+}
+.scripture-block .scripture-note {
+    font-size: 0.85em;
+    color: #aaa;
+    margin-left: 8px;
 }
 
 .reading-list-item {
