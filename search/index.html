@@ -205,7 +205,7 @@ function renderResults(items, keywords) {
         var item = r.item;
         var kws  = r.matched.length ? r.matched : keywords;
         var excerpt = '';
-        if (item.t === 'post') {
+        if (item.body) {
             var raw = getExcerpt(item.body, kws, 150);
             excerpt = '<div class="result-excerpt">' + highlightAll(raw, kws) + '</div>';
         }
@@ -215,6 +215,9 @@ function renderResults(items, keywords) {
             meta = '<div class="result-meta">' + item.date + (tags ? '　' + escHtml(tags) : '') + '</div>';
         } else if ((item.t === 'mhenry' || item.t === 'calvin') && item.book) {
             meta = '<div class="result-meta">' + escHtml(item.book) + '</div>';
+        } else if (item.t === 'reading') {
+            var parts = [item.book, item.author].filter(Boolean).map(escHtml);
+            if (parts.length) meta = '<div class="result-meta">' + parts.join(' · ') + '</div>';
         }
         return '<div class="search-result">'
             + '<a href="' + item.url + '">'
