@@ -149,4 +149,43 @@
     background: #f5f5f5;
     color: #0085a1 !important;
 }
+
+/* Hide-on-scroll-down / show-on-scroll-up */
+.navbar-custom {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-custom.nav-hidden {
+    transform: translateY(-100%);
+    box-shadow: none !important;
+}
 </style>
+
+<script>
+(function() {
+    var lastY = 0;
+    var navbar = document.querySelector('.navbar-custom');
+    if (!navbar) return;
+    // Show navbar at top of page always
+    window.addEventListener('scroll', function() {
+        var y = window.scrollY || window.pageYOffset;
+        if (y < 60) {
+            // Near top: always show
+            navbar.classList.remove('nav-hidden');
+        } else if (y > lastY + 4) {
+            // Scrolling down: hide
+            navbar.classList.add('nav-hidden');
+            // Also close mobile menu if open
+            var nb = document.querySelector('#huxblog_navbar');
+            if (nb && nb.className.indexOf('in') >= 0) {
+                nb.className = ' ';
+                var collapse = document.querySelector('.navbar-collapse');
+                if (collapse) collapse.style.height = '0px';
+            }
+        } else if (y < lastY - 4) {
+            // Scrolling up: show
+            navbar.classList.remove('nav-hidden');
+        }
+        lastY = y;
+    }, { passive: true });
+})();
+</script>
