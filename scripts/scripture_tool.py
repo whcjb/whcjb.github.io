@@ -226,6 +226,47 @@ def process_block(block: str) -> str:
     return f"<p>{new_inner}</p>"
 
 
+def _merge_refs(ref1: str, ref2: str) -> str:
+    """Combine two scripture refs if same book+chapter, else join with ；"""
+    m1 = re.match(r'^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$', ref1.strip())
+    m2 = re.match(r'^(.+?)\s+(\d+):(\d+)(?:-(\d+))?$', ref2.strip())
+    if m1 and m2 and m1.group(1) == m2.group(1) and m1.group(2) == m2.group(2):
+        v_end = m2.group(4) or m2.group(3)
+        return f"{m1.group(1)} {m1.group(2)}:{m1.group(3)}-{v_end}"
+    return ref1 + "；" + ref2
+
+
+def _merge_adjacent_scripture_blocks(html: str) -> str:
+    """Merge consecutive scripture-block divs (same or adjacent chapters) into one."""
+    pattern = re.compile(
+        r'<div class="scripture-block">\s*\n'
+        r'<div class="scripture-text">(.*?)</div>\s*\n'
+        r'<div class="scripture-ref">([^<]+)</div>\s*\n'
+        r'</div>'
+        r'\s*\n\n\s*'
+        r'<div class="scripture-block">\s*\n'
+        r'<div class="scripture-text">(.*?)</div>\s*\n'
+        r'<div class="scripture-ref">([^<]+)</div>\s*\n'
+        r'</div>',
+        re.DOTALL
+    )
+    def merge(m):
+        text1, ref1, text2, ref2 = m.group(1), m.group(2), m.group(3), m.group(4)
+        combined_ref = _merge_refs(ref1.strip(), ref2.strip())
+        combined_text = text1.strip() + "\n" + text2.strip()
+        return (f'<div class="scripture-block">\n'
+                f'<div class="scripture-text">{combined_text}</div>\n'
+                f'<div class="scripture-ref">{combined_ref}</div>\n'
+                f'</div>')
+    # Apply repeatedly (handles 3+ consecutive blocks)
+    while True:
+        new_html = pattern.sub(merge, html)
+        if new_html == html:
+            break
+        html = new_html
+    return html
+
+
 def _clean_ocr_artifacts(html: str) -> str:
     """
     Fix common OCR column-break artifacts in HTML:
