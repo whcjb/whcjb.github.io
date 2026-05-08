@@ -17,6 +17,9 @@
     <meta name="keywords" content="{{ site.keyword }}">
     {% endif %}
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
 
     {% if page.layout == 'calvin-chapter' %}
     <title>{{ page.book_name }}第{{ page.chapter }}章 - 加尔文圣经注释 - {{ site.SEOTitle }}</title>
@@ -91,6 +94,18 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <!-- Unregister any service worker and clear all caches -->
+    <script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+            regs.forEach(function(r) { r.unregister(); });
+        });
+        caches.keys().then(function(keys) {
+            keys.forEach(function(k) { caches.delete(k); });
+        });
+    }
+    </script>
 
     <!-- Reading font size: apply before render to avoid flash -->
     <script>
