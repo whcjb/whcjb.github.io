@@ -1,37 +1,197 @@
 ---
 layout: page
-description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。 他們栽於耶和華的殿中，發旺在我們神的院裡。-詩篇92:12-13"
+header-img: img/home-galilee-ancient.jpg
+description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們栽於耶和華的殿中，發旺在我們神的院裡。——詩篇 92:12-13"
 ---
 
+<style>
+/* ── Search bar ───────────────────────────────────── */
+.home-search {
+    margin: -8px 0 32px;
+    position: relative;
+}
+.home-search svg {
+    position: absolute; left: 14px; top: 50%;
+    transform: translateY(-50%); color: #bbb; pointer-events: none;
+}
+.home-search input {
+    width: 100%; box-sizing: border-box;
+    padding: 11px 14px 11px 42px;
+    font-size: 15px; font-family: inherit;
+    border: 1.5px solid #ddd; border-radius: 6px;
+    outline: none; transition: border-color .2s, box-shadow .2s;
+    background: #fafafa;
+}
+.home-search input:focus {
+    border-color: #C9922A;
+    box-shadow: 0 0 0 3px rgba(201,146,42,.12);
+    background: #fff;
+}
+
+/* ── Resource cards ───────────────────────────────── */
+.home-resources {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 36px;
+}
+@media (max-width: 600px) {
+    .home-resources { grid-template-columns: 1fr; }
+}
+.res-card {
+    display: block; text-decoration: none !important;
+    border-radius: 10px; padding: 20px 18px 18px;
+    transition: transform .18s, box-shadow .18s;
+    position: relative; overflow: hidden;
+}
+.res-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.13); }
+.res-card-calvin  { background: linear-gradient(135deg,#1a5276,#2e86c1); color: #fff; }
+.res-card-mhenry  { background: linear-gradient(135deg,#7B5E3A,#C9922A); color: #fff; }
+.res-card-reading { background: linear-gradient(135deg,#1e6b4e,#27ae60); color: #fff; }
+.res-card-icon {
+    font-size: 28px; margin-bottom: 10px; display: block; opacity: .9;
+}
+.res-card-name {
+    font-size: 15px; font-weight: bold; display: block; margin-bottom: 4px;
+}
+.res-card-sub {
+    font-size: 12px; opacity: .78; display: block;
+}
+.res-card::after {
+    content: '→';
+    position: absolute; right: 14px; bottom: 14px;
+    font-size: 18px; opacity: .5;
+}
+
+/* ── Section heading ──────────────────────────────── */
+.home-section-title {
+    font-size: 13px; font-weight: bold; letter-spacing: .12em;
+    color: #999; text-transform: uppercase;
+    margin: 0 0 16px; padding-bottom: 8px;
+    border-bottom: 2px solid #f0ebe3;
+    display: flex; align-items: center; gap: 8px;
+}
+.home-section-title span { flex: 1; }
+.home-section-title a { font-size: 12px; color: #C9922A; text-transform: none; letter-spacing: 0; }
+
+/* ── Post / content cards ─────────────────────────── */
+.home-card {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0ebe3;
+    text-decoration: none !important;
+    transition: background .15s;
+}
+.home-card:last-child { border-bottom: none; }
+.home-card:hover .hc-title { color: #C9922A; }
+
+.hc-badge {
+    flex-shrink: 0; margin-top: 3px;
+    font-size: 10px; font-weight: bold;
+    padding: 2px 6px; border-radius: 3px;
+    white-space: nowrap;
+}
+.badge-calvin  { background: #e8f4f8; color: #0085a1; }
+.badge-mhenry  { background: #fef3e2; color: #C9922A; }
+.badge-reading { background: #eef6ee; color: #2e7d32; }
+.badge-post    { background: #f3e8f8; color: #7b3fa0; }
+
+.hc-body { flex: 1; min-width: 0; }
+.hc-title {
+    font-size: 15px; font-weight: bold; color: #333;
+    line-height: 1.45; margin-bottom: 3px;
+    transition: color .15s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hc-sub {
+    font-size: 13px; color: #888; line-height: 1.4;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hc-date { flex-shrink: 0; font-size: 12px; color: #bbb; margin-top: 4px; }
+
+/* ── Pager ────────────────────────────────────────── */
+.home-pager {
+    text-align: center; margin-top: 20px;
+}
+.home-pager a {
+    display: inline-block; padding: 7px 20px;
+    border: 1.5px solid #C9922A; border-radius: 4px;
+    color: #C9922A !important; font-size: 13px; font-weight: bold;
+    text-decoration: none !important; transition: background .15s, color .15s;
+}
+.home-pager a:hover { background: #C9922A; color: #fff !important; }
+</style>
+
+<!-- Search -->
+<div class="home-search">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" placeholder="搜索注释、文章……"
+           onkeydown="if(event.key==='Enter'&&this.value.trim()){location.href='{{ site.baseurl }}/search/?q='+encodeURIComponent(this.value.trim())}"
+           onfocus="this._ready=true">
+</div>
+
+<!-- Resource Cards -->
+<div class="home-resources">
+    <a class="res-card res-card-calvin" href="{{ site.baseurl }}/calvin/">
+        <span class="res-card-icon">✦</span>
+        <span class="res-card-name">加尔文圣经注释</span>
+        <span class="res-card-sub">Calvin Commentary</span>
+    </a>
+    <a class="res-card res-card-mhenry" href="{{ site.baseurl }}/mhenry/">
+        <span class="res-card-icon">✝</span>
+        <span class="res-card-name">马太亨利注释</span>
+        <span class="res-card-sub">Matthew Henry Commentary</span>
+    </a>
+    <a class="res-card res-card-reading" href="{{ site.baseurl }}/reading/">
+        <span class="res-card-icon">❧</span>
+        <span class="res-card-name">属灵阅读</span>
+        <span class="res-card-sub">Spiritual Reading</span>
+    </a>
+</div>
+
+<!-- Recent Content -->
+<div class="home-section-title">
+    <span>最新内容</span>
+</div>
+
 {% if paginator.page == 1 %}
-    {% for item in site.data.recent %}
-    <div class="post-preview">
-        <a href="{{ site.baseurl }}{{ item.url }}">
-            <h2 class="post-title">{{ item.title }}</h2>
-            {% if item.subtitle != "" %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
-        </a>
-        <p class="post-meta">发布于 {{ item.date }}</p>
-    </div>
-    <hr>
+    {% for item in site.data.recent limit: 12 %}
+    <a class="home-card" href="{{ site.baseurl }}{{ item.url }}">
+        {% if item.type == 'calvin' %}
+        <span class="hc-badge badge-calvin">加尔文</span>
+        {% elsif item.type == 'mhenry' %}
+        <span class="hc-badge badge-mhenry">亨利</span>
+        {% elsif item.type == 'reading' %}
+        <span class="hc-badge badge-reading">阅读</span>
+        {% else %}
+        <span class="hc-badge badge-post">文章</span>
+        {% endif %}
+        <div class="hc-body">
+            <div class="hc-title">{{ item.title }}</div>
+            {% if item.subtitle and item.subtitle != "" %}
+            <div class="hc-sub">{{ item.subtitle }}</div>
+            {% endif %}
+        </div>
+        <div class="hc-date">{{ item.date | date: "%m/%d" }}</div>
+    </a>
     {% endfor %}
 {% else %}
     {% for post in paginator.posts %}
-    <div class="post-preview">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-            <h2 class="post-title">{{ post.title }}</h2>
-            {% if post.subtitle %}<h3 class="post-subtitle">{{ post.subtitle }}</h3>{% endif %}
-            <div class="post-content-preview">{{ post.content | strip_html | truncate:200 }}</div>
-        </a>
-        <p class="post-meta">Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}</p>
-    </div>
-    <hr>
+    <a class="home-card" href="{{ post.url | prepend: site.baseurl }}">
+        <span class="hc-badge badge-post">文章</span>
+        <div class="hc-body">
+            <div class="hc-title">{{ post.title }}</div>
+            {% if post.subtitle %}
+            <div class="hc-sub">{{ post.subtitle }}</div>
+            {% endif %}
+        </div>
+        <div class="hc-date">{{ post.date | date: "%m/%d" }}</div>
+    </a>
     {% endfor %}
 {% endif %}
 
 {% if site.data.pagination.total_pages > 1 %}
-<ul class="pager">
-    <li class="next">
-        <a href="{{ site.baseurl }}/pages/2/">Older Posts &rarr;</a>
-    </li>
-</ul>
+<div class="home-pager">
+    <a href="{{ site.baseurl }}/pages/2/">更多内容 →</a>
+</div>
 {% endif %}

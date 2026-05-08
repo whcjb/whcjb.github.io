@@ -104,3 +104,9 @@ friends: [
     },
 ]
 # sitemap 由 jekyll-sitemap 插件自动生成
+
+defaults:
+  - scope:
+      path: "pages"
+    values:
+      header-img: img/home-galilee-ancient-2.jpg

@@ -216,36 +216,22 @@ layout: default
     font-family: "STHeiti", "SimHei", "微软雅黑", "黑体", sans-serif;
     font-weight: bold;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    max-height: 8vh;
-    overflow: hidden;
     cursor: pointer;
-    transition: max-height 0.3s ease;
-    padding: 14px 18px;
-    font-size: 0.97em;
-    line-height: 1.9;
+    user-select: none;
+    overflow: hidden;
+    transition: max-height 0.25s ease;
 }
-.mh-unit > .mh-verse.expanded {
-    max-height: none;
+.mh-unit > .mh-verse::after {
+    content: '▾';
+    float: right;
+    opacity: 0.55;
+    transition: transform 0.2s;
 }
-.mh-unit > .mh-verse:not(.expanded)::after {
-    content: '点击展开全文 ▼';
-    display: block;
-    text-align: center;
-    font-size: 12px;
-    color: #C9922A;
-    font-family: sans-serif;
-    padding-top: 6px;
-    background: #E8DBC6;
-    margin: -20px -18px 0;
-    padding: 24px 18px 8px;
-    position: relative;
+.mh-unit > .mh-verse.mh-folded {
+    max-height: 4.2em;
 }
-/* Hide the expand hint if content fits */
-.mh-unit > .mh-verse.fits:not(.expanded)::after {
-    display: none;
-}
-.mh-unit > .mh-verse.fits {
-    cursor: default;
+.mh-unit > .mh-verse.mh-folded::after {
+    transform: rotate(-90deg);
 }
 .mh-verse {
     background: #E8DBC6;
@@ -541,19 +527,14 @@ function resetFontSize() {
     applyFontSize(FONT_DEFAULT);
 }
 
-// ── Verse click to expand/collapse ───────────────────
-(function initVerseToggle() {
-    var verses = document.querySelectorAll('.mh-unit > .mh-verse');
-    for (var i = 0; i < verses.length; i++) {
-        var v = verses[i];
-        if (v.scrollHeight <= v.clientHeight + 5) {
-            v.classList.add('fits');
-        }
+// ── Verse click to fold/unfold ────────────────────────
+(function initVerseFold() {
+    document.querySelectorAll('.mh-unit > .mh-verse').forEach(function(v) {
+        v.classList.add('mh-folded');
         v.addEventListener('click', function() {
-            if (this.classList.contains('fits')) return;
-            this.classList.toggle('expanded');
+            this.classList.toggle('mh-folded');
         });
-    }
+    });
 })();
 
 // Merge adjacent .mh-verse divs into one (Jekyll may insert <p> between them)

@@ -1,34 +1,107 @@
 ---
-layout: page
+layout: default
 ---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/home-galilee-ancient-2.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ site.title }}</h1>
+                    <span class="subheading">更多内容</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 postlist-container">
+
+<style>
+.home-card {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0ebe3;
+    text-decoration: none !important;
+    transition: background .15s;
+}
+.home-card:last-child { border-bottom: none; }
+.home-card:hover .hc-title { color: #C9922A; }
+.hc-badge {
+    flex-shrink: 0; margin-top: 3px;
+    font-size: 10px; font-weight: bold;
+    padding: 2px 6px; border-radius: 3px;
+    white-space: nowrap;
+}
+.badge-calvin  { background: #e8f4f8; color: #0085a1; }
+.badge-mhenry  { background: #fef3e2; color: #C9922A; }
+.badge-reading { background: #eef6ee; color: #2e7d32; }
+.badge-post    { background: #f3e8f8; color: #7b3fa0; }
+.hc-body { flex: 1; min-width: 0; }
+.hc-title {
+    font-size: 15px; font-weight: bold; color: #333;
+    line-height: 1.45; margin-bottom: 3px;
+    transition: color .15s;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hc-sub {
+    font-size: 13px; color: #888; line-height: 1.4;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.hc-date { flex-shrink: 0; font-size: 12px; color: #bbb; margin-top: 4px; }
+.home-pager {
+    display: flex; justify-content: space-between; margin-top: 20px;
+}
+.home-pager a {
+    display: inline-block; padding: 7px 20px;
+    border: 1.5px solid #C9922A; border-radius: 4px;
+    color: #C9922A !important; font-size: 13px; font-weight: bold;
+    text-decoration: none !important; transition: background .15s, color .15s;
+}
+.home-pager a:hover { background: #C9922A; color: #fff !important; }
+</style>
 
 {% assign data_key = "page_" | append: page.page_num %}
 {% assign items = site.data[data_key] %}
 
 {% for item in items %}
-<div class="post-preview">
-    <a href="{{ site.baseurl }}{{ item.url }}">
-        <h2 class="post-title">{{ item.title }}</h2>
-        {% if item.subtitle != "" %}<h3 class="post-subtitle">{{ item.subtitle }}</h3>{% endif %}
-    </a>
-    <p class="post-meta">发布于 {{ item.date }}</p>
-</div>
-<hr>
+<a class="home-card" href="{{ site.baseurl }}{{ item.url }}">
+    {% if item.type == 'calvin' %}
+    <span class="hc-badge badge-calvin">加尔文</span>
+    {% elsif item.type == 'mhenry' %}
+    <span class="hc-badge badge-mhenry">亨利</span>
+    {% elsif item.type == 'reading' %}
+    <span class="hc-badge badge-reading">阅读</span>
+    {% else %}
+    <span class="hc-badge badge-post">文章</span>
+    {% endif %}
+    <div class="hc-body">
+        <div class="hc-title">{{ item.title }}</div>
+        {% if item.subtitle and item.subtitle != "" %}
+        <div class="hc-sub">{{ item.subtitle }}</div>
+        {% endif %}
+    </div>
+    <div class="hc-date">{{ item.date | date: "%m/%d" }}</div>
+</a>
 {% endfor %}
 
-<ul class="pager">
-    {% if page.page_num > 2 %}
-    <li class="previous">
-        <a href="{{ site.baseurl }}/pages/{{ page.page_num | minus: 1 }}/">&larr; Newer</a>
-    </li>
-    {% elsif page.page_num == 2 %}
-    <li class="previous">
-        <a href="{{ site.baseurl }}/">&larr; Newer</a>
-    </li>
-    {% endif %}
-    {% if page.page_num < page.total_pages %}
-    <li class="next">
-        <a href="{{ site.baseurl }}/pages/{{ page.page_num | plus: 1 }}/">Older &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
+<div class="home-pager">
+    <div>
+        {% if page.page_num == 2 %}
+        <a href="{{ site.baseurl }}/">← 返回首页</a>
+        {% elsif page.page_num > 2 %}
+        <a href="{{ site.baseurl }}/pages/{{ page.page_num | minus: 1 }}/">← 上一页</a>
+        {% endif %}
+    </div>
+    <div>
+        {% if page.page_num < page.total_pages %}
+        <a href="{{ site.baseurl }}/pages/{{ page.page_num | plus: 1 }}/">下一页 →</a>
+        {% endif %}
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
