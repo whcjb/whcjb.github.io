@@ -155,21 +155,29 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
 </div>
 
 {% if paginator.page == 1 %}
-    {% for item in site.data.recent limit: 12 %}
+    {% assign calvin_pages  = site.pages | where: "layout", "calvin-chapter"  | where_exp: "p", "p.date" %}
+    {% assign mhenry_pages  = site.pages | where: "layout", "mhenry-chapter"  | where_exp: "p", "p.date" %}
+    {% assign reading_pages = site.pages | where: "layout", "reading-chapter" | where_exp: "p", "p.date" %}
+    {% assign all_chapters = calvin_pages | concat: mhenry_pages | concat: reading_pages | sort: "date" | reverse %}
+    {% for item in all_chapters limit: 12 %}
     <a class="home-card" href="{{ site.baseurl }}{{ item.url }}">
-        {% if item.type == 'calvin' %}
+        {% if item.layout == 'calvin-chapter' %}
         <span class="hc-badge badge-calvin">加尔文</span>
-        {% elsif item.type == 'mhenry' %}
+        {% elsif item.layout == 'mhenry-chapter' %}
         <span class="hc-badge badge-mhenry">亨利</span>
-        {% elsif item.type == 'reading' %}
-        <span class="hc-badge badge-reading">阅读</span>
         {% else %}
-        <span class="hc-badge badge-post">文章</span>
+        <span class="hc-badge badge-reading">阅读</span>
         {% endif %}
         <div class="hc-body">
-            <div class="hc-title">{{ item.title }}</div>
-            {% if item.subtitle and item.subtitle != "" %}
-            <div class="hc-sub">{{ item.subtitle }}</div>
+            {% if item.layout == 'reading-chapter' %}
+            <div class="hc-title">{{ item.section_title }}</div>
+            {% if item.book_title %}<div class="hc-sub">{{ item.book_title }}{% if item.author_name %} · {{ item.author_name }}{% endif %}</div>{% endif %}
+            {% elsif item.layout == 'calvin-chapter' %}
+            <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
+            <div class="hc-sub">加尔文圣经注释</div>
+            {% else %}
+            <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
+            <div class="hc-sub">马太亨利圣经注释</div>
             {% endif %}
         </div>
         <div class="hc-date">{{ item.date | date: "%m/%d" }}</div>
@@ -190,7 +198,7 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
     {% endfor %}
 {% endif %}
 
-{% if site.data.pagination.total_pages > 1 %}
+{% if paginator.total_pages > 1 %}
 <div class="home-pager">
     <a href="{{ site.baseurl }}/pages/2/">更多内容 →</a>
 </div>
