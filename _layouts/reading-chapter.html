@@ -115,6 +115,9 @@ layout: default
     </div>
 </div>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
 <style>
 #reading-col {
     background: var(--reading-bg-color, #C7EDCC);
@@ -318,7 +321,8 @@ layout: default
     border-left: 4px solid #B8860B;
     border-radius: 0 6px 6px 0;
     line-height: 2.1;
-    font-family: "STSong", "SimSun", "宋体", serif;
+    font-family: "Noto Serif TC", "STSong", "SimSun", "宋体", serif;
+    font-weight: 300;
 }
 .scripture-block .scripture-text {
     display: block;
@@ -345,12 +349,14 @@ layout: default
 
 /* Inline scripture quote embedded within commentary paragraph */
 .scripture-inline {
-    font-family: "STKaiti", "KaiTi", "楷体", "BiauKai", serif;
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", "楷体", cursive;
     color: #5a3e1b;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
+    font-size: 1.04em;
 }
 .scripture-ref-inline {
-    font-size: 0.82em;
+    font-family: "Noto Serif TC", "STSong", serif;
+    font-size: 0.80em;
     color: #9b7d4a;
     letter-spacing: 0;
 }
@@ -909,6 +915,28 @@ function ttsUpdateUI(state) {
             '<span class="scripture-quote">$1</span> $3');
         if (html !== p.innerHTML) p.innerHTML = html;
     });
+})();
+
+// Move footnotes to bottom of page
+(function() {
+    var content = document.querySelector('.reading-content');
+    var hr = document.querySelector('#reading-col > hr');
+    if (!content || !hr) return;
+    var fns = content.querySelectorAll('p.reading-footnote');
+    if (!fns.length) return;
+    var aside = document.createElement('aside');
+    aside.className = 'reading-footnotes';
+    var title = document.createElement('p');
+    title.style.cssText = 'font-weight:bold; color:#666; margin-bottom:8px;';
+    title.textContent = '注释';
+    aside.appendChild(title);
+    fns.forEach(function(fn) {
+        var p = document.createElement('p');
+        p.innerHTML = fn.innerHTML;
+        aside.appendChild(p);
+        fn.remove();
+    });
+    hr.insertAdjacentElement('afterend', aside);
 })();
 </script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
