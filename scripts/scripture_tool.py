@@ -226,8 +226,22 @@ def process_block(block: str) -> str:
     return f"<p>{new_inner}</p>"
 
 
+def _clean_ocr_artifacts(html: str) -> str:
+    """
+    Fix common OCR column-break artifacts in HTML:
+    1. Remove <p> containing only punctuation/whitespace (e.g. <p>。</p>)
+    2. Strip leading sentence-final punctuation from paragraph openings
+    """
+    # 1. Remove bare-punctuation paragraphs
+    html = re.sub(r'\n*<p>[\s　。，、；：！？…]+</p>', '', html)
+    # 2. Strip leading 。 or ， from paragraph text
+    html = re.sub(r'(<p>)[。，]', r'\1', html)
+    return html
+
+
 def process_html(html: str) -> str:
     """Process full chapter HTML body."""
+    html = _clean_ocr_artifacts(html)
     # Split into top-level blocks
     blocks = re.split(r'(?=\n?<(?:p|h[1-6]|blockquote|div)[\s>])', html)
     out = []
