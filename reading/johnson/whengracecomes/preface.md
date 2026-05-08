@@ -6,7 +6,7 @@ book_id: whengracecomes
 book_title: 從恩典啟航
 section: "preface"
 section_title: "前言"
-header-img: reading-bg-murray.jpg
+header-img: reading-johnson-preface.jpg
 date: 2026-05-08 15:20
 ---
 
