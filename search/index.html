@@ -1,0 +1,266 @@
+---
+layout: default
+title: 搜索
+header-img: img/post-bg-rwd.jpg
+---
+
+<style>
+.search-page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 32px 16px 60px;
+}
+.search-box-wrap {
+    position: relative;
+    margin-bottom: 28px;
+}
+.search-box-wrap svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    pointer-events: none;
+}
+#search-input {
+    width: 100%;
+    padding: 12px 14px 12px 42px;
+    font-size: 16px;
+    border: 2px solid #e0d5c5;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+#search-input:focus { border-color: #C9922A; }
+
+#search-stats {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 16px;
+    min-height: 20px;
+}
+
+.search-result {
+    border: 1px solid #e8e0d0;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    background: #fff;
+    transition: box-shadow 0.15s;
+}
+.search-result:hover { box-shadow: 0 2px 10px rgba(0,0,0,0.09); }
+.search-result a { text-decoration: none; }
+.result-header { display: flex; align-items: center; gap: 8px; margin-bottom: 5px; }
+.result-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 7px;
+    border-radius: 3px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.badge-post    { background: #e8f4f8; color: #0085a1; }
+.badge-mhenry  { background: #fef3e2; color: #C9922A; }
+.badge-calvin  { background: #eef6ee; color: #2e7d32; }
+.badge-reading { background: #f3e8f8; color: #7b3fa0; }
+
+.result-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.4;
+}
+.result-title mark { background: #fff3c4; color: inherit; padding: 0 1px; border-radius: 2px; }
+.result-meta { font-size: 12px; color: #aaa; margin-bottom: 6px; }
+.result-excerpt { font-size: 14px; color: #666; line-height: 1.7; }
+.result-excerpt mark { background: #fff3c4; color: inherit; padding: 0 1px; border-radius: 2px; }
+
+#no-results {
+    text-align: center;
+    color: #aaa;
+    padding: 60px 0;
+    font-size: 15px;
+    display: none;
+}
+</style>
+
+<div class="search-page">
+    <div class="search-box-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="search-input" placeholder="搜索文章、注释……" autocomplete="off" autofocus>
+    </div>
+    <div id="search-stats"></div>
+    <div id="search-results"></div>
+    <div id="no-results">未找到相关内容</div>
+</div>
+
+<script>
+var INDEX_URL = '{{ site.baseurl }}/search.json';
+var _data = null;
+
+function loadIndex(cb) {
+    if (_data) { cb(_data); return; }
+    fetch(INDEX_URL).then(function(r){ return r.json(); }).then(function(d){
+        _data = d; cb(d);
+    }).catch(function(){ cb([]); });
+}
+
+function escHtml(s) {
+    return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// Split query into keywords (by whitespace / punctuation)
+function parseKeywords(query) {
+    return query.trim().split(/[\s,，、。；;]+/).filter(function(k){ return k.length > 0; });
+}
+
+// Score an item against a list of keywords.
+// Returns { score, matched[] } — score 0 means no match at all.
+function scoreItem(item, keywords) {
+    var haystack = [
+        item.title || '',
+        item.body  || '',
+        item.book  || '',
+        (item.tags || []).join(' ')
+    ].join(' ').toLowerCase();
+
+    var titleHay = (item.title || '').toLowerCase();
+    var matched = [];
+    var score = 0;
+
+    keywords.forEach(function(kw) {
+        var k = kw.toLowerCase();
+        // Exact substring match
+        if (haystack.indexOf(k) >= 0) {
+            matched.push(kw);
+            score += titleHay.indexOf(k) >= 0 ? 3 : 1;
+            return;
+        }
+        // Fuzzy: all characters of kw appear in order inside haystack
+        var fi = 0;
+        for (var ci = 0; ci < haystack.length && fi < k.length; ci++) {
+            if (haystack[ci] === k[fi]) fi++;
+        }
+        if (fi === k.length) {
+            matched.push(kw);
+            score += 0.3;
+        }
+    });
+
+    return { score: score, matched: matched };
+}
+
+function highlightAll(text, keywords) {
+    if (!text || !keywords.length) return escHtml(text || '');
+    var result = escHtml(text);
+    keywords.forEach(function(kw) {
+        var escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        result = result.replace(new RegExp(escaped, 'gi'), function(m){
+            return '<mark>' + m + '</mark>';
+        });
+    });
+    return result;
+}
+
+function getExcerpt(body, keywords, len) {
+    if (!body) return '';
+    // Find first keyword hit position
+    var idx = -1;
+    for (var i = 0; i < keywords.length; i++) {
+        var pos = body.toLowerCase().indexOf(keywords[i].toLowerCase());
+        if (pos >= 0 && (idx < 0 || pos < idx)) idx = pos;
+    }
+    var start = Math.max(0, idx < 0 ? 0 : idx - 50);
+    var snippet = body.slice(start, start + len);
+    if (start > 0) snippet = '…' + snippet;
+    if (start + len < body.length) snippet += '…';
+    return snippet;
+}
+
+var BADGE = {
+    post:    '<span class="result-badge badge-post">文章</span>',
+    mhenry:  '<span class="result-badge badge-mhenry">马太亨利</span>',
+    calvin:  '<span class="result-badge badge-calvin">加尔文</span>',
+    reading: '<span class="result-badge badge-reading">阅读</span>'
+};
+
+function renderResults(items, keywords) {
+    var out   = document.getElementById('search-results');
+    var stats = document.getElementById('search-stats');
+    var noRes = document.getElementById('no-results');
+
+    if (!items.length) {
+        out.innerHTML = '';
+        noRes.style.display = keywords.length ? 'block' : 'none';
+        stats.textContent = '';
+        return;
+    }
+    noRes.style.display = 'none';
+    stats.textContent = '共找到 ' + items.length + ' 条结果';
+
+    out.innerHTML = items.slice(0, 50).map(function(r) {
+        var item = r.item;
+        var kws  = r.matched.length ? r.matched : keywords;
+        var excerpt = '';
+        if (item.t === 'post') {
+            var raw = getExcerpt(item.body, kws, 150);
+            excerpt = '<div class="result-excerpt">' + highlightAll(raw, kws) + '</div>';
+        }
+        var meta = '';
+        if (item.t === 'post' && item.date) {
+            var tags = (item.tags||[]).map(function(t){ return '#'+t; }).join(' ');
+            meta = '<div class="result-meta">' + item.date + (tags ? '　' + escHtml(tags) : '') + '</div>';
+        } else if ((item.t === 'mhenry' || item.t === 'calvin') && item.book) {
+            meta = '<div class="result-meta">' + escHtml(item.book) + '</div>';
+        }
+        return '<div class="search-result">'
+            + '<a href="' + item.url + '">'
+            + '<div class="result-header">' + (BADGE[item.t]||'')
+            + '<div class="result-title">' + highlightAll(item.title, kws) + '</div></div>'
+            + meta + excerpt
+            + '</a></div>';
+    }).join('');
+}
+
+function doSearch(query) {
+    query = query.trim();
+    if (!query) { renderResults([], []); return; }
+    var keywords = parseKeywords(query);
+    loadIndex(function(data) {
+        var results = [];
+        data.forEach(function(item) {
+            var s = scoreItem(item, keywords);
+            if (s.score > 0) results.push({ item: item, score: s.score, matched: s.matched });
+        });
+        // Sort: higher score first, then posts before commentary
+        results.sort(function(a, b) {
+            if (b.score !== a.score) return b.score - a.score;
+            if (a.item.t === 'post' && b.item.t !== 'post') return -1;
+            if (a.item.t !== 'post' && b.item.t === 'post') return 1;
+            return 0;
+        });
+        renderResults(results, keywords);
+    });
+}
+
+var _timer = null;
+document.getElementById('search-input').addEventListener('input', function() {
+    clearTimeout(_timer);
+    var v = this.value;
+    _timer = setTimeout(function(){ doSearch(v); }, 200);
+});
+
+// handle ?q= param
+(function(){
+    var params = new URLSearchParams(window.location.search);
+    var q = params.get('q');
+    if (q) {
+        var inp = document.getElementById('search-input');
+        inp.value = q;
+        doSearch(q);
+    }
+})();
+</script>
