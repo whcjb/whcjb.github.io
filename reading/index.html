@@ -25,11 +25,19 @@ header-img: reading-bg-main.jpg
 .shelf-author-en   { font-size:12px; color:#999; }
 .shelf-author-desc { font-size:12px; color:#bbb; width:100%; margin-top:1px; }
 .bookshelf-wrap {
-    background: linear-gradient(180deg,#f7f2e8 0%,#ece4d0 100%);
     border-radius: 6px 6px 0 0;
     padding: 16px 16px 0;
     display: flex; align-items: flex-end; gap: 5px; flex-wrap: wrap;
     min-height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.bookshelf-wrap::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 6px 6px 0 0;
+    pointer-events: none;
 }
 .shelf-board {
     height: 13px;
@@ -132,7 +140,7 @@ header-img: reading-bg-main.jpg
             <span class="shelf-author-en">John Murray · 1898–1975</span>
             <span class="shelf-author-desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</span>
           </div>
-          <div class="bookshelf-wrap">
+          <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(18,12,6,0.52),rgba(18,12,6,0.52)),url('{{ site.baseurl }}/img/shelf-bg-murray.jpg');">
             <a href="{{ site.baseurl }}/reading/murray/principles/" class="book-spine"
                style="background:linear-gradient(155deg,#2E5D8E,#1A3A5C);color:#E8F4FF;">
               <span class="spine-title">正直生活要道</span>
@@ -150,7 +158,7 @@ header-img: reading-bg-main.jpg
             <span class="shelf-author-en">Paul David Tripp · 1950–</span>
             <span class="shelf-author-desc">威斯敏斯特神学院兼职教授，牧者与演说家</span>
           </div>
-          <div class="bookshelf-wrap">
+          <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(12,8,4,0.55),rgba(12,8,4,0.55)),url('{{ site.baseurl }}/img/shelf-bg-tripp.jpg');">
             <a href="{{ site.baseurl }}/reading/tripp/quest/" class="book-spine"
                style="background:linear-gradient(155deg,#8B3A8B,#5C1F5C);color:#F5E8FF;">
               <span class="spine-title">寻求更大的事</span>
@@ -168,7 +176,7 @@ header-img: reading-bg-main.jpg
             <span class="shelf-author-en">John Calvin · 1509–1564</span>
             <span class="shelf-author-desc">法国改革宗神学家，日内瓦教会领袖，加尔文主义奠基人</span>
           </div>
-          <div class="bookshelf-wrap">
+          <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(8,12,20,0.50),rgba(8,12,20,0.50)),url('{{ site.baseurl }}/img/shelf-bg-calvin.jpg');">
             <a href="{{ site.baseurl }}/reading/calvin/romans/" class="book-spine"
                style="background:linear-gradient(155deg,#1B6B20,#0D3B10);color:#E8F5E9;">
               <span class="spine-title">罗马书注释</span>
@@ -198,7 +206,7 @@ header-img: reading-bg-main.jpg
             <span class="shelf-author-en">Terry L. Johnson · 1956–</span>
             <span class="shelf-author-desc">美国长老会（PCA）牧师，独立长老会教会（Independent Presbyterian Church）主任牧师</span>
           </div>
-          <div class="bookshelf-wrap">
+          <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(15,10,4,0.40),rgba(15,10,4,0.40)),url('{{ site.baseurl }}/img/shelf-bg-johnson.jpg');">
             <a href="{{ site.baseurl }}/reading/johnson/whengracecomes/" class="book-spine"
                style="background:linear-gradient(155deg,#8B5E00,#5C3A00);color:#FFF3E0;">
               <span class="spine-title">从恩典启航</span>
