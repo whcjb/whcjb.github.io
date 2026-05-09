@@ -1542,6 +1542,15 @@ window.rmEnter = function() {
     rmSrcEl = document.querySelector('#reading-col .reading-content');
     if (!rmSrcEl) return;
 
+    // 记录当前可视区域内第一个可见子元素的索引，进入后跳到对应页
+    var targetChildIdx = 0;
+    var srcChildren = Array.prototype.slice.call(rmSrcEl.children);
+    var navH = 70;
+    for (var ci = 0; ci < srcChildren.length; ci++) {
+        var r = srcChildren[ci].getBoundingClientRect();
+        if (r.bottom > navH) { targetChildIdx = ci; break; }
+    }
+
     var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
 
@@ -1554,7 +1563,15 @@ window.rmEnter = function() {
         requestAnimationFrame(function() {
             requestAnimationFrame(function() {
                 rmBuildPages(rmSrcEl);
-                rmShowPage(0);
+                // 找到 targetChildIdx 所在的页
+                var startPage = rmPages.length - 1;
+                var cum = 0;
+                for (var pi = 0; pi < rmPages.length; pi++) {
+                    var cnt = rmPages[pi].querySelector('.reading-content').children.length;
+                    if (targetChildIdx < cum + cnt) { startPage = pi; break; }
+                    cum += cnt;
+                }
+                rmShowPage(startPage);
             });
         });
         var el = document.documentElement;
