@@ -1,0 +1,320 @@
+---
+layout: default
+---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/reading-bg-main.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_title }}</h1>
+                    <span class="subheading">{{ page.section_title }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+{% assign sections_list = "1,2,3,4,5,6" | split: "," %}
+{% assign current_idx = 0 %}
+{% for s in sections_list %}
+    {% if s == page.section %}{% assign current_idx = forloop.index0 %}{% endif %}
+{% endfor %}
+{% assign prev_idx = current_idx | minus: 1 %}
+{% assign next_idx = current_idx | plus: 1 %}
+{% assign prev_sec = sections_list[prev_idx] %}
+{% assign next_sec = sections_list[next_idx] %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="dayaoli-chapter-wrap">
+
+        <!-- 顶部导航 -->
+        <div class="dc-topnav">
+          <a class="dc-back" href="{{ site.baseurl }}/reading/lu/dayaoli/">← 返回目录</a>
+          <div class="dc-prevnext">
+            {% if current_idx > 0 %}
+            <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/{{ prev_sec }}/">← 上一部分</a>
+            {% endif %}
+            {% if next_sec %}
+            <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/{{ next_sec }}/">下一部分 →</a>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- 卡片区（JS 负责将 content 转成卡片） -->
+        <div class="dc-cards" id="dc-cards">
+          {{ content }}
+        </div>
+
+        <!-- 底部导航 -->
+        <div class="dc-botnav">
+          {% if current_idx > 0 %}
+          <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/{{ prev_sec }}/">← 上一部分</a>
+          {% endif %}
+          {% if next_sec %}
+          <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/{{ next_sec }}/">下一部分 →</a>
+          {% else %}
+          <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/">返回目录</a>
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+
+<style>
+.dayaoli-chapter-wrap {
+    padding: 28px 0 60px;
+}
+
+/* ── 导航 ── */
+.dc-topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.dc-back {
+    font-size: 13px;
+    color: #888;
+    text-decoration: none !important;
+}
+.dc-back:hover { color: #C9922A; }
+.dc-prevnext { display: flex; gap: 10px; }
+.dc-nav-btn {
+    font-size: 13px;
+    padding: 5px 14px;
+    border-radius: 5px;
+    border: 1.5px solid #e8d9c0;
+    background: #fffaf4;
+    color: #8B5E00;
+    text-decoration: none !important;
+    transition: border-color .15s, background .15s;
+}
+.dc-nav-btn:hover {
+    border-color: #C9922A;
+    background: #fff3e0;
+    color: #8B5E00 !important;
+}
+.dc-botnav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e8d9c0;
+}
+
+/* ── 默写工具栏 ── */
+.catechism-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.ct-btn {
+    padding: 5px 13px;
+    border-radius: 5px;
+    border: 1.5px solid #C9922A;
+    background: transparent;
+    color: #8B5E00;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .15s, color .15s;
+}
+.ct-btn:hover { background: rgba(201,146,42,0.1); }
+.ct-btn.active { background: #8B5E00; color: #fff8ee; border-color: #8B5E00; }
+.ct-info {
+    font-size: 12px;
+    color: #bbb;
+    margin-left: auto;
+    letter-spacing: 0.04em;
+}
+
+/* ── 问答卡片 ── */
+.catechism-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid #e8d9c0;
+    box-shadow: 0 2px 10px rgba(74,37,0,0.06);
+    margin-bottom: 16px;
+    background: #fffaf4;
+    transition: box-shadow .15s, border-color .15s;
+}
+.catechism-card:hover {
+    border-color: #C9922A;
+    box-shadow: 0 4px 18px rgba(74,37,0,0.10);
+}
+.catechism-q-area {
+    background: linear-gradient(135deg, #5C3200 0%, #8B5E3C 100%);
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.catechism-q-num {
+    background: rgba(255,255,255,0.16);
+    color: #FFD580;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.06em;
+    margin-top: 3px;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+.catechism-q-text {
+    font-family: 'LXGW WenKai', 'STKaiti', serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #fff8ee;
+}
+.catechism-a-area {
+    padding: 12px 16px 14px;
+    border-top: 1px solid #e8d5b0;
+    cursor: default;
+}
+.catechism-a-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #C9922A;
+    letter-spacing: 0.14em;
+    margin-bottom: 7px;
+    font-family: 'ZCOOL XiaoWei', sans-serif;
+}
+.catechism-a-text {
+    font-family: 'LXGW WenKai', 'STKaiti', serif;
+    font-size: 15px;
+    line-height: 1.95;
+    color: #3a1e00;
+    transition: filter .25s, opacity .25s;
+}
+.catechism-a-text p { margin: 0 0 4px; }
+
+/* 默写模式 */
+.dayaoli-quiz-mode .catechism-a-area { cursor: pointer; }
+.dayaoli-quiz-mode .catechism-a-text {
+    filter: blur(5px);
+    opacity: 0.55;
+    user-select: none;
+}
+.dayaoli-quiz-mode .catechism-a-text.revealed { filter: none; opacity: 1; }
+.dayaoli-quiz-mode .catechism-a-area:hover { background: rgba(201,146,42,0.05); }
+
+/* 隐藏 markdown 原始渲染 */
+#dc-cards h2,
+#dc-cards > p,
+#dc-cards > hr { display: none; }
+</style>
+
+<script>
+(function() {
+    function initCards() {
+        var container = document.getElementById('dc-cards');
+        if (!container) return;
+
+        var nodes = Array.from(container.children);
+        var groups = [];
+        var current = null;
+
+        nodes.forEach(function(el) {
+            if (el.tagName === 'H2') return;
+            if (el.tagName === 'P' && el.querySelector('strong')) {
+                var st = el.querySelector('strong').textContent;
+                if (/^问\d+[：:]/.test(st)) {
+                    if (current) groups.push(current);
+                    current = { q: el, answers: [] };
+                    return;
+                }
+            }
+            if (el.tagName === 'HR') {
+                if (current) { groups.push(current); current = null; }
+                return;
+            }
+            if (current) current.answers.push(el);
+        });
+        if (current) groups.push(current);
+        if (!groups.length) return;
+
+        container.innerHTML = '';
+
+        /* 工具栏 */
+        var qRange = '{{ page.questions }}';
+        var toolbar = document.createElement('div');
+        toolbar.className = 'catechism-toolbar';
+        toolbar.innerHTML =
+            '<button class="ct-btn" id="quiz-btn" onclick="dcQuizToggle()">✎ 默写模式</button>' +
+            '<button class="ct-btn" id="reveal-btn" onclick="dcRevealAll()" style="display:none">全部显示</button>' +
+            '<span class="ct-info">第 ' + qRange + ' 问 &nbsp;·&nbsp; 共 ' + groups.length + ' 问</span>';
+        container.appendChild(toolbar);
+
+        /* 卡片 */
+        groups.forEach(function(g) {
+            var qFull = g.q.querySelector('strong').textContent;
+            var m = qFull.match(/^问(\d+)[：:]([\s\S]*)$/);
+            var qNum  = m ? m[1] : '?';
+            var qText = m ? m[2].trim() : qFull;
+
+            var ansHtml = g.answers.map(function(a) { return a.outerHTML; }).join('');
+            ansHtml = ansHtml.replace(/^(<p[^>]*>)答[：:]/, '$1');
+
+            var card = document.createElement('div');
+            card.className = 'catechism-card';
+            card.innerHTML =
+                '<div class="catechism-q-area">' +
+                  '<span class="catechism-q-num">问 ' + qNum + '</span>' +
+                  '<span class="catechism-q-text">' + qText + '</span>' +
+                '</div>' +
+                '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
+                  '<div class="catechism-a-label">答</div>' +
+                  '<div class="catechism-a-text">' + ansHtml + '</div>' +
+                '</div>';
+            container.appendChild(card);
+        });
+    }
+
+    window.dcQuizToggle = function() {
+        var wrap = document.querySelector('.dayaoli-chapter-wrap');
+        var isQuiz = wrap.classList.toggle('dayaoli-quiz-mode');
+        var btn = document.getElementById('quiz-btn');
+        var rev = document.getElementById('reveal-btn');
+        if (btn) btn.classList.toggle('active', isQuiz);
+        if (rev) rev.style.display = isQuiz ? '' : 'none';
+        if (isQuiz) {
+            wrap.querySelectorAll('.catechism-a-text').forEach(function(el) {
+                el.classList.remove('revealed');
+            });
+        }
+    };
+
+    window.dcRevealCard = function(areaEl) {
+        var wrap = document.querySelector('.dayaoli-chapter-wrap');
+        if (!wrap.classList.contains('dayaoli-quiz-mode')) return;
+        areaEl.querySelector('.catechism-a-text').classList.toggle('revealed');
+    };
+
+    window.dcRevealAll = function() {
+        document.querySelectorAll('.catechism-a-text').forEach(function(el) {
+            el.classList.add('revealed');
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCards);
+    } else {
+        initCards();
+    }
+})();
+</script>
