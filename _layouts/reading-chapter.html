@@ -1047,6 +1047,13 @@ function ttsUpdateUI(state) {
             <span id="rm-page-label"></span>
             <button id="rm-ch-next-btn" onclick="rmChapterNav(1)">下一章 &#8594;</button>
         </div>
+        <div id="rm-pwa-hint" style="display:none;padding:8px 0 2px;text-align:center;">
+            <div style="font-size:11px;color:#aaa;line-height:1.6;">
+                📱 在 Safari 点击
+                <svg style="vertical-align:middle;margin:0 2px;" width="13" height="13" viewBox="0 0 50 50" fill="#007AFF"><path d="M30.3 8.5l-5.3-5.3-5.3 5.3 1.4 1.4 2.9-2.9V28h2V7l2.9 2.9z"/><path d="M38 18H12a2 2 0 0 0-2 2v22a2 2 0 0 0 2 2h26a2 2 0 0 0 2-2V20a2 2 0 0 0-2-2zm0 24H12V20h26z"/></svg>
+                →「添加到主屏幕」<br>可获得真正全屏阅读体验
+            </div>
+        </div>
         <div class="rm-sheet-exit">
             <button onclick="rmExit()">退出阅读模式</button>
         </div>
@@ -1244,6 +1251,13 @@ function rmSyncSheetState() {
         else if (ttsPaused) window.rmUpdateTtsButtons('paused');
         else window.rmUpdateTtsButtons('stopped');
     }
+    // iOS 非 PWA 模式：显示「添加到主屏幕」引导
+    var pwaHint = document.getElementById('rm-pwa-hint');
+    if (pwaHint) {
+        var isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) && !window.MSStream;
+        var isStandalone = navigator.standalone === true;
+        pwaHint.style.display = (isIOS && !isStandalone) ? 'block' : 'none';
+    }
 }
 
 /* ── TTS 按钮同步（由 ttsUpdateUI 回调） ── */
@@ -1283,7 +1297,10 @@ window.rmResetFont = function() {
     rmRebuild();
 };
 function rmRebuild() {
-    if (!rmSrcEl) return;
+    // 每次重建都重新查找原始内容节点，避免指向已构建的页面内容
+    var src = document.querySelector('#reading-col .reading-content');
+    if (!src) return;
+    rmSrcEl = src;
     requestAnimationFrame(function() {
         rmBuildPages(rmSrcEl);
         rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
@@ -1296,51 +1313,40 @@ function rmBuildPages(srcEl) {
     body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
     rmPages = [];
 
-    // 用 window 尺寸保证移动端可靠
-    var screenW  = window.innerWidth  || body.clientWidth  || 375;
-    var screenH  = window.innerHeight || body.clientHeight || 667;
-    var isMobile = screenW <= 600;
-    var sidePad  = isMobile ? 104 : 160;
-    var topBotPad = isMobile ? 40 : 48;
-    var pageW    = Math.max(screenW - sidePad, 100);
-    var usableH  = Math.max(screenH - topBotPad, 200);
-
-    var fs = getComputedStyle(document.documentElement)
-                 .getPropertyValue('--reading-font-size').trim() || '16px';
-
-    // 把所有子元素一次性放入 measure，利用真实 offsetTop 做分页
-    var measure = document.createElement('div');
-    measure.className = 'reading-content';
-    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;' +
-        'width:' + pageW + 'px;font-size:' + fs + ';margin:0;padding:0;';
-    var children = Array.prototype.slice.call(srcEl.children);
-    children.forEach(function(c) { measure.appendChild(c.cloneNode(true)); });
-    document.body.appendChild(measure);
-
-    var nodes = measure.children;
     var insertBefore = document.getElementById('rm-click-prev');
-    var pageDiv  = newPage();
-    var pageStartY = nodes.length ? nodes[0].offsetTop : 0;
+    var children = Array.prototype.slice.call(srcEl.children);
+    if (!children.length) return rmPages;
 
-    for (var i = 0; i < nodes.length; i++) {
-        var node = nodes[i];
-        var nodeBottom = node.offsetTop + node.offsetHeight;
+    // 直接在真实 DOM 里逐页构建，用实际 scrollHeight 判断是否超出
+    function addPage() {
+        var pg = newPage();
+        pg.style.display = 'block'; // 暂时显示以便 layout 计算
+        body.insertBefore(pg, insertBefore);
+        rmPages.push(pg);
+        return pg.querySelector('.reading-content');
+    }
 
-        // 如果当前页已有内容，且加上本节点会超出可用高度，则开新页
-        if (pageDiv.querySelector('.reading-content').children.length > 0
-                && nodeBottom - pageStartY > usableH) {
-            body.insertBefore(pageDiv, insertBefore);
-            rmPages.push(pageDiv);
-            pageDiv    = newPage();
-            pageStartY = node.offsetTop;
+    var curContent = addPage();
+    // 第一个页面已插入 DOM，从其实际尺寸算可用高度
+    var firstPage = rmPages[0];
+    var pgStyle   = getComputedStyle(firstPage);
+    var availH    = firstPage.clientHeight
+                  - parseFloat(pgStyle.paddingTop)
+                  - parseFloat(pgStyle.paddingBottom);
+
+    for (var i = 0; i < children.length; i++) {
+        var clone = children[i].cloneNode(true);
+        curContent.appendChild(clone);
+        // 强制 layout，检查是否溢出
+        if (curContent.scrollHeight > availH && curContent.children.length > 1) {
+            curContent.removeChild(clone); // 移回去
+            curContent = addPage();        // 开新页
+            curContent.appendChild(clone);
         }
-        pageDiv.querySelector('.reading-content').appendChild(node.cloneNode(true));
     }
-    if (pageDiv.querySelector('.reading-content').children.length > 0) {
-        body.insertBefore(pageDiv, insertBefore);
-        rmPages.push(pageDiv);
-    }
-    document.body.removeChild(measure);
+
+    // 恢复 CSS 控制（.rm-page 默认 display:none，.active 才显示）
+    rmPages.forEach(function(p) { p.style.display = ''; });
     return rmPages;
 }
 
@@ -1385,7 +1391,7 @@ window.rmChapterNav = function(dir) {
 /* ── 进入阅读模式 ── */
 window.rmEnter = function() {
     var overlay = document.getElementById('rm-overlay');
-    rmSrcEl = document.querySelector('.reading-content');
+    rmSrcEl = document.querySelector('#reading-col .reading-content');
     if (!rmSrcEl) return;
 
     var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
@@ -1400,29 +1406,12 @@ window.rmEnter = function() {
             rmBuildPages(rmSrcEl);
             rmShowPage(0);
         });
-        // 非 iOS：Fullscreen API
         var el = document.documentElement;
         var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
         if (rfn) { try { rfn.call(el); } catch(e){} }
     }
 
-    var isIOS = /iP(hone|ad|od)/i.test(navigator.userAgent);
-    if (isIOS) {
-        // 必须在 click handler 同步代码里触发滚动，才在 iOS 用户手势上下文内
-        // 先清除可能残留的 overflow:hidden，确保页面可滚动
-        document.body.style.overflow = '';
-        document.documentElement.style.overflow = '';
-        // 让 body 足够高（用 screen.height 确保比 viewport 高），再滚动
-        document.body.style.minHeight = (window.screen.height + 100) + 'px';
-        window.scrollTo(0, window.screen.height - window.innerHeight + 10);
-        // 等 Safari 完成地址栏收起动画（约 300ms），再展开阅读模式
-        setTimeout(function() {
-            document.body.style.minHeight = '';
-            doEnter();
-        }, 350);
-    } else {
-        doEnter();
-    }
+    doEnter();
 };
 
 /* ── 退出 ── */
