@@ -1406,17 +1406,20 @@ window.rmEnter = function() {
         if (rfn) { try { rfn.call(el); } catch(e){} }
     }
 
-    // iOS Safari：向下滚动 1px 触发地址栏隐藏，再展开阅读模式
     var isIOS = /iP(hone|ad|od)/i.test(navigator.userAgent);
     if (isIOS) {
-        var html = document.documentElement;
-        var prevH = html.style.height;
-        html.style.height = (window.innerHeight + 60) + 'px';
-        window.scrollTo(0, 60);
+        // 必须在 click handler 同步代码里触发滚动，才在 iOS 用户手势上下文内
+        // 先清除可能残留的 overflow:hidden，确保页面可滚动
+        document.body.style.overflow = '';
+        document.documentElement.style.overflow = '';
+        // 让 body 足够高（用 screen.height 确保比 viewport 高），再滚动
+        document.body.style.minHeight = (window.screen.height + 100) + 'px';
+        window.scrollTo(0, window.screen.height - window.innerHeight + 10);
+        // 等 Safari 完成地址栏收起动画（约 300ms），再展开阅读模式
         setTimeout(function() {
-            html.style.height = prevH;
+            document.body.style.minHeight = '';
             doEnter();
-        }, 300);
+        }, 350);
     } else {
         doEnter();
     }
