@@ -1114,36 +1114,44 @@ function ttsUpdateUI(state) {
 .rm-page {
     position: absolute; inset: 0;
     box-sizing: border-box;
-    padding: 24px 80px;
+    padding: 24px 20px 32px;
     overflow-y: auto; display: none;
     -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .rm-page::-webkit-scrollbar { display: none; }
 .rm-page.active { display: block; }
-@media (max-width: 600px) { .rm-page { padding: 20px 52px; } }
+@media (max-width: 600px) { .rm-page { padding: 16px 14px 28px; } }
 
 /* ── 内容字体 ── */
 #rm-overlay .reading-content {
     color: #333; font-family: "STSong","SimSun","宋体",serif; word-break: break-word;
 }
 
-/* ── 点击区 ── */
+/* ── 点击区（悬浮在文字上，不占宽度） ── */
 #rm-click-prev, #rm-tap-center, #rm-click-next {
     position: absolute; top: 0; bottom: 0;
     z-index: 10001; cursor: pointer;
     user-select: none; -webkit-user-select: none;
 }
-#rm-click-prev { left: 0; width: 52px; }
-#rm-click-next { right: 0; width: 52px; }
-#rm-tap-center { left: 52px; right: 52px; }
+#rm-click-prev { left: 0; width: 36px; }
+#rm-click-next { right: 0; width: 36px; }
+#rm-tap-center { left: 36px; right: 36px; }
+/* 边缘渐隐 + 箭头指示 */
+#rm-click-prev {
+    background: linear-gradient(to right, rgba(0,0,0,0.06) 0%, transparent 100%);
+}
+#rm-click-next {
+    background: linear-gradient(to left, rgba(0,0,0,0.06) 0%, transparent 100%);
+}
 #rm-click-prev::after, #rm-click-next::after {
     content: ''; position: absolute; top: 50%; left: 50%;
-    width: 11px; height: 11px;
-    border-top: 2px solid rgba(0,0,0,0.2); border-right: 2px solid rgba(0,0,0,0.2);
+    width: 9px; height: 9px;
+    border-top: 1.5px solid rgba(0,0,0,0.18); border-right: 1.5px solid rgba(0,0,0,0.18);
 }
-#rm-click-prev::after { transform: translate(-30%,-50%) rotate(-135deg); }
-#rm-click-next::after { transform: translate(-70%,-50%) rotate(45deg); }
-#rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.45); }
+#rm-click-prev::after { transform: translate(-20%,-50%) rotate(-135deg); }
+#rm-click-next::after { transform: translate(-80%,-50%) rotate(45deg); }
+#rm-click-prev:active, #rm-click-next:active { background-color: rgba(0,0,0,0.05); }
+#rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.4); }
 
 /* ── 常驻页码 ── */
 #rm-page-badge {
