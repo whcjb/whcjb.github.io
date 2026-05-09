@@ -75,6 +75,8 @@ layout: default
             {% assign sections_list = "preface,1,2,3,4" | split: "," %}
             {% elsif page.book_id == "gospel_harmony" %}
             {% assign sections_list = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82" | split: "," %}
+            {% elsif page.book_id == "pioneers" %}
+            {% assign sections_list = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40" | split: "," %}
             {% elsif page.book_id == "whengracecomes" %}
             {% assign sections_list = "preface,introduction,1,2,3,4,5,6,7,8,9,10,11" | split: "," %}
             {% else %}
@@ -117,8 +119,11 @@ layout: default
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
+{% if page.author_id == "lu" %}
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% endif %}
 <style>
 #reading-col {
     background: var(--reading-bg-color, #C7EDCC);
@@ -127,24 +132,12 @@ layout: default
 }
 
 .reading-section-title {
-    font-family: 'Ma Shan Zheng', 'STKaiti', 'KaiTi', cursive;
-    font-size: 1.75em;
-    font-weight: normal;
+    font-size: 1.4em;
+    font-weight: bold;
     color: #2C4A6E;
-    letter-spacing: 0.12em;
-    text-align: center;
-    position: relative;
-    padding-bottom: 14px;
-    margin-bottom: 32px;
-}
-.reading-section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #5B8DB8, transparent);
-    margin: 10px auto 0;
-    border-radius: 2px;
+    border-bottom: 2px solid #5B8DB8;
+    padding-bottom: 10px;
+    margin-bottom: 28px;
 }
 
 .tts-bar {
@@ -232,7 +225,7 @@ layout: default
 .reading-content {
     font-size: var(--reading-font-size, 16px);
     color: #333;
-    font-family: 'LXGW WenKai', 'STKaiti', 'KaiTi', serif;
+    font-family: "STSong", "SimSun", "宋体", serif;
     word-break: break-word;
 }
 .reading-content p {
@@ -281,33 +274,15 @@ layout: default
 .font-size-ctrl button:last-child { border-right: none; }
 .font-size-ctrl button:hover { background: #5B8DB8; color: #fff; }
 
-.reading-content h3,
 .reading-content h3.reading-subheading {
-    font-family: 'ZCOOL XiaoWei', 'STKaiti', 'KaiTi', serif;
     font-size: 1.1em;
-    font-weight: normal;
-    color: #5a3e1b;
-    margin: 38px 0 18px 0;
-    padding: 0;
+    font-weight: bold;
+    color: #3a3a3a;
+    margin: 36px 0 20px 0;
+    padding: 8px 0 8px 14px;
     text-indent: 0;
-    letter-spacing: 0.18em;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    gap: 0;
-}
-.reading-content h3::before,
-.reading-content h3::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(184,134,11,0.45));
-}
-.reading-content h3::after {
-    background: linear-gradient(to left, transparent, rgba(184,134,11,0.45));
-}
-.reading-content h3 {
-    gap: 14px;
+    border-left: 4px solid #B8860B;
+    border-bottom: 1px solid rgba(184,134,11,0.3);
 }
 .reading-content h4.reading-sub-subheading {
     font-size: 1.02em;
@@ -666,6 +641,60 @@ sup.fn-ref a:hover { text-decoration: underline; }
     font-size: 0.97em;
 }
 </style>
+
+{% if page.author_id == "lu" %}
+<style>
+/* ── 吕沛渊著作专用字体样式 ── */
+.reading-section-title {
+    font-family: 'Ma Shan Zheng', 'STKaiti', 'KaiTi', cursive;
+    font-size: 1.75em;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    text-align: center;
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 14px;
+    margin-bottom: 32px;
+}
+.reading-section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #5B8DB8, transparent);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.reading-content {
+    font-family: 'LXGW WenKai', 'STKaiti', 'KaiTi', serif;
+}
+.reading-content h3.reading-subheading {
+    font-family: 'ZCOOL XiaoWei', 'STKaiti', 'KaiTi', serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    color: #5a3e1b;
+    margin: 38px 0 18px 0;
+    padding: 0;
+    border-left: none;
+    border-bottom: none;
+    letter-spacing: 0.18em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.reading-content h3.reading-subheading::before,
+.reading-content h3.reading-subheading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(184,134,11,0.45));
+}
+.reading-content h3.reading-subheading::after {
+    background: linear-gradient(to left, transparent, rgba(184,134,11,0.45));
+}
+</style>
+{% endif %}
 
 <script>
 var FONT_KEY = 'reading-font-size';
@@ -1579,6 +1608,183 @@ if (window.location.hash === '#readmode') {
     window.addEventListener('load', function() { setTimeout(rmEnter, 80); });
 }
 
+})();
+</script>
+
+<!-- ══════════════════════════════════════════════
+     Mobile floating reading bar (tap anywhere to show)
+     ══════════════════════════════════════════════ -->
+<div id="mob-reading-bar" aria-hidden="true">
+    <div id="mob-bar-handle"></div>
+    <div class="mob-bar-row">
+        <span class="mob-bar-lbl">背景</span>
+        <div class="mob-bar-bg-row">
+            <button class="mob-bg-sw" data-color="#C7EDCC" onclick="setBgColor('#C7EDCC')" style="background:#C7EDCC"></button>
+            <button class="mob-bg-sw" data-color="#FAF0DC" onclick="setBgColor('#FAF0DC')" style="background:#FAF0DC"></button>
+            <button class="mob-bg-sw" data-color="#EAEAEF" onclick="setBgColor('#EAEAEF')" style="background:#EAEAEF"></button>
+            <button class="mob-bg-sw" data-color="#F5E6CC" onclick="setBgColor('#F5E6CC')" style="background:#F5E6CC"></button>
+            <button class="mob-bg-sw" data-color="#E3EDCD" onclick="setBgColor('#E3EDCD')" style="background:#E3EDCD"></button>
+            <button class="mob-bg-sw" data-color="#FFFFFF" onclick="setBgColor('#FFFFFF')" style="background:#FFFFFF"></button>
+        </div>
+    </div>
+    <div class="mob-bar-row mob-bar-row-tools">
+        <div class="mob-bar-tts-row">
+            <button id="mob-tts-play-btn"  onclick="ttsPlay()">&#9654; 朗读</button>
+            <button id="mob-tts-pause-btn" onclick="ttsPause()" style="display:none">&#10074;&#10074; 暂停</button>
+            <button id="mob-tts-stop-btn"  onclick="ttsStop()"  style="display:none">&#9632; 停止</button>
+        </div>
+        <div class="mob-bar-font-ctrl">
+            <button onclick="adjustFontSize(-1)">A−</button>
+            <button onclick="resetFontSize()">A</button>
+            <button onclick="adjustFontSize(1)">A+</button>
+        </div>
+        <button class="mob-bar-rm-btn" onclick="rmEnter()">⛶ 阅读</button>
+    </div>
+</div>
+
+<style>
+#mob-reading-bar { display: none; }
+@media (max-width: 900px) {
+    #mob-reading-bar {
+        display: block;
+        position: fixed;
+        left: 0; right: 0; bottom: 0;
+        z-index: 8900;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-radius: 16px 16px 0 0;
+        padding: 0 18px 28px;
+        box-shadow: 0 -4px 28px rgba(0,0,0,0.20);
+        transform: translateY(100%);
+        transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);
+        pointer-events: none;
+    }
+    #mob-reading-bar.mob-bar-open {
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    #mob-bar-handle {
+        width: 36px; height: 4px; border-radius: 2px;
+        background: rgba(0,0,0,0.18);
+        margin: 10px auto 14px;
+    }
+    .mob-bar-row {
+        display: flex; align-items: center; gap: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.07);
+    }
+    .mob-bar-row:last-child { border-bottom: none; }
+    .mob-bar-lbl { font-size: 12px; color: #999; width: 28px; flex-shrink: 0; }
+    .mob-bar-bg-row { display: flex; gap: 7px; flex-wrap: wrap; flex: 1; }
+    .mob-bg-sw {
+        width: 24px; height: 24px; border-radius: 50%;
+        border: 2px solid transparent; cursor: pointer; padding: 0; outline: none;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+        transition: box-shadow 0.15s, border-color 0.15s;
+    }
+    .mob-bg-sw:active { box-shadow: 0 0 0 2px #5B8DB8; }
+    .mob-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
+    .mob-bar-row-tools { gap: 8px; flex-wrap: wrap; }
+    .mob-bar-tts-row { display: flex; gap: 6px; }
+    .mob-bar-tts-row button {
+        background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
+        padding: 7px 12px; font-size: 13px; font-weight: bold; cursor: pointer;
+        white-space: nowrap;
+    }
+    .mob-bar-tts-row button:active { background: #2C4A6E; }
+    .mob-bar-font-ctrl {
+        display: inline-flex;
+        border: 1px solid #5B8DB8; border-radius: 4px; overflow: hidden;
+    }
+    .mob-bar-font-ctrl button {
+        background: #EBF3FA; border: none; border-right: 1px solid #5B8DB8;
+        color: #2C5F8A; cursor: pointer; font-size: 13px; font-weight: bold;
+        padding: 7px 11px; line-height: 1;
+    }
+    .mob-bar-font-ctrl button:last-child { border-right: none; }
+    .mob-bar-font-ctrl button:active { background: #5B8DB8; color: #fff; }
+    .mob-bar-rm-btn {
+        background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
+        padding: 7px 13px; font-size: 13px; font-weight: bold; cursor: pointer;
+        white-space: nowrap; margin-left: auto;
+    }
+    .mob-bar-rm-btn:active { background: #2C4A6E; }
+}
+</style>
+
+<script>
+(function() {
+    var bar = document.getElementById('mob-reading-bar');
+    if (!bar) return;
+
+    var isOpen = false;
+
+    function syncMobBar() {
+        var cur = (localStorage.getItem('reading-bg-color') || '#C7EDCC').toUpperCase();
+        document.querySelectorAll('.mob-bg-sw').forEach(function(s) {
+            s.classList.toggle('active', s.getAttribute('data-color').toUpperCase() === cur);
+        });
+        updateMobTtsButtons(ttsPlaying && !ttsPaused ? 'playing' : ttsPaused ? 'paused' : 'stopped');
+    }
+
+    function updateMobTtsButtons(state) {
+        var play  = document.getElementById('mob-tts-play-btn');
+        var pause = document.getElementById('mob-tts-pause-btn');
+        var stop  = document.getElementById('mob-tts-stop-btn');
+        if (!play) return;
+        if (state === 'playing') {
+            play.style.display = 'none'; pause.style.display = ''; stop.style.display = '';
+        } else if (state === 'paused') {
+            play.style.display = ''; play.innerHTML = '&#9654; 继续';
+            pause.style.display = 'none'; stop.style.display = '';
+        } else {
+            play.style.display = ''; play.innerHTML = '&#9654; 朗读';
+            pause.style.display = 'none'; stop.style.display = 'none';
+        }
+    }
+
+    function openBar() {
+        if (isOpen) return;
+        isOpen = true;
+        bar.classList.add('mob-bar-open');
+        bar.setAttribute('aria-hidden', 'false');
+        syncMobBar();
+    }
+
+    function closeBar() {
+        if (!isOpen) return;
+        isOpen = false;
+        bar.classList.remove('mob-bar-open');
+        bar.setAttribute('aria-hidden', 'true');
+    }
+
+    // Tap inside bar: don't propagate (prevents toggling bar off)
+    bar.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+
+    // Tap anywhere on page: show bar or dismiss
+    document.addEventListener('click', function(e) {
+        var overlay = document.getElementById('rm-overlay');
+        if (overlay && overlay.classList.contains('rm-active')) return;
+        if (bar.contains(e.target)) return;
+        // Skip interactive elements
+        var t = e.target;
+        while (t && t !== document.body) {
+            var tag = t.tagName;
+            if (tag === 'A' || tag === 'BUTTON' || tag === 'INPUT' || tag === 'SELECT' || tag === 'LABEL') return;
+            t = t.parentElement;
+        }
+        if (isOpen) { closeBar(); } else { openBar(); }
+    });
+
+    // Hook into TTS state changes to keep buttons in sync
+    var _prev = window.rmUpdateTtsButtons;
+    window.rmUpdateTtsButtons = function(state) {
+        if (_prev) _prev(state);
+        updateMobTtsButtons(state);
+    };
 })();
 </script>
 
