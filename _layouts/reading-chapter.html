@@ -1352,10 +1352,10 @@ function rmBuildPages(srcEl) {
             pageDiv = newPage();
             pageH = 0;
         }
-        pageDiv.appendChild(child.cloneNode(true));
+        pageDiv.querySelector('.reading-content').appendChild(child.cloneNode(true));
         pageH += h;
     });
-    if (pageDiv.children.length > 0) {
+    if (pageDiv.querySelector('.reading-content').children.length > 0) {
         body.insertBefore(pageDiv, insertBefore);
         rmPages.push(pageDiv);
     }
@@ -1366,6 +1366,9 @@ function rmBuildPages(srcEl) {
 function newPage() {
     var d = document.createElement('div');
     d.className = 'rm-page';
+    var inner = document.createElement('div');
+    inner.className = 'reading-content';
+    d.appendChild(inner);
     return d;
 }
 
