@@ -1758,25 +1758,34 @@ if (window.location.hash === '#readmode') {
         bar.setAttribute('aria-hidden', 'true');
     }
 
-    // Tap inside bar: don't propagate (prevents toggling bar off)
-    bar.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
+    // Touch-based tap detection (iOS Safari doesn't fire click on non-interactive elements)
+    var _tStart = null;
+    document.addEventListener('touchstart', function(e) {
+        _tStart = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    }, { passive: true });
 
-    // Tap anywhere on page: show bar or dismiss
-    document.addEventListener('click', function(e) {
+    document.addEventListener('touchend', function(e) {
+        if (!_tStart) return;
+        var dx = Math.abs(e.changedTouches[0].clientX - _tStart.x);
+        var dy = Math.abs(e.changedTouches[0].clientY - _tStart.y);
+        _tStart = null;
+        if (dx > 8 || dy > 8) return; // scroll, not a tap
+
         var overlay = document.getElementById('rm-overlay');
         if (overlay && overlay.classList.contains('rm-active')) return;
-        if (bar.contains(e.target)) return;
+
+        var target = e.target;
+        // Tapping inside bar: keep it open
+        if (bar.contains(target)) return;
         // Skip interactive elements
-        var t = e.target;
+        var t = target;
         while (t && t !== document.body) {
             var tag = t.tagName;
             if (tag === 'A' || tag === 'BUTTON' || tag === 'INPUT' || tag === 'SELECT' || tag === 'LABEL') return;
             t = t.parentElement;
         }
         if (isOpen) { closeBar(); } else { openBar(); }
-    });
+    }, { passive: true });
 
     // Hook into TTS state changes to keep buttons in sync
     var _prev = window.rmUpdateTtsButtons;
