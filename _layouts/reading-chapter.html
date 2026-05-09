@@ -81,6 +81,8 @@ layout: default
             {% assign sections_list = "1,2,3,4,5,6" | split: "," %}
             {% elsif page.book_id == "whengracecomes" %}
             {% assign sections_list = "preface,introduction,1,2,3,4,5,6,7,8,9,10,11" | split: "," %}
+            {% elsif page.book_id == "institutes" %}
+            {% assign sections_list = "1-1,1-2,1-3,1-4,1-5,1-6,1-7,1-8,1-9,1-10,1-11,1-12,1-13,1-14,1-15,1-16,1-17,1-18,2-1,2-2,2-3,2-4,2-5,2-6,2-7,2-8,2-9,2-10,2-11,2-12,2-13,2-14,2-15,2-16,2-17" | split: "," %}
             {% else %}
             {% assign sections_list = "foreword,preface,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" | split: "," %}
             {% endif %}
@@ -1424,10 +1426,8 @@ function ttsUpdateUI(state) {
     position: absolute; inset: 0;
     box-sizing: border-box;
     padding: 24px 20px 32px;
-    overflow-y: auto; display: none;
-    -webkit-overflow-scrolling: touch; scrollbar-width: none;
+    overflow: hidden; display: none;
 }
-.rm-page::-webkit-scrollbar { display: none; }
 .rm-page.active { display: block; }
 @media (max-width: 600px) { .rm-page { padding: 16px 14px 28px; } }
 
@@ -1676,6 +1676,37 @@ window.rmGetPages   = function() { return rmPages; };
 window.rmGetCurPage = function() { return rmCurPage; };
 window.rmShowPageFn = function(n) { rmShowPage(n); };
 
+/* ── 按句子边界分割溢出段落 ── */
+function rmSplitLongEl(el, limV) {
+    var txt = el.textContent;
+    if (!txt.trim()) return null;
+    // 找所有句子结束位置（。！？；之后）
+    var cutPoints = [];
+    for (var ci = 0; ci < txt.length; ci++) {
+        if ('。！？；'.indexOf(txt[ci]) >= 0) cutPoints.push(ci + 1);
+    }
+    if (!cutPoints.length) return null;
+    // 逐个切断点试探，取最后一个仍能放下的位置
+    var lastFit = 0;
+    for (var ki = 0; ki < cutPoints.length; ki++) {
+        el.textContent = txt.substring(0, cutPoints[ki]);
+        if (el.getBoundingClientRect().bottom <= limV) {
+            lastFit = cutPoints[ki];
+        } else {
+            break;
+        }
+    }
+    if (!lastFit) {
+        el.textContent = txt; // 恢复：连第一句都放不下，无法分割
+        return null;
+    }
+    el.textContent = txt.substring(0, lastFit);
+    var rem = document.createElement(el.tagName.toLowerCase());
+    rem.className = el.className;
+    rem.textContent = txt.substring(lastFit).replace(/^\s+/, '');
+    return rem;
+}
+
 /* ── 分页 ── */
 function rmBuildPages(srcEl) {
     var body = document.getElementById('rm-body');
@@ -1724,11 +1755,9 @@ function rmBuildPages(srcEl) {
         var limV  = pgRV.bottom - parseFloat(pgSV.paddingBottom) - SAFE;
         var contV = pgV.querySelector('.reading-content');
         if (!contV || !contV.children.length) continue;
-        // 如果只剩一个元素但仍然溢出，也必须移走（防止无限循环对单元素做特殊处理）
         while (contV.children.length >= 1) {
             var lastEl = contV.children[contV.children.length - 1];
             if (lastEl.getBoundingClientRect().bottom <= limV) break;
-            if (contV.children.length === 1) break; // 单元素溢出，无法分割，保留
             var nextPgV;
             if (pi + 1 < rmPages.length) {
                 nextPgV = rmPages[pi + 1];
@@ -1739,6 +1768,12 @@ function rmBuildPages(srcEl) {
                 rmPages.push(nextPgV);
             }
             var nextContV = nextPgV.querySelector('.reading-content');
+            if (contV.children.length === 1) {
+                // 单元素溢出：尝试按句子边界分割，余下部分置入下一页
+                var remEl = rmSplitLongEl(lastEl, limV);
+                if (remEl) nextContV.insertBefore(remEl, nextContV.firstChild);
+                break;
+            }
             nextContV.insertBefore(lastEl, nextContV.firstChild);
         }
     }
