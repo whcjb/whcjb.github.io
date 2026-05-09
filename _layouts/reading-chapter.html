@@ -1296,36 +1296,46 @@ function rmBuildPages(srcEl) {
     body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
     rmPages = [];
 
-    var isMobile = body.clientWidth <= 600;
+    // 用 window 尺寸保证移动端可靠
+    var screenW  = window.innerWidth  || body.clientWidth  || 375;
+    var screenH  = window.innerHeight || body.clientHeight || 667;
+    var isMobile = screenW <= 600;
     var sidePad  = isMobile ? 104 : 160;
     var topBotPad = isMobile ? 40 : 48;
-    var pageW = body.clientWidth - sidePad;
-    var usableH = body.clientHeight - topBotPad;
+    var pageW    = Math.max(screenW - sidePad, 100);
+    var usableH  = Math.max(screenH - topBotPad, 200);
 
-    var fs = getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim() || '16px';
+    var fs = getComputedStyle(document.documentElement)
+                 .getPropertyValue('--reading-font-size').trim() || '16px';
+
+    // 把所有子元素一次性放入 measure，利用真实 offsetTop 做分页
     var measure = document.createElement('div');
     measure.className = 'reading-content';
-    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;width:' + pageW + 'px;font-size:' + fs;
+    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;' +
+        'width:' + pageW + 'px;font-size:' + fs + ';margin:0;padding:0;';
+    var children = Array.prototype.slice.call(srcEl.children);
+    children.forEach(function(c) { measure.appendChild(c.cloneNode(true)); });
     document.body.appendChild(measure);
 
-    var children = Array.prototype.slice.call(srcEl.children);
-    var pageDiv = newPage();
-    var pageH = 0;
+    var nodes = measure.children;
     var insertBefore = document.getElementById('rm-click-prev');
+    var pageDiv  = newPage();
+    var pageStartY = nodes.length ? nodes[0].offsetTop : 0;
 
-    children.forEach(function(child) {
-        measure.innerHTML = '';
-        measure.appendChild(child.cloneNode(true));
-        var h = measure.offsetHeight + 28;
-        if (pageH + h > usableH && pageH > 0) {
+    for (var i = 0; i < nodes.length; i++) {
+        var node = nodes[i];
+        var nodeBottom = node.offsetTop + node.offsetHeight;
+
+        // 如果当前页已有内容，且加上本节点会超出可用高度，则开新页
+        if (pageDiv.querySelector('.reading-content').children.length > 0
+                && nodeBottom - pageStartY > usableH) {
             body.insertBefore(pageDiv, insertBefore);
             rmPages.push(pageDiv);
-            pageDiv = newPage();
-            pageH = 0;
+            pageDiv    = newPage();
+            pageStartY = node.offsetTop;
         }
-        pageDiv.querySelector('.reading-content').appendChild(child.cloneNode(true));
-        pageH += h;
-    });
+        pageDiv.querySelector('.reading-content').appendChild(node.cloneNode(true));
+    }
     if (pageDiv.querySelector('.reading-content').children.length > 0) {
         body.insertBefore(pageDiv, insertBefore);
         rmPages.push(pageDiv);
