@@ -710,7 +710,27 @@ function ttsSetSpeed(val) {
 }
 
 function ttsBuildChunks() {
-    var el = document.querySelector('.reading-content');
+    // 阅读模式：从各 rm-page 的克隆内容建 chunks，附带 pageIdx
+    var overlay = document.getElementById('rm-overlay');
+    var isRM = overlay && overlay.classList.contains('rm-active');
+    var pages = isRM && window.rmGetPages ? window.rmGetPages() : null;
+    if (pages && pages.length > 0) {
+        var rmChunks = [];
+        for (var pi = 0; pi < pages.length; pi++) {
+            var pnodes = pages[pi].querySelectorAll('.reading-content p, .reading-content h3, .reading-content li');
+            for (var ni = 0; ni < pnodes.length; ni++) {
+                var pn = pnodes[ni];
+                if (pn.closest && pn.closest('.calvin-verse') && pn.tagName === 'P') {
+                    if (pn.parentElement.querySelector('p') !== pn) continue;
+                }
+                var pt = pn.innerText.trim();
+                if (pt.length > 0) rmChunks.push({ text: pt, el: pn, pageIdx: pi });
+            }
+        }
+        if (rmChunks.length > 0) return rmChunks;
+    }
+    // 普通模式
+    var el = document.querySelector('#reading-col .reading-content');
     if (!el) return [];
     var nodes = el.querySelectorAll('p, h3, li');
     var chunks = [];
@@ -720,9 +740,7 @@ function ttsBuildChunks() {
             if (node.parentElement.querySelector('p') !== node) continue;
         }
         var text = node.innerText.trim();
-        if (text.length > 0) {
-            chunks.push({ text: text, el: node });
-        }
+        if (text.length > 0) chunks.push({ text: text, el: node });
     }
     if (chunks.length === 0) {
         var fallback = el.innerText.trim();
@@ -736,7 +754,11 @@ function ttsHighlight(el) {
     for (var i = 0; i < old.length; i++) old[i].classList.remove('tts-highlight');
     if (el) {
         el.classList.add('tts-highlight');
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        // 阅读模式下翻页已处理导航，无需 scrollIntoView
+        var ov = document.getElementById('rm-overlay');
+        if (!ov || !ov.classList.contains('rm-active')) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 }
 
@@ -789,6 +811,12 @@ function ttsSpeakChunk(index) {
     u.onstart = function() {
         if (gen !== ttsGeneration) return;
         ttsHighlight(chunk.el);
+        // 阅读模式：自动翻到朗读段落所在页
+        if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
+            if (window.rmGetCurPage() !== chunk.pageIdx) {
+                window.rmShowPageFn(chunk.pageIdx);
+            }
+        }
     };
     u.onend = function() {
         if (gen !== ttsGeneration) return;
@@ -828,7 +856,15 @@ function ttsPlay() {
         return;
     }
     ttsChunks = ttsBuildChunks();
-    ttsPlayFrom(0);
+    // 阅读模式：从当前页第一个 chunk 开始
+    var startIdx = 0;
+    var curPg = window.rmGetCurPage ? window.rmGetCurPage() : -1;
+    if (curPg >= 0 && ttsChunks.length > 0 && ttsChunks[0].pageIdx !== undefined) {
+        for (var i = 0; i < ttsChunks.length; i++) {
+            if (ttsChunks[i].pageIdx >= curPg) { startIdx = i; break; }
+        }
+    }
+    ttsPlayFrom(startIdx);
 }
 
 function ttsPause() {
@@ -1297,15 +1333,21 @@ window.rmResetFont = function() {
     rmRebuild();
 };
 function rmRebuild() {
-    // 每次重建都重新查找原始内容节点，避免指向已构建的页面内容
     var src = document.querySelector('#reading-col .reading-content');
     if (!src) return;
     rmSrcEl = src;
+    // 字号变化会导致分页重建，先停止朗读
+    if (ttsPlaying || ttsPaused) ttsStop();
     requestAnimationFrame(function() {
         rmBuildPages(rmSrcEl);
         rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
     });
 }
+
+/* ── 供 TTS 跨模块调用 ── */
+window.rmGetPages   = function() { return rmPages; };
+window.rmGetCurPage = function() { return rmCurPage; };
+window.rmShowPageFn = function(n) { rmShowPage(n); };
 
 /* ── 分页 ── */
 function rmBuildPages(srcEl) {
