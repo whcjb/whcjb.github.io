@@ -37,6 +37,7 @@ layout: default
                         <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
                     </div>
                     <button id="typo-toggle-btn">标记错字</button><span id="typo-count"></span>
+                    <button id="rm-enter-btn" onclick="rmEnter()" title="全屏阅读模式" style="background:#5B8DB8;color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap;">⛶ 阅读</button>
                 </div>
             </div>
 
@@ -996,5 +997,265 @@ function ttsUpdateUI(state) {
 </script>
 <link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
 <script src="{{ site.baseurl }}/js/typo-marker.js"></script>
+
+<!-- ══════════════════════════════════════════════
+     全屏阅读模式 Reading Mode Overlay
+     ══════════════════════════════════════════════ -->
+<div id="rm-overlay" aria-hidden="true">
+    <div id="rm-topbar">
+        <span id="rm-book-label"></span>
+        <span id="rm-section-label"></span>
+        <button id="rm-close-btn" onclick="rmExit()" title="退出阅读模式 (Esc)">✕</button>
+    </div>
+    <div id="rm-body">
+        <div id="rm-content" class="reading-content"></div>
+    </div>
+    <!-- tap zones for prev / next (always visible on sides) -->
+    <div id="rm-tap-prev" onclick="rmGoPrev()" title="上一章"></div>
+    <div id="rm-tap-next" onclick="rmGoNext()" title="下一章"></div>
+    <!-- bottom nav bar -->
+    <div id="rm-botbar">
+        <button id="rm-prev-btn" onclick="rmGoPrev()">&#8592; 上一章</button>
+        <span id="rm-progress-label"></span>
+        <button id="rm-next-btn" onclick="rmGoNext()">下一章 &#8594;</button>
+    </div>
+</div>
+
+<style>
+/* ── Overlay shell ── */
+#rm-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    z-index: 10000;
+    background: var(--reading-bg-color, #C7EDCC);
+    flex-direction: column;
+    overflow: hidden;
+}
+#rm-overlay.rm-active { display: flex; }
+
+/* ── Top bar ── */
+#rm-topbar {
+    flex-shrink: 0;
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 13px; color: #555;
+    min-height: 44px;
+}
+#rm-book-label { font-weight: bold; color: #2C4A6E; flex-shrink: 0; }
+#rm-section-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #777; }
+#rm-close-btn {
+    flex-shrink: 0;
+    background: rgba(0,0,0,0.08); border: none;
+    width: 30px; height: 30px; border-radius: 50%;
+    font-size: 16px; cursor: pointer; line-height: 1;
+    color: #444; display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+}
+#rm-close-btn:hover { background: rgba(0,0,0,0.18); }
+
+/* ── Scrollable body ── */
+#rm-body {
+    flex: 1; overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 24px 0 16px;
+}
+#rm-content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 48px; /* leave room for tap zones */
+    font-size: var(--reading-font-size, 16px);
+    color: #333;
+    font-family: "STSong", "SimSun", "宋体", serif;
+    word-break: break-word;
+}
+@media (max-width: 600px) {
+    #rm-content { padding: 0 52px 0 52px; }
+}
+
+/* ── Transparent tap zones on left / right ── */
+#rm-tap-prev, #rm-tap-next {
+    position: fixed; top: 44px; bottom: 52px;
+    width: 44px; z-index: 10001;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+}
+#rm-tap-prev { left: 0; }
+#rm-tap-next { right: 0; }
+#rm-tap-prev::after, #rm-tap-next::after {
+    content: '';
+    display: block; width: 12px; height: 12px;
+    border-top: 2px solid rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+#rm-tap-prev::after { transform: rotate(-135deg); }
+#rm-tap-next::after { transform: rotate(45deg); }
+#rm-tap-prev:hover::after, #rm-tap-next:hover::after { opacity: 1; }
+
+/* ── Bottom nav ── */
+#rm-botbar {
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 16px;
+    background: rgba(0,0,0,0.06);
+    border-top: 1px solid rgba(0,0,0,0.08);
+    min-height: 44px; gap: 8px;
+}
+#rm-botbar button {
+    background: rgba(91,141,184,0.15); border: 1px solid rgba(91,141,184,0.3);
+    border-radius: 4px; padding: 5px 14px;
+    font-size: 13px; cursor: pointer; color: #2C4A6E; font-weight: bold;
+    white-space: nowrap; transition: background 0.15s;
+}
+#rm-botbar button:hover { background: rgba(91,141,184,0.3); }
+#rm-botbar button:disabled { opacity: 0.3; cursor: default; }
+#rm-progress-label { font-size: 12px; color: #999; text-align: center; flex: 1; }
+
+/* ── Slide animation ── */
+@keyframes rmSlideInRight { from { transform: translateX(60px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes rmSlideInLeft  { from { transform: translateX(-60px); opacity: 0; } to { transform: none; opacity: 1; } }
+#rm-content.anim-from-right { animation: rmSlideInRight 0.22s ease; }
+#rm-content.anim-from-left  { animation: rmSlideInLeft  0.22s ease; }
+</style>
+
+<script>
+(function() {
+/* ── Data from Jekyll ── */
+var RM = {
+    bookTitle:   {{ page.book_title | default: '' | jsonify }},
+    sectionTitle: {{ page.section_title | default: page.title | default: '' | jsonify }},
+    authorId:    {{ page.author_id | jsonify }},
+    bookId:      {{ page.book_id | jsonify }},
+    section:     {{ page.section | jsonify }},
+    baseUrl:     '{{ site.baseurl }}',
+    sections:    {{ sections_list | jsonify }}
+};
+
+/* ── Helpers ── */
+function rmUrl(sec) {
+    return RM.baseUrl + '/reading/' + RM.authorId + '/' + RM.bookId + '/' + sec + '/';
+}
+var curIdx = RM.sections.indexOf(String(RM.section));
+
+function rmUpdateNav() {
+    var prevBtn = document.getElementById('rm-prev-btn');
+    var nextBtn = document.getElementById('rm-next-btn');
+    var prog    = document.getElementById('rm-progress-label');
+    prevBtn.disabled = curIdx <= 0;
+    nextBtn.disabled = curIdx >= RM.sections.length - 1;
+    if (RM.sections.length > 1) {
+        prog.textContent = (curIdx + 1) + ' / ' + RM.sections.length;
+    }
+}
+
+/* ── Enter / Exit ── */
+window.rmEnter = function() {
+    var overlay = document.getElementById('rm-overlay');
+    var dest    = document.getElementById('rm-content');
+    var src     = document.querySelector('.reading-content');
+    if (!src || !dest) return;
+
+    // clone content (preserves HTML structure)
+    dest.innerHTML = src.innerHTML;
+
+    // sync CSS vars (bg color + font size)
+    var bgColor  = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim();
+    var fontSize = getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim();
+    overlay.style.background = bgColor || '#C7EDCC';
+    dest.style.fontSize      = fontSize || '16px';
+
+    // labels
+    document.getElementById('rm-book-label').textContent    = RM.bookTitle;
+    document.getElementById('rm-section-label').textContent = RM.sectionTitle;
+
+    overlay.classList.add('rm-active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+
+    rmUpdateNav();
+
+    // try native fullscreen
+    if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen().catch(function(){});
+    }
+};
+
+window.rmExit = function() {
+    var overlay = document.getElementById('rm-overlay');
+    overlay.classList.remove('rm-active');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (document.exitFullscreen && document.fullscreenElement) {
+        document.exitFullscreen().catch(function(){});
+    }
+};
+
+/* ── Navigate to another chapter ── */
+function rmNavigate(dir) {
+    var newIdx = curIdx + dir;
+    if (newIdx < 0 || newIdx >= RM.sections.length) return;
+    var url = rmUrl(RM.sections[newIdx]);
+    // animate out then navigate
+    var dest = document.getElementById('rm-content');
+    dest.classList.remove('anim-from-right', 'anim-from-left');
+    void dest.offsetWidth; // reflow
+    dest.style.opacity = '0';
+    dest.style.transition = 'opacity 0.15s';
+    setTimeout(function() { window.location.href = url; }, 150);
+}
+
+window.rmGoPrev = function() { rmNavigate(-1); };
+window.rmGoNext = function() { rmNavigate(1); };
+
+/* ── Keyboard ── */
+document.addEventListener('keydown', function(e) {
+    var overlay = document.getElementById('rm-overlay');
+    if (!overlay.classList.contains('rm-active')) return;
+    if (e.key === 'Escape')     { rmExit(); }
+    if (e.key === 'ArrowRight') { rmGoNext(); }
+    if (e.key === 'ArrowLeft')  { rmGoPrev(); }
+});
+
+/* ── Swipe (touch) ── */
+var _touchX = null;
+document.getElementById('rm-body').addEventListener('touchstart', function(e) {
+    _touchX = e.touches[0].clientX;
+}, { passive: true });
+document.getElementById('rm-body').addEventListener('touchend', function(e) {
+    if (_touchX === null) return;
+    var dx = e.changedTouches[0].clientX - _touchX;
+    _touchX = null;
+    if (Math.abs(dx) < 60) return; // too short, ignore
+    if (dx < 0) rmGoNext(); // swipe left → next
+    else         rmGoPrev(); // swipe right → prev
+}, { passive: true });
+
+/* ── Auto-enter if #readmode hash ── */
+if (window.location.hash === '#readmode') {
+    window.addEventListener('load', function() {
+        setTimeout(rmEnter, 100);
+    });
+}
+
+/* ── Enter reading mode after navigation (carry the mode across pages) ── */
+// when navigating via rmNavigate(), append hash so next page auto-enters
+var _origNavigate = rmNavigate;
+function rmNavigate(dir) {
+    var newIdx = curIdx + dir;
+    if (newIdx < 0 || newIdx >= RM.sections.length) return;
+    var url = rmUrl(RM.sections[newIdx]) + '#readmode';
+    var dest = document.getElementById('rm-content');
+    dest.style.opacity = '0';
+    dest.style.transition = 'opacity 0.15s';
+    setTimeout(function() { window.location.href = url; }, 150);
+}
+window.rmGoPrev = function() { rmNavigate(-1); };
+window.rmGoNext = function() { rmNavigate(1); };
+
+})();
+</script>
 
 {% include reading-progress.html %}
