@@ -1002,12 +1002,6 @@ function ttsUpdateUI(state) {
      ══════════════════════════════════════════════ -->
 <!-- 全屏阅读模式：点击中间弹出控制面板 -->
 <div id="rm-overlay" aria-hidden="true">
-    <!-- 顶栏（自动隐藏，仅显示标题和退出） -->
-    <div id="rm-topbar">
-        <span id="rm-book-label"></span>
-        <span id="rm-section-label"></span>
-        <button id="rm-close-btn" onclick="rmExit()" title="退出 (Esc)">✕</button>
-    </div>
     <!-- 内容区（铺满全屏） -->
     <div id="rm-body">
         <div id="rm-click-prev" onclick="rmPagePrev()"></div>
@@ -1069,28 +1063,6 @@ function ttsUpdateUI(state) {
 }
 #rm-overlay.rm-active { display: block; }
 
-/* ── 顶栏（自动隐藏） ── */
-#rm-topbar {
-    position: absolute; top: 0; left: 0; right: 0; z-index: 10002;
-    display: flex; align-items: center; gap: 10px;
-    padding: 8px 16px; min-height: 46px;
-    background: rgba(0,0,0,0.52);
-    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
-    font-size: 13px; color: #ddd;
-    transition: transform 0.28s ease, opacity 0.28s ease;
-}
-#rm-book-label    { font-weight: bold; color: #a8d4f0; flex-shrink: 0; max-width: 38%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-#rm-section-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #bbb; font-size: 12px; }
-#rm-close-btn {
-    flex-shrink: 0; background: rgba(255,255,255,0.15); border: none;
-    width: 30px; height: 30px; border-radius: 50%; font-size: 15px;
-    cursor: pointer; color: #fff;
-    display: flex; align-items: center; justify-content: center;
-}
-#rm-close-btn:hover { background: rgba(255,255,255,0.3); }
-#rm-overlay.rm-bars-hidden #rm-topbar {
-    transform: translateY(-100%); opacity: 0; pointer-events: none;
-}
 
 /* ── 内容区（全屏） ── */
 #rm-body { position: absolute; inset: 0; overflow: hidden; }
@@ -1247,7 +1219,6 @@ window.rmToggleSheet = function() {
     if (ov.classList.contains('rm-sheet-open')) {
         rmHideSheet();
     } else {
-        ov.classList.remove('rm-bars-hidden');
         ov.classList.add('rm-sheet-open');
         rmSyncSheetState();
     }
@@ -1410,7 +1381,7 @@ window.rmEnter = function() {
     var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
     overlay.classList.remove('rm-sheet-open');
-    overlay.classList.add('rm-active', 'rm-bars-hidden'); // 进入即隐藏顶栏
+    overlay.classList.add('rm-active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
@@ -1429,7 +1400,7 @@ window.rmEnter = function() {
 /* ── 退出 ── */
 window.rmExit = function() {
     var overlay = document.getElementById('rm-overlay');
-    overlay.classList.remove('rm-active', 'rm-bars-hidden', 'rm-sheet-open');
+    overlay.classList.remove('rm-active', 'rm-sheet-open');
     ttsStop(); // 退出时停止朗读
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
