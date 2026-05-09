@@ -1007,12 +1007,11 @@ function ttsUpdateUI(state) {
         <span id="rm-section-label"></span>
         <button id="rm-close-btn" onclick="rmExit()" title="退出阅读模式 (Esc)">✕</button>
     </div>
+    <!-- click zones: left half = prev page, right half = next page -->
     <div id="rm-body">
-        <div id="rm-content" class="reading-content"></div>
+        <div id="rm-click-prev" onclick="rmPagePrev()" title="上一页"></div>
+        <div id="rm-click-next" onclick="rmPageNext()" title="下一页"></div>
     </div>
-    <!-- tap zones: left = prev page, right = next page -->
-    <div id="rm-tap-prev" onclick="rmPagePrev()" title="上一页"></div>
-    <div id="rm-tap-next" onclick="rmPageNext()" title="下一页"></div>
     <!-- bottom bar: chapter nav + page indicator -->
     <div id="rm-botbar">
         <button id="rm-ch-prev-btn" onclick="rmChapterNav(-1)">&#8592; 上一章</button>
@@ -1056,27 +1055,28 @@ function ttsUpdateUI(state) {
 }
 #rm-close-btn:hover { background: rgba(0,0,0,0.2); }
 
-/* ── Scrollable body (scroll-snap for page feel) ── */
+/* ── Page area: pages stacked, only active visible ── */
 #rm-body {
     flex: 1;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    scroll-snap-type: y mandatory;
-    /* hide scrollbar visually */
-    scrollbar-width: none;
+    position: relative;
+    overflow: hidden;
 }
-#rm-body::-webkit-scrollbar { display: none; }
 
-/* ── Pages: each .rm-page is exactly one viewport height ── */
+/* ── Each page fills the body area ── */
 .rm-page {
-    scroll-snap-align: start;
-    min-height: 100%;          /* at least one screen tall */
+    position: absolute;
+    inset: 0;
     box-sizing: border-box;
-    padding: 24px 72px 24px 72px;  /* 72px sides: room for tap zones */
-    display: flex; flex-direction: column; justify-content: flex-start;
+    padding: 28px 80px;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
 }
+.rm-page.active { display: flex; }
 @media (max-width: 600px) {
-    .rm-page { padding: 16px 56px; }
+    .rm-page { padding: 16px 52px; }
 }
 
 /* ── Content inherits all reading styles ── */
@@ -1086,23 +1086,36 @@ function ttsUpdateUI(state) {
     word-break: break-word;
 }
 
-/* ── Tap zones ── */
-#rm-tap-prev, #rm-tap-next {
-    position: fixed; top: 44px; bottom: 44px;
+/* ── Left / right click zones ── */
+#rm-click-prev, #rm-click-next {
+    position: absolute; top: 0; bottom: 0;
     width: 52px; z-index: 10001; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
+    user-select: none;
+    -webkit-user-select: none;
 }
-#rm-tap-prev { left: 0; }
-#rm-tap-next { right: 0; }
-#rm-tap-prev::after, #rm-tap-next::after {
+#rm-click-prev { left: 0; }
+#rm-click-next { right: 0; }
+
+/* Arrow chevrons */
+#rm-click-prev::after, #rm-click-next::after {
     content: '';
-    display: block; width: 10px; height: 10px;
-    border-top: 2px solid rgba(0,0,0,0.18);
-    border-right: 2px solid rgba(0,0,0,0.18);
-    transition: opacity 0.2s;
+    display: block; width: 12px; height: 12px;
+    border-top: 2.5px solid rgba(0,0,0,0.22);
+    border-right: 2.5px solid rgba(0,0,0,0.22);
+    border-radius: 1px;
+    transition: border-color 0.15s;
 }
-#rm-tap-prev::after { transform: rotate(-135deg); }
-#rm-tap-next::after { transform: rotate(45deg); }
+#rm-click-prev::after { transform: rotate(-135deg); margin-left: 4px; }
+#rm-click-next::after { transform: rotate(45deg); margin-right: 4px; }
+#rm-click-prev:hover::after, #rm-click-next:hover::after {
+    border-color: rgba(0,0,0,0.5);
+}
+
+/* flash feedback on click */
+#rm-click-prev.tapped, #rm-click-next.tapped {
+    background: rgba(0,0,0,0.05);
+}
 
 /* ── Bottom bar ── */
 #rm-botbar {
@@ -1143,51 +1156,48 @@ function rmChUrl(sec) {
 }
 
 /* ── Page state ── */
-var rmPages = [];      // array of DOM .rm-page elements
+var rmPages = [];
 var rmCurPage = 0;
 
-/* ── Split content into screen-sized pages ── */
+/* ── Split content into pages ── */
 function rmBuildPages(srcEl) {
-    var body    = document.getElementById('rm-body');
-    var overlay = document.getElementById('rm-overlay');
-    body.innerHTML = '';
+    var body = document.getElementById('rm-body');
+    // remove old pages (keep click zones)
+    var old = body.querySelectorAll('.rm-page');
+    old.forEach(function(p) { p.parentNode.removeChild(p); });
+    rmPages = [];
 
-    // measure usable page height (body = overlay minus topbar + botbar)
     var pageH = body.clientHeight;
+    var pageW = body.clientWidth - 160; // subtract padding sides
+    if (pageW < 100) pageW = body.clientWidth - 104; // mobile
 
-    // Clone all child nodes of srcEl into a measurement container
+    // measure container
     var measure = document.createElement('div');
     measure.className = 'reading-content';
-    measure.style.cssText = 'position:absolute;visibility:hidden;width:' +
-        (body.clientWidth - 144) + 'px;font-size:' +
-        (getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim() || '16px');
+    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;width:' + pageW + 'px;' +
+        'font-size:' + (getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim() || '16px');
     document.body.appendChild(measure);
 
-    // Collect block-level children (p, h2, h3, blockquote, div, aside)
     var children = Array.prototype.slice.call(srcEl.children);
-
-    rmPages = [];
     var pageDiv = newPage();
     var pageContentH = 0;
 
     children.forEach(function(child) {
-        var clone = child.cloneNode(true);
         measure.innerHTML = '';
-        measure.appendChild(clone.cloneNode(true));
-        var h = measure.offsetHeight + 32; // +32 for margin
+        measure.appendChild(child.cloneNode(true));
+        var h = measure.offsetHeight + 32;
 
         if (pageContentH + h > pageH && pageContentH > 0) {
-            // start a new page
-            body.appendChild(pageDiv);
+            body.insertBefore(pageDiv, document.getElementById('rm-click-prev'));
             rmPages.push(pageDiv);
             pageDiv = newPage();
             pageContentH = 0;
         }
-        pageDiv.appendChild(clone);
+        pageDiv.appendChild(child.cloneNode(true));
         pageContentH += h;
     });
     if (pageDiv.children.length > 0) {
-        body.appendChild(pageDiv);
+        body.insertBefore(pageDiv, document.getElementById('rm-click-prev'));
         rmPages.push(pageDiv);
     }
     document.body.removeChild(measure);
@@ -1200,21 +1210,16 @@ function newPage() {
     return d;
 }
 
-/* ── Show page N (0-indexed) ── */
-function rmShowPage(n, animate) {
+/* ── Show page N ── */
+function rmShowPage(n) {
     if (!rmPages.length) return;
     n = Math.max(0, Math.min(n, rmPages.length - 1));
+    if (rmPages[rmCurPage]) rmPages[rmCurPage].classList.remove('active');
     rmCurPage = n;
-    var target = rmPages[n];
-    var body = document.getElementById('rm-body');
-
-    if (animate) {
-        // smooth scroll-snap
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-        body.scrollTop = target.offsetTop;
-    }
+    rmPages[n].classList.add('active');
+    rmPages[n].scrollTop = 0;
     rmUpdatePageLabel();
+    rmUpdateArrows();
 }
 
 function rmUpdatePageLabel() {
@@ -1224,23 +1229,28 @@ function rmUpdatePageLabel() {
     lbl.textContent = '第 ' + (rmCurPage + 1) + ' 页 / 共 ' + rmPages.length + ' 页';
 }
 
-/* ── Detect current page on scroll ── */
-function rmOnScroll() {
-    var body = document.getElementById('rm-body');
-    var scrollTop = body.scrollTop;
-    var pageH = body.clientHeight;
-    var idx = Math.round(scrollTop / pageH);
-    if (idx !== rmCurPage) {
-        rmCurPage = Math.max(0, Math.min(idx, rmPages.length - 1));
-        rmUpdatePageLabel();
-    }
+function rmUpdateArrows() {
+    var prev = document.getElementById('rm-click-prev');
+    var next = document.getElementById('rm-click-next');
+    if (prev) prev.style.opacity = rmCurPage <= 0 ? '0.2' : '1';
+    if (next) next.style.opacity = rmCurPage >= rmPages.length - 1 ? '0.2' : '1';
 }
 
 /* ── Page navigation ── */
-window.rmPageNext = function() { rmShowPage(rmCurPage + 1, true); };
-window.rmPagePrev = function() { rmShowPage(rmCurPage - 1, true); };
+window.rmPageNext = function() {
+    if (rmCurPage >= rmPages.length - 1) return;
+    var el = document.getElementById('rm-click-next');
+    if (el) { el.classList.add('tapped'); setTimeout(function(){ el.classList.remove('tapped'); }, 150); }
+    rmShowPage(rmCurPage + 1);
+};
+window.rmPagePrev = function() {
+    if (rmCurPage <= 0) return;
+    var el = document.getElementById('rm-click-prev');
+    if (el) { el.classList.add('tapped'); setTimeout(function(){ el.classList.remove('tapped'); }, 150); }
+    rmShowPage(rmCurPage - 1);
+};
 
-/* ── Chapter navigation (bottom bar buttons only) ── */
+/* ── Chapter navigation ── */
 window.rmChapterNav = function(dir) {
     var newIdx = curChIdx + dir;
     if (newIdx < 0 || newIdx >= RM.sections.length) return;
@@ -1253,7 +1263,6 @@ window.rmEnter = function() {
     var src = document.querySelector('.reading-content');
     if (!src) return;
 
-    // apply bg color
     var bgColor = getComputedStyle(document.documentElement)
                     .getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
@@ -1264,20 +1273,16 @@ window.rmEnter = function() {
     document.getElementById('rm-book-label').textContent    = RM.bookTitle;
     document.getElementById('rm-section-label').textContent = RM.sectionTitle;
 
-    // chapter nav buttons
     var prevBtn = document.getElementById('rm-ch-prev-btn');
     var nextBtn = document.getElementById('rm-ch-next-btn');
     if (prevBtn) prevBtn.disabled = curChIdx <= 0;
     if (nextBtn) nextBtn.disabled = curChIdx >= RM.sections.length - 1;
 
-    // build pages after overlay is visible (need layout dimensions)
     requestAnimationFrame(function() {
         rmBuildPages(src);
-        rmShowPage(0, false);
-        document.getElementById('rm-body').addEventListener('scroll', rmOnScroll, { passive: true });
+        rmShowPage(0);
     });
 
-    // try fullscreen
     if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().catch(function(){});
     }
@@ -1289,7 +1294,6 @@ window.rmExit = function() {
     overlay.classList.remove('rm-active');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    document.getElementById('rm-body').removeEventListener('scroll', rmOnScroll);
     if (document.exitFullscreen && document.fullscreenElement) {
         document.exitFullscreen().catch(function(){});
     }
@@ -1303,7 +1307,7 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    rmPagePrev();
 });
 
-/* ── Swipe: horizontal swipe = page turn within chapter ── */
+/* ── Swipe on pages ── */
 var _tx = null, _ty = null;
 document.getElementById('rm-body').addEventListener('touchstart', function(e) {
     _tx = e.touches[0].clientX;
@@ -1314,8 +1318,7 @@ document.getElementById('rm-body').addEventListener('touchend', function(e) {
     var dx = e.changedTouches[0].clientX - _tx;
     var dy = e.changedTouches[0].clientY - _ty;
     _tx = _ty = null;
-    // only treat as page-turn if more horizontal than vertical
-    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
+    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
     if (dx < 0) rmPageNext();
     else         rmPagePrev();
 }, { passive: true });
