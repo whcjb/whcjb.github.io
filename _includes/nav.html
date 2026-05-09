@@ -150,15 +150,31 @@
     color: #0085a1 !important;
 }
 
-/* Hide-on-scroll-down / show-on-scroll-up — mobile only */
+/* Mobile: fixed navbar with solid background (desktop uses JS is-fixed/is-visible) */
 @media only screen and (max-width: 1169px) {
     .navbar-custom {
+        position: fixed !important;
         top: 0;
+        background-color: rgba(30, 30, 30, 0.96) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
         -webkit-transition: top 0.3s ease;
         transition: top 0.3s ease;
     }
     .navbar-custom.nav-hidden {
         top: -60px !important;
+    }
+    /* ensure brand/links are readable on dark bg */
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav li a {
+        color: rgba(255, 255, 255, 0.92) !important;
+    }
+    .navbar-custom .navbar-brand:hover,
+    .navbar-custom .nav li a:hover {
+        color: #C9922A !important;
+    }
+    /* hamburger icon bars */
+    .navbar-custom .icon-bar {
+        background-color: rgba(255, 255, 255, 0.9);
     }
 }
 </style>
