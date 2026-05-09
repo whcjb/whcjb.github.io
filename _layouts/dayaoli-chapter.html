@@ -30,7 +30,6 @@ layout: default
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <div class="dayaoli-chapter-wrap">
 
-        <!-- 顶部导航 -->
         <div class="dc-topnav">
           <a class="dc-back" href="{{ site.baseurl }}/reading/lu/dayaoli/">← 返回目录</a>
           <div class="dc-prevnext">
@@ -43,12 +42,10 @@ layout: default
           </div>
         </div>
 
-        <!-- 卡片区（JS 负责将 content 转成卡片） -->
         <div class="dc-cards" id="dc-cards">
           {{ content }}
         </div>
 
-        <!-- 底部导航 -->
         <div class="dc-botnav">
           {% if current_idx > 0 %}
           <a class="dc-nav-btn" href="{{ site.baseurl }}/reading/lu/dayaoli/{{ prev_sec }}/">← 上一部分</a>
@@ -69,91 +66,48 @@ layout: default
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
 
 <style>
-.dayaoli-chapter-wrap {
-    padding: 28px 0 60px;
-}
+.dayaoli-chapter-wrap { padding: 28px 0 60px; }
 
 /* ── 导航 ── */
 .dc-topnav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 28px; flex-wrap: wrap; gap: 10px;
 }
-.dc-back {
-    font-size: 13px;
-    color: #888;
-    text-decoration: none !important;
-}
+.dc-back { font-size: 13px; color: #888; text-decoration: none !important; }
 .dc-back:hover { color: #C9922A; }
 .dc-prevnext { display: flex; gap: 10px; }
 .dc-nav-btn {
-    font-size: 13px;
-    padding: 5px 14px;
-    border-radius: 5px;
-    border: 1.5px solid #e8d9c0;
-    background: #fffaf4;
-    color: #8B5E00;
-    text-decoration: none !important;
-    transition: border-color .15s, background .15s;
+    font-size: 13px; padding: 5px 14px; border-radius: 5px;
+    border: 1.5px solid #e8d9c0; background: #fffaf4; color: #8B5E00;
+    text-decoration: none !important; transition: border-color .15s, background .15s;
 }
-.dc-nav-btn:hover {
-    border-color: #C9922A;
-    background: #fff3e0;
-    color: #8B5E00 !important;
-}
+.dc-nav-btn:hover { border-color: #C9922A; background: #fff3e0; color: #8B5E00 !important; }
 .dc-botnav {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 32px;
-    padding-top: 24px;
-    border-top: 1px solid #e8d9c0;
+    display: flex; justify-content: center; gap: 14px;
+    margin-top: 32px; padding-top: 24px; border-top: 1px solid #e8d9c0;
 }
 
 /* ── 默写工具栏 ── */
 .catechism-toolbar {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;
 }
 .ct-btn {
-    padding: 5px 13px;
-    border-radius: 5px;
-    border: 1.5px solid #C9922A;
-    background: transparent;
-    color: #8B5E00;
-    font-size: 13px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: background .15s, color .15s;
+    padding: 5px 13px; border-radius: 5px; border: 1.5px solid #C9922A;
+    background: transparent; color: #8B5E00; font-size: 13px; cursor: pointer;
+    font-family: inherit; transition: background .15s, color .15s;
 }
 .ct-btn:hover { background: rgba(201,146,42,0.1); }
 .ct-btn.active { background: #8B5E00; color: #fff8ee; border-color: #8B5E00; }
-.ct-info {
-    font-size: 12px;
-    color: #bbb;
-    margin-left: auto;
-    letter-spacing: 0.04em;
-}
+.ct-info { font-size: 12px; color: #bbb; margin-left: auto; letter-spacing: 0.04em; }
 
-/* ── 卡片容器：两列瀑布流 ── */
-.dc-card-grid {
-    column-count: 2;
-    column-gap: 14px;
-}
-@media (max-width: 540px) {
-    .dc-card-grid { column-count: 1; }
-}
+/* ── 两列瀑布流容器 ── */
+.dc-card-grid { column-count: 2; column-gap: 14px; }
+@media (max-width: 540px) { .dc-card-grid { column-count: 1; } }
 
-/* ── 问答卡片 ── */
+/* ── 卡片基础 ── */
 .catechism-card {
     break-inside: avoid;
-    display: inline-block; /* 配合 column 布局防断裂 */
+    display: inline-block;
     width: 100%;
     border-radius: 10px;
     overflow: hidden;
@@ -161,92 +115,205 @@ layout: default
     box-shadow: 0 2px 10px rgba(74,37,0,0.06);
     margin-bottom: 14px;
     background: #fffaf4;
-    transition: box-shadow .15s, border-color .15s;
-    /* 最低高度让短问答接近正方形（列宽约 50% 容器宽） */
+    transition: box-shadow .2s, border-color .2s, transform .2s;
     min-height: calc((100vw - 80px) * 0.46);
     box-sizing: border-box;
 }
-@media (min-width: 992px) {
-    /* lg 列宽固定约 340px，最低高度对齐 */
-    .catechism-card { min-height: 300px; }
-}
-.catechism-card:hover {
-    border-color: #C9922A;
-    box-shadow: 0 4px 18px rgba(74,37,0,0.10);
-}
+@media (min-width: 992px) { .catechism-card { min-height: 300px; } }
+.catechism-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(74,37,0,0.12); }
+
 .catechism-q-area {
-    background: linear-gradient(135deg, #5C3200 0%, #8B5E3C 100%);
-    padding: 12px 16px;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
+    padding: 12px 16px; display: flex; align-items: flex-start; gap: 12px;
 }
 .catechism-q-num {
-    background: rgba(255,255,255,0.16);
-    color: #FFD580;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 3px 9px;
-    border-radius: 4px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    letter-spacing: 0.06em;
-    margin-top: 3px;
-    font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 11px; font-weight: bold; padding: 3px 9px; border-radius: 4px;
+    white-space: nowrap; flex-shrink: 0; letter-spacing: 0.06em;
+    margin-top: 3px; font-family: 'ZCOOL XiaoWei', serif;
 }
 .catechism-q-text {
     font-family: 'LXGW WenKai', 'STKaiti', serif;
-    font-size: 15.5px;
-    line-height: 1.75;
-    color: #fff8ee;
+    font-size: 15.5px; line-height: 1.75;
 }
-.catechism-a-area {
-    padding: 12px 16px 14px;
-    border-top: 1px solid #e8d5b0;
-    cursor: default;
-}
+.catechism-a-area { padding: 12px 16px 14px; cursor: default; }
 .catechism-a-label {
-    font-size: 10px;
-    font-weight: bold;
-    color: #C9922A;
-    letter-spacing: 0.14em;
-    margin-bottom: 7px;
+    font-size: 10px; font-weight: bold; letter-spacing: 0.14em; margin-bottom: 7px;
     font-family: 'ZCOOL XiaoWei', sans-serif;
 }
 .catechism-a-text {
     font-family: 'LXGW WenKai', 'STKaiti', serif;
-    font-size: 15px;
-    line-height: 1.95;
-    color: #3a1e00;
-    transition: filter .25s, opacity .25s;
+    font-size: 15px; line-height: 1.95; transition: filter .25s, opacity .25s;
 }
 .catechism-a-text p { margin: 0 0 4px; }
 
-/* 默写模式（挂在 #dc-cards 上） */
+/* ══════════════════════════════════════════
+   六种卡片主题
+══════════════════════════════════════════ */
+
+/* ── Style 1：暖棕 — 深棕渐变头部 ── */
+.cc-1 { border-color: #e0cdb0; background: #fffaf4; }
+.cc-1 .catechism-q-area { background: linear-gradient(135deg, #5C3200, #8B5E3C); }
+.cc-1 .catechism-q-num  { background: rgba(255,255,255,0.16); color: #FFD580; }
+.cc-1 .catechism-q-text { color: #fff8ee; }
+.cc-1 .catechism-a-area { border-top: 1px solid #e0cdb0; }
+.cc-1 .catechism-a-label { color: #C9922A; }
+.cc-1 .catechism-a-text  { color: #3a1e00; }
+.cc-1:hover { border-color: #C9922A; }
+
+/* ── Style 2：靛蓝 — 深海军蓝头部 ── */
+.cc-2 { border-color: #b8c8de; background: #f6f8fc; }
+.cc-2 .catechism-q-area { background: linear-gradient(135deg, #172540, #2c4472); }
+.cc-2 .catechism-q-num  { background: rgba(255,255,255,0.14); color: #90C0F0; }
+.cc-2 .catechism-q-text { color: #dde8f8; }
+.cc-2 .catechism-a-area { border-top: 1px solid #b8c8de; }
+.cc-2 .catechism-a-label { color: #3568b0; }
+.cc-2 .catechism-a-text  { color: #172040; }
+.cc-2:hover { border-color: #3568b0; box-shadow: 0 6px 20px rgba(23,37,64,0.14); }
+
+/* ── Style 3：素简 — 白底左金边，问号水印 ── */
+.cc-3 {
+    border-color: #e8d9c0; border-left: 4px solid #C9922A;
+    background: #fff; position: relative;
+}
+.cc-3 .catechism-q-area {
+    background: none; flex-direction: column; gap: 6px;
+    padding: 16px 16px 10px; border-bottom: 1px solid #f0e4cc;
+    position: relative;
+}
+.cc-3 .catechism-q-area::before {
+    content: attr(data-qnum);
+    position: absolute; right: 12px; top: 6px;
+    font-family: Georgia, serif; font-size: 56px; font-weight: bold;
+    color: rgba(201,146,42,0.10); line-height: 1; pointer-events: none;
+    font-style: italic;
+}
+.cc-3 .catechism-q-num {
+    background: #C9922A; color: #fff; align-self: flex-start;
+    font-size: 10px; padding: 2px 8px;
+}
+.cc-3 .catechism-q-text { color: #3a1e00; font-size: 15px; }
+.cc-3 .catechism-a-area { border-top: 1px solid #f0e4cc; }
+.cc-3 .catechism-a-label { color: #C9922A; }
+.cc-3 .catechism-a-text  { color: #444; }
+.cc-3:hover { border-color: #C9922A; border-left-color: #8B5E00; }
+
+/* ── Style 4：墨绿 — 深林绿头部 ── */
+.cc-4 { border-color: #b0ccbc; background: #f5faf7; }
+.cc-4 .catechism-q-area { background: linear-gradient(135deg, #183525, #2d5c3c); }
+.cc-4 .catechism-q-num  { background: rgba(255,255,255,0.14); color: #80D4A0; }
+.cc-4 .catechism-q-text { color: #e0f0e8; }
+.cc-4 .catechism-a-area { border-top: 1px solid #b0ccbc; }
+.cc-4 .catechism-a-label { color: #2a7040; }
+.cc-4 .catechism-a-text  { color: #183020; }
+.cc-4:hover { border-color: #2a7040; box-shadow: 0 6px 20px rgba(24,53,37,0.14); }
+
+/* ── Style 5：深夜 — 全深色可可棕 ── */
+.cc-5 { border-color: #2a1200; background: #1e0e00; }
+.cc-5 .catechism-q-area {
+    background: rgba(255,220,140,0.06);
+    border-bottom: 1px solid rgba(255,200,100,0.15);
+}
+.cc-5 .catechism-q-num  { background: rgba(255,213,92,0.18); color: #FFD580; }
+.cc-5 .catechism-q-text { color: #f0dfc0; }
+.cc-5 .catechism-a-area { border-top: 1px solid rgba(255,200,100,0.12); }
+.cc-5 .catechism-a-label { color: #C9922A; }
+.cc-5 .catechism-a-text  { color: #d8c8a8; }
+.cc-5:hover { border-color: #C9922A; box-shadow: 0 6px 22px rgba(0,0,0,0.35); }
+
+/* ── Style 6：侧栏编号 — 左侧金色竖条 + 编号 ── */
+.cc-6 {
+    display: flex !important; flex-direction: row;
+    border-color: #e0cdb0; background: #fffcf5;
+}
+.cc-6 .cc6-sidebar {
+    width: 52px; flex-shrink: 0;
+    background: linear-gradient(180deg, #8B5E00, #C9922A);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start;
+    padding: 16px 0 12px; gap: 8px;
+    border-radius: 8px 0 0 8px;
+}
+.cc-6 .cc6-sidebar-label {
+    writing-mode: vertical-rl; font-family: 'ZCOOL XiaoWei', serif;
+    font-size: 10px; color: rgba(255,255,255,0.65); letter-spacing: 0.15em;
+}
+.cc-6 .cc6-sidebar-num {
+    font-family: 'ZCOOL XiaoWei', Georgia, serif;
+    font-size: 20px; color: #FFD580; font-weight: bold; line-height: 1;
+}
+.cc-6 .cc6-main { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+.cc-6 .catechism-q-area {
+    background: none; border-bottom: 1px solid #e8d9c0;
+    padding: 14px 14px 10px; align-items: flex-start;
+}
+.cc-6 .catechism-q-num  { display: none; }
+.cc-6 .catechism-q-text { color: #3a1e00; font-size: 15px; }
+.cc-6 .catechism-a-area { border-top: none; flex: 1; padding: 10px 14px 14px; }
+.cc-6 .catechism-a-label { color: #C9922A; }
+.cc-6 .catechism-a-text  { color: #3a1e00; }
+.cc-6:hover { border-color: #C9922A; }
+
+/* ── 默写模式 ── */
 #dc-cards.dayaoli-quiz-mode .catechism-a-area { cursor: pointer; }
 #dc-cards.dayaoli-quiz-mode .catechism-a-text {
-    filter: blur(5px);
-    opacity: 0.55;
-    user-select: none;
+    filter: blur(5px); opacity: 0.55; user-select: none;
 }
 #dc-cards.dayaoli-quiz-mode .catechism-a-text.revealed { filter: none; opacity: 1; }
 #dc-cards.dayaoli-quiz-mode .catechism-a-area:hover { background: rgba(201,146,42,0.05); }
 
-/* 隐藏 markdown 原始渲染 */
-#dc-cards h2,
-#dc-cards > p,
-#dc-cards > hr { display: none; }
+/* markdown 原始渲染隐藏 */
+#dc-cards h2, #dc-cards > p, #dc-cards > hr { display: none; }
 </style>
 
 <script>
 (function() {
+    /* 6 种卡片样式，循环分配 */
+    var STYLES = ['cc-1','cc-2','cc-3','cc-4','cc-5','cc-6'];
+
+    function buildStandardCard(styleClass, qNum, qText, ansHtml) {
+        var card = document.createElement('div');
+        card.className = 'catechism-card ' + styleClass;
+        card.innerHTML =
+            '<div class="catechism-q-area">' +
+              '<span class="catechism-q-num">问 ' + qNum + '</span>' +
+              '<span class="catechism-q-text">' + qText + '</span>' +
+            '</div>' +
+            '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
+              '<div class="catechism-a-label">答</div>' +
+              '<div class="catechism-a-text">' + ansHtml + '</div>' +
+            '</div>';
+        /* cc-3 需要把问题编号写入 data-qnum 供 ::before 水印用 */
+        if (styleClass === 'cc-3') {
+            card.querySelector('.catechism-q-area').setAttribute('data-qnum', qNum);
+        }
+        return card;
+    }
+
+    function buildSidebarCard(qNum, qText, ansHtml) {
+        var card = document.createElement('div');
+        card.className = 'catechism-card cc-6';
+        card.innerHTML =
+            '<div class="cc6-sidebar">' +
+              '<span class="cc6-sidebar-label">问</span>' +
+              '<span class="cc6-sidebar-num">' + qNum + '</span>' +
+            '</div>' +
+            '<div class="cc6-main">' +
+              '<div class="catechism-q-area">' +
+                '<span class="catechism-q-text">' + qText + '</span>' +
+              '</div>' +
+              '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
+                '<div class="catechism-a-label">答</div>' +
+                '<div class="catechism-a-text">' + ansHtml + '</div>' +
+              '</div>' +
+            '</div>';
+        return card;
+    }
+
     function initCards() {
         var container = document.getElementById('dc-cards');
         if (!container) return;
 
         var nodes = Array.from(container.children);
-        var groups = [];
-        var current = null;
+        var groups = [], current = null;
 
         nodes.forEach(function(el) {
             if (el.tagName === 'H2') return;
@@ -279,13 +346,13 @@ layout: default
             '<span class="ct-info">第 ' + qRange + ' 问 &nbsp;·&nbsp; 共 ' + groups.length + ' 问</span>';
         container.appendChild(toolbar);
 
-        /* 两列瀑布流网格容器 */
+        /* 两列瀑布流容器 */
         var grid = document.createElement('div');
         grid.className = 'dc-card-grid';
         container.appendChild(grid);
 
-        /* 卡片 */
-        groups.forEach(function(g) {
+        /* 逐卡生成 */
+        groups.forEach(function(g, idx) {
             var qFull = g.q.querySelector('strong').textContent;
             var m = qFull.match(/^问(\d+)[：:]([\s\S]*)$/);
             var qNum  = m ? m[1] : '?';
@@ -294,17 +361,10 @@ layout: default
             var ansHtml = g.answers.map(function(a) { return a.outerHTML; }).join('');
             ansHtml = ansHtml.replace(/^(<p[^>]*>)答[：:]/, '$1');
 
-            var card = document.createElement('div');
-            card.className = 'catechism-card';
-            card.innerHTML =
-                '<div class="catechism-q-area">' +
-                  '<span class="catechism-q-num">问 ' + qNum + '</span>' +
-                  '<span class="catechism-q-text">' + qText + '</span>' +
-                '</div>' +
-                '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
-                  '<div class="catechism-a-label">答</div>' +
-                  '<div class="catechism-a-text">' + ansHtml + '</div>' +
-                '</div>';
+            var styleClass = STYLES[idx % STYLES.length];
+            var card = styleClass === 'cc-6'
+                ? buildSidebarCard(qNum, qText, ansHtml)
+                : buildStandardCard(styleClass, qNum, qText, ansHtml);
             grid.appendChild(card);
         });
     }
@@ -324,13 +384,13 @@ layout: default
     };
 
     window.dcRevealCard = function(areaEl) {
-        var wrap = document.querySelector('.dayaoli-chapter-wrap');
+        var wrap = document.getElementById('dc-cards');
         if (!wrap.classList.contains('dayaoli-quiz-mode')) return;
         areaEl.querySelector('.catechism-a-text').classList.toggle('revealed');
     };
 
     window.dcRevealAll = function() {
-        document.querySelectorAll('.catechism-a-text').forEach(function(el) {
+        document.querySelectorAll('#dc-cards .catechism-a-text').forEach(function(el) {
             el.classList.add('revealed');
         });
     };
