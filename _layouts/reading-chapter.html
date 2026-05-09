@@ -36,7 +36,6 @@ layout: default
                         <button onclick="resetFontSize()" aria-label="默认字号">A</button>
                         <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
                     </div>
-                    <button id="typo-toggle-btn">标记错字</button><span id="typo-count"></span>
                     <button id="rm-enter-btn" onclick="rmEnter()" title="全屏阅读模式" style="background:#5B8DB8;color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap;">⛶ 阅读</button>
                 </div>
             </div>
@@ -995,9 +994,6 @@ function ttsUpdateUI(state) {
     hr.insertAdjacentElement('afterend', aside);
 })();
 </script>
-<link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
-<script src="{{ site.baseurl }}/js/typo-marker.js"></script>
-
 <!-- ══════════════════════════════════════════════
      全屏阅读模式 Reading Mode Overlay
      ══════════════════════════════════════════════ -->
