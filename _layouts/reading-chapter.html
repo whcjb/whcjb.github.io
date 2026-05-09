@@ -1339,8 +1339,10 @@ function rmRebuild() {
     // 字号变化会导致分页重建，先停止朗读
     if (ttsPlaying || ttsPaused) ttsStop();
     requestAnimationFrame(function() {
-        rmBuildPages(rmSrcEl);
-        rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
+        requestAnimationFrame(function() {
+            rmBuildPages(rmSrcEl);
+            rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
+        });
     });
 }
 
@@ -1369,20 +1371,22 @@ function rmBuildPages(srcEl) {
     }
 
     var curContent = addPage();
-    // 第一个页面已插入 DOM，从其实际尺寸算可用高度
-    var firstPage = rmPages[0];
-    var pgStyle   = getComputedStyle(firstPage);
-    var availH    = firstPage.clientHeight
-                  - parseFloat(pgStyle.paddingTop)
-                  - parseFloat(pgStyle.paddingBottom);
+    // 用 getBoundingClientRect 直接量页面内容区的底边（viewport 坐标）
+    // scrollHeight 会因 overflow:visible 的 margin-collapse 漏掉末尾 margin，
+    // getBoundingClientRect 直接用渲染后的像素位置，完全准确
+    var firstPage  = rmPages[0];
+    var pgStyle    = getComputedStyle(firstPage);
+    var pageRect   = firstPage.getBoundingClientRect();
+    var SAFE       = 8; // px 安全余量，防止亚像素误差
+    var limitY     = pageRect.bottom - parseFloat(pgStyle.paddingBottom) - SAFE;
 
     for (var i = 0; i < children.length; i++) {
         var clone = children[i].cloneNode(true);
         curContent.appendChild(clone);
-        // 强制 layout，检查是否溢出
-        if (curContent.scrollHeight > availH && curContent.children.length > 1) {
-            curContent.removeChild(clone); // 移回去
-            curContent = addPage();        // 开新页
+        // getBoundingClientRect 触发同步 layout，读取元素真实底边
+        if (clone.getBoundingClientRect().bottom > limitY && curContent.children.length > 1) {
+            curContent.removeChild(clone);
+            curContent = addPage();
             curContent.appendChild(clone);
         }
     }
@@ -1444,9 +1448,12 @@ window.rmEnter = function() {
         overlay.classList.add('rm-active');
         overlay.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        // 双 RAF：确保 overlay display:block 完成 layout 再测量
         requestAnimationFrame(function() {
-            rmBuildPages(rmSrcEl);
-            rmShowPage(0);
+            requestAnimationFrame(function() {
+                rmBuildPages(rmSrcEl);
+                rmShowPage(0);
+            });
         });
         var el = document.documentElement;
         var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
