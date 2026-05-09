@@ -283,16 +283,30 @@ layout: default
 .reading-content h3,
 .reading-content h3.reading-subheading {
     font-family: 'ZCOOL XiaoWei', 'STKaiti', 'KaiTi', serif;
-    font-size: 1.15em;
+    font-size: 1.1em;
     font-weight: normal;
-    color: #4a3520;
-    margin: 36px 0 18px 0;
-    padding: 6px 14px 6px 16px;
+    color: #5a3e1b;
+    margin: 38px 0 18px 0;
+    padding: 0;
     text-indent: 0;
-    letter-spacing: 0.08em;
-    border-left: 3px solid #B8860B;
-    background: linear-gradient(90deg, rgba(184,134,11,0.06), transparent);
-    border-radius: 0 4px 4px 0;
+    letter-spacing: 0.18em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+.reading-content h3::before,
+.reading-content h3::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(184,134,11,0.45));
+}
+.reading-content h3::after {
+    background: linear-gradient(to left, transparent, rgba(184,134,11,0.45));
+}
+.reading-content h3 {
+    gap: 14px;
 }
 .reading-content h4.reading-sub-subheading {
     font-size: 1.02em;
