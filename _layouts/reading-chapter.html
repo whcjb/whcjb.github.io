@@ -1385,9 +1385,6 @@ window.rmEnter = function() {
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    document.getElementById('rm-book-label').textContent    = RM.bookTitle;
-    document.getElementById('rm-section-label').textContent = RM.sectionTitle;
-
     requestAnimationFrame(function() {
         rmBuildPages(rmSrcEl);
         rmShowPage(0);
