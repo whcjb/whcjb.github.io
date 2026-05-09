@@ -997,140 +997,152 @@ function ttsUpdateUI(state) {
 <!-- ══════════════════════════════════════════════
      全屏阅读模式 Reading Mode Overlay
      ══════════════════════════════════════════════ -->
+<!-- 顶栏、底栏浮在内容上方，进入后2s自动隐藏，点击中间区域切换显示 -->
 <div id="rm-overlay" aria-hidden="true">
+    <!-- 浮层顶栏 -->
     <div id="rm-topbar">
         <span id="rm-book-label"></span>
         <span id="rm-section-label"></span>
-        <button id="rm-close-btn" onclick="rmExit()" title="退出阅读模式 (Esc)">✕</button>
+        <button id="rm-close-btn" onclick="rmExit()" title="退出 (Esc)">✕</button>
     </div>
-    <!-- click zones: left half = prev page, right half = next page -->
+    <!-- 内容区：铺满全屏 -->
     <div id="rm-body">
-        <div id="rm-click-prev" onclick="rmPagePrev()" title="上一页"></div>
-        <div id="rm-click-next" onclick="rmPageNext()" title="下一页"></div>
+        <div id="rm-click-prev" onclick="rmPagePrev()"></div>
+        <div id="rm-tap-center" onclick="rmToggleBars()"></div>
+        <div id="rm-click-next" onclick="rmPageNext()"></div>
     </div>
-    <!-- bottom bar: chapter nav + page indicator -->
+    <!-- 浮层底栏 -->
     <div id="rm-botbar">
         <button id="rm-ch-prev-btn" onclick="rmChapterNav(-1)">&#8592; 上一章</button>
         <span id="rm-page-label"></span>
         <button id="rm-ch-next-btn" onclick="rmChapterNav(1)">下一章 &#8594;</button>
     </div>
+    <!-- 始终可见的页码小标 -->
+    <div id="rm-page-badge"></div>
 </div>
 
 <style>
-/* ── Overlay shell ── */
+/* ── 全屏覆盖层 ── */
 #rm-overlay {
     display: none;
     position: fixed; inset: 0;
     z-index: 10000;
-    flex-direction: column;
     overflow: hidden;
 }
-#rm-overlay.rm-active { display: flex; }
+#rm-overlay.rm-active { display: block; }
 
-/* ── Top bar ── */
+/* ── 顶栏：绝对定位浮在内容上 ── */
 #rm-topbar {
-    flex-shrink: 0;
+    position: absolute; top: 0; left: 0; right: 0; z-index: 10002;
     display: flex; align-items: center; gap: 10px;
-    padding: 8px 16px;
-    background: rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.10);
-    font-size: 13px; color: #555;
-    min-height: 44px;
+    padding: 8px 16px; min-height: 46px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    font-size: 13px; color: #ddd;
+    transition: transform 0.28s ease, opacity 0.28s ease;
 }
-#rm-book-label { font-weight: bold; color: #2C4A6E; flex-shrink: 0; }
-#rm-section-label {
-    flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #777;
-}
+#rm-book-label { font-weight: bold; color: #a8d4f0; flex-shrink: 0; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#rm-section-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #bbb; font-size: 12px; }
 #rm-close-btn {
     flex-shrink: 0;
-    background: rgba(0,0,0,0.08); border: none;
-    width: 30px; height: 30px; border-radius: 50%;
-    font-size: 16px; cursor: pointer;
-    color: #444; display: flex; align-items: center; justify-content: center;
+    background: rgba(255,255,255,0.15); border: none;
+    width: 32px; height: 32px; border-radius: 50%;
+    font-size: 16px; cursor: pointer; color: #fff;
+    display: flex; align-items: center; justify-content: center;
     transition: background 0.15s;
 }
-#rm-close-btn:hover { background: rgba(0,0,0,0.2); }
+#rm-close-btn:hover { background: rgba(255,255,255,0.3); }
 
-/* ── Page area: pages stacked, only active visible ── */
-#rm-body {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
+/* ── 底栏：绝对定位浮在内容上 ── */
+#rm-botbar {
+    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10002;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 6px 16px; min-height: 46px; gap: 8px;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    transition: transform 0.28s ease, opacity 0.28s ease;
+}
+#rm-botbar button {
+    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 4px; padding: 5px 12px;
+    font-size: 12px; cursor: pointer; color: #ddd; font-weight: bold;
+    white-space: nowrap; transition: background 0.15s;
+}
+#rm-botbar button:hover { background: rgba(255,255,255,0.3); }
+#rm-botbar button:disabled { opacity: 0.25; cursor: default; }
+#rm-page-label { font-size: 12px; color: #bbb; text-align: center; flex: 1; }
+
+/* ── 隐藏状态：栏滑出屏幕 ── */
+#rm-overlay.rm-bars-hidden #rm-topbar {
+    transform: translateY(-100%); opacity: 0; pointer-events: none;
+}
+#rm-overlay.rm-bars-hidden #rm-botbar {
+    transform: translateY(100%); opacity: 0; pointer-events: none;
 }
 
-/* ── Each page fills the body area ── */
+/* ── 内容区：铺满全屏 ── */
+#rm-body {
+    position: absolute; inset: 0; overflow: hidden;
+}
+
+/* ── 每页：铺满 rm-body ── */
 .rm-page {
-    position: absolute;
-    inset: 0;
+    position: absolute; inset: 0;
     box-sizing: border-box;
-    padding: 28px 80px;
+    padding: 24px 80px;
     overflow-y: auto;
     display: none;
-    flex-direction: column;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
+    scrollbar-width: none;
 }
-.rm-page.active { display: flex; }
+.rm-page::-webkit-scrollbar { display: none; }
+.rm-page.active { display: block; }
 @media (max-width: 600px) {
-    .rm-page { padding: 16px 52px; }
+    .rm-page { padding: 20px 52px; }
 }
 
-/* ── Content inherits all reading styles ── */
+/* ── 阅读内容 ── */
 #rm-overlay .reading-content {
     color: #333;
     font-family: "STSong", "SimSun", "宋体", serif;
     word-break: break-word;
 }
 
-/* ── Left / right click zones ── */
-#rm-click-prev, #rm-click-next {
+/* ── 点击区：左翻 / 中间切换栏 / 右翻 ── */
+#rm-click-prev, #rm-tap-center, #rm-click-next {
     position: absolute; top: 0; bottom: 0;
-    width: 52px; z-index: 10001; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    user-select: none;
-    -webkit-user-select: none;
+    z-index: 10001; cursor: pointer;
+    user-select: none; -webkit-user-select: none;
 }
-#rm-click-prev { left: 0; }
-#rm-click-next { right: 0; }
+#rm-click-prev { left: 0; width: 52px; }
+#rm-click-next { right: 0; width: 52px; }
+#rm-tap-center { left: 52px; right: 52px; }
 
-/* Arrow chevrons */
+/* 左右箭头指示 */
 #rm-click-prev::after, #rm-click-next::after {
     content: '';
-    display: block; width: 12px; height: 12px;
-    border-top: 2.5px solid rgba(0,0,0,0.22);
-    border-right: 2.5px solid rgba(0,0,0,0.22);
+    position: absolute; top: 50%; left: 50%;
+    width: 11px; height: 11px;
+    border-top: 2px solid rgba(0,0,0,0.2);
+    border-right: 2px solid rgba(0,0,0,0.2);
     border-radius: 1px;
     transition: border-color 0.15s;
 }
-#rm-click-prev::after { transform: rotate(-135deg); margin-left: 4px; }
-#rm-click-next::after { transform: rotate(45deg); margin-right: 4px; }
-#rm-click-prev:hover::after, #rm-click-next:hover::after {
-    border-color: rgba(0,0,0,0.5);
-}
+#rm-click-prev::after { transform: translate(-30%, -50%) rotate(-135deg); }
+#rm-click-next::after { transform: translate(-70%, -50%) rotate(45deg); }
+#rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.45); }
 
-/* flash feedback on click */
-#rm-click-prev.tapped, #rm-click-next.tapped {
-    background: rgba(0,0,0,0.05);
+/* 页码小标：始终可见 */
+#rm-page-badge {
+    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
+    z-index: 10003;
+    font-size: 11px; color: rgba(0,0,0,0.3);
+    pointer-events: none;
+    letter-spacing: 0.03em;
+    transition: opacity 0.3s;
 }
-
-/* ── Bottom bar ── */
-#rm-botbar {
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 6px 16px;
-    background: rgba(0,0,0,0.06);
-    border-top: 1px solid rgba(0,0,0,0.10);
-    min-height: 44px; gap: 8px;
-}
-#rm-botbar button {
-    background: rgba(91,141,184,0.15); border: 1px solid rgba(91,141,184,0.3);
-    border-radius: 4px; padding: 5px 12px;
-    font-size: 12px; cursor: pointer; color: #2C4A6E; font-weight: bold;
-    white-space: nowrap; transition: background 0.15s;
-}
-#rm-botbar button:hover { background: rgba(91,141,184,0.3); }
-#rm-botbar button:disabled { opacity: 0.28; cursor: default; }
-#rm-page-label { font-size: 12px; color: #888; text-align: center; flex: 1; }
+/* 底栏出现时隐藏小标，避免重叠 */
+#rm-overlay:not(.rm-bars-hidden) #rm-page-badge { opacity: 0; }
 </style>
 
 <script>
@@ -1154,20 +1166,42 @@ function rmChUrl(sec) {
 /* ── Page state ── */
 var rmPages = [];
 var rmCurPage = 0;
+var rmHideTimer = null;
+
+/* ── 自动隐藏栏 ── */
+function rmScheduleHide(ms) {
+    clearTimeout(rmHideTimer);
+    rmHideTimer = setTimeout(function() {
+        document.getElementById('rm-overlay').classList.add('rm-bars-hidden');
+    }, ms || 2000);
+}
+function rmShowBars() {
+    document.getElementById('rm-overlay').classList.remove('rm-bars-hidden');
+    rmScheduleHide(2500);
+}
+window.rmToggleBars = function() {
+    var ov = document.getElementById('rm-overlay');
+    if (ov.classList.contains('rm-bars-hidden')) {
+        rmShowBars();
+    } else {
+        clearTimeout(rmHideTimer);
+        ov.classList.add('rm-bars-hidden');
+    }
+};
 
 /* ── Split content into pages ── */
 function rmBuildPages(srcEl) {
     var body = document.getElementById('rm-body');
-    // remove old pages (keep click zones)
-    var old = body.querySelectorAll('.rm-page');
-    old.forEach(function(p) { p.parentNode.removeChild(p); });
+    body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
     rmPages = [];
 
     var pageH = body.clientHeight;
-    var pageW = body.clientWidth - 160; // subtract padding sides
-    if (pageW < 100) pageW = body.clientWidth - 104; // mobile
+    var isMobile = body.clientWidth <= 600;
+    var sidePad  = isMobile ? 104 : 160;   // 52*2 or 80*2
+    var topBotPad = isMobile ? 40 : 48;     // 20*2 or 24*2
+    var pageW = body.clientWidth  - sidePad;
+    var usableH = pageH - topBotPad;
 
-    // measure container
     var measure = document.createElement('div');
     measure.className = 'reading-content';
     measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;width:' + pageW + 'px;' +
@@ -1177,14 +1211,14 @@ function rmBuildPages(srcEl) {
     var children = Array.prototype.slice.call(srcEl.children);
     var pageDiv = newPage();
     var pageContentH = 0;
+    var insertBefore = document.getElementById('rm-click-prev');
 
     children.forEach(function(child) {
         measure.innerHTML = '';
         measure.appendChild(child.cloneNode(true));
-        var h = measure.offsetHeight + 32;
-
-        if (pageContentH + h > pageH && pageContentH > 0) {
-            body.insertBefore(pageDiv, document.getElementById('rm-click-prev'));
+        var h = measure.offsetHeight + 28;
+        if (pageContentH + h > usableH && pageContentH > 0) {
+            body.insertBefore(pageDiv, insertBefore);
             rmPages.push(pageDiv);
             pageDiv = newPage();
             pageContentH = 0;
@@ -1193,7 +1227,7 @@ function rmBuildPages(srcEl) {
         pageContentH += h;
     });
     if (pageDiv.children.length > 0) {
-        body.insertBefore(pageDiv, document.getElementById('rm-click-prev'));
+        body.insertBefore(pageDiv, insertBefore);
         rmPages.push(pageDiv);
     }
     document.body.removeChild(measure);
@@ -1214,35 +1248,30 @@ function rmShowPage(n) {
     rmCurPage = n;
     rmPages[n].classList.add('active');
     rmPages[n].scrollTop = 0;
-    rmUpdatePageLabel();
-    rmUpdateArrows();
+    rmUpdateLabels();
 }
 
-function rmUpdatePageLabel() {
-    var lbl = document.getElementById('rm-page-label');
-    if (!lbl) return;
-    if (rmPages.length <= 1) { lbl.textContent = ''; return; }
-    lbl.textContent = '第 ' + (rmCurPage + 1) + ' 页 / 共 ' + rmPages.length + ' 页';
-}
+function rmUpdateLabels() {
+    var total = rmPages.length;
+    var cur   = rmCurPage + 1;
+    var lbl   = document.getElementById('rm-page-label');
+    var badge = document.getElementById('rm-page-badge');
+    if (lbl)   lbl.textContent   = total > 1 ? '第 ' + cur + ' 页 / 共 ' + total + ' 页' : '';
+    if (badge) badge.textContent = total > 1 ? cur + ' / ' + total : '';
 
-function rmUpdateArrows() {
     var prev = document.getElementById('rm-click-prev');
     var next = document.getElementById('rm-click-next');
-    if (prev) prev.style.opacity = rmCurPage <= 0 ? '0.2' : '1';
-    if (next) next.style.opacity = rmCurPage >= rmPages.length - 1 ? '0.2' : '1';
+    if (prev) prev.style.opacity = rmCurPage <= 0 ? '0.15' : '0.6';
+    if (next) next.style.opacity = rmCurPage >= total - 1 ? '0.15' : '0.6';
 }
 
 /* ── Page navigation ── */
 window.rmPageNext = function() {
     if (rmCurPage >= rmPages.length - 1) return;
-    var el = document.getElementById('rm-click-next');
-    if (el) { el.classList.add('tapped'); setTimeout(function(){ el.classList.remove('tapped'); }, 150); }
     rmShowPage(rmCurPage + 1);
 };
 window.rmPagePrev = function() {
     if (rmCurPage <= 0) return;
-    var el = document.getElementById('rm-click-prev');
-    if (el) { el.classList.add('tapped'); setTimeout(function(){ el.classList.remove('tapped'); }, 150); }
     rmShowPage(rmCurPage - 1);
 };
 
@@ -1262,6 +1291,7 @@ window.rmEnter = function() {
     var bgColor = getComputedStyle(document.documentElement)
                     .getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
+    overlay.classList.remove('rm-bars-hidden');
     overlay.classList.add('rm-active');
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -1277,6 +1307,7 @@ window.rmEnter = function() {
     requestAnimationFrame(function() {
         rmBuildPages(src);
         rmShowPage(0);
+        rmScheduleHide(2000); // 2s后自动隐藏栏
     });
 
     if (document.documentElement.requestFullscreen) {
@@ -1286,8 +1317,9 @@ window.rmEnter = function() {
 
 /* ── Exit ── */
 window.rmExit = function() {
+    clearTimeout(rmHideTimer);
     var overlay = document.getElementById('rm-overlay');
-    overlay.classList.remove('rm-active');
+    overlay.classList.remove('rm-active', 'rm-bars-hidden');
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (document.exitFullscreen && document.fullscreenElement) {
@@ -1303,7 +1335,7 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    rmPagePrev();
 });
 
-/* ── Swipe on pages ── */
+/* ── 滑动翻页 ── */
 var _tx = null, _ty = null;
 document.getElementById('rm-body').addEventListener('touchstart', function(e) {
     _tx = e.touches[0].clientX;
@@ -1319,7 +1351,7 @@ document.getElementById('rm-body').addEventListener('touchend', function(e) {
     else         rmPagePrev();
 }, { passive: true });
 
-/* ── Auto-enter on #readmode hash ── */
+/* ── #readmode 自动进入 ── */
 if (window.location.hash === '#readmode') {
     window.addEventListener('load', function() { setTimeout(rmEnter, 80); });
 }
