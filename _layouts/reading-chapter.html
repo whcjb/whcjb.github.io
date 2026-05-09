@@ -1390,18 +1390,36 @@ window.rmEnter = function() {
 
     var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
-    overlay.classList.remove('rm-sheet-open');
-    overlay.classList.add('rm-active');
-    overlay.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
 
-    requestAnimationFrame(function() {
-        rmBuildPages(rmSrcEl);
-        rmShowPage(0);
-    });
-    var el = document.documentElement;
-    var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-    if (rfn) { try { rfn.call(el); } catch(e){} }
+    function doEnter() {
+        overlay.classList.remove('rm-sheet-open');
+        overlay.classList.add('rm-active');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(function() {
+            rmBuildPages(rmSrcEl);
+            rmShowPage(0);
+        });
+        // 非 iOS：Fullscreen API
+        var el = document.documentElement;
+        var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+        if (rfn) { try { rfn.call(el); } catch(e){} }
+    }
+
+    // iOS Safari：向下滚动 1px 触发地址栏隐藏，再展开阅读模式
+    var isIOS = /iP(hone|ad|od)/i.test(navigator.userAgent);
+    if (isIOS) {
+        var html = document.documentElement;
+        var prevH = html.style.height;
+        html.style.height = (window.innerHeight + 60) + 'px';
+        window.scrollTo(0, 60);
+        setTimeout(function() {
+            html.style.height = prevH;
+            doEnter();
+        }, 300);
+    } else {
+        doEnter();
+    }
 };
 
 /* ── 退出 ── */
