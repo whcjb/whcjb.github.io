@@ -1399,9 +1399,9 @@ window.rmEnter = function() {
         rmBuildPages(rmSrcEl);
         rmShowPage(0);
     });
-    if (document.documentElement.requestFullscreen) {
-        document.documentElement.requestFullscreen().catch(function(){});
-    }
+    var el = document.documentElement;
+    var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+    if (rfn) { try { rfn.call(el); } catch(e){} }
 };
 
 /* ── 退出 ── */
@@ -1411,7 +1411,9 @@ window.rmExit = function() {
     ttsStop(); // 退出时停止朗读
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    if (document.exitFullscreen && document.fullscreenElement) document.exitFullscreen().catch(function(){});
+    var fullEl = document.fullscreenElement || document.webkitFullscreenElement;
+    var exitFn = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+    if (fullEl && exitFn) { try { exitFn.call(document); } catch(e){} }
 };
 
 /* ── 键盘 ── */
