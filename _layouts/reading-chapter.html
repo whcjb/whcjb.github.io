@@ -1041,11 +1041,11 @@ function ttsUpdateUI(state) {
     <!-- 内容区（铺满全屏） -->
     <div id="rm-body">
         <div id="rm-click-prev" onclick="rmPagePrev()"></div>
-        <div id="rm-tap-center" onclick="rmToggleSheet()"></div>
+        <div id="rm-tap-center"></div>
         <div id="rm-click-next" onclick="rmPageNext()"></div>
     </div>
-    <!-- 常驻页码 -->
-    <div id="rm-page-badge"></div>
+    <!-- 页码 / 菜单 FAB -->
+    <div id="rm-page-badge" onclick="rmToggleSheet()"></div>
     <!-- 底部控制面板遮罩 -->
     <div id="rm-sheet-backdrop" onclick="rmHideSheet()"></div>
     <!-- 底部控制面板 -->
@@ -1135,7 +1135,7 @@ function ttsUpdateUI(state) {
 }
 #rm-click-prev { left: 0; width: 36px; }
 #rm-click-next { right: 0; width: 36px; }
-#rm-tap-center { left: 36px; right: 36px; }
+#rm-tap-center { left: 36px; right: 36px; pointer-events: none; cursor: default; }
 /* 边缘渐隐 + 箭头指示 */
 #rm-click-prev {
     background: linear-gradient(to right, rgba(0,0,0,0.06) 0%, transparent 100%);
@@ -1153,13 +1153,21 @@ function ttsUpdateUI(state) {
 #rm-click-prev:active, #rm-click-next:active { background-color: rgba(0,0,0,0.05); }
 #rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.4); }
 
-/* ── 常驻页码 ── */
+/* ── 页码 / 菜单 FAB ── */
 #rm-page-badge {
-    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
-    z-index: 10003; font-size: 11px; color: rgba(0,0,0,0.28);
-    pointer-events: none; letter-spacing: 0.04em;
+    position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
+    z-index: 10003; font-size: 12px; color: rgba(255,255,255,0.92);
+    pointer-events: auto; cursor: pointer;
+    background: rgba(0,0,0,0.22);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-radius: 20px; padding: 5px 14px;
+    letter-spacing: 0.04em; white-space: nowrap;
+    user-select: none; -webkit-user-select: none;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.15s;
 }
-#rm-overlay.rm-sheet-open #rm-page-badge { opacity: 0; }
+#rm-page-badge:hover, #rm-page-badge:active { background: rgba(0,0,0,0.38); }
+#rm-overlay.rm-sheet-open #rm-page-badge { opacity: 0; pointer-events: none; }
 
 /* ── 底部控制面板遮罩 ── */
 #rm-sheet-backdrop {
@@ -1399,6 +1407,33 @@ function rmBuildPages(srcEl) {
         }
     }
 
+    // 后处理：级联修复溢出（字号增大后末尾元素可能仍超出页底）
+    for (var pi = 0; pi < rmPages.length; pi++) {
+        var pgV   = rmPages[pi];
+        var pgSV  = getComputedStyle(pgV);
+        var pgRV  = pgV.getBoundingClientRect();
+        var limV  = pgRV.bottom - parseFloat(pgSV.paddingBottom) - SAFE;
+        var contV = pgV.querySelector('.reading-content');
+        if (!contV || !contV.children.length) continue;
+        // 如果只剩一个元素但仍然溢出，也必须移走（防止无限循环对单元素做特殊处理）
+        while (contV.children.length >= 1) {
+            var lastEl = contV.children[contV.children.length - 1];
+            if (lastEl.getBoundingClientRect().bottom <= limV) break;
+            if (contV.children.length === 1) break; // 单元素溢出，无法分割，保留
+            var nextPgV;
+            if (pi + 1 < rmPages.length) {
+                nextPgV = rmPages[pi + 1];
+            } else {
+                nextPgV = newPage();
+                nextPgV.style.display = 'block';
+                body.insertBefore(nextPgV, insertBefore);
+                rmPages.push(nextPgV);
+            }
+            var nextContV = nextPgV.querySelector('.reading-content');
+            nextContV.insertBefore(lastEl, nextContV.firstChild);
+        }
+    }
+
     // 恢复 CSS 控制（.rm-page 默认 display:none，.active 才显示）
     rmPages.forEach(function(p) { p.style.display = ''; });
     return rmPages;
@@ -1425,7 +1460,7 @@ function rmShowPage(n) {
     var lbl   = document.getElementById('rm-page-label');
     var badge = document.getElementById('rm-page-badge');
     if (lbl)   lbl.textContent   = total > 1 ? '第 ' + (n+1) + ' 页 / 共 ' + total + ' 页' : '';
-    if (badge) badge.textContent = total > 1 ? (n+1) + ' / ' + total : '';
+    if (badge) badge.textContent = total > 1 ? '\u2630  ' + (n+1) + ' / ' + total : '\u2630';
     var prev = document.getElementById('rm-click-prev');
     var next = document.getElementById('rm-click-next');
     if (prev) prev.style.opacity = n <= 0 ? '0.15' : '0.55';
