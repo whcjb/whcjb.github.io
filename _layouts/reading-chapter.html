@@ -657,6 +657,8 @@ var BG_KEY = 'reading-bg-color';
 var BG_DEFAULT = '#C7EDCC';
 function applyBgColor(color) {
     document.documentElement.style.setProperty('--reading-bg-color', color);
+    var ov = document.getElementById('rm-overlay');
+    if (ov && ov.classList.contains('rm-active')) ov.style.background = color;
     var swatches = document.querySelectorAll('.bg-swatch');
     for (var i = 0; i < swatches.length; i++) {
         if (swatches[i].style.backgroundColor === color ||
@@ -884,6 +886,7 @@ function ttsUpdateUI(state) {
         stopBtn.style.display = 'none';
         if (progressBar) progressBar.classList.remove('visible');
     }
+    if (window.rmUpdateTtsButtons) window.rmUpdateTtsButtons(state);
 }
 
 (function ttsInit() {
@@ -997,28 +1000,63 @@ function ttsUpdateUI(state) {
 <!-- ══════════════════════════════════════════════
      全屏阅读模式 Reading Mode Overlay
      ══════════════════════════════════════════════ -->
-<!-- 顶栏、底栏浮在内容上方，进入后2s自动隐藏，点击中间区域切换显示 -->
+<!-- 全屏阅读模式：点击中间弹出控制面板 -->
 <div id="rm-overlay" aria-hidden="true">
-    <!-- 浮层顶栏 -->
+    <!-- 顶栏（自动隐藏，仅显示标题和退出） -->
     <div id="rm-topbar">
         <span id="rm-book-label"></span>
         <span id="rm-section-label"></span>
         <button id="rm-close-btn" onclick="rmExit()" title="退出 (Esc)">✕</button>
     </div>
-    <!-- 内容区：铺满全屏 -->
+    <!-- 内容区（铺满全屏） -->
     <div id="rm-body">
         <div id="rm-click-prev" onclick="rmPagePrev()"></div>
-        <div id="rm-tap-center" onclick="rmToggleBars()"></div>
+        <div id="rm-tap-center" onclick="rmToggleSheet()"></div>
         <div id="rm-click-next" onclick="rmPageNext()"></div>
     </div>
-    <!-- 浮层底栏 -->
-    <div id="rm-botbar">
-        <button id="rm-ch-prev-btn" onclick="rmChapterNav(-1)">&#8592; 上一章</button>
-        <span id="rm-page-label"></span>
-        <button id="rm-ch-next-btn" onclick="rmChapterNav(1)">下一章 &#8594;</button>
-    </div>
-    <!-- 始终可见的页码小标 -->
+    <!-- 常驻页码 -->
     <div id="rm-page-badge"></div>
+    <!-- 底部控制面板遮罩 -->
+    <div id="rm-sheet-backdrop" onclick="rmHideSheet()"></div>
+    <!-- 底部控制面板 -->
+    <div id="rm-control-sheet">
+        <div id="rm-sheet-handle"></div>
+        <div class="rm-sheet-row">
+            <span class="rm-sheet-lbl">字号</span>
+            <div class="rm-font-ctrl">
+                <button onclick="rmAdjustFont(-1)">A−</button>
+                <button onclick="rmResetFont()">A</button>
+                <button onclick="rmAdjustFont(1)">A+</button>
+            </div>
+        </div>
+        <div class="rm-sheet-row">
+            <span class="rm-sheet-lbl">背景</span>
+            <div class="rm-bg-row">
+                <button class="rm-bg-sw" data-color="#C7EDCC" onclick="rmSetBg(this)" style="background:#C7EDCC"></button>
+                <button class="rm-bg-sw" data-color="#FAF0DC" onclick="rmSetBg(this)" style="background:#FAF0DC"></button>
+                <button class="rm-bg-sw" data-color="#EAEAEF" onclick="rmSetBg(this)" style="background:#EAEAEF"></button>
+                <button class="rm-bg-sw" data-color="#F5E6CC" onclick="rmSetBg(this)" style="background:#F5E6CC"></button>
+                <button class="rm-bg-sw" data-color="#E3EDCD" onclick="rmSetBg(this)" style="background:#E3EDCD"></button>
+                <button class="rm-bg-sw" data-color="#FFFFFF" onclick="rmSetBg(this)" style="background:#FFFFFF"></button>
+            </div>
+        </div>
+        <div class="rm-sheet-row">
+            <span class="rm-sheet-lbl">朗读</span>
+            <div class="rm-tts-row">
+                <button id="rm-tts-play-btn"  onclick="ttsPlay()">&#9654; 朗读</button>
+                <button id="rm-tts-pause-btn" onclick="ttsPause()" style="display:none">&#10074;&#10074; 暂停</button>
+                <button id="rm-tts-stop-btn"  onclick="ttsStop()"  style="display:none">&#9632; 停止</button>
+            </div>
+        </div>
+        <div class="rm-sheet-row rm-sheet-ch">
+            <button id="rm-ch-prev-btn" onclick="rmChapterNav(-1)">&#8592; 上一章</button>
+            <span id="rm-page-label"></span>
+            <button id="rm-ch-next-btn" onclick="rmChapterNav(1)">下一章 &#8594;</button>
+        </div>
+        <div class="rm-sheet-exit">
+            <button onclick="rmExit()">退出阅读模式</button>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -1031,84 +1069,50 @@ function ttsUpdateUI(state) {
 }
 #rm-overlay.rm-active { display: block; }
 
-/* ── 顶栏：绝对定位浮在内容上 ── */
+/* ── 顶栏（自动隐藏） ── */
 #rm-topbar {
     position: absolute; top: 0; left: 0; right: 0; z-index: 10002;
     display: flex; align-items: center; gap: 10px;
     padding: 8px 16px; min-height: 46px;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    background: rgba(0,0,0,0.52);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
     font-size: 13px; color: #ddd;
     transition: transform 0.28s ease, opacity 0.28s ease;
 }
-#rm-book-label { font-weight: bold; color: #a8d4f0; flex-shrink: 0; max-width: 40%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#rm-book-label    { font-weight: bold; color: #a8d4f0; flex-shrink: 0; max-width: 38%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 #rm-section-label { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #bbb; font-size: 12px; }
 #rm-close-btn {
-    flex-shrink: 0;
-    background: rgba(255,255,255,0.15); border: none;
-    width: 32px; height: 32px; border-radius: 50%;
-    font-size: 16px; cursor: pointer; color: #fff;
+    flex-shrink: 0; background: rgba(255,255,255,0.15); border: none;
+    width: 30px; height: 30px; border-radius: 50%; font-size: 15px;
+    cursor: pointer; color: #fff;
     display: flex; align-items: center; justify-content: center;
-    transition: background 0.15s;
 }
 #rm-close-btn:hover { background: rgba(255,255,255,0.3); }
-
-/* ── 底栏：绝对定位浮在内容上 ── */
-#rm-botbar {
-    position: absolute; bottom: 0; left: 0; right: 0; z-index: 10002;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 6px 16px; min-height: 46px; gap: 8px;
-    background: rgba(0,0,0,0.55);
-    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
-    transition: transform 0.28s ease, opacity 0.28s ease;
-}
-#rm-botbar button {
-    background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25);
-    border-radius: 4px; padding: 5px 12px;
-    font-size: 12px; cursor: pointer; color: #ddd; font-weight: bold;
-    white-space: nowrap; transition: background 0.15s;
-}
-#rm-botbar button:hover { background: rgba(255,255,255,0.3); }
-#rm-botbar button:disabled { opacity: 0.25; cursor: default; }
-#rm-page-label { font-size: 12px; color: #bbb; text-align: center; flex: 1; }
-
-/* ── 隐藏状态：栏滑出屏幕 ── */
 #rm-overlay.rm-bars-hidden #rm-topbar {
     transform: translateY(-100%); opacity: 0; pointer-events: none;
 }
-#rm-overlay.rm-bars-hidden #rm-botbar {
-    transform: translateY(100%); opacity: 0; pointer-events: none;
-}
 
-/* ── 内容区：铺满全屏 ── */
-#rm-body {
-    position: absolute; inset: 0; overflow: hidden;
-}
+/* ── 内容区（全屏） ── */
+#rm-body { position: absolute; inset: 0; overflow: hidden; }
 
-/* ── 每页：铺满 rm-body ── */
+/* ── 每页 ── */
 .rm-page {
     position: absolute; inset: 0;
     box-sizing: border-box;
     padding: 24px 80px;
-    overflow-y: auto;
-    display: none;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
+    overflow-y: auto; display: none;
+    -webkit-overflow-scrolling: touch; scrollbar-width: none;
 }
 .rm-page::-webkit-scrollbar { display: none; }
 .rm-page.active { display: block; }
-@media (max-width: 600px) {
-    .rm-page { padding: 20px 52px; }
-}
+@media (max-width: 600px) { .rm-page { padding: 20px 52px; } }
 
-/* ── 阅读内容 ── */
+/* ── 内容字体 ── */
 #rm-overlay .reading-content {
-    color: #333;
-    font-family: "STSong", "SimSun", "宋体", serif;
-    word-break: break-word;
+    color: #333; font-family: "STSong","SimSun","宋体",serif; word-break: break-word;
 }
 
-/* ── 点击区：左翻 / 中间切换栏 / 右翻 ── */
+/* ── 点击区 ── */
 #rm-click-prev, #rm-tap-center, #rm-click-next {
     position: absolute; top: 0; bottom: 0;
     z-index: 10001; cursor: pointer;
@@ -1117,37 +1121,107 @@ function ttsUpdateUI(state) {
 #rm-click-prev { left: 0; width: 52px; }
 #rm-click-next { right: 0; width: 52px; }
 #rm-tap-center { left: 52px; right: 52px; }
-
-/* 左右箭头指示 */
 #rm-click-prev::after, #rm-click-next::after {
-    content: '';
-    position: absolute; top: 50%; left: 50%;
+    content: ''; position: absolute; top: 50%; left: 50%;
     width: 11px; height: 11px;
-    border-top: 2px solid rgba(0,0,0,0.2);
-    border-right: 2px solid rgba(0,0,0,0.2);
-    border-radius: 1px;
-    transition: border-color 0.15s;
+    border-top: 2px solid rgba(0,0,0,0.2); border-right: 2px solid rgba(0,0,0,0.2);
 }
-#rm-click-prev::after { transform: translate(-30%, -50%) rotate(-135deg); }
-#rm-click-next::after { transform: translate(-70%, -50%) rotate(45deg); }
+#rm-click-prev::after { transform: translate(-30%,-50%) rotate(-135deg); }
+#rm-click-next::after { transform: translate(-70%,-50%) rotate(45deg); }
 #rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.45); }
 
-/* 页码小标：始终可见 */
+/* ── 常驻页码 ── */
 #rm-page-badge {
-    position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%);
-    z-index: 10003;
-    font-size: 11px; color: rgba(0,0,0,0.3);
-    pointer-events: none;
-    letter-spacing: 0.03em;
-    transition: opacity 0.3s;
+    position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%);
+    z-index: 10003; font-size: 11px; color: rgba(0,0,0,0.28);
+    pointer-events: none; letter-spacing: 0.04em;
 }
-/* 底栏出现时隐藏小标，避免重叠 */
-#rm-overlay:not(.rm-bars-hidden) #rm-page-badge { opacity: 0; }
+#rm-overlay.rm-sheet-open #rm-page-badge { opacity: 0; }
+
+/* ── 底部控制面板遮罩 ── */
+#rm-sheet-backdrop {
+    position: absolute; inset: 0; z-index: 10003; display: none;
+    background: rgba(0,0,0,0.25);
+}
+#rm-overlay.rm-sheet-open #rm-sheet-backdrop { display: block; }
+
+/* ── 底部控制面板 ── */
+#rm-control-sheet {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 10004;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px 16px 0 0;
+    padding: 6px 20px 32px;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32,0.72,0,1);
+}
+#rm-overlay.rm-sheet-open #rm-control-sheet { transform: translateY(0); }
+
+#rm-sheet-handle {
+    width: 36px; height: 4px; border-radius: 2px;
+    background: rgba(0,0,0,0.18); margin: 8px auto 12px;
+}
+.rm-sheet-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+}
+.rm-sheet-row:last-child { border-bottom: none; }
+.rm-sheet-lbl { font-size: 13px; color: #888; width: 32px; flex-shrink: 0; }
+
+/* 字号 */
+.rm-font-ctrl { display: inline-flex; border: 1px solid #5B8DB8; border-radius: 4px; overflow: hidden; }
+.rm-font-ctrl button {
+    background: #EBF3FA; border: none; border-right: 1px solid #5B8DB8;
+    color: #2C5F8A; cursor: pointer; font-size: 13px; font-weight: bold;
+    padding: 6px 14px; line-height: 1;
+}
+.rm-font-ctrl button:last-child { border-right: none; }
+.rm-font-ctrl button:hover { background: #5B8DB8; color: #fff; }
+
+/* 背景色 */
+.rm-bg-row { display: flex; gap: 8px; flex-wrap: wrap; }
+.rm-bg-sw {
+    width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent;
+    cursor: pointer; padding: 0; outline: none;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+    transition: box-shadow 0.15s, border-color 0.15s;
+}
+.rm-bg-sw:hover { box-shadow: 0 0 0 2px #5B8DB8; }
+.rm-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
+
+/* 朗读 */
+.rm-tts-row { display: flex; gap: 8px; }
+.rm-tts-row button {
+    background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
+    padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer;
+}
+.rm-tts-row button:hover { background: #2C4A6E; }
+
+/* 章节导航 */
+.rm-sheet-ch { justify-content: space-between; }
+.rm-sheet-ch button {
+    background: rgba(91,141,184,0.12); border: 1px solid rgba(91,141,184,0.3);
+    border-radius: 4px; padding: 5px 12px;
+    font-size: 12px; cursor: pointer; color: #2C4A6E; font-weight: bold;
+}
+.rm-sheet-ch button:disabled { opacity: 0.25; cursor: default; }
+#rm-page-label { font-size: 12px; color: #888; flex: 1; text-align: center; }
+
+/* 退出按钮 */
+.rm-sheet-exit { padding-top: 10px; text-align: center; }
+.rm-sheet-exit button {
+    background: none; border: 1px solid #ddd; border-radius: 6px;
+    padding: 8px 24px; font-size: 13px; color: #999; cursor: pointer;
+    width: 100%;
+}
+.rm-sheet-exit button:hover { border-color: #aaa; color: #666; }
 </style>
 
 <script>
 (function() {
-/* ── Jekyll data ── */
+/* ── Jekyll 数据 ── */
 var RM = {
     bookTitle:    {{ page.book_title | default: '' | jsonify }},
     sectionTitle: {{ page.section_title | default: page.title | default: '' | jsonify }},
@@ -1158,73 +1232,128 @@ var RM = {
     sections:     {{ sections_list | jsonify }}
 };
 var curChIdx = RM.sections.indexOf(String(RM.section));
-
 function rmChUrl(sec) {
     return RM.baseUrl + '/reading/' + RM.authorId + '/' + RM.bookId + '/' + sec + '/#readmode';
 }
 
-/* ── Page state ── */
-var rmPages = [];
+/* ── 状态 ── */
+var rmPages  = [];
 var rmCurPage = 0;
-var rmHideTimer = null;
+var rmSrcEl   = null;
 
-/* ── 自动隐藏栏 ── */
-function rmScheduleHide(ms) {
-    clearTimeout(rmHideTimer);
-    rmHideTimer = setTimeout(function() {
-        document.getElementById('rm-overlay').classList.add('rm-bars-hidden');
-    }, ms || 2000);
-}
-function rmShowBars() {
-    document.getElementById('rm-overlay').classList.remove('rm-bars-hidden');
-    rmScheduleHide(2500);
-}
-window.rmToggleBars = function() {
+/* ── 控制面板 ── */
+window.rmToggleSheet = function() {
     var ov = document.getElementById('rm-overlay');
-    if (ov.classList.contains('rm-bars-hidden')) {
-        rmShowBars();
+    if (ov.classList.contains('rm-sheet-open')) {
+        rmHideSheet();
     } else {
-        clearTimeout(rmHideTimer);
-        ov.classList.add('rm-bars-hidden');
+        ov.classList.remove('rm-bars-hidden');
+        ov.classList.add('rm-sheet-open');
+        rmSyncSheetState();
+    }
+};
+window.rmHideSheet = function() {
+    document.getElementById('rm-overlay').classList.remove('rm-sheet-open');
+};
+
+function rmSyncSheetState() {
+    // 背景色高亮
+    var cur = (localStorage.getItem('reading-bg-color') || '#C7EDCC').toUpperCase();
+    document.querySelectorAll('.rm-bg-sw').forEach(function(s) {
+        s.classList.toggle('active', s.getAttribute('data-color').toUpperCase() === cur);
+    });
+    // 章节按钮
+    var prevBtn = document.getElementById('rm-ch-prev-btn');
+    var nextBtn = document.getElementById('rm-ch-next-btn');
+    if (prevBtn) prevBtn.disabled = curChIdx <= 0;
+    if (nextBtn) nextBtn.disabled = curChIdx >= RM.sections.length - 1;
+    // TTS 按钮（初始同步）
+    if (window.rmUpdateTtsButtons) {
+        if (ttsPlaying && !ttsPaused) window.rmUpdateTtsButtons('playing');
+        else if (ttsPaused) window.rmUpdateTtsButtons('paused');
+        else window.rmUpdateTtsButtons('stopped');
+    }
+}
+
+/* ── TTS 按钮同步（由 ttsUpdateUI 回调） ── */
+window.rmUpdateTtsButtons = function(state) {
+    var play  = document.getElementById('rm-tts-play-btn');
+    var pause = document.getElementById('rm-tts-pause-btn');
+    var stop  = document.getElementById('rm-tts-stop-btn');
+    if (!play) return;
+    if (state === 'playing') {
+        play.style.display = 'none'; pause.style.display = ''; stop.style.display = '';
+    } else if (state === 'paused') {
+        play.style.display = ''; play.innerHTML = '&#9654; 继续';
+        pause.style.display = 'none'; stop.style.display = '';
+    } else {
+        play.style.display = ''; play.innerHTML = '&#9654; 朗读';
+        pause.style.display = 'none'; stop.style.display = 'none';
     }
 };
 
-/* ── Split content into pages ── */
+/* ── 背景色（面板内，直接复用 setBgColor） ── */
+window.rmSetBg = function(el) {
+    var color = el.getAttribute('data-color');
+    setBgColor(color);
+    // applyBgColor 已更新 overlay 背景；只需同步 rm-bg-sw 的选中态
+    document.querySelectorAll('.rm-bg-sw').forEach(function(s) {
+        s.classList.toggle('active', s.getAttribute('data-color').toUpperCase() === color.toUpperCase());
+    });
+};
+
+/* ── 字号（重建分页） ── */
+window.rmAdjustFont = function(delta) {
+    adjustFontSize(delta);
+    rmRebuild();
+};
+window.rmResetFont = function() {
+    resetFontSize();
+    rmRebuild();
+};
+function rmRebuild() {
+    if (!rmSrcEl) return;
+    requestAnimationFrame(function() {
+        rmBuildPages(rmSrcEl);
+        rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
+    });
+}
+
+/* ── 分页 ── */
 function rmBuildPages(srcEl) {
     var body = document.getElementById('rm-body');
     body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
     rmPages = [];
 
-    var pageH = body.clientHeight;
     var isMobile = body.clientWidth <= 600;
-    var sidePad  = isMobile ? 104 : 160;   // 52*2 or 80*2
-    var topBotPad = isMobile ? 40 : 48;     // 20*2 or 24*2
-    var pageW = body.clientWidth  - sidePad;
-    var usableH = pageH - topBotPad;
+    var sidePad  = isMobile ? 104 : 160;
+    var topBotPad = isMobile ? 40 : 48;
+    var pageW = body.clientWidth - sidePad;
+    var usableH = body.clientHeight - topBotPad;
 
+    var fs = getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim() || '16px';
     var measure = document.createElement('div');
     measure.className = 'reading-content';
-    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;width:' + pageW + 'px;' +
-        'font-size:' + (getComputedStyle(document.documentElement).getPropertyValue('--reading-font-size').trim() || '16px');
+    measure.style.cssText = 'position:absolute;visibility:hidden;left:-9999px;top:0;width:' + pageW + 'px;font-size:' + fs;
     document.body.appendChild(measure);
 
     var children = Array.prototype.slice.call(srcEl.children);
     var pageDiv = newPage();
-    var pageContentH = 0;
+    var pageH = 0;
     var insertBefore = document.getElementById('rm-click-prev');
 
     children.forEach(function(child) {
         measure.innerHTML = '';
         measure.appendChild(child.cloneNode(true));
         var h = measure.offsetHeight + 28;
-        if (pageContentH + h > usableH && pageContentH > 0) {
+        if (pageH + h > usableH && pageH > 0) {
             body.insertBefore(pageDiv, insertBefore);
             rmPages.push(pageDiv);
             pageDiv = newPage();
-            pageContentH = 0;
+            pageH = 0;
         }
         pageDiv.appendChild(child.cloneNode(true));
-        pageContentH += h;
+        pageH += h;
     });
     if (pageDiv.children.length > 0) {
         body.insertBefore(pageDiv, insertBefore);
@@ -1240,7 +1369,7 @@ function newPage() {
     return d;
 }
 
-/* ── Show page N ── */
+/* ── 显示第 N 页 ── */
 function rmShowPage(n) {
     if (!rmPages.length) return;
     n = Math.max(0, Math.min(n, rmPages.length - 1));
@@ -1248,98 +1377,78 @@ function rmShowPage(n) {
     rmCurPage = n;
     rmPages[n].classList.add('active');
     rmPages[n].scrollTop = 0;
-    rmUpdateLabels();
-}
-
-function rmUpdateLabels() {
     var total = rmPages.length;
-    var cur   = rmCurPage + 1;
     var lbl   = document.getElementById('rm-page-label');
     var badge = document.getElementById('rm-page-badge');
-    if (lbl)   lbl.textContent   = total > 1 ? '第 ' + cur + ' 页 / 共 ' + total + ' 页' : '';
-    if (badge) badge.textContent = total > 1 ? cur + ' / ' + total : '';
-
+    if (lbl)   lbl.textContent   = total > 1 ? '第 ' + (n+1) + ' 页 / 共 ' + total + ' 页' : '';
+    if (badge) badge.textContent = total > 1 ? (n+1) + ' / ' + total : '';
     var prev = document.getElementById('rm-click-prev');
     var next = document.getElementById('rm-click-next');
-    if (prev) prev.style.opacity = rmCurPage <= 0 ? '0.15' : '0.6';
-    if (next) next.style.opacity = rmCurPage >= total - 1 ? '0.15' : '0.6';
+    if (prev) prev.style.opacity = n <= 0 ? '0.15' : '0.55';
+    if (next) next.style.opacity = n >= total-1 ? '0.15' : '0.55';
 }
 
-/* ── Page navigation ── */
-window.rmPageNext = function() {
-    if (rmCurPage >= rmPages.length - 1) return;
-    rmShowPage(rmCurPage + 1);
-};
-window.rmPagePrev = function() {
-    if (rmCurPage <= 0) return;
-    rmShowPage(rmCurPage - 1);
-};
+/* ── 翻页 ── */
+window.rmPageNext = function() { if (rmCurPage < rmPages.length-1) rmShowPage(rmCurPage+1); };
+window.rmPagePrev = function() { if (rmCurPage > 0) rmShowPage(rmCurPage-1); };
 
-/* ── Chapter navigation ── */
+/* ── 章节跳转 ── */
 window.rmChapterNav = function(dir) {
-    var newIdx = curChIdx + dir;
-    if (newIdx < 0 || newIdx >= RM.sections.length) return;
-    window.location.href = rmChUrl(RM.sections[newIdx]);
+    var idx = curChIdx + dir;
+    if (idx >= 0 && idx < RM.sections.length) window.location.href = rmChUrl(RM.sections[idx]);
 };
 
-/* ── Enter ── */
+/* ── 进入阅读模式 ── */
 window.rmEnter = function() {
     var overlay = document.getElementById('rm-overlay');
-    var src = document.querySelector('.reading-content');
-    if (!src) return;
+    rmSrcEl = document.querySelector('.reading-content');
+    if (!rmSrcEl) return;
 
-    var bgColor = getComputedStyle(document.documentElement)
-                    .getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
+    var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
-    overlay.classList.remove('rm-bars-hidden');
-    overlay.classList.add('rm-active');
+    overlay.classList.remove('rm-sheet-open');
+    overlay.classList.add('rm-active', 'rm-bars-hidden'); // 进入即隐藏顶栏
     overlay.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
     document.getElementById('rm-book-label').textContent    = RM.bookTitle;
     document.getElementById('rm-section-label').textContent = RM.sectionTitle;
 
-    var prevBtn = document.getElementById('rm-ch-prev-btn');
-    var nextBtn = document.getElementById('rm-ch-next-btn');
-    if (prevBtn) prevBtn.disabled = curChIdx <= 0;
-    if (nextBtn) nextBtn.disabled = curChIdx >= RM.sections.length - 1;
-
     requestAnimationFrame(function() {
-        rmBuildPages(src);
+        rmBuildPages(rmSrcEl);
         rmShowPage(0);
-        rmScheduleHide(2000); // 2s后自动隐藏栏
     });
-
     if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen().catch(function(){});
     }
 };
 
-/* ── Exit ── */
+/* ── 退出 ── */
 window.rmExit = function() {
     clearTimeout(rmHideTimer);
     var overlay = document.getElementById('rm-overlay');
-    overlay.classList.remove('rm-active', 'rm-bars-hidden');
+    overlay.classList.remove('rm-active', 'rm-bars-hidden', 'rm-sheet-open');
+    ttsStop(); // 退出时停止朗读
     overlay.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
-    if (document.exitFullscreen && document.fullscreenElement) {
-        document.exitFullscreen().catch(function(){});
-    }
+    if (document.exitFullscreen && document.fullscreenElement) document.exitFullscreen().catch(function(){});
 };
 
-/* ── Keyboard ── */
+/* ── 键盘 ── */
 document.addEventListener('keydown', function(e) {
     if (!document.getElementById('rm-overlay').classList.contains('rm-active')) return;
-    if (e.key === 'Escape')     rmExit();
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  rmPageNext();
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    rmPagePrev();
+    if (e.key === 'Escape') {
+        if (document.getElementById('rm-overlay').classList.contains('rm-sheet-open')) rmHideSheet();
+        else rmExit();
+    }
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') rmPageNext();
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   rmPagePrev();
 });
 
 /* ── 滑动翻页 ── */
 var _tx = null, _ty = null;
 document.getElementById('rm-body').addEventListener('touchstart', function(e) {
-    _tx = e.touches[0].clientX;
-    _ty = e.touches[0].clientY;
+    _tx = e.touches[0].clientX; _ty = e.touches[0].clientY;
 }, { passive: true });
 document.getElementById('rm-body').addEventListener('touchend', function(e) {
     if (_tx === null) return;
@@ -1347,11 +1456,10 @@ document.getElementById('rm-body').addEventListener('touchend', function(e) {
     var dy = e.changedTouches[0].clientY - _ty;
     _tx = _ty = null;
     if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-    if (dx < 0) rmPageNext();
-    else         rmPagePrev();
+    if (dx < 0) rmPageNext(); else rmPagePrev();
 }, { passive: true });
 
-/* ── #readmode 自动进入 ── */
+/* ── #readmode ── */
 if (window.location.hash === '#readmode') {
     window.addEventListener('load', function() { setTimeout(rmEnter, 80); });
 }
