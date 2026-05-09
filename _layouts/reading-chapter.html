@@ -697,6 +697,255 @@ sup.fn-ref a:hover { text-decoration: underline; }
 </style>
 {% endif %}
 
+{% if page.book_id == "dayaoli" %}
+<style>
+/* ── 大要理问答：卡片式问答设计 ── */
+
+/* 隐藏普通段落的分隔线 */
+.reading-content hr { display: none; }
+
+/* 整体内容字体 */
+.reading-content {
+    font-family: 'LXGW WenKai', 'STKaiti', 'KaiTi', serif !important;
+}
+
+/* 节标题 */
+.reading-content h2 {
+    font-family: 'Ma Shan Zheng', 'STKaiti', cursive;
+    font-size: 1.3em;
+    font-weight: normal;
+    letter-spacing: 0.12em;
+    text-align: center;
+    color: #5C3200;
+    margin-bottom: 4px;
+    border: none;
+}
+
+/* 卡片容器 */
+.catechism-card {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #d4b896;
+    box-shadow: 0 2px 10px rgba(74,37,0,0.07);
+    margin-bottom: 16px;
+    background: #fffaf4;
+}
+
+/* 问题区域 */
+.catechism-q-area {
+    background: linear-gradient(135deg, #5C3200 0%, #8B5E3C 100%);
+    padding: 12px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.catechism-q-num {
+    background: rgba(255,255,255,0.16);
+    color: #FFD580;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 9px;
+    border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.06em;
+    margin-top: 3px;
+    font-family: 'ZCOOL XiaoWei', serif;
+}
+.catechism-q-text {
+    font-family: 'LXGW WenKai', 'STKaiti', serif;
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #fff8ee;
+}
+
+/* 答案区域 */
+.catechism-a-area {
+    padding: 12px 16px 14px;
+    border-top: 1px solid #e8d5b0;
+    cursor: default;
+    transition: background 0.15s;
+}
+.catechism-a-label {
+    font-size: 10px;
+    font-weight: bold;
+    color: #C9922A;
+    letter-spacing: 0.14em;
+    margin-bottom: 7px;
+    font-family: 'ZCOOL XiaoWei', sans-serif;
+}
+.catechism-a-text {
+    font-family: 'LXGW WenKai', 'STKaiti', serif;
+    font-size: 15px;
+    line-height: 1.95;
+    color: #3a1e00;
+    transition: filter 0.25s, opacity 0.25s;
+}
+.catechism-a-text p { margin: 0 0 4px; }
+
+/* 默写模式 */
+.dayaoli-quiz-mode .catechism-a-area {
+    cursor: pointer;
+}
+.dayaoli-quiz-mode .catechism-a-text {
+    filter: blur(5px);
+    opacity: 0.55;
+    user-select: none;
+}
+.dayaoli-quiz-mode .catechism-a-text.revealed {
+    filter: none;
+    opacity: 1;
+}
+.dayaoli-quiz-mode .catechism-a-area:hover {
+    background: rgba(201,146,42,0.06);
+}
+
+/* 默写工具栏 */
+.catechism-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+.catechism-toolbar .ct-btn {
+    padding: 5px 13px;
+    border-radius: 5px;
+    border: 1.5px solid #C9922A;
+    background: transparent;
+    color: #8B5E00;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.15s, color 0.15s;
+}
+.catechism-toolbar .ct-btn:hover { background: rgba(201,146,42,0.1); }
+.catechism-toolbar .ct-btn.active {
+    background: #8B5E00;
+    color: #fff8ee;
+    border-color: #8B5E00;
+}
+.catechism-toolbar .ct-info {
+    font-size: 12px;
+    color: #bbb;
+    margin-left: auto;
+    letter-spacing: 0.04em;
+}
+
+/* 阅读模式内卡片适配 */
+#rm-overlay .catechism-card { box-shadow: none; }
+</style>
+
+<script>
+/* ── 大要理问答卡片初始化 ── */
+(function() {
+    function initCatechism() {
+        var content = document.querySelector('#reading-col .reading-content');
+        if (!content) return;
+
+        var nodes = Array.from(content.children);
+        var groups = [];
+        var current = null;
+
+        for (var i = 0; i < nodes.length; i++) {
+            var el = nodes[i];
+            if (el.tagName === 'H2') { continue; } // keep header untouched
+            if (el.tagName === 'P' && el.querySelector('strong')) {
+                var st = el.querySelector('strong').textContent;
+                if (/^问\d+[：:]/.test(st)) {
+                    if (current) groups.push(current);
+                    current = { q: el, answers: [] };
+                    continue;
+                }
+            }
+            if (el.tagName === 'HR') {
+                if (current) { groups.push(current); current = null; }
+                continue;
+            }
+            if (current) current.answers.push(el);
+        }
+        if (current) groups.push(current);
+        if (!groups.length) return;
+
+        // Rebuild content
+        var h2El = content.querySelector('h2');
+        content.innerHTML = '';
+        if (h2El) content.appendChild(h2El);
+
+        // Toolbar
+        var toolbar = document.createElement('div');
+        toolbar.className = 'catechism-toolbar';
+        toolbar.innerHTML =
+            '<button class="ct-btn" id="quiz-btn" onclick="dayaoliQuizToggle()">✎ 默写模式</button>' +
+            '<button class="ct-btn" id="reveal-btn" onclick="dayaoliRevealAll()" style="display:none">全部显示</button>' +
+            '<span class="ct-info">共 ' + groups.length + ' 问</span>';
+        content.appendChild(toolbar);
+
+        // Cards
+        groups.forEach(function(g) {
+            var qFull = g.q.querySelector('strong').textContent; // "问N：text"
+            var m = qFull.match(/^问(\d+)[：:]([\s\S]*)$/);
+            var qNum = m ? m[1] : '?';
+            var qText = m ? m[2].trim() : qFull;
+
+            var ansHtml = g.answers.map(function(a) {
+                // strip leading "答：" from first element
+                var html = a.outerHTML;
+                return html;
+            }).join('');
+            ansHtml = ansHtml.replace(/^(<p[^>]*>)答[：:]/, '$1');
+
+            var card = document.createElement('div');
+            card.className = 'catechism-card';
+            card.innerHTML =
+                '<div class="catechism-q-area">' +
+                  '<span class="catechism-q-num">问 ' + qNum + '</span>' +
+                  '<span class="catechism-q-text">' + qText + '</span>' +
+                '</div>' +
+                '<div class="catechism-a-area" onclick="dayaoliRevealCard(this)">' +
+                  '<div class="catechism-a-label">答</div>' +
+                  '<div class="catechism-a-text">' + ansHtml + '</div>' +
+                '</div>';
+            content.appendChild(card);
+        });
+    }
+
+    window.dayaoliQuizToggle = function() {
+        var col = document.getElementById('reading-col');
+        var isQuiz = col.classList.toggle('dayaoli-quiz-mode');
+        var btn = document.getElementById('quiz-btn');
+        var rev = document.getElementById('reveal-btn');
+        if (btn) btn.classList.toggle('active', isQuiz);
+        if (rev) rev.style.display = isQuiz ? '' : 'none';
+        if (isQuiz) {
+            // hide all answers
+            col.querySelectorAll('.catechism-a-text').forEach(function(el) {
+                el.classList.remove('revealed');
+            });
+        }
+    };
+
+    window.dayaoliRevealCard = function(areaEl) {
+        var col = document.getElementById('reading-col');
+        if (!col.classList.contains('dayaoli-quiz-mode')) return;
+        areaEl.querySelector('.catechism-a-text').classList.toggle('revealed');
+    };
+
+    window.dayaoliRevealAll = function() {
+        document.querySelectorAll('#reading-col .catechism-a-text').forEach(function(el) {
+            el.classList.add('revealed');
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCatechism);
+    } else {
+        initCatechism();
+    }
+})();
+</script>
+{% endif %}
+
 <script>
 var FONT_KEY = 'reading-font-size';
 var FONT_DEFAULT = 16, FONT_MIN = 12, FONT_MAX = 32;
