@@ -867,18 +867,17 @@ sup.fn-ref a:hover { text-decoration: underline; }
         if (current) groups.push(current);
         if (!groups.length) return;
 
-        // Rebuild content
-        var h2El = content.querySelector('h2');
+        // Rebuild content（丢弃内层 H2，外层 reading-section-title 已展示标题）
         content.innerHTML = '';
-        if (h2El) content.appendChild(h2El);
 
         // Toolbar
+        var qRange = '{{ page.questions }}';
         var toolbar = document.createElement('div');
         toolbar.className = 'catechism-toolbar';
         toolbar.innerHTML =
             '<button class="ct-btn" id="quiz-btn" onclick="dayaoliQuizToggle()">✎ 默写模式</button>' +
             '<button class="ct-btn" id="reveal-btn" onclick="dayaoliRevealAll()" style="display:none">全部显示</button>' +
-            '<span class="ct-info">共 ' + groups.length + ' 问</span>';
+            '<span class="ct-info">第 ' + qRange + ' 问 · 共 ' + groups.length + ' 问</span>';
         content.appendChild(toolbar);
 
         // Cards
