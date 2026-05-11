@@ -1998,15 +1998,26 @@ if (window.location.hash === '#readmode') {
      ══════════════════════════════════════════════ -->
 <div id="mob-reading-bar" aria-hidden="true">
     <div id="mob-bar-handle"></div>
-    <div class="mob-bar-row">
-        <span class="mob-bar-lbl">背景</span>
-        <div class="mob-bar-bg-row">
-            <button class="mob-bg-sw" data-color="#C7EDCC" onclick="setBgColor('#C7EDCC')" style="background:#C7EDCC"></button>
-            <button class="mob-bg-sw" data-color="#FAF0DC" onclick="setBgColor('#FAF0DC')" style="background:#FAF0DC"></button>
-            <button class="mob-bg-sw" data-color="#EAEAEF" onclick="setBgColor('#EAEAEF')" style="background:#EAEAEF"></button>
-            <button class="mob-bg-sw" data-color="#F5E6CC" onclick="setBgColor('#F5E6CC')" style="background:#F5E6CC"></button>
-            <button class="mob-bg-sw" data-color="#E3EDCD" onclick="setBgColor('#E3EDCD')" style="background:#E3EDCD"></button>
-            <button class="mob-bg-sw" data-color="#FFFFFF" onclick="setBgColor('#FFFFFF')" style="background:#FFFFFF"></button>
+    <div class="mob-bar-row mob-bar-palette-row">
+        <button class="mob-bar-palette-btn" id="mobPaletteBtn" onclick="mobPaletteToggle()" aria-label="背景色">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 2a10 10 0 0 1 0 20c-2.5 0-4-1.5-4-3.5 0-1 .5-2 .5-3S8 13 8 12a4 4 0 0 1 8 0"/>
+                <circle cx="9" cy="9" r="1" fill="currentColor"/>
+                <circle cx="15" cy="9" r="1" fill="currentColor"/>
+                <circle cx="9" cy="15" r="1" fill="currentColor"/>
+            </svg>
+            <em>背景色</em>
+            <span id="mobPalettePreview" class="mob-palette-preview"></span>
+        </button>
+        <!-- 弹出色盘 -->
+        <div id="mob-palette-popup" class="mob-palette-popup">
+            <button class="mob-bg-sw" data-color="#C7EDCC" onclick="mobSetBg('#C7EDCC')" style="background:#C7EDCC" title="豆沙绿"></button>
+            <button class="mob-bg-sw" data-color="#FAF0DC" onclick="mobSetBg('#FAF0DC')" style="background:#FAF0DC" title="羊皮纸"></button>
+            <button class="mob-bg-sw" data-color="#EAEAEF" onclick="mobSetBg('#EAEAEF')" style="background:#EAEAEF" title="淡灰蓝"></button>
+            <button class="mob-bg-sw" data-color="#F5E6CC" onclick="mobSetBg('#F5E6CC')" style="background:#F5E6CC" title="暖杏色"></button>
+            <button class="mob-bg-sw" data-color="#E3EDCD" onclick="mobSetBg('#E3EDCD')" style="background:#E3EDCD" title="浅草绿"></button>
+            <button class="mob-bg-sw mob-bg-sw--white" data-color="#FFFFFF" onclick="mobSetBg('#FFFFFF')" style="background:#FFFFFF" title="纯白"></button>
         </div>
     </div>
     <div class="mob-bar-row mob-bar-row-tools">
@@ -2116,6 +2127,45 @@ if (window.location.hash === '#readmode') {
     }
     .mob-bar-rm-btn:active { background: #2C4A6E; }
 
+    /* 调色板按钮行 */
+    .mob-bar-palette-row { position: relative; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .mob-bar-palette-btn {
+        display: flex; align-items: center; gap: 10px;
+        background: #f0f4f8; border: 1px solid #d0dbe8; border-radius: 8px;
+        padding: 8px 16px; cursor: pointer; width: 100%; color: #2C4A6E;
+    }
+    .mob-bar-palette-btn em { font-style: normal; font-size: 14px; font-weight: 600; flex: 1; text-align: left; }
+    .mob-palette-preview {
+        display: inline-block; width: 18px; height: 18px;
+        border-radius: 50%; border: 2px solid rgba(0,0,0,0.15);
+        background: #FFFFFF;
+    }
+    .mob-bar-palette-btn:active { background: #dce8f5; }
+    .mob-palette-popup {
+        display: none;
+        position: absolute; bottom: calc(100% + 6px); left: 0; right: 0;
+        background: rgba(255,255,255,0.97);
+        backdrop-filter: blur(10px);
+        border: 1px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 14px 16px;
+        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+        display: none;
+        flex-wrap: wrap; gap: 12px;
+        justify-content: center;
+        z-index: 100;
+    }
+    .mob-palette-popup.open { display: flex; }
+    .mob-palette-popup .mob-bg-sw {
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 3px solid transparent; cursor: pointer; padding: 0;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+        transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .mob-palette-popup .mob-bg-sw:active { transform: scale(1.15); }
+    .mob-palette-popup .mob-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
+    .mob-bg-sw--white { box-shadow: 0 0 0 1px #ccc !important; }
+
     /* 汉堡按钮行 */
     .mob-bar-nav-row {
         display: flex;
@@ -2218,6 +2268,30 @@ function mobNavClose() {
     document.getElementById('mob-nav-overlay').classList.remove('open');
     document.getElementById('mob-nav-drawer').classList.remove('open');
 }
+function mobPaletteToggle() {
+    var popup = document.getElementById('mob-palette-popup');
+    popup.classList.toggle('open');
+}
+function mobSetBg(color) {
+    setBgColor(color);
+    // update preview swatch
+    var prev = document.getElementById('mobPalettePreview');
+    if (prev) prev.style.background = color;
+    // mark active
+    document.querySelectorAll('.mob-palette-popup .mob-bg-sw').forEach(function(b) {
+        b.classList.toggle('active', b.dataset.color === color);
+    });
+    // close popup
+    document.getElementById('mob-palette-popup').classList.remove('open');
+}
+// close palette popup when tapping elsewhere
+document.addEventListener('click', function(e) {
+    var btn = document.getElementById('mobPaletteBtn');
+    var popup = document.getElementById('mob-palette-popup');
+    if (popup && btn && !btn.contains(e.target) && !popup.contains(e.target)) {
+        popup.classList.remove('open');
+    }
+});
 </script>
 
 <script>
