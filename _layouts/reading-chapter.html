@@ -2023,12 +2023,28 @@ if (window.location.hash === '#readmode') {
         <button class="mob-bar-rm-btn" onclick="rmEnter()">⛶ 阅读</button>
     </div>
     <div class="mob-bar-row mob-bar-nav-row">
-        <a href="/">首页</a>
-        <a href="/reading/">属灵阅读</a>
-        <a href="/calvin/">加尔文注释</a>
-        <a href="/mhenry/">马太亨利</a>
-        <a href="/about/">信仰告白</a>
+        <button class="mob-bar-nav-btn" onclick="mobNavOpen()" aria-label="导航菜单">
+            <div class="lines"><span></span><span></span><span></span></div>
+            <em>菜单</em>
+        </button>
     </div>
+</div>
+
+<!-- 导航抽屉遮罩 -->
+<div id="mob-nav-overlay" onclick="mobNavClose()"></div>
+<!-- 导航抽屉 -->
+<div id="mob-nav-drawer">
+    <div id="mob-nav-header">
+        <span>导航</span>
+        <button onclick="mobNavClose()" aria-label="关闭">&#10005;</button>
+    </div>
+    <nav id="mob-nav-links">
+        <a href="/"><span class="mob-nav-icon">🏠</span>首页</a>
+        <a href="/reading/"><span class="mob-nav-icon">📖</span>属灵阅读</a>
+        <a href="/calvin/"><span class="mob-nav-icon">✍️</span>加尔文注释</a>
+        <a href="/mhenry/"><span class="mob-nav-icon">📜</span>马太亨利</a>
+        <a href="/about/"><span class="mob-nav-icon">✝️</span>信仰告白</a>
+    </nav>
 </div>
 
 <style>
@@ -2099,24 +2115,110 @@ if (window.location.hash === '#readmode') {
         white-space: nowrap; margin-left: auto;
     }
     .mob-bar-rm-btn:active { background: #2C4A6E; }
+
+    /* 汉堡按钮行 */
     .mob-bar-nav-row {
-        display: flex; flex-wrap: wrap; gap: 7px;
-        padding: 10px 0 4px;
+        display: flex;
+        align-items: center;
+        padding: 8px 0 2px;
         border-bottom: none !important;
     }
-    .mob-bar-nav-row a {
-        font-size: 12px;
-        color: #555 !important;
-        text-decoration: none !important;
-        padding: 4px 11px;
-        border: 1px solid #ddd;
-        border-radius: 12px;
-        background: #f5f5f5;
-        white-space: nowrap;
+    .mob-bar-nav-btn {
+        display: flex; align-items: center; gap: 10px;
+        background: #f0f4f8;
+        border: 1px solid #d0dbe8;
+        border-radius: 8px;
+        padding: 8px 16px;
+        cursor: pointer;
+        width: 100%;
+        color: #2C4A6E;
     }
-    .mob-bar-nav-row a:active { background: #5B8DB8; color: #fff !important; border-color: #5B8DB8; }
+    .mob-bar-nav-btn span {
+        display: block; width: 18px; height: 2px;
+        background: #2C4A6E; border-radius: 2px;
+        position: absolute;
+    }
+    .mob-bar-nav-btn span:nth-child(1) { top: 5px; }
+    .mob-bar-nav-btn span:nth-child(2) { top: 11px; }
+    .mob-bar-nav-btn span:nth-child(3) { top: 17px; }
+    .mob-bar-nav-btn > div.lines {
+        position: relative; width: 18px; height: 22px; flex-shrink: 0;
+    }
+    .mob-bar-nav-btn em {
+        font-style: normal; font-size: 14px; font-weight: 600;
+        letter-spacing: 0.03em;
+    }
+    .mob-bar-nav-btn:active { background: #dce8f5; }
 }
+
+/* 导航抽屉（全设备可见） */
+#mob-nav-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 19000;
+}
+#mob-nav-overlay.open { display: block; }
+#mob-nav-drawer {
+    position: fixed;
+    top: 0; left: -280px;
+    width: 260px; height: 100%;
+    background: #1c2a3a;
+    z-index: 19100;
+    display: flex; flex-direction: column;
+    transition: left 0.28s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.35);
+}
+#mob-nav-drawer.open { left: 0; }
+#mob-nav-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+#mob-nav-header span {
+    font-size: 15px; font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+#mob-nav-header button {
+    background: none; border: none;
+    color: rgba(255,255,255,0.5); font-size: 20px;
+    cursor: pointer; padding: 2px 6px; line-height: 1;
+}
+#mob-nav-header button:hover { color: #fff; }
+#mob-nav-links {
+    display: flex; flex-direction: column;
+    padding: 12px 0;
+    flex: 1; overflow-y: auto;
+}
+#mob-nav-links a {
+    display: flex; align-items: center; gap: 14px;
+    padding: 15px 24px;
+    color: rgba(255,255,255,0.82) !important;
+    text-decoration: none !important;
+    font-size: 16px; font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+#mob-nav-links a:hover, #mob-nav-links a:active {
+    background: rgba(255,255,255,0.07);
+    color: #fff !important;
+    border-left-color: #5B8DB8;
+}
+.mob-nav-icon { font-size: 18px; width: 24px; text-align: center; }
 </style>
+
+<script>
+function mobNavOpen() {
+    document.getElementById('mob-nav-overlay').classList.add('open');
+    document.getElementById('mob-nav-drawer').classList.add('open');
+}
+function mobNavClose() {
+    document.getElementById('mob-nav-overlay').classList.remove('open');
+    document.getElementById('mob-nav-drawer').classList.remove('open');
+}
+</script>
 
 <script>
 (function() {
