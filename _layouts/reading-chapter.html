@@ -2195,10 +2195,10 @@ if (window.location.hash === '#readmode') {
 
 <!-- 字号弹出层 -->
 <div id="mob-font-popup">
-    <button onclick="adjustFontSize(1); mobFontUpdateLabel()">A<sup>+</sup></button>
-    <span id="mob-font-label" style="font-size:12px;color:#666;font-weight:bold;min-width:28px;text-align:center;">16</span>
-    <button onclick="adjustFontSize(-1); mobFontUpdateLabel()">A<sup>−</sup></button>
-    <button onclick="resetFontSize(); mobFontUpdateLabel()" style="font-size:11px;padding:0 6px;">重置</button>
+    <button ontouchend="event.preventDefault();var _n=Math.min(40,(parseInt(localStorage.getItem('reading-font-size'))||16)+1);localStorage.setItem('reading-font-size',_n);document.documentElement.style.setProperty('--reading-font-size',_n+'px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent=_n+'px';" onclick="void 0">A<sup>+</sup></button>
+    <span id="mob-font-label" style="font-size:12px;color:#666;font-weight:bold;min-width:28px;text-align:center;">16px</span>
+    <button ontouchend="event.preventDefault();var _n=Math.max(12,(parseInt(localStorage.getItem('reading-font-size'))||16)-1);localStorage.setItem('reading-font-size',_n);document.documentElement.style.setProperty('--reading-font-size',_n+'px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent=_n+'px';" onclick="void 0">A<sup>−</sup></button>
+    <button ontouchend="event.preventDefault();localStorage.setItem('reading-font-size',16);document.documentElement.style.setProperty('--reading-font-size','16px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent='16px';" onclick="void 0" style="font-size:11px;padding:0 6px;">重置</button>
 </div>
 
 <!-- 导航抽屉遮罩（保留备用） -->
