@@ -2,18 +2,12 @@
 layout: default
 ---
 
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/reading-bg-main.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{{ page.book_title }}</h1>
-                    <span class="subheading">{{ page.section_title }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
+<div class="dc-page-header">
+  <div class="dc-page-header-label">{{ page.book_title }}</div>
+  <div class="dc-page-header-num">第{{ page.section }}部分</div>
+  <div class="dc-page-header-title">{{ page.section_title }}</div>
+  <div class="dc-page-header-sub">第 {{ page.questions }} 问</div>
+</div>
 
 {% assign sections_list = "1,2,3,4,5,6" | split: "," %}
 {% assign current_idx = 0 %}
@@ -66,6 +60,31 @@ layout: default
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
 
 <style>
+/* ── 顶部横幅 ── */
+.dc-page-header {
+  background: linear-gradient(135deg, #3a1e00 0%, #7a4000 100%);
+  color: #fff;
+  padding: 48px 0 40px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.dc-page-header-label {
+  font-size: 12px; letter-spacing: .18em; color: #e8c87a;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.dc-page-header-num {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  letter-spacing: .1em; margin-bottom: 6px;
+}
+.dc-page-header-title {
+  font-size: 26px; font-weight: bold;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  color: #fff; letter-spacing: 0.06em; margin-bottom: 8px;
+}
+.dc-page-header-sub {
+  font-size: 13px; color: rgba(255,255,255,0.55); letter-spacing: .06em;
+}
+
 .dayaoli-chapter-wrap { padding: 28px 0 60px; }
 
 /* ── 导航 ── */
