@@ -48,9 +48,6 @@
     <!-- /.container -->
 </nav>
 <script>
-    // Drop Bootstarp low-performance Navbar
-    // Use customize navbar with high-quality material design animation
-    // in high-perf jank-free CSS3 implementation
     var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
     var $navbar = document.querySelector('#huxblog_navbar');
@@ -59,9 +56,7 @@
     var __HuxNav__ = {
         close: function(){
             $navbar.className = " ";
-            // wait until animation end.
             setTimeout(function(){
-                // prevent frequently toggle
                 if($navbar.className.indexOf('in') < 0) {
                     $collapse.style.height = "0px"
                 }
@@ -73,7 +68,6 @@
         }
     }
 
-    // Bind Event
     $toggle.addEventListener('click', function(e){
         if ($navbar.className.indexOf('in') > 0) {
             __HuxNav__.close()
@@ -82,22 +76,10 @@
         }
     })
 
-    /**
-     * Since Fastclick is used to delegate 'touchstart' globally
-     * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from 
-     * $toggle/$collapse will break global delegation.
-     * 
-     * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close HuxNav.  
-     *
-     * Also, we use 'click' instead of 'touchstart' as compromise
-     */
     document.addEventListener('click', function(e){
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
         __HuxNav__.close();
-        // close dropdown if clicking outside
         var dd = document.getElementById('aboutDropdown');
         if (dd && !dd.contains(e.target)) {
             dd.classList.remove('open');
@@ -150,7 +132,15 @@
     color: #0085a1 !important;
 }
 
-/* Mobile: fixed navbar with solid background (desktop uses JS is-fixed/is-visible) */
+/* 禁用桌面端滚动显示导航栏行为 */
+@media only screen and (min-width: 1170px) {
+    .navbar-custom.is-fixed,
+    .navbar-custom.is-visible {
+        display: none !important;
+    }
+}
+
+/* Mobile: fixed navbar */
 @media only screen and (max-width: 1169px) {
     .navbar-custom {
         position: fixed !important;
@@ -163,7 +153,6 @@
     .navbar-custom.nav-hidden {
         top: -60px !important;
     }
-    /* ensure brand/links are readable on dark bg */
     .navbar-custom .navbar-brand,
     .navbar-custom .nav li a {
         color: rgba(255, 255, 255, 0.92) !important;
@@ -172,11 +161,9 @@
     .navbar-custom .nav li a:hover {
         color: #C9922A !important;
     }
-    /* hamburger icon bars */
     .navbar-custom .icon-bar {
         background-color: rgba(255, 255, 255, 0.9);
     }
-    /* expanded menu: override Bootstrap's light collapse background */
     .navbar-custom .navbar-collapse {
         background-color: rgba(22, 22, 22, 0.98);
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -197,39 +184,3 @@
     }
 }
 </style>
-
-<script>
-(function() {
-    var navbar = document.querySelector('.navbar-custom');
-    if (!navbar) return;
-
-    var lastY   = window.scrollY || window.pageYOffset;
-    var ticking = false;
-
-    function update(y) {
-        if (y < 80) {
-            navbar.classList.remove('nav-hidden');
-        } else if (y > lastY + 6) {
-            navbar.classList.add('nav-hidden');
-            // close mobile dropdown if open
-            var nb = document.getElementById('huxblog_navbar');
-            if (nb && nb.className.indexOf('in') >= 0) {
-                nb.className = ' ';
-                var col = document.querySelector('.navbar-collapse');
-                if (col) col.style.height = '0px';
-            }
-        } else if (y < lastY - 6) {
-            navbar.classList.remove('nav-hidden');
-        }
-        lastY = y;
-        ticking = false;
-    }
-
-    window.addEventListener('scroll', function() {
-        if (ticking) return;
-        ticking = true;
-        var y = window.scrollY || window.pageYOffset;
-        requestAnimationFrame(function() { update(y); });
-    }, { passive: true });
-})();
-</script>
