@@ -1146,7 +1146,7 @@ a.fn-backref:hover {
 
 <script>
 var FONT_KEY = 'reading-font-size';
-var FONT_DEFAULT = 16, FONT_MIN = 12, FONT_MAX = 32;
+var FONT_DEFAULT = 16, FONT_MIN = 12, FONT_MAX = 40;
 function applyFontSize(size) {
     document.documentElement.style.setProperty('--reading-font-size', size + 'px');
 }
@@ -1159,6 +1159,10 @@ function adjustFontSize(delta) {
 function resetFontSize() {
     localStorage.setItem(FONT_KEY, FONT_DEFAULT);
     applyFontSize(FONT_DEFAULT);
+}
+function mobFontUpdateLabel() {
+    var lbl = document.getElementById('mob-font-label');
+    if (lbl) lbl.textContent = parseInt(localStorage.getItem(FONT_KEY) || FONT_DEFAULT) + 'px';
 }
 
 var BG_KEY = 'reading-bg-color';
@@ -2191,9 +2195,10 @@ if (window.location.hash === '#readmode') {
 
 <!-- 字号弹出层 -->
 <div id="mob-font-popup">
-    <button onclick="adjustFontSize(-1)">A<sup>−</sup></button>
-    <button onclick="resetFontSize()">A</button>
-    <button onclick="adjustFontSize(1)">A<sup>+</sup></button>
+    <button onclick="adjustFontSize(1); mobFontUpdateLabel()">A<sup>+</sup></button>
+    <span id="mob-font-label" style="font-size:12px;color:#666;font-weight:bold;min-width:28px;text-align:center;">16</span>
+    <button onclick="adjustFontSize(-1); mobFontUpdateLabel()">A<sup>−</sup></button>
+    <button onclick="resetFontSize(); mobFontUpdateLabel()" style="font-size:11px;padding:0 6px;">重置</button>
 </div>
 
 <!-- 导航抽屉遮罩（保留备用） -->
@@ -2560,8 +2565,9 @@ if (window.location.hash === '#readmode') {
         var isOpen = popup.classList.toggle('open');
         btn.classList.toggle('active', isOpen);
         if (isOpen) {
+            mobFontUpdateLabel();
             var rect = btn.getBoundingClientRect();
-            var popW = 68, popH = 3 * 52 + 2 * 6 + 16; // 3 buttons + gaps + padding
+            var popW = 80, popH = 4 * 52 + 3 * 6 + 16; // 4 items + gaps + padding
             var left = rect.left + rect.width/2 - popW/2;
             left = Math.max(8, Math.min(left, window.innerWidth - popW - 8));
             popup.style.left = left + 'px';
