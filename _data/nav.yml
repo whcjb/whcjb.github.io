@@ -1,0 +1,30 @@
+# 导航条目 — 修改此文件即可同步到顶部导航和手机底部菜单
+# nav_label: 桌面导航显示的文字（较长）
+# label:     手机底部菜单显示的文字（较短）
+# icon:      图标键名，对应 _includes/nav-icon.html 中的 SVG
+# mobile_only: true 表示仅出现在手机底部菜单，不出现在桌面导航栏
+
+- href: /
+  label: 首页
+  nav_label: 首页
+  icon: home
+
+- href: /reading/
+  label: 属灵阅读
+  nav_label: 属灵阅读
+  icon: book
+
+- href: /calvin/
+  label: 加尔文注释
+  nav_label: 加尔文圣经注释
+  icon: pen
+
+- href: /mhenry/
+  label: 马太亨利
+  nav_label: 马太亨利注释
+  icon: file
+
+- href: /about/
+  label: 信仰告白
+  icon: cross
+  mobile_only: true

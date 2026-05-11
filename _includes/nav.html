@@ -16,18 +16,11 @@
         <div id="huxblog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+                    {% for item in site.data.nav %}{% unless item.mobile_only %}
                     <li>
-                        <a href="{{ site.baseurl }}/">首页</a>
+                        <a href="{{ site.baseurl }}{{ item.href }}">{{ item.nav_label | default: item.label }}</a>
                     </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/calvin/">加尔文圣经注释</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/mhenry/">马太亨利注释</a>
-                    </li>
-                    <li>
-                        <a href="{{ site.baseurl }}/reading/">属灵阅读</a>
-                    </li>
+                    {% endunless %}{% endfor %}
                     <li>
                         <a href="{{ site.baseurl }}/search/" title="搜索" style="padding: 6px 12px;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
