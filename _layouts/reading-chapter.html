@@ -2097,10 +2097,13 @@ window.rmExit = function() {
 ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange'].forEach(function(evt) {
     document.addEventListener(evt, function() {
         if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement) {
-            // 退出全屏：如果 overlay 已关闭（用户已退出阅读），确保 overflow 恢复
+            // 退出全屏：无论 overlay 是否还在，都恢复滚动并关闭 overlay
+            document.body.style.overflow = '';
             var overlay = document.getElementById('rm-overlay');
-            if (!overlay || !overlay.classList.contains('rm-active')) {
-                document.body.style.overflow = '';
+            if (overlay && overlay.classList.contains('rm-active')) {
+                overlay.classList.remove('rm-active', 'rm-sheet-open');
+                overlay.setAttribute('aria-hidden', 'true');
+                if (window.ttsStop) ttsStop();
             }
         }
     });
