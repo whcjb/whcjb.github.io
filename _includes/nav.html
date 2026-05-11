@@ -133,19 +133,15 @@
 }
 
 
-/* Mobile: fixed navbar */
+/* Mobile: static navbar at top only, scrolls away with page */
 @media only screen and (max-width: 1169px) {
     .navbar-custom {
-        position: fixed !important;
+        position: absolute !important;
         top: 0;
-        background-color: rgba(30, 30, 30, 0.96) !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-        -webkit-transition: top 0.3s ease;
-        transition: top 0.3s ease;
+        background-color: transparent !important;
+        border-bottom: none !important;
     }
     .navbar-custom.nav-hidden {
-        top: -60px !important;
-    }
     .navbar-custom .navbar-brand,
     .navbar-custom .nav li a {
         color: rgba(255, 255, 255, 0.92) !important;
