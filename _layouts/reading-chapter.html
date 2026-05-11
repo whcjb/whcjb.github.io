@@ -1629,6 +1629,7 @@ function rmChUrl(sec) {
 var rmPages  = [];
 var rmCurPage = 0;
 var rmSrcEl   = null;
+var rmStartPage = 0; // 进入全屏时应显示的起始页（对应 targetChildIdx 的强制断页处）
 
 /* ── 控制面板 ── */
 window.rmToggleSheet = function() {
@@ -1757,7 +1758,8 @@ function rmSplitLongEl(el, limV) {
 }
 
 /* ── 分页 ── */
-function rmBuildPages(srcEl) {
+function rmBuildPages(srcEl, startIdx) {
+    startIdx = startIdx || 0;
     var body = document.getElementById('rm-body');
     body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
     rmPages = [];
@@ -1785,7 +1787,14 @@ function rmBuildPages(srcEl) {
     var SAFE       = 8; // px 安全余量，防止亚像素误差
     var limitY     = pageRect.bottom - parseFloat(pgStyle.paddingBottom) - SAFE;
 
+    // 从头分页，在 startIdx 处强制断页（之前的页可能不满，这是预期行为）
+    rmStartPage = 0;
     for (var i = 0; i < children.length; i++) {
+        // 在 startIdx 处强制开新页，使该元素成为某页的第一个元素
+        if (i === startIdx && i > 0 && curContent.children.length > 0) {
+            curContent = addPage();
+            rmStartPage = rmPages.length - 1;
+        }
         var clone = children[i].cloneNode(true);
         curContent.appendChild(clone);
         // getBoundingClientRect 触发同步 layout，读取元素真实底边
@@ -1896,16 +1905,9 @@ window.rmEnter = function() {
         // 双 RAF：确保 overlay display:block 完成 layout 再测量
         requestAnimationFrame(function() {
             requestAnimationFrame(function() {
-                rmBuildPages(rmSrcEl);
-                // 找到 targetChildIdx 所在的页
-                var startPage = rmPages.length - 1;
-                var cum = 0;
-                for (var pi = 0; pi < rmPages.length; pi++) {
-                    var cnt = rmPages[pi].querySelector('.reading-content').children.length;
-                    if (targetChildIdx < cum + cnt) { startPage = pi; break; }
-                    cum += cnt;
-                }
-                rmShowPage(startPage);
+                // 从头分页，在 targetChildIdx 处强制断页后跳到该页
+                rmBuildPages(rmSrcEl, targetChildIdx);
+                rmShowPage(rmStartPage);
             });
         });
         var el = document.documentElement;
