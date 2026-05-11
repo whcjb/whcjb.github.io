@@ -14,6 +14,11 @@
   nav_label: 属灵阅读
   icon: book
 
+- href: /creeds/
+  label: 信经信条
+  nav_label: 信经信条
+  icon: shield
+
 - href: /calvin/
   label: 加尔文注释
   nav_label: 加尔文圣经注释

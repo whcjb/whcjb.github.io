@@ -1,0 +1,98 @@
+---
+layout: default
+title: 信经信条
+header-img: reading-bg-main.jpg
+---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/reading-bg-main.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>信经信条</h1>
+                    <span class="subheading">改革宗信仰告白与要理问答</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<style>
+.creeds-page { max-width: 780px; margin: 0 auto; padding: 36px 16px 60px; }
+.creeds-section { margin-bottom: 40px; }
+.creeds-section-title {
+    font-size: 13px; font-weight: bold; color: #888;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    margin-bottom: 16px; padding-bottom: 6px;
+    border-bottom: 1px solid #eee;
+}
+.creed-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+.creed-card {
+    display: block;
+    padding: 22px 24px 24px;
+    border-radius: 10px;
+    background: #fffaf4;
+    border: 1.5px solid #e8d9c0;
+    text-decoration: none !important;
+    color: inherit;
+    transition: transform .15s, box-shadow .15s, border-color .15s;
+    position: relative;
+    overflow: hidden;
+}
+.creed-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #8B5E00, #C9922A);
+    opacity: 0;
+    transition: opacity .15s;
+}
+.creed-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(74,37,0,0.12);
+    border-color: #C9922A;
+}
+.creed-card:hover::before { opacity: 1; }
+.creed-card-label {
+    font-size: 10px; color: #C9922A; font-weight: bold;
+    letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: 9px;
+}
+.creed-card-title {
+    font-size: 19px; font-weight: bold;
+    color: #3a1e00; margin-bottom: 7px;
+    font-family: 'STKaiti', 'ZCOOL XiaoWei', serif;
+    letter-spacing: 0.04em;
+}
+.creed-card-meta {
+    font-size: 12px; color: #bbb; line-height: 1.7;
+}
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="creeds-page">
+
+        <div class="creeds-section">
+          <div class="creeds-section-title">要理问答</div>
+          <div class="creed-grid">
+            <a href="{{ site.baseurl }}/creeds/dayaoli/" class="creed-card">
+              <div class="creed-card-label">Westminster Larger Catechism</div>
+              <div class="creed-card-title">大要理问答</div>
+              <div class="creed-card-meta">西敏大会 · 1648 年<br>吕沛渊 译 · 共 196 问</div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+name = "tts-proxy"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+# 在 Cloudflare Dashboard 中设置以下 Secret（不要写在这里）：
+#   AZURE_KEY    = "your-azure-speech-key"
+#   AZURE_REGION = "eastasia"   # 或 southeastasia / eastus 等
