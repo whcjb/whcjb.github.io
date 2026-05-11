@@ -1,0 +1,218 @@
+---
+layout: default
+---
+
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap" rel="stylesheet">
+
+<style>
+.wcf-header {
+  background: linear-gradient(135deg, #3a1e00 0%, #7a4000 100%);
+  color: #fff;
+  padding: 56px 0 48px;
+  text-align: center;
+}
+.wcf-header-book {
+  font-size: 12px;
+  letter-spacing: .2em;
+  color: #e8c87a;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.wcf-header-num {
+  font-size: 64px;
+  font-weight: bold;
+  color: rgba(255,255,255,0.12);
+  line-height: 1;
+  margin-bottom: -12px;
+  font-family: Georgia, serif;
+}
+.wcf-header-title-zh {
+  font-size: 28px;
+  font-weight: bold;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  color: #fff;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+.wcf-header-title-en {
+  font-size: 14px;
+  color: #e8c87a;
+  letter-spacing: .08em;
+}
+
+.wcf-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 18px 16px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wcf-nav a {
+  font-size: 13px;
+  color: #C9922A;
+  text-decoration: none;
+  padding: 6px 14px;
+  border: 1px solid #e8d9c0;
+  border-radius: 20px;
+  transition: background .15s, color .15s;
+}
+.wcf-nav a:hover {
+  background: #C9922A;
+  color: #fff;
+}
+.wcf-nav-spacer { flex: 1; }
+
+.wcf-toggle-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 16px 4px;
+  text-align: right;
+}
+.wcf-toggle-btn {
+  font-size: 12px;
+  color: #999;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.wcf-toggle-btn:hover { color: #C9922A; border-color: #C9922A; }
+
+.wcf-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+  background: #fff;
+}
+
+.wcf-section {
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #f0e8d8;
+}
+.wcf-section:last-child { border-bottom: none; }
+
+.wcf-section-header {
+  margin-bottom: 14px;
+}
+.wcf-sh-zh {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #7a4000;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+.wcf-sh-en {
+  display: block;
+  font-size: 11px;
+  color: #bbb;
+  letter-spacing: .06em;
+  font-style: italic;
+}
+
+.wcf-para-zh {
+  font-size: 16px;
+  line-height: 2;
+  color: #2a1200;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  margin-bottom: 8px;
+}
+.wcf-para-en {
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #666;
+  margin-left: 1em;
+  margin-bottom: 10px;
+}
+.wcf-proofs {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.9;
+  border-left: 3px solid #e8d9c0;
+  padding-left: 12px;
+  margin-left: 1em;
+  margin-top: 6px;
+}
+
+.wcf-bottom-nav {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+  display: flex;
+  justify-content: space-between;
+}
+.wcf-bottom-nav a {
+  font-size: 13px;
+  color: #C9922A;
+  text-decoration: none;
+  padding: 8px 18px;
+  border: 1px solid #e8d9c0;
+  border-radius: 20px;
+  transition: background .15s, color .15s;
+}
+.wcf-bottom-nav a:hover {
+  background: #C9922A;
+  color: #fff;
+}
+</style>
+
+<div class="wcf-header">
+  <div class="wcf-header-book">{{ page.book_title }}</div>
+  <div class="wcf-header-num">{{ page.chapter }}</div>
+  <div class="wcf-header-title-zh">{{ page.chapter_title }}</div>
+  <div class="wcf-header-title-en">{{ page.chapter_title_en }}</div>
+</div>
+
+<div class="wcf-nav">
+  {% if page.chapter > 1 %}
+  <a href="{{ site.baseurl }}/creeds/wcf/{{ page.chapter | minus: 1 }}/">← 上一章</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  <span class="wcf-nav-spacer"></span>
+  <a href="{{ site.baseurl }}/creeds/wcf/">目录</a>
+  <span class="wcf-nav-spacer"></span>
+  {% if page.chapter < 33 %}
+  <a href="{{ site.baseurl }}/creeds/wcf/{{ page.chapter | plus: 1 }}/">下一章 →</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+</div>
+
+<div class="wcf-toggle-wrap">
+  <button class="wcf-toggle-btn" id="wcfToggleBtn" onclick="wcfToggleProofs()">收起经文</button>
+</div>
+
+<div class="wcf-body">
+  {{ content }}
+</div>
+
+<div class="wcf-bottom-nav">
+  {% if page.chapter > 1 %}
+  <a href="{{ site.baseurl }}/creeds/wcf/{{ page.chapter | minus: 1 }}/">← 上一章</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+  {% if page.chapter < 33 %}
+  <a href="{{ site.baseurl }}/creeds/wcf/{{ page.chapter | plus: 1 }}/">下一章 →</a>
+  {% else %}
+  <span></span>
+  {% endif %}
+</div>
+
+<script>
+var wcfProofsVisible = true;
+function wcfToggleProofs() {
+  wcfProofsVisible = !wcfProofsVisible;
+  var proofs = document.querySelectorAll('.wcf-proofs');
+  proofs.forEach(function(el) {
+    el.style.display = wcfProofsVisible ? '' : 'none';
+  });
+  document.getElementById('wcfToggleBtn').textContent = wcfProofsVisible ? '收起经文' : '展开经文';
+}
+</script>

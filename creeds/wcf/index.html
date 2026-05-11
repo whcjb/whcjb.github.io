@@ -1,0 +1,111 @@
+---
+layout: default
+title: 威斯敏斯特信仰告白
+---
+
+<link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap" rel="stylesheet">
+
+<style>
+.wcf-index-header {
+  background: linear-gradient(135deg, #3a1e00 0%, #7a4000 100%);
+  color: #fff;
+  padding: 56px 0 48px;
+  text-align: center;
+}
+.wcf-index-label {
+  font-size: 12px; letter-spacing: .18em; color: #e8c87a;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.wcf-index-title {
+  font-size: 30px; font-weight: bold;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  color: #fff; letter-spacing: 0.06em; margin-bottom: 8px;
+}
+.wcf-index-subtitle {
+  font-size: 14px; color: rgba(255,255,255,0.65); letter-spacing: .06em;
+}
+
+.wcf-index-body {
+  max-width: 820px; margin: 0 auto; padding: 36px 16px 60px;
+}
+.wcf-index-intro {
+  font-size: 14px; color: #888; line-height: 1.9;
+  margin-bottom: 32px; padding-bottom: 24px;
+  border-bottom: 1px solid #f0e8d8;
+}
+
+.wcf-ch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.wcf-ch-card {
+  display: block;
+  padding: 16px 18px 18px;
+  border-radius: 8px;
+  background: #fffaf4;
+  border: 1.5px solid #e8d9c0;
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform .15s, box-shadow .15s, border-color .15s;
+  position: relative;
+  overflow: hidden;
+}
+.wcf-ch-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, #8B5E00, #C9922A);
+  opacity: 0; transition: opacity .15s;
+}
+.wcf-ch-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(74,37,0,0.10);
+  border-color: #C9922A;
+}
+.wcf-ch-card:hover::before { opacity: 1; }
+.wcf-ch-num {
+  font-size: 11px; color: #C9922A; font-weight: bold;
+  letter-spacing: .12em; margin-bottom: 6px;
+}
+.wcf-ch-title-zh {
+  font-size: 15px; font-weight: bold; color: #3a1e00;
+  font-family: 'LXGW WenKai', 'STKaiti', serif;
+  line-height: 1.5; margin-bottom: 3px;
+}
+.wcf-ch-title-en {
+  font-size: 11px; color: #bbb; line-height: 1.5;
+}
+</style>
+
+<div class="wcf-index-header">
+  <div class="wcf-index-label">Westminster Confession of Faith · 1646</div>
+  <div class="wcf-index-title">威斯敏斯特信仰告白</div>
+  <div class="wcf-index-subtitle">中英對照 · 共 33 章</div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 col-lg-offset-1">
+      <div class="wcf-index-body">
+        <div class="wcf-index-intro">
+          威斯敏斯特信仰告白（Westminster Confession of Faith）乃改革宗最重要的系统神学信仰告白，由英国威斯敏斯特大会于 1646 年起草，共 33 章，以圣经为基础，系统阐述加尔文主义神学。本告白中文译文来自 WCF Reader v1.1（中英对照版，2008），附有大量圣经经文注脚。
+        </div>
+        <div class="wcf-ch-grid">
+          {% assign wcf_chapters = "1|論聖經|The Holy Scripture,2|論上帝和三位一體|God and the Holy Trinity,3|論上帝永遠的預旨|God's Eternal Decree,4|論上帝創造之工|Creation,5|論上帝護理之工|Providence,6|論人的墮落、罪惡和刑罰|The Fall of Man and Sin,7|論上帝與人所立的約|God's Covenant with Man,8|論中保基督|Christ the Mediator,9|論自由意志|Free Will,10|論有效的恩召|Effectual Calling,11|論稱義|Justification,12|論兒子的名分|Adoption,13|論成聖|Sanctification,14|論得救的信心|Saving Faith,15|論悔改得生|Repentance Unto Life,16|論善行|Good Works,17|論聖徒的堅忍|Perseverance of the Saints,18|論蒙恩與得救的確信|Assurance of Grace and Salvation,19|論上帝的律法|The Law of God,20|論基督徒的自由和良心的自由|Christian Liberty,21|論基督教的敬拜和安息日|Religious Worship and the Sabbath,22|論合法的起誓和許願|Lawful Oaths and Vows,23|論政府官員|The Civil Authorities,24|論結婚與離婚|Marriage and Divorce,25|論教會|The Church,26|論聖徒相通|Communion of the Saints,27|論聖禮|The Sacraments,28|論洗禮|Baptism,29|論聖餐|The Lord's Supper,30|論教會的懲戒|Church Discipline,31|論教會的總會和會議|Synods and Councils,32|論人死後的狀態和死人復活|The State after Death,33|論最後的審判|The Last Judgment" | split: "," %}
+          {% for entry in wcf_chapters %}
+            {% assign parts = entry | split: "|" %}
+            {% assign ch_num = parts[0] %}
+            {% assign ch_zh = parts[1] %}
+            {% assign ch_en = parts[2] %}
+            <a href="{{ site.baseurl }}/creeds/wcf/{{ ch_num }}/" class="wcf-ch-card">
+              <div class="wcf-ch-num">第 {{ ch_num }} 章</div>
+              <div class="wcf-ch-title-zh">{{ ch_zh }}</div>
+              <div class="wcf-ch-title-en">{{ ch_en }}</div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
