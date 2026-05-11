@@ -2001,19 +2001,10 @@ if (window.location.hash === '#readmode') {
     <div id="mob-bar-btns">
 
         <!-- 调色板 -->
-        <div class="mob-radial-wrap" id="mobPaletteWrap">
-            <button class="mob-sq-btn" id="mobPaletteBtn" onclick="mobPaletteToggle()" aria-label="背景色">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
-                <span class="mob-sq-lbl">背景</span>
-            </button>
-            <!-- 6色扇形：角度 10°,42°,74°,106°,138°,170°，半径80px -->
-            <button class="mob-radial-item mob-color-item" data-color="#C7EDCC" onclick="mobSetBg('#C7EDCC')" style="background:#C7EDCC; --tx:79px; --ty:-14px" title="豆沙绿"></button>
-            <button class="mob-radial-item mob-color-item" data-color="#FAF0DC" onclick="mobSetBg('#FAF0DC')" style="background:#FAF0DC; --tx:60px; --ty:-54px" title="羊皮纸"></button>
-            <button class="mob-radial-item mob-color-item" data-color="#EAEAEF" onclick="mobSetBg('#EAEAEF')" style="background:#EAEAEF; --tx:22px; --ty:-77px" title="淡灰蓝"></button>
-            <button class="mob-radial-item mob-color-item" data-color="#F5E6CC" onclick="mobSetBg('#F5E6CC')" style="background:#F5E6CC; --tx:-22px; --ty:-77px" title="暖杏色"></button>
-            <button class="mob-radial-item mob-color-item" data-color="#E3EDCD" onclick="mobSetBg('#E3EDCD')" style="background:#E3EDCD; --tx:-60px; --ty:-54px" title="浅草绿"></button>
-            <button class="mob-radial-item mob-color-item mob-color-white" data-color="#FFFFFF" onclick="mobSetBg('#FFFFFF')" style="background:#FFFFFF; --tx:-79px; --ty:-14px" title="纯白"></button>
-        </div>
+        <button class="mob-sq-btn" id="mobPaletteBtn" onclick="mobWheelOpen('palette')" aria-label="背景色">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+            <span class="mob-sq-lbl">背景</span>
+        </button>
 
         <!-- 字号 -->
         <div class="mob-font-grp">
@@ -2043,24 +2034,22 @@ if (window.location.hash === '#readmode') {
         </button>
 
         <!-- 导航菜单 -->
-        <div class="mob-radial-wrap" id="mobNavWrap">
-            <button class="mob-sq-btn" id="mobNavBtn" onclick="mobNavToggle()" aria-label="导航">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                <span class="mob-sq-lbl">菜单</span>
-            </button>
-            <!-- 5链接扇形：角度 20°,55°,90°,125°,160°，半径95px -->
-            <a class="mob-radial-item mob-nav-item" href="/" style="--tx:89px;--ty:-33px">🏠</a>
-            <a class="mob-radial-item mob-nav-item" href="/reading/" style="--tx:54px;--ty:-78px">📖</a>
-            <a class="mob-radial-item mob-nav-item" href="/calvin/" style="--tx:0px;--ty:-95px">✍️</a>
-            <a class="mob-radial-item mob-nav-item" href="/mhenry/" style="--tx:-54px;--ty:-78px">📜</a>
-            <a class="mob-radial-item mob-nav-item" href="/about/" style="--tx:-89px;--ty:-33px">✝️</a>
-        </div>
+        <button class="mob-sq-btn" id="mobNavBtn" onclick="mobWheelOpen('nav')" aria-label="导航">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <span class="mob-sq-lbl">菜单</span>
+        </button>
 
     </div>
 </div>
 
-<!-- 导航抽屉遮罩 -->
-<div id="mob-nav-overlay" onclick="mobNavClose()"></div>
+<!-- 拨盘弹出层 -->
+<div id="mob-wheel-backdrop" onclick="mobWheelClose()"></div>
+<div id="mob-wheel-container">
+    <div id="mob-wheel-track"></div>
+</div>
+
+<!-- 导航抽屉遮罩（保留备用） -->
+<div id="mob-nav-overlay" onclick="mobNavClose()" style="display:none"></div>
 <!-- 导航抽屉 -->
 <div id="mob-nav-drawer">
     <div id="mob-nav-header">
@@ -2124,52 +2113,57 @@ if (window.location.hash === '#readmode') {
     .mob-font-grp { display: flex; gap: 3px; }
     .mob-sq-sm { width: 36px !important; height: 54px; border-radius: 10px; font-size: 13px; font-weight: bold; }
 
-    /* 扇形容器 */
-    .mob-radial-wrap {
-        position: relative;
-        display: flex; flex-direction: column; align-items: center;
-    }
-    /* 扇形子项（颜色色块 + 导航链接） */
-    .mob-radial-item {
-        position: absolute;
-        bottom: 0; left: 50%;
-        transform: translate(-50%, 0) scale(0);
-        opacity: 0;
-        transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s;
-        pointer-events: none;
-        z-index: 200;
-    }
-    .mob-radial-wrap.open .mob-radial-item {
-        transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(1);
-        opacity: 1;
-        pointer-events: auto;
-    }
-    /* 色块 */
-    .mob-color-item {
-        width: 36px; height: 36px; border-radius: 50%;
-        border: 3px solid rgba(255,255,255,0.9);
-        box-shadow: 0 2px 8px rgba(0,0,0,0.22);
-        cursor: pointer; padding: 0;
-    }
-    .mob-color-item.active { border-color: #2C4A6E; box-shadow: 0 0 0 3px #5B8DB8; }
-    .mob-color-white { box-shadow: 0 2px 8px rgba(0,0,0,0.18), inset 0 0 0 1px #ddd !important; }
-    /* 导航链接 */
-    .mob-nav-item {
-        width: 44px; height: 44px; border-radius: 50%;
-        background: #1c2a3a;
-        box-shadow: 0 3px 12px rgba(0,0,0,0.35);
-        display: flex; align-items: center; justify-content: center;
-        font-size: 20px; text-decoration: none !important;
-        border: 2px solid rgba(255,255,255,0.15);
-    }
-    .mob-nav-item:active { transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(0.9) !important; }
-    /* 延迟错开动画 */
-    .mob-radial-wrap.open .mob-radial-item:nth-child(2) { transition-delay: 0s; }
-    .mob-radial-wrap.open .mob-radial-item:nth-child(3) { transition-delay: 0.03s; }
-    .mob-radial-wrap.open .mob-radial-item:nth-child(4) { transition-delay: 0.06s; }
-    .mob-radial-wrap.open .mob-radial-item:nth-child(5) { transition-delay: 0.09s; }
-    .mob-radial-wrap.open .mob-radial-item:nth-child(6) { transition-delay: 0.12s; }
-    .mob-radial-wrap.open .mob-radial-item:nth-child(7) { transition-delay: 0.15s; }
+}
+
+/* ── 拨盘弹出（全局，不受父容器裁剪）── */
+#mob-wheel-backdrop {
+    display: none; position: fixed; inset: 0; z-index: 19400;
+    background: rgba(0,0,0,0.25);
+}
+#mob-wheel-backdrop.open { display: block; }
+#mob-wheel-container {
+    display: none; position: fixed; z-index: 19500;
+    width: 200px; height: 200px;
+    margin-left: -100px; margin-top: -100px;
+    touch-action: none; user-select: none;
+}
+#mob-wheel-container.open { display: block; }
+#mob-wheel-track {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    border: 1.5px dashed rgba(0,0,0,0.15);
+    position: relative;
+    transform-origin: center;
+    will-change: transform;
+}
+/* 拨盘中心提示 */
+#mob-wheel-track::after {
+    content: '滑动旋转';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 10px; color: rgba(0,0,0,0.3);
+    pointer-events: none; white-space: nowrap;
+}
+.mob-wheel-item {
+    position: absolute; top: 50%; left: 50%;
+    width: 40px; height: 40px;
+    margin: -20px 0 0 -20px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transform-origin: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    font-size: 20px;
+    transition: box-shadow 0.15s;
+    -webkit-tap-highlight-color: transparent;
+}
+.mob-wheel-item:active { box-shadow: 0 1px 4px rgba(0,0,0,0.2); }
+.mob-wheel-color { border: 3px solid rgba(255,255,255,0.9); }
+.mob-wheel-color.active { border-color: #2C4A6E; box-shadow: 0 0 0 3px #5B8DB8; }
+.mob-wheel-nav {
+    background: #1c2a3a;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: #fff; text-decoration: none !important;
 }
 
 /* 导航抽屉（全设备可见） */
@@ -2231,36 +2225,161 @@ if (window.location.hash === '#readmode') {
 </style>
 
 <script>
-function mobNavToggle() {
-    var wrap = document.getElementById('mobNavWrap');
-    var isOpen = wrap.classList.toggle('open');
-    document.getElementById('mobNavBtn').classList.toggle('active', isOpen);
-    if (isOpen) document.getElementById('mobPaletteWrap').classList.remove('open');
-}
-function mobNavClose() {
-    document.getElementById('mob-nav-overlay').classList.remove('open');
-    document.getElementById('mob-nav-drawer').classList.remove('open');
-}
-function mobPaletteToggle() {
-    var wrap = document.getElementById('mobPaletteWrap');
-    var isOpen = wrap.classList.toggle('open');
-    document.getElementById('mobPaletteBtn').classList.toggle('active', isOpen);
-    if (isOpen) document.getElementById('mobNavWrap').classList.remove('open');
-}
-function mobSetBg(color) {
-    setBgColor(color);
-    document.querySelectorAll('.mob-color-item').forEach(function(b) {
-        b.classList.toggle('active', b.dataset.color === color);
-    });
-    document.getElementById('mobPaletteWrap').classList.remove('open');
-    document.getElementById('mobPaletteBtn').classList.remove('active');
-}
-document.addEventListener('click', function(e) {
-    var pw = document.getElementById('mobPaletteWrap');
-    var nw = document.getElementById('mobNavWrap');
-    if (pw && !pw.contains(e.target)) { pw.classList.remove('open'); document.getElementById('mobPaletteBtn').classList.remove('active'); }
-    if (nw && !nw.contains(e.target)) { nw.classList.remove('open'); document.getElementById('mobNavBtn').classList.remove('active'); }
-});
+/* ── 拨盘逻辑 ── */
+(function(){
+    var PALETTE = [
+        {color:'#C7EDCC', label:'豆沙绿'},
+        {color:'#FAF0DC', label:'羊皮纸'},
+        {color:'#EAEAEF', label:'淡灰蓝'},
+        {color:'#F5E6CC', label:'暖杏色'},
+        {color:'#E3EDCD', label:'浅草绿'},
+        {color:'#FFFFFF', label:'纯白'}
+    ];
+    var NAV = [
+        {href:'/',         emoji:'🏠', label:'首页'},
+        {href:'/reading/', emoji:'📖', label:'属灵阅读'},
+        {href:'/calvin/',  emoji:'✍️', label:'加尔文注释'},
+        {href:'/mhenry/',  emoji:'📜', label:'马太亨利'},
+        {href:'/about/',   emoji:'✝️', label:'信仰告白'}
+    ];
+
+    var wheelContainer = null, wheelTrack = null, backdrop = null;
+    var currentMode = null;
+    var rotation = 0;
+    var dragStart = null, dragRot = 0;
+    var R = 72; // 拨盘半径 px
+
+    function buildWheel(mode) {
+        wheelContainer = document.getElementById('mob-wheel-container');
+        wheelTrack     = document.getElementById('mob-wheel-track');
+        backdrop       = document.getElementById('mob-wheel-backdrop');
+        wheelTrack.innerHTML = '';
+        rotation = 0;
+        wheelTrack.style.transform = 'rotate(0deg)';
+
+        var items = mode === 'palette' ? PALETTE : NAV;
+        var n = items.length;
+        items.forEach(function(item, i) {
+            var angle = (360 / n) * i - 90; // start from top
+            var rad = angle * Math.PI / 180;
+            var x = Math.cos(rad) * R;
+            var y = Math.sin(rad) * R;
+
+            var el;
+            if (mode === 'palette') {
+                el = document.createElement('button');
+                el.className = 'mob-wheel-item mob-wheel-color';
+                el.style.background = item.color;
+                el.title = item.label;
+                if (item.color === '#FFFFFF') el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15), inset 0 0 0 1px #ccc';
+                el.addEventListener('click', function(e){ e.stopPropagation(); mobSetBgWheel(item.color); });
+            } else {
+                el = document.createElement('a');
+                el.className = 'mob-wheel-item mob-wheel-nav';
+                el.href = item.href;
+                el.textContent = item.emoji;
+                el.title = item.label;
+            }
+
+            // Position on ring
+            el.style.transform = 'translate(' + x + 'px,' + y + 'px) rotate(0deg)';
+            el.dataset.baseX = x;
+            el.dataset.baseY = y;
+            el.dataset.baseAngle = angle;
+            wheelTrack.appendChild(el);
+        });
+
+        // Touch/mouse drag to rotate
+        wheelContainer.addEventListener('touchstart', onDragStart, {passive:true});
+        wheelContainer.addEventListener('touchmove',  onDragMove,  {passive:false});
+        wheelContainer.addEventListener('touchend',   onDragEnd,   {passive:true});
+        wheelContainer.addEventListener('mousedown',  onDragStart);
+        wheelContainer.addEventListener('mousemove',  onDragMove);
+        wheelContainer.addEventListener('mouseup',    onDragEnd);
+    }
+
+    function getCenter() {
+        var r = wheelContainer.getBoundingClientRect();
+        return { x: r.left + r.width/2, y: r.top + r.height/2 };
+    }
+    function getEventXY(e) {
+        if (e.touches && e.touches.length) return {x: e.touches[0].clientX, y: e.touches[0].clientY};
+        return {x: e.clientX, y: e.clientY};
+    }
+    function getAngle(cx, cy, px, py) {
+        return Math.atan2(py - cy, px - cx) * 180 / Math.PI;
+    }
+    function onDragStart(e) {
+        var pt = getEventXY(e);
+        var c  = getCenter();
+        dragStart = { angle: getAngle(c.x, c.y, pt.x, pt.y), rot: rotation };
+    }
+    function onDragMove(e) {
+        if (!dragStart) return;
+        if (e.cancelable) e.preventDefault();
+        var pt = getEventXY(e);
+        var c  = getCenter();
+        var delta = getAngle(c.x, c.y, pt.x, pt.y) - dragStart.angle;
+        rotation = dragStart.rot + delta;
+        applyRotation(rotation);
+    }
+    function onDragEnd() { dragStart = null; }
+
+    function applyRotation(deg) {
+        wheelTrack.style.transition = 'none';
+        wheelTrack.style.transform = 'rotate(' + deg + 'deg)';
+        // counter-rotate items to keep them upright
+        Array.from(wheelTrack.children).forEach(function(el) {
+            el.style.transform = 'translate(' + el.dataset.baseX + 'px,' + el.dataset.baseY + 'px) rotate(' + (-deg) + 'deg)';
+        });
+    }
+
+    window.mobWheelOpen = function(mode) {
+        buildWheel(mode);
+        currentMode = mode;
+        // Position container above trigger button
+        var btn = document.getElementById(mode === 'palette' ? 'mobPaletteBtn' : 'mobNavBtn');
+        var rect = btn.getBoundingClientRect();
+        wheelContainer.style.left = (rect.left + rect.width/2) + 'px';
+        wheelContainer.style.top  = (rect.top  - 110) + 'px'; // above button
+        // Keep in viewport
+        var left = parseFloat(wheelContainer.style.left) - 100;
+        if (left < 10) wheelContainer.style.left = '110px';
+        if (left + 200 > window.innerWidth - 10) wheelContainer.style.left = (window.innerWidth - 110) + 'px';
+
+        backdrop.classList.add('open');
+        wheelContainer.classList.add('open');
+        document.getElementById(mode==='palette'?'mobPaletteBtn':'mobNavBtn').classList.add('active');
+    };
+
+    window.mobWheelClose = function() {
+        if (!wheelContainer) return;
+        backdrop.classList.remove('open');
+        wheelContainer.classList.remove('open');
+        if (currentMode) document.getElementById(currentMode==='palette'?'mobPaletteBtn':'mobNavBtn').classList.remove('active');
+        currentMode = null;
+        wheelContainer.removeEventListener('touchstart', onDragStart);
+        wheelContainer.removeEventListener('touchmove',  onDragMove);
+        wheelContainer.removeEventListener('touchend',   onDragEnd);
+        wheelContainer.removeEventListener('mousedown',  onDragStart);
+        wheelContainer.removeEventListener('mousemove',  onDragMove);
+        wheelContainer.removeEventListener('mouseup',    onDragEnd);
+    };
+
+    window.mobSetBgWheel = function(color) {
+        setBgColor(color);
+        document.querySelectorAll('.mob-wheel-color').forEach(function(b){
+            b.classList.toggle('active', b.style.background === color || b.style.backgroundColor === color);
+        });
+        mobWheelClose();
+    };
+
+    // legacy stubs
+    window.mobNavToggle    = function(){ mobWheelOpen('nav'); };
+    window.mobNavClose     = function(){ mobWheelClose(); };
+    window.mobPaletteToggle= function(){ mobWheelOpen('palette'); };
+    window.mobSetBg        = function(c){ mobSetBgWheel(c); };
+})();
 </script>
 
 <script>
