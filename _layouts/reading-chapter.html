@@ -2404,6 +2404,11 @@ if (window.location.hash === '#readmode') {
         var target = e.target;
         // Tapping inside bar: keep it open
         if (bar.contains(target)) return;
+        // Tapping secondary UI (wheel backdrop / wheel container / font popup): let them handle it, don't close bar
+        var _wb = document.getElementById('mob-wheel-backdrop');
+        var _wc = document.getElementById('mob-wheel-container');
+        var _fp = document.getElementById('mob-font-popup');
+        if ((_wb && _wb.contains(target)) || (_wc && _wc.contains(target)) || (_fp && _fp.contains(target))) return;
         // Skip interactive elements
         var t = target;
         while (t && t !== document.body) {
