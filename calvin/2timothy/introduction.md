@@ -11,62 +11,18 @@ header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-ON
-THE SECOND EPISTLE TO TIMOTHY
-IT cannot be absolutely ascertained from Luke’s history at what time the former Epistle was
-written. But I have no doubt that, after that time, Paul had personal communication with Timothy;
-and it is even possible (if the generally received opinion be believed) that Paul had him for a
-companion and assistant in many places. Yet it may readily be concluded that he was at Ephesus
-when this Epistle was written to him; because, towards the close of the Epistle, ( 2 Timothy 4:19 ,)
-Paul “salutes Priscilla, and Aquila, and Onesiphorus,” the last of whom was an Ephesian, and Luke
-informs us that the other two remained at Ephesus when Paul sailed to Judea, ( Acts 18:18,19 .)
-The chief point on which it turns is to confirm Timothy, both in the faith of the gospel, and in
-the pure and constant preaching of it. But yet these exhortations derive no small weight from the
-consideration of the time when he wrote them. Paul had before his eyes the death which he was
-prepared to endure for the testimony of the gospel. All that we read here, therefore, concerning the
-kingdom of Christ, the hope of eternal life, the Christian warfare, confidence in confessing Christ,
-and the certainty of doctrine, ought to be viewed by us as written not with ink but with Paul’s own
-blood; for nothing is asserted by him for which he does not offer the pledge of his death; and
-therefore this Epistle may be regarded as a solemn subscription and ratification of Paul’s doctrine.
-It is of importance to remember, however, what we stated in the exposition of the former Epistle,
-that the Apostle did not write it merely for the sake of one man, but that he exhibited, under the
-person of one man, a general doctrine, which should afterwards be transmitted from one hand to
-another. And first, having praised the faith of Timothy, in which he had been educated from his
-childhood, he exhorts him to persevere faithfully in the doctrine which he had learned, and in the
-office intrusted to him; and, at the same time, lest Timothy should be discouraged on account of
-Paul’s imprisonment, or the apostasy of others, he boasts of his apostleship and of the reward laid
-up for him. He likewise praises Onesiphorus, in order to encourage others by his example; and
-because the condition of those who serve Christ is painful and difficult, he borrows comparisons
-both from husbandmen and from soldiers, the former of whom do not hesitate to bestow much labor
-on the cultivation of the soil before any fruit is seen, while the latter lay aside all cares and
-employments, in order to devote themselves entirely to the life of a soldier and to the command of
-their general.
-Next, he gives a brief summary of his gospel, and commands Timothy to hand it down to others,
-and to take care that it shall be transmitted to posterity. Having taken occasion from this to mention
-again his own imprisonment, he rises to holy boldness, for the purpose of animating others by his
-noble courage; for he invites us all to contemplate, along with him, that crown which awaits him
-in heaven.
-He bids him also abstain from contentious disputes and vain questions, recommending to him,
-on the contrary, to promote edification; and in order to shew more clearly how enormous an evil
-it is, he relates that some have been ruined by it, and particularly mentions two, Hymenaeus and
-Philetus who, having fallen into monstrous absurdity, so as to overturn the faith of the resurrection,
-suffered the horrible punishment of their vanity. But because falls of that kind, especially of
-distinguished men and those who enjoyed some reputation are usually attended by great scandal,
-he shews that believers ought not to be distressed on account of them, because they who possess
-the name of Christ do not all belong actually to Christ, and because the Church must be exposed
-to the misery of dwelling among wicked and ungodly persons in this world. Yet that this may not
-unduly terrify weak minds, he prudently softens it, by saying that the Lord will preserve till the
-end his own, whom he has elected.
-He afterwards returns to exhort Timothy to persevere faithfully in the discharge of his ministry;
-and in order to make him more careful, he foretells what dangerous times await the good and the
-pious, and what destructive men shall afterwards arise; but, in opposition to all this, he confirms
-him by the hope of a good and successful result. More especially, he recommends to him to be
-constantly employed in teaching sound doctrine, pointing out the proper use of Scripture, that he
-may know that he will find in it everything that is necessary for the solid edification of the Church.
-Next, he mentions that his own death is at hand, but he does so in the manner of a conqueror
-hastening to a glorious triumph, which is a clear testimony of wonderful confidence. Lastly, after
-having besought Timothy to come to him as soon as possible, he points out the necessity arising
-from his present condition. This is the principal subject in the conclusion of the Epistle.
-COMMENTARIES
-ON THE
-SECOND EPISTLE TO TIMOTHY
+## 提摩太后书绪论
+
+根据路加的历史叙述，前书的写作时间无法确切考证。但我毫不怀疑，此后保罗曾与提摩太有过亲身接触；甚至有可能（若采信通行的意见），保罗在许多地方都以提摩太为同伴和助手。然而，我们可以合理推断，当这封书信写给他时，提摩太正在以弗所；因为在书信将近结束处（《提摩太后书》四章十九节），保罗"问百基拉、亚居拉、和阿尼色弗一家的安"，其中最后这位是以弗所人，路加也告诉我们，前两位在保罗乘船往犹太去时留在了以弗所（《使徒行传》十八章十八至十九节）。
+
+此书的核心要点，在于坚固提摩太对福音的信心，以及持守纯正、恒心传讲福音的决心。而这些劝勉之所以具有不小的分量，与其写作时间密切相关。保罗当时已死期在望，他是为福音的见证而甘愿赴死的。因此，凡我们在此读到的关于基督国度、永生盼望、基督徒争战、勇敢承认基督，以及教义确实性的内容，都当被我们视为不是用墨水，而是用保罗自己的鲜血写成的；因为凡他所断言的，无一不以自己的死亡作为抵押；因此，这封书信可以被视为保罗教义的庄重签署与批准。
+
+然而，有一点至关重要，必须牢记——正如我们在前书注释中所指出的：使徒写这封书信，并非只为一个人，而是借着一个人，呈示了一种普遍的教义，这教义此后当从一手传于另一手。首先，保罗称赞提摩太从幼年所受培育而来的信心，勉励他在所学的教义和所受托付的职分上忠心持守；同时，他又预防提摩太因自己系狱或他人背道而灰心，以自己的使徒职分和所存留的赏赐自夸。他同样称赞阿尼色弗，以其榜样勉励他人；又因基督仆人的处境艰苦，便从农夫与兵士两者借取比喻——前者在未见果实之前，毫不犹豫地在耕作上付出大量劳力；后者则放下一切关顾与事务，全身心投入士兵的生涯，效忠于主将的命令。
+
+其次，保罗简述其福音的纲要，命令提摩太将其传授给他人，并确保这教义得以流传后世。他以此为契机，再次提及自己的系狱，进而以圣洁的刚勇激励他人；因为他邀请我们众人与他一同仰望那在天上等待他的冠冕。
+
+保罗也吩咐提摩太远离争论性的辩驳和无益的问题，反而要推动造就；为了更清楚地表明这是何等大的恶，他叙述了有人因此而败坏，尤其点名许米乃和腓理徒这两人——他们陷入荒诞的错谬，至于颠覆复活的信仰，因其虚妄而受到可怕的刑罚。但是，由于这类跌倒，尤其是当事人颇有名望时，往往引起极大的丑闻，保罗便说明信徒不应为此忧伤，因为那些挂名基督的，并非都实际属于基督，而教会在今世必须忍受与恶人和不敬虔之人同住的苦难。然而，为免这话过分惊吓软弱的心灵，保罗审慎地以此加以缓和：主必保守他所拣选的人直到最后。
+
+其后，保罗返回主题，勉励提摩太在职分上忠心坚守；为使他更加警醒，他预言那些好人和敬虔者将要遭遇的危险时代，以及此后将要兴起的有害之人；但与此相对，他以美好成功的盼望坚固提摩太。尤其要紧的是，他勉励提摩太专心在纯正教义上教训人，并指出圣经的正当用途，使他知道，在圣经中可以找到坚固建立教会所需的一切。
+
+其次，保罗提到自己的死期将近，但他以一个凯旋者奔向荣耀凯歌的姿态述说此事，这是奇妙确信的清晰见证。最后，在恳请提摩太尽快来见他之后，他指出当前处境所产生的迫切需要。这是书信结尾的主要主题。

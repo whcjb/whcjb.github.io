@@ -3,18 +3,50 @@ layout: default
 ---
 
 <!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}psalm-bg-mountain.jpg{% endif %}')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{{ page.book_title }}</h1>
-                    <span class="subheading">{{ page.section_title }} · {{ page.author_name }}</span>
-                </div>
-            </div>
-        </div>
+<div class="reading-chapter-header">
+    <div class="rch-inner">
+        <div class="rch-label">{{ page.author_name }}{% if page.book_title %} · {{ page.book_title }}{% endif %}</div>
+        <div class="rch-title">{{ page.section_title }}</div>
+        {% if page.chapter_title %}<div class="rch-subtitle">{{ page.chapter_title }}</div>{% endif %}
     </div>
-</header>
+</div>
+<style>
+.reading-chapter-header {
+    background: linear-gradient(135deg, #1C2B3A 0%, #2D4A5E 60%, #1C3040 100%);
+    padding: 40px 0 36px;
+    text-align: center;
+    border-bottom: 3px solid rgba(180,150,90,0.4);
+}
+.rch-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.rch-label {
+    font-size: 11px;
+    letter-spacing: .22em;
+    color: rgba(255,255,255,0.42);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    font-family: "STSong","SimSun",serif;
+}
+.rch-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: .06em;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    font-family: "STSong","SimSun",serif;
+}
+.rch-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    letter-spacing: .04em;
+    line-height: 1.6;
+    font-family: "STSong","SimSun",serif;
+}
+</style>
 
 <div class="container">
     <div class="row">
@@ -27,7 +59,7 @@ layout: default
 
             <h2 class="reading-section-title">{{ page.section_title }}</h2>
 
-<div class="reading-content">{{ content }}</div>
+<div class="reading-content{% if page.book_id == 'institutes' %} institutes-content{% endif %}">{{ content }}</div>
 
             <hr style="margin-top:40px;">
 
@@ -667,6 +699,202 @@ sup.fn-ref a:hover { text-decoration: underline; }
 }
 </style>
 {% endif %}
+
+{% if page.book_id == "institutes" %}
+<style>
+/* ── 基督教要义专用样式 ── */
+.reading-content.institutes-content {
+    font-family: "STSong", "SimSun", "宋体", serif;
+    font-size: 15px;
+}
+/* 章标题：第N章 ... */
+.institutes-content h2 {
+    font-size: 1.22em;
+    font-weight: bold;
+    color: #1a2e4a;
+    text-align: center;
+    text-indent: 0 !important;
+    margin: 52px 0 24px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #2c5282;
+    line-height: 1.65;
+    letter-spacing: 0.04em;
+}
+.institutes-content h2:first-of-type { margin-top: 8px; }
+/* 节标题：N. ... */
+.institutes-content h3 {
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #2c5282;
+    text-indent: 0 !important;
+    margin: 28px 0 14px;
+    padding: 5px 0 5px 11px;
+    border-left: 3px solid #2c5282;
+    letter-spacing: 0.02em;
+}
+/* 正文段落 */
+.institutes-content p {
+    line-height: 2.0;
+    margin-bottom: 1.1em;
+    text-indent: 2em;
+}
+/* 版本标记（b/c/e 开头的段落内小字上标） */
+.institutes-content .ver-mark {
+    font-size: 0.65em;
+    color: #c0c8d8;
+    vertical-align: super;
+    margin-right: 1px;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: 0;
+}
+</style>
+{% endif %}
+
+<!-- ── 脚注系统：适用所有属灵阅读页面 ── -->
+<style>
+/* 行内脚注跳转标记 */
+sup.inst-fn-ref {
+    font-size: 0.7em;
+    line-height: 0;
+    vertical-align: super;
+}
+sup.inst-fn-ref a {
+    color: #2c5282;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 1px;
+}
+sup.inst-fn-ref a:hover { text-decoration: underline; }
+
+/* ── 脚注区域 ── */
+.inst-fn-section {
+    margin-top: 52px;
+    padding-top: 0;
+    border-top: 1px solid #c8d4e8;
+}
+.inst-fn-title {
+    font-size: 0.72em;
+    font-weight: bold;
+    letter-spacing: 0.22em;
+    color: #8b9cbf;
+    text-align: center;
+    padding: 10px 0 14px;
+    text-transform: uppercase;
+}
+.inst-fn-item {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 8px;
+    font-size: 0.77em;
+    color: #666;
+    line-height: 1.68;
+    padding: 5px 8px 5px 6px;
+    border-radius: 3px;
+    background: rgba(44,82,130,0.025);
+    text-indent: 0;
+    transition: background 0.15s;
+}
+.inst-fn-item:target {
+    background: rgba(44,82,130,0.10);
+    outline: 1px solid rgba(44,82,130,0.2);
+}
+.inst-fn-num {
+    flex-shrink: 0;
+    color: #2c5282;
+    font-weight: bold;
+    min-width: 1.6em;
+    text-align: center;
+    font-size: 1.05em;
+}
+a.fn-backref {
+    color: #2c5282;
+    text-decoration: none;
+    cursor: pointer;
+}
+a.fn-backref:hover {
+    color: #1a3a5c;
+    text-decoration: underline;
+}
+.inst-fn-text { flex: 1; }
+/* 隐藏 markdown 原始脚注块（JS 会重新插入底部） */
+.reading-content div.inst-fn { display: none; }
+</style>
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var content = document.querySelector('.reading-content');
+    if (!content) return;
+
+    var circled = ['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩',
+                   '⑪','⑫','⑬','⑭','⑮','⑯','⑰','⑱','⑲','⑳'];
+
+    /* 1. 收集所有脚注段落 */
+    var fnParas = Array.from(content.querySelectorAll('div.inst-fn'));
+    var fnMap = {};   /* circled char → {id} */
+    var fnList = [];  /* [{char, id, html}] */
+
+    fnParas.forEach(function(p, i){
+      var raw = p.innerHTML.trim();
+      var firstChar = raw.charAt(0);
+      if (circled.indexOf(firstChar) >= 0){
+        var id = 'inst-fn-' + (i+1);
+        var bodyHtml = raw.slice(1).trim();
+        fnMap[firstChar] = { id: id };
+        fnList.push({ char: firstChar, id: id, html: bodyHtml });
+      }
+    });
+
+    if (fnList.length === 0) return;
+
+    /* 2. 正文段落/标题中的圆圈数字改为上标跳转链接 */
+    content.querySelectorAll('p, h2, h3').forEach(function(el){
+      var html = el.innerHTML;
+      /* institutes 专用：版本标记（b/c/e/d 开头） */
+      if (el.tagName === 'P' && content.classList.contains('institutes-content')){
+        html = html.replace(/^([ebcd])\s+(\([a-z/]+\)\s*)?/, function(m, letter, sub){
+          return '<span class="ver-mark">' + letter + (sub ? sub.trim() : '') + '</span> ';
+        });
+        html = html.replace(/([\u4e00-\u9fff，。；：！？）」])([bcde])(?=[\u4e00-\u9fff（「])/g, function(m, before, letter){
+          return before + '<span class="ver-mark">' + letter + '</span>';
+        });
+      }
+      /* 圆圈数字 → 上标链接（首次出现加锚点 id 供反向跳转） */
+      circled.forEach(function(ch){
+        if (fnMap[ch]){
+          var first = true;
+          html = html.replace(new RegExp(ch, 'g'), function(){
+            var refId = first ? ' id="' + fnMap[ch].id + '-ref"' : '';
+            first = false;
+            return '<sup class="inst-fn-ref"' + refId + '><a href="#' + fnMap[ch].id + '">' + ch + '</a></sup>';
+          });
+        }
+      });
+      el.innerHTML = html;
+    });
+
+    /* 3. 构建脚注区域并插入页面底部 */
+    var section = document.createElement('div');
+    section.className = 'inst-fn-section';
+    var title = document.createElement('div');
+    title.className = 'inst-fn-title';
+    title.textContent = '注 释';
+    section.appendChild(title);
+
+    fnList.forEach(function(fn){
+      var item = document.createElement('div');
+      item.className = 'inst-fn-item';
+      item.id = fn.id;
+      /* 序号本身作为返回正文的链接 */
+      item.innerHTML = '<span class="inst-fn-num"><a href="#' + fn.id + '-ref" class="fn-backref" title="返回正文">' + fn.char + '</a></span><span class="inst-fn-text">' + fn.html + '</span>';
+      section.appendChild(item);
+    });
+
+    content.appendChild(section);
+  });
+})();
+</script>
 
 {% if page.book_id == "dayaoli" %}
 <style>
@@ -1847,6 +2075,19 @@ window.rmExit = function() {
     var exitFn = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
     if (fullEl && exitFn) { try { exitFn.call(document); } catch(e){} }
 };
+
+/* ── 原生全屏退出（如 Android 返回键）── */
+['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange'].forEach(function(evt) {
+    document.addEventListener(evt, function() {
+        if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement) {
+            var overlay = document.getElementById('rm-overlay');
+            if (overlay && overlay.classList.contains('rm-active')) {
+                // 只恢复滚动，不重复调用 rmExit 以避免循环
+                document.body.style.overflow = '';
+            }
+        }
+    });
+});
 
 /* ── 键盘 ── */
 document.addEventListener('keydown', function(e) {

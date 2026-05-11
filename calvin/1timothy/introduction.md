@@ -2,94 +2,36 @@
 layout: calvin-chapter
 book_id: 1timothy
 book_name: 提摩太前书
+book_name_en: The First Epistle to Timothy
+header_style: gradient
 chapter: 0
 section: "introduction"
 section_title: "绪论"
 sections_list: "preface,dedication,introduction,1,2,3,4,5,6"
 total_chapters: 6
-header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-ON
-THE FIRST EPISTLE TO TIMOTHY
-This Epistle appears to me to have been written more for the sake of others than for the sake
-of Timothy, and that opinion will receive the assent of those who shall carefully consider the whole
-matter. I do not, indeed, deny that Paul intended also to teach and admonish him; but my view of
-the Epistle is, that it contains many things which it would have been superfluous to write, if he had
-had to deal with Timothy alone. He was a young man, not yet clothed with that authority which
-would have been sufficient for restraining the headstrong men that rose up against him. It is manifest,
-from the words used by Paul, that there were at that time some who were prodigiously inclined to
-ostentation, and for that reason would not willingly yield to any person, and who likewise burned
-with such ardent ambition, that they would never have ceased to disturb the Church, had not a
-greater than Timothy interposed. It is likewise manifest, that there were many things to be adjusted
-at Ephesus, and that needed the approbation of Paul, and the sanction of his name. Having therefore
-intended to give advice to Timothy on many subjects, he resolved at the same time to advise others
-under the name of Timothy.
-In the first chapter , he attacks some ambitious persons who made their boast of discussing idle
-questions. It may readily be concluded that they were Jews, who, while they pretended to have zeal
-for the law, disregarded edification, and attended only to frivolous disputes. It is an intolerable
-profanation of the law of God, to draw out of it nothing that is profitable, but merely to pick up
-materials for talking and to abuse the pretense of it for the purpose of burdening the Church with
-contemptible trifles.
-Longer shall enough have such corruptions prevailed in Popery; for what else was the scholastic
-theology than a huge chaos of empty and useless speculations? And in our own day there are many
-who in order to display their acuteness in handling the word of God, allow themselves to sport with
-it in the same manner as if it were profane philosophy. Paul undertakes to support Timothy in the
-correction of this vice, and points out what is the principal instruction to be derived from the Law;
-that it may be evident that they who use the Law in a different manner are corrupters of it.
-Next, that his authority may not be despised, after having acknowledged his unworthiness he,
-at the same time, asserts in lofty terms what he became through the grace of God. At length he
-concludes the chapter by a solemn threatening, by means of which he both confirms Timothy in
-sound doctrine and a good conscience, and fills others with terror and alarm, by holding out to them
-the example of Hymenaeus and Alexander.
-In the second chapter , he enjoins that public prayers be offered to God for all men, and especially
-for princes and magistrates; and here, in passing, he likewise makes a remark on the advantage
-which the world derives from civil government. He then mentions the reason why we ought to pray
-for all men; namely, that God, by exhibiting to all the gospel and Christ the Mediator, shews that
-he wishes all men to be saved; and he likewise confirms this statement by his own apostleship,
-which was specially appointed to the Gentiles. Next, he invites all men, whatever may be their
-country or place of abode, to pray to God; and takes occasion for inculcating that modesty and
-subjection which females ought to maintain in the holy assembly.
-In the third chapter , after having declared the excellence of the bishop’s office, he delineates
-a true bishop, and enumerates the qualifications required in him. Next, he describes the qualifications
-of deacons, and of the wives both of deacons and of bishops. And in order that Timothy may be
-more diligent and conscientious in observing all things, he reminds him what it is to be employed
-in the government of “the Church, which is the house of God, and the pillar of truth.” Finally, he
-mentions the chief and fundamental point of all heavenly doctrine — that which relates to the Son
-of God manifested in the flesh; in comparison of which all things else, to which he perceived that
-ambitious men were wholly devoted, should be reckoned of no value.
-As to what follows, in the beginning of the fourth chapter , the false doctrines about forbidding
-marriage and various kinds of food, and the absurd fables which are at variance with this doctrine,
-are severely condemned by him. Next, he adds, that he and all good men, who hold this doctrine,
-have none for their adversaries but those who cannot endure that men shall place their trust in the
-living God. At the close of the chapter, he again fortifies Timothy by a new exhortation.
-In the fifth chapter , after having recommended modesty and gentleness in reproofs, he reasons
-about widows, who at that time were admitted into the service of the Church. He enjoins that they
-shall not be received indiscriminately, but only those who, having been approved throughout their
-whole life, are arrived at sixty years of age, and have no domestic tie. Hence he passes on to the
-elder’s, and explains how they ought to conduct themselves, both in their manner of life and in the
-exercise of discipline. This doctrine the Apostle seals by a solemn oath, and again forbids him to
-admit any one heedlessly into the office of the eldership. 1 He exhorts him to drink wine, instead
-of water, for the preservation of his health. At the close of the chapter, he exhorts him to defer
-pronouncing judgment on concealed transgressions.
-In the sixth chapter , he gives instruction concerning the duty of servants, and takes occasion
-to make a vehement attack on false teachers, who, by disputing about unprofitable speculations,
-are more eager for gain than for edification, and shews that covetousness is a most deadly plague.
-He then returns to a solemn charge similar to the former, that the exhortations which he now gives
-to Timothy may not be ineffectual. Lastly, after having taken a passing notice of riches, he again
-forbids Timothy to entangle himself with useless doctrines.
-As to the ordinary Greek inscription, which states that this Epistle was written from Laodicea,
-I do not agree with it; for since Paul, writing to the Colossians while he was a prisoner, affirms that
-he had never seen the Laodiceans, those who hold the opinion, which I reject, are constrained to
-make two Laodiceas in Asia Minor, though only one is mentioned by historians. Besides, when
-Paul went into Macedonia, he left Timothy at Ephesus, as he expressly declares. He wrote this
-Epistle either on the road, before he arrived there, or after having returned from the journey. Now
-Laodicea is evidently at a greater distance from Macedonia than Ephesus is; and it is not probable
-that Paul, on his return, went to Laodicea, passing by Ephesus, especially since there were many
-reasons that urged him to visit it; and therefore I rather think that he wrote it from some other place.
-But this is not a matter of so much importance that I should wish to debate it with those who are
-of an opposite opinion. Let every person follow his own judgment. I only point out what — at least
-in my opinion — is more probable.
-COMMENTARIES ON
-THE FIRST EPISTLE TO TIMOTHY
+《提摩太前书》注释
+
+在我看来，这封书信的写作，与其说是为了提摩太本人，不如说更是为了其他人而写；凡细心通读全文者，当会赞同此见。我固然不否认保罗也有意教导和劝诫他；然而我对本书信的理解是：其中有许多内容，若仅仅是与提摩太一人交涉，实属多余之辞。提摩太那时尚属年轻，尚未具备足以约束那些悖逆之人的权威。从保罗所用的措辞可以明显看出，当时有些人极度喜好卖弄，因此不愿顺服任何人；同样，他们野心炽烈，若无比提摩太更具权威之人介入，便永不会停止搅扰教会。同样可以明显看出，以弗所有许多事务需要调处，且需要得到保罗的认可与其名声的背书。因此，保罗既意欲就诸多事项向提摩太提出劝告，便决意同时借提摩太之名向他人发出劝言。
+
+**第一章**中，他抨击了一些以议论闲话为荣、好高骛远之人。不难推断，此等人乃是犹太人——他们佯装热心律法，却无视造就，只专注于无聊的争辩。从上帝的律法中所引出的，若非有益之物，而只是拾取谈资，并藉律法之名为借口，以卑劣的琐事加重教会的重担，此乃对上帝律法不可容忍的亵渎。
+
+此类败坏在天主教中流行已久；经院神学除了是一大堆空洞无益的揣测之外，还能是什么呢？即便在我们这个时代，也有许多人为了炫耀自己处理上帝话语时的敏锐，便随意玩弄圣言，好像它不过是世俗哲学一般。保罗出面支持提摩太纠正这一弊病，并指出从律法中当得出的首要教训；由此可见，凡以另一种方式使用律法之人，乃是律法的败坏者。
+
+其次，为使自己的权威不被轻视，他在承认自己的不配之后，同时以崇高的措辞宣告，他借着上帝的恩典成为了何等之人。最终，他以庄严的警告作为本章的结束，借此既坚固提摩太持守纯正教义与良好良知，又以许米乃和亚力山大的事例，向他人施以震慑与警示。
+
+**第二章**中，他吩咐为众人、尤其是君王与执政者向上帝献上公祷；在此，他顺带也论及世人从政府治理中所得的益处。他继而说明我们当为众人祈祷的缘由，即：上帝藉着向万人显明福音与中保基督，彰显出他愿意万人得救的心意；他又以自己专为外邦人而设的使徒职分来印证这一主张。接着，他邀请所有人——无论其国籍或住处——向上帝祈祷；并借此机缘，着重申明女性在圣会中当保持的谦逊与顺服。
+
+**第三章**中，他先宣明监督职分的崇高，继而描绘真正的监督，列举其所需具备的资格。其次，他描述执事及执事与监督之妻子所应具备的资格。为使提摩太在诸事上更加殷勤尽责，他提醒他，受托治理"上帝的家，就是永生上帝的教会，真理的柱石和根基"（提前三15）意味着什么。最后，他提及一切天上教义最主要、最根本之要点——关乎上帝儿子道成肉身的真理；与此相比，其他一切——即那些他所看见的野心之人全然沉迷其中之事——皆当视为毫无价值。
+
+至于以下所接续的内容：**第四章**开篇，他严厉谴责那些关于禁婚与禁食各种食物的假教义，以及与此教义相悖的荒诞无稽之谈。接着，他补充道，他与所有持守此教义的善人，所遭对抗的，不过是那些不能容忍人将信望寄托于永生上帝的人。本章末尾，他再次以新的劝勉坚固提摩太。
+
+**第五章**中，他先劝导在责备时当存谦逊温柔之心，继而论及寡妇——当时她们被纳入教会的服事之列。他吩咐不可不加甄别地接纳她们，只当接纳那些经历漫长一生得蒙认可、年已六十、且无家室牵挂之人。由此他转论长老，说明他们在生活方式与施行管教两方面当如何行事。使徒以庄严的誓言确认这些教导，并再次禁止他轻率地接纳任何人担任长老职分。他劝他为保健康，当饮用葡萄酒，而非仅喝水。本章末尾，他劝他对于隐而未发的过失，暂缓作出论断。
+
+**第六章**中，他就仆人的本分给予教导，并借此机会猛烈抨击那些以争辩无益揣测为务、贪财甚于求造就的假教师，指明贪婪乃是最致命的祸患。他旋即返回一个与先前相似的庄严嘱托，使他如今向提摩太所给的劝诫不至落空。最后，他在简略论及财富之后，再次禁止提摩太纠缠于无用的教义。
+
+至于通行希腊文题记——称此书信写自老底嘉——我不赞同此说；因为保罗在身陷囹圄时写信给歌罗西人，声明他从未见过老底嘉人，所以持我所反对之见者，不得不在小亚细亚设立两个老底嘉，然而史家仅提及一处。况且，保罗前往马其顿时，曾将提摩太留在以弗所，此乃他明确声明之事。他写此书信，或在途中尚未抵达之时，或在返程之后。然而老底嘉距马其顿显然比以弗所更远；且保罗回程时绕道老底嘉而经过以弗所，实属不可能，何况他有诸多缘由促使他前往以弗所；因此我宁愿认为他是从另一处地方写成此信。然而此事不足以令我与持相反意见者争论。各人可凭自己的判断行事。我只是指出——至少在我看来——何者更为可能。
+
+《提摩太前书》注释

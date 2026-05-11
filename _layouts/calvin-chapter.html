@@ -2,6 +2,40 @@
 layout: default
 ---
 
+{% if page.header_style == "gradient" %}
+<!-- Gradient Header (no image) -->
+<div class="calvin-gradient-header">
+    <div class="calvin-gh-label">Calvin Commentary · 加尔文圣经注释</div>
+    <div class="calvin-gh-book">{{ page.book_name }}</div>
+    {% if page.book_name_en %}<div class="calvin-gh-en">{{ page.book_name_en }}</div>{% endif %}
+    <div class="calvin-gh-chapter">
+        {% if page.section_title %}{{ page.section_title }}{% else %}第{{ page.chapter }}章{% endif %}
+    </div>
+</div>
+<style>
+.calvin-gradient-header {
+    background: linear-gradient(135deg, #1a2e4a 0%, #2c5282 100%);
+    color: #fff;
+    padding: 48px 0 40px;
+    text-align: center;
+}
+.calvin-gh-label {
+    font-size: 11px; letter-spacing: .18em; color: rgba(255,255,255,0.5);
+    text-transform: uppercase; margin-bottom: 12px;
+}
+.calvin-gh-book {
+    font-size: 28px; font-weight: bold; letter-spacing: 0.06em;
+    margin-bottom: 8px;
+}
+.calvin-gh-en {
+    font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: .04em;
+    margin-bottom: 6px; font-style: italic;
+}
+.calvin-gh-chapter {
+    font-size: 14px; color: rgba(255,255,255,0.65); letter-spacing: .06em;
+}
+</style>
+{% else %}
 <!-- Page Header -->
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}psalm-bg-mountain.jpg{% endif %}')">
     <div class="container">
@@ -19,6 +53,7 @@ layout: default
         </div>
     </div>
 </header>
+{% endif %}
 
 <div id="calvin-outer" class="container">
     <div class="row" id="calvin-row">

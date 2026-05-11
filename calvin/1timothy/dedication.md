@@ -2,81 +2,33 @@
 layout: calvin-chapter
 book_id: 1timothy
 book_name: 提摩太前书
+book_name_en: The First Epistle to Timothy
+header_style: gradient
 chapter: 0
 section: "dedication"
 section_title: "加尔文致辞"
 sections_list: "preface,dedication,introduction,1,2,3,4,5,6"
 total_chapters: 6
-header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-EDWARD, DUKE OF SOMERSET,
-EARL OF HERTFORD, ETC. PROTECTOR OF ENGLAND
-AND IRELAND, AND ROYAL TUTOR,
-JOHN CALVIN
-OFFERS HIS SALUTATIONS.
-The brilliant reputation, most noble Prince, not only of your other virtues, altogether heroic,
-but especially of your distinguished piety, produces so warm a love of you in the hearts of all good
-men, even of those to whom you are unknown by face, that you must unavoidably be regarded with
-extraordinary affection and reverence by all right-minded persons in the kingdom of England, on
-whom hath been bestowed the privilege, not only of beholding with their eyes those benefits which
-are admired by others who only hear of them, but likewise of reaping all the advantage which a
-most excellent governor can confer on the whole body of the people, and on every one of its
-members. Nor is there any reason why the praises bestowed on you should be suspected of falsehood,
-as if they proceeded from flatterers; for a clear proof of them is to be found in your actions.
-When a pupil belongs to private life, and his wealth is moderate, the work of a tutor is attended
-by difficulty; but you hold the office of tutor, not of the King only, but of a very large kingdom,
-and you discharge that office with such wisdom and skill, that all are astonished at your success.
-That your virtue might not shine merely amidst the laws, and in a peaceful state of the
-commonwealth, God has exhibited it to view in war also, which has hitherto been conducted by
-you with not less prosperity and valor.
-Yet the great and numerous difficulties which every person readily perceived that you had
-experienced did not hinder you from making the restoration of religion your principal object. That
-consideration is certainly not less advantageous to the public benefit of the kingdom than it is
-worthy of a Prince; for then do kingdoms enjoy solid prosperity and faithful guardianship, when
-he, on whom they were founded, and by whom they are preserved — the Son of God himself —
-rules over them. Thus you could not have established more firmly the kingdom of England than
-by banishing idols and setting up there the pure worship of God; for the true doctrine of godliness,
-which had too long been crushed and buried by the sacrilegious tyranny of the Roman Antichrist,
-cannot but be restored; and what is that, but to place Christ on his throne? And this act, which in
-itself is excellent, is so much the more praiseworthy on account of the small number of rulers in
-the present day who own the subjection of their high rank to the spiritual scepter of Christ.
-It was therefore a high advantage to this illustrious King, that such a person, related to him by
-blood, was the guide of his youth; for, although the noble character of his mind is universally
-applauded, yet, in training him to habits of manly firmness, and in regulating the English Church,
-so long as his tender age does not permit him to discharge these duties, such an instructor was much
-needed. And I doubt not that even now he acknowledges that you were given to him by the peculiar
-kindness of God, in order that he might soon afterwards receive his affairs from your hands in
-excellent condition.
-For my own part, neither the distance of place nor my humble rank could prevent me from
-congratulating you on your distinguished success in promoting the glory of Christ. And since it has
-pleased God to make me one of those by whose labors and exertions he has, in the present day,
-given to the world the doctrine of the gospel in greater purity than before, why should I not, however
-widely I am separated from you, express as strongly as I can my reverence for you, who have been
-appointed, through the extraordinary kindness of God, to be the defender and protector of that very
-doctrine? And since I had no other proof of it to give, I thought that, at least as an earnest of my
-regard, it was my duty to offer to you my Commentaries on two of Paul’s Epistles. Nor have I
-selected at random the gift that I should offer, but, in the exercise of my judgment, have selected
-that which appeared to me to be the most suitable. Here Paul admonishes his beloved Timothy by
-what kind of doctrine he must edify the Church of God, what vices and enemies he must resist, and
-how many annoyances he must endure. He exhorts him to give way to no difficulties, to vanquish
-all dangers by courage, to restrain by authority the licentiousness of wicked men, and not to bestow
-gifts through eagerness to obtain their favor. In short, in these two Epistles we have the true
-government of the Church set before us in a lively picture.
-Now, since in order to restore the English Church, which, along with almost every other part
-of Christendom, had been miserably corrupted by the shocking wickedness of Popery, you employ
-your strenuous efforts under the direction of your King, and for that purpose have many Timothys
-under your charge, neither they nor you can direct your holy transactions in a more profitable
-manner than by taking the rule here laid down by Paul for your pattern. For there is nothing in them
-that is not highly applicable to our times, and hardly anything that is necessary in the building of
-the Church that may not likewise be drawn from them. I trust that my labor will, at least, afford
-some assistance; but I choose that this should be known by experience rather than that I should
-boast of it in words. If you, most noble Prince, shall approve of it, I shall have abundant reason for
-congratulating myself; and your remarkable kindness does not permit me to doubt that you will
-take in good part that service which I now perform.
-May the Lord, in whose hand are the ends of the earth, long uphold the safety and prosperity
-of the kingdom of England, adorn its illustrious King with the royal spirit, bestow on him a large
-measure of all blessings, and grant to you grace to persevere happily in your noble course, that
-through you his renown may be more and more widely extended.
-Geneva, 25th July 1556.
+致英格兰与爱尔兰摄政王、
+赫特福德伯爵、萨默塞特公爵爱德华阁下，
+王室辅政，
+约翰·加尔文谨致问候。
+
+最高贵的王爷，阁下诸般美德俱皆英豪，声誉卓著，尤以杰出的虔诚闻名于世。此等声誉在所有善人心中激发出对阁下炽热的爱戴，即便素未谋面者亦然。因此，在英格兰王国中，所有正直之人必然以非凡的情感与敬意仰望阁下——他们所蒙恩典，不仅在于得以亲眼目睹那些仅凭耳闻便令他人赞叹的福泽，更在于能够亲享一位卓越的执政者所能赐予全体人民及其每一成员的一切利益。加诸阁下的称赞，亦无需疑为阿谀奉承之辞；盖其明证，尽在阁下的作为之中。
+
+当一名学生出身卑微、家境平常，导师之职尚且困难重重；而阁下所担任的，不仅是国王一人之导师，更是一个幅员辽阔之王国的辅政，且以如此智慧与才能履行此职，令众人叹为观止。上帝不欲阁下的美德仅在律法与太平治国之中彰显，亦使其在战争中显现于世——迄今为止，阁下指挥作战，既展繁荣之功，亦彰英勇之德。
+
+然而，众人皆知阁下所历重重艰难，却未能阻止阁下将宗教的复兴列为首要大事。此等考量对王国公益之裨益，绝不逊于其对一位王爷之相称；盖王国唯有在奠立其基、保守其存的那一位——上帝之子本身——统治之下，方能享有坚实的繁荣与忠信的守护。故此，阁下驱逐偶像、在英格兰建立纯正的上帝敬拜，此乃稳固英格兰王国最有力的方式；因那真正的敬虔教义——曾长期被罗马敌基督亵渎性的暴政所压制埋没——必当得以恢复。而这，岂非将基督置于其宝座之上？此举本身已属卓越，更因当今执政者中，甘愿将其显赫地位置于基督属灵权杖之下者寥寥无几，故愈发值得称颂。
+
+因此，有如此一位与他血脉相连之人引导其少年岁月，对这位杰出的国王实为莫大之恩。纵然国王心性高贵，众口称誉，然在培养他刚毅坚忍之德、管理英格兰教会诸事上——在其年幼尚不能亲自承担这些责任之时——如此一位辅导实属必需。我亦毫不怀疑，他如今已承认，阁下乃上帝特别的恩典所赐，使他此后不久便能从阁下手中接管处于极佳状态的国事。
+
+就我本人而言，无论地理之遥远，亦无论我地位之卑微，均不能阻止我为阁下在彰显基督荣耀上所取得的卓著成就而致贺。上帝既悦然使我成为那些藉其劳苦与努力、于当今时代将福音教义以比前更纯正之形式赐给世界之人之一，我又何不竭尽所能，向阁下表达我的崇敬——纵使远隔千山万水——因阁下已蒙上帝格外的恩典，被立为那教义的捍卫者与保护者？既无他法可表达此情，我认为至少应以我对保罗两封书信的注释作为诚意的凭据，敬献于阁下。我的选择亦非随意而为，乃经审慎判断，择其最为合宜者。在这两封书信中，保罗告诫他所钟爱的提摩太：当以何等教义建立上帝的教会，须抵挡何等罪恶与仇敌，须忍受何等诸多的烦扰。他劝勉提摩太不向任何艰难退让，以勇气克服一切危险，以权柄约束恶人的放肆，并非因渴望讨好而轻率赐予恩惠。总而言之，这两封书信以生动的图景将教会的真实治理呈现于我们眼前。
+
+今阁下奉国王之命，竭尽心力恢复英格兰教会——此教会与基督教世界几乎所有其他部分一同，已被天主教制度骇人的罪恶所深重败坏——且为此目的，阁下管辖众多如提摩太一般的人。无论他们还是阁下，都无比这里保罗所立之规范更有益的方式，来引导神圣的事务。这两封书信中所载，无一不切中当今时代，而建立教会所必需者，几乎无不可从中汲取。我相信我的劳苦至少能提供些许助益；但我宁愿此事由经验验证，而非以言语自夸。最高贵的王爷，若蒙阁下嘉许，我便有充分理由为此自庆；而阁下非凡的仁厚，使我毫不怀疑，阁下将以善意接纳我所尽的此项服侍。
+
+愿主——地极皆在其手——长久维护英格兰王国的安全与昌盛，以王者之灵装备其杰出的国王，赐他丰盛的一切祝福，并赐阁下恩典，使阁下在高尚的事业上坚忍到底，藉此使他的荣名愈发广传四方。
+
+日内瓦，一五五六年七月二十五日

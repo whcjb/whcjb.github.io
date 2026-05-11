@@ -2,54 +2,28 @@
 layout: calvin-chapter
 book_id: 1timothy
 book_name: 提摩太前书
+book_name_en: The First Epistle to Timothy
+header_style: gradient
 chapter: 0
 section: "preface"
 section_title: "译者序"
 sections_list: "preface,dedication,introduction,1,2,3,4,5,6"
 total_chapters: 6
-header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-IT may be natural to inquire why the Epistles to Timothy and Titus have been less copiously
-illustrated by popular Commentaries than the other writings of the Apostle Paul. The reason probably
-is, that they are addressed chiefly to office-bearers, and not to private members of the Church;
-though they abound largely in those doctrinal statements and practical instructions which every
-Christian ought carefully to study.
-While fewer expositors than might have been desired have devoted their labors to this portion
-of the word of God, the leading subject of it has been ably handled in a different form. Not to
-mention the early Fathers, it is sufficient to name “The Pastoral Care,” “The Reformed Pastor,”
-and other kindred works, which have taken their rank among the standard volumes of Christian
-Theology. Besides elaborate treatises, extending over the whole field of ministerial labor, detached
-parts of it have been sometimes selected for separate illustration. Of every collection of books fitted
-to make
-“the man of God perfect, thoroughly prepared
-for every good work,” ( 2 Timothy 3:17 )
-a goodly portion relates to the duties of the pastorate. It has been of unspeakable importance
-to the interests of religion, and ought to be recorded to the praise of divine grace, that the valuable
-instructions on this subject to which readers have access derive additional weight from the holy
-lives and devoted zeal of their authors, who have only inculcated on others what they had faithfully
-practiced. To all whose views are directed to the sacred office, or who have already been invested
-with it, the perusal of such books must be exceedingly advantageous.
-Yet here, as in everything else, let us appeal
-“to the law and to the testimony.” ( Isaiah 8:20 .)
-The foundation of every code of rules for guiding the ministers of Christ must be sought, not
-in the judgments of uninspired men, however able and judicious, but in the Holy Scriptures, and
-chiefly in the Epistles to Timothy and Titus, the accurate interpretation of which is therefore
-unspeakably valuable. Calvin has examined them with his usual skill, and will be heard with
-profound attention. His candor appears to more than ordinary advantage. Never does he press the
-words of the Holy Spirit beyond what appears to him to be their natural meaning, or depart from
-the rigid discharge of his task as an expositor for the sake of giving undue prominence to his peculiar
-views. On this point it may be sufficient to refer to his remarks on the authority which some ministers
-of the gospel appear to have exercised over others, as a specimen of his unshaken determination
-to adhere to the sacred records, and of his utter indifference to any use that might be made of such
-statements by those whose views of church-government differed from his own. Nowhere is his
-sterling honesty more conspicuous.
-The notes to the present volume are enriched by numerous extracts from a rare work — the
-Author’s Sermons on the two Epistles to Timothy. But for the strong and general desire that posterity
-should listen to this great preacher, those Sermons would never have seen the light. They were
-written down, as they flowed from his lips, in the same manner as the extemporaneous Latin
-expositions of which some account has been given elsewhere. While they are Expository Discourses,
-leaving no part of the two Epistles unexplored, they are addressed to the great body of the Christian
-people, and are distinguished by those homely and striking appeals, and that marvelous felicity of
-language, which even his biographer Audin reluctantly ascribes to him.
+或许有人会自然地提出这样一个问题：为何提摩太前后书与提多书所得到的通俗注释，远不如使徒保罗其他书信那般丰富？原因或许在于，这几封书信主要是写给教会的执事人员，而非普通会众；尽管其中充满了每位基督徒都理应认真研读的教义陈述与实践教导。
+
+在投身注释这部分神话语的解经者中，如人所愿者固然寥寥，但其核心主题却以另一种形式得到了有力处理。姑且不论早期教父，仅举《牧者的关怀》、《改革宗牧者》及其他同类著作为例，这些作品已跻身基督教神学经典之列。除了涵盖全部牧养事工领域的详尽论著之外，其中某些具体部分也曾被单独选出加以阐发。在一切能使
+
+"神的人得以完全，预备行各样的善事"（提摩太后书三章十七节）
+
+的书籍收藏中，相当大一部分涉及牧职的责任。这一事实对宗教的益处不可言量，理当被记录为对神圣恩典的称颂——读者所能接触到的这些宝贵教导，因其作者圣洁的生命与忠诚热忱而更添分量；他们所教导他人的，正是自己所忠实践行的。对于一切有志于圣职、或已蒙呼召担任此职的人而言，研读此类书籍必大有裨益。
+
+然而在此，一如在一切事上，让我们诉诸
+
+"律法书和法度"（以赛亚书八章二十节）。
+
+引导基督仆人的一切规范准则，其根基必须从圣经中寻求，尤其是从提摩太前后书与提多书中寻求，而非求诸未受默示之人的判断——无论其才智与识见多么卓越。因此，对这几封书信的精确解释具有无可言说的价值。加尔文以其一贯的精湛功力对这些书信加以考察，必将赢得读者深切的关注。他的坦诚在此更显非凡。他从不将圣灵话语的含义逼迫超越其所认为的自然意义，也绝不为了过分突显自己的独特见解而偏离解经者严谨职责。在这一点上，援引他对某些福音传道人似乎曾行使于他人之上的权威所作的评注，或可足以说明他坚定不移恪守圣经记录的决心，以及他对那些与他持有不同教会治理观者可能如何利用此类陈述的彻然漠然。在任何地方，他纯粹的诚实都未如在此般昭然若揭。
+
+本卷注释的脚注因大量摘录自一部罕见著作而得以充实——即作者讲解提摩太前后书的讲章。若非后世有着强烈而普遍的心愿要聆听这位伟大讲道者的声音，那些讲章恐怕永远不会问世。它们是在他讲道之际，随其口述一字一句记录下来的，方式与他那些即兴拉丁文释经讲义相同，后者已在其他地方有所介绍。这些讲章既是释经讲道，对两封书信的每一部分均有所探讨，同时又是向广大基督徒会众发出的，其特点是那些朴素而有力的呼吁，以及那种令人称奇的语言表达之精妙——就连他的传记作者奥丹，也不得不勉强承认这一点。
