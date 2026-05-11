@@ -2007,11 +2007,10 @@ if (window.location.hash === '#readmode') {
         </button>
 
         <!-- 字号 -->
-        <div class="mob-font-grp">
-            <button class="mob-sq-btn mob-sq-sm" onclick="adjustFontSize(-1)">A<sup>−</sup></button>
-            <button class="mob-sq-btn mob-sq-sm" onclick="resetFontSize()">A</button>
-            <button class="mob-sq-btn mob-sq-sm" onclick="adjustFontSize(1)">A<sup>+</sup></button>
-        </div>
+        <button class="mob-sq-btn" id="mobFontBtn" onclick="mobFontToggle()" aria-label="字号">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="18" font-size="14" font-weight="bold" stroke="none" fill="currentColor">A</text><text x="13" y="22" font-size="10" stroke="none" fill="currentColor">a</text></svg>
+            <span class="mob-sq-lbl">字号</span>
+        </button>
 
         <!-- 朗读 -->
         <button class="mob-sq-btn" id="mob-tts-play-btn" onclick="ttsPlay()">
@@ -2046,6 +2045,13 @@ if (window.location.hash === '#readmode') {
 <div id="mob-wheel-backdrop" onclick="mobWheelClose()"></div>
 <div id="mob-wheel-container">
     <div id="mob-wheel-track"></div>
+</div>
+
+<!-- 字号弹出层 -->
+<div id="mob-font-popup">
+    <button onclick="adjustFontSize(-1);mobFontClose()">A<sup>−</sup></button>
+    <button onclick="resetFontSize();mobFontClose()">A</button>
+    <button onclick="adjustFontSize(1);mobFontClose()">A<sup>+</sup></button>
 </div>
 
 <!-- 导航抽屉遮罩（保留备用） -->
@@ -2165,6 +2171,35 @@ if (window.location.hash === '#readmode') {
     border: 2px solid rgba(255,255,255,0.2);
     color: #fff; text-decoration: none !important;
 }
+
+/* 字号弹出 */
+#mob-font-popup {
+    display: none;
+    position: fixed;
+    z-index: 19500;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid #d8e4ee;
+    border-radius: 12px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.18);
+    padding: 8px;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+#mob-font-popup.open { display: flex; }
+#mob-font-popup button {
+    width: 52px; height: 52px;
+    background: #f0f4f8; border: 1px solid #d8e4ee;
+    border-radius: 10px; cursor: pointer;
+    font-size: 15px; font-weight: 700;
+    color: #2C4A6E;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s, transform 0.1s;
+}
+#mob-font-popup button:active { background: #d0e2f0; transform: scale(0.92); }
+#mob-font-popup sup { font-size: 10px; }
 
 /* 导航抽屉（全设备可见） */
 #mob-nav-overlay {
@@ -2373,6 +2408,35 @@ if (window.location.hash === '#readmode') {
         });
         mobWheelClose();
     };
+
+    // 字号弹出
+    window.mobFontToggle = function() {
+        var popup = document.getElementById('mob-font-popup');
+        var btn   = document.getElementById('mobFontBtn');
+        var isOpen = popup.classList.toggle('open');
+        btn.classList.toggle('active', isOpen);
+        if (isOpen) {
+            var rect = btn.getBoundingClientRect();
+            var popW = 68, popH = 3 * 52 + 2 * 6 + 16; // 3 buttons + gaps + padding
+            var left = rect.left + rect.width/2 - popW/2;
+            left = Math.max(8, Math.min(left, window.innerWidth - popW - 8));
+            popup.style.left = left + 'px';
+            popup.style.top  = (rect.top - popH - 8) + 'px';
+            // close other popups
+            mobWheelClose();
+        }
+    };
+    window.mobFontClose = function() {
+        document.getElementById('mob-font-popup').classList.remove('open');
+        document.getElementById('mobFontBtn').classList.remove('active');
+    };
+    document.addEventListener('click', function(e) {
+        var fp = document.getElementById('mob-font-popup');
+        var fb = document.getElementById('mobFontBtn');
+        if (fp && fb && fp.classList.contains('open') && !fp.contains(e.target) && !fb.contains(e.target)) {
+            mobFontClose();
+        }
+    });
 
     // legacy stubs
     window.mobNavToggle    = function(){ mobWheelOpen('nav'); };
