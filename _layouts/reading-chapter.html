@@ -1515,6 +1515,19 @@ function ttsUpdateUI(state) {
     window.addEventListener('pagehide', function() {
         if (ttsCurrentAudio) ttsCurrentAudio.pause();
         window.speechSynthesis && speechSynthesis.cancel();
+        // 离开页面前清掉 overflow，防止 bfcache 缓存污染状态
+        document.body.style.overflow = '';
+    });
+    // bfcache 恢复时（手机前进/后退）强制重置阅读 overlay 和滚动
+    window.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+            document.body.style.overflow = '';
+            var ov = document.getElementById('rm-overlay');
+            if (ov) {
+                ov.classList.remove('rm-active', 'rm-sheet-open');
+                ov.setAttribute('aria-hidden', 'true');
+            }
+        }
     });
     var content = document.querySelector('.reading-content');
     if (content) {
@@ -2080,9 +2093,9 @@ window.rmExit = function() {
 ['fullscreenchange', 'webkitfullscreenchange', 'mozfullscreenchange'].forEach(function(evt) {
     document.addEventListener(evt, function() {
         if (!document.fullscreenElement && !document.webkitFullscreenElement && !document.mozFullScreenElement) {
+            // 退出全屏：如果 overlay 已关闭（用户已退出阅读），确保 overflow 恢复
             var overlay = document.getElementById('rm-overlay');
-            if (overlay && overlay.classList.contains('rm-active')) {
-                // 只恢复滚动，不重复调用 rmExit 以避免循环
+            if (!overlay || !overlay.classList.contains('rm-active')) {
                 document.body.style.overflow = '';
             }
         }
