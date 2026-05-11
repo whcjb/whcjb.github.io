@@ -262,7 +262,51 @@ layout: default
 
 /* markdown 原始渲染隐藏 */
 #dc-cards h2, #dc-cards > p, #dc-cards > hr { display: none; }
+
+/* ── 放大弹窗 ── */
+#dc-modal {
+  display: none; position: fixed; inset: 0; z-index: 9000;
+  background: rgba(0,0,0,0.55); backdrop-filter: blur(6px);
+  align-items: center; justify-content: center; padding: 20px;
+}
+#dc-modal.open { display: flex; }
+#dc-modal-inner {
+  position: relative; max-width: 580px; width: 100%;
+  animation: dcModalIn .18s ease;
+}
+@keyframes dcModalIn {
+  from { transform: scale(0.90); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+#dc-modal-close {
+  position: absolute; top: -38px; right: 0;
+  background: rgba(255,255,255,0.15); border: none;
+  color: #fff; font-size: 18px; width: 32px; height: 32px;
+  border-radius: 50%; cursor: pointer; line-height: 32px;
+  text-align: center; transition: background .15s;
+}
+#dc-modal-close:hover { background: rgba(255,255,255,0.3); }
+#dc-modal-card {
+  border-radius: 14px; overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+}
+/* 弹窗内卡片放大字号 */
+#dc-modal-card .catechism-q-text { font-size: 18px; line-height: 1.85; }
+#dc-modal-card .catechism-a-text { font-size: 17px; line-height: 2.1; }
+#dc-modal-card .catechism-q-num  { font-size: 13px; }
+/* 弹窗内答案强制显示（不受默写模式影响） */
+#dc-modal-card .catechism-a-text { filter: none !important; opacity: 1 !important; }
+/* cc-6 弹窗适配 */
+#dc-modal-card .cc-6 { flex-direction: row; }
 </style>
+
+<!-- 放大弹窗 DOM -->
+<div id="dc-modal" onclick="dcModalBgClick(event)">
+  <div id="dc-modal-inner">
+    <button id="dc-modal-close" onclick="dcCloseModal()">✕</button>
+    <div id="dc-modal-card"></div>
+  </div>
+</div>
 
 <script>
 (function() {
@@ -277,11 +321,10 @@ layout: default
               '<span class="catechism-q-num">问 ' + qNum + '</span>' +
               '<span class="catechism-q-text">' + qText + '</span>' +
             '</div>' +
-            '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
+            '<div class="catechism-a-area">' +
               '<div class="catechism-a-label">答</div>' +
               '<div class="catechism-a-text">' + ansHtml + '</div>' +
             '</div>';
-        /* cc-3 需要把问题编号写入 data-qnum 供 ::before 水印用 */
         if (styleClass === 'cc-3') {
             card.querySelector('.catechism-q-area').setAttribute('data-qnum', qNum);
         }
@@ -300,7 +343,7 @@ layout: default
               '<div class="catechism-q-area">' +
                 '<span class="catechism-q-text">' + qText + '</span>' +
               '</div>' +
-              '<div class="catechism-a-area" onclick="dcRevealCard(this)">' +
+              '<div class="catechism-a-area">' +
                 '<div class="catechism-a-label">答</div>' +
                 '<div class="catechism-a-text">' + ansHtml + '</div>' +
               '</div>' +
@@ -365,6 +408,19 @@ layout: default
             var card = styleClass === 'cc-6'
                 ? buildSidebarCard(qNum, qText, ansHtml)
                 : buildStandardCard(styleClass, qNum, qText, ansHtml);
+
+            /* 事件委托：默写模式点答案区揭示；否则点卡片弹出放大 */
+            card.addEventListener('click', function(e) {
+                var wrap = document.getElementById('dc-cards');
+                var isQuiz = wrap.classList.contains('dayaoli-quiz-mode');
+                if (isQuiz) {
+                    var aArea = e.target.closest('.catechism-a-area');
+                    if (aArea) dcRevealCard(aArea);
+                } else {
+                    dcOpenModal(card);
+                }
+            });
+
             grid.appendChild(card);
         });
     }
@@ -394,6 +450,35 @@ layout: default
             el.classList.add('revealed');
         });
     };
+
+    window.dcOpenModal = function(card) {
+        var modal = document.getElementById('dc-modal');
+        var modalCard = document.getElementById('dc-modal-card');
+        modalCard.innerHTML = '';
+        var clone = card.cloneNode(true);
+        /* 移除克隆内的 min-height 约束，让弹窗自适应高度 */
+        clone.style.minHeight = '';
+        /* 弹窗内答案区点击揭示（供弹窗内默写用，不影响主页） */
+        clone.querySelectorAll('.catechism-a-area').forEach(function(a) {
+            a.style.cursor = '';
+        });
+        modalCard.appendChild(clone);
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.dcCloseModal = function() {
+        document.getElementById('dc-modal').classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    window.dcModalBgClick = function(e) {
+        if (e.target === document.getElementById('dc-modal')) dcCloseModal();
+    };
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') dcCloseModal();
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initCards);
