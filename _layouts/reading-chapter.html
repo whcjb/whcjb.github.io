@@ -2153,10 +2153,8 @@ if (window.location.hash === '#readmode') {
         </button>
 
         <!-- 字号 -->
-        <button class="mob-sq-btn" id="mobFontBtn" onclick="mobFontToggle()" aria-label="字号">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><text x="2" y="18" font-size="14" font-weight="bold" stroke="none" fill="currentColor">A</text><text x="13" y="22" font-size="10" stroke="none" fill="currentColor">a</text></svg>
-            <span class="mob-sq-lbl">字号</span>
-        </button>
+        <button class="mob-sq-btn" onclick="adjustFontSize(-1)" aria-label="缩小字号" style="font-size:18px;font-weight:bold;">A<sup style="font-size:10px">−</sup></button>
+        <button class="mob-sq-btn" onclick="adjustFontSize(1)" aria-label="放大字号" style="font-size:18px;font-weight:bold;">A<sup style="font-size:10px">+</sup></button>
 
         <!-- 朗读 -->
         <button class="mob-sq-btn" id="mob-tts-play-btn" onclick="ttsPlay()">
@@ -2193,13 +2191,8 @@ if (window.location.hash === '#readmode') {
     <div id="mob-wheel-track"></div>
 </div>
 
-<!-- 字号弹出层 -->
-<div id="mob-font-popup">
-    <button ontouchend="event.preventDefault();var _n=Math.min(40,(parseInt(localStorage.getItem('reading-font-size'))||16)+1);localStorage.setItem('reading-font-size',_n);document.documentElement.style.setProperty('--reading-font-size',_n+'px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent=_n+'px';" onclick="void 0">A<sup>+</sup></button>
-    <span id="mob-font-label" style="font-size:12px;color:#666;font-weight:bold;min-width:28px;text-align:center;">16px</span>
-    <button ontouchend="event.preventDefault();var _n=Math.max(12,(parseInt(localStorage.getItem('reading-font-size'))||16)-1);localStorage.setItem('reading-font-size',_n);document.documentElement.style.setProperty('--reading-font-size',_n+'px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent=_n+'px';" onclick="void 0">A<sup>−</sup></button>
-    <button ontouchend="event.preventDefault();localStorage.setItem('reading-font-size',16);document.documentElement.style.setProperty('--reading-font-size','16px');var _l=document.getElementById('mob-font-label');if(_l)_l.textContent='16px';" onclick="void 0" style="font-size:11px;padding:0 6px;">重置</button>
-</div>
+<!-- 字号弹出层（已移至底部 bar 内联按钮，此处保留空 div 以防 JS 引用） -->
+<div id="mob-font-popup"></div>
 
 <!-- 导航抽屉遮罩（保留备用） -->
 <div id="mob-nav-overlay" onclick="mobNavClose()" style="display:none"></div>
