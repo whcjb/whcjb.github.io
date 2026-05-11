@@ -1455,6 +1455,9 @@ function ttsUpdateUI(state) {
 
 /* ── 内容区（全屏） ── */
 #rm-body { position: absolute; inset: 0; overflow: hidden; }
+/* ── 快照容器（整块平移实现翻页） ── */
+.rm-snap-wrap { will-change: transform; }
+.rm-snap-content { display: block; }
 
 /* ── 每页 ── */
 .rm-page {
@@ -1629,7 +1632,9 @@ function rmChUrl(sec) {
 var rmPages  = [];
 var rmCurPage = 0;
 var rmSrcEl   = null;
-var rmStartPage = 0; // 进入全屏时应显示的起始页（对应 targetChildIdx 的强制断页处）
+var rmTotalPages = 1;  // 快照模式：总页数
+var rmSnapWidth  = 0;  // 快照：原始内容宽度（px），保持行断点一致
+var rmSnapScale  = 1;  // 快照：缩放比例，令内容填满全屏宽度
 
 /* ── 控制面板 ── */
 window.rmToggleSheet = function() {
@@ -1698,180 +1703,84 @@ window.rmSetBg = function(el) {
     });
 };
 
-/* ── 字号（重建分页） ── */
-window.rmAdjustFont = function(delta) {
-    adjustFontSize(delta);
-    rmRebuild();
-};
-window.rmResetFont = function() {
-    resetFontSize();
-    rmRebuild();
-};
+/* ── 字号（重建快照） ── */
+window.rmAdjustFont = function(delta) { adjustFontSize(delta); rmRebuild(); };
+window.rmResetFont  = function()      { resetFontSize();       rmRebuild(); };
 function rmRebuild() {
     var src = document.querySelector('#reading-col .reading-content');
     if (!src) return;
     rmSrcEl = src;
-    // 字号变化会导致分页重建，先停止朗读
     if (ttsPlaying || ttsPaused) ttsStop();
     requestAnimationFrame(function() {
         requestAnimationFrame(function() {
-            rmBuildPages(rmSrcEl);
-            rmShowPage(Math.min(rmCurPage, rmPages.length - 1));
+            var wrap = rmBuildSnap(rmSrcEl);
+            requestAnimationFrame(function() {
+                var clone = wrap.querySelector('.rm-snap-content');
+                var scaledH = clone.getBoundingClientRect().height;
+                rmTotalPages = Math.max(1, Math.ceil(scaledH / window.innerHeight));
+                wrap.style.transition = 'none';
+                rmApplyPage(Math.min(rmCurPage, rmTotalPages - 1));
+                requestAnimationFrame(function() { wrap.style.transition = ''; });
+            });
         });
     });
 }
 
 /* ── 供 TTS 跨模块调用 ── */
-window.rmGetPages   = function() { return rmPages; };
+window.rmGetPages   = function() { return []; }; // 快照模式无独立页，TTS 回退到原始内容
 window.rmGetCurPage = function() { return rmCurPage; };
-window.rmShowPageFn = function(n) { rmShowPage(n); };
+window.rmShowPageFn = function(n) { rmApplyPage(n); };
 
-/* ── 按句子边界分割溢出段落 ── */
-function rmSplitLongEl(el, limV) {
-    var txt = el.textContent;
-    if (!txt.trim()) return null;
-    // 找所有句子结束位置（。！？；之后）
-    var cutPoints = [];
-    for (var ci = 0; ci < txt.length; ci++) {
-        if ('。！？；'.indexOf(txt[ci]) >= 0) cutPoints.push(ci + 1);
-    }
-    if (!cutPoints.length) return null;
-    // 逐个切断点试探，取最后一个仍能放下的位置
-    var lastFit = 0;
-    for (var ki = 0; ki < cutPoints.length; ki++) {
-        el.textContent = txt.substring(0, cutPoints[ki]);
-        if (el.getBoundingClientRect().bottom <= limV) {
-            lastFit = cutPoints[ki];
-        } else {
-            break;
-        }
-    }
-    if (!lastFit) {
-        el.textContent = txt; // 恢复：连第一句都放不下，无法分割
-        return null;
-    }
-    el.textContent = txt.substring(0, lastFit);
-    var rem = document.createElement(el.tagName.toLowerCase());
-    rem.className = el.className;
-    rem.textContent = txt.substring(lastFit).replace(/^\s+/, '');
-    return rem;
-}
-
-/* ── 分页 ── */
-function rmBuildPages(srcEl, startIdx) {
-    startIdx = startIdx || 0;
+/* ── 快照克隆（保留原始宽度 + 等比缩放，行断点完全不变） ── */
+function rmBuildSnap(srcEl) {
     var body = document.getElementById('rm-body');
-    body.querySelectorAll('.rm-page').forEach(function(p) { p.remove(); });
-    rmPages = [];
+    body.querySelectorAll('.rm-snap-wrap, .rm-page').forEach(function(el) { el.remove(); });
 
-    var insertBefore = document.getElementById('rm-click-prev');
-    var children = Array.prototype.slice.call(srcEl.children);
-    if (!children.length) return rmPages;
+    // 用原始内容宽度保证行断点一致，缩放填满屏幕
+    rmSnapWidth = srcEl.getBoundingClientRect().width;
+    var padH    = 20; // 左右各 20px 边距（屏幕坐标）
+    rmSnapScale = (window.innerWidth - padH * 2) / rmSnapWidth;
+    if (rmSnapScale < 1) rmSnapScale = 1;
 
-    // 直接在真实 DOM 里逐页构建，用实际 scrollHeight 判断是否超出
-    function addPage() {
-        var pg = newPage();
-        pg.style.display = 'block'; // 暂时显示以便 layout 计算
-        body.insertBefore(pg, insertBefore);
-        rmPages.push(pg);
-        return pg.querySelector('.reading-content');
-    }
+    var clone = document.createElement('div');
+    clone.className = 'reading-content rm-snap-content';
+    clone.innerHTML = srcEl.innerHTML;
+    clone.style.width          = rmSnapWidth + 'px';
+    clone.style.transform      = 'scale(' + rmSnapScale + ')';
+    clone.style.transformOrigin = 'top left';
 
-    var curContent = addPage();
-    // 用 getBoundingClientRect 直接量页面内容区的底边（viewport 坐标）
-    // scrollHeight 会因 overflow:visible 的 margin-collapse 漏掉末尾 margin，
-    // getBoundingClientRect 直接用渲染后的像素位置，完全准确
-    var firstPage  = rmPages[0];
-    var pgStyle    = getComputedStyle(firstPage);
-    var pageRect   = firstPage.getBoundingClientRect();
-    var SAFE       = 8; // px 安全余量，防止亚像素误差
-    var limitY     = pageRect.bottom - parseFloat(pgStyle.paddingBottom) - SAFE;
+    var wrap = document.createElement('div');
+    wrap.className = 'rm-snap-wrap';
+    wrap.style.position   = 'absolute';
+    wrap.style.top        = '0';
+    wrap.style.left       = padH + 'px';
+    wrap.style.transition = 'transform 0.22s cubic-bezier(0.25,0.46,0.45,0.94)';
+    wrap.appendChild(clone);
 
-    // 从头分页，在 startIdx 处强制断页（之前的页可能不满，这是预期行为）
-    rmStartPage = 0;
-    for (var i = 0; i < children.length; i++) {
-        // 在 startIdx 处强制开新页，使该元素成为某页的第一个元素
-        if (i === startIdx && i > 0 && curContent.children.length > 0) {
-            curContent = addPage();
-            rmStartPage = rmPages.length - 1;
-        }
-        var clone = children[i].cloneNode(true);
-        curContent.appendChild(clone);
-        // getBoundingClientRect 触发同步 layout，读取元素真实底边
-        if (clone.getBoundingClientRect().bottom > limitY && curContent.children.length > 1) {
-            curContent.removeChild(clone);
-            curContent = addPage();
-            curContent.appendChild(clone);
-        }
-    }
-
-    // 后处理：级联修复溢出（字号增大后末尾元素可能仍超出页底）
-    for (var pi = 0; pi < rmPages.length; pi++) {
-        var pgV   = rmPages[pi];
-        var pgSV  = getComputedStyle(pgV);
-        var pgRV  = pgV.getBoundingClientRect();
-        var limV  = pgRV.bottom - parseFloat(pgSV.paddingBottom) - SAFE;
-        var contV = pgV.querySelector('.reading-content');
-        if (!contV || !contV.children.length) continue;
-        while (contV.children.length >= 1) {
-            var lastEl = contV.children[contV.children.length - 1];
-            if (lastEl.getBoundingClientRect().bottom <= limV) break;
-            var nextPgV;
-            if (pi + 1 < rmPages.length) {
-                nextPgV = rmPages[pi + 1];
-            } else {
-                nextPgV = newPage();
-                nextPgV.style.display = 'block';
-                body.insertBefore(nextPgV, insertBefore);
-                rmPages.push(nextPgV);
-            }
-            var nextContV = nextPgV.querySelector('.reading-content');
-            if (contV.children.length === 1) {
-                // 单元素溢出：尝试按句子边界分割，余下部分置入下一页
-                var remEl = rmSplitLongEl(lastEl, limV);
-                if (remEl) nextContV.insertBefore(remEl, nextContV.firstChild);
-                break;
-            }
-            nextContV.insertBefore(lastEl, nextContV.firstChild);
-        }
-    }
-
-    // 恢复 CSS 控制（.rm-page 默认 display:none，.active 才显示）
-    rmPages.forEach(function(p) { p.style.display = ''; });
-    return rmPages;
+    body.insertBefore(wrap, document.getElementById('rm-click-prev'));
+    return wrap;
 }
 
-function newPage() {
-    var d = document.createElement('div');
-    d.className = 'rm-page';
-    var inner = document.createElement('div');
-    inner.className = 'reading-content';
-    d.appendChild(inner);
-    return d;
-}
-
-/* ── 显示第 N 页 ── */
-function rmShowPage(n) {
-    if (!rmPages.length) return;
-    n = Math.max(0, Math.min(n, rmPages.length - 1));
-    if (rmPages[rmCurPage]) rmPages[rmCurPage].classList.remove('active');
+/* ── 跳到第 N 页（平移克隆块） ── */
+function rmApplyPage(n) {
+    var wrap = document.querySelector('#rm-body .rm-snap-wrap');
+    if (!wrap) return;
+    n = Math.max(0, Math.min(n, rmTotalPages - 1));
     rmCurPage = n;
-    rmPages[n].classList.add('active');
-    rmPages[n].scrollTop = 0;
-    var total = rmPages.length;
+    wrap.style.transform = 'translateY(' + (-n * window.innerHeight) + 'px)';
     var lbl   = document.getElementById('rm-page-label');
     var badge = document.getElementById('rm-page-badge');
-    if (lbl)   lbl.textContent   = total > 1 ? '第 ' + (n+1) + ' 页 / 共 ' + total + ' 页' : '';
-    if (badge) badge.textContent = total > 1 ? '\u2630  ' + (n+1) + ' / ' + total : '\u2630';
+    if (lbl)   lbl.textContent   = rmTotalPages > 1 ? '第 ' + (n+1) + ' 页 / 共 ' + rmTotalPages + ' 页' : '';
+    if (badge) badge.textContent = rmTotalPages > 1 ? '\u2630  ' + (n+1) + ' / ' + rmTotalPages : '\u2630';
     var prev = document.getElementById('rm-click-prev');
     var next = document.getElementById('rm-click-next');
     if (prev) prev.style.opacity = n <= 0 ? '0.15' : '0.55';
-    if (next) next.style.opacity = n >= total-1 ? '0.15' : '0.55';
+    if (next) next.style.opacity = n >= rmTotalPages-1 ? '0.15' : '0.55';
 }
 
 /* ── 翻页 ── */
-window.rmPageNext = function() { if (rmCurPage < rmPages.length-1) rmShowPage(rmCurPage+1); };
-window.rmPagePrev = function() { if (rmCurPage > 0) rmShowPage(rmCurPage-1); };
+window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) rmApplyPage(rmCurPage+1); };
+window.rmPagePrev = function() { if (rmCurPage > 0) rmApplyPage(rmCurPage-1); };
 
 /* ── 章节跳转 ── */
 window.rmChapterNav = function(dir) {
@@ -1879,43 +1788,51 @@ window.rmChapterNav = function(dir) {
     if (idx >= 0 && idx < RM.sections.length) window.location.href = rmChUrl(RM.sections[idx]);
 };
 
-/* ── 进入阅读模式 ── */
+/* ── 进入阅读模式（快照模式） ── */
 window.rmEnter = function() {
     var overlay = document.getElementById('rm-overlay');
     rmSrcEl = document.querySelector('#reading-col .reading-content');
     if (!rmSrcEl) return;
 
-    // 记录当前可视区域内第一个可见子元素的索引，进入后跳到对应页
-    var targetChildIdx = 0;
+    // 找第一个在视口内可见的子元素，记录其在 srcEl 内的 offsetTop（内容坐标）
     var srcChildren = Array.prototype.slice.call(rmSrcEl.children);
-    var navH = 70;
+    var targetOffsetTop = 0;
     for (var ci = 0; ci < srcChildren.length; ci++) {
-        var r = srcChildren[ci].getBoundingClientRect();
-        if (r.bottom > navH) { targetChildIdx = ci; break; }
+        if (srcChildren[ci].getBoundingClientRect().bottom > 0) {
+            targetOffsetTop = srcChildren[ci].offsetTop;
+            break;
+        }
     }
 
-    var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
+    var bgColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
     overlay.style.background = bgColor;
+    overlay.classList.remove('rm-sheet-open');
+    overlay.classList.add('rm-active');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
 
-    function doEnter() {
-        overlay.classList.remove('rm-sheet-open');
-        overlay.classList.add('rm-active');
-        overlay.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        // 双 RAF：确保 overlay display:block 完成 layout 再测量
+    // 三层 RAF：1) overlay 渲染完成  2) 克隆+缩放  3) 测量高度后定位
+    requestAnimationFrame(function() {
         requestAnimationFrame(function() {
+            var wrap  = rmBuildSnap(rmSrcEl);
+            var clone = wrap.querySelector('.rm-snap-content');
             requestAnimationFrame(function() {
-                // 从头分页，在 targetChildIdx 处强制断页后跳到该页
-                rmBuildPages(rmSrcEl, targetChildIdx);
-                rmShowPage(rmStartPage);
+                var scaledH  = clone.getBoundingClientRect().height;
+                rmTotalPages = Math.max(1, Math.ceil(scaledH / window.innerHeight));
+                // 起始页：targetOffsetTop（内容坐标）× scale = 屏幕坐标，除以页高得页号
+                var startPage = Math.floor(targetOffsetTop * rmSnapScale / window.innerHeight);
+                startPage = Math.max(0, Math.min(startPage, rmTotalPages - 1));
+                wrap.style.transition = 'none'; // 首次定位不加动画
+                rmApplyPage(startPage);
+                requestAnimationFrame(function() { wrap.style.transition = ''; }); // 恢复动画
             });
         });
-        var el = document.documentElement;
-        var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
-        if (rfn) { try { rfn.call(el); } catch(e){} }
-    }
+    });
 
-    doEnter();
+    var el = document.documentElement;
+    var rfn = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+    if (rfn) { try { rfn.call(el); } catch(e){} }
 };
 
 /* ── 退出 ── */
