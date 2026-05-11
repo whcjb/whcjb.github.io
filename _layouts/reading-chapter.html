@@ -1998,46 +1998,64 @@ if (window.location.hash === '#readmode') {
      ══════════════════════════════════════════════ -->
 <div id="mob-reading-bar" aria-hidden="true">
     <div id="mob-bar-handle"></div>
-    <div class="mob-bar-row mob-bar-palette-row">
-        <button class="mob-bar-palette-btn" id="mobPaletteBtn" onclick="mobPaletteToggle()" aria-label="背景色">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 2a10 10 0 0 1 0 20c-2.5 0-4-1.5-4-3.5 0-1 .5-2 .5-3S8 13 8 12a4 4 0 0 1 8 0"/>
-                <circle cx="9" cy="9" r="1" fill="currentColor"/>
-                <circle cx="15" cy="9" r="1" fill="currentColor"/>
-                <circle cx="9" cy="15" r="1" fill="currentColor"/>
-            </svg>
-            <em>背景色</em>
-            <span id="mobPalettePreview" class="mob-palette-preview"></span>
+    <div id="mob-bar-btns">
+
+        <!-- 调色板 -->
+        <div class="mob-radial-wrap" id="mobPaletteWrap">
+            <button class="mob-sq-btn" id="mobPaletteBtn" onclick="mobPaletteToggle()" aria-label="背景色">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="8.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="9" r="1.5" fill="currentColor" stroke="none"/><circle cx="8.5" cy="15" r="1.5" fill="currentColor" stroke="none"/><circle cx="15.5" cy="15" r="1.5" fill="currentColor" stroke="none"/></svg>
+                <span class="mob-sq-lbl">背景</span>
+            </button>
+            <!-- 6色扇形：角度 10°,42°,74°,106°,138°,170°，半径80px -->
+            <button class="mob-radial-item mob-color-item" data-color="#C7EDCC" onclick="mobSetBg('#C7EDCC')" style="background:#C7EDCC; --tx:79px; --ty:-14px" title="豆沙绿"></button>
+            <button class="mob-radial-item mob-color-item" data-color="#FAF0DC" onclick="mobSetBg('#FAF0DC')" style="background:#FAF0DC; --tx:60px; --ty:-54px" title="羊皮纸"></button>
+            <button class="mob-radial-item mob-color-item" data-color="#EAEAEF" onclick="mobSetBg('#EAEAEF')" style="background:#EAEAEF; --tx:22px; --ty:-77px" title="淡灰蓝"></button>
+            <button class="mob-radial-item mob-color-item" data-color="#F5E6CC" onclick="mobSetBg('#F5E6CC')" style="background:#F5E6CC; --tx:-22px; --ty:-77px" title="暖杏色"></button>
+            <button class="mob-radial-item mob-color-item" data-color="#E3EDCD" onclick="mobSetBg('#E3EDCD')" style="background:#E3EDCD; --tx:-60px; --ty:-54px" title="浅草绿"></button>
+            <button class="mob-radial-item mob-color-item mob-color-white" data-color="#FFFFFF" onclick="mobSetBg('#FFFFFF')" style="background:#FFFFFF; --tx:-79px; --ty:-14px" title="纯白"></button>
+        </div>
+
+        <!-- 字号 -->
+        <div class="mob-font-grp">
+            <button class="mob-sq-btn mob-sq-sm" onclick="adjustFontSize(-1)">A<sup>−</sup></button>
+            <button class="mob-sq-btn mob-sq-sm" onclick="resetFontSize()">A</button>
+            <button class="mob-sq-btn mob-sq-sm" onclick="adjustFontSize(1)">A<sup>+</sup></button>
+        </div>
+
+        <!-- 朗读 -->
+        <button class="mob-sq-btn" id="mob-tts-play-btn" onclick="ttsPlay()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+            <span class="mob-sq-lbl">朗读</span>
         </button>
-        <!-- 弹出色盘 -->
-        <div id="mob-palette-popup" class="mob-palette-popup">
-            <button class="mob-bg-sw" data-color="#C7EDCC" onclick="mobSetBg('#C7EDCC')" style="background:#C7EDCC" title="豆沙绿"></button>
-            <button class="mob-bg-sw" data-color="#FAF0DC" onclick="mobSetBg('#FAF0DC')" style="background:#FAF0DC" title="羊皮纸"></button>
-            <button class="mob-bg-sw" data-color="#EAEAEF" onclick="mobSetBg('#EAEAEF')" style="background:#EAEAEF" title="淡灰蓝"></button>
-            <button class="mob-bg-sw" data-color="#F5E6CC" onclick="mobSetBg('#F5E6CC')" style="background:#F5E6CC" title="暖杏色"></button>
-            <button class="mob-bg-sw" data-color="#E3EDCD" onclick="mobSetBg('#E3EDCD')" style="background:#E3EDCD" title="浅草绿"></button>
-            <button class="mob-bg-sw mob-bg-sw--white" data-color="#FFFFFF" onclick="mobSetBg('#FFFFFF')" style="background:#FFFFFF" title="纯白"></button>
-        </div>
-    </div>
-    <div class="mob-bar-row mob-bar-row-tools">
-        <div class="mob-bar-tts-row">
-            <button id="mob-tts-play-btn"  onclick="ttsPlay()">&#9654; 朗读</button>
-            <button id="mob-tts-pause-btn" onclick="ttsPause()" style="display:none">&#10074;&#10074; 暂停</button>
-            <button id="mob-tts-stop-btn"  onclick="ttsStop()"  style="display:none">&#9632; 停止</button>
-        </div>
-        <div class="mob-bar-font-ctrl">
-            <button onclick="adjustFontSize(-1)">A−</button>
-            <button onclick="resetFontSize()">A</button>
-            <button onclick="adjustFontSize(1)">A+</button>
-        </div>
-        <button class="mob-bar-rm-btn" onclick="rmEnter()">⛶ 阅读</button>
-    </div>
-    <div class="mob-bar-row mob-bar-nav-row">
-        <button class="mob-bar-nav-btn" onclick="mobNavOpen()" aria-label="导航菜单">
-            <div class="lines"><span></span><span></span><span></span></div>
-            <em>菜单</em>
+        <button class="mob-sq-btn" id="mob-tts-pause-btn" onclick="ttsPause()" style="display:none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+            <span class="mob-sq-lbl">暂停</span>
         </button>
+        <button class="mob-sq-btn" id="mob-tts-stop-btn" onclick="ttsStop()" style="display:none">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16"/></svg>
+            <span class="mob-sq-lbl">停止</span>
+        </button>
+
+        <!-- 阅读模式 -->
+        <button class="mob-sq-btn" onclick="rmEnter()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            <span class="mob-sq-lbl">全屏</span>
+        </button>
+
+        <!-- 导航菜单 -->
+        <div class="mob-radial-wrap" id="mobNavWrap">
+            <button class="mob-sq-btn" id="mobNavBtn" onclick="mobNavToggle()" aria-label="导航">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <span class="mob-sq-lbl">菜单</span>
+            </button>
+            <!-- 5链接扇形：角度 20°,55°,90°,125°,160°，半径95px -->
+            <a class="mob-radial-item mob-nav-item" href="/" style="--tx:89px;--ty:-33px">🏠</a>
+            <a class="mob-radial-item mob-nav-item" href="/reading/" style="--tx:54px;--ty:-78px">📖</a>
+            <a class="mob-radial-item mob-nav-item" href="/calvin/" style="--tx:0px;--ty:-95px">✍️</a>
+            <a class="mob-radial-item mob-nav-item" href="/mhenry/" style="--tx:-54px;--ty:-78px">📜</a>
+            <a class="mob-radial-item mob-nav-item" href="/about/" style="--tx:-89px;--ty:-33px">✝️</a>
+        </div>
+
     </div>
 </div>
 
@@ -2070,7 +2088,7 @@ if (window.location.hash === '#readmode') {
         backdrop-filter: blur(14px);
         -webkit-backdrop-filter: blur(14px);
         border-radius: 16px 16px 0 0;
-        padding: 0 18px 28px;
+        padding: 0 12px 28px;
         box-shadow: 0 -4px 28px rgba(0,0,0,0.20);
         transform: translateY(100%);
         transition: transform 0.28s cubic-bezier(0.32,0.72,0,1);
@@ -2083,122 +2101,75 @@ if (window.location.hash === '#readmode') {
     #mob-bar-handle {
         width: 36px; height: 4px; border-radius: 2px;
         background: rgba(0,0,0,0.18);
-        margin: 10px auto 14px;
+        margin: 10px auto 12px;
     }
-    .mob-bar-row {
-        display: flex; align-items: center; gap: 10px;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.07);
+    /* 按钮行 */
+    #mob-bar-btns {
+        display: flex; align-items: flex-end; justify-content: space-around;
+        gap: 6px; flex-wrap: nowrap;
     }
-    .mob-bar-row:last-child { border-bottom: none; }
-    .mob-bar-lbl { font-size: 12px; color: #999; width: 28px; flex-shrink: 0; }
-    .mob-bar-bg-row { display: flex; gap: 7px; flex-wrap: wrap; flex: 1; }
-    .mob-bg-sw {
-        width: 24px; height: 24px; border-radius: 50%;
-        border: 2px solid transparent; cursor: pointer; padding: 0; outline: none;
-        box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
-        transition: box-shadow 0.15s, border-color 0.15s;
+    /* 正方形按钮 */
+    .mob-sq-btn {
+        display: flex; flex-direction: column; align-items: center; justify-content: center;
+        width: 54px; height: 54px;
+        background: #f0f4f8; border: 1px solid #d8e4ee; border-radius: 12px;
+        color: #2C4A6E; cursor: pointer; gap: 3px; padding: 6px 4px;
+        flex-shrink: 0;
+        transition: background 0.15s, transform 0.1s;
     }
-    .mob-bg-sw:active { box-shadow: 0 0 0 2px #5B8DB8; }
-    .mob-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
-    .mob-bar-row-tools { gap: 8px; flex-wrap: wrap; }
-    .mob-bar-tts-row { display: flex; gap: 6px; }
-    .mob-bar-tts-row button {
-        background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
-        padding: 7px 12px; font-size: 13px; font-weight: bold; cursor: pointer;
-        white-space: nowrap;
-    }
-    .mob-bar-tts-row button:active { background: #2C4A6E; }
-    .mob-bar-font-ctrl {
-        display: inline-flex;
-        border: 1px solid #5B8DB8; border-radius: 4px; overflow: hidden;
-    }
-    .mob-bar-font-ctrl button {
-        background: #EBF3FA; border: none; border-right: 1px solid #5B8DB8;
-        color: #2C5F8A; cursor: pointer; font-size: 13px; font-weight: bold;
-        padding: 7px 11px; line-height: 1;
-    }
-    .mob-bar-font-ctrl button:last-child { border-right: none; }
-    .mob-bar-font-ctrl button:active { background: #5B8DB8; color: #fff; }
-    .mob-bar-rm-btn {
-        background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
-        padding: 7px 13px; font-size: 13px; font-weight: bold; cursor: pointer;
-        white-space: nowrap; margin-left: auto;
-    }
-    .mob-bar-rm-btn:active { background: #2C4A6E; }
+    .mob-sq-btn:active { background: #d0e2f0; transform: scale(0.93); }
+    .mob-sq-btn.active { background: #5B8DB8; color: #fff; border-color: #3a6e9e; }
+    .mob-sq-lbl { font-size: 10px; font-weight: 600; line-height: 1; letter-spacing: 0.02em; }
+    /* 小字号按钮组 */
+    .mob-font-grp { display: flex; gap: 3px; }
+    .mob-sq-sm { width: 36px !important; height: 54px; border-radius: 10px; font-size: 13px; font-weight: bold; }
 
-    /* 调色板按钮行 */
-    .mob-bar-palette-row { position: relative; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
-    .mob-bar-palette-btn {
-        display: flex; align-items: center; gap: 10px;
-        background: #f0f4f8; border: 1px solid #d0dbe8; border-radius: 8px;
-        padding: 8px 16px; cursor: pointer; width: 100%; color: #2C4A6E;
+    /* 扇形容器 */
+    .mob-radial-wrap {
+        position: relative;
+        display: flex; flex-direction: column; align-items: center;
     }
-    .mob-bar-palette-btn em { font-style: normal; font-size: 14px; font-weight: 600; flex: 1; text-align: left; }
-    .mob-palette-preview {
-        display: inline-block; width: 18px; height: 18px;
-        border-radius: 50%; border: 2px solid rgba(0,0,0,0.15);
-        background: #FFFFFF;
-    }
-    .mob-bar-palette-btn:active { background: #dce8f5; }
-    .mob-palette-popup {
-        display: none;
-        position: absolute; bottom: calc(100% + 6px); left: 0; right: 0;
-        background: rgba(255,255,255,0.97);
-        backdrop-filter: blur(10px);
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 14px 16px;
-        box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
-        display: none;
-        flex-wrap: wrap; gap: 12px;
-        justify-content: center;
-        z-index: 100;
-    }
-    .mob-palette-popup.open { display: flex; }
-    .mob-palette-popup .mob-bg-sw {
-        width: 36px; height: 36px; border-radius: 50%;
-        border: 3px solid transparent; cursor: pointer; padding: 0;
-        box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
-        transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .mob-palette-popup .mob-bg-sw:active { transform: scale(1.15); }
-    .mob-palette-popup .mob-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
-    .mob-bg-sw--white { box-shadow: 0 0 0 1px #ccc !important; }
-
-    /* 汉堡按钮行 */
-    .mob-bar-nav-row {
-        display: flex;
-        align-items: center;
-        padding: 8px 0 2px;
-        border-bottom: none !important;
-    }
-    .mob-bar-nav-btn {
-        display: flex; align-items: center; gap: 10px;
-        background: #f0f4f8;
-        border: 1px solid #d0dbe8;
-        border-radius: 8px;
-        padding: 8px 16px;
-        cursor: pointer;
-        width: 100%;
-        color: #2C4A6E;
-    }
-    .mob-bar-nav-btn span {
-        display: block; width: 18px; height: 2px;
-        background: #2C4A6E; border-radius: 2px;
+    /* 扇形子项（颜色色块 + 导航链接） */
+    .mob-radial-item {
         position: absolute;
+        bottom: 0; left: 50%;
+        transform: translate(-50%, 0) scale(0);
+        opacity: 0;
+        transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1), opacity 0.2s;
+        pointer-events: none;
+        z-index: 200;
     }
-    .mob-bar-nav-btn span:nth-child(1) { top: 5px; }
-    .mob-bar-nav-btn span:nth-child(2) { top: 11px; }
-    .mob-bar-nav-btn span:nth-child(3) { top: 17px; }
-    .mob-bar-nav-btn > div.lines {
-        position: relative; width: 18px; height: 22px; flex-shrink: 0;
+    .mob-radial-wrap.open .mob-radial-item {
+        transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(1);
+        opacity: 1;
+        pointer-events: auto;
     }
-    .mob-bar-nav-btn em {
-        font-style: normal; font-size: 14px; font-weight: 600;
-        letter-spacing: 0.03em;
+    /* 色块 */
+    .mob-color-item {
+        width: 36px; height: 36px; border-radius: 50%;
+        border: 3px solid rgba(255,255,255,0.9);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.22);
+        cursor: pointer; padding: 0;
     }
-    .mob-bar-nav-btn:active { background: #dce8f5; }
+    .mob-color-item.active { border-color: #2C4A6E; box-shadow: 0 0 0 3px #5B8DB8; }
+    .mob-color-white { box-shadow: 0 2px 8px rgba(0,0,0,0.18), inset 0 0 0 1px #ddd !important; }
+    /* 导航链接 */
+    .mob-nav-item {
+        width: 44px; height: 44px; border-radius: 50%;
+        background: #1c2a3a;
+        box-shadow: 0 3px 12px rgba(0,0,0,0.35);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 20px; text-decoration: none !important;
+        border: 2px solid rgba(255,255,255,0.15);
+    }
+    .mob-nav-item:active { transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(0.9) !important; }
+    /* 延迟错开动画 */
+    .mob-radial-wrap.open .mob-radial-item:nth-child(2) { transition-delay: 0s; }
+    .mob-radial-wrap.open .mob-radial-item:nth-child(3) { transition-delay: 0.03s; }
+    .mob-radial-wrap.open .mob-radial-item:nth-child(4) { transition-delay: 0.06s; }
+    .mob-radial-wrap.open .mob-radial-item:nth-child(5) { transition-delay: 0.09s; }
+    .mob-radial-wrap.open .mob-radial-item:nth-child(6) { transition-delay: 0.12s; }
+    .mob-radial-wrap.open .mob-radial-item:nth-child(7) { transition-delay: 0.15s; }
 }
 
 /* 导航抽屉（全设备可见） */
@@ -2260,37 +2231,35 @@ if (window.location.hash === '#readmode') {
 </style>
 
 <script>
-function mobNavOpen() {
-    document.getElementById('mob-nav-overlay').classList.add('open');
-    document.getElementById('mob-nav-drawer').classList.add('open');
+function mobNavToggle() {
+    var wrap = document.getElementById('mobNavWrap');
+    var isOpen = wrap.classList.toggle('open');
+    document.getElementById('mobNavBtn').classList.toggle('active', isOpen);
+    if (isOpen) document.getElementById('mobPaletteWrap').classList.remove('open');
 }
 function mobNavClose() {
     document.getElementById('mob-nav-overlay').classList.remove('open');
     document.getElementById('mob-nav-drawer').classList.remove('open');
 }
 function mobPaletteToggle() {
-    var popup = document.getElementById('mob-palette-popup');
-    popup.classList.toggle('open');
+    var wrap = document.getElementById('mobPaletteWrap');
+    var isOpen = wrap.classList.toggle('open');
+    document.getElementById('mobPaletteBtn').classList.toggle('active', isOpen);
+    if (isOpen) document.getElementById('mobNavWrap').classList.remove('open');
 }
 function mobSetBg(color) {
     setBgColor(color);
-    // update preview swatch
-    var prev = document.getElementById('mobPalettePreview');
-    if (prev) prev.style.background = color;
-    // mark active
-    document.querySelectorAll('.mob-palette-popup .mob-bg-sw').forEach(function(b) {
+    document.querySelectorAll('.mob-color-item').forEach(function(b) {
         b.classList.toggle('active', b.dataset.color === color);
     });
-    // close popup
-    document.getElementById('mob-palette-popup').classList.remove('open');
+    document.getElementById('mobPaletteWrap').classList.remove('open');
+    document.getElementById('mobPaletteBtn').classList.remove('active');
 }
-// close palette popup when tapping elsewhere
 document.addEventListener('click', function(e) {
-    var btn = document.getElementById('mobPaletteBtn');
-    var popup = document.getElementById('mob-palette-popup');
-    if (popup && btn && !btn.contains(e.target) && !popup.contains(e.target)) {
-        popup.classList.remove('open');
-    }
+    var pw = document.getElementById('mobPaletteWrap');
+    var nw = document.getElementById('mobNavWrap');
+    if (pw && !pw.contains(e.target)) { pw.classList.remove('open'); document.getElementById('mobPaletteBtn').classList.remove('active'); }
+    if (nw && !nw.contains(e.target)) { nw.classList.remove('open'); document.getElementById('mobNavBtn').classList.remove('active'); }
 });
 </script>
 
