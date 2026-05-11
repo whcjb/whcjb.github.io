@@ -11,41 +11,17 @@ header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-WILLIAM FARELL AND PETER VIRET,
-HIS DEARLY BELOVED BRETHREN AND COLLEAGUES,
-JOHN CALVIN
-OFFERS HIS SALUTATIONS.
-My Commentary — which now goes forth bearing the inscription of your name — is, indeed,
-a small gift; yet I fully believe that it will be acceptable to you, for this reason, that the subject of
-the Epistle induced me to make this Dedication. The task of putting the finishing hand to that
-building which Paul had begun in Crete, but left incomplete was undertaken by Titus. I occupy
-nearly the same position with regard to you.
-When you had made some progress in rearing this church with vast exertions, and at great risk,
-after some time had elapsed I came, first as your assistant, and afterwards was left as your successor,
-that I might endeavor to carry forward, to the best of my ability, that work which you had so well
-and so successfully begun. This work, I and my colleagues are endeavoring to perform, if not with
-so great progress as might have been desired yet heartily and faithfully, according to our small
-ability.
-To return to you, in consequence of holding the same relation to you which Paul assigned to
-Titus, I have been led to consider this similarity as a good reason for selecting you above all others,
-for dedicating to you this labor of mine. Meanwhile, to the present age, and perhaps to posterity,
-it will, at least, be some evidence of that holy union and friendship which exists between us. I think
-that there has never been, in ordinary life, a circle of friends so sincerely bound to each other as
-we have been in our ministry. With both of you I discharged here the office of pastor; and so far
-was there from being any appearance of envy, that you and I seemed to be one. We were afterwards
-separated by places; for you, Farell, were invited by the church of Neufchastel, which you had
-rescued from the tyranny of Popery, and brought into obedience to Christ; and you, Viret, are held
-in the same relation by the church of Lausanne.
-While each of us occupies his own position, our union brings together the children of God into
-the fold of Christ, and even unites them in his body; while it scatters not only those outward enemies
-who openly carry on war with us, but those nearer and domestic enemies, by whom we are inwardly
-assailed. For I reckon this also to be one of the benefits resulting from being closely related, that
-filthy dogs, whose bites cannot succeed so far as to tear and rend the Church of Christ, do nothing
-more than bark against it with all their might. And, indeed, we cannot too thoroughly despise their
-insolence, since we can, with truth, glory before God, and have proved to men by the clearest
-evidence, that we cultivate no other society or friendship than that which has been consecrated to
-the name of Christ, which has hitherto been advantageous to his Church, and which has no other
-aim than that all may be at one with us in Him.
-Farewell, my most excellent and most upright brethren. May the Lord Jesus continue to bless
-your pious labors!
-Geneva, 29th November 1549.
+## 约翰·加尔文致威廉·法惹尔与彼得·韦瑞特——
+## 挚爱的弟兄与同工——问候
+
+我这部注释如今以你们的名字为题公诸于世，诚为一份微薄的礼物；然而我深信它必蒙你们垂纳，理由在于，正是本书信的主旨促使我作此题献。将保罗在克里特岛上已开创却未竟之工继续完成，乃是提多所担负的使命。而我与你们之间的关系，恰与此近似。
+
+你们以巨大的辛劳和极大的风险，在建立这所教会上已有相当进展；过了一段时日之后，我来了——起初作你们的帮手，其后又作你们的继承人留下，尽我所能，将你们如此美善、如此有成效地开创的事业继续推进。这项工作，我与同工们虽未能如人所盼般取得显著进展，却是竭诚尽力、忠心地在尽力而为。
+
+由于我与你们的关系，正如保罗指派提多与他的关系，这种相似性使我有充分理由在众人之中选择你们，将此劳作题献与你们。同时，这也将为当代、或许也为后世，留下某种见证，见证我们之间那圣洁的联合与友谊。我认为，世间普通的朋友圈中，从未有过像我们在事奉中彼此如此真诚联结的友谊。我与你们二位曾同在此处共同担任牧师之职；其间不但毫无嫉妒之色，你我之间简直如同一体。此后，因地理之隔，我们各分其所：法惹尔（Farel），你受讷沙泰尔（Neuchâtel）教会的邀请——那是你将其从教皇专制中解救出来、带入基督顺服之下的教会；而韦瑞特（Viret），你也被洛桑（Lausanne）教会以同样的方式留住。
+
+我们各守其位，我们的联合却将神的儿女汇聚入基督的羊圈，甚至将他们联合在祂的身体之中；同时驱散那些公然对我们作战的外部敌人，以及那些从内部攻击我们的近身的家内之敌。这种亲密联结所带来的益处之一，我以为是：那些肮脏的犬只，虽用尽力气咆哮，却无力用牙齿撕裂基督的教会，除了狂吠之外，别无所成。我们确实无需过分鄙视他们的放肆，因为我们可以在神面前真诚地夸口，也已向人们以最明确的证据表明，我们所培育的不过是一种社群与友谊，它已被献于基督之名，迄今对祂的教会有益，且别无其他目的，只愿众人都与我们同在祂里面合而为一。
+
+愿我最优秀、最正直的弟兄们平安！愿主耶稣持续赐福你们虔诚的劳作！
+
+日内瓦，一五四九年十一月二十九日

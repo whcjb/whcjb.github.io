@@ -11,40 +11,12 @@ header-img: psalm-bg-mountain.jpg
 date: 2026-04-30 20:25
 ---
 
-THE ARGUMENT
-ON THE EPISTLE TO TITUS
-Paul, having only laid the foundations of the church in Crete, and hastening to go to another
-place, (for he was not the pastor of a single island only, but the Apostle of the Gentiles,) had given
-charge to Titus to prosecute this work as an Evangelist. It is evident from this Epistle that,
-immediately after Paul’s departure, Satan labored not only to overthrow the government of the
-Church, but likewise to corrupt its doctrine.
-There were some who, through ambitious motives, wished to be elevated to the rank of pastors,
-and who, because Titus did not comply with their wicked desires, spoke unfavorably of him to
-many persons. On the other hand, there were Jews who, under the pretense of supporting the Mosaic
-law, introduced a great number of trifles; and such persons were listened to with eagerness and
-with much acceptance. Paul therefore writes with this design, to arm Titus with his authority, that
-he may be able to bear so great a burden; for undoubtedly there were some who fearlessly despised
-him as being but one of the ordinary rank of pastors. It is also possible that complaints about him
-were in circulation, to the effect that he assumed more authority than belonged to him when he did
-not admit pastors till he had made trial and ascertained their fitness.
-Hence we may infer, that this was not so much a private epistle of Paul to Titus, as it was a
-public epistle to the Cretans. It is not probable that Titus is blamed for having with too great
-indulgence raised unworthy persons to the office of bishop, or that, as an ignorant man and a novice,
-he is told what is that kind of doctrine in which he ought to instruct the people; but because due
-honor was not rendered to him, Paul clothes him with his own authority, both in ordaining ministers
-and in the whole government of the Church. Because there were many who foolishly desired to
-have another form of doctrine than that which he delivered, Paul approves of this alone — rejecting
-all others — and exhorts him to proceed as he had begun.
-First, then, he shows what sort of persons ought to be chosen for being ministers. 208 Among
-other qualifications, he requires that a minister shall be well instructed in sound doctrine, that by
-means of it he may resist adversaries. Here he takes occasion to censure some vices of the Cretans,
-but especially rebukes the Jews, who made some kind of holiness to consist in a distinction of food,
-and in other outward ceremonies. In order to refute their fooleries, he contrasts with them the true
-exercises of piety and Christian life; and, with the view of pressing them more closely, he describes
-what are the duties which belong to every one in his calling. These duties he enjoins Titus diligently
-and constantly to inculcate. On the other hand, he admonishes others not to be weary of hearing
-them, and shows that this is the design of the redemption and salvation obtained through Christ. If
-any obstinate person oppose, or refuse to obey, he bids him set that person aside. We now see that
-Paul has no other object in view than to support the cause of Titus, and to stretch out the hand to
-assist him in performing the work of the Lord.
-208 “Pour estre ministres et pasteurs de l’Eglise .” — “To be ministers and pastors of the Church.”
+## 提多书绪论
+
+保罗在克里特岛上仅奠定了教会的根基，便匆忙前往他处——因为他并非单单一个岛屿的牧人，乃是外邦人的使徒——于是他委托提多以传福音者的身份继续完成这项事业。从本书信可以明显看出，保罗离开之后，撒但即刻着手，不仅试图颠覆教会的治理，也企图败坏其教义。
+
+有些人出于野心，渴望被擢升为牧者之列；因提多不肯顺从他们的恶意，便在许多人面前毁谤他。另一方面，也有些犹太人以维护摩西律法为借口，引进大量无益的琐事；此类人竟受到人们热切而欣然的接待。因此，保罗写作本书信，目的是以自己的权威武装提多，使他能够担当如此重任；因为毫无疑问，当时有些人肆无忌惮地轻视提多，视他不过是普通牧者之流。或许当时也有人散布怨言，说他在未经考察确认合格之前便拒绝接纳牧者，是僭越了自己职分以外的权威。
+
+由此可见，这封书信与其说是保罗写给提多个人的私函，不如说是写给克里特人的公开书信。我们不当认为，提多被指责为过度宽容、将不配之人提升为主教之职，或以为他是一个无知的新人，需要被告知应当用什么样的教义来教导百姓；而是因为没有人给予他应得的尊重，保罗便以自己的权威为他作保，使他在立圣职人员和整个教会治理上都获得权柄。又因为有许多人愚蠢地希望有别于他所传之教义的另一种教义，保罗便唯独认可此一教义——排斥其余一切——并劝勉提多照他所开始的路继续走下去。
+
+首先，保罗指明应当选择何种人担任圣职。在诸多资格中，他要求圣职人员须在纯正教义上受到良好训练，以便能够藉此抵挡对立者。在此，他借机指责克里特人的某些恶习，但尤其责备那些犹太人——他们以饮食之分及其他外在礼仪为圣洁的标准。为驳斥他们的荒谬，保罗与之对比，论述真正的敬虔操练与基督徒生活；为更切实地敦促他们，他描述每个人在各自呼召中所当尽的职责。这些职责，他命令提多要勤恳持续地加以教导。另一方面，他也劝诫众人不要厌倦听从，并指明这正是藉基督所获之救赎与救恩的目的所在。若有顽梗之人反对或拒绝顺服，他则吩咐提多将此人置于一旁。如今我们可以看出，保罗别无他求，唯在支持提多的事业，在他为主做工之时伸出援手。
