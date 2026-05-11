@@ -100,6 +100,7 @@ layout: default
     background: var(--reading-bg-color, #C7EDCC);
     padding: 24px 30px;
     border-radius: 6px;
+    touch-action: pan-y; /* 告知 iOS 此区域始终允许垂直滑动 */
 }
 
 .reading-section-title {
@@ -2379,6 +2380,9 @@ if (window.location.hash === '#readmode') {
         isOpen = false;
         bar.classList.remove('mob-bar-open');
         bar.setAttribute('aria-hidden', 'true');
+        // 同步关闭所有二级弹出（轮盘/字号），防止遮罩留在屏幕上拦截触摸
+        if (window.mobWheelClose) mobWheelClose();
+        if (window.mobFontClose)  mobFontClose();
     }
 
     // Touch-based tap detection (iOS Safari doesn't fire click on non-interactive elements)
