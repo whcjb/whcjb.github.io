@@ -1232,39 +1232,26 @@ function ttsSetSpeed(val) {
     }
 }
 
-/* 将跨多页的 chunk 按句子边界拆分为单页 chunk，使翻页后朗读从当前页内容开始 */
-function splitMultiPageChunks(chunks) {
-    var result = [];
-    for (var k = 0; k < chunks.length; k++) {
-        var ch = chunks[k];
-        var span = (ch.pageEnd !== undefined) ? (ch.pageEnd - ch.pageIdx) : 0;
-        if (span <= 0 || ch.text.length < 30) { result.push(ch); continue; }
-        // 按页数将文字均分，并在句子边界处断开
-        var text = ch.text;
-        var numPages = span + 1;
-        var charsPerPage = Math.ceil(text.length / numPages);
-        var start = 0;
-        for (var p = 0; p < numPages; p++) {
-            if (start >= text.length) break;
-            var end = start + charsPerPage;
-            if (p < numPages - 1 && end < text.length) {
-                // 向前找句子结束符（最多再找 80 字符）
-                var boundary = end;
-                while (boundary < Math.min(end + 80, text.length - 1) && !/[。！？…\n]/.test(text[boundary])) boundary++;
-                if (/[。！？…\n]/.test(text[boundary])) end = boundary + 1;
-                // 若找不到则向后回退找（最少保留 20 字符）
-                else {
-                    boundary = end;
-                    while (boundary > start + 20 && !/[。！？…\n]/.test(text[boundary - 1])) boundary--;
-                    if (boundary > start + 20) end = boundary;
-                }
-            }
-            var piece = text.slice(start, Math.min(end, text.length)).trim();
-            if (piece.length > 0) result.push({ text: piece, el: ch.el, pageIdx: ch.pageIdx + p, pageEnd: ch.pageIdx + p });
-            start = end;
+/* 翻页后，用 caretRangeFromPoint 精确定位当前页顶部的字符偏移 */
+function rmGetCharAtPageTop(el) {
+    try {
+        var rect = el.getBoundingClientRect();
+        if (rect.top >= 2) return 0; // 元素在当前页内（顶部在视口内），从头读
+        // 元素顶部在视口上方，说明段落跨页且开始于上一页
+        var x = rect.left + Math.min(20, rect.width * 0.1 + 2);
+        var range = null;
+        if (document.caretRangeFromPoint) {
+            range = document.caretRangeFromPoint(x, 2);
+        } else if (document.caretPositionFromPoint) {
+            var pos = document.caretPositionFromPoint(x, 2);
+            if (pos) { range = document.createRange(); range.setStart(pos.offsetNode, pos.offset); }
         }
-    }
-    return result;
+        if (!range || !el.contains(range.startContainer)) return 0;
+        var pre = document.createRange();
+        pre.selectNodeContents(el);
+        pre.setEnd(range.startContainer, range.startOffset);
+        return pre.toString().length;
+    } catch(e) { return 0; }
 }
 
 function ttsBuildChunks() {
@@ -1292,7 +1279,7 @@ function ttsBuildChunks() {
                     chunks.push({ text: text, el: node, pageIdx: pgStart, pageEnd: pgEnd });
                 }
             }
-            if (chunks.length > 0) return splitMultiPageChunks(chunks);
+            if (chunks.length > 0) return chunks;
         }
     }
     var el = document.querySelector('#reading-col .reading-content');
@@ -2100,7 +2087,7 @@ function rmApplyPage(n) {
 window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) { rmApplyPage(rmCurPage+1); try { rmTtsFollowPage(); } catch(e){} } };
 window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); try { rmTtsFollowPage(); } catch(e){} } };
 
-/* ── 手动翻页时 TTS 跟随到新页 ── */
+/* ── 手动翻页时 TTS 跟随到新页，从当前页首字开始朗读 ── */
 function rmTtsFollowPage() {
     if (!ttsPlaying || ttsPaused) return;
     // 找到覆盖当前页的第一个 chunk（段落可能跨页）
@@ -2113,18 +2100,27 @@ function rmTtsFollowPage() {
             if (ttsCurrentAudio) { ttsCurrentAudio.pause(); ttsCurrentAudio = null; }
             if (window.speechSynthesis) {
                 speechSynthesis.cancel();
-                // iOS: 空 utterance 在用户手势内解锁
                 var unlock = new SpeechSynthesisUtterance('');
                 unlock.volume = 0;
                 speechSynthesis.speak(unlock);
             }
             ttsIndex = idx;
-            (function(targetIdx, targetGen) {
+            // 若段落跨页且开始于上一页，用 caretRangeFromPoint 精确定位当前页首字
+            var playText = c.text;
+            if (c.el && c.pageIdx !== undefined && c.pageIdx < rmCurPage) {
+                var charOff = rmGetCharAtPageTop(c.el);
+                if (charOff > 0 && charOff < c.text.length) {
+                    playText = c.text.slice(charOff).trim();
+                }
+            }
+            (function(targetIdx, targetGen, txt) {
                 setTimeout(function() {
                     if (targetGen !== ttsGeneration) return;
+                    // 直接替换 chunk 文本（ttsChunks 在每次 ttsPlay() 时重建，无需还原）
+                    if (txt !== ttsChunks[targetIdx].text) ttsChunks[targetIdx].text = txt;
                     ttsSpeakChunk(targetIdx);
                 }, 120);
-            })(idx, gen);
+            })(idx, gen, playText);
             return;
         }
     }
