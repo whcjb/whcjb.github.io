@@ -1254,6 +1254,52 @@ function rmGetCharAtPageTop(el) {
     } catch(e) { return 0; }
 }
 
+/* 将跨多页的 chunk 按页边界拆分，每个子 chunk pageIdx===pageEnd，触发精确自动翻页 */
+function splitChunkByPages(chunk, wrap, pageH) {
+    if (!chunk.el || chunk.pageEnd <= chunk.pageIdx) return [chunk];
+    var rmBody = document.getElementById('rm-body');
+    var origTransform = wrap.style.transform;
+    var origTransition = wrap.style.transition;
+    wrap.style.transition = 'none';
+    if (rmBody) rmBody.style.opacity = '0';
+
+    // 逐页边界收集字符偏移
+    var splits = [];
+    for (var p = chunk.pageIdx + 1; p <= chunk.pageEnd; p++) {
+        wrap.style.transform = 'translateY(-' + (p * pageH) + 'px)';
+        wrap.offsetHeight; // 强制回流
+        var off = rmGetCharAtPageTop(chunk.el);
+        splits.push({ charOff: off, page: p });
+    }
+
+    // 恢复
+    wrap.style.transition = origTransition;
+    wrap.style.transform = origTransform;
+    wrap.offsetHeight;
+    if (rmBody) rmBody.style.opacity = '';
+
+    // 根据收集到的分割点构建子 chunk
+    var results = [];
+    var prevOff = 0;
+    var prevPage = chunk.pageIdx;
+    for (var i = 0; i < splits.length; i++) {
+        var off = splits[i].charOff;
+        var nextPage = splits[i].page;
+        if (off > prevOff && off < chunk.text.length) {
+            var sub = chunk.text.slice(prevOff, off).trim();
+            if (sub) results.push({ text: sub, el: chunk.el, pageIdx: prevPage, pageEnd: prevPage });
+            prevOff = off;
+            prevPage = nextPage;
+        } else if (off === 0 && prevOff === 0) {
+            // 元素实际从本页开始，修正 prevPage
+            prevPage = nextPage;
+        }
+    }
+    var last = chunk.text.slice(prevOff).trim();
+    if (last) results.push({ text: last, el: chunk.el, pageIdx: prevPage, pageEnd: chunk.pageEnd });
+    return results.length > 1 ? results : [chunk];
+}
+
 function ttsBuildChunks() {
     try {
     var overlay = document.getElementById('rm-overlay');
@@ -1278,6 +1324,21 @@ function ttsBuildChunks() {
                     var pgEnd = Math.floor((node.offsetTop + node.offsetHeight) * scale / pageH);
                     chunks.push({ text: text, el: node, pageIdx: pgStart, pageEnd: pgEnd });
                 }
+            }
+            // 拆分跨多页的长段，使自动翻页在段落中间也能正确触发
+            var wrap = document.querySelector('#rm-body .rm-snap-wrap');
+            if (wrap && chunks.length > 0) {
+                var expanded = [];
+                for (var ci = 0; ci < chunks.length; ci++) {
+                    var ch = chunks[ci];
+                    if (ch.pageEnd > ch.pageIdx) {
+                        var subs = splitChunkByPages(ch, wrap, pageH);
+                        for (var si = 0; si < subs.length; si++) expanded.push(subs[si]);
+                    } else {
+                        expanded.push(ch);
+                    }
+                }
+                chunks = expanded;
             }
             if (chunks.length > 0) return chunks;
         }
