@@ -1232,6 +1232,41 @@ function ttsSetSpeed(val) {
     }
 }
 
+/* 将跨多页的 chunk 按句子边界拆分为单页 chunk，使翻页后朗读从当前页内容开始 */
+function splitMultiPageChunks(chunks) {
+    var result = [];
+    for (var k = 0; k < chunks.length; k++) {
+        var ch = chunks[k];
+        var span = (ch.pageEnd !== undefined) ? (ch.pageEnd - ch.pageIdx) : 0;
+        if (span <= 0 || ch.text.length < 30) { result.push(ch); continue; }
+        // 按页数将文字均分，并在句子边界处断开
+        var text = ch.text;
+        var numPages = span + 1;
+        var charsPerPage = Math.ceil(text.length / numPages);
+        var start = 0;
+        for (var p = 0; p < numPages; p++) {
+            if (start >= text.length) break;
+            var end = start + charsPerPage;
+            if (p < numPages - 1 && end < text.length) {
+                // 向前找句子结束符（最多再找 80 字符）
+                var boundary = end;
+                while (boundary < Math.min(end + 80, text.length - 1) && !/[。！？…\n]/.test(text[boundary])) boundary++;
+                if (/[。！？…\n]/.test(text[boundary])) end = boundary + 1;
+                // 若找不到则向后回退找（最少保留 20 字符）
+                else {
+                    boundary = end;
+                    while (boundary > start + 20 && !/[。！？…\n]/.test(text[boundary - 1])) boundary--;
+                    if (boundary > start + 20) end = boundary;
+                }
+            }
+            var piece = text.slice(start, Math.min(end, text.length)).trim();
+            if (piece.length > 0) result.push({ text: piece, el: ch.el, pageIdx: ch.pageIdx + p, pageEnd: ch.pageIdx + p });
+            start = end;
+        }
+    }
+    return result;
+}
+
 function ttsBuildChunks() {
     try {
     var overlay = document.getElementById('rm-overlay');
@@ -1257,7 +1292,7 @@ function ttsBuildChunks() {
                     chunks.push({ text: text, el: node, pageIdx: pgStart, pageEnd: pgEnd });
                 }
             }
-            if (chunks.length > 0) return chunks;
+            if (chunks.length > 0) return splitMultiPageChunks(chunks);
         }
     }
     var el = document.querySelector('#reading-col .reading-content');
