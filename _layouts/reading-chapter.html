@@ -1233,21 +1233,28 @@ function ttsSetSpeed(val) {
 function ttsBuildChunks() {
     var overlay = document.getElementById('rm-overlay');
     var isRM = overlay && overlay.classList.contains('rm-active');
-    var pages = isRM && window.rmGetPages ? window.rmGetPages() : null;
-    if (pages && pages.length > 0) {
-        var rmChunks = [];
-        for (var pi = 0; pi < pages.length; pi++) {
-            var pnodes = pages[pi].querySelectorAll('.reading-content p, .reading-content h3, .reading-content li');
-            for (var ni = 0; ni < pnodes.length; ni++) {
-                var pn = pnodes[ni];
-                if (pn.closest && pn.closest('.calvin-verse') && pn.tagName === 'P') {
-                    if (pn.parentElement.querySelector('p') !== pn) continue;
+    // 快照阅读模式：从克隆内容中提取，按位置计算 pageIdx
+    if (isRM) {
+        var clone = document.querySelector('#rm-body .rm-snap-content');
+        if (clone) {
+            var pageH = window.innerHeight;
+            var scale = rmSnapScale || 1;
+            var nodes = clone.querySelectorAll('p, h3, li');
+            var chunks = [];
+            for (var i = 0; i < nodes.length; i++) {
+                var node = nodes[i];
+                if (node.closest && node.closest('.calvin-verse') && node.tagName === 'P') {
+                    if (node.parentElement.querySelector('p') !== node) continue;
                 }
-                var pt = pn.innerText.trim();
-                if (pt.length > 0) rmChunks.push({ text: pt, el: pn, pageIdx: pi });
+                if (node.closest && node.closest('.inst-fn')) continue;
+                var text = node.innerText.trim();
+                if (text.length > 0) {
+                    var pg = Math.floor(node.offsetTop * scale / pageH);
+                    chunks.push({ text: text, el: node, pageIdx: pg });
+                }
             }
+            if (chunks.length > 0) return chunks;
         }
-        if (rmChunks.length > 0) return rmChunks;
     }
     var el = document.querySelector('#reading-col .reading-content');
     if (!el) return [];
@@ -2045,8 +2052,24 @@ function rmApplyPage(n) {
 }
 
 /* ── 翻页 ── */
-window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) rmApplyPage(rmCurPage+1); };
-window.rmPagePrev = function() { if (rmCurPage > 0) rmApplyPage(rmCurPage-1); };
+window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) { rmApplyPage(rmCurPage+1); rmTtsFollowPage(); } };
+window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); rmTtsFollowPage(); } };
+
+/* ── 手动翻页时 TTS 跟随到新页 ── */
+function rmTtsFollowPage() {
+    if (!ttsPlaying || ttsPaused) return;
+    // 找到新页的第一个 chunk，跳转过去
+    for (var i = 0; i < ttsChunks.length; i++) {
+        if (ttsChunks[i].pageIdx === rmCurPage) {
+            ttsGeneration++;
+            if (ttsCurrentAudio) { ttsCurrentAudio.pause(); ttsCurrentAudio = null; }
+            if (window.speechSynthesis) speechSynthesis.cancel();
+            ttsIndex = i;
+            setTimeout(function() { ttsSpeakChunk(i); }, 100);
+            return;
+        }
+    }
+}
 
 /* ── 章节跳转 ── */
 window.rmChapterNav = function(dir) {
