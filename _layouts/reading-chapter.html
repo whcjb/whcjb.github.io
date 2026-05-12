@@ -2064,8 +2064,8 @@ function rmApplyPage(n) {
 }
 
 /* ── 翻页 ── */
-window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) { rmApplyPage(rmCurPage+1); rmTtsFollowPage(); } };
-window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); rmTtsFollowPage(); } };
+window.rmPageNext = function() { if (rmCurPage < rmTotalPages-1) { rmApplyPage(rmCurPage+1); try { rmTtsFollowPage(); } catch(e){} } };
+window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); try { rmTtsFollowPage(); } catch(e){} } };
 
 /* ── 手动翻页时 TTS 跟随到新页 ── */
 function rmTtsFollowPage() {
