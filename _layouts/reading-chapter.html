@@ -3,7 +3,7 @@ layout: default
 ---
 
 <!-- Page Header -->
-<div class="reading-chapter-header">
+<div class="reading-chapter-header" style="{% if page.header-img %}background-image: linear-gradient(rgba(28,43,58,0.65),rgba(28,43,58,0.75)), url('{{ site.baseurl }}/img/{{ page.header-img }}');{% endif %}">
     <div class="rch-inner">
         <div class="rch-label">{{ page.author_name }}{% if page.book_title %} · {{ page.book_title }}{% endif %}</div>
         <div class="rch-title">{{ page.section_title }}</div>
@@ -13,6 +13,8 @@ layout: default
 <style>
 .reading-chapter-header {
     background: linear-gradient(135deg, #1C2B3A 0%, #2D4A5E 60%, #1C3040 100%);
+    background-size: cover;
+    background-position: center;
     padding: 40px 0 36px;
     text-align: center;
     border-bottom: 3px solid rgba(180,150,90,0.4);
