@@ -1664,8 +1664,8 @@ function ttsUpdateUI(state) {
 <div id="rm-overlay" aria-hidden="true">
     <!-- 内容区（铺满全屏） -->
     <div id="rm-body">
-        <div id="rm-click-prev" onclick="rmPagePrev()"></div>
-        <div id="rm-click-next" onclick="rmPageNext()"></div>
+        <div id="rm-click-prev"></div>
+        <div id="rm-click-next"></div>
         <div id="rm-tap-center"></div>
     </div>
     <!-- 页码 / 菜单 FAB -->
@@ -1739,7 +1739,7 @@ function ttsUpdateUI(state) {
 
 
 /* ── 内容区（全屏） ── */
-#rm-body { position: absolute; inset: 0; overflow: hidden; }
+#rm-body { position: absolute; inset: 0; overflow: hidden; touch-action: manipulation; cursor: pointer; }
 /* ── 快照容器（整块平移实现翻页） ── */
 .rm-snap-wrap { will-change: transform; }
 .rm-snap-content { display: block; }
@@ -1759,11 +1759,11 @@ function ttsUpdateUI(state) {
     color: #333; font-family: "STSong","SimSun","宋体",serif; word-break: break-word;
 }
 
-/* ── 点击区（悬浮在文字上，不占宽度） ── */
+/* ── 点击区（仅作视觉提示，交互由 rm-body 统一处理） ── */
 #rm-click-prev, #rm-click-next {
     position: absolute;
-    top: 33.33%; height: 33.33%;
-    z-index: 10001; cursor: pointer;
+    top: 0; height: 100%;
+    z-index: 10001; pointer-events: none;
     user-select: none; -webkit-user-select: none;
 }
 #rm-tap-center { display: none; }
@@ -1776,8 +1776,6 @@ function ttsUpdateUI(state) {
 }
 #rm-click-prev::after { transform: translate(-20%,-50%) rotate(-135deg); }
 #rm-click-next::after { transform: translate(-80%,-50%) rotate(45deg); }
-#rm-click-prev:active, #rm-click-next:active { background-color: rgba(0,0,0,0.05); }
-#rm-click-prev:active::after, #rm-click-next:active::after { border-color: rgba(0,0,0,0.4); }
 
 /* ── 页码 / 菜单 FAB ── */
 #rm-page-badge {
@@ -2189,19 +2187,33 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   rmPagePrev();
 });
 
-/* ── 滑动翻页 ── */
-var _tx = null, _ty = null;
+/* ── 滑动 + 点击翻页（统一在 rm-body 处理，避免 iOS onclick 不可靠问题） ── */
+var _tx = null, _ty = null, _lastTouchFlip = 0;
 document.getElementById('rm-body').addEventListener('touchstart', function(e) {
     _tx = e.touches[0].clientX; _ty = e.touches[0].clientY;
 }, { passive: true });
 document.getElementById('rm-body').addEventListener('touchend', function(e) {
     if (_tx === null) return;
-    var dx = e.changedTouches[0].clientX - _tx;
-    var dy = e.changedTouches[0].clientY - _ty;
+    var t0 = _tx, t1 = _ty;
+    var dx = e.changedTouches[0].clientX - t0;
+    var dy = e.changedTouches[0].clientY - t1;
+    var ex = e.changedTouches[0].clientX;
     _tx = _ty = null;
-    if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
-    if (dx < 0) rmPageNext(); else rmPagePrev();
+    if (Math.abs(dx) >= 40 && Math.abs(dx) >= Math.abs(dy)) {
+        // 滑动翻页
+        _lastTouchFlip = Date.now();
+        if (dx < 0) rmPageNext(); else rmPagePrev();
+    } else if (Math.abs(dx) < 12 && Math.abs(dy) < 12) {
+        // 轻点翻页：左半屏=上一页，右半屏=下一页
+        _lastTouchFlip = Date.now();
+        if (ex < window.innerWidth * 0.5) rmPagePrev(); else rmPageNext();
+    }
 }, { passive: true });
+/* ── 桌面鼠标点击翻页 ── */
+document.getElementById('rm-body').addEventListener('click', function(e) {
+    if (Date.now() - _lastTouchFlip < 600) return; // 防止 touch 后 click 重复触发
+    if (e.clientX < window.innerWidth * 0.5) rmPagePrev(); else rmPageNext();
+});
 
 /* ── #readmode ── */
 if (window.location.hash === '#readmode') {
