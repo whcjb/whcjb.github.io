@@ -2297,14 +2297,20 @@ document.getElementById('rm-body').addEventListener('touchend', function(e) {
         // 横向滑动：方向决定翻页
         if (dx < 0) rmPageNext(); else rmPagePrev();
     } else {
-        // 轻点：位置决定翻页（左半=上一页，右半=下一页）
-        if (ex < window.innerWidth * 0.5) rmPagePrev(); else rmPageNext();
+        // 轻点：三区域（左30%=上一页，中40%=底部菜单，右30%=下一页）
+        var w = window.innerWidth;
+        if (ex < w * 0.3) rmPagePrev();
+        else if (ex > w * 0.7) rmPageNext();
+        else rmToggleSheet();
     }
 }, { passive: true });
-/* ── 桌面鼠标点击翻页 ── */
+/* ── 桌面鼠标点击：左30%翻上页，中40%唤出底部菜单，右30%翻下页 ── */
 document.getElementById('rm-body').addEventListener('click', function(e) {
     if (Date.now() - _lastTouchFlip < 600) return; // 防止 touch 后 click 重复触发
-    if (e.clientX < window.innerWidth * 0.5) rmPagePrev(); else rmPageNext();
+    var x = e.clientX, w = window.innerWidth;
+    if (x < w * 0.3) rmPagePrev();
+    else if (x > w * 0.7) rmPageNext();
+    else rmToggleSheet();
 });
 
 /* ── #readmode ── */
