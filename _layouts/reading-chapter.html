@@ -1380,15 +1380,27 @@ function ttsAzureChunk(index, gen) {
 /* ── 浏览器内置 TTS（降级） ── */
 function ttsBrowserChunk(index, gen) {
     var chunk = ttsChunks[index];
+    // iOS: 确保语音列表已加载
+    var voices = speechSynthesis.getVoices();
+    if (voices.length === 0 && speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = function() {
+            speechSynthesis.onvoiceschanged = null;
+            if (gen === ttsGeneration) ttsBrowserChunk(index, gen);
+        };
+        return;
+    }
     var u = new SpeechSynthesisUtterance(chunk.text);
     u.lang = 'zh-CN'; u.rate = ttsGetSpeed();
-    u.onstart = function() {
-        if (gen !== ttsGeneration) return;
-        ttsHighlight(chunk.el);
-        if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
-            if (window.rmGetCurPage() !== chunk.pageIdx) window.rmShowPageFn(chunk.pageIdx);
+    // 优先选择中文语音
+    for (var vi = 0; vi < voices.length; vi++) {
+        if (voices[vi].lang && voices[vi].lang.indexOf('zh') === 0) {
+            u.voice = voices[vi]; break;
         }
-    };
+    }
+    ttsHighlight(chunk.el);
+    if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
+        if (window.rmGetCurPage() !== chunk.pageIdx) window.rmShowPageFn(chunk.pageIdx);
+    }
     u.onend = function() {
         if (gen !== ttsGeneration) return;
         ttsHighlight(null);
@@ -1420,14 +1432,19 @@ function ttsPlayFrom(index) {
     if (!TTS_WORKER_URL && !window.speechSynthesis) { alert('您的浏览器不支持语音朗读'); return; }
     ttsGeneration++;
     if (ttsCurrentAudio) { ttsCurrentAudio.pause(); ttsCurrentAudio = null; }
-    window.speechSynthesis && speechSynthesis.cancel();
+    if (window.speechSynthesis) speechSynthesis.cancel();
     ttsPrefetchNext = null;
     ttsChunks = ttsBuildChunks();
     if (ttsChunks.length === 0) return;
     if (index >= ttsChunks.length) index = 0;
     ttsIndex = index; ttsPlaying = true; ttsPaused = false;
     ttsUpdateUI('playing');
-    ttsSpeakChunk(index);
+    // iOS Safari: cancel() 后需要短暂延迟才能 speak()，否则静默
+    if (!TTS_WORKER_URL || !ttsAzureEnabled) {
+        setTimeout(function() { ttsSpeakChunk(index); }, 100);
+    } else {
+        ttsSpeakChunk(index);
+    }
 }
 
 function ttsPlay() {
@@ -1485,17 +1502,20 @@ function ttsUpdateUI(state) {
     var pauseBtn = document.getElementById('ttsPauseBtn');
     var stopBtn = document.getElementById('ttsStopBtn');
     var progressBar = document.getElementById('ttsProgress');
-    if (state === 'playing') {
-        playBtn.style.display = 'none'; pauseBtn.style.display = ''; stopBtn.style.display = '';
-        if (progressBar) progressBar.classList.add('visible');
-    } else if (state === 'paused') {
-        playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 继续';
-        pauseBtn.style.display = 'none'; stopBtn.style.display = '';
-        if (progressBar) progressBar.classList.add('visible');
-    } else {
-        playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 朗读';
-        pauseBtn.style.display = 'none'; stopBtn.style.display = 'none';
-        if (progressBar) progressBar.classList.remove('visible');
+    if (playBtn) {
+        if (state === 'playing') {
+            playBtn.style.display = 'none'; pauseBtn.style.display = ''; stopBtn.style.display = '';
+        } else if (state === 'paused') {
+            playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 继续';
+            pauseBtn.style.display = 'none'; stopBtn.style.display = '';
+        } else {
+            playBtn.style.display = ''; playBtn.innerHTML = '&#9654; 朗读';
+            pauseBtn.style.display = 'none'; stopBtn.style.display = 'none';
+        }
+    }
+    if (progressBar) {
+        if (state === 'playing' || state === 'paused') progressBar.classList.add('visible');
+        else progressBar.classList.remove('visible');
     }
     if (window.rmUpdateTtsButtons) window.rmUpdateTtsButtons(state);
 }
