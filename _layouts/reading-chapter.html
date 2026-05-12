@@ -1343,7 +1343,7 @@ function ttsAzureChunk(index, gen) {
     // 立即高亮 + 翻页（无需等待网络）
     ttsHighlight(chunk.el);
     if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
-        if (window.rmGetCurPage() !== chunk.pageIdx) window.rmShowPageFn(chunk.pageIdx);
+        if (chunk.pageIdx > window.rmGetCurPage()) window.rmShowPageFn(chunk.pageIdx); // 只前翻，不回翻
     }
     // 优先使用预加载，否则现场 fetch
     var blobProm;
@@ -1411,7 +1411,7 @@ function ttsBrowserChunk(index, gen) {
     }
     ttsHighlight(chunk.el);
     if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
-        if (window.rmGetCurPage() !== chunk.pageIdx) window.rmShowPageFn(chunk.pageIdx);
+        if (chunk.pageIdx > window.rmGetCurPage()) window.rmShowPageFn(chunk.pageIdx); // 只前翻，不回翻
     }
     u.onend = function() {
         if (gen !== ttsGeneration) return;
@@ -2194,18 +2194,18 @@ document.getElementById('rm-body').addEventListener('touchstart', function(e) {
 }, { passive: true });
 document.getElementById('rm-body').addEventListener('touchend', function(e) {
     if (_tx === null) return;
-    var t0 = _tx, t1 = _ty;
-    var dx = e.changedTouches[0].clientX - t0;
-    var dy = e.changedTouches[0].clientY - t1;
+    var dx = e.changedTouches[0].clientX - _tx;
+    var dy = e.changedTouches[0].clientY - _ty;
     var ex = e.changedTouches[0].clientX;
     _tx = _ty = null;
-    if (Math.abs(dx) >= 40 && Math.abs(dx) >= Math.abs(dy)) {
-        // 滑动翻页
-        _lastTouchFlip = Date.now();
+    // 排除明显的纵向滑动（dy > dx 且幅度足够）
+    if (Math.abs(dy) > Math.abs(dx) * 2 && Math.abs(dy) > 20) return;
+    _lastTouchFlip = Date.now();
+    if (Math.abs(dx) > 10) {
+        // 横向滑动：方向决定翻页
         if (dx < 0) rmPageNext(); else rmPagePrev();
-    } else if (Math.abs(dx) < 12 && Math.abs(dy) < 12) {
-        // 轻点翻页：左半屏=上一页，右半屏=下一页
-        _lastTouchFlip = Date.now();
+    } else {
+        // 轻点：位置决定翻页（左半=上一页，右半=下一页）
         if (ex < window.innerWidth * 0.5) rmPagePrev(); else rmPageNext();
     }
 }, { passive: true });
