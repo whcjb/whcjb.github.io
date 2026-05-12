@@ -2082,13 +2082,25 @@ window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); 
 function rmTtsFollowPage() {
     if (!ttsPlaying || ttsPaused) return;
     // 找到新页的第一个 chunk，跳转过去
-    for (var i = 0; i < ttsChunks.length; i++) {
-        if (ttsChunks[i].pageIdx === rmCurPage) {
+    for (var idx = 0; idx < ttsChunks.length; idx++) {
+        if (ttsChunks[idx].pageIdx === rmCurPage) {
             ttsGeneration++;
+            var gen = ttsGeneration;
             if (ttsCurrentAudio) { ttsCurrentAudio.pause(); ttsCurrentAudio = null; }
-            if (window.speechSynthesis) speechSynthesis.cancel();
-            ttsIndex = i;
-            setTimeout(function() { ttsSpeakChunk(i); }, 100);
+            if (window.speechSynthesis) {
+                speechSynthesis.cancel();
+                // iOS: 空 utterance 在用户手势内解锁
+                var unlock = new SpeechSynthesisUtterance('');
+                unlock.volume = 0;
+                speechSynthesis.speak(unlock);
+            }
+            ttsIndex = idx;
+            (function(targetIdx, targetGen) {
+                setTimeout(function() {
+                    if (targetGen !== ttsGeneration) return;
+                    ttsSpeakChunk(targetIdx);
+                }, 120);
+            })(idx, gen);
             return;
         }
     }
