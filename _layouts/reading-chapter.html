@@ -1448,8 +1448,12 @@ function ttsPlayFrom(index) {
     if (index >= ttsChunks.length) index = 0;
     ttsIndex = index; ttsPlaying = true; ttsPaused = false;
     ttsUpdateUI('playing');
-    // iOS Safari: cancel() 后需要短暂延迟才能 speak()，否则静默
-    if (!TTS_WORKER_URL || !ttsAzureEnabled) {
+    // iOS: 必须在用户手势上下文内调用 speak() 来解锁音频
+    // 先用空 utterance 解锁，再 setTimeout 播放真实内容（避免 cancel+speak 竞争）
+    if (window.speechSynthesis && (!TTS_WORKER_URL || !ttsAzureEnabled)) {
+        var unlock = new SpeechSynthesisUtterance('');
+        unlock.volume = 0;
+        speechSynthesis.speak(unlock);
         setTimeout(function() { ttsSpeakChunk(index); }, 100);
     } else {
         ttsSpeakChunk(index);
