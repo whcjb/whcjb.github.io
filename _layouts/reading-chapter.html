@@ -1233,15 +1233,21 @@ function ttsSetSpeed(val) {
 }
 
 function ttsBuildChunks() {
+    var _dbg = document.getElementById('rm-page-badge');
+    function _d(msg) { if (_dbg) _dbg.textContent = msg; }
+    try {
     var overlay = document.getElementById('rm-overlay');
     var isRM = overlay && overlay.classList.contains('rm-active');
+    _d('isRM=' + isRM);
     // 快照阅读模式：从克隆内容中提取，按位置计算 pageIdx
     if (isRM) {
         var clone = document.querySelector('#rm-body .rm-snap-content');
+        _d('clone=' + !!clone);
         if (clone) {
             var pageH = window.innerHeight;
-            var scale = rmSnapScale || 1;
+            var scale = typeof rmSnapScale !== 'undefined' ? rmSnapScale : 1;
             var nodes = clone.querySelectorAll('p, h3, li');
+            _d('nodes=' + nodes.length + ' s=' + scale.toFixed(2));
             var chunks = [];
             for (var i = 0; i < nodes.length; i++) {
                 var node = nodes[i];
@@ -1249,16 +1255,18 @@ function ttsBuildChunks() {
                     if (node.parentElement.querySelector('p') !== node) continue;
                 }
                 if (node.closest && node.closest('.inst-fn')) continue;
-                var text = node.innerText.trim();
+                var text = (node.innerText || node.textContent || '').trim();
                 if (text.length > 0) {
                     var pg = Math.floor(node.offsetTop * scale / pageH);
                     chunks.push({ text: text, el: node, pageIdx: pg });
                 }
             }
+            _d('rmChunks=' + chunks.length);
             if (chunks.length > 0) return chunks;
         }
     }
     var el = document.querySelector('#reading-col .reading-content');
+    _d('el=' + !!el);
     if (!el) return [];
     var nodes = el.querySelectorAll('p, h3, li');
     var chunks = [];
@@ -1267,14 +1275,15 @@ function ttsBuildChunks() {
         if (node.closest && node.closest('.calvin-verse') && node.tagName === 'P') {
             if (node.parentElement.querySelector('p') !== node) continue;
         }
-        var text = node.innerText.trim();
+        var text = (node.innerText || node.textContent || '').trim();
         if (text.length > 0) chunks.push({ text: text, el: node });
     }
     if (chunks.length === 0) {
-        var fallback = el.innerText.trim();
+        var fallback = (el.innerText || el.textContent || '').trim();
         if (fallback) chunks.push({ text: fallback, el: el });
     }
     return chunks;
+    } catch(e) { _d('ERR:' + e.message); return []; }
 }
 
 function ttsHighlight(el) {
