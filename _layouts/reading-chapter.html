@@ -1216,6 +1216,7 @@ var ttsGeneration = 0;
 var ttsAzureEnabled = true;  // Azure 额度充足时 true；429/403 后自动置 false
 var ttsCurrentAudio = null;  // HTMLAudioElement（Azure 模式）
 var ttsPrefetchNext = null;  // { idx, prom } 预加载下一段
+var rmTtsFlipTimer  = null;  // 轮询自动翻页（保险机制）
 
 function ttsGetSpeed() {
     return parseFloat(localStorage.getItem(TTS_SPEED_KEY) || '1');
@@ -1254,29 +1255,23 @@ function rmGetCharAtPageTop(el) {
     } catch(e) { return 0; }
 }
 
-/* 将跨多页的 chunk 按页边界拆分，每个子 chunk pageIdx===pageEnd，触发精确自动翻页 */
+/* 将跨多页的 chunk 按页边界拆分，每个子 chunk pageIdx===pageEnd，触发精确自动翻页。
+   调用前提：wrap 已处于 page 0（transition:'none'）；结束后 wrap 仍在 page 0。
+   调用方负责最终 transition 的恢复。 */
 function splitChunkByPages(chunk, wrap, pageH) {
     if (!chunk.el || chunk.pageEnd <= chunk.pageIdx) return [chunk];
-    var rmBody = document.getElementById('rm-body');
-    var origTransform = wrap.style.transform;
-    var origTransition = wrap.style.transition;
-    wrap.style.transition = 'none';
-    if (rmBody) rmBody.style.opacity = '0';
 
-    // 逐页边界收集字符偏移
+    // 逐页边界收集字符偏移（wrap 已在 page 0，transition:'none'）
     var splits = [];
     for (var p = chunk.pageIdx + 1; p <= chunk.pageEnd; p++) {
         wrap.style.transform = 'translateY(-' + (p * pageH) + 'px)';
-        wrap.offsetHeight; // 强制回流
+        wrap.offsetHeight; // 强制回流以更新 getBoundingClientRect
         var off = rmGetCharAtPageTop(chunk.el);
         splits.push({ charOff: off, page: p });
     }
-
-    // 恢复
-    wrap.style.transition = origTransition;
-    wrap.style.transform = origTransform;
+    // 恢复到 page 0（供下一次调用或调用方使用）
+    wrap.style.transform = 'translateY(0)';
     wrap.offsetHeight;
-    if (rmBody) rmBody.style.opacity = '';
 
     // 根据收集到的分割点构建子 chunk
     var results = [];
@@ -1291,7 +1286,7 @@ function splitChunkByPages(chunk, wrap, pageH) {
             prevOff = off;
             prevPage = nextPage;
         } else if (off === 0 && prevOff === 0) {
-            // 元素实际从本页开始，修正 prevPage
+            // 元素实际从本页开始，修正起始页
             prevPage = nextPage;
         }
     }
@@ -1304,12 +1299,21 @@ function ttsBuildChunks() {
     try {
     var overlay = document.getElementById('rm-overlay');
     var isRM = overlay && overlay.classList.contains('rm-active');
-    // 快照阅读模式：从克隆内容中提取，按位置计算 pageIdx
+    // 快照阅读模式：从克隆内容中提取，用 getBoundingClientRect 精确计算 pageIdx
     if (isRM) {
         var clone = document.querySelector('#rm-body .rm-snap-content');
-        if (clone) {
+        var wrap  = document.querySelector('#rm-body .rm-snap-wrap');
+        if (clone && wrap) {
             var pageH = window.innerHeight;
-            var scale = typeof rmSnapScale !== 'undefined' ? rmSnapScale : 1;
+            var totalPg = typeof rmTotalPages !== 'undefined' ? rmTotalPages : 999;
+
+            // 将 wrap 锁定到 page 0（禁用 transition）以便用 getBoundingClientRect 测量视觉位置
+            var savedTransform  = wrap.style.transform;
+            var savedTransition = wrap.style.transition;
+            wrap.style.transition = 'none';
+            wrap.style.transform  = 'translateY(0)';
+            wrap.offsetHeight; // 强制回流
+
             var nodes = clone.querySelectorAll('p, h3, li');
             var chunks = [];
             for (var i = 0; i < nodes.length; i++) {
@@ -1320,27 +1324,32 @@ function ttsBuildChunks() {
                 if (node.closest && node.closest('.inst-fn')) continue;
                 var text = (node.innerText || node.textContent || '').trim();
                 if (text.length > 0) {
-                    var pgStart = Math.floor(node.offsetTop * scale / pageH);
-                    var pgEnd = Math.floor((node.offsetTop + node.offsetHeight) * scale / pageH);
+                    var rect = node.getBoundingClientRect();
+                    var pgStart = Math.max(0, Math.floor(rect.top / pageH));
+                    var pgEnd   = Math.max(pgStart, Math.min(totalPg - 1, Math.floor((rect.bottom - 1) / pageH)));
                     chunks.push({ text: text, el: node, pageIdx: pgStart, pageEnd: pgEnd });
                 }
             }
-            // 拆分跨多页的长段，使自动翻页在段落中间也能正确触发
-            var wrap = document.querySelector('#rm-body .rm-snap-wrap');
-            if (wrap && chunks.length > 0) {
-                var expanded = [];
-                for (var ci = 0; ci < chunks.length; ci++) {
-                    var ch = chunks[ci];
-                    if (ch.pageEnd > ch.pageIdx) {
-                        var subs = splitChunkByPages(ch, wrap, pageH);
-                        for (var si = 0; si < subs.length; si++) expanded.push(subs[si]);
-                    } else {
-                        expanded.push(ch);
-                    }
+
+            // 拆分跨多页的长段（wrap 当前在 page 0，transition:'none'；splitChunkByPages 结束后仍在 page 0）
+            var expanded = [];
+            for (var ci = 0; ci < chunks.length; ci++) {
+                var ch = chunks[ci];
+                if (ch.pageEnd > ch.pageIdx) {
+                    var subs = splitChunkByPages(ch, wrap, pageH);
+                    for (var si = 0; si < subs.length; si++) expanded.push(subs[si]);
+                } else {
+                    expanded.push(ch);
                 }
-                chunks = expanded;
             }
-            if (chunks.length > 0) return chunks;
+
+            // 先将 wrap 还原到用户当前页（transition 仍为 none → 瞬间切换，无动画闪烁）
+            wrap.style.transform = savedTransform;
+            wrap.offsetHeight;
+            // 最后才恢复 transition（此时 transform 已就位，不会触发过渡动画）
+            wrap.style.transition = savedTransition;
+
+            if (expanded.length > 0) return expanded;
         }
     }
     var el = document.querySelector('#reading-col .reading-content');
@@ -1534,6 +1543,17 @@ function ttsPlayFrom(index) {
     if (index >= ttsChunks.length) index = 0;
     ttsIndex = index; ttsPlaying = true; ttsPaused = false;
     ttsUpdateUI('playing');
+    // 启动轮询自动翻页（保险机制：每 300ms 检查当前 chunk 是否需要翻页）
+    if (rmTtsFlipTimer) { clearInterval(rmTtsFlipTimer); rmTtsFlipTimer = null; }
+    if (window.rmShowPageFn && window.rmGetCurPage) {
+        rmTtsFlipTimer = setInterval(function() {
+            if (!ttsPlaying || ttsPaused) { clearInterval(rmTtsFlipTimer); rmTtsFlipTimer = null; return; }
+            var chunk = ttsChunks[ttsIndex];
+            if (chunk && chunk.pageIdx !== undefined && chunk.pageIdx > window.rmGetCurPage()) {
+                window.rmShowPageFn(chunk.pageIdx);
+            }
+        }, 300);
+    }
     // iOS: 必须在用户手势上下文内调用 speak() 来解锁音频
     // 先用空 utterance 解锁，再 setTimeout 播放真实内容（避免 cancel+speak 竞争）
     if (window.speechSynthesis && (!TTS_WORKER_URL || !ttsAzureEnabled)) {
@@ -1555,7 +1575,18 @@ function ttsPlay() {
             ttsStartKeepAlive();
         }
         ttsPaused = false; ttsPlaying = true;
-        ttsUpdateUI('playing'); return;
+        ttsUpdateUI('playing');
+        // 恢复时也重启轮询
+        if (!rmTtsFlipTimer && window.rmShowPageFn && window.rmGetCurPage) {
+            rmTtsFlipTimer = setInterval(function() {
+                if (!ttsPlaying || ttsPaused) { clearInterval(rmTtsFlipTimer); rmTtsFlipTimer = null; return; }
+                var chunk = ttsChunks[ttsIndex];
+                if (chunk && chunk.pageIdx !== undefined && chunk.pageIdx > window.rmGetCurPage()) {
+                    window.rmShowPageFn(chunk.pageIdx);
+                }
+            }, 300);
+        }
+        return;
     }
     ttsChunks = ttsBuildChunks();
     if (ttsChunks.length === 0) return;
@@ -1576,6 +1607,7 @@ function ttsPause() {
         if (ttsCurrentAudio) { ttsCurrentAudio.pause(); }
         else if (window.speechSynthesis) { speechSynthesis.pause(); }
         ttsPaused = true; ttsUpdateUI('paused'); ttsStopKeepAlive();
+        if (rmTtsFlipTimer) { clearInterval(rmTtsFlipTimer); rmTtsFlipTimer = null; }
     }
 }
 
@@ -1585,6 +1617,7 @@ function ttsStop() {
     window.speechSynthesis && speechSynthesis.cancel();
     ttsPrefetchNext = null;
     ttsPlaying = false; ttsPaused = false; ttsIndex = 0;
+    if (rmTtsFlipTimer) { clearInterval(rmTtsFlipTimer); rmTtsFlipTimer = null; }
     ttsHighlight(null); ttsUpdateUI('stopped'); ttsStopKeepAlive();
     var bar = document.getElementById('ttsProgress');
     if (bar) bar.classList.remove('visible');
