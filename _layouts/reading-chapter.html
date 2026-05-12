@@ -1461,6 +1461,9 @@ function ttsPlayFrom(index) {
 }
 
 function ttsPlay() {
+    var _dbg = document.getElementById('rm-page-badge');
+    function _d(msg) { if (_dbg) _dbg.textContent = msg; }
+    _d('ttsPlay...');
     if (ttsPaused) {
         if (ttsCurrentAudio) {
             ttsCurrentAudio.play();
@@ -1469,9 +1472,12 @@ function ttsPlay() {
             ttsStartKeepAlive();
         }
         ttsPaused = false; ttsPlaying = true;
-        ttsUpdateUI('playing'); return;
+        ttsUpdateUI('playing'); _d('resumed'); return;
     }
+    _d('building chunks...');
     ttsChunks = ttsBuildChunks();
+    _d('chunks=' + ttsChunks.length);
+    if (ttsChunks.length === 0) { _d('NO CHUNKS!'); return; }
     var startIdx = 0;
     var curPg = window.rmGetCurPage ? window.rmGetCurPage() : -1;
     if (curPg >= 0 && ttsChunks.length > 0 && ttsChunks[0].pageIdx !== undefined) {
@@ -1479,7 +1485,9 @@ function ttsPlay() {
             if (ttsChunks[i].pageIdx >= curPg) { startIdx = i; break; }
         }
     }
+    _d('start=' + startIdx + ' pg=' + curPg);
     ttsPlayFrom(startIdx);
+    _d('playing idx=' + startIdx);
 }
 
 function ttsPause() {
