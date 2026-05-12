@@ -1233,21 +1233,16 @@ function ttsSetSpeed(val) {
 }
 
 function ttsBuildChunks() {
-    var _dbg = document.getElementById('rm-page-badge');
-    function _d(msg) { if (_dbg) _dbg.textContent = msg; }
     try {
     var overlay = document.getElementById('rm-overlay');
     var isRM = overlay && overlay.classList.contains('rm-active');
-    _d('isRM=' + isRM);
     // 快照阅读模式：从克隆内容中提取，按位置计算 pageIdx
     if (isRM) {
         var clone = document.querySelector('#rm-body .rm-snap-content');
-        _d('clone=' + !!clone);
         if (clone) {
             var pageH = window.innerHeight;
             var scale = typeof rmSnapScale !== 'undefined' ? rmSnapScale : 1;
             var nodes = clone.querySelectorAll('p, h3, li');
-            _d('nodes=' + nodes.length + ' s=' + scale.toFixed(2));
             var chunks = [];
             for (var i = 0; i < nodes.length; i++) {
                 var node = nodes[i];
@@ -1257,16 +1252,15 @@ function ttsBuildChunks() {
                 if (node.closest && node.closest('.inst-fn')) continue;
                 var text = (node.innerText || node.textContent || '').trim();
                 if (text.length > 0) {
-                    var pg = Math.floor(node.offsetTop * scale / pageH);
-                    chunks.push({ text: text, el: node, pageIdx: pg });
+                    var pgStart = Math.floor(node.offsetTop * scale / pageH);
+                    var pgEnd = Math.floor((node.offsetTop + node.offsetHeight) * scale / pageH);
+                    chunks.push({ text: text, el: node, pageIdx: pgStart, pageEnd: pgEnd });
                 }
             }
-            _d('rmChunks=' + chunks.length);
             if (chunks.length > 0) return chunks;
         }
     }
     var el = document.querySelector('#reading-col .reading-content');
-    _d('el=' + !!el);
     if (!el) return [];
     var nodes = el.querySelectorAll('p, h3, li');
     var chunks = [];
@@ -1283,7 +1277,7 @@ function ttsBuildChunks() {
         if (fallback) chunks.push({ text: fallback, el: el });
     }
     return chunks;
-    } catch(e) { _d('ERR:' + e.message); return []; }
+    } catch(e) { return []; }
 }
 
 function ttsHighlight(el) {
@@ -1470,9 +1464,6 @@ function ttsPlayFrom(index) {
 }
 
 function ttsPlay() {
-    var _dbg = document.getElementById('rm-page-badge');
-    function _d(msg) { if (_dbg) _dbg.textContent = msg; }
-    _d('ttsPlay...');
     if (ttsPaused) {
         if (ttsCurrentAudio) {
             ttsCurrentAudio.play();
@@ -1481,22 +1472,20 @@ function ttsPlay() {
             ttsStartKeepAlive();
         }
         ttsPaused = false; ttsPlaying = true;
-        ttsUpdateUI('playing'); _d('resumed'); return;
+        ttsUpdateUI('playing'); return;
     }
-    _d('building chunks...');
     ttsChunks = ttsBuildChunks();
-    _d('chunks=' + ttsChunks.length);
-    if (ttsChunks.length === 0) { _d('NO CHUNKS!'); return; }
+    if (ttsChunks.length === 0) return;
     var startIdx = 0;
     var curPg = window.rmGetCurPage ? window.rmGetCurPage() : -1;
     if (curPg >= 0 && ttsChunks.length > 0 && ttsChunks[0].pageIdx !== undefined) {
         for (var i = 0; i < ttsChunks.length; i++) {
-            if (ttsChunks[i].pageIdx >= curPg) { startIdx = i; break; }
+            var c = ttsChunks[i];
+            var covers = (c.pageEnd !== undefined) ? (c.pageIdx <= curPg && c.pageEnd >= curPg) : (c.pageIdx >= curPg);
+            if (covers) { startIdx = i; break; }
         }
     }
-    _d('start=' + startIdx + ' pg=' + curPg);
     ttsPlayFrom(startIdx);
-    _d('playing idx=' + startIdx);
 }
 
 function ttsPause() {
@@ -2081,9 +2070,11 @@ window.rmPagePrev = function() { if (rmCurPage > 0) { rmApplyPage(rmCurPage-1); 
 /* ── 手动翻页时 TTS 跟随到新页 ── */
 function rmTtsFollowPage() {
     if (!ttsPlaying || ttsPaused) return;
-    // 找到新页的第一个 chunk，跳转过去
+    // 找到覆盖当前页的第一个 chunk（段落可能跨页）
     for (var idx = 0; idx < ttsChunks.length; idx++) {
-        if (ttsChunks[idx].pageIdx === rmCurPage) {
+        var c = ttsChunks[idx];
+        var covers = (c.pageEnd !== undefined) ? (c.pageIdx <= rmCurPage && c.pageEnd >= rmCurPage) : (c.pageIdx === rmCurPage);
+        if (covers) {
             ttsGeneration++;
             var gen = ttsGeneration;
             if (ttsCurrentAudio) { ttsCurrentAudio.pause(); ttsCurrentAudio = null; }
