@@ -104,14 +104,17 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         line    = raw_line.rstrip()
         stripped = line.strip()
 
-        # 跳过章标题区域（前 10 行内探测）
+        # 跳过章标题区域：只跳过章标题行本身及其直接相连的续行
+        # 遇到空行即停止，防止误吞紧接章标题的分组标签
         if skip_header and skipped < 10:
             if re.match(r'^第[一二三四五六七八九十]+章', stripped):
                 skipped += 1; continue
-            if skipped > 0 and stripped and len(stripped) < 35 and not re.search(r'\d', stripped):
-                skipped += 1; continue  # 标题换行续行（纯中文短行）
-            elif skipped > 0 and not stripped:
-                skipped += 1; continue
+            if skipped > 0 and not stripped:
+                # 空行 = 章标题结束，后续内容不再跳过
+                skip_header = False
+                continue
+            if skipped > 0 and stripped and len(stripped) < 20 and not re.search(r'\d', stripped):
+                skipped += 1; continue  # 极短纯中文续行（真正的标题换行）
             elif skipped > 0:
                 skip_header = False
 
