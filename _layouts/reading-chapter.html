@@ -1980,7 +1980,7 @@ function ttsUpdateUI(state) {
         </div>
         <div class="rm-sheet-row rm-sheet-ch">
             <button id="rm-ch-prev-btn" onclick="rmChapterNav(-1)">&#8592; 上一章</button>
-            <span id="rm-page-label"></span>
+            <a id="rm-toc-btn" href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/">目录</a>
             <button id="rm-ch-next-btn" onclick="rmChapterNav(1)">下一章 &#8594;</button>
         </div>
         <div id="rm-pwa-hint" style="display:none;padding:8px 0 2px;text-align:center;">
@@ -2139,6 +2139,12 @@ function ttsUpdateUI(state) {
 }
 .rm-sheet-ch button:disabled { opacity: 0.25; cursor: default; }
 #rm-page-label { font-size: 12px; color: #888; flex: 1; text-align: center; }
+#rm-toc-btn {
+    background: rgba(184,134,11,0.12); border: 1px solid rgba(184,134,11,0.35);
+    border-radius: 4px; padding: 5px 12px;
+    font-size: 12px; color: #7a5c0a; font-weight: bold;
+    text-decoration: none; white-space: nowrap;
+}
 
 /* 退出按钮 */
 .rm-sheet-nav {
