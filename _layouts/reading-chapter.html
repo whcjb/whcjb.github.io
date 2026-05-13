@@ -1233,69 +1233,29 @@ function ttsSetSpeed(val) {
     }
 }
 
-/* 翻页后，用 caretRangeFromPoint 精确定位当前页顶部的字符偏移 */
-function rmGetCharAtPageTop(el) {
-    try {
-        var rect = el.getBoundingClientRect();
-        if (rect.top >= 2) return 0; // 元素在当前页内（顶部在视口内），从头读
-        // 元素顶部在视口上方，说明段落跨页且开始于上一页
-        var x = rect.left + Math.min(20, rect.width * 0.1 + 2);
-        var range = null;
-        if (document.caretRangeFromPoint) {
-            range = document.caretRangeFromPoint(x, 2);
-        } else if (document.caretPositionFromPoint) {
-            var pos = document.caretPositionFromPoint(x, 2);
-            if (pos) { range = document.createRange(); range.setStart(pos.offsetNode, pos.offset); }
-        }
-        if (!range || !el.contains(range.startContainer)) return 0;
-        var pre = document.createRange();
-        pre.selectNodeContents(el);
-        pre.setEnd(range.startContainer, range.startOffset);
-        return pre.toString().length;
-    } catch(e) { return 0; }
-}
-
 /* 将跨多页的 chunk 按页边界拆分，每个子 chunk pageIdx===pageEnd，触发精确自动翻页。
-   自管理 wrap 的 transition 和 transform，调用前后 wrap 保持原样。 */
-function splitChunkByPages(chunk, wrap, pageH) {
+   用 offsetTop × scale 按比例估算分割点，纯数学计算，无 DOM 操作，iOS 完全兼容。 */
+function splitChunkByPages(chunk, pageH) {
     if (!chunk.el || chunk.pageEnd <= chunk.pageIdx) return [chunk];
+    var scale = window.rmSnapScaleFn ? window.rmSnapScaleFn() : 1;
+    var elTop = chunk.el.offsetTop * scale;
+    var elH   = chunk.el.offsetHeight * scale;
+    if (elH <= 0) return [chunk];
 
-    // 保存并禁用 transition，恢复到 page 0 开始测量
-    var savedTransform  = wrap.style.transform;
-    var savedTransition = wrap.style.transition;
-    wrap.style.transition = 'none';
-    wrap.style.transform  = 'translateY(0)';
-    wrap.offsetHeight;
-
-    // 逐页边界收集字符偏移
-    var splits = [];
-    for (var p = chunk.pageIdx + 1; p <= chunk.pageEnd; p++) {
-        wrap.style.transform = 'translateY(-' + (p * pageH) + 'px)';
-        wrap.offsetHeight; // 强制回流以更新 getBoundingClientRect
-        var off = rmGetCharAtPageTop(chunk.el);
-        splits.push({ charOff: off, page: p });
-    }
-    // 恢复 wrap（先还原 transform，再开 transition）
-    wrap.style.transform = savedTransform;
-    wrap.offsetHeight;
-    wrap.style.transition = savedTransition;
-
-    // 根据收集到的分割点构建子 chunk
-    var results = [];
-    var prevOff = 0;
+    var results  = [];
+    var prevOff  = 0;
     var prevPage = chunk.pageIdx;
-    for (var i = 0; i < splits.length; i++) {
-        var off = splits[i].charOff;
-        var nextPage = splits[i].page;
-        if (off > prevOff && off < chunk.text.length) {
-            var sub = chunk.text.slice(prevOff, off).trim();
-            if (sub) results.push({ text: sub, el: chunk.el, pageIdx: prevPage, pageEnd: prevPage });
-            prevOff = off;
-            prevPage = nextPage;
-        } else if (off === 0 && prevOff === 0) {
-            // 元素实际从本页开始，修正起始页
-            prevPage = nextPage;
-        }
+
+    for (var p = chunk.pageIdx + 1; p <= chunk.pageEnd; p++) {
+        // 页边界 Y 在元素内的比例 → 对应字符偏移
+        var ratio = (p * pageH - elTop) / elH;
+        ratio = Math.max(0.01, Math.min(0.99, ratio));
+        var off = Math.round(ratio * chunk.text.length);
+        if (off <= prevOff || off >= chunk.text.length) continue;
+        var sub = chunk.text.slice(prevOff, off).trim();
+        if (sub) results.push({ text: sub, el: chunk.el, pageIdx: prevPage, pageEnd: prevPage });
+        prevOff  = off;
+        prevPage = p;
     }
     var last = chunk.text.slice(prevOff).trim();
     if (last) results.push({ text: last, el: chunk.el, pageIdx: prevPage, pageEnd: chunk.pageEnd });
@@ -1334,12 +1294,12 @@ function ttsBuildChunks() {
                 }
             }
 
-            // 拆分跨多页的长段（splitChunkByPages 自管理 wrap 状态）
+            // 拆分跨多页的长段（纯数学比例拆分，无需 wrap 操作）
             var expanded = [];
             for (var ci = 0; ci < chunks.length; ci++) {
                 var ch = chunks[ci];
                 if (ch.pageEnd > ch.pageIdx) {
-                    var subs = splitChunkByPages(ch, wrap, pageH);
+                    var subs = splitChunkByPages(ch, pageH);
                     for (var si = 0; si < subs.length; si++) expanded.push(subs[si]);
                 } else {
                     expanded.push(ch);
@@ -2217,12 +2177,19 @@ function rmTtsFollowPage() {
                 speechSynthesis.speak(unlock);
             }
             ttsIndex = idx;
-            // 若段落跨页且开始于上一页，用 caretRangeFromPoint 精确定位当前页首字
+            // 若 chunk 起始于早于当前页（拆分不完全时），用比例估算当前页首字偏移
             var playText = c.text;
-            if (c.el && c.pageIdx !== undefined && c.pageIdx < rmCurPage) {
-                var charOff = rmGetCharAtPageTop(c.el);
-                if (charOff > 0 && charOff < c.text.length) {
-                    playText = c.text.slice(charOff).trim();
+            if (c.el && c.pageIdx !== undefined && c.pageIdx < rmCurPage && window.rmSnapScaleFn) {
+                var sc2   = window.rmSnapScaleFn();
+                var eTop2 = c.el.offsetTop * sc2;
+                var eH2   = c.el.offsetHeight * sc2;
+                if (eH2 > 0) {
+                    var ratio2  = (rmCurPage * window.innerHeight - eTop2) / eH2;
+                    ratio2 = Math.max(0, Math.min(0.99, ratio2));
+                    var charOff = Math.round(ratio2 * c.text.length);
+                    if (charOff > 0 && charOff < c.text.length) {
+                        playText = c.text.slice(charOff).trim();
+                    }
                 }
             }
             (function(targetIdx, targetGen, txt) {
