@@ -807,33 +807,62 @@ sup.fn-ref a:hover { text-decoration: underline; }
 }
 /* 分组标签折叠块 */
 .institutes-content details.inst-group {
-    margin: 48px 0 0;
+    margin: 52px 0 0;
 }
 .institutes-content details.inst-group > summary {
-    text-align: center;
-    font-size: 1.15em;
-    font-weight: bold;
-    color: #1a1a1a;
-    line-height: 1.8;
-    letter-spacing: 0.03em;
+    display: flex;
+    align-items: center;
+    gap: 14px;
     cursor: pointer;
     list-style: none;
-    padding: 8px 0 10px;
-    border-bottom: 1px solid #d0d8e0;
-    margin-bottom: 8px;
     user-select: none;
+    padding: 6px 0 22px;
+    border-bottom: 1px solid rgba(184,134,11,0.18);
+    outline: none;
 }
-.institutes-content details.inst-group > summary::-webkit-details-marker {
-    display: none;
+.institutes-content details.inst-group > summary::-webkit-details-marker { display: none; }
+/* 两侧装饰线 */
+.institutes-content details.inst-group > summary::before,
+.institutes-content details.inst-group > summary::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(184,134,11,0.45));
 }
 .institutes-content details.inst-group > summary::after {
-    content: ' ▾';
-    font-size: 0.75em;
-    color: #999;
-    font-weight: normal;
+    background: linear-gradient(to left, transparent, rgba(184,134,11,0.45));
 }
-.institutes-content details.inst-group:not([open]) > summary::after {
-    content: ' ▸';
+/* 中间文字区 */
+.institutes-content details.inst-group > summary .g-body {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    max-width: 80%;
+}
+.institutes-content details.inst-group > summary .g-text {
+    font-size: 1.08em;
+    font-weight: bold;
+    color: #1a2e4a;
+    letter-spacing: 0.04em;
+    line-height: 1.7;
+    text-align: center;
+    transition: color 0.18s;
+}
+.institutes-content details.inst-group > summary:hover .g-text {
+    color: #8b6208;
+}
+/* 折叠箭头 */
+.institutes-content details.inst-group > summary .g-arrow {
+    display: inline-block;
+    font-size: 0.6em;
+    color: rgba(184,134,11,0.75);
+    font-weight: normal;
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+}
+.institutes-content details.inst-group[open] > summary .g-arrow {
+    transform: rotate(90deg);
 }
 /* 版本标记（b/c/e 开头的段落内小字上标） */
 .institutes-content .ver-mark {
@@ -954,7 +983,12 @@ a.fn-backref:hover {
         details.open = true;
 
         var summary = document.createElement('summary');
-        summary.textContent = t;
+        var gBody  = document.createElement('span'); gBody.className  = 'g-body';
+        var gText  = document.createElement('span'); gText.className  = 'g-text';  gText.textContent = t;
+        var gArrow = document.createElement('span'); gArrow.className = 'g-arrow'; gArrow.textContent = '▶';
+        gBody.appendChild(gText);
+        gBody.appendChild(gArrow);
+        summary.appendChild(gBody);
         details.appendChild(summary);
 
         children.forEach(function(node) {
