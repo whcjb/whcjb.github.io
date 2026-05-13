@@ -1035,11 +1035,14 @@ a.fn-backref:hover {
           return before + '<span class="ver-mark">' + letter + '</span>';
         });
       }
-      /* 圆圈数字 → 上标链接 */
+      /* 圆圈数字 → 上标链接（首次出现加锚点 id 供反向跳转） */
       circled.forEach(function(ch){
         if (fnMap[ch]){
+          var first = true;
           html = html.replace(new RegExp(ch, 'g'), function(){
-            return '<sup class="inst-fn-ref"><a href="#' + fnMap[ch].id + '">' + ch + '</a></sup>';
+            var refId = first ? ' id="' + fnMap[ch].id + '-ref"' : '';
+            first = false;
+            return '<sup class="inst-fn-ref"' + refId + '><a href="#' + fnMap[ch].id + '">' + ch + '</a></sup>';
           });
         }
       });
@@ -1058,7 +1061,7 @@ a.fn-backref:hover {
       var item = document.createElement('div');
       item.className = 'inst-fn-item';
       item.id = fn.id;
-      item.innerHTML = '<span class="inst-fn-num">' + fn.char + '</span><span class="inst-fn-text">' + fn.html + '</span>';
+      item.innerHTML = '<span class="inst-fn-num"><a href="#' + fn.id + '-ref" class="fn-backref" title="返回正文">' + fn.char + '</a></span><span class="inst-fn-text">' + fn.html + '</span>';
       section.appendChild(item);
     });
 
