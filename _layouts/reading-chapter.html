@@ -805,15 +805,35 @@ sup.fn-ref a:hover { text-decoration: underline; }
     margin-bottom: 1.1em;
     text-indent: 2em;
 }
-/* 分组标签：h4，居中粗体，介于章标题(h2)和节标题(h3)之间 */
-.institutes-content h4.inst-group-label {
+/* 分组标签折叠块 */
+.institutes-content details.inst-group {
+    margin: 48px 0 0;
+}
+.institutes-content details.inst-group > summary {
     text-align: center;
     font-size: 1.15em;
     font-weight: bold;
     color: #1a1a1a;
-    margin: 48px 0 16px;
     line-height: 1.8;
     letter-spacing: 0.03em;
+    cursor: pointer;
+    list-style: none;
+    padding: 8px 0 10px;
+    border-bottom: 1px solid #d0d8e0;
+    margin-bottom: 8px;
+    user-select: none;
+}
+.institutes-content details.inst-group > summary::-webkit-details-marker {
+    display: none;
+}
+.institutes-content details.inst-group > summary::after {
+    content: ' ▾';
+    font-size: 0.75em;
+    color: #999;
+    font-weight: normal;
+}
+.institutes-content details.inst-group:not([open]) > summary::after {
+    content: ' ▸';
 }
 /* 版本标记（b/c/e 开头的段落内小字上标） */
 .institutes-content .ver-mark {
@@ -904,17 +924,44 @@ a.fn-backref:hover {
     var content = document.querySelector('.reading-content');
     if (!content) return;
 
-    /* ── 分组标签检测：段落以 text（数字—数字） 结尾，替换为 h4 ── */
+    /* ── 分组标签：<p> text（n—m）→ <details open><summary> 包含范围内所有节 ── */
     if (content.classList.contains('institutes-content')) {
       var groupLabelRe = /^.{1,80}（\d+[–—\-]\d+）$/;
-      content.querySelectorAll('p').forEach(function(p) {
+      /* 先收集所有分组标签 p，避免边改边遍历 */
+      var labelParas = Array.from(content.querySelectorAll('p')).filter(function(p) {
+        return groupLabelRe.test(p.textContent.trim());
+      });
+
+      labelParas.forEach(function(p) {
         var t = p.textContent.trim();
-        if (groupLabelRe.test(t)) {
-          var h4 = document.createElement('h4');
-          h4.className = 'inst-group-label';
-          h4.textContent = t;
-          p.parentNode.replaceChild(h4, p);
+
+        /* 收集 p 之后、直到下一个分组标签 p 或 h2 之前的所有兄弟节点 */
+        var children = [];
+        var cur = p.nextSibling;
+        while (cur) {
+          if (cur.nodeType === 1) { /* Element */
+            var tag = cur.tagName;
+            if (tag === 'H2') break;
+            if (tag === 'P' && groupLabelRe.test(cur.textContent.trim())) break;
+          }
+          children.push(cur);
+          cur = cur.nextSibling;
         }
+
+        /* 构建 <details open> */
+        var details = document.createElement('details');
+        details.className = 'inst-group';
+        details.open = true;
+
+        var summary = document.createElement('summary');
+        summary.textContent = t;
+        details.appendChild(summary);
+
+        children.forEach(function(node) {
+          details.appendChild(node); /* 移动节点 */
+        });
+
+        p.parentNode.replaceChild(details, p);
       });
     }
 
