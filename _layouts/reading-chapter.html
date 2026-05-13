@@ -190,8 +190,12 @@ layout: default
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
-{% if page.author_id == "lu" or page.book_id == "institutes" %}
+{% if page.author_id == "lu" %}
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+{% endif %}
+{% if page.book_id == "institutes" %}
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@5.0.15/300.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@5.0.15/400.css" rel="stylesheet">
 {% endif %}
 <style>
 #reading-col {
@@ -770,14 +774,15 @@ sup.fn-ref a:hover { text-decoration: underline; }
 <style>
 /* ── 基督教要义专用样式 ── */
 .reading-content.institutes-content {
-    font-family: 'LXGW WenKai', 'STKaiti', 'KaiTi', '楷体', serif;
+    font-family: 'Noto Serif SC', 'STSong', '宋体', serif;
+    font-weight: 300;
     font-size: var(--reading-font-size, 15.5px);
 }
 /* 章内大标题（内文中的 ## 标题，非页头） */
 .institutes-content h2 {
-    font-family: 'ZCOOL XiaoWei', 'LXGW WenKai', serif;
-    font-size: 1.12em;
+    font-family: 'ZCOOL XiaoWei', 'Noto Serif SC', serif;
     font-weight: normal;
+    font-size: 1.12em;
     color: #1a2e4a;
     text-align: left;
     text-indent: 0 !important;
@@ -790,7 +795,8 @@ sup.fn-ref a:hover { text-decoration: underline; }
 .institutes-content h2:first-of-type { margin-top: 4px; }
 /* 节标题：### 1. ... */
 .institutes-content h3 {
-    font-family: 'LXGW WenKai', serif;
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 400;
     font-size: 0.98em;
     font-weight: bold;
     color: #1a2e4a;
@@ -916,7 +922,8 @@ sup.inst-fn-ref a:hover { text-decoration: underline; }
     align-items: baseline;
     margin-bottom: 8px;
     font-size: 0.77em;
-    font-family: 'LXGW WenKai', 'STKaiti', serif;
+    font-family: 'Noto Serif SC', 'STSong', serif;
+    font-weight: 300;
     color: #666;
     line-height: 1.68;
     padding: 5px 8px 5px 6px;
