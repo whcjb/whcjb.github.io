@@ -252,13 +252,20 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         prev_blank = False
 
         if is_group_label(line):
-            # 检查前一非空行是否是本标签的第一行（以、或，结尾，且自身不含页码范围）
+            # 检查前一非空行是否是本标签的前半截（不以句末标点结尾，且自身不是标签/节标题）
             prev_idx = len(out) - 1
             while prev_idx >= 0 and not out[prev_idx].strip():
                 prev_idx -= 1
-            if prev_idx >= 0 and out[prev_idx].strip().endswith(('、', '，', ',')):
+            if prev_idx >= 0:
                 prev_line = out[prev_idx].strip()
-                if not is_group_label(prev_line):
+                # 去掉行末带圈标号后取末字
+                prev_core = prev_line
+                while prev_core and prev_core[-1] in CIRCLED_SET:
+                    prev_core = prev_core[:-1].rstrip()
+                prev_last = prev_core[-1] if prev_core else ''
+                if (prev_last and prev_last not in SENTENCE_END
+                        and not is_group_label(prev_line)
+                        and not re.match(r'^###', prev_line)):
                     merged = prev_line + line
                     out = out[:prev_idx]
                     while out and not out[-1].strip():
