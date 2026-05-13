@@ -218,12 +218,12 @@ def load_pages(ocr_dir: Path, start: int, end: int
     result = body_pages[0]
     for page_text in body_pages[1:]:
         last_char = _last_body_char(result)
-        if last_char and last_char not in SENTENCE_END:
-            first_nl = page_text.find('\n')
-            if first_nl == -1:
-                first_line, rest = page_text, ''
-            else:
-                first_line, rest = page_text[:first_nl], page_text[first_nl:]
+        first_nl = page_text.find('\n')
+        first_line = page_text[:first_nl] if first_nl != -1 else page_text
+        rest       = page_text[first_nl:] if first_nl != -1 else ''
+        # 若下一页首行是节标题（数字+点），不拼接，直接换行
+        next_is_heading = bool(re.match(r'^\d+[.．]\s+\S', first_line.strip()))
+        if last_char and last_char not in SENTENCE_END and not next_is_heading:
             result = _append_to_last_body(result, first_line.lstrip()) + rest
         else:
             result = result + '\n' + page_text

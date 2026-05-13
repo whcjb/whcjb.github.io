@@ -9,7 +9,7 @@ section_title: "第四卷·第三章"
 chapter_title: "教会教师和牧师的资格及其职分"
 volume: 4
 chapter: 3
-date: 2026-05-13 17:34
+date: 2026-05-13 18:18
 ---
 
 ## 第三章 教会教师和牧师的资格及其职分
