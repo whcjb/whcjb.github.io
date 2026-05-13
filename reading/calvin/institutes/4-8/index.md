@@ -162,7 +162,7 @@ Cf. II. xi. 4-6, 11, 14.Cf. H. Quistorp, Calvin’s Doctrine of the Last Things,
 
 见L. Goumaz, La Doctrine du salut d’après les commentaries de Jean Calvin sur leNouveau Testament, pp. 26, 81 f.; E. A. Dowey, The Knowledge of God in Calvin’sTheology, pp. 90 ff.; W. Niesel, The Theology of Calvin, pp. 31-36; J. K. S. Reid,The Authority of Scripture, pp. 44, 53 ff.; J. T. McNeill, “The Significance ofthe Word of God for Calvin,” Church History XXVIII (1959), 140-145.127是我们众人所当留意的普遍性的准则﹕神禁止人捏造新的教义，好让祂自己能做惟一教导我们教义的师傅，因惟有神才是真实（罗三4），绝不能说谎的。并且这准则包括各信徒以及整个教会。
 
-（我们弃绝一切在圣经之外对无谬教义的宣称，10-16）
+我们弃绝一切在圣经之外对无谬教义的宣称（10-16）
 
 10.
 
@@ -306,7 +306,7 @@ IV. xviCochlaeus, De authoritate ecclesiae I. iv, fo. B 4.Cf. I. xiii. 5.“Nati
 
 会议以及会议的权威
 
-（教会会议真正的权威，1-2）
+教会会议真正的权威（1-2）
 
 1.
 

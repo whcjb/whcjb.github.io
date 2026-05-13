@@ -84,7 +84,7 @@ Aquinas, Summa Theol. III, Suppl. xxi. 2; xxv. 2; J. Faber, Malleus in HaeresimL
 
 因此，虽然保罗在另一处经文教导教会没有审判教外人的权柄（林前五12），但他却教导一切属于教会的人都伏在教会的斥责和管教之下，他同时也Ambrose, Sermon Against Auxentius… on Yielding the Milan Basilica  xxxvi (MPL16. 1018; tr. NPNF 2 ser. X. 436); cf. IV. xii. 7.Calvin 認為政府應由一些人組成而不是一個人獨裁，這在之前己提及IV. iii. 15. Cf.IV. iv. 10, 11 and esp. IV. xx. 8.177暗示当时众信徒毫不例外的都伏在某些处罚的方式之下。
 
-（其权柄的滥用出自于监督毫无根据的抢夺权利，6—10）
+其权柄的滥用出自于监督毫无根据的抢夺权利（6—10）
 
 6.
 
@@ -178,7 +178,7 @@ Cyprian, Letters xvi. 2; xvii. 2; xiv. 4 (CSEL 3. ii. 518, 522, 512; tr. ANF [le
 
 因他们若有丝毫使徒的精神，就必定引用保罗的话这样宣告﹕「我们争战的兵器本不是属血气的，乃是在神面前有能力」（林后十4）。但出于自己盲目的贪心，这些监督毁坏了自己、自己的继承人、以及整个教会。
 
-（天主教徒过分和虚假的宣称以及他对世俗权柄的推翻，11—16）
+天主教徒过分和虚假的宣称以及他对世俗权柄的推翻（11—16）
 
 11.
 

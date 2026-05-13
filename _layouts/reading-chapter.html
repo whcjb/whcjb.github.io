@@ -805,6 +805,16 @@ sup.fn-ref a:hover { text-decoration: underline; }
     margin-bottom: 1.1em;
     text-indent: 2em;
 }
+/* 分组标签：text（n—m） */
+.institutes-content p.inst-group-label {
+    text-indent: 0 !important;
+    font-size: 0.88em;
+    color: #5a6a80;
+    font-style: italic;
+    margin: 28px 0 4px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
 /* 版本标记（b/c/e 开头的段落内小字上标） */
 .institutes-content .ver-mark {
     font-size: 0.65em;
@@ -893,6 +903,17 @@ a.fn-backref:hover {
   document.addEventListener('DOMContentLoaded', function(){
     var content = document.querySelector('.reading-content');
     if (!content) return;
+
+    /* ── 分组标签检测：段落以 text（数字—数字） 结尾，且较短 ── */
+    if (content.classList.contains('institutes-content')) {
+      var groupLabelRe = /^.{1,60}（\d+[–—\-]\d+）$/;
+      content.querySelectorAll('p').forEach(function(p) {
+        var t = p.textContent.trim();
+        if (groupLabelRe.test(t)) {
+          p.classList.add('inst-group-label');
+        }
+      });
+    }
 
     var circled = ['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩',
                    '⑪','⑫','⑬','⑭','⑮','⑯','⑰','⑱','⑲','⑳'];
