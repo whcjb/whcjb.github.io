@@ -65,13 +65,37 @@ VOLUME_TITLES = {
 
 # ── 工具函数 ──────────────────────────────────────────────────────────────────
 
+SENTENCE_END = set('。！？…""』）')
+
 def load_pages(ocr_dir: Path, start: int, end: int) -> str:
-    texts = []
+    """拼合多页 OCR 文本，自动修复跨页断句。
+
+    若上一页末行不以句末标点结尾，则与下一页首行直接拼接（无换行），
+    避免正文句子被页边界切断成两个段落。
+    """
+    pages = []
     for p in range(start, end + 1):
         f = ocr_dir / f"page_{p:04d}.txt"
         if f.exists():
-            texts.append(f.read_text(encoding="utf-8").strip())
-    return "\n".join(texts)
+            pages.append(f.read_text(encoding="utf-8").strip())
+
+    if not pages:
+        return ""
+
+    result = pages[0]
+    for page_text in pages[1:]:
+        # 取上一页最后非空字符，判断是否句子完结
+        last_char = result.rstrip()[-1] if result.rstrip() else ''
+        if last_char and last_char not in SENTENCE_END:
+            # 跨页断句：去掉尾部换行，直接拼接下一页首行
+            first_line_end = page_text.find('\n')
+            if first_line_end == -1:
+                result = result.rstrip('\n') + page_text
+            else:
+                result = result.rstrip('\n') + page_text[:first_line_end] + '\n' + page_text[first_line_end+1:]
+        else:
+            result = result + '\n' + page_text
+    return result
 
 def is_footnote_para(line: str) -> bool:
     s = line.strip()
