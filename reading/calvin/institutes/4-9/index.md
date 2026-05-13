@@ -9,7 +9,7 @@ section_title: "第四卷·第九章"
 chapter_title: "会议以及会议的权威"
 volume: 4
 chapter: 9
-date: 2026-05-13 18:18
+date: 2026-05-13 18:26
 ---
 
 ## 第九章 会议以及会议的权威

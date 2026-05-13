@@ -114,13 +114,17 @@ SENTENCE_END = set('。！？…""』）')
 
 def _last_body_char(text: str) -> str:
     """返回文本中最后一行正文的末字（忽略行末带圈脚注标号）。
-    节标题行（数字+点开头）视为完整，返回 '。' 阻止跨页拼接。"""
+    节标题行（数字+点开头）视为完整，返回 '。' 阻止跨页拼接。
+    真正的脚注行（圆圈开头且非长中文正文）跳过，继续向上查找。"""
     for line in reversed(text.split('\n')):
         s = line.strip()
         if not s:
             continue
         if re.match(r'^\d+[.．]\s*\S', s):   # 节标题行，视为完整
             return '。'
+        # 真正的脚注行跳过（找上方的正文行）
+        if s[0] in CIRCLED_SET and is_footnote_para(s):
+            continue
         # 去掉行末带圈标号后取末字
         core = s.rstrip()
         while core and core[-1] in CIRCLED_SET:
@@ -129,13 +133,18 @@ def _last_body_char(text: str) -> str:
     return ''
 
 def _append_to_last_body(text: str, addition: str) -> str:
-    """将 addition 拼接到 text 最后一行正文行的末尾。"""
+    """将 addition 拼接到 text 最后一行正文行的末尾。
+    跳过真正的脚注行（圆圈开头但内容短/非中文），保留正文版本标记行。"""
     lines = text.split('\n')
     for i in range(len(lines) - 1, -1, -1):
         s = lines[i].strip()
-        if s and s[0] not in CIRCLED_SET:
-            lines[i] = lines[i].rstrip() + addition
-            return '\n'.join(lines)
+        if not s:
+            continue
+        # 跳过真正的脚注行（圆圈开头且不是长中文正文）
+        if s[0] in CIRCLED_SET and is_footnote_para(s):
+            continue
+        lines[i] = lines[i].rstrip() + addition
+        return '\n'.join(lines)
     return text + addition
 
 def _extract_page_parts(page_text: str) -> tuple[str, list[tuple[str, str]]]:
@@ -230,8 +239,17 @@ def load_pages(ocr_dir: Path, start: int, end: int
     return result, all_footnotes
 
 def is_footnote_para(line: str) -> bool:
+    """判断是否为脚注行（圆圈数字开头）。
+    若圆圈后跟中文正文（>20字且中文率>68%），视为正文版本标记，非脚注。"""
     s = line.strip()
-    return bool(s) and s[0] in CIRCLED_SET
+    if not s or s[0] not in CIRCLED_SET:
+        return False
+    rest = s[1:].strip()
+    if len(rest) > 20:
+        cn_ratio = sum(1 for c in rest if '\u4e00' <= c <= '\u9fff') / len(rest)
+        if cn_ratio > 0.68:
+            return False
+    return True
 
 def is_group_label(line: str) -> bool:
     s = line.strip()
