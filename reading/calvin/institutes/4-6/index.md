@@ -9,13 +9,10 @@ section_title: "第四卷·第六章"
 chapter_title: "罗马教区的首要性"
 volume: 4
 chapter: 6
-date: 2026-05-13 15:51
+date: 2026-05-13 15:57
 ---
 
 ## 第六章 罗马教区的首要性
-
-° 第六章 罗马教区的首要性①
-
 
 对彼得为首位教皇的反驳（1—7）
 
@@ -195,21 +192,6 @@ b 然而，当我们的仇敌企图因此将罗马称为首要教区，并将她
 合一的监督职分唯有在基督手中，并且各监督都各得其所，那么罗马首要教区的教导有何根据呢？我在上面所引用的话，都是需要为读者们证
 明天主教徒和世人毫无疑问的原则，即教阶制度的合一都来自一位地上的元首，这与教父的教导截然不同。
 
-
-罗马教区在古时候只有一般的地位（1—4）
-
-
-
-### 1. 尼西亚和以弗所大公会议对于罗马教区地位的教导*
-
-
-至于罗马首要教区的教导，在尼西亚会议之前，这教导没有记录。
-这会议决定罗马主教的权威在众主教之上，他在那时也被吩咐管理一切
-市外的教会。㉝当这会议做这样的区分，并非给各主教他所统治的地区
-时，并没有将他设立在众主教之上，而是吩咐他做其中一位负责人。维
-多（Vitus）和文森提乌（Vincentius）当时做朱利乌（Julius）的代理人，
-朱利乌当时正统治罗马教会。当时这会议所分给他们的地位，在其他三
-
 <div class="inst-fn">① 加尔文在 Acts of the Council of Trent with the Antidote (1547) 中讨论过这个问题。在 CR VII.365 ff. 的序言里，以及其他地方也常谈及。</div>
 <div class="inst-fn">② Thomas de Vio Caietanus, De divina institutione pontificatus Romani pontifici (1521)，第二章，将“你是彼得”（太16：18）译为“Tu es Petrus, tu, non vos, ut unitas fundamenti ecclesiae, unitas quoque personalis, intelligatur”（CC 10.12，参阅 ch.5，p.43）；Cochlaeus, Philippicae quatuor（1534）IV.35；Latomus, Adversus M. Bucerum…altera defensio（1544）（CC 8.73，154 f.）。</div>
 <div class="inst-fn">③ Eck, De primate Petri（1520）II 27，fo.30a。</div>
@@ -242,4 +224,3 @@ b 然而，当我们的仇敌企图因此将罗马称为首要教区，并将她
 <div class="inst-fn">㉚ 在《基督教要义》中并不存在任何种族上的偏见。前面的几句话要归于奥古斯丁的 Letters 43.7，209.8，9 (MPL 33.163，955 f.，tr. FC 12.187)。</div>
 <div class="inst-fn">㉛ Jerome, Letters 125.15 (CSEL 56.133，tr. NPNF 2 ser. III 249)。“Nepotian”这个名字应改为“Rusticus”。他是一位修士。</div>
 <div class="inst-fn">㉜ Cyprian, On the Unity of the Catholic Church III, 5, 6 (CSEL 3.1.212, 214; tr. LCC V. 125–128).</div>
-<div class="inst-fn">㉝ 尼西亚会议（325）文献 6（Mansi II. 670 f.；Fulton，Index canonum，pp. 124 f.；tr. Schroeder，Disciplinary Canons，pp. 29 ff.）“Julius”是有误的，当时的教皇是西尔维斯特一世（Silvester I）（314— 335）。E. Giles，Documents Illustrating Papal Authority，A. D. 96—454，这资料通常可以使用它来查 阅此章中某些相关文件的论点。</div>
