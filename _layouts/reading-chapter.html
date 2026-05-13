@@ -805,15 +805,15 @@ sup.fn-ref a:hover { text-decoration: underline; }
     margin-bottom: 1.1em;
     text-indent: 2em;
 }
-/* 分组标签：text（n—m）居中粗体，与原书排版一致 */
-.institutes-content p.inst-group-label {
-    text-indent: 0 !important;
+/* 分组标签：h4，居中粗体，介于章标题(h2)和节标题(h3)之间 */
+.institutes-content h4.inst-group-label {
     text-align: center;
-    font-size: 1.05em;
+    font-size: 1.15em;
     font-weight: bold;
-    color: #2c2c2c;
-    margin: 36px 0 12px;
-    line-height: 1.7;
+    color: #1a1a1a;
+    margin: 48px 0 16px;
+    line-height: 1.8;
+    letter-spacing: 0.03em;
 }
 /* 版本标记（b/c/e 开头的段落内小字上标） */
 .institutes-content .ver-mark {
@@ -904,13 +904,16 @@ a.fn-backref:hover {
     var content = document.querySelector('.reading-content');
     if (!content) return;
 
-    /* ── 分组标签检测：段落以 text（数字—数字） 结尾，且较短 ── */
+    /* ── 分组标签检测：段落以 text（数字—数字） 结尾，替换为 h4 ── */
     if (content.classList.contains('institutes-content')) {
-      var groupLabelRe = /^.{1,60}（\d+[–—\-]\d+）$/;
+      var groupLabelRe = /^.{1,80}（\d+[–—\-]\d+）$/;
       content.querySelectorAll('p').forEach(function(p) {
         var t = p.textContent.trim();
         if (groupLabelRe.test(t)) {
-          p.classList.add('inst-group-label');
+          var h4 = document.createElement('h4');
+          h4.className = 'inst-group-label';
+          h4.textContent = t;
+          p.parentNode.replaceChild(h4, p);
         }
       });
     }
