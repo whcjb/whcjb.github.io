@@ -1040,8 +1040,10 @@ a.fn-backref:hover {
     /* 2. 正文段落/标题中的圆圈数字改为上标跳转链接 */
     content.querySelectorAll('p, h2, h3, li').forEach(function(el){
       var html = el.innerHTML;
-      /* institutes 专用：版本标记（b/c/e/d 开头） */
+      /* institutes 专用：版本标记（b/c/e/d 开头，或圆圈数字开头） */
       if (el.tagName === 'P' && content.classList.contains('institutes-content')){
+        /* 圆圈数字版本标记（②③④⑤ 开头）直接去掉，不显示 */
+        html = html.replace(/^[\u2460-\u2473\u3251-\u32BF]\s+/, '');
         html = html.replace(/^([ebcd])\s+(\([a-z/]+\)\s*)?/, function(m, letter, sub){
           return '<span class="ver-mark">' + letter + (sub ? sub.trim() : '') + '</span> ';
         });
@@ -2382,15 +2384,9 @@ window.rmEnter = function() {
     rmSrcEl = document.querySelector('#reading-col .reading-content');
     if (!rmSrcEl) return;
 
-    // 找第一个在视口内可见的子元素，记录其在 srcEl 内的 offsetTop（内容坐标）
-    var srcChildren = Array.prototype.slice.call(rmSrcEl.children);
-    var targetOffsetTop = 0;
-    for (var ci = 0; ci < srcChildren.length; ci++) {
-        if (srcChildren[ci].getBoundingClientRect().bottom > 0) {
-            targetOffsetTop = srcChildren[ci].offsetTop;
-            break;
-        }
-    }
+    // 计算视口顶部在内容中的精确偏移量（像素）
+    var srcRect = rmSrcEl.getBoundingClientRect();
+    var targetOffsetTop = Math.max(0, -srcRect.top);
 
     var bgColor = getComputedStyle(document.documentElement)
         .getPropertyValue('--reading-bg-color').trim() || '#C7EDCC';
