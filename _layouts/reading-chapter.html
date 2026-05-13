@@ -190,7 +190,7 @@ layout: default
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+TC:wght@300;400&display=swap" rel="stylesheet">
-{% if page.author_id == "lu" %}
+{% if page.author_id == "lu" or page.book_id == "institutes" %}
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
 {% endif %}
 <style>
@@ -770,13 +770,14 @@ sup.fn-ref a:hover { text-decoration: underline; }
 <style>
 /* ── 基督教要义专用样式 ── */
 .reading-content.institutes-content {
-    font-family: "STSong", "SimSun", "宋体", serif;
-    font-size: var(--reading-font-size, 15px);
+    font-family: 'LXGW WenKai', 'STKaiti', 'KaiTi', '楷体', serif;
+    font-size: var(--reading-font-size, 15.5px);
 }
 /* 章内大标题（内文中的 ## 标题，非页头） */
 .institutes-content h2 {
-    font-size: 1.05em;
-    font-weight: bold;
+    font-family: 'ZCOOL XiaoWei', 'LXGW WenKai', serif;
+    font-size: 1.12em;
+    font-weight: normal;
     color: #1a2e4a;
     text-align: left;
     text-indent: 0 !important;
@@ -784,12 +785,13 @@ sup.fn-ref a:hover { text-decoration: underline; }
     padding: 0 0 8px;
     border-bottom: 1px solid #c8d0dc;
     line-height: 1.7;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.06em;
 }
 .institutes-content h2:first-of-type { margin-top: 4px; }
 /* 节标题：### 1. ... */
 .institutes-content h3 {
-    font-size: 0.96em;
+    font-family: 'LXGW WenKai', serif;
+    font-size: 0.98em;
     font-weight: bold;
     color: #1a2e4a;
     text-indent: 0 !important;
@@ -801,7 +803,7 @@ sup.fn-ref a:hover { text-decoration: underline; }
 }
 /* 正文段落 */
 .institutes-content p {
-    line-height: 2.0;
+    line-height: 2.1;
     margin-bottom: 1.1em;
     text-indent: 2em;
 }
@@ -914,6 +916,7 @@ sup.inst-fn-ref a:hover { text-decoration: underline; }
     align-items: baseline;
     margin-bottom: 8px;
     font-size: 0.77em;
+    font-family: 'LXGW WenKai', 'STKaiti', serif;
     color: #666;
     line-height: 1.68;
     padding: 5px 8px 5px 6px;
