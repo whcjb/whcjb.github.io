@@ -69,10 +69,13 @@ SENTENCE_END = set('。！？…""』）')
 
 def _last_body_char(text: str) -> str:
     """返回文本中最后一行正文（非脚注行）的末字。
-    脚注行以带圈数字开头，跳过它们。"""
+    脚注行以带圈数字开头，跳过它们。
+    节标题行（数字+点开头）视为完整，返回 '。' 阻止跨页拼接。"""
     for line in reversed(text.split('\n')):
         s = line.strip()
         if s and s[0] not in CIRCLED_SET:
+            if re.match(r'^\d+[.．]\s*\S', s):   # 节标题行，视为完整
+                return '。'
             return s[-1]
     return ''
 
@@ -219,6 +222,33 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
     # 去掉首尾空行
     while out and not out[0].strip():  out.pop(0)
     while out and not out[-1].strip(): out.pop()
+
+    # 后处理：合并被空行误断的跨页句子
+    # 若某行不以句末标点结尾，且紧跟空行+普通正文（非标题/分组标签），则去掉空行
+    fixed: list[str] = []
+    i = 0
+    while i < len(out):
+        line = out[i]
+        if (line == '' and fixed and i + 1 < len(out)):
+            prev = fixed[-1].strip()
+            nxt  = out[i + 1].strip()
+            # 判断前行末字（忽略脚注标号）
+            tmp = prev
+            while tmp and tmp[-1] in CIRCLED_SET: tmp = tmp[:-1].rstrip()
+            last = tmp[-1] if tmp else ''
+            is_continuation = (
+                last and last not in SENTENCE_END
+                and not re.match(r'^[#<]|^---', nxt)
+                and not is_group_label(nxt)
+                and not re.match(r'^\d+[.．]\s', nxt)
+                and nxt  # 下一行非空
+            )
+            if is_continuation:
+                i += 1  # 跳过这个空行
+                continue
+        fixed.append(line)
+        i += 1
+    out = fixed
 
     # 脚注 HTML
     fn_html = []
