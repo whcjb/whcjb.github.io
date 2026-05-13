@@ -22,7 +22,7 @@ from datetime import datetime
 SITE_DIR = Path(__file__).parent.parent
 OUT_DIR  = SITE_DIR / "reading/calvin/institutes"
 
-CIRCLED     = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚"
+CIRCLED     = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿"
 CIRCLED_SET = set(CIRCLED)
 NUMS_ZH     = ["一","二","三","四","五","六","七","八","九","十",
                "十一","十二","十三","十四","十五","十六","十七","十八","十九","二十"]
@@ -79,7 +79,7 @@ VOLUME_TITLES = {
 SENTENCE_END = set('。！？…""』）')
 
 def _last_body_char(text: str) -> str:
-    """返回文本中最后一行正文的末字（忽略行末脚注上标）。
+    """返回文本中最后一行正文的末字（忽略行末带圈脚注标号）。
     节标题行（数字+点开头）视为完整，返回 '。' 阻止跨页拼接。"""
     for line in reversed(text.split('\n')):
         s = line.strip()
@@ -87,11 +87,11 @@ def _last_body_char(text: str) -> str:
             continue
         if re.match(r'^\d+[.．]\s*\S', s):   # 节标题行，视为完整
             return '。'
-        # 去掉行末脚注上标后取末字
-        core = re.sub(r'(<sup>\[\d+\]</sup>)+\s*$', '', s).rstrip()
-        if core:
-            return core[-1]
-        return s[-1]
+        # 去掉行末带圈标号后取末字
+        core = s.rstrip()
+        while core and core[-1] in CIRCLED_SET:
+            core = core[:-1].rstrip()
+        return core[-1] if core else s[-1]
     return ''
 
 def _append_to_last_body(text: str, addition: str) -> str:
@@ -142,10 +142,10 @@ def _extract_page_parts(page_text: str) -> tuple[str, list[tuple[str, str]]]:
     return '\n'.join(body_lines), ordered_fns
 
 
-def _replace_inline_markers(text: str, fn_map: dict[str, int]) -> str:
-    """将正文中的带圈数字替换为全局编号上标 <sup>[N]</sup>。"""
-    for marker, n in fn_map.items():
-        text = text.replace(marker, f'<sup>[{n}]</sup>')
+def _replace_inline_markers(text: str, fn_map: dict[str, str]) -> str:
+    """将正文中的带圈数字替换为全局顺序带圈数字。"""
+    for old_marker, new_marker in fn_map.items():
+        text = text.replace(old_marker, new_marker)
     return text
 
 
@@ -166,12 +166,13 @@ def load_pages(ocr_dir: Path, start: int, end: int
         page_text = f.read_text(encoding="utf-8").strip()
         body_text, ordered_fns = _extract_page_parts(page_text)
 
-        # 分配全局编号并替换正文内联标记
-        local_to_global: dict[str, int] = {}
+        # 分配全局顺序带圈数字并替换正文内联标记
+        local_to_global: dict[str, str] = {}
         for marker, fn_text in ordered_fns:
-            n = len(all_footnotes) + 1
-            all_footnotes.append((n, fn_text))
-            local_to_global[marker] = n
+            n = len(all_footnotes)  # 0-based index into CIRCLED
+            global_marker = CIRCLED[n] if n < len(CIRCLED) else f'({n+1})'
+            all_footnotes.append((global_marker, fn_text))
+            local_to_global[marker] = global_marker
         if local_to_global:
             body_text = _replace_inline_markers(body_text, local_to_global)
         body_pages.append(body_text)
@@ -287,8 +288,9 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         if (line == '' and fixed and i + 1 < len(out)):
             prev = fixed[-1].strip()
             nxt  = out[i + 1].strip()
-            # 判断前行末字（忽略行末脚注上标 <sup>[N]</sup>）
-            tmp = re.sub(r'(<sup>\[\d+\]</sup>)+\s*$', '', prev).rstrip()
+            # 判断前行末字（忽略行末带圈脚注标号）
+            tmp = prev
+            while tmp and tmp[-1] in CIRCLED_SET: tmp = tmp[:-1].rstrip()
             last = tmp[-1] if tmp else ''
             is_continuation = (
                 last and last not in SENTENCE_END
@@ -304,11 +306,11 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         i += 1
     out = fixed
 
-    # 脚注 HTML（全局顺序编号）
+    # 脚注 HTML（全局顺序带圈数字）
     fn_html = []
-    for n, text in all_footnotes:
+    for marker, text in all_footnotes:
         if text:
-            fn_html.append(f'<div class="inst-fn">[{n}] {text}</div>')
+            fn_html.append(f'<div class="inst-fn">{marker} {text}</div>')
 
     ch_zh  = NUMS_ZH[ch_num - 1]
     now    = datetime.now().strftime('%Y-%m-%d %H:%M')

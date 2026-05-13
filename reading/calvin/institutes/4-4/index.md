@@ -9,12 +9,10 @@ section_title: "第四卷·第四章"
 chapter_title: "古时教会的光景以及在未有天主教前的行政"
 volume: 4
 chapter: 4
-date: 2026-05-13 15:45
+date: 2026-05-13 15:51
 ---
 
 ## 第四章 古时教会的光景以及在未有天主教前的行政
-
-未有天主教前的行政<sup>[1]</sup>
 
 教会事工的历史发展；三种不同的牧师：教导和管理的长老、被挑选做监督的长老、大主教（1—4）
 
@@ -23,7 +21,7 @@ date: 2026-05-13 15:45
 ### 1. 古时教会的行政合乎圣经的教导
 
 
-截至目前，我们只讨论过神纯洁话语所吩咐我们关于教会行政的秩序，以及基督所设立的教会事工。<sup>[2]</sup>为了使这一切更清楚、明白，并且便于更好地记住，从古时教会的特征中辨识神所设立的是怎样的教会很有益处。虽然当时的监督颁布了许多似乎比圣经的吩咐更严格的教会法规，然而就是因他们如此严谨使得这些法规几乎与圣经毫无冲突，虽然他们在某些细节上有所不足，然而因他们认真地持守神所设立教会的纯洁，就没有远离神所吩咐的模式，所以我们若在此稍微研究他们的模式，将对我们有极大的帮助。
+截至目前，我们只讨论过神纯洁话语所吩咐我们关于教会行政的秩序，以及基督所设立的教会事工。②为了使这一切更清楚、明白，并且便于更好地记住，从古时教会的特征中辨识神所设立的是怎样的教会很有益处。虽然当时的监督颁布了许多似乎比圣经的吩咐更严格的教会法规，然而就是因他们如此严谨使得这些法规几乎与圣经毫无冲突，虽然他们在某些细节上有所不足，然而因他们认真地持守神所设立教会的纯洁，就没有远离神所吩咐的模式，所以我们若在此稍微研究他们的模式，将对我们有极大的帮助。
 
 我们以上说过圣经教导有三种不同的牧师。同样地，古时的教会
 也有三种不同的职分。他们所有的长老当中（1）一部分做牧师和教
@@ -31,10 +29,10 @@ date: 2026-05-13 15:45
 事。“读经员”（readers）以及“辅祭人员”（acolytes）都不是正式的职
 分，但天主教却称他们为“圣职人员”（clerics），并借一些专门的课程训
 练他们从小服事教会，为了使他们更明白被指派的目的为何，以及装备
-自己将来担任正式的职分。我稍后将更详细地讨论这一点。<sup>[3]</sup>
+自己将来担任正式的职分。我稍后将更详细地讨论这一点。③
 
 因此，哲罗姆在教导教会的职分时，所列举的是监督、长老、执
-事、信徒以及初学者，但没有提及牧师和修道士这两种职分。<sup>[4]</sup>
+事、信徒以及初学者，但没有提及牧师和修道士这两种职分。④
 
 
 ### 2. 监督的职分
@@ -53,44 +51,44 @@ date: 2026-05-13 15:45
 属矶法的’（林前1：12，参阅3：4），所以教会必须在众长老的共同管理
 之下。”⑥ 然后，为了避免纷争，一切管理的权利都交给一个人。就如长
 老知道，根据教会的习惯，他在主席的权利之下，同样地，监督也明白
-他的地位之所以比长老高，是根据教会的习惯，而不是基督自己的吩咐，且他应当与众长老一同管理教会。<sup>[5]</sup>哲罗姆在另一处告诉我们这是非常古老的习惯。他说，在亚历山大，从传福音的马可时代到赫拉克拉斯（Heraclas）以及狄奥尼修（Dionysius）的时代，众长老都习惯选出他们当中的一位，赋予他更高的地位，称他为“监督”。<sup>[6]</sup>
+他的地位之所以比长老高，是根据教会的习惯，而不是基督自己的吩咐，且他应当与众长老一同管理教会。⑤哲罗姆在另一处告诉我们这是非常古老的习惯。他说，在亚历山大，从传福音的马可时代到赫拉克拉斯（Heraclas）以及狄奥尼修（Dionysius）的时代，众长老都习惯选出他们当中的一位，赋予他更高的地位，称他为“监督”。⑥
 
 因此，每一个城市都有许多长老，担任牧师和教师的职分。因他们都教导、劝勉以及执行纪律，就如保罗所吩咐监督的那样（多1：9）；且为了确定之后有接续他们的人，他们也努力训练愿意做神精兵的人接续他们。
 
-在每一个城市都有固定的地方训练长老，这学校被视为属于教会。每一所学校都在一位监督的权利之下。他负责维持学校的组织以及和睦，他的地位虽然比其他的监督高，但却在总会监督的权利之下。但如果他教区的范围大到他无法适任，那其他的长老就会被指派在较次要的事上帮忙。他们被称为“乡村监督”<sup>[7]</sup>，因他们在教区里代表监督。
+在每一个城市都有固定的地方训练长老，这学校被视为属于教会。每一所学校都在一位监督的权利之下。他负责维持学校的组织以及和睦，他的地位虽然比其他的监督高，但却在总会监督的权利之下。但如果他教区的范围大到他无法适任，那其他的长老就会被指派在较次要的事上帮忙。他们被称为“乡村监督”⑦，因他们在教区里代表监督。
 
 
 ### 3. 监督和长老的主要职分
 
 
-监督和长老主要的职分是证道以及施行圣礼。只有在亚历山大城（因为阿里乌扰乱了那里的教会），教会禁止众长老向百姓证道，就如苏格拉底在《三部史》（Tripartite History）<sup>[8]</sup>的第九册里所说的。<sup>[9]</sup>然而哲罗姆对这决定公开表示自己的反对。
+监督和长老主要的职分是证道以及施行圣礼。只有在亚历山大城（因为阿里乌扰乱了那里的教会），教会禁止众长老向百姓证道，就如苏格拉底在《三部史》（Tripartite History）⑧的第九册里所说的。⑨然而哲罗姆对这决定公开表示自己的反对。
 
-在那时代，若有人自称监督却没有公开担任监督的职分，必定被视为大罪。那时教会的管理很严谨，每位牧师都得认真担任神给他的职分。这习惯也不仅止于一个时代。甚至在格列高利的时代，虽然当时的教会几乎已经脱序（已与古时教会的纯洁相去甚远），但每位监督仍得证道。格列高利在另一处说：“监督若不开口就必定死，因他若没有随处证道，就会激怒那看不见的法官。”他又说：“当保罗见证在他们中间无论何人死亡，罪不在他身上时（徒20：26），他的话就定我们的罪，也应当激励我们，因我们被称为监督的人，不但自己有罪，甚至因自己的罪叫人灭亡。因我们缄默，天天漠视了多少人，我们就杀害了多少人。”<sup>[10]</sup>他所说的“缄默”，是指他们没有好好地担任证道的职分。既然他严厉地指责那些不认真尽本分的监督，何况那些完全停止讲道的呢？因此，教会 有这古老的原则，即监督主要的职分是以神的真道喂养他的百姓，或公开和私下以正统的教义造就教会。
+在那时代，若有人自称监督却没有公开担任监督的职分，必定被视为大罪。那时教会的管理很严谨，每位牧师都得认真担任神给他的职分。这习惯也不仅止于一个时代。甚至在格列高利的时代，虽然当时的教会几乎已经脱序（已与古时教会的纯洁相去甚远），但每位监督仍得证道。格列高利在另一处说：“监督若不开口就必定死，因他若没有随处证道，就会激怒那看不见的法官。”他又说：“当保罗见证在他们中间无论何人死亡，罪不在他身上时（徒20：26），他的话就定我们的罪，也应当激励我们，因我们被称为监督的人，不但自己有罪，甚至因自己的罪叫人灭亡。因我们缄默，天天漠视了多少人，我们就杀害了多少人。”⑩他所说的“缄默”，是指他们没有好好地担任证道的职分。既然他严厉地指责那些不认真尽本分的监督，何况那些完全停止讲道的呢？因此，教会 有这古老的原则，即监督主要的职分是以神的真道喂养他的百姓，或公开和私下以正统的教义造就教会。
 
 
 ### 4. 大主教和主教长
 
 
-每一个教区之所以都有一位大主教，以及尼西亚会议指派了一些比大主教地位更高的主教长，①都与教会的纪律有关。然而，我们同时要说教会通常很少执行纪律。教会之所以设立这些不同地位的监督，是因万一教会的长老有任何自己无法解决的问题，就能借议会解决。若议会也来修缮教堂。”<sup>[13]</sup>可见监督不许将任何部分花在自己身上，只是够他用在过俭朴的生活上。若任何人开始过奢侈、骄傲和炫耀的生活，他的同工就会立刻斥责他；他的行为若没有改善，就会被开除。
+每一个教区之所以都有一位大主教，以及尼西亚会议指派了一些比大主教地位更高的主教长，①都与教会的纪律有关。然而，我们同时要说教会通常很少执行纪律。教会之所以设立这些不同地位的监督，是因万一教会的长老有任何自己无法解决的问题，就能借议会解决。若议会也来修缮教堂。”⑬可见监督不许将任何部分花在自己身上，只是够他用在过俭朴的生活上。若任何人开始过奢侈、骄傲和炫耀的生活，他的同工就会立刻斥责他；他的行为若没有改善，就会被开除。
 
 
 ### 8. 教会的财产分给穷人
 
 
-从一开始，监督花很少的钱在装饰教堂上，虽然之后教会越来越富裕，但他们仍然谨慎地花钱。他们仍分配并保留为了帮助穷人的钱，以备不时之需。因此，当耶路撒冷遭遇饥荒，而西西尔（Cyril）无计可施时，他卖了教会中的器皿和衣服，将这笔钱用来帮助穷人。同样地，亚米大（Amida）的监督阿迦修（Acacius）在许多波斯人因饥荒即将丧生时，他和他的牧师一起开会，说：“我们的神不需要盘子和杯子，因他不吃也不喝”，之后他熔化了圣殿的器皿，买食物以及付被掳掠之人的赎价。<sup>[13]</sup>当哲罗姆斥责教会过于奢侈时，他同时称赞图卢兹（Toulouse）的监督叶佐柏留（Exuperiue）说：他宁可用草编织的篮子和一般的玻璃杯施行圣餐，也不愿任何人饿死。<sup>[13]</sup>我刚才所引述阿迦修的话，安波罗修也曾如此行。当阿里乌派指控安波罗修将神圣洁的器皿卖掉时，他们有这样很奇妙的理由：“那吩咐使徒不要戴金银的基督，也能在金银之外建立他的教会。教会之所以有金子，不是为了要保存起来，而是要花在有需要之人的身上。难道我们有需要保存那对我们毫无帮助的东西吗？还是我们无知到未曾听过亚述人从主的圣殿夺走多少金银（王下 18：15—16)？难道祭司在无计可施之下将之熔化（为了帮助穷人）不是比亵渎神的仇敌将之夺走更好吗？难道主不会问：‘你为何容这样多的人饿死呢？你的确有金子能帮助他们。为何那么多人被掳掠之后没有人将他们赎回呢？为何许多人被仇敌杀害呢？你存留活生生的器皿难道不比存留金子好得多吗？’我们在这合理的问题下必是无言可答，因我们要回答什么呢？难道要回答：‘我怕神的圣殿缺乏装饰？’主必会回答：‘领圣餐不需要金器皿，且那无法用金子买来的恩典，也无须借金子取悦神。圣餐真实的装饰就是买赎被掳掠之人。’”综上所述，安波罗修在另一处说得很真切：“教会所有的财产是要用来帮助穷人”以及“监督所拥有的一切都属于穷人”<sup>[15]</sup>。
+从一开始，监督花很少的钱在装饰教堂上，虽然之后教会越来越富裕，但他们仍然谨慎地花钱。他们仍分配并保留为了帮助穷人的钱，以备不时之需。因此，当耶路撒冷遭遇饥荒，而西西尔（Cyril）无计可施时，他卖了教会中的器皿和衣服，将这笔钱用来帮助穷人。同样地，亚米大（Amida）的监督阿迦修（Acacius）在许多波斯人因饥荒即将丧生时，他和他的牧师一起开会，说：“我们的神不需要盘子和杯子，因他不吃也不喝”，之后他熔化了圣殿的器皿，买食物以及付被掳掠之人的赎价。⑬当哲罗姆斥责教会过于奢侈时，他同时称赞图卢兹（Toulouse）的监督叶佐柏留（Exuperiue）说：他宁可用草编织的篮子和一般的玻璃杯施行圣餐，也不愿任何人饿死。⑬我刚才所引述阿迦修的话，安波罗修也曾如此行。当阿里乌派指控安波罗修将神圣洁的器皿卖掉时，他们有这样很奇妙的理由：“那吩咐使徒不要戴金银的基督，也能在金银之外建立他的教会。教会之所以有金子，不是为了要保存起来，而是要花在有需要之人的身上。难道我们有需要保存那对我们毫无帮助的东西吗？还是我们无知到未曾听过亚述人从主的圣殿夺走多少金银（王下 18：15—16)？难道祭司在无计可施之下将之熔化（为了帮助穷人）不是比亵渎神的仇敌将之夺走更好吗？难道主不会问：‘你为何容这样多的人饿死呢？你的确有金子能帮助他们。为何那么多人被掳掠之后没有人将他们赎回呢？为何许多人被仇敌杀害呢？你存留活生生的器皿难道不比存留金子好得多吗？’我们在这合理的问题下必是无言可答，因我们要回答什么呢？难道要回答：‘我怕神的圣殿缺乏装饰？’主必会回答：‘领圣餐不需要金器皿，且那无法用金子买来的恩典，也无须借金子取悦神。圣餐真实的装饰就是买赎被掳掠之人。’”综上所述，安波罗修在另一处说得很真切：“教会所有的财产是要用来帮助穷人”以及“监督所拥有的一切都属于穷人”⑮。
 
 
 ### 9. 担任圣职之前的装备
 
 
-“我们以上所说的，是古时教会中不同的服事。教会历史也记载教会中有其他的服事，但这些只是为了装备人做牧师，而不是正式的职分。当时敬虔的领袖为了教会将来的益处，训练一些在父母的鼓励下加入的神的精兵——预备做牧师的青年。他们从这些人年幼时就训练他们，免得他们在开始担任牧师职分时一无所知。①一切受训练的人被称为“圣职人员”。我希望他们当时有更正式的称号，因这称呼来自谬论，或至少来自不正确的心态，因彼得称整个教会为“所托付你们的”（clergy），即主的产业（彼前5：3）。<sup>[15]</sup>然而这训练本身是圣洁的，也对青年有极好的帮助，因为借此，那些为了教会愿意将自己和自己的服事分别为圣的人，能够在监督的观察之下受训。因这方法保证：唯有已受装备的人才能在教会中服事，而且他们从小从世俗的事上被分别出来，受圣洁的教导和严格的训练，习惯忙碌属灵的事，如此他们就能在谨守和圣洁上做好榜样。就如新兵借着虚拟的战争受训，为了将来真正的战争，同样地，这众支持以外的人能当选。安提阿的教会会议决定，一切做监督的人都必须通过会众的投票。<sup>[16]</sup>利奥一世（Leo I）严肃地肯定这一点，他这样说：“应当挑选牧师和会众或多数会众所喜悦的人。”在众人之上的人应当由众人挑选。因为若在未经观察或受训之外指派人是擅自专权：“圣职人员所挑选以及百姓所喜悦的才应该当选，且在教省总主教许可之下经由该教省主教们按立。”<sup>[17]</sup>
-此外，教父们对此十分谨慎，以免会众的这权利在任何方面被削弱。因此当君士坦丁堡的总会给涅克塔里乌（Nectarius）按立时，坚持通过所有圣职人员和会众的投票。从这总会写给罗马总会的信就能证明这一点。因此，当任何监督挑选接续他的人时，他的挑选也当经过会众的投票。奥古斯丁挑选伊拉克里乌（Eraclius）就是一个很好的例子。<sup>[18]</sup>又当狄奥多勒告诉我们，阿塔那修挑选彼得为他的继承人时，同时也说，这选择已通过众监督以及政府官员和公民的投票。<sup>[19]</sup>
+“我们以上所说的，是古时教会中不同的服事。教会历史也记载教会中有其他的服事，但这些只是为了装备人做牧师，而不是正式的职分。当时敬虔的领袖为了教会将来的益处，训练一些在父母的鼓励下加入的神的精兵——预备做牧师的青年。他们从这些人年幼时就训练他们，免得他们在开始担任牧师职分时一无所知。①一切受训练的人被称为“圣职人员”。我希望他们当时有更正式的称号，因这称呼来自谬论，或至少来自不正确的心态，因彼得称整个教会为“所托付你们的”（clergy），即主的产业（彼前5：3）。⑮然而这训练本身是圣洁的，也对青年有极好的帮助，因为借此，那些为了教会愿意将自己和自己的服事分别为圣的人，能够在监督的观察之下受训。因这方法保证：唯有已受装备的人才能在教会中服事，而且他们从小从世俗的事上被分别出来，受圣洁的教导和严格的训练，习惯忙碌属灵的事，如此他们就能在谨守和圣洁上做好榜样。就如新兵借着虚拟的战争受训，为了将来真正的战争，同样地，这众支持以外的人能当选。安提阿的教会会议决定，一切做监督的人都必须通过会众的投票。⑯利奥一世（Leo I）严肃地肯定这一点，他这样说：“应当挑选牧师和会众或多数会众所喜悦的人。”在众人之上的人应当由众人挑选。因为若在未经观察或受训之外指派人是擅自专权：“圣职人员所挑选以及百姓所喜悦的才应该当选，且在教省总主教许可之下经由该教省主教们按立。”⑰
+此外，教父们对此十分谨慎，以免会众的这权利在任何方面被削弱。因此当君士坦丁堡的总会给涅克塔里乌（Nectarius）按立时，坚持通过所有圣职人员和会众的投票。从这总会写给罗马总会的信就能证明这一点。因此，当任何监督挑选接续他的人时，他的挑选也当经过会众的投票。奥古斯丁挑选伊拉克里乌（Eraclius）就是一个很好的例子。⑱又当狄奥多勒告诉我们，阿塔那修挑选彼得为他的继承人时，同时也说，这选择已通过众监督以及政府官员和公民的投票。⑲
 
 
 ### 12. 群众和圣职人员的权利平衡
 
 
-我承认老底嘉会议（Council of Laodicea）有极好的理由拒绝赋予公民投票的权利。<sup>[20]</sup>因为不管任何事几乎不可能所有的人都有一样的看法，且俗话说：“善变群众的立场常是对立的。”<sup>[21]</sup>当时他们采取了很好的防范措施，首先，圣职人员先做挑选，之后将他们的选择交给政府官员或
+我承认老底嘉会议（Council of Laodicea）有极好的理由拒绝赋予公民投票的权利。⑳因为不管任何事几乎不可能所有的人都有一样的看法，且俗话说：“善变群众的立场常是对立的。”㉑当时他们采取了很好的防范措施，首先，圣职人员先做挑选，之后将他们的选择交给政府官员或
 立法院和尊贵人士。后者在经过讨论后认可圣职人员的选择，或另外再挑
 选他们所喜悦的人，最后再由群众投票。因此，群众不是非接受不可，
 所以群众就不会争闹。或先让群众选择自己所喜悦的，之后圣职人员
@@ -98,8 +96,8 @@ date: 2026-05-13 15:45
 的选择。利奥一世肯定这次序，他说：“公民的喜悦、会众的见证、尊
 贵人士的选择，以及圣职人员的挑选都被重视。”同样地，“当在尊贵
 人士的见证、圣职人员的选择、政府官员以及群众的参与下决定”。他
-说：“这是唯一理性的方法。”<sup>[22]</sup>老底嘉会议所命定的是：圣职人员和领袖
-不当受群众无知选择的影响，而应当智慧和冷静地拒绝百姓愚昧的选择。<sup>[22]</sup>
+说：“这是唯一理性的方法。”㉒老底嘉会议所命定的是：圣职人员和领袖
+不当受群众无知选择的影响，而应当智慧和冷静地拒绝百姓愚昧的选择。㉒
 
 
 ### 13. 圣职人员和政治家*
@@ -112,22 +110,22 @@ date: 2026-05-13 15:45
 的选举，但他也都举行最后正式的选举，且选举的结果也都有众主要人
 物的签名。即使当康士坦丢（Constantius）当选为米兰的监督时，虽因当
 时外国的侵略，许多米兰人逃到热那亚（Genoa），格列高利仍吩咐他们
-要在那里举行会议、投票表决，他才承认康士坦丢的当选。<sup>[22]</sup>
+要在那里举行会议、投票表决，他才承认康士坦丢的当选。㉒
 
 不勒斯（Naples）的教会会议差派两三人“代表全员”来处理那不勒斯贵胄有关重选主教之事。
-事实上，距今不到五百年前，教皇尼古拉（Nicholas）决定用这种方式选举罗马教皇：由枢机主教先挑选，之后是圣职人员的认可，最后是群众的支持。他最后引用我们以上所说教皇利奥一世的谕令，吩咐以后的时代仍当遵守这谕令。也说：若在某些地区恶人的势力过大，为了公正的选举，圣职人员有时必须去别的教区举行会议以进行挑选，但至少必须有部分群众的参与。<sup>[23]</sup>
+事实上，距今不到五百年前，教皇尼古拉（Nicholas）决定用这种方式选举罗马教皇：由枢机主教先挑选，之后是圣职人员的认可，最后是群众的支持。他最后引用我们以上所说教皇利奥一世的谕令，吩咐以后的时代仍当遵守这谕令。也说：若在某些地区恶人的势力过大，为了公正的选举，圣职人员有时必须去别的教区举行会议以进行挑选，但至少必须有部分群众的参与。㉓
 
-据我所知，唯有罗马和君士坦丁堡教会的选举需要皇帝的认可，因为那是当时的两个首都。瓦伦提尼安（Valentinian）派安波罗修去米兰监督选举是例外，因当时国内有暴动。<sup>[24]</sup>格列高利也说在他的时代，罗马监督的选举虽有群众投票的正式仪式，但事实上完全是出于皇帝的指派。<sup>[25]</sup>然而格列高利时代以外的习惯是：政府官员、圣职人员和群众挑选人，之后要求皇帝的认可。皇帝若认可，那人就当选；皇帝若不认可，那人就无法当选。且格拉提安（Gratian）所搜集到的一切法规都与这情况完全一致。这些法规显示皇帝不可不理会教会的正式选举而随己意直接指派人做监督，且大主教也不可为以暴力推举上来的人选祝圣。<sup>[26]</sup>法规禁止夺去神赋予教会的权柄，但不禁止教会将所挑选的人交付皇帝认可。
+据我所知，唯有罗马和君士坦丁堡教会的选举需要皇帝的认可，因为那是当时的两个首都。瓦伦提尼安（Valentinian）派安波罗修去米兰监督选举是例外，因当时国内有暴动。㉔格列高利也说在他的时代，罗马监督的选举虽有群众投票的正式仪式，但事实上完全是出于皇帝的指派。㉕然而格列高利时代以外的习惯是：政府官员、圣职人员和群众挑选人，之后要求皇帝的认可。皇帝若认可，那人就当选；皇帝若不认可，那人就无法当选。且格拉提安（Gratian）所搜集到的一切法规都与这情况完全一致。这些法规显示皇帝不可不理会教会的正式选举而随己意直接指派人做监督，且大主教也不可为以暴力推举上来的人选祝圣。㉖法规禁止夺去神赋予教会的权柄，但不禁止教会将所挑选的人交付皇帝认可。
 
 
 ### 14. 按立的程序
 
 
-“我们现在要讨论古时教会监督的按立。拉丁人称之为“按立”（ordination）或“祝圣”（consecration）；希腊人有时称之为“举手”（raising of hands），有时称之为“按手”（laying on of hands），虽然“举手”正式的意思是投票式的选举。<sup>[27]</sup>尼西亚会议指令大主教和其他同一个教区的
+“我们现在要讨论古时教会监督的按立。拉丁人称之为“按立”（ordination）或“祝圣”（consecration）；希腊人有时称之为“举手”（raising of hands），有时称之为“按手”（laying on of hands），虽然“举手”正式的意思是投票式的选举。㉗尼西亚会议指令大主教和其他同一个教区的
 监督，要一起为当选者按立；然而若其中有几位监督因为距离远或生
 病，或其他无法避免的因素不能参加，也至少要有三位参加，其他无
 法参加之人则以书信表达自己的赞同或否决。虽然之后教会逐渐不遵
-守这法规，但在许多大公会议上都再次重申这法规。<sup>[28]</sup>但所有监督，至
+守这法规，但在许多大公会议上都再次重申这法规。㉘但所有监督，至
 少那些没有理由不来的监督，都要求到场，为了更进一步考察将被按
 立之人的教义和道德，因为在考察之前不能按立。且西普里安的谈话
 纪录明确显示当时监督不是在选举后被通知其结果，而是亲自参加选
@@ -135,9 +133,9 @@ date: 2026-05-13 15:45
 否决监督候选人之后，他接着说：“因这缘故，我们必须认真遵守那出
 于神和使徒的传统——即我们和几乎所有教区仍遵守的传统——所有
 同一教区的监督都要在群众面前参与监督的按立，且监督也当公开在百
-姓面前被选举。”<sup>[29]</sup>为了避免因某些监督无法直接参与按立而另一些监督趁
+姓面前被选举。”㉙为了避免因某些监督无法直接参与按立而另一些监督趁
 此机会促成自己所喜悦的人当选，所以在选举和按立后，众监督要再次聚
-集，将为按立者祝圣。<sup>[30]</sup>
+集，将为按立者祝圣。㉚
 
 
 ### 15. 大主教的按立*
@@ -146,41 +144,41 @@ date: 2026-05-13 15:45
 “这是所有地区一贯的按立方式。之后出现另一个逐渐普遍的方式，
 即当选的监督去大都市接受按立。这是由于人的野心以及传统秩序逐渐
 败坏的缘故，而不是因为任何好的理由。不久之后，罗马教区的权利逐
-渐做大，另一个更糟的陋习占上风，即几乎全意大利各地区当选的监督都要在罗马接受按立。格列高利的书信证明这一点。<sup>[31]</sup>古时的习惯唯有被保持在几个较顽固的都市里，米兰是其中之一。也许只有大都市能保持按立自己的监督这特权。因为一切在大教区的监督，开始习惯聚集在罗马，按立新的监督。
+渐做大，另一个更糟的陋习占上风，即几乎全意大利各地区当选的监督都要在罗马接受按立。格列高利的书信证明这一点。㉛古时的习惯唯有被保持在几个较顽固的都市里，米兰是其中之一。也许只有大都市能保持按立自己的监督这特权。因为一切在大教区的监督，开始习惯聚集在罗马，按立新的监督。
 
-然而，当时的典礼只包括按手，<sup>[32]</sup>就我所知没有其他的典礼，只是要受按礼的监督穿着特别的制服，好叫百姓能将他们与其他的监督辨别出来。当时的长老和执事也唯独靠按手的方式被按立，只是每一个监督与众长老按立他自己的长老。<sup>[33]</sup>虽然是众长老和监督一起为新的监督按立，但既因是监督做主席，且一切的事情都在监督的权威底下，这按立被称为是“他的”。因此，古时的神学家经常指出：长老与监督唯一的差别是，长老没有按立的权柄。<sup>[34]</sup>
+然而，当时的典礼只包括按手，㉜就我所知没有其他的典礼，只是要受按礼的监督穿着特别的制服，好叫百姓能将他们与其他的监督辨别出来。当时的长老和执事也唯独靠按手的方式被按立，只是每一个监督与众长老按立他自己的长老。㉝虽然是众长老和监督一起为新的监督按立，但既因是监督做主席，且一切的事情都在监督的权威底下，这按立被称为是“他的”。因此，古时的神学家经常指出：长老与监督唯一的差别是，长老没有按立的权柄。㉞
 
-<div class="inst-fn">[1] 从第四章到第七章，加尔文在他的论述中使用了相当庞大且令人激赏的历史资料。这些附注可以帮助读者们找到他所使用的原始资料。过去贝格尔（H. Berger）的 Calvins Geschichtsauffassung，基士多（H. Quistorp）的 Calvin’s Doctrine of the Last Things 以及其他曾详细阐述加尔文的史观，但对他所阅读的历史资料，仍缺完整的审查。</div>
-<div class="inst-fn">[2] IV.1.5, 6₁ IV.3.</div>
-<div class="inst-fn">[3] 下文的第九节。</div>
-<div class="inst-fn">[4] Jerome, Commentary on Isaiah IV (Isa. 19：18) (MPL 24. 185 f., 191).</div>
-<div class="inst-fn">[5] Ignatius, Letters, Magnesians 6, Trallians 3 (LCL Apostolic Fathers I. 200–202, 214 f.), Cyprian, Letters 14.4, 19, 34.4 (CSEL 3.2.512, 526, 570; tr. ANF [letters v, 13, 18, respectively] V.283, 293, 297), Statuta ecclesia antique, canons 22, 23 (Mansi III.953; 有关此文件，参阅 H. Leclercq, in Hefele-Leclercq II.1.108–120); 哲罗姆，Commentary on Titus，第一章 (MPL 26.562 f.)。</div>
-<div class="inst-fn">[6] Jerome, Letters 146.1 (CSEL 56.310, MPL 22.1193, tr. NPNF 2 ser. VI.288).</div>
-<div class="inst-fn">[7] χωρεπίσκοποι，“地方监督”（bishops of the place），例如：在基督教从大、小社区的传扬中，隶属于中央城镇和教会管辖之下的乡村监督。佩里西亚（Pellicia）视他们为 περιοδευταί，即巡回探访员；A. A. Pellicia, The Polity of the Christian Church, tr. J. C. Billet，第二段，第十一章，第88–90页。安提阿会议（Council of Antioch, 341）认可了农村监督（Chorepiscopi），并且将之安置在会议的规范之下，canon 10 (Mansi II.1311; text and translation, J. Fulton, Index canonum [2d ed., 1883], p.238 f.; tr. Ayer, Source Book, p.364)，他们从未从圣职中被分离。</div>
-<div class="inst-fn">[8] Cassiodorus, Tripartite History IX.38 (MPL 69.1156), from Socrates, Ecclesiastical History 5.21 (MPG 67.623–626; tr. NPNF 2 ser. II.129).</div>
-<div class="inst-fn">[9] Jerome, Letters 52.7 (CSEL 54.428; tr. LCC V.322; tr. NPNF 2 ser. VI.93).</div>
-<div class="inst-fn">[10] Gregory the Great, Letters I. 24 (MGH Epistolae I. 32, MPL [1. 25] 77. 472 f.), Homilies on Ezekiel I, hom. 11. 10 (MPL 76. 910)。加尔文认为格列高利（教皇，589–604）所处的年代介于纯洁的古代和腐败的中古世纪之间。参阅 IV. 7. 16, 17 及附注。</div>
-<div class="inst-fn">[11] Council of Nicaea (325) canons 4, 6 (Mansi II. 670 f., Fulton, Index canonum, pp. 122 f., 124 f., tr., with comment, H. J. Schroeder, Disciplinary Decrees of the General Councils, pp. 26, 30 f.), Council of Constantinople (381) canon 2 (Mansi III. 589, Fulton, op. cit., pp. 174 f., Schroeder, op. cit., p. 90)；那些为钱而按立的人，其职位将被收回，Council of Chalcedon (451) canon 28 (Mansi VII. 369, Fulton, op. cit., pp. 190 f., Schroeder, op. cit., pp. 125 f.)。参阅 IV. 3. 8, IV. 7. 15, Pseudo-Dionysius, De ecclesiastica hierarchia (MPG 3. 369 ff.)。</div>
-<div class="inst-fn">[12] Gratian, Decretum II. 16. 3. 2, 12. 2. 30 (MPL 187. 1029. 909, Friedberg I. 789, 697), from Gregory I, Letters 56 (MGH Epistolae II. 333, tr. NPNF [letter 54] 2 ser. 13. 74 f.). 在中古世纪已经有许多人提出贫穷对神职人员是有益的。特别参阅帕多瓦的马西利乌斯（Marsilius of Padua）的 Defensor Pacis II. 4. 6, tr. and ed. A. Gewirth, II. 218。</div>
-<div class="inst-fn">[13] Cassiodorus, Tripartite History V. 37, XL 16 (MPL 69. 1017, 1198). from Sozomen, Ecclesiastical History 4. 24 (tr. NPNF 2 ser. II. 319 f.) and Socrates Ecclesiastical History 7. 21 (tr. NPNF 2 ser. II. 164).</div>
-<div class="inst-fn">[14] “Exuperius, Tolosae episcopus, viduae sareptensis imitator, esuriens pascit alios” 叶佐柏留是图卢兹的主教，效法撒勒法的寡妇（王上 17：9），即使自己挨饿也要供应别人食物。Jerome, Letters 125. 20 (MPL 22. 1085, CSEL 56. 141, tr. NPNF 2 ser. VI. 251)。</div>
-<div class="inst-fn">[15] Ambrose, On the Duties of the Clergy II 28. 137 f., Letters 18. 16, 20. 16 (MPL 16. 140, 977, 997, tr. NPNF 2 ser. X. 14, 419, 424).</div>
-<div class="inst-fn">[16] Council of Antioch (341) canon 18 (Mansi II 1315, Fulton, op. cit., pp. 242 f.), 规定要“全会”连同教省总主教也要出席。</div>
-<div class="inst-fn">[17] Leo I, Letters 10.6, 167 (MPL 54.634, 1203, tr. NPNF 2 ser. XII. 10, 110)。在信函167中，要求监督必须“要选圣职人员所挑选以及平信徒所想要的。并且也在教省总主教许可（judicio）之下经由教省主教们按立”。参阅 Letters 14.5 (MPL 54.673)；“教省总主教的决议应按教区中的得票率和功绩。”</div>
-<div class="inst-fn">[18] Theodoret, Ecclesiastical History v.9 (ed. T. Gaisford, p. 414, MPG 82.1217 f., GCS 19.312, tr. NPNF 2 ser. III. 138)。奥古斯丁在信函213 (MPL 33.966 ff., tr. FC 32.52–57) 中对伊拉克里乌（Eraclius, also Eradius）被选为其助理和继任者一事有生动的描述。</div>
-<div class="inst-fn">[19] Theodoret, Ecclesiastical History 4.20 (ed. T. Gaisford, pp. 346 f., MPG 82.1181 f., GCS 19.69, tr. NPNF 2 ser. III. 126)。</div>
-<div class="inst-fn">[20] Council of Laodicea (ca. 363) canon 13 (Mansi II.565, text and translation in Fulton, Index canonum, pp. 254 f., tr. with notes NPNF 2 ser. XIV. 131)。加尔文认为牧师应由会众投票选出，但根据老底嘉会议的决议，他反对喧闹的群众选举。一定要有正常的程序，并且有条不紊。</div>
-<div class="inst-fn">[21] “Incertain scindi studia in contraria vulgus,” a variation of Vergil, Aeneid II.39 (LCL Vergil I.296).</div>
-<div class="inst-fn">[22] Leo I, Letters 9.1, 10.4, 6, 167 (MPL 54.625 f., 632, 634, 1203, tr. NPNF 2 ser. XII.7 f., 10 f., 109 ff.). 在 Letter 9.1 中利奥一世（Leo I）认为应用固定的一天举行按立礼，最好是礼拜六下 午或礼拜日，礼仪程序包括按手；在 10.6 中，他又提到复活节的按牧礼。参阅 Gratian, Decretum I.62.9 (Friedberg I.234, MPL 187.325)。 参阅上文的注释 33。 Gregory the Great, Letters III.30，写给副执事约翰（MPL 77.627 f., MGH Epistolae I.188, tr. NPNF 2 ser. XII.2.129 f.）。参阅 Letters III.35，写给坎帕尼亚（Campania）的副执事彼得，关于居普 阿（Cupua）的主教工作（MPL 77.631 f., MGH Epistolae I.190, tr. NPNF 2 ser. XII.2.131）；在那</div>
-<div class="inst-fn">[23] 教皇尼古拉二世在1049年组织了枢机主教协会，以选举教皇曼西十九世（Mansi XIX.915，tr. O. J. Thatcher and E. H. McNeal，Source Book for Medieval History，p. 129；note editors’ summary，p. 127），Gratian，Decretum I. 23.1（MPL 187.128，Friedberg I.77）。</div>
-<div class="inst-fn">[24] Socrates，Ecclesiastical History 4.30（MPG 67.543 f.，tr. NPNF 2 ser. II.113 f.）</div>
-<div class="inst-fn">[25] Gregory I，Letters I.5：“最尊贵的国君已经下令——一只猴子变成一头狮子了。”（“fieri simiam leonam jussit”）（MGH Epistolae L 6，MPL 77.450，tr. NPNF 2 ser. XII.2.76）。</div>
-<div class="inst-fn">[26] 参阅 Gratian，Decretum I.63.18.1.2.（MPL 187.333 f.，327–330 f.，Friedberg I.234 ff.）。</div>
-<div class="inst-fn">[27] 希腊文是 χερσορίαν 和 χειροθεσίαν。参阅 IV.3.15，注释 14，以及下文的第十五节注释 48。</div>
-<div class="inst-fn">[28] Council of Carthage (397) canon 39. 规定在按立监督时，要有三位监督参与 (Mansi III.886)。参阅 Second Council of Nicaea (787) canon 3 (Mansi XIII.748, tr. NPNF 2 ser. XIV.557), Council of Ni- caea (325) canons 9, 19 (Mansi II.671, 678; text and translation, Fulton, Index canonum, pp. 122 f., 126 f., 132 f., tr. with notes NPNF 2 ser. XIV.23 f., 40)。</div>
-<div class="inst-fn">[29] Cyprian, Letters 67.3, 5 (CSEL 3.2.787 ff., tr. ANF V.370 f.)，这里西普里安称罗马的监督为“我 们的同工司提反”（第五节）。</div>
-<div class="inst-fn">[30] Gratian, Decretum I.64.1 f. (MPL 187.313, Friedberg I.247).</div>
-<div class="inst-fn">[31] Leo I, Letters 10.5 (MPL 54.633, tr. NPNF 2 ser. XII 1.10, FC 34.43), Gregory I, Letters III 14, IV.39, IX.81, 185, XIII.17, III.30 f. (MPL 77.315 f., 713 f. [no.76], 1010, 1269 f., 627, MGH Epistolae I.173, 276, II.97, 177, 384, I.188 f., tr. [except III.14 and IX.81] NPNF 2 ser. XII.2.129 f., 160, XIII.21).</div>
-<div class="inst-fn">[32] Cyprian, Letters lxvii.5 (CSEL 3.ii.399, tr. ANF V.300).</div>
-<div class="inst-fn">[33] Statuta antiqua canons iii, iv (Mansi III 951), Apostolic Constitutions viii.16 (MPG I.1114, tr. ANF VII.491 f.), Gratian, Decretum I.xxiii.8.11 (MPL 187.133 f., Friedberg I.82 f.).</div>
-<div class="inst-fn">[34] Jerome, Letters clvi.1 (CSEL 56.310, tr. LCC V.386), Jerome, Commentary on Titus, ch.1 (MPL 26, 562), Apostolic Constitutions viii.16, 18 (MPG I.1123, tr. ANF VII.492–494).</div>
+<div class="inst-fn">① 从第四章到第七章，加尔文在他的论述中使用了相当庞大且令人激赏的历史资料。这些附注可以帮助读者们找到他所使用的原始资料。过去贝格尔（H. Berger）的 Calvins Geschichtsauffassung，基士多（H. Quistorp）的 Calvin’s Doctrine of the Last Things 以及其他曾详细阐述加尔文的史观，但对他所阅读的历史资料，仍缺完整的审查。</div>
+<div class="inst-fn">② IV.1.5, 6₁ IV.3.</div>
+<div class="inst-fn">③ 下文的第九节。</div>
+<div class="inst-fn">④ Jerome, Commentary on Isaiah IV (Isa. 19：18) (MPL 24. 185 f., 191).</div>
+<div class="inst-fn">⑤ Ignatius, Letters, Magnesians 6, Trallians 3 (LCL Apostolic Fathers I. 200–202, 214 f.), Cyprian, Letters 14.4, 19, 34.4 (CSEL 3.2.512, 526, 570; tr. ANF [letters v, 13, 18, respectively] V.283, 293, 297), Statuta ecclesia antique, canons 22, 23 (Mansi III.953; 有关此文件，参阅 H. Leclercq, in Hefele-Leclercq II.1.108–120); 哲罗姆，Commentary on Titus，第一章 (MPL 26.562 f.)。</div>
+<div class="inst-fn">⑥ Jerome, Letters 146.1 (CSEL 56.310, MPL 22.1193, tr. NPNF 2 ser. VI.288).</div>
+<div class="inst-fn">⑦ χωρεπίσκοποι，“地方监督”（bishops of the place），例如：在基督教从大、小社区的传扬中，隶属于中央城镇和教会管辖之下的乡村监督。佩里西亚（Pellicia）视他们为 περιοδευταί，即巡回探访员；A. A. Pellicia, The Polity of the Christian Church, tr. J. C. Billet，第二段，第十一章，第88–90页。安提阿会议（Council of Antioch, 341）认可了农村监督（Chorepiscopi），并且将之安置在会议的规范之下，canon 10 (Mansi II.1311; text and translation, J. Fulton, Index canonum [2d ed., 1883], p.238 f.; tr. Ayer, Source Book, p.364)，他们从未从圣职中被分离。</div>
+<div class="inst-fn">⑧ Cassiodorus, Tripartite History IX.38 (MPL 69.1156), from Socrates, Ecclesiastical History 5.21 (MPG 67.623–626; tr. NPNF 2 ser. II.129).</div>
+<div class="inst-fn">⑨ Jerome, Letters 52.7 (CSEL 54.428; tr. LCC V.322; tr. NPNF 2 ser. VI.93).</div>
+<div class="inst-fn">⑩ Gregory the Great, Letters I. 24 (MGH Epistolae I. 32, MPL [1. 25] 77. 472 f.), Homilies on Ezekiel I, hom. 11. 10 (MPL 76. 910)。加尔文认为格列高利（教皇，589–604）所处的年代介于纯洁的古代和腐败的中古世纪之间。参阅 IV. 7. 16, 17 及附注。</div>
+<div class="inst-fn">⑪ Council of Nicaea (325) canons 4, 6 (Mansi II. 670 f., Fulton, Index canonum, pp. 122 f., 124 f., tr., with comment, H. J. Schroeder, Disciplinary Decrees of the General Councils, pp. 26, 30 f.), Council of Constantinople (381) canon 2 (Mansi III. 589, Fulton, op. cit., pp. 174 f., Schroeder, op. cit., p. 90)；那些为钱而按立的人，其职位将被收回，Council of Chalcedon (451) canon 28 (Mansi VII. 369, Fulton, op. cit., pp. 190 f., Schroeder, op. cit., pp. 125 f.)。参阅 IV. 3. 8, IV. 7. 15, Pseudo-Dionysius, De ecclesiastica hierarchia (MPG 3. 369 ff.)。</div>
+<div class="inst-fn">⑫ Gratian, Decretum II. 16. 3. 2, 12. 2. 30 (MPL 187. 1029. 909, Friedberg I. 789, 697), from Gregory I, Letters 56 (MGH Epistolae II. 333, tr. NPNF [letter 54] 2 ser. 13. 74 f.). 在中古世纪已经有许多人提出贫穷对神职人员是有益的。特别参阅帕多瓦的马西利乌斯（Marsilius of Padua）的 Defensor Pacis II. 4. 6, tr. and ed. A. Gewirth, II. 218。</div>
+<div class="inst-fn">⑬ Cassiodorus, Tripartite History V. 37, XL 16 (MPL 69. 1017, 1198). from Sozomen, Ecclesiastical History 4. 24 (tr. NPNF 2 ser. II. 319 f.) and Socrates Ecclesiastical History 7. 21 (tr. NPNF 2 ser. II. 164).</div>
+<div class="inst-fn">⑭ “Exuperius, Tolosae episcopus, viduae sareptensis imitator, esuriens pascit alios” 叶佐柏留是图卢兹的主教，效法撒勒法的寡妇（王上 17：9），即使自己挨饿也要供应别人食物。Jerome, Letters 125. 20 (MPL 22. 1085, CSEL 56. 141, tr. NPNF 2 ser. VI. 251)。</div>
+<div class="inst-fn">⑮ Ambrose, On the Duties of the Clergy II 28. 137 f., Letters 18. 16, 20. 16 (MPL 16. 140, 977, 997, tr. NPNF 2 ser. X. 14, 419, 424).</div>
+<div class="inst-fn">⑯ Council of Antioch (341) canon 18 (Mansi II 1315, Fulton, op. cit., pp. 242 f.), 规定要“全会”连同教省总主教也要出席。</div>
+<div class="inst-fn">⑰ Leo I, Letters 10.6, 167 (MPL 54.634, 1203, tr. NPNF 2 ser. XII. 10, 110)。在信函167中，要求监督必须“要选圣职人员所挑选以及平信徒所想要的。并且也在教省总主教许可（judicio）之下经由教省主教们按立”。参阅 Letters 14.5 (MPL 54.673)；“教省总主教的决议应按教区中的得票率和功绩。”</div>
+<div class="inst-fn">⑱ Theodoret, Ecclesiastical History v.9 (ed. T. Gaisford, p. 414, MPG 82.1217 f., GCS 19.312, tr. NPNF 2 ser. III. 138)。奥古斯丁在信函213 (MPL 33.966 ff., tr. FC 32.52–57) 中对伊拉克里乌（Eraclius, also Eradius）被选为其助理和继任者一事有生动的描述。</div>
+<div class="inst-fn">⑲ Theodoret, Ecclesiastical History 4.20 (ed. T. Gaisford, pp. 346 f., MPG 82.1181 f., GCS 19.69, tr. NPNF 2 ser. III. 126)。</div>
+<div class="inst-fn">⑳ Council of Laodicea (ca. 363) canon 13 (Mansi II.565, text and translation in Fulton, Index canonum, pp. 254 f., tr. with notes NPNF 2 ser. XIV. 131)。加尔文认为牧师应由会众投票选出，但根据老底嘉会议的决议，他反对喧闹的群众选举。一定要有正常的程序，并且有条不紊。</div>
+<div class="inst-fn">㉑ “Incertain scindi studia in contraria vulgus,” a variation of Vergil, Aeneid II.39 (LCL Vergil I.296).</div>
+<div class="inst-fn">㉒ Leo I, Letters 9.1, 10.4, 6, 167 (MPL 54.625 f., 632, 634, 1203, tr. NPNF 2 ser. XII.7 f., 10 f., 109 ff.). 在 Letter 9.1 中利奥一世（Leo I）认为应用固定的一天举行按立礼，最好是礼拜六下 午或礼拜日，礼仪程序包括按手；在 10.6 中，他又提到复活节的按牧礼。参阅 Gratian, Decretum I.62.9 (Friedberg I.234, MPL 187.325)。 参阅上文的注释 33。 Gregory the Great, Letters III.30，写给副执事约翰（MPL 77.627 f., MGH Epistolae I.188, tr. NPNF 2 ser. XII.2.129 f.）。参阅 Letters III.35，写给坎帕尼亚（Campania）的副执事彼得，关于居普 阿（Cupua）的主教工作（MPL 77.631 f., MGH Epistolae I.190, tr. NPNF 2 ser. XII.2.131）；在那</div>
+<div class="inst-fn">㉓ 教皇尼古拉二世在1049年组织了枢机主教协会，以选举教皇曼西十九世（Mansi XIX.915，tr. O. J. Thatcher and E. H. McNeal，Source Book for Medieval History，p. 129；note editors’ summary，p. 127），Gratian，Decretum I. 23.1（MPL 187.128，Friedberg I.77）。</div>
+<div class="inst-fn">㉔ Socrates，Ecclesiastical History 4.30（MPG 67.543 f.，tr. NPNF 2 ser. II.113 f.）</div>
+<div class="inst-fn">㉕ Gregory I，Letters I.5：“最尊贵的国君已经下令——一只猴子变成一头狮子了。”（“fieri simiam leonam jussit”）（MGH Epistolae L 6，MPL 77.450，tr. NPNF 2 ser. XII.2.76）。</div>
+<div class="inst-fn">㉖ 参阅 Gratian，Decretum I.63.18.1.2.（MPL 187.333 f.，327–330 f.，Friedberg I.234 ff.）。</div>
+<div class="inst-fn">㉗ 希腊文是 χερσορίαν 和 χειροθεσίαν。参阅 IV.3.15，注释 14，以及下文的第十五节注释 48。</div>
+<div class="inst-fn">㉘ Council of Carthage (397) canon 39. 规定在按立监督时，要有三位监督参与 (Mansi III.886)。参阅 Second Council of Nicaea (787) canon 3 (Mansi XIII.748, tr. NPNF 2 ser. XIV.557), Council of Ni- caea (325) canons 9, 19 (Mansi II.671, 678; text and translation, Fulton, Index canonum, pp. 122 f., 126 f., 132 f., tr. with notes NPNF 2 ser. XIV.23 f., 40)。</div>
+<div class="inst-fn">㉙ Cyprian, Letters 67.3, 5 (CSEL 3.2.787 ff., tr. ANF V.370 f.)，这里西普里安称罗马的监督为“我 们的同工司提反”（第五节）。</div>
+<div class="inst-fn">㉚ Gratian, Decretum I.64.1 f. (MPL 187.313, Friedberg I.247).</div>
+<div class="inst-fn">㉛ Leo I, Letters 10.5 (MPL 54.633, tr. NPNF 2 ser. XII 1.10, FC 34.43), Gregory I, Letters III 14, IV.39, IX.81, 185, XIII.17, III.30 f. (MPL 77.315 f., 713 f. [no.76], 1010, 1269 f., 627, MGH Epistolae I.173, 276, II.97, 177, 384, I.188 f., tr. [except III.14 and IX.81] NPNF 2 ser. XII.2.129 f., 160, XIII.21).</div>
+<div class="inst-fn">㉜ Cyprian, Letters lxvii.5 (CSEL 3.ii.399, tr. ANF V.300).</div>
+<div class="inst-fn">㉝ Statuta antiqua canons iii, iv (Mansi III 951), Apostolic Constitutions viii.16 (MPG I.1114, tr. ANF VII.491 f.), Gratian, Decretum I.xxiii.8.11 (MPL 187.133 f., Friedberg I.82 f.).</div>
+<div class="inst-fn">㉞ Jerome, Letters clvi.1 (CSEL 56.310, tr. LCC V.386), Jerome, Commentary on Titus, ch.1 (MPL 26, 562), Apostolic Constitutions viii.16, 18 (MPG I.1123, tr. ANF VII.492–494).</div>

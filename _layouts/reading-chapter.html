@@ -999,27 +999,31 @@ a.fn-backref:hover {
       });
     }
 
-    /* 1. 收集所有脚注段落（格式：[N] 文本） */
+    var circled = ['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩',
+                   '⑪','⑫','⑬','⑭','⑮','⑯','⑰','⑱','⑲','⑳',
+                   '㉑','㉒','㉓','㉔','㉕','㉖','㉗','㉘','㉙','㉚',
+                   '㉛','㉜','㉝','㉞','㉟','㊱','㊲','㊳','㊴','㊵',
+                   '㊶','㊷','㊸','㊹','㊺','㊻','㊼','㊽','㊾','㊿'];
+
+    /* 1. 收集所有脚注段落（带圈数字开头） */
     var fnParas = Array.from(content.querySelectorAll('div.inst-fn'));
-    var fnMap = {};   /* "[N]" → {id, n} */
-    var fnList = [];  /* [{n, key, id, html}] */
+    var fnMap = {};   /* circled char → {id} */
+    var fnList = [];  /* [{char, id, html}] */
 
     fnParas.forEach(function(p, i){
       var raw = p.innerHTML.trim();
-      var m = raw.match(/^\[(\d+)\]\s*/);
-      if (m){
-        var n = m[1];
-        var key = '[' + n + ']';
-        var id = 'inst-fn-' + n;
-        var bodyHtml = raw.slice(m[0].length).trim();
-        fnMap[key] = { id: id, n: n };
-        fnList.push({ n: n, key: key, id: id, html: bodyHtml });
+      var firstChar = raw.charAt(0);
+      if (circled.indexOf(firstChar) >= 0){
+        var id = 'inst-fn-' + (i+1);
+        var bodyHtml = raw.slice(1).trim();
+        fnMap[firstChar] = { id: id };
+        fnList.push({ char: firstChar, id: id, html: bodyHtml });
       }
     });
 
     if (fnList.length === 0) return;
 
-    /* 2. 正文中 <sup>[N]</sup> 改为上标跳转链接 */
+    /* 2. 正文段落/标题中的圆圈数字改为上标跳转链接 */
     content.querySelectorAll('p, h2, h3').forEach(function(el){
       var html = el.innerHTML;
       /* institutes 专用：版本标记（b/c/e/d 开头） */
@@ -1031,12 +1035,13 @@ a.fn-backref:hover {
           return before + '<span class="ver-mark">' + letter + '</span>';
         });
       }
-      /* <sup>[N]</sup> → 上标跳转链接 */
-      html = html.replace(/<sup>\[(\d+)\]<\/sup>/g, function(full, n){
-        var key = '[' + n + ']';
-        if (!fnMap[key]) return full;
-        var id = fnMap[key].id;
-        return '<sup class="inst-fn-ref"><a href="#' + id + '">' + n + '</a></sup>';
+      /* 圆圈数字 → 上标链接 */
+      circled.forEach(function(ch){
+        if (fnMap[ch]){
+          html = html.replace(new RegExp(ch, 'g'), function(){
+            return '<sup class="inst-fn-ref"><a href="#' + fnMap[ch].id + '">' + ch + '</a></sup>';
+          });
+        }
       });
       el.innerHTML = html;
     });
@@ -1053,7 +1058,7 @@ a.fn-backref:hover {
       var item = document.createElement('div');
       item.className = 'inst-fn-item';
       item.id = fn.id;
-      item.innerHTML = '<span class="inst-fn-num">' + fn.n + '</span><span class="inst-fn-text">' + fn.html + '</span>';
+      item.innerHTML = '<span class="inst-fn-num">' + fn.char + '</span><span class="inst-fn-text">' + fn.html + '</span>';
       section.appendChild(item);
     });
 
