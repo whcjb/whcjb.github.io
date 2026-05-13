@@ -1990,13 +1990,6 @@ function ttsUpdateUI(state) {
                 →「添加到主屏幕」<br>可获得真正全屏阅读体验
             </div>
         </div>
-        <div class="rm-sheet-nav">
-            <a href="/">首页</a>
-            <a href="/reading/">属灵阅读</a>
-            <a href="/calvin/">加尔文注释</a>
-            <a href="/mhenry/">马太亨利</a>
-            <a href="/about/">信仰告白</a>
-        </div>
         <div class="rm-sheet-exit">
             <button onclick="rmExit()">退出阅读模式</button>
         </div>
@@ -2147,26 +2140,6 @@ function ttsUpdateUI(state) {
 }
 
 /* 退出按钮 */
-.rm-sheet-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    justify-content: center;
-    padding: 10px 16px 4px;
-    border-top: 1px solid rgba(0,0,0,0.08);
-}
-.rm-sheet-nav a {
-    font-size: 12px;
-    color: #555 !important;
-    text-decoration: none !important;
-    padding: 4px 10px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background: #f7f7f7;
-    white-space: nowrap;
-    transition: background 0.15s, color 0.15s;
-}
-.rm-sheet-nav a:hover { background: #0085a1; color: #fff !important; border-color: #0085a1; }
 .rm-sheet-exit { padding-top: 10px; text-align: center; }
 .rm-sheet-exit button {
     background: none; border: 1px solid #ddd; border-radius: 6px;
