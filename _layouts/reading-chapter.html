@@ -3,6 +3,63 @@ layout: default
 ---
 
 <!-- Page Header -->
+{% if page.book_id == "institutes" %}
+<div class="inst-ch-header">
+    <div class="inst-ch-inner">
+        <div class="inst-ch-breadcrumb">
+            <a href="{{ site.baseurl }}/reading/">属灵阅读</a>
+            <span class="inst-ch-sep">/</span>
+            <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/">基督教要义</a>
+        </div>
+        <div class="inst-ch-vol">第{{ page.volume }}卷 &middot; 第{{ page.chapter }}章</div>
+        <h1 class="inst-ch-title">{{ page.chapter_title }}</h1>
+    </div>
+</div>
+<style>
+.inst-ch-header {
+    background: #fff;
+    border-top: 4px solid #1a2e4a;
+    border-bottom: 1px solid #d4c9b0;
+    padding: 36px 0 28px;
+}
+.inst-ch-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+.inst-ch-breadcrumb {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    color: #aaa;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+}
+.inst-ch-breadcrumb a { color: #aaa; text-decoration: none; }
+.inst-ch-breadcrumb a:hover { color: #2C4A6E; }
+.inst-ch-sep { margin: 0 6px; }
+.inst-ch-vol {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    color: #C8A95A;
+    font-family: "STSong","SimSun",serif;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.inst-ch-title {
+    font-size: 22px;
+    font-weight: normal;
+    color: #1a2e4a;
+    font-family: "STSong","SimSun",serif;
+    letter-spacing: 0.06em;
+    line-height: 1.65;
+    margin: 0;
+}
+@media (max-width: 600px) {
+    .inst-ch-header { padding: 24px 0 20px; }
+    .inst-ch-title { font-size: 18px; }
+}
+</style>
+{% else %}
 <div class="reading-chapter-header" style="{% if page.header-img %}background-image: linear-gradient(rgba(28,43,58,0.65),rgba(28,43,58,0.75)), url('{{ site.baseurl }}/img/{{ page.header-img }}');{% endif %}">
     <div class="rch-inner">
         <div class="rch-label">{{ page.author_name }}{% if page.book_title %} · {{ page.book_title }}{% endif %}</div>
@@ -10,6 +67,7 @@ layout: default
         {% if page.chapter_title %}<div class="rch-subtitle">{{ page.chapter_title }}</div>{% endif %}
     </div>
 </div>
+{% endif %}
 <style>
 .reading-chapter-header {
     background: linear-gradient(135deg, #1C2B3A 0%, #2D4A5E 60%, #1C3040 100%);
@@ -54,12 +112,18 @@ layout: default
     <div class="row">
         <div id="reading-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:{% if page.book_id == 'institutes' %}32{% else %}24{% endif %}px;">
+                {% if page.book_id == "institutes" %}
+                <span style="font-size:12px;color:#aaa;font-family:sans-serif;letter-spacing:0.06em;"></span>
+                {% else %}
                 <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/">&larr; 返回{{ page.book_title }}目录</a>
+                {% endif %}
                 <button id="rm-enter-btn" onclick="rmEnter()" title="全屏阅读模式" style="background:#5B8DB8;color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap;">⛶ 阅读</button>
             </div>
 
+            {% unless page.book_id == "institutes" %}
             <h2 class="reading-section-title">{{ page.section_title }}</h2>
+            {% endunless %}
 
 <div class="reading-content{% if page.book_id == 'institutes' %} institutes-content{% endif %}">{{ content }}</div>
 
@@ -709,30 +773,31 @@ sup.fn-ref a:hover { text-decoration: underline; }
     font-family: "STSong", "SimSun", "宋体", serif;
     font-size: var(--reading-font-size, 15px);
 }
-/* 章标题：第N章 ... */
+/* 章内大标题（内文中的 ## 标题，非页头） */
 .institutes-content h2 {
-    font-size: 1.22em;
+    font-size: 1.05em;
     font-weight: bold;
     color: #1a2e4a;
-    text-align: center;
+    text-align: left;
     text-indent: 0 !important;
-    margin: 52px 0 24px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #2c5282;
-    line-height: 1.65;
+    margin: 48px 0 20px;
+    padding: 0 0 8px;
+    border-bottom: 1px solid #c8d0dc;
+    line-height: 1.7;
     letter-spacing: 0.04em;
 }
-.institutes-content h2:first-of-type { margin-top: 8px; }
-/* 节标题：N. ... */
+.institutes-content h2:first-of-type { margin-top: 4px; }
+/* 节标题：### 1. ... */
 .institutes-content h3 {
-    font-size: 1.0em;
+    font-size: 0.96em;
     font-weight: bold;
-    color: #2c5282;
+    color: #1a2e4a;
     text-indent: 0 !important;
-    margin: 28px 0 14px;
-    padding: 5px 0 5px 11px;
-    border-left: 3px solid #2c5282;
-    letter-spacing: 0.02em;
+    margin: 32px 0 12px;
+    padding: 0;
+    border-left: none;
+    border-bottom: none;
+    letter-spacing: 0.04em;
 }
 /* 正文段落 */
 .institutes-content p {
