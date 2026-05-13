@@ -1,21 +1,96 @@
 ---
 layout: default
 title: 属灵阅读
-header-img: reading-bg-main.jpg
 ---
 
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/reading-bg-main.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>属灵阅读</h1>
-                    <span class="subheading">改革宗经典著作</span>
-                </div>
-            </div>
-        </div>
+<style>
+.reading-header {
+    background: #1a2a1a;
+    padding: 52px 24px 44px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.reading-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,0.03) 39px, rgba(255,255,255,0.03) 40px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.02) 59px, rgba(255,255,255,0.02) 60px);
+    pointer-events: none;
+}
+.reading-header-inner {
+    position: relative;
+    max-width: 640px;
+    margin: 0 auto;
+}
+.reading-header-rule {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+.reading-header-rule::before,
+.reading-header-rule::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8B7040, transparent);
+}
+.reading-header-rule span {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #8B7040;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.reading-header h1 {
+    font-family: "STSong", "SimSun", "宋体", Georgia, serif;
+    font-size: 42px;
+    font-weight: normal;
+    color: #F0EAD8;
+    letter-spacing: 0.22em;
+    margin: 0 0 14px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+@media (max-width: 600px) { .reading-header h1 { font-size: 30px; } }
+.reading-header-latin {
+    font-size: 12px;
+    font-style: italic;
+    color: #8B7040;
+    letter-spacing: 0.12em;
+    margin-bottom: 20px;
+}
+.reading-header-rule-bottom {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 20px;
+}
+.reading-header-rule-bottom::before,
+.reading-header-rule-bottom::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8B7040, transparent);
+}
+.reading-header-rule-bottom span {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: #6a6a6a;
+    white-space: nowrap;
+}
+</style>
+
+<div class="reading-header">
+    <div class="reading-header-inner">
+        <div class="reading-header-rule"><span>Bibliotheca Reformata</span></div>
+        <h1>属灵阅读</h1>
+        <div class="reading-header-latin">改革宗经典著作 · 中文全文在线阅读</div>
+        <div class="reading-header-rule-bottom"><span>南山圣约归正教会</span></div>
     </div>
-</header>
+</div>
 
 <style>
 .reading-page { max-width: 780px; margin: 0 auto; padding: 32px 16px 60px; }
