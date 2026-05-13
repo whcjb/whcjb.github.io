@@ -9,7 +9,7 @@ section_title: "第四卷·第六章"
 chapter_title: "罗马教区的首要性"
 volume: 4
 chapter: 6
-date: 2026-05-13 16:04
+date: 2026-05-13 17:34
 ---
 
 ## 第六章 罗马教区的首要性
