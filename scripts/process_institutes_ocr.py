@@ -67,11 +67,30 @@ VOLUME_TITLES = {
 
 SENTENCE_END = set('。！？…""』）')
 
+def _last_body_char(text: str) -> str:
+    """返回文本中最后一行正文（非脚注行）的末字。
+    脚注行以带圈数字开头，跳过它们。"""
+    for line in reversed(text.split('\n')):
+        s = line.strip()
+        if s and s[0] not in CIRCLED_SET:
+            return s[-1]
+    return ''
+
+def _append_to_last_body(text: str, addition: str) -> str:
+    """将 addition 拼接到 text 最后一行正文行的末尾。"""
+    lines = text.split('\n')
+    for i in range(len(lines) - 1, -1, -1):
+        s = lines[i].strip()
+        if s and s[0] not in CIRCLED_SET:
+            lines[i] = lines[i].rstrip() + addition
+            return '\n'.join(lines)
+    return text + addition
+
 def load_pages(ocr_dir: Path, start: int, end: int) -> str:
     """拼合多页 OCR 文本，自动修复跨页断句。
 
-    若上一页末行不以句末标点结尾，则与下一页首行直接拼接（无换行），
-    避免正文句子被页边界切断成两个段落。
+    检测上一页最后一行正文（跳过脚注行）的末字；
+    若不是句末标点则将下一页首行直接拼接，避免跨页断句。
     """
     pages = []
     for p in range(start, end + 1):
@@ -84,15 +103,14 @@ def load_pages(ocr_dir: Path, start: int, end: int) -> str:
 
     result = pages[0]
     for page_text in pages[1:]:
-        # 取上一页最后非空字符，判断是否句子完结
-        last_char = result.rstrip()[-1] if result.rstrip() else ''
+        last_char = _last_body_char(result)
         if last_char and last_char not in SENTENCE_END:
-            # 跨页断句：去掉尾部换行，直接拼接下一页首行
-            first_line_end = page_text.find('\n')
-            if first_line_end == -1:
-                result = result.rstrip('\n') + page_text
+            first_nl = page_text.find('\n')
+            if first_nl == -1:
+                first_line, rest = page_text, ''
             else:
-                result = result.rstrip('\n') + page_text[:first_line_end] + '\n' + page_text[first_line_end+1:]
+                first_line, rest = page_text[:first_nl], page_text[first_nl:]
+            result = _append_to_last_body(result, first_line.lstrip()) + rest
         else:
             result = result + '\n' + page_text
     return result
@@ -175,6 +193,19 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         prev_blank = False
 
         if is_group_label(line):
+            # 检查前一非空行是否是本标签的第一行（以、或，结尾，且自身不含页码范围）
+            prev_idx = len(out) - 1
+            while prev_idx >= 0 and not out[prev_idx].strip():
+                prev_idx -= 1
+            if prev_idx >= 0 and out[prev_idx].strip().endswith(('、', '，', ',')):
+                prev_line = out[prev_idx].strip()
+                if not is_group_label(prev_line):
+                    merged = prev_line + line
+                    out = out[:prev_idx]
+                    while out and not out[-1].strip():
+                        out.pop()
+                    out += ['', merged, '']
+                    continue
             out += ['', line, '']
             continue
 
