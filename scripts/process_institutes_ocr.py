@@ -44,15 +44,26 @@ CHAPTERS = {
     ],
     4: [
         # ── yaoyi3.pdf（下册）──
-        # 已整理：
-        (1,  8,  38, "我们必须保守与神的真教会合而为一的心，因为她是一切敬虔之人的母亲"),
-        (2, 39,  51, "比较真假教会"),
-        (3, 52,  66, "教会教师和牧师的资格及其职分"),
-        (4, 67,  82, "古时教会的光景以及在未有天主教前的行政"),
-        # 待补充（OCR 完成后填入页码）：
-        # (5, 83, ???, "天主教的专制，完全推翻了古时教会的行政"),
-        # (6, ???, ???, "罗马教区的首要性"),
-        # ... 以此类推至第 20 章
+        (1,   8,  38, "我们必须保守与神的真教会合而为一的心，因为她是一切敬虔之人的母亲"),
+        (2,  39,  51, "比较真假教会"),
+        (3,  52,  66, "教会教师和牧师的资格及其职分"),
+        (4,  67,  82, "古时教会的光景以及在未有天主教前的行政"),
+        (5,  83, 100, "天主教的专制，完全推翻了古时教会的行政"),
+        (6, 101, 119, "罗马教区的首要性"),
+        (7, 120, 153, "罗马教宗制度的来源，以及发展到整个教会的自由都被夺去了，并且教会毫无限制地受压制"),
+        (8, 154, 172, "教会权威关于真道的信条，教会借着天主教放肆的行为，是如何败坏神的纯洁教义的"),
+        (9, 173, 187, "会议以及会议的权威"),
+        (10, 188, 221, "颁布法规的权威，就是教皇与他的支持者所用来对人极端野蛮的专政和残害"),
+        (11, 222, 241, "教会司法权的范围以及天主教对此权柄的滥用"),
+        (12, 242, 267, "教会的纪律；主要的用处在于斥责与革除教籍"),
+        (13, 268, 292, "许愿，且轻率许愿的人叫自己悲惨地落在陷阱里"),
+        (14, 293, 321, "圣礼"),
+        (15, 322, 343, "洗礼"),
+        (16, 344, 381, "婴儿洗礼最符合基督所设立的圣礼，以及这象征的性质"),
+        (17, 382, 457, "基督的圣餐及其所带给我们的福分"),
+        (18, 458, 479, "天主教亵渎神的弥撒，不但亵渎了主的圣餐，甚至也将之毁灭"),
+        (19, 480, 519, "其他的五种仪式，错误地被称为圣礼，虽然到如今被视为圣礼，然而在此被证明是假的，且它们的真相被揭露出来"),
+        (20, 520, 555, "政府"),
     ],
 }
 
@@ -68,15 +79,19 @@ VOLUME_TITLES = {
 SENTENCE_END = set('。！？…""』）')
 
 def _last_body_char(text: str) -> str:
-    """返回文本中最后一行正文（非脚注行）的末字。
-    脚注行以带圈数字开头，跳过它们。
+    """返回文本中最后一行正文的末字（忽略行末脚注上标）。
     节标题行（数字+点开头）视为完整，返回 '。' 阻止跨页拼接。"""
     for line in reversed(text.split('\n')):
         s = line.strip()
-        if s and s[0] not in CIRCLED_SET:
-            if re.match(r'^\d+[.．]\s*\S', s):   # 节标题行，视为完整
-                return '。'
-            return s[-1]
+        if not s:
+            continue
+        if re.match(r'^\d+[.．]\s*\S', s):   # 节标题行，视为完整
+            return '。'
+        # 去掉行末脚注上标后取末字
+        core = re.sub(r'(<sup>\[\d+\]</sup>)+\s*$', '', s).rstrip()
+        if core:
+            return core[-1]
+        return s[-1]
     return ''
 
 def _append_to_last_body(text: str, addition: str) -> str:
@@ -89,23 +104,84 @@ def _append_to_last_body(text: str, addition: str) -> str:
             return '\n'.join(lines)
     return text + addition
 
-def load_pages(ocr_dir: Path, start: int, end: int) -> str:
-    """拼合多页 OCR 文本，自动修复跨页断句。
+def _extract_page_parts(page_text: str) -> tuple[str, list[tuple[str, str]]]:
+    """从单页 OCR 文本中分离正文与脚注。
 
-    检测上一页最后一行正文（跳过脚注行）的末字；
-    若不是句末标点则将下一页首行直接拼接，避免跨页断句。
+    返回 (body_text, ordered_fns)：
+    - body_text: 去掉脚注行的正文
+    - ordered_fns: [(local_marker, text), ...] 按页面出现顺序
     """
-    pages = []
+    lines = page_text.split('\n')
+    body_lines: list[str] = []
+    page_fn_dict: dict[str, list[str]] = {}
+    page_fn_order: list[str] = []
+    current_fn: str | None = None
+
+    for line in lines:
+        stripped = line.strip()
+        if is_footnote_para(stripped):
+            current_fn = stripped[0]
+            rest = re.sub(r'^\([a-z/]+\)\s*', '', stripped[1:].strip())
+            if current_fn not in page_fn_dict:
+                page_fn_dict[current_fn] = [rest]
+                page_fn_order.append(current_fn)
+            else:
+                page_fn_dict[current_fn].append(rest)
+        elif current_fn is not None and stripped:
+            cn_ratio = sum(1 for c in stripped if '\u4e00' <= c <= '\u9fff') / max(len(stripped), 1)
+            if cn_ratio > 0.65 and len(stripped) > 25 and not is_footnote_para(stripped):
+                current_fn = None
+                body_lines.append(line)
+            else:
+                page_fn_dict[current_fn].append(stripped)
+        else:
+            current_fn = None
+            body_lines.append(line)
+
+    ordered_fns = [(m, ' '.join(page_fn_dict[m]).strip()) for m in page_fn_order]
+    return '\n'.join(body_lines), ordered_fns
+
+
+def _replace_inline_markers(text: str, fn_map: dict[str, int]) -> str:
+    """将正文中的带圈数字替换为全局编号上标 <sup>[N]</sup>。"""
+    for marker, n in fn_map.items():
+        text = text.replace(marker, f'<sup>[{n}]</sup>')
+    return text
+
+
+def load_pages(ocr_dir: Path, start: int, end: int
+               ) -> tuple[str, list[tuple[int, str]]]:
+    """拼合多页 OCR 文本，返回 (joined_body, all_footnotes)。
+
+    - joined_body: 去掉脚注行、修复跨页断句的正文
+    - all_footnotes: [(global_n, text), ...] 全局顺序脚注
+    """
+    all_footnotes: list[tuple[int, str]] = []
+    body_pages: list[str] = []
+
     for p in range(start, end + 1):
         f = ocr_dir / f"page_{p:04d}.txt"
-        if f.exists():
-            pages.append(f.read_text(encoding="utf-8").strip())
+        if not f.exists():
+            continue
+        page_text = f.read_text(encoding="utf-8").strip()
+        body_text, ordered_fns = _extract_page_parts(page_text)
 
-    if not pages:
-        return ""
+        # 分配全局编号并替换正文内联标记
+        local_to_global: dict[str, int] = {}
+        for marker, fn_text in ordered_fns:
+            n = len(all_footnotes) + 1
+            all_footnotes.append((n, fn_text))
+            local_to_global[marker] = n
+        if local_to_global:
+            body_text = _replace_inline_markers(body_text, local_to_global)
+        body_pages.append(body_text)
 
-    result = pages[0]
-    for page_text in pages[1:]:
+    if not body_pages:
+        return "", []
+
+    # 跨页拼接（基于已去脚注的正文）
+    result = body_pages[0]
+    for page_text in body_pages[1:]:
         last_char = _last_body_char(result)
         if last_char and last_char not in SENTENCE_END:
             first_nl = page_text.find('\n')
@@ -116,7 +192,7 @@ def load_pages(ocr_dir: Path, start: int, end: int) -> str:
             result = _append_to_last_body(result, first_line.lstrip()) + rest
         else:
             result = result + '\n' + page_text
-    return result
+    return result, all_footnotes
 
 def is_footnote_para(line: str) -> bool:
     s = line.strip()
@@ -134,12 +210,10 @@ def clean_line(line: str) -> str:
 
 def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
                     end_page: int, ch_title: str, volume: int) -> str:
-    raw   = load_pages(ocr_dir, start_page, end_page)
+    raw, all_footnotes = load_pages(ocr_dir, start_page, end_page)
     lines = raw.split('\n')
 
     main_lines: list[str] = []
-    fn_blocks: dict[str, list[str]] = {}
-    current_fn: str | None = None
 
     # 跳过开头的章标题（OCR 中可能跨多行）
     skip_header = True
@@ -155,32 +229,13 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
             if re.match(r'^第[一二三四五六七八九十]+章', stripped):
                 skipped += 1; continue
             if skipped > 0 and not stripped:
-                # 空行 = 章标题结束，后续内容不再跳过
                 skip_header = False
                 continue
             if skipped > 0 and stripped and len(stripped) < 20 and not re.search(r'\d', stripped):
-                skipped += 1; continue  # 极短纯中文续行（真正的标题换行）
+                skipped += 1; continue
             elif skipped > 0:
                 skip_header = False
 
-        # 脚注段落
-        if is_footnote_para(stripped):
-            current_fn = stripped[0]
-            rest = re.sub(r'^\([a-z/]+\)\s*', '', stripped[1:].strip())
-            fn_blocks[current_fn] = [rest]
-            continue
-
-        # 脚注续行
-        if current_fn is not None and stripped:
-            cn_ratio = sum(1 for c in stripped if '\u4e00' <= c <= '\u9fff') / max(len(stripped), 1)
-            if cn_ratio > 0.65 and len(stripped) > 25 and not is_footnote_para(stripped):
-                current_fn = None
-                main_lines.append(line)
-            else:
-                fn_blocks[current_fn].append(stripped)
-            continue
-
-        current_fn = None
         main_lines.append(line)
 
     # 格式化正文
@@ -232,9 +287,8 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         if (line == '' and fixed and i + 1 < len(out)):
             prev = fixed[-1].strip()
             nxt  = out[i + 1].strip()
-            # 判断前行末字（忽略脚注标号）
-            tmp = prev
-            while tmp and tmp[-1] in CIRCLED_SET: tmp = tmp[:-1].rstrip()
+            # 判断前行末字（忽略行末脚注上标 <sup>[N]</sup>）
+            tmp = re.sub(r'(<sup>\[\d+\]</sup>)+\s*$', '', prev).rstrip()
             last = tmp[-1] if tmp else ''
             is_continuation = (
                 last and last not in SENTENCE_END
@@ -250,13 +304,11 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         i += 1
     out = fixed
 
-    # 脚注 HTML
+    # 脚注 HTML（全局顺序编号）
     fn_html = []
-    for marker in CIRCLED:
-        if marker in fn_blocks:
-            text = ' '.join(fn_blocks[marker]).strip()
-            if text:
-                fn_html.append(f'<div class="inst-fn">{marker} {text}</div>')
+    for n, text in all_footnotes:
+        if text:
+            fn_html.append(f'<div class="inst-fn">[{n}] {text}</div>')
 
     ch_zh  = NUMS_ZH[ch_num - 1]
     now    = datetime.now().strftime('%Y-%m-%d %H:%M')
