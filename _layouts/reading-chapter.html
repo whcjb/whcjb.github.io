@@ -861,17 +861,20 @@ sup.fn-ref a:hover { text-decoration: underline; }
 .institutes-content details.inst-group > summary:hover .g-text {
     color: #8b6208;
 }
-/* 折叠箭头 */
+/* 折叠箭头（纯 CSS 细线，不用 emoji） */
 .institutes-content details.inst-group > summary .g-arrow {
     display: inline-block;
-    font-size: 0.6em;
-    color: rgba(184,134,11,0.75);
-    font-weight: normal;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid rgba(184,134,11,0.7);
+    border-bottom: 1.5px solid rgba(184,134,11,0.7);
+    transform: rotate(-45deg);
     transition: transform 0.22s ease;
     flex-shrink: 0;
+    margin-left: 2px;
 }
 .institutes-content details.inst-group[open] > summary .g-arrow {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 }
 /* 版本标记（b/c/e 开头的段落内小字上标） */
 .institutes-content .ver-mark {
@@ -996,7 +999,7 @@ a.fn-backref:hover {
         var summary = document.createElement('summary');
         var gBody  = document.createElement('span'); gBody.className  = 'g-body';
         var gText  = document.createElement('span'); gText.className  = 'g-text';  gText.textContent = t;
-        var gArrow = document.createElement('span'); gArrow.className = 'g-arrow'; gArrow.textContent = '▶';
+        var gArrow = document.createElement('span'); gArrow.className = 'g-arrow';
         gBody.appendChild(gText);
         gBody.appendChild(gArrow);
         summary.appendChild(gBody);
