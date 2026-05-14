@@ -168,6 +168,13 @@ title: 属灵阅读
     background:rgba(255,255,255,0.2); border-radius:3px 0 0 3px;
 }
 .book-spine:hover { transform:translateY(-12px); box-shadow:4px 0 18px rgba(0,0,0,0.3),inset -3px 0 6px rgba(0,0,0,0.1); z-index:10; }
+/* 拖动状态 */
+.book-spine-ghost  { opacity:0.35; border:2px dashed rgba(255,255,255,0.5) !important; }
+.book-spine-chosen { transform:translateY(-14px) scale(1.03); box-shadow:6px 0 24px rgba(0,0,0,0.5) !important; z-index:50; cursor:grabbing !important; }
+.book-spine-drag   { opacity:0; }
+.bookshelf-wrap.sortable-drag-over { outline: 2px dashed rgba(255,255,255,0.25); outline-offset: -4px; }
+/* 拖动模式下禁止链接跳转视觉反馈 */
+body.is-dragging .book-spine { cursor:grabbing; }
 .spine-tip {
     display: none; position: absolute;
     bottom: calc(100% + 12px); left: 50%; transform: translateX(-50%);
@@ -247,6 +254,7 @@ title: 属灵阅读
           <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(18,12,6,0.52),rgba(18,12,6,0.52)),url('{{ site.baseurl }}/img/shelf-bg-murray.jpg');">
             <a href="{{ site.baseurl }}/reading/murray/principles/" class="book-spine"
+               data-book-id="murray-principles"
                style="background:linear-gradient(155deg,#2E5D8E,#1A3A5C);color:#E8F4FF;">
               <span class="spine-title">正直生活要道</span>
               <span class="spine-meta">圣经伦理面面观<br>Principles of Conduct<br>1957 · 译：乔兰山以姐</span>
@@ -267,6 +275,7 @@ title: 属灵阅读
           <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(12,8,4,0.55),rgba(12,8,4,0.55)),url('{{ site.baseurl }}/img/shelf-bg-tripp.jpg');">
             <a href="{{ site.baseurl }}/reading/tripp/quest/" class="book-spine"
+               data-book-id="tripp-quest"
                style="background:linear-gradient(155deg,#8B3A8B,#5C1F5C);color:#F5E8FF;">
               <span class="spine-title">寻求更大的事</span>
               <span class="spine-meta">神的国？我的国？<br>A Quest for More<br>2007 · 译：陆钿孙铁男</span>
@@ -289,6 +298,7 @@ title: 属灵阅读
 
             <!-- 基督教要义 四卷 -->
             <a href="{{ site.baseurl }}/reading/calvin/institutes/#vol1" class="book-spine"
+               data-book-id="calvin-inst-1"
                style="background:linear-gradient(160deg,#243063,#0D1245);color:#E8EAF6;">
               <span class="spine-title">基督教要义·一</span>
               <span class="spine-meta">认识创造天地万物的神</span>
@@ -296,6 +306,7 @@ title: 属灵阅读
               <span class="spine-tip">基督教要义 第一卷<br>认识创造天地万物的神<br>Institutio Christianae Religionis I<br>1559 · 钱曜诚等译，孙毅·游冠辉修订<br>18章</span>
             </a>
             <a href="{{ site.baseurl }}/reading/calvin/institutes/#vol2" class="book-spine"
+               data-book-id="calvin-inst-2"
                style="background:linear-gradient(160deg,#1B3A6B,#0A2040);color:#E0EAFF;">
               <span class="spine-title">基督教要义·二</span>
               <span class="spine-meta">在救赎主基督里认识神</span>
@@ -303,6 +314,7 @@ title: 属灵阅读
               <span class="spine-tip">基督教要义 第二卷<br>在救赎主基督里认识神<br>Institutio Christianae Religionis II<br>1559 · 钱曜诚等译，孙毅·游冠辉修订<br>17章</span>
             </a>
             <a href="{{ site.baseurl }}/reading/calvin/institutes/#vol3" class="book-spine"
+               data-book-id="calvin-inst-3"
                style="background:linear-gradient(160deg,#0D3B5E,#061F35);color:#D6EEFF;">
               <span class="spine-title">基督教要义·三</span>
               <span class="spine-meta">我们领受基督之恩的方式</span>
@@ -310,6 +322,7 @@ title: 属灵阅读
               <span class="spine-tip">基督教要义 第三卷<br>我们领受基督之恩的方式<br>Institutio Christianae Religionis III<br>1559 · 钱曜诚等译，孙毅·游冠辉修订<br>25章</span>
             </a>
             <a href="{{ site.baseurl }}/reading/calvin/institutes/#vol4" class="book-spine"
+               data-book-id="calvin-inst-4"
                style="background:linear-gradient(160deg,#1C3C4A,#0A1F28);color:#D0EAEE;">
               <span class="spine-title">基督教要义·四</span>
               <span class="spine-meta">神采用外在方式与基督交通</span>
@@ -333,6 +346,7 @@ title: 属灵阅读
           <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(15,10,4,0.40),rgba(15,10,4,0.40)),url('{{ site.baseurl }}/img/shelf-bg-johnson.jpg');">
             <a href="{{ site.baseurl }}/reading/johnson/whengracecomes/" class="book-spine"
+               data-book-id="johnson-grace"
                style="background:linear-gradient(155deg,#8B5E00,#5C3A00);color:#FFF3E0;">
               <span class="spine-title">从恩典启航</span>
               <span class="spine-meta">加尔文主义的<br>生活实践<br>When Grace Comes Home<br>2002</span>
@@ -352,6 +366,7 @@ title: 属灵阅读
           <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(10,8,4,0.52),rgba(10,8,4,0.52)),url('{{ site.baseurl }}/img/shelf-bg-murray.jpg');">
             <a href="{{ site.baseurl }}/reading/lu/pioneers/" class="book-spine"
+               data-book-id="lu-pioneers"
                style="background:linear-gradient(155deg,#7B4A1E,#4A2500);color:#FFF3E0;">
               <span class="spine-title">先贤所信</span>
               <span class="spine-meta">早期教会史话<br>2012</span>
@@ -364,13 +379,24 @@ title: 属灵阅读
 
         <!-- 新增作者：在此处追加 shelf-section -->
 
+        <!-- 重置按钮 -->
+        <div style="text-align:right;margin-top:-24px;margin-bottom:40px;">
+          <button onclick="bookshelfReset()" style="background:none;border:none;cursor:pointer;font-size:12px;color:#bbb;padding:4px 0;letter-spacing:0.05em;">
+            ↺ 恢复默认排列
+          </button>
+        </div>
+
       </div>
     </div>
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.2/Sortable.min.js"></script>
 <script>
 (function(){
+  var STORAGE_KEY = 'bookshelf-order-v2';
+
+  /* ── 滚动边缘渐变 ── */
   function updateFade(wrap) {
     var outer = wrap.parentElement;
     if (!outer || !outer.classList.contains('shelf-scroll-outer')) return;
@@ -383,5 +409,81 @@ title: 属灵阅读
     updateFade(wrap);
     wrap.addEventListener('scroll', function(){ updateFade(wrap); }, {passive:true});
   });
+
+  /* ── localStorage 存取 ── */
+  function saveState() {
+    var state = {};
+    document.querySelectorAll('.bookshelf-wrap').forEach(function(wrap) {
+      var section = wrap.closest('.shelf-section');
+      if (!section) return;
+      var ids = [];
+      wrap.querySelectorAll('.book-spine[data-book-id]').forEach(function(b) {
+        ids.push(b.getAttribute('data-book-id'));
+      });
+      state[section.id] = ids;
+    });
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch(e){}
+  }
+
+  function restoreState() {
+    var raw;
+    try { raw = localStorage.getItem(STORAGE_KEY); } catch(e){}
+    if (!raw) return;
+    var state;
+    try { state = JSON.parse(raw); } catch(e){ return; }
+
+    /* 收集所有书 */
+    var allBooks = {};
+    document.querySelectorAll('.book-spine[data-book-id]').forEach(function(b) {
+      allBooks[b.getAttribute('data-book-id')] = b;
+    });
+
+    /* 按保存顺序重排 */
+    document.querySelectorAll('.bookshelf-wrap').forEach(function(wrap) {
+      var section = wrap.closest('.shelf-section');
+      if (!section) return;
+      var ids = state[section.id];
+      if (!ids) return;
+      ids.forEach(function(id) {
+        var b = allBooks[id];
+        if (b) wrap.appendChild(b);
+      });
+    });
+  }
+
+  /* ── SortableJS ── */
+  function initSortable() {
+    document.querySelectorAll('.bookshelf-wrap').forEach(function(wrap) {
+      Sortable.create(wrap, {
+        group:        { name: 'books', pull: true, put: true },
+        animation:    180,
+        ghostClass:   'book-spine-ghost',
+        chosenClass:  'book-spine-chosen',
+        dragClass:    'book-spine-drag',
+        /* 触屏：长按 150ms 后开始拖，避免与横向滚动冲突 */
+        delay:        150,
+        delayOnTouchOnly: true,
+        touchStartThreshold: 8,
+        fallbackOnBody:  true,
+        fallbackTolerance: 6,
+        scroll:       false,   /* 关闭 SortableJS 自身滚动，书架已有原生横滚 */
+        onStart: function() { document.body.classList.add('is-dragging'); },
+        onEnd:   function() {
+          document.body.classList.remove('is-dragging');
+          saveState();
+          document.querySelectorAll('.bookshelf-wrap').forEach(updateFade);
+        }
+      });
+    });
+  }
+
+  restoreState();
+  initSortable();
+
+  /* ── 重置 ── */
+  window.bookshelfReset = function() {
+    try { localStorage.removeItem(STORAGE_KEY); } catch(e){}
+    location.reload();
+  };
 })();
 </script>
