@@ -9,7 +9,7 @@ section_title: "第四卷·第二章"
 chapter_title: "比较真假教会"
 volume: 4
 chapter: 2
-date: 2026-05-13 18:26
+date: 2026-05-14 10:02
 ---
 
 ## 第二章 比较真假教会

@@ -9,7 +9,7 @@ section_title: "第四卷·第十五章"
 chapter_title: "洗礼"
 volume: 4
 chapter: 15
-date: 2026-05-14 04:28
+date: 2026-05-14 10:02
 ---
 
 ## 第十五章 洗礼
