@@ -121,6 +121,32 @@ description: 约翰·加尔文《基督教要义》中文全文在线阅读，�
     color: #fff !important;
     border-color: #2C4A6E;
 }
+.inst-prefaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #d4c9b0;
+}
+.inst-pre-link {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: #7a5c2a;
+    border: 1px solid #d4c9b0;
+    border-radius: 2px;
+    text-decoration: none !important;
+    background: #fdf9f3;
+    transition: background 0.12s, color 0.12s;
+    letter-spacing: 0.02em;
+}
+.inst-pre-link:hover {
+    background: #7a5c2a;
+    color: #fff !important;
+    border-color: #7a5c2a;
+}
+
 .inst-ch-link.no-content {
     color: #bbb;
     border-color: #e8e8e8;
@@ -168,6 +194,14 @@ description: 约翰·加尔文《基督教要义》中文全文在线阅读，�
         <div class="inst-volume-header">
             <span class="inst-volume-num">第一卷</span>
             <span class="inst-volume-title">认识创造天地万物的神</span>
+        </div>
+        <div class="inst-prefaces">
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-abbrev/"    class="inst-pre-link">缩写与符号</a>
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-zh-intro/"  class="inst-pre-link">中译本导言</a>
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-intro/"     class="inst-pre-link">导言</a>
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-preface/"   class="inst-pre-link">致读者书</a>
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-argument/"  class="inst-pre-link">法文版主旨</a>
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/1-letter/"    class="inst-pre-link">致法王书</a>
         </div>
         <div class="inst-chapters">
             {% assign v1 = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18" | split: "," %}
