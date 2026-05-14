@@ -1076,14 +1076,15 @@ a.fn-backref:hover {
           return before + '<span class="ver-mark">' + letter + '</span>';
         });
       }
-      /* 圆圈数字 → 上标链接（首次出现加锚点 id 供反向跳转） */
-      circled.forEach(function(ch){
+      /* 圆圈数字 → 上标链接，显示阿拉伯数字（首次出现加锚点 id 供反向跳转） */
+      circled.forEach(function(ch, idx){
         if (fnMap[ch]){
+          var fnNum = idx + 1;
           var first = true;
           html = html.replace(new RegExp(ch, 'g'), function(){
             var refId = first ? ' id="' + fnMap[ch].id + '-ref"' : '';
             first = false;
-            return '<sup class="inst-fn-ref"' + refId + '><a href="#' + fnMap[ch].id + '">' + ch + '</a></sup>';
+            return '<sup class="inst-fn-ref"' + refId + '><a href="#' + fnMap[ch].id + '">' + fnNum + '</a></sup>';
           });
         }
       });
