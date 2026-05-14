@@ -234,16 +234,15 @@ def load_pages(ocr_dir: Path, start: int, end: int
     return result, all_footnotes
 
 def is_footnote_para(line: str) -> bool:
-    """判断是否为脚注行（圆圈数字开头）。
-    若圆圈后跟中文正文（>20字且中文率>68%），视为正文版本标记，非脚注。"""
+    """判断是否为脚注行（圆圈数字开头后紧跟空格）。
+    脚注格式：'⑤ 加尔文在此...'（圆圈后有空格）
+    正文版本标记：'⑦我们所要谈...'（圆圈后直接跟文字，无空格）"""
     s = line.strip()
     if not s or s[0] not in CIRCLED_SET:
         return False
-    rest = s[1:].strip()
-    if len(rest) > 20:
-        cn_ratio = sum(1 for c in rest if '\u4e00' <= c <= '\u9fff') / len(rest)
-        if cn_ratio > 0.68:
-            return False
+    # 圆圈后直接接非空格字符 → 正文版本标记，非脚注
+    if len(s) > 1 and s[1] != ' ':
+        return False
     return True
 
 def is_group_label(line: str) -> bool:

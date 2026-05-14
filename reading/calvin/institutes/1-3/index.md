@@ -9,7 +9,7 @@ section_title: "第一卷·第三章"
 chapter_title: "人生来就有对神的认识"
 volume: 1
 chapter: 3
-date: 2026-05-14 13:53
+date: 2026-05-14 14:03
 ---
 
 ## 第三章 人生来就有对神的认识
