@@ -9,7 +9,7 @@ section_title: "第一卷·第十一章"
 chapter_title: "圣经不许人勾画有形体的神，并且拜偶像就是背叛真神"
 volume: 1
 chapter: 11
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 ## 第十一章 圣经不许人勾画有形体的神，并且拜偶像就是背叛真神
@@ -150,15 +150,6 @@ b 除此之外，我们应当参阅拉克唐修和优西比乌（Eusebius）有�
 
 我现在要谈到他们可怕的亵渎，就是他们竟敢说出这样亵渎的话，实在令人惊讶！然而更令人惊讶的是，居然无人立即严厉地反驳他们。但公开地揭露这种邪恶愚蠢的行为是极为必要的，至少为了证明肖像崇拜并非如天主教所说是从古老时代就开始的。阿摩利阿姆（Amorium）的主教狄奥多西（Theodosius）咒诅一切反对肖像崇拜的人。另一位天主教徒说，希腊和东方的国家所遭遇的一切灾祸，是由于忽略敬拜肖像的结果。如此说来，那先知、使徒及众殉道者当受什么样的惩罚呢？因为在他们的时代，肖像并不存在。天主教徒又说：如果我们带着乳香和香来到皇帝的肖像前，那我们就更应该将这样的尊荣归给使徒的肖像。塞浦路斯的康士坦茨（Constance）主教康士坦丢（Constantius）宣称他十分敬畏这些肖像，甚至将献给赐人生命之三位一体的真神之敬拜和尊荣也照样归给肖像。他居然也咒诅一切拒绝这样敬拜肖像的人，并咒骂他们是摩尼教徒和马西昂主义者 (Marcionites)。若你以为这只是他个人的观点，那就错了，因为其他的天主教徒也赞同这观点。事实上，东方教会的主教约翰更激昂地宣称：宁愿全城都充满妓院，也不愿禁止人敬拜肖像。虽然大家一致公认撒玛利亚人比所有异端更邪恶，然而天主教徒却认为反对肖像敬拜的人㉖比撒玛利亚人更邪恶。此外，他们生怕无人对他们的演出鼓掌喝彩，㉗就接着说，让那些拥有基督肖像的人向这肖像烧香并欢喜快乐㉗吧！但这是否完全与他们一贯用来欺哄神和众人对 “la-tria” 和 “dulia” 所做的区分互相矛盾？因为尼西亚会议的决议是将永生神所应得的敬拜归给肖像。
 
-第十二章 为了将一切的尊荣都归给神，
-我们应当清楚地区分神与偶像
-
-
-### 1. 正统的基督教信仰使我们专靠神并承认他是独一的真神
-
-
-此外，我们从一开始就教导㉘：认识神不在乎冷漠的思辨，因为认识神也包括尊荣神。在前面我们也提过如何正确地敬拜神，之后也会在更恰当的时候详尽地谈论这主题。㉙现在我只要简单地重复一下：圣经常常宣告只有一位真神，这不但是宣告神的名号，也是禁止将神的任何属性归给假神。从这里我们也可以清楚地知道纯正的基督教与迷信在哪些方面不同。希腊文单词 εὐσέβεια 的意思是“宗教”，也暗示正当的敬畏。因为连在黑暗里摸索的心盲的人，也可以感觉到必须遵守正确的准则，避免羞辱神。西塞罗认为“宗教”一词是源于拉丁文 relegere㉚，此看法是正确的，但他对拉丁人为何使用这词的解释却有些附会牵强——即虔诚的敬拜者重复地阅读并查考何为真理。其实我认为他们使用这一词是因为此词的意思是“不随己意敬拜”，因为大多数世人，不管其立场怎
-
 <div class="inst-fn">① “那唯独借着他自己的话才能被认识的神，就是自己最好的见证者。” Hilary of Poitiers, On the Trinity I.18 (MPL 10.38; tr. NPNF 2 ser. IX.45)。</div>
 <div class="inst-fn">② Maximus of Tyre (ca. A. D. 150), Philosophoumena 2 (ed. H. Hobein, pp. 18 ff., tr. T. Taylor, The Dissertations of Maximus Tyrius II. 188 ff.). (Taylor’s Dissertation 38 = No. 2 in Hobein.)</div>
 <div class="inst-fn">③ City of God VI 10 (MPL 41.190; tr. NPNF II 119)。奥古斯丁反对在基督教的敬拜中使用肖像敬拜神时，引用了塞涅卡驳斥迷信的书，这部作品现在已佚失了。值得我们留意的是，当西方人正在为反图像争辩时，里昂的艾戈巴德主教（Bishop Agobard of Lyons）在处于西方反图像争辩的回响中写了（ca. 826）他的专著Against the Superstition of Those Who Think that Worship Ought to Be Offered to Pictures and Images of the Saints (MPL 104.199–228)。如要参阅对此作品的简要描述，可见卡班尼斯（A. Cabaniss），在Agobard of Lyons, Churchman and Critic, pp. 54 f. 里面有对这部作品简洁的解释。他在自己的书中引用了奥古斯丁和其他教父的话。艾戈巴德的观点与Libri Carolini相关；参阅下文14节，注释28，在某种程度上与加尔文的观点有些相似：他恨不得“砸碎”一切的雕像（MPL104.208）。</div>
@@ -186,6 +177,3 @@ b 除此之外，我们应当参阅拉克唐修和优西比乌（Eusebius）有�
 <div class="inst-fn">㉕ “eikōnōpōqou” .</div>
 <div class="inst-fn">㉖ 他指的是罗马剧院戏剧结束后的正式鼓掌惯例。参阅 Horace, Ars Poetica V.154 f. (LCL edition, pp. 462 f. and note e)。</div>
 <div class="inst-fn">㉗ 参阅上文11节，注释21，above，and Calvin, On the Necessity of Reforming the Church (1549) (CR VI. 463; tr. Tracts I. 131)。</div>
-<div class="inst-fn">㉘ 参阅 I.2.2；I.5.6，9，10。</div>
-<div class="inst-fn">㉙ II.8.17–19，IV.10.8–31。</div>
-<div class="inst-fn">㉚ Nature of the Gods II.28.72 (LCL edition, pp. 192 f. and note a)。拉克唐修同意“religion”是从这个单词而来，但他批评西塞罗对迷信的恐惧与对正统信仰的区分方式 (Divine Institutes IV.28，CSEL 19.389，tr. ANF VII 131)。</div>

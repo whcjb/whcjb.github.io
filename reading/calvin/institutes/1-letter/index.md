@@ -9,7 +9,7 @@ section_title: "致法王书"
 chapter_title: "致法王法兰西斯一世书"
 volume: 1
 chapter: "letter"
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 致法王法兰西斯一世书

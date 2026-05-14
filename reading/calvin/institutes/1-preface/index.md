@@ -9,7 +9,7 @@ section_title: "致读者书"
 chapter_title: "约翰·加尔文致读者书（1559年版）"
 volume: 1
 chapter: "preface"
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 约翰·加尔文致读者书（1559 年版）

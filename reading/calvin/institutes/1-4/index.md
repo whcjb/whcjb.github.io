@@ -9,7 +9,7 @@ section_title: "第一卷·第四章"
 chapter_title: "这种知识因无知和恶毒被压抑或败坏了"
 volume: 1
 chapter: 4
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 ## 第四章 这种知识因无知和恶毒被压抑或败坏了
@@ -45,15 +45,6 @@ c 不认识神之人的另外一项罪便是：除非迫不得已，否则他们
 
 ⑭综上可见，我所论证的如今更为确凿，即人心里有与生俱来对神的意识。甚至神所遗弃的人也不得不承认这种意识的存在。在平安无事时，他们机智地对神开玩笑、无礼及多嘴地蔑视神的大能。一旦绝望笼罩他们时，就刺激他们寻求神并冒出一些形式化的祷告。这就证明他们并不是一直对神完全无知，而是在压抑他们早就应当表现出来的对神的敬畏。
 
-第五章 有关神的知识也彰显在宇宙的创造和护理之中神在他创造的作品上彰显他自己（1—10）
-
-
-
-### 1. 神已清楚地彰显自己，这杜绝了我们所有的借口
-
-
-有福一生的最终目标就是认识神（参阅约17：3）。⑧为了让每个人都有获取幸福的机会，⑨神不但在人心里撒下我们所谓真宗教的种子，也在创造宇宙的整个事工上天天启示他自己。因此，人一旦睁开眼睛就不得不看到他。其实，神的本质无法测透，⑩所以他的神性远超过人的认知能力。但神所创造的每一件作品都刻上记号，以便彰显他的荣耀，这记号是如此明确，以至于连文盲和愚昧者都无法以无知作借口。④所以这位先知十分贴切地宣扬：“披上亮光，如披外袍”（诗104：2 p.）。他似乎在说，自从创立世界以来，神借着所有的受造物随时随地向我们彰显的
-
 <div class="inst-fn">① 加尔文在 1538 年出版的拉丁文要理问答中使用类似的说法（CR V. 323—324）。</div>
 <div class="inst-fn">② 参阅 I.2.2，注释 7。</div>
 <div class="inst-fn">③ Cicero, Nature of the Gods L 20.54，L 30.85 f.，L 44.123（LCL edition, pp. 52 ff., 82 f., 118 f.）。</div>
@@ -61,6 +52,3 @@ c 不认识神之人的另外一项罪便是：除非迫不得已，否则他们
 <div class="inst-fn">⑤ 虽然加尔文在这里并非引用拉克唐修的话，但他对拉克唐修在 Divine Institutes 中 I.2，5，6，20 和 IV.5 的许多教导作摘要，在这些地方不断地将异教徒的信念以“真理”加以试验（MPL 6.120 f.，129 ff.，456 ff.；tr. ANF VII 11，13 ff.，32 ff.，104 f.）。</div>
 <div class="inst-fn">⑥ “Timorem primum, fecisse in orbe deos”，参阅 Statius，Thebaid III 661：“Primum in orbe deos fecit timor”（LCL Statius I.500 f.）。</div>
 <div class="inst-fn">⑦ “Pietas, ex qua demum religio nascitur”。参阅前面的英语本导言。加尔文此文观点的强调声明为数甚多，参阅 I.2.1；I.4.1；I.9，title；II.6.4；III.3.16；IV.1.5；IV.1.9；IV.1.12；IV.20.9，10，13，15；Comm. Jer.10；25；Instruction in Faith（tr. Fuhrmann，p.19）。参阅 Cicero，Pro Plancio 12.29：“Pietas fundamentum est omnium virtutum”（LCL edition，p.442）。</div>
-<div class="inst-fn">⑧ 参阅阿奎那常被引用的话：“人终极的快乐完全在乎思想神”（Contra gentes 3.37 [tr. A. C. Pegis, Basic Writings of St. Thomas Aquinas 2.60]）；奥古斯丁，Confessions X.20.29；“我寻求你，等于寻求快乐的生活”（MPL 32.791；tr. LCC X.219）。</div>
-<div class="inst-fn">⑨ 加尔文主张：神所有启示的目的是为了人的幸福，但因人的罪，创造之启示的结果反而使人的罪更深。参阅I.6.1和参阅I.5.14–15；II.2.23。</div>
-<div class="inst-fn">⑩ 参阅I.3.1和参阅I.13.21。加尔文在他于1538年的要理问答中也说神的“本性是无法测透，远超过人的理解力”。（CR V.324）在1542年的要理问答也记载：“我们的思想无法测透神的本质”（CR VI.16）。神在他的启示中“俯就”我们有限的理解力；参阅Comm. Gen.3；8，Comm. I Cor.2；7。</div>

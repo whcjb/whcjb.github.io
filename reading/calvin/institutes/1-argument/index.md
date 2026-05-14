@@ -9,7 +9,7 @@ section_title: "1560年法文版主旨"
 chapter_title: "1560年法文版主旨"
 volume: 1
 chapter: "argument"
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 1560 年法文版主旨

@@ -9,7 +9,7 @@ section_title: "第一卷·第二章"
 chapter_title: "何谓认识神，以及认识神的意义何在"
 volume: 1
 chapter: 2
-date: 2026-05-14 13:42
+date: 2026-05-14 13:53
 ---
 
 ## 第二章 何谓认识神，以及认识神的意义何在
@@ -36,14 +36,6 @@ date: 2026-05-14 13:42
 
 相信并真诚地惧怕神，⑦c 这惧怕使我们甘心乐意地敬畏他，且伴随此敬畏在律法里合法地敬拜，这就是纯洁和真实的基督教敬虔。⑥ 我们应当更加留意，所有的人对神只有一般的、笼统的尊敬，很少人真正地敬畏他，而且在过分强调仪式之地，真正从心里敬畏神的人更稀有。
 
-第三章 人生来就有对神的认识⑧
-
-
-### 1. 人生来对神认识的特征
-
-
-人心因他的本能多少意识到神的存在，⑨这是无可争辩的。神亲自将某种对他威严的认识安置在所有人的心里，免得人以他的无知为借口。⑩神不断重复地在人心里灌输这种鲜明的认识，以便提醒他。⑪既然所有的人都可以意识到神的存在并知道他是他们的造物主，所以他们自己的见证也定了他们自己的罪，因为他们没有尊荣他，也没有将自己的生命献给他。若说有什么人对神无知，一定是那些离文明最遥远和落后的民族。然而，正如一位著名的异教徒所说，就是最原始的部落、最不开化的民族也深信有一位神。⑪甚至那些在生活的某些方面
-
 <div class="inst-fn">① 加尔文经常喜欢强调 pietas（敬虔），即对神的爱和敬畏所组成的美德，是任何对神认识的先决条件（参阅 L 4.4.）。他在1537年的版本中对 pietas 的解释是：“真敬虔不是一种想逃脱神审判的恐惧……乃是一种纯洁和真实的热诚，这热诚因神是父而爱他，因他是主而敬畏他，乐意接受他的公正，甚至惧怕得罪他胜过惧怕死亡。” Instruction in Faith (1537)，tr. P. T. Fuhrmann，pp. 18 f.（original in OS I 379）参照伊拉斯谟，John Sturm，Melanchthon 和 Cordier 等人对 “pietas literata” 所作的探讨，见 P. R. Bolgar，The Classical Heritage and Its Beneficiaries，pp. 329–356。</div>
 <div class="inst-fn">② “Si integer stetisset Adam”。这句话清楚地解释了加尔文对自然神学的观念。第一卷第二至第五章是加尔文所有作品中论及“自然神学”最关键的地方。就加尔文而言，只有在“亚当持守住他的正直”的情形下，神在创造中的启示才是自然神学极好的基础。但因罪的缘故，我们不可能有正确的自然神学观。圣经是唯一认识造物主及明白他在创造中启示的方法（I 6ff.）。参阅 Introduction，pp. 53 ff.，above。加尔文新约圣经序言的开头中也有类似的表达，此序言写于1534年，并出版在 Olivetan’s French Bible (1535)（CR IX 791，tr. LCC XXIII 58）。</div>
 <div class="inst-fn">③ “Duplex . . cognitio”. 他在此所说的“双重”认识是在1559年的版本中加上的，这也是明白此版本之钥。加尔文在此版本中一再地分辨双重的认识，为求更清楚地表达他的论点。参阅I.6.1, 2; 10.1, 13.9, 11, 23, 24, 14.20, 21和II.6.1。虽然第一卷第五章以后都是启示的教导，但整个第一卷都没有认识救赎者的教导。</div>
@@ -51,7 +43,3 @@ date: 2026-05-14 13:42
 <div class="inst-fn">⑤ 参阅 I. 10.2；III. 2.6，“明白怎样的行为与他的属性相称”。In Praelectiones in Ezechielem, on Ezek 1；26（CR XL. 57）以及其他许多作品中，加尔文批评有关神论方面过于精细的思辨。这里所提及的是指经院学派的作者而言，但在他于1552年1月写给布林格（Bullinger）“两人之间的私密”（familiariter inter nos）信函中，他也批评了茨温利（Zwingli）在 De Providentia 里复杂的矛盾立论（CR XIV. 253）。</div>
 <div class="inst-fn">⑥ 伊壁鸠鲁（公元前342—前270）的作品非常丰富，但只有一些片段流传下来。加尔文大概借着西塞罗的 De finibus 和 De natura deorum 得知伊壁鸠鲁的教导。后者的第—卷多半解释和严厉地批评伊壁鸠鲁的神观。这句话总结了加尔文与西塞罗对话的印象。科塔（Cotta）这位学者也严厉地斥责伊壁鸠鲁的神观——所有的神是遥远、无聊的，没有爱。科塔认为伊壁鸠鲁这样说等于是个无神论者。因为加尔文是相信圣经的神学家，所以完全同意这样的判断。Cicero, Nature of the Gods I. 42. 117；I. 43. 120 ff.（LCL edition, pp. 112 ff.）；Calvin, Instruction et confession de foi（1537）1. 2（OS I. 378 f.）；tr. Fuhrmann, Instruction in Faith, pp. 17—19）。参阅，below, I. 4. 2；I. 5. 4；I. 5. 12。威廉·比代（William Budé）是加尔文很熟悉的巴黎希腊文学者，他对伊壁鸠鲁的看法与西塞罗的很接近，参阅 J. Bohatec, Budé und Calvin, p. 74。</div>
 <div class="inst-fn">⑦ 关于同时相信和惧怕神，参阅 Melanchthon，Loci communes (1521)，ed. H. Engelland，in the series Melanchthons Werke in Auswahl，ed. R. Stupperich，II. 1. 119 ff.；tr. C. L. Hill (from Th. Kolde’s 1910 edition)，The Loci Communes of Philip Melanchthon，pp. 211 ff。</div>
-<div class="inst-fn">⑧ “Hominum mentibus naturaliter…inditam.” 神对人内在（within）的启示（第三章）已经被罪抹去了（第四章）。神在大自然外在（from without）的征候和遗留的标本（insignia, specimina）启示也是如此（第十四章）。为了了解第三章至第五章这三章，首先必须明白加尔文有关人的全部教义：人被造时的光景（I.15）以及被罪败坏的光景（II.1–5）。</div>
-<div class="inst-fn">⑨ “Divinitatis sensum.” 这术语和下面的“宗教的种子”（seed of religion）（参阅 I.4.1）所指的是人对神模糊的意识。这两个术语和良心很接近。良心是人在道德上对神的反应。参阅 I.1.3 以及 Comm. John 1:5, 9。加尔文对第五节的解释是：“神对人原先的光照有两个基本的部分，在堕落后仍存在人败坏的本性中：首先，宗教的种子撒在所有人的心里；其次，分辨是非的能力也刻印在每一个人的良心上。”</div>
-<div class="inst-fn">⑩ 参阅西塞罗的 Tusculan Disputations II.10（LCL edition, pp. 172 ff.）。</div>
-<div class="inst-fn">⑪ 加尔文在这里所说的异教徒（ethnics）是指西塞罗。加尔文的立场是所有的人生来就相信神的存在，这与西塞罗的作品 On the Nature of the Gods 中所有角色的立场一样，包括伊壁鸠鲁派的维勒（Velleius）。维勒问：“哪里有什么种族或民族不是在没受教诲的情况下就已相信神明的存在？” Nature of the Gods L.16.43（A. S. Pease, M. Tulii Ciceronis De natura deorum, pp. 294 f.；LCL edition, pp. 44 f.）。</div>
