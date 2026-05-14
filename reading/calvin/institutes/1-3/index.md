@@ -9,80 +9,52 @@ section_title: "第一卷·第三章"
 chapter_title: "人生来就有对神的认识"
 volume: 1
 chapter: 3
-date: 2026-05-14 13:33
+date: 2026-05-14 13:42
 ---
 
 ## 第三章 人生来就有对神的认识
 
-缩写与符号
-缩 写
-ACW —— Ancient Christian Writers.
-ANF —— The Ante-Nicene Fathers.
-Aquinas, Summa Theol —— Thomas Aquinas, Summa Theologica.
-Augustine, Psalms —— Augustine, Enarrationes in Psalmos.
-Augustine, John’s Gospel —— Augustine, In Joannis evangelium tractatus.
-Ayer, Source Book —— Ayer, J. C., A Source Book of Ancient Church History.
-Benoit, Institution —— Benoit, J.-D., Jean Calvin; Institution de la Religion Chrestienne, livres I – III.
-Cadier, Institution —— Cadier, J. and Marcel, P., Jean Calvin; Institution de la Religion Chrétienne.
-Calvin, Letters —— Letters of John Calvin, ed. J. Bonnet.
-Calvin, Tracts —— Calvin’s Tracts.
-CC —— Corpus Catholicorum. Werke catholischer Schriftsteller im Zeitalter der Glaubens-spaltung.
-CCL —— Corpus Christianorum, series Latina.
-Comm. —— Commentary, in the text designates a Scripture passageconforming to translation given, in the notes indicates a statement made in
-the appropriate commentary of Calvin.
-CR —— Corpus Reformatum: Johannis Calvini Opera quae supersunt omnia.
-CR Melanchthon —— Corpus Reformatum: Philippi Melanchthonis
-Opera quae supersunt omnia.
-CR Zwingli —— Corpus Reformatum: Huldreich Zwinglis sammtliche
-Werke.
-CSEL —— Corpus Scriptorum Ecclesiasticorum Latinorum.
-Doumergue, Calvin —— Doumergue, E'., Jean Calvin-Les homes et
-les choses de son temps.
-Du Cange, Glossarium —— C. du F. Du Cange, Glossarium ad scrip-
-tores mediae et infimae latinitatis.
-FC —— Fathers of the Church.
-Friedberg —— Friedberg, E. (ed.), Corpus iuris canonici.
-HDRE —— Hastings, J. (ed.), Dictionary of Religion and Ethics.
-Hefele-Leclercq —— Hefele, C. J., ed. Leclercq H., Histoire des con-
-ciles d'après les documents originaux.
-Heppe RD —— Heppe, H., Reformed Dogmatics. Tr. G. T. Thomson.
-Hermijnard, Correspondance —— Hermijnard, A.-L., Correspondance
-des Réformateurs dans les pays de langue française.
-GCS —— Die griechischen Christlichen Schriftsteller der ersten drei
-Jahrhunderte.
-LCC —— The Library of Christian Classics.
-LCL —— The Loeb Classical Library.
-LF —— A Library of the Fathers of the Holy Catholic Church.
-Lombard, Sentences —— Peter Lombard, Libri quatuor sententiarum.Luther, Werke WA —— Martin Luthers Werke. Kritische Gesammtausgabe. Weimar.
-LXX —— The Septuagint: Greek version of the Old Testament.
-Mansi —— Mansi, J. D., Sacrorum conciliorum nova et amplissima collectio.
-MGH —— Monumenta Germaniae Historica.
-MPG —— Migne, J. P., Patrologiae cursus completus, series Graeca.
-MPL —— Migne, J. P., Patrologiae cursus completus, series Latina.
-NPNF —— A Select Library of the Nicene and Post-Nicene Fathers, first series.
-NPNF —— 2 ser. - Second series of the above.
-OS —— Barth, P. and Niesel, W., Calvin Opera Selecta.
-P. —— paraphrase, designates a Scripture quotation or near-quotation, not conforming fully to any as yet ascertainable source; many of these are in oratio oblique.
-Pannier, Institution —— Pannier, J., and others, Oeuvres completes de Calvin; Institution de la Religion Chrestienne.
-par. —— paragraph.
-Schaff, Creeds —— Schaff, P., The Creeds of Christendom.
-sec. —— section, especially one of the numbered sections of chapters in the Institutes.
-Smits —— Smits, L., Saint Augustine dans l'oeuvre de Jean Calvin.
-Vg. —— Vulgate version of the Bible.
-VG —— Versio Gallica. French text of the Institutes.
-Wendel, Calvin —— Wendel, F., Calvin: Sources et evolution de sa pensée religieuse.符号
-a——1536 版本
-b——1539 版本
-c——1543 版本
-d——1550 版本
-e——1559 版本
-e ——1559 修订之 1539 版
-e/b——原版混和
-x——带脚注之 1545，1553，1554 版本
-*——带章节标题，表示标题为目前编辑所加。
-†——表示标题取自由奥托·韦伯（Otto Weber）所翻译之德文版《基督教要义》，并加以修订。
-中译本导言
-孙 毅
-在中国大陆，人们或许更加熟悉达尔文而不是加尔文这个名字。就是多少了解一点加尔文的读者，多数也是通过大陆流行的一本小书《异端的权利》而知道这个人的。按照这本书的描绘，加尔文是一个在日内瓦残酷对待思想异端的独裁者，用他的冷酷无情统治着这个不幸的城市。这本茨威格的小书似乎给人留下这样的印象：加尔文是这个城市中拥有很大权力的实权派人物，具有某种可以呼风唤雨的政治地位。其实在这本书所描述的那段时期，加尔文不过是这个城市的一个流亡者，一个外来的难民，甚至没有“本地户口”（公民身份），因此不可能担任任何政治职务。当时日内瓦的人口登记分三个等级：公民（citoyens，必须出生于本城内，有投票权与各级议会被选权），居民（bourgeois，有投票权但不能进入小议会），寄居者（habitants，无投票权，无被选权）。加尔文与绝大多数法国难民均属第三等，一直到1559年（加尔文去世前五年）才只获得“居民”的资格，但一直到他去世也没有投票权。而他能有机会改变其难民身份，主要得益于1555年日内瓦市因经济危机而适量放开对法国移民的居民注册，由此才算给了他一个机会。作为一个被聘的因而可以随时被解除合同的牧师，他的待遇不过是一套住房，勉强维持生计的日常用品。因此现在看茨威格的这本书，从严肃的学术角度看，其对加尔文的描绘多少是出于小说家的想象力。①
+### 1. 人生来对神认识的特征
 
-① 麦格拉思，《加尔文传——现代西方文化的塑造者》，中国社会科学出版社，序言，2009。
+
+人心因他的本能多少意识到神的存在，②这是无可争辩的。神亲自将某种对他威严的认识安置在所有人的心里，免得人以他的无知为借口。③神不断重复地在人心里灌输这种鲜明的认识，以便提醒他。④既然所有的人都可以意识到神的存在并知道他是他们的造物主，所以他们自己的见证也定了他们自己的罪，因为他们没有尊荣他，也没有将自己的生命献给他。若说有什么人对神无知，一定是那些离文明最遥远和落后的民族。然而，正如一位著名的异教徒所说，就是最原始的部落、最不开化的民族也深信有一位神。④甚至那些在生活的某些方面与野兽无异的人，也仍保有一点对神的意识。这种宗教的种子根深蒂固地存在于所有人心中。因此，自从创立世界以来，没有一个地区、城市，甚至家庭能够没有宗教，这就证明：神的存在皆刻在每一个人心中。
+
+事实上，甚至连偶像崇拜也充分证明这种意识的存在。我们晓得人有多么不愿降卑自己而抬举其他的受造物。既然人宁愿拜木石，也不愿让人认为他是无神论者，这就清楚地证明人对神的存在有深刻的印象。若想抹去人的这种意识是不可能的，甚至比改变人的性情要困难得多，其实，当人主动降卑自己，为了尊荣神而离弃他与生俱来的骄傲时，他的性情从此就改变了！
+
+
+### 2. 宗教并不是人无中生有的发明
+
+
+因此，有些人说宗教是少数人狡猾的发明，为了欺骗简单的人，而这些为别人编造崇拜神诡计的人自己却根本不相信神的存在⑤——这种说法都是毫无根据的。我承认的确有一些聪明的人，为了控制人的思想，编造宗教的谎言借此刺激老百姓敬畏并使他们恐惧。但是，如果人的思想里没有与生俱来对神的坚定信念，那么这些人的宗教谎言是不可能成功的，因为人敬拜神的倾向是来自深信神的存在这信念，就像种子发芽一样。其实那些玩弄诡计、企图在宗教上欺骗、控制无知之人的，若说他们完全没有意识到神的存在，这就是不合理的。虽说以前有一些而且现在也有不少的人否认神的存在，其实就连这些人有时也不由自主地意识到他们所不愿相信的神真的存在。历史上可能没有人比该犹·加利古拉 (Gaius Caligula)⑥更加大胆狂妄地藐视神，但是当神的震怒显现时，没有人比他更恐惧战兢，虽然是不得已的，但他的确在他所藐视之神面前战兢。的确，有时候会遇见像该犹·加利古拉这种人，甚至有时连那些最大胆藐视神的人也会被一片落叶的沙沙声吓得战兢不已（参阅利 26：36）。这颤抖来自威严之神的报复，他们越想逃避神的报复，这报复便越强烈地抨击他们的良心。事实上，他们竭尽一切寻找各种诡计来躲避主的面，并且企图抹杀神存在的事实。尽管如此，他们仍不得解脱。虽然有时对神存在的意识似乎消逝了，但这意识立刻又重新抓住了他。倘若这些人良心的忧虑有所缓解的话，也只不过像睡梦中的醉汉或疯子，他们睡也睡不安稳，因为一直被噩梦侵扰。因此，即使不敬虔之人本身也证明这事实——对神的一些意识在人的思想中是活跃的。
+
+
+### 3. 实际上的无神论者并不存在
+
+
+有判断力的人的确知道，对神存在的意识无法从人的思想中抹去。事实上，不虔人的顽固，虽然他们拼命抗拒，也无法摆脱对神的惧怕，本身就充分证明人知道神的存在，这信念是与生俱来的，也深深地根植在每一个人的内心深处。虽然迪亚哥拉 (Diagoras)⑦和他的同类嘲笑每个时代所相信关于宗教的事，狄奥尼修 (Dionysius)⑧也对神的审判嗤之以鼻，但这只不过是苦毒的嘲讽罢了，⑨因为良心受责备的痛苦比烙铁烙人还厉害，就像有虫子在心里噬咬一般。我不同意西塞罗（Cicero）所说，人所犯的错误会随着时间的流逝而淡化消失，而且人在信仰上是一天比一天进步的。⑩因为世人（以后将要讨论）⑪仍力求尽己所能抛弃一切对神存在的意识，也不择手段败坏对神的敬拜。我的意思是说，虽然愚昧恶人的心越来越刚硬（因为他们故意敌挡神），但他们越想抹杀对神存在的意识，这意识却越发活跃。由此可见，对神存在的意识这教义并不是在学校里学到的，而是与生俱来的，当人在母腹里时便早已存在，甚至连大自然本身也不容许我们忘记这一点，尽管世人反抗并竭力扼杀这一事实。
+
+⑬此外，若所有的人生来的目的是认识神，而我们对神的知识没有帮助我们达成这个目的，那么这种对神的知识不过是暂时和虚空的。因此，显然那些没有用一切思想和行动来达成这目标的人，就没有尽到他们被创造的本分。从前的哲学家也无不明白这一点，如柏拉图（Plato）常常教导说，灵魂的高尚莫过于与神相像，而当人领悟神的知识时就会完全改变而与神相像。⑫同样，在普鲁塔克（Plutarch）的作品中葛利勒（Gryllus）极巧妙地辩论道，宗教一旦与生活分开，人类便与禽兽相差无几，甚至在许多方面比禽兽更可悲。人既因罪恶滔天，（他们）便在无休止的争吵和不安中痛苦地过生活。⑬所以，唯有敬拜神才使人有别于禽兽，也唯有这样的人才会渴望永生。⑭
+
+第四章 这种知识因无知和恶毒
+被压抑或败坏了①
+
+
+### 1. 迷信
+
+
+经验告诉我们，神在人心里播种了宗教的种子。但虽然人心里接受了这种子，在百人当中却很难找到一位培养这种子的人，并且没有一人会开花，更不用说按时结果子了（参阅诗1:3）。此外，虽然有些人在群众的迷信中迷失了方向，或有一些人是故意和邪恶地离弃神，然而所有的人都从认识神的真知识中堕落了，全世界都没有真敬虔的人。至于我上面所提到的一些在迷信中迷失了方向的人，虽是受他人影响而误信，但也无可推诿。因为他们的心盲几乎都混杂着傲慢与顽梗。事实上，⑥这些可悲的人在寻求神时并没有像他们本应该的那样超越自己，而是用自己属肉体、愚昧的标准衡量神，也漠视正当的寻求方式，因此证明他们的傲慢；他们出于好奇心对神妄加揣测，并不按神的启示那样接受他，反而想象他就是他们在自己假想中所形塑的那位。当他们如此地离弃神时，不论他们往何方向，都免不了跌倒、自取灭亡。事实上，不管他们用什么方式敬拜、服事神，他们都无法将之当作供物献给神，因他们所敬拜
+
+<div class="inst-fn">① “Hominum mentibus naturaliter…inditam.” 神对人内在（within）的启示（第三章）已经被罪抹去了（第四章）。神在大自然外在（from without）的征候和遗留的标本（insignia, specimina）启示也是如此（第十四章）。为了了解第三章至第五章这三章，首先必须明白加尔文有关人的全部教义：人被造时的光景（I.15）以及被罪败坏的光景（II.1–5）。</div>
+<div class="inst-fn">② “Divinitatis sensum.” 这术语和下面的“宗教的种子”（seed of religion）（参阅 I.4.1）所指的是人对神模糊的意识。这两个术语和良心很接近。良心是人在道德上对神的反应。参阅 I.1.3 以及 Comm. John 1:5, 9。加尔文对第五节的解释是：“神对人原先的光照有两个基本的部分，在堕落后仍存在人败坏的本性中：首先，宗教的种子撒在所有人的心里；其次，分辨是非的能力也刻印在每一个人的良心上。”</div>
+<div class="inst-fn">③ 参阅西塞罗的 Tusculan Disputations II.10（LCL edition, pp. 172 ff.）。</div>
+<div class="inst-fn">④ 加尔文在这里所说的异教徒（ethnics）是指西塞罗。加尔文的立场是所有的人生来就相信神的存在，这与西塞罗的作品 On the Nature of the Gods 中所有角色的立场一样，包括伊壁鸠鲁派的维勒（Velleius）。维勒问：“哪里有什么种族或民族不是在没受教诲的情况下就已相信神明的存在？” Nature of the Gods L.16.43（A. S. Pease, M. Tulii Ciceronis De natura deorum, pp. 294 f.；LCL edition, pp. 44 f.）。</div>
+<div class="inst-fn">⑤ 此段和下一段仍持续反映出西塞罗的 Nature of the Gods，其中伊壁鸠鲁派因为对神明的信念而受到批评者的贬抑。他们与一些人连结在一起，这些人借着否定神的存在来避免被冠以迷信之名，而说宗教只是人为了使百姓服从政府的发明。加尔文在 De scandalis (1550)，指名道姓地指控一些当代的人是无神论者（CR VIII.44 ff.，with footnote 5；OS II.200 f.）。博哈特（J. Bohatec）在 Budé und Calvin 第 149～240 页中详细地讨论了这个主题，并引用以下这些人对这主题的观点：Pierre Brunel，Agrippa von Nettesheim，Etienne Dolet，Simon Villanovanus，Bonaventure des Périers，François Rabelais，Antonius Goveanus 和 Jacques Gruet。</div>
+<div class="inst-fn">⑥ 罗马皇帝（公元37—41）；提庇留·凯撒（Tiberius Caesar）的侄孙和继承者。苏维托尼乌斯（Suetonius）说：“这堕落的皇帝藐视神，但每当他听见雷声，就立刻从床上跳下，躲到床底下去。”（Lives of the Caesars IV.51；LCL Suetonius I.482。）参阅 Comm. Harmony of the Evangelists, Matt. 26：69—75（tr. LCC XXIII.322）。</div>
+<div class="inst-fn">⑦ 米罗的迪亚哥拉（Diagoras of Melos）被称作“那个无神论者”（与苏格拉底同一时代的人）。昔兰尼的西奥多（Theodore of Cyrene）和智者普罗塔哥拉（Protagoras the Sophist）皆被西塞罗当作不虔不敬无神论者的例子。（这三个人因这指控被赶出雅典。）（Nature of the Gods I.1.2，I.23.63；LCL edition, pp. 4 f., 61f.）</div>
+<div class="inst-fn">⑧ 狄奥尼修，叙拉古（Syracuse）的暴君（公元前405—前367）。西塞罗在 Nature of the Gods III.34.83（LCL edition, pp.368 f.）中记载狄奥尼修负盛名的亵渎和掠夺行径。参阅 Calvin’s reference in Comm. Seneca On Clemency I.12（CR V.92）。</div>
+<div class="inst-fn">⑨ “Sardonius risus” 加尔文使用这个措辞时大概是想到维吉尔（Vergil）一句用谚语表达的暗示，“Sardonius amarior…herbis”（“比萨丁尼亚的草还苦。”）（Eclogues 7.41；LCL Vergil I.51。）</div>
+<div class="inst-fn">⑩ 加尔文不同意在西塞罗的 Nature of the Gods 里学者科塔（Cotta）的立场。科塔认为：“人对神的信心越久越坚定，也随着人的年龄和世代更为扎实。”（Nature of the Gods II.2.5；LCL edition, pp. 126 f.）</div>
+<div class="inst-fn">⑪ 参阅 I.4.1。</div>
+<div class="inst-fn">⑫ Plato, Theaetetus 176。为了避免邪恶并获得真正的智慧，说人必须“变得像神那样……公义、圣洁、有智慧”（LCL Plato II.128 f.）。参阅 Phaedo 107 C（LCL Plato II.128 f.）。参阅 Phaedo 107 C（LCL Plato I.368–371）。</div>
+<div class="inst-fn">⑬ 他所指的似乎是普鲁塔克的对话录 Bruta animalia ratione uti，其中瑟希（Circe）把葛利勒（Gryllus）变成禽兽。葛利勒指出，禽兽的行为在某些方面比堕落的人类还好（ch.7）（LCL Plutarch, Moralia XII.516 ff.）。</div>
+<div class="inst-fn">⑭ 参阅 II.2.12, 17，在这些地方“理智”被说成是使人与禽兽有别。</div>

@@ -33,45 +33,40 @@ NUMS_ZH     = ["一","二","三","四","五","六","七","八","九","十",
 
 CHAPTERS = {
     1: [
-        # ── yaoyi1.pdf（上册）── 页码为 PDF 页码（1-based）
-        (1,   5,   9, "认识神与认识自己是密切相关的，而两者是如何相互关联的"),
-        (2,   9,  13, "何谓认识神，以及认识神的意义何在"),
-        (3,  13,  17, "人生来就有对神的认识"),
-        (4,  17,  21, "这种知识因无知和恶毒被压抑或败坏了"),
-        (5,  21,  36, "有关神的知识也彰显在宇宙的创造和护理之中"),
-        (6,  36,  40, "任何要到神——造物者面前的人都必须经由圣经的引领和教导"),
-        (7,  40,  46, "圣经必须受圣灵的印证，如此圣经的权威才得以确定；若说圣经的可靠性依赖教会的判断，这是邪恶的谎言"),
-        (8,  46,  54, "就人的理性而言，有充足的证据证明圣经的可靠性"),
-        (9,  54,  57, "那些离弃圣经只依靠异象的狂热分子，抛弃了一切敬虔的原则"),
-        (10, 57,  60, "圣经为了避免一切的迷信，教导独一的真神在一切外邦人虚假的神之上"),
-        (11, 60,  74, "圣经不许人勾画有形体的神，并且拜偶像就是背叛真神"),
-        (12, 74,  78, "为了将一切的尊荣都归给神，我们应当清楚地区分神与偶像"),
-        (13, 78, 108, "圣经从创世记开始就教导我们，神只有一个本质却有三个位格"),
-        (14, 108, 124, "圣经在创造宇宙和万物的启示中，已清楚区分真神与众假神"),
-        (15, 124, 135, "受造时的人性、神赐人的才能、神的形像、自由意志，及人堕落前的尊严"),
-        (16, 135, 145, "神以祂的大能滋养和管理祂所创造的宇宙，并以自己的护理统治全宇宙"),
-        (17, 145, 158, "我们如何从这教义中获得最大的益处"),
-        (18, 158, 165, "神虽然利用罪人的恶行并扭转他们的心，使他们成就祂的旨意，但神自己却仍纯洁"),
+        # ── 序言与导言（yaoyi1.pdf 实际页码） ──
+        # 格式：(章ID, 起始页, 结束页, 章标题) 或 (章ID, 起始页, 结束页, 章标题, 栏目标题)
+        # 章ID 为字符串时输出为序言章节（无"第X章"前缀）
+        ("abbrev",   13,  16, "缩写与符号",                  "缩写与符号"),
+        ("zh-intro", 17,  42, "中译本导言",                  "中译本导言"),
+        ("intro",    43,  88, "导言",                        "导言"),
+        ("preface",  89,  91, "约翰·加尔文致读者书（1559年版）", "致读者书"),
+        ("argument", 92,  93, "1560年法文版主旨",             "1560年法文版主旨"),
+        ("letter",   94, 116, "致法王法兰西斯一世书",          "致法王书"),
+        # ── yaoyi1.pdf 第一卷正文（实际页码经章节标题核实） ──
+        (1,  119, 123, "认识神与认识自己是密切相关的，而两者是如何相互关联的"),
+        (2,  123, 127, "何谓认识神，以及认识神的意义何在"),
+        (3,  127, 131, "人生来就有对神的认识"),
+        (4,  131, 136, "这种知识因无知和恶毒被压抑或败坏了"),
+        (5,  136, 155, "有关神的知识也彰显在宇宙的创造和护理之中"),
+        (6,  155, 160, "任何要到神——造物者面前的人都必须经由圣经的引领和教导"),
+        (7,  160, 168, "圣经必须受圣灵的印证，如此圣经的权威才得以确定；若说圣经的可靠性依赖教会的判断，这是邪恶的谎言"),
+        (8,  168, 180, "就人的理性而言，有充足的证据证明圣经的可靠性"),
+        (9,  180, 184, "那些离弃圣经只依靠异象的狂热分子，抛弃了一切敬虔的原则"),
+        (10, 184, 188, "圣经为了避免一切的迷信，教导独一的真神在一切外邦人虚假的神之上"),
+        (11, 188, 207, "圣经不许人勾画有形体的神，并且拜偶像就是背叛真神"),
+        (12, 207, 212, "为了将一切的尊荣都归给神，我们应当清楚地区分神与偶像"),
+        (13, 212, 253, "圣经从创世记开始就教导我们，神只有一个本质却有三个位格"),
+        (14, 253, 276, "圣经在创造宇宙和万物的启示中，已清楚区分真神与众假神"),
+        (15, 276, 290, "受造时的人性、神赐人的才能、神的形像、自由意志，及人堕落前的尊严"),
+        (16, 290, 304, "神以祂的大能滋养和管理祂所创造的宇宙，并以自己的护理统治全宇宙"),
+        (17, 304, 322, "我们如何从这教义中获得最大的益处"),
+        (18, 322, 333, "神虽然利用罪人的恶行并扭转他们的心，使他们成就祂的旨意，但神自己却仍纯洁"),
     ],
     2: [
-        # ── yaoyi1.pdf（上册）── 接第一卷之后
-        (1,  165, 176, "因亚当的堕落和背叛，全人类落在神的咒诅之下，从起初受造的光景中堕落了；原罪的教义"),
-        (2,  176, 203, "人已完全丧失自由选择而悲惨地作罪的奴仆"),
-        (3,  203, 218, "出自人败坏本性的一切都是神所憎恶的"),
-        (4,  218, 224, "神如何在人心里运行"),
-        (5,  224, 242, "反驳对自由意志最普遍的辩护"),
-        (6,  242, 248, "堕落之人要寻求在基督里的救赎"),
-        (7,  248, 262, "神给以色列人祂的律法并不是要约束他们，而是要在基督降临前给他们救恩的盼望"),
-        (8,  262, 302, "道德律的解释（十诫）"),
-        (9,  302, 306, "虽然犹太人在律法时代认识基督，但基督到了福音时代才被清楚的启示"),
-        (10, 306, 320, "旧约与新约的相似之处"),
-        (11, 320, 330, "新旧约之间的区别"),
-        (12, 330, 337, "基督为担当中保职分降世为人"),
-        (13, 337, 343, "基督取得人真实的肉体"),
-        (14, 343, 353, "中保的神性和人性如何成为一个位格"),
-        (15, 353, 360, "为了明白父神差遣基督的目的，即基督所赏赐我们的，最主要的是必须查考基督的三种职份：先知、君王、祭司"),
-        (16, 360, 379, "基督如何担任救赎者的职份为我们获得救恩。对基督的死、复活和升天的讨论"),
-        (17, 379, 384, "我们说基督的功劳使我们获得神的恩典和救恩是恰当的也是正确的"),
+        # ── yaoyi1.pdf 第二卷正文（实际页码，部分待 OCR 完成后核实）──
+        # ch1 和 ch2 已通过章节标题核实；ch3+ 待 OCR 完成后更新
+        (1,  335, 349, "因亚当的堕落和背叛，全人类落在神的咒诅之下，从起初受造的光景中堕落了；原罪的教义"),
+        (2,  349, 999, "人已完全丧失自由选择而悲惨地作罪的奴仆"),  # end page TBD
     ],
     3: [
         # 第三卷已整理，如需重新生成可在此补充
@@ -261,15 +256,18 @@ def clean_line(line: str) -> str:
     line = re.sub(r'^[""]+', '', line.strip())
     return line.strip()
 
-def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
-                    end_page: int, ch_title: str, volume: int) -> str:
+def process_chapter(ocr_dir: Path, ch_num, start_page: int,
+                    end_page: int, ch_title: str, volume: int,
+                    section_title_override: str = '') -> str:
+    """ch_num 可为整数（正文章节）或字符串（序言/导言等）。"""
+    is_preface = isinstance(ch_num, str)
     raw, all_footnotes = load_pages(ocr_dir, start_page, end_page)
     lines = raw.split('\n')
 
     main_lines: list[str] = []
 
-    # 跳过开头的章标题（OCR 中可能跨多行）
-    skip_header = True
+    # 跳过开头的章标题（OCR 中可能跨多行）；序言不跳过
+    skip_header = not is_preface
     skipped     = 0
 
     for raw_line in lines:
@@ -279,7 +277,7 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         # 跳过章标题区域：只跳过章标题行本身及其直接相连的续行
         # 遇到空行即停止，防止误吞紧接章标题的分组标签
         if skip_header and skipped < 10:
-            if re.match(r'^[°\s]*第[一二三四五六七八九十]+章', stripped):
+            if re.match(r'^[a-e°\s]*第[一二三四五六七八九十]+章', stripped):
                 skipped += 1; continue
             if skipped > 0 and not stripped:
                 skip_header = False
@@ -371,10 +369,30 @@ def process_chapter(ocr_dir: Path, ch_num: int, start_page: int,
         if text:
             fn_html.append(f'<div class="inst-fn">{marker} {text}</div>')
 
-    ch_zh  = NUMS_ZH[ch_num - 1]
     now    = datetime.now().strftime('%Y-%m-%d %H:%M')
 
-    front_matter = f"""\
+    if is_preface:
+        sec_id    = f"{volume}-{ch_num}"
+        sec_title = section_title_override or ch_title
+        front_matter = f"""\
+---
+layout: reading-chapter
+author_id: calvin
+author_name: 约翰·加尔文
+book_id: institutes
+book_title: 基督教要义
+section: "{sec_id}"
+section_title: "{sec_title}"
+chapter_title: "{ch_title}"
+volume: {volume}
+chapter: "{ch_num}"
+date: {now}
+---
+
+"""
+    else:
+        ch_zh  = NUMS_ZH[ch_num - 1]
+        front_matter = f"""\
 ---
 layout: reading-chapter
 author_id: calvin
@@ -406,8 +424,14 @@ def main():
 
     volume  = int(sys.argv[1])
     ocr_dir = Path(sys.argv[2]).expanduser()
-    # 可选第三个参数：指定单独处理某一章号
-    only_ch = int(sys.argv[3]) if len(sys.argv) >= 4 else None
+    # 可选第三个参数：指定单独处理某一章（整数章号或字符串 ID，如 "intro"）
+    only_ch_arg = sys.argv[3] if len(sys.argv) >= 4 else None
+    only_ch = None
+    if only_ch_arg is not None:
+        try:
+            only_ch = int(only_ch_arg)
+        except ValueError:
+            only_ch = only_ch_arg  # 字符串 ID（如 "intro", "letter"）
 
     if not ocr_dir.is_dir():
         sys.exit(f"OCR 目录不存在：{ocr_dir}")
@@ -417,11 +441,14 @@ def main():
         sys.exit(f"第 {volume} 卷暂无章节配置，请在脚本 CHAPTERS 中填写。")
 
     done = 0
-    for ch_num, start_p, end_p, title in chapters:
+    for entry in chapters:
+        ch_num, start_p, end_p, title = entry[0], entry[1], entry[2], entry[3]
+        sec_title_override = entry[4] if len(entry) >= 5 else ''
         if only_ch is not None and ch_num != only_ch:
             continue
-        print(f"处理第{volume}卷第{ch_num}章（页{start_p}–{end_p}）…", end=' ', flush=True)
-        content = process_chapter(ocr_dir, ch_num, start_p, end_p, title, volume)
+        label = f"序言({ch_num})" if isinstance(ch_num, str) else f"第{ch_num}章"
+        print(f"处理第{volume}卷{label}（页{start_p}–{end_p}）…", end=' ', flush=True)
+        content = process_chapter(ocr_dir, ch_num, start_p, end_p, title, volume, sec_title_override)
         out_dir = OUT_DIR / f"{volume}-{ch_num}"
         out_dir.mkdir(exist_ok=True)
         (out_dir / "index.md").write_text(content, encoding="utf-8")
