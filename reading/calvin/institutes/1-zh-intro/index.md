@@ -9,7 +9,7 @@ section_title: "中译本导言"
 chapter_title: "中译本导言"
 volume: 1
 chapter: "zh-intro"
-date: 2026-05-14 14:03
+date: 2026-05-14 14:30
 ---
 
 中译本导言
