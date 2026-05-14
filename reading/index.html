@@ -99,20 +99,46 @@ title: 属灵阅读
 .shelf-author-name { font-size:16px; font-weight:bold; color:#2C3E50; }
 .shelf-author-en   { font-size:12px; color:#999; }
 .shelf-author-desc { font-size:12px; color:#bbb; width:100%; margin-top:1px; }
+/* ── 书架滚动外层（负责边缘渐变遮罩） ── */
+.shelf-scroll-outer {
+    position: relative;
+    border-radius: 6px 6px 0 0;
+    overflow: hidden;
+}
+.shelf-scroll-outer::after {
+    content: '';
+    position: absolute; top: 0; right: 0; bottom: 0; width: 48px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.35));
+    pointer-events: none; z-index: 4; border-radius: 0 6px 0 0;
+    transition: opacity 0.2s;
+}
+.shelf-scroll-outer.scrolled-end::after { opacity: 0; }
+.shelf-scroll-outer::before {
+    content: '';
+    position: absolute; top: 0; left: 0; bottom: 0; width: 32px;
+    background: linear-gradient(to left, transparent, rgba(0,0,0,0.25));
+    pointer-events: none; z-index: 4; border-radius: 6px 0 0 0;
+    opacity: 0; transition: opacity 0.2s;
+}
+.shelf-scroll-outer.scrolled-start::before { opacity: 1; }
+
 .bookshelf-wrap {
     border-radius: 6px 6px 0 0;
-    padding: 16px 16px 0;
-    display: flex; align-items: flex-end; gap: 5px; flex-wrap: wrap;
-    min-height: 180px;
+    padding: 20px 20px 0;
+    display: flex; align-items: flex-end; gap: 5px; flex-wrap: nowrap;
+    overflow-x: auto; overflow-y: hidden;
+    min-height: 200px;
     background-size: cover;
     background-position: center;
     position: relative;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.25) transparent;
 }
-.bookshelf-wrap::before {
-    content: '';
-    position: absolute; inset: 0;
-    border-radius: 6px 6px 0 0;
-    pointer-events: none;
+.bookshelf-wrap::-webkit-scrollbar { height: 3px; }
+.bookshelf-wrap::-webkit-scrollbar-track { background: transparent; }
+.bookshelf-wrap::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.25); border-radius: 2px;
 }
 .shelf-board {
     height: 13px;
@@ -218,6 +244,7 @@ title: 属灵阅读
             <span class="shelf-author-en">John Murray · 1898–1975</span>
             <span class="shelf-author-desc">威斯敏斯德神学院系统神学教授，改革宗圣经神学家</span>
           </div>
+          <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(18,12,6,0.52),rgba(18,12,6,0.52)),url('{{ site.baseurl }}/img/shelf-bg-murray.jpg');">
             <a href="{{ site.baseurl }}/reading/murray/principles/" class="book-spine"
                style="background:linear-gradient(155deg,#2E5D8E,#1A3A5C);color:#E8F4FF;">
@@ -225,6 +252,7 @@ title: 属灵阅读
               <span class="spine-meta">圣经伦理面面观<br>Principles of Conduct<br>1957 · 译：乔兰山以姐</span>
               <span class="spine-tip">正直生活要道<br>圣经伦理面面观<br>Principles of Conduct · 1957<br>译：乔兰山以姐</span>
             </a>
+          </div>
           </div>
           <div class="shelf-board"></div>
         </div>
@@ -236,6 +264,7 @@ title: 属灵阅读
             <span class="shelf-author-en">Paul David Tripp · 1950–</span>
             <span class="shelf-author-desc">威斯敏斯特神学院兼职教授，牧者与演说家</span>
           </div>
+          <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(12,8,4,0.55),rgba(12,8,4,0.55)),url('{{ site.baseurl }}/img/shelf-bg-tripp.jpg');">
             <a href="{{ site.baseurl }}/reading/tripp/quest/" class="book-spine"
                style="background:linear-gradient(155deg,#8B3A8B,#5C1F5C);color:#F5E8FF;">
@@ -243,6 +272,7 @@ title: 属灵阅读
               <span class="spine-meta">神的国？我的国？<br>A Quest for More<br>2007 · 译：陆钿孙铁男</span>
               <span class="spine-tip">寻求更大的事<br>神的国？我的国？<br>A Quest for More · 2007<br>译：陆钿孙铁男</span>
             </a>
+          </div>
           </div>
           <div class="shelf-board"></div>
         </div>
@@ -254,6 +284,7 @@ title: 属灵阅读
             <span class="shelf-author-en">John Calvin · 1509–1564</span>
             <span class="shelf-author-desc">法国改革宗神学家，日内瓦教会领袖，加尔文主义奠基人</span>
           </div>
+          <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(8,12,20,0.50),rgba(8,12,20,0.50)),url('{{ site.baseurl }}/img/shelf-bg-calvin.jpg');">
 
             <!-- 基督教要义 四卷 -->
@@ -288,6 +319,7 @@ title: 属灵阅读
 
 
           </div>
+          </div>
           <div class="shelf-board"></div>
         </div>
 
@@ -298,6 +330,7 @@ title: 属灵阅读
             <span class="shelf-author-en">Terry L. Johnson · 1956–</span>
             <span class="shelf-author-desc">美国长老会（PCA）牧师，独立长老会教会（Independent Presbyterian Church）主任牧师</span>
           </div>
+          <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(15,10,4,0.40),rgba(15,10,4,0.40)),url('{{ site.baseurl }}/img/shelf-bg-johnson.jpg');">
             <a href="{{ site.baseurl }}/reading/johnson/whengracecomes/" class="book-spine"
                style="background:linear-gradient(155deg,#8B5E00,#5C3A00);color:#FFF3E0;">
@@ -305,6 +338,7 @@ title: 属灵阅读
               <span class="spine-meta">加尔文主义的<br>生活实践<br>When Grace Comes Home<br>2002</span>
               <span class="spine-tip">从恩典启航<br>加尔文主义的生活实践<br>When Grace Comes Home · 2002</span>
             </a>
+          </div>
           </div>
           <div class="shelf-board"></div>
         </div>
@@ -315,6 +349,7 @@ title: 属灵阅读
             <span class="shelf-author-name">吕沛渊</span>
             <span class="shelf-author-desc">改革宗神学家，历史与神学博士，归正出版社创办人</span>
           </div>
+          <div class="shelf-scroll-outer">
           <div class="bookshelf-wrap" style="background-image:linear-gradient(rgba(10,8,4,0.52),rgba(10,8,4,0.52)),url('{{ site.baseurl }}/img/shelf-bg-murray.jpg');">
             <a href="{{ site.baseurl }}/reading/lu/pioneers/" class="book-spine"
                style="background:linear-gradient(155deg,#7B4A1E,#4A2500);color:#FFF3E0;">
@@ -322,6 +357,7 @@ title: 属灵阅读
               <span class="spine-meta">早期教会史话<br>2012</span>
               <span class="spine-tip">先贤所信<br>早期教会史话<br>吕沛渊著 · 2012</span>
             </a>
+          </div>
           </div>
           <div class="shelf-board"></div>
         </div>
@@ -332,3 +368,20 @@ title: 属灵阅读
     </div>
   </div>
 </div>
+
+<script>
+(function(){
+  function updateFade(wrap) {
+    var outer = wrap.parentElement;
+    if (!outer || !outer.classList.contains('shelf-scroll-outer')) return;
+    var atStart = wrap.scrollLeft <= 4;
+    var atEnd   = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 4;
+    outer.classList.toggle('scrolled-start', !atStart);
+    outer.classList.toggle('scrolled-end',   atEnd);
+  }
+  document.querySelectorAll('.bookshelf-wrap').forEach(function(wrap){
+    updateFade(wrap);
+    wrap.addEventListener('scroll', function(){ updateFade(wrap); }, {passive:true});
+  });
+})();
+</script>
