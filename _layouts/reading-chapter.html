@@ -118,7 +118,27 @@ layout: default
                 {% else %}
                 <a href="{{ site.baseurl }}/reading/{{ page.author_id }}/{{ page.book_id }}/">&larr; 返回{{ page.book_title }}目录</a>
                 {% endif %}
-                <button id="rm-enter-btn" onclick="rmEnter()" title="全屏阅读模式" style="background:#5B8DB8;color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap;">⛶ 阅读</button>
+                <div style="display:flex;gap:6px;align-items:center;position:relative;">
+                    <div id="desk-palette-wrap" style="position:relative;">
+                        <button id="desk-palette-btn" onclick="deskPaletteToggle()" title="背景颜色"
+                            style="background:#f4f4f4;color:#555;border:1px solid #ddd;border-radius:3px;padding:4px 8px;font-size:14px;cursor:pointer;line-height:1;display:flex;align-items:center;gap:4px;">
+                            <span id="desk-palette-swatch" style="display:inline-block;width:13px;height:13px;border-radius:50%;border:1px solid rgba(0,0,0,0.2);flex-shrink:0;"></span>
+                            <span style="font-size:11px;font-family:sans-serif;">调色</span>
+                        </button>
+                        <div id="desk-palette-panel" style="display:none;position:absolute;top:calc(100% + 6px);right:0;background:#fff;border:1px solid #ddd;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,0.12);padding:12px 14px;z-index:9999;white-space:nowrap;">
+                            <div style="font-size:11px;color:#999;margin-bottom:8px;font-family:sans-serif;letter-spacing:0.05em;">背景颜色</div>
+                            <div style="display:flex;gap:8px;align-items:center;">
+                                <button class="bg-swatch" style="background:#C7EDCC" onclick="deskSetBg('#C7EDCC')" title="豆沙绿"></button>
+                                <button class="bg-swatch" style="background:#FAF0DC" onclick="deskSetBg('#FAF0DC')" title="羊皮纸"></button>
+                                <button class="bg-swatch" style="background:#EAEAEF" onclick="deskSetBg('#EAEAEF')" title="淡灰蓝"></button>
+                                <button class="bg-swatch" style="background:#F5E6CC" onclick="deskSetBg('#F5E6CC')" title="暖杏色"></button>
+                                <button class="bg-swatch" style="background:#E3EDCD" onclick="deskSetBg('#E3EDCD')" title="浅草绿"></button>
+                                <button class="bg-swatch bg-swatch--white" style="background:#FFFFFF" onclick="deskSetBg('#FFFFFF')" title="纯白"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="rm-enter-btn" onclick="rmEnter()" title="全屏阅读模式" style="background:#5B8DB8;color:#fff;border:none;border-radius:3px;padding:4px 10px;font-size:12px;font-weight:bold;cursor:pointer;white-space:nowrap;">⛶ 阅读</button>
+                </div>
             </div>
 
             {% unless page.book_id == "institutes" %}
@@ -306,6 +326,11 @@ layout: default
     line-height: 1.95;
     margin-bottom: 1.3em;
     text-indent: 2em;
+}
+
+/* 手机端隐藏桌面调色板（手机用底部 mob-reading-bar 的拨盘调色） */
+@media (max-width: 767px) {
+    #desk-palette-wrap { display: none !important; }
 }
 
 .bg-color-ctrl {
@@ -1370,11 +1395,35 @@ function applyBgColor(color) {
             swatches[i].classList.remove('active');
         }
     }
+    // 同步桌面按钮上的小预览圆点
+    var dot = document.getElementById('desk-palette-swatch');
+    if (dot) dot.style.background = color;
 }
 function setBgColor(color) {
     localStorage.setItem(BG_KEY, color);
     applyBgColor(color);
 }
+
+/* ── 桌面调色板 ── */
+function deskPaletteToggle() {
+    var panel = document.getElementById('desk-palette-panel');
+    if (!panel) return;
+    var open = panel.style.display !== 'none';
+    panel.style.display = open ? 'none' : 'block';
+}
+function deskSetBg(color) {
+    setBgColor(color);
+    var panel = document.getElementById('desk-palette-panel');
+    if (panel) panel.style.display = 'none';
+}
+// 点击面板外部关闭
+document.addEventListener('click', function(e) {
+    var wrap = document.getElementById('desk-palette-wrap');
+    if (wrap && !wrap.contains(e.target)) {
+        var panel = document.getElementById('desk-palette-panel');
+        if (panel) panel.style.display = 'none';
+    }
+});
 function rgbToHex(rgb) {
     if (rgb.charAt(0) === '#') return rgb.toUpperCase();
     var m = rgb.match(/(\d+)/g);
