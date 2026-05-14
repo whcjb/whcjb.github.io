@@ -247,7 +247,7 @@ def is_footnote_para(line: str) -> bool:
 
 def is_group_label(line: str) -> bool:
     s = line.strip()
-    return len(s) < 100 and bool(re.search(r'[（(]\d+[—\-–]\d+[）)]', s))
+    return len(s) < 100 and bool(re.search(r'[（(]\d+(?:[—\-–]\d+)?[）)]', s))
 
 def clean_line(line: str) -> str:
     """去掉校勘标注 (a)(b)(b/a) 以及行首多余引号"""

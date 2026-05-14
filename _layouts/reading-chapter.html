@@ -994,7 +994,7 @@ a.fn-backref:hover {
 
     /* ── 分组标签：<p> text（n—m）→ <details open><summary> 包含范围内所有节 ── */
     if (content.classList.contains('institutes-content')) {
-      var groupLabelRe = /^.{1,80}（\d+[–—\-]\d+）$/;
+      var groupLabelRe = /^.{1,80}（\d+(?:[–—\-]\d+)?）$/;
       /* 先收集所有分组标签 p，避免边改边遍历 */
       var labelParas = Array.from(content.querySelectorAll('p')).filter(function(p) {
         return groupLabelRe.test(p.textContent.trim());
