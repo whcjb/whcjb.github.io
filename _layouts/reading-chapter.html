@@ -1391,10 +1391,30 @@ function rgbToHex(rgb) {
 
 // ── 配置：填入部署好的 Cloudflare Worker 地址 ──
 var TTS_WORKER_URL = ''; // e.g. 'https://tts-proxy.yourname.workers.dev/tts'
-var TTS_VOICE = 'zh-CN-XiaoxiaoNeural';
+var TTS_VOICE_MANDARIN  = 'zh-CN-XiaoxiaoNeural';
+var TTS_VOICE_CANTONESE = 'zh-HK-HiuMaanNeural';
 
 // ── 状态 ──
 var TTS_SPEED_KEY = 'reading-tts-speed';
+var TTS_LANG_KEY  = 'reading-tts-lang';  // 'mandarin' | 'cantonese'
+
+function ttsGetLang() {
+    return localStorage.getItem(TTS_LANG_KEY) || 'cantonese';
+}
+function ttsSetLang(lang) {
+    localStorage.setItem(TTS_LANG_KEY, lang);
+    // 更新按钮样式
+    ['tts-lang-mandarin', 'tts-lang-cantonese'].forEach(function(id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    document.querySelectorAll('.rm-tts-lang-btn').forEach(function(el) {
+        el.classList.toggle('active', el.dataset.lang === lang);
+    });
+    // 若正在朗读，重启以切换语言
+    if (ttsPlaying) { var idx = ttsIndex; ttsStop(); ttsPlayFrom(idx); }
+}
 var ttsChunks = [];
 var ttsIndex = 0;
 var ttsPlaying = false;
@@ -1567,7 +1587,7 @@ function fetchAzureBlob(text) {
     return fetch(TTS_WORKER_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: text, voice: TTS_VOICE })
+        body: JSON.stringify({ text: text, voice: ttsGetLang() === 'cantonese' ? TTS_VOICE_CANTONESE : TTS_VOICE_MANDARIN })
     }).then(function(resp) {
         if (resp.status === 429 || resp.status === 403) { ttsAzureEnabled = false; return null; }
         if (!resp.ok) return null;
@@ -1638,14 +1658,27 @@ function ttsBrowserChunk(index, gen) {
         };
         return;
     }
+    var lang = ttsGetLang();
     var u = new SpeechSynthesisUtterance(chunk.text);
-    u.lang = 'zh-CN'; u.rate = ttsGetSpeed();
-    // 优先选择中文语音
+    u.lang = (lang === 'cantonese') ? 'zh-HK' : 'zh-CN';
+    u.rate = ttsGetSpeed();
+    // 优先匹配所选语言的语音
+    var bestVoice = null;
     for (var vi = 0; vi < voices.length; vi++) {
-        if (voices[vi].lang && voices[vi].lang.indexOf('zh') === 0) {
-            u.voice = voices[vi]; break;
+        var vl = voices[vi].lang || '';
+        if (lang === 'cantonese') {
+            if (vl === 'zh-HK' || vl.indexOf('yue') >= 0) { bestVoice = voices[vi]; break; }
+        } else {
+            if (vl === 'zh-CN' || vl === 'zh-TW') { bestVoice = voices[vi]; break; }
         }
     }
+    // 降级：任意中文语音
+    if (!bestVoice) {
+        for (var vi2 = 0; vi2 < voices.length; vi2++) {
+            if (voices[vi2].lang && voices[vi2].lang.indexOf('zh') === 0) { bestVoice = voices[vi2]; break; }
+        }
+    }
+    if (bestVoice) u.voice = bestVoice;
     ttsHighlight(chunk.el);
     if (chunk.pageIdx !== undefined && window.rmGetCurPage && window.rmShowPageFn) {
         if (chunk.pageIdx > window.rmGetCurPage()) window.rmShowPageFn(chunk.pageIdx); // 只前翻，不回翻
@@ -1827,6 +1860,8 @@ function ttsUpdateUI(state) {
     if (range) range.value = speed;
     var label = document.getElementById('ttsSpeedVal');
     if (label) label.textContent = speed.toFixed(1) + 'x';
+    // 初始化语言按钮状态
+    ttsSetLang(ttsGetLang());
     if (!TTS_WORKER_URL && !window.speechSynthesis) {
         var bar = document.getElementById('ttsBar');
         if (bar) bar.style.display = 'none';
@@ -1981,6 +2016,8 @@ function ttsUpdateUI(state) {
                 <button id="rm-tts-play-btn"  onclick="ttsPlay()">&#9654; 朗读</button>
                 <button id="rm-tts-pause-btn" onclick="ttsPause()" style="display:none">&#10074;&#10074; 暂停</button>
                 <button id="rm-tts-stop-btn"  onclick="ttsStop()"  style="display:none">&#9632; 停止</button>
+                <button class="rm-tts-lang-btn" data-lang="mandarin"  onclick="ttsSetLang('mandarin')">普通话</button>
+                <button class="rm-tts-lang-btn" data-lang="cantonese" onclick="ttsSetLang('cantonese')">粤语</button>
             </div>
         </div>
         <div class="rm-sheet-row rm-sheet-ch">
@@ -2121,12 +2158,21 @@ function ttsUpdateUI(state) {
 .rm-bg-sw.active { border-color: #2C4A6E; box-shadow: 0 0 0 2px #5B8DB8; }
 
 /* 朗读 */
-.rm-tts-row { display: flex; gap: 8px; }
+.rm-tts-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 .rm-tts-row button {
     background: #5B8DB8; color: #fff; border: none; border-radius: 4px;
     padding: 6px 14px; font-size: 13px; font-weight: bold; cursor: pointer;
 }
 .rm-tts-row button:hover { background: #2C4A6E; }
+.rm-tts-lang-btn {
+    background: rgba(91,141,184,0.15) !important; color: #2C4A6E !important;
+    border: 1px solid rgba(91,141,184,0.4) !important;
+    font-size: 12px !important; padding: 4px 10px !important;
+}
+.rm-tts-lang-btn.active {
+    background: #2C4A6E !important; color: #fff !important;
+    border-color: #2C4A6E !important;
+}
 
 /* 章节导航 */
 .rm-sheet-ch { justify-content: space-between; }
