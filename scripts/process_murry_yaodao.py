@@ -103,16 +103,55 @@ def split_page_body_footnotes(text):
            '\n\n'.join(p.strip() for p in fn_paras if p.strip())
 
 
-# Characters that mark a sentence ending (used to detect mid-sentence page breaks)
-SENTENCE_END = '。！？」』"'
+# Characters that mark a definite sentence ending
+SENTENCE_END = set('。！？」』"）')
+# Characters that are definitely mid-sentence (comma, dash, ellipsis, etc.)
+MID_SENTENCE = set('，、；…—')
+
+
+def last_para_last_char(body_str):
+    """Return the last non-empty character of the last paragraph in body_str."""
+    paras = re.split(r'\n{2,}', body_str.strip())
+    for para in reversed(paras):
+        s = para.strip()
+        if s:
+            return s[-1]
+    return ''
+
+
+def merge_broken_paragraphs(body_text):
+    """Post-process: merge adjacent paragraphs where the first ends mid-sentence.
+
+    Rules:
+      - Always merge if previous para ends with ，、；…— (clearly mid-sentence)
+      - Merge if previous para is long (>25 chars) and ends with a CJK character
+        (catches word-breaks like 干犯, 考, 这, 我们 etc.)
+      - Do NOT merge short standalone phrases (<= 15 chars) — these are subheadings
+    """
+    paras = re.split(r'\n{2,}', body_text.strip())
+    result = []
+    for para in paras:
+        para = para.strip()
+        if not para:
+            continue
+        if result:
+            prev = result[-1]
+            last = prev[-1] if prev else ''
+            is_mid = (
+                last in MID_SENTENCE
+                or (last not in SENTENCE_END
+                    and len(prev) > 25
+                    and '\u4e00' <= last <= '\u9fff')  # CJK char in long para
+            )
+            if is_mid:
+                result[-1] = prev + para
+                continue
+        result.append(para)
+    return '\n\n'.join(result)
+
 
 def collect_section(start_page, end_page, skip_header_lines):
-    """Collect body text and footnotes for all pages in a section.
-
-    When a page ends mid-sentence (last char is not a sentence-ending punctuation),
-    the next page's first paragraph is merged into the same paragraph rather than
-    starting a new one.
-    """
+    """Collect body text and footnotes for all pages in a section."""
     body_parts = []
     all_footnotes = []
 
@@ -122,11 +161,9 @@ def collect_section(start_page, end_page, skip_header_lines):
             continue
 
         lines = text.split('\n')
-        # Remove trailing blank lines
         while lines and not lines[-1].strip():
             lines.pop()
 
-        # Skip chapter header lines on first page
         if pg == start_page and skip_header_lines > 0:
             lines = lines[skip_header_lines:]
 
@@ -134,13 +171,11 @@ def collect_section(start_page, end_page, skip_header_lines):
         body, footnotes = split_page_body_footnotes(page_text)
         if body:
             if body_parts:
-                # Check if previous body ended mid-sentence
-                prev = body_parts[-1].rstrip()
-                last_char = prev[-1] if prev else ''
+                # Check last paragraph of previous body (not just last char,
+                # to avoid footnote-continuation text masking the real truncation)
+                last_char = last_para_last_char(body_parts[-1])
                 if last_char and last_char not in SENTENCE_END:
-                    # Merge: strip trailing newlines from prev and prepend next body
-                    # with single newline so they stay in the same paragraph block
-                    body_parts[-1] = prev + '\n' + body
+                    body_parts[-1] = body_parts[-1].rstrip() + '\n' + body
                 else:
                     body_parts.append(body)
             else:
@@ -148,7 +183,9 @@ def collect_section(start_page, end_page, skip_header_lines):
         if footnotes:
             all_footnotes.append(footnotes)
 
-    return '\n\n'.join(body_parts), '\n\n'.join(all_footnotes)
+    combined = '\n\n'.join(body_parts)
+    combined = merge_broken_paragraphs(combined)
+    return combined, '\n\n'.join(all_footnotes)
 
 
 def parse_footnotes_block(raw):
