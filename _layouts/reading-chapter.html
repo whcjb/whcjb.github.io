@@ -579,6 +579,45 @@ sup.fn-ref a {
 }
 sup.fn-ref a:hover { text-decoration: underline; }
 
+/* Murray-style aside footnotes: <p><sup>N</sup> text</p> */
+aside.reading-footnotes p {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    margin-bottom: 6px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.03);
+    font-size: 1em; /* inherits aside 0.82em */
+    transition: background 0.15s;
+}
+aside.reading-footnotes p:hover { background: rgba(184,134,11,0.07); }
+aside.reading-footnotes p:target { background: rgba(184,134,11,0.15); }
+aside.reading-footnotes p > sup {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.5em;
+    height: 1.5em;
+    background: #9b7d4a;
+    border-radius: 50%;
+    font-size: 0.78em;
+    font-weight: bold;
+    line-height: 1;
+    vertical-align: baseline;
+}
+aside.reading-footnotes p > sup a.fn-backref {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+aside.reading-footnotes p > sup a.fn-backref:hover { opacity: 0.8; }
+
 /* 超越心语 quote box (tripp/quest) */
 .reading-chapter-subtitle {
     text-align: center;
@@ -2021,6 +2060,98 @@ function ttsUpdateUI(state) {
     });
 
     hr.insertAdjacentElement('afterend', aside);
+})();
+
+// Unicode superscript / circled-number footnote links (Murray 正直生活要道 style)
+// Handles <aside class="reading-footnotes"><p><sup>N</sup> text</p></aside>
+(function() {
+    var aside = document.querySelector('aside.reading-footnotes');
+    if (!aside) return;
+    var content = document.querySelector('.reading-content');
+    if (!content) return;
+    // Only run when aside contains <p><sup>N</sup>… structure (not fn-item)
+    var firstP = aside.querySelector('p');
+    if (!firstP) return;
+
+    var supMap = {'¹':'1','²':'2','³':'3','⁴':'4','⁵':'5',
+                  '⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁰':'0'};
+    var circleMap = {'①':'1','②':'2','③':'3','④':'4','⑤':'5',
+                     '⑥':'6','⑦':'7','⑧':'8','⑨':'9','⑩':'10',
+                     '⑪':'11','⑫':'12','⑬':'13','⑭':'14','⑮':'15'};
+    var markerRe = /([¹²³⁴⁵⁶⁷⁸⁹⁰]+|[①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮])/g;
+
+    function markerToNum(s) {
+        if (circleMap[s]) return circleMap[s];
+        var r = '';
+        for (var i = 0; i < s.length; i++) r += supMap[s[i]] || '';
+        return r;
+    }
+
+    // Step 1: collect footnote <p> elements, assign IDs
+    var fnMap = {};
+    aside.querySelectorAll('p').forEach(function(p) {
+        var sup = p.querySelector('sup');
+        if (!sup) return;
+        var num = sup.textContent.trim();
+        fnMap[num] = p;
+        p.id = 'fn-' + num;
+    });
+    if (!Object.keys(fnMap).length) return;
+
+    // Step 2: walk text nodes in body, replace markers with linked <sup>
+    var refCount = {};
+    var walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var n;
+    while ((n = walker.nextNode())) {
+        var par = n.parentElement;
+        if (par && (par.tagName === 'A' || par.tagName === 'SUP')) continue;
+        if (markerRe.test(n.nodeValue)) nodes.push(n);
+        markerRe.lastIndex = 0;
+    }
+    nodes.forEach(function(tn) {
+        var text = tn.nodeValue;
+        markerRe.lastIndex = 0;
+        var frag = document.createDocumentFragment();
+        var last = 0, m;
+        var changed = false;
+        while ((m = markerRe.exec(text)) !== null) {
+            var num = markerToNum(m[0]);
+            if (!num || !fnMap[num]) continue;
+            changed = true;
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            refCount[num] = (refCount[num] || 0) + 1;
+            var refId = 'fnref-' + num + (refCount[num] > 1 ? '-' + refCount[num] : '');
+            var sup = document.createElement('sup');
+            sup.className = 'fn-ref';
+            sup.id = refId;
+            var a = document.createElement('a');
+            a.href = '#fn-' + num;
+            a.textContent = num;
+            sup.appendChild(a);
+            frag.appendChild(sup);
+            last = m.index + m[0].length;
+        }
+        if (!changed) return;
+        if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+        tn.parentNode.replaceChild(frag, tn);
+    });
+
+    // Step 3: make footnote <sup>N</sup> a back-link
+    aside.querySelectorAll('p').forEach(function(p) {
+        var sup = p.querySelector('sup');
+        if (!sup) return;
+        var num = sup.textContent.trim();
+        var refEl = document.getElementById('fnref-' + num);
+        if (!refEl) return;
+        var a = document.createElement('a');
+        a.href = '#fnref-' + num;
+        a.title = '返回正文';
+        a.className = 'fn-backref';
+        a.textContent = num;
+        sup.textContent = '';
+        sup.appendChild(a);
+    });
 })();
 </script>
 <!-- ══════════════════════════════════════════════
