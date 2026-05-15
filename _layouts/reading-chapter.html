@@ -467,16 +467,28 @@ layout: default
 }
 
 .reading-list-item {
-    display: flex;
-    gap: 0.6em;
-    margin-bottom: 1em;
-    padding-left: 1em;
+    position: relative;
+    display: block;
+    margin: 0 0 2em 0;
+    padding: 0 0 0 3.2em;
 }
 .reading-list-item .list-num {
-    flex-shrink: 0;
+    position: absolute;
+    left: 0;
+    top: 0.18em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9em;
+    height: 1.9em;
+    background: #2C4A6E;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.82em;
     font-weight: bold;
-    color: #2C4A6E;
-    min-width: 2em;
+    font-family: Georgia, serif;
+    line-height: 1;
+    letter-spacing: 0;
 }
 .reading-list-item p {
     margin: 0;
