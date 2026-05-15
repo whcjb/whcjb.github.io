@@ -74,18 +74,49 @@ def read_page(page_num):
         return f.read()
 
 
+# Patterns for detecting unmarked bibliography/footnote paragraphs
+_BIBLIO_INLINE_RE = re.compile(
+    r'（[^）]*\d{4}[^）]*）|'   # (... year ...) any length
+    r'第\d+[卷页册]|'            # 第N卷/页/册
+    r'，\d+-\d+\s*页|'           # ，xxx-xxx页
+    r'\d{4}\s*年[）,，]'         # 1921年）or 1921年,
+)
+_ORPHAN_FN_START_RE = re.compile(r'^(参阅[：:]|参见|同上|同前|ibid|op\.?\s*cit)', re.IGNORECASE)
+_CONTINUATION_RE = re.compile(r'^[城页卷册，；）]')  # mid-word continuation
+
+
+_CITE_VERB_RE = re.compile(r'参阅[：:]|参见|同上|同前')
+
+
+def _is_orphan_footnote_para(para):
+    """Detect bibliography/footnote paragraphs that have no superscript marker."""
+    s = para.strip()
+    if not s:
+        return False
+    if _ORPHAN_FN_START_RE.match(s):
+        return True
+    if _CONTINUATION_RE.match(s) and len(s) < 300:
+        return True
+    hits = len(_BIBLIO_INLINE_RE.findall(s))
+    if hits >= 2 and len(s) < 500:
+        return True
+    # One citation marker is enough if paragraph also contains a "参阅/参见" verb
+    if hits >= 1 and _CITE_VERB_RE.search(s) and len(s) < 500:
+        return True
+    return False
+
+
 def split_page_body_footnotes(text):
     """
     Split a single page's text into (body_text, footnote_text).
-    Footnote section starts at the LAST block that begins with a footnote marker.
-    A "block" is separated by blank lines.
+    Primary: footnote section starts at first paragraph with a superscript/circled marker.
+    Fallback: scan from end for consecutive bibliography/orphan footnote paragraphs.
     """
-    # Split into paragraphs
     paragraphs = re.split(r'\n{2,}', text.strip())
     if not paragraphs:
         return '', ''
 
-    # Find the FIRST paragraph that starts with a footnote marker
+    # Primary: find the FIRST paragraph that starts with a footnote marker
     first_fn_idx = None
     for i, para in enumerate(paragraphs):
         stripped = para.strip()
@@ -93,14 +124,26 @@ def split_page_body_footnotes(text):
             first_fn_idx = i
             break
 
-    if first_fn_idx is None:
-        return text.strip(), ''
+    if first_fn_idx is not None:
+        body_paras = paragraphs[:first_fn_idx]
+        fn_paras = paragraphs[first_fn_idx:]
+        return '\n\n'.join(p.strip() for p in body_paras if p.strip()), \
+               '\n\n'.join(p.strip() for p in fn_paras if p.strip())
 
-    # Everything from first_fn_idx onward is footnotes
-    body_paras = paragraphs[:first_fn_idx]
-    fn_paras = paragraphs[first_fn_idx:]
-    return '\n\n'.join(p.strip() for p in body_paras if p.strip()), \
-           '\n\n'.join(p.strip() for p in fn_paras if p.strip())
+    # Fallback: scan from end for orphan bibliography paragraphs
+    first_orphan = None
+    for i in range(len(paragraphs) - 1, -1, -1):
+        if _is_orphan_footnote_para(paragraphs[i]):
+            first_orphan = i
+        else:
+            break
+    if first_orphan is not None and first_orphan > 0:
+        body_paras = paragraphs[:first_orphan]
+        fn_paras = paragraphs[first_orphan:]
+        return '\n\n'.join(p.strip() for p in body_paras if p.strip()), \
+               '\n\n'.join(p.strip() for p in fn_paras if p.strip())
+
+    return text.strip(), ''
 
 
 # Characters that mark a definite sentence ending
@@ -270,13 +313,21 @@ def build_body_html(body_text):
         # Subheading: short standalone CJK phrase
         if is_subheading(block):
             html_parts.append(f'<h3 class="reading-subheading">{block}</h3>')
-        # Numbered list item
+        # Numbered list item: "1. " or "（1）"
         elif re.match(r'^(\d+)\.\s', block):
             m = re.match(r'^(\d+)\.\s+(.*)', block, re.DOTALL)
             num = m.group(1)
             content = re.sub(r'\s+', ' ', m.group(2)).strip()
             html_parts.append(
                 f'<div class="reading-list-item"><span class="list-num">{num}.</span>'
+                f'<p>{content}</p></div>'
+            )
+        elif re.match(r'^（(\d+)）', block):
+            m = re.match(r'^（(\d+)）(.*)', block, re.DOTALL)
+            num = m.group(1)
+            content = re.sub(r'\s+', ' ', m.group(2)).strip()
+            html_parts.append(
+                f'<div class="reading-list-item"><span class="list-num">({num})</span>'
                 f'<p>{content}</p></div>'
             )
         else:
