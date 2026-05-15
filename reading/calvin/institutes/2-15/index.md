@@ -6,84 +6,90 @@ book_id: institutes
 book_title: 基督教要义
 section: "2-15"
 section_title: "第二卷·第十五章"
-chapter_title: "为了明白父神差遣基督的目的，即基督所赏赐我们的，最主要的是必须查考基督的三种职份：先知、君王、祭司"
+chapter_title: "为了明白父神差遣基督的目的，即基督所赏赐我们的，最主要的是必须查考基督的三种职分：先知、君王、祭司"
 volume: 2
 chapter: 15
-date: 2026-05-14 13:08
+date: 2026-05-15 11:17
 ---
 
-## 第十五章 为了明白父神差遣基督的目的，即基督所赏赐我们的，最主要的是必须查考基督的三种职份：先知、君王、祭司
+## 第十五章 为了明白父神差遣基督的目的，即基督所赏赐我们的，最主要的是必须查考基督的三种职分：先知、君王、祭司
 
-### 4. 一般来说，教父对自由意志的教导并不十分清楚，反而倾向相信人有自由意志。究竟何为自由意志？
-
-
-b 所有的神学家都承认：人的理智深受罪的影响，人的意志也被恶欲俘虏。尽管如此，许多神学家的观点却仍与哲学家的极为相似。①某些早期的神学家由于两种不同的原因高举人的能力。他们害怕若他们坦白地承认人的无能为力，首先，必定会遭受哲学家们的讥笑。其次，既然人的肉体生来不愿行善，他们不想使人再有懒于行善的借口。②所以，为了避免教导对一般人而言极为荒谬的事，他们努力地使圣经的教义与哲学家们的信念相协调。而他们特别害怕后者，因为不想使人有懒于行善的借口。如克里索斯托所说：“既然神赏赐人行善、行恶的能力，就表示他赏赐人自由的选择，不会约束不愿行善的人，但悦纳乐意行善的人。”再者，“只要恶人愿意，他随时可以选择做好人，且好人也会因懒惰跌倒而成为恶人。因主赏赐我们自由选择的本性。他并不勉强我们，反而给我们安排适当脱离罪恶的方法，但所有的一切都端赖人自己的决定。”他又说：“就如我们在神的恩典之外无法行善，同样地，我们若不尽本分，也无法蒙恩。”但他在此之前说：“我们必须有自己的功劳，免得所有的一切都得靠神的帮助。”其中他最喜欢说的一句话是：“我们当尽己所能，其余的让神去做。”③哲罗姆（Jerome）也说：“我们负责动手，神必定成全；我们负责献上自己所有的，神必补足我们所缺的。”④
-他们的这些话的确证明他们相信人有行善的热忱，但他们会这样说是因为他们认为，若不说人的问题完全是因为懒于行善，就无法刺激人行善。他们这样教导虽然很有影响力，但稍后我们将发现这是完全错误的。
-
-希腊人最赞扬人的意志——克里索斯托是当中的佼佼者，而所有古时的神学家——除了奥古斯丁有明确的反对立场之外，其余之人的观点都自相矛盾，我们无法跟从他们学到什么。所以，我不再详述每一位神学家对这个问题的看法，但我会根据问题讨论的需要，选择一两位神学家的观点来作解释。
-
-后来的神学家——尽管他们灵巧地为人性本善辩护——想因此吸引人的称赞，但他们的教导一个比一个更偏离真理，至终他们教导说，人只是感觉堕落了，而理智没有受到玷污，意志也大部分完好无缺损。⑤同时，一个著名的论述广为流传：人肉体的机能被败坏了，且他属灵的机能也完全丧失了，⑥但是几乎没有人明白这句话的含义。我满意于这句话贴切地教导人败坏的本性，既然人的本性在各方面都受罪的影响，也完全丧失一切属灵的机能，那么，现在重要的是讨论人究竟能做什么。
-
-当时那些自称为基督徒门徒的人在谈论这问题时，与哲学家们如出一辙。⑦拉丁人通常使用“自由意志”这一词，宛人仍是正直的一样。⑳而希腊人却更大胆地用“自力”（self-power）㉑形容人的意志，就如人人都拥有力量。甚至连普通的老百姓也受浸染而相信人生来拥有自由意志。他们当中的一些人虽然希望被人认为是杰出的，却不明白人自由的范围为何。所以，我们首先要解释自由意志这术语的含义，其次我们要根据圣经清楚的教导来判断人的本性对行善或行恶的潜力如何。
-
-尽管自由意志这一词在所有神学家的作品中频频出现，却很少有人为其下定义。奥利金（Origen）所下的一个定义为神学家们普遍认同。他说，当理智的功用区别出善与恶之后，自由意志就是从中作出选择的能力。⑧奥古斯丁并不反对这定义，他教导说自由意志是理智和意志的一种选择能力，它借助恩典得以善善，若无恩典就择恶。⑨伯尔纳却认为人总有永恒的自由意志和不会失误的理智的判断，他说自由意志就是对后者的“赞同”。⑧安瑟伦（Anselm）对自由意志所下的定义虽然著名，却很模糊：它是为了正直而支持正直的力量。⑧结果，彼得·伦巴德和经院主义者接受奥古斯丁的定义，因为这定义更为清楚且没有排除神的恩典。他们明白，若无恩典，人的意志就无法择善。但是，他们却加上自己的观点，他们以为这些观点比奥古斯丁的更准确或更详尽。首先，他们赞同“arbitrium”这个名词应当是指理智，其任务是分辨善恶，且用“liberum”这个形容词形容意志是贴切的，因为人凭意志可随意做选择。⑨所以托马斯·阿奎那说，既然人的意志是自由的，所以将自由意志称为“选择的能力”是最恰当不过的。这选择的能力来自理智和欲望的混合，而欲望占多数。⑪因此，他们所教导的就是，人自由决定的能力是在理智和意志中。⑥ 我们在以下的讨论中将简要谈及理智和意志在自由决定的能力中所占的比例如何。
+基督救赎之工的三种职分：第一是先知的职分（1—2）
 
 
-### 5. 教父对“意志”和“自由”不同的观点
+
+### 1. 明白这教义的必要性：指基督先知职分的经文
 
 
-他们通常将那些显然与神的国无关的中介之事⑫包括在自由意志的范围内，但他们也说真正的义行是来自神的特殊的恩典以及属灵的重生。为了证明这一点，在《对外邦人的呼召》(The Calling of the Gentiles)这部著作中，作者列举了三种自由意志：第一是感官的；第二是精神的；第三是属灵的。他教导说：所有的人生来都拥有前两种，而第三种则是圣灵在人心里的作为。⑫我们将在恰当的时候讨论是否真是如此。我现在要简要地讨论（不是反驳）他们对自由意志的论述。当教父讨论自由意志时，他们先考虑的并不是自由意志在社会上和个人行为上的重要性，而是考虑它促使人顺服神律法的重要性。尽管我同意后者是主要的，然而我们也不应该完全忽略前者，我希望可以将自己的观点陈述清楚⑬
-神学上对自由的三种区分如下：第一是摆脱必然性的自由；第二是脱离罪的自由；第三是脱离悲惨的自由。第一种自由是与生俱来也是不可能被夺去的，而后两种自由在亚当犯罪后就已丧失了。⑬我很赞同这种区分，只是许多人将必然性错误地与被迫性混淆，二者的差别以及这差别的重要性将在本书的别处讨论。⑬
+就如奥古斯丁恰当地论述的：尽管异端分子也传扬基督的名，却与信徒没有共同的信仰，这信仰唯属于基督的教会。我们若认真思考有关基督的教义，就会发现这些异端分子是有名无实的基督徒。①虽然如今天主教徒常说：“神的儿子，世人的救赎者”，然而因他们只满足于这外在的称号，也就夺去了基督的大能和尊荣，保罗的这句话正适合他们：他们“不持定元首”（西2：19 p.）。
+
+所以为了使我们的信心在基督的救恩上有根有基并专靠他，必须立定这个原则：父神赋予基督三种职分——先知、君王、祭司。②然而，我们若只知道这些称号而不明白它们的目的和用途，对我们而言几乎没有什么益处。天主教徒也使用这些称号，③却是形式化和毫无效果地使用，因他们对于这些头衔的意义全然无知。我们说过，④尽管神一直借着赐给以色列人先知、赐给他们足以获得救恩的教义，然而，当时的敬虔人总是深信，唯有在弥赛亚降临时，他们才能获得全备的知识，甚至连撒玛利亚人也笃信不疑，虽然他们从未明白何谓真基督教。就如撒玛利亚妇人所说：“他来了，必将一切的事都告诉我们。”（约4：25 p.）犹太人却不轻率地相信这点，而是在受到圣经清楚的教导之后，他们才开始相信。先知以赛亚的这段话是众所周知的：“我已立他作万民的见证，为万民的君王和司命。”（赛55：4）以赛亚在另一处称他为“谋略奇妙的使者。”（赛9：6，28，29；耶32：19）⑤。因此，使徒赞美福音教义的完美说：“神既在古时借着众先知多次多方晓喻列祖”（来1：1），又说：“就在这末世，借着他儿子晓喻我们”（来1：2 p.）。然而，因众先知的职分是要让教会持守盼望，同时扶持她直到中保的降临，所以，在旧约时代，当信徒被放逐时，他们抱怨他们丧失了这最基本的福分：“我们不见我们的标帜，不再有先知；我们内中也没有人知道这灾祸要到几时呢！”（诗74：9）虽然如此，然而到了基督即将降临前夕，神命令人以理“封住异象和预言”⑥（但9：24），不但为了确立但以理当时所宣告之预言的权威，也是为了使众信徒忍耐度过没有先知的一段时期，因旧约中所有的预言即将应验。
 
 
-### 6. “圣灵独立运行”或“圣灵与人合作”的恩典？
+### 2. 对我们而言，先知职分的含义为何？
 
 
-b 只要我们认同以上的教导，就必须相信自由意志不足以使人在神特殊的恩典之外行善，除非它借助神的恩典，即神以重生赏赐给他百姓的特殊恩典。⑭我绝不费时费力与那些狂妄的人周旋，他们胡说神将他的恩典平等且毫无分别地赐给所有的人。⑮我们还未证实人是否已全然丧失一切行善的能力，或仍存留一些能力，尽管这能力微弱到凭自己无法成就任何事情，只能借助恩典发挥其力。伦巴德为了解决这争议教导说：“我们需要两种恩典扶助我们，使我们得以行善。”他称第一种恩典为“圣灵独立的运行”，这恩典能使我们有效、自愿地行善；第二种为“圣灵与人合作”的恩典，就是圣灵依照人良善的意志帮助他。⑯我对这分类不赞同的方面是，虽然他说人立志行善这有效的能力来自神的恩典，但他也暗示人有某种与生俱来对行善的渴慕——尽管无效。伯尔纳虽然声称人立志行善是神的工作，但却相信人还是有对这种行善意志的渴慕。然而这观点与奥古斯丁的截然不同，尽管彼得·伦巴德宣称这种区分是来自奥古斯丁的思想。⑰我痛恨伯尔纳后半部分含糊的说法，因这导致人曲解圣经的教导，使人误以为我们与神的恩典合作，所以我们能拒绝神的恩典而使之无效，或因顺服神的恩典而使之有效。《对外邦人的呼召》这本书的作者对此问题的陈述如下：“有理智的人有拒绝恩典的自由，如此看来，不拒绝恩典算是功劳。并且，虽然人没有圣灵的帮助就无法行善，但人若接受圣灵的帮助也算是功劳。”⑱我之所以提出这两点，是要我的读者明白，我与经院哲学家们的观点大为不同。在这教义上，我的观点与现今哲学家的⑥更为不同，因他们的观点比那些经院哲学家更偏离真道。然而，我们从这分类上至少明白他们在哪一方面认为人有自由意志。因伦巴德最后宣称：人有自由意志并不是说人在思想和行为上都能选择善恶，而是说人不是被迫做任何事。根据伦巴德的说法，即使我们邪恶、做罪的奴仆，甚至不能不犯罪，但这都不能表示我们没有自由意志。⑲
+�识，都在他里面藏着”（西 2：3 p.）时，他的含义稍有不同。也就是说，在基督之外没有什么值得明白的事，所有借信心参透基督的人，就拥有天国一切丰盛的福分。因这缘故，保罗在另一处记载道：“我曾定了主意，在你们中间不知道别的，只知道耶稣基督并他钉十字架。”（林前 2：2 p.）这是真实的，因神不允许我们越过福音单纯的信息。而且，基督至高先知职分的威严告诉我们，他所教导的教义使人获得完美的智慧。
 
 
-### 7. 人不能不犯罪，虽不是被迫，却不能证明人有自由意志
+君王的职分是属灵的（3—5）
 
 
-b 因此，他们说人有自由选择，并不是因为他能自由选择善恶，而是因为当他选择行恶时，不是被迫的。若的确如此，何需对此冠以堂皇的称号？人不是被迫犯罪，但他却爱罪⑳到不能不犯罪的地步，难道这是什么高贵的自由吗？事实上，我厌恶在文字上争吵，㉑因这些争吵只是扰乱教会罢了。但我下决心不使用那些悖理的词语，特别是当这些词语教导异端时。难道大多数人听到人有自由意志时，不是立刻理解为他是自己思想和意志的主宰，且能凭自己的力量行善恶吗？然而（或许有人会说）我们若持续不断地教导人们这词真正的含义，就可以避免这种误解。但人心倾向虚妄，他从一个词所能学到的非真理比从一篇论文中所学到的真理还多，自由意志这术语就充分证明这一点。既然神学家没有留意早期神学家对这一词的阐释，以致后来几乎所有的神学家虽然没有否定这个词的本义，却因对这词的误解变得自信而开始曲解这词的定义，至终自取灭亡。
+
+### 3. 基督主权的永恒性
 
 
-### 8. 奥古斯丁对“自由意志”的教导
+“我现在要讨论君王的职分。读者们若不明白这职分是属灵的，那我所谈论的一切就都是徒然的，这就告诉我们，这职分对我们而言是有功效和有益的；也告诉我们，他的大能和永恒性。在《但以理书》中，天使将这永恒性归给基督的位格（但 2：44）；在《路加福音》中，天使则将之归在百姓的救恩上（路 1：33）。然而这永恒性是双重的，或必须从两方面来思考：第一方面是在乎整个教会；第二方面是在乎教会中的每一个肢体。以下这段经文是指前者的说的：“我一次指着自己的圣洁起誓，我绝不向大卫说谎！他的后裔要存到永远，他的宝座在我面前，如日之恒一般，又如月亮永远坚立，如天上确实的见证。”（诗 89：35—37 p.）神确实在此应许借他儿子的膀臂永远保护他的教会。唯有基督才能使这预言应验，因为在所罗门离世之后，以色列国就丧失了大半的主权，这主权就转移到大卫家族以外的人身上，使大卫家族蒙羞（王上 12）。⑨之后这主权就越来越削弱，直到最终可悲的结局（王下 24）。
+
+以赛亚的宣告也有同样的含义：“至于他同世的人……从活人之地被剪除。”（赛 53：8 p.）他在此宣告：基督将复活，使他所有的肢体与自己联合。所以，当我们读到基督握有永恒的主权时，就提醒我们教会的永恒性⑩在基督的护卫下。因此，虽然教会不断遭受暴力的攻击，以及无数的患难，却仍旧平安。大卫嗤笑仇敌的胆量，因他们企图甩掉神和他受膏者的轭并说：“世上的君王一齐起来，臣宰一同商议……那坐在天上的必发笑，主必嗤笑他们。”（诗 2：2、4 p.）于是，他使敬虔之人确信神必永远保守教会，并鼓励他们在教会受逼迫时仍存有盼望。大卫在另一处代替神说道：“你坐在我的右边，等我使你仇敌作你的脚凳。”（诗 110：1）他在此宣告：不论多么强大的仇敌阴谋毁灭教会，他们的力量仍不足以胜过神永不更改的预旨，神借此预旨差遣他的儿子作永恒的君王。这一切证明，魔鬼即使采用世上一切的资源，仍不能毁灭教会，因教会是建立在基督永恒的宝座上。
+
+至于这教义如何应用在每位信徒身上呢？其实，同样的“永恒性”应当激励我们盼望永生的福分。由此我们得知地上的一切都是属世的，也是暂时的，甚至是转瞬即逝的。因此，基督为了使我们盼望天堂便说：“我的国不属这世界。”（约 18：36）总之，当我们听到基督的王权是属灵的，就激励我们寻求永生的盼望，这盼望既受基督的保守，我们就当耐心等候这来世必定成就的恩典。
 
 
-我们若接受教父的权威，他们的确常常使用这术语，但同时他们也清楚地阐释此词的定义。首先，奥古斯丁称意志为“非自由的”㉒。但他在别处却对否认自由意志的人表示愠怒，他的解释是：“人不要为自己的罪找借口，而否定意志的自由选择。”㉓然而他也在另一处表明：“若无圣灵，人的意志并不自由，因人的私欲捆绑并胜过人的意志。”㉔他也说：人堕落后意志被罪胜过，人就失去自由了。㉕再者，人因滥用自由意志，便丧失自由意志和赔上自己的性命。此外，自由意志已受捆绑，无力行义，⑭而且，除非神的恩典叫人自由，否则人就无法自由。最后，人无法靠自己满足律法的要求，但在圣灵的帮助下，人不自由的意志得以释放并顺服神，这就满足了神的公义。他在另一处摘要说：当神造人时，他赐给人自由意志的大能，但因人犯罪而失丧了。㉖所以，奥古斯丁在另一处证明人借恩典意志才有自由之后，就毫不留情地严斥那些声称人在恩典之外拥有自由意志的人。他说：“为何悲惨的人在他们未得释放前大言不惭地夸耀自由意志，或在他们得释放之后以他们重新获得的力量为傲呢？因为他们没有留意‘自由意志’这一词虽然意味着自由，然而‘主的灵在哪里，哪里就得以自由。’（林后3：17）所以，既然他们是罪的奴仆，为何还夸耀自由意志呢？因人是做那征服他之人的奴隶。若他们被释放，为何自夸，仿佛是自己得释放呢？难道他们自由到不愿做说这话“离了我，你们就不能做什么”（约15：5）之人的奴仆吗？”
-b奥古斯丁在另一处嘲笑说，意志确实是自由的但未被释放，他说：意志有不行义的自由，但却是罪的奴仆。㉗b他还在另一处重复并解释这句话：人无法行义是出于他意志的决定，并且，唯独借助救主的恩典，他才能从罪的权势下得释放。㉗b当他宣称人只有不行义的自由时，似乎就在嘲笑“自由意志”这个空洞的术语。因此，若没有人误解这词，我对使用这词绝无异议。但是我深信，在教会中保留这词的危害极大，反之，若去除这词将成为教会的祝福。我自己决定不使用这词，我希望别人也可以听我的劝告。
+### 4. 基督君王的职分使我们得福
 
 
-### 9. 正确教导意志的教父
+我们说过，只有当我们确信基督君王的职分是属灵的，我们才能领会这职分的权能和宝贵。且我们一生必须背负十字架、遭受众多患难，就证明这一点。⑪那么，我们被召聚在天国君王的统治下有何益处呢？就在于我们确信在来世能享受这国度的福分。因此，我们应当确信：基督所应许我们的快乐并不在乎外在的利益，譬如，过快乐平安的生活、拥有众多财富、脱离一切危难，以及享受一切肉体所渴慕的乐趣。基督所应许我们的快乐反而是属天的！世上任何民族的兴旺和幸福，部分依赖众多的财富和国家的安定，部分则依赖强大的军事力量，抵御外来的侵略。同样，基督丰盛地赏赐他百姓灵魂永恒救恩的需要，并赐他们力量抵挡属灵仇敌的攻击。
+
+⑥ 因此我们知道，基督对我们⑥内在和外在的统治，⑥ 多半是为了我们而不是为他自己。⑥因此，神照我们的需要，为我们装备属灵的恩赐，是我们生来所没有的。从这些属灵恩赐初熟的果子上，我们就能领悟我们已经与神联合并拥有完全的福乐。我们也当依靠圣灵的力量，坚信我们必要战胜魔鬼、世界，以及一切的患难。这就是基督答复法利赛人的含义：因为神的国就在我们心里，神的国来到不是眼所能见的（路17：20—21）。大概是因为基督宣称自己是赏赐神至高福分的君王，所以，法利赛人嘲笑地要求基督证明给他们看。然而，基督却吩咐他们省察自己的良心，“因为神的国……只在乎公义、和平，并圣灵中的喜乐”（罗14：17）。基督如此行是要拦阻那些过于体贴属世之事的人渴望世俗的荣耀。这经文简洁地教导我们基督的国度赏赐给我们的是什么。⑥ 因这国既不属世也不属肉体，因此必不衰残，反而是属灵的，使我们得以仰望永生。
+
+⑥如此我们就能忍耐地度过今生的痛苦、饥饿、寒冷、被人藐视和辱骂，以及其他的困苦。因为我们深信：我们的君王永不离弃我们，也必看顾我们一切的需要，直到战争结束我们与他一同得胜。在这统治之下，基督与我们分享父神所赐给他的一切。他如今以他的大能装备我们，以他的美善和荣耀装扮我们，以他的财富厚待我们。⑫ 在这些祝福之下，基督徒有很多欢喜快乐的理由，并有完备的信心，无畏地与魔鬼、罪恶，以及死亡作战。最后，我们因穿上基督的义，就能勇敢面对世人一切的羞辱。既然基督丰盛恩待我们，我们就当多结果子回报他并因此荣耀他。
 
 
-b当我说明了奥古斯丁之外，历史上其他的神学家们对这问题的阐述都不够清楚或全面，甚至他们的著作也不能使我们获益，或许有人认为我过于偏激，也或许有人认为因为他们都是我的仇敌，所以我劝人不理会他们的教导。然而我的用意只是单纯诚恳地想劝勉敬虔的人，因若他们在这事上听从那些人的解释，他们就会时常迷惑彷徨。有时这些作者会教导说：因人丧失了自由意志，所以只能依靠神的恩典；有时他们似乎又教导人能自救。虽然这些教父对意志的教导不清楚，然而我仍能证明他们不相信或几乎不相信人有美德，他们反而将一切善行所应得的称赞都归给圣灵。以下我要引用他们的话来证明。奥古斯丁时常复述西普里安的话：“我们不应当以任何事为荣，因我们一无所有”㉗5
+### 5. 基督君王职分的属灵性：基督和父神的主权
 
-<div class="inst-fn">① 在 De Scandalis (1550) 中，加尔文也同样指控一些教父因过于尊重哲学家，而教导人有自由意志（CRVIII.19；参阅 Benoit, Institution II.25.）。</div>
-<div class="inst-fn">② 虽然加尔文是指教父，然而他似乎也在攻击当代的人道主义者，包括伊拉斯谟在内。参阅 Pannier, Institution I.313, note a on p.101。</div>
-<div class="inst-fn">③ Chrysostom, De proditioe Judaeorum, hom.1 (MPG 49.377)；Homilies on Genesis；hom.19.1；hom.53.2，hom.25.7 (MPG 53.158；54.466；53.228)。</div>
-<div class="inst-fn">④ Jerome, Dialogus contra Pelagianos III.1 (MPL 23.569).</div>
-<div class="inst-fn">⑤ Duns Scotus, In sententias II.29.1 (Opera omnia XIII.267 f.)。</div>
-<div class="inst-fn">⑥ 虽然这句话的文体和思想与奥古斯丁的一致，然而它是中世纪的作品。伦巴德的说法是：“alia sunt corrupta per peccatum, id est naturalia…alia subtracta” (Sentences II.25.8；MPL 192.207)。参阅奥古斯丁的 Questions on the Gospels 2.19，其中论到好撒马利亚人（《路加福音》第10章）。奥古斯丁的解释是：人因生来对神有某种程度的概念算是活着的，但人因生来受罪的捆绑则算是死的；所以他把说成是半死（semivivus，Luke 10：30）（MPL 35.1340）。其他与这教导有关的作品如下：On Nature and Grace 3.3；19.21；20.22（MPL 44.249 f. -256 f.；tr. NPNF V.122；127 f.）；Pseudo-Augustine, Hypomnesticon [commonly called Hypognosticon] contra pelagianos et caelestinos III.8.11（MPL45.1628）。参阅 II.5.19，注释38，注释21，below，12节，注释53，16节，注释62；Comm. Ezek.11；19-20；T.F. Torrance，Calvin’s Doctrine of Man，ch.7。</div>
-<div class="inst-fn">⑦ “αὐτοφύοριος”——在教父中第一位采用这词的是亚历山大的克莱门（Clement of Alexandria）。他把保罗的话“既成了人”（林前13：11）解释为“我们顺服真道并成为自制的人（αὐτοφύοριος）。”Instructor I.6.33（GCS Clemens Alexandrinus I.110；MPG 8.289 f.；tr. ANF II.217）。</div>
-<div class="inst-fn">⑧ Origen, De principiis III. 1. 3 (GCS 22. 197; MPG 11. 252; tr. ANF IV. 303; Butterworth, Origen On First Principles, p. 159). 参阅 Augustine, Sermons 156. 9–13 (MPL 38. 855–857; tr. LF Sermons II. 767–770); Pseudo-Augustine (school of Hugh of St Victor), Summa sententiarum 3. 8 (MPL 176. 101); Lombard, Sentences II. 24. 5 (MPL 192. 702) 以及前面的注释 18。也请参阅 OS III 246，注释 3；Smits II 31。 Bernard, De gratia et libero arbitrio 2. 4 (MPL 182. 1004; tr. W. W. Williams, Concerning Grace and Free Will, p. 10).</div>
-<div class="inst-fn">⑨ Anselm, Dialogus de libero arbitrio 3 (MPL 158. 494)：“Potestas servandi rectitudinem propter ipsam rectitudinem.”</div>
-<div class="inst-fn">⑩ Lombard, Sentences II. 24. 5 (MPL 192. 702).</div>
-<div class="inst-fn">⑪ Aquinas, Summa Theol. I. 83. 3.</div>
-<div class="inst-fn">⑫ “Res medias”——次要或不重要的事。这是拉丁文对ἀδιάφορα 的翻译（参阅德文 Mitteldinge）。参阅加尔文对“基督徒自由”的讨论 III. 19.7–9；also II. 2.12–14；II. 3.5。 亚奎台尼的普罗斯波（Prosper of Aquitaine），De vocatione omnium gentium (ca. 450) I.2。这论文是与安波罗修（Ambrose）的作品（Basel, 1492）一起出版的，也与前人误以为是他写的作品一起出版（MPL 17）；也有不同版本，与普罗斯波的作品一起出版，MPL51。为了参考这段，请参阅 MPL 17.1075, 51.649 f. 以及莱特（P. de Letter）的翻译，St. Prosper of Aquitaine, The Call of All Nations (tr. ACW XIV), p.27。参阅 M. Cappyns，“L’ Auteur du De vocatione omnium gentium,” Revue Benedictine XXXIX (1927), 198–226。</div>
-<div class="inst-fn">⑬ II. 12–18。 Lombard, Sentences II.25.9 (MPL 192.708)；Bernard, De gratia et libero arbitrio 3.7 (MPL 182.1005；tr. W. W. Williams, Concerning Grace and Free Will, pp. 15 f.)。 II. 3.5。</div>
-<div class="inst-fn">⑭ 在1555年6月5日，加尔文回答苏西尼（Laelius Socinus（他在这里指的或许就是苏西尼）的一些问题中，将神有效地施恩给选民和被遗弃之人身上的“圣灵次要的职事”加以区别。Responsio ad aliquot Laelii Socini quaestiones，2–4（CR X.163 ff.）。</div>
-<div class="inst-fn">⑮ Lombard，Sentences II.26.1（MPL 192.710）。</div>
-<div class="inst-fn">⑯ Bernard，De gratia et libero arbitrio 14.46（MPL 182，1026；tr. W. W. Williams，Concerning Grace and Free Will，p.48）；Augustine，On Grace and Free Will 17.33（MPL 44.901；tr. NPNF V.457）。</div>
-<div class="inst-fn">⑰ Prosper of Aquitaine，The Call of All Nations II.4（MPL 51.96；tr. ACW XIV.96）。</div>
-<div class="inst-fn">⑱ 请注意“更为正统”的经院哲学家和近来的诡辩家的分辨。后者包括奥卡姆（Ockham）和后来解释他作品的一些人，譬如：比尔（Gabriel Biel，卒于1495年），以及当时的索邦神学家们。</div>
-<div class="inst-fn">⑲ Lombard, Sentences II. 25. 8 (MPL 192. 708)。参阅第二卷第二章第十五节，描述罪人心里仍有的良善，以及第二卷第三章第二节（特别是最后一句），描述人根本没有良善。加尔文故意做此夸张的比较，为了强调：人虽然有“许多很好的才能”却“完全没有良善”。参阅 Instruction et confession de foy (1537) (OS I. 381, CR XXII. 36 f., tr. Fuhrmann, Instruction in Faith 5, p. 22)；“圣经多处记载人是罪的奴仆……因为罪的恶毒渗透人心，所以人所行的都是罪恶的果子。”加尔文也称异教徒的才能为神给他们的“礼物”，第二卷第三至第四节。他也相信堕落之人有不同的长处。托伦斯（T. F. Torrance）在他的 Calvin's Doctrine of Man，第七至第八章中详细地解释加尔文这方面的神学。</div>
-<div class="inst-fn">⑳ ἐθελόδουλος。</div>
-<div class="inst-fn">㉑ “λογικοχρίας”。</div>
-<div class="inst-fn">㉒ Augustine, Against Julian II.8.23 (MPL 44.689; tr. FC 35.83 f.)。参阅 Calvin, Instruction in Faith (1537), 5 (OS I.381; CR XXII 36; tr. Fuhrmann, p.22)。</div>
-<div class="inst-fn">㉓ Augustine, John’s Gospel 53.8 (MPL 35.1778; tr. NPNF VII.293)。</div>
-<div class="inst-fn">㉔ Augustine, Letters 145.2 (MPL 33.593; tr. FC 20.163 f.)。</div>
-<div class="inst-fn">㉕ Augustine, On Man’s Perfection in Righteousness 4.9 (MPL 44.296; tr. NPNF V.161)。</div>
-<div class="inst-fn">㉖ 以上的一些引用也是来自奥古斯丁的其他作品：Enchiridion 9.30 (MPL 40.246; tr. LCC VII.356 f.)；Against Two Letters of the Pelagians III.8.24 (MPL 44.607; tr. NPNF V.414)；I.3.6 (MPL 44.553; tr. NPNF V.379)；III.7.20；“Hominis libera, sed Dei gratia liberata, voluntas” (MPL 44.603; tr. NPNF V.412)；Sermons 131.6 (MPL 38.732)。</div>
-<div class="inst-fn">㉗ Augustine, On the Spirit and the Letter 30.52 (MPL 44.234, CSEL 60.208 f.; tr. LCC VIII.236 f.); On Rebuke and Grace 13.42 (MPL 44.942; tr. NPNF V.489); Against Two Letters of the Pelagians I.2.5 (MPL 44.552; tr. NPNF V.378). 5 Augustine, On the Predestination of the Saints 3.7, 4.8 (MPL 44.964, 966; tr. NPNF V.500)。奥古斯丁在这里引用西普里安的话，Testimonies Against the Jews, to Quirinus III.4：“我们在万事上都不应该自夸，因为我们一无所有。”（MPL 4.764；ANF V.528）他在Against Two Letters of the Pelagians IV.9.25–26（MPL 44.627 f.；tr. NPNF V.428）也引用了这句话。</div>
+
+⑫ 因此，这君王的受膏并不用油或香物。反而，他被称为神的“受膏者”（Christus），因为“智慧和聪明的灵，谋略和能力的灵，知识和敬畏耶和华的灵住在他身上”（赛 11：2p.）。这就是《诗篇》所说“喜乐的油”，神用这油膏他胜过膏他的同伴（诗 45：7），因若基督不是如此优越，我们就都是贫乏和饥饿的。以上谈过，⑬基督的富足并不是为了他自己，而是因他要将这富足赏赐给饥渴的人。圣经说：“父赐圣灵给他，是没有限量的。”（约 3：34 p.）其理由是：使我们从他丰盛的恩典里领受，而且恩上加恩（约一 16 p.）。从这泉源里涌出保罗所描述的那丰盛：“我们各人蒙恩，都是照基督所量给各人的恩赐。”（弗 4：7）这些经文确实证明了我的观点：基督的国在乎圣灵，并不在乎世俗的欢愉或浮华。因此，我们若想在基督的国度里有分，就必须弃绝世界。
+
+这圣洁膏抹可见的象征是在基督受洗时，就是圣灵以鸽子的形象降临在他身上（约 1：32；路 3：22）。⑫ 圣经以“恩膏”这一词称呼圣灵和他的恩赐并不是新事，我们也不当视为荒谬（约 12：20、27），因为这是我们获得力量的唯一方式。尤其就属天的生命而言，一切的活力都是圣灵赏赐的。因圣灵选择基督作他的根基，使天上的富饶透过基督的丰盛临到贫乏之人。众信徒凭着他们君王的力量，不至被击败，而且满有丰盛属灵的富饶。因此，他们被恰当地称为基督徒。
+
+保罗下述的话与我们所说的永恒并无分歧⑭：“再后……基督……就把国交与父神”（林前15：24），以及“子也要自己服那叫万物服他的，叫神在万物之上，为万物之主”（林前15：28，参阅Vg.）。他的意思是，在那完美的荣耀中，国度的治理不像现今。⑭ 父神将一切的权柄交给子，并借子的手管理、滋养、扶持、眷顾，以及帮助我们。所以，虽然我们生来远离神，基督却站在我们中间，亲自引领我们逐渐与神紧密联合。
+
+而且当我们说基督坐在父神的右边时，也就是在说他是父的代理人，基督握有神国度一切的权柄，神喜悦透过基督统治和保护教会。保罗在《以弗所书》第1章中解释说：神“叫他在天上坐在自己的右边……使他为教会作万有之首……教会是他的身体。”（20—23 p.）他也同样教导说：“神……赐给他那超乎万名之上的名，叫一切在天上的、地上的，和地底下的，因耶稣的名，无不屈膝，无不口称耶稣基督为主，使荣耀归与父神。”（腓2：9—11 p.）保罗在此的意思是：因我们的软弱，基督现今的治理方式是必需的。因此，保罗正确地推论：那时父神将亲自成为教会唯一的元首，因基督保护教会的职分已完成。
+
+⑭ 因着同样的缘故，圣经常常称基督为“主”，因父使基督作我们的元首，好借着他的儿子统治我们。尽管世上有许多被称为主的（林前8：5，参阅Vg.），“然而我们只有一位神，就是父，万物都本于他；我们也归于他；并有一位主，就是耶稣基督，万物都是借着他有的，我们也是借着他有的”（林前8：6）。我们当因此明白，他是同一位借以赛亚的口宣告自己是教会的元首和颁布律法者的那位（赛33：22）。虽然子多次称他所拥有的一切权柄是父神的赏赐，但他的意思只是指他以神的权柄作王。他为何担当中保的职分呢？他从父的怀中和测不透的荣耀中降世，接近我们。这事实使我们一切属他的人定热心顺服神的旨意！基督担任甘心乐意顺服神之人的君王和牧者；另一方面，圣经也告诉我们：他将用铁杖打破他的仇敌；必将他们摔碎如同窑匠的瓦器（诗2：9 p.）。圣经还说：“他要在列邦中刑罚恶人，尸首就遍满各处；他要在许多国中打破仇敌的头。”（诗110：6 p.）我们如今也可以看到这事实的许多实例，然而，在审判之日将被完全充分地证明，这也是基督为王的最后作为。
+
+
+祭司的职分：使信徒与神和好并为信徒代求（6）
+
+
+6.‘现在我们要简要论及基督祭司职分的目的和意义
+既因基督是纯洁、毫无玷污的中保，就以他的圣洁使我们与神和好。然而，神公义的咒诅拦阻我们亲近他，并因他审判官的职分向我们发怒。所以，人的罪必须被除掉，好让基督在祭司职分上获得神对我们的恩惠并平息他的烈怒。因此，基督为了担任这职分，必须向神献祭。在律法时代中，神吩咐祭司必须带着血进入至圣所（来9：7），使信徒确知，即使祭司在神面前替他们辩护，但若他们的罪未被除去，就不能平息神的愤怒（利16：2—3）。使徒在《希伯来书》中，用第7章至第10章的篇幅详尽讨论这教义。总论就是：祭司的职分唯属于基督，因基督借他的死涂抹我们的罪并除掉我们一切的罪行（来9：22）。神绝不后悔的起誓，就告诉我们这是极为重要的：“你是照着麦基洗德的等次永远为祭司。”（诗110：4，参阅来5：6，7：15）无疑地，神喜悦借这经文告诉我们，这是我们救恩的根基。因为，若非基督作我们的大祭司，洗净我们的罪、使我们成圣、为我们获得神的恩典，我们或我们的祷告就无法接近神，因为我们的过犯和罪恶使我们与这恩典隔绝。由此可见，若基督没有死，他祭司职分的功效和益处对我们而言是无用的。
+我们由此得知基督永远为我们代求，而我们借他的代求蒙恩。于是这就成为敬虔之人祷告中的信心和良心的平安，他们坦然无惧依赖神父亲般的怜悯，也确信所有中保所分别为圣的人都蒙神悦纳。尽管神在律法时代吩咐人向他献祭物，然而，基督祭司的职分是崭新和截然不同的，因基督既是祭司又是祭物。这是因为除了基督之外，没有另一个神所悦纳的祭物，也没有另一位配得上向神献神所悦纳的祭物（他的独生子）。基督担任祭司的职分，不但借永恒和好的律平息神对我们的愤怒，也接纳我们一同参与这伟大的职分（启1：6）。我们本身虽然污秽，却在基督里做祭司、将自己和所有的一切献给神，并坦然无惧地进入天上的会幕，使我们一切向神献上的祷告和赞美成为馨香之气，蒙神悦纳。这就是基督在以下经文中的教导：“我为他们的缘故，自己分别为圣”（约17：19）。虽然我们生来是神所憎恶的，但因基督借他自己使我们分别为圣归向神，我们因此能做圣洁之人并讨神喜悦。这就是为何《但以理书》提及至圣者受膏（但9：24）。我们应当注意基督的受膏与旧约当时预表的受膏之间的对照。就如天使所说：“当影儿被驱散，真实祭司的职分将在基督身上彰显出来。”这就更显出那些不满足基督祭司的职分而企图重复献上基督之人的可憎！天主教徒在弥撒中天天都行这恶，重复献基督为祭。
+
+加尔文很少有对基督徒祭司职分的教导，也比较没有系统，然而，从他其他方面的教导可以看出他在这一教义上的立场与马丁·路德大同小异。
+
+<div class="inst-fn">① Augustine, Enchiridion 1.5 (MPL 40.233; tr. LCC VII.339).</div>
+<div class="inst-fn">② 若欲进一步了解加尔文对基督先知、祭司、君王这三种职分的教导，请参阅 J. F. Jansen, Calvin's Doctrine of the Work of Christ。詹森在这部作品中记载一些有关加尔文对基督三种职分教导的背景，很有参考价值（pp. 20–38）。他认为加尔文忽略基督先知的职分。然而在大多数改革宗信仰的作品中，就基督为中保的教义而论，这三种职分均占极重要的位置。参阅 Heppe RD, pp. 452–487；C. Hodge, Systematic Theology pp. 459–609；W. Cunningham, Historical Theology II, pp. 238 ff.；E. D. Morris, Theology of the Westminster Symbols, pp. 322–343；Westminster Confession VIII, Larger Catechism pp. 43–45；Shorter Catechism 24–26；T. F. Torrance, The School of Faith, Introduction, pp. 77–95, 103f.</div>
+<div class="inst-fn">③ 参阅 Aquinas, Summa Theol. III. 22.2：“就人而论，这是立法者，那人是祭司，另一人是君王，然而，基督却同时担任这三种职分，因他是众恩典的源头。”</div>
+<div class="inst-fn">④ II. 6.2–4.</div>
+<div class="inst-fn">⑤ 法文版本作：“Ange ou ambassadeur du haut conseill.” 在 Comm. Isa. 9：6 中，加尔文说正确的翻译是：“奇妙、谋士、全能的神、永在的父……”</div>
+<div class="inst-fn">⑥ “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。 “Prophetam.” VG 作 “prophetie”（预言），但拉丁文与希伯来文含义相同。</div>
+<div class="inst-fn">⑦ 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。 参阅 Bucer：“Rex regum Christus est, summus sacerdos, et prophetarum caput.” Enarrationes in Evangelia (1536), p. 607。伯努瓦（Benoit）认为加尔文的这观念可能是来自布塞的这句话（Benoit, Institution II 267, note 8）。</div>
+<div class="inst-fn">⑧ II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。 II 6. 3。</div>
+<div class="inst-fn">⑨ 加尔文所指的大概是以色列的十个支派归向耶罗波安（王上 12 章），以及《列王纪下》24 章所记载的灾难。参阅 CR XXXVIII.401, 409。</div>
+<div class="inst-fn">⑩ 真教会将坚忍到底 是改革宗信仰不可或缺的教义。参阅 Heppе RD, p. 664；McNeill, “The Church in Post-Reformation Reformed Theology,” Journal of Religion XXIV (1944), 102 f.；K. 巴特在他的 Kirchliche Dogmatik I.2. 771–774 中公开表明：教会蒙保守是出于真道不断更新教会的力量，而这是神的 creatio continua。巴特说：“若没有圣经，教会就不可能坚忍到底。”（Tr. G. T. Thomson, Doctrine of the Word of God. I.2. 688–691.）</div>
+<div class="inst-fn">⑪ 这是典型的加尔文所说的话。参阅 Comm. Matthew 25：34；“敬虔之人的生活如同被放逐之人的生活，充满忧伤、痛苦”，然而神赐给他“力量和喜乐的心，使他能在一切的战争中得胜有余”。加尔文的作品充满这类的话。麦克尼尔（McNeill）在他的 The History and Character of Calvinism, pp. 222 f. 中列举了一些这类加尔文的话。</div>
+<div class="inst-fn">⑫ 参阅 “Spirituales eius divitiae”，第五节。</div>
+<div class="inst-fn">⑬ 上文的第二节。</div>
+<div class="inst-fn">⑭ 上文的第三节。</div>

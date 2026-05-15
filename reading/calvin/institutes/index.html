@@ -238,11 +238,10 @@ description: 约翰·加尔文《基督教要义》中文全文在线阅读，�
         </div>
         <div class="inst-toc">
             {% assign v2 = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17" | split: "," %}
-            {% assign v2_done = "1,2" | split: "," %}
             {% for n in v2 %}
             {% assign sec = "2-" | append: n %}
             {% assign ch = all_inst | where: "section", sec | first %}
-            {% unless v2_done contains n %}<a class="inst-toc-row no-content" aria-disabled="true">{% else %}<a href="{{ site.baseurl }}/reading/calvin/institutes/{{ sec }}/" class="inst-toc-row">{% endunless %}
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/{{ sec }}/" class="inst-toc-row">
                 <span class="inst-toc-num">{{ n }}</span>
                 <span class="inst-toc-title">{% if ch %}{{ ch.chapter_title }}{% else %}第{{ n }}章{% endif %}</span>
             </a>
@@ -257,11 +256,10 @@ description: 约翰·加尔文《基督教要义》中文全文在线阅读，�
         </div>
         <div class="inst-toc">
             {% assign v3 = "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25" | split: "," %}
-            {% assign v3_missing = "20,21,22,23,24,25" | split: "," %}
             {% for n in v3 %}
             {% assign sec = "3-" | append: n %}
             {% assign ch = all_inst | where: "section", sec | first %}
-            {% if v3_missing contains n %}<a class="inst-toc-row no-content" aria-disabled="true">{% else %}<a href="{{ site.baseurl }}/reading/calvin/institutes/{{ sec }}/" class="inst-toc-row">{% endif %}
+            <a href="{{ site.baseurl }}/reading/calvin/institutes/{{ sec }}/" class="inst-toc-row">
                 <span class="inst-toc-num">{{ n }}</span>
                 <span class="inst-toc-title">{% if ch %}{{ ch.chapter_title }}{% else %}第{{ n }}章{% endif %}</span>
             </a>
