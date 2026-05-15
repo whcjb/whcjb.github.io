@@ -237,17 +237,42 @@ def parse_footnotes_block(raw):
     return result
 
 
+def is_subheading(block):
+    """Return True if block looks like a section subheading rather than body text.
+
+    Heuristics:
+    - Short (≤ 20 chars after stripping)
+    - No sentence-ending punctuation that would indicate a complete statement
+    - Not a numbered list item
+    - Not purely Latin/English (OCR artifact)
+    """
+    text = block.strip()
+    if len(text) > 20:
+        return False
+    if re.match(r'^\d+\.\s', text):   # numbered list
+        return False
+    if re.match(r'^[A-Za-z\s,.\-()（）]+$', text):  # pure Latin text
+        return False
+    # Must contain at least one CJK character
+    if not re.search(r'[\u4e00-\u9fff]', text):
+        return False
+    return True
+
+
 def build_body_html(body_text):
-    """Convert body text to HTML paragraphs and numbered list items."""
+    """Convert body text to HTML paragraphs, numbered list items, and subheadings."""
     blocks = re.split(r'\n{2,}', body_text.strip())
     html_parts = []
     for block in blocks:
         block = block.strip()
         if not block:
             continue
-        # Check if block is a numbered list item (starts with digit + dot + space)
-        m = re.match(r'^(\d+)\.\s+(.*)', block, re.DOTALL)
-        if m:
+        # Subheading: short standalone CJK phrase
+        if is_subheading(block):
+            html_parts.append(f'<h3 class="reading-subheading">{block}</h3>')
+        # Numbered list item
+        elif re.match(r'^(\d+)\.\s', block):
+            m = re.match(r'^(\d+)\.\s+(.*)', block, re.DOTALL)
             num = m.group(1)
             content = re.sub(r'\s+', ' ', m.group(2)).strip()
             html_parts.append(

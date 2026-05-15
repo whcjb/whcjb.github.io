@@ -22,7 +22,7 @@ date: 2026-05-15 13:23
 
 <p>我想向富勒神学院全体教员表达深深的感谢，谢谢你们给我如此殊荣在1955 年的佩顿讲坛上演讲，感谢你们在演讲期间的热情接待与友爱。我还要感谢威斯敏斯德神学院董事会允许我在年初几个月缺席，由此我得以完成本书的写作并为出版社预备终稿。我要感谢彼得森夫人与金肯夫人帮助预备打字稿，感谢欧金佳小姐帮助校对和编排索引。</p>
 
-<p>承蒙以下出版社允准引用书作内容：</p>
+<h3 class="reading-subheading">承蒙以下出版社允准引用书作内容：</h3>
 
 <p>大卫.梅斯(David R. Mace)：《希伯来婚姻：社会学研究》(Hebrew Marriage: A Sociological Study)，(伦敦：艾普沃思出版社，1953；纽约：哲学图书馆)；艾米尔.布伦诺(Emil Brunner)：《神的命令》(The Divine Imperative)，1947年，版权持有人：詹金斯(W. L. Jenkins)，(费城：威斯敏斯德出版社)；路易斯.斯普瑞.薛菲尔(Lewis Sperry Chafer)：《系统神学，卷四》(Systematic Theology, Vol. IV)，(达拉斯：达拉斯神学院出版社，1948)；查理斯.范伯格(Charles Feinberg)：《前千禧年论还是无千禧年论？》(Premillennialism or Amillennialism?)，(大急流城：桑德凡出版社，1936)，版权持有人：查理斯.范伯格。</p>
 
