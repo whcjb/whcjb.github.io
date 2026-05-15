@@ -103,8 +103,16 @@ def split_page_body_footnotes(text):
            '\n\n'.join(p.strip() for p in fn_paras if p.strip())
 
 
+# Characters that mark a sentence ending (used to detect mid-sentence page breaks)
+SENTENCE_END = '。！？」』"'
+
 def collect_section(start_page, end_page, skip_header_lines):
-    """Collect body text and footnotes for all pages in a section."""
+    """Collect body text and footnotes for all pages in a section.
+
+    When a page ends mid-sentence (last char is not a sentence-ending punctuation),
+    the next page's first paragraph is merged into the same paragraph rather than
+    starting a new one.
+    """
     body_parts = []
     all_footnotes = []
 
@@ -125,7 +133,18 @@ def collect_section(start_page, end_page, skip_header_lines):
         page_text = '\n'.join(lines)
         body, footnotes = split_page_body_footnotes(page_text)
         if body:
-            body_parts.append(body)
+            if body_parts:
+                # Check if previous body ended mid-sentence
+                prev = body_parts[-1].rstrip()
+                last_char = prev[-1] if prev else ''
+                if last_char and last_char not in SENTENCE_END:
+                    # Merge: strip trailing newlines from prev and prepend next body
+                    # with single newline so they stay in the same paragraph block
+                    body_parts[-1] = prev + '\n' + body
+                else:
+                    body_parts.append(body)
+            else:
+                body_parts.append(body)
         if footnotes:
             all_footnotes.append(footnotes)
 
