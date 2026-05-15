@@ -40,11 +40,12 @@ HEADER_IMGS = {
 DEFAULT_IMG = 'reading-murray-1.jpg'
 DATE = '2026-05-15 13:23'
 
-# Footnote starter patterns: superscript ¹²³⁴⁵⁶⁷⁸⁹ OR circled ①②③④⑤⑥⑦⑧⑨⑩...
+# Footnote starter patterns: superscript ¹²³⁴⁵⁶⁷⁸⁹ OR circled ①②③④⑤⑥⑦⑧⑨⑩
+# OR plain digit(s) followed by space: "7 参见..." / "8 当然不用说..."
 SUP_CHARS = '¹²³⁴⁵⁶⁷⁸⁹⁰'
 CIRCLE_CHARS = '①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮'
 ALL_FN_START = f'[{SUP_CHARS}{CIRCLE_CHARS}]'
-FN_LINE_RE = re.compile(r'^' + ALL_FN_START)
+FN_LINE_RE = re.compile(r'^(?:' + ALL_FN_START + r'|\d{1,2}\s)')
 
 SUP_MAP = {'¹':'1','²':'2','³':'3','⁴':'4','⁵':'5',
            '⁶':'6','⁷':'7','⁸':'8','⁹':'9','⁰':'0'}
@@ -76,13 +77,13 @@ def read_page(page_num):
 
 # Patterns for detecting unmarked bibliography/footnote paragraphs
 _BIBLIO_INLINE_RE = re.compile(
-    r'（[^）]*\d{4}[^）]*）|'   # (... year ...) any length
-    r'第\d+[卷页册]|'            # 第N卷/页/册
-    r'，\d+-\d+\s*页|'           # ，xxx-xxx页
-    r'\d{4}\s*年[）,，]'         # 1921年）or 1921年,
+    r'[（【][^）】]*\d{4}[^）】]*[）】]|'  # (... year ...) or 【... year ...】
+    r'第\d+[卷页册]|'                       # 第N卷/页/册
+    r'，\d+-\d+\s*页|'                      # ，xxx-xxx页
+    r'\d{4}\s*年[）】,，。；]'              # 1921年）or 1921年, or 1949年】
 )
 _ORPHAN_FN_START_RE = re.compile(r'^(参阅[：:]|参见|同上|同前|ibid|op\.?\s*cit)', re.IGNORECASE)
-_CONTINUATION_RE = re.compile(r'^[城页卷册，；）]')  # mid-word continuation
+_CONTINUATION_RE = re.compile(r'^[城页卷册，；）]|^[而然]，')  # mid-word or connective continuation
 
 
 _CITE_VERB_RE = re.compile(r'参阅[：:]|参见|同上|同前')
@@ -102,6 +103,12 @@ def _is_orphan_footnote_para(para):
         return True
     # One citation marker is enough if paragraph also contains a "参阅/参见" verb
     if hits >= 1 and _CITE_VERB_RE.search(s) and len(s) < 500:
+        return True
+    # Long bibliography paragraphs (multi-entry footnote lists, no length cap)
+    if hits >= 4:
+        return True
+    # Continuation of a footnote starting with Latin text (e.g. "Post-Nicene Fathers）...")
+    if re.match(r'^[A-Za-z]', s) and hits >= 1:
         return True
     return False
 
@@ -125,8 +132,15 @@ def split_page_body_footnotes(text):
             break
 
     if first_fn_idx is not None:
-        body_paras = paragraphs[:first_fn_idx]
-        fn_paras = paragraphs[first_fn_idx:]
+        # Also absorb any orphan footnote paragraphs immediately before first_fn_idx
+        extended_idx = first_fn_idx
+        for i in range(first_fn_idx - 1, -1, -1):
+            if _is_orphan_footnote_para(paragraphs[i]):
+                extended_idx = i
+            else:
+                break
+        body_paras = paragraphs[:extended_idx]
+        fn_paras = paragraphs[extended_idx:]
         return '\n\n'.join(p.strip() for p in body_paras if p.strip()), \
                '\n\n'.join(p.strip() for p in fn_paras if p.strip())
 
@@ -250,13 +264,18 @@ def parse_footnotes_block(raw):
             continue
 
         m = re.match(r'^([' + SUP_CHARS + CIRCLE_CHARS + r']+)(.*)', stripped)
-        if m:
+        m2 = re.match(r'^(\d{1,2})\s+(.*)', stripped) if not m else None
+        if m or m2:
             if current_num is not None:
                 text = ' '.join(t for t in current_lines if t)
                 footnotes.append((current_num, text))
-            marker = m.group(1)
-            current_num = marker_to_num(marker)
-            rest = m.group(2).strip()
+            if m:
+                marker = m.group(1)
+                current_num = marker_to_num(marker)
+                rest = m.group(2).strip()
+            else:
+                current_num = m2.group(1)
+                rest = m2.group(2).strip()
             current_lines = [rest] if rest else []
         else:
             if current_num is not None:
@@ -304,35 +323,49 @@ def is_subheading(block):
 
 def build_body_html(body_text):
     """Convert body text to HTML paragraphs, numbered list items, and subheadings."""
-    blocks = re.split(r'\n{2,}', body_text.strip())
-    html_parts = []
+    blocks = [b.strip() for b in re.split(r'\n{2,}', body_text.strip()) if b.strip()]
+
+    # Pass 1: classify each block
+    classified = []
     for block in blocks:
-        block = block.strip()
-        if not block:
-            continue
-        # Subheading: short standalone CJK phrase
         if is_subheading(block):
-            html_parts.append(f'<h3 class="reading-subheading">{block}</h3>')
-        # Numbered list item: "1. " or "（1）"
+            classified.append(('heading', None, None, block))
         elif re.match(r'^(\d+)\.\s', block):
             m = re.match(r'^(\d+)\.\s+(.*)', block, re.DOTALL)
-            num = m.group(1)
-            content = re.sub(r'\s+', ' ', m.group(2)).strip()
-            html_parts.append(
-                f'<div class="reading-list-item"><span class="list-num">{num}.</span>'
-                f'<p>{content}</p></div>'
-            )
+            classified.append(('list', m.group(1), '.', m.group(2)))
         elif re.match(r'^（(\d+)）', block):
             m = re.match(r'^（(\d+)）(.*)', block, re.DOTALL)
-            num = m.group(1)
-            content = re.sub(r'\s+', ' ', m.group(2)).strip()
+            classified.append(('list', m.group(1), '()', m.group(2)))
+        else:
+            classified.append(('plain', None, None, block))
+
+    # Pass 2: merge plain paragraphs sandwiched between two list items into the preceding item
+    merged = []
+    for i, item in enumerate(classified):
+        if item[0] == 'plain':
+            prev_is_list = merged and merged[-1][0] == 'list'
+            next_is_list = (i + 1 < len(classified) and classified[i + 1][0] == 'list')
+            if prev_is_list and next_is_list:
+                prev = merged[-1]
+                merged[-1] = ('list', prev[1], prev[2], prev[3] + ' ' + item[3])
+                continue
+        merged.append(item)
+
+    # Pass 3: render HTML
+    html_parts = []
+    for kind, num, style, content in merged:
+        if kind == 'heading':
+            html_parts.append(f'<h3 class="reading-subheading">{content}</h3>')
+        elif kind == 'list':
+            text = re.sub(r'\s+', ' ', content).strip()
+            label = f'{num}.' if style == '.' else f'({num})'
             html_parts.append(
-                f'<div class="reading-list-item"><span class="list-num">({num})</span>'
-                f'<p>{content}</p></div>'
+                f'<div class="reading-list-item"><span class="list-num">{label}</span>'
+                f'<p>{text}</p></div>'
             )
         else:
-            content = re.sub(r'\s+', ' ', block).strip()
-            html_parts.append(f'<p>{content}</p>')
+            text = re.sub(r'\s+', ' ', content).strip()
+            html_parts.append(f'<p>{text}</p>')
     return '\n\n'.join(html_parts)
 
 
