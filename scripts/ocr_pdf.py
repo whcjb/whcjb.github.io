@@ -2,11 +2,13 @@
 """
 PDF OCR 脚本 —— 调用本地 Qwen3 服务器
 用法：
-    python3 scripts/ocr_pdf.py <pdf路径> <输出目录> [起始页] [结束页]
+    python3 scripts/ocr_pdf.py <pdf路径> <输出目录> [起始页] [结束页] [服务器URL]
 
 示例：
     python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi3.pdf ~/Documents/论文/ocr_output/yaoyi3
     python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 1 100
+    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 215 361 http://10.192.2.11:8765
+    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 362 508 http://10.192.2.11:8766
 
 输出：每页存为 page_NNNN.txt，支持断点续跑（已存在的文件自动跳过）。
 """
@@ -26,15 +28,16 @@ except ImportError:
 OCR_SERVER = "http://10.192.2.11:8765"
 DPI = 150   # 150dpi 足够文字识别，速度快 3-4 倍
 
-def ocr_pdf(pdf_path: str, out_dir: str, start: int = 1, end: int = None):
+def ocr_pdf(pdf_path: str, out_dir: str, start: int = 1, end: int = None, server: str = None):
     pdf_path = Path(pdf_path).expanduser()
     out_dir  = Path(out_dir).expanduser()
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    srv   = server or OCR_SERVER
     doc   = fitz.open(str(pdf_path))
     total = len(doc)
     end   = min(end or total, total)
-    print(f"PDF: {pdf_path.name}，共 {total} 页，处理第 {start}–{end} 页", flush=True)
+    print(f"PDF: {pdf_path.name}，共 {total} 页，处理第 {start}–{end} 页  服务器: {srv}", flush=True)
 
     ok = err = 0
     start_time = time.time()
@@ -47,7 +50,7 @@ def ocr_pdf(pdf_path: str, out_dir: str, start: int = 1, end: int = None):
         try:
             pix  = doc[i].get_pixmap(dpi=DPI)
             b64  = base64.b64encode(pix.tobytes("png")).decode()
-            resp = requests.post(f"{OCR_SERVER}/ocr", json={"image": b64}, timeout=180)
+            resp = requests.post(f"{srv}/ocr", json={"image": b64}, timeout=180)
             resp.raise_for_status()
             text = resp.json()["text"]
             out_file.write_text(text, encoding="utf-8")
@@ -72,4 +75,5 @@ if __name__ == "__main__":
     odir = sys.argv[2]
     s    = int(sys.argv[3]) if len(sys.argv) > 3 else 1
     e    = int(sys.argv[4]) if len(sys.argv) > 4 else None
-    ocr_pdf(pdf, odir, s, e)
+    srv  = sys.argv[5] if len(sys.argv) > 5 else None
+    ocr_pdf(pdf, odir, s, e, srv)
