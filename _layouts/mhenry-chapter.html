@@ -264,12 +264,35 @@ layout: default
     font-weight: bold;
 }
 .mh-unit-body {
+    display: none;
     padding: 16px 0;
     border-left: none;
     background: #fff;
     line-height: 1.9;
     border-radius: 0 0 6px 6px;
 }
+.mh-expand-btn {
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-left: 8px;
+    background: transparent;
+    border: none;
+    color: #C9922A;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.22s ease, color 0.15s;
+    font-family: sans-serif;
+    vertical-align: middle;
+    opacity: 0.75;
+}
+.mh-expand-btn:hover { opacity: 1; }
+.mh-unit.mh-expanded .mh-expand-btn { transform: rotate(90deg); }
 
 /* ── Outline I. II. III. (blue heading) ────────────── */
 .mh-l1 {
@@ -578,13 +601,37 @@ function resetFontSize() {
     applyFontSize(FONT_DEFAULT);
 }
 
-// ── Verse click to fold/unfold ────────────────────────
+// ── Verse click to fold/unfold verse text ────────────
 (function initVerseFold() {
     document.querySelectorAll('.mh-unit > .mh-verse').forEach(function(v) {
         v.classList.add('mh-folded');
         v.addEventListener('click', function() {
             this.classList.toggle('mh-folded');
         });
+    });
+})();
+
+// ── Commentary expand button (default collapsed) ──────
+(function initCommentaryToggle() {
+    document.querySelectorAll('.mh-unit').forEach(function(unit) {
+        var verse = unit.querySelector('.mh-verse');
+        var body  = unit.querySelector('.mh-unit-body');
+        if (!verse || !body) return;
+
+        var btn = document.createElement('button');
+        btn.className = 'mh-expand-btn';
+        btn.textContent = '❯';
+        btn.title = '展开注释';
+
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var expanded = unit.classList.toggle('mh-expanded');
+            body.style.display = expanded ? 'block' : 'none';
+            btn.title = expanded ? '收起注释' : '展开注释';
+        });
+
+        // Prepend into verse so it floats right within the verse card
+        verse.insertAdjacentElement('afterbegin', btn);
     });
 })();
 

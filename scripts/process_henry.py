@@ -34,9 +34,21 @@ BOOKS = {
             # add more as needed
         },
     },
+    'malachi': {
+        'pdf':        '马太亨利完整圣经注释-玛拉基书.pdf',
+        'title':      '玛拉基书',
+        'header_img': 'mhenry-book-19.jpg',
+        # chapter -> (start_pdf_page, end_pdf_page)  1-indexed
+        'chapters': {
+            1: (3, 7),
+            2: (8, 14),
+            3: (15, 23),
+            4: (24, 28),
+        },
+    },
 }
 
-DATE = '2026-05-16 15:12'
+DATE = '2026-05-16 16:14'
 
 
 # ── PDF text extraction ──────────────────────────────────────────────────────
