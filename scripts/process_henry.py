@@ -18,7 +18,7 @@ import os, re, sys
 import fitz  # PyMuPDF
 
 PDF_DIR = os.path.expanduser('~/Documents/论文/matthew_henry')
-OUT_BASE = os.path.join(os.path.dirname(__file__), '../reading/henry')
+OUT_BASE = os.path.join(os.path.dirname(__file__), '../mhenry')
 
 # ── Book registry ───────────────────────────────────────────────────────────
 BOOKS = {
@@ -227,14 +227,13 @@ def build_html(paragraphs):
 # ── Front matter ─────────────────────────────────────────────────────────────
 
 def make_front_matter(book_key, book_info, chapter_num):
+    total = max(book_info['chapters'].keys()) if book_info['chapters'] else chapter_num
     return f"""---
-layout: reading-chapter
-author_id: henry
-author_name: 马太亨利
+layout: mhenry-chapter
 book_id: {book_key}
-book_title: {book_info['title']}注释
-section: "{chapter_num}"
-section_title: "第{chapter_num}章"
+book_name: {book_info['title']}
+chapter: {chapter_num}
+total_chapters: {total}
 header-img: {book_info.get('header_img', 'mhenry-book-1.jpg')}
 date: {DATE}
 ---

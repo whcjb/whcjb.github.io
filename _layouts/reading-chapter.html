@@ -210,7 +210,7 @@ layout: default
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&family=Noto+Serif+TC:wght@300;400&family=Noto+Serif+SC:wght@300;400&family=Zhi+Mang+Xing&family=Long+Cang&family=Shippori+Mincho:wght@400;500&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
-{% if page.author_id == "lu" or page.author_id == "murray" or page.author_id == "henry" %}
+{% if page.author_id == "lu" or page.author_id == "murray" %}
 <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
 {% endif %}
 {% if page.book_id == "institutes" %}
@@ -850,106 +850,6 @@ aside.reading-footnotes p > sup a.fn-backref:hover { opacity: 0.8; }
 }
 .reading-content h3.reading-subheading::after {
     background: linear-gradient(to left, transparent, rgba(184,134,11,0.45));
-}
-</style>
-{% endif %}
-
-{% if page.author_id == "henry" %}
-<style>
-/* ── 马太亨利注释专用样式 ── */
-.reading-content {
-    font-family: "Klee One", "LXGW WenKai", "STKaiti", serif;
-}
-/* 经文引用块 */
-.henry-scripture {
-    background: #f5f0e8;
-    border-left: 4px solid #b8860b;
-    border-radius: 0 6px 6px 0;
-    padding: 12px 18px;
-    margin: 18px 0;
-    line-height: 1.9;
-    font-family: "Klee One", "STKaiti", serif;
-    color: #3a2a0a;
-}
-.henry-scripture .verse { margin-right: 0.3em; }
-.henry-scripture sup.vnum {
-    font-size: 0.7em;
-    color: #b8860b;
-    vertical-align: super;
-    margin-right: 1px;
-    font-family: Georgia, serif;
-}
-/* 日期标签：创造（主前4004年） */
-p.henry-date-label {
-    text-align: center;
-    color: #8a6520;
-    font-size: 0.88em;
-    letter-spacing: 0.12em;
-    margin: 28px 0 8px 0;
-    font-family: "STKaiti", "KaiTi", serif;
-}
-p.henry-date-label::before { content: '— '; }
-p.henry-date-label::after  { content: ' —'; }
-/* 大节标题 I. II. III. */
-h3.henry-section {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.05em;
-    font-weight: bold;
-    color: #7a5c20;
-    margin: 28px 0 8px 0;
-    padding: 0;
-    border: none;
-    letter-spacing: 0.08em;
-}
-/* 数字编号段落 1. 2. */
-.henry-list-item {
-    display: block;
-    margin: 0 0 0.8em 0;
-    padding: 10px 14px;
-    background: rgba(184,134,11,0.06);
-    border-radius: 5px;
-}
-.henry-list-item .list-num {
-    font-family: Georgia, serif;
-    font-size: 0.85em;
-    color: #b8860b;
-    font-weight: bold;
-    margin-right: 0.4em;
-}
-.henry-list-item p {
-    display: inline;
-    margin: 0;
-    text-indent: 0 !important;
-    font-size: 0.95em;
-}
-/* 脚注区域 */
-.henry-footnotes {
-    margin-top: 40px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(184,134,11,0.3);
-}
-.henry-footnotes::before {
-    content: '注 釋';
-    display: block;
-    text-align: center;
-    font-size: 0.82em;
-    letter-spacing: 0.25em;
-    color: #b8860b;
-    margin-bottom: 14px;
-    font-family: "STKaiti", serif;
-}
-p.henry-footnote {
-    font-size: 0.85em;
-    color: #555;
-    line-height: 1.7;
-    margin: 0 0 6px 0;
-    text-indent: 0 !important;
-    font-family: "Zhi Mang Xing", "STKaiti", cursive;
-}
-p.henry-footnote sup {
-    font-size: 0.75em;
-    color: #b8860b;
-    margin-right: 3px;
 }
 </style>
 {% endif %}

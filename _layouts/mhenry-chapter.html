@@ -315,6 +315,90 @@ layout: default
     margin-right: 4px;
 }
 
+/* ── Henry scripture / section styles (PDF-extracted chapters) ── */
+.henry-scripture {
+    background: #f5f0e8;
+    border-left: 4px solid #C9922A;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 18px 0;
+    line-height: 1.9;
+    color: #3a2a0a;
+}
+.henry-scripture .verse { margin-right: 0.3em; }
+.henry-scripture sup.vnum {
+    font-size: 0.7em;
+    color: #C9922A;
+    vertical-align: super;
+    margin-right: 1px;
+    font-family: Georgia, serif;
+}
+p.henry-date-label {
+    text-align: center;
+    color: #8a6520;
+    font-size: 0.88em;
+    letter-spacing: 0.12em;
+    margin: 28px 0 8px 0;
+}
+p.henry-date-label::before { content: '— '; }
+p.henry-date-label::after  { content: ' —'; }
+h3.henry-section {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05em;
+    font-weight: bold;
+    color: #7a5c20;
+    margin: 28px 0 8px 0;
+    padding: 0;
+    border: none;
+    letter-spacing: 0.08em;
+}
+.henry-list-item {
+    display: block;
+    margin: 0 0 0.8em 0;
+    padding: 10px 14px;
+    background: rgba(201,146,42,0.07);
+    border-radius: 5px;
+}
+.henry-list-item .list-num {
+    font-family: Georgia, serif;
+    font-size: 0.85em;
+    color: #C9922A;
+    font-weight: bold;
+    margin-right: 0.4em;
+}
+.henry-list-item p {
+    display: inline;
+    margin: 0;
+    text-indent: 0 !important;
+    font-size: 0.95em;
+}
+.henry-footnotes {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(201,146,42,0.3);
+    font-size: 0.85em;
+    color: #555;
+    line-height: 1.7;
+}
+.henry-footnotes::before {
+    content: '注 釋';
+    display: block;
+    text-align: center;
+    font-size: 0.82em;
+    letter-spacing: 0.25em;
+    color: #C9922A;
+    margin-bottom: 14px;
+}
+p.henry-footnote {
+    margin: 0 0 6px 0;
+    text-indent: 0 !important;
+}
+p.henry-footnote sup {
+    font-size: 0.75em;
+    color: #C9922A;
+    margin-right: 3px;
+}
+
 /* ── Font size control ───────────────────────────────── */
 #mhenry-col { font-size: var(--reading-font-size, 16px); }
 .font-size-ctrl {
