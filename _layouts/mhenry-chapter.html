@@ -20,7 +20,7 @@ layout: default
     <div class="row" id="mhenry-row">
         <div id="mhenry-col" class="col-xs-12 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
+            <div class="mh-nav-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-left:16px; padding-right:16px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
                     <div class="bg-color-ctrl" title="背景色">
@@ -45,7 +45,7 @@ layout: default
                 </div>
             </div>
 
-            <div class="tts-bar" id="ttsBar">
+            <div class="tts-bar" id="ttsBar" style="padding-left:16px; padding-right:16px;">
                 <div class="tts-controls">
                     <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
                     <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
@@ -64,6 +64,7 @@ layout: default
 
             {{ content }}
 
+            <div class="mh-footer" style="padding-left:16px; padding-right:16px;">
             <div style="text-align:center; color:#C9922A; font-size:20px; margin:24px 0 8px;">❧</div>
             <hr style="border-color:#D7C4A3; margin-top:0;">
             {% assign next_ch = page.chapter | plus: 1 %}
@@ -106,6 +107,7 @@ layout: default
                     加尔文注释
                 </button>
             </div>
+            </div><!-- /.mh-footer -->
 
         </div>
 
@@ -124,27 +126,22 @@ layout: default
 #mhenry-col {
     background: var(--reading-bg-color, #fff);
     border-radius: 6px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
-.mh-unit {
-    margin-left: -15px;
-    margin-right: -15px;
+#mhenry-col > .mh-nav-bar,
+#mhenry-col > .tts-bar,
+#mhenry-col > .mh-footer,
+#mhenry-col > p {
+    padding-left: 16px;
+    padding-right: 16px;
 }
-.mh-unit > .mh-verse {
-    border-radius: 0;
-}
-.mh-unit > .mh-unit-body {
-    border-radius: 0;
-}
+.mh-unit > .mh-verse { border-radius: 0; }
+.mh-unit > .mh-unit-body { border-radius: 0; }
 @media (max-width: 767px) {
     #mhenry-outer { padding-left: 0 !important; padding-right: 0 !important; }
     #mhenry-row { margin-left: 0 !important; margin-right: 0 !important; }
-    #mhenry-col { padding: 16px 14px !important; border-radius: 0 !important; width: 100% !important; float: none !important; margin-left: 0 !important; }
-    .mh-unit { margin-left: -14px; margin-right: -14px; }
-}
-@media (max-width: 767px) {
-    #mhenry-outer { padding-left: 0 !important; padding-right: 0 !important; }
-    #mhenry-row { margin-left: 0 !important; margin-right: 0 !important; }
-    #mhenry-col { padding: 16px 14px !important; border-radius: 0 !important; width: 100% !important; float: none !important; margin-left: 0 !important; }
+    #mhenry-col { padding-left: 0 !important; padding-right: 0 !important; border-radius: 0 !important; width: 100% !important; float: none !important; margin-left: 0 !important; }
 }
 .bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
 .bg-swatch {
@@ -193,7 +190,7 @@ layout: default
 /* ── Chapter overview/summary ──────────────────────── */
 .mh-overview {
     margin: 0 0 28px 0;
-    padding: 20px 24px;
+    padding: 20px 0;
     background: #f8f5ef;
     border: 1px solid #d8cfbf;
     border-top: 4px solid #C9922A;
@@ -267,8 +264,8 @@ layout: default
     font-weight: bold;
 }
 .mh-unit-body {
-    padding: 16px 20px;
-    border-left: 4px solid #e8e0d0;
+    padding: 16px 0;
+    border-left: none;
     background: #fff;
     line-height: 1.9;
     border-radius: 0 0 6px 6px;
@@ -295,7 +292,7 @@ layout: default
 /* ── Outline 1. 2. 3. (teal tinted) ───────────────── */
 .mh-l2 {
     margin: 14px 0 8px 1.2em;
-    padding: 8px 14px 8px 16px;
+    padding: 8px 0;
     background: rgba(0,133,161,0.04);
     border-radius: 4px;
     line-height: 1.9;
@@ -310,7 +307,7 @@ layout: default
 /* ── Outline （1）（2）（3）(dashed indent) ──────── */
 .mh-l3 {
     margin: 8px 0 6px 2.5em;
-    padding: 6px 12px;
+    padding: 6px 0;
     line-height: 1.9;
     border-left: 2px dashed #b0c4d8;
 }
@@ -334,6 +331,32 @@ layout: default
     font-weight: bold;
     color: #C9922A;
     margin-right: 4px;
+}
+/* inline footnote reference anchor */
+a.fn-ref {
+    color: #C9922A;
+    font-size: 0.75em;
+    font-weight: bold;
+    vertical-align: super;
+    text-decoration: none;
+    line-height: 0;
+}
+a.fn-ref:hover { text-decoration: underline; }
+/* back-reference arrow inside aside */
+a.fn-backref {
+    color: #C9922A;
+    margin-left: 6px;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+a.fn-backref:hover { text-decoration: underline; }
+/* flash highlight when jumped to */
+.fn-target-flash {
+    animation: fn-flash 1.2s ease-out;
+}
+@keyframes fn-flash {
+    0%   { background: rgba(201,146,42,0.35); }
+    100% { background: transparent; }
 }
 
 /* ── Font size control ───────────────────────────────── */
@@ -752,6 +775,128 @@ function ttsUpdateUI(state) {
     if (!window.speechSynthesis) { var bar = document.getElementById('ttsBar'); if (bar) bar.style.display = 'none'; return; }
     window.addEventListener('beforeunload', function() { speechSynthesis.cancel(); });
     window.addEventListener('pagehide', function() { speechSynthesis.cancel(); });
+
+// ── Footnote bidirectional links ─────────────────────
+(function mhInitFootnoteLinks() {
+    var aside = document.querySelector('.mhenry-footnotes');
+    if (!aside) return;
+
+    var fnPs = Array.from(aside.querySelectorAll('p'));
+    var total = fnPs.length;
+    if (total === 0) return;
+
+    // Step 1: give each aside entry an id and append ↩ back-link
+    fnPs.forEach(function(p, i) {
+        var num = i + 1;
+        p.id = 'fn-' + num;
+        var a = document.createElement('a');
+        a.href = '#fnref-' + num;
+        a.className = 'fn-backref';
+        a.textContent = '↩';
+        a.title = '返回引用位置';
+        a.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById('fnref-' + num);
+            if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(target); }
+        });
+        p.appendChild(a);
+    });
+
+    // Step 2: walk body text nodes and wrap inline markers with anchor links
+    var col = document.getElementById('mhenry-col');
+    if (!col) return;
+
+    var markerIdx = 0;
+
+    function isChinese(code) { return code >= 0x4e00 && code <= 0x9fff; }
+    function isChinesePunct(code) {
+        return code === 0xff0c || code === 0x3002 || code === 0xff1b ||
+               code === 0xff01 || code === 0xff1f || code === 0xff08;
+    }
+    function escHtml(s) {
+        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    function processNode(textNode) {
+        if (markerIdx >= total) return;
+        var text = textNode.textContent;
+        if (!text) return;
+
+        var html = '';
+        var last = 0;
+        var touched = false;
+
+        for (var i = 0; i < text.length && markerIdx < total; i++) {
+            var c = text.charCodeAt(i);
+            if (c < 48 || c > 57) continue;          // not digit
+            var prev = text.charCodeAt(i - 1);
+            if (!isChinese(prev)) continue;           // prev must be Chinese
+            if (text[i - 1] === '第') continue;       // ordinal prefix → skip
+
+            // collect full number
+            var j = i;
+            while (j < text.length && text.charCodeAt(j) >= 48 && text.charCodeAt(j) <= 57) j++;
+            var numStr = text.substring(i, j);
+
+            var nextCode = j < text.length ? text.charCodeAt(j) : 0;
+            var nextChar = j < text.length ? text[j] : '';
+
+            if (!isChinese(nextCode) && !isChinesePunct(nextCode)) { i = j - 1; continue; }
+            if (nextChar === '节' || nextChar === '章') { i = j - 1; continue; }
+
+            // confirmed marker
+            markerIdx++;
+            html += escHtml(text.substring(last, i));
+            html += '<a id="fnref-' + markerIdx + '" href="#fn-' + markerIdx +
+                    '" class="fn-ref" title="查看脚注 ' + markerIdx + '">' + numStr + '</a>';
+            last = j;
+            i = j - 1;
+            touched = true;
+        }
+
+        if (!touched) return;
+        html += escHtml(text.substring(last));
+
+        var span = document.createElement('span');
+        span.innerHTML = html;
+        // attach click handlers so forward links also flash the target
+        Array.from(span.querySelectorAll('a.fn-ref')).forEach(function(a) {
+            var n = parseInt(a.getAttribute('href').replace('#fn-',''));
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.getElementById('fn-' + n);
+                if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(target); }
+            });
+        });
+        textNode.parentNode.replaceChild(span, textNode);
+    }
+
+    // Collect text nodes first (can't modify during walk)
+    var walker = document.createTreeWalker(col, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var node;
+    while ((node = walker.nextNode())) {
+        var el = node.parentElement;
+        var skip = false;
+        while (el && el !== col) {
+            if (el.classList &&
+                (el.classList.contains('mh-verse') || el.tagName === 'ASIDE')) {
+                skip = true; break;
+            }
+            el = el.parentElement;
+        }
+        if (!skip) nodes.push(node);
+    }
+    nodes.forEach(processNode);
+})();
+
+function flashEl(el) {
+    if (!el) return;
+    el.classList.remove('fn-target-flash');
+    void el.offsetWidth; // reflow
+    el.classList.add('fn-target-flash');
+    el.addEventListener('animationend', function() { el.classList.remove('fn-target-flash'); }, {once:true});
+}
     var content = document.getElementById('mhenry-col');
     if (content) {
         content.addEventListener('click', function(e) {
