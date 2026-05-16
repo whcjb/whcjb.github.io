@@ -125,6 +125,11 @@ layout: default
     background: var(--reading-bg-color, #fff);
     border-radius: 6px;
 }
+@media (max-width: 767px) {
+    .container { padding: 0; }
+    #mhenry-row { margin: 0; }
+    #mhenry-col { padding: 16px 14px; border-radius: 0; }
+}
 .bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
 .bg-swatch {
     width:22px; height:22px; border:2px solid transparent; border-radius:50%;
