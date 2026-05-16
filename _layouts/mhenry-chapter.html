@@ -18,7 +18,7 @@ layout: default
 
 <div id="mhenry-outer" class="container">
     <div class="row" id="mhenry-row">
-        <div id="mhenry-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+        <div id="mhenry-col" class="col-xs-12 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
 
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
@@ -126,9 +126,9 @@ layout: default
     border-radius: 6px;
 }
 @media (max-width: 767px) {
-    .container { padding-left: 0 !important; padding-right: 0 !important; }
-    .row { margin-left: 0 !important; margin-right: 0 !important; }
-    #mhenry-col { padding: 16px 14px !important; border-radius: 0; width: 100% !important; }
+    #mhenry-outer { padding-left: 0 !important; padding-right: 0 !important; }
+    #mhenry-row { margin-left: 0 !important; margin-right: 0 !important; }
+    #mhenry-col { padding: 16px 14px !important; border-radius: 0 !important; width: 100% !important; float: none !important; margin-left: 0 !important; }
 }
 .bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
 .bg-swatch {
