@@ -350,6 +350,13 @@ a.fn-backref {
     font-size: 0.85em;
 }
 a.fn-backref:hover { text-decoration: underline; }
+/* clickable sup number inside aside */
+a.fn-backref-num {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+a.fn-backref-num:hover { text-decoration: underline; }
 /* flash highlight when jumped to */
 .fn-target-flash {
     animation: fn-flash 1.2s ease-out;
@@ -785,20 +792,36 @@ function ttsUpdateUI(state) {
     var total = fnPs.length;
     if (total === 0) return;
 
-    // Step 1: give each aside entry an id and append ↩ back-link
+    // Step 1: give each aside entry an id, make its <sup> number clickable, append ↩
     fnPs.forEach(function(p, i) {
         var num = i + 1;
         p.id = 'fn-' + num;
+
+        function jumpToRef(e) {
+            e.preventDefault();
+            var target = document.getElementById('fnref-' + num);
+            if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(target); }
+        }
+
+        // Wrap the <sup> number in a back-link
+        var sup = p.querySelector('sup');
+        if (sup) {
+            var supA = document.createElement('a');
+            supA.href = '#fnref-' + num;
+            supA.className = 'fn-backref-num';
+            supA.title = '返回引用位置';
+            supA.addEventListener('click', jumpToRef);
+            while (sup.firstChild) supA.appendChild(sup.firstChild);
+            sup.appendChild(supA);
+        }
+
+        // Append ↩ arrow at the end
         var a = document.createElement('a');
         a.href = '#fnref-' + num;
         a.className = 'fn-backref';
         a.textContent = '↩';
         a.title = '返回引用位置';
-        a.addEventListener('click', function(e) {
-            e.preventDefault();
-            var target = document.getElementById('fnref-' + num);
-            if (target) { target.scrollIntoView({behavior:'smooth', block:'center'}); flashEl(target); }
-        });
+        a.addEventListener('click', jumpToRef);
         p.appendChild(a);
     });
 
