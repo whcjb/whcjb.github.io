@@ -53,6 +53,9 @@ def ocr_pdf(pdf_path: str, out_dir: str, start: int = 1, end: int = None, server
             resp = requests.post(f"{srv}/ocr", json={"image": b64}, timeout=180)
             resp.raise_for_status()
             text = resp.json()["text"]
+            # 清除汉字之间的多余空格（OCR 换行 artifact）
+            import re as _re
+            text = _re.sub(r'(?<=[\u4e00-\u9fff]) +(?=[\u4e00-\u9fff])', '', text)
             out_file.write_text(text, encoding="utf-8")
             ok += 1
             elapsed = time.time() - start_time

@@ -25,7 +25,7 @@ BOOKS = {
     'genesis': {
         'pdf':        '01马太亨利完整圣经注释-创世记01-20.pdf',
         'title':      '创世记',
-        'header_img': 'reading-henry-1.jpg',
+        'header_img': 'mhenry-book-1.jpg',
         # chapter -> (start_pdf_page, end_pdf_page)  1-indexed
         'chapters': {
             1:  (3, 11),
@@ -235,7 +235,7 @@ book_id: {book_key}
 book_title: {book_info['title']}注释
 section: "{chapter_num}"
 section_title: "第{chapter_num}章"
-header-img: {book_info.get('header_img', 'reading-henry-1.jpg')}
+header-img: {book_info.get('header_img', 'mhenry-book-1.jpg')}
 date: {DATE}
 ---
 
