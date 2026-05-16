@@ -267,33 +267,31 @@ layout: default
 .mh-expand-tab {
     position: absolute;
     top: 0;
+    bottom: 0;              /* stretch full verse height; clipped by overflow:hidden when folded */
     right: 0;
     width: 5%;
-    min-width: 26px;
-    max-width: 44px;
-    height: 4.2em;          /* same as collapsed verse max-height */
-    background: #6b4c1e;    /* deep brown, distinct from verse #E8DBC6 */
-    color: #f0e0b8;
+    min-width: 28px;
+    max-width: 46px;
+    background: #0a7abf;    /* vivid blue — high contrast against warm beige */
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     writing-mode: vertical-rl;
     text-orientation: mixed;
-    font-size: 0.7em;
-    font-weight: normal;
-    letter-spacing: 0.25em;
+    font-size: 0.72em;
+    font-weight: bold;
+    letter-spacing: 0.3em;
     cursor: pointer;
     user-select: none;
-    border-left: 1px solid rgba(255,255,255,0.12);
-    transition: background 0.18s, color 0.18s;
+    border-left: 1px solid rgba(255,255,255,0.25);
+    transition: background 0.15s;
 }
 .mh-expand-tab:hover {
-    background: #C9922A;
-    color: #fff;
+    background: #0860a0;
 }
 .mh-unit.mh-expanded .mh-expand-tab {
     background: #C9922A;
-    color: #fff;
 }
 
 /* ── Outline I. II. III. (blue heading) ────────────── */
