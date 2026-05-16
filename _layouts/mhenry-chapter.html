@@ -227,6 +227,7 @@ layout: default
     border-left: 4px solid #C9922A;
     border-radius: 6px 6px 0 0;
     padding: 0;
+    padding-right: calc(5% + 2px);  /* leave room for expand tab */
     margin: 0;
     color: #4A3728;
     line-height: 1.9;
@@ -262,28 +263,38 @@ layout: default
     line-height: 1.9;
     border-radius: 0 0 6px 6px;
 }
-.mh-expand-btn {
-    float: right;
-    display: inline-flex;
+/* ── Commentary expand tab (right strip) ──────────────── */
+.mh-expand-tab {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5%;
+    min-width: 26px;
+    max-width: 44px;
+    height: 4.2em;          /* same as collapsed verse max-height */
+    background: #6b4c1e;    /* deep brown, distinct from verse #E8DBC6 */
+    color: #f0e0b8;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 22px;
-    height: 22px;
-    margin-left: 8px;
-    background: transparent;
-    border: none;
-    color: #C9922A;
-    font-size: 14px;
-    line-height: 1;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.7em;
+    font-weight: normal;
+    letter-spacing: 0.25em;
     cursor: pointer;
-    padding: 0;
-    transition: transform 0.22s ease, color 0.15s;
-    font-family: sans-serif;
-    vertical-align: middle;
-    opacity: 0.75;
+    user-select: none;
+    border-left: 1px solid rgba(255,255,255,0.12);
+    transition: background 0.18s, color 0.18s;
 }
-.mh-expand-btn:hover { opacity: 1; }
-.mh-unit.mh-expanded .mh-expand-btn { transform: rotate(90deg); }
+.mh-expand-tab:hover {
+    background: #C9922A;
+    color: #fff;
+}
+.mh-unit.mh-expanded .mh-expand-tab {
+    background: #C9922A;
+    color: #fff;
+}
 
 /* ── Outline I. II. III. (blue heading) ────────────── */
 .mh-l1 {
@@ -609,20 +620,20 @@ function resetFontSize() {
         var body  = unit.querySelector('.mh-unit-body');
         if (!verse || !body) return;
 
-        var btn = document.createElement('button');
-        btn.className = 'mh-expand-btn';
-        btn.textContent = '❯';
-        btn.title = '展开注释';
+        var tab = document.createElement('div');
+        tab.className = 'mh-expand-tab';
+        tab.textContent = '注释';
+        tab.title = '展开注释';
 
-        btn.addEventListener('click', function(e) {
+        tab.addEventListener('click', function(e) {
             e.stopPropagation();
             var expanded = unit.classList.toggle('mh-expanded');
             body.style.display = expanded ? 'block' : 'none';
-            btn.title = expanded ? '收起注释' : '展开注释';
+            tab.title = expanded ? '收起注释' : '展开注释';
         });
 
-        // Prepend into verse so it floats right within the verse card
-        verse.insertAdjacentElement('afterbegin', btn);
+        // Append into verse (absolute-positioned to top-right)
+        verse.appendChild(tab);
     });
 })();
 
