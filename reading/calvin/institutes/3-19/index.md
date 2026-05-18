@@ -12,7 +12,7 @@ chapter: 19
 date: 2026-05-15 11:18
 ---
 
-## 第十九章 基督徒的自由
+## 第十九章基督徒的自由
 
 基督徒的自由这教义是必需的，也有三个部分，第一部分记载在《加拉太书》中（1—3）
 
@@ -218,9 +218,9 @@ date: 2026-05-15 11:18
 <div class="inst-fn">③ Melanchthon, Loci communes (1521), ed. H. Engelland, Melanchthons Werke in Auswahl II. 1. 129, tr. C. S. Hill, pp. 214 f. 1559 年的版本 (Loci praecipui) 教导基督徒的自由有四个不同的阶段 (gradus)：赦罪、圣灵的光照、政治生活不受摩西律法的限制，以及良心在非神所命令之事上的自由 (ed. Engelland, op. cit., II. 2. 764–772)。</div>
 <div class="inst-fn">④ 参阅 Servetus, On the Righteousness of Christ’s Kingdom (1532) 3, “a comparison of the law and the gospel”, D 7a–8b (tr. Wilbur, Two Treatises of Servetus, pp. 239–241)。</div>
 <div class="inst-fn">⑤ 加尔文在“in rebus non necessariis”中教导基督徒良心上的自由。参阅 Rupert Meldeni us (Peter Meider- lin), Paraenesis votiva pro pace ecclesiae (1626), motto at end: “In necessariis unitas, in non necessariis libertas, in omnibus caritas” (McNeill, Unitive Protestantism, pp. 267 f., note 12, 311.)。</div>
-<div class="inst-fn">⑥ 参阅 Melanchthon, Loci communes, ed. Engelland, p. 137; tr. Hill, p. 224: “圣灵驱使一切在基督里 的人遵守律法……”</div>
+<div class="inst-fn">⑥ 参阅 Melanchthon, Loci communes, ed. Engelland, p. 137; tr. Hill, p. 224: “圣灵驱使一切在基督里的人遵守律法……”</div>
 <div class="inst-fn">⑦ Fisher, Confutatio, art. 31, p. 492.</div>
-<div class="inst-fn">⑧ “Parcere pro indulgere vel humaniter ad vitia connivere” (VG; “dissimulant les vices”)。加尔文在 Comm. Jer. 15：5；Comm. Joel 2：18 中说希伯来文的“”本意是“宽容或爱惜”，所以正确的翻译 是“赦免或怜悯”。</div>
+<div class="inst-fn">⑧ “Parcere pro indulgere vel humaniter ad vitia connivere” (VG; “dissimulant les vices”)。加尔文在 Comm. Jer. 15：5；Comm. Joel 2：18 中说希伯来文的“”本意是“宽容或爱惜”，所以正确的翻译是“赦免或怜悯”。</div>
 <div class="inst-fn">⑨ “ἀδιάφοροι”，非神所命令之事，这在加尔文的时代是神学家从各种角度普遍探讨的教义。参阅 Melanchthon’s Apology of the Augsburg Confession XV.52 (Concordia Triglotta, pp. 328f.；“因爱的缘故，我们不拒绝别人遵守神未曾命令之事。”）斯特里特（T. W. Street）的博士论文研究加尔文对这教义的立场，John Calvin on Adiaphora, an Exposition (doctoral dissertation. Union Theological Seminary, New York, 1954)。斯特里特博士指着这一段说，就加尔文而论，基督徒在非神所命令之事上的自由是重要的（pp. 66 f.）。参阅 IV.10.22。也请参阅 R. S. Wallace, Calvin’s Doctrine of the Christian Life, pp. 309 f。</div>
 <div class="inst-fn">⑩ 加尔文在这里极有智慧的评论，即人的良心能落入某种在行为上对自己越来越严厉的旋涡里，可以比较他对基督徒该如何使用世俗之福分的教导，III. 10.1–4。某些早期修士的作品劝信徒应当在这事上谨慎免得极端，特别在禁食上。Cassian, Conferences 21: 13, 14 (MPL 41. 1187–1190; CSEL 13. 587–590; tr. NPNF 2 ser. XI. 508 f.)，Sayings of the Fathers X. 1 (LCC XII. 105)。然而狄奥斯库若（Dioscorus of Namisias）在饮食上严格地限制自己被视为是很好的榜样：Sayings of the Fathers IV. 13 (LCC XII 50)。</div>
 <div class="inst-fn">⑪ “Res omnes externas libertati nostrae subicit.” 参阅 III. 10.4；“in rebus externis libertas.” 在这一段和下一段中，加尔文表达一个对非神所命令之事（adiaphora）的基督教观点。然而斯多葛派学者帮助他更清楚地明白这教义。参阅 E. F. Meylan, “The Stoic Doctrine of Indifferent Things and the Conception of Christian Liberty in Calvin’s Institutio Christianae Religionis” (Romanic Review VIII [1937], 135–145)。</div>

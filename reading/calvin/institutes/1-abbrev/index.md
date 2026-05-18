@@ -13,7 +13,7 @@ date: 2026-05-14 14:03
 ---
 
 缩写与符号
-缩 写
+缩写
 ACW —— Ancient Christian Writers.
 ANF —— The Ante-Nicene Fathers.
 Aquinas, Summa Theol —— Thomas Aquinas, Summa Theologica.

@@ -12,7 +12,7 @@ chapter: 15
 date: 2026-05-14 10:02
 ---
 
-## 第十五章 洗礼
+## 第十五章洗礼
 
 自欺者的辩论，在乎洗礼本身的含义，^6因为它能使我们转离眼所能见的水，以及其他一切可见的媒介，使我们单单定睛在基督身上。
 
@@ -288,11 +288,11 @@ b首先，洗礼的教义在一切敬虔的人当中是众所周知的。大家�
 <div class="inst-fn">⑭ 参阅 III. 6.5，注释 9，III. 9.4。</div>
 <div class="inst-fn">⑮ 参阅 II. 2.27，III. 3.11，III. 11.11，Comm Rom 7：7–25。无疑，加尔文认为在《罗马书》7：24 和其他类似的经文中，保罗说的是自己重生后的光景。这是阿明尼乌（Arminius）和加尔文根本上的差异。在一个问题争议的结论时，阿明尼乌认为这一段话形容的是一个没有重生的人：“这个人不在恩典之下”，而在律法之下。（Works of Arminius, tr. J. Nichols, II. 326.）</div>
 <div class="inst-fn">⑯ 即《罗马书》7：7—13 这一段之前的《罗马书》2：12—24 讨论律法有何用处。</div>
-<div class="inst-fn">⑰ Augustine，Sermons 151.5：“Ergo simper pugnandum est”：“因此，我们随时要预备好作战；因为我们与生俱来的情欲（concupiscence）在我们活着的时候不会停止；或许会每天减少一点，但是总不 会完全结束。”（MPL 38.814 ff.，上文的翻译与 LF Sermons II 713 不同）</div>
+<div class="inst-fn">⑰ Augustine，Sermons 151.5：“Ergo simper pugnandum est”：“因此，我们随时要预备好作战；因为我们与生俱来的情欲（concupiscence）在我们活着的时候不会停止；或许会每天减少一点，但是总不会完全结束。”（MPL 38.814 ff.，上文的翻译与 LF Sermons II 713 不同）</div>
 <div class="inst-fn">⑱ Luther, Ein Sermon von dem Sakrament der Tauffe 1 (Werke WA II. 727).</div>
 <div class="inst-fn">⑲ 关于主餐的类似正面陈述参阅 IV. 17.3。</div>
 <div class="inst-fn">⑳ 上文的第七节。</div>
-<div class="inst-fn">㉑ 奥古斯丁对多纳徒派的描述记载于 Psalms, Ps. 10.5 (MPL 36.134, tr. [Ps.11] LF Psalms 1.96), Let- ters 89.5 (MPL 33.311, tr. FC 18.38)。重洗派（加尔文在此1535年版本使用 Catabaptistae 一词；参阅 Pannier, Institution III 236, note b, p.323）同样拒绝由“邪恶的”牧师所执行的洗礼。这种观点不 断地被茨温利所攻击，如他的著作 On Baptism (CR Zwingli IV.278 f.)，这也为路德所反对，如 Against the Heavenly Prophets (Werke WA XVIII 165 ff.) 和 Letter Concerning Rebaptism (1528) (Werke WA XXVI 161, tr. Luther's Works, American Edition, 50.250 f.)。</div>
+<div class="inst-fn">㉑ 奥古斯丁对多纳徒派的描述记载于 Psalms, Ps. 10.5 (MPL 36.134, tr. [Ps.11] LF Psalms 1.96), Let- ters 89.5 (MPL 33.311, tr. FC 18.38)。重洗派（加尔文在此1535年版本使用 Catabaptistae 一词；参阅 Pannier, Institution III 236, note b, p.323）同样拒绝由“邪恶的”牧师所执行的洗礼。这种观点不断地被茨温利所攻击，如他的著作 On Baptism (CR Zwingli IV.278 f.)，这也为路德所反对，如 Against the Heavenly Prophets (Werke WA XVIII 165 ff.) 和 Letter Concerning Rebaptism (1528) (Werke WA XXVI 161, tr. Luther's Works, American Edition, 50.250 f.)。</div>
 <div class="inst-fn">㉒ 上文的第十六节。</div>
 <div class="inst-fn">㉓ “κακός ηλον”。</div>
 <div class="inst-fn">㉔ 参阅 Comm. Acts 19：1—7。</div>

@@ -12,7 +12,7 @@ chapter: 21
 date: 2026-05-15 11:18
 ---
 
-## 第二十一章 神在他永恒的拣选中预定一些人蒙救恩，也预定其他人遭灭亡
+## 第二十一章神在他永恒的拣选中预定一些人蒙救恩，也预定其他人遭灭亡
 
 明白预定论的人不会任意妄为，也不会不敢教导这教义（1—4）
 
@@ -125,6 +125,6 @@ b我承认不敬虔的人特别喜欢批评、咒骂、吼叫或嘲笑预定论�
 <div class="inst-fn">⑫ 这些“见解”都在 III. 23 中受到反驳。</div>
 <div class="inst-fn">⑬ Augustine, On Genesis in the Literal Sense V.3, 6 (MPL 34. 324).</div>
 <div class="inst-fn">⑭ 这被巴特和尼斯尔（Niesel）视为伯恩政策（policy of Bern）。伯恩的牧师和法官都要在1551年12</div>
-<div class="inst-fn">⑮ Pighius, De libero arbitrio IV (in Controversiarum praecipuarum… explicatio, 1542), fo. 64b f., IX.2, fo. 159b. 参阅 III.22.1–8；III.23.6。下面加尔文会清楚地阐明预知与预定的不同。温德 尔（F. Wendel）曾引述加尔文与奥古斯丁、阿奎那、路德、布塞、司各脱立场的异同（Wendel, Calvin, pp. 202, 206 f.）。</div>
+<div class="inst-fn">⑮ Pighius, De libero arbitrio IV (in Controversiarum praecipuarum… explicatio, 1542), fo. 64b f., IX.2, fo. 159b. 参阅 III.22.1–8；III.23.6。下面加尔文会清楚地阐明预知与预定的不同。温德尔（F. Wendel）曾引述加尔文与奥古斯丁、阿奎那、路德、布塞、司各脱立场的异同（Wendel, Calvin, pp. 202, 206 f.）。</div>
 <div class="inst-fn">⑯ 这个简短的定义，参阅第七节的后半段。又参阅 Wendel, Calvin, pp. 211f。</div>
 <div class="inst-fn">⑰ 关于恩典之约，参阅 I.6.1，注释 3，II.10.1，注释 1，II.11.4，注释 6，III.14.6，注释 6，III.17.6，和以下的第六、第七节。又参阅 L. Goumaz，La Doctrine du salut，pp.151 ff.；Heppé RD，ch.16；T. F. Torrance，The School of Faith，Introduction，pp.I，63，73，120 f。</div>

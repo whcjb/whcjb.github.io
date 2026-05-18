@@ -12,7 +12,7 @@ chapter: 4
 date: 2026-05-14 14:40
 ---
 
-## 第四章 古时教会的光景以及在未有天主教前的行政
+## 第四章古时教会的光景以及在未有天主教前的行政
 
 教会事工的历史发展；三种不同的牧师：教导和管理的长老、被挑选做监督的长老、大主教（1—4）
 
@@ -63,7 +63,7 @@ date: 2026-05-14 14:40
 
 监督和长老主要的职分是证道以及施行圣礼。只有在亚历山大城（因为阿里乌扰乱了那里的教会），教会禁止众长老向百姓证道，就如苏格拉底在《三部史》（Tripartite History）⑧的第九册里所说的。⑨然而哲罗姆对这决定公开表示自己的反对。
 
-在那时代，若有人自称监督却没有公开担任监督的职分，必定被视为大罪。那时教会的管理很严谨，每位牧师都得认真担任神给他的职分。这习惯也不仅止于一个时代。甚至在格列高利的时代，虽然当时的教会几乎已经脱序（已与古时教会的纯洁相去甚远），但每位监督仍得证道。格列高利在另一处说：“监督若不开口就必定死，因他若没有随处证道，就会激怒那看不见的法官。”他又说：“当保罗见证在他们中间无论何人死亡，罪不在他身上时（徒20：26），他的话就定我们的罪，也应当激励我们，因我们被称为监督的人，不但自己有罪，甚至因自己的罪叫人灭亡。因我们缄默，天天漠视了多少人，我们就杀害了多少人。”⑩他所说的“缄默”，是指他们没有好好地担任证道的职分。既然他严厉地指责那些不认真尽本分的监督，何况那些完全停止讲道的呢？因此，教会 有这古老的原则，即监督主要的职分是以神的真道喂养他的百姓，或公开和私下以正统的教义造就教会。
+在那时代，若有人自称监督却没有公开担任监督的职分，必定被视为大罪。那时教会的管理很严谨，每位牧师都得认真担任神给他的职分。这习惯也不仅止于一个时代。甚至在格列高利的时代，虽然当时的教会几乎已经脱序（已与古时教会的纯洁相去甚远），但每位监督仍得证道。格列高利在另一处说：“监督若不开口就必定死，因他若没有随处证道，就会激怒那看不见的法官。”他又说：“当保罗见证在他们中间无论何人死亡，罪不在他身上时（徒20：26），他的话就定我们的罪，也应当激励我们，因我们被称为监督的人，不但自己有罪，甚至因自己的罪叫人灭亡。因我们缄默，天天漠视了多少人，我们就杀害了多少人。”⑩他所说的“缄默”，是指他们没有好好地担任证道的职分。既然他严厉地指责那些不认真尽本分的监督，何况那些完全停止讲道的呢？因此，教会有这古老的原则，即监督主要的职分是以神的真道喂养他的百姓，或公开和私下以正统的教义造就教会。
 
 
 ### 4. 大主教和主教长
@@ -232,14 +232,14 @@ date: 2026-05-14 14:40
 <div class="inst-fn">㉝ Theodoret, Ecclesiastical History 4.20 (ed. T. Gaisford, pp. 346 f., MPG 82.1181 f., GCS 19.69, tr. NPNF 2 ser. III. 126)。</div>
 <div class="inst-fn">㉞ Council of Laodicea (ca. 363) canon 13 (Mansi II.565, text and translation in Fulton, Index canonum, pp. 254 f., tr. with notes NPNF 2 ser. XIV. 131)。加尔文认为牧师应由会众投票选出，但根据老底嘉会议的决议，他反对喧闹的群众选举。一定要有正常的程序，并且有条不紊。</div>
 <div class="inst-fn">㉟ “Incertain scindi studia in contraria vulgus,” a variation of Vergil, Aeneid II.39 (LCL Vergil I.296).</div>
-<div class="inst-fn">㊱ Leo I, Letters 9.1, 10.4, 6, 167 (MPL 54.625 f., 632, 634, 1203, tr. NPNF 2 ser. XII.7 f., 10 f., 109 ff.). 在 Letter 9.1 中利奥一世（Leo I）认为应用固定的一天举行按立礼，最好是礼拜六下 午或礼拜日，礼仪程序包括按手；在 10.6 中，他又提到复活节的按牧礼。参阅 Gratian, Decretum I.62.9 (Friedberg I.234, MPL 187.325)。 参阅上文的注释 33。 Gregory the Great, Letters III.30，写给副执事约翰（MPL 77.627 f., MGH Epistolae I.188, tr. NPNF 2 ser. XII.2.129 f.）。参阅 Letters III.35，写给坎帕尼亚（Campania）的副执事彼得，关于居普 阿（Cupua）的主教工作（MPL 77.631 f., MGH Epistolae I.190, tr. NPNF 2 ser. XII.2.131）；在那</div>
+<div class="inst-fn">㊱ Leo I, Letters 9.1, 10.4, 6, 167 (MPL 54.625 f., 632, 634, 1203, tr. NPNF 2 ser. XII.7 f., 10 f., 109 ff.). 在 Letter 9.1 中利奥一世（Leo I）认为应用固定的一天举行按立礼，最好是礼拜六下午或礼拜日，礼仪程序包括按手；在 10.6 中，他又提到复活节的按牧礼。参阅 Gratian, Decretum I.62.9 (Friedberg I.234, MPL 187.325)。 参阅上文的注释 33。 Gregory the Great, Letters III.30，写给副执事约翰（MPL 77.627 f., MGH Epistolae I.188, tr. NPNF 2 ser. XII.2.129 f.）。参阅 Letters III.35，写给坎帕尼亚（Campania）的副执事彼得，关于居普阿（Cupua）的主教工作（MPL 77.631 f., MGH Epistolae I.190, tr. NPNF 2 ser. XII.2.131）；在那</div>
 <div class="inst-fn">㊲ 教皇尼古拉二世在1049年组织了枢机主教协会，以选举教皇曼西十九世（Mansi XIX.915，tr. O. J. Thatcher and E. H. McNeal，Source Book for Medieval History，p. 129；note editors’ summary，p. 127），Gratian，Decretum I. 23.1（MPL 187.128，Friedberg I.77）。</div>
 <div class="inst-fn">㊳ Socrates，Ecclesiastical History 4.30（MPG 67.543 f.，tr. NPNF 2 ser. II.113 f.）</div>
 <div class="inst-fn">㊴ Gregory I，Letters I.5：“最尊贵的国君已经下令——一只猴子变成一头狮子了。”（“fieri simiam leonam jussit”）（MGH Epistolae L 6，MPL 77.450，tr. NPNF 2 ser. XII.2.76）。</div>
 <div class="inst-fn">㊵ 参阅 Gratian，Decretum I.63.18.1.2.（MPL 187.333 f.，327–330 f.，Friedberg I.234 ff.）。</div>
 <div class="inst-fn">㊶ 希腊文是 χερσορίαν 和 χειροθεσίαν。参阅 IV.3.15，注释 14，以及下文的第十五节注释 48。</div>
 <div class="inst-fn">㊷ Council of Carthage (397) canon 39. 规定在按立监督时，要有三位监督参与 (Mansi III.886)。参阅 Second Council of Nicaea (787) canon 3 (Mansi XIII.748, tr. NPNF 2 ser. XIV.557), Council of Ni- caea (325) canons 9, 19 (Mansi II.671, 678; text and translation, Fulton, Index canonum, pp. 122 f., 126 f., 132 f., tr. with notes NPNF 2 ser. XIV.23 f., 40)。</div>
-<div class="inst-fn">㊸ Cyprian, Letters 67.3, 5 (CSEL 3.2.787 ff., tr. ANF V.370 f.)，这里西普里安称罗马的监督为“我 们的同工司提反”（第五节）。</div>
+<div class="inst-fn">㊸ Cyprian, Letters 67.3, 5 (CSEL 3.2.787 ff., tr. ANF V.370 f.)，这里西普里安称罗马的监督为“我们的同工司提反”（第五节）。</div>
 <div class="inst-fn">㊹ Gratian, Decretum I.64.1 f. (MPL 187.313, Friedberg I.247).</div>
 <div class="inst-fn">㊺ Leo I, Letters 10.5 (MPL 54.633, tr. NPNF 2 ser. XII 1.10, FC 34.43), Gregory I, Letters III 14, IV.39, IX.81, 185, XIII.17, III.30 f. (MPL 77.315 f., 713 f. [no.76], 1010, 1269 f., 627, MGH Epistolae I.173, 276, II.97, 177, 384, I.188 f., tr. [except III.14 and IX.81] NPNF 2 ser. XII.2.129 f., 160, XIII.21).</div>
 <div class="inst-fn">㊻ Cyprian, Letters lxvii.5 (CSEL 3.ii.399, tr. ANF V.300).</div>

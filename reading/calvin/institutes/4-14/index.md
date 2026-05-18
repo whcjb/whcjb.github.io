@@ -12,7 +12,7 @@ chapter: 14
 date: 2026-05-14 10:02
 ---
 
-## 第十四章 圣礼
+## 第十四章圣礼
 
 ### 3. 真道和象征
 
@@ -297,7 +297,7 @@ e 第十五章 a 洗礼
 <div class="inst-fn">⑧ “αὐθεντικὸν”。</div>
 <div class="inst-fn">⑨ Augustine, John’s Gospel 80.3 (MPL 35.1840; tr. NPNF VII.344).</div>
 <div class="inst-fn">⑩ Zwingli, Commentary on True and False Religion (CR Zwingli III.761, tr. S. M. Jackson, Latin Works of Zwingli III.184).</div>
-<div class="inst-fn">⑪ 西塞罗，Of Old Age VIII 26（LCL edition，pp. 34 ff.）。西塞罗指向梭伦（Solon），一个活到老、学 到老的人，然后说他自己年纪很大了才学希腊文。 ⑾ 上文关于基督徒成长的句子，是根据 Bucer，Enarrationes in Evangelia（1530），pp. 413，420，455， 419。参阅下文的第十一节。关于“confess”这个词，参阅 III 4.9，注释 19。巴特认为第八节剩余 的部分是在攻击卡斯帕·史文克菲（Caspar Schwenckfeld）（Pannier，Institution III 205，note b， p. 319）。</div>
+<div class="inst-fn">⑪ 西塞罗，Of Old Age VIII 26（LCL edition，pp. 34 ff.）。西塞罗指向梭伦（Solon），一个活到老、学到老的人，然后说他自己年纪很大了才学希腊文。 ⑾ 上文关于基督徒成长的句子，是根据 Bucer，Enarrationes in Evangelia（1530），pp. 413，420，455， 419。参阅下文的第十一节。关于“confess”这个词，参阅 III 4.9，注释 19。巴特认为第八节剩余的部分是在攻击卡斯帕·史文克菲（Caspar Schwenckfeld）（Pannier，Institution III 205，note b， p. 319）。</div>
 <div class="inst-fn">⑫ 参阅 I.7.4。</div>
 <div class="inst-fn">⑬ III.2.3–5 和上文的第七及第八节。</div>
 <div class="inst-fn">⑭ “Interior ille magister”，参阅 III.1.4；“Christus ipse interior magister”，I.7.4，5，I.8.13；下文的第十七节。圣礼和圣经中的字句一样，若没有圣灵运行当中就没有效力。</div>

@@ -12,7 +12,7 @@ chapter: 15
 date: 2026-05-15 11:18
 ---
 
-## 第十五章 以自己的功德自夸，毁坏我们因称义所应归给神的称赞，也破坏我们蒙救恩的确据
+## 第十五章以自己的功德自夸，毁坏我们因称义所应归给神的称赞，也破坏我们蒙救恩的确据
 
 奥古斯丁和伯尔纳都反对人的功劳对称义有所参与，就如圣经的教导一样（1—4）
 
@@ -128,7 +128,7 @@ b 最后，他们虽然不断地劝人行善，但他们的教导却拦阻人确
 <div class="inst-fn">⑩ Duns Scotus, On the Sentences III. 19. qu. unica. 8 (Opera omnia XIV. 719).</div>
 <div class="inst-fn">⑪ 据阿奎那说，未形成的信心（fides informata）是指有信心却没有出于爱心的行为；形成的信心（fides formata）是指有信心和出于爱心的行为。Summa Theol. I IIae. 113. 4, 114. 3, 4, 8, II IIae. 5. 3 (tr. LCC XI 189 f., 206–209, 214 f., 282–284).</div>
 <div class="inst-fn">⑫ Aquinas, Summa Theol. I IIae. 103. 3, 105. 3, 4, 109. 2 (tr. LCC XI 140 f.)。在 Contra gentes 3. 149</div>
-<div class="inst-fn">⑬ Lombard, Sentences II. 26–28 (MPL 192. 709–719)。史密兹（Smits）找到奥古斯丁与这主题有关 联的26处著述。奥古斯丁的每一句话都教导神在救恩上白白的恩典：e.g., Psalms, Ps. 68 (Vg., Ps. 67)。41 (MPL 36. 838, tr. LF Psalms III. 351)，Enchiridion 9. 32, 28, 106, 31. 117 (MPL 40. 248, 282, 287, tr. LCC VII. 358 f., 403 f., 409).</div>
+<div class="inst-fn">⑬ Lombard, Sentences II. 26–28 (MPL 192. 709–719)。史密兹（Smits）找到奥古斯丁与这主题有关联的26处著述。奥古斯丁的每一句话都教导神在救恩上白白的恩典：e.g., Psalms, Ps. 68 (Vg., Ps. 67)。41 (MPL 36. 838, tr. LF Psalms III. 351)，Enchiridion 9. 32, 28, 106, 31. 117 (MPL 40. 248, 282, 287, tr. LCC VII. 358 f., 403 f., 409).</div>
 <div class="inst-fn">⑭ II. 2. 8.</div>
 <div class="inst-fn">⑮ Augustine, Psalms, Ps. 144. 11 (MPL 37. 1876, tr. LF [Ps. 145] Psalms VI. 325), Letters xciv. 4. 16—19 (MPL 33. 879 ff., tr. FC 30. 311—313).</div>
 <div class="inst-fn">⑯ Aquinas, Summa Theol. I IIae. 112. 5 (tr. LCC XL. 180f.)，他引用《约伯记》36：26 和《哥林多前书》4：3 以证明“人无法确信自己是否有恩典”。</div>
