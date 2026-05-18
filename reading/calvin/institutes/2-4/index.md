@@ -9,10 +9,10 @@ section_title: "第二卷·第四章"
 chapter_title: "神如何在人心里运行"
 volume: 2
 chapter: 4
-date: 2026-05-15 11:17
+date: 2026-05-19 00:11
 ---
 
-## 第四章神如何在人心里运行
+## 第四章 神如何在人心里运行
 
 人在撒旦的权势下：但圣经表明神利用撒旦使他所遗弃之人的心刚硬（1—5）
 
@@ -112,7 +112,7 @@ b 读者们在此应当留意，人是否拥有自由选择的能力，并不由
 <div class="inst-fn">⑥ Augustine, On the Predestination of the Saints 16.33 (MPL 44.984, tr. NPNF V.514).</div>
 <div class="inst-fn">⑦ I. 16—18.</div>
 <div class="inst-fn">⑧ II. 2. 13—17.</div>
-<div class="inst-fn">⑨ 这里指的是路德会奥斯堡信条（Augsburg Confession）上的教义 I. 18：“人的意志拥有行社会上公义的自由……却没有力量行神所要求的公义。”参阅 Melanchthon, Loci communes, 1535。在这作品中</div>
+<div class="inst-fn">⑨ 这里指的是路德会奥斯堡信条（Augsburg Confession）上的教义 I. 18：“人的意志拥有行社会上公义 的自由……却没有力量行神所要求的公义。”参阅 Melanchthon, Loci communes, 1535。在这作品中</div>
 <div class="inst-fn">⑩ Erasmus, De libero arbitrio, ed. J. von Walter, p. 66.</div>
 <div class="inst-fn">⑪ 武加大译本翻译的意思不同：“Mais de la grace specialee que Dieu fait aux hommes de jour en jour.”</div>
 <div class="inst-fn">⑫ Augustine, On Grace and Free Will 20.41 (MPL 44.906; tr. NPNF V.461). 西塞罗、贺拉斯、塞涅卡，以及其他的罗马作家都称赞勒古鲁斯的美德。他被迦太基人虐待而死，因他宁愿受死也不食言。奥古斯丁为了反驳异教徒对基督教的指控，提及这故事，以证明罗马的神也无法搭救忠心的人（City of God I.15；MPL 41.28；LCL Augustine, I.68 ff.；tr. NPNF II.11）。</div>
