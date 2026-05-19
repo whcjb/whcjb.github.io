@@ -1250,7 +1250,7 @@ function flashEl(el) {
 
         REF_RE.lastIndex = 0;
         while ((m = REF_RE.exec(text)) !== null) {
-            if (m[1].length <= 2 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
+            if (m[1].length <= 1 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
             var vol = bookMap[m[1]];
             if (!vol) continue;
             matches.push({
