@@ -1212,8 +1212,9 @@ function flashEl(el) {
         REF_RE.lastIndex = 0;
         var html = '', last = 0, m, any = false;
         while ((m = REF_RE.exec(text)) !== null) {
-            // Guard: char before match must not be CJK (avoid substring matches)
-            if (m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
+            // Guard: for short abbreviations (≤2 chars), skip if preceded by CJK
+            // (avoids e.g. "流传10：5" matching "传"). Full names need no guard.
+            if (m[1].length <= 2 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
             var vol = bookMap[m[1]];
             if (!vol) continue;
             var ch = parseInt(m[2]), v1 = parseInt(m[3]);
