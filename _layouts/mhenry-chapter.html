@@ -984,3 +984,289 @@ function flashEl(el) {
 <link rel="stylesheet" href="{{ site.baseurl }}/css/typo-marker.css">
 <script src="{{ site.baseurl }}/js/typo-marker.js"></script>
 {% include reading-progress.html %}
+
+<style>
+/* ── Scripture reference inline link ──────────────────── */
+.scripture-ref {
+    color: #0085a1;
+    border-bottom: 1px dotted #0085a1;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.scripture-ref:hover {
+    background: rgba(0,133,161,0.10);
+    border-radius: 2px;
+}
+/* ── Scripture popup ──────────────────────────────────── */
+#scripture-popup {
+    position: absolute;
+    z-index: 9999;
+    background: #FEFAF3;
+    border: 1px solid #C9922A;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    max-width: 360px;
+    min-width: 180px;
+    display: none;
+    font-size: 14px;
+}
+#scripture-popup-inner {
+    padding: 12px 16px 14px;
+    position: relative;
+}
+#scripture-popup-close {
+    position: absolute;
+    top: 6px; right: 8px;
+    background: none; border: none;
+    font-size: 18px; cursor: pointer;
+    color: #aaa; line-height: 1; padding: 0 4px;
+}
+#scripture-popup-close:hover { color: #333; }
+.sp-header {
+    font-weight: bold;
+    color: #C9922A;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding-right: 20px;
+    letter-spacing: .04em;
+}
+.sp-verse {
+    font-family: "STSong","SimSun","宋体",serif;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #4A3728;
+    margin: 2px 0;
+}
+.sp-vnum {
+    color: #C9922A;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 11px;
+    vertical-align: super;
+    margin-right: 2px;
+}
+.sp-not-found { color: #999; font-size: 13px; padding: 4px 0; }
+.sp-loading { color: #aaa; font-size: 13px; padding: 4px 0; }
+</style>
+
+<script>
+/* ── Scripture Reference Popup ─────────────────────────────────────────────── */
+(function initScriptureRefs() {
+    // Book names → VolumeSN, sorted longest-first for regex priority
+    var BOOKS = [
+        ['帖撒罗尼迦前书',52],['帖撒罗尼迦后书',53],
+        ['撒母耳记上',9],['撒母耳记下',10],
+        ['列王纪上',11],['列王纪下',12],
+        ['历代志上',13],['历代志下',14],
+        ['哥林多前书',46],['哥林多后书',47],
+        ['提摩太前书',54],['提摩太后书',55],
+        ['彼得前书',60],['彼得后书',61],
+        ['约翰一书',62],['约翰二书',63],['约翰三书',64],
+        ['耶利米哀歌',25],['约书亚记',6],['士师记',7],
+        ['以斯拉记',15],['尼希米记',16],['以斯帖记',17],
+        ['撒迦利亚书',38],['哈巴谷书',35],['西番雅书',36],
+        ['俄巴底亚书',31],['腓立比书',50],['腓利门书',57],
+        ['歌罗西书',51],['希伯来书',58],['加拉太书',48],
+        ['以弗所书',49],['以赛亚书',23],['以西结书',26],
+        ['但以理书',27],['何西阿书',28],['阿摩司书',30],
+        ['使徒行传',44],['约翰福音',43],['马太福音',40],
+        ['马可福音',41],['路加福音',42],['耶利米书',24],
+        ['哈该书',37],['弥迦书',33],['那鸿书',34],
+        ['约珥书',29],['约拿书',32],['玛拉基书',39],
+        ['启示录',66],['传道书',21],['申命记',5],
+        ['创世记',1],['出埃及记',2],['利未记',3],['民数记',4],
+        ['路得记',8],['约伯记',18],['诗篇',19],['箴言',20],
+        ['雅歌',22],['罗马书',45],['雅各书',59],['犹大书',65],
+        ['提多书',56],
+        // 2-char abbreviations (before single-char to avoid ambiguity)
+        ['帖前',52],['帖后',53],['撒上',9],['撒下',10],
+        ['王上',11],['王下',12],['代上',13],['代下',14],
+        ['林前',46],['林后',47],['提前',54],['提后',55],
+        ['彼前',60],['彼后',61],['约一',62],['约二',63],['约三',64],
+        // Single-char abbreviations
+        ['创',1],['出',2],['利',3],['民',4],['申',5],
+        ['书',6],['士',7],['得',8],['拉',15],['尼',16],
+        ['斯',17],['伯',18],['诗',19],['箴',20],['传',21],
+        ['歌',22],['赛',23],['耶',24],['哀',25],['结',26],
+        ['但',27],['何',28],['珥',29],['摩',30],['俄',31],
+        ['拿',32],['弥',33],['鸿',34],['哈',35],['番',36],
+        ['该',37],['亚',38],['玛',39],['太',40],['可',41],
+        ['路',42],['约',43],['徒',44],['罗',45],['加',48],
+        ['弗',49],['腓',50],['西',51],['多',56],['门',57],
+        ['来',58],['雅',59],['犹',65],['启',66]
+    ];
+
+    var bookMap = {};
+    BOOKS.forEach(function(b){ if(!bookMap[b[0]]) bookMap[b[0]] = b[1]; });
+
+    // Build regex: bookName + chapter + [：:] + verse + optional [-endVerse]
+    var bookPat = BOOKS.map(function(b){
+        return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+    }).join('|');
+    var REF_RE = new RegExp(
+        '(' + bookPat + ')(\\d{1,3})[：:](\\d{1,3})(?:[－\\-–—](\\d{1,3}))?',
+        'g'
+    );
+
+    // ── CUV data loader (lazy) ──────────────────────────
+    var _cuv = null, _loading = false, _cbs = [];
+    function loadCUV(cb) {
+        if (_cuv) { cb(_cuv); return; }
+        _cbs.push(cb);
+        if (_loading) return;
+        _loading = true;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '{{ site.baseurl }}/assets/cuv.json');
+        xhr.onload = function() {
+            try { _cuv = JSON.parse(xhr.responseText); } catch(e) { _cuv = {}; }
+            _loading = false;
+            _cbs.forEach(function(fn){ fn(_cuv); }); _cbs = [];
+        };
+        xhr.onerror = function() {
+            _cuv = {}; _loading = false;
+            _cbs.forEach(function(fn){ fn({}); }); _cbs = [];
+        };
+        xhr.send();
+    }
+
+    // ── Popup ───────────────────────────────────────────
+    var popup = null;
+    function ensurePopup() {
+        if (popup) return;
+        popup = document.createElement('div');
+        popup.id = 'scripture-popup';
+        popup.innerHTML = '<div id="scripture-popup-inner">'
+            + '<button id="scripture-popup-close" title="关闭">×</button>'
+            + '<div id="scripture-popup-content"></div>'
+            + '</div>';
+        document.body.appendChild(popup);
+        document.getElementById('scripture-popup-close').onclick = hidePopup;
+        document.addEventListener('click', function(e){
+            if (popup && popup.style.display !== 'none' &&
+                !popup.contains(e.target) &&
+                !e.target.classList.contains('scripture-ref'))
+                hidePopup();
+        });
+        document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') hidePopup();
+        });
+    }
+    function hidePopup() { if (popup) popup.style.display = 'none'; }
+    function showPopupAt(anchor, html) {
+        ensurePopup();
+        document.getElementById('scripture-popup-content').innerHTML = html;
+        popup.style.display = 'block';
+        // Position below the anchor, constrained to viewport
+        var rect = anchor.getBoundingClientRect();
+        var top = rect.bottom + window.pageYOffset + 6;
+        var left = rect.left + window.pageXOffset;
+        popup.style.top = top + 'px';
+        popup.style.left = '0px'; // measure width first
+        var pw = popup.offsetWidth;
+        var maxLeft = window.innerWidth - pw - 12;
+        popup.style.left = Math.max(8, Math.min(left, maxLeft)) + 'px';
+    }
+
+    function getVerses(cuv, vol, ch, v1, v2) {
+        var book = cuv[String(vol)];
+        if (!book) return null;
+        var chapter = book[String(ch)];
+        if (!chapter) return null;
+        var out = [];
+        var end = v2 || v1;
+        for (var v = v1; v <= end && v <= v1 + 9; v++) { // max 10 verses
+            if (chapter[String(v)]) out.push({v:v, text:chapter[String(v)]});
+        }
+        return out.length ? out : null;
+    }
+
+    function escHtml(s) {
+        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    }
+
+    // ── Linkify text nodes ───────────────────────────────
+    var col = document.getElementById('mhenry-col');
+    if (!col) return;
+
+    var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf]/;
+    var walker = document.createTreeWalker(col, NodeFilter.SHOW_TEXT, null, false);
+    var textNodes = [];
+    var tn;
+    while ((tn = walker.nextNode())) {
+        // Skip nodes inside script/style/a/.scripture-ref/mh-verse
+        var el = tn.parentElement, skip = false;
+        while (el && el !== col) {
+            var tag = el.tagName;
+            if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'A' ||
+                (el.classList && el.classList.contains('scripture-ref')) ||
+                (el.classList && el.classList.contains('mh-verse')))
+            { skip = true; break; }
+            el = el.parentElement;
+        }
+        REF_RE.lastIndex = 0;
+        if (!skip && REF_RE.test(tn.textContent)) textNodes.push(tn);
+    }
+
+    textNodes.forEach(function(node) {
+        var text = node.textContent;
+        REF_RE.lastIndex = 0;
+        var html = '', last = 0, m, any = false;
+        while ((m = REF_RE.exec(text)) !== null) {
+            // Guard: char before match must not be CJK (avoid substring matches)
+            if (m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
+            var vol = bookMap[m[1]];
+            if (!vol) continue;
+            var ch = parseInt(m[2]), v1 = parseInt(m[3]);
+            var v2 = m[4] ? parseInt(m[4]) : null;
+            html += escHtml(text.substring(last, m.index));
+            html += '<span class="scripture-ref"'
+                  + ' data-vol="' + vol + '"'
+                  + ' data-ch="' + ch + '"'
+                  + ' data-v1="' + v1 + '"'
+                  + (v2 ? ' data-v2="' + v2 + '"' : '')
+                  + ' title="点击查看经文">'
+                  + escHtml(m[0]) + '</span>';
+            last = m.index + m[0].length;
+            any = true;
+        }
+        if (!any) return;
+        html += escHtml(text.substring(last));
+        var span = document.createElement('span');
+        span.innerHTML = html;
+        node.parentNode.replaceChild(span, node);
+    });
+
+    // ── Click handler ────────────────────────────────────
+    col.addEventListener('click', function(e) {
+        var ref = e.target;
+        if (!ref.classList || !ref.classList.contains('scripture-ref')) return;
+        e.stopPropagation();
+
+        var vol = +ref.dataset.vol, ch = +ref.dataset.ch;
+        var v1 = +ref.dataset.v1, v2 = ref.dataset.v2 ? +ref.dataset.v2 : null;
+        var refText = ref.textContent;
+
+        // Show loading state immediately
+        ensurePopup();
+        showPopupAt(ref,
+            '<div class="sp-header">' + escHtml(refText) + '</div>'
+            + '<div class="sp-loading">加载中…</div>');
+
+        loadCUV(function(cuv) {
+            var verses = getVerses(cuv, vol, ch, v1, v2);
+            var inner = '<div class="sp-header">' + escHtml(refText) + '</div>';
+            if (verses && verses.length) {
+                verses.forEach(function(vv) {
+                    inner += '<div class="sp-verse"><sup class="sp-vnum">' + vv.v + '</sup>'
+                          + escHtml(vv.text) + '</div>';
+                });
+            } else {
+                inner += '<div class="sp-not-found">未找到对应经文</div>';
+            }
+            if (popup && popup.style.display !== 'none') {
+                document.getElementById('scripture-popup-content').innerHTML = inner;
+            }
+        });
+    });
+})();
+</script>
