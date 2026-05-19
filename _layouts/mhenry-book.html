@@ -24,6 +24,13 @@ layout: default
                 <a href="{{ site.baseurl }}/mhenry/">&larr; 返回书卷列表</a>
             </p>
 
+            {% if content and content != "" %}
+            <div class="mh-book-intro">
+                <h3 class="mh-book-intro-title">❧ {{ page.book_name }} · 简介</h3>
+                {{ content }}
+            </div>
+            {% endif %}
+
             <h3 style="border-bottom: 2px solid #C9922A; padding-bottom:8px; margin-bottom:20px; color:#5D3A1A; letter-spacing:.04em;">
                 ❧ {{ page.book_name }} · 章节目录
             </h3>
@@ -80,4 +87,26 @@ layout: default
     border-color: #C9922A;
     color: #fff !important;
 }
+/* ── Book intro ─────────────────────────────────────── */
+.mh-book-intro {
+    background: #FEFAF3;
+    border: 1px solid #D8CFBF;
+    border-top: 4px solid #C9922A;
+    border-radius: 0 0 6px 6px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+    color: #4A3728;
+    line-height: 1.95;
+    font-size: 0.97em;
+}
+.mh-book-intro-title {
+    border-bottom: 2px solid #C9922A;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    color: #5D3A1A;
+    letter-spacing: .04em;
+    margin-top: 0;
+}
+.mh-book-intro p { margin: 0 0 12px 0; }
+.mh-book-intro p:last-child { margin-bottom: 0; }
 </style>
