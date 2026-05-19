@@ -1099,6 +1099,26 @@ function flashEl(el) {
     var bookMap = {};
     BOOKS.forEach(function(b){ if(!bookMap[b[0]]) bookMap[b[0]] = b[1]; });
 
+    // Current page book volume (for bare references like （49：7）)
+    var BOOK_ID_VOL = {
+        'genesis':1,'exodus':2,'leviticus':3,'numbers':4,'deuteronomy':5,
+        'joshua':6,'judges':7,'ruth':8,'1samuel':9,'2samuel':10,
+        '1kings':11,'2kings':12,'1chronicles':13,'2chronicles':14,
+        'ezra':15,'nehemiah':16,'esther':17,'job':18,'psalms':19,
+        'proverbs':20,'ecclesiastes':21,'songofsolomon':22,'isaiah':23,
+        'jeremiah':24,'lamentations':25,'ezekiel':26,'daniel':27,
+        'hosea':28,'joel':29,'amos':30,'obadiah':31,'jonah':32,
+        'micah':33,'nahum':34,'habakkuk':35,'zephaniah':36,'haggai':37,
+        'zechariah':38,'malachi':39,'matthew':40,'mark':41,'luke':42,
+        'john':43,'acts':44,'romans':45,'1corinthians':46,'2corinthians':47,
+        'galatians':48,'ephesians':49,'philippians':50,'colossians':51,
+        '1thessalonians':52,'2thessalonians':53,'1timothy':54,'2timothy':55,
+        'titus':56,'philemon':57,'hebrews':58,'james':59,'1peter':60,
+        '2peter':61,'1john':62,'2john':63,'3john':64,'jude':65,'revelation':66
+    };
+    var PAGE_VOL = BOOK_ID_VOL['{{ page.book_id }}'] || 0;
+    var PAGE_BOOK_NAME = '{{ page.book_name }}';
+
     // Build regex: bookName + chapter + [：:] + verse + optional [-endVerse]
     var bookPat = BOOKS.map(function(b){
         return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
@@ -1107,6 +1127,8 @@ function flashEl(el) {
         '(' + bookPat + ')(\\d{1,3})[：:] *(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?',
         'g'
     );
+    // Bare reference: （49：7） or (49:7) — uses current book
+    var BARE_RE = /[（(](\d{1,3})[：:] *(\d{1,3})(?:\s*[－\-–—]\s*(\d{1,3}))?[）)]/g;
 
     // ── CUV data loader (lazy) ──────────────────────────
     var _cuv = null, _loading = false, _cbs = [];
@@ -1189,11 +1211,21 @@ function flashEl(el) {
     if (!col) return;
 
     var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf]/;
+    function makeRefSpan(vol, ch, v1, v2, displayText, label) {
+        return '<span class="scripture-ref"'
+            + ' data-vol="' + vol + '"'
+            + ' data-ch="' + ch + '"'
+            + ' data-v1="' + v1 + '"'
+            + (v2 ? ' data-v2="' + v2 + '"' : '')
+            + (label ? ' data-label="' + escHtml(label) + '"' : '')
+            + ' title="点击查看经文">'
+            + escHtml(displayText) + '</span>';
+    }
+
     var walker = document.createTreeWalker(col, NodeFilter.SHOW_TEXT, null, false);
     var textNodes = [];
     var tn;
     while ((tn = walker.nextNode())) {
-        // Skip nodes inside script/style/a/.scripture-ref/mh-verse
         var el = tn.parentElement, skip = false;
         while (el && el !== col) {
             var tag = el.tagName;
@@ -1203,34 +1235,63 @@ function flashEl(el) {
             { skip = true; break; }
             el = el.parentElement;
         }
-        REF_RE.lastIndex = 0;
-        if (!skip && REF_RE.test(tn.textContent)) textNodes.push(tn);
+        if (skip) continue;
+        REF_RE.lastIndex = 0; BARE_RE.lastIndex = 0;
+        if (REF_RE.test(tn.textContent) || (PAGE_VOL && BARE_RE.test(tn.textContent)))
+            textNodes.push(tn);
     }
 
     textNodes.forEach(function(node) {
         var text = node.textContent;
+
+        // Collect all matches (named + bare) sorted by position
+        var matches = [];
+        var m;
+
         REF_RE.lastIndex = 0;
-        var html = '', last = 0, m, any = false;
         while ((m = REF_RE.exec(text)) !== null) {
-            // Guard: for short abbreviations (≤2 chars), skip if preceded by CJK
-            // (avoids e.g. "流传10：5" matching "传"). Full names need no guard.
             if (m[1].length <= 2 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
             var vol = bookMap[m[1]];
             if (!vol) continue;
-            var ch = parseInt(m[2]), v1 = parseInt(m[3]);
-            var v2 = m[4] ? parseInt(m[4]) : null;
-            html += escHtml(text.substring(last, m.index));
-            html += '<span class="scripture-ref"'
-                  + ' data-vol="' + vol + '"'
-                  + ' data-ch="' + ch + '"'
-                  + ' data-v1="' + v1 + '"'
-                  + (v2 ? ' data-v2="' + v2 + '"' : '')
-                  + ' title="点击查看经文">'
-                  + escHtml(m[0]) + '</span>';
-            last = m.index + m[0].length;
-            any = true;
+            matches.push({
+                index: m.index, end: m.index + m[0].length,
+                vol: vol, ch: parseInt(m[2]),
+                v1: parseInt(m[3]), v2: m[4] ? parseInt(m[4]) : null,
+                display: m[0], label: null
+            });
         }
-        if (!any) return;
+
+        if (PAGE_VOL) {
+            BARE_RE.lastIndex = 0;
+            while ((m = BARE_RE.exec(text)) !== null) {
+                var ch = parseInt(m[1]), v1 = parseInt(m[2]);
+                var v2 = m[3] ? parseInt(m[3]) : null;
+                // Skip if overlaps with a named match
+                var overlap = false;
+                for (var i = 0; i < matches.length; i++) {
+                    if (m.index < matches[i].end && m.index + m[0].length > matches[i].index)
+                    { overlap = true; break; }
+                }
+                if (overlap) continue;
+                var label = PAGE_BOOK_NAME + ch + '：' + v1 + (v2 ? '-' + v2 : '');
+                matches.push({
+                    index: m.index, end: m.index + m[0].length,
+                    vol: PAGE_VOL, ch: ch, v1: v1, v2: v2,
+                    display: m[0], label: label
+                });
+            }
+        }
+
+        if (!matches.length) return;
+        matches.sort(function(a,b){ return a.index - b.index; });
+
+        var html = '', last = 0;
+        matches.forEach(function(mt) {
+            if (mt.index < last) return; // skip overlaps
+            html += escHtml(text.substring(last, mt.index));
+            html += makeRefSpan(mt.vol, mt.ch, mt.v1, mt.v2, mt.display, mt.label);
+            last = mt.end;
+        });
         html += escHtml(text.substring(last));
         var span = document.createElement('span');
         span.innerHTML = html;
@@ -1245,17 +1306,17 @@ function flashEl(el) {
 
         var vol = +ref.dataset.vol, ch = +ref.dataset.ch;
         var v1 = +ref.dataset.v1, v2 = ref.dataset.v2 ? +ref.dataset.v2 : null;
-        var refText = ref.textContent;
+        // data-label holds the full "书名chapter：verse" for bare references
+        var headerText = ref.dataset.label || ref.textContent;
 
-        // Show loading state immediately
         ensurePopup();
         showPopupAt(ref,
-            '<div class="sp-header">' + escHtml(refText) + '</div>'
+            '<div class="sp-header">' + escHtml(headerText) + '</div>'
             + '<div class="sp-loading">加载中…</div>');
 
         loadCUV(function(cuv) {
             var verses = getVerses(cuv, vol, ch, v1, v2);
-            var inner = '<div class="sp-header">' + escHtml(refText) + '</div>';
+            var inner = '<div class="sp-header">' + escHtml(headerText) + '</div>';
             if (verses && verses.length) {
                 verses.forEach(function(vv) {
                     inner += '<div class="sp-verse"><sup class="sp-vnum">' + vv.v + '</sup>'
