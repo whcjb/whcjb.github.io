@@ -1,0 +1,285 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}psalm-bg-mountain.jpg{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_name }} · 前言</h1>
+                    <span class="subheading">马太亨利圣经注释</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="mhenry-outer" class="container">
+    <div class="row" id="mhenry-row">
+        <div id="mhenry-col" class="col-xs-12 col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+            <div class="mh-nav-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-left:16px; padding-right:16px;">
+                <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                    <div class="bg-color-ctrl" title="背景色">
+                        <button onclick="setBgColor('#C7EDCC')" class="bg-swatch" style="background:#C7EDCC;" aria-label="豆沙绿"></button>
+                        <button onclick="setBgColor('#FAF0DC')" class="bg-swatch" style="background:#FAF0DC;" aria-label="羊皮纸"></button>
+                        <button onclick="setBgColor('#EAEAEF')" class="bg-swatch" style="background:#EAEAEF;" aria-label="淡灰蓝"></button>
+                        <button onclick="setBgColor('#F5E6CC')" class="bg-swatch" style="background:#F5E6CC;" aria-label="暖杏色"></button>
+                        <button onclick="setBgColor('#E3EDCD')" class="bg-swatch" style="background:#E3EDCD;" aria-label="浅草绿"></button>
+                        <button onclick="setBgColor('#FFFFFF')" class="bg-swatch bg-swatch--white" style="background:#FFFFFF;" aria-label="纯白"></button>
+                    </div>
+                    <div class="font-size-ctrl" title="调节字号">
+                        <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
+                        <button onclick="resetFontSize()" aria-label="默认字号">A</button>
+                        <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mhenry-preface-body">
+                {{ content }}
+            </div>
+
+            <div class="mh-footer" style="padding-left:16px; padding-right:16px;">
+            <div style="text-align:center; color:#C9922A; font-size:20px; margin:24px 0 8px;">❧</div>
+            <hr style="border-color:#D7C4A3; margin-top:0;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+                <div style="flex:1; text-align:left;"></div>
+                <div style="flex:1; text-align:center;">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/"
+                       style="display:inline-block; padding:6px 14px; background:#C9922A; border:1px solid #C9922A; border-radius:3px; color:#fff !important; text-decoration:none; font-size:13px;">
+                        返回{{ page.book_name }}目录
+                    </a>
+                </div>
+                <div style="flex:1; text-align:right;">
+                    <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/1/"
+                       style="display:inline-block; padding:6px 14px; background:#FEFAF3; border:1px solid #C9922A; border-radius:3px; color:#7B5E3A !important; text-decoration:none; font-size:13px;">
+                        第 1 章 &rarr;
+                    </a>
+                </div>
+            </div>
+            </div><!-- /.mh-footer -->
+
+        </div>
+    </div>
+</div>
+
+<style>
+#mhenry-col {
+    background: var(--reading-bg-color, #fff);
+    border-radius: 6px;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+@media (max-width: 767px) {
+    #mhenry-outer { padding-left: 0 !important; padding-right: 0 !important; }
+    #mhenry-row { margin-left: 0 !important; margin-right: 0 !important; }
+    #mhenry-col { padding-left: 0 !important; padding-right: 0 !important; border-radius: 0 !important; width: 100% !important; float: none !important; margin-left: 0 !important; }
+}
+.bg-color-ctrl { display:inline-flex; gap:5px; align-items:center; }
+.bg-swatch {
+    width:22px; height:22px; border:2px solid transparent; border-radius:50%;
+    cursor:pointer; padding:0; outline:none;
+    transition: border-color .15s;
+}
+.bg-swatch:hover { border-color: #888; }
+.bg-swatch--white { border-color: #ccc !important; }
+.font-size-ctrl { display:inline-flex; gap:3px; align-items:center; }
+.font-size-ctrl button {
+    padding:3px 8px; background:#f5f5f5; border:1px solid #ccc;
+    border-radius:3px; cursor:pointer; font-size:12px; line-height:1.4;
+}
+.font-size-ctrl button:hover { background:#e0e0e0; }
+.mhenry-preface-body {
+    padding: 0 32px 24px;
+    line-height: 2;
+    font-size: 1em;
+    color: #333;
+}
+.mhenry-preface-body p {
+    margin-bottom: 1.2em;
+    text-indent: 2em;
+}
+@media (max-width: 767px) {
+    .mhenry-preface-body { padding: 0 16px 16px; }
+}
+</style>
+
+<script>
+// ── Background color ─────────────────────────────────
+var _bgKey = 'mhenry_bg';
+function setBgColor(c) {
+    document.getElementById('mhenry-col').style.setProperty('--reading-bg-color', c);
+    try { localStorage.setItem(_bgKey, c); } catch(e) {}
+}
+(function(){ try { var c = localStorage.getItem(_bgKey); if(c) document.getElementById('mhenry-col').style.setProperty('--reading-bg-color', c); } catch(e){} })();
+
+// ── Font size ────────────────────────────────────────
+var _fsKey = 'mhenry_fs', _fsBase = 16, _fsDelta = 0;
+function adjustFontSize(d) {
+    _fsDelta += d;
+    document.getElementById('mhenry-col').style.fontSize = (_fsBase + _fsDelta) + 'px';
+    try { localStorage.setItem(_fsKey, _fsDelta); } catch(e) {}
+}
+function resetFontSize() {
+    _fsDelta = 0;
+    document.getElementById('mhenry-col').style.fontSize = '';
+    try { localStorage.removeItem(_fsKey); } catch(e) {}
+}
+(function(){ try { var d = parseInt(localStorage.getItem(_fsKey)||'0'); if(d) { _fsDelta=d; document.getElementById('mhenry-col').style.fontSize=(_fsBase+d)+'px'; } } catch(e){} })();
+
+// ── Scripture reference popup (same as chapter pages) ─
+(function() {
+    var BOOKS = [
+        ['帖撒罗尼迦前书',52],['帖撒罗尼迦后书',53],
+        ['撒母耳记上',9],['撒母耳记下',10],
+        ['列王纪上',11],['列王纪下',12],
+        ['历代志上',13],['历代志下',14],
+        ['哥林多前书',46],['哥林多后书',47],
+        ['提摩太前书',54],['提摩太后书',55],
+        ['彼得前书',60],['彼得后书',61],
+        ['约翰一书',62],['约翰二书',63],['约翰三书',64],
+        ['耶利米哀歌',25],['约书亚记',6],['士师记',7],
+        ['以斯拉记',15],['尼希米记',16],['以斯帖记',17],
+        ['撒迦利亚书',38],['哈巴谷书',35],['西番雅书',36],
+        ['俄巴底亚书',31],['腓立比书',50],['腓利门书',57],
+        ['歌罗西书',51],['希伯来书',58],['加拉太书',48],
+        ['以弗所书',49],['以赛亚书',23],['以西结书',26],
+        ['但以理书',27],['何西阿书',28],['阿摩司书',30],
+        ['使徒行传',44],['约翰福音',43],['马太福音',40],
+        ['马可福音',41],['路加福音',42],['耶利米书',24],
+        ['哈该书',37],['弥迦书',33],['那鸿书',34],
+        ['约珥书',29],['约拿书',32],['玛拉基书',39],
+        ['启示录',66],['传道书',21],['申命记',5],
+        ['创世记',1],['出埃及记',2],['利未记',3],['民数记',4],
+        ['路得记',8],['约伯记',18],['诗篇',19],['箴言',20],
+        ['雅歌',22],['罗马书',45],['雅各书',59],['犹大书',65],
+        ['提多书',56],
+        ['帖前',52],['帖后',53],['撒上',9],['撒下',10],
+        ['王上',11],['王下',12],['代上',13],['代下',14],
+        ['林前',46],['林后',47],['提前',54],['提后',55],
+        ['彼前',60],['彼后',61],['约一',62],['约二',63],['约三',64],
+        ['创',1],['出',2],['利',3],['民',4],['申',5],
+        ['书',6],['士',7],['得',8],['拉',15],['尼',16],
+        ['斯',17],['伯',18],['诗',19],['箴',20],['传',21],
+        ['歌',22],['赛',23],['耶',24],['哀',25],['结',26],
+        ['但',27],['何',28],['珥',29],['摩',30],['俄',31],
+        ['拿',32],['弥',33],['鸿',34],['哈',35],['番',36],
+        ['该',37],['亚',38],['玛',39],['太',40],['可',41],
+        ['路',42],['约',43],['徒',44],['罗',45],['加',48],
+        ['弗',49],['腓',50],['西',51],['多',56],['门',57],
+        ['来',58],['雅',59],['犹',65],['启',66]
+    ];
+    var bookMap = {};
+    BOOKS.forEach(function(b){ if(!bookMap[b[0]]) bookMap[b[0]] = b[1]; });
+    var bookPat = BOOKS.map(function(b){ return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }).join('|');
+    var REF_RE = new RegExp('(' + bookPat + ')(\\d{1,3})[：:] *(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?','g');
+    var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf]/;
+
+    var _cuv = null, _loading = false, _cbs = [];
+    function loadCUV(cb) {
+        if (_cuv) { cb(_cuv); return; }
+        _cbs.push(cb);
+        if (_loading) return;
+        _loading = true;
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', '{{ site.baseurl }}/assets/cuv.json');
+        xhr.onload = function() {
+            try { _cuv = JSON.parse(xhr.responseText); } catch(e) { _cuv = {}; }
+            _loading = false;
+            _cbs.forEach(function(fn){ fn(_cuv); }); _cbs = [];
+        };
+        xhr.onerror = function() { _cuv = {}; _loading = false; _cbs.forEach(function(fn){ fn({}); }); _cbs = []; };
+        xhr.send();
+    }
+
+    var popup = null;
+    function ensurePopup() {
+        if (popup) return;
+        popup = document.createElement('div');
+        popup.id = 'scripture-popup';
+        popup.innerHTML = '<div id="scripture-popup-inner"><button id="scripture-popup-close" title="关闭">×</button><div id="scripture-popup-content"></div></div>';
+        document.body.appendChild(popup);
+        document.getElementById('scripture-popup-close').onclick = function(){ popup.style.display='none'; };
+        document.addEventListener('click', function(e){
+            if (popup && popup.style.display !== 'none' && !popup.contains(e.target) && !e.target.classList.contains('scripture-ref'))
+                popup.style.display = 'none';
+        });
+    }
+    function showPopupAt(anchor, html) {
+        ensurePopup();
+        document.getElementById('scripture-popup-content').innerHTML = html;
+        popup.style.display = 'block';
+        var rect = anchor.getBoundingClientRect();
+        popup.style.top = (rect.bottom + window.pageYOffset + 6) + 'px';
+        popup.style.left = '0px';
+        var pw = popup.offsetWidth;
+        var maxLeft = window.innerWidth - pw - 12;
+        popup.style.left = Math.max(8, Math.min(rect.left + window.pageXOffset, maxLeft)) + 'px';
+    }
+    function getVerses(cuv, vol, ch, v1, v2) {
+        var book = cuv[String(vol)]; if (!book) return null;
+        var chapter = book[String(ch)]; if (!chapter) return null;
+        var out = [], end = v2 || v1;
+        for (var v = v1; v <= end && v <= v1+9; v++) if (chapter[String(v)]) out.push({v:v, text:chapter[String(v)]});
+        return out.length ? out : null;
+    }
+    function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    var col = document.querySelector('.mhenry-preface-body');
+    if (!col) return;
+
+    var walker = document.createTreeWalker(col, NodeFilter.SHOW_TEXT, null, false);
+    var textNodes = [], tn;
+    while ((tn = walker.nextNode())) {
+        REF_RE.lastIndex = 0;
+        if (REF_RE.test(tn.textContent)) textNodes.push(tn);
+    }
+    textNodes.forEach(function(node) {
+        var text = node.textContent, matches = [], m;
+        REF_RE.lastIndex = 0;
+        while ((m = REF_RE.exec(text)) !== null) {
+            if (m[1].length <= 1 && m.index > 0 && CJK_RE.test(text[m.index-1])) continue;
+            var vol = bookMap[m[1]]; if (!vol) continue;
+            matches.push({ index: m.index, end: m.index+m[0].length, vol: vol, ch: parseInt(m[2]), v1: parseInt(m[3]), v2: m[4]?parseInt(m[4]):null, display: m[0] });
+        }
+        if (!matches.length) return;
+        matches.sort(function(a,b){ return a.index-b.index; });
+        var html = '', last = 0;
+        matches.forEach(function(mt) {
+            html += escHtml(text.substring(last, mt.index));
+            html += '<span class="scripture-ref" data-vol="'+mt.vol+'" data-ch="'+mt.ch+'" data-v1="'+mt.v1+'"'+(mt.v2?' data-v2="'+mt.v2+'"':'')+' title="点击查看经文">'+escHtml(mt.display)+'</span>';
+            last = mt.end;
+        });
+        html += escHtml(text.substring(last));
+        var span = document.createElement('span');
+        span.innerHTML = html;
+        node.parentNode.replaceChild(span, node);
+    });
+
+    col.addEventListener('click', function(e) {
+        var ref = e.target;
+        if (!ref.classList || !ref.classList.contains('scripture-ref')) return;
+        e.stopPropagation();
+        var vol = +ref.dataset.vol, ch = +ref.dataset.ch, v1 = +ref.dataset.v1, v2 = ref.dataset.v2?+ref.dataset.v2:null;
+        var headerText = ref.textContent;
+        ensurePopup();
+        showPopupAt(ref, '<div class="sp-header">'+escHtml(headerText)+'</div><div class="sp-loading">加载中…</div>');
+        loadCUV(function(cuv) {
+            var verses = getVerses(cuv, vol, ch, v1, v2);
+            var inner = '<div class="sp-header">'+escHtml(headerText)+'</div>';
+            if (verses && verses.length) {
+                verses.forEach(function(vv){ inner += '<div class="sp-verse"><sup class="sp-vnum">'+vv.v+'</sup>'+escHtml(vv.text)+'</div>'; });
+            } else { inner += '<div class="sp-not-found">未找到对应经文</div>'; }
+            if (popup && popup.style.display !== 'none') document.getElementById('scripture-popup-content').innerHTML = inner;
+        });
+    });
+})();
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
+}
+</script>

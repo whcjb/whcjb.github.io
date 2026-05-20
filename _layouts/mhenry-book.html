@@ -26,37 +26,33 @@ layout: default
 
             {% assign book_chapters = site.pages | where: "book_id", page.book_id | where: "layout", "mhenry-chapter" %}
             {% assign chapter_nums = book_chapters | map: "chapter" %}
+            {% assign book_preface = site.pages | where: "book_id", page.book_id | where: "layout", "mhenry-preface" | first %}
 
-            <div class="row mh-book-columns">
-                {% if content and content != "" %}
-                <div class="col-md-7 mh-book-intro-col">
-                    <h3 class="mh-section-title">❧ {{ page.book_name }} · 简介</h3>
-                    <div class="mh-book-intro">
-                        {{ content }}
+            <div class="col-md-12 mh-book-chapters-col">
+                <h3 class="mh-section-title">❧ {{ page.book_name }} · 章节目录</h3>
+                <div class="row">
+                    {% if book_preface %}
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content mhenry-chapter-btn--preface">
+                            前言
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-5 mh-book-chapters-col">
-                {% else %}
-                <div class="col-md-12 mh-book-chapters-col">
-                {% endif %}
-                    <h3 class="mh-section-title">❧ {{ page.book_name }} · 章节目录</h3>
-                    <div class="row">
-                        {% for i in (1..page.chapters) %}
-                        {% if chapter_nums contains i %}
-                        <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
-                            <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content">
-                                第 {{ i }} 章
-                            </a>
-                        </div>
-                        {% else %}
-                        <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
-                            <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn">
-                                第 {{ i }} 章
-                            </a>
-                        </div>
-                        {% endif %}
-                        {% endfor %}
+                    {% endif %}
+                    {% for i in (1..page.chapters) %}
+                    {% if chapter_nums contains i %}
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn mhenry-chapter-btn--has-content">
+                            第 {{ i }} 章
+                        </a>
                     </div>
+                    {% else %}
+                    <div class="col-xs-4 col-sm-4 col-md-4" style="margin-bottom:10px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mhenry-chapter-btn">
+                            第 {{ i }} 章
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
                 </div>
             </div>
 
@@ -92,7 +88,16 @@ layout: default
     border-color: #C9922A;
     color: #fff !important;
 }
-/* ── Two-column layout ──────────────────────────────── */
+.mhenry-chapter-btn--preface {
+    background: #EEF6FF;
+    border-color: #3A7ABD;
+    color: #2A5A8A !important;
+}
+.mhenry-chapter-btn--preface:hover {
+    background: #3A7ABD;
+    border-color: #3A7ABD;
+    color: #fff !important;
+}
 .mh-section-title {
     border-bottom: 2px solid #C9922A;
     padding-bottom: 8px;
@@ -101,30 +106,7 @@ layout: default
     color: #5D3A1A;
     letter-spacing: .04em;
 }
-.mh-book-columns {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-}
-.mh-book-intro-col,
 .mh-book-chapters-col {
     margin-bottom: 24px;
-}
-.mh-book-intro {
-    background: #FEFAF3;
-    border: 1px solid #D8CFBF;
-    border-radius: 4px;
-    padding: 16px 20px;
-    color: #4A3728;
-    line-height: 1.95;
-    font-size: 0.95em;
-    max-height: 520px;
-    overflow-y: auto;
-}
-.mh-book-intro p { margin: 0 0 12px 0; }
-.mh-book-intro p:last-child { margin-bottom: 0; }
-@media (max-width: 991px) {
-    .mh-book-intro-col { order: 2; }
-    .mh-book-chapters-col { order: 1; }
 }
 </style>
