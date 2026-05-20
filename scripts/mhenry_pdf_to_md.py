@@ -451,6 +451,7 @@ def render_unit(unit):
 
 def make_chapter_md(book_id, book_name, chapter_num, total_chapters, header_img,
                     units, chapter_overview, footnotes, date_str):
+    cn = num_to_chinese(chapter_num)
     parts = []
     parts.append(f"""---
 layout: mhenry-chapter
@@ -461,12 +462,27 @@ total_chapters: {total_chapters}
 header-img: {header_img}
 date: {date_str}
 ---
-""")
-    if chapter_overview:
-        overview_text = html_escape(chapter_overview)
-        parts.append(f'<div class="mh-overview">\n{overview_text}\n</div>\n\n')
 
-    for unit in units:
+## 第{cn}章
+
+""")
+    # Build overview text: from chapter_overview field + any leading no-range units
+    overview_lines = []
+    if chapter_overview:
+        overview_lines.append(html_escape(chapter_overview))
+
+    # Absorb leading units with no verse_range as overview content
+    remaining_units = list(units)
+    while remaining_units and not remaining_units[0].get("verse_range"):
+        u = remaining_units.pop(0)
+        for t in u.get("body", []):
+            if t.strip():
+                overview_lines.append(html_escape(t.strip()))
+
+    if overview_lines:
+        parts.append(f'<div class="mh-overview">\n{" ".join(overview_lines)}\n</div>\n\n')
+
+    for unit in remaining_units:
         parts.append(render_unit(unit))
         parts.append("\n")
 
@@ -516,6 +532,70 @@ date: {date_str}
     return content
 
 
+# ── Plain-text output (for format_mhenry2.py pipeline) ────────────────────────
+
+_CN_UNITS = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+_CN_TENS  = ['', '十', '二十', '三十', '四十', '五十', '六十', '七十', '八十', '九十']
+
+def num_to_chinese(n):
+    if n <= 9:
+        return _CN_UNITS[n]
+    elif n < 20:
+        return '十' + (_CN_UNITS[n % 10] if n % 10 else '')
+    else:
+        return _CN_TENS[n // 10] + (_CN_UNITS[n % 10] if n % 10 else '')
+
+
+def make_chapter_md_plain(book_id, book_name, chapter_num, total_chapters, header_img,
+                           paras, date_str):
+    """Output plain-text chapter .md for processing by format_mhenry2.py.
+
+    All paragraphs are output as-is (no HTML). format_mhenry2.py will:
+      - Strip date labels (主前/主后 pattern)
+      - Match scripture against Bible JSON → wrap in mh-verse
+      - Detect roman numerals → mh-l1
+      - Produce Genesis-style output
+    """
+    cn = num_to_chinese(chapter_num)
+    fm = f"""---
+layout: mhenry-chapter
+book_id: {book_id}
+book_name: {book_name}
+chapter: {chapter_num}
+total_chapters: {total_chapters}
+header-img: {header_img}
+date: {date_str}
+---
+
+第{cn}章
+
+"""
+    body_parts = []
+    footnotes = []
+    for para in paras:
+        t = para["text"].strip()
+        if not t:
+            continue
+        kind = classify(para)
+        if kind == "footnote":
+            m = FOOTNOTE_RE.match(t)
+            if m:
+                footnotes.append((m.group(1), t[m.start(2):].strip()))
+        elif kind == "date_label":
+            # Skip John-style verse labels and Zechariah date labels;
+            # format_mhenry2.py handles structure via Bible JSON matching
+            continue
+        else:
+            body_parts.append(t)
+
+    content = fm + "\n\n".join(body_parts)
+    if footnotes:
+        content += "\n\n"
+        for num, text in footnotes:
+            content += f"\n{num}\n{text}\n"
+    return content + "\n"
+
+
 # ── Main ──────────────────────────────────────────────────────────────────────
 
 def parse_section_arg(arg):
@@ -532,11 +612,15 @@ def main():
         print(__doc__)
         sys.exit(1)
 
-    pdf_path   = Path(sys.argv[1]).expanduser()
-    book_id    = sys.argv[2]
-    book_name  = sys.argv[3]
-    header_img = sys.argv[4]
-    section_args = sys.argv[5:]
+    # Optional --plain flag: output raw text instead of HTML (for format_mhenry2.py pipeline)
+    plain_mode = "--plain" in sys.argv
+    argv = [a for a in sys.argv[1:] if a != "--plain"]
+
+    pdf_path   = Path(argv[0]).expanduser()
+    book_id    = argv[1]
+    book_name  = argv[2]
+    header_img = argv[3]
+    section_args = argv[4:]
 
     if not pdf_path.exists():
         sys.exit(f"PDF not found: {pdf_path}")
@@ -589,13 +673,19 @@ def main():
         paras = extract_pages(pdf, start, end, use_ocr=use_ocr)
         print(f"  {len(paras)} paragraphs extracted")
 
-        units, ch_overview, footnotes = paras_to_mh_units(paras, ch_num)
-        print(f"  {len(units)} units, {len(footnotes)} footnotes")
-
-        md = make_chapter_md(
-            book_id, book_name, ch_num, total_chapters, header_img,
-            units, ch_overview, footnotes, date_str
-        )
+        if plain_mode:
+            md = make_chapter_md_plain(
+                book_id, book_name, ch_num, total_chapters, header_img,
+                paras, date_str
+            )
+            print(f"  plain-text mode")
+        else:
+            units, ch_overview, footnotes = paras_to_mh_units(paras, ch_num)
+            print(f"  {len(units)} units, {len(footnotes)} footnotes")
+            md = make_chapter_md(
+                book_id, book_name, ch_num, total_chapters, header_img,
+                units, ch_overview, footnotes, date_str
+            )
         out_path = out_dir / f"{ch_num}.md"
         out_path.write_text(md, encoding="utf-8")
         print(f"  → {out_path}")
