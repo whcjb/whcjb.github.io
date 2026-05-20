@@ -453,7 +453,7 @@ def make_chapter_md(book_id, book_name, chapter_num, total_chapters, header_img,
                     units, chapter_overview, footnotes, date_str):
     parts = []
     parts.append(f"""---
-layout: mhenry
+layout: mhenry-chapter
 book_id: {book_id}
 book_name: {book_name}
 chapter: {chapter_num}
