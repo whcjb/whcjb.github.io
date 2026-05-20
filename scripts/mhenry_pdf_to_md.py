@@ -219,7 +219,7 @@ JOHN_LABEL_RE  = re.compile(r"^(约翰福音|约)\s*\d{1,2}:\d{1,3}")
 # Real footnotes: digit directly followed by Chinese char (not colon/period/space/bracket)
 # "1钦定本..." or "1约翰·莱福特..."  — NOT "1.先知..." or "1：万军..."
 FOOTNOTE_RE   = re.compile(r"^(\d{1,2})([\u4e00-\u9fff·])")
-OVERVIEW_RE   = re.compile(r"^本章[说讲论介绍]|^本章包含|^这一章")
+OVERVIEW_RE   = re.compile(r"^本章|^这一章|^本篇|^本书|^本段")
 ROMAN_RE      = re.compile(r"^(I{1,3}|IV|VI{0,3}|VII|VIII|IX|X{0,3}I{0,3}V?)\.")
 VERSE_NUM_RE  = re.compile(r"^(\d{1,3})\s+[\u4e00-\u9fff「『（]")
 
@@ -330,6 +330,24 @@ def paras_to_mh_units(paras, chapter_num):
     current_paras = []
     intro_paras = []
     in_intro = True
+
+    # Skip initial orphan paragraphs (continuations from previous chapter)
+    def _is_chapter_start(p):
+        t2 = p["text"].strip()
+        kind2 = classify(p)
+        # Chapter heading embedded in paragraph text (e.g. "第2 章...")
+        if re.match(r'^第\s*\d+\s*章', t2):
+            return True
+        return kind2 in ("overview", "scripture", "date_label") or OVERVIEW_RE.match(t2)
+
+    first_real = next((i for i, p in enumerate(paras) if _is_chapter_start(p)), None)
+    if first_real is not None and first_real > 0:
+        paras = paras[first_real:]
+        # Strip embedded chapter heading prefix (e.g. "第2 章...") from first paragraph
+        if paras:
+            stripped = re.sub(r'^第\s*\d+\s*章\s*', '', paras[0]["text"].strip())
+            if stripped != paras[0]["text"].strip():
+                paras[0] = dict(paras[0], text=stripped)
 
     for p in paras:
         kind = classify(p)
@@ -571,8 +589,20 @@ date: {date_str}
 
 """
     body_parts = []
+    # Skip initial "orphan" paragraphs that are continuations from the previous chapter.
+    # Orphans are body paragraphs that appear before the first real chapter marker
+    # (overview/本章, date_label, or scripture). If no marker exists, keep all.
+    def _is_chapter_start(p):
+        t = p["text"].strip()
+        kind = classify(p)
+        return (kind in ("overview", "scripture", "date_label")
+                or OVERVIEW_RE.match(t))
+
+    first_real = next((i for i, p in enumerate(paras) if _is_chapter_start(p)), None)
+    effective_paras = paras[first_real:] if first_real is not None and first_real > 0 else paras
+
     footnotes = []
-    for para in paras:
+    for para in effective_paras:
         t = para["text"].strip()
         if not t:
             continue
@@ -582,7 +612,7 @@ date: {date_str}
             if m:
                 footnotes.append((m.group(1), t[m.start(2):].strip()))
         elif kind == "date_label":
-            # Skip John-style verse labels and Zechariah date labels;
+            # Skip verse labels (John) and Zechariah date labels;
             # format_mhenry2.py handles structure via Bible JSON matching
             continue
         else:
