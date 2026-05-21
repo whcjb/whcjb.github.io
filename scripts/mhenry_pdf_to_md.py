@@ -707,7 +707,16 @@ date: {date_str}
             bible_para = {"text": bible_text, "fonts": set()}
             effective_paras = [effective_paras[0], bible_para] + effective_paras[1:]
 
+    # Regex to detect inline footnotes embedded mid-paragraph (cross-page PDF artifact).
+    # Example: "...对祭1皇帝哈德良：117-138 作罗马帝国的皇帝。" where the footnote definition
+    # appears inside the body text because it was on the bottom of a PDF page between two words.
+    # Must be preceded by a CJK char (not at para start) and end with 。
+    INLINE_FN_RE = re.compile(r'(?<=[\u4e00-\u9fff])(\d{1,2})([\u4e00-\u9fff][^。\n]{3,120}[。])\s*')
+    # Sentence-ending characters; para that doesn't end with these may be word-split
+    SENTENCE_END_RE = re.compile(r'[。！？」』）\]]\s*$')
+
     footnotes = []
+    pending_text = None  # holds text from a para that ends abruptly (word-split across PDF pages)
     for para in effective_paras:
         t = para["text"].strip()
         if not t:
@@ -722,7 +731,29 @@ date: {date_str}
             # format_mhenry2.py handles structure via Bible JSON matching
             continue
         else:
-            body_parts.append(t)
+            # Extract inline footnote embedded mid-paragraph (cross-page PDF artifact).
+            # Only extract when the captured text looks like a footnote definition:
+            # it must contain '：' (e.g. "皇帝哈德良：117-138 作罗马帝国的皇帝。")
+            # to avoid accidentally extracting body text that follows an inline footnote marker.
+            fn_match = INLINE_FN_RE.search(t)
+            if fn_match and fn_match.start() > 5 and '：' in fn_match.group(2):
+                footnotes.append((fn_match.group(1), fn_match.group(2).strip()))
+                t = (t[:fn_match.start()].rstrip() + t[fn_match.end():]).strip()
+
+            # Merge with pending text from a word-split in previous para
+            if pending_text is not None:
+                t = pending_text + t
+                pending_text = None
+
+            # If this para ends abruptly (no sentence ending, last char is CJK),
+            # it may be a word-split — hold it and merge with the next para
+            if t and not SENTENCE_END_RE.search(t) and re.search(r'[\u4e00-\u9fff]$', t):
+                pending_text = t
+            else:
+                body_parts.append(t)
+
+    if pending_text is not None:
+        body_parts.append(pending_text)
 
     content = fm + "\n\n".join(body_parts)
     if footnotes:
