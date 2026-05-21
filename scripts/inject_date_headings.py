@@ -278,8 +278,8 @@ def apply_case1(book: str, book_dir: str, chapter_labels: dict) -> int:
             print(f'  [{book}] Chapter {ch_num}: no labels found in PDF, skipping')
             continue
 
-        if len(labels) != unit_count:
-            print(f'  WARNING [{book}] Chapter {ch_num}: {len(labels)} labels != {unit_count} units, skipping')
+        if len(labels) > unit_count:
+            print(f'  WARNING [{book}] Chapter {ch_num}: {len(labels)} labels > {unit_count} units, skipping')
             continue
 
         # Inject: replace each '<div class="mh-unit">' with date-heading + unit div
