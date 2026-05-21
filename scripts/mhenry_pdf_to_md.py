@@ -707,11 +707,13 @@ date: {date_str}
             bible_para = {"text": bible_text, "fonts": set()}
             effective_paras = [effective_paras[0], bible_para] + effective_paras[1:]
 
-    # Regex to detect inline footnotes embedded mid-paragraph (cross-page PDF artifact).
+    # Regex to detect inline footnotes embedded at the end of a paragraph (cross-page PDF artifact).
     # Example: "...对祭1皇帝哈德良：117-138 作罗马帝国的皇帝。" where the footnote definition
     # appears inside the body text because it was on the bottom of a PDF page between two words.
-    # Must be preceded by a CJK char (not at para start) and end with 。
-    INLINE_FN_RE = re.compile(r'(?<=[\u4e00-\u9fff])(\d{1,2})([\u4e00-\u9fff][^。\n]{3,120}[。])\s*')
+    # Also handles chained footnotes: "...事上1多马...。2钦定本...。3钦定本...。"
+    # Lookbehind includes CJK chars and "。" to catch both first and chained footnotes.
+    # The $ anchor ensures only matches at end of para (prevents false matches mid-para).
+    INLINE_FN_RE = re.compile(r'(?<=[\u4e00-\u9fff\u3002])(\d{1,2})([\u4e00-\u9fff][^。\n]{3,120}[。])\s*$')
     # Sentence-ending characters; para that doesn't end with these may be word-split
     SENTENCE_END_RE = re.compile(r'[。！？」』）\]]\s*$')
 
@@ -723,22 +725,37 @@ date: {date_str}
             continue
         kind = classify(para)
         if kind == "footnote":
-            m = FOOTNOTE_RE.match(t)
-            if m:
-                footnotes.append((m.group(1), t[m.start(2):].strip()))
+            # Parse footnote block — may contain multiple chained footnotes
+            # e.g. "1原文...名词。2钦定本...遍地。" → two footnotes
+            fn_text = t
+            while fn_text:
+                fn_m = FOOTNOTE_RE.match(fn_text)
+                if not fn_m:
+                    break
+                rest = fn_text[fn_m.start(2):]
+                end_m = re.search(r'。(?=\d)', rest)
+                if end_m:
+                    footnotes.append((fn_m.group(1), rest[:end_m.start()+1].strip()))
+                    fn_text = rest[end_m.start()+1:].strip()
+                else:
+                    footnotes.append((fn_m.group(1), rest.strip()))
+                    fn_text = ''
         elif kind == "date_label":
             # Skip verse labels (John) and Zechariah date labels;
             # format_mhenry2.py handles structure via Bible JSON matching
             continue
         else:
-            # Extract inline footnote embedded mid-paragraph (cross-page PDF artifact).
-            # Only extract when the captured text looks like a footnote definition:
-            # it must contain '：' (e.g. "皇帝哈德良：117-138 作罗马帝国的皇帝。")
-            # to avoid accidentally extracting body text that follows an inline footnote marker.
-            fn_match = INLINE_FN_RE.search(t)
-            if fn_match and fn_match.start() > 5 and '：' in fn_match.group(2):
-                footnotes.append((fn_match.group(1), fn_match.group(2).strip()))
-                t = (t[:fn_match.start()].rstrip() + t[fn_match.end():]).strip()
+            # Extract inline/chained footnotes from the end of the para (cross-page PDF artifact).
+            # Loop to handle multiple chained footnotes (e.g., "1多马...。2钦定本...。3钦定本...。")
+            # Each footnote must contain '：' to confirm it's a footnote definition, not body text.
+            changed = True
+            while changed:
+                changed = False
+                fn_match = INLINE_FN_RE.search(t)
+                if fn_match and fn_match.start() > 5 and '：' in fn_match.group(2):
+                    footnotes.append((fn_match.group(1), fn_match.group(2).strip()))
+                    t = (t[:fn_match.start()] + t[fn_match.end():]).strip()
+                    changed = True
 
             # Merge with pending text from a word-split in previous para
             if pending_text is not None:
