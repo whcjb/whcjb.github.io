@@ -428,7 +428,11 @@ def paras_to_mh_units(paras, chapter_num):
 
 def render_unit(unit):
     lines = []
-    vr = unit.get("verse_range") or unit.get("label", "")
+    label = unit.get("label", "")
+    vr = unit.get("verse_range") or label
+    # Render date-label heading outside the unit box
+    if label and unit.get("verse_range"):
+        lines.append(f'<div class="mh-date-heading">{html_escape(label)}</div>\n')
     lines.append('<div class="mh-unit">')
     if vr:
         lines.append(f'<div class="mh-verse">{html_escape(vr)}</div>')
