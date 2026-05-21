@@ -207,7 +207,9 @@ def _find_verse_regions(full_text: str, verses: list[str]) -> list[tuple[int, in
         if not skw or len(skw) < 4:
             continue
         # Search for verse number prefix pattern
-        for m in re.finditer(r'(?:^|(?<=[\s，。；！？」）\]]))' + str(vnum) + r'\s+', full_text):
+        # Accept digit followed by space(s) OR Chinese corner bracket 「/『
+        # Lookbehind includes 』 in addition to standard punctuation
+        for m in re.finditer(r'(?:^|(?<=[\s，。；！？」』）\]]))' + str(vnum) + r'(?:\s+|[「『])', full_text):
             after = _strip_punct(full_text[m.start():m.start() + 50])
             if skw[:5] in after[:25]:
                 # Found verse start. Find end using last 15 chars of verse.

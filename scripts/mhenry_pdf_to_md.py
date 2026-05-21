@@ -564,6 +564,60 @@ def num_to_chinese(n):
         return _CN_TENS[n // 10] + (_CN_UNITS[n % 10] if n % 10 else '')
 
 
+_BIBLE_BOOK_MAP = {
+    'genesis': 'gn', 'exodus': 'ex', 'leviticus': 'lv', 'numbers': 'nm',
+    'deuteronomy': 'dt', 'joshua': 'js', 'judges': 'jud', 'ruth': 'rt',
+    '1samuel': '1sm', '2samuel': '2sm', '1kings': '1kgs', '2kings': '2kgs',
+    '1chronicles': '1ch', '2chronicles': '2ch', 'ezra': 'ezr', 'nehemiah': 'ne',
+    'esther': 'et', 'job': 'job', 'psalms': 'ps', 'proverbs': 'prv',
+    'ecclesiastes': 'ec', 'songofsolomon': 'so', 'isaiah': 'is', 'jeremiah': 'jr',
+    'lamentations': 'lm', 'ezekiel': 'ez', 'daniel': 'dn', 'hosea': 'ho',
+    'joel': 'jl', 'amos': 'am', 'obadiah': 'ob', 'jonah': 'jn',
+    'micah': 'mi', 'nahum': 'na', 'habakkuk': 'hk', 'zephaniah': 'zp',
+    'haggai': 'hg', 'zechariah': 'zc', 'malachi': 'ml',
+    'matthew': 'mt', 'mark': 'mk', 'luke': 'lk', 'john': 'jo',
+    'acts': 'act', 'romans': 'rm', '1corinthians': '1co', '2corinthians': '2co',
+    'galatians': 'gl', 'ephesians': 'eph', 'philippians': 'ph', 'colossians': 'cl',
+    '1thessalonians': '1ts', '2thessalonians': '2ts', '1timothy': '1tm', '2timothy': '2tm',
+    'titus': 'tt', 'philemon': 'phm', 'hebrews': 'hb', 'james': 'jm',
+    '1peter': '1pe', '2peter': '2pe', '1john': '1jo', '2john': '2jo',
+    '3john': '3jo', 'jude': 'jd', 'revelation': 're',
+}
+
+_bible_cache: dict = {}
+try:
+    import opencc as _opencc
+    _t2s_converter = _opencc.OpenCC('t2s')
+except ImportError:
+    _t2s_converter = None
+
+
+def _load_bible_verses_plain(book_id: str, chapter_num: int, v_start: int, v_end: int) -> str:
+    """Return 'N verse_text ...' plain text for verses v_start..v_end (inclusive) from Bible JSON.
+    Returns empty string on failure. Converts traditional→simplified and removes inter-char spaces."""
+    global _bible_cache
+    if not _bible_cache:
+        bible_path = Path(__file__).parent / 'zh_cuv.json'
+        if not bible_path.exists():
+            return ''
+        with open(bible_path, encoding='utf-8-sig') as f:
+            raw = json.load(f)
+        for book in raw:
+            _bible_cache[book['abbrev']] = book['chapters']
+    abbrev = _BIBLE_BOOK_MAP.get(book_id, '')
+    chapters = _bible_cache.get(abbrev)
+    if not chapters or chapter_num < 1 or chapter_num > len(chapters):
+        return ''
+    verses = chapters[chapter_num - 1]
+    parts = []
+    for vi in range(v_start - 1, min(v_end, len(verses))):
+        v_text = verses[vi].replace(' ', '').replace('\u3000', '')
+        if _t2s_converter:
+            v_text = _t2s_converter.convert(v_text)
+        parts.append(f"{vi + 1} {v_text}")
+    return ' '.join(parts)
+
+
 def make_chapter_md_plain(book_id, book_name, chapter_num, total_chapters, header_img,
                            paras, date_str):
     """Output plain-text chapter .md for processing by format_mhenry2.py.
@@ -615,6 +669,43 @@ date: {date_str}
             else:
                 break
         effective_paras = paras[skip:]
+
+    # Pre-process: split hybrid paragraphs where a section date label is followed
+    # directly by verse text (e.g. "神谴责祭司（主前400年）6「藐视我名...").
+    # Strip the date label prefix and keep only the verse text portion.
+    HYBRID_DATE_PREFIX_RE = re.compile(r'^(.{4,50}[（(]主[前后]\d+\s*年[）)])\s*(\d+)')
+    split_paras = []
+    for p in effective_paras:
+        t = p["text"].strip()
+        mm = HYBRID_DATE_PREFIX_RE.match(t)
+        if mm:
+            rest = t[mm.start(2):]
+            split_paras.append(dict(p, text=rest))
+        else:
+            split_paras.append(p)
+    effective_paras = split_paras
+
+    # Detect the first verse number that actually appears in the PDF content.
+    # A paragraph "starts with a verse" if it begins with digit + space/bracket + CJK.
+    VERSE_PARA_START_RE = re.compile(r'^(\d+)[\s「『][\u4e00-\u9fff]')
+    first_verse_in_content = None
+    first_verse_idx = None
+    for idx, p in enumerate(effective_paras):
+        mm = VERSE_PARA_START_RE.match(p["text"].strip())
+        if mm:
+            first_verse_in_content = int(mm.group(1))
+            first_verse_idx = idx
+            break
+
+    # If the first verse in the PDF is greater than 1, inject Bible verse text for
+    # vv 1..(first_verse-1) after the first paragraph (overview summary), so that
+    # format_mhenry2.py can create a proper mh-unit for those verses.
+    if first_verse_in_content and first_verse_in_content > 1 and first_verse_idx and first_verse_idx >= 1:
+        bible_text = _load_bible_verses_plain(book_id, chapter_num, 1, first_verse_in_content - 1)
+        if bible_text:
+            # Insert after the first paragraph (the introductory overview summary)
+            bible_para = {"text": bible_text, "fonts": set()}
+            effective_paras = [effective_paras[0], bible_para] + effective_paras[1:]
 
     footnotes = []
     for para in effective_paras:
