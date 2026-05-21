@@ -590,8 +590,12 @@ date: {date_str}
 """
     body_parts = []
     # Skip initial "orphan" paragraphs that are continuations from the previous chapter.
-    # Orphans are body paragraphs that appear before the first real chapter marker
-    # (overview/本章, date_label, or scripture). If no marker exists, keep all.
+    # Strategy A: if a real chapter marker appears within the first 3 paragraphs, skip
+    # all paragraphs before it (handles Zechariah-style "本章..." overviews).
+    # Strategy B: otherwise, use a forward scan and skip only paragraphs that look
+    # obviously orphaned (start mid-list/mid-sentence), stopping at the first normal para.
+    OBVIOUS_ORPHAN_RE = re.compile(r'^\d+[.、]|^[（(]\d|^，|^；|^就[说叫是有把]')
+
     def _is_chapter_start(p):
         t = p["text"].strip()
         kind = classify(p)
@@ -599,7 +603,18 @@ date: {date_str}
                 or OVERVIEW_RE.match(t))
 
     first_real = next((i for i, p in enumerate(paras) if _is_chapter_start(p)), None)
-    effective_paras = paras[first_real:] if first_real is not None and first_real > 0 else paras
+    if first_real == 1:
+        # Strategy A: exactly one orphan before a known chapter-start marker → skip it
+        effective_paras = paras[1:]
+    else:
+        # Strategy B: skip only obviously-orphaned leading paragraphs
+        skip = 0
+        for p in paras:
+            if OBVIOUS_ORPHAN_RE.match(p["text"].strip()):
+                skip += 1
+            else:
+                break
+        effective_paras = paras[skip:]
 
     footnotes = []
     for para in effective_paras:
