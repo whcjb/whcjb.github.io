@@ -380,6 +380,151 @@ button[onclick="toggleCalvinCompare()"]:hover {
 }
 </style>
 
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">先知简介</div>
+  <div class="preface-book-name">弥迦书</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
 <p>我们会在这卷先知书的第一节经文看到一些关于这位先知的情况，所以这里只需提及他与先知以赛亚是同时代人（只是他开始说预言比以赛亚稍晚），因而这两卷先知书有相似之处；两者都预言福音教会的发展和坚立，所用的词句也几乎相同，以致这话出自两位这样的见证人之口，句句都可定准（马太福音18：16）。比较以赛亚书2：2-3 和弥迦书4：1-2。以赛亚书说是论到犹大和耶路撒冷（以赛亚书1：1），弥迦书则说是论到撒马利亚和耶路撒冷（1：1），因为这卷先知书虽以犹大诸王在位年代为写作日期，但却关乎以色列国；他清楚预言以色列国正在濒临毁灭，
 十个支派被掳，并且为之深感哀恸。这里所写的，只是他在三王在位期间多篇讲章的概要。整体内容是：I.叫罪人意识到自己的罪行，将他们的罪行一一列出，谴责以色列和犹大拜偶像、贪婪、
 欺压人、藐视神的话，特别是谴责他们的官长滥用职权，包括政教两方面的官长，还向他们表明神的审判随时会向他们爆发，只因他们犯罪。II.安慰神的百姓，应许必有怜悯和拯救，特别是要他们坚信弥赛亚要来，坚信福音的恩典随着他。这卷预言书很精彩，因为它两次在很庄严的场合下被公开引用（证明它的权威），并且两次都预言将来的大事：1.一次是预言耶路撒冷毁灭（3：12），在旧约经文中被国中的长老所引用（耶利米书 26：17-18），用来证明耶利米所说的神的审判要临到耶路撒冷的预言并非虚言，并试图撤销对耶利米的起诉。他们说：弥迦预言锡安必被耕种像一块田，希西家没有因此将他治死，如今耶利米说了同样的话，为何要刑罚他呢？2.另一次是预言基督降生（5：2），在新约经文中被祭司长和民间的文士所引用，用来回答希律的问话：基督当生在何处（马太福音 2：5-6）。这再次表明众先知都为他作见证。</p>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(170,115,38,0.4);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(210,160,60,0.5);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(180,130,40,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(130,80,15,0.1),
+        0 10px 36px rgba(100,60,5,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(130,80,15,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #3D1E0A;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(180,130,40,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(130,80,15,0.5);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(170,115,38,0.4);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(210,160,60,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(210,160,60,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(100,60,5,0.1);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #2E1B0D !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(130,80,15,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(210,160,60,0.3);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(170,115,38,0.35);
+}
+</style>

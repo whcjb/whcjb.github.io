@@ -380,4 +380,149 @@ button[onclick="toggleCalvinCompare()"]:hover {
 }
 </style>
 
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">先知简介</div>
+  <div class="preface-book-name">西番雅书</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
 <p>这位先知被安排在被掳前小先知的最后，因为从时间上说他是最后一位；他出现在耶利米之前不久，耶利米在被掳的时候还活着。这位先知预言迦勒底人要全面毁灭犹大和耶路撒冷；他将他们的罪陈明在他们面前，就是惹怒神降灾给他们的罪；他呼吁他们悔改，警告邻国必有类似的毁灭临到，并给他们鼓舞人心的应许，说他们必在所定的日子从被掳之地回归，这也指向福音的恩典。第1节对这位先知和他说预言的日期略有介绍，我们不必在这里探究。</p>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(58,80,185,0.4);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,110,220,0.5);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(68,100,205,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(30,50,150,0.1),
+        0 10px 36px rgba(20,35,120,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(30,50,150,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A1035;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(68,100,205,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(30,50,150,0.5);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(58,80,185,0.4);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(80,110,220,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(80,110,220,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(20,35,120,0.1);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D1626 !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,50,150,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,110,220,0.3);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(58,80,185,0.35);
+}
+</style>

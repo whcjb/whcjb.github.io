@@ -380,4 +380,149 @@ button[onclick="toggleCalvinCompare()"]:hover {
 }
 </style>
 
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">先知简介</div>
+  <div class="preface-book-name">那鸿书</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
 <p>这位先知的名字意思是安慰者；安慰是所有先知的职责所在：你们要安慰，安慰我的百姓（以赛亚书 40：1）；即便这位先知花了大量篇幅预言尼尼微要毁灭，致令亚述惊恐，但他所说的，仍是以色列十个支派的安慰，那时他们也许刚刚被掳去亚述。那鸿所在的年代和说预言的年代很不能确定，但最有可能是在希西家的时候；他预言尼尼微要毁灭，是以色列被亚述王掳去之后（那是希西家作王第九年），西拿基立入侵犹大之前（那是希西家作王第十四年），因为第一章似乎提到了那次军事行动，也提到他吃了败仗；这段预言也许比这场战事稍早一点，其目的是在那兵荒马乱的日子鼓励神的百姓。学识渊博的休伊特1猜想本书另外两章的信息是那鸿在很多年以后传递的，可能是玛拿西作王期间；犹太人的年表通常将他归在那个时代，接近基亚克萨雷斯2和尼布甲尼撒攻陷尼尼微、制伏亚述王朝的时候，也就是犹大首次被掳以前不久。那鸿有可能口述过很多关于以色列和犹大的预言，我们知道约拿有过这样的口述（列王纪下14：25），只是除了关于尼尼微的预言，其余的没有写成文字；尼尼微虽是大城，并且历史悠久，但若不是以色列的神对它有些在乎，也许圣经根本不会提到它。</p>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(115,48,200,0.4);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(150,70,240,0.5);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(130,60,210,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(80,30,150,0.1),
+        0 10px 36px rgba(50,15,120,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(80,30,150,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #120A3D;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(130,60,210,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(80,30,150,0.5);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(115,48,200,0.4);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(150,70,240,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(150,70,240,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(50,15,120,0.1);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #1A0D2E !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(80,30,150,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(150,70,240,0.3);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(115,48,200,0.35);
+}
+</style>

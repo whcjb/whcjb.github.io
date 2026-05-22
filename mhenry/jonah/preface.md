@@ -380,5 +380,150 @@ button[onclick="toggleCalvinCompare()"]:hover {
 }
 </style>
 
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">先知简介</div>
+  <div class="preface-book-name">约拿书</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
 <p>约拿书虽然列在圣经的先知书中，它实际上更像是历史书，而不是先知书；书中的预言只有一行字：再等四十日，尼尼微必倾覆了（3：4），其余的内容都是这句预言的始末。在这卷书前面以及这卷书的后面，有不少隐晦的预言，有许多难明的事，令学者们困惑，乃是成年人所吃的干粮
 （希伯来书 5：14）；中间却安插了这个简单而宜人的故事，再软弱的人也能欣赏，乃是婴孩所吃的奶。这卷书的笔者可能就是约拿本人，他与摩西和别的受感笔者一样，将自己的错误记录下来，证明这些作品本意都是荣耀神，而不是荣耀自己。列王纪下 14：25 提到过这个约拿，那里说他是位于加利利的迦特希弗人；那城属于西布伦支派，位于以色列地偏远的角落；圣灵像风一样，随自己的意思吹（约翰福音 3：8），能在加利利轻易找到约拿，正如他在耶路撒冷轻易找到以赛亚。那里还说约拿是耶罗波安二在位王期间神向以色列施怜悯的使者，因为耶罗波安打胜仗，收回以色列边界之地，乃是正如耶和华藉他仆人先知约拿所说的。他在那里所说的预言没有记录下来，这段针对尼尼微的预言却记了下来，主要是因为另有一段故事以此为依据，而那段故事记下来，主要是为基督的缘故，约拿预表基督。这段故事含有人性软弱的精彩范例，体现在约拿身上，含有神施恩宽恕悔改罪人的精彩范例，体现在尼尼微人身上，也含有神施恩包容发怨言圣徒的精彩范例，体现在约拿身上。</p>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(40,150,105,0.4);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(60,180,130,0.5);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(80,180,140,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(20,100,65,0.1),
+        0 10px 36px rgba(15,80,50,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(20,100,65,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A1E14;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,180,140,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(20,100,65,0.5);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(40,150,105,0.4);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(60,180,130,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(60,180,130,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(15,80,50,0.1);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D2E1B !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(20,100,65,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(60,180,130,0.3);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(40,150,105,0.35);
+}
+</style>

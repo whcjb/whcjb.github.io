@@ -380,9 +380,154 @@ button[onclick="toggleCalvinCompare()"]:hover {
 }
 </style>
 
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">先知简介</div>
+  <div class="preface-book-name">哈巴谷书</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
 <p>一些犹太拉比有个很愚蠢的传说，说这位先知是那书念妇人的儿子，他通过以利沙，起先神奇出生，后来又神奇复活（列王纪下第4章）；他们还有一个传说，说先知约拿是通过以利亚起死回生的撒勒法寡妇的儿子。现代犹太拉比年鉴学者们的猜想更靠谱一些，他们说这位先知生活在玛拿西作王期间，并在那时说预言；当时邪恶盛行，毁灭将至，就是迦勒底人所带来的毁灭，这位先知说他们是神审判的器皿；玛拿西自己被掳去巴比伦，那是接踵而来之毁灭的前兆。彼勒与大龙<sup>1</sup>的次级故事中提到犹大地的先知哈巴谷，我们也在两页使者中见到他被带到巴比伦，给狱中的但以理送吃的；相信这故事的人颇费苦心，想把我们这位先知的生活年代安排在被掳以前，说他是预言被掳这件事。休伊特<sup>2</sup>认为那是另一位同名的先知，这位出自西缅支派，那位则出自利未支派；也有人说他虽曾预言被掳，却一直活到被掳的末期。也有人说哈巴谷给狱中的但以理送吃的这件事，应该理解为一个奥秘，说但以理因信得生，诚如哈巴谷所言：<b>义人因信得生（2：4）</b>；他送给但以理的食物就是这句话。先知的职责就是双向传话。先知在书中生动描述施恩的神和蒙恩的灵魂之间相遇相交。整卷书具体提到迦勒底人入侵犹大地，掳掠神的百姓，这乃是公义的刑罚，因为他们自己相互掳掠；不过这卷书在广义上也很有用，尤其能在大试探中帮助我们，历代的义人都经历过这样的大试探，就是恶人强盛，义人受苦。</p>
 
 <aside class="mhenry-footnotes">
 <p><sup>1</sup> 彼勒与大龙：天主教和东正教的次经《但以理外传》里的故事。</p>
 <p><sup>2</sup> 比尔·但以理·休伊特（1630-1721）：法国神学家、学者。</p>
 </aside>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(190,90,28,0.4);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(220,130,50,0.5);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(200,110,38,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(150,60,10,0.1),
+        0 10px 36px rgba(120,40,5,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(150,60,10,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #3D1E0A;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(200,110,38,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(150,60,10,0.5);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(190,90,28,0.4);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(220,130,50,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(220,130,50,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(120,40,5,0.1);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #2E1B0D !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(150,60,10,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(220,130,50,0.3);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(190,90,28,0.35);
+}
+</style>
