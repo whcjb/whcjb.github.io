@@ -23,15 +23,7 @@ layout: default
             <div class="mh-nav-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-left:16px; padding-right:16px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
                 <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-                    <div class="bg-color-ctrl" title="背景色">
-                        <button onclick="setBgColor('#C7EDCC')" class="bg-swatch" style="background:#C7EDCC;" aria-label="豆沙绿"></button>
-                        <button onclick="setBgColor('#FAF0DC')" class="bg-swatch" style="background:#FAF0DC;" aria-label="羊皮纸"></button>
-                        <button onclick="setBgColor('#EAEAEF')" class="bg-swatch" style="background:#EAEAEF;" aria-label="淡灰蓝"></button>
-                        <button onclick="setBgColor('#F5E6CC')" class="bg-swatch" style="background:#F5E6CC;" aria-label="暖杏色"></button>
-                        <button onclick="setBgColor('#E3EDCD')" class="bg-swatch" style="background:#E3EDCD;" aria-label="浅草绿"></button>
-                        <button onclick="setBgColor('#FFFFFF')" class="bg-swatch bg-swatch--white" style="background:#FFFFFF;" aria-label="纯白"></button>
-                    </div>
-                    <div class="font-size-ctrl" title="调节字号">
+<div class="font-size-ctrl" title="调节字号">
                         <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
                         <button onclick="resetFontSize()" aria-label="默认字号">A</button>
                         <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
@@ -213,7 +205,7 @@ layout: default
 /* ── Section date heading ──────────────────────────── */
 .mh-date-heading {
     margin: 28px 0 8px 0;
-    padding: 10px 16px;
+    padding: 10px 0;
     background: #4A3728;
     color: #f5ead8;
     font-size: 1.05em;
