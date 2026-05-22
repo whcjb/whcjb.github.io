@@ -6,6 +6,133 @@ header-img: psalm-bg-sheep2.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,220,87,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,255,109,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,255,143,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,200,117,0.10),
+        0 10px 36px rgba(30,160,52,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,180,63,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A3D13;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,230,105,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,180,63,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,220,103,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,240,123,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,240,123,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,160,52,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D2E13 !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,200,58,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,240,107,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,220,103,0.35);
+}
+</style>
+
 <p>I.摆在我们面前的是犹太国民的历史，从这卷书开始，直到以斯帖记为止。犹太学者将旧约圣经分为律法、先知和诗歌智慧三个部份（路加福音 24：44），将本书直到列王纪各卷统称为先知书上卷。列王纪以后的历史书则归入诗歌智慧。这些书卷的主题虽是历史，但想必都由先知写成。纯预言性的书卷都以先知的名字来命名，因为预言的可信度和先知本人很有关系；而这些历史书卷原先可能是国家史记，由一些先知在神亲自引导和帮助下写成，供末世教会使用；犹太会众蒙神赐福，长期以来或多或少总有这样的先知出现。犹太人中的官长从天上得权柄，犹太人中的史学家也从天上得权柄。这些历史书的主体虽都是在事件发生的当时，蒙神的引领记录下来，却似乎是在很久以后由别人蒙神同样的引领整理而成；可能由一人整理完成，也可能在同一时期完成。
 这种猜测的依据是：1.书中常常提到以前的作品：雅煞珥书（约书亚记10：13；撒母耳记下1：18），以色列诸王记，犹大列王记，迦得的书，拿单的书，易多的传等。2.有些事件被说成是发生在从前，譬如撒母耳记上 9：9 说：现在称为先知的，从前称为先见。3.书中经常提到有些东西存留下来，直到今日，譬如石头（约书亚记 4：9；7：26；8：29；10：27；撒母耳记上 6：18），地名（约书亚记 5：9；7：26；士师记1：26；15：19；18：12；列王纪下 14：7），权利或属地（士师记 1：21；撒母耳记上 27：6），风俗习惯（撒母耳记上 5：5；列王纪下 17：41）
 等；后来的编者被圣灵感动，把这样的短句加到历史书里，为的是给同时代的人举例为证。倘若纯粹是猜一猜的话，这些书卷直到列王纪为止，说不定都是由先知耶利米在被掳之前编篡而成，

@@ -6,6 +6,133 @@ header-img: psalm-bg-47.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,167,220,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,197,255,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,210,255,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,167,200,0.10),
+        0 10px 36px rgba(30,117,160,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,133,180,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A2C3D;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,180,230,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,133,180,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,173,220,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,193,240,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,193,240,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,117,160,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D232E !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,143,200,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,187,240,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,173,220,0.35);
+}
+</style>
+
 <p>约伯记这卷书自成一体，与其它书卷不相连，所以要单独查考。不少希伯来文圣经抄本将此书排在诗篇之后，有些更是将其排在箴言之后。也许因为这点，一些学者猜想这是以赛亚或更晚期的先知写的。但是此书的题材看起来相当古老，我们有理由认为这应该是更早期的作品，因此此书排在智慧书卷集的首位十分合宜。另外，这是一卷说教型的书，将其排在前面，引出灵修型的诗篇和实用型的箴言也十分恰当。因为若不认识神，如何敬拜神、顺服神呢？关于这卷书：
 I. 我们肯定此书的写成是神的感动，尽管我们不能肯定执笔人是谁。犹太人虽然不是约伯的朋友
 （他对以色列国来说是外邦人），但神的圣言交托他们（罗马书3：2），他们就忠实保留下来，

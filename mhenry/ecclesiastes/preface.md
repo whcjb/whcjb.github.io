@@ -6,6 +6,133 @@ header-img: psalm-bg-50.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,207,220,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,240,255,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,244,255,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,192,200,0.10),
+        0 10px 36px rgba(30,149,160,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,168,180,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A393D;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,218,230,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,168,180,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,208,220,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,228,240,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,228,240,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,149,160,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D2B2E !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,186,200,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,227,240,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,208,220,0.35);
+}
+</style>
+
 <p>我们仍与那些快乐的臣子和仆人同列，仍侍立在所罗门面前听他的智慧话（列王纪上 10：8）。
 这里要传给我们的是他智慧话中的精华，是直接受圣灵感动的话。但愿不要像他的臣子那样，只听一遍，不是听错就是忘记，听多了又觉得没有新鲜感；而是要念，要回顾，要反复思想，永远牢记。我们知道所罗门在作王的后期离弃了神（列王纪上 11：1），这是他一生中的悲剧。我们可以知道他在中年写了箴言，那时他持守正直，又在晚年写了传道书（因为他在谈到老年人的重担和衰败的时候栩栩如生，第 12 章），那时他藉着神的恩典在失足后重新站立起来。在箴言中他写的是自己的观察，在这里他写的则是自己的经验。正所谓空谈智慧只需数日，而教导智慧则需要多年。本书的题目和作者，我们会在第一节中碰到，这里只需注意以下几点：
 I. 这是一篇道，是写下来的讲道词；主题是（1：2），虚空的虚空，凡事都是虚空；这也是本文的教义，文中用了许多观点和具体实例来证明这点，且回应不同的看法，最后以勉励的形式指出实际应用，就是要记念造我们的主（12：1），要敬畏他，谨守他的诫命（12：13）。本书中诚然有许多晦暗的东西，很不好理解；有些内容一旦败坏之人强解就自取沉沦（彼得后书 3：16），

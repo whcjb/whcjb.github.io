@@ -6,6 +6,133 @@ header-img: psalm-bg-48.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,87,220,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,109,255,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,143,255,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,117,200,0.10),
+        0 10px 36px rgba(30,52,160,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,63,180,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A133D;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,105,230,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,63,180,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,103,220,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,123,240,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,123,240,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,52,160,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D132E !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,58,200,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,107,240,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,103,220,0.35);
+}
+</style>
+
 <p>摆在我们面前的是整卷旧约圣经中最上乘、最优秀的部份之一；因其中不仅多有神和他的律法，
 也多有基督和他的福音，故而堪称两约的摘要或总纲。以色列的历史我们研习了很久，它把我们带到军营，带到议事厅，得以欣赏并学习神的知识。约伯记把我们领进学校，用关乎神和天意的有益辩论来款待我们。本书则把我们带进圣所，使我们不再与人、与政客、与哲学家或世上的辩士打交道，而是与神相通，使我们的灵魂在他里面得安慰，得安息，我们的心向他提升，向他敞开。我们可在圣山上如此与神交往，乃至人人都会说：我们在这里真好（马太福音 17：4）；若有人不这样说，那就是不明白自己的利益所在。现在让我们来看看：
 I.本书的标题。1.称为诗篇；路加福音 24：44 用了这样的标题。希伯来文标题的原意是赞美诗，

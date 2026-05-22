@@ -6,6 +6,133 @@ header-img: psalm-bg-51.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(220,60,127,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(255,80,153,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(255,120,176,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(200,100,142,0.10),
+        0 10px 36px rgba(160,30,84,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(180,40,98,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #3D0A1F;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(230,80,142,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(180,40,98,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(220,80,138,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(240,100,158,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(240,100,158,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(160,30,84,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #2E0D1B !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(200,30,101,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(240,80,147,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(220,80,138,0.35);
+}
+</style>
+
 <p>我们坚信圣经都是神所默示的（提摩太后书 3：16），在世人中有利于扶持和发展神国的利益。
 即便其中有些难明白的，圣经仍大有益处，而那无学问、不坚固的人强解，就自取沉沦（彼得后书 3：16）。我们相信本书出自神，相信灵意解释本书，这可以从犹太教会和基督教会的历史悠久的双重见证得到证实。对犹太教会而言，神的圣言交托他们（罗马书 3：2），他们从不怀疑本书的权威性；基督教会也十分乐于承继这样的信任和尊荣。I. 我们一方面必须承认，若是问一个几乎未读过此书的人，就像问那个太监一样，你所念的，你明白吗？他定然会说，没有人指教我，
 怎能明白呢（使徒行传 8：30）？圣经中的历史书和先知书之间有许多相似之处，但所罗门的雅歌却与他父亲大卫的诗篇大不相同。雅歌没有提到神的名，从未在新约被引用，没有信仰的言辞或虔诚的灵修，其中的信息不是藉着异象传递，也没有启示的痕迹。要把这卷书当成活的香气叫人活（哥林多后书2：16），似乎比圣经中其他的书卷都难，而若是带着世俗眼光和败坏心态来读此书，这简直就是死的香气叫他死，好比一朵有毒的花。因此犹太学者们不建议他们的年轻人在三十岁以前读此书，免得污秽了最纯洁、最神圣之物。从天而降的火要吞噬欲望之火（说起来真可怕！），这天火是专门为祭坛预备的。II. 我们另一方面也必须承认，借助于许多诚实的注释，

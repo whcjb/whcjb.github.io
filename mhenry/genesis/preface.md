@@ -6,6 +6,133 @@ header-img: psalm-bg-mountain.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(220,180,60,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(255,211,80,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(255,221,120,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(200,175,100,0.10),
+        0 10px 36px rgba(160,128,30,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(180,145,40,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #3D300A;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(230,193,80,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(180,145,40,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(220,185,80,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(240,205,100,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(240,205,100,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(160,128,30,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #2E260D !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(200,158,30,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(240,200,80,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(220,185,80,0.35);
+}
+</style>
+
 <p>摆在我们面前的这本书就是圣经，或称为书，因为圣经一词原意就是书。称之为书，是因为此书绝无仅有，堪称史上最佳作品，是书中之书，在知识的穹苍里就像日头发光，而其它有价值的书不过是月亮星辰，反射日头的光辉。称之为圣，是因为此书由圣者写成，由圣灵引导，没有一点错谬，没有败坏的动机，其用意显而易见，就是在人间倡导圣洁。书中所写的是关乎神律法的大事，关乎福音的大事，好叫这些事切实可信，流传得更广更久远，传遍天涯海角，传到各个时代，并且传得更纯更完整，非民间传说或人的传统所能比拟。人若无视这些白纸黑字写下来的关乎平安的大事，若以为与自己毫无关涉（何西阿书8：12），就必被追讨。从摩西到圣约翰，这些受感之人笔下的经文将神的光渐渐显明出来，如同晨光照耀。如今神圣的正典既已完成，感谢赞美神，这些经文就在我们手中这本配得称颂的圣经里，叫我们在世的日子得以完全。书中的一字一句都是好的，放在一起则甚好。圣经如同灯照在暗处（彼得后书1：19）。这世界若没有圣经，诚然就是暗处。
 摆在我们面前的这部份圣经称为旧约，内容关乎以色列民从创世以来一直到基督道成肉身之前大约四千年的事迹与丰碑，包括那段时期所显明的真理，所实施的律法，所表现的忠诚，所传讲的预言，以及关乎这个特殊群体的大事。凡是神认为对我们有益的，均一一记录在册。之所以称为约，是因为圣经郑重宣告神的遗嘱，关乎普世的人。立遗嘱人是耶稣，就是从创世以来被杀的羔羊（启示录 13：8）。神命定叫他死，遗嘱因他的死全面生效。之所以称为旧约，是相对新约而言。新约并不废弃旧约，也不取代旧约，而是完善旧约，成全旧约，叫旧约中所预表所预言的那更美的盼望成为现实。旧约仍有荣光，但新约的荣光更大（哥林多后书 3：9）。
 摆在我们面前的这部份旧约称为摩西五经，就是摩西写的五卷书。摩西是耶和华的仆人，他超越众先知，预表至大的先知耶稣。主耶稣把旧约书卷分成摩西的律法、先知的书，和诗篇上所记的

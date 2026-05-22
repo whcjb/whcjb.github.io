@@ -6,6 +6,133 @@ header-img: psalm-bg-42.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,220,167,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,255,197,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,255,210,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,200,167,0.10),
+        0 10px 36px rgba(30,160,117,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,180,133,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A3D2C;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,230,180,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,180,133,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,220,173,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,240,193,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,240,193,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,160,117,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D2E23 !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,200,143,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,240,187,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,220,173,0.35);
+}
+</style>
+
 <p>在普通的事上重复，常被当作是没有必要，令人厌烦，但神圣的事却应该命上加命，令上加令
 （以赛亚书 28：13）。使徒说：我把这话再写给你们，于我并不为难，于你们却是妥当（腓立比书3：1）。历代志在很大程度上是重复；同样地，第二、第三乃至第四卷福音书也是重复，然而历代志和福音书都不是徒然重复。圣经中最容易闲置忽略的书卷，也许当数历代志，但我们却离不开它，因为其中有许多最精彩有益的东西，是在别处找不到的。至于出现过的内容再次出现：
 1.这对于书卷发表时代的人来说也许很有价值；那时旧约正典尚未形成，各书卷尚未编排到一起；历代志能使他们想起其它书卷的详细内容。在神学上律法书固然有用，摘要、概述和参考书也都很有用。先前说过的，再说一遍未必徒然。2.这对于今天的人来说也很有价值，因为凭两三个人的口作见证，句句都可定准（马太福音18：16）；反复教导，便于记忆。历代志的笔者可能是以斯拉，他是个敏捷的文士，通达耶和华的律法书（以斯拉记7：6）。次经作者（以斯拉续篇下14：21）编了个毫无根据的故事，说律法书全都被烧毁，以斯拉受神的灵感动重写了一份，不过这样的说法也许正是源自历代志，书中的故事虽然不全是重复，故事中的人物却都赫然在列。

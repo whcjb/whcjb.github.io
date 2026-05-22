@@ -6,6 +6,133 @@ header-img: psalm-bg-52.jpg
 date: 2026-05-20 10:38
 ---
 
+<style>
+/* ── 前言装饰 ── */
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap {
+    margin: 12px 0 32px;
+    padding: 0;
+}
+
+/* 顶部星形装饰 */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(60,60,220,0.40);
+    margin: 24px 0 18px;
+    text-shadow: 0 0 16px rgba(80,80,255,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 20px 24px 22px;
+    background: rgba(255,255,255,0.28);
+    border: 1px solid rgba(255,255,255,0.70);
+    border-top: 2px solid rgba(120,120,255,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        inset -1px -1px 0 rgba(100,100,200,0.10),
+        0 10px 36px rgba(30,30,160,0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(40,40,180,0.55);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    font-size: 2.2em;
+    color: #0A0A3D;
+    letter-spacing: 0.20em;
+    line-height: 1.2;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(80,80,230,0.22);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(40,40,180,0.50);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(80,80,220,0.40);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,100,240,0.35) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.9) 0%,
+        rgba(100,100,240,0.35) 100%);
+}
+
+/* 正文区 */
+.preface-body {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.60);
+    border-radius: 14px;
+    padding: 24px 26px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 8px 28px rgba(30,30,160,0.10);
+}
+.preface-body p {
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", cursive !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #0D0D2E !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+}
+/* 首字下沉 */
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "Ma Shan Zheng", "STKaiti", cursive;
+    color: rgba(30,30,200,0.65);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 6px 0 0;
+    text-shadow: 0 2px 10px rgba(80,80,240,0.30);
+}
+
+/* 结尾装饰 */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: rgba(80,80,220,0.35);
+}
+</style>
+
 <p>人但凡知道“先知”一词的含义，都知道这是个很了不起的头衔。然而在世人眼里，许多有此声誉的人仿佛很刻薄。先知十分熟悉天上的事，也十分热衷于天上的事，因而他们在地上有权柄。
 先知的预言就是神的启示（彼得后书 1：20，21），因为神的启示常常藉着异梦、声音或异象先传递给先知，再由先知传递给世人（民数记 12：6）。诚然有一次神在西乃山上向数千以色列人直接说话，结果吓得那些人惊恐万状，迫切恳求神，以后向他们说话时还是像过去那样，通过像他们那样的凡人来说话。人不用威严惊吓，也不用势力重压（约伯记33：7）。神允准了他们的请求（他说：他们所说的都是，申命记5：27，28）。于是双方同意，事就这样定了，就是说我们不会再像那些以色列人那样听到神亲口说话，只能通过先知，由他们直接领受神的指示，并负责传递给教会。在旧约正典开始形成以前就有了先知，他们就是教会的圣经。我们的救主似乎承认亚伯是先知（马太福音 23：31，35）。以诺是先知，他最先预言末后的刑罚，末日的审判：看哪，主带著他的千万圣者降临（犹大书1：14）。挪亚是传义道之人（彼得后书 2：5）。神提到亚伯拉罕时说：他是先知（创世纪 20：7）。雅各预言将来的事（创世纪 49：1）。不但如此，
 所有的族长都被称为先知：不可恶待我的先知（诗篇 105：15）。摩西是无与伦比的先知，在所有旧约先知中最为杰出，因为神与他面对面说话（申命记 34：10）。他也是第一位使用文字的先知，奠定了圣经文字的第一块基石。连协助他管理百姓的人也具备先知的灵，在那时被圣灵大大充满（民数记 11：25）。然而在摩西死后的好几代人中，耶和华的灵往往是作为争战之灵，而不是先知之灵，在以色列民中显现作工，受感之人往往表现在行为而不是言语；我指的是士师时期。
