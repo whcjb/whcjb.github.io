@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div style="margin: 32px 0 24px;">
+        <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+      </div>
+
+      <h2 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:24px;">
+        {{ page.book_name }}
+      </h2>
+
+      <div class="list-group" style="max-width:360px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="list-group-item">Translator's Preface &amp; The Argument</a>
+        {% for i in (1..page.chapters) %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="list-group-item">Chapter {{ i }}</a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>

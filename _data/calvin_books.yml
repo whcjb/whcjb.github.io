@@ -100,6 +100,9 @@ new_testament:
   - id: philippians
     name: 腓立比书
     chapters: 4
+  - id: philippians-en
+    name: Philippians (EN)
+    chapters: 4
   - id: colossians
     name: 歌罗西书
     chapters: 4

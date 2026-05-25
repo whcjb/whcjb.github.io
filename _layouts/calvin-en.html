@@ -1,0 +1,102 @@
+---
+layout: default
+---
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div style="margin: 32px 0 16px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      </div>
+
+      {% if page.prev_section %}
+      <div style="display:flex; justify-content:space-between; margin-bottom:32px; font-size:13px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
+        {% if page.next_section %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
+        {% endif %}
+      </div>
+      {% elsif page.next_section %}
+      <div style="text-align:right; margin-bottom:32px; font-size:13px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
+      </div>
+      {% endif %}
+
+      <div class="calvin-en-content">
+        {{ content }}
+      </div>
+
+      <div style="display:flex; justify-content:space-between; margin-top:48px; padding-top:16px; border-top:1px solid #eee; font-size:13px;">
+        {% if page.prev_section %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_section %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.calvin-en-content {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #222;
+}
+.calvin-en-content h1 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 36px 0 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.calvin-en-content h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 28px 0 12px;
+  text-align: center;
+}
+.calvin-en-content p {
+  margin: 0 0 14px;
+  text-align: justify;
+}
+.calvin-en-content blockquote {
+  margin: 12px 0 12px 2em;
+  padding: 0;
+  border-left: none;
+  font-size: inherit;
+  color: inherit;
+}
+.calvin-en-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 20px;
+  font-size: 14px;
+}
+.calvin-en-content table th,
+.calvin-en-content table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  vertical-align: top;
+}
+.calvin-en-content table th {
+  background: #f5f5f5;
+  font-weight: bold;
+}
+.calvin-en-content hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 32px 0;
+}
+/* page markers */
+.calvin-en-content p:has(> strong:only-child) {
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+  margin: 4px 0;
+}
+</style>
