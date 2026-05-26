@@ -143,7 +143,7 @@ While The Commentaries of Calvin everywhere abound with important statements in 
 <!-- PAGE 12 -->
 
 
-<p style="text-align:right; font-style:italic">J. P. ELGIN , March 1851.</p>
+<p style="text-align:right; font-style:italic" x-apple-data-detectors="false">J. P. ELGIN , March 1851.</p>
 
 
 <!-- PAGE 13 -->
