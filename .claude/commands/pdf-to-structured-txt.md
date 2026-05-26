@@ -232,6 +232,13 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
 ### 提取质检（PDF → MD）
 
 - [ ] **表格数量合理**：`output.count('calvin-scripture')` 与 PDF 中圣经经文表格数量一致；若为 0 或明显偏少，说明表格头未被识别（检查两种格式的检测逻辑）
+- [ ] **无空 tbody 表格**：所有表格必须有至少一行内容。验证：
+  ```python
+  import re
+  empties = [m.group() for m in re.finditer(r'<table class="calvin-scripture">.*?</table>', open('output.md').read(), re.DOTALL) if '<tr><td>' not in m.group()]
+  print(f'空表格数: {len(empties)}')  # 必须为 0
+  ```
+  若有空表格，原因是表格标题在某页底部而 verse 行在下一页顶部（跨页表格）。修复方法见下方"跨页表格"说明。
 - [ ] **表格标题跨列**：所有表格均为 `<th colspan="2">`，无 `| **BOOK X:Y** | |` 形式的 Markdown 表格残留
 - [ ] **希腊文已转换**：MD 文件中无 `>[a-z]` 或 `[a-z]<` 形式的 Ages 转写残留（用 `grep -P '[a-z][><~][a-z]'` 验证）；若有，检查 `convert_ages_greek()` 是否被调用
 - [ ] **脚注数量合理**：`output.count('[^f')` 与 PDF 脚注数量大致对应；若为 0，说明脚注区未被检测到（注：计数用 `[^f` 而非 `[^ft`，因脚本已将 ft→f 标准化）
@@ -249,6 +256,49 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
 - [ ] **无乱入 H2 表格头**：MD 中无 `## PHILIPPIANS` 或 `## [书卷名]` 形式的行（说明表格头被误识别为 H2）
 - [ ] **无行内引用代码残留**：MD 中无 `[<NNNNNN>]` 或 `(<NNNNNN>` 形式（用 `grep '<[0-9]' output.md` 验证）
 - [ ] **对齐文本对照 PDF 逐条核实**：`grep "^> " output.md` 列出所有 blockquote，打开 PDF 对应页确认每条是否真为左缩进；同理检查所有 `<p style="text-align:center">` 和 `<p style="text-align:right">` 是否与 PDF 一致。**不得凭推断判断，必须看 PDF 原文。**
+
+### 已知坑：跨页经文表格为空
+
+**症状**：MD 中出现 `<tbody>\n</tbody>` 的空表格，紧随其后是以 `**N.**` 开头的正文段落（其实是被误判为 body 的 verse 行）。
+
+**原因**：提取脚本逐页独立处理，`table_regions` 仅在当前页查找 verse 块。当表格标题出现在某页底部、verse 行在下一页顶部时，当前页找不到 verse 块，表格为空；下一页没有表格标题，verse 块被当作正文处理。
+
+**修复**：在提取脚本中加入 `pending_header` 跨页传递机制：
+
+```python
+# process_page 增加参数和返回值
+def process_page(page, page_num, pending_header=None):
+    # ...（正常块分类）
+
+    pending_header_out = None
+
+    # 若有跨页表头，先从本页开头收集 verse 块
+    if pending_header is not None:
+        carry_verses = []
+        for b in body_blocks:
+            if is_table_header(b) or is_h1(b) or is_h2(b) or block_is_full_width(b):
+                break
+            carry_verses.append(b)
+        table_html = extract_scripture_section(pending_header, carry_verses)
+        items.append({'type': 'TABLE', 'html': table_html})
+        body_blocks = body_blocks[len(carry_verses):]
+
+    # 正常处理块时，表头无 verse 块则设 pending
+    # ...
+    # elif is_table_header(b):
+    #     ...
+    #     if verse_blocks:
+    #         items.append({'type': 'TABLE', 'html': ...})
+    #     else:
+    #         pending_header_out = header_block  # 跨页传递
+
+    return items, footnote_defs, pending_header_out
+
+# 主循环
+pending_header = None
+for page_num in range(...):
+    items, fn_defs, pending_header = process_page(page, page_num, pending_header)
+```
 
 ### 发布质检（MD → 网站）
 
