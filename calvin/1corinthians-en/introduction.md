@@ -124,7 +124,9 @@ Farewell, most illustrious Sir, with your noble partner. The Lord Jesus long pre
 
 ## THE AUTHOR’S SECOND EPISTLE DEDICATORY
 
-**TO LORD GALLIAZUS CARACCIOLUS:***A Nobleman, Distinguished Still More By Eminent Virtues Than By Illustrious Descent, Only Son**And Rightful Heir Of The Marquis Of Vico, Health:* —
+**TO LORD GALLIAZUS CARACCIOLUS:***A Nobleman, Distinguished Still More By Eminent Virtues Than By Illustrious Descent, Only Son*
+
+*And Rightful Heir Of The Marquis Of Vico, Health:* —
 
 Would that when this Commentary first saw the light, I had either not known at all, or else had known thoroughly the individual whose name, hitherto inscribed upon this page, I am now under the necessity of erasing! I have, it is true, no fear of his upbraiding me with fickleness, or complaining that I have taken from him what I had previously given, for having intentionally made it his object, not merely to withdraw as much as possible from me personally, but also to have no connection with our Church, he has left himself no just ground of complaint. It is, however, with reluctance that I deviate from my custom, so as to erase any one’s name from my writings, and it grieves me that that individual should have quitted the lofty eminence that I had assigned him, [^19] so as not to hold out a light to others, as it was my desire that he should. [^20] As, however, it is not in my power to remedy this evil, let him, so far as I am concerned, remain buried, as I am desirous even now of sparing his credit by not mentioning his name.
 

@@ -148,10 +148,14 @@ def split_block_by_paragraph_indent(block):
 
     In Ages Digital Library Calvin commentary PDFs, paragraph starts are indented
     ~18pt from the block's left margin.  Normal body lines sit at x0 = block_x0 (72pt);
-    indented paragraph-start lines sit at x0 = block_x0 + 12..50pt.
-    Lines indented more than 60pt are centered citations — not paragraph starts.
-    Footnote-definition blocks have 9pt text; commentary body is 12pt.  We filter
-    by font-size >= 11pt to avoid splitting inside footnote sections.
+    indented paragraph-start lines sit at x0 = block_x0 + 12..60pt.
+    Lines indented more than 60pt are centered citations (scripture quotes).
+
+    Split conditions (structural, not content-based):
+    1. Normal paragraph start: INDENT_LOW ≤ indent ≤ INDENT_HIGH
+    2. First deeply-indented line (start of a centered quote block):
+       indent > INDENT_HIGH and previous non-empty line was NOT deep.
+       Consecutive deep lines stay together (multi-line quote = one block).
 
     Only applies to full-width commentary blocks (same guards as other splitters).
     """
@@ -167,6 +171,7 @@ def split_block_by_paragraph_indent(block):
     groups = []
     current_lines = []
     first_nonempty_seen = False
+    prev_was_deep = False  # previous non-empty line had indent > INDENT_HIGH
 
     for line in block['lines']:
         spans = [s for s in line['spans'] if s['text'].strip()]
@@ -177,11 +182,15 @@ def split_block_by_paragraph_indent(block):
         x0 = spans[0]['bbox'][0]
         size = spans[0]['size']
         indent = x0 - block_x0
+        is_deep = indent > INDENT_HIGH and size >= BODY_SIZE_MIN
 
         is_para_start = (
             first_nonempty_seen
-            and INDENT_LOW <= indent <= INDENT_HIGH
             and size >= BODY_SIZE_MIN
+            and (
+                (INDENT_LOW <= indent <= INDENT_HIGH)   # normal paragraph indent
+                or (is_deep and not prev_was_deep)       # first line of centered quote block
+            )
         )
 
         if is_para_start and current_lines:
@@ -190,6 +199,7 @@ def split_block_by_paragraph_indent(block):
 
         current_lines.append(line)
         first_nonempty_seen = True
+        prev_was_deep = is_deep
 
     if current_lines:
         groups.append(_make_sub_block(block, current_lines))
