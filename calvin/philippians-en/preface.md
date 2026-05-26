@@ -116,10 +116,8 @@ The Reader will find prefixed to the present translation of Calvin’s Commentar
 <!-- PAGE 11 -->
 
 
-> Pray for the peace of Hierusalem, they shall prosper that loue thee.
-
-
-> <19C106> Psalm 121:6.
+<p style="text-align:center">Pray for the peace of Hierusalem, they shall prosper that loue thee.</p>
+<p style="text-align:center">Psalm 121:6.</p>
 
 
 At London, Printed by Thomas Purfoote, and are to be sold at his shop ouer against S. Sepulchers Church.”
@@ -168,7 +166,8 @@ Many in the dedications of their trauails are accustomed to set forth the praise
 <!-- PAGE 14 -->
 
 
-<p style="text-align:right; font-style:italic">Yours to command R. V.</p>
+> Yours to command
+> R. V.
 
 
 <!-- PAGE 15 -->

@@ -135,10 +135,8 @@ next_label: "第一章"
 <!-- PAGE 11 -->
 
 
-> 你们当为耶路撒冷求平安；爱你的人必然兴旺。
-
-
-> <19C106> 诗篇 121:6。
+<p style="text-align:center">你们当为耶路撒冷求平安；爱你的人必然兴旺。</p>
+<p style="text-align:center">诗篇 121:6。</p>
 
 
 伦敦，托马斯·珀弗特（Thomas Purfoote）印行，于圣塞普尔克勒教堂对面其铺中发售。"
@@ -187,7 +185,8 @@ next_label: "第一章"
 <!-- PAGE 14 -->
 
 
-<p style="text-align:right; font-style:italic">您忠诚的 R. V.</p>
+> 您忠诚的
+> R. V.
 
 
 <!-- PAGE 15 -->
