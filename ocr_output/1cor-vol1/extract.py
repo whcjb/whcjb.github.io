@@ -448,6 +448,31 @@ for page_num in range(len(doc)):
     all_items.extend(items)
     all_fn_defs.update(fn_defs)
 
+# ── Stage 1.5: merge cross-page split paragraphs ─────────────────────────────
+# When a BODY item doesn't end with sentence-ending punctuation and the next
+# BODY item (skipping PAGE markers) starts with a lowercase letter or em-dash,
+# merge them into one paragraph.
+def is_sentence_end(text):
+    stripped = text.rstrip().rstrip('"\'')
+    return not stripped or stripped[-1] in '.!?…'
+
+idx = 0
+while idx < len(all_items):
+    if all_items[idx]['type'] == 'BODY':
+        # Find next non-PAGE item
+        j = idx + 1
+        while j < len(all_items) and all_items[j]['type'] == 'PAGE':
+            j += 1
+        if j < len(all_items) and all_items[j]['type'] == 'BODY':
+            cur = all_items[idx]['text']
+            nxt = all_items[j]['text']
+            first_char = nxt.lstrip()[:1]
+            if not is_sentence_end(cur) and first_char and (first_char.islower() or first_char == '—'):
+                all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
+                del all_items[j]
+                continue  # re-check same idx (may need further merging)
+    idx += 1
+
 # ── Render to Markdown ────────────────────────────────────────────────────────
 md_lines = []
 
