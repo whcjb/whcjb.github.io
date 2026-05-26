@@ -693,6 +693,7 @@ for page_num in range(...):
 
 ### 发布质检（MD → 网站）
 
+- [ ] **`date` 字段精确到分钟**：所有发布文件的 front matter `date` 格式必须为 `YYYY-MM-DD HH:MM`，不得只写日期。`DATE` 变量必须用 `date '+%Y-%m-%d %H:%M'` 获取**真实时间**，禁止写死占位时间戳（如 `12:44`）。如果文件已发布但时间戳有误，从 git log 找到初次提交的时间：`git log --follow --diff-filter=A --format="%ci" calvin/BOOK_ID/1.md | tail -1`，取到分钟精度（如 `2026-05-26 12:45`）更新 `publish.py` 并重新运行。
 - [ ] **fn 区无分节标题残留**：对每个发布文件，`---` 分隔符之后不得有任何 `##` 行。验证：
   ```bash
   awk '/^---/{found++} found>=2 && /^## /{print FILENAME": "NR": "$0}' calvin/BOOK_ID/*.md
@@ -872,7 +873,7 @@ BOOK_ID   = "REPLACE_BOOK_ID"         # 如 philippians-en
 BOOK_NAME = "REPLACE_BOOK_NAME"       # 如 Calvin on Philippians
 MD_PATH   = "REPLACE_MD_PATH"
 OUT_DIR   = f"/Users/yanpeifa/Documents/whcjb.github.io/calvin/{BOOK_ID}"
-DATE      = "REPLACE_DATE"            # 用 date '+%Y-%m-%d %H:%M' 获取
+DATE      = "REPLACE_DATE"            # 必须精确到分钟！用 date '+%Y-%m-%d %H:%M' 获取真实时间，禁止写死占位时间
 
 with open(MD_PATH, encoding="utf-8") as f:
     lines = f.readlines()

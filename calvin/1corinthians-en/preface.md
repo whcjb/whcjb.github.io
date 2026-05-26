@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: 1corinthians-en
 book_name: "Calvin on 1 Corinthians"
 title: "Translator's Preface"
-date: 2026-05-26 12:44
+date: 2026-05-26 12:45
 next_section: 1
 next_label: "Chapter 1"
 ---

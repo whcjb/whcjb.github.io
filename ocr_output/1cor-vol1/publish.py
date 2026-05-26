@@ -7,7 +7,7 @@ import os
 
 BOOK_ID = '1corinthians-en'
 BOOK_NAME = 'Calvin on 1 Corinthians'
-DATE = '2026-05-26 12:44'
+DATE = '2026-05-26 12:45'
 OUT_DIR = os.path.join(os.path.dirname(__file__), '../../calvin/1corinthians-en')
 MD_PATH = os.path.join(os.path.dirname(__file__), 'calvin_1cor-vol1.md')
 
