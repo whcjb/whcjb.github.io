@@ -1572,10 +1572,7 @@ But what if a wife is wanton, or otherwise incontinent? Would it not be inhuman 
 
 <!-- PAGE 154 -->
 
-**14.** *For the unbelieving husband is sanctified* He obviates an objection, which might occasion anxiety to believers. The relationship of marriage is singularly close, so that the wife is the half of the man — so that *they two are one flesh* — (1 Corinthians 6:16) — so that *the husband is the head* *of the wife*; (Ephesians 5:23;) and she is her husband’s partner in everything; hence it seems impossible that a believing husband should live with an ungodly wife, or the converse of this, without being polluted by so close a connection. Paul therefore declares here, that marriage is, nevertheless, sacred and pure, and that we must not be apprehensive of contagion, as if the wife would contaminate the husband. Let us, however, bear in mind, that he speaks here not of contracting marriages, but of maintaining those that have been already contracted; for where the matter under consideration is, whether one should marry an unbelieving wife, or whether one should marry an unbelieving husband, then that exhortation is in point — Be not yoked with unbelievers, for there is no agreement between Christ and Belial. (2 Corinthians
-
-6:14.)
-{: style="text-align: center"}
+**14.** *For the unbelieving husband is sanctified* He obviates an objection, which might occasion anxiety to believers. The relationship of marriage is singularly close, so that the wife is the half of the man — so that *they two are one flesh* — (1 Corinthians 6:16) — so that *the husband is the head* *of the wife*; (Ephesians 5:23;) and she is her husband’s partner in everything; hence it seems impossible that a believing husband should live with an ungodly wife, or the converse of this, without being polluted by so close a connection. Paul therefore declares here, that marriage is, nevertheless, sacred and pure, and that we must not be apprehensive of contagion, as if the wife would contaminate the husband. Let us, however, bear in mind, that he speaks here not of contracting marriages, but of maintaining those that have been already contracted; for where the matter under consideration is, whether one should marry an unbelieving wife, or whether one should marry an unbelieving husband, then that exhortation is in point — Be not yoked with unbelievers, for there is no agreement between Christ and Belial. (2 Corinthians 6:14.)
 
 But he that is already bound has no longer liberty of choice; hence the advice given is different.
 
@@ -3190,10 +3187,8 @@ The sacred word of God, too, retains the respect due to it, so that it is receiv
 “What is it, then,” you will say, “that is subjected to examination?”’ I answer — If any one were furnished with a full revelation, that man would undoubtedly, along with his gift, be above all scrutiny. There is, I say, no subjection, where there is a plenitude of revelation; but as God has ***“Non comtaee mansere comae; sed pectus anhelum,*** ***Et rabie fera corda tument: majorque videri,*** ***Nee mortale sonans, attlata est numine quando***
 
 ***Jam propiore dei.”*** ***“But when the headstrong god, not yet appeased,*** ***With holy frenzy had the Sibyl seized,*** ***Terror froze up her grisly hair; her breast*** ***Throbbing with holy fury, still expressed*** ***A greater horror, and she bigger seems,*** ***Swoln with the afflatus, whilst in holy screams***
-{: style="text-align: center"}
 
 ***She unfolds the hidden mysteries of fate.”*** *Virg. Aen.VI. 48-51.* — *Ed.* distributed his spirit to every one in a certain measure, in such a way that, even amidst the greatest abundance, there is always something wanting, it is not to be wondered, if no one is elevated to such a height, as to look down from aloft upon all others, and have no one to pass judgment upon him. We may now see how it is, that, without any dishonor to the Holy Spirit, his gifts admit of being examined. Nay more, where, after full examination, nothing is found that is worthy of reproof, there will still be something, that stands in need of polishing. The sum of all, therefore, is this — that the gift is subjected to examination in such a way, that whatever is set forth, the Prophets consider as to it — whether it has proceeded from the Spirit of God; for if it shall appear that the Spirit is the author of it, there is no room left for hesitation.
-{: style="text-align: center"}
 
 <!-- PAGE 296 -->
 

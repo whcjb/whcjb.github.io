@@ -625,8 +625,15 @@ while idx < len(all_items):
             nxt_indent = all_items[j].get('indent', 0)
             # Structural: no paragraph-start indent = continuation fragment.
             # Guard: previous item doesn't end a sentence (double safety).
-            if nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur):
+            # Special case: cur ends with an unclosed parenthetical citation
+            # e.g. "(2 Corinthians" split across page boundary → merge "6:14.)"
+            cur_has_open_paren = bool(re.search(r'\([^)]*$', cur.rstrip()))
+            if (nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur)) \
+                    or (cur_has_open_paren and not is_sentence_end(cur)):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
+                all_items[idx]['indent'] = min(
+                    all_items[idx].get('indent', 0),
+                    all_items[j].get('indent', 0))
                 del all_items[j]
                 continue  # re-check same idx (may need further merging)
     idx += 1
