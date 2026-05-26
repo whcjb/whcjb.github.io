@@ -75,7 +75,7 @@ TOTAL_CHAPTERS = 14
 section_labels = []
 for label, _ in sections:
     if label == 'introduction':
-        section_labels.append(('introduction', 'Introduction'))
+        section_labels.append(('preface', 'Translator\'s Preface'))
     else:
         section_labels.append((label, f'Chapter {label}'))
 
@@ -94,8 +94,8 @@ for idx, (label, sec_lines) in enumerate(sections):
     prev_section, prev_label, next_section, next_label = prev_next(idx)
 
     if label == 'introduction':
-        filename = 'introduction.md'
-        title = 'Introduction'
+        filename = 'preface.md'
+        title = "Translator's Preface"
     else:
         filename = f'{label}.md'
         title = f'Chapter {label}'
