@@ -307,8 +307,10 @@ def extract_scripture_section(header_block, verse_blocks):
     return build_table(header_text, rows)
 
 # ── Process a single page ─────────────────────────────────────────────────────
-def process_page(page, page_num):
-    """Returns (body_items, footnote_defs) where each is a list/dict."""
+def process_page(page, page_num, pending_header=None):
+    """Returns (body_items, footnote_defs, pending_header_out).
+    pending_header: a table header block carried from the previous page.
+    pending_header_out: a table header block to carry to the next page (cross-page table)."""
     blocks = page.get_text('dict')['blocks']
 
     body_blocks = []
@@ -332,8 +334,32 @@ def process_page(page, page_num):
     # Sort body blocks by y
     body_blocks.sort(key=lambda b: b['bbox'][1])
 
+    # If a table header was carried from the previous page, collect verse blocks
+    # from the START of this page (before any full-width commentary block).
+    pending_header_out = None
+    if pending_header is not None:
+        carry_verses = []
+        for b in body_blocks:
+            if is_table_header(b) or is_h1(b) or is_h2(b):
+                break
+            if block_is_full_width(b):
+                break
+            carry_verses.append(b)
+        if carry_verses:
+            table_html = extract_scripture_section(pending_header, carry_verses)
+            # Inject carried table as the first item (before PAGE marker is added by caller)
+            body_blocks = body_blocks[len(carry_verses):]
+        else:
+            table_html = extract_scripture_section(pending_header, [])
+        # Will be prepended as first item below
+        carried_table = {'type': 'TABLE', 'html': table_html}
+    else:
+        carried_table = None
+
     # Group body blocks into items
     items = []
+    if carried_table is not None:
+        items.append(carried_table)
     page_h1_count = 0  # track H1s emitted per page; second H1 from ascending block = decoration
     i = 0
     while i < len(body_blocks):
@@ -366,8 +392,12 @@ def process_page(page, page_num):
                 else:
                     verse_blocks.append(nb)
                     j += 1
-            table_html = extract_scripture_section(header_block, verse_blocks)
-            items.append({'type': 'TABLE', 'html': table_html})
+            if verse_blocks:
+                table_html = extract_scripture_section(header_block, verse_blocks)
+                items.append({'type': 'TABLE', 'html': table_html})
+            else:
+                # Table header at page bottom with no verse blocks — carry to next page
+                pending_header_out = header_block
             i = j
         elif is_h2(b):
             # Split block: heading-size lines → H2, remaining 12pt lines → BODY
@@ -395,12 +425,13 @@ def process_page(page, page_num):
                 items.append({'type': 'BODY', 'text': text})
             i += 1
 
-    return items, footnote_defs
+    return items, footnote_defs, pending_header_out
 
 # ── Main extraction ───────────────────────────────────────────────────────────
 all_items = []
 all_fn_defs = {}  # num_str → text (accumulated across pages)
 
+pending_header = None  # table header block carried across page boundary
 for page_num in range(len(doc)):
     # Skip meta/title pages
     SKIP_PAGES = set(range(6)) | {6, 19}  # 0-5: cover/TOC, 6: main title, 19: alt title
@@ -411,7 +442,7 @@ for page_num in range(len(doc)):
         break
 
     page = doc[page_num]
-    items, fn_defs = process_page(page, page_num)
+    items, fn_defs, pending_header = process_page(page, page_num, pending_header)
 
     all_items.append({'type': 'PAGE', 'num': page_num + 1})
     all_items.extend(items)
