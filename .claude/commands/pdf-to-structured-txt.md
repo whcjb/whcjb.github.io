@@ -307,7 +307,7 @@ for sub in split_block_by_size(b):
 
 **原因**：Ages Digital Library PDF 的注释体正文，同一节（或同一页）内的多个段落往往被 PyMuPDF 提取为**同一个 block**。段落边界在 PDF 中由**首行缩进**标识——段首行 x0 = block_x0 + ~18pt，其余行 x0 = block_x0。`split_block_by_size` 和 `split_block_by_verse_number` 均不感知缩进，因此无法拆分这类合并。
 
-**识别特征**：对某个全宽 body block，若某行（非第一行）第一个 span 的 x0 > block_x0 + 10pt 且 ≤ block_x0 + 60pt，则该行为一个新段落的开始。字号须 ≥ 11pt（12pt 正文）以排除 9pt 脚注定义块。大于 60pt 缩进的行是居中引言，不分段。
+**识别特征**：对某个全宽 body block，若某行（非第一行）第一个 span 的 x0 > block_x0 + 10pt 且 ≤ block_x0 + 60pt，则该行为一个新段落的开始；字号须 ≥ 11pt。大于 60pt 的深缩进行是居中引文（如圣经引用），**第一次出现**时也触发分段（后续深缩进行合为一个引文块，不再分）。
 
 **修复**：`split_block_by_paragraph_indent`，在 `split_block_by_verse_number` 之后应用：
 
@@ -321,22 +321,29 @@ def split_block_by_paragraph_indent(block):
     block_x0 = block['bbox'][0]
     groups, current_lines = [], []
     first_nonempty_seen = False
+    prev_was_deep = False   # 上一行是否为深缩进行（>INDENT_HIGH）
     for line in block['lines']:
         spans = [s for s in line['spans'] if s['text'].strip()]
         if not spans:
             current_lines.append(line); continue
         x0 = spans[0]['bbox'][0]
+        size = spans[0]['size']
         indent = x0 - block_x0
+        is_deep = indent > INDENT_HIGH and size >= BODY_SIZE_MIN
         is_para_start = (
             first_nonempty_seen
-            and INDENT_LOW <= indent <= INDENT_HIGH
-            and spans[0]['size'] >= BODY_SIZE_MIN
+            and size >= BODY_SIZE_MIN
+            and (
+                (INDENT_LOW <= indent <= INDENT_HIGH)   # 普通段落首行缩进
+                or (is_deep and not prev_was_deep)       # 深缩进引文第一行（触发一次分段）
+            )
         )
         if is_para_start and current_lines:
             groups.append(_make_sub_block(block, current_lines))
             current_lines = []
         current_lines.append(line)
         first_nonempty_seen = True
+        prev_was_deep = is_deep
     if current_lines:
         groups.append(_make_sub_block(block, current_lines))
     return groups if len(groups) > 1 else [block]
