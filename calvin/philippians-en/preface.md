@@ -152,13 +152,13 @@ While The Commentaries of Calvin everywhere abound with important statements in 
 # TO THE VVORSHIPFVL
 
 
-> AND REUERENDE FATHERS MAISTER NOEL ,
+<p style="text-align:center; font-style:italic">AND REUERENDE FATHERS MAISTER NOEL ,</p>
 
 
 ## DEANE OF POULES, M. MULLINS ARCHDEACON OF LONDON,
 
 
-> Maister D. Walker, Archdeacon Of Essex, & Maister Towers Professor Of Diuinity, His Singuler Good Friends And Patrons, R. V. Wi-Sheth All Health.
+<p style="text-align:center; font-style:italic">Maister D. Walker, Archdeacon Of Essex, &amp; Maister Towers Professor Of Diuinity, His Singuler Good Friends And Patrons, R. V. Wi-Sheth All Health.</p>
 
 
 Many in the dedications of their trauails are accustomed to set forth the praises of such persons as they do dedicate the same vnto. And surely I thinke it not amisse if flattery be absent. For who is ignorant that virtus lauduta crescit, praise virtue, and it shall encrease. I speake not this, right worshipful and reuerende fathers, to the ende that I meane to do the like to you, although no man that knoweth you but he will say you worthelye deserue the same: for if I shoulde either praise your learning or diligence in your vocation which euery where is knowen, or your godly conuersation which vnto your nighest frendes is well tried, or your liberality which all those that haue neede, but spetially the Godly poore haue found and daily to fynde, who might iustly reprehend me: but letting passe these thinges to the consideration of vpright iudges, I purpose to shew and that very brieflye what hath moued me to dedicate this present booke vnto your worshippes. You knowe that I receaued at your handes (that worthye man maister D. Watts beynge then aliue, whom with reuerence I remember) that liuinge which I haue: and althoughe you sell not your benefices (as manye in these dayes do) yet reason woulde that I should not remaine vnthankefull for the same, though it were a greate deale lesse then it is. And wheras want of abilitye vvould not suffer me to recompence othervvyse your good will, yet rather then still I should continue vnthankeful, I chose this litle commentary of that worthye father M. Caluine to supply that which els might be left vndon: rvherin I vvish that my hart lay open to be vievved: then vvould you not more regard the thinge it selfe, vvhich no doubt is vvorthy the accepting, then the good vvil of him that presenteth the same vnto you. Fare you vvel. At high Easter the first of Nouember.
@@ -167,7 +167,7 @@ Many in the dedications of their trauails are accustomed to set forth the praise
 <!-- PAGE 14 -->
 
 
-> Yours to command R. V.
+<p style="text-align:right; font-style:italic">Yours to command R. V.</p>
 
 
 <!-- PAGE 15 -->
