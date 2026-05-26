@@ -203,14 +203,6 @@ In the Third Chapter he inveighs against the false apostles, and sets aside both
 He begins the Fourth Chapter with particular admonitions, but proceeds afterwards to those of a general nature. He concludes the Epistle with a declaration of his gratitude to the PHILIPPIANS , that they may not think that what they had laid out for relieving his necessities had been ill bestowed.
 
 
-<!-- PAGE 17 -->
-
-
-<p style="text-align:center">COMMENTARY ON</p>
-
-
-## THE EPISTLE OF PAUL TO THE PHILIPPIANS.
-
 ---
 
 
