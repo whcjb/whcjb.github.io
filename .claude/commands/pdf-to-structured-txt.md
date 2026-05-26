@@ -189,16 +189,17 @@ Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 AS
 
 ### 4. 跨页段落：必须合并
 
-PDF 段落常在页面边界断裂。Stage 1.5 负责合并，以下三种情形均需处理：
+PDF 段落常在页面边界断裂。Stage 1.5 负责合并，以下两种情形均需处理：
 
 | 情形 | 前段末尾 | 后段开头 | 原因 |
 |------|---------|---------|------|
 | 正常续句 | 非句末标点（逗号/冒号等）| 小写字母或 `—` | 最常见 |
-| 引文续句 | 逗号（引号引出引文） | **大写字母**（引文首词） | 如 "in that saying of Christ, **U**nless ye..." |
 | 脚注续句 | 非句末标点 | `[^N]`（脚注引用开头）| 脚注编号出现在行首，如 "[^148] pretend..." |
 
+⚠️ **禁止添加"逗号结尾 → 大写开头也合并"的规则**（`cur_ends_comma`）。Calvin 注释里"The Prophet asks," + "Who hath been God's counselor?" 这类段落是**引文独立段落**，应保持分段；若加此规则会把经文引文错误合并到前段。合并仅当下段以**小写字母或破折号**开头时触发。
+
 ```python
-# Stage 1.5 正确实现（三种情形）
+# Stage 1.5 正确实现（两种情形）
 idx = 0
 while idx < len(all_items):
     if all_items[idx]['type'] == 'BODY':
@@ -208,14 +209,11 @@ while idx < len(all_items):
         if j < len(all_items) and all_items[j]['type'] == 'BODY':
             cur = all_items[idx]['text']
             nxt = all_items[j]['text']
-            # 去掉下段开头的脚注引用再取 first_char（情形3）
+            # 去掉下段开头的脚注引用再取 first_char（情形2）
             nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
             first_char = nxt_check[:1]
-            # 前段以逗号结尾 = 一定是续句，允许大写开头（情形2）
-            cur_ends_comma = cur.rstrip().rstrip('"\'')[-1:] == ','
             if not is_sentence_end(cur) and (
-                (first_char and (first_char.islower() or first_char == '—'))
-                or cur_ends_comma
+                first_char and (first_char.islower() or first_char == '—')
             ):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
                 del all_items[j]
@@ -492,7 +490,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
    - 表格 `<td>` 内脚注转 HTML：`build_table` 中调用 `_fnref_to_html()` 把 `[^N]` 转 `<sup>` 标签（见第4.6节），否则 Kramdown 不处理 HTML 块内的 Markdown
    - Stage 1.6：段首孤立脚注引用移到前段末尾（见第4.7节），防止大上标出现在段落开头
    - `format_span` 空白外移：bold/italic/bold+italic span 开头尾空白必须移到标记之外（见第4.8节），否则 Kramdown 无法解析斜体，节号段落被 CSS 误判为居中
-   - Stage 1.5：跨页段落合并——必须处理三种情形（见第4节完整实现代码）：① 未结句 + 下段小写/破折号；② 前段逗号结尾 + 下段大写（引文续句）；③ 未结句 + 下段以 `[^N]` 脚注引用开头（须先 strip 脚注引用再取 first_char）
+   - Stage 1.5：跨页段落合并——必须处理两种情形（见第4节完整实现代码）：① 未结句 + 下段小写/破折号；② 未结句 + 下段以 `[^N]` 脚注引用开头（须先 strip 脚注引用再取 first_char）。**禁止添加 `cur_ends_comma` 规则**（前段逗号结尾 + 大写开头不合并，因为 Calvin 引文独立成段）
    - 跨页表格：`pending_header` 机制同时处理**两种情形**：A) 表头在页底无任何 verse → carry 裸 header；B) 部分 verse 在当前页、页面耗尽 → carry `{'header':…,'verses':[…]}` dict；用 `hit_commentary` 标志区分两种退出原因（见"已知坑"）
    - 希腊文转换：`convert_ages_greek()` 在所有输出路径上均被调用
    - 脚注标签标准化：`ft` 前缀统一去掉
@@ -1240,10 +1238,11 @@ for page_num, page in enumerate(doc):
             items.append({"type": "BODY", "text": all_text})
 
 # ── Stage 1.5: merge split paragraphs (including across page boundaries) ─────
-# 三种续句情形：
+# 两种续句情形：
 #   ① 未结句 + 下段小写/破折号（最常见）
-#   ② 前段逗号结尾 + 下段大写（引文续句，如 "in that saying of Christ, Unless ye..."）
-#   ③ 未结句 + 下段以 [^N] 脚注引用开头（须先 strip 脚注引用再取 first_char）
+#   ② 未结句 + 下段以 [^N] 脚注引用开头（须先 strip 脚注引用再取 first_char）
+# ⚠️ 禁止添加 cur_ends_comma 规则（逗号结尾+大写开头=不合并），
+#    Calvin 注释引文独立成段，如 "The Prophet asks," + "Who hath been God's counselor?"
 idx = 0
 while idx < len(items):
     if items[idx]["type"] in ("BODY", "BLOCKQUOTE"):
@@ -1254,14 +1253,11 @@ while idx < len(items):
         if j < len(items) and items[j]["type"] == cur_type:
             cur_text = items[idx]["text"]
             nxt_text = items[j]["text"]
-            # 去掉下段开头的脚注引用再取 first_char（情形③）
+            # 去掉下段开头的脚注引用再取 first_char（情形②）
             nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt_text.lstrip())
             first_char = nxt_check[:1]
-            # 前段以逗号结尾 = 引文续句，允许大写开头（情形②）
-            cur_ends_comma = cur_text.rstrip().rstrip('"\'')[-1:] == ','
             if not is_sentence_end(cur_text) and (
-                (first_char and (first_char.islower() or first_char == '—'))
-                or cur_ends_comma
+                first_char and (first_char.islower() or first_char == '—')
             ):
                 items[idx]["text"] = cur_text.rstrip() + " " + nxt_text.lstrip()
                 items.pop(j)

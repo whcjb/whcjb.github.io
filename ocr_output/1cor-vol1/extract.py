@@ -589,12 +589,8 @@ while idx < len(all_items):
             # so "[^148] pretend..." merges correctly when prev ends mid-sentence.
             nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
             first_char = nxt_check[:1]
-            # Prev ends with comma → always a mid-sentence page break (quotes/clauses
-            # often start with uppercase); allow merge regardless of next char's case.
-            cur_ends_comma = cur.rstrip().rstrip('"\'')[-1:] == ','
             if not is_sentence_end(cur) and (
-                (first_char and (first_char.islower() or first_char == '—'))
-                or cur_ends_comma
+                first_char and (first_char.islower() or first_char == '—')
             ):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
                 del all_items[j]
