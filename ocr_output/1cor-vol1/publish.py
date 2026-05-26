@@ -61,7 +61,7 @@ def extract_refs(text):
 def build_fn_section(refs):
     if not refs:
         return ''
-    parts = ['\n---\n']
+    parts = ['\n\n---\n']
     for num in sorted(refs, key=lambda x: int(x)):
         if num in fn_defs:
             txt = fn_defs[num].replace('|', '\\|')

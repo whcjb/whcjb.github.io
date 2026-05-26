@@ -195,6 +195,7 @@ In the *fifteenth chapter* he inveighs against a very pernicious error, which, a
 The *sixteenth chapter* consists of two parts. In the first of these he exhorts them to relieve the necessity of the brethren at Jerusalem. They were at that time pinched with famine, and they were cruelly treated by the wicked. The apostles had assigned to Paul the charge of stirring up the Churches of the Gentiles to afford them help. He accordingly exhorts them to lay up in store whatever they were inclined to contribute, that it might be transmitted to Jerusalem without delay. He at length concludes the Epistle with a friendly exhortation and congratulations.
 
 Hence we may gather, as I stated in the outset, that the Epistle is replete with most profitable doctrine, containing, as it does, a variety of discussions on many important topics.
+
 ---
 
 [^1]: Kirch-hoffer’s Life of Farel, pp. 281, 282.
