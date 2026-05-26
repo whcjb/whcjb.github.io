@@ -84,6 +84,7 @@ def split_block_by_size(block):
     current_size = None
 
     for line in block['lines']:
+        # Use the first body-sized span for size comparison; skip footnote superscripts (<BODY_SIZE_MIN)
         first_span = next((s for s in line['spans'] if s['text'].strip()), None)
         if first_span is None:
             current_lines.append(line)
