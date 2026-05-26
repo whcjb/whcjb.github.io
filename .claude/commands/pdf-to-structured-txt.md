@@ -330,12 +330,14 @@ def split_block_by_paragraph_indent(block):
         size = spans[0]['size']
         indent = x0 - block_x0
         is_deep = indent > INDENT_HIGH and size >= BODY_SIZE_MIN
+        first_char = spans[0]['text'].lstrip()[:1]
         is_para_start = (
             first_nonempty_seen
             and size >= BODY_SIZE_MIN
             and (
                 (INDENT_LOW <= indent <= INDENT_HIGH)   # 普通段落首行缩进
-                or (is_deep and not prev_was_deep)       # 深缩进引文第一行（触发一次分段）
+                or (is_deep and not prev_was_deep       # 深缩进引文第一行（触发一次分段）
+                    and not first_char.islower())        # 小写开头=换行续行，不切分
             )
         )
         if is_para_start and current_lines:
@@ -376,14 +378,23 @@ Kramdown 会将 `{: style="text-align: center"}` 作为该段落的行内属性�
 
 **原因**：Kramdown 不处理 `<td>...</td>` 等 HTML 块内的 Markdown 语法，`[^N]` 不会被渲染为脚注上标。
 
-**修复**：在 `build_table` 写入 `<td>` 内容前，将所有 `[^N]` 转成 HTML `<sup>` 标签：
+**修复**：在 `build_table` 写入 `<td>` 内容前，`_fnref_to_html` 必须同时转换脚注引用和所有 Markdown 行内格式：
 
 ```python
 def _fnref_to_html(text):
-    """把 [^N] markdown 脚注引用转为 HTML 上标，用于 <td> 内容。"""
-    return re.sub(r'\[\^(\d+)\]',
+    """把 Markdown 行内标记转为 HTML，用于 <td> 内容。
+    Kramdown 不处理 HTML 块内的 Markdown，必须在提取阶段转换。"""
+    # 脚注引用：[^N] → <sup>
+    text = re.sub(r'\[\^(\d+)\]',
                   lambda m: f'<sup><a href="#fn:{m.group(1)}" id="fnref:{m.group(1)}">{m.group(1)}</a></sup>',
                   text)
+    # 粗斜体：***text*** → <em><strong>text</strong></em>
+    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'<em><strong>\1</strong></em>', text)
+    # 粗体：**text** → <strong>text</strong>
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # 斜体：*text* → <em>text</em>
+    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    return text
 
 def build_table(header_text, rows):
     ...
@@ -392,6 +403,8 @@ def build_table(header_text, rows):
         la_esc = _fnref_to_html(la.replace('|', '&#124;'))
         lines.append(f'<tr><td>{en_esc}</td><td>{la_esc}</td></tr>')
 ```
+
+**注意**：漏掉斜体/粗体转换时，`*was*` 会在网页上显示为字面文字 `*was*`，而非斜体。
 
 ### 4.9 `spans_to_text`：不得包含跨 span 的后处理正则
 
@@ -412,7 +425,9 @@ def spans_to_text(spans):
             prev = parts[-1]
             needs_space = (prev and not prev[-1].isspace()
                            and not part[0].isspace()
-                           and part[0] not in '.,;:!?)\'"*_-')
+                           and part[0] not in '.,;:!?)\'"_-')
+                           # 注意：* 不在豁免列表中。相邻 *A**B* 情形（行尾斜体+行首斜体）
+                           # 必须加空格，否则 ** 被 Kramdown 解析为 bold 开始标记。
             if needs_space:
                 parts.append(' ')
         parts.append(part)
@@ -574,7 +589,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
   comm -23 /tmp/refs.txt /tmp/defs.txt
   ```
   输出非空说明有脚注标签不匹配，需检查是否还有 `ft` 前缀未被标准化（脚注区标签 `FtN`/`ftN` → `fN`，正文引用 `[^fN]`，两者必须一致）
-- [ ] **表格内无字面脚注引用**：`grep '\[^[0-9]' output.md` 的匹配项中，`<td>` 内不应有 `[^N]` 字面文字（应已被转为 `<sup>` HTML）；若有则说明 `_fnref_to_html()` 未被调用
+- [ ] **表格内无字面脚注引用和字面星号**：`<td>` 内不应有 `[^N]` 字面文字（应已转为 `<sup>`），也不应有 `*word*` / `**word**` 字面文字（应已转为 `<em>`/`<strong>`）；若有则说明 `_fnref_to_html()` 未完整实现斜体/粗体转换。快速验证：`grep -oP '<td>[^<]*\*[^<]*</td>' output.md`，输出非空则需修复。
 - [ ] **无孤立脚注引用段**：两项都需通过：
   - `grep -P '^\[\^\d+\] [A-Z]' output.md` 应无输出（Case A：段首脚注+正文，Stage 1.6 未处理）
   - `python3 -c "import re,sys; s=open('output.md').read(); bad=re.findall(r'\n\n(\[\^\^?\d+\])\n\n', s); print(bad)"` 应输出 `[]`（Case B：整段只有脚注引用，需删除并移到前段）
@@ -763,12 +778,36 @@ grep -c "^# " calvin/BOOK_ID/*.md          # 值 ≥2 的文件 → 该文件是
 grep -n "^| [0-9]" calvin/BOOK_ID/*.md     # 有此行的文件 → 该章首个表格被截断
 ```
 
+### 已知坑：脚注分隔符 `---` 导致最后一段被 Kramdown 识别为 `<h2>`（发布环节）
+
+**症状**：章节最后一个正文段落（如 `**31.** ...`）渲染为粗体居中大字（`<h2>` 样式）。
+
+**原因**：`build_fn_section` 中用 `'\n---\n'` 开头，而 `content.strip()` 去掉了末尾换行，导致 MD 文件中最后一段与 `---` 之间没有空行：
+```
+Mark the end that God has in view...
+---
+[^36]: ...
+```
+Kramdown 把 `---` 紧接在段落后视为 Setext 下划线，将该段升为 `<h2>`。
+
+**修复**：`build_fn_section` 开头必须用两个换行：
+```python
+# 错误：
+parts = ['\n---\n']
+
+# 正确：
+parts = ['\n\n---\n']
+```
+这样保证脚注分隔线前始终有一个空行，无论 `content.strip()` 是否移除末尾换行。
+
 ### Step 2：创建 Layout 文件
 
 如果 `_layouts/calvin-en.html` 和 `_layouts/calvin-en-book.html` 不存在，从腓立比书英文版复制后修改，或重新创建：
 
 - **`_layouts/calvin-en.html`**：正文页，渲染 Markdown，含前后章导航
 - **`_layouts/calvin-en-book.html`**：书卷目录页，列出 Preface + Chapter 1–N
+
+**序言文件名必须是 `preface.md`**：`calvin-en-book.html` 的目录页硬编码链接 `/calvin/BOOK_ID/preface/`。publish 脚本中第一个 section（`'introduction'` label）输出文件名必须写 `preface.md`，标题写 `Translator's Preface`，导航 label 也用 `preface`。若写成 `introduction.md` 则目录页链接 404，序言内容无法访问。
 
 关键样式（`calvin-en.html` 内）：
 ```css

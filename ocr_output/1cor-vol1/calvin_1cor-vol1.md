@@ -717,6 +717,7 @@ is not at all inconsistent with this statement. For what is the design of that s
 <!-- PAGE 76 -->
 
 Who hath been God’s counselor? Who hath weighed his Spirit, [^142] (Isaiah 40:13,)
+{: style="text-align: center"}
 
 or hath aided him both in the creation of the world and in his other works? and, in fine, who hath comprehended the reason of his works? Now, in like manner Paul, by this interrogation, designs to teach, that his secret counsel which is contained in the gospel is far removed from the understanding of men. This then is a confirmation of the preceding statement.
 
@@ -1161,6 +1162,7 @@ As often as two or three are gathered together in my name, I am in the midst of 
 it follows, that whatever is done in such an assembly is a work of Christ. Hence we infer, of what importance excommunication, rightly administered, is in the sight of God, inasmuch as it rests upon the power of God. For that saying, too, must be accomplished,
 
 Whatsoever ye shall bind on earth shall be bound in heaven. (Matthew 18:18.)
+{: style="text-align: center"}
 
 As, however, this statement ought to fill despisers [^278] with no ordinary alarm, so faithful pastors, as well as the Churches generally, are by this admonished in what a devout spirit [^279] they should go to work in a matter of such importance. For it is certain that the power of Christ is not tied to the inclination or opinions of mankind, but is associated with his eternal truth.
 
@@ -1422,6 +1424,7 @@ and the like. Hence some, in order to avoid this inconsistency, understand the w
 *And ye are not your own.* Here we have a *second* argument — that we are not at our own disposal, that we should live according to our own pleasure. He proves this from the fact that the Lord has purchased us for himself, by paying the price of our redemption. There is a similar statement in Romans 14:9
 
 To this end Christ died and rose again, that he might be Lord of the living and the dead.
+{: style="text-align: center"}
 
 Now the word rendered *price* may be taken in two ways; either simply, as we commonly say of anything that it has cost a price, [^364] when we mean that it has not been got for nothing; or, as used instead of the adverb τιμίως *at a dear rate*, as we are accustomed to say of things that have cost us much. This latter view pleases me better. In the same way Peter says, Ye are redeemed, not with gold and silver, but with the precious [^365] blood of the Lamb, without spot. (1 Peter 1:18,19.)
 
@@ -1485,6 +1488,7 @@ This vice, it is true, was corrected in some measure by the ancient canons; for 
 *That ye may have leisure for fasting and prayer.* We must take notice, that Paul does not speak here of every kind of *fasting*, or every kind of prayer. That sobriety and temperance, which ought to be habitual on the part of Christians, is a kind of *fasting. Prayer*, too, ought to be not merely daily, but even continual. He speaks, however, of that kind of *fasting* which is a solemn expression of penitence, with the view of deprecating God’s anger, or by which believers prepare themselves for *prayer*, when they are undertaking some important business. In like manner, the kind of *prayer* that he speaks of is such as requires a more intense affection of the mind. [^375] For it sometimes happens, that. we require (leaving off everything else) to *fast* and *pray*; as when any calamity is impending, if it appears to be a visitation of God’s wrath; or when we are involved in any difficult matter, or when we have something of great importance to do, as, for example, the ordaining of pastors. [^376] Now it is with propriety that the Apostle connects these two things, because *fasting* is a preparation for *prayer*, as Christ also connects them, when he says,
 
 This kind of devils goeth not out but by fasting and prayer. (Matthew 17:21.)
+{: style="text-align: center"}
 
 When, therefore, Paul says, *that ye may be at leisure*, the meaning is, that having freed ourselves from all impediments, we may apply ourselves to this one thing. Now if any one objects, that the use of the marriage bed is an evil thing, inasmuch as it hinders *prayer*, the answer is easy — that it is not on that account worse than meat and drink, by which *fasting* is hindered. But it is the part of believers to consider wisely *when* it is time to eat and drink, and *when* to fast. It is also the part of the same wisdom to have intercourse with their wives when it is seasonable, and to refrain from that intercourse when they are called to be engaged otherwise.
 
@@ -2040,6 +2044,7 @@ He adds the particle *as*, to intimate that his liberty was not at all impaired 
 **22.** *To the weak I became as weak* Now again he employs a general statement, in which he shows to what sort of persons he accomodated himself, and with what design. He judaized in the presence of the Jews, but not before them all, for there were many headstrong persons, who, under the influence of Pharisaical pride or malice, would have wished that Christian liberty were altogether taken away. To those persons he would never have been so accommodating, for Christ would not have us care for persons of that sort.
 
 Let them alone, (says he,) they are blind, and leaders of the blind. (Matthew 15:14.)
+{: style="text-align: center"}
 
 Hence we must accommodate ourselves to the weak, not to the obstinate. [^501]
 
@@ -3117,6 +3122,7 @@ and this is what he immediately adds — that *the secrets of his heart are made
 Here again Chrysostom asks, how it comes to pass that prophecy is so effectual for arousing *unbelievers,* while Paul had said a little before that it was not given to them. He answers, that it was not given to them as a useless sign, but for the purpose of instructing them. For my part, however, I think that it will be simpler, and therefore more suitable, to say that it was not given to unbelievers, who perish, whose hearts
 
 Satan has blinded, that they may not see the light which shines forth from it.
+{: style="text-align: center"}
 
 <!-- PAGE 291 -->
 
@@ -3184,6 +3190,7 @@ The sacred word of God, too, retains the respect due to it, so that it is receiv
 “What is it, then,” you will say, “that is subjected to examination?”’ I answer — If any one were furnished with a full revelation, that man would undoubtedly, along with his gift, be above all scrutiny. There is, I say, no subjection, where there is a plenitude of revelation; but as God has ***“Non comtaee mansere comae; sed pectus anhelum,*** ***Et rabie fera corda tument: majorque videri,*** ***Nee mortale sonans, attlata est numine quando***
 
 ***Jam propiore dei.”*** ***“But when the headstrong god, not yet appeased,*** ***With holy frenzy had the Sibyl seized,*** ***Terror froze up her grisly hair; her breast*** ***Throbbing with holy fury, still expressed*** ***A greater horror, and she bigger seems,*** ***Swoln with the afflatus, whilst in holy screams***
+{: style="text-align: center"}
 
 ***She unfolds the hidden mysteries of fate.”*** *Virg. Aen.VI. 48-51.* — *Ed.* distributed his spirit to every one in a certain measure, in such a way that, even amidst the greatest abundance, there is always something wanting, it is not to be wondered, if no one is elevated to such a height, as to look down from aloft upon all others, and have no one to pass judgment upon him. We may now see how it is, that, without any dishonor to the Holy Spirit, his gifts admit of being examined. Nay more, where, after full examination, nothing is found that is worthy of reproof, there will still be something, that stands in need of polishing. The sum of all, therefore, is this — that the gift is subjected to examination in such a way, that whatever is set forth, the Prophets consider as to it — whether it has proceeded from the Spirit of God; for if it shall appear that the Spirit is the author of it, there is no room left for hesitation.
 {: style="text-align: center"}

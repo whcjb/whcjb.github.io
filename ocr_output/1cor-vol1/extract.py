@@ -680,8 +680,8 @@ for item in all_items:
         if '<table' not in text and '<tr' not in text:
             text = text.replace('|', '\\|')
         md_lines.append(f'\n{text}\n')
-        # Deep-indented items (>60pt) are centered citations in the PDF
-        if item.get('indent', 0) > 60:
+        # Indented items (>20pt, above normal paragraph indent of ~18pt) are centered citations in the PDF
+        if item.get('indent', 0) > 20:
             md_lines.append('{: style="text-align: center"}\n')
 
 # Append footnote definitions
