@@ -318,9 +318,7 @@ def spans_to_text(spans):
         parts.append(part)
         prev_y = cur_y
     result = ''.join(parts)
-    # Fix italic markers: move trailing space outside: '*text *' → '*text* '
-    result = re.sub(r'\*([^*]+?) \*', r'*\1* ', result)
-    # Collapse multiple spaces (including those created by italic fix)
+    # Collapse multiple spaces
     result = re.sub(r' {2,}', ' ', result)
     return result.strip()
 

@@ -356,6 +356,36 @@ def build_table(header_text, rows):
         lines.append(f'<tr><td>{en_esc}</td><td>{la_esc}</td></tr>')
 ```
 
+### 4.9 `spans_to_text`：不得包含跨 span 的后处理正则
+
+**症状**：某些段落中斜体标记错位，如 `*By the will of God* While...to* acknowledge*`（`God*` 后的 `*` 消失，`to` 后多了 `*`），整段斜体格式混乱。
+
+**原因**：原始 `spans_to_text` 包含一条"修补"正则 `re.sub(r'\*([^*]+?) \*', r'*\1* ', result)`，用来把 `*text *`（尾部空格在 `*` 之内）修正为 `*text* `。但该正则没有感知 span 边界，在多个斜体 span 拼接后的字符串上全局匹配，会把 `*italic1* plaintext *italic2*` 中的第一个 `*` 和第二个 `*` 之间的整段文字当作一个 match，产生错误替换。
+
+**修复**：`format_span` 已经正确把空白移到标记外，`*text *` 不再出现，该正则已无用且有害，**直接删除**：
+
+```python
+def spans_to_text(spans):
+    parts = []
+    for span in spans:
+        part = format_span(span)
+        if not part:
+            continue
+        if parts:
+            prev = parts[-1]
+            needs_space = (prev and not prev[-1].isspace()
+                           and not part[0].isspace()
+                           and part[0] not in '.,;:!?)\'"*_-')
+            if needs_space:
+                parts.append(' ')
+        parts.append(part)
+    result = ''.join(parts)
+    result = re.sub(r' {2,}', ' ', result)   # collapse double spaces only
+    return result.strip()
+```
+
+**不要写** `re.sub(r'\*([^*]+?) \*', ...)` 或任何跨 span 边界的斜体修补正则。
+
 ### 4.8 `format_span`：斜体/加粗 span 开头的空白必须移出标记之外
 
 **症状**：页面上某些节号段落（如 `**3.** Grace be to you and peace For an exposition...`）显示居中，且斜体格式丢失——节名引用变成普通文字并附带字面星号（`* Grace be to you and peace*`）。
