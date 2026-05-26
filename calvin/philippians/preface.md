@@ -228,72 +228,72 @@ next_label: "第一章"
 
 
 
-[^ft1]: Les Eloges des Hommes Savans."— 第一卷，第240页。
+[^f1]: Les Eloges des Hommes Savans."— 第一卷，第240页。
 
 
-[^ft2]: 《加尔文的功绩》，第6、31页。
+[^f2]: 《加尔文的功绩》，第6、31页。
 
 
-[^ft3]: 同上，第65、66页。
+[^f3]: 同上，第65、66页。
 
 
-[^ft4]: 《加尔文文集》，第一卷：
+[^f4]: 《加尔文文集》，第一卷：
 
 
-[^ft5]: 《加尔文与瑞士改教运动》，第350页。
+[^f5]: 《加尔文与瑞士改教运动》，第350页。
 
 
-[^ft6]: 纽约梅森博士
+[^f6]: 纽约梅森博士
 
 
-[^ft7]: 福斯特《文集》（伦敦，1819年），第5页。
+[^f7]: 福斯特《文集》（伦敦，1819年），第5页。
 
 
-[^ft8]: 《犹太人宣教调查记》，第339页。
+[^f8]: 《犹太人宣教调查记》，第339页。
 
 
-[^ft9]: 伊迪《圣经百科全书》，"歌罗西书"条目。
+[^f9]: 伊迪《圣经百科全书》，"歌罗西书"条目。
 
 
-[^ft10]: 豪氏文集（Lond. 1822），第3卷，第435页。
+[^f10]: 豪氏文集（Lond. 1822），第3卷，第435页。
 
 
-[^ft11]: 《图解注释》，第5卷，第297页。
+[^f11]: 《图解注释》，第5卷，第297页。
 
 
-[^ft12]: 富勒文集，第4卷：
+[^f12]: 富勒文集，第4卷：
 
 
-[^ft13]: 《加尔文论文集》，第1卷：
+[^f13]: 《加尔文论文集》，第1卷：
 
 
 
 
-[^ft14]: 凯撒在帖撒利平原法萨卢斯击败庞培的著名战役，有时被诗人们与马其顿的腓立比相混淆。（参见维吉尔《农事诗》1.490，尤维纳利斯8:242。）两地之所以偶被混同，似乎源于帖撒利法萨卢斯附近有一座名为腓立比的城镇，其原名为底比斯，为与庇俄提亚的底比斯相区别，故称"帖撒利底比斯"或"弗提奥提卡底比斯"，后落入马其顿王腓力之手，遂以征服者之名改称腓立比或腓立比城。——编者注
+[^f14]: 凯撒在帖撒利平原法萨卢斯击败庞培的著名战役，有时被诗人们与马其顿的腓立比相混淆。（参见维吉尔《农事诗》1.490，尤维纳利斯8:242。）两地之所以偶被混同，似乎源于帖撒利法萨卢斯附近有一座名为腓立比的城镇，其原名为底比斯，为与庇俄提亚的底比斯相区别，故称"帖撒利底比斯"或"弗提奥提卡底比斯"，后落入马其顿王腓力之手，遂以征服者之名改称腓立比或腓立比城。——编者注
 
 
 <!-- PAGE 112 -->
 
 
-[^ft15]: 狄奥·卡西乌斯指出，此役乃内战期间所有战役中最为关键者，因为它决定了罗马自由的命运——此后的争夺已非为自由而战，而是为罗马人将侍奉哪位主人而战。因战场在腓立比平原，苏维托尼乌斯称之为 Philippense bellum（腓立比之战），见《奥古斯都传》13；普林尼称之为 Philippense praelium（腓立比之役）。——编者注
+[^f15]: 狄奥·卡西乌斯指出，此役乃内战期间所有战役中最为关键者，因为它决定了罗马自由的命运——此后的争夺已非为自由而战，而是为罗马人将侍奉哪位主人而战。因战场在腓立比平原，苏维托尼乌斯称之为 Philippense bellum（腓立比之战），见《奥古斯都传》13；普林尼称之为 Philippense praelium（腓立比之役）。——编者注
 
 
-[^ft16]: "Vne vision enuoyee de Dieu;"——"一个从神而来的异象。"
+[^f16]: "Vne vision enuoyee de Dieu;"——"一个从神而来的异象。"
 
 
-[^ft17]: "Auoyent essayer les esbranler;"——"曾试图动摇他们。"
+[^f17]: "Auoyent essayer les esbranler;"——"曾试图动摇他们。"
 
 
-[^ft18]: "De s'apprestre a tout ce qu'il plaira a Dieu leur enuoyer;"——"预备好迎接神所喜悦降临在他们身上的一切。"
+[^f18]: "De s'apprestre a tout ce qu'il plaira a Dieu leur enuoyer;"——"预备好迎接神所喜悦降临在他们身上的一切。"
 
 
-[^ft19]: "Et pour leur donner courage, afin qu'ils ne se laissent cependant abuser;"——"为鼓励他们，使他们在此期间不至于误入歧途。"
+[^f19]: "Et pour leur donner courage, afin qu'ils ne se laissent cependant abuser;"——"为鼓励他们，使他们在此期间不至于误入歧途。"
 
 
-[^ft20]: "Il excuse Epaphrodite de ce qu'il auoit tant demeuré sans retourner vers eux;"——"他为以巴弗提辩解，说明他为何久留而未返回他们那里。"
+[^f20]: "Il excuse Epaphrodite de ce qu'il auoit tant demeuré sans retourner vers eux;"——"他为以巴弗提辩解，说明他为何久留而未返回他们那里。"
 
 
-[^ft21]: "Pour laquelle ils debatoyent, voulans qu'elle fust obseruee;"——"他们为此争辩，渴望这律法得以遵守。"
+[^f21]: "Pour laquelle ils debatoyent, voulans qu'elle fust obseruee;"——"他们为此争辩，渴望这律法得以遵守。"
 
 
-[^ft22]: "Arrogance et vanterie;"——"傲慢与自夸。"
+[^f22]: "Arrogance et vanterie;"——"傲慢与自夸。"

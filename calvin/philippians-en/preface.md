@@ -206,70 +206,70 @@ He begins the Fourth Chapter with particular admonitions, but proceeds afterward
 ---
 
 
-[^ft3]: Ibid ., pp. 65, 66.
+[^f3]: Ibid ., pp. 65, 66.
 
 
-[^ft4]: CALVIN’STracts, vol. 1:
+[^f4]: CALVIN’STracts, vol. 1:
 
 
-[^ft5]: “CALVIN and the Swiss Reformation,”p. 350.
+[^f5]: “CALVIN and the Swiss Reformation,”p. 350.
 
 
-[^ft6]: Dr. Mason of New York
+[^f6]: Dr. Mason of New York
 
 
-[^ft7]: Foster’s Essays, (Lond. 1819,) p. 5.
+[^f7]: Foster’s Essays, (Lond. 1819,) p. 5.
 
 
-[^ft8]: “Narrative of a Mission of Inquiry to the Jews,”p. 339.
+[^f8]: “Narrative of a Mission of Inquiry to the Jews,”p. 339.
 
 
-[^ft9]: Eadie’s Biblical Cyclopædia, Art. Colossians.
+[^f9]: Eadie’s Biblical Cyclopædia, Art. Colossians.
 
 
-[^ft10]: Howe’s Works, (Lond. 1822,) vol. 3. p. 435.
+[^f10]: Howe’s Works, (Lond. 1822,) vol. 3. p. 435.
 
 
-[^ft11]: Illustrated Commentary , vol. 5:p. 297.
+[^f11]: Illustrated Commentary , vol. 5:p. 297.
 
 
-[^ft12]: Fuller’s Works, vol. 4:
+[^f12]: Fuller’s Works, vol. 4:
 
 
-[^ft13]: CALVIN’STracts, vol. 1:.
+[^f13]: CALVIN’STracts, vol. 1:.
 
 
-[^ft14]: Caesar’s celebrated victory over Pompey took place on the plains of Pharsalia, in Thessaly, with which Philippi in Macedonia is sometimes confounded by the poets. (See Virg. G. I. 490, Juvenal, 8:242.) Their being sometimes confounded with each other appears to have arisen from the circumstance that there was near Pharsalos, in Thessaly, a town named Philippi, the original name of which was Thebae, distinguished from Thebae in Bœotia by its being called Thebae Thessaliae , or Phthioticae , but having fallen under the power of Philip, King of Macedon, was in honor of the conqueror called Philippi , or Philippopolis . — Ed.
+[^f14]: Caesar’s celebrated victory over Pompey took place on the plains of Pharsalia, in Thessaly, with which Philippi in Macedonia is sometimes confounded by the poets. (See Virg. G. I. 490, Juvenal, 8:242.) Their being sometimes confounded with each other appears to have arisen from the circumstance that there was near Pharsalos, in Thessaly, a town named Philippi, the original name of which was Thebae, distinguished from Thebae in Bœotia by its being called Thebae Thessaliae , or Phthioticae , but having fallen under the power of Philip, King of Macedon, was in honor of the conqueror called Philippi , or Philippopolis . — Ed.
 
 
 <!-- PAGE 112 -->
 
 
-[^ft15]: The decisive engagement referred to was, as Dio Cassius observes, the most important of all that were fought during the civil wars, as it determined the fate of Roman liberty, so that the contest thenceforward was not for freedom, but — what master the Romans should serve. From its having been fought on the plains of Philippi, it is called by Suetonius Philippense bellum , ( the battle of Philippi ,) Suet. Aug. 13; and by Pliny, Philippense praelium, ( the engagement at Philippi . ) — Ed.
+[^f15]: The decisive engagement referred to was, as Dio Cassius observes, the most important of all that were fought during the civil wars, as it determined the fate of Roman liberty, so that the contest thenceforward was not for freedom, but — what master the Romans should serve. From its having been fought on the plains of Philippi, it is called by Suetonius Philippense bellum , ( the battle of Philippi ,) Suet. Aug. 13; and by Pliny, Philippense praelium, ( the engagement at Philippi . ) — Ed.
 
 
-[^ft16]: “Vne vision enuoyee de Dieu;”— “A vision sent from God.”
+[^f16]: “Vne vision enuoyee de Dieu;”— “A vision sent from God.”
 
 
-[^ft17]: “Auoyent essayer les esbranler;”— “Had attempted to shake them.”
+[^f17]: “Auoyent essayer les esbranler;”— “Had attempted to shake them.”
 
 
-[^ft18]: “De s’apprestre a tout ce qu’il plaira a Dieu leur enuoyer;”— “To be prepared for everything that it shall please God to send upon them.”
+[^f18]: “De s’apprestre a tout ce qu’il plaira a Dieu leur enuoyer;”— “To be prepared for everything that it shall please God to send upon them.”
 
 
-[^ft19]: “Et pour leur donner courage, afin qu’ils ne se laissent cependant abuser;”— “And with the view of encouraging them, that they may not allow themselves in the meantime to go astray.”
+[^f19]: “Et pour leur donner courage, afin qu’ils ne se laissent cependant abuser;”— “And with the view of encouraging them, that they may not allow themselves in the meantime to go astray.”
 
 
-[^ft20]: “Il excuse Epaphrodite de ce qu’il auoit tant demeuré sans retourner vers eux;”— “He excuses Epaphroditus for having remained so long, instead of returning to them.”
+[^f20]: “Il excuse Epaphrodite de ce qu’il auoit tant demeuré sans retourner vers eux;”— “He excuses Epaphroditus for having remained so long, instead of returning to them.”
 
 
-[^ft21]: “Pour laquelle ils debatoyent, voulans qu’elle fust obseruee;”— “For which they contended, being desirous that it should be observed.”
+[^f21]: “Pour laquelle ils debatoyent, voulans qu’elle fust obseruee;”— “For which they contended, being desirous that it should be observed.”
 
 
-[^ft22]: “Arrogance et vanterie;”— “Arrogance and boasting.”
+[^f22]: “Arrogance et vanterie;”— “Arrogance and boasting.”
 
 
-[^ft23]: “Toutes les fois que i’ay souuenance de vous, ou , auec entiere souuenance de vous;”— “Every time that I have remembrance of you, or , with constant remembrance of you.”
+[^f23]: “Toutes les fois que i’ay souuenance de vous, ou , auec entiere souuenance de vous;”— “Every time that I have remembrance of you, or , with constant remembrance of you.”
 
 
-[^ft24]: “Sans se desbaucher;”— “Without corrupting themselves.”
+[^f24]: “Sans se desbaucher;”— “Without corrupting themselves.”

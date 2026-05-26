@@ -312,13 +312,13 @@ Here, however, some one will inquire, whether the <span style="color:#800000">*c
 8\. <span style="color:#800000">*For God is my witness.*</span> He now declares more explicitly his affection for them, and, with the view of giving proof of it, he makes use of an oath, and that on good grounds, because we know how dear in the sight of God is the edification of his Church. It was, too, more especially of advantage, that Paul’s affection should be thoroughly made known to the Philippians. For it tends in no small degree to secure credit for the doctrine, when the people are persuaded that they are beloved by the teacher. He calls God as a witness to the truth, inasmuch as he alone is the Truth, and as a witness of his affection, inasmuch as he alone is the searcher of hearts. In the word rendered <span style="color:#800000">*long after*</span> , a particular term is made use of instead of a general, and it is a token of affection, inasmuch as we <span style="color:#800000">*long after*</span> those things which are dear to us.
 
 
-<span style="color:#800000">*In the bowels*</span> . He places the <span style="color:#800000">*bowels of Christ*</span> in opposition to carnal affection, to intimate that his affection is holy and pious. For the man that loves according to the flesh has respect to his own advantage, and may from time to time change his mind according to the variety of circumstances and seasons. In the meantime he instructs us by what rule the affections of believers ought to be regulated, so that, renouncing their own will, they may allow Christ to sit at the helm. And, unquestionably, true love can flow from no other source than from the <span style="color:#800000">*bowels of Christ*</span> , and this, like a goad, ought to affect us not a little — that Christ in a manner opens his <span style="color:#800000">*bowels*</span> , that by them he may cherish mutual affection between us. [^ft47]
+<span style="color:#800000">*In the bowels*</span> . He places the <span style="color:#800000">*bowels of Christ*</span> in opposition to carnal affection, to intimate that his affection is holy and pious. For the man that loves according to the flesh has respect to his own advantage, and may from time to time change his mind according to the variety of circumstances and seasons. In the meantime he instructs us by what rule the affections of believers ought to be regulated, so that, renouncing their own will, they may allow Christ to sit at the helm. And, unquestionably, true love can flow from no other source than from the <span style="color:#800000">*bowels of Christ*</span> , and this, like a goad, ought to affect us not a little — that Christ in a manner opens his <span style="color:#800000">*bowels*</span> , that by them he may cherish mutual affection between us. [^f47]
 
 
 <!-- PAGE 24 -->
 
 
-9\. <span style="color:#800000">*This I pray that your love*</span> . He returns to the prayer, which he had simply touched upon in one word in passing. He states, accordingly, the sum of those things which he asked from God in their behalf, that they also may learn to pray after his example, and may aspire at proficiency in those gifts. The view taken by some, as though the <span style="color:#800000">*love of the Philippians*</span> denoted the Philippians themselves, as illiterate persons are accustomed very commonly to say, “Your reverence,”— “Your paternity,”is absurd. For no instance of such an expression occurs in the writings of Paul, nor had such fooleries come into use. Besides, the statement would be less complete, and, independently of this, the simple and natural meaning of the words suits admirably well. For the true attainments of Christians are when they make progress in <span style="color:#800000">*knowledge*</span> , and <span style="color:#800000">*understanding*</span> , and afterwards in <span style="color:#800000">*love*</span> . Accordingly the particle <span style="color:#800000">*in*</span> , according to the idiom of the Hebrew tongue, is taken here to mean <span style="color:#800000">*with*</span> , as I have also rendered it, unless perhaps one should prefer to explain it as meaning by , so as to denote the instrument or formal cause. For, the greater proficiency we make in <span style="color:#800000">*knowledge*</span> , so much the more ought our love to increase. The meaning in that case would be, “That your love may increase according to the measure of knowledge.” <span style="color:#800000">*All knowledge*</span> , means what is full and complete — not a knowledge of all things. [^ft48]
+9\. <span style="color:#800000">*This I pray that your love*</span> . He returns to the prayer, which he had simply touched upon in one word in passing. He states, accordingly, the sum of those things which he asked from God in their behalf, that they also may learn to pray after his example, and may aspire at proficiency in those gifts. The view taken by some, as though the <span style="color:#800000">*love of the Philippians*</span> denoted the Philippians themselves, as illiterate persons are accustomed very commonly to say, “Your reverence,”— “Your paternity,”is absurd. For no instance of such an expression occurs in the writings of Paul, nor had such fooleries come into use. Besides, the statement would be less complete, and, independently of this, the simple and natural meaning of the words suits admirably well. For the true attainments of Christians are when they make progress in <span style="color:#800000">*knowledge*</span> , and <span style="color:#800000">*understanding*</span> , and afterwards in <span style="color:#800000">*love*</span> . Accordingly the particle <span style="color:#800000">*in*</span> , according to the idiom of the Hebrew tongue, is taken here to mean <span style="color:#800000">*with*</span> , as I have also rendered it, unless perhaps one should prefer to explain it as meaning by , so as to denote the instrument or formal cause. For, the greater proficiency we make in <span style="color:#800000">*knowledge*</span> , so much the more ought our love to increase. The meaning in that case would be, “That your love may increase according to the measure of knowledge.” <span style="color:#800000">*All knowledge*</span> , means what is full and complete — not a knowledge of all things. [^f48]
 
 
 10\. <span style="color:#800000">*That ye may approve the things that are*</span> . Here we have a definition of Christian wisdom — to know what is advantageous or expedient — not to torture the mind with empty subtleties and speculations. For the Lord does not wish that his believing people should employ themselves fruitlessly in learning what is of no profit: From this you may gather in what estimation the Sorbonnic theology ought to be held, in which you may spend your whole life, and yet not derive more of edification from it in connection with the hope of a heavenly life, or more of spiritual advantage, than from the demonstrations of Euclid. Unquestionably, although it taught nothing false, it well deserves to be execrable, on the ground that it is a pernicious profanation of spiritual doctrine. For Scripture is useful , as Paul says, in 2 Timothy 3:16, but there you will find nothing but cold subtleties of words.
@@ -405,7 +405,7 @@ It is asked, however, how such preaching could be injurious to him? I answer, th
 <span style="color:#800000">*Through your prayer*</span> . That he may stir them up to pray more ardently, he declares that he is confident that the Lord will give them an answer to their prayers. Nor does he use dissimulation: for he who depends for help on the prayers of the saints relies on the promise of God. In the mean time, nothing is detracted from the unmerited goodness of God, on which depend our prayers, and what is obtained by means of them.
 
 
-<span style="color:#800000">*And the supply*</span> . Let us not suppose, that because he joins these two things in one connection, they are consequently alike. The statement must, therefore, be explained in this manner: — “I know that all this will turn out to my advantage, through the administration of the Spirit, you also helping by prayer,”— so that the supply of the Spirit is the efficient cause, while prayer is a subordinate help. We must also observe the propriety of the Greek term, for ἐπιχορηγία is employed to mean the furnishing of what is wanting, [^ft79] just as the Spirit of God pours into us everything of which we are destitute.
+<span style="color:#800000">*And the supply*</span> . Let us not suppose, that because he joins these two things in one connection, they are consequently alike. The statement must, therefore, be explained in this manner: — “I know that all this will turn out to my advantage, through the administration of the Spirit, you also helping by prayer,”— so that the supply of the Spirit is the efficient cause, while prayer is a subordinate help. We must also observe the propriety of the Greek term, for ἐπιχορηγία is employed to mean the furnishing of what is wanting, [^f79] just as the Spirit of God pours into us everything of which we are destitute.
 
 
 He calls him, too, the <span style="color:#800000">*Spirit of Jesus Christ*</span> , to intimate, that if we are Christians, he is common to all of us, inasmuch as he was poured upon him with all fullness, that, according to the measure of his grace, he might give out, so far as is expedient, to each of his members.
@@ -459,7 +459,7 @@ He adds, <span style="color:#800000">*as always*</span> , that they may confirm 
 <span style="color:#800000">*To be set free*</span> . This form of expression is to be observed. Profane persons speak of death as the destruction of man, as if he altogether perished. Paul here reminds us, that death is the separation of the soul from the body. And this he expresses more fully immediately afterwards, explaining as to what condition awaits believers after death — that of <span style="color:#800000">*dwelling with Christ*</span> . We are with Christ even in this life, inasmuch as the kingdom of God is within us , ( Luke 17:21,) and Christ dwells in us by faith, ( Ephesians 3:17,) and has promised that he will be with us even unto the end of the world , ( Matthew 28:20,) but that presence we enjoy only in hope. Hence as to our feeling, we are said to be at present at a distance from him. See 2 Corinthians 5:6. This passage is of use for setting aside the mad fancy of those who dream that souls sleep when separated from the body, for Paul openly declares that we enjoy Christ’s presence on being set free from the body.
 
 
-25\. <span style="color:#800000">*And having this confidence*</span> . Some, reckoning it an inconsistent thing that the Apostle [^ft82] should acknowledge himself to have been disappointed of his expectation, are of opinion that he was afterwards freed from bonds, and went over many countries of the world. Their fears, however, as to this are groundless, for the saints are accustomed to regulate their expectations according to the word of God, so as not to promise themselves more than God has promised. Thus, when they have a sure token of God’s will, they in that case place their reliance also upon a sure persuasion, which admits of no hesitation. Of this nature is a persuasion respecting a perpetual remission of sins, respecting the aid of the Spirit for the grace of final perseverance, (as it is called,) and respecting the resurrection of the flesh. Of this nature, also, was the assurance of the Prophets respecting their prophecies. As to other things, they expect nothing except conditionally, and hence they subject all events to the providence of God, who, they allow, sees more distinctly than they. To <span style="color:#800000">*remain*</span> , means here, to stay for a little while: to <span style="color:#800000">*continue*</span> , means, to remain for a long time.
+25\. <span style="color:#800000">*And having this confidence*</span> . Some, reckoning it an inconsistent thing that the Apostle [^f82] should acknowledge himself to have been disappointed of his expectation, are of opinion that he was afterwards freed from bonds, and went over many countries of the world. Their fears, however, as to this are groundless, for the saints are accustomed to regulate their expectations according to the word of God, so as not to promise themselves more than God has promised. Thus, when they have a sure token of God’s will, they in that case place their reliance also upon a sure persuasion, which admits of no hesitation. Of this nature is a persuasion respecting a perpetual remission of sins, respecting the aid of the Spirit for the grace of final perseverance, (as it is called,) and respecting the resurrection of the flesh. Of this nature, also, was the assurance of the Prophets respecting their prophecies. As to other things, they expect nothing except conditionally, and hence they subject all events to the providence of God, who, they allow, sees more distinctly than they. To <span style="color:#800000">*remain*</span> , means here, to stay for a little while: to <span style="color:#800000">*continue*</span> , means, to remain for a long time.
 
 
 26\. <span style="color:#800000">*That your glorying*</span> . The expression which he employs, ejn ἐμοί , I have rendered de me (as to me,) because the preposition is made use of twice, but in different senses. No one assuredly will deny that I have faithfully brought out Paul’s mind. The rendering given by some — per Christum, (through Christ,) I do not approve of. For <span style="color:#800000">*in Christ*</span> is employed in place of Secundum Christum, (According to Christ,) or Christiane, (Christianly,) to intimate that it was a holy kind of glorying . For otherwise we are commanded to glory in God alone . ( 1 Corinthians 1:31.) Hence malevolent persons might meet Paul with the objection, How is it allowable for the Philippians to glory as to thee? He anticipates this calumny by saying that they will do this <span style="color:#800000">*according to Christ*</span> — glorying in a servant of Christ, with a view to the glory of his Lord, and that with an eye to the doctrine rather than to the individual, and in opposition to the false apostles, just as David, by comparing himself with hypocrites, boasts of his righteousness. ( Psalm 7:8.)
@@ -1461,157 +1461,157 @@ He expressly makes mention of God as his, because he owns and acknowledges as do
 ## TRANSLATORS PREFACE
 
 
-[^ft1]: Les Eloges des Hommes Savans.”— Tom. 1:p. 240.
+[^f1]: Les Eloges des Hommes Savans.”— Tom. 1:p. 240.
 
 
-[^ft2]: “Merits of CALVIN ,”pp. 6, 31.
+[^f2]: “Merits of CALVIN ,”pp. 6, 31.
 
 
-[^ft3]: Ibid ., pp. 65, 66.
+[^f3]: Ibid ., pp. 65, 66.
 
 
-[^ft4]: CALVIN’STracts, vol. 1:
+[^f4]: CALVIN’STracts, vol. 1:
 
 
-[^ft5]: “CALVIN and the Swiss Reformation,”p. 350.
+[^f5]: “CALVIN and the Swiss Reformation,”p. 350.
 
 
-[^ft6]: Dr. Mason of New York
+[^f6]: Dr. Mason of New York
 
 
-[^ft7]: Foster’s Essays, (Lond. 1819,) p. 5.
+[^f7]: Foster’s Essays, (Lond. 1819,) p. 5.
 
 
-[^ft8]: “Narrative of a Mission of Inquiry to the Jews,”p. 339.
+[^f8]: “Narrative of a Mission of Inquiry to the Jews,”p. 339.
 
 
-[^ft9]: Eadie’s Biblical Cyclopædia, Art. Colossians.
+[^f9]: Eadie’s Biblical Cyclopædia, Art. Colossians.
 
 
-[^ft10]: Howe’s Works, (Lond. 1822,) vol. 3. p. 435.
+[^f10]: Howe’s Works, (Lond. 1822,) vol. 3. p. 435.
 
 
-[^ft11]: Illustrated Commentary , vol. 5:p. 297.
+[^f11]: Illustrated Commentary , vol. 5:p. 297.
 
 
-[^ft12]: Fuller’s Works, vol. 4:
+[^f12]: Fuller’s Works, vol. 4:
 
 
-[^ft13]: CALVIN’STracts, vol. 1:.
+[^f13]: CALVIN’STracts, vol. 1:.
 
 
 ## THE ARGUMENT
 
 
-[^ft14]: Caesar’s celebrated victory over Pompey took place on the plains of Pharsalia, in Thessaly, with which Philippi in Macedonia is sometimes confounded by the poets. (See Virg. G. I. 490, Juvenal, 8:242.) Their being sometimes confounded with each other appears to have arisen from the circumstance that there was near Pharsalos, in Thessaly, a town named Philippi, the original name of which was Thebae, distinguished from Thebae in Bœotia by its being called Thebae Thessaliae , or Phthioticae , but having fallen under the power of Philip, King of Macedon, was in honor of the conqueror called Philippi , or Philippopolis . — Ed.
+[^f14]: Caesar’s celebrated victory over Pompey took place on the plains of Pharsalia, in Thessaly, with which Philippi in Macedonia is sometimes confounded by the poets. (See Virg. G. I. 490, Juvenal, 8:242.) Their being sometimes confounded with each other appears to have arisen from the circumstance that there was near Pharsalos, in Thessaly, a town named Philippi, the original name of which was Thebae, distinguished from Thebae in Bœotia by its being called Thebae Thessaliae , or Phthioticae , but having fallen under the power of Philip, King of Macedon, was in honor of the conqueror called Philippi , or Philippopolis . — Ed.
 
 
 <!-- PAGE 112 -->
 
 
-[^ft15]: The decisive engagement referred to was, as Dio Cassius observes, the most important of all that were fought during the civil wars, as it determined the fate of Roman liberty, so that the contest thenceforward was not for freedom, but — what master the Romans should serve. From its having been fought on the plains of Philippi, it is called by Suetonius Philippense bellum , ( the battle of Philippi ,) Suet. Aug. 13; and by Pliny, Philippense praelium, ( the engagement at Philippi . ) — Ed.
+[^f15]: The decisive engagement referred to was, as Dio Cassius observes, the most important of all that were fought during the civil wars, as it determined the fate of Roman liberty, so that the contest thenceforward was not for freedom, but — what master the Romans should serve. From its having been fought on the plains of Philippi, it is called by Suetonius Philippense bellum , ( the battle of Philippi ,) Suet. Aug. 13; and by Pliny, Philippense praelium, ( the engagement at Philippi . ) — Ed.
 
 
-[^ft16]: “Vne vision enuoyee de Dieu;”— “A vision sent from God.”
+[^f16]: “Vne vision enuoyee de Dieu;”— “A vision sent from God.”
 
 
-[^ft17]: “Auoyent essayer les esbranler;”— “Had attempted to shake them.”
+[^f17]: “Auoyent essayer les esbranler;”— “Had attempted to shake them.”
 
 
-[^ft18]: “De s’apprestre a tout ce qu’il plaira a Dieu leur enuoyer;”— “To be prepared for everything that it shall please God to send upon them.”
+[^f18]: “De s’apprestre a tout ce qu’il plaira a Dieu leur enuoyer;”— “To be prepared for everything that it shall please God to send upon them.”
 
 
-[^ft19]: “Et pour leur donner courage, afin qu’ils ne se laissent cependant abuser;”— “And with the view of encouraging them, that they may not allow themselves in the meantime to go astray.”
+[^f19]: “Et pour leur donner courage, afin qu’ils ne se laissent cependant abuser;”— “And with the view of encouraging them, that they may not allow themselves in the meantime to go astray.”
 
 
-[^ft20]: “Il excuse Epaphrodite de ce qu’il auoit tant demeuré sans retourner vers eux;”— “He excuses Epaphroditus for having remained so long, instead of returning to them.”
+[^f20]: “Il excuse Epaphrodite de ce qu’il auoit tant demeuré sans retourner vers eux;”— “He excuses Epaphroditus for having remained so long, instead of returning to them.”
 
 
-[^ft21]: “Pour laquelle ils debatoyent, voulans qu’elle fust obseruee;”— “For which they contended, being desirous that it should be observed.”
+[^f21]: “Pour laquelle ils debatoyent, voulans qu’elle fust obseruee;”— “For which they contended, being desirous that it should be observed.”
 
 
-[^ft22]: “Arrogance et vanterie;”— “Arrogance and boasting.”
+[^f22]: “Arrogance et vanterie;”— “Arrogance and boasting.”
 
 
 ## CHAPTER 1
 
 
-[^ft23]: “Toutes les fois que i’ay souuenance de vous, ou , auec entiere souuenance de vous;”— “Every time that I have remembrance of you, or , with constant remembrance of you.”
+[^f23]: “Toutes les fois que i’ay souuenance de vous, ou , auec entiere souuenance de vous;”— “Every time that I have remembrance of you, or , with constant remembrance of you.”
 
 
-[^ft24]: “Sans se desbaucher;”— “Without corrupting themselves.”
+[^f24]: “Sans se desbaucher;”— “Without corrupting themselves.”
 
 
-[^ft25]: “ Evagrius , a native of Antioch, and a presbyter apparently of the Church of Antioch. He traveled into the west of Europe, and was acquainted with Jerome, who describes him as a man acris ac ferventis ingenii , ( of a keen and warm temper. )”— Smith’s Dictionary of Greek Biography and Mythology. — Ed.
+[^f25]: “ Evagrius , a native of Antioch, and a presbyter apparently of the Church of Antioch. He traveled into the west of Europe, and was acquainted with Jerome, who describes him as a man acris ac ferventis ingenii , ( of a keen and warm temper. )”— Smith’s Dictionary of Greek Biography and Mythology. — Ed.
 
 
-[^ft26]: The reader will find both of the passages referred to quoted at full length in the Institutes , vol. in. pp. 75, 76. — Ed.
+[^f26]: The reader will find both of the passages referred to quoted at full length in the Institutes , vol. in. pp. 75, 76. — Ed.
 
 
 <!-- PAGE 113 -->
 
 
-[^ft27]: “Depuis les temps de l’Apostre;”— “After the times of the Apostle.”
+[^f27]: “Depuis les temps de l’Apostre;”— “After the times of the Apostle.”
 
 
-[^ft28]: “Ordonnoyent conducteur de leur congregation;”— “Appointed leader of their congregation.”
+[^f28]: “Ordonnoyent conducteur de leur congregation;”— “Appointed leader of their congregation.”
 
 
-[^ft29]: “De chacun corps d’Eglise en particulier;”— “Of each body of the Church in particular.”
+[^f29]: “De chacun corps d’Eglise en particulier;”— “Of each body of the Church in particular.”
 
 
-[^ft30]: “Tous prestres et pasteurs;”— “All priests and pastors.”
+[^f30]: “Tous prestres et pasteurs;”— “All priests and pastors.”
 
 
-[^ft31]: “Vne protestation, qu’il est ioyeux de leur bien;”— “A protestation, that he is delighted on account of their welfare.”
+[^f31]: “Vne protestation, qu’il est ioyeux de leur bien;”— “A protestation, that he is delighted on account of their welfare.”
 
 
-[^ft32]: “Qui se reuoltent ou defaillent en chemin par legerete;”— “Who revolt or fall back in the way through fickleness.”
+[^f32]: “Qui se reuoltent ou defaillent en chemin par legerete;”— “Who revolt or fall back in the way through fickleness.”
 
 
-[^ft33]: “Qu’il se confioit d’eux qu’ils perseuereroyent de reste de leur vie;”— “That he had confidence in them that they would persevere during the remainder of their life.”
+[^f33]: “Qu’il se confioit d’eux qu’ils perseuereroyent de reste de leur vie;”— “That he had confidence in them that they would persevere during the remainder of their life.”
 
 
-[^ft34]: “Entre tant d’empeschemens, mauuais passages et fascheuses rencontres, voire mesme des dangers de tomber tout a plat en perdition;”— “Amidst so many impediments, hard passes, and disagreeable collisions, nay, even so many hazards of falling headlong into perdition.”
+[^f34]: “Entre tant d’empeschemens, mauuais passages et fascheuses rencontres, voire mesme des dangers de tomber tout a plat en perdition;”— “Amidst so many impediments, hard passes, and disagreeable collisions, nay, even so many hazards of falling headlong into perdition.”
 
 
-[^ft35]: See CALVIN on the Corinthians, vol. 2:
+[^f35]: See CALVIN on the Corinthians, vol. 2:
 
 
-[^ft36]: “Il ne se lasse point en bien faisant, et son thresor ne diminue point;”— “He does not weary himself in doing good, and does not diminish his treasure.”
+[^f36]: “Il ne se lasse point en bien faisant, et son thresor ne diminue point;”— “He does not weary himself in doing good, and does not diminish his treasure.”
 
 
-[^ft37]: “Enuieux et desdaigneux;”— “Envious and disdainful.”
+[^f37]: “Enuieux et desdaigneux;”— “Envious and disdainful.”
 
 
-[^ft38]: “Pour recognoistre le bien que Dieu leur a fait, et n’estre point ingrats enuers luy;”— “That we may acknowledge the kindness which God has shewn them, and may not be ungrateful to him.”
+[^f38]: “Pour recognoistre le bien que Dieu leur a fait, et n’estre point ingrats enuers luy;”— “That we may acknowledge the kindness which God has shewn them, and may not be ungrateful to him.”
 
 
-[^ft39]: “Extra teli jactum “— Virgil makes use of a corresponding phrase — “intra jactum teli;”— “Within the reach of a dart.”Virg. Æn. 11:608. — Ed.
+[^f39]: “Extra teli jactum “— Virgil makes use of a corresponding phrase — “intra jactum teli;”— “Within the reach of a dart.”Virg. Æn. 11:608. — Ed.
 
 
-[^ft40]: “En voye de proufiter, ou auancer;”— “In the way of making progress, or advancement.”
+[^f40]: “En voye de proufiter, ou auancer;”— “In the way of making progress, or advancement.”
 
 
-[^ft41]: “Aux entrailles de Jesus Christ, ou , Es cordiale affection de Jesus Christ;”— “In the bowels of Jesus Christ, or , In the cordial affection of Jesus Christ.”
+[^f41]: “Aux entrailles de Jesus Christ, ou , Es cordiale affection de Jesus Christ;”— “In the bowels of Jesus Christ, or , In the cordial affection of Jesus Christ.”
 
 
 <!-- PAGE 114 -->
 
 
-[^ft42]: “Maigres et desdaigneux;”— “Miserable and disdainful.”
+[^f42]: “Maigres et desdaigneux;”— “Miserable and disdainful.”
 
 
-[^ft43]: “Raison mesme et equite luy disent;”— “Even reason and equity tell him.”
+[^f43]: “Raison mesme et equite luy disent;”— “Even reason and equity tell him.”
 
 
-[^ft44]: “Ils seroyent si constans et fermes, qu’ils ne pourroyent estre aiseement induits a se reuolter laschement et desloyaument;”— “They would be so steadfast and firm, that they could not be easily induced to revolt in a cowardly and disloyal manner.”
+[^f44]: “Ils seroyent si constans et fermes, qu’ils ne pourroyent estre aiseement induits a se reuolter laschement et desloyaument;”— “They would be so steadfast and firm, that they could not be easily induced to revolt in a cowardly and disloyal manner.”
 
 
 > <verse>Ft45</verse> Sanctus at ille cruor, divini assertor honoris, Gignendam ad sobolem seminis instar erit.
 
 
-[^ft46]: “A l’imitation duquel au chant de victoire composé par moy en Latin en l’honneur de Jesus Christ, 1541, et lequel depuis a este reduit en rime Francois, i’ay dit : —
+[^f46]: “A l’imitation duquel au chant de victoire composé par moy en Latin en l’honneur de Jesus Christ, 1541, et lequel depuis a este reduit en rime Francois, i’ay dit : —
 
 
 > ‘Or le sang precieux par martyre espandu Pour auoir a son Dieu tesmoignage rendu, A l’Eglise de Dieu seruira de semence Dont enfans sorteront remplis d’intelligence.’ “
@@ -1623,82 +1623,82 @@ He expressly makes mention of God as his, because he owns and acknowledges as do
 > ‘But the precious blood shed by martyrs That it might be as a testimony rendered to its God, Will in the Church of God serve as seed From which children shall come forth, filled with understanding.’ “
 
 
-[^ft47]: Beza , when commenting on the expression, in the bowels of Jesus Christ , observes, “Alibi solet dicere, In Christo . Ut autem significet ex quo fonte promanet affectus iste, et quo etiam feratur, additum visceribus nomen magnum pondus addit sententiæ, ut intimus amor significetur. Solent enim Hebraei µymjr , rachamim , id est, viscera omnes teneros ac veluti maternos affectus vocare;”— “He is accustomed in other cases to say, In Christ . But to intimate from what fountain that affection flows, and in what direction also it tends, the addition of the term bowels adds great weight to the statement, so as to express intimate affection. For the Hebrews are accustomed to employ the term µymjr rachamim , that is, bowels , to denote all tender and as it were motherly affections.”— Ed.
+[^f47]: Beza , when commenting on the expression, in the bowels of Jesus Christ , observes, “Alibi solet dicere, In Christo . Ut autem significet ex quo fonte promanet affectus iste, et quo etiam feratur, additum visceribus nomen magnum pondus addit sententiæ, ut intimus amor significetur. Solent enim Hebraei µymjr , rachamim , id est, viscera omnes teneros ac veluti maternos affectus vocare;”— “He is accustomed in other cases to say, In Christ . But to intimate from what fountain that affection flows, and in what direction also it tends, the addition of the term bowels adds great weight to the statement, so as to express intimate affection. For the Hebrews are accustomed to employ the term µymjr rachamim , that is, bowels , to denote all tender and as it were motherly affections.”— Ed.
 
 
 <!-- PAGE 115 -->
 
 
-[^ft48]: “The word rendered judgment is capable of being rendered sense ( πάσῃ αἰσθήσει ) in all sense. ‘ I pray that you may have your spiritual senses in excerise — that you may have a judicious distinguishing sense.’ For what? Why, ‘ that ye may approve things that are excellent,’ — so it follows, or, as the words there may be read, to ‘ distinguish things that differ.’ “— Howe’s Works, (Lond. 1822,) vol. 5:p. 145. — Ed.
+[^f48]: “The word rendered judgment is capable of being rendered sense ( πάσῃ αἰσθήσει ) in all sense. ‘ I pray that you may have your spiritual senses in excerise — that you may have a judicious distinguishing sense.’ For what? Why, ‘ that ye may approve things that are excellent,’ — so it follows, or, as the words there may be read, to ‘ distinguish things that differ.’ “— Howe’s Works, (Lond. 1822,) vol. 5:p. 145. — Ed.
 
 
-[^ft49]: “Par ignorance et faute de prudence;”— “Through ignorance and want of prudence.”
+[^f49]: “Par ignorance et faute de prudence;”— “Through ignorance and want of prudence.”
 
 
-[^ft50]: “Bons et aimables;”— “Good and amiable.”
+[^f50]: “Bons et aimables;”— “Good and amiable.”
 
 
-[^ft51]: “Estans estonnez comme d’vne chose nouuelle et non ouye;”— “Being astonished as at a thing new and unheard of.”
+[^f51]: “Estans estonnez comme d’vne chose nouuelle et non ouye;”— “Being astonished as at a thing new and unheard of.”
 
 
-[^ft52]: “Et faux apostres;”— “And false apostles.”
+[^f52]: “Et faux apostres;”— “And false apostles.”
 
 
-[^ft53]: “En prenant ceste dangereuse accointance de S. Paul;”— “By contracting this dangerous acquaintance with St. Paul.”
+[^f53]: “En prenant ceste dangereuse accointance de S. Paul;”— “By contracting this dangerous acquaintance with St. Paul.”
 
 
-[^ft54]: “Afin qu’ils ne soyent point destournex;”— “That they may not be turned aside.”
+[^f54]: “Afin qu’ils ne soyent point destournex;”— “That they may not be turned aside.”
 
 
-[^ft55]: “Ses liens ont este rendus celebres, et ont excellement serui a auancer la gloire de Christ;”— “His bonds had become celebrated, and had admirably contributed to advance the glory of Christ.”
+[^f55]: “Ses liens ont este rendus celebres, et ont excellement serui a auancer la gloire de Christ;”— “His bonds had become celebrated, and had admirably contributed to advance the glory of Christ.”
 
 
-[^ft56]: “Pource qu’il entend que le bruit qui auoit este de ses liens, auoit donné grand bruit a l’Euangile;”— “Because he means that the fame, which had arisen from his bonds, had given great fame to the gospel.”
+[^f56]: “Pource qu’il entend que le bruit qui auoit este de ses liens, auoit donné grand bruit a l’Euangile;”— “Because he means that the fame, which had arisen from his bonds, had given great fame to the gospel.”
 
 
-[^ft57]: “Dieu a aneanti les efforts malicieux de Satan, et a frustré les meschans de leur attente;”— “God has made void the malicious efforts of Satan, and has disappointed the wicked of their expectation.”
+[^f57]: “Dieu a aneanti les efforts malicieux de Satan, et a frustré les meschans de leur attente;”— “God has made void the malicious efforts of Satan, and has disappointed the wicked of their expectation.”
 
 
-[^ft58]: Our author has most probably in view an expression which occurs in the writings of Quinctilian , (Instit. Orator., lib. 8, 2, 8,) — “tabernaculum ducis Augustale;”— (“a general’s tent is called the Augustal.”) In the best editions of Quinctilian, however, the reading of Augurale , as synonymous with auguraculum , or auguratorium ; — ( an apartment for the augur’s taking omens. ) — Ed.
+[^f58]: Our author has most probably in view an expression which occurs in the writings of Quinctilian , (Instit. Orator., lib. 8, 2, 8,) — “tabernaculum ducis Augustale;”— (“a general’s tent is called the Augustal.”) In the best editions of Quinctilian, however, the reading of Augurale , as synonymous with auguraculum , or auguratorium ; — ( an apartment for the augur’s taking omens. ) — Ed.
 
 
-[^ft59]: The dictator is called by Livey , “ praetor maximus; ”— “ the highest praetor. ”— ( Liv . 7:3.) — Ed.
+[^f59]: The dictator is called by Livey , “ praetor maximus; ”— “ the highest praetor. ”— ( Liv . 7:3.) — Ed.
 
 
 <!-- PAGE 116 -->
 
 
-[^ft60]: “La tente ou du consul, ou de celuy qui estoit chef de l’armee, quelque nom qu’on luy donast;”— “The tent of the consul, or of the person who was head of the army, whatever name was applied to him.”
+[^f60]: “La tente ou du consul, ou de celuy qui estoit chef de l’armee, quelque nom qu’on luy donast;”— “The tent of the consul, or of the person who was head of the army, whatever name was applied to him.”
 
 
-[^ft61]: “ Praeibat. ” — There is manifestly an allusion here to the etymology of praetor, as being derived from praeire , to go before , or preside . — Ed.
+[^f61]: “ Praeibat. ” — There is manifestly an allusion here to the etymology of praetor, as being derived from praeire , to go before , or preside . — Ed.
 
 
-[^ft62]: “At Rome it”(the term praetorium ) “signified the public hall where causes were tried by the praetor; but more usually it denoted the camp or quarters of the praetorian cohorts without the city ….. The name of praetorium was, in the provinces, given to the palace of the governors, both because they administered justice, and had their guards stationed in their residence. Hence it is inferred that, although the Apostle was at Rome when he wrote this, and although the circumstances to which he refers occurred in that city, yet, writing to persons residing in the provinces, he uses the word praetorium in the provincial sense, and means by it the emperor’s palace .”— Illustrated Commentary . — Ed.
+[^f62]: “At Rome it”(the term praetorium ) “signified the public hall where causes were tried by the praetor; but more usually it denoted the camp or quarters of the praetorian cohorts without the city ….. The name of praetorium was, in the provinces, given to the palace of the governors, both because they administered justice, and had their guards stationed in their residence. Hence it is inferred that, although the Apostle was at Rome when he wrote this, and although the circumstances to which he refers occurred in that city, yet, writing to persons residing in the provinces, he uses the word praetorium in the provincial sense, and means by it the emperor’s palace .”— Illustrated Commentary . — Ed.
 
 
-[^ft63]: “Depuis que les empereurs usurperent la monarchie;” — “From the time that the emperors usurped the monarchy.”
+[^f63]: “Depuis que les empereurs usurperent la monarchie;” — “From the time that the emperors usurped the monarchy.”
 
 
-[^ft64]: “Pretoire signifioit aussi le lieu ou le preteur tenoit la cour, et exerçoit sa iurisdiction;”— “The praetorium signified also the place where the praetor held his court, and exercised jurisdiction.”
+[^f64]: “Pretoire signifioit aussi le lieu ou le preteur tenoit la cour, et exerçoit sa iurisdiction;”— “The praetorium signified also the place where the praetor held his court, and exercised jurisdiction.”
 
 
-[^ft65]: “Confiance et asseurance;”— “Confidence and assurance.”
+[^f65]: “Confiance et asseurance;”— “Confidence and assurance.”
 
 
-[^ft66]: “Courageux et inuincibles;”— “Courageous and unconquerable.”
+[^f66]: “Courageux et inuincibles;”— “Courageous and unconquerable.”
 
 
-[^ft67]: “Estans assuerez sur ceste main et puissance du Seigneur;”— “Confidently relying upon this hand and power of the Lord.”
+[^f67]: “Estans assuerez sur ceste main et puissance du Seigneur;”— “Confidently relying upon this hand and power of the Lord.”
 
 
-[^ft68]: “Pource que leur zele n’estoit pas pur;”— “Because their zeal was not pure.”
+[^f68]: “Pource que leur zele n’estoit pas pur;”— “Because their zeal was not pure.”
 
 
-[^ft69]: “Il se pent bien faire, que celuy qui enseignera vne doctrine pure et saine, aura toutesfois vne mauvaise affection;”— “It may quite well happen, that the man who teaches pure and sound doctrine, will have, nevertheless, an evil disposition.”
+[^f69]: “Il se pent bien faire, que celuy qui enseignera vne doctrine pure et saine, aura toutesfois vne mauvaise affection;”— “It may quite well happen, that the man who teaches pure and sound doctrine, will have, nevertheless, an evil disposition.”
 
 
-[^ft70]: “Il ne se faut esbahir si les faux-freres prenent occasion de l’evangile, et s’ils s’en forgent des bastons pour tormenter les bons et fideles pasteurs;”— “It ought not to appear surprising, if false brethren take
+[^f70]: “Il ne se faut esbahir si les faux-freres prenent occasion de l’evangile, et s’ils s’en forgent des bastons pour tormenter les bons et fideles pasteurs;”— “It ought not to appear surprising, if false brethren take
 
 
 <!-- PAGE 117 -->
@@ -1707,367 +1707,367 @@ He expressly makes mention of God as his, because he owns and acknowledges as do
 > occasion from the gospel, and contrive weapons for themselves for torturing good and faithful pastors.”
 
 
-[^ft71]: “Certes le sainct Apostre ne dit rien yci;”— “Certainly the holy Apostle says nothing here.”
+[^f71]: “Certes le sainct Apostre ne dit rien yci;”— “Certainly the holy Apostle says nothing here.”
 
 
-[^ft72]: “Mais voyla: il leur sembloit que la doctrine consistoit ou tomboit bas;”— “But mark! it seemed to them that doctrine stood or fell.”
+[^f72]: “Mais voyla: il leur sembloit que la doctrine consistoit ou tomboit bas;”— “But mark! it seemed to them that doctrine stood or fell.”
 
 
-[^ft73]: “Que si c’estoit d’autres que Juifs, ascauoir quelques enuieux de Sainct Paul;”— “But if there were other than Jews — some that were envious of St. Paul.”
+[^f73]: “Que si c’estoit d’autres que Juifs, ascauoir quelques enuieux de Sainct Paul;”— “But if there were other than Jews — some that were envious of St. Paul.”
 
 
-[^ft74]: “Estans en quelque necessite;”— “When they are in any emergency.”
+[^f74]: “Estans en quelque necessite;”— “When they are in any emergency.”
 
 
-[^ft75]: “ Praevaricatores. ”The term is employed by classical writers in the sense of betraying the cause of one’s client, and by neglect or collusion assisting his opponent. See Quinct. 9:2. — Ed.
+[^f75]: “ Praevaricatores. ”The term is employed by classical writers in the sense of betraying the cause of one’s client, and by neglect or collusion assisting his opponent. See Quinct. 9:2. — Ed.
 
 
-[^ft76]: “Si nous nous entendons auec la partie aduerse d’iceluy;”— “If we should connect ourselves with the party opposed to him.”
+[^f76]: “Si nous nous entendons auec la partie aduerse d’iceluy;”— “If we should connect ourselves with the party opposed to him.”
 
 
-[^ft77]: “Pouuoit diminuer l’authorite de la doctrine;”— “Might diminish the authority of the doctrine.”
+[^f77]: “Pouuoit diminuer l’authorite de la doctrine;”— “Might diminish the authority of the doctrine.”
 
 
-[^ft78]: Our Author appears to refer here to Peter Carolus, of whom the reader will find particular mention made by Beza in his Life of CALVIN . — CALVIN’STracts , vol. 1:pp. 30:xxxi. — Ed.
+[^f78]: Our Author appears to refer here to Peter Carolus, of whom the reader will find particular mention made by Beza in his Life of CALVIN . — CALVIN’STracts , vol. 1:pp. 30:xxxi. — Ed.
 
 
-[^ft79]: “The word ἐπιχορηγία which we translate supply , signifies also furnishing whatever is necessary.”— Dr. A. Clarke. — Ed.
+[^f79]: “The word ἐπιχορηγία which we translate supply , signifies also furnishing whatever is necessary.”— Dr. A. Clarke. — Ed.
 
 
-[^ft80]: “De varier et chanceler;”— “To shift and waver.”
+[^f80]: “De varier et chanceler;”— “To shift and waver.”
 
 
-[^ft81]: “Or encore que viure en chair me fust proufitable, ie ne scay lequel ie doy eslire, ou , Or si viure en chair me est proufitable, et que c’est qu’ie doy eslire, ie ne scay rien;”— “But although to live in the flesh would not be profitable to me, I know not what I ought to choose; or , But if to live in the flesh is profitable to me, and that it is what I ought to choose, I know not.”
+[^f81]: “Or encore que viure en chair me fust proufitable, ie ne scay lequel ie doy eslire, ou , Or si viure en chair me est proufitable, et que c’est qu’ie doy eslire, ie ne scay rien;”— “But although to live in the flesh would not be profitable to me, I know not what I ought to choose; or , But if to live in the flesh is profitable to me, and that it is what I ought to choose, I know not.”
 
 
-[^ft82]: “Vn tel sainct Apostre;”— “So holy an Apostle.”
+[^f82]: “Vn tel sainct Apostre;”— “So holy an Apostle.”
 
 
-[^ft83]: In accordance with the Vulgate, Wiclif (1380) renders as follows : “traueilynge to gidre to the feith of the gospel.”— Ed.
+[^f83]: In accordance with the Vulgate, Wiclif (1380) renders as follows : “traueilynge to gidre to the feith of the gospel.”— Ed.
 
 
-[^ft84]: “La force et constance de courage;”—”Strength and constancy of courage.”
+[^f84]: “La force et constance de courage;”—”Strength and constancy of courage.”
 
 
 <!-- PAGE 118 -->
 
 
-[^ft85]: “Là où il vse d’vn mot qui descend d’vn mesme verbe que celuy dont il vse yci;”—”Where he makes use of a word which comes from the same verb as that which he employs here.”
+[^f85]: “Là où il vse d’vn mot qui descend d’vn mesme verbe que celuy dont il vse yci;”—”Where he makes use of a word which comes from the same verb as that which he employs here.”
 
 
-[^ft86]: “Cela nous est vne demonstrance et tesmoignage de nostre salut;”— ”This is to us a clear proof and token of our salvation.”
+[^f86]: “Cela nous est vne demonstrance et tesmoignage de nostre salut;”— ”This is to us a clear proof and token of our salvation.”
 
 
-[^ft87]: “Les afflictions et persecutions;”—”Afflictions and persecutions.”
+[^f87]: “Les afflictions et persecutions;”—”Afflictions and persecutions.”
 
 
-[^ft88]: “Combien aurions — nous proufité en la doctrine de vraye religion;”— ”How much progress we would make in the doctrine of true religion.”
+[^f88]: “Combien aurions — nous proufité en la doctrine de vraye religion;”— ”How much progress we would make in the doctrine of true religion.”
 
 
-[^ft89]: “Il nous vest de sa liuree;”— “He arrays us in his livery.”
+[^f89]: “Il nous vest de sa liuree;”— “He arrays us in his livery.”
 
 
-[^ft90]: “Maudite donc soit nostre stupidite;”— “Accursed, then, be our stupidity.”
+[^f90]: “Maudite donc soit nostre stupidite;”— “Accursed, then, be our stupidity.”
 
 
-[^ft91]: “Les afflictions et persecutions;”— “Afflictions and persecutions.”
+[^f91]: “Les afflictions et persecutions;”— “Afflictions and persecutions.”
 
 
-[^ft91]: “Entrailles et misericordes, ou , cordiales affections et misericordes :”— “Bowels and mercies, or , cordial affections and mercies.”
+[^f91]: “Entrailles et misericordes, ou , cordiales affections et misericordes :”— “Bowels and mercies, or , cordial affections and mercies.”
 
 
-[^ft92]: “Ceste exhortation est plene d’affections vehementes;”— “This exhortation is full of intense affections.”
+[^f92]: “Ceste exhortation est plene d’affections vehementes;”— “This exhortation is full of intense affections.”
 
 
 ## CHAPTER 2
 
 
-[^ft93]: “Et que les pasteurs le doyuent procurer d’vne affection vehemente et zele ardent;”— “And that pastors should endeavor to procure it with intense desire and ardent zeal.”
+[^f93]: “Et que les pasteurs le doyuent procurer d’vne affection vehemente et zele ardent;”— “And that pastors should endeavor to procure it with intense desire and ardent zeal.”
 
 
-[^ft94]: “Il peust vser d’authorite paternelle, et demander que pour la reuerence qu’ils luy deuoyent comme ses enfans, ils feissent ce qu’il enseigne yci;”— “He might have exercised paternal authority, and have demanded that in consideration of the respect which they owed him as his children, they should do what he here inculcates.”
+[^f94]: “Il peust vser d’authorite paternelle, et demander que pour la reuerence qu’ils luy deuoyent comme ses enfans, ils feissent ce qu’il enseigne yci;”— “He might have exercised paternal authority, and have demanded that in consideration of the respect which they owed him as his children, they should do what he here inculcates.”
 
 
-[^ft95]: “Pour entrer dedans leurs cœurs, et es mouuoir leurs affections;”— “For entering into their hearts, and moving their affections.”
+[^f95]: “Pour entrer dedans leurs cœurs, et es mouuoir leurs affections;”— “For entering into their hearts, and moving their affections.”
 
 
-[^ft96]: “Ne doit faire difficulte de se transformer selon qu’il cognoistra que ce sera le proufit de l’Eglise;”— “Should have no hesitation in transforming himself according as he may perceive that this will be for the advantage of the Church.”
+[^f96]: “Ne doit faire difficulte de se transformer selon qu’il cognoistra que ce sera le proufit de l’Eglise;”— “Should have no hesitation in transforming himself according as he may perceive that this will be for the advantage of the Church.”
 
 
 <!-- PAGE 119 -->
 
 
-[^ft97]: “Sans pouuoir estre arrestee;”— “Without being capable of being arrested.”
+[^f97]: “Sans pouuoir estre arrestee;”— “Without being capable of being arrested.”
 
 
-[^ft98]: Kenodo >xoi persons whose object is to acquire power, and who, if they see others superior to themselves, are offended. ( Galatians 5:26.) This κενοδοξία vain-glory , produces contentions of all kinds; and it produces this evil besides, that persons who have gone wrong, and who might have been restored to truth and virtue by humble, friendly admonition, are often, by the interference of vain-glorious , ostentatious instructors, confirmed in error and vice.”— Storr . See Biblical Cabinet , vol. 40:p. 132, note . — Ed..
+[^f98]: Kenodo >xoi persons whose object is to acquire power, and who, if they see others superior to themselves, are offended. ( Galatians 5:26.) This κενοδοξία vain-glory , produces contentions of all kinds; and it produces this evil besides, that persons who have gone wrong, and who might have been restored to truth and virtue by humble, friendly admonition, are often, by the interference of vain-glorious , ostentatious instructors, confirmed in error and vice.”— Storr . See Biblical Cabinet , vol. 40:p. 132, note . — Ed..
 
 
-[^ft99]: “Est le sufflet qui allume toutes contentions;”— “Is the bellows that kindles up all strifes.”
+[^f99]: “Est le sufflet qui allume toutes contentions;”— “Is the bellows that kindles up all strifes.”
 
 
-[^ft100]: “Comme quelqu’vn a dit anciennement;”— “As some one has said anciently.”
+[^f100]: “Comme quelqu’vn a dit anciennement;”— “As some one has said anciently.”
 
 
-[^ft101]: “Pourceque l’imitation d’ iceluy est la regle de bien viure;”— “Because imitation of him is the rule of right living.”
+[^f101]: “Pourceque l’imitation d’ iceluy est la regle de bien viure;”— “Because imitation of him is the rule of right living.”
 
 
-[^ft102]: “Car tout ainsi qu’vn homme est cognu quand on contemple la forme de son visage et sa personne, aussi la maieste, qui reluit en Dieu, est la forme ou figure d’iceluy;”— “For just as a man is known, when we mark the form of his appearance and his person, so the majesty, which shines forth in God, is his form or figure.”
+[^f102]: “Car tout ainsi qu’vn homme est cognu quand on contemple la forme de son visage et sa personne, aussi la maieste, qui reluit en Dieu, est la forme ou figure d’iceluy;”— “For just as a man is known, when we mark the form of his appearance and his person, so the majesty, which shines forth in God, is his form or figure.”
 
 
-[^ft103]: “Le manteau royal;”— “His royal mantle.”
+[^f103]: “Le manteau royal;”— “His royal mantle.”
 
 
-[^ft104]: “La garde a l’entour;”— “The guard in attendance.”
+[^f104]: “La garde a l’entour;”— “The guard in attendance.”
 
 
-[^ft105]: “Comme s’ils ne faisoyent rien a ce propos-la;”— “As if they had no bearing on that point.”
+[^f105]: “Comme s’ils ne faisoyent rien a ce propos-la;”— “As if they had no bearing on that point.”
 
 
-[^ft106]: “C’est à dire d’vne mesme substance auec le Pere;”— “That is to say, of the same substance as the Father.”
+[^f106]: “C’est à dire d’vne mesme substance auec le Pere;”— “That is to say, of the same substance as the Father.”
 
 
-[^ft107]: See Calvin’s Institutes , vol. 2:13-15.
+[^f107]: See Calvin’s Institutes , vol. 2:13-15.
 
 
-[^ft108]: “Pour amplifier et exaggerer la chose;”— “For the sake of amplifying and enhancing the thing.”
+[^f108]: “Pour amplifier et exaggerer la chose;”— “For the sake of amplifying and enhancing the thing.”
 
 
-[^ft109]: Virg. Æn. 2:557, 558.
+[^f109]: Virg. Æn. 2:557, 558.
 
 
-[^ft110]: “Et de cela il s’en ensuit, que c’est vn nom ou dignite propre a Dieu seul;”—”And from this it follows, that it is a name or dignity that belongs to God alone.
+[^f110]: “Et de cela il s’en ensuit, que c’est vn nom ou dignite propre a Dieu seul;”—”And from this it follows, that it is a name or dignity that belongs to God alone.
 
 
 <!-- PAGE 120 -->
 
 
-[^ft111]: “Comme s’il estoit deduit du nom Jehouah, lequel les Juifs par superstition disent qu’il n’est licite de proferer;”— “As if it were derived from the name Jehovah, which the Jews superstitiously say that it is not lawful to utter.”
+[^f111]: “Comme s’il estoit deduit du nom Jehouah, lequel les Juifs par superstition disent qu’il n’est licite de proferer;”— “As if it were derived from the name Jehovah, which the Jews superstitiously say that it is not lawful to utter.”
 
 
-[^ft112]: “En ces subtilitez vaines et frivoles;”—”In these empty and frivolous subtleties.”
+[^f112]: “En ces subtilitez vaines et frivoles;”—”In these empty and frivolous subtleties.”
 
 
-[^ft113]: “Duquel toute la vertu consistast au son et en la prononciation;”— ”The whole virtue of which consisted in the sound and the pronunciation.”
+[^f113]: “Duquel toute la vertu consistast au son et en la prononciation;”— ”The whole virtue of which consisted in the sound and the pronunciation.”
 
 
-[^ft114]: Vn signe et ceremonie externe;”—”An outward sign and rite.”
+[^f114]: Vn signe et ceremonie externe;”—”An outward sign and rite.”
 
 
-[^ft115]: “Qui ne voit qu’ils sont plus qu’ enfans en telles subtilitez friuoles et niaiseries qu’ils affectent?”—”Who does not see that they are worse than children in such frivolous subtleties and fooleries which they affect?”
+[^f115]: “Qui ne voit qu’ils sont plus qu’ enfans en telles subtilitez friuoles et niaiseries qu’ils affectent?”—”Who does not see that they are worse than children in such frivolous subtleties and fooleries which they affect?”
 
 
-[^ft116]: “Maintenant donc qu’il est loin d’eux, et qu’il ne les pent plus admonester en presence;”—”Now, therefore, when he is at a distance from them, and can no longer admonish them when present.”
+[^f116]: “Maintenant donc qu’il est loin d’eux, et qu’il ne les pent plus admonester en presence;”—”Now, therefore, when he is at a distance from them, and can no longer admonish them when present.”
 
 
-[^ft117]: See Institutes , vol. 1:pp. 350, 353.
+[^f117]: See Institutes , vol. 1:pp. 350, 353.
 
 
-[^ft118]: “Aucuns exposent le mot Grec, bon propos et bon cœur, le rapportans aux hommes;”— “Some explain the Greek word as meaning, a good purpose and a good heart, making it refer to men.”
+[^f118]: “Aucuns exposent le mot Grec, bon propos et bon cœur, le rapportans aux hommes;”— “Some explain the Greek word as meaning, a good purpose and a good heart, making it refer to men.”
 
 
-[^ft119]: “Ingenieuse a cercher ses auantages, et quelques vaines excuses;”— “Ingenious in seeking its advantages, and some vain pretexts.”
+[^f119]: “Ingenieuse a cercher ses auantages, et quelques vaines excuses;”— “Ingenious in seeking its advantages, and some vain pretexts.”
 
 
-[^ft120]: “Cerche songneusement et implore;”— “Diligently seeks and implores.”
+[^f120]: “Cerche songneusement et implore;”— “Diligently seeks and implores.”
 
 
-[^ft121]: “Car celuy qui tremble, disent-ils;”— “For he that trembles, say they.”
+[^f121]: “Car celuy qui tremble, disent-ils;”— “For he that trembles, say they.”
 
 
-[^ft122]: “Deuenir paresseux et oisifs;”— “To become idle and indolent.”
+[^f122]: “Deuenir paresseux et oisifs;”— “To become idle and indolent.”
 
 
-[^ft123]: “Mais apres nous auoir poussez et incitez par vne inspiration secrete et cachee, nous employe et exerce songneusement;”— “But, after having stimulated and incited us by a secret and hidden inspiration, he diligently employs and exercises us.”
+[^f123]: “Mais apres nous auoir poussez et incitez par vne inspiration secrete et cachee, nous employe et exerce songneusement;”— “But, after having stimulated and incited us by a secret and hidden inspiration, he diligently employs and exercises us.”
 
 
-[^ft124]: “Cerchant outre mesure son proufit et vtilite particuliere;”— “Seeking beyond measure his own particular profit and advantage.”
+[^f124]: “Cerchant outre mesure son proufit et vtilite particuliere;”— “Seeking beyond measure his own particular profit and advantage.”
 
 
 <!-- PAGE 121 -->
 
 
-[^ft125]: “Le vice qui est en plusieurs qu’ils sont pleins de complaints contre les autres;”— “The fault that is in very many — that they are full of complaints as to others.”
+[^f125]: “Le vice qui est en plusieurs qu’ils sont pleins de complaints contre les autres;”— “The fault that is in very many — that they are full of complaints as to others.”
 
 
-[^ft126]: The term is used by Aristotle. See Arist . Virt. et. Vit. 7. 6. — Ed.
+[^f126]: The term is used by Aristotle. See Arist . Virt. et. Vit. 7. 6. — Ed.
 
 
-[^ft127]: Our Author most probably refers to what he had stated when commenting on 1 Corinthians 1:8. See Calvin on the Corinthians , vol. 1:pp. 58, 59. — Ed.
+[^f127]: Our Author most probably refers to what he had stated when commenting on 1 Corinthians 1:8. See Calvin on the Corinthians , vol. 1:pp. 58, 59. — Ed.
 
 
-[^ft128]: “Mesles auec les infideles et meschans;”— “Mingled with the unbelieving and the wicked.”
+[^f128]: “Mesles auec les infideles et meschans;”— “Mingled with the unbelieving and the wicked.”
 
 
-[^ft129]: “Et lors mesme que S. Paul escriuoit ceci;”— “And even at the time that St. Paul wrote this.”
+[^f129]: “Et lors mesme que S. Paul escriuoit ceci;”— “And even at the time that St. Paul wrote this.”
 
 
-[^ft130]: “De la generation peruerse et maudite;”— “Of the perverse and accursed generation.”
+[^f130]: “De la generation peruerse et maudite;”— “Of the perverse and accursed generation.”
 
 
-[^ft131]: “Soustenus ou portez d’elle;”— “Sustained or carried by it.”
+[^f131]: “Soustenus ou portez d’elle;”— “Sustained or carried by it.”
 
 
-[^ft132]: “Leur turpitude et vilenie;”— “Their disgrace and villany.”
+[^f132]: “Leur turpitude et vilenie;”— “Their disgrace and villany.”
 
 
-[^ft133]: “Telles conquestes et marques de triomphe;”— “Such conquests and tokens of triumph.”The term tropaea made use of by our Author, (corresponding to the Greek term πρόπαια ,) properly signifies, monuments of the enemy’s defeat , ( προπή .) — Ed.
+[^f133]: “Telles conquestes et marques de triomphe;”— “Such conquests and tokens of triumph.”The term tropaea made use of by our Author, (corresponding to the Greek term πρόπαια ,) properly signifies, monuments of the enemy’s defeat , ( προπή .) — Ed.
 
 
-[^ft134]: “Tant plus qu’il y aura de faits cheualeureux, que le triomphe aussi n’en soit d’autant plus magnifique et honorable;”— “The more there are of illustrious deeds, the triumph also will be so much the more magnificent and honorable.”
+[^f134]: “Tant plus qu’il y aura de faits cheualeureux, que le triomphe aussi n’en soit d’autant plus magnifique et honorable;”— “The more there are of illustrious deeds, the triumph also will be so much the more magnificent and honorable.”
 
 
-[^ft135]: See Calvin on the Corinthians, vol. 1.
+[^f135]: See Calvin on the Corinthians, vol. 1.
 
 
-[^ft136]: Paul’s statement here is interpreted by Dr. John Brown as equivalent to the following : — “If my life be poured out as a libation over your conversion to Christ, ‘ I joy and rejoice with you all.’ It could not be better sacrificed than in the cause of his glory and your salvation.”— Brown’s Discourses and Sayings of our Lord illustrated, vol. 3 p. 379. — Ed.
+[^f136]: Paul’s statement here is interpreted by Dr. John Brown as equivalent to the following : — “If my life be poured out as a libation over your conversion to Christ, ‘ I joy and rejoice with you all.’ It could not be better sacrificed than in the cause of his glory and your salvation.”— Brown’s Discourses and Sayings of our Lord illustrated, vol. 3 p. 379. — Ed.
 
 
-[^ft137]: “Pour tuer les bestes qu’on doit sacrifier;”— “For killing the animals that ought to be sacrificed.”
+[^f137]: “Pour tuer les bestes qu’on doit sacrifier;”— “For killing the animals that ought to be sacrificed.”
 
 
-[^ft138]: See Liv . 50:1:c. 31, ad fin. — Ed.
+[^f138]: See Liv . 50:1:c. 31, ad fin. — Ed.
 
 
 <!-- PAGE 122 -->
 
 
-[^ft139]: “Pour luy offrir en sacrifice les ames des fideles;”— “To offer to him in sacrifice the souls of the believers.”
+[^f139]: “Pour luy offrir en sacrifice les ames des fideles;”— “To offer to him in sacrifice the souls of the believers.”
 
 
-[^ft140]: “Les enflambe a mourir constamment, et receuoir la mort d’vn cœur magnanime;”— “Enkindles them to die with firmness, and meet death with magnanimity.”
+[^f140]: “Les enflambe a mourir constamment, et receuoir la mort d’vn cœur magnanime;”— “Enkindles them to die with firmness, and meet death with magnanimity.”
 
 
-[^ft141]: “Que sa mort ne trouble et estonne les Philippians;”— “That his death may not distress and alarm the Philippians.”
+[^f141]: “Que sa mort ne trouble et estonne les Philippians;”— “That his death may not distress and alarm the Philippians.”
 
 
-[^ft142]: “En ces mots, au Seigneur Jesus , il faut noter la condition;”— “In these words, in the Lord Jesus , we must notice the condition.”
+[^f142]: “En ces mots, au Seigneur Jesus , il faut noter la condition;”— “In these words, in the Lord Jesus , we must notice the condition.”
 
 
-[^ft143]: “Sans estre en plus grande reputation;”— “Without being in very great reputation.”
+[^f143]: “Sans estre en plus grande reputation;”— “Without being in very great reputation.”
 
 
-[^ft144]: “En sorte que tu to contentes du lieu qui t’est ordonné, et que t’employes a ta charge;”— “So as to content yourself with the place that is appointed for you, and employ yourself in your own department.”
+[^f144]: “En sorte que tu to contentes du lieu qui t’est ordonné, et que t’employes a ta charge;”— “So as to content yourself with the place that is appointed for you, and employ yourself in your own department.”
 
 
-[^ft145]: See Calvin on the Corinthians, vol. 1
+[^f145]: See Calvin on the Corinthians, vol. 1
 
 
-[^ft146]: “Car il y en auoit d’autres qui auoyent plus grand soin de l’Eglise de Dieu, que d’eux-mesmes, comme Epaphrodite;”— “For there were others of them that had greater concern as to the Church of God, than as to themselves, such as Epaphroditus.”
+[^f146]: “Car il y en auoit d’autres qui auoyent plus grand soin de l’Eglise de Dieu, que d’eux-mesmes, comme Epaphrodite;”— “For there were others of them that had greater concern as to the Church of God, than as to themselves, such as Epaphroditus.”
 
 
-[^ft147]: “Qu’il y auoit si peu de gens sages et qui eussent vn cœur entier a nostre Seigneur;”— “That there were so few persons that were wise, and had devotedness of heart to our Lord.”
+[^f147]: “Qu’il y auoit si peu de gens sages et qui eussent vn cœur entier a nostre Seigneur;”— “That there were so few persons that were wise, and had devotedness of heart to our Lord.”
 
 
-[^ft148]: “De batailler sous l’enseigne de Christ;”— “To fight under Christ’s banner.”
+[^f148]: “De batailler sous l’enseigne de Christ;”— “To fight under Christ’s banner.”
 
 
-[^ft149]: “S. Paul pouuoit se vanter plus que pas on des autres, que sa condition estoit semblable a celle d’vn gendarme;”— “St. Paul might boast more than any other that his condition resembled that of a soldier.”
+[^f149]: “S. Paul pouuoit se vanter plus que pas on des autres, que sa condition estoit semblable a celle d’vn gendarme;”— “St. Paul might boast more than any other that his condition resembled that of a soldier.”
 
 
-[^ft150]: “Pour tous prescheurs de l’euangile;”— “For all preachers of the gospel.”
+[^f150]: “Pour tous prescheurs de l’euangile;”— “For all preachers of the gospel.”
 
 
-[^ft151]: “Ambassade pour administrer a Sainct Paul en sa necessite;”— “An ambassador to minister to St. Paul in his necessity.”
+[^f151]: “Ambassade pour administrer a Sainct Paul en sa necessite;”— “An ambassador to minister to St. Paul in his necessity.”
 
 
-[^ft152]: “Pour l’amour de luy;”— “From love to him.”
+[^f152]: “Pour l’amour de luy;”— “From love to him.”
 
 
 <!-- PAGE 123 -->
 
 
-[^ft153]: “Par laquelle nous soyons parfaitement conioints auec le Fils de Dieu;”— “By which we are perfectly united with the Son of God.”
+[^f153]: “Par laquelle nous soyons parfaitement conioints auec le Fils de Dieu;”— “By which we are perfectly united with the Son of God.”
 
 
-[^ft154]: Calvin seems to refer here to what he had said when commenting on
+[^f154]: Calvin seems to refer here to what he had said when commenting on
 
 
 > Philippians 1:21. — Ed.
 
 
-[^ft155]: Calvin, in the French version, makes reference to what he has said on the subject in the Institutes . See Institutes , vol. 2:p. 281. — Ed.
+[^f155]: Calvin, in the French version, makes reference to what he has said on the subject in the Institutes . See Institutes , vol. 2:p. 281. — Ed.
 
 
-[^ft156]: “Pour l’amour de Christ;”— “From love to Christ.”
+[^f156]: “Pour l’amour de Christ;”— “From love to Christ.”
 
 
-[^ft157]: “Ne nous laissons point vaincre par l’infirmite de nostre chair;”— “Do not allow ourselves to be overcome by the infirmity of our flesh.”
+[^f157]: “Ne nous laissons point vaincre par l’infirmite de nostre chair;”— “Do not allow ourselves to be overcome by the infirmity of our flesh.”
 
 
-[^ft158]: “Mesme ie ne nie pas que sainct Paul (comme il estoit homme) ne se trouué surprins de quelque exces vicieux en sa douleur;”— “Nay more, I do not deny that St. Paul (inasmuch as he was a man) might find himself overtaken with some faulty excess in his grief.”
+[^f158]: “Mesme ie ne nie pas que sainct Paul (comme il estoit homme) ne se trouué surprins de quelque exces vicieux en sa douleur;”— “Nay more, I do not deny that St. Paul (inasmuch as he was a man) might find himself overtaken with some faulty excess in his grief.”
 
 
-[^ft159]: “Soit establie et demeure entiere;”— “Be established, and remain entire.”
+[^f159]: “Soit establie et demeure entiere;”— “Be established, and remain entire.”
 
 
-[^ft160]: “Vn accomplissement, ou moyen de suppleer ce qui defailloit de leur seruice;”— “A filling up, or a means of supplying what was defective in their service.”
+[^f160]: “Vn accomplissement, ou moyen de suppleer ce qui defailloit de leur seruice;”— “A filling up, or a means of supplying what was defective in their service.”
 
 
-[^ft161]: “Faisoit en cest endroit ce qu’ils deuoyent faire;”— “Did in this matter what they ought to have done
+[^f161]: “Faisoit en cest endroit ce qu’ils deuoyent faire;”— “Did in this matter what they ought to have done
 
 
 ## CHAPTER 3
 
 
-[^ft162]: “De nous troubler et effaroucher;”- — “To trouble and frighten us.”
+[^f162]: “De nous troubler et effaroucher;”- — “To trouble and frighten us.”
 
 
-[^ft163]: “Fascheux et ennuyeux;”- — “Disagreeable and irksome.”
+[^f163]: “Fascheux et ennuyeux;”- — “Disagreeable and irksome.”
 
 
-[^ft164]: “Il les rembarre rudement et auec authoritc;"--”He baffles them sternly and with authority."
+[^f164]: “Il les rembarre rudement et auec authoritc;"--”He baffles them sternly and with authority."
 
 
-[^ft165]: “Pource qu’ils auoyent seulement fait leurs efforts, et essaye de diuertir les Philippiens, et ne les auoyent gaignez et abbatus;"--”As they had merely employed their efforts, and had attempted to turn aside the Philippians, and had not prevailed over them and subdued them."
+[^f165]: “Pource qu’ils auoyent seulement fait leurs efforts, et essaye de diuertir les Philippiens, et ne les auoyent gaignez et abbatus;"--”As they had merely employed their efforts, and had attempted to turn aside the Philippians, and had not prevailed over them and subdued them."
 
 
-[^ft166]: “Pour autant qu’ils portoyent enuie auec autres, ou les mordoyent et detractoyent d’eux;"--”On the ground of their bearing envy to others, and biting and calumniating them."
+[^f166]: “Pour autant qu’ils portoyent enuie auec autres, ou les mordoyent et detractoyent d’eux;"--”On the ground of their bearing envy to others, and biting and calumniating them."
 
 
 <!-- PAGE 124 -->
 
 
-[^ft167]: “Car il yen a plusieurs qui se tourmentent tant et plus, et se meslent de beaucoup de choses;"--”For there are many that torture themselves on this occasion and on that, and intermeddle with many things.
+[^f167]: “Car il yen a plusieurs qui se tourmentent tant et plus, et se meslent de beaucoup de choses;"--”For there are many that torture themselves on this occasion and on that, and intermeddle with many things.
 
 
-[^ft168]: “Comme anciennement a Rome ce crier public; — “As anciently at Rome that public crier."
+[^f168]: “Comme anciennement a Rome ce crier public; — “As anciently at Rome that public crier."
 
 
-[^ft169]: “ The Concision--that is, those who rend and divide the Church. Compare Romans 16:17, 18. They gloried in being the περιτομὴ (the circumcision,) which name and character St. Paul will not here allow them, but claims it for Christians in the next words, and calls them the κατατομὴ or concision, expressing his contempt of their pretences, and censure of their practices.”-Pierce.--Ed.
+[^f169]: “ The Concision--that is, those who rend and divide the Church. Compare Romans 16:17, 18. They gloried in being the περιτομὴ (the circumcision,) which name and character St. Paul will not here allow them, but claims it for Christians in the next words, and calls them the κατατομὴ or concision, expressing his contempt of their pretences, and censure of their practices.”-Pierce.--Ed.
 
 
-[^ft170]: “En ses organes et instrumens c’est a dire ses seruiteurs par lesquels il a parle;"--”In his organs and instruments, that is to say, his servants, by whom he has spoken.”
+[^f170]: “En ses organes et instrumens c’est a dire ses seruiteurs par lesquels il a parle;"--”In his organs and instruments, that is to say, his servants, by whom he has spoken.”
 
 
-[^ft171]: “Circoncis deuement et selon l’ordonnance et les obseruations de la loy;”—”Circumcised duly and according to the appointment and the observances of the law.”
+[^f171]: “Circoncis deuement et selon l’ordonnance et les obseruations de la loy;”—”Circumcised duly and according to the appointment and the observances of the law.”
 
 
-[^ft172]: “II note la tribu et le chef de la lignee de laquelle il estoit descendu; “He names the tribe and the head of the line from which he was descended.”
+[^f172]: “II note la tribu et le chef de la lignee de laquelle il estoit descendu; “He names the tribe and the head of the line from which he was descended.”
 
 
-[^ft173]: See Calvin on the Corinthians, vol. 2
+[^f173]: See Calvin on the Corinthians, vol. 2
 
 
-[^ft174]: “Que les Pharisiens ont este ainsi nommez, pource qu’ils estoyent separez d’auec les autres, comme estans saincts; “That the Pharisees were so called, because they were separated from others, as being holy.”
+[^f174]: “Que les Pharisiens ont este ainsi nommez, pource qu’ils estoyent separez d’auec les autres, comme estans saincts; “That the Pharisees were so called, because they were separated from others, as being holy.”
 
 
-[^ft175]: See CALVIN On the Corinthians, vol. 2:
+[^f175]: See CALVIN On the Corinthians, vol. 2:
 
 
-[^ft176]: The reader will find the etymology of the term Pharisees, discussed at considerable length in the Harmony vol. 1 — Ed.
+[^f176]: The reader will find the etymology of the term Pharisees, discussed at considerable length in the Harmony vol. 1 — Ed.
 
 
-[^ft177]: The meaning is, that in interpreting Scripture, they did not go beyond the bare letter.— Ed.
+[^f177]: The meaning is, that in interpreting Scripture, they did not go beyond the bare letter.— Ed.
 
 
-[^ft178]: See Harmony, vol. 1 and vol. 3
+[^f178]: See Harmony, vol. 1 and vol. 3
 
 
-[^ft179]: “Exercez en l’Ecriture;” — “Exercised in Scripture.”
+[^f179]: “Exercez en l’Ecriture;” — “Exercised in Scripture.”
 
 
-[^ft180]: “Et que ie les retrouue en iceluy, on, soye trouue en iceluy;”—“And that I may find them in him, or, be found in him.”
+[^f180]: “Et que ie les retrouue en iceluy, on, soye trouue en iceluy;”—“And that I may find them in him, or, be found in him.”
 
 
 <!-- PAGE 125 -->
@@ -2079,205 +2079,205 @@ He expressly makes mention of God as his, because he owns and acknowledges as do
 [^f182]: Pierce adduces the two following instances of the same form of expression as made use of among the Romans—Plautus says, (Trucul. Act 2:sc 7:ver.5,) when speaking of one that was chargeable with prodigality-”Qui bona sua pro stercore habet, foras jubet ferri,”(“ who counts his goods but dung, and orders them to be carried out of the house.”) Thus, also, Apuleius, (Florid, c. 14,) speaks of Crates, when he turned Cynic: “Rem familiarem a.bjicit velut onus sterootis, magis labori quant usui; ”—(“ He casts away his goods as a heap of dung, that was more troublesome than useful.”)—Ed.
 
 
-[^ft183]: Such is the etymology given by Suidas, τὸ τοῖς kusi < βαλλό menon — “what is thrown to dogs.”-Ed.
+[^f183]: Such is the etymology given by Suidas, τὸ τοῖς kusi < βαλλό menon — “what is thrown to dogs.”-Ed.
 
 
-[^ft184]: “Mais apres que les richesses sont lettees en la mer, il est trouue, pource qu’il commence a avoir esperance d’eschapper, d’autant que le vaisseau est allege;”— “But after his riches have been thrown into the sea, he is found, inasmuch as he begins to have hope of escaping, because the vessel has been lightened.”
+[^f184]: “Mais apres que les richesses sont lettees en la mer, il est trouue, pource qu’il commence a avoir esperance d’eschapper, d’autant que le vaisseau est allege;”— “But after his riches have been thrown into the sea, he is found, inasmuch as he begins to have hope of escaping, because the vessel has been lightened.”
 
 
-[^ft185]: “Le prouerbe ancien;”— “The ancient proverb.”
+[^f185]: “Le prouerbe ancien;”— “The ancient proverb.”
 
 
-[^ft186]: “De l’efficace ou puissance;”—-”Of the efficacy or power.”
+[^f186]: “De l’efficace ou puissance;”—-”Of the efficacy or power.”
 
 
-[^ft187]: Afin de nous resueiller et aiguiser a nous y addonner de tant plus grande affection;”—”That it may arouse and stimulate us to devote ourselves to it with so much greater zeal.”
+[^f187]: Afin de nous resueiller et aiguiser a nous y addonner de tant plus grande affection;”—”That it may arouse and stimulate us to devote ourselves to it with so much greater zeal.”
 
 
-[^ft188]: “ Comme, ou., pour laquelle cause; ”—”As, or, for which cause.”
+[^f188]: “ Comme, ou., pour laquelle cause; ”—”As, or, for which cause.”
 
 
-[^ft189]: The partici ple referred to is ἐπεκτεινόμενος , which, as is remarked by Dr. Bloomfield, “is highly appropriate to the racer, whether on foot, or on horseback, or in the chariot; since the racer stretches his head and hands forward in anxiety to reach the goal.”— Ed.
+[^f189]: The partici ple referred to is ἐπεκτεινόμενος , which, as is remarked by Dr. Bloomfield, “is highly appropriate to the racer, whether on foot, or on horseback, or in the chariot; since the racer stretches his head and hands forward in anxiety to reach the goal.”— Ed.
 
 
-[^ft190]: A proverbial expression, founded on the circumstance that in certain games at Athens the runners had to carry a lamp, or burning torch, in such a way that it should not go out, and, on any one of the competitors giving up the contest, he delivered up the lamp, or torch, to his successor, See Auct. ad Herenn. 1. 4, c. 46; Lucret. I. 2, 5: 77.— Ed.
+[^f190]: A proverbial expression, founded on the circumstance that in certain games at Athens the runners had to carry a lamp, or burning torch, in such a way that it should not go out, and, on any one of the competitors giving up the contest, he delivered up the lamp, or torch, to his successor, See Auct. ad Herenn. 1. 4, c. 46; Lucret. I. 2, 5: 77.— Ed.
 
 
-[^ft191]: The rendering of the Vulgate (revelavit) is followed in the Rheims version—(1582)—hath revealed.—Ed..
+[^f191]: The rendering of the Vulgate (revelavit) is followed in the Rheims version—(1582)—hath revealed.—Ed..
 
 
 <!-- PAGE 126 -->
 
 
-[^ft192]: The rendering of Erasmus is as follows:— “Eadem incedamus regula, ut simus concordes; ”— “Let us walk by the same rule, that we may be of the same mind.” The words inserted in the common text κανόνι τὸ αὐτὸ φρονεῖν rule—mind the same thing,) are omitted, as is noticed by Granville Penn, in the Vat. and Alex. MSS., the Copt. and Ethiop. versions, and by Hilary and Augustine.—Ed.
+[^f192]: The rendering of Erasmus is as follows:— “Eadem incedamus regula, ut simus concordes; ”— “Let us walk by the same rule, that we may be of the same mind.” The words inserted in the common text κανόνι τὸ αὐτὸ φρονεῖν rule—mind the same thing,) are omitted, as is noticed by Granville Penn, in the Vat. and Alex. MSS., the Copt. and Ethiop. versions, and by Hilary and Augustine.—Ed.
 
 
-[^ft193]: “Qui ont leurs affections enracines en la terre;”— “Who have their affections rooted in the earth.”
+[^f193]: “Qui ont leurs affections enracines en la terre;”— “Who have their affections rooted in the earth.”
 
 
-[^ft194]: “Perdue et ruinee;”—”Destroyed and ruined.”
+[^f194]: “Perdue et ruinee;”—”Destroyed and ruined.”
 
 
-[^ft195]: “ Ne regardans qu’a eux-mesmes et a leur proufit, font perdre toutela faueur et la force du ministere;”— “Looking merely to themselves and their own advantage, undermine all the influence and power of the ministry.”
+[^f195]: “ Ne regardans qu’a eux-mesmes et a leur proufit, font perdre toutela faueur et la force du ministere;”— “Looking merely to themselves and their own advantage, undermine all the influence and power of the ministry.”
 
 
-[^ft196]: Such is CALVIN ’ S rendering of the passage referred to. See CALVIN on the Corinthians, vol. 2—Ed.
+[^f196]: Such is CALVIN ’ S rendering of the passage referred to. See CALVIN on the Corinthians, vol. 2—Ed.
 
 
-[^ft197]: “Hardiment et d’vne grande asseurance;”— “Boldly, and with great confidence.”
+[^f197]: “Hardiment et d’vne grande asseurance;”— “Boldly, and with great confidence.”
 
 
-[^ft198]: “Pour esteindre et appaiser le feu des nutres;”— “For the sake of mitigating and allaying the fire of others.” CALVIN ’ S meaning appears to be, that they made it their endeavor to screen themselves as far as possible from the fiery rage of those around them.—Ed.
+[^f198]: “Pour esteindre et appaiser le feu des nutres;”— “For the sake of mitigating and allaying the fire of others.” CALVIN ’ S meaning appears to be, that they made it their endeavor to screen themselves as far as possible from the fiery rage of those around them.—Ed.
 
 
-[^ft199]: Toutes leurs inuentions et facons de faire;”— “All their contrivances and modes of acting.”
+[^f199]: Toutes leurs inuentions et facons de faire;”— “All their contrivances and modes of acting.”
 
 
-[^ft200]: “Que nous soyons diuisez et separez d’auec eux;”— “That we be divided and separated from them.”
+[^f200]: “Que nous soyons diuisez et separez d’auec eux;”— “That we be divided and separated from them.”
 
 
-[^ft201]: Politiam—-a term corresponding to that employed in the original,.— Ed.
+[^f201]: Politiam—-a term corresponding to that employed in the original,.— Ed.
 
 
-[^ft202]: “Que nous soyons occupez et enueloppez en terre;”— “That we should be occupied and entangled with the earth.”
+[^f202]: “Que nous soyons occupez et enueloppez en terre;”— “That we should be occupied and entangled with the earth.”
 
 
-[^ft203]: Sursum corda. Our Author most probably alludes to the circumstance, that this expression was wont to be made use of among Christians in ancient times, when the ordinance of the supper was about to be administered. See CALVIN ’ SInstitutes , vol. 3, p. 440 — Ed.
+[^f203]: Sursum corda. Our Author most probably alludes to the circumstance, that this expression was wont to be made use of among Christians in ancient times, when the ordinance of the supper was about to be administered. See CALVIN ’ SInstitutes , vol. 3, p. 440 — Ed.
 
 
-[^ft204]: “De sa Gloire;”— “Of his glory.”
+[^f204]: “De sa Gloire;”— “Of his glory.”
 
 
 <!-- PAGE 127 -->
 
 
-[^ft205]: “Qu’il leur auoit donne en garde;”— “What he had given to them to keep.”
+[^f205]: “Qu’il leur auoit donne en garde;”— “What he had given to them to keep.”
 
 
 ## CHAPTER 4
 
 
-[^ft206]: “ Et les appelant par noms amiables et gracieux, il tasche de gaigner leurs coeurs;”— “And calling them by lovely and kind names, he endeavors to gain their hearts.”
+[^f206]: “ Et les appelant par noms amiables et gracieux, il tasche de gaigner leurs coeurs;”— “And calling them by lovely and kind names, he endeavors to gain their hearts.”
 
 
-[^ft207]: “Estant ioyeux de les veoir perseuerer en la foy, a laquelle ils auoyent este amenez par son moyen;”— “Being delighted to see them persevere in the faith, to which they had been brought through his instrumentality.”
+[^f207]: “Estant ioyeux de les veoir perseuerer en la foy, a laquelle ils auoyent este amenez par son moyen;”— “Being delighted to see them persevere in the faith, to which they had been brought through his instrumentality.”
 
 
-[^ft208]: CALVIN seems to refer here to what he had said when commenting on
+[^f208]: CALVIN seems to refer here to what he had said when commenting on
 
 
 > Philippians 2:16. See p. 72.—Ed.
 
 
-[^ft209]: “1l les appelle ses compagnes de guerre, d’autant qu’elles ont batail1e auec luy en l’euangile;”— “He calls them his companions in war, inasmuch as they had struggled hard with him in the gospel.”
+[^f209]: “1l les appelle ses compagnes de guerre, d’autant qu’elles ont batail1e auec luy en l’euangile;”— “He calls them his companions in war, inasmuch as they had struggled hard with him in the gospel.”
 
 
-[^ft210]: “C’estoit une chose grandement requise et necessaire qu’elles fussent d’un consentement;”— “It was a thing greatly requisite and necessary that they should be in a state of agreement.”
+[^f210]: “C’estoit une chose grandement requise et necessaire qu’elles fussent d’un consentement;”— “It was a thing greatly requisite and necessary that they should be in a state of agreement.”
 
 
-[^ft211]: “Je le laisse a disputer aux autres;”—”I leave it to others to dispute as to this.”
+[^f211]: “Je le laisse a disputer aux autres;”—”I leave it to others to dispute as to this.”
 
 
-[^ft212]: “ Comme ainsi soit qu’on metre en auant ie ne scay quels faux escrits sous le nom d’Eusebe;”— “As they set forth I know not what spurious writings under the name of Eusebius.”
+[^f212]: “ Comme ainsi soit qu’on metre en auant ie ne scay quels faux escrits sous le nom d’Eusebe;”— “As they set forth I know not what spurious writings under the name of Eusebius.”
 
 
-[^ft213]: “Et adioustez a son histoire;”— “And added to his history.”
+[^f213]: “Et adioustez a son histoire;”— “And added to his history.”
 
 
-[^ft214]: “Ils ne meritent point enuers les lecteurs de bon iugement, qu’on y adiouste grande foy;”— “They do not deserve, as to readers of good judgment, that much credit should be attached to them.”
+[^f214]: “Ils ne meritent point enuers les lecteurs de bon iugement, qu’on y adiouste grande foy;”— “They do not deserve, as to readers of good judgment, that much credit should be attached to them.”
 
 
-[^ft215]: See CALVIN on the Corinthians, vol. 2
+[^f215]: See CALVIN on the Corinthians, vol. 2
 
 
-[^ft216]: See CALVIN on the Corinthians, vol. 1
+[^f216]: See CALVIN on the Corinthians, vol. 1
 
 
-[^ft217]: It is defined by Wahl, in his Clavis N. T. Philologica, as follows. Una manaum admoveo, i.e. opitulor,opem fero, iuvo; (I lend a helping hand; that is, I assist, I bring assistancae, I aid.) — Ed.
+[^f217]: It is defined by Wahl, in his Clavis N. T. Philologica, as follows. Una manaum admoveo, i.e. opitulor,opem fero, iuvo; (I lend a helping hand; that is, I assist, I bring assistancae, I aid.) — Ed.
 
 
 <!-- PAGE 128 -->
 
 
-[^ft218]: See CALVIN on the Psalms, vol. 3
+[^f218]: See CALVIN on the Psalms, vol. 3
 
 
-[^ft219]: “Les agneux des boucs;” — “The lambs from the goats.”
+[^f219]: “Les agneux des boucs;” — “The lambs from the goats.”
 
 
-[^ft220]: Christ vray Pastuer;” — “Christ the true Shepherd.”
+[^f220]: Christ vray Pastuer;” — “Christ the true Shepherd.”
 
 
-[^ft221]: “Il se pouuoit faire que les Philippiens, estans vaincus de tristesse ou impatience, venissent a perdre courage;”— “It might be, that the Philippians, being overcome by grief or impatience, might come to lose heart.”
+[^f221]: “Il se pouuoit faire que les Philippiens, estans vaincus de tristesse ou impatience, venissent a perdre courage;”— “It might be, that the Philippians, being overcome by grief or impatience, might come to lose heart.”
 
 
-[^ft222]: “Non obstant les troubles et les fascheries qu’ils voyoyent deuant leurs yeux;”— “Notwithstanding the troubles and annoyances that they saw before their eyes.”
+[^f222]: “Non obstant les troubles et les fascheries qu’ils voyoyent deuant leurs yeux;”— “Notwithstanding the troubles and annoyances that they saw before their eyes.”
 
 
-[^ft223]: “Qui plus que tous les autres pouuoit auoir matiere de se contrister;— ”Who might more than all others have had occasion to indulge sorrow.””
+[^f223]: “Qui plus que tous les autres pouuoit auoir matiere de se contrister;— ”Who might more than all others have had occasion to indulge sorrow.””
 
 
-[^ft224]: Ont le Seigneur pour eux;””Have the Lord for them.”
+[^f224]: Ont le Seigneur pour eux;””Have the Lord for them.”
 
 
-[^ft225]: “Que vostre ioye se continue en iceluy iusques a la fin;”— “That your joy may maintain itself in him until the end.”
+[^f225]: “Que vostre ioye se continue en iceluy iusques a la fin;”— “That your joy may maintain itself in him until the end.”
 
 
-[^ft226]: “En douceur et patience;” — “With sweetness and patience.”
+[^f226]: “En douceur et patience;” — “With sweetness and patience.”
 
 
-[^ft227]: “TranquilIus animus meus, qui aequi boni facit omnia.” CALVIN here gives the sense, but not the.precise words, of Cicero, which are as follows: “Tranquillissimus autem animus meus, qui totm istuc aequi boni facit;”— “My mind, however, is most tranquil, which takes all that in good part.”See Cic. Art.7,7. — Ed.
+[^f227]: “TranquilIus animus meus, qui aequi boni facit omnia.” CALVIN here gives the sense, but not the.precise words, of Cicero, which are as follows: “Tranquillissimus autem animus meus, qui totm istuc aequi boni facit;”— “My mind, however, is most tranquil, which takes all that in good part.”See Cic. Art.7,7. — Ed.
 
 
-[^ft228]: “D’autant plus que nous-nous monstrons gracieux et debonnaires;” — “The more that we show ourselves agreeable and gentle.”
+[^f228]: “D’autant plus que nous-nous monstrons gracieux et debonnaires;” — “The more that we show ourselves agreeable and gentle.”
 
 
-[^ft229]: “Afin qu’ils ne s’esleuent point a l’encontre de nous a leur plaisir et sans resistance;”—“That they may not rise up against us at their pleasure, and without resistance.”
+[^f229]: “Afin qu’ils ne s’esleuent point a l’encontre de nous a leur plaisir et sans resistance;”—“That they may not rise up against us at their pleasure, and without resistance.”
 
 
-[^ft230]: “Que nous sommes tout incontinent et pour vn rien troublez et esmeus;”— “That we are all at once and for nothing troubled and moved.”
+[^f230]: “Que nous sommes tout incontinent et pour vn rien troublez et esmeus;”— “That we are all at once and for nothing troubled and moved.”
 
 
-[^ft231]: “Ni au plaisir desborde des meschans;”— “Nor to the unbridled inclinationof the wicked.”
+[^f231]: “Ni au plaisir desborde des meschans;”— “Nor to the unbridled inclinationof the wicked.”
 
 
 <!-- PAGE 129 -->
 
 
-[^ft232]: “Car nous ne sommes de fer ni d’acier (comme on dit) ne si insensibles;” — “For we are not of iron nor steel, as they say, nor so insensible.”
+[^f232]: “Car nous ne sommes de fer ni d’acier (comme on dit) ne si insensibles;” — “For we are not of iron nor steel, as they say, nor so insensible.”
 
 
-[^ft233]: “Comme a vne franchise;”— “As to a privilege.”
+[^f233]: “Comme a vne franchise;”— “As to a privilege.”
 
 
-[^ft234]: “Autrement qu’ils ne doyuent;”— “Otherwise than they ought.”
+[^f234]: “Autrement qu’ils ne doyuent;”— “Otherwise than they ought.”
 
 
-[^ft235]: “La recognoissance des benefices de Dieu;”— “Gratitude for God’s benefits.”
+[^f235]: “La recognoissance des benefices de Dieu;”— “Gratitude for God’s benefits.”
 
 
-[^ft236]: “De ces chc.ses basses;”— “Of these low things.”
+[^f236]: “De ces chc.ses basses;”— “Of these low things.”
 
 
-[^ft237]: “N’est point en branle pour chanceler selon les changemens diuers du monde;”— “Is not in suspense so as to turn about according to the various shiftings of the world.”
+[^f237]: “N’est point en branle pour chanceler selon les changemens diuers du monde;”— “Is not in suspense so as to turn about according to the various shiftings of the world.”
 
 
-[^ft238]: The word means that which has dignity connected with it. Hence and are joined together by Aristotle, as quoted by Wetstein, and in 2 Macc. 8: 15.”—Storr. See Biblical Cabinet, vol. 40:p. 178, note. — Ed.
+[^f238]: The word means that which has dignity connected with it. Hence and are joined together by Aristotle, as quoted by Wetstein, and in 2 Macc. 8: 15.”—Storr. See Biblical Cabinet, vol. 40:p. 178, note. — Ed.
 
 
-[^ft239]: “The Clermont copy reads here , If there be any praise of knowledge. Instead of the Valesian readings have ,with which the Vulg. Latin, agrees, reading, If there be any praise of discipline, (disciplinae,) as does also the Ethiopic, and two ancient Commentators mentioned by Dr. Mills.”—Pierce.—Ed.
+[^f239]: “The Clermont copy reads here , If there be any praise of knowledge. Instead of the Valesian readings have ,with which the Vulg. Latin, agrees, reading, If there be any praise of discipline, (disciplinae,) as does also the Ethiopic, and two ancient Commentators mentioned by Dr. Mills.”—Pierce.—Ed.
 
 
-[^ft240]: “Bien souuent on loue;”— “Very frequently they praise.”
+[^f240]: “Bien souuent on loue;”— “Very frequently they praise.”
 
 
-[^ft241]: Like the Latin terms cogitare, meditari, the Greek signifies to contemplate a thing, with the view of.finding means for effecting it.... According to this view, in the passage before us, will be equivalent to ‘think to do these things,’— ‘give diligence to do them.’”—Storr. See Biblical Cabinet, vol. 40:p. 180.. Note.— Ed.
+[^f241]: Like the Latin terms cogitare, meditari, the Greek signifies to contemplate a thing, with the view of.finding means for effecting it.... According to this view, in the passage before us, will be equivalent to ‘think to do these things,’— ‘give diligence to do them.’”—Storr. See Biblical Cabinet, vol. 40:p. 180.. Note.— Ed.
 
 
-[^ft242]: “C’eust este vne chose dishonneste aux Philippiens de delaisser la sainte doctrine et instruction;”— “It would have been a dishonorable thing for the Philipplans to abandon the holy doctrine and instruction.”
+[^f242]: “C’eust este vne chose dishonneste aux Philippiens de delaisser la sainte doctrine et instruction;”— “It would have been a dishonorable thing for the Philipplans to abandon the holy doctrine and instruction.”
 
 
-[^ft243]: ”En vn prescheur;”— “In a preacher.”
+[^f243]: ”En vn prescheur;”— “In a preacher.”
 
 
 [^f244]: Afin qu’ils ne se repentent point de luy auoir assiste;” — “That they may not regret their having assisted him.”
@@ -2289,46 +2289,46 @@ He expressly makes mention of God as his, because he owns and acknowledges as do
 <!-- PAGE 130 -->
 
 
-[^ft246]: Il fait yci vne diuision, disant qu’il est tellement dispose en son coeur qu’il scait se cornporter et en prosperite et en adversite;”— “He makes a distinction here, saying that he is prepared in his mind in such a manner, that he knows how to conduct himself both in prosperity and in adversity.”
+[^f246]: Il fait yci vne diuision, disant qu’il est tellement dispose en son coeur qu’il scait se cornporter et en prosperite et en adversite;”— “He makes a distinction here, saying that he is prepared in his mind in such a manner, that he knows how to conduct himself both in prosperity and in adversity.”
 
 
-[^ft247]: “De choses grandes et excellentes;”— “Of things great and excellent.”
+[^f247]: “De choses grandes et excellentes;”— “Of things great and excellent.”
 
 
-[^ft248]: “Qu’il fust abbattu, et eust perdu courage estant en indigence;”— “That he had been overcome, and had lost heart, being in poverty.”
+[^f248]: “Qu’il fust abbattu, et eust perdu courage estant en indigence;”— “That he had been overcome, and had lost heart, being in poverty.”
 
 
-[^ft249]: “ Il y auoit quelque telle condition et conuenance entre Sainct Paul et les Eglises;”— “There was some such condition and correspondence between St. Paul and the Churches.”
+[^f249]: “ Il y auoit quelque telle condition et conuenance entre Sainct Paul et les Eglises;”— “There was some such condition and correspondence between St. Paul and the Churches.”
 
 
-[^ft250]: Pour les induire a continuer;”— “To induce them to hold on.”
+[^f250]: Pour les induire a continuer;”— “To induce them to hold on.”
 
 
-[^ft251]: “Comme si eux deussent tenir la place de tous, et faire pour les autres;”— “As if they ought to hold the place of all, and to act in the room of others.”
+[^f251]: “Comme si eux deussent tenir la place de tous, et faire pour les autres;”— “As if they ought to hold the place of all, and to act in the room of others.”
 
 
-[^ft252]: CALVIN evidently refers to the word (account,) which the Apostle had made use of in the fifteenth verse, in the phrase (in the matter of giving and receiving.) It is noticed by Beza, that the Rabbins make use of a corresponding phrase (mattan umassa)—giving and taking.—Ed.
+[^f252]: CALVIN evidently refers to the word (account,) which the Apostle had made use of in the fifteenth verse, in the phrase (in the matter of giving and receiving.) It is noticed by Beza, that the Rabbins make use of a corresponding phrase (mattan umassa)—giving and taking.—Ed.
 
 
-[^ft253]: “Or mauditc soit nostre paresse;”— “But accursed be our indolence.”
+[^f253]: “Or mauditc soit nostre paresse;”— “But accursed be our indolence.”
 
 
-[^ft254]: “Les consumons prodigalement et meschamment en choses infames et abominables;”— “We lay them out lavishly and wickedly on things infamous and abominable.”
+[^f254]: “Les consumons prodigalement et meschamment en choses infames et abominables;”— “We lay them out lavishly and wickedly on things infamous and abominable.”
 
 
-[^ft255]: “Les vns dependent tout leur bien en toutes de dissolutions, les autres en gouermandise et yurognerie, les autres en brauetes excessiues, les autres a bastir des palais somptueux;”— “Some lay out all their wealth on all kinds of luxuries, others on eating and drinking, others superfluous elegance of dress, others in building sumptuous palaces.”
+[^f255]: “Les vns dependent tout leur bien en toutes de dissolutions, les autres en gouermandise et yurognerie, les autres en brauetes excessiues, les autres a bastir des palais somptueux;”— “Some lay out all their wealth on all kinds of luxuries, others on eating and drinking, others superfluous elegance of dress, others in building sumptuous palaces.”
 
 
-[^ft256]: “Comme si c’estoit vn souhait que sainct Paul feist; ”— “ As if it were a wish that St. Paul expressed.”
+[^f256]: “Comme si c’estoit vn souhait que sainct Paul feist; ”— “ As if it were a wish that St. Paul expressed.”
 
 
-[^ft257]: “La liberalitc de laquelle les Philippiens auoyent vse enuers sainct Paul;”— “The liberality which the Philipilans had exercised towards St. Paul.”
+[^f257]: “La liberalitc de laquelle les Philippiens auoyent vse enuers sainct Paul;”— “The liberality which the Philipilans had exercised towards St. Paul.”
 
 
-[^ft258]: “Les compagnons,qui demeuroyent auec luy;”— “His associates who lived with him.”
+[^f258]: “Les compagnons,qui demeuroyent auec luy;”— “His associates who lived with him.”
 
 
 <!-- PAGE 131 -->
 
 
-[^ft259]: “Some imagine,”says Dr. A. Clarke, “that Seneca, the preceptor of Nero, and the poet Lucan , were converted by St. Paul; and there are still extant, and in a MS. now before me, letters which profess to have passed between Paul and Seneca; but they are worthy of neither. They have been printed in some editions of Seneca’s works.” —Ed.
+[^f259]: “Some imagine,”says Dr. A. Clarke, “that Seneca, the preceptor of Nero, and the poet Lucan , were converted by St. Paul; and there are still extant, and in a MS. now before me, letters which profess to have passed between Paul and Seneca; but they are worthy of neither. They have been printed in some editions of Seneca’s works.” —Ed.
