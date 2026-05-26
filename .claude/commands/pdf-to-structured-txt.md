@@ -356,6 +356,20 @@ for sub in split_block_by_size(b):
 
 **注意**：该函数对 `block_has_right_col`（经文表格）和 narrow blocks 有 guard；字号检查过滤掉脚注定义块（9pt）。段落续行跨页时，由 Stage 1.5 合并（末句未结束 + 下句小写开头）。
 
+深缩进引文块（indent > 60pt）独立成段后，**必须在 Markdown 渲染时加居中 IAL**，否则会左对齐，与 PDF 不符：
+
+```python
+# Render 阶段：BODY item indent > 60 → 居中引文
+elif t == 'BODY':
+    text = item['text']
+    # ... 转义处理 ...
+    md_lines.append(f'\n{text}\n')
+    if item.get('indent', 0) > 60:
+        md_lines.append('{: style="text-align: center"}\n')
+```
+
+Kramdown 会将 `{: style="text-align: center"}` 作为该段落的行内属性，渲染为 `<p style="text-align: center">...</p>`，脚注引用仍可正常处理。
+
 ### 4.6 表格 `<td>` 内脚注引用：必须转为 HTML 上标
 
 **症状**：圣经经文表格某列出现字面文字 `[^44]`，而非上标链接。
