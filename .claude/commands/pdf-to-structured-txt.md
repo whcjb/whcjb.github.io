@@ -307,7 +307,7 @@ for sub in split_block_by_size(b):
 
 **原因**：Ages Digital Library PDF 的注释体正文，同一节（或同一页）内的多个段落往往被 PyMuPDF 提取为**同一个 block**。段落边界在 PDF 中由**首行缩进**标识——段首行 x0 = block_x0 + ~18pt，其余行 x0 = block_x0。`split_block_by_size` 和 `split_block_by_verse_number` 均不感知缩进，因此无法拆分这类合并。
 
-**识别特征**：对某个全宽 body block，若某行（非第一行）第一个 span 的 x0 > block_x0 + 10pt 且 ≤ block_x0 + 60pt，则该行为一个新段落的开始；字号须 ≥ 11pt。大于 60pt 的深缩进行是居中引文（如圣经引用），**第一次出现**时也触发分段（后续深缩进行合为一个引文块，不再分）。
+**识别特征**：对某个全宽 body block，若某行（非第一行）第一个 span 的 x0 > block_x0 + 10pt 且 ≤ block_x0 + 60pt，则该行为一个新段落的开始；字号须 ≥ 11pt。大于 60pt 的深缩进行是居中引文（如圣经引用），**第一次出现**时也触发分段（后续深缩进行合为一个引文块，不再分）。注意：render 阶段居中阈值为 **>20pt**（见 4.5.1 节），但 split 阶段用 `INDENT_HIGH=60` 区分正文段落缩进 vs 引文行，两者独立。
 
 **修复**：`split_block_by_paragraph_indent`，在 `split_block_by_verse_number` 之后应用：
 
@@ -358,17 +358,20 @@ for sub in split_block_by_size(b):
 
 **注意**：该函数对 `block_has_right_col`（经文表格）和 narrow blocks 有 guard；字号检查过滤掉脚注定义块（9pt）。段落续行跨页时，由 Stage 1.5 合并（末句未结束 + 下句小写开头）。
 
-深缩进引文块（indent > 60pt）独立成段后，**必须在 Markdown 渲染时加居中 IAL**，否则会左对齐，与 PDF 不符：
+缩进引文块独立成段后，**必须在 Markdown 渲染时加居中 IAL**，否则会左对齐，与 PDF 不符：
 
 ```python
-# Render 阶段：BODY item indent > 60 → 居中引文
+# Render 阶段：BODY item indent > 20 → 居中引文
+# 阈值说明：正文段落缩进约18pt，所有经文/拉丁文引用缩进均 >20pt
 elif t == 'BODY':
     text = item['text']
     # ... 转义处理 ...
     md_lines.append(f'\n{text}\n')
-    if item.get('indent', 0) > 60:
+    if item.get('indent', 0) > 20:
         md_lines.append('{: style="text-align: center"}\n')
 ```
+
+**阈值历史**：原为 `> 60`（仅深缩进），后发现大量中度缩进经文引用（如 Matthew 18:18, John 15:16 等，缩进约 46pt）未居中，遂统一降至 `> 20`。经全书验证，正文段落缩进不超过 18pt，所有 >20pt 项均为引文。
 
 Kramdown 会将 `{: style="text-align: center"}` 作为该段落的行内属性，渲染为 `<p style="text-align: center">...</p>`，脚注引用仍可正常处理。
 
