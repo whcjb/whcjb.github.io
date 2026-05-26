@@ -183,13 +183,15 @@ def split_block_by_paragraph_indent(block):
         size = spans[0]['size']
         indent = x0 - block_x0
         is_deep = indent > INDENT_HIGH and size >= BODY_SIZE_MIN
+        first_char = spans[0]['text'].lstrip()[:1]
 
         is_para_start = (
             first_nonempty_seen
             and size >= BODY_SIZE_MIN
             and (
                 (INDENT_LOW <= indent <= INDENT_HIGH)   # normal paragraph indent
-                or (is_deep and not prev_was_deep)       # first line of centered quote block
+                or (is_deep and not prev_was_deep       # first line of centered quote block
+                    and not first_char.islower())        # lowercase = word-wrap continuation, not new para
             )
         )
 
