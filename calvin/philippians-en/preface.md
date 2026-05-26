@@ -247,9 +247,6 @@ He begins the Fourth Chapter with particular admonitions, but proceeds afterward
 [^ft13]: CALVIN’STracts, vol. 1:.
 
 
-## THE ARGUMENT
-
-
 [^ft14]: Caesar’s celebrated victory over Pompey took place on the plains of Pharsalia, in Thessaly, with which Philippi in Macedonia is sometimes confounded by the poets. (See Virg. G. I. 490, Juvenal, 8:242.) Their being sometimes confounded with each other appears to have arisen from the circumstance that there was near Pharsalos, in Thessaly, a town named Philippi, the original name of which was Thebae, distinguished from Thebae in Bœotia by its being called Thebae Thessaliae , or Phthioticae , but having fallen under the power of Philip, King of Macedon, was in honor of the conqueror called Philippi , or Philippopolis . — Ed.
 
 
@@ -278,9 +275,6 @@ He begins the Fourth Chapter with particular admonitions, but proceeds afterward
 
 
 [^ft22]: “Arrogance et vanterie;”— “Arrogance and boasting.”
-
-
-## CHAPTER 1
 
 
 [^ft23]: “Toutes les fois que i’ay souuenance de vous, ou , auec entiere souuenance de vous;”— “Every time that I have remembrance of you, or , with constant remembrance of you.”
