@@ -195,7 +195,7 @@ next_label: "第一章"
 # 题解
 
 
-> 论
+<p style="text-align:center">论</p>
 
 
 ## 保罗致腓立比人书信

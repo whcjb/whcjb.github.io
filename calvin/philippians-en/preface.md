@@ -176,7 +176,7 @@ Many in the dedications of their trauails are accustomed to set forth the praise
 # THE ARGUMENT
 
 
-> ON
+<p style="text-align:center">ON</p>
 
 
 ## THE EPISTLE OF PAUL TO THE PHILIPPIANS
