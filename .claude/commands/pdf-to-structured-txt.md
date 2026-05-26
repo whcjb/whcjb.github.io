@@ -218,6 +218,7 @@ items.append({'type': 'BODY', 'text': text, 'indent': first_indent})
 # Stage 1.5：纯结构化合并
 # 结构信号：nxt_indent < INDENT_LOW → 无段落首行缩进 → 续行 block
 # 安全兜底：前段未结句（防止段首无缩进的新章节首段被误合并）
+# 特判：前段末有未闭合括号（如 "(2 Corinthians"）→ 强制合并，无论 nxt_indent
 PARA_INDENT_LOW = 10  # 与 split_block_by_paragraph_indent 保持一致
 
 idx = 0
@@ -230,14 +231,27 @@ while idx < len(all_items):
             cur = all_items[idx]['text']
             nxt = all_items[j]['text']
             nxt_indent = all_items[j].get('indent', 0)
-            if nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur):
+            cur_has_open_paren = bool(re.search(r'\([^)]*$', cur.rstrip()))
+            if (nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur)) \
+                    or (cur_has_open_paren and not is_sentence_end(cur)):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
+                all_items[idx]['indent'] = min(
+                    all_items[idx].get('indent', 0),
+                    all_items[j].get('indent', 0))
                 del all_items[j]
                 continue
     idx += 1
 ```
 
 ⚠️ **严禁使用 `first_char`（首字大小写）或 `cur_ends_comma`（逗号结尾）作为合并条件**——这是内容判断，不是结构判断，已知会导致 Calvin 注释中圣经引文段落被错误合并。
+
+**已知坑：括号内圣经引用跨页断裂**
+
+**症状**：正文中有 `(2 Corinthians` 结尾的段落，下一页开头是 `6:14.)` 单独成一行且被居中（因为 indent > 20pt）。
+
+**根因**：PDF 恰好在 `(书名` 和 `章:节)` 之间换页，导致 "6:14.)" 作为独立 BODY item 被 render 阶段加上居中 IAL。Stage 1.5 原本的 `nxt_indent < PARA_INDENT_LOW` 条件失效（indent > 20pt）。
+
+**修复**：`cur_has_open_paren = bool(re.search(r'\([^)]*$', cur.rstrip()))` — 只要当前行末有未闭合括号且未结句，就无条件合并，同时取两者 indent 的较小值（保持较短的那段不居中）。
 
 ### 4.5 同页多节注释合并在同一 block：必须按节分割
 
