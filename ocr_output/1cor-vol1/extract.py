@@ -5,7 +5,7 @@ Calvin on 1 Corinthians (Vol. 1) — PDF 提取脚本
 import fitz, re, os
 
 PDF_PATH   = "/Users/yanpeifa/Documents/论文/calvin_gelinduo1.pdf"
-OUTPUT_PATH = "/Users/yanpeifa/Documents/whcjb.github.io/ocr_output/gelinduo1/calvin_gelinduo1.md"
+OUTPUT_PATH = "/Users/yanpeifa/Documents/whcjb.github.io/ocr_output/1cor-vol1/calvin_1cor-vol1.md"
 
 doc = fitz.open(PDF_PATH)
 

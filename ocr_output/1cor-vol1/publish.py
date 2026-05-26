@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Split calvin_gelinduo1.md into per-section Jekyll files for calvin/1corinthians-en/.
+Split calvin_1cor-vol1.md into per-section Jekyll files for calvin/1corinthians-en/.
 """
 import re
 import os
@@ -9,7 +9,7 @@ BOOK_ID = '1corinthians-en'
 BOOK_NAME = 'Calvin on 1 Corinthians'
 DATE = '2026-05-26 12:44'
 OUT_DIR = os.path.join(os.path.dirname(__file__), '../../calvin/1corinthians-en')
-MD_PATH = os.path.join(os.path.dirname(__file__), 'calvin_gelinduo1.md')
+MD_PATH = os.path.join(os.path.dirname(__file__), 'calvin_1cor-vol1.md')
 
 # ── Load source ───────────────────────────────────────────────────────────────
 with open(MD_PATH, encoding='utf-8') as f:
