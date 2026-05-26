@@ -28,7 +28,10 @@ header-img: img/psalm-bg-mountain.jpg
             </p>
 
             {% assign all_chapter_pages = site.pages | where: "layout", "calvin-chapter" %}
-            {% assign books_with_content = all_chapter_pages | map: "book_id" | uniq %}
+            {% assign all_calvin_en_pages = site.pages | where: "layout", "calvin-en" %}
+            {% assign books_ch = all_chapter_pages | map: "book_id" %}
+            {% assign books_en = all_calvin_en_pages | map: "book_id" %}
+            {% assign books_with_content = books_ch | concat: books_en | uniq %}
 
             <!-- 旧约 -->
             <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">旧　约</h3>
