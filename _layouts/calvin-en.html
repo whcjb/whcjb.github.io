@@ -27,6 +27,12 @@ layout: default
         {{ content }}
       </div>
 
+      {% if page.date %}
+      <div style="margin-top:32px; font-size:12px; color:#aaa; text-align:right;">
+        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
       <div style="display:flex; justify-content:space-between; margin-top:48px; padding-top:16px; border-top:1px solid #eee; font-size:13px;">
         {% if page.prev_section %}
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
