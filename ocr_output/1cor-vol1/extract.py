@@ -334,11 +334,19 @@ def spans_to_text(spans):
 
 # ── Scripture table builder ──────────────────────────────────────────────────
 def _fnref_to_html(text):
-    """Convert [^N] markdown footnote refs to HTML superscripts for use inside <td>.
-    Kramdown does not process markdown inside HTML blocks, so refs must be HTML."""
-    return re.sub(r'\[\^(\d+)\]',
+    """Convert Markdown inline markup to HTML for use inside <td>.
+    Kramdown does not process markdown inside HTML blocks."""
+    # Footnote refs: [^N] → <sup>
+    text = re.sub(r'\[\^(\d+)\]',
                   lambda m: f'<sup><a href="#fn:{m.group(1)}" id="fnref:{m.group(1)}">{m.group(1)}</a></sup>',
                   text)
+    # Bold-italic: ***text*** → <em><strong>text</strong></em>
+    text = re.sub(r'\*\*\*(.+?)\*\*\*', r'<em><strong>\1</strong></em>', text)
+    # Bold: **text** → <strong>text</strong>
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    # Italic: *text* → <em>text</em>
+    text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+    return text
 
 def build_table(header_text, rows):
     """
