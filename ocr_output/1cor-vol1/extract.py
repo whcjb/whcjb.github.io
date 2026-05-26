@@ -325,7 +325,7 @@ def spans_to_text(spans):
             prev = parts[-1]
             needs_space = (prev and not prev[-1].isspace()
                            and not part[0].isspace()
-                           and part[0] not in '.,;:!?)\'"*_-')
+                           and part[0] not in '.,;:!?)\'"_-')
             if needs_space:
                 parts.append(' ')
         parts.append(part)
