@@ -143,6 +143,59 @@ def split_block_by_verse_number(block):
         groups.append(_make_sub_block(block, current_lines))
     return groups if len(groups) > 1 else [block]
 
+def split_block_by_paragraph_indent(block):
+    """Split a body block at lines that start a new paragraph (indicated by first-line indent).
+
+    In Ages Digital Library Calvin commentary PDFs, paragraph starts are indented
+    ~18pt from the block's left margin.  Normal body lines sit at x0 = block_x0 (72pt);
+    indented paragraph-start lines sit at x0 = block_x0 + 12..50pt.
+    Lines indented more than 60pt are centered citations — not paragraph starts.
+    Footnote-definition blocks have 9pt text; commentary body is 12pt.  We filter
+    by font-size >= 11pt to avoid splitting inside footnote sections.
+
+    Only applies to full-width commentary blocks (same guards as other splitters).
+    """
+    if block_has_right_col(block):
+        return [block]
+    if not block_is_full_width(block):
+        return [block]
+
+    block_x0 = block['bbox'][0]
+    INDENT_LOW, INDENT_HIGH = 10, 60   # pt
+    BODY_SIZE_MIN = 11.0               # pt — body text ≥12pt; footnote text ~9pt
+
+    groups = []
+    current_lines = []
+    first_nonempty_seen = False
+
+    for line in block['lines']:
+        spans = [s for s in line['spans'] if s['text'].strip()]
+        if not spans:
+            current_lines.append(line)
+            continue
+
+        x0 = spans[0]['bbox'][0]
+        size = spans[0]['size']
+        indent = x0 - block_x0
+
+        is_para_start = (
+            first_nonempty_seen
+            and INDENT_LOW <= indent <= INDENT_HIGH
+            and size >= BODY_SIZE_MIN
+        )
+
+        if is_para_start and current_lines:
+            groups.append(_make_sub_block(block, current_lines))
+            current_lines = []
+
+        current_lines.append(line)
+        first_nonempty_seen = True
+
+    if current_lines:
+        groups.append(_make_sub_block(block, current_lines))
+
+    return groups if len(groups) > 1 else [block]
+
 def is_table_header(block):
     """'1 Corinthians N:M-K' type header, size ~16.8."""
     if not block['lines'] or not block['lines'][0]['spans']:
@@ -377,7 +430,8 @@ def process_page(page, page_num, pending_header=None):
         else:
             # Split blocks where heading and body text are merged
             for sub in split_block_by_size(b):
-                body_blocks.extend(split_block_by_verse_number(sub))
+                for sub2 in split_block_by_verse_number(sub):
+                    body_blocks.extend(split_block_by_paragraph_indent(sub2))
 
     footnote_defs = collect_footnote_defs(fn_def_blocks)
 

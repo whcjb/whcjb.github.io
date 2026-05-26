@@ -280,14 +280,58 @@ def _rebuild_block(orig, lines):
 
 ```python
 # 把每个 block 先按节号分割，再按行类型分类
-all_sub_blocks = []
-for b, _ in blocks:
-    for sub in split_block_by_verse_number(b):
-        all_sub_blocks.append((sub, block_lines(sub)))
-
-for block, lines in all_sub_blocks:
-    # ... 原有分类逻辑不变 ...
+for sub in split_block_by_size(b):
+    for sub2 in split_block_by_verse_number(sub):
+        body_blocks.extend(split_block_by_paragraph_indent(sub2))
 ```
+
+### 4.5b Ages PDF 段落首行缩进：同一 block 内多段合并，必须按缩进拆分
+
+**症状**：原文中分段的多个连续段落（如注释一节经文的数个段落）在页面上合并为一个整段，无换行间距。
+
+**原因**：Ages Digital Library PDF 的注释体正文，同一节（或同一页）内的多个段落往往被 PyMuPDF 提取为**同一个 block**。段落边界在 PDF 中由**首行缩进**标识——段首行 x0 = block_x0 + ~18pt，其余行 x0 = block_x0。`split_block_by_size` 和 `split_block_by_verse_number` 均不感知缩进，因此无法拆分这类合并。
+
+**识别特征**：对某个全宽 body block，若某行（非第一行）第一个 span 的 x0 > block_x0 + 10pt 且 ≤ block_x0 + 60pt，则该行为一个新段落的开始。字号须 ≥ 11pt（12pt 正文）以排除 9pt 脚注定义块。大于 60pt 缩进的行是居中引言，不分段。
+
+**修复**：`split_block_by_paragraph_indent`，在 `split_block_by_verse_number` 之后应用：
+
+```python
+INDENT_LOW, INDENT_HIGH = 10, 60   # pt
+BODY_SIZE_MIN = 11.0               # body text ≥12pt; footnote text ~9pt
+
+def split_block_by_paragraph_indent(block):
+    if block_has_right_col(block) or not block_is_full_width(block):
+        return [block]
+    block_x0 = block['bbox'][0]
+    groups, current_lines = [], []
+    first_nonempty_seen = False
+    for line in block['lines']:
+        spans = [s for s in line['spans'] if s['text'].strip()]
+        if not spans:
+            current_lines.append(line); continue
+        x0 = spans[0]['bbox'][0]
+        indent = x0 - block_x0
+        is_para_start = (
+            first_nonempty_seen
+            and INDENT_LOW <= indent <= INDENT_HIGH
+            and spans[0]['size'] >= BODY_SIZE_MIN
+        )
+        if is_para_start and current_lines:
+            groups.append(_make_sub_block(block, current_lines))
+            current_lines = []
+        current_lines.append(line)
+        first_nonempty_seen = True
+    if current_lines:
+        groups.append(_make_sub_block(block, current_lines))
+    return groups if len(groups) > 1 else [block]
+
+# 在 block 处理循环中：
+for sub in split_block_by_size(b):
+    for sub2 in split_block_by_verse_number(sub):
+        body_blocks.extend(split_block_by_paragraph_indent(sub2))
+```
+
+**注意**：该函数对 `block_has_right_col`（经文表格）和 narrow blocks 有 guard；字号检查过滤掉脚注定义块（9pt）。段落续行跨页时，由 Stage 1.5 合并（末句未结束 + 下句小写开头）。
 
 ### 4.6 表格 `<td>` 内脚注引用：必须转为 HTML 上标
 
@@ -413,6 +457,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
 
 1. 从用户消息解析参数
 2. 编写 PDF 提取脚本时，**必须逐条对照本 skill 的提取脚本模板**，确认以下功能全部实现，不得遗漏：
+   - 同页多段合并（首行缩进）：`split_block_by_paragraph_indent`（见第4.5b节），在 `split_block_by_verse_number` 之后应用，把同一 block 内因首行缩进标识的多个段落拆分为独立块；guard 排除经文表格和脚注块
    - 同页多节注释合并：`split_block_by_verse_number`（见第4.5节），在 Stage 1 block 循环前对每个 block 执行，把 bold `N.` 行首的节分割为独立块；两个 guard 防止误切经文表格
    - 表格 `<td>` 内脚注转 HTML：`build_table` 中调用 `_fnref_to_html()` 把 `[^N]` 转 `<sup>` 标签（见第4.6节），否则 Kramdown 不处理 HTML 块内的 Markdown
    - Stage 1.6：段首孤立脚注引用移到前段末尾（见第4.7节），防止大上标出现在段落开头
@@ -467,6 +512,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
   - `grep -P '^\[\^\d+\] [A-Z]' output.md` 应无输出（Case A：段首脚注+正文，Stage 1.6 未处理）
   - `python3 -c "import re,sys; s=open('output.md').read(); bad=re.findall(r'\n\n(\[\^\^?\d+\])\n\n', s); print(bad)"` 应输出 `[]`（Case B：整段只有脚注引用，需删除并移到前段）
 - [ ] **节号段落斜体格式正确**：`grep -n '^\*\*[0-9]\+\.\*\*\*' output.md` 应无输出（`**N.***` 为错误格式，说明 `format_span` 未移出空白）；正确格式应为 `**N.** *经文引用*`（bold 后有空格再 italic）
+- [ ] **段落数量合理**：body 段落数量应与 PDF 页数成比例（每页平均 2-4 段为正常）。若整本书只有 400 段而 PDF 有 290 页，说明 `split_block_by_paragraph_indent` 未执行——每段实际是多段合并。
 - [ ] **节号注释未合并**：检查各章中每节注释（`**N.**`）是否都独立成段，无两节注释连在同一段落的情况。快速验证：
   ```python
   import re
