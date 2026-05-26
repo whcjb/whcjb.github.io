@@ -15,6 +15,22 @@
 
 若不提供 `book_id`，只执行 PDF→Markdown 提取，不发布到网站。
 
+## 命名规范
+
+`ocr_output/` 下的子目录和 MD 文件名**必须使用英文，禁止使用拼音**。
+
+| 书卷 | 正确命名 | 错误示例 |
+|------|---------|---------|
+| 腓立比书 | `ocr_output/phil/calvin_phil.md` | `filibishu/` |
+| 哥林多前书卷一 | `ocr_output/1cor-vol1/calvin_1cor-vol1.md` | `gelinduo1/` |
+| 哥林多前书卷二 | `ocr_output/1cor-vol2/calvin_1cor-vol2.md` | — |
+| 哥林多后书 | `ocr_output/2cor/calvin_2cor.md` | — |
+
+规则：
+- 目录名用书卷缩写（`phil`、`1cor`、`acts` 等），多卷用 `-vol1`、`-vol2` 区分
+- MD 文件名：`calvin_<目录名>.md`
+- `book_id`（发布用）：`<书卷英文>-en`（如 `1corinthians-en`、`philippians-en`）
+
 ## 还原 PDF 的通用原则
 
 目标是让网页与 PDF 原文在结构和内容上完全一致。以下原则适用于所有 Ages Digital Library Calvin 注释书卷。
@@ -492,6 +508,8 @@ print("Written index.html")
 
 ### 翻译脚本（`scripts/translate_filibi.py` 为模板）
 
+翻译脚本的**最终输出是一个完整的中文 MD 文件**（如 `ocr_output/BOOK/calvin_BOOK_zh.md`），保存英文版的完整结构，所有英文正文替换为中文。该文件是发布脚本的输入源，必须先生成并检查后再执行发布。
+
 ```bash
 # 全量翻译（耗时较长）
 python3 scripts/translate_filibi.py
@@ -507,10 +525,20 @@ python3 scripts/translate_filibi.py --dry-run
 - 使用 **claude CLI** 翻译，每批 20 段（`<<<N>>>` 格式）
 - 每段以 MD5 hash 为 key 缓存到 `ocr_output/BOOK/zh_cache/`，中断可续翻
 - 行类型自动识别：H1/H2、blockquote、footnote、Markdown 表格行（左列英文→译，右列拉丁→保留）、普通段落
+- **翻译完成后将所有段落按原顺序拼合，写入 `ocr_output/BOOK/calvin_BOOK_zh.md`**
 
 为新书卷创建翻译脚本时，复制 `translate_filibi.py` 并修改：
-- `SRC`、`CACHE_DIR`、`OUT` 路径
+- `SRC`（英文 MD 路径）、`CACHE_DIR`（缓存目录）、`OUT`（中文 MD 输出路径，如 `ocr_output/BOOK/calvin_BOOK_zh.md`）
 - `SYSTEM` 提示中的书卷名映射（如 EPHESIANS→以弗所书）
+
+翻译完成后，**必须检查中文 MD 文件**再执行发布：
+```bash
+# 确认中文 MD 已生成且非空
+wc -l ocr_output/BOOK/calvin_BOOK_zh.md
+
+# 抽查若干段落，确认翻译质量
+sed -n '100,120p' ocr_output/BOOK/calvin_BOOK_zh.md
+```
 
 ### 发布脚本（`scripts/publish_filibi_zh.py` 为模板）
 
