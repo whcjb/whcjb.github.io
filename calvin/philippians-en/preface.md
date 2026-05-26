@@ -143,7 +143,7 @@ While The Commentaries of Calvin everywhere abound with important statements in 
 <!-- PAGE 12 -->
 
 
-> J. P. ELGIN , March 1851.
+<p style="text-align:right; font-style:italic">J. P. ELGIN , March 1851.</p>
 
 
 <!-- PAGE 13 -->
@@ -206,7 +206,7 @@ He begins the Fourth Chapter with particular admonitions, but proceeds afterward
 <!-- PAGE 17 -->
 
 
-> COMMENTARY ON
+<p style="text-align:center">COMMENTARY ON</p>
 
 
 ## THE EPISTLE OF PAUL TO THE PHILIPPIANS.

@@ -18,7 +18,7 @@ next_label: "第一章"
 # 腓立比书注释
 
 
-> 约翰·加尔文 著
+<p style="text-align:center">约翰·加尔文 著</p>
 
 
 # B o o k s F o r T h e A g e s AGES Software • Albany, OR USA Version 1.0 © 1998
@@ -162,7 +162,7 @@ next_label: "第一章"
 <!-- PAGE 12 -->
 
 
-> J. P. 于埃尔金，1851年3月
+<p style="text-align:right; font-style:italic">J. P. 于埃尔金，1851年3月</p>
 
 
 <!-- PAGE 13 -->
@@ -225,7 +225,7 @@ next_label: "第一章"
 <!-- PAGE 17 -->
 
 
-> 注释
+<p style="text-align:center">注释</p>
 
 
 ## 保罗致腓立比人书注释
