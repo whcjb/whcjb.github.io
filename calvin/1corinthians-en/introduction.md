@@ -103,6 +103,7 @@ In preparing the present Translation of this part of Calvin’s Commentaries, ca
 ## THE AUTHOR’S FIRST EPISTLE DEDICATORY
 
 **TO THAT ILLUSTRIOUS MAN, JAMES OF BURGUNDY,****MASTER OF FALAIS AND BREDA**
+{: style="text-align: center"}
 
 Would that this my Commentary, in which I have attempted to expound an Epistle not less obscure than useful, published, as it now is, in accordance with the earnest solicitations of many for a long time past, and even reiterated demands, may be correspondingly answerable to the hopes and wishes of all! I say this, not with the view of earning from this work any need of praise — an ambition that ought to be quite away from the minds of Christ’s servants — but from a desire that it may do good at all, which it cannot do, if it does meet with acceptance. I have, for my part, labored with the utmost faithfulness, and with no less diligence, that it may, without any show, be of the greatest service to the Church of God. How far I have succeeded, my readers will judge for themselves.
 
@@ -125,8 +126,10 @@ Farewell, most illustrious Sir, with your noble partner. The Lord Jesus long pre
 ## THE AUTHOR’S SECOND EPISTLE DEDICATORY
 
 **TO LORD GALLIAZUS CARACCIOLUS:***A Nobleman, Distinguished Still More By Eminent Virtues Than By Illustrious Descent, Only Son*
+{: style="text-align: center"}
 
 *And Rightful Heir Of The Marquis Of Vico, Health:* —
+{: style="text-align: center"}
 
 Would that when this Commentary first saw the light, I had either not known at all, or else had known thoroughly the individual whose name, hitherto inscribed upon this page, I am now under the necessity of erasing! I have, it is true, no fear of his upbraiding me with fickleness, or complaining that I have taken from him what I had previously given, for having intentionally made it his object, not merely to withdraw as much as possible from me personally, but also to have no connection with our Church, he has left himself no just ground of complaint. It is, however, with reluctance that I deviate from my custom, so as to erase any one’s name from my writings, and it grieves me that that individual should have quitted the lofty eminence that I had assigned him, [^19] so as not to hold out a light to others, as it was my desire that he should. [^20] As, however, it is not in my power to remedy this evil, let him, so far as I am concerned, remain buried, as I am desirous even now of sparing his credit by not mentioning his name.
 
