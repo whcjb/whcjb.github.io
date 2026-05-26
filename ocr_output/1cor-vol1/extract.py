@@ -557,17 +557,24 @@ idx = 0
 while idx < len(all_items):
     if all_items[idx]['type'] == 'BODY':
         text = all_items[idx]['text']
-        m = re.match(r'^(\[\^\d+\])\s+', text)
-        if m:
-            fn_ref = m.group(1)
-            rest = text[m.end():]
+        # Case A: "[^N] text..." — ref at start of paragraph with following text
+        # Case B: "[^N]" — ref is the entire paragraph (solo orphan)
+        m_prefix = re.match(r'^(\[\^\d+\])\s+', text)
+        m_solo   = re.match(r'^(\[\^\d+\])$', text.strip())
+        if m_prefix or m_solo:
+            fn_ref = (m_prefix or m_solo).group(1)
+            rest   = text[m_prefix.end():] if m_prefix else ''
             # Find previous BODY item (skip PAGE markers)
             prev_idx = idx - 1
             while prev_idx >= 0 and all_items[prev_idx]['type'] == 'PAGE':
                 prev_idx -= 1
             if prev_idx >= 0 and all_items[prev_idx]['type'] == 'BODY':
                 all_items[prev_idx]['text'] = all_items[prev_idx]['text'].rstrip() + fn_ref
-                all_items[idx]['text'] = rest
+                if rest:
+                    all_items[idx]['text'] = rest
+                else:
+                    del all_items[idx]  # remove empty solo-ref paragraph
+                    continue
     idx += 1
 
 # ── Render to Markdown ────────────────────────────────────────────────────────

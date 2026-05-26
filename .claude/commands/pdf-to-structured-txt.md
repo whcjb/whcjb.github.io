@@ -357,23 +357,31 @@ def format_span(span):
 
 **修复**：Stage 1.6 将段首孤立脚注引用（`[^N] 正文...`）移到前一段末尾：
 
+**两种情形**：
+- **Case A**：`[^N] text...` — 脚注引用在段首，后面有正文 → 把 `[^N]` 移到前段末，本段保留剩余文字
+- **Case B**：`[^N]` 独占整段（整个 BODY item 只有一个脚注引用）→ 把 `[^N]` 移到前段末，**删除本段**
+
 ```python
-# Stage 1.6：把段首孤立脚注引用移到前段末尾
+# Stage 1.6：把段首孤立脚注引用移到前段末尾（含仅含引用的整段情形）
 idx = 0
 while idx < len(all_items):
     if all_items[idx]['type'] == 'BODY':
         text = all_items[idx]['text']
-        m = re.match(r'^(\[\^\d+\])\s+', text)
-        if m:
-            fn_ref = m.group(1)
-            rest = text[m.end():]
-            # 找前一个 BODY 项（跳过 PAGE 标记）
+        m_prefix = re.match(r'^(\[\^\d+\])\s+', text)          # Case A
+        m_solo   = re.match(r'^(\[\^\d+\])$', text.strip())     # Case B
+        if m_prefix or m_solo:
+            fn_ref = (m_prefix or m_solo).group(1)
+            rest   = text[m_prefix.end():] if m_prefix else ''
             prev_idx = idx - 1
             while prev_idx >= 0 and all_items[prev_idx]['type'] == 'PAGE':
                 prev_idx -= 1
             if prev_idx >= 0 and all_items[prev_idx]['type'] == 'BODY':
                 all_items[prev_idx]['text'] = all_items[prev_idx]['text'].rstrip() + fn_ref
-                all_items[idx]['text'] = rest
+                if rest:
+                    all_items[idx]['text'] = rest
+                else:
+                    del all_items[idx]   # Case B：删除空段
+                    continue
     idx += 1
 ```
 
@@ -455,7 +463,9 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
   ```
   输出非空说明有脚注标签不匹配，需检查是否还有 `ft` 前缀未被标准化（脚注区标签 `FtN`/`ftN` → `fN`，正文引用 `[^fN]`，两者必须一致）
 - [ ] **表格内无字面脚注引用**：`grep '\[^[0-9]' output.md` 的匹配项中，`<td>` 内不应有 `[^N]` 字面文字（应已被转为 `<sup>` HTML）；若有则说明 `_fnref_to_html()` 未被调用
-- [ ] **无段首孤立脚注引用**：`grep -P '^\[\^\d+\] [A-Z]' output.md` 应无输出；若有输出说明 Stage 1.6 未执行，段首大上标会出现在渲染页面上
+- [ ] **无孤立脚注引用段**：两项都需通过：
+  - `grep -P '^\[\^\d+\] [A-Z]' output.md` 应无输出（Case A：段首脚注+正文，Stage 1.6 未处理）
+  - `python3 -c "import re,sys; s=open('output.md').read(); bad=re.findall(r'\n\n(\[\^\^?\d+\])\n\n', s); print(bad)"` 应输出 `[]`（Case B：整段只有脚注引用，需删除并移到前段）
 - [ ] **节号段落斜体格式正确**：`grep -n '^\*\*[0-9]\+\.\*\*\*' output.md` 应无输出（`**N.***` 为错误格式，说明 `format_span` 未移出空白）；正确格式应为 `**N.** *经文引用*`（bold 后有空格再 italic）
 - [ ] **节号注释未合并**：检查各章中每节注释（`**N.**`）是否都独立成段，无两节注释连在同一段落的情况。快速验证：
   ```python
