@@ -1,0 +1,962 @@
+# PDF to Markdown + 发布到网站（含中文翻译）
+
+将 Ages Digital Library 格式的 Calvin 注释 PDF 转换为 Markdown 文件，完整保留结构与格式，发布为网站英文版书卷；并可将英文 MD 翻译成中文发布为中文版。
+
+## 用法
+
+```
+/pdf-to-structured-txt <pdf路径> <输出md路径> [book_id] [book_name_en]
+```
+
+例如：
+```
+/pdf-to-structured-txt /Users/yanpeifa/Documents/论文/calvin_filibi.pdf ocr_output/phil/calvin_filibi.md philippians-en "Calvin on Philippians"
+```
+
+若不提供 `book_id`，只执行 PDF→Markdown 提取，不发布到网站。
+
+## 还原 PDF 的通用原则
+
+目标是让网页与 PDF 原文在结构和内容上完全一致。以下原则适用于所有 Ages Digital Library Calvin 注释书卷。
+
+### 0. 最高原则：以 PDF 原文为唯一依据，禁止猜测
+
+**任何格式问题（对齐方式、分行、缩进、字体风格等）必须打开 PDF 原文核实，再做修改。**
+
+- 用户指出某处有误 → 先读 PDF 对应页，确认正确格式，再改
+- 不得根据"惯例""猜测""推断"决定格式
+- 不得因用户否定 A 方案就自动切换到 B 方案——B 方案同样需要 PDF 核实
+- 若不知道 PDF 路径，询问用户，不要自行假设
+
+**反例（错误做法）**：用户说右对齐不对 → 未看 PDF 就改成居中 → 结果 PDF 是左缩进，改了两次都错。
+
+### 1. 元素识别与输出对照
+
+| PDF 元素 | 识别依据 | 网页输出 |
+|---------|---------|---------|
+| 一级标题 | 字体 ≥18pt | `# Title` |
+| 二级标题 | 字体 14–17pt | `## Title` |
+| 正文段落 | 左边距 ≤35px，且非居中 | 普通段落 |
+| **居中段落** | **块中心 x ≈ 页面中心（误差 <10% 页宽）** | **`<p style="text-align:center">text</p>`** |
+| 缩进引文 | 左边距 >35px，且非居中 | `> text`（blockquote） |
+| 红色斜体行内引文 | 红色字体 | `<span style="color:#800000">*text*</span>` |
+| 行内脚注序号 | 上标小字 | `[^f35]` |
+| 圣经经文表格 | 双列区域，含表头 | HTML table（见下） |
+| 脚注定义 | 脚注区，`FtN` 开头 | `[^ftn]: text` |
+| 分页标记 | 页面边界 | `<!-- PAGE N -->` |
+
+**对齐检测是关键**：左边距 > INDENT_X 的块不一定是缩进引文——居中文本和右对齐文本同样有较大的左边距。必须通过坐标几何而非左边距单项判断对齐方式。
+
+#### 问题根源
+
+PDF 里一个居中单词（如 "ON"）的 bbox 约为 `[296, y0, 316, y1]`，左边距 296 远大于 INDENT_X=35，若只看左边距会误判为缩进引文（blockquote）。正确做法是看块的**水平中心**是否与**页面中心**吻合。
+
+#### 三步对齐分类（比单一阈值更通用）
+
+```python
+# ── Step 0: 从文档自动校准正文左边距（不硬编码 35）────────────────────────────
+from collections import Counter
+
+def calibrate_body_margin(doc, max_x=200):
+    """采样所有普通块的左边距，众数即为正文左边距。
+    返回: INDENT_X（正文左边距+10px缓冲，比此大视为非正文）"""
+    xs = []
+    for page in doc:
+        for b in page.get_text("dict")["blocks"]:
+            if b["type"] != 0: continue
+            x = round(b["bbox"][0])
+            if x < max_x:
+                xs.append(x)
+    if not xs:
+        return 35
+    return Counter(xs).most_common(1)[0][0] + 10
+
+def calibrate_right_margin(doc, max_x=200):
+    """采样正文块的右边距，众数即为页面文本右边距（用于检测右对齐）。"""
+    xs = []
+    for page in doc:
+        for b in page.get_text("dict")["blocks"]:
+            if b["type"] != 0: continue
+            if b["bbox"][0] < max_x:
+                xs.append(round(b["bbox"][2]))
+    if not xs:
+        return None
+    return Counter(xs).most_common(1)[0][0]
+
+INDENT_X   = calibrate_body_margin(doc)
+BODY_RIGHT = calibrate_right_margin(doc)
+
+# ── Step 1: 三向对齐判断函数 ──────────────────────────────────────────────────
+def classify_alignment(block, page_w, body_right, tol_px=50):
+    """
+    对左边距 > INDENT_X 的块做三向分类：
+      CENTERED   — 块水平中心 ≈ 页面中心（误差 < tol_px）
+      RIGHT      — 块右边 ≈ 正文右边距（误差 < tol_px//2）
+      BLOCKQUOTE — 其他（真正的缩进引文）
+
+    tol_px=50：固定像素容差，比百分比容差更稳定——不随页面宽度放大
+    （10% 容差在 900px 宽页上允许 ±90px，容易误判）。
+    """
+    bx0, bx1 = block["bbox"][0], block["bbox"][2]
+    block_cx  = (bx0 + bx1) / 2
+
+    if abs(block_cx - page_w / 2) < tol_px:
+        return "CENTERED"
+    if body_right and abs(bx1 - body_right) < tol_px // 2:
+        return "RIGHT"
+    return "BLOCKQUOTE"
+
+# ── Stage 1 中使用（替换原来的 btype 判断）────────────────────────────────────
+if block["bbox"][0] > INDENT_X:
+    align = classify_alignment(block, page_w, BODY_RIGHT)
+    if align == "CENTERED":
+        is_italic = all(
+            bool(s["flags"] & 2)
+            for line in block["lines"] for s in line["spans"] if s["text"].strip()
+        )
+        items.append({"type": "CENTERED", "text": all_text, "italic": is_italic})
+    elif align == "RIGHT":
+        items.append({"type": "RIGHT", "text": all_text})
+    else:
+        items.append({"type": "BLOCKQUOTE", "text": all_text})
+else:
+    items.append({"type": "BODY", "text": all_text})
+```
+
+渲染时（Stage 2）：
+```python
+elif t == "CENTERED":
+    text = format_inline(item['text'])
+    text = convert_ages_greek(text)
+    style = "text-align:center; font-style:italic" if item.get("italic") else "text-align:center"
+    md_lines.append(f'\n<p style="{style}">{text}</p>\n')
+elif t == "RIGHT":
+    text = format_inline(item['text'])
+    text = convert_ages_greek(text)
+    md_lines.append(f'\n<p style="text-align:right; font-style:italic">{text}</p>\n')
+```
+
+#### 为何用像素容差而不是百分比容差
+
+| 方案 | 问题 |
+|------|------|
+| `page_w * 0.10`（10%） | 600px 页 → ±60px 还好；900px 宽页 → ±90px，误判率高 |
+| `tol_px = 50`（固定像素） | 不随页面宽度变化，在各种 PDF 尺寸下都稳定 |
+
+如仍有误判，调小 `tol_px`（如 35px）而无需改动其他逻辑。
+
+### 2. 圣经经文表格：必须还原跨列标题
+
+PDF 中表格标题行（如 `PHILIPPIANS 2:5-11`）横跨英文和拉丁文两列。输出**必须**用 HTML 实现 `colspan=2`，不得用 Markdown `| title | |`（后者无法合并单元格）：
+
+```html
+<table class="calvin-scripture">
+<thead><tr><th colspan="2" style="text-align:center">PHILIPPIANS 2:5-11</th></tr></thead>
+<!-- text-align 从 PDF block x 坐标检测：x > 页宽20% → center，否则 left -->
+<tbody>
+<tr><td>5 . Let this mind...</td><td>5 . Hoc enim sentiatur...</td></tr>
+</tbody>
+</table>
+```
+
+Ages Digital Library PDF 中表格头有两种编码形式，均需识别：
+- **有引用代码**：`<524104>PHILIPPIANS 1:1-6`，以 `<NNNNNN>` 开头，用 `re.match` 检测
+- **无引用代码**：`PHILIPPIANS 2:1-4`，字体 ≥14pt、首行 x>80（居中），用 `is_plain_scripture_header_block()` 检测
+
+### 3. 希腊文：必须转换为 Unicode
+
+Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 ASCII 转写（如 `ejmo>i`）而非 Unicode（`ἐμοί`）。输出到 MD 前**必须**调用 `convert_ages_greek()` 转换，否则网页显示乱码。
+
+转写规则：辅音直接映射；`j`=平气符；`>`/`<`/`~`=锐/重/抑扬音；`|`=iota 下标；`v`=词尾 sigma；双元音中的声调符属于第二个元音（如 `ejmo>i` → `ἐμοί`）。
+
+检测 HTML 标签时**必须**用 `<[a-zA-Z/!][^>]*>`，不得用 `<[^>]+>`——后者会把 `to< ... <span>` 中的希腊文和标签一起误吞。
+
+### 4. 跨页段落：必须合并
+
+PDF 段落常在页面边界断裂。Stage 1.5 负责合并：当前段未以句号/问号/感叹号结尾，且下一段以**小写字母**或**破折号 `—`** 开头，则合并（跳过中间的 PAGE 标记）。
+
+### 5. 脚注区 `##` 标记：先用作边界，再过滤
+
+PDF 脚注区按章节分组，每组开头有 `##` 标记（如 `## CHAPTER 1`、`## THE ARGUMENT`、`## SERMON 5` 等——**具体词语因书而异**）。这些标记有**双重作用**：
+
+**① 划定 fn_sections 边界（Step 1 必做）**
+`## CHAPTER N` 行标志着该行之后的脚注属于第 N 章，必须用其行号来精确设置各章的 `fn_sections`。不能将整个 fn 区当作一个整体，把所有脚注都放进同一章。
+
+**② 发布时过滤（渲染时不输出）**
+边界确定后，`##` 标记行本身不属于任何正文，渲染时过滤掉：
+
+```python
+fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
+```
+
+**注意**：正文（body）区的 `##` 标题是合法的副标题，**不**过滤。区分方式：fn 区从 `---` 分隔符之后开始，该分隔符之后的所有 `##` 均为组织标记。
+
+### 6. Kramdown 安全输出
+
+正文、blockquote、脚注定义中凡含以下字符，均需转义，否则 Kramdown 误判：
+- `|` → `\|`（防止被识别为表格列分隔符）
+- 行首 `N.` → `N\.`（防止被识别为有序列表）
+
+圣经经文表格已改用 HTML，不受 Kramdown 影响，无需转义。
+
+## 执行步骤
+
+1. 从用户消息解析参数
+2. 运行 PDF 提取脚本（见下方）
+3. 运行**提取质检 Checklist**（见下方），逐项排查
+4. 若提供了 `book_id`，继续执行**发布到网站**步骤
+5. 发布后再运行**发布质检 Checklist**，逐项排查
+
+---
+
+## 质检 Checklist
+
+每次提取/发布完成后必须逐项过一遍，不得跳过。
+
+### 提取质检（PDF → MD）
+
+- [ ] **表格数量合理**：`output.count('calvin-scripture')` 与 PDF 中圣经经文表格数量一致；若为 0 或明显偏少，说明表格头未被识别（检查两种格式的检测逻辑）
+- [ ] **表格标题跨列**：所有表格均为 `<th colspan="2">`，无 `| **BOOK X:Y** | |` 形式的 Markdown 表格残留
+- [ ] **希腊文已转换**：MD 文件中无 `>[a-z]` 或 `[a-z]<` 形式的 Ages 转写残留（用 `grep -P '[a-z][><~][a-z]'` 验证）；若有，检查 `convert_ages_greek()` 是否被调用
+- [ ] **脚注数量合理**：`output.count('[^f')` 与 PDF 脚注数量大致对应；若为 0，说明脚注区未被检测到（注：计数用 `[^f` 而非 `[^ft`，因脚本已将 ft→f 标准化）
+- [ ] **脚注引用与定义名称一致**：引用标签与定义标签必须完全匹配，否则 Kramdown 渲染为字面文字。验证：
+  ```bash
+  # 提取正文中所有引用标签（[^fN]）
+  grep -oP '\[\^f\d+\]' output.md | sort -u > /tmp/refs.txt
+  # 提取脚注定义标签（[^fN]:）
+  grep -oP '\[\^f\d+\](?=:)' output.md | sort -u > /tmp/defs.txt
+  # 找不匹配的项（有引用但无定义）
+  comm -23 /tmp/refs.txt /tmp/defs.txt
+  ```
+  输出非空说明有脚注标签不匹配，需检查是否还有 `ft` 前缀未被标准化（脚注区标签 `FtN`/`ftN` → `fN`，正文引用 `[^fN]`，两者必须一致）
+- [ ] **跨页段落已合并**：检查若干页面边界处（`<!-- PAGE N -->`），前后段落是否被错误断开
+- [ ] **无乱入 H2 表格头**：MD 中无 `## PHILIPPIANS` 或 `## [书卷名]` 形式的行（说明表格头被误识别为 H2）
+- [ ] **无行内引用代码残留**：MD 中无 `[<NNNNNN>]` 或 `(<NNNNNN>` 形式（用 `grep '<[0-9]' output.md` 验证）
+- [ ] **对齐文本对照 PDF 逐条核实**：`grep "^> " output.md` 列出所有 blockquote，打开 PDF 对应页确认每条是否真为左缩进；同理检查所有 `<p style="text-align:center">` 和 `<p style="text-align:right">` 是否与 PDF 一致。**不得凭推断判断，必须看 PDF 原文。**
+
+### 发布质检（MD → 网站）
+
+- [ ] **fn 区无分节标题残留**：对每个发布文件，`---` 分隔符之后不得有任何 `##` 行。验证：
+  ```bash
+  awk '/^---/{found++} found>=2 && /^## /{print FILENAME": "NR": "$0}' calvin/BOOK_ID/*.md
+  ```
+  有输出则说明 fn 区仍有组织标记未过滤（无论是 `## CHAPTER X`、`## THE ARGUMENT` 还是其他词，fn 区的 `##` 全都是 PDF 内部标记，一律不应出现在页面上）
+- [ ] **无下一章 H1 泄漏到当前章**：`grep -c "^# " calvin/BOOK_ID/*.md` 每个文件应为 0 或 1；若某文件 ≥2，说明该章 `sections` 结束边界过晚，把下一章的 H1 标题包了进来（H1 内容是什么词无关，凡出现第二个 `^# ` 即为边界错误）
+- [ ] **每章首页内容完整**：对照 PDF，每章第一个 `<!-- PAGE N -->` 对应的那一整页内容（页眉、章节标题、首个经文表格）必须完整出现在该章文件中，不得有一部分留在上一章。验证：打开浏览器查看每章第一屏，与 PDF 对应页比对。
+- [ ] **各章首个经文表格完整**：每章文件 front matter 之后若有经文表格，必须是 `<table class="calvin-scripture">` 开头的完整 HTML；若出现孤立的 `| N . ...` Markdown 行，说明该表格的表头和前几节行落在了上一章（上一章 `sections` 结束边界过晚）
+- [ ] **脚注无跨章污染**：每章文件的脚注编号范围与该章正文引用的编号一致，无上一章或下一章的脚注混入
+- [ ] **脚注序号可点击**：页面脚注列表中每条序号（`1.` `2.`...）为蓝色可点击链接，点击后跳回正文引用位置；若失效，检查 `calvin-en.html` 中 `.fn-backref-num` CSS 和对应 JS 是否存在
+- [ ] **无未转义的 `|`**：正文/脚注中无裸露 `|`（圣经表格已用 HTML，不受影响）
+- [ ] **无行首 `N.` 有序列表**：页面渲染中无意外出现的 `1.` 列表项（经文编号应为 `29\.` 形式）
+- [ ] **段落无异常换行**：随机抽查 3–5 处跨页位置，确认段落连续，无孤立的半句另起一段
+- [ ] **希腊文显示正常**：页面中希腊文字符可见（如 τὸ αὐτὸ），无 ASCII 转写残留（如 `to< aujto<`）
+- [ ] **表格标题跨全宽**：浏览器中 `PHILIPPIANS X:Y-Z` 标题横贯两列，无右侧空白单元格
+
+---
+
+## 发布到网站
+
+提取完成后，按以下步骤将英文原文书卷发布到 `/calvin/` 下。
+
+### Step 1：分析 MD 文件结构
+
+运行以下 Python 脚本，同时打印页面标记和标题行，便于精确定位边界：
+
+```python
+import re
+
+with open("OUTPUT_MD_PATH", encoding="utf-8") as f:
+    lines = f.readlines()
+
+for i, line in enumerate(lines):
+    if (re.match(r'^# ', line)
+            or re.match(r'^## ', line)
+            or re.match(r'^<!-- PAGE \d+', line)):
+        print(f"{i:4d}: {line.rstrip()}")
+```
+
+输出示例：
+```
+ 205:  <!-- PAGE 16 -->
+ 210:  <!-- PAGE 17 -->
+ 212:  <p ...>COMMENTARY ON</p>      ← 此行在 PAGE 17，属于第1章
+ 214:  ## THE EPISTLE OF PAUL...     ← 同上，属于第1章
+ 215:  # CHAPTER 1                   ← 第1章正文开始
+```
+
+**边界划定原则（必须遵守）**：
+
+1. **以 `<!-- PAGE N -->` 为基准**：某章节第一个 `# HEADING` 之前的 `<!-- PAGE N -->` 标记所属的整页内容（从该 PAGE 标记到下一 PAGE 标记之间）都属于该章节，不得划入上一章。
+2. **同页内容不拆分**：PDF 同一页上的所有内容（页眉、标题、正文）归属同一章节，不能一半在前言一半在第1章。
+3. **fn_sections 用 `##` 标记划定**：fn 区的 `## WORD` 行是天然的脚注分节边界，其前的脚注属于上一节，其后的脚注属于下一节；分节标题行本身过滤掉。
+
+根据输出确定边界（示例）：
+
+| 段落 | 起始行 | 结束行（取该章第一个 PAGE 标记行） |
+|------|--------|--------|
+| 前言 | 19 | `# CHAPTER 1` 之前那个 `<!-- PAGE N -->` 的行号 |
+| Chapter 1 | 上面确定的 PAGE 行 | `# CHAPTER 2` 之前那个 PAGE 行 |
+| … | … | … |
+| 脚注-前言 | fn 区起始 | fn 区 `## THE ARGUMENT` 行 |
+| 脚注-THE ARGUMENT | `## THE ARGUMENT` 行+1 | fn 区 `## CHAPTER 1` 行 |
+| 脚注-Chapter 1 | `## CHAPTER 1` 行+1 | fn 区 `## CHAPTER 2` 行 |
+| … | … | … |
+
+### 已知坑：章节边界过晚导致内容泄漏到上一章（发布环节）
+
+**症状 A：其他章节的脚注出现在当前章**
+fn_sections 边界划定时未利用 `##` 分界线，导致多个章节的脚注堆在同一文件里。
+修复：重新对照 Step 1 输出，用 `##` 行号精确划定每章 fn 边界，各章脚注单独归档：
+```python
+fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
+```
+
+**症状 B：下一章 H1 标题 + 首个经文表格出现在上一章正文末尾**
+`sections["N"]` 的结束行设得太晚，把下一章的 H1 标题和前几节经文行包进来。下一章文件 front matter 之后直接是孤立的 `| 3 . ...` Markdown 行（表格已被截断，头部留在上一章）。
+修复步骤：
+1. 用 Step 1 脚本定位下一章 H1 的精确行号，缩小 `sections["N"]` 结束边界
+2. 将上一章多余的 H1 标题和表格行删除
+3. 将下一章文件开头替换为完整的 HTML 经文表格（含表头和所有节）
+
+**快速定位受影响章节**（与具体章节词无关）：
+```bash
+grep -c "^# " calvin/BOOK_ID/*.md          # 值 ≥2 的文件 → 该文件是受污染章
+grep -n "^| [0-9]" calvin/BOOK_ID/*.md     # 有此行的文件 → 该章首个表格被截断
+```
+
+### Step 2：创建 Layout 文件
+
+如果 `_layouts/calvin-en.html` 和 `_layouts/calvin-en-book.html` 不存在，从腓立比书英文版复制后修改，或重新创建：
+
+- **`_layouts/calvin-en.html`**：正文页，渲染 Markdown，含前后章导航
+- **`_layouts/calvin-en-book.html`**：书卷目录页，列出 Preface + Chapter 1–N
+
+关键样式（`calvin-en.html` 内）：
+```css
+.calvin-en-content { font-family: Georgia, serif; font-size: 16px; line-height: 1.8; }
+.calvin-en-content blockquote { margin-left: 2em; border-left: none; }
+.calvin-en-content table { width: 100%; border-collapse: collapse; }
+/* calvin-scripture：还原 PDF 两列经文表格，标题跨全宽 */
+.calvin-en-content table.calvin-scripture th[colspan="2"] { font-size: 15px; }
+/* text-align 由提取脚本根据 PDF 检测结果写入内联 style，此处不 hardcode */
+.calvin-en-content table.calvin-scripture td { width: 50%; vertical-align: top; }
+```
+
+若 `_layouts/calvin-en.html` 已存在，直接复用；若不存在，按上述样式新建。
+
+**必须包含的功能：脚注序号可点击跳回引用位置**
+
+无论是新建还是复用 `calvin-en.html`，都必须确认以下 CSS + JS 已存在（若缺失则补充）：
+
+```css
+/* 脚注区 */
+.calvin-en-content .footnotes { margin-top: 40px; padding-top: 16px; border-top: 1px solid #ddd; font-size: 14px; color: #555; }
+.calvin-en-content .footnotes ol { list-style: none; padding-left: 0; margin: 0; }
+.calvin-en-content .footnotes li { display: flex; gap: 0.5em; margin-bottom: 8px; line-height: 1.7; }
+.fn-backref-num { flex-shrink: 0; min-width: 1.8em; text-align: right; color: #0085a1; font-weight: bold; font-size: 0.9em; text-decoration: none; padding-top: 0.05em; }
+.fn-backref-num:hover { text-decoration: underline; }
+.calvin-en-content .footnotes li > p { margin: 0; flex: 1; }
+.calvin-en-content .footnotes .reversefootnote { margin-left: 0.3em; color: #aaa; text-decoration: none; font-size: 0.85em; }
+.calvin-en-content .footnotes .reversefootnote:hover { color: #0085a1; }
+```
+
+```javascript
+// 脚注序号点击跳回引用位置
+(function() {
+  var lists = document.querySelectorAll('.calvin-en-content .footnotes ol');
+  lists.forEach(function(ol) {
+    ol.querySelectorAll('li[id]').forEach(function(li, idx) {
+      var refId = li.id.replace(/^fn:/, 'fnref:');
+      var a = document.createElement('a');
+      a.href = '#' + refId;
+      a.className = 'fn-backref-num';
+      a.textContent = (idx + 1) + '.';
+      a.title = '返回引用位置';
+      li.insertBefore(a, li.firstChild);
+    });
+  });
+})();
+```
+
+原理：Kramdown 渲染 `[^f1]` 时生成 `id="fn:f1"` 的 `<li>` 和 `id="fnref:f1"` 的行内 `<sup>`；JS 将 `fn:` 替换为 `fnref:` 即可定位引用锚点。
+
+### Step 3：运行 Python 发布脚本
+
+将以下脚本中的边界替换为 Step 1 查到的实际值：
+
+```python
+import os
+
+BOOK_ID   = "REPLACE_BOOK_ID"         # 如 philippians-en
+BOOK_NAME = "REPLACE_BOOK_NAME"       # 如 Calvin on Philippians
+MD_PATH   = "REPLACE_MD_PATH"
+OUT_DIR   = f"/Users/yanpeifa/Documents/whcjb.github.io/calvin/{BOOK_ID}"
+DATE      = "REPLACE_DATE"            # 用 date '+%Y-%m-%d %H:%M' 获取
+
+with open(MD_PATH, encoding="utf-8") as f:
+    lines = f.readlines()
+
+# ── 根据实际分析结果修改以下边界 ──────────────────────────────────────────
+sections = {
+    "preface": (19, 223),
+    "1": (223, 523),
+    "2": (523, 931),
+    "3": (931, 1232),
+    "4": (1232, 1470),
+}
+fn_sections = {
+    "preface": (1474, 1548),
+    "1": (1548, 1794),
+    "2": (1794, 2022),
+    "3": (2022, 2169),
+    "4": (2169, len(lines)),
+}
+# ─────────────────────────────────────────────────────────────────────────────
+
+chapter_keys = [k for k in sections if k != "preface"]
+all_keys = ["preface"] + chapter_keys
+
+labels = {"preface": "Preface"}
+labels.update({k: f"Chapter {k}" for k in chapter_keys})
+
+nav = {}
+for idx, key in enumerate(all_keys):
+    prev_k = all_keys[idx-1] if idx > 0 else ""
+    next_k = all_keys[idx+1] if idx < len(all_keys)-1 else ""
+    nav[key] = (prev_k, labels.get(prev_k,""), next_k, labels.get(next_k,""))
+
+os.makedirs(OUT_DIR, exist_ok=True)
+
+for key, (start, end) in sections.items():
+    fn_start, fn_end = fn_sections[key]
+    body = "".join(lines[start:end])
+    # 去掉脚注区的分节标题（## CHAPTER X / ## SERMON X 等，PDF组织标记，不应出现在网页上）
+    fn_raw = lines[fn_start:fn_end]
+    fn   = "".join(l for l in fn_raw if not re.match(r'^## ', l))
+    prev_s, prev_l, next_s, next_l = nav[key]
+
+    fm = "---\n"
+    fm += "layout: calvin-en\n"
+    fm += f"book_id: {BOOK_ID}\n"
+    fm += f'book_name: "{BOOK_NAME}"\n'
+    fm += f'title: "{labels[key]}"\n'
+    fm += f"date: {DATE}\n"
+    if prev_s:
+        fm += f"prev_section: {prev_s}\nprev_label: \"{prev_l}\"\n"
+    if next_s:
+        fm += f"next_section: {next_s}\nnext_label: \"{next_l}\"\n"
+    fm += "---\n\n"
+
+    with open(f"{OUT_DIR}/{key}.md", "w", encoding="utf-8") as f:
+        f.write(fm + body.rstrip() + "\n\n---\n\n" + fn.rstrip() + "\n")
+    print(f"Written {key}.md")
+
+# index.html
+with open(f"{OUT_DIR}/index.html", "w") as f:
+    f.write(f"---\nlayout: calvin-en-book\nbook_id: {BOOK_ID}\n"
+            f'book_name: "{BOOK_NAME}"\nchapters: {len(chapter_keys)}\n---\n')
+print("Written index.html")
+```
+
+### Step 4：注册到书卷列表
+
+在 `_data/calvin_books.yml` 的新约部分添加：
+
+```yaml
+  - id: BOOK_ID
+    name: "Book Name (EN)"
+    chapters: N
+```
+
+### Step 5：构建验证
+
+```bash
+~/.rbenv/shims/bundle exec jekyll build
+```
+
+访问 `/calvin/BOOK_ID/` 验证效果。
+
+---
+
+## 中文翻译 + 发布流程
+
+在英文 MD 提取完成后，可进一步翻译成中文并发布为中文版网页。
+中文版使用与英文版**完全相同的 layout（calvin-en）**，只有内容是中文。
+
+### 翻译原则
+
+- 只翻译英文内容，拉丁文/法文/希腊文原文保留并括注中文
+- 保留所有格式标记：`[^fN]`、`<span>`、`<!-- PAGE N -->`
+- 圣经书卷名用和合本标准译名（PHILIPPIANS→腓立比书 等）
+- 脚注中的法文引文保留原文，破折号后附中文译文
+
+### 翻译脚本（`scripts/translate_filibi.py` 为模板）
+
+```bash
+# 全量翻译（耗时较长）
+python3 scripts/translate_filibi.py
+
+# 断点续翻（已翻译的段落直接读缓存）
+python3 scripts/translate_filibi.py --resume
+
+# 只统计各类型行数，不翻译
+python3 scripts/translate_filibi.py --dry-run
+```
+
+脚本特点：
+- 使用 **claude CLI** 翻译，每批 20 段（`<<<N>>>` 格式）
+- 每段以 MD5 hash 为 key 缓存到 `ocr_output/BOOK/zh_cache/`，中断可续翻
+- 行类型自动识别：H1/H2、blockquote、footnote、Markdown 表格行（左列英文→译，右列拉丁→保留）、普通段落
+
+为新书卷创建翻译脚本时，复制 `translate_filibi.py` 并修改：
+- `SRC`、`CACHE_DIR`、`OUT` 路径
+- `SYSTEM` 提示中的书卷名映射（如 EPHESIANS→以弗所书）
+
+### 发布脚本（`scripts/publish_filibi_zh.py` 为模板）
+
+```bash
+python3 scripts/publish_filibi_zh.py
+```
+
+脚本执行：
+1. 读取中文 MD，按章节边界切分（`SECTIONS` / `FN_SECTIONS`）
+2. 将 Markdown 经文表格（`| **BOOK X:Y** | |`）转换为 HTML `<table class="calvin-scripture">`
+3. 过滤脚注区 `## ` 分节标题
+4. 写入目标目录，使用 `layout: calvin-en` 和中文 front matter（前言/第一章…）
+5. 生成 `index.html`（`layout: calvin-en-book`）
+
+为新书卷创建发布脚本时，复制 `publish_filibi_zh.py` 并修改：
+- `MD_PATH`、`OUT_DIR`、`BOOK_ID`、`BOOK_NAME`
+- `SECTIONS` / `FN_SECTIONS`：运行 `grep -n "^# " ZH_MD` 确认实际行号
+- `LABELS`：前言/各章中文名称
+- `CH_KEYS`：章节键列表
+
+### 翻译质检 Checklist
+
+- [ ] **表格左列已翻译**：`grep -n "^| [A-Z]" calvin/BOOK_ID/*.md` 结果为空（英文句子不应出现在左列）
+- [ ] **拉丁文列未被翻译**：右列仍为拉丁文（如 `Paulus et Timotheus...`）
+- [ ] **脚注引用标记完整**：`grep "[^f\d]" calvin/BOOK_ID/*.md`（确认 `[^f1]` 等未被误译）
+- [ ] **无多余说明文字**：页面无"以下是翻译："等 claude 生成的前言
+- [ ] **表格已转 HTML**：`grep -n "^| [0-9]" calvin/BOOK_ID/*.md` 为空
+
+---
+
+## PDF 提取脚本
+
+## Python 脚本
+
+```python
+import fitz, re, os
+
+PDF_PATH = "REPLACE_WITH_PDF_PATH"
+OUTPUT_PATH = "REPLACE_WITH_OUTPUT_PATH"
+
+doc = fitz.open(PDF_PATH)
+TABLE_SPLIT_X = 200
+
+# ── 自动校准正文左/右边距（不硬编码）────────────────────────────────────────
+from collections import Counter as _Counter
+
+def _calibrate(doc, side="left", max_x=200):
+    xs = []
+    for page in doc:
+        for b in page.get_text("dict")["blocks"]:
+            if b["type"] != 0: continue
+            x = round(b["bbox"][0] if side == "left" else b["bbox"][2])
+            if b["bbox"][0] < max_x:
+                xs.append(x)
+    return _Counter(xs).most_common(1)[0][0] if xs else (35 if side == "left" else None)
+
+INDENT_X   = _calibrate(doc, "left")  + 10  # 正文左边距+缓冲
+BODY_RIGHT = _calibrate(doc, "right")        # 正文右边距（用于检测右对齐）
+
+def classify_alignment(block, page_w, tol_px=50):
+    """左边距 > INDENT_X 的块做三向分类：CENTERED / RIGHT / BLOCKQUOTE。
+    用固定像素容差（不用 page_w 百分比）——更稳定，不随 PDF 页宽放大。"""
+    bx0, bx1 = block["bbox"][0], block["bbox"][2]
+    if abs((bx0 + bx1) / 2 - page_w / 2) < tol_px:
+        return "CENTERED"
+    if BODY_RIGHT and abs(bx1 - BODY_RIGHT) < tol_px // 2:
+        return "RIGHT"
+    return "BLOCKQUOTE"
+
+# 自动检测脚注区起始页（含 "FOOTNOTES" H1 标题，且在文档后40%位置）
+FOOTNOTE_SECTION_START = len(doc)
+for i, page in enumerate(doc):
+    if "FOOTNOTES" in page.get_text() and i > len(doc) * 0.4:
+        FOOTNOTE_SECTION_START = i
+        break
+
+# ── Ages Digital Library 希腊文转写 → Unicode ────────────────────────────────
+# Ages 转写规则：辅音直接映射；元音后跟 j=平气，><~ 重/锐/抑扬音，|=iota下标；v=词尾sigma
+# 双元音中的声调符夹在两个元音之间时属于第二个元音（如 ejmo>i → ἐμοί）
+_GCOMB = {'j':'\u0313','>':'\u0301','<':'\u0300','~':'\u0342','|':'\u0345'}
+_GBASE = {
+    'a':'α','b':'β','g':'γ','d':'δ','e':'ε','z':'ζ','h':'η','q':'θ',
+    'i':'ι','k':'κ','l':'λ','m':'μ','n':'ν','x':'ξ','o':'ο','p':'π',
+    'r':'ρ','s':'σ','t':'τ','u':'υ','v':'ς','f':'φ','c':'χ','y':'ψ','w':'ω',
+    'A':'Α','B':'Β','G':'Γ','D':'Δ','E':'Ε','Z':'Ζ','H':'Η','Q':'Θ',
+    'I':'Ι','K':'Κ','L':'Λ','M':'Μ','N':'Ν','X':'Ξ','O':'Ο','P':'Π',
+    'R':'Ρ','S':'Σ','T':'Τ','U':'Υ','V':'Σ','F':'Φ','C':'Χ','Y':'Ψ','W':'Ω',
+}
+_GVOWELS = set('aehiouwAEHIOUW')
+_GDIPH = {'a':'iu','e':'iu','o':'iu','h':'u','u':'i','A':'IU','E':'IU','O':'IU','H':'U','U':'I'}
+
+def _ages_token(tok):
+    import unicodedata as _ud
+    res=[]; i=0; n=len(tok); pend=''
+    while i < n:
+        ch = tok[i]
+        if ch not in _GBASE: i+=1; continue
+        base=_GBASE[ch]; i+=1; comb=pend; pend=''
+        if ch in _GVOWELS:
+            if i<n and tok[i]=='j': comb+=_GCOMB['j']; i+=1
+            if i<n and tok[i] in '><~':
+                acc=tok[i]; nxt=tok[i+1] if i+1<n else ''
+                if nxt in _GVOWELS and nxt in _GDIPH.get(ch,''):
+                    pend=_GCOMB[acc]; i+=1
+                else:
+                    comb+=_GCOMB[acc]; i+=1
+            if i<n and tok[i]=='|': comb+=_GCOMB['|']; i+=1
+            elif i+1<n and tok[i]=='\\' and tok[i+1]=='|': comb+=_GCOMB['|']; i+=2
+        res.append(_ud.normalize('NFC', base+comb))
+    return ''.join(res)
+
+_AGES_PAT = re.compile(r'[a-zA-Z][a-zA-Z><~j|\\]*(?:[><~]|\\[|]|\|)[a-zA-Z><~j|\\]*')
+
+def convert_ages_greek(text):
+    """将 Ages Digital Library 希腊文转写替换为 Unicode。跳过 HTML 标签内部。
+    注意：用 <[a-zA-Z/!] 严格匹配 HTML 标签开头，避免 to< ... <span> 被误识别为标签。"""
+    _pat = re.compile(
+        r'(<[a-zA-Z/!][^>]*>)'              # group 1: HTML tag
+        r'|([a-zA-Z][a-zA-Z><~j|\\]*'
+        r'(?:[><~]|\\[|]|\|)'
+        r'[a-zA-Z><~j|\\]*)'               # group 2: Ages Greek token
+    )
+    def _repl(m):
+        if m.group(1): return m.group(1)   # HTML tag: 原样保留
+        tok = m.group(2)
+        c = _ages_token(tok.replace('\\|','|'))
+        return c if any('\u0370'<=x<='\u03ff' or '\u1f00'<=x<='\u1fff' for x in c) else tok
+    return _pat.sub(_repl, text)
+# ─────────────────────────────────────────────────────────────────────────────
+
+def is_table_header_text(text):
+    # 仅匹配以 <NNNNNN> 开头的行（表格头），排除行内引用如 (<422447>Luke 24:47)
+    return bool(re.match(r'\s*<\d{6,7}>', text))
+
+def clean(text):
+    # 消除大写字母间多余空格（spaced-caps渲染产物）："T HE" → "THE"
+    prev = None
+    while prev != text:
+        prev = text
+        text = re.sub(r'\b([A-Z]) ([A-Z]+)', r'\1\2', text)
+    return re.sub(r' {2,}', ' ', text).strip()
+
+def join_lines(lines):
+    # 合并块内各行，处理行末连字符（如 "some-\nthing" → "something"）
+    parts = [t for _, t in lines]
+    result = ""
+    for p in parts:
+        if result.endswith('-'):
+            result = result[:-1] + p   # 去掉连字符，直接拼接
+        else:
+            result = result + (" " if result else "") + p
+    return result
+
+def is_sentence_end(text):
+    # 判断文本是否以句子结尾（考虑尾部引号/括号）
+    stripped = text.rstrip().rstrip('"\')}]')
+    if not stripped:
+        return True
+    return stripped[-1] in '.!?…'
+
+def format_inline(text):
+    # Ages 行内圣经引用代码（内部索引，无内容价值）→ 剥除，只保留后面的经文引用文字
+    text = re.sub(r'\[?<\d{6,7}>\]?\s*', '', text)
+    # 红色斜体引文 → colored italic
+    text = re.sub(r'<verse>(.*?)</verse>',
+                  r'<span style="color:#800000">*\1*</span>', text)
+    # 行内脚注序号 → Markdown footnote ref
+    text = re.sub(r'\[([fF][tT]?\d+)\]', r'[^\1]', text)
+    return text
+
+def span_inline(text, size, color, flags):
+    is_italic = bool(flags & 2)
+    is_super  = bool(flags & 1)
+    is_red    = (color == 0x800000)
+    if is_red and is_super and size <= 9:
+        return f"[{text}]"
+    if is_red and is_italic:
+        return f"<verse>{text}</verse>"
+    return text
+
+def block_lines(block):
+    result = []
+    for line in block["lines"]:
+        if not line["spans"]: continue
+        x = line["spans"][0]["origin"][0]
+        parts = [span_inline(s["text"].strip(), round(s["size"]), s["color"], s["flags"])
+                 for s in line["spans"] if s["text"].strip()]
+        if parts:
+            result.append((x, clean(" ".join(parts))))
+    return result
+
+def block_heading_type(block):
+    for line in block["lines"]:
+        for span in line["spans"]:
+            s = round(span["size"])
+            if s >= 18: return "H1"
+            if s >= 14: return "H2"
+    return None
+
+def block_font_size(block):
+    for line in block["lines"]:
+        if line["spans"]:
+            return round(line["spans"][0]["size"])
+    return 12
+
+def in_table(bbox, table_regions):
+    for tr in table_regions:
+        if bbox[1] >= tr[0] - 1 and bbox[3] <= tr[1] + 10:
+            return True
+    return False
+
+def is_plain_scripture_header_block(b, lines):
+    """检测无 <NNNNNN> 代码的表格头块：居中（x>80）+ 大字体（≥14pt）+ 包含圣经引用格式。
+    例：PHILIPPIANS 2:1-4（在 PDF 中以大字体居中显示）。"""
+    if not b["lines"] or not b["lines"][0]["spans"]:
+        return False
+    first_span = b["lines"][0]["spans"][0]
+    if round(first_span["size"]) < 14:
+        return False
+    if first_span["origin"][0] < 80:   # 必须居中，不能是左对齐正文
+        return False
+    if not lines:
+        return False
+    return bool(re.search(r'\b[A-Z]{3,}\s+\d+:\d+', lines[0][1]))
+
+# ── Stage 1: collect structured items ────────────────────────────────────────
+items = []
+
+for page_num, page in enumerate(doc):
+    items.append({"type": "PAGE", "text": str(page_num + 1)})
+    in_fn = (page_num >= FOOTNOTE_SECTION_START)
+    page_w = page.rect.width
+
+    blocks_raw = [b for b in page.get_text("dict")["blocks"] if b["type"] == 0]
+    blocks = [(b, block_lines(b)) for b in blocks_raw]
+
+    # 找表格区域（支持两种表格头格式）
+    table_regions = []
+    for b, lines in blocks:
+        all_line_text = " ".join(t for _, t in lines)
+        if is_table_header_text(all_line_text) or is_plain_scripture_header_block(b, lines):
+            table_regions.append([b["bbox"][1], b["bbox"][3]])
+
+    for tr in table_regions:
+        y_header = tr[0]
+        for b, lines in blocks:
+            by0 = b["bbox"][1]
+            if by0 <= y_header: continue
+            bw  = b["bbox"][2] - b["bbox"][0]
+            bx0 = b["bbox"][0]
+            has_right = any(x >= TABLE_SPLIT_X for x, _ in lines)
+            if bw > page_w * 0.6 and bx0 < 50 and not has_right:
+                break
+            tr[1] = max(tr[1], b["bbox"][3])
+
+    for block, lines in blocks:
+        if not lines: continue
+        all_text = join_lines(lines)
+
+        if in_fn:
+            s = block_font_size(block)
+            if s >= 18:   items.append({"type": "H1", "text": all_text})
+            elif s >= 14: items.append({"type": "H2", "text": all_text})
+            else:         items.append({"type": "FOOTNOTE", "text": all_text})
+            continue
+
+        if in_table(block["bbox"], table_regions):
+            if is_table_header_text(all_text):
+                # 旧格式：含 <NNNNNN> 代码，从 block x 坐标判断对齐
+                hdr_x = block["bbox"][0]
+                page_w = page.rect.width
+                align = "center" if hdr_x > page_w * 0.2 else "left"
+                for x, t in lines:
+                    if is_table_header_text(t):
+                        items.append({"type": "TABLE_HEADER", "text": t, "align": align})
+                    elif x < TABLE_SPLIT_X:
+                        items.append({"type": "TABLE_LEFT", "text": t})
+                    else:
+                        items.append({"type": "TABLE_RIGHT", "text": t})
+            elif is_plain_scripture_header_block(block, lines):
+                # 新格式：居中大字体（x>80），对齐直接取自 PDF 块位置
+                hdr_x = block["bbox"][0]
+                page_w = page.rect.width
+                align = "center" if hdr_x > page_w * 0.2 else "left"
+                items.append({"type": "TABLE_HEADER", "text": lines[0][1], "align": align})
+                for x, t in lines[1:]:
+                    ltype = "TABLE_RIGHT" if x >= TABLE_SPLIT_X else "TABLE_LEFT"
+                    items.append({"type": ltype, "text": t})
+            else:
+                for x, t in lines:
+                    ltype = "TABLE_RIGHT" if x >= TABLE_SPLIT_X else "TABLE_LEFT"
+                    items.append({"type": ltype, "text": t})
+            continue
+
+        ht = block_heading_type(block)
+        if ht:
+            items.append({"type": ht, "text": all_text})
+            continue
+
+        if block["bbox"][0] > INDENT_X:
+            align = classify_alignment(block, page_w)
+            if align == "CENTERED":
+                is_italic = all(
+                    bool(s["flags"] & 2)
+                    for line in block["lines"] for s in line["spans"] if s["text"].strip()
+                )
+                items.append({"type": "CENTERED", "text": all_text, "italic": is_italic})
+            elif align == "RIGHT":
+                items.append({"type": "RIGHT", "text": all_text})
+            else:
+                items.append({"type": "BLOCKQUOTE", "text": all_text})
+        else:
+            items.append({"type": "BODY", "text": all_text})
+
+# ── Stage 1.5: merge split paragraphs (including across page boundaries) ─────
+idx = 0
+while idx < len(items):
+    if items[idx]["type"] in ("BODY", "BLOCKQUOTE"):
+        cur_type = items[idx]["type"]
+        # 向前跳过 PAGE 项，找下一个同类型块
+        j = idx + 1
+        while j < len(items) and items[j]["type"] == "PAGE":
+            j += 1
+        if j < len(items) and items[j]["type"] == cur_type:
+            cur_text = items[idx]["text"]
+            nxt_text = items[j]["text"]
+            nxt_first = nxt_text.lstrip()[:1]
+            # 合并条件：当前段未结句，且下段以小写字母或破折号 — 开头（跨页续句）
+            if not is_sentence_end(cur_text) and nxt_text.lstrip() and (nxt_first.islower() or nxt_first == '—'):
+                items[idx]["text"] = cur_text.rstrip() + " " + nxt_text.lstrip()
+                items.pop(j)
+                continue
+    idx += 1
+
+# ── Stage 2: render to Markdown ───────────────────────────────────────────────
+TABLE_TYPES = {"TABLE_HEADER", "TABLE_LEFT", "TABLE_RIGHT"}
+
+def render_table_group(group):
+    header = None
+    rows = []
+    cur_left, cur_right = [], []
+    in_right = False
+
+    header_align = "center"
+    for item in group:
+        t, text = item["type"], item["text"]
+        if t == "TABLE_HEADER":
+            header = text
+            header_align = item.get("align", "center")
+        elif t == "TABLE_LEFT":
+            if in_right:
+                rows.append((" ".join(cur_left), " ".join(cur_right)))
+                cur_left, cur_right = [], []
+                in_right = False
+            cur_left.append(text)
+        elif t == "TABLE_RIGHT":
+            in_right = True
+            cur_right.append(text)
+
+    if cur_left or cur_right:
+        rows.append((" ".join(cur_left), " ".join(cur_right)))
+
+    # 输出 HTML table，标题对齐从 PDF 检测，不 hardcode
+    display = re.sub(r'<\d{6,7}>\s*', '', header).strip() if header else ''
+    lines = ['<table class="calvin-scripture">']
+    if display:
+        lines.append(f'<thead><tr><th colspan="2" style="text-align:{header_align}">{display}</th></tr></thead>')
+    lines.append('<tbody>')
+    for left, right in rows:
+        left  = convert_ages_greek(format_inline(left))
+        right = convert_ages_greek(format_inline(right))
+        lines.append(f'<tr><td>{left}</td><td>{right}</td></tr>')
+    lines.append('</tbody>')
+    lines.append('</table>')
+    return "\n".join(lines)
+
+md_lines = []
+i = 0
+while i < len(items):
+    item = items[i]
+    t = item["type"]
+
+    if t == "PAGE":
+        md_lines.append(f"\n<!-- PAGE {item['text']} -->\n")
+        i += 1
+    elif t == "H1":
+        md_lines.append(f"\n# {item['text']}\n")
+        i += 1
+    elif t == "H2":
+        md_lines.append(f"\n## {item['text']}\n")
+        i += 1
+    elif t == "BODY":
+        text = format_inline(item['text'])
+        text = convert_ages_greek(text)   # Ages希腊转写 → Unicode
+        text = re.sub(r'(?<!\\)\|', r'\\|', text)
+        text = re.sub(r'^(\d+)\s*\.', lambda m: m.group(1) + '\\.', text)
+        md_lines.append(f"\n{text}\n")
+        i += 1
+    elif t == "CENTERED":
+        text = format_inline(item['text'])
+        text = convert_ages_greek(text)
+        style = "text-align:center; font-style:italic" if item.get("italic") else "text-align:center"
+        md_lines.append(f'\n<p style="{style}">{text}</p>\n')
+        i += 1
+    elif t == "RIGHT":
+        text = format_inline(item['text'])
+        text = convert_ages_greek(text)
+        md_lines.append(f'\n<p style="text-align:right; font-style:italic">{text}</p>\n')
+        i += 1
+    elif t == "BLOCKQUOTE":
+        text = format_inline(item['text'])
+        text = convert_ages_greek(text)
+        text = re.sub(r'(?<!\\)\|', r'\\|', text)
+        text = re.sub(r'^(\d+)\s*\.', lambda m: m.group(1) + '\\.', text)
+        md_lines.append(f"\n> {text}\n")
+        i += 1
+    elif t in TABLE_TYPES:
+        group = []
+        while i < len(items) and items[i]["type"] in TABLE_TYPES:
+            group.append(items[i])
+            i += 1
+        md_lines.append(f"\n{render_table_group(group)}\n")
+    elif t == "FOOTNOTE":
+        text = item["text"]
+        m = re.match(r'\s*([fF][tT]?\d+)\s*(.*)', text, re.DOTALL)
+        if m:
+            fn_text = convert_ages_greek(m.group(2).strip())
+            fn_text = re.sub(r'(?<!\\)\|', r'\\|', fn_text)
+            # 统一去掉 "t"：PDF 脚注区标签 ft18→f18，与正文引用 [^f18] 保持一致
+            label = re.sub(r'^ft', 'f', m.group(1).lower())
+            md_lines.append(f"\n[^{label}]: {fn_text}\n")
+        else:
+            fn_text = convert_ages_greek(text)
+            fn_text = re.sub(r'(?<!\\)\|', r'\\|', fn_text)
+            md_lines.append(f"\n> {fn_text}\n")
+        i += 1
+    else:
+        i += 1
+
+output = "\n".join(md_lines)
+os.makedirs(os.path.dirname(os.path.abspath(OUTPUT_PATH)), exist_ok=True)
+with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
+    f.write(output)
+
+print(f"Done. {len(output):,} chars → {OUTPUT_PATH}")
+print(f"Tables:    {output.count('|---|---|')}")
+print(f"Footnotes: {output.count('[^ft')}")
+print(f"Colored:   {output.count('color:#800000')}")
+```
