@@ -114,6 +114,35 @@ def _make_sub_block(orig_block, lines):
         'lines': lines,
     }
 
+def split_block_by_verse_number(block):
+    """Split a block at lines starting with a bold verse number 'N.' (e.g., '6.').
+    These mark the beginning of a new verse's commentary within a merged body block.
+    Only applies to full-width commentary blocks (no right-column content) to avoid
+    accidentally splitting scripture table verse blocks."""
+    # Guard: skip blocks that have right-column content (scripture table verse rows)
+    if block_has_right_col(block):
+        return [block]
+    # Guard: skip narrow blocks (verse table single-column rows, not full commentary)
+    if not block_is_full_width(block):
+        return [block]
+    groups = []
+    current_lines = []
+    for i, line in enumerate(block['lines']):
+        first_spans = [s for s in line['spans'] if s['text'].strip()]
+        # Detect bold digit+period at line start (not the very first line of block)
+        if i > 0 and first_spans:
+            s = first_spans[0]
+            if (bool(s['flags'] & 16) and not bool(s['flags'] & 2)
+                    and re.match(r'^\d+\.$', s['text'].strip())):
+                if current_lines:
+                    groups.append(_make_sub_block(block, current_lines))
+                current_lines = [line]
+                continue
+        current_lines.append(line)
+    if current_lines:
+        groups.append(_make_sub_block(block, current_lines))
+    return groups if len(groups) > 1 else [block]
+
 def is_table_header(block):
     """'1 Corinthians N:M-K' type header, size ~16.8."""
     if not block['lines'] or not block['lines'][0]['spans']:
@@ -193,12 +222,24 @@ def format_span(span):
         return t
     if is_footnote_ref(span):
         return f'[^{t.strip()}]'
+    # Strip leading/trailing whitespace outside emphasis markers so Kramdown
+    # can parse them correctly.  E.g. " Grace be" → " *Grace be*" not "* Grace be*"
+    # (Kramdown does not treat "* text*" as italic when * is followed by space.)
     if is_bold(span) and is_italic(span):
-        return f'***{t}***'
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        inner = t.strip()
+        return f'{lead}***{inner}***{tail}'
     if is_bold(span):
-        return f'**{t}**'
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        inner = t.strip()
+        return f'{lead}**{inner}**{tail}'
     if is_italic(span):
-        return f'*{t}*'
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        inner = t.strip()
+        return f'{lead}*{inner}*{tail}'
     return t
 
 def spans_to_text(spans):
@@ -231,6 +272,13 @@ def spans_to_text(spans):
     return result.strip()
 
 # ── Scripture table builder ──────────────────────────────────────────────────
+def _fnref_to_html(text):
+    """Convert [^N] markdown footnote refs to HTML superscripts for use inside <td>.
+    Kramdown does not process markdown inside HTML blocks, so refs must be HTML."""
+    return re.sub(r'\[\^(\d+)\]',
+                  lambda m: f'<sup><a href="#fn:{m.group(1)}" id="fnref:{m.group(1)}">{m.group(1)}</a></sup>',
+                  text)
+
 def build_table(header_text, rows):
     """
     rows: list of (english_text, latin_text)
@@ -240,8 +288,8 @@ def build_table(header_text, rows):
              f'<thead><tr><th colspan="2" style="text-align:center">{hdr}</th></tr></thead>',
              '<tbody>']
     for en, la in rows:
-        en_esc = en.replace('|', '&#124;')
-        la_esc = la.replace('|', '&#124;')
+        en_esc = _fnref_to_html(en.replace('|', '&#124;'))
+        la_esc = _fnref_to_html(la.replace('|', '&#124;'))
         lines.append(f'<tr><td>{en_esc}</td><td>{la_esc}</td></tr>')
     lines.append('</tbody>')
     lines.append('</table>')
@@ -309,8 +357,9 @@ def extract_scripture_section(header_block, verse_blocks):
 # ── Process a single page ─────────────────────────────────────────────────────
 def process_page(page, page_num, pending_header=None):
     """Returns (body_items, footnote_defs, pending_header_out).
-    pending_header: a table header block carried from the previous page.
-    pending_header_out: a table header block to carry to the next page (cross-page table)."""
+    pending_header: either a header block (bare) or {'header': block, 'verses': [blocks]}
+                    carried from the previous page when a scripture table spans a page break.
+    pending_header_out: same format, to carry to the next page."""
     blocks = page.get_text('dict')['blocks']
 
     body_blocks = []
@@ -327,31 +376,39 @@ def process_page(page, page_num, pending_header=None):
             fn_def_blocks.append(b)
         else:
             # Split blocks where heading and body text are merged
-            body_blocks.extend(split_block_by_size(b))
+            for sub in split_block_by_size(b):
+                body_blocks.extend(split_block_by_verse_number(sub))
 
     footnote_defs = collect_footnote_defs(fn_def_blocks)
 
     # Sort body blocks by y
     body_blocks.sort(key=lambda b: b['bbox'][1])
 
-    # If a table header was carried from the previous page, collect verse blocks
-    # from the START of this page (before any full-width commentary block).
+    # If a table (or partial table) was carried from the previous page, collect
+    # additional verse blocks from the START of this page, then emit the full table.
     pending_header_out = None
     if pending_header is not None:
-        carry_verses = []
+        if isinstance(pending_header, dict) and 'header' in pending_header:
+            # Partial table: header + verses already collected on previous page
+            carry_header = pending_header['header']
+            prev_verses  = pending_header['verses']
+        else:
+            # Bare header block only: no verses yet
+            carry_header = pending_header
+            prev_verses  = []
+
+        # Collect additional verse blocks from start of this page
+        new_verses = []
         for b in body_blocks:
             if is_table_header(b) or is_h1(b) or is_h2(b):
                 break
             if block_is_full_width(b):
                 break
-            carry_verses.append(b)
-        if carry_verses:
-            table_html = extract_scripture_section(pending_header, carry_verses)
-            # Inject carried table as the first item (before PAGE marker is added by caller)
-            body_blocks = body_blocks[len(carry_verses):]
-        else:
-            table_html = extract_scripture_section(pending_header, [])
-        # Will be prepended as first item below
+            new_verses.append(b)
+
+        all_carry_verses = prev_verses + new_verses
+        table_html = extract_scripture_section(carry_header, all_carry_verses)
+        body_blocks = body_blocks[len(new_verses):]
         carried_table = {'type': 'TABLE', 'html': table_html}
     else:
         carried_table = None
@@ -380,24 +437,34 @@ def process_page(page, page_num, pending_header=None):
             header_block = b
             verse_blocks = []
             j = i + 1
+            hit_commentary = False
             while j < len(body_blocks):
                 nb = body_blocks[j]
                 if is_table_header(nb) or is_h1(nb) or is_h2(nb):
+                    hit_commentary = True
                     break
                 if block_has_right_col(nb):
                     verse_blocks.append(nb)
                     j += 1
                 elif block_is_full_width(nb):
+                    hit_commentary = True
                     break
                 else:
                     verse_blocks.append(nb)
                     j += 1
-            if verse_blocks:
-                table_html = extract_scripture_section(header_block, verse_blocks)
-                items.append({'type': 'TABLE', 'html': table_html})
-            else:
-                # Table header at page bottom with no verse blocks — carry to next page
+            # hit_commentary=False means the loop reached page end (j >= len(body_blocks))
+            if not hit_commentary and verse_blocks:
+                # Partial verses collected, page exhausted — carry header+verses to next page
+                pending_header_out = {'header': header_block, 'verses': verse_blocks}
+            elif not hit_commentary and not verse_blocks:
+                # No verses at all, page exhausted — carry bare header to next page
                 pending_header_out = header_block
+            else:
+                # Loop stopped at commentary (complete table on this page)
+                if verse_blocks:
+                    table_html = extract_scripture_section(header_block, verse_blocks)
+                    items.append({'type': 'TABLE', 'html': table_html})
+                # else: header immediately followed by commentary, no verse content — skip
             i = j
         elif is_h2(b):
             # Split block: heading-size lines → H2, remaining 12pt lines → BODY
@@ -466,11 +533,41 @@ while idx < len(all_items):
         if j < len(all_items) and all_items[j]['type'] == 'BODY':
             cur = all_items[idx]['text']
             nxt = all_items[j]['text']
-            first_char = nxt.lstrip()[:1]
-            if not is_sentence_end(cur) and first_char and (first_char.islower() or first_char == '—'):
+            # Strip leading footnote refs ([^N]) before checking first char,
+            # so "[^148] pretend..." merges correctly when prev ends mid-sentence.
+            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
+            first_char = nxt_check[:1]
+            # Prev ends with comma → always a mid-sentence page break (quotes/clauses
+            # often start with uppercase); allow merge regardless of next char's case.
+            cur_ends_comma = cur.rstrip().rstrip('"\'')[-1:] == ','
+            if not is_sentence_end(cur) and (
+                (first_char and (first_char.islower() or first_char == '—'))
+                or cur_ends_comma
+            ):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
                 del all_items[j]
                 continue  # re-check same idx (may need further merging)
+    idx += 1
+
+# ── Stage 1.6: move leading footnote refs from paragraph start to previous end ─
+# When PyMuPDF puts a superscript footnote number at the start of a new block
+# instead of the end of the preceding block, the ref ends up as "[^N] text..."
+# at the beginning of a paragraph. Move it to the end of the previous BODY item.
+idx = 0
+while idx < len(all_items):
+    if all_items[idx]['type'] == 'BODY':
+        text = all_items[idx]['text']
+        m = re.match(r'^(\[\^\d+\])\s+', text)
+        if m:
+            fn_ref = m.group(1)
+            rest = text[m.end():]
+            # Find previous BODY item (skip PAGE markers)
+            prev_idx = idx - 1
+            while prev_idx >= 0 and all_items[prev_idx]['type'] == 'PAGE':
+                prev_idx -= 1
+            if prev_idx >= 0 and all_items[prev_idx]['type'] == 'BODY':
+                all_items[prev_idx]['text'] = all_items[prev_idx]['text'].rstrip() + fn_ref
+                all_items[idx]['text'] = rest
     idx += 1
 
 # ── Render to Markdown ────────────────────────────────────────────────────────

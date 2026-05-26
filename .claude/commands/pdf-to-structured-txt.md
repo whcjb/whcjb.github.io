@@ -189,7 +189,193 @@ Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 AS
 
 ### 4. 跨页段落：必须合并
 
-PDF 段落常在页面边界断裂。Stage 1.5 负责合并：当前段未以句号/问号/感叹号结尾，且下一段以**小写字母**或**破折号 `—`** 开头，则合并（跳过中间的 PAGE 标记）。
+PDF 段落常在页面边界断裂。Stage 1.5 负责合并，以下三种情形均需处理：
+
+| 情形 | 前段末尾 | 后段开头 | 原因 |
+|------|---------|---------|------|
+| 正常续句 | 非句末标点（逗号/冒号等）| 小写字母或 `—` | 最常见 |
+| 引文续句 | 逗号（引号引出引文） | **大写字母**（引文首词） | 如 "in that saying of Christ, **U**nless ye..." |
+| 脚注续句 | 非句末标点 | `[^N]`（脚注引用开头）| 脚注编号出现在行首，如 "[^148] pretend..." |
+
+```python
+# Stage 1.5 正确实现（三种情形）
+idx = 0
+while idx < len(all_items):
+    if all_items[idx]['type'] == 'BODY':
+        j = idx + 1
+        while j < len(all_items) and all_items[j]['type'] == 'PAGE':
+            j += 1
+        if j < len(all_items) and all_items[j]['type'] == 'BODY':
+            cur = all_items[idx]['text']
+            nxt = all_items[j]['text']
+            # 去掉下段开头的脚注引用再取 first_char（情形3）
+            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
+            first_char = nxt_check[:1]
+            # 前段以逗号结尾 = 一定是续句，允许大写开头（情形2）
+            cur_ends_comma = cur.rstrip().rstrip('"\'')[-1:] == ','
+            if not is_sentence_end(cur) and (
+                (first_char and (first_char.islower() or first_char == '—'))
+                or cur_ends_comma
+            ):
+                all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
+                del all_items[j]
+                continue
+    idx += 1
+```
+
+### 4.5 同页多节注释合并在同一 block：必须按节分割
+
+**症状**：第 N 节注释的末尾句和第 N+1 节注释的开头（`**N+1.** *经文引用*...`）连在一起，没有段落分隔。
+
+**原因**：PyMuPDF 有时把同一页上多个连续 commentary 段落（包含不同节号）提取为一个巨型 block。所有行都是相同字号（如 12pt），`split_block_by_size` 不会分割，导致多节注释输出为一个 body 段落。
+
+**识别特征**：节号标记 `N.` 在 block 内部某行行首以 **bold 非斜体** 出现（标志新节开始），而非 block 第一行。
+
+**修复**：在 block 分类前加一道 `split_block_by_verse_number` 分割——遇到行首 bold `N.` 就切割新块。两个 guard 条件防止误切圣经表格经节块：
+
+```python
+def block_has_right_col(block, table_split_x):
+    """有右列内容（含拉丁文）的块，不是纯 commentary。"""
+    for line in block["lines"]:
+        spans = [s for s in line["spans"] if s["text"].strip()]
+        if spans and spans[0]["bbox"][0] >= table_split_x:
+            return True
+    return False
+
+def block_is_full_width(block, body_right, min_right=400):
+    """全宽 commentary 块：无右列内容 且 右边距足够宽。"""
+    return (not block_has_right_col(block, TABLE_SPLIT_X)
+            and block["bbox"][2] > min_right)
+
+def split_block_by_verse_number(block):
+    """把同一 block 内不同节的注释拆成独立块。
+    只对全宽 commentary 块生效；含右列（拉丁文）或窄块跳过。"""
+    if block_has_right_col(block, TABLE_SPLIT_X):
+        return [block]
+    if not block_is_full_width(block, BODY_RIGHT):
+        return [block]
+    groups, current = [], []
+    for i, line in enumerate(block["lines"]):
+        spans = [s for s in line["spans"] if s["text"].strip()]
+        if i > 0 and spans:
+            s = spans[0]
+            if (bool(s["flags"] & 16)          # bold
+                    and not bool(s["flags"] & 2)   # not italic
+                    and re.match(r"^\d+\.$", s["text"].strip())):
+                if current:
+                    groups.append(_rebuild_block(block, current))
+                current = [line]
+                continue
+        current.append(line)
+    if current:
+        groups.append(_rebuild_block(block, current))
+    return groups if len(groups) > 1 else [block]
+
+def _rebuild_block(orig, lines):
+    y0 = lines[0]["bbox"][1]; y1 = lines[-1]["bbox"][3]
+    return {**orig, "bbox": [orig["bbox"][0], y0, orig["bbox"][2], y1], "lines": lines}
+```
+
+在 Stage 1 block 处理循环中，将每个 block 先过一遍分割：
+
+```python
+# 把每个 block 先按节号分割，再按行类型分类
+all_sub_blocks = []
+for b, _ in blocks:
+    for sub in split_block_by_verse_number(b):
+        all_sub_blocks.append((sub, block_lines(sub)))
+
+for block, lines in all_sub_blocks:
+    # ... 原有分类逻辑不变 ...
+```
+
+### 4.6 表格 `<td>` 内脚注引用：必须转为 HTML 上标
+
+**症状**：圣经经文表格某列出现字面文字 `[^44]`，而非上标链接。
+
+**原因**：Kramdown 不处理 `<td>...</td>` 等 HTML 块内的 Markdown 语法，`[^N]` 不会被渲染为脚注上标。
+
+**修复**：在 `build_table` 写入 `<td>` 内容前，将所有 `[^N]` 转成 HTML `<sup>` 标签：
+
+```python
+def _fnref_to_html(text):
+    """把 [^N] markdown 脚注引用转为 HTML 上标，用于 <td> 内容。"""
+    return re.sub(r'\[\^(\d+)\]',
+                  lambda m: f'<sup><a href="#fn:{m.group(1)}" id="fnref:{m.group(1)}">{m.group(1)}</a></sup>',
+                  text)
+
+def build_table(header_text, rows):
+    ...
+    for en, la in rows:
+        en_esc = _fnref_to_html(en.replace('|', '&#124;'))
+        la_esc = _fnref_to_html(la.replace('|', '&#124;'))
+        lines.append(f'<tr><td>{en_esc}</td><td>{la_esc}</td></tr>')
+```
+
+### 4.8 `format_span`：斜体/加粗 span 开头的空白必须移出标记之外
+
+**症状**：页面上某些节号段落（如 `**3.** Grace be to you and peace For an exposition...`）显示居中，且斜体格式丢失——节名引用变成普通文字并附带字面星号（`* Grace be to you and peace*`）。
+
+**原因**：PyMuPDF 提取的斜体 span 文字往往以空格开头（如 `" Grace be to you and peace"`）。`format_span` 直接加上 `*` 生成 `* Grace be to you and peace*`，但 Kramdown 规定**开头 `*` 后紧跟空格时不开启斜体**——因此 `*` 被渲染为字面字符。同时由于 bold span（如 `**3.**`）和 italic span 紧邻，生成 `**3.*** Grace be...`，其中 `***` 与 bold+italic 标记混淆，进一步破坏解析。
+
+最终 Kramdown 生成 `<p><strong>3.</strong>* Grace be...* ...</p>`，CSS 规则 `p:has(> strong:only-child)` 匹配该段落（文本节点不算 element child），使该段居中。
+
+**修复**：在 `format_span` 中，为所有斜体/加粗 span 把开头和结尾的空白移到标记之外：
+
+```python
+def format_span(span):
+    t = span['text']
+    if not t.strip():
+        return t
+    if is_footnote_ref(span):
+        return f'[^{t.strip()}]'
+    # Move leading/trailing whitespace outside emphasis markers so Kramdown
+    # parses them correctly.  E.g. " Grace be" → " *Grace be*" not "* Grace be*"
+    # (Kramdown treats "* text*" as literal * when * is followed by whitespace.)
+    if is_bold(span) and is_italic(span):
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        return f'{lead}***{t.strip()}***{tail}'
+    if is_bold(span):
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        return f'{lead}**{t.strip()}**{tail}'
+    if is_italic(span):
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        return f'{lead}*{t.strip()}*{tail}'
+    return t
+```
+
+**checklist 补充**：`grep -n '\*\* \*' output.md`（注意 `** *` = bold 结束后空格再 italic 开始，这是正确的）；而 `grep -n '\*\*\*[^ *]' output.md` 应只匹配真正的 bold+italic 文字，不应出现节号。
+
+### 4.7 段首孤立脚注引用：必须移到前段末尾（Stage 1.6）
+
+**症状**：正文段落开头出现超大上标数字（如 "⁹ He persuades them..."），该数字实为脚注引用，不属于这段文字的开头。
+
+**原因**：PyMuPDF 有时将前一段末尾的脚注上标（如 `45`）提取到下一个 block 的开头。提取后该 block 的文字形如 `[^45] He persuades them...`，其中 `[^45]` 是 Kramdown 渲染时显示的大上标。
+
+**修复**：Stage 1.6 将段首孤立脚注引用（`[^N] 正文...`）移到前一段末尾：
+
+```python
+# Stage 1.6：把段首孤立脚注引用移到前段末尾
+idx = 0
+while idx < len(all_items):
+    if all_items[idx]['type'] == 'BODY':
+        text = all_items[idx]['text']
+        m = re.match(r'^(\[\^\d+\])\s+', text)
+        if m:
+            fn_ref = m.group(1)
+            rest = text[m.end():]
+            # 找前一个 BODY 项（跳过 PAGE 标记）
+            prev_idx = idx - 1
+            while prev_idx >= 0 and all_items[prev_idx]['type'] == 'PAGE':
+                prev_idx -= 1
+            if prev_idx >= 0 and all_items[prev_idx]['type'] == 'BODY':
+                all_items[prev_idx]['text'] = all_items[prev_idx]['text'].rstrip() + fn_ref
+                all_items[idx]['text'] = rest
+    idx += 1
+```
 
 ### 5. 脚注区 `##` 标记：先用作边界，再过滤
 
@@ -219,8 +405,12 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
 
 1. 从用户消息解析参数
 2. 编写 PDF 提取脚本时，**必须逐条对照本 skill 的提取脚本模板**，确认以下功能全部实现，不得遗漏：
-   - Stage 1.5：跨页段落合并（未结句 + 下段小写开头 → 合并）
-   - 跨页表格：`pending_header` 机制（表头在页底无 verse 块 → 传递到下页）
+   - 同页多节注释合并：`split_block_by_verse_number`（见第4.5节），在 Stage 1 block 循环前对每个 block 执行，把 bold `N.` 行首的节分割为独立块；两个 guard 防止误切经文表格
+   - 表格 `<td>` 内脚注转 HTML：`build_table` 中调用 `_fnref_to_html()` 把 `[^N]` 转 `<sup>` 标签（见第4.6节），否则 Kramdown 不处理 HTML 块内的 Markdown
+   - Stage 1.6：段首孤立脚注引用移到前段末尾（见第4.7节），防止大上标出现在段落开头
+   - `format_span` 空白外移：bold/italic/bold+italic span 开头尾空白必须移到标记之外（见第4.8节），否则 Kramdown 无法解析斜体，节号段落被 CSS 误判为居中
+   - Stage 1.5：跨页段落合并——必须处理三种情形（见第4节完整实现代码）：① 未结句 + 下段小写/破折号；② 前段逗号结尾 + 下段大写（引文续句）；③ 未结句 + 下段以 `[^N]` 脚注引用开头（须先 strip 脚注引用再取 first_char）
+   - 跨页表格：`pending_header` 机制同时处理**两种情形**：A) 表头在页底无任何 verse → carry 裸 header；B) 部分 verse 在当前页、页面耗尽 → carry `{'header':…,'verses':[…]}` dict；用 `hit_commentary` 标志区分两种退出原因（见"已知坑"）
    - 希腊文转换：`convert_ages_greek()` 在所有输出路径上均被调用
    - 脚注标签标准化：`ft` 前缀统一去掉
    - Kramdown 安全：`|` 转义、行首 `N.` 转义
@@ -244,7 +434,13 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
   empties = [m.group() for m in re.finditer(r'<table class="calvin-scripture">.*?</table>', open('output.md').read(), re.DOTALL) if '<tr><td>' not in m.group()]
   print(f'空表格数: {len(empties)}')  # 必须为 0
   ```
-  若有空表格，原因是表格标题在某页底部而 verse 行在下一页顶部（跨页表格）。修复方法见下方"跨页表格"说明。
+  若有空表格：见"已知坑"情形 A（表头在页底，verse 完全在下页）。
+- [ ] **无截断表格**：检查表格头声明的经文范围与实际行数是否一致——若表头写 `3:10-15` 但 tbody 只有 3 行（verse 10-12），说明 verse 13-15 在下一页被当作 body 处理了。见"已知坑"情形 B（verse 跨页，页面耗尽时误 emit 不完整表格）。验证：
+  ```bash
+  # 找出正文中形如 "13. Every man..." 等本应属于表格的 verse body 段落
+  grep -n '^\*\*[0-9]\+\.\*\*' output.md | head -20
+  ```
+  有输出说明这些 verse 号被渲染成了 body 加粗段落而非表格行，需检查 `hit_commentary` 逻辑。
 - [ ] **表格标题跨列**：所有表格均为 `<th colspan="2">`，无 `| **BOOK X:Y** | |` 形式的 Markdown 表格残留
 - [ ] **希腊文已转换**：MD 文件中无 `>[a-z]` 或 `[a-z]<` 形式的 Ages 转写残留（用 `grep -P '[a-z][><~][a-z]'` 验证）；若有，检查 `convert_ages_greek()` 是否被调用
 - [ ] **脚注数量合理**：`output.count('[^f')` 与 PDF 脚注数量大致对应；若为 0，说明脚注区未被检测到（注：计数用 `[^f` 而非 `[^ft`，因脚本已将 ft→f 标准化）
@@ -258,47 +454,95 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
   comm -23 /tmp/refs.txt /tmp/defs.txt
   ```
   输出非空说明有脚注标签不匹配，需检查是否还有 `ft` 前缀未被标准化（脚注区标签 `FtN`/`ftN` → `fN`，正文引用 `[^fN]`，两者必须一致）
+- [ ] **表格内无字面脚注引用**：`grep '\[^[0-9]' output.md` 的匹配项中，`<td>` 内不应有 `[^N]` 字面文字（应已被转为 `<sup>` HTML）；若有则说明 `_fnref_to_html()` 未被调用
+- [ ] **无段首孤立脚注引用**：`grep -P '^\[\^\d+\] [A-Z]' output.md` 应无输出；若有输出说明 Stage 1.6 未执行，段首大上标会出现在渲染页面上
+- [ ] **节号段落斜体格式正确**：`grep -n '^\*\*[0-9]\+\.\*\*\*' output.md` 应无输出（`**N.***` 为错误格式，说明 `format_span` 未移出空白）；正确格式应为 `**N.** *经文引用*`（bold 后有空格再 italic）
+- [ ] **节号注释未合并**：检查各章中每节注释（`**N.**`）是否都独立成段，无两节注释连在同一段落的情况。快速验证：
+  ```python
+  import re
+  content = open('output.md').read()
+  # 找到段落内含有两个及以上节号标记的（说明未分割）
+  bad = [m.group()[:80] for m in re.finditer(r'\*\*\d+\.\*\*.*?\*\*\d+\.\*\*', content, re.DOTALL)
+         if '\n\n' not in m.group()]
+  print(f'未分割节段: {len(bad)}')
+  for b in bad[:3]: print(b)
+  ```
 - [ ] **跨页段落已合并**：检查若干页面边界处（`<!-- PAGE N -->`），前后段落是否被错误断开
 - [ ] **无乱入 H2 表格头**：MD 中无 `## PHILIPPIANS` 或 `## [书卷名]` 形式的行（说明表格头被误识别为 H2）
 - [ ] **无行内引用代码残留**：MD 中无 `[<NNNNNN>]` 或 `(<NNNNNN>` 形式（用 `grep '<[0-9]' output.md` 验证）
 - [ ] **对齐文本对照 PDF 逐条核实**：`grep "^> " output.md` 列出所有 blockquote，打开 PDF 对应页确认每条是否真为左缩进；同理检查所有 `<p style="text-align:center">` 和 `<p style="text-align:right">` 是否与 PDF 一致。**不得凭推断判断，必须看 PDF 原文。**
 
-### 已知坑：跨页经文表格为空
+### 已知坑：跨页经文表格（两种情形，必须同时处理）
 
-**症状**：MD 中出现 `<tbody>\n</tbody>` 的空表格，紧随其后是以 `**N.**` 开头的正文段落（其实是被误判为 body 的 verse 行）。
+**共同症状**：表格不完整或为空，紧随其后出现以 `**N.**` 开头的正文段落（实为被误判为 body 的 verse 行）。
 
-**原因**：提取脚本逐页独立处理，`table_regions` 仅在当前页查找 verse 块。当表格标题出现在某页底部、verse 行在下一页顶部时，当前页找不到 verse 块，表格为空；下一页没有表格标题，verse 块被当作正文处理。
+#### 情形 A：表头在页底，verse 行完全在下一页（空 tbody）
 
-**修复**：在提取脚本中加入 `pending_header` 跨页传递机制：
+当前页 verse_blocks 为空 → 表格 `<tbody></tbody>` 为空；下一页 verse 行无表头归属 → 被当作 body。
+
+#### 情形 B：verse 行跨越页边界（部分 verse 在当前页，部分在下一页）
+
+verse 收集循环因**页面耗尽**（`j >= len(body_blocks)`）退出，不是因为遇到 commentary 块。当前页已收集部分 verse（如 10-12 节），旧代码直接 emit 不完整表格；下一页剩余 verse（13-15 节）无 `pending_header` 接收 → 变成 body 段落。
+
+**两种情形的区分方式**：用 `hit_commentary` 标志区分循环是否因遇到 commentary 块而中断：
 
 ```python
-# process_page 增加参数和返回值
-def process_page(page, page_num, pending_header=None):
-    # ...（正常块分类）
+# 情形 B 的漏洞：只判断 verse_blocks 是否为空，忽略了"页面耗尽"的情况
+# ❌ 错误写法（只处理情形 A）：
+if verse_blocks:
+    emit_table(header, verse_blocks)   # 情形 B：部分 verse 被 emit，剩余 verse 无处归属
+else:
+    pending_header_out = header_block  # 仅当 verse_blocks 为空才 carry
+```
 
-    pending_header_out = None
+**修复**：用 `hit_commentary` 标志区分两种退出原因，`pending_header` 支持携带部分 verse 块：
 
-    # 若有跨页表头，先从本页开头收集 verse 块
-    if pending_header is not None:
-        carry_verses = []
-        for b in body_blocks:
-            if is_table_header(b) or is_h1(b) or is_h2(b) or block_is_full_width(b):
-                break
-            carry_verses.append(b)
-        table_html = extract_scripture_section(pending_header, carry_verses)
-        items.append({'type': 'TABLE', 'html': table_html})
-        body_blocks = body_blocks[len(carry_verses):]
+```python
+# ✅ 正确写法（同时处理情形 A 和 B）
 
-    # 正常处理块时，表头无 verse 块则设 pending
-    # ...
-    # elif is_table_header(b):
-    #     ...
-    #     if verse_blocks:
-    #         items.append({'type': 'TABLE', 'html': ...})
-    #     else:
-    #         pending_header_out = header_block  # 跨页传递
+# process_page 中的表头处理：
+elif is_table_header(b):
+    header_block = b
+    verse_blocks = []
+    j = i + 1
+    hit_commentary = False
+    while j < len(body_blocks):
+        nb = body_blocks[j]
+        if is_table_header(nb) or is_h1(nb) or is_h2(nb):
+            hit_commentary = True; break
+        if block_is_full_width(nb):
+            hit_commentary = True; break
+        verse_blocks.append(nb); j += 1
+    # hit_commentary=False 说明 j >= len(body_blocks)（页面耗尽）
+    if not hit_commentary and not verse_blocks:
+        pending_header_out = header_block                          # 情形 A
+    elif not hit_commentary and verse_blocks:
+        pending_header_out = {'header': header_block, 'verses': verse_blocks}  # 情形 B
+    elif verse_blocks:
+        table_html = extract_scripture_section(header_block, verse_blocks)
+        items.append({'type': 'TABLE', 'html': table_html})        # 正常完整表格
+    i = j
 
-    return items, footnote_defs, pending_header_out
+# process_page 开头处理跨页传入的 pending_header（同时兼容 A/B 两种情形）：
+if pending_header is not None:
+    # 区分 pending_header 是裸块（情形A）还是含部分 verse 的 dict（情形B）
+    # 注意：PyMuPDF 块本身也是 dict，必须用 'header' key 来判断，不能用 isinstance
+    if isinstance(pending_header, dict) and 'header' in pending_header:
+        carry_header = pending_header['header']
+        prev_verses  = pending_header['verses']
+    else:
+        carry_header = pending_header
+        prev_verses  = []
+    new_verses = []
+    for b in body_blocks:
+        if is_table_header(b) or is_h1(b) or is_h2(b) or block_is_full_width(b):
+            break
+        new_verses.append(b)
+    table_html = extract_scripture_section(carry_header, prev_verses + new_verses)
+    body_blocks = body_blocks[len(new_verses):]
+    carried_table = {'type': 'TABLE', 'html': table_html}
+else:
+    carried_table = None
 
 # 主循环
 pending_header = None
@@ -910,20 +1154,29 @@ for page_num, page in enumerate(doc):
             items.append({"type": "BODY", "text": all_text})
 
 # ── Stage 1.5: merge split paragraphs (including across page boundaries) ─────
+# 三种续句情形：
+#   ① 未结句 + 下段小写/破折号（最常见）
+#   ② 前段逗号结尾 + 下段大写（引文续句，如 "in that saying of Christ, Unless ye..."）
+#   ③ 未结句 + 下段以 [^N] 脚注引用开头（须先 strip 脚注引用再取 first_char）
 idx = 0
 while idx < len(items):
     if items[idx]["type"] in ("BODY", "BLOCKQUOTE"):
         cur_type = items[idx]["type"]
-        # 向前跳过 PAGE 项，找下一个同类型块
         j = idx + 1
         while j < len(items) and items[j]["type"] == "PAGE":
             j += 1
         if j < len(items) and items[j]["type"] == cur_type:
             cur_text = items[idx]["text"]
             nxt_text = items[j]["text"]
-            nxt_first = nxt_text.lstrip()[:1]
-            # 合并条件：当前段未结句，且下段以小写字母或破折号 — 开头（跨页续句）
-            if not is_sentence_end(cur_text) and nxt_text.lstrip() and (nxt_first.islower() or nxt_first == '—'):
+            # 去掉下段开头的脚注引用再取 first_char（情形③）
+            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt_text.lstrip())
+            first_char = nxt_check[:1]
+            # 前段以逗号结尾 = 引文续句，允许大写开头（情形②）
+            cur_ends_comma = cur_text.rstrip().rstrip('"\'')[-1:] == ','
+            if not is_sentence_end(cur_text) and (
+                (first_char and (first_char.islower() or first_char == '—'))
+                or cur_ends_comma
+            ):
                 items[idx]["text"] = cur_text.rstrip() + " " + nxt_text.lstrip()
                 items.pop(j)
                 continue
