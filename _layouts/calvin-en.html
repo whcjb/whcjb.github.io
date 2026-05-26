@@ -108,4 +108,67 @@ layout: default
   text-align: center;
   margin: 4px 0;
 }
+/* footnotes */
+.calvin-en-content .footnotes {
+  margin-top: 40px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  font-size: 14px;
+  color: #555;
+}
+.calvin-en-content .footnotes ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.calvin-en-content .footnotes li {
+  display: flex;
+  gap: 0.5em;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+.fn-backref-num {
+  flex-shrink: 0;
+  min-width: 1.8em;
+  text-align: right;
+  color: #0085a1;
+  font-weight: bold;
+  font-size: 0.9em;
+  text-decoration: none;
+  padding-top: 0.05em;
+}
+.fn-backref-num:hover {
+  text-decoration: underline;
+}
+.calvin-en-content .footnotes li > p {
+  margin: 0;
+  flex: 1;
+}
+.calvin-en-content .footnotes .reversefootnote {
+  margin-left: 0.3em;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+.calvin-en-content .footnotes .reversefootnote:hover {
+  color: #0085a1;
+}
 </style>
+
+<script>
+(function() {
+  var lists = document.querySelectorAll('.calvin-en-content .footnotes ol');
+  lists.forEach(function(ol) {
+    var items = ol.querySelectorAll('li[id]');
+    items.forEach(function(li, idx) {
+      var refId = li.id.replace(/^fn:/, 'fnref:');
+      var a = document.createElement('a');
+      a.href = '#' + refId;
+      a.className = 'fn-backref-num';
+      a.textContent = (idx + 1) + '.';
+      a.title = '返回引用位置';
+      li.insertBefore(a, li.firstChild);
+    });
+  });
+})();
+</script>
