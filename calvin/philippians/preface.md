@@ -162,7 +162,8 @@ next_label: "第一章"
 <!-- PAGE 12 -->
 
 
-<p style="text-align:center; font-style:italic">J. P. 于埃尔金，1851年3月</p>
+> J. P.
+> 于埃尔金，1851年3月
 
 
 <!-- PAGE 13 -->
