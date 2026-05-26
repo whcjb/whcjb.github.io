@@ -189,17 +189,37 @@ Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 AS
 
 ### 4. 跨页段落：必须合并
 
-PDF 段落常在页面边界断裂。Stage 1.5 负责合并，以下两种情形均需处理：
+PDF 段落在页面边界或 block 边界断裂时，续行 block 的**首行不带段落缩进**（indent = 0），而新段落首行**有缩进**（indent ≥ INDENT_LOW）。Stage 1.5 以此纯结构信号判断是否合并，不看段落文字内容。
 
-| 情形 | 前段末尾 | 后段开头 | 原因 |
-|------|---------|---------|------|
-| 正常续句 | 非句末标点（逗号/冒号等）| 小写字母或 `—` | 最常见 |
-| 脚注续句 | 非句末标点 | `[^N]`（脚注引用开头）| 脚注编号出现在行首，如 "[^148] pretend..." |
+### 为什么不能用内容判断
 
-⚠️ **禁止添加"逗号结尾 → 大写开头也合并"的规则**（`cur_ends_comma`）。Calvin 注释里"The Prophet asks," + "Who hath been God's counselor?" 这类段落是**引文独立段落**，应保持分段；若加此规则会把经文引文错误合并到前段。合并仅当下段以**小写字母或破折号**开头时触发。
+| 内容规则（错误） | 会导致的问题 |
+|-----------------|-------------|
+| 下段首字小写 → 合并 | 合法续句首字大写（如专有名词、斜体词）无法合并 |
+| 前段逗号结尾 + 大写 → 合并（`cur_ends_comma`）| Calvin 引文独立段落如 "asks," + "Who hath..." 被错误合并 |
+| 只看标点/大小写 | 对任何新 PDF 都是猜测，只能适配特定内容 |
+
+### 正确实现：纯结构化
+
+每个 BODY item 必须记录其**首行 indent**（第一个有文字的行的 x0 − block_x0）。Stage 1.5 根据 indent 决定合并：
 
 ```python
-# Stage 1.5 正确实现（两种情形）
+# 构建 BODY item 时记录 indent
+first_indent = 0
+for line in b['lines']:
+    ls = [s for s in line['spans'] if s['text'].strip()]
+    if ls:
+        first_indent = round(ls[0]['bbox'][0] - b['bbox'][0])
+        break
+items.append({'type': 'BODY', 'text': text, 'indent': first_indent})
+```
+
+```python
+# Stage 1.5：纯结构化合并
+# 结构信号：nxt_indent < INDENT_LOW → 无段落首行缩进 → 续行 block
+# 安全兜底：前段未结句（防止段首无缩进的新章节首段被误合并）
+PARA_INDENT_LOW = 10  # 与 split_block_by_paragraph_indent 保持一致
+
 idx = 0
 while idx < len(all_items):
     if all_items[idx]['type'] == 'BODY':
@@ -209,17 +229,15 @@ while idx < len(all_items):
         if j < len(all_items) and all_items[j]['type'] == 'BODY':
             cur = all_items[idx]['text']
             nxt = all_items[j]['text']
-            # 去掉下段开头的脚注引用再取 first_char（情形2）
-            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
-            first_char = nxt_check[:1]
-            if not is_sentence_end(cur) and (
-                first_char and (first_char.islower() or first_char == '—')
-            ):
+            nxt_indent = all_items[j].get('indent', 0)
+            if nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
                 del all_items[j]
                 continue
     idx += 1
 ```
+
+⚠️ **严禁使用 `first_char`（首字大小写）或 `cur_ends_comma`（逗号结尾）作为合并条件**——这是内容判断，不是结构判断，已知会导致 Calvin 注释中圣经引文段落被错误合并。
 
 ### 4.5 同页多节注释合并在同一 block：必须按节分割
 
@@ -490,7 +508,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
    - 表格 `<td>` 内脚注转 HTML：`build_table` 中调用 `_fnref_to_html()` 把 `[^N]` 转 `<sup>` 标签（见第4.6节），否则 Kramdown 不处理 HTML 块内的 Markdown
    - Stage 1.6：段首孤立脚注引用移到前段末尾（见第4.7节），防止大上标出现在段落开头
    - `format_span` 空白外移：bold/italic/bold+italic span 开头尾空白必须移到标记之外（见第4.8节），否则 Kramdown 无法解析斜体，节号段落被 CSS 误判为居中
-   - Stage 1.5：跨页段落合并——必须处理两种情形（见第4节完整实现代码）：① 未结句 + 下段小写/破折号；② 未结句 + 下段以 `[^N]` 脚注引用开头（须先 strip 脚注引用再取 first_char）。**禁止添加 `cur_ends_comma` 规则**（前段逗号结尾 + 大写开头不合并，因为 Calvin 引文独立成段）
+   - Stage 1.5：段落碎片合并——**纯结构化**：每个 BODY item 必须记录 `indent`（首行缩进），合并条件：`nxt_indent < PARA_INDENT_LOW AND not is_sentence_end(cur)`。**严禁使用 `first_char`、`cur_ends_comma` 等内容判断**（见第4节）
    - 跨页表格：`pending_header` 机制同时处理**两种情形**：A) 表头在页底无任何 verse → carry 裸 header；B) 部分 verse 在当前页、页面耗尽 → carry `{'header':…,'verses':[…]}` dict；用 `hit_commentary` 标志区分两种退出原因（见"已知坑"）
    - 希腊文转换：`convert_ages_greek()` 在所有输出路径上均被调用
    - 脚注标签标准化：`ft` 前缀统一去掉
@@ -1237,12 +1255,12 @@ for page_num, page in enumerate(doc):
         else:
             items.append({"type": "BODY", "text": all_text})
 
-# ── Stage 1.5: merge split paragraphs (including across page boundaries) ─────
-# 两种续句情形：
-#   ① 未结句 + 下段小写/破折号（最常见）
-#   ② 未结句 + 下段以 [^N] 脚注引用开头（须先 strip 脚注引用再取 first_char）
-# ⚠️ 禁止添加 cur_ends_comma 规则（逗号结尾+大写开头=不合并），
-#    Calvin 注释引文独立成段，如 "The Prophet asks," + "Who hath been God's counselor?"
+# ── Stage 1.5: merge paragraph fragments (structural, not content-based) ─────
+# 纯结构化：nxt_indent < PARA_INDENT_LOW = 无段落首行缩进 = 续行 block
+# 安全兜底：not is_sentence_end(cur) 防止段首无缩进的新章节首段被误合并
+# ⚠️ 严禁使用 first_char（大小写）或 cur_ends_comma——内容判断会误合并引文段落
+PARA_INDENT_LOW = 10  # 与 split_block_by_paragraph_indent 保持一致
+
 idx = 0
 while idx < len(items):
     if items[idx]["type"] in ("BODY", "BLOCKQUOTE"):
@@ -1253,12 +1271,8 @@ while idx < len(items):
         if j < len(items) and items[j]["type"] == cur_type:
             cur_text = items[idx]["text"]
             nxt_text = items[j]["text"]
-            # 去掉下段开头的脚注引用再取 first_char（情形②）
-            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt_text.lstrip())
-            first_char = nxt_check[:1]
-            if not is_sentence_end(cur_text) and (
-                first_char and (first_char.islower() or first_char == '—')
-            ):
+            nxt_indent = items[j].get("indent", 0)
+            if nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur_text):
                 items[idx]["text"] = cur_text.rstrip() + " " + nxt_text.lstrip()
                 items.pop(j)
                 continue

@@ -534,14 +534,27 @@ def process_page(page, page_num, pending_header=None):
                 body_spans = [s for l in body_lines for s in l['spans']]
                 body_text = spans_to_text(body_spans)
                 if body_text:
-                    items.append({'type': 'BODY', 'text': body_text})
+                    first_indent = 0
+                    for line in body_lines:
+                        ls = [s for s in line['spans'] if s['text'].strip()]
+                        if ls:
+                            first_indent = round(ls[0]['bbox'][0] - b['bbox'][0])
+                            break
+                    items.append({'type': 'BODY', 'text': body_text, 'indent': first_indent})
             i += 1
         else:
             # Body paragraph
             all_spans = [s for l in b['lines'] for s in l['spans']]
             text = spans_to_text(all_spans)
             if text:
-                items.append({'type': 'BODY', 'text': text})
+                # Record indent of first text line: 0 = continuation, ≥INDENT_LOW = new paragraph
+                first_indent = 0
+                for line in b['lines']:
+                    ls = [s for s in line['spans'] if s['text'].strip()]
+                    if ls:
+                        first_indent = round(ls[0]['bbox'][0] - b['bbox'][0])
+                        break
+                items.append({'type': 'BODY', 'text': text, 'indent': first_indent})
             i += 1
 
     return items, footnote_defs, pending_header_out
@@ -567,10 +580,13 @@ for page_num in range(len(doc)):
     all_items.extend(items)
     all_fn_defs.update(fn_defs)
 
-# ── Stage 1.5: merge cross-page split paragraphs ─────────────────────────────
-# When a BODY item doesn't end with sentence-ending punctuation and the next
-# BODY item (skipping PAGE markers) starts with a lowercase letter or em-dash,
-# merge them into one paragraph.
+# ── Stage 1.5: merge paragraph fragments split across page/block boundaries ───
+# Structural rule: a BODY item whose first text line has no paragraph-start indent
+# (indent < INDENT_LOW) is a continuation fragment, not a new paragraph.
+# Safety guard: only merge if the previous item also doesn't end a sentence
+# (handles the edge case where a page starts fresh with an un-indented first paragraph).
+PARA_INDENT_LOW = 10  # same threshold used in split_block_by_paragraph_indent
+
 def is_sentence_end(text):
     stripped = text.rstrip().rstrip('"\'')
     return not stripped or stripped[-1] in '.!?…'
@@ -585,13 +601,10 @@ while idx < len(all_items):
         if j < len(all_items) and all_items[j]['type'] == 'BODY':
             cur = all_items[idx]['text']
             nxt = all_items[j]['text']
-            # Strip leading footnote refs ([^N]) before checking first char,
-            # so "[^148] pretend..." merges correctly when prev ends mid-sentence.
-            nxt_check = re.sub(r'^\[\^\d+\]\s*', '', nxt.lstrip())
-            first_char = nxt_check[:1]
-            if not is_sentence_end(cur) and (
-                first_char and (first_char.islower() or first_char == '—')
-            ):
+            nxt_indent = all_items[j].get('indent', 0)
+            # Structural: no paragraph-start indent = continuation fragment.
+            # Guard: previous item doesn't end a sentence (double safety).
+            if nxt_indent < PARA_INDENT_LOW and not is_sentence_end(cur):
                 all_items[idx]['text'] = cur.rstrip() + ' ' + nxt.lstrip()
                 del all_items[j]
                 continue  # re-check same idx (may need further merging)
