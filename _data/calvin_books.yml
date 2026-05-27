@@ -89,11 +89,8 @@ new_testament:
     name: 哥林多前书
     chapters: 16
   - id: 1corinthians-en
-    name: 1 Corinthians, Vol. 1 (EN)
-    chapters: 14
-  - id: 1corinthians-vol2-en
-    name: 1 Corinthians, Vol. 2 (EN)
-    chapters: 2
+    name: 1 Corinthians (EN)
+    chapters: 16
   - id: 2corinthians
     name: 哥林多后书
     chapters: 13
