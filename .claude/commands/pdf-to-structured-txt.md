@@ -1471,3 +1471,269 @@ print(f"Tables:    {output.count('|---|---|')}")
 print(f"Footnotes: {output.count('[^ft')}")
 print(f"Colored:   {output.count('color:#800000')}")
 ```
+
+---
+
+## CCEL 格式 PDF（如使徒行传）
+
+CCEL（Christian Classics Ethereal Library）格式与 Ages Digital Library 格式**完全不同**，必须用独立的提取脚本，不得套用 Ages 模板。
+
+### 格式差异对比
+
+| 特征 | Ages Digital Library | CCEL |
+|------|---------------------|------|
+| 页面结构 | 双列（拉丁文 + 英文） | 单列英文 |
+| 希腊文 | ASCII 转写（需转 Unicode） | 已是 Unicode 或无 |
+| 章节标题 | 脚注区 `## CHAPTER N` | 正文内独立块 `CHAPTER N` |
+| 经文段落 | 表格形式（含表头） | 独立 block，bold+italic 节号开头 |
+| 脚注内容 | 专属脚注区，`FtN` 开头 | 页底小字，内容行以 `N "文本"` 开头（**Unicode 弯引号**） |
+| 脚注引用 | 行内上标 | 行内数字（嵌入正文，无法精确分离） |
+
+### 关键块的识别
+
+#### 1. 必须过滤的块
+
+```python
+SKIP_PAGES = 6  # 跳过前 N 页（标题页 + 目录）
+
+def is_page_header(block):
+    """页顶页眉：y0 < 55，含 'John Calvin' 或 'Comm on Acts'。"""
+    if block["bbox"][1] > 55: return False
+    text = get_block_text(block).strip()
+    return "John Calvin" in text or "Comm on Acts" in text or re.match(r'^\d+$', text)
+
+def is_page_number(block):
+    """页码：纯数字 + 字号 ≤ 10。"""
+    text = get_block_text(block).strip()
+    if not re.match(r'^\d+$', text): return False
+    span = get_first_span(block)
+    return span and span.get("size", 0) <= 10
+
+def is_footnote_block(block):
+    """脚注内容块：y0 > 705（页底区域），首 span 字号 < 8。"""
+    if block["bbox"][1] < 705: return False
+    span = get_first_span(block)
+    return span and span.get("size", 0) < 8
+```
+
+#### 2. 章节标题块（⚠️ 必须过滤）
+
+CCEL PDF 每章开头有**独立的 `CHAPTER N` 文本块**，位于正文区域内（不是页眉）。这与 Ages 格式完全不同。**必须在发布脚本（不是提取脚本）中过滤**，因为它们是内容块而非结构元素。
+
+```python
+# 发布脚本 is_skip_block 中加入：
+if re.match(r'^CHAPTER\s+\d+$', t):
+    return True
+```
+
+**为什么会漏掉**：`is_page_header` 检测的是 y0 < 55 的块，而 `CHAPTER N` 块出现在页面内部（y0 > 100），所以不会被捕获。
+
+#### 3. 脚注内容块（⚠️ 注意 Unicode 弯引号）
+
+CCEL 脚注内容块格式：`364 "Sed tanum hoc quaerint," but the only thing they ask is.`
+
+注意引号是 Unicode 弯引号（`"` U+201C），不是 ASCII `"`。正则必须同时匹配：
+
+```python
+# 错误（不匹配）：
+FOOTNOTE_RE = re.compile(r'^\d+\s+"')
+
+# 正确：
+FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')
+# 同时覆盖：弯引号开头（脚注定义）和小写字母开头（脚注续行块）
+```
+
+**脚注续行块**：长脚注会在下一页顶部续行，格式为 `N 正文文字...`（数字+空格+小写，无引号），同样需要过滤。上面的正则通过 `[a-z]` 分支处理了这种情况。
+
+### 跨页段落合并
+
+CCEL 格式中，段落跨页后续行 block **没有 indent=0 的结构信号**（与 Ages 不同）。必须在**发布脚本**的后处理阶段用内容启发式合并：
+
+```python
+def merge_split_paragraphs(blocks):
+    """合并因页面边界断裂的段落。
+    条件：当前块末尾无句终标点 AND 下一块以小写字母开头。
+    不合并：section headers（##）和 verse 块（**N.**）。
+    """
+    merged = []
+    i = 0
+    while i < len(blocks):
+        block = blocks[i]
+        while i + 1 < len(blocks):
+            next_block = blocks[i + 1]
+            if block.startswith('##') or next_block.startswith('##'):
+                break
+            if re.match(r'^\*\*\d+\.\*\*', block):
+                break
+            end_char = block.rstrip()[-1] if block.rstrip() else ''
+            next_start = next_block.lstrip()[0] if next_block.lstrip() else ''
+            if end_char not in '.!?;:"\')""”' and next_start.islower():
+                block = block.rstrip() + ' ' + next_block.lstrip()
+                i += 1
+            else:
+                break
+        merged.append(block)
+        i += 1
+    return merged
+```
+
+调用位置：`group_by_chapter` 中，对每个章节的 blocks 列表完成分组后调用：
+
+```python
+for ch in chapters:
+    chapters[ch] = merge_split_paragraphs(chapters[ch])
+```
+
+**为什么不在 extract.py 里合并**：提取阶段的 `pending_continuation` 只处理末尾连字符（`word-`），无连字符跨页无法在提取时判断——因为要判断"下一块是否以小写开头"，需要看到下一块，而下一块可能属于不同的章节。发布脚本已经按章节分组，合并只在章节内进行，更安全。
+
+### CCEL 提取脚本模板
+
+```python
+#!/usr/bin/env python3
+import fitz, re, os
+
+PDF_PATH = "REPLACE_WITH_PDF_PATH"
+OUT_PATH  = "REPLACE_WITH_OUTPUT_PATH"
+SKIP_PAGES = 6          # 跳过标题/目录页
+HEADER_Y_MAX = 55       # 页顶页眉区域
+FOOTER_Y_MIN = 705      # 页底脚注区域
+
+def get_block_text(block):
+    lines = []
+    for line in block.get("lines", []):
+        lines.append("".join(s["text"] for s in line.get("spans", [])))
+    return "\n".join(lines)
+
+def get_first_span(block):
+    lines = block.get("lines", [])
+    if not lines: return None
+    spans = lines[0].get("spans", [])
+    return spans[0] if spans else None
+
+def is_page_header(block):
+    if block["bbox"][1] > HEADER_Y_MAX: return False
+    text = get_block_text(block).strip()
+    return ("John Calvin" in text or "Comm on" in text
+            or re.match(r'^\d+$', text))
+
+def is_page_number(block):
+    text = get_block_text(block).strip()
+    if not re.match(r'^\d+$', text): return False
+    s = get_first_span(block)
+    return s and s.get("size", 0) <= 10
+
+def is_footnote_block(block):
+    if block["bbox"][1] < FOOTER_Y_MIN: return False
+    s = get_first_span(block)
+    return s and s.get("size", 0) < 8
+
+def is_scripture_header(block):
+    """经文段落标题：居中，字号≥14，bold+italic（flags&20），匹配 'Book N:M'。"""
+    s = get_first_span(block)
+    if not s: return False
+    if s.get("size", 0) < 14 or not (s.get("flags", 0) & 20): return False
+    x = block["bbox"][0]
+    if x < 180 or x > 360: return False
+    return bool(re.match(r'^\w+ \d+:\d+', get_block_text(block).strip()))
+
+def is_verse_block(block):
+    """注释段落：x≈74，首 span bold（flags&4），文本匹配 'N.'。"""
+    x0 = block["bbox"][0]
+    if x0 < 65 or x0 > 85: return False
+    lines = block.get("lines", [])
+    if not lines: return False
+    spans = lines[0].get("spans", [])
+    if not spans: return False
+    fs = spans[0]
+    return (fs.get("flags", 0) & 4) and re.match(r'^\d+\.$', fs["text"].strip())
+
+def extract_block_rich(block):
+    """提取 block 文本，对 bold 节号加 **N.** markdown。"""
+    parts = []
+    for line in block.get("lines", []):
+        line_parts = []
+        for span in line.get("spans", []):
+            text = span["text"]
+            t = text.strip()
+            if (span.get("flags", 0) & 4) and re.match(r'^\d+\.$', t):
+                line_parts.append(f"**{t}**")
+            else:
+                line_parts.append(text)
+        parts.append("".join(line_parts))
+    return " ".join(parts).strip()
+
+def is_index_start(text):
+    return text.strip().upper() in (
+        "INDEX", "INDEX OF SCRIPTURE REFERENCES",
+        "SUBJECT INDEX", "INDEX OF SUBJECTS")
+
+def process_pdf():
+    doc = fitz.open(PDF_PATH)
+    output_blocks = []
+    pending = None  # 末尾连字符跨页
+
+    for page_idx in range(SKIP_PAGES, len(doc)):
+        page = doc[page_idx]
+        blocks = sorted(
+            page.get_text("dict", flags=fitz.TEXT_PRESERVE_WHITESPACE)["blocks"],
+            key=lambda b: b["bbox"][1])
+
+        for block in blocks:
+            if block["type"] != 0: continue
+            if is_page_header(block): continue
+            if is_page_number(block): continue
+            if is_footnote_block(block): continue
+
+            text = get_block_text(block).strip()
+            if not text: continue
+
+            if is_index_start(text):
+                if pending: output_blocks.append(pending); pending = None
+                doc.close(); write_output(output_blocks); return
+
+            if is_scripture_header(block):
+                if pending: output_blocks.append(pending); pending = None
+                output_blocks.append(f"\n## {text.replace(chr(10), ' ')}\n")
+            elif is_verse_block(block):
+                if pending: output_blocks.append(pending); pending = None
+                output_blocks.append(extract_block_rich(block))
+            else:
+                rich = extract_block_rich(block)
+                if rich.endswith("-"):          # 连字符跨页
+                    pending = (pending or "") + rich[:-1]
+                elif pending:
+                    output_blocks.append(pending + rich)
+                    pending = None
+                else:
+                    output_blocks.append(rich)
+
+    if pending: output_blocks.append(pending)
+    doc.close()
+    write_output(output_blocks)
+
+def write_output(blocks):
+    os.makedirs(os.path.dirname(os.path.abspath(OUT_PATH)), exist_ok=True)
+    with open(OUT_PATH, "w", encoding="utf-8") as f:
+        f.write("\n\n".join(blocks) + "\n")
+    print(f"Written: {OUT_PATH} ({len(blocks)} blocks)")
+
+if __name__ == "__main__":
+    process_pdf()
+```
+
+### CCEL 发布脚本模板（发布到 calvin/BOOK-en/）
+
+参见 `ocr_output/acts1/publish_acts.py`，关键点：
+
+1. `is_skip_block` 必须包含 `^CHAPTER\s+\d+$` 过滤
+2. `FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')` 覆盖弯引号和续行
+3. `group_by_chapter` 完成分组后调用 `merge_split_paragraphs`
+4. 按章节号分组：所有 `## Book N:M-P` section 属于章节 N
+
+### CCEL 质检 Checklist
+
+- [ ] 无独立 `CHAPTER N` 行出现在章节内容中
+- [ ] 无脚注定义行（`364 "text"` 格式）出现在正文中
+- [ ] 无孤立半句另起一段（抽查 3–5 处章节边界）
+- [ ] 末章内容完整（到达 Index 页前停止）
+- [ ] `## Book N:M-P` 格式的经文标题正确居中显示
