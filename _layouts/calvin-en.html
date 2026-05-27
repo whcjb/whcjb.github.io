@@ -104,19 +104,11 @@ layout: default
   background: #f5f5f5;
   font-weight: bold;
 }
-/* scripture tables: horizontal scroll, each verse stays on one row */
+/* scripture tables: horizontal scroll, each verse on one unwrapped line */
 .calvin-en-content table.calvin-scripture {
   display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-}
-.calvin-en-content table.calvin-scripture thead,
-.calvin-en-content table.calvin-scripture tbody,
-.calvin-en-content table.calvin-scripture tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
 }
 .calvin-en-content table.calvin-scripture th[colspan="2"] {
   text-align: center;
@@ -125,8 +117,7 @@ layout: default
 }
 .calvin-en-content table.calvin-scripture td {
   min-width: 280px;
-  width: 50%;
-  white-space: normal;
+  white-space: nowrap;
   vertical-align: top;
 }
 .calvin-en-content hr {
