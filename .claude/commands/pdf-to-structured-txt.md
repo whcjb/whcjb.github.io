@@ -727,6 +727,7 @@ for page_num in range(...):
 - [ ] **段落无异常换行**：随机抽查 3–5 处跨页位置，确认段落连续，无孤立的半句另起一段
 - [ ] **希腊文显示正常**：页面中希腊文字符可见（如 τὸ αὐτὸ），无 ASCII 转写残留（如 `to< aujto<`）
 - [ ] **表格标题跨全宽**：浏览器中 `PHILIPPIANS X:Y-Z` 标题横贯两列，无右侧空白单元格
+- [ ] **表格横向可滚动**：在手机或窄窗口下，经文表格可左右滑动；英文列和拉丁文列并排显示，不被压缩叠放。若不可滑动，检查 `calvin-en.html` 中 `table.calvin-scripture` 是否包含 `display:block; overflow-x:auto` 以及 `td { min-width:280px }`
 
 ---
 
@@ -836,11 +837,38 @@ parts = ['\n\n---\n']
 .calvin-en-content { font-family: Georgia, serif; font-size: 16px; line-height: 1.8; }
 .calvin-en-content blockquote { margin-left: 2em; border-left: none; }
 .calvin-en-content table { width: 100%; border-collapse: collapse; }
-/* calvin-scripture：还原 PDF 两列经文表格，标题跨全宽 */
+/* calvin-scripture：还原 PDF 两列经文表格，标题跨全宽，窄屏横向滚动 */
+/* ⚠️ 必须包含以下 4 条规则，缺一不可 */
+.calvin-en-content table.calvin-scripture {
+  display: block;              /* 让 overflow-x 生效 */
+  overflow-x: auto;            /* 窄屏横向滚动 */
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;         /* 防止行在容器边界处断裂 */
+}
+.calvin-en-content table.calvin-scripture thead,
+.calvin-en-content table.calvin-scripture tbody,
+.calvin-en-content table.calvin-scripture tr {
+  display: table;              /* 恢复子元素的 table 布局 */
+  width: 100%;
+  table-layout: fixed;
+}
 .calvin-en-content table.calvin-scripture th[colspan="2"] { font-size: 15px; }
-/* text-align 由提取脚本根据 PDF 检测结果写入内联 style，此处不 hardcode */
-.calvin-en-content table.calvin-scripture td { width: 50%; vertical-align: top; }
+.calvin-en-content table.calvin-scripture td {
+  min-width: 280px;            /* 防止列被压窄 */
+  width: 50%;
+  white-space: normal;         /* 单元格内文字仍可换行 */
+  vertical-align: top;
+}
 ```
+
+**为什么缺少这些规则会出问题：**
+
+| 缺少的规则 | 后果 |
+|-----------|------|
+| `display: block` + `overflow-x: auto` | 两列被压缩到页面宽度内，手机无法横滑 |
+| `white-space: nowrap`（表格级） | 行在容器边界处折行，破坏单行一节的布局 |
+| `min-width: 280px`（td 级） | 列宽可被压到几十像素，文字完全挤在一起 |
+| 子元素 `display: table` 恢复 | `display:block` 后 tbody/tr 不再是 table 上下文，需显式恢复 |
 
 若 `_layouts/calvin-en.html` 已存在，直接复用；若不存在，按上述样式新建。
 
