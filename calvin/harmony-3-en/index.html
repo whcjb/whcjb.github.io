@@ -1,0 +1,84 @@
+---
+layout: default
+book_id: harmony-3-en
+book_name: "Calvin on the Harmony of the Evangelists (Vol. 3)"
+header-img: psalm-bg-mountain.jpg
+date: 2026-05-27 16:53
+---
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div style="margin: 32px 0 24px;">
+        <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+      </div>
+
+      <h2 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:24px;">
+        Calvin on the Harmony of the Evangelists (Vol. 3)
+      </h2>
+
+      <div class="ch-pills">
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/1/" class="ch-pill" data-title="Matthew 21 — Temple Controversies">Ch 1</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/2/" class="ch-pill" data-title="Matthew 22 — Conflicts with Religious Leaders">Ch 2</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/3/" class="ch-pill" data-title="Matthew 23 — Woes to the Pharisees">Ch 3</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/4/" class="ch-pill" data-title="Matthew 24 — The Olivet Discourse">Ch 4</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/5/" class="ch-pill" data-title="Matthew 25 — Parables of the Kingdom's End">Ch 5</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/6/" class="ch-pill" data-title="Matthew 26:1–56 — The Last Supper and Gethsemane">Ch 6</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/7/" class="ch-pill" data-title="Matthew 26:57 – 27:26 — The Trials of Jesus">Ch 7</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/8/" class="ch-pill" data-title="Matthew 27:27–66 — The Crucifixion and Burial">Ch 8</a>
+        <a href="{{ site.baseurl }}/calvin/harmony-3-en/9/" class="ch-pill" data-title="Matthew 28; Mark 16; Luke 24 — The Resurrection and Ascension">Ch 9</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.ch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ch-pill {
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ch-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+.ch-pill::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+.ch-pill:hover::after {
+  opacity: 1;
+}
+</style>

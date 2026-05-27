@@ -147,6 +147,9 @@ english:
   - id: matthew-en
     name: Matthew (Vol. 2)
     chapters: 13
+  - id: harmony-3-en
+    name: Harmony of the Evangelists (Vol. 3)
+    chapters: 9
   - id: acts-en
     name: Acts
     chapters: 28
