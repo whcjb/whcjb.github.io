@@ -85,9 +85,21 @@ new_testament:
   - id: romans
     name: 罗马书
     chapters: 16
-  - id: corinthians
-    name: 哥林多前后书
-    has_content: true
+  - id: 1corinthians
+    name: 哥林多前书
+    chapters: 16
+  - id: 1corinthians-en
+    name: 1 Corinthians, Vol. 1 (EN)
+    chapters: 14
+  - id: 1corinthians-vol2-en
+    name: 1 Corinthians, Vol. 2 (EN)
+    chapters: 2
+  - id: 2corinthians
+    name: 哥林多后书
+    chapters: 13
+  - id: 2corinthians-en
+    name: 2 Corinthians (EN)
+    chapters: 13
   - id: galatians
     name: 加拉太书
     chapters: 6
