@@ -38,7 +38,7 @@ header-img: img/psalm-bg-mountain.jpg
             <div class="row calvin-book-grid" style="margin-bottom:40px;">
                 {% for book in site.data.calvin_books.old_testament %}
                 <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if books_with_content contains book.id %}
+                    {% if books_with_content contains book.id or book.has_content %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
                     {% else %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
@@ -55,7 +55,7 @@ header-img: img/psalm-bg-mountain.jpg
             <div class="row calvin-book-grid">
                 {% for book in site.data.calvin_books.new_testament %}
                 <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if books_with_content contains book.id %}
+                    {% if books_with_content contains book.id or book.has_content %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
                     {% else %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
