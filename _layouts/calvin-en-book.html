@@ -14,13 +14,53 @@ layout: default
         {{ page.book_name }}
       </h2>
 
-      <div class="list-group" style="max-width:360px;">
-        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="list-group-item">Translator's Preface &amp; The Argument</a>
+      {% if page.has_preface %}
+      <div style="margin-bottom: 16px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="preface-link">Translator's Preface &amp; The Argument &rarr;</a>
+      </div>
+      {% endif %}
+
+      <div class="ch-pills">
         {% for i in (1..page.chapters) %}
-        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="list-group-item">Chapter {{ i }}</a>
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">Ch {{ i }}</a>
         {% endfor %}
       </div>
 
     </div>
   </div>
 </div>
+
+<style>
+.preface-link {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #0085a1;
+}
+.preface-link:hover {
+  text-decoration: underline;
+}
+.ch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ch-pill {
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ch-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+</style>
