@@ -41,6 +41,28 @@ def is_skip_block(block):
     return not t
 
 
+def split_verse_commentary(blocks):
+    """Split a block containing multiple verse commentaries inline (e.g. '... another. 4. Go...').
+    Splits on pattern: sentence-end period + space + digit(s) + period + space + capital."""
+    result = []
+    for block in blocks:
+        if block.startswith('##') or block.startswith('<table'):
+            result.append(block)
+            continue
+        parts = re.split(r'(?<=\.) (\d+)\. (?=[A-Z])', block)
+        if len(parts) <= 1:
+            result.append(block)
+            continue
+        result.append(parts[0].rstrip())
+        i = 1
+        while i < len(parts) - 1:
+            verse_num = parts[i]
+            verse_text = parts[i + 1]
+            result.append(f"**{verse_num}.** {verse_text}")
+            i += 2
+    return [b for b in result if b.strip()]
+
+
 def join_orphan_verse_numbers(blocks):
     result = []
     i = 0
@@ -114,6 +136,7 @@ def group_by_chapter(blocks):
         chapters[current_ch].append(block)
 
     for ch in chapters:
+        chapters[ch] = split_verse_commentary(chapters[ch])
         chapters[ch] = join_orphan_verse_numbers(chapters[ch])
         chapters[ch] = merge_split_paragraphs(chapters[ch])
 
