@@ -57,11 +57,24 @@ def is_skip_block(block):
     return False
 
 
+def join_orphan_verse_numbers(blocks):
+    # Join standalone verse-number blocks (e.g. **28.**) with following commentary.
+    result = []
+    i = 0
+    while i < len(blocks):
+        block = blocks[i]
+        if re.match(r'^\*\*\d+\.\*\*$', block.strip()):
+            if i + 1 < len(blocks) and not blocks[i + 1].startswith('##'):
+                result.append(block.strip() + ' ' + blocks[i + 1].lstrip())
+                i += 2
+                continue
+        result.append(block)
+        i += 1
+    return result
+
+
 def merge_split_paragraphs(blocks):
-    """Merge blocks that are cross-page paragraph continuations.
-    A block ending without sentence-ending punctuation followed by a block
-    starting with lowercase is a continuation split by a page break.
-    """
+    # Merge cross-page paragraph splits using lowercase-start heuristic.
     merged = []
     i = 0
     while i < len(blocks):
@@ -69,15 +82,13 @@ def merge_split_paragraphs(blocks):
         # Keep merging while the block looks like it continues on the next
         while i + 1 < len(blocks):
             next_block = blocks[i + 1]
-            # Skip merge if either is a section header or verse block
+            # Skip merge if either is a section header
             if block.startswith('##') or next_block.startswith('##'):
-                break
-            if block.startswith('**') and re.match(r'^\*\*\d+\.\*\*', block):
                 break
             # Check if this block ends mid-sentence
             end_char = block.rstrip()[-1] if block.rstrip() else ''
             next_start = next_block.lstrip()[0] if next_block.lstrip() else ''
-            if end_char not in '.!?;:"\')”' and next_start.islower():
+            if end_char not in '.!?;:”\')”' and next_start.islower():
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
@@ -129,8 +140,9 @@ def group_by_chapter(blocks):
         if current_ch is not None:
             chapters[current_ch].append(block)
 
-    # Post-process: merge cross-page paragraph splits within each chapter
+    # Post-process: join orphan verse numbers, then merge cross-page paragraph splits
     for ch in chapters:
+        chapters[ch] = join_orphan_verse_numbers(chapters[ch])
         chapters[ch] = merge_split_paragraphs(chapters[ch])
 
     return chapters
