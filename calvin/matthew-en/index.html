@@ -18,22 +18,71 @@ date: 2026-05-27 15:06
         Calvin's Commentary on the Harmony of the Evangelists (Vol. 2)
       </h2>
 
-      <div class="list-group" style="max-width:360px;">
-        <a href="{{ site.baseurl }}/calvin/matthew-en/11/" class="list-group-item">Chapter 11: Matthew 11 — John the Baptist's Question and Christ's Reply</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/12/" class="list-group-item">Chapter 12: Matthew 12 — Sabbath Controversies and Pharisaic Opposition</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/13/" class="list-group-item">Chapter 13: Matthew 13 — Parables of the Kingdom</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/14/" class="list-group-item">Chapter 14: Matthew 14 — Death of John and the Feeding of the Multitude</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/15/" class="list-group-item">Chapter 15: Matthew 15 — Jewish Traditions and Gentile Faith</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/16/" class="list-group-item">Chapter 16: Matthew 16 — Peter's Confession and the Keys of the Kingdom</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/17/" class="list-group-item">Chapter 17: Matthew 17 — The Transfiguration</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/18/" class="list-group-item">Chapter 18: Matthew 18 — Humility, Offense, and Forgiveness</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/19/" class="list-group-item">Chapter 19: Matthew 19 — Marriage, Children, and Riches</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/20/" class="list-group-item">Chapter 20: Matthew 20 — The Vineyard Parable and Servant Leadership</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/21/" class="list-group-item">Chapter 21: Matthew 21 — The Triumphal Entry and Temple Cleansing</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/22/" class="list-group-item">Chapter 22: Matthew 22 — Controversies with Scribes and Pharisees</a>
-        <a href="{{ site.baseurl }}/calvin/matthew-en/25/" class="list-group-item">Chapter 25: Matthew 25 — Parables of the Last Judgment</a>
+      <div class="ch-pills">
+        <a href="{{ site.baseurl }}/calvin/matthew-en/11/" class="ch-pill" data-title="Matthew 11 — John the Baptist's Question and Christ's Reply">Ch 11</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/12/" class="ch-pill" data-title="Matthew 12 — Sabbath Controversies and Pharisaic Opposition">Ch 12</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/13/" class="ch-pill" data-title="Matthew 13 — Parables of the Kingdom">Ch 13</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/14/" class="ch-pill" data-title="Matthew 14 — Death of John and the Feeding of the Multitude">Ch 14</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/15/" class="ch-pill" data-title="Matthew 15 — Jewish Traditions and Gentile Faith">Ch 15</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/16/" class="ch-pill" data-title="Matthew 16 — Peter's Confession and the Keys of the Kingdom">Ch 16</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/17/" class="ch-pill" data-title="Matthew 17 — The Transfiguration">Ch 17</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/18/" class="ch-pill" data-title="Matthew 18 — Humility, Offense, and Forgiveness">Ch 18</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/19/" class="ch-pill" data-title="Matthew 19 — Marriage, Children, and Riches">Ch 19</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/20/" class="ch-pill" data-title="Matthew 20 — The Vineyard Parable and Servant Leadership">Ch 20</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/21/" class="ch-pill" data-title="Matthew 21 — The Triumphal Entry and Temple Cleansing">Ch 21</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/22/" class="ch-pill" data-title="Matthew 22 — Controversies with Scribes and Pharisees">Ch 22</a>
+        <a href="{{ site.baseurl }}/calvin/matthew-en/25/" class="ch-pill" data-title="Matthew 25 — Parables of the Last Judgment">Ch 25</a>
       </div>
 
     </div>
   </div>
 </div>
+
+<style>
+.ch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ch-pill {
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ch-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+.ch-pill::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+.ch-pill:hover::after {
+  opacity: 1;
+}
+</style>

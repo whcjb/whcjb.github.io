@@ -150,11 +150,11 @@ date: {DATE}
 
 
 def write_index(chapter_nums):
-    """Generate custom index.html with explicit chapter links (non-sequential chapters)."""
+    """Generate custom index.html with chapter pills."""
     path = os.path.join(OUT_DIR, "index.html")
-    chapter_links = "\n".join(
-        f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch}/" class="list-group-item">'
-        f'Chapter {ch}: {CHAPTER_TITLES.get(ch, f"Matthew {ch}")}</a>'
+    pills = "\n".join(
+        f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch}/" class="ch-pill"'
+        f' data-title="{CHAPTER_TITLES.get(ch, f"Matthew {ch}")}">Ch {ch}</a>'
         for ch in sorted(chapter_nums)
     )
     content = f"""---
@@ -177,13 +177,62 @@ date: {DATE}
         Calvin's Commentary on the Harmony of the Evangelists (Vol. 2)
       </h2>
 
-      <div class="list-group" style="max-width:360px;">
-{chapter_links}
+      <div class="ch-pills">
+{pills}
       </div>
 
     </div>
   </div>
 </div>
+
+<style>
+.ch-pills {{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}}
+.ch-pill {{
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}}
+.ch-pill:hover {{
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}}
+.ch-pill::after {{
+  content: attr(data-title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}}
+.ch-pill:hover::after {{
+  opacity: 1;
+}}
+</style>
 """
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)

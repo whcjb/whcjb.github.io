@@ -136,15 +136,15 @@ date: {DATE}
 
 
 def write_index(chapter_data):
-    """Generate index.html with chapter list."""
+    """Generate index.html with chapter pills."""
     path = os.path.join(OUT_DIR, "index.html")
 
-    links = []
+    pills = []
     for ch_num, _, ch_title in CHAPTER_STARTS:
-        link = (f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch_num}/" '
-                f'class="list-group-item">Chapter {ch_num}: {ch_title}</a>')
-        links.append(link)
-    chapter_links = "\n".join(links)
+        pill = (f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch_num}/" '
+                f'class="ch-pill" data-title="{ch_title}">Ch {ch_num}</a>')
+        pills.append(pill)
+    chapter_pills = "\n".join(pills)
 
     content = f"""---
 layout: default
@@ -166,13 +166,62 @@ date: {DATE}
         {BOOK_NAME}
       </h2>
 
-      <div class="list-group" style="max-width:560px;">
-{chapter_links}
+      <div class="ch-pills">
+{chapter_pills}
       </div>
 
     </div>
   </div>
 </div>
+
+<style>
+.ch-pills {{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}}
+.ch-pill {{
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}}
+.ch-pill:hover {{
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}}
+.ch-pill::after {{
+  content: attr(data-title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}}
+.ch-pill:hover::after {{
+  opacity: 1;
+}}
+</style>
 """
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
