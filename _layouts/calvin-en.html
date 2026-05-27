@@ -110,12 +110,13 @@ layout: default
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-.calvin-en-content table.calvin-scripture th[colspan="2"] {
+.calvin-en-content table.calvin-scripture th[colspan] {
   text-align: center;
   font-size: 15px;
   letter-spacing: 0.03em;
 }
-.calvin-en-content table.calvin-scripture td {
+.calvin-en-content table.calvin-scripture td,
+.calvin-en-content table.calvin-scripture th:not([colspan]) {
   min-width: 280px;
   white-space: nowrap;
   vertical-align: top;

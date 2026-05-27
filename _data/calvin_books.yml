@@ -141,6 +141,9 @@ new_testament:
     chapters: 1
 
 english:
+  - id: matthew-en
+    name: Matthew (Vol. 2)
+    chapters: 13
   - id: acts-en
     name: Acts
     chapters: 28
