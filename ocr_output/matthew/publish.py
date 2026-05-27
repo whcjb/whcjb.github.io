@@ -15,6 +15,22 @@ DATE = "2026-05-27 15:06"
 
 SECTION_HEADER_RE = re.compile(r'^## MATTHEW (\d+):')
 
+CHAPTER_TITLES = {
+    11: "Matthew 11 — John the Baptist's Question and Christ's Reply",
+    12: "Matthew 12 — Sabbath Controversies and Pharisaic Opposition",
+    13: "Matthew 13 — Parables of the Kingdom",
+    14: "Matthew 14 — Death of John and the Feeding of the Multitude",
+    15: "Matthew 15 — Jewish Traditions and Gentile Faith",
+    16: "Matthew 16 — Peter's Confession and the Keys of the Kingdom",
+    17: "Matthew 17 — The Transfiguration",
+    18: "Matthew 18 — Humility, Offense, and Forgiveness",
+    19: "Matthew 19 — Marriage, Children, and Riches",
+    20: "Matthew 20 — The Vineyard Parable and Servant Leadership",
+    21: "Matthew 21 — The Triumphal Entry and Temple Cleansing",
+    22: "Matthew 22 — Controversies with Scribes and Pharisees",
+    25: "Matthew 25 — Parables of the Last Judgment",
+}
+
 
 def is_footnote_content(block):
     return bool(re.match(r'^\d+\s+[""''"\'a-z]', block.strip()))
@@ -124,8 +140,9 @@ date: {DATE}
         front_matter += f'next_label: "Chapter {next_ch}"\n'
     front_matter += "---\n"
 
+    title = CHAPTER_TITLES.get(ch, f"Matthew {ch}")
     body = "\n\n".join(blocks)
-    content = front_matter + "\n" + body + "\n"
+    content = front_matter + "\n" + f"# {title}\n\n" + body + "\n"
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(content)
@@ -136,7 +153,8 @@ def write_index(chapter_nums):
     """Generate custom index.html with explicit chapter links (non-sequential chapters)."""
     path = os.path.join(OUT_DIR, "index.html")
     chapter_links = "\n".join(
-        f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch}/" class="list-group-item">Chapter {ch}</a>'
+        f'        <a href="{{{{ site.baseurl }}}}/calvin/{BOOK_ID}/{ch}/" class="list-group-item">'
+        f'Chapter {ch}: {CHAPTER_TITLES.get(ch, f"Matthew {ch}")}</a>'
         for ch in sorted(chapter_nums)
     )
     content = f"""---
