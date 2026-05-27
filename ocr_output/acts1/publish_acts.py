@@ -74,21 +74,17 @@ def join_orphan_verse_numbers(blocks):
 
 
 def merge_split_paragraphs(blocks):
-    # Merge cross-page paragraph splits using lowercase-start heuristic.
+    # Merge cross-page splits: next block starts lowercase = continuation.
     merged = []
     i = 0
     while i < len(blocks):
         block = blocks[i]
-        # Keep merging while the block looks like it continues on the next
         while i + 1 < len(blocks):
             next_block = blocks[i + 1]
-            # Skip merge if either is a section header
             if block.startswith('##') or next_block.startswith('##'):
                 break
-            # Check if this block ends mid-sentence
-            end_char = block.rstrip()[-1] if block.rstrip() else ''
             next_start = next_block.lstrip()[0] if next_block.lstrip() else ''
-            if end_char not in '.!?;:”\')”' and next_start.islower():
+            if next_start.islower():
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
@@ -96,8 +92,6 @@ def merge_split_paragraphs(blocks):
         merged.append(block)
         i += 1
     return merged
-
-
 def read_raw(path):
     with open(path, encoding="utf-8") as f:
         return f.read()
