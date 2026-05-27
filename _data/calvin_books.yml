@@ -141,6 +141,9 @@ new_testament:
     chapters: 1
 
 english:
+  - id: acts-en
+    name: Acts
+    chapters: 28
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16
