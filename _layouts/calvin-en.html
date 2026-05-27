@@ -23,6 +23,17 @@ layout: default
       </div>
       {% endif %}
 
+      <!-- Verse navigation bar -->
+      <div id="verse-nav" style="display:none; margin-bottom:24px;">
+        <div id="verse-nav-toggle" onclick="toggleVerseNav()" title="Click to expand verse list">
+          <span id="verse-nav-label">Jump to verse</span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;">
+          <!-- populated by JS -->
+        </div>
+      </div>
+
       <div class="calvin-en-content">
         {{ content }}
       </div>
@@ -159,9 +170,76 @@ layout: default
 .calvin-en-content .footnotes .reversefootnote:hover {
   color: #0085a1;
 }
+
+/* ── Verse navigation bar ─────────────────────────── */
+#verse-nav-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: #f0f7f0;
+  border: 1px solid #b2dfb2;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #2e7d32;
+  font-family: Georgia, serif;
+  user-select: none;
+  width: fit-content;
+}
+#verse-nav-toggle:hover {
+  background: #e0f0e0;
+}
+#verse-nav-arrow {
+  font-size: 10px;
+  transition: transform 0.2s;
+}
+#verse-nav-arrow.open {
+  transform: rotate(180deg);
+}
+#verse-nav-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 12px 14px;
+  background: #fafffa;
+  border: 1px solid #c8e6c9;
+  border-radius: 4px;
+}
+.verse-pill {
+  display: inline-block;
+  padding: 3px 9px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 12px;
+  font-size: 13px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  transition: background 0.15s;
+}
+.verse-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ── Verse number anchors in commentary ───────────── */
+.calvin-en-content .verse-anchor {
+  cursor: pointer;
+  color: #2e7d32;
+  border-bottom: 1px dotted #a5d6a7;
+}
+.calvin-en-content .verse-anchor:hover {
+  color: #1b5e20;
+  border-bottom-style: solid;
+}
 </style>
 
 <script>
+// ── Footnote backref numbers ───────────────────────
 (function() {
   var lists = document.querySelectorAll('.calvin-en-content .footnotes ol');
   lists.forEach(function(ol) {
@@ -177,4 +255,76 @@ layout: default
     });
   });
 })();
+
+// ── Verse navigation ───────────────────────────────
+(function() {
+  var content = document.querySelector('.calvin-en-content');
+  if (!content) return;
+
+  // Find all commentary verse paragraphs: <p><strong>N.</strong> ...
+  var paras = content.querySelectorAll('p');
+  var verseNums = [];
+
+  paras.forEach(function(p) {
+    var first = p.firstElementChild;
+    if (!first || first.tagName !== 'STRONG') return;
+    var t = first.textContent.trim();
+    if (!/^\d+\.$/.test(t)) return;   // must be "N." only
+    var num = t.slice(0, -1);          // strip trailing period
+
+    // Add anchor id to the paragraph
+    p.id = 'v-' + num;
+    verseNums.push(num);
+
+    // Make the verse number badge clickable → scroll to top
+    first.classList.add('verse-anchor');
+    first.title = 'Back to top';
+    first.addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  if (verseNums.length === 0) return;
+
+  // Build pills in the nav bar
+  var pillsContainer = document.getElementById('verse-nav-pills');
+  verseNums.forEach(function(num) {
+    var a = document.createElement('a');
+    a.href = '#v-' + num;
+    a.className = 'verse-pill';
+    a.textContent = num;
+    a.addEventListener('click', function(e) {
+      // Close the panel after navigating
+      setTimeout(closeVerseNav, 200);
+    });
+    pillsContainer.appendChild(a);
+  });
+
+  // Update toggle label with range summary
+  var label = document.getElementById('verse-nav-label');
+  if (verseNums.length > 1) {
+    label.textContent = 'Verse ' + verseNums[0] + '–' + verseNums[verseNums.length - 1];
+  } else {
+    label.textContent = 'Verse ' + verseNums[0];
+  }
+
+  // Show the nav bar
+  document.getElementById('verse-nav').style.display = 'block';
+})();
+
+function toggleVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  var open = pills.style.display !== 'none';
+  pills.style.display = open ? 'none' : 'flex';
+  arrow.classList.toggle('open', !open);
+}
+
+function closeVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  pills.style.display = 'none';
+  arrow.classList.remove('open');
+}
 </script>
