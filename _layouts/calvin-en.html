@@ -118,13 +118,6 @@ layout: default
   border-top: 1px solid #ddd;
   margin: 32px 0;
 }
-/* page markers */
-.calvin-en-content p:has(> strong:only-child) {
-  color: #aaa;
-  font-size: 12px;
-  text-align: center;
-  margin: 4px 0;
-}
 /* footnotes */
 .calvin-en-content .footnotes {
   margin-top: 40px;
@@ -270,6 +263,14 @@ layout: default
     if (!first || first.tagName !== 'STRONG') return;
     var t = first.textContent.trim();
     if (!/^\d+\.$/.test(t)) return;   // must be "N." only
+
+    // Scripture text blocks have multiple verse numbers; commentary has exactly one.
+    var verseCount = 0;
+    p.querySelectorAll('strong').forEach(function(s) {
+      if (/^\d+\.$/.test(s.textContent.trim())) verseCount++;
+    });
+    if (verseCount > 1) return;
+
     var num = t.slice(0, -1);          // strip trailing period
 
     // Add anchor id to the paragraph

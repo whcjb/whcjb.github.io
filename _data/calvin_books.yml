@@ -153,3 +153,6 @@ english:
   - id: philippians-en
     name: Philippians
     chapters: 4
+  - id: hebrews-en
+    name: Hebrews
+    chapters: 13
