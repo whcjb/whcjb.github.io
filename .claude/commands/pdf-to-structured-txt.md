@@ -1662,6 +1662,32 @@ def extract_block_rich(block):
         parts.append("".join(line_parts))
     return " ".join(parts).strip()
 
+def split_rich_by_verse(rich):
+    """Split rich text at **N.** markers that appear mid-text.
+    Handles the case where PyMuPDF merges commentary for multiple verses
+    into one block (is_verse_block only checks the first span).
+    """
+    parts = re.split(r'(?<=\S)\s+(\*\*\d+\.\*\*)', rich)
+    if len(parts) == 1:
+        return [rich]
+    result = []
+    i = 0
+    while i < len(parts):
+        chunk = parts[i].strip()
+        if i + 1 < len(parts) and re.match(r'^\*\*\d+\.\*\*$', parts[i + 1]):
+            if chunk:
+                result.append(chunk)
+            combined = parts[i + 1]
+            if i + 2 < len(parts):
+                combined += ' ' + parts[i + 2].lstrip()
+            result.append(combined.strip())
+            i += 3
+        else:
+            if chunk:
+                result.append(chunk)
+            i += 1
+    return result if result else [rich]
+
 def is_index_start(text):
     return text.strip().upper() in (
         "INDEX", "INDEX OF SCRIPTURE REFERENCES",
@@ -1701,11 +1727,12 @@ def process_pdf():
                 rich = extract_block_rich(block)
                 if rich.endswith("-"):          # 连字符跨页
                     pending = (pending or "") + rich[:-1]
-                elif pending:
-                    output_blocks.append(pending + rich)
-                    pending = None
                 else:
-                    output_blocks.append(rich)
+                    if pending:
+                        rich = pending + rich
+                        pending = None
+                    for sub in split_rich_by_verse(rich):
+                        output_blocks.append(sub)
 
     if pending: output_blocks.append(pending)
     doc.close()
@@ -1720,6 +1747,42 @@ def write_output(blocks):
 if __name__ == "__main__":
     process_pdf()
 ```
+
+### ⚠️ 提取后必做：发布前抽查（防止漏检错误上线）
+
+**run extract.py → 必须先做以下抽查 → 再 run publish.py**
+
+这一步是防止错误上线的关键。提取脚本运行完后，在运行发布脚本之前，必须用以下命令对 raw txt 做快速自检：
+
+```bash
+RAW=ocr_output/BOOK/BOOK_raw.txt
+
+# 1. 检查 CHAPTER N 块是否已被过滤（如果还有，发布脚本必须过滤）
+grep -n "^CHAPTER [0-9]" $RAW | head -5
+
+# 2. 检查节号合并：在同一行中出现两个 **N.** 说明 split_rich_by_verse 未生效
+grep -n "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" $RAW | head -10
+
+# 3. 检查脚注内容是否泄漏（应为空）
+python3 -c "
+import re
+with open('$RAW') as f: content = f.read()
+blocks = re.split(r'\n{2,}', content)
+leaks = [b[:80] for b in blocks if re.match(r'^\d+\s+[“”\"\']', b.strip())]
+print(f'Footnote leaks: {len(leaks)}')
+for l in leaks[:3]: print(repr(l))
+"
+
+# 4. 抽查 3 处章节边界，确认段落不在边界断裂
+grep -n "^## " $RAW | head -5
+# 然后 Read 对应行前后各 3 行，目视确认无孤立半句
+```
+
+**判断标准**：
+- 命令 1 有输出 → `is_skip_block` 加 `CHAPTER N` 过滤（正常，发布脚本已处理）
+- 命令 2 有输出 → `split_rich_by_verse` 未生效，检查 extract.py
+- 命令 3 有输出 → `FOOTNOTE_RE` 未匹配，检查引号类型（Unicode vs ASCII）
+- 命令 4 视觉检查失败 → `merge_split_paragraphs` 需调整
 
 ### CCEL 发布脚本模板（发布到 calvin/BOOK-en/）
 
@@ -1779,8 +1842,14 @@ else:
 
 ### CCEL 质检 Checklist
 
-- [ ] 无独立 `CHAPTER N` 行出现在章节内容中
-- [ ] 无脚注定义行（`364 "text"` 格式）出现在正文中
-- [ ] 无孤立半句另起一段（抽查 3–5 处章节边界）
-- [ ] 末章内容完整（到达 Index 页前停止）
+**提取阶段（raw txt）**：
+- [ ] `grep "^CHAPTER [0-9]" raw.txt` → 有输出则确认发布脚本已过滤
+- [ ] `grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 split_rich_by_verse 未生效）
+- [ ] 脚注泄漏检查脚本 → **必须为 0**
+- [ ] 末尾到达 Index 页前正常停止
+
+**发布阶段（calvin/BOOK-en/）**：
+- [ ] 无独立 `CHAPTER N` 行出现在章节内容中（`grep "^CHAPTER" calvin/BOOK-en/*.md`）
+- [ ] 随机抽查 3 章，每节注释独立成段，无相邻节号合并
+- [ ] 末章内容完整
 - [ ] `## Book N:M-P` 格式的经文标题正确居中显示
