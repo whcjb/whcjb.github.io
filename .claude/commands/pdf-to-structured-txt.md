@@ -2,9 +2,10 @@
 
 将 Calvin 注释 PDF 转换为 Markdown 文件，完整保留结构与格式，发布为网站英文版书卷；并可将英文 MD 翻译成中文发布为中文版。
 
-支持两种 PDF 格式——**开始前必须先诊断**（见"PDF 格式快速诊断"节）：
+支持三种 PDF 格式——**开始前必须先诊断**（见"PDF 格式快速诊断"节）：
 - **Ages Digital Library 双语格式**（如希伯来书、腓立比书）：英文+拉丁文两列，经文输出为 HTML 双语表格
 - **CCEL 单列格式**（如使徒行传）：仅英文，经文为独立 block
+- **CCEL 平行福音格式**（如福音书和谐马太卷二）：2-3 列平行福音经文，列数随章节不同，需动态检测
 
 ## 用法
 
@@ -2139,6 +2140,187 @@ else:
         for sub in split_rich_by_verse(rich):
             output_blocks.append(sub)
 ```
+
+### CCEL 平行福音版式（福音书和谐，如马太卷二）
+
+CCEL 福音书和谐注释（Harmony of the Evangelists）有特殊的**平行福音列**版式，与单列 CCEL 格式完全不同：
+
+| 特征 | 单列 CCEL（使徒行传） | 平行福音 CCEL（马太卷二） |
+|------|-------------------|-----------------------|
+| 经文版式 | 单列文本 | 2-3 列并排（Matthew/Mark/Luke） |
+| 列数 | 1 | 按章节不同，2 列或 3 列 |
+| 列标签块 | 无 | 每节前有列标签 block（size 14-17，bold） |
+| Block 结构 | 每列独立 block | 多列内容可能在同一个 block 内 |
+
+#### 诊断：区分普通 CCEL 和平行福音 CCEL
+
+```python
+# 对 x0 做分布检查，但注意平行福音的 x0 分布有 2-3 个峰
+# 峰约在 x0≈74（左列）, x0≈230-274（中列，Mark）, x0≈308-404（右列，Luke）
+# 与 Ages 双语（x≈74 英文 + x≈200+ 拉丁）的区别：Ages 的右列起始 x 较小（≈200）
+# 平行福音的右列起始 x 较大（≈290+）
+```
+
+运行基础诊断后若发现多峰 x0，同时在 `## MATTHEW N:M; MARK N:M; LUKE N:M` 格式标题块旁有 size 14-17 bold 的列标签块，即确认为**平行福音格式**。
+
+#### 三个关键技术坑（已被 matthew-en 验证）
+
+**坑 1：`is_verse_block()` 句号在下一个 span**
+
+部分经节序号（如 `24`）独占一个 span，句号 `.\xa0` 在下一 span 中。匹配 `r'^\d+[.\xa0]'` 会失败。
+
+**修复**：接受纯数字 span：`r'^\d+([.\xa0]|$)'`
+
+```python
+def is_verse_block(block):
+    span = get_first_span(block)
+    if not span: return False
+    if not (span.get("flags", 0) & 16): return False  # bold
+    size = span.get("size", 0)
+    if not (10 <= size <= 14): return False
+    t = span["text"].strip()
+    return bool(re.match(r'^\d+([.\xa0]|$)', t))
+```
+
+**坑 2：`is_col_label_block()` x0 阈值过高**
+
+列标签块（如 `Luke 6:6-10\nMark 3:1-5\nMatthew 12:9-13`）多行时整体 x0 由最左行决定，可能低至 x0≈98。`if block["bbox"][0] < 100: return False` 会漏检，导致列标签被当作注释处理，同时 `in_verse_section` 被错误重置。
+
+**修复**：阈值降至 50：`if block["bbox"][0] < 50: return False`
+
+**坑 3：build_verse_table() 用 block x0 而非 line x0 分列**
+
+PDF 有时将 2-3 列内容提取到同一个 block（block.bbox[0] = 所有行中最小 x0）。用 block x0 分列会把右列内容全部归入左列。
+
+**修复**：必须在 **LINE 级别**（而非 block 级别）用 `line["bbox"][0]` 判断列归属。
+
+#### 动态列分割：从列标签 block 提取分割阈值
+
+2 列和 3 列的分割点不能硬编码，必须从列标签 block 的行 x0 动态计算：
+
+```python
+def extract_col_info(block):
+    """返回 [(label, x0), ...] 按 x0 升序排列"""
+    cols = []
+    for line in block.get("lines", []):
+        lx0 = line["bbox"][0]
+        text = "".join(s["text"] for s in line.get("spans", []))
+        if text.strip():
+            cols.append((text.strip(), lx0))
+    return sorted(cols, key=lambda c: c[1])
+
+def compute_col_splits(col_info):
+    """从列标签 x0 计算分割阈值（取相邻列的中点）"""
+    if len(col_info) < 2:
+        return [290]  # fallback
+    xs = [x for _, x in col_info]
+    return [(xs[i] + xs[i+1]) / 2 for i in range(len(xs) - 1)]
+
+def assign_col(line_x0, splits):
+    for i, s in enumerate(splits):
+        if line_x0 < s:
+            return i
+    return len(splits)
+```
+
+#### build_verse_table() 完整实现（支持 2-3 列）
+
+```python
+def build_verse_table(section_header, verse_blocks, col_info):
+    splits = compute_col_splits(col_info)
+    n_cols = len(splits) + 1
+    col_lines = [[] for _ in range(n_cols)]
+
+    for block in verse_blocks:
+        for line in block.get("lines", []):
+            line_x0 = line["bbox"][0]
+            line_text = "".join(s["text"] for s in line.get("spans", []))
+            line_text = re.sub(r'\s+', ' ', line_text.replace('\xa0', ' ')).strip()
+            if not line_text:
+                continue
+            ci = assign_col(line_x0, splits)
+            is_verse_start = bool(re.match(r'^\d+\.?\s', line_text))
+            col_lines[ci].append((is_verse_start, line_text))
+
+    def lines_to_rows(lines):
+        rows, current = [], []
+        for is_start, text in lines:
+            if current and is_start:
+                rows.append(' '.join(current))
+                current = [text]
+            else:
+                current.append(text)
+        if current:
+            rows.append(' '.join(current))
+        return rows
+
+    col_rows = [lines_to_rows(l) for l in col_lines]
+    if not any(col_rows): return ''
+
+    max_rows = max(len(r) for r in col_rows)
+    for r in col_rows:
+        while len(r) < max_rows: r.append('')
+
+    col_labels = [c[0] for c in col_info] if col_info else [''] * n_cols
+    html = ['<table class="calvin-scripture">']
+    html.append(f'<thead><tr><th colspan="{n_cols}" style="text-align:center">{section_header}</th></tr></thead>')
+    if any(col_labels):
+        html.append('<thead><tr>' + ''.join(f'<th>{l}</th>' for l in col_labels) + '</tr></thead>')
+    html.append('<tbody>')
+    for row_idx in range(max_rows):
+        cells = [col_rows[ci][row_idx] for ci in range(n_cols)]
+        non_empty = sum(1 for c in cells if c)
+        if non_empty == 0: continue
+        if non_empty == 1 and n_cols > 1:
+            for ci, c in enumerate(cells):
+                if c:
+                    html.append(f'<tr><td colspan="{n_cols}">{c}</td></tr>')
+                    break
+        else:
+            html.append('<tr>' + ''.join(f'<td>{c}</td>' for c in cells) + '</tr>')
+    html.append('</tbody></table>')
+    return '\n'.join(html)
+```
+
+#### CSS：支持 2 列和 3 列
+
+```css
+/* colspan 标题居中（不限 colspan 数值）*/
+.calvin-en-content table.calvin-scripture th[colspan] {
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+}
+/* 非 colspan 的 th（列标签行）和 td 均需 min-width + nowrap */
+.calvin-en-content table.calvin-scripture td,
+.calvin-en-content table.calvin-scripture th:not([colspan]) {
+  min-width: 280px;
+  white-space: nowrap;
+  vertical-align: top;
+}
+```
+
+#### 发布脚本：非连续章号（如马太卷二 11-22, 25 章）
+
+章号不连续时，**不能用** `layout: calvin-en-book`（它的 `{% for i in (1..chapters) %}` 假设从 1 开始连续）。需要在 publish.py 中生成包含显式章节链接的 `index.html`：
+
+```python
+def write_index(chapter_nums, book_id, book_name, date):
+    chapter_links = "\n".join(
+        f'        <a href="{{{{ site.baseurl }}}}/calvin/{book_id}/{ch}/" class="list-group-item">Chapter {ch}</a>'
+        for ch in sorted(chapter_nums)
+    )
+    content = f"""---
+layout: default
+...
+---
+<div class="list-group">
+{chapter_links}
+</div>
+"""
+```
+
+注意 Python f-string 中 `{{{{ ... }}}}` → Liquid `{{ ... }}`。
 
 ### CCEL 质检 Checklist
 
