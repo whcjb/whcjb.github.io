@@ -1,6 +1,10 @@
 # PDF to Markdown + 发布到网站（含中文翻译）
 
-将 Ages Digital Library 格式的 Calvin 注释 PDF 转换为 Markdown 文件，完整保留结构与格式，发布为网站英文版书卷；并可将英文 MD 翻译成中文发布为中文版。
+将 Calvin 注释 PDF 转换为 Markdown 文件，完整保留结构与格式，发布为网站英文版书卷；并可将英文 MD 翻译成中文发布为中文版。
+
+支持两种 PDF 格式——**开始前必须先诊断**（见"PDF 格式快速诊断"节）：
+- **Ages Digital Library 双语格式**（如希伯来书、腓立比书）：英文+拉丁文两列，经文输出为 HTML 双语表格
+- **CCEL 单列格式**（如使徒行传）：仅英文，经文为独立 block
 
 ## 用法
 
@@ -876,6 +880,34 @@ parts = ['\n\n---\n']
 
 原理：Kramdown 渲染 `[^f1]` 时生成 `id="fn:f1"` 的 `<li>` 和 `id="fnref:f1"` 的行内 `<sup>`；JS 将 `fn:` 替换为 `fnref:` 即可定位引用锚点。
 
+**⚠️ CSS 陷阱：`:only-child` 不计算文本节点**
+
+绝对禁止用 `p:has(> strong:only-child)` 来匹配"仅含一个 `<strong>` 标签的段落"。
+
+原因：CSS `:only-child` 判断的是"无兄弟**元素**"，文本节点不算元素。所以：
+```html
+<p><strong>24.</strong> commentary text...</p>
+```
+里的 `<strong>` 没有元素兄弟，被认为是 only-child，导致所有注释段落都命中该规则，字体变成 12px、居中、灰色。
+
+**正确做法**：如需给"纯孤立 strong 段落"（无任何文本内容）加样式，必须用 JS 检测后加 class，再用 CSS 针对该 class：
+
+```javascript
+// 找出段落文本内容等于其唯一 strong 子元素文本内容的段落（真正的孤立标签）
+document.querySelectorAll('.calvin-en-content p').forEach(function(p) {
+  if (p.children.length === 1 && p.children[0].tagName === 'STRONG'
+      && p.textContent.trim() === p.children[0].textContent.trim()) {
+    p.classList.add('page-marker');
+  }
+});
+```
+
+```css
+.calvin-en-content p.page-marker { color: #aaa; font-size: 12px; text-align: center; margin: 4px 0; }
+```
+
+**Acts 注释里不存在 page marker 块**（提取脚本已过滤所有页码），不需要加这段代码；如果不确定，直接省略即可。
+
 ### Step 3：运行 Python 发布脚本
 
 将以下脚本中的边界替换为 Step 1 查到的实际值：
@@ -1474,6 +1506,209 @@ print(f"Colored:   {output.count('color:#800000')}")
 
 ---
 
+## ⚠️ 开始提取前必做：PDF 格式快速诊断
+
+**在写任何提取脚本之前，必须运行以下诊断代码，确认 PDF 是 Ages 双语格式还是 CCEL 单列格式。不诊断就写脚本，是本节错误的根源。**
+
+```python
+import fitz, collections
+doc = fitz.open("YOUR_PDF_PATH")
+# 采样第 10-20 页，统计 block 的 x0 分布
+xs = collections.Counter()
+for i in range(min(10, len(doc)-1), min(20, len(doc))):
+    for b in doc[i].get_text("dict")["blocks"]:
+        if b["type"] == 0:
+            xs[round(b["bbox"][0] / 10) * 10] += 1  # 10px 精度
+for x, cnt in sorted(xs.most_common(6)):
+    print(f"  x0≈{x:3d}: {cnt:3d} blocks")
+doc.close()
+```
+
+**判断规则：**
+- **双峰分布**（如 x≈74: 50 blocks 和 x≈220: 40 blocks）→ **Ages 双语格式**，经文区有英文+拉丁两列
+- **单峰分布**（如 x≈74: 90 blocks）→ **CCEL 单列格式**
+
+Ages 双语格式必须用下面的双语提取模板；CCEL 单列必须用 CCEL 提取模板。**不得混用。**
+
+---
+
+## Ages 双语格式 PDF（如希伯来书、腓立比书）
+
+Ages Digital Library 的圣经注释 PDF 采用**左英文 / 右拉丁文两列并排**布局：
+- 英文列：`block["bbox"][0] < LATIN_X_MIN`（通常 `LATIN_X_MIN=200`）
+- 拉丁文列：`block["bbox"][0] >= LATIN_X_MIN`
+
+经文区（scripture section）必须输出为 HTML 双语表格；注释区（commentary）只取英文列。
+
+### 关键识别函数
+
+```python
+LATIN_X_MIN = 200   # 经实际 PDF 确认，可能需调整
+
+def is_pure_latin_block(block):
+    """整个 block 都在拉丁文列（bx0 >= LATIN_X_MIN）。"""
+    return block["bbox"][0] >= LATIN_X_MIN
+
+def is_verse_block(block):
+    """经文块：首个英文列行以 bold 数字开头（size>=10，排除 6.6pt 脚注引用上标）。"""
+    for line in block.get("lines", []):
+        spans = line.get("spans", [])
+        if not spans: continue
+        lx = line["bbox"][0]
+        if lx >= LATIN_X_MIN: continue   # 跳过拉丁行，找第一个英文行
+        fs = spans[0]
+        flags = fs.get("flags", 0)
+        size = fs.get("size", 0)
+        t = fs["text"].strip()
+        # size >= 10 排除脚注引用上标（通常 6-7pt）
+        if (flags & 4) and size >= 10 and re.match(r'^\d+\.?$', t):
+            return True
+        break
+    return False
+
+def is_scripture_header(block):
+    """经文段落标题：'Book N:M' 或 'Book Chapter N:M'，bold+italic，字号>=14。"""
+    span = get_first_span(block)
+    if not span: return False
+    size = span.get("size", 0)
+    flags = span.get("flags", 0)
+    x0 = block["bbox"][0]
+    if size >= 14 and (flags & 20) and 80 < x0 < 300:
+        text = get_block_text(block).strip()
+        if re.match(r'^(Hebrews|Philippians|Romans|...)\s+(Chapter\s+)?\d+:\d+', text):
+            return True
+    return False
+```
+
+### 逐行富文本提取（处理分裂节号）
+
+Ages PDF 经常把节号 `1` 和句点 `. text...` 拆成两个 span：
+
+```python
+def extract_line_rich(line):
+    """从单行提取富文本，把 bold 节号包装为 **N.**。
+    处理节号被拆分为 '1' + '. text' 两个 span 的情况。"""
+    spans = [s for s in line.get("spans", []) if s.get("text", "")]
+    if not spans: return ""
+    parts = []
+    skip_dot = False
+    for span in spans:
+        text = span["text"]
+        flags = span.get("flags", 0)
+        size = span.get("size", 0)
+        t = text.strip()
+        if skip_dot:
+            skip_dot = False
+            if text.startswith('.'):
+                text = text[1:]   # 去掉被分离的句点，保留后续空格
+            parts.append(text)
+            continue
+        # size >= 10 防止把 6.6pt 脚注引用上标也包装成节号
+        if (flags & 4) and size >= 10 and re.match(r'^\d+\.?$', t):
+            num = t.rstrip('.')
+            parts.append(f"**{num}.**")
+            if not t.endswith('.'):
+                skip_dot = True   # 句点在下一个 span 开头
+        else:
+            parts.append(text)
+    return "".join(parts).strip()
+```
+
+### 双语表格构建
+
+```python
+def build_verse_table(section_header, verse_blocks):
+    """把经文 block 列表组装为 HTML 双语表格（英文|拉丁文）。"""
+    verses = {}   # {verse_num (int): {'en': [], 'la': []}}
+
+    for block in verse_blocks:
+        cur_en = cur_la = None
+        for line in block.get("lines", []):
+            spans = [s for s in line.get("spans", []) if s.get("text", "").strip()]
+            if not spans: continue
+            lx = line["bbox"][0]
+            line_text = extract_line_rich(line)
+            if not line_text: continue
+            vn_m = re.match(r'\*\*(\d+)\.\*\*', line_text)
+            if lx >= LATIN_X_MIN:
+                if vn_m: cur_la = int(vn_m.group(1))
+                if cur_la is not None:
+                    verses.setdefault(cur_la, {'en': [], 'la': []})['la'].append(line_text)
+            else:
+                if vn_m: cur_en = int(vn_m.group(1))
+                if cur_en is not None:
+                    verses.setdefault(cur_en, {'en': [], 'la': []})['en'].append(line_text)
+
+    if not verses: return ''
+
+    def md_to_html(text):
+        """<td> 内 Kramdown 不处理 Markdown，必须转为 HTML。"""
+        text = text.replace('|', '&#124;')
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        text = re.sub(r'\*(.+?)\*', r'<em>\1</em>', text)
+        return text
+
+    html = ['<table class="calvin-scripture">']
+    html.append(f'<thead><tr><th colspan="2" style="text-align:center">{section_header}</th></tr></thead>')
+    html.append('<tbody>')
+    for vn in sorted(verses.keys()):
+        en = md_to_html(' '.join(verses[vn].get('en', [])))
+        la = md_to_html(' '.join(verses[vn].get('la', [])))
+        html.append(f'<tr><td>{en}</td><td>{la}</td></tr>')
+    html.append('</tbody></table>')
+    return '\n'.join(html)
+```
+
+⚠️ **`<td>` 内必须用 `<strong>` 而非 `**`**：Kramdown 不处理 HTML block 内的 Markdown 标记，`**N.**` 会以字面文字渲染。
+
+### 提取主循环（状态机）
+
+经文区（scripture section）和注释区（commentary）需要状态机切换：
+
+```python
+in_verse_section = False
+current_section_header = None
+verse_buf = []
+
+def flush_verse_buf():
+    nonlocal verse_buf
+    if verse_buf and current_section_header:
+        table = build_verse_table(current_section_header, verse_buf)
+        if table:
+            output_blocks.append(table)
+    verse_buf = []
+
+for block in blocks:
+    if is_scripture_header(block):
+        flush_verse_buf()
+        current_section_header = normalize_scripture_header(text)
+        output_blocks.append(f"\n## {current_section_header}\n")
+        in_verse_section = True
+
+    elif in_verse_section and (is_pure_latin_block(block) or is_verse_block(block)):
+        # ⚠️ 拉丁文列 block 也要收集！is_pure_latin_block 不可漏掉
+        verse_buf.append(block)
+
+    elif in_verse_section:
+        # 遇到注释文字 → 冲刷经文缓冲，切换到注释模式
+        flush_verse_buf()
+        in_verse_section = False
+        handle_commentary(block)
+
+    else:
+        handle_commentary(block)
+```
+
+### Ages 双语格式质检 Checklist
+
+- [ ] `grep -c '<table class="calvin-scripture">' raw.txt` → 数量与 PDF 中经文段数一致
+- [ ] 检查首章：`grep -A 4 '<thead>' calvin/BOOK-en/1.md` → 表头含书卷名和章节号
+- [ ] 检查 `<td>` 内无字面 `**N.**`：`grep '\*\*[0-9]' calvin/BOOK-en/1.md` → 无输出
+- [ ] 每行 `<tr>` 两列均非空（拉丁文列有内容）
+- [ ] `grep "^\*\*[0-9]\+\.\*\*$" raw.txt` → 孤立节号为 0（否则检查 `extract_line_rich` 的 `skip_dot` 逻辑）
+
+---
+
 ## CCEL 格式 PDF（如使徒行传）
 
 CCEL（Christian Classics Ethereal Library）格式与 Ages Digital Library 格式**完全不同**，必须用独立的提取脚本，不得套用 Ages 模板。
@@ -1550,11 +1785,32 @@ FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')
 CCEL 格式中，段落跨页后续行 block **没有 indent=0 的结构信号**（与 Ages 不同）。必须在**发布脚本**的后处理阶段用内容启发式合并：
 
 ```python
+def join_orphan_verse_numbers(blocks):
+    # Join standalone **N.** blocks (verse number with no text on same page)
+    # with the following commentary block.
+    # These occur when PyMuPDF sees the verse number and commentary text as
+    # separate blocks across a page boundary.
+    result = []
+    i = 0
+    while i < len(blocks):
+        block = blocks[i]
+        if re.match(r'^\*\*\d+\.\*\*$', block.strip()):
+            if i + 1 < len(blocks) and not blocks[i + 1].startswith('##'):
+                result.append(block.strip() + ' ' + blocks[i + 1].lstrip())
+                i += 2
+                continue
+        result.append(block)
+        i += 1
+    return result
+
+
 def merge_split_paragraphs(blocks):
-    """合并因页面边界断裂的段落。
-    条件：当前块末尾无句终标点 AND 下一块以小写字母开头。
-    不合并：section headers（##）和 verse 块（**N.**）。
-    """
+    # Merge cross-page paragraph splits.
+    # Rule: next block starts with lowercase letter = continuation of current block.
+    # This holds for 16th century English commentary regardless of end punctuation
+    # (the previous block may end with ?, ;, ), etc. and still continue on the
+    # next page — do NOT add an end_char check).
+    # Never merge across ## section headers.
     merged = []
     i = 0
     while i < len(blocks):
@@ -1563,11 +1819,8 @@ def merge_split_paragraphs(blocks):
             next_block = blocks[i + 1]
             if block.startswith('##') or next_block.startswith('##'):
                 break
-            if re.match(r'^\*\*\d+\.\*\*', block):
-                break
-            end_char = block.rstrip()[-1] if block.rstrip() else ''
             next_start = next_block.lstrip()[0] if next_block.lstrip() else ''
-            if end_char not in '.!?;:"\')""”' and next_start.islower():
+            if next_start.islower():
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
@@ -1577,10 +1830,11 @@ def merge_split_paragraphs(blocks):
     return merged
 ```
 
-调用位置：`group_by_chapter` 中，对每个章节的 blocks 列表完成分组后调用：
+调用位置：`group_by_chapter` 中，对每个章节的 blocks 列表完成分组后调用。**必须先 `join_orphan_verse_numbers`，再 `merge_split_paragraphs`**：
 
 ```python
 for ch in chapters:
+    chapters[ch] = join_orphan_verse_numbers(chapters[ch])
     chapters[ch] = merge_split_paragraphs(chapters[ch])
 ```
 
@@ -1756,26 +2010,43 @@ if __name__ == "__main__":
 
 ```bash
 RAW=ocr_output/BOOK/BOOK_raw.txt
+PUB=calvin/BOOK-en
 
 # 1. 检查 CHAPTER N 块是否已被过滤（如果还有，发布脚本必须过滤）
-grep -n "^CHAPTER [0-9]" $RAW | head -5
+grep -n “^CHAPTER [0-9]” $RAW | head -5
 
 # 2. 检查节号合并：在同一行中出现两个 **N.** 说明 split_rich_by_verse 未生效
-grep -n "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" $RAW | head -10
+grep -n “\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*” $RAW | head -10
 
 # 3. 检查脚注内容是否泄漏（应为空）
-python3 -c "
+python3 -c “
 import re
 with open('$RAW') as f: content = f.read()
 blocks = re.split(r'\n{2,}', content)
-leaks = [b[:80] for b in blocks if re.match(r'^\d+\s+[“”\"\']', b.strip())]
+leaks = [b[:80] for b in blocks if re.match(r'^\d+\s+[\”\”\”\'a-z]', b.strip())]
 print(f'Footnote leaks: {len(leaks)}')
 for l in leaks[:3]: print(repr(l))
-"
+“
 
 # 4. 抽查 3 处章节边界，确认段落不在边界断裂
-grep -n "^## " $RAW | head -5
+grep -n “^## “ $RAW | head -5
 # 然后 Read 对应行前后各 3 行，目视确认无孤立半句
+
+# 5. 发布后：检查孤立节号块（应为空，否则 join_orphan_verse_numbers 未生效）
+grep -rn “^\*\*[0-9]*\.\*\*$” $PUB/*.md | head -10
+
+# 6. 发布后：检查小写开头孤立块（应为空，否则 merge_split_paragraphs 未覆盖）
+python3 -c “
+import re, glob
+for f in sorted(glob.glob('$PUB/*.md')):
+    with open(f) as fh: content = fh.read()
+    body = content.split('---', 2)[-1] if content.startswith('---') else content
+    blocks = re.split(r'\n{2,}', body)
+    for i, b in enumerate(blocks):
+        stripped = b.strip()
+        if stripped and stripped[0].islower() and not stripped.startswith('##'):
+            print(f'{f}: block {i}: {stripped[:80]}')
+“ | head -20
 ```
 
 **判断标准**：
@@ -1783,6 +2054,14 @@ grep -n "^## " $RAW | head -5
 - 命令 2 有输出 → `split_rich_by_verse` 未生效，检查 extract.py
 - 命令 3 有输出 → `FOOTNOTE_RE` 未匹配，检查引号类型（Unicode vs ASCII）
 - 命令 4 视觉检查失败 → `merge_split_paragraphs` 需调整
+- 命令 5 有输出 → `join_orphan_verse_numbers` 未调用或逻辑错误
+- 命令 6 有输出 → `merge_split_paragraphs` 有遗漏，检查是否加了 end_char 判断（禁止）
+
+**发布后必做：打开浏览器目视检查一个章节**，确认：
+1. 经文段落（scripture text）和注释段落（commentary）字体大小相同（都是 16px）
+2. 注释段落左对齐/两端对齐，不是居中
+3. 节号（**24.**）显示为绿色带下划线（verse-anchor），经文段落内的节号无特殊样式
+   - 如果注释段落字体变小且居中，立即检查 `calvin-en.html` 的 CSS，查找 `p:has(> strong:only-child)` 并删除（这是已知陷阱，见上方 CSS 警告）
 
 ### CCEL 发布脚本模板（发布到 calvin/BOOK-en/）
 
@@ -1790,8 +2069,9 @@ grep -n "^## " $RAW | head -5
 
 1. `is_skip_block` 必须包含 `^CHAPTER\s+\d+$` 过滤
 2. `FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')` 覆盖弯引号和续行
-3. `group_by_chapter` 完成分组后调用 `merge_split_paragraphs`
+3. `group_by_chapter` 完成分组后**先调用 `join_orphan_verse_numbers`，再调用 `merge_split_paragraphs`**（顺序不可颠倒）
 4. 按章节号分组：所有 `## Book N:M-P` section 属于章节 N
+5. **禁止**在 `merge_split_paragraphs` 里加 end_char 判断：16 世纪英文注释里，下一块小写开头就是跨页续行，无论上一块末尾是 `.`、`?`、`;` 还是 `)`
 
 ### 同一 block 内多节注释合并（⚠️ 必须在提取阶段切分）
 
