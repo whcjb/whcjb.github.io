@@ -551,11 +551,24 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
 
 ### 6. Kramdown 安全输出
 
-正文、blockquote、脚注定义中凡含以下字符，均需转义，否则 Kramdown 误判：
+正文、blockquote、脚注定义中凡含以下字符，均需转义或重格式化，否则 Kramdown 误判：
 - `|` → `\|`（防止被识别为表格列分隔符）
-- 行首 `N.` → `N\.`（防止被识别为有序列表）
+- **行首 `N. ` → `**N.**`（Calvin 注释节号，必须 bold）**
 
 圣经经文表格已改用 HTML，不受 Kramdown 影响，无需转义。
+
+#### 行首节号 bold 是通用强制约束
+
+Kramdown 把段落行首的 `N. text`（数字+句号+空格）一律解析为**有序列表第 N 项**，渲染为缩进列表，CSS 计数器重置后序号显示错误（如 "1." 而非 "17."）。
+
+**对于 Calvin 注释，`**N.**` 而非 `N\.`**：两种写法都能阻止 Kramdown 列表解析，但 `**N.**`（bold）是节号的正确语义格式，在页面上渲染为绿色节号锚点（via `calvin-en.html` CSS），`N\.` 只是普通文字。
+
+| 提取路径 | 节号如何出现 | 落实机制 |
+|---------|------------|---------|
+| Ages / CCEL 单列（富文本） | `extract_block_rich` 在提取时输出 `**N.**` | `split_rich_by_verse` 处理段落内嵌节号 |
+| CCEL 平行福音等（纯文本） | `get_block_text` 输出裸 `N.` | 发布脚本必须同时包含 `split_verse_commentary`（处理段落中间）和 `bold_verse_starts`（处理 block 开头） |
+
+**⚠️ 这是跨格式通用约束**：无论哪种提取路径，发布后 MD 文件中绝不应出现以裸 `N. [大写]` 开头的段落 block。
 
 ## 执行步骤
 
@@ -570,7 +583,7 @@ fn = "".join(l for l in lines[fn_start:fn_end] if not re.match(r'^## ', l))
    - 跨页表格：`pending_header` 机制同时处理**两种情形**：A) 表头在页底无任何 verse → carry 裸 header；B) 部分 verse 在当前页、页面耗尽 → carry `{'header':…,'verses':[…]}` dict；用 `hit_commentary` 标志区分两种退出原因（见"已知坑"）
    - 希腊文转换：`convert_ages_greek()` 在所有输出路径上均被调用
    - 脚注标签标准化：`ft` 前缀统一去掉
-   - Kramdown 安全：`|` 转义、行首 `N.` 转义
+   - Kramdown 安全：`|` 转义；**行首节号 bold**——富文本路径由 `extract_block_rich` 保证，纯文本路径发布脚本必须含 `split_verse_commentary` + `bold_verse_starts`（见第6节）
 3. 运行提取脚本
 4. 运行**提取质检 Checklist**（见下方），逐项排查
 5. 若提供了 `book_id`，继续执行**发布到网站**步骤
@@ -724,7 +737,12 @@ for page_num in range(...):
 - [ ] **脚注无跨章污染**：每章文件的脚注编号范围与该章正文引用的编号一致，无上一章或下一章的脚注混入
 - [ ] **脚注序号可点击**：页面脚注列表中每条序号（`1.` `2.`...）为蓝色可点击链接，点击后跳回正文引用位置；若失效，检查 `calvin-en.html` 中 `.fn-backref-num` CSS 和对应 JS 是否存在
 - [ ] **无未转义的 `|`**：正文/脚注中无裸露 `|`（圣经表格已用 HTML，不受影响）
-- [ ] **无行首 `N.` 有序列表**：页面渲染中无意外出现的 `1.` 列表项（经文编号应为 `29\.` 形式）
+- [ ] **无行首裸节号**（所有格式通用，机器可验证）：
+  ```bash
+  grep -rn "^\*\{0,1\}[0-9]\+\. [A-Z]" calvin/BOOK-en/*.md \
+    | grep -v "<table\|<tr\|<td\|<th\|<thead\|<tbody"
+  ```
+  输出必须为空。有输出 → 某 block 以裸 `N. ` 开头，Kramdown 将渲染为有序列表项（表现为缩进 + 序号从 1 开始）。修复：纯文本路径加 `bold_verse_starts`；富文本路径检查 `extract_block_rich` 是否正确输出 `**N.**`
 - [ ] **段落无异常换行**：随机抽查 3–5 处跨页位置，确认段落连续，无孤立的半句另起一段
 - [ ] **希腊文显示正常**：页面中希腊文字符可见（如 τὸ αὐτὸ），无 ASCII 转写残留（如 `to< aujto<`）
 - [ ] **表格标题跨全宽**：浏览器中 `PHILIPPIANS X:Y-Z` 标题横贯两列，无右侧空白单元格
