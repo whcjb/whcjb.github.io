@@ -2106,6 +2106,7 @@ for f in sorted(glob.glob('$PUB/*.md')):
 2. `FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')` 覆盖弯引号和续行
 3. `group_by_chapter` 完成分组后**按以下顺序调用**（顺序不可颠倒）：
    - `split_verse_commentary`（纯文本 raw 必须；富文本 raw 可省略但加上无害）
+   - `bold_verse_starts`（纯文本 raw 必须；见下方说明）
    - `join_orphan_verse_numbers`
    - `merge_split_paragraphs`
 4. 按章节号分组：所有 `## Book N:M-P` section 属于章节 N
@@ -2198,6 +2199,32 @@ for ch in chapters:
 ```
 
 **⚠️ 正则安全性**：`(?<=\.) (\d+)\. (?=[A-Z])` 要求节号左侧必须是句号（`.`），右侧必须是大写字母。常见括号引用的反例：`(John 3:29.)` 的 `. ` 后面是 `A`（大写），但 `.` 前面是 `)` 不是 `.`，故不误切；`(1 Peter 2:8.)` 同理；`Matthew 11:1.` 前面是 `:1` 非 `.`，也不误切。
+
+**`bold_verse_starts`（纯文本 raw 独有问题）**
+
+**症状**：经文表格之后，注释段落首行显示为带缩进的列表项，序号错误（如显示 "1." 而非 "17."）。
+
+**根因**：纯文本提取不加 bold 标记，standalone 的注释 block 以 `17. And the seventy returned.` 开头；Kramdown 把行首的 `N. ` 解析为**有序列表第 N 项**，渲染出缩进和错误序号（CSS 重置计数器后显示为 1）。`split_verse_commentary` 只处理段落**中间**内嵌节号，无法处理 block **开头**的 `N. ` 情况。
+
+**修复**：`bold_verse_starts` 把所有以 `N. 大写` 开头的 block 转为 `**N.** 大写`：
+
+```python
+def bold_verse_starts(blocks):
+    """将 block 开头的 'N. Text' 转为 '**N.** Text'，防止 Kramdown 解析为有序列表。"""
+    result = []
+    for block in blocks:
+        if block.startswith('##') or block.startswith('<table') or block.startswith('**'):
+            result.append(block)
+            continue
+        m = re.match(r'^(\d+)\. ', block)
+        if m:
+            result.append(f"**{m.group(1)}.** {block[m.end():]}")
+        else:
+            result.append(block)
+    return result
+```
+
+必须在 `split_verse_commentary` **之后**、`join_orphan_verse_numbers` **之前**调用，防止被 `join_orphan_verse_numbers` 的 `**N.**` 独立块模式先行处理。
 
 ### CCEL 平行福音版式（福音书和谐，如马太卷二）
 
@@ -2392,5 +2419,6 @@ layout: default
 **发布阶段（calvin/BOOK-en/）**：
 - [ ] 无独立 `CHAPTER N` 行出现在章节内容中（`grep "^CHAPTER" calvin/BOOK-en/*.md`）
 - [ ] 随机抽查 3 章，每节注释独立成段，无相邻节号合并
+- [ ] **纯文本 raw**：`grep -rn "^\d\+\. [A-Z]" calvin/BOOK-en/*.md | grep -v "^<"` → **必须为空**（有则 `bold_verse_starts` 缺失，行首裸 `N.` 会被 Kramdown 渲染为有序列表）
 - [ ] 末章内容完整
 - [ ] `## Book N:M-P` 格式的经文标题正确居中显示
