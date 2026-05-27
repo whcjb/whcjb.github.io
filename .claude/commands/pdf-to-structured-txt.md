@@ -2297,6 +2297,38 @@ PDF 有时将 2-3 列内容提取到同一个 block（block.bbox[0] = 所有行�
 
 **修复**：必须在 **LINE 级别**（而非 block 级别）用 `line["bbox"][0]` 判断列归属。
 
+**坑 4：commentary block 用 `get_block_text()` 而非 `spans_to_md()` —— bold/italic 丢失**
+
+**症状**：注释段落的节号标题（如 "Matthew 11:20."）应为粗体，经文引用（如 "Then he began to upbraid."）应为斜体，但页面上全部显示为普通文本。
+
+**根因**：`get_block_text()` 只拼接 span 文字，忽略 `flags`（bold/italic）。经文表格使用 line-level x0 分列，代码复杂度高，commentary 部分为了简洁沿用了 `get_block_text()`，导致格式信息在提取阶段永久丢失。
+
+**这是提取阶段的根本性错误**：与发布阶段可以后处理弥补的 bug 不同，格式信息一旦在 extract.py 中丢弃就无法在 publish.py 中恢复。
+
+**修复**：`handle_commentary` 必须接收 block 对象并调用 `spans_to_md(block)`：
+
+```python
+def handle_commentary(block):
+    nonlocal pending_continuation
+    rich = spans_to_md(block)
+    rich = re.sub(r'-\s+([a-z])', r'\1', rich)  # merge hyphenated words
+    if not rich:
+        return
+    if rich.endswith('-'):
+        pending_continuation = (pending_continuation or '') + rich[:-1]
+    else:
+        if pending_continuation:
+            rich = pending_continuation + rich
+            pending_continuation = None
+        output_blocks.append(rich)
+```
+
+调用处：`handle_commentary(block)`（不再传 `text`）。
+
+同时，publish.py 的处理链改为富文本路径：`split_rich_by_verse` + `join_orphan_verse_numbers` + `merge_split_paragraphs`（移除仅用于纯文本的 `split_verse_commentary` 和 `bold_verse_starts`）。
+
+**⚠️ 通用原则：任何格式的 Calvin 注释提取脚本，commentary block 必须用 `spans_to_md()` 而非 `get_block_text()`**。经文表格复杂不代表注释部分也需要简化——两者用不同函数处理，commentary 始终用富文本。
+
 #### 动态列分割：从列标签 block 提取分割阈值
 
 2 列和 3 列的分割点不能硬编码，必须从列标签 block 的行 x0 动态计算：
