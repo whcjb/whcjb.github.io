@@ -47,11 +47,44 @@ def is_skip_block(block):
     # Running headers like "COMMENTARY UPON THE ACTS OF THE APOSTLES. CHAPTER 1"
     if re.match(r'^COMMENTARY UPON THE ACTS', t):
         return True
+    # Standalone chapter headings like "CHAPTER 14"
+    if re.match(r'^CHAPTER\s+\d+$', t):
+        return True
     # Skip dedication/preface blocks
     for skip in SKIP_TEXT:
         if t.startswith(skip):
             return True
     return False
+
+
+def merge_split_paragraphs(blocks):
+    """Merge blocks that are cross-page paragraph continuations.
+    A block ending without sentence-ending punctuation followed by a block
+    starting with lowercase is a continuation split by a page break.
+    """
+    merged = []
+    i = 0
+    while i < len(blocks):
+        block = blocks[i]
+        # Keep merging while the block looks like it continues on the next
+        while i + 1 < len(blocks):
+            next_block = blocks[i + 1]
+            # Skip merge if either is a section header or verse block
+            if block.startswith('##') or next_block.startswith('##'):
+                break
+            if block.startswith('**') and re.match(r'^\*\*\d+\.\*\*', block):
+                break
+            # Check if this block ends mid-sentence
+            end_char = block.rstrip()[-1] if block.rstrip() else ''
+            next_start = next_block.lstrip()[0] if next_block.lstrip() else ''
+            if end_char not in '.!?;:"\')”' and next_start.islower():
+                block = block.rstrip() + ' ' + next_block.lstrip()
+                i += 1
+            else:
+                break
+        merged.append(block)
+        i += 1
+    return merged
 
 
 def read_raw(path):
@@ -95,6 +128,10 @@ def group_by_chapter(blocks):
 
         if current_ch is not None:
             chapters[current_ch].append(block)
+
+    # Post-process: merge cross-page paragraph splits within each chapter
+    for ch in chapters:
+        chapters[ch] = merge_split_paragraphs(chapters[ch])
 
     return chapters
 
