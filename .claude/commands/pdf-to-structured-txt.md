@@ -2036,8 +2036,21 @@ PUB=calvin/BOOK-en
 # 1. 检查 CHAPTER N 块是否已被过滤（如果还有，发布脚本必须过滤）
 grep -n “^CHAPTER [0-9]” $RAW | head -5
 
-# 2. 检查节号合并：在同一行中出现两个 **N.** 说明 split_rich_by_verse 未生效
+# 2a. 富文本 raw：检查节号合并（两个 **N.** 出现在同一行 → split_rich_by_verse 未生效）
 grep -n “\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*” $RAW | head -10
+
+# 2b. 纯文本 raw：检查内嵌节号（同一 block 出现 2+ 个 “. N. 大写” → split_verse_commentary 未加到发布脚本）
+python3 -c “
+import re
+with open('$RAW') as f: content = f.read()
+blocks = re.split(r'\n{2,}', content)
+for i, b in enumerate(blocks):
+    if b.startswith('##') or b.startswith('<table'): continue
+    hits = re.findall(r'(?<=\.) \d+\. [A-Z]', b)
+    if len(hits) >= 2:
+        print(f'Block {i}: {len(hits)} inline verse starts: {hits[:3]}')
+        print(repr(b[:120]))
+“ | head -20
 
 # 3. 检查脚注内容是否泄漏（应为空）
 python3 -c “
@@ -2072,7 +2085,8 @@ for f in sorted(glob.glob('$PUB/*.md')):
 
 **判断标准**：
 - 命令 1 有输出 → `is_skip_block` 加 `CHAPTER N` 过滤（正常，发布脚本已处理）
-- 命令 2 有输出 → `split_rich_by_verse` 未生效，检查 extract.py
+- 命令 2a 有输出 → `split_rich_by_verse` 未生效，检查 extract.py（富文本路径）
+- 命令 2b 有输出 → `split_verse_commentary` 缺失，加到 publish.py 的 `group_by_chapter`（纯文本路径）
 - 命令 3 有输出 → `FOOTNOTE_RE` 未匹配，检查引号类型（Unicode vs ASCII）
 - 命令 4 视觉检查失败 → `merge_split_paragraphs` 需调整
 - 命令 5 有输出 → `join_orphan_verse_numbers` 未调用或逻辑错误
@@ -2090,17 +2104,24 @@ for f in sorted(glob.glob('$PUB/*.md')):
 
 1. `is_skip_block` 必须包含 `^CHAPTER\s+\d+$` 过滤
 2. `FOOTNOTE_RE = re.compile(r'^\d+\s+[""''"\'a-z]')` 覆盖弯引号和续行
-3. `group_by_chapter` 完成分组后**先调用 `join_orphan_verse_numbers`，再调用 `merge_split_paragraphs`**（顺序不可颠倒）
+3. `group_by_chapter` 完成分组后**按以下顺序调用**（顺序不可颠倒）：
+   - `split_verse_commentary`（纯文本 raw 必须；富文本 raw 可省略但加上无害）
+   - `join_orphan_verse_numbers`
+   - `merge_split_paragraphs`
 4. 按章节号分组：所有 `## Book N:M-P` section 属于章节 N
 5. **禁止**在 `merge_split_paragraphs` 里加 end_char 判断：16 世纪英文注释里，下一块小写开头就是跨页续行，无论上一块末尾是 `.`、`?`、`;` 还是 `)`
 
-### 同一 block 内多节注释合并（⚠️ 必须在提取阶段切分）
+### 同一 block 内多节注释合并（两种情形，对应两种修复位置）
 
-**症状**：第 N 节注释末尾和第 N+1 节 `**N+1.**` 开头在同一段落内，无分行。
+**症状**：第 N 节注释末尾和第 N+1 节注释开头在同一段落内，无分行。
 
-**根因**：PyMuPDF 把多个段落（不同节号）提取为一个 block，`is_verse_block` 只检测 block 首 span，中间的 `**N.**` 被漏掉。
+**根因**：PyMuPDF 把多个段落（不同节号）提取为一个 block，`is_verse_block` 只检测 block 首 span，内部节号被漏掉。
 
-**修复**：在 commentary block 处理中，对 `extract_block_rich` 的输出做按节号切分：
+**情形 A（富文本提取：`extract_block_rich` / `spans_to_md`，节号有 `**N.**` 标记）**
+
+raw.txt 中节号以 `**N.**` 出现。必须**在提取阶段**切分（publish.py 无法区分节号和行内引用中的数字）：
+
+**修复（extract.py）**：在 commentary block 处理中，对 `extract_block_rich` 的输出做按节号切分：
 
 ```python
 def split_rich_by_verse(rich):
@@ -2140,6 +2161,43 @@ else:
         for sub in split_rich_by_verse(rich):
             output_blocks.append(sub)
 ```
+
+**情形 B（纯文本提取：`get_block_text()`，节号无 bold 标记，如平行福音卷二 matthew-en）**
+
+raw.txt 中节号以 `4. Go and relate to John` 形式内嵌在段落中（无 `**`）。**不能在提取阶段切分**（`extract.py` 已不保留格式信息）；**必须在发布阶段**切分。
+
+判别依据：`. N. 大写` 模式——句号结尾后跟节号、再跟大写文字——在 Calvin 注释中唯一出现在节号处；括号引用（`(John 3:29.)`、`(2 Corinthians 11:2,)`）均不匹配此模式。
+
+**修复（publish.py）**：在 `group_by_chapter` 内，`join_orphan_verse_numbers` **之前**调用：
+
+```python
+def split_verse_commentary(blocks):
+    """将纯文本 block 中内嵌的多节注释拆分为独立段落。
+    匹配模式：句号结尾 + 空格 + N. + 大写字母（仅节号处出现此模式）。"""
+    result = []
+    for block in blocks:
+        if block.startswith('##') or block.startswith('<table'):
+            result.append(block)
+            continue
+        parts = re.split(r'(?<=\.) (\d+)\. (?=[A-Z])', block)
+        if len(parts) <= 1:
+            result.append(block)
+            continue
+        result.append(parts[0].rstrip())
+        i = 1
+        while i < len(parts) - 1:
+            result.append(f"**{parts[i]}.** {parts[i + 1]}")
+            i += 2
+    return [b for b in result if b.strip()]
+
+# 在 group_by_chapter 中：
+for ch in chapters:
+    chapters[ch] = split_verse_commentary(chapters[ch])   # ← 新增，最先执行
+    chapters[ch] = join_orphan_verse_numbers(chapters[ch])
+    chapters[ch] = merge_split_paragraphs(chapters[ch])
+```
+
+**⚠️ 正则安全性**：`(?<=\.) (\d+)\. (?=[A-Z])` 要求节号左侧必须是句号（`.`），右侧必须是大写字母。常见括号引用的反例：`(John 3:29.)` 的 `. ` 后面是 `A`（大写），但 `.` 前面是 `)` 不是 `.`，故不误切；`(1 Peter 2:8.)` 同理；`Matthew 11:1.` 前面是 `:1` 非 `.`，也不误切。
 
 ### CCEL 平行福音版式（福音书和谐，如马太卷二）
 
@@ -2326,7 +2384,8 @@ layout: default
 
 **提取阶段（raw txt）**：
 - [ ] `grep "^CHAPTER [0-9]" raw.txt` → 有输出则确认发布脚本已过滤
-- [ ] `grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 split_rich_by_verse 未生效）
+- [ ] **富文本 raw**：`grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 `split_rich_by_verse` 未生效）
+- [ ] **纯文本 raw**：`python3 -c "import re,sys; [print(repr(b[:120])) for b in re.split(r'\n{2,}', open('raw.txt').read()) if not b.startswith('##') and not b.startswith('<table') and len(re.findall(r'(?<=\.) \d+\. [A-Z]', b)) >= 2]"` → **必须为空**（有则 `split_verse_commentary` 未加到发布脚本）
 - [ ] 脚注泄漏检查脚本 → **必须为 0**
 - [ ] 末尾到达 Index 页前正常停止
 
