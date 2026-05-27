@@ -8,11 +8,14 @@ import fitz
 import re
 import os
 
-PDF_PATH = "/Users/yanpeifa/Documents/论文/calvin_matai_make.pdf"
+PDF_PATH = "/Users/yanpeifa/Documents/论文/calvin_matai_make2.pdf"
 OUT_PATH = "/Users/yanpeifa/Documents/whcjb.github.io/ocr_output/matthew/matthew_raw.txt"
 SKIP_PAGES = 7        # pages 1-7: title, about, TOC
 HEADER_Y_MAX = 55     # running page header zone
 FOOTNOTE_SIZE_MAX = 7.5   # footnotes ~6.3pt (French) and ~6.6pt (English cont.)
+
+
+_LINE_BREAK = {"__line_break__": True}
 
 
 def get_block_text(block):
@@ -20,6 +23,56 @@ def get_block_text(block):
     for line in block.get("lines", []):
         lines.append("".join(s["text"] for s in line.get("spans", [])))
     return "\n".join(lines)
+
+
+def spans_to_md(block):
+    """Convert block lines to markdown preserving bold/italic spans.
+    Uses _LINE_BREAK sentinels to prevent words merging across lines."""
+    all_spans = []
+    lines = block.get("lines", [])
+    for li, line in enumerate(lines):
+        all_spans.extend(line.get("spans", []))
+        if li < len(lines) - 1:
+            all_spans.append(_LINE_BREAK)
+
+    parts = []
+    i = 0
+    while i < len(all_spans):
+        span = all_spans[i]
+        if span is _LINE_BREAK:
+            if parts and not parts[-1].endswith(' '):
+                parts.append(' ')
+            i += 1
+            continue
+
+        t = span["text"]
+        flags = span.get("flags", 0)
+        is_bold = bool(flags & 16)
+        is_italic = bool(flags & 2)
+
+        stripped = t.strip()
+        if not stripped:
+            if t and parts and not parts[-1].endswith(' '):
+                parts.append(' ')
+            i += 1
+            continue
+
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+
+        if is_bold and is_italic:
+            parts.append(f"{lead}***{stripped}***{tail}")
+        elif is_bold:
+            parts.append(f"{lead}**{stripped}**{tail}")
+        elif is_italic:
+            parts.append(f"{lead}*{stripped}*{tail}")
+        else:
+            parts.append(t)
+        i += 1
+
+    result = ''.join(parts)
+    result = re.sub(r' {2,}', ' ', result)
+    return result.strip()
 
 
 def get_first_span(block):
@@ -249,18 +302,19 @@ def process_pdf():
                 output_blocks.append(table)
         verse_buf = []
 
-    def handle_commentary(text):
+    def handle_commentary(block):
         nonlocal pending_continuation
-        text = re.sub(r'\s+', ' ', text.replace('\xa0', ' ')).strip()
-        if not text:
+        rich = spans_to_md(block)
+        rich = re.sub(r'-\s+([a-z])', r'\1', rich)  # merge hyphenated words
+        if not rich:
             return
-        if text.endswith('-'):
-            pending_continuation = (pending_continuation or '') + text[:-1]
+        if rich.endswith('-'):
+            pending_continuation = (pending_continuation or '') + rich[:-1]
         else:
             if pending_continuation:
-                text = pending_continuation + text
+                rich = pending_continuation + rich
                 pending_continuation = None
-            output_blocks.append(text)
+            output_blocks.append(rich)
 
     for page_idx in range(SKIP_PAGES, total):
         page = doc[page_idx]
@@ -301,7 +355,6 @@ def process_pdf():
                 in_verse_section = True
 
             elif is_col_label_block(block):
-                # Extract column positions for use in table building
                 current_col_info = extract_col_info(block)
 
             elif in_verse_section and is_verse_block(block):
@@ -310,13 +363,10 @@ def process_pdf():
             elif in_verse_section:
                 flush_verse_buf()
                 in_verse_section = False
-                handle_commentary(text)
+                handle_commentary(block)
 
             else:
-                if is_verse_block(block):
-                    handle_commentary(text)
-                else:
-                    handle_commentary(text)
+                handle_commentary(block)
 
     flush_verse_buf()
     if pending_continuation:

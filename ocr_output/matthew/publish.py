@@ -41,42 +41,25 @@ def is_skip_block(block):
     return not t
 
 
-def split_verse_commentary(blocks):
-    """Split a block containing multiple verse commentaries inline (e.g. '... another. 4. Go...').
-    Splits on pattern: sentence-end period + space + digit(s) + period + space + capital."""
+def split_rich_by_verse(blocks):
+    """Split blocks containing multiple verse commentaries merged inline.
+    Matches **N.** markers that appear after content (not at block start).
+    Used with rich-text raw (spans_to_md extraction)."""
     result = []
     for block in blocks:
         if block.startswith('##') or block.startswith('<table'):
             result.append(block)
             continue
-        parts = re.split(r'(?<=\.) (\d+)\. (?=[A-Z])', block)
+        parts = re.split(r'(?<=\S)\s+(\*\*\d+\.\*\*)', block)
         if len(parts) <= 1:
             result.append(block)
             continue
-        result.append(parts[0].rstrip())
+        result.append(parts[0].strip())
         i = 1
         while i < len(parts) - 1:
-            verse_num = parts[i]
-            verse_text = parts[i + 1]
-            result.append(f"**{verse_num}.** {verse_text}")
+            result.append((parts[i] + ' ' + parts[i + 1].lstrip()).strip())
             i += 2
     return [b for b in result if b.strip()]
-
-
-def bold_verse_starts(blocks):
-    """Convert blocks starting with plain 'N. Text' to '**N.** Text'.
-    Prevents Kramdown from rendering 'N. text' as an ordered list item."""
-    result = []
-    for block in blocks:
-        if block.startswith('##') or block.startswith('<table') or block.startswith('**'):
-            result.append(block)
-            continue
-        m = re.match(r'^(\d+)\. ', block)
-        if m:
-            result.append(f"**{m.group(1)}.** {block[m.end():]}")
-        else:
-            result.append(block)
-    return result
 
 
 def join_orphan_verse_numbers(blocks):
@@ -152,8 +135,7 @@ def group_by_chapter(blocks):
         chapters[current_ch].append(block)
 
     for ch in chapters:
-        chapters[ch] = split_verse_commentary(chapters[ch])
-        chapters[ch] = bold_verse_starts(chapters[ch])
+        chapters[ch] = split_rich_by_verse(chapters[ch])
         chapters[ch] = join_orphan_verse_numbers(chapters[ch])
         chapters[ch] = merge_split_paragraphs(chapters[ch])
 
