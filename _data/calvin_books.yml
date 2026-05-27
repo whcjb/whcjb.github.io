@@ -141,6 +141,9 @@ new_testament:
     chapters: 1
 
 english:
+  - id: harmony-1-en
+    name: Harmony of the Evangelists (Vol. 1)
+    chapters: 10
   - id: matthew-en
     name: Matthew (Vol. 2)
     chapters: 13
