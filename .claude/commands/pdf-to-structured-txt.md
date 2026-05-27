@@ -727,7 +727,7 @@ for page_num in range(...):
 - [ ] **段落无异常换行**：随机抽查 3–5 处跨页位置，确认段落连续，无孤立的半句另起一段
 - [ ] **希腊文显示正常**：页面中希腊文字符可见（如 τὸ αὐτὸ），无 ASCII 转写残留（如 `to< aujto<`）
 - [ ] **表格标题跨全宽**：浏览器中 `PHILIPPIANS X:Y-Z` 标题横贯两列，无右侧空白单元格
-- [ ] **表格横向可滚动**：在手机或窄窗口下，经文表格可左右滑动；英文列和拉丁文列并排显示，不被压缩叠放。若不可滑动，检查 `calvin-en.html` 中 `table.calvin-scripture` 是否包含 `display:block; overflow-x:auto` 以及 `td { min-width:280px }`
+- [ ] **表格横向可滚动，每节一行**：经文表格每节经文显示为一行（不在格内折行），超出屏幕宽度时可左右滑动。验证方法：缩窄浏览器窗口至 400px，确认表格出现横向滚动条而非文字换行。若仍换行，检查：① `td` 是否有 `white-space: nowrap`；② `tr/tbody/thead` 是否有 `width: 100%`（有则删除，它会锁死行宽阻止 overflow）
 
 ---
 
@@ -838,37 +838,29 @@ parts = ['\n\n---\n']
 .calvin-en-content blockquote { margin-left: 2em; border-left: none; }
 .calvin-en-content table { width: 100%; border-collapse: collapse; }
 /* calvin-scripture：还原 PDF 两列经文表格，标题跨全宽，窄屏横向滚动 */
-/* ⚠️ 必须包含以下 4 条规则，缺一不可 */
+/* ⚠️ 经浏览器验证的最终版本，禁止添加 tr{width:100%} 等限宽规则 */
 .calvin-en-content table.calvin-scripture {
   display: block;              /* 让 overflow-x 生效 */
   overflow-x: auto;            /* 窄屏横向滚动 */
   -webkit-overflow-scrolling: touch;
-  white-space: nowrap;         /* 防止行在容器边界处断裂 */
-}
-.calvin-en-content table.calvin-scripture thead,
-.calvin-en-content table.calvin-scripture tbody,
-.calvin-en-content table.calvin-scripture tr {
-  display: table;              /* 恢复子元素的 table 布局 */
-  width: 100%;
-  table-layout: fixed;
 }
 .calvin-en-content table.calvin-scripture th[colspan="2"] { font-size: 15px; }
 .calvin-en-content table.calvin-scripture td {
-  min-width: 280px;            /* 防止列被压窄 */
-  width: 50%;
-  white-space: normal;         /* 单元格内文字仍可换行 */
+  min-width: 280px;            /* 每列最小宽度，不被压窄 */
+  white-space: nowrap;         /* 每节经文一行，不在格内折行 */
   vertical-align: top;
 }
 ```
 
-**为什么缺少这些规则会出问题：**
+**常见陷阱（已踩过，禁止重复）：**
 
-| 缺少的规则 | 后果 |
-|-----------|------|
-| `display: block` + `overflow-x: auto` | 两列被压缩到页面宽度内，手机无法横滑 |
-| `white-space: nowrap`（表格级） | 行在容器边界处折行，破坏单行一节的布局 |
-| `min-width: 280px`（td 级） | 列宽可被压到几十像素，文字完全挤在一起 |
-| 子元素 `display: table` 恢复 | `display:block` 后 tbody/tr 不再是 table 上下文，需显式恢复 |
+| 错误写法 | 为什么错 |
+|---------|---------|
+| `tr { width: 100% }` 或 `tbody { width: 100% }` | 把每行宽度锁死在容器宽度内，overflow 永远不会发生，横滑失效 |
+| `td { white-space: normal }` | 文字在格内换行，每节经文变成多行，无法"一节一行" |
+| `table { width: 100% }` 与 `display: block` 同时存在 | 表格被撑满容器，无超出，overflow-x 无效 |
+
+**CSS 修改必须经浏览器验证后才能更新 skill**：不得在仅通过代码审查（未在浏览器中实际看到效果）的情况下将 CSS 写入 skill 模板。
 
 若 `_layouts/calvin-en.html` 已存在，直接复用；若不存在，按上述样式新建。
 
