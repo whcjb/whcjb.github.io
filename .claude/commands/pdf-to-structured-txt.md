@@ -1730,6 +1730,53 @@ if __name__ == "__main__":
 3. `group_by_chapter` 完成分组后调用 `merge_split_paragraphs`
 4. 按章节号分组：所有 `## Book N:M-P` section 属于章节 N
 
+### 同一 block 内多节注释合并（⚠️ 必须在提取阶段切分）
+
+**症状**：第 N 节注释末尾和第 N+1 节 `**N+1.**` 开头在同一段落内，无分行。
+
+**根因**：PyMuPDF 把多个段落（不同节号）提取为一个 block，`is_verse_block` 只检测 block 首 span，中间的 `**N.**` 被漏掉。
+
+**修复**：在 commentary block 处理中，对 `extract_block_rich` 的输出做按节号切分：
+
+```python
+def split_rich_by_verse(rich):
+    """Split at **N.** markers that appear after content (not at block start)."""
+    parts = re.split(r'(?<=\S)\s+(\*\*\d+\.\*\*)', rich)
+    if len(parts) == 1:
+        return [rich]
+    result = []
+    i = 0
+    while i < len(parts):
+        chunk = parts[i].strip()
+        if i + 1 < len(parts) and re.match(r'^\*\*\d+\.\*\*$', parts[i + 1]):
+            if chunk:
+                result.append(chunk)
+            combined = parts[i + 1]
+            if i + 2 < len(parts):
+                combined += ' ' + parts[i + 2].lstrip()
+            result.append(combined.strip())
+            i += 3
+        else:
+            if chunk:
+                result.append(chunk)
+            i += 1
+    return result if result else [rich]
+```
+
+在 `process_pdf` 的 commentary 分支中调用：
+```python
+else:
+    rich = extract_block_rich(block)
+    if rich.endswith("-"):
+        pending_continuation = (pending_continuation or "") + rich[:-1]
+    else:
+        if pending_continuation:
+            rich = pending_continuation + rich
+            pending_continuation = None
+        for sub in split_rich_by_verse(rich):
+            output_blocks.append(sub)
+```
+
 ### CCEL 质检 Checklist
 
 - [ ] 无独立 `CHAPTER N` 行出现在章节内容中

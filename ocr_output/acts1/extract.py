@@ -135,6 +135,31 @@ def extract_block_rich(block):
         parts.append("".join(line_parts))
     return " ".join(parts).strip()
 
+def split_rich_by_verse(rich):
+    """Split rich text at **N.** markers that appear mid-text (not at the start).
+    Handles cases where PyMuPDF merges commentary for multiple verses into one block.
+    """
+    parts = re.split(r'(?<=\S)\s+(\*\*\d+\.\*\*)', rich)
+    if len(parts) == 1:
+        return [rich]
+    result = []
+    i = 0
+    while i < len(parts):
+        chunk = parts[i].strip()
+        if i + 1 < len(parts) and re.match(r'^\*\*\d+\.\*\*$', parts[i + 1]):
+            if chunk:
+                result.append(chunk)
+            combined = parts[i + 1]
+            if i + 2 < len(parts):
+                combined += ' ' + parts[i + 2].lstrip()
+            result.append(combined.strip())
+            i += 3
+        else:
+            if chunk:
+                result.append(chunk)
+            i += 1
+    return result if result else [rich]
+
 def is_index_start(text):
     """Detect start of index section at end of book."""
     t = text.strip().upper()
@@ -194,18 +219,14 @@ def process_pdf():
             else:
                 # Commentary paragraph block
                 rich = extract_block_rich(block)
-                # Check if this ends with a hyphen (word wrapped across page)
                 if rich.endswith("-"):
-                    # Will try to merge with next block
-                    pending_continuation = rich[:-1]  # remove hyphen
+                    pending_continuation = (pending_continuation or "") + rich[:-1]
                 else:
                     if pending_continuation:
-                        # Merge: this is a continuation
-                        merged = pending_continuation + rich
-                        output_blocks.append(merged)
+                        rich = pending_continuation + rich
                         pending_continuation = None
-                    else:
-                        output_blocks.append(rich)
+                    for sub in split_rich_by_verse(rich):
+                        output_blocks.append(sub)
 
     if pending_continuation:
         output_blocks.append(pending_continuation)
