@@ -43,14 +43,16 @@ def is_skip_block(block):
 
 def split_rich_by_verse(blocks):
     """Split blocks containing multiple verse commentaries merged inline.
-    Matches **N.** markers that appear after content (not at block start).
+    Matches both bare **N.** and full **Book Ch:N.** markers after content.
     Used with rich-text raw (spans_to_md extraction)."""
+    # Matches: **16.** OR **Luke 10:16.**
+    _VERSE_MARKER = re.compile(r'(?<=\S)\s+(\*\*(?:[A-Z][a-z]+ \d+:\d+|\d+)\.\*\*)')
     result = []
     for block in blocks:
         if block.startswith('##') or block.startswith('<table'):
             result.append(block)
             continue
-        parts = re.split(r'(?<=\S)\s+(\*\*\d+\.\*\*)', block)
+        parts = _VERSE_MARKER.split(block)
         if len(parts) <= 1:
             result.append(block)
             continue

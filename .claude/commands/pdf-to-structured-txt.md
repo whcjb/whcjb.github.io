@@ -2329,6 +2329,36 @@ def handle_commentary(block):
 
 **⚠️ 通用原则：任何格式的 Calvin 注释提取脚本，commentary block 必须用 `spans_to_md()` 而非 `get_block_text()`**。经文表格复杂不代表注释部分也需要简化——两者用不同函数处理，commentary 始终用富文本。
 
+**⚠️ 共观福音专用：`split_rich_by_verse` 正则必须同时覆盖完整书卷格式**
+
+CCEL 平行福音注释中，commentary block 里内嵌的节号有两种格式：
+- 裸数字：`**16.**`（注释同一书卷内的节）
+- 完整格式：`**Luke 10:16.**`（注释切换书卷时，PDF 直接写出书卷名）
+
+若 `split_rich_by_verse` 只匹配 `\*\*\d+\.\*\*`（裸数字），则遇到 `**Luke 10:16.**` 等完整格式时不会分割，导致多个节的注释合并为一段。
+
+**正确 regex（在共观福音 publish.py 中必须使用）**：
+
+```python
+_VERSE_MARKER = re.compile(r'(?<=\S)\s+(\*\*(?:[A-Z][a-z]+ \d+:\d+|\d+)\.\*\*)')
+
+def split_rich_by_verse(blocks):
+    result = []
+    for block in blocks:
+        if block.startswith('##') or block.startswith('<table'):
+            result.append(block)
+            continue
+        parts = _VERSE_MARKER.split(block)
+        ...
+```
+
+两种写法的对比：
+
+| 写法 | 覆盖 `**16.**` | 覆盖 `**Luke 10:16.**` |
+|------|--------------|----------------------|
+| `\*\*\d+\.\*\*`（原版） | ✓ | ✗ — 漏分割 |
+| `\*\*(?:[A-Z][a-z]+ \d+:\d+\|\d+)\.\*\*`（修正版） | ✓ | ✓ |
+
 ---
 
 **坑 5：`spans_to_md` 未过滤行内脚注引用数字 —— 数字出现在正文中**
@@ -2719,6 +2749,7 @@ label.textContent = prefix + entries[0].pillLabel
 - [ ] **孤立数字检查**：`grep -oP "(?<=[a-z], )\d+(?= and|\s[a-z])" raw.txt` → 必须为空（有则说明脚注数字未转换为 `<sup>`）
 - [ ] **经文续接检查**：`grep -c "<table" raw.txt` 与 PDF 中经文段落数大致一致；若表格数明显偏少，说明有续接块未进入 verse_buf（检查 `get_first_nonempty_span` 是否已替换 `get_first_span`）
 - [ ] **富文本 raw**：`grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 `split_rich_by_verse` 未生效）
+- [ ] **共观福音富文本 raw**：`grep -P "\*\*[A-Z][a-z]+ \d+:\d+\.\*\*" raw.txt | grep -P ".*\*\*[A-Z][a-z]+ \d+:\d+\.\*\*.*\*\*"` → **必须为空**（两个 `**Book Ch:N.**` 在同行则说明正则只覆盖了裸数字格式，需换用完整 regex）
 - [ ] **纯文本 raw**：`python3 -c "import re,sys; [print(repr(b[:120])) for b in re.split(r'\n{2,}', open('raw.txt').read()) if not b.startswith('##') and not b.startswith('<table') and len(re.findall(r'(?<=\.) \d+\. [A-Z]', b)) >= 2]"` → **必须为空**（有则 `split_verse_commentary` 未加到发布脚本）
 - [ ] 脚注泄漏检查脚本 → **必须为 0**
 - [ ] 末尾到达 Index 页前正常停止
