@@ -231,14 +231,6 @@ layout: default
 .calvin-en-content .verse-anchor {
   cursor: pointer;
 }
-
-/* ── Scripture verse paragraphs (before commentary) ── */
-.calvin-en-content p.scripture-verse {
-  padding: 2px 0 2px 14px;
-  border-left: 3px solid #b2dfdb;
-  color: #444;
-  margin-bottom: 10px;
-}
 </style>
 
 <script>
@@ -264,9 +256,7 @@ layout: default
   var content = document.querySelector('.calvin-en-content');
   if (!content) return;
 
-  var paras = Array.from(content.querySelectorAll('p')).filter(function(p) {
-    return !p.classList.contains('scripture-verse');
-  });
+  var paras = content.querySelectorAll('p');
   var entries = [];   // [{anchorId, pillLabel}, ...]
 
   paras.forEach(function(p) {

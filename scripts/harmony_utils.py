@@ -102,53 +102,16 @@ def expand_verse_refs(blocks):
     return result
 
 
-def _is_scripture_block(block):
-    """True if block is pure scripture text: starts with bare **N.** and has no italic markers.
-
-    Scripture paragraphs in CCEL format contain only verse numbers + plain text.
-    Commentary paragraphs start with **N.** followed by *italic quotes* + Calvin's notes.
-    """
-    if not re.match(r'^\*\*\d+\.\*\*', block.strip()):
-        return False
-    stripped = re.sub(r'\*\*\d+\.\*\*', '', block)
-    return '*' not in stripped
-
-
 def process_section_blocks(header, body):
     """将一个节（header + body）的 body 拆块并运行完整处理管道。
-    返回处理后的 block 列表（不含 header block）。
-
-    第一段若为纯经文（无斜体），用 {: .scripture-verse} IAL 标记，
-    以便 CSS 渲染时与注释段落区分。"""
+    返回处理后的 block 列表（不含 header block）。"""
     raw_blocks = re.split(r'\n{2,}', body)
     blocks = [b.strip() for b in raw_blocks if b.strip()]
-
-    if not blocks:
-        return []
-
-    result = []
-
-    # First block: detect scripture (plain verse text without italic commentary)
-    comm_start = 0
-    if _is_scripture_block(blocks[0]):
-        sc_all = [f'## {header}', blocks[0]]
-        sc_all = split_rich_by_verse(sc_all)
-        sc_all = expand_verse_refs(sc_all)
-        if sc_all and sc_all[0].startswith('## '):
-            sc_all = sc_all[1:]
-        for b in sc_all:
-            result.append(b + '\n{: .scripture-verse}')
-        comm_start = 1
-
-    # Commentary blocks through full pipeline
-    if blocks[comm_start:]:
-        comm_all = [f'## {header}'] + blocks[comm_start:]
-        comm_all = split_rich_by_verse(comm_all)
-        comm_all = join_orphan_verse_numbers(comm_all)
-        comm_all = merge_split_paragraphs(comm_all)
-        comm_all = expand_verse_refs(comm_all)
-        if comm_all and comm_all[0].startswith('## '):
-            comm_all = comm_all[1:]
-        result.extend(comm_all)
-
-    return result
+    all_blocks = [f'## {header}'] + blocks
+    all_blocks = split_rich_by_verse(all_blocks)
+    all_blocks = join_orphan_verse_numbers(all_blocks)
+    all_blocks = merge_split_paragraphs(all_blocks)
+    all_blocks = expand_verse_refs(all_blocks)
+    if all_blocks and all_blocks[0].startswith('## '):
+        all_blocks = all_blocks[1:]
+    return all_blocks
