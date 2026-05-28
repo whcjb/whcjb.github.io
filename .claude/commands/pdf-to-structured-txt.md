@@ -2484,6 +2484,23 @@ def spans_to_md(block):
 
 新 PDF 若通过诊断脚本发现其他 flags 组合（如 `flags=3` = superscript+italic），需在模板中对应新增分支。
 
+**⚠️ CCEL 格式脚注内容：当前未提取，`<sup>N</sup>` 仅为视觉标记**
+
+CCEL 格式（马太卷二等）的脚注内容块（字号 ≤7.5pt）由 `is_footnote_block` 过滤，从未写入 raw txt，也未作为 Kramdown 定义（`[^N]: text`）输出。因此：
+
+- 正文中出现 `<sup>46</sup>`：是视觉上标，无 `href`，**点击无效**
+- 页面底部无脚注定义区：**内容从未提取**
+- 这不是 bug 或回归，是**功能缺失**（尚未实现脚注提取）
+
+**与 Ages 格式的区别**：Ages Digital Library 格式有明确的脚注区（`FtN` 开头），由专用逻辑提取为 `[^fN]: text`，支持 Kramdown 跳转。CCEL 格式目前无此逻辑。
+
+若要为 CCEL 格式实现可点击脚注，需要：
+1. extract.py：收集 `is_footnote_block` 块，解析 `N text` 格式，输出 `[^N]: text`
+2. extract.py：行内引用改为 Kramdown ref `[^N]`（不再用 `<sup>N</sup>`）
+3. publish.py：不过滤脚注定义块（去掉 `is_footnote_content` 过滤）
+
+**在实现上述改造之前，不要告知用户"脚注可点击跳转"，也不要对 `<sup>N</sup>` 添加伪链接。**
+
 ---
 
 **坑 6：经文表格内容跨 PDF block —— 续接块被误判为注释**
