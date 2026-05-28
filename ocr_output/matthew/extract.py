@@ -60,6 +60,7 @@ def spans_to_md(block):
 
         # Inline footnote reference: superscript + small size + digit-only content
         if is_superscript and stripped.isdigit() and span.get("size", 99) < FOOTNOTE_SIZE_MAX + 2:
+            parts.append(f"<sup>{stripped}</sup>")
             i += 1
             continue
 
