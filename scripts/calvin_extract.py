@@ -39,6 +39,7 @@ VOLUMES = {
         'body_left': 108.0,
         'body_right': 504.0,
         'centering': True,
+        'extract_footnotes': True,
         # Hebrew/Greek mojibake fixes: the embedded font in this PDF lacks a
         # ToUnicode map, so PyMuPDF returns U+FFFD for every Hebrew glyph.
         # Each entry's left side is the mojibake-with-context string as it
@@ -229,8 +230,11 @@ def write_txt_output(blocks, out_path):
 _LINE_BREAK = {'__line_break__': True}
 
 
-def ccel_spans_to_md(lines):
-    """Convert block lines to Markdown, normalising bold verse numbers → **N.**"""
+def ccel_spans_to_md(lines, fn_size_max=None):
+    """Convert block lines to Markdown, normalising bold verse numbers → **N.**
+
+    When `fn_size_max` is provided, superscript digit spans below that font size
+    are rewritten as Kramdown footnote references (`[^N]`)."""
     all_spans = []
     for li, line in enumerate(lines):
         all_spans.extend(line.get('spans', []))
@@ -251,6 +255,18 @@ def ccel_spans_to_md(lines):
         flags = span.get('flags', 0)
         is_bold   = bool(flags & 16)
         is_italic = bool(flags & 2)
+        is_sup    = bool(flags & 1)
+
+        # Inline footnote reference: small-font digit span (CCEL inconsistently
+        # sets the superscript flag — detect by font size instead).
+        if (fn_size_max is not None and t.strip().isdigit()
+                and span.get('size', 99) < fn_size_max + 1):
+            # Strip any trailing space on previous part — Markdown ref glues to word
+            if parts and parts[-1].endswith(' '):
+                parts[-1] = parts[-1].rstrip()
+            parts.append(f'[^{t.strip()}]')
+            i += 1
+            continue
 
         # Normalise verse number: bold digit(s) → **N.**
         if is_bold and re.match(r'^\d+$', t.strip()):
@@ -317,6 +333,47 @@ def ccel_harmony_is_page_number(block, cfg):
 def ccel_harmony_is_footnote(block, cfg):
     span = get_first_span(block)
     return span is not None and span.get('size', 0) < cfg['footnote_size_max']
+
+
+def parse_ccel_footnote_block(block):
+    """Parse a CCEL footnote block into a list of (num, text) tuples.
+
+    A footnote block at the bottom of a page contains 1+ footnotes laid out as:
+        <num>
+        text line 1
+        text line 2
+        <next num>
+        text…
+    The leading `<num>` is a separate line whose stripped text is just digits.
+
+    The printed page number (a stray digit line at the very end of the block)
+    is dropped; entries without any body text are also dropped (avoids spurious
+    "[^N]: " entries when a continuation block ends with the page number)."""
+    raw_lines = []
+    for line in block.get('lines', []):
+        spans = [s for s in line.get('spans', []) if s['text'].strip()]
+        if not spans:
+            continue
+        raw_lines.append(''.join(s['text'] for s in spans).strip())
+
+    # Trailing standalone digit = printed page number, not a footnote start
+    while raw_lines and raw_lines[-1].isdigit():
+        raw_lines.pop()
+
+    entries = []
+    cur_num = None
+    cur_lines = []
+    for line_text in raw_lines:
+        if line_text.isdigit() and (cur_num is None or cur_lines):
+            if cur_num is not None and cur_lines:
+                entries.append((cur_num, ' '.join(cur_lines).strip()))
+            cur_num = line_text
+            cur_lines = []
+        else:
+            cur_lines.append(line_text)
+    if cur_num is not None and cur_lines:
+        entries.append((cur_num, ' '.join(cur_lines).strip()))
+    return entries
 
 
 def ccel_harmony_is_index_start(block):
@@ -428,6 +485,9 @@ def extract_ccel_harmony(cfg):
             if ccel_harmony_is_page_number(block, cfg):
                 continue
             if ccel_harmony_is_footnote(block, cfg):
+                if cfg.get('extract_footnotes'):
+                    for num, fn_text in parse_ccel_footnote_block(block):
+                        output_blocks.append(f'[^{num}]: {fn_text}')
                 continue
             text = get_block_text(block).strip()
             if not text:
@@ -466,12 +526,12 @@ def extract_ccel_harmony(cfg):
             # Body block
             if cfg.get('centering'):
                 for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
-                    md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines))
+                    md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
                     if not md:
                         continue
                     output_blocks.append(f'<p style="text-align:center">{md}</p>' if is_c else md)
             else:
-                md = ccel_fix_hyphenation(ccel_spans_to_md(block.get('lines', [])))
+                md = ccel_fix_hyphenation(ccel_spans_to_md(block.get('lines', []), cfg.get('footnote_size_max')))
                 if md:
                     output_blocks.append(md)
 

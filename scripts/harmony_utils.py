@@ -55,8 +55,44 @@ def _continuation_start(text):
     return bool(t) and t[0].islower()
 
 
+# 介词/冠词/连词等不可能结句的功能词
+_FUNCTION_WORDS = {
+    'a', 'an', 'the', 'of', 'to', 'in', 'for', 'and', 'or', 'nor',
+    'but', 'with', 'by', 'at', 'from', 'into', 'through', 'upon', 'on',
+    'that', 'which', 'who', 'whose', 'whom', 'as', 'its', 'his', 'her',
+    'their', 'our', 'this', 'these', 'those', 'not',
+}
+
+
+def _ends_with_function_word(text):
+    """True 表示块末尾是功能词（介词/冠词/连词），这类词绝对不能结句。"""
+    t = re.sub(r'[\*_]+$', '', text.rstrip()).rstrip()
+    last_word = re.split(r'\s+', t)[-1].strip('.,;:!?"\'")(').lower() if t else ''
+    return last_word in _FUNCTION_WORDS
+
+
+def _starts_new_quote(text):
+    # opening curly/straight quote = standalone scripture paragraph, never merge
+    return text[:1] in ('"', '\u201c', '\u2018')
+
+
+_P_CENTER_RE = re.compile(r'^<p[^>]*>(.*?)</p>\s*$', re.DOTALL)
+
+def _p_continuation_content(block):
+    """若 block 是 <p> centered 且内容以小写字母开头（续行碎片），返回内容文本；否则返回 None。"""
+    m = _P_CENTER_RE.match(block.strip())
+    if not m:
+        return None
+    content = m.group(1).strip()
+    t = re.sub(r'^\*+', '', content)
+    if t and t[0].islower():
+        return content
+    return None
+
+
 def merge_split_paragraphs(blocks):
-    """合并跨 PDF block 断开的段落（续行以小写字母开头）。"""
+    """合并跨 PDF block 断开的段落。
+    两种合并信号：续行首字母小写，或当前块末尾是功能词（绝对不能结句）。"""
     merged = []
     i = 0
     while i < len(blocks):
@@ -67,9 +103,35 @@ def merge_split_paragraphs(blocks):
                 break
             if block.startswith('<table') or next_block.startswith('<table'):
                 break
-            if block.startswith('<p') or next_block.startswith('<p'):
+            if block.startswith('<p'):
                 break
-            if _continuation_start(next_block):
+            # Footnote definitions must stay separate — they often end with a
+            # function word (the original prose was wrapped) which would
+            # otherwise trigger merging into the following body paragraph.
+            if block.startswith('[^') or next_block.startswith('[^'):
+                break
+            # <p> centered 块若内容以小写开头，且前一块以字母或连字符结尾（行中断裂），
+            # 才是续行碎片——剥掉标签合并。若前一块以标点结尾（如逗号），
+            # 则 <p> 是新的居中元素（如 "zealous of good works,"），不合并。
+            p_cont = _p_continuation_content(next_block)
+            if p_cont is not None:
+                block_end = block.rstrip()
+                last_ch = block_end[-1] if block_end else ''
+                if last_ch.isalpha() or last_ch == '-':
+                    if last_ch == '-':
+                        # Hyphenated word break: remove hyphen, join without space
+                        block = block_end[:-1] + p_cont.lstrip()
+                    else:
+                        block = block_end + ' ' + p_cont.lstrip()
+                    i += 1
+                    continue
+                # else: previous block ends with punctuation → <p> is new centered element
+            if next_block.startswith('<p'):
+                break
+            # 续行首字母小写，或当前块末尾是功能词（不可能是句末）
+            # 但如果下一块以开引号开头，是独立圣经引文段，不合并
+            if (_continuation_start(next_block) or _ends_with_function_word(block)) \
+                    and not _starts_new_quote(next_block):
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
