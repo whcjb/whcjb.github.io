@@ -7,7 +7,31 @@
 - **CCEL 单列格式**（如使徒行传）：仅英文，经文为独立 block
 - **CCEL 平行福音格式**（如福音书和谐马太卷二）：2-3 列平行福音经文，列数随章节不同，需动态检测
 
-## 用法
+## PDF 提取：统一使用 scripts/calvin_extract.py
+
+**所有加尔文注释 PDF 提取必须使用 `scripts/calvin_extract.py`，禁止在各书卷目录单独写 extract.py 文件。**
+
+```bash
+python scripts/calvin_extract.py <volume>
+```
+
+已支持的 volume 参数（对应 `VOLUME_CONFIGS`）：
+
+| volume | 书卷 | 格式 | 输出 |
+|--------|------|------|------|
+| `matthew1` | 共观福音卷一 | CCEL 单列 | `calvin_raw/matthew1/matthew1_raw.txt` |
+| `harmony3` | 共观福音卷三 | CCEL 单列 | `calvin_raw/harmony3/harmony3_raw.txt` |
+| `matthew`  | 共观福音卷二 | CCEL 平行列 | `calvin_raw/matthew/matthew_raw.txt` |
+| `acts1`    | 使徒行传卷一 | CCEL 单列 | `calvin_raw/acts1/acts1_raw.txt` |
+| `acts2`    | 使徒行传卷二 | CCEL 单列 | `calvin_raw/acts2/acts2_raw.txt` |
+| `heb`      | 希伯来书 | Ages 双语 | `calvin_raw/heb/heb_raw.txt` |
+| `1cor-vol1`| 哥林多前书卷一 | Ages 双语 | `calvin_raw/1cor-vol1/calvin_1cor-vol1.md` |
+| `1cor-vol2`| 哥林多前后书卷二 | Ages 双语 | `calvin_raw/1cor-vol2/calvin_corinth-vol2.md` |
+| `phil`     | 腓立比书 | Ages 中间格式 | `calvin_raw/phil/calvin_filibi_structured.txt` |
+
+**新增书卷时**：在 `VOLUME_CONFIGS` 的 `VOLUMES` dict 中增加条目，不得新建独立脚本。若新书卷格式与现有六种 format（`ccel_harmony`、`ccel_parallel`、`ccel_acts`、`ages_heb`、`ages_corinth`、`ages_phil`）均不同，在 `scripts/calvin_extract.py` 中新增格式处理函数并注册到 `DISPATCH`。
+
+## 发布到网站（publish）
 
 ```
 /pdf-to-structured-txt <pdf路径> <输出md路径> [book_id] [book_name_en]
@@ -22,7 +46,7 @@
 
 ## 命名规范
 
-`ocr_output/` 下的子目录和 MD 文件名**必须使用英文，禁止使用拼音**。
+`calvin_raw/` 下的子目录和 MD 文件名**必须使用英文，禁止使用拼音**。
 
 | 书卷 | 正确命名 | 错误示例 |
 |------|---------|---------|
@@ -409,6 +433,32 @@ elif t == 'BODY':
 **阈值历史**：原为 `> 60`（仅深缩进），后发现大量中度缩进经文引用（如 Matthew 18:18, John 15:16 等，缩进约 46pt）未居中，遂统一降至 `> 20`。经全书验证，正文段落缩进不超过 18pt，所有 >20pt 项均为引文。
 
 Kramdown 会将 `{: style="text-align: center"}` 作为该段落的行内属性，渲染为 `<p style="text-align: center">...</p>`，脚注引用仍可正常处理。
+
+### 4.5c CCEL 路径同 block 内段首缩进：必须拆段（与 Ages 不同的实现位置）
+
+**对应 4.5b，CCEL 单列格式（ccel_harmony / ccel_acts 等）有完全相同的 PyMuPDF block 合并问题**，但不能套用 `split_block_by_paragraph_indent`：CCEL 提取走 `classify_lines_by_centering` 把整块按行级居中分组后再渲染，若先做整块缩进拆分会破坏居中组聚合。
+
+**修复（calvin_extract.py）**：line-level 版本 `split_lines_by_paragraph_indent(lines, body_left, indent_min=10, indent_max=60)`，**在 centering 分组返回后**对每个非居中组单独拆段：
+
+```python
+for is_c, grp_lines in classify_lines_by_centering(block['lines'], cfg):
+    if is_c:
+        md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
+        if md:
+            output_blocks.append(f'<p style="text-align:center">{md}</p>')
+    else:
+        for para_lines in split_lines_by_paragraph_indent(grp_lines, cfg['body_left']):
+            md = ccel_fix_hyphenation(ccel_spans_to_md(para_lines, cfg.get('footnote_size_max')))
+            if md:
+                output_blocks.append(md)
+```
+
+**关键点**：
+- 居中组不拆段（经文块整体居中，内部缩进无意义）
+- block 第一行不视为段首信号（跨 block 的续行可能本身就缩进 0）
+- 阈值 10–60pt 与 Ages 版本一致；CCEL PDF 段首缩进通常正好 18pt（如 matthew1: body_left=108，段首 x0=126）
+
+**遗漏症状**：解经新段（如 Calvin 引一节经文短语开启评论）被并入上一段尾。例：「*Are most surely believed among us* The participle πεπληροφορημένα...」如果不拆段就会粘在前一段「...palmed upon the world.」之后。
 
 ### 4.6 表格 `<td>` 内脚注引用：必须转为 HTML 上标
 
@@ -2500,22 +2550,33 @@ def spans_to_md(block):
 
 新 PDF 若通过诊断脚本发现其他 flags 组合（如 `flags=3` = superscript+italic），需在模板中对应新增分支。
 
-**⚠️ CCEL 格式脚注内容：当前未提取，`<sup>N</sup>` 仅为视觉标记**
+**✅ CCEL 格式脚注提取与跳转（已在 ccel_harmony 实现，新卷需启用 `extract_footnotes: True`）**
 
-CCEL 格式（马太卷二等）的脚注内容块（字号 ≤7.5pt）由 `is_footnote_block` 过滤，从未写入 raw txt，也未作为 Kramdown 定义（`[^N]: text`）输出。因此：
+CCEL 单列格式（matthew1 等）脚注的完整管线：
 
-- 正文中出现 `<sup>46</sup>`：是视觉上标，无 `href`，**点击无效**
-- 页面底部无脚注定义区：**内容从未提取**
-- 这不是 bug 或回归，是**功能缺失**（尚未实现脚注提取）
+1. **行内引用** `ccel_spans_to_md(lines, fn_size_max)`：检测 `text.strip().isdigit() and size < fn_size_max + 1` 的小字号数字 span → 输出 `[^N]` 紧贴前词。**只按字号判断，不查 sup flag** —— CCEL PDF 不同页面对同一类引用 flag 不一致（有的 `flags=1` 有 sup 位，有的 `flags=4` 无 sup 位，但字号都是 9.1 vs body 11.0）。
 
-**与 Ages 格式的区别**：Ages Digital Library 格式有明确的脚注区（`FtN` 开头），由专用逻辑提取为 `[^fN]: text`，支持 Kramdown 跳转。CCEL 格式目前无此逻辑。
+2. **脚注定义块** `parse_ccel_footnote_block(block)`：解析底部脚注块「数字行 + 1~多行正文」结构，输出 `[^N]: text`。两条收尾规则：
+   - 块尾部独立数字行 = 页码，丢弃（不视为新脚注号）
+   - 无正文的空条目不产出（避免 `[^N]: ` 空定义）
 
-若要为 CCEL 格式实现可点击脚注，需要：
-1. extract.py：收集 `is_footnote_block` 块，解析 `N text` 格式，输出 `[^N]: text`
-2. extract.py：行内引用改为 Kramdown ref `[^N]`（不再用 `<sup>N</sup>`）
-3. publish.py：不过滤脚注定义块（去掉 `is_footnote_content` 过滤）
+3. **配置启用**：在 `VOLUMES` cfg 中加 `'extract_footnotes': True`（默认关闭，避免影响其他格式）；同时确保 `footnote_size_max` 设置正确（matthew1 用 9.5）。
 
-**在实现上述改造之前，不要告知用户"脚注可点击跳转"，也不要对 `<sup>N</sup>` 添加伪链接。**
+4. **publish 侧合并守卫** `harmony_utils.merge_split_paragraphs`：以 `[^` 开头的 block 不参与段落合并。理由：脚注定义文本经常以介词/连词收尾（拉丁原文换行处），原 `_ends_with_function_word` 会触发把后续正文段并入定义里。
+
+**与 Ages 格式的区别**：Ages 脚注区有 `FtN` 前缀标签；CCEL 无前缀，纯数字。Ages 标签经过 `ft→f` 归一化后输出 `[^fN]: text`；CCEL 直接输出 `[^N]: text`，无前缀。
+
+**质检**：提取后 `defs` 与 `refs` 应 1:1 匹配（用下面脚本验证），孤儿应为零；若有孤儿引用（refs - defs），通常是字号阈值漏检或脚注块解析错误。
+
+```python
+import re
+text = open('raw.txt').read()
+defs = set(re.findall(r'^\[\^(\d+)\]:', text, re.MULTILINE))
+refs = set(re.findall(r'\[\^(\d+)\](?!:)', text))
+assert refs - defs == set(), f'orphan refs: {sorted(refs - defs, key=int)}'
+```
+
+Kramdown 会自动收集所有 `[^N]: text` 到页末 `.footnotes` div，并把 `[^N]` 渲染为 `<sup><a href="#fn:N">`，反向链接 `<a href="#fnref:N">` 也自动生成。calvin-en 布局已有 `.fn-backref-num` CSS 和 JS 渲染编号 `1.` `2.` 等。
 
 ---
 
