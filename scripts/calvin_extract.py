@@ -403,6 +403,31 @@ def ccel_harmony_norm(text):
     return re.sub(r':\s+(\d)', r':\1', text)
 
 
+def split_lines_by_paragraph_indent(lines, body_left,
+                                    indent_min=10, indent_max=60):
+    """Split a sequence of lines into paragraph groups where a non-first line
+    that starts ~18px right of `body_left` marks a new paragraph (PDF first-
+    line indent). Centered/blockquote lines should already be removed before
+    calling this."""
+    groups, cur, first_seen = [], [], False
+    for line in lines:
+        spans = [s for s in line.get('spans', []) if s['text'].strip()]
+        if not spans:
+            cur.append(line)
+            continue
+        x0 = spans[0]['bbox'][0]
+        indent = x0 - body_left
+        is_para_start = first_seen and indent_min <= indent <= indent_max
+        if is_para_start and cur:
+            groups.append(cur)
+            cur = []
+        cur.append(line)
+        first_seen = True
+    if cur:
+        groups.append(cur)
+    return groups
+
+
 def classify_lines_by_centering(lines, cfg):
     """Split lines into groups of [is_centered, [line, ...]].
     Promotes preceding closing-quote line into the same centered group."""
@@ -526,10 +551,15 @@ def extract_ccel_harmony(cfg):
             # Body block
             if cfg.get('centering'):
                 for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
-                    md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
-                    if not md:
-                        continue
-                    output_blocks.append(f'<p style="text-align:center">{md}</p>' if is_c else md)
+                    if is_c:
+                        md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
+                        if md:
+                            output_blocks.append(f'<p style="text-align:center">{md}</p>')
+                    else:
+                        for para_lines in split_lines_by_paragraph_indent(grp_lines, cfg['body_left']):
+                            md = ccel_fix_hyphenation(ccel_spans_to_md(para_lines, cfg.get('footnote_size_max')))
+                            if md:
+                                output_blocks.append(md)
             else:
                 md = ccel_fix_hyphenation(ccel_spans_to_md(block.get('lines', []), cfg.get('footnote_size_max')))
                 if md:
