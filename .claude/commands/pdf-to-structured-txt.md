@@ -2331,7 +2331,40 @@ def handle_commentary(block):
 
 ---
 
-**坑 5：经文表格内容跨 PDF block —— 续接块被误判为注释**
+**坑 5：`spans_to_md` 未过滤行内脚注引用数字 —— 数字出现在正文中**
+
+**症状**：注释正文中出现孤立数字（如 "extraordinary, 16 and awakens"），这些是原 PDF 的脚注引用上标，不属于正文。
+
+**根因**：PyMuPDF 中行内脚注引用 span 有固定特征：
+- `flags & 1 = 1`（superscript 位，bit 0）
+- `size ≈ 6-7pt`（远小于正文 12pt）
+- 内容为纯数字
+
+`spans_to_md` 只检查 bold（`flags & 16`）和 italic（`flags & 2`），未处理 superscript 位，直接将脚注引用当成普通文字输出。
+
+**修复**：在 `spans_to_md` 格式判断之前加过滤：
+
+```python
+is_superscript = bool(flags & 1)
+# 行内脚注引用：上标位 + 小字号 + 纯数字 → 跳过
+if is_superscript and stripped.isdigit() and span.get("size", 99) < FOOTNOTE_SIZE_MAX + 2:
+    i += 1
+    continue
+```
+
+阈值 `FOOTNOTE_SIZE_MAX + 2`（通常 9.5pt）：脚注引用约 6-7pt，正文 12pt，中间留有足够余量。
+
+**⚠️ 通用原则：`spans_to_md` 必须同时处理三个 flag 位：**
+
+| flags bit | 含义 | 处理方式 |
+|-----------|------|---------|
+| `flags & 1` | superscript | 若内容为纯数字且字号小 → 跳过（脚注引用） |
+| `flags & 2` | italic | 包裹 `*...*` |
+| `flags & 16` | bold | 包裹 `**...**` |
+
+---
+
+**坑 6：经文表格内容跨 PDF block —— 续接块被误判为注释**
 
 **症状**：经文表格只有第一行（如 Matt 11:7-8a / Luke 7:24-25a），其余经文节（8b-15 / 25b-28）以段落文字出现在注释区，两列内容交错拼接成乱序散文。
 
