@@ -102,16 +102,69 @@ def expand_verse_refs(blocks):
     return result
 
 
+def _is_scripture_block(block):
+    """True if block is pure scripture text: starts with **N.** and has no italic markers.
+
+    CCEL format: scripture paragraph = consecutive bold verse numbers + plain text.
+    Commentary = **N.** followed by *italic quotes* + Calvin's notes.
+    """
+    if not re.match(r'^\*\*\d+\.\*\*', block.strip()):
+        return False
+    stripped = re.sub(r'\*\*\d+\.\*\*', '', block)
+    return '*' not in stripped
+
+
+def _md_bold_to_html(text):
+    """Convert **text** markers to <strong>text</strong> for use inside raw HTML."""
+    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+
+
+def _scripture_box(header, text):
+    """Render scripture block as a bordered box matching the PDF layout.
+
+    PDF format: thin border, blue passage reference at top, scripture text below
+    with inline bold verse numbers (1. 2. 3. ...).
+    Header e.g. 'LUKE 1:1-4; MATTHEW 3:1' → displayed as 'Luke 1:1-4; Matthew 3:1'.
+    """
+    display = ' '.join(w.capitalize() if w.isalpha() else w for w in header.split())
+    body = _md_bold_to_html(text)
+    return (
+        '<div class="scripture-box">\n'
+        f'<p class="scripture-ref">{display}</p>\n'
+        f'<p>{body}</p>\n'
+        '</div>'
+    )
+
+
 def process_section_blocks(header, body):
     """将一个节（header + body）的 body 拆块并运行完整处理管道。
-    返回处理后的 block 列表（不含 header block）。"""
+    返回处理后的 block 列表（不含 header block）。
+
+    第一段若为纯经文（无斜体），渲染为 PDF 原文的有边框方框；
+    后续段落为注释，走完整处理管道。"""
     raw_blocks = re.split(r'\n{2,}', body)
     blocks = [b.strip() for b in raw_blocks if b.strip()]
-    all_blocks = [f'## {header}'] + blocks
-    all_blocks = split_rich_by_verse(all_blocks)
-    all_blocks = join_orphan_verse_numbers(all_blocks)
-    all_blocks = merge_split_paragraphs(all_blocks)
-    all_blocks = expand_verse_refs(all_blocks)
-    if all_blocks and all_blocks[0].startswith('## '):
-        all_blocks = all_blocks[1:]
-    return all_blocks
+
+    if not blocks:
+        return []
+
+    result = []
+
+    # First block: render as scripture box if it's plain verse text
+    comm_start = 0
+    if _is_scripture_block(blocks[0]):
+        result.append(_scripture_box(header, blocks[0]))
+        comm_start = 1
+
+    # Commentary blocks through full pipeline
+    if blocks[comm_start:]:
+        comm_all = [f'## {header}'] + blocks[comm_start:]
+        comm_all = split_rich_by_verse(comm_all)
+        comm_all = join_orphan_verse_numbers(comm_all)
+        comm_all = merge_split_paragraphs(comm_all)
+        comm_all = expand_verse_refs(comm_all)
+        if comm_all and comm_all[0].startswith('## '):
+            comm_all = comm_all[1:]
+        result.extend(comm_all)
+
+    return result
