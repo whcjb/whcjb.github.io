@@ -2329,6 +2329,64 @@ def handle_commentary(block):
 
 **⚠️ 通用原则：任何格式的 Calvin 注释提取脚本，commentary block 必须用 `spans_to_md()` 而非 `get_block_text()`**。经文表格复杂不代表注释部分也需要简化——两者用不同函数处理，commentary 始终用富文本。
 
+---
+
+**坑 5：经文表格内容跨 PDF block —— 续接块被误判为注释**
+
+**症状**：经文表格只有第一行（如 Matt 11:7-8a / Luke 7:24-25a），其余经文节（8b-15 / 25b-28）以段落文字出现在注释区，两列内容交错拼接成乱序散文。
+
+**两层 bug，互相掩盖：**
+
+**第一层**：`is_verse_block` 要求第一个 span 是加粗数字开头。表格续接块（"man clothed with soft garments?" 开头，无加粗数字）返回 False，被 `handle_commentary` 处理，经文溢出。
+
+修复：在 `elif in_verse_section` 分支里，若当前 verse_buf 非空且块的第一个非空 span **非加粗**，则视为经文续接，加入 verse_buf；否则才 flush + 注释处理。
+
+**第二层（修复引入的新 bug）**：CCEL 格式每个注释 block 的第一行是一个 `\xa0` 占位 span（`flags=4`，非加粗）：
+
+```
+Line 0, Span 0: flags=4, text='\xa0'   ← 空白占位符
+Line 1, Span 0: flags=20, text='Matthew 11:7.'   ← 真正的加粗注释标题
+```
+
+若用 `get_first_span`（返回物理第一个 span），拿到的是非加粗的 `\xa0`，注释块被误判为经文续接，塞入 verse_buf，导致注释文字出现在经文表格的列单元格里。
+
+**根本教训：PDF block 的"第一个 span"不等于"第一个有内容的 span"**，空白/占位符 span 是常见陷阱。
+
+**正确实现：必须使用 `get_first_nonempty_span`**
+
+```python
+def get_first_nonempty_span(block):
+    """跳过空白/NBSP 占位 span，返回第一个有实际文字的 span。"""
+    for line in block.get("lines", []):
+        for span in line.get("spans", []):
+            if span.get("text", "").strip():
+                return span
+    return None
+```
+
+然后在主循环中：
+
+```python
+elif in_verse_section and is_verse_block(block):
+    verse_buf.append(block)
+
+elif in_verse_section:
+    # 用 get_first_nonempty_span，跳过 \xa0 占位行
+    first_span = get_first_nonempty_span(block)
+    if verse_buf and first_span and not bool(first_span.get("flags", 0) & 16):
+        # 非加粗 → 经文续接（如 "man clothed with soft garments?"）
+        verse_buf.append(block)
+    else:
+        # 加粗 → 注释开始（如 "Matthew 11:7."，第一个非空 span 加粗）
+        flush_verse_buf()
+        in_verse_section = False
+        handle_commentary(block)
+```
+
+**⚠️ 通用原则：凡需要判断一个 block"以什么类型的 span 开头"，必须用 `get_first_nonempty_span`，绝不能用 `get_first_span`。** 原因：CCEL 格式（以及其他 PDF 格式）的 block 可能以空白/NBSP 行开头，这类 span 的 flags、size、text 均无法反映该 block 的真实类型。
+
+**同步更新质检 Checklist**：`grep -c "<table" raw.txt` 的结果应与 PDF 中经文段落数一致；若过少，说明有续接块未被收入 verse_buf。
+
 #### 动态列分割：从列标签 block 提取分割阈值
 
 2 列和 3 列的分割点不能硬编码，必须从列标签 block 的行 x0 动态计算：
@@ -2461,6 +2519,7 @@ layout: default
 
 **提取阶段（raw txt）**：
 - [ ] `grep "^CHAPTER [0-9]" raw.txt` → 有输出则确认发布脚本已过滤
+- [ ] **经文续接检查**：`grep -c "<table" raw.txt` 与 PDF 中经文段落数大致一致；若表格数明显偏少，说明有续接块未进入 verse_buf（检查 `get_first_nonempty_span` 是否已替换 `get_first_span`）
 - [ ] **富文本 raw**：`grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 `split_rich_by_verse` 未生效）
 - [ ] **纯文本 raw**：`python3 -c "import re,sys; [print(repr(b[:120])) for b in re.split(r'\n{2,}', open('raw.txt').read()) if not b.startswith('##') and not b.startswith('<table') and len(re.findall(r'(?<=\.) \d+\. [A-Z]', b)) >= 2]"` → **必须为空**（有则 `split_verse_commentary` 未加到发布脚本）
 - [ ] 脚注泄漏检查脚本 → **必须为 0**
