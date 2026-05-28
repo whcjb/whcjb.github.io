@@ -2342,26 +2342,117 @@ def handle_commentary(block):
 
 `spans_to_md` 只检查 bold（`flags & 16`）和 italic（`flags & 2`），未处理 superscript 位，直接将脚注引用当成普通文字输出。
 
-**修复**：在 `spans_to_md` 格式判断之前加过滤：
+#### 通用防范：写 `spans_to_md` 前先普查 PDF span 类型
+
+**每次处理新 PDF，在写提取代码前先运行诊断脚本**，列出所有出现过的 (flags, size_bucket, sample_text)，从源头摸清该 PDF 有哪些 span 类型需要处理：
 
 ```python
-is_superscript = bool(flags & 1)
-# 行内脚注引用：上标位 + 小字号 + 纯数字 → 跳过
-if is_superscript and stripped.isdigit() and span.get("size", 99) < FOOTNOTE_SIZE_MAX + 2:
-    parts.append(f"<sup>{stripped}</sup>")
-    i += 1
-    continue
+# 诊断脚本（新书提取前必跑）
+import fitz, re
+from collections import Counter
+
+doc = fitz.open("your.pdf")
+buckets = Counter()
+for page in doc:
+    for b in page.get_text("dict")["blocks"]:
+        if b["type"] != 0: continue
+        for line in b["lines"]:
+            for s in line["spans"]:
+                t = s["text"].strip()
+                if not t: continue
+                size_b = round(s["size"])
+                sample = t[:20]
+                buckets[(s["flags"], size_b, sample[:8])] += 1
+doc.close()
+for (flags, size, sample), cnt in sorted(buckets.most_common(30)):
+    print(f"flags={flags:2d} size={size:2d}pt  x{cnt:4d}  {sample!r}")
 ```
 
-阈值 `FOOTNOTE_SIZE_MAX + 2`（通常 9.5pt）：脚注引用约 6-7pt，正文 12pt，中间留有足够余量。
+典型输出（CCEL 马太注释为例）：
+
+```
+flags= 4 size=12pt  x8421  'the '       ← 正文
+flags=20 size=12pt  x1205  'Matthew'    ← 加粗标题/节号
+flags= 6 size=12pt  x 892  'And while'  ← 斜体经文
+flags= 5 size= 7pt  x 312  '16'         ← 脚注引用（superscript）
+flags= 4 size= 7pt  x 201  'Calvin '    ← 页眉/脚注内容
+```
+
+**看到 flags 里有 `& 1 = 1`（superscript）的行，就必须在 `spans_to_md` 里加对应处理。**
+
+#### 规范的 `spans_to_md` 模板（CCEL 格式）
+
+基于诊断结果，`spans_to_md` 应包含以下完整的 flag 处理链——**不能只写 bold/italic 就停手**：
+
+```python
+def spans_to_md(block):
+    all_spans = []
+    lines = block.get("lines", [])
+    for li, line in enumerate(lines):
+        all_spans.extend(line.get("spans", []))
+        if li < len(lines) - 1:
+            all_spans.append(_LINE_BREAK)
+
+    parts = []
+    i = 0
+    while i < len(all_spans):
+        span = all_spans[i]
+        if span is _LINE_BREAK:
+            if parts and not parts[-1].endswith(' '):
+                parts.append(' ')
+            i += 1
+            continue
+
+        t = span["text"]
+        flags = span.get("flags", 0)
+        size  = span.get("size", 12)
+
+        is_superscript = bool(flags & 1)   # bit 0
+        is_italic      = bool(flags & 2)   # bit 1
+        is_bold        = bool(flags & 16)  # bit 4
+
+        stripped = t.strip()
+        if not stripped:
+            if t and parts and not parts[-1].endswith(' '):
+                parts.append(' ')
+            i += 1
+            continue
+
+        # ① 行内脚注引用：superscript + 小字号 + 纯数字
+        if is_superscript and stripped.isdigit() and size < FOOTNOTE_SIZE_MAX + 2:
+            parts.append(f"<sup>{stripped}</sup>")
+            i += 1
+            continue
+
+        # ② 普通格式
+        lead = t[:len(t) - len(t.lstrip())]
+        tail = t[len(t.rstrip()):]
+        if is_bold and is_italic:
+            parts.append(f"{lead}***{stripped}***{tail}")
+        elif is_bold:
+            parts.append(f"{lead}**{stripped}**{tail}")
+        elif is_italic:
+            parts.append(f"{lead}*{stripped}*{tail}")
+        else:
+            parts.append(t)
+        i += 1
+
+    result = ''.join(parts)
+    result = re.sub(r' {2,}', ' ', result)
+    return result.strip()
+```
+
+**处理顺序**：superscript 过滤必须在 bold/italic 之前，否则 bold superscript（如某些上标字母）会先被包裹为 `**...**`，后面的 superscript 判断永远不到。
 
 **⚠️ 通用原则：`spans_to_md` 必须同时处理三个 flag 位：**
 
 | flags bit | 含义 | 处理方式 |
 |-----------|------|---------|
-| `flags & 1` | superscript | 若内容为纯数字且字号小 → 跳过（脚注引用） |
+| `flags & 1` | superscript | 若内容为纯数字且字号小 → `<sup>N</sup>`（脚注引用） |
 | `flags & 2` | italic | 包裹 `*...*` |
 | `flags & 16` | bold | 包裹 `**...**` |
+
+新 PDF 若通过诊断脚本发现其他 flags 组合（如 `flags=3` = superscript+italic），需在模板中对应新增分支。
 
 ---
 
@@ -2553,6 +2644,9 @@ layout: default
 
 **提取阶段（raw txt）**：
 - [ ] `grep "^CHAPTER [0-9]" raw.txt` → 有输出则确认发布脚本已过滤
+- [ ] **提取前诊断**：运行 span 类型普查脚本，确认所有 flags 组合已在 `spans_to_md` 中覆盖（尤其是 `flags & 1` superscript）
+- [ ] **脚注引用检查**：`grep -c "<sup>" raw.txt` > 0（有脚注引用则必须出现 `<sup>`；若为 0 且 PDF 有脚注，说明 superscript span 未被处理）
+- [ ] **孤立数字检查**：`grep -oP "(?<=[a-z], )\d+(?= and|\s[a-z])" raw.txt` → 必须为空（有则说明脚注数字未转换为 `<sup>`）
 - [ ] **经文续接检查**：`grep -c "<table" raw.txt` 与 PDF 中经文段落数大致一致；若表格数明显偏少，说明有续接块未进入 verse_buf（检查 `get_first_nonempty_span` 是否已替换 `get_first_span`）
 - [ ] **富文本 raw**：`grep "\*\*[0-9]\+\.\*\*.*\*\*[0-9]\+\.\*\*" raw.txt` → **必须为空**（有则 `split_rich_by_verse` 未生效）
 - [ ] **纯文本 raw**：`python3 -c "import re,sys; [print(repr(b[:120])) for b in re.split(r'\n{2,}', open('raw.txt').read()) if not b.startswith('##') and not b.startswith('<table') and len(re.findall(r'(?<=\.) \d+\. [A-Z]', b)) >= 2]"` → **必须为空**（有则 `split_verse_commentary` 未加到发布脚本）
