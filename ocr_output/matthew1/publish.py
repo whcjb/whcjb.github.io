@@ -17,6 +17,9 @@ Chapters group sections by narrative unit:
 """
 import os
 import re
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+from scripts.harmony_utils import process_section_blocks
 
 RAW = "/Users/yanpeifa/Documents/whcjb.github.io/ocr_output/matthew1/matthew1_raw.txt"
 OUT_DIR = "/Users/yanpeifa/Documents/whcjb.github.io/calvin/harmony-1-en"
@@ -54,111 +57,6 @@ def normalize_ref(text):
     """Normalize scripture reference: remove spaces after colons, collapse spaces."""
     text = re.sub(r':\s+(\d)', r':\1', text)
     return re.sub(r'\s+', ' ', text).strip()
-
-
-# ── Processing pipeline (same as matthew/publish.py) ──────────────────────────
-
-_VERSE_MARKER = re.compile(r'(?<=\S)\s+(\*\*(?:[A-Z][a-z]+ \d+:\d+|\d+)\.\*\*)')
-
-
-def split_rich_by_verse(blocks):
-    """Split blocks containing multiple inline verse markers."""
-    result = []
-    for block in blocks:
-        if block.startswith('##') or block.startswith('<table'):
-            result.append(block)
-            continue
-        parts = _VERSE_MARKER.split(block)
-        if len(parts) <= 1:
-            result.append(block)
-            continue
-        result.append(parts[0].strip())
-        i = 1
-        while i < len(parts) - 1:
-            result.append((parts[i] + ' ' + parts[i + 1].lstrip()).strip())
-            i += 2
-    return [b for b in result if b.strip()]
-
-
-def join_orphan_verse_numbers(blocks):
-    result = []
-    i = 0
-    while i < len(blocks):
-        block = blocks[i]
-        if re.match(r'^\*\*\d+\.\*\*$', block.strip()):
-            if i + 1 < len(blocks) and not blocks[i + 1].startswith('##'):
-                result.append(block.strip() + ' ' + blocks[i + 1].lstrip())
-                i += 2
-                continue
-        result.append(block)
-        i += 1
-    return result
-
-
-def _continuation_start(text):
-    """True if block's first real letter is lowercase (strips leading * markers)."""
-    t = re.sub(r'^\*+', '', text.lstrip())
-    return bool(t) and t[0].islower()
-
-
-def merge_split_paragraphs(blocks):
-    merged = []
-    i = 0
-    while i < len(blocks):
-        block = blocks[i]
-        while i + 1 < len(blocks):
-            next_block = blocks[i + 1]
-            if block.startswith('##') or next_block.startswith('##'):
-                break
-            if block.startswith('<table') or next_block.startswith('<table'):
-                break
-            if _continuation_start(next_block):
-                block = block.rstrip() + ' ' + next_block.lstrip()
-                i += 1
-            else:
-                break
-        merged.append(block)
-        i += 1
-    return merged
-
-
-def expand_verse_refs(blocks):
-    """Expand bare **N.** to **Book Ch:N.** using current ## section header."""
-    result = []
-    current_book = None
-    current_ch = None
-    for block in blocks:
-        if block.startswith('## '):
-            m = re.match(r'^## (MATTHEW|MARK|LUKE|JOHN) (\d+):', block)
-            if m:
-                current_book = m.group(1).capitalize()
-                current_ch = int(m.group(2))
-            result.append(block)
-        elif block.startswith('<table') or not current_book:
-            result.append(block)
-        else:
-            new_block = re.sub(
-                r'^\*\*(\d+)\.\*\*',
-                lambda mo: f'**{current_book} {current_ch}:{mo.group(1)}.**',
-                block
-            )
-            result.append(new_block)
-    return result
-
-
-def process_section_blocks(header, body):
-    """Split body into blocks and apply the full processing pipeline."""
-    raw_blocks = re.split(r'\n{2,}', body)
-    blocks = [b.strip() for b in raw_blocks if b.strip()]
-    all_blocks = [f'## {header}'] + blocks
-    all_blocks = split_rich_by_verse(all_blocks)
-    all_blocks = join_orphan_verse_numbers(all_blocks)
-    all_blocks = merge_split_paragraphs(all_blocks)
-    all_blocks = expand_verse_refs(all_blocks)
-    # Strip the prepended header block
-    if all_blocks and all_blocks[0].startswith('## '):
-        all_blocks = all_blocks[1:]
-    return all_blocks
 
 
 def read_raw(path):

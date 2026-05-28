@@ -16,6 +16,9 @@ Chapters:
 """
 import os
 import re
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
+from scripts.harmony_utils import process_section_blocks
 
 RAW = "/Users/yanpeifa/Documents/whcjb.github.io/ocr_output/harmony3/harmony3_raw.txt"
 OUT_DIR = "/Users/yanpeifa/Documents/whcjb.github.io/calvin/harmony-3-en"
@@ -90,11 +93,12 @@ def assign_chapters(sections):
 
 
 def format_chapter_content(sections_list):
-    """Format chapter content: each section as ## header + body, separated by ---."""
-    parts = []
+    """Format chapter content with full processing pipeline."""
+    chapter_blocks = []
     for header, body in sections_list:
-        parts.append(f"## {header}\n\n{body}")
-    return "\n\n---\n\n".join(parts)
+        chapter_blocks.append(f'## {header}')
+        chapter_blocks.extend(process_section_blocks(header, body))
+    return "\n\n".join(chapter_blocks)
 
 
 def ch_short_label(ch):
