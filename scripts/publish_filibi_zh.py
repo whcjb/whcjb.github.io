@@ -2,7 +2,7 @@
 """
 publish_filibi_zh.py — 将中文翻译 MD 发布为腓立比书中文注释网页
 
-读取 ocr_output/phil/calvin_filibi_zh.md，按章节切分，
+读取 calvin_raw/phil/calvin_filibi_zh.md，按章节切分，
 转换 Markdown 经文表格为 HTML，写入 calvin/philippians/，
 使用与英文版相同的 calvin-en layout。
 
@@ -12,14 +12,14 @@ publish_filibi_zh.py — 将中文翻译 MD 发布为腓立比书中文注释网
 import re, os, subprocess
 from pathlib import Path
 
-MD_PATH = Path('ocr_output/phil/calvin_filibi_zh.md')
+MD_PATH = Path('calvin_raw/phil/calvin_filibi_zh.md')
 OUT_DIR = Path('calvin/philippians')
 
 BOOK_ID   = 'philippians'
 BOOK_NAME = '腓立比书·加尔文注释'
 
 # ── 章节边界（对应翻译后MD的行号，与英文原文相同）────────────────────────────
-# 用 `grep -n "^# " ocr_output/phil/calvin_filibi_zh.md` 验证
+# 用 `grep -n "^# " calvin_raw/phil/calvin_filibi_zh.md` 验证
 SECTIONS = {
     'preface': (0,    223),
     '1':       (223,  523),   # lines[223:523] → 第一章标题(idx 223)..idx 522

@@ -2,7 +2,7 @@
 """
 translate_filibi.py — 腓立比书英文注释 MD → 中文 MD
 
-将 ocr_output/phil/calvin_filibi.md 翻译成简体中文，
+将 calvin_raw/phil/calvin_filibi.md 翻译成简体中文，
 保留所有格式标记（HTML/Markdown/脚注/页码），只翻译英文内容，
 拉丁文保留原文并附中文括注。
 
@@ -14,9 +14,9 @@ translate_filibi.py — 腓立比书英文注释 MD → 中文 MD
 import sys, re, subprocess, hashlib
 from pathlib import Path
 
-SRC       = Path('ocr_output/phil/calvin_filibi.md')
-CACHE_DIR = Path('ocr_output/phil/zh_cache')
-OUT       = Path('ocr_output/phil/calvin_filibi_zh.md')
+SRC       = Path('calvin_raw/phil/calvin_filibi.md')
+CACHE_DIR = Path('calvin_raw/phil/zh_cache')
+OUT       = Path('calvin_raw/phil/calvin_filibi_zh.md')
 
 BATCH = 5  # 每批翻译段数（每次调用 claude CLI）
 
