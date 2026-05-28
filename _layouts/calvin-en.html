@@ -262,30 +262,39 @@ layout: default
   var content = document.querySelector('.calvin-en-content');
   if (!content) return;
 
-  // Find all commentary verse paragraphs: <p><strong>N.</strong> ...
   var paras = content.querySelectorAll('p');
-  var verseNums = [];
+  var entries = [];   // [{anchorId, pillLabel}, ...]
 
   paras.forEach(function(p) {
     var first = p.firstElementChild;
     if (!first || first.tagName !== 'STRONG') return;
     var t = first.textContent.trim();
-    if (!/^\d+\.$/.test(t)) return;   // must be "N." only
 
-    // Scripture text blocks have multiple verse numbers; commentary has exactly one.
-    var verseCount = 0;
-    p.querySelectorAll('strong').forEach(function(s) {
-      if (/^\d+\.$/.test(s.textContent.trim())) verseCount++;
-    });
-    if (verseCount > 1) return;
+    var anchorId, pillLabel;
 
-    var num = t.slice(0, -1);          // strip trailing period
+    // Format A: "Book Ch:N." e.g. "Matthew 11:26."
+    var mFull = t.match(/^([A-Z][a-z]+) (\d+):(\d+)\.$/);
+    if (mFull) {
+      anchorId  = 'v-' + mFull[1].slice(0,4).toLowerCase() + '-' + mFull[2] + '-' + mFull[3];
+      pillLabel = mFull[2] + ':' + mFull[3];   // "11:26"
+    } else if (/^\d+\.$/.test(t)) {
+      // Format B: bare "N." — check it's a single verse marker (not scripture table)
+      var verseCount = 0;
+      p.querySelectorAll('strong').forEach(function(s) {
+        if (/^\d+\.$/.test(s.textContent.trim())) verseCount++;
+      });
+      if (verseCount > 1) return;
+      var num = t.slice(0, -1);
+      anchorId  = 'v-' + num;
+      pillLabel = num;
+    } else {
+      return;
+    }
 
-    // Add anchor id to the paragraph
-    p.id = 'v-' + num;
-    verseNums.push(num);
+    p.id = anchorId;
+    entries.push({anchorId: anchorId, pillLabel: pillLabel});
 
-    // Make the verse number badge clickable → scroll to top
+    // Clicking the verse marker scrolls back to top
     first.classList.add('verse-anchor');
     first.title = 'Back to top';
     first.addEventListener('click', function(e) {
@@ -294,31 +303,27 @@ layout: default
     });
   });
 
-  if (verseNums.length === 0) return;
+  if (entries.length === 0) return;
 
-  // Build pills in the nav bar
+  // Build pills
   var pillsContainer = document.getElementById('verse-nav-pills');
-  verseNums.forEach(function(num) {
+  entries.forEach(function(entry) {
     var a = document.createElement('a');
-    a.href = '#v-' + num;
+    a.href = '#' + entry.anchorId;
     a.className = 'verse-pill';
-    a.textContent = num;
-    a.addEventListener('click', function(e) {
-      // Close the panel after navigating
-      setTimeout(closeVerseNav, 200);
-    });
+    a.textContent = entry.pillLabel;
+    a.addEventListener('click', function() { setTimeout(closeVerseNav, 200); });
     pillsContainer.appendChild(a);
   });
 
-  // Update toggle label with range summary
+  // Update toggle label
   var label = document.getElementById('verse-nav-label');
-  if (verseNums.length > 1) {
-    label.textContent = 'Verse ' + verseNums[0] + '–' + verseNums[verseNums.length - 1];
+  if (entries.length > 1) {
+    label.textContent = 'v' + entries[0].pillLabel + '–' + entries[entries.length-1].pillLabel;
   } else {
-    label.textContent = 'Verse ' + verseNums[0];
+    label.textContent = 'v' + entries[0].pillLabel;
   }
 
-  // Show the nav bar
   document.getElementById('verse-nav').style.display = 'block';
 })();
 

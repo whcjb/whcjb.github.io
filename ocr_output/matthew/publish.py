@@ -104,6 +104,30 @@ def merge_split_paragraphs(blocks):
     return merged
 
 
+def expand_verse_refs(blocks):
+    """Expand bare **N.** commentary markers to **Book Ch:N.** using current section header."""
+    result = []
+    current_book = None
+    current_ch = None
+    for block in blocks:
+        if block.startswith('## '):
+            m = re.match(r'^## (MATTHEW|MARK|LUKE|JOHN) (\d+):', block)
+            if m:
+                current_book = m.group(1).capitalize()
+                current_ch = int(m.group(2))
+            result.append(block)
+        elif block.startswith('<table') or not current_book:
+            result.append(block)
+        else:
+            new_block = re.sub(
+                r'^\*\*(\d+)\.\*\*',
+                lambda mo: f'**{current_book} {current_ch}:{mo.group(1)}.**',
+                block
+            )
+            result.append(new_block)
+    return result
+
+
 def read_raw(path):
     with open(path, encoding="utf-8") as f:
         return f.read()
@@ -143,6 +167,7 @@ def group_by_chapter(blocks):
         chapters[ch] = split_rich_by_verse(chapters[ch])
         chapters[ch] = join_orphan_verse_numbers(chapters[ch])
         chapters[ch] = merge_split_paragraphs(chapters[ch])
+        chapters[ch] = expand_verse_refs(chapters[ch])
 
     return chapters
 
