@@ -142,6 +142,11 @@ def group_by_chapter(blocks):
     return chapters
 
 
+def ch_short_label(ch):
+    title = CHAPTER_TITLES.get(ch, f"Matthew {ch}")
+    return title.split(" — ")[0]
+
+
 def write_chapter(ch, blocks, prev_ch=None, next_ch=None):
     os.makedirs(OUT_DIR, exist_ok=True)
     path = os.path.join(OUT_DIR, f"{ch}.md")
@@ -156,10 +161,10 @@ date: {DATE}
 """
     if prev_ch:
         front_matter += f'prev_section: {prev_ch}\n'
-        front_matter += f'prev_label: "Chapter {prev_ch}"\n'
+        front_matter += f'prev_label: "{ch_short_label(prev_ch)}"\n'
     if next_ch:
         front_matter += f'next_section: {next_ch}\n'
-        front_matter += f'next_label: "Chapter {next_ch}"\n'
+        front_matter += f'next_label: "{ch_short_label(next_ch)}"\n'
     front_matter += "---\n"
 
     title = CHAPTER_TITLES.get(ch, f"Matthew {ch}")

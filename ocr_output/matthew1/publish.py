@@ -108,6 +108,13 @@ def format_chapter_content(sections_list):
     return "\n\n---\n\n".join(parts)
 
 
+def ch_short_label(ch):
+    for c, _, title in CHAPTER_STARTS:
+        if c == ch:
+            return title.split(" — ")[0]
+    return f"Ch {ch}"
+
+
 def write_chapter(ch, content, title, prev_ch=None, next_ch=None):
     os.makedirs(OUT_DIR, exist_ok=True)
     path = os.path.join(OUT_DIR, f"{ch}.md")
@@ -122,10 +129,10 @@ date: {DATE}
 """
     if prev_ch:
         front += f'prev_section: {prev_ch}\n'
-        front += f'prev_label: "Chapter {prev_ch}"\n'
+        front += f'prev_label: "{ch_short_label(prev_ch)}"\n'
     if next_ch:
         front += f'next_section: {next_ch}\n'
-        front += f'next_label: "Chapter {next_ch}"\n'
+        front += f'next_label: "{ch_short_label(next_ch)}"\n'
     front += "---\n"
 
     with open(path, "w", encoding="utf-8") as f:
