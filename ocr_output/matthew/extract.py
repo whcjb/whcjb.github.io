@@ -47,6 +47,7 @@ def spans_to_md(block):
 
         t = span["text"]
         flags = span.get("flags", 0)
+        is_superscript = bool(flags & 1)
         is_bold = bool(flags & 16)
         is_italic = bool(flags & 2)
 
@@ -54,6 +55,11 @@ def spans_to_md(block):
         if not stripped:
             if t and parts and not parts[-1].endswith(' '):
                 parts.append(' ')
+            i += 1
+            continue
+
+        # Inline footnote reference: superscript + small size + digit-only content
+        if is_superscript and stripped.isdigit() and span.get("size", 99) < FOOTNOTE_SIZE_MAX + 2:
             i += 1
             continue
 
