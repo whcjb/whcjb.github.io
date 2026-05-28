@@ -83,6 +83,15 @@ def get_first_span(block):
     return spans[0] if spans else None
 
 
+def get_first_nonempty_span(block):
+    """Return the first span with non-whitespace text (skips leading NBSP/space spans)."""
+    for line in block.get("lines", []):
+        for span in line.get("spans", []):
+            if span.get("text", "").strip():
+                return span
+    return None
+
+
 def is_page_header(block):
     if block["bbox"][1] > HEADER_Y_MAX:
         return False
@@ -361,9 +370,16 @@ def process_pdf():
                 verse_buf.append(block)
 
             elif in_verse_section:
-                flush_verse_buf()
-                in_verse_section = False
-                handle_commentary(block)
+                # Non-verse-number block: verse continuation (non-bold first real span)
+                # or commentary start (bold "Matthew N:N." marker).
+                # Must use get_first_nonempty_span to skip leading NBSP spans.
+                first_span = get_first_nonempty_span(block)
+                if verse_buf and first_span and not bool(first_span.get("flags", 0) & 16):
+                    verse_buf.append(block)
+                else:
+                    flush_verse_buf()
+                    in_verse_section = False
+                    handle_commentary(block)
 
             else:
                 handle_commentary(block)
