@@ -460,6 +460,38 @@ for is_c, grp_lines in classify_lines_by_centering(block['lines'], cfg):
 
 **遗漏症状**：解经新段（如 Calvin 引一节经文短语开启评论）被并入上一段尾。例：「*Are most surely believed among us* The participle πεπληροφορημένα...」如果不拆段就会粘在前一段「...palmed upon the world.」之后。
 
+### 4.5d 居中检测：宽行多行经文引用必须按内容信号识别
+
+`classify_lines_by_centering` 现要求 `lm > 2 and rm > 2` 才算居中候选，因为这条件能可靠区分「窄列两端对齐块引用」（如 LUKE 1:76-80 章首每行 lm=4.8）。但**多行居中经文的前几行如果文字够宽就会顶到 body 边缘（lm=0, rm=0），靠 margin 检测不出来**。例 (calvin_matai_make1.pdf 第 90 页)：
+
+```
+"The sun shall be no more thy light by day...       cx=306 lm=0  rm=0    ← 宽行
+unto thee: but the Lord shall be unto thee...       cx=306 lm=0  rm=0    ← 宽行
+60:19.)                                             cx=306 lm=183 rm=183 ← 锚点
+```
+
+3 行 cx 都对齐页中心，第 3 行明显居中（锚点），前 2 行靠 margin 看不出。
+
+**修复（已在 classify_lines_by_centering 实现）**：在 closing-quote promotion 之后加一段开引号 promotion：
+
+```python
+# 找以 " ' " 起首、cx 居中、向前 ≤4 行内能 cx-aligned 走到已判居中锚点的行 →
+# 把开引号行连同中间几行一并提升为居中。
+for i in range(len(classified) - 1):
+    if classified[i][0]: continue
+    text = classified[i][2]
+    if not text or text[0] not in ('"', '“', '‘'): continue
+    if not _cx_aligned(i): continue
+    for j in range(i + 1, min(len(classified), i + 5)):
+        if not _cx_aligned(j): break
+        if classified[j][0]:
+            for k in range(i, j):
+                classified[k][0] = True
+            break
+```
+
+**为什么安全**：触发条件三个同时满足（开引号起首 + cx 严格对齐 + 4 行内有锚点），普通正文 paragraph 末几行的 cx 不会精确在 306（短行会偏左），普通行也不以开引号起首。
+
 ### 4.6 表格 `<td>` 内脚注引用：必须转为 HTML 上标
 
 **症状**：圣经经文表格某列出现字面文字 `[^44]`，而非上标链接。

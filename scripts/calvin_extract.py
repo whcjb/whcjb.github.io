@@ -479,6 +479,36 @@ def classify_lines_by_centering(lines, cfg):
             if classified[i - 1][2].endswith(('"', ',"', ';"', '."', '"', ',"')):
                 classified[i - 1][0] = True
 
+    # Promote wide scripture-quote heads. When a multi-line centered quotation
+    # has its top lines wide enough to span the full body width, the per-line
+    # margin signal vanishes (lm=0/rm=0, indistinguishable from justified body
+    # text). Detect by content: a line that begins with an opening curly quote
+    # AND has cx pinned to page center AND can reach an already-centered line
+    # (citation anchor) within a few cx-aligned steps forward → promote the
+    # opening-quote line and every line up to that anchor.
+    def _cx_aligned(idx):
+        spans = [s for s in classified[idx][1].get('spans', []) if s['text'].strip()]
+        if not spans:
+            return False
+        cx = (spans[0]['bbox'][0] + spans[-1]['bbox'][2]) / 2
+        return abs(cx - page_cx) < 3
+
+    for i in range(len(classified) - 1):
+        if classified[i][0]:
+            continue
+        text = classified[i][2]
+        if not text or text[0] not in ('"', '“', '‘'):
+            continue
+        if not _cx_aligned(i):
+            continue
+        for j in range(i + 1, min(len(classified), i + 5)):
+            if not _cx_aligned(j):
+                break
+            if classified[j][0]:
+                for k in range(i, j):
+                    classified[k][0] = True
+                break
+
     groups = []
     for is_c, line, _ in classified:
         if groups and groups[-1][0] == is_c:
