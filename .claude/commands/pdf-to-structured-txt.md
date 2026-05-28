@@ -2640,6 +2640,76 @@ layout: default
 
 注意 Python f-string 中 `{{{{ ... }}}}` → Liquid `{{ ... }}`。
 
+#### 发布脚本：共观福音经文号展开（`expand_verse_refs`）
+
+**问题**：平行福音注释中，每节注释的标题 block 是 `**26.**` 这样的裸数字——没有书卷和章信息。在多福音书共用一章页面时，导航栏里 `7:29`、`10:1` 等完全无法区分是马太、路加还是马可。
+
+**修复**：publish.py 的处理链末尾加 `expand_verse_refs`，利用每个 `## MATTHEW/MARK/LUKE/JOHN N:M` 节头维护当前书卷和章号，将裸 `**N.**` 展开为 `**Matthew 11:26.**` 这样的完整形式：
+
+```python
+def expand_verse_refs(blocks):
+    """仅用于共观福音：把裸 **N.** 展开为 **Book Ch:N.**"""
+    result = []
+    current_book = None
+    current_ch = None
+    for block in blocks:
+        if block.startswith('## '):
+            m = re.match(r'^## (MATTHEW|MARK|LUKE|JOHN) (\d+):', block)
+            if m:
+                current_book = m.group(1).capitalize()
+                current_ch = int(m.group(2))
+            result.append(block)
+        elif block.startswith('<table') or not current_book:
+            result.append(block)
+        else:
+            new_block = re.sub(
+                r'^\*\*(\d+)\.\*\*',
+                lambda mo: f'**{current_book} {current_ch}:{mo.group(1)}.**',
+                block
+            )
+            result.append(new_block)
+    return result
+```
+
+在 `group_by_chapter` 处理链末尾调用：
+
+```python
+for ch in chapters:
+    chapters[ch] = split_rich_by_verse(chapters[ch])
+    chapters[ch] = join_orphan_verse_numbers(chapters[ch])
+    chapters[ch] = merge_split_paragraphs(chapters[ch])
+    chapters[ch] = expand_verse_refs(chapters[ch])   # ← 共观福音专用
+```
+
+**⚠️ 仅共观福音需要此步**；单书注释（使徒行传、腓立比书等）的裸 `**N.**` 无歧义，不需要展开。
+
+#### 导航栏 JS：共观福音显示书卷简称
+
+`expand_verse_refs` 产生 `**Matthew 11:26.**` 格式后，`_layouts/calvin-en.html` 的 JS 有两套路径：
+
+| 格式 | 匹配规则 | Pill 标签 | toggle 前缀 |
+|------|---------|----------|------------|
+| Format A: `Book Ch:N.`（共观福音） | `^([A-Z][a-z]+) (\d+):(\d+)\.$` | `Matt 11:26`（含书卷简称） | 无 |
+| Format B: 裸 `N.`（单书注释） | `^\d+\.$` | `26`（裸数字） | `v` |
+
+```javascript
+var mFull = t.match(/^([A-Z][a-z]+) (\d+):(\d+)\.$/);
+if (mFull) {
+  anchorId  = 'v-' + mFull[1].slice(0,4).toLowerCase() + '-' + mFull[2] + '-' + mFull[3];
+  pillLabel = mFull[1].slice(0,4) + ' ' + mFull[2] + ':' + mFull[3];   // "Matt 11:26"
+} else if (/^\d+\.$/.test(t)) {
+  var num = t.slice(0, -1);
+  anchorId  = 'v-' + num;
+  pillLabel = num;   // "26"
+}
+// toggle 标签
+var prefix = /^[A-Z]/.test(entries[0].pillLabel) ? '' : 'v';
+label.textContent = prefix + entries[0].pillLabel
+  + (entries.length > 1 ? '–' + entries[entries.length-1].pillLabel : '');
+```
+
+**效果**：共观福音页的导航栏显示 `Matt 11:1  Luke 7:29  Luke 10:1 …`，不同书卷一目了然；toggle 显示 `Matt 11:1–Matt 11:29`（无 `v` 前缀）。单书注释页保持原有 `v1–29` 样式，无改动。
+
 ### CCEL 质检 Checklist
 
 **提取阶段（raw txt）**：
@@ -2657,5 +2727,6 @@ layout: default
 - [ ] 无独立 `CHAPTER N` 行出现在章节内容中（`grep "^CHAPTER" calvin/BOOK-en/*.md`）
 - [ ] 随机抽查 3 章，每节注释独立成段，无相邻节号合并
 - [ ] **纯文本 raw**：`grep -rn "^\d\+\. [A-Z]" calvin/BOOK-en/*.md | grep -v "^<"` → **必须为空**（有则 `bold_verse_starts` 缺失，行首裸 `N.` 会被 Kramdown 渲染为有序列表）
+- [ ] **共观福音**：`grep -c "^\*\*[0-9]\+\.\*\*" calvin/BOOK-en/*.md` → **必须为 0**（有则 `expand_verse_refs` 未生效，导航栏无书卷名）
 - [ ] 末章内容完整
 - [ ] `## Book N:M-P` 格式的经文标题正确居中显示

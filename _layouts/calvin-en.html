@@ -230,12 +230,6 @@ layout: default
 /* ── Verse number anchors in commentary ───────────── */
 .calvin-en-content .verse-anchor {
   cursor: pointer;
-  color: #2e7d32;
-  border-bottom: 1px dotted #a5d6a7;
-}
-.calvin-en-content .verse-anchor:hover {
-  color: #1b5e20;
-  border-bottom-style: solid;
 }
 </style>
 
@@ -272,11 +266,11 @@ layout: default
 
     var anchorId, pillLabel;
 
-    // Format A: "Book Ch:N." e.g. "Matthew 11:26."
+    // Format A: "Book Ch:N." e.g. "Matthew 11:26." — include book abbreviation in pill
     var mFull = t.match(/^([A-Z][a-z]+) (\d+):(\d+)\.$/);
     if (mFull) {
       anchorId  = 'v-' + mFull[1].slice(0,4).toLowerCase() + '-' + mFull[2] + '-' + mFull[3];
-      pillLabel = mFull[2] + ':' + mFull[3];   // "11:26"
+      pillLabel = mFull[1].slice(0,4) + ' ' + mFull[2] + ':' + mFull[3];   // "Matt 11:26"
     } else if (/^\d+\.$/.test(t)) {
       // Format B: bare "N." — check it's a single verse marker (not scripture table)
       var verseCount = 0;
@@ -317,11 +311,14 @@ layout: default
   });
 
   // Update toggle label
+  // Format A pills already contain book name ("Matt 11:1"), so no "v" prefix needed.
+  // Format B pills are bare numbers, keep "v" prefix.
   var label = document.getElementById('verse-nav-label');
+  var prefix = /^[A-Z]/.test(entries[0].pillLabel) ? '' : 'v';
   if (entries.length > 1) {
-    label.textContent = 'v' + entries[0].pillLabel + '–' + entries[entries.length-1].pillLabel;
+    label.textContent = prefix + entries[0].pillLabel + '–' + entries[entries.length-1].pillLabel;
   } else {
-    label.textContent = 'v' + entries[0].pillLabel;
+    label.textContent = prefix + entries[0].pillLabel;
   }
 
   document.getElementById('verse-nav').style.display = 'block';
