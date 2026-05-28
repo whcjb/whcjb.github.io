@@ -18,7 +18,7 @@ def split_rich_by_verse(blocks):
     覆盖裸数字（**16.**）和完整格式（**Luke 10:16.**）两种。"""
     result = []
     for block in blocks:
-        if block.startswith('##') or block.startswith('<table'):
+        if block.startswith('##') or block.startswith('<table') or block.startswith('<p'):
             result.append(block)
             continue
         parts = _VERSE_MARKER.split(block)
@@ -66,6 +66,8 @@ def merge_split_paragraphs(blocks):
             if block.startswith('##') or next_block.startswith('##'):
                 break
             if block.startswith('<table') or next_block.startswith('<table'):
+                break
+            if block.startswith('<p') or next_block.startswith('<p'):
                 break
             if _continuation_start(next_block):
                 block = block.rstrip() + ' ' + next_block.lstrip()

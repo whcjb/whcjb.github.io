@@ -14,6 +14,9 @@ SKIP_PAGES = 29       # skip pages 1-29 (title, TOC, CCEL notice, prefaces, titl
 HEADER_Y_MAX = 62     # running page header zone
 FOOTNOTE_SIZE_MAX = 9.5
 PAGE_NUM_X_MIN = 450  # page numbers at far right
+PAGE_W = 612.0        # page width
+BODY_LEFT = 108.0     # normal body text left margin
+BODY_RIGHT = 504.0    # normal body text right margin
 
 
 def get_first_span(block):
@@ -177,6 +180,50 @@ def fix_hyphenation(text):
     return re.sub(r'-\s+([a-z])', r'\1', text)
 
 
+def classify_lines_by_centering(lines):
+    """Split block lines into groups of (is_centered, lines).
+
+    Centered lines: narrow (< 50% body width) with center_x ≈ page center.
+    Also promotes the immediately preceding quote line (ending with closing quote)
+    into the centered group, since in the PDF the scripture quote and its
+    reference form a single visual block even though the quote fills full width.
+    """
+    body_w = BODY_RIGHT - BODY_LEFT
+    page_cx = PAGE_W / 2
+
+    # Classify each non-empty line
+    classified = []
+    for line in lines:
+        spans = [s for s in line['spans'] if s['text'].strip()]
+        if not spans:
+            continue
+        lx0 = spans[0]['bbox'][0]
+        lx1 = spans[-1]['bbox'][2]
+        w = lx1 - lx0
+        cx = (lx0 + lx1) / 2
+        text = ''.join(s['text'] for s in spans).strip()
+        # Narrow AND centered → clearly a centered element (scripture reference etc.)
+        is_centered = w < body_w * 0.50 and abs(cx - page_cx) < 30
+        classified.append([is_centered, line, text])
+
+    # Promote preceding quote line: if line[i] is centered and line[i-1] ends
+    # with a closing quotation mark, treat line[i-1] as centered too.
+    for i in range(1, len(classified)):
+        if classified[i][0] and not classified[i - 1][0]:
+            prev_text = classified[i - 1][2]
+            if prev_text.endswith(('"', ',"', ';"', '."', '”', ',”')):
+                classified[i - 1][0] = True
+
+    # Group consecutive same-type lines
+    groups = []
+    for is_centered, line, _text in classified:
+        if groups and groups[-1][0] == is_centered:
+            groups[-1][1].append(line)
+        else:
+            groups.append([is_centered, [line]])
+    return groups
+
+
 def process_pdf():
     doc = fitz.open(PDF_PATH)
     total = len(doc)
@@ -236,11 +283,16 @@ def process_pdf():
                         last_section_upper = label
                 continue
 
-            # Body block
-            md = spans_to_md(block.get("lines", []))
-            md = fix_hyphenation(md)
-            if md:
-                output_blocks.append(md)
+            # Body block — split by centered lines
+            for is_centered, grp_lines in classify_lines_by_centering(block.get("lines", [])):
+                md = spans_to_md(grp_lines)
+                md = fix_hyphenation(md)
+                if not md:
+                    continue
+                if is_centered:
+                    output_blocks.append(f'<p style="text-align:center">{md}</p>')
+                else:
+                    output_blocks.append(md)
 
     doc.close()
     write_output(output_blocks)
