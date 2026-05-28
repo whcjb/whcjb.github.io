@@ -2348,6 +2348,7 @@ def handle_commentary(block):
 is_superscript = bool(flags & 1)
 # 行内脚注引用：上标位 + 小字号 + 纯数字 → 跳过
 if is_superscript and stripped.isdigit() and span.get("size", 99) < FOOTNOTE_SIZE_MAX + 2:
+    parts.append(f"<sup>{stripped}</sup>")
     i += 1
     continue
 ```
