@@ -494,7 +494,17 @@ def extract_ccel_harmony(cfg):
     print(f"Total pages: {total}, processing {cfg['skip_pages'] + 1}–{total}")
 
     output_blocks    = []
+    pending_fns      = []   # footnote defs buffered until next section header / EOF
     last_section_upper = None
+
+    def flush_section_header(label):
+        # Emit any pending footnote defs from the just-finished section BEFORE
+        # the new header — keeps defs out of the body paragraph flow so blank
+        # lines around them don't fragment the paragraph that surrounds them.
+        if pending_fns:
+            output_blocks.extend(pending_fns)
+            pending_fns.clear()
+        output_blocks.append(f'\n## {label}\n')
 
     for page_idx in range(cfg['skip_pages'], total):
         page   = doc[page_idx]
@@ -512,7 +522,7 @@ def extract_ccel_harmony(cfg):
             if ccel_harmony_is_footnote(block, cfg):
                 if cfg.get('extract_footnotes'):
                     for num, fn_text in parse_ccel_footnote_block(block):
-                        output_blocks.append(f'[^{num}]: {fn_text}')
+                        pending_fns.append(f'[^{num}]: {fn_text}')
                 continue
             text = get_block_text(block).strip()
             if not text:
@@ -521,6 +531,9 @@ def extract_ccel_harmony(cfg):
             if ccel_harmony_is_index_start(block):
                 print(f'Stopping at index on page {page_idx + 1}')
                 doc.close()
+                if pending_fns:
+                    output_blocks.extend(pending_fns)
+                    pending_fns.clear()
                 if cfg.get('mojibake_fixes'):
                     output_blocks = [apply_mojibake_fixes(b, cfg['mojibake_fixes']) for b in output_blocks]
                 write_txt_output(output_blocks, cfg['out'])
@@ -529,7 +542,7 @@ def extract_ccel_harmony(cfg):
 
             if ccel_harmony_is_section_header(block):
                 norm = ccel_harmony_norm(text).upper()
-                output_blocks.append(f'\n## {norm}\n')
+                flush_section_header(norm)
                 last_section_upper = norm
                 continue
 
@@ -540,11 +553,11 @@ def extract_ccel_harmony(cfg):
                 x0 = block['bbox'][0]
                 if x0 > 118:
                     if label != last_section_upper:
-                        output_blocks.append(f'\n## {label}\n')
+                        flush_section_header(label)
                         last_section_upper = label
                 else:
                     if last_section_upper is None:
-                        output_blocks.append(f'\n## {label}\n')
+                        flush_section_header(label)
                         last_section_upper = label
                 continue
 
@@ -566,6 +579,9 @@ def extract_ccel_harmony(cfg):
                     output_blocks.append(md)
 
     doc.close()
+    if pending_fns:
+        output_blocks.extend(pending_fns)
+        pending_fns.clear()
     if cfg.get('mojibake_fixes'):
         output_blocks = [apply_mojibake_fixes(b, cfg['mojibake_fixes']) for b in output_blocks]
     write_txt_output(output_blocks, cfg['out'])

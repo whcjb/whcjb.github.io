@@ -2562,7 +2562,9 @@ CCEL 单列格式（matthew1 等）脚注的完整管线：
 
 3. **配置启用**：在 `VOLUMES` cfg 中加 `'extract_footnotes': True`（默认关闭，避免影响其他格式）；同时确保 `footnote_size_max` 设置正确（matthew1 用 9.5）。
 
-4. **publish 侧合并守卫** `harmony_utils.merge_split_paragraphs`：以 `[^` 开头的 block 不参与段落合并。理由：脚注定义文本经常以介词/连词收尾（拉丁原文换行处），原 `_ends_with_function_word` 会触发把后续正文段并入定义里。
+4. **脚注定义不插入正文流，按 section 缓存** `extract_ccel_harmony`：用 `pending_fns` buffer 收集脚注定义，每次遇到下一个 `## SECTION` 头时把它们一次性 flush 到 output_blocks 末尾再写入新 header；文件末同样 flush 一次。**理由**：原先按 PyMuPDF 扫描顺序插入，会落在页面中部正文 block 之间，每个 `[^N]: text` 是 Markdown 块级元素，周围空行会把跨页连续的同一逻辑段（如「...Besides,」+「those whom Luke follows...」）切成两个 `<p>`。Kramdown 虽然会把定义提取到页底渲染，但 source 里被切碎的段落已经回不来了。
+
+5. **publish 侧合并守卫** `harmony_utils.merge_split_paragraphs`：以 `[^` 开头的 block 不参与段落合并。脚注定义文本经常以介词/连词收尾（拉丁原文换行处），原 `_ends_with_function_word` 会触发把后续正文段并入定义里。
 
 **与 Ages 格式的区别**：Ages 脚注区有 `FtN` 前缀标签；CCEL 无前缀，纯数字。Ages 标签经过 `ft→f` 归一化后输出 `[^fN]: text`；CCEL 直接输出 `[^N]: text`，无前缀。
 
