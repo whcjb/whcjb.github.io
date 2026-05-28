@@ -77,6 +77,12 @@ def join_orphan_verse_numbers(blocks):
     return result
 
 
+def _continuation_start(text):
+    """True if block's actual first letter is lowercase (strips leading * ** *** markers)."""
+    t = re.sub(r'^\*+', '', text.lstrip())
+    return bool(t) and t[0].islower()
+
+
 def merge_split_paragraphs(blocks):
     merged = []
     i = 0
@@ -88,8 +94,7 @@ def merge_split_paragraphs(blocks):
                 break
             if block.startswith('<table') or next_block.startswith('<table'):
                 break
-            next_start = next_block.lstrip()[:1]
-            if next_start.islower():
+            if _continuation_start(next_block):
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
