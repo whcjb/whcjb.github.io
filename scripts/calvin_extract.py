@@ -403,6 +403,61 @@ def ccel_harmony_norm(text):
     return re.sub(r':\s+(\d)', r':\1', text)
 
 
+def split_block_by_columns(block, page_mid, col_gap_min=50):
+    """If `block` is laid out in N parallel columns (e.g. CCEL synoptic
+    genealogy or 3-gospel parallel passages), return list of N line-lists
+    ordered left-to-right. Otherwise None.
+
+    Detection: cluster line x0 values; if 2+ clusters separated by gaps
+    > col_gap_min, treat as multi-column. Each line is assigned to its
+    nearest cluster center. Every column needs ≥ 3 lines to qualify.
+    """
+    lines = block.get('lines', [])
+    if len(lines) < 6:
+        return None
+
+    line_x0s = []
+    for line in lines:
+        spans = [s for s in line.get('spans', []) if s['text'].strip()]
+        if not spans:
+            continue
+        line_x0s.append((spans[0]['bbox'][0], line))
+
+    if len(line_x0s) < 6:
+        return None
+
+    # 1D 聚类：按 x0 排序，遇到 > col_gap_min 的跳变就切一刀
+    sorted_x0 = sorted({round(x) for x, _ in line_x0s})
+    if not sorted_x0:
+        return None
+    clusters = [[sorted_x0[0]]]
+    for x in sorted_x0[1:]:
+        if x - clusters[-1][-1] < col_gap_min:
+            clusters[-1].append(x)
+        else:
+            clusters.append([x])
+
+    if len(clusters) < 2:
+        return None
+
+    centers = [sum(c) / len(c) for c in clusters]
+
+    # 把每行分到最近的列；同一列内按 y 排序保持上下顺序
+    column_lines = [[] for _ in centers]
+    for x0, line in line_x0s:
+        best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
+        column_lines[best].append(line)
+
+    # 收紧判定：每列至少 5 行；最小列至少是最大列的 1/3
+    # （否则正文块里一两行居中经文会把整块误判为多列）
+    sizes = [len(c) for c in column_lines]
+    if min(sizes) < 5 or min(sizes) * 3 < max(sizes):
+        return None
+    for col in column_lines:
+        col.sort(key=lambda l: l['bbox'][1])
+    return column_lines
+
+
 def split_lines_by_paragraph_indent(lines, body_left,
                                     indent_min=10, indent_max=60):
     """Split a sequence of lines into paragraph groups where a non-first line
@@ -593,6 +648,21 @@ def extract_ccel_harmony(cfg):
 
             # Body block
             if cfg.get('centering'):
+                # Two-column synoptic table (chapter heading scripture in
+                # parallel gospels): extract each column separately so the
+                # verse text isn't interleaved into gibberish.
+                cols = split_block_by_columns(block, cfg['page_w'] / 2)
+                if cols:
+                    # 用 col 索引标记每段，发布端按列汇总，渲染为 N 栏并列表格
+                    n_cols = len(cols)
+                    for col_idx, col_lines in enumerate(cols):
+                        md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
+                        if md:
+                            output_blocks.append(
+                                f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}'
+                            )
+                    continue
+
                 for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
                     if is_c:
                         md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))

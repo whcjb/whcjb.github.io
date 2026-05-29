@@ -166,36 +166,94 @@ def expand_verse_refs(blocks):
     return result
 
 
-def _is_scripture_block(block):
-    """True if block is pure scripture text: starts with **N.** and has no italic markers.
+# 提取阶段对多列章首经文用 <!--SCRIPTURE col=N of=M--> 标记每段所属列
+_SCRIPTURE_COL_RE = re.compile(r'^<!--SCRIPTURE col=(\d+) of=(\d+)-->\s*\n?', re.DOTALL)
 
-    CCEL format: scripture paragraph = consecutive bold verse numbers + plain text.
-    Commentary = **N.** followed by *italic quotes* + Calvin's notes.
+
+def _scripture_col_info(block):
+    """若 block 是多列经文标记，返回 (col_idx, n_cols)；否则 None。"""
+    m = _SCRIPTURE_COL_RE.match(block.strip())
+    if m:
+        return int(m.group(1)), int(m.group(2))
+    return None
+
+
+def _is_scripture_block(block):
+    """True if block is pure scripture text.
+
+    1. 多列标记块（<!--SCRIPTURE col=N of=M-->）
+    2. 经典格式：**N.** 起首且无任何斜体标记 (Calvin commentary 必含斜体引语)
     """
-    if not re.match(r'^\*\*\d+\.\*\*', block.strip()):
+    stripped = block.strip()
+    if _scripture_col_info(block) is not None:
+        return True
+    if not re.match(r'^\*\*\d+\.\*\*', stripped):
         return False
-    stripped = re.sub(r'\*\*\d+\.\*\*', '', block)
-    return '*' not in stripped
+    no_verse_nums = re.sub(r'\*\*\d+\.\*\*', '', block)
+    return '*' not in no_verse_nums
 
 
 def _md_bold_to_html(text):
     """Convert **text** markers to <strong>text</strong> for use inside raw HTML."""
+    text = _SCRIPTURE_COL_RE.sub('', text)
     return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
 
 
 def _scripture_box(header, text):
-    """Render scripture block as a bordered box matching the PDF layout.
+    """Render scripture block(s) as a bordered box matching the PDF layout.
 
-    PDF format: thin border, blue passage reference at top, scripture text below
-    with inline bold verse numbers (1. 2. 3. ...).
-    Header e.g. 'LUKE 1:1-4; MATTHEW 3:1' → displayed as 'Luke 1:1-4; Matthew 3:1'.
+    `text` 可以是：
+    - 字符串：单段经文，渲染为单 <p>
+    - 字符串列表：
+      * 都没有列标记 → 多段单栏经文，依次渲染为独立 <p>
+      * 含列标记 <!--SCRIPTURE col=N of=M--> → 共观福音平行多栏，渲染为
+        <table class="scripture-table"> N 栏并列，列头取自 header 按 `;` 拆分
+
+    Header e.g. 'LUKE 1:1-4; MATTHEW 3:1' → 'Luke 1:1-4; Matthew 3:1'。
     """
     display = ' '.join(w.capitalize() if w.isalpha() else w for w in header.split())
-    body = _md_bold_to_html(text)
+    paras = text if isinstance(text, list) else [text]
+
+    col_infos = [_scripture_col_info(p) for p in paras]
+    if any(ci is not None for ci in col_infos):
+        # 多栏渲染：按 col 聚合
+        n_cols = next(ci[1] for ci in col_infos if ci is not None)
+        col_paras = [[] for _ in range(n_cols)]
+        for p, ci in zip(paras, col_infos):
+            if ci is None:
+                continue   # 罕见：单栏块混在多栏组里，先丢弃
+            col_paras[ci[0]].append(_md_bold_to_html(p))
+
+        # 列标题来自 header 按 `;` 拆分
+        col_titles_raw = [s.strip() for s in header.split(';')]
+        col_titles = [
+            ' '.join(w.capitalize() if w.isalpha() else w for w in t.split())
+            for t in col_titles_raw
+        ]
+        # 若列数对不上，用占位
+        while len(col_titles) < n_cols:
+            col_titles.append(f'Column {len(col_titles)+1}')
+
+        thead = ''.join(f'<th>{ct}</th>' for ct in col_titles[:n_cols])
+        tds = []
+        for col_idx in range(n_cols):
+            cell = '\n'.join(f'<p>{p}</p>' for p in col_paras[col_idx])
+            tds.append(f'<td>{cell}</td>')
+        return (
+            '<div class="scripture-box scripture-box--multi">\n'
+            f'<p class="scripture-ref">{display}</p>\n'
+            '<table class="scripture-table">\n'
+            f'<thead><tr>{thead}</tr></thead>\n'
+            f'<tbody><tr>{"".join(tds)}</tr></tbody>\n'
+            '</table>\n'
+            '</div>'
+        )
+
+    body_html = '\n'.join(f'<p>{_md_bold_to_html(p)}</p>' for p in paras)
     return (
         '<div class="scripture-box">\n'
         f'<p class="scripture-ref">{display}</p>\n'
-        f'<p>{body}</p>\n'
+        f'{body_html}\n'
         '</div>'
     )
 
@@ -214,11 +272,37 @@ def process_section_blocks(header, body):
 
     result = []
 
-    # First block: render as scripture box if it's plain verse text
+    # 收集章首经文 block 群作为一个 scripture-box。包含：
+    # - **N.** 起首的纯经文段
+    # - <!--SCRIPTURE col=N of=M--> 多列标记段
+    # - <p style="text-align:center"> 居中段（PDF 在经文内的居中行如 Mark 1:13 短句）
+    # - 不以 **N.** 起首但无斜体的续接段（跨页/跨列时常见）
+    # 停在第一个带「斜体引语」或 **Book N:M.** 注释起首标记的 block。
+    def _is_commentary(block):
+        s = block.strip()
+        if re.match(r'^\*\*[A-Z][a-z]+ \d+:\d+', s):
+            return True   # **Matthew 4:5.** 等 Calvin 注释逐节标记
+        # 去掉 **bold** 后若仍有 *italic*，说明是注释里的经文引语
+        no_bold = re.sub(r'\*\*[^*]+\*\*', '', block)
+        if re.search(r'\*[^*\n]+\*', no_bold):
+            return True
+        return False
+
     comm_start = 0
-    if _is_scripture_block(blocks[0]):
-        result.append(_scripture_box(header, blocks[0]))
-        comm_start = 1
+    has_scripture = False
+    while comm_start < len(blocks):
+        b = blocks[comm_start]
+        if _is_commentary(b):
+            break
+        if _is_scripture_block(b) or b.strip().startswith('<p style=') or has_scripture:
+            has_scripture = has_scripture or _is_scripture_block(b)
+            comm_start += 1
+        else:
+            break
+    if has_scripture:
+        result.append(_scripture_box(header, blocks[:comm_start]))
+    else:
+        comm_start = 0
 
     # Commentary blocks through full pipeline
     if blocks[comm_start:]:
