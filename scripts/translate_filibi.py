@@ -95,14 +95,28 @@ def md5key(text: str) -> str:
     return hashlib.md5(text.encode('utf-8')).hexdigest()[:16]
 
 
-def call_claude(prompt: str, timeout: int = 300) -> str:
-    r = subprocess.run(
-        ['claude', '-p', SYSTEM],
-        input=prompt, capture_output=True, text=True, timeout=600
-    )
-    if r.returncode != 0:
-        raise RuntimeError(r.stderr[:400])
-    return r.stdout.strip()
+def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3) -> str:
+    """调用 claude CLI；遇到失败重试 max_retries 次（指数退避 5/15/30s）。"""
+    import time
+    last_err = ''
+    for attempt in range(max_retries):
+        if attempt:
+            wait = 5 * (3 ** (attempt - 1))
+            print(f'    [retry {attempt}] {last_err[:120]} | wait {wait}s', flush=True)
+            time.sleep(wait)
+        try:
+            r = subprocess.run(
+                ['claude', '-p', SYSTEM],
+                input=prompt, capture_output=True, text=True, timeout=timeout
+            )
+        except subprocess.TimeoutExpired as e:
+            last_err = f'TimeoutExpired({timeout}s)'
+            continue
+        if r.returncode == 0 and r.stdout.strip():
+            return r.stdout.strip()
+        last_err = (f'rc={r.returncode} stderr={r.stderr[:200]!r} '
+                    f'stdout={r.stdout[:120]!r}')
+    raise RuntimeError(f'claude CLI failed after {max_retries} retries: {last_err}')
 
 
 def translate_batch(texts: list) -> list:
