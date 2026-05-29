@@ -460,6 +460,87 @@ for is_c, grp_lines in classify_lines_by_centering(block['lines'], cfg):
 
 **遗漏症状**：解经新段（如 Calvin 引一节经文短语开启评论）被并入上一段尾。例：「*Are most surely believed among us* The participle πεπληροφορημένα...」如果不拆段就会粘在前一段「...palmed upon the world.」之后。
 
+### 4.5e CCEL 章首平行经文（共观福音 N 列表格）：必须按列拆分，按 PDF 渲染为表格
+
+**症状**：章首经文段读起来像乱码，两/三个福音逐行交错拼成散文，例如：「**23.** Jesus was supposed to be the son of **1.** The book of generation… Joseph, who was the son of And Abraham begat Isaac…」。还可能出现荒谬的伪节号（Matt 1 只有 17 节，却出现「**Matthew 1:34.**」「**Matthew 1:38.**」——其实是 Luke 3:34、3:38）。
+
+**原因**：CCEL Harmony 把多个福音的平行经文用并列 2-3 列展示，PDF 中是**一个文本块**，PyMuPDF 把所有行按 y 排序返回。naive 的 `ccel_spans_to_md` 直接按行拼接，左右列的行交替出现就成乱码。
+
+**修复：扫描每个 body block 之前，先尝试按列拆分**
+
+```python
+def split_block_by_columns(block, page_mid, col_gap_min=50):
+    """If block 是 N 列并列布局，返回 N 列各自的 line 列表（左→右）；否则 None。"""
+    lines = block.get('lines', [])
+    if len(lines) < 6: return None
+    line_x0s = []
+    for ln in lines:
+        sps = [s for s in ln.get('spans', []) if s['text'].strip()]
+        if sps: line_x0s.append((sps[0]['bbox'][0], ln))
+    if len(line_x0s) < 6: return None
+    # 1D 聚类：x0 排序后，gap > col_gap_min 切一刀
+    sorted_x0 = sorted({round(x) for x, _ in line_x0s})
+    clusters = [[sorted_x0[0]]]
+    for x in sorted_x0[1:]:
+        if x - clusters[-1][-1] < col_gap_min: clusters[-1].append(x)
+        else: clusters.append([x])
+    if len(clusters) < 2: return None
+    centers = [sum(c)/len(c) for c in clusters]
+    column_lines = [[] for _ in centers]
+    for x0, ln in line_x0s:
+        best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
+        column_lines[best].append(ln)
+    if min(len(c) for c in column_lines) < 3: return None
+    # 关键过滤：用「列交替信号」区分真多列 vs 正文+居中行
+    by_y = sorted(line_x0s, key=lambda p: p[1]['bbox'][1])
+    seq = [min(range(len(centers)), key=lambda i: abs(centers[i]-x)) for x, _ in by_y]
+    transitions = sum(1 for i in range(1, len(seq)) if seq[i] != seq[i-1])
+    if transitions / len(seq) < 0.20: return None
+    for col in column_lines:
+        col.sort(key=lambda l: l['bbox'][1])
+    return column_lines
+```
+
+**为什么用「列交替次数」而不是「列大小比例」过滤误判**：
+- 真平行经文（如 Matt 1:17 续接 4 行 + Luke 3:34-38 续接 17 行）列大小极不平均，比例 0.24 < 1/3，会被「最小列 ≥ 最大列 1/3」误杀
+- 真多列的特征是 **行按 y 排序时反复跨列**（L R L R …，转换率高）；正文里偶有居中经文则是 **B B B … C C C B B B**（转换率低）
+
+**输出 sentinel + 发布端表格渲染：**
+
+提取阶段每列输出附 sentinel 标记自身的列号 / 总列数：
+```python
+if cols := split_block_by_columns(block, cfg['page_w']/2):
+    for idx, col_lines in enumerate(cols):
+        md = ccel_spans_to_md(col_lines, cfg.get('footnote_size_max'))
+        if md:
+            output_blocks.append(f'<!--SCRIPTURE col={idx} of={len(cols)}-->\n{md}')
+    continue
+```
+
+`harmony_utils._scripture_box` 检测到 sentinel 时渲染为 `<table class="scripture-table">`，列头从 section header 按 `;` 拆分（如 `## MATTHEW 1:1-17; LUKE 3:23-38` → 列头 `Matthew 1:1-17` / `Luke 3:23-38`）。
+
+**`process_section_blocks` bundling 必须放宽：** 章首经文 box 要收集**所有**到首个真注释为止的 block，包含
+- `**N.**` 起首的纯经文段
+- `<!--SCRIPTURE col=...-->` 多列标记段
+- `<p style="text-align:center">` 居中段（PDF 经文中的短居中行如 Mark 1:13 单句）
+- 不以 `**N.**` 起首但无斜体的跨页续接段
+
+停止条件：block 以 `**Book Ch:N.**` 起首（Calvin 注释逐节标记），或去掉 `**bold**` 后还有 `*italic*` 引语。
+
+**配套 CSS（calvin-en 布局）：**
+```css
+.calvin-en-content .scripture-table { width:100%; border-collapse:collapse; }
+.calvin-en-content .scripture-table th,
+.calvin-en-content .scripture-table td { border:1px solid #888; padding:8px 12px; vertical-align:top; }
+.calvin-en-content .scripture-table th { color:#0085a1; font-weight:normal;
+                                          background:rgba(0,133,161,0.05); }
+```
+
+**质检：**
+- `grep "SCRIPTURE col=" calvin/BOOK/*.md` 应**为空**（marker 泄露则说明 bundling 没把多列段拉进 scripture-box）
+- 多列段的右栏末尾应见到该 gospel 末节（如 Luke 3:38 末句「the son of God」），否则可能因列大小过滤误杀导致丢段
+- 不应出现 `**Matthew 1:34.**` 等超出该卷实际节数的伪节号（典型征兆：右栏的 Luke 节号被左栏的 Matthew 注释 label 抓取）
+
 ### 4.5d 居中检测：宽行多行经文引用必须按内容信号识别
 
 `classify_lines_by_centering` 现要求 `lm > 2 and rm > 2` 才算居中候选，因为这条件能可靠区分「窄列两端对齐块引用」（如 LUKE 1:76-80 章首每行 lm=4.8）。但**多行居中经文的前几行如果文字够宽就会顶到 body 边缘（lm=0, rm=0），靠 margin 检测不出来**。例 (calvin_matai_make1.pdf 第 90 页)：
