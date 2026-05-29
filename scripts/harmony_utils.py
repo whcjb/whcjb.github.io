@@ -282,31 +282,21 @@ def process_section_blocks(header, body):
 
     result = []
 
-    # 收集章首经文 block 群作为一个 scripture-box。包含：
-    # - **N.** 起首的纯经文段
-    # - <!--SCRIPTURE col=N of=M--> 多列标记段
-    # - <p style="text-align:center"> 居中段（PDF 在经文内的居中行如 Mark 1:13 短句）
-    # - 不以 **N.** 起首但无斜体的续接段（跨页/跨列时常见）
-    # 停在第一个带「斜体引语」或 **Book N:M.** 注释起首标记的 block。
-    def _is_commentary(block):
-        s = block.strip()
-        if re.match(r'^\*\*[A-Z][a-z]+ \d+:\d+', s):
-            return True   # **Matthew 4:5.** 等 Calvin 注释逐节标记
-        # 去掉 **bold** 后若仍有 *italic*，说明是注释里的经文引语
-        no_bold = re.sub(r'\*\*[^*]+\*\*', '', block)
-        if re.search(r'\*[^*\n]+\*', no_bold):
-            return True
-        return False
-
+    # 收集章首经文 block 群作为一个 scripture-box。允许的 block：
+    # - **N.** 起首的纯经文段（_is_scripture_block 包含此情况）
+    # - <!--SCRIPTURE col=N of=M--> 多列标记段（_is_scripture_block 包含此情况）
+    # - <p style="text-align:center"> 居中段（章首经文里的居中行如 Mark 1:13 短句）
+    # 一旦遇到第一个非上述类型的 block 就停——注释段不可混入经文盒子，
+    # 即便首句没有斜体或 **Book Ch:N.** 标记（这是 Luke 2:1-7 等节常见情况）。
     comm_start = 0
     has_scripture = False
     while comm_start < len(blocks):
         b = blocks[comm_start]
-        if _is_commentary(b):
-            break
-        if _is_scripture_block(b) or b.strip().startswith('<p style=') or has_scripture:
-            has_scripture = has_scripture or _is_scripture_block(b)
+        if _is_scripture_block(b):
+            has_scripture = True
             comm_start += 1
+        elif b.strip().startswith('<p style='):
+            comm_start += 1   # 不算 scripture，但允许跟随
         else:
             break
     if has_scripture:
