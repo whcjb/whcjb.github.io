@@ -237,8 +237,18 @@ def _scripture_box(header, text):
         thead = ''.join(f'<th>{ct}</th>' for ct in col_titles[:n_cols])
         tds = []
         for col_idx in range(n_cols):
-            cell = '\n'.join(f'<p>{p}</p>' for p in col_paras[col_idx])
-            tds.append(f'<td>{cell}</td>')
+            # 跨页的同栏续接段在 PDF 中原本是一段连续经文，合并为单个 <p>
+            # 避免渲染出段间空隙。续接处末尾若是字母/连字符则按断词处理。
+            parts = col_paras[col_idx]
+            joined = parts[0] if parts else ''
+            for nxt in parts[1:]:
+                tail = joined.rstrip()
+                last = tail[-1:] if tail else ''
+                if last == '-':           # 断字续接，去连字符
+                    joined = tail[:-1] + nxt.lstrip()
+                else:
+                    joined = tail + ' ' + nxt.lstrip()
+            tds.append(f'<td><p>{joined}</p></td>')
         return (
             '<div class="scripture-box scripture-box--multi">\n'
             f'<p class="scripture-ref">{display}</p>\n'
