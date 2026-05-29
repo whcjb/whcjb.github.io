@@ -71,6 +71,17 @@ def _ends_with_function_word(text):
     return last_word in _FUNCTION_WORDS
 
 
+def _ends_mid_sentence(text):
+    """True 表示块末尾是中句标点（逗号/分号/冒号/连字符等），后必有续接。
+    剥掉尾部脚注引用 `[^N]`、粗/斜体标记后再判断。"""
+    t = text.rstrip()
+    # 剥脚注引用 [^N]
+    t = re.sub(r'\[\^\d+\]\s*$', '', t).rstrip()
+    # 剥粗/斜体收尾
+    t = re.sub(r'[\*_]+$', '', t).rstrip()
+    return bool(t) and t[-1] in ',;:-—'
+
+
 def _starts_new_quote(text):
     # opening curly/straight quote = standalone scripture paragraph, never merge
     return text[:1] in ('"', '\u201c', '\u2018')
@@ -128,9 +139,12 @@ def merge_split_paragraphs(blocks):
                 # else: previous block ends with punctuation → <p> is new centered element
             if next_block.startswith('<p'):
                 break
-            # 续行首字母小写，或当前块末尾是功能词（不可能是句末）
-            # 但如果下一块以开引号开头，是独立圣经引文段，不合并
-            if (_continuation_start(next_block) or _ends_with_function_word(block)) \
+            # 续行首字母小写、当前块末尾是功能词、或当前块末尾是中句标点
+            # （`,`/`;`/`:`/`-` 等，常见跨页断行）。下一块以开引号开头则是独立
+            # 圣经引文段，不合并。
+            if (_continuation_start(next_block)
+                    or _ends_with_function_word(block)
+                    or _ends_mid_sentence(block)) \
                     and not _starts_new_quote(next_block):
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
