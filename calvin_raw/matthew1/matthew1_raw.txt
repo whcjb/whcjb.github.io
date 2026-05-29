@@ -646,7 +646,11 @@ But if the mere sight of his Son, while still a child, led Zacharias to discours
 <!--SCRIPTURE col=1 of=2-->
 **23.**Jesus was supposed to be the son of Joseph, who was the son of Heli, **24.**Who was the son of Matthat, who was the son of Levi, who was the son of Melchi, who was the son of Janna, who was the son of Joseph, **25.**Who was the son of Matthias, who was the son of Amos, who was the son of Nahum, who was the son of Esli, who was the son of Nagge, **26.**Who was the son of Maath, who was the son of Mattahtias, who was the son of Semei, who was the son of Joseph, who was the son of Judah, **27.**Who was the son of Joanna, who was the son of Rhesa, who was the son of Zerubbabel, who was the son of Salathiel, who was the son of Neri, **28.**Who was the son of Melchi, who was the son of Addi, who was the son of Cosam, who was the son of Elmodam, who was the son, of Er, **29.**Who was the son of of Joses, who was the son of Eliezer, who was the son of Joriam, who was the son of Matthat, who was the son of Levi, **30.**Who was the son of Simeon, who was the son of Judah, who was the son of Joseph, who was the son of Jonan, who was the son of Eliakim, **31.**Who was the son of Meleah, who was the son of Mainan, who was the son of Mattatha, who was the son of Nathan, who was the son of David, **32.**Who was the son of Jesse, who was the son of Obed, who was the son of Boaz, who was the son of Salmah, who was the son of Nahshon, **33.**Who was the son of Amminadab, who was the son of Ram, who was the son of Hezron, who was the son of Pharez, who
 
-and from David till the Babylonish migration are fourteen generations; and from the was the son of Judah, **34.**Who was the son of Jacob, who was the son of Isaac, who was Babylonish migration till Christ are fourteen generations. the son of Abraham, who was the son of Terah, who was the son of Nahor, **35.**Who was the son of Serug, who was the son of Reu, who was the son of Peleg, who was the son of Heber, who was the son of Salah, **36.**Who was the son of Cainan, who was the son of Arphaxad, who was the son of Shem, who was the son of Noah, who was the son of Lamech, **37.**Who was the son of Methuselah, who was the son of Enoch, who was the son of Jared, who was the son of Mahalaleel, who was the son of Cainan, **38.**Who was the son of Enos, who was the son of Seth, who was the son of Adam, who was the son of God.
+<!--SCRIPTURE col=0 of=2-->
+and from David till the Babylonish migration are fourteen generations; and from the Babylonish migration till Christ are fourteen generations.
+
+<!--SCRIPTURE col=1 of=2-->
+was the son of Judah, **34.**Who was the son of Jacob, who was the son of Isaac, who was the son of Abraham, who was the son of Terah, who was the son of Nahor, **35.**Who was the son of Serug, who was the son of Reu, who was the son of Peleg, who was the son of Heber, who was the son of Salah, **36.**Who was the son of Cainan, who was the son of Arphaxad, who was the son of Shem, who was the son of Noah, who was the son of Lamech, **37.**Who was the son of Methuselah, who was the son of Enoch, who was the son of Jared, who was the son of Mahalaleel, who was the son of Cainan, **38.**Who was the son of Enos, who was the son of Seth, who was the son of Adam, who was the son of God.
 
 As all are not agreed about these two genealogies, which are given by Matthew and Luke, we must first see whether both trace the genealogy of Christ from Joseph, or whether Matthew only traces it from Joseph, and Luke from Mary. Those who are of this latter opinion have a plausible ground for their distinction in the diversity of the names: and certainly, at first sight, nothing seems more improbable than that Matthew and Luke*,* who differ so widely from each other, give one and the same genealogy. For from David to Salathiel, and again from Zerubbabel till Joseph, the names are totally different.
 
@@ -2798,7 +2802,11 @@ small a matter: for those who ascribe righteousness to the merit of works must b
 ## MATTHEW 5:31-32; LUKE 16:18
 
 
-**18.**Whosoever putteth away his wife, and marrieth another, committeth adultery: and **31.**Again, it hath been said, Whoever shall put away his wife, let him give her a writing whosoever marrieth a woman put away from her husband committeth adultery. of divorcement.[^408] **32.**But I say to you, That whosoever shall put away his wife, except on account of unchastity, causeth her to commit adultery: and whosoever shall marry a woman that is put away committeth adultery.
+<!--SCRIPTURE col=0 of=2-->
+**31.**Again, it hath been said, Whoever shall put away his wife, let him give her a writing of divorcement.[^408] **32.**But I say to you, That whosoever shall put away his wife, except on account of unchastity, causeth her to commit adultery: and whosoever shall marry a woman that is put away committeth adultery.
+
+<!--SCRIPTURE col=1 of=2-->
+**18.**Whosoever putteth away his wife, and marrieth another, committeth adultery: and whosoever marrieth a woman put away from her husband committeth adultery.
 
 **Matthew 5:31****.** *Whosoever shall put away his wife.* As a more suitable occasion for discussing and explaining this doctrine at greater length will afterwards occur, (Matthew 19:9,) I shall now state briefly what Christ says in this passage. As the Jews falsely imagined that they discharged their whole duty toward God, when they kept the law in a national manner, so whatever the national law did not forbid, they foolishly supposed to be lawful. Divorces, which husbands were wont to give to their wives, had not been prohibited by Moses as to external order, but only, for the sake of restraining lewdness, he had ordered that “a bill of divorcement” should be given to the wives who were put away, (Deuteronomy 24:1.) It was a sort of testimonial of freedom, so that the woman was afterwards free from the yoke and power of the husband; while the husband at the same time acknowledged, that he did not send her away on account of any crime, but because she did not please him. Hence proceeded the error, that there was nothing wrong in such putting away, provided that the forms of law were observed.[^409]
 
@@ -2886,7 +2894,11 @@ The different modes of expression which are employed by Matthew and Luke, make n
 ## MATTHEW 5:42; LUKE 6:34-35
 
 
-**34.**If you shall lend to those from whom you hope that you will receive, what kind- **42.**Give to him that asketh of thee: and from him who desires to borrow from thee, turn not thou away. ness will it be in you? for sinners also lend to sinners, that they may receive the like. **35.**Lend ye, expecting nothing again, and your reward shall be great.
+<!--SCRIPTURE col=0 of=2-->
+**42.**Give to him that asketh of thee: and from him who desires to borrow from thee, turn not thou away.
+
+<!--SCRIPTURE col=1 of=2-->
+**34.**If you shall lend to those from whom you hope that you will receive, what kindness will it be in you? for sinners also lend to sinners, that they may receive the like. **35.**Lend ye, expecting nothing again, and your reward shall be great.
 
 **Matthew 5:42****.** *Give to him that asketh of thee.* Though the words of Christ, which are related by Matthew, appear to command us to give to all without discrimination, yet we gather a different meaning from Luke*,* who explains the whole matter more fully. First, it is certain, that it was the design of Christ to make his disciples generous, but not prodigals and it would be a foolish prodigality to scatter at random what the Lord has given us. Again, we see the rule which the Spirit lays down in another passage for liberality. Let us therefore hold, first, that Christ exhorts his disciples to be liberal and generous; and next, that the way of doing it is, not to think that they have discharged their duty when they have aided a few persons, but to study to be kind to all, and not to be weary of giving, so long as they have the means.
 
@@ -4184,117 +4196,11 @@ the woman’s deliverance from her disease was the consequence of her *faith,* s
 ## MATTHEW 9:23-26; MARK 5:35-43; LUKE 8:49-56
 
 
-**49.**While he was still speaking, one came from the house
+<!--SCRIPTURE col=0 of=2-->
+**23.**And when Jesus came into the house of the ruler, and saw the musicians and the multitude making a noise, **24.**He saith to them, Withdraw: for the young woman is not dead, but sleepeth: and they ridiculed him. **25.**And when the multitude was put out, he entered and took hold of her hand, and the girl arose. **26.**And this report spread into all that country.
 
-<p style="text-align:center">**35.**While he is still speaking, there come from the ruler of</p>
-
-**23.**And when Jesus came into the house of the ruler, and of the ruler of the synagogue,
-
-<p style="text-align:center">the synagogue persons who</p>
-
-saw the musicians and the saying to him, Thy daughter
-
-<p style="text-align:center">say, Thy daughter is dead:</p>
-
-multitude making a noise, is dead, do not trouble the
-
-<p style="text-align:center">why dost thou trouble the</p>
-
-**24.**He saith to them, With- Master. **50.**But Jesus, having
-
-<p style="text-align:center">Master any farther? **36.**And</p>
-
-draw: for the young woman heard this, replied to the
-
-<p style="text-align:center">immediately on hearing the</p>
-
-is not dead, but sleepeth: and ruler, saying, Fear not, only
-
-<p style="text-align:center">word which was said, he saith</p>
-
-they ridiculed him. **25.**And believe, and she shall be
-
-<p style="text-align:center">to the ruler of the synagogue,</p>
-
-when the multitude was put cured. **51.**And when he Fear not, only believe. out, he entered and took hold came into the house, he did
-
-<p style="text-align:center">**37.**And he did not permit</p>
-
-of her hand, and the girl not permit any one to enter,
-
-<p style="text-align:center">any one to follow him, except</p>
-
-arose. **26.**And this report spread into all that country. except Peter, and James, and
-
-<p style="text-align:center">Peter, and James, and John</p>
-
-John, and the father and
-
-<p style="text-align:center">the brother of James. **38.**And</p>
-
-mother of the girl. **52.**And
-
-<p style="text-align:center">he came into the house of the</p>
-
-all were weeping and bewail-
-
-<p style="text-align:center">ruler of the synagogue, and</p>
-
-ing her. But he said, Weep
-
-<p style="text-align:center">saw the tumult, and persons</p>
-
-not: she is not dead, but slee-
-
-<p style="text-align:center">who wept and lamented</p>
-
-peth. **53.**And they ridiculed
-
-<p style="text-align:center">much. **39.**. And he entered,</p>
-
-him, knowing that she was
-
-<p style="text-align:center">and said to them, Why do</p>
-
-dead. **54.**And he having put
-
-<p style="text-align:center">you vex yourselves and</p>
-
-them all out, took hold of her
-
-<p style="text-align:center">lament? the girl is not dead,</p>
-
-hand, and cried out, saying,
-
-<p style="text-align:center">but sleepeth. **40.**And they ri-</p>
-
-Girl, arise. **55.**And her spirit
-
-<p style="text-align:center">diculed him. But, having put</p>
-
-returned, and she immedi-
-
-<p style="text-align:center">them all out, he taketh the</p>
-
-ately arose: and he com-
-
-<p style="text-align:center">father and mother of the girl,</p>
-
-manded to give her some-
-
-<p style="text-align:center">and those who were with</p>
-
-thing to eat. **56.**And her
-
-<p style="text-align:center">him, and entereth where the</p>
-
-parents were astonished: but
-
-<p style="text-align:center">girl is lying. **41.**And he took</p>
-
-he charged them to tell no man what had been done.
-
-<p style="text-align:center">hold of the hand of the girl, and said to her, Talithacumi: which is, if one interpret it, Girl, I say to thee, Arise. **42.**And immediately the girl arose, and walked: for</p>
+<!--SCRIPTURE col=1 of=2-->
+**49.**While he was still speak- **35.**While he is still speaking, ing, one came from the house there come from the ruler of of the ruler of the synagogue, the synagogue persons who saying to him, Thy daughter say, Thy daughter is dead: is dead, do not trouble the why dost thou trouble the Master. **50.**But Jesus, having Master any farther? **36.**And heard this, replied to the immediately on hearing the ruler, saying, Fear not, only word which was said, he saith believe, and she shall be to the ruler of the synagogue, cured. **51.**And when he Fear not, only believe. came into the house, he did **37.**And he did not permit not permit any one to enter, any one to follow him, except except Peter, and James, and Peter, and James, and John John, and the father and the brother of James. **38.**And mother of the girl. **52.**And he came into the house of the all were weeping and bewailruler of the synagogue, and ing her. But he said, Weep saw the tumult, and persons not: she is not dead, but sleewho wept and lamented peth. **53.**And they ridiculed much. **39.**. And he entered, him, knowing that she was and said to them, Why do dead. **54.**And he having put you vex yourselves and them all out, took hold of her lament? the girl is not dead, hand, and cried out, saying, but sleepeth. **40.**And they ri- Girl, arise. **55.**And her spirit diculed him. But, having put returned, and she immedithem all out, he taketh the ately arose: and he comfather and mother of the girl, manded to give her someand those who were with thing to eat. **56.**And her him, and entereth where the parents were astonished: but girl is lying. **41.**And he took he charged them to tell no hold of the hand of the girl, man what had been done. and said to her, Talithacumi: which is, if one interpret it, Girl, I say to thee, Arise. **42.**And immediately the girl arose, and walked: for
 
 <p style="text-align:center">she was twelve years of age. And they were astonished with a great astonishment. **43.**And he charged them earnestly, that no man should know it: and commanded them to give her</p>
 
@@ -4434,75 +4340,14 @@ Thus we see that fear, which awakens faith, is not in itself faulty till it go b
 <!--SCRIPTURE col=2 of=3-->
 **26.**And they sailed to the country of the Gaderenes, which is opposite to Galilee. **27.**And when he had gone out of the ship into the land, there met him a certain man out of the city, who had devils for along time, and wore no clothes, and did not dwell in a house, but among the tombs. **28.**When he saw Jesus, he cried out, and fell down before him,[^544] and said with a loud voice, What have I to do with thee, Jesus, Son of the Most High God? I beseech thee, do not torment me. **29.**For he was commanding the unclean spirit to go out of the man: for many times it had seized him, and he was bound by chains, and kept in fetters, and he broke the chains, and was driven by the devil into the deserts. **30.**And Jesus asked him, saying, What is thy name? And he said, Legion: for many devils had entered into him. **31.**And they entreated him that he
 
-would not command them to go into the deep. **32.**And
+<!--SCRIPTURE col=0 of=3-->
+acs, **34.**And, lo, the whole city went out to meet Jesus; and when they saw him, they entreated him, that he would depart from their territories.
 
-<p style="text-align:center">**9.**And he asked him, What is thy name? And he</p>
+<!--SCRIPTURE col=1 of=3-->
+**9.**And he asked him, What is thy name? And he answered, saying to him, My name is Legion: for there are many. **10.**And he entreated him earnestly, that he would not send him out of the country. **11.**And there was there, near the mountains, a great herd of swine feeding. **12.**And all the devils besought him, saying, Send us into the swine, that we may enter into them. **13.**And immediately Jesus permitted them. And the unclean spirit having gone out, entered into the swine, and the herd was carried headlong into the sea: and came to Jesus, and found and they were about two the man from whom the thousand, and were choked devils and had gone out, in the sea. **14.**Then those clothed, and in his right who tended the swine fled, mind, at the feet of Jesus; and and told it in the city and in they were afraid. **36.**And the fields. And they went out those who had seen, related to see what it was that had to them how the demoniac happened. come to Jesus, and see the whole multitude of the demoniac who had had the country of the Gadarenes be- Legion, sitting and clothed, sought him to depart from and in his right mind, and them: for they were seized they were afraid. **16.**And with a great fear; and he went those who had seen, related up into the ship, and rehow it had happened to the turned back again. **38.**And demoniac, and concerning the man out of whom the the swine. **17.**And they devils had departed reques-
 
-acs, **34.**And, lo, the whole city went out to meet Jesus; there was there a herd of
-
-<p style="text-align:center">answered, saying to him, My</p>
-
-and when they saw him, they many swine feeding on the
-
-<p style="text-align:center">name is Legion: for there are</p>
-
-entreated him, that he would depart from their territories. mountains, and they reques-
-
-<p style="text-align:center">many. **10.**And he entreated</p>
-
-ted him to permit them to
-
-<p style="text-align:center">him earnestly, that he would</p>
-
-enter into them: and he per-
-
-<p style="text-align:center">not send him out of the</p>
-
-mitted them. **33.**And the
-
-<p style="text-align:center">country. **11.**And there was</p>
-
-devils going out of the man
-
-<p style="text-align:center">there, near the mountains, a</p>
-
-entered into the swine, and
-
-<p style="text-align:center">great herd of swine feeding.</p>
-
-the herd ran violently down
-
-<p style="text-align:center">**12.**And all the devils be-</p>
-
-headlong into the lake, and
-
-<p style="text-align:center">sought him, saying, Send us</p>
-
-were choked. **34.**And when
-
-<p style="text-align:center">into the swine, that we may</p>
-
-those who tended them saw
-
-<p style="text-align:center">enter into them. **13.**And im-</p>
-
-what was done, they fled, and
-
-<p style="text-align:center">mediately Jesus permitted</p>
-
-told it in the city and in the
-
-<p style="text-align:center">them. And the unclean spirit</p>
-
-villages. **35.**And they went
-
-<p style="text-align:center">having gone out, entered into</p>
-
-out[^545] to see what was done,
-
-<p style="text-align:center">the swine, and the herd was</p>
-
-carried headlong into the sea: and came to Jesus, and found and they were about two the man from whom the thousand, and were choked devils and had gone out, in the sea. **14.**Then those clothed, and in his right who tended the swine fled, mind, at the feet of Jesus; and and told it in the city and in they were afraid. **36.**And the fields. And they went out those who had seen, related to see what it was that had to them how the demoniac happened. **15.**And they had been cured. **37.**And the come to Jesus, and see the whole multitude of the demoniac who had had the country of the Gadarenes be- Legion, sitting and clothed, sought him to depart from and in his right mind, and them: for they were seized they were afraid. **16.**And with a great fear; and he went those who had seen, related up into the ship, and rehow it had happened to the turned back again. **38.**And demoniac, and concerning the man out of whom the the swine. **17.**And they devils had departed reques-
+<!--SCRIPTURE col=2 of=3-->
+would not command them to go into the deep. **32.**And there was there a herd of many swine feeding on the mountains, and they requested him to permit them to enter into them: and he permitted them. **33.**And the devils going out of the man entered into the swine, and the herd ran violently down headlong into the lake, and were choked. **34.**And when those who tended them saw what was done, they fled, and told it in the city and in the villages. **35.**And they went out[^545] to see what was done, **15.**And they had been cured. **37.**And the
 
 <!--SCRIPTURE col=0 of=2-->
 began to request him to depart from their territories. **18.**And when he entered into a ship, he who had been possessed by a devil besought him that he might be with went away through the whole him. **19.**But Jesus did not city proclaiming what thing permit him: but said to him, Go to thy home, to thy friends, and relate to them how great things God hath done to thee, and hath pitied thee. **20.**And he went away, and began to publish in Decapolis how great things Jesus had done for him: and all wondered.
@@ -4610,15 +4455,14 @@ tured by the devil, yet he holds us as his slaves,[^558] till the Son of God del
 
 <p style="text-align:center">**7.**And he calleth the twelve, and began to send them out two and two, and gave them</p>
 
-**1.**And having called the twelve disciples,[^561] he gave them power against the unpower and authority over all
+<!--SCRIPTURE col=0 of=3-->
+**1.**And having called the twelve disciples,[^561] he gave them power against the unclean spirits, to cast them out, and to cure any disease and any sickness. **2.**Now the names of the twelve apostles are these: The first, Simon, who is called Peter, and Andrew his brother; James the son of Zebedee, and John his brother; Bartholomew; Thomas, and Matthew the publican; James the son of Alpheus, and Lebbeus, surnamed Thaddeus; **4.**Simon the Canaanite, and Judas Iscariot, who also betrayed twelve in number, Jesus sent out, and commanded them, saying, Go not into the way of the Gentiles,[^562] and enter not into a city of the Samaritans: **6.**But go rather to the lost sheep of the house of Israel.[^563] **7.**And when you
 
-<p style="text-align:center">power against[^565] the un-</p>
+<!--SCRIPTURE col=1 of=3-->
+power against[^565] the unclean spirits. **3.**Philip and him. **5.**These,
 
-clean spirits. clean spirits, to cast them out, and to cure any disease and devils and to cure diseases. **2.**And sent them to preach any sickness. **2.**Now the the kingdom of God, and to cure the diseased. names of the twelve apostles are these: The first, Simon, who is called Peter, and Andrew his brother; James the son of Zebedee, and John his brother;
-
-**3.**Philip and Bartholomew; Thomas, and Matthew the publican; James the son of Alpheus, and Lebbeus, surnamed Thaddeus; **4.**Simon the Canaanite, and Judas Iscariot, who also betrayed
-
-him. **5.**These, twelve in number, Jesus sent out, and commanded them, saying, Go not into the way of the Gentiles,[^562] and enter not into a city of the Samaritans: **6.**But go rather to the lost sheep of the house of Israel.[^563] **7.**And when you
+<!--SCRIPTURE col=2 of=3-->
+power and authority over all devils and to cure diseases. **2.**And sent them to preach the kingdom of God, and to cure the diseased.
 
 have departed, preach, saying, The kingdom of heaven is at hand. **8.**Cure the diseased, cleanse the lepers, raise the dead, cast out devils: freely you have received, freely give.[^564]
 
@@ -4852,25 +4696,23 @@ be assailed by the same kind of reproach, we ought not to think it strange, that
 ## MATTHEW 10:26-31; MARK 4:22-23; LUKE 8:17; 12:2-7
 
 
-**17.**For there is nothing hid that shall not be revealed,
+<!--SCRIPTURE col=0 of=3-->
+**26.**Fear them not therefore: for nothing is covered that shall not be revealed, and
 
-<p style="text-align:center">**22.**For nothing is hid which shall not be revealed; and</p>
+<!--SCRIPTURE col=1 of=3-->
+**22.**For nothing is hid which shall not be revealed; and nothing is secret that shall not come to light. **23.**If any man have ears to hears, let him hear.
 
-**26.**Fear them not therefore: for nothing is covered that and nothing concealed that
+<!--SCRIPTURE col=2 of=3-->
+**17.**For there is nothing hid that shall not be revealed, and nothing concealed that shall not be known and come to light.
 
-<p style="text-align:center">nothing is secret that shall</p>
+<!--SCRIPTURE col=0 of=3-->
+nothing is hid that shall not be known. **27.**What I say to you in darkness speak you in light: and what you hear in the ear proclaim on the housetops. **28.**And fear not those who kill the body, but cannot kill the soul: but rather fear him who can destroy both soul and body in gehenna. **29.**Are not two sparrows sold for a farthing, and not one of them shall fall to the ground without your Father? **30.**But even the hairs of your head are all numbered. **31.**Fear not therefore: you are of more value than many sparrows.
 
-shall not be revealed, and shall not be known and come to light.
+<!--SCRIPTURE col=1 of=3-->
+Luke 12:2-7 **2.**For nothing is covered which shall not be laid open, and nothing is hid wich shall not be known. **3.**Therefore, those things which you have spoken in darkness shall be heard in light: and what you have spoken in the ear in closets shall be proclaimed on the housetops. **4.**And I say to you my friends, Be not afraid of those who kill the body, and after that have nothing more that they can do. **5.**And I will show you whom you should fear: fear him who, after that he hath killed, hath power to throw into gehenna: yea, I say to you, Fear him. **6.**Are not five sparrows farthings, and not one of them is forgotten before God? **7.**But even the hairs on your head are all numbered: fear not therefore: you are of
 
-<p style="text-align:center">not come to light. **23.**If any man have ears to hears, let</p>
-
-him hear.
-
-nothing is hid that shall not be known. **27.**What I say to you in darkness speak you in light: and what you hear in Luke 12:2-7 the ear proclaim on the **2.**For nothing is covered which shall not be laid open, housetops. **28.**And fear not and nothing is hid wich shall those who kill the body, but not be known. **3.**Therefore, cannot kill the soul: but those things which you have rather fear him who can desspoken in darkness shall be troy both soul and body in heard in light: and what you gehenna. **29.**Are not two have spoken in the ear in sparrows sold for a farthing, closets shall be proclaimed and not one of them shall fall on the housetops. **4.**And I to the ground without your say to you my friends, Be not Father? **30.**But even the hairs afraid of those who kill the of
-
-your
-
-head are all body, and after that have numbered. **31.**Fear not nothing more that they can therefore: you are of more value than many sparrows. do. **5.**And I will show you whom you should fear: fear him who, after that he hath killed, hath power to throw into gehenna: yea, I say to you, Fear him. **6.**Are not five sparrows sold for two farthings, and not one of them is forgotten before God? **7.**But even the hairs on your head are all numbered: fear not therefore: you are of
+<!--SCRIPTURE col=2 of=3-->
+sold for two
 
 more value than many sparrows.
 
@@ -4961,23 +4803,14 @@ Let us hence learn how great is the depravity of corrupt nature, which not only 
 ## MATTHEW 10:37-42; MARK 9:41; LUKE 14:25-33
 
 
-**25.**And great multitudes went with him, and he
+<!--SCRIPTURE col=0 of=3-->
+**37.**He who loveth father or mother more than me is not worthy of me; and he who loveth son or daughter more than me is not worthy of me. **38.**And he who doth not take his cross and follow me,[^603] is not worthy of me. **39.**He who findeth his life[^604] shall lose it; and he who loseth his life for my sake shall find it.[^605]**40.**He who receiveth you receiveth me: and he who receiveth me receiveth him who sent me. **41.**He who receiveth a prophet in the name of a prophet, shall receive a prophet’s reward: he who receiveth a righteous man in the name of a righteous man, shall a righteous man’s reward. **42.**And whosoever shall give to one of these little ones to drink a cup of cold water only, in the name of a disciple, verily, I say to you, he shall not lose his reward.
 
-<p style="text-align:center">**41.**For whosoever shall give to you to drink a cup of wa-</p>
+<!--SCRIPTURE col=1 of=3-->
+**41.**For whosoever shall give to you to drink a cup of water in my name, because you belong to Christ, verily I say to you, he shall not lose his reward.
 
-**37.**He who loveth father or mother more than me is not turned, and said to them,
-
-<p style="text-align:center">ter in my name, because you</p>
-
-worthy of me; and he who **26.**If any man cometh to me,
-
-<p style="text-align:center">belong to Christ, verily I say</p>
-
-loveth son or daughter more[^606] and hateth not his father
-
-<p style="text-align:center">to you, he shall not lose his</p>
-
-reward. than me is not worthy of me. **38.**And he who doth not take and mother, and wife and his cross and follow me,[^603] children, and brothers and sisters, and even his own life is not worthy of me. **39.**He also, he cannot be my diswho findeth his life[^604] shall ciple. **27.**And whosoever lose it; and he who loseth his doth not carry his cross and life for my sake shall find it. come after me cannot be my[^605]**40.**He who receiveth you disciple. **28.**For who is there receiveth me: and he who reamong you that wishes to ceiveth me receiveth him who build a tower, and does not sent me. **41.**He who receivfirst sit down and count the eth a prophet in the name of cost, whether he have what a prophet, shall receive a is necessary to finish it? prophet’s reward: he who re- **29.**Lest after he hath laid the ceiveth a righteous man in foundation, all who see him the name of a righteous man, begin to mock him, **30.**Sayshall a righteous man’s reing, this man began to build, ward. **42.**And whosoever and was not able to complete shall give to one of these little it. **31.**Or what king, who is ones to drink a cup of cold setting out to make war water only, in the name of a against another king, does disciple, verily, I say to you, he shall not lose his reward. not first sit down and consider whether or not he will be able, with ten thousand, to meet him who cometh against him with twenty
+<!--SCRIPTURE col=2 of=3-->
+**25.**And great multitudes went with him, and he turned, and said to them, **26.**If any man cometh to me,[^606] and hateth not his father and mother, and wife and children, and brothers and sisters, and even his own life also, he cannot be my disciple. **27.**And whosoever doth not carry his cross and come after me cannot be my disciple. **28.**For who is there among you that wishes to build a tower, and does not first sit down and count the cost, whether he have what is necessary to finish it? **29.**Lest after he hath laid the foundation, all who see him begin to mock him, **30.**Saying, this man began to build, and was not able to complete it. **31.**Or what king, who is setting out to make war against another king, does not first sit down and consider whether or not he will be able, with ten thousand, to meet him who cometh against him with twenty
 
 thousand? **32.**Otherwise, while the other is still at a distance, he sends an embassy, and requests conditions of peace. **33.**So then every one of you who forsaketh not all that he possesses, cannot be my disciple.
 

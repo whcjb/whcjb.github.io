@@ -448,10 +448,18 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
         best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
         column_lines[best].append(line)
 
-    # 收紧判定：每列至少 5 行；最小列至少是最大列的 1/3
-    # （否则正文块里一两行居中经文会把整块误判为多列）
+    # 每列至少 3 行
     sizes = [len(c) for c in column_lines]
-    if min(sizes) < 5 or min(sizes) * 3 < max(sizes):
+    if min(sizes) < 3:
+        return None
+    # 列与列必须在 y 方向上反复交替（真多列），而非「一大段单列 + 少量居中行」。
+    # 按 y 排序所有候选行，给出原属列序号；转换次数 / 总行数 < 0.2 视为误判。
+    by_y = sorted(line_x0s, key=lambda p: p[1]['bbox'][1])
+    col_seq = []
+    for x0, line in by_y:
+        col_seq.append(min(range(len(centers)), key=lambda i: abs(centers[i] - x0)))
+    transitions = sum(1 for i in range(1, len(col_seq)) if col_seq[i] != col_seq[i-1])
+    if transitions / max(len(col_seq), 1) < 0.20:
         return None
     for col in column_lines:
         col.sort(key=lambda l: l['bbox'][1])
