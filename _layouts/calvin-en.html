@@ -283,9 +283,16 @@ layout: default
 
     // Format A: "Book Ch:N." e.g. "Matthew 11:26." — include book abbreviation in pill
     var mFull = t.match(/^([A-Z][a-z]+) (\d+):(\d+)\.$/);
+    // Format A-zh: "书卷名 Ch:N." 或 "书卷名 Ch:N。" 中文版同步观福音节标
+    var mZh   = t.match(/^([一-鿿]+) (\d+):(\d+)[.。]$/);
     if (mFull) {
       anchorId  = 'v-' + mFull[1].slice(0,4).toLowerCase() + '-' + mFull[2] + '-' + mFull[3];
       pillLabel = mFull[1].slice(0,4) + ' ' + mFull[2] + ':' + mFull[3];   // "Matt 11:26"
+    } else if (mZh) {
+      // 中文书卷取前两个汉字作 anchor 短名（路加福音→路加，马太福音→马太）
+      var shortName = mZh[1].slice(0, 2);
+      anchorId  = 'v-' + encodeURIComponent(shortName) + '-' + mZh[2] + '-' + mZh[3];
+      pillLabel = shortName + ' ' + mZh[2] + ':' + mZh[3];   // "路加 1:9"
     } else if (/^\d+\.$/.test(t)) {
       // Format B: bare "N." — check it's a single verse marker (not scripture table)
       var verseCount = 0;

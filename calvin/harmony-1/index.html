@@ -1,0 +1,80 @@
+---
+layout: default
+book_id: harmony-1
+book_name: "福音书和谐·加尔文注释（卷一）"
+header-img: psalm-bg-mountain.jpg
+date: 2026-05-28 16:15
+---
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div style="margin: 32px 0 24px;">
+        <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+      </div>
+
+      <h2 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:24px;">
+        福音书和谐·加尔文注释（卷一）
+      </h2>
+
+      <p class="text-muted" style="margin-bottom:24px; font-size:14px;">
+        中文翻译进行中，目前可阅读第 1 章（部分段落保留英文待译）。
+      </p>
+
+      <div class="ch-pills">
+        <a href="{{ site.baseurl }}/calvin/harmony-1/1/" class="ch-pill" data-title="路加福音 1 —— 施洗约翰诞生的预告">第 1 章</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.ch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ch-pill {
+  position: relative;
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ch-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+.ch-pill::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 10;
+}
+.ch-pill:hover::after {
+  opacity: 1;
+}
+</style>

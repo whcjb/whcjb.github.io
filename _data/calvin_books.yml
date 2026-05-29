@@ -73,6 +73,9 @@ old_testament:
     chapters: 4
 
 new_testament:
+  - id: harmony-1
+    name: 福音书和谐（卷一）
+    chapters: 10
   - id: harmony
     name: 对观福音和谐（太、可、路）
     chapters: 28
