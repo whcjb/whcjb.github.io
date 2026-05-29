@@ -267,6 +267,11 @@ layout: default
 .calvin-en-content .scripture-box--multi {
   padding: 10px 14px 0;
 }
+/* 隐藏的 Kramdown 脚注占位段：让 Kramdown 仍能为 scripture-box 内
+   的 [^N] 引用生成 <li id="fn:N"> 列表项，本段本身不显示 */
+.calvin-en-content .scripture-fnref-stub {
+  display: none;
+}
 
 /* ── Verse number anchors in commentary ───────────── */
 .calvin-en-content .verse-anchor {

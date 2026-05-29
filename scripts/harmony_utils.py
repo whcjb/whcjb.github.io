@@ -193,10 +193,56 @@ def _is_scripture_block(block):
     return '*' not in no_verse_nums
 
 
+def _fnref_to_html(text):
+    """Convert Kramdown [^N] refs to <sup><a> HTML for use inside raw HTML.
+
+    Kramdown GFM 不处理 HTML 块内的 Markdown（`markdown="1"` 属性也不
+    生效），所以 scripture-box 内必须手工转 `[^N]` 为 `<sup>`。配套
+    需在发布最后做 strip_footnote_defs() 收集所有 `[^N]: text` 定义，
+    转成 `<li id="fn:N">` 并替换 Kramdown 自动生成的 footnotes 区域，
+    否则定义会因为没有 Markdown ref 而被 Kramdown 当作孤儿丢弃。"""
+    return re.sub(
+        r'\[\^(\d+)\]',
+        r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+        text,
+    )
+
+
 def _md_bold_to_html(text):
-    """Convert **text** markers to <strong>text</strong> for use inside raw HTML."""
+    """Convert **text** markers to <strong>text</strong> for use inside raw HTML.
+    同时把 [^N] 转为 <sup>（详见 _fnref_to_html docstring）。"""
     text = _SCRIPTURE_COL_RE.sub('', text)
-    return re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    return _fnref_to_html(text)
+
+
+_FN_REF_RE = re.compile(r'\[\^(\d+)\]')
+
+
+def _collect_fn_refs(paras):
+    """从多段经文里收集所有 [^N] 编号（在转 HTML 之前）。"""
+    refs = []
+    for p in paras:
+        if isinstance(p, list):
+            for sub in p:
+                refs.extend(_FN_REF_RE.findall(sub))
+        else:
+            refs.extend(_FN_REF_RE.findall(p))
+    # 保序去重
+    seen, out = set(), []
+    for n in refs:
+        if n not in seen:
+            seen.add(n); out.append(n)
+    return out
+
+
+def _fn_stub(refs):
+    """生成隐藏的 Markdown 引用占位，使 Kramdown 仍能为这些 [^N] 生成
+    <li id="fn:N"> 定义条目，让 scripture-box 内的 <sup> 跳转有效。"""
+    if not refs:
+        return ''
+    refs_md = ' '.join(f'[^{n}]' for n in refs)
+    return f'\n\n{refs_md}\n{{:.scripture-fnref-stub}}\n'
 
 
 def _scripture_box(header, text):
@@ -213,6 +259,7 @@ def _scripture_box(header, text):
     """
     display = ' '.join(w.capitalize() if w.isalpha() else w for w in header.split())
     paras = text if isinstance(text, list) else [text]
+    fn_stub = _fn_stub(_collect_fn_refs(paras))
 
     col_infos = [_scripture_col_info(p) for p in paras]
     if any(ci is not None for ci in col_infos):
@@ -257,6 +304,7 @@ def _scripture_box(header, text):
             f'<tbody><tr>{"".join(tds)}</tr></tbody>\n'
             '</table>\n'
             '</div>'
+            + fn_stub
         )
 
     body_html = '\n'.join(f'<p>{_md_bold_to_html(p)}</p>' for p in paras)
@@ -265,6 +313,7 @@ def _scripture_box(header, text):
         f'<p class="scripture-ref">{display}</p>\n'
         f'{body_html}\n'
         '</div>'
+        + fn_stub
     )
 
 
