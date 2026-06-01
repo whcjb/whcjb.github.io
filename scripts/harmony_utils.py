@@ -196,7 +196,12 @@ def _is_scripture_block(block):
     """True if block is pure scripture text.
 
     1. 多列标记块（<!--SCRIPTURE col=N of=M-->）
-    2. 经典格式：**N.** 起首且无任何斜体标记 (Calvin commentary 必含斜体引语)
+    2. 经典格式：**N.** 起首且无 *italic* 斜体标记 (Calvin commentary 必含斜体引语)
+
+    判定斜体存在性时必须先剥离 **bold** 段，否则 PDF 偶有的 `**,**`/`**.**`
+    等 bold 标点会被误判为斜体（其中的 `*` 是 bold 标记不是 italic）。
+    例：Matt 6:5–8 raw 中 `**7.**But praying**,** use not...` 含 bold 逗号，
+    早期版本因 `'*' in no_verse_nums` 直接返回 False，整段被当成注释。
     """
     stripped = block.strip()
     if _scripture_col_info(block) is not None:
@@ -204,7 +209,8 @@ def _is_scripture_block(block):
     if not re.match(r'^\*\*\d+\.\*\*', stripped):
         return False
     no_verse_nums = re.sub(r'\*\*\d+\.\*\*', '', block)
-    return '*' not in no_verse_nums
+    no_bold = re.sub(r'\*\*[^*]*\*\*', '', no_verse_nums)
+    return '*' not in no_bold
 
 
 def _fnref_to_html(text):
