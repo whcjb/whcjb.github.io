@@ -403,17 +403,25 @@ def ccel_harmony_norm(text):
     return re.sub(r':\s+(\d)', r':\1', text)
 
 
-def split_block_by_columns(block, page_mid, col_gap_min=50):
+def split_block_by_columns(block, page_mid, col_gap_min=50, expected_slot_x0s=None):
     """If `block` is laid out in N parallel columns (e.g. CCEL synoptic
     genealogy or 3-gospel parallel passages), return list of N line-lists
     ordered left-to-right. Otherwise None.
 
     Detection: cluster line x0 values; if 2+ clusters separated by gaps
     > col_gap_min, treat as multi-column. Each line is assigned to its
-    nearest cluster center. Every column needs ≥ 3 lines to qualify.
+    nearest cluster center.
+
+    Without `expected_slot_x0s`: every column needs ≥ 3 lines + 20%+ y-axis
+    column alternation (filters正文带几行居中的假阳性).
+
+    With `expected_slot_x0s`（section header 已锁定列布局）：放宽到每列
+    ≥ 1 行 + 跳过交替检查（信任 header 标的布局；处理极短并列段，如
+    Luke 16:17 仅 1 行对应 Matt 5:17 多行）。
     """
     lines = block.get('lines', [])
-    if len(lines) < 6:
+    min_lines = 3 if expected_slot_x0s is None else 2
+    if len(lines) < min_lines:
         return None
 
     line_x0s = []
@@ -423,28 +431,32 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
             continue
         line_x0s.append((spans[0]['bbox'][0], line))
 
-    if len(line_x0s) < 6:
+    # section_col_layout 锁定时降到 2 行（处理 Luke 16:17 仅 1 行 + Matt 5:17 2 行）
+    nonempty_min = 2 if expected_slot_x0s is not None else 6
+    if len(line_x0s) < nonempty_min:
         return None
 
-    # 1D 聚类：先按 x0 出现频次过滤掉 outlier（< 3 行的 x0 值，多为
-    # 宽行 wrap 或异常缩进），剩余 x0 值再按 col_gap_min 切簇。否则
-    # 96 行多列块里 5-6 个 stray x0 会把 [113, 244, 375] 串成一个大簇。
-    from collections import Counter
-    x0_freq = Counter(round(x) for x, _ in line_x0s)
-    main_x0s = sorted(x for x, c in x0_freq.items() if c >= 3)
-    if not main_x0s:
-        return None
-    clusters = [[main_x0s[0]]]
-    for x in main_x0s[1:]:
-        if x - clusters[-1][-1] < col_gap_min:
-            clusters[-1].append(x)
-        else:
-            clusters.append([x])
+    # 列中心：若 section 已锁定 layout，直接用 expected_slot_x0s（跳过聚类
+    # 避免 outlier 把主簇串成一团 + 处理极短并列段）；否则按 1D 聚类。
+    if expected_slot_x0s is not None:
+        centers = list(expected_slot_x0s)
+    else:
+        from collections import Counter
+        x0_freq = Counter(round(x) for x, _ in line_x0s)
+        main_x0s = sorted(x for x, c in x0_freq.items() if c >= 3)
+        if not main_x0s:
+            return None
+        clusters = [[main_x0s[0]]]
+        for x in main_x0s[1:]:
+            if x - clusters[-1][-1] < col_gap_min:
+                clusters[-1].append(x)
+            else:
+                clusters.append([x])
 
-    if len(clusters) < 2:
-        return None
+        if len(clusters) < 2:
+            return None
 
-    centers = [sum(c) / len(c) for c in clusters]
+        centers = [sum(c) / len(c) for c in clusters]
 
     # 把每行分到最近的列；outlier 行（x0 在簇外）也归到距离最近的列
     # 把每行分到最近的列；outlier 行也归到距离最近的列。
@@ -472,7 +484,9 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
             column_lines[best].append(line)
 
     # 把行数 < 3 的「小簇」并入最近的主列（处理尾续接、宽行 wrap 的 outlier x0）
-    main = [i for i in range(len(centers)) if len(column_lines[i]) >= 3]
+    # section_col_layout 锁定时降到 ≥ 1 行，处理极短并列段
+    main_threshold = 1 if expected_slot_x0s is not None else 3
+    main = [i for i in range(len(centers)) if len(column_lines[i]) >= main_threshold]
     if len(main) < 2:
         return None
     if len(main) != len(centers):
@@ -486,10 +500,17 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
         column_lines = new_col_lines
         centers      = new_centers
 
-    # 每列至少 3 行
+    # 每列至少 N 行：默认 3 行避免误判；当 section header 已锁定布局
+    # （expected_slot_x0s 非 None）时降为 1 行
+    per_col_min = 1 if expected_slot_x0s is not None else 3
     sizes = [len(c) for c in column_lines]
-    if min(sizes) < 3:
+    if min(sizes) < per_col_min:
         return None
+    # section_col_layout 锁定时跳过 y-轴交替检查（极短并列段无须验证）
+    if expected_slot_x0s is not None:
+        for col in column_lines:
+            col.sort(key=lambda l: l['bbox'][1])
+        return column_lines
     # 列与列必须在 y 方向上反复交替（真多列），而非「一大段单列 + 少量居中行」。
     # 按 y 排序所有候选行，给出原属列序号；转换次数 / 总行数 < 0.2 视为误判。
     by_y = sorted(line_x0s, key=lambda p: p[1]['bbox'][1])
@@ -641,6 +662,25 @@ def extract_ccel_harmony(cfg):
             output_blocks.extend(pending_fns)
             pending_fns.clear()
         output_blocks.append(f'\n## {label}\n')
+
+    def cols_look_like_commentary(cols):
+        """检查 cols 是否含注释信号——避免把窄列注释（如分栏 commentary）
+        错认作多列经文。任何一列出现 *italic*（去 **bold** 后）或
+        **Book Ch:N.** 起首，即视为注释。"""
+        for col_lines in cols:
+            text = ''.join(s['text'] for ln in col_lines
+                           for s in (ln.get('spans') or []) if s['text'].strip())
+            if re.match(r'^\*?\*?[A-Z][a-z]+ \d+:\d+', text.strip()):
+                return True
+            # ccel_spans_to_md 会把 italic span 包成 *...*，但 PDF 原 text 没标记，
+            # 用 italic flag 判断
+            for ln in col_lines:
+                for s in ln.get('spans', []):
+                    if s.get('flags', 0) & 2 and s['text'].strip():
+                        # 含斜体 span，且斜体不是脚注上标——是注释
+                        if not (s.get('flags', 0) & 1 and s['text'].strip().isdigit()):
+                            return True
+        return False
 
     def emit_multi_col(cols):
         """Emit detected multi-col cols, update last_col_centers / x0s.
@@ -794,14 +834,20 @@ def extract_ccel_harmony(cfg):
                                  and not ccel_harmony_is_section_header(nb))
                     if can_merge:
                         fake_blk = {'lines': list(block['lines']) + list(nb['lines'])}
-                        cols = split_block_by_columns(fake_blk, cfg['page_w'] / 2)
+                        expected = section_col_layout[1] if section_col_layout else None
+                        cols = split_block_by_columns(fake_blk, cfg['page_w'] / 2,
+                                                      expected_slot_x0s=expected)
                         if cols:
                             emit_multi_col(cols)
                             bi += 2
                             continue
 
                 # 2) 直接对当前块跑多列检测
-                cols = split_block_by_columns(block, cfg['page_w'] / 2)
+                expected = section_col_layout[1] if section_col_layout else None
+                cols = split_block_by_columns(block, cfg['page_w'] / 2,
+                                              expected_slot_x0s=expected)
+                if cols and cols_look_like_commentary(cols):
+                    cols = None
                 if cols:
                     emit_multi_col(cols)
                     bi += 1; continue
