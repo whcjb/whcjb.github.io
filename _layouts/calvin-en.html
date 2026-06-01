@@ -226,6 +226,12 @@ layout: default
   color: #fff;
   text-decoration: none;
 }
+.verse-pill--active {
+  background: #0085a1;
+  border-color: #0085a1;
+  color: #fff;
+  font-weight: bold;
+}
 
 /* ── Scripture box (PDF-style bordered block) ────── */
 .calvin-en-content .scripture-box {
@@ -362,12 +368,29 @@ layout: default
     p.id = anchorId;
     entries.push({anchorId: anchorId, pillLabel: pillLabel});
 
-    // Clicking the verse marker scrolls back to top
+    // Clicking the verse marker：滚动到 verse-nav 区域并展开 pills，
+    // 让用户看到自己所在的章节定位
     first.classList.add('verse-anchor');
-    first.title = 'Back to top';
+    first.title = '跳到经文导航';
+    first.dataset.anchor = anchorId;
     first.addEventListener('click', function(e) {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      var nav = document.getElementById('verse-nav');
+      var pills = document.getElementById('verse-nav-pills');
+      var arrow = document.getElementById('verse-nav-arrow');
+      if (pills && pills.style.display === 'none') {
+        pills.style.display = 'flex';
+        if (arrow) arrow.classList.add('open');
+      }
+      // 高亮当前对应 pill
+      var anchor = this.dataset.anchor;
+      pills && pills.querySelectorAll('.verse-pill').forEach(function(pill) {
+        pill.classList.toggle('verse-pill--active',
+                              pill.getAttribute('href') === '#' + anchor);
+      });
+      // 滚动到 verse-nav 顶部
+      if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
+      else window.scrollTo({top: 0, behavior: 'smooth'});
     });
   });
 
