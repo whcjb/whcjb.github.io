@@ -837,6 +837,8 @@ def extract_ccel_harmony(cfg):
                         expected = section_col_layout[1] if section_col_layout else None
                         cols = split_block_by_columns(fake_blk, cfg['page_w'] / 2,
                                                       expected_slot_x0s=expected)
+                        if cols and cols_look_like_commentary(cols):
+                            cols = None
                         if cols:
                             emit_multi_col(cols)
                             bi += 2
