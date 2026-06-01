@@ -285,8 +285,18 @@ def _scripture_box(header, text):
                 continue   # 罕见：单栏块混在多栏组里，先丢弃
             col_paras[ci[0]].append(_md_bold_to_html(p))
 
-        # 列标题来自 header 按 `;` 拆分
-        col_titles_raw = [s.strip() for s in header.split(';')]
+        # 列标题来自 header，但要按**卷名分组**，把无卷名前缀的引用并入
+        # 上一个卷（如「MARK 9:49-50; 4:21」→ 一个 Mark 列；
+        # 「LUKE 14:34-35; 8:16; 11:33」→ 一个 Luke 列）。
+        parts = [s.strip() for s in header.split(';')]
+        col_titles_raw = []
+        for p in parts:
+            if re.match(r'^[A-Z][A-Za-z]*\b', p):
+                col_titles_raw.append(p)
+            elif col_titles_raw:
+                col_titles_raw[-1] += '; ' + p
+            else:
+                col_titles_raw.append(p)
         col_titles = [
             ' '.join(w.capitalize() if w.isalpha() else w for w in t.split())
             for t in col_titles_raw

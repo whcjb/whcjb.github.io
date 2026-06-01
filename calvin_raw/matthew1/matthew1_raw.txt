@@ -2100,13 +2100,13 @@ Scripture enjoins us to *worship God alone:* we must inquire, for what end? If a
 ## MATTHEW 4:12, 17; MARK 1:14-15; LUKE 3:19-20; 4:14
 
 
-<!--SCRIPTURE col=0 of=4-->
+<!--SCRIPTURE col=0 of=3-->
 **12.**And when Jesus heard that John had been delivered up,[^317] he withdrew into Galilee. **17.**From that time Jesus began to preach, and to say, Repent ye: for the kingdom of heaven is at hand.
 
-<!--SCRIPTURE col=1 of=4-->
+<!--SCRIPTURE col=1 of=3-->
 **14.**Now after that John had been imprisoned, Jesus came into Galilee, preaching the Gospel of the kingdom of God: **15.**And saying, The time is fulfilled, and the kingdom of God is at hand: repent ye, and believe the Gospel.
 
-<!--SCRIPTURE col=3 of=4-->
+<!--SCRIPTURE col=2 of=3-->
 **19.**Now Herod the tetrarch, when he was reproved by him for Herodias, his brother’s wife, and for all the wicked actions which Herod did, **20.**Added also this above all, and shut up John in prison. Luke 4:14-15 **14.**And Jesus returned by the power of the Spirit into Galilee, and a report went out through the whole country concerning him. **15.**And he taught in their synagogues, and was glorified by all.
 
 **Luke 3:19****.** *Now Herod the tetrarch.* Luke alone explains the reason why Herod threw John into prison: though we shall afterwards find it mentioned by Matthew 14:3, and Mark 6:17. Josephus says, (Ant. 18, v. 2,) that Herod, dreading a popular insurrection and a change of the government, shut up John in the castle of Macherus, (because he dreaded the man’s influence;)[^318] and that Herodias was married, not to Philip, who was Salome’s husband, but to another Herod. But as his recollection appears to have failed him in this matter, and as he mentions also Philip’s death out of its proper place, the truth of the history will be obtained, with greater certainty, from the Evangelists, and we must abide by their testimony.[^319] It is well known, that Herod, though he had been married to a daughter of Aretas,
@@ -2538,28 +2538,28 @@ He pronounces a curse on the *rich*, — not on all the rich, but on those who *
 ## MATTHEW 5:13-16; MARK 9:49-50; 4:21; LUKE 14:34-35; 8:16; 11:33
 
 
-<!--SCRIPTURE col=0 of=6-->
+<!--SCRIPTURE col=0 of=3-->
 **13.**Ye are the salt of the earth: but if salt shall become tasteless,[^372] with what shall it be salted?[^373] It is good for nothing farther, than to be thrown out and trodden
 
-<!--SCRIPTURE col=2 of=6-->
+<!--SCRIPTURE col=1 of=3-->
 **49.**For every (man) shall be salted with fire, and every sacrifice shall be salted with salt. **50.**Salt is a good thing: but if salt shall become tasteless, with what shall it be seasoned? Have salt in yourselves, and cultivate peace with one another.
 
-<!--SCRIPTURE col=4 of=6-->
+<!--SCRIPTURE col=2 of=3-->
 **34.**Salt is good: but if salt shall have become tasteless, with what shall it be seasoned? **35.**It is not useful either for the land[^374] or for the dunghill: they throw it out. He who hath ears to hear, let him hear.
 
-<!--SCRIPTURE col=0 of=6-->
+<!--SCRIPTURE col=0 of=3-->
 down by men. **14.**Ye are the light of the world: a city placed upon a mountain cannot be hid. **15.**Neither do men light a candle, and put it upon a bushel but upon a candlestick, and it gives light
 
-<!--SCRIPTURE col=2 of=6-->
+<!--SCRIPTURE col=1 of=3-->
 Mark 4:21 **21.**And he said to them, Is a candle lighted, that it may be put under a bushel, or under a bed? Is it not that it may be put on a candlestick?
 
-<!--SCRIPTURE col=4 of=6-->
+<!--SCRIPTURE col=2 of=3-->
 Luke 8:16 **16.**And no man, when he hath lighted a candle, covered it with a vessel, or putteth it under a bed, but
 
-<!--SCRIPTURE col=0 of=6-->
+<!--SCRIPTURE col=0 of=3-->
 to all who are in the house. **16.**Let your light shine before men, so that they may see your good works, and may glorify your Father who is in heaven.
 
-<!--SCRIPTURE col=4 of=6-->
+<!--SCRIPTURE col=2 of=3-->
 putteth it on a candlestick, that those who enter may see the light. Luke 11:33 **33.**No man lighteth a candle, and putteth it in a hidden place, nor under a bushel, but on a candlestick, that those who enter may see the light.
 
 **Matthew 5:13****.** Ye *are the salt of the earth.* What belongs to doctrine is applied to the persons to whom the administration of it has been committed. When Christ calls the apostles *the salt of the earth,* he means, that it is their office *to salt the earth:* because men have nothing in them but what is tasteless, till they have been seasoned with the salt of heavenly
@@ -3182,10 +3182,10 @@ heaven, it would be easy for us to trample upon the world, to despise earthly bl
 ## MATTHEW 6:22-24; LUKE 11:34-36; 16:13
 
 
-<!--SCRIPTURE col=0 of=3-->
+<!--SCRIPTURE col=0 of=2-->
 **22.**The light[^454] of the body is the eye: if therefore thine eye shall be simple, thy whole body shall be luminous. **23.**But if thine eye shall be evil, thy whole body shall be dark. Therefore, if the light which is in thee is darkness, how great is that darkness! **24.**No man can serve two masters: for either he will hate the one, and love the other, or he will hold to one, and neglect the other. You cannot serve God and mammon.
 
-<!--SCRIPTURE col=1 of=3-->
+<!--SCRIPTURE col=1 of=2-->
 **34.**The light[^455] of the body is the eye: if thine eye therefore shall be simple, thy whole body shall be luminous: but if it shall be evil, thy whole body also shall be dark. **36.**If therefore thy whole body shall be luminous, not having any part dark, the whole shall be luminous, as when a candle enlightens thee by its brightness. Luke 16:13 **13.** No servant can serve two master: for either he will hate the one, and love the other, or will hold to the one, and despise the other. You cannot serve God and mammon.
 
 **Matthew 6:22****.** *The light of the body is the eye* We must bear in mind, as I have already hinted, that what we find here are detached sentences, and not a continued discourse. The substance of the present statement is, that men go wrong through carelessness, because they do not keep their eye fixed, as they ought to do, on the proper object. For whence comes it, that they so shamefully wander, or dash themselves, or stumble, but because, having corrupted their judgment by choosing rather to follow their own lusts than the righteousness of God, they not only extinguish the light of reason, which ought to have regulated their life, but change it altogether into darkness.
@@ -4479,22 +4479,22 @@ be assailed by the same kind of reproach, we ought not to think it strange, that
 ## MATTHEW 10:26-31; MARK 4:22-23; LUKE 8:17; 12:2-7
 
 
-<!--SCRIPTURE col=0 of=4-->
+<!--SCRIPTURE col=0 of=3-->
 **26.**Fear them not therefore: for nothing is covered that shall not be revealed, and
 
-<!--SCRIPTURE col=1 of=4-->
+<!--SCRIPTURE col=1 of=3-->
 **22.**For nothing is hid which shall not be revealed; and nothing is secret that shall not come to light. **23.**If any man have ears to hears, let him hear.
 
-<!--SCRIPTURE col=3 of=4-->
+<!--SCRIPTURE col=2 of=3-->
 **17.**For there is nothing hid that shall not be revealed, and nothing concealed that shall not be known and come to light.
 
-<!--SCRIPTURE col=0 of=4-->
+<!--SCRIPTURE col=0 of=3-->
 nothing is hid that shall not be known. **27.**What I say to you in darkness speak you in light: and what you hear in the ear proclaim on the housetops. **28.**And fear not those who kill the body, but cannot kill the soul: but rather fear him who can destroy both soul and body in gehenna. **29.**Are not two sparrows sold for a farthing, and not one of them shall fall to the ground without your Father? **30.**But even the hairs of your head are all numbered. **31.**Fear not therefore: you are of more value than many sparrows.
 
-<!--SCRIPTURE col=3 of=4-->
+<!--SCRIPTURE col=2 of=3-->
 Luke 12:2-7 **2.**For nothing is covered which shall not be laid open, and nothing is hid wich shall not be known. **3.**Therefore, those things which you have spoken in darkness shall be heard in light: and what you have spoken in the ear in closets shall be proclaimed on the housetops. **4.**And I say to you my friends, Be not afraid of those who kill the body, and after that have nothing more that they can do. **5.**And I will show you whom you should fear: fear him who, after that he hath killed, hath power to throw into gehenna: yea, I say to you, Fear him. **6.**Are not five sparrows sold for two farthings, and not one of them is forgotten before God? **7.**But even the hairs on your head are all numbered: fear not therefore: you are of
 
-<!--SCRIPTURE col=1 of=4-->
+<!--SCRIPTURE col=1 of=3-->
 more value than many sparrows.
 
 **Matthew 10:26****.** *Fear them not therefore* When the apostles saw the gospel so greatly despised, and recollected the small number of believers, they might be apt to throw away hope even for the future. Christ now meets this doubt, by declaring that the gospel would be widely spread, would at length rise superior to all the hindrances which might arise from men, and would become generally known. The saying, *nothing is covered that shall not be* *revealed,* has some appearance of being a proverb: but we restrict it in a special manner to the doctrine of salvation, which Christ promises will be victorious, whatsoever may be the contrivances of men to oppose it. Though he sometimes preached openly in the temple, yet, as his doctrine was rejected, it was still *concealed* in dark comers: but he declares that the time for proclaiming it will come; which, we know, happened shortly afterwards. In no part of the earth was there ever such thunder heard as the voice of the gospel, which resounded through the whole world. As this promise ought to fill them with courage, Christ exhorts them to devote themselves to it with boldness and perseverance, and not to be alarmed, though they see the gospel hitherto despised, but, on the contrary, to become its zealous preachers.
@@ -4541,22 +4541,22 @@ The second thing to be observed is, that we ought to contemplate Providence, not
 ## MATTHEW 10:32-35; MARK 8:38; LUKE 9:26; 12:8-9, 51-53
 
 
-<!--SCRIPTURE col=0 of=4-->
+<!--SCRIPTURE col=0 of=3-->
 **32.**Whosoever therefore shall confess me before men, him will I also confess before my Father, who is in heaven. **33.**And whosoever shall deny
 
-<!--SCRIPTURE col=1 of=4-->
+<!--SCRIPTURE col=1 of=3-->
 **38.**For whosoever shall be ashamed of me and of my words in this adulterous and sinful generation, of him will the Son of man be ashamed, when he shall come in the glory of his Father with the holy angels.
 
-<!--SCRIPTURE col=3 of=4-->
+<!--SCRIPTURE col=2 of=3-->
 **26.**For whosoever shall be ashamed of me, and of my words, of him will the Son of man be ashamed, when he shall come in his own glory,[^601] and [in the glory] of the
 
-<!--SCRIPTURE col=0 of=4-->
+<!--SCRIPTURE col=0 of=3-->
 me before men, him will I also deny before my Father, who is in heaven. **34.**Think not that I came to send peace on the earth: I came not to send peace, but a sword. **35.**For I have come to set a man at variance against his father, and a daughter against her mother, and a daughterin-law against her mother-inlaw. And the persons of a man’s household shall be his enemies.
 
-<!--SCRIPTURE col=3 of=4-->
+<!--SCRIPTURE col=2 of=3-->
 Father, and of the holy angels. **Luke 12:8-9****, 51-53** **8.**And I say to you, Whosoever shall confess me before men, him will the Son of man also confess before the angels of God. **9.**And he who shall deny me before men, will be denied before the angels of God.—(Same chapter.) **51.**Do you suppose that I came to send peace on earth? I tell you no; but division. **52.**For henceforth there will be five in one house divided, three against two, and two against three. **53.**The father will be divided against the son, and the son against the father: the mother against the daughter, and the daughter against the mother: the mother-in-law against her daughter-in-law, and the
 
-<!--SCRIPTURE col=1 of=4-->
+<!--SCRIPTURE col=1 of=3-->
 daughter-in-law against her mother-in-law.
 
 **Matthew 10:32****.** *Whosoever therefore shall confess me* He now applies to his present subject what he formerly said in a general manner about contempt of death: for we must struggle against the dread of death, that it may not *keep* us back from an open confession of faith, which God strictly demands, and which the world cannot endure. For this purpose the disciples of Christ must be bold and courageous, that they may be always ready for martyrdom. Now *confession* of Christ, though it is regarded by the greater part of men as a trifling matter, is here represented to be a main part of divine worship, and a distinguished exercise of godliness. And justly is it so represented: for if earthly princes, in order to enlarge and protect their glory, and to increase their wealth, call their subjects to arms, why should not believers maintain, at least in language, the glory of their heavenly King?

@@ -744,11 +744,16 @@ def extract_ccel_harmony(cfg):
                 flush_section_header(norm)
                 last_section_upper = norm
                 last_col_centers = None
-                # 按 section header 中 ; 分隔的卷数预先确立列布局：
-                # 每卷分别对应 body 内等宽的列槽位（左→右）。后续多列 emit
-                # 按各列 x0 匹配到最近槽位 → 即便检测到的列数少于卷数，
-                # 中间缺失的卷也能正确保留空列。
-                n_books = norm.count(';') + 1 if ';' in norm else 0
+                # 按 section header 中**不同卷名**预先确立列布局（不是简单数
+                # `;`——如「MARK 9:49-50; 4:21; LUKE 14:34-35; 8:16」一段
+                # 里 4:21、8:16 等不带卷名前缀的部分是同卷续引）：
+                parts = [p.strip() for p in norm.split(';')]
+                books = []
+                for p in parts:
+                    bm = re.match(r'^([A-Z]+)\b', p)
+                    if bm and bm.group(1) not in books:
+                        books.append(bm.group(1))
+                n_books = len(books)
                 if n_books >= 2:
                     bl = cfg['body_left']; br = cfg['body_right']
                     slot_w = (br - bl) / n_books
