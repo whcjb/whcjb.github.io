@@ -447,10 +447,29 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
     centers = [sum(c) / len(c) for c in clusters]
 
     # 把每行分到最近的列；outlier 行（x0 在簇外）也归到距离最近的列
+    # 把每行分到最近的列；outlier 行也归到距离最近的列。
+    # 对宽到跨列的整行（line bbox 宽度超过单列槽宽 1.4x），按 span 级 x 中心
+    # 拆分到各列——处理 PDF 偶有的一行物理跨越两列的边角情况。
+    col_slot_w = ((max(centers) - min(centers)) / max(len(centers) - 1, 1)
+                   if len(centers) >= 2 else 200)
+    cross_thresh = max(col_slot_w * 1.4, 200)
     column_lines = [[] for _ in centers]
     for x0, line in line_x0s:
-        best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
-        column_lines[best].append(line)
+        bbox = line.get('bbox')
+        line_w = (bbox[2] - bbox[0]) if bbox else 0
+        spans = [s for s in line.get('spans', []) if s['text'].strip()]
+        if line_w > cross_thresh and len(spans) >= 2:
+            per_col_sps = [[] for _ in centers]
+            for s in spans:
+                sc = (s['bbox'][0] + s['bbox'][2]) / 2
+                best = min(range(len(centers)), key=lambda i: abs(centers[i] - sc))
+                per_col_sps[best].append(s)
+            for col_idx, col_sps in enumerate(per_col_sps):
+                if col_sps:
+                    column_lines[col_idx].append({'spans': col_sps, 'bbox': line['bbox']})
+        else:
+            best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
+            column_lines[best].append(line)
 
     # 把行数 < 3 的「小簇」并入最近的主列（处理尾续接、宽行 wrap 的 outlier x0）
     main = [i for i in range(len(centers)) if len(column_lines[i]) >= 3]
@@ -725,7 +744,18 @@ def extract_ccel_harmony(cfg):
                 flush_section_header(norm)
                 last_section_upper = norm
                 last_col_centers = None
-                section_col_layout = None
+                # 按 section header 中 ; 分隔的卷数预先确立列布局：
+                # 每卷分别对应 body 内等宽的列槽位（左→右）。后续多列 emit
+                # 按各列 x0 匹配到最近槽位 → 即便检测到的列数少于卷数，
+                # 中间缺失的卷也能正确保留空列。
+                n_books = norm.count(';') + 1 if ';' in norm else 0
+                if n_books >= 2:
+                    bl = cfg['body_left']; br = cfg['body_right']
+                    slot_w = (br - bl) / n_books
+                    slot_x0s = [bl + i * slot_w + 5 for i in range(n_books)]
+                    section_col_layout = (n_books, slot_x0s)
+                else:
+                    section_col_layout = None
                 bi += 1; continue
 
             if ccel_harmony_is_blue_label(block):
