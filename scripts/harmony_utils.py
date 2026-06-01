@@ -321,7 +321,13 @@ def _scripture_box(header, text):
             + fn_stub
         )
 
-    body_html = '\n'.join(f'<p>{_md_bold_to_html(p)}</p>' for p in paras)
+    def _wrap_p(p):
+        s = p.strip()
+        # 已经是 <p ...>...</p> 块（如居中 <p style=...>）就不再包一层
+        if s.startswith('<p') and s.endswith('</p>'):
+            return _md_bold_to_html(s)
+        return f'<p>{_md_bold_to_html(p)}</p>'
+    body_html = '\n'.join(_wrap_p(p) for p in paras)
     return (
         '<div class="scripture-box">\n'
         f'<p class="scripture-ref">{display}</p>\n'
