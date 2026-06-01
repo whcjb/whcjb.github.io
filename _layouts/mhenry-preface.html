@@ -106,6 +106,57 @@ layout: default
 @media (max-width: 767px) {
     .mhenry-preface-body { padding: 0 16px 16px; }
 }
+
+/* ── Scripture popup (same shape as chapter layout) ──────── */
+#scripture-popup {
+    position: absolute;
+    z-index: 9999;
+    background: #FEFAF3;
+    border: 1px solid #C9922A;
+    border-radius: 6px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+    max-width: 360px;
+    min-width: 180px;
+    display: none;
+    font-size: 14px;
+}
+#scripture-popup-inner {
+    padding: 12px 16px 14px;
+    position: relative;
+}
+#scripture-popup-close {
+    position: absolute;
+    top: 6px; right: 8px;
+    background: none; border: none;
+    font-size: 18px; cursor: pointer;
+    color: #aaa; line-height: 1; padding: 0 4px;
+}
+#scripture-popup-close:hover { color: #333; }
+.sp-header {
+    font-weight: bold;
+    color: #C9922A;
+    font-size: 13px;
+    margin-bottom: 8px;
+    padding-right: 20px;
+    letter-spacing: .04em;
+}
+.sp-verse {
+    font-family: "STSong","SimSun","宋体",serif;
+    font-size: 14px;
+    line-height: 1.85;
+    color: #4A3728;
+    margin: 2px 0;
+}
+.sp-vnum {
+    color: #C9922A;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 11px;
+    vertical-align: super;
+    margin-right: 2px;
+}
+.sp-not-found { color: #999; font-size: 13px; padding: 4px 0; }
+.sp-loading { color: #aaa; font-size: 13px; padding: 4px 0; }
 </style>
 
 <script>
@@ -177,7 +228,10 @@ function resetFontSize() {
     BOOKS.forEach(function(b){ if(!bookMap[b[0]]) bookMap[b[0]] = b[1]; });
     var bookPat = BOOKS.map(function(b){ return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); }).join('|');
     var REF_RE = new RegExp('(' + bookPat + ')(\\d{1,3})[：:] *(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?','g');
+    var BARE_RE = /(\d{1,3})[\uff1a:] *(\d{1,3})(?:\s*[\uff0d\-\u2013\u2014]\s*(\d{1,3}))?/g;
     var CJK_RE = /[\u4e00-\u9fff\u3400-\u4dbf]/;
+    var CURRENT_BOOK_NAME = {{ page.book_name | jsonify }};
+    var CURRENT_VOL = bookMap[CURRENT_BOOK_NAME] || null;
 
     var _cuv = null, _loading = false, _cbs = [];
     function loadCUV(cb) {
@@ -246,6 +300,22 @@ function resetFontSize() {
             var vol = bookMap[m[1]]; if (!vol) continue;
             matches.push({ index: m.index, end: m.index+m[0].length, vol: vol, ch: parseInt(m[2]), v1: parseInt(m[3]), v2: m[4]?parseInt(m[4]):null, display: m[0] });
         }
+        // Second pass: bare verse refs ("12：2") interpreted as referring to CURRENT_BOOK
+        if (CURRENT_VOL) {
+            BARE_RE.lastIndex = 0;
+            var bm;
+            while ((bm = BARE_RE.exec(text)) !== null) {
+                var bStart = bm.index, bEnd = bm.index + bm[0].length;
+                // Skip if overlaps any existing book-prefixed match (avoid double-tagging "使徒行传18：1-18")
+                var overlaps = matches.some(function(x){ return !(bEnd <= x.index || bStart >= x.end); });
+                if (overlaps) continue;
+                // Skip if preceded by a digit (e.g. "18" in "18：1-18" already matched, but defensive)
+                if (bStart > 0 && /\d/.test(text[bStart-1])) continue;
+                matches.push({ index: bStart, end: bEnd, vol: CURRENT_VOL,
+                    ch: parseInt(bm[1]), v1: parseInt(bm[2]),
+                    v2: bm[3] ? parseInt(bm[3]) : null, display: bm[0] });
+            }
+        }
         if (!matches.length) return;
         matches.sort(function(a,b){ return a.index-b.index; });
         var html = '', last = 0;
@@ -283,3 +353,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
 }
 </script>
+
+{% assign nt_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,galatians,ephesians,philippians,colossians,1thessalonians,2thessalonians,1timothy,2timothy,titus,philemon,hebrews,james,1peter,2peter,1john,2john,3john,jude,revelation" | split: "," %}
+{% if nt_books contains page.book_id %}{% include mhenry-diamond.html %}{% endif %}

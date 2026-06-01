@@ -988,16 +988,16 @@ function flashEl(el) {
 {% include reading-progress.html %}
 
 <style>
-/* ── Scripture reference inline link ──────────────────── */
+/* ── Scripture reference inline link ────────────────────
+   Visually identical to surrounding text; clicks are handled
+   by JS via event delegation on this class. */
 .scripture-ref {
-    color: #0085a1;
-    border-bottom: 1px dotted #0085a1;
-    cursor: pointer;
-    white-space: nowrap;
-}
-.scripture-ref:hover {
-    background: rgba(0,133,161,0.10);
-    border-radius: 2px;
+    color: inherit;
+    border-bottom: none;
+    background: transparent;
+    cursor: inherit;
+    white-space: inherit;
+    text-decoration: none;
 }
 /* ── Scripture popup ──────────────────────────────────── */
 #scripture-popup {
@@ -1339,3 +1339,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
 }
 </script>
+
+{% assign nt_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,galatians,ephesians,philippians,colossians,1thessalonians,2thessalonians,1timothy,2timothy,titus,philemon,hebrews,james,1peter,2peter,1john,2john,3john,jude,revelation" | split: "," %}
+{% if nt_books contains page.book_id %}{% include mhenry-diamond.html %}{% endif %}

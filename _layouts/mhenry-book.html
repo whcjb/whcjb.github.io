@@ -112,3 +112,6 @@ layout: default
 </style>
 
 {% if page.custom_style %}<style>{{ page.custom_style }}</style>{% endif %}
+
+{% assign nt_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,galatians,ephesians,philippians,colossians,1thessalonians,2thessalonians,1timothy,2timothy,titus,philemon,hebrews,james,1peter,2peter,1john,2john,3john,jude,revelation" | split: "," %}
+{% if nt_books contains page.book_id %}{% include mhenry-diamond.html %}{% endif %}

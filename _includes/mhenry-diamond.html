@@ -1,0 +1,661 @@
+<!--
+  钻石风格（diamond style）— 新约书卷统一主题
+  ─────────────────────────────────────────────────────────
+  与旧约的「水晶透明风」相对：
+    水晶 = 暖色玻璃，圆角，柔光，每书独立调色
+    钻石 = 冷色银光，棱面，硬边，新约统一银蓝色调
+
+  适用页面：
+    - mhenry-chapter (1.md/2.md/…)
+    - mhenry-preface (preface.md)
+    - mhenry-book    (index.html，章节目录)
+  由三个 layout 在 page.book_id 属于新约 27 卷之一时条件包含。
+-->
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Cormorant+Garamond:wght@500;700&family=ZCOOL+XiaoWei&family=Liu+Jian+Mao+Cao&family=LXGW+WenKai+TC&display=swap');
+
+/* ── diamond palette tokens（命名仅供阅读） ─────────────────
+   --d-base:    near-white silver
+   --d-frost:   pale blue-silver
+   --d-ice:     ice blue
+   --d-steel:   steel blue mid
+   --d-sapphire: deep blue accent
+   --d-navy:    text dark
+   --d-platinum: very dark navy
+   --d-bright:  white text on dark
+*/
+
+/* ═══ 章节页 + 前言页通用 ═════════════════════════════════ */
+
+/* 容器：银光棱面渐变 */
+#mhenry-col {
+    background: linear-gradient(135deg,
+        #F4F7FB 0%, #E2EAF5 22%,
+        #F2F5FA 44%, #DDE5F1 66%,
+        #EEF2F8 88%, #E0E8F3 100%) !important;
+    min-height: 100vh;
+    padding-bottom: 40px !important;
+    color: #1A2638;
+}
+
+/* 顶部导航：磨砂银 */
+.mh-nav-bar {
+    background: rgba(255,255,255,0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid rgba(180,200,225,0.55) !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.85) !important;
+}
+.mh-nav-bar a {
+    color: #1A2638 !important;
+    font-size: 13px;
+    text-decoration: none;
+}
+.mh-nav-bar a:hover { text-decoration: underline; }
+
+/* 章节标题 */
+#mhenry-col > h2 {
+    padding: 36px 20px 10px;
+    margin: 0;
+    font-size: 1.55em;
+    font-weight: 800;
+    color: #0D1A2E;
+    letter-spacing: 0.18em;
+    text-align: center;
+    background: transparent;
+    border-bottom: none;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.98),
+        0 2px 14px rgba(140,175,215,0.35);
+}
+#mhenry-col > h2::after {
+    content: '◇';              /* 菱形 vs 水晶的 ◆ 实心方 */
+    display: block;
+    font-size: 0.42em;
+    color: rgba(110,150,200,0.55);
+    margin: 12px auto 0;
+    letter-spacing: 0;
+    text-shadow:
+        0 0 8px rgba(180,210,240,0.95),
+        0 0 16px rgba(140,180,225,0.55);
+}
+
+/* 章节综述：磨砂银卡 */
+.mh-overview {
+    margin: 2px 0 32px;
+    padding: 24px 20px;
+    background: rgba(255,255,255,0.45) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(200,215,235,0.70) !important;
+    border-top: none !important;
+    border-radius: 0 0 6px 6px !important;     /* 钻石锐角 */
+    box-shadow:
+        inset 1px 0 0 rgba(255,255,255,0.95),
+        inset -1px 0 0 rgba(150,175,210,0.18),
+        inset 0 -1px 0 rgba(150,175,210,0.20),
+        0 12px 40px rgba(110,145,195,0.15);
+    color: #1A2638 !important;
+    line-height: 2;
+    font-family: "Cormorant Garamond", "Songti SC", "宋体", serif !important;
+    font-size: 0.98em;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-overview::before {
+    content: '◇  本章综述  ◇' !important;
+    display: block !important;
+    color: rgba(80,120,175,0.65) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.35em;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* 日期标题：两侧银线 */
+.mh-date-heading {
+    display: flex !important;
+    align-items: center;
+    gap: 14px;
+    margin: 44px 0 16px;
+    padding: 6px 0;
+    background: rgba(255,255,255,0.30) !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #0D1A2E !important;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.85);
+}
+.mh-date-heading::before,
+.mh-date-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(140,175,215,0.50) 0%,
+        rgba(255,255,255,0.95) 100%);
+}
+.mh-date-heading::after {
+    background: linear-gradient(to left,
+        rgba(140,175,215,0.50) 0%,
+        rgba(255,255,255,0.95) 100%);
+}
+
+/* 经节单元：棱面卡 */
+.mh-unit {
+    margin: 0 0 24px;
+    border: 1px solid rgba(200,215,235,0.75);
+    border-top: 2px solid rgba(140,175,215,0.65);
+    border-radius: 6px;                         /* 钻石锐角 */
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.98),
+        inset -1px -1px 0 rgba(140,175,210,0.15),
+        0 8px 28px rgba(110,145,195,0.18),
+        0 2px 6px rgba(110,145,195,0.10);
+    overflow: clip;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* 经文块 */
+.mh-unit > .mh-verse {
+    padding: 18px 20px;
+    padding-right: calc(5% + 22px);
+    background: rgba(255,255,255,0.50) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: none !important;
+    border-bottom: 1px solid rgba(200,215,235,0.55);
+    border-radius: 0;
+    line-height: 2.1;
+    color: #0D1A2E;
+    font-size: 0.97em;
+    font-family: "Klee One", "STKaiti", "KaiTi", "楷体", serif !important;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+/* 注释体 */
+.mh-unit-body {
+    padding: 22px 0 20px !important;
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    line-height: 2.05;
+    color: #1A2638;
+    font-size: 0.97em;
+    font-family: "Klee One", "STKaiti", "KaiTi", "楷体", serif !important;
+    border-radius: 0 0 5px 5px;
+    border-left: none !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.80);
+}
+.mh-unit-body > p {
+    margin: 0 0 0.9em;
+    text-align: justify;
+    text-indent: 2em;
+    font-size: 0.96em;
+    letter-spacing: 0.02em;
+}
+.mh-unit-body > p:last-child { margin-bottom: 0; }
+.mh-unit-body > p b,
+.mh-unit-body > p strong { color: #0D1A2E; font-weight: 700; }
+.mh-unit-body .mh-l1 > p,
+.mh-unit-body .mh-l2 > p,
+.mh-unit-body .mh-l3 > p { text-indent: 0; }
+
+/* I. II. 大纲（一级）— 钻石棱边 */
+#mhenry-col .mh-l1 {
+    margin: 26px 0 12px;
+    padding: 12px 0;
+    background: rgba(255,255,255,0.30) !important;
+    border: none !important;
+    border-left: 3px solid rgba(95,140,190,0.65) !important;
+    border-radius: 0 4px 4px 0 !important;
+    border-bottom: none !important;
+    line-height: 1.95;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-l1 > .mh-label {
+    background: rgba(140,175,215,0.25) !important;
+    backdrop-filter: blur(8px) !important;
+    color: #0D1A2E !important;
+    font-weight: 800 !important;
+    font-size: 0.88em !important;
+    padding: 1px 11px !important;
+    border-radius: 3px !important;              /* 锐角徽章 */
+    border: 1px solid rgba(140,175,215,0.65) !important;
+    margin-right: 8px !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.90),
+        0 1px 4px rgba(80,120,175,0.20) !important;
+    vertical-align: middle;
+}
+
+/* 1. 2. 3. 二级 */
+#mhenry-col .mh-l2 {
+    margin: 10px 0 6px 0;
+    padding: 8px 0;
+    background: rgba(255,255,255,0.22) !important;
+    border: none !important;
+    border-left: 2px solid rgba(140,175,215,0.50) !important;
+    border-radius: 0 4px 4px 0 !important;
+    line-height: 1.95;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-l2 > .mh-label {
+    color: #0D1A2E !important;
+    font-weight: 700 !important;
+    margin-right: 6px;
+}
+
+/* （1）（2）三级 */
+#mhenry-col .mh-l3 {
+    margin: 6px 0 4px 0;
+    padding: 4px 0;
+    border: none !important;
+    border-left: 1px dashed rgba(140,175,215,0.50) !important;
+    line-height: 1.9;
+    text-align: justify;
+}
+#mhenry-col .mh-l3 > .mh-label {
+    color: #2A3A52 !important;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* 经文引用：视觉与正文一致（颜色/下划线移除），点击仍有 popup */
+#mhenry-col .scripture-ref {
+    color: inherit !important;
+    border-bottom: none !important;
+    background: transparent !important;
+    text-decoration: none !important;
+    white-space: inherit !important;
+    cursor: pointer;
+}
+#mhenry-col .scripture-ref:hover {
+    background: rgba(140,175,215,0.18) !important;
+    border-radius: 2px;
+}
+
+/* 展开按钮 ── 折叠/展开两态强对比 */
+/* 折叠（默认）：浅冰蓝、半透明、淡描边 —— "可以点开" */
+#mhenry-col .mh-expand-tab,
+#mhenry-col .mh-unit > .mh-verse .mh-expand-tab {
+    background: rgba(220,232,248,0.55) !important;
+    backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(140,175,215,0.45) !important;
+    color: #2A4060 !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.35em !important;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s !important;
+}
+#mhenry-col .mh-expand-tab:hover {
+    background: rgba(140,175,215,0.55) !important;
+    color: #14223A !important;
+}
+/* 展开（已点开）：深宝蓝渐变、内白发光、清晰"激活"态 */
+#mhenry-col .mh-unit.mh-expanded .mh-expand-tab {
+    background: linear-gradient(180deg,
+        rgba(46,84,140,0.95) 0%,
+        rgba(28,58,108,0.95) 100%) !important;
+    color: #FAFCFF !important;
+    border-left: 1px solid rgba(255,255,255,0.55) !important;
+    box-shadow:
+        inset 1px 0 0 rgba(255,255,255,0.35),
+        inset -1px 0 0 rgba(20,40,80,0.4),
+        0 2px 8px rgba(28,58,108,0.35) !important;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.25) !important;
+}
+#mhenry-col .mh-unit.mh-expanded .mh-expand-tab:hover {
+    background: linear-gradient(180deg,
+        rgba(56,98,158,1) 0%,
+        rgba(34,68,120,1) 100%) !important;
+}
+
+/* 脚注 */
+.mhenry-footnotes {
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 5px;
+    padding: 14px 16px;
+    border: 1px solid rgba(200,215,235,0.65);
+    color: #1A2638;
+}
+
+/* 顶部控件：钻石主题 */
+.font-size-ctrl {
+    border: 1px solid rgba(140,175,215,0.65) !important;
+    border-radius: 4px !important;
+}
+.font-size-ctrl button {
+    background: rgba(255,255,255,0.55) !important;
+    border-right: 1px solid rgba(140,175,215,0.50) !important;
+    color: #1A2638 !important;
+}
+.font-size-ctrl button:hover {
+    background: rgba(80,130,180,0.35) !important;
+    color: #FAFCFF !important;
+}
+button[onclick="toggleCalvinCompare()"] {
+    background: rgba(255,255,255,0.50) !important;
+    border: 1px solid rgba(140,175,215,0.65) !important;
+    color: #1A2638 !important;
+    border-radius: 4px !important;
+}
+button[onclick="toggleCalvinCompare()"]:hover {
+    background: rgba(80,130,180,0.35) !important;
+}
+
+/* TTS 朗读栏 */
+.tts-bar {
+    background: rgba(225,235,250,0.30) !important;
+    border: 1px solid rgba(180,200,225,0.55) !important;
+    border-radius: 5px !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+.tts-btn {
+    background: rgba(80,130,180,0.45) !important;
+    color: #FAFCFF !important;
+    border-radius: 3px !important;
+}
+.tts-btn:hover { background: rgba(80,130,180,0.65) !important; }
+.tts-speed { color: #2A3A52 !important; }
+.tts-speed input[type="range"] { accent-color: #5F8CC2 !important; }
+.tts-progress { background: rgba(200,215,235,0.55) !important; }
+.tts-progress-fill { background: rgba(95,140,190,0.65) !important; }
+.tts-highlight { background: rgba(140,175,215,0.20) !important; }
+
+/* 页脚 */
+.mh-footer hr {
+    border-color: rgba(180,200,225,0.50) !important;
+    border-top: 1px solid rgba(180,200,225,0.50) !important;
+    margin-top: 0;
+}
+.mh-footer > div:first-child {
+    color: rgba(110,150,200,0.60) !important;
+    text-shadow: 0 0 12px rgba(180,210,240,0.50);
+}
+.mh-footer a {
+    background: rgba(255,255,255,0.50) !important;
+    border: 1px solid rgba(180,200,225,0.70) !important;
+    color: #1A2638 !important;
+    border-radius: 4px !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        0 2px 8px rgba(110,145,195,0.15) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.mh-footer a:hover {
+    background: rgba(255,255,255,0.70) !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.95),
+        0 4px 14px rgba(80,130,180,0.22) !important;
+}
+.mh-footer p { color: rgba(80,120,175,0.65) !important; }
+.mh-footer > div:last-child {
+    border-top: 1px dashed rgba(180,200,225,0.50) !important;
+}
+
+/* ═══ 前言专用（haggai 风格，钻石冷调） ════════════════════
+   设计取向：克制 > 堆叠。结构与边角尺寸照搬 OT haggai，仅做：
+   ① 配色从暖金切到钻石银蓝
+   ② emblem 从 ◆ 换为 ✠（新约标识）
+   ③ 结尾保留一行新约经文铭文
+   原 C 档里 ❦ 四角、⊱⊰ 标签括号、上下饰带、SVG 噪点、
+   渐变首字、双线顶边——全部移除，因为它们互相抢戏。 */
+
+.mhenry-preface-body { padding: 8px 20px 24px !important; }
+
+.preface-wrap { margin: 12px 0 32px; padding: 0; }
+
+/* 顶部十字徽（新约标识，单独存在不加装饰带） */
+.preface-emblem {
+    text-align: center;
+    font-size: 22px;
+    color: rgba(110,150,200,0.55);
+    margin: 24px 0 18px;
+    text-shadow:
+        0 0 16px rgba(180,210,240,0.85),
+        0 0 30px rgba(140,180,225,0.50);
+    letter-spacing: 0;
+}
+
+/* 标题块：照 haggai 16px 圆角、玻璃银底 */
+.preface-title-block {
+    text-align: center;
+    margin-bottom: 6px;
+    padding: 0;
+    background: rgba(255,255,255,0.40);
+    border: 1px solid rgba(255,255,255,0.80);
+    border-top: 2px solid rgba(140,175,215,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.90),
+        inset -1px -1px 0 rgba(110,145,195,0.12),
+        0 10px 36px rgba(95,135,190,0.14);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+.preface-label {
+    font-size: 11px;
+    letter-spacing: 0.40em;
+    color: rgba(80,120,175,0.65);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.preface-book-name {
+    font-family: "ZCOOL XiaoWei", "Ma Shan Zheng", "STKaiti", "KaiTi", "楷体", serif;
+    font-size: 2.4em;
+    color: #14233A;
+    letter-spacing: 0.22em;
+    line-height: 1.25;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 14px rgba(140,180,225,0.30);
+    margin-bottom: 10px;
+}
+.preface-sub {
+    font-size: 12px;
+    color: rgba(80,120,175,0.60);
+    letter-spacing: 0.18em;
+}
+
+/* 分隔线：照 haggai 简洁，仅 ◇ 居中 */
+.preface-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0 18px;
+    color: rgba(110,150,200,0.55);
+    font-size: 12px;
+}
+.preface-divider::before,
+.preface-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(255,255,255,0.92) 0%,
+        rgba(140,180,225,0.45) 100%);
+}
+.preface-divider::after {
+    background: linear-gradient(to left,
+        rgba(255,255,255,0.92) 0%,
+        rgba(140,180,225,0.45) 100%);
+}
+
+/* 正文区：照 haggai 14px 圆角、玻璃银底，无噪点 */
+.preface-body {
+    background: rgba(255,255,255,0.30);
+    border: 1px solid rgba(255,255,255,0.62);
+    border-radius: 14px;
+    padding: 0;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.85),
+        0 8px 28px rgba(95,135,190,0.12);
+}
+.preface-body p {
+    font-family: "LXGW WenKai TC", "Klee One", "STKaiti", "KaiTi", "楷体", serif !important;
+    font-size: 1.05em !important;
+    line-height: 2.1 !important;
+    color: #14223A !important;
+    text-indent: 2em;
+    text-align: justify;
+    letter-spacing: 0.03em;
+    margin-bottom: 0 !important;
+    padding: 24px 28px;
+}
+.preface-body p::first-letter {
+    font-size: 3em;
+    font-family: "ZCOOL XiaoWei", "Ma Shan Zheng", "STKaiti", serif;
+    color: rgba(80,130,180,0.85);
+    float: left;
+    line-height: 0.78;
+    margin: 6px 8px 0 0;
+    text-shadow: 0 2px 10px rgba(140,180,225,0.40);
+}
+
+/* 结尾：照 haggai 简洁；下方加新约经文铭文（NT 专属） */
+.preface-closing {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: rgba(110,150,200,0.45);
+}
+.preface-closing-verse {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 4px;
+    font-family: "LXGW WenKai TC", "Ma Shan Zheng", serif;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: rgba(80,120,175,0.75);
+    text-shadow: 0 1px 0 rgba(255,255,255,0.85);
+}
+.preface-closing-verse-ref {
+    display: block;
+    margin-top: 2px;
+    font-family: "ZCOOL XiaoWei", serif;
+    font-size: 10px;
+    color: rgba(110,150,200,0.60);
+    letter-spacing: 0.22em;
+}
+
+/* 嵌入式脚注 aside（与 haggai/genesis 章节里的样式协调） */
+.preface-wrap + aside.mhenry-footnotes,
+.mhenry-preface-body aside.mhenry-footnotes {
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(200,215,235,0.55);
+    border-radius: 12px;
+    margin: 18px 0 0;
+    padding: 14px 20px;
+    color: rgba(20,34,58,0.85);
+    font-family: "LXGW WenKai TC", "Klee One", serif;
+    font-size: 0.92em;
+    line-height: 1.85;
+}
+.mhenry-preface-body aside.mhenry-footnotes p {
+    margin: 4px 0;
+    text-indent: 0;
+}
+.mhenry-preface-body aside.mhenry-footnotes sup {
+    color: rgba(80,130,180,0.85);
+    font-weight: 700;
+    margin-right: 4px;
+}
+
+/* ═══ 书卷目录页 (mhenry-book) ═══════════════════════════
+   layout 已经用 Liquid 条件门控只对 NT 书 include 本文件，
+   所以下面这些 body/.navbar-default 选择器不需要再加前缀。 */
+
+body {
+    background: linear-gradient(135deg,
+        #F4F7FB 0%, #E2EAF5 25%,
+        #F2F5FA 50%, #DDE5F1 75%,
+        #EEF2F8 100%) !important;
+    min-height: 100vh;
+}
+.navbar-default {
+    background: rgba(255,255,255,0.55) !important;
+    backdrop-filter: blur(14px) !important;
+    border-bottom: 1px solid rgba(180,200,225,0.55) !important;
+    box-shadow: none !important;
+}
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-brand {
+    color: #1A2638 !important;
+}
+.intro-header { opacity: 0.85; }
+
+.mhenry-chapter-btn--has-content {
+    background: rgba(255,255,255,0.55) !important;
+    border: 2px solid rgba(140,175,215,0.65) !important;
+    color: #1A2638 !important;
+    border-radius: 4px !important;             /* 钻石锐角 */
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.95),
+        0 2px 8px rgba(110,145,195,0.18) !important;
+    backdrop-filter: blur(8px) !important;
+    font-weight: 600 !important;
+    transition: background 0.2s, border-color 0.2s, color 0.2s !important;
+}
+.mhenry-chapter-btn--has-content:hover {
+    background: rgba(80,130,180,0.45) !important;
+    border-color: rgba(60,100,150,0.85) !important;
+    color: #FAFCFF !important;
+    box-shadow: 0 4px 16px rgba(80,130,180,0.30) !important;
+}
+.mhenry-chapter-btn--preface {
+    background: rgba(225,235,250,0.55) !important;
+    border-color: rgba(95,140,190,0.70) !important;
+    color: #050C1E !important;
+}
+.mhenry-chapter-btn--preface:hover {
+    background: rgba(80,130,180,0.55) !important;
+    border-color: rgba(80,130,180,0.55) !important;
+    color: #FAFCFF !important;
+}
+.mh-section-title {
+    border-bottom: 2px solid rgba(140,175,215,0.65) !important;
+    color: #0D1A2E !important;
+}
+.mh-book-chapters-col {
+    background: rgba(255,255,255,0.40);
+    border-radius: 6px;
+    padding: 20px 16px 12px !important;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.85),
+        0 4px 24px rgba(95,135,190,0.15);
+    backdrop-filter: blur(12px);
+}
+footer {
+    background: rgba(255,255,255,0.30) !important;
+    backdrop-filter: blur(8px) !important;
+    border-top: 1px solid rgba(180,200,225,0.50) !important;
+}
+footer .copyright,
+footer a {
+    color: #2A3A52 !important;
+}
+</style>
