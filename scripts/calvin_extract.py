@@ -230,6 +230,31 @@ def write_txt_output(blocks, out_path):
 _LINE_BREAK = {'__line_break__': True}
 
 
+_QUOTE_ANY   = r'["“”\'‘’]'
+_QUOTE_DOUBLE = r'["“”]'
+_RE_SPLIT_IT_QUOTE_A = re.compile(
+    rf'\*({_QUOTE_ANY})\*([^*]+?)\*([,.;:!?]*{_QUOTE_ANY})\*'
+)
+_RE_SPLIT_IT_QUOTE_B = re.compile(
+    rf'\*({_QUOTE_ANY})\*([^*]+?{_QUOTE_DOUBLE})'
+)
+
+
+def _fix_split_italic_quotes(text):
+    """PDF 中引文起讫的双引号常被单独提取为 italic span，markdown 产出
+    `*“*X*,”*`（两侧都 italic）或 `*“*X”`（只 open italic），kramdown 渲染时
+    两侧 `*` 无法配对 → 显示成字面星号。解决：扩 italic 范围到包整段引文。
+
+    Pattern A：两侧均有 `*` 包引号 → 移除内部 `*`，italic 包整句
+    Pattern B：仅 open 有 `*` 包引号 → 补 close `*` 包整句
+
+    apostrophe `'`/`'` 故意从 Pattern B 的 close 集合中排除，避免被
+    `king'*s` 这种英文 possessive 误截断。"""
+    text = _RE_SPLIT_IT_QUOTE_A.sub(r'*\1\2\3*', text)
+    text = _RE_SPLIT_IT_QUOTE_B.sub(r'*\1\2*', text)
+    return text
+
+
 def ccel_spans_to_md(lines, fn_size_max=None):
     """Convert block lines to Markdown, normalising bold verse numbers → **N.**
 
@@ -314,6 +339,9 @@ def ccel_spans_to_md(lines, fn_size_max=None):
     # `Matthew 5:42` + `.` 两段，产出 `**Matthew 5:42****.**` 让 kramdown
     # 渲染成两个 <strong>，破坏 verse-nav 的 `Book Ch:N\.` 整体匹配
     result = result.replace('****', '')
+    # 修正引文 italic 只包到引号字符（PDF 中引号常被单独切成 italic span）
+    # `*“*X*,”*` → `*“X,”*` ；`*“*X”` → `*“X”*`
+    result = _fix_split_italic_quotes(result)
     return re.sub(r' {2,}', ' ', result).strip()
 
 

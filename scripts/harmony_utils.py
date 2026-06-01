@@ -368,6 +368,15 @@ def process_section_blocks(header, body):
     # 中三星号 `***` 用于 bold-italic，但 raw 中 `***` 之后必有内容字符，
     # 不会形成纯 4 星序列；实测无误判）
     body = body.replace('****', '')
+    # 引文 italic 只包到引号字符的情况——见 calvin_extract._fix_split_italic_quotes
+    body = re.sub(
+        r'\*(["“”\'‘’])\*([^*]+?)\*([,.;:!?]*["“”\'‘’])\*',
+        r'*\1\2\3*', body,
+    )
+    body = re.sub(
+        r'\*(["“”\'‘’])\*([^*]+?["“”])',
+        r'*\1\2*', body,
+    )
     raw_blocks = re.split(r'\n{2,}', body)
     blocks = [b.strip() for b in raw_blocks if b.strip()]
 
