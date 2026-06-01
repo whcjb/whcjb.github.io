@@ -620,6 +620,37 @@ if n_books >= 2:
 
 这样即便 PyMuPDF 检测到的列数少于卷数（如「MATTHEW; MARK; LUKE」3 卷但 Mark 列文字稀疏只检出 2 列），渲染时仍输出 3 列表，缺失卷的列保留空 `<td>`，避免「Luke 内容错配到 Mark 列」。
 
+**section_col_layout 锁定后的宽松检测 + 注释过滤**：
+
+section header 已确立列布局后（如 2 卷或 3 卷预算槽位），`split_block_by_columns` 需要把所有「最小行数」「最小 x0 频次」「y-轴交替率」等门槛**统一放宽**，否则极短并列段（如「MATTHEW 5:17-19; LUKE 16:17」Luke 仅 1 行对应 Matt 仅 2 行的 3 行总块）会被全数拒判。
+
+但放宽后又会**误把窄列注释当成多列经文**（PDF 偶有 commentary 分栏布局）。必须配套加注释过滤：
+
+```python
+def cols_look_like_commentary(cols):
+    """任一列含 **Book Ch:N.** 起首 或 italic span → 注释，拒绝 emit"""
+    for col_lines in cols:
+        text = concat_spans(col_lines)
+        if re.match(r'^\*?\*?[A-Z][a-z]+ \d+:\d+', text.strip()):
+            return True
+        for ln in col_lines:
+            for s in ln.get('spans', []):
+                if s.get('flags', 0) & 2 and s['text'].strip():
+                    # italic flag set 且不是脚注上标
+                    if not (s.get('flags', 0) & 1 and s['text'].strip().isdigit()):
+                        return True
+    return False
+
+# 调用：
+cols = split_block_by_columns(block, ..., expected_slot_x0s=section_layout_x0s)
+if cols and cols_look_like_commentary(cols):
+    cols = None   # 假阳性，让 fall through 到单列处理
+```
+
+**为什么 expected_slot_x0s 锁定后要跳过 1D 聚类**：
+
+宽松后所有 x0 都纳入聚类（min_freq=1），但 PDF 宽行 wrap 产生的 stray x0（如 96 行多列块里的 147、190、222、293、329）会让 [113, 244, 375] 三主簇被串成一个大簇。解决：直接用 expected_slot_x0s 作为列中心（信任 section header 标的卷位置），完全跳过聚类。
+
 **单行跨列 span 重分配**（极少见但确实存在）：
 
 PDF 偶有一行 bbox 物理跨越两列（如 ch9 line 81 bbox=244→499，第一段 span 在 Mark 列范围，后续 span 在 Luke 列）。`split_block_by_columns` 按 line 整体首 span x0 分列会全归入 Mark → 末尾的 "**39.**And" 错位。
