@@ -470,7 +470,25 @@ def split_block_by_columns(block, page_mid, col_gap_min=50, expected_slot_x0s=No
         bbox = line.get('bbox')
         line_w = (bbox[2] - bbox[0]) if bbox else 0
         spans = [s for s in line.get('spans', []) if s['text'].strip()]
+        # 跨列检测：line 宽度超阈值 AND 相邻 span 之间有显著空白（> 25px，
+        # 即真有列间隔），才视为物理跨列。普通全宽叙述行（含上标脚注 ref
+        # 这种紧贴的多 span）虽然宽度大但 span 间无空白，按整行 x0 归列。
+        is_cross = False
         if line_w > cross_thresh and len(spans) >= 2:
+            spans_sorted = sorted(spans, key=lambda s: s['bbox'][0])
+            for i in range(1, len(spans_sorted)):
+                gap = spans_sorted[i]['bbox'][0] - spans_sorted[i-1]['bbox'][2]
+                sp = spans_sorted[i]
+                # bold 数字 span = 新节号开始 → 必属下一列（如 Mark 2:22 末 +
+                # Luke 5:39 起在同一物理行的情形）；区分于 sup 脚注 ref。
+                is_verse_marker = (
+                    (sp.get('flags', 0) & 16)
+                    and sp['text'].strip().rstrip('.').isdigit()
+                )
+                if gap > 25 or is_verse_marker:
+                    is_cross = True
+                    break
+        if is_cross:
             per_col_sps = [[] for _ in centers]
             for s in spans:
                 sc = (s['bbox'][0] + s['bbox'][2]) / 2
