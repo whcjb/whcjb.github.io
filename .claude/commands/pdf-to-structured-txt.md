@@ -559,7 +559,47 @@ def emit_multi_col(cols):
 section_col_layout = None
 ```
 
-**质检**：渲染后的 `<table class="scripture-table">` 每个 `<td>` 内容应只含该 gospel 的经文，不应混入其他卷的续接段；用 `grep <td>` 抽几个长 cell 看是否串了节号超出该卷范围。
+**section header 卷数 = 权威列数（不依赖检测结果）**：
+
+`section_col_layout` 应以 section header 中 `;` 分隔的卷数为 n_books，按 body 等宽预算各卷槽位的 x0：
+
+```python
+# section header 出现时
+n_books = norm.count(';') + 1 if ';' in norm else 0
+if n_books >= 2:
+    slot_w = (body_right - body_left) / n_books
+    slot_x0s = [body_left + i * slot_w + 5 for i in range(n_books)]
+    section_col_layout = (n_books, slot_x0s)
+```
+
+这样即便 PyMuPDF 检测到的列数少于卷数（如「MATTHEW; MARK; LUKE」3 卷但 Mark 列文字稀疏只检出 2 列），渲染时仍输出 3 列表，缺失卷的列保留空 `<td>`，避免「Luke 内容错配到 Mark 列」。
+
+**单行跨列 span 重分配**（极少见但确实存在）：
+
+PDF 偶有一行 bbox 物理跨越两列（如 ch9 line 81 bbox=244→499，第一段 span 在 Mark 列范围，后续 span 在 Luke 列）。`split_block_by_columns` 按 line 整体首 span x0 分列会全归入 Mark → 末尾的 "**39.**And" 错位。
+
+修复：检测 line bbox 宽度 > col_slot_w × 1.4 时（明显跨列），按 SPAN 级 x 中心分配到各列：
+
+```python
+col_slot_w = (max(centers) - min(centers)) / max(len(centers) - 1, 1)
+cross_thresh = max(col_slot_w * 1.4, 200)
+for x0, line in line_x0s:
+    line_w = line['bbox'][2] - line['bbox'][0]
+    if line_w > cross_thresh and len(spans) >= 2:
+        per_col_sps = [[] for _ in centers]
+        for s in line['spans']:
+            sc = (s['bbox'][0] + s['bbox'][2]) / 2
+            best = argmin_by_distance(sc, centers)
+            per_col_sps[best].append(s)
+        for col_idx, col_sps in enumerate(per_col_sps):
+            if col_sps:
+                column_lines[col_idx].append({'spans': col_sps, 'bbox': line['bbox']})
+    else:
+        # 正常按首 span x0 整行分配
+        ...
+```
+
+**质检（必跑的深度审计）**：渲染后的每个 `<table class="scripture-table">` `<td>` 内的节号必须在该列 header（如「Mark 2:18-22」）声明的范围内。用脚本扫所有 `<strong>N.</strong>` 并对照该卷该章的最大节号 + 列头宣布范围 ±5 容差，超出即标红。本卷修复后此审计应返回 0 条。
 
 **输出 sentinel + 发布端表格渲染：**
 
