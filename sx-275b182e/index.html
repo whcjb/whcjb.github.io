@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta http-equiv="X-Robots-Tag" content="noindex, nofollow, noarchive, nosnippet">
+<title>📖</title>
+<style>
+:root {
+    --bg: #f7f5ee;
+    --card: #ffffff;
+    --text: #2a2014;
+    --muted: #8a7d6a;
+    --accent: #8b5a2b;
+    --border: rgba(139,90,43,0.18);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #14130f;
+        --card: #1d1c18;
+        --text: #e8e4d6;
+        --muted: #8a8478;
+        --accent: #d4a574;
+        --border: rgba(212,165,116,0.20);
+    }
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+body {
+    font-family: "LXGW WenKai TC", "PingFang SC", "Songti SC", "Noto Serif SC", serif;
+    font-size: 16px; line-height: 1.7;
+    padding: max(env(safe-area-inset-top), 12px) 14px max(env(safe-area-inset-bottom), 12px);
+    max-width: 760px; margin: 0 auto;
+}
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+TC&display=swap');
+
+#auth { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 60px 0; }
+#auth h1 { font-size: 22px; margin: 0; letter-spacing: 0.3em; color: var(--accent); font-weight: 400; }
+#auth .lock { font-size: 56px; line-height: 1; opacity: 0.7; }
+#auth input {
+    width: 100%; max-width: 320px; padding: 12px 14px; font-size: 16px;
+    border: 1px solid var(--border); border-radius: 8px; background: var(--card);
+    color: var(--text); text-align: center; letter-spacing: 0.1em;
+    font-family: ui-monospace, "SF Mono", monospace;
+}
+#auth button {
+    padding: 12px 32px; font-size: 16px; border: none; border-radius: 8px;
+    background: var(--accent); color: #fff; cursor: pointer; letter-spacing: 0.2em;
+}
+#auth button:disabled { opacity: 0.5; cursor: wait; }
+#auth #err { color: #c0392b; font-size: 14px; min-height: 20px; text-align: center; }
+
+#app { display: none; }
+#search-bar {
+    position: sticky; top: 0; z-index: 10; background: var(--bg);
+    padding: 10px 0; margin: 0 0 8px; border-bottom: 1px solid var(--border);
+}
+#search-bar input {
+    width: 100%; padding: 10px 14px; font-size: 15px;
+    border: 1px solid var(--border); border-radius: 6px;
+    background: var(--card); color: var(--text);
+}
+#stat { font-size: 12px; color: var(--muted); padding: 4px 4px 12px; letter-spacing: 0.1em; }
+.book-group { margin-bottom: 24px; }
+.book-title {
+    font-size: 14px; color: var(--accent); margin: 16px 0 8px;
+    padding-left: 8px; border-left: 3px solid var(--accent);
+    letter-spacing: 0.15em;
+}
+.sermon { background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 8px; overflow: hidden; }
+.sermon summary {
+    list-style: none; padding: 12px 14px; cursor: pointer;
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+}
+.sermon summary::-webkit-details-marker { display: none; }
+.sermon summary::before {
+    content: '▸'; color: var(--accent); margin-right: 6px;
+    transition: transform 0.15s; display: inline-block;
+}
+.sermon[open] summary::before { transform: rotate(90deg); }
+.sermon-topic { flex: 1; font-size: 15px; }
+.sermon-meta { font-size: 11px; color: var(--muted); white-space: nowrap; }
+.sermon-body {
+    padding: 0 16px 16px; font-size: 15.5px; line-height: 1.95;
+    white-space: pre-wrap; word-break: break-word;
+    border-top: 1px dashed var(--border); padding-top: 12px;
+    color: var(--text);
+}
+.sermon-ref { font-size: 12px; color: var(--accent); padding: 0 16px 4px; letter-spacing: 0.06em; }
+.sermon-video { font-size: 11px; padding: 0 16px 8px; }
+.sermon-video a { color: var(--muted); text-decoration: none; }
+.sermon-video a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div id="auth">
+    <div class="lock">🔒</div>
+    <h1>個人學習</h1>
+    <input id="pwd" type="password" autocomplete="off" autocapitalize="off"
+           autocorrect="off" spellcheck="false" inputmode="text"
+           placeholder="密碼">
+    <button id="go">解 鎖</button>
+    <div id="err"></div>
+</div>
+
+<div id="app">
+    <div id="search-bar"><input id="q" placeholder="搜索 标题 / 经文 / 日期"></div>
+    <div id="stat"></div>
+    <div id="list"></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+
+async function deriveKey(password, salt, iterations) {
+    const enc = new TextEncoder();
+    const baseKey = await crypto.subtle.importKey(
+        'raw', enc.encode(password),
+        {name: 'PBKDF2'}, false, ['deriveKey']);
+    return await crypto.subtle.deriveKey(
+        {name: 'PBKDF2', salt, iterations, hash: 'SHA-256'},
+        baseKey,
+        {name: 'AES-GCM', length: 256},
+        false, ['decrypt']);
+}
+
+async function unlock(password) {
+    const resp = await fetch('bundle.bin', {cache: 'no-store'});
+    if (!resp.ok) throw new Error('bundle.bin not found');
+    const buf = new Uint8Array(await resp.arrayBuffer());
+    const salt = buf.slice(0, 16);
+    const iv   = buf.slice(16, 28);
+    const iters = new DataView(buf.buffer, 28, 4).getUint32(0, false);
+    const ct   = buf.slice(32);
+    const key = await deriveKey(password, salt, iters);
+    const pt = await crypto.subtle.decrypt({name: 'AES-GCM', iv}, key, ct);
+    const json = new TextDecoder('utf-8').decode(pt);
+    return JSON.parse(json);
+}
+
+function esc(s) {
+    return String(s).replace(/[&<>"']/g, c =>
+        ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+let DATA = null;
+
+function render(filter) {
+    const q = (filter || '').toLowerCase().trim();
+    const groups = {};
+    let total = 0, shown = 0;
+    for (const s of DATA) {
+        total++;
+        const hay = (s.title + ' ' + s.ref + ' ' + s.date).toLowerCase();
+        if (q && !hay.includes(q)) continue;
+        (groups[s.book] = groups[s.book] || []).push(s);
+        shown++;
+    }
+    $('stat').textContent = q
+        ? `匹配 ${shown} / ${total} 篇`
+        : `共 ${total} 篇 · ${Object.keys(groups).length} 卷`;
+    const ord = Object.keys(groups).sort();
+    const html = ord.map(book => {
+        const items = groups[book].sort((a, b) => (b.date || '').localeCompare(a.date || ''));
+        return `<div class="book-group">
+            <div class="book-title">${esc(book)}</div>
+            ${items.map(s => `<details class="sermon">
+                <summary>
+                    <span class="sermon-topic">${esc(s.display_title)}</span>
+                </summary>
+                <div class="sermon-ref">${esc(s.ref)}</div>
+                <div class="sermon-video"><a href="${esc(s.video)}" target="_blank" rel="noopener noreferrer">▶ 视频</a></div>
+                <div class="sermon-body">${esc(s.body)}</div>
+            </details>`).join('')}
+        </div>`;
+    }).join('');
+    $('list').innerHTML = html;
+}
+
+$('go').addEventListener('click', async () => {
+    const btn = $('go'); btn.disabled = true; $('err').textContent = '';
+    try {
+        DATA = await unlock($('pwd').value);
+        $('auth').style.display = 'none';
+        $('app').style.display = 'block';
+        render('');
+    } catch (e) {
+        $('err').textContent = '密碼錯誤或文件損毀';
+        btn.disabled = false;
+    }
+});
+$('pwd').addEventListener('keydown', e => { if (e.key === 'Enter') $('go').click(); });
+$('q').addEventListener('input', e => render(e.target.value));
+</script>
+</body>
+</html>
