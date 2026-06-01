@@ -312,6 +312,10 @@ layout: default
   var entries = [];   // [{anchorId, pillLabel}, ...]
 
   paras.forEach(function(p) {
+    // 经文盒子 <td><p>…</p></td> 里的 <strong>N.</strong> 是经文节号，
+    // 不是注释段起首；这些 verse 已经由 scripture-box 上方的卷名 th 表头
+    // / Format A 段头表征。跳过避免泄漏成裸数字 pill（如 17/18/42）。
+    if (p.closest('td') || p.closest('.scripture-table')) return;
     var first = p.firstElementChild;
     if (!first || first.tagName !== 'STRONG') return;
     var t = first.textContent.trim();
