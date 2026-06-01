@@ -601,6 +601,39 @@ for x0, line in line_x0s:
 
 **质检（必跑的深度审计）**：渲染后的每个 `<table class="scripture-table">` `<td>` 内的节号必须在该列 header（如「Mark 2:18-22」）声明的范围内。用脚本扫所有 `<strong>N.</strong>` 并对照该卷该章的最大节号 + 列头宣布范围 ±5 容差，超出即标红。本卷修复后此审计应返回 0 条。
 
+**section header 同卷多引用归并（关键陷阱）**：
+
+不少 section header 把同一卷的多处对照引用写在一起，用 `;` 分隔但**不重复卷名**——例：
+
+- `MATTHEW 5:13-16; MARK 9:49-50; 4:21; LUKE 14:34-35; 8:16; 11:33`
+- 这里 `4:21` 是 Mark 4:21（同卷续引），`8:16` 和 `11:33` 是 Luke 续引
+
+**直接 `header.count(';') + 1 = 6` 来当列数错了**，会生成 6 列空白表。
+
+正确做法：解析时**按卷名提取唯一书目集合作为 n_books**，发布端的列头也要把无卷名前缀的引用并入上一栏：
+
+```python
+# extract：n_books 按卷名集合
+parts = [p.strip() for p in norm.split(';')]
+books = []
+for p in parts:
+    bm = re.match(r'^([A-Z]+)\b', p)
+    if bm and bm.group(1) not in books:
+        books.append(bm.group(1))
+n_books = len(books)
+
+# publish：col_titles_raw 按卷名分组
+parts = [s.strip() for s in header.split(';')]
+col_titles_raw = []
+for p in parts:
+    if re.match(r'^[A-Z][A-Za-z]*\b', p):     # 带卷名前缀 → 新列
+        col_titles_raw.append(p)
+    elif col_titles_raw:                        # 无前缀 → 并入上一列
+        col_titles_raw[-1] += '; ' + p
+```
+
+最终列头：「Matthew 5:13-16」/「Mark 9:49-50; 4:21」/「Luke 14:34-35; 8:16; 11:33」三栏。
+
 **输出 sentinel + 发布端表格渲染：**
 
 提取阶段每列输出附 sentinel 标记自身的列号 / 总列数：
