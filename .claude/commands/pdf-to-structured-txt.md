@@ -540,6 +540,52 @@ if cols := split_block_by_columns(block, cfg['page_w']/2):
 - `grep "SCRIPTURE col=" calvin/BOOK/*.md` 应**为空**（marker 泄露则说明 bundling 没把多列段拉进 scripture-box）
 - 多列段的右栏末尾应见到该 gospel 末节（如 Luke 3:38 末句「the son of God」），否则可能因列大小过滤误杀导致丢段
 - 不应出现 `**Matthew 1:34.**` 等超出该卷实际节数的伪节号（典型征兆：右栏的 Luke 节号被左栏的 Matthew 注释 label 抓取）
+- 多列表格之后**不应有「孤立短段」紧接 scripture-box 之外**——若有（如 ch4 「to the people.」单行落在表格外），说明跨页尾续接没被识别（见下方）
+
+**跨页尾续接短块（≥ 3 行门槛的边角）：**
+
+某列经文末尾偶尔会**溢出到下一页**，独立成 1-2 行短 PDF block（例：ch4 「to the people.」是 Luke 3:18 行尾溢出）。这种块只有 1-2 行，被「每列 ≥ 3 行」门槛拒掉 → 落入注释区。
+
+修复策略：`extract_ccel_harmony` 跟踪最近多列块的各列 x-center，紧接的 1-2 行短块按 x0 匹配最近列（距离 < 60px）→ 以同 col 索引 emit 为该列的续接段。section header / 任何非续接块 / 新多列块出现时重置追踪状态。
+
+```python
+last_col_centers = None   # (n_cols, [center_x_per_col])
+
+# 在 body block 分支：
+cols = split_block_by_columns(block, cfg['page_w']/2)
+if cols:
+    # ... emit each column with sentinel ...
+    centers = []
+    for col_lines in cols:
+        sps = [s for s in col_lines[0]['spans'] if s['text'].strip()]
+        centers.append((sps[0]['bbox'][0] + col_lines[0]['spans'][-1]['bbox'][2])/2 if sps else None)
+    last_col_centers = (len(cols), centers)
+    continue
+
+# 尾续接判定：紧接多列块 + 1-2 行 + x 位置匹配某列中心
+if last_col_centers is not None:
+    n_cols, centers = last_col_centers
+    nonempty = [l for l in block['lines']
+                if any(s['text'].strip() for s in l['spans'])]
+    if 1 <= len(nonempty) <= 2:
+        sps = [s for s in nonempty[0]['spans'] if s['text'].strip()]
+        if sps:
+            xc = (sps[0]['bbox'][0] + sps[-1]['bbox'][2]) / 2
+            valid = [(i, c) for i, c in enumerate(centers) if c is not None]
+            if valid:
+                best_i, best_c = min(valid, key=lambda p: abs(p[1]-xc))
+                if abs(best_c - xc) < 60:
+                    md = ccel_spans_to_md(nonempty, cfg.get('footnote_size_max'))
+                    if md:
+                        output_blocks.append(
+                            f'<!--SCRIPTURE col={best_i} of={n_cols}-->\n{md}')
+                        continue
+last_col_centers = None   # 非尾续接则重置
+```
+
+发布端 `_scripture_box` 用 `_collect_fn_refs` 与按列 join 拼接的逻辑会自动把同 col 的所有段并入一个 `<td><p>`，跨页续接行无缝衔接。
+
+**section header 出现时也要 `last_col_centers = None`**，避免跨节误判。
 
 ### 4.5d 居中检测：宽行多行经文引用必须按内容信号识别
 
