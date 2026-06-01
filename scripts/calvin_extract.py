@@ -609,6 +609,10 @@ def extract_ccel_harmony(cfg):
     pending_fns      = []   # footnote defs buffered until next section header / EOF
     last_section_upper = None
     last_col_centers   = None   # 最近多列块的列中心 x，用于识别尾续接短块
+    # 本节首次多列识别确立的列布局 (n_cols, col_x0s)。后续多列块按 x0 重映射到
+    # 此布局，避免「3 列 + 2 列 + 2 列」混搭时 col 索引错位（如 Luke 续接段
+    # 被错配到 Mark 列）
+    section_col_layout = None
 
     def flush_section_header(label):
         # Emit any pending footnote defs from the just-finished section BEFORE
@@ -620,16 +624,17 @@ def extract_ccel_harmony(cfg):
         output_blocks.append(f'\n## {label}\n')
 
     def emit_multi_col(cols):
-        """Emit detected multi-col cols, update last_col_centers / x0s."""
-        nonlocal last_col_centers
+        """Emit detected multi-col cols, update last_col_centers / x0s.
+
+        若本 section 已经确立列布局（section_col_layout 非 None），按 x0
+        把本次 cols 重映射到该布局，使后续多列块共用同一索引空间。
+        """
+        nonlocal last_col_centers, section_col_layout
         n_cols = len(cols)
         centers = []
-        col_x0s  = []  # 每列大多数行的 x0（取中位数），用于识别后续列续接块
-        for col_idx, col_lines in enumerate(cols):
-            md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
-            if md:
-                output_blocks.append(f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}')
-            # 取本列所有行的 x0 中位数；x 中心同样按中位数
+        col_x0s  = []
+        per_col_x0_local = []   # 本次 emit 各列的 x0 中位数，按 cols 顺序
+        for col_lines in cols:
             xs0 = sorted(s['bbox'][0] for ln in col_lines
                          for s in (ln.get('spans') or [])
                          if s['text'].strip())
@@ -637,12 +642,37 @@ def extract_ccel_harmony(cfg):
                          for s in (ln.get('spans') or [])
                          if s['text'].strip())
             if xs0 and xs1:
-                col_x0s.append(xs0[len(xs0)//2])
+                per_col_x0_local.append(xs0[len(xs0)//2])
                 centers.append((xs0[len(xs0)//2] + xs1[len(xs1)//2]) / 2)
             else:
-                col_x0s.append(None)
+                per_col_x0_local.append(None)
                 centers.append(None)
-        last_col_centers = (n_cols, centers, col_x0s)
+
+        # 决定输出用的 (out_n_cols, mapping[local_col_idx] -> out_col_idx)
+        if section_col_layout is not None:
+            out_n_cols, layout_x0s = section_col_layout
+            mapping = []
+            for x in per_col_x0_local:
+                if x is None:
+                    mapping.append(0)
+                else:
+                    best = min(range(len(layout_x0s)),
+                               key=lambda i: abs((layout_x0s[i] or 1e9) - x))
+                    mapping.append(best)
+        else:
+            out_n_cols = n_cols
+            mapping = list(range(n_cols))
+            section_col_layout = (n_cols, list(per_col_x0_local))
+
+        # 发射 sentinel + 内容
+        for local_idx, col_lines in enumerate(cols):
+            md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
+            if md:
+                output_blocks.append(
+                    f'<!--SCRIPTURE col={mapping[local_idx]} of={out_n_cols}-->\n{md}'
+                )
+            col_x0s.append(per_col_x0_local[local_idx])
+        last_col_centers = (out_n_cols, centers, col_x0s)
 
     def block_looks_like_scripture_fragment(blk):
         """块小且像经文片段（含「数字.字母」节号样式 N.X 或 **N.**）。
@@ -695,6 +725,7 @@ def extract_ccel_harmony(cfg):
                 flush_section_header(norm)
                 last_section_upper = norm
                 last_col_centers = None
+                section_col_layout = None
                 bi += 1; continue
 
             if ccel_harmony_is_blue_label(block):
