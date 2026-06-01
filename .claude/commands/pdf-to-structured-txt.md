@@ -204,6 +204,32 @@ PyMuPDF 给的 flag 位字段是**金矿**：
 
 bold 数字 = 节号；sup 数字 = 脚注 ref——同样是数字 span，flag 不同含义完全不同。
 
+### 0.4 全局原则：emit markdown 前必须合并同 style 紧邻 span
+
+**问题**：PyMuPDF 偶尔会把同一 style 的连续文本切成两个 span（如 `Matthew 5:42.` bold 拆为 `Matthew 5:42` + `.`）。`block_to_markdown` 给每个 span 单独包 `**…**`，最终产出 `**Matthew 5:42****.**`。
+
+kramdown 将其渲染为**两个相邻 `<strong>` 标签**：
+
+```html
+<strong>Matthew 5:42</strong><strong>.</strong>
+```
+
+下游 verse-nav JS 用 `firstElementChild.textContent` 匹配 `^Book Ch:N\.$` 整体——第一个 `<strong>` 只剩 `Matthew 5:42`（无句点），匹配失败，点击不跳转。matthew1 全书命中 127 处，影响全 10 章。
+
+**修复**：`block_to_markdown` 末尾、`process_section_blocks` 进 pipeline 前各加一次：
+
+```python
+result = result.replace('****', '')   # 四星只能由 `**A**` 紧贴 `**B**` 产生
+```
+
+`****`（连续 4 个星号）在合法 markdown 中没有意义——三星号 `***` 后必有内容字符，不会形成纯 4 星序列。
+
+**规则**：
+- 任何把 PyMuPDF span 转 markdown 包裹符（`**`/`*`/`***`）的 emit 函数，结尾必须 collapse 同 style abutting 标记
+- 凡是 markdown→HTML 后用 `firstElementChild.textContent` 做正则匹配的 JS，**强假设了首子元素已合并**；emit 端不去重，前端正则永远跑偏
+
+这是数据层 emit 的「最小不变量」——和 §0.2「过滤内化到 emit」同质：emit 的最后一步必须把输出归一化，下游所有解析才能假设输入干净。
+
 ### 1. 元素识别与输出对照
 
 | PDF 元素 | 识别依据 | 网页输出 |

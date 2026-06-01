@@ -353,6 +353,15 @@ def process_section_blocks(header, body):
 
     第一段若为纯经文（无斜体），渲染为 PDF 原文的有边框方框；
     后续段落为注释，走完整处理管道。"""
+    # PyMuPDF 同 style 的相邻 span 偶尔会被切成两段，导致 block_to_markdown
+    # 产出 `**Matthew 5:42****.**` 这种 abut-bold 模式（kramdown 渲染为两个
+    # 相邻 <strong>，verse-nav 正则匹配的是 "Book Ch:N." 整体，分成两个 strong
+    # 后第一个只剩 "Matthew 5:42" 不带 `.` 故无法识别）。
+    # 解决：在 body 进入 pipeline 前合并所有同 style 的 abutting 标记。
+    # `****` 为四个连续星号——只可能由 `**A**` 紧贴 `**B**` 产生（合法 markdown
+    # 中三星号 `***` 用于 bold-italic，但 raw 中 `***` 之后必有内容字符，
+    # 不会形成纯 4 星序列；实测无误判）
+    body = body.replace('****', '')
     raw_blocks = re.split(r'\n{2,}', body)
     blocks = [b.strip() for b in raw_blocks if b.strip()]
 

@@ -310,6 +310,10 @@ def ccel_spans_to_md(lines, fn_size_max=None):
         i += 1
 
     result = ''.join(parts)
+    # 合并同 style 紧邻 span：PDF 中 `Matthew 5:42.` 的 bold 有时被切成
+    # `Matthew 5:42` + `.` 两段，产出 `**Matthew 5:42****.**` 让 kramdown
+    # 渲染成两个 <strong>，破坏 verse-nav 的 `Book Ch:N\.` 整体匹配
+    result = result.replace('****', '')
     return re.sub(r' {2,}', ' ', result).strip()
 
 
