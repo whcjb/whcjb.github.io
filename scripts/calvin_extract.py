@@ -426,12 +426,16 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
     if len(line_x0s) < 6:
         return None
 
-    # 1D 聚类：按 x0 排序，遇到 > col_gap_min 的跳变就切一刀
-    sorted_x0 = sorted({round(x) for x, _ in line_x0s})
-    if not sorted_x0:
+    # 1D 聚类：先按 x0 出现频次过滤掉 outlier（< 3 行的 x0 值，多为
+    # 宽行 wrap 或异常缩进），剩余 x0 值再按 col_gap_min 切簇。否则
+    # 96 行多列块里 5-6 个 stray x0 会把 [113, 244, 375] 串成一个大簇。
+    from collections import Counter
+    x0_freq = Counter(round(x) for x, _ in line_x0s)
+    main_x0s = sorted(x for x, c in x0_freq.items() if c >= 3)
+    if not main_x0s:
         return None
-    clusters = [[sorted_x0[0]]]
-    for x in sorted_x0[1:]:
+    clusters = [[main_x0s[0]]]
+    for x in main_x0s[1:]:
         if x - clusters[-1][-1] < col_gap_min:
             clusters[-1].append(x)
         else:
@@ -442,7 +446,7 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
 
     centers = [sum(c) / len(c) for c in clusters]
 
-    # 把每行分到最近的列；同一列内按 y 排序保持上下顺序
+    # 把每行分到最近的列；outlier 行（x0 在簇外）也归到距离最近的列
     column_lines = [[] for _ in centers]
     for x0, line in line_x0s:
         best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
@@ -616,21 +620,29 @@ def extract_ccel_harmony(cfg):
         output_blocks.append(f'\n## {label}\n')
 
     def emit_multi_col(cols):
-        """Emit detected multi-col cols, update last_col_centers."""
+        """Emit detected multi-col cols, update last_col_centers / x0s."""
         nonlocal last_col_centers
         n_cols = len(cols)
         centers = []
+        col_x0s  = []  # 每列大多数行的 x0（取中位数），用于识别后续列续接块
         for col_idx, col_lines in enumerate(cols):
             md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
             if md:
                 output_blocks.append(f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}')
-            first_sps = [s for s in col_lines[0].get('spans', []) if s['text'].strip()]
-            if first_sps:
-                centers.append((first_sps[0]['bbox'][0]
-                                + col_lines[0]['spans'][-1]['bbox'][2]) / 2)
+            # 取本列所有行的 x0 中位数；x 中心同样按中位数
+            xs0 = sorted(s['bbox'][0] for ln in col_lines
+                         for s in (ln.get('spans') or [])
+                         if s['text'].strip())
+            xs1 = sorted(s['bbox'][2] for ln in col_lines
+                         for s in (ln.get('spans') or [])
+                         if s['text'].strip())
+            if xs0 and xs1:
+                col_x0s.append(xs0[len(xs0)//2])
+                centers.append((xs0[len(xs0)//2] + xs1[len(xs1)//2]) / 2)
             else:
+                col_x0s.append(None)
                 centers.append(None)
-        last_col_centers = (n_cols, centers)
+        last_col_centers = (n_cols, centers, col_x0s)
 
     def block_looks_like_scripture_fragment(blk):
         """块小且像经文片段（含「数字.字母」节号样式 N.X 或 **N.**）。
@@ -728,9 +740,48 @@ def extract_ccel_harmony(cfg):
                     emit_multi_col(cols)
                     bi += 1; continue
 
+                # 2.5) 跨页单列续接块：前面 emit 过多列，当前块所有行宽度
+                #      明显窄于全宽正文（< 200px = 单列宽度），按 x0 或 cx
+                #      匹配最近的列即作为该列延续 emit
+                if last_col_centers is not None:
+                    n_cols, centers, col_x0s = last_col_centers
+                    nonempty = [l for l in block.get('lines', [])
+                                if any(s['text'].strip() for s in l.get('spans', []))]
+                    if nonempty:
+                        line_x0s = [next(s['bbox'][0] for s in ln['spans']
+                                          if s['text'].strip()) for ln in nonempty]
+                        line_x1s = [max(s['bbox'][2] for s in ln['spans']
+                                          if s['text'].strip()) for ln in nonempty]
+                        widths = [x1 - x0 for x0, x1 in zip(line_x0s, line_x1s)]
+                        if max(widths) < 200:
+                            line_x0_med = sorted(line_x0s)[len(line_x0s)//2]
+                            line_xc_med = (line_x0_med + sorted(line_x1s)[len(line_x1s)//2]) / 2
+                            best_i = None
+                            # 优先按 x0 精确匹配（同列直接续接）
+                            valid_x0 = [(i, x) for i, x in enumerate(col_x0s) if x is not None]
+                            if valid_x0:
+                                ci, cx = min(valid_x0, key=lambda p: abs(p[1] - line_x0_med))
+                                if abs(cx - line_x0_med) < 30:
+                                    best_i = ci
+                            # 兜底：按 cx 与列中心匹配（前页多列检测漏列时使用）
+                            if best_i is None:
+                                valid_c = [(i, c) for i, c in enumerate(centers) if c is not None]
+                                if valid_c:
+                                    ci, c = min(valid_c, key=lambda p: abs(p[1] - line_xc_med))
+                                    if abs(c - line_xc_med) < 80:
+                                        best_i = ci
+                            if best_i is not None:
+                                md = ccel_fix_hyphenation(ccel_spans_to_md(
+                                    nonempty, cfg.get('footnote_size_max')))
+                                if md:
+                                    output_blocks.append(
+                                        f'<!--SCRIPTURE col={best_i} of={n_cols}-->\n{md}'
+                                    )
+                                    bi += 1; continue
+
                 # 3) 尾续接短块（PDF 跨页常见）：紧接多列块、1-2 行、x 匹配某列
                 if last_col_centers is not None:
-                    n_cols, centers = last_col_centers
+                    n_cols, centers, _x0s = last_col_centers
                     nonempty_lines = [l for l in block.get('lines', [])
                                       if any(s['text'].strip() for s in l.get('spans', []))]
                     if 1 <= len(nonempty_lines) <= 2:
