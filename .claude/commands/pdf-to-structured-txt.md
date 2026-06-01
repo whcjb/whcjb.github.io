@@ -91,6 +91,52 @@ python scripts/calvin_extract.py <volume>
 - 发现经文块和注释视觉相同 → 擅自加 `border-left` 样式 → 若 PDF 原本就相同，改动被回退
 - PDF 经文块是有边框方框 → 却输出普通段落，没有还原边框 → 应先看 PDF 再还原
 
+### 0.1 全局原则：圣经引用解析按「卷名头」分组，不按 `;` 计数
+
+圣经/神学文献里的**所有**「`;`-分隔引用串」（section 标题、verse 导航、注释里的多引用等）都遵循同一约定：
+
+| 条目形式 | 含义 |
+|---|---|
+| `Book Ch:V` 或 `Book Ch:V-V'`（以**卷名**开头）| 新卷的引用 |
+| `Ch:V` 或 `Ch:V-V'`（以**数字**开头，无卷名前缀）| **延续前一个卷** |
+
+例：
+
+- `Romans 3:23; 6:23` → Romans 1 卷，2 个引用
+- `Matt 5:13; Mark 9:50; Luke 14:34` → 3 卷各 1 引用
+- `MATTHEW 5:13-16; MARK 9:49-50; 4:21; LUKE 14:34-35; 8:16; 11:33` → 3 卷（`4:21` 续 Mark、`8:16`/`11:33` 续 Luke）
+
+**规则**：凡涉及解析 section header、verse 导航 pill、多列表头、跨节合并、Bible 索引等任何场景，**数卷数必须按卷名头出现次数**，绝不能用 `header.count(';') + 1`。这是圣经引用的标准约定，跨所有圣经文献通用，不限 CCEL/Ages/Calvin。
+
+**统一实现**（建议放工具函数）：
+
+```python
+import re
+
+_BIBLE_REF_RE = re.compile(r'^([A-Z]+[A-Za-z]*)\b')
+
+def split_bible_refs_by_book(header):
+    """把 'BookA Ch:V; Ch:V; BookB Ch:V' 按卷名分组。
+    返回 [{book, refs:[...]}, ...] 或 [combined_title, ...]
+    继承前一卷的部分（仅数字开头）并入上一组。"""
+    parts = [p.strip() for p in header.split(';')]
+    groups = []
+    for p in parts:
+        if _BIBLE_REF_RE.match(p):
+            groups.append([p])
+        elif groups:
+            groups[-1].append(p)
+        else:
+            groups.append([p])
+    return groups   # 每组 join('; ') = 该卷的完整列头
+```
+
+`n_books = len(groups)`，列头 = `[ '; '.join(g) for g in groups ]`。
+
+**反例（要避免的）**：
+- `n_books = header.count(';') + 1` → 「MARK 9:49-50; 4:21; LUKE 14:34-35; 8:16; 11:33」会得到 6，应为 3
+- 用上面错误的 n_books 去生成 N 列槽位 / N 个表头 → 渲染出空列、节号错位、内容串列等所有衍生问题
+
 ### 1. 元素识别与输出对照
 
 | PDF 元素 | 识别依据 | 网页输出 |
@@ -602,6 +648,8 @@ for x0, line in line_x0s:
 **质检（必跑的深度审计）**：渲染后的每个 `<table class="scripture-table">` `<td>` 内的节号必须在该列 header（如「Mark 2:18-22」）声明的范围内。用脚本扫所有 `<strong>N.</strong>` 并对照该卷该章的最大节号 + 列头宣布范围 ±5 容差，超出即标红。本卷修复后此审计应返回 0 条。
 
 **section header 同卷多引用归并（关键陷阱）**：
+
+> 这是 §0.1「圣经引用解析按卷名头分组」规则在 scripture-box 渲染场景的具体应用，先读 §0.1 理解通用原则。
 
 不少 section header 把同一卷的多处对照引用写在一起，用 `;` 分隔但**不重复卷名**——例：
 
