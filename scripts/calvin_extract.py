@@ -589,6 +589,7 @@ def extract_ccel_harmony(cfg):
     output_blocks    = []
     pending_fns      = []   # footnote defs buffered until next section header / EOF
     last_section_upper = None
+    last_col_centers   = None   # 最近多列块的列中心 x，用于识别尾续接短块
 
     def flush_section_header(label):
         # Emit any pending footnote defs from the just-finished section BEFORE
@@ -637,6 +638,7 @@ def extract_ccel_harmony(cfg):
                 norm = ccel_harmony_norm(text).upper()
                 flush_section_header(norm)
                 last_section_upper = norm
+                last_col_centers = None
                 continue
 
             if ccel_harmony_is_blue_label(block):
@@ -663,13 +665,47 @@ def extract_ccel_harmony(cfg):
                 if cols:
                     # 用 col 索引标记每段，发布端按列汇总，渲染为 N 栏并列表格
                     n_cols = len(cols)
+                    centers = []
                     for col_idx, col_lines in enumerate(cols):
                         md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
                         if md:
                             output_blocks.append(
                                 f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}'
                             )
+                        # 记录该列的 x 中心，供尾续接对齐
+                        first_sps = [s for s in col_lines[0].get('spans', []) if s['text'].strip()]
+                        if first_sps:
+                            centers.append((first_sps[0]['bbox'][0]
+                                            + col_lines[0]['spans'][-1]['bbox'][2]) / 2)
+                        else:
+                            centers.append(None)
+                    last_col_centers = (n_cols, centers)
                     continue
+
+                # 尾续接短块（PDF 跨页时常见）：紧接多列块之后、本身只有 1-2 行、
+                # x 位置匹配某列中心 → 作为该列的延续 emit 出去
+                if last_col_centers is not None:
+                    n_cols, centers = last_col_centers
+                    nonempty_lines = [l for l in block.get('lines', [])
+                                      if any(s['text'].strip() for s in l.get('spans', []))]
+                    if 1 <= len(nonempty_lines) <= 2:
+                        sps = [s for s in nonempty_lines[0]['spans'] if s['text'].strip()]
+                        if sps:
+                            x0 = sps[0]['bbox'][0]
+                            x1 = sps[-1]['bbox'][2]
+                            xc = (x0 + x1) / 2
+                            valid = [(i, c) for i, c in enumerate(centers) if c is not None]
+                            if valid:
+                                best_i, best_c = min(valid, key=lambda p: abs(p[1] - xc))
+                                if abs(best_c - xc) < 60:
+                                    md = ccel_fix_hyphenation(ccel_spans_to_md(
+                                        nonempty_lines, cfg.get('footnote_size_max')))
+                                    if md:
+                                        output_blocks.append(
+                                            f'<!--SCRIPTURE col={best_i} of={n_cols}-->\n{md}'
+                                        )
+                                        continue
+                last_col_centers = None   # 非尾续接则重置
 
                 for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
                     if is_c:
