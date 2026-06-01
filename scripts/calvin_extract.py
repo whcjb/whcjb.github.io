@@ -687,8 +687,17 @@ def extract_ccel_harmony(cfg):
 
         若本 section 已经确立列布局（section_col_layout 非 None），按 x0
         把本次 cols 重映射到该布局，使后续多列块共用同一索引空间。
+
+        Returns:
+            True  → 成功 emit
+            False → cols 被识别为注释，已拒绝；调用方应 fall through 到单
+                    列处理
         """
         nonlocal last_col_centers, section_col_layout
+        # 注释过滤——所有进入 emit 的 cols 都必须通过该闸门，避免重构/新增
+        # 调用路径时漏检（曾因调用方各自判断而错过 cross-block merge 路径）
+        if cols_look_like_commentary(cols):
+            return False
         n_cols = len(cols)
         centers = []
         col_x0s  = []
@@ -732,6 +741,7 @@ def extract_ccel_harmony(cfg):
                 )
             col_x0s.append(per_col_x0_local[local_idx])
         last_col_centers = (out_n_cols, centers, col_x0s)
+        return True
 
     def block_looks_like_scripture_fragment(blk):
         """块小且像经文片段（含「数字.字母」节号样式 N.X 或 **N.**）。
@@ -837,10 +847,7 @@ def extract_ccel_harmony(cfg):
                         expected = section_col_layout[1] if section_col_layout else None
                         cols = split_block_by_columns(fake_blk, cfg['page_w'] / 2,
                                                       expected_slot_x0s=expected)
-                        if cols and cols_look_like_commentary(cols):
-                            cols = None
-                        if cols:
-                            emit_multi_col(cols)
+                        if cols and emit_multi_col(cols):
                             bi += 2
                             continue
 
@@ -848,10 +855,7 @@ def extract_ccel_harmony(cfg):
                 expected = section_col_layout[1] if section_col_layout else None
                 cols = split_block_by_columns(block, cfg['page_w'] / 2,
                                               expected_slot_x0s=expected)
-                if cols and cols_look_like_commentary(cols):
-                    cols = None
-                if cols:
-                    emit_multi_col(cols)
+                if cols and emit_multi_col(cols):
                     bi += 1; continue
 
                 # 2.5) 跨页单列续接块：前面 emit 过多列，当前块所有行宽度

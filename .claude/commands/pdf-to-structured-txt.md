@@ -91,6 +91,40 @@ python scripts/calvin_extract.py <volume>
 - 发现经文块和注释视觉相同 → 擅自加 `border-left` 样式 → 若 PDF 原本就相同，改动被回退
 - PDF 经文块是有边框方框 → 却输出普通段落，没有还原边框 → 应先看 PDF 再还原
 
+### 0.2 全局原则：防御性过滤要内化到 emit 函数（守门），不要散在调用方
+
+**问题模式**：当某种"工件"（emit 出的 block/sentinel/HTML 片段）有**多条产出路径**时，常见的 bug 是过滤/验证只写在某一条路径的调用方，其他路径或后续新增的路径就漏检。
+
+例（已踩过）：
+
+- 多列经文 emit 有两条路径：① 直接对单块 split → emit_multi_col；② 跨 block 合并后 split → emit_multi_col
+- `cols_look_like_commentary` 过滤器先只挂在路径 ① 的调用方，路径 ② 没挂，commentary 块就从路径 ② 流入了 scripture-box
+- 同样模式可能出现在：脚注 emit 过滤、章节边界丢弃、HTML 标签转义等任何「多入口、需统一过滤」的场景
+
+**正确写法**：把过滤器**塞进 emit 函数自身**，由 emit 返回是否成功（被过滤则返回 False）。调用方只关心「成功了就推进，失败了就 fall through」：
+
+```python
+def emit_multi_col(cols) -> bool:
+    """成功 emit 返回 True；cols 被过滤（如识别为注释）返回 False。"""
+    if cols_look_like_commentary(cols):
+        return False
+    # ... 实际 emit ...
+    return True
+
+# 任意调用路径：
+cols = split_block_by_columns(...)
+if cols and emit_multi_col(cols):
+    bi += 2; continue
+# fall through 自然处理（不依赖调用方记得加过滤）
+```
+
+**规则**：
+- 「保护性检查」属于产出函数的契约（postcondition / 入口检查），不该写在调用方
+- 多个调用点共用同一 emit/render 路径时，**先封装 emit 再加调用点**，新增路径不会绕过守门
+- 如果调用方需要不同的过滤策略，把 emit 设计成接受过滤回调参数，仍由 emit 统一调用
+
+这条原则不限多列经文。任何「多个 entry point 产出同一种工件 + 该工件需要统一验证」的场景都适用。
+
 ### 0.1 全局原则：圣经引用解析按「卷名头」分组，不按 `;` 计数
 
 圣经/神学文献里的**所有**「`;`-分隔引用串」（section 标题、verse 导航、注释里的多引用等）都遵循同一约定：
