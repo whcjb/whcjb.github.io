@@ -534,6 +534,33 @@ if max(widths) < 200:
 
 这两点是 ch9 「something to eat」「tain ruler came」等孤立段消失的关键——前页多列识别只检测到 2 列时，第 3 列的续接块靠 cx 匹配仍能归位。
 
+**section 级列布局锁定（同节多次 emit 索引一致性）**：
+
+同一 section 内可能出现多个多列 emit，且每次检测到的列数不同（如 ch5 「MATTHEW 4:18-25; MARK 1:16-20; LUKE 5:1-11」section 出现 3 列→2 列→2 列三组）。若直接用每次 emit 的 `col=N of=M` 索引，publish 端按相同索引合并就会错位——group1 的 col=1（Mark）和 group2 的 col=1（实际是 Luke，因为 Mark 没续接）被合到同一个 `<td>`，导致 Luke 5:5-11 整段串到 Mark 列。
+
+修复：section 首次多列识别 emit 时锁定 `section_col_layout = (n_cols, col_x0s)`；后续 emit 按各列 x0 距离重映射到此 layout 的索引空间，保证一致性。
+
+```python
+section_col_layout = None   # (n_cols, col_x0s_locked_for_section)
+
+def emit_multi_col(cols):
+    per_col_x0_local = [median_x0(col) for col in cols]
+    if section_col_layout is not None:
+        out_n_cols, layout_x0s = section_col_layout
+        mapping = [argmin_by_distance(x, layout_x0s) for x in per_col_x0_local]
+    else:
+        out_n_cols = len(cols)
+        mapping = list(range(len(cols)))
+        section_col_layout = (len(cols), per_col_x0_local)
+    for local_idx, col in enumerate(cols):
+        emit(f'<!--SCRIPTURE col={mapping[local_idx]} of={out_n_cols}-->')
+
+# section header 处重置
+section_col_layout = None
+```
+
+**质检**：渲染后的 `<table class="scripture-table">` 每个 `<td>` 内容应只含该 gospel 的经文，不应混入其他卷的续接段；用 `grep <td>` 抽几个长 cell 看是否串了节号超出该卷范围。
+
 **输出 sentinel + 发布端表格渲染：**
 
 提取阶段每列输出附 sentinel 标记自身的列号 / 总列数：
