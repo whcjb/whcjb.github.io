@@ -448,6 +448,21 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
         best = min(range(len(centers)), key=lambda i: abs(centers[i] - x0))
         column_lines[best].append(line)
 
+    # 把行数 < 3 的「小簇」并入最近的主列（处理尾续接、宽行 wrap 的 outlier x0）
+    main = [i for i in range(len(centers)) if len(column_lines[i]) >= 3]
+    if len(main) < 2:
+        return None
+    if len(main) != len(centers):
+        new_col_lines = [[] for _ in main]
+        new_centers   = [centers[i] for i in main]
+        for i, lines in enumerate(column_lines):
+            target = i if i in main else min(
+                range(len(main)), key=lambda k: abs(new_centers[k] - centers[i]))
+            target_idx = main.index(i) if i in main else target
+            new_col_lines[target_idx].extend(lines)
+        column_lines = new_col_lines
+        centers      = new_centers
+
     # 每列至少 3 行
     sizes = [len(c) for c in column_lines]
     if min(sizes) < 3:
@@ -600,27 +615,56 @@ def extract_ccel_harmony(cfg):
             pending_fns.clear()
         output_blocks.append(f'\n## {label}\n')
 
+    def emit_multi_col(cols):
+        """Emit detected multi-col cols, update last_col_centers."""
+        nonlocal last_col_centers
+        n_cols = len(cols)
+        centers = []
+        for col_idx, col_lines in enumerate(cols):
+            md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
+            if md:
+                output_blocks.append(f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}')
+            first_sps = [s for s in col_lines[0].get('spans', []) if s['text'].strip()]
+            if first_sps:
+                centers.append((first_sps[0]['bbox'][0]
+                                + col_lines[0]['spans'][-1]['bbox'][2]) / 2)
+            else:
+                centers.append(None)
+        last_col_centers = (n_cols, centers)
+
+    def block_looks_like_scripture_fragment(blk):
+        """块小且像经文片段（含「数字.字母」节号样式 N.X 或 **N.**）。
+        用来判断能否与下一块合并做跨 block 多列检测。"""
+        if len(blk.get('lines', [])) > 12:
+            return False
+        text = get_block_text(blk)
+        # 匹配 "5. And" / "5.And" / "5.\xa0And"（PDF 原文节号常以数字.接字母）
+        return bool(re.search(r'\b\d+\.\s*[A-Za-z]', text[:200]))
+
     for page_idx in range(cfg['skip_pages'], total):
         page   = doc[page_idx]
         blocks = sorted(
             page.get_text('dict', flags=fitz.TEXT_PRESERVE_WHITESPACE)['blocks'],
             key=lambda b: b['bbox'][1])
 
-        for block in blocks:
+        # 索引推进而非 for-loop，便于跨 block 合并多列检测
+        bi = 0
+        while bi < len(blocks):
+            block = blocks[bi]
             if block['type'] != 0:
-                continue
+                bi += 1; continue
             if ccel_harmony_is_running_header(block, cfg):
-                continue
+                bi += 1; continue
             if ccel_harmony_is_page_number(block, cfg):
-                continue
+                bi += 1; continue
             if ccel_harmony_is_footnote(block, cfg):
                 if cfg.get('extract_footnotes'):
                     for num, fn_text in parse_ccel_footnote_block(block):
                         pending_fns.append(f'[^{num}]: {fn_text}')
-                continue
+                bi += 1; continue
             text = get_block_text(block).strip()
             if not text:
-                continue
+                bi += 1; continue
 
             if ccel_harmony_is_index_start(block):
                 print(f'Stopping at index on page {page_idx + 1}')
@@ -639,12 +683,12 @@ def extract_ccel_harmony(cfg):
                 flush_section_header(norm)
                 last_section_upper = norm
                 last_col_centers = None
-                continue
+                bi += 1; continue
 
             if ccel_harmony_is_blue_label(block):
                 label = ccel_harmony_norm(text).upper()
                 if not re.match(r'^(MATTHEW|MARK|LUKE|JOHN)\b', label):
-                    continue
+                    bi += 1; continue
                 x0 = block['bbox'][0]
                 if x0 > 118:
                     if label != last_section_upper:
@@ -654,36 +698,37 @@ def extract_ccel_harmony(cfg):
                     if last_section_upper is None:
                         flush_section_header(label)
                         last_section_upper = label
-                continue
+                bi += 1; continue
 
             # Body block
             if cfg.get('centering'):
-                # Two-column synoptic table (chapter heading scripture in
-                # parallel gospels): extract each column separately so the
-                # verse text isn't interleaved into gibberish.
+                # 1) 跨 block 前瞻合并多列检测：当前是经文小片段（≤12 行），
+                #    尝试与紧邻的下一块合并 line 集再做多列检测。命中则一并消费，
+                #    解决 PyMuPDF 把章首多列经文拆成「小 intro 块 + 主体大块」
+                #    导致 intro 片段被孤立 emit 的问题。
+                if (block_looks_like_scripture_fragment(block)
+                        and bi + 1 < len(blocks)):
+                    nb = blocks[bi + 1]
+                    can_merge = (nb['type'] == 0
+                                 and not ccel_harmony_is_running_header(nb, cfg)
+                                 and not ccel_harmony_is_page_number(nb, cfg)
+                                 and not ccel_harmony_is_footnote(nb, cfg)
+                                 and not ccel_harmony_is_section_header(nb))
+                    if can_merge:
+                        fake_blk = {'lines': list(block['lines']) + list(nb['lines'])}
+                        cols = split_block_by_columns(fake_blk, cfg['page_w'] / 2)
+                        if cols:
+                            emit_multi_col(cols)
+                            bi += 2
+                            continue
+
+                # 2) 直接对当前块跑多列检测
                 cols = split_block_by_columns(block, cfg['page_w'] / 2)
                 if cols:
-                    # 用 col 索引标记每段，发布端按列汇总，渲染为 N 栏并列表格
-                    n_cols = len(cols)
-                    centers = []
-                    for col_idx, col_lines in enumerate(cols):
-                        md = ccel_fix_hyphenation(ccel_spans_to_md(col_lines, cfg.get('footnote_size_max')))
-                        if md:
-                            output_blocks.append(
-                                f'<!--SCRIPTURE col={col_idx} of={n_cols}-->\n{md}'
-                            )
-                        # 记录该列的 x 中心，供尾续接对齐
-                        first_sps = [s for s in col_lines[0].get('spans', []) if s['text'].strip()]
-                        if first_sps:
-                            centers.append((first_sps[0]['bbox'][0]
-                                            + col_lines[0]['spans'][-1]['bbox'][2]) / 2)
-                        else:
-                            centers.append(None)
-                    last_col_centers = (n_cols, centers)
-                    continue
+                    emit_multi_col(cols)
+                    bi += 1; continue
 
-                # 尾续接短块（PDF 跨页时常见）：紧接多列块之后、本身只有 1-2 行、
-                # x 位置匹配某列中心 → 作为该列的延续 emit 出去
+                # 3) 尾续接短块（PDF 跨页常见）：紧接多列块、1-2 行、x 匹配某列
                 if last_col_centers is not None:
                     n_cols, centers = last_col_centers
                     nonempty_lines = [l for l in block.get('lines', [])
@@ -691,9 +736,7 @@ def extract_ccel_harmony(cfg):
                     if 1 <= len(nonempty_lines) <= 2:
                         sps = [s for s in nonempty_lines[0]['spans'] if s['text'].strip()]
                         if sps:
-                            x0 = sps[0]['bbox'][0]
-                            x1 = sps[-1]['bbox'][2]
-                            xc = (x0 + x1) / 2
+                            xc = (sps[0]['bbox'][0] + sps[-1]['bbox'][2]) / 2
                             valid = [(i, c) for i, c in enumerate(centers) if c is not None]
                             if valid:
                                 best_i, best_c = min(valid, key=lambda p: abs(p[1] - xc))
@@ -704,9 +747,10 @@ def extract_ccel_harmony(cfg):
                                         output_blocks.append(
                                             f'<!--SCRIPTURE col={best_i} of={n_cols}-->\n{md}'
                                         )
-                                        continue
+                                        bi += 1; continue
                 last_col_centers = None   # 非尾续接则重置
 
+                # 4) 单列处理：按 centering 分组 + 按段首缩进拆段
                 for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
                     if is_c:
                         md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
@@ -721,6 +765,7 @@ def extract_ccel_harmony(cfg):
                 md = ccel_fix_hyphenation(ccel_spans_to_md(block.get('lines', []), cfg.get('footnote_size_max')))
                 if md:
                     output_blocks.append(md)
+            bi += 1
 
     doc.close()
     if pending_fns:
