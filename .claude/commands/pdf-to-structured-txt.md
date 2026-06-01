@@ -505,6 +505,35 @@ def split_block_by_columns(block, page_mid, col_gap_min=50):
 - 真平行经文（如 Matt 1:17 续接 4 行 + Luke 3:34-38 续接 17 行）列大小极不平均，比例 0.24 < 1/3，会被「最小列 ≥ 最大列 1/3」误杀
 - 真多列的特征是 **行按 y 排序时反复跨列**（L R L R …，转换率高）；正文里偶有居中经文则是 **B B B … C C C B B B**（转换率低）
 
+**聚类前必须过滤稀疏 x0**（每个 x0 值出现 < 3 行的视为 outlier wrap 行）：
+
+PDF 里宽行 wrap 会让一些行的 x0 落在主列之间（如 147、190、222、293、329 等单次出现的 x0），如果直接对所有 x0 切簇，这些 stray x0 会把 [113, 244, 375] 三主簇串成一个大簇（因为相邻 gap < 50px），导致 `len(clusters) < 2` 直接拒判。
+
+```python
+from collections import Counter
+x0_freq = Counter(round(x) for x, _ in line_x0s)
+main_x0s = sorted(x for x, c in x0_freq.items() if c >= 3)   # 仅保留主 x0
+# 用 main_x0s 切簇，然后把所有行（含 outlier）分到最近主列
+```
+
+**跨页列续接的 cx 回退兜底**：
+
+当前页多列检测有时漏一列（如 3 列经文中 Mark 列文本太少没被检测到），导致下一页同列的续接块按 x0 匹配不到任何主列。需要 x0 严格匹配 → cx 宽松匹配的两级回退：
+
+```python
+# 跨页单列续接：宽度 < 200px 单列宽
+if max(widths) < 200:
+    # 一级：按 x0 匹配主列（< 30px）
+    best_i = nearest_col_by_x0(line_x0_med, col_x0s, tol=30)
+    if best_i is None:
+        # 二级：按 cx 匹配列中心（< 80px）兜底
+        best_i = nearest_col_by_cx(line_xc_med, centers, tol=80)
+    if best_i is not None:
+        emit_as_col_continuation(best_i)
+```
+
+这两点是 ch9 「something to eat」「tain ruler came」等孤立段消失的关键——前页多列识别只检测到 2 列时，第 3 列的续接块靠 cx 匹配仍能归位。
+
 **输出 sentinel + 发布端表格渲染：**
 
 提取阶段每列输出附 sentinel 标记自身的列号 / 总列数：
