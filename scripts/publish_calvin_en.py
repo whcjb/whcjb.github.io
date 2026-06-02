@@ -89,7 +89,10 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
 
 def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     """Return {key: line_index (0-based)} for preface + chapters 1..N.
-    Accepts trailing footnote ref `[^fN]` (some PDF chapter heads have one)."""
+    Accepts trailing footnote ref `[^fN]` (some PDF chapter heads have one).
+    For single-chapter books (Philemon, etc.) without any `# CHAPTER N`:
+    synthesize chapter 1 starting at the first scripture-anchor or H2.
+    """
     starts: dict[str, int] = {}
     for i, line in enumerate(lines):
         m = re.match(r'^# CHAPTER (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$', line)
@@ -97,8 +100,14 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
             ch = m.group(1)
             if ch not in starts:
                 starts[ch] = i
-    # Preface starts at the very first emitted content (line 0) so AGES
-    # title page + Pringle translator-attribution page are included.
+    # Single-chapter book detection: no `# CHAPTER N` markers found →
+    # synthesize chapter "1" starting at the first scripture-anchor h2
+    # (which marks the start of the actual commentary on the book).
+    if not starts:
+        for i, line in enumerate(lines):
+            if re.match(r'^<h2\s+class="scripture-anchor"', line):
+                starts['1'] = i
+                break
     starts['preface'] = 0
     return starts
 
@@ -244,7 +253,12 @@ def render_section(body_lines: list[str], all_defs: dict[str, list[str]]) -> str
 
 def lookup_book_name(book_id: str) -> str | None:
     """Read _data/calvin_books.yml; find entry with id matching <book>-en;
-    return its `name` value. Returns None if not found."""
+    return its `name` value. Returns None if not found.
+
+    Scans `english_old_testament:` and `english_new_testament:` sections
+    (the OT/NT split introduced for English books). Also tolerates the
+    legacy `english:` key for backward compat.
+    """
     yml_path = ROOT / '_data' / 'calvin_books.yml'
     if not yml_path.exists():
         return None
@@ -252,7 +266,7 @@ def lookup_book_name(book_id: str) -> str | None:
     cur_id = None
     for raw in yml_path.read_text(encoding='utf-8').splitlines():
         line = raw.rstrip()
-        if line.startswith('english:'):
+        if re.match(r'^english(_old_testament|_new_testament)?:', line):
             in_english = True
             continue
         if line and not line[0].isspace():

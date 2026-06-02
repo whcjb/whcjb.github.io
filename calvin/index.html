@@ -67,10 +67,27 @@ header-img: img/psalm-bg-mountain.jpg
                 {% endfor %}
             </div>
 
-            <!-- English -->
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">English</h3>
+            <!-- English — Old Testament -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">English &mdash; Old Testament</h3>
+            <div class="row calvin-book-grid" style="margin-bottom:40px;">
+                {% for book in site.data.calvin_books.english_old_testament %}
+                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    {% if books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
+                    {% else %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
+                    {% endif %}
+                        {{ book.name }}
+                        <small>（{{ book.chapters }} chs）</small>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- English — New Testament -->
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">English &mdash; New Testament</h3>
             <div class="row calvin-book-grid">
-                {% for book in site.data.calvin_books.english %}
+                {% for book in site.data.calvin_books.english_new_testament %}
                 <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
                     {% if books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">

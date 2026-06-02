@@ -146,7 +146,12 @@ new_testament:
     name: 犹大书
     chapters: 1
 
-english:
+english_old_testament:
+  - id: zephaniah-en
+    name: Zephaniah
+    chapters: 3
+
+english_new_testament:
   - id: harmony-1-en
     name: Harmony of the Evangelists (Vol. 1)
     chapters: 10
@@ -189,6 +194,3 @@ english:
   - id: hebrews-en
     name: Hebrews
     chapters: 13
-  - id: zephaniah-en
-    name: Zephaniah
-    chapters: 3
