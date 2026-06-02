@@ -195,6 +195,15 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_JOHN.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/john/calvin_john_structured.txt'),
     },
+    'romans': {
+        # Ages Digital Library single-column English. Diagnosed 2026-06:
+        # 410×626 page; x0 双峰 (30/200) — 30 是 body, 200 是居中标题/题献。
+        # 6 种颜色齐全 (#800000/#000080/#0000d4/#006411/#008080);
+        # 21/50 sample 页有 <NNNNNN> Ages cross-ref. Same format as john.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ROMM.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/romans/calvin_romans_structured.txt'),
+    },
 }
 
 
@@ -2321,10 +2330,99 @@ def phil_reconstruct_page(page, page_num=None):
     prev_block_y1 = None
     page_label   = str(page_num + 1) if page_num is not None else None  # PDF "page 17" = doc[16]
 
+    # Bilingual scripture-mode state machine (Romans / 1Cor 等双语 PDF).
+    # State transitions:
+    #   - Enter scripture-mode on H2 with `<NNNNNN>BOOK Ch:V-V'` marker.
+    #   - In scripture-mode: blocks emit as [TABLE_LEFT]/[TABLE_RIGHT] by
+    #     line x0 (split at LATIN_X_MIN). Both narrow-half-page blocks and
+    #     bilingual mixed blocks handled.
+    #   - Exit scripture-mode on first full-width block (commentary starts).
+    # For single-column books (John): no H2 marker emits NNNNNN OR no x≥200
+    # lines means mode quietly stays off; emits identical to old behavior.
+    LATIN_X_MIN = 200
+    SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
+    in_scripture_mode = False
+    scripture_table_header = None
+
     for block_idx, block in enumerate(blocks):
         if prev_block_y1 is not None and block['bbox'][1] - prev_block_y1 > 8:
             output_lines.append('')
         prev_block_y1 = block['bbox'][3]
+
+        bx0, _, bx1, _ = block['bbox']
+        block_w = bx1 - bx0
+
+        # Section-header detection per LINE: the H2 `<NNNNNN>BOOK Ch:V-V'`
+        # is one line; verse lines follow. Per-block regex was too greedy
+        # (matched "1:1-71" instead of "1:1-7" when next line started "1.").
+        sec_match = None
+        sec_line_idx = None
+        for li_idx, line in enumerate(block['lines'][:3]):
+            line_text = ''.join(s['text'] for s in line['spans']).strip()
+            m = re.match(
+                r'^<(\d{6,7})>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d{1,3})?)\s*$',
+                line_text,
+            )
+            if m:
+                sec_match = m
+                sec_line_idx = li_idx
+                break
+
+        # Check if any line in block has x ≥ LATIN_X_MIN → bilingual block
+        line_lefts = []
+        line_rights = []
+        for line in block['lines']:
+            ne = [s for s in line['spans'] if s['text'].strip()]
+            if not ne:
+                continue
+            lx0 = ne[0]['bbox'][0]
+            if lx0 >= LATIN_X_MIN:
+                line_rights.append(line)
+            else:
+                line_lefts.append(line)
+        is_bilingual_block = bool(line_lefts and line_rights)
+        is_narrow_block = block_w < SCRIPTURE_BLOCK_WIDTH_MAX
+
+        # Decide whether to treat as scripture content
+        treat_as_scripture = False
+        if sec_match:
+            # Section header detected → enter scripture-mode for this block
+            in_scripture_mode = True
+            treat_as_scripture = True
+        elif in_scripture_mode:
+            if is_bilingual_block or is_narrow_block:
+                treat_as_scripture = True
+            else:
+                # Full-width block → commentary starts → exit scripture-mode
+                in_scripture_mode = False
+
+        if treat_as_scripture:
+            if sec_match:
+                # Emit H2 first
+                output_lines.append(f'[H2] <sty c="800000" i="0"><{sec_match.group(1)}></sty>{sec_match.group(2)}')
+                # Re-split lines, skipping the section header line itself
+                line_lefts = []
+                line_rights = []
+                for li_idx, line in enumerate(block['lines']):
+                    if li_idx == sec_line_idx:
+                        continue  # skip header line
+                    ne = [s for s in line['spans'] if s['text'].strip()]
+                    if not ne:
+                        continue
+                    lx0 = ne[0]['bbox'][0]
+                    if lx0 >= LATIN_X_MIN:
+                        line_rights.append(line)
+                    else:
+                        line_lefts.append(line)
+            for ln in line_lefts:
+                txt = _render_spans_with_italic(ln['spans'])
+                if txt.strip():
+                    output_lines.append(f'[TABLE_LEFT] {txt}')
+            for ln in line_rights:
+                txt = _render_spans_with_italic(ln['spans'])
+                if txt.strip():
+                    output_lines.append(f'[TABLE_RIGHT] {txt}')
+            continue  # skip the rest of normal block processing
 
         # Centered block detection: symmetric left/right margins.
         # - Long blocks (≥ 80 chars): need lm/rm both ≥ 30 (avoid hitting body
@@ -2416,7 +2514,10 @@ def phil_reconstruct_page(page, page_num=None):
             # publish script's `^# CHAPTER (\d+)` regex still splits correctly.
             # Strip any <sty>...</sty> wrap before testing the content.
             stripped_text = re.sub(r'</?sty(?:\s[^>]*)?>', '', full_text).strip()
-            is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text))
+            # Allow trailing fn marker ` f432` etc — PDF sometimes attaches a
+            # footnote ref to chapter heading.
+            stripped_text_no_fn = re.sub(r'\s+f\d+[A-Za-z]?\s*$', '', stripped_text).strip()
+            is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text_no_fn))
             if is_centered_block:
                 if line_class == 'BODY':
                     line_class = 'CENTERED'

@@ -162,6 +162,9 @@ english:
   - id: john-en
     name: John
     chapters: 21
+  - id: romans-en
+    name: Romans
+    chapters: 16
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16

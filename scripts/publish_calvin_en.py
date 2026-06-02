@@ -49,10 +49,22 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
     """
     out = []
     for line in lines:
+        # Skip lines that already start with `[^fN]:` — they're proper fn defs,
+        # don't touch (otherwise body inline `ftN` mentions get split out).
+        if re.match(r'^\[\^f\d+[A-Za-z]?\]:', line):
+            out.append(line)
+            continue
         # Pre-strip <span ...>ftN</span> wrappers (allow whitespace inside)
         line = re.sub(
             r'<span[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</span>',
             r'\1', line)
+        # Only consider line for FT normalization if it STARTS with ftN
+        # (i.e. legitimate raw `FT### text` from Ages back-section). Lines
+        # where ftN appears only inline (`some text … ftN more text`) should
+        # be left alone — splitting them drops the prefix.
+        if not re.match(r'^\s*[Ff][Tt]\d+[A-Za-z]?\b', line):
+            out.append(line)
+            continue
         parts = re.split(r'(?=\b[Ff][Tt]\d+[A-Za-z]?\b)', line)
         normalized = []
         any_match = False
@@ -76,10 +88,11 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
 
 
 def find_chapter_starts(lines: list[str]) -> dict[str, int]:
-    """Return {key: line_index (0-based)} for preface + chapters 1..N."""
+    """Return {key: line_index (0-based)} for preface + chapters 1..N.
+    Accepts trailing footnote ref `[^fN]` (some PDF chapter heads have one)."""
     starts: dict[str, int] = {}
     for i, line in enumerate(lines):
-        m = re.match(r'^# CHAPTER (\d+)\s*$', line)
+        m = re.match(r'^# CHAPTER (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$', line)
         if m:
             ch = m.group(1)
             if ch not in starts:

@@ -630,7 +630,12 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
                     r'\1 ', content)
                 fn_m = FN_DEF_RE.match(content_for_fn)
-                if fn_m and not fn_m.group(2).startswith('<'):
+                # Reject only when fn body starts with an Ages bible-ref marker
+                # `<NNNNNN>` (that's an inline cross-ref disguised as fn).
+                # `<sty>` wrap is legitimate (colored word inside fn body).
+                fn_body_starts_with_ages_ref = bool(
+                    fn_m and re.match(r'^<\d{6,7}>', fn_m.group(2)))
+                if fn_m and not fn_body_starts_with_ages_ref:
                     label = normalize_fn_label(fn_m.group(1))
                     body = format_inline(fn_m.group(2))
                     body = apply_verse_styling(body, red=False)
@@ -750,10 +755,25 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append(f'<p style="text-align:center">{cleaned}</p>')
                 out.append('')
         elif tag in ('BODY', 'VERSE'):
+            # Some PDFs (Romans) have back-section fn defs tagged [BODY] instead
+            # of [FOOTNOTE]. Detect `<sty>ftN</sty> body...` pattern at start →
+            # treat as fn def (same logic as FOOTNOTE branch).
+            body_strip_ftN = re.sub(
+                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
+                r'\1 ', content)
+            body_fn_m = FN_DEF_RE.match(body_strip_ftN)
+            body_fn_is_ages_ref = bool(body_fn_m and re.match(r'^<\d{6,7}>', body_fn_m.group(2)))
+            if body_fn_m and not body_fn_is_ages_ref:
+                label = normalize_fn_label(body_fn_m.group(1))
+                fn_body = format_inline(body_fn_m.group(2))
+                fn_body = apply_verse_styling(fn_body, red=False)
+                out.append('')
+                out.append(f'[^{label}]: {fn_body}')
+                out.append('')
+                pending_fn_idx = len(out) - 2
+                i += 1
+                continue
             # Back-section fn continuation: append to pending [^fN]: line.
-            # Triggered when previous emit was a [^fN]: def — Ages back-section
-            # fn bodies often wrap across multiple PyMuPDF blocks ([FOOTNOTE]
-            # ftN "first line" + [BODY] "rest of fn body" + ...).
             if pending_fn_idx is not None:
                 cont_body = format_inline(content)
                 cont_body = apply_verse_styling(cont_body)
