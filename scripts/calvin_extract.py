@@ -2392,9 +2392,19 @@ def phil_reconstruct_page(page, page_num=None):
             if ms >= 16 and any(kw in stripped for kw in ('PHILIPPIANS','COLOSSIANS','THESSALONIANS')):
                 if re.search(r'\d+:\d+', stripped):
                     line_class = 'VERSE'
-            # Centered block: override BODY → CENTERED (do not override H1/H2/FOOTNOTE/VERSE)
-            if is_centered_block and line_class == 'BODY':
-                line_class = 'CENTERED'
+            # Centered block: override BODY → CENTERED (do not override FOOTNOTE/VERSE).
+            # Also demote H1/H2 → CENTERED_H1/CENTERED_H2 when centered AND NOT
+            # a chapter heading ("CHAPTER N"). Chapter headings keep H1 so the
+            # publish script's `^# CHAPTER (\d+)` regex still splits correctly.
+            stripped_text = full_text.strip()
+            is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text))
+            if is_centered_block:
+                if line_class == 'BODY':
+                    line_class = 'CENTERED'
+                elif line_class == 'H1' and not is_chapter_h1:
+                    line_class = 'CENTERED_H1'
+                elif line_class == 'H2':
+                    line_class = 'CENTERED_H2'
             block_lines_output.append((line_class, full_text))
 
         if not block_lines_output:

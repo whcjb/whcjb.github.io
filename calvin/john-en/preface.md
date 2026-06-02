@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 10:48
+date: 2026-06-02 11:15
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -19,25 +19,25 @@ next_label: "Chapter 1"
 
 *by John Calvin*
 
-## BooksForTheAges
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BooksForTheAges</p>
 
 <p style="text-align:center">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
 
 <!-- PAGE 2 -->
 
-# COMMENTARY
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">COMMENTARY</p>
 
 <p style="text-align:center">ON THE</p>
 
-# GOSPEL ACCORDING TO JOHN
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">GOSPEL ACCORDING TO JOHN</p>
 
-## BY JOHN CALVIN
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BY JOHN CALVIN</p>
 
 <p style="text-align:center">A new translation, FROM THE ORIGINAL LATIN, BY THE REV. WILLIAM  PRINGLE</p>
 
 <!-- PAGE 3 -->
 
-# THE TRANSLATOR’S PREFACE
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE TRANSLATOR’S PREFACE</p>
 
 COMMENTARIES ON THE GOSPEL ACCORDING TO JOHN are numerous, and some of them are written with great learning and ability. Rarely has a separate and extended interpretation been given to any of the other three Gospels, which are, indeed, so closely interwoven with each other, that it is scarcely possible to expound one of them in a satisfactory manner, without bringing the whole into one view, comparing parallel passages, accounting for apparent contradictions, and supplying the omissions of each narrative, to such an extent as to produce what shall be in substance, though not always in form, a HARMONY OF THE THREE EVANGELISTS.
 
@@ -51,7 +51,7 @@ Tittmann’s *Meletemata Sacra in Evangelium Joannis*, now happily rendered acce
 
 These and other eminent writers have been deeply indebted to CALVIN’S Commentary on JOHN’S GOSPEL, but have left its claims to the attention of all classes of readers as strong and urgent as ever. Where they differ from him, they often go astray, and where they agree with him, they generally fall below the instructive power of his own pen; for few can equal his clear and vigorous statements. When he places in a just light — as he frequently does — those texts which had been wrested for the confutation of heretics, none but eager and unscrupulous controversialists will complain. Every honorable mind will admire the unbending integrity of our Author, which, even in the defense of truth, disdains to employ an unlawful weapon, and devoutly bows to the dictates of the Holy Spirit.
 
-The present Work brings under review some of the most intricate questions in theology; and in handling them he is not more careful to learn all that has been revealed than to avoid unauthorized speculation. They who know the difficulty of the path will the more highly appreciate so skillful a guide, who advances with a firm step, points out the bypaths which have misled the unwary, conducts us to scenes which we had not previously explored, and aids us in listening to a Divine voice which says, *This is the way*,*walk*,*ye in it*.
+The present Work brings under review some of the most intricate questions in theology; and in handling them he is not more careful to learn all that has been revealed than to avoid unauthorized speculation. They who know the difficulty of the path will the more highly appreciate so skillful a guide, who advances with a firm step, points out the bypaths which have misled the unwary, conducts us to scenes which we had not previously explored, and aids us in listening to a Divine voice which says, *This is the way*, *walk*, *ye in it*.
 
 <!-- PAGE 5 -->
 
@@ -92,7 +92,7 @@ IT is an old saying, (Right Honorable,) and no lesse true then olde, that saleab
 
 <!-- PAGE 8 -->
 
-## TO THE READER
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">TO THE READER</p>
 
 BEING instantly requested (gentle reader) by my godly zealous friendes, to enterprise the translating of this most learned Commentarie of M. Iohn Caluine, and being perswaded thervnto by many godly reasons, whereof God’s glory and the profite of his Church should be the cheife, I could not nor would not refuse to take that charge vp on me, vnlesse I should haue forgotten my dutie towardes God, his Church, and my friendes; and now, forasmuch (gentle reader) as the principal recompence of my paines shal be that profit which thou shalt reape by the reading of this my translation, I beseech thee refuse not to take some paines in reading the same. I have not stuft it full of strange words deriued of the Latine, which might no lesse molest thee then if they continued Latine as they were. I haue not racked the phrases to make them runn smoothly to please daintie eares, and so digressed from the truth and meaning of the authour; but, so much as possible I could, I haue translated worde for worde, which the learned by conference shall wel perceiue. Long time haue the godly desired to haue this worke published in the English tongue, and seeing they haue their desire now, my request vnto them is to accept of my paines herein. I dare not, good reader, presume so farre vpon mine owne skill as to saye that there is no faultes committed heerein, but I am earnestly to desire thee rather courteously to amend them then curiously to condemne me for them. And thus, trusting to thy curtiesie, I committe thee to the tuition og the Almightie, who so direct thee by his Spirite, that by reading thou maiest profite.
 
@@ -100,7 +100,7 @@ BEING instantly requested (gentle reader) by my godly zealous friendes, to enter
 
 <!-- PAGE 9 -->
 
-# THE AUTHOR’S EPISTLE DEDICATORY
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE AUTHOR’S EPISTLE DEDICATORY</p>
 
 <p style="text-align:center">To The</p>
 
@@ -108,7 +108,7 @@ TRULY HONOURABLE AND ILLUSTRIOUS LORDS,
 
 ## THE SYNDICS AND COUNCIL OF GENEVA,
 
-# JOHN CALVIN
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN</p>
 
 SUPPLICATES FROM THE LORD THE SPIRIT OF WISDOM AND FIRMNESS, AND A PROSPEROUS ADMINISTRATION.
 
@@ -131,11 +131,11 @@ I shall now say a few words about myself as an individual. Though I trust that m
 
 <!-- PAGE 13 -->
 
-# THE ARGUMENT
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
 
 <p style="text-align:center">OF THE</p>
 
-## GOSPEL OF JOHN
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">GOSPEL OF JOHN</p>
 
 The meaning of the Greek word, εὐαγγέλιον (*Gospel*) is well known. [^f8] In Scripture it denotes, by way of eminence, (κατ' ἐξοχὴν,) the glad and delightful message of the grace exhibited to us in Christ, in order to instruct us, by despising the world and its fading riches and pleasures, to desire with our whole heart, and to embrace when offered to us, this invaluable blessing. The conduct which we perceive in irreligious men, who take an extravagant delight in the empty enjoyments of the world, while they are little if at all, affected by a relish for spiritual blessings, is natural to us all. For the purpose of correcting this fault, God expressly bestows the name *Gospel* on the message which he orders to be proclaimed concerning Christ; for thus he reminds us that nowhere else can true and solid happiness be obtained, and that in him we have all that is necessary for the perfection of a happy life.
 
@@ -151,17 +151,19 @@ John is believed to have written chiefly with the intention of maintaining the D
 
 <!-- PAGE 16 -->
 
-# COMMENTARY
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">COMMENTARY</p>
 
 <p style="text-align:center">ON THE</p>
 
-## HOLY GOSPEL OF JESUS CHRIST
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">HOLY GOSPEL OF JESUS CHRIST</p>
 
 <p style="text-align:center">ACCORDING TO</p>
 
-# JOHN
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">JOHN</p>
 
 [^f1]: Clarke’s Biblical Cabinet, volumes 44 and 45.
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE DEDICATORY</p>
 
 
 [^f2]: (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur
@@ -189,11 +191,15 @@ credit;” — “that they may not judge of it at random, or on trust.”
 
 [^f7]: In the concluding sentence, the more amplified form of the French
 
-version has been followed. — *Ed*.)
+version has been followed. — <span style="color:#800000">*Ed*</span>.)
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
 
 
 [^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes
 
-bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
+bonnes nouvelles;” — “it is well known that the word <span style="color:#800000">*Gospel*</span> in Greek denotes any kind of good news.”
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 1</p>
 
 

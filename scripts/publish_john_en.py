@@ -32,12 +32,32 @@ def get_date() -> str:
 
 
 def normalize_back_footnotes(lines: list[str]) -> list[str]:
-    """Convert raw `FT### text` lines (Ages back-section) to `[^fN]: text`."""
+    """Convert raw `FT### text` lines (Ages back-section) to `[^fN]: text`.
+    Handles letter-suffix variants (FT29A, FT36A, ...) and same-line concatenation
+    of multiple footnotes (`FT339"..."FT340"..."FT341"..."`).
+    Also matches lowercase `ft###` since extractor sometimes emits that form.
+    """
     out = []
     for line in lines:
-        m = re.match(r'^FT(\d+) (.+)$', line)
-        if m:
-            out.append(f'[^f{m.group(1)}]: {m.group(2)}\n')
+        # Try same-line concatenated footnotes first: split on ftNNN boundaries.
+        # Match either FT or ft, with optional letter suffix.
+        parts = re.split(r'(?=\b[Ff][Tt]\d+[A-Za-z]?\b)', line)
+        normalized = []
+        any_match = False
+        for part in parts:
+            part = part.rstrip('\n')
+            m = re.match(r'^[Ff][Tt](\d+[A-Za-z]?)\s*(.*)$', part)
+            if m:
+                label = m.group(1).lower()
+                body_part = m.group(2).strip()
+                if body_part:
+                    normalized.append(f'[^f{label}]: {body_part}')
+                    any_match = True
+        if any_match:
+            for nl in normalized:
+                out.append(nl + '\n')
+            # Insert blank between footnote defs
+            out.append('\n')
         else:
             out.append(line)
     return out

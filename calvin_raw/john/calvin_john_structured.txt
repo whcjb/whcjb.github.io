@@ -7,25 +7,25 @@
 [H1] COMMENTARY ON THE GOSPEL ACCORDING TO JOHN
 [BODY] <verse>by John Calvin</verse>
 
-[H2] B o o k s F o r T h e A g e s
+[CENTERED_H2] B o o k s F o r T h e A g e s
 [CENTERED] AGES Software • Albany, OR  USA Version 1.0 © 1998
 
 --- PAGE 2 ---
 
 
-[H1] COMMENTARY
+[CENTERED_H1] COMMENTARY
 
 [CENTERED] ON THE
 
-[H1] GOSPEL ACCORDING TO JOHN
+[CENTERED_H1] GOSPEL ACCORDING TO JOHN
 
-[H2] BY JOHN CALVIN
+[CENTERED_H2] BY JOHN CALVIN
 
 [CENTERED] A new translation, FROM THE ORIGINAL LATIN, BY THE REV. WILLIAM  PRINGLE
 
 --- PAGE 3 ---
 
-[H1] THE TRANSLATOR’S PREFACE
+[CENTERED_H1] THE TRANSLATOR’S PREFACE
 
 [BODY] COMMENTARIES ON THE GOSPEL ACCORDING TO JOHN are numerous, and some of them are written with great learning and ability. Rarely has a separate and extended interpretation been given to any of the other three Gospels, which are, indeed, so closely interwoven with each other, that it is scarcely possible to expound one of them in a satisfactory manner, without bringing the whole into one view, comparing parallel passages, accounting for apparent contradictions, and supplying the omissions of each narrative, to such an extent as to produce what shall be in substance, though not always in form, a HARMONY OF THE THREE EVANGELISTS.
 
@@ -76,7 +76,7 @@
 --- PAGE 8 ---
 
 
-[H2] TO THE READER
+[CENTERED_H2] TO THE READER
 
 [BODY] BEING instantly requested (gentle reader) by my godly zealous friendes, to enterprise the translating of this most learned Commentarie of M. Iohn Caluine, and being perswaded thervnto by many godly reasons, whereof God’s glory and the profite of his Church should be the cheife, I could not nor would not refuse to take that charge vp on me, vnlesse I should haue forgotten my dutie towardes God, his Church, and my friendes; and now, forasmuch (gentle reader) as the principal recompence of my paines shal be that profit which thou shalt reape by the reading of this my translation, I beseech thee refuse not to take some paines in reading the same. I have not stuft it full of strange words deriued of the Latine, which might no lesse molest thee then if they continued Latine as they were. I haue not racked the phrases to make them runn smoothly to please daintie eares, and so digressed from the truth and meaning of the authour; but, so much as possible I could, I haue translated worde for worde, which the learned by conference shall wel perceiue. Long time haue the godly desired to haue this worke published in the English tongue, and seeing they haue their desire now, my request vnto them is to accept of my paines herein. I dare not, good reader, presume so farre vpon mine owne skill as to saye that there is no faultes committed heerein, but I am earnestly to desire thee rather courteously to amend them then curiously to condemne me for them. And thus, trusting to thy curtiesie, I committe thee to the tuition og the Almightie, who so direct thee by his Spirite, that by reading thou maiest profite.
 
@@ -84,7 +84,7 @@
 
 --- PAGE 9 ---
 
-[H1] THE AUTHOR’S EPISTLE DEDICATORY
+[CENTERED_H1] THE AUTHOR’S EPISTLE DEDICATORY
 
 [CENTERED] <verse>To The</verse>
 
@@ -92,7 +92,7 @@
 
 [H2] THE SYNDICS AND COUNCIL OF GENEVA,
 
-[H1] JOHN CALVIN
+[CENTERED_H1] JOHN CALVIN
 
 [BODY] SUPPLICATES FROM THE LORD THE SPIRIT OF WISDOM AND FIRMNESS, AND A PROSPEROUS ADMINISTRATION.
 
@@ -123,11 +123,11 @@
 
 --- PAGE 13 ---
 
-[H1] THE ARGUMENT
+[CENTERED_H1] THE ARGUMENT
 
 [CENTERED] OF THE
 
-[H2] GOSPEL OF JOHN
+[CENTERED_H2] GOSPEL OF JOHN
 
 [BODY] The meaning of the Greek word, eujagge>lion (<verse>Gospel</verse>) is well known. f8 In Scripture it denotes, by way of eminence, (kat j ejxoch<n,) the glad and delightful message of the grace exhibited to us in Christ, in order to instruct us, by despising the world and its fading riches and pleasures, to desire with our whole heart, and to embrace when offered to us, this invaluable blessing. The conduct which we perceive in irreligious men, who take an extravagant delight in the empty enjoyments of the world, while they are little if at all, affected by a relish for spiritual blessings, is natural to us all. For the purpose of correcting this fault, God expressly bestows the name <verse>Gospel</verse> on the message which he orders to be proclaimed concerning Christ; for thus he reminds us that nowhere else can true and solid happiness be obtained, and that in him we have all that is necessary for the perfection of a happy life.
 
@@ -157,15 +157,15 @@
 
 --- PAGE 16 ---
 
-[H1] COMMENTARY
+[CENTERED_H1] COMMENTARY
 
 [CENTERED] ON THE
 
-[H2] HOLY GOSPEL OF JESUS CHRIST
+[CENTERED_H2] HOLY GOSPEL OF JESUS CHRIST
 
 [CENTERED] ACCORDING TO
 
-[H1] JOHN
+[CENTERED_H1] JOHN
 
 [H1] CHAPTER 1
 
@@ -8295,13 +8295,13 @@
 
 --- PAGE 685 ---
 
-[H1] FOOTNOTES
+[CENTERED_H1] FOOTNOTES
 
-[H2] TRANSLATOR’S NOTICE
+[CENTERED_H2] TRANSLATOR’S NOTICE
 
 [FOOTNOTE] ft1 Clarke’s Biblical Cabinet, volumes 44 and 45.
 
-[H2] EPISTLE DEDICATORY
+[CENTERED_H2] EPISTLE DEDICATORY
 
 [FOOTNOTE] ft2 (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur
 [BODY] retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here)
@@ -8315,12 +8315,12 @@
 [FOOTNOTE] ft7 In the concluding sentence, the more amplified form of the French
 [BODY] version has been followed. — <verse>Ed</verse>.)
 
-[H2] THE ARGUMENT
+[CENTERED_H2] THE ARGUMENT
 
 [FOOTNOTE] ft8 “On scait assez que le mot, d’Evangile signifie entre les Grees toutes
 [BODY] bonnes nouvelles;” — “it is well known that the word <verse>Gospel</verse> in Greek denotes any kind of good news.”
 
-[H2] CHAPTER 1
+[CENTERED_H2] CHAPTER 1
 
 [FOOTNOTE] ft9 “Pource qu’il est dit Estoit, et non pas N’este;” — “Because it is said
 [BODY] <verse>Was</verse>, and not <verse>Has been</verse>.
@@ -8395,7 +8395,7 @@
 [FOOTNOTE] ft40 “Canteleux et frauduleux.”
 [FOOTNOTE] ft41 “De la gloire celeste.”
 
-[H2] CHAPTER 2
+[CENTERED_H2] CHAPTER 2
 
 [FOOTNOTE] ft42 “Tertio die;” — “trois jours apres.”
 [FOOTNOTE] ft43 “En la vierge Marie.”
@@ -8416,7 +8416,7 @@
 [BODY] que nous n’entendons pas tout incontinent.”
 [FOOTNOTE] ft51 “I1 les cognoissoient tous,”
 
-[H2] CHAPTER 3
+[CENTERED_H2] CHAPTER 3
 
 [FOOTNOTE] ft52 Our Author’s views of the etymology of the term are fully stated and
 [BODY] examined, <verse>Harmony</verse>, volume 1 page 281; but it cannot be supposed that this <verse>Commentary on the Gospel by John</verse>, which appeared in the year 1553, makes reference to the <verse>Harmony</verse>, which did not appear till 1555. The priority of the date (1548) of the <verse>Commentary on the</verse> <verse>Epistle to the Philippians</verse> more naturally sends us to consult that passage, in which Paul says that he was a <verse>Pharisee</verse>, (13, 5.) — <verse>Ed</verse>.
@@ -8446,7 +8446,7 @@
 [FOOTNOTE] ft70 “Qui ne croit point au Fils, <verse>ou</verse>,<verse> qui desobeit au Fils</verse>”<verse> — </verse>“who believeth
 [BODY] not in the Son, <verse>or</verse>,<verse> who disobeyeth the Son</verse>.”
 
-[H2] CHAPTER 4
+[CENTERED_H2] CHAPTER 4
 
 [FOOTNOTE] ft71 “Et qui reprouve ce que nous disons ou faisons.”
 [FOOTNOTE] ft72 “Ceste eau vive;” — “ this living water.”
@@ -8476,7 +8476,7 @@
 [FOOTNOTE] ft89 “Par l’Empereur;” — “by the Emperor.”
 [FOOTNOTE] ft90 “<verse>Qu</verse>’<verse>ils facent premierement des ntiraclcs</verse>?”
 
-[H2] CHAPTER 5
+[CENTERED_H2] CHAPTER 5
 
 [FOOTNOTE] ft91 “Et qui avoyent les membres secs;” “and who had the limbs withered.”
 [FOOTNOTE] ft92 “Par intervalles, <verse>ou</verse>,<verse> en certain temps</verse>;” — “at intervals, <verse>or</verse>,<verse> at a certain</verse>
@@ -8521,7 +8521,7 @@
 [FOOTNOTE] ft114 “Du titre desquels ils se couvrent faussement et meschamment.”
 [FOOTNOTE] ft115 “Contre contempteurs.”
 
-[H2] CHAPTER 6
+[CENTERED_H2] CHAPTER 6
 
 [FOOTNOTE] ft116 “Pour le suyvre.”
 
@@ -8615,7 +8615,7 @@
 [FOOTNOTE] ft174 “Il ne peut eviter.”
 [FOOTNOTE] ft175 A tous transgresseurs.”
 
-[H2] CHAPTER 7
+[CENTERED_H2] CHAPTER 7
 
 [FOOTNOTE] ft176 “Determine au conseil de Dieu.”
 [FOOTNOTE] ft177 “De nos parens.”
@@ -8654,7 +8654,7 @@
 [FOOTNOTE] ft202 “D’un homme fidele et Chrestien.”
 [FOOTNOTE] ft203 “De ce petit coin incognee de Galilee.”
 
-[H2] CHAPTER 8
+[CENTERED_H2] CHAPTER 8
 
 [FOOTNOTE] ft204 “S’enclinant en bas.” — “Stooping down.”
 [FOOTNOTE] ft205 “Il se dressa.”
@@ -8730,7 +8730,7 @@
 [BODY] merely alludes, appears to be that, instead of saying, ejgw< ejgeno>mnh, or, ejgw< gi>nomai, Christ purposely said, ejgw> eijmi,<verse> </verse>because the verb eijmi~, standing contrasted with gene>sqai, would convey the idea of underived existence. — <verse>Ed</verse>.
 [FOOTNOTE] ft250 “Une vertu plus qu’humaine.”
 
-[H2] CHAPTER 9
+[CENTERED_H2] CHAPTER 9
 
 [FOOTNOTE] ft251 “Par croix ou tribulation.”
 [FOOTNOTE] ft252 “Homme juste, et craignaut Dieu.”
@@ -8765,7 +8765,7 @@
 [FOOTNOTE] ft278 “Les mechans et infideles.”
 [FOOTNOTE] ft279 “Pour guairir son mal.”
 
-[H2] CHAPTER 10
+[CENTERED_H2] CHAPTER 10
 
 [FOOTNOTE] ft280 “Si par ce mot de <verse>Portier</verse>.”
 [FOOTNOTE] ft281 The word <verse>pastor </verse>signifies <verse>shepherd</verse>,<verse> </verse>but, for the sake of the reader,
@@ -8803,7 +8803,7 @@
 [FOOTNOTE] ft305 “D’un coste.”
 [FOOTNOTE] ft306 “D’autrepart.”
 
-[H2] CHAPTER 11
+[CENTERED_H2] CHAPTER 11
 
 [FOOTNOTE] ft307 “A sa majeste.”
 [FOOTNOTE] ft308 “Quand nous avons tousjours Dieu devant nos yeux pour nostre
@@ -8838,7 +8838,7 @@
 [FOOTNOTE] ft328 “Par la mort de celuy qui l’avolt.”
 [FOOTNOTE] ft329 “Les principaux sacrificateurs.”
 
-[H2] CHAPTER 12
+[CENTERED_H2] CHAPTER 12
 
 [FOOTNOTE] ft330 “Et Marthe servoit a table;” — “and Martha waited at table.”
 [FOOTNOTE] ft331 “Ne viendroit point a la feste.”
@@ -8891,7 +8891,7 @@
 [FOOTNOTE] ft364 “Et ne les croit point.”
 [FOOTNOTE] ft365 “Une approbation ou ratification.”
 
-[H2] CHAPTER 13
+[CENTERED_H2] CHAPTER 13
 
 [FOOTNOTE] ft366 “Et apres avoir souppe;” — “and after having supped.”
 [FOOTNOTE] ft367 “Que c’est une ouverture ou passage pour aller a Dieu.
@@ -8926,7 +8926,7 @@
 [FOOTNOTE] ft387 “Par icelle.”
 [FOOTNOTE] ft388 “A ce que nous n’appercevions nos fautes.”
 
-[H2] CHAPTER 14
+[CENTERED_H2] CHAPTER 14
 
 [FOOTNOTE] ft389 “<verse>Ou</verse>,<verse> Et quaadje m</verse>’<verse>en seray alle</verse>,<verse> et vous auray preparg le lieu</verse>;” —
 [BODY] “or,<verse> And when I shall have gone away</verse>,<verse> and prepared the place for</verse> <verse>you</verse>.”
@@ -8952,7 +8952,7 @@
 [BODY] corresponds to other modern versions; as, for example, the German, und hat nichts an mir; though Wolffus quotes a marginal reading of a German translation, an mir wird er nicht nichts unden, — <verse>he will find</verse> <verse>nothing in me</verse>. The latter agrees with a Greek reading kai< ejn ejmoi< oujc euJrh>sei oujde<n <verse>and will</verse> FIND <verse>nothing in me</verse>; and. with another reading kai< ejn ejmoi< oujk e]cei oujde<n euJrei~n, <verse>and hath nothing to</verse> FIND <verse>in</verse> <verse>me</verse>. — <verse>Ed</verse>.
 [FOOTNOTE] ft404 “Que Christ s’en alla avec ses disciples outre le torrent de Cedron.”
 
-[H2] CHAPTER 15
+[CENTERED_H2] CHAPTER 15
 
 [FOOTNOTE] ft405 “C’est a dire, toute la vie et vigueur.”
 [FOOTNOTE] ft406 “Il parle de tailler ou purger.”
@@ -8981,7 +8981,7 @@
 [FOOTNOTE] ft420 See volulme 1.
 [FOOTNOTE] ft421 “De la seule ouye et predication.”
 
-[H2] CHAPTER 16
+[CENTERED_H2] CHAPTER 16
 
 [FOOTNOTE] ft422 “Et que jamais ils n’en eussent ouy parler.”
 [FOOTNOTE] ft423 “La voix sortant de la bouche d’un homme.”
@@ -9006,7 +9006,7 @@
 
 --- PAGE 709 ---
 
-[H2] CHAPTER 17
+[CENTERED_H2] CHAPTER 17
 
 [FOOTNOTE] ft436 “Du Seigneur Jesus.”
 [FOOTNOTE] ft437 “La fin et l’usage”
@@ -9038,7 +9038,7 @@
 [BODY] FT457 “Pource que le Pere a aime son Fils.”
 [BODY] FT458 “Quand il dit, <verse>Je veux, </verse>c’est comme s’il disoit, <verse>Je desire; </verse>“—” When he says, I <verse>will, </verse>it is as if’ he had said, I <verse>desire.”</verse>
 
-[H2] CHAPTER 18
+[CENTERED_H2] CHAPTER 18
 
 [BODY] FT459 Is Ke>drwn, a proper name, or an appellative? CALVIN does not mean that the presence of the article settles this question, but that it depends on the preference which shall be given to one or another of the various readings. If we read tw~n Ke>drwn, it will be difficult to resist the conclusion that Ke>drwn is the genitive plural of Ke>drov<verse>, a cedar; </verse>but if we read tou~ Ke>drwn, or rather, tou~ Kedrw<n, we must treat Kedrw<n, as an indeclinable Hebrew word, though Josephus chooses sometimes to decline it, as in the phrase, cei>marron Kedrw~nov, <verse>the</verse> <verse>brook of Kedron, </verse>(Ant. 8:1.) “Instead of the common reading, tw~n Ke>drwn,” says Bloomfield, “four of the most ancient MSS. and six ancient Versions, with some Fathers, have,tou~ Kedrw<n, which was preferred by Beza, Casaubon, Campbell, Castalio, Drusius, Lightfoot, Bols, Bynmus, Reland, and others of the best Commentators down to Middleton, Kuinoel, and Tittmann, and has been received by Bengel, Griesbach, Knapp, Vater, and Scholz. The common reading, however, is strenuously, but not satisfactorily, defended by Lampe and Matthsei.” Our Author proceeds no further than to propose, tou~ instead of tw~n, as a conjectural emendation; but Bloomfield has given a prodigious list of authorities on the same side. — Ed.
 [BODY] FT460 The Hebrew name ˆwrdq (<verse>Kidron</verse>)<verse> </verse>is derived from rdq, (<verse>Kadar,</verse>)<verse> it</verse> <verse>was black, </verse>and signifies <verse>the black brook. — Ed.</verse>
@@ -9072,7 +9072,7 @@
 
 --- PAGE 712 ---
 
-[H2] CHAPTER 19
+[CENTERED_H2] CHAPTER 19
 
 [BODY] FT485 “Et Pilate leur dit.” — “And Pilate said to them.”
 [BODY] FT486 “Tant de Pilates.”
@@ -9133,7 +9133,7 @@
 [BODY] FT520 Sa resurrection glorieuse”
 [BODY] FT521 “Des Peres anciens des Juifs”
 
-[H2] CHAPTER 20
+[CENTERED_H2] CHAPTER 20
 
 [BODY] FT522 “Or le premier (des join’s) du Sabbath, <verse>ou, le premier jour de la</verse> <verse>semaine;” —-” </verse>Now, the first (of the days) of the Sabbath, <verse>or, the</verse> <verse>first day of the week.”</verse>
 [BODY] FT523 - L’appelant le sainct suaire.”
@@ -9181,7 +9181,7 @@
 [BODY] FT552 “Qua sa verite nous soit indubitable sans autre probation.”
 [BODY] FT553 See Vol. 1. page 42.
 
-[H2] CHAPTER 21
+[CENTERED_H2] CHAPTER 21
 
 [BODY] FT554 “Qui est dit Gemeau;” — “ who is called <verse>Twin.”</verse>
 [BODY] FT555 “Avez-vous quehtue petit poisson k manger? “ — “Have you any little fish to eat ?”

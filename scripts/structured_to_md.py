@@ -26,7 +26,11 @@ import unicodedata
 from pathlib import Path
 
 # ── Ages Greek transliteration → Unicode ─────────────────────────────────
-_GCOMB = {'j': '̓', '>': '́', '<': '̀', '~': '͂', '|': 'ͅ'}
+# Diacritic combining marks (must follow base letter):
+#   j = smooth breathing (psilon), J = rough breathing (dasia)
+#   > = acute,  < = grave, ~ = circumflex
+#   | = iota subscript,  + = diaeresis,  ] = treat like > (Ages variant)
+_GCOMB = {'j': '̓', 'J': '̔', '>': '́', '<': '̀', '~': '͂', '|': 'ͅ', '+': '̈', ']': '́'}
 _GBASE = {
     'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε', 'z': 'ζ', 'h': 'η', 'q': 'θ',
     'i': 'ι', 'k': 'κ', 'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ', 'o': 'ο', 'p': 'π',
@@ -55,15 +59,22 @@ def _ages_token(tok: str) -> str:
         comb = pend
         pend = ''
         if ch in _GVOWELS:
-            if i < n and tok[i] == 'j':
-                comb += _GCOMB['j']; i += 1
-            if i < n and tok[i] in '><~':
+            # Breathing marks: j (smooth), J (rough), { (rough alt)
+            if i < n and tok[i] in 'jJ{':
+                mark = 'J' if tok[i] in 'J{' else 'j'
+                comb += _GCOMB[mark]; i += 1
+            # Diaeresis: +
+            if i < n and tok[i] == '+':
+                comb += _GCOMB['+']; i += 1
+            # Accent: > acute, < grave, ~ circumflex, ] acute-alt
+            if i < n and tok[i] in '><~]':
                 acc = tok[i]
                 nxt = tok[i + 1] if i + 1 < n else ''
                 if nxt in _GVOWELS and nxt in _GDIPH.get(ch, ''):
                     pend = _GCOMB[acc]; i += 1
                 else:
                     comb += _GCOMB[acc]; i += 1
+            # Iota subscript
             if i < n and tok[i] == '|':
                 comb += _GCOMB['|']; i += 1
             elif i + 1 < n and tok[i] == '\\' and tok[i + 1] == '|':
@@ -72,11 +83,18 @@ def _ages_token(tok: str) -> str:
     return ''.join(res)
 
 
+# Match Ages Greek tokens: must contain at least ONE diacritic from
+# [><~|{}+\]] (real Greek-only markers, NOT j/J alone since "John"/"jot" have
+# them as English letters). j/J as breathing marks are caught via the
+# vowel-followed pattern below.
 _AGES_GR_PAT = re.compile(
     r'(<[a-zA-Z/!][^>]*>)'                                # group 1: HTML tag
-    r'|([a-zA-Z][a-zA-Z><~j|\\]*'
-    r'(?:[><~]|\\[|]|\|)'
-    r'[a-zA-Z><~j|\\]*)'                                  # group 2: Ages Greek token
+    r'|([a-zA-Z][a-zA-Z><~jJ|\\{}+\]]*'
+    r'(?:[><~{}+\]]|\\[|]|\|)'
+    r'[a-zA-Z><~jJ|\\{}+\]]*)'                            # group 2: Greek token w/ accent
+    # Group 3: vowel + breathing pattern: `oJ`, `aj`, `ej`, `oJ`, `e{`, `o{`, etc.
+    # These don't have other accents but ARE valid Greek.
+    r'|(\b[aeiouhwAEIOUHW][jJ{]\b)'
 )
 
 
@@ -99,12 +117,24 @@ def convert_ages_greek(text: str) -> str:
     def _repl(m):
         if m.group(1):
             return m.group(1)
-        tok = m.group(2)
+        tok = m.group(2) or m.group(3)
+        if not tok:
+            return m.group(0)
         c = _ages_token(tok.replace('\\|', '|'))
         if any('Ͱ' <= x <= 'Ͽ' or 'ἀ' <= x <= '῿' for x in c):
             return c
         return tok
     text = _AGES_GR_PAT.sub(_repl, text)
+    # Specific Ages short tokens without `><~{}+\]\|` markers (otherwise main
+    # regex misses, and we can't add `jJ` to trigger since "John"/"Bejart"
+    # would false-positive).
+    _GREEK_WORDS = {
+        'ejn': 'ἐν', 'ejx': 'ἐξ', 'ejk': 'ἐκ', 'ejpi': 'ἐπί', 'ejpi>': 'ἐπί',
+        'oJ': 'ὁ', 'hJ': 'ἡ', 'oiJ': 'οἱ', 'aiJ': 'αἱ',
+        'wJv': 'ὡς', 'wJ': 'ὡ', 'a@n': 'ἄν',
+    }
+    for ages, greek in _GREEK_WORDS.items():
+        text = re.sub(r'\b' + re.escape(ages) + r'\b', greek, text)
     # Handle Ages elision forms: `kat j <greek>` → `κατ' <greek>` (the
     # consonant cluster has no `<>~` accent marks so the main regex misses it).
     def _elision(m):
@@ -178,21 +208,28 @@ def format_inline(text: str) -> str:
 
 def apply_verse_styling(body: str, red: bool) -> str:
     """Convert `<verse>X</verse>` to `<span style="color:#800000">*X*</span>`
-    (red=True) or to plain markdown italic `*X*` (red=False)."""
-    def _red(m):
-        inner = m.group(1).strip()
-        if not inner:
-            return ''
-        return f'<span style="color:#800000">*{inner}*</span>'
-    def _plain(m):
-        inner = m.group(1).strip()
-        if not inner:
-            return ''
-        # Avoid double-italics or empty
-        if len(inner) < 2:
-            return inner
-        return f'*{inner}*'
-    body = re.sub(r'<verse>(.*?)</verse>', _red if red else _plain, body, flags=re.DOTALL)
+    (red=True) or to plain markdown italic `*X*` (red=False).
+
+    CRITICAL: leading/trailing whitespace inside <verse> must be moved OUTSIDE
+    the italic wrap. Otherwise `<verse>X </verse>Y<verse> Z</verse>` renders
+    as `*X *Y* Z*` which kramdown sees as a closed italic touching letters
+    (no space between *X* and Y). We move spaces out so it becomes
+    `*X* Y *Z*` — proper word boundaries.
+    """
+    def _wrap(inner_text: str, red: bool) -> str:
+        if not inner_text.strip():
+            return inner_text  # whitespace-only; leave as-is
+        # Capture leading/trailing whitespace; move it outside the italic.
+        m = re.match(r'^(\s*)(.+?)(\s*)$', inner_text, re.DOTALL)
+        lead, core, trail = m.group(1), m.group(2), m.group(3)
+        if len(core) < 2 and not red:
+            return lead + core + trail
+        if red:
+            return f'{lead}<span style="color:#800000">*{core}*</span>{trail}'
+        return f'{lead}*{core}*{trail}'
+    def _repl(m):
+        return _wrap(m.group(1), red)
+    body = re.sub(r'<verse>(.*?)</verse>', _repl, body, flags=re.DOTALL)
     if red:
         # Merge consecutive red-italic spans separated only by whitespace
         body = re.sub(
@@ -230,21 +267,32 @@ def _is_sentence_end(text: str) -> bool:
     return t2[-1] in '.?!:;"”\'’'  # incl. curly quotes
 
 
+_BLOCK_PREFIXES = (
+    '#', '[^', '>', '<!--',
+    '<div', '<h1', '<h2', '<h3', '<h4',
+    '<p ', '<p>', '<p\t',
+    '<table', '<tr', '<td', '<th', '<thead', '<tbody',
+    '</div', '</p', '</table',
+    '---', '|', '{',
+)
+
+
 def _is_paragraph_line(line: str) -> bool:
     """Is this a normal body paragraph (not heading / box / fence / marker /
-    centered block)?"""
+    centered block)? Accept inline-tag starts like <span>, <verse>, <sup>."""
     s = line.lstrip()
     if not s:
         return False
-    if s.startswith(('#', '<', '[^', '>', '|', '---', '<!--', '{')):
+    if s.startswith(_BLOCK_PREFIXES):
         return False
     return True
 
 
-def _starts_with_continuation(line: str) -> bool:
+def _starts_with_continuation(line: str, prev_tail: str = '') -> bool:
     """Does this body line start in a way that suggests it's a continuation of
     the prior paragraph (lowercase letter, digit-from-Bible-ref, punctuation,
-    HTML tag)?"""
+    HTML tag)? Optional `prev_tail` is the last 20 chars of the prior buf for
+    context-aware checks (e.g., capital after open-paren split bible ref)."""
     # Strip leading markdown bold/italic markers to peek at first real char
     s = re.sub(r'^(?:\*+|\s)+', '', line.lstrip())
     # Also peek past leading <verse> or <span> open tag
@@ -261,6 +309,19 @@ def _starts_with_continuation(line: str) -> bool:
     # a bible-ref split. Accept digits but NOT when followed by ". " (verse num).
     if c.isdigit() and not re.match(r'^\d+\.\s', s):
         return True
+    # Context-aware: prev ends with `(` or `(N` (Bible ref open) and current
+    # starts with a Bible book name token like "Peter", "Corinthians", "John".
+    # Force-continuation for these common splits.
+    if prev_tail:
+        if re.search(r'\(\s*\d?\s*$', prev_tail):
+            # Common bible book names start with these patterns
+            if re.match(r'^(?:[1-3]\s+)?[A-Z][a-z]+(?:\s+\d+:\d+)?', s):
+                return True
+        # Mid-sentence break: prev ends with conjunction `and` / `or` / `but`
+        # followed by no punctuation, current starts cap — likely same sentence
+        if re.search(r'\b(?:and|or|but|nor|for|yet|so)\s*$', prev_tail):
+            if c.isupper():
+                return True
     return False
 
 
@@ -302,7 +363,8 @@ def _merge_paragraph_fragments(out: list[str]) -> list[str]:
                 if not _is_paragraph_line(nxt):
                     break
                 # Only merge if current does NOT end sentence AND next is continuation
-                if _is_sentence_end(buf) or not _starts_with_continuation(nxt):
+                prev_tail = buf[-25:] if buf else ''
+                if _is_sentence_end(buf) or not _starts_with_continuation(nxt, prev_tail):
                     break
                 # Merge: append next paragraph to buf, keep page markers BEFORE buf
                 # (so PDF reference position survives) — but since we're already
@@ -521,6 +583,19 @@ def convert(structured_path: Path, out_path: Path) -> None:
                         out.append('')
                         out.append(body)
                         out.append('')
+        elif tag in ('CENTERED_H1', 'CENTERED_H2'):
+            # Title-page or dedication headings that are centered. Emit as
+            # styled <p> not as markdown H1/H2 to avoid TOC pollution and
+            # heading-level fragmentation across the title block.
+            cleaned = collapse_spaced_caps(format_inline(content))
+            cleaned = re.sub(r'</?verse>', '', cleaned)
+            if cleaned.strip():
+                size_class = 'title-block-h1' if tag == 'CENTERED_H1' else 'title-block-h2'
+                font_size = '22px' if tag == 'CENTERED_H1' else '16px'
+                font_weight = 'bold' if tag == 'CENTERED_H1' else 'bold'
+                out.append('')
+                out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;">{cleaned}</p>')
+                out.append('')
         elif tag == 'CENTERED':
             # If we're inside a scripture section and this CENTERED block holds
             # the actual verse passage (≥1 verse-num anchor + starts with verse),
