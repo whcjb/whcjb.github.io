@@ -11,11 +11,11 @@
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 
-<p style="text-align:center">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
 
 <!-- PAGE 2 -->
 
-<p style="text-align:center">COMMENTARIES ON THE</p>
+<p style="text-align:center" markdown="1">COMMENTARIES ON THE</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF PAUL THE APOSTLE</span></p>
 
@@ -23,7 +23,7 @@
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BY JOHN CALVIN</span></p>
 
-<p style="text-align:center">Translated And Edited By The Rev. John Owen,</p>
+<p style="text-align:center" markdown="1">*Translated And Edited By The Rev. John Owen,*</p>
 
 <!-- PAGE 3 -->
 
@@ -155,7 +155,7 @@ It has not been deemed necessary to give in this Edition any specimens of title-
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN TO SIMON GRYNAEUS,</span> <span style="color:#800000">[^f9]</span></p>
 
-<p style="text-align:center">A MAN WORTHY OF ALL HONOR</p>
+<p style="text-align:center" markdown="1">A MAN WORTHY OF ALL HONOR</p>
 
 I REMEMBER that when three years ago we had a friendly converse as to the best mode of expounding Scripture, the plan which especially pleased you, seemed also to me the most entitled to approbation: we both thought that the chief excellency of an expounder consists in *lucid brevity*. And, indeed, since it is almost his only work to lay open the mind of the writer whom he undertakes to explain, the degree in which he leads away his readers from it, in that degree he goes astray from his purpose, and in a manner wanders from his own boundaries. Hence we expressed a hope, that from the number of those who strive at this day to advance the interest of theology by this kind of labour, some one would be found, who would study plainness, and endeavour to avoid the evil of tiring his readers with prolixity. I know at the same time that this view is not taken by all, and that those who judge otherwise have their reasons; but still I cannot be drawn away from the love of what is compendious. But as there is such a variety, found in the minds of men, that different things please different persons, let every one in this case follow his own judgment, provided that no one attempts to force others to adopt his own rules. Thus it will be, that we who approve of brevity, will not reject nor despise the labours of those who are more copious and diffused in their explanations of Scripture, and that they also in their turn will bear with us, though they may think us too compressed and concise.
 
@@ -193,7 +193,7 @@ WITH regard to the excellency of this Epistle, I know not whether it would be we
 
 The whole Epistle is so methodical, that even its very beginning is framed according to the rules of art. As contrivance appears in many parts, which shall be noticed as we proceed, so also especially in the way in which the main argument is deduced: for having begun with the proof of his Apostleship, he then comes to the Gospel with the view of recommending it; and as this necessarily draws with it the subject of faith, he glides into that, being led by the chain of words as by the hand: and thus he enters on the main subject of the whole Epistle justification by faith; in treating which he is engaged to the end of the fifth chapter.
 
-<p style="text-align:center">The subject then of these chapters By be stated thus, — man’s only righteousness is through the mercy of God in Christ, which being offered by the Gospel is apprehended by faith.</p>
+<p style="margin-left:2em;" markdown="1">*The subject then of these chapters By be stated thus, — man’s only righteousness is through the mercy of God in Christ, which being offered by the Gospel is apprehended by faith.*</p>
 
 <!-- PAGE 21 -->
 But as men are asleep in their sins, and flatter and delude themselves with a false notion about righteousness, so that they think not that they need the righteousness of faith, except they be cast down from all selfconfidence, — and further, as they are inebriated with the sweetness of lusts, and sunk in deep self-security, so that they are not-easily roused to seek righteousness, except they are struck down by the terror of divine judgment, — the Apostle proceeds to do two things — to convince men of iniquity, and to shake off the torpor of those whom he proves guilty.
@@ -236,7 +236,7 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 <!-- PAGE 28 -->
 
-<p style="text-align:center">COMMENTARIES ON THE</p>
+<p style="text-align:center" markdown="1">COMMENTARIES ON THE</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF ST. PAUL TO THE ROMANS.</span></p>
 
@@ -281,9 +281,9 @@ He adds, <span style="color:#800000">*according to the flesh*</span>; and he add
 
 Besides, a divine power is said to have shone forth in the resurrection of Christ for this reason — because he rose by his own power, as he had often testified:
 
-<p style="text-align:center">“Destroy this temple, and in three days I will raise it up again,” (John 2:19;)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Destroy this temple, and in three days</span> <span style="color:#000080">I will raise it up again,” (</span><span style="color:#000080">John 2:19;)</span></p>
 
-<p style="text-align:center">“No man taketh it from me,” etc.; (John 10:18)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“No man taketh it from me,” etc.; (</span><span style="color:#000080">John 10:18)</span></p>
 
 For he gained victory over death, (to which he yielded with regard to the weakness of the flesh,) not by aid sought from another, but by the celestial operation of his own Spirit.
 
@@ -324,7 +324,7 @@ There are those who prefer to regard the word <span style="color:#800000">*peace
 
 The first thing worthy of remark is, that he so commends their faith, <span style="color:#800000">[^f29]</span> that he implies that it had been received from God. We are here taught that faith is God’s gift; for thanksgiving is an acknowledgment of a benefit. He who gives thanks to God for faith, confesses that it comes from him. And since we find that the Apostle ever begins his congratulations with thanksgiving, let us know that we are hereby reminded, that all our blessings are God’s free gifts. It is also needful to become accustomed to such forms of speaking, that we may be led more fully to rouse ourselves in the duty of acknowledging God as the giver of all our blessings, and to stir up others to join us in the same acknowledgment. If it be right to do this in little things, how much more with regard to faith; Which is neither a small nor an indiscriminate (*promiscua*) gift of God. We have here besides an example, that thanks ought to be given <span style="color:#800000">*through Christ,*</span> according to the Apostle’s command in Hebrews 8:15; inasmuch as in his name we seek and obtain mercy from the Father. — I observe in the last place, that he calls him *his God*. This is the faithful’s special privilege, and on them alone God bestows this honor. There is indeed implied in this a mutual relationship, which is expressed in this promise,
 
-<p style="text-align:center">“I will be to them a God; they shall be to me a people.” (Jeremiah 30:22.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I will be to them a God;</span> <span style="color:#000080">they shall be to me a people.” (</span><span style="color:#000080">Jeremiah 30:22.)</span></p>
 
 I prefer al the same time to confine this to the character Which Paul sustained, as an attestation of his obedience to the end in the work of preaching the gospel. So Hezekiah called God the God of Isaiah, when he desired him to give him the testimony of a true and faithful Prophet. (Isaiah 37:4.) So also he is called in an especial manner the God of Daniel. (Daniel 6:20.)
 
@@ -335,12 +335,12 @@ I prefer al the same time to confine this to the character Which Paul sustained,
 
 It hence appears that it was not Christ’s design (as the Superstitious Anabaptists dream) to abolish oaths altogether, but on the contrary to call attention to the due observance of the law; and the law, allowing an oath, only condemns perjury and needless swearing. If then we would use an oath aright, let us imitate the seriousness and the reverent manner exhibited by the Apostles; and that you may understand what it is, know that God is so called as a witness, that he is also appealed to as an avenger, in case we deceive; which Paul expresses elsewhere in these words,
 
-<p style="text-align:center">“God is a witness to my soul.” (2 Corinthians 1:23.) [^f30]</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“God is a witness to my soul.” (</span><span style="color:#000080">2 Corinthians 1:23.)</span> <span style="color:#800000">[^f30]</span></p>
 
 <!-- PAGE 40 -->
 <span style="color:#800000">*Whom I serve with my spirit,*</span> etc. It is usual with profane men, who trifle with God, to pretend his name, no less boldly than presumptuously; but the Apostle here speaks of his own piety, in order to gain credit; and those, in whom the fear of God and reverence for his name prevail, will dread to swear falsely. At the same time, he sets his own spirit in opposition to the outward mask of religion; for as many falsely pretend to be the worshippers of God, and outwardly appear to be so, he testifies that he, from the heart served, God. <span style="color:#800000">[^f31]</span> It may be also that he alluded to the ancient ceremonies, in which alone the Jews thought the worship of God consisted. He then intimates, that though he retained not observance of these, he was yet a sincere worshipper of God, according to what he says in Philippians 3:3,
 
-<p style="text-align:center">“We are the true circumcision, who in spirit serve God, and glory not in the flesh.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“We are the true circumcision, who in spirit serve God,</span> <span style="color:#000080">and glory not in the flesh.”</span></p>
 
 He then glories that he served God with sincere devotion of heart, which is true religion and approved worship.
 
@@ -386,7 +386,7 @@ But he says that he was *hindered*: you must take this in no other sense, but th
 
 <span style="color:#800000">*That I might obtain some fruit*</span>, etc. He no doubt speaks of that fruit, for the gathering of which the Lord sent his Apostles,
 
-<p style="text-align:center">“I have chosen you, that ye may go and bring forth fruit, and that your fruit may remain.” (John 15:16.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I have chosen you, that ye may go and bring forth fruit,</span> <span style="color:#000080">and that your fruit may remain.” (</span><span style="color:#000080">John 15:16.)</span></p>
 
 Though he gathered it not for himself, but for the Lord, he yet calls it his own; for the godly have nothing more as their own than the work of promoting the glory of the Lord, with which is connected all their happiness. And he records what had happened to him with respect to *other nations*, that the Romans might entertain hope, that his coming to them would not be unprofitable, which so many nations had found to have been attended with so much benefit.
 
@@ -500,7 +500,7 @@ What then, in short, he proves to us is this, — that the ingratitude of men to
 
 As to the manner in which God gives up or delivers men to wickedness, it is by no means necessary in this place to discuss a question so intricate, (*longam* — tedious.) It is indeed certain, that he not only permits men to fall into sin, by allowing them to do so, and by conniving at them; but that he also, by his equitable judgment, so arranges things, that they are led and carried into such madness by their own lusts, as well as by the devil. He therefore adopts the word, *give up*, according to the constant usage of Scripture; which word they forcibly wrest, who think that we are led into sin only by the permission of God: for as Satan is the minister of God’s wrath, and as it were the executioner, so he is armed against us, not through the connivance, but by the command of his judge. God, however, is not on this account cruel, nor are we innocent, inasmuch as Paul plainly shows, that we are not delivered up into his power, except when we deserve such a punishment. Only we must make this exception, that the cause of sin is not from God, the roots of which ever abide in the sinner himself; for this must be true,
 
-<p style="text-align:center">“Thine is perdition, O Israel; in me only is thy help.” (Hosea 13:9) [^f51]</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Thine is perdition, O Israel; in me only is thy help.”</span> <span style="color:#000080">(</span><span style="color:#000080">Hosea 13:9)</span> <span style="color:#800000">[^f51]</span></p>
 
 By connecting the *desires or lusts* of man’s heart with uncleanness, he indirectly intimates what sort of progeny our heart generates, when left to itself. The expression, <span style="color:#800000">*among themselves*</span>, is not without its force; for it significantly expresses how deep and indelible are the marks of infamy imprinted on our bodies.
 
@@ -530,9 +530,9 @@ But it is labor in vain so to connect these vices, as to make them dependent one
 <!-- PAGE 61 -->
 **32.** <span style="color:#800000">*Who, knowing the judgement*</span> <span style="color:#800000">[^f61]</span> <span style="color:#800000">*of God*</span>, etc. Though this passage is variously explained, yet the following appears to me the correctest interpretation, — that men left nothing undone for the purpose of giving unbridled liberty to their sinful propensities; for having taken away all distinction between good and evil, they approved in themselves and in others those things which they knew displeased God, and would be condemned by his righteous judgment. For it is the summit of all evils, when the sinner is so void of shame, that he is pleased with his own vices, and will not bear them to be reproved, and also cherishes them in others by his consent and approbation. This desperate wickedness is thus described in Scripture:
 
-<p style="text-align:center">“They boast when they do evil,” (Proverbs 2:14.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“They boast when they do evil,” (</span><span style="color:#000080">Proverbs 2:14.)</span></p>
 
-<p style="text-align:center">“She has spread out her feet, and gloried in her wickedness,” (Ezekiel 16:25.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“She has spread out her feet,</span> <span style="color:#000080">and gloried in her wickedness,” (</span><span style="color:#000080">Ezekiel 16:25.)</span></p>
 
 For he who is ashamed is as yet healable; but when such an impudence is contracted through a sinful habit, that vices, and not virtues, please us, and are approved, there is no more any hope of reformation. Such, then, is the interpretation I give; for I see that the Apostle meant here to condemn something more grievous and more wicked than the very doing of vices: what that is I know not, except we refer to that which is the summit of all wickedness, — that is, when wretched men, having cast away all shame, undertake the patronage of vices in opposition to the righteousness of God.
 
@@ -588,11 +588,11 @@ This is a remarkable passage: we may hence learn what I have already referred to
 
 <span style="color:#800000">*For the day*</span>, etc.; literally, *in the day;* but it is put for <span style="color:#0000d4">eijv ἡμέραν</span>, for the day. The ungodly gather now the indignation of God against themselves, the stream of which shall then be poured on their heads: they accumulate hidden destruction, which then shall be drawn out from the treasures of God. The day of the last judgment is called the day of wrath, when a reference is made to the ungodly; but it will be a day of redemption to the faithful. And thus all other visitations of God are ever described as dreadful and full of terror to the ungodly; and on the contrary, as pleasant and joyful to the godly. Hence whenever the Scripture mentions the approach of the Lord, it bids the godly to exult with joy; but when it turns to the reprobate, it proclaims nothing but dread and terror.
 
-<p style="text-align:center">“A day of wrath,” saith Zephaniah, “shall be that day, a day of tribulation and distress, a day of calamity and wretchedness, a day of darkness and of thick darkness, a day of mist and of whirlwind.” (Zephaniah 1:15.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“A day of wrath,” saith Zephaniah, “shall be that day, a day of</span> <span style="color:#000080">tribulation and distress, a day of calamity and wretchedness, a day</span> <span style="color:#000080">of darkness and of thick darkness, a day of mist and of whirlwind.”</span> <span style="color:#000080">(</span><span style="color:#000080">Zephaniah 1:15.)</span></p>
 
-<p style="text-align:center">You have a similar description in Joel 2:2, etc. And Amos exclaims,</p>
+<p style="text-align:center" markdown="1">You have a similar description in Joel 2:2, etc. And Amos exclaims,</p>
 
-<p style="text-align:center">“Woe To You Who Desire The Day Of The Lord! What Will It Be To You? The Day Of The Lord Will Be Darkness, And Not Light.” (Amos 5:18.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Woe To You Who Desire The Day Of The Lord! What Will It Be</span> <span style="color:#000080">To You? The Day Of The Lord Will Be Darkness, And Not Light.”</span> <span style="color:#000080">(</span><span style="color:#000080">Amos 5:18.)</span></p>
 
 Farther, by adding the word <span style="color:#800000">*revelation*</span>, Paul intimates what this day of wrath is to be, — that the Lord will then manifest his judgment: though he gives daily some indications of it, he yet suspends and holds back, till that day, the clear and full manifestation of it; for the books shall then be opened; the sheep shall then be separated the goats, and the wheat shall be cleansed from the tares.
 
@@ -630,7 +630,7 @@ But if any hence objects and says, “That then there is no such thing as the gr
 
 <span style="color:#800000">*Whosoever have sinned under the law*</span>, etc. As the Gentiles, being led by the errors of their own reason, go headlong into ruin, so the Jews possess a law by which they are condemned; <span style="color:#800000">[^f70]</span> for this sentence has been long ago pronounced,
 
-<p style="text-align:center">“Cursed are all they who continue not in all its precepts.” (Deuteronomy 27:26.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Cursed are all they who continue not in all its precepts.”</span> <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 27:26.)</span></p>
 
 A worse condition then awaits the Jewish sinners, since their condemnation is already pronounced in their own law.
 
@@ -654,11 +654,11 @@ Apostle only urges here on the Jews what he had mentioned, the decision of the l
 
 Without reason then is the power of the will deduced from this passage, as though Paul had said, that the keeping of the law is within our power; for he speaks not of the power to fulfill the law, but of the knowledge of it. Nor is the word <span style="color:#800000">*heart*</span> to be taken for the seat of the affections, but only for the understanding, as it is found in Deuteronomy 24:4,
 
-<p style="text-align:center">“The Lord hath not given thee a heart to understand;”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“The Lord hath not given thee a heart to understand;”</span></p>
 
 and in Luke 24:25,
 
-<p style="text-align:center">“O foolish men, and slow in heart to believe.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“O foolish men, and slow in heart to believe.”</span></p>
 
 <!-- PAGE 74 -->
 Nor can we conclude from this passage, that there is in men a *full* knowledge of the law, but that there are only some seeds of what is right implanted in their nature, evidenced by such acts as these — All the Gentiles alike instituted religious rites, they made laws to punish adultery, and theft, and murder, they commended good faith in bargains and contracts. They have thus indeed proved, that God ought to be worshipped, that adultery, and theft, and murder are evils, that honesty is commendable. It is not to our purpose to inquire what sort of God they imagined him to be, or how many gods they devised; it is enough to know, that they thought that there is a God, and that honor and worship are due to him. It matters not whether they permitted the coveting of another man’s wife, or of his possessions, or of any thing which was his, — whether they connived at wrath and hatred; inasmuch as it was not right for them to covet what they knew to be evil when done.
@@ -809,11 +809,11 @@ The application then of this passage is the following: Since all the sins of mor
 
 This argument is not derived, so to speak, from the mere power of God, but from his exercised power, which shines forth in the whole arrangement and order of his works; a though he said, — “It is God’s work to judge the world, that is, to rectify it by his own righteousness, and to reduce to the best order whatever there is in it out of order: he cannot then determine any thing unjustly.” And he seems to allude to a passage recorded by Moses, in Genesis 18:25, where it is said, that when Abraham prayed God not to deliver Sodom wholly to destruction, he spoke to this purpose, —
 
-<p style="text-align:center">“It is not meet, that thou who art to judge the earth, shouldest destroy the just with the ungodly: for this is not thy work nor can it be done by thee.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“It is not meet, that thou who art to judge the earth, shouldest</span> <span style="color:#000080">destroy the just with the ungodly: for this is not thy work nor can</span> <span style="color:#000080">it be done by thee.”</span></p>
 
 A similar declaration is found in Job 34:17, —
 
-<p style="text-align:center">“Should he who hates judgment exercise power?”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Should he who hates judgment exercise power?”</span></p>
 
 <!-- PAGE 93 -->
 
@@ -943,7 +943,7 @@ When therefore we discuss this subject, we ought to proceed in this way: *First,
 <!-- PAGE 109 -->
 With regard to the efficient cause, he says, that we are <span style="color:#800000">*justified freely,*</span> and further, by his grace; and he thus repeats the word to show that the whole is from God, and nothing from us. It might have been enough to oppose grace to merits; but lest we should imagine a half kind of grace, he affirms more strongly what he means by a repetition, and claims for God’s mercy alone the whole glory of our righteousness, which the sophists divide into parts and mutilate, that they may not be constrained to confess their own poverty. — <span style="color:#800000">*Through the redemption*</span>, etc. This is the material,–Christ by his obedience satisfied the Father’s justice, (*judicium* — judgment,) and by undertaking our cause he liberated us from the tyranny of death, by which we were held captive; as on account of the sacrifice which he offered is our guilt removed. Here again is fully confuted the gloss of those who make righteousness a quality; for if we are counted righteous before God, because we are redeemed by a price, we certainly derive from another what is not in us. And Paul immediately explains more clearly what this redemption is, and what is its object, which is to reconcile us to God; for he calls Christ a propitiation, (or, if we prefer an allusion to an ancient type,) a propitiatory. But what he means is, that we are not otherwise just than through Christ propitiating the Father for us. But it is necessary for us to examine the words. <span style="color:#800000">[^f119]</span> **25.** <span style="color:#800000">*Whom God hath set forth,*</span> etc. The Greek verb, <span style="color:#0000d4">προτίθεναι</span>, means sometimes to determine beforehand, and sometimes to set forth. If the first meaning be taken, Paul refers to the gratuitous mercy of God, in having appointed Christ as our Mediator, that he might appease the Father by the sacrifice of his death: nor is it a small commendation of God’s grace that he, of his own good will, sought out a way by which he might remove our curse. According to this view, the passage fully harmonizes with that in John 3:16,
 
-<p style="text-align:center">“God so loved the world, that he gave his only-begotten Son.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“God so loved the world, that he gave his only-begotten Son.”</span></p>
 
 Yet if we embrace this meaning, it will remain still true, that God hath set him forth in due time, whom he had appointed as a Mediator. There seems to be an allusion in the word, <span style="color:#0000d4">ἱλαστήριον</span>, as I have said, to the ancient propitiatory; for he teaches us that the same thing was really exhibited in Christ, which had been previously typified. As, however, the other view cannot be disproved, should any prefer it, I shall not undertake to decide the question. What Paul especially meant here is no doubt evident from his words; and it was this, — that God, without having regard to Christ, is always angry with us, — and that we are reconciled to him when we are accepted through his righteousness. God does not indeed hate in us his own workmanship, that is, as we are formed men; but he hates our uncleanness, which has extinguished the light of his image. When the washing of Christ cleanses this away, he then loves and embraces us as his own pure workmanship.
 
@@ -986,7 +986,7 @@ What, James says, that man is not justified by faith alone, but also by works, d
 
 **29.** <span style="color:#800000">*Is he the God of the Jews only?*</span> The second proposition is, that this righteousness belongs no more to the Jews than to the Gentiles: and it was a great matter that this point should be urged, in order that a free passage might be made for the kingdom of Christ through the whole world. He does not then ask simply or expressly, whether God was the Creator of the Gentiles, which was admitted without any dispute; but whether he designed to manifest himself as a Savior also to them. As he had put all mankind on a level, and brought them to the same condition, if there be any difference between them, it is from God, not from themselves, who have all things alike: but if it be true that God designs to make all the nations of the earth partakers of his mercy, then salvation, and righteousness, which is necessary for salvation, must be extended to all. Hence under the name, *God,* is conveyed an intimation of a mutual relationship, which is often mentioned in Scripture, —
 
-<p style="text-align:center">“I shall he to you a God, and you shall be to me a people.” (Jeremiah 30:22.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I shall he to you a God, and you shall be to me a people.”</span> <span style="color:#000080">(</span><span style="color:#000080">Jeremiah 30:22.)</span></p>
 
 <!-- PAGE 115 -->
 
@@ -1008,7 +1008,7 @@ But it may be, that some will prefer this distinction, — that the Jews were ju
 <!-- PAGE 116 -->
 **31.** <span style="color:#800000">*Do we then make,*</span> etc. When the law is opposed to faith, the flesh immediately suspects that there is some contrariety, as though the one were adverse to the other: and this false notion prevails, especially among those who are imbued with wrong ideas as to the law, and leaving the promises, seek nothing else through it but the righteousness of works. And on this account, not only Paul, but our Lord himself, was evil spoken of by the Jews, as though in all his preaching he aimed at the abrogation of the law. Hence it was that he made this protest, —
 
-<p style="text-align:center">“I came not to undo, but to fulfill the law.” (Matthew 5:17.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I came not to undo, but to fulfill the law.” (</span><span style="color:#000080">Matthew 5:17.)</span></p>
 
 And this suspicion regards the moral as well as the ceremonial law; for as the gospel has put an end to the Mosaic ceremonies, it is supposed to have a tendency to destroy the whole dispensation of Moses. And further, as it sweeps away all the righteousness of works, it is believed to be opposed to all those testimonies of the law, by which the Lord has declared, that he has thereby prescribed the way of righteousness and salvation. I therefore take this defense of Paul, not only as to ceremonies, nor as to the commandments which are called moral, but with regard to the whole law universally. <span style="color:#800000">[^f127]</span>
 
@@ -1085,7 +1085,7 @@ Dissipated also, in like manner, by the words of the Prophet, are the puerile fa
 
 It invalidates in no degree what Paul says, that works are sometimes imputed for righteousness, and that other kinds of blessedness are mentioned. It is said in <span style="color:#800000"><19A630></span>Psalm 106:30, that it was imputed to Phinehas, the Lord’s priest, for righteousness, because he took away reproach from Israel by inflicting punishment on an adulterer and a harlot. It is true, we learn from this passage, that he did a righteous deed; but we know that a person is not justified by one act. What is indeed required is perfect obedience, and complete in all its parts, according to the import of the promise, —
 
-<p style="text-align:center">“He who shall do these things shall live in them.” (Deuteronomy 4:1.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“He who shall do these things shall live in them.”</span> <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 4:1.)</span></p>
 
 <!-- PAGE 124 -->
 How then was this judgment which he inflicted imputed to him for righteousness? He must no doubt have been previously justified by the grace of God: for they who are already clothed in the righteousness of Christ, have God not only propitious to them, but also to their works, the spots and blemishes of which are covered by the purity of Christ, lest they should come to judgment. As works, infected with no defilements, are alone counted just, it is quite evident that no human work whatever can please God, except through a favor of this kind. But if the righteousness of faith is the only reason why our works are counted just, you see how absurd is the argument, — “That as righteousness is ascribed to works, righteousness is not by faith only.” But I set against them this invincible argument, that all works are to be condemned as those of unrighteousness, except a man be justified solely by faith.
@@ -1321,7 +1321,7 @@ By saying that the saints glory in tribulations, he is not to be understood, as 
 
 We are then taught here what is the design of our tribulations, if indeed we would prove ourselves to be the children of God. They ought to habituate us to patience; and if they do not answer this end, the work of the Lord is rendered void and of none effect through our corruption: for how does he prove that adversities do not hinder the glorying of the faithful, except that by their patience in enduring them, they feel the help of God, which nourishes and confirms their hope? They then who do not learn patience, do not, it is certain, make good progress. Nor is it any objection, that there are recorded in Scripture some complaints full of despondency, which the saints had made: for the Lord sometimes so depresses and straitens for a time his people, that they can hardly breathe, and can hardly remember any source of consolation; but in a moment he brings to life those whom he had nearly sunk in the darkness of death. So that what Paul says is always accomplished in them —
 
-<p style="text-align:center">“We are in every way oppressed, but not made anxious; we are in danger, but we are not in despair; we suffer persecution, but we are not forsaken; we are cast down but we are not destroyed.” (2 Corinthians 4:8.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“We are in every way oppressed, but not made anxious; we are in</span> <span style="color:#000080">danger, but we are not in despair; we suffer persecution, but we are</span> <span style="color:#000080">not forsaken; we are cast down but we are not destroyed.”</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 4:8.)</span></p>
 
 <!-- PAGE 149 -->
 <span style="color:#800000">*Tribulation produces*</span> (efficiat) <span style="color:#800000">*patience*</span>, etc. This is not the natural effect of tribulation; for we see that a great portion of mankind are thereby instigated to murmur against God, and even to curse his name. But when that inward meekness, which is infused by the Spirit of God, and the consolation, which is conveyed by the same Spirit, succeed in the place of our stubbornness, then tribulations become the means of generating patience; yea, those tribulations, which in the obstinate can produce nothing but indignation anal clamorous discontent.
@@ -1661,7 +1661,7 @@ We may hence learn, that we are not freed from the bondage of the law that we ma
 
 It must be observed, that no one can be a servant to righteousness except he is first liberated by the power and kindness of God from the tyranny of sin. So Christ himself testifies,
 
-<p style="text-align:center">“If the Son shall free you, you shall be free indeed.” \|(John 8:36.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“If the Son shall free you, you shall be free indeed.”</span> <span style="color:#000080">\|(</span><span style="color:#000080">John 8:36.)</span></p>
 
 What are then our preparations by the power of free will, since the commencement of what is good proceeds from this manumission, which the grace of God alone effects?
 
@@ -1928,7 +1928,7 @@ Now since the <span style="color:#800000">*law of the mind*</span> undoubtedly m
 <!-- PAGE 211 -->
 By the <span style="color:#800000">*body of death*</span> he means the whole mass of sin, or those ingredients of which the whole man is composed; except that in him there remained only relics, by the captive bonds of which he was held. The pronoun <span style="color:#0000d4">τούτου</span> *this*, which I apply, as *Erasmus* does, to the body, may also be fitly referred to death, and almost in the same sense; for Paul meant to teach us, that the eyes of God’s children are opened, so that through the law of God they wisely discern the corruption of their nature and the death which from it proceeds. But the word <span style="color:#800000">*body*</span> means the same as the *external man* and *members;* for Paul points out this as the origin of evil, that man has departed from the law of his creation, and has become thus carnal and earthly. For though he still excels brute beasts, yet his true excellency has departed from him, and what remains in him is full of numberless corruptions so that his soul, being degenerated, may be justly said to have passed into a body. So God says by Moses,
 
-<p style="text-align:center">“No more shall my Spirit contend with man, for he is even flesh,” (Genesis 6:3:)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“No more shall my Spirit contend with man, for he is even flesh,”</span> <span style="color:#000080">(</span><span style="color:#000080">Genesis 6:3:)</span></p>
 
 thus stripping man of his spiritual excellency, he compares him, by way of reproach, to the brute creation. <span style="color:#800000">[^f232]</span>
 
@@ -1984,7 +1984,7 @@ But further, understand the weakness of the law according to the sense in which 
 <!-- PAGE 218 -->
 <span style="color:#800000">*Even for sin*</span>, etc. I have already said that this is explained by some as the cause or the end for which God sent his own Son, that is, to give satisfaction for sin. *Chrysostom* and many after him understood it in a still harsher sense, even that sin was condemned for sin, and for this reason, because it assailed Christ unjustly and beyond what was right. I indeed allow that though he was just and innocent, he yet underwent punishment for sinners, and that the price of redemption was thus paid; but I cannot be brought to think that the word <span style="color:#800000">*sin*</span> is put here in any other sense than that of an expiatory sacrifice, which is called <span style="color:#008080">µça</span>, *ashem*, in Hebrew, <span style="color:#800000">[^f240]</span> and so the Greeks call a sacrifice to which a curse is annexed <span style="color:#0000d4">κάθαρμα</span>, *catharma.* The same thing is declared by Paul in 2 Corinthians 5:21, when he says, that
 
-<p style="text-align:center">“Christ, who knew no sin, was made sin for us, that we might become the righteousness of God in him.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Christ, who knew no sin, was made sin for us, that we might</span> <span style="color:#000080">become the righteousness of God in him.”</span></p>
 
 But the preposition <span style="color:#0000d4">περὶ</span> *peri*, is to be taken here in a causative sense, as though he had said, “On account of that sacrifice, or through the burden of sin being laid on Christ, sin was cast down from its power, so that it does not hold us now subject to itself.” For using a metaphor, he says that it was <span style="color:#800000">*condemned*</span>, like those who fail in their cause; for God no longer deals with those as guilty who have obtained absolution through the sacrifice of Christ. If we say that the kingdom of sin, in which it held us, was demolished, the meaning would be the same. And thus what was ours Christ took as his own, that he might transfer his own to us; for he took our curse, and has freely granted us his blessing.
 
@@ -2055,7 +2055,7 @@ Readers have been already reminded, that by the word Spirit they are not to unde
 
 <span style="color:#800000">*Who raised*</span>, etc. By this periphrasis he describes God; which harmonizes better with his present object, than if he had called him simply by his own name. For the same reason he assigns to the Father the glory of raising Christ; for it more clearly proved what he had in view, than if he had ascribed the act to Christ himself. For it might have been objected, “That Christ was able by his own power to raise up himself, and this is what no man can do.” But when he says, that God raised up Christ by his Spirit, and that he also communicated his Spirit to us, there is nothing that can be alleged to the contrary; so that he thus makes sure to us the hope of resurrection. Nor is there anything here that derogates from that declaration in John,
 
-<p style="text-align:center">“I have power to lay down my life, and to take it up again.” (John 10:18.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I have power to lay down my life, and to take it up again.”</span> <span style="color:#000080">(</span><span style="color:#000080">John 10:18.)</span></p>
 
 No doubt Christ arose through his own power; but as he is wont to attribute to the Father whatever Divine power he possesses, so the Apostle has not improperly transferred to the Father what was especially done by Christ, as the peculiar work of divinity.
 
@@ -2074,11 +2074,11 @@ By <span style="color:#800000">*mortal bodies*</span> he understands all those t
 
 **12.** <span style="color:#800000">*So then, brethren*</span>, etc. This is the conclusion of what has been previously said; for if we are to renounce the flesh, we ought not to consent to it; and if the Spirit ought to reign in us, it is inconsistent not to attend to his bidding. Paul’s sentence is here defective, for he omits the other part of the contrast, — that we are debtors to the Spirit; but the meaning is in no way obscure. <span style="color:#800000">[^f249]</span> This conclusion has the force of an exhortation; for he is ever wont to draw exhortations from his doctrine. So in another place, Ephesians 4:30, he exhorts us
 
-<p style="text-align:center">“not to grieve the Spirit of God, by whom we have been sealed to the day of redemption:”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“not to grieve the Spirit of God, by whom we have been sealed to</span> <span style="color:#000080">the day of redemption:”</span></p>
 
 he does the same in Galatians 5:25,
 
-<p style="text-align:center">“If we live in the Spirit, let us also walk in the Spirit.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“If we live in the Spirit, let us also walk in the Spirit.”</span></p>
 
 <!-- PAGE 227 -->
 And this is the case, when we renounce carnal lusts, so as to devote ourselves, as those who are bound, to the righteousness of God. Thus indeed we ought to reason, not as some blasphemers are wont to do, who talk idly, and say, — that we must do nothing, because we have no power. But it is as it were to fight against God, when we extinguish the grace offered to us, by contempt and negligence.
@@ -2104,7 +2104,7 @@ But it is right to observe, that the working of the Spirit is various: for there
 <!-- PAGE 229 -->
 He now confirms the certainty of that confidence, in which he has already bidden the faithful to rest secure; and he does this by mentioning the special effect produced by the Spirit; for he has not been given for the purpose of harassing us with trembling or of tormenting us with anxiety; but on the contrary, for this end — that having calmed every perturbation, and restoring our minds to a tranquil state, he may stir us up to call on God with confidence and freedom. He does not then pursue only the argument which he had before stated, but dwells more on another clause, which he had connected with it, even the paternal mercy of God, by which he forgives his people the infirmities of the flesh and the sins which still remain in them. He teaches us that our confidence in this respect is made certain by the Spirit of adoption, who could not inspire us with confidence in prayer without sealing to us a gratuitous pardon: and that he might make this more evident, he mentions a twofold spirit; he calls one the spirit of bondage, which we receive from the law; and the other, the spirit of adoption, which proceeds from the gospel. The first, he says, was given formerly to produce fear; the other is given now to afford assurance. By such a comparison of contrary things the certainty of our salvation, which he intended to confirm, is, as you see, made more evident. <span style="color:#800000">[^f251]</span> The same comparison is used by the author of the Epistle to the Hebrews, where he says, that we have not come to Mount Sinai, where all thing were so terrible, that the people, being alarmed as it were by an immediate apprehension of death, implored that the word should be no more spoken to them, and Moses himself confessed that he was terrified;
 
-<p style="text-align:center">“but to Sion, the mount of the Lord, and to his city, the heavenly Jerusalem, where Jesus is, the Mediator of the New Testament,” etc. (Hebrews 7:18.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“but to Sion, the mount of the Lord, and to his city, the heavenly</span> <span style="color:#000080">Jerusalem, where Jesus is, the Mediator of the New Testament,”</span> <span style="color:#000080">etc. (</span><span style="color:#000080">Hebrews 7:18.)</span></p>
 
 By the adverb again, we learn, that the law is here compared with the gospel: for the Son of God by his coming has brought to us this invaluable benefit, — that we are no longer bound by the servile condition of the law. You are not however to infer from this, either that no one before the coming of Christ was endued with the spirit of adoption, or that all who received the law were servants and not sons: for he compares the ministration of the law with the dispensation of the gospel rather than persons with persons. I indeed allow that the faithful are here reminded how much more bountifully God now deals with them than he did formerly with the fathers under the Old Testament; he yet regards the outward dispensation, in respect of which only we excel them: for though the faith of Abraham, of Moses, and of David, was superior to ours, yet as God kept them apparently under a schoolmaster, they had not advanced into that liberty which has been revealed to us.
 
@@ -2120,7 +2120,7 @@ And then, if the law be viewed in itself, it can do nothing but restrain those, 
 
 The faithful also under the law did indeed call God their Father, but not with such full confidence, as the vail kept them at a distance from the sanctuary: but now, since an entrance has been opened to us by the blood of Christ, we may rejoice fully and openly that we are the children of God; hence arises this crying. In short, thus is fulfilled the prophecy of Hosea,
 
-<p style="text-align:center">“I will say to them, My people are ye: they in their turn will answer, Thou art our God.” (Hosea 2:23.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I will say to them, My people are ye: they in their turn will</span> <span style="color:#000080">answer, Thou art our God.” (</span><span style="color:#000080">Hosea 2:23.)</span></p>
 
 For the more evident the promise is, the greater the freedom in prayer.
 
@@ -2154,7 +2154,7 @@ It is hence evident how ill understood has this passage been by the Schoolmen; f
 
 Further, the expression, <span style="color:#800000">*expectation expects*</span>, or waits for, though somewhat unusual, yet has a most suitable meaning; for he meant to intimate, that all creatures, seized with great anxiety and held in suspense with great desire, look for that day which shall openly exhibit the glory of the children of God. *The revelation* of God’s *children* shall be, when we shal1 be like God, according to what John says,
 
-<p style="text-align:center">“For though we know that we are now his sons, yet it appears not yet what we shall be.” (1 John 3:2.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“For though we know that we are now his sons, yet it appears not</span> <span style="color:#000080">yet what we shall be.” (</span><span style="color:#000080">1 John 3:2.)</span></p>
 
 But I have retained the words of Paul; for bolder than what is meet is the version of *Erasmus*, “Until the sons of God shall be manifest;” nor does it sufficiently express the meaning of the Apostle; for he means not, that the sons of God shall be manifested in the last day, but that it shall be then made known how desirable and blessed their condition will be, when they shall put off corruption and put on celestial glory. But he ascribes hope to creatures void of reason for this end, — that the faithful may open their eyes to behold the invisible life, though as yet it lies hid under a mean garb.
 
@@ -2275,11 +2275,11 @@ We may add, that Paul, imitating the style of the Hebrew language, adopts in the
 
 <span style="color:#800000">*If God be for us*</span>, etc. This is the chief and the only support which can sustain us in every temptation. For except we have God propitious to us, though all things should smile on us, yet no sure confidence can be attained: but, on the other hand, his favor alone is a sufficient solace in every sorrow, a protection sufficiently strong against all the storms of adversities. And on this subject there are many testimonies of Scripture, which show that when the saints rely on the power of God alone, they dare to despise whatever is opposed to them in the world.
 
-<p style="text-align:center">“When I walk in the midst of the shadow of death, I shall not fear evils, for thou art with me.” (Psalm 23:4.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“When I walk in the midst of the shadow of death, I shall not fear</span> <span style="color:#000080">evils, for thou art with me.” (</span><span style="color:#000080">Psalm 23:4.)</span></p>
 
-<p style="text-align:center">“In the Lord I trust: what shall flesh do to me.” (Psalm 56:11.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“In the Lord I trust: what shall flesh do to me.”</span> <span style="color:#000080">(</span><span style="color:#000080">Psalm 56:11.)</span></p>
 
-<p style="text-align:center">“I shall not fear the thousands of the people who beset me.” (Psalm 3:6.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I shall not fear the thousands of the people who beset me.”</span> <span style="color:#000080">(</span><span style="color:#000080">Psalm 3:6.)</span></p>
 
 <!-- PAGE 249 -->
 For there is no power either under or above the heavens, which can resist the arm of God. Having him then as our defender, we need fear no harm whatever. Hence he alone shows real confidence in God, who being content with his protection, dreads nothing in such a way as to despond; the faithful are doubtless often shaken but are never utterly east down. In short, the Apostle’s object was to show, that the godly soul ought to rely on the inward testimony of the Holy Spirit, and not to depend on outward things.
@@ -2398,11 +2398,11 @@ The words, <span style="color:#800000">*my kinsmen according to the flesh,*</spa
 
 But though they had already stripped themselves of these ornaments, so that it availed them nothing to be called the children of Abraham, yet as there was a danger, lest through their fault the majesty of the gospel should be depreciated among the Gentiles, Paul does not regard what they deserved, but covers their baseness and disgraceful conduct by throwing vails over them, until the Gentiles were fully persuaded, that the gospel had flowed to them from the celestial fountain, from the sanctuary of God, from an elect nation. For the Lord, passing by other nations, had selected them as a people peculiar to himself, and had adopted them as his children, as he often testifies by Moses and the prophets; and not content simply to give them the name of children, he calls them sometimes his firstbegotten, and sometimes his beloved. So the Lord says in Exodus 4:22, —
 
-<p style="text-align:center">“My first-begotten son is Israel; let my son go, that he may serve me.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“My first-begotten son is Israel; let my son go,</span> <span style="color:#000080">that he may serve me.”</span></p>
 
 In Jeremiah 31:9, it is said,
 
-<p style="text-align:center">“I am become a Father to Israel, and Ephraim is my first-begotten:”</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I am become a Father to Israel, and Ephraim is my first-begotten:”</span></p>
 
 <!-- PAGE 263 -->
 and again, “Is not my son Ephraim precious to me? Is he not a delightful child? Hence troubled for him are my bowels, and I will yet pity him.” By these words he means, not only to set forth his kindness towards the people of Israel, but rather to exhibit the *efficacy* of adoption, through which the promise of the celestial inheritance is conveyed.
@@ -2717,7 +2717,7 @@ But as evangelic promises are only found scattered in the writings of Moses, and
 
 <!-- PAGE 300 -->
 
-<p style="text-align:center">“That the law was given by Moses, but that grace and truth came by Christ.” (John 1:17.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“That the law was given by Moses, but that grace</span> <span style="color:#000080">and truth came by Christ.” (</span><span style="color:#000080">John 1:17.)</span></p>
 
 And whenever the word law is thus strictly taken, Moses is by implication opposed to Christ: and then we must consider what the law contains, as separate from the gospel. Hence what is said here of the <span style="color:#800000">*righteousness*</span> of the law, must be applied, not to the whole office of Moses, but to that part which was in a manner peculiarly committed to him. I come now to the words.
 
@@ -3064,7 +3064,7 @@ But if it be asked respecting individuals, “How any one could be cut off from 
 
 Paul, however, does not quote what we read in Isaiah, word for word;
 
-<p style="text-align:center">“come,” he says, “shall a Redeemer to Sion, and to those who shall repent of iniquity in Jacob, saith the Lord.” (Isaiah 59:20.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“come,” he says, “shall a Redeemer to Sion, and to those who shall</span> <span style="color:#000080">repent of iniquity in Jacob, saith the Lord.” (</span><span style="color:#000080">Isaiah 59:20.)</span></p>
 
 But on this point we need not be very curious; only this is to be regarded, that the Apostles suitably apply to their purpose whatever proofs they adduce from the Old Testament; for their object was to point but passages, as it were by the finger, that readers might be directed to the fountain itself.
 
@@ -3089,7 +3089,7 @@ Mount Sion.” And similar is the case as to the second part, “He shall turn a
 
 **28.** <span style="color:#800000">*With regard indeed to the gospel*</span>*, etc.* He shows that the worst thing in the Jews ought not to subject them to the contempt of the Gentiles. Their chief crime was unbelief: but Paul teaches us, that they were thus blinded for a time by God’s providence, that a way to the gospel might be made for the Gentiles; <span style="color:#800000">[^f365]</span> and that still they were not for ever excluded from the favor of God. He then admits, that they were for the present alienated from God on account of the gospel, that thus the salvation, which at first was deposited with them, might come to the Gentiles; and yet that God was not unmindful of the covenant which he had made with their fathers, and by which he testified that according to his eternal purpose he loved that nation: and this he confirms by this remarkable declaration, — that the grace of the divine calling cannot be made void; for this is the import of the words, — **29.** <span style="color:#800000">*The gifts and calling of God are without repentance.*</span> He has mentioned gifts and calling; which are to be understood, according to a figure in grammar, <span style="color:#800000">[^f366]</span> as meaning the gift of calling: and this is not to be taken for any sort of calling but of that, by which God had adopted the posterity of Abraham into covenant; since this is especially the subject here, as he has previously, by the word, election, designated the secret purpose of God, by which he had formerly made a distinction between the Jews and the Gentiles. <span style="color:#800000">[^f367]</span> For we must bear this in mind, — that he speaks not now of the election of individuals, but of the common adoption of the whole nation, which might seem for a time, according to the outward appearance, to have failed, but had not been cut up by the roots. As the Jews had fallen from their privilege and the salvation promised them, that some hope might remain to the remnant, Paul maintains that the purpose of God stands firm and immovable, by which he had once deigned to choose them for himself as a peculiar nation. Since then it cannot possibly be, that the Lord will depart from that covenant which he made with Abraham,
 
-<p style="text-align:center">“I will be the God of thy seed,” (Genesis 17:7,)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I</span> <span style="color:#000080">will be the God of thy seed,” (</span><span style="color:#000080">Genesis 17:7,)</span></p>
 
 it is evident that he has not wholly turned away his kindness from the Jewish nation.
 
@@ -3232,9 +3232,9 @@ But Paul especially intended to beat down the pride which he knew to be innate i
 
 But this passage is variously understood. There are those who consider that by <span style="color:#800000">*prophecy*</span> is meant the gift of predicting, which prevailed at the commencement of the gospel in the Church; as the Lord then designed in every way to commend the dignity and excellency of his Church; and they think that what is added, *according to the analogy of faith,* is to be applied to all the clauses. But I prefer to follow those who extend this word wider, even to the peculiar gift of revelation, by which any one skillfully and wisely performed the office of an interpreter in explaining the will of God. Hence prophecy at this day in the Christian Church is hardly anything else than the right understanding of the Scripture, and the peculiar faculty of explaining it, inasmuch as all the ancient prophecies and all the oracles of God have been completed in Christ and in his gospel. For in this sense it is taken by Paul when he says,
 
-<p style="text-align:center">“I wish that you spoke in tongues, but rather that ye prophesy,” (1 Corinthians 14:5;)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I wish that you spoke in tongues, but rather that ye prophesy,”</span> <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians 14:5;)</span></p>
 
-<p style="text-align:center">“In part we know and in part we prophesy,” (1 Corinthians 13:9.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“In part we know and in part we prophesy,”</span> <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians 13:9.)</span></p>
 
 And it does not appear that Paul intended here to mention those miraculous graces by which Christ at first rendered illustrious his gospel; but, on the contrary, we find that he refers only to ordinary gifts, such as were to continue perpetually in the Church. <span style="color:#800000">[^f384]</span>
 
@@ -3531,7 +3531,7 @@ Now, though the power of judging as to the person, and also as to the deed, is t
 
 But by referring to the power of God, he means not simply, as though he had said, that God can do this if he will; but, after the usual manner of Scripture, he connects God’s will with his power: and yet he speaks not here of perpetuity, as though they must stand to the end whom God has once raised up; but he only reminds us, that we are to entertain a good hope, and that our judgments should lean this way; as he also teaches us in another place,
 
-<p style="text-align:center">“He who began in you a good work, will perform it to the end.” (Philippians 1:6.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“He who began in you a good work, will perform it to the end.”</span> <span style="color:#000080">(</span><span style="color:#000080">Philippians 1:6.)</span></p>
 
 In short, Paul shows to what side their judgments incline, in whom love abounds.
 
@@ -3626,11 +3626,11 @@ By the word <span style="color:#800000">*common*</span>, in this place, he means
 <!-- PAGE 398 -->
 **15.** <span style="color:#800000">*But if through meat thy brother is grieved,*</span> *etc.* He now explains how the offending of our brethren may vitiate the use of good things. And the first thing is, — that love is violated, when our brother is made to grieve by what is so trifling; for it is contrary to love to occasion grief to any one. The next thing is, — that when the weak conscience is wounded, the price of Christ’s blood is wasted; for the most abject brother has been redeemed by the blood of Christ: it is then a heinous crime to destroy him by gratifying the stomach; and we must be basely given up to our own lusts, if we prefer meat, a worthless thing, to Christ. <span style="color:#800000">[^f424]</span> The third reason is, — that since the liberty attained for us by Christ is a blessing, we ought to take care, lest it should be evil spoken of by men and justly blamed, which is the case, when we unseasonably use God’s gifts. These reasons then ought to influence us, lest by using our liberty, we thoughtlessly cause offenses. <span style="color:#800000">[^f425]</span> **17.** <span style="color:#800000">*For the kingdom of God*</span>*, etc.* He now, on the other hand, teaches us, that we can without loss abstain from the use of our liberty, because the kingdom of God does not consist in such things. Those things indeed, which are necessary either to build up or preserve the kingdom of God, are by no means to be neglected, whatever offenses may hence follow: but if for love’s sake it be lawful to abstain from meat, while God’s honor is uninjured, while Christ’s kingdom suffers no harm, while religion is not hindered, then they are not to be borne with, who for meat’s sake disturb the Church. He uses similar arguments in his first Epistle to the Corinthians:
 
-<p style="text-align:center">“Meat,” he says, “for the stomach, and the stomach for meat; but God will destroy both,” (1 Corinthians 6 13:)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Meat,” he says, “for</span> <span style="color:#000080">the stomach, and the stomach for meat; but</span> <span style="color:#000080">God will destroy both,” (1 Corinthians 6 13:)</span></p>
 
 again,
 
-<p style="text-align:center">“If we eat, we shall not abound,” (1 Corinthians 8:8.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“If</span> <span style="color:#000080">we eat, we shall not abound,” (</span><span style="color:#000080">1 Corinthians 8:8.)</span></p>
 
 By these words he meant briefly to show, that meat and drink were things too worthless, that on their account the course of the gospel should be impeded.
 
@@ -3825,7 +3825,7 @@ He mentions *word* and *work* in the first place, and then he states one kind of
 
 This is a striking passage respecting the benefit of miracles: they are designed to prepare men to reverence and to obey God. So you read in Mark, that the Lord confirmed the truth by the signs which followed. (Mark 16:20.) Luke declares in the Acts, that the Lord by miracles gave testimony to the word of his grace. (Acts 14:3.) It is then evident that those miracles which bring glory to creatures and not to God, which secure credit to lies and not to God’s word, are from the devil. <span style="color:#800000">*The power of the Spirit*</span>, which he mentions in the third place, I apply to both the preceding clauses. <span style="color:#800000">[^f450]</span> **19.** <span style="color:#800000">*So that from Jerusalem*</span>*, etc.* He joins also a testimony from the effect; for the success which followed his preaching exceeded all the thoughts of men. For who could have gathered so many churches for Christ, without being aided by the power of God? “From Jerusalem,” he says, “I have propagated the gospel as far as Illyricum, and not by hastening to the end of my course by a straight way, but by going all around, and through the intervening countries.” But the verb <span style="color:#0000d4">πεπληρωκέναι</span>, which after others I have rendered *filled up* or completed, means both to perfect and to supply what is wanting. Hence <span style="color:#0000d4">πλήρωμα</span> in Greek means perfection as well as a supplement. I am disposed to explain it thus, — that he diffused, as it were by filling up, the preaching of the gospel; for others had before begun, but he spread it wider. <span style="color:#800000">[^f451]</span> **20.** <span style="color:#800000">*Thus striving to preach the gospel,*</span> *etc.* As it was necessary for Paul not only to prove himself to be the servant of Christ and a pastor of the Christian Church, but also to show his title to the character and office of an Apostle, that he might gain the attention of the Romans, he mentions here the proper and peculiar distinction of the apostle-ship; for the work of an Apostle is to propagate the gospel where it had not been preached, according to that command,
 
-<p style="text-align:center">“Go ye, preach the gospel to every creature.” (Mark 16:15.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Go</span> <span style="color:#000080">ye, preach the gospel to every creature.” (</span><span style="color:#000080">Mark 16:15.)</span></p>
 
 <!-- PAGE 419 -->
 And this is what we ought carefully to notice, lest we make a general rule of what specially belongs to the Apostolic order: nor ought we to consider it a fault, that a successor was substituted who built up the Church. The Apostles then were the founders as it were of the Church; the pastors who succeeded them, had to strengthen and amplify the building’ raised up by them. <span style="color:#800000">[^f452]</span> He calls that <span style="color:#800000">*another’s foundation*</span>, which had been laid by the hand of another: otherwise Christ is the only stone on which the Church is founded. See 1 Corinthians 3:11; and Ephesians 2:20.
@@ -3866,7 +3866,7 @@ By saying, to <span style="color:#800000">*be brought on my way thither by you*<
 
 <!-- PAGE 422 -->
 
-<p style="text-align:center">“I boast,” he says, “of your promptitude to all the Churches, that they may be stirred up by your example.” (2 Corinthians 9:2.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“I</span> <span style="color:#000080">boast,” he says, “of</span> <span style="color:#000080">your promptitude to all the Churches, that</span> <span style="color:#000080">they may be stirred up by your example.”</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 9:2.)</span></p>
 
 It was indeed a rare instance of kindness, that the Grecians, having heard that their brethren at Jerusalem were laboring under want, considered not the distance at which they were separated from them; but esteeming those sufficiently nigh, to whom they were united by the bond of faith, they relieved their necessities from their own abundance. The word *communication,* which is here employed, ought to be noticed; for it well expresses the feeling, by which it behooves us to succor the wants of our brethren, even because there is to be a common and mutual regard on account of the unity of the body. I have not rendered the pronoun <span style="color:#0000d4">τινὰ</span>, because it is often redundant in Greek, and seems to lessen the emphasis of this passage. <span style="color:#800000">[^f457]</span> What we have rendered *to minister,* is in Greek a participle, *ministering;* but the former seems more fitted to convey the meaning of Paul: for he excuses himself, that by a lawful occupation he was prevented from going immediately to Rome.
 
@@ -3900,11 +3900,11 @@ The former exposition has been most commonly received, and seems also to me the 
 <!-- PAGE 425 -->
 He then shows how grieved his godly mind was, by the earnest protestation he makes, in which he adds to the name of the <span style="color:#800000">*Lord*</span>, the <span style="color:#800000">*love of the Spirit*</span>, by which the saints ought to embrace one another. But though in so great a fear, he yet continued to proceed; nor did he so dread danger, but that he was prepared willingly to meet it. At the same time he had recourse to the remedies given him by God; for he solicited the aid of the Church, so that being helped by its prayers, he might find comfort, according to the Lord’s promise, —
 
-<p style="text-align:center">“Where two or three shall assemble in my name, there in the midst of them am I,” (Matthew 18:20;)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Where two or three shall assemble in my name, there in the midst</span> <span style="color:#000080">of them am I,”</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 18:20;)</span></p>
 
 and,
 
-<p style="text-align:center">“Whatsoever they agree in on earth, they shall obtain in heaven,” (Matthew 18:19.)</p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Whatsoever they agree in on earth, they shall obtain in heaven,”</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 18:19.)</span></p>
 
 And lest no one should think it an unmeaning commendation, he besought them both by Christ and by the love of the Spirit. The love of the Spirit is that by which Christ joins us together; for it is not that of the flesh, nor of the world, but is from his Spirit, who is the bond of our unity.
 
@@ -4030,15 +4030,15 @@ If any one objects and. says, that there is an inconsistency in the words of Pau
 
 Though it is not agreed among the learned in what sense he calls the gospel a hidden mystery in this place, and in Ephesians 3:9, and in Colossians 1:26; yet their opinion has most in its favor, who apply it to the calling of the Gentiles, to which Paul himself expressly refers in his Epistle to the Colossians. [Now, though I allow this to be one reason, I yet cannot be brought to believe that it is the only reason. It seems to me more probable that Paul had also a regard to some other differences between the Old and the [New Testament. For though the Prophets formerly taught all those things which have been explained by Christ and his Apostles, yet they taught them with so much obscurity, that in comparison with the clear brightness of gospel light, it is no wonder that those things are said to have been hidden which are now made manifest. [Nor was it indeed to no purpose that Malachi declared that the Sun of righteousness would arise, (Malachi 4:2 ;) or that Isaiah had beforehand so highly eulogized the embassy of the Messiah. And lastly, it is not without reason that the gospel is called the kingdom of God: but we may’ conclude from the event itself, that then only were opened the treasures of celestial wisdom, when God appeared to his ancient people through his only-begotten Son, as it were face to face, all shadows having been done away. He again refers to the end, mentioned at the beginning of the first chapter, for which the gospel is to be preached,—that God may lead all nations to the obedience of faith.
 
-<p style="text-align:center">PRAISE FOR EVER TO</p>
+<p style="text-align:center" markdown="1">PRAISE FOR EVER TO</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ONLY WISE GOD:</span></p>
 
-<p style="text-align:center">AMEN.</p>
+<p style="text-align:center" markdown="1">AMEN.</p>
 
 <!-- PAGE 440 -->
 
-<p style="text-align:center">A TRANSLATION OF</p>
+<p style="text-align:center" markdown="1">A TRANSLATION OF</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CALVIN’S VERSION OF</span></p>
 
@@ -4046,7 +4046,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">1</span> PAUL, a servant of Jesus Christ, a called Apostle, chosen for the gospel of God, <span style="color:#800000">2</span> Which he had before promised by his Prophets in the holy Scriptures,
 
-<p style="text-align:center">3 Concerning his Son, who came from the seed of David according to the flesh;</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">3</span> Concerning his Son, who came from the seed of David according to the flesh;</p>
 
 <span style="color:#800000">4</span> Declared the Son of’ God in power, through the Spirit of holiness, by the resurrection from the dead, *even* Jesus Christ our Lord;
 
@@ -4124,7 +4124,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">15</span> Who show the work of the law written on their hearts, their conscience at the same time attesting, and their thoughts accusing or excusing each other, <span style="color:#800000">16</span> In the day in which God will judge the secrets of men, according to my gospel, through Jesus Christ.
 
-<p style="text-align:center">17 Behold, thou art named a Jew, and restest in the law and gloriest in God,</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">17</span> Behold, thou art named a Jew, and restest in the law and gloriest in God,</p>
 
 <span style="color:#800000">18</span> And knowest his will and approvest of things excellent, being instructed from the law, <span style="color:#800000">19</span> And art confident that thou thyself art a leader to the blind, a light to those who are in darkness, <span style="color:#800000">20</span> An instructor to the foolish, a teacher to the ignorant, because thou hast the form of knowledge and of’ the truth according to the law:
 
@@ -4248,7 +4248,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">22</span> And it was therefore imputed to him for righteousness.
 
-<p style="text-align:center">23 Now it was not written on his account only, that it was imputed to him</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">23</span> Now it was not written on his account only, that it was imputed to him</p>
 
 <span style="color:#800000">24</span> But also on our account, to whom it shall be imputed, *even to us* who believe on him, who raised Jesus our Lord from the dead;
 
@@ -4300,9 +4300,9 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">21</span> That as sin has reigned through death, so grace also might reign through righteousness unto eternal life through Jesus Christ our Lord.
 
-<p style="text-align:center">1 What then shall we say? Shall we continue in sin that grace may abound</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">1</span> What then shall we say? Shall we continue in sin that grace may abound</p>
 
-<p style="text-align:center">2 By no means: we who have died to sin, how shall we still live in it?</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">2</span> By no means: we who have died to sin, how shall we still live in it?</p>
 
 <span style="color:#800000">3</span> Know ye not, that we all, who have been baptized into Jesus Christ, have been baptized into his death?
 
@@ -4370,7 +4370,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">9</span> And I lived some time without the law; but when the commandment came, sin revived, and I died;
 
-<p style="text-align:center">10 And the commandment, which was for life, was found by me to be unto death:</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">10</span> And the commandment, which was for life, was found by me to be unto death:</p>
 
 <span style="color:#800000">11</span> For sin taking occasion through the commandment, led me astray, and through it slew me.
 
@@ -4384,11 +4384,11 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">16</span> If then, what I would not, this I do, I consent to the law of God, that it is good:
 
-<p style="text-align:center">17 And now, it is no longer I who do it, but sin which dwells in me.</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">17</span> And now, it is no longer I who do it, but sin which dwells in me.</p>
 
 <span style="color:#800000">[^f482]</span> <span style="color:#800000">18</span> I indeed know that no good dwells in me, that is, in my flesh; for to will is present with me, but to perform what is good I find not;
 
-<p style="text-align:center">19 Since the good I would I do not; but the evil . I would not, that I do.</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">19</span> Since the good I would I do not; but the evil . I would not, that I do.</p>
 
 <span style="color:#800000">20</span> But if what I would not, that I do, it is no longer I who do it, but sin which dwells in me.
 
@@ -4504,7 +4504,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">13</span> According to what is written, “Jacob have I loved, but Esau have I hated.”
 
-<p style="text-align:center">14 What then shall we say? Is there unrighteousness with God? By no means:</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">14</span> What then shall we say? Is there unrighteousness with God? By no means:</p>
 
 <span style="color:#800000">15</span> For he says to Moses, “I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion.”
 
@@ -4597,7 +4597,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">9</span> And David says, “Be their table for a snare and for a trap, and for a stumbling, and for a recompense to them;
 
-<p style="text-align:center">10 Darkened be their eyes so as not to see, and their back ever bow thou down.”</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">10</span> Darkened be their eyes so as not to see, and their back ever bow thou down.”</p>
 
 <span style="color:#800000">11</span> I say then, Have they stumbled so as wholly to fall? By no means; but by their fall salvation *is come* to the Gentiles in order to provoke them to jealousy.
 
@@ -4669,7 +4669,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">8</span> Or the exhorter, in exhortation; or the giver, in simplicity; or the president, with care; or he who shows mercy, with cheerfulness.
 
-<p style="text-align:center">9 Let love be undissembled: turn away from evil, cleave to what is good.</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">9</span> Let love be undissembled: turn away from evil, cleave to what is good.</p>
 
 <span style="color:#800000">10</span> Be ready with brotherly love to love one another, anticipating each other with honor.
 
@@ -4680,11 +4680,11 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">14</span> Bless those who persecute you; bless and pray for no evil.
 
-<p style="text-align:center">15 Rejoice with those who rejoice, and weep with those who weep,</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">15</span> Rejoice with those who rejoice, and weep with those who weep,</p>
 
 <span style="color:#800000">16</span> Having the same feeling towards one another, not thinking arrogantly of yourselves, but accommodating yourselves to humble things: be not wise in your own esteem.
 
-<p style="text-align:center">17 To no man render evil for evil, providing honest things before all men</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">17</span> To no man render evil for evil, providing honest things before all men</p>
 
 <span style="color:#800000">18</span> If it be possible, as far as you can, cultivate peace with all men.
 
@@ -4714,7 +4714,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">9</span> For this, “Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not bear false testimony, Thou shalt not covet, and if there be any other precept, it is comprehended in this saying, Thou shalt love thy neighbor as thyself.”
 
-<p style="text-align:center">10 Love works no evil to a neighbor; the fulfilling then of the law is love.</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">10</span> Love works no evil to a neighbor; the fulfilling then of the law is love.</p>
 
 <span style="color:#800000">11</span> Moreover, as ye know the time, that the hour is, when we ought to have awakened already from sleep, (for nearer is now our salvation than when we believed,)
 
@@ -4728,7 +4728,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <!-- PAGE 469 -->
 
-<p style="text-align:center">2 Let him indeed who believes eat everything; but he who is weak, eats herbs.</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">2</span> Let him indeed who believes eat everything; but he who is weak, eats herbs.</p>
 
 <span style="color:#800000">3</span> Let not him who eats, despise him who abstains; and let not him who abstains, condemn him who eats, since God has received him.
 
@@ -4764,7 +4764,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">18</span> For he who in these things serves Christ, is acceptable to God and approved by men.
 
-<p style="text-align:center">19 Let us then follow the things of peace and of mutual edification:</p>
+<p style="text-align:center" markdown="1"><span style="color:#800000">19</span> Let us then follow the things of peace and of mutual edification:</p>
 
 <span style="color:#800000">20</span> On account of meat destroy not the work of God. All things are indeed pure; but evil *it is* for man to eat with offense.
 
@@ -4871,7 +4871,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <span style="color:#800000">25</span> Now to him who is able to confirm you according to my gospel, even the preaching of Jesus Christ according to the revelation of the mystery, which was hid in former ages, <span style="color:#800000">26</span> But has been now made known, and through the prophetic Scriptures proclaimed, according to the appointment of the eternal God, for the obedience of faith among all nations <span style="color:#800000">27</span> To the only wise God, through Jesus Christ,, be glory for ever. Amen.
 
-<p style="text-align:center">Sent to the Romans, from Corinth, by Phoebe, a deaconess of the Cenchrean Church.</p>
+<p style="text-align:center" markdown="1">*Sent to the Romans, from Corinth, by Phoebe, a deaconess of the Cenchrean Church.*</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">END OF THE NEW TRANSLATION</span></p>
 
@@ -5161,7 +5161,7 @@ Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and R
 
 <p style="margin-left:2em;" markdown="1"><span style="color:#000080">4. (Against thee, against thee only have I sinned, and the evil before</span> <span style="color:#000080">thine eyes have I done,) That thou mightest be justified in thy</span> <span style="color:#000080">saying,</span> <span style="color:#000080">*And*</span> <span style="color:#000080">clear in thy judgment.</span></p>
 
-<p style="text-align:center">This is certainty more probable than what Vatablus and Houbigant propose, who connect the passage with the second verse, “Wash me thoroughly,” etc. But the sense given by Calvin is the most satisfactory — Ed.</p>
+<p style="text-align:center" markdown="1">This is certainty more probable than what *Vatablus* and *Houbigant* propose, who connect the passage with the second verse, “Wash me thoroughly,” etc. But the sense given by *Calvin* is the most satisfactory — *Ed.*</p>
 
 [^f92]: Or, “For if” — *Si enim* — <span style="color:#0000d4">eij γὰρ</span>. The particle <span style="color:#0000d4">γὰρ</span> here gives no reason, but is to be viewed as meaning *then*, or *indeed, verily;* see Luke 12:58; John 9:30; Acts 16:37; Philippians 2:27. *Stuart* renders it, *still,* and says, that it “points to a connection with verse. 5, and denotes a *continuance* of the same theme.” *Macknight* often renders it by *further, besides,* and no doubt rightly. — *Ed.*
 
@@ -5525,9 +5525,11 @@ Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and R
 
 [^f217]: This is evidently the case here. As *carnal* means what is sinful and Corrupt, so spiritual imports what is holy, just, and good. As the works of the flesh are evil and depraved works, so the fruits of the Spirit are good and holy fruits. See Galatians 5:19, 22, and particularly John 3:6. — *Ed.*
 
-[^f218]: “He is ‘carnal’ in exact proportion to the degree in which he falls short of *perfect* conformity to the law of God.” — *Scott.* It has been usual with a certain class of divines, such as *Hammond* and *Bull*, to hold that all the Fathers before *Augustine* viewed Paul here as not speaking of himself. But this is plainly contradicted by what *Augustine* declares himself in several parts of his writings. In his *Retractations*, B. 1:chapter 23, he refers to some authors of divine discourses (*quibusdam divinorum tractatoribus eloquiorom*) by whose authority he was induced to change his opinion, and to regard Paul here as speaking of himself. He alludes again in his work against *Julian*, an advocate of Pelagianism, B. 6, chapter 11, to this very change in his view, and ascribes it to the reading of the works of those who were better and more intelligent than himself, (*melioribus et intelligentioribus cessi*..) Then he refers to them by name, and says, “Hence it was that I came to understand these things, as *Hilary*, *Gregory*, *Ambrose*, and other holy and known doctors of the Church, understood them, who thought that the Apostle himself strenuously struggled against carnal lusts, which he was unwilling to have, and yet had, and that he bore witness as to this confiict in these words,” (referring to this very text,) — *Hinc factum est. ut sic ista intelligerem, quemadmodum intellexit* HILARIUS, GREGORIUS, AMBROSLUS, *et cœteri Ecclsiœ sancti notique doctores*, *qui et ipsum Apostolum adversus carnales concupiscentias*, *quas habere nolebat, et tamen habebat*, *strenue conflixisse*, *eundemque conflictum suum illis suis verbis contestatum fuisse senserunt. — Ed.*
+[^f218]: “He is ‘carnal’ in exact proportion to the degree in which he falls short of *perfect* conformity to the law of God.” — *Scott.* It has been usual with a certain class of divines, such as *Hammond* and *Bull*, to hold that all the Fathers before *Augustine* viewed Paul here as not speaking of himself. But this is plainly contradicted by what *Augustine* declares himself in several parts of his writings. In his *Retractations*, B. 1:chapter 23, he refers to some authors of divine discourses (*quibusdam divinorum tractatoribus eloquiorom*) by whose authority he was induced to change his opinion, and to regard Paul here as speaking of himself. He alludes again in his work against *Julian*, an advocate of Pelagianism, B. 6, chapter 11, to this very change in his view, and ascribes it to the reading of the works of those who were better and more intelligent than himself, (*melioribus et intelligentioribus cessi*..) Then he refers to them by name, and says, “Hence it was that I came to understand these things, as *Hilary*, *Gregory*, *Ambrose*, and other holy and known doctors of the Church, understood them, who thought that the Apostle himself strenuously struggled against carnal lusts, which he was unwilling to have, and yet had, and that he bore witness as to this confiict in these words,” (referring to this very text,) — *Hinc factum est. ut sic ista intelligerem, quemadmodum intellexit* HILARIUS, GREGORIUS, AMBROSLUS, *et cœteri Ecclsiœ sancti notique doctores*, *qui et ipsum Apostolum adversus carnales concupiscentias*,
 
 <!-- PAGE 553 -->
+
+<p style="margin-left:2em;" markdown="1">*quas habere nolebat, et tamen habebat*, *strenue conflixisse*, *eundemque conflictum suum illis suis verbis contestatum fuisse senserunt. — Ed.*</p>
 
 [^f219]: It appears from this, that *Calvin* did not apply the foregoing words, “I am carnal, sold under sin,” in the same way: but they are evidently connected together. They are indeed strong words, and some explain them in such a way as to be wholly unsuitable to a renewed man; but we ought to take the explanation as given by the Apostle himself in what follows, for he handles the subject to the end of the chapter. Various fictions have been resorted to by critics on this point. The Apostle has been supposed by some to speak of himself as under the law, or as *Stuart* terms it, “in a law state,” and such is the scheme of *Hammond.* Others have imagined, that he personates a Jew living during the time between Abraham and the giving of the law; and this was *Locke’s* idea. A third party have entertained the notion, that the Apostle, speaking in his own person, represents, by a sort of fiction, as *Vitringa* and some others have imagined, the effects of the law in Jews and proselytes, as opposed to the effects of the gospel, as delineated in the next chapter. And a fourth party maintain, that the Apostle describes a man in a transition state, in whom God’s Spirit works for his conversion, but who is as yet doubtful which way to turn, to sin or to God. All these conjectures have arisen, because the language is not taken in its obvious meaning, and according to the Apostle’s own explanation. As soon as we depart from the plain meaning of the text and the context, we open a door to endless conjectures and fictions. The Apostle says nothing here of himself, but what every real Christian finds to be true. Is not a Christian, yea, the best, in this world *carnal*, as well as spiritual? Is he not “sold under sin?” that is, subjected to a condition, in which he is continually annoyed, tempted, hindered, restrained, checked, and seduced by the depravity and Corruption of his nature; and in which he is always kept far below what he aims at, seeks and longs for. It was the saying of a good man, lately gone to his rest, whose extended pilgrimage was ninetythree years, that he must have been often swallowed up by despair, had it not been for the seventh chapter of the Epistle to the Romans. The best interpreter of many things in Scripture is spiritual experience; without it no right judgment can be formed. Hence it is that the learned often stumble at what is quite plain and obvious to the illiterate when spiritually enlightened. Critics sometimes find great difficulties in what is fully understood by a simpler minded Christian, taught from above. “Wayfaring men” are far better divines than any of the learned, who possess nothing more than natural talents and natural acquirements. — *Ed.*
 

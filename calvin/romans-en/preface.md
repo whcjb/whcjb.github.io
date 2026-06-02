@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 15:57
+date: 2026-06-02 16:03
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -21,11 +21,11 @@ next_label: "Chapter 1"
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 
-<p style="text-align:center">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
 
 <!-- PAGE 2 -->
 
-<p style="text-align:center">COMMENTARIES ON THE</p>
+<p style="text-align:center" markdown="1">COMMENTARIES ON THE</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF PAUL THE APOSTLE</span></p>
 
@@ -33,7 +33,7 @@ next_label: "Chapter 1"
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BY JOHN CALVIN</span></p>
 
-<p style="text-align:center">Translated And Edited By The Rev. John Owen,</p>
+<p style="text-align:center" markdown="1">*Translated And Edited By The Rev. John Owen,*</p>
 
 <!-- PAGE 3 -->
 
@@ -165,7 +165,7 @@ It has not been deemed necessary to give in this Edition any specimens of title-
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN TO SIMON GRYNAEUS,</span> <span style="color:#800000">[^f9]</span></p>
 
-<p style="text-align:center">A MAN WORTHY OF ALL HONOR</p>
+<p style="text-align:center" markdown="1">A MAN WORTHY OF ALL HONOR</p>
 
 I REMEMBER that when three years ago we had a friendly converse as to the best mode of expounding Scripture, the plan which especially pleased you, seemed also to me the most entitled to approbation: we both thought that the chief excellency of an expounder consists in *lucid brevity*. And, indeed, since it is almost his only work to lay open the mind of the writer whom he undertakes to explain, the degree in which he leads away his readers from it, in that degree he goes astray from his purpose, and in a manner wanders from his own boundaries. Hence we expressed a hope, that from the number of those who strive at this day to advance the interest of theology by this kind of labour, some one would be found, who would study plainness, and endeavour to avoid the evil of tiring his readers with prolixity. I know at the same time that this view is not taken by all, and that those who judge otherwise have their reasons; but still I cannot be drawn away from the love of what is compendious. But as there is such a variety, found in the minds of men, that different things please different persons, let every one in this case follow his own judgment, provided that no one attempts to force others to adopt his own rules. Thus it will be, that we who approve of brevity, will not reject nor despise the labours of those who are more copious and diffused in their explanations of Scripture, and that they also in their turn will bear with us, though they may think us too compressed and concise.
 
@@ -203,7 +203,7 @@ WITH regard to the excellency of this Epistle, I know not whether it would be we
 
 The whole Epistle is so methodical, that even its very beginning is framed according to the rules of art. As contrivance appears in many parts, which shall be noticed as we proceed, so also especially in the way in which the main argument is deduced: for having begun with the proof of his Apostleship, he then comes to the Gospel with the view of recommending it; and as this necessarily draws with it the subject of faith, he glides into that, being led by the chain of words as by the hand: and thus he enters on the main subject of the whole Epistle justification by faith; in treating which he is engaged to the end of the fifth chapter.
 
-<p style="text-align:center">The subject then of these chapters By be stated thus, — man’s only righteousness is through the mercy of God in Christ, which being offered by the Gospel is apprehended by faith.</p>
+<p style="margin-left:2em;" markdown="1">*The subject then of these chapters By be stated thus, — man’s only righteousness is through the mercy of God in Christ, which being offered by the Gospel is apprehended by faith.*</p>
 
 <!-- PAGE 21 -->
 But as men are asleep in their sins, and flatter and delude themselves with a false notion about righteousness, so that they think not that they need the righteousness of faith, except they be cast down from all selfconfidence, — and further, as they are inebriated with the sweetness of lusts, and sunk in deep self-security, so that they are not-easily roused to seek righteousness, except they are struck down by the terror of divine judgment, — the Apostle proceeds to do two things — to convince men of iniquity, and to shake off the torpor of those whom he proves guilty.
@@ -246,7 +246,7 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 <!-- PAGE 28 -->
 
-<p style="text-align:center">COMMENTARIES ON THE</p>
+<p style="text-align:center" markdown="1">COMMENTARIES ON THE</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF ST. PAUL TO THE ROMANS.</span></p>
 

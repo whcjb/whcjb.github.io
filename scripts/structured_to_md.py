@@ -791,11 +791,13 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     flush_scripture()
                     i += 1
                     continue
+            # Preserve color/italic via apply_verse_styling before stripping tags
             cleaned = collapse_spaced_caps(format_inline(content))
-            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
+            cleaned = apply_verse_styling(cleaned)
+            cleaned = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cleaned)
             if cleaned.strip():
                 out.append('')
-                out.append(f'<p style="text-align:center">{cleaned}</p>')
+                out.append(f'<p style="text-align:center" markdown="1">{cleaned}</p>')
                 out.append('')
         elif tag in ('BODY', 'VERSE'):
             # Some PDFs (Romans) have back-section fn defs tagged [BODY] instead

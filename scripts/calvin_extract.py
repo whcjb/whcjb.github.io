@@ -2475,7 +2475,28 @@ def phil_reconstruct_page(page, page_num=None):
         # PDF outline can have lm/rm symmetric (e.g. lm=44 rm=45) but is
         # semantically a left-indented list, not centered.
         starts_with_list_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s', block_text_preview))
-        is_centered_block = is_centered_block_geom and not ends_with_continuation and not starts_with_list_item
+        # Check if ALL spans in this block are italic (flags & 2). If so AND
+        # lm > 30, this is a citation/quote paragraph, not a centered title.
+        is_all_italic = False
+        if not is_centered_block_geom or len(block_text_preview) > 100:
+            total_chars = 0
+            italic_chars = 0
+            for line in block['lines']:
+                for s in line['spans']:
+                    t = s['text'].strip()
+                    if not t:
+                        continue
+                    total_chars += len(t)
+                    if s['flags'] & 2:
+                        italic_chars += len(t)
+            if total_chars > 50 and italic_chars / total_chars > 0.9:
+                is_all_italic = True
+        is_centered_block = (
+            is_centered_block_geom
+            and not ends_with_continuation
+            and not starts_with_list_item
+            and not is_all_italic
+        )
 
         # First block of a page often combines page-number header + continuation text.
         # Detect: y0 < 30 AND first non-empty span = digits matching page label.
@@ -2528,10 +2549,12 @@ def phil_reconstruct_page(page, page_num=None):
                     line_class = 'VERSE'
             # Indented body: block lm >= 35 (significantly indented from body
             # x≈26) AND not centered AND no Latin column → outline subitem
-            # OR short signature (e.g. "J. O." / "W.P. AUCHTERARDER").
-            # Two triggers:
+            # OR short signature (e.g. "J. O." / "W.P. AUCHTERARDER")
+            # OR italic citation paragraph (PDF indented italic quote).
+            # Three triggers:
             #   (a) starts with `N.` / `IVX.` / `l.I.i.` outline item
             #   (b) very narrow block (< 55% page width) + non-centered + indented
+            #   (c) all-italic block (PDF citation/quote)
             block_lm = block['bbox'][0]
             block_w_local = block['bbox'][2] - block['bbox'][0]
             is_outline_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
@@ -2541,7 +2564,7 @@ def phil_reconstruct_page(page, page_num=None):
                 and not is_centered_block
                 and line_class == 'BODY'
                 and rm > 20
-                and (is_outline_item or is_narrow_indented)
+                and (is_outline_item or is_narrow_indented or is_all_italic)
             )
             if is_indented_subitem:
                 line_class = 'INDENT'
