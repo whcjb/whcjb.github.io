@@ -81,6 +81,9 @@ _AGES_GR_PAT = re.compile(
 
 
 def convert_ages_greek(text: str) -> str:
+    # Hide <verse>/</verse> markers from the Greek regex (the `<` would otherwise
+    # be consumed by the Greek-accent alternative as if it were a combining mark).
+    text = text.replace('<verse>', '\x00VS\x00').replace('</verse>', '\x00VE\x00')
     def _repl(m):
         if m.group(1):
             return m.group(1)
@@ -89,7 +92,8 @@ def convert_ages_greek(text: str) -> str:
         if any('Ͱ' <= x <= 'Ͽ' or 'ἀ' <= x <= '῿' for x in c):
             return c
         return tok
-    return _AGES_GR_PAT.sub(_repl, text)
+    text = _AGES_GR_PAT.sub(_repl, text)
+    return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
 
 
 # ── Spaced-caps cleanup (B o o k s → Books) ──────────────────────────────
@@ -131,7 +135,8 @@ def normalize_fn_label(label: str) -> str:
 
 
 def format_inline(text: str) -> str:
-    """Apply inline transformations: strip Ages markers, convert refs, Greek."""
+    """Apply inline transformations: strip Ages markers, convert refs, Greek.
+    Leaves <verse>...</verse> tags intact for the caller to style."""
     # Strip Ages scripture-code wrappers `[<NNNNNN>]` or `<NNNNNN>`
     text = INLINE_REF_RE.sub('', text)
     # Bracketed footnote refs `[fN]` or `[FtN]` → `[^fN]`
@@ -140,11 +145,40 @@ def format_inline(text: str) -> str:
     # Anchored by word boundaries and a preceding space/punct to avoid matching
     # English words that happen to contain "fN".
     text = re.sub(r'(?<=[\s\.,;:\)\!\?])f(\d{1,3})\b', r'[^f\1]', text)
-    # Pipe-escape for Kramdown table safety
+    # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
     # Greek transliteration → Unicode
     text = convert_ages_greek(text)
+    # Leave <verse>...</verse> tags in place; the caller decides whether to
+    # render them as red-italic (commentary) or plain italic (front-matter).
     return text
+
+
+def apply_verse_styling(body: str, red: bool) -> str:
+    """Convert `<verse>X</verse>` to `<span style="color:#800000">*X*</span>`
+    (red=True) or to plain markdown italic `*X*` (red=False)."""
+    def _red(m):
+        inner = m.group(1).strip()
+        if not inner:
+            return ''
+        return f'<span style="color:#800000">*{inner}*</span>'
+    def _plain(m):
+        inner = m.group(1).strip()
+        if not inner:
+            return ''
+        # Avoid double-italics or empty
+        if len(inner) < 2:
+            return inner
+        return f'*{inner}*'
+    body = re.sub(r'<verse>(.*?)</verse>', _red if red else _plain, body, flags=re.DOTALL)
+    if red:
+        # Merge consecutive red-italic spans separated only by whitespace
+        body = re.sub(
+            r'\*</span>(\s+)<span style="color:#800000">\*',
+            r'\1',
+            body,
+        )
+    return body
 
 
 def bold_leading_verse_num(text: str) -> str:
@@ -152,8 +186,9 @@ def bold_leading_verse_num(text: str) -> str:
 
     Kramdown parses paragraph-leading `N. ` as ordered list item; bolding
     prevents that and matches the Calvin verse-number convention.
+    Also accepts an immediately-following `<` (HTML span opening a verse phrase).
     """
-    return re.sub(r'^(\d+)\. (?=[A-Z])', r'**\1.** ', text)
+    return re.sub(r'^(\d+)\. (?=[A-Z<])', r'**\1.** ', text)
 
 
 # ── Main converter ───────────────────────────────────────────────────────
@@ -171,7 +206,34 @@ def convert(structured_path: Path, out_path: Path) -> None:
     table_left: list[str] = []
     table_right: list[str] = []
     table_header: str | None = None
+    in_scripture = False
+    scripture_lines: list[str] = []
+    scripture_ref: str | None = None
     pending_blockquote_continuation = False
+
+    def flush_scripture():
+        nonlocal in_scripture, scripture_lines, scripture_ref
+        if not scripture_lines:
+            in_scripture = False
+            scripture_ref = None
+            return
+        out.append('')
+        out.append('<div class="scripture-box" markdown="1">')
+        if scripture_ref:
+            out.append(f'<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">{scripture_ref}</p>')
+        out.append('')
+        # Merge scripture lines into one paragraph; bold verse numbers
+        body_text = ' '.join(s.strip() for s in scripture_lines if s.strip())
+        # Normalize "N . " or "N. " to bold-verse marker, but inside one paragraph
+        # so use HTML <strong> rather than markdown ** (which collides with kramdown)
+        body_text = re.sub(r'(?:^|(?<=\s))(\d+)\s*\.\s+', r'<strong>\1.</strong> ', body_text)
+        out.append(body_text)
+        out.append('')
+        out.append('</div>')
+        out.append('')
+        in_scripture = False
+        scripture_lines = []
+        scripture_ref = None
 
     def flush_table():
         nonlocal in_table, table_left, table_right, table_header
@@ -209,6 +271,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
         pm = PAGE_HEADER_RE.match(line)
         if pm:
             flush_table()
+            flush_scripture()
             current_page = int(pm.group(1))
             out.append('')
             out.append(f'<!-- PAGE {current_page} -->')
@@ -246,12 +309,15 @@ def convert(structured_path: Path, out_path: Path) -> None:
         if tag == 'H1':
             cleaned = collapse_spaced_caps(content)
             cleaned = format_inline(cleaned)
+            # Strip any <verse> wrappers in headings — they're noise.
+            cleaned = re.sub(r'</?verse>', '', cleaned)
             out.append('')
             out.append(f'# {cleaned}')
             out.append('')
         elif tag == 'H2':
             cleaned = collapse_spaced_caps(content)
             cleaned = format_inline(cleaned)
+            cleaned = re.sub(r'</?verse>', '', cleaned)
             out.append('')
             out.append(f'## {cleaned}')
             out.append('')
@@ -262,21 +328,31 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # (c) Inline cross-reference: bare <NNNNNN>... (often closes a body sentence)
             sec_m = SCRIPTURE_SECTION_RE.match(line.replace('[FOOTNOTE]', '').strip())
             if sec_m:
+                # Flush any pending scripture box, then prep next-scripture ref.
+                flush_scripture()
                 ref = sec_m.group(1).strip()
+                # Clean Ages spaced caps like "J OHN" → "JOHN"
+                ref = collapse_spaced_caps(ref)
+                scripture_ref = ref
+                # Emit H2 marker for verse-nav, and arm scripture-box capture for next BODY.
                 out.append('')
                 out.append(f'## {ref}')
                 out.append('')
+                in_scripture = True
+                scripture_lines = []
             else:
                 fn_m = FN_DEF_RE.match(content)
                 if fn_m and not fn_m.group(2).startswith('<'):
                     label = normalize_fn_label(fn_m.group(1))
                     body = format_inline(fn_m.group(2))
+                    body = apply_verse_styling(body, red=False)
                     out.append('')
                     out.append(f'[^{label}]: {body}')
                     out.append('')
                 else:
                     # Inline cross-reference fragment — fold into preceding paragraph
                     body = format_inline(content)
+                    body = apply_verse_styling(body, red=False)
                     # If previous output line is a paragraph (non-empty, no markers), append
                     # in place; otherwise emit as its own line.
                     j = len(out) - 1
@@ -290,6 +366,22 @@ def convert(structured_path: Path, out_path: Path) -> None:
                         out.append('')
         elif tag in ('BODY', 'VERSE'):
             body = format_inline(content)
+            # Detect scripture-passage block: first BODY after a section header that
+            # contains ≥2 verse-number anchors (`N. ` patterns).
+            if in_scripture:
+                anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', content))
+                if anchor_count >= 2:
+                    # Plain italics inside scripture verses (book refs etc.)
+                    body = apply_verse_styling(body, red=False)
+                    scripture_lines.append(body)
+                    flush_scripture()
+                    i += 1
+                    continue
+                else:
+                    in_scripture = False  # not a scripture passage, fall through
+            # Red-italic only when paragraph starts with a verse number (commentary).
+            is_commentary_para = bool(re.match(r'^\s*\d+\s*\.\s', content))
+            body = apply_verse_styling(body, red=is_commentary_para)
             body = bold_leading_verse_num(body)
             out.append('')
             out.append(body)
@@ -301,6 +393,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
         i += 1
 
     flush_table()
+    flush_scripture()
 
     # Collapse multiple blank lines to single
     result = '\n'.join(out)

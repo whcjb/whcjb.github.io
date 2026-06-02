@@ -2279,6 +2279,31 @@ def phil_dominant_class(line_spans):
     return 'BODY', ms
 
 
+def _render_spans_with_italic(spans):
+    """Render a line of spans to text, wrapping italic runs with <verse>...</verse>.
+
+    Consecutive italic spans (flag & 2) are coalesced into a single <verse> wrap.
+    Used so the converter can later render commentary verse-phrases in red italic.
+    """
+    parts = []
+    italic_open = False
+    for s in spans:
+        text = s['text']
+        if not text:
+            continue
+        is_italic = bool(s['flags'] & 2)
+        if is_italic and not italic_open:
+            parts.append('<verse>')
+            italic_open = True
+        elif not is_italic and italic_open:
+            parts.append('</verse>')
+            italic_open = False
+        parts.append(text)
+    if italic_open:
+        parts.append('</verse>')
+    return ''.join(parts)
+
+
 def phil_reconstruct_page(page):
     page_height = page.rect.height
     blocks      = [b for b in page.get_text('dict')['blocks'] if b['type'] == 0]
@@ -2298,7 +2323,7 @@ def phil_reconstruct_page(page):
             if not non_empty:
                 continue
             line_class, ms = phil_dominant_class(non_empty)
-            full_text = ''.join(s['text'] for s in line['spans'])
+            full_text = _render_spans_with_italic(line['spans'])
             if not full_text.strip():
                 continue
             if non_empty[0]['size'] <= 8:
