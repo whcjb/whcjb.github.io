@@ -643,6 +643,18 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     # Inline cross-reference fragment — fold into preceding paragraph
                     body = format_inline(content)
                     body = apply_verse_styling(body, red=in_commentary_section)
+                    # If we're mid back-section fn def (pending_fn_idx armed),
+                    # this inline cross-ref is part of the fn body — append.
+                    if pending_fn_idx is not None:
+                        body_clean = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', body)
+                        body_clean = re.sub(r'\s+', ' ', body_clean).strip()
+                        if body_clean:
+                            # Avoid double-space when prior ends with `(`
+                            peek = re.sub(r'(?:</span>|</sty>|\s)+$', '', out[pending_fn_idx].rstrip())
+                            sep = '' if peek.endswith(('(', '[')) else ' '
+                            out[pending_fn_idx] = out[pending_fn_idx].rstrip() + sep + body_clean
+                        i += 1
+                        continue
                     j = len(out) - 1
                     while j >= 0 and not out[j].strip():
                         j -= 1

@@ -6929,9 +6929,7 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f23]: “Est deduit d’un mot qui signifie Tabernacles, c’est a dire, tentes et avillons;” — “is derived from a word which signifies Tabernacles, that is, tents and pavilions.”
 
-[^f24]: This must have been a slip of memory on the part of our Author; for the phrases applied to Stephen are different, though parallel. He is called *a man* FULL OF *faith and of the Holy Ghost*, (OF *faith and power*, ( (
-
-Acts 6:5;) FULL Acts 6:8;) *and* FULL OF *the Holy Ghost*, Acts 7:55.) — *Ed*.
+[^f24]: This must have been a slip of memory on the part of our Author; for the phrases applied to Stephen are different, though parallel. He is called *a man* FULL OF *faith and of the Holy Ghost*, (Acts 6:5;) FULL OF *faith and power*, (Acts 6:8;) *and* FULL OF *the Holy Ghost*, (Acts 7:55.) — *Ed*.
 
 [^f25]: “Jean rend (*ou*, *a rendu*) tesmoignage de luy.” “John gives (*or*, *gave*) testimony of him.”
 
@@ -6979,9 +6977,7 @@ Acts 6:5;) FULL Acts 6:8;) *and* FULL OF *the Holy Ghost*, Acts 7:55.) — *Ed*.
 
 [^f45]: “a son Fils.”
 
-[^f46]: The exact size of the *firkin* cannot be easily ascertained. If <span style="color:#0000d4">μετρητὴς</span> be here used by the Evangelist as a purely Greek word, we must conclude it to be an Attic measure, which was nearly equal to nine English gallons. If, again, it be placed here as a substitute for the Hebrew word <span style="color:#008080">tb</span>, (*Bath*,) as the Septuagint has done in Chronicles 4:5, it will probably be rated at seven gallons and a half. — *Ed*.
-
-2
+[^f46]: The exact size of the *firkin* cannot be easily ascertained. If <span style="color:#0000d4">μετρητὴς</span> be here used by the Evangelist as a purely Greek word, we must conclude it to be an Attic measure, which was nearly equal to nine English gallons. If, again, it be placed here as a substitute for the Hebrew word <span style="color:#008080">tb</span>, (*Bath*,) as the Septuagint has done in 2 Chronicles 4:5, it will probably be rated at seven gallons and a half. — *Ed*.
 
 [^f47]: “De ce pays de Savoye;” — “of this country, Savoy.”
 
@@ -7063,9 +7059,7 @@ Acts 6:5;) FULL Acts 6:8;) *and* FULL OF *the Holy Ghost*, Acts 7:55.) — *Ed*.
 
 [^f82]: “C’est a dire, de corruptions.”
 
-[^f83]: “*Ou*, *Jesus avoit rendu tesmoignage*” — “*or*, *Jesus had testified*.”
-
-<span style="color:#800000">ft84</span> “*Apres qu*’*ils eussent veu*;” — “*after that they had seen*.”
+[^f83]: “*Ou*, *Jesus avoit rendu tesmoignage*” — “*or*, *Jesus had testified*.” <span style="color:#800000">ft84</span> “*Apres qu*’*ils eussent veu*;” — “*after that they had seen*.”
 
 [^f85]: “Ainsi qu’estoyent les, Juifs.”
 
@@ -7087,9 +7081,7 @@ Acts 6:5;) FULL Acts 6:8;) *and* FULL OF *the Holy Ghost*, Acts 7:55.) — *Ed*.
 
 [^f92]: “Par intervalles, *ou*, *en certain temps*;” — “at intervals, *or*, *at a certain time*.”
 
-[^f93]: The French version runs thus: “combion que du temps d’Elisee il y eust plusieurs de ladres, toutesfois nul d’eux ne fut nettoye sinon Naaman Syrien;” — “*though in the time of Elisha there were many lepers*, *yet not one of them was cleansed except Naaman a Syrian*,” (
-
-2 Kings 5:14; Luke 4:27.)
+[^f93]: The French version runs thus: “combion que du temps d’Elisee il y eust plusieurs de ladres, toutesfois nul d’eux ne fut nettoye sinon Naaman Syrien;” — “*though in the time of Elisha there were many lepers*, *yet not one of them was cleansed except Naaman a Syrian*,” (2 Kings 5:14; Luke 4:27.)
 
 [^f94]: “Car Jesus s’estoit escoule de la multitude qui estoit en ce lieu-la;” — “for Jesus had withdrawn from the multitude which was in that place.”
 
@@ -7129,9 +7121,7 @@ Acts 6:5;) FULL Acts 6:8;) *and* FULL OF *the Holy Ghost*, Acts 7:55.) — *Ed*.
 
 [^f111]: “Et ne sentant rien en soy-mesme sur quoy il se puisse appuyer.”
 
-[^f112]: The wars of *the Giants* held a conspicuous place in the ancient mythology, and in the popular belief. Not to mention the poets, whose imaginations were kindled by such topics, they are formally introduced by Cicero, in a philosophical treatise, though only for the purpose of instructing his readers to “despise and reject these fables.” “The gods,” says he, “as the fables relate, were not without wars and battles; and that not only as in those described by Homer, when some of the gods were ranged on the one side, and some on the other side, of two opposing armies; but even, as in the case of the *Titans* and *Giants*, they carried on their own battles. Such things (he adds) are said, and are very foolishly believed, and are full of absurdity and downright silliness.” — (De Nat. Deorum, lib. 2.) The daring presumption and utter discomfiture of *the Giants*, in their fabulous wars, are sometimes alluded to by Calvin, and other Christian writers, in describing the wickedness and folly of man, who *stretcheth out his hand against God*, *and strengtheneth himself against the Almighty*, ( *Ed*.
-
-Job 15:25.) —
+[^f112]: The wars of *the Giants* held a conspicuous place in the ancient mythology, and in the popular belief. Not to mention the poets, whose imaginations were kindled by such topics, they are formally introduced by Cicero, in a philosophical treatise, though only for the purpose of instructing his readers to “despise and reject these fables.” “The gods,” says he, “as the fables relate, were not without wars and battles; and that not only as in those described by Homer, when some of the gods were ranged on the one side, and some on the other side, of two opposing armies; but even, as in the case of the *Titans* and *Giants*, they carried on their own battles. Such things (he adds) are said, and are very foolishly believed, and are full of absurdity and downright silliness.” — (De Nat. Deorum, lib. 2.) The daring presumption and utter discomfiture of *the Giants*, in their fabulous wars, are sometimes alluded to by Calvin, and other Christian writers, in describing the wickedness and folly of man, who *stretcheth out his hand against God*, *and strengtheneth himself against the Almighty*, (Job 15:25.) — *Ed*.
 
 [^f113]: “Pour rembarrer les Papistes de leur baston mesme.”
 
@@ -7425,9 +7415,7 @@ Job 15:25.) —
 
 [^f247]: “Avant qu’Abraham fust.”
 
-[^f248]: “Priusquam Abraham nasceretur.” merely alludes, appears to be that, instead of saying, <span style="color:#0000d4">ἐγὼ ἐγενόμνη</span>, or, <span style="color:#0000d4">ἐγὼ γίνομαι</span>, Christ purposely said, <span style="color:#0000d4">ἐγώ eijmi</span>, because the verb <span style="color:#0000d4">εἰμῖ</span>, standing contrasted with <span style="color:#0000d4">γενέσθαι</span>, would convey the idea of underived existence. — *Ed*.
-
-<span style="color:#800000">ft249</span> <span style="color:#0000d4">πρὶν Αβραὰμ γενέσθαι, ἐγώ eijmi</span>. Our Author’s idea, to which he
+[^f248]: “Priusquam Abraham nasceretur.” <span style="color:#800000">ft249</span> <span style="color:#0000d4">πρὶν Αβραὰμ γενέσθαι, ἐγώ eijmi</span>. Our Author’s idea, to which he merely alludes, appears to be that, instead of saying, <span style="color:#0000d4">ἐγὼ ἐγενόμνη</span>, or, <span style="color:#0000d4">ἐγὼ γίνομαι</span>, Christ purposely said, <span style="color:#0000d4">ἐγώ eijmi</span>, because the verb <span style="color:#0000d4">εἰμῖ</span>, standing contrasted with <span style="color:#0000d4">γενέσθαι</span>, would convey the idea of underived existence. — *Ed*.
 
 [^f250]: “Une vertu plus qu’humaine.”
 
@@ -7631,9 +7619,7 @@ Job 15:25.) —
 
 [^f342]: “C’est une facon de parler qui comprend quelques fois le tout pour une partie, ou une partie pour le tout.” — “It is a mode of expression, which sometimes puts the whole for a part, or a part for the whole.
 
-[^f343]: See *Harmony of the Evangelists*, volume 2. phrase, among the Greeks and Romans. — *Ed*.
-
-<span style="color:#800000">ft344</span> *The shadow of an ass*, <span style="color:#0000d4">όνου σκιὰ</span>, *asini umbra*, was a proverbial
+[^f343]: See *Harmony of the Evangelists*, volume 2. <span style="color:#800000">ft344</span> *The shadow of an ass*, <span style="color:#0000d4">όνου σκιὰ</span>, *asini umbra*, was a proverbial phrase, among the Greeks and Romans. — *Ed*.
 
 [^f345]: Volume 1.
 
@@ -7791,11 +7777,9 @@ Job 15:25.) —
 
 [^f416]: “En ce peche.”
 
-[^f417]: The Author quotes, as he often does, from memory; but the passage stands thus: <span style="color:#000080">“That servant, who knew his master’s will, and did not make</span> <span style="color:#000080">himself ready, nor did according to his will, shall be beaten with</span> <span style="color:#000080">many stripes, (</span> — *Ed*.
+[^f417]: The Author quotes, as he often does, from memory; but the passage stands thus: <span style="color:#000080">“That servant, who knew his master’s will, and did not make</span> <span style="color:#000080">himself ready, nor did according to his will, shall be beaten with</span> <span style="color:#000080">many stripes, (</span><span style="color:#000080">Luke 12:47.)</span> — *Ed*.
 
 <!-- PAGE 708 -->
-
-<span style="color:#000080">Luke 12:47.)</span>
 
 [^f418]: See volulme 1.
 
@@ -7831,9 +7815,7 @@ Job 15:25.) —
 
 [^f433]: “Le coeur du Pere celeste.”
 
-[^f434]: Quoting from memory, our Author has mingled two passages The first is, Herein is love, not that we loved God, but that he loved us, (John 4:10;) and the second is, We love him, because he first loved us, (
-
-1 1 John 4:19.) — Ed.
+[^f434]: Quoting from memory, our Author has mingled two passages The first is, Herein is love, not that we loved God, but that he loved us, (1 John 4:10;) and the second is, We love him, because he first loved us, (1 John 4:19.) — Ed.
 
 [^f435]: A fin d’estre Empereur et Dominateur de tout le monde;” — in order to be the Emperor and Ruler of the whole world.”
 
