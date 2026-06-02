@@ -2470,7 +2470,12 @@ def phil_reconstruct_page(page, page_num=None):
         # Do NOT reject on trailing `,` — title-page dedication lines like
         # "BARON OF DENBIGH, MAISTER OF THE HORSE..." end in comma and ARE centered.
         ends_with_continuation = bool(re.search(r'\(\s*$', block_text_preview))
-        is_centered_block = is_centered_block_geom and not ends_with_continuation
+        # Also reject when block starts with a numbered list item `N.` — those
+        # are PDF outline subitems (indented from body), not centered titles.
+        # PDF outline can have lm/rm symmetric (e.g. lm=44 rm=45) but is
+        # semantically a left-indented list, not centered.
+        starts_with_list_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s', block_text_preview))
+        is_centered_block = is_centered_block_geom and not ends_with_continuation and not starts_with_list_item
 
         # First block of a page often combines page-number header + continuation text.
         # Detect: y0 < 30 AND first non-empty span = digits matching page label.
@@ -2521,6 +2526,21 @@ def phil_reconstruct_page(page, page_num=None):
             if ms >= 16 and any(kw in stripped for kw in ('PHILIPPIANS','COLOSSIANS','THESSALONIANS')):
                 if re.search(r'\d+:\d+', stripped):
                     line_class = 'VERSE'
+            # Indented body: block lm >= 35 (significantly indented from body
+            # x≈26) AND not centered AND no Latin column → outline subitem.
+            # PDF outline lists ("1. A proof...", "2. Its Nature..."  at x=44)
+            # should preserve indentation. Accept also letter 'l' / 'I' / 'i'
+            # which are common PDF font misreads of digit '1'.
+            block_lm = block['bbox'][0]
+            is_indented_subitem = (
+                block_lm >= 35
+                and not is_centered_block
+                and line_class == 'BODY'
+                and rm > 20  # not right-aligned text
+                and bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+            )
+            if is_indented_subitem:
+                line_class = 'INDENT'
             # Centered block: override BODY → CENTERED (do not override FOOTNOTE/VERSE).
             # Also demote H1/H2 → CENTERED_H1/CENTERED_H2 when centered AND NOT
             # a chapter heading ("CHAPTER N"). Chapter headings keep H1 so the

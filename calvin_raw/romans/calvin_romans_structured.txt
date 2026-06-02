@@ -120,37 +120,37 @@
 
 [BODY] <sty c="800000" i="0">II. Justification,</sty>
 
-[CENTERED] <sty c="000080" i="0">1.</sty> A proof of its necessity — the sin and guilt of both Gentiles and Jews, <sty c="000000" i="1">1:18-3:21</sty>.
+[INDENT] <sty c="000080" i="0">1.</sty> A proof of its necessity — the sin and guilt of both Gentiles and Jews, <sty c="000000" i="1">1:18-3:21</sty>.
 
-[BODY] <sty c="000080" i="0">2.</sty> Its Nature and Character — Examples, Abraham and David, <sty c="000000" i="1">3:21-4</sty>.
+[INDENT] <sty c="000080" i="0">2.</sty> Its Nature and Character — Examples, Abraham and David, <sty c="000000" i="1">3:21-4</sty>.
 
-[BODY] <sty c="000080" i="0">3.</sty> Its Effects or Fruits — Peace and Fullness of Grace, <sty c="000000" i="1">5</sty>.; Death unto Sin and Eternal Life, <sty c="000000" i="1">6</sty>.; Immunity from The Law and The Reigning Power of Sin, <sty c="000000" i="1">7.</sty> Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, <sty c="000000" i="1">8.</sty>
+[INDENT] <sty c="000080" i="0">3.</sty> Its Effects or Fruits — Peace and Fullness of Grace, <sty c="000000" i="1">5</sty>.; Death unto Sin and Eternal Life, <sty c="000000" i="1">6</sty>.; Immunity from The Law and The Reigning Power of Sin, <sty c="000000" i="1">7.</sty> Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, <sty c="000000" i="1">8.</sty>
 
 [BODY] <sty c="800000" i="0">III. God’s Dealings Vindicated </sty>—
 
-[BODY] <sty c="000080" i="0">l.</sty> Election and Reprobation, <sty c="000000" i="1">9</sty>.
+[INDENT] <sty c="000080" i="0">l.</sty> Election and Reprobation, <sty c="000000" i="1">9</sty>.
 
-[BODY] <sty c="000080" i="0">2.</sty> Unbelief and Faith, <sty c="000000" i="1">10</sty>.
+[INDENT] <sty c="000080" i="0">2.</sty> Unbelief and Faith, <sty c="000000" i="1">10</sty>.
 
-[BODY] <sty c="000080" i="0">3.</sty> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, <sty c="000000" i="1">11</sty>.
+[INDENT] <sty c="000080" i="0">3.</sty> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, <sty c="000000" i="1">11</sty>.
 
 [BODY] <sty c="800000" i="0">IV Christian Duties</sty>
 
-[BODY] <sty c="000080" i="0">1.</sty> Devotedness to God, Proper Use of Gifts, Love, Doing Good, <sty c="000000" i="1">12.</sty>
+[INDENT] <sty c="000080" i="0">1.</sty> Devotedness to God, Proper Use of Gifts, Love, Doing Good, <sty c="000000" i="1">12.</sty>
 
-[BODY] <sty c="000080" i="0">2.</sty> Obedience to Authority, Love to all, Purity, <sty c="000000" i="1">13.</sty>
+[INDENT] <sty c="000080" i="0">2.</sty> Obedience to Authority, Love to all, Purity, <sty c="000000" i="1">13.</sty>
 
-[BODY] <sty c="000080" i="0">3.</sty> Forbearance towards Weak Brethren, <sty c="000000" i="1">14.</sty>
+[INDENT] <sty c="000080" i="0">3.</sty> Forbearance towards Weak Brethren, <sty c="000000" i="1">14.</sty>
 
-[BODY] <sty c="000080" i="0">4.</sty> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, <sty c="000000" i="1">15:1-13.</sty>
+[INDENT] <sty c="000080" i="0">4.</sty> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, <sty c="000000" i="1">15:1-13.</sty>
 
 [BODY] <sty c="800000" i="0">V. Conclusion, —</sty>
 
 --- PAGE 12 ---
 
-[BODY] <sty c="000080" i="0">1.</sty> Paul’s Labours and Purpose to Visit Rome, <sty c="000000" i="1">15:13</sty>.
+[INDENT] <sty c="000080" i="0">1.</sty> Paul’s Labours and Purpose to Visit Rome, <sty c="000000" i="1">15:13</sty>.
 
-[BODY] <sty c="000080" i="0">2.</sty> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, <sty c="000000" i="1">16</sty>.
+[INDENT] <sty c="000080" i="0">2.</sty> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, <sty c="000000" i="1">16</sty>.
 
 [BODY] We have set before us in this Epistle especially two things, which it behoves us all rightly to understand — the righteousness of man and the righteousness of God — merit and grace, or salvation by works and salvation by faith. The light in which they are exhibited here is clearer and brighter than what we find in any other portion of Scripture, with the exception, perhaps, of the Epistle to the Galatians. Hence the great value which has in every age been attached to this Epistle by all really enlightened Christians; and hence also the strenuous efforts which have often been made to darken and wrest its meaning by men, though acute and learned, yet destitute of spiritual light. But let not the simple Christian conclude from the contrariety that is often found in the expositions on these two points, that there is no certainty in what is taught respecting them. There are no contrary views given of them by spiritually-minded men. Though on other subjects discussed here, such men have had their differences, yet on these they have ever been found unanimous: that salvation is from first to last by grace, and not by works, has ever been the conviction of really enlightened men in every age, however their opinion may have varied in other respects.
 
@@ -567,10 +567,10 @@
 
 --- PAGE 56 ---
 
-[BODY] 30. Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,
-[BODY] 30. Obtrectatores, osores Dei, malefici, contumeliosi, fastuosi, repertores malorum, parentibus immorigeri, 31. Without understanding, covenant breakers, without natural affection, implacable, unmerciful:
-[BODY] 31. Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.
-[BODY] 32. Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.
+[INDENT] 30. Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,
+[INDENT] 30. Obtrectatores, osores Dei, malefici, contumeliosi, fastuosi, repertores malorum, parentibus immorigeri, 31. Without understanding, covenant breakers, without natural affection, implacable, unmerciful:
+[INDENT] 31. Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.
+[INDENT] 32. Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.
 
 [BODY] 24. <sty c="800000" i="1">God therefore gave them up,</sty> etc. As impiety is a hidden evil, lest they should still find an evasion, he shows, by a more palpable demonstration, that, they cannot escape, but must be held fast by a just condemnation, since such fruits have followed this impiety as cannot be viewed otherwise than manifest evidences of the Lord’s wrath. As the Lord’s wrath is always just, it follows, that what has exposed them to condemnation, must have preceded it. By these evidences then he now proves the apostasy and defection of men: for the Lord indeed does so punish those, who alienate them selves from his goodness, that he casts them headlong into various courses which lead to perdition and ruin. And by comparing the vices, of which they were guilty, with the impiety, of which he had before accused them, he shows that they suffered punishment through the just judgment of God: for since nothing is dearer to us than our own honor, it is extreme blindness, when we fear not to bring disgrace on ourselves; and it is the most suitable punishment for a reproach done to the Divine Majesty. This is the very thing which he treats of to the end of the chapter; but he handles it in various ways, for the subject required ample illustration.
 
@@ -2559,8 +2559,8 @@
 
 [H2] <sty c="800000" i="0"><450838></sty>ROMANS 8:38-39
 [BODY] 38. For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,
-[CENTERED] 38. Persuasus enim sum, quod neque mors, neque vita,<sty c="800000" i="0"> f276 </sty>neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.
-[BODY] 39. Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.
+[INDENT] 38. Persuasus enim sum, quod neque mors, neque vita,<sty c="800000" i="0"> f276 </sty>neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.
+[INDENT] 39. Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.
 
 [BODY] 38. He is now carried away into hyperbolic expressions, that he might confirm us more fully in those things which are to be experienced. Whatever, he says, there is in life or in death, which seems capable of tearing us away from God, shall effect nothing; nay, the very angels, were they to attempt to overturn this foundation, shall do us no harm. It is no objection, that angels are ministering spirits, appointed for the salvation of the elect, (<sty c="800000" i="0"><580114></sty>Hebrews 1:14:) for Paul reasons here on what is impossible, as he does in <sty c="800000" i="0"><480108></sty>Galatians 1:8; and we may hence observe, that all things ought to be deemed of no worth, compared with the glory of God, since it is lawful to dishonor even angels in vindicating his truth.<sty c="800000" i="0"> f277</sty>
 [BODY] Angels are also meant by <sty c="000000" i="1">principalities</sty> and <sty c="000000" i="1">powers</sty>,<sty c="800000" i="0"> f278 </sty>and they are so called, because they are the primary instruments of the Divine power: and these two words were added, that if the word angels sounded too insignificant, something more might be expressed. But you would, perhaps, prefer this meaning, “Nor angels, and whatever powers there may be;” which is a mode of speaking that is used, when we refer to things unknown to us, and exceeding our capacities.
@@ -4270,14 +4270,14 @@
 
 --- PAGE 428 ---
 
-[BODY] 10. Salute Apelies, approved in Christ. Salute them which are of Aristobulus’ household.
-[BODY] 10. Salutate Apellen, probatum in Christo. Salutate eos qui sunt ex Aristobuli familiaribns. 11. Salute Herodion my kinsman. Greet them that be of the household of Narcissus, which are in the Lord.
-[BODY] 11. Salutate Herodionem, cognatum meum. Salutate eos qui sunt ex Narcissi familiaribus, hos qui sunt in Domino. 12. Salute Tryphena and Tryphosa, who labor in the Lord. Salute the beloved Persis, which labored much in the Lord.
-[CENTERED] 12. Salutate Tryphsenam et Tryphosam, quae laborant in Domino. Salutate Persidem dilectam, quae multum laboravit in Domino. 13. Salute Rufus, chosen in the Lord, and his mother and mine.
-[CENTERED] 13. Salutate Rufum electum in Domino et matrem illius ac meam. 14. Salute Asyneritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.
-[BODY] 14. Salutate Asynchritum, Phlegontem, Hermam, Patrobam, Mercurium, et qui cum his sunt fratres. 15. Salute Philologus, and Julia, Nereus, and his sister, and Olympas, and all the saints which are with them.
-[CENTERED] 15. Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.
-[BODY] 16. Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.
+[INDENT] 10. Salute Apelies, approved in Christ. Salute them which are of Aristobulus’ household.
+[INDENT] 10. Salutate Apellen, probatum in Christo. Salutate eos qui sunt ex Aristobuli familiaribns. 11. Salute Herodion my kinsman. Greet them that be of the household of Narcissus, which are in the Lord.
+[INDENT] 11. Salutate Herodionem, cognatum meum. Salutate eos qui sunt ex Narcissi familiaribus, hos qui sunt in Domino. 12. Salute Tryphena and Tryphosa, who labor in the Lord. Salute the beloved Persis, which labored much in the Lord.
+[INDENT] 12. Salutate Tryphsenam et Tryphosam, quae laborant in Domino. Salutate Persidem dilectam, quae multum laboravit in Domino. 13. Salute Rufus, chosen in the Lord, and his mother and mine.
+[INDENT] 13. Salutate Rufum electum in Domino et matrem illius ac meam. 14. Salute Asyneritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.
+[INDENT] 14. Salutate Asynchritum, Phlegontem, Hermam, Patrobam, Mercurium, et qui cum his sunt fratres. 15. Salute Philologus, and Julia, Nereus, and his sister, and Olympas, and all the saints which are with them.
+[INDENT] 15. Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.
+[INDENT] 16. Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.
 
 [BODY] 1.<sty c="000000" i="1"> </sty><sty c="800000" i="1">I commend to you,</sty><sty c="000000" i="1"> etc.</sty> The greater part of this chapter is taken up with salutations; and as they contain no difficulties, it would be useless to dwell long on them. I shall only touch on those things which require some light by an explanation.
 
@@ -5496,7 +5496,7 @@
 [FOOTNOTE] <sty c="800000" i="0">ft33</sty> The order of the words, as arranged by <sty c="000000" i="1">Calvin</sty>, is better than that of our
 [BODY] version; he connects “always in my prayers,” or, “in all my prayers,” with “requesting.” The simpler rendering would be as follows: — <sty c="000080" i="0">9. My witness indeed is God, whom I serve With my spirit in the</sty> <sty c="000080" i="0">gospel of his Son, that I unceasingly make mention of you, always</sty> <sty c="000080" i="0">requesting in my prayers,</sty>
 
-[BODY] <sty c="000080" i="0">10. That by some means now at length I may, through the will of</sty> <sty c="000080" i="0">God, have a free course to come to you.</sty>
+[INDENT] <sty c="000080" i="0">10. That by some means now at length I may, through the will of</sty> <sty c="000080" i="0">God, have a free course to come to you.</sty>
 
 [BODY] “In the gospel,” may either mean “according to the gospel,” or, “in preaching the gospel.” <sty c="000000" i="1">Hodge</sty> prefers the first. The particle <sty c="0000d4" i="0">ei</sty> clearly means “that” in this connection. That it is used in this sense in the New Testament there can be no doubt; see <sty c="800000" i="0"><442608></sty>Acts 26:8, 23;
 [FOOTNOTE] <sty c="800000" i="0"><580715></sty>Hebrews 7:15.
@@ -5513,7 +5513,7 @@
 
 --- PAGE 485 ---
 
-[CENTERED] <sty c="000080" i="0">12. benefit, so that you may be strengthened: this also is what </sty><sty c="000080" i="1">I</sty> <sty c="000080" i="1">desire</sty><sty c="000080" i="0">, to be encouraged together with you, through the faith which</sty> <sty c="000080" i="0">is in both, even in you and in me.</sty>
+[INDENT] <sty c="000080" i="0">12. benefit, so that you may be strengthened: this also is what </sty><sty c="000080" i="1">I</sty> <sty c="000080" i="1">desire</sty><sty c="000080" i="0">, to be encouraged together with you, through the faith which</sty> <sty c="000080" i="0">is in both, even in you and in me.</sty>
 
 [BODY] <sty c="000000" i="1">Grotius</sty> observes, “<sty c="0000d4" i="0">ejn ajllh>loiv</sty> impropriè dixit pro <sty c="000000" i="1">in utrisque</sty>, in me et vobis. Dixit sic et Demosthenes, <sty c="0000d4" i="0">ta pro<v ajllh>loiv</sty> –<sty c="000000" i="1">Ed</sty>.
 [FOOTNOTE] <sty c="800000" i="0">ft36</sty> <sty c="000000" i="1">Chalmers</sty> paraphrases the text thus — “I am bound, or I am under
@@ -5651,17 +5651,17 @@
 [FOOTNOTE] <sty c="800000" i="0">ft67</sty> With regard to the construction of this passage, 6-10, it may be
 [BODY] observed, that it is formed according to the mode of Hebrew parallelism, many instances of which we meet with even in the prose writings of the New Testament. None of the ancients, nor any of the moderns, before the time of Bishop <sty c="000000" i="1">Lowth,</sty> understood much of the peculiar character of the Hebrew style. All the anomalies, noticed by <sty c="000000" i="1">Calvin,</sty> instantly vanish, when the passage is so arranged, as to exhibit the correspondence of its different parts. It consists of two general portions; the first includes three verses,<sty c="800000" i="0"><450206></sty>Romans 2:6, 7, and 8; the other, the remaining three verses. The same things are mainly included in both portions, only in the latter there are some things additional, and explanatory, and the order is reversed, so that the passage ends with what corresponds with its beginning. To see the whole in a connected form, it is necessary to set it down in lines, in the following manner — <sty c="000080" i="0">6. Who will render to each according to his works, —</sty>
 
-[BODY] <sty c="000080" i="0">7. To those indeed, who, by perseverance in well — doing, Seek</sty> <sty c="000080" i="0">glory and honor and immortality, — Eternal life</sty>
+[INDENT] <sty c="000080" i="0">7. To those indeed, who, by perseverance in well — doing, Seek</sty> <sty c="000080" i="0">glory and honor and immortality, — Eternal life</sty>
 
-[CENTERED] <sty c="000080" i="0">8. But </sty><sty c="000080" i="1">there shall be</sty><sty c="000080" i="0"> to them who are contentious And obey not</sty> <sty c="000080" i="0">the truth, but obey iniquity, —Indignation and wrath: Then follow</sty> <sty c="000080" i="0">the same things, the order being reversed —</sty>
+[INDENT] <sty c="000080" i="0">8. But </sty><sty c="000080" i="1">there shall be</sty><sty c="000080" i="0"> to them who are contentious And obey not</sty> <sty c="000080" i="0">the truth, but obey iniquity, —Indignation and wrath: Then follow</sty> <sty c="000080" i="0">the same things, the order being reversed —</sty>
 
 --- PAGE 496 ---
 
-[CENTERED] <sty c="000080" i="0">9. Distress and anguish </sty><sty c="000080" i="1">shall be </sty><sty c="000080" i="0">On every soul of man that worketh</sty> <sty c="000080" i="0">evil, — On the Jew first, and then on the Greek;</sty>
+[INDENT] <sty c="000080" i="0">9. Distress and anguish </sty><sty c="000080" i="1">shall be </sty><sty c="000080" i="0">On every soul of man that worketh</sty> <sty c="000080" i="0">evil, — On the Jew first, and then on the Greek;</sty>
 
-[BODY] <sty c="000080" i="0">10. But glory and honor and peace, To every one who worketh</sty> <sty c="000080" i="0">good, — To the Jew first and then to the Greek;</sty>
+[INDENT] <sty c="000080" i="0">10. But glory and honor and peace, To every one who worketh</sty> <sty c="000080" i="0">good, — To the Jew first and then to the Greek;</sty>
 
-[BODY] <sty c="000080" i="0">11. For there is no respect of persons with God.</sty>
+[INDENT] <sty c="000080" i="0">11. For there is no respect of persons with God.</sty>
 
 [BODY] The idea in the last and the first line is essentially the same. This repetition is for the sake of producing an impression. The character of the righteous, in the first part, is, that by persevering in doing good they seek glory, honor, and immortality, and their reward is to be eternal life: the character of the wicked is that of being contentious, disobedient to the truth, and obedient to unrighteousness, and their reward is to be indignation and wrath. The character of the first, in the second part. is, that they work good; and of the other, that they work evil: and the reward of the first is glory, honor, and peace, and the reward of the other, distress and anguish; which are the effects of indignation and wrath, as glory honor, and peace are the fruits or the constituent parts of eternal life It is to be observed that priority in happiness, as well as priority in misery, is ascribed to the Jew. —<sty c="000000" i="1"> Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft68</sty> The word <sty c="0000d4" i="0">proswpolhyi>a</sty>, respect of persons, is found in three other
@@ -5718,19 +5718,19 @@
 [BODY] interrogatory form, that is, as questions: but some, as <sty c="000000" i="1">Theophylact,</sty> <sty c="000000" i="1">Erasmus</sty> and <sty c="000000" i="1">Luther,</sty> have rendered the clauses in the form here adopted. There is no difference in the meaning.
 [CENTERED] It is worthy of notice, that the Apostle, after the Hebrew manner, reverses the order as to the points he mentions; he, as it were, retrogrades, and begins to do so at <sty c="800000" i="0"><450221></sty>Romans 2:21. The passage may be thus rendered, — <sty c="000080" i="0">17. Seeing then, thou art named a Jew, And reliest on the law, and</sty> <sty c="000080" i="0">gloriest in God,</sty>
 
-[CENTERED] <sty c="000080" i="0">18. And knowest his will, And decernest things which differ, being</sty> <sty c="000080" i="0">taught by the law,</sty>
+[INDENT] <sty c="000080" i="0">18. And knowest his will, And decernest things which differ, being</sty> <sty c="000080" i="0">taught by the law,</sty>
 
-[CENTERED] <sty c="000080" i="0">19. And art confident that thou art A leader to the blind, a light to</sty> <sty c="000080" i="0">those in darkness,</sty>
+[INDENT] <sty c="000080" i="0">19. And art confident that thou art A leader to the blind, a light to</sty> <sty c="000080" i="0">those in darkness,</sty>
 
-[BODY] <sty c="000080" i="0">20. An instructor to the foolish, a teacher to babes, Having the</sty> <sty c="000080" i="0">form of knowledge and of truth according to the law:</sty>
+[INDENT] <sty c="000080" i="0">20. An instructor to the foolish, a teacher to babes, Having the</sty> <sty c="000080" i="0">form of knowledge and of truth according to the law:</sty>
 
-[BODY] <sty c="000080" i="0">21. Yet thou, who teachest another, teachest not thyself,</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">Thou,</sty> <sty c="000080" i="0">who preachest, “Steal not,” stealest,</sty>
+[INDENT] <sty c="000080" i="0">21. Yet thou, who teachest another, teachest not thyself,</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">Thou,</sty> <sty c="000080" i="0">who preachest, “Steal not,” stealest,</sty>
 
-[BODY] <sty c="000080" i="0">22. Thou, who sayest, “Commit no adultery,” committest</sty> <sty c="000080" i="0">adultery,</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">Thou who detestest idols, committest sacrilege,</sty>
+[INDENT] <sty c="000080" i="0">22. Thou, who sayest, “Commit no adultery,” committest</sty> <sty c="000080" i="0">adultery,</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">Thou who detestest idols, committest sacrilege,</sty>
 
 --- PAGE 501 ---
 
-[CENTERED] <sty c="000080" i="0">23. Thou who gloriest in the law, by transgressing the law</sty> <sty c="000080" i="0">dishonorest God; For the name of God, as it is written, is through</sty> <sty c="000080" i="0">you blasphemed by the Gentiles.</sty>
+[INDENT] <sty c="000080" i="0">23. Thou who gloriest in the law, by transgressing the law</sty> <sty c="000080" i="0">dishonorest God; For the name of God, as it is written, is through</sty> <sty c="000080" i="0">you blasphemed by the Gentiles.</sty>
 
 [FOOTNOTE] <sty c="800000" i="0"><450221></sty>Romans 2:21, and part of the 22nd, refer to what is contained in
 [BODY] Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and <sty c="800000" i="0"><450223></sty>Romans 2:23 to the 17th. The latter part of the 22nd helps us to fix the meaning of the latter part of the 18th; the man who hated idols and committed sacrilege proved that he did not exercise his boasted power of making a proper distinction between right and wrong. Then the man who is said, in <sty c="800000" i="0"><450217></sty>Romans 2:17, to rely on the law and glory in God, is charged, in <sty c="800000" i="0"><450223></sty>Romans 2:23, with the sin of dishonoring God by transgressing the law —<sty c="000000" i="1"> Ed.</sty>
@@ -5788,7 +5788,7 @@
 
 [BODY] <sty c="000000" i="1">Pareus</sty> connects the passage differently. He considers the former part of the verse parenthetic, or as specifying what is generally stated in the previous verse, the third; and with that verse he connects this passage: so that the rendering of the two verses would be the following, — <sty c="000080" i="0">3. For my transgression I acknowledge, And my sin is before me</sty> <sty c="000080" i="0">continually, —</sty>
 
-[CENTERED] <sty c="000080" i="0">4. (Against thee, against thee only have I sinned, and the evil before</sty> <sty c="000080" i="0">thine eyes have I done,) That thou mightest be justified in thy</sty> <sty c="000080" i="0">saying, </sty><sty c="000080" i="1">And</sty><sty c="000080" i="0"> clear in thy judgment.</sty>
+[INDENT] <sty c="000080" i="0">4. (Against thee, against thee only have I sinned, and the evil before</sty> <sty c="000080" i="0">thine eyes have I done,) That thou mightest be justified in thy</sty> <sty c="000080" i="0">saying, </sty><sty c="000080" i="1">And</sty><sty c="000080" i="0"> clear in thy judgment.</sty>
 
 [CENTERED] This is certainty more probable than what <sty c="000000" i="1">Vatablus</sty> and <sty c="000000" i="1">Houbigant</sty> propose, who connect the passage with the second verse, “Wash me thoroughly,” etc. But the sense given by <sty c="000000" i="1">Calvin</sty> is the most satisfactory —<sty c="000000" i="1"> Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft92</sty> Or, “For if” — <sty c="000000" i="1">Si enim</sty> — <sty c="0000d4" i="0">eij ga<r</sty>. The particle <sty c="0000d4" i="0">ga<r</sty> here gives no
@@ -6204,23 +6204,23 @@
 [FOOTNOTE] <sty c="800000" i="0"><450513></sty>Romans 5:13 and 14, which are an explanation of the 12th. The
 [BODY] 17th includes the <sty c="000000" i="1">two</sty> ideas of the 15th and 16th, in an inverted order. The 18th and l9th contain the summing up of the argument, — <sty c="000080" i="0">12. For this reason, — as by one man sin entered into the world,</sty> <sty c="000080" i="0">And death by sin, Even so death came upon all men, — Because all</sty> <sty c="000080" i="0">had sinned:</sty>
 
-[BODY] <sty c="000080" i="0">13. Sin indeed was until the law in the world, But sin is not</sty> <sty c="000080" i="0">imputed when there is no law;</sty>
+[INDENT] <sty c="000080" i="0">13. Sin indeed was until the law in the world, But sin is not</sty> <sty c="000080" i="0">imputed when there is no law;</sty>
 
-[CENTERED] <sty c="000080" i="0">14. Yet reign did death from Adam to Moses. Even over those who</sty> <sty c="000080" i="0">had not sinned, After the likeness of the transgression of Adam,</sty> <sty c="000080" i="0">Who is the type of him who was to come.</sty>
+[INDENT] <sty c="000080" i="0">14. Yet reign did death from Adam to Moses. Even over those who</sty> <sty c="000080" i="0">had not sinned, After the likeness of the transgression of Adam,</sty> <sty c="000080" i="0">Who is the type of him who was to come.</sty>
 
-[CENTERED] <sty c="000080" i="0">15. But not as the transgression, So also the free favor; For if</sty> <sty c="000080" i="0">through the transgression of one Many died. Much more has God’s</sty> <sty c="000080" i="0">grace, and his free gift through the grace of one man, Jesus Christ,</sty> <sty c="000080" i="0">Abounded unto many:</sty>
+[INDENT] <sty c="000080" i="0">15. But not as the transgression, So also the free favor; For if</sty> <sty c="000080" i="0">through the transgression of one Many died. Much more has God’s</sty> <sty c="000080" i="0">grace, and his free gift through the grace of one man, Jesus Christ,</sty> <sty c="000080" i="0">Abounded unto many:</sty>
 
 --- PAGE 539 ---
 
-[CENTERED] <sty c="000080" i="0">16. And not as through one sin, </sty><sty c="000080" i="1">So</sty><sty c="000080" i="0"> the free gift; For judgment was</sty> <sty c="000080" i="0">indeed Through one sir to condemnation, But the free favor </sty><sty c="000080" i="1">Is</sty><sty c="000080" i="0"> from</sty> <sty c="000080" i="0">many transgressions to justification, —</sty>
+[INDENT] <sty c="000080" i="0">16. And not as through one sin, </sty><sty c="000080" i="1">So</sty><sty c="000080" i="0"> the free gift; For judgment was</sty> <sty c="000080" i="0">indeed Through one sir to condemnation, But the free favor </sty><sty c="000080" i="1">Is</sty><sty c="000080" i="0"> from</sty> <sty c="000080" i="0">many transgressions to justification, —</sty>
 
-[CENTERED] <sty c="000080" i="0">17. For if for one transgression, Death reigned through one; Much</sty> <sty c="000080" i="0">more shall they, who receive abundance of grace</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">and of the gift of</sty> <sty c="000080" i="0">righteousness, Reign in life through one, Jesus Christ.</sty>
+[INDENT] <sty c="000080" i="0">17. For if for one transgression, Death reigned through one; Much</sty> <sty c="000080" i="0">more shall they, who receive abundance of grace</sty><sty c="800000" i="0"> </sty><sty c="000080" i="0">and of the gift of</sty> <sty c="000080" i="0">righteousness, Reign in life through one, Jesus Christ.</sty>
 
-[CENTERED] <sty c="000080" i="0">18. So then, as through one transgression, </sty><sty c="000080" i="1">Judgment</sty><sty c="000080" i="0"> was on all men</sty> <sty c="000080" i="0">to condemnation; So also through one righteousness, </sty><sty c="000080" i="1">The free favor</sty> <sty c="000080" i="0">is on all men to justification of life:</sty>
+[INDENT] <sty c="000080" i="0">18. So then, as through one transgression, </sty><sty c="000080" i="1">Judgment</sty><sty c="000080" i="0"> was on all men</sty> <sty c="000080" i="0">to condemnation; So also through one righteousness, </sty><sty c="000080" i="1">The free favor</sty> <sty c="000080" i="0">is on all men to justification of life:</sty>
 
-[BODY] <sty c="000080" i="0">19. For as through the disobedience of one man, Sinful were made</sty> <sty c="000080" i="0">many; So also through the obedience of one, Righteous shall be</sty> <sty c="000080" i="0">made many.</sty>
+[INDENT] <sty c="000080" i="0">19. For as through the disobedience of one man, Sinful were made</sty> <sty c="000080" i="0">many; So also through the obedience of one, Righteous shall be</sty> <sty c="000080" i="0">made many.</sty>
 
-[CENTERED] <sty c="000080" i="0">20. But the law entered in, That multiplied might be transgression;</sty> <sty c="000080" i="0">But where sin multiplied, Superabounded has grace: So that as sin</sty> <sty c="000080" i="0">reigned Into death; So also grace shall reign through righteousness,</sty> <sty c="000080" i="0">Into eternal life, through Jesus Christ our Lord. —</sty><sty c="000080" i="1"> Ed.</sty>
+[INDENT] <sty c="000080" i="0">20. But the law entered in, That multiplied might be transgression;</sty> <sty c="000080" i="0">But where sin multiplied, Superabounded has grace: So that as sin</sty> <sty c="000080" i="0">reigned Into death; So also grace shall reign through righteousness,</sty> <sty c="000080" i="0">Into eternal life, through Jesus Christ our Lord. —</sty><sty c="000080" i="1"> Ed.</sty>
 
 [CENTERED_H2] <sty c="006411" i="0">CHAPTER 6</sty>
 
@@ -6665,7 +6665,7 @@
 [BODY] <sty c="0000d4" i="0">kata< ejklektw~n Qeou~</sty> — who shall implead, or bring a charge against the elect of God.?” See <sty c="800000" i="0"><441938></sty>Acts 19:38.
 [BODY] Many, such as <sty c="000000" i="1">Augustine</sty>, <sty c="000000" i="1">Grotius</sty>, <sty c="000000" i="1">Locke</sty>, <sty c="000000" i="1">Doddridge</sty>, and <sty c="000000" i="1">Griesbach</sty>, have made the next clause also a question; and also the clauses in the next verse. There is not much difference in the sense, but the passage will thus appear more striking, — <sty c="000080" i="0">33. Who will lay a charge against God’s elect? God the justifier?</sty>
 
-[CENTERED] <sty c="000080" i="0">34. Who is he who condemns? Christ who died, or rather who rose</sty> <sty c="000080" i="0">again, who is also at God’s right hand, and who intercedes for us?</sty>
+[INDENT] <sty c="000080" i="0">34. Who is he who condemns? Christ who died, or rather who rose</sty> <sty c="000080" i="0">again, who is also at God’s right hand, and who intercedes for us?</sty>
 
 [BODY] What favors this construction is, that the Apostle proceeds in the same strain. —<sty c="000000" i="1"> Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft271</sty> <sty c="000000" i="1">Calvin</sty> renders <sty c="0000d4" i="0">cari>setai</sty> by “donaret;” <sty c="000000" i="1">Capellus</sty> more fully, “gratis
@@ -6765,9 +6765,9 @@
 [FOOTNOTE] <sty c="800000" i="0">ft289</sty> Here is a striking instance of a difficulty as to the construction, while
 [BODY] the meaning of the whole passage is quite evident. The ellipsis has been variously supplied; “and not only <sty c="000000" i="1">this,” i.e., </sty>what I have stated; “and not only he,” <sty c="000000" i="1">i.e., </sty>Abraham to whom the first communication was made; “and not only <sty c="000000" i="1">she,” i.e., </sty>Sarah, mentioned in the preceding’ verse; “but Rebecca also is another instance.” But it may be thus supplied, — “ and not only <sty c="000000" i="1">so,” i.e., </sty>as to the word of promise; “but Rebecca also <sty c="000000" i="1">had a word,” </sty>or a message conveyed to her. That the verse has a distinct meaning in itself is evident, for the next begins with a <sty c="0000d4" i="0">ga<r</sty>, “for;” and to include <sty c="800000" i="0"><450911></sty>Romans 9:11, in a parenthesis, seems by no means satisfactory. The three verses may be thus rendered, — <sty c="000080" i="0">10. And not only </sty><sty c="000080" i="1">so, </sty><sty c="000080" i="0">but Rebecca also </sty><sty c="000080" i="1">received a message, </sty><sty c="000080" i="0">when</sty> <sty c="000080" i="0">she conceived by the first, </sty><sty c="000080" i="1">(i.e., </sty><sty c="000080" i="0">son or seed,)even our father Isaac:</sty>
 
-[CENTERED] <sty c="000080" i="0">11. for they being not yet born, and having not done any good or</sty> <sty c="000080" i="0">evil, that the purpose of God according to election might stand, not</sty>
+[INDENT] <sty c="000080" i="0">11. for they being not yet born, and having not done any good or</sty> <sty c="000080" i="0">evil, that the purpose of God according to election might stand, not</sty>
 
-[BODY] <sty c="000080" i="0">12. through works, but through him who calls, it was said to her,</sty> <sty c="000080" i="0">“The elder shall serve the younger.”</sty>
+[INDENT] <sty c="000080" i="0">12. through works, but through him who calls, it was said to her,</sty> <sty c="000080" i="0">“The elder shall serve the younger.”</sty>
 
 --- PAGE 583 ---
 
@@ -6854,9 +6854,9 @@
 [FOOTNOTE] <sty c="800000" i="0"><450920></sty>Romans 9:20, and include the latter part of it and <sty c="800000" i="0"><450921></sty>Romans 9:21 in a parenthesis. Whatever way may be adopted,
 [BODY] the sense is materially the same. It has also been suggested that <sty c="0000d4" i="0">eij de<</sty> is for <sty c="0000d4" i="0">ei]per, </sty><sty c="000000" i="1">since, seeing, </sty><sty c="800000" i="0"><530106></sty>2 Thessalonians 1:6; <sty c="800000" i="0"><600203></sty>1 Peter 2:3. In this case no apodosis is necessary. But we may take <sty c="0000d4" i="0">eij</sty><sty c="000000" i="1"> </sty>as meaning <sty c="000000" i="1">since, </sty>and <sty c="0000d4" i="0">de<</sty> as an iliatire, and render the three verses thus, — <sty c="000080" i="0">22. “Since then God willed (or, it was God’s will) to show His</sty> <sty c="000080" i="0">wrath and to make known his power, he endured with much</sty> <sty c="000080" i="0">forbearance the vessels of wrath, fitted for destruction;</sty>
 
-[CENTERED] <sty c="000080" i="0">23. So </sty><sty c="000080" i="1">he willed </sty><sty c="000080" i="0">to make known the riches of his glory towards the</sty> <sty c="000080" i="0">vessels of mercy, whom he has fore-prepared for glory,</sty>
+[INDENT] <sty c="000080" i="0">23. So </sty><sty c="000080" i="1">he willed </sty><sty c="000080" i="0">to make known the riches of his glory towards the</sty> <sty c="000080" i="0">vessels of mercy, whom he has fore-prepared for glory,</sty>
 
-[BODY] <sty c="000080" i="0">24. Even us, whom he has called not only front the Jews but also</sty> <sty c="000080" i="0">from the Gentiles.”</sty>
+[INDENT] <sty c="000080" i="0">24. Even us, whom he has called not only front the Jews but also</sty> <sty c="000080" i="0">from the Gentiles.”</sty>
 
 [BODY] The verb <sty c="0000d4" i="0">ejsti</sty>, or <sty c="0000d4" i="0">h+n</sty>, is often understood after participles, especially in Hebrew; and <sty c="0000d4" i="0">kai<</sty> has the meaning of so in some instances,
 [FOOTNOTE] <sty c="800000" i="0"><400610></sty>Matthew 6:10; <sty c="800000" i="0"><440751></sty>Acts 7:51; <sty c="800000" i="0"><480109></sty>Galatians 1:9; and in
@@ -6943,7 +6943,7 @@
 [BODY] order in which they are given by Moses, and for this reason, because we know not faith otherwise than by profession.”
 [BODY] This is one of the many instances both in the New and Old Testament, in which the most apparent act is mentioned first, and then the most hidden, or in which the deed is stated first, and then the principle from which it proceeds. See <sty c="800000" i="0"><451313></sty>Romans 13:13; Romans15:13. And we have here another instance of the Apostle’s style; he reverses the order in <sty c="800000" i="0"><451010></sty>Romans 10:10, mentioning faith first, and confession last. The two verses may be thus rendered, — <sty c="000080" i="0">9. That if thou wilt confess with thy mouth the Lord Jesus,</sty> <sty c="000080" i="0">And believe in thine heart that God raised him from the dead,</sty> <sty c="000080" i="0">Thou shalt be saved.</sty>
 
-[BODY] <sty c="000080" i="0">10. For with the heart we believe unto righteousness,</sty> <sty c="000080" i="0">And with the mouth we confess unto salvation.</sty>
+[INDENT] <sty c="000080" i="0">10. For with the heart we believe unto righteousness,</sty> <sty c="000080" i="0">And with the mouth we confess unto salvation.</sty>
 
 [BODY] He begins and ends with confession, and in the middle clauses he mentions faith. —<sty c="000000" i="1"> Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft324</sty> “Creditur;” <sty c="0000d4" i="0">pisteu>etai</sty>, “it is believed.” It is an impersonal verb, and
@@ -7060,7 +7060,7 @@
 
 [BODY] somewhat difficult, and the meaning is not very clear. To include the words, “as I am indeed the Apostle of the Gentiles,” in a parenthesis, as it is done by some, would render the sense more evident, and to add “this” after “say,” and “that” before “I render.” The version then would be as follows, — <sty c="000080" i="0">13. For I say </sty><sty c="000080" i="1">this </sty><sty c="000080" i="0">to you Gentiles (as I am indeed the Apostle of</sty> <sty c="000080" i="0">the Gentiles,) </sty><sty c="000080" i="1">that</sty><sty c="000080" i="0"> I render my ministry glorious,</sty>
 
-[BODY] <sty c="000080" i="0">14. If I shall by any means excite to emulation my own flesh and</sty> <sty c="000080" i="0">save some of them.</sty>
+[INDENT] <sty c="000080" i="0">14. If I shall by any means excite to emulation my own flesh and</sty> <sty c="000080" i="0">save some of them.</sty>
 
 [BODY] The sentiment in the last clause is the same as that at the end of
 [FOOTNOTE] <sty c="800000" i="0"><451111></sty>Romans 11:11. The<sty c="000000" i="1"> Vulgate</sty>, and some of the Latin Fathers, and
@@ -7178,11 +7178,11 @@
 
 [BODY] evident Correspondence that is to be found in the latter clause of the verse, except we take in the remaining portion of the chapter, and this perhaps is what ought to be done. But if we do this, then <sty c="0000d4" i="0">plou>tou</sty> means “treasures, or blessings,” or copia beneficiorum,” as <sty c="000000" i="1">Schleusner</sty> expresses it. “Riches of Christ” mean the abounding blessings laid up in him, <sty c="800000" i="0"><490308></sty>Ephesians 3:8. God may be viewed as set forth here as the source of all things, and as infinite in wisdom and knowledge; and these <sty c="000000" i="1">three </sty>things are the subjects to the end of the chapter, the two last verses referring to the first, and the end of the thirty-third and the thirty-fourth to the two others, and in an inverted order. The depth or vastness of his wealth or bounty is such, that he has nothing but his own, no one having given him anything, (<sty c="800000" i="0"><451135></sty>Romans 11:35,) and from him, and through him, and to him are all things, (<sty c="800000" i="0"><451136></sty>Romans 11:36.) Then as to the vastness of his wisdom and of his knowledge; what his knowledge has decided cannot be searched out, and what his wisdom has devised, as to the manner of executing his purposes, cannot be investigated; and no one can measure the extent of his knowledge, and no one has been his counselor, so as to add to the stores of his wisdom, (<sty c="800000" i="0"><451134></sty>Romans 11:34.) That we may see the whole passage in lines — <sty c="000080" i="0">33. Oh the depth of God’s bounty and wisdom and knowledge!</sty> <sty c="000080" i="0">How inscrutable his judgments</sty> <sty c="000080" i="0">And untraceable his ways!</sty>
 
-[BODY] <sty c="000080" i="0">34. Who indeed hath known the Lord’s mind,</sty> <sty c="000080" i="0">Or who has become his counselor?</sty>
+[INDENT] <sty c="000080" i="0">34. Who indeed hath known the Lord’s mind,</sty> <sty c="000080" i="0">Or who has become his counselor?</sty>
 
-[BODY] <sty c="000080" i="0">35. Or who has first given to him?</sty> <sty c="000080" i="0">And it shall be repayed to him:</sty>
+[INDENT] <sty c="000080" i="0">35. Or who has first given to him?</sty> <sty c="000080" i="0">And it shall be repayed to him:</sty>
 
-[BODY] <sty c="000080" i="0">36. For from him and through him and to him </sty><sty c="000080" i="1">are</sty><sty c="000080" i="0"> all things:</sty> <sty c="000080" i="0">To him the glory for everse — Amen. —</sty><sty c="000080" i="1"> Ed.</sty>
+[INDENT] <sty c="000080" i="0">36. For from him and through him and to him </sty><sty c="000080" i="1">are</sty><sty c="000080" i="0"> all things:</sty> <sty c="000080" i="0">To him the glory for everse — Amen. —</sty><sty c="000080" i="1"> Ed.</sty>
 
 [FOOTNOTE] <sty c="800000" i="0">ft372</sty> The words of this verse seem to have been taken literally from
 [FOOTNOTE] <sty c="800000" i="0"><234013></sty>Isaiah 40:13, as given in the <sty c="000000" i="1">Septuagint</sty>. The Hebrew is in some
@@ -7352,9 +7352,9 @@
 
 [BODY] “moreover,” as <sty c="000000" i="1">Calvin</sty> does, it would be better to regard the participle <sty c="0000d4" i="0">eijdo>tev</sty>, as having the meaning of an imperative, <sty c="0000d4" i="0">este</sty> being understood, several instances of which we have in the preceding chapter, <sty c="800000" i="0"><451209></sty>Romans 12:9,16,17. The whole passage would then read better in this manner, — <sty c="000080" i="0">11. Moreover, know the time, that it is even now the very time for</sty> <sty c="000080" i="0">us to awake from sleep; for nearer now is our salvation than when</sty> <sty c="000080" i="0">we</sty>
 
-[BODY] <sty c="000080" i="0">12. believed: the night has advanced, and the day has approached;</sty> <sty c="000080" i="0">let us then cast away the works of darkness, and let us put on the</sty>
+[INDENT] <sty c="000080" i="0">12. believed: the night has advanced, and the day has approached;</sty> <sty c="000080" i="0">let us then cast away the works of darkness, and let us put on the</sty>
 
-[CENTERED] <sty c="000080" i="0">13. armor of light; let us, as in the day, walk in a becoming manner,</sty> <sty c="000080" i="0">etc. —</sty><sty c="000080" i="1"> Ed.</sty>
+[INDENT] <sty c="000080" i="0">13. armor of light; let us, as in the day, walk in a becoming manner,</sty> <sty c="000080" i="0">etc. —</sty><sty c="000080" i="1"> Ed.</sty>
 
 [FOOTNOTE] <sty c="800000" i="0">ft408</sty> The case is the same with the two preceding instances; the vice which
 [BODY] seems to follow is placed first. Revelling is first mentioned, though drunkenness goes before it; and “chambering,” or concubinage, or indulgence in unlawful lusts is first stated, though lasciviousness or wantonness is the source from which it proceeds. It is an example of the Apostle’s mode of writing similar to what we find in
@@ -7488,7 +7488,7 @@
 [FOOTNOTE] <sty c="800000" i="0">ft441</sty> The beginning of this verse, “Now I say,” <sty c="000000" i="1">Dico autem, </sty><sty c="0000d4" i="0">Le>gw de<</sty>, is
 [BODY] read by <sty c="000000" i="1">Beza</sty> and <sty c="000000" i="1">Grotius</sty>, <sty c="0000d4" i="0">Le>gw ga<r</sty>, “For I say,” and <sty c="000000" i="1">Griesbach</sty> regards it of nearly equal authority. If we retain <sty c="0000d4" i="0">de<</sty>, it may be rendered “moreover,” or “further;” and to render the clause more distinct, the word “this,” as proposed by <sty c="000000" i="1">Beza </sty>and <sty c="000000" i="1">Pagninus</sty>, may be added, — “I further say <sty c="000000" i="1">this</sty>,” etc. The two verses may be thus rendered, — <sty c="000080" i="0">8. I further say </sty><sty c="000080" i="1">this</sty><sty c="000080" i="0">, that Christ became a minister of the</sty> <sty c="000080" i="0">circumcision for the truth of God, that he might confirm the</sty> <sty c="000080" i="0">promises </sty><sty c="000080" i="1">made </sty><sty c="000080" i="0">to</sty>
 
-[BODY] <sty c="000080" i="0">9. the fathers, and that the Gentiles might glorify God for </sty><sty c="000080" i="1">his</sty> <sty c="000080" i="0">mercy, as it is written, “I will therefore confess thee among the</sty> <sty c="000080" i="0">nations, and to thy name will I sing.”</sty>
+[INDENT] <sty c="000080" i="0">9. the fathers, and that the Gentiles might glorify God for </sty><sty c="000080" i="1">his</sty> <sty c="000080" i="0">mercy, as it is written, “I will therefore confess thee among the</sty> <sty c="000080" i="0">nations, and to thy name will I sing.”</sty>
 
 [BODY] The reasons for this rendering are given in the next note. —<sty c="000000" i="1"> Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft442</sty> The construction of this first sentence is differently viewed. <sty c="000000" i="1">Grotius</sty>
@@ -7652,19 +7652,19 @@
 [FOOTNOTE] <sty c="800000" i="0">ft483 </sty>To exhibit the meaning of this passage according to what is advanced in
 [BODY] a note in pp. 306, 307, it shall be presented here in lines, — <sty c="000080" i="0">19. Truly the intent expectation of the creature Waits for the</sty> <sty c="000080" i="0">revelation of the sons of God;</sty>
 
-[CENTERED] <sty c="000080" i="0">20. For to vanity has the creature been subjected, not willingly, But</sty> <sty c="000080" i="0">on his account who has subjected it in hope;</sty>
+[INDENT] <sty c="000080" i="0">20. For to vanity has the creature been subjected, not willingly, But</sty> <sty c="000080" i="0">on his account who has subjected it in hope;</sty>
 
-[BODY] <sty c="000080" i="0">21. For even the creature itself shall be freed from the bondage of</sty> <sty c="000080" i="0">corruption, Into the glorious liberty of the sons of God;</sty>
+[INDENT] <sty c="000080" i="0">21. For even the creature itself shall be freed from the bondage of</sty> <sty c="000080" i="0">corruption, Into the glorious liberty of the sons of God;</sty>
 
-[CENTERED] <sty c="000080" i="0">22. For we know that every creature groans together, And together</sty> <sty c="000080" i="0">travails in pain to this day:-</sty>
+[INDENT] <sty c="000080" i="0">22. For we know that every creature groans together, And together</sty> <sty c="000080" i="0">travails in pain to this day:-</sty>
 
 --- PAGE 650 ---
 
-[CENTERED] <sty c="000080" i="0">23. And not only </sty><sty c="000080" i="1">they, </sty><sty c="000080" i="0">but we also ourselves, Who possess the</sty> <sty c="000080" i="0">first-fruit of the Spirit, Even we ourselves groan within ourselves,</sty> <sty c="000080" i="0">Anxiously waiting for </sty><sty c="000080" i="1">our </sty><sty c="000080" i="0">adoption, The redemption of our body;</sty>
+[INDENT] <sty c="000080" i="0">23. And not only </sty><sty c="000080" i="1">they, </sty><sty c="000080" i="0">but we also ourselves, Who possess the</sty> <sty c="000080" i="0">first-fruit of the Spirit, Even we ourselves groan within ourselves,</sty> <sty c="000080" i="0">Anxiously waiting for </sty><sty c="000080" i="1">our </sty><sty c="000080" i="0">adoption, The redemption of our body;</sty>
 
-[CENTERED] <sty c="000080" i="0">24. For in hope are we saved, But hope seen is not hope; For what</sty> <sty c="000080" i="0">one sees, why does he yet hope for it?</sty>
+[INDENT] <sty c="000080" i="0">24. For in hope are we saved, But hope seen is not hope; For what</sty> <sty c="000080" i="0">one sees, why does he yet hope for it?</sty>
 
-[CENTERED] <sty c="000080" i="0">25. But if what we see not, we hope for, We wait for </sty><sty c="000080" i="1">it </sty><sty c="000080" i="0">in patience.</sty>
+[INDENT] <sty c="000080" i="0">25. But if what we see not, we hope for, We wait for </sty><sty c="000080" i="1">it </sty><sty c="000080" i="0">in patience.</sty>
 
 [BODY] We <sty c="000000" i="1">may </sty>indeed consider “every creature” in verse 22 as referring to every renewed creature then living, (except the Apostles and those endowed with the extraordinary gifts of the Spirit,) and all such from the beginning of the world. In this case, “to this day” has a striking import. All God’s servants from the beginning had been groaning under the body of sin, and not only they, but even?hose who had enjoyed the first outpouring of the Spirit, and had been endued with extraordinary gifts. The gifts of the Spirit, however abundant, did not free any from the bondage of corruption, from the body of sin; but this was an object of hope, for which they were to wait. The context, before and after, clearly shows that the present condition of God’s people is the subject. <sty c="000000" i="1">— Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft484</sty>The Jewish convert.

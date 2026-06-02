@@ -743,6 +743,18 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append('')
                 out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;">{cleaned}</p>')
                 out.append('')
+        elif tag == 'INDENT':
+            # PDF outline subitem (indented from body), e.g. "1. A proof of its
+            # necessity ..." at x=44 (body is x=26). Clear pending fn merge.
+            pending_fn_idx = None
+            body = format_inline(content)
+            body = apply_verse_styling(body)
+            body = bold_leading_verse_num(body)
+            out.append('')
+            out.append(f'<p style="margin-left:2em;">{body}</p>')
+            out.append('')
+            i += 1
+            continue
         elif tag == 'CENTERED':
             # Back-section fn continuation: append to pending [^fN]: line
             if pending_fn_idx is not None:

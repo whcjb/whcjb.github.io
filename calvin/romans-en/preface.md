@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 15:18
+date: 2026-06-02 15:46
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -106,24 +106,37 @@ A more particular ANALYSIS may be thus given: —
 
 <span style="color:#800000">II. Justification,</span>
 
-<p style="text-align:center">1. A proof of its necessity — the sin and guilt of both Gentiles and Jews, 1:18-3:21.</p>
+<p style="margin-left:2em;"><span style="color:#000080">1.</span> A proof of its necessity — the sin and guilt of both Gentiles and Jews, *1:18-3:21*.</p>
 
-<span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.
+<p style="margin-left:2em;"><span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.</p>
 
-<span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*
+<p style="margin-left:2em;"><span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*</p>
 
-<span style="color:#800000">III. God’s Dealings Vindicated</span> — <span style="color:#000080">l.</span> Election and Reprobation, 9.
+<span style="color:#800000">III. God’s Dealings Vindicated</span> —
 
-<span style="color:#000080">2.</span> Unbelief and Faith, *10*.
+<p style="margin-left:2em;"><span style="color:#000080">l.</span> Election and Reprobation, 9.</p>
 
-<span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.
+<p style="margin-left:2em;"><span style="color:#000080">2.</span> Unbelief and Faith, *10*.</p>
 
-<span style="color:#800000">IV Christian Duties</span> <span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.* <span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.* <span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.* <span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*
+<p style="margin-left:2em;"><span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.</p>
+
+<span style="color:#800000">IV Christian Duties</span>
+
+<p style="margin-left:2em;"><span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.*</p>
+
+<p style="margin-left:2em;"><span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.*</p>
+
+<p style="margin-left:2em;"><span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.*</p>
+
+<p style="margin-left:2em;"><span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*</p>
+
+<span style="color:#800000">V. Conclusion, —</span>
 
 <!-- PAGE 12 -->
-<span style="color:#800000">V. Conclusion, —</span> <span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.
 
-<span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.
+<p style="margin-left:2em;"><span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.</p>
+
+<p style="margin-left:2em;"><span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.</p>
 
 We have set before us in this Epistle especially two things, which it behoves us all rightly to understand — the righteousness of man and the righteousness of God — merit and grace, or salvation by works and salvation by faith. The light in which they are exhibited here is clearer and brighter than what we find in any other portion of Scripture, with the exception, perhaps, of the Epistle to the Galatians. Hence the great value which has in every age been attached to this Epistle by all really enlightened Christians; and hence also the strenuous efforts which have often been made to darken and wrest its meaning by men, though acute and learned, yet destitute of spiritual light. But let not the simple Christian conclude from the contrariety that is often found in the expositions on these two points, that there is no certainty in what is taught respecting them. There are no contrary views given of them by spiritually-minded men. Though on other subjects discussed here, such men have had their differences, yet on these they have ever been found unanimous: that salvation is from first to last by grace, and not by works, has ever been the conviction of really enlightened men in every age, however their opinion may have varied in other respects.
 
