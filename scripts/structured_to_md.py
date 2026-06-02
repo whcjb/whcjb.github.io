@@ -165,18 +165,20 @@ def collapse_spaced_caps(text: str) -> str:
     """Collapse 'B o o k s' / 'T H E A G E S' / 'J OHN' style spaced-out heading.
 
     - First pass: runs of ≥ 3 single-letter "words" separated by single spaces.
-    - Second pass: lone capital + space + capital-run, BUT skip when the lone
-      capital is preceded by an apostrophe ('S PREFACE, 'S MAIESTIE, etc.),
-      where the space is a real word separator.
+    - Second pass: lone capital + space + capital-run, BUT skip when:
+      - preceded by apostrophe ('S PREFACE / 'S MAIESTIE — real word break)
+      - lone cap is "A" or "I" (English single-letter words — "A MAN" / "I AM"
+        should stay as 2 words, not glue to "AMAN" / "IAM")
     """
     def _glue(m):
         return ''.join(m.group(0).split())
     text = re.sub(r'\b(?:[A-Za-z] ){2,}[A-Za-z]\b', _glue, text)
-    # Only collapse 'X YYYY' if X is NOT preceded by ' or ’ (apostrophe-S etc.)
+    # Only collapse 'X YYYY' if X is NOT 'A' or 'I' (English words) and
+    # NOT preceded by ' or ’ (apostrophe-S etc.).
     prev = None
     while prev != text:
         prev = text
-        text = re.sub(r"(?<!['‘’])\b([A-Z]) ([A-Z]+)\b", r'\1\2', text)
+        text = re.sub(r"(?<!['‘’])\b(?![AI]\b)([A-Z]) ([A-Z]+)\b", r'\1\2', text)
     return text
 
 
@@ -733,15 +735,20 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 i += 1
                 continue
             # Otherwise: clear pending fn merge and emit as styled <p>.
+            # Preserve original PDF color via apply_verse_styling — DO NOT
+            # strip <sty> tags before that, or color info is lost.
             pending_fn_idx = None
             cleaned = collapse_spaced_caps(format_inline(content))
-            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
+            cleaned = apply_verse_styling(cleaned)  # <sty c="..." i="..."> → <span style="color:#...">
+            # Now strip any leftover <verse>/<sty> wraps (defensive)
+            cleaned = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cleaned)
             if cleaned.strip():
                 size_class = 'title-block-h1' if tag == 'CENTERED_H1' else 'title-block-h2'
                 font_size = '22px' if tag == 'CENTERED_H1' else '16px'
                 font_weight = 'bold' if tag == 'CENTERED_H1' else 'bold'
+                # markdown="1" so kramdown still expands [^fN] refs inside.
                 out.append('')
-                out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;">{cleaned}</p>')
+                out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;" markdown="1">{cleaned}</p>')
                 out.append('')
         elif tag == 'INDENT':
             # PDF outline subitem (indented from body), e.g. "1. A proof of its
@@ -750,8 +757,9 @@ def convert(structured_path: Path, out_path: Path) -> None:
             body = format_inline(content)
             body = apply_verse_styling(body)
             body = bold_leading_verse_num(body)
+            # markdown="1" so kramdown still expands *italic* / [^fN] / **bold** inside
             out.append('')
-            out.append(f'<p style="margin-left:2em;">{body}</p>')
+            out.append(f'<p style="margin-left:2em;" markdown="1">{body}</p>')
             out.append('')
             i += 1
             continue

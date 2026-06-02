@@ -2527,17 +2527,21 @@ def phil_reconstruct_page(page, page_num=None):
                 if re.search(r'\d+:\d+', stripped):
                     line_class = 'VERSE'
             # Indented body: block lm >= 35 (significantly indented from body
-            # x≈26) AND not centered AND no Latin column → outline subitem.
-            # PDF outline lists ("1. A proof...", "2. Its Nature..."  at x=44)
-            # should preserve indentation. Accept also letter 'l' / 'I' / 'i'
-            # which are common PDF font misreads of digit '1'.
+            # x≈26) AND not centered AND no Latin column → outline subitem
+            # OR short signature (e.g. "J. O." / "W.P. AUCHTERARDER").
+            # Two triggers:
+            #   (a) starts with `N.` / `IVX.` / `l.I.i.` outline item
+            #   (b) very narrow block (< 55% page width) + non-centered + indented
             block_lm = block['bbox'][0]
+            block_w_local = block['bbox'][2] - block['bbox'][0]
+            is_outline_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+            is_narrow_indented = block_w_local < page_w * 0.55
             is_indented_subitem = (
                 block_lm >= 35
                 and not is_centered_block
                 and line_class == 'BODY'
-                and rm > 20  # not right-aligned text
-                and bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+                and rm > 20
+                and (is_outline_item or is_narrow_indented)
             )
             if is_indented_subitem:
                 line_class = 'INDENT'

@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 15:46
+date: 2026-06-02 15:57
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -17,9 +17,9 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE EPISTLE TO THE ROMANS
 
-*by John Calvin*
+<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BooksForTheAges </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 
 <p style="text-align:center">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
 
@@ -27,17 +27,17 @@ next_label: "Chapter 1"
 
 <p style="text-align:center">COMMENTARIES ON THE</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE OF PAUL THE APOSTLE</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF PAUL THE APOSTLE</span></p>
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">TO THE ROMANS</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">TO THE ROMANS</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BY JOHN CALVIN</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BY JOHN CALVIN</span></p>
 
 <p style="text-align:center">Translated And Edited By The Rev. John Owen,</p>
 
 <!-- PAGE 3 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">TRANSLATOR’S PREFACE</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">TRANSLATOR’S PREFACE</span></p>
 
 ON no portion of THE NEW TESTAMENT have so many COMMENTARIES been written as on THE EPISTLE TO THE ROMANS. We have indeed no separate Comment extant by any of the Fathers on this Epistle; though it has been explained, together with other parts of Scripture, by *Origen* in the third century; by *Jerome, Chrysostom,* and in part by *Augustine*, in the fourth; by *Theodoret* in the fifth; by *Œcumenius* in the tenth; and by *Theophylact* in the eleventh century. But since the Reformation, many separate Expositions have been published, beside a learned Introduction by *Luther*, and Notes or *Scholia* by *Zuingle* and *Melancthon*.
 
@@ -106,37 +106,37 @@ A more particular ANALYSIS may be thus given: —
 
 <span style="color:#800000">II. Justification,</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> A proof of its necessity — the sin and guilt of both Gentiles and Jews, *1:18-3:21*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> A proof of its necessity — the sin and guilt of both Gentiles and Jews, *1:18-3:21*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*</p>
 
 <span style="color:#800000">III. God’s Dealings Vindicated</span> —
 
-<p style="margin-left:2em;"><span style="color:#000080">l.</span> Election and Reprobation, 9.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">l.</span> Election and Reprobation, 9.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Unbelief and Faith, *10*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Unbelief and Faith, *10*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.</p>
 
 <span style="color:#800000">IV Christian Duties</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*</p>
 
 <span style="color:#800000">V. Conclusion, —</span>
 
 <!-- PAGE 12 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.</p>
 
 We have set before us in this Epistle especially two things, which it behoves us all rightly to understand — the righteousness of man and the righteousness of God — merit and grace, or salvation by works and salvation by faith. The light in which they are exhibited here is clearer and brighter than what we find in any other portion of Scripture, with the exception, perhaps, of the Epistle to the Galatians. Hence the great value which has in every age been attached to this Epistle by all really enlightened Christians; and hence also the strenuous efforts which have often been made to darken and wrest its meaning by men, though acute and learned, yet destitute of spiritual light. But let not the simple Christian conclude from the contrariety that is often found in the expositions on these two points, that there is no certainty in what is taught respecting them. There are no contrary views given of them by spiritually-minded men. Though on other subjects discussed here, such men have had their differences, yet on these they have ever been found unanimous: that salvation is from first to last by grace, and not by works, has ever been the conviction of really enlightened men in every age, however their opinion may have varied in other respects.
 
@@ -157,15 +157,15 @@ The only remedy, as means for this evil, is that which we find employed by Paul 
 
 It has not been deemed necessary to give in this Edition any specimens of title-pages, etc., from former Editions, either In Latin or in English; as they are to be found in the Old Translation already in the hands of the subscribers.
 
-*J. O.*
+<p style="margin-left:2em;" markdown="1">*J. O.*</p>
 
 <!-- PAGE 16 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE EPISTLE DEDICATORY</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE DEDICATORY</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN TO SIMON GRYNAEUS, [^f9]</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN TO SIMON GRYNAEUS,</span> <span style="color:#800000">[^f9]</span></p>
 
-<p style="text-align:center">AMAN WORTHY OF ALL HONOR</p>
+<p style="text-align:center">A MAN WORTHY OF ALL HONOR</p>
 
 I REMEMBER that when three years ago we had a friendly converse as to the best mode of expounding Scripture, the plan which especially pleased you, seemed also to me the most entitled to approbation: we both thought that the chief excellency of an expounder consists in *lucid brevity*. And, indeed, since it is almost his only work to lay open the mind of the writer whom he undertakes to explain, the degree in which he leads away his readers from it, in that degree he goes astray from his purpose, and in a manner wanders from his own boundaries. Hence we expressed a hope, that from the number of those who strive at this day to advance the interest of theology by this kind of labour, some one would be found, who would study plainness, and endeavour to avoid the evil of tiring his readers with prolixity. I know at the same time that this view is not taken by all, and that those who judge otherwise have their reasons; but still I cannot be drawn away from the love of what is compendious. But as there is such a variety, found in the minds of men, that different things please different persons, let every one in this case follow his own judgment, provided that no one attempts to force others to adopt his own rules. Thus it will be, that we who approve of brevity, will not reject nor despise the labours of those who are more copious and diffused in their explanations of Scripture, and that they also in their turn will bear with us, though they may think us too compressed and concise.
 
@@ -191,13 +191,13 @@ But we ever find, that even those who have not been deficient in their zeal for 
 
 But as it becomes not me to decide or to pronounce any thing respecting myself, I willingly allow you this office; to whose judgment, since almost all in most things defer, I ought in everything to defer, inasmuch as you are intimately known to me by familiar intercourse; which is wont somewhat to diminish the esteem had for others, but does not a little increase yours, as is well known among al the learned. Farewell.
 
-*STRASBURGH, 18th October 1539.*
+<p style="margin-left:2em;" markdown="1">*STRASBURGH, 18th October 1539.*</p>
 
 <!-- PAGE 20 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">EPISTLE TO THE ROMANS.</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">EPISTLE TO THE ROMANS.</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ARGUMENT</span></p>
 
 WITH regard to the excellency of this Epistle, I know not whether it would be well for me to dwell long on the subject; for I fear, lest through my recommendations falling far short of what they ought to be, I should do nothing but obscure its merits: besides, the Epistle itself, at its very beginning, explains itself in a much better way than can be done by any words which I can use. It will then be better for me to pass on to the Argument, or the contents of the Epistle; and it will hence appear beyond all controversy, that besides other excellencies, and those remarkable, this can with truth be said of it, and it is what can never be sufficiently appreciated — that when any one gains a knowledge of this Epistle, he has an entrance opened to him to all the most hidden treasures of Scripture.
 
@@ -248,7 +248,7 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 <p style="text-align:center">COMMENTARIES ON THE</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE OF ST. PAUL TO THE ROMANS.</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF ST. PAUL TO THE ROMANS.</span></p>
 
 [^f1]: His original name was Wangler, but he Grecised it, as *Erasmus* had done, and as others did in that age.
 

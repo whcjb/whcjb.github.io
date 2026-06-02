@@ -7,9 +7,9 @@
 
 # COMMENTARY ON THE EPISTLE TO THE ROMANS
 
-*by John Calvin*
+<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BooksForTheAges </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 
 <p style="text-align:center">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
 
@@ -17,17 +17,17 @@
 
 <p style="text-align:center">COMMENTARIES ON THE</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE OF PAUL THE APOSTLE</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF PAUL THE APOSTLE</span></p>
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">TO THE ROMANS</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">TO THE ROMANS</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">BY JOHN CALVIN</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BY JOHN CALVIN</span></p>
 
 <p style="text-align:center">Translated And Edited By The Rev. John Owen,</p>
 
 <!-- PAGE 3 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">TRANSLATOR’S PREFACE</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">TRANSLATOR’S PREFACE</span></p>
 
 ON no portion of THE NEW TESTAMENT have so many COMMENTARIES been written as on THE EPISTLE TO THE ROMANS. We have indeed no separate Comment extant by any of the Fathers on this Epistle; though it has been explained, together with other parts of Scripture, by *Origen* in the third century; by *Jerome, Chrysostom,* and in part by *Augustine*, in the fourth; by *Theodoret* in the fifth; by *Œcumenius* in the tenth; and by *Theophylact* in the eleventh century. But since the Reformation, many separate Expositions have been published, beside a learned Introduction by *Luther*, and Notes or *Scholia* by *Zuingle* and *Melancthon*.
 
@@ -96,37 +96,37 @@ A more particular ANALYSIS may be thus given: —
 
 <span style="color:#800000">II. Justification,</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> A proof of its necessity — the sin and guilt of both Gentiles and Jews, *1:18-3:21*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> A proof of its necessity — the sin and guilt of both Gentiles and Jews, *1:18-3:21*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Its Nature and Character — Examples, Abraham and David, *3:21-4*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> Its Effects or Fruits — Peace and Fullness of Grace, 5.; Death unto Sin and Eternal Life, 6.; Immunity from The Law and The Reigning Power of Sin, *7.* Holiness, The Spirit’s help, Patience in Afflictions, Perseverance, *8.*</p>
 
 <span style="color:#800000">III. God’s Dealings Vindicated</span> —
 
-<p style="margin-left:2em;"><span style="color:#000080">l.</span> Election and Reprobation, 9.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">l.</span> Election and Reprobation, 9.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Unbelief and Faith, *10*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Unbelief and Faith, *10*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> The Rejection of the Jews, The Adoption of the Gentiles, The Restoration of the Jews, *11*.</p>
 
 <span style="color:#800000">IV Christian Duties</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> Devotedness to God, Proper Use of Gifts, Love, Doing Good, *12.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Obedience to Authority, Love to all, Purity, *13.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> Forbearance towards Weak Brethren, *14.*</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">4.</span> Help to the Weak, Unanimity, Christ the Savior of Jews and Gentiles, *15:1-13.*</p>
 
 <span style="color:#800000">V. Conclusion, —</span>
 
 <!-- PAGE 12 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> Paul’s Labours and Purpose to Visit Rome, *15:13*.</p>
 
-<p style="margin-left:2em;"><span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> Salutations, Avoiding Disturbers, Promise of Victory, Praise to God, *16*.</p>
 
 We have set before us in this Epistle especially two things, which it behoves us all rightly to understand — the righteousness of man and the righteousness of God — merit and grace, or salvation by works and salvation by faith. The light in which they are exhibited here is clearer and brighter than what we find in any other portion of Scripture, with the exception, perhaps, of the Epistle to the Galatians. Hence the great value which has in every age been attached to this Epistle by all really enlightened Christians; and hence also the strenuous efforts which have often been made to darken and wrest its meaning by men, though acute and learned, yet destitute of spiritual light. But let not the simple Christian conclude from the contrariety that is often found in the expositions on these two points, that there is no certainty in what is taught respecting them. There are no contrary views given of them by spiritually-minded men. Though on other subjects discussed here, such men have had their differences, yet on these they have ever been found unanimous: that salvation is from first to last by grace, and not by works, has ever been the conviction of really enlightened men in every age, however their opinion may have varied in other respects.
 
@@ -147,15 +147,15 @@ The only remedy, as means for this evil, is that which we find employed by Paul 
 
 It has not been deemed necessary to give in this Edition any specimens of title-pages, etc., from former Editions, either In Latin or in English; as they are to be found in the Old Translation already in the hands of the subscribers.
 
-*J. O.*
+<p style="margin-left:2em;" markdown="1">*J. O.*</p>
 
 <!-- PAGE 16 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE EPISTLE DEDICATORY</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE DEDICATORY</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN TO SIMON GRYNAEUS, [^f9]</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN TO SIMON GRYNAEUS,</span> <span style="color:#800000">[^f9]</span></p>
 
-<p style="text-align:center">AMAN WORTHY OF ALL HONOR</p>
+<p style="text-align:center">A MAN WORTHY OF ALL HONOR</p>
 
 I REMEMBER that when three years ago we had a friendly converse as to the best mode of expounding Scripture, the plan which especially pleased you, seemed also to me the most entitled to approbation: we both thought that the chief excellency of an expounder consists in *lucid brevity*. And, indeed, since it is almost his only work to lay open the mind of the writer whom he undertakes to explain, the degree in which he leads away his readers from it, in that degree he goes astray from his purpose, and in a manner wanders from his own boundaries. Hence we expressed a hope, that from the number of those who strive at this day to advance the interest of theology by this kind of labour, some one would be found, who would study plainness, and endeavour to avoid the evil of tiring his readers with prolixity. I know at the same time that this view is not taken by all, and that those who judge otherwise have their reasons; but still I cannot be drawn away from the love of what is compendious. But as there is such a variety, found in the minds of men, that different things please different persons, let every one in this case follow his own judgment, provided that no one attempts to force others to adopt his own rules. Thus it will be, that we who approve of brevity, will not reject nor despise the labours of those who are more copious and diffused in their explanations of Scripture, and that they also in their turn will bear with us, though they may think us too compressed and concise.
 
@@ -181,13 +181,13 @@ But we ever find, that even those who have not been deficient in their zeal for 
 
 But as it becomes not me to decide or to pronounce any thing respecting myself, I willingly allow you this office; to whose judgment, since almost all in most things defer, I ought in everything to defer, inasmuch as you are intimately known to me by familiar intercourse; which is wont somewhat to diminish the esteem had for others, but does not a little increase yours, as is well known among al the learned. Farewell.
 
-*STRASBURGH, 18th October 1539.*
+<p style="margin-left:2em;" markdown="1">*STRASBURGH, 18th October 1539.*</p>
 
 <!-- PAGE 20 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">EPISTLE TO THE ROMANS.</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">EPISTLE TO THE ROMANS.</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ARGUMENT</span></p>
 
 WITH regard to the excellency of this Epistle, I know not whether it would be well for me to dwell long on the subject; for I fear, lest through my recommendations falling far short of what they ought to be, I should do nothing but obscure its merits: besides, the Epistle itself, at its very beginning, explains itself in a much better way than can be done by any words which I can use. It will then be better for me to pass on to the Argument, or the contents of the Epistle; and it will hence appear beyond all controversy, that besides other excellencies, and those remarkable, this can with truth be said of it, and it is what can never be sufficiently appreciated — that when any one gains a knowledge of this Epistle, he has an entrance opened to him to all the most hidden treasures of Scripture.
 
@@ -238,7 +238,7 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 <p style="text-align:center">COMMENTARIES ON THE</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE OF ST. PAUL TO THE ROMANS.</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EPISTLE OF ST. PAUL TO THE ROMANS.</span></p>
 
 # CHAPTER 1
 
@@ -485,13 +485,13 @@ The madness then here noticed, is, that all attempted to make for themselves an 
 
 <!-- PAGE 56 -->
 
-<p style="margin-left:2em;">**30.** Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,</p>
+<p style="margin-left:2em;" markdown="1">**30.** Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,</p>
 
-<p style="margin-left:2em;">**30.** Obtrectatores, osores Dei, malefici, contumeliosi, fastuosi, repertores malorum, parentibus immorigeri, 31. Without understanding, covenant breakers, without natural affection, implacable, unmerciful:</p>
+<p style="margin-left:2em;" markdown="1">**30.** Obtrectatores, osores Dei, malefici, contumeliosi, fastuosi, repertores malorum, parentibus immorigeri, 31. Without understanding, covenant breakers, without natural affection, implacable, unmerciful:</p>
 
-<p style="margin-left:2em;">**31.** Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.</p>
+<p style="margin-left:2em;" markdown="1">**31.** Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.</p>
 
-<p style="margin-left:2em;">**32.** Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.</p>
+<p style="margin-left:2em;" markdown="1">**32.** Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.</p>
 
 **24.** <span style="color:#800000">*God therefore gave them up,*</span> etc. As impiety is a hidden evil, lest they should still find an evasion, he shows, by a more palpable demonstration, that, they cannot escape, but must be held fast by a just condemnation, since such fruits have followed this impiety as cannot be viewed otherwise than manifest evidences of the Lord’s wrath. As the Lord’s wrath is always just, it follows, that what has exposed them to condemnation, must have preceded it. By these evidences then he now proves the apostasy and defection of men: for the Lord indeed does so punish those, who alienate them selves from his goodness, that he casts them headlong into various courses which lead to perdition and ruin. And by comparing the vices, of which they were guilty, with the impiety, of which he had before accused them, he shows that they suffered punishment through the just judgment of God: for since nothing is dearer to us than our own honor, it is extreme blindness, when we fear not to bring disgrace on ourselves; and it is the most suitable punishment for a reproach done to the Divine Majesty. This is the very thing which he treats of to the end of the chapter; but he handles it in various ways, for the subject required ample illustration.
 
@@ -2341,9 +2341,9 @@ That they might at the same time remember whence this invincible power proceeds,
 
 </div>
 
-<p style="margin-left:2em;">**38.** Persuasus enim sum, quod neque mors, neque vita, <span style="color:#800000">[^f276]</span> neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.</p>
+<p style="margin-left:2em;" markdown="1">**38.** Persuasus enim sum, quod neque mors, neque vita, <span style="color:#800000">[^f276]</span> neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.</p>
 
-<p style="margin-left:2em;">**39.** Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.</p>
+<p style="margin-left:2em;" markdown="1">**39.** Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.</p>
 
 **38.** He is now carried away into hyperbolic expressions, that he might confirm us more fully in those things which are to be experienced. Whatever, he says, there is in life or in death, which seems capable of tearing us away from God, shall effect nothing; nay, the very angels, were they to attempt to overturn this foundation, shall do us no harm. It is no objection, that angels are ministering spirits, appointed for the salvation of the elect, (Hebrews 1:14:) for Paul reasons here on what is impossible, as he does in Galatians 1:8; and we may hence observe, that all things ought to be deemed of no worth, compared with the glory of God, since it is lawful to dishonor even angels in vindicating his truth. <span style="color:#800000">[^f277]</span>
 
@@ -3934,21 +3934,21 @@ By adding <span style="color:#800000">*that I may come to you*</span>, he intima
 
 <!-- PAGE 428 -->
 
-<p style="margin-left:2em;">**10.** Salute Apelies, approved in Christ. Salute them which are of Aristobulus’ household.</p>
+<p style="margin-left:2em;" markdown="1">**10.** Salute Apelies, approved in Christ. Salute them which are of Aristobulus’ household.</p>
 
-<p style="margin-left:2em;">**10.** Salutate Apellen, probatum in Christo. Salutate eos qui sunt ex Aristobuli familiaribns. 11. Salute Herodion my kinsman. Greet them that be of the household of Narcissus, which are in the Lord.</p>
+<p style="margin-left:2em;" markdown="1">**10.** Salutate Apellen, probatum in Christo. Salutate eos qui sunt ex Aristobuli familiaribns. 11. Salute Herodion my kinsman. Greet them that be of the household of Narcissus, which are in the Lord.</p>
 
-<p style="margin-left:2em;">**11.** Salutate Herodionem, cognatum meum. Salutate eos qui sunt ex Narcissi familiaribus, hos qui sunt in Domino. 12. Salute Tryphena and Tryphosa, who labor in the Lord. Salute the beloved Persis, which labored much in the Lord.</p>
+<p style="margin-left:2em;" markdown="1">**11.** Salutate Herodionem, cognatum meum. Salutate eos qui sunt ex Narcissi familiaribus, hos qui sunt in Domino. 12. Salute Tryphena and Tryphosa, who labor in the Lord. Salute the beloved Persis, which labored much in the Lord.</p>
 
-<p style="margin-left:2em;">**12.** Salutate Tryphsenam et Tryphosam, quae laborant in Domino. Salutate Persidem dilectam, quae multum laboravit in Domino. 13. Salute Rufus, chosen in the Lord, and his mother and mine.</p>
+<p style="margin-left:2em;" markdown="1">**12.** Salutate Tryphsenam et Tryphosam, quae laborant in Domino. Salutate Persidem dilectam, quae multum laboravit in Domino. 13. Salute Rufus, chosen in the Lord, and his mother and mine.</p>
 
-<p style="margin-left:2em;">**13.** Salutate Rufum electum in Domino et matrem illius ac meam. 14. Salute Asyneritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.</p>
+<p style="margin-left:2em;" markdown="1">**13.** Salutate Rufum electum in Domino et matrem illius ac meam. 14. Salute Asyneritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.</p>
 
-<p style="margin-left:2em;">**14.** Salutate Asynchritum, Phlegontem, Hermam, Patrobam, Mercurium, et qui cum his sunt fratres. 15. Salute Philologus, and Julia, Nereus, and his sister, and Olympas, and all the saints which are with them.</p>
+<p style="margin-left:2em;" markdown="1">**14.** Salutate Asynchritum, Phlegontem, Hermam, Patrobam, Mercurium, et qui cum his sunt fratres. 15. Salute Philologus, and Julia, Nereus, and his sister, and Olympas, and all the saints which are with them.</p>
 
-<p style="margin-left:2em;">**15.** Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.</p>
+<p style="margin-left:2em;" markdown="1">**15.** Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.</p>
 
-<p style="margin-left:2em;">**16.** Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.</p>
+<p style="margin-left:2em;" markdown="1">**16.** Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.</p>
 
 **1.** <span style="color:#800000">*I commend to you,*</span> *etc.* The greater part of this chapter is taken up with salutations; and as they contain no difficulties, it would be useless to dwell long on them. I shall only touch on those things which require some light by an explanation.
 
@@ -4032,17 +4032,17 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <p style="text-align:center">PRAISE FOR EVER TO</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ONLY WISE GOD:</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ONLY WISE GOD:</span></p>
 
 <p style="text-align:center">AMEN.</p>
 
 <!-- PAGE 440 -->
 
-<p style="text-align:center">ATRANSLATION OF</p>
+<p style="text-align:center">A TRANSLATION OF</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CALVIN’S VERSION OF</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CALVIN’S VERSION OF</span></p>
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE EPISTLE TO THE ROMANS.</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE TO THE ROMANS.</span></p>
 
 <span style="color:#800000">1</span> PAUL, a servant of Jesus Christ, a called Apostle, chosen for the gospel of God, <span style="color:#800000">2</span> Which he had before promised by his Prophets in the holy Scriptures,
 
@@ -4873,13 +4873,13 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <p style="text-align:center">Sent to the Romans, from Corinth, by Phoebe, a deaconess of the Cenchrean Church.</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">END OF THE NEW TRANSLATION</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">END OF THE NEW TRANSLATION</span></p>
 
 <!-- PAGE 476 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">FOOTNOTES</p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">FOOTNOTES</span></p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">TRANSLATOR’S PREFACE</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">TRANSLATOR’S PREFACE</span></p>
 
 [^f1]: His original name was Wangler, but he Grecised it, as *Erasmus* had done, and as others did in that age.
 
@@ -4899,7 +4899,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 [^f8]: Let it not be supposed, that by discrediting *some* things, we discredit every thing said by the Fathers. They ought to be treated as all other historians. What we find on examination to be unfounded, ought to be so viewed: and what we have every reason to believe to be true, ought to be so received. Even such a man as Dr. *Lardner* seemed unwilling to reject this tale, from fear of lessening the credit of history; evidently mistaking the ground on which history has a title to credit. The many authorities adduced respecting Peter being at Rome may be reduced almost to two — *Irenœus* and *Tertullian*. They were the first to stamp as it were a kind of authority on this report, and also on others to which no credit is given even by those who would have the Fathers to have been almost infallible. The learned Dr. *Copleston*, the present Bishop of Landaff, in his pamphlet on the Errors of Romanism, justly says, “It is even a matter of serious doubt whether St. Peter was ever at Rome. There is no good historical evidence of the fact; and there is much probability against it.” —P. 87.
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE EPISTLE DEDICATORY</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE EPISTLE DEDICATORY</span></p>
 
 [^f9]: The account given of *Grynæus* by *Watkins* in his Biographical Dictionary, taken from *Moreri*, is the following: — “ A learned German, born at Veringen, in Hohenzollern, in 1493. He studied at Vienna, after which he became Rector of the school at Baden, but was thrown into prison for espousing the Lutheran doctrines. However, he recovered his liberty, and went to Heidelberg, afterwards to Basil, and, in 1531, he visited England. 1536 he returned to Basil, and died there in 1540.” It is somewhat singular, that in the same year, 1540, another learned man of the same name, John James *Grynæus*, was born at Berne, and was educated at Basil, and became distinguished for his learning — *Ed.*
 
@@ -4963,7 +4963,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 [^f33]: The order of the words, as arranged by *Calvin*, is better than that of our version; he connects “always in my prayers,” or, “in all my prayers,” with “requesting.” The simpler rendering would be as follows: — <span style="color:#000080">9. My witness indeed is God, whom I serve With my spirit in the</span> <span style="color:#000080">gospel of his Son, that I unceasingly make mention of you, always</span> <span style="color:#000080">requesting in my prayers,</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">10. That by some means now at length I may, through the will of</span> <span style="color:#000080">God, have a free course to come to you.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">10. That by some means now at length I may, through the will of</span> <span style="color:#000080">God, have a free course to come to you.</span></p>
 
 “In the gospel,” may either mean “according to the gospel,” or, “in preaching the gospel.” *Hodge* prefers the first. The particle <span style="color:#0000d4">ei</span> clearly means “that” in this connection. That it is used in this sense in the New Testament there can be no doubt; see Acts 26:8, 23; Hebrews 7:15.
 
@@ -4975,7 +4975,7 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 <!-- PAGE 485 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">12. benefit, so that you may be strengthened: this also is what</span> <span style="color:#000080">*I*</span> <span style="color:#000080">*desire*</span><span style="color:#000080">, to be encouraged together with you, through the faith which</span> <span style="color:#000080">is in both, even in you and in me.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">12. benefit, so that you may be strengthened: this also is what</span> <span style="color:#000080">*I*</span> <span style="color:#000080">*desire*</span><span style="color:#000080">, to be encouraged together with you, through the faith which</span> <span style="color:#000080">is in both, even in you and in me.</span></p>
 
 *Grotius* observes, “<span style="color:#0000d4">ἐν ἀλλήλοις</span> impropriè dixit pro *in utrisque*, in me et vobis. Dixit sic et Demosthenes, <span style="color:#0000d4">ta πρὸς ἀλλήλοις</span> –*Ed*.
 
@@ -5063,17 +5063,17 @@ Though it is not agreed among the learned in what sense he calls the gospel a hi
 
 [^f67]: With regard to the construction of this passage, 6-10, it may be observed, that it is formed according to the mode of Hebrew parallelism, many instances of which we meet with even in the prose writings of the New Testament. None of the ancients, nor any of the moderns, before the time of Bishop *Lowth,* understood much of the peculiar character of the Hebrew style. All the anomalies, noticed by *Calvin,* instantly vanish, when the passage is so arranged, as to exhibit the correspondence of its different parts. It consists of two general portions; the first includes three verses,Romans 2:6, 7, and 8; the other, the remaining three verses. The same things are mainly included in both portions, only in the latter there are some things additional, and explanatory, and the order is reversed, so that the passage ends with what corresponds with its beginning. To see the whole in a connected form, it is necessary to set it down in lines, in the following manner — <span style="color:#000080">6. Who will render to each according to his works, —</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">7. To those indeed, who, by perseverance in well — doing, Seek</span> <span style="color:#000080">glory and honor and immortality, — Eternal life</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">7. To those indeed, who, by perseverance in well — doing, Seek</span> <span style="color:#000080">glory and honor and immortality, — Eternal life</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">8. But</span> <span style="color:#000080">*there shall be*</span> <span style="color:#000080">to them who are contentious And obey not</span> <span style="color:#000080">the truth, but obey iniquity, —Indignation and wrath: Then follow</span> <span style="color:#000080">the same things, the order being reversed —</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">8. But</span> <span style="color:#000080">*there shall be*</span> <span style="color:#000080">to them who are contentious And obey not</span> <span style="color:#000080">the truth, but obey iniquity, —Indignation and wrath: Then follow</span> <span style="color:#000080">the same things, the order being reversed —</span></p>
 
 <!-- PAGE 496 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">9. Distress and anguish</span> <span style="color:#000080">*shall be*</span> <span style="color:#000080">On every soul of man that worketh</span> <span style="color:#000080">evil, — On the Jew first, and then on the Greek;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">9. Distress and anguish</span> <span style="color:#000080">*shall be*</span> <span style="color:#000080">On every soul of man that worketh</span> <span style="color:#000080">evil, — On the Jew first, and then on the Greek;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">10. But glory and honor and peace, To every one who worketh</span> <span style="color:#000080">good, — To the Jew first and then to the Greek;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">10. But glory and honor and peace, To every one who worketh</span> <span style="color:#000080">good, — To the Jew first and then to the Greek;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">11. For there is no respect of persons with God.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">11. For there is no respect of persons with God.</span></p>
 
 The idea in the last and the first line is essentially the same. This repetition is for the sake of producing an impression. The character of the righteous, in the first part, is, that by persevering in doing good they seek glory, honor, and immortality, and their reward is to be eternal life: the character of the wicked is that of being contentious, disobedient to the truth, and obedient to unrighteousness, and their reward is to be indignation and wrath. The character of the first, in the second part. is, that they work good; and of the other, that they work evil: and the reward of the first is glory, honor, and peace, and the reward of the other, distress and anguish; which are the effects of indignation and wrath, as glory honor, and peace are the fruits or the constituent parts of eternal life It is to be observed that priority in happiness, as well as priority in misery, is ascribed to the Jew. — *Ed.*
 
@@ -5115,19 +5115,19 @@ The idea in the last and the first line is essentially the same. This repetition
 
 [^f82]: This clause, and those which follow, are commonly put in an interrogatory form, that is, as questions: but some, as *Theophylact, Erasmus* and *Luther,* have rendered the clauses in the form here adopted. There is no difference in the meaning. It is worthy of notice, that the Apostle, after the Hebrew manner, reverses the order as to the points he mentions; he, as it were, retrogrades, and begins to do so at Romans 2:21. The passage may be thus rendered, — <span style="color:#000080">17. Seeing then, thou art named a Jew, And reliest on the law, and</span> <span style="color:#000080">gloriest in God,</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">18. And knowest his will, And decernest things which differ, being</span> <span style="color:#000080">taught by the law,</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">18. And knowest his will, And decernest things which differ, being</span> <span style="color:#000080">taught by the law,</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">19. And art confident that thou art A leader to the blind, a light to</span> <span style="color:#000080">those in darkness,</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">19. And art confident that thou art A leader to the blind, a light to</span> <span style="color:#000080">those in darkness,</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">20. An instructor to the foolish, a teacher to babes, Having the</span> <span style="color:#000080">form of knowledge and of truth according to the law:</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">20. An instructor to the foolish, a teacher to babes, Having the</span> <span style="color:#000080">form of knowledge and of truth according to the law:</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">21. Yet thou, who teachest another, teachest not thyself,</span> <span style="color:#000080">Thou,</span> <span style="color:#000080">who preachest, “Steal not,” stealest,</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">21. Yet thou, who teachest another, teachest not thyself,</span> <span style="color:#000080">Thou,</span> <span style="color:#000080">who preachest, “Steal not,” stealest,</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">22. Thou, who sayest, “Commit no adultery,” committest</span> <span style="color:#000080">adultery,</span> <span style="color:#000080">Thou who detestest idols, committest sacrilege,</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">22. Thou, who sayest, “Commit no adultery,” committest</span> <span style="color:#000080">adultery,</span> <span style="color:#000080">Thou who detestest idols, committest sacrilege,</span></p>
 
 <!-- PAGE 501 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">23. Thou who gloriest in the law, by transgressing the law</span> <span style="color:#000080">dishonorest God; For the name of God, as it is written, is through</span> <span style="color:#000080">you blasphemed by the Gentiles.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">23. Thou who gloriest in the law, by transgressing the law</span> <span style="color:#000080">dishonorest God; For the name of God, as it is written, is through</span> <span style="color:#000080">you blasphemed by the Gentiles.</span></p>
 
 Romans 2:21, and part of the 22nd, refer to what is contained in
 
@@ -5159,7 +5159,7 @@ Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and R
 
 <!-- PAGE 505 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">4. (Against thee, against thee only have I sinned, and the evil before</span> <span style="color:#000080">thine eyes have I done,) That thou mightest be justified in thy</span> <span style="color:#000080">saying,</span> <span style="color:#000080">*And*</span> <span style="color:#000080">clear in thy judgment.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">4. (Against thee, against thee only have I sinned, and the evil before</span> <span style="color:#000080">thine eyes have I done,) That thou mightest be justified in thy</span> <span style="color:#000080">saying,</span> <span style="color:#000080">*And*</span> <span style="color:#000080">clear in thy judgment.</span></p>
 
 <p style="text-align:center">This is certainty more probable than what Vatablus and Houbigant propose, who connect the passage with the second verse, “Wash me thoroughly,” etc. But the sense given by Calvin is the most satisfactory — Ed.</p>
 
@@ -5409,23 +5409,23 @@ Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and R
 
 [^f181]: That the antitheses of this remarkable passage, from verse 12 to the end, may be more clearly seen, it shall be presented in lines. The contrast in Romans 5:12 and 20 will be found in the first and last line and in the second and the third; and as to all the other verses, in the first and the third line and in the second and the fourth, except Romans 5:13 and 14, which are an explanation of the 12th. The 17th includes the *two* ideas of the 15th and 16th, in an inverted order. The 18th and l9th contain the summing up of the argument, — <span style="color:#000080">12. For this reason, — as by one man sin entered into the world,</span> <span style="color:#000080">And death by sin, Even so death came upon all men, — Because all</span> <span style="color:#000080">had sinned:</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">13. Sin indeed was until the law in the world, But sin is not</span> <span style="color:#000080">imputed when there is no law;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">13. Sin indeed was until the law in the world, But sin is not</span> <span style="color:#000080">imputed when there is no law;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">14. Yet reign did death from Adam to Moses. Even over those who</span> <span style="color:#000080">had not sinned, After the likeness of the transgression of Adam,</span> <span style="color:#000080">Who is the type of him who was to come.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">14. Yet reign did death from Adam to Moses. Even over those who</span> <span style="color:#000080">had not sinned, After the likeness of the transgression of Adam,</span> <span style="color:#000080">Who is the type of him who was to come.</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">15. But not as the transgression, So also the free favor; For if</span> <span style="color:#000080">through the transgression of one Many died. Much more has God’s</span> <span style="color:#000080">grace, and his free gift through the grace of one man, Jesus Christ,</span> <span style="color:#000080">Abounded unto many:</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">15. But not as the transgression, So also the free favor; For if</span> <span style="color:#000080">through the transgression of one Many died. Much more has God’s</span> <span style="color:#000080">grace, and his free gift through the grace of one man, Jesus Christ,</span> <span style="color:#000080">Abounded unto many:</span></p>
 
 <!-- PAGE 539 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">16. And not as through one sin,</span> <span style="color:#000080">*So*</span> <span style="color:#000080">the free gift; For judgment was</span> <span style="color:#000080">indeed Through one sir to condemnation, But the free favor</span> <span style="color:#000080">*Is*</span> <span style="color:#000080">from</span> <span style="color:#000080">many transgressions to justification, —</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">16. And not as through one sin,</span> <span style="color:#000080">*So*</span> <span style="color:#000080">the free gift; For judgment was</span> <span style="color:#000080">indeed Through one sir to condemnation, But the free favor</span> <span style="color:#000080">*Is*</span> <span style="color:#000080">from</span> <span style="color:#000080">many transgressions to justification, —</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">17. For if for one transgression, Death reigned through one; Much</span> <span style="color:#000080">more shall they, who receive abundance of grace</span> <span style="color:#000080">and of the gift of</span> <span style="color:#000080">righteousness, Reign in life through one, Jesus Christ.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">17. For if for one transgression, Death reigned through one; Much</span> <span style="color:#000080">more shall they, who receive abundance of grace</span> <span style="color:#000080">and of the gift of</span> <span style="color:#000080">righteousness, Reign in life through one, Jesus Christ.</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">18. So then, as through one transgression,</span> <span style="color:#000080">*Judgment*</span> <span style="color:#000080">was on all men</span> <span style="color:#000080">to condemnation; So also through one righteousness,</span> <span style="color:#000080">*The free favor*</span> <span style="color:#000080">is on all men to justification of life:</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">18. So then, as through one transgression,</span> <span style="color:#000080">*Judgment*</span> <span style="color:#000080">was on all men</span> <span style="color:#000080">to condemnation; So also through one righteousness,</span> <span style="color:#000080">*The free favor*</span> <span style="color:#000080">is on all men to justification of life:</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">19. For as through the disobedience of one man, Sinful were made</span> <span style="color:#000080">many; So also through the obedience of one, Righteous shall be</span> <span style="color:#000080">made many.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">19. For as through the disobedience of one man, Sinful were made</span> <span style="color:#000080">many; So also through the obedience of one, Righteous shall be</span> <span style="color:#000080">made many.</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">20. But the law entered in, That multiplied might be transgression;</span> <span style="color:#000080">But where sin multiplied, Superabounded has grace: So that as sin</span> <span style="color:#000080">reigned Into death; So also grace shall reign through righteousness,</span> <span style="color:#000080">Into eternal life, through Jesus Christ our Lord. —</span> <span style="color:#000080">*Ed.*</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">20. But the law entered in, That multiplied might be transgression;</span> <span style="color:#000080">But where sin multiplied, Superabounded has grace: So that as sin</span> <span style="color:#000080">reigned Into death; So also grace shall reign through righteousness,</span> <span style="color:#000080">Into eternal life, through Jesus Christ our Lord. —</span> <span style="color:#000080">*Ed.*</span></p>
 
 [^f182]: This phrase, “died to sin,” is evidently misapprehended by *Haldane.* Having been offended, and justly so, by an unguarded and erroneous expression of *Stuart*, derived from *Chrysostom*, and by the false rendering of *Macknight*, he went to another extreme, and maintained, that to die, or to be dead to sin, means to be freed from its guilt, while the whole context proves, that it means deliverance from its power as a master, from the servitude or bondage of sin. To live in it, does not mean to live under its guilt, but in its service and under its ruling power; and this is what the Apostle represents as a contrast to being dead to sin. Not to “serve sin,” in Romans 6:6, is its true explanation. See also Romans 6:11, 12, and 14. The very argument requires this meaning. The question in the first verse, — Shall we continue in sin?” does not surely mean — shall we continue in or under the guilt of sin? but in its service, and in the practice of it. It was the chapter of practical licentiousness that the Apostle rebuts; and he employs an argument suitable to the purpose, “If we are dead to sin, freed from it as our master, how absurd it is to suppose that we can live any longer in its service?” Then be shows in what follows how this had been effected. This is clearly the import of the passage, and so taken by almost all commentators. But it must be added, that *Venema* and *Chalmers* materially agree with *Haldane.* The former says that to “die to sin” is to give to sin what it demands and that is, death; and that when this is given, it can require nothing more. In this sense, he adds, Christ died to sin (Romans 6:10); and in the same sense believers die to sin, being, as they are, united to Christ, his death being viewed as their death. However true this theology may be, (and *Chalmers* shows this in his own inimitable manner,) it does not seem to be taught here: though there may be something in one or two expressions to favor it; yet the whole tenor of the passage, and many of the phrase, seem clearly to constrain us to adopt the other view. — *Ed.*
 
@@ -5675,7 +5675,7 @@ Romans 19 and the 20th; and the latter part of the 22nd to the 18th verse; and R
 
 [^f270]: “Quis intentabit crimina — who shall chapter crimes <span style="color:#0000d4">τίς ἐγκαλέσει</span> <span style="color:#0000d4">κατὰ ἐκλεκτῶν Θεοῦ</span> — who shall implead, or bring a charge against the elect of God.?” See Acts 19:38. Many, such as *Augustine*, *Grotius*, *Locke*, *Doddridge*, and *Griesbach*, have made the next clause also a question; and also the clauses in the next verse. There is not much difference in the sense, but the passage will thus appear more striking, — <span style="color:#000080">33. Who will lay a charge against God’s elect? God the justifier?</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">34. Who is he who condemns? Christ who died, or rather who rose</span> <span style="color:#000080">again, who is also at God’s right hand, and who intercedes for us?</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">34. Who is he who condemns? Christ who died, or rather who rose</span> <span style="color:#000080">again, who is also at God’s right hand, and who intercedes for us?</span></p>
 
 What favors this construction is, that the Apostle proceeds in the same strain. — *Ed.*
 
@@ -5733,9 +5733,9 @@ What favors this construction is, that the Apostle proceeds in the same strain. 
 
 [^f289]: Here is a striking instance of a difficulty as to the construction, while the meaning of the whole passage is quite evident. The ellipsis has been variously supplied; “and not only *this,” i.e.,* what I have stated; “and not only he,” *i.e.,* Abraham to whom the first communication was made; “and not only *she,” i.e.,* Sarah, mentioned in the preceding’ verse; “but Rebecca also is another instance.” But it may be thus supplied, — “ and not only *so,” i.e.,* as to the word of promise; “but Rebecca also *had a word,”* or a message conveyed to her. That the verse has a distinct meaning in itself is evident, for the next begins with a <span style="color:#0000d4">γὰρ</span>, “for;” and to include Romans 9:11, in a parenthesis, seems by no means satisfactory. The three verses may be thus rendered, — <span style="color:#000080">10. And not only</span> <span style="color:#000080">*so,*</span> <span style="color:#000080">but Rebecca also</span> <span style="color:#000080">*received a message,*</span> <span style="color:#000080">when</span> <span style="color:#000080">she conceived by the first,</span> <span style="color:#000080">*(i.e.,*</span> <span style="color:#000080">son or seed,)even our father Isaac:</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">11. for they being not yet born, and having not done any good or</span> <span style="color:#000080">evil, that the purpose of God according to election might stand, not</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">11. for they being not yet born, and having not done any good or</span> <span style="color:#000080">evil, that the purpose of God according to election might stand, not</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">12. through works, but through him who calls, it was said to her,</span> <span style="color:#000080">“The elder shall serve the younger.”</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">12. through works, but through him who calls, it was said to her,</span> <span style="color:#000080">“The elder shall serve the younger.”</span></p>
 
 <!-- PAGE 583 -->
 
@@ -5785,9 +5785,9 @@ The words <span style="color:#0000d4">ἐξ ἑνὸς</span>, rendered commonly
 
 [^f304]: Critics have in various ways attempted to supply the ellipsis, but what is here proposed is most approved. *Beza* considered the corresponding clause to be at Romans 9:30, and viewed the intervening verses as parenthetic, “And if God,” etc., — “ What then shall we say?” *Grotius* subjoined, “Does God do any wrong?” *Elsnet,”* Has he not the power?” and *Wolfius*,” What canst, thou say against God?” *Stuart* proposes to repeat the question in Romans 9:20, “Who art thou?” etc. Some connect this verse with the question in Romans 9:20, and include the latter part of it and Romans 9:21 in a parenthesis. Whatever way may be adopted, the sense is materially the same. It has also been suggested that <span style="color:#0000d4">eij δὲ</span> is for <span style="color:#0000d4">είπερ,</span> *since, seeing,* 2 Thessalonians 1:6; 1 Peter 2:3. In this case no apodosis is necessary. But we may take <span style="color:#0000d4">eij</span> as meaning *since,* and <span style="color:#0000d4">δὲ</span> as an iliatire, and render the three verses thus, — <span style="color:#000080">22. “Since then God willed (or, it was God’s will) to show His</span> <span style="color:#000080">wrath and to make known his power, he endured with much</span> <span style="color:#000080">forbearance the vessels of wrath, fitted for destruction;</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">23. So</span> <span style="color:#000080">*he willed*</span> <span style="color:#000080">to make known the riches of his glory towards the</span> <span style="color:#000080">vessels of mercy, whom he has fore-prepared for glory,</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">23. So</span> <span style="color:#000080">*he willed*</span> <span style="color:#000080">to make known the riches of his glory towards the</span> <span style="color:#000080">vessels of mercy, whom he has fore-prepared for glory,</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">24. Even us, whom he has called not only front the Jews but also</span> <span style="color:#000080">from the Gentiles.”</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">24. Even us, whom he has called not only front the Jews but also</span> <span style="color:#000080">from the Gentiles.”</span></p>
 
 The verb <span style="color:#0000d4">ejsti</span>, or <span style="color:#0000d4">η̈ν</span>, is often understood after participles, especially in Hebrew; and <span style="color:#0000d4">καὶ</span> has the meaning of so in some instances, Matthew 6:10; Acts 7:51; Galatians 1:9; and in some cases, as *Schleusner* says, without being preceded by any particle of comparison, such as Matthew 12:26, and 1 John 2:27, 28; but <span style="color:#0000d4">eij</span>; here stands somewhat in that character.
 
@@ -5843,7 +5843,7 @@ The beginning of Romans 9:23 presents an anomaly, if, with *Stuart* and others, 
 
 [^f323]: “He puts ‘mouth’ before ‘heart,’” says *Pareus*, “for he follows the order in which they are given by Moses, and for this reason, because we know not faith otherwise than by profession.” This is one of the many instances both in the New and Old Testament, in which the most apparent act is mentioned first, and then the most hidden, or in which the deed is stated first, and then the principle from which it proceeds. See Romans 13:13; Romans15:13. And we have here another instance of the Apostle’s style; he reverses the order in Romans 10:10, mentioning faith first, and confession last. The two verses may be thus rendered, — <span style="color:#000080">9. That if thou wilt confess with thy mouth the Lord Jesus,</span> <span style="color:#000080">And believe in thine heart that God raised him from the dead,</span> <span style="color:#000080">Thou shalt be saved.</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">10. For with the heart we believe unto righteousness,</span> <span style="color:#000080">And with the mouth we confess unto salvation.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">10. For with the heart we believe unto righteousness,</span> <span style="color:#000080">And with the mouth we confess unto salvation.</span></p>
 
 He begins and ends with confession, and in the middle clauses he mentions faith. — *Ed.*
 
@@ -5917,7 +5917,7 @@ He begins and ends with confession, and in the middle clauses he mentions faith.
 
 <!-- PAGE 605 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">14. If I shall by any means excite to emulation my own flesh and</span> <span style="color:#000080">save some of them.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">14. If I shall by any means excite to emulation my own flesh and</span> <span style="color:#000080">save some of them.</span></p>
 
 The sentiment in the last clause is the same as that at the end of Romans 11:11. The *Vulgate*, and some of the Latin Fathers, and also *Luther*, read <span style="color:#0000d4">δοξάσω</span> in the future tense; which would make the passage read better, — “*that* I shall render,” etc. These two verses are not necessarily connected with the Apostle’s argument; for in the following verse he resumes the subject of Romans 11:12, or rather, as his usual manner is, he states the same thing in other words and in more explicit and stronger terms. So that the <span style="color:#0000d4">γὰρ</span> in the next verse may very properly be rendered “yea,” or as an illative, “then.” — *Ed.*
 
@@ -5983,11 +5983,11 @@ The sentiment in the last clause is the same as that at the end of Romans 11:11.
 
 <!-- PAGE 614 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">34. Who indeed hath known the Lord’s mind,</span> <span style="color:#000080">Or who has become his counselor?</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">34. Who indeed hath known the Lord’s mind,</span> <span style="color:#000080">Or who has become his counselor?</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">35. Or who has first given to him?</span> <span style="color:#000080">And it shall be repayed to him:</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">35. Or who has first given to him?</span> <span style="color:#000080">And it shall be repayed to him:</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">36. For from him and through him and to him</span> <span style="color:#000080">*are*</span> <span style="color:#000080">all things:</span> <span style="color:#000080">To him the glory for everse — Amen. —</span> <span style="color:#000080">*Ed.*</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">36. For from him and through him and to him</span> <span style="color:#000080">*are*</span> <span style="color:#000080">all things:</span> <span style="color:#000080">To him the glory for everse — Amen. —</span> <span style="color:#000080">*Ed.*</span></p>
 
 [^f372]: The words of this verse seem to have been taken literally from Isaiah 40:13, as given in the *Septuagint*. The Hebrew is in some measure different, but the words will admit of a rendering approaching nearer to the meaning here than what is presented in our version, as follows — <span style="color:#000080">*Who has weighed the spirit of Jehovah,*</span> <span style="color:#000080">*And,*</span> <span style="color:#000080">being</span> <span style="color:#000080">*a man of his counsel, has taught him?*</span> To “weigh the spirit” is to know it thoroughly: the same verb, <span style="color:#008080">ˆkt</span>, is used in this sense in Proverbs 16:2; Proverbs 24:12. It indeed means to compute by measure or by weight; so that it may be rendered “measure” as well as “weigh,” and if we adopt “measure,” it will then appear that to “know the mind of the Lord,” is to know the *extent* of his understanding or knowledge; an idea which remarkably Corresponds with the passage. — *Ed.*
 
@@ -6087,9 +6087,9 @@ The sentiment in the last clause is the same as that at the end of Romans 11:11.
 
 <!-- PAGE 627 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">12. believed: the night has advanced, and the day has approached;</span> <span style="color:#000080">let us then cast away the works of darkness, and let us put on the</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">12. believed: the night has advanced, and the day has approached;</span> <span style="color:#000080">let us then cast away the works of darkness, and let us put on the</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">13. armor of light; let us, as in the day, walk in a becoming manner,</span> <span style="color:#000080">etc. —</span> <span style="color:#000080">*Ed.*</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">13. armor of light; let us, as in the day, walk in a becoming manner,</span> <span style="color:#000080">etc. —</span> <span style="color:#000080">*Ed.*</span></p>
 
 [^f408]: The case is the same with the two preceding instances; the vice which seems to follow is placed first. Revelling is first mentioned, though drunkenness goes before it; and “chambering,” or concubinage, or indulgence in unlawful lusts is first stated, though lasciviousness or wantonness is the source from which it proceeds. It is an example of the Apostle’s mode of writing similar to what we find in Romans 11:29, as to “the gifts and calling of God,” and in verse 33, as to “the wisdom and knowledge of God.” — *Ed.*
 
@@ -6125,7 +6125,11 @@ The sentiment in the last clause is the same as that at the end of Romans 11:11.
 
 <!-- PAGE 631 -->
 
-[^f421]: The two words, <span style="color:#0000d4">πρόσκομμα</span> and <span style="color:#0000d4">σκάνδαλον</span>, mean nearly the same thing, but with this difference, that the first seems to be an hindrance or an obstacle which occasions stumbling or falling, and the other is an obstacle which stops or impedes progress in the way. See Matthew 16:23. The two parties, the strong and the weak, are here evidently addressed; the former was not, by eating, to put a stumblingblock in the way of the weak brother; nor was the weak, by condemning, to be a hindrance or impediment in the way of the strong so as to prevent him to advance in his course. Thus we see that forbearance is enjoined on both parties, though the Apostle afterwards dwells more on what the strong was to do. The clause might be thus rendered, — <span style="color:#000080">*“But rather judge it right to do this, —*</span> <span style="color:#000080">*not to lay before a brother a stumbling-stone, or an impediment.” —*</span> <span style="color:#000080">Ed.</span>
+[^f421]: The two words, <span style="color:#0000d4">πρόσκομμα</span> and <span style="color:#0000d4">σκάνδαλον</span>, mean nearly the same thing, but with this difference, that the first seems to be an hindrance or an obstacle which occasions stumbling or falling, and the other is an obstacle which stops or impedes progress in the way. See Matthew 16:23. The two parties, the strong and the weak, are here evidently addressed; the former was not, by eating, to put a stumblingblock in the way of the weak brother; nor was the weak, by condemning, to be a hindrance or impediment in the way of the strong so as to prevent him to advance in his course. Thus we see that forbearance is enjoined on both parties, though the Apostle afterwards dwells more on what the strong was to do.
+
+<p style="margin-left:2em;" markdown="1">The clause might be thus rendered, —</p>
+
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*“But rather judge it right to do this, —*</span> <span style="color:#000080">*not to lay before a brother a stumbling-stone, or an impediment.” —*</span> <span style="color:#000080">Ed.</span></p>
 
 [^f422]: “At the very time of giving forth the sentence, and on the highest of all authority, that there was nothing unclean of itself, he yet leaves others at liberty to esteem anything unclean. We are not sure if anywhere else in Scripture, the divine authority of toleration is so clearly manifested.” — *Chalmers.*
 
@@ -6179,7 +6183,7 @@ The sentiment in the last clause is the same as that at the end of Romans 11:11.
 
 [^f441]: The beginning of this verse, “Now I say,” *Dico autem,* <span style="color:#0000d4">Λέγω δὲ</span>, is read by *Beza* and *Grotius*, <span style="color:#0000d4">Λέγω γὰρ</span>, “For I say,” and *Griesbach* regards it of nearly equal authority. If we retain <span style="color:#0000d4">δὲ</span>, it may be rendered “moreover,” or “further;” and to render the clause more distinct, the word “this,” as proposed by *Beza* and *Pagninus*, may be added, — “I further say *this*,” etc. The two verses may be thus rendered, — <span style="color:#000080">8. I further say</span> <span style="color:#000080">*this*</span><span style="color:#000080">, that Christ became a minister of the</span> <span style="color:#000080">circumcision for the truth of God, that he might confirm the</span> <span style="color:#000080">promises</span> <span style="color:#000080">*made*</span> <span style="color:#000080">to</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">9. the fathers, and that the Gentiles might glorify God for</span> <span style="color:#000080">*his*</span> <span style="color:#000080">mercy, as it is written, “I will therefore confess thee among the</span> <span style="color:#000080">nations, and to thy name will I sing.”</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">9. the fathers, and that the Gentiles might glorify God for</span> <span style="color:#000080">*his*</span> <span style="color:#000080">mercy, as it is written, “I will therefore confess thee among the</span> <span style="color:#000080">nations, and to thy name will I sing.”</span></p>
 
 The reasons for this rendering are given in the next note. — *Ed.*
 
@@ -6287,25 +6291,25 @@ The reasons for this rendering are given in the next note. — *Ed.*
 
 <!-- PAGE 649 -->
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">TRANSLATION</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">TRANSLATION</span></p>
 
 [^f482]: Here is repeated in a different way what had been before stated, only the reference before was to the weakness of good, but here to the power of evil.
 
 [^f483]: To exhibit the meaning of this passage according to what is advanced in a note in pp. 306, 307, it shall be presented here in lines, — <span style="color:#000080">19. Truly the intent expectation of the creature Waits for the</span> <span style="color:#000080">revelation of the sons of God;</span>
 
-<p style="margin-left:2em;"><span style="color:#000080">20. For to vanity has the creature been subjected, not willingly, But</span> <span style="color:#000080">on his account who has subjected it in hope;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">20. For to vanity has the creature been subjected, not willingly, But</span> <span style="color:#000080">on his account who has subjected it in hope;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">21. For even the creature itself shall be freed from the bondage of</span> <span style="color:#000080">corruption, Into the glorious liberty of the sons of God;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">21. For even the creature itself shall be freed from the bondage of</span> <span style="color:#000080">corruption, Into the glorious liberty of the sons of God;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">22. For we know that every creature groans together, And together</span> <span style="color:#000080">travails in pain to this day:-</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">22. For we know that every creature groans together, And together</span> <span style="color:#000080">travails in pain to this day:-</span></p>
 
 <!-- PAGE 650 -->
 
-<p style="margin-left:2em;"><span style="color:#000080">23. And not only</span> <span style="color:#000080">*they,*</span> <span style="color:#000080">but we also ourselves, Who possess the</span> <span style="color:#000080">first-fruit of the Spirit, Even we ourselves groan within ourselves,</span> <span style="color:#000080">Anxiously waiting for</span> <span style="color:#000080">*our*</span> <span style="color:#000080">adoption, The redemption of our body;</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">23. And not only</span> <span style="color:#000080">*they,*</span> <span style="color:#000080">but we also ourselves, Who possess the</span> <span style="color:#000080">first-fruit of the Spirit, Even we ourselves groan within ourselves,</span> <span style="color:#000080">Anxiously waiting for</span> <span style="color:#000080">*our*</span> <span style="color:#000080">adoption, The redemption of our body;</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">24. For in hope are we saved, But hope seen is not hope; For what</span> <span style="color:#000080">one sees, why does he yet hope for it?</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">24. For in hope are we saved, But hope seen is not hope; For what</span> <span style="color:#000080">one sees, why does he yet hope for it?</span></p>
 
-<p style="margin-left:2em;"><span style="color:#000080">25. But if what we see not, we hope for, We wait for</span> <span style="color:#000080">*it*</span> <span style="color:#000080">in patience.</span></p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">25. But if what we see not, we hope for, We wait for</span> <span style="color:#000080">*it*</span> <span style="color:#000080">in patience.</span></p>
 
 We *may* indeed consider “every creature” in verse 22 as referring to every renewed creature then living, (except the Apostles and those endowed with the extraordinary gifts of the Spirit,) and all such from the beginning of the world. In this case, “to this day” has a striking import. All God’s servants from the beginning had been groaning under the body of sin, and not only they, but even?hose who had enjoyed the first outpouring of the Spirit, and had been endued with extraordinary gifts. The gifts of the Spirit, however abundant, did not free any from the bondage of corruption, from the body of sin; but this was an object of hope, for which they were to wait. The context, before and after, clearly shows that the present condition of God’s people is the subject. *— Ed.*
 
