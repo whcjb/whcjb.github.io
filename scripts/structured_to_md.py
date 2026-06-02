@@ -111,9 +111,16 @@ _AGES_ELISION = {
 
 
 def convert_ages_greek(text: str) -> str:
-    # Hide <verse>/</verse> markers from the Greek regex (the `<` would otherwise
+    # Hide <sty>/</sty> markers from the Greek regex (the `<` would otherwise
     # be consumed by the Greek-accent alternative as if it were a combining mark).
-    text = text.replace('<verse>', '\x00VS\x00').replace('</verse>', '\x00VE\x00')
+    # Replace each <sty c="..." i="..."> with a fixed-length placeholder to keep
+    # downstream regexes simple; restore at the end.
+    sty_opens = []
+    def _stash_open(m):
+        sty_opens.append(m.group(0))
+        return f'\x00S{len(sty_opens)-1:04d}\x00'
+    text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]">', _stash_open, text)
+    text = text.replace('</sty>', '\x00E\x00')
     def _repl(m):
         if m.group(1):
             return m.group(1)
@@ -144,7 +151,13 @@ def convert_ages_greek(text: str) -> str:
         r'\b(' + '|'.join(_AGES_ELISION) + r') j(?=\s+[ἀ-῿Ͱ-Ͽ])',
         _elision, text,
     )
-    return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
+    # Restore <sty> placeholders
+    def _restore_open(m):
+        idx = int(m.group(1))
+        return sty_opens[idx]
+    text = re.sub(r'\x00S(\d{4})\x00', _restore_open, text)
+    text = text.replace('\x00E\x00', '</sty>')
+    return text
 
 
 # ── Spaced-caps cleanup (B o o k s → Books) ──────────────────────────────
@@ -188,8 +201,10 @@ def normalize_fn_label(label: str) -> str:
 
 def format_inline(text: str) -> str:
     """Apply inline transformations: strip Ages markers, convert refs, Greek.
-    Leaves <verse>...</verse> tags intact for the caller to style."""
-    # Strip Ages scripture-code wrappers `[<NNNNNN>]` or `<NNNNNN>`
+    Leaves <sty>...</sty> tags intact for the caller to style."""
+    # Strip Ages scripture-code wrappers `[<NNNNNN>]` or `<NNNNNN>` — even when
+    # wrapped in a coloring <sty>...</sty> (PyMuPDF often colors the code).
+    text = re.sub(r'<sty\s[^>]*>\s*<(\d{6,7})>\s*</sty>', '', text)
     text = INLINE_REF_RE.sub('', text)
     # Bracketed footnote refs `[fN]` or `[FtN]` → `[^fN]`
     text = re.sub(r'\[([fF][tT]?\d+)\]', lambda m: f'[^{normalize_fn_label(m.group(1))}]', text)
@@ -206,31 +221,46 @@ def format_inline(text: str) -> str:
     return text
 
 
-def apply_verse_styling(body: str, red: bool) -> str:
-    """Convert `<verse>X</verse>` to `<span style="color:#800000">*X*</span>`
-    (red=True) or to plain markdown italic `*X*` (red=False).
+_STY_RE = re.compile(r'<sty c="([0-9a-fA-F]{6})" i="([01])">(.*?)</sty>', re.DOTALL)
 
-    CRITICAL: leading/trailing whitespace inside <verse> must be moved OUTSIDE
-    the italic wrap. Otherwise `<verse>X </verse>Y<verse> Z</verse>` renders
-    as `*X *Y* Z*` which kramdown sees as a closed italic touching letters
-    (no space between *X* and Y). We move spaces out so it becomes
-    `*X* Y *Z*` — proper word boundaries.
+
+def apply_verse_styling(body: str, red: bool = False) -> str:
+    """Convert `<sty c="rrggbb" i="0|1">X</sty>` to the appropriate rendering
+    based on the actual PDF color (not on paragraph context). The `red` arg is
+    ignored — kept for API compatibility with old call sites.
+
+    Color-to-render mapping:
+      #000000 + i=0 → plain text (drop wrapper)
+      #000000 + i=1 → markdown italic `*X*`
+      #800000 + i=1 → red italic `<span style="color:#800000">*X*</span>`
+      #800000 + i=0 → red plain `<span style="color:#800000">X</span>`
+      <other>  + i=1 → colored italic `<span style="color:#rrggbb">*X*</span>`
+      <other>  + i=0 → colored plain `<span style="color:#rrggbb">X</span>`
+
+    CRITICAL: leading/trailing whitespace inside <sty> must be moved OUTSIDE
+    the wrap (otherwise kramdown sees `*X *Y* Z*` as closed italic touching
+    letters with no word boundary).
     """
-    def _wrap(inner_text: str, red: bool) -> str:
-        if not inner_text.strip():
-            return inner_text  # whitespace-only; leave as-is
-        # Capture leading/trailing whitespace; move it outside the italic.
-        m = re.match(r'^(\s*)(.+?)(\s*)$', inner_text, re.DOTALL)
+    def _wrap(color_hex: str, italic: bool, inner: str) -> str:
+        if not inner.strip():
+            return inner
+        m = re.match(r'^(\s*)(.+?)(\s*)$', inner, re.DOTALL)
         lead, core, trail = m.group(1), m.group(2), m.group(3)
-        if len(core) < 2 and not red:
+        color_hex_lower = color_hex.lower()
+        is_black = color_hex_lower == '000000'
+        if is_black and not italic:
             return lead + core + trail
-        if red:
-            return f'{lead}<span style="color:#800000">*{core}*</span>{trail}'
-        return f'{lead}*{core}*{trail}'
+        if is_black and italic:
+            if len(core) < 2:
+                return lead + core + trail
+            return f'{lead}*{core}*{trail}'
+        # Non-black color → emit explicit span
+        rendered = f'*{core}*' if italic else core
+        return f'{lead}<span style="color:#{color_hex_lower}">{rendered}</span>{trail}'
     def _repl(m):
-        return _wrap(m.group(1), red)
-    body = re.sub(r'<verse>(.*?)</verse>', _repl, body, flags=re.DOTALL)
-    if red:
+        return _wrap(m.group(1), m.group(2) == '1', m.group(3))
+    body = _STY_RE.sub(_repl, body)
+    if True:
         # Merge consecutive red-italic spans separated only by whitespace
         body = re.sub(
             r'\*</span>(\s+)<span style="color:#800000">\*',
@@ -261,7 +291,7 @@ def _is_sentence_end(text: str) -> bool:
     if not t:
         return True
     # Strip trailing HTML close tags so "…end.</span>" counts as ending in "."
-    t2 = re.sub(r'(?:</[a-zA-Z]+>|</?verse>)+$', '', t)
+    t2 = re.sub(r'(?:</[a-zA-Z]+(?:\s[^>]*)?>|</?(?:verse|sty)(?:\s[^>]*)?>)+$', '', t)
     if not t2:
         return True
     return t2[-1] in '.?!:;"”\'’'  # incl. curly quotes
@@ -295,7 +325,8 @@ def _starts_with_continuation(line: str, prev_tail: str = '') -> bool:
     context-aware checks (e.g., capital after open-paren split bible ref)."""
     # Strip leading markdown bold/italic markers to peek at first real char
     s = re.sub(r'^(?:\*+|\s)+', '', line.lstrip())
-    # Also peek past leading <verse> or <span> open tag
+    # Also peek past leading <sty>, <verse>, or <span> open tag
+    s = re.sub(r'^<sty[^>]*>', '', s)
     s = re.sub(r'^<verse>', '', s)
     s = re.sub(r'^<span[^>]*>\*?', '', s)
     if not s:
@@ -517,7 +548,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
             cleaned = collapse_spaced_caps(content)
             cleaned = format_inline(cleaned)
             # Strip any <verse> wrappers in headings — they're noise.
-            cleaned = re.sub(r'</?verse>', '', cleaned)
+            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
             # H1 = chapter/section break → leave commentary mode
             in_commentary_section = False
             out.append('')
@@ -526,7 +557,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
         elif tag == 'H2':
             cleaned = collapse_spaced_caps(content)
             cleaned = format_inline(cleaned)
-            cleaned = re.sub(r'</?verse>', '', cleaned)
+            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
             out.append('')
             out.append(f'## {cleaned}')
             out.append('')
@@ -535,7 +566,11 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # (a) Scripture-section header: starts with <NNNNNN>BOOK N:M (alone on line)
             # (b) Footnote definition: starts with FtN or fN (alphanumeric label)
             # (c) Inline cross-reference: bare <NNNNNN>... (often closes a body sentence)
-            sec_m = SCRIPTURE_SECTION_RE.match(line.replace('[FOOTNOTE]', '').strip())
+            # Strip <sty> wraps before applying section-header regex (PyMuPDF
+            # often colors the <NNNNNN> Ages code separately so it ends up
+            # wrapped in <sty c="800000" i="0">...</sty>).
+            line_for_sec = re.sub(r'</?sty(?:\s[^>]*)?>', '', line)
+            sec_m = SCRIPTURE_SECTION_RE.match(line_for_sec.replace('[FOOTNOTE]', '').strip())
             if sec_m:
                 # Flush any pending scripture box, then prep next-scripture ref.
                 flush_scripture()
@@ -588,7 +623,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # styled <p> not as markdown H1/H2 to avoid TOC pollution and
             # heading-level fragmentation across the title block.
             cleaned = collapse_spaced_caps(format_inline(content))
-            cleaned = re.sub(r'</?verse>', '', cleaned)
+            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
             if cleaned.strip():
                 size_class = 'title-block-h1' if tag == 'CENTERED_H1' else 'title-block-h2'
                 font_size = '22px' if tag == 'CENTERED_H1' else '16px'
@@ -604,7 +639,9 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 stripped_content = content.lstrip()
                 anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', stripped_content))
                 starts_with_verse = bool(re.match(r'^\d+\s*\.\s+[A-Z]', stripped_content))
-                has_leading_italic = '<verse>' in stripped_content[:30]
+                # Commentary opens with italic verse-phrase marker (now <sty c="800000" i="1">).
+                # Scripture passage opens with plain `N. Capital`. Detect the marker presence.
+                has_leading_italic = bool(re.search(r'<sty\s+c="[0-9a-fA-F]{6}"\s+i="1">', stripped_content[:60]))
                 if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
                     body = format_inline(content)
                     body = apply_verse_styling(body, red=False)
@@ -613,7 +650,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     i += 1
                     continue
             cleaned = collapse_spaced_caps(format_inline(content))
-            cleaned = re.sub(r'</?verse>', '', cleaned)
+            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
             if cleaned.strip():
                 out.append('')
                 out.append(f'<p style="text-align:center">{cleaned}</p>')
@@ -631,7 +668,9 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 # The scripture passage in Ages PDF always starts with `N. Capital`
                 # plain text (no italic verse-phrase markup before commentary kicks in).
                 # Commentary starts with `N. <verse>...</verse>` (italic phrase).
-                has_leading_italic = '<verse>' in stripped_content[:30]
+                # Commentary opens with italic verse-phrase marker (now <sty c="800000" i="1">).
+                # Scripture passage opens with plain `N. Capital`. Detect the marker presence.
+                has_leading_italic = bool(re.search(r'<sty\s+c="[0-9a-fA-F]{6}"\s+i="1">', stripped_content[:60]))
                 if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
                     body = apply_verse_styling(body, red=False)
                     scripture_lines.append(body)

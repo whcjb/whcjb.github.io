@@ -2280,27 +2280,34 @@ def phil_dominant_class(line_spans):
 
 
 def _render_spans_with_italic(spans):
-    """Render a line of spans to text, wrapping italic runs with <verse>...</verse>.
+    """Render a line of spans, wrapping styled runs with `<sty c="..." i="0|1">…</sty>`.
 
-    Consecutive italic spans (flag & 2) are coalesced into a single <verse> wrap.
-    Used so the converter can later render commentary verse-phrases in red italic.
+    Captures BOTH italic flag (PyMuPDF flags & 2) AND span color (`s['color']`
+    as int). Default (black + non-italic) spans emit as plain text without wrap.
+    Consecutive same-style spans coalesce. The converter decides how to render
+    each (color, italic) combination — e.g. #800000 italic → red verse-phrase
+    span, #008080 → Hebrew teal, #0000d4 → title blue, etc.
     """
     parts = []
-    italic_open = False
+    open_style = None  # tuple (color_int, is_italic), or None
     for s in spans:
         text = s['text']
         if not text:
             continue
         is_italic = bool(s['flags'] & 2)
-        if is_italic and not italic_open:
-            parts.append('<verse>')
-            italic_open = True
-        elif not is_italic and italic_open:
-            parts.append('</verse>')
-            italic_open = False
+        color = s.get('color', 0)
+        # Plain black non-italic → no style wrap needed
+        style = (color, is_italic) if (color != 0 or is_italic) else None
+        if style != open_style:
+            if open_style is not None:
+                parts.append('</sty>')
+            if style is not None:
+                color_hex = f'{style[0]:06x}'
+                parts.append(f'<sty c="{color_hex}" i="{1 if style[1] else 0}">')
+            open_style = style
         parts.append(text)
-    if italic_open:
-        parts.append('</verse>')
+    if open_style is not None:
+        parts.append('</sty>')
     return ''.join(parts)
 
 
@@ -2396,7 +2403,8 @@ def phil_reconstruct_page(page, page_num=None):
             # Also demote H1/H2 → CENTERED_H1/CENTERED_H2 when centered AND NOT
             # a chapter heading ("CHAPTER N"). Chapter headings keep H1 so the
             # publish script's `^# CHAPTER (\d+)` regex still splits correctly.
-            stripped_text = full_text.strip()
+            # Strip any <sty>...</sty> wrap before testing the content.
+            stripped_text = re.sub(r'</?sty(?:\s[^>]*)?>', '', full_text).strip()
             is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text))
             if is_centered_block:
                 if line_class == 'BODY':
