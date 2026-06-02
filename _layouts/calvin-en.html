@@ -247,9 +247,11 @@ layout: default
   color: #0085a1;
   margin-bottom: 8px;
 }
-/* 多列章首经文（共观福音平行表） */
+/* 多列章首经文（共观福音平行表）—— 强制等宽 + 长词软断行，
+   保证窄屏下也是多列同时显示而非横向滑动 */
 .calvin-en-content .scripture-table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   margin: 0;
 }
@@ -258,6 +260,16 @@ layout: default
   border: 1px solid #888;
   padding: 8px 12px;
   vertical-align: top;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+/* 窄屏（≤640px）：缩小内边距与字号，避免溢出引发横向滚动 */
+@media (max-width: 640px) {
+  .calvin-en-content .scripture-table th,
+  .calvin-en-content .scripture-table td {
+    padding: 5px 6px;
+    font-size: 13px;
+  }
 }
 .calvin-en-content .scripture-table th {
   color: #0085a1;
