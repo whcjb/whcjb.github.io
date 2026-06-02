@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 14:59
+date: 2026-06-02 15:18
 next_section: 1
 next_label: "Chapter 1"
 ---

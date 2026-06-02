@@ -2343,6 +2343,14 @@ def phil_reconstruct_page(page, page_num=None):
     SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
     in_scripture_mode = False
     scripture_table_header = None
+    scripture_buffer = []  # accumulate English lines across scripture-mode blocks
+
+    def flush_scripture_buffer():
+        nonlocal scripture_buffer
+        if scripture_buffer:
+            joined = ' '.join(scripture_buffer)
+            output_lines.append(f'[BODY] {joined}')
+            scripture_buffer = []
 
     for block_idx, block in enumerate(blocks):
         if prev_block_y1 is not None and block['bbox'][1] - prev_block_y1 > 8:
@@ -2386,14 +2394,16 @@ def phil_reconstruct_page(page, page_num=None):
         # Decide whether to treat as scripture content
         treat_as_scripture = False
         if sec_match:
-            # Section header detected → enter scripture-mode for this block
+            # New section header → flush prior scripture buffer (if any) then enter mode
+            flush_scripture_buffer()
             in_scripture_mode = True
             treat_as_scripture = True
         elif in_scripture_mode:
             if is_bilingual_block or is_narrow_block:
                 treat_as_scripture = True
             else:
-                # Full-width block → commentary starts → exit scripture-mode
+                # Full-width block → commentary starts → flush & exit scripture-mode
+                flush_scripture_buffer()
                 in_scripture_mode = False
 
         if treat_as_scripture:
@@ -2414,14 +2424,17 @@ def phil_reconstruct_page(page, page_num=None):
                         line_rights.append(line)
                     else:
                         line_lefts.append(line)
+            # Accumulate ENGLISH lines into scripture_buffer; emit as a single
+            # [BODY] when scripture-mode exits (so ≥2 verse anchors in one
+            # paragraph triggers structured_to_md's scripture-box).
             for ln in line_lefts:
-                txt = _render_spans_with_italic(ln['spans'])
-                if txt.strip():
-                    output_lines.append(f'[TABLE_LEFT] {txt}')
-            for ln in line_rights:
-                txt = _render_spans_with_italic(ln['spans'])
-                if txt.strip():
-                    output_lines.append(f'[TABLE_RIGHT] {txt}')
+                txt = _render_spans_with_italic(ln['spans']).rstrip()
+                if not txt.strip():
+                    continue
+                if scripture_buffer and scripture_buffer[-1].endswith('-'):
+                    scripture_buffer[-1] = scripture_buffer[-1][:-1] + txt.lstrip()
+                else:
+                    scripture_buffer.append(txt)
             continue  # skip the rest of normal block processing
 
         # Centered block detection: symmetric left/right margins.
@@ -2553,6 +2566,8 @@ def phil_reconstruct_page(page, page_num=None):
         if merged.strip():
             output_lines.append(f'[{cur_cls}] {merged}')
 
+    # End of page — flush any pending scripture buffer
+    flush_scripture_buffer()
     return output_lines
 
 

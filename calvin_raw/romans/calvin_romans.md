@@ -229,35 +229,14 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 # CHAPTER 1
 
-## ROMANS 1:1-7
+<h2 class="scripture-anchor" id="romans-1-1-7" data-ref="ROMANS 1:1-7" style="display:none">ROMANS 1:1-7</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Paul, a servant of Jesus Christ,</td><td>1. Paulus, servus Iesu Christi,</td></tr>
-<tr><td>called to be an apostle, separated unto</td><td>vocatus Apostolus, selectus in</td></tr>
-<tr><td>the gospel of God,</td><td>Evangelium Dei,</td></tr>
-<tr><td>2. (Which he had promised afore by</td><td>2. Quod ante promiserat per</td></tr>
-<tr><td>his prophets in the holy scriptures,)</td><td>Prophetas suos in Scripturis</td></tr>
-<tr><td>3. Concerning his Son Jesus Christ</td><td>Sanctis,</td></tr>
-<tr><td>our Lord, which was made of the seed</td><td>3. De Filio suo, qui factus est è</td></tr>
-<tr><td>of David according to the flesh,</td><td>semine David secundum carnem,</td></tr>
-<tr><td>4. And declared to be the Son of God</td><td>4. Declaratus Filius Dei in</td></tr>
-<tr><td>with power, according to the spirit of</td><td>potentia, per Spiritum</td></tr>
-<tr><td>holiness, by the resurrection from the</td><td>sanctificationis, ex resurrectione</td></tr>
-<tr><td>dead:</td><td>mortuorum, Iesu Christo Domino</td></tr>
-<tr><td>5. By whom we have received grace</td><td>nostro:</td></tr>
-<tr><td>and apostleship, for obedience to the</td><td>5. Per quem accepimus gratiam et</td></tr>
-<tr><td>faith among all nations for his name;</td><td>Apostolatum, in obedientiam fidei</td></tr>
-<tr><td>6. Among whom are ye also the called</td><td>inter omnes gentes, pro nomine</td></tr>
-<tr><td>of Jesus Christ:</td><td>ipsius;</td></tr>
-<tr><td>7. To all that be in Rome, beloved of</td><td>6. Inter quas estis etiam vos, vocati</td></tr>
-<tr><td>God, called to be saints: Grace to you,</td><td>Iesu Christi:</td></tr>
-<tr><td>and peace, from God our Father, and</td><td>7. Omnibus qui Romæ estis,</td></tr>
-<tr><td>the Lord Jesus Christ.</td><td>dilectis Deo, vocatis sanctis: gratia</td></tr>
-<tr><td></td><td>vobis, et pax a Deo Patre nostro, et</td></tr>
-<tr><td></td><td>Domino Iesu Christo.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450101&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:1-7</span></p>
+
+<strong>1.</strong> Paul, a servant of Jesus Christ, called to be an apostle, separated unto the gospel of God, <strong>2.</strong> (Which he had promised afore by his prophets in the holy scriptures,) <strong>3.</strong> Concerning his Son Jesus Christ our Lord, which was made of the seed of David according to the flesh, <strong>4.</strong> And declared to be the Son of God with power, according to the spirit of holiness, by the resurrection from the dead: <strong>5.</strong> By whom we have received grace and apostleship, for obedience to the faith among all nations for his name; <strong>6.</strong> Among whom are ye also the called of Jesus Christ: <strong>7.</strong> To all that be in Rome, beloved of God, called to be saints: Grace to you, and peace, from God our Father, and the Lord Jesus Christ.
+
+</div>
 
 <!-- PAGE 29 -->
 
@@ -318,31 +297,14 @@ There are those who prefer to regard the word <span style="color:#800000">*peace
 
 <!-- PAGE 37 -->
 
-## ROMANS 1:8-12
+<h2 class="scripture-anchor" id="romans-1-8-12" data-ref="ROMANS 1:8-12" style="display:none">ROMANS 1:8-12</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>8. First, I thank my God through</td><td>8. Primum quidem gratias ago Deo</td></tr>
-<tr><td>Jesus Christ for you all, that your</td><td>meo per Iesum Christum super</td></tr>
-<tr><td>faith is spoken of throughout the</td><td>vobis omnibus, quia fides vestra</td></tr>
-<tr><td>whole world.</td><td>Prædicatur in universo mundo.</td></tr>
-<tr><td>9. For God is my witness, whom I</td><td>9. Testis enim mihi Deus, quem</td></tr>
-<tr><td>serve with my spirit in the gospel of</td><td>colo in spiritu meo in Evangelio</td></tr>
-<tr><td>his Son, that without ceasing I make</td><td>Filii ipsius, ut continenter</td></tr>
-<tr><td>mention of you always in my</td><td>memoriam vestri faciam;</td></tr>
-<tr><td>prayers;</td><td>10. Semper in orationibus meis,<sty c="800000" i="0"> [^f27]</sty></td></tr>
-<tr><td>10. Making request (if by any means</td><td>rogans, si quomodo prosperum iter</td></tr>
-<tr><td>now at length I might have a</td><td>aliquando mihi, obtingat per</td></tr>
-<tr><td>prosperous journey by the will of</td><td>voluntatem Dei, veniendi ad vos.</td></tr>
-<tr><td>God) to come unto you.</td><td>11. Desidero enim videre, vos, ut</td></tr>
-<tr><td>11. For I long to see you that I may</td><td>aliquod impertiar vobis donum</td></tr>
-<tr><td>impart unto you some spiritual gift,</td><td>spirituale ad vos confirmandos;</td></tr>
-<tr><td>to the end ye may be established;</td><td>12. Hoc est. ad cohortationem</td></tr>
-<tr><td>12. That is, that I may be comforted</td><td>mutuo percipiendam in vobis per</td></tr>
-<tr><td>together with you, by the mutual faith</td><td>Mutuam fidem, vestram atque</td></tr>
-<tr><td>both of you and me.</td><td>meam.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450108&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:8-12</span></p>
+
+<strong>8.</strong> First, I thank my God through Jesus Christ for you all, that your faith is spoken of throughout the whole world. <strong>9.</strong> For God is my witness, whom I serve with my spirit in the gospel of his Son, that without ceasing I make mention of you always in my prayers; <strong>10.</strong> Making request (if by any means now at length I might have a prosperous journey by the will of God) to come unto you. <strong>11.</strong> For I long to see you that I may impart unto you some spiritual gift, to the end ye may be established; <strong>12.</strong> That is, that I may be comforted together with you, by the mutual faith both of you and me.
+
+</div>
 
 <!-- PAGE 38 -->
 8<span style="color:#800000">*. I first*</span> <span style="color:#800000">[^f28]</span> <span style="color:#800000">*indeed*</span>, etc. Here the beginning commences, altogether adapted to the occasion, as he seasonably prepares them for receiving instruction by reasons connected with himself as well as with them. What he states respecting them is, the celebrity of their faith; for he intimates that they being honored with the public approbation of the churches, could not reject an Apostle of the Lord, without disappointing the good opinion entertained of them by all; and such a thing would have been extremely uncourteous and in a manner bordering on perfidy. As then this testimony justly induced the Apostle, by affording him an assurance of their obedience, to undertake, according to his office, to teach and instruct the Romans; so it held them bound not to despise his authority. With regard to himself, he disposes them to a teachable spirit by testifying his love towards them: and there is nothing more effectual in gaining credit to an adviser, than the impression that he is cordially anxious to consult our wellbeing.
@@ -393,24 +355,14 @@ See to what degree of modesty his pious heart submitted itself, so that he disda
 
 <!-- PAGE 43 -->
 
-## ROMANS 1:13-15
+<h2 class="scripture-anchor" id="romans-1-13-15" data-ref="ROMANS 1:13-15" style="display:none">ROMANS 1:13-15</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>13. Now I would not have you</td><td>13. Nolo verò vos ignorare, fratres,</td></tr>
-<tr><td>ignorant, brethren, that oftentimes I</td><td>quod sæpe proposui venire ad vos,</td></tr>
-<tr><td>purposed to come unto you, (but was</td><td>et impeditus sum hactenus,ut</td></tr>
-<tr><td>let hitherto,) that I might have some</td><td>fructum aliquem haberem in vobis,</td></tr>
-<tr><td>fruit among you also, even as among</td><td>sicut et in reliquis gentibus.</td></tr>
-<tr><td>other Gentiles.</td><td>14. Et Græcis et Barbaris et</td></tr>
-<tr><td>14. I am debtor both to the Greeks</td><td>sapientbus et stultis debitor sum.</td></tr>
-<tr><td>and to the Barbarians, both to the</td><td>15. Itaque quantum in me est,</td></tr>
-<tr><td>wise and to the unwise.</td><td>paratus sum vobis quoque qui</td></tr>
-<tr><td>15. So, as much as in me is, I am</td><td>Romae estis Evangelizare.</td></tr>
-<tr><td>ready to preach the gospel to you that</td><td></td></tr>
-<tr><td>are at Rome also.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450113&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:13-15</span></p>
+
+<strong>13.</strong> Now I would not have you ignorant, brethren, that oftentimes I purposed to come unto you, (but was let hitherto,) that I might have some fruit among you also, even as among other Gentiles. <strong>14.</strong> I am debtor both to the Greeks and to the Barbarians, both to the wise and to the unwise. <strong>15.</strong> So, as much as in me is, I am ready to preach the gospel to you that are at Rome also.
+
+</div>
 
 **13.** <span style="color:#800000">*I would not that you should be ignorant*</span>. What be has hitherto testified — that he continually requested of the Lord that he might visit them, might have appeared a vain thing, and could not have obtained credit, had he neglected to seize the occasion when offered: he therefore says, that the effort had not been wanting, but the opportunity; for he had been prevented from executing a purpose often formed.
 
@@ -435,21 +387,14 @@ and thus they will find here what they will be capable of enjoying. All teachers
 
 **15.** <span style="color:#800000">*I am therefore ready*</span>, <span style="color:#800000">[^f37]</span> etc. He concludes what he had before said of his desire — that as he knew it to be his duty to spread the gospel among them, in order to gather fruit for the Lord, he was anxious to fulfill God’s calling, as far as he was allowed to do so by the Lord.
 
-## ROMANS 1:16-17
+<h2 class="scripture-anchor" id="romans-1-16-17" data-ref="ROMANS 1:16-17" style="display:none">ROMANS 1:16-17</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>16. For I am not ashamed of the</td><td>16. Non enim pudet me</td></tr>
-<tr><td>gospel of Christ: for it is the</td><td>Evangelii Christi, quandoquidem</td></tr>
-<tr><td>power of God unto salvation to</td><td>potentia est Dei, in salutem</td></tr>
-<tr><td>every one that believeth, to the</td><td>omni credenti, Iudæoprimum,</td></tr>
-<tr><td>Jew first, and also to the Greek.</td><td>deinde Græco.</td></tr>
-<tr><td>17. For therein is the righteousness</td><td>17. Nam justitia Dei in eo</td></tr>
-<tr><td>of God revealed from faith to faith</td><td>revelatur ex fide in fidem, sicut</td></tr>
-<tr><td>as it is written, The just shall live</td><td>scriptum est, Justus ex fide sua</td></tr>
-<tr><td>by faith.</td><td>vivet.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450116&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:16-17</span></p>
+
+<strong>16.</strong> For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to every one that believeth, to the Jew first, and also to the Greek. <strong>17.</strong> For therein is the righteousness of God revealed from faith to faith as it is written, The just shall live by faith.
+
+</div>
 
 <!-- PAGE 46 -->
 **16.** <span style="color:#800000">*I am not indeed ashamed,*</span> etc. This is an anticipation of an objection; for he declares beforehand, that he cared not for the taunts of the ungodly; and he thus provides a way for himself, by which he proceeds to pronounce an eulogy on the value of the gospel, that it might not appear contemptible to the Romans. He indeed intimates that it was contemptible in the eyes of the world; and he does this by saying, that he was not ashamed of it. And thus he prepares them for bearing the reproach of the cross of Christ, lest they should esteem the gospel of less value by finding it exposed to the scoffs and reproaches of the ungodly; and, on the other hand, he shows how valuable it was to the faithful. If, in the first place, the power of God ought to be extolled by us, that power shines forth in the gospel; if, again, the goodness of God deserves to be sought and loved by us, the gospel is a display of his goodness. It ought then to be reverenced and honored, since veneration is due to God’s power; and as it avails to our salvation, it ought to be loved by us.
@@ -479,37 +424,14 @@ He does not indeed professedly handle this subject; and hence he makes no mentio
 
 We have now the principal point or the main hinge of the first part of this Epistle, — that we are justified by faith through the mercy of God alone. We have not this, indeed as yet distinctly expressed by Paul; but from his own words it will hereafter be made very clear — that the righteousness, which is grounded on faith, depends entirely on the mercy of God.
 
-## ROMANS 1:18-23
+<h2 class="scripture-anchor" id="romans-1-18-23" data-ref="ROMANS 1:18-23" style="display:none">ROMANS 1:18-23</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>18. For the wrath of God is revealed</td><td>18. Revelatur enim ira Dei e cœlo,</td></tr>
-<tr><td>from heaven against all ungodliness</td><td>super omnem impietatem et</td></tr>
-<tr><td>and unrighteousness of men, who</td><td>injustitiam hominum, veritatem</td></tr>
-<tr><td>hold the truth in unrighteousness;</td><td>Dei injuste continentium;</td></tr>
-<tr><td>19. Because that which may be</td><td>19. Quia quod cognoscitur de Deo</td></tr>
-<tr><td>known of God is manifest in them:</td><td>manifestum est in ipsis: Deus enim</td></tr>
-<tr><td>for God hath shewed it unto them.</td><td>illis manifestavit.</td></tr>
-<tr><td>20. For the invisible things of him</td><td>20. Si quidem invisibilia ipsius, ex</td></tr>
-<tr><td>from the creation of the world are</td><td>creatione mundi operibus intellecta,</td></tr>
-<tr><td>clearly seen, being understood by the</td><td>conspiciuntur, æterna quoque ejus</td></tr>
-<tr><td>things that are made, even his eternal</td><td>potentia, et divinitas; ut sint</td></tr>
-<tr><td>power and Godhead; so that they are</td><td>inexcusabiles.</td></tr>
-<tr><td>without excuse:</td><td>21. Quoniam quum Deum cogno</td></tr>
-<tr><td>21. Because that, when they knew</td><td>vissent, non tanquam Deo gloriam</td></tr>
-<tr><td>God, they glorified him not as God,</td><td>dederunt, aut grati fuerunt; exinaniti</td></tr>
-<tr><td>neither were thankful; but became</td><td>sunt in cogitationibus suis, et</td></tr>
-<tr><td>vain in their imaginations, and their</td><td>obtenebratum est stultum</td></tr>
-<tr><td>foolish heart was darkened.</td><td>coreorum.</td></tr>
-<tr><td>22. Professing themselves to be wise,</td><td>22. Quum se putarent sapientes,</td></tr>
-<tr><td>they became fools,</td><td>stulti facti sunt,</td></tr>
-<tr><td>23. And changed the glory of the</td><td>23. Et mutaverunt gloriam</td></tr>
-<tr><td>uncorruptible God into an image made</td><td>incorruptibilis Dei similitudine</td></tr>
-<tr><td>like to corruptible man, and to birds,</td><td>imaginis corruptibilis hominis, et</td></tr>
-<tr><td>and four-footed beasts, and creeping</td><td>volucrum, et quadrupedum, et</td></tr>
-<tr><td>things.</td><td>serpentum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450118&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:18-23</span></p>
+
+<strong>18.</strong> For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men, who hold the truth in unrighteousness; <strong>19.</strong> Because that which may be known of God is manifest in them: for God hath shewed it unto them. <strong>20.</strong> For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse: <strong>21.</strong> Because that, when they knew God, they glorified him not as God, neither were thankful; but became vain in their imaginations, and their foolish heart was darkened. <strong>22.</strong> Professing themselves to be wise, they became fools, <strong>23.</strong> And changed the glory of the uncorruptible God into an image made like to corruptible man, and to birds, and four-footed beasts, and creeping things.
+
+</div>
 
 <!-- PAGE 50 -->
 
@@ -539,43 +461,14 @@ Some make a difference between <span style="color:#800000">*impiety*</span> and 
 <!-- PAGE 55 -->
 The madness then here noticed, is, that all attempted to make for themselves an image of God; which was a certain proof that their notions of God were gross and absurd. And, first, they befouled the majesty of God by forming him in the likeness of <span style="color:#800000">*a corruptible man*</span>: for I prefer this rendering to that of *mortal man*, which is adopted by *Erasmus;* for Paul sets not the immortality of God in opposition to the mortality of man, but that glory, which is subject to no defects, to the most wretched condition of man. And then, being not satisfied with so great a crime, they descended even to beasts and to those of the most filthy kind; by which their stupidity appeared still more evident. You may see an account of these abominations in *Lactantius*, in *Eusebius,* and in *Augustine* in his book *on the city of God.*
 
-## ROMANS 1:24-32
+<h2 class="scripture-anchor" id="romans-1-24-32" data-ref="ROMANS 1:24-32" style="display:none">ROMANS 1:24-32</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>24. Wherefore God also gave them up</td><td>24. Propterea tradidit illos Deus in</td></tr>
-<tr><td>to uncleanness, through the lusts of</td><td>cupiditates cordium suorum in</td></tr>
-<tr><td>their own hearts, to dishonor their</td><td>immunditiem, ut ignominia</td></tr>
-<tr><td>own bodies between themselves:</td><td>afficerent corpora sua in seipsis:</td></tr>
-<tr><td>25. Who changed the truth of God</td><td>25. Qui transmutarunt veritatem</td></tr>
-<tr><td>into a lie, and worshipped and served</td><td>ejus in mendacium et coluerunt ac</td></tr>
-<tr><td>the creature more than the Creator,</td><td>venerati sunt creaturam supra,</td></tr>
-<tr><td>who is blessed for ever. Amen.</td><td>Creatorem, qui est benedictus in</td></tr>
-<tr><td>26. For this cause God gave them up</td><td>secula: Amen.</td></tr>
-<tr><td>unto vile affections: for even their</td><td>26. Propterea, inquam, tradidit illos</td></tr>
-<tr><td>women did change the natural use into</td><td>Deus in passiones ignominiosas: ac</td></tr>
-<tr><td>that which is against nature:</td><td>enim feminæ ipsorum</td></tr>
-<tr><td>27. And likewise also the men, leaving</td><td>transmutarunt natura- lem usum in</td></tr>
-<tr><td>the natural use of the woman, burned</td><td>eum qui est præter naturam:</td></tr>
-<tr><td>in their lust one toward another: men</td><td>27. Similiter et viri quoque, amisso</td></tr>
-<tr><td>with men working that which is</td><td>naturali usu feminæ, exarserunt</td></tr>
-<tr><td>unseemly, and receiving in themselves</td><td>mutua libidine, alii in alios; masculi</td></tr>
-<tr><td>that recompence of their error which</td><td>in masculis fœditatem per</td></tr>
-<tr><td>was meet.</td><td>petrantes et quam decebat erroris</td></tr>
-<tr><td>28. And even as they did not like to</td><td>sui mercedem in seipsis</td></tr>
-<tr><td>retain God in their knowledge, God</td><td>recipientes.</td></tr>
-<tr><td>gave them over to a reprobate mind,</td><td>28. Et quemadmodum non</td></tr>
-<tr><td>to do those things which are not</td><td>probaverunt Deum habere in</td></tr>
-<tr><td>convenient;</td><td>notitia, tradidit illos Deus in</td></tr>
-<tr><td>29. Being filled with all</td><td>reprobam mentem, ad facienda</td></tr>
-<tr><td>unrighteousness, fornication,</td><td>quæ non decerent;</td></tr>
-<tr><td>wickedness, covetousness,</td><td>29. Ut essent pleni omni injustitia,</td></tr>
-<tr><td>maliciousness; full of envy, murder,</td><td>nequitia, libidine, avaritia, malitia;</td></tr>
-<tr><td>debate, deceit, malignity; whisperers,</td><td>referti invidia, homicidio,</td></tr>
-<tr><td></td><td>contentione, dolo, perversitate;</td></tr>
-<tr><td></td><td>susurrones,</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450124&gt;</span><span class="book-name">Romans</span> <span class="verse-range">1:24-32</span></p>
+
+<strong>24.</strong> Wherefore God also gave them up to uncleanness, through the lusts of their own hearts, to dishonor their own bodies between themselves: <strong>25.</strong> Who changed the truth of God into a lie, and worshipped and served the creature more than the Creator, who is blessed for ever. Amen. <strong>26.</strong> For this cause God gave them up unto vile affections: for even their women did change the natural use into that which is against nature: <strong>27.</strong> And likewise also the men, leaving the natural use of the woman, burned in their lust one toward another: men with men working that which is unseemly, and receiving in themselves that recompence of their error which was meet. <strong>28.</strong> And even as they did not like to retain God in their knowledge, God gave them over to a reprobate mind, to do those things which are not convenient; <strong>29.</strong> Being filled with all unrighteousness, fornication, wickedness, covetousness, maliciousness; full of envy, murder, debate, deceit, malignity; whisperers,
+
+</div>
 
 <!-- PAGE 56 -->
 
@@ -632,22 +525,14 @@ For he who is ashamed is as yet healable; but when such an impudence is contract
 
 # CHAPTER 2
 
-## ROMANS 2:1-2
+<h2 class="scripture-anchor" id="romans-2-1-2" data-ref="ROMANS 2:1-2" style="display:none">ROMANS 2:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Therefore thou art inexcusable,</td><td>1. Propterea inexcusabilis es, O</td></tr>
-<tr><td>O man, whosoever thou art that</td><td>homo, quicunque judicas: in quo</td></tr>
-<tr><td>judgest: for wherein thou judgest</td><td>enim judicas alterum, teipsum</td></tr>
-<tr><td>another, thou condemnest thyself</td><td>condemnas; eadem enim facis</td></tr>
-<tr><td>for thou that judgest doest the</td><td>dum judicas.</td></tr>
-<tr><td>same things.</td><td>2. Novimus autem quod</td></tr>
-<tr><td>2. But we are sure that the</td><td>judicium Dei est secundum</td></tr>
-<tr><td>judgment of God is according to</td><td>veritatem in eos qui talia agunt.</td></tr>
-<tr><td>truth against them which commit</td><td></td></tr>
-<tr><td>such things.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450201&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:1-2</span></p>
+
+<strong>1.</strong> Therefore thou art inexcusable, O man, whosoever thou art that judgest: for wherein thou judgest another, thou condemnest thyself for thou that judgest doest the same things. <strong>2.</strong> But we are sure that the judgment of God is according to truth against them which commit such things.
+
+</div>
 
 This reproof is directed against hypocrites, who dazzle the eyes of men by displays of outward sanctity, and even think themselves to be accepted before God, as though they had given him full satisfaction. Hence Paul, after having stated the grosser vices, that he might prove that none are just before God, now attacks saintlings (*sanctulos*) of this kind, who could not have been included in the first catalogue. Now the inference is too simple and plain for any one to wonder how the Apostle derived his argument; for he makes them <span style="color:#800000">*inexcusable,*</span> because they themselves knew the judgment of God, and yet transgressed the law; as though he said, “Though thou consented not to the vices of others, and seemest to be avowedly even an enemy and a reprover of vices; yet as thou art not free from them, if thou really examinest thyself, thou canst not bring forward any defense.”
 
@@ -661,42 +546,14 @@ Moreover, <span style="color:#800000">*the truth*</span> of judgment will in two
 
 <!-- PAGE 64 -->
 
-## ROMANS 2:3-10
+<h2 class="scripture-anchor" id="romans-2-3-10" data-ref="ROMANS 2:3-10" style="display:none">ROMANS 2:3-10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. And thinkest thou this, o man, that</td><td>3. Existimas autem, O homo, qui</td></tr>
-<tr><td>judgest them which do such things,</td><td>judicas eos qui talia faciunt, et</td></tr>
-<tr><td>and doest the same, that thou shalt</td><td>eadem facis, quod ipse effugies</td></tr>
-<tr><td>escape the Judgment of God?</td><td>judicium Dei?</td></tr>
-<tr><td>4. Or despisest thou the riches of his</td><td>4. An divitias bonitatis ipsius</td></tr>
-<tr><td>goodness, and forbearance, and long-</td><td>tolerantiæque, ac lenitatis</td></tr>
-<tr><td>suffering;<sty c="800000" i="0"> [^f64] </sty>not knowing that the</td><td>contemnis; ignorans quod bonitas</td></tr>
-<tr><td>goodness of God leadeth thee to</td><td>Dei te ad pœnitentiam deducit?</td></tr>
-<tr><td>repentance?</td><td>5. Sed, juxta duritiam tuam, et cor</td></tr>
-<tr><td>5. But, after thy hardness and</td><td>pœnitere nescium, thesaurizas tibi</td></tr>
-<tr><td>impenitent heart, treasurest up unto</td><td>iram in diem irae et revelations justi</td></tr>
-<tr><td>thyself wrath against the day of wrath</td><td>judicii Dei;</td></tr>
-<tr><td>and revelation of the righteous</td><td>6. Qui redditurus est unicuique</td></tr>
-<tr><td>judgment of God;</td><td>secundam ipsius opera:</td></tr>
-<tr><td>6. Who will render to every man</td><td>7. Iis quidem, qui per boni operis</td></tr>
-<tr><td>according to his deeds:</td><td>perseverantiam, gloriam et</td></tr>
-<tr><td>7. To them who, by patient</td><td>honorem et immortalitatem</td></tr>
-<tr><td>continuance in well-doing, seek for</td><td>quærunt, vitam æternam;</td></tr>
-<tr><td>glory, and honor, and immortality,</td><td>8. Iis vero qui sunt contentiosi, ac</td></tr>
-<tr><td>eternal life;</td><td>veritati immorigeri, injustitiæ</td></tr>
-<tr><td>8. But unto them that are contentious,</td><td>autem obtemperant,</td></tr>
-<tr><td>and do not obey the truth, but obey</td><td>excandescentia, ira, tribulatio,</td></tr>
-<tr><td>unrighteousness, indignation and</td><td>9. Et anxietas in omnem animam</td></tr>
-<tr><td>wrath,</td><td>hominis perpetrantis malum, Iudæi</td></tr>
-<tr><td>9. Tribulation and anguish, upon</td><td>primum simul et Græci:</td></tr>
-<tr><td>every soul of man that doeth evil, of</td><td>10. At gloria et honor et pax omni</td></tr>
-<tr><td>the Jew first, and also of the Gentile:</td><td>operanti bonum, Iudæo primum</td></tr>
-<tr><td>10. But glory, honor, and peace, to</td><td>simul et Græco.</td></tr>
-<tr><td>every man that worketh good; to the</td><td></td></tr>
-<tr><td>Jew first, and also to the Gentile.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450203&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:3-10</span></p>
+
+<strong>3.</strong> And thinkest thou this, o man, that judgest them which do such things, and doest the same, that thou shalt escape the Judgment of God? <strong>4.</strong> Or despisest thou the riches of his goodness, and forbearance, and longsuffering; <span style="color:#800000">[^f64]</span> not knowing that the goodness of God leadeth thee to repentance? <strong>5.</strong> But, after thy hardness and impenitent heart, treasurest up unto thyself wrath against the day of wrath and revelation of the righteous judgment of God; <strong>6.</strong> Who will render to every man according to his deeds: <strong>7.</strong> To them who, by patient continuance in well-doing, seek for glory, and honor, and immortality, eternal life; <strong>8.</strong> But unto them that are contentious, and do not obey the truth, but obey unrighteousness, indignation and wrath, <strong>9.</strong> Tribulation and anguish, upon every soul of man that doeth evil, of the Jew first, and also of the Gentile: <strong>10.</strong> But glory, honor, and peace, to every man that worketh good; to the Jew first, and also to the Gentile.
+
+</div>
 
 <!-- PAGE 65 -->
 **3.** <span style="color:#800000">*And thinkest thou, O man,*</span> etc. As rhetoricians teach us, that we ought not to proceed to give strong reproof before the crime be proved, Paul may seem to some to have acted unwisely here for having passed so severe a censure, when he had not yet proved the accusation which he had brought forward. But the fact is otherwise; for he adduced not his accusation before men, but appealed to the judgment of conscience; and thus he deemed that proved which he had in view — that they could not deny their iniquity, if they examined themselves and submitted to the scrutiny of God’s tribunal. And it was not without urgent necessity, that he with so much sharpness and severity rebuked their fictitious sanctity; for men of this class will with astonishing security trust in themselves, except their vain confidence be forcibly shaken from them. Let us then remember, that this is the best mode of dealing with hypocrisy, in order to awaken it from its inebriety, that is, to draw it forth to the light of God’s judgment.
@@ -738,22 +595,14 @@ We may add, that though he might have briefly described, even in two words, the 
 
 <!-- PAGE 70 -->
 
-## ROMANS 2:11-13
+<h2 class="scripture-anchor" id="romans-2-11-13" data-ref="ROMANS 2:11-13" style="display:none">ROMANS 2:11-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. For there is no respect of persons</td><td>11. Siquidem non est acceptio</td></tr>
-<tr><td>with God.</td><td>personarum apud Deum.</td></tr>
-<tr><td>12. For as many as have sinned</td><td>12. Quicunque enim sine Lege</td></tr>
-<tr><td>without law, shall also perish without</td><td>peccaverunt sine Lege etiam</td></tr>
-<tr><td>law; and as many as have sinned in</td><td>peribunt; quicunque vero in Lege</td></tr>
-<tr><td>the law, shall be judged by the law;</td><td>peccaverunt per Legem</td></tr>
-<tr><td>13. (For not the hearers of the law are</td><td>judicabuntur.</td></tr>
-<tr><td>just before God, but the doers of the</td><td>13. Non enim Legis auditores justi</td></tr>
-<tr><td>law shall be justified.</td><td>sunt apud Deum, sed qui Legem</td></tr>
-<tr><td></td><td>faciunt justificabuntur.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450211&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:11-13</span></p>
+
+<strong>11.</strong> For there is no respect of persons with God. <strong>12.</strong> For as many as have sinned without law, shall also perish without law; and as many as have sinned in the law, shall be judged by the law; <strong>13.</strong> (For not the hearers of the law are just before God, but the doers of the law shall be justified.
+
+</div>
 
 **11.** <span style="color:#800000">*There is no respect of persons*</span>, etc. He has hitherto generally arraigned all mortals as guilty; but now he begins to bring home his accusation to the Jews and to the Gentiles separately: and at the same time he teaches us, that it is no objection that there is a difference between them, but that they are both without any distinction exposed to eternal death. The Gentiles pretended ignorance as their defense; the Jews gloried in the honor of having the law: from the former he takes away their subterfuge, and he deprives the latter of their false and empty boasting.
 
@@ -776,25 +625,14 @@ A worse condition then awaits the Jewish sinners, since their condemnation is al
 
 Apostle only urges here on the Jews what he had mentioned, the decision of the law, — That by the law they could not be justified, except they fulfilled the law, that if they transgressed it, a curse was instantly pronounced on them. Now we do not deny but that perfect righteousness is prescribed in the law: but as all are convicted of transgression, we say that another righteousness must be sought. Still more, we can prove from this passage that no one is justified by works; for if they alone are justified by the law who fulfill the law, it follows that no one is justified; for no one can be found who can boast of having fulfilled the law. <span style="color:#800000">[^f71]</span>
 
-## ROMANS 2:14-16
+<h2 class="scripture-anchor" id="romans-2-14-16" data-ref="ROMANS 2:14-16" style="display:none">ROMANS 2:14-16</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. For when the Gentiles, which</td><td>14. Quum enim Gentes, quæ</td></tr>
-<tr><td>have not the law, do by nature the</td><td>Legem non habent, natura quæ</td></tr>
-<tr><td>things contained in the law, these,</td><td>Legis sunt faciant, ipsæ, Legem</td></tr>
-<tr><td>having not the law, are a law unto</td><td>non habentes, sibi ipsæ sunt Lex:</td></tr>
-<tr><td>themselves:</td><td>15. Quæ ostendunt opus Legis</td></tr>
-<tr><td>15. Which shew the work of the law</td><td>scriptum in cordibus suis, simul</td></tr>
-<tr><td>written in their hearts, their</td><td>attestante ipsorum conscientia et</td></tr>
-<tr><td>conscience also bearing witness, and</td><td>cogitationibus inter se accusantibus</td></tr>
-<tr><td>their thoughts the mean while</td><td>aut etiam excusantibus,</td></tr>
-<tr><td>accusing or else excusing one another;</td><td>16. In die qua judicabit Deus</td></tr>
-<tr><td>16. In the day when God shall judge</td><td>occulta hominum, secundum</td></tr>
-<tr><td>the secrets of men by Jesus Christ,</td><td>Evangelium meum, per Iesum</td></tr>
-<tr><td>according to my gospel.</td><td>Christum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450214&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:14-16</span></p>
+
+<strong>14.</strong> For when the Gentiles, which have not the law, do by nature the things contained in the law, these, having not the law, are a law unto themselves: <strong>15.</strong> Which shew the work of the law written in their hearts, their conscience also bearing witness, and their thoughts the mean while accusing or else excusing one another; <strong>16.</strong> In the day when God shall judge the secrets of men by Jesus Christ, according to my gospel.
+
+</div>
 
 <!-- PAGE 73 -->
 **14.** <span style="color:#800000">*For when the Gentiles*</span>, etc. He now states what proves the former clause; for he did not think it enough to condemn us by mere assertion, and only to pronounce on us the just judgment of God; but he proceeds to prove this by reasons, in order to excite us to a greater desire for Christ, and to a greater love towards him. He indeed shows that ignorance is in vain pretended as an excuse by the Gentiles, since they prove by their own deeds that they have some rule of righteousness: for there is no nation so lost to every thing human, that it does not keep within the limits of some laws. Since then all nations, of themselves and without a monitor, are disposed to make laws for themselves, it is beyond all question evident that they have some notions of justice and rectitude, which the Greeks call preconceptions <span style="color:#0000d4">prolhyeiv</span>, and which are implanted by nature in the hearts of men. They have then a law, though they are without law: for though they have not a written law, they are yet by no means wholly destitute of the knowledge of what is right and just; as they could not otherwise distinguish between vice and virtue; the first of which their restrain by punishment, and the latter they commend, and manifest their approbation of it by honoring it with rewards. He sets nature in opposition to a written law, meaning that the Gentiles had the natural light of righteousness, which supplied the place of that law by which the Jews were instructed, so that they were a law to themselves. <span style="color:#800000">[^f72]</span> **15.** <span style="color:#800000">*Who show the work of the law*</span> <span style="color:#800000">[^f73]</span> <span style="color:#800000">*written,*</span> etc.; that is, they prove that there is imprinted on their hearts a discrimination and judgment by which they distinguish between what is just and unjust, between what is honest and dishonest. He means not that it was so engraven on their will, that they sought and diligently pursued it, but that they were so mastered by the power of truth, that they could not disapprove of it. For why did they institute religious rites, except that they were convinced that God ought to be worshipped? Why were they ashamed of adultery and theft, except that they deemed them evils?
@@ -821,40 +659,14 @@ He adds, <span style="color:#800000">*according to my gospel,*</span> intimating
 
 <!-- PAGE 76 -->
 
-## ROMANS 2:17-24
+<h2 class="scripture-anchor" id="romans-2-17-24" data-ref="ROMANS 2:17-24" style="display:none">ROMANS 2:17-24</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>17. Behold, thou art called a Jew, and</td><td>17. Ecce, tu Iudæus cognominaris,</td></tr>
-<tr><td>restest in the law, and makest thy</td><td>et acquiescis in Lege, et gloriaris in</td></tr>
-<tr><td>boast of God,</td><td>Deo,</td></tr>
-<tr><td>18. And knowest his will, and</td><td>18. Et nosti voluntatem, et probas</td></tr>
-<tr><td>approvest the things that are more</td><td>eximia, institutus ex Lege;</td></tr>
-<tr><td>excellent, being instructed out of the</td><td>19. Confidisque teipsum esse</td></tr>
-<tr><td>law;</td><td>ducem cæcorum, lumen eorum qui</td></tr>
-<tr><td>19. And art confident that thou</td><td>sunt in tenebris,</td></tr>
-<tr><td>thyself art a guide of the blind, a light</td><td>20. Eruditorem insipientium,</td></tr>
-<tr><td>of them which are in darkness,</td><td>doctorem imperitorum, habentem</td></tr>
-<tr><td>20. An instructer of the foolish, a</td><td>formam cognitionis ac veritatis in</td></tr>
-<tr><td>teacher of babes, which hast the form</td><td>Lege:</td></tr>
-<tr><td>of knowledge and of the truth in the</td><td>21. Qui igitur doces alterum,</td></tr>
-<tr><td>law.</td><td>teipsum non doces; qui</td></tr>
-<tr><td>21. Thou therefore which teachest</td><td>concionaris, non furandum, furaris;</td></tr>
-<tr><td>another, teachest thou not thyself?</td><td>22. Qui dicis, nom mœchandum,</td></tr>
-<tr><td>thou that preachest a man should not</td><td>mœcharis; qui detestaris idola,</td></tr>
-<tr><td>steal, dost thou steal?</td><td>Sacrilegium perpetras;</td></tr>
-<tr><td>22. Thou that sayest a man should</td><td>23. Qui de Lege gloriaris, Deum</td></tr>
-<tr><td>not commit adultery, dost thou</td><td>per Legis transgressionem</td></tr>
-<tr><td>commit adultery? thou that abhorrest</td><td>dehonestas:</td></tr>
-<tr><td>idols, dost thou commit sacrilege?</td><td>24. Nomen enim Dei propter vos</td></tr>
-<tr><td>23. Thou that makest thy boast of the</td><td>probro afficitur inter gentes,</td></tr>
-<tr><td>law, through breaking the law,</td><td>quemadmodum scriptum est.</td></tr>
-<tr><td>dishonorest thou God?</td><td></td></tr>
-<tr><td>24. For the name of God is</td><td></td></tr>
-<tr><td>blasphremed among the Gentiles</td><td></td></tr>
-<tr><td>through you, as it is written.<sty c="800000" i="0"> [^f76]</sty></td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450217&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:17-24</span></p>
+
+<strong>17.</strong> Behold, thou art called a Jew, and restest in the law, and makest thy boast of God, <strong>18.</strong> And knowest his will, and approvest the things that are more excellent, being instructed out of the law; <strong>19.</strong> And art confident that thou thyself art a guide of the blind, a light of them which are in darkness, <strong>20.</strong> An instructer of the foolish, a teacher of babes, which hast the form of knowledge and of the truth in the law. <strong>21.</strong> Thou therefore which teachest another, teachest thou not thyself? thou that preachest a man should not steal, dost thou steal? <strong>22.</strong> Thou that sayest a man should not commit adultery, dost thou commit adultery? thou that abhorrest idols, dost thou commit sacrilege? <strong>23.</strong> Thou that makest thy boast of the law, through breaking the law, dishonorest thou God? <strong>24.</strong> For the name of God is blasphremed among the Gentiles through you, as it is written. <span style="color:#800000">[^f76]</span>
+
+</div>
 
 <!-- PAGE 77 -->
 **17.** <span style="color:#800000">*Behold, thou art named a Jew*</span>, etc. Some old copies read <span style="color:#0000d4">eij δὲ</span>, <span style="color:#800000">*though indeed*</span>; which, were it generally received, would meet my approbation; but as the greater part of the manuscripts is opposed to it, and the sense is not unsuitable, I retain the old reading, especially as it is only a small difference of one letter. <span style="color:#800000">[^f77]</span>
@@ -885,33 +697,14 @@ Now we are here warned, first, not to flatter ourselves and to despise others, w
 <!-- PAGE 81 -->
 **24.** <span style="color:#800000">*For the name of God,*</span> etc. I think this quotation is taken from Ezekiel 36:20, rather than from Isaiah 52:5; for in Isaiah there are no reproofs given to the people, but that chapter in Ezekiel is full of reproofs. But some think that it is a proof from the less to the greater, according to this import, “Since the Prophet upbraided, not without cause, the Jews of his time, that on account of their captivity, the glory and power of God were ridiculed among the Gentiles, as though he could not have preserved the people, whom he had taken under his protection, much more are ye a disgrace and dishonor to God, whose religion, being judged of by your wicked life, is blasphemed.” This view I do not reject, but I prefer a simpler one, such as the following, — “We see that all the reproaches cast on the people of Israel do fall on the name of God; for as they are counted, and are said to be the people of God, his name is as it were engraven on their foreheads: it must hence be, that God, whose name they assume, is in a manner defamed by men, through their wicked conduct.” It was then a monstrous thing, that they who derived their glory from God should have disgraced his holy name; for it behoved them surely to requite him in a different manner. <span style="color:#800000">[^f84]</span>
 
-## ROMANS 2:25-29
+<h2 class="scripture-anchor" id="romans-2-25-29" data-ref="ROMANS 2:25-29" style="display:none">ROMANS 2:25-29</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>25. For circumcision verily profiteth,</td><td>25. Nam circumcisio quidem</td></tr>
-<tr><td>if thou keep the law: but if thou be a</td><td>prodest, si Legem observes; quod</td></tr>
-<tr><td>breaker of the law, thy circumcision is</td><td>si transgressor Legis fueris,</td></tr>
-<tr><td>made uncircumcision.</td><td>circumcisio tua in præputium versa</td></tr>
-<tr><td>26. Therefore, if the uncircumcision</td><td>est.</td></tr>
-<tr><td>keep the righteousness of the law,</td><td>26. Si ergo præputium justitias</td></tr>
-<tr><td>shall not his uncircumcision be</td><td>Legis servaverit, nonne præputium</td></tr>
-<tr><td>counted for circumcision?</td><td>ejus pro circumcisione consebitur?</td></tr>
-<tr><td>27. And shall not uncircumcision</td><td>27. Et judicabit quod ex natura est</td></tr>
-<tr><td>which is by nature, if it fulfill the law,</td><td>præputium (si Legem servaverit) te</td></tr>
-<tr><td>judge thee, who by the letter and</td><td>qui per literam et circumcisionem</td></tr>
-<tr><td>circumcision dost transgress the law?</td><td>transgressor es Legis?</td></tr>
-<tr><td>28. For he is not a Jew which is one</td><td>28. Non enim qui est in aperto</td></tr>
-<tr><td>outwardly; neither is that</td><td>Iudæus est; ne quæ in aperto est</td></tr>
-<tr><td>circumcision which is outward in the</td><td>circumcisio in carne, ea est</td></tr>
-<tr><td>flesh:</td><td>circumcisio:</td></tr>
-<tr><td>29. But he is a Jew which is one</td><td>29. Sed qui est in occulto Iudæus;</td></tr>
-<tr><td>inwardly: and circumcision is that of</td><td>et circumcisio cordis in spiritu non</td></tr>
-<tr><td>the heart, in the spirit, and not in the</td><td>litera; cujus laus non ex hominibus</td></tr>
-<tr><td>letter; whose praise is not of men, but</td><td>est sed ex Deo.</td></tr>
-<tr><td>of God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450225&gt;</span><span class="book-name">Romans</span> <span class="verse-range">2:25-29</span></p>
+
+<strong>25.</strong> For circumcision verily profiteth, if thou keep the law: but if thou be a breaker of the law, thy circumcision is made uncircumcision. <strong>26.</strong> Therefore, if the uncircumcision keep the righteousness of the law, shall not his uncircumcision be counted for circumcision? <strong>27.</strong> And shall not uncircumcision which is by nature, if it fulfill the law, judge thee, who by the letter and circumcision dost transgress the law? <strong>28.</strong> For he is not a Jew which is one outwardly; neither is that circumcision which is outward in the flesh: <strong>29.</strong> But he is a Jew which is one inwardly: and circumcision is that of the heart, in the spirit, and not in the letter; whose praise is not of men, but of God.
+
+</div>
 
 <!-- PAGE 82 -->
 **25.** <span style="color:#800000">*For circumcision indeed profits,*</span> etc. He dissipates by anticipation what the Jews might have objected in opposition to him in the defense of their own cause: for since circumcision was a symbol of the Lord’s covenant, by which he had chosen Abraham and his seed as his peculiar people, they seemed not to have gloried in vain; but as they neglected what the sign signified, and regarded only the outward form, he gives this answer — That they had no reason to lay claim to any thing on account of the bare sign. The true character of circumcision was a spiritual promise, which required faith: the Jews neglected both, the promise as well as faith. Then foolish was their confidence. Hence it is, that he omits to state here the main use of circumcision, and proceeds to expose their gross error, as he does in his Epistle to the Galatians. And this ought to be carefully noticed; for if he were explaining the whole character and design of circumcision, it would have been inconsistent in him not to have made mention of grace and free promise: but in both instances he spoke according to what the subject he had in hand required, and therefore he only discussed that part which was controverted.
@@ -938,18 +731,14 @@ It must be added — that no one ought anxiously to inquire what observers of th
 
 # CHAPTER 3
 
-## ROMANS 3:1-2
+<h2 class="scripture-anchor" id="romans-3-1-2" data-ref="ROMANS 3:1-2" style="display:none">ROMANS 3:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. What advantage<sty c="800000" i="0"> [^f87] </sty>then hath the</td><td>1. Quae igitur praerogativa</td></tr>
-<tr><td>Jew? or what profit is there of</td><td>Iudaei, aut quae utilitas</td></tr>
-<tr><td>circumcision?</td><td>circumcisionis?</td></tr>
-<tr><td>2. Much every way: chiefly, because</td><td>2. Multa per omnem modem; ac</td></tr>
-<tr><td>that unto them were committed the</td><td>primum quidem, quod illis credits</td></tr>
-<tr><td>oracles of God.</td><td>sunt oracula Dei.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450301&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:1-2</span></p>
+
+<strong>1.</strong> What advantage <span style="color:#800000">[^f87]</span> then hath the Jew? or what profit is there of circumcision? <strong>2.</strong> Much every way: chiefly, because that unto them were committed the oracles of God.
+
+</div>
 
 **1.** Though Paul has clearly proved that bare circumcision brought nothing to the Jews, yet since he could not deny but that there was some difference between the Gentiles and the Jesus, which by that symbol was sealed to them by the Lord, and since it was inconsistent to make a distinction, of which God was the author, void and of no moment, it remained for him to remove also this objection. It was indeed evident, that it was a foolish glorying in which the Jews on this account indulged; yet still a doubt remained as to the design of circumcision; for the Lord would not have appointed it had not some benefit been intended. He therefore, by way of an objection, asks, what it was that made the Jew superior to the Gentile; and he subjoins a reason for this by another question, <span style="color:#800000">*What is the benefit of circumcision*</span>? For this separated the Jews from the common class of men; it was a partition-wall, as Paul calls ceremonies, which kept parties asunder.
 
@@ -960,20 +749,14 @@ It must be added — that no one ought anxiously to inquire what observers of th
 
 Now the oracles were committed to them, for the purpose of preserving them as long as it pleased the Lord to continue his glory among them, and then of publishing them during the time of their stewardship through the whole world: they were first depositories, and secondly dispensers. But if this benefit was to be so highly esteemed when the Lord favored one nation only with the revelation of his word, we can never sufficiently reprobate our ingratitude, who receive his word with so much negligence or with so much carelessness, not to say disdain.
 
-## ROMANS 3:3-4
+<h2 class="scripture-anchor" id="romans-3-3-4" data-ref="ROMANS 3:3-4" style="display:none">ROMANS 3:3-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. For what if some did not believe?</td><td>3. Quid enigma si quidem fuerunt</td></tr>
-<tr><td>shall their unbelief make the faith of</td><td>increduli? num incredulitas eorum</td></tr>
-<tr><td>God without effect?</td><td>fidem Dei faciet irritam?</td></tr>
-<tr><td>4. God forbid: yea, let God be true,</td><td>4. Ne ita sit; quin sit Deus verax,</td></tr>
-<tr><td>but every man a liar; as it is written,</td><td>omnis autem homo mendax;</td></tr>
-<tr><td>That thou mightest be justified in thy</td><td>quemadmodum scriptum est, ut</td></tr>
-<tr><td>sayings, and mightest overcome when</td><td>justificeris in sermonibus tuis, et</td></tr>
-<tr><td>thou art judged.</td><td>vincas quum judicaris.<sty c="800000" i="0"> [^f90]</sty></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450303&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:3-4</span></p>
+
+<strong>3.</strong> For what if some did not believe? shall their unbelief make the faith of God without effect? <strong>4.</strong> God forbid: yea, let God be true, but every man a liar; as it is written, That thou mightest be justified in thy sayings, and mightest overcome when thou art judged.
+
+</div>
 
 <!-- PAGE 88 -->
 
@@ -995,28 +778,14 @@ The application then of this passage is the following: Since all the sins of mor
 
 <!-- PAGE 91 -->
 
-## ROMANS 3:5-8
+<h2 class="scripture-anchor" id="romans-3-5-8" data-ref="ROMANS 3:5-8" style="display:none">ROMANS 3:5-8</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. But if our unrighteousness</td><td>5. Quod si injustitia nostra Dei</td></tr>
-<tr><td>commend the righteousness of God,</td><td>justitiam commendat, quid</td></tr>
-<tr><td>what shall we say? Is God</td><td>dicemus? num injustus est Deus</td></tr>
-<tr><td>unrighteous who taketh vengeance? (I</td><td>qui infert iram? Secundum</td></tr>
-<tr><td>speak as a man)</td><td>hominem dico.</td></tr>
-<tr><td>6. God forbid: for then how shall God</td><td>6. Ne ita sit: nam quomodo</td></tr>
-<tr><td>judge the world?</td><td>judicabit Deus mundum?</td></tr>
-<tr><td>7. For if the truth of God hath more</td><td>7. Si enim veritas Dei per meum</td></tr>
-<tr><td>abounded through my lie unto his</td><td>mendacium excelluit in ejus</td></tr>
-<tr><td>glory; why yet am I also judged as a</td><td>gloriam; quid etiammum et ego</td></tr>
-<tr><td>sinner?</td><td>velut peccator judicor;</td></tr>
-<tr><td>8. And not rather, (as we be</td><td>8. Et non (quemadmodum</td></tr>
-<tr><td>slanderously reported, and as some</td><td>exprobratur nobis, et</td></tr>
-<tr><td>affirm that we say,) Let us do evil,</td><td>quemadmodum aiunt quidam nos</td></tr>
-<tr><td>that good may come? whose</td><td>dicere) Faciamus mala, ut veniant</td></tr>
-<tr><td>damnation is just.</td><td>bona? quorum judicium justum est.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450305&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:5-8</span></p>
+
+<strong>5.</strong> But if our unrighteousness commend the righteousness of God, what shall we say? Is God unrighteous who taketh vengeance? (I speak as a man) <strong>6.</strong> God forbid: for then how shall God judge the world? <strong>7.</strong> For if the truth of God hath more abounded through my lie unto his glory; why yet am I also judged as a sinner? <strong>8.</strong> And not rather, (as we be slanderously reported, and as some affirm that we say,) Let us do evil, that good may come? whose damnation is just.
+
+</div>
 
 <!-- PAGE 92 -->
 **5.** <span style="color:#800000">*But if our unrighteousness,*</span> etc. Though this is a digression from the main subject, it was yet necessary for the Apostle to introduce it, lest he should seem to give to the ill-disposed an occasion to speak evil, which he knew would be readily laid hold on by them. For since they were watching for every opportunity to defame the gospel, they had, in the testimony of David, what they might have taken for the purpose of founding a calumny, — “If God seeks nothing else, but to be glorified by men, why does he punish them, when they offend, since by offending they glorify him? Without cause then surely is he offended, if he derives the reason of his displeasure from that by which he is glorified.” There is, indeed, no doubt, but that this was an ordinary, and everywhere a common calumny, as it will presently appear. Hence Paul could not have covertly passed it by; but that no one should think that he expressed the sentiments of his own mind, he premises that he assumes the person of the ungodly; and at the same time, he sharply, touches, by a single expression, on human reason; whose work, as he intimates, is ever to bark against the wisdom of God; for he says not, “according to the ungodly,” but “according to man,” or as man. And thus indeed it is, for all the mysteries of God are paradoxes to the flesh: and at the same tine it possesses so much audacity, that it fears not to oppose them and insolently to assail what it cannot comprehend. We are hence reminded, that if we desire to become capable of understanding them, we must especially labor to become freed from our own reason, (*proprio sensu*) and to give up ourselves, and unreservedly to submit to his word. — The word *wrath,* taken here for judgment, refers to punishment; as though he said, “Is God unjust, who punishes those sins which set forth his righteousness?”
@@ -1042,50 +811,23 @@ For though there are found among men unjust judges, yet this happens, because th
 
 <!-- PAGE 95 -->
 
-## ROMANS 3:9
+<h2 class="scripture-anchor" id="romans-3-9" data-ref="ROMANS 3:9" style="display:none">ROMANS 3:9</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>9. What then? are we better <sty c="000000" i="1">than</sty></td><td>9. Quid ergo? præcellimus?<sty c="800000" i="0"> [^f95]</sty></td></tr>
-<tr><td><sty c="000000" i="1">they?</sty> No, in no wise: for we have</td><td>Nequaquam: ante enim</td></tr>
-<tr><td>before proved both Jews and</td><td>constituimus tam Judæos quam</td></tr>
-<tr><td>Gentiles, that they are all under</td><td>Græcos, omnes sub peccato esse.</td></tr>
-<tr><td>sin.</td><td></td></tr>
-</tbody>
-</table>
+**9.** What then? are we better *than they?* No, in no wise: for we have before proved both Jews and Gentiles, that they are all under sin.
 
 **9.** <span style="color:#800000">*What then?*</span> He returns from his digression to his subject. For lest the Jews should object that they were deprived of their right, as he had mentioned those distinctions of honor, for which they thought themselves superior to the Gentiles, he now at length replies to the question — in what respect they excelled the Gentiles. And though his answer seems in appearance to militate against what he had said before, (for he now strips those of all dignity to whom he had attributed so much,) there is yet no discord; for those privileges in which he allowed them to be eminent, were separate from themselves, and dependent on God’s goodness, and not on their own merit: but here he makes inquiry as to their own worthiness, whether they could glory in any respect in themselves. Hence the two answers he gives so agree together, that the one follows from the other; for while he extols their privileges, by including them among the free benefits of God, he shows that they had nothing of their own. Hence, what he now answers might have been easily inferred; for since it was their chief superiority, that God’s oracles were deposited with them, and they had it not through their own merit, there was nothing left for them, on account of which they could glory before God. Now mark the holy contrivance (*sanctum artificium*) which he adopts; for when he ascribes pre-eminency to them, he speaks in the third person; but when he strips them of all things, he puts himself among them, that he might avoid giving offense.
 
 <!-- PAGE 96 -->
 <span style="color:#800000">*For we have before brought a charge*</span>, etc. The Greek verb which Paul adopts, <span style="color:#0000d4">αἰτιάσθαι</span> is properly a forensic term; and I have therefore preferred to render it, “We have brought a charge;” <span style="color:#800000">[^f96]</span> for an accuser in an action is said to charge a crime, which he is prepared to substantiate by testimonies and other proofs. Now the Apostle had summoned all mankind universally before the tribunal of God, that he might include all under the same condemnation: and it is to no purpose for any one to object, and say that the Apostle here not only brings a charge, but more especially proves it; for a charge is not true except it depends on solid and strong evidences, according to what *Cicero* says, who, in a certain place, distinguishes between a charge and a slander. We must add, that to be under sin means that we are justly condemned as sinners before God, or that we are held under the curse which is due to sin; for as righteousness brings with it absolution, so sin is followed by condemnation.
 
-## ROMANS 3:10-18
+<h2 class="scripture-anchor" id="romans-3-10-18" data-ref="ROMANS 3:10-18" style="display:none">ROMANS 3:10-18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>10. As it is written, There is none</td><td>10. Sicut scriptum, Quod non est</td></tr>
-<tr><td>righteous, no, not one:</td><td>justus quisquam, ne unus quidem;</td></tr>
-<tr><td>11. There is none that understandeth,</td><td>11. Non est intelligens, non est qui</td></tr>
-<tr><td>there is none that seeketh after God.</td><td>requirat Deum;</td></tr>
-<tr><td>12. They are all gone out of the way,</td><td>12. Omnes declinarunt, simul facti</td></tr>
-<tr><td>they are together become</td><td>sunt inutiles; non est qui exerceat</td></tr>
-<tr><td>unprofitable; there is none that doeth</td><td>benignitatem, ne ad unum quidem:</td></tr>
-<tr><td>good, no, not one.</td><td>13. Sepulchrum apertum guttur</td></tr>
-<tr><td>13. Their throat is an open sepulchre:</td><td>eorum; linguis dolose egerunt:</td></tr>
-<tr><td>with their tongues they have used</td><td>venenum aspidum sub labiis</td></tr>
-<tr><td>deceit: the poison of asps is under</td><td>eorum:</td></tr>
-<tr><td>their lips:</td><td>14. Quorum os execratione et</td></tr>
-<tr><td>14. Whose mouth is full of cursing</td><td>amarulentia plenum:</td></tr>
-<tr><td>and bitterness:</td><td>15. Veloces pedes eorum ad</td></tr>
-<tr><td>15. Their feet are swift to shed blood:</td><td>effundendum sanguinem;</td></tr>
-<tr><td>16. Destruction and misery are in</td><td>16. Contritio et calamitas in viis</td></tr>
-<tr><td>their ways:</td><td>eorum;</td></tr>
-<tr><td>17. And the way of peace have they</td><td>17. Et viam pacis non noverunt:</td></tr>
-<tr><td>not known:</td><td>18. Non est timor Dei præ oculis</td></tr>
-<tr><td>18. There is no fear of God before</td><td>eorum.<sty c="800000" i="0"> [^f97]</sty></td></tr>
-<tr><td>their eyes.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450310&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:10-18</span></p>
+
+<strong>10.</strong> As it is written, There is none righteous, no, not one: <strong>11.</strong> There is none that understandeth, there is none that seeketh after God. <strong>12.</strong> They are all gone out of the way, they are together become unprofitable; there is none that doeth good, no, not one. <strong>13.</strong> Their throat is an open sepulchre: with their tongues they have used deceit: the poison of asps is under their lips: <strong>14.</strong> Whose mouth is full of cursing and bitterness: <strong>15.</strong> Their feet are swift to shed blood: <strong>16.</strong> Destruction and misery are in their ways: <strong>17.</strong> And the way of peace have they not known: <strong>18.</strong> There is no fear of God before their eyes.
+
+</div>
 
 **10.** <span style="color:#800000">*As it is written*</span>, etc. He has hitherto used proofs or arguments to convince men of their iniquity; he now begins to reason from authority;
 
@@ -1110,22 +852,14 @@ and it is to Christians the strongest kind of proof, when authority is derived f
 <!-- PAGE 99 -->
 And that these testimonies may not seem to any one to have been unfitly produced, let us consider each of them in connection with the passages from which they have been taken. David says in Psalm 14:1, that there was such perverseness in men, that God, when looking on them all in their different conditions, could not find a righteous man, no, not one. It then follows, that this evil pervaded mankind universally; for nothing is hid from the sight of God. He speaks indeed at the end of the Psalm of the redemption of Israel: but we shall presently show how men become holy, and how far they are exempt from this condition. In the other Psalms he speaks of the treachery of his enemies, while he was exhibiting in himself and in his descendants a type of the kingdom of Christ: hence we have in his adversaries the representatives of all those, who being alienated from Christ, are not led by his Spirit. Isaiah expressly mentions Israel; and therefore his charge applies with still greater force against the Gentiles. What, then? There is no doubt but that the character of men is described in those words, in order that we may see what man is when left to himself; for Scripture testifies that all men are in this state, who are not regenerated by the grace of God. The condition of the saints would be nothing better, were not this depravity corrected in them: and that they may still remember that they differ nothing from others by nature, they do find in the relics of their flesh (by which they are always encompassed) the seeds of those evils, which would constantly produce fruits, were they not prevented by being mortified; and for this mortification they are indebted to God’s mercy and not to their own nature. We may add, that though all the vices here enumerated are not found conspicuously in every individual, yet they may be justly and truly ascribed to human nature, as we have already observed on Romans 1:26.
 
-## ROMANS 3:19-20
+<h2 class="scripture-anchor" id="romans-3-19-20" data-ref="ROMANS 3:19-20" style="display:none">ROMANS 3:19-20</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. Now we know, that what</td><td>19. Scimus autem quod</td></tr>
-<tr><td>things soever the law saith, it saith</td><td>quæcunque Lex dicit, iis qui in</td></tr>
-<tr><td>to them who are under the law,</td><td>Lege sunt loquitur; ut omne os</td></tr>
-<tr><td>that every mouth may be stopped,</td><td>obstruatur, et obnoxius fiat</td></tr>
-<tr><td>and all the world may become</td><td>omnis mundus Deo.<sty c="800000" i="0"> [^f104]</sty></td></tr>
-<tr><td>guilty before God.</td><td>20. Quoniam ex operibus Legis</td></tr>
-<tr><td>20. Therefore by the deeds of the</td><td>non justificabitur omnis caro</td></tr>
-<tr><td>law there shall no flesh be justified</td><td>coram ipso; per Legem enim</td></tr>
-<tr><td>in his sight: for by the law <sty c="000000" i="1">is</sty> the</td><td>agnitio peccati.</td></tr>
-<tr><td>knowledge of sin.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450319&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:19-20</span></p>
+
+<strong>19.</strong> Now we know, that what things soever the law saith, it saith to them who are under the law, that every mouth may be stopped, and all the world may become guilty before God. <strong>20.</strong> Therefore by the deeds of the law there shall no flesh be justified in his sight: for by the law *is* the knowledge of sin.
+
+</div>
 
 <!-- PAGE 100 -->
 **19.** <span style="color:#800000">*Now we know*</span>, etc. Leaving the Gentiles, he distinctly addresses his words to the Jews; for he had a much more difficult work in subduing them, because they, though no less destitute of true righteousness than the Gentiles, yet covered themselves with the cloak of God’s covenant, as though it was a sufficient holiness to them to have been separated from the rest of the world by the election of God. And he indeed mentions those evasions which he well understood the Jews were ready to bring forward; for whatever was said in the law unfavorably of mankind, they usually applied to the Gentiles, as though they were exempt from the common condition of men, and no doubt they would have been so, had they not fallen from their own dignity. Hence, that no false conceit as to their own worthiness should be a hinderance to them, and that they might not confine to the Gentiles alone what applied to them in common with others, Paul here anticipates them, and shows, from what Scripture declares, that they were not only blended with the multitude, but that condemnation was peculiarly denounced on them. And we indeed see the discretion of the Apostle in undertaking to refute these objections; for to whom but to the Jews had the law been given, and to whose instruction but theirs ought it to have served? What then it states respecting others is as it were accidental; or as they say, parergon, an appendage; but it applies its teaching mainly to its own disciples.
@@ -1143,20 +877,14 @@ But we contend, not without reason, that Paul speaks here of the whole law; for 
 
 <span style="color:#800000">*For by the law*</span>, etc. He reasons from what is of an opposite character, — that righteousness is not brought to us by the law, because it convinces us of sin and condemns us; for life and death proceed not from the same fountain. And as he reasons from the contrary effect of the law, that it cannot confer righteousness on us, let us know, that the argument does not otherwise hold good, except we hold this as an inseparable and unvarying circumstance, — that by showing to man his sin, it cuts off the hope of salvation. It is indeed by itself, as it teaches us what righteousness is, the way to salvation: but our depravity and corruption prevent it from being in this respect of any advantage to us. It is also necessary in the second place to add this, — that whosoever is found to be a sinner, is deprived of righteousness; for to devise with the sophisters a half kind of righteousness, so that works in part justify, is frivolous: but nothing is in this respect gained, on account of man’s corruption.
 
-## ROMANS 3:21-22
+<h2 class="scripture-anchor" id="romans-3-21-22" data-ref="ROMANS 3:21-22" style="display:none">ROMANS 3:21-22</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>21. But now the righteousness of</td><td>21. Nunc autem sine Lege</td></tr>
-<tr><td>God without the law<sty c="800000" i="0"> [^f109] </sty>is</td><td>justitia Dei manifesto est,</td></tr>
-<tr><td>manifested, being witnessed by the</td><td>testimonio comprobata Legis et</td></tr>
-<tr><td>law and the prophets;</td><td>prophetarum;</td></tr>
-<tr><td>22. Even the righteousness of God</td><td>22. Justitia, inquam, Dei per</td></tr>
-<tr><td><sty c="000000" i="1">which is</sty> by faith of Jesus Christ</td><td>fidem Iesu Christi, in omnes et</td></tr>
-<tr><td>unto all and upon all them that</td><td>super omnes credentes; non est</td></tr>
-<tr><td>believe; for there is no difference:</td><td>sanè distinctio:</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450321&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:21-22</span></p>
+
+<strong>21.</strong> But now the righteousness of God without the law <span style="color:#800000">[^f109]</span> is manifested, being witnessed by the law and the prophets; <strong>22.</strong> Even the righteousness of God *which is* by faith of Jesus Christ unto all and upon all them that believe; for there is no difference:
+
+</div>
 
 <!-- PAGE 103 -->
 **21.** <span style="color:#800000">*But now without the law*</span>, etc. It is not certain for what distinct reason he calls that the righteousness of God, which we obtain by faith; whether it be, because it can alone stand before God, or because the Lord in his mercy confers it on us. As both interpretations are suitable, we contend for neither. This righteousness then, which God communicates to man, and accepts alone, and owns as righteousness, has been revealed, he says, <span style="color:#800000">*without the law*</span>, that is without the aid of the law; and the law is to be understood as meaning works; for it is not proper to refer this to its teaching, which he immediately adduces as bearing witness to the gratuitous righteousness of faith. Some confine it to ceremonies; but this view I shall presently show to be unsound and frigid. We ought then to know, that the merits of works are excluded. We also see that he blends not works with the mercy of God; but having taken away and wholly removed all confidence in works, he sets up mercy alone.
@@ -1185,27 +913,14 @@ When therefore we discuss this subject, we ought to proceed in this way: *First,
 
 <!-- PAGE 107 -->
 
-## ROMANS 3:23-26
+<h2 class="scripture-anchor" id="romans-3-23-26" data-ref="ROMANS 3:23-26" style="display:none">ROMANS 3:23-26</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>23. For all have sinned, and come</td><td>23. Omnes enim peccaverunt, et</td></tr>
-<tr><td>short of the glory of God:</td><td>destituuntur gloria Dei;</td></tr>
-<tr><td>24. Being justified freely by his grace,</td><td>24. Justificati gratis ipsius gratia</td></tr>
-<tr><td>through the redemption that is in</td><td>per redemptionem quæ est in</td></tr>
-<tr><td>Christ Jesus;</td><td>Christo lesu:</td></tr>
-<tr><td>25. Whom God hath set forth to be a</td><td>25. Quem proposuit Deus</td></tr>
-<tr><td>propitiation through faith in his</td><td>propitiatorium per fidem in</td></tr>
-<tr><td>blood, to declare his righteousness for</td><td>sanguine ipsius, in</td></tr>
-<tr><td>the remission of sins that are past,</td><td>demonstrationem justitiæ suæ,</td></tr>
-<tr><td>through the forbearance of God;</td><td>propter remissionem delictorum,</td></tr>
-<tr><td>26. To declare, I say, at this time his</td><td>26. Quæ prius extiterunt in</td></tr>
-<tr><td>righteousness; that he might be just,</td><td>tolerantia Dei; ad demonstrationem</td></tr>
-<tr><td>and the justifier of him which</td><td>justitiae suae, in hoc tempore; ut sit</td></tr>
-<tr><td>believeth in Jesus.</td><td>ipse justus et Justificans enum qui</td></tr>
-<tr><td></td><td>est ex fide Iesu.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450323&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:23-26</span></p>
+
+<strong>23.</strong> For all have sinned, and come short of the glory of God: <strong>24.</strong> Being justified freely by his grace, through the redemption that is in Christ Jesus; <strong>25.</strong> Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God; <strong>26.</strong> To declare, I say, at this time his righteousness; that he might be just, and the justifier of him which believeth in Jesus.
+
+</div>
 
 <!-- PAGE 108 -->
 <span style="color:#800000">*There is indeed no difference,*</span> etc. He urges on all, without exception, the necessity of seeking righteousness in Christ; as though he had said, “There is no other way of attaining righteousness; for some cannot be justified in this and others in that way; but all must alike be justified by faith, because all are sinners, and therefore have nothing for which they can glory before God.” But he takes as granted that every one, conscious of his sin, when he comes before the tribunal of God, is confounded and lost under a sense of his own shame; so that no *sinner* can bear the presence of God, as we see an example in the case of Adam. He again brings forward a reason taken from the opposite side; and hence we must notice what follows. Since we are all sinners, Paul concludes, that we are deficient in, or *destitute* of, the praise due to righteousness. There is then, according to what he teaches, no righteousness but what is perfect and absolute. Were there indeed such a thing as half righteousness, it would yet be necessary to deprive the sinner entirely of all glory: and hereby the figment of partial righteousness, as they call it, is sufficiently confuted; for if it were true that we are justified in part by works, and in part by grace, this argument of Paul would be of no force — that all are deprived of the glory of God because they are sinners. It is then certain, there is no righteousness where there is sin, until Christ removes the curse; and this very thing is what is said in Galatians 3:10, that all who are under the law are exposed to the curse, and that we are delivered from it through the kindness of Christ. <span style="color:#800000">*The glory of God*</span> I take to mean the approbation of God, as in John 12:43, where it is said, that “they loved the glory of men more than the glory of God.” And thus he summons us from the applause of a human court to the tribunal of heaven. <span style="color:#800000">[^f118]</span> **24.** <span style="color:#800000">*Being justified freely*</span>, etc. A participle is here put for a verb according to the usage of the Greek language. The meaning is, — that since there remains nothing for men, as to themselves, but to perish, being smitten by the just judgment of God, they are to be justified freely through his mercy; for Christ comes to the aid of this misery, and communicates himself to believers, so that they find in him alone all those things in which they are wanting. There is, perhaps, no passage in the whole Scripture which illustrates in a more striking manner the efficacy of his righteousness; for it shows that God’s mercy is the efficient cause, that Christ with his blood is the meritorious cause, that the formal or the instumental cause is faith in the word, and that moreover, the final cause is the glory of the divine justice and goodness.
@@ -1234,19 +949,9 @@ He adds, that this remission was <span style="color:#800000">*through forbearanc
 <!-- PAGE 112 -->
 <span style="color:#800000">*That he might be just*</span>, etc. This is a definition of that righteousness which he has declared was revealed when Christ was given, and which, as he has taught us in the first chapter, is made known in the gospel: and he affirms that it consists of two parts — The first is, that God is just, not indeed as one among many, but as one who contains within himself all fullness of righteousness; for complete and full praise, such as is due, is not otherwise given to him, but when he alone obtains the name and the honor of being just, while the whole human race is condemned for injustice: and then the other part refers to the communication of righteousness; for God by no means keeps his riches laid up in himself, but pours them forth upon men. Then the righteousness of God shines in us, whenever he justifies us by faith in Christ; for in vain were Christ given us for righteousness, unless there was the fruition of him by faith. It hence follows, that all were unjust and lost in themselves, until a remedy from heaven was offered to them. <span style="color:#800000">[^f122Ά</span>
 
-## ROMANS 3:27-28
+<h2 class="scripture-anchor" id="romans-3-27-28" data-ref="ROMANS 3:27-28" style="display:none">ROMANS 3:27-28</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>27. Where <sty c="000000" i="1">is</sty> boasting then? It is</td><td>27. Ubi ergo gloriatio?<sty c="800000" i="0"> [^f122]</sty></td></tr>
-<tr><td>excluded. By what law? of works?</td><td>exclusa est. Per quam legem?</td></tr>
-<tr><td>Nay: but by the law of faith.</td><td>operum? Nequaquam; Sed per</td></tr>
-<tr><td>28. Therefore we conclude, that a</td><td>legem fidei.</td></tr>
-<tr><td>man is justified by faith without</td><td>28. Constituimus ergo, fide</td></tr>
-<tr><td>the deeds of the law.</td><td>justificari hominem sine</td></tr>
-<tr><td></td><td>operibus Legis.</td></tr>
-</tbody>
-</table>
+**27.** Where *is* boasting then? It is excluded. By what law? of works? Nay: but by the law of faith. 28. Therefore we conclude, that a man is justified by faith without the deeds of the law.
 
 **27.** <span style="color:#800000">*Where then is glorying?*</span> The Apostle, after having, with reasons abundantly strong, cast down men from their confidence in works, now triumphs over their folly: and this exulting conclusion was necessary; for on this subject, to teach us would not have been enough; it was necessary that the Holy Spirit should loudly thunder, in order to lay prostrate our loftiness. But he says that glorying is beyond all doubt excluded, for we cannot adduce anything of our own, which is worthy of being approved or commended by God. If the material of glorying be merit, whether you name that of congruity or of condignity, by which man would conciliate God, you see that both are here annihilated; for he treats not of the lessening or the modifying of merit, but Paul leaves not a particle behind. Besides, since by faith glorying in works is so taken away, that faith cannot be truly preached, without wholly depriving man of all praise by ascribing all to God’s mercy — it follows, that we are assisted by no works in obtaining righteousness.
 
@@ -1260,19 +965,9 @@ The name of <span style="color:#800000">*law*</span> is here, with no strict cor
 <!-- PAGE 114 -->
 What, James says, that man is not justified by faith alone, but also by works, does not at all militate against the preceding view. The reconciling of the two views depends chiefly on the drift of the argument pursued by James. For the question with him is not, how men attain righteousness before God, but how they prove to others that their are justified, for his object was to confute hypocrites, who vainly boasted that they had faith. Gross then is the sophistry, not to admit that the word, to justify, is taken in a different sense by James, from that in which it is used by Paul; for they handle different subjects. The word, faith, is also no doubt capable of various meanings. These two things must be taken to the account, before a correct judgment can be formed on the point. We may learn from the context, that James meant no more than that man is not made or proved to be just by a feigned or dead faith, and that he must prove his righteousness by his works. See on this subject my Institutes.
 
-## ROMANS 3:29-30
+<h2 class="scripture-anchor" id="romans-3-29-30" data-ref="ROMANS 3:29-30" style="display:none">ROMANS 3:29-30</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>29. <sty c="000000" i="1">Is he</sty> the God of the Jews</td><td>29. Num Iudæorum Deus</td></tr>
-<tr><td>only? <sty c="000000" i="1">Is he</sty> not also of the</td><td>tantum? an non et Gentium?</td></tr>
-<tr><td>Gentiles? Yes, of the Gentiles also:</td><td>certe et Gentium.</td></tr>
-<tr><td>30. Seeing <sty c="000000" i="1">it is</sty> one God<sty c="800000" i="0"> [^f125] </sty>which</td><td>30. Quandoquidem unus Deus,</td></tr>
-<tr><td>shall justify the circumcision by</td><td>qui justificabit circumcisionem</td></tr>
-<tr><td>faith, and uncircumcision through</td><td>ex fide, et Præputium per fidem.</td></tr>
-<tr><td>faith.</td><td></td></tr>
-</tbody>
-</table>
+29. *Is he* the God of the Jews only? *Is he* not also of the Gentiles? Yes, of the Gentiles also: 30. Seeing *it is* one God <span style="color:#800000">[^f125]</span> which shall justify the circumcision by faith, and uncircumcision through faith.
 
 **29.** <span style="color:#800000">*Is he the God of the Jews only?*</span> The second proposition is, that this righteousness belongs no more to the Jews than to the Gentiles: and it was a great matter that this point should be urged, in order that a free passage might be made for the kingdom of Christ through the whole world. He does not then ask simply or expressly, whether God was the Creator of the Gentiles, which was admitted without any dispute; but whether he designed to manifest himself as a Savior also to them. As he had put all mankind on a level, and brought them to the same condition, if there be any difference between them, it is from God, not from themselves, who have all things alike: but if it be true that God designs to make all the nations of the earth partakers of his mercy, then salvation, and righteousness, which is necessary for salvation, must be extended to all. Hence under the name, *God,* is conveyed an intimation of a mutual relationship, which is often mentioned in Scripture, —
 
@@ -1286,15 +981,14 @@ For the circumstance, that God, for a time, chose for himself a peculiar people,
 
 But it may be, that some will prefer this distinction, — that the Jews were justified by faith, because they were born the heirs of grace, as the right of adoption was transmitted to them from the Fathers, — and that the Gentiles were justified through faith, because the covenant to them was adventitious.
 
-## ROMANS 3:31
+<h2 class="scripture-anchor" id="romans-3-31" data-ref="ROMANS 3:31" style="display:none">ROMANS 3:31</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>31. Do we then make void the law</td><td>31. Legem igitur irritam facimus</td></tr>
-<tr><td>through faith? God forbid: yea, we</td><td>per fidem? Ne ita sit: sed Legem</td></tr>
-<tr><td>establish the law.</td><td>stabilimus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450331&gt;</span><span class="book-name">Romans</span> <span class="verse-range">3:31</span></p>
+
+<strong>31.</strong> Do we then make void the law through faith? God forbid: yea, we establish the law.
+
+</div>
 
 <!-- PAGE 116 -->
 **31.** <span style="color:#800000">*Do we then make,*</span> etc. When the law is opposed to faith, the flesh immediately suspects that there is some contrariety, as though the one were adverse to the other: and this false notion prevails, especially among those who are imbued with wrong ideas as to the law, and leaving the promises, seek nothing else through it but the righteousness of works. And on this account, not only Paul, but our Lord himself, was evil spoken of by the Jews, as though in all his preaching he aimed at the abrogation of the law. Hence it was that he made this protest, —
@@ -1309,22 +1003,14 @@ For the *moral* law is in reality confirmed and established through faith in Chr
 
 # CHAPTER 4
 
-## ROMANS 4:1-3
+<h2 class="scripture-anchor" id="romans-4-1-3" data-ref="ROMANS 4:1-3" style="display:none">ROMANS 4:1-3</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. What shall we then say that</td><td>1. Quid ergo dicemus, invenisse</td></tr>
-<tr><td>Abraham, our father as pertaining</td><td>Abraham patrem nostrum</td></tr>
-<tr><td>to the flesh, hath found?</td><td>secundw carnem?</td></tr>
-<tr><td>2. For if Abraham were justified</td><td>2. Si enim Abraham ex operibus</td></tr>
-<tr><td>by works, he hath <sty c="000000" i="1">whereof</sty> to</td><td>justificatus est. habet quo</td></tr>
-<tr><td>glory, but not before God.</td><td>glorietur, sed non apud Deum.</td></tr>
-<tr><td>3. For what saith the scripture?</td><td>3. Quid enim Scripture dicit’</td></tr>
-<tr><td>Abraham believed God, and it was</td><td>Credidit Abraham Deo, et</td></tr>
-<tr><td>counted unto him for</td><td>imputa tum est illi in justitiam.</td></tr>
-<tr><td>righteousness.<sty c="800000" i="0"> [^f128]</sty></td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450401&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:1-3</span></p>
+
+<strong>1.</strong> What shall we then say that Abraham, our father as pertaining to the flesh, hath found? <strong>2.</strong> For if Abraham were justified by works, he hath *whereof* to glory, but not before God. <strong>3.</strong> For what saith the scripture? Abraham believed God, and it was counted unto him for righteousness. <span style="color:#800000">[^f128]</span>
+
+</div>
 
 **1.** <span style="color:#800000">*What then*</span>, etc. This is a confirmation by example; and it is a very strong one, since all things are alike with regard to the subject and the person; for he was the father of the faithful, to whom we ought all to be conformed; and there is also but one way and not many ways by which righteousness may be obtained by all. In many other things one example would not be sufficient to make a common rule; but as in the person of Abraham there was exhibited a mirror and pattern of righteousness, which belongs in common to the whole Church, rightly does Paul apply what has been written of him alone to the whole body of the Church, and at the same time he gives a check to the Jews, who had nothing more plausible to glory in than that they were the children of Abraham; and they could not have dared to claim to themselves more holiness than what they ascribed to the holy patriarch. Since it is then evident that he was justified freely, his posterity, who claimed a righteousness of their own by the law, ought to have been made silent even through shame.
 
@@ -1349,19 +1035,14 @@ How to reconcile what James says, which seems somewhat contrary to this view I h
 
 Only let us remember this, — that those to whom righteousness is imputed, are justified; since these two things are mentioned by Paul as being the same. We hence conclude that the question is not, what men are in themselves, but how God regards them? not that purity of conscience and integrity of life are to be separated from the gratuitous favor of God; but that when the reason is asked, why God loves us and owns us as just, it is necessary that Christ should come forth as one who clothes us with his own righteousness.
 
-## ROMANS 4:4-5
+<h2 class="scripture-anchor" id="romans-4-4-5" data-ref="ROMANS 4:4-5" style="display:none">ROMANS 4:4-5</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>4. Now to him that worketh is the</td><td>4. Ei quidem qui operatur</td></tr>
-<tr><td>reward not reckoned of grace, but</td><td>merces non imputatur secundum</td></tr>
-<tr><td>of debt.</td><td>gratiam, sed secundum debitum:</td></tr>
-<tr><td>5. But to him that worketh not,</td><td>5. Ei vero qui non operatur,</td></tr>
-<tr><td>but believeth on him that justifieth</td><td>credit autem in eum qui</td></tr>
-<tr><td>the ungodly, his faith is counted</td><td>justificat impium, imputatur</td></tr>
-<tr><td>for Righteousness.</td><td>fides sua in justitiam.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450404&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:4-5</span></p>
+
+<strong>4.</strong> Now to him that worketh is the reward not reckoned of grace, but of debt. <strong>5.</strong> But to him that worketh not, but believeth on him that justifieth the ungodly, his faith is counted for Righteousness.
+
+</div>
 
 **4.** <span style="color:#800000">*To him indeed who works,*</span> etc. It is not he, whom he calls a worker, who is given to good works, to which all the children of God ought to attend, but the person who seeks to merit something by his works: and in a similar way he calls him no worker who depends not on the merit of what he does. He would not, indeed, have the faithful to be idle; but he only forbids them to be mercenaries, so as to demand any thing from God, as though it were justly their due.
 
@@ -1372,21 +1053,14 @@ We have before reminded you, that the question is not here how we are to regulat
 
 <!-- PAGE 122 -->
 
-## ROMANS 4:6-8
+<h2 class="scripture-anchor" id="romans-4-6-8" data-ref="ROMANS 4:6-8" style="display:none">ROMANS 4:6-8</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>6. Even as David also describeth</td><td>6. Quemadmodum etiam David</td></tr>
-<tr><td>the blessedness of the man, unto</td><td>finit beatudinem hominis cui</td></tr>
-<tr><td>whom God imputeth righteousness</td><td>Deus imputat justitiam absque</td></tr>
-<tr><td>without works,</td><td>operibus,</td></tr>
-<tr><td>7. <sty c="000000" i="1">Saying,</sty> Blessed are they whose</td><td>7. Beati quorum remissæ sunt</td></tr>
-<tr><td>iniquities are forgiven, and whose</td><td>iniquitates, et quorum tecta sunt</td></tr>
-<tr><td>sins are covered.</td><td>peccata:</td></tr>
-<tr><td>8. Blessed <sty c="000000" i="1">is</sty> the man to whom the</td><td>8. Beatus vir, cui non imputavit</td></tr>
-<tr><td>Lord will not impute sin.</td><td>Dominus peccatum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450406&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:6-8</span></p>
+
+<strong>6.</strong> Even as David also describeth the blessedness of the man, unto whom God imputeth righteousness without works, <strong>7.</strong> *Saying,* Blessed are they whose iniquities are forgiven, and whose sins are covered. <strong>8.</strong> Blessed *is* the man to whom the Lord will not impute sin.
+
+</div>
 
 **6.** <span style="color:#800000">*As David also defines*</span>, etc. We hence see the sheer sophistry of those who limit the works of the law to ceremonies; for he now simply calls those works, without anything added, which he had before called the works of the law. Since no one can deny that a simple and unrestricted mode of speaking, such as we find here, ought to be understood of every work without any difference, the same view must be held throughout the whole argument. There is indeed nothing less reasonable than to remove from ceremonies only the power of justifying, since Paul excludes all works indefinitely. To the same purpose is the negative clause, — that God justifies men by *not* imputing sin: and by these words we are taught that righteousness, according to Paul, is nothing else than the remission of sins; and further, that this remission is gratuitous, because it is imputed without works, which the very name of remission indicates; for the creditor who is paid does not remit, but he who Spontaneously cancels the debt through mere kindness. Away, then, with those who teach us to redeem pardon for our sins by satisfactions; for Paul borrows an argument from this pardon to prove the gratuitous gift of righteousness. <span style="color:#800000">[^f134]</span> How then is it possible for them to agree with Paul? They say, “We must satisfy by works the justice of God, that we may obtain the pardon of our sins:” but he, on the contrary, reasons thus, — “The righteousness of faith is gratuitous, and without works, because it depends on the remission of sins.” Vicious, no doubt, would be this reasoning, if any works interposed in the remission of sins.
 
@@ -1407,21 +1081,9 @@ But some one may say, “Why may we not maintain, on the ground of these testimo
 
 <!-- PAGE 125 -->
 
-## ROMANS 4:9-10
+<h2 class="scripture-anchor" id="romans-4-9-10" data-ref="ROMANS 4:9-10" style="display:none">ROMANS 4:9-10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>9.<sty c="000000" i="1"> Cometh</sty> this blessedness then</td><td>9. Beatudo ergo ista in</td></tr>
-<tr><td>upon the circumcision <sty c="000000" i="1">only,</sty><sty c="800000" i="0"> [^f135] </sty>or</td><td>circumcisionem modo, an et in</td></tr>
-<tr><td>upon the uncircumcision also? for</td><td>præputium competit? Dicimus</td></tr>
-<tr><td>we say that faith was reckoned to</td><td>enim quod imputata fuit</td></tr>
-<tr><td>Abraham for righteousness.</td><td>Abrahæ fides in justitiam.</td></tr>
-<tr><td>10. How was it then reckoned?</td><td>10. Quomodo igitur imputata</td></tr>
-<tr><td>when he was in circumcision, or in</td><td>fuit? In Circumcisione quum</td></tr>
-<tr><td>uncircumcision? Not in</td><td>esset, an in præputio? non in</td></tr>
-<tr><td>circumcision but in uncircumcision.</td><td>circumcisione, sed in præputio.</td></tr>
-</tbody>
-</table>
+9. *Cometh* this blessedness then upon the circumcision *only,* <span style="color:#800000">[^f135]</span> or upon the uncircumcision also? for we say that faith was reckoned to Abraham for righteousness. 10. How was it then reckoned? when he was in circumcision, or in uncircumcision? Not in circumcision but in uncircumcision.
 
 As circumcision and uncircumcision are alone mentioned, some unwisely conclude, that the only question is, that righteousness is not attained by the ceremonies of the law. But we ought to consider what sort of men were those with whom Paul was reasoning; for we know that hypocrites, whilst they generally boast of meritorious works, do yet disguise themselves in outward masks. The Jews also had a peculiar way of their own, by which they departed, through a gross abuse of the law, from true and genuine righteousness. Paul had said, that no one is blessed but he whom God reconciles to himself by a gratuitous pardon; it hence follows, that all are accursed, whose works come to judgment. Now then this principle is to be held, that men are justified, not by their own worthiness, but by the mercy of God. But still, this is not enough, except remission of sins precedes all works, and of these the first was circumcision, which initiated the Jewish people into the service of God. He therefore proceeds to demonstrate this also.
 
@@ -1431,26 +1093,14 @@ We must ever bear in mind, that circumcision is here mentioned as the initial wo
 
 But Paul maintains the contrary, and thus reasons: “If Abraham’s righteousness was the remission of sins, (which he safely takes as granted,) and if Abraham attained this before circumcision, it then follows that remission of sins is not given for preceding merits.” You see that the argument rests on the order of causes and effects; for the cause is always before its effect; and righteousness was possessed by Abraham before he had circumcision.
 
-## ROMANS 4:11-12
+<h2 class="scripture-anchor" id="romans-4-11-12" data-ref="ROMANS 4:11-12" style="display:none">ROMANS 4:11-12</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. And he received the sign of</td><td>11. Et signum accepit</td></tr>
-<tr><td>circumcision, a seal of the</td><td>circumcisionis, sigillum justitiæ</td></tr>
-<tr><td>righteousness of the faith which he</td><td>fidei quæ fuerat in præputio; ut</td></tr>
-<tr><td>had yet being uncircumcised: that he</td><td>esset pater omnium credentium per</td></tr>
-<tr><td>might be the father of all them that</td><td>præputium, quo ipsis quoque</td></tr>
-<tr><td>believe, though they be not</td><td>imputetur justitia;</td></tr>
-<tr><td>circumcised; that righteousness might</td><td>12. Et pater circumcisionis, non iis</td></tr>
-<tr><td>be imputed unto them also:</td><td>qui sunt ex circumcisione tantum,</td></tr>
-<tr><td>12. And the father of circumcision to</td><td>sed qui insistunt vestigiis fidei, quæ</td></tr>
-<tr><td>them who are not of the circumcision</td><td>fuit in præputio patris nostri</td></tr>
-<tr><td>only, but who also walk in the steps</td><td>Abrahæ.</td></tr>
-<tr><td>of that faith of our father Abraham,</td><td></td></tr>
-<tr><td>which he had being yet</td><td></td></tr>
-<tr><td>uncircumcised.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450411&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:11-12</span></p>
+
+<strong>11.</strong> And he received the sign of circumcision, a seal of the righteousness of the faith which he had yet being uncircumcised: that he might be the father of all them that believe, though they be not circumcised; that righteousness might be imputed unto them also: <strong>12.</strong> And the father of circumcision to them who are not of the circumcision only, but who also walk in the steps of that faith of our father Abraham, which he had being yet uncircumcised.
+
+</div>
 
 **11.** <span style="color:#800000">*And he received the sign*</span>, etc. In order to anticipate an objection, he shows that circumcision was not unprofitable and superfluous, though it could not justify; but it had another very remarkable use, it had the office of sealing, and as it were of ratifying the righteousness of faith. And yet he intimates at the same time, by stating what its object was, that it was not the cause of righteousness, it indeed tended to confirm the righteousness of faith, and that already obtained in uncircumcision. He then derogates or takes away nothing from it.
 
@@ -1471,17 +1121,14 @@ But as a doubt might arise, whether it behoves us, after the example of Abraham,
 
 What we have stated disproves also the scholastic dogma respecting the difference between the sacraments of the Old and those of the New Testament; for they deny the power of justifying to the former, and assign it to the latter. But if Paul reasons correctly, when he argues that circumcision does not justify, because Abraham was justified by faith, the same reason holds good for us, while we deny that men are justified by baptism, inasmuch as they are justified by the same faith with that of Abraham.
 
-## ROMANS 4:13
+<h2 class="scripture-anchor" id="romans-4-13" data-ref="ROMANS 4:13" style="display:none">ROMANS 4:13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>13. For the promise, that he should</td><td>13. Non enim per Legem</td></tr>
-<tr><td>be the heir of the world, <sty c="000000" i="1">was</sty> not to</td><td>promissio Abrahæ et semini</td></tr>
-<tr><td>Abraham, or to his seed, through</td><td>ejus data est, ut esset hæres</td></tr>
-<tr><td>the law, but through the</td><td>mundi; sed per justitiam fidei.</td></tr>
-<tr><td>righteousness of faith.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450413&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:13</span></p>
+
+<strong>13.</strong> For the promise, that he should be the heir of the world, *was* not to Abraham, or to his seed, through the law, but through the righteousness of faith.
+
+</div>
 
 **13.** <span style="color:#800000">*For the promise*</span>, etc. He now more clearly sets the law and faith in opposition, the one to the other, which he had before in some measure done; and this ought to be carefully observed: for if faith borrows nothing from the law in order to justify, we hence understand, that it has respect to nothing else but to the mercy of God. And further, the romance of those who would have this to have been said of ceremonies, may be easily disproved; for if works contributed anything towards justification, it ought not to have been said, through the written law, but rather, through the law of nature. But Paul does not oppose spiritual holiness of life to ceremonies, but faith and its righteousness. The meaning then is, that heirship was promised to Abraham, not because he deserved it by keeping the law, but because he had obtained righteousness by faith. And doubtless (as Paul will presently show) consciences can then only enjoy solid peace, when they know that what is not justly due is freely given them. <span style="color:#800000">[^f138]</span>
 
@@ -1495,18 +1142,14 @@ Though the ungodly swallow up the riches of the world, they can yet call nothing
 
 <!-- PAGE 131 -->
 
-## ROMANS 4:14-15
+<h2 class="scripture-anchor" id="romans-4-14-15" data-ref="ROMANS 4:14-15" style="display:none">ROMANS 4:14-15</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. For if they which are of the law be</td><td>14. Si enim ii qui sunt ex Lege</td></tr>
-<tr><td>heirs, faith is made void, and the</td><td>hæredes sunt, exinanita est fides et</td></tr>
-<tr><td>promise made of none effect:</td><td>abolita est promissio:</td></tr>
-<tr><td>15. Because the law worketh wrath:</td><td>15. Nam Lex iram efficit; siquidem</td></tr>
-<tr><td>for where no law is, there is no</td><td>ubi non est Lex, neque etiam</td></tr>
-<tr><td>transgression.</td><td>transgressio.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450414&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:14-15</span></p>
+
+<strong>14.</strong> For if they which are of the law be heirs, faith is made void, and the promise made of none effect: <strong>15.</strong> Because the law worketh wrath: for where no law is, there is no transgression.
+
+</div>
 
 **14.** <span style="color:#800000">*For if they who are of the law,*</span> etc. He takes his argument from what is impossible or absurd, that the favor which Abraham obtained from God, was not promised to him through any legal agreement, or through any regard to works; for if this condition had been interposed — that God would favor those only with adoption who deserved, or who performed the law, no one could have dared to feel confident that it belonged to him: for who is there so conscious of so much perfection that he can feel assured that the inheritance is due to him through the righteousness of the law? Void then would faith be made; for an impossible condition would not only hold the minds of men in suspense and anxiety, but fill them also with fear and trembling: and thus the fulfillment of the promises would be rendered void; for they avail nothing but when received by faith. If our adversaries had ears to hear this one reason, the contest between us might easily be settled.
 
@@ -1525,25 +1168,9 @@ By <span style="color:#800000">*wrath*</span>, understand God’s judgment, whic
 <!-- PAGE 133 -->
 But the Apostle speaks not of the mere transgression of what is right, from which no man is exempt; but he calls that a transgression, when man, having been taught what pleases and displeases God, knowingly and willfully passes over the boundaries fixed by God’s word; or, in other words, transgression here is not a mere act of sin, but a willful determination to violate what is right. <span style="color:#800000">[^f140]</span> The particle, <span style="color:#0000d4">οϋ</span>, *where,* which I take as an adverb, some consider to be a relative, *of which;* but the former reading is the most suitable, and the most commonly received. Whichever reading you may follow, the meaning will be the same, — that he who is not instructed by the written law, when he sins, is not guilty of so great a transgression, as he is who knowingly breaks and transgresses the law of God.
 
-## ROMANS 4:16-17
+<h2 class="scripture-anchor" id="romans-4-16-17" data-ref="ROMANS 4:16-17" style="display:none">ROMANS 4:16-17</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>16. Therefore<sty c="000000" i="1"> it</sty> <sty c="000000" i="1">is</sty> of faith, that <sty c="000000" i="1">it</sty></td><td>16. Propterea ex fide, ut</td></tr>
-<tr><td><sty c="000000" i="1">might be</sty> by grace; to the end the</td><td>secundum gratiam, quo firma sit</td></tr>
-<tr><td>promise might be sure to all the</td><td>promissio universo semini non</td></tr>
-<tr><td>seed; not to that only which is of</td><td>ei quod est ex Lege solum, sed</td></tr>
-<tr><td>the law, but to that also which is</td><td>quod est ex fide Abrahæ, qui est</td></tr>
-<tr><td>of the faith of Abraham; who is the</td><td>pater omnium nostrum,</td></tr>
-<tr><td>father of us all,</td><td>17. (sicut scriptum est. Quod</td></tr>
-<tr><td>17. (As it is written, l have made</td><td>patrem multarum gentium posui</td></tr>
-<tr><td>thee a father of many nations,)</td><td>te,) coram Deo, cui credidit, qua</td></tr>
-<tr><td>before him whom he believed, <sty c="000000" i="1">even</sty></td><td>vivificat mortuos et vocat ea</td></tr>
-<tr><td>God, who quickeneth the dead, and</td><td>quæ non sunt tanquam sint.</td></tr>
-<tr><td>calleth those things which be not</td><td></td></tr>
-<tr><td>as though they were.</td><td></td></tr>
-</tbody>
-</table>
+**16.** Therefore *it is* of faith, that *it might be* by grace; to the end the promise might be sure to all the seed; not to that only which is of the law, but to that also which is of the faith of Abraham; who is the father of us all, 17. (As it is written, l have made thee a father of many nations,) before him whom he believed, *even* God, who quickeneth the dead, and calleth those things which be not as though they were.
 
 **16.** <span style="color:#800000">*It is therefore of faith,*</span> etc. This is the winding up of the argument; and you may summarily include the whole of it in this statement, — “If the heirship of salvation comes to us by works, then faith in it vanishes, the promise of it is abolished; but it is necessary that both these should be sure and certain; hence it comes to us by faith, so that its stability being based on the goodness of God alone, may be secured. See how the Apostle, regarding faith as a thing firm and certain, considers hesitancy and doubt as unbelief, by which faith is abolished, and the promise abrogated. And yet this doubting is what the schoolmen call a moral conjecture, and which, alas! they substitute for faith.
 
@@ -1563,17 +1190,14 @@ We have here also a type and a pattern of the call of us all, by which our begin
 
 <!-- PAGE 136 -->
 
-## ROMANS 4:18
+<h2 class="scripture-anchor" id="romans-4-18" data-ref="ROMANS 4:18" style="display:none">ROMANS 4:18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>18. Who against hope believed in</td><td>18. Qui præter (vel supra) spem</td></tr>
-<tr><td>hope, that he might become the father</td><td>super spe credidit, ut esset<sty c="800000" i="0"> [^f143] </sty>pater</td></tr>
-<tr><td>of many nations, according to that</td><td>multarum gentium, secundum quod</td></tr>
-<tr><td>which was spoken, So shall thy seed</td><td>dictum erat, Sic erit semen tuum.</td></tr>
-<tr><td>be.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450418&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:18</span></p>
+
+<strong>18.</strong> Who against hope believed in hope, that he might become the father of many nations, according to that which was spoken, So shall thy seed be.
+
+</div>
 
 **18.** <span style="color:#800000">*Who against hope*</span>, etc. If we thus read, the sense is, that when there was no probable reason, yea, when all things were against him, he yet continued to believe. And, doubtless, there is nothing more injurious to faith than to fasten our minds to our eyes, that we may from what we see, seek a reason for our hope. We may also read, “above hope,” and perhaps more suitably; as though he had said that by his faith he far surpassed all that he could conceive; for except faith flies upward on celestial wings so as to look down on all the perceptions of the flesh as on things far below, it will stick fast in the mud of the world. But Paul uses the word hope twice in this verse: in the first instance, he means a probable evidence for hoping, such as can be derived from nature and carnal reason; in the second he refers to faith given by God; <span style="color:#800000">[^f144]</span> for when he had no ground for hoping he yet in hope relied on the promise of God; and he thought it a sufficient reason for hoping, that the Lord had promised, however incredible the thing was in itself.
 
@@ -1581,27 +1205,14 @@ We have here also a type and a pattern of the call of us all, by which our begin
 
 <!-- PAGE 137 -->
 
-## ROMANS 4:19-22
+<h2 class="scripture-anchor" id="romans-4-19-22" data-ref="ROMANS 4:19-22" style="display:none">ROMANS 4:19-22</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. And being not weak in faith, he</td><td>19. Ac fide minime debilitatus, non</td></tr>
-<tr><td>considered not his own body now</td><td>consideravit suum ipsius corpus</td></tr>
-<tr><td>dead, when he was about an hundred</td><td>jam emortuum, centenaries quum</td></tr>
-<tr><td>years old, neither yet the deadness of</td><td>fere esset, nec emortuam vulvam</td></tr>
-<tr><td>Sarah’s womb:</td><td>Saræ:</td></tr>
-<tr><td>20. He staggered not at the promise of</td><td>20. Nec vero in Dei promissionem</td></tr>
-<tr><td>God through umbelief; but was strong</td><td>nec emortuam vulvam Sarre: per</td></tr>
-<tr><td>in faith, giving glory to God;</td><td>incredulitatem disquisivit; sed</td></tr>
-<tr><td>21. And being fully persuaded, that</td><td>roboratus est fide, tribuens gloriam</td></tr>
-<tr><td>what he had promised, he was able</td><td>Deo;</td></tr>
-<tr><td>also to perform.</td><td>21. Ac certe persuasus, quod ubi</td></tr>
-<tr><td>22. And therefore it was imputed to</td><td>quid promisit, possit etiam</td></tr>
-<tr><td>him for righteousness.</td><td>præstare.</td></tr>
-<tr><td></td><td>22. Ideo et imputatum illi est in</td></tr>
-<tr><td></td><td>justitiam.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450419&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:19-22</span></p>
+
+<strong>19.</strong> And being not weak in faith, he considered not his own body now dead, when he was about an hundred years old, neither yet the deadness of Sarah’s womb: <strong>20.</strong> He staggered not at the promise of God through umbelief; but was strong in faith, giving glory to God; <strong>21.</strong> And being fully persuaded, that what he had promised, he was able also to perform. <strong>22.</strong> And therefore it was imputed to him for righteousness.
+
+</div>
 
 **19.** <span style="color:#800000">*In faith*</span>, etc. If you prefer to omit one of the negatives you may render it thus, “Being weak in faith, he considered not his own body,” etc.; but this makes no sense. He indeed shows now more fully what might have hindered, yea, and wholly turned Abraham aside from receiving the promise. A seed from Sarah was promised to him at a time when he was not by nature fit for generating, nor Sarah for conceiving. Whatever he could see as to himself was opposed to the accomplishment of the promise. Hence, that he might yield to the truth of God, he withdrew his mind from those things which presented themselves to his own view, and as it were forgot himself.
 
@@ -1629,22 +1240,14 @@ It seems strange to me, that *Erasmus* approved of the relative in the masculine
 
 **22.** <span style="color:#800000">*And it was therefore imputed*</span>, <span style="color:#800000">[^f148]</span> etc. It becomes now more clear, how and in what manner faith brought righteousness to Abraham; and that was, because he, leaning on God’s word, rejected not the promised favor. And this connection of faith with the word ought to be well understood and carefully remembered; for faith can bring us nothing more than what it receives from the word. Hence he does not become immediately just, who is imbued only with a general and confused idea that God is true, except he reposes on the promise of his favor.
 
-## ROMANS 4:23-25
+<h2 class="scripture-anchor" id="romans-4-23-25" data-ref="ROMANS 4:23-25" style="display:none">ROMANS 4:23-25</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>23. Now, it was not written for his</td><td>23. Non est autem scriptum</td></tr>
-<tr><td>sake alone, that it was imputed to</td><td>propter ipsum tantum, imputatum</td></tr>
-<tr><td>him,</td><td>fuisse illi;</td></tr>
-<tr><td>24. But for us also, to whom it shall</td><td>24. Sed etiam propter nos, quibus</td></tr>
-<tr><td>be imputed, if we believe on him that</td><td>imputabitur credentibus in eum,</td></tr>
-<tr><td>raised up Jesus our Lord from the</td><td>qui excitavit lesum Dominum</td></tr>
-<tr><td>dead;</td><td>nostrum ex mortuis:</td></tr>
-<tr><td>25. Who was delivered for our</td><td>25. Qui traditus fuit propter delicta</td></tr>
-<tr><td>offences, and was raised again for our</td><td>nostra, et excitatus propter</td></tr>
-<tr><td>justification.</td><td>nostram justificationem.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450423&gt;</span><span class="book-name">Romans</span> <span class="verse-range">4:23-25</span></p>
+
+<strong>23.</strong> Now, it was not written for his sake alone, that it was imputed to him, <strong>24.</strong> But for us also, to whom it shall be imputed, if we believe on him that raised up Jesus our Lord from the dead; <strong>25.</strong> Who was delivered for our offences, and was raised again for our justification.
+
+</div>
 
 **23.** <span style="color:#800000">*Now it was not written,*</span> etc. A proof from example is not always valid, of which I have before reminded you; lest this should be questioned, Paul expressly affirms, that in the person of Abraham was exhibited an example of a common righteousness, which belongs equally to all.
 
@@ -1672,20 +1275,14 @@ But I cannot assent to those who refer this second clause to newness of life; fo
 
 # CHAPTER 5
 
-## ROMANS 5:1-2
+<h2 class="scripture-anchor" id="romans-5-1-2" data-ref="ROMANS 5:1-2" style="display:none">ROMANS 5:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Therefore, being justified by</td><td>1. Iustificatus ergo ex fide,</td></tr>
-<tr><td>faith, we have peace with God,</td><td>pacem habemus apud Deum per</td></tr>
-<tr><td>through our Lord Jesus Christ:</td><td>Dominum nostrum Iesum</td></tr>
-<tr><td>2. By whom also we have access</td><td>Christum;</td></tr>
-<tr><td>by faith into this grace where in we</td><td>2. Per quem accessum habiumus</td></tr>
-<tr><td>stand, and rejoice in hope of the</td><td>fide in gratiam istam in qua</td></tr>
-<tr><td>glory of God.</td><td>stetimus, et gloriamur super spe</td></tr>
-<tr><td></td><td>gloriæ Dei.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450501&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:1-2</span></p>
+
+<strong>1.</strong> Therefore, being justified by faith, we have peace with God, through our Lord Jesus Christ: <strong>2.</strong> By whom also we have access by faith into this grace where in we stand, and rejoice in hope of the glory of God.
+
+</div>
 
 **1.** <span style="color:#800000">*Being then justified*</span>, etc. The Apostle begins to illustrate by the effects, what he has hitherto said of the righteousness of faith: and hence the whole of this chapter is taken up with amplifications, which are no less calculated to explain than to confirm. He had said before, that faith is abolished, if righteousness is sought by works; and in this case perpetual inquietude would disturb miserable souls, as they can find nothing substantial in themselves: but he teaches us now, that they are rendered quiet and tranquil, when we have obtained righteousness by faith, <span style="color:#800000">*We have peace with God*</span>; and this is the peculiar fruit of the righteousness of faith. When any one strives to seek tranquillity of conscience by works, (which is the case with profane and ignorant men,) he labors for it in vain; for either his heart is asleep through his disregard or forgetfulness of God’s judgment, or else it is full of trembling and dread, until it reposes on Christ, who is alone our peace.
 
@@ -1698,22 +1295,9 @@ Then peace means tranquillity of conscience, which arises from this, — that it
 
 <span style="color:#800000">*And glory in the hope*</span>, etc. The reason that the hope of a future life exists and dares to exult, is this, — because we rest on God’s favor as on a sure foundation: for Paul’s meaning is, that though the faithful are now pilgrims on the earth, they yet by hope scale the heavens, so that they quietly enjoy in their own bosoms their future inheritance. And hereby are subverted two of the most pestilent dogmas of the sophists. What they do in the first place is, they bid Christians to be satisfied with moral conjecture as to the perception of God’s favor towards them; and secondly, they teach that all are uncertain as to their final perseverance. but except there be at present sure knowledge, and a firm and undoubting persuasion as to the future, who would dare to glory? The hope of the glory of God has shone upon us through the gospel, which testifies that we shall be participators of the Divine nature; for when we shall see God face to face, we shall be like him. (2 Peter 1:4; 1 John 3:2.)
 
-## ROMANS 5:3-5
+<h2 class="scripture-anchor" id="romans-5-3-5" data-ref="ROMANS 5:3-5" style="display:none">ROMANS 5:3-5</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. And not only <sty c="000000" i="1">so</sty>, but we glory</td><td>3. Neque id modo, sed gloriamur</td></tr>
-<tr><td>in tribulations also: knowing that</td><td><sty c="800000" i="0">[^f153] </sty>etiam in afflictionibus;</td></tr>
-<tr><td>tribulation worketh patience;</td><td>scientes quod tribulatio</td></tr>
-<tr><td>4. And patience, experience; and</td><td>patientiam efficiat;</td></tr>
-<tr><td>experience, hope:</td><td>4. Patientia vero probationem;</td></tr>
-<tr><td>5. And hope maketh not ashamed;</td><td>probatio autem spem:</td></tr>
-<tr><td>because the love of God is shed</td><td>5. Porro spes non pudefacit,</td></tr>
-<tr><td>abroad in our hearts by the Holy</td><td>quoniam dilectio Dei diffusa est</td></tr>
-<tr><td>Ghost, which is given unto us.</td><td>in cordibus nostris per Spiritum</td></tr>
-<tr><td></td><td>santum, qui datus est nobis.</td></tr>
-</tbody>
-</table>
+**3.** And not only *so*, but we glory in tribulations also: knowing that tribulation worketh patience; 4. And patience, experience; and experience, hope: 5. And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the Holy Ghost, which is given unto us.
 
 <!-- PAGE 148 -->
 **3.** <span style="color:#800000">*Not only so*</span>, etc. That no one might scoffingly object and say, that Christians, with all their glorying, are yet strangely harassed and distressed in this life, which condition is far from being a happy one, — he meets this objection, and declares, not only that the godly are prevented by these calamities from being blessed, but also that their glorying is thereby promoted. To prove this he takes his argument from the effects, and adopts a remarkable gradation, and at last concludes, that all the sorrows we endure contribute to our salvation and final good.
@@ -1740,26 +1324,14 @@ He Says further, that the Spirit is <span style="color:#800000">*given*</span>, 
 
 <!-- PAGE 151 -->
 
-## ROMANS 5:6-9
+<h2 class="scripture-anchor" id="romans-5-6-9" data-ref="ROMANS 5:6-9" style="display:none">ROMANS 5:6-9</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>6. For when we were yet without</td><td>6. Christus enim, quum adhuc</td></tr>
-<tr><td>strength, in due time Christ died for</td><td>essemus infirmi secundum</td></tr>
-<tr><td>the ungodly.</td><td>rationem Temporis, pro impiis</td></tr>
-<tr><td>7. For scarcely for a righteous man</td><td>mortuus est:</td></tr>
-<tr><td>will one die; yet peradventure for a</td><td>7. Vix sane pro justo quis moriatur;</td></tr>
-<tr><td>good man some would even dare to</td><td>nam pro bono forsan aliquis etiam</td></tr>
-<tr><td>die.</td><td>mori audeat.</td></tr>
-<tr><td>8. But God commendeth his love</td><td>8. Confimat autem erga nos</td></tr>
-<tr><td>toward us, in that, while we were yet</td><td>charitatem Deus quod peccatores</td></tr>
-<tr><td>sinners, Christ died for us.</td><td>quum Adhuc essemus, Christus</td></tr>
-<tr><td>9. Much more then, being now</td><td>pro nobis mortuus est:</td></tr>
-<tr><td>justified by his blood, we shall be</td><td>9. Multo igitur magis, justificati</td></tr>
-<tr><td>saved from wrath through him.</td><td>nunc per sanguinem ejus,</td></tr>
-<tr><td></td><td>servabimur per ipsum ab ira.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450506&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:6-9</span></p>
+
+<strong>6.</strong> For when we were yet without strength, in due time Christ died for the ungodly. <strong>7.</strong> For scarcely for a righteous man will one die; yet peradventure for a good man some would even dare to die. <strong>8.</strong> But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us. <strong>9.</strong> Much more then, being now justified by his blood, we shall be saved from wrath through him.
+
+</div>
 
 <!-- PAGE 152 -->
 **6.** <span style="color:#800000">*For Christ*</span>, etc. I ventured not in my version to allow myself so much liberty as to give this rendering, “In the time in which we were weak;” and yet I prefer this sense. An argument begins here, which is from the greater to the less, and which he afterwards pursues more at large: and though he has not woven the thread of his discourse so very distinctly, yet its irregular structure does not disturb the meaning. “If Christ,” he says, “had mercy on the ungodly, if he reconciled enemies to his Father, if he has done this by the virtue of his death, much more easily will he save them when justified, and keep those restored to favor in the possession of it, especially when the influence of his life is added to the virtue of his death.” <span style="color:#800000">[^f157]</span> The time of weakness some consider to be that, when Christ first began to be manifested to the world, and they think that those are called weak, who were like children under the tuition of the law. I apply the expression to every one of us, and I regard that time to be meant, which precedes the reconciliation of each one with God. For as we are all born the children of wrath, so we are kept under that curse until we become partakers of Christ. And he calls those weak, who have nothing in themselves but what is sinful; for he calls the same immediately afterwards ungodly. And it is nothing new, that weakness should be taken in this sense. He calls, in 1 Corinthians 12:22, the covered parts of the body weak; and, in 2 Corinthians 10:10, he designates his own bodily presence weak, because it had no dignity. And this meaning will soon again occur. When, therefore, we were weak, that is, when we were in no way worthy or fit that God should look on us, at this very time Christ died for the ungodly: for the beginning of religion is faith, from which they were all alienated, for whom Christ died. And this also is true as to the ancient fathers, who obtained righteousness before he died; for they derived this benefit from his future death. <span style="color:#800000">[^f158]</span> **7.** <span style="color:#800000">*For a just man*</span>, etc. The meaning of the passage has constrained me to render the particle <span style="color:#0000d4">γὰρ</span> as an affirmative or declarative rather than as a causative. The import of the sentence is this, “Most rare, indeed, is such an example to be found among men, that one dies for a just man, though this may sometimes happen: but let this be granted, yet for an ungodly man none will be found willing to die: this is what Christ has done.” <span style="color:#800000">[^f159]</span>
@@ -1769,17 +1341,14 @@ Thus it is an illustration, derived from a comparison; for such an example of ki
 <!-- PAGE 153 -->
 **8.** <span style="color:#800000">*But God confirms,*</span> etc. The verb, <span style="color:#0000d4">συνίδτησι</span>, has various meanings; that which is most suitable to this place is that of confirming; for it was not the Apostle’s object to excite our gratitude, but to strengthen the trust and confidence of our souls. He then *confirms*, that is, exhibits his love to us as most certain and complete, inasmuch as for the sake of the ungodly he spared not Christ his own Son. In this, indeed, his love appears, that being not moved by love on our part, he of his own good will first loved us, as John tells us. (1 John 3:16.) — Those are here called <span style="color:#800000">*sinners*</span>, (as in many other places,) who are wholly vicious and given up to sin, according to what is said in John 9:31, “God hears not sinners,” that is, men abandoned and altogether wicked. The woman called “a sinner,” was one of a shameful character. (Luke 7:37.) And this meaning appears more evident from the contrast which immediately follows, — <span style="color:#800000">*for being now justified through his blood*</span>: for since he sets the two in opposition, the one to the other, and calls those justified who are delivered from the guilt of sin, it necessarily follows that those are sinners who, for their evil deeds, are condemned. <span style="color:#800000">[^f160]</span> The import of the whole is, — since Christ has attained righteousness for sinner by his death, much more shall he protect them, being now justified, from destruction. And in the last clause he applies to his own doctrine the comparison between the less and the greater: for it would not have been enough for salvation to have been once procured for us, were not Christ to render it safe and secure to the end. And this is what the Apostle now maintains; so that we ought not to fear, that Christ will cut off the current of his favor while we are in the middle of our course: for inasmuch as he has reconciled us to the Father, our condition is such, that he purposes more efficaciously to put forth and daily to increase his favor towards us.
 
-## ROMANS 5:10
+<h2 class="scripture-anchor" id="romans-5-10" data-ref="ROMANS 5:10" style="display:none">ROMANS 5:10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>10. For if, when we were enemies,</td><td>10. Si enim quum inimici</td></tr>
-<tr><td>we were reconciled to God by the</td><td>essemus, reconciliati sumus Deo</td></tr>
-<tr><td>death of his son; much more, being</td><td>per mortem Filii ejus; multo</td></tr>
-<tr><td>reconciled, we shall be saved by</td><td>magis, reconciliati, servabimur</td></tr>
-<tr><td>his life.</td><td>per vitam ipsius.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450510&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:10</span></p>
+
+<strong>10.</strong> For if, when we were enemies, we were reconciled to God by the death of his son; much more, being reconciled, we shall be saved by his life.
+
+</div>
 
 This is an explanation of the former verse, amplified by introducing a comparison between life and death. We were enemies, he says, when Christ interposed for the purpose of propitiating the Father: through this reconciliation we are now friends; since this was effected by his death; much more influential and efficacious will be his life. <span style="color:#800000">[^f161]</span> We hence have ample proofs to strengthen our hearts with confidence respecting our salvation. By saying that we were reconciled to God by the death of Christ, he means, that it was the sacrifice of expiation, by which God was pacified towards the world, as I have showed in the fourth chapter.
 
@@ -1789,42 +1358,27 @@ But the Apostle seems here to be inconsistent with himself; for if the death of 
 
 And this twofold aspect of things ought to be noticed; for we do not know the gratuitous mercy of God otherwise than as it appears from this — that he spared not his only-begotten Son; for he loved us at a time when there was discord between him and us: nor can we sufficiently understand the benefit brought to us by the death of Christ, except this be the beginning of our reconciliation with God, that we are persuaded that it is by the expiation that has been made, that he, who was before justly angry with us, is now propitious to us. since then our reception into favor is ascribed to the death of Christ, the meaning is, that guilt is thereby taken away, to which we should be otherwise exposed.
 
-## ROMANS 5:11
+<h2 class="scripture-anchor" id="romans-5-11" data-ref="ROMANS 5:11" style="display:none">ROMANS 5:11</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. And not only so, but we also</td><td>11. Non solum autem, sed etiam</td></tr>
-<tr><td>joy in God, through our Lord Jesus</td><td>gloriamur in Deo per Dominum</td></tr>
-<tr><td>Christ, by whom we have now</td><td>Iesum Christum, per quem nunc</td></tr>
-<tr><td>received the atonement.</td><td>reconciliationem accepimus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450511&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:11</span></p>
+
+<strong>11.</strong> And not only so, but we also joy in God, through our Lord Jesus Christ, by whom we have now received the atonement.
+
+</div>
 
 **11.** <span style="color:#800000">*And not this only*</span>, etc. He now ascends into the highest strain of glorying; for when we glory that God is ours, whatever blessings can be imagined or wished, ensue and flow from this fountain; for God is not only the chief of all good things, but also possesses in himself the sum and substance of all blessings; and he becomes ours through Christ. We then attain this by faith, — that nothing is wanting to us as to happiness. Nor is it in vain that he so often mentions reconciliation: it is, first, that we may be taught to fix our eyes on the death of Christ, whenever we speak of our salvation; and, secondly, that we may know that our trust must be fixed on nothing else, but on the expiation made for our sins.
 
 <!-- PAGE 155 -->
 
-## ROMANS 5:12-14
+<h2 class="scripture-anchor" id="romans-5-12-14" data-ref="ROMANS 5:12-14" style="display:none">ROMANS 5:12-14</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>12. Wherefore, as by one man sin</td><td>12. Quamobrem sicut per unum</td></tr>
-<tr><td>entered into the world, and death by</td><td>hominem peccatmn in mundum</td></tr>
-<tr><td>sin; and so death passed upon all men,</td><td>introiit, et per peccatum mors;</td></tr>
-<tr><td>for that all have sinned:</td><td>atque ita in omnes homines mors</td></tr>
-<tr><td>13. (For until the law sin was in the</td><td>pervagata est. quandoquidem</td></tr>
-<tr><td>world: but sin is not imputed when</td><td>omnes peccaverunt:</td></tr>
-<tr><td>there is no law.</td><td>13. (Nam usque ad legem</td></tr>
-<tr><td>14. Nevertheless death reigned from</td><td>peccatum erat in mundo; peccatum</td></tr>
-<tr><td>Adam to Moses, even over them that</td><td>autem non imputatur, quum non</td></tr>
-<tr><td>had not sinned after the similitude of</td><td>est lex:</td></tr>
-<tr><td>Adam’s transgression, who is the</td><td>14. Sed regnavit mors ab Adam</td></tr>
-<tr><td>figure of him that was to come.</td><td>usque ad Mosen, etiam in eos qui</td></tr>
-<tr><td></td><td>non peccaverunt ad similitudinem</td></tr>
-<tr><td></td><td>prævericationis Adam, qui est</td></tr>
-<tr><td></td><td>figura futuri.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450512&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:12-14</span></p>
+
+<strong>12.</strong> Wherefore, as by one man sin entered into the world, and death by sin; and so death passed upon all men, for that all have sinned: <strong>13.</strong> (For until the law sin was in the world: but sin is not imputed when there is no law. <strong>14.</strong> Nevertheless death reigned from Adam to Moses, even over them that had not sinned after the similitude of Adam’s transgression, who is the figure of him that was to come.
+
+</div>
 
 **12.** <span style="color:#800000">*Wherefore as*</span>, etc. He now begins to enlarge on the same doctrine, by comparing with it what is of an opposite character. For since Christ came to redeem us from the calamity into which Adam had fallen, and had precipitated all his posterity with him, we cannot see with so much clearness what we have in Christ, as by having what we have lost in Adam set before us, though all things on both sides are not similar: hence Paul subjoins an exception, which we shall notice in its place; and we shall also point out any other difference that may occur. The incompleteness of the sentence sometimes renders it obscure, as when the second clause, which answers to the former, is not expressed. But we shall endeavor to make both plain when we come to those parts. <span style="color:#800000">[^f162]</span>
 
@@ -1845,18 +1399,14 @@ But Paul wisely introduced this sentence, in order that the Jews might hence mor
 
 <!-- PAGE 159 -->
 
-## ROMANS 5:15
+<h2 class="scripture-anchor" id="romans-5-15" data-ref="ROMANS 5:15" style="display:none">ROMANS 5:15</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>15. But not as the offense, so also is</td><td>15. Sed non sicut delictum, ita et</td></tr>
-<tr><td>the free gift. For if through the offense</td><td>donum; nam si unius delicto<sty c="800000" i="0"> [^f166]</sty></td></tr>
-<tr><td>of one many be dead; much more the</td><td>multi mortui sunt, multo magis</td></tr>
-<tr><td>grace of God, and the gift by grace,</td><td>gratia Dei et donum Dei in gratia,</td></tr>
-<tr><td>which is by one man, Jesus Christ,</td><td>quæ fuit unius hominis Christi, in</td></tr>
-<tr><td>hath abounded unto many.</td><td>multos abundavit.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450515&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:15</span></p>
+
+<strong>15.</strong> But not as the offense, so also is the free gift. For if through the offense of one many be dead; much more the grace of God, and the gift by grace, which is by one man, Jesus Christ, hath abounded unto many.
+
+</div>
 
 **15.** <span style="color:#800000">*But not as the offense*</span>, etc. Now follows the rectifying or the completion of the comparison already introduced. The Apostle does not, however, very minutely state the points of difference between Christ and Adam, but he obviates errors into which we might otherwise easily fall, and what is needful for an explanation we shall add. Though he mentions oftentimes a difference, yet there are none of these repetitions in which there is not a want of a corresponding clause, or in which there is not at least an ellipsis. Such instances are indeed defects in a discourse; but they are not prejudicial to the majesty of that celestial wisdom which is taught us by the Apostle; it has, on the contrary, so happened through the providence of God, that the highest mysteries have been delivered to us in the garb of an humble style, <span style="color:#800000">[^f167]</span> in order that our faith may not depend on the potency of human eloquence, but on the efficacious working of the Spirit alone.
 
@@ -1869,18 +1419,9 @@ When he says, <span style="color:#800000">*by the offense of one*</span>, etc., 
 
 <span style="color:#800000">*The grace of God and the gift of God through grace*</span>, etc. Grace is properly set in opposition to offense; the gift which proceeds from grace, to death. Hence <span style="color:#800000">*grace*</span> means the free goodness of God or gratuitous love, of which he has given us a proof in Christ, that he might relieve our misery: and <span style="color:#800000">*gift*</span> is the fruit of this mercy, and hath come to us, even the reconciliation by which we have obtained life and salvation, righteousness, newness of life, and every other blessing. We hence see how absurdly the schoolmen have defined grace, who have taught that it is nothing else but a quality infused into the hearts of men: for grace, properly speaking, is in God; and what is in us is the effect of grace. And he says, that it is by <span style="color:#800000">*one man*</span>; for the Father has made him the fountain out of whose fullness all must draw. And thus he teaches us, that not even the least drop of life can be found out of Christ, — that there is no other remedy for our poverty and want, than what he conveys to us from his own abundance.
 
-## ROMANS 5:16
+<h2 class="scripture-anchor" id="romans-5-16" data-ref="ROMANS 5:16" style="display:none">ROMANS 5:16</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>16. And not as <sty c="000000" i="1">it was</sty> by one that</td><td>16. Et non sicut per unum qui</td></tr>
-<tr><td>sinned,<sty c="800000" i="0"> [^f169] </sty><sty c="000000" i="1">so is</sty> the gift: for the</td><td>peccaverat, ita donum; judicium</td></tr>
-<tr><td>judgement<sty c="000000" i="1"> was</sty> by one to</td><td>enim ex uno in condemationem,</td></tr>
-<tr><td>condemnation, but the free gift <sty c="000000" i="1">is</sty></td><td>donum autem ex multis delictis</td></tr>
-<tr><td>of many offenses unto</td><td>in justificationem.</td></tr>
-<tr><td>justification.</td><td></td></tr>
-</tbody>
-</table>
+**16.** And not as *it was* by one that sinned, <span style="color:#800000">[^f169]</span> *so is* the gift: for the judgement *was* by one to condemnation, but the free gift *is* of many offenses unto justification.
 
 <!-- PAGE 161 -->
 
@@ -1888,18 +1429,14 @@ When he says, <span style="color:#800000">*by the offense of one*</span>, etc., 
 
 He sets gift in opposition to judgment: by the latter he means strict justice; by the former, gratuitous pardon. From strict justice comes condemnation; from pardon, absolution. Or, which is the same thing, were God to deal with us according to justice, we should be all undone; but he justifies us freely in Christ.
 
-## ROMANS 5:17
+<h2 class="scripture-anchor" id="romans-5-17" data-ref="ROMANS 5:17" style="display:none">ROMANS 5:17</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>17. For if by one man’s offense</td><td>17. Si enin unius delicto mors</td></tr>
-<tr><td>death reigned by one; much more</td><td>regnavit per unum; multo magis</td></tr>
-<tr><td>they which receive abundance of</td><td>qui exuberantiam gratiæ et doni</td></tr>
-<tr><td>grace, and of the gift of</td><td>justitiæ acceperunt, in vita</td></tr>
-<tr><td>righteousness, shall reign in life by</td><td>regnabunt per unum Iesum</td></tr>
-<tr><td>one, Jesus Christ.)<sty c="800000" i="0"> [^f170]</sty></td><td>Christum.)</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450517&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:17</span></p>
+
+<strong>17.</strong> For if by one man’s offense death reigned by one; much more they which receive abundance of grace, and of the gift of righteousness, shall reign in life by one, Jesus Christ.) <span style="color:#800000">[^f170]</span>
+
+</div>
 
 <!-- PAGE 162 -->
 **17.** <span style="color:#800000">*For if the offense of one*</span>, etc. He again subjoins a general explanation, on which he dwells still further; for it was by no means his purpose to explain every part of the subject, but to state the main points. He had before declared, that the power of grace had surpassed that of sin: and by this he consoles and strengthens the faithful, and, at the same time, stimulates and encourages them to meditate on the benignity of God. Indeed the design of so studious a repetition was, — that the grace of God might be worthily set forth, that men might be led from self-confidence to trust in Christ, that having obtained his grace they might enjoy full assurance; and hence at length arises gratitude. The sum of the whole is this — that Christ surpasses Adam; the sin of one is overcome by the righteousness of the other; the curse of one is effaced by the grace of the other; from one, death has proceeded, which is absorbed by the life which the other bestows.
@@ -1914,18 +1451,14 @@ The first is, that by Adam’s sin we are not condemned through imputation alone
 
 <span style="color:#800000">[^f171]</span> Of the children of the godly I speak, to whom the promise of grace is addressed; for others are by no means exempted from the common lot.
 
-## ROMANS 5:18
+<h2 class="scripture-anchor" id="romans-5-18" data-ref="ROMANS 5:18" style="display:none">ROMANS 5:18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>18. Therefore, as by the offense of</td><td>18. Itaque quemadmodum, per</td></tr>
-<tr><td>one <sty c="000000" i="1">judgment came </sty>upon all men</td><td>unius delictum, in omnes</td></tr>
-<tr><td>to condemnation; even so by the</td><td>homines in condemnationem; sic</td></tr>
-<tr><td>righteousness of one <sty c="000000" i="1">the free gift</sty></td><td>et per unius justificationem, in</td></tr>
-<tr><td><sty c="000000" i="1">came</sty> upon all men unto</td><td>omnes homines in</td></tr>
-<tr><td>justification of life.</td><td>justificationem vitæ.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450518&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:18</span></p>
+
+<strong>18.</strong> Therefore, as by the offense of one *judgment came* upon all men to condemnation; even so by the righteousness of one *the free gift came* upon all men unto justification of life.
+
+</div>
 
 **18.** <span style="color:#800000">*Therefore*</span>, etc. This is a defective sentence; it will be complete if the words <span style="color:#800000">*condemnation*</span> and <span style="color:#800000">*justification*</span> be read in the nominative case; as doubtless you must do in order to complete the sense. We have here the general conclusion from the preceding comparison; for, omitting the mention of the intervening explanation, he now completes the comparison, “As by the offense of one we were made (*constitute*) sinners; so the righteousness of Christ is efficacious to justify us. He does not say the righteousness — <span style="color:#0000d4">δικαιοσύνην</span>, but the justification — <span style="color:#0000d4">δικαίωμα</span>, <span style="color:#800000">[^f172]</span> of Christ, in order to remind us that he was not as an individual just for himself, but that the righteousness with which he was endued reached farther, in order that, by conferring this gift, he might enrich the faithful. He makes this favor common to all, because it is propounded to all, and not because it is in reality extended to all; for though Christ suffered for the sins of the whole world, and is offered through God’s benignity indiscriminately to all, yet all do not receive him. <span style="color:#800000">[^f173]</span>
 
@@ -1933,37 +1466,27 @@ These two words, which he had before used, <span style="color:#800000">*judgment
 
 <!-- PAGE 164 -->
 
-## ROMANS 5:19
+<h2 class="scripture-anchor" id="romans-5-19" data-ref="ROMANS 5:19" style="display:none">ROMANS 5:19</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. For as by one man’s</td><td>19. Quemadmodum enim per</td></tr>
-<tr><td>disobedience many were made</td><td>disobedientiam unius hominis</td></tr>
-<tr><td>sinners; so by the obedience of one</td><td>peccatores constitute sunt</td></tr>
-<tr><td>shall many be made righteous.</td><td>multi; sic et per obedientiam</td></tr>
-<tr><td></td><td>unius justi constituentur multi.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450519&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:19</span></p>
+
+<strong>19.</strong> For as by one man’s disobedience many were made sinners; so by the obedience of one shall many be made righteous.
+
+</div>
 
 This is no tautology, but a necessary explanation of the former verse. For he shows that we are guilty through the offense of one man, in such a manner as not to be ourselves innocent. He had said before, that we are condemned; but that no one might claim for himself innocence, he also subjoined, that every one is condemned because he is a sinner. And then, as he declares that we are made righteous through the obedience of Christ, we hence conclude that Christ, in satisfying the Father, has provided a righteousness for us. It then follows, that righteousness is in Christ, and that it is to be received by us as what peculiarly belongs to him. He at the same time shows what sort of righteousness it is, by calling it obedience. And here let us especially observe what we must bring into God’s presence, if we seek to be justified by works, even obedience to the law, not to this or to that part, but in every respect perfect; for when a just man falls, all his former righteousness will not be remembered. We may also hence learn, how false are the schemes which they take to pacify God, who of themselves devise what they obtrude on him. For then only we truly worship him when we follow what he has commanded us, and render obedience to his word. Away then with those who confidently lay claim to the righteousness of works, which cannot otherwise exist than when there is a full and complete observance of the law; and it is certain that this is nowhere to be found. We also learn, that they are madly foolish who vaunt before God of works invented by themselves, which he regards as the filthiest things; for obedience is better than sacrifices.
 
 <!-- PAGE 165 -->
 
-## ROMANS 5:20-21
+<h2 class="scripture-anchor" id="romans-5-20-21" data-ref="ROMANS 5:20-21" style="display:none">ROMANS 5:20-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>20. Moreover, the law entered,</td><td>20. Lex vero intervenit, ut</td></tr>
-<tr><td>that the offense might abound;<sty c="800000" i="0"> [^f176]</sty></td><td>abundaret delictum; ubi vero</td></tr>
-<tr><td>21. That as sin hath reigned unto</td><td>abundavit delictum,</td></tr>
-<tr><td>death, even so might grace reign</td><td>superabundavit et gratia:</td></tr>
-<tr><td>through righteousness unto eternal</td><td>21. Quo, sicut regnavit</td></tr>
-<tr><td>life by Jesus Christ our Lord.</td><td>peccatum per mortem, sic et</td></tr>
-<tr><td>but where sin abounded, grace did</td><td>gratia regnet per justitiam in</td></tr>
-<tr><td>much more abound:</td><td>vitam æternam per Iesum</td></tr>
-<tr><td></td><td>Christum Dominum nostrum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450520&gt;</span><span class="book-name">Romans</span> <span class="verse-range">5:20-21</span></p>
+
+<strong>20.</strong> Moreover, the law entered, that the offense might abound; <span style="color:#800000">[^f176]</span> <strong>21.</strong> That as sin hath reigned unto death, even so might grace reign through righteousness unto eternal life by Jesus Christ our Lord. but where sin abounded, grace did much more abound:
+
+</div>
 
 **20.** <span style="color:#800000">*But the law intervened*</span>, etc. This subject depends on what he had said before — that there was sin before the law was published. This being the case, then follows immediately this question — For what purpose was the law given? It was therefore necessary to solve this difficulty; but as a longer digression was not suitable, he deferred the subject and handled it in another place: and now by the way he only says, that the law entered, <span style="color:#800000">[^f177]</span> that sin might abound; for he describes not here the whole office and use of the law, but only touches on one part, which served his present purpose. He indeed teaches us, that it was needful that men’s ruin should be more fully discovered to them, in order that a passage might be opened for the favor of God. They were indeed shipwrecked before the law was given; as however they seemed to themselves to swim, while in their destruction, they were thrust down into the deep, that their deliverance might appear more evident, when they thence emerge beyond all human expectation. Nor was it unreasonable, that the law should be partly introduced for this end — that it might again condemn men already condemned; for nothing is more reasonable than that men should, through all means be brought, nay, forced, by being proved guilty, to know their own evils.
 
@@ -1978,18 +1501,14 @@ This is no tautology, but a necessary explanation of the former verse. For he sh
 
 # CHAPTER 6
 
-## ROMANS 6:1-2
+<h2 class="scripture-anchor" id="romans-6-1-2" data-ref="ROMANS 6:1-2" style="display:none">ROMANS 6:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. What shall we say then? Shall</td><td>1. Quid ergo dicemus?</td></tr>
-<tr><td>we continue in sin, that grace may</td><td>manebimus in peccato, ut gratia</td></tr>
-<tr><td>abound?</td><td>abundet?</td></tr>
-<tr><td>2. God forbid. How shall we, that</td><td>2. Ne sit ita: qui mortui sumus</td></tr>
-<tr><td>are dead to sin, live any longer</td><td>peccato, quomodo adhuc</td></tr>
-<tr><td>therein?</td><td>vivemus in eo?</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450601&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:1-2</span></p>
+
+<strong>1.</strong> What shall we say then? Shall we continue in sin, that grace may abound? <strong>2.</strong> God forbid. How shall we, that are dead to sin, live any longer therein?
+
+</div>
 
 **1.** <span style="color:#800000">*What then shall we say?*</span> Throughout this chapter the Apostle proves, that they who imagine that gratuitous righteousness is given us by him, apart from newness of life, shamefully rend Christ asunder: nay, he goes further, and refers to this objection, — that there seems in this case to be an opportunity for the display of grace, if men continued fixed in sin. We indeed know that nothing is more natural than that the flesh should indulge itself under any excuse, and also that Satan should invent all kinds of slander, in order to discredit the doctrine of grace; which to him is by no means difficult. For since everything that is announced concerning Christ seems very paradoxical to human judgment, it ought not to be deemed a new thing, that the flesh, hearing of justification by faith, should so often strike, as it were, against so many stumbling-stones. Let us, however, go on in our course; nor let Christ be suppressed, because he is to many a stone of offense, and a rock of stumbling; for as he is for ruin to the ungodly, so he is to the godly for a resurrection. We ought, at the same time, ever to obviate unreasonable questions, lest the Christian faith should appear to contain anything absurd.
 
@@ -2005,21 +1524,9 @@ God’s wrath with new offenses; for then at length we shall find more abounding
 
 <!-- PAGE 169 -->
 
-## ROMANS 6:3-4
+<h2 class="scripture-anchor" id="romans-6-3-4" data-ref="ROMANS 6:3-4" style="display:none">ROMANS 6:3-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. know ye not, that so many of us</td><td>3. Num ignoratis quod quicunque</td></tr>
-<tr><td>as were baptized into Jesus Christ</td><td>baptizati Sumus in Christum, in</td></tr>
-<tr><td>were baptized into his death?</td><td>mortem ejus baptizati sumus?</td></tr>
-<tr><td>4. Therefore we are buried with him</td><td>4. Consepulti ergo sumus ei per</td></tr>
-<tr><td>by baptism into death: that like as</td><td>baptismum in mortem; ut</td></tr>
-<tr><td>Christ was raised up from the dead</td><td>guemadmodum suscitatus est Christus</td></tr>
-<tr><td>by the glory of the Father, even so</td><td>ex mortuis per gloriam Patris, sic et nos</td></tr>
-<tr><td>we also should walk in newness of</td><td>in novitate vitæ ambulemus.</td></tr>
-<tr><td>life.</td><td></td></tr>
-</tbody>
-</table>
+3. know ye not, that so many of us as were baptized into Jesus Christ were baptized into his death? 4. Therefore we are buried with him by baptism into death: that like as Christ was raised up from the dead by the glory of the Father, even so we also should walk in newness of life.
 
 **3.** <span style="color:#800000">*Know ye not*</span>, etc. What he intimated in the last verse — that Christ destroys sin in his people, he proves here by mentioning the effect of baptism, by which we are initiated into his faith; for it is beyond any question, that we put on Christ in baptism, and that we are baptized for this end — that we may be one with him. But Paul takes up another principle — that we are then really united to the body of Christ, when his death brings forth in us its fruit; yea, he teaches us, that this fellowship as to death is what is to be mainly regarded in baptism; for not washing alone is set forth in it, but also the putting to death and the dying of the old man. It is hence evident, that when we become partakers of the grace of Christ, immediately the efficacy of his death appears. But the benefit of this fellowship as to the death of Christ is described in what follows. <span style="color:#800000">[^f183]</span> **4.** <span style="color:#800000">*We have then been buried with him,*</span> etc. He now begins to indicate the object of our having been baptized into the death of Christ, though he does not yet completely unfold it; and the object is — that we, being dead to ourselves, may become new creatures. He rightly makes a transition from a fellowship in death to a fellowship in life; for these two things are connected together by an indissoluble knot — that the old man is destroyed by the death of Christ, and that his resurrection brings righteousness, and renders us new creatures. And surely, since Christ has been given to us for life, to what purpose is it that we die with him except that we may rise to a better life? And hence for no other reason does he slay what is mortal in us, but that he may give us life again.
 
@@ -2031,21 +1538,14 @@ Let us know, that the Apostle does not simply exhort us to imitate Christ, as th
 
 <!-- PAGE 171 -->
 
-## ROMANS 6:5-6
+<h2 class="scripture-anchor" id="romans-6-5-6" data-ref="ROMANS 6:5-6" style="display:none">ROMANS 6:5-6</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. For if we have been planted</td><td>5. Nam si insititii facti sumus</td></tr>
-<tr><td>together in the likeness of his</td><td>similitudini mortis ejus, nimirum</td></tr>
-<tr><td>death, we shall be also <sty c="000000" i="1">in the</sty></td><td>et resurrectionis participes</td></tr>
-<tr><td><sty c="000000" i="1">likeness of his</sty> resurrection:</td><td>erimus:</td></tr>
-<tr><td>6. Knowing this, that our old man</td><td>6. Illud scientes, quod vetus</td></tr>
-<tr><td>is crucified with <sty c="000000" i="1">him</sty>, that the body</td><td>noster homo simul cum ipso</td></tr>
-<tr><td>of sin might be destroyed, that</td><td>crucifixus est. ut aboleretur</td></tr>
-<tr><td>henceforth we should not serve</td><td>corpus peccati, ut non ultra</td></tr>
-<tr><td>sin.</td><td>serviamus peccato.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450605&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:5-6</span></p>
+
+<strong>5.</strong> For if we have been planted together in the likeness of his death, we shall be also *in the likeness of his* resurrection: <strong>6.</strong> Knowing this, that our old man is crucified with *him*, that the body of sin might be destroyed, that henceforth we should not serve sin.
+
+</div>
 
 <!-- PAGE 172 -->
 **5.** <span style="color:#800000">*For if we have been ingrafted*</span>, etc. He strengthens in plainer words the argument he has already stated; for the similitude which he mentions leaves now nothing doubtful, inasmuch as grafting designates not only a conformity of example, but a secret union, by which we are joined to him; so that he, reviving us by his Spirit, transfers his own virtue to us. Hence as the graft has the same life or death in common with the tree into which it is ingrafted, so it is reasonable that we should be partakers of the life no less than of the death of Christ; for if we are ingrafted according to the likeness of Christ’s death, which was not without a resurrection, then our death shall not be without a resurrection. But the words admit of a twofold explanation, — either that we are ingrafted in Christ into the likeness of his death, or, that we are simply ingrafted in its likeness. The first reading would require the Greek dative <span style="color:#0000d4">ὁμοιώματι</span>, to be understood as pointing out the manner; nor do I deny but that it has a fuller meaning: but as the other harmonizes more with simplicity of expression, I have preferred it; though it signifies but little, as both come to the same meaning. *Chrysostom* thought that Paul used the expression, “likeness of death,” for death, as he says in another place, “being made in the likeness of men.” But it seems to me that there is something more significant in the expression; for it not only serves to intimate a resurrection, but it seems also to indicate this — that we die not like Christ a natural death, but that there is a similarity between our and his death; for as he by death died in the flesh, which he had assumed from us, so we also die in ourselves, that we may live in him. It is not then the same, but a similar death; for we are to notice the connection between the death of our present life and spiritual renovation.
@@ -2056,28 +1556,14 @@ He points out the end for which this destruction is effected, when he says, <spa
 
 <!-- PAGE 173 -->
 
-## ROMANS 6:7-11
+<h2 class="scripture-anchor" id="romans-6-7-11" data-ref="ROMANS 6:7-11" style="display:none">ROMANS 6:7-11</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>7. For he that is dead is freed from sin.</td><td>7. Qui enim mortuus est,</td></tr>
-<tr><td>8. Now, if we be dead with Christ, we</td><td>justificatus Est a peccato.</td></tr>
-<tr><td>believe that we shall also live with</td><td>8. Si vero mortui sumus cum</td></tr>
-<tr><td>him:</td><td>Christo, credimus quod et vivemus</td></tr>
-<tr><td>9. Knowing that Christ, being raised</td><td>cum eo</td></tr>
-<tr><td>from the dead, dieth no more; death</td><td>9. Scientes quad Christus</td></tr>
-<tr><td>hath no more dominion over him.</td><td>suscitatus ex mortuis, amplius non</td></tr>
-<tr><td>10. For in that he died, he died unto</td><td>moritur, mors illi amplius non</td></tr>
-<tr><td>sin once: but in that he liveth, he</td><td>dominatur:</td></tr>
-<tr><td>liveth unto God.</td><td>10. Quod enim mortuus est,</td></tr>
-<tr><td>11. Likewise reckon ye also</td><td>peccato mortuus est semel, quod</td></tr>
-<tr><td>yourselves to be dead indeed unto sin,</td><td>autem vivit, vivit Deo.</td></tr>
-<tr><td>but alive unto God through Jesus</td><td>11. Sic et ipsi æstimate vosmet</td></tr>
-<tr><td>Christ our Lord.</td><td>esse mortuos quidem peccato,</td></tr>
-<tr><td></td><td>viventes autem Deo in Christo Iesu</td></tr>
-<tr><td></td><td>Domino nostro.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450607&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:7-11</span></p>
+
+<strong>7.</strong> For he that is dead is freed from sin. <strong>8.</strong> Now, if we be dead with Christ, we believe that we shall also live with him: <strong>9.</strong> Knowing that Christ, being raised from the dead, dieth no more; death hath no more dominion over him. <strong>10.</strong> For in that he died, he died unto sin once: but in that he liveth, he liveth unto God. <strong>11.</strong> Likewise reckon ye also yourselves to be dead indeed unto sin, but alive unto God through Jesus Christ our Lord.
+
+</div>
 
 **7.** <span style="color:#800000">*For he who has died*</span>, etc. This is an argument derived from what belongs to death or from its effect. For if death destroys all the actions of life, we who have died to sin ought to cease from those actions which it exercised during its life. Take *justified* for freed or reclaimed from bondage; for as he is freed from the bond of a charge, who is absolved by the sentence of a judge; so death, by freeing us from this life, sets us free from all its functions. <span style="color:#800000">[^f188]</span>
 
@@ -2101,22 +1587,14 @@ But we must observe what is suitable to Christ in this form of expression; for h
 
 The meaning, then, of the words may be thus expressed, “Take this view of your case, — that as Christ once died for the purpose of destroying sin, so you have once died, that in future you may cease from sin; yea, you must daily proceed with that work of mortifying, which is begun in you, till sin be wholly destroyed: as Christ is raised to an incorruptible life, so you are regenerated by the grace of God, that you may lead a life of holiness and righteousness, inasmuch as the power of the Holy Spirit, by which ye have been renewed, is eternal, and shall ever continue the same.” But I prefer to retain the words of Paul, *in Christ Jesus*, rather than to translate with *Erasmus*, *through Christ Jesus;* for thus the grafting, which makes us one with Christ, is better expressed.
 
-## ROMANS 6:12-13
+<h2 class="scripture-anchor" id="romans-6-12-13" data-ref="ROMANS 6:12-13" style="display:none">ROMANS 6:12-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>12. Let not sin therefore reign in</td><td>12. Ne ergo regnet peccatum in</td></tr>
-<tr><td>your mortal body, that ye should</td><td>mortali vestro corpore, ut illi</td></tr>
-<tr><td>obey it in the lusts thereof:</td><td>obediatis in cupiditatibus suis:</td></tr>
-<tr><td>13. Neither yield ye your members</td><td>13. Neque exhibeatis membra</td></tr>
-<tr><td><sty c="000000" i="1">as</sty> instruments of unrighteousness</td><td>vestra arma injustitiæ peccato,</td></tr>
-<tr><td>unto sin: but yield yourselves unto</td><td>sed exhibeatis vosmetipsos Deo,</td></tr>
-<tr><td>God, as those that are alive from</td><td>tanquam ex mortuis viventes, et</td></tr>
-<tr><td>the dead, and your members as</td><td>membra vestra arma justitiæ</td></tr>
-<tr><td>instruments of righteousness unto</td><td>Deo.</td></tr>
-<tr><td>God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450612&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:12-13</span></p>
+
+<strong>12.</strong> Let not sin therefore reign in your mortal body, that ye should obey it in the lusts thereof: <strong>13.</strong> Neither yield ye your members *as* instruments of unrighteousness unto sin: but yield yourselves unto God, as those that are alive from the dead, and your members as instruments of righteousness unto God.
+
+</div>
 
 <!-- PAGE 177 -->
 
@@ -2129,29 +1607,14 @@ On the other hand, he now bids us to present ourselves wholly to God, so that re
 
 <!-- PAGE 179 -->
 
-## ROMANS 6:14-18
+<h2 class="scripture-anchor" id="romans-6-14-18" data-ref="ROMANS 6:14-18" style="display:none">ROMANS 6:14-18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. For sin shall not have dominion</td><td>14. Peccatum enim vobis non</td></tr>
-<tr><td>over you;<sty c="800000" i="0"> [^f192] </sty>for ye are not under the</td><td>dominabitur, non enim estis sub</td></tr>
-<tr><td>law, but under grace.</td><td>Lege, sed Sub gratia.</td></tr>
-<tr><td>15. What then? shall we sin, because</td><td>15. Quid ergo? peccabimus, quia</td></tr>
-<tr><td>we are not under the law, but under</td><td>non sumus sub Lege, sed sub</td></tr>
-<tr><td>grace? God forbid.</td><td>gratia? Absit:</td></tr>
-<tr><td>16. Know ye not, that to whom ye</td><td>16. Nescitis quod cui exhibuistis</td></tr>
-<tr><td>yield yourselves servants to obey, his</td><td>vos servos in obedientiam, ejus</td></tr>
-<tr><td>servants ye are to whom ye obey;</td><td>servi estis cui obeditis, sive peccati</td></tr>
-<tr><td>whether of sin unto death, or of</td><td>in mortem, sive obedientiæ in</td></tr>
-<tr><td>obedience unto righteousness?</td><td>justitiam?</td></tr>
-<tr><td>17. But God be thanked, that ye were</td><td>17. Gratia autem Deo, quod fuistis</td></tr>
-<tr><td>the servants of sin; but ye have</td><td>servi peccati, obeditis, vero ex</td></tr>
-<tr><td>obeyed from the heart that form of</td><td>animo typo doctrinæ in quem</td></tr>
-<tr><td>doctrine which was delivered you.</td><td>traducti estis:</td></tr>
-<tr><td>18. Being then made free from sin, ye</td><td>18. Manumissi vero peccato, servi</td></tr>
-<tr><td>became the servants of righteousness.</td><td>facti estis justitiæ.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450614&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:14-18</span></p>
+
+<strong>14.</strong> For sin shall not have dominion over you; <span style="color:#800000">[^f192]</span> for ye are not under the law, but under grace. <strong>15.</strong> What then? shall we sin, because we are not under the law, but under grace? God forbid. <strong>16.</strong> Know ye not, that to whom ye yield yourselves servants to obey, his servants ye are to whom ye obey; whether of sin unto death, or of obedience unto righteousness? <strong>17.</strong> But God be thanked, that ye were the servants of sin; but ye have obeyed from the heart that form of doctrine which was delivered you. <strong>18.</strong> Being then made free from sin, ye became the servants of righteousness.
+
+</div>
 
 **14.** <span style="color:#800000">*For sin shall not rule over you,*</span> etc. It is not necessary to continue long in repeating and confuting expositions, which have little or no appearance of truth. There is one which has more probability in its favor than the rest, and it is this — that by <span style="color:#800000">*law*</span> we are to understand the letter of the law, which cannot renovate the soul, and by <span style="color:#800000">*grace*</span>, the grace of the Spirit, by which we are freed from depraved lusts. But this I do not wholly approve of; for if we take this meaning, what is the object of the question which immediately follows, “Shall we sin because we are not under the law?” Certainly the Apostle would never have put this question, had he not understood, that we are freed from the strictness of the law, so that God no more deals with us according to the high demands of justice. There is then no doubt but that he meant here to indicate some freedom from the very law of God. But laying aside controversy, I will briefly explain my view.
 
@@ -2189,20 +1652,14 @@ What are then our preparations by the power of free will, since the commencement
 
 <!-- PAGE 184 -->
 
-## ROMANS 6:19
+<h2 class="scripture-anchor" id="romans-6-19" data-ref="ROMANS 6:19" style="display:none">ROMANS 6:19</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. I speak after the manner of men,</td><td>19. Humanum dico propter</td></tr>
-<tr><td>because of the infirmity of your</td><td>infirmitatem carnis vestræ,</td></tr>
-<tr><td>flesh: for as ye have yielded your</td><td>quemadmodum exhibuistis membra</td></tr>
-<tr><td>members servants to uncleanness,</td><td>vestra serva immunditiæ et iniquitati</td></tr>
-<tr><td>and to iniquity unto iniquity; even</td><td>in iniquitatem, sic et nunc exhibite</td></tr>
-<tr><td>so now yield your members</td><td>membra vestra serva justitiæ in</td></tr>
-<tr><td>servants to righteousness unto</td><td>sanctificationem.</td></tr>
-<tr><td>holiness.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450619&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:19</span></p>
+
+<strong>19.</strong> I speak after the manner of men, because of the infirmity of your flesh: for as ye have yielded your members servants to uncleanness, and to iniquity unto iniquity; even so now yield your members servants to righteousness unto holiness.
+
+</div>
 
 **19.** <span style="color:#800000">*I speak what is human*</span>, etc. He says that he speaks after the manner of men, not as to the substance but as to the manner. So Christ says, in John 3:12, that he announced earthly things, while yet he spoke of heavenly mysteries, though not so magnificently as the dignity of the things required, because he accommodated himself to the capacities of a people ignorant and simple. And thus the Apostle says, by way of preface, that he might more fully show how gross and wicked is the calumny, when it is imagined, that the freedom obtained by Christ gives liberty to sin. He reminds the faithful at the same time, that nothing is more unreasonable, nay, base and disgraceful, than that the spiritual grace of Christ should have less influence over them than earthly freedom; as though he had said, “I might, by comparing sin and righteousness, show how much more ardently ye ought to be led to render obedience to the latter, than to serve the former; but from regard to your infirmity I omit this comparison: nevertheless, though I treat you with great indulgence, I may yet surely make this just demand — that you should not at least obey righteousness more coldly or negligently than you served sin.” It is a sort of reticence or silence, a withholding of something when we wish more to be understood than what we express. He does yet exhort them to render obedience to righteousness with so much more diligence, as that which they served is more worthy than sin, though be seems not to require this in so many words. <span style="color:#800000">[^f197]</span>
 
@@ -2211,26 +1668,14 @@ What are then our preparations by the power of free will, since the commencement
 
 He mentions first two kinds — uncleanness and iniquity; the former of which is opposed to chastity and holiness, the other refers to injuries hurtful to our neighbour. But he repeats iniquity twice, and in a different sense: by the first he means plunders, frauds, perjuries, and every kind of wrong; by the second, the universal corruption of life, as though he had said, “Ye have prostituted your members so as to perpetrate all wicked works, and thus the kingdom of iniquity became strong in you” <span style="color:#800000">[^f198]</span> By <span style="color:#800000">*righteousness*</span> I understand the law or the rule of a holy life, the design of which is sanctification, as the case is when the faithful devote themselves to serve God in purity.
 
-## ROMANS 6:20-23
+<h2 class="scripture-anchor" id="romans-6-20-23" data-ref="ROMANS 6:20-23" style="display:none">ROMANS 6:20-23</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>20. For when ye were the servants</td><td>20. Quando enim servi fuistis</td></tr>
-<tr><td>of sin, ye were free from</td><td>peccati, liberi fuistis justitiæ.</td></tr>
-<tr><td>righteousness.</td><td>21. Quem ergo fructum habuistis</td></tr>
-<tr><td>21. What fruit had ye then in those</td><td>tunc in iis, de quibus nunc</td></tr>
-<tr><td>things whereof ye are now</td><td>erubescitis? Siquidem finis eorum</td></tr>
-<tr><td>ashamed? for the end of those</td><td>mors.</td></tr>
-<tr><td>things is death.</td><td>22. Nunc vero manumissi a peccato,</td></tr>
-<tr><td>22. But now, being made free from</td><td>Deo autem in servitutem addicti,</td></tr>
-<tr><td>sin, and become servants to God,</td><td>habetis fructum vestrum in</td></tr>
-<tr><td>ye have your fruit unto holiness,</td><td>sanctificationem, finem vero vitam</td></tr>
-<tr><td>and the end everlasting life.</td><td>æternam.</td></tr>
-<tr><td>23. For the wages of sin is death;</td><td>23. Stipendia enim peccati, mors;</td></tr>
-<tr><td>but the gift of God is eternal life</td><td>donum vero Dei, vita æterna, in</td></tr>
-<tr><td>through Jesus Christ our Lord.</td><td>Christo lesu Domino nostro.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450620&gt;</span><span class="book-name">Romans</span> <span class="verse-range">6:20-23</span></p>
+
+<strong>20.</strong> For when ye were the servants of sin, ye were free from righteousness. <strong>21.</strong> What fruit had ye then in those things whereof ye are now ashamed? for the end of those things is death. <strong>22.</strong> But now, being made free from sin, and become servants to God, ye have your fruit unto holiness, and the end everlasting life. <strong>23.</strong> For the wages of sin is death; but the gift of God is eternal life through Jesus Christ our Lord.
+
+</div>
 
 <!-- PAGE 186 -->
 
@@ -2256,33 +1701,14 @@ It may however be hence inferred with certainty, that our salvation is altogethe
 
 # CHAPTER 7
 
-## ROMANS 7:1-4
+<h2 class="scripture-anchor" id="romans-7-1-4" data-ref="ROMANS 7:1-4" style="display:none">ROMANS 7:1-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Know ye not, brethren, (for I speak</td><td>1. Num ignoratis fratres</td></tr>
-<tr><td>to them that know the law,) how that</td><td>(scientibus enim Legem loquor)</td></tr>
-<tr><td>the law hath dominion over a man as</td><td>quod Lex dominatur homini</td></tr>
-<tr><td>long as he liveth?</td><td>quamdiu vivit?</td></tr>
-<tr><td>2. For the woman which hath an</td><td>2. Nam viro subjecta mulier,</td></tr>
-<tr><td>husband is bound by the law to her</td><td>viventi viro alligata est per Legem;</td></tr>
-<tr><td>husband so long as he liveth; but if the</td><td>quod si mortuus fuerit vir, soluta</td></tr>
-<tr><td>husband be dead, she is loosed from</td><td>est a Lege viri.</td></tr>
-<tr><td>the law of her husband.</td><td>3. Proinde vivente marito, si alteri</td></tr>
-<tr><td>3. So then if, while her husband liveth,</td><td>viro conjuncta fuerit, adultera</td></tr>
-<tr><td>she be married to another man, she</td><td>vocabitur: quod si mortuus fuerit</td></tr>
-<tr><td>shall be called an adulteress: but if her</td><td>vir, liberata est a Lege ne amplius</td></tr>
-<tr><td>husband be dead, she is free from that</td><td>sit adultera si alteri nupserit.</td></tr>
-<tr><td>law; so that she is no adulteress,</td><td>4. Itaque fratres mei, vos quoque</td></tr>
-<tr><td>though she be married to another man.</td><td>mortui estis Legi per corpus</td></tr>
-<tr><td>4. Wherefore, my brethren, ye also are</td><td>Christi, ut posthac alterius sitis,</td></tr>
-<tr><td>become dead to the law by the body of</td><td>ejus qui ex mortuis suscitatus est,</td></tr>
-<tr><td>Christ; that ye should be married to</td><td>ut fructificemus Deo.<sty c="800000" i="0"> [^f199]</sty></td></tr>
-<tr><td>another, even to him who is raised</td><td></td></tr>
-<tr><td>from the dead, that we should bring</td><td></td></tr>
-<tr><td>forth fruit unto God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450701&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:1-4</span></p>
+
+<strong>1.</strong> Know ye not, brethren, (for I speak to them that know the law,) how that the law hath dominion over a man as long as he liveth? <strong>2.</strong> For the woman which hath an husband is bound by the law to her husband so long as he liveth; but if the husband be dead, she is loosed from the law of her husband. <strong>3.</strong> So then if, while her husband liveth, she be married to another man, she shall be called an adulteress: but if her husband be dead, she is free from that law; so that she is no adulteress, though she be married to another man. <strong>4.</strong> Wherefore, my brethren, ye also are become dead to the law by the body of Christ; that ye should be married to another, even to him who is raised from the dead, that we should bring forth fruit unto God.
+
+</div>
 
 <!-- PAGE 190 -->
 Though he had, in a brief manner, sufficiently explained the question respecting the abrogation of the law; yet as it was a difficult one, and might have given rise to many other questions, he now shows more at large how the law, with regard to us, is become abrogated; and then he sets forth what good is thereby done to us: for while it holds us separated from Christ and bound to itself, it can do nothing but condemn us. And lest any one should on this account blame the law itself, he takes up and confutes the objections of the flesh, and handles, in a striking manner, the great question respecting the use of the law. <span style="color:#800000">[^f200]</span> **1.** <span style="color:#800000">*Know ye not,*</span> etc. Let the general proposition be that the law was given to men for no other end but to regulate the present life, and that it belongs not to those who are dead: to this he afterwards subjoins this truth — that we are dead to it through the body of Christ. Some understand, that the dominion of the law continues so long to bind us as it remains in force. But as this view is rather obscure, and does not harmonize so well with the proposition which immediately follows, I prefer to follow those who regard what is said as referring to the life of man, and not to the law. The question has indeed a peculiar force, as it affirms the certainty of what is spoken; for it shows that it was not a thing new or unknown to any of them, but acknowledged equally by them all.
@@ -2305,21 +1731,14 @@ Even <span style="color:#800000">*his who has been raised*</span>, etc. We have 
 <!-- PAGE 193 -->
 <span style="color:#800000">*That we may bring forth fruit to God.*</span> He ever annexes the final cause, lest any should indulge the liberty of their flesh and their own lusts, under the pretense that Christ has delivered them from the bondage of the law; for he has offered us, together with himself, as a sacrifice to the Father, and he regenerates us for this end — that by newness of life we may bring forth fruit unto God: and we know that the fruits which our heavenly Father requires from us are those of holiness and righteousness. It is indeed no abatement to our liberty that we serve God; nay, if we desire to enjoy so great a benefit as there is in Christ, it will not henceforth be right in us to entertain any other thought but that of promoting the glory of God; for which purpose Christ has connected us with himself. We shall otherwise remain tle bond-slaves, not only of the law, but also of sin and of death.
 
-## ROMANS 7:5-6
+<h2 class="scripture-anchor" id="romans-7-5-6" data-ref="ROMANS 7:5-6" style="display:none">ROMANS 7:5-6</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. For when we were in the flesh, the</td><td>5. Quum enim essemus in carne,</td></tr>
-<tr><td>motions of sins, which were by the</td><td>affectus peccatorum qui sunt per</td></tr>
-<tr><td>law, did work in our members to bring</td><td>Legem, in membris nostris</td></tr>
-<tr><td>forth fruit unto death.</td><td>operabantur ad fructificandum</td></tr>
-<tr><td>6. But now we are delivered from the</td><td>morti:</td></tr>
-<tr><td>law, that being dead wherein we were</td><td>6. Nunc vero soluti sumus a Lege,</td></tr>
-<tr><td>held; that we should serve in newness</td><td>mortui ei in qua detinebamur; ut</td></tr>
-<tr><td>of spirit, and not in the old ness of the</td><td>serviamus in novitate spiritus, et</td></tr>
-<tr><td>letter.</td><td>non in vetustate literæ.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450705&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:5-6</span></p>
+
+<strong>5.</strong> For when we were in the flesh, the motions of sins, which were by the law, did work in our members to bring forth fruit unto death. <strong>6.</strong> But now we are delivered from the law, that being dead wherein we were held; that we should serve in newness of spirit, and not in the old ness of the letter.
+
+</div>
 
 **5.** <span style="color:#800000">*For when we were,*</span> etc. He shows still more clearly by stating the contrary effect, how unreasonably the zealots of the law acted, who would still detain the faithful under it dominion; for as long as the literal teaching of the law, unconnected with the Spirit of Christ, rules and bears sway, the wantonness of the flesh is not restrained, but, on the contrary, breaks out and prevails. It hence follows, that the kingdom of righteousness is not established, except when Christ emancipates us from the law. Paul at the same time reminds us of the works which it becomes us to do, when set free from the law. As long, then, as man is kept under the yoke of the law, he can, as he is sinning continually, procure nothing for himself but death. Since bondage to the law produces sin only, then freedom, its opposite, must tend to righteousness; if the former leads to death, then the latter leads to life. But let us consider the very words of Paul.
 
@@ -2336,20 +1755,14 @@ Scripture, to *be in the flesh;* it means to be endued only with the gifts of na
 <!-- PAGE 195 -->
 <span style="color:#800000">*Having died to that,*</span> etc. This part contains a reason, or rather, indicates the manner in which we are made free; for the law is so far abrogated with regard to us, that we are not pressed down by its intolerable burden, and that its inexorable rigor does not overwhelm us with a Curse. <span style="color:#800000">[^f206]</span> — <span style="color:#800000">*In newness of spirit*</span>; He sets the spirit in opposition to the letter; for before our will is formed according to the will of God by the Holy Spirit, we have in the law nothing but the outward letter, which indeed bridles our external actions, but does not in the least restrain the fury of our lusts. And he ascribes <span style="color:#800000">*newness*</span> to the Spirit, because it succeeds the *old* man; as the letter is called *old*, because it perishes through the regeneration of the Spirit.
 
-## ROMANS 7:7-8
+<h2 class="scripture-anchor" id="romans-7-7-8" data-ref="ROMANS 7:7-8" style="display:none">ROMANS 7:7-8</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>7. What shall we say then? Is the</td><td>7. Quid ergo dicemus? Lex peccatum</td></tr>
-<tr><td>law sin? God forbid. Nay, I had not</td><td>est? Absit: sed peccatum non</td></tr>
-<tr><td>known sin but by the law: for I had</td><td>cognovi nisi per Legem:</td></tr>
-<tr><td>not known lust, except the law had</td><td>concupiscentiam enim non noveram,</td></tr>
-<tr><td>said, Thou shalt not covet<sty c="800000" i="0"> [^f207]</sty></td><td>nisi Lex diceret, Non concupisces</td></tr>
-<tr><td>8. But sin, taking occasion by the</td><td>8. Occasione autem sumpta,</td></tr>
-<tr><td>commandment, wrought in me all</td><td>peccatum per mandatum effecit in</td></tr>
-<tr><td>manner of concupiscence.</td><td>me omnem concupiscentiam.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450707&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:7-8</span></p>
+
+<strong>7.</strong> What shall we say then? Is the law sin? God forbid. Nay, I had not known sin but by the law: for I had not known lust, except the law had said, Thou shalt not covet <span style="color:#800000">[^f207]</span> <strong>8.</strong> But sin, taking occasion by the commandment, wrought in me all manner of concupiscence.
+
+</div>
 
 **7.** <span style="color:#800000">*What then shall we say?*</span> Since it has been said that we must be freed from the law, in order that we may serve God in newness of spirit, it seemed as though this evil belonged to the law, — that it leads us to sin. But as this would be above measure inconsistent, the Apostle rightly undertook to disprove it. Now when he adds, <span style="color:#800000">*Is the law sin?*</span> what he means is, “Does it so produce sin that its guilt ought to be imputed to the law?” — <span style="color:#800000">*But sin I knew not, except through the law*</span>; sin then dwells in us, and not in the law; for the cause of it is the depraved lust of our flesh, and we come to know it by the knowledge of God’s righteousness, which is revealed to us in the law. <span style="color:#800000">[^f208]</span> You are not indeed to understand, that no difference whatever can be known between right and wrong without the law; but that without the law we are either too dull of apprehension to discern our depravity, or that we are made wholly insensible through selfflattery, according to what follows, —
 
@@ -2361,27 +1774,14 @@ Scripture, to *be in the flesh;* it means to be endued only with the gifts of na
 <!-- PAGE 197 -->
 **8.** <span style="color:#800000">*But an occasion being taken*</span>, etc. From sin, then, and the corruption of the flesh, proceeds every evil; the law is only the occasion. And though he may seem to speak only of that excitement, by which our lusting is instigated through the law, so that it boils out with greater fury; yet I refer this chiefly to the knowledge the law conveys; as though he had said, “It has discovered to me every lust or coveting which, being hid, seemed somehow to have no existence.” I do not yet deny, but that the flesh is more sharply stimulated to lusting by the law, and also by this means more clearly shows itself; which may have been also the case with Paul: but what I have said of the knowledge it brings, seems to harmonize better with the context; <span style="color:#800000">[^f210]</span> for he immediately subjoins —
 
-## ROMANS 7:8-12
+<h2 class="scripture-anchor" id="romans-7-8-12" data-ref="ROMANS 7:8-12" style="display:none">ROMANS 7:8-12</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>8. For without the law sin was dead.</td><td>8. Sine Lege enim peccatum est</td></tr>
-<tr><td><sty c="800000" i="0">[^f211]</sty></td><td>mortuum:</td></tr>
-<tr><td>9. For I was alive without the law</td><td>9. Ego autem vivebam sine Lege</td></tr>
-<tr><td>once; but when the commandment</td><td>aliquando<sty c="800000" i="0"> [^f212] </sty>adveniente autem</td></tr>
-<tr><td>came, sin revived, and I died.</td><td>mandato, peccatum revixit,</td></tr>
-<tr><td>10. And the commandment, which</td><td>10. Ego autem mortuus sum; et</td></tr>
-<tr><td>was ordained to life, I found to be</td><td>deprehensum est a me mandatum</td></tr>
-<tr><td>unto death.</td><td>quod erat in vitam, cedere in</td></tr>
-<tr><td>11. For sin, taking occasion by the</td><td>mortem.</td></tr>
-<tr><td>commandment, deceived me, and by</td><td>11. Peccatum enim, occasione</td></tr>
-<tr><td>it slew me.</td><td>sumpta per mandatum, abduxit me</td></tr>
-<tr><td>12. Wherefore the law is holy, and the</td><td>a via et per illud occidit:</td></tr>
-<tr><td>commandment holy, and just, and</td><td>12. Itaque Lex quidem sancta, et</td></tr>
-<tr><td>good.</td><td>mandatum sanctum, et justum et</td></tr>
-<tr><td></td><td>bonum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450708&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:8-12</span></p>
+
+<strong>8.</strong> For without the law sin was dead. <span style="color:#800000">[^f211]</span> <strong>9.</strong> For I was alive without the law once; but when the commandment came, sin revived, and I died. <strong>10.</strong> And the commandment, which was ordained to life, I found to be unto death. <strong>11.</strong> For sin, taking occasion by the commandment, deceived me, and by it slew me. <strong>12.</strong> Wherefore the law is holy, and the commandment holy, and just, and good.
+
+</div>
 
 **8.** <span style="color:#800000">*For without the law,*</span> etc. He expresses most clearly the meaning of his former words; for it is the same as though he had said, that the knowledge of sin without the law is buried. It is a general truth, which he presently applies to his own case. I hence wonder what could have come into the minds of interpreters to render the passage in the preterimperfect tense, as though Paul was speaking of himself; for it is easy to see that his purpose was to begin with a general proposition, and then to explain the subject by his own example.
 
@@ -2399,42 +1799,28 @@ It may be here asked, what time was that when through his ignorance of the law, 
 <!-- PAGE 200 -->
 **11.** <span style="color:#800000">*Led me out of the way,*</span> etc. It is indeed true, that while the will of God is hid from us, and no truth shines on us, the life of men goes wholly astray and is full of errors; nay, we do nothing but wander from the right course, until the law shows to us the way of living rightly: but as we begin then only to perceive our erroneous course, when the Lord loudly reproves us, Paul says rightly, that we are led out of the way, when sin is made evident by the law. Hence the verb, <span style="color:#0000d4">ἐξαπατᾷν</span>, must be understood, not of the thing itself, but of our knowledge; that is, that it is made manifest by the law how much we have departed from the right course. It must then be necessarily rendered, <span style="color:#800000">*led me out of the way*</span>; for hence sinners, who before went on heedlessly, loathe and abominate themselves, when they perceive, through the light which the law throws on the turpitude of sin, that they had been hastening to death. But he away introduces the word occasion, and for this purpose — that we may know that the law of itself does not bring death, but that this happens through something else, and that this is as it were adventitious. <span style="color:#800000">[^f213]</span> **12.** <span style="color:#800000">*So then the law is indeed holy*</span>, etc. Some think that the words <span style="color:#800000">*law*</span> and <span style="color:#800000">*commandment*</span> is a repetition of the same thing; with whom I agree; <span style="color:#800000">[^f214]</span> and I consider that there is a peculiar force in the words, when he says, that the law itself and whatever is commanded in the law, is <span style="color:#800000">*holy*</span>, and therefore to be regarded with the highest reverence, — that it is <span style="color:#800000">*just*</span>, and cannot therefore be charged with anything wrong, — that it is <span style="color:#800000">*good,*</span> and hence pure and free from everything that can do harm. He thus defends the law against every charge of blame, that no one should ascribe to it what is contrary to goodness, justice, and holiness.
 
-## ROMANS 7:13
+<h2 class="scripture-anchor" id="romans-7-13" data-ref="ROMANS 7:13" style="display:none">ROMANS 7:13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>13. Was then that which is good</td><td>13. Quod ergo bonum est, mihi</td></tr>
-<tr><td>made death unto me? God forbid.</td><td>in mortem cessit? Absit: imo</td></tr>
-<tr><td>But sin, that it might appear sin,</td><td>peccatum, ut appareat</td></tr>
-<tr><td>working death in me by that which</td><td>peccatum, per bonum operatur</td></tr>
-<tr><td>is good; that sin by the</td><td>mihi mortem: ut fiat super</td></tr>
-<tr><td>commandment might become</td><td>modum peccans peccatum Per</td></tr>
-<tr><td>exceeding sinful.</td><td>mandatum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450713&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:13</span></p>
+
+<strong>13.</strong> Was then that which is good made death unto me? God forbid. But sin, that it might appear sin, working death in me by that which is good; that sin by the commandment might become exceeding sinful.
+
+</div>
 
 **13.** <span style="color:#800000">*Has then what is good*</span><span style="color:#800000">,</span> etc. He had hitherto defended the law from calumnies, but in such a manner, that it still remained doubtful whether it was the cause of death; nay, the minds of men were on this point perplexed, — how could it be that nothing but death was gained from singular a gift of God. To this objection then he now gives an answer; and he denies, that death proceeds from the law, though death through its means is brought on us by sin. And though this answer seems to militate in appearance against what he had said before — that he had found the commandment, which was given for life, to be unto death, there is yet no contrariety. He had indeed said before, that it is through our wickedness that the law is turned to our destruction, and that contrary to its own character; but here he denies, that it is in such a sense the cause of death, that death is to be imputed to it. In 2 Corinthians 3 he treats more fully of the law. He there calls it the ministration of death; but he so calls it according to what is commonly done in a dispute, and represents, not the real character of the law, but the false opinion of his opponents. <span style="color:#800000">[^f215]</span>
 
 <!-- PAGE 201 -->
 <span style="color:#800000">*But sin,*</span> etc. With no intention to offend others, I must state it as my opinion, that this passage ought to be read as I have rendered it, and the meaning is this, — “Sin is in a manner regarded as just before it is discovered by the law; but when it is by the law made known, then it really obtains its own name of sin; and hence it appears the more wicked, and, so to speak, the more sinful, because it turns the goodness of the law, by perverting it, to our destruction; for that must be very pestiferous, which makes what is in its own nature salutary to be hurtful to us.” The import of the whole is — that it was necessary for the atrocity of sin to be discovered by the law; for except sin had burst forth into outrageous, or, as they say, into enormous excess, it would not have been acknowledged as sin; and the more outrageous does its enormity appear, when it converts life into death; and thus every excuse is taken away from it. <span style="color:#800000">[^f216]</span>
 
-## ROMANS 7:14-17
+<h2 class="scripture-anchor" id="romans-7-14-17" data-ref="ROMANS 7:14-17" style="display:none">ROMANS 7:14-17</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. For me know that the law is</td><td>14. Scimus enim quod Lex</td></tr>
-<tr><td>spiritual; but I am carnal, sold under</td><td>spiritualis est: ego autem carnalis</td></tr>
-<tr><td>sin</td><td>sum, venditus sub peccato.</td></tr>
-<tr><td>15. For that which I do I allow not:</td><td>15. Quod enim operor, non</td></tr>
-<tr><td>for what I would, that do I not; but</td><td>intelligo; siquidem non quod volo,</td></tr>
-<tr><td>what I hate, that do I.</td><td>hoc ago: sed quod odi, hoe facio.</td></tr>
-<tr><td>16. If then I do that which I could not,</td><td>16. Si vero quod nolo, hoe facio,</td></tr>
-<tr><td>I consent unto the law that it is good.</td><td>consentio Legi Dei quod sit bona.</td></tr>
-<tr><td>17. Now then, it is no more I that do</td><td>17. Nunc vero non jam illud operor</td></tr>
-<tr><td>it; but sin that dwelleth in me.</td><td>ego, sed quod habitat in me</td></tr>
-<tr><td></td><td>peccatum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450714&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:14-17</span></p>
+
+<strong>14.</strong> For me know that the law is spiritual; but I am carnal, sold under sin <strong>15.</strong> For that which I do I allow not: for what I would, that do I not; but what I hate, that do I. <strong>16.</strong> If then I do that which I could not, I consent unto the law that it is good. <strong>17.</strong> Now then, it is no more I that do it; but sin that dwelleth in me.
+
+</div>
 
 **14.** <span style="color:#800000">*For we know that the law,*</span> etc. He now begins more closely to compare the law with what man is, that it may be more clearly understood whence the evil of death proceeds. He then sets before us an example in a regenerate man, in whom the remnants of the flesh are wholly contrary to the law of the Lord, while the spirit would gladly obey it. But first, as we have said, he makes only a comparison between nature and the law. Since in human things there is no greater discord than between spirit and flesh, the law being spiritual and man carnal, what agreement can there be between the natural man and the law? Even the same as between darkness and light. But by calling the law <span style="color:#800000">*spiritual*</span>, he not only means, as some expound the passage, that it requires the inward affections of the heart; but that, by way of contrast, it has a contrary import to the word <span style="color:#800000">*carnal*</span>. <span style="color:#800000">[^f217]</span>
 
@@ -2472,23 +1858,14 @@ We may hence learn the truth of what we have stated — that Paul speaks here of
 
 This passage also clearly shows, that Paul speaks here of none but of the godly, who have been already born again; for as long as man remains like himself, whatsoever he may be, he is justly deemed corrupt; but Paul here denies that he is wholly possessed by sin; nay, he declares himself to be exempt from its bondage, as though he had said, that sin only dwelt in some part of his soul, while with an earnest feeling of heart he strove for and aspired after the righteousness of God, and clearly proved that he had the law of God engraven within him. <span style="color:#800000">[^f223]</span>
 
-## ROMANS 7:18-20
+<h2 class="scripture-anchor" id="romans-7-18-20" data-ref="ROMANS 7:18-20" style="display:none">ROMANS 7:18-20</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>18. For I know that in me (that is, in</td><td>18. Novi enim quod non habitat<sty c="800000" i="0"> [^f224]</sty></td></tr>
-<tr><td>my flesh) dwelleth no good thing: for</td><td>in me (hoc est, in came mea)</td></tr>
-<tr><td>to will is present with me; but how to</td><td>bonum: siquidem velle adest mihi,</td></tr>
-<tr><td>perform that which is good I find not.</td><td>sed ut perficiam bonum non</td></tr>
-<tr><td>19. For the good that I would I do</td><td>reperio.</td></tr>
-<tr><td>not: but the evil which I would not</td><td>19. Non enim quod volo facio</td></tr>
-<tr><td>that I do.</td><td>bonum; sed quod nolo malum, id</td></tr>
-<tr><td>20. Now, if I do that I would not, it is</td><td>ago.</td></tr>
-<tr><td>no more I that do it, but sin that</td><td>20. Si vero quod nolo ego id facio,</td></tr>
-<tr><td>dwelleth in me.</td><td>non jam ego operor illud, sed quod</td></tr>
-<tr><td></td><td>habitat in me peccatum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450718&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:18-20</span></p>
+
+<strong>18.</strong> For I know that in me (that is, in my flesh) dwelleth no good thing: for to will is present with me; but how to perform that which is good I find not. <strong>19.</strong> For the good that I would I do not: but the evil which I would not that I do. <strong>20.</strong> Now, if I do that I would not, it is no more I that do it, but sin that dwelleth in me.
+
+</div>
 
 <!-- PAGE 207 -->
 
@@ -2501,21 +1878,14 @@ This passage also clearly shows, that Paul speaks here of none but of the godly,
 
 He at last repeats the sentiment, — that, as far as he was endued with celestial light, he was a true witness and subscriber to the righteousness of the law. It hence follows, that had the pure integrity of our nature remained, the law would not have brought death on us, and that it is not adverse to the man who is endued with a sound and right mind and abhors sin. But to restore health is the work of our heavenly Physician.
 
-## ROMANS 7:21-23
+<h2 class="scripture-anchor" id="romans-7-21-23" data-ref="ROMANS 7:21-23" style="display:none">ROMANS 7:21-23</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>21. I find then a law, that, when I would</td><td>21. Reperio igitur Legem volenti mihi facere</td></tr>
-<tr><td>do good, evil is present with me.</td><td>bonum quod mihi malum insideat.<sty c="800000" i="0"> [^f226]</sty></td></tr>
-<tr><td>22. For I delight in the law of God</td><td>22. Consentio enim Legi Dei</td></tr>
-<tr><td>after the inward man:</td><td>secundum interiorem hominem.</td></tr>
-<tr><td>23. But I see another law in my</td><td>23. Video autem alterum Legem in</td></tr>
-<tr><td>members warring against the law of</td><td>membris meis, repugnantem<sty c="800000" i="0"> [^f227] </sty>legi</td></tr>
-<tr><td>my mind, and bringing me into</td><td>mentis meæ, et captivum me</td></tr>
-<tr><td>captivity to the law of sin which is</td><td>reddentem legi peccati, quæ est in</td></tr>
-<tr><td>in my members,</td><td>membris meis.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450721&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:21-23</span></p>
+
+<strong>21.</strong> I find then a law, that, when I would do good, evil is present with me. <strong>22.</strong> For I delight in the law of God after the inward man: <strong>23.</strong> But I see another law in my members warring against the law of my mind, and bringing me into captivity to the law of sin which is in my members,
+
+</div>
 
 **21.** <span style="color:#800000">*I find then*</span>, etc. Here Paul supposes a fourfold law. The first is the law of God, which alone is properly so called, which is the rule of righteousness, by which our life is rightly formed. To this he joins the law of the mind, and by this he means the prompt readiness of the faithful mind to render obedience to the divine law, it being a certain conformity on our part with the law of God. On the other hand, he sets in opposition to this the law of unrighteousness; and according to a certain kind of similarity, he gives this name to that dominion which iniquity exercises over a man not yet regenerated, as well as over the flesh of a regenerated man; for the laws even of tyrants, however iniquitous they may be, are called laws, though not properly. To correspond with this law of sin he makes the law of the members, that is, the lust which is in the members, on account of the concord it has with iniquity.
 
@@ -2529,20 +1899,14 @@ But we ought to notice carefully the meaning of the <span style="color:#800000">
 
 Now since the <span style="color:#800000">*law of the mind*</span> undoubtedly means a principle rightly formed, it is evident that this passage is very absurdly applied to men not yet regenerated; for such, as Paul teaches us, are destitute of mind, inasmuch as their soul has become degenerated from reason.
 
-## ROMANS 7:24-25
+<h2 class="scripture-anchor" id="romans-7-24-25" data-ref="ROMANS 7:24-25" style="display:none">ROMANS 7:24-25</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>24. O wretched man that I am!</td><td>24. Miser ego homo! quis me</td></tr>
-<tr><td>who shall deliver me from the</td><td>eripiet a corpore mortis hoc?</td></tr>
-<tr><td>body of this death?</td><td>25. Gratias ago Deo per Iesum</td></tr>
-<tr><td>25. I thank God, through Jesus</td><td>Christum Dominum nostrum:</td></tr>
-<tr><td>Christ our Lord. So then with the</td><td>itaque idem ego mente servio</td></tr>
-<tr><td>mind I myself serve the law of</td><td>Legi Dei,carne autem legi</td></tr>
-<tr><td>God,but with the flesh the law of</td><td>peccati.</td></tr>
-<tr><td>sin.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450724&gt;</span><span class="book-name">Romans</span> <span class="verse-range">7:24-25</span></p>
+
+<strong>24.</strong> O wretched man that I am! who shall deliver me from the body of this death? <strong>25.</strong> I thank God, through Jesus Christ our Lord. So then with the mind I myself serve the law of God,but with the flesh the law of sin.
+
+</div>
 
 **24.** <span style="color:#800000">*Miserable*</span>, etc. He closes his argument with a vehement exclamation, by which he teaches us that we are not only to struggle with our flesh, but also with continual groaning to bewail within ourselves and before God our unhappy condition. But he asks not by whom he was to be delivered, as one in doubt, like unbelievers, who understand not that there is but one real deliverer: but it is the voice of one panting and almost fainting, because he does not find immediate help, <span style="color:#800000">[^f230]</span> as he longs for. And he mentions the word rescue, <span style="color:#800000">[^f231]</span> in order that he might show, that for his liberation no ordinary exercise of divine power was necessary.
 
@@ -2567,29 +1931,14 @@ But what is suflicient to bridle impatience and to cherish resignation, is the t
 
 # CHAPTER 8
 
-## ROMANS 8:1-4
+<h2 class="scripture-anchor" id="romans-8-1-4" data-ref="ROMANS 8:1-4" style="display:none">ROMANS 8:1-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. There is therefore now no</td><td>1. Nulla igitur condemnatio est iis</td></tr>
-<tr><td>condemnation to them which are in</td><td>qui sunt in Christo Iesu, qui non</td></tr>
-<tr><td>Christ Jesus, who walk not after the</td><td>secumdum carnem ambulant, sed</td></tr>
-<tr><td>flesh but after the Spirit.<sty c="800000" i="0"> [^f235]</sty></td><td>secundum Spiritum.</td></tr>
-<tr><td>2. For the law of the Spirit of life in</td><td>2. Lex enim Spiritus vitæ in</td></tr>
-<tr><td>Christ Jesus hath made me free from</td><td>Christo Iesu, liberum me reddidit a</td></tr>
-<tr><td>the law of sin and death.</td><td>lege peccati et mortis.</td></tr>
-<tr><td>3. For what the law could not do,in</td><td>3. Quod enim impossibile erat</td></tr>
-<tr><td>that it was weak through the flesh,</td><td>Legi,eo quod infirmabatur per</td></tr>
-<tr><td>God sending his own Son in the</td><td>carnem,misso Deus Filio suo in</td></tr>
-<tr><td>likeness of sinful flesh, and for sin</td><td>similitudine carnis peccati, etiam de</td></tr>
-<tr><td>condemned sin in the flesh;</td><td>peccato damnavit peccatum in</td></tr>
-<tr><td>4. That the righteousness of the law</td><td>carne;</td></tr>
-<tr><td>might be fulfilled in us, who walk not</td><td>4. Ut justificatio Legis impleretur</td></tr>
-<tr><td>after the flesh, but after the Spirit.</td><td>in nobis qui non secumdum carnem</td></tr>
-<tr><td></td><td>ambulamus, sed secundum</td></tr>
-<tr><td></td><td>Spiritum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450801&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:1-4</span></p>
+
+<strong>1.</strong> There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh but after the Spirit. <span style="color:#800000">[^f235]</span> <strong>2.</strong> For the law of the Spirit of life in Christ Jesus hath made me free from the law of sin and death. <strong>3.</strong> For what the law could not do,in that it was weak through the flesh, God sending his own Son in the likeness of sinful flesh, and for sin condemned sin in the flesh; <strong>4.</strong> That the righteousness of the law might be fulfilled in us, who walk not after the flesh, but after the Spirit.
+
+</div>
 
 <!-- PAGE 214 -->
 **1.** <span style="color:#800000">*There is then*</span>, etc. After having described the contest which the godly have perpetually with their own flesh, he returns to the consolation, which was very needful for them, and which he had before mentioned; and it was this, — That though they were still beset by sin, they were yet exempt fiom the power of death, and from every curse, provided they lived not in the flesh but in the Spirit: for he joins together these three things, — the imperfection under which the faithful always labor, — the mercy of God in pardoning and forgiving it, —and the regeneration of the Spirit; and this indeed in the last place, that no one should flatter himself with a vain notion, as though he were freed from the curse, while securely indulging in the meantime his own flesh. As then the carnal man flatters himself in vain, when in no way solicitous to reform his life, he promises to himself impunity under the pretense of having this grace; so the trembling consciences of the godly have an invincible fortress, for they know that while they abide in Christ they are beyond every danger of condemnation. We shall now examine the words.
@@ -2630,25 +1979,14 @@ Paul adds here, <span style="color:#800000">*In the flesh*</span>, and for this 
 
 <!-- PAGE 219 -->
 
-## ROMANS 8:5-8
+<h2 class="scripture-anchor" id="romans-8-5-8" data-ref="ROMANS 8:5-8" style="display:none">ROMANS 8:5-8</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. For they that are after the flesh</td><td>5. Qui enim secundum carnem sunt,</td></tr>
-<tr><td>do mind the things of the flesh; but</td><td>ea quæ carnis sunt cogitant; qui vero</td></tr>
-<tr><td>that are after the Spirit the things of</td><td>secundum Spiritum, ea quæ sunt</td></tr>
-<tr><td>the Spirit</td><td>Spiritus.</td></tr>
-<tr><td>6. For to be carnally minded is</td><td>6. Cogitatio certe carnis, mors est;</td></tr>
-<tr><td>death; but to be spiritually minded</td><td>cogitatio autem Spiritus, vita et pax:</td></tr>
-<tr><td>is life and peace:</td><td>7. Quandoquidem cogitatio carnis,</td></tr>
-<tr><td>7. Because the carnal mind is</td><td>inimicitia est adversus Deum; nam</td></tr>
-<tr><td>enmity against God: for it is not</td><td>Legi Dei non subjicitur, nec enim</td></tr>
-<tr><td>subject to the law of God, neither</td><td>potest.</td></tr>
-<tr><td>indeed can be.</td><td>8. Qui ergo in carne sunt, Deo placere</td></tr>
-<tr><td>8. So then they that are in the flesh</td><td>non possunt.</td></tr>
-<tr><td>cannot please God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450805&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:5-8</span></p>
+
+<strong>5.</strong> For they that are after the flesh do mind the things of the flesh; but that are after the Spirit the things of the Spirit <strong>6.</strong> For to be carnally minded is death; but to be spiritually minded is life and peace: <strong>7.</strong> Because the carnal mind is enmity against God: for it is not subject to the law of God, neither indeed can be. <strong>8.</strong> So then they that are in the flesh cannot please God.
+
+</div>
 
 **5.** <span style="color:#800000">*For they who are after the flesh,*</span> etc. He introduces this difference between the flesh and the Spirit, not only to confirm, by an argument derived from what is of an opposite character, what he has before mentioned, — that the grace of Christ belongs to none but to those who, having been regenerated by the Spirit, strive after purity; but also to relieve the faithful with a seasonable consolation, lest being conscious of many infirmities, they should despair: for as he had exempted none from the curse, but those who lead a spiritual life, he might seem to cut off from all mortals the hope of salvation; for who in this world can be found adorned with so much angelic purity so as to be wholly freed from the flesh? It was therefore necessary to define what it is to <span style="color:#800000">*be in the flesh*</span>, and to <span style="color:#800000">*walk after the flesh*</span>. At first, indeed, Paul does not define the distinction so very precisely; but yet we shall see as we proceed, that his object is to afford good hope to the faithful, though they are bound to their flesh; only let them not give loose reins to its lusts, but give themselves up to be guided by the Holy Spirit.
 
@@ -2671,27 +2009,14 @@ The minding of the Spirit he calls <span style="color:#800000">*life*</span>, fo
 
 **8.** <span style="color:#800000">*They then who are in the flesh,*</span> etc. It is not without reason that I have rendered the adversative <span style="color:#0000d4">δὲ</span> as an illative: for the Apostle infers from what had been said, that those who give themselves up to be guided by the lusts of the flesh, are all of them abominable before God; and he has thus far confirmed this truth, — that all who walk not after the Spirit are alienated from Christ, for they are without any spiritual life.
 
-## ROMANS 8:9-11
+<h2 class="scripture-anchor" id="romans-8-9-11" data-ref="ROMANS 8:9-11" style="display:none">ROMANS 8:9-11</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>9. But ye are not in the flesh, but in</td><td>9. Vos autem non estis in carne,</td></tr>
-<tr><td>the Spirit, if so be that the Spirit of</td><td>sed in Spiritu, siquidem Spiritus</td></tr>
-<tr><td>God dwell in you. Now, if any man</td><td>Dei habitat in vobis: si quis vero</td></tr>
-<tr><td>have not the Spirit of Christ, he is</td><td>Spiritum Christi non habet, hic non</td></tr>
-<tr><td>none of his.</td><td>est ejus.</td></tr>
-<tr><td>10. And if Christ be in you the body</td><td>10. Si vero Christus in vobis</td></tr>
-<tr><td>is dead because of sin; but the Spirit is</td><td>est,corpus quidem mortuum est</td></tr>
-<tr><td>life because of righteousness.</td><td>propter peccatum, Spiritus autem</td></tr>
-<tr><td>11. But if the Spirit of him that raised</td><td>vita est propter justitiam.</td></tr>
-<tr><td>up Jesus from the dead dwell in you,</td><td>11. Si inquam Spiritus ejus qui</td></tr>
-<tr><td>he that raised up Christ from the dead</td><td>suscitavit Iesum ex mortuis, habitat</td></tr>
-<tr><td>shall also quicken your mortal bodies</td><td>in vobis, qui suscitavit Christum ex</td></tr>
-<tr><td>by his Spirit that dwelleth in you.</td><td>mortuis, vivificabit et mortalia</td></tr>
-<tr><td></td><td>corpora propter Spiritum suum in</td></tr>
-<tr><td></td><td>vobis habitantem.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450809&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:9-11</span></p>
+
+<strong>9.</strong> But ye are not in the flesh, but in the Spirit, if so be that the Spirit of God dwell in you. Now, if any man have not the Spirit of Christ, he is none of his. <strong>10.</strong> And if Christ be in you the body is dead because of sin; but the Spirit is life because of righteousness. <strong>11.</strong> But if the Spirit of him that raised up Jesus from the dead dwell in you, he that raised up Christ from the dead shall also quicken your mortal bodies by his Spirit that dwelleth in you.
+
+</div>
 
 <!-- PAGE 223 -->
 
@@ -2723,22 +2048,14 @@ No doubt Christ arose through his own power; but as he is wont to attribute to t
 
 By <span style="color:#800000">*mortal bodies*</span> he understands all those things which still remain in us, that are subject to death; for his usual practice is to give this name to the grosser part of us. We hence conclude, that he speaks not of the last resurrection, which shall be in a moment, but of the continued working of the Spirit, by which he gradually mortifies the relics of the flesh and renews in us a celestial life.
 
-## ROMANS 8:12-14
+<h2 class="scripture-anchor" id="romans-8-12-14" data-ref="ROMANS 8:12-14" style="display:none">ROMANS 8:12-14</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>12. Therefore, brethren, we are</td><td>12. Itaque fratres, debitores sumus,</td></tr>
-<tr><td>debtors, not to the flesh, to live after</td><td>non carni, ut secundum carnem</td></tr>
-<tr><td>the flesh.</td><td>vivamus.</td></tr>
-<tr><td>13. For if ye live after the flesh,ye</td><td>13. Si enim secundum carnem</td></tr>
-<tr><td>shall die: but if ye through the Spirit</td><td>vixeritis, moriemini: si vero Spiritu</td></tr>
-<tr><td>do mortify the deeds of the body, ye</td><td>facta carnis<sty c="800000" i="0"> [^f248] </sty>mortificaveritis,</td></tr>
-<tr><td>shall live.</td><td>vivetis.</td></tr>
-<tr><td>14. For as many as are led by the</td><td>14. Quicunque enim Spiritu Dei</td></tr>
-<tr><td>Spirit of God, they are the sons of</td><td>aguntur, ii filii Dei sunt.</td></tr>
-<tr><td>God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450812&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:12-14</span></p>
+
+<strong>12.</strong> Therefore, brethren, we are debtors, not to the flesh, to live after the flesh. <strong>13.</strong> For if ye live after the flesh,ye shall die: but if ye through the Spirit do mortify the deeds of the body, ye shall live. <strong>14.</strong> For as many as are led by the Spirit of God, they are the sons of God.
+
+</div>
 
 **12.** <span style="color:#800000">*So then, brethren*</span>, etc. This is the conclusion of what has been previously said; for if we are to renounce the flesh, we ought not to consent to it; and if the Spirit ought to reign in us, it is inconsistent not to attend to his bidding. Paul’s sentence is here defective, for he omits the other part of the contrast, — that we are debtors to the Spirit; but the meaning is in no way obscure. <span style="color:#800000">[^f249]</span> This conclusion has the force of an exhortation; for he is ever wont to draw exhortations from his doctrine. So in another place, Ephesians 4:30, he exhorts us
 
@@ -2760,28 +2077,14 @@ And this is the case, when we renounce carnal lusts, so as to devote ourselves, 
 <!-- PAGE 228 -->
 But it is right to observe, that the working of the Spirit is various: for there is that which is universal, by which all creatures are sustained and preserved; there is that also which is peculiar to men, and varying in its character: but what he means here is sanctification, with which the Lord favors none but his own elect, and by which he separates them for sons to himself.
 
-## ROMANS 8:15-18
+<h2 class="scripture-anchor" id="romans-8-15-18" data-ref="ROMANS 8:15-18" style="display:none">ROMANS 8:15-18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>15. For ye have not received the spirit</td><td>15. Et enim non accepistis</td></tr>
-<tr><td>of bondage again to fear; but ye have</td><td>spiritum servitutis iterum in</td></tr>
-<tr><td>received the Spirit of adoption,</td><td>terrorem: sed accepistis Spiritum</td></tr>
-<tr><td>whereby we cry, Abba, Father.</td><td>adoptionis, per quem clamamus,</td></tr>
-<tr><td>16. The Spirit itself beareth witness</td><td>Abba, Pater.</td></tr>
-<tr><td>with our spirit, that we are the</td><td>16. Ipse enim Spiritus simul</td></tr>
-<tr><td>children of God:</td><td>testificatur spiritui nostro quod</td></tr>
-<tr><td>17. And if children, then heirs; heirs of</td><td>sumus filii Dei:</td></tr>
-<tr><td>God, and joint-heirs with Christ: if so</td><td>17. Si vero filii, etiam hæredes;</td></tr>
-<tr><td>be that we suffer with him, that we</td><td>hæredes quidem Dei, cohæredes</td></tr>
-<tr><td>may be also glorified together.</td><td>autem Christi: siquidem</td></tr>
-<tr><td>18. For I reckon that the sufferings of</td><td>compatimur, ut et una glorificemur.</td></tr>
-<tr><td>this present time are not worthy to be</td><td>18. Existimo certe non esse pares</td></tr>
-<tr><td>compared with the glory which shall</td><td>afflictiones hujus temporis ad</td></tr>
-<tr><td>be revealed in us.</td><td>futuram gloriam quæ revelabitur</td></tr>
-<tr><td></td><td>erga nos.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450815&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:15-18</span></p>
+
+<strong>15.</strong> For ye have not received the spirit of bondage again to fear; but ye have received the Spirit of adoption, whereby we cry, Abba, Father. <strong>16.</strong> The Spirit itself beareth witness with our spirit, that we are the children of God: <strong>17.</strong> And if children, then heirs; heirs of God, and joint-heirs with Christ: if so be that we suffer with him, that we may be also glorified together. <strong>18.</strong> For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.
+
+</div>
 
 <!-- PAGE 229 -->
 He now confirms the certainty of that confidence, in which he has already bidden the faithful to rest secure; and he does this by mentioning the special effect produced by the Spirit; for he has not been given for the purpose of harassing us with trembling or of tormenting us with anxiety; but on the contrary, for this end — that having calmed every perturbation, and restoring our minds to a tranquil state, he may stir us up to call on God with confidence and freedom. He does not then pursue only the argument which he had before stated, but dwells more on another clause, which he had connected with it, even the paternal mercy of God, by which he forgives his people the infirmities of the flesh and the sins which still remain in them. He teaches us that our confidence in this respect is made certain by the Spirit of adoption, who could not inspire us with confidence in prayer without sealing to us a gratuitous pardon: and that he might make this more evident, he mentions a twofold spirit; he calls one the spirit of bondage, which we receive from the law; and the other, the spirit of adoption, which proceeds from the gospel. The first, he says, was given formerly to produce fear; the other is given now to afford assurance. By such a comparison of contrary things the certainty of our salvation, which he intended to confirm, is, as you see, made more evident. <span style="color:#800000">[^f251]</span> The same comparison is used by the author of the Epistle to the Hebrews, where he says, that we have not come to Mount Sinai, where all thing were so terrible, that the people, being alarmed as it were by an immediate apprehension of death, implored that the word should be no more spoken to them, and Moses himself confessed that he was terrified;
@@ -2821,26 +2124,14 @@ But there is here a striking refutation of the vain notions of the Sophists resp
 
 It is hence evident how ill understood has this passage been by the Schoolmen; for they have drawn from it their frivolous distinction between congruity and condignity. The Apostle indeed compares not the worthiness of the one with that of the other, but only lightens the heaviness of the cross by a comparison with the greatness of glory, in order to confirm the minds of the faithful in patience.
 
-## ROMANS 8:19-22
+<h2 class="scripture-anchor" id="romans-8-19-22" data-ref="ROMANS 8:19-22" style="display:none">ROMANS 8:19-22</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. For the earnest expectation of the</td><td>19. Siquidem intenta expectatio</td></tr>
-<tr><td>creature waiteth for the manifestation</td><td>creature, revelationem filiorum Dei</td></tr>
-<tr><td>of the sons of God.</td><td>expectat:</td></tr>
-<tr><td>20. For the creature was made subject</td><td>20. Vanitati enim creatura subjecta</td></tr>
-<tr><td>to vanity, not willingly, but by reason</td><td>est non volens, sed propter eum</td></tr>
-<tr><td>of him who hath subjected the same</td><td>qui subjecit ipsam in spe;</td></tr>
-<tr><td>in hope;</td><td>21. Quoniam ipsa quoque creatura</td></tr>
-<tr><td>21. Because the creature itself also</td><td>asseretur a servitute corruptionis in</td></tr>
-<tr><td>shall be delivered from the bondage of</td><td>libertatem gloriæ filiorum Dei.</td></tr>
-<tr><td>corruption into the glorious liberty of</td><td>22. Novimus enim quod creatura</td></tr>
-<tr><td>the children of God.</td><td>universa congemiscit, et ad hunc</td></tr>
-<tr><td>22. For we know that the whole</td><td>diem parturit.</td></tr>
-<tr><td>creation groaneth and travaileth in</td><td></td></tr>
-<tr><td>pain together until now.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450819&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:19-22</span></p>
+
+<strong>19.</strong> For the earnest expectation of the creature waiteth for the manifestation of the sons of God. <strong>20.</strong> For the creature was made subject to vanity, not willingly, but by reason of him who hath subjected the same in hope; <strong>21.</strong> Because the creature itself also shall be delivered from the bondage of corruption into the glorious liberty of the children of God. <strong>22.</strong> For we know that the whole creation groaneth and travaileth in pain together until now.
+
+</div>
 
 <!-- PAGE 234 -->
 
@@ -2869,25 +2160,14 @@ But he means not that all creatures shall be partakers of the same glory with th
 
 <!-- PAGE 237 -->
 
-## ROMANS 8:23-25
+<h2 class="scripture-anchor" id="romans-8-23-25" data-ref="ROMANS 8:23-25" style="display:none">ROMANS 8:23-25</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>23. And not only they, but ourselves</td><td>23. Non solum autem, sed ipsi</td></tr>
-<tr><td>also which have the first-fruits of the</td><td>quoque qui primordia Spiritus</td></tr>
-<tr><td>Spirit, even we ourselves groan within</td><td>habemus; nos inquam ipsi in nobis</td></tr>
-<tr><td>ourselves, waiting for the adoption to</td><td>ipsis gemimus, adoptionem</td></tr>
-<tr><td>wit, the redemption of our body.</td><td>expectantes, redemptionem</td></tr>
-<tr><td>24. For we are saved by hope: but</td><td>corporis nostri.</td></tr>
-<tr><td>hope that is seen is not hope: for</td><td>24. Spe enim salvi facti sumus,</td></tr>
-<tr><td>what a man seeth, why doth he yet</td><td>spes vero quæ conspicitur, non est</td></tr>
-<tr><td>hope for?</td><td>spes; quod enim conspicit quis,</td></tr>
-<tr><td>25. But if we hope for that we see</td><td>quomodo etiam speret?</td></tr>
-<tr><td>not, then do we with patience wait for</td><td>25. Si ergo non quod non</td></tr>
-<tr><td>it.</td><td>conspicimus, speramus, per</td></tr>
-<tr><td></td><td>patientiam expectamus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450823&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:23-25</span></p>
+
+<strong>23.</strong> And not only they, but ourselves also which have the first-fruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption to wit, the redemption of our body. <strong>24.</strong> For we are saved by hope: but hope that is seen is not hope: for what a man seeth, why doth he yet hope for? <strong>25.</strong> But if we hope for that we see not, then do we with patience wait for it.
+
+</div>
 
 **23.** <span style="color:#800000">*And not only so*</span>, etc. There are those who think that the Apostle intended here to exalt the dignity of our future blessedness, and by this proof, because all things look for it with ardent desire; not only the irrational parts of creation, but we also who have been regenerated by the Spirit of God. This view is indeed capable of being defended, but there seems to me to be a comparison here between the greater and the less; as though he said, “The excellency of our glory is of such importance even to the very elements, which are destitute of mind and reason, that they burn with a certain kind of desire for it; how much more it behoves us, who have been illuminated by the Spirit of God, to aspire and strive with firmness of hope and with ardour of desire, after the attainment of so great a benefit.” And he requires that there should be a feeling of two kinds in the faithful: that being burdened with the sense of their present misery, they are to <span style="color:#800000">*groan*</span>; and that notwithstanding they are to <span style="color:#800000">*wait*</span> patiently for their deliverance; for he would have them to be raised up with the expectation of their future blessedness, and by an elevation of mind to overcome all their present miseries, while they consider not what they are now, but what they are to be.
 
@@ -2903,23 +2183,14 @@ It may be added, that we have here a remarkable passage, which shows, that patie
 
 <!-- PAGE 240 -->
 
-## ROMANS 8:26-27
+<h2 class="scripture-anchor" id="romans-8-26-27" data-ref="ROMANS 8:26-27" style="display:none">ROMANS 8:26-27</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>26. Likewise<sty c="800000" i="0"> [^f261] </sty>the Spirit also</td><td>26. Similiter vero Spiritus etiam</td></tr>
-<tr><td>helpeth our infirmities: for we know</td><td>coopitulatur infirmitatibus nostris;</td></tr>
-<tr><td>not what we should pray for as we</td><td>non enim quid oraturi sumus</td></tr>
-<tr><td>ought: but the Spirit itself maketh</td><td>quemadmodum oportet, novimus;</td></tr>
-<tr><td>intercession for us with groanings</td><td>verum Spiritus ipse intercedit pro</td></tr>
-<tr><td>which cannot be uttered.</td><td>nobis gemitibus innarrabilibus.</td></tr>
-<tr><td>27. And he that searcheth the hearts</td><td>27. Qui vero scrutatur corda, novit</td></tr>
-<tr><td>knoweth what is the mind of the</td><td>cogitationem Spiritus, quod</td></tr>
-<tr><td>Spirit, because he maketh intercession</td><td>secundum Deum intercedit pro</td></tr>
-<tr><td>for the saints according to the will of</td><td>sanctis.</td></tr>
-<tr><td>God.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450826&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:26-27</span></p>
+
+<strong>26.</strong> Likewise <span style="color:#800000">[^f261]</span> the Spirit also helpeth our infirmities: for we know not what we should pray for as we ought: but the Spirit itself maketh intercession for us with groanings which cannot be uttered. <strong>27.</strong> And he that searcheth the hearts knoweth what is the mind of the Spirit, because he maketh intercession for the saints according to the will of God.
+
+</div>
 
 **26.** <span style="color:#800000">*And likewise the Spirit*</span>, etc. That the faithful may not make this objection — that they are so weak as not to be able to bear so many and so heavy burdens, he brings before them the aid of the Spirit, which is abundantly sufficient to overcome all difficulties. There is then no reason for any one to complain, that the bearing of the cross is beyond their own strength, since we are sustained by a celestial power. And there is great force in the Greek word <span style="color:#0000d4">συναντιλαμβάνεται</span>, which means that the Spirit takes on himself a part of the burden, by which our weakness is oppressed; so that he not only helps and succours us, but lifts us up; as though he went under the burden with us. <span style="color:#800000">[^f262]</span> The word <span style="color:#800000">*infirmities*</span>, being in the plural number, is expressive of extremity. For as experience shows, that except we are supported by God’s hands, we are soon overwhelmed by innumerable evils, Paul reminds us, that though we are in every respect weak, and various infirmities threaten our fall, there is yet sufficient protection in God’s Spirit to preserve us from falling, and to keep us from being overwhelmed by any mass of evils. At the same time these supplies of the Spirt more clearly prove to us, that it is by God’s appointment that we strive, by groanings and sighings, for our redemption.
 
@@ -2933,26 +2204,14 @@ At the same time I know, that there are various expositions of this passage; <sp
 <!-- PAGE 242 -->
 **27.** <span style="color:#800000">*But he who searches hearts*</span>, etc. This is a remarkable reason for strengthening our confidence, that we are heard by God when we pray through his Spirit, for he thoroughly knows our desires, even as the thoughts of his own Spirit. And here must be noticed the suitableness of the word to <span style="color:#800000">*know*</span>; for it intimates that God regards not these emotions of the Spirit as new and strange, or that he rejects them as unreasonable, but that he allows them, and at the same time kindly accepts them, as allowed and approved by him. As then Paul had before testified, that God then aids us when he draws us as it were into his own bosom, so now he adds another consolation, that our prayers, of which he is the director, shall by no means be disappointed. The reason also is immediately added, because he thus conforms us to his own will. It hence follows, that in vain can never be what is agreeable to his will, by which all things are ruled. Let us also hence learn, that what holds the first place in prayer is consent with the will of the Lord, whom our wishes do by no means hold under obligation. If then we would have our prayers to be acceptable to God, we must pray that he may regulate them according to his will.
 
-## ROMANS 8:28-30
+<h2 class="scripture-anchor" id="romans-8-28-30" data-ref="ROMANS 8:28-30" style="display:none">ROMANS 8:28-30</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>28. And we know that all things work</td><td>28. Novimus autem quod iis qui</td></tr>
-<tr><td>together for good to them that love</td><td>diligunt Deum omnia cooperantur</td></tr>
-<tr><td>God, to them who are the called</td><td>in bonum, iis scilicet qui secundum</td></tr>
-<tr><td>according to his purpose.</td><td>propositum vocati sunt sancti.</td></tr>
-<tr><td>29. For whom he did foreknow, he</td><td>29. Quoniam quos præcognovit</td></tr>
-<tr><td>also did predestinate to be conformed</td><td>etiam præfinivit conformes</td></tr>
-<tr><td>to the image of his Son, that he might</td><td>imaginis Filii sui, ut sit ipse</td></tr>
-<tr><td>be the firstborn among many</td><td>primogenitus inter multos fratres:</td></tr>
-<tr><td>brethren.</td><td>30. Quos vero præfinivit, eos et</td></tr>
-<tr><td>30. Moreover, whom he did</td><td>vocavit; et quos vocavit, eos etiam</td></tr>
-<tr><td>predestinate, them he also called; and</td><td>justificavit; et quos justificavit, eos</td></tr>
-<tr><td>whom he called, them he also</td><td>etiam glorificavit.</td></tr>
-<tr><td>justified; and whom he justified, them</td><td></td></tr>
-<tr><td>he also glorified.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450828&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:28-30</span></p>
+
+<strong>28.</strong> And we know that all things work together for good to them that love God, to them who are the called according to his purpose. <strong>29.</strong> For whom he did foreknow, he also did predestinate to be conformed to the image of his Son, that he might be the firstborn among many brethren. <strong>30.</strong> Moreover, whom he did predestinate, them he also called; and whom he called, them he also justified; and whom he justified, them he also glorified.
+
+</div>
 
 <!-- PAGE 243 -->
 **28.** <span style="color:#800000">*And we know*</span>, etc. He now draws this conclusion from what had been said, that so far are the troubles of this life from hindering our salvation, that, on the contrary, they are helps to it. It is no objection that he sets down an illative particle, for it is no new thing with him to make somewhat an indiscriminate use of adverbs, and yet this conclusion includes what anticipates an objection. For the judgment of the flesh in this case exclaims, that it by no means appears that God hears our prayers, since our afflictions continue the same. Hence the Apostle anticipates this and says, that though God does not immediately succour his people, he yet does not forsake them, for by a wonderful contrivance he turns those things which seem to be evils in such a way as to promote their salvation. If any one prefers to read this verse by itself, as though Paul proceeded to a new argument in order to show that adversities which assist our salvation, ought not to be borne as hard and grievous things, I do not object. At the same time, the design of Paul is not doubtful: “Though the elect and the reprobate are indiscriminately exposed to similar evils, there is yet a great, difference; for God trains up the faithful by afflictions, and thereby promotes their salvation.”
@@ -2987,27 +2246,14 @@ He then immediately adds, that those who are now pressed down by the cross shall
 
 We may add, that Paul, imitating the style of the Hebrew language, adopts in these verbs the past instead of the present tense. <span style="color:#800000">[^f268]</span> A continued act is no doubt what is meant, according to this import, “Those whom God now, consistently with his purpose, exercises under the cross, are called and justified, that they may have a hope of salvation, so that nothing of their glory decays during their humiliation; for though their present miseries deform it before the world, yet before God and angels it always shines forth as perfect.” What Paul then means by this gradation is, That the afflictions of the faithful, by which they are now humbled, are intended for this end — that the faithful, having obtained the glory of the celestial kingdom, may reach the glory of Christ’s resurrection, with whom they are now crucified.
 
-## ROMANS 8:31-34
+<h2 class="scripture-anchor" id="romans-8-31-34" data-ref="ROMANS 8:31-34" style="display:none">ROMANS 8:31-34</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>31. What shall we then say to these</td><td>31. Quid ergo dicemus ad hæc?<sty c="800000" i="0"> [^f269]</sty></td></tr>
-<tr><td>things? If God be for us, who can be</td><td>Si Deus pro nobis, quis contra</td></tr>
-<tr><td>against us?</td><td>nos?</td></tr>
-<tr><td>32. He that spared not his own Son,</td><td>32. Qui propno Filio non</td></tr>
-<tr><td>but delivered him up for us all, how</td><td>pepercit,sed pro nobis omnibus</td></tr>
-<tr><td>shall he not with him also freely give</td><td>tradidit,quomodo non etiam cum</td></tr>
-<tr><td>us all things?</td><td>eo donaret nobis omnia?</td></tr>
-<tr><td>33. Who shall lay any thing to the</td><td>33. Quis intentabit crimina<sty c="800000" i="0"> [^f270]</sty></td></tr>
-<tr><td>charge of God’s elect? It is God that</td><td>adversus electos Dei? Deus est qui</td></tr>
-<tr><td>justifieth.</td><td>justificat.</td></tr>
-<tr><td>34. Who is he that condemneth? It is</td><td>34. Quis ille qui condemnet?</td></tr>
-<tr><td>Christ that died, yea rather, that is</td><td>Christus est qui mortuus est, quin</td></tr>
-<tr><td>risen again, who is even at the right</td><td>potius etiam suscitatus, qui et in</td></tr>
-<tr><td>hand of God, who also maketh</td><td>dextera Patris est, qui et intercedit</td></tr>
-<tr><td>intercession for us.</td><td>pro nobis.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450831&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:31-34</span></p>
+
+<strong>31.</strong> What shall we then say to these things? If God be for us, who can be against us? <strong>32.</strong> He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things? <strong>33.</strong> Who shall lay any thing to the charge of God’s elect? It is God that justifieth. <strong>34.</strong> Who is he that condemneth? It is Christ that died, yea rather, that is risen again, who is even at the right hand of God, who also maketh intercession for us.
+
+</div>
 
 <!-- PAGE 248 -->
 **31.** <span style="color:#800000">*What then*</span>, etc. The subject discussed having been sufficiently proved, he now breaks out into exclamations, by which he sets forth the magnanimity with which the faithful ought to be furnished when adversities urge them to despond. And he teaches us in these words that with the paternal favor of God is connected that invincible courage which overcomes all temptations. We indeed know, that judgment is usually formed of the love or of the hatred of God, in no other way than by a view of our present state; hence when things fall out untowardly, sorrow takes possession of our minds, and drives away all confidence and consolation. But Paul loudly exclaims, that a deeper principle ought to be inquired after, and that they reason absurdly who confine themselves to the sad spectacle of our present warfare. I indeed allow, that the scourges of God are in themselves justly deemed to be tokens of God’s wrath; but as they are consecrated in Christ, Paul bids the saints to lay hold, above all things, on the paternal love of God, that relying on this shield they may boldly triumph over all evils; for this is a brazen wall to us, so that while God is propitious to us we shall be safe against all dangers. He does not, however, mean, that nothing shall oppose us; but he promises a victory over all kinds of enemies.
@@ -3044,23 +2290,14 @@ He adds still more, — that he now *sits* at the right hand of the Father; by w
 <!-- PAGE 252 -->
 <span style="color:#800000">*Who intercedes*</span>, etc. It was necessary expressly to add this, lest the Divine majesty of Christ should terrify us. Though, then, from his elevated throne he holds all things in subjection under his feet, yet Paul represents him as a Mediator; whose presence it would be strange for us to dread, since he not only kindly invites us to himself, but also appears an intercessor for us before the Father. But we must not measure this intercession by our carnal judgment; for we must not suppose that he humbly supplicates the Father with bended knees and expanded hands; but as he appears continually, as one who died and rose again, and as his death and resurrection stand in the place of eternal intercession, and have the efficacy of a powerful prayer for reconciling and rendering the Father propitious to us, he is justly said to intercede for us.
 
-## ROMANS 8:35-37
+<h2 class="scripture-anchor" id="romans-8-35-37" data-ref="ROMANS 8:35-37" style="display:none">ROMANS 8:35-37</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>35. Who Shall separate us from the</td><td>35. Quis nos dirimet<sty c="800000" i="0"> [^f272] </sty>a dilectione</td></tr>
-<tr><td>love of Christ? shall tribulation, or</td><td>Christi? tribulatio, an angustia, an</td></tr>
-<tr><td>distress, or persecution, or famine, or</td><td>persequutio, an fames, an nuditas,</td></tr>
-<tr><td>nakedness, or peril, or sword?</td><td>an periculum, an gladius?</td></tr>
-<tr><td>36. As it is written, For thy sake we</td><td>36. Quemadmodum scriptum</td></tr>
-<tr><td>are killed all the day long; we are</td><td>est,Quod propter te morimur</td></tr>
-<tr><td>accounted as sheep for the slaughter.</td><td>quotidie,reputati sumus tanquam</td></tr>
-<tr><td>37. Nay, in all these things we are</td><td>oves mactationi destinatæ:</td></tr>
-<tr><td>more than conquerors, through him</td><td>37. Sed in iis omnibus</td></tr>
-<tr><td>that loved us.</td><td>supervincimus per eum qui dilexit</td></tr>
-<tr><td></td><td>nos.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450835&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:35-37</span></p>
+
+<strong>35.</strong> Who Shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword? <strong>36.</strong> As it is written, For thy sake we are killed all the day long; we are accounted as sheep for the slaughter. <strong>37.</strong> Nay, in all these things we are more than conquerors, through him that loved us.
+
+</div>
 
 <!-- PAGE 253 -->
 **35.** <span style="color:#800000">*Who shall separate us*</span>, etc. The conviction of safety is now more widely extended, even to lower things; for he who is persuaded of God’s kindness towards him, is able to stand firm in the heaviest afflictions. These usually harass men in no small degree, and for various reasons, — because they interpret them as tokens of God’s wrath, or think themselves to be forsaken by God, or see no end to them, or neglect to meditate on a better life, or for other similar reasons; but when the mind is purged from such mistakes, it becomes calm, and quietly rests. But the import of the words is, — That whatever happens, we ought to stand firm in this faith, — that God, who once in his love embraced us, never ceases to care for us. For he does not simply say that there is nothing which can tear God away from his love to us; but he means, that the knowledge and lively sense of the love which he testifies to us is so vigorous in our hearts, that it always shines in the darkness of afflictions: for as clouds, though they obscure the clear brightness of the sun, do not yet wholly deprive us of its light; so God, in adversities, sends forth through the darkness the rays of his favor, lest temptations should overwhelm us with despair; nay, our faith, supported by God’s promises as by wings, makes its way upward to heaven through all the intervening obstacles. It is indeed true, that adversities are tokens of God’s wrath, when viewed in themselves; but when pardon and reconciliation precede, we ought to be assured that God, though he chastises us, yet never forgets his mercy: he indeed thus reminds us of what we have deserved; but he no less testifies, that our salvation is an object of his care, while he leads us to repentance.
@@ -3080,17 +2317,14 @@ But these three things have this difference: <span style="color:#800000">*tribul
 <!-- PAGE 255 -->
 That they might at the same time remember whence this invincible power proceeds, he again repeats what he had said before: for he not only teaches us that God, because he loves us, supports us by his hand; but he also confirms the same truth by mentioning the love of Christ. <span style="color:#800000">[^f275]</span> And this one sentence sufficiently proves, that the Apostle speaks not here of the fervency of that love which we have towards God, but of the paternal kindness of God and of Christ towards us, the assurance of which, being thoroughly fixed in our hearts, will always draw us from the gates of hell into the light of life, and will sufficiently avail for our support.
 
-## ROMANS 8:38-39
+<h2 class="scripture-anchor" id="romans-8-38-39" data-ref="ROMANS 8:38-39" style="display:none">ROMANS 8:38-39</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>38. For I am persuaded, that</td><td></td></tr>
-<tr><td>neither death, nor life, nor angels,</td><td></td></tr>
-<tr><td>nor principalities, nor powers,</td><td></td></tr>
-<tr><td>nor things present, nor things to</td><td></td></tr>
-<tr><td>come,</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450838&gt;</span><span class="book-name">Romans</span> <span class="verse-range">8:38-39</span></p>
+
+<strong>38.</strong> For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,
+
+</div>
 
 <p style="text-align:center">38. Persuasus enim sum, quod neque mors, neque vita, [^f276] neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.</p>
 
@@ -3109,30 +2343,14 @@ This declaration is clearly against the schoolmen, who idly talk and say, that n
 
 # CHAPTER 9
 
-## ROMANS 9:1-5
+<h2 class="scripture-anchor" id="romans-9-1-5" data-ref="ROMANS 9:1-5" style="display:none">ROMANS 9:1-5</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. I say the truth in Christ, I lie not,</td><td>1. Veritatem dico in Christo, non</td></tr>
-<tr><td>my conscience also bearing me</td><td>mentior, testimonium simul mihi</td></tr>
-<tr><td>witness in the Holy Ghost,</td><td>reddente mea conscientia eum Spiri-</td></tr>
-<tr><td>2. That I have great heaviness and</td><td>tu sancto,</td></tr>
-<tr><td>continual sorrow in my heart.</td><td>2. Quod dolor sit mihi magnus, et</td></tr>
-<tr><td>3. For I could wish that myself were</td><td>assiduus cruciatus cordi meo:</td></tr>
-<tr><td>accursed from Christ for my</td><td>3. Optarim enim ego ipse anathema</td></tr>
-<tr><td>brethren, my kinsmen according to</td><td>esse a Christo pro fratribus meis,</td></tr>
-<tr><td>the flesh:</td><td>cognatis inquam meis secundum</td></tr>
-<tr><td>4. Who are Israelites;to whom</td><td>car-nem;</td></tr>
-<tr><td>pertaineth the adoption, and the</td><td>4. Qui sunt Israelitae, quorum est</td></tr>
-<tr><td>glory, and the covenants, and the</td><td>adoptio, et gloria, et testamenta, et</td></tr>
-<tr><td>giving of the law, and the service of</td><td>legislatio, et cultus, et promissiones;</td></tr>
-<tr><td>God, and the promises;</td><td>5. Quorum sunt Patres, et ex quibus</td></tr>
-<tr><td>5. Whose are the fathers, and of</td><td>est Christus secundum car-nem, qui</td></tr>
-<tr><td>whom, as concerning the flesh,</td><td>est super omnia Deus bene-dictus</td></tr>
-<tr><td>Christ came, who is over all, God</td><td>in secula. Amen.</td></tr>
-<tr><td>blessed for ever. Amen.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450901&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:1-5</span></p>
+
+<strong>1.</strong> I say the truth in Christ, I lie not, my conscience also bearing me witness in the Holy Ghost, <strong>2.</strong> That I have great heaviness and continual sorrow in my heart. <strong>3.</strong> For I could wish that myself were accursed from Christ for my brethren, my kinsmen according to the flesh: <strong>4.</strong> Who are Israelites;to whom pertaineth the adoption, and the glory, and the covenants, and the giving of the law, and the service of God, and the promises; <strong>5.</strong> Whose are the fathers, and of whom, as concerning the flesh, Christ came, who is over all, God blessed for ever. Amen.
+
+</div>
 
 <!-- PAGE 258 -->
 In this chapter he begins to remove the offences which might have diverted the minds of men from Christ: for the Jews, for whom he was appointed according to the covenant of the law, not only rejected him, but regarded him with contempt, and for the most part bated him. Hence one of two things seemed to follow, — either that there was no truth in the Divine promise, — or that Jesus, whom Paul preached, was not the Lord’s anointed, who had been especially promised to the Jews. This twofold knot Paul fully unties in what follows. He, however, so handles this subject, as to abstain from all bitterness against the Jews, that he might not exasperate their minds; and yet he concedes to them nothing to the injury of the gospel; for he allows to them their privileges in such a way, as not to detract anything from Christ. But he passes, as it were abruptly, to the mention of this subject, so that there appears to be no connection in the discourse. <span style="color:#800000">[^f281]</span> He, however, so enters on this new subject, as though he had before referred to it. It so happened in this way, — Having finished the doctrine he discussed, he turned his attention to the Jews, and being astonished at their unbelief as at something monstrous, he burst forth into this sudden protestation, in the same way as though it was a subject which he had previously handled; for there was no one to whom this thought would not of itself immediately *occur, —* “If this be the doctrine of the law and the Prophets, how comes it that the Jews so pertinaciously reject it?” And further, it was everywhere known, that all that he had hitherto spoken of the law of Moses, and of the grace of Christ, was more disliked by the Jews, than that the faith of the Gentiles should be assisted by their consent. It was therefore necessary to remove this obstacle, lest it should impede the course of the gospel.
@@ -3188,25 +2406,14 @@ But we have here a remarkable passage, — that in Christ two natures are in suc
 <!-- PAGE 265 -->
 We must further observe, that this ascription of praise belongs to none but only to the true and eternal God; for he declares in another place, (1 Timothy 1:17,) that it is the true God alone to whom honor and glory are due. They who break off this clause from the previous context, that they may take away from Christ so clear a testimony to his divinity, most presumptuously attempt, to introduce darkness in the midst of the clearest light; for the words most evidently mean this, — <span style="color:#800000">*Christ, who is from the Jews according to the flesh, is God blessed for ever*</span>. <span style="color:#800000">[^f286]</span> And I doubt not, but that Paul, who had to contend hard with a reproach urged against him, did designedly raise up his own mind to the contemplation of the eternal glory of Christ; nor did he do this so much for his own sake individually, as for the purpose of encouraging’ others by his example to raise up their thoughts.
 
-## ROMANS 9:6-9
+<h2 class="scripture-anchor" id="romans-9-6-9" data-ref="ROMANS 9:6-9" style="display:none">ROMANS 9:6-9</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>6. Not as though the word of God</td><td>6. Neque tamen, quasi exciderit</td></tr>
-<tr><td>hath taken none effect. For they are</td><td>verbum Dei: non emro omnes qui</td></tr>
-<tr><td>not all Israel which are of Israel:</td><td>sunt ex Israele sunt Israelitae:</td></tr>
-<tr><td>7. Neither, because they are the seed</td><td>7. Nec qui sunt semen Abrabae,</td></tr>
-<tr><td>of Abraham, are they all children:</td><td>ideo omnes filii; sed in Isaac voca-</td></tr>
-<tr><td>but, In Isaac shall thy seed be called;</td><td>bitur tibi semen:</td></tr>
-<tr><td>8. That is, They which are the</td><td>8. Hoc est, non qui sunt filii car-nis,</td></tr>
-<tr><td>children of the flesh, these are not the</td><td>ii filii sunt Dei; sed qui sunt filii</td></tr>
-<tr><td>children of God: but the children of</td><td>promissionis, censebuntur in</td></tr>
-<tr><td>the promise are counted for the seed.</td><td>semen:</td></tr>
-<tr><td>9. For this is the word of promise,</td><td>9. Promissionis enim verbum hoc</td></tr>
-<tr><td>At this time will I come, and Sarah</td><td>est, Secundum hoc tempus veniam,</td></tr>
-<tr><td>shall have a son.</td><td>et erit Sarae filius.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450906&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:6-9</span></p>
+
+<strong>6.</strong> Not as though the word of God hath taken none effect. For they are not all Israel which are of Israel: <strong>7.</strong> Neither, because they are the seed of Abraham, are they all children: but, In Isaac shall thy seed be called; <strong>8.</strong> That is, They which are the children of the flesh, these are not the children of God: but the children of the promise are counted for the seed. <strong>9.</strong> For this is the word of promise, At this time will I come, and Sarah shall have a son.
+
+</div>
 
 **6.** <span style="color:#800000">*Not however*</span>*, etc.* Paul had been carried away by the ardour of his wish, as it were, into an excess of feeling, *(in ecstasin,)* but now, returning to discharge his office as a teacher, he adds what may be viewed as somewhat qualifying what he had said, as though he would restrain immoderate grief. And inasmuch as by deploring the ruin of his own nation, this inconsistency seems to follow, that the covenant made by God with the seed of Abraham had failed, (for the favor of God could not have been wanting to the Israelites without the covenant being abolished,) he reasonably anticipates this inconsistency, and shows, that notwithstanding the great blindness of the Jews, the favor of God continued still to that people, so that the truth of the covenant remained firm.
 
@@ -3230,24 +2437,14 @@ But when he says, that <span style="color:#800000">*all who are of Israel are no
 
 **9.** <span style="color:#800000">*For the word of promise is this,*</span> *etc.* He adds another divine testimony; and we see, by the application made of it, with what care and skill he explains Scripture. When he says, the Lord said that he would come, and that a son would be born to Abraham of Sarah, he intimated that his blessing was not yet *conferred,* but that it was as yet suspended. <span style="color:#800000">[^f288]</span> But Ishmael was already born when this was said: then God’s blessing had no regard to Ishmael. We may also observe, by the way, the great caution with which he proceeds here, lest he should exasperate the Jews. The cause being passed over, he first simply states the fact; he will hereafter open the fountain.
 
-## ROMANS 9:10-13
+<h2 class="scripture-anchor" id="romans-9-10-13" data-ref="ROMANS 9:10-13" style="display:none">ROMANS 9:10-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>10. And not only this; but when</td><td>10. Non solum autem hic, sed et</td></tr>
-<tr><td>Rebecca also had conceived by one,</td><td>Rebecca, quae ex uno conceperat,</td></tr>
-<tr><td>even by our father Isaac,</td><td>patre nostro Isaac:</td></tr>
-<tr><td>11. (For the children being not yet</td><td>11. Qunm enim nondum nati es-</td></tr>
-<tr><td>born, neither having done any good</td><td>sent pueri, nec quidpiam boni aut</td></tr>
-<tr><td>or evil, that the purpose of God</td><td>mali egissent, ut secundum electio-</td></tr>
-<tr><td>according to election might stand, not</td><td>nem propositum Dei maneret,</td></tr>
-<tr><td>of works, but of him that calleth,)</td><td>12. Non ex operibus, sed ex vo-</td></tr>
-<tr><td>12. It was said unto her, The elder</td><td>cante, dictum est ei, Major serviet</td></tr>
-<tr><td>shall serve the younger.</td><td>minori;</td></tr>
-<tr><td>13. As it is written, Jacob have I</td><td>13. Quemadmodum scriptum est,</td></tr>
-<tr><td>loved, but Esau have I hated.</td><td>Jacob dilexi, Esau autem odio habui.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450910&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:10-13</span></p>
+
+<strong>10.</strong> And not only this; but when Rebecca also had conceived by one, even by our father Isaac, <strong>11.</strong> (For the children being not yet born, neither having done any good or evil, that the purpose of God according to election might stand, not of works, but of him that calleth,) <strong>12.</strong> It was said unto her, The elder shall serve the younger. <strong>13.</strong> As it is written, Jacob have I loved, but Esau have I hated.
+
+</div>
 
 <!-- PAGE 269 -->
 **10.** <span style="color:#800000">*And not only*</span>*, etc.* There are in this chapter some broken *sentences,* such as this is, — <span style="color:#800000">*But Rebecca also, who had conceived by one, our father Isaac;*</span> for he leaves off in the middle, before he comes to the principal verb. The meaning, however, is, that the difference as to the possession of the promise may not only be seen in the children of Abraham, but that there is a much more evident example in Jacob and Esau: for in the former instance some might allege that their condition was unequal, the one being the son of an handmaid; but these were of the same mother, and were even twins: yet one was rejected, and the other was chosen by the Lord. It is hence clear, that the fulfilment of the promise does not take place in all the children of the flesh indiscriminately.
@@ -3271,31 +2468,14 @@ It may further be said, that though that corruption alone, which is diffused thr
 
 <!-- PAGE 273 -->
 
-## ROMANS 9:14-18
+<h2 class="scripture-anchor" id="romans-9-14-18" data-ref="ROMANS 9:14-18" style="display:none">ROMANS 9:14-18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. What shall we say then? Is there</td><td>14. Quid ergo dicemus? num in-</td></tr>
-<tr><td>unrighteousness with God? God</td><td>justitia est apud Deum? Absit:</td></tr>
-<tr><td>forbid.</td><td>15. Moses enim dicit, Miserebor</td></tr>
-<tr><td>15. For he saith to Moses, I will have</td><td>cujus miserebor, et miserebor</td></tr>
-<tr><td>mercy on whom I will have mercy, and</td><td>quem miseratus fuero.</td></tr>
-<tr><td>I will have compassion on whom I will</td><td>16. Ergo non volentis neque cur-</td></tr>
-<tr><td>have compassion.</td><td>rentis, sed miserentis est Dei.</td></tr>
-<tr><td>16. So then it is not of him that willeth,</td><td>17. Dieit enim Scriptura Phara-</td></tr>
-<tr><td>nor of him that runneth, but of God</td><td>oni, In hoc ipsum excitavi te, ut</td></tr>
-<tr><td>that sheweth mercy.</td><td>os-tendam in te potentiam meam,</td></tr>
-<tr><td>17. For the scripture saith unto</td><td>et ut praedicetur nomen meum in</td></tr>
-<tr><td>Pharaoh, Even for this same purpose</td><td>universa terra.</td></tr>
-<tr><td>have I raised thee up, that I might shew</td><td>18. Ergo cujus vult miseretur, et</td></tr>
-<tr><td>my power in thee, and that my name</td><td>quem vult indurat.</td></tr>
-<tr><td>might be declared throughout all the</td><td></td></tr>
-<tr><td>earth.</td><td></td></tr>
-<tr><td>18. Therefore hath he mercy on whom</td><td></td></tr>
-<tr><td>he will have mercy, and whom he will</td><td></td></tr>
-<tr><td>he hardeneth.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450914&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:14-18</span></p>
+
+<strong>14.</strong> What shall we say then? Is there unrighteousness with God? God forbid. <strong>15.</strong> For he saith to Moses, I will have mercy on whom I will have mercy, and I will have compassion on whom I will have compassion. <strong>16.</strong> So then it is not of him that willeth, nor of him that runneth, but of God that sheweth mercy. <strong>17.</strong> For the scripture saith unto Pharaoh, Even for this same purpose have I raised thee up, that I might shew my power in thee, and that my name might be declared throughout all the earth. <strong>18.</strong> Therefore hath he mercy on whom he will have mercy, and whom he will he hardeneth.
+
+</div>
 
 **14.** <span style="color:#800000">*What then shall we say*</span>? etc. The flesh cannot hear of this wisdom of God without being instantly disturbed by numberless questions, and without attempting in a manner to call God to an account. We hence find that the Apostle, whenever he treats of some high mystery, obviates the many absurdities by which he knew the minds of men would be otherwise possessed; for when men hear anything of what Scripture teaches respecting predestination, they are especially entangled with very many impediments.
 
@@ -3341,23 +2521,14 @@ But the word <span style="color:#800000">*hardens*</span>, when applied to God i
 
 <!-- PAGE 280 -->
 
-## ROMANS 9:19-21
+<h2 class="scripture-anchor" id="romans-9-19-21" data-ref="ROMANS 9:19-21" style="display:none">ROMANS 9:19-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. Thou wilt say then unto me,</td><td>19. Dices itaque mihi, Quid adhuc</td></tr>
-<tr><td>Why doth he yet find fault? For who</td><td>conqueritur? voluntati ejus quis re-</td></tr>
-<tr><td>hath resisted his will?</td><td>stitit?</td></tr>
-<tr><td>20. Nay but, O man, who art thou</td><td>20. Atqui, O homo, tu quis es qui</td></tr>
-<tr><td>that repliest against God? Shall the</td><td>contendis judicio cum Deo! hum</td></tr>
-<tr><td>thing formed say to him that formed</td><td>dicit fictile figulo, cur me sic fecisti?</td></tr>
-<tr><td>it, Why hast thou made me thus?</td><td>21. An non habet potestatem fi-</td></tr>
-<tr><td>21. Hath not the potter power over</td><td>gulus luti ex eadem massa, faciendi,</td></tr>
-<tr><td>the clay, of the same lump to make</td><td>aliud quidem vas in honorem, aliud</td></tr>
-<tr><td>one vessel unto honor, and another</td><td>in contumeliam?</td></tr>
-<tr><td>unto dishonor?</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450919&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:19-21</span></p>
+
+<strong>19.</strong> Thou wilt say then unto me, Why doth he yet find fault? For who hath resisted his will? <strong>20.</strong> Nay but, O man, who art thou that repliest against God? Shall the thing formed say to him that formed it, Why hast thou made me thus? <strong>21.</strong> Hath not the potter power over the clay, of the same lump to make one vessel unto honor, and another unto dishonor?
+
+</div>
 
 **19.** <span style="color:#800000">*Thou wilt then say*</span>*, etc.* Here indeed the flesh especially storms, that is, when it hears that they who perish have been destined by the will of God to destruction. Hence the Apostle adopts again the words of an opponent; for he saw that the mouths of the ungodly could not be restrained from boldly clamouring against the righteousness of God: and he very fitly expresses their mind; for being not content with defending themselves, they make God guilty instead of themselves; and then, after having devolved on him the blame of their own condemnation, they become indignant against his great power. <span style="color:#800000">[^f299]</span> They are indeed constrained to yield; but they storm, because they cannot resist; and ascribing dominion to him, they in a manner charge him with tyranny. In the same manner the Sophists in their schools foolishly dispute on what they call his absolute justice, as though forgetful of his own righteousness, he would try the power of his authority by throwing all things into confusion. Thus then speak the ungodly in this passage, — “What cause has he to be angry with us? Since he has formed us such as we are, since he leads us at his will where he pleases, what else does he :in destroying us but punish his own work in us? For it is not in our power to contend with him; how much soever we may resist, he will yet have the upper hand. Then unjust will be his judgment, if he condemns us; and unrestrainable is the power which he now employs towards us.” What does Paul say to these things?
 
@@ -3383,21 +2554,14 @@ But he represses this arrogance of contending with God by a most apt similitude,
 
 And further, bear this in mind, — that as the potter takes away nothing from the clay, whatever form he may give it; so God takes away nothing from man, in whatever condition he may create him. Only this is to be remembered, that God is deprived of a portion of his honor, except such an authority over men be conceded to him as to constitute him the arbitrator of life and death? <span style="color:#800000">[^f303]</span>
 
-## ROMANS 9:22-23
+<h2 class="scripture-anchor" id="romans-9-22-23" data-ref="ROMANS 9:22-23" style="display:none">ROMANS 9:22-23</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>22. What if God, willing to show his</td><td>22. Quid autem si Deus volens</td></tr>
-<tr><td>wrath, and to make his power</td><td>demonstrare iram, et notam facere</td></tr>
-<tr><td>known, endured with much long-</td><td>potentiam suam, sustinuit in multa</td></tr>
-<tr><td>suffering the vessels of wrath fitted</td><td>patientia vasa irae, in interitum ap-</td></tr>
-<tr><td>to destruction:</td><td>parata;</td></tr>
-<tr><td>23. And that he might make known</td><td>23. Ut notas quoque faceret divi-</td></tr>
-<tr><td>the riches of his glory on the vessels</td><td>tins gloriae sum in vasa</td></tr>
-<tr><td>of mercy, which he had afore</td><td>misericordiae, quae preparavit in</td></tr>
-<tr><td>prepared unto glory,</td><td>gloriam?</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450922&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:22-23</span></p>
+
+<strong>22.</strong> What if God, willing to show his wrath, and to make his power known, endured with much longsuffering the vessels of wrath fitted to destruction: <strong>23.</strong> And that he might make known the riches of his glory on the vessels of mercy, which he had afore prepared unto glory,
+
+</div>
 
 **22.** <span style="color:#800000">*And what,*</span> *etc.* A second answer, by which he briefly shows, that though the counsel of God is in fact incomprehensible, yet his unblamable justice shines forth no less in the perdition of the reprobate than in the salvation of the elect. He does not indeed give a reason for divine election, so as to assign a cause why this man is chosen and that man rejected; for it was not meet that the tilings contained in the secret counsel of God should be subjected to the judgment of men; and, besides, this mystery is inexplicable. tie therefore keeps us from curiously examining those things which exceed human comprehension. He yet shows, that as far as God’s predestination manifests itself, it appears perfectly just.
 
@@ -3418,36 +2582,14 @@ Though in the second clause he asserts more expressly. that it is God who prepar
 
 <!-- PAGE 286 -->
 
-## ROMANS 9:24-29
+<h2 class="scripture-anchor" id="romans-9-24-29" data-ref="ROMANS 9:24-29" style="display:none">ROMANS 9:24-29</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>24. Even us, whom he hath called,</td><td>24. Quos etiam vocavit, nimirum</td></tr>
-<tr><td>not of the Jews only, but also of the</td><td>nos, non solum ex Iudaeis, sed etiam</td></tr>
-<tr><td>Gentiles?</td><td>ex Gentibus:</td></tr>
-<tr><td>25. As he saith also in Osee, I will</td><td>25. Quemadmodum et in Osee dicit,</td></tr>
-<tr><td>call them my people, which were not</td><td>Vocabo populum meum eum qui</td></tr>
-<tr><td>my people; and her beloved, which</td><td>non est populus, et dilectam cam</td></tr>
-<tr><td>was not beloved.</td><td>quae non est dilecta:</td></tr>
-<tr><td>26. And it shall come to pass, that in</td><td>26. Et erit in loco ubi dictum est eis,</td></tr>
-<tr><td>the place where it was said unto</td><td>Non populus meus ves, illie vo-</td></tr>
-<tr><td>than, Ye are not my people; there</td><td>cabuntur filii Dei viventis.</td></tr>
-<tr><td>shall they be called the children of</td><td>27. Iesaias autem clamat super</td></tr>
-<tr><td>the living God.</td><td>Israel, Si fuerit numerus filiorum</td></tr>
-<tr><td>27. Esaias also crieth concerning</td><td>Israel ut arena maris, reliquiae serva-</td></tr>
-<tr><td>Israel, Though the number of the</td><td>buntur:</td></tr>
-<tr><td>children of Israel be as the sand of</td><td>28. Sermonem enim consummans et</td></tr>
-<tr><td>the sea, a remnant shall be saved:</td><td>abbrevians, ft305 quoniam</td></tr>
-<tr><td>28. For he will finish the work, and</td><td>sermonem abbreviatum faciet</td></tr>
-<tr><td>cut it short in righteousness; because</td><td>Dominus in terra:</td></tr>
-<tr><td>a short work will the Lord make</td><td>29. Et quemadmodum prius dix.</td></tr>
-<tr><td>upon the earth.</td><td>erat Iesaias, Nisi Dominus</td></tr>
-<tr><td>29. And as Esaias said before, Except</td><td>Sabbaoth. reliquisset nobis semen,</td></tr>
-<tr><td>the Lord of Sabaoth had left us a</td><td>instar Sodorate facti essemus, et</td></tr>
-<tr><td>seed, we had been as Sodoma, and</td><td>Gomor-rhae essemus assimilati.</td></tr>
-<tr><td>been made like unto Gomorrha.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450924&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:24-29</span></p>
+
+<strong>24.</strong> Even us, whom he hath called, not of the Jews only, but also of the Gentiles? <strong>25.</strong> As he saith also in Osee, I will call them my people, which were not my people; and her beloved, which was not beloved. <strong>26.</strong> And it shall come to pass, that in the place where it was said unto than, Ye are not my people; there shall they be called the children of the living God. <strong>27.</strong> Esaias also crieth concerning Israel, Though the number of the children of Israel be as the sand of the sea, a remnant shall be saved: <strong>28.</strong> For he will finish the work, and cut it short in righteousness; because a short work will the Lord make upon the earth. <strong>29.</strong> And as Esaias said before, Except the Lord of Sabaoth had left us a seed, we had been as Sodoma, and been made like unto Gomorrha.
+
+</div>
 
 <!-- PAGE 287 -->
 **24.** <span style="color:#800000">*Whom he also called,*</span> *etc.* From the reasoning which he has been hitherto carrying on respecting the freedom of divine election, two things follow, — that the grace of God is not so confined to the Jewish people that it does not also flow to other nations, and diffuse itself through the whole world, — and then, that it is not even so tied to the Jews that it comes without exception to all the children of Abraham according to the flesh; for if God’s election is based on his own good pleasure alone, wherever his will turns itself, there his election exists. Election being then established, the way is now in a manner prepared for him to proceed to those things which he designed to say respecting the calling of the Gentiles, and also respecting the rejection of the Jews; the first of which seemed strange for its novelty, and the other wholly unbecoming. As, however, the last had more in it to offend, he speaks in the first place of that which was less disliked. Itc says then, that the vessels of God’s mercy, whom he selects for the glory of his name, are taken from every people, from the Gentiles no less than from the Jews.
@@ -3475,28 +2617,14 @@ But Isaiah has not in this instance adopted one word only, but has put down two 
 
 <!-- PAGE 291 -->
 
-## ROMANS 9:30-33
+<h2 class="scripture-anchor" id="romans-9-30-33" data-ref="ROMANS 9:30-33" style="display:none">ROMANS 9:30-33</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>30. What shall we say then? That the</td><td>30. Quid ergo dicemus? Quod</td></tr>
-<tr><td>Gentiles, which followed not after</td><td>gentes quae non sectabantur justi-</td></tr>
-<tr><td>righteousness, have attained to</td><td>tiam, adeptae sunt justitiam, justi-</td></tr>
-<tr><td>righteousness, even the righteousness</td><td>tiam autem ex fide:</td></tr>
-<tr><td>which is of faith:</td><td>31. Israel autem sectando legem</td></tr>
-<tr><td>31. But Israel, which followed after</td><td>justitiae, ad legem justitiae non per-</td></tr>
-<tr><td>the law of righteousness, hath not</td><td>venit.</td></tr>
-<tr><td>attained to the law of righteousness.</td><td>32. Quare? Quid non ex fide, sed</td></tr>
-<tr><td>32. Wherefore? Because they sought</td><td>quasi ex operibus; offenderunt enim</td></tr>
-<tr><td>it not by faith, but as it were by the</td><td>ad lapidem offensionis:</td></tr>
-<tr><td>works of the law. For they stumbled</td><td>33. Quemadmodum scriptum eat,</td></tr>
-<tr><td>at that stumblingstone:</td><td>Ecce pono in Sion lapidem offen-</td></tr>
-<tr><td>33. As it is written, Behold, I lay in</td><td>sionis et petram offendiculi: et</td></tr>
-<tr><td>Sion a stumblingstone and rock of</td><td>omnis qui crediderit in eum non</td></tr>
-<tr><td>offence: and whosoever believeth on</td><td>pude-fiet.</td></tr>
-<tr><td>him shall not be ashamed.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;450930&gt;</span><span class="book-name">Romans</span> <span class="verse-range">9:30-33</span></p>
+
+<strong>30.</strong> What shall we say then? That the Gentiles, which followed not after righteousness, have attained to righteousness, even the righteousness which is of faith: <strong>31.</strong> But Israel, which followed after the law of righteousness, hath not attained to the law of righteousness. <strong>32.</strong> Wherefore? Because they sought it not by faith, but as it were by the works of the law. For they stumbled at that stumblingstone: <strong>33.</strong> As it is written, Behold, I lay in Sion a stumblingstone and rock of offence: and whosoever believeth on him shall not be ashamed.
+
+</div>
 
 **30.** <span style="color:#800000">*What then*</span>*, etc.* That he might, cut off from the Jews every occasion of murmuring against God, he now begins to show those causes, which may be comprehended by human minds, why the Jewish nation had been rejected. But they do what is absurd and invert all order, who strive to assign and set up causes above the secret predestination of God, which he has previously taught us is to be counted as the first cause. But as this is superior to all other causes, so the corruption and wickedness of the ungodly afford a reason and an occasion for the judgments of God: and as he was engaged on a difficult point, he introduced a question, and, as though he were in doubt, asked what might be said on the subject.
 
@@ -3527,26 +2655,14 @@ The quotation is rightly made; for God in that passage declares that he would be
 
 # CHAPTER 10
 
-## ROMANS 10:1-4
+<h2 class="scripture-anchor" id="romans-10-1-4" data-ref="ROMANS 10:1-4" style="display:none">ROMANS 10:1-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Brethren, my heart’s desire and</td><td>1. Fratres, benevolentia certe cordis</td></tr>
-<tr><td>prayer to God for Israel is, that they</td><td>mei, et deprecatio ad Deum super</td></tr>
-<tr><td>might be saved.</td><td>Israel, est in salutem.</td></tr>
-<tr><td>2. For I bear them record, that they</td><td>2. Testimonium enim reddo illis,</td></tr>
-<tr><td>have a zeal of God, but not according</td><td>quod zelum Dei habent, sed non</td></tr>
-<tr><td>to knowledge.</td><td>secundum scientiam:</td></tr>
-<tr><td>3. For they, being ignorant of God’s</td><td>3. Ignorantes enim Dei justitiam, et</td></tr>
-<tr><td>righteousness, and going about to</td><td>propriam justitiam quaerentes</td></tr>
-<tr><td>establish their own righteousness,</td><td>statuere, justitiae Dei subjecti non</td></tr>
-<tr><td>have not submitted themselves unto</td><td>fuerunt;</td></tr>
-<tr><td>the righteousness of God.</td><td>4. Finis enim Legis Christus in</td></tr>
-<tr><td>4. For Christ is the end of the law for</td><td>justitiam omni credenti.<sty c="800000" i="0"> [^f315]</sty></td></tr>
-<tr><td>righteousness to every one that</td><td></td></tr>
-<tr><td>believeth.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451001&gt;</span><span class="book-name">Romans</span> <span class="verse-range">10:1-4</span></p>
+
+<strong>1.</strong> Brethren, my heart’s desire and prayer to God for Israel is, that they might be saved. <strong>2.</strong> For I bear them record, that they have a zeal of God, but not according to knowledge. <strong>3.</strong> For they, being ignorant of God’s righteousness, and going about to establish their own righteousness, have not submitted themselves unto the righteousness of God. <strong>4.</strong> For Christ is the end of the law for righteousness to every one that believeth.
+
+</div>
 
 <!-- PAGE 296 -->
 We here see with what solicitude the holy man obviated offenses; for in order to soften whatever sharpness there may have been in his manner of explaining the rejection of the Jews, he still testifies, as before, his goodwill towards them, and proves it by the effect; for their salvation was an object of concern to him before the Lord, and such a feeling arises only from genuine love. It may be at the same time that he was also induced by another reason to testify his love towards the nation from which he had sprung; for his doctrine would have never been received by the Jews had they thought that he was avowedly inimical to them; and his defection would have been also suspected by the Gentiles, for they would have thought, as we have said in the last chapter, that he became an apostate from the law through his hatred of men. <span style="color:#800000">[^f316]</span> **2.** <span style="color:#800000">*For I bear to them a testimony, etc*</span>. This was intended to secure credit to his love. There was indeed a just cause why he should regard them with compassion rather than hatred, since he perceived that they had fallen only through ignorance, and not through malignancy of mind, and especially as he saw that they were not led except by some regard for God to persecute the kingdom of Christ. Let us hence learn where our good intentions may guide us, if we yield to them. It is commonly thought a good and a very fit excuse, when he who is reproved pretends that he meant no harm. And this pretext is held good by many at this day, so that they apply not their minds to find out the truth of God, because they think that whatever they do amiss through ignorance, without any designed maliciousness, but with good intention, is excusable. But no one of us would excuse the Jews for having crucified Christ, for having cruelly raged against the Apostles, and for having attempted to destroy and extinguish the gospel; and yet they had the same defense as that in which we confidently glory. Away then with these vain evasions as to good intention; if we seek God sincerely, let us follow the way by which alone we can come to him. For it is better, as *Augustine* says, even to go limping in the right way than to run with all our might out of the way. If we would be really religious, let us remember that what *Lactantius* teaches is true, that true religion is alone that which is connected with the word of God. <span style="color:#800000">[^f317]</span>
@@ -3568,37 +2684,14 @@ It hence follows, that the wicked abuse of the law was justly reprehended in the
 
 and hence no one can rightly understand it, who does not continually level at this mark.
 
-## ROMANS 10:5-10
+<h2 class="scripture-anchor" id="romans-10-5-10" data-ref="ROMANS 10:5-10" style="display:none">ROMANS 10:5-10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. For Moses describeth the</td><td>5. Moses enim describit justitiam</td></tr>
-<tr><td>righteousness which is of the law,</td><td>quae est ex Lege, Quod qui fecerit</td></tr>
-<tr><td>That the man which doeth those</td><td>ea homo rivet in ipsis.</td></tr>
-<tr><td>things shall live by them.</td><td>6. Quae vero est ex fide justitia sic</td></tr>
-<tr><td>6. But the righteousness which is of</td><td>dicit, Ne dixeris in corde tuo, Quis</td></tr>
-<tr><td>faith speaketh on this wise, Say not in</td><td>ascendet in coelum? hoc est</td></tr>
-<tr><td>thine heart, Who shall ascend into</td><td>Christum deducere:</td></tr>
-<tr><td>heaven? (that is, to bring Christ down</td><td>7. Aut, Quis descendet in</td></tr>
-<tr><td>from above:)</td><td>abyssum? hoc est Christum ex</td></tr>
-<tr><td>7. Or, Who shall descend into the</td><td>mortuis reducere:</td></tr>
-<tr><td>deep? (that is, to bring up Christ again</td><td>8. Sed quid dicit? Prope est</td></tr>
-<tr><td>from the dead.)</td><td>verbum, in ore tuo et in corde tuo;</td></tr>
-<tr><td>8. But what saith it? The word is nigh</td><td>hoc est verbum fidei quod</td></tr>
-<tr><td>thee, even in thy mouth, and in thy</td><td>praedicamus,</td></tr>
-<tr><td>heart: that is, the word of faith which</td><td>9. Quod si confessus fueris in ore</td></tr>
-<tr><td>we preach;</td><td>tuo Dominum Iesum, et credideris</td></tr>
-<tr><td>9. That if thou shalt confess with thy</td><td>in corde tuo quod Deus suscitavit</td></tr>
-<tr><td>mouth the Lord Jesus, and shalt</td><td>illum ex mortuis, salvus eris:</td></tr>
-<tr><td>believe in thine heart that God hath</td><td>10. Corde enim creditur in</td></tr>
-<tr><td>raised him from the dead, thou shalt</td><td>justitiam, ore fit confessio in</td></tr>
-<tr><td>be saved.</td><td>salutem.</td></tr>
-<tr><td>10. For with the heart man believeth</td><td></td></tr>
-<tr><td>unto righteousness; and with the</td><td></td></tr>
-<tr><td>mouth confession is made unto</td><td></td></tr>
-<tr><td>salvation.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451005&gt;</span><span class="book-name">Romans</span> <span class="verse-range">10:5-10</span></p>
+
+<strong>5.</strong> For Moses describeth the righteousness which is of the law, That the man which doeth those things shall live by them. <strong>6.</strong> But the righteousness which is of faith speaketh on this wise, Say not in thine heart, Who shall ascend into heaven? (that is, to bring Christ down from above:) <strong>7.</strong> Or, Who shall descend into the deep? (that is, to bring up Christ again from the dead.) <strong>8.</strong> But what saith it? The word is nigh thee, even in thy mouth, and in thy heart: that is, the word of faith which we preach; <strong>9.</strong> That if thou shalt confess with thy mouth the Lord Jesus, and shalt believe in thine heart that God hath raised him from the dead, thou shalt be saved. <strong>10.</strong> For with the heart man believeth unto righteousness; and with the mouth confession is made unto salvation.
+
+</div>
 
 <!-- PAGE 299 -->
 **5.** <span style="color:#800000">*For Moses,*</span> *etc.* To render it evident how much at variance is the righteousness of faith and that of works, he now compares them; for by comparison the opposition between contrary things appears more clear. But he refers not now to the oracles of the Prophets, but to the testimony of Moses, and for this reason, — that the Jews might understand that the law was not given by Moses in order to detain them in a dependence on works, but, on the contrary, to lead them to Christ. He might have indeed referred to the Prophets as witnesses; but still this doubt must have remained, “How was it that the law prescribed another rule of righteousness?” He then removes this, and in the best manner, when by the teaching of the law itself he confirms the righteousness of faith.
@@ -3655,21 +2748,14 @@ But let them see what answer they can give to Paul, who at this day proudly boas
 
 <!-- PAGE 306 -->
 
-## ROMANS 10:11-13
+<h2 class="scripture-anchor" id="romans-10-11-13" data-ref="ROMANS 10:11-13" style="display:none">ROMANS 10:11-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. For the scripture saith,</td><td>11. Dicit enim scriptura, onmis qui</td></tr>
-<tr><td>Whosoever believeth on him shall not</td><td>credit in eum non pudefiet:</td></tr>
-<tr><td>be ashamed.</td><td>12. Non enim est distinctio Iudaei</td></tr>
-<tr><td>12. For there is no difference between</td><td>et Graeci; unus enim Dominus</td></tr>
-<tr><td>the Jew and the Greek: for the same</td><td>omnium, dives in omnes qui</td></tr>
-<tr><td>Lord over all is rich unto all that call</td><td>invocant eum;</td></tr>
-<tr><td>upon him.</td><td>13. Quisquis enim invocaverit</td></tr>
-<tr><td>13. For whosoever shall call upon the</td><td>nomen Domini salvus erit.</td></tr>
-<tr><td>name of the Lord shall be saved.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451011&gt;</span><span class="book-name">Romans</span> <span class="verse-range">10:11-13</span></p>
+
+<strong>11.</strong> For the scripture saith, Whosoever believeth on him shall not be ashamed. <strong>12.</strong> For there is no difference between the Jew and the Greek: for the same Lord over all is rich unto all that call upon him. <strong>13.</strong> For whosoever shall call upon the name of the Lord shall be saved.
+
+</div>
 
 **11.** <span style="color:#800000">*For the Scripture saith*</span>*, etc.* Having stated the reasons why God had justly repudiated the Jews, he returns to prove the calling of the Gentiles, which is the other part of the question which he is discussing. As then he had explained the way by which men obtain salvation, and one that is common and opened to the Gentiles no less than to the Jews, he now, having first hoisted an universal banner, extends it expressly to the Gentiles, and then invites the Gentiles by name to it: and he repeats the testimony which he had before adduced from Isaiah, that what he said might have more authority, and that it might also be evident, how well the prophecies concerning Christ harmonize with the law. <span style="color:#800000">[^f325]</span> **12.** <span style="color:#800000">*For there is no distinction*</span>*, etc.* Since faith alone is required, wherever it is found, there the goodness of God manifests itself unto salvation: there is then in this case no difference between one people or nation and another. And he adds the strongest of reasons; for since he who is the Creator and Maker of the whole world is the God of all men, he will show himself kind to all who will acknowledge and call on him as their God: for as his mercy is infinite, it cannot be but that it will extend itself to all by whom it shall be sought.
 
@@ -3678,28 +2764,14 @@ But let them see what answer they can give to Paul, who at this day proudly boas
 
 But though this reason is sufficiently strong, he yet strengthens it by the testimony of the Prophet Joel; which, according to the general term that is used, includes all alike. But readers can see much better by the context, that what Joel declares harmonizes with the present subject; for he prophesies in that passage of the kingdom of Christ: and further, after having said, that the wrath of God would burn in a dreadful manner, in the midst of his ardor, he promises salvation to all who would call on the name of the Lord. It hence follows, that the grace of God penetrates into the abyss of death, if only it be sought there; so that it is not by any means to be withheld from the Gentiles. <span style="color:#800000">[^f327]</span>
 
-## ROMANS 10:14-17
+<h2 class="scripture-anchor" id="romans-10-14-17" data-ref="ROMANS 10:14-17" style="display:none">ROMANS 10:14-17</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. How then shall they call on him in</td><td>14. Quomodo ergo invocabunt eum</td></tr>
-<tr><td>whom they have not believed? and</td><td>in quem non crediderint? quomodo</td></tr>
-<tr><td>how shall they believe in him of</td><td>vero in eum credent de quo non</td></tr>
-<tr><td>whom they have not heard? and how</td><td>audiverint? quomodo autem</td></tr>
-<tr><td>shall they hear without a preacher?</td><td>audient absque praedicante?</td></tr>
-<tr><td>15. And how shall they preach,</td><td>15. Quomodo autem praedicabunt</td></tr>
-<tr><td>except they be sent? as it is written,</td><td>nisi mittantur? quemadmodum</td></tr>
-<tr><td>How beautiful are the feet of them</td><td>scriptum est, Quam pulchri pedes</td></tr>
-<tr><td>that preach the gospel of peace, and</td><td>annuntiantium pacem,</td></tr>
-<tr><td>bring glad tidings of good things!</td><td>annuntiantium bona!</td></tr>
-<tr><td>16. But they have not all obeyed the</td><td>16. Sed non omnes obedierunt</td></tr>
-<tr><td>gospel: for Esaias saith, Lord, who</td><td>evangelio; Iesaias enim dicit,</td></tr>
-<tr><td>hath believed our report?</td><td>Domine, quis credidit sermoni</td></tr>
-<tr><td>17. So then faith cometh by hearing,</td><td>nostro?</td></tr>
-<tr><td>and hearing by the word of God?</td><td>17. Ergo fides ex auditu, auditus</td></tr>
-<tr><td></td><td>autem per verbum Dei.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451014&gt;</span><span class="book-name">Romans</span> <span class="verse-range">10:14-17</span></p>
+
+<strong>14.</strong> How then shall they call on him in whom they have not believed? and how shall they believe in him of whom they have not heard? and how shall they hear without a preacher? <strong>15.</strong> And how shall they preach, except they be sent? as it is written, How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things! <strong>16.</strong> But they have not all obeyed the gospel: for Esaias saith, Lord, who hath believed our report? <strong>17.</strong> So then faith cometh by hearing, and hearing by the word of God?
+
+</div>
 
 <!-- PAGE 308 -->
 I shall not engage the reader long in reciting and disproving the opinions of others. Let every one have his own view; and let me be allowed to bring forward what I think. That you may then understand the design of this gradation, bear in mind first, that there was a mutual connection between the calling of the Gentiles and the ministry of Paul, which he exercised among them; so that on the evidence for the one depended the evidence for the other. It was now necessary for Paul to prove, beyond a doubt, the calling of the Gentiles, and, at the same time, to give a reason for his own ministry, lest he should seem to extend the favor of God without authority, to withhold from the children the bread intended for them by God, and to bestow it on dogs. But these things he therefore clears up at the same time.
@@ -3739,29 +2811,14 @@ And this is a remarkable passage with regard to the efficacy of preaching; for h
 
 It must be further noticed, that faith is grounded on nothing else but the truth of God; for Paul does not teach us that faith springs from any other kind of doctrine, but he expressly restricts it. to the word of God; and this restriction would have been improper if faith could rest on the decrees of men. Away then with all the devices of men when we speak of the certainty of faith. Hence also the Papal conceit respecting implicit faith falls to the ground, because it tears away faith from the word; and more detestable still is that blasphemy, that the truth of the word remains suspended until the authority of the Church establishes it.
 
-## ROMANS 10:18-21
+<h2 class="scripture-anchor" id="romans-10-18-21" data-ref="ROMANS 10:18-21" style="display:none">ROMANS 10:18-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>18. But I say, Have they not heard?</td><td>18. Sed dico, Nunquid non</td></tr>
-<tr><td>Yes verily, their sound went into all</td><td>audierunt? Quinimo, In omnem</td></tr>
-<tr><td>the earth, and their words unto the</td><td>terram exivit sonus eorum, et in</td></tr>
-<tr><td>ends of the world.</td><td>fines orbis verba eorum.</td></tr>
-<tr><td>19. But I say, Did not Israel know?</td><td>19. Sed dico, Nunquid non cognovit</td></tr>
-<tr><td>First, Moses saith, I will provoke</td><td>Israel? Primus Moses dicit, Ego ad</td></tr>
-<tr><td>you to jealousy by them that are no</td><td>aemulationem provocabo vos in eo</td></tr>
-<tr><td>people, and by a foolish nation I will</td><td>qui non est populus, et in gente</td></tr>
-<tr><td>anger you.</td><td>stulta irritabo vos.</td></tr>
-<tr><td>20. But Esaias is very bold, and</td><td>20. Iesaias autem audet et dicit,</td></tr>
-<tr><td>saith, I was found of them that</td><td>Inventus sum a non quaerentibus</td></tr>
-<tr><td>sought me not; I was made manifest</td><td>me, conspicuus factus sum iis qui</td></tr>
-<tr><td>unto them that asked not after me.</td><td>me non interrogabant.</td></tr>
-<tr><td>21. But to Israel he saith, All day</td><td>21. De Israele autem dicit, Quotidie</td></tr>
-<tr><td>long I have stretched forth my hands</td><td>expandi manus meas ad populum</td></tr>
-<tr><td>unto a disobedient and gainsaying</td><td>contumacem et contradicentem (vel,</td></tr>
-<tr><td>people.</td><td>non credentem.)</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451018&gt;</span><span class="book-name">Romans</span> <span class="verse-range">10:18-21</span></p>
+
+<strong>18.</strong> But I say, Have they not heard? Yes verily, their sound went into all the earth, and their words unto the ends of the world. <strong>19.</strong> But I say, Did not Israel know? First, Moses saith, I will provoke you to jealousy by them that are no people, and by a foolish nation I will anger you. <strong>20.</strong> But Esaias is very bold, and saith, I was found of them that sought me not; I was made manifest unto them that asked not after me. <strong>21.</strong> But to Israel he saith, All day long I have stretched forth my hands unto a disobedient and gainsaying people.
+
+</div>
 
 <!-- PAGE 313 -->
 **18.** <span style="color:#800000">*But I say, have they not heard?*</span> *etc.* Since the minds of men are imbued, by preaching, with the knowledge of God, which leads them to call on God, it remained a question whether the truth of God had been proclaimed to the Gentiles; for that Paul had suddenly betaken himself to the Gentiles, there was by that novelty no small offense given. He then asks, whether God had ever before directed his voice to the Gentiles, and performed the office of a teacher towards the whole world. But in order that he might show that the school, into which God collects scholars to himself from any part, is open in common to all, he brings forward a Prophet’s testimony from Psalm 19:4; which yet seems to bear apparently but little on the subject: for the Prophet does not speak there of Apostles but of the material works of God; in which he says the glory of God shines forth so evidently, that they may be said to have a sort of tongue of their own to declare the perfections of God.
@@ -3792,37 +2849,14 @@ Their unfaithfulness is also set forth by two most suitable words. I have though
 
 # CHAPTER 11
 
-## ROMANS 11:1-6
+<h2 class="scripture-anchor" id="romans-11-1-6" data-ref="ROMANS 11:1-6" style="display:none">ROMANS 11:1-6</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. I say then, Hath God cast away his</td><td>1. Dico igitur, Num abjecit Deus</td></tr>
-<tr><td>people? God forbid. For I also am an</td><td>populum suum? absit: etenim ego</td></tr>
-<tr><td>Israelite, of the seed of Abraham, of</td><td>Israelita sum, ex genere Abrahae,</td></tr>
-<tr><td>the tribe of Benjamin.</td><td>tribu Benjamin.</td></tr>
-<tr><td>2. God hath not cast away his people</td><td>2. Non abjecit Deus populum</td></tr>
-<tr><td>which he foreknew. Wot ye not what</td><td>suum quem praecognovit. An</td></tr>
-<tr><td>the scripture saith of Elias? how he</td><td>nescitis in Elia quid scriptura dicat?</td></tr>
-<tr><td>maketh intercession to God against</td><td>quomodo appellet Deum adversus</td></tr>
-<tr><td>Israel, saying,</td><td>Israel, dicens,</td></tr>
-<tr><td>3. Lord, they have killed thy</td><td>3. Domine, Prophetas tuas</td></tr>
-<tr><td>prophets, and digged down thine</td><td>occiderunt, et altaria tua diruerunt,</td></tr>
-<tr><td>altars; and I am left alone, and they</td><td>et ego relictus sum solus, et</td></tr>
-<tr><td>seek my life.</td><td>quaerunt animam meam.</td></tr>
-<tr><td>4. But what saith the answer of God</td><td>4. Sed quid dicit ei oraculum?<sty c="800000" i="0"> [^f335]</sty></td></tr>
-<tr><td>unto him? I have reserved to myself</td><td>Reservavi mihi ipsi septem millia</td></tr>
-<tr><td>seven thousand men, who have not</td><td>virorum, qui non flexerunt genu</td></tr>
-<tr><td>bowed the knee to the image of Baal.</td><td>imagini Baal.</td></tr>
-<tr><td>5. Even so then at this present time</td><td>5. Sic ergo et hoc tempore, reliquiae</td></tr>
-<tr><td>also there is a remnant according to</td><td>secundum electionem gratiae</td></tr>
-<tr><td>the election of grace.</td><td>supersunt:</td></tr>
-<tr><td>6. And if by grace, then is it no more</td><td>6. Quod si per gratiam, jam non ex</td></tr>
-<tr><td>of works; otherwise grace is no more</td><td>operibus; alioqui gratia, jam non est</td></tr>
-<tr><td>grace. But if it be of works, then is it</td><td>gratia: si vero ex operibus, jam non</td></tr>
-<tr><td>no more grace; otherwise work is no</td><td>est gratia; alioqui opus, jam non est</td></tr>
-<tr><td>more work.</td><td>opus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451101&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:1-6</span></p>
+
+<strong>1.</strong> I say then, Hath God cast away his people? God forbid. For I also am an Israelite, of the seed of Abraham, of the tribe of Benjamin. <strong>2.</strong> God hath not cast away his people which he foreknew. Wot ye not what the scripture saith of Elias? how he maketh intercession to God against Israel, saying, <strong>3.</strong> Lord, they have killed thy prophets, and digged down thine altars; and I am left alone, and they seek my life. <strong>4.</strong> But what saith the answer of God unto him? I have reserved to myself seven thousand men, who have not bowed the knee to the image of Baal. <strong>5.</strong> Even so then at this present time also there is a remnant according to the election of grace. <strong>6.</strong> And if by grace, then is it no more of works; otherwise grace is no more grace. But if it be of works, then is it no more grace; otherwise work is no more work.
+
+</div>
 
 <!-- PAGE 318 -->
 **1.** <span style="color:#800000">*I say then,*</span> *etc.* What he has hitherto said of the blindness and obstinacy of the Jews, might seem to import that Christ at his coming had transferred elsewhere the promises of God, and deprived the Jews of every hope of salvation. This objection is what he anticipates in this passage, and he so modifies what he had previously said respecting the repudiation of the Jews, that no one might think that the covenant formerly made with Abraham is now abrogated, or that God had so forgotten it that the Jews were now so entirely alienated from his kingdom, as the Gentiles were before the coming of Christ. All this he denies, and he will presently show that it is altogether false. But the question is not whether God had justly or unjustly rejected the people; for it was proved in the last chapter that when the people, through false zeal, had rejected the righteousness of God, they suffered a just punishment for their presumption, were deservedly blinded, and were at last cut off from the covenant.
@@ -3873,28 +2907,14 @@ It hence follows, that it is absurd to blend foreknowledge of works with electio
 
 Now, though he speaks here of election, yet as it is a general reasoning which Paul adopts, it ought to be applied to the whole of our salvation; so that we may understand, that whenever it is declared that there are no merits of works, our salvation is ascribed to the grace of God, or rather, that we may believe that the righteousness of works is annihilated, whenever grace is mentioned.
 
-## ROMANS 11:7-10
+<h2 class="scripture-anchor" id="romans-11-7-10" data-ref="ROMANS 11:7-10" style="display:none">ROMANS 11:7-10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>7. What then? Israel hath not obtained</td><td>7. Quid ergo? Quod quaerit Israel,</td></tr>
-<tr><td>that which he seeketh for; but the</td><td>non est assequutus;<sty c="800000" i="0"> [^f341] </sty>electio</td></tr>
-<tr><td>election hath obtained it, and the rest</td><td>autem assequuta est, reliqui vero</td></tr>
-<tr><td>were blinded</td><td>excaecati fuerunt;</td></tr>
-<tr><td>8. (According as it is written, God</td><td>8. Quemadmodum scriptum est,</td></tr>
-<tr><td>hath given them the spirit of slumber,</td><td>Dedit illis Deus spiritum</td></tr>
-<tr><td>eyes that they should not see, and</td><td>compunctionis, oculos ut non</td></tr>
-<tr><td>ears that they should not hear) unto</td><td>videant, et aures ut non audiant,</td></tr>
-<tr><td>this day.</td><td>usque ad hodiernum diem.</td></tr>
-<tr><td>9. And David saith, Let their table be</td><td>9. Et David dicit, Fiat mensa</td></tr>
-<tr><td>made a snare, and a trap, and a</td><td>eorum in laqueum et in captionem</td></tr>
-<tr><td>stumbling block, and a recompense</td><td>et in offendiculum et in</td></tr>
-<tr><td>unto them:</td><td>retributionem ipsis:</td></tr>
-<tr><td>10. Let their eyes be darkened, that</td><td>10. Obscurentur oculi eorum ne</td></tr>
-<tr><td>they may not see, and bow down</td><td>videant, et dorsum eorum semper</td></tr>
-<tr><td>their back alway.</td><td>incurva.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451107&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:7-10</span></p>
+
+<strong>7.</strong> What then? Israel hath not obtained that which he seeketh for; but the election hath obtained it, and the rest were blinded <strong>8.</strong> (According as it is written, God hath given them the spirit of slumber, eyes that they should not see, and ears that they should not hear) unto this day. <strong>9.</strong> And David saith, Let their table be made a snare, and a trap, and a stumbling block, and a recompense unto them: <strong>10.</strong> Let their eyes be darkened, that they may not see, and bow down their back alway.
+
+</div>
 
 <!-- PAGE 324 -->
 **7.** <span style="color:#800000">*What then? What Israel seeks,*</span> *etc.* As he is here engaged on a difficult subject, he asks a question, as though he was in doubt. He intended, however, by expressing this doubt, to render the answer, which immediately follows, more evident; for he intimates, that no other can be given; and the answer is, — that Israel in vain labored to seek salvation, because his attempt was absurd. Though he mentions here no cause, yet as he had expressed it before, he certainly meant it to be understood in this place. For his words are the same, as though he had said, — that it ought not to seem strange, that Israel gained nothing in striving after righteousness. And hence is proved what he presently subjoins concerning election, — For if Israel has obtained nothing by merit, what have others obtained whose case or condition was not better? Whence has come so much difference between equals? Who does not here see that it is election alone which makes the difference?
@@ -3916,32 +2936,14 @@ Seeing then that this imprecation remains for all the adversaries of Christ, —
 
 <!-- PAGE 327 -->
 
-## ROMANS 11:11-15
+<h2 class="scripture-anchor" id="romans-11-11-15" data-ref="ROMANS 11:11-15" style="display:none">ROMANS 11:11-15</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. I say then, Have they stumbled</td><td>11. Dico igitur, Num impegerunt ut</td></tr>
-<tr><td>that they should fall? God forbid: but</td><td>corruerent? Absit: sed eorum lapsu</td></tr>
-<tr><td>rather through their fall salvation is</td><td>salus contigit gentibus in hoc, ut</td></tr>
-<tr><td>come unto the Gentiles, for to</td><td>ipsi ad aemulationem</td></tr>
-<tr><td>provoke them to jealousy.</td><td>provocarentur.</td></tr>
-<tr><td>12. Now if the fall of them be the</td><td>12. Si vero eorum lapsus divitiae</td></tr>
-<tr><td>riches of the world, and the</td><td>sunt mundi, et imminutio eorum</td></tr>
-<tr><td>diminishing of them the riches of the</td><td>divitiae gentium, quanto magis</td></tr>
-<tr><td>Gentiles; how much more their</td><td>complementum ipsorum?</td></tr>
-<tr><td>fullness?</td><td>13. Vobis enim dico gentibus,</td></tr>
-<tr><td>13. For I speak to you Gentiles,</td><td>quatenus certe ego gentium sum</td></tr>
-<tr><td>inasmuch as I am the apostle of the</td><td>Apostolus, ministerium meum</td></tr>
-<tr><td>Gentiles, I magnify mine office:</td><td>illustror,</td></tr>
-<tr><td>14. If by any means I may provoke to</td><td>14. Si quomodo ad aemulationem</td></tr>
-<tr><td>emulation them which are my flesh,</td><td>provocavero carnem meam, et</td></tr>
-<tr><td>and might save some of them.</td><td>aliquos ex ea salvos fecero:</td></tr>
-<tr><td>15. For if the casting away of them be</td><td>15. Si enim rejectio eorum,</td></tr>
-<tr><td>the reconciling of the world, what</td><td>reconciliatio est mundi, quid</td></tr>
-<tr><td>shall the receiving of them be, but life</td><td>assumptio nisi vita ex mortius?</td></tr>
-<tr><td>from the dead?</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451111&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:11-15</span></p>
+
+<strong>11.</strong> I say then, Have they stumbled that they should fall? God forbid: but rather through their fall salvation is come unto the Gentiles, for to provoke them to jealousy. <strong>12.</strong> Now if the fall of them be the riches of the world, and the diminishing of them the riches of the Gentiles; how much more their fullness? <strong>13.</strong> For I speak to you Gentiles, inasmuch as I am the apostle of the Gentiles, I magnify mine office: <strong>14.</strong> If by any means I may provoke to emulation them which are my flesh, and might save some of them. <strong>15.</strong> For if the casting away of them be the reconciling of the world, what shall the receiving of them be, but life from the dead?
+
+</div>
 
 **11.** <span style="color:#800000">*Have they stumbled,*</span> *etc.* You will be greatly hindered in understanding this argument, except you take notice, that the Apostle speaks sometimes of the whole nation of the Jews, and sometimes of single individuals; for hence arises the diversity, that onewhile he speaks of the Jews as being banished from the kingdom of God, cut off from the tree and precipitated by God’s judgment into destruction, and that at another he denies that they had fallen from grace, but that on the contrary they continued in the possession of the covenant, and had a place in the Church of God.
 
@@ -3972,32 +2974,14 @@ And here also he uses the verb <span style="color:#0000d4">παραζηλῶσα
 
 <!-- PAGE 331 -->
 
-## ROMANS 11:16-21
+<h2 class="scripture-anchor" id="romans-11-16-21" data-ref="ROMANS 11:16-21" style="display:none">ROMANS 11:16-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>16. For if the first-fruit be holy, the</td><td>16. Quod si primitiae sanctae,</td></tr>
-<tr><td>lump is also holy; and if the root be</td><td>etiam conspersio; et si radix sancta</td></tr>
-<tr><td>holy, so are the branches.</td><td>etiam rami:</td></tr>
-<tr><td>17. And if some of the branches be</td><td>17. Si vero ex ramis quidam defracti</td></tr>
-<tr><td>broken off, and thou, being a wild</td><td>sunt, tu vero oleaster quum esses,</td></tr>
-<tr><td>olive-tree, wert grafted in among</td><td>insitus es pro ipsis, et particeps</td></tr>
-<tr><td>them, and with them partakest of the</td><td>factus es radicis et pinguedinis</td></tr>
-<tr><td>root and fatness of the olive-tree;</td><td>oleae;</td></tr>
-<tr><td>18. Boast not against the branches:</td><td>18. Ne contra ramos glorieris: quod</td></tr>
-<tr><td>but if thou boast, thou bearest not the</td><td>si gloriaris, non tu radicem portas;</td></tr>
-<tr><td>root, but the root thee.</td><td>sed radix to.</td></tr>
-<tr><td>19. Thou wilt say then, The branches</td><td>19. Dices ergo, Defracti sunt rami,</td></tr>
-<tr><td>were broken off, that I might be</td><td>ut ego insererer.</td></tr>
-<tr><td>grafted in.</td><td>20. Bene; propter incredulitatem</td></tr>
-<tr><td>20. Well; because of unbelief they</td><td>defracti sunt, tu vero fide stabilitus</td></tr>
-<tr><td>were broken oft, and thou standest by</td><td>es; Ne animo efferaris, sed timeas.</td></tr>
-<tr><td>faith. Be not high-minded, but fear:</td><td>21. Si enim Deus naturalibus ramis</td></tr>
-<tr><td>21. For if God spared not the natural</td><td>non perpercit, vide ne qua fit, ut et</td></tr>
-<tr><td>branches, take heed lest he also spare</td><td>tibi non parcat.</td></tr>
-<tr><td>not thee.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451116&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:16-21</span></p>
+
+<strong>16.</strong> For if the first-fruit be holy, the lump is also holy; and if the root be holy, so are the branches. <strong>17.</strong> And if some of the branches be broken off, and thou, being a wild olive-tree, wert grafted in among them, and with them partakest of the root and fatness of the olive-tree; <strong>18.</strong> Boast not against the branches: but if thou boast, thou bearest not the root, but the root thee. <strong>19.</strong> Thou wilt say then, The branches were broken off, that I might be grafted in. <strong>20.</strong> Well; because of unbelief they were broken oft, and thou standest by faith. Be not high-minded, but fear: <strong>21.</strong> For if God spared not the natural branches, take heed lest he also spare not thee.
+
+</div>
 
 **16.** <span style="color:#800000">*For if the first-fruits*</span>*, etc.* By comparing the worthiness of the Jews and of the Gentiles, he now takes away pride from the one and pacifies the other, as far as he could; for he shows that the Gentiles, if they pretended any prerogative of honor of their own, did in no respect excel the Jews, nay, that if they came to a contest, they should be left far behind. Let us remember that in this comparison man is not compared with man, but nation with nation. If then a comparison be made between them, they shall be found equal in this respect, that they are both equally the children of Adam; the only difference is that the Jews had been separated from the Gentiles, that they might be a peculiar people to the Lord. <span style="color:#800000">[^f351]</span>
 
@@ -4022,27 +3006,14 @@ And here again it appears more evident, that the discourse is addressed generall
 
 <!-- PAGE 335 -->
 
-## ROMANS 11:22-24
+<h2 class="scripture-anchor" id="romans-11-22-24" data-ref="ROMANS 11:22-24" style="display:none">ROMANS 11:22-24</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>22. Behold therefore the goodness and</td><td>22. Vide igitur lenitatem<sty c="800000" i="0"> [^f356] </sty>et</td></tr>
-<tr><td>severity of God: on them which fell,</td><td>severitatem Dei; in eos quidem qui</td></tr>
-<tr><td>severity; but toward thee, goodness, if</td><td>ceciderunt, severitatem;<sty c="800000" i="0"> [^f357] </sty>in te</td></tr>
-<tr><td>thou continue in his goodness;</td><td>vero lenitatem, si permanseris in</td></tr>
-<tr><td>otherwise thou also shalt be cut off.</td><td>lenitate; alioqui tu quoque excideris:</td></tr>
-<tr><td>23. And they also, if they abide not</td><td>23. Et illi, si non perstiterint in</td></tr>
-<tr><td>still in unbelief, shall be grafted in: for</td><td>incredulitate, inserentur; potens</td></tr>
-<tr><td>God is able to graft them in again.</td><td>enim est Deus rursum inserere</td></tr>
-<tr><td>24. For if thou were cut out of the</td><td>ipsos.</td></tr>
-<tr><td>olive-tree, which is wild by nature,</td><td>24. Si enim tu ex oleastro, quae tibi</td></tr>
-<tr><td>and wert grafted contrary to nature</td><td>nativa erat, exectus es, et printer</td></tr>
-<tr><td>into a good olive-tree; how much</td><td>naturam insitus es in veram oleam;</td></tr>
-<tr><td>more shall these, which be the natural</td><td>multo magis hi secundum naturam</td></tr>
-<tr><td>branches, be grafted into their own</td><td>propriae oleae inserentur.</td></tr>
-<tr><td>olive-tree?</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451122&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:22-24</span></p>
+
+<strong>22.</strong> Behold therefore the goodness and severity of God: on them which fell, severity; but toward thee, goodness, if thou continue in his goodness; otherwise thou also shalt be cut off. <strong>23.</strong> And they also, if they abide not still in unbelief, shall be grafted in: for God is able to graft them in again. <strong>24.</strong> For if thou were cut out of the olive-tree, which is wild by nature, and wert grafted contrary to nature into a good olive-tree; how much more shall these, which be the natural branches, be grafted into their own olive-tree?
+
+</div>
 
 <!-- PAGE 336 -->
 **22.** <span style="color:#800000">*See then*</span>*, etc.* By laying the case before their eyes he more clearly and fully confirms the fact, — that the Gentiles had no reason to be proud. They saw in the Jews an example of God’s severity, which ought to have terrified them; while in themselves they had an evidence of his grace and goodness, by which they ought to have been stimulated to thankfulness only, and to exalt the Lord and not themselves. The words import the same, as though he had said, — “If thou exultest over their calamity, think first what thou hast been; for the same severity of God would have impended over thee, hadst thou not been delivered by his gratuitous favor: then consider what thou art even now; for salvation shall not continue to thee, except thou humbly recognisest the mercy of God; for if thou forgettest thyself and arrogantly exultest, the ruin, into which they have fallen, awaits thee: it is not indeed enough for thee to have once embraced the favor of God, except thou followest his call through the whole course of thy life.” They indeed who have been illuminated by the Lord ought always to think of perseverance; for they continue not in the goodness of God, who having for a time responded to the call of God, do at length begin to loathe the kingdom of heaven, and thus by their ingratitude justly deserve to be blinded again.
@@ -4059,25 +3030,14 @@ But if it be asked respecting individuals, “How any one could be cut off from 
 <!-- PAGE 338 -->
 **23.** <span style="color:#800000">*For God is able,*</span> *etc*. Frigid would this argument be to the profane; for however they may concede power to God, yet as they view it at a distance, shut up as it were in heaven, they do for the most part rob it of its effect. But as the faithful, whenever they hear God’s power named, look on it as in present operation, he thought that this reason was sufficient to strike their minds. We may add, that he assumes this as an acknowledged axiom, — that God had so punished the unbelief of his people as not to forget his mercy; according to what he had done before, having often restored the Jews, after he had apparently banished them from his kingdom. And he shows at the same time by the comparison, how much more easy it would be to reverse the present state of things than to have introduced it; that is, how much easier it would be for the natural branches, if they were again put in the place from which they had been cut off, to draw substance from their own root, than for the wild and the unfruitful, from a foreign stock: for such is the comparison made between the Jews and the Gentiles.
 
-## ROMANS 11:25-27
+<h2 class="scripture-anchor" id="romans-11-25-27" data-ref="ROMANS 11:25-27" style="display:none">ROMANS 11:25-27</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>25. For I would not, brethren, that ye</td><td>25. Nolo euim vos ignorare, fratres</td></tr>
-<tr><td>should be ignorant of this mystery,</td><td>,mysterium hoc, ut ne apud</td></tr>
-<tr><td>lest ye should be wise in your own</td><td>vosmetipsos superbiatis, quod</td></tr>
-<tr><td>conceits, that blindness in part is</td><td>caecitas ex parte Israeli contigit,</td></tr>
-<tr><td>happened to Israel, until the fullness</td><td>donec plenitudo gentium</td></tr>
-<tr><td>of the Gentiles be come in.</td><td>ingrediatur:</td></tr>
-<tr><td>26. And so all Israel shall be saved:</td><td>26. Atque ita universus Israel salvus</td></tr>
-<tr><td>as it is written, There shall come out</td><td>fiet; quemadmodum scriptum est,</td></tr>
-<tr><td>of Sion the Deliverer, and shall turn</td><td>Veniet ex Sion is qui liberat, et</td></tr>
-<tr><td>away ungodliness from Jacob:</td><td>avertet impietates a Iacob:</td></tr>
-<tr><td>27. For this is my covenant unto</td><td>27. Et hoc illis a me testamentum,</td></tr>
-<tr><td>them, when I shall take away their</td><td>quum abstulero peccata eorum.</td></tr>
-<tr><td>sins.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451125&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:25-27</span></p>
+
+<strong>25.</strong> For I would not, brethren, that ye should be ignorant of this mystery, lest ye should be wise in your own conceits, that blindness in part is happened to Israel, until the fullness of the Gentiles be come in. <strong>26.</strong> And so all Israel shall be saved: as it is written, There shall come out of Sion the Deliverer, and shall turn away ungodliness from Jacob: <strong>27.</strong> For this is my covenant unto them, when I shall take away their sins.
+
+</div>
 
 <!-- PAGE 339 -->
 **25.** <span style="color:#800000">*I would not*</span>*, etc.* Here he rouses his hearers to a greater attention, while he avows that he is going to declare something that was secret. Nor did he do this without reason; for he wished to conclude, by a brief or plain sentence, a very perplexed question; and yet he declares what no one could have expected. But the words, <span style="color:#800000">*Lest ye should be proud in yourselves*</span>, <span style="color:#800000">[^f358]</span> show what was his designed object; and that was, to check the arrogance of the Gentiles, lest they should exult over the Jews. This admonition was also necessary, lest the defection of that people should immoderately disturb the minds of the weak, as though the salvation of them all was to be for ever despaired of. The same is still not less useful to us at this day, so that we may know, that the salvation of the remnant, whom the Lord will at length gather to himself, is hid, sealed as it were by his signet. And whenever a long delay tempts us to despair, let us remember this word *mystery;* by which Paul clearly reminds us, that the mode of their conversion will neither be common nor usual; and hence they act absurdly who attempt to measure it by their own judgment; for what can be more unreasonable than to regard that as incredible which is far removed from our view? It is called a mystery, because it will be incomprehensible until the time of its revelation. <span style="color:#800000">[^f359]</span> It is, however, made known to us, as it was to the Romans, that our faith may be content with the word, and support us with hope, until the event itself come to light.
@@ -4101,27 +3061,14 @@ Mount Sion.” And similar is the case as to the second part, “He shall turn a
 
 **27.** <span style="color:#800000">*And, This is my covenant with them,*</span> *etc.* Though Paul, by the last prophecy of Isaiah, briefly touched on the office of the Messiah, in order to remind the Jews what was to be expected especially from him, he further adds these few words from Jeremiah, expressly for the same purpose; for what is added is not found in the former passage. <span style="color:#800000">[^f362]</span> This also tends to confirm the subject in hand; for what he said of the conversion of a people who were so stubborn and obstinate, might have appeared incredible: he therefore removes this stumblingblock, by declaring that the covenant included a gratuitous remission of sins. For we may gather front the words of the Prophet, — that God would have no more to do with his apostate people, until he should remit the crime of perfidy, as well as their other sins.
 
-## ROMANS 11:28-32
+<h2 class="scripture-anchor" id="romans-11-28-32" data-ref="ROMANS 11:28-32" style="display:none">ROMANS 11:28-32</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>28. As concerning the gospel, they</td><td>28. Secundum Evangelium quidem</td></tr>
-<tr><td>are enemies for your sakes: but as</td><td>inimici propter vos; secundum</td></tr>
-<tr><td>touching the election, they are</td><td>electionem vero dilecti propter</td></tr>
-<tr><td>beloved for the fathers’ sakes.</td><td>Patres:</td></tr>
-<tr><td>29. For the gifts and calling of God</td><td>29. Sine poenitentia enim sunt dona</td></tr>
-<tr><td>are without repentance.</td><td>et vocatio Del.</td></tr>
-<tr><td>30. For as ye in times past have not</td><td>30. Quemadmodum enim vos</td></tr>
-<tr><td>believed God, yet have now obtained</td><td>quoque<sty c="800000" i="0"> [^f363] </sty>increduli fuistis Deo,</td></tr>
-<tr><td>mercy through their unbelief;</td><td>nunc autem misericordiam estis</td></tr>
-<tr><td>31. Even so have these also now not</td><td>consequuti istorum incredulitate:</td></tr>
-<tr><td>believed, that through your mercy</td><td>31. Sic et ii nunc increduli facti sunt, eo</td></tr>
-<tr><td>they have also may obtain mercy.</td><td>quod adepti estis misericordiam, ut ipsi</td></tr>
-<tr><td>32. For God hath concluded them all</td><td>quoque misericordiam consequantur.<sty c="800000" i="0"> [^f364]</sty></td></tr>
-<tr><td>in unbelief, that he might have mercy</td><td>32. Concludit enim Deus omnes sub</td></tr>
-<tr><td>upon all.</td><td>incredulitate, ut omnium misereatur.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451128&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:28-32</span></p>
+
+<strong>28.</strong> As concerning the gospel, they are enemies for your sakes: but as touching the election, they are beloved for the fathers’ sakes. <strong>29.</strong> For the gifts and calling of God are without repentance. <strong>30.</strong> For as ye in times past have not believed God, yet have now obtained mercy through their unbelief; <strong>31.</strong> Even so have these also now not believed, that through your mercy they have also may obtain mercy. <strong>32.</strong> For God hath concluded them all in unbelief, that he might have mercy upon all.
+
+</div>
 
 <!-- PAGE 342 -->
 
@@ -4142,25 +3089,14 @@ He does not oppose the gospel to election, as though they were contrary the one 
 
 Paul then intends here to teach two things — that there is nothing in any man why he should be preferred to others, apart from the mere favor of God; and that God in the dispensation of his grace, is under no restraint that he should not grant it to whom he pleases. There is an emphasis in the word <span style="color:#800000">*mercy*</span>; for it intimates that God is bound to none, and that he therefore saves all freely, for they are all equally lost. But extremely gross is their folly who hence conclude that all shall be saved; for Paul simply means that both Jews and Gentiles do not otherwise obtain salvation than through the mercy of God, and thus he leaves to none any reason for complaint. It is indeed true that this mercy is without any difference offered to all, but every one must seek it by faith.
 
-## ROMANS 11:33-36
+<h2 class="scripture-anchor" id="romans-11-33-36" data-ref="ROMANS 11:33-36" style="display:none">ROMANS 11:33-36</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>33. O the depth of the riches both of</td><td>33. O profunditatem divitiarum et</td></tr>
-<tr><td>the wisdom and knowledge of God!</td><td>sapientiae et cognitionis Dei!</td></tr>
-<tr><td>how unsearchable are his judgments,</td><td>quam incomprehensibilia<sty c="800000" i="0"> [^f369] </sty>sunt</td></tr>
-<tr><td>and his ways past finding out!</td><td>judicia ejus et impervestigabiles</td></tr>
-<tr><td>34. For who hath known the mind of</td><td><sty c="800000" i="0">[^f370] </sty>viae ipsius!</td></tr>
-<tr><td>the Lord? or who hath been his</td><td>34. Quis enim cognovit mentem</td></tr>
-<tr><td>counselor?</td><td>Domini? aut quis illi a consiliis</td></tr>
-<tr><td>35. Or who hath first given to him, and</td><td>fuit?</td></tr>
-<tr><td>it shall be recompensed unto him</td><td>35. Aut quis prior dedit ei et</td></tr>
-<tr><td>again?</td><td>retribuetur illi?</td></tr>
-<tr><td>36. For of him, and through him, and to</td><td>36. Quoniam ex illo et per illum et</td></tr>
-<tr><td>him, are all things: to whom be glory</td><td>in illum sunt omnia: Ipsi gloria in</td></tr>
-<tr><td>for ever. Amen.</td><td>secula. Amen.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451133&gt;</span><span class="book-name">Romans</span> <span class="verse-range">11:33-36</span></p>
+
+<strong>33.</strong> O the depth of the riches both of the wisdom and knowledge of God! how unsearchable are his judgments, and his ways past finding out! <strong>34.</strong> For who hath known the mind of the Lord? or who hath been his counselor? <strong>35.</strong> Or who hath first given to him, and it shall be recompensed unto him again? <strong>36.</strong> For of him, and through him, and to him, are all things: to whom be glory for ever. Amen.
+
+</div>
 
 <!-- PAGE 345 -->
 **33.** <span style="color:#800000">*Oh! the depth*</span>*, etc.* Here first the Apostle bursts into an exclamation, which arose spontaneously from a devout consideration of God’s dealings with the faithful; then in passing he checks the boldness of impiety, which is wont to clamor against the judgments of God. When therefore we hear, <span style="color:#800000">*Oh! the depth*</span>, this expression of wonder ought greatly to avail to the beating down of the presumption of our flesh; for after having spoken from the word and by the Spirit of the Lord, being at length overcome by the sublimity of so great a mystery, he could not do otherwise than wonder and exclaim, that, the riches of God’s wisdom are deeper than our reason can penetrate to. Whenever then we enter on a discourse respecting the eternal counsels of God, let, a bridle be always set on our thoughts and tongue, so that after having spoken soberly and within the limits of God’s word, our reasoning may at last end in admiration. Nor ought we to be ashamed, that if we are not wiser than he, who, having been taken into the third heaven, saw mysteries to man ineffable, and who yet could find in this instance no other end designed but that he should thus humble himself.
@@ -4190,22 +3126,14 @@ Now this is a remarkable passage; for we are here taught, that it is not in our 
 
 # CHAPTER 12
 
-## ROMANS 12:1-2
+<h2 class="scripture-anchor" id="romans-12-1-2" data-ref="ROMANS 12:1-2" style="display:none">ROMANS 12:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. I beseech you therefore, brethren,</td><td>1. Obsecro itaque vos fratres, per</td></tr>
-<tr><td>by the mercies of God, that ye</td><td>miserationes Dei, ut sistatis</td></tr>
-<tr><td>present your bodies a living sacrifice,</td><td>corpora vestra hostiam vivam,</td></tr>
-<tr><td>holy, acceptable unto God, which is</td><td>sanctam, acceptam Deo,</td></tr>
-<tr><td>your reasonable service.</td><td>rationabilem cultum vestrum.</td></tr>
-<tr><td>2. And be not conformed to this</td><td>2. Et ne conformetis vos huic</td></tr>
-<tr><td>world; but be ye transformed by the</td><td>mundo, sed transfiguremini</td></tr>
-<tr><td>renewing of your mind, that ye may</td><td>renovatione mentis vestrae, ut</td></tr>
-<tr><td>prove what is that good, and</td><td>probetis quae sit voluntas Dei</td></tr>
-<tr><td>acceptable, and perfect will of God.</td><td>bona et placita et perfecta.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451201&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:1-2</span></p>
+
+<strong>1.</strong> I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. <strong>2.</strong> And be not conformed to this world; but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect will of God.
+
+</div>
 
 After having handled those things necessary for the erection of the kingdom of God, — that righteousness is to be sought from God alone, that salvation is to come to us alone from his mercy, that all blessings are laid up and daily offered to us in Christ only, — Paul now passes on, according to the best order, to show how the life is to be formed. If it be, that through the saving knowledge of God and of Christ, the soul is, as it were, regenerated into a celestial life, and that the life is in a manner formed and regulated by holy exhortations and precepts; it is then in vain that you show a desire to form the life aright, except you prove first, that the origin of all righteousness in men is in God and Christ; for this is to raise them from the dead.
 
@@ -4248,19 +3176,14 @@ The epithets which are added are intended for the purpose of recommending God’
 
 <!-- PAGE 354 -->
 
-## ROMANS 12:3
+<h2 class="scripture-anchor" id="romans-12-3" data-ref="ROMANS 12:3" style="display:none">ROMANS 12:3</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. For I say, through the grace</td><td>3. Dico enim per gratiam, quae</td></tr>
-<tr><td>given unto me, to every man that is</td><td>data est mihi, cuilibet vestrum,</td></tr>
-<tr><td>among you, not to think of <sty c="000000" i="1">himself</sty></td><td>ne supra modum sapiat praeter</td></tr>
-<tr><td>more highly than he ought to think;</td><td>id quod oportet sapere, sed</td></tr>
-<tr><td>but to think soberly, according as</td><td>sapiat ad sobrietatem, sicuti</td></tr>
-<tr><td>God hath dealt to every man the</td><td>unicuique distribuit Deus</td></tr>
-<tr><td>measure of faith.</td><td>mensuram fidei.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451203&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:3</span></p>
+
+<strong>3.</strong> For I say, through the grace given unto me, to every man that is among you, not to think of *himself* more highly than he ought to think; but to think soberly, according as God hath dealt to every man the measure of faith.
+
+</div>
 
 **3.** <span style="color:#800000">*For I say, through the grace,*</span> *etc.* If you think not the causal particle superfluous, this verse will not be unsuitably connected with the former; for since he wished that our whole study should be employed in investigating the will of God, the next thing to this was, to draw us away from vain curiosity. As however the causal particle is often used redundantly by Paul, you may take the verse as containing a simple affirmation; for thus the sense would also be very appropriate.
 
@@ -4275,31 +3198,14 @@ The meaning is, that it is a part of our reasonable sacrifice to surrender ourse
 
 <!-- PAGE 356 -->
 
-## ROMANS 12:4-8
+<h2 class="scripture-anchor" id="romans-12-4-8" data-ref="ROMANS 12:4-8" style="display:none">ROMANS 12:4-8</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>4. For as we have many members in</td><td>4. Quemadmodum enim in uno</td></tr>
-<tr><td>one body, and all members have not</td><td>corpore membra multa habemus,</td></tr>
-<tr><td>the same office;</td><td>membra vero omnia non eandem</td></tr>
-<tr><td>5. So we, being many, are one body in</td><td>habent actionem;</td></tr>
-<tr><td>Christ, and every one members one of</td><td>5. Sic multi unum sumus corpus in</td></tr>
-<tr><td>another.</td><td>Christo membra mutuo alter</td></tr>
-<tr><td>6. Having then gifts, differing</td><td>alterius.</td></tr>
-<tr><td>according to the grace that is given to</td><td>6. Habentes autem dona secundum</td></tr>
-<tr><td>us, whether prophecy, let us</td><td>gratiam nobis datam differentia;</td></tr>
-<tr><td>prophesy according to the proportion</td><td>sive prophetiam, secundum</td></tr>
-<tr><td>of faith;</td><td>analogiam fidei;</td></tr>
-<tr><td>7. Or ministry, let us wait on our</td><td>7. Sive ministerium, in ministerio;</td></tr>
-<tr><td>ministering; or he that teacheth, on</td><td>sive qui docet, in doctrina;</td></tr>
-<tr><td>teaching;</td><td>8. Sive qui exhortatur, in</td></tr>
-<tr><td>8. Or he that exhorteth, on</td><td>exhortatione; sive qui largitur, in</td></tr>
-<tr><td>exhortation: he that giveth, let him do</td><td>simplicitate; sive qui praeest, in</td></tr>
-<tr><td>it with simplicity; he that ruleth, with</td><td>studio; sive qui miseretur, in</td></tr>
-<tr><td>diligence; he that sheweth mercy, with</td><td>hilaritate.</td></tr>
-<tr><td>cheerfulness.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451204&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:4-8</span></p>
+
+<strong>4.</strong> For as we have many members in one body, and all members have not the same office; <strong>5.</strong> So we, being many, are one body in Christ, and every one members one of another. <strong>6.</strong> Having then gifts, differing according to the grace that is given to us, whether prophecy, let us prophesy according to the proportion of faith; <strong>7.</strong> Or ministry, let us wait on our ministering; or he that teacheth, on teaching; <strong>8.</strong> Or he that exhorteth, on exhortation: he that giveth, let him do it with simplicity; he that ruleth, with diligence; he that sheweth mercy, with cheerfulness.
+
+</div>
 
 <!-- PAGE 357 -->
 **4.** <span style="color:#800000">*For as in one body,*</span> *etc.* The very thing which he had previously said of limiting the wisdom of each according to the measure of faith, he now confirms by a reference to the vocation of the faithful; for we are called for this end, that we may unite together in one body, since Christ has ordained a fellowship and connection between the faithful similar to that which exists between the members of the human body; and as men could not of themselves come together into such an union, he himself becomes the bond of this connection. As then the case is with the human body, so it ought to be with the society of the faithful. By applying this similitude he proves how necessary it is for each to consider what is suitable to his own nature, capacity, and vocation. But though this similitude has various parts, it is yet to be chiefly thus applied to our present subject, — that as the members of the same body have distinct offices, and all of them are distinct, for no member possesses all powers, nor does it appropriate to itself the offices of others; so God has distributed various gifts to us, by which diversity he has determined the order which he would have to be observed among us, so that every one is to conduct himself according to the measure of his capacity, and not to thrust himself into what peculiarly belongs to others; nor is any one to seek to have all things himself, but to be content with his lot, and willingly to abstain from usurping the offices of others. When, however, he points out in express words the communion which is between us, he at the same time intimates, how much diligence there ought to be in all, so that they may contribute to the common good of the body according to the faculties they possess. <span style="color:#800000">[^f382]</span> **6.** <span style="color:#800000">*Having gifts*</span>*, etc.* Paul speaks not now simply of cherishing among ourselves brotherly love, but commends humility, which is the best moderator of our whole life. Every one desires to have so much himself, so as not to need any help from others; but the bond of mutual communication is this, that no one has sufficient for himself, but is constrained to borrow from others. I admit, then that the society of the godly cannot exist, except when each one is content with his own measure, and imparts to others the gifts which he has received, and allows himself by turns to be assisted by the gifts of others.
@@ -4330,26 +3236,14 @@ But these offices have much affinity and even connection; not however that they 
 
 Though he rightly calls those <span style="color:#0000d4">proi`στάμενους</span> *presidents,* to whom was committed the government of the Church, (and they were the elders, who presided over and ruled others and exercised discipline;) yet what he says of these may be extended universally to all kinds of governors: for no small solicitude is required from those who provide for the safety of all, and no small diligence is needful for them who ought to watch day and night for the wellbeing of the whole community. Yet the state of things at that time proves that Paul does not speak of all kinds of rulers, for there were then no pious magistrates; but of the elders who were the correctors of morals.
 
-## ROMANS 12:9-13
+<h2 class="scripture-anchor" id="romans-12-9-13" data-ref="ROMANS 12:9-13" style="display:none">ROMANS 12:9-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>9. Let love be without dissimulation.</td><td>9. Dilectio sit non simulata; sitis</td></tr>
-<tr><td>Abhor that which is evil, cleave to</td><td>aversantes malum, adherentes</td></tr>
-<tr><td>that which is good.</td><td>bono;</td></tr>
-<tr><td>10. Be kindly affectioned one to</td><td>10. Fraterna charitate ad vos</td></tr>
-<tr><td>another with brotherly love; in honor</td><td>mutuo amandos propensi, alii alios</td></tr>
-<tr><td>preferring one another;</td><td>honore paevenientes;</td></tr>
-<tr><td>11. Not slothful in business; fervent</td><td>11. Studio non pigri, spiritu</td></tr>
-<tr><td>in spirit; serving the Lord;</td><td>ferventes, tempori servientes;</td></tr>
-<tr><td>12. Rejoicing in hope; patient in</td><td>12. Spe gaudientes, in tribulatione</td></tr>
-<tr><td>tribulation; continuing instant in</td><td>patientes, in oratione</td></tr>
-<tr><td>prayer;</td><td>perseverantes;</td></tr>
-<tr><td>13. Distributing to the necessity of</td><td>13. Necessitatibus sanctorum</td></tr>
-<tr><td>saints; given to hospitality.</td><td>communicantes, hospitalitatem</td></tr>
-<tr><td></td><td>sectantes.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451209&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:9-13</span></p>
+
+<strong>9.</strong> Let love be without dissimulation. Abhor that which is evil, cleave to that which is good. <strong>10.</strong> Be kindly affectioned one to another with brotherly love; in honor preferring one another; <strong>11.</strong> Not slothful in business; fervent in spirit; serving the Lord; <strong>12.</strong> Rejoicing in hope; patient in tribulation; continuing instant in prayer; <strong>13.</strong> Distributing to the necessity of saints; given to hospitality.
+
+</div>
 
 <!-- PAGE 361 -->
 
@@ -4375,22 +3269,14 @@ But as both these things are far above our strength, we must be instant in praye
 <!-- PAGE 364 -->
 Observe also the suitableness of the expression, when he says, that we are to *communicate* to the necessities of the saints; by which he implies, that we ought so to relieve the wants of the brethren, as though we were relieving our own selves. And he commands us to assist especially the <span style="color:#800000">*saints*</span>: for though our love ought to extend itself to the whole race of man, yet it ought with peculiar feeling to embrace the household of faith, who are by a closer bond united to us.
 
-## ROMANS 12:14-16
+<h2 class="scripture-anchor" id="romans-12-14-16" data-ref="ROMANS 12:14-16" style="display:none">ROMANS 12:14-16</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. Bless them which persecute you:</td><td>14. Benedicite iis qui vos</td></tr>
-<tr><td>bless, and curse not.</td><td>persequuntur; benedicite et ne</td></tr>
-<tr><td>15. Rejoice with them that do rejoice,</td><td>malum imprecemini.</td></tr>
-<tr><td>and weep with them that weep.</td><td>15. Gaudete cum gaudentibus, flete</td></tr>
-<tr><td>16. Be of the same mind one toward</td><td>cum fientibus;</td></tr>
-<tr><td>another. Mind not high things, but</td><td>16. Mutuo alii in altos sensu</td></tr>
-<tr><td>condescend to men of low estate. Be</td><td>affecti, non arroganter de vobis</td></tr>
-<tr><td>not wise in your own conceits.</td><td>sentientes, sed humilibus vos</td></tr>
-<tr><td></td><td>accommodantes: ne sitis apud vos</td></tr>
-<tr><td></td><td>ipsos prudentes.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451214&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:14-16</span></p>
+
+<strong>14.</strong> Bless them which persecute you: bless, and curse not. <strong>15.</strong> Rejoice with them that do rejoice, and weep with them that weep. <strong>16.</strong> Be of the same mind one toward another. Mind not high things, but condescend to men of low estate. Be not wise in your own conceits.
+
+</div>
 
 **14.** <span style="color:#800000">*Bless them*</span>*, etc.* I wish, once for all, to remind the reader, that he is not scrupulously to seek a precise order as to the precepts here laid down, but must be content to have short precepts, unconnected, though suited to the formation of a holy life, and such as are deduced from the principle the Apostle laid down at the beginning of the chapter.
 
@@ -4412,22 +3298,14 @@ Here then is condemned all ambition and that elation of mind which insinuates it
 
 Closely allied to this is what is subjoined: for nothing swells the minds of men so much as a high notion of their own wisdom. His desire then was, that we should lay this aside, hear others, and regard their counsels. *Erasmus* has rendered <span style="color:#0000d4">φρονίμους</span>*, arrogantes* — arrogant; but the rendering is strained and frigid; for Paul would in this case repeat the same word without any meaning. However, the most appropriate remedy for curing arrogance is, that man should not be over-wise in his own esteem.
 
-## ROMANS 12:17-19
+<h2 class="scripture-anchor" id="romans-12-17-19" data-ref="ROMANS 12:17-19" style="display:none">ROMANS 12:17-19</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>17. Recompense to no man evil for</td><td>17. Nemini malum pro malo</td></tr>
-<tr><td>evil. Provide things honest in the sight</td><td>rependentes, providentes bona</td></tr>
-<tr><td>of all men.</td><td>coram omnibus hominibus.</td></tr>
-<tr><td>18. If it be possible, as much as lieth</td><td>18. Si fieri potest, quantum est in</td></tr>
-<tr><td>in you, live peaceably with all men.</td><td>vobis, cum omnibus hominibus</td></tr>
-<tr><td>19. Dearly beloved, avenge not</td><td>pacem habentes;</td></tr>
-<tr><td>yourselves, but rather give place unto</td><td>19. Non vosmetipsos ulciscentes,</td></tr>
-<tr><td>wrath: for it is written, Vengeance is</td><td>dilecti; sed date locum irae;</td></tr>
-<tr><td>mine; I will repay, saith the Lord.</td><td>scriptum est enim, Mihi vindictam,</td></tr>
-<tr><td></td><td>et ego rependam, dicit Dominus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451217&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:17-19</span></p>
+
+<strong>17.</strong> Recompense to no man evil for evil. Provide things honest in the sight of all men. <strong>18.</strong> If it be possible, as much as lieth in you, live peaceably with all men. <strong>19.</strong> Dearly beloved, avenge not yourselves, but rather give place unto wrath: for it is written, Vengeance is mine; I will repay, saith the Lord.
+
+</div>
 
 <!-- PAGE 367 -->
 **17.** <span style="color:#800000">*Repaying to no one,*</span> *etc.* This differs but little from what shortly after follows, except that revenge is more than the kind of repaying of which he speaks here; for we render evil for evil sometimes, even when we exact not the requiting of an injury, as when we treat unkindly those who do us no good. We are indeed wont to form an estimate of the deserts of each, or of what they merit at our hands, so that we may confer our benefits on those, by whom we have been already obliged, or from whom we expect something: and again, when any one denies help to us when we need it, we, by returning like for like, as they say, do not help him in time of need, any more than he assisted us. There are also other instances of the same kind, in which evil is rendered for evil, when there is no open revenge.
@@ -4460,18 +3338,14 @@ Though it be not indeed lawful for us to pray to God for vengeance on our enemie
 
 God will happen to them. But Paul quoted not this testimony to show that it is right for us to be as it were on fire as soon as we are injured, and according to the impulse of our flesh, to ask in our prayers that God may become the avenger of our injuries; but he first teaches us that it belongs not to us to revenge, except we would assume to ourselves the office of God; and secondly, he intimates, that we are not to fear that the wicked will more furiously rage when they see us bearing patiently; for God does not in vain take upon himself the office of executing vengeance.
 
-## ROMANS 12:20-21
+<h2 class="scripture-anchor" id="romans-12-20-21" data-ref="ROMANS 12:20-21" style="display:none">ROMANS 12:20-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>20. Therefore if thine enemy hunger,</td><td>20. Itaque si esurit inimicus tuus,</td></tr>
-<tr><td>feed him; if he thirst, give him drink:</td><td>pasce illum; si sitit, potum da illi:</td></tr>
-<tr><td>for in so doing thou shalt heap coals</td><td>hoc enim faciens carbones ignis</td></tr>
-<tr><td>of fire on his head.</td><td>congeres in caput ipsius.</td></tr>
-<tr><td>21. Be not overcome of evil, but</td><td>21. Ne vincaris a malo, sed vincas</td></tr>
-<tr><td>overcome evil with good.</td><td>bono malum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451220&gt;</span><span class="book-name">Romans</span> <span class="verse-range">12:20-21</span></p>
+
+<strong>20.</strong> Therefore if thine enemy hunger, feed him; if he thirst, give him drink: for in so doing thou shalt heap coals of fire on his head. <strong>21.</strong> Be not overcome of evil, but overcome evil with good.
+
+</div>
 
 **20.** <span style="color:#800000">*If therefore*</span>*, etc.* He now shows how we may really fulfill the precepts of not revenging and of not repaying evil, even when we not only abstain from doing injury but when we also do good to those who have done wrong to us; for it is a kind of an indirect retaliation when we turn aside our kindness from those by whom we have been injured. Understand as included under the words *meat* and *drink,* all acts of kindness. Whatsoever then may be thine ability, in whatever business thy enemy may want either thy wealth, or thy counsel, or thy efforts, thou oughtest to help him. But he calls him our enemy, not whom we regard with hatred, but him who entertains enmity towards us. And if they are to be helped according to the flesh, much less is their salvation to be opposed by imprecating vengeance on them.
 
@@ -4482,21 +3356,14 @@ God will happen to them. But Paul quoted not this testimony to show that it is r
 
 # CHAPTER 13
 
-## ROMANS 13:1-2
+<h2 class="scripture-anchor" id="romans-13-1-2" data-ref="ROMANS 13:1-2" style="display:none">ROMANS 13:1-2</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Let every soul be subject unto</td><td>1. Omnis anima potestatibus</td></tr>
-<tr><td>the higher powers. For there is no</td><td>supereminentibus subdita sit:</td></tr>
-<tr><td>power but of God: the powers that</td><td>non enim est potestas, nisi a</td></tr>
-<tr><td>be are ordained of God.</td><td>Deo; quae vero sunt potestates</td></tr>
-<tr><td>2. Whosoever therefore resisteth</td><td>a Deo sunt ordinatae.</td></tr>
-<tr><td>the power, resisteth the ordinance</td><td>2. Itaque qui resistit potestati,</td></tr>
-<tr><td>of God; and they that resist shall</td><td>Dei ordinationi resistit; qui vero</td></tr>
-<tr><td>receive to themselves damnation.</td><td>restiterint judicium sibi</td></tr>
-<tr><td></td><td>accersent.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451301&gt;</span><span class="book-name">Romans</span> <span class="verse-range">13:1-2</span></p>
+
+<strong>1.</strong> Let every soul be subject unto the higher powers. For there is no power but of God: the powers that be are ordained of God. <strong>2.</strong> Whosoever therefore resisteth the power, resisteth the ordinance of God; and they that resist shall receive to themselves damnation.
+
+</div>
 
 **1.** <span style="color:#800000">*Let every soul*</span>, <span style="color:#800000">[^f396]</span> *etc.* Inasmuch as he so carefully handles this subject in connection with what forms the Christian life, it appears that he was constrained to do so by some great necessity which existed especially in that age, though the preaching of the gospel at all times renders this necessary. There are indeed always some tumultuous spirits who believe that the kingdom of Christ cannot be sufficiently elevated, unless all earthly powers be abolished, and that they cannot enjoy the liberty given by him, except they shake off every yoke of human subjection. This error, however, possessed the minds of the Jews above all others; for it seemed to them disgraceful that the offspring of Abraham, whose kingdom flourished before the Redeemer’s coming, should now, after his appearance, continue in submission to another power. There was also another thing which alienated the Jews no less than the Gentiles from their rulers, because they all not only hated piety, but also persecuted religion with the most hostile feelings. Hence it seemed unreasonable to acknowledge them for legitimate princes and rulers, who were attempting to take away the kingdom from Christ, the only Lord of heaven and earth.
 
@@ -4510,23 +3377,14 @@ He calls them the <span style="color:#800000">*higher powers*</span>, <span styl
 <!-- PAGE 374 -->
 **2.** <span style="color:#800000">*And they who resist,*</span> *etc.* As no one can resist God but to his own ruin, he threatens, that they shall not be unpunished who in this respect oppose the providence of God. Let us then beware, lest we incur this denunciation. And *by judgment,* <span style="color:#800000">[^f399]</span> I understand not only the punishment which is inflicted by the magistrate, as though he had only said, that they would be justly punished who resisted authority; but also the vengeance of God, however it may at length be executed: for he teaches us in general what end awaits those who contend with God.
 
-## ROMANS 13:3-4
+<h2 class="scripture-anchor" id="romans-13-3-4" data-ref="ROMANS 13:3-4" style="display:none">ROMANS 13:3-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>3. For rulers are not a terror to good</td><td>3. Principes enim non sunt terrori</td></tr>
-<tr><td>works, but to the evil. Wilt thou then</td><td>bonis operibus sed malis; vis ergo</td></tr>
-<tr><td>not be afraid of the power? Do that</td><td>non timere potestatem? bene fac,</td></tr>
-<tr><td>which is good, and thou shalt have</td><td>et habebis laudem ab ea;</td></tr>
-<tr><td>praise of the same:</td><td>4. Dei enim minister est tibi in</td></tr>
-<tr><td>4. For he is the minister of God to</td><td>bonum; si vero quid mali feceris,</td></tr>
-<tr><td>thee for good. But if thou do that</td><td>time; non enim frustra gladium</td></tr>
-<tr><td>which is evil, be afraid; for he beareth</td><td>gerit; Dei enim minister est, vindex</td></tr>
-<tr><td>not the sword in vain: for he is the</td><td>in iram adversus eos qui male</td></tr>
-<tr><td>minister of God, a revenger to execute</td><td>agunt.<sty c="800000" i="0"> [^f400]</sty></td></tr>
-<tr><td>wrath upon him that doeth evil.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451303&gt;</span><span class="book-name">Romans</span> <span class="verse-range">13:3-4</span></p>
+
+<strong>3.</strong> For rulers are not a terror to good works, but to the evil. Wilt thou then not be afraid of the power? Do that which is good, and thou shalt have praise of the same: <strong>4.</strong> For he is the minister of God to thee for good. But if thou do that which is evil, be afraid; for he beareth not the sword in vain: for he is the minister of God, a revenger to execute wrath upon him that doeth evil.
+
+</div>
 
 3<span style="color:#800000">*. For princes,*</span> *etc.* He now commends to us obedience to princes on the ground of utility; for the causative <span style="color:#0000d4">γὰρ</span>, *for,* is to be referred to the first proposition, and not to the last verse. Now, the utility is this, — that the Lord has designed in this way to provide for the tranquillity of the good, and to restrain the waywardness of the wicked; by which two things the safety of mankind is secured: for except the fury of the wicked be resisted, and the innocent be protected from their violence, all things would come to an entire confusion. Since then this is the only remedy by which mankind can be preserved from destruction, it ought to be carefully observed by us, unless we wish to avow ourselves as the public enemies of the human race.
 
@@ -4544,23 +3402,14 @@ He has here noticed two things, which even philosophers have considered as makin
 <!-- PAGE 376 -->
 And then he says, <span style="color:#800000">*An avenger*</span>, to execute <span style="color:#800000">*wrath*</span>, <span style="color:#800000">[^f401]</span> *etc.* This is the same as if it had been said, that he is an executioner of God’s wrath; and this he shows himself to be by having the sword, which the Lord has delivered into his hand. This is a remarkable passage for the purpose of proving the right of the sword; for if the Lord, by arming the magistrate, has also committed to him the use of the sword, whenever he visits the guilty with death, by executing God’s vengeance, he obeys his commands. Contend then do they with God who think it unlawful to shed the blood of wicked men.
 
-## ROMANS 13:5-7
+<h2 class="scripture-anchor" id="romans-13-5-7" data-ref="ROMANS 13:5-7" style="display:none">ROMANS 13:5-7</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. Wherefore ye must needs be</td><td>5. Itaque necesse est subjici, non</td></tr>
-<tr><td>subject, not only for wrath, but also</td><td>modo propter iram, sed etiam</td></tr>
-<tr><td>for conscience sake.</td><td>propter conscientiam.</td></tr>
-<tr><td>6. For, for this cause pay ye tribute</td><td>6. Propterea enim tributa quoque</td></tr>
-<tr><td>also: for they are Godministers,</td><td>solutis; ministri<sty c="800000" i="0"> [^f402] </sty>enim Dei sunt,</td></tr>
-<tr><td>attending continually upon this very</td><td>in hoc incumbentes.</td></tr>
-<tr><td>thing.</td><td>7. Reddite ergo omnibus quod</td></tr>
-<tr><td>7. Render therefore to all their dues:</td><td>debetur; cui tributum, tributum; cui</td></tr>
-<tr><td>tribute to whom tribute is due;</td><td>vectigal, vectigal; cui timorem,</td></tr>
-<tr><td>custom to whom custom; fear to</td><td>timorem; cui honorem, honorem.</td></tr>
-<tr><td>whom fear; honor to whom honor.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451305&gt;</span><span class="book-name">Romans</span> <span class="verse-range">13:5-7</span></p>
+
+<strong>5.</strong> Wherefore ye must needs be subject, not only for wrath, but also for conscience sake. <strong>6.</strong> For, for this cause pay ye tribute also: for they are Godministers, attending continually upon this very thing. <strong>7.</strong> Render therefore to all their dues: tribute to whom tribute is due; custom to whom custom; fear to whom fear; honor to whom honor.
+
+</div>
 
 <!-- PAGE 377 -->
 **5.** <span style="color:#800000">*It is therefore necessary,*</span> *etc.* What he had at first commanded as to the rendering of obedience to magistrates, he now briefly repeats, but with some addition, and that is, — that we ought to obey them, not only on the ground of necessity arising from man, but that we thereby obey God; for by *wrath* he means the punishment which the magistrates inflict for the contempt of their dignity; as though he had said, “We must not only obey, because we cannot with impunity resist the powerful and those armed with authority, as injuries are wont to be borne with which cannot be repelled; but we ought to obey willingly, as conscience through God’s word thus binds us.” Though then the magistrate were disarmed, so that we could with impunity provoke and despise him, yet such a thing ought to be no more attempted than if we were to see punishment suspended over us; for it belongs not to a private individual to take away authority from him whom the Lord has in power set over us. This whole discourse is concerning civil government; it is therefore to no purpose that they who would exercise dominion over consciences do hence attempt to establish their sacrilegious tyranny.
@@ -4573,27 +3422,14 @@ Now this passage confirms what I have already said, — that we ought to obey ki
 
 <!-- PAGE 378 -->
 
-## ROMANS 13:8-10
+<h2 class="scripture-anchor" id="romans-13-8-10" data-ref="ROMANS 13:8-10" style="display:none">ROMANS 13:8-10</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>8. Owe no man any thing, but to love</td><td>8. Nemini quicquam debeatis, nisi</td></tr>
-<tr><td>one another: for he that loveth another</td><td>ut invicem diligatis; qui enim diligit</td></tr>
-<tr><td>hath fulfilled the law.</td><td>alterum Legem implevit.</td></tr>
-<tr><td>9. For this, Thou shalt not commit</td><td>9. Illud enim, Non moechaberis,</td></tr>
-<tr><td>adultery, Thou shalt not kill, Thou</td><td>Non occides, Non falsum</td></tr>
-<tr><td>shalt not steal, Thou shalt not bear</td><td>testimonium dices, Non</td></tr>
-<tr><td>false witness, Thou shalt not covet;</td><td>concupisces, et si quod est aliud</td></tr>
-<tr><td>and if there be any other</td><td>praeceptum, in hoc sermone</td></tr>
-<tr><td>commandment, it is briefly</td><td>comprehenditur, Diliges proximum</td></tr>
-<tr><td>comprehended in this saying, namely,</td><td>sicut teipsum.</td></tr>
-<tr><td>Thou shalt love thy neighbor as</td><td>10. Dilectio proximo malum non</td></tr>
-<tr><td>thyself.</td><td>infert: plenitudo ergo legis est</td></tr>
-<tr><td>10. Love worketh no ill to his</td><td>dilectio.</td></tr>
-<tr><td>neighbor: therefore love is the fulfilling</td><td></td></tr>
-<tr><td>of the law.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451308&gt;</span><span class="book-name">Romans</span> <span class="verse-range">13:8-10</span></p>
+
+<strong>8.</strong> Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law. <strong>9.</strong> For this, Thou shalt not commit adultery, Thou shalt not kill, Thou shalt not steal, Thou shalt not bear false witness, Thou shalt not covet; and if there be any other commandment, it is briefly comprehended in this saying, namely, Thou shalt love thy neighbor as thyself. <strong>10.</strong> Love worketh no ill to his neighbor: therefore love is the fulfilling of the law.
+
+</div>
 
 **8.** <span style="color:#800000">*To no one owe ye*</span>*, etc.* There are those who think that this was not said without a taunt, as though Paul was answering the objection of those who *contended* that Christians were burdened in having other precepts than that of love enjoined them. And indeed I do not deny, but that it may be taken ironically, as though he conceded to those who allowed no other law but that of love, what they required, but in another sense. And *yet* I prefer to take the words simply as they are; for I think that Paul meant to refer the *precept* respecting the power of magistrates to the law of love, lest it should seem to any one too feeble; as though he had said, — “When I require you to obey princes, I require nothing more than what all the faithful ought to do, as demanded by the law of love: for if ye wish well to the good, (and not to wish this is inhuman,) ye ought to strive, that the laws and judgments may prevail, that the administrators of the laws may have an obedient people, so that through them peace may be secured to all.” He then who introduces anarchy, violates love; for what immediately follows anarchy, is the confusion of all things. <span style="color:#800000">[^f405]</span>
 
@@ -4607,29 +3443,14 @@ But some are here impeded, and they cannot well extricate themselves from this d
 
 **10.** <span style="color:#800000">*Love doeth no evil to a neighbor,*</span> *etc.* He demonstrates by the effect, that under the word love are contained those things which are taught us in all the commandments; for he who is endued with true love will never entertain the thought of injuring others. What else does the whole law forbid, but that we do no harm to our neighbor? This, however, ought to be applied to the present subject; for since magistrates are the guardians of peace and justice, he who desires that his own right should be secured to every one, and that all may live free from wrong, ought to defend, as far as he can, the power of magistrates. But the enemies of government show a disposition to do harm. And when he repeats that the fulfilling of the law is love, understand this, as before, of that part of the law which refers to mankind; for the first table of the law, which contains what we owe to God, is not here referred to at all.
 
-## ROMANS 13:11-14
+<h2 class="scripture-anchor" id="romans-13-11-14" data-ref="ROMANS 13:11-14" style="display:none">ROMANS 13:11-14</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>11. And that, knowing the time, that</td><td>11. Hoc enim, quum noverimus</td></tr>
-<tr><td>now it is high time to awake out of</td><td>tempus, quia hora est qua jam e</td></tr>
-<tr><td>sleep: for now is our salvation nearer</td><td>somno expergiscamur (nunc enim</td></tr>
-<tr><td>than when we believed.</td><td>propior est salus nostra quam</td></tr>
-<tr><td>12. The night is far spent, the day is</td><td>quum credi-dimus,)</td></tr>
-<tr><td>at hand: let us therefore cast off the</td><td>12. Nox progressa est, dies vero</td></tr>
-<tr><td>works of darkness, and let us put on</td><td>appropinquavit: abjiciamus ergo</td></tr>
-<tr><td>the armor of light.</td><td>opera tenebrarum, et induamus</td></tr>
-<tr><td>13. Let us walk honestly, as in the</td><td>arma lucis.</td></tr>
-<tr><td>day; not in rioting and drunkenness,</td><td>13 Sicut in die decenter</td></tr>
-<tr><td>not in chambering and wantonness,</td><td>ambulemus; non comessationibus</td></tr>
-<tr><td>not in strife and envying:</td><td>neque ebrietatibus, neque eubilibus</td></tr>
-<tr><td>14. But put ye on the Lord Jesus</td><td>neque lasciviis, neque contentione</td></tr>
-<tr><td>Christ, and make not provision for the</td><td>neque aemulatione:</td></tr>
-<tr><td>flesh, to fulfill the lusts thereof.</td><td>14. Sed induamini Dominum Iesum</td></tr>
-<tr><td></td><td>Christum, et carnis curam ne agatis</td></tr>
-<tr><td></td><td>ad concupiscentias.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451311&gt;</span><span class="book-name">Romans</span> <span class="verse-range">13:11-14</span></p>
+
+<strong>11.</strong> And that, knowing the time, that now it is high time to awake out of sleep: for now is our salvation nearer than when we believed. <strong>12.</strong> The night is far spent, the day is at hand: let us therefore cast off the works of darkness, and let us put on the armor of light. <strong>13.</strong> Let us walk honestly, as in the day; not in rioting and drunkenness, not in chambering and wantonness, not in strife and envying: <strong>14.</strong> But put ye on the Lord Jesus Christ, and make not provision for the flesh, to fulfill the lusts thereof.
+
+</div>
 
 <!-- PAGE 381 -->
 
@@ -4664,27 +3485,14 @@ Paul, setting a bridle on our desires, reminds us, that the cause of all intempe
 
 # CHAPTER 14
 
-## ROMANS 14:1-4
+<h2 class="scripture-anchor" id="romans-14-1-4" data-ref="ROMANS 14:1-4" style="display:none">ROMANS 14:1-4</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. Him that is weak in the faith</td><td>1. Eum vero qui fide est imbecilla,</td></tr>
-<tr><td>receive ye, but not to doubtful</td><td>suscipite, non ad disceptationes</td></tr>
-<tr><td>disputations.</td><td>quaes-tionum.</td></tr>
-<tr><td>2. For one believeth that he may eat</td><td>2. Qui credit, vescatur quibusvis:</td></tr>
-<tr><td>all things: another, who is weak,</td><td>qui autem infirmus est, olera edit.</td></tr>
-<tr><td>eateth herbs.</td><td>3. Qui edit, non contemnat eum qui</td></tr>
-<tr><td>3. Let not him that eateth despise him</td><td>abstinet; et qui abstinet, eum non</td></tr>
-<tr><td>that eateth not; and let not him which</td><td>condemnet qui edit: Dominus enim</td></tr>
-<tr><td>eateth not judge him that eateth: for</td><td>illum suscepit.</td></tr>
-<tr><td>God hath received him.</td><td>4. Tu quis es qui judicas alienum</td></tr>
-<tr><td>4. Who art thou that judgest another</td><td>servum? proprio Domino stat vel</td></tr>
-<tr><td>man’s servant? to his own master he</td><td>cadit. Stabit vero: potens est enim</td></tr>
-<tr><td>standeth or falleth; yea, he shall be</td><td>Dens efficere ut stet.</td></tr>
-<tr><td>holden up: for God is able to make</td><td></td></tr>
-<tr><td>him stand.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451401&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:1-4</span></p>
+
+<strong>1.</strong> Him that is weak in the faith receive ye, but not to doubtful disputations. <strong>2.</strong> For one believeth that he may eat all things: another, who is weak, eateth herbs. <strong>3.</strong> Let not him that eateth despise him that eateth not; and let not him which eateth not judge him that eateth: for God hath received him. <strong>4.</strong> Who art thou that judgest another man’s servant? to his own master he standeth or falleth; yea, he shall be holden up: for God is able to make him stand.
+
+</div>
 
 **1.** <span style="color:#800000">*Him indeed,*</span> *etc.* He passes on now to lay down a precept especially necessary for the instruction of the Church, — that they who have made the most progress in Christian doctrine should accommodate themselves to the more ignorant, and employ their own strength to sustain their weakness; for among the people of God there are some weaker than others, and who, except they are treated with great tenderness and kindness, will be discouraged, and become at length alienated from religion. And it is very probable that this happened especially at that time; for the Churches were formed of both Jews and Gentiles; some of whom, having been long accustomed to the rites of the Mosaic law, having been brought up in them from childhood, were not easily drawn away from them; and there were others who, having never learnt such things, refused a yoke to which they had not been accustomed. <span style="color:#800000">[^f410]</span>
 
@@ -4712,24 +3520,14 @@ But by referring to the power of God, he means not simply, as though he had said
 
 In short, Paul shows to what side their judgments incline, in whom love abounds.
 
-## ROMANS 14:5-6
+<h2 class="scripture-anchor" id="romans-14-5-6" data-ref="ROMANS 14:5-6" style="display:none">ROMANS 14:5-6</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>5. One man esteemeth one day above</td><td>5. Hic quidem diem prae die</td></tr>
-<tr><td>another; another esteemeth every</td><td>aestimat; ille autem peraque</td></tr>
-<tr><td>day alike. Let every man be fully</td><td>aestimat omnem diem.</td></tr>
-<tr><td>persuaded in his own mind.</td><td>Unusquisque sententiae suae certus</td></tr>
-<tr><td>6. He that regardeth the day,</td><td>sit.</td></tr>
-<tr><td>regardeth it unto the Lord; and he</td><td>6. Qui curat diem, Domino curat;</td></tr>
-<tr><td>that regardeth not the day, to the</td><td>qui non curat diem, Domino non</td></tr>
-<tr><td>Lord he doth not regard it. He that</td><td>curat. Qui vescitur, Domino</td></tr>
-<tr><td>eateth, eateth to the Lord, for he</td><td>vescitur, gratias enim agit Deo; et</td></tr>
-<tr><td>giveth God thanks; and he that eateth</td><td>qui abstinet, Domino abstinet, et</td></tr>
-<tr><td>not, to the Lord he eateth not, and</td><td>gratias agit Deo.</td></tr>
-<tr><td>giveth God thanks.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451405&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:5-6</span></p>
+
+<strong>5.</strong> One man esteemeth one day above another; another esteemeth every day alike. Let every man be fully persuaded in his own mind. <strong>6.</strong> He that regardeth the day, regardeth it unto the Lord; and he that regardeth not the day, to the Lord he doth not regard it. He that eateth, eateth to the Lord, for he giveth God thanks; and he that eateth not, to the Lord he eateth not, and giveth God thanks.
+
+</div>
 
 <!-- PAGE 389 -->
 
@@ -4747,22 +3545,14 @@ But as he had before required an assurance of mind, so that no one ought rashly 
 
 Observe also what he says, — that we then eat to the Lord, or abstain, when we give thanks. Hence, eating is impure, and abstinence is impure, without thanksgiving. It is only the name of God, when invoked, that sanctifies us and all we have.
 
-## ROMANS 14:7-9
+<h2 class="scripture-anchor" id="romans-14-7-9" data-ref="ROMANS 14:7-9" style="display:none">ROMANS 14:7-9</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>7. For none of us liveth to himself,</td><td>7. Nemo enim nostrum sibi ipsi</td></tr>
-<tr><td>and no man dieth to himself.</td><td>vivit, et nemo sibi moritur.</td></tr>
-<tr><td>8. For whether we live, we live unto</td><td>8. Sive enim vivimus, Domino</td></tr>
-<tr><td>the Lord; and whether we die, we die</td><td>vivimus; sive morimur, Domino</td></tr>
-<tr><td>unto the Lord: whether we live</td><td>morimur: sive vivimus sive</td></tr>
-<tr><td>therefore, or die, we are the Lord’s.</td><td>morimur, Domini sumus.</td></tr>
-<tr><td>9. For to this end Christ both died,</td><td>9. In hoc enim et mortuus est</td></tr>
-<tr><td>and rose, and revived,<sty c="800000" i="0"> [^f417] </sty>that he</td><td>Christus, et resurrexit, et revixit,<sty c="800000" i="0"> [^f417]</sty></td></tr>
-<tr><td>might be Lord both of the dead and</td><td>ut vivis dominetur et mortuis.</td></tr>
-<tr><td>living.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451407&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:7-9</span></p>
+
+<strong>7.</strong> For none of us liveth to himself, and no man dieth to himself. <strong>8.</strong> For whether we live, we live unto the Lord; and whether we die, we die unto the Lord: whether we live therefore, or die, we are the Lord’s. <strong>9.</strong> For to this end Christ both died, and rose, and revived, <span style="color:#800000">[^f417]</span> that he might be Lord both of the dead and living.
+
+</div>
 
 **7.** <span style="color:#800000">*For no one of us*</span>*, etc.* He now confirms the former verse by an argument derived from the whole to a part, — that it is no matter of wonder that particular acts of our life should be referred to the Lord’s will, since life itself ought to be wholly spent to his glory; for then only is the life of a Christian rightly formed, when it has for its object the will of God. But if thou oughtest to refer whatever thou doest to his good pleasure, it is then an act of impiety to undertake anything whatever, which thou thinkest will displease him; nay, which thou art not persuaded will please him.
 
@@ -4776,28 +3566,14 @@ The application of this doctrine opens into a wide field. God thus claims author
 
 <!-- PAGE 393 -->
 
-## ROMANS 14:10-13
+<h2 class="scripture-anchor" id="romans-14-10-13" data-ref="ROMANS 14:10-13" style="display:none">ROMANS 14:10-13</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>10. But why dost thou judge thy</td><td>10. Tu vero quid judicas fratrem</td></tr>
-<tr><td>brother?<sty c="800000" i="0"> [^f418] </sty>or why dost thou set at</td><td>tuum? aut etiam tu, quid contemnis</td></tr>
-<tr><td>nought thy brother? for we shall all</td><td>fratrem tuum? Onmes enim</td></tr>
-<tr><td>stand before the judgment-seat of</td><td>sistemur ad tribunal Christi:</td></tr>
-<tr><td>Christ:</td><td>11. Scripture est enim, Vivo ego,</td></tr>
-<tr><td>11. For it is written, As I live, saith</td><td>dick Dominus, mihi flectetur omne</td></tr>
-<tr><td>the Lord, every knee shall bow to me,</td><td>genu, et omnis lingua confitebitur</td></tr>
-<tr><td>and every tongue shall confess to</td><td>Deo.</td></tr>
-<tr><td>God.</td><td>12. Unusquisque igitur de se</td></tr>
-<tr><td>12. So then every one of us shall give</td><td>rationem redder Deo.</td></tr>
-<tr><td>account of himself to God.</td><td>13. Quare ne amplius judicemus</td></tr>
-<tr><td>13. Let us not therefore judge one</td><td>alius alium: sed hoc judicate potius,</td></tr>
-<tr><td>another any more: but judge this</td><td>ne lapsus occasio detur fratri aut</td></tr>
-<tr><td>rather, that no man put a</td><td>offendiculum.</td></tr>
-<tr><td>stumblingblock, or an occasion to fall,</td><td></td></tr>
-<tr><td>in his brother’s way.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451410&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:10-13</span></p>
+
+<strong>10.</strong> But why dost thou judge thy brother? <span style="color:#800000">[^f418]</span> or why dost thou set at nought thy brother? for we shall all stand before the judgment-seat of Christ: <strong>11.</strong> For it is written, As I live, saith the Lord, every knee shall bow to me, and every tongue shall confess to God. <strong>12.</strong> So then every one of us shall give account of himself to God. <strong>13.</strong> Let us not therefore judge one another any more: but judge this rather, that no man put a stumblingblock, or an occasion to fall, in his brother’s way.
+
+</div>
 
 **10.** <span style="color:#800000">*But thou, why dost thou*</span>*, etc.* As he had made the life and death of us all subject to Christ, he now proceeds to mention the authority to judge, which the Father has conferred on him, together with the dominion over heaven and earth. He hence concludes, that it is an unreasonable boldness in any one to assume the power to judge his brother, since by taking such a liberty he robs Christ the Lord of the power which he alone has received from the Father.
 
@@ -4818,30 +3594,14 @@ From the various significations of the word to judge, he has aptly drawn two dif
 
 <!-- PAGE 396 -->
 
-## ROMANS 14:14-18
+<h2 class="scripture-anchor" id="romans-14-14-18" data-ref="ROMANS 14:14-18" style="display:none">ROMANS 14:14-18</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>14. I know, and am persuaded by the</td><td>14. Novi et persuasus sum in</td></tr>
-<tr><td>Lord Jesus,<sty c="800000" i="0"> [^f422] </sty>that there is nothing</td><td>Domino Iesu, nihil commune per</td></tr>
-<tr><td>unclean of itself: but to him that</td><td>se esse; nisi qui existimat aliquid</td></tr>
-<tr><td>esteemeth any thing to be unclean, to</td><td>esse commune, ei commune est.</td></tr>
-<tr><td>him it is unclean.</td><td>15. Verum si propter cibum frater</td></tr>
-<tr><td>15. But if thy brother be grieved with</td><td>tuus contristatur, jam non</td></tr>
-<tr><td>thy meat, now walkest thou not</td><td>secundum charitatem ambulas; ne</td></tr>
-<tr><td>charitably. Destroy not him with thy</td><td>cibo tuo ilium perdas, pro quo</td></tr>
-<tr><td>meat for whom Christ died.</td><td>Christus mortuus est.</td></tr>
-<tr><td>16. Let not then your good be evil</td><td>16. Ne vestrum igitur bonum</td></tr>
-<tr><td>spoken of:</td><td>hominum maledicentiae sit</td></tr>
-<tr><td>17. For the kingdom of God is not</td><td>obnoxium:</td></tr>
-<tr><td>meat and drink; but righteousness, and</td><td>17. Non enim est regnum Dei esca</td></tr>
-<tr><td>peace, and joy in the Holy Ghost.</td><td>et potus; sed justitia, et pax, et</td></tr>
-<tr><td>18. For he that in these things serveth</td><td>gaudium in Spiritu sancto.</td></tr>
-<tr><td>Christ is acceptable to God, and</td><td>18. Qui enim servit per haec</td></tr>
-<tr><td>approved of men.</td><td>Christo, acceptus est Deo, et</td></tr>
-<tr><td></td><td>probatus hominibus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451414&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:14-18</span></p>
+
+<strong>14.</strong> I know, and am persuaded by the Lord Jesus, <span style="color:#800000">[^f422]</span> that there is nothing unclean of itself: but to him that esteemeth any thing to be unclean, to him it is unclean. <strong>15.</strong> But if thy brother be grieved with thy meat, now walkest thou not charitably. Destroy not him with thy meat for whom Christ died. <strong>16.</strong> Let not then your good be evil spoken of: <strong>17.</strong> For the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost. <strong>18.</strong> For he that in these things serveth Christ is acceptable to God, and approved of men.
+
+</div>
 
 <!-- PAGE 397 -->
 **14.** <span style="color:#800000">*I know,*</span> *etc.* To anticipate their objection, who made such progress in the gospel of Christ as to make no distinction between meats, he first shows what must be thought of meats when viewed in themselves; and then he subjoins how sin is committed in the use of them. He then declares, that no meat is impure to a right and pure conscience, and that there is no hindrance to a pure use of meats, except ignorance and infirmity; for when any imagines an impurity in them, he is not at liberty to use them. But he afterwards adds, that we are not only to regard meats themselves, but also the brethren before whom we eat: for we ought not to view the use of God’s bounty with so much indifference as to disregard love. His words then have the same meaning as though he had said, — “I know that all meats are clean, and therefore I leave to thee the free use of them; I allow thy conscience to be freed from all scruples: in short, I do not simply restrain thee from meats; but laying aside all regard for them, I still wish thee not to neglect thy neighbor.”
@@ -4867,24 +3627,14 @@ By connecting <span style="color:#800000">*peace*</span> and <span style="color:
 
 **18.** <span style="color:#800000">*For he who in these things*</span>*, etc.* An argument drawn from the effect: for it is impossible, but that when any one is acceptable to God and approved by men, the kingdom of God fully prevails and flourishes in him: he, who with a quiet and peaceful conscience serves Christ in righteousness, renders himself approved by men as well as by God. Wherever then there is righteousness and peace and spiritual joy, there the kingdom of God is complete in all its parts: it does not then consist of material things. But he says, that man is acceptable to God, because he obeys his will; he testifies that he is approved by men, because they cannot do otherwise than bear testimony to that excellency which they see with their eyes: not that the ungodly always favor the children of God; nay, when there is no cause, they often pour forth against them many reproaches, and with forged calumnies defame the innocent, and in a word, turn into vices things rightly done, by putting on them a malignant construction. But Paul speaks here of honest judgment, blended with no moroseness, no hatred, no superstition.
 
-## ROMANS 14:19-21
+<h2 class="scripture-anchor" id="romans-14-19-21" data-ref="ROMANS 14:19-21" style="display:none">ROMANS 14:19-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>19. Let us therefore follow after the</td><td>19. Proinde quae pacis sunt, et</td></tr>
-<tr><td>things which make for peace, and</td><td>aedificationis mutuae, sectemur.</td></tr>
-<tr><td>things wherewith one may edify</td><td>20. Ne propter cibum destruas</td></tr>
-<tr><td>another.</td><td>opus Dei. Omnia quidem pura, sed</td></tr>
-<tr><td>20. For meat destroy not the work of</td><td>malum est homini qui per</td></tr>
-<tr><td>God. All things indeed are pure; but it</td><td>offensionem vescitur.</td></tr>
-<tr><td>is evil for that man who eateth with</td><td>21. Bonum est non edere carnem,</td></tr>
-<tr><td>offense.</td><td>nec vinum bibere,<sty c="800000" i="0"> [^f427] </sty>nec aliud</td></tr>
-<tr><td>21. It is good neither to eat flesh, nor</td><td>facere in quo frater tuus concidat,</td></tr>
-<tr><td>to drink wine, nor any thing whereby</td><td>vel offendatur, vel infirmetur.</td></tr>
-<tr><td>thy brother stumbleth, or is offended,</td><td></td></tr>
-<tr><td>or is made weak.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451419&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:19-21</span></p>
+
+<strong>19.</strong> Let us therefore follow after the things which make for peace, and things wherewith one may edify another. <strong>20.</strong> For meat destroy not the work of God. All things indeed are pure; but it is evil for that man who eateth with offense. <strong>21.</strong> It is good neither to eat flesh, nor to drink wine, nor any thing whereby thy brother stumbleth, or is offended, or is made weak.
+
+</div>
 
 <!-- PAGE 400 -->
 **19.** <span style="color:#800000">*Let us then follow*</span>*, etc.* He recalls us, as much as possible, from a mere regard to meats, to consider those greater things which ought to have the first place in all our actions, and so to have the precedence. We must indeed eat, that we may live; we ought to live, that we may serve the Lord; and he serves the Lord, who by benevolence and kindness edifies his neighbor; for in order to promote these two things, concord and edification, all the duties of love ought to be exercised. Lest this should be thought of little moment, he repeats the sentence he had before announced, — that corruptible meat is not of such consequence that for its sake the Lord’s building should be destroyed. For wherever there is even a spark of godliness, there the work of God is to be seen; which they demolish, who by their unfeeling conduct disturb the conscience of the weak.
@@ -4899,20 +3649,14 @@ He mentions three things in order, <span style="color:#800000">*to fall, to stum
 
 <!-- PAGE 401 -->
 
-## ROMANS 14:22-23
+<h2 class="scripture-anchor" id="romans-14-22-23" data-ref="ROMANS 14:22-23" style="display:none">ROMANS 14:22-23</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>22. Hast thou faith? have it to thyself</td><td>22. Tu fidem habes? apud teipsum</td></tr>
-<tr><td>before God. Happy is he that</td><td>habe coram Deo. Beatus qui non</td></tr>
-<tr><td>condemneth not himself in that thing</td><td>judicat seipsum in eo quod</td></tr>
-<tr><td>which he alloweth.</td><td>examinat.</td></tr>
-<tr><td>23. And he that doubteth is damned if</td><td>23. Qui verb dijudicat si comederit</td></tr>
-<tr><td>he eat, because he eateth not of faith:</td><td>condemnatus est; quia non ex fide:</td></tr>
-<tr><td>for whatsoever is not of faith is sin.</td><td>quicquid vero non est ex fide,</td></tr>
-<tr><td></td><td>peccatum est.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451422&gt;</span><span class="book-name">Romans</span> <span class="verse-range">14:22-23</span></p>
+
+<strong>22.</strong> Hast thou faith? have it to thyself before God. Happy is he that condemneth not himself in that thing which he alloweth. <strong>23.</strong> And he that doubteth is damned if he eat, because he eateth not of faith: for whatsoever is not of faith is sin.
+
+</div>
 
 **22.** <span style="color:#800000">*Hast thou faith?*</span> In order to conclude, he shows in what consists the advantage of Christian liberty: it hence appears, that they boast, falsely of liberty who know not how to make a right use of it. He then says, that liberty really understood, as it is that of faith, has properly a regard to God; so that he who is endued with a conviction of this kind, ought to be satisfied with peace of conscience before God; nor is it needful for him to show before men that, he possesses it. It hence follows, that if we offend our weak brethren by eating meats, it is through a perverse opinion; for there is no necessity to constrain us.
 
@@ -4931,23 +3675,14 @@ The word <span style="color:#800000">*faith*</span> is to be taken here for a fi
 
 # CHAPTER 15 [^f432]
 
-## ROMANS 15:1-3
+<h2 class="scripture-anchor" id="romans-15-1-3" data-ref="ROMANS 15:1-3" style="display:none">ROMANS 15:1-3</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. We then that are strong ought to</td><td>1. Debemus autem nos qui</td></tr>
-<tr><td>bear the infirmities of the weak, and</td><td>potentes sumus, infirmitates</td></tr>
-<tr><td>not to please ourselves.</td><td>impotentium portare, et non</td></tr>
-<tr><td>2. Let every one of us please his</td><td>placere nobis ipsis:</td></tr>
-<tr><td>neighbor for his good to edification.</td><td>2. Unusquisque enim nostrum</td></tr>
-<tr><td>3. For even Christ pleased not</td><td>proximo placeat in bonum, ad</td></tr>
-<tr><td>himself; but, as it is written, The</td><td>aedifi-cationem.</td></tr>
-<tr><td>reproaches of them that reproached</td><td>3. Etenim Christus non placuit sibi</td></tr>
-<tr><td>thee fell on me.</td><td>ipsi; sed quemadmodum scriptum</td></tr>
-<tr><td></td><td>est, Opprobria exprobrantium tibi,</td></tr>
-<tr><td></td><td>ceciderunt super me.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451501&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:1-3</span></p>
+
+<strong>1.</strong> We then that are strong ought to bear the infirmities of the weak, and not to please ourselves. <strong>2.</strong> Let every one of us please his neighbor for his good to edification. <strong>3.</strong> For even Christ pleased not himself; but, as it is written, The reproaches of them that reproached thee fell on me.
+
+</div>
 
 **1.** <span style="color:#800000">*We then who are strong,*</span> *etc.* Lest they who had made more advances than others in the knowledge of God should think it unreasonable, that more burden was to be laid on them than on others, he shows for what purpose this strength, by which they excelled others, was bestowed on them, even that they might so sustain the weak as to prevent them to fall. For as God has destined those to whom he has granted superior knowledge to convey instruction to the ignorant, so to those whom he makes strong he commits the duty of supporting the weak by their strength; thus ought all gifts to be communicated among all the members of Christ. The stronger then any one is in Christ, the more bound he is to bear with the weak. <span style="color:#800000">[^f433]</span>
 
@@ -4964,24 +3699,14 @@ There are here two things laid down, — that we are not to be content with our 
 <!-- PAGE 406 -->
 The second part, “the reproaches of God,” may indeed be understood in two ways, — either that he was not less affected by the contumelies which were heaped on God, than if he himself had endured them, — or, that he grieved not otherwise to see the wrong done to God, than if he himself had been the cause. But if Christ reigns in us, as he must necessarily reign in his people, this feeling is also vigorous in our hearts, so that whatever derogates from the glory of God does not otherwise grieve us than if it was done to ourselves. Away then with those whose highest wish is to gain honors from them who treat God’s name with all kinds of reproaches, tread Christ under foot, contumeliously rend, and with the sword and the flame persecute his gospel. It is not indeed safe to be so much honored by those by whom Christ is not only despised but also reproachfully treated.
 
-## ROMANS 15:4-6
+<h2 class="scripture-anchor" id="romans-15-4-6" data-ref="ROMANS 15:4-6" style="display:none">ROMANS 15:4-6</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>4. For whatsoever things were written</td><td>4. Quaecunque enim ante scripta</td></tr>
-<tr><td>aforetime were written for our</td><td>sunt, in nostram doctrinam sunt</td></tr>
-<tr><td>learning; that we, through patience</td><td>scripta, ut per patientain et</td></tr>
-<tr><td>and comfort of the scriptures, might</td><td>consolationem Scripturarum spem</td></tr>
-<tr><td>have hope.</td><td>habeamus.</td></tr>
-<tr><td>5. Now the God of patience and</td><td>5. Deus autem patientiae et</td></tr>
-<tr><td>consolation grant you to be like</td><td>consolationis det vobis idem</td></tr>
-<tr><td>minded one toward another, according</td><td>mutuo cogitare secundum</td></tr>
-<tr><td>to Christ Jesus;</td><td>Christum Iesum;</td></tr>
-<tr><td>6. That ye may with one mind and</td><td>6. Ut uno animo, uno ore,</td></tr>
-<tr><td>one mouth glorify God, even the</td><td>glorificetis Deum et Patrem</td></tr>
-<tr><td>Father of our Lord Jesus Christ.</td><td>Domini nostri Iesu Christi.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451504&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:4-6</span></p>
+
+<strong>4.</strong> For whatsoever things were written aforetime were written for our learning; that we, through patience and comfort of the scriptures, might have hope. <strong>5.</strong> Now the God of patience and consolation grant you to be like minded one toward another, according to Christ Jesus; <strong>6.</strong> That ye may with one mind and one mouth glorify God, even the Father of our Lord Jesus Christ.
+
+</div>
 
 **4.** <span style="color:#800000">*For whatsoever things*</span>*, etc.* This is an application of the example, lest any one should think, that to exhort us to imitate Christ was foreign to his purpose; “Nay,” he says, “there is nothing in Scripture which is not useful for your instruction, and for the direction of your life.” <span style="color:#800000">[^f436]</span>
 
@@ -5000,33 +3725,14 @@ Miserable indeed is the union which is unconnected with God, and that is unconne
 
 And that he might recommend to us an agreement in Christ, he teaches us how necessary it is: for God is not truly glorified by us, unless the hearts of all agree in giving him praise, and their tongues also join in harmony. There is then no reason for any to boast that he will give glory to God after his own manner; for the unity of his servants is so much esteemed by God, that he will not have his glory sounded forth amidst discords and contentions. This one thought ought to be sufficient to check the wanton rage for contention and quarreling, which at this day too much possesses the minds of many.
 
-## ROMANS 15:7-12
+<h2 class="scripture-anchor" id="romans-15-7-12" data-ref="ROMANS 15:7-12" style="display:none">ROMANS 15:7-12</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>7. Wherefore receive ye one another,</td><td>7. Itaque suscipite vos mutuo,</td></tr>
-<tr><td>as Christ also received us to the glory</td><td>quemadmodum Christus vos</td></tr>
-<tr><td>of God.</td><td>suscepit, in gloriam Dei.</td></tr>
-<tr><td>8. Now I say, that Jesus Christ was a</td><td>8. Dico autem Iesum Christum</td></tr>
-<tr><td>minister of the circumcision for the</td><td>ministerium fuisse circumcisionis</td></tr>
-<tr><td>truth of God, to confirm the promises</td><td>super veritate Dei ad promissiones</td></tr>
-<tr><td>made unto the fathers:</td><td>Patrum confirmandas:</td></tr>
-<tr><td>9. And that the Gentiles might glorify</td><td>9. Gentes autem pro misericordia</td></tr>
-<tr><td>God for his mercy; as it is written,</td><td>glorificare debent Deum; quemad-</td></tr>
-<tr><td>For this cause I will confess to thee</td><td>modum scriptum est, Propter hoc</td></tr>
-<tr><td>among the Gentiles, and sing unto thy</td><td>confitebor tibi inter Gentes et</td></tr>
-<tr><td>name.</td><td>nomini tuo psallam:</td></tr>
-<tr><td>10. And again he saith, Rejoice, ye</td><td>10. Et rursum dicit, Exultate</td></tr>
-<tr><td>Gentiles, with his people.</td><td>Gentes cum populo ejus;</td></tr>
-<tr><td>11. And again, Praise the Lord, all ye</td><td>11. Et rursum, Laudate Dominum</td></tr>
-<tr><td>Gentiles; and land him, all ye people.</td><td>omnes Gentes, et collaudate eum</td></tr>
-<tr><td>12. And again, Esaias saith, There</td><td>omnes populi.</td></tr>
-<tr><td>shall be a root of Jesse, and he that</td><td>12. Et rursum Iesaias dicit, Erit</td></tr>
-<tr><td>shall rise to reign over the Gentiles; in</td><td>radix Jesse, et qui exurget ad</td></tr>
-<tr><td>him shall the Gentiles trust.</td><td>imperandum Gentibus; in ipso</td></tr>
-<tr><td></td><td>Gentes sperabunt.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451507&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:7-12</span></p>
+
+<strong>7.</strong> Wherefore receive ye one another, as Christ also received us to the glory of God. <strong>8.</strong> Now I say, that Jesus Christ was a minister of the circumcision for the truth of God, to confirm the promises made unto the fathers: <strong>9.</strong> And that the Gentiles might glorify God for his mercy; as it is written, For this cause I will confess to thee among the Gentiles, and sing unto thy name. <strong>10.</strong> And again he saith, Rejoice, ye Gentiles, with his people. <strong>11.</strong> And again, Praise the Lord, all ye Gentiles; and land him, all ye people. <strong>12.</strong> And again, Esaias saith, There shall be a root of Jesse, and he that shall rise to reign over the Gentiles; in him shall the Gentiles trust.
+
+</div>
 
 <!-- PAGE 409 -->
 
@@ -5048,32 +3754,14 @@ But twice in this prophecy is the calling of the Gentiles confirmed, — by the 
 
 <!-- PAGE 412 -->
 
-## ROMANS 15:13-16
+<h2 class="scripture-anchor" id="romans-15-13-16" data-ref="ROMANS 15:13-16" style="display:none">ROMANS 15:13-16</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>13. Now the God of hope fill you</td><td>13. Deus autem spei impleat vos</td></tr>
-<tr><td>with all joy and peace in believing,</td><td>omni gaudio et pace in credendo,</td></tr>
-<tr><td>that ye may abound in hope, through</td><td>quo abundetis in spe per</td></tr>
-<tr><td>the power of the Holy Ghost.</td><td>potentiam Spiritus sancti.</td></tr>
-<tr><td>14. And I myself also am persuaded</td><td>14. Persuasus autem sum, fratres</td></tr>
-<tr><td>of you, my brethren, that ye also are</td><td>mei, ipse quoque de vobis, quod et</td></tr>
-<tr><td>full of goodness, filled with all</td><td>ipsi pleni sitis bonitate, referti</td></tr>
-<tr><td>knowledge, able also to admonish one</td><td>omni cognitione, idonei ad vos</td></tr>
-<tr><td>another.</td><td>mutuo ad-monendos.</td></tr>
-<tr><td>15. Nevertheless, brethren, I have</td><td>15. Audacius antera scripsi vobis,</td></tr>
-<tr><td>written the more boldly unto you in</td><td>fratres, ex parte, veluti</td></tr>
-<tr><td>some sort, as putting you in mind,</td><td>commonefaciens vos, propter</td></tr>
-<tr><td>because of the grace that is given to</td><td>gratiam mihi datam a Deo;</td></tr>
-<tr><td>me of God,</td><td>16. Ut sim minister Christi erga</td></tr>
-<tr><td>16. That I should be the minister of</td><td>Gentes, consecrans evangelium</td></tr>
-<tr><td>Jesus Christ to the Gentiles,</td><td>Christi, ut sit oblatio Gentium</td></tr>
-<tr><td>ministering the gospel of God, that</td><td>acceptabilis, sanctificata per</td></tr>
-<tr><td>the offering up of the Gentiles might</td><td>Spiritum sanctum.</td></tr>
-<tr><td>be acceptable, being sanctified by the</td><td></td></tr>
-<tr><td>Holy Ghost.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451513&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:13-16</span></p>
+
+<strong>13.</strong> Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost. <strong>14.</strong> And I myself also am persuaded of you, my brethren, that ye also are full of goodness, filled with all knowledge, able also to admonish one another. <strong>15.</strong> Nevertheless, brethren, I have written the more boldly unto you in some sort, as putting you in mind, because of the grace that is given to me of God, <strong>16.</strong> That I should be the minister of Jesus Christ to the Gentiles, ministering the gospel of God, that the offering up of the Gentiles might be acceptable, being sanctified by the Holy Ghost.
+
+</div>
 
 **13.** <span style="color:#800000">*And may the God*</span>*, etc.* He now concludes the passage, as before, with prayer; in which he desires the Lord to give them whatever he had commanded. It hence appears, that the Lord does in no degree measure his precepts according to our strength or the power of free-will; and that he does not command what we ought to do, that we, relying on our own power, may gird up ourselves to render obedience; but that he commands those things which require the aid of his grace, that he may stimulate us in our attention to prayer.
 
@@ -5099,32 +3787,14 @@ He adds that such sacrifices are <span style="color:#800000">*acceptable*</span>
 
 <!-- PAGE 416 -->
 
-## ROMANS 15:17-21
+<h2 class="scripture-anchor" id="romans-15-17-21" data-ref="ROMANS 15:17-21" style="display:none">ROMANS 15:17-21</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>17. I have therefore whereof I may</td><td>17. Habeo igitur quod glorier per</td></tr>
-<tr><td>glory through Jesus Christ in those</td><td>Iesum Christum in iis quae ad</td></tr>
-<tr><td>things which pertain to God.</td><td>Deum pertinent.</td></tr>
-<tr><td>18. For I will not dare to speak of any</td><td>18. Non enim ausim loqui</td></tr>
-<tr><td>of those things which Christ hath not</td><td>quicquam de iis quae non effecit</td></tr>
-<tr><td>wrought by me, to make the Gentiles</td><td>Christus per me, in obedientiam</td></tr>
-<tr><td>obedient, by word and deed,</td><td>Gentium, sermone et opere;</td></tr>
-<tr><td>19. Through mighty signs and</td><td>19. In potentia signorum et</td></tr>
-<tr><td>wonders, by the power of the Spirit</td><td>prodigiorum, in potentia Spiritus</td></tr>
-<tr><td>of God; so that from Jerusalem, and</td><td>Dei, ut ab Ierusalem et in circuitu</td></tr>
-<tr><td>round about unto Illyricum, I have</td><td>usque in Illyricum impleverim</td></tr>
-<tr><td>fully preached the gospel of Christ.</td><td>evangelium Christi:</td></tr>
-<tr><td>20. Yea, so have I strived to preach</td><td>20. Ira annitens praedicare</td></tr>
-<tr><td>the gospel, not where Christ was</td><td>evangelium, non ubi nominatus erat</td></tr>
-<tr><td>named, lest I should build upon</td><td>Christus, ne super alienum</td></tr>
-<tr><td>another man’s foundation:</td><td>fundamentum aedificarem;</td></tr>
-<tr><td>21. But, as it is written, To whom he</td><td>21. Sed quemadmodum scripture</td></tr>
-<tr><td>was not spoken of, they shall see: and</td><td>est, Ii quibus non annuntiatum est</td></tr>
-<tr><td>they that have not heard shall</td><td>de eo, videbunt, et qui non</td></tr>
-<tr><td>understand.</td><td>audierunt, intelligent.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451517&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:17-21</span></p>
+
+<strong>17.</strong> I have therefore whereof I may glory through Jesus Christ in those things which pertain to God. <strong>18.</strong> For I will not dare to speak of any of those things which Christ hath not wrought by me, to make the Gentiles obedient, by word and deed, <strong>19.</strong> Through mighty signs and wonders, by the power of the Spirit of God; so that from Jerusalem, and round about unto Illyricum, I have fully preached the gospel of Christ. <strong>20.</strong> Yea, so have I strived to preach the gospel, not where Christ was named, lest I should build upon another man’s foundation: <strong>21.</strong> But, as it is written, To whom he was not spoken of, they shall see: and they that have not heard shall understand.
+
+</div>
 
 **17.** <span style="color:#800000">*I have then*</span>*, etc.* After having in general commended his own calling, that the Romans might know that he was a true and undoubted apostle of Christ, he now adds testimonies, by which he proved that he had not only taken upon him the apostolic office conferred on him by God’s appointment, but that he had also eminently adorned it. He at the same time records the fidelity which he had exhibited in discharging his office. It is indeed to little purpose that we are appointed, except we act agreeably to our calling and fulfill our office. He did not make this declaration from a desire to attain glow, but because nothing was to be omitted which might procure favor and authority to his doctrine among the Romans. In God then, not in himself, did he glory; for he had nothing else in view but that the whole praise should redound to God.
 
@@ -5149,24 +3819,14 @@ And this is what we ought carefully to notice, lest we make a general rule of wh
 
 It is absurd for any one to attempt to apply what is here said to the pastoral office; for we know that in Churches rightly formed, where the truth of the gospel has been already received, Christ’s name must be constantly preached. Paul then was a preacher of Christ, yet unknown to foreign nations, for this end, — that after his departure the same doctrine should be daily proclaimed in every place by the mouth of the pastors; for it is certain that the Prophet speaks of the commencement of the kingdom of Christ.
 
-## ROMANS 15:22-24
+<h2 class="scripture-anchor" id="romans-15-22-24" data-ref="ROMANS 15:22-24" style="display:none">ROMANS 15:22-24</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>22. For which cause also I have been</td><td>22. Itaque impeditus etiam saepius</td></tr>
-<tr><td>much hindered from coming to you.</td><td>fui quominus venirem ad vos:</td></tr>
-<tr><td>23. But now having no more place in</td><td>23. Nunc vero nullum amplius</td></tr>
-<tr><td>these parts, and having a great desire</td><td>locum habens in his regionibus,</td></tr>
-<tr><td>these many years to come unto you;</td><td>desiderium autem habens a multis</td></tr>
-<tr><td>24. Whensoever I take my journey</td><td>annis veniendi ad vos;</td></tr>
-<tr><td>into Spain, I will come to you: for I</td><td>24. Si quando in Hispaniam</td></tr>
-<tr><td>trust to see you in my journey, and to</td><td>proficiscar, veniam ad vos:<sty c="800000" i="0"> [^f454]</sty></td></tr>
-<tr><td>be brought on my way thither-ward</td><td>spero enim fore ut istac iter faciens</td></tr>
-<tr><td>by you, if first I be somewhat filled</td><td>videam vos, et illuc a vobis</td></tr>
-<tr><td>with your company.</td><td>deducar, si tamen prius ex parte</td></tr>
-<tr><td></td><td>vestra consuetudine fuero expletus.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451522&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:22-24</span></p>
+
+<strong>22.</strong> For which cause also I have been much hindered from coming to you. <strong>23.</strong> But now having no more place in these parts, and having a great desire these many years to come unto you; <strong>24.</strong> Whensoever I take my journey into Spain, I will come to you: for I trust to see you in my journey, and to be brought on my way thither-ward by you, if first I be somewhat filled with your company.
+
+</div>
 
 <!-- PAGE 420 -->
 
@@ -5178,30 +3838,14 @@ By saying, to <span style="color:#800000">*be brought on my way thither by you*<
 
 <!-- PAGE 421 -->
 
-## ROMANS 15:25-29
+<h2 class="scripture-anchor" id="romans-15-25-29" data-ref="ROMANS 15:25-29" style="display:none">ROMANS 15:25-29</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>25. But now I go unto Jerusalem to</td><td>25. Nunc verb proficiscor</td></tr>
-<tr><td>minister unto the saints.</td><td>Ierosolymam ad ministrandum</td></tr>
-<tr><td>26. For it hath pleased them of</td><td>sanctis.</td></tr>
-<tr><td>Macedonia and Achaia to make a</td><td>26. Placuit enim Macedoniae et</td></tr>
-<tr><td>certain contribution for the poor</td><td>Achaiae communicationem facere</td></tr>
-<tr><td>saints which are at Jerusalem.</td><td>in pauperes sanctos qui sunt</td></tr>
-<tr><td>27. It hath pleased them verily; and</td><td>Ierosolymis:</td></tr>
-<tr><td>their debtors they are. For if the</td><td>27. Placuit, inquam, et debitores</td></tr>
-<tr><td>Gentiles have been made partakers of</td><td>sunt ipsorum; si enim spiritualibus</td></tr>
-<tr><td>their spiritual things, their duty is also</td><td>ipsorum communicarunt Gentes,</td></tr>
-<tr><td>to minister unto their in carnal things.</td><td>debent et in carnalibus<sty c="800000" i="0"> [^f456]</sty></td></tr>
-<tr><td>28. When therefore I have performed</td><td>ministrare ipsis.</td></tr>
-<tr><td>this, and have sealed to them this</td><td>28. Hoc igitur quum perfecero, et</td></tr>
-<tr><td>fruit, I will come by you into Spain.</td><td>obsignavero illis fructum hunc,</td></tr>
-<tr><td>29. And I am sure that, when I come</td><td>pro-ficiscar per vos in Hispaniam.</td></tr>
-<tr><td>unto you, I shall come in the fullness</td><td>29. Scio autem quod quum venero</td></tr>
-<tr><td>of the blessing of the gospel of Christ.</td><td>ad vos, in plenitudine benedictionis</td></tr>
-<tr><td></td><td>evangelii Christi venturus sum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451525&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:25-29</span></p>
+
+<strong>25.</strong> But now I go unto Jerusalem to minister unto the saints. <strong>26.</strong> For it hath pleased them of Macedonia and Achaia to make a certain contribution for the poor saints which are at Jerusalem. <strong>27.</strong> It hath pleased them verily; and their debtors they are. For if the Gentiles have been made partakers of their spiritual things, their duty is also to minister unto their in carnal things. <strong>28.</strong> When therefore I have performed this, and have sealed to them this fruit, I will come by you into Spain. <strong>29.</strong> And I am sure that, when I come unto you, I shall come in the fullness of the blessing of the gospel of Christ.
+
+</div>
 
 **25.** <span style="color:#800000">*But I am going now*</span>*, etc.* Lest they should expect his immediate coming, and think themselves deceived, if he had not come according to their expectation, he declares to them what business he had then in hand, which prevented him from going soon to them, and that was, — that he was going to Jerusalem to bear the alms which had been gathered in Macedonia and Achaia. Availing himself at the same time of this opportunity, he proceeds to commend that contribution; by which, as by a kind of intimation, he stirs them up to follow this example: for though he does not openly ask them, yet, by saying that Macedonia and Achaia had done what they ought to have done, he intimates, that it was also the duty of the Romans, as they were under the same obligation; and that he had this view, he openly confesses to the Corinthians, —
 
@@ -5227,27 +3871,14 @@ The former exposition has been most commonly received, and seems also to me the 
 
 <!-- PAGE 424 -->
 
-## ROMANS 15:30-33
+<h2 class="scripture-anchor" id="romans-15-30-33" data-ref="ROMANS 15:30-33" style="display:none">ROMANS 15:30-33</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>30. Now I beseech you, brethren, for</td><td>30. Obsecro autem vos fratres, per</td></tr>
-<tr><td>the Lord Jesus Christ’s sake, and for</td><td>Dominum nostrum Iesum</td></tr>
-<tr><td>the love of the Spirit, that ye strive</td><td>Christum et per dilectionem</td></tr>
-<tr><td>together with me in your prayers to</td><td>Spiritus, ut concertetis mihi in</td></tr>
-<tr><td>God for me;</td><td>precibus vestris pro me ad Deum;</td></tr>
-<tr><td>31. That I may be delivered from</td><td>31. Ut liberer ab incredulis in Iudea,</td></tr>
-<tr><td>them that do not believe in Judea; and</td><td>et ut ministerium meum quod</td></tr>
-<tr><td>that my service which have for</td><td>suscipio erga Ierusalem acceptum</td></tr>
-<tr><td>Jerusalem may be accepted of the</td><td>sit sanctis;</td></tr>
-<tr><td>saints;</td><td>32. Ut cum gaudio veniam ad vos</td></tr>
-<tr><td>32. That I may come unto you with</td><td>per voluntatem Dei, unique</td></tr>
-<tr><td>joy by the will of God, and may with</td><td>vobiscum refociller. Dens autem</td></tr>
-<tr><td>you be refreshed·</td><td>pacts sit cure omnibus vobis.</td></tr>
-<tr><td>33. Now the God of peace be with</td><td>Amen.<sty c="800000" i="0"> [^f460]</sty></td></tr>
-<tr><td>you all. Amen.</td><td></td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451530&gt;</span><span class="book-name">Romans</span> <span class="verse-range">15:30-33</span></p>
+
+<strong>30.</strong> Now I beseech you, brethren, for the Lord Jesus Christ’s sake, and for the love of the Spirit, that ye strive together with me in your prayers to God for me; <strong>31.</strong> That I may be delivered from them that do not believe in Judea; and that my service which have for Jerusalem may be accepted of the saints; <strong>32.</strong> That I may come unto you with joy by the will of God, and may with you be refreshed· <strong>33.</strong> Now the God of peace be with you all. Amen.
+
+</div>
 
 **30.** <span style="color:#800000">*Now I beseech you*</span>*, etc.* It is well known from many passages how much ill-will prevailed against Paul in his own nation on account of false reports, as though he taught a departure from Moses. He knew how much calumnies might avail to oppress the innocent, especially among those who are carried away by inconsiderate zeal. Added also to this, was the testimony of the Spirit, recorded in Acts 20:23; by which he was forewarned, that bonds and afflictions awaited him at Jerusalem. The more danger then he perceived, the more he was moved: hence it was, that he was so solicitous to commend his safety to the Churches; nor let us wonder, that he was anxious about his life, in which he knew so much danger to the Church was involved.
 
@@ -5277,43 +3908,14 @@ By adding <span style="color:#800000">*that I may come to you*</span>, he intima
 
 # CHAPTER 16
 
-## ROMANS 16:1-16
+<h2 class="scripture-anchor" id="romans-16-1-16" data-ref="ROMANS 16:1-16" style="display:none">ROMANS 16:1-16</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>1. I commend unto you Phoebe our</td><td>1. Commendo antera vobis</td></tr>
-<tr><td>sister, which is a servant of the church</td><td>Phoeben sororem nostram, quae</td></tr>
-<tr><td>which is at Cenchrea;</td><td>est ministra ecclesiae Cenchreensis;</td></tr>
-<tr><td>2. That ye receive her in the Lord, as</td><td>2. Ut eam suscipiatis in Domino,</td></tr>
-<tr><td>becometh saints, and that ye assist</td><td>ut dignum est sanctis, et adsitis ei</td></tr>
-<tr><td>her in whatsoever business she hath</td><td>in quocunque vobis eguerit negotio;</td></tr>
-<tr><td>need of you: for she hath been a</td><td>etenim ipsa cum multis affuit, tum</td></tr>
-<tr><td>succored of many, and of myself also.</td><td>etiam mihi ipsi.</td></tr>
-<tr><td>3. Greet Priscilla and Aquila my</td><td>3. Salutate Priscam et Acylam,</td></tr>
-<tr><td>helpers in Christ Jesus;</td><td>cooperarios meos in Christo Iesu;</td></tr>
-<tr><td>4. (Who have for my life laid down</td><td>4. Qui pro anima mea suam</td></tr>
-<tr><td>their own necks: unto whom not only</td><td>ipsorum cervicem posuerunt,</td></tr>
-<tr><td>I give thanks, but also all the churches</td><td>quibus non ego solus gratias ago,</td></tr>
-<tr><td>of the Gentiles:)</td><td>sed etiam omnes ecclesiae</td></tr>
-<tr><td>5. Likewise greet the church that is in</td><td>Gentium;</td></tr>
-<tr><td>their house. Salute my well-beloved</td><td>5. Et domesticam eorum ecclesiam.</td></tr>
-<tr><td>Epenetus, who is the first-fruits of</td><td>Salutate Epaenetum mihi dilectum</td></tr>
-<tr><td>Achaia unto Christ.</td><td>qui est primitiae Achaiae in</td></tr>
-<tr><td>6. Greet Mary, who bestowed much</td><td>Domino.</td></tr>
-<tr><td>labor on us.</td><td>6. Salutate Mariam, quae multum</td></tr>
-<tr><td>7. Salute Andronicus and Junia, my</td><td>laboravit erga vos.</td></tr>
-<tr><td>kinsmen, and my fellow-prisoners,</td><td>7. Salutate Andronicum et Juniam,</td></tr>
-<tr><td>who are of note among the apostles,</td><td>cognatos meos et cocaptivos meos,</td></tr>
-<tr><td>who also were in Christ before me.</td><td>qui sunt insignes inter Apostolos,</td></tr>
-<tr><td>8. Greet Amplias, my beloved in the</td><td>qui etiam ante me fuerunt in</td></tr>
-<tr><td>Lord.</td><td>Christo.</td></tr>
-<tr><td>9. Salute Urbane, our helper in Christ,</td><td>8. Salutate Ampliam, dilectum</td></tr>
-<tr><td>and Stachys my beloved.</td><td>meum in Domino.</td></tr>
-<tr><td></td><td>9. Salutate Urbanurn, adjutorem</td></tr>
-<tr><td></td><td>nostrum in Christo et Stachyn</td></tr>
-<tr><td></td><td>dilectum meum.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451601&gt;</span><span class="book-name">Romans</span> <span class="verse-range">16:1-16</span></p>
+
+<strong>1.</strong> I commend unto you Phoebe our sister, which is a servant of the church which is at Cenchrea; <strong>2.</strong> That ye receive her in the Lord, as becometh saints, and that ye assist her in whatsoever business she hath need of you: for she hath been a succored of many, and of myself also. <strong>3.</strong> Greet Priscilla and Aquila my helpers in Christ Jesus; <strong>4.</strong> (Who have for my life laid down their own necks: unto whom not only I give thanks, but also all the churches of the Gentiles:) <strong>5.</strong> Likewise greet the church that is in their house. Salute my well-beloved Epenetus, who is the first-fruits of Achaia unto Christ. <strong>6.</strong> Greet Mary, who bestowed much labor on us. <strong>7.</strong> Salute Andronicus and Junia, my kinsmen, and my fellow-prisoners, who are of note among the apostles, who also were in Christ before me. <strong>8.</strong> Greet Amplias, my beloved in the Lord. <strong>9.</strong> Salute Urbane, our helper in Christ, and Stachys my beloved.
+
+</div>
 
 <!-- PAGE 428 -->
 
@@ -5357,31 +3959,14 @@ Paul however seems not here positively to have enjoined a ceremony, but only exh
 
 <!-- PAGE 433 -->
 
-## ROMANS 16:17-20
+<h2 class="scripture-anchor" id="romans-16-17-20" data-ref="ROMANS 16:17-20" style="display:none">ROMANS 16:17-20</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>17. Now, I beseech you, brethren,</td><td>17. Obsecro autem vos fratres, ut</td></tr>
-<tr><td>mark them which cause divisions and</td><td>observetis eos qui dissidia et</td></tr>
-<tr><td>offenses contrary to the doctrine</td><td>offensiones contra doctrinam,</td></tr>
-<tr><td>which ye have learned; and avoid</td><td>quam vos didicistis, excitant; et ut</td></tr>
-<tr><td>them.</td><td>declinetis ab illis.</td></tr>
-<tr><td>18. For they that are such serve not</td><td>18. Qui enim tales sunt, Christo</td></tr>
-<tr><td>our Lord Jesus Christ, but their own</td><td>Domino non serviunt, sed suo</td></tr>
-<tr><td>belly; and by good words and fair</td><td>ventri; ac per blandiloquentiam et</td></tr>
-<tr><td>speeches deceive the hearts of the</td><td>assentationem decipiunt corda</td></tr>
-<tr><td>simple.</td><td>simplicium.</td></tr>
-<tr><td>19. For your obedience is come</td><td>19. Vestra quidem obedientia ad</td></tr>
-<tr><td>abroad unto all men. I am glad</td><td>omnes permanavit: gaudeo igitur de</td></tr>
-<tr><td>therefore on your behalf: but yet I</td><td>vobis; sed volo vos sapientes esse</td></tr>
-<tr><td>would have you wise unto that which</td><td>ad bonum, simplices verb ad</td></tr>
-<tr><td>is good, and simple concerning evil.</td><td>malum.</td></tr>
-<tr><td>20. And the God of peace shall bruise</td><td>20. Deus autem pacis conteret</td></tr>
-<tr><td>Satan under your feet shortly. The</td><td>brevi Satanam sub pedibus vestris.</td></tr>
-<tr><td>grace of our Lord Jesus Christ be with</td><td>Gratia Domini nostri Iesu Christi</td></tr>
-<tr><td>you. Amen.</td><td>sit vobiscum. Amen.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451617&gt;</span><span class="book-name">Romans</span> <span class="verse-range">16:17-20</span></p>
+
+<strong>17.</strong> Now, I beseech you, brethren, mark them which cause divisions and offenses contrary to the doctrine which ye have learned; and avoid them. <strong>18.</strong> For they that are such serve not our Lord Jesus Christ, but their own belly; and by good words and fair speeches deceive the hearts of the simple. <strong>19.</strong> For your obedience is come abroad unto all men. I am glad therefore on your behalf: but yet I would have you wise unto that which is good, and simple concerning evil. <strong>20.</strong> And the God of peace shall bruise Satan under your feet shortly. The grace of our Lord Jesus Christ be with you. Amen.
+
+</div>
 
 <!-- PAGE 434 -->
 **17.** <span style="color:#800000">*And I beseech you*</span>*, etc.* He now adds an exhortation, by which all Churches have often need of being stirred up; for the ministers of Satan are ever ready to take occasion to disturb the kingdom of Christ: and they attempt to make disturbances in two ways; for they either sow discord, by which the minds of men are drawn away from the unity of truth, or they occasion offenses, by which men are alienated from the love of the gospel. <span style="color:#800000">[^f476]</span> The former evil is done when the truth of God is mixed with new dogmas devised by men; and the latter takes place, when by various arts it is made odious and contemptible. He therefore bids all, who did either of these two things, to be observed, lest they should deceive and catch the unwary; and also to be shunned, for they were injurious. Nor was it without reason that he required this attention from the faithful; for it often happens through our neglect or want of care, that such wicked men do great harm to the Church, before they are opposed; and they also creep in, with astonishing subtlety, for the purpose of doing mischief, except they be carefully watched.
@@ -5397,40 +3982,14 @@ We here see what that simplicity is which is commended in Christians; so that th
 
 <!-- PAGE 436 -->
 
-## ROMANS 16:21-27
+<h2 class="scripture-anchor" id="romans-16-21-27" data-ref="ROMANS 16:21-27" style="display:none">ROMANS 16:21-27</h2>
 
-<table class="calvin-scripture">
-<tbody>
-<tr><td>21. Timotheus my work-fellow, and</td><td>21. Salutant vos Timotheus, co-</td></tr>
-<tr><td>Lucius, and Jason, and Sosipater, my</td><td>operarins meus, et Lucius et lason</td></tr>
-<tr><td>kinsmen, salute you.</td><td>et Sosipater, cognati mei.</td></tr>
-<tr><td>22. I Tertius, who wrote this epistle,</td><td>22. Saluto ego vos Tertius, qui</td></tr>
-<tr><td>salute you in the Lord.</td><td>scripsi epistolam, in Domino.</td></tr>
-<tr><td>23. Gaius mine host, and of the whole</td><td>23. Salutat vos Gaius, hospes</td></tr>
-<tr><td>church, saluteth you. Erastus, the</td><td>meus et Ecclesiae totius. Salutat</td></tr>
-<tr><td>chamberlain of the city, saluteth you,</td><td>vos Erastus, quaestor aerarius</td></tr>
-<tr><td>and Quartus a brother.</td><td>urbis, et Quartus frater.</td></tr>
-<tr><td>24. The grace of our Lord Jesus Christ</td><td>24. Gratia Domini nostri Iesu</td></tr>
-<tr><td>be with you all. Amen.</td><td>Christi sit cure omnibus vobis.</td></tr>
-<tr><td>25. Now to him that is of power to</td><td>Amen.</td></tr>
-<tr><td>stablish you according to my gospel,</td><td>25. Ei vero qui potens est vos</td></tr>
-<tr><td>and the preaching of Jesus ‘Christ,</td><td>confirmare secundum evangelium</td></tr>
-<tr><td>(according to the revelation of the</td><td>meum, et praeconium scilicet Iesu</td></tr>
-<tr><td>mystery, which was kept secret since</td><td>Christi, secundum revelationem</td></tr>
-<tr><td>the world began,</td><td>mys-terii, quod temporibus</td></tr>
-<tr><td>26. But now is made manifest, and by</td><td>secularibus taciturn,</td></tr>
-<tr><td>the scriptures of the prophets,</td><td>26. Manifestatum nunc fuit, et per</td></tr>
-<tr><td>according to the commandment of the</td><td>scripturas propheticas, secundum</td></tr>
-<tr><td>everlasting God, made known to all</td><td>aeterni Dei ordinationem, in</td></tr>
-<tr><td>nations for the obedience of faith :)</td><td>obedientiam fidel ad omnes gentes</td></tr>
-<tr><td>27. To God only wise, be glory</td><td>promul-gatum, —</td></tr>
-<tr><td>through Jesus Christ for ever. Amen.</td><td>27. Soli sapienti Deo per Iesum</td></tr>
-<tr><td>Written to the Romans from</td><td>Christum gloria in secula. Amen.</td></tr>
-<tr><td>Corinthus, and sent by Phebe, servant</td><td>Ad Romanos missa fuit a Corin-</td></tr>
-<tr><td>of the church at Cen-chrea.</td><td>the per Phoeben, ministram</td></tr>
-<tr><td></td><td>Cenchreensis ecclesiae.</td></tr>
-</tbody>
-</table>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;451621&gt;</span><span class="book-name">Romans</span> <span class="verse-range">16:21-27</span></p>
+
+<strong>21.</strong> Timotheus my work-fellow, and Lucius, and Jason, and Sosipater, my kinsmen, salute you. <strong>22.</strong> I Tertius, who wrote this epistle, salute you in the Lord. <strong>23.</strong> Gaius mine host, and of the whole church, saluteth you. Erastus, the chamberlain of the city, saluteth you, and Quartus a brother. <strong>24.</strong> The grace of our Lord Jesus Christ be with you all. Amen. <strong>25.</strong> Now to him that is of power to stablish you according to my gospel, and the preaching of Jesus ‘Christ, (according to the revelation of the mystery, which was kept secret since the world began, <strong>26.</strong> But now is made manifest, and by the scriptures of the prophets, according to the commandment of the everlasting God, made known to all nations for the obedience of faith :) <strong>27.</strong> To God only wise, be glory through Jesus Christ for ever. Amen. Written to the Romans from Corinthus, and sent by Phebe, servant of the church at Cen-chrea.
+
+</div>
 
 **21.** <span style="color:#800000">*Timothy*</span>, etc. The salutations which he records, served in part to foster union between those who were far asunder, and in part to make the Romans know that their brethren subscribed to the Epistle; not that Paul had need of the testimony of others, but because the consent of the godly is not of small importance.
 

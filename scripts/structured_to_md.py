@@ -593,12 +593,31 @@ def convert(structured_path: Path, out_path: Path) -> None:
             out.append(f'# {cleaned}')
             out.append('')
         elif tag == 'H2':
-            cleaned = collapse_spaced_caps(content)
-            cleaned = format_inline(cleaned)
-            cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
-            out.append('')
-            out.append(f'## {cleaned}')
-            out.append('')
+            # Check if this H2 is a scripture-section header (carries `<NNNNNN>BOOK Ch:V-V'`).
+            # If so, route through the same scripture-box mechanism as FOOTNOTE-emitted
+            # section headers (so Romans bilingual-extracted [H2]<NNNNNN>...
+            # gets a scripture-box too).
+            line_for_sec = re.sub(r'</?sty(?:\s[^>]*)?>', '', content)
+            sec_h2 = SCRIPTURE_SECTION_RE.match(line_for_sec.strip())
+            if sec_h2:
+                flush_scripture()
+                ages_code = sec_h2.group(1)
+                ref_text = collapse_spaced_caps(sec_h2.group(2).strip())
+                anchor_id = re.sub(r'[^a-z0-9-]+', '-', ref_text.lower()).strip('-')
+                out.append('')
+                out.append(f'<h2 class="scripture-anchor" id="{anchor_id}" data-ref="{ref_text}" style="display:none">{ref_text}</h2>')
+                out.append('')
+                scripture_ref = _build_ref_banner(ages_code, ref_text)
+                in_scripture = True
+                in_commentary_section = True
+                scripture_lines = []
+            else:
+                cleaned = collapse_spaced_caps(content)
+                cleaned = format_inline(cleaned)
+                cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
+                out.append('')
+                out.append(f'## {cleaned}')
+                out.append('')
         elif tag == 'FOOTNOTE':
             # Try to detect three sub-types:
             # (a) Scripture-section header: starts with <NNNNNN>BOOK N:M (alone on line)
