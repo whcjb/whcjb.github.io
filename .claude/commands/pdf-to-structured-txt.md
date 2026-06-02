@@ -1257,16 +1257,118 @@ def apply_verse_styling(body):  # red 参数已废弃
 
 **关键教训**：**永远不要用「段落上下文」决定 span 颜色**。span 颜色是 PyMuPDF 直接给出的客观属性，必须 1:1 还原。状态机只适用于 PDF 没有提供属性时的兜底。
 
+#### 2.7.21 `_is_sentence_end` 必须循环剥离脚注 marker（否则 `[^fN]` 后误并下一段）
+
+**症状（第 7 轮）**：注释段末以脚注 marker 收尾时（如 `…end of his calling. [^f18]`），下一段会被并入上段——肉眼可见两段挤在一行。preface + ch1 共 8+ 处。
+
+**根因**：`_is_sentence_end` 剥离尾部 HTML 标签后测最后字符是否在 `.?!:;"”'`，但 `[^f18]` 渲染为 `[^f18]`（被脚注 ref 处理后），其末字符是 `]` —— 不在句末标点集合 → 误判为「未结束」→ 下一段被 `_merge_paragraph_fragments` 当续接合并。
+
+**修复**：**循环剥离** HTML 标签 AND 脚注 marker，直到稳定，再判末字符。**`)` 也算句末标点**（Calvin PDF 大量段以 `…(<NNNNNN>Book N:M.)` 句号-括号结尾）：
+
+```python
+def _is_sentence_end(text: str) -> bool:
+    t = text.rstrip()
+    if not t:
+        return True
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r'(?:</[a-zA-Z]+(?:\s[^>]*)?>|</?(?:verse|sty)(?:\s[^>]*)?>)+$', '', t).rstrip()
+        t = re.sub(r'\[\^[A-Za-z0-9]+\]$', '', t).rstrip()
+    if not t:
+        return True
+    return t[-1] in '.?!:;"”\'’)'  # closing paren counts as sentence end
+```
+
+**通用规则**：任何「测末字符是否句末标点」的逻辑都必须先把**所有 trailing noise**（HTML close 标签、自定义内联标签、脚注 marker、上标）剥干净。漏一类就是一个 SEV-1。
+
+#### 2.7.22 居中检测的 `ends_with_continuation` guard 绝不能含逗号
+
+**症状（第 7 轮）**：PDF 题献页"BARON OF DENBIGH, MAISTER OF THE HORSE..."等连续居中行，因末尾逗号被误退回 BODY 左对齐。preface 中 5+ 行命中。
+
+**根因**：原 guard `re.search(r'[(,]\s*$', block_text_preview)` 把逗号也视作"未结束的引文 ref"。但**题献页 / 扉页大量居中短行末尾就是逗号**（地址、头衔、人名都用逗号断句）。
+
+**修复**：guard 缩窄到**只匹配开括号** `\(\s*$`（开括号意味着 bible-ref 跨块拼接，逗号没这含义）：
+
+```python
+# 错（杀错居中行）：
+ends_with_continuation = bool(re.search(r'[(,]\s*$', block_text_preview))
+# 对：
+ends_with_continuation = bool(re.search(r'\(\s*$', block_text_preview))
+```
+
+**通用规则**：写内容信号 guard 时，列举所有可能匹配该模式的**合法目标场景**。如果合法场景比要排除的非法场景多，guard 是错的。逗号结尾在 PDF 中 90% 是题献/扉页/列表的合法居中行末，只有 10% 是被分割的 bible-ref。**少数派 case 不该决定多数派 case 的归宿**。
+
+#### 2.7.23 居中检测 `lm > 30` 阈值对短行太严（短居中行 lm=22-28 被误拒）
+
+**症状**：PDF p8 "TRULY HONOURABLE AND ILLUSTRIOUS LORDS,"等短居中行 lm/rm ≈ 26，因 `lm > 30 AND rm > 30` 被拒，渲染成左对齐。
+
+**修复**：按**文本长度**分级 —— 长块严标准（避免误吞居中 cx 的 body 段），短块宽松（短行天然 margin 小）：
+
+```python
+is_short = len(block_text_preview) < 80
+if is_short:
+    is_centered_block_geom = (
+        abs(lm - rm) < 4      # 强对称（短行容错小）
+        and lm >= 22
+        and rm >= 22
+    )
+else:
+    is_centered_block_geom = (
+        abs(lm - rm) < 8
+        and lm > 30
+        and rm > 30
+    )
+```
+
+**核心原则**：几何阈值不能"一刀切"，必须按内容长度分级。短行的容错应同时**收紧对称度**（区分真居中 vs 末行碎片）+ **放宽 margin 下限**（短行天然窄）。
+
+#### 2.7.24 蓝色 `#000080` 整块圣经引文 → 居中独立段（不参与段落合并）
+
+**症状**：PDF 用 navy `#000080` 颜色 + 居中 layout 显示的圣经引文（如 "in the beginning God created the heaven and the earth, (Genesis 1:1)"）—— 在 .md 中被并入相邻 commentary 段，没有独立成块、没有居中。ch1 共 12+ 处。
+
+**根因**：converter 把蓝色 BODY 走普通段路径。Color signal #000080 + 整块"几乎全在 sty 包裹内"是非常强的"独立引文段"信号，但 BODY 分支没识别。
+
+**修复**：BODY 分支**优先**检测「整块被 `<sty c="000080" i="0">...</sty>` 包裹」模式 → 输出居中独立段：
+
+```python
+elif tag in ('BODY', 'VERSE'):
+    # Navy scripture-quote detection (BEFORE regular BODY path)
+    navy_test_no_navy = re.sub(r'<sty c="000080" i="[01]">.*?</sty>', '', content, flags=re.DOTALL)
+    navy_test_no_navy = re.sub(r'<\d{6,7}>', '', navy_test_no_navy)
+    navy_test_no_navy = re.sub(r'<sty\s[^>]*>|</sty>', '', navy_test_no_navy)
+    navy_test_no_navy = navy_test_no_navy.strip()
+    has_navy = '<sty c="000080"' in content
+    if has_navy and len(navy_test_no_navy) < 8:
+        body = format_inline(content)
+        body = apply_verse_styling(body)
+        body = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', body)
+        body = re.sub(r'\s+', ' ', body).strip()
+        if body:
+            out.append('')
+            out.append(f'<p style="text-align:center; color:#000080; margin:14px 2em;">{body}</p>')
+            out.append('')
+        i += 1
+        continue
+    # ... 原 BODY 路径 ...
+```
+
+**通用规则**：**任何 PDF 整块颜色都是 layout 信号**——某种特殊颜色（navy 引文、teal Hebrew、绿 ornament）出现在整块时，**先于普通段路径**判定为独立块。converter 的 BODY 分支应**优先检测「整块特殊颜色 + 残量 < 阈值」模式**，路由到专用渲染。
+
 #### 2.7 小结：拿到新 Ages 单语英文 PDF 的执行清单
 
 1. **审计先行**（§2.7.1）：派 sub-agent 对照 PDF + 现有产物列 SEV-1/2/3 清单
 2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED/CENTERED_H1/CENTERED_H2（§2.7.6 + §2.7.18）、**保留 span 级 (color, italic) 二元组到 `<sty c="..." i="0|1">` 标签**（§2.7.20，**绝不再用 binary `<verse>` 或 commentary 状态机**）；is_chapter_h1 检测前先剥 sty wrap（§2.7.20）
+   - **居中检测 guard 绝不含逗号**（§2.7.22，只匹配 `\(\s*$`）
+   - **居中阈值按内容长度分级**（§2.7.23，短行 `lm/rm ≥ 22 + |lm-rm| < 4`，长行 `lm/rm > 30 + |lm-rm| < 8`）
 3. **转换**：
    - section header → 隐藏 anchor h2（§2.7.4）；SCRIPTURE_SECTION_RE 前剥 sty wrap（§2.7.20）
+   - **BODY 优先检测整块 navy `#000080` 引文 → 居中独立段**（§2.7.24）
    - scripture-box 触发条件三件套（§2.7.5）；has_leading_italic 用 sty regex 检测（§2.7.20）
    - `[CENTERED]` 路由（§2.7.6 + §2.7.5 in_scripture 优先）
    - `CENTERED_H1`/`CENTERED_H2` → styled `<p>`（§2.7.18）
    - **`apply_verse_styling` 按 `<sty>` 颜色 1:1 还原**（§2.7.20，**严禁状态机一刀切**）；边界空格外移（§2.7.14）
+   - **`_is_sentence_end` 循环剥 HTML + 脚注 marker `[^fN]`**（§2.7.21，否则脚注后段误并）
    - Greek 转换含 `<sty>` 可变长占位符（§2.7.20）+ elision（§2.7.9）+ 扩 `_GCOMB`/`_GR_PAT`/dict 兜底（§2.7.16）
    - 裸 fn 正则带字母后缀（§2.7.10）
    - `collapse_spaced_caps` 负向先行（§2.7.8）
