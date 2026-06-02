@@ -147,9 +147,75 @@ new_testament:
     chapters: 1
 
 english_old_testament:
+  - id: genesis-en
+    name: Genesis
+    chapters: 50
+  - id: joshua-en
+    name: Joshua
+    chapters: 24
+  - id: psalms-1-en
+    name: Psalms (Vol. 1)
+    chapters: 78
+  - id: psalms-2-en
+    name: Psalms (Vol. 2)
+    chapters: 70
+  - id: isaiah-1-en
+    name: Isaiah (Vol. 1)
+    chapters: 37
+  - id: isaiah-2-en
+    name: Isaiah (Vol. 2)
+    chapters: 29
+  - id: jeremiah-1-en
+    name: Jeremiah (Vol. 1)
+    chapters: 24
+  - id: jeremiah-2-en
+    name: Jeremiah (Vol. 2)
+    chapters: 29
+  - id: lamentations-en
+    name: Lamentations
+    chapters: 5
+  - id: ezekiel-en
+    name: Ezekiel
+    chapters: 20
+  - id: daniel-en
+    name: Daniel
+    chapters: 12
+  - id: hosea-en
+    name: Hosea
+    chapters: 14
+  - id: joel-en
+    name: Joel
+    chapters: 3
+  - id: amos-en
+    name: Amos
+    chapters: 9
+  - id: obadiah-en
+    name: Obadiah
+    chapters: 1
+  - id: jonah-en
+    name: Jonah
+    chapters: 4
+  - id: micah-en
+    name: Micah
+    chapters: 7
+  - id: nahum-en
+    name: Nahum
+    chapters: 3
+  - id: habakkuk-en
+    name: Habakkuk
+    chapters: 3
   - id: zephaniah-en
     name: Zephaniah
     chapters: 3
+  - id: haggai-en
+    name: Haggai
+    chapters: 2
+  - id: zechariah-en
+    name: Zechariah
+    chapters: 14
+  - id: malachi-en
+    name: Malachi
+    chapters: 4
 
 english_new_testament:
   - id: harmony-1-en
@@ -161,36 +227,66 @@ english_new_testament:
   - id: harmony-3-en
     name: Harmony of the Evangelists (Vol. 3)
     chapters: 9
-  - id: acts-en
-    name: Acts
-    chapters: 28
   - id: john-en
     name: John
     chapters: 21
+  - id: acts-en
+    name: Acts
+    chapters: 28
   - id: romans-en
     name: Romans
     chapters: 16
-  - id: galatians-en
-    name: Galatians
-    chapters: 6
-  - id: ephesians-en
-    name: Ephesians
-    chapters: 6
-  - id: colossians-en
-    name: Colossians
-    chapters: 4
-  - id: philemon-en
-    name: Philemon
-    chapters: 1
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16
   - id: 2corinthians-en
     name: 2 Corinthians
     chapters: 13
+  - id: galatians-en
+    name: Galatians
+    chapters: 6
+  - id: ephesians-en
+    name: Ephesians
+    chapters: 6
   - id: philippians-en
     name: Philippians
     chapters: 4
+  - id: colossians-en
+    name: Colossians
+    chapters: 4
+  - id: 1thessalonians-en
+    name: 1 Thessalonians
+    chapters: 5
+  - id: 2thessalonians-en
+    name: 2 Thessalonians
+    chapters: 3
+  - id: 1timothy-en
+    name: 1 Timothy
+    chapters: 6
+  - id: 2timothy-en
+    name: 2 Timothy
+    chapters: 4
+  - id: titus-en
+    name: Titus
+    chapters: 3
+  - id: philemon-en
+    name: Philemon
+    chapters: 1
   - id: hebrews-en
     name: Hebrews
     chapters: 13
+  - id: james-en
+    name: James
+    chapters: 5
+  - id: 1peter-en
+    name: 1 Peter
+    chapters: 5
+  - id: 2peter-en
+    name: 2 Peter
+    chapters: 3
+  - id: 1john-en
+    name: 1 John
+    chapters: 5
+  - id: jude-en
+    name: Jude
+    chapters: 1

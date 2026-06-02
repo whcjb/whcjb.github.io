@@ -87,20 +87,70 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
     return out
 
 
+_CHAPTER_MD_RE = re.compile(r'^# (?:CHAPTER|PSALM) (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$')
+_CHAPTER_HTML_H1_RE = re.compile(
+    r'^<p\s+class="title-block-h1"[^>]*>'        # title-block-h1
+    r'(?:<span[^>]*>)?\s*'
+    r'(?:CHAPTER|PSALM)\s+(\d+)\.?\s*'
+    r'(?:</span>\s*)?'
+    r'</p>\s*$',
+    re.IGNORECASE,
+)
+# title-block-h2 form is used by some PDFs (e.g. Isaiah) for the very first
+# chapter heading before the h1 form kicks in. Accept it, but only when it
+# appears BEFORE the first h1 chapter heading — otherwise it likely belongs
+# to an appendix/index table (e.g. Psalms Vol 2 contains an end-of-book
+# table that uses h2 PSALM headings for psalms in Vol 1's range).
+_CHAPTER_HTML_H2_RE = re.compile(
+    r'^<p\s+class="title-block-h2"[^>]*>'
+    r'(?:<span[^>]*>)?\s*'
+    r'(?:CHAPTER|PSALM)\s+(\d+)\.?\s*'
+    r'(?:</span>\s*)?'
+    r'</p>\s*$',
+    re.IGNORECASE,
+)
+
+
+_SCRIPTURE_ANCHOR_RE = re.compile(
+    r'^<h2\s+class="scripture-anchor"\s+id="[a-z0-9\-]+?-(\d+)-'
+)
+
+
 def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     """Return {key: line_index (0-based)} for preface + chapters 1..N.
     Accepts trailing footnote ref `[^fN]` (some PDF chapter heads have one).
-    For single-chapter books (Philemon, etc.) without any `# CHAPTER N`:
+    Accepts BOTH markdown `# CHAPTER N` / `# PSALM N` heading AND HTML-wrapped
+    `<p class="title-block-h1">CHAPTER|PSALM N.</p>` from CENTERED_H1 extraction
+    (most OT prophets + Genesis + Jonah use the centered form; Psalms uses PSALM).
+    For single-chapter books (Philemon, etc.) without any chapter heading:
     synthesize chapter 1 starting at the first scripture-anchor or H2.
+    Also fills gaps: if a Bible chapter has scripture-anchor lines but no
+    explicit "CHAPTER N" heading (e.g. Amos 2 in Calvin's Amos PDF, or
+    Isaiah ch 1 which lacks an explicit heading), synthesize a start at the
+    first scripture-anchor for that chapter — including chapters before
+    the lowest explicit heading, all the way down to 1.
     """
     starts: dict[str, int] = {}
+    h1_first_line: int | None = None
+    # Pass 1: collect from markdown headings + title-block-h1 HTML form
     for i, line in enumerate(lines):
-        m = re.match(r'^# CHAPTER (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$', line)
+        m = _CHAPTER_MD_RE.match(line) or _CHAPTER_HTML_H1_RE.match(line)
         if m:
             ch = m.group(1)
             if ch not in starts:
                 starts[ch] = i
-    # Single-chapter book detection: no `# CHAPTER N` markers found →
+            if h1_first_line is None:
+                h1_first_line = i
+    # Pass 2: title-block-h2 chapter headings only count if they appear
+    # before the first h1 chapter heading (or there are no h1 ones at all).
+    h2_limit = h1_first_line if h1_first_line is not None else len(lines)
+    for i, line in enumerate(lines[:h2_limit]):
+        m = _CHAPTER_HTML_H2_RE.match(line)
+        if m:
+            ch = m.group(1)
+            if ch not in starts:
+                starts[ch] = i
+    # Single-chapter book detection: no chapter headings found →
     # synthesize chapter "1" starting at the first scripture-anchor h2
     # (which marks the start of the actual commentary on the book).
     if not starts:
@@ -108,11 +158,47 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
             if re.match(r'^<h2\s+class="scripture-anchor"', line):
                 starts['1'] = i
                 break
+    else:
+        # Gap-fill: look for chapter numbers in scripture-anchor ids
+        # missing from starts. Fill both between-min-and-max AND before-min
+        # (latter handles Isaiah ch 1 which has no explicit chapter heading).
+        anchor_first: dict[str, int] = {}
+        for i, line in enumerate(lines):
+            m = _SCRIPTURE_ANCHOR_RE.match(line)
+            if m:
+                ch = m.group(1)
+                if ch not in anchor_first:
+                    anchor_first[ch] = i
+        known = {int(k) for k in starts}
+        lo, hi = min(known), max(known)
+        lo_line = starts[str(lo)]
+        # Fill 1..(lo-1) ONLY when the chapter's first scripture-anchor
+        # appears BEFORE the lowest explicit heading. This catches books
+        # like Isaiah (chapter 1 commentary precedes the "CHAPTER 2"
+        # heading) and avoids false positives like Jeremiah Vol 2 / Psalms
+        # Vol 2, whose volumes start mid-book and contain cross-refs to
+        # earlier chapters/psalms in later commentary.
+        for ch_num in range(1, lo):
+            ch_key = str(ch_num)
+            if ch_key in anchor_first and anchor_first[ch_key] < lo_line:
+                starts[ch_key] = anchor_first[ch_key]
+        # Fill gaps in (lo+1..hi-1)
+        for ch_num in range(lo + 1, hi):
+            ch_key = str(ch_num)
+            if ch_key not in starts and ch_key in anchor_first:
+                starts[ch_key] = anchor_first[ch_key]
     starts['preface'] = 0
     return starts
 
 
-_APPENDIX_END_RE = re.compile(r'END OF THE COMMENTAR(?:Y|IES)', re.IGNORECASE)
+_APPENDIX_END_RE = re.compile(
+    # Match END OF THE COMMENTAR{Y,IES} only when it's the *actual* PDF
+    # appendix heading — anchored to start-of-text after stripping HTML.
+    # Avoids false positives in body text (e.g. Psalms Translator's Preface
+    # contains the phrase "give at the end of the Commentary a TRANSLATION").
+    r'^\s*END OF THE COMMENTAR(?:Y|IES)\b',
+    re.IGNORECASE,
+)
 # Matches both `# FOOTNOTES` markdown heading AND `<p ...>FOOTNOTES</p>` HTML
 # wrapper (publisher sometimes emits one or the other depending on PDF size).
 _FOOTNOTES_HEADING_RE = re.compile(
