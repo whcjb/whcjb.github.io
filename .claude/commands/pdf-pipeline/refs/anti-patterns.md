@@ -322,6 +322,35 @@ if pending_fn_idx is not None:
 
 ---
 
+## M5b. 章节末出现 "(Acts 6:5;)" 类 orphan（fn def 中 inline cross-ref 没合并）
+
+**Trigger**：章节末或中段出现 "Acts 6:5;) FULL Acts 6:8;)..." 类似的孤儿段，源于后部 fn def 含**多个 inline bible cross-ref**。grep `^[A-Z][a-z]+\s+\d+:\d+[;,]\)` 或 `^[^*\s].*Acts 6:5` 命中。
+
+**根因**：Ages 后部 fn def 经常 body 含多个 inline bible 引用，PyMuPDF 把每个 `<NNNNNN>BookN:M` 切成独立 `[FOOTNOTE]` 块（开头是 `<NNNNNN>` 不是 `ftN`，FN_DEF_RE 不匹配）。FOOTNOTE inline cross-ref 分支检测 `out[j]` 是否以 BLOCK_PREFIXES 开头时，`'[^'` 在列表中 → prior 的 `[^fN]:` 被拒 → 当前 inline ref 单独 emit。
+
+**Fix**：FOOTNOTE inline cross-ref 分支首先检查 `pending_fn_idx`（§M5 已 arm），若有则 append 到 pending fn 行，与 BODY/CENTERED 续接逻辑一致：
+
+```python
+else:  # inline cross-ref branch
+    body = format_inline(content)
+    body = apply_verse_styling(body, red=in_commentary_section)
+    # 优先：在后部 fn def 中（pending_fn_idx armed），合进 fn 行
+    if pending_fn_idx is not None:
+        body_clean = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', body)
+        body_clean = re.sub(r'\s+', ' ', body_clean).strip()
+        if body_clean:
+            peek = re.sub(r'(?:</span>|</sty>|\s)+$', '', out[pending_fn_idx].rstrip())
+            sep = '' if peek.endswith(('(', '[')) else ' '
+            out[pending_fn_idx] = out[pending_fn_idx].rstrip() + sep + body_clean
+        i += 1
+        continue
+    # 否则按原逻辑 fold into preceding paragraph
+```
+
+**通用规则**：`pending_fn_idx` 续接状态必须 **同时覆盖** BODY/CENTERED/FOOTNOTE-inline-cross-ref 三种 tag。任何在 fn def 之后 emit 的非新-fn-def 内容都是续接，必须 append 到 pending fn。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
