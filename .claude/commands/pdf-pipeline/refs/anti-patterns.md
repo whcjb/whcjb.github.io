@@ -351,6 +351,29 @@ else:  # inline cross-ref branch
 
 ---
 
+## M6. 章末出现 "CHAPTER N" 居中标记（PDF 没有这内容）
+
+**Trigger**：章节最末显示一个孤立的 "CHAPTER N" 居中标题，PDF 原文该位置无此标记。grep `<p class="title-block-h2"[^>]*>CHAPTER\s+\d+` 在章节文件中命中。
+
+**根因**：Ages PDF 后部脚注 section 每页用 "CHAPTER N" 作为页眉（**深绿 #006411**，区别于真正章节头 H1 的**蓝色 #0000d4**）。structured.txt 出现 `[CENTERED_H2] <sty c="006411" i="0">CHAPTER N</sty>`，converter 默认 emit 为 `<p class="title-block-h2">CHAPTER N</p>`。publish 脚本 `collect_all_definitions` 的终止符不含 `<p`，导致这一行被前一个 fn def 当 continuation 吞掉，进而被 ch1（或上一章）body 引用 fn 时一起拖入章末。
+
+**Fix**：converter `CENTERED_H1` / `CENTERED_H2` 分支起始处增加 SKIP 规则——若内容 strip sty/Ages 后是 `^CHAPTER \d+\s*$`，直接丢弃不 emit：
+
+```python
+elif tag in ('CENTERED_H1', 'CENTERED_H2'):
+    test_text = re.sub(r'</?(?:verse|sty[^>]*)>', '', content)
+    test_text = re.sub(r'<\d{6,7}>', '', test_text).strip()
+    if re.match(r'^CHAPTER\s+\d+\s*$', test_text):
+        pending_fn_idx = None
+        i += 1
+        continue
+    # ... 原 emit 逻辑
+```
+
+**通用规则**：PDF 内部排版页眉（"CHAPTER N" 在后部脚注页、装饰短标题等）**永远不该 emit 为内容**。任何 CENTERED_Hx 在 strip 后等于已存在 H1 章节标题文本的，必须 SKIP。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
