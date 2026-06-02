@@ -132,7 +132,7 @@ VOLUMES = {
     'matthew': {
         'format': 'ccel_parallel',
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin_matai_make2.pdf',
-        'out':  os.path.join(BASE, 'calvin_raw/matthew/matthew_raw.txt'),
+        'out':  os.path.join(BASE, 'calvin_raw/harmony2/harmony2_raw.txt'),
         'skip_pages': 7,
         'header_y_max': 55,
         'footnote_size_max': 7.5,

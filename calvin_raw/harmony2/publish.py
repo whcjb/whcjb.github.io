@@ -13,10 +13,10 @@ from scripts.harmony_utils import (
     merge_split_paragraphs, expand_verse_refs,
 )
 
-RAW = "/Users/yanpeifa/Documents/whcjb.github.io/calvin_raw/matthew/matthew_raw.txt"
-OUT_DIR = "/Users/yanpeifa/Documents/whcjb.github.io/calvin/matthew-en"
-BOOK_ID = "matthew-en"
-BOOK_NAME = "Calvin on Matthew (Vol. 2)"
+RAW = "/Users/yanpeifa/Documents/whcjb.github.io/calvin_raw/harmony2/harmony2_raw.txt"
+OUT_DIR = "/Users/yanpeifa/Documents/whcjb.github.io/calvin/harmony-2-en"
+BOOK_ID = "harmony-2-en"
+BOOK_NAME = "Calvin on the Harmony of the Evangelists (Vol. 2)"
 DATE = "2026-05-27 15:06"
 
 SECTION_HEADER_RE = re.compile(r'^## MATTHEW (\d+):')

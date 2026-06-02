@@ -74,11 +74,14 @@ old_testament:
 
 new_testament:
   - id: harmony-1
-    name: 福音书和谐（卷一）
+    name: 共观福音（卷一）
     chapters: 10
-  - id: harmony
-    name: 对观福音和谐（太、可、路）
-    chapters: 28
+  - id: harmony-2
+    name: 共观福音（卷二）
+    chapters: 13
+  - id: harmony-3
+    name: 共观福音（卷三）
+    chapters: 9
   - id: john
     name: 约翰福音
     chapters: 21
@@ -147,8 +150,8 @@ english:
   - id: harmony-1-en
     name: Harmony of the Evangelists (Vol. 1)
     chapters: 10
-  - id: matthew-en
-    name: Matthew (Vol. 2)
+  - id: harmony-2-en
+    name: Harmony of the Evangelists (Vol. 2)
     chapters: 13
   - id: harmony-3-en
     name: Harmony of the Evangelists (Vol. 3)
