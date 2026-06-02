@@ -286,15 +286,22 @@ TAG_RE = re.compile(r'^\[([A-Z0-9_]+)\]\s*(.*)$', re.DOTALL)
 
 
 def _is_sentence_end(text: str) -> bool:
-    """Does the trimmed text end with a sentence-terminating punctuation?"""
+    """Does the trimmed text end with a sentence-terminating punctuation?
+    Strips trailing HTML close tags AND footnote markers `[^fN]` / `[^fNa]`
+    before testing — otherwise `…end.[^f18]` would test `]` as last char and
+    erroneously return False, causing the next paragraph to be merged in."""
     t = text.rstrip()
     if not t:
         return True
-    # Strip trailing HTML close tags so "…end.</span>" counts as ending in "."
-    t2 = re.sub(r'(?:</[a-zA-Z]+(?:\s[^>]*)?>|</?(?:verse|sty)(?:\s[^>]*)?>)+$', '', t)
-    if not t2:
+    # Repeatedly strip trailing tags/markers until stable
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r'(?:</[a-zA-Z]+(?:\s[^>]*)?>|</?(?:verse|sty)(?:\s[^>]*)?>)+$', '', t).rstrip()
+        t = re.sub(r'\[\^[A-Za-z0-9]+\]$', '', t).rstrip()
+    if not t:
         return True
-    return t2[-1] in '.?!:;"”\'’'  # incl. curly quotes
+    return t[-1] in '.?!:;"”\'’)'  # closing paren also counts as sentence end
 
 
 _BLOCK_PREFIXES = (
@@ -656,6 +663,35 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append(f'<p style="text-align:center">{cleaned}</p>')
                 out.append('')
         elif tag in ('BODY', 'VERSE'):
+            # Detect "navy scripture quote" block: content is wholly (or near-
+            # wholly) wrapped in <sty c="000080" i="0">...</sty>. In the PDF
+            # these are short centered bible-quote blocks set apart from the
+            # body (e.g. "in the beginning God created the heaven and the
+            # earth, (Genesis 1:1)" between commentary paragraphs).
+            # Detection: strip all 000080 <sty>...</sty> wraps + Ages codes +
+            # whitespace; if residue is < 8 chars, it's a navy quote block.
+            navy_test = content
+            navy_test = re.sub(r'<sty c="000080" i="[01]">(.*?)</sty>', r'\1', navy_test, flags=re.DOTALL)
+            navy_test_no_navy = re.sub(r'<sty c="000080" i="[01]">.*?</sty>', '', content, flags=re.DOTALL)
+            navy_test_no_navy = re.sub(r'<\d{6,7}>', '', navy_test_no_navy)
+            navy_test_no_navy = re.sub(r'<sty\s[^>]*>|</sty>', '', navy_test_no_navy)
+            navy_test_no_navy = navy_test_no_navy.strip()
+            has_navy = '<sty c="000080"' in content
+            is_navy_quote = has_navy and len(navy_test_no_navy) < 8
+            if is_navy_quote:
+                # Route to centered output. Strip the navy wrap (we'll color via class).
+                body = format_inline(content)
+                body = apply_verse_styling(body)  # converts <sty c="000080" ...> → <span style=...>
+                # Remove residual <sty> tags
+                body = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', body)
+                body = re.sub(r'\s+', ' ', body).strip()
+                if body:
+                    out.append('')
+                    out.append(f'<p style="text-align:center; color:#000080; margin:14px 2em;">{body}</p>')
+                    out.append('')
+                i += 1
+                continue
+
             body = format_inline(content)
             # Detect scripture-passage block: first BODY after a section header.
             # Accept ≥1 verse-number anchor (covers single-verse refs like JOHN 1:14)

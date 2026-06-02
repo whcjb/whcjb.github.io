@@ -2326,28 +2326,39 @@ def phil_reconstruct_page(page, page_num=None):
             output_lines.append('')
         prev_block_y1 = block['bbox'][3]
 
-        # Centered block detection: symmetric left/right margins AND both
-        # margins ≥ 30px (excludes full-width body paragraphs which also have
-        # centered cx but tiny outer margins ≈ 25px).
+        # Centered block detection: symmetric left/right margins.
+        # - Long blocks (≥ 80 chars): need lm/rm both ≥ 30 (avoid hitting body
+        #   paragraphs that happen to be centered cx but have tiny margins ≈ 25).
+        # - Short blocks (< 80 chars): only need lm/rm both ≥ 22 AND strong
+        #   symmetry |lm-rm| < 4 (covers title-page short lines like
+        #   "TO THE READER" lm≈26 that the strict threshold rejected).
         bx0, _, bx1, _ = block['bbox']
         lm = bx0
         rm = page_w - bx1
-        is_centered_block_geom = (
-            abs(lm - rm) < 8
-            and lm > 30
-            and rm > 30
-        )
-        # Additional content guard: a "centered" geometry can also occur for the
-        # final justified-body fragment ending in an open paren (a parenthetical
-        # bible-ref that runs into next block). Reject those — they're body
-        # continuations, not centered titles.
         block_text_preview = ''
         for line in block['lines']:
             for s in line['spans']:
                 if s['text'].strip():
                     block_text_preview += s['text']
         block_text_preview = block_text_preview.strip()
-        ends_with_continuation = bool(re.search(r'[(,]\s*$', block_text_preview))
+        is_short = len(block_text_preview) < 80
+        if is_short:
+            is_centered_block_geom = (
+                abs(lm - rm) < 4
+                and lm >= 22
+                and rm >= 22
+            )
+        else:
+            is_centered_block_geom = (
+                abs(lm - rm) < 8
+                and lm > 30
+                and rm > 30
+            )
+        # Reject only when block ends with `(` — that's a justified-body last
+        # line whose bible-ref continues on the next block (e.g. "(<NNNNNN>" split).
+        # Do NOT reject on trailing `,` — title-page dedication lines like
+        # "BARON OF DENBIGH, MAISTER OF THE HORSE..." end in comma and ARE centered.
+        ends_with_continuation = bool(re.search(r'\(\s*$', block_text_preview))
         is_centered_block = is_centered_block_geom and not ends_with_continuation
 
         # First block of a page often combines page-number header + continuation text.

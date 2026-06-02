@@ -51,15 +51,15 @@
 
 [CENTERED] TO THE RIGHT HONORABLE
 
-[H1] <sty c="0000d4" i="0">THE LORD ROBT. DVDLEY,</sty>
+[CENTERED_H1] <sty c="0000d4" i="0">THE LORD ROBT. DVDLEY,</sty>
 
-[H2] <sty c="006411" i="0">EARLE OF LEYCESTER,</sty>
+[CENTERED_H2] <sty c="006411" i="0">EARLE OF LEYCESTER,</sty>
 
-[BODY] BARON OF DENBIGH, MAISTER OF THE HORSE TO THE QUEENE’S MAIESTIE,
+[CENTERED] BARON OF DENBIGH, MAISTER OF THE HORSE TO THE QUEENE’S MAIESTIE,
 [CENTERED] KNIGHT OF THE NOBLE ORDER OF THE GARTER, AND ONE OF THE
-[BODY] QUEENE’S MAIESTIE, MOST HONORABLE PRIUIE COUNSEL,
+[CENTERED] QUEENE’S MAIESTIE, MOST HONORABLE PRIUIE COUNSEL,
 [CENTERED] CHANCELOUR OF THE MOST FAMOUS VNIUERSITIE
-[BODY] OF OXFORD, CHRISTOPHER FETHERSTONE,
+[CENTERED] OF OXFORD, CHRISTOPHER FETHERSTONE,
 [CENTERED] WISHETH ENCREASE OF SPIRITUALL
 [CENTERED] GIFTES, LONG LIFE, HAPPY
 [CENTERED] DAYES, AND ENCREASE
@@ -88,9 +88,9 @@
 
 [CENTERED] <sty c="000000" i="1">To The</sty>
 
-[BODY] TRULY HONOURABLE AND ILLUSTRIOUS LORDS,
+[CENTERED] TRULY HONOURABLE AND ILLUSTRIOUS LORDS,
 
-[H2] <sty c="006411" i="0">THE SYNDICS AND COUNCIL OF GENEVA,</sty>
+[CENTERED_H2] <sty c="006411" i="0">THE SYNDICS AND COUNCIL OF GENEVA,</sty>
 
 [CENTERED_H1] <sty c="0000d4" i="0">JOHN CALVIN</sty>
 
@@ -1644,7 +1644,7 @@
 [BODY] Hence arises another question, Did not the Fathers worship Him <sty c="000000" i="1">spiritually </sty>under the Law? I reply, as God is always like himself, he did not from the beginning of the world approve of any other worship than that which is spiritual, and which agrees with his own nature. This is abundantly attested by Moses himself, who declares in many passages that the Law has no other object than that the people may cleave to God with faith and a pure conscience. But it is still more plainly declared by the Prophets when they attack with severity the hypocrisy of the people, because they thought that they had satisfied God, when they had performed the sacrifices and made an outward display. It is unnecessary to quote here many proofs which are to be found everywhere, but the most remarkable passages are the following: —
 [FOOTNOTE] <sty c="800000" i="0"><195001></sty>Psalm 50;
 [FOOTNOTE] <sty c="800000" i="0"><230101></sty>Isaiah 1, 58,
-[BODY] 66;
+[CENTERED] 66;
 [FOOTNOTE] <sty c="800000" i="0"><330501></sty>Micah 5;
 [FOOTNOTE] <sty c="800000" i="0"><300701></sty>Amos 7. But while the worship of God under the
 [BODY] Law was spiritual, it was enveloped in so many outward ceremonies, that it resembled something carnal and earthly. For this reason Paul calls the ceremonies <sty c="000000" i="1">flesh </sty>and <sty c="000000" i="1">the beggarly elements of the world</sty>,<sty c="000000" i="1"> </sty>(
@@ -6048,7 +6048,7 @@
 
 [BODY] exclude what is the chief article in his doctrine, namely, that which alludes to righteousness being freely imputed, in consequence of which, through a free pardon, our duties are acceptable to God, which in themselves deserved to be rejected as imperfect and unholy. Believers, therefore, are reckoned as <sty c="000000" i="1">keeping</sty> <sty c="000000" i="1">the commandments </sty>of Christ when they apply their earnest attention to them, though they be far distant from the object at which they aim; for they are delivered from that rigorous sentence of the law,
 
-[BODY] <sty c="000080" i="0">Cursed be he that hath not confirmed all the words of this law to</sty> <sty c="000080" i="0">do them, </sty>
+[CENTERED] <sty c="000080" i="0">Cursed be he that hath not confirmed all the words of this law to</sty> <sty c="000080" i="0">do them, </sty>
 [FOOTNOTE] <sty c="800000" i="0"><052726></sty><sty c="000080" i="0">Deuteronomy 27:26.</sty>
 
 [BODY] <sty c="800000" i="1">As I also have kept my Father’s commandments.</sty><sty c="000000" i="1"> </sty>As we have been elected in Christ, so in him the image of our calling is exhibited to us in a lively manner; and therefore he justly holds himself out to us as a pattern, to the imitation of which all the godly ought to be conformed. “In<sty c="000000" i="1"> </sty>me,” says he, “is<sty c="000000" i="1"> </sty>brightly displayed the resemblance of those things which I demand from you; for you see how sincerely I am devoted to obedience to <sty c="800000" i="1">my</sty> <sty c="800000" i="1">Father</sty>,<sty c="000000" i="1"> </sty>and how I persevere in this course. <sty c="800000" i="1">My Father</sty>,<sty c="000000" i="1"> </sty>too, hath loved me, not for a moment, or for a short time, but his love toward me is constant.” This conformity between the Head and the members ought to be always placed before our eyes, not only that believers may form themselves after the example of Christ, but that, they may entertain a confident hope that his Spirit will every day form them anew to be better and better, that they may walk to the end in newness of life.
@@ -7497,7 +7497,7 @@
 [FOOTNOTE] <sty c="800000" i="0"><022012></sty>Exodus 20:12.) Christ appoints <sty c="000000" i="1">the disciple </sty>to be
 [BODY] his substitute, and charges him to support and take care of <sty c="000000" i="1">his mother; </sty>and hence it follows, that the honor which is due to parents consists, not in cold ceremony,<sty c="800000" i="0"> F500</sty> but in the discharge of all necessary duties.
 
-[BODY] On the other hand, we ought to consider the faith of those holy women<sty c="800000" i="0"> F501</sty>
+[CENTERED] On the other hand, we ought to consider the faith of those holy women<sty c="800000" i="0"> F501</sty>
 [BODY] It is true that, in following Christ to the cross, they displayed more than ordinary affection; but, if they had not been supported by faith they could never have been present at this exhibition. As to John himself, we infer that, though his faith was choked for a short time, it was not wholly extinguished. How shameful will it be, if the dread of the cross deters us from following Christ, when the glory of his resurrection is placed before our eyes, whereas the women beheld in it nothing but disgrace and cursing!
 
 [BODY] <sty c="800000" i="1">Mary of Cleophas, and Mary Magdalene.</sty><sty c="000000" i="1"> </sty>He calls her either the wife or the daughter <sty c="800000" i="1">of Cleophas</sty><sty c="000000" i="1">; </sty>but I prefer the latter interpretation.<sty c="800000" i="0"> F502</sty> He says, that she was <sty c="800000" i="1">the sister of the mother of Jesus</sty><sty c="000000" i="1">, </sty>and, in saying so, he adopts the phraseology of the Hebrew language, which includes cousins, and other relatives,<sty c="800000" i="0"> F503</sty> under the term <sty c="000000" i="1">brothers. </sty>We see that it was not in vain that <sty c="000000" i="1">Mary Magdalene </sty>was delivered from <sty c="000000" i="1">seven devils, </sty>(
@@ -7533,7 +7533,7 @@
 [FOOTNOTE] <sty c="800000" i="0"><402748></sty>Matthew 27:48;
 [FOOTNOTE] <sty c="800000" i="0"><411523></sty>Mark 15:23, 36;
 [FOOTNOTE] <sty c="800000" i="0"><422336></sty>Luke 23:36,)
-[BODY] it may readily be concluded that the passage referred to is
+[CENTERED] it may readily be concluded that the passage referred to is
 [FOOTNOTE] <sty c="800000" i="0"><196921></sty>Psalm
 [BODY] 69:21,
 
@@ -7621,7 +7621,7 @@
 
 [BODY] the ]Evangelist John justly imputes to the Jews; as they are elsewhere said <sty c="000000" i="1">to have crucified the Son of God, </sty>(
 [FOOTNOTE] <sty c="800000" i="0"><440236></sty>Acts 2:36,) though they did not lay
-[BODY] a finger on his body.
+[CENTERED] a finger on his body.
 
 [BODY] A question now arises as to this passage taken from the prophet,<sty c="800000" i="0"> F518</sty> Does God promise to the Jews repentance to salvation, or, does he threaten that he will come as an avenger? For my own part, when I closely examine the passage, I think that it includes both; namely, that out of a worthless and unprincipled nation God will gather a remnant for salvation, and that, by his dreadful vengeance, he will show to despisers who it is with whom they have to do; for we know that they were wont to treat the prophets as insolently as if the prophets had told nothing but fables, and had received no commission from God. God declares that they will not pass unpunished, for he will at length maintain his cause.
 
@@ -9123,7 +9123,7 @@
 --- PAGE 716 ---
 
 [BODY] merits the attention of the readers of the <sty c="000000" i="1">Gospel. — Granville Penn’s</sty> <sty c="000000" i="1">Annotations.</sty>
-[BODY] <sty c="800000" i="0">FT517</sty> Here CALVIN’S Latin Copy refers to the words of our blessed Lord in
+[CENTERED] <sty c="800000" i="0">FT517</sty> Here CALVIN’S Latin Copy refers to the words of our blessed Lord in
 [FOOTNOTE] <sty c="800000" i="0"><402638></sty>Matthew 26:38, <sty c="000000" i="1">My soul is sorrowful, even to death; </sty>but the
 [BODY] French Copy refers to
 [FOOTNOTE] <sty c="800000" i="0"><236310></sty>Isaiah 63:10, <sty c="000000" i="1">But they rebelled, and</sty>

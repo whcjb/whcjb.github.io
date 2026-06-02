@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 11:29
+date: 2026-06-02 12:04
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -63,19 +63,19 @@ In the HARMONY OF THE THREE EVANGELISTS, the reader is so constantly referred to
 
 <p style="text-align:center">TO THE RIGHT HONORABLE</p>
 
-# THE LORD ROBT. DVDLEY,
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE LORD ROBT. DVDLEY,</p>
 
-## EARLE OF LEYCESTER,
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EARLE OF LEYCESTER,</p>
 
-BARON OF DENBIGH, MAISTER OF THE HORSE TO THE QUEENE’S MAIESTIE,
+<p style="text-align:center">BARON OF DENBIGH, MAISTER OF THE HORSE TO THE QUEENE’S MAIESTIE,</p>
 
 <p style="text-align:center">KNIGHT OF THE NOBLE ORDER OF THE GARTER, AND ONE OF THE</p>
 
-QUEENE’S MAIESTIE, MOST HONORABLE PRIUIE COUNSEL,
+<p style="text-align:center">QUEENE’S MAIESTIE, MOST HONORABLE PRIUIE COUNSEL,</p>
 
 <p style="text-align:center">CHANCELOUR OF THE MOST FAMOUS VNIUERSITIE</p>
 
-OF OXFORD, CHRISTOPHER FETHERSTONE,
+<p style="text-align:center">OF OXFORD, CHRISTOPHER FETHERSTONE,</p>
 
 <p style="text-align:center">WISHETH ENCREASE OF SPIRITUALL</p>
 
@@ -104,9 +104,9 @@ BEING instantly requested (gentle reader) by my godly zealous friendes, to enter
 
 <p style="text-align:center">To The</p>
 
-TRULY HONOURABLE AND ILLUSTRIOUS LORDS,
+<p style="text-align:center">TRULY HONOURABLE AND ILLUSTRIOUS LORDS,</p>
 
-## THE SYNDICS AND COUNCIL OF GENEVA,
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE SYNDICS AND COUNCIL OF GENEVA,</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN</p>
 
@@ -139,8 +139,21 @@ I shall now say a few words about myself as an individual. Though I trust that m
 
 The meaning of the Greek word, <span style="color:#0000d4">εὐαγγέλιον</span> (*Gospel*) is well known. <span style="color:#800000">[^f8]</span> In Scripture it denotes, by way of eminence, <span style="color:#0000d4">(κατ' ἐξοχὴν,</span>) the glad and delightful message of the grace exhibited to us in Christ, in order to instruct us, by despising the world and its fading riches and pleasures, to desire with our whole heart, and to embrace when offered to us, this invaluable blessing. The conduct which we perceive in irreligious men, who take an extravagant delight in the empty enjoyments of the world, while they are little if at all, affected by a relish for spiritual blessings, is natural to us all. For the purpose of correcting this fault, God expressly bestows the name *Gospel* on the message which he orders to be proclaimed concerning Christ; for thus he reminds us that nowhere else can true and solid happiness be obtained, and that in him we have all that is necessary for the perfection of a happy life.
 
+Some consider the word *Gospel* as extending to all the gracious promises of God which are found scattered even in the Law and the Prophets. Nor can it be denied that, whenever God declares that he will be reconciled to men, and forgives their sins, he at the same time exhibits Christ, whose peculiar office it is, wherever he shines, to spread abroad the rays of joy. I acknowledge, therefore, that the Fathers were partakers of the same *Gospel* with ourselves, so far as relates to the faith of a gratuitous salvation. But as it is the ordinary declaration made by the Holy Spirit in the Scriptures, that the *Gospel* was first proclaimed when Christ came, let us also adhere to this mode of expression; and let us keep by that definition of the *Gospel* which I have given, that it is a solemn publication of the grace revealed in Christ. On this account the *Gospel* is called
+
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span></p>
+
+<span style="color:#000080">Romans 1:16)</span>
+
 <!-- PAGE 14 -->
-Some consider the word *Gospel* as extending to all the gracious promises of God which are found scattered even in the Law and the Prophets. Nor can it be denied that, whenever God declares that he will be reconciled to men, and forgives their sins, he at the same time exhibits Christ, whose peculiar office it is, wherever he shines, to spread abroad the rays of joy. I acknowledge, therefore, that the Fathers were partakers of the same *Gospel* with ourselves, so far as relates to the faith of a gratuitous salvation. But as it is the ordinary declaration made by the Holy Spirit in the Scriptures, that the *Gospel* was first proclaimed when Christ came, let us also adhere to this mode of expression; and let us keep by that definition of the *Gospel* which I have given, that it is a solemn publication of the grace revealed in Christ. On this account the *Gospel* is called <span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span> <span style="color:#000080">Romans 1:16)</span> because in it God displays his righteousness. It is called also an <span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span> <span style="color:#000080">2 Corinthians 5:20)</span> and as Christ is the pledge of the mercy of God, and of his fatherly love towards us, so he is, in a peculiar manner, the subject of the Gospel.
+
+because in it God displays his righteousness. It is called also an
+
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span></p>
+
+<span style="color:#000080">2 Corinthians 5:20)</span>
+
+and as Christ is the pledge of the mercy of God, and of his fatherly love towards us, so he is, in a peculiar manner, the subject of the Gospel.
 
 Hence it came that the histories which relate that Christ appeared in the flesh and died, and was raised from the dead, and at length was taken up into heaven, have peculiarly obtained the name *Gospel*. For although, for the reason already stated:, this word means the New Testament, yet the name which denote, the whole has come, by general practice, to stand for that part of it which declares that Christ was manifested to us in the flesh, and died, and rose from the dead. But as the bare history would not be enough, and, indeed, would be of no advantage for salvation, the Evangelists do not merely relate that Christ was born, and that he died and vanquished death, but also explain for what purpose he was born, and died, and rose again, and what benefit we derive from those events.
 
