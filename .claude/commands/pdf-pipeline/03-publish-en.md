@@ -127,6 +127,27 @@ parts = ['\n\n---\n']
 
 写成 `introduction.md` 会让目录页链接 404。
 
+### ⚠️ `index.html` 必须含 `has_preface: true`（否则目录页隐藏前言链接）
+
+`_layouts/calvin-en-book.html` 用 `{% if page.has_preface %}` 判断是否渲染 `<a class="preface-link">Translator's Preface →</a>` 链接。**publish 脚本生成 index.html 时必须输出 `has_preface: true`**——否则 preface.md 虽然存在、`/calvin/BOOK-en/preface/` 路由可访问，但目录页**没有入口链接**，用户从导航过去看不到序言。
+
+```python
+# Step 7: index.html
+index_path = OUT_DIR / 'index.html'
+index_path.write_text(
+    f'---\n'
+    f'layout: calvin-en-book\n'
+    f'book_id: {BOOK_ID}\n'
+    f'book_name: "{BOOK_NAME}"\n'
+    f'chapters: {len(chapter_keys)}\n'
+    f'has_preface: true\n'         # ← 必须
+    f'---\n',
+    encoding='utf-8',
+)
+```
+
+漏 `has_preface` 这一行 → 用户问"前言怎么没了"。
+
 ---
 
 ## 7. 多列经文表的渲染细节
