@@ -52,13 +52,9 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
             ch = m.group(1)
             if ch not in starts:
                 starts[ch] = i
-    # Preface starts at the first `# THE` heading (i.e. TRANSLATOR'S PREFACE)
-    for i, line in enumerate(lines):
-        if line.startswith('# THE TRANSLATOR') or line.startswith('# THE LORD'):
-            starts['preface'] = i
-            break
-    if 'preface' not in starts:
-        starts['preface'] = 0
+    # Preface starts at the very first emitted content (line 0) so the AGES
+    # title page + Pringle translator-attribution page are included.
+    starts['preface'] = 0
     return starts
 
 

@@ -80,6 +80,18 @@ _AGES_GR_PAT = re.compile(
 )
 
 
+_AGES_ELISION = {
+    'kat': 'κατ',
+    'met': 'μετ',
+    'ap': 'ἀπ',
+    'ep': 'ἐπ',
+    'di': 'δι',
+    'par': 'παρ',
+    'an': 'ἀν',
+    'ouk': 'οὐκ',
+}
+
+
 def convert_ages_greek(text: str) -> str:
     # Hide <verse>/</verse> markers from the Greek regex (the `<` would otherwise
     # be consumed by the Greek-accent alternative as if it were a combining mark).
@@ -93,26 +105,35 @@ def convert_ages_greek(text: str) -> str:
             return c
         return tok
     text = _AGES_GR_PAT.sub(_repl, text)
+    # Handle Ages elision forms: `kat j <greek>` → `κατ' <greek>` (the
+    # consonant cluster has no `<>~` accent marks so the main regex misses it).
+    def _elision(m):
+        prefix = m.group(1)
+        return _AGES_ELISION.get(prefix, prefix) + "'"
+    text = re.sub(
+        r'\b(' + '|'.join(_AGES_ELISION) + r') j(?=\s+[ἀ-῿Ͱ-Ͽ])',
+        _elision, text,
+    )
     return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
 
 
 # ── Spaced-caps cleanup (B o o k s → Books) ──────────────────────────────
 def collapse_spaced_caps(text: str) -> str:
-    """Collapse 'B o o k s' / 'T H E A G E S' style spaced-out heading text.
+    """Collapse 'B o o k s' / 'T H E A G E S' / 'J OHN' style spaced-out heading.
 
-    Detects runs of ≥ 3 single-letter "words" separated by single spaces and
-    glues them together. Handles mixed case (heading first-letter caps).
+    - First pass: runs of ≥ 3 single-letter "words" separated by single spaces.
+    - Second pass: lone capital + space + capital-run, BUT skip when the lone
+      capital is preceded by an apostrophe ('S PREFACE, 'S MAIESTIE, etc.),
+      where the space is a real word separator.
     """
     def _glue(m):
-        # m.group(0) is like "B o o k s" → "Books"
         return ''.join(m.group(0).split())
-    # 3+ single-letter (A-Za-z) tokens joined by single spaces
     text = re.sub(r'\b(?:[A-Za-z] ){2,}[A-Za-z]\b', _glue, text)
-    # Also collapse all-caps acronym-style 'T H E' → 'THE'
+    # Only collapse 'X YYYY' if X is NOT preceded by ' or ’ (apostrophe-S etc.)
     prev = None
     while prev != text:
         prev = text
-        text = re.sub(r'\b([A-Z]) ([A-Z]+)', r'\1\2', text)
+        text = re.sub(r"(?<!['‘’])\b([A-Z]) ([A-Z]+)\b", r'\1\2', text)
     return text
 
 
@@ -142,10 +163,10 @@ def format_inline(text: str) -> str:
     text = INLINE_REF_RE.sub('', text)
     # Bracketed footnote refs `[fN]` or `[FtN]` → `[^fN]`
     text = re.sub(r'\[([fF][tT]?\d+)\]', lambda m: f'[^{normalize_fn_label(m.group(1))}]', text)
-    # Bare footnote refs `fN` (Ages PDF style: ". f8 In Scripture...") → `[^fN]`
+    # Bare footnote refs `fN` (Ages PDF style: ". f8 In Scripture..." or "f29A") → `[^fN]`
     # Anchored by word boundaries and a preceding space/punct to avoid matching
-    # English words that happen to contain "fN".
-    text = re.sub(r'(?<=[\s\.,;:\)\!\?])f(\d{1,3})\b', r'[^f\1]', text)
+    # English words that happen to contain "fN". Allow optional trailing capital letter (f29A).
+    text = re.sub(r'(?<=[\s\.,;:\)\!\?])f(\d{1,3}[A-Z]?)\b', r'[^f\1]', text)
     # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
     # Greek transliteration → Unicode
@@ -197,6 +218,108 @@ PAGE_HEADER_RE = re.compile(r'^--- PAGE (\d+) ---\s*$')
 TAG_RE = re.compile(r'^\[([A-Z0-9_]+)\]\s*(.*)$', re.DOTALL)
 
 
+def _is_sentence_end(text: str) -> bool:
+    """Does the trimmed text end with a sentence-terminating punctuation?"""
+    t = text.rstrip()
+    if not t:
+        return True
+    # Strip trailing HTML close tags so "…end.</span>" counts as ending in "."
+    t2 = re.sub(r'(?:</[a-zA-Z]+>|</?verse>)+$', '', t)
+    if not t2:
+        return True
+    return t2[-1] in '.?!:;"”\'’'  # incl. curly quotes
+
+
+def _is_paragraph_line(line: str) -> bool:
+    """Is this a normal body paragraph (not heading / box / fence / marker /
+    centered block)?"""
+    s = line.lstrip()
+    if not s:
+        return False
+    if s.startswith(('#', '<', '[^', '>', '|', '---', '<!--', '{')):
+        return False
+    return True
+
+
+def _starts_with_continuation(line: str) -> bool:
+    """Does this body line start in a way that suggests it's a continuation of
+    the prior paragraph (lowercase letter, digit-from-Bible-ref, punctuation,
+    HTML tag)?"""
+    # Strip leading markdown bold/italic markers to peek at first real char
+    s = re.sub(r'^(?:\*+|\s)+', '', line.lstrip())
+    # Also peek past leading <verse> or <span> open tag
+    s = re.sub(r'^<verse>', '', s)
+    s = re.sub(r'^<span[^>]*>\*?', '', s)
+    if not s:
+        return False
+    c = s[0]
+    if c.islower():
+        return True
+    if c in '(,;:)':
+        return True
+    # Digit-led: typical continuation pattern is "17:28,)" or "31,32," after
+    # a bible-ref split. Accept digits but NOT when followed by ". " (verse num).
+    if c.isdigit() and not re.match(r'^\d+\.\s', s):
+        return True
+    return False
+
+
+def _merge_paragraph_fragments(out: list[str]) -> list[str]:
+    """Walk `out` and merge consecutive body paragraphs that were split by
+    block/page boundaries. Cross-page boundaries (lines like `<!-- PAGE N -->`)
+    are passed through unchanged but do not block merging if the surrounding
+    paragraphs satisfy the merge condition.
+    """
+    if not out:
+        return out
+    new_out = []
+    i = 0
+    while i < len(out):
+        line = out[i]
+        # Skip empty separators initially
+        if not line.strip():
+            new_out.append(line)
+            i += 1
+            continue
+        # If this is a paragraph line, try to merge any later paragraph lines.
+        if _is_paragraph_line(line):
+            buf = line.rstrip()
+            j = i + 1
+            while j < len(out):
+                # Allow empty lines and page markers between candidates
+                k = j
+                page_markers = []
+                while k < len(out) and (
+                    not out[k].strip()
+                    or out[k].lstrip().startswith('<!-- PAGE')
+                ):
+                    if out[k].lstrip().startswith('<!-- PAGE'):
+                        page_markers.append(out[k])
+                    k += 1
+                if k >= len(out):
+                    break
+                nxt = out[k]
+                if not _is_paragraph_line(nxt):
+                    break
+                # Only merge if current does NOT end sentence AND next is continuation
+                if _is_sentence_end(buf) or not _starts_with_continuation(nxt):
+                    break
+                # Merge: append next paragraph to buf, keep page markers BEFORE buf
+                # (so PDF reference position survives) — but since we're already
+                # past i, just emit page markers into new_out unchanged before buf.
+                for pm in page_markers:
+                    if pm not in new_out[-3:]:  # avoid dup if just emitted
+                        new_out.append(pm)
+                buf = buf + ' ' + nxt.lstrip()
+                j = k + 1
+            new_out.append(buf)
+            i = j
+        else:
+            new_out.append(line)
+            i += 1
+    return new_out
+
+
 def _build_ref_banner(ages_code: str, book_verse: str) -> str:
     """Render the scripture-ref banner with separable Ages code / book / verse spans
     so per-book CSS can style them PDF-faithfully (small-caps book name, dark-red
@@ -229,6 +352,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
     in_scripture = False
     scripture_lines: list[str] = []
     scripture_ref: str | None = None
+    in_commentary_section = False  # True after first scripture-section header in chapter; reset on H1
     pending_blockquote_continuation = False
 
     def flush_scripture():
@@ -332,6 +456,8 @@ def convert(structured_path: Path, out_path: Path) -> None:
             cleaned = format_inline(cleaned)
             # Strip any <verse> wrappers in headings — they're noise.
             cleaned = re.sub(r'</?verse>', '', cleaned)
+            # H1 = chapter/section break → leave commentary mode
+            in_commentary_section = False
             out.append('')
             out.append(f'# {cleaned}')
             out.append('')
@@ -353,13 +479,17 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 flush_scripture()
                 ages_code = sec_m.group(1)
                 ref_text = collapse_spaced_caps(sec_m.group(2).strip())
-                # H2 keeps the canonical "BOOK Ch:V-V" text (used by verse-nav JS).
+                # No more `## BOOK Ch:V-V'` H2 — the scripture-ref banner inside
+                # the box already shows the same text. Emit an invisible anchor
+                # only for verse-nav JS (`<h2 class="scripture-anchor" id="...">`).
+                anchor_id = re.sub(r'[^a-z0-9-]+', '-', ref_text.lower()).strip('-')
                 out.append('')
-                out.append(f'## {ref_text}')
+                out.append(f'<h2 class="scripture-anchor" id="{anchor_id}" data-ref="{ref_text}" style="display:none">{ref_text}</h2>')
                 out.append('')
                 # Structured banner with Ages code + small-caps book + verse range.
                 scripture_ref = _build_ref_banner(ages_code, ref_text)
                 in_scripture = True
+                in_commentary_section = True  # subsequent body italics → red
                 scripture_lines = []
             else:
                 fn_m = FN_DEF_RE.match(content)
@@ -373,26 +503,61 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 else:
                     # Inline cross-reference fragment — fold into preceding paragraph
                     body = format_inline(content)
-                    body = apply_verse_styling(body, red=False)
-                    # If previous output line is a paragraph (non-empty, no markers), append
-                    # in place; otherwise emit as its own line.
+                    body = apply_verse_styling(body, red=in_commentary_section)
                     j = len(out) - 1
                     while j >= 0 and not out[j].strip():
                         j -= 1
-                    if j >= 0 and not out[j].lstrip().startswith(('#', '<', '[^', '>')):
+                    # Accept appending into body paragraphs even if they start
+                    # with an inline tag (<span>, <verse>, **N.**, *italic*).
+                    # Reject only block-level / heading / fence prefixes.
+                    BLOCK_PREFIXES = ('#', '[^', '>', '<!--', '<div', '<h1',
+                                      '<h2', '<h3', '<h4', '<p ', '<p>',
+                                      '<table', '<tr', '<td', '<th', '<thead',
+                                      '<tbody', '</div', '</p', '</table',
+                                      '---', '|', '{')
+                    if j >= 0 and not out[j].lstrip().startswith(BLOCK_PREFIXES):
                         out[j] = out[j].rstrip() + ' ' + body
                     else:
                         out.append('')
                         out.append(body)
                         out.append('')
+        elif tag == 'CENTERED':
+            # If we're inside a scripture section and this CENTERED block holds
+            # the actual verse passage (≥1 verse-num anchor + starts with verse),
+            # route through the scripture-box path instead of emitting <p center>.
+            if in_scripture:
+                stripped_content = content.lstrip()
+                anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', stripped_content))
+                starts_with_verse = bool(re.match(r'^\d+\s*\.\s+[A-Z]', stripped_content))
+                has_leading_italic = '<verse>' in stripped_content[:30]
+                if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
+                    body = format_inline(content)
+                    body = apply_verse_styling(body, red=False)
+                    scripture_lines.append(body)
+                    flush_scripture()
+                    i += 1
+                    continue
+            cleaned = collapse_spaced_caps(format_inline(content))
+            cleaned = re.sub(r'</?verse>', '', cleaned)
+            if cleaned.strip():
+                out.append('')
+                out.append(f'<p style="text-align:center">{cleaned}</p>')
+                out.append('')
         elif tag in ('BODY', 'VERSE'):
             body = format_inline(content)
-            # Detect scripture-passage block: first BODY after a section header that
-            # contains ≥2 verse-number anchors (`N. ` patterns).
+            # Detect scripture-passage block: first BODY after a section header.
+            # Accept ≥1 verse-number anchor (covers single-verse refs like JOHN 1:14)
+            # AND require the leading text to start with a verse number to avoid
+            # absorbing commentary (which starts with `**N.** *VersePhrase*`).
             if in_scripture:
-                anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', content))
-                if anchor_count >= 2:
-                    # Plain italics inside scripture verses (book refs etc.)
+                stripped_content = content.lstrip()
+                anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', stripped_content))
+                starts_with_verse = bool(re.match(r'^\d+\s*\.\s+[A-Z]', stripped_content))
+                # The scripture passage in Ages PDF always starts with `N. Capital`
+                # plain text (no italic verse-phrase markup before commentary kicks in).
+                # Commentary starts with `N. <verse>...</verse>` (italic phrase).
+                has_leading_italic = '<verse>' in stripped_content[:30]
+                if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
                     body = apply_verse_styling(body, red=False)
                     scripture_lines.append(body)
                     flush_scripture()
@@ -400,9 +565,10 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     continue
                 else:
                     in_scripture = False  # not a scripture passage, fall through
-            # Red-italic only when paragraph starts with a verse number (commentary).
-            is_commentary_para = bool(re.match(r'^\s*\d+\s*\.\s', content))
-            body = apply_verse_styling(body, red=is_commentary_para)
+            # Red-italic for any body in a chapter's commentary section (after first
+            # scripture-section header, before next H1). Outside that → plain italic
+            # (front-matter book titles, signatures, dedications).
+            body = apply_verse_styling(body, red=in_commentary_section)
             body = bold_leading_verse_num(body)
             out.append('')
             out.append(body)
@@ -415,6 +581,29 @@ def convert(structured_path: Path, out_path: Path) -> None:
 
     flush_table()
     flush_scripture()
+
+    # ── SEV-3 post-pass: tidy bible-ref spaces + merge adjacent italic ──
+    for k, line in enumerate(out):
+        if not line.strip():
+            continue
+        # Fix `( Book N:N)` → `(Book N:N)` (Ages stripped <NNNNNN> left a space)
+        line = re.sub(r'\(\s+([A-Z1-3])', r'(\1', line)
+        # Merge adjacent italic spans separated only by a single space:
+        # `*X* *Y*` → `*X Y*`. Skip when followed by `</span>` (red-italic).
+        prev = None
+        while prev != line:
+            prev = line
+            line = re.sub(r'(?<!\*)\*([^*\n<]+?)\* \*(?!\*)([^*\n<]+?)\*(?!\*)',
+                          r'*\1 \2*', line)
+        out[k] = line
+
+    # ── Cross-block paragraph merge ──────────────────────────────────────
+    # PyMuPDF often splits one logical paragraph across multiple blocks (page
+    # boundaries, line-group gaps). Merge when: prev body ends without
+    # sentence-end punctuation AND next body starts with a lowercase letter
+    # (or a continuation token like `<verse>`, `(`, `[^`). Skip if either
+    # side is a heading, fence, footnote def, scripture-box, page marker.
+    out = _merge_paragraph_fragments(out)
 
     # Collapse multiple blank lines to single
     result = '\n'.join(out)

@@ -2304,26 +2304,85 @@ def _render_spans_with_italic(spans):
     return ''.join(parts)
 
 
-def phil_reconstruct_page(page):
-    page_height = page.rect.height
+def phil_reconstruct_page(page, page_num=None):
+    page_w = page.rect.width
+    page_cx = page_w / 2
     blocks      = [b for b in page.get_text('dict')['blocks'] if b['type'] == 0]
     blocks.sort(key=lambda b: b['bbox'][1])
 
     output_lines  = []
     prev_block_y1 = None
+    page_label   = str(page_num + 1) if page_num is not None else None  # PDF "page 17" = doc[16]
 
-    for block in blocks:
+    for block_idx, block in enumerate(blocks):
         if prev_block_y1 is not None and block['bbox'][1] - prev_block_y1 > 8:
             output_lines.append('')
         prev_block_y1 = block['bbox'][3]
 
-        block_lines_output = []
+        # Centered block detection: symmetric left/right margins AND both
+        # margins ≥ 30px (excludes full-width body paragraphs which also have
+        # centered cx but tiny outer margins ≈ 25px).
+        bx0, _, bx1, _ = block['bbox']
+        lm = bx0
+        rm = page_w - bx1
+        is_centered_block_geom = (
+            abs(lm - rm) < 8
+            and lm > 30
+            and rm > 30
+        )
+        # Additional content guard: a "centered" geometry can also occur for the
+        # final justified-body fragment ending in an open paren (a parenthetical
+        # bible-ref that runs into next block). Reject those — they're body
+        # continuations, not centered titles.
+        block_text_preview = ''
         for line in block['lines']:
+            for s in line['spans']:
+                if s['text'].strip():
+                    block_text_preview += s['text']
+        block_text_preview = block_text_preview.strip()
+        ends_with_continuation = bool(re.search(r'[(,]\s*$', block_text_preview))
+        is_centered_block = is_centered_block_geom and not ends_with_continuation
+
+        # First block of a page often combines page-number header + continuation text.
+        # Detect: y0 < 30 AND first non-empty span = digits matching page label.
+        is_top_block = block['bbox'][1] < 30 and block_idx <= 1
+        strip_page_num = False
+        if is_top_block and page_label:
+            for line in block['lines']:
+                for s in line['spans']:
+                    if s['text'].strip():
+                        if s['text'].strip() == page_label:
+                            strip_page_num = True
+                        break
+                break
+
+        block_lines_output = []
+        for line_idx, line in enumerate(block['lines']):
             non_empty = [s for s in line['spans'] if s['text'].strip()]
             if not non_empty:
                 continue
             line_class, ms = phil_dominant_class(non_empty)
-            full_text = _render_spans_with_italic(line['spans'])
+            # Strip page-number prefix from the first line of a top-of-page block.
+            spans = list(line['spans'])
+            if strip_page_num and line_idx == 0:
+                # Drop the first non-empty span if it's the page label,
+                # plus any trailing whitespace span immediately following.
+                new_spans = []
+                dropped = False
+                for s in spans:
+                    if not dropped and s['text'].strip() == page_label:
+                        dropped = True
+                        continue
+                    if dropped and not s['text'].strip() and len(new_spans) == 0:
+                        continue  # skip the space span right after page number
+                    new_spans.append(s)
+                spans = new_spans
+                # Re-evaluate non_empty for class detection
+                non_empty = [s for s in spans if s['text'].strip()]
+                if not non_empty:
+                    continue
+                line_class, ms = phil_dominant_class(non_empty)
+            full_text = _render_spans_with_italic(spans)
             if not full_text.strip():
                 continue
             if non_empty[0]['size'] <= 8:
@@ -2333,6 +2392,9 @@ def phil_reconstruct_page(page):
             if ms >= 16 and any(kw in stripped for kw in ('PHILIPPIANS','COLOSSIANS','THESSALONIANS')):
                 if re.search(r'\d+:\d+', stripped):
                     line_class = 'VERSE'
+            # Centered block: override BODY → CENTERED (do not override H1/H2/FOOTNOTE/VERSE)
+            if is_centered_block and line_class == 'BODY':
+                line_class = 'CENTERED'
             block_lines_output.append((line_class, full_text))
 
         if not block_lines_output:
@@ -2372,7 +2434,7 @@ def extract_ages_phil(cfg):
     all_output = []
     for page_num in range(total):
         all_output.append(f'\n--- PAGE {page_num + 1} ---\n')
-        all_output.extend(phil_reconstruct_page(doc[page_num]))
+        all_output.extend(phil_reconstruct_page(doc[page_num], page_num=page_num))
 
     doc.close()
     out_path = cfg['out']
