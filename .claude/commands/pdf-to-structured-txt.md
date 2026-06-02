@@ -937,24 +937,219 @@ for k, line in enumerate(out):
     out[k] = line
 ```
 
+#### 2.7.14 apply_verse_styling 必须把 italic 边界空格移到 wrap 外（spacing 1120 处的根因）
+
+**症状**：注释里随处可见 `*the Speech*a*beginning*`、`*Whose name was John*. He`、`*sons of God*,*not by the will*`——italic 短语与相邻文字粘连，肉眼看上去整段都是"段落问题"。grep `*</span>[a-z]` 可命中 1120 处（全 21 章），`[a-z]<span>*` 反向 146 处。
+
+**根因**：`<verse>X </verse>Y<verse> Z</verse>` 经 `apply_verse_styling` 调用 `m.group(1).strip()` 把 inner 首尾空格吃了 → 渲染成 `*X*Y*Z*`，X 紧贴 Y 紧贴 Z，没有空格分隔。
+
+**修复（必须）**：捕获 leading/trailing whitespace **移到 italic wrap 外面**：
+
+```python
+def _wrap(inner_text: str, red: bool) -> str:
+    if not inner_text.strip():
+        return inner_text
+    m = re.match(r'^(\s*)(.+?)(\s*)$', inner_text, re.DOTALL)
+    lead, core, trail = m.group(1), m.group(2), m.group(3)
+    if len(core) < 2 and not red:
+        return lead + core + trail
+    if red:
+        return f'{lead}<span style="color:#800000">*{core}*</span>{trail}'
+    return f'{lead}*{core}*{trail}'
+
+def apply_verse_styling(body: str, red: bool) -> str:
+    body = re.sub(r'<verse>(.*?)</verse>', lambda m: _wrap(m.group(1), red), body, flags=re.DOTALL)
+    if red:
+        body = re.sub(r'\*</span>(\s+)<span style="color:#800000">\*', r'\1', body)
+    return body
+```
+
+**为什么不能直接 strip**：PDF 中 italic 经常跨多个 span，且 PyMuPDF 会把 italic 边界处的空格保留在 italic span 内（不是外）。如果 strip 掉再 wrap，相邻 italic 之间的"非 italic 字"就会粘住两侧的 `*` 符号。**这是 john-en 第 4 轮还有 1100+ 处段落异常的核心根因，单点修复立竿见影**。
+
+#### 2.7.15 跨页 Bible 引用孤儿（`(1\n\nPeter 1:23,)` 类）必须 context-aware 续接
+
+**症状**：跨页 Bible 引用被切成"上段末尾 `(1`、下段开头 `Peter 1:23,)`"两段独立 markdown，渲染后视觉上是孤立的"`Peter 1:23,)` ..."段落。grep 出现 8+ 次。
+
+**根因**：Ages 跨引用代码 `<600123>1` 单独成一行，下段是 `Peter 1:23,)...` —— 续接判断 `_starts_with_continuation` 拒绝大写字母开头（"Peter"），merge 失败。
+
+**修复**：`_starts_with_continuation(line, prev_tail='')` 加 context-aware：
+
+```python
+def _starts_with_continuation(line: str, prev_tail: str = '') -> bool:
+    # ... 既有的 lowercase / 标点 / digit 判定 ...
+    if prev_tail:
+        # 前段以 `(N` / `(` 结尾（Bible 引用 open split）+ 下段大写 book name
+        if re.search(r'\(\s*\d?\s*$', prev_tail):
+            if re.match(r'^(?:[1-3]\s+)?[A-Z][a-z]+(?:\s+\d+:\d+)?', s):
+                return True
+        # 中间断句：前段以 and/or/but/for/yet/so 结尾 + 下段大写
+        if re.search(r'\b(?:and|or|but|nor|for|yet|so)\s*$', prev_tail):
+            if c.isupper():
+                return True
+    return False
+
+# 在 _merge_paragraph_fragments 调用时：
+prev_tail = buf[-25:] if buf else ''
+if _is_sentence_end(buf) or not _starts_with_continuation(nxt, prev_tail):
+    break
+```
+
+**通用规则**：续接判定不能仅看「下段开头字符」，必须同时看「上段末尾上下文」。Bible 引用、连词收尾、未闭合括号都是「强制续接」信号。
+
+#### 2.7.16 Ages Greek 编码：`><~|` 之外还有 `{}+]` + 无标记短词字典兜底
+
+**症状**：除了 `kat j` 这种 elision，PDF 还有 `oJ λόγος`、`ai]rein`、`o{ γέγονεν`、`h+\|n`、`ejn αὐτῷ`、`ejx αἱμάτων` 等编码残留。约翰福音 ch1 命中 7+ 处。
+
+**根因**：
+- `_GCOMB` 只定义了 `j > < ~ |`，缺 `J`（rough breathing 大写）、`{` (rough alt)、`+` (diaeresis)、`]` (acute alt)
+- `_AGES_GR_PAT` 中间 group `(?:[><~]|\\[|]|\|)` 只触发于真正"重音"字符，漏掉 `oJ` / `ejn` 这类"vowel + breathing"无重音的短词
+
+**修复（三段）**：
+
+1. 扩 `_GCOMB`：
+
+```python
+_GCOMB = {
+    'j': '̓',   # smooth breathing
+    'J': '̔',   # rough breathing (大写 J)
+    '>': '́', '<': '̀', '~': '͂',
+    '|': 'ͅ',   # iota subscript
+    '+': '̈',   # diaeresis
+    ']': '́',   # acute alt (Ages variant)
+}
+```
+
+2. 扩 `_ages_token` 处理 `jJ{` 三种 breathing + `+` 双音符 + `]` 重音
+
+3. 扩 `_AGES_GR_PAT` 触发字符（**不要把 `jJ` 加入触发**——会让 "John"/"Bejart" 误命中），并为单独的「vowel + j/J/{」短词加显式 dict：
+
+```python
+# 必须含 ><~{}+] 之一才触发主 regex
+_AGES_GR_PAT = re.compile(
+    r'(<[a-zA-Z/!][^>]*>)'
+    r'|([a-zA-Z][a-zA-Z><~jJ|\\{}+\]]*'
+    r'(?:[><~{}+\]]|\\[|]|\|)'
+    r'[a-zA-Z><~jJ|\\{}+\]]*)'
+)
+
+# 主 regex 后：常见无 markers 的 Greek 短词显式替换
+_GREEK_WORDS = {
+    'ejn': 'ἐν', 'ejx': 'ἐξ', 'ejk': 'ἐκ', 'ejpi': 'ἐπί',
+    'oJ': 'ὁ', 'hJ': 'ἡ', 'oiJ': 'οἱ', 'aiJ': 'αἱ',
+    'wJv': 'ὡς', 'wJ': 'ὡ', 'a@n': 'ἄν',
+}
+for ages, greek in _GREEK_WORDS.items():
+    text = re.sub(r'\b' + re.escape(ages) + r'\b', greek, text)
+```
+
+**为什么不把 `jJ` 加进 trigger**：会把英文 "John"、"Bejart"、"enjoy" 等都识为 Greek（"John" 含 `J`，"enjoy" 含 `j`），然后 `_ages_token` 会把它们的 ASCII 字母强制映射为 Greek 字母，产生乱码。**触发字符必须只用真正 Greek-only 的 markers**（`><~{}+]` + 转义的 `\|`），其他短词靠白名单字典兜底。
+
+#### 2.7.17 `ftNNNa` 字母后缀脚注 + 同行多脚注挤一行
+
+**症状**：
+- `ft29A The points of...` 字面出现在正文（不是 `[^f29A]:` 定义）—— audit 显示 5+ 处
+- `ft339"Contre le Fils." ft340"..." ft341"..."` 三个脚注挤在同一行 —— 渲染后全部丢失成正文段
+
+**根因**：`normalize_back_footnotes` 正则 `^FT(\d+) (.+)$` 不接受字母后缀，且不识别同行多 ftNNN。
+
+**修复**：
+
+```python
+def normalize_back_footnotes(lines):
+    out = []
+    for line in lines:
+        # 按 ftNNN 边界拆分同行多脚注
+        parts = re.split(r'(?=\b[Ff][Tt]\d+[A-Za-z]?\b)', line)
+        normalized = []
+        any_match = False
+        for part in parts:
+            part = part.rstrip('\n')
+            m = re.match(r'^[Ff][Tt](\d+[A-Za-z]?)\s*(.*)$', part)
+            if m:
+                label = m.group(1).lower()
+                body_part = m.group(2).strip()
+                if body_part:
+                    normalized.append(f'[^f{label}]: {body_part}')
+                    any_match = True
+        if any_match:
+            for nl in normalized:
+                out.append(nl + '\n')
+            out.append('\n')  # 脚注 def 间空行
+        else:
+            out.append(line)
+    return out
+```
+
+**配套**：format_inline 的裸 fn ref 正则也要接字母后缀（§2.7.10 已记）。
+
+#### 2.7.18 24pt 居中扉页大字必须降级，否则 preface 有 11 个 H1
+
+**症状**：PDF p0/p1 的标题页大字（24pt "COMMENTARY ON THE GOSPEL ACCORDING TO JOHN" 等）被 `phil_dominant_class` 按字号映射为 H1，导致 preface.md 出现 11 个 H1（其中 "COMMENTARY" 重复 3-4 次）。
+
+**修复**：extractor 加 `CENTERED_H1` / `CENTERED_H2` tag。`is_centered_block` 命中时降级 H1/H2，但 **CHAPTER N 例外**（保留 H1 让 publish 脚本拆章）：
+
+```python
+stripped_text = full_text.strip()
+is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text))
+if is_centered_block:
+    if line_class == 'BODY':
+        line_class = 'CENTERED'
+    elif line_class == 'H1' and not is_chapter_h1:
+        line_class = 'CENTERED_H1'
+    elif line_class == 'H2':
+        line_class = 'CENTERED_H2'
+```
+
+**converter** 把 `CENTERED_H1` / `CENTERED_H2` 渲染为带 inline style 的 `<p>`，**不要**输出 markdown `#` / `##`：
+
+```python
+elif tag in ('CENTERED_H1', 'CENTERED_H2'):
+    cleaned = collapse_spaced_caps(format_inline(content))
+    cleaned = re.sub(r'</?verse>', '', cleaned)
+    size_class = 'title-block-h1' if tag == 'CENTERED_H1' else 'title-block-h2'
+    font_size = '22px' if tag == 'CENTERED_H1' else '16px'
+    out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:bold; margin:18px 0 12px;">{cleaned}</p>')
+```
+
+#### 2.7.19 「声称已修复」必须 cross-check（绝不允许只看 grep 计数）
+
+**反例（约翰福音第 5 轮翻车）**：第 4 轮发布后我宣布"13 项全部修好"，给的证据是 `grep -c "^## JOHN"` = 0、`scripture-box` = 11 等机器计数。用户："还是很多问题，包括你自己列举的问题都没有处理完。" Audit agent 立刻揭穿：13 项中只有 8 项真的修好，4 项假修复（页码、段落分割等指标过但实际仍有大量隐藏问题），还有 7 类新问题（spacing 1120 处、ftNNN body 字面残留等）我完全没意识到。
+
+**强制要求**：每次"声称已修复"前，**必须派 sub-agent cross-check**：
+
+```
+你声称修好了 N 项，现在 cross-check：
+- 对每项给出验证方法（grep / 读 md / 读 HTML）
+- 对每项给出实际结果（命中数 + 至少 1 个具体例子文件:行+文字片段）
+- 区分「完全修好」/「部分修好」/「假修复」
+- 此外 PDF 与产物逐段对照，列出我没声明过的新问题
+```
+
+agent 报告**作为 source of truth**——我自己的 grep 不算数。grep 只能验证「特征数」，agent 验证「语义对得上」。
+
+**反例的具体演化**：第 1 轮我说"加了 scripture-box 就 done"——用户骂；第 2 轮说"加了红色短语就 done"——用户骂；第 3 轮说"PDF 视觉对齐了就 done"——用户骂；第 4 轮说"13 类修完就 done"——用户："你列举的都没修完。" **教训：宣布完成前必须 sub-agent 实证检查每一项声明，否则一定有隐藏的 SEV-1。**
+
 #### 2.7 小结：拿到新 Ages 单语英文 PDF 的执行清单
 
 1. **审计先行**（§2.7.1）：派 sub-agent 对照 PDF + 现有产物列 SEV-1/2/3 清单
-2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED（§2.7.6）、保留 italic 包 `<verse>`（§2.6）
+2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED/CENTERED_H1/CENTERED_H2（§2.7.6 + §2.7.18）、保留 italic 包 `<verse>`（§2.6）
 3. **转换**：
    - section header → 隐藏 anchor h2（§2.7.4）
    - scripture-box 触发条件三件套（§2.7.5）
    - `[CENTERED]` 路由（§2.7.6 + §2.7.5 in_scripture 优先）
+   - `CENTERED_H1`/`CENTERED_H2` → styled `<p>`（§2.7.18）
    - 状态机 `in_commentary_section` 控制红色（§2.7.12）
-   - Greek 转换含 `<verse>` 占位符（§3）+ elision（§2.7.9）
+   - **`apply_verse_styling` 边界空格外移**（§2.7.14，**必修**）
+   - Greek 转换含 `<verse>` 占位符（§3）+ elision（§2.7.9）+ 扩 `_GCOMB`/`_GR_PAT`/dict 兜底（§2.7.16）
    - 裸 fn 正则带字母后缀（§2.7.10）
    - `collapse_spaced_caps` 负向先行（§2.7.8）
    - inline cross-ref 折入过滤器（§2.7.11）
+   - `_starts_with_continuation` 接收 `prev_tail` context-aware（§2.7.15）
    - 文件末尾：`_merge_paragraph_fragments`（§2.7.3）+ SEV-3 后处理（§2.7.13）
-4. **发布**：`publish_<book>_en.py` 的 preface 起点 = 0（§2.7.7）
-5. **再审计**：发布后再跑一遍 sub-agent，确认 SEV-1 全部归零（不只是机器特征数达标，要 PDF 视觉对照）
+4. **发布**：`publish_<book>_en.py` 的 preface 起点 = 0（§2.7.7）；`normalize_back_footnotes` 接字母后缀 + 同行多脚注（§2.7.17）
+5. **再审计**（**绝不能跳过**）：发布后派 sub-agent **cross-check 你声称修复的每一项**（§2.7.19）+ PDF 视觉对照（§2.5b）+ 段落级语义对照（§2.7.1 复用），三关都过才算完成。
 
-**目标**：新 Ages 单语英文 PDF 一次性走完上面流程，第一版输出就接近 phil-en 视觉质量，不再「修一个用户骂一次」。
+**目标**：新 Ages 单语英文 PDF 一次性走完上面流程，第一版输出就接近 phil-en 视觉质量+语义质量，**不再「修一个用户骂一次」**。
 
 ### 3. 希腊文：必须转换为 Unicode
 
