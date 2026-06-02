@@ -208,10 +208,14 @@ def format_inline(text: str) -> str:
     text = INLINE_REF_RE.sub('', text)
     # Bracketed footnote refs `[fN]` or `[FtN]` → `[^fN]`
     text = re.sub(r'\[([fF][tT]?\d+)\]', lambda m: f'[^{normalize_fn_label(m.group(1))}]', text)
-    # Bare footnote refs `fN` (Ages PDF style: ". f8 In Scripture..." or "f29A") → `[^fN]`
-    # Anchored by word boundaries and a preceding space/punct to avoid matching
-    # English words that happen to contain "fN". Allow optional trailing capital letter (f29A).
-    text = re.sub(r'(?<=[\s\.,;:\)\!\?])f(\d{1,3}[A-Z]?)\b', r'[^f\1]', text)
+    # Bare footnote refs `fN` / `FN` (Ages PDF: ". f8 In Scripture..." / "F44"
+    # / "*parvulum*f12") → `[^fN]`. Accept both lowercase & uppercase F (PDF
+    # OCR sometimes flips case for Symbol-font glyphs). Preceded by any
+    # non-letter (space / punct / italic-close `*` / span-close `</span>` etc.)
+    # to avoid English words containing "fN".
+    text = re.sub(
+        r'(?<![A-Za-z])[Ff](\d{1,3}[A-Z]?)\b',
+        lambda m: f'[^f{m.group(1)}]', text)
     # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
     # Greek transliteration → Unicode

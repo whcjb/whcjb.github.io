@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 14:51
+date: 2026-06-02 14:59
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -48,7 +48,7 @@ Early in the next century the learned *Pareus* <span style="color:#800000">[^f1]
 <!-- PAGE 4 -->
 The next work that requires particular notice is that of *Turrettin*, a Professor of Theology in the University of Geneva. It was published about the commencement of the last century; the author died in the year 1737. The doctrine of *Calvin* had somewhat degenerated in his time, though the work on the whole takes the side of orthodoxy. It yet shows a leaning to those views, which commonly issue it sentiments subversive of the essentials of true Christianity.
 
-The first Commentary published in this country, composed in English, was by Elnathan *Parr*, B.D., Rector of Palgrave in Suffolk. He was, as it appears the personal friend of Sir Nathaniel *Bacon*, an elder brother of Lord *Bacon*. He dedicated his work to Sir Nathaniel, and speaks of him a having been a hearer of what he published when delivered from the pulpit. <span style="color:#800000">f2</span> His style is that of his age, and appear quaint now; but his thoughts are often very striking an truly excellent, and his sentiments are wholly in accordant with those of the Reformers.
+The first Commentary published in this country, composed in English, was by Elnathan *Parr*, B.D., Rector of Palgrave in Suffolk. He was, as it appears the personal friend of Sir Nathaniel *Bacon*, an elder brother of Lord *Bacon*. He dedicated his work to Sir Nathaniel, and speaks of him a having been a hearer of what he published when delivered from the pulpit. <span style="color:#800000">[^f2]</span> His style is that of his age, and appear quaint now; but his thoughts are often very striking an truly excellent, and his sentiments are wholly in accordant with those of the Reformers.
 
 Since that time until this century, no work of any not has appeared separately on this Epistle. But within the last thirty years several Commentaries have been published. Besides those of *Flatt* and *Tholuck* in Germany, three at least have appeared in this country, and three in America. The authors in America are Moses *Stuart*, M.A., Professor of Sacred Literature at Andover in Massachusetts, the Rev Albert *Barnes*, and Charles *Hodge*, Professor of Biblical Literature at Princeton. Those in this country are the Rev F. *Fry,* Rector of Desford, Leicestershire, Robert *Haldane* Esq., and Dr *Chalmers*. The doctrine held by *Calvin* is essentially maintained in all these works, and in most of them in its fullest extent.
 
@@ -150,7 +150,7 @@ It has not been deemed necessary to give in this Edition any specimens of title-
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">THE EPISTLE DEDICATORY</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN TO SIMON GRYNAEUS, F9</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">JOHN CALVIN TO SIMON GRYNAEUS, [^f9]</p>
 
 <p style="text-align:center">AMAN WORTHY OF ALL HONOR</p>
 
@@ -240,6 +240,9 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 [^f1]: His original name was Wangler, but he Grecised it, as *Erasmus* had done, and as others did in that age.
 
 
+[^f2]: This work must have been published before the year 1615, for his patron died in that year. The copy seen by the writer is the *third* edition and was published in 1633.
+
+
 [^f3]: “The writers of the New Testament, or rather (with reverence be it Spoken!) the Holy Spirit, whose penmen they mere, wisely chose, in expressing evangelical notions, to employ such *Greek* terms as bad been long before used for the same purposes by the *Greek* Translators of the Near Testament: and thus the *Septuagint* version, however *imperfect* and *faulty* in many particulars, became in this respect, not to the first age of the Church only, but also to all succeeding generations, the connecting link between the languages of the Old and Near Testament, and will be regarded in this view as long as sound judgment and real learning shall continue among men.” —*ParkHurst.*
 
 
@@ -256,6 +259,9 @@ The *last* chapter is almost entirely taken up with salutations, though scattere
 
 
 [^f8]: Let it not be supposed, that by discrediting *some* things, we discredit every thing said by the Fathers. They ought to be treated as all other historians. What we find on examination to be unfounded, ought to be so viewed: and what we have every reason to believe to be true, ought to be so received. Even such a man as Dr. *Lardner* seemed unwilling to reject this tale, from fear of lessening the credit of history; evidently mistaking the ground on which history has a title to credit. The many authorities adduced respecting Peter being at Rome may be reduced almost to two — *Irenœus* and *Tertullian*. They were the first to stamp as it were a kind of authority on this report, and also on others to which no credit is given even by those who would have the Fathers to have been almost infallible. The learned Dr. *Copleston*, the present Bishop of Landaff, in his pamphlet on the Errors of Romanism, justly says, “It is even a matter of serious doubt whether St. Peter was ever at Rome. There is no good historical evidence of the fact; and there is much probability against it.” —P. 87.
+
+
+[^f9]: The account given of *Grynæus* by *Watkins* in his Biographical Dictionary, taken from *Moreri*, is the following: — “ A learned German, born at Veringen, in Hohenzollern, in 1493. He studied at Vienna, after which he became Rector of the school at Baden, but was thrown into prison for espousing the Lutheran doctrines. However, he recovered his liberty, and went to Heidelberg, afterwards to Basil, and, in 1531, he visited England. 1536 he returned to Basil, and died there in 1540.” It is somewhat singular, that in the same year, 1540, another learned man of the same name, John James *Grynæus*, was born at Berne, and was educated at Basil, and became distinguished for his learning — *Ed.*
 
 
 [^f10]: There were at least two other Reformers who had written on the Epistle to the Romans: but whether they were published at this time the writer is not able to say. There is by Luther an Introduction to it, which has been much praised, and has attained the name of the golden preface. Peter Martyr wrote a large comment on this Epistle, which was translated into English early in Queen Elizabeth’s reign, in the year 1568. It is rather remarkable that there was no *commenter* among our English Reformers, while on the Continent there were a great many commentators. — *Ed.*
