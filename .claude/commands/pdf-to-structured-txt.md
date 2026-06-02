@@ -601,6 +601,361 @@ def convert_ages_greek(text):
 
 这是 §3 的延伸：HTML 标签保护**不止针对 `<table>`**，任何 emit 阶段引入的自定义内联标签都必须避免被 Greek-accent 正则误吞。
 
+### 2.7 Ages 单语英文 PDF 抽取的完整守则（基于约翰福音第 4 轮审计的踩坑总结）
+
+第 1-3 轮发布都因为「**没有先做 PDF↔输出审计就开始写**」而翻车。这一节把所有踩过的坑分类列出，新书必须**先读完**再开始抽取。
+
+#### 2.7.1 必须先做 PDF↔输出审计（审计驱动开发）
+
+不要直接「抽取 → 转换 → 发布 → done」就完事。**先抽取一遍，然后派 sub-agent 把 PDF 第 1 章 + preface 与你的 .md 输出对照**，按 SEV-1/2/3 列出所有差异（参考 ch1/preface 审计报告格式：`# 审计报告 / ## 范围 / ## 问题清单 / ## 推荐修复顺序`）。
+
+审计要逐项检查（基于历史踩坑）：
+- 段落分割（PyMuPDF block 边界 vs 真实段落）
+- 标题层级（H1/H2 是否对应 PDF 视觉级别；scripture-box 上方是否有重复 H2）
+- 居中段落（PDF 居中的扉页/题献是否被左对齐输出）
+- 页码残留（"17 salvation, how could..."）
+- 脚注（orphan refs、带字母后缀如 f29A 是否识别）
+- 红色斜体（preface 误染红 / commentary 漏染红）
+- 经文段（scripture-box 是否漏识别单节经文如 1:14）
+- 希腊文（kat j、ˆnjwhy 等带 j/h 的 elision/Hebrew 残留）
+- 引用空格（`( Book N:N)` 多空格）
+- 相邻 italic span（`*X* *Y*` 应合并为 `*X Y*`）
+- 扉页（PDF p0/p1 出版方扉页 + 译者署名页是否纳入 preface）
+
+审计完成后 SEV-1 一次性全修，不要小修来回。
+
+#### 2.7.2 页码残留剥离（每页顶部 block 的首 span）
+
+**症状**：每页正文首段以 "NN " 开头（"17 salvation, how could..."），约 50 处/章。
+
+**根因**：PDF 顶部页码（独占空间或粘在续接段首）被 PyMuPDF 视为同一 block 的首 span。
+
+**修复**：`phil_reconstruct_page(page, page_num=None)` 接收页号，对每页**首个块（`y0 < 30 AND block_idx ≤ 1`）**做：
+
+```python
+is_top_block = block['bbox'][1] < 30 and block_idx <= 1
+strip_page_num = False
+if is_top_block and page_label:
+    for line in block['lines']:
+        for s in line['spans']:
+            if s['text'].strip():
+                if s['text'].strip() == page_label:
+                    strip_page_num = True
+                break
+        break
+
+# 处理 line 0 时：
+if strip_page_num and line_idx == 0:
+    new_spans = []
+    dropped = False
+    for s in spans:
+        if not dropped and s['text'].strip() == page_label:
+            dropped = True; continue
+        if dropped and not s['text'].strip() and len(new_spans) == 0:
+            continue  # 跳过紧随的空白 span
+        new_spans.append(s)
+    spans = new_spans
+```
+
+**调用侧**：`phil_reconstruct_page(doc[page_num], page_num=page_num)`。
+
+#### 2.7.3 跨 block / 跨页段落自动合并（converter 末尾后处理）
+
+**症状**：一逻辑段被 PyMuPDF 切成 2-3 个 `[BODY]`，每个变成独立 markdown 段落，中间还夹 `<!-- PAGE -->`。
+
+**根因**：PyMuPDF block 边界 ≠ 段落边界。同一段在跨页或行族间隙会被切。
+
+**修复**：在 converter 走完所有 emit 之后，对 `out: list[str]` 跑后处理：
+
+```python
+def _is_sentence_end(text: str) -> bool:
+    t = re.sub(r'(?:</[a-zA-Z]+>|</?verse>)+$', '', text.rstrip())
+    return not t or t[-1] in '.?!:;"”\'’'
+
+def _is_paragraph_line(line: str) -> bool:
+    s = line.lstrip()
+    if not s: return False
+    return not s.startswith(('#', '<', '[^', '>', '|', '---', '<!--', '{'))
+
+def _starts_with_continuation(line: str) -> bool:
+    s = re.sub(r'^(?:\*+|\s)+', '', line.lstrip())
+    s = re.sub(r'^<verse>', '', s)
+    s = re.sub(r'^<span[^>]*>\*?', '', s)
+    if not s: return False
+    c = s[0]
+    if c.islower(): return True
+    if c in '(,;:)': return True
+    # Digit 续接（"1 Peter 3:21"、"17:28,)"），但不能是节号开头 N. 
+    if c.isdigit() and not re.match(r'^\d+\.\s', s): return True
+    return False
+
+def _merge_paragraph_fragments(out: list[str]) -> list[str]:
+    """跨段落合并：prev 段不结句 + 下段以小写/digit/标点/HTML 开头 → 合并。
+    <!-- PAGE N --> 标记保留在合并位置但不阻断合并。"""
+    # ... 标准实现见 scripts/structured_to_md.py ...
+```
+
+**关键约束**：
+- 页边界 `<!-- PAGE N -->` 标记**跨过**继续匹配，不算阻断
+- HTML/heading 行（`<div`, `## `, `[^fN]:`, `<!--` 等）算阻断
+- 数字续接 OK，但不能是 `\d+\.\s` 开头（那是节号，是新段落）
+
+#### 2.7.4 删除 scripture-box 上方的重复 H2 markdown 标题
+
+**症状**：scripture-box 上方多出一个 `## JOHN N:N-N` markdown H2，与 box 内 `.scripture-ref` banner 内容重复，浏览器里同一引用上下连看两遍。
+
+**修复**：scripture-section header emit 改为**隐藏的 anchor h2**，供 verse-nav JS 用，浏览器不可见：
+
+```python
+sec_m = SCRIPTURE_SECTION_RE.match(...)
+if sec_m:
+    flush_scripture()
+    ages_code = sec_m.group(1)
+    ref_text = collapse_spaced_caps(sec_m.group(2).strip())
+    anchor_id = re.sub(r'[^a-z0-9-]+', '-', ref_text.lower()).strip('-')
+    out.append('')
+    out.append(f'<h2 class="scripture-anchor" id="{anchor_id}" '
+               f'data-ref="{ref_text}" style="display:none">{ref_text}</h2>')
+    out.append('')
+    scripture_ref = _build_ref_banner(ages_code, ref_text)
+    in_scripture = True
+    in_commentary_section = True
+    scripture_lines = []
+```
+
+**绝不再 emit Markdown `## BOOK Ch:V-V'`**——`.scripture-ref` banner 内的 `JOHN 1:1-5` 已经承担显示职责。
+
+#### 2.7.5 scripture-box 触发条件：单节也要识别
+
+**症状**：JOHN 1:14（单节经文）退化为纯文本段，没有 scripture-box；其他 10 段多节经文都有 box。
+
+**根因**：之前要求 `anchor_count >= 2`（多节才触发），单节匹配失败。
+
+**修复**：放宽到 `anchor_count >= 1 + starts_with_verse + no_leading_italic` 三条件：
+
+```python
+if in_scripture:
+    stripped_content = content.lstrip()
+    anchor_count = len(re.findall(r'(?:^|\s)\d+\s*\.\s', stripped_content))
+    starts_with_verse = bool(re.match(r'^\d+\s*\.\s+[A-Z]', stripped_content))
+    has_leading_italic = '<verse>' in stripped_content[:30]
+    if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
+        body = format_inline(content)
+        body = apply_verse_styling(body, red=False)  # 经文段无红色短语
+        scripture_lines.append(body)
+        flush_scripture()
+        continue
+    else:
+        in_scripture = False  # 不是经文段，往下走普通 body
+```
+
+**为什么三条件缺一不可**：
+- `anchor_count >= 1`：有节号
+- `starts_with_verse`：以 `N. Capital` 开头（commentary 也以 N. 开头，但后跟 `<verse>`）
+- `no_leading_italic`：不含开头 `<verse>`（commentary 段是 `1. <verse>VersePhrase</verse>. body...`，会有）
+
+**别忘了**：`[CENTERED]` 标签在 `in_scripture` 状态下也要路由到 scripture-box（首段经文有可能因为「轻微缩进 x0=36, 双边距对称」被误判为 CENTERED）：
+
+```python
+elif tag == 'CENTERED':
+    if in_scripture:
+        # 同样三条件，命中就走 scripture-box
+        ...
+        if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
+            scripture_lines.append(body)
+            flush_scripture()
+            continue
+    # 否则按真居中段输出
+    out.append(f'<p style="text-align:center">{cleaned}</p>')
+```
+
+#### 2.7.6 居中扉页/题献 title-block 整体识别（不能 H1/H2/p 混合输出）
+
+**症状**：PDF 扉页"TO THE RIGHT HONORABLE / THE LORD ROBT. DVDLEY / EARLE OF LEYCESTER / BARON OF DENBIGH... / KNIGHT OF THE NOBLE ORDER... / ..."这种连续居中行族，被肢解成「BODY + H1 + H2 + 一堆左对齐 BODY」混合输出。
+
+**根因**：dominant-class 仅按字号分类（24pt→H1, 16pt→H2），不识别居中信号；其余 9pt 行按 BODY 输出，对齐丢失。
+
+**修复**：extractor 加 `[CENTERED]` 标签：
+
+```python
+# 在 phil_reconstruct_page 里，对每个 block：
+bx0, _, bx1, _ = block['bbox']
+lm = bx0
+rm = page_w - bx1
+is_centered_block_geom = (
+    abs(lm - rm) < 8   # 对称
+    and lm > 30        # 左边距足够（排除 body 的 lm≈26）
+    and rm > 30        # 右边距足够
+)
+# 内容信号排除：末尾是 `(` 或 `,` 的是 justify-body 末段（不是居中）
+block_text_preview = ''.join(
+    s['text'] for line in block['lines']
+    for s in line['spans'] if s['text'].strip()).strip()
+ends_with_continuation = bool(re.search(r'[(,]\s*$', block_text_preview))
+is_centered_block = is_centered_block_geom and not ends_with_continuation
+
+# 然后在 line_class 判定后：
+if is_centered_block and line_class == 'BODY':
+    line_class = 'CENTERED'
+# 不要覆盖 H1/H2/FOOTNOTE/VERSE（它们已有独立语义）
+```
+
+**converter**：
+
+```python
+elif tag == 'CENTERED':
+    if in_scripture:  # 见 §2.7.5 经文段优先
+        ...
+    cleaned = collapse_spaced_caps(format_inline(content))
+    cleaned = re.sub(r'</?verse>', '', cleaned)
+    if cleaned.strip():
+        out.append(f'<p style="text-align:center">{cleaned}</p>')
+```
+
+**重要**：`is_centered_block` 必须**双边距对称 + 双边距 > 30px**。仅 `cx ≈ page_cx` 不够——body 段也是 cx 居中但 lm/rm ≈ 25px 而已。仅 `block_w < 75% page_w` 不够——BARON 那一行宽 83% 也是居中。
+
+#### 2.7.7 扉页 PDF p0/p1 必须纳入 preface（不能从 "THE TRANSLATOR" 开始切）
+
+**症状**：preface.md 直接从 `# THE TRANSLATOR'S PREFACE` 开始，PDF 头两整页（AGES DIGITAL LIBRARY 扉页 + 译者署名页 `BY THE REV. WILLIAM PRINGLE`）完全丢失。
+
+**修复**：`publish_<book>_en.py` 的 `find_chapter_starts`：
+
+```python
+def find_chapter_starts(lines: list[str]) -> dict[str, int]:
+    starts: dict[str, int] = {}
+    for i, line in enumerate(lines):
+        m = re.match(r'^# CHAPTER (\d+)\s*$', line)
+        if m and m.group(1) not in starts:
+            starts[m.group(1)] = i
+    starts['preface'] = 0   # 不要按 "THE TRANSLATOR" 切，从第 0 行开始包全部前置内容
+    return starts
+```
+
+#### 2.7.8 collapse_spaced_caps 的 'S WORD 间空格被吞（标题缺空格）
+
+**症状**：`# THE TRANSLATOR'SPREFACE`、`# THE AUTHOR'SEPISTLE DEDICATORY` —— `'S` 与下一词之间空格丢失。
+
+**根因**：第二趟正则 `\b([A-Z]) ([A-Z]+)` 把 "S PREFACE" 当成 "J OHN" 同类合并了。
+
+**修复**：负向先行排除 `'S WORD`：
+
+```python
+def collapse_spaced_caps(text: str) -> str:
+    def _glue(m): return ''.join(m.group(0).split())
+    text = re.sub(r'\b(?:[A-Za-z] ){2,}[A-Za-z]\b', _glue, text)
+    prev = None
+    while prev != text:
+        prev = text
+        # 关键：(?<!['‘’]) 排除 'S [WORD] 间的真实空格
+        text = re.sub(r"(?<!['‘’])\b([A-Z]) ([A-Z]+)\b", r'\1\2', text)
+    return text
+```
+
+#### 2.7.9 Ages elision（"kat j" → "κατ'"）
+
+**症状**：希腊文 `kat j ἐξοχήν`（κατ' ἐξοχήν 的 Ages 转写）前半 `kat j` 未转 Unicode（因为 `kat` 没有重音符，主 regex 不匹配）。
+
+**修复**：`convert_ages_greek` 末尾加 elision 处理：
+
+```python
+_AGES_ELISION = {
+    'kat': 'κατ', 'met': 'μετ', 'ap': 'ἀπ', 'ep': 'ἐπ',
+    'di': 'δι', 'par': 'παρ', 'an': 'ἀν', 'ouk': 'οὐκ',
+}
+
+def convert_ages_greek(text):
+    text = text.replace('<verse>', '\x00VS\x00').replace('</verse>', '\x00VE\x00')
+    text = _AGES_GR_PAT.sub(_repl, text)
+    # 处理 `kat j <greek-word>` → `κατ' <greek-word>`
+    def _elision(m):
+        return _AGES_ELISION.get(m.group(1), m.group(1)) + "'"
+    text = re.sub(
+        r'\b(' + '|'.join(_AGES_ELISION) + r') j(?=\s+[ἀ-῿Ͱ-Ͽ])',
+        _elision, text)
+    return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
+```
+
+#### 2.7.10 脚注 ref 带字母后缀（f29A）
+
+**症状**：`f29A` 类 ref 作为字面文字混进正文，没变成 `[^f29A]`。
+
+**根因**：裸 fn 正则 `f(\d{1,3})\b` 不接受数字后跟字母。
+
+**修复**：
+
+```python
+text = re.sub(r'(?<=[\s\.,;:\)\!\?])f(\d{1,3}[A-Z]?)\b', r'[^f\1]', text)
+```
+
+#### 2.7.11 inline cross-ref 折入 prior 段落的过滤器要精确
+
+**症状**：`<verse>are washed away</verse>, (` 段落后面的 `<470520>2 Corinthians 5:20)` 没折进去，反而独立成段。
+
+**根因**：折入前过滤「prior 段是否以 HTML 开头」用了 `out[j].startswith('<')` 太宽，凡是开头是 `<span>`/`<verse>` 的段也被拒绝。
+
+**修复**：把过滤器改成「仅拒绝真正的块级前缀」：
+
+```python
+BLOCK_PREFIXES = ('#', '[^', '>', '<!--', '<div', '<h1', '<h2', '<h3', '<h4',
+                  '<p ', '<p>', '<table', '<tr', '<td', '<th', '<thead',
+                  '<tbody', '</div', '</p', '</table', '---', '|', '{')
+if j >= 0 and not out[j].lstrip().startswith(BLOCK_PREFIXES):
+    out[j] = out[j].rstrip() + ' ' + body  # 可以折入 <span>/<verse>/**N.** 起首段
+else:
+    out.append(body)  # 块级前缀才独立
+```
+
+#### 2.7.12 红色斜体由 in_commentary_section 状态决定（不是「段首是否 N.」）
+
+**症状（修复后）**：注释段内**所有** italic（不只是段首引语短语）都该红；preface 内的书名/署名/献辞 italic 不该红。
+
+**正确状态机**：
+
+```python
+in_commentary_section = False  # 初始 False（preface 区）
+# H1 (CHAPTER N) → in_commentary_section = False  # 章首重置
+# 第一个 scripture-section header 后 → in_commentary_section = True
+# 后续所有 [BODY] / [VERSE] / [CENTERED] / FOOTNOTE-inline → apply_verse_styling(body, red=in_commentary_section)
+# 经文段（scripture-box 内）→ apply_verse_styling(body, red=False)（书名引用不该红）
+```
+
+**反例**：之前用 `is_commentary_para = bool(re.match(r'^\s*\d+\s*\.\s', content))`——仅段首是 N. 才染红。结果一节注释里第二段、第三段（不以 N. 开头的延续段）的 italic 全是普通色，与 phil-en 不一致。
+
+#### 2.7.13 SEV-3 后处理（converter 末尾收尾）
+
+```python
+for k, line in enumerate(out):
+    if not line.strip(): continue
+    # `( Book N:N)` 修整：Ages 代码剥离后留下的左空格
+    line = re.sub(r'\(\s+([A-Z1-3])', r'(\1', line)
+    # 相邻 italic 合并：`*X* *Y*` → `*X Y*`（不动 *X *…* Y* 这类嵌套）
+    prev = None
+    while prev != line:
+        prev = line
+        line = re.sub(r'(?<!\*)\*([^*\n<]+?)\* \*(?!\*)([^*\n<]+?)\*(?!\*)',
+                      r'*\1 \2*', line)
+    out[k] = line
+```
+
+#### 2.7 小结：拿到新 Ages 单语英文 PDF 的执行清单
+
+1. **审计先行**（§2.7.1）：派 sub-agent 对照 PDF + 现有产物列 SEV-1/2/3 清单
+2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED（§2.7.6）、保留 italic 包 `<verse>`（§2.6）
+3. **转换**：
+   - section header → 隐藏 anchor h2（§2.7.4）
+   - scripture-box 触发条件三件套（§2.7.5）
+   - `[CENTERED]` 路由（§2.7.6 + §2.7.5 in_scripture 优先）
+   - 状态机 `in_commentary_section` 控制红色（§2.7.12）
+   - Greek 转换含 `<verse>` 占位符（§3）+ elision（§2.7.9）
+   - 裸 fn 正则带字母后缀（§2.7.10）
+   - `collapse_spaced_caps` 负向先行（§2.7.8）
+   - inline cross-ref 折入过滤器（§2.7.11）
+   - 文件末尾：`_merge_paragraph_fragments`（§2.7.3）+ SEV-3 后处理（§2.7.13）
+4. **发布**：`publish_<book>_en.py` 的 preface 起点 = 0（§2.7.7）
+5. **再审计**：发布后再跑一遍 sub-agent，确认 SEV-1 全部归零（不只是机器特征数达标，要 PDF 视觉对照）
+
+**目标**：新 Ages 单语英文 PDF 一次性走完上面流程，第一版输出就接近 phil-en 视觉质量，不再「修一个用户骂一次」。
+
 ### 3. 希腊文：必须转换为 Unicode
 
 Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 ASCII 转写（如 `ejmo>i`）而非 Unicode（`ἐμοί`）。输出到 MD 前**必须**调用 `convert_ages_greek()` 转换，否则网页显示乱码。
@@ -1396,12 +1751,14 @@ def bold_leading_verse_num(text):
 6. 发布后再运行**发布质检 Checklist**，逐项排查
 7. **🔴 P0 视觉对照（绝不能跳过）**：从已发布的同格式英文书卷（如 `calvin/philippians-en/`）拉 ch1 来对照。grep 经文方框/红色短语/脚注引用/bold 节号/分页标记 5 类特征，新书每类计数必须 ≥ 同基准书的同类计数；任一类为 0 而基准 > 0，**必有遗漏**，回阶段 2 补功能（多半是 extractor 漏 italic 标记、或 converter 漏 scripture-box 包裹）。详细命令见"发布质检"小节顶部 §🔴。
 8. **🔴 P0 PDF 视觉还原（连续翻车两次，绝不能跳过）**：上一步只检查「特征是否存在」，这一步检查「视觉是否与 PDF 一致」。打开 PDF 任意经段所在页放到 200%，截图作为基准；浏览器打开同段，按 §2.5b "PDF 视觉信号清单" 逐项核对边框/底色/banner/Ages 代码/卷名字形/字体族；任何肉眼可见差异 → 回 §2.5b 写 `[data-book="..."]` scoped CSS 调到吻合。
+9. **🔴 P0 段落/标题/居中/页码/脚注审计（连续翻车三次，绝不能跳过）**：派 sub-agent 把 PDF 第 1 章 + preface 与你的 .md 输出逐段对照，按 SEV-1/2/3 列差异清单。参考 §2.7.1 审计范围与 §2.7.2-2.7.13 的 12 个具体踩坑类别。**前 3 个步骤通过都不够**，必须有这一步的「逐段 PDF↔输出对照」清单且 SEV-1 全部归零，才算真完成。
 
 **反例（曾经踩过的）**：
 - john-en 第一版仅看「H1 数、orphan 引用数」就提交，完全没有 scripture-box / 红色短语，浏览器看起来与 phil-en 视觉差异巨大。用户一句「看下腓立比书英文是怎么处理的」就揭穿了。
 - john-en 第二版补齐 scripture-box 和红色短语后又提交，但通用 `.scripture-box` 是灰边白底，PDF 实物是双蓝边 + 浅黄底 + 灰色 banner + 暗红 Ages 代码 + 小型大写卷名。用户截图对照后说「改成严格一模一样」。**机器对照过 ≠ 视觉对照过。**
+- john-en 第三版改完 CSS 又提交，结果用户审计：页码残留 50 处 / 段落碎片化 28 处 / 重复 H2 11 处 / JOHN 1:14 漏 box / 居中扉页肢解 12 行 / 扉页 p0/p1 完全缺失 / 'S 词间空格丢失 / `kat j` Ages 残留 / `( Book` 多空格 / 相邻 italic 未合并——共 13 类、100+ 处问题。用户："我已经无语了。" **特征数对 + 视觉对都不够，段落级语义对照才算完整。**
 
-**永远：先 grep 同类特征数，再 PDF 视觉并排对照，再宣布完成。**
+**永远：先 grep 同类特征数（步骤 7）→ PDF 视觉并排对照（步骤 8）→ sub-agent 逐段语义审计（步骤 9）→ 再宣布完成。**
 
 ---
 
