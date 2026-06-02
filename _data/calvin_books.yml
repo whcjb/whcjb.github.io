@@ -156,6 +156,9 @@ english:
   - id: acts-en
     name: Acts
     chapters: 28
+  - id: john-en
+    name: John
+    chapters: 21
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16

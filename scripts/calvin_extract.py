@@ -186,6 +186,15 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin_filibi.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/phil/calvin_filibi_structured.txt'),
     },
+    'john': {
+        # Ages Digital Library single-column English (Pringle translation, 1998 typeset).
+        # Diagnosed 2026-06: 410×626 page; single x0 peak ≈ 30; 878 <NNNNNN> Ages
+        # scripture-ref markers; 21 chapters; "THE ARGUMENT" → "CHAPTER 1" structure.
+        # Reusing ages_phil format as closest match (single-col Ages with <NNNNNN>).
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_JOHN.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/john/calvin_john_structured.txt'),
+    },
 }
 
 
