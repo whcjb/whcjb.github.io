@@ -77,6 +77,7 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | navy 引文 `<p>...</p>` 后单独跟 `<span>(Genesis 1:1)</span>` | bible-ref 跨块没合进 navy 居中段 (§M2) | FOOTNOTE inline-cross-ref 路径加 navy quote 特例（注入到 `</p>` 前）|
 | 全大写短语 ("ON THE SON" / "OF MAN,") 跨段被拆 | 同 style span 跨 block + 大写起首被 merge 拒 (§M3) | `_starts_with_continuation` 加同 sty 续接 + 全大写续接两信号 |
 | `[^fN]: </span> "body..."` 字面 `</span>` 残留 | extractor 给 ftN 上色 + normalize_back_footnotes 切错 boundary (§M4) | structured_to_md 剥 `<sty>ftN</sty>` wrap；publish 脚本剥 `<span>ftN</span>` + body 头部 `</span>` |
+| 章节中部出现 "signifies Grace." / "Jehohannan, the reader..." / "WHAT WAS MADE was..." 孤儿段 | 后部 fn def 跨多个 PyMuPDF block，BODY/CENTERED 续接被当独立段 (§M5) | converter 加 `pending_fn_idx` 状态机：emit `[^fN]:` 后 arm，下个 BODY/CENTERED append；H1/下个 fn def 清除 |
 | 中文翻译 raw 没 chmod 444 | 违反保留规则 | 立刻 `chmod 444` |
 
 ---

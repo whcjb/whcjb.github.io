@@ -276,6 +276,52 @@ body_part = re.sub(r'^(?:</span>|</sty>|\s)+', '', body_part)
 
 ---
 
+## M5. 脚注 body 续接段散落在章节中部（"这些内容是哪里来的"）
+
+**Trigger**：章节中部出现孤儿段落（"signifies Grace.", "*Jehohannan*, the reader may consult...", "illustrated in the *Institutes*...", "WHAT WAS MADE was in him life..."）—— 看起来像背景音乐插播。grep 命中诸如 `^signifies Grace\.$` / `^disoyent` / `^illustrated in` 等独立行。
+
+**根因**：Ages PDF 后部 footnote section 中，每个 fn def 经常跨多个 PyMuPDF block：
+
+```
+[FOOTNOTE] <sty>ftN</sty> "first line of fn body"
+[BODY]   "continuation rest of fn body"
+[CENTERED] "centered continuation (e.g. WHAT WAS MADE...)"
+[FOOTNOTE] <sty>ft<N+1></sty> ...
+```
+
+converter 把每个 `[BODY]` / `[CENTERED]` 当独立段 emit，孤儿段落散落在 ch.md 文件中（位置取决于 publish 脚本如何处理 fn section）。即使紧跟 `[^fN]:` 之后，kramdown 也不认为这些是 fn 续接（kramdown 续接需要四空格缩进或同行连续，不能跨空行）。
+
+**Fix**：converter 加 `pending_fn_idx` 状态机：
+
+```python
+pending_fn_idx: int | None = None
+
+# emit fn def 时：
+out.append(f'[^{label}]: {body}')
+out.append('')
+pending_fn_idx = len(out) - 2
+
+# BODY 分支首段（在 navy/scripture-passage 检测之前）：
+if pending_fn_idx is not None:
+    cont_body = format_inline(content)
+    cont_body = apply_verse_styling(cont_body)
+    cont_body = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cont_body)
+    cont_body = re.sub(r'\s+', ' ', cont_body).strip()
+    if cont_body:
+        out[pending_fn_idx] = out[pending_fn_idx].rstrip() + ' ' + cont_body
+    i += 1
+    continue
+
+# CENTERED 分支同理（在 in_scripture 检测之前）
+
+# 清除状态：
+# H1 / CENTERED_H1 / CENTERED_H2 / 下一个 fn def 时 pending_fn_idx = None
+```
+
+**通用规则**：Ages PDF 后部 footnote def 跨 PyMuPDF block 是常态（fn 长则跨多块）。任何 emit 完 `[^fN]:` 后必须 arm 续接状态机，把后续 BODY/CENTERED 续接合并；只有遇到下一个 fn def 或章节标题才结束。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
