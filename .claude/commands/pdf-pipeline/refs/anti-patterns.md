@@ -193,6 +193,33 @@ if ccel_harmony_is_footnote(b, cfg):
 
 ---
 
+## M2. navy 引文跨块拆成两段（quote 与 bible-ref 分离）
+
+**Trigger**：网页上某条 `<p style="text-align:center; color:#000080">` 引文段后，bible-ref `(BookName N:M)` 单独成独立段且未居中、未对齐到上段右侧。grep 出现连续 `<p ...color:#000080...>...</p>\s*<span style="color:#000080">[A-Z][a-z]+\s+\d+:\d+\)</span>` 模式。
+
+**根因**：PyMuPDF 把 navy 引文拆成两个 block —— 第一个 [BODY] 块含 quote 文字 + 开括号 `(`，第二个 [FOOTNOTE] 含 Ages 跨引用代码 `<NNNNNN>` + bible book name + verse range + 闭括号 `)`。converter 第一段 emit 为居中 `<p>`，第二段（FOOTNOTE inline cross-ref）试图 fold 进 prior 但被 BLOCK_PREFIXES (`<p `) 拦下。
+
+**Fix**：FOOTNOTE inline cross-ref 路径增加 navy quote special case ——
+
+```python
+prior = out[j] if j >= 0 else ''
+is_navy_quote_p = bool(re.match(r'\s*<p\s+style="[^"]*color:#000080', prior))
+if is_navy_quote_p and prior.rstrip().endswith('</p>'):
+    before_close = re.sub(r'\s*</p>\s*$', '', out[j])
+    # Peek past trailing </span>/</sty>/whitespace to find last visible char
+    peek = re.sub(r'(?:</span>|</sty>|\s)+$', '', before_close.rstrip())
+    sep = '' if peek.endswith(('(', '[')) else ' '
+    body_styled = body if '<span' in body else f'<span style="color:#000080">{body}</span>'
+    out[j] = before_close.rstrip() + sep + body_styled + '</p>'
+```
+
+**关键点**：
+- peek 末位前必须剥 `</span>/</sty>` 才能看到真实最后字符（否则永远是 `>`）
+- 注入 body 若无 `<span>` 须自动包 navy 色，否则文字回到默认色
+- `(`/`[` 结尾不加空格，其他加单空格
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
