@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: romans-en
 book_name: "Calvin on Romans"
 title: "Preface"
-date: 2026-06-02 16:03
+date: 2026-06-02 16:11
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -17,7 +17,7 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE EPISTLE TO THE ROMANS
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="text-align:right;" markdown="1">*by John Calvin*</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 

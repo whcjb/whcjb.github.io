@@ -7,7 +7,7 @@
 
 # COMMENTARY ON THE EPISTLE TO THE ROMANS
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="text-align:right;" markdown="1">*by John Calvin*</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
 
@@ -491,7 +491,7 @@ The madness then here noticed, is, that all attempted to make for themselves an 
 
 <p style="margin-left:2em;" markdown="1">**31.** Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.</p>
 
-<p style="margin-left:2em;" markdown="1">**32.** Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.</p>
+<p style="text-align:right;" markdown="1">32. Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.</p>
 
 **24.** <span style="color:#800000">*God therefore gave them up,*</span> etc. As impiety is a hidden evil, lest they should still find an evasion, he shows, by a more palpable demonstration, that, they cannot escape, but must be held fast by a just condemnation, since such fruits have followed this impiety as cannot be viewed otherwise than manifest evidences of the Lord’s wrath. As the Lord’s wrath is always just, it follows, that what has exposed them to condemnation, must have preceded it. By these evidences then he now proves the apostasy and defection of men: for the Lord indeed does so punish those, who alienate them selves from his goodness, that he casts them headlong into various courses which lead to perdition and ruin. And by comparing the vices, of which they were guilty, with the impiety, of which he had before accused them, he shows that they suffered punishment through the just judgment of God: for since nothing is dearer to us than our own honor, it is extreme blindness, when we fear not to bring disgrace on ourselves; and it is the most suitable punishment for a reproach done to the Divine Majesty. This is the very thing which he treats of to the end of the chapter; but he handles it in various ways, for the subject required ample illustration.
 
@@ -2343,7 +2343,7 @@ That they might at the same time remember whence this invincible power proceeds,
 
 <p style="margin-left:2em;" markdown="1">**38.** Persuasus enim sum, quod neque mors, neque vita, <span style="color:#800000">[^f276]</span> neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.</p>
 
-<p style="margin-left:2em;" markdown="1">**39.** Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.</p>
+<p style="text-align:right;" markdown="1">39. Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.</p>
 
 **38.** He is now carried away into hyperbolic expressions, that he might confirm us more fully in those things which are to be experienced. Whatever, he says, there is in life or in death, which seems capable of tearing us away from God, shall effect nothing; nay, the very angels, were they to attempt to overturn this foundation, shall do us no harm. It is no objection, that angels are ministering spirits, appointed for the salvation of the elect, (Hebrews 1:14:) for Paul reasons here on what is impossible, as he does in Galatians 1:8; and we may hence observe, that all things ought to be deemed of no worth, compared with the glory of God, since it is lawful to dishonor even angels in vindicating his truth. <span style="color:#800000">[^f277]</span>
 
@@ -3948,7 +3948,7 @@ By adding <span style="color:#800000">*that I may come to you*</span>, he intima
 
 <p style="margin-left:2em;" markdown="1">**15.** Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.</p>
 
-<p style="margin-left:2em;" markdown="1">**16.** Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.</p>
+<p style="text-align:right;" markdown="1">16. Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.</p>
 
 **1.** <span style="color:#800000">*I commend to you,*</span> *etc.* The greater part of this chapter is taken up with salutations; and as they contain no difficulties, it would be useless to dwell long on them. I shall only touch on those things which require some light by an explanation.
 

@@ -2550,17 +2550,29 @@ def phil_reconstruct_page(page, page_num=None):
             # Indented body: block lm >= 35 (significantly indented from body
             # x≈26) AND not centered AND no Latin column → outline subitem
             # OR short signature (e.g. "J. O." / "W.P. AUCHTERARDER")
-            # OR italic citation paragraph (PDF indented italic quote).
-            # Three triggers:
-            #   (a) starts with `N.` / `IVX.` / `l.I.i.` outline item
-            #   (b) very narrow block (< 55% page width) + non-centered + indented
-            #   (c) all-italic block (PDF citation/quote)
+            # OR italic citation paragraph (PDF indented italic quote)
+            # OR right-aligned narrow byline (lm >> rm, e.g. "by John Calvin"
+            # on PDF title page at x=278-350 page_w=410).
             block_lm = block['bbox'][0]
             block_w_local = block['bbox'][2] - block['bbox'][0]
             is_outline_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
             is_narrow_indented = block_w_local < page_w * 0.55
+            # Right-aligned: lm >> rm (lm > 2*rm) AND narrow + indented
+            is_right_aligned = (
+                block_lm > 100  # significantly past page center
+                and lm > rm * 1.5
+                and block_w_local < page_w * 0.5
+                and not is_centered_block
+                and line_class == 'BODY'
+            )
+            if is_right_aligned:
+                line_class = 'RIGHT'
+                continue_processing = False
+            else:
+                continue_processing = True
             is_indented_subitem = (
-                block_lm >= 35
+                continue_processing
+                and block_lm >= 35
                 and not is_centered_block
                 and line_class == 'BODY'
                 and rm > 20

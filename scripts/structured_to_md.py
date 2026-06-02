@@ -763,6 +763,16 @@ def convert(structured_path: Path, out_path: Path) -> None:
             out.append('')
             i += 1
             continue
+        elif tag == 'RIGHT':
+            # PDF right-aligned narrow byline (e.g. "by John Calvin" at x=278-350)
+            pending_fn_idx = None
+            body = format_inline(content)
+            body = apply_verse_styling(body)
+            out.append('')
+            out.append(f'<p style="text-align:right;" markdown="1">{body}</p>')
+            out.append('')
+            i += 1
+            continue
         elif tag == 'CENTERED':
             # Back-section fn continuation: append to pending [^fN]: line
             if pending_fn_idx is not None:
