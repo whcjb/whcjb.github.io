@@ -28,8 +28,25 @@ python scripts/calvin_extract.py <volume>
 | `1cor-vol1`| 哥林多前书卷一 | Ages 双语 | `calvin_raw/1cor-vol1/calvin_1cor-vol1.md` |
 | `1cor-vol2`| 哥林多前后书卷二 | Ages 双语 | `calvin_raw/1cor-vol2/calvin_corinth-vol2.md` |
 | `phil`     | 腓立比书 | Ages 中间格式 | `calvin_raw/phil/calvin_filibi_structured.txt` |
+| `john`     | 约翰福音 | Ages 单语英文 | `calvin_raw/john/calvin_john_structured.txt` |
 
 **新增书卷时**：在 `VOLUME_CONFIGS` 的 `VOLUMES` dict 中增加条目，不得新建独立脚本。若新书卷格式与现有六种 format（`ccel_harmony`、`ccel_parallel`、`ccel_acts`、`ages_heb`、`ages_corinth`、`ages_phil`）均不同，在 `scripts/calvin_extract.py` 中新增格式处理函数并注册到 `DISPATCH`。
+
+### 中间格式 → 发布 MD 的通用转换器
+
+`ages_phil`、`ages_heb`、`ages_corinth` 三种 Ages 格式 extractor 输出的中间格式（`[H1]/[H2]/[BODY]/[FOOTNOTE]/[VERSE]/[TABLE_LEFT]/[TABLE_RIGHT]/<verse>...</verse>` 标签）统一用 `scripts/structured_to_md.py` 转换为 kramdown-ready MD：
+
+```bash
+python scripts/structured_to_md.py <structured.txt> <output.md>
+```
+
+新格式（如 john 的 Ages 单语英文）若与现有 extractor 公用 `ages_phil` 函数，**直接复用这个通用 converter**，无需新建。Converter 同时处理：
+
+- 经文段落自动识别（section-header 紧邻 + 节号锚点 ≥ 2 → scripture-box）
+- `<verse>X</verse>` → 红色斜体（注释段）/ 普通斜体（前言段）
+- Ages 希腊文转换（带 `<verse>` 标签保护占位符）
+- 脚注定义/引用规范化（`Ft18` → `f18`）
+- 跨页 BODY 拼接、章节边界 flush
 
 ## 发布到网站（publish）
 
@@ -363,6 +380,113 @@ Ages Digital Library PDF 中表格头有两种编码形式，均需识别：
 - **有引用代码**：`<524104>PHILIPPIANS 1:1-6`，以 `<NNNNNN>` 开头，用 `re.match` 检测
 - **无引用代码**：`PHILIPPIANS 2:1-4`，字体 ≥14pt、首行 x>80（居中），用 `is_plain_scripture_header_block()` 检测
 
+### 2.5 Ages 单语英文 PDF（如约翰福音 Pringle 译本）：经文段必须以 scripture-box 渲染
+
+**核心区别**：腓立比书/希伯来书等 Ages PDF 是「英文+拉丁文双列」，经文段用 2 列 `<table class="calvin-scripture">` 还原；约翰福音 Pringle 译本是「单列英文」，经文段必须用 `<div class="scripture-box">` 还原。**绝不能因为「没有拉丁列」就把经文段当普通正文段落输出**——这是 john-en 第一版漏掉的最大缺陷。
+
+**几何识别（PDF 内）**：
+- 页面 ≈ 410×626pt（窄页）
+- 注释正文 block：x0 ≈ 26，宽到右边距 ≈ 380
+- 经文段 block：x0 ≈ 40（轻微内缩），紧接在居中 `<NNNNNN>BOOK Ch:V-V'` header（x0 > 80）之后
+- 居中段落（如 `COMMENTARY ON`、`ACCORDING TO`）：x0 居中，单行
+
+**正确产物结构（每个经段）**：
+
+```markdown
+## JOHN 1:1-5
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:1-5</p>
+
+<strong>1.</strong> In the beginning was the Speech... <strong>2.</strong> He was in the beginning with God. ...
+
+</div>
+```
+
+要点：
+- 外层 `<div class="scripture-box" markdown="1">` —— `markdown="1"` 让 kramdown 仍处理内部 markdown（脚注引用、链接等）
+- 居中 `<p class="scripture-ref">` 重复显示卷名+章节（与 phil-en 双列表的 `<th colspan>` 视觉一致）
+- 节号用 `<strong>N.</strong>` 而非 `**N.**` —— scripture-box 内是一整个 `<p>`，markdown 加粗会被 kramdown 误识为段间空白；用 HTML strong 直出最稳
+- 经文段必须独立成 paragraph，前后空行，`</div>` 前留空行（kramdown 才会闭合 paragraph 并退出 markdown 处理）
+
+**检测/触发规则（converter 状态机）**：
+1. 当 emit `<NNNNNN>BOOK Ch:V-V'` 形式的 section header 时，**置位 `in_scripture = True; scripture_lines = []`**
+2. 下一个 `[BODY]` 块：用 `len(re.findall(r'(?:^|\s)\d+\s*\.\s', content))` 数节号锚点
+   - **≥ 2 个锚点** → 视为经文段，丢进 scripture-box，emit 后清除状态
+   - **< 2 个锚点** → 不是经文段（可能是段间评论），关闭 in_scripture，按普通 body emit
+3. 遇到 PAGE / 下一个 section header / H1 / H2 / 文件末尾 → 强制 flush 已积累的 scripture-box
+
+**陷阱**：纯几何阈值（x0 ∈ [30, 60]）会误判太多。john PDF 实测「indented body」≈ 333 个块，但真经文段只有 ~190 个；前言里的签名（"W.P. AUCHTERARDER"）、献辞落款、缩进引文都同样落在 x0 ≈ 40。**必须用「section header 紧邻」+「节号锚点 ≥ 2」双重门控**。这是 §0.3「几何信号必须搭配内容信号」的具体应用。
+
+### 2.6 Calvin 注释红色斜体经文短语：约定与实现
+
+**对照样本**：`calvin/philippians-en/1.md` 第 32 行：
+
+```markdown
+**1.** <span style="color:#800000">*Paul and Timotheus, servants of Jesus Christ*</span> . While Paul is accustomed, in the inscription of his epistles, to employ titles of distinction...
+```
+
+每个注释段以 `**N.** ` 开头，紧跟一段斜体经文短语（注释正在解释的那部分原文），渲染为**酒红色 `#800000` + 斜体**。这是 Calvin 注释的视觉惯例，**所有英文 Calvin 注释（phil/heb/1cor/john/2cor/...）都必须沿用**。
+
+**PDF 原始信号**：经文短语在 PDF 中是 italic（PyMuPDF `flags & 2 == 1`），但「italic」≠「红色短语」——前言里的书名、署名、献辞段也用 italic，不能涂红。
+
+**两阶段实现（推荐）**：
+
+```python
+# 阶段 1：extractor 保留斜体跨度（含相邻 span 合并）
+def _render_spans_with_italic(spans):
+    parts, italic_open = [], False
+    for s in spans:
+        text = s['text']
+        if not text:
+            continue
+        is_italic = bool(s['flags'] & 2)
+        if is_italic and not italic_open:
+            parts.append('<verse>'); italic_open = True
+        elif not is_italic and italic_open:
+            parts.append('</verse>'); italic_open = False
+        parts.append(text)
+    if italic_open:
+        parts.append('</verse>')
+    return ''.join(parts)
+```
+
+```python
+# 阶段 2：converter 按段落上下文决定染色
+def apply_verse_styling(body: str, red: bool) -> str:
+    """body 内的 <verse>X</verse>:
+       red=True  → <span style="color:#800000">*X*</span>  （注释段引语）
+       red=False → *X*                                       （前言书名、献辞斜体）"""
+    if red:
+        body = re.sub(r'<verse>(.*?)</verse>',
+                      lambda m: f'<span style="color:#800000">*{m.group(1).strip()}*</span>',
+                      body, flags=re.DOTALL)
+        # 合并相邻红色 span（仅由空白分隔）
+        body = re.sub(r'\*</span>(\s+)<span style="color:#800000">\*', r'\1', body)
+    else:
+        body = re.sub(r'<verse>(.*?)</verse>',
+                      lambda m: f'*{m.group(1).strip()}*' if len(m.group(1).strip()) >= 2 else m.group(1).strip(),
+                      body, flags=re.DOTALL)
+    return body
+
+# 调用点：用「段落是否以 `N. ` 开头」决定 red 参数
+is_commentary_para = bool(re.match(r'^\s*\d+\s*\.\s', content))
+body = apply_verse_styling(body, red=is_commentary_para)
+```
+
+**为什么不在 extractor 直接出红色 span**：注释里的红色短语和前言里的书名都是 PDF italic，extractor 无法区分；只有 converter 在段落上下文里（首字符是否为节号）才能判断。这是 §0.2「过滤内化到 emit、调用方按上下文挑策略」的另一面应用。
+
+**Greek 转换注意**：`<verse>` 内联标签里若含希腊文 ASCII 转写（如 `<verse>Σπεεχ</verse>`），`convert_ages_greek` 会误把 `>` 当作锐音符吃掉标签。务必在 Greek 转换前**用占位符隔离**：
+
+```python
+def convert_ages_greek(text):
+    text = text.replace('<verse>', '\x00VS\x00').replace('</verse>', '\x00VE\x00')
+    text = _AGES_GR_PAT.sub(_repl, text)
+    return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
+```
+
+这是 §3 的延伸：HTML 标签保护**不止针对 `<table>`**，任何 emit 阶段引入的自定义内联标签都必须避免被 Greek-accent 正则误吞。
+
 ### 3. 希腊文：必须转换为 Unicode
 
 Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 ASCII 转写（如 `ejmo>i`）而非 Unicode（`ἐμοί`）。输出到 MD 前**必须**调用 `convert_ages_greek()` 转换，否则网页显示乱码。
@@ -370,6 +494,20 @@ Ages Digital Library 用私有字体编码希腊文，PyMuPDF 提取到的是 AS
 转写规则：辅音直接映射；`j`=平气符；`>`/`<`/`~`=锐/重/抑扬音；`|`=iota 下标；`v`=词尾 sigma；双元音中的声调符属于第二个元音（如 `ejmo>i` → `ἐμοί`）。
 
 检测 HTML 标签时**必须**用 `<[a-zA-Z/!][^>]*>`，不得用 `<[^>]+>`——后者会把 `to< ... <span>` 中的希腊文和标签一起误吞。
+
+**⚠️ 自定义内联标签（如 `<verse>X</verse>`）必须用占位符隔离**：上面的 HTML-tag 正则只保护「优先匹配 HTML 标签 token」，但 Greek-accent 替换分支的 `[a-zA-Z][...><~j|\\]*...` 仍会匹配 `Speech<` —— 让句尾紧贴 `<verse>` 开标签的 `<` 被识为重音符，整段被错误希腊化（实测把 `the Speech<verse>` 转成 `the Σπεεχ<ςερσε`）。
+
+**正确实现**：进 Greek 转换前后用占位符包裹自定义标签：
+
+```python
+def convert_ages_greek(text):
+    # 任何 emit 阶段引入的自定义标签都要预先隔离
+    text = text.replace('<verse>', '\x00VS\x00').replace('</verse>', '\x00VE\x00')
+    text = _AGES_GR_PAT.sub(_repl, text)
+    return text.replace('\x00VS\x00', '<verse>').replace('\x00VE\x00', '</verse>')
+```
+
+新增任何 `<custom-tag>` 标签（如未来若引入 `<latin>`、`<note>` 等）都按同样模式补占位符。
 
 ### 4. 跨页段落：必须合并
 
@@ -1096,6 +1234,34 @@ Kramdown 把段落行首的 `N. text`（数字+句号+空格）一律解析为**
 
 **⚠️ 这是跨格式通用约束**：无论哪种提取路径，发布后 MD 文件中绝不应出现以裸 `N. [大写]` 开头的段落 block。
 
+#### 行首节号正则必须接受 HTML 标签开头
+
+**问题模式**：注释段以「节号 + 红色斜体经文短语」开头时，正文形如：
+
+```
+1. <span style="color:#800000">*In the beginning was the Speech*</span>. In this introduction...
+```
+
+如果 `bold_leading_verse_num` 的正则只接受大写字母（`^(\d+)\. (?=[A-Z])`），则 `1. <` 的 `<` 不匹配 `[A-Z]`，节号没有被 bold，kramdown 仍把段落识别为有序列表，渲染为 `<ol><li>`。`<verse>` / 红色 span 是有效产物，但下游 verse-nav JS 用 `firstElementChild.textContent` 匹配 `^**N\.** ` 整体，列表化后整段错位。
+
+**正确正则**（必须同时接受 `[A-Z]` 和 `<`）：
+
+```python
+def bold_leading_verse_num(text):
+    return re.sub(r'^(\d+)\. (?=[A-Z<])', r'**\1.** ', text)
+```
+
+**适用范围**：任何 Calvin commentary（phil/heb/1cor/john/2cor/...），无论 italic 处理出红色 span 还是普通斜体。
+
+#### 同 style 紧邻 span 合并 vs 节号 + HTML 兼容
+
+§0.4 要求 emit 后 collapse `****`（紧邻同 style）。这条约束和「节号 + HTML 兼容」是**两条独立的 emit 守门规则**，缺一不可：
+
+- §0.4 保证 `**N.**.**` 这种「数字+句号+继续 bold」不残留四星号
+- 本节保证 `1. <span...>` 的节号能被识别成节号
+
+新写 Calvin emit 流水线时**两条都要落**，每条都有独立 fail 模式。
+
 ## 执行步骤
 
 1. 从用户消息解析参数
@@ -1114,6 +1280,9 @@ Kramdown 把段落行首的 `N. text`（数字+句号+空格）一律解析为**
 4. 运行**提取质检 Checklist**（见下方），逐项排查
 5. 若提供了 `book_id`，继续执行**发布到网站**步骤
 6. 发布后再运行**发布质检 Checklist**，逐项排查
+7. **🔴 P0 视觉对照（绝不能跳过）**：从已发布的同格式英文书卷（如 `calvin/philippians-en/`）拉 ch1 来对照。grep 经文方框/红色短语/脚注引用/bold 节号/分页标记 5 类特征，新书每类计数必须 ≥ 同基准书的同类计数；任一类为 0 而基准 > 0，**必有遗漏**，回阶段 2 补功能（多半是 extractor 漏 italic 标记、或 converter 漏 scripture-box 包裹）。详细命令见"发布质检"小节顶部 §🔴。
+
+**反例（曾经踩过的）**：john-en 第一版仅看「H1 数、orphan 引用数」就提交，完全没有 scripture-box / 红色短语，浏览器看起来与 phil-en 视觉差异巨大。用户一句「看下腓立比书英文是怎么处理的」就揭穿了。**永远先 grep 同类特征数，再宣布完成。**
 
 ---
 
@@ -1250,6 +1419,45 @@ for page_num in range(...):
 ```
 
 ### 发布质检（MD → 网站）
+
+#### 🔴 P0 第一步：与同 format 已发布书卷做视觉对照（最容易遗漏的检查）
+
+**这是 john-en 第一版翻车的根因——只看了机器可验证的指标（H1 数、orphan 引用数）就宣布完成，没有打开 phil-en 对照样式。**
+
+发布完成、宣布"done"**之前**，必须执行这一步：
+
+1. 选一本同格式（Ages 双语 / Ages 单语 / CCEL 单列 / CCEL 平行）的**已发布英文书卷**作为基准。Ages 单语用 `phil-en`、Ages 单语英文用 `phil-en` 或 `heb-en`（双语都行，做视觉对照而非结构对照）。
+2. 用以下 grep 在新书 ch1 和基准书 ch1 上各跑一次，**特征类别数量必须同时非零**：
+
+   ```bash
+   B=calvin/<NEW-BOOK>-en/1.md   # 你刚发布的
+   R=calvin/philippians-en/1.md  # 基准（或同格式已发布书）
+
+   for tag in 'scripture-box\|calvin-scripture' 'color:#800000' '<sup id="fnref\|\[\^f' '\*\*[0-9]\+\.\*\*' '<!-- PAGE'; do
+     printf "%-45s  new=%-4d  ref=%-4d\n" "$tag" \
+       "$(grep -c "$tag" $B 2>/dev/null)" \
+       "$(grep -c "$tag" $R 2>/dev/null)"
+   done
+   ```
+
+   预期：
+   - `scripture-box` 或 `calvin-scripture`（经文方框/经文表）— **两边都 ≥ 4**（每章约 ≥ 4 段经文）
+   - `color:#800000`（红色斜体经文短语）— **两边都 ≥ 10**（每章常 10–50 处）
+   - `<sup id="fnref` 或 `[^f`（脚注引用）— **两边都 ≥ 10**
+   - `**N.**`（bold 节号）— **两边都 ≥ 10**
+   - `<!-- PAGE`（分页标记）— **两边都 ≥ 20**
+
+   **任一行 `new=0` 而 `ref>0` → 你漏了某个特征类别**，必须回去补。「机器跑通构建」≠「视觉对照正确」。
+
+3. 在浏览器里并排打开 `http://localhost:4099/calvin/<NEW-BOOK>-en/1/` 和 `/calvin/philippians-en/1/`，对照前 3 屏：
+   - 经段块是否有方框/居中标题
+   - 注释段是否以加粗节号 + 红色斜体引语 + 黑色正文开头
+   - 脚注角标是否为上标蓝色链接
+   - 跨页注释是否流畅、无突兀截断
+
+**视觉对照通不过，不算"发布完成"**——继续修。
+
+#### 机器可验证指标
 
 - [ ] **`date` 字段精确到分钟**：所有发布文件的 front matter `date` 格式必须为 `YYYY-MM-DD HH:MM`，不得只写日期。`DATE` 变量必须用 `date '+%Y-%m-%d %H:%M'` 获取**真实时间**，禁止写死占位时间戳（如 `12:44`）。如果文件已发布但时间戳有误，从 git log 找到初次提交的时间：`git log --follow --diff-filter=A --format="%ci" calvin/BOOK_ID/1.md | tail -1`，取到分钟精度（如 `2026-05-26 12:45`）更新 `publish.py` 并重新运行。
 - [ ] **fn 区无分节标题残留**：对每个发布文件，`---` 分隔符之后不得有任何 `##` 行。验证：
