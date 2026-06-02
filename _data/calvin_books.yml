@@ -174,6 +174,9 @@ english:
   - id: colossians-en
     name: Colossians
     chapters: 4
+  - id: philemon-en
+    name: Philemon
+    chapters: 1
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16
@@ -186,3 +189,6 @@ english:
   - id: hebrews-en
     name: Hebrews
     chapters: 13
+  - id: zephaniah-en
+    name: Zephaniah
+    chapters: 3

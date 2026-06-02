@@ -225,6 +225,21 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_COLO.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/colossians/calvin_colossians_structured.txt'),
     },
+    'philemon': {
+        # Ages bilingual. 410×626; 18 pages (single-chapter book); 4 colors.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_PHLM.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/philemon/calvin_philemon_structured.txt'),
+    },
+    'zephaniah': {
+        # Ages Digital Library single-col English. Diagnosed 2026-06-02:
+        # 410×626 page; 145 pages; x0 单峰 30 + 缩进 220; 5 colors
+        # (#800000/#000080/#0000d4/#006411/#008080); 25/50 sample pages have
+        # Ages <NNNNNN> markers; 3 chapters (OT minor prophet).
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ZEPH.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/zephaniah/calvin_zephaniah_structured.txt'),
+    },
 }
 
 
