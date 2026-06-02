@@ -606,6 +606,39 @@ elif tag == 'CENTERED':
 
 ---
 
+## M15. 右对齐窄 byline / 题献落款（PDF lm>>rm）
+
+**Trigger**：PDF 扉页或题献页有窄行 byline / 落款（如 "by John Calvin" / "Yours respectfully, J. Smith"）PDF 排版在页面右侧（lm 大、rm 小），网页输出左对齐。
+
+**根因**：单凭 `lm >= 35 + narrow + non-centered` 触发 INDENT 会把右对齐 byline 当左缩进列表项，输出 `margin-left:2em`（位置错）。需要识别"右偏"几何：lm > 2*rm。
+
+**Fix**：extractor 加 `RIGHT` tag，**优先级在 INDENT 之前**：
+
+```python
+is_right_aligned = (
+    block_lm > 100  # well past page center
+    and lm > rm * 1.5
+    and block_w_local < page_w * 0.5
+    and not is_centered_block
+    and line_class == 'BODY'
+)
+if is_right_aligned:
+    line_class = 'RIGHT'
+# else if outline/narrow/all-italic → INDENT
+
+# converter RIGHT 分支
+elif tag == 'RIGHT':
+    pending_fn_idx = None
+    body = format_inline(content)
+    body = apply_verse_styling(body)
+    out.append(f'<p style="text-align:right;" markdown="1">{body}</p>')
+```
+
+PDF byline 类典型几何（Romans p0 "by John Calvin"）：
+- `x=278-350 w=73 lm=278 rm=60 sym=218 sz=12 fl=6(italic)`
+
+---
+
 ## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
 
 **Trigger**：新书（如 romans-en）需要复用 john-en 的 PDF-faithful scripture-box 样式（双蓝边/浅黄底/灰 banner/暗红 Ages 代码/小型大写卷名）。
