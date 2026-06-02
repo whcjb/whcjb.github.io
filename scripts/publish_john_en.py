@@ -39,8 +39,14 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
     """
     out = []
     for line in lines:
+        # Pre-strip leading <span ...>FTN</span> wrappers so split below is clean.
+        # Allow whitespace inside the wrap (e.g., `<span ...>FT306 </span>`).
+        line = re.sub(
+            r'<span[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</span>',
+            r'\1', line)
+        # Also strip stray </span> tags that snuck in (e.g., before ft due to
+        # split-before-strip).
         # Try same-line concatenated footnotes first: split on ftNNN boundaries.
-        # Match either FT or ft, with optional letter suffix.
         parts = re.split(r'(?=\b[Ff][Tt]\d+[A-Za-z]?\b)', line)
         normalized = []
         any_match = False
@@ -50,13 +56,14 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
             if m:
                 label = m.group(1).lower()
                 body_part = m.group(2).strip()
+                # Strip stray leading </span> or other HTML close tags
+                body_part = re.sub(r'^(?:</span>|</sty>|\s)+', '', body_part)
                 if body_part:
                     normalized.append(f'[^f{label}]: {body_part}')
                     any_match = True
         if any_match:
             for nl in normalized:
                 out.append(nl + '\n')
-            # Insert blank between footnote defs
             out.append('\n')
         else:
             out.append(line)

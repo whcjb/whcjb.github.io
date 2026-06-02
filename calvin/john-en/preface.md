@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 13:22
+date: 2026-06-02 13:31
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -170,30 +170,44 @@ John is believed to have written chiefly with the intention of maintaining the D
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;">JOHN</p>
 
-[^f1]: </span> Clarke’s Biblical Cabinet, volumes 44 and 45.
-
+[^f1]: Clarke’s Biblical Cabinet, volumes 44 and 45.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE DEDICATORY</p>
 
 
-[^f2]: </span> (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here) <span style="color:#800000">
+[^f2]: (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur
 
-[^f3]: </span> The French version adds “a ce qu’elle ne flottast plus parmi les traditions des hommes;” — “that it might no longer be tossed about among; the traditions of men.” <span style="color:#800000">
+retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here)
 
-[^f4]: </span> “Nous qui taschons de remettre l’estat de l’Eglise a son entier;” — “we who endeavor to restore the Church to her original condition.” <span style="color:#800000">
 
-[^f5]: </span> “Dieu par sa grace nous a restitue.” <span style="color:#800000">
+[^f3]: The French version adds “a ce qu’elle ne flottast plus parmi les
 
-[^f6]: </span> The French copy adds: “afin qu’on n’en juge point a l’aventure, ni a, credit;” — “that they may not judge of it at random, or on trust.” <span style="color:#800000">
+traditions des hommes;” — “that it might no longer be tossed about among; the traditions of men.”
 
-[^f7]: </span> In the concluding sentence, the more amplified form of the French version has been followed. — *Ed*.)
 
+[^f4]: “Nous qui taschons de remettre l’estat de l’Eglise a son entier;” — “we
+
+who endeavor to restore the Church to her original condition.”
+
+
+[^f5]: “Dieu par sa grace nous a restitue.”
+
+
+[^f6]: The French copy adds: “afin qu’on n’en juge point a l’aventure, ni a,
+
+credit;” — “that they may not judge of it at random, or on trust.”
+
+
+[^f7]: In the concluding sentence, the more amplified form of the French
+
+version has been followed. — *Ed*.)
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
 
 
-[^f8]: </span> “On scait assez que le mot, d’Evangile signifie entre les Grees toutes bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
+[^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes
 
+bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 1</p>
 

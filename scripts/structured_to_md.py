@@ -325,14 +325,22 @@ def _is_paragraph_line(line: str) -> bool:
     return True
 
 
-def _starts_with_continuation(line: str, prev_tail: str = '') -> bool:
+def _starts_with_continuation(line: str, prev_tail: str = '', prev_full: str = '') -> bool:
     """Does this body line start in a way that suggests it's a continuation of
-    the prior paragraph (lowercase letter, digit-from-Bible-ref, punctuation,
-    HTML tag)? Optional `prev_tail` is the last 20 chars of the prior buf for
-    context-aware checks (e.g., capital after open-paren split bible ref)."""
+    the prior paragraph? Signals:
+      - Lowercase letter, digit (non-verse-num), punctuation start
+      - Prev ends with `(` or `(N` + next is Bible book name
+      - Prev ends with conjunction + next is uppercase
+      - **Prev ends with all-caps phrase (no punct) + next starts all-caps**
+        (covers "ON THE SON" + "OF MAN," cross-block phrase split)
+      - **Same-style continuation**: prev ends with `<sty c="X" i="Y">...</sty>`
+        and next opens with the SAME `<sty c="X" i="Y">` — clearly same phrase
+    """
     # Strip leading markdown bold/italic markers to peek at first real char
     s = re.sub(r'^(?:\*+|\s)+', '', line.lstrip())
-    # Also peek past leading <sty>, <verse>, or <span> open tag
+    # Also peek past leading <sty>, <verse>, or <span> open tag (but remember
+    # the original line for same-style check below)
+    line_for_style = line.lstrip()
     s = re.sub(r'^<sty[^>]*>', '', s)
     s = re.sub(r'^<verse>', '', s)
     s = re.sub(r'^<span[^>]*>\*?', '', s)
@@ -343,22 +351,35 @@ def _starts_with_continuation(line: str, prev_tail: str = '') -> bool:
         return True
     if c in '(,;:)':
         return True
-    # Digit-led: typical continuation pattern is "17:28,)" or "31,32," after
-    # a bible-ref split. Accept digits but NOT when followed by ". " (verse num).
     if c.isdigit() and not re.match(r'^\d+\.\s', s):
         return True
-    # Context-aware: prev ends with `(` or `(N` (Bible ref open) and current
-    # starts with a Bible book name token like "Peter", "Corinthians", "John".
-    # Force-continuation for these common splits.
+    # Same-style continuation: prev's tail and next's head both open with the
+    # same `<sty c="X" i="Y">`. PDF wraps a multi-line phrase by emitting two
+    # blocks with identical styling — clear continuation signal.
+    next_sty = re.match(r'^<sty c="([0-9a-fA-F]{6})" i="([01])">', line_for_style)
+    if next_sty and prev_full:
+        prev_last_sty = re.search(
+            r'<sty c="([0-9a-fA-F]{6})" i="([01])">[^<]*</sty>\s*$', prev_full)
+        if prev_last_sty:
+            if (prev_last_sty.group(1) == next_sty.group(1)
+                    and prev_last_sty.group(2) == next_sty.group(2)):
+                return True
     if prev_tail:
+        # Open-paren + Bible book name split
         if re.search(r'\(\s*\d?\s*$', prev_tail):
-            # Common bible book names start with these patterns
             if re.match(r'^(?:[1-3]\s+)?[A-Z][a-z]+(?:\s+\d+:\d+)?', s):
                 return True
-        # Mid-sentence break: prev ends with conjunction `and` / `or` / `but`
-        # followed by no punctuation, current starts cap — likely same sentence
+        # Conjunction + capitalized continuation
         if re.search(r'\b(?:and|or|but|nor|for|yet|so)\s*$', prev_tail):
             if c.isupper():
+                return True
+        # All-caps phrase wrap: prev ends with all-caps word(s) (no punct),
+        # next starts with all-caps word(s). E.g. "ON THE SON" + "OF MAN,".
+        prev_tail_stripped = re.sub(r'</?(?:sty(?:\s[^>]*)?|span(?:\s[^>]*)?|verse)>', '', prev_tail).rstrip()
+        if re.search(r'\b[A-Z]{2,}(?:\s+[A-Z]{2,})*\s*$', prev_tail_stripped):
+            # Strip leading style tags from s to peek the actual first letters
+            s_clean = re.sub(r'^(?:<sty[^>]*>|<span[^>]*>|<verse>)+', '', s)
+            if re.match(r'^[A-Z]{2,}\b', s_clean):
                 return True
     return False
 
@@ -402,7 +423,7 @@ def _merge_paragraph_fragments(out: list[str]) -> list[str]:
                     break
                 # Only merge if current does NOT end sentence AND next is continuation
                 prev_tail = buf[-25:] if buf else ''
-                if _is_sentence_end(buf) or not _starts_with_continuation(nxt, prev_tail):
+                if _is_sentence_end(buf) or not _starts_with_continuation(nxt, prev_tail, buf):
                     break
                 # Merge: append next paragraph to buf, keep page markers BEFORE buf
                 # (so PDF reference position survives) — but since we're already
@@ -596,7 +617,13 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 in_commentary_section = True  # subsequent body italics → red
                 scripture_lines = []
             else:
-                fn_m = FN_DEF_RE.match(content)
+                # Strip leading <sty c="..." i="...">ftN</sty> wrap before
+                # testing FN_DEF_RE (extractor colors the ftN label red).
+                # Allow whitespace inside the sty (e.g., `<sty>ft306 </sty>`).
+                content_for_fn = re.sub(
+                    r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
+                    r'\1 ', content)
+                fn_m = FN_DEF_RE.match(content_for_fn)
                 if fn_m and not fn_m.group(2).startswith('<'):
                     label = normalize_fn_label(fn_m.group(1))
                     body = format_inline(fn_m.group(2))

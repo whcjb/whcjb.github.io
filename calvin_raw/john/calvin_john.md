@@ -615,10 +615,8 @@ Again, when Nathanael calls him <span style="color:#800000">*King of Israel*</sp
 
 God shows himself present with us depend on this *opening of heaven*, more especially when God communicates himself to us to be our life.
 
-<span style="color:#800000">*Ascending and descending on the Son of man.*</span> This second clause refers to <span style="color:#800000">*angels.*</span> They are said to *ascend* and *descend*, so as to be ministers of God’s kindness towards us; and therefore this mode of expression points out the mutual intercourse which exists between God and men. Now we must acknowledge that this benefit was received through Christ, because without him the *angels* have rather a deadly enmity against us than a friendly care to help us. They are said to <span style="color:#800000">*ascend and descend*</span> <span style="color:#800000">ON THE SON</span>
-
 <!-- PAGE 66 -->
-<span style="color:#800000">OF MAN,</span> not because they minister to him, but because — in reference to him, and for his honor — they include the whole body of the Church in their kindly regard. Nor have I any doubt that he alludes to the *ladder* which was exhibited to the patriarch Jacob in a dream, (Genesis 28:12;) for what was prefigured by that vision is actually fulfilled in Christ. In short, this passage teaches us, that though the whole human race was banished from the kingdom of God, the gate of <span style="color:#800000">*heaven is now opened*</span> to us, so that we are *fellow-citizens of the saints*, and companions of the angels, (Ephesians 2:19;) and that they, having been appointed to be guardians of our salvation, descend from the blessed rest of the heavenly glory <span style="color:#800000">[^f41]</span> to relieve our distresses.
+<span style="color:#800000">*Ascending and descending on the Son of man.*</span> This second clause refers to <span style="color:#800000">*angels.*</span> They are said to *ascend* and *descend*, so as to be ministers of God’s kindness towards us; and therefore this mode of expression points out the mutual intercourse which exists between God and men. Now we must acknowledge that this benefit was received through Christ, because without him the *angels* have rather a deadly enmity against us than a friendly care to help us. They are said to <span style="color:#800000">*ascend and descend*</span> <span style="color:#800000">ON THE SON</span> <span style="color:#800000">OF MAN,</span> not because they minister to him, but because — in reference to him, and for his honor — they include the whole body of the Church in their kindly regard. Nor have I any doubt that he alludes to the *ladder* which was exhibited to the patriarch Jacob in a dream, (Genesis 28:12;) for what was prefigured by that vision is actually fulfilled in Christ. In short, this passage teaches us, that though the whole human race was banished from the kingdom of God, the gate of <span style="color:#800000">*heaven is now opened*</span> to us, so that we are *fellow-citizens of the saints*, and companions of the angels, (Ephesians 2:19;) and that they, having been appointed to be guardians of our salvation, descend from the blessed rest of the heavenly glory <span style="color:#800000">[^f41]</span> to relieve our distresses.
 
 <!-- PAGE 67 -->
 
@@ -2882,9 +2880,7 @@ Christ appears to say nothing more here than what was formerly said by philosoph
 
 <span style="color:#800000">*You seek to kill me, because my word has no place in you.*</span> He means that they are not merely murderers, but are driven to such rage by hatred of God and his truth, which is far more heinous; for such an enormity does not merely extend to men, but likewise dishonors God. He says, *that they cannot receive his words*, because through malice they keep their minds shut, so that they cannot admit anything wholesome.
 
-**38.** <span style="color:#800000">*I speak what I have seen with my Father.*</span> He had already made frequent mention of *his Father*; and now, by an argument drawn from contrary things, he infers that they are enemies to God, and are *the children of the devil*, because they oppose his doctrine. “For my part,” says he, “I bring nothing forward, but what I have learned from my Father. How comes it then that the word of God excites you to such fury, but because you have an opposite *father*?” He says that he *speaks*, and they *do*, because he discharged the office of a teacher, while they labored strenuously to extinguish his doctrine. At the same time, he protects the Gospel against contempt, by showing that it is not wonderful if it be opposed by *the children of the devil*. Instead of *you do*, some render it, <span style="color:#800000">DO</span>
-
-<span style="color:#800000">YOU</span> <span style="color:#800000">*what you have seen with your father*</span>; as if Christ had said, “Come, show that you are the children of the devil, by opposing me; for *I speak* nothing but what God has commanded.”
+**38.** <span style="color:#800000">*I speak what I have seen with my Father.*</span> He had already made frequent mention of *his Father*; and now, by an argument drawn from contrary things, he infers that they are enemies to God, and are *the children of the devil*, because they oppose his doctrine. “For my part,” says he, “I bring nothing forward, but what I have learned from my Father. How comes it then that the word of God excites you to such fury, but because you have an opposite *father*?” He says that he *speaks*, and they *do*, because he discharged the office of a teacher, while they labored strenuously to extinguish his doctrine. At the same time, he protects the Gospel against contempt, by showing that it is not wonderful if it be opposed by *the children of the devil*. Instead of *you do*, some render it, <span style="color:#800000">DO</span> <span style="color:#800000">YOU</span> <span style="color:#800000">*what you have seen with your father*</span>; as if Christ had said, “Come, show that you are the children of the devil, by opposing me; for *I speak* nothing but what God has commanded.”
 
 <h2 class="scripture-anchor" id="john-8-39-42" data-ref="JOHN 8:39-42" style="display:none">JOHN 8:39-42</h2>
 
@@ -3054,9 +3050,7 @@ Others explain it to mean, that Abraham, being already dead, enjoyed the presenc
 
 **57.** <span style="color:#800000">*Thou art not yet fifty years old.*</span> They endeavor to refute Christ’s saying, by showing that he had asserted what was impossible, when he <span style="color:#800000">*who was not yet fifty years of age makes himself equal to Abraham*</span>, who died many centuries before. Though Christ was not yet thirty-four years of age, yet they allow him to be somewhat older, that they may not appear to be too rigid and exact in dealing with him; as if they had said, “Thou certainly wilt not make thyself so old, though thou wert to boast that thou art already <span style="color:#800000">*fifty years of age*</span>.” Consequently, those who conjecture that he looked older than he actually was, or that the *years* mentioned in this passage are not solar years, in either case labor to no purpose. The notion of Papias, who says that Christ lived more than forty years, cannot at all be admitted.
 
-**58.** <span style="color:#800000">*Before Abraham was.*</span> As unbelievers judge only from the appearance of the flesh, Christ reminds them that he has something greater and higher than human appearance, which is hidden from the senses of the flesh, and is perceived only by the eyes of faith; and that, in this respect, he might be seen by the holy fathers, before he was manifested in the flesh. But he uses different verbs. <span style="color:#800000">*Before Abraham*</span> <span style="color:#800000">WAS</span>, <span style="color:#800000">[^f247]</span> or, <span style="color:#800000">*Before Abraham*</span> <span style="color:#800000">WAS</span>
-
-BORN, <span style="color:#800000">[^f248]</span> I AM. <span style="color:#800000">[^f249]</span>. But by these words he excludes himself from the ordinary rank of men, and claims for himself a power more than human, <span style="color:#800000">f250</span> a power heavenly and divine, the perception of which reached from the beginning of the world through all ages.
+**58.** <span style="color:#800000">*Before Abraham was.*</span> As unbelievers judge only from the appearance of the flesh, Christ reminds them that he has something greater and higher than human appearance, which is hidden from the senses of the flesh, and is perceived only by the eyes of faith; and that, in this respect, he might be seen by the holy fathers, before he was manifested in the flesh. But he uses different verbs. <span style="color:#800000">*Before Abraham*</span> <span style="color:#800000">WAS</span>, <span style="color:#800000">[^f247]</span> or, <span style="color:#800000">*Before Abraham*</span> <span style="color:#800000">WAS</span> BORN, <span style="color:#800000">[^f248]</span> I AM. <span style="color:#800000">[^f249]</span>. But by these words he excludes himself from the ordinary rank of men, and claims for himself a power more than human, <span style="color:#800000">f250</span> a power heavenly and divine, the perception of which reached from the beginning of the world through all ages.
 
 Yet these words may be explained in two ways. Some think that this applies simply to the eternal Divinity of Christ, and compare it with that passage in the writings of Moses, *I am what I am*, (Exodus 3:14.) But
 
@@ -4884,9 +4878,7 @@ The Papists; therefore are wrong in inferring from this passage that there are t
 <!-- PAGE 498 -->
 <span style="color:#800000">*The Holy Spirit will bring to your remembrance all things that I have said to you.*</span> It is indeed a punishment threatened by Isaiah against unbelievers, that the Word of God shall be to them *as a book that is sealed*, (Isaiah 29:11) but in this manner, also, the Lord frequently humbles his people. We ought, therefore, to wait patiently and mildly for the time of revelation, and must not, on that account, reject the word. When Christ testifies that it is the peculiar office of the Holy Spirit to teach the apostles what they had already learned from his mouth, it follows that the outward preaching will be vain and useless, if it be not accompanied by the teaching of the Spirit. God has therefore two ways of teaching; for, *first*, he sounds in our ears by the mouth of men; and, *secondly*, he addresses us inwardly by his Spirit; and he does this either at the same moment, or at different times, as he thinks fit.
 
-But observe what are *all these things* which he promises that the Spirit will teach. *He will suggest*, he says, *or bring to your remembrance*, ALL
-
-THAT I HAVE SAID. Hence it follows, that he will not be a builder of new revelations. By this single word we may refute all the inventions which Satan has brought into the Church from the beginning, under the pretense of the Spirit. Mahomet and the Pope agree in holding this as a principle of their religion, that Scripture does not contain a perfection of doctrine, but that something loftier has been revealed by the Spirit. From the same point the Anabaptists and Libertines, in our own time, have drawn their absurd notions. But the spirit that introduces any doctrine or invention apart from the Gospel is a deceiving spirit, and not the Spirit of Christ. What is meant by <span style="color:#800000">*the Spirit being sent by the Father in the name of Christ*</span>, I have already explained.
+But observe what are *all these things* which he promises that the Spirit will teach. *He will suggest*, he says, *or bring to your remembrance*, ALL THAT I HAVE SAID. Hence it follows, that he will not be a builder of new revelations. By this single word we may refute all the inventions which Satan has brought into the Church from the beginning, under the pretense of the Spirit. Mahomet and the Pope agree in holding this as a principle of their religion, that Scripture does not contain a perfection of doctrine, but that something loftier has been revealed by the Spirit. From the same point the Anabaptists and Libertines, in our own time, have drawn their absurd notions. But the spirit that introduces any doctrine or invention apart from the Gospel is a deceiving spirit, and not the Spirit of Christ. What is meant by <span style="color:#800000">*the Spirit being sent by the Father in the name of Christ*</span>, I have already explained.
 
 **27.** <span style="color:#800000">*Peace I leave with you.*</span> By the word <span style="color:#800000">*peace*</span> he means prosperity, which men are wont to wish for each other when they meet or part; for such is the import of the word <span style="color:#800000">*peace*</span> in the Hebrew language. He therefore alludes to the ordinary custom of his nation; as if he had said, *I give you my Farewell*. But he immediately adds, that this <span style="color:#800000">*peace*</span> is of far greater value than that which is usually to be found among men, who generally have the word <span style="color:#800000">*peace*</span> but coldly in their mouth, by way of ceremony, or, if they sincerely wish *peace* for any one, yet cannot actually bestow it. But Christ reminds them that *his peace* does not consist in an empty and unavailing wish, but is accompanied by the effect. In short, he says that he goes away from them in body, but that *his peace* remains with the disciples; that is, that they will be always happy through his blessing.
 
@@ -5293,9 +5285,7 @@ A question now arises, For what purpose did Christ say this? Some think that he 
 
 **9.** <span style="color:#800000">*Of sin.*</span> It now remains that we see what it is to *convince of sin*. Christ appears to make unbelief the only cause <span style="color:#800000">*of sin*</span>, and this is tortured by commentators in various ways; but, as I have already said, I do not intend to detail the opinions which have been held and advanced. First, it ought to be observed, that the *judgment of the Spirit* commences with the demonstration *of sin*; for the commencement of spiritual instruction is, that men born in *sin* have nothing in them but what leads to *sin*. Again, Christ mentioned <span style="color:#800000">*unbelief*</span>, in order to show what is the nature of men in itself for, since faith is the bond by which he is united to us, until we believe in him, we are out of him and separated from him. The import of these words is as if he had said, “*When the Spirit is come*, he will produce full conviction that, apart from me, *sin* reigns in *the world*;” and, therefore, unbelief is here mentioned, because it separates us from Christ, in consequence of which nothing is left to us but *sin*. In short, by these words he condemns the corruption and depravity of human nature, that we may not suppose that a single drop of integrity is in us without Christ.
 
-**10.** <span style="color:#800000">*Of righteousness.*</span> We must attend to the succession of steps which Christ lays down. He now says that *the world* must be *convinced* OF
-
-RIGHTEOUSNESS; for men will never hunger and thirst for <span style="color:#800000">*righteousness*</span>, but, on the contrary, will disdainfully reject all that is said concerning it, if they have not been moved by a conviction *of sin*. As to believers particularly, we ought to understand that they cannot make progress in the Gospel till they have first been humbled; and this cannot take place, till they have acknowledged their sins. It is undoubtedly the peculiar office of the Law to summon consciences to the judgment-seat of God, and to strike them with terror; but the Gospel cannot be preached in a proper manner, till it lead men from *sin* to *righteousness*, and from death to life; and, therefore, it is necessary to borrow from the Law that first clause of which Christ spoke.
+**10.** <span style="color:#800000">*Of righteousness.*</span> We must attend to the succession of steps which Christ lays down. He now says that *the world* must be *convinced* OF RIGHTEOUSNESS; for men will never hunger and thirst for <span style="color:#800000">*righteousness*</span>, but, on the contrary, will disdainfully reject all that is said concerning it, if they have not been moved by a conviction *of sin*. As to believers particularly, we ought to understand that they cannot make progress in the Gospel till they have first been humbled; and this cannot take place, till they have acknowledged their sins. It is undoubtedly the peculiar office of the Law to summon consciences to the judgment-seat of God, and to strike them with terror; but the Gospel cannot be preached in a proper manner, till it lead men from *sin* to *righteousness*, and from death to life; and, therefore, it is necessary to borrow from the Law that first clause of which Christ spoke.
 
 <!-- PAGE 536 -->
 By <span style="color:#800000">*righteousness*</span> must here be understood that which is imparted to us through the grace of Christ. Christ makes it to consist in his ascension to the Father, and not without good reason; for, as Paul declares that he *rose for our justification*, (Romans 4:25) so he now sits at the right hand of the Father in such a manner as to exercise all the authority that has been given to him, and thus to *fill all things*, (Ephesians 4:10.) In short, from the heavenly glory he fills the world with the sweet savor of his *righteousness*. Now *the Spirit* declares, by the Gospel, that this is the only way in which we are accounted *righteous*. Next to the conviction of *sin*, this is the second step, that *the Spirit* should *convince the world* what true *righteousness* is, namely, that Christ, by his ascension to heaven, has established the kingdom of life, and now sits at the right hand of the Father, to confirm true *righteousness*.
@@ -6883,122 +6873,571 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">TRANSLATOR’S NOTICE</p>
 
-<span style="color:#800000">ft1</span> Clarke’s Biblical Cabinet, volumes 44 and 45.
+[^f1]: Clarke’s Biblical Cabinet, volumes 44 and 45.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE DEDICATORY</p>
 
-<span style="color:#800000">ft2</span> (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here) <span style="color:#800000">ft3</span> The French version adds “a ce qu’elle ne flottast plus parmi les traditions des hommes;” — “that it might no longer be tossed about among; the traditions of men.” <span style="color:#800000">ft4</span> “Nous qui taschons de remettre l’estat de l’Eglise a son entier;” — “we who endeavor to restore the Church to her original condition.” <span style="color:#800000">ft5</span> “Dieu par sa grace nous a restitue.” <span style="color:#800000">ft6</span> The French copy adds: “afin qu’on n’en juge point a l’aventure, ni a, credit;” — “that they may not judge of it at random, or on trust.” <span style="color:#800000">ft7</span> In the concluding sentence, the more amplified form of the French version has been followed. — *Ed*.)
+[^f2]: (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur
+
+retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here)
+
+[^f3]: The French version adds “a ce qu’elle ne flottast plus parmi les
+
+traditions des hommes;” — “that it might no longer be tossed about among; the traditions of men.”
+
+[^f4]: “Nous qui taschons de remettre l’estat de l’Eglise a son entier;” — “we
+
+who endeavor to restore the Church to her original condition.”
+
+[^f5]: “Dieu par sa grace nous a restitue.”
+
+[^f6]: The French copy adds: “afin qu’on n’en juge point a l’aventure, ni a,
+
+credit;” — “that they may not judge of it at random, or on trust.”
+
+[^f7]: In the concluding sentence, the more amplified form of the French
+
+version has been followed. — *Ed*.)
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
 
-<span style="color:#800000">ft8</span> “On scait assez que le mot, d’Evangile signifie entre les Grees toutes bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
+[^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes
+
+bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 1</p>
 
-<span style="color:#800000">ft9</span> “Pource qu’il est dit Estoit, et non pas N’este;” — “Because it is said
+[^f9]: “Pource qu’il est dit Estoit, et non pas N’este;” — “Because it is said
 
 *Was*, and not *Has been*.
 
 <!-- PAGE 686 -->
 
-<span style="color:#800000">ft10</span> “Les Theologiens Sorbonistes.” <span style="color:#800000">ft11</span> The reader will find our Author’s views of the Holy Trinity very fully illustrated in the *Institutes of the Christian Religion*, Book I. Chap. 13., and will be at a loss whether to admire most the marvelous acuteness, or the sobriety of judgment, by which the whole discussion is pervaded. — *Ed*. <span style="color:#800000">ft12</span> “Que c’estoit je ne scay quel Dieu qui avoit este cree, et eu commencement;”— “That there was I know not what God who had been created, and had a beginning.” <span style="color:#800000">ft13</span> The difference of readings lies wholly in the punctuation, and the dispute is, whether the words <span style="color:#0000d4">ὁ γέγονεν</span> shall form the conclusion of the Third, or the commencement of the Fourth verse. CALVIN expresses his concurrence with the majority of manuscripts, which connect the words in question with the Third verse thus <span style="color:#0000d4">Καὶ χωρὶς</span> <span style="color:#0000d4">αὐτοῦ ἐγένετο οὐδὲ ἑν ὁ γέγονεν</span>, *and without him was not any thing made*, (or, more literally, as well as more emphatically,) *and without him was* NOT ONE THING made WHICH WAS MADE. Other manuscripts, certainly of no great authority, connect them with the Fourth verse: <span style="color:#0000d4">Καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἑν O γέγονεν ἐν</span> <span style="color:#0000d4">αὐτῷ ζωὴ ῃ̈ν</span>. *And without him was not one thing made*. WHAT WAS
+[^f10]: “Les Theologiens Sorbonistes.”
+
+[^f11]: The reader will find our Author’s views of the Holy Trinity very fully
+
+illustrated in the *Institutes of the Christian Religion*, Book I. Chap. 13., and will be at a loss whether to admire most the marvelous acuteness, or the sobriety of judgment, by which the whole discussion is pervaded. — *Ed*.
+
+[^f12]: “Que c’estoit je ne scay quel Dieu qui avoit este cree, et eu
+
+commencement;”— “That there was I know not what God who had been created, and had a beginning.”
+
+[^f13]: The difference of readings lies wholly in the punctuation, and the
+
+dispute is, whether the words <span style="color:#0000d4">ὁ γέγονεν</span> shall form the conclusion of the Third, or the commencement of the Fourth verse. CALVIN expresses his concurrence with the majority of manuscripts, which connect the words in question with the Third verse thus <span style="color:#0000d4">Καὶ χωρὶς</span> <span style="color:#0000d4">αὐτοῦ ἐγένετο οὐδὲ ἑν ὁ γέγονεν</span>, *and without him was not any thing made*, (or, more literally, as well as more emphatically,) *and without him was* NOT ONE THING made WHICH WAS MADE. Other manuscripts, certainly of no great authority, connect them with the Fourth verse: <span style="color:#0000d4">Καὶ χωρὶς αὐτοῦ ἐγένετο οὐδὲ ἑν O γέγονεν ἐν</span> <span style="color:#0000d4">αὐτῷ ζωὴ ῃ̈ν</span>. *And without him was not one thing made*. WHAT WAS
 
 <p style="text-align:center">MADE was in him life. The preference given by our Author rests on grounds which can scarcely be questioned. — Ed.</p>
 
-<span style="color:#800000">ft14</span> “Pour (porter) tesmoignage;” — “to bear testimony.” <span style="color:#800000">ft15</span> “Nais de sangs, *ou*, *de sang*;” — “born of bloods, *or*, *of blood*.” <span style="color:#800000">ft16</span> “Heraut et ambassade de la grace de Dieu;” — “Herald and ambassador of the grace of God.” <span style="color:#800000">ft17</span> Le nom de *Jean*, qui signifie Grace;” — “The name John, which signifies Grace. <span style="color:#800000">ft18</span> For the meaning of the name *John*, derived from the Hebrew
+[^f14]: “Pour (porter) tesmoignage;” — “to bear testimony.”
 
-*Jehohannan*, the reader may consult our Author’s *Commentary on the Harmony of the Three Evangelists*, vol. i. page 15. — *Ed*. <span style="color:#800000">ft19</span> D’une vanterie aveuglee; c est a dire, n’entendans pas ce qu’ils disoyent;” — “by a blind vaunting; that is, not understanding what they said.”
+[^f15]: “Nais de sangs, *ou*, *de sang*;” — “born of bloods, *or*, *of blood*.”
+
+[^f16]: “Heraut et ambassade de la grace de Dieu;” — “Herald and ambassador
+
+of the grace of God.”
+
+[^f17]: Le nom de *Jean*, qui signifie Grace;” — “The name John, which
+
+signifies Grace.
+
+[^f18]: For the meaning of the name *John*, derived from the Hebrew
+
+*Jehohannan*, the reader may consult our Author’s *Commentary on the Harmony of the Three Evangelists*, vol. i. page 15. — *Ed*.
+
+[^f19]: D’une vanterie aveuglee; c est a dire, n’entendans pas ce qu’ils
+
+disoyent;” — “by a blind vaunting; that is, not understanding what they said.”
 
 <!-- PAGE 687 -->
 
-<span style="color:#800000">ft20</span> “Et par ceci derechef est refutee l’imagination des Papistes de laquelle j’ai parle, a scavoir que Dieu donne aux hommes une possibilite, seulement d’estre faits enfans siens;” —, “and here again is refuted the notion of the Papists which I spoke of, namely, that God gives to men bare possibility of becoming His children” <span style="color:#800000">ft21</span> Here our Author, either from choice or from inadvertency, has adopted the phrase *of blood*, instead of What he followed in his version of the Text, (see page 35,) of bloods — the literal, though not idiomatic, rendering of <span style="color:#0000d4">ἐξ αἱμάτων</span>, which is itself of rare occurrence, but not without classical authority. — *Ed*. <span style="color:#800000">ft22</span> “Car sous la chair et la partie inferieure tout l’homme est comprins;”
+[^f20]: “Et par ceci derechef est refutee l’imagination des Papistes de laquelle
 
-“for under the *flesh*, and the lower part, the whole man is included.” <span style="color:#800000">ft23</span> “Est deduit d’un mot qui signifie Tabernacles, c’est a dire, tentes et avillons;” — “is derived from a word which signifies Tabernacles, that is, tents and pavilions.” <span style="color:#800000">ft24</span> This must have been a slip of memory on the part of our Author; for the phrases applied to Stephen are different, though parallel. He is called *a man* FULL OF *faith and of the Holy Ghost*, (Acts 6:5;) FULL
+j’ai parle, a scavoir que Dieu donne aux hommes une possibilite, seulement d’estre faits enfans siens;” —, “and here again is refuted the notion of the Papists which I spoke of, namely, that God gives to men bare possibility of becoming His children”
 
-OF *faith and power*, (Acts 6:8;) *and* FULL OF *the Holy Ghost*, (Acts 7:55.) — *Ed*. <span style="color:#800000">ft25</span> “Jean rend (*ou*, *a rendu*) tesmoignage de luy.” “John gives (*or*, *gave*)
+[^f21]: Here our Author, either from choice or from inadvertency, has adopted
 
-testimony of him.” <span style="color:#800000">ft26</span> “Plus excellent que moy, *ou*, *premier que moy*;” — “more excellent than I, *or*, *before me*.” <span style="color:#800000">ft27</span> “En usant du verbe du temps present, a scavoir, *Rend* tesmoignage, et on pas, *Rendoit*;” — “by using the verb in the present tense, GIVETH *testimony*, and not GAVE *testimony*.” <span style="color:#800000">ft28</span> Qu’il n’a point parle entre ses dents, et communique la chose comme en secret a peu de gens;” — “that he did not speak between his teeth, and communicate the matter, as it were secretly, to a few persons.” <span style="color:#800000">ft29</span> “Que la Loy n’a eu ne l’un ne l’autre;” — “that the Law had neither the one nor the other.”
+the phrase *of blood*, instead of What he followed in his version of the Text, (see page 35,) of bloods — the literal, though not idiomatic, rendering of <span style="color:#0000d4">ἐξ αἱμάτων</span>, which is itself of rare occurrence, but not without classical authority. — *Ed*.
+
+[^f22]: “Car sous la chair et la partie inferieure tout l’homme est comprins;”
+
+“for under the *flesh*, and the lower part, the whole man is included.”
+
+[^f23]: “Est deduit d’un mot qui signifie Tabernacles, c’est a dire, tentes et
+
+avillons;” — “is derived from a word which signifies Tabernacles, that is, tents and pavilions.”
+
+[^f24]: This must have been a slip of memory on the part of our Author; for
+
+the phrases applied to Stephen are different, though parallel. He is called *a man* FULL OF *faith and of the Holy Ghost*, (Acts 6:5;) FULL OF *faith and power*, (Acts 6:8;) *and* FULL OF *the Holy Ghost*, (Acts 7:55.) — *Ed*.
+
+[^f25]: “Jean rend (*ou*, *a rendu*) tesmoignage de luy.” “John gives (*or*, *gave*)
+
+testimony of him.”
+
+[^f26]: “Plus excellent que moy, *ou*, *premier que moy*;” — “more excellent
+
+than I, *or*, *before me*.”
+
+[^f27]: “En usant du verbe du temps present, a scavoir, *Rend* tesmoignage, et
+
+on pas, *Rendoit*;” — “by using the verb in the present tense, GIVETH *testimony*, and not GAVE *testimony*.”
+
+[^f28]: Qu’il n’a point parle entre ses dents, et communique la chose comme
+
+en secret a peu de gens;” — “that he did not speak between his teeth, and communicate the matter, as it were secretly, to a few persons.”
+
+[^f29]: “Que la Loy n’a eu ne l’un ne l’autre;” — “that the Law had neither the
+
+one nor the other.”
+
+<span style="color:#800000">ft29A</span> The points of agreement and of difference between the Old and New Testaments are copiously illustrated by our Author in the *Institutes of the Christian Religion,* Book II. chap. 10.11 — *Ed.*
 
 <!-- PAGE 688 -->
-<span style="color:#800000">ft29A</span> The points of agreement and of difference between the Old and New Testaments are copiously illustrated by our Author in the *Institutes of the Christian Religion,* Book II. chap. 10.11 — *Ed.* <span style="color:#800000">ft30</span> “Enveloppemens de figures et ceremonies.” <span style="color:#800000">ft31</span> C’est ici aussi (*ou*, c’*est done ci*) le tesmoignage;” — “this is also (*or*, *this is therefore*) the testimony.” <span style="color:#800000">ft32</span> “Es-tu Prophete, ou, le Prophete?” — “Art thou a Prophet, or, the
 
-Prophet?” <span style="color:#800000">ft33</span> “De celuy qui crie au desert.” <span style="color:#800000">ft34</span> “Sinon de preparer les Juifs a donner audience a Christ, et estre ses disciples.” <span style="color:#800000">ft35</span> “Que le temps estoit venu.” <span style="color:#800000">Ft36</span> See page 49.
+[^f30]: “Enveloppemens de figures et ceremonies.”
 
-<span style="color:#800000">ft36A</span> “Par oracle; c’est a dire, advertissement ou revelation de Dieu.” <span style="color:#800000">ft37</span> See *Harmony of the Three Evangelists*, volume 1 page 92, n. 2; and page 142, n. 2. <span style="color:#800000">ft38</span> “Tu crois, *ou*, *crois-tu*?” — “Thou believest, *or*, *believest thou*?” <span style="color:#800000">ft39</span> “Rondeur et syncerite,.” <span style="color:#800000">ft40</span> “Canteleux et frauduleux.” <span style="color:#800000">ft41</span> “De la gloire celeste.”
+[^f31]: C’est ici aussi (*ou*, c’*est done ci*) le tesmoignage;” — “this is also (*or*,
+
+*this is therefore*) the testimony.”
+
+[^f32]: “Es-tu Prophete, ou, le Prophete?” — “Art thou a Prophet, or, the
+
+Prophet?”
+
+[^f33]: “De celuy qui crie au desert.”
+
+[^f34]: “Sinon de preparer les Juifs a donner audience a Christ, et estre ses
+
+disciples.”
+
+[^f35]: “Que le temps estoit venu.”
+
+[^f36]: See page 49.
+
+<span style="color:#800000">ft36A</span> “Par oracle; c’est a dire, advertissement ou revelation de Dieu.”
+
+[^f37]: See *Harmony of the Three Evangelists*, volume 1 page 92, n. 2; and
+
+page 142, n. 2.
+
+[^f38]: “Tu crois, *ou*, *crois-tu*?” — “Thou believest, *or*, *believest thou*?”
+
+[^f39]: “Rondeur et syncerite,.”
+
+[^f40]: “Canteleux et frauduleux.”
+
+[^f41]: “De la gloire celeste.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 2</p>
 
-<span style="color:#800000">ft42</span> “Tertio die;” — “trois jours apres.” <span style="color:#800000">ft43</span> “En la vierge Marie.” <span style="color:#800000">ft44</span> “De bosongner et desployer sa virtue Divine.” <span style="color:#800000">ft45</span> “a son Fils.” <span style="color:#800000">ft46</span> The exact size of the *firkin* cannot be easily ascertained. If <span style="color:#0000d4">μετρητὴς</span>
+[^f42]: “Tertio die;” — “trois jours apres.”
+
+[^f43]: “En la vierge Marie.”
+
+[^f44]: “De bosongner et desployer sa virtue Divine.”
+
+[^f45]: “a son Fils.”
+
+[^f46]: The exact size of the *firkin* cannot be easily ascertained. If <span style="color:#0000d4">μετρητὴς</span>
 
 <p style="text-align:center">be here used by the Evangelist as a purely Greek word, we must conclude it to be an Attic measure, which was nearly equal to nine English gallons. If, again, it be placed here as a substitute for the Hebrew word tb, (Bath,) as the Septuagint has done in</p>
 
 2
 
-Chronicles 4:5, it will probably be rated at seven gallons and a half. — *Ed*. <span style="color:#800000">ft47</span> “De ce pays de Savoye;” — “of this country, Savoy.”
+Chronicles 4:5, it will probably be rated at seven gallons and a half. — *Ed*.
+
+[^f47]: “De ce pays de Savoye;” — “of this country, Savoy.”
 
 <!-- PAGE 689 -->
 
-<span style="color:#800000">ft48</span> “Qu’ils avoyent entre leurs reliques de ces cruches, esquelles Christ avoit fait ce miracle en Cana, et en monstroyent.” <span style="color:#800000">ft49</span> “Quel signe, ou, miracle?” — “What sign? or, What miracle?” <span style="color:#800000">ft50</span> “I1 ne faut pas pourtant quitter la tout par desespoir, ne mespriser ce que nous n’entendons pas tout incontinent.” <span style="color:#800000">ft51</span> “I1 les cognoissoient tous,”
+[^f48]: “Qu’ils avoyent entre leurs reliques de ces cruches, esquelles Christ
+
+avoit fait ce miracle en Cana, et en monstroyent.”
+
+[^f49]: “Quel signe, ou, miracle?” — “What sign? or, What miracle?”
+
+[^f50]: “I1 ne faut pas pourtant quitter la tout par desespoir, ne mespriser ce
+
+que nous n’entendons pas tout incontinent.”
+
+[^f51]: “I1 les cognoissoient tous,”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 3</p>
 
-<span style="color:#800000">ft52</span> Our Author’s views of the etymology of the term are fully stated and examined, *Harmony*, volume 1 page 281; but it cannot be supposed that this *Commentary on the Gospel by John*, which appeared in the year 1553, makes reference to the *Harmony*, which did not appear till 1555. The priority of the date (1548) of the *Commentary on the Epistle to the Philippians* more naturally sends us to consult that passage, in which Paul says that he was a *Pharisee*, (13, 5.) — *Ed*. <span style="color:#800000">ft53</span> “De sa grandeur et reputation.” <span style="color:#800000">ft54</span> “Qui signific Maistre.” <span style="color:#800000">ft55</span> “L’oyant seulement comme en pensant ailleurs, et sans en tenir grand conte:” — “merely listening to it as if he were thinking of something else, and without caring much about it.” <span style="color:#800000">ft56</span> “Qui imaginoit que los ames apres la mort de leurs corps cntroyent dedans des autres corps.” <span style="color:#800000">ft57</span> Monstrent bien qu’ils n’en entendent rien.” <span style="color:#800000">ft58</span> “Pour l’amour de nous.” <span style="color:#800000">ft59</span> “Car personne n’est monte;” — “For no one hath ascended.” <span style="color:#800000">ft60</span> “Sur toutes manieres de gens.” <span style="color:#800000">ft61</span> “Faites selon Dieu;” — “ done according to God.” <span style="color:#800000">ft62</span> “Et apparence exterieure.” <span style="color:#800000">ft63</span> “De baptesmes et lavemens.” <span style="color:#800000">ft64</span> “Que Dieu avoit instituez.” <span style="color:#800000">ft65</span> “C’est une parole de gens envieux.”
+[^f52]: Our Author’s views of the etymology of the term are fully stated and
+
+examined, *Harmony*, volume 1 page 281; but it cannot be supposed that this *Commentary on the Gospel by John*, which appeared in the year 1553, makes reference to the *Harmony*, which did not appear till 1555. The priority of the date (1548) of the *Commentary on the Epistle to the Philippians* more naturally sends us to consult that passage, in which Paul says that he was a *Pharisee*, (13, 5.) — *Ed*.
+
+[^f53]: “De sa grandeur et reputation.”
+
+[^f54]: “Qui signific Maistre.”
+
+[^f55]: “L’oyant seulement comme en pensant ailleurs, et sans en tenir grand
+
+conte:” — “merely listening to it as if he were thinking of something else, and without caring much about it.”
+
+[^f56]: “Qui imaginoit que los ames apres la mort de leurs corps cntroyent
+
+dedans des autres corps.”
+
+[^f57]: Monstrent bien qu’ils n’en entendent rien.”
+
+[^f58]: “Pour l’amour de nous.”
+
+[^f59]: “Car personne n’est monte;” — “For no one hath ascended.”
+
+[^f60]: “Sur toutes manieres de gens.”
+
+[^f61]: “Faites selon Dieu;” — “ done according to God.”
+
+[^f62]: “Et apparence exterieure.”
+
+[^f63]: “De baptesmes et lavemens.”
+
+[^f64]: “Que Dieu avoit instituez.”
+
+[^f65]: “C’est une parole de gens envieux.”
 
 <!-- PAGE 690 -->
 
-<span style="color:#800000">ft66</span> “Et parle de la terre, *ou*, *comme issu de terre*;” — “and speaketh of the earthy *or*, *as having proceeded from the earth*.” <span style="color:#800000">ft67</span> “Au marchepied de Christ.” <span style="color:#800000">ft68</span> “C’est a dire, ne determine point certaine personne.” <span style="color:#800000">ft69</span> “Et que *Donne* soit mis pour *et donne*.” <span style="color:#800000">ft70</span> “Qui ne croit point au Fils, *ou*, *qui desobeit au Fils*” — “who believeth not in the Son, *or*, *who disobeyeth the Son*.”
+[^f66]: “Et parle de la terre, *ou*, *comme issu de terre*;” — “and speaketh of the
+
+earthy *or*, *as having proceeded from the earth*.”
+
+[^f67]: “Au marchepied de Christ.”
+
+[^f68]: “C’est a dire, ne determine point certaine personne.”
+
+[^f69]: “Et que *Donne* soit mis pour *et donne*.”
+
+[^f70]: “Qui ne croit point au Fils, *ou*, *qui desobeit au Fils*” — “who believeth
+
+not in the Son, *or*, *who disobeyeth the Son*.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 4</p>
 
-<span style="color:#800000">ft71</span> “Et qui reprouve ce que nous disons ou faisons.” <span style="color:#800000">ft72</span> “Ceste eau vive;” — “ this living water.” <span style="color:#800000">ft73</span> “Si en lieu de *Et*, nous mettons *A scavoir*, ou quelque autre mot semblable.” <span style="color:#800000">ft74</span> “Tout ainsi que la terre, pour apporter fruict, sera menuisee et amollie par le soc de la charrue.” <span style="color:#800000">ft75</span> “Qui ont la grace de bien enseigner.” <span style="color:#800000">ft76</span> “Par les playes et punitions de Dieu.” <span style="color:#800000">ft77</span> “Une fausse imitation, et mal reiglee, ou inconsideree.” <span style="color:#800000">ft78</span> “A depuis ordonne et commande une autre conduite et maniere de faire, qu’ils ont a suyvre.” <span style="color:#800000">ft79</span> “C’est a dire, des ceremonies.” <span style="color:#800000">ft80</span> “Des figures de la Loy.” <span style="color:#800000">ft81</span> “Pour exprimer la cause pourquoy il se haste de faire la besogne.” <span style="color:#800000">ft82</span> “C’est a dire, de corruptions.” <span style="color:#800000">ft83</span> “*Ou*, *Jesus avoit rendu tesmoignage*” — “*or*, *Jesus had testified*.” <span style="color:#800000">ft84</span> “*Apres qu*’*ils eussent veu*;” — “*after that they had seen*.” <span style="color:#800000">ft85</span> “Ainsi qu’estoyent les, Juifs.” <span style="color:#800000">ft86</span> “Commune, et qui etoit passee en proverbe.” <span style="color:#800000">ft87</span> “Lequel l’a traduit par un mot Latin *Regulus*, qui signifie un petit
+[^f71]: “Et qui reprouve ce que nous disons ou faisons.”
+
+[^f72]: “Ceste eau vive;” — “ this living water.”
+
+[^f73]: “Si en lieu de *Et*, nous mettons *A scavoir*, ou quelque autre mot
+
+semblable.”
+
+[^f74]: “Tout ainsi que la terre, pour apporter fruict, sera menuisee et amollie
+
+par le soc de la charrue.”
+
+[^f75]: “Qui ont la grace de bien enseigner.”
+
+[^f76]: “Par les playes et punitions de Dieu.”
+
+[^f77]: “Une fausse imitation, et mal reiglee, ou inconsideree.”
+
+[^f78]: “A depuis ordonne et commande une autre conduite et maniere de faire,
+
+qu’ils ont a suyvre.”
+
+[^f79]: “C’est a dire, des ceremonies.”
+
+[^f80]: “Des figures de la Loy.”
+
+[^f81]: “Pour exprimer la cause pourquoy il se haste de faire la besogne.”
+
+[^f82]: “C’est a dire, de corruptions.”
+
+[^f83]: “*Ou*, *Jesus avoit rendu tesmoignage*” — “*or*, *Jesus had testified*.”
+
+<span style="color:#800000">ft84</span> “*Apres qu*’*ils eussent veu*;” — “*after that they had seen*.”
+
+[^f85]: “Ainsi qu’estoyent les, Juifs.”
+
+[^f86]: “Commune, et qui etoit passee en proverbe.”
+
+[^f87]: “Lequel l’a traduit par un mot Latin *Regulus*, qui signifie un petit
 
 Roy.”
 
 <!-- PAGE 691 -->
 
-<span style="color:#800000">ft88</span> “Quelque gentil-homme.” <span style="color:#800000">ft89</span> “Par l’Empereur;” — “by the Emperor.” <span style="color:#800000">ft90</span> “*Qu*’*ils facent premierement des ntiraclcs*?”
+[^f88]: “Quelque gentil-homme.”
+
+[^f89]: “Par l’Empereur;” — “by the Emperor.”
+
+[^f90]: “*Qu*’*ils facent premierement des ntiraclcs*?”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 5</p>
 
-<span style="color:#800000">ft91</span> “Et qui avoyent les membres secs;” “and who had the limbs withered.” <span style="color:#800000">ft92</span> “Par intervalles, *ou*, *en certain temps*;” — “at intervals, *or*, *at a certain* *time*.” <span style="color:#800000">ft93</span> The French version runs thus: “combion que du temps d’Elisee il y eust plusieurs de ladres, toutesfois nul d’eux ne fut nettoye sinon Naaman Syrien;” — “*though in the time of Elisha there were many lepers*, *yet not one of them was cleansed except Naaman a Syrian*,” (2 Kings 5:14; Luke 4:27.) <span style="color:#800000">ft94</span> “Car Jesus s’estoit escoule de la multitude qui estoit en ce lieu-la;” —
+[^f91]: “Et qui avoyent les membres secs;” “and who had the limbs withered.”
 
-“for Jesus had withdrawn from the multitude which was in that place.” <span style="color:#800000">ft95</span> “Que nous aurions bien meritee.” <span style="color:#800000">ft96</span> “Quand ils disent qu’il n’est pas possible d’endurer plus grand mal, et que Dieu ne leur en scauroit envoyer davantage.” <span style="color:#800000">ft97</span> “Il est bien vray que la ceremonie du Sabbath estoit une partie des ombres de la Loy.” <span style="color:#800000">ft98</span> “Quand on s’employe a oeuvres de Dieu.” <span style="color:#800000">ft99</span> “Le Repos de Dieu.” <span style="color:#800000">ft100</span> “Pource qu’il est (ou, *entant qu*’*il est*) le Fils de l’homme;” —
+[^f92]: “Par intervalles, *ou*, *en certain temps*;” — “at intervals, *or*, *at a certain*
 
-“because he is (*or*, *in so far as he is*) the Son of man.” <span style="color:#800000">ft101</span> “Des contempteurs de Dieu et incredules;” “with despisers of God and unbelievers.” <span style="color:#800000">ft102</span> “Sans le pardon que Dieu fait a ses fideles.” <span style="color:#800000">ft103</span> “I1 sera son protecteur et garent contre tous adversaires.” <span style="color:#800000">ft104</span> “Rien que leur propre malice.” <span style="color:#800000">ft105</span> “Pource qu’ils marchent les premiers, portans le flambe au devant les autres pour les guider.”
+*time*.”
+
+[^f93]: The French version runs thus: “combion que du temps d’Elisee il y
+
+eust plusieurs de ladres, toutesfois nul d’eux ne fut nettoye sinon Naaman Syrien;” — “*though in the time of Elisha there were many lepers*, *yet not one of them was cleansed except Naaman a Syrian*,” (2 Kings 5:14; Luke 4:27.)
+
+[^f94]: “Car Jesus s’estoit escoule de la multitude qui estoit en ce lieu-la;” —
+
+“for Jesus had withdrawn from the multitude which was in that place.”
+
+[^f95]: “Que nous aurions bien meritee.”
+
+[^f96]: “Quand ils disent qu’il n’est pas possible d’endurer plus grand mal, et
+
+que Dieu ne leur en scauroit envoyer davantage.”
+
+[^f97]: “Il est bien vray que la ceremonie du Sabbath estoit une partie des
+
+ombres de la Loy.”
+
+[^f98]: “Quand on s’employe a oeuvres de Dieu.”
+
+[^f99]: “Le Repos de Dieu.”
+
+[^f100]: “Pource qu’il est (ou, *entant qu*’*il est*) le Fils de l’homme;” —
+
+“because he is (*or*, *in so far as he is*) the Son of man.”
+
+[^f101]: “Des contempteurs de Dieu et incredules;” “with despisers of God
+
+and unbelievers.”
+
+[^f102]: “Sans le pardon que Dieu fait a ses fideles.”
+
+[^f103]: “I1 sera son protecteur et garent contre tous adversaires.”
+
+[^f104]: “Rien que leur propre malice.”
+
+[^f105]: “Pource qu’ils marchent les premiers, portans le flambe au devant les
+
+autres pour les guider.”
 
 <!-- PAGE 692 -->
 
-<span style="color:#800000">ft106</span> “Aucuns s’abusent.” <span style="color:#800000">ft107</span> “Si nous voulons avoir cognoissance de Christ.” <span style="color:#800000">ft108</span> In transposing the two portions of the exposition of this verse, I have followed the French version of our Author, who, having observed that his observations on the first clause of this verse were placed last, restored the clauses to their natural order. — *Ed*. <span style="color:#800000">ft109</span> “Que nous sommes sourds quand Dieu parle.” <span style="color:#800000">ft110</span> “Une simplicite innocente et sans malice.” <span style="color:#800000">ft111</span> “Et ne sentant rien en soy-mesme sur quoy il se puisse appuyer.” <span style="color:#800000">ft112</span> The wars of *the Giants* held a conspicuous place in the ancient mythology, and in the popular belief. Not to mention the poets, whose imaginations were kindled by such topics, they are formally introduced by Cicero, in a philosophical treatise, though only for the purpose of instructing his readers to “despise and reject these fables.” “The gods,” says he, “as the fables relate, were not without wars and battles; and that not only as in those described by Homer, when some of the gods were ranged on the one side, and some on the other side, of two opposing armies; but even, as in the case of the *Titans* and *Giants*, they carried on their own battles. Such things (he adds) are said, and are very foolishly believed, and are full of absurdity and downright silliness.” — (De Nat. Deorum, lib. 2.) The daring presumption and utter discomfiture of *the Giants*, in their fabulous wars, are sometimes alluded to by Calvin, and other Christian writers, in describing the wickedness and folly of man, who *stretcheth out his hand against God*, *and strengtheneth himself against the Almighty*, (Job 15:25.) —
+[^f106]: “Aucuns s’abusent.”
+
+[^f107]: “Si nous voulons avoir cognoissance de Christ.”
+
+[^f108]: In transposing the two portions of the exposition of this verse, I have
+
+followed the French version of our Author, who, having observed that his observations on the first clause of this verse were placed last, restored the clauses to their natural order. — *Ed*.
+
+[^f109]: “Que nous sommes sourds quand Dieu parle.”
+
+[^f110]: “Une simplicite innocente et sans malice.”
+
+[^f111]: “Et ne sentant rien en soy-mesme sur quoy il se puisse appuyer.”
+
+[^f112]: The wars of *the Giants* held a conspicuous place in the ancient
+
+mythology, and in the popular belief. Not to mention the poets, whose imaginations were kindled by such topics, they are formally introduced by Cicero, in a philosophical treatise, though only for the purpose of instructing his readers to “despise and reject these fables.” “The gods,” says he, “as the fables relate, were not without wars and battles; and that not only as in those described by Homer, when some of the gods were ranged on the one side, and some on the other side, of two opposing armies; but even, as in the case of the *Titans* and *Giants*, they carried on their own battles. Such things (he adds) are said, and are very foolishly believed, and are full of absurdity and downright silliness.” — (De Nat. Deorum, lib. 2.) The daring presumption and utter discomfiture of *the Giants*, in their fabulous wars, are sometimes alluded to by Calvin, and other Christian writers, in describing the wickedness and folly of man, who *stretcheth out his hand against God*, *and strengtheneth himself against the Almighty*, (Job 15:25.) —
 
 <p style="text-align:center">Ed.</p>
 
-<span style="color:#800000">ft113</span> “Pour rembarrer les Papistes de leur baston mesme.” <span style="color:#800000">ft114</span> “Du titre desquels ils se couvrent faussement et meschamment.” <span style="color:#800000">ft115</span> “Contre contempteurs.”
+[^f113]: “Pour rembarrer les Papistes de leur baston mesme.”
+
+[^f114]: “Du titre desquels ils se couvrent faussement et meschamment.”
+
+[^f115]: “Contre contempteurs.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 6</p>
 
-<span style="color:#800000">ft116</span> “Pour le suyvre.”
+[^f116]: “Pour le suyvre.”
 
 <!-- PAGE 693 -->
 
-<span style="color:#800000">ft117</span> The value of the old French coins passed through so many changes, that all reasoning about them must be involved in uncertainty; but, so far as we have been able to ascertain, the value of a *carolus* of Tours, in CALVIN’S time, was nearly that of a penny sterling, and the *denier* was the tenth part of it, or nearly a modern *centime* of Paris. “Four times the *carolus*, with two *deniers*,” would thus be 4 and 1/5 pence sterling, and, multiplying that by 200, we have *three pounds*, *ten shillings*. Again, taking *the franc* (as Cotgrave rates it) at *two shillings*, 35 francs are also equal to *three pounds*, *ten shillings*. This is, at least, a curious coincidence, and the reader may compare it with a computation made from the *livre Parisis*, (*Harmony*, volume 2. page 234, n. 2.) It would appear, however, that BUDAEUS and CALVIN had estimated the *denarius* at little more than half its real value, which was *sevenpence halfpenny* sterling, taking silver at five shillings per ounce; so that *two hundred denarii* would be equal to *six pounds*, *five shillings sterling*. *— Ed*. <span style="color:#800000">ft118</span> “Quatorze (fourteen) sols Tournois.” According to Cotgrave, the “*sol*
+[^f117]: The value of the old French coins passed through so many changes,
 
-*Tournois* is the tenth part of our shilling, or one part in six better than our penny.” — *Ed*. <span style="color:#800000">ft119</span> “Sesquituronicum;” — “un denier Tournois et maille;” — “one and a half denier of Tours.” <span style="color:#800000">ft120</span> “Mesme en son humanite, et entant qu’il a pris nostre chair.” <span style="color:#800000">ft121</span> “De poissons sans sausse.” <span style="color:#800000">ft122</span> “En toutes creatures qui servent a nostre nouriture.” <span style="color:#800000">ft123</span> “Ils voyent Jesus cheminant sur la mer, s’approchant de la nasselle, dont ils eurent peur.” — “They see Jesus walking on the sea, and approaching the ship, at which they were afraid.” <span style="color:#800000">ft124</span> “Le salut a este acquis aux hommes;” — “salvation was obtained for men.” <span style="color:#800000">ft125</span> “En une ardeur de zele inconsidere et temeraire.” <span style="color:#800000">ft126</span> “La grande puissance.” <span style="color:#800000">ft127</span> “Par leurs folles inventions.”
+that all reasoning about them must be involved in uncertainty; but, so far as we have been able to ascertain, the value of a *carolus* of Tours, in CALVIN’S time, was nearly that of a penny sterling, and the *denier* was the tenth part of it, or nearly a modern *centime* of Paris. “Four times the *carolus*, with two *deniers*,” would thus be 4 and 1/5 pence sterling, and, multiplying that by 200, we have *three pounds*, *ten shillings*. Again, taking *the franc* (as Cotgrave rates it) at *two shillings*, 35 francs are also equal to *three pounds*, *ten shillings*. This is, at least, a curious coincidence, and the reader may compare it with a computation made from the *livre Parisis*, (*Harmony*, volume 2. page 234, n. 2.) It would appear, however, that BUDAEUS and CALVIN had estimated the *denarius* at little more than half its real value, which was *sevenpence halfpenny* sterling, taking silver at five shillings per ounce; so that *two hundred denarii* would be equal to *six pounds*, *five shillings sterling*. *— Ed*.
+
+[^f118]: “Quatorze (fourteen) sols Tournois.” According to Cotgrave, the “*sol*
+
+*Tournois* is the tenth part of our shilling, or one part in six better than our penny.” — *Ed*.
+
+[^f119]: “Sesquituronicum;” — “un denier Tournois et maille;” — “one and a
+
+half denier of Tours.”
+
+[^f120]: “Mesme en son humanite, et entant qu’il a pris nostre chair.”
+
+[^f121]: “De poissons sans sausse.”
+
+[^f122]: “En toutes creatures qui servent a nostre nouriture.”
+
+[^f123]: “Ils voyent Jesus cheminant sur la mer, s’approchant de la nasselle,
+
+dont ils eurent peur.” — “They see Jesus walking on the sea, and approaching the ship, at which they were afraid.”
+
+[^f124]: “Le salut a este acquis aux hommes;” — “salvation was obtained for
+
+men.”
+
+[^f125]: “En une ardeur de zele inconsidere et temeraire.”
+
+[^f126]: “La grande puissance.”
+
+[^f127]: “Par leurs folles inventions.”
 
 <!-- PAGE 694 -->
 
-<span style="color:#800000">ft128</span> On our Savior’s retirement into the mountain to pray, our Author has made very interesting and profitable observations. *Harmony of the Evangelists*, volume 2. page 237. — *Ed*. <span style="color:#800000">ft129</span> “Par basteau ou navire.” <span style="color:#800000">ft130</span> Our Author quotes inaccurately the measurement given by Josephus, whose words are: “Now this lake of Gennesareth is so called from the country, adjoining to it. Its breadth is forty furlongs, and its length *one hundred and forty*.” *— Wars of the Jews*, III. 10. 7. — *Ed*. <span style="color:#800000">ft131</span> “Mais estans agitez de tempeste.” <span style="color:#800000">ft132</span> “Ce qui eust este propre pour leur monstrer sa puissance, en ce qu’il estoit la venu par miracle.” <span style="color:#800000">ft133</span> “Sans regarder a rien de meilleur.” <span style="color:#800000">ft134</span> “A fin qu’il ne semble que Christ vueille de soy-mesme et d’une authorite privee s’attribuer quelque chose.” <span style="color:#800000">ft135</span> “Que ce n’est pas une chose facile et commune a chacun.” <span style="color:#800000">ft136</span> “Qui est comme le seau ou cachet de Dieu.” <span style="color:#800000">ft137</span> “Ils n’entendent point ce qu’ils disent, et parlent sans certain but.” <span style="color:#800000">ft138</span> “Proram et puppim,” literally, “stem and stern,” a Latin idiom for *the* *whole*. The Author’s French version (ed. 1558) renders the clause, “il ne se faut point esbahir s’il constitue en elle la fin et le commencement;” — “we must not be astonished if he makes it to be the end and the beginning;” and in ed. 1564, it runs thus, “ce n’est pas merveille que la foy est tout ce que Dieu requiert;” — “it is not wonderful that faith is all that God requires.” <span style="color:#800000">ft139</span> “Quelle oeuvre fais-tu?” — “What work doest thou?” <span style="color:#800000">ft140</span> “Moyse ne vous a point donne le pain du ciel; mais mon Pere vous donne le vray pain du ciel.” — “Moses gave you not the bread of heaven; but my Father giveth you the true bread of heaven.” <span style="color:#800000">ft141</span> “Et ce en la prenant avec les qualitez qu’ils luy attribuoyent, et selon leur sens.” <span style="color:#800000">ft142</span> “Pain de Dieu.” <span style="color:#800000">ft143</span> “Qu’elles ayent en elles naturellement.” <span style="color:#800000">ft144</span> “C’est a dire, quand il nous fait ce bien de nous appeler.”
+[^f128]: On our Savior’s retirement into the mountain to pray, our Author has
+
+made very interesting and profitable observations. *Harmony of the Evangelists*, volume 2. page 237. — *Ed*.
+
+[^f129]: “Par basteau ou navire.”
+
+[^f130]: Our Author quotes inaccurately the measurement given by Josephus,
+
+whose words are: “Now this lake of Gennesareth is so called from the country, adjoining to it. Its breadth is forty furlongs, and its length *one hundred and forty*.” *— Wars of the Jews*, III. 10. 7. — *Ed*.
+
+[^f131]: “Mais estans agitez de tempeste.”
+
+[^f132]: “Ce qui eust este propre pour leur monstrer sa puissance, en ce qu’il
+
+estoit la venu par miracle.”
+
+[^f133]: “Sans regarder a rien de meilleur.”
+
+[^f134]: “A fin qu’il ne semble que Christ vueille de soy-mesme et d’une
+
+authorite privee s’attribuer quelque chose.”
+
+[^f135]: “Que ce n’est pas une chose facile et commune a chacun.”
+
+[^f136]: “Qui est comme le seau ou cachet de Dieu.”
+
+[^f137]: “Ils n’entendent point ce qu’ils disent, et parlent sans certain but.”
+
+[^f138]: “Proram et puppim,” literally, “stem and stern,” a Latin idiom for *the*
+
+*whole*. The Author’s French version (ed. 1558) renders the clause, “il ne se faut point esbahir s’il constitue en elle la fin et le commencement;” — “we must not be astonished if he makes it to be the end and the beginning;” and in ed. 1564, it runs thus, “ce n’est pas merveille que la foy est tout ce que Dieu requiert;” — “it is not wonderful that faith is all that God requires.”
+
+[^f139]: “Quelle oeuvre fais-tu?” — “What work doest thou?”
+
+[^f140]: “Moyse ne vous a point donne le pain du ciel; mais mon Pere vous
+
+donne le vray pain du ciel.” — “Moses gave you not the bread of heaven; but my Father giveth you the true bread of heaven.”
+
+[^f141]: “Et ce en la prenant avec les qualitez qu’ils luy attribuoyent, et selon
+
+leur sens.”
+
+[^f142]: “Pain de Dieu.”
+
+[^f143]: “Qu’elles ayent en elles naturellement.”
+
+[^f144]: “C’est a dire, quand il nous fait ce bien de nous appeler.”
 
 <!-- PAGE 695 -->
 
-<span style="color:#800000">ft145</span> “Or ne nous est-il permis de rompre l’ordre et la suite du commencement avec la fin, puis que Dieu par son conseil l’a ainsi ordonne et voulu que cela allast d’un fil.” <span style="color:#800000">ft146</span> “Un sacrilege horrible.” <span style="color:#800000">ft147</span> “Quiconque donc a ouy mon Pere, et a appris.” <span style="color:#800000">ft148</span> “De la petitesse de Christ, et de sa humaine condition;” — “at the meanness of Christ, and of his human condition.” <span style="color:#800000">ft149</span> “Prenant nostre chair.” <span style="color:#800000">ft150</span> “Tant nous sommes mal adroits a faire nostre profit des choses, et les prendre de la sorte qu’il faut.” <span style="color:#800000">ft151</span> “Que nuls ne sont tirez sinon ceux qui le veulent estre.” <span style="color:#800000">ft152</span> “Qu’il n’y en a pas un de tous les eleus de Dieu qui ne viene a estre participant de la foy.” <span style="color:#800000">ft153</span> “C’est a dire, ne pensoyent plus haut que ce monde.” <span style="color:#800000">ft154</span> “Il nous escoule et vient a estre mis en oubli.” <span style="color:#800000">ft155</span> “Laquelle seule fait que nous tirons vie de ce pain.” <span style="color:#800000">ft156</span> “De manger la chair de Christ.” <span style="color:#800000">ft157</span> “Un juste despit que Christ a conceu.” <span style="color:#800000">ft158</span> “C’est a dire, la Cene.” <span style="color:#800000">ft159</span> “De la chair de Christ.” <span style="color:#800000">ft160</span> “Tous les fideles.” <span style="color:#800000">ft161</span> “De la maniere perpetuelle et ordinaire de manger la chair de Christ, qui se fait par la foy seulement.” <span style="color:#800000">ft162</span> “Comme nn seau et confirmation.” <span style="color:#800000">ft163</span> “Il a dresse l’enseigne de nostre justice comme un memorial magnifique de sa victoire.” <span style="color:#800000">ft164</span> “Ceux-la donc ne sont pas bons et droicts expositeurs du mystere de la Cene.” <span style="color:#800000">ft165</span> “Ceste parole est dure, *ou*, *rude*;” — “this saying hard, *or*, *harsh*.” <span style="color:#800000">ft166</span> “En vraye humilite.” <span style="color:#800000">ft167</span> “Estranges et incroyables.”
+[^f145]: “Or ne nous est-il permis de rompre l’ordre et la suite du
+
+commencement avec la fin, puis que Dieu par son conseil l’a ainsi ordonne et voulu que cela allast d’un fil.”
+
+[^f146]: “Un sacrilege horrible.”
+
+[^f147]: “Quiconque donc a ouy mon Pere, et a appris.”
+
+[^f148]: “De la petitesse de Christ, et de sa humaine condition;” — “at the
+
+meanness of Christ, and of his human condition.”
+
+[^f149]: “Prenant nostre chair.”
+
+[^f150]: “Tant nous sommes mal adroits a faire nostre profit des choses, et les
+
+prendre de la sorte qu’il faut.”
+
+[^f151]: “Que nuls ne sont tirez sinon ceux qui le veulent estre.”
+
+[^f152]: “Qu’il n’y en a pas un de tous les eleus de Dieu qui ne viene a estre
+
+participant de la foy.”
+
+[^f153]: “C’est a dire, ne pensoyent plus haut que ce monde.”
+
+[^f154]: “Il nous escoule et vient a estre mis en oubli.”
+
+[^f155]: “Laquelle seule fait que nous tirons vie de ce pain.”
+
+[^f156]: “De manger la chair de Christ.”
+
+[^f157]: “Un juste despit que Christ a conceu.”
+
+[^f158]: “C’est a dire, la Cene.”
+
+[^f159]: “De la chair de Christ.”
+
+[^f160]: “Tous les fideles.”
+
+[^f161]: “De la maniere perpetuelle et ordinaire de manger la chair de Christ,
+
+qui se fait par la foy seulement.”
+
+[^f162]: “Comme nn seau et confirmation.”
+
+[^f163]: “Il a dresse l’enseigne de nostre justice comme un memorial magnifique
+
+de sa victoire.”
+
+[^f164]: “Ceux-la donc ne sont pas bons et droicts expositeurs du mystere de
+
+la Cene.”
+
+[^f165]: “Ceste parole est dure, *ou*, *rude*;” — “this saying hard, *or*, *harsh*.”
+
+[^f166]: “En vraye humilite.”
+
+[^f167]: “Estranges et incroyables.”
 
 <!-- PAGE 696 -->
 
-<span style="color:#800000">ft168</span> “La ou il n’y a que le beau plein chemin.” <span style="color:#800000">ft169</span> “Pour dire a la verite.” <span style="color:#800000">ft170</span> “De se scandalizer.” <span style="color:#800000">ft171</span> “Comme s’il estoit dit, La chair seule et par soy ne profite de rien.” <span style="color:#800000">ft172</span> “Tant aigu soit il.” <span style="color:#800000">ft173</span> “Inconsiderement, ou a la volee.” <span style="color:#800000">ft174</span> “Il ne peut eviter.” <span style="color:#800000">ft175</span> A tous transgresseurs.”
+[^f168]: “La ou il n’y a que le beau plein chemin.”
+
+[^f169]: “Pour dire a la verite.”
+
+[^f170]: “De se scandalizer.”
+
+[^f171]: “Comme s’il estoit dit, La chair seule et par soy ne profite de rien.”
+
+[^f172]: “Tant aigu soit il.”
+
+[^f173]: “Inconsiderement, ou a la volee.”
+
+[^f174]: “Il ne peut eviter.”
+
+[^f175]: A tous transgresseurs.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 7</p>
 
-<span style="color:#800000">ft176</span> “Determine au conseil de Dieu.” <span style="color:#800000">ft177</span> “De nos parens.” <span style="color:#800000">ft178</span> “Le titre de Mere de Christ.” <span style="color:#800000">ft179</span> “De se mettre en chemin pour aller a la feste.” <span style="color:#800000">ft180</span> “Les cousins de nostre Seigneur Jesus Christ.” <span style="color:#800000">ft181</span> “De quitter et renoncer le Fils de Dieu.” <span style="color:#800000">ft182</span> “Comme un abysme de confusion et disordre;” — “as a gulf of confusion and disorder.” <span style="color:#800000">ft183</span> “Entre la faussete et la verite.” <span style="color:#800000">ft184</span> “Les scribes le haissoyent mortellement.” <span style="color:#800000">ft185</span> “Que la cour du Pape est remplie d’Epicuriens.” <span style="color:#800000">ft186</span> “An jour de Repos.” <span style="color:#800000">ft187</span> The difficulty is obviated by reading the words <span style="color:#0000d4">διὰ τούτο</span>, (with
+[^f176]: “Determine au conseil de Dieu.”
+
+[^f177]: “De nos parens.”
+
+[^f178]: “Le titre de Mere de Christ.”
+
+[^f179]: “De se mettre en chemin pour aller a la feste.”
+
+[^f180]: “Les cousins de nostre Seigneur Jesus Christ.”
+
+[^f181]: “De quitter et renoncer le Fils de Dieu.”
+
+[^f182]: “Comme un abysme de confusion et disordre;” — “as a gulf of
+
+confusion and disorder.”
+
+[^f183]: “Entre la faussete et la verite.”
+
+[^f184]: “Les scribes le haissoyent mortellement.”
+
+[^f185]: “Que la cour du Pape est remplie d’Epicuriens.”
+
+[^f186]: “An jour de Repos.”
+
+[^f187]: The difficulty is obviated by reading the words <span style="color:#0000d4">διὰ τούτο</span>, (with
 
 Scholz, Bloomfield, and others,) as the conclusion of the 21st, and not as the commencement of the 22nd verse; <span style="color:#0000d4">καὶ πάντες Θαυμάζετε</span> <span style="color:#0000d4">διὰ τούτο</span>, *and you all wonder* AT IT, or, *on this account*. Our Author, with his usual sagacity, has, in this instance, also anticipated the results of modern criticism; for his French version, which contains his latest views, runs thus: “J’ay fait une oeuvre, et vous en estes tous emerveillez, *ou*, *et vous estes esmerveillez de cela*. *Moise vous a donne la Circoncision*.” — “I have done one work, and you are all astonished
 
@@ -7006,21 +7445,111 @@ Scholz, Bloomfield, and others,) as the conclusion of the 21st, and not as the c
 
 <p style="text-align:center">at it, or, and you are all astonished at that. Moses gave you Circumcision.” It is remarkable that, while a modern French version copies CALVIN’S rendering very closely, et vous en etes tous etonnes, (and you are all astonished at it,) the translator has overlooked the force of διὰ τούτο, for en (at it) is marked by him in Italics, as a supplement. — Ed.</p>
 
-<span style="color:#800000">ft188</span> “An jour de Repos.” <span style="color:#800000">ft189</span> “Vers ceux qui sont espars entre les Grecs.” <span style="color:#800000">ft190</span> “Un fort bel exemple.” <span style="color:#800000">ft191</span> “Quand il la cherche.” <span style="color:#800000">ft192</span> “Aux estrangers qui estes espars.” <span style="color:#800000">ft193</span> “Des dons et graces du Sainct Esprit.” <span style="color:#800000">ft194</span> “Sous une partie il comprend le tout.” <span style="color:#800000">ft195</span> “A ses eleus et fideles.” <span style="color:#800000">ft196</span> “Offerte et donnee.” <span style="color:#800000">ft197</span> “Cestuy-ci est veritablement Prophete, *ou*, *le Prophete*.” — “This is truly a Prophet, *or*, *the Prophet*.” <span style="color:#800000">ft198</span> “De mortelle haine.” <span style="color:#800000">ft199</span> “Les troisiemes.” <span style="color:#800000">ft200</span> “Ces orgueilleur et mechans sacrificateurs.” <span style="color:#800000">ft201</span> “Laquelle toutesfois ils confessent estre de Dieu, d’autant qu’ils en sont conveincus en leurs coeurs.” <span style="color:#800000">ft202</span> “D’un homme fidele et Chrestien.” <span style="color:#800000">ft203</span> “De ce petit coin incognee de Galilee.”
+[^f188]: “An jour de Repos.”
+
+[^f189]: “Vers ceux qui sont espars entre les Grecs.”
+
+[^f190]: “Un fort bel exemple.”
+
+[^f191]: “Quand il la cherche.”
+
+[^f192]: “Aux estrangers qui estes espars.”
+
+[^f193]: “Des dons et graces du Sainct Esprit.”
+
+[^f194]: “Sous une partie il comprend le tout.”
+
+[^f195]: “A ses eleus et fideles.”
+
+[^f196]: “Offerte et donnee.”
+
+[^f197]: “Cestuy-ci est veritablement Prophete, *ou*, *le Prophete*.” — “This is
+
+truly a Prophet, *or*, *the Prophet*.”
+
+[^f198]: “De mortelle haine.”
+
+[^f199]: “Les troisiemes.”
+
+[^f200]: “Ces orgueilleur et mechans sacrificateurs.”
+
+[^f201]: “Laquelle toutesfois ils confessent estre de Dieu, d’autant qu’ils en
+
+sont conveincus en leurs coeurs.”
+
+[^f202]: “D’un homme fidele et Chrestien.”
+
+[^f203]: “De ce petit coin incognee de Galilee.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 8</p>
 
-<span style="color:#800000">ft204</span> “S’enclinant en bas.” — “Stooping down.” <span style="color:#800000">ft205</span> “Il se dressa.” <span style="color:#800000">ft206</span> “Ce sera toujours a recommencer;” — “they will always have to begin anew.” Dropping the classical allusion, our Author has thus conveyed the meaning to his countrymen in plain terms. All who have read
+[^f204]: “S’enclinant en bas.” — “Stooping down.”
+
+[^f205]: “Il se dressa.”
+
+[^f206]: “Ce sera toujours a recommencer;” — “they will always have to begin
+
+anew.” Dropping the classical allusion, our Author has thus conveyed the meaning to his countrymen in plain terms. All who have read
 
 <!-- PAGE 698 -->
 
 <p style="text-align:center">Homer’s Odyssey will remember Penelope, the wife of Ulysses, and especially that part of her history to which CALVIN refers, that what she wove during the day she unravelled during the night, and thus accomplished her resolution that she should be daily employed in weaving, and yet that her web should not be finished till after her husband’s return. Penelopes telam texere, to weave Penelope’s web, was a proverbial expression, which the Romans borrowed from the Greeks. — Ed.</p>
 
-<span style="color:#800000">ft207</span> “Pleust a Dieu que.” <span style="color:#800000">ft208</span> “Voyla la beau fruict.” <span style="color:#800000">ft209</span> “Ton tesmoignage n’est pas vrai; c’*est a dire*, n’*est point digne* de foy.” — “Thy testimony is not true; that is, is not worthy of credit.” <span style="color:#800000">ft210</span> “Mon tesmoignage est vray; c’*est a dire*, *digne de foy*.” — “My testimony is true; *that is*, *worthy of credit*. <span style="color:#800000">ft211</span> “De la femme adultere.” <span style="color:#800000">ft212</span> “Du Fils de Dieu.” <span style="color:#800000">ft213</span> “Aussi maintenant est-il haut eleve.” <span style="color:#800000">ft214</span> “Mon jugement est vray; c’*est a dire*, *digne de foy*.” — “My judgment is true; *that is*, *worthy of credit*.” <span style="color:#800000">ft215</span> “Le Fils de Dieu.” <span style="color:#800000">ft216</span> “Du nombre commun des autres hommes.” <span style="color:#800000">ft217</span> See page 223, n. 1. <span style="color:#800000">ft218</span> “Quiconque s’humilie devant le Seigneur Jesus.” <span style="color:#800000">ft219</span> “Combien qu’ils eussent leurs gueules ouvertes pour l’engloutir.” <span style="color:#800000">ft220</span> “Enyvrez d’une stupidite plus que brutale.” <span style="color:#800000">ft221</span> “Non pas qu’il n’y a point d’autres pechez que l’incredulite.” <span style="color:#800000">ft222</span> “Il n’y a qu’un amas infini de tous maux qui regne continuellement en nous.” <span style="color:#800000">ft223</span> “Ou, *ce dont je vous parle des le commencement*;” — “or, *what I tell* *you from the beginning*.” <span style="color:#800000">ft224</span> “Ou, *comme aussi je vous en parle*;” — “or, *as also I speak* of it *to* *you*.”
+[^f207]: “Pleust a Dieu que.”
+
+[^f208]: “Voyla la beau fruict.”
+
+[^f209]: “Ton tesmoignage n’est pas vrai; c’*est a dire*, n’*est point digne* de
+
+foy.” — “Thy testimony is not true; that is, is not worthy of credit.”
+
+[^f210]: “Mon tesmoignage est vray; c’*est a dire*, *digne de foy*.” — “My
+
+testimony is true; *that is*, *worthy of credit*.
+
+[^f211]: “De la femme adultere.”
+
+[^f212]: “Du Fils de Dieu.”
+
+[^f213]: “Aussi maintenant est-il haut eleve.”
+
+[^f214]: “Mon jugement est vray; c’*est a dire*, *digne de foy*.” — “My judgment
+
+is true; *that is*, *worthy of credit*.”
+
+[^f215]: “Le Fils de Dieu.”
+
+[^f216]: “Du nombre commun des autres hommes.”
+
+[^f217]: See page 223, n. 1.
+
+[^f218]: “Quiconque s’humilie devant le Seigneur Jesus.”
+
+[^f219]: “Combien qu’ils eussent leurs gueules ouvertes pour l’engloutir.”
+
+[^f220]: “Enyvrez d’une stupidite plus que brutale.”
+
+[^f221]: “Non pas qu’il n’y a point d’autres pechez que l’incredulite.”
+
+[^f222]: “Il n’y a qu’un amas infini de tous maux qui regne continuellement en
+
+nous.”
+
+[^f223]: “Ou, *ce dont je vous parle des le commencement*;” — “or, *what I tell*
+
+*you from the beginning*.”
+
+[^f224]: “Ou, *comme aussi je vous en parle*;” — “or, *as also I speak* of it *to*
+
+*you*.”
 
 <!-- PAGE 699 -->
 
-<span style="color:#800000">ft225</span> Ceux qui traduisent, “Je suis le commencement.” <span style="color:#800000">ft226</span> He refers to Nonnus, a Greek writer, who rendered into hexameter verse the Gospel by John. The passage stands thus:
+[^f225]: Ceux qui traduisent, “Je suis le commencement.”
+
+[^f226]: He refers to Nonnus, a Greek writer, who rendered into hexameter
+
+verse the Gospel by John. The passage stands thus:
 
 <span style="color:#0000d4">Τίς σὺ πέλεις καὶ Χριστὸς ἀνίαχεν, ὁττι par ὑμῖν</span> <span style="color:#0000d4">Ex ἀρχῆς ἀόριζον έχων νήριθμα δικάζειν</span> <span style="color:#0000d4">Καὶ λαλέειν</span>
 
@@ -7028,92 +7557,563 @@ Scholz, Bloomfield, and others,) as the conclusion of the 21st, and not as the c
 
 <p style="text-align:center">BEGINNING, having an innumerable multitude of things to say and judge. So far as relates to τὴν ἀρχὴν, Nonnus appears to agree with Calvin; for he renders it ἐξ ajrch`v, from the beginning. — Ed.</p>
 
-<span style="color:#800000">ft227</span> “A cheminer en crainte.” <span style="color:#800000">ft228</span> “Qu’il ouvre plus sa bouche pour leur dire rein.” <span style="color:#800000">ft229</span> “Les reprouvez et infideles.” <span style="color:#800000">ft230</span> “Il est serf de peche.” <span style="color:#800000">ft231</span> “Le serf.” <span style="color:#800000">ft232</span> “Pource que ma parole n’a point de lieu en vous;” — “because my word hath no place in you.” <span style="color:#800000">ft233</span> “Ceux-la mesmes parlans, qui parloyent auparavant.” <span style="color:#800000">ft234</span> “Entre les enfans d’Abraham qui sont bastars et forlignans, et le vrais et legitimes.” <span style="color:#800000">ft235</span> “Et de faict, y a-il chose qu’on puisse plustost louer en Abraham?” <span style="color:#800000">ft236</span> “Ils haissent de haine mortelle.” <span style="color:#800000">ft237</span> “Aucuns font ici difference entre Langage et Parole, pource que la parole emporte plus, mais je n’y en voy point.” <span style="color:#800000">ft238</span> “En ce mot Langage.” <span style="color:#800000">ft239</span> “Il y a qui la cherche, et qui en juge.” <span style="color:#800000">ft240</span> “Ils n’oyent point les paroles de Dieu.” <span style="color:#800000">ft241</span> “Neantmoins, ils sont enragez, et n’ont pointe honte de se monstrer du tout desesperez.” <span style="color:#800000">ft242</span> “Du Seigneur Jesus.” <span style="color:#800000">ft243</span> “Que tu as le diable.” <span style="color:#800000">ft244</span> “En haine et mespris.”
+[^f227]: “A cheminer en crainte.”
+
+[^f228]: “Qu’il ouvre plus sa bouche pour leur dire rein.”
+
+[^f229]: “Les reprouvez et infideles.”
+
+[^f230]: “Il est serf de peche.”
+
+[^f231]: “Le serf.”
+
+[^f232]: “Pource que ma parole n’a point de lieu en vous;” — “because my
+
+word hath no place in you.”
+
+[^f233]: “Ceux-la mesmes parlans, qui parloyent auparavant.”
+
+[^f234]: “Entre les enfans d’Abraham qui sont bastars et forlignans, et le vrais
+
+et legitimes.”
+
+[^f235]: “Et de faict, y a-il chose qu’on puisse plustost louer en Abraham?”
+
+[^f236]: “Ils haissent de haine mortelle.”
+
+[^f237]: “Aucuns font ici difference entre Langage et Parole, pource que la
+
+parole emporte plus, mais je n’y en voy point.”
+
+[^f238]: “En ce mot Langage.”
+
+[^f239]: “Il y a qui la cherche, et qui en juge.”
+
+[^f240]: “Ils n’oyent point les paroles de Dieu.”
+
+[^f241]: “Neantmoins, ils sont enragez, et n’ont pointe honte de se monstrer
+
+du tout desesperez.”
+
+[^f242]: “Du Seigneur Jesus.”
+
+[^f243]: “Que tu as le diable.”
+
+[^f244]: “En haine et mespris.”
 
 <!-- PAGE 700 -->
 
-<span style="color:#800000">ft245</span> “La vraye et legitimo profession.” <span style="color:#800000">ft246</span> “Un vehement zele.” <span style="color:#800000">ft247</span> “Avant qu’Abraham fust.” <span style="color:#800000">ft248</span> “Priusquam Abraham nasceretur.” <span style="color:#800000">ft249</span> <span style="color:#0000d4">πρὶν Αβραὰμ γενέσθαι, ἐγώ eijmi</span>. Our Author’s idea, to which he merely alludes, appears to be that, instead of saying, <span style="color:#0000d4">ἐγὼ ἐγενόμνη</span>, or, <span style="color:#0000d4">ἐγὼ γίνομαι</span>, Christ purposely said, <span style="color:#0000d4">ἐγώ eijmi</span>, because the verb <span style="color:#0000d4">εἰμῖ</span>, standing contrasted with <span style="color:#0000d4">γενέσθαι</span>, would convey the idea of underived existence. — *Ed*. <span style="color:#800000">ft250</span> “Une vertu plus qu’humaine.”
+[^f245]: “La vraye et legitimo profession.”
+
+[^f246]: “Un vehement zele.”
+
+[^f247]: “Avant qu’Abraham fust.”
+
+[^f248]: “Priusquam Abraham nasceretur.”
+
+<span style="color:#800000">ft249</span> <span style="color:#0000d4">πρὶν Αβραὰμ γενέσθαι, ἐγώ eijmi</span>. Our Author’s idea, to which he merely alludes, appears to be that, instead of saying, <span style="color:#0000d4">ἐγὼ ἐγενόμνη</span>, or, <span style="color:#0000d4">ἐγὼ γίνομαι</span>, Christ purposely said, <span style="color:#0000d4">ἐγώ eijmi</span>, because the verb <span style="color:#0000d4">εἰμῖ</span>, standing contrasted with <span style="color:#0000d4">γενέσθαι</span>, would convey the idea of underived existence. — *Ed*.
+
+[^f250]: “Une vertu plus qu’humaine.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 9</p>
 
-<span style="color:#800000">ft251</span> “Par croix ou tribulation.” <span style="color:#800000">ft252</span> “Homme juste, et craignaut Dieu.” <span style="color:#800000">ft253</span> “Que les ames passoyent d’un corps eu l’autre.” <span style="color:#800000">ft254</span> “Comme dit le proverbe.” <span style="color:#800000">ft255</span> De sa guairison et delivrance.” <span style="color:#800000">ft256</span> “Ils disent derechef a l’aveugle;” — “they say again to the blind man.” <span style="color:#800000">ft257</span> “Un certain Serapis.” <span style="color:#800000">ft258</span> “De la malice obstinee.” <span style="color:#800000">ft259</span> “De la vraye religion.” <span style="color:#800000">ft260</span> “Une grande flamme.” <span style="color:#800000">ft261</span> “Le Seigneur Jesus.” <span style="color:#800000">ft262</span> “Les infideles.” <span style="color:#800000">ft263</span> “Des le commencement du monde.” <span style="color:#800000">ft264</span> “Quant a nous.” <span style="color:#800000">ft265</span> “Et toutesfois.” <span style="color:#800000">ft266</span> “Il ne fut jamais ouy.” <span style="color:#800000">ft267</span> “Tant plus de lags se mettent-ils au Col.” <span style="color:#800000">ft268</span> “Quand ils le pressent si instamment a respondre sur ce faict.”
+[^f251]: “Par croix ou tribulation.”
+
+[^f252]: “Homme juste, et craignaut Dieu.”
+
+[^f253]: “Que les ames passoyent d’un corps eu l’autre.”
+
+[^f254]: “Comme dit le proverbe.”
+
+[^f255]: De sa guairison et delivrance.”
+
+[^f256]: “Ils disent derechef a l’aveugle;” — “they say again to the blind man.”
+
+[^f257]: “Un certain Serapis.”
+
+[^f258]: “De la malice obstinee.”
+
+[^f259]: “De la vraye religion.”
+
+[^f260]: “Une grande flamme.”
+
+[^f261]: “Le Seigneur Jesus.”
+
+[^f262]: “Les infideles.”
+
+[^f263]: “Des le commencement du monde.”
+
+[^f264]: “Quant a nous.”
+
+[^f265]: “Et toutesfois.”
+
+[^f266]: “Il ne fut jamais ouy.”
+
+[^f267]: “Tant plus de lags se mettent-ils au Col.”
+
+[^f268]: “Quand ils le pressent si instamment a respondre sur ce faict.”
 
 <!-- PAGE 701 -->
 
-<span style="color:#800000">ft269</span> “De deschirer Dieu par pieces.” <span style="color:#800000">ft270</span> “Vous n’auriez point de peche;” — “you would have no sin.” <span style="color:#800000">ft271</span> “Ces Rabbins orgueilleux.” <span style="color:#800000">ft272</span> “Le Docteur Martin Luther.” <span style="color:#800000">ft273</span> “Si l’aveugle a honore ou adore Christ comme Dieu.” <span style="color:#800000">ft274</span> “Aux infideles.” <span style="color:#800000">ft275</span> “Ceux voyent, dit nostre Seigneur Jesus Christ.” <span style="color:#800000">ft276</span> “Pour une grande sagesse.” <span style="color:#800000">ft277</span> “Et comme a enseigne desployee.” <span style="color:#800000">ft278</span> “Les mechans et infideles.” <span style="color:#800000">ft279</span> “Pour guairir son mal.”
+[^f269]: “De deschirer Dieu par pieces.”
+
+[^f270]: “Vous n’auriez point de peche;” — “you would have no sin.”
+
+[^f271]: “Ces Rabbins orgueilleux.”
+
+[^f272]: “Le Docteur Martin Luther.”
+
+[^f273]: “Si l’aveugle a honore ou adore Christ comme Dieu.”
+
+[^f274]: “Aux infideles.”
+
+[^f275]: “Ceux voyent, dit nostre Seigneur Jesus Christ.”
+
+[^f276]: “Pour une grande sagesse.”
+
+[^f277]: “Et comme a enseigne desployee.”
+
+[^f278]: “Les mechans et infideles.”
+
+[^f279]: “Pour guairir son mal.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 10</p>
 
-<span style="color:#800000">ft280</span> “Si par ce mot de *Portier*.” <span style="color:#800000">ft281</span> The word *pastor* signifies *shepherd*, but, for the sake of the reader, who may not be aware of its etymology, it has been found necessary, in some cases, to employ both of the words, especially where the figure holds so prominent a place in the discussion. — *Ed*. <span style="color:#800000">ft282</span> “En sorte qu’il n’y en a pas eu une seule qui l’ait laisse.” <span style="color:#800000">ft283</span> “Du troupeau du Fils de Dieu.” <span style="color:#800000">ft284</span> “Lions, tygres, loups, et ours.” <span style="color:#800000">ft285</span> A phrase in Scottish law, denoting a full right to occupy a house or any property, is, *free ish* (issue) *and entrance*, or, in other words, a right *to go out and to come in*, as the occupant pleases. *— Ed*. <span style="color:#800000">ft286</span> “De quel zele et affection.” <span style="color:#800000">ft287</span> “Que s’il y a danger aussi bien pour les brebis que pour la personne du pasteur.” <span style="color:#800000">ft288</span> “Rien de tout ce qu’il veut estre sauve.” <span style="color:#800000">ft289</span> So it runs in the French version, “*Et il y aura une bergerie et un*
+[^f280]: “Si par ce mot de *Portier*.”
+
+[^f281]: The word *pastor* signifies *shepherd*, but, for the sake of the reader,
+
+who may not be aware of its etymology, it has been found necessary, in some cases, to employ both of the words, especially where the figure holds so prominent a place in the discussion. — *Ed*.
+
+[^f282]: “En sorte qu’il n’y en a pas eu une seule qui l’ait laisse.”
+
+[^f283]: “Du troupeau du Fils de Dieu.”
+
+[^f284]: “Lions, tygres, loups, et ours.”
+
+[^f285]: A phrase in Scottish law, denoting a full right to occupy a house or
+
+any property, is, *free ish* (issue) *and entrance*, or, in other words, a right *to go out and to come in*, as the occupant pleases. *— Ed*.
+
+[^f286]: “De quel zele et affection.”
+
+[^f287]: “Que s’il y a danger aussi bien pour les brebis que pour la personne du
+
+pasteur.”
+
+[^f288]: “Rien de tout ce qu’il veut estre sauve.”
+
+[^f289]: So it runs in the French version, “*Et il y aura une bergerie et un*
 
 *Pasteur*.” But in the Latin original, our Author, either through choice or inadvertency, has altered the translation, by substituting *grex* (flock)
 
 <!-- PAGE 702 -->
 
-for *ovile*, (fold.) “*Et fiet unus grex*;” — “*and there shall be one flock*.” *— Ed*. <span style="color:#800000">ft290</span> “Assemblez et unis.” <span style="color:#800000">ft291</span> “Une saincte Eglise universelle.” <span style="color:#800000">ft292</span> “Sa voix seule.” <span style="color:#800000">ft293</span> “Sa voix et sa doctrine.” <span style="color:#800000">ft294</span> “Aussi grand et excellent qu’il peut estre.” <span style="color:#800000">ft295</span> “Et aussi sa boute” <span style="color:#800000">ft296</span> “Le mot Grec pour lequel nous avons mis Dedicace.” <span style="color:#800000">ft297</span> “Nostre Seigneur Jesus.” <span style="color:#800000">ft298</span> “Mais qui apprivoisera des bestes sauvages?” <span style="color:#800000">ft299</span> “Et si je les fay;” — “and if I do them.” <span style="color:#800000">ft300</span> “Mais il eschappa.” <span style="color:#800000">ft301</span> “Sinon que vous voyez le faict evident devant vos yeux.” <span style="color:#800000">ft302</span> “Aucune reverence ni honneur.” <span style="color:#800000">ft303</span> See page 62 of this volume. <span style="color:#800000">ft304</span> “Qui estoit le propre siege et habitation de celuy.” <span style="color:#800000">ft305</span> “D’un coste.” <span style="color:#800000">ft306</span> “D’autrepart.”
+for *ovile*, (fold.) “*Et fiet unus grex*;” — “*and there shall be one flock*.” *— Ed*.
+
+[^f290]: “Assemblez et unis.”
+
+[^f291]: “Une saincte Eglise universelle.”
+
+[^f292]: “Sa voix seule.”
+
+[^f293]: “Sa voix et sa doctrine.”
+
+[^f294]: “Aussi grand et excellent qu’il peut estre.”
+
+[^f295]: “Et aussi sa boute”
+
+[^f296]: “Le mot Grec pour lequel nous avons mis Dedicace.”
+
+[^f297]: “Nostre Seigneur Jesus.”
+
+[^f298]: “Mais qui apprivoisera des bestes sauvages?”
+
+[^f299]: “Et si je les fay;” — “and if I do them.”
+
+[^f300]: “Mais il eschappa.”
+
+[^f301]: “Sinon que vous voyez le faict evident devant vos yeux.”
+
+[^f302]: “Aucune reverence ni honneur.”
+
+[^f303]: See page 62 of this volume.
+
+[^f304]: “Qui estoit le propre siege et habitation de celuy.”
+
+[^f305]: “D’un coste.”
+
+[^f306]: “D’autrepart.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 11</p>
 
-<span style="color:#800000">ft307</span> “A sa majeste.” <span style="color:#800000">ft308</span> “Quand nous avons tousjours Dieu devant nos yeux pour nostre guide.” <span style="color:#800000">ft309</span> “Combien que les jours soyent plus grands en este, et plus petits en hyver.” <span style="color:#800000">ft310</span> “Adonc Thomas, qui est a dire Gemeau;” — “then Thomas, which means Twin.” <span style="color:#800000">ft311</span> “Il sera guairi.” <span style="color:#800000">ft312</span> “Comme faisans semblant de n’entendre point ce que Christ dit.”
+[^f307]: “A sa majeste.”
+
+[^f308]: “Quand nous avons tousjours Dieu devant nos yeux pour nostre
+
+guide.”
+
+[^f309]: “Combien que les jours soyent plus grands en este, et plus petits en
+
+hyver.”
+
+[^f310]: “Adonc Thomas, qui est a dire Gemeau;” — “then Thomas, which
+
+means Twin.”
+
+[^f311]: “Il sera guairi.”
+
+[^f312]: “Comme faisans semblant de n’entendre point ce que Christ dit.”
 
 <!-- PAGE 703 -->
 
-<span style="color:#800000">ft313</span> “Et mesmers veu que les autheurs profanes transferent coustumierement ce mot de Dormir a la Mort.” <span style="color:#800000">ft314</span> The Roman *Passus*, or pace — measured from the spot where either foot was planted to the spot where the same foot was planted after two ordinary steps — was five feet; so that the *Mille*, or *thousand* paces, contained five thousand feet, rather less than an English *mile*; and the *Stadium*, *or furlong*, which contained, as CALVIN states, “one hundred and twenty-five paces,” was equal to six hundred and twentyfive feet. — *Ed*. <span style="color:#800000">ft315</span> “Cela n’a rien de commun avec la foy.” <span style="color:#800000">ft316</span> See pp. 200 and 204 of this volume. <span style="color:#800000">ft317</span> “N’est autre chose qu’estre estrange et detourne de Dieu.” <span style="color:#800000">ft318</span> “Aussi.” <span style="color:#800000">ft319</span> “Voyez comme il l’aimoit!” — “see how he loved him!” <span style="color:#800000">ft320</span> “Mais voyci le pis.” <span style="color:#800000">ft321</span> “Quand de son bon gre il se conforme a ces pleurans, jusques pleurer avec eux.” <span style="color:#800000">ft322</span> “Pour mieux dire.” <span style="color:#800000">ft323</span> “C’est a dire, venant d’ailleurs que du Createur.” <span style="color:#800000">ft324</span> “Ceste mesme aide, si tost qu’il nous la presente.” <span style="color:#800000">ft325</span> “Plustost qu’a quelques autres.” <span style="color:#800000">ft326</span> See page 223, n. 1. <span style="color:#800000">ft327</span> “De la Divine majeste.” <span style="color:#800000">ft328</span> “Par la mort de celuy qui l’avolt.” <span style="color:#800000">ft329</span> “Les principaux sacrificateurs.”
+[^f313]: “Et mesmers veu que les autheurs profanes transferent
+
+coustumierement ce mot de Dormir a la Mort.”
+
+[^f314]: The Roman *Passus*, or pace — measured from the spot where either
+
+foot was planted to the spot where the same foot was planted after two ordinary steps — was five feet; so that the *Mille*, or *thousand* paces, contained five thousand feet, rather less than an English *mile*; and the *Stadium*, *or furlong*, which contained, as CALVIN states, “one hundred and twenty-five paces,” was equal to six hundred and twentyfive feet. — *Ed*.
+
+[^f315]: “Cela n’a rien de commun avec la foy.”
+
+[^f316]: See pp. 200 and 204 of this volume.
+
+[^f317]: “N’est autre chose qu’estre estrange et detourne de Dieu.”
+
+[^f318]: “Aussi.”
+
+[^f319]: “Voyez comme il l’aimoit!” — “see how he loved him!”
+
+[^f320]: “Mais voyci le pis.”
+
+[^f321]: “Quand de son bon gre il se conforme a ces pleurans, jusques pleurer
+
+avec eux.”
+
+[^f322]: “Pour mieux dire.”
+
+[^f323]: “C’est a dire, venant d’ailleurs que du Createur.”
+
+[^f324]: “Ceste mesme aide, si tost qu’il nous la presente.”
+
+[^f325]: “Plustost qu’a quelques autres.”
+
+[^f326]: See page 223, n. 1.
+
+[^f327]: “De la Divine majeste.”
+
+[^f328]: “Par la mort de celuy qui l’avolt.”
+
+[^f329]: “Les principaux sacrificateurs.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 12</p>
 
-<span style="color:#800000">ft330</span> “Et Marthe servoit a table;” — “and Martha waited at table.” <span style="color:#800000">ft331</span> “Ne viendroit point a la feste.” <span style="color:#800000">ft332</span> “Pour faire apprester la Pasque.”
+[^f330]: “Et Marthe servoit a table;” — “and Martha waited at table.”
+
+[^f331]: “Ne viendroit point a la feste.”
+
+[^f332]: “Pour faire apprester la Pasque.”
 
 <!-- PAGE 704 -->
 
-<span style="color:#800000">ft333</span> “A fin que l’utilite laquelle il leur monstre en ce faict les retire du jugement chagrin et pervers qu’ils en faisoyent.” <span style="color:#800000">ft334</span> “Et pourtant le Sainct Esprit mettoit les mots en la bouche des hommes, quand ils ont ainsi souhaitte heureuse venue au Seigneur Jesus.” <span style="color:#800000">ft335</span> See *Harmony of the Evangelists*, vol. ii. <span style="color:#800000">ft336</span> “Le royaume du Messias.” <span style="color:#800000">ft337</span> “De jetter leurs yeux ailleurs qu’a David.” <span style="color:#800000">ft338</span> “Endormis et oisifs.” <span style="color:#800000">ft339</span>”Contre le Fils de Dieu.” <span style="color:#800000">ft340</span>”Vessies pleines de vent.” <span style="color:#800000">ft341</span>”Quelque Evesque ou Pontiffe.” <span style="color:#800000">ft342</span> “C’est une facon de parler qui comprend quelques fois le tout pour une partie, ou une partie pour le tout.” — “It is a mode of expression, which sometimes puts the whole for a part, or a part for the whole. <span style="color:#800000">ft343</span> See *Harmony of the Evangelists*, volume 2. <span style="color:#800000">ft344</span> *The shadow of an ass*, <span style="color:#0000d4">όνου σκιὰ</span>, *asini umbra*, was a proverbial phrase, among the Greeks and Romans. — *Ed*. <span style="color:#800000">ft345</span> Volume 1. <span style="color:#800000">ft346</span> See Volume 1. <span style="color:#800000">ft347</span> “De service et obeissance exterieure.” <span style="color:#800000">ft348</span> “Les saincts trespassez.” <span style="color:#800000">ft349</span> “Qui addressant leurs oraisons aux saincts trespassez, desquels ils sont separez.” <span style="color:#800000">ft350</span> “Sa resurrection glorieuse.” <span style="color:#800000">ft351</span> “Qui odit animam suam.” — “Qui hait sa vie;” — “he who hateth his life.” <span style="color:#800000">ft352</span> “Lesquels se precipitent bas a une ruine eternelle par leur ambition;”
+[^f333]: “A fin que l’utilite laquelle il leur monstre en ce faict les retire du
 
-— “who throw themselves down to eternal ruin by their ambition.” <span style="color:#800000">ft353</span> “Le Fils de Dieu.” <span style="color:#800000">ft354</span> “Le Fils die Dieu.”
+jugement chagrin et pervers qu’ils en faisoyent.”
+
+[^f334]: “Et pourtant le Sainct Esprit mettoit les mots en la bouche des
+
+hommes, quand ils ont ainsi souhaitte heureuse venue au Seigneur Jesus.”
+
+[^f335]: See *Harmony of the Evangelists*, vol. ii.
+
+[^f336]: “Le royaume du Messias.”
+
+[^f337]: “De jetter leurs yeux ailleurs qu’a David.”
+
+[^f338]: “Endormis et oisifs.”
+
+[^f339]: ”Contre le Fils de Dieu.”
+
+[^f340]: ”Vessies pleines de vent.”
+
+[^f341]: ”Quelque Evesque ou Pontiffe.”
+
+[^f342]: “C’est une facon de parler qui comprend quelques fois le tout pour
+
+une partie, ou une partie pour le tout.” — “It is a mode of expression, which sometimes puts the whole for a part, or a part for the whole.
+
+[^f343]: See *Harmony of the Evangelists*, volume 2.
+
+<span style="color:#800000">ft344</span> *The shadow of an ass*, <span style="color:#0000d4">όνου σκιὰ</span>, *asini umbra*, was a proverbial phrase, among the Greeks and Romans. — *Ed*.
+
+[^f345]: Volume 1.
+
+[^f346]: See Volume 1.
+
+[^f347]: “De service et obeissance exterieure.”
+
+[^f348]: “Les saincts trespassez.”
+
+[^f349]: “Qui addressant leurs oraisons aux saincts trespassez, desquels ils
+
+sont separez.”
+
+[^f350]: “Sa resurrection glorieuse.”
+
+[^f351]: “Qui odit animam suam.” — “Qui hait sa vie;” — “he who hateth his
+
+life.”
+
+[^f352]: “Lesquels se precipitent bas a une ruine eternelle par leur ambition;”
+
+— “who throw themselves down to eternal ruin by their ambition.”
+
+[^f353]: “Le Fils de Dieu.”
+
+[^f354]: “Le Fils die Dieu.”
 
 <!-- PAGE 705 -->
 
-<span style="color:#800000">ft355</span> “Une durete de pierre et de fer.” <span style="color:#800000">ft356</span> “Comme si Christ demeuroit confus, sans avoir plus que dire.” <span style="color:#800000">ft357</span> “Qui a creu a nostre ouye, *ou*, *parole*?” — “Who hath believed our report, *or*, *speech*,?” <span style="color:#800000">ft358</span> “Qui eroira a nostre ouye, ou, a nostre parole?” <span style="color:#800000">ft359</span> “A bien peu ae gens.” <span style="color:#800000">ft360</span> “D’ou vient done la delicatesse? “ <span style="color:#800000">ft361</span> “Ne sont qu’espouvantemens de petits enfants.” <span style="color:#800000">ft362</span> “Avec toutes ses graces et dons.” <span style="color:#800000">ft363</span> “Pource qu’elle est plus forte que le monde, et pardessus le monde.” <span style="color:#800000">ft364</span> “Et ne les croit point.” <span style="color:#800000">ft365</span> “Une approbation ou ratification.”
+[^f355]: “Une durete de pierre et de fer.”
+
+[^f356]: “Comme si Christ demeuroit confus, sans avoir plus que dire.”
+
+[^f357]: “Qui a creu a nostre ouye, *ou*, *parole*?” — “Who hath believed our
+
+report, *or*, *speech*,?”
+
+[^f358]: “Qui eroira a nostre ouye, ou, a nostre parole?”
+
+[^f359]: “A bien peu ae gens.”
+
+[^f360]: “D’ou vient done la delicatesse? “
+
+[^f361]: “Ne sont qu’espouvantemens de petits enfants.”
+
+[^f362]: “Avec toutes ses graces et dons.”
+
+[^f363]: “Pource qu’elle est plus forte que le monde, et pardessus le monde.”
+
+[^f364]: “Et ne les croit point.”
+
+[^f365]: “Une approbation ou ratification.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 13</p>
 
-<span style="color:#800000">ft366</span> “Et apres avoir souppe;” — “and after having supped.” <span style="color:#800000">ft367</span> “Que c’est une ouverture ou passage pour aller a Dieu. <span style="color:#800000">ft368</span> “Et apres avoir souppe.” — “And after having supped.” <span style="color:#800000">ft369</span> “Sursum ac deorsum.” — “Up and down.” <span style="color:#800000">ft370</span> “Lequel c’estoit qui le trahiroit.” <span style="color:#800000">ft371</span> “Neantmoins il ne se deporte pas de contredire;” — “yet, notwithstanding, he does not cease to contradict him.” <span style="color:#800000">ft372</span> “Mais voyci le mal.” <span style="color:#800000">ft373</span> “Cest hypocrite effronte.” <span style="color:#800000">ft374</span> “Et (apres) qu’il se fut rassis a table;” — “and (after) that he had sat down again at table.” <span style="color:#800000">ft375</span> “Apostolus;” — “l’ambassadeur.” <span style="color:#800000">ft376</span> “Cestuy-la s’attribue plus qu’il ne faut, et fait trop grand conte de soy.” <span style="color:#800000">ft377</span> “Comme s’ils jouyoient une farce sur des eschaffauts.” <span style="color:#800000">ft378</span> “Tout le reste de l’an.”
+[^f366]: “Et apres avoir souppe;” — “and after having supped.”
+
+[^f367]: “Que c’est une ouverture ou passage pour aller a Dieu.
+
+[^f368]: “Et apres avoir souppe.” — “And after having supped.”
+
+[^f369]: “Sursum ac deorsum.” — “Up and down.”
+
+[^f370]: “Lequel c’estoit qui le trahiroit.”
+
+[^f371]: “Neantmoins il ne se deporte pas de contredire;” — “yet,
+
+notwithstanding, he does not cease to contradict him.”
+
+[^f372]: “Mais voyci le mal.”
+
+[^f373]: “Cest hypocrite effronte.”
+
+[^f374]: “Et (apres) qu’il se fut rassis a table;” — “and (after) that he had
+
+sat down again at table.”
+
+[^f375]: “Apostolus;” — “l’ambassadeur.”
+
+[^f376]: “Cestuy-la s’attribue plus qu’il ne faut, et fait trop grand conte de
+
+soy.”
+
+[^f377]: “Comme s’ils jouyoient une farce sur des eschaffauts.”
+
+[^f378]: “Tout le reste de l’an.”
 
 <!-- PAGE 706 -->
 
-<span style="color:#800000">ft379</span> “Il y a bien pis.” <span style="color:#800000">ft380</span> “De nos fi,eres et prochains.” <span style="color:#800000">ft381</span> “Que ce suis-je;” — “that I am he.” <span style="color:#800000">ft382</span> “Avec l’experience qui se presente aujourdhui derant nos yeux;” —
+[^f379]: “Il y a bien pis.”
 
-“with the experience which is exhibited before our eyes at the present day.” <span style="color:#800000">ft383</span> “A fin que vous croyez que ce suis-je;” — “that you may believe that
+[^f380]: “De nos fi,eres et prochains.”
 
-I am he.” <span style="color:#800000">ft384</span> “Ils se despitent et enflamment davantage.” <span style="color:#800000">ft385</span> “C’est plustost la parole d’un homme qui a en horreur et detestation quelque forfait.” <span style="color:#800000">ft386</span> “Luy est glorieuse et honorable.” <span style="color:#800000">ft387</span> “Par icelle.” <span style="color:#800000">ft388</span> “A ce que nous n’appercevions nos fautes.”
+[^f381]: “Que ce suis-je;” — “that I am he.”
+
+[^f382]: “Avec l’experience qui se presente aujourdhui derant nos yeux;” —
+
+“with the experience which is exhibited before our eyes at the present day.”
+
+[^f383]: “A fin que vous croyez que ce suis-je;” — “that you may believe that
+
+I am he.”
+
+[^f384]: “Ils se despitent et enflamment davantage.”
+
+[^f385]: “C’est plustost la parole d’un homme qui a en horreur et detestation
+
+quelque forfait.”
+
+[^f386]: “Luy est glorieuse et honorable.”
+
+[^f387]: “Par icelle.”
+
+[^f388]: “A ce que nous n’appercevions nos fautes.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 14</p>
 
-<span style="color:#800000">ft389</span> “*Ou*, *Et quaadje m*’*en seray alle*, *et vous auray preparg le lieu*;” —
+[^f389]: “*Ou*, *Et quaadje m*’*en seray alle*, *et vous auray preparg le lieu*;” —
+
+“or, *And when I shall have gone away*, *and prepared the place for you*.”
+
+[^f390]: “Le Fils de Dieu done, qui est Jesus Christ.”
+
+[^f391]: “Quand il seroit parti hors de ce monde pour aller a son Pere.”
+
+[^f392]: “Si quel qu’un ne se contentant point de luy seul, vent passer outre.”
+
+[^f393]: “Par voyes obliques et tortues.”
+
+[^f394]: “La vive Image, ou Pourtraict, de Dieu.”
+
+[^f395]: “De ne croire point entierement aux paroles qui procedent de la
+
+bouche du Seigneur Jesus.”
+
+[^f396]: “Je viendrai a vous;” — “I will come to you.”
+
+[^f397]: “A scavoir qu’il est Maistre ou Docteur de la verite.”
+
+[^f398]: “Sur toy, O Jerusalem! “
+
+[^f399]: “D’ou vient?” — “Whence comes it? “
 
 <!-- PAGE 707 -->
-“or, *And when I shall have gone away*, *and prepared the place for you*.” <span style="color:#800000">ft390</span> “Le Fils de Dieu done, qui est Jesus Christ.” <span style="color:#800000">ft391</span> “Quand il seroit parti hors de ce monde pour aller a son Pere.” <span style="color:#800000">ft392</span> “Si quel qu’un ne se contentant point de luy seul, vent passer outre.” <span style="color:#800000">ft393</span> “Par voyes obliques et tortues.” <span style="color:#800000">ft394</span> “La vive Image, ou Pourtraict, de Dieu.” <span style="color:#800000">ft395</span> “De ne croire point entierement aux paroles qui procedent de la bouche du Seigneur Jesus.” <span style="color:#800000">ft396</span> “Je viendrai a vous;” — “I will come to you.” <span style="color:#800000">ft397</span> “A scavoir qu’il est Maistre ou Docteur de la verite.” <span style="color:#800000">ft398</span> “Sur toy, O Jerusalem! “ <span style="color:#800000">ft399</span> “D’ou vient?” — “Whence comes it? “ <span style="color:#800000">ft400</span> “Pourquoy Christ fera que sa lumiere sera manifestee.” <span style="color:#800000">ft401</span> “(Qui est) le Sainct Esprit.” <span style="color:#800000">ft402</span> “Et je ne la vous donne point, comme le monde la donne; — “and I give it not to you, as the world giveth it.” <span style="color:#800000">ft403</span> This is the literal rendering of <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν</span> and corresponds to other modern versions; as, for example, the German, und hat nichts an mir; though Wolffus quotes a marginal reading of a German translation, an mir wird er nicht nichts unden, — *he will find nothing in me*. The latter agrees with a Greek reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujc</span> <span style="color:#0000d4">εὑρήσει οὐδὲν</span> *and will* FIND *nothing in me*; and. with another reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν εὑρεῖν</span>, *and hath nothing to* FIND *in me*. — *Ed*. <span style="color:#800000">ft404</span> “Que Christ s’en alla avec ses disciples outre le torrent de Cedron.”
+
+[^f400]: “Pourquoy Christ fera que sa lumiere sera manifestee.”
+
+[^f401]: “(Qui est) le Sainct Esprit.”
+
+[^f402]: “Et je ne la vous donne point, comme le monde la donne; — “and I
+
+give it not to you, as the world giveth it.”
+
+[^f403]: This is the literal rendering of <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν</span> and
+
+corresponds to other modern versions; as, for example, the German, und hat nichts an mir; though Wolffus quotes a marginal reading of a German translation, an mir wird er nicht nichts unden, — *he will find nothing in me*. The latter agrees with a Greek reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujc</span> <span style="color:#0000d4">εὑρήσει οὐδὲν</span> *and will* FIND *nothing in me*; and. with another reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν εὑρεῖν</span>, *and hath nothing to* FIND *in me*. — *Ed*.
+
+[^f404]: “Que Christ s’en alla avec ses disciples outre le torrent de Cedron.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 15</p>
 
-<span style="color:#800000">ft405</span> “C’est a dire, toute la vie et vigueur.” <span style="color:#800000">ft406</span> “Il parle de tailler ou purger.” <span style="color:#800000">ft407</span> “Repurgez et taillez.” <span style="color:#800000">ft408</span> “Des fideles au cours de la vraye religion.” <span style="color:#800000">ft409</span> “Cooperent, (comme ils disent,) c’est a dire, besongne avec icelle.” <span style="color:#800000">ft410</span> “Lesquels puls apres quand il faut rendre le fruict, monstrent tout le contraire de ce que le Seigneur attend et requicrt des siens.” <span style="color:#800000">ft411</span> “Demandez tout ce que vous voudrez;” — “ask whatever you will.” <span style="color:#800000">ft412</span> “Tout ce que je vous commande;” — “all that I command you.” <span style="color:#800000">ft413</span> See volulme 1. <span style="color:#800000">ft414</span> “Diligemment et fidelement.” <span style="color:#800000">ft415</span> “A obeir et suyvre ou il les appellcra.” <span style="color:#800000">ft416</span> “En ce peche.” <span style="color:#800000">ft417</span> The Author quotes, as he often does, from memory; but the passage stands thus:
+[^f405]: “C’est a dire, toute la vie et vigueur.”
+
+[^f406]: “Il parle de tailler ou purger.”
+
+[^f407]: “Repurgez et taillez.”
+
+[^f408]: “Des fideles au cours de la vraye religion.”
+
+[^f409]: “Cooperent, (comme ils disent,) c’est a dire, besongne avec icelle.”
+
+[^f410]: “Lesquels puls apres quand il faut rendre le fruict, monstrent tout le
+
+contraire de ce que le Seigneur attend et requicrt des siens.”
+
+[^f411]: “Demandez tout ce que vous voudrez;” — “ask whatever you will.”
+
+[^f412]: “Tout ce que je vous commande;” — “all that I command you.”
+
+[^f413]: See volulme 1.
+
+[^f414]: “Diligemment et fidelement.”
+
+[^f415]: “A obeir et suyvre ou il les appellcra.”
+
+[^f416]: “En ce peche.”
+
+[^f417]: The Author quotes, as he often does, from memory; but the passage
+
+stands thus:
 
 <!-- PAGE 708 -->
 
 <p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“That servant, who knew his master’s will, and did not make</span> <span style="color:#000080">himself ready, nor did according to his will, shall be beaten with</span> <span style="color:#000080">many stripes, (</span><span style="color:#000080">Luke 12:47.)</span></p>
 
-— *Ed*. <span style="color:#800000">ft418</span> See volulme 1. <span style="color:#800000">ft419</span> See volulme 1. <span style="color:#800000">ft420</span> See volulme 1. <span style="color:#800000">ft421</span> “De la seule ouye et predication.”
+— *Ed*.
+
+[^f418]: See volulme 1.
+
+[^f419]: See volulme 1.
+
+[^f420]: See volulme 1.
+
+[^f421]: “De la seule ouye et predication.”
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 16</p>
 
-<span style="color:#800000">ft422</span> “Et que jamais ils n’en eussent ouy parler.” <span style="color:#800000">ft423</span> “La voix sortant de la bouche d’un homme.” <span style="color:#800000">ft424</span> “Leur conducteur et gouverneur.” <span style="color:#800000">ft425</span> “Maistre ou Docteur.” <span style="color:#800000">ft426</span> “Les premieres instructions pour estre amenez a la droite foy.” <span style="color:#800000">ft427</span> “Et vous ne me verrez point;” — “and you will not see me.” <span style="color:#800000">ft428</span> “Combien qu’il ne soit point veu des yeux corporels.” <span style="color:#800000">ft429</span> “Et le jour que le S. Esprit fut envoye.” <span style="color:#800000">ft430</span> “A fin qu’il nous reconcile, et nous face trouver grace envers son
+[^f422]: “Et que jamais ils n’en eussent ouy parler.”
 
-Pere.” <span style="color:#800000">ft431</span> “Le peuple sous l’Ancien Testament.” <span style="color:#800000">ft432</span> “Qui luy estoit donne pour figure et ombre.” <span style="color:#800000">ft433</span> “Le coeur du Pere celeste.” <span style="color:#800000">ft434</span> Quoting from memory, our Author has mingled two passages The first is, Herein is love, not that we loved God, but that he loved us, (1 John 4:10;) and the second is, We love him, because he first loved us, (1 John 4:19.) — Ed. <span style="color:#800000">ft435</span> A fin d’estre Empereur et Dominateur de tout le monde;” — in order to be the Emperor and Ruler of the whole world.”
+[^f423]: “La voix sortant de la bouche d’un homme.”
+
+[^f424]: “Leur conducteur et gouverneur.”
+
+[^f425]: “Maistre ou Docteur.”
+
+[^f426]: “Les premieres instructions pour estre amenez a la droite foy.”
+
+[^f427]: “Et vous ne me verrez point;” — “and you will not see me.”
+
+[^f428]: “Combien qu’il ne soit point veu des yeux corporels.”
+
+[^f429]: “Et le jour que le S. Esprit fut envoye.”
+
+[^f430]: “A fin qu’il nous reconcile, et nous face trouver grace envers son
+
+Pere.”
+
+[^f431]: “Le peuple sous l’Ancien Testament.”
+
+[^f432]: “Qui luy estoit donne pour figure et ombre.”
+
+[^f433]: “Le coeur du Pere celeste.”
+
+[^f434]: Quoting from memory, our Author has mingled two passages The first
+
+is, Herein is love, not that we loved God, but that he loved us, (1 John 4:10;) and the second is, We love him, because he first loved us, (1 John 4:19.) — Ed.
+
+[^f435]: A fin d’estre Empereur et Dominateur de tout le monde;” — in order
+
+to be the Emperor and Ruler of the whole world.”
 
 <!-- PAGE 709 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 17</p>
 
-<span style="color:#800000">ft436</span> “Du Seigneur Jesus.” <span style="color:#800000">ft437</span> “La fin et l’usage” <span style="color:#800000">ft438</span> Salutaire, ou apportant salut.” <span style="color:#800000">ft439</span> “Nous sommes fkits participans de l’adoption Divine, qui nous fait enfans et heritiers du royaume des cieux;” — “we are made partakers of the Divine adoption, which makes us children and heirs of the kingdom of heaven.” <span style="color:#800000">ft440</span> “It s’est humilie et antanti soy-mesme.” <span style="color:#800000">ft441</span> “Et tout ec qui est mien est tien, et ce qui est tien est mien;” — “And all that is mine is thine, and what is thine is mine.” <span style="color:#800000">ft442</span> “Pourquoy donc dit-il qu’il a manifeste le nom de son Pore seulement a quelque petit nombre de gens, sinon d’autant qu’il n’y a que les eleus qui profitent par la grace de l’Esprit qui les enseigne an dedans?” <span style="color:#800000">ft443</span> “Au Fils de Dieu;” — “to the Son of God.” <span style="color:#800000">ft444</span> “La certitude de ceste election gratuite.”
+[^f436]: “Du Seigneur Jesus.”
+
+[^f437]: “La fin et l’usage”
+
+[^f438]: Salutaire, ou apportant salut.”
+
+[^f439]: “Nous sommes fkits participans de l’adoption Divine, qui nous fait
+
+enfans et heritiers du royaume des cieux;” — “we are made partakers of the Divine adoption, which makes us children and heirs of the kingdom of heaven.”
+
+[^f440]: “It s’est humilie et antanti soy-mesme.”
+
+[^f441]: “Et tout ec qui est mien est tien, et ce qui est tien est mien;” — “And
+
+all that is mine is thine, and what is thine is mine.”
+
+[^f442]: “Pourquoy donc dit-il qu’il a manifeste le nom de son Pore seulement
+
+a quelque petit nombre de gens, sinon d’autant qu’il n’y a que les eleus qui profitent par la grace de l’Esprit qui les enseigne an dedans?”
+
+[^f443]: “Au Fils de Dieu;” — “to the Son of God.”
+
+[^f444]: “La certitude de ceste election gratuite.”
 
 <span style="color:#800000">FT445</span> “D’autant qu’ils les privcnt de la recommandation et intercession du Fils de Dieu.”
 
