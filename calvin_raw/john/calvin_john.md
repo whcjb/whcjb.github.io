@@ -6893,8 +6893,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 1</p>
-
 [^f9]: “Pource qu’il est dit Estoit, et non pas N’este;” — “Because it is said *Was*, and not *Has been*.
 
 <!-- PAGE 686 -->
@@ -6967,8 +6965,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f41]: “De la gloire celeste.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 2</p>
-
 [^f42]: “Tertio die;” — “trois jours apres.”
 
 [^f43]: “En la vierge Marie.”
@@ -6990,8 +6986,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f50]: “I1 ne faut pas pourtant quitter la tout par desespoir, ne mespriser ce que nous n’entendons pas tout incontinent.”
 
 [^f51]: “I1 les cognoissoient tous,”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 3</p>
 
 [^f52]: Our Author’s views of the etymology of the term are fully stated and examined, *Harmony*, volume 1 page 281; but it cannot be supposed that this *Commentary on the Gospel by John*, which appeared in the year 1553, makes reference to the *Harmony*, which did not appear till 1555. The priority of the date (1548) of the *Commentary on the Epistle to the Philippians* more naturally sends us to consult that passage, in which Paul says that he was a *Pharisee*, (13, 5.) — *Ed*.
 
@@ -7033,8 +7027,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f70]: “Qui ne croit point au Fils, *ou*, *qui desobeit au Fils*” — “who believeth not in the Son, *or*, *who disobeyeth the Son*.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 4</p>
-
 [^f71]: “Et qui reprouve ce que nous disons ou faisons.”
 
 [^f72]: “Ceste eau vive;” — “ this living water.”
@@ -7074,8 +7066,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f89]: “Par l’Empereur;” — “by the Emperor.”
 
 [^f90]: “*Qu*’*ils facent premierement des ntiraclcs*?”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 5</p>
 
 [^f91]: “Et qui avoyent les membres secs;” “and who had the limbs withered.”
 
@@ -7128,8 +7118,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f114]: “Du titre desquels ils se couvrent faussement et meschamment.”
 
 [^f115]: “Contre contempteurs.”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 6</p>
 
 [^f116]: “Pour le suyvre.”
 
@@ -7259,8 +7247,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f175]: A tous transgresseurs.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 7</p>
-
 [^f176]: “Determine au conseil de Dieu.”
 
 [^f177]: “De nos parens.”
@@ -7318,8 +7304,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f202]: “D’un homme fidele et Chrestien.”
 
 [^f203]: “De ce petit coin incognee de Galilee.”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 8</p>
 
 [^f204]: “S’enclinant en bas.” — “Stooping down.”
 
@@ -7419,8 +7403,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f250]: “Une vertu plus qu’humaine.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 9</p>
-
 [^f251]: “Par croix ou tribulation.”
 
 [^f252]: “Homme juste, et craignaut Dieu.”
@@ -7481,8 +7463,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f279]: “Pour guairir son mal.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 10</p>
-
 [^f280]: “Si par ce mot de *Portier*.”
 
 [^f281]: The word *pastor* signifies *shepherd*, but, for the sake of the reader, who may not be aware of its etymology, it has been found necessary, in some cases, to employ both of the words, especially where the figure holds so prominent a place in the discussion. — *Ed*.
@@ -7539,8 +7519,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f306]: “D’autrepart.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 11</p>
-
 [^f307]: “A sa majeste.”
 
 [^f308]: “Quand nous avons tousjours Dieu devant nos yeux pour nostre guide.”
@@ -7588,8 +7566,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f328]: “Par la mort de celuy qui l’avolt.”
 
 [^f329]: “Les principaux sacrificateurs.”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 12</p>
 
 [^f330]: “Et Marthe servoit a table;” — “and Martha waited at table.”
 
@@ -7665,8 +7641,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f365]: “Une approbation ou ratification.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 13</p>
-
 [^f366]: “Et apres avoir souppe;” — “and after having supped.”
 
 [^f367]: “Que c’est une ouverture ou passage pour aller a Dieu.
@@ -7715,8 +7689,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f388]: “A ce que nous n’appercevions nos fautes.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 14</p>
-
 [^f389]: “*Ou*, *Et quaadje m*’*en seray alle*, *et vous auray preparg le lieu*;” — “or, *And when I shall have gone away*, *and prepared the place for you*.”
 
 [^f390]: “Le Fils de Dieu done, qui est Jesus Christ.”
@@ -7750,8 +7722,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f403]: This is the literal rendering of <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν</span> and corresponds to other modern versions; as, for example, the German, und hat nichts an mir; though Wolffus quotes a marginal reading of a German translation, an mir wird er nicht nichts unden, — *he will find nothing in me*. The latter agrees with a Greek reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujc</span> <span style="color:#0000d4">εὑρήσει οὐδὲν</span> *and will* FIND *nothing in me*; and. with another reading <span style="color:#0000d4">καὶ ἐν ἐμοὶ oujk έχει οὐδὲν εὑρεῖν</span>, *and hath nothing to* FIND *in me*. — *Ed*.
 
 [^f404]: “Que Christ s’en alla avec ses disciples outre le torrent de Cedron.”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 15</p>
 
 [^f405]: “C’est a dire, toute la vie et vigueur.”
 
@@ -7789,8 +7759,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 [^f421]: “De la seule ouye et predication.”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 16</p>
-
 [^f422]: “Et que jamais ils n’en eussent ouy parler.”
 
 [^f423]: “La voix sortant de la bouche d’un homme.”
@@ -7821,8 +7789,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 
 <!-- PAGE 709 -->
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 17</p>
-
 [^f436]: “Du Seigneur Jesus.”
 
 [^f437]: “La fin et l’usage”
@@ -7842,8 +7808,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 [^f444]: “La certitude de ceste election gratuite.” <span style="color:#800000">FT445</span> “D’autant qu’ils les privcnt de la recommandation et intercession du Fils de Dieu.” <span style="color:#800000">FT446</span> “Le Pere, et Jesus Christ son Fils.” <span style="color:#800000">FT447</span> “Selon la reigle tie grammaire.” <span style="color:#800000">FT448</span> “Les consciences infirmes; “—” weak consciences.” <span style="color:#800000">FT449</span> “ En leur presence.” <span style="color:#800000">FT450</span> “Des fideles.” <span style="color:#800000">FT451</span> Et que tu los aimes;;— “and that thou lovest them.” <span style="color:#800000">FT452</span> “Qui seul en peut et doit prononcer, n’approve point d’autre foy.” <span style="color:#800000">FT453</span> “Et les ont tirees hors dc leur simple sens pour s’en servir contre les adversaires.” <span style="color:#800000">FT454</span> “Avec le Fils de Dieu.” <span style="color:#800000">FT455</span> *Et que tu les aimes; “--”And that thou lovest them.”* <span style="color:#800000">FT456</span> Vol. 1: p, 122. <span style="color:#800000">FT457</span> “Pource que le Pere a aime son Fils.” <span style="color:#800000">FT458</span> “Quand il dit, *Je veux,* c’est comme s’il disoit, *Je desire;* “—” When he says, I *will,* it is as if’ he had said, I *desire.”*
 
 <!-- PAGE 710 -->
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 18</p>
 
 <span style="color:#800000">FT459</span> Is <span style="color:#0000d4">Κέδρων</span>, a proper name, or an appellative? CALVIN does not mean that the presence of the article settles this question, but that it depends on the preference which shall be given to one or another of the various readings. If we read <span style="color:#0000d4">τῶν Κέδρων</span>, it will be difficult to resist the conclusion that <span style="color:#0000d4">Κέδρων</span> is the genitive plural of <span style="color:#0000d4">Κέδρος</span>*, a cedar;* but if we read <span style="color:#0000d4">τοῦ Κέδρων</span>, or rather, <span style="color:#0000d4">τοῦ Κεδρὼν</span>, we must treat <span style="color:#0000d4">Κεδρὼν</span>, as an indeclinable Hebrew word, though Josephus chooses sometimes to decline it, as in the phrase, <span style="color:#0000d4">χείμαρρον Κεδρῶνος</span>, *the brook of Kedron,* (Ant. 8:1.) “Instead of the common reading, <span style="color:#0000d4">τῶν</span> <span style="color:#0000d4">Κέδρων</span>,” says Bloomfield, “four of the most ancient MSS. and six ancient Versions, with some Fathers, have,<span style="color:#0000d4">τοῦ Κεδρὼν</span>, which was preferred by Beza, Casaubon, Campbell, Castalio, Drusius, Lightfoot, Bols, Bynmus, Reland, and others of the best Commentators down to Middleton, Kuinoel, and Tittmann, and has been received by Bengel, Griesbach, Knapp, Vater, and Scholz. The common reading, however, is strenuously, but not satisfactorily, defended by Lampe and Matthsei.” Our Author proceeds no further than to propose, <span style="color:#0000d4">τοῦ</span> instead of <span style="color:#0000d4">τῶν</span>, as a conjectural emendation; but Bloomfield has given a prodigious list of authorities on the same side. — Ed.
 
@@ -7900,8 +7864,6 @@ Yet we ought to remember what we formerly stated, that the summary which the Eva
 <span style="color:#800000">FT484</span> “Quand il est commande aux Rois ct Princes.”
 
 <!-- PAGE 712 -->
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 19</p>
 
 <span style="color:#800000">FT485</span> “Et Pilate leur dit.” — “And Pilate said to them.”
 
@@ -7997,8 +7959,6 @@ GRIEVED HIS HOLY SPIRIT. — Ed.
 
 <span style="color:#800000">FT521</span> “Des Peres anciens des Juifs”
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 20</p>
-
 <span style="color:#800000">FT522</span> “Or le premier (des join’s) du Sabbath, *ou, le premier jour de la semaine;” —-”* Now, the first (of the days) of the Sabbath, *or, the first day of the week.”*
 
 <span style="color:#800000">FT523</span> - L’appelant le sainct suaire.”
@@ -8071,8 +8031,6 @@ GRIEVED HIS HOLY SPIRIT. — Ed.
 <span style="color:#800000">FT552</span> “Qua sa verite nous soit indubitable sans autre probation.”
 
 <span style="color:#800000">FT553</span> See Vol. 1. page 42.
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 21</p>
 
 <span style="color:#800000">FT554</span> “Qui est dit Gemeau;” — “ who is called *Twin.”*
 

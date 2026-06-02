@@ -690,12 +690,22 @@ def convert(structured_path: Path, out_path: Path) -> None:
                         out.append(body)
                         out.append('')
         elif tag in ('CENTERED_H1', 'CENTERED_H2'):
-            # CENTERED_H1/H2 are likely a back-section page header
-            # ("CHAPTER N" repeat in fn area) — clear pending fn merge.
+            # Strip <sty> and Ages markers to test the plain text content.
+            test_text = re.sub(r'</?(?:verse|sty[^>]*)>', '', content)
+            test_text = re.sub(r'<\d{6,7}>', '', test_text).strip()
+            # SKIP: back-matter footnote-page header "CHAPTER N" (dark green
+            # #006411 in Ages PDF, vs real chapter head which is H1 blue).
+            # PDF doesn't display these on text — they're internal page
+            # markers. Emit nothing.
+            if re.match(r'^CHAPTER\s+\d+\s*$', test_text):
+                # If this falls right after a fn def, it's a back-matter
+                # page header — also reset pending_fn_idx so following fns
+                # don't try to merge into the dropped marker.
+                pending_fn_idx = None
+                i += 1
+                continue
+            # Otherwise: clear pending fn merge and emit as styled <p>.
             pending_fn_idx = None
-            # Title-page or dedication headings that are centered. Emit as
-            # styled <p> not as markdown H1/H2 to avoid TOC pollution and
-            # heading-level fragmentation across the title block.
             cleaned = collapse_spaced_caps(format_inline(content))
             cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
             if cleaned.strip():

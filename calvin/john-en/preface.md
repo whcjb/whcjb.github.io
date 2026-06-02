@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 13:54
+date: 2026-06-02 14:00
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -196,7 +196,5 @@ John is believed to have written chiefly with the intention of maintaining the D
 
 
 [^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">CHAPTER 1</p>
 
 
