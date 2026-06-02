@@ -171,6 +171,9 @@ english:
   - id: ephesians-en
     name: Ephesians
     chapters: 6
+  - id: colossians-en
+    name: Colossians
+    chapters: 4
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16

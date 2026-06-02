@@ -219,6 +219,12 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_EPHS.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/ephesians/calvin_ephesians_structured.txt'),
     },
+    'colossians': {
+        # Ages bilingual. 410×626; 108 pages; x0 双峰 (30/220); 4 colors; 37/50 Ages markers.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_COLO.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/colossians/calvin_colossians_structured.txt'),
+    },
 }
 
 

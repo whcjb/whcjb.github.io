@@ -458,12 +458,20 @@ def _merge_paragraph_fragments(out: list[str]) -> list[str]:
 def _build_ref_banner(ages_code: str, book_verse: str) -> str:
     """Render the scripture-ref banner with separable Ages code / book / verse spans
     so per-book CSS can style them PDF-faithfully (small-caps book name, dark-red
-    Ages code, bold verse range). Returns a single <p> tag."""
-    m = re.match(r'^([A-Z][A-Z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$', book_verse)
+    Ages code, bold verse range). Returns a single <p> tag.
+
+    Accepts both all-caps "JOHN 1:1-5" (PDF small-caps font) and title-case
+    "Colossians 1:1-8" (PDF normal font) — both forms appear across Ages PDFs.
+    """
+    m = re.match(
+        r'^([1-3]?\s*[A-Z][A-Za-z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$',
+        book_verse,
+    )
     if m:
         book = m.group(1).strip()
         verse = m.group(2)
-        book_html = book.title()  # CSS font-variant: small-caps renders Cap-J + small "ohn"
+        # Title-case so CSS `font-variant: small-caps` renders cap-letter + small caps
+        book_html = book.title()
         return (
             f'<p class="scripture-ref">'
             f'<span class="ages-code">&lt;{ages_code}&gt;</span>'

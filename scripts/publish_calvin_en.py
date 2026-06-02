@@ -103,39 +103,52 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     return starts
 
 
-_APPENDIX_END_RE = re.compile(r'END OF THE COMMENTARIES', re.IGNORECASE)
-_FOOTNOTES_HEADING_RE = re.compile(r'^\s*(?:#\s+)?FOOTNOTES\s*$', re.IGNORECASE)
+_APPENDIX_END_RE = re.compile(r'END OF THE COMMENTAR(?:Y|IES)', re.IGNORECASE)
+# Matches both `# FOOTNOTES` markdown heading AND `<p ...>FOOTNOTES</p>` HTML
+# wrapper (publisher sometimes emits one or the other depending on PDF size).
+_FOOTNOTES_HEADING_RE = re.compile(
+    r'^\s*(?:#\s+FOOTNOTES\s*$|<p[^>]*>\s*(?:<span[^>]*>\s*)?FOOTNOTES\s*(?:</span>\s*)?</p>\s*$|FOOTNOTES\s*$)',
+    re.IGNORECASE,
+)
 
 
 def excise_translation_appendix(lines: list[str]) -> list[str]:
-    """Some Ages PDFs (Ephesians) have a bilingual re-translation appendix
-    between "END OF THE COMMENTARIES..." and the legitimate FOOTNOTES section.
-    Cut that segment out, KEEP the FOOTNOTES def section after it.
+    """Some Ages PDFs (Ephesians/Colossians) have a bilingual re-translation
+    appendix between "END OF THE COMMENTAR{Y,IES}..." and the legitimate
+    FOOTNOTES section. Cut that segment out, KEEP the FOOTNOTES def section.
 
-    Pipeline:
-      [main body] ... END OF THE COMMENTARIES ... [TRANSLATION] ... FOOTNOTES heading ... [^fN]: defs
-      ↓ excise
-      [main body] ... [^fN]: defs
+    Also handles case where there's NO translation appendix but FOOTNOTES
+    follows directly after END — cut just the END marker + any orphan PAGE
+    comments between END and the first [^fN]: def.
     """
     end_idx = None
     fn_idx = None
     for i, line in enumerate(lines):
-        t = re.sub(r'<[^>]+>', '', line).strip()
-        if end_idx is None and _APPENDIX_END_RE.search(t):
+        t_full = line  # keep HTML for matching wrapper form
+        t_text = re.sub(r'<[^>]+>', '', line).strip()
+        if end_idx is None and _APPENDIX_END_RE.search(t_text):
             end_idx = i
-        elif end_idx is not None and _FOOTNOTES_HEADING_RE.match(t):
+        elif end_idx is not None and _FOOTNOTES_HEADING_RE.match(t_full):
             fn_idx = i
             break
     if end_idx is None:
-        return lines  # no appendix
-    if fn_idx is None:
-        # END marker but no FOOTNOTES heading after — cut everything after END
-        print(f'  cutting from line {end_idx + 1} to EOF ({len(lines) - end_idx} lines)')
+        return lines  # no END marker
+    # Find first [^fN]: def AFTER the FOOTNOTES heading (or after end_idx if no heading)
+    fn_def_start = None
+    search_start = (fn_idx + 1) if fn_idx is not None else end_idx + 1
+    for i in range(search_start, len(lines)):
+        if re.match(r'^\[\^f\d+[A-Za-z]?\]:', lines[i]):
+            fn_def_start = i
+            break
+    if fn_def_start is None:
+        # No fn defs found after END — cut everything from END to EOF
+        print(f'  cutting from line {end_idx + 1} to EOF ({len(lines) - end_idx} lines, no fn defs found)')
         return lines[:end_idx]
-    # Excise [end_idx, fn_idx + 1) — drop END marker line and translation
-    # appendix, but keep FOOTNOTES heading + everything after.
-    print(f'  excising translation appendix lines {end_idx + 1}-{fn_idx} ({fn_idx - end_idx} lines)')
-    return lines[:end_idx] + lines[fn_idx:]
+    # Excise [end_idx, fn_def_start) — drop END marker, FOOTNOTES heading,
+    # translation appendix, page markers. Keep fn defs.
+    cut = fn_def_start - end_idx
+    print(f'  excising appendix lines {end_idx + 1}-{fn_def_start} ({cut} lines)')
+    return lines[:end_idx] + lines[fn_def_start:]
 
 
 def find_footnotes_section_start(lines: list[str]) -> int:
