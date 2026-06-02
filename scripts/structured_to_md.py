@@ -357,7 +357,11 @@ def _starts_with_continuation(line: str, prev_tail: str = '', prev_full: str = '
         return True
     if c in '(,;:)':
         return True
-    if c.isdigit() and not re.match(r'^\d+\.\s', s):
+    # Digit-led: accept ONLY if NOT a verse-num pattern. Verse-num markdown
+    # is `**N.** ` (bold-wrapped) — accept `\d+\.\**\s` to recognize both raw
+    # `N. ` and bolded `N.** ` forms as verse-num (i.e., NOT continuation,
+    # should start new paragraph).
+    if c.isdigit() and not re.match(r'^\d+\.\**\s', s):
         return True
     # Same-style continuation: prev's tail and next's head both open with the
     # same `<sty c="X" i="Y">`. PDF wraps a multi-line phrase by emitting two

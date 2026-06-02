@@ -165,6 +165,9 @@ english:
   - id: romans-en
     name: Romans
     chapters: 16
+  - id: galatians-en
+    name: Galatians
+    chapters: 6
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16

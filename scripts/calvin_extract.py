@@ -204,6 +204,14 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ROMM.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/romans/calvin_romans_structured.txt'),
     },
+    'galatians': {
+        # Ages bilingual (same as romans). 410×626; x0 单峰 30 + bilingual
+        # peak 220; 6 colors; 36/50 sample pages have Ages markers; 197 pages
+        # (Galatians + Ephesians per Pringle ed. — check chapter range).
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_GALA.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/galatians/calvin_galatians_structured.txt'),
+    },
 }
 
 
