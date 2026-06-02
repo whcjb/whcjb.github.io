@@ -124,7 +124,10 @@ VOLUMES = {
         'page_w': 612.0,
         'body_left': 108.0,
         'body_right': 504.0,
-        'centering': False,
+        # `centering` 同时门控 1) 居中检测 2) 多列经文检测
+        # （split_block_by_columns 调用都在 if cfg.get('centering') 内）
+        # harmony3 章首也是 3 栏共观经文，需要 multi-col 表，开
+        'centering': True,
     },
     'matthew': {
         'format': 'ccel_parallel',
