@@ -475,6 +475,11 @@ def convert(structured_path: Path, out_path: Path) -> None:
     scripture_ref: str | None = None
     in_commentary_section = False  # True after first scripture-section header in chapter; reset on H1
     pending_blockquote_continuation = False
+    # When we emit a `[^fN]: ...` back-section fn def, the next BODY/CENTERED
+    # blocks are continuation lines that PyMuPDF split off (the fn body wraps
+    # to multiple PDF blocks). Append them onto the fn line until we hit
+    # another fn def or a heading. Index of the line in `out` to append to.
+    pending_fn_idx: int | None = None
 
     def flush_scripture():
         nonlocal in_scripture, scripture_lines, scripture_ref
@@ -577,8 +582,9 @@ def convert(structured_path: Path, out_path: Path) -> None:
             cleaned = format_inline(cleaned)
             # Strip any <verse> wrappers in headings — they're noise.
             cleaned = re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)
-            # H1 = chapter/section break → leave commentary mode
+            # H1 = chapter/section break → leave commentary mode + clear fn merge
             in_commentary_section = False
+            pending_fn_idx = None
             out.append('')
             out.append(f'# {cleaned}')
             out.append('')
@@ -631,6 +637,8 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     out.append('')
                     out.append(f'[^{label}]: {body}')
                     out.append('')
+                    # Arm continuation merge — next BODY/CENTERED will append here
+                    pending_fn_idx = len(out) - 2
                 else:
                     # Inline cross-reference fragment — fold into preceding paragraph
                     body = format_inline(content)
@@ -670,6 +678,9 @@ def convert(structured_path: Path, out_path: Path) -> None:
                         out.append(body)
                         out.append('')
         elif tag in ('CENTERED_H1', 'CENTERED_H2'):
+            # CENTERED_H1/H2 are likely a back-section page header
+            # ("CHAPTER N" repeat in fn area) — clear pending fn merge.
+            pending_fn_idx = None
             # Title-page or dedication headings that are centered. Emit as
             # styled <p> not as markdown H1/H2 to avoid TOC pollution and
             # heading-level fragmentation across the title block.
@@ -683,6 +694,16 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;">{cleaned}</p>')
                 out.append('')
         elif tag == 'CENTERED':
+            # Back-section fn continuation: append to pending [^fN]: line
+            if pending_fn_idx is not None:
+                cleaned = format_inline(content)
+                cleaned = apply_verse_styling(cleaned)
+                cleaned = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cleaned)
+                cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+                if cleaned:
+                    out[pending_fn_idx] = out[pending_fn_idx].rstrip() + ' ' + cleaned
+                i += 1
+                continue
             # If we're inside a scripture section and this CENTERED block holds
             # the actual verse passage (≥1 verse-num anchor + starts with verse),
             # route through the scripture-box path instead of emitting <p center>.
@@ -707,6 +728,19 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append(f'<p style="text-align:center">{cleaned}</p>')
                 out.append('')
         elif tag in ('BODY', 'VERSE'):
+            # Back-section fn continuation: append to pending [^fN]: line.
+            # Triggered when previous emit was a [^fN]: def — Ages back-section
+            # fn bodies often wrap across multiple PyMuPDF blocks ([FOOTNOTE]
+            # ftN "first line" + [BODY] "rest of fn body" + ...).
+            if pending_fn_idx is not None:
+                cont_body = format_inline(content)
+                cont_body = apply_verse_styling(cont_body)
+                cont_body = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cont_body)
+                cont_body = re.sub(r'\s+', ' ', cont_body).strip()
+                if cont_body:
+                    out[pending_fn_idx] = out[pending_fn_idx].rstrip() + ' ' + cont_body
+                i += 1
+                continue
             # Detect "navy scripture quote" block: content is wholly (or near-
             # wholly) wrapped in <sty c="000080" i="0">...</sty>. In the PDF
             # these are short centered bible-quote blocks set apart from the
