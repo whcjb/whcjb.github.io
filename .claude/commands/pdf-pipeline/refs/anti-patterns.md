@@ -563,6 +563,49 @@ text = re.sub(r"(?<!['‘’])\b(?![AI]\b)([A-Z]) ([A-Z]+)\b", r'\1\2', text)
 
 ---
 
+## M14. 全斜体缩进引文段被误判为 CENTERED（斜体丢失）
+
+**Trigger**：PDF 中整段斜体的缩进引文段（如 "The subject then of these chapters..."），网页输出非斜体且居中。
+
+**根因**：PDF 这种 citation/quote 段 lm/rm 经常对称（lm=44 rm=50，|lm-rm|=6 < 8），被 `is_centered_block_geom` 判中。CENTERED emit 时 `re.sub(剥 sty)` 在 apply_verse_styling 之前调用，斜体（`<sty c="000000" i="1">`）信息丢失。
+
+**Fix（两端）**：
+
+```python
+# extractor: 加 is_all_italic 检测
+total_chars = 0
+italic_chars = 0
+for line in block['lines']:
+    for s in line['spans']:
+        t = s['text'].strip()
+        if not t: continue
+        total_chars += len(t)
+        if s['flags'] & 2:
+            italic_chars += len(t)
+is_all_italic = total_chars > 50 and italic_chars / total_chars > 0.9
+
+# is_centered_block 加 guard：is_all_italic 不算居中
+is_centered_block = is_centered_block_geom and not ends_with_continuation \
+                    and not starts_with_list_item and not is_all_italic
+
+# INDENT 检测加第三触发
+is_indented_subitem = (
+    block_lm >= 35 and not is_centered_block and line_class == 'BODY' and rm > 20
+    and (is_outline_item or is_narrow_indented or is_all_italic)
+)
+
+# converter CENTERED 分支也要 apply_verse_styling + markdown="1"
+elif tag == 'CENTERED':
+    cleaned = collapse_spaced_caps(format_inline(content))
+    cleaned = apply_verse_styling(cleaned)  # 保留斜体/颜色
+    cleaned = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cleaned)
+    out.append(f'<p style="text-align:center" markdown="1">{cleaned}</p>')
+```
+
+**通用规则**：**任何 emit `<p>` 包装前**调用顺序必须是「先 `apply_verse_styling` 转 `<sty>` → `<span>`，再 `re.sub` 剥剩余空 sty/verse 标签」。颠倒顺序就丢颜色/斜体。
+
+---
+
 ## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
 
 **Trigger**：新书（如 romans-en）需要复用 john-en 的 PDF-faithful scripture-box 样式（双蓝边/浅黄底/灰 banner/暗红 Ages 代码/小型大写卷名）。
