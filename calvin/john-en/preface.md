@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 14:00
+date: 2026-06-02 14:20
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -172,8 +172,6 @@ John is believed to have written chiefly with the intention of maintaining the D
 
 [^f1]: Clarke’s Biblical Cabinet, volumes 44 and 45.
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">EPISTLE DEDICATORY</p>
-
 
 [^f2]: (“Ascavoir que l’Evangile, et ceux qui y veulent adherer, ont yei leur retraitte,”) — (namely, that the gospel, and those who wish to abide by it, have their retreat here)
 
@@ -191,8 +189,6 @@ John is believed to have written chiefly with the intention of maintaining the D
 
 
 [^f7]: In the concluding sentence, the more amplified form of the French version has been followed. — *Ed*.)
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;">THE ARGUMENT</p>
 
 
 [^f8]: “On scait assez que le mot, d’Evangile signifie entre les Grees toutes bonnes nouvelles;” — “it is well known that the word *Gospel* in Greek denotes any kind of good news.”
