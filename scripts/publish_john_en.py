@@ -245,11 +245,12 @@ def main():
         out_path.write_text(fm + body_md, encoding='utf-8')
         print(f'  → {key}.md ({len(body_md):,} chars)')
 
-    # Step 7: index.html
+    # Step 7: index.html (with has_preface: true so the layout renders the link)
     index_path = OUT_DIR / 'index.html'
     index_path.write_text(
         f'---\nlayout: calvin-en-book\nbook_id: {BOOK_ID}\n'
-        f'book_name: "{BOOK_NAME}"\nchapters: {len(chapter_keys)}\n---\n',
+        f'book_name: "{BOOK_NAME}"\nchapters: {len(chapter_keys)}\n'
+        f'has_preface: true\n---\n',
         encoding='utf-8',
     )
     print(f'  → index.html')
