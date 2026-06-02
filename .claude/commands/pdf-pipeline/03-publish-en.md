@@ -18,11 +18,26 @@
 
 ## 1. 主入口
 
+### Ages 格式书卷（phil / heb / john / 1cor-vol1 / 2cor 等）：通用脚本
+
 ```bash
-python3 calvin_raw/BOOK/publish.py
+python3 scripts/publish_calvin_en.py <book>
 ```
 
-模板见 `calvin_raw/matthew1/publish.py` 或 `calvin_raw/harmony3/publish.py`。
+`<book>` 是 `calvin_raw/<book>/` 子目录名（如 `john` / `phil` / `heb` / `1cor-vol1`）。脚本自动：
+- 推导 `book_id = <book>-en`
+- 读 `calvin_raw/<book>/calvin_<book>.md` 作为 source MD
+- 输出到 `calvin/<book>-en/`
+- 从 `_data/calvin_books.yml` english section 查 book_name（短名自动 prepend "Calvin on "）
+- 包含所有 §M1-M6 anti-pattern 修复（pending_fn_idx / 后部 CHAPTER N skip / has_preface 等）
+
+**绝不再为每本 Ages 书新写 publish_<book>_en.py**——通用脚本已覆盖。
+
+可选 override：`--name N` / `--src P` / `--out P` / `--book-id ID`。
+
+### CCEL Harmony 书卷（matthew1 / harmony3 / matthew vol2 等）：仍用各自模板
+
+CCEL 格式 publish 流程不同（依赖 `harmony_utils.process_section_blocks`），仍各自有 `calvin_raw/BOOK/publish.py`。模板见 `calvin_raw/matthew1/publish.py` 或 `calvin_raw/harmony3/publish.py`。
 
 ---
 
