@@ -742,6 +742,80 @@ if re.search(r'\b(?:The|A|An|Of|In|On|At|To|For|With|By|From|Through)\s*$', prev
 
 ---
 
+## M20. `_build_ref_banner` 正则必须接受 title-case 卷名（不只全大写）
+
+**Trigger**：scripture-box 顶部 ref banner 显示为纯文本 `<p class="scripture-ref">Colossians 1:1-8</p>`，缺失 `<span class="ages-code">` / `book-name` / `verse-range` 三段 span。前端样式 (small-caps、暗红 Ages 代码) 无法应用。
+
+**根因**：`_build_ref_banner` 解析 `BOOK Ch:V-V'` 正则只接受全大写卷名：
+
+```python
+# ❌ 只匹配 "JOHN 1:1-5" 不匹配 "Colossians 1:1-8"
+m = re.match(r'^([A-Z][A-Z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$', book_verse)
+```
+
+PDF section header 形式因书而异：
+- John PDF：`<430101>J OHN 1:1-5` (small-caps 全大写)
+- Colossians PDF：`<510101>Colossians 1:1-8` (title case)
+- 1 Corinthians PDF：`<460101>1 Corinthians 1:1-3` (含数字前缀 + title case)
+
+**Fix**：
+
+```python
+m = re.match(
+    r'^([1-3]?\s*[A-Z][A-Za-z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$',
+    book_verse,
+)
+```
+
+- `[1-3]?\s*` — 接受 "1 Corinthians" / "2 Thessalonians" / "3 John" 前缀
+- `[A-Z][A-Za-z\s]*?` — 首字大写 + 后续 mixed case + 空格
+
+---
+
+## M21. `excise_translation_appendix` 必须识别 HTML-wrapped FOOTNOTES heading
+
+**Trigger**：审计发现最后一章 .md 末尾还残留 `END OF THE COMMENTARY` + `<p class="title-block-h1">FOOTNOTES</p>` + `<p class="title-block-h2">ARGUMENT</p>` + 多个空白 `<!-- PAGE -->` markers。
+
+**根因**：M18 修复时正则只匹配 markdown `# FOOTNOTES` heading：
+
+```python
+# ❌ 不匹配 HTML wrapper
+_FOOTNOTES_HEADING_RE = re.compile(r'^\s*(?:#\s+)?FOOTNOTES\s*$', re.IGNORECASE)
+```
+
+但 PDF FOOTNOTES 大字标题被 emit 成 `<p class="title-block-h1">...<span>FOOTNOTES</span></p>` （CENTERED_H1 路径），不是 markdown H1。
+
+**Fix（双管齐下）**：
+
+1. 正则加 HTML wrapper 形式：
+
+```python
+_FOOTNOTES_HEADING_RE = re.compile(
+    r'^\s*(?:#\s+FOOTNOTES\s*$|<p[^>]*>\s*(?:<span[^>]*>\s*)?FOOTNOTES\s*(?:</span>\s*)?</p>\s*$|FOOTNOTES\s*$)',
+    re.IGNORECASE,
+)
+```
+
+2. 接受 "END OF THE COMMENTARY" 单数也接受复数 "COMMENTARIES"：
+
+```python
+_APPENDIX_END_RE = re.compile(r'END OF THE COMMENTAR(?:Y|IES)', re.IGNORECASE)
+```
+
+3. 切除范围扩展到**第一个 `[^fN]:` def**（避免 FOOTNOTES heading 之后的空白 PAGE markers / ARGUMENT 子标题等被保留）：
+
+```python
+fn_def_start = None
+search_start = (fn_idx + 1) if fn_idx is not None else end_idx + 1
+for i in range(search_start, len(lines)):
+    if re.match(r'^\[\^f\d+[A-Za-z]?\]:', lines[i]):
+        fn_def_start = i
+        break
+return lines[:end_idx] + lines[fn_def_start:]
+```
+
+---
+
 ## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
 
 **Trigger**：新书（如 romans-en / galatians-en）需要复用 john-en 的 PDF-faithful scripture-box 样式。
