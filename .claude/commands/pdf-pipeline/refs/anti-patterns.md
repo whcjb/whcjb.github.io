@@ -220,6 +220,62 @@ if is_navy_quote_p and prior.rstrip().endswith('</p>'):
 
 ---
 
+## M3. 全大写短语 / 同 style span 跨块被拆成两段
+
+**Trigger**：网页上 ALL-CAPS 短语（"ON THE SON" / "OF MAN," / 大写引用等）在两段中间被空行拆开；或两个相邻的 `<sty c="X" i="Y">...</sty>` 跨段。
+
+**根因**：PyMuPDF 把跨行的同 style 短语拆成两个 block。converter 的 `_merge_paragraph_fragments` 因 next 段首字符是大写 → `_starts_with_continuation` 返回 False → 不合并。但「上段无标点 + 全大写短语 + 下段全大写起首」就是 PDF 排版换行的强信号。
+
+**Fix**：`_starts_with_continuation` 增加两个 context-aware 信号：
+
+```python
+# Signal 1: 同 style 续接（最强）—— prev tail 以 sty 结尾，next head 同 sty
+next_sty = re.match(r'^<sty c="([0-9a-fA-F]{6})" i="([01])">', line_for_style)
+if next_sty and prev_full:
+    prev_last_sty = re.search(
+        r'<sty c="([0-9a-fA-F]{6})" i="([01])">[^<]*</sty>\s*$', prev_full)
+    if prev_last_sty and prev_last_sty.groups() == next_sty.groups():
+        return True
+
+# Signal 2: 全大写短语 wrap —— prev 末尾全大写 + next 首字也全大写
+prev_tail_stripped = re.sub(r'</?(?:sty[^>]*|span[^>]*|verse)>', '', prev_tail).rstrip()
+if re.search(r'\b[A-Z]{2,}(?:\s+[A-Z]{2,})*\s*$', prev_tail_stripped):
+    s_clean = re.sub(r'^(?:<sty[^>]*>|<span[^>]*>|<verse>)+', '', s)
+    if re.match(r'^[A-Z]{2,}\b', s_clean):
+        return True
+```
+
+**关键**：要传 `prev_full`（完整 buf，不只是 tail）给 continuation 检测，因为 sty 开标签可能超过 prev_tail 的 25 字符窗口。
+
+---
+
+## M4. 脚注 def 头部出现字面 `</span>` 文本
+
+**Trigger**：`grep -E "^\[\^f[0-9]+\]: </span>" calvin/BOOK-en/*.md` 出现命中。渲染后页脚显示 `</span> "Pource qu'il est..."` 等开头是字面 HTML close 标签。
+
+**根因 1**：structured.txt 的 `[FOOTNOTE]` 行形如 `<sty c="800000" i="0">ftN</sty> "body"` —— extractor 给 ftN label 上色，integralwraps 进 sty。converter 的 FN_DEF_RE 不匹配（开头是 `<sty>` 不是 `ft`），走 inline cross-ref 路径，body 被原样 emit。
+
+**根因 2**：publish 脚本 `normalize_back_footnotes` 按 `\b[Ff][Tt]\d+\b` boundary split，把 `<span style="...">ftN</span> "body"` 切成 `<span style="...">` 与 `ftN</span> "body"`，body_part 提取后含 `</span> "body"`。
+
+**Fix（两处都要改）**：
+
+```python
+# structured_to_md.py FOOTNOTE branch — FN_DEF_RE 测试前先剥 sty wrap：
+content_for_fn = re.sub(
+    r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
+    r'\1 ', content)
+fn_m = FN_DEF_RE.match(content_for_fn)
+
+# publish_<book>_en.py normalize_back_footnotes — 先剥 span 包装：
+line = re.sub(r'<span[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</span>', r'\1', line)
+# 提取 body_part 后再剥前导 </span>/</sty>/whitespace：
+body_part = re.sub(r'^(?:</span>|</sty>|\s)+', '', body_part)
+```
+
+**通用规则**：FN 检测正则在面对「label 被 inline style 包裹」时要先做 outer-wrap strip；body_part 提取后还要清理可能漏掉的孤儿 HTML close 标签。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
