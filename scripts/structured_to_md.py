@@ -117,8 +117,9 @@ def collapse_spaced_caps(text: str) -> str:
 
 
 # ── Scripture-ref detection ──────────────────────────────────────────────
+# Group 1: Ages code (e.g. "430101"); Group 2: book+verse range (e.g. "JOHN 1:1-5")
 SCRIPTURE_SECTION_RE = re.compile(
-    r'^\s*<\d{6,7}>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d+)?)\s*$'
+    r'^\s*<(\d{6,7})>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d+)?)\s*$'
 )
 
 # Inline scripture cross-references like "(<540416>1 Timothy 4:16.)"
@@ -196,6 +197,25 @@ PAGE_HEADER_RE = re.compile(r'^--- PAGE (\d+) ---\s*$')
 TAG_RE = re.compile(r'^\[([A-Z0-9_]+)\]\s*(.*)$', re.DOTALL)
 
 
+def _build_ref_banner(ages_code: str, book_verse: str) -> str:
+    """Render the scripture-ref banner with separable Ages code / book / verse spans
+    so per-book CSS can style them PDF-faithfully (small-caps book name, dark-red
+    Ages code, bold verse range). Returns a single <p> tag."""
+    m = re.match(r'^([A-Z][A-Z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$', book_verse)
+    if m:
+        book = m.group(1).strip()
+        verse = m.group(2)
+        book_html = book.title()  # CSS font-variant: small-caps renders Cap-J + small "ohn"
+        return (
+            f'<p class="scripture-ref">'
+            f'<span class="ages-code">&lt;{ages_code}&gt;</span>'
+            f'<span class="book-name">{book_html}</span> '
+            f'<span class="verse-range">{verse}</span>'
+            f'</p>'
+        )
+    return f'<p class="scripture-ref">{book_verse}</p>'
+
+
 def convert(structured_path: Path, out_path: Path) -> None:
     text = structured_path.read_text(encoding='utf-8')
     lines = text.split('\n')
@@ -220,7 +240,8 @@ def convert(structured_path: Path, out_path: Path) -> None:
         out.append('')
         out.append('<div class="scripture-box" markdown="1">')
         if scripture_ref:
-            out.append(f'<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">{scripture_ref}</p>')
+            # scripture_ref is the structured HTML ref banner; emit verbatim.
+            out.append(scripture_ref)
         out.append('')
         # Merge scripture lines into one paragraph; bold verse numbers
         body_text = ' '.join(s.strip() for s in scripture_lines if s.strip())
@@ -330,14 +351,14 @@ def convert(structured_path: Path, out_path: Path) -> None:
             if sec_m:
                 # Flush any pending scripture box, then prep next-scripture ref.
                 flush_scripture()
-                ref = sec_m.group(1).strip()
-                # Clean Ages spaced caps like "J OHN" → "JOHN"
-                ref = collapse_spaced_caps(ref)
-                scripture_ref = ref
-                # Emit H2 marker for verse-nav, and arm scripture-box capture for next BODY.
+                ages_code = sec_m.group(1)
+                ref_text = collapse_spaced_caps(sec_m.group(2).strip())
+                # H2 keeps the canonical "BOOK Ch:V-V" text (used by verse-nav JS).
                 out.append('')
-                out.append(f'## {ref}')
+                out.append(f'## {ref_text}')
                 out.append('')
+                # Structured banner with Ages code + small-caps book + verse range.
+                scripture_ref = _build_ref_banner(ages_code, ref_text)
                 in_scripture = True
                 scripture_lines = []
             else:

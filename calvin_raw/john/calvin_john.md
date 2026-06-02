@@ -180,7 +180,7 @@ ACCORDING TO
 ## JOHN 1:1-5
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:1-5</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430101&gt;</span><span class="book-name">John</span> <span class="verse-range">1:1-5</span></p>
 
 <strong>1.</strong> In the beginning was the Speech, and the Speech was with God, and the Speech was God. <strong>2.</strong> He was in the beginning with God. <strong>3.</strong> All things were made by him, and without him was not any thing made that was made. <strong>4.</strong> In him was life, and the life was the light of men. <strong>5.</strong> And the light shineth in darkness, and the darkness did not comprehend it.
 
@@ -273,7 +273,7 @@ It ought to be understood that the Evangelist speaks of natural gifts only, and 
 ## JOHN 1:6-13
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:6-13</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430106&gt;</span><span class="book-name">John</span> <span class="verse-range">1:6-13</span></p>
 
 <strong>6.</strong> There was a man sent by God, whose name was John. <strong>7.</strong> He came for a testimony [^f14], that he might testify of the light; that by him all might believe. <strong>8.</strong> He was not that light, but that he might testify concerning the light. <strong>9.</strong> The true light was that which enlighteneth every man who cometh into the world. <strong>10.</strong> He was in the world, and the world was made by him, and the world knew him not. <strong>11.</strong> He came into his own, and his own received him not. <strong>12.</strong> But as many as received him, to them gave he power to become the sons of God; namely, to those who believe in his name; <strong>13.</strong> Who were born not of bloods [^f15] nor of the will of the flesh, nor of the will of man, but of God.
 
@@ -426,7 +426,7 @@ displayed his power in other miracles, he might be known to be *the only-* *bego
 ## JOHN 1:15-18
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:15-18</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430115&gt;</span><span class="book-name">John</span> <span class="verse-range">1:15-18</span></p>
 
 <strong>15.</strong> John testifieth [^f25] of himself, and cried, saying, This is he of whom I spoke; who, coming after me, was preferred to me, for he was more excellent than I. [^f26] <strong>16.</strong> And out of his fullness have we all received, and grace for grace. <strong>17.</strong> For the law was given by Moses; grace and truth came by Jesus Christ. <strong>18.</strong> No man hath ever seen God: the only-begotten Son himself, who is in the bosom of the Father, hath declared him.
 
@@ -503,7 +503,7 @@ When he says that the Son *was in the bosom of the Father*, the metaphor is borr
 ## JOHN 1:19-23
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:19-23</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430119&gt;</span><span class="book-name">John</span> <span class="verse-range">1:19-23</span></p>
 
 <strong>19.</strong> And this is [^f31] the testimony of John, when the Jews sent Priests and Levites to Jerusalem, to ask him, Who art thou? <strong>20.</strong> And he confessed, and denied not; he confessed, I say, I am not the Christ. <strong>21.</strong> They then asked him, What art thou then? Art thou Elijah? And he said, I am not. Art thou a Prophet? [^f32] And he answered, No. <strong>22.</strong> They said therefore to him, Who art thou, that we may give an answer to those who sent us? What sayest thou of thyself? <strong>23.</strong> He saith, I am the voice of him who crieth in the wilderness, [^f33] Prepare the way of the Lord, as said the prophet Isaiah.
 
@@ -550,7 +550,7 @@ To enter into ingenious inquiries, as some have done, into the meaning of the wo
 ## JOHN 1:24-28
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:24-28</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430124&gt;</span><span class="book-name">John</span> <span class="verse-range">1:24-28</span></p>
 
 <strong>24.</strong> Now those who were sent were of the Pharisees. <strong>25.</strong> Therefore they asked him, and said to him, Why then dost thou baptize, if thou art not the Christ, nor Elijah, nor a Prophet? <strong>26.</strong> John answered them, saying, I baptize with water; but one standeth in the midst of you, whom you know not. <strong>27.</strong> It is he who, coming after me, is preferred to me; whose shoe-latchet I am not worthy to loose. <strong>28.</strong> These things were done in Bethabara beyond Jordan, where John was baptizing.
 
@@ -595,7 +595,7 @@ opened up a way for them in the midst of the waters, under the direction of Josh
 ## JOHN 1:29-34
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:29-34</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430129&gt;</span><span class="book-name">John</span> <span class="verse-range">1:29-34</span></p>
 
 <strong>29.</strong> The next day, John seeth Jesus coming to him, and saith, Behold the Lamb of God, which taketh away the sin of the world! <strong>30.</strong> This is he of whom I said, After me cometh a man who was preferred to me, because he was more excellent than I. <strong>31.</strong> And I knew him not; but in order that he might be manifested to Israel, therefore I came baptizing with water. <strong>32.</strong> And John testified, saying, I saw the Spirit descending like a dove from heaven, and it remained upon him. <strong>33.</strong> And I knew him not; but he who sent me to baptize with water said to me, Upon whom thou shalt see the Spirit descending and remaining on him, it is he who baptizeth with the Holy Ghost. <strong>34.</strong> I saw therefore, and testified, that he is the Son of God.
 
@@ -680,7 +680,7 @@ Undoubtedly, when they were going out, they already knew that God would conduct 
 ## JOHN 1:35-39
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:35-39</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430135&gt;</span><span class="book-name">John</span> <span class="verse-range">1:35-39</span></p>
 
 <strong>35.</strong> The next day John was again standing, and two of his disciples; <strong>36.</strong> And looking at Jesus walking, he said, Behold the Lamb of God! <strong>37.</strong> And those two disciples heard him speak, and followed Jesus. <strong>38.</strong> And Jesus turning, and looking at them following him, saith to them, What do you seek? And they said to him, Rabbi, (which, if you interpret it, is explained Master,) where dwellest thou? <strong>39.</strong> He saith to them, Come and see. They came and saw where he dwelt, and remained with him that day; for it was about the tenth hour.
 
@@ -705,7 +705,7 @@ Undoubtedly, when they were going out, they already knew that God would conduct 
 ## JOHN 1:40-42
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:40-42</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430140&gt;</span><span class="book-name">John</span> <span class="verse-range">1:40-42</span></p>
 
 <strong>40.</strong> Andrew, Simon Peter’s brother, was one of those who heard John speak and followed him. <strong>41.</strong> He first findeth his own brother Simon, and saith to him, We have found the Messiah, which is, being interpreted, the Christ. <strong>42.</strong> He brought him therefore to Jesus; and Jesus, looking at him, said, Thou art Simon, the son of Jonah; thou shalt be called Cephas, which is, being interpreted, Peter.
 
@@ -738,7 +738,7 @@ the more wonderful that he who was so eagerly desired by all, and whom they had 
 ## JOHN 1:43-46
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:43-46</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430143&gt;</span><span class="book-name">John</span> <span class="verse-range">1:43-46</span></p>
 
 <strong>43.</strong> The next day Jesus wished to go into Galilee, and found Philip, and said to him, Follow me. <strong>44.</strong> Now Philip was of Bethsaida, the city of Andrew and Peter. <strong>45.</strong> Philip findeth Nathanael, and saith to him, We have found Jesus of Nazareth, the son of Joseph, of whom Moses in the Law, and the Prophets write. <strong>46.</strong> Nathanael said to him, Can any good thing come out of Nazareth? Philip said to him, Come and see.
 
@@ -777,7 +777,7 @@ There are many who engage in abstruse inquiries about Christ, but who throw such
 ## JOHN 1:47-51
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:47-51</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430147&gt;</span><span class="book-name">John</span> <span class="verse-range">1:47-51</span></p>
 
 <strong>47.</strong> When Jesus saw Nathanael coming to him, he saith of him, Behold, one truly an Israelite, in whom there is no deceit. <strong>48.</strong> Nathanael saith to him, Whence knowest thou me? Jesus answered and said to him, Before Philip called thee, when thou wast under the fig-tree, I saw thee. <strong>49.</strong> Nathanael answered and said to him, Rabbi, thou art the Son of God, thou art the King: of Israel. <strong>50.</strong> Jesus answered and said to him, Because I said to thee, I saw thee under the fig-tree, thou believest; [^f38] thou shalt see greater things than these. <strong>51.</strong> Then he said to him, Verily, verily, I say to you, Hereafter you shall see heaven opened, and the angels of God ascending and descending on the Son of man.
 
@@ -838,7 +838,7 @@ guardians of our salvation, descend from the blessed rest of the heavenly glory 
 ## JOHN 2:1-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 2:1-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430201&gt;</span><span class="book-name">John</span> <span class="verse-range">2:1-11</span></p>
 
 <strong>1.</strong> Three days after, [^f42] there was a marriage in Cana of Galilee; and the mother of Jesus was there. <strong>2.</strong> And Jesus also was invited, and his disciples, to the marriage <strong>3.</strong> And when the wine fell short, the mother of Jesus saith to him, They have no wine. <strong>4.</strong> Jesus saith to her, What have I to do with thee? my hour is not yet come. <strong>5.</strong> His mother saith to the servants, Do whatever he shall bid you. <strong>6.</strong> And there were there six water-pots of stone, placed according to the Jewish custom of cleansing, containing each of them about two or three baths. <strong>7.</strong> Jesus saith to them, Fill the water-pots with water. And they filled them to the brim. <strong>8.</strong> And he saith to them, Draw out now, and carry to the master of the feast; and they carried. <strong>9.</strong> And when the master of the feast had tasted the water which was made wine, (and knew not whence it was, but the servants who drew the water knew,) the master of the feast calleth the bridegroom, <strong>10.</strong> And saith to him, Every man at first sets down good wine; and when men have drunk freely, then that which is worse; but thou hast kept the good wine till now. <strong>11.</strong> This beginning of miracles did Jesus in Cana of Galilee, and displayed his glory, and his disciples believed on him.
 
@@ -917,7 +917,7 @@ though these were *miracles*, yet, strictly speaking, they were not performed by
 ## JOHN 2:12-17
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 2:12-17</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430212&gt;</span><span class="book-name">John</span> <span class="verse-range">2:12-17</span></p>
 
 <strong>12.</strong> After this he went down to Capernaum, he, and his mother, and his brethren, and his disciples and he remained there not many days. <strong>13.</strong> And the passover of the Jews was at hand; therefore, Jesus went up to Jerusalem. <strong>14.</strong> And found in the temple some who sold oxen, and sheep, and doves, and money-changers also sitting. <strong>15.</strong> And having made a whip of cords, he drove them all out of the temple, with the sheep and oxen, and threw down the money of the changers, and overturned the tables; <strong>16.</strong> And said to those who sold doves, Take those things hence; do not make my Father’s house a house of merchandise. <strong>17.</strong> And his disciples remembered that it was written, The zeal of thy house hath eaten me up.
 
@@ -978,7 +978,7 @@ to the invitation of Christ, that — so far as lies in our power — we may not
 ## JOHN 2:12-17
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 2:12-17</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430212&gt;</span><span class="book-name">John</span> <span class="verse-range">2:12-17</span></p>
 
 <strong>18.</strong> The Jews then answered and said to him, What sign [^f49] showest thou to us, that thou doest these things? <strong>19.</strong> Jesus answered and said to them, Destroy this temple, and I will raise it up in three days. <strong>20.</strong> The Jews therefore said, Forty and six years was this temple in building; and wilt thou raise it up in three days? <strong>21.</strong> But he spoke of the temple of his body. <strong>22.</strong> When therefore he was risen from the dead, his disciples remembered that he had said this to them; and they believed the Scripture, and the word which Jesus had spoken.
 
@@ -1041,7 +1041,7 @@ This reply shows plainly enough what was their intention in asking a *sign*; for
 ## JOHN 2:23-25
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 2:23-25</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430223&gt;</span><span class="book-name">John</span> <span class="verse-range">2:23-25</span></p>
 
 <strong>23.</strong> And when he was in Jerusalem at the passover, many believed in his name, beholding the signs which he performed. <strong>24.</strong> But Jesus himself did not confide in them, because he knew them all. [^f51] <strong>25.</strong> And needed not that any should testify of man; for he knew what was in man.
 
@@ -1086,7 +1086,7 @@ right to entertain unfavorable suspicions about men who are unknown to us. But, 
 ## JOHN 3:1-6
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:1-6</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430301&gt;</span><span class="book-name">John</span> <span class="verse-range">3:1-6</span></p>
 
 <strong>1.</strong> Now there was a man of the Pharisees, called Nicodemus, a ruler among the Jews. <strong>2.</strong> He came to Jesus by night, and said to him, Rabbi, we know that thou art a teacher come from God, for no man can do these signs which thou doest, unless God be with him. <strong>3.</strong> Jesus answered and said to him, Verily, verily, I say to thee, Unless a man be born again, he cannot see the kingdom of God. <strong>4.</strong> Nicodemus saith to him, How can a man be born when he is old? Can he enter again into his mother’s womb and be born? <strong>5.</strong> Jesus answered, Verily, verily, I say to thee, Unless a man be: born of water, and of the Spirit, he cannot enter into the kingdom of God. <strong>6.</strong> That which is born of flesh is flesh; and that which is born of the Spirit is spirit.
 
@@ -1181,7 +1181,7 @@ The word *Spirit* is used here in two senses, namely, for grace, and the effect 
 ## JOHN 3:7-12
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:7-12</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430307&gt;</span><span class="book-name">John</span> <span class="verse-range">3:7-12</span></p>
 
 <strong>7.</strong> Wonder not that I said to thee, You must be born again. <strong>8.</strong> The wind bloweth where it pleaseth, and thou hearest its voice; but knowest not whence it cometh, nor whither it goeth: so is every one that is born of the Spirit. <strong>9.</strong> Nicodemus answered, and said to him, How can these things be? <strong>10.</strong> Jesus answered, and said to him, Thou art a teacher of Israel, and knowest you not these things? <strong>11.</strong> Verily, verily, I say to thee, We speak what we know, and testify what we have seen; and you receive not our testimony. <strong>12.</strong> If ‘I have told you earthly things, and you believe not, how shall you believe if I tell you heavenly things?
 
@@ -1240,7 +1240,7 @@ Whoever exclaims that he is offended by such meanness of language, or pleads it 
 ## JOHN 3:13-18
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:13-18</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430313&gt;</span><span class="book-name">John</span> <span class="verse-range">3:13-18</span></p>
 
 <strong>13.</strong> And [^f59] no one hath ascended to heaven but he who came down from heaven, the Son of man who is in heaven. <strong>14.</strong> And as Moses lifted up the serpent in the wilderness, so must the Son of man be lifted up; <strong>15.</strong> That whosoever believeth in him may not perish, but have eternal life. <strong>16.</strong> For God so loved the world, that he gave his only-begotten Son; that whosoever believeth in him may not perish, but may have eternal life. <strong>17.</strong> For God hath not sent his Son into the world to condemn the world, but that the world may be saved by him. <strong>18.</strong> He who believeth in him is not condemned; but he who believeth not is condemned already, because he hath not believed in the name of the only-begotten Son of God.
 
@@ -1351,7 +1351,7 @@ The meaning amounts to this, that the Gospel is especially, and in the first ins
 ## JOHN 3:19-21
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:19-21</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430319&gt;</span><span class="book-name">John</span> <span class="verse-range">3:19-21</span></p>
 
 <strong>19.</strong> And this is the condemnation, that light is come into the world; and men loved darkness rather than light; for their works were evil. <strong>20.</strong> For whosoever doeth what is evil hateth the light, and cometh not to the light, that his works may not be discovered. <strong>21.</strong> But he who doeth truth cometh to the light, that his works may be made manifest, that they are done in God. [^f61]
 
@@ -1372,7 +1372,7 @@ Christ employed the word *truth*,because, when we are deceived by the outward lu
 ## JOHN 3:22-28
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:22-28</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430322&gt;</span><span class="book-name">John</span> <span class="verse-range">3:22-28</span></p>
 
 <strong>22.</strong> After these things came Jesus, and his disciples, into the land of Judea, and there he remained with them and baptized. <strong>23.</strong> And John also was baptizing in Enon, near Salim; because there were many waters there. They came therefore and were baptized. <strong>24.</strong> For John was not yet cast into prison. <strong>25.</strong> A question then arose between the disciples of John and the Jews about purifying. <strong>26.</strong> And they came to John, and said to him, Rabbi, he who was with thee beyond Jordan, to whom thou gavest testimony, lo, he baptizeth, and all men come to him. 27.John answered and said, A man cannot receive any thing, unless it be given to him from heaven. <strong>28.</strong> Yourselves are witnesses to me, that I said, I am not Christ, but was sent before him.
 
@@ -1409,7 +1409,7 @@ But I rather agree with the opinion of those who explain it as applying to John,
 ## JOHN 3:29-34
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:29-34</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430329&gt;</span><span class="book-name">John</span> <span class="verse-range">3:29-34</span></p>
 
 <strong>29.</strong> He who hath the bride is the bridegroom; but the friend of the bridegroom, who standeth, and heareth him, rejoiceth exceedingly on account of the bridegroom’s voice. This my joy, therefore, is fulfilled. <strong>30.</strong> He must increase, but I must decrease. <strong>31.</strong> He who cometh from above is above all; he who is from the earth is of the earth, and speaketh
 
@@ -1490,7 +1490,7 @@ to every one is given according to the measure of the gift, ( Ephesians 4:7,)
 ## JOHN 3:35-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 3:35-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430335&gt;</span><span class="book-name">John</span> <span class="verse-range">3:35-36</span></p>
 
 <strong>35.</strong> The Father loveth the Son, and hath given all things into his hand. <strong>36.</strong> He who believeth in the Son hath eternal life; but he who believeth not in the Son [^f70] shall not see life, but the wrath of God abideth on him.
 
@@ -1521,7 +1521,7 @@ least, I willingly admit an allusion of this sort, provided we hold the true and
 ## JOHN 4:1-9
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:1-9</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430401&gt;</span><span class="book-name">John</span> <span class="verse-range">4:1-9</span></p>
 
 <strong>1.</strong> When, therefore, the Lord knew that the Pharisees had heard that Jesus made and baptized more disciples than John, (2. Though Jesus himself did not baptize, but his disciples,) <strong>3.</strong> He left Judea, and departed again into Galilee. <strong>4.</strong> And it was necessary that he should pass through Samaria. <strong>5.</strong> He came, therefore, into the city of Samaria, which is called Sichar, near a field which Jacob gave to his son Joseph. <strong>6.</strong> And Jacob’s well was there; and Jesus, fatigued by the journey, was thus sitting on the well, for it was about the sixth hour. <strong>7.</strong> A woman came from Samaria to draw water. Jesus saith to her, Give me to drink. <strong>8.</strong> For the disciples had gone into the city to buy food. <strong>9.</strong> The Samaritan woman saith to him, How dost thou, who art a Jew, ask drink from me, who am a Samaritan woman? For the Jews hold no intercourse with the Samaritans.
 
@@ -1574,7 +1574,7 @@ But this woman does what is natural to almost all of us; for, being desirous to 
 ## JOHN 4:10-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:10-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430410&gt;</span><span class="book-name">John</span> <span class="verse-range">4:10-15</span></p>
 
 <strong>10.</strong> Jesus answered and said to her, If thou knewest the gift of God, and who it is that saith to thee, Give me to drink, thou wouldst have asked of him, and he would have given thee living water. <strong>11.</strong> The woman saith to him, Sir, thou hast nothing to draw with, and the well is deep; whence, therefore, hast thou living water? [^f72] <strong>12.</strong> Art thou greater than our father Jacob, who gave us the well, and himself drank of it, and his children, and his cattle? <strong>13.</strong> Jesus answered and said to her, Every one that drinketh of this water will thirst again; <strong>14.</strong> But he who drinketh of the water which I shall give him will never thirst; but the water, which I shall give him, shall be in him a well of water springing up into eternal life. <strong>15.</strong> The woman saith to him, Sir, give me this water, that I may not thirst, and may not come hither to draw.
 
@@ -1625,7 +1625,7 @@ least collected out of the profane Gentiles, they still do not fail to make fals
 ## JOHN 4:16-21
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:16-21</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430416&gt;</span><span class="book-name">John</span> <span class="verse-range">4:16-21</span></p>
 
 <strong>16.</strong> Jesus saith to her, Go, call thy husband, and come hither. <strong>17.</strong> The woman answered, and said to him, I have not a husband. Jesus said to her, Thou hast well said, I have not a husband; <strong>18.</strong> For thou hast had five husbands, and he whom thou now hast is not thy husband; in this thou hast told the truth. <strong>19.</strong> The woman saith to him, Sir, I see that thou art a Prophet. <strong>20.</strong> Our fathers worshipped in this mountain; and you say that Jerusalem is the place where we ought to worship. <strong>21.</strong> Jesus saith to her, Woman, believe me, the hour cometh when you shall not worship the Father either in this mountain or in Jerusalem.
 
@@ -1696,7 +1696,7 @@ the worship of God far beyond its former narrow limits, that the Samaritans migh
 ## JOHN 4:22-26
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:22-26</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430422&gt;</span><span class="book-name">John</span> <span class="verse-range">4:22-26</span></p>
 
 <strong>22.</strong> You worship what you know not, we worship what we know, for salvation is from the Jews. <strong>23.</strong> But the hour cometh, and now is, when the true worshippers shall worship the Father in spirit and in truth; for the Father seeketh such to worship him. <strong>24.</strong> God is a Spirit, and they who worship him ought to worship in spirit and in truth. <strong>25.</strong> The woman saith to him, I know that the Messiah will come, who is called Christ; therefore, when he shall come, he will tell you all things. <strong>26.</strong> Jesus saith to her, It is I who talk with thee.
 
@@ -1781,7 +1781,7 @@ I wish that those who now boast of being the pillars of the Christian Church, wo
 ## JOHN 4:27-34
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:27-34</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430427&gt;</span><span class="book-name">John</span> <span class="verse-range">4:27-34</span></p>
 
 <strong>27.</strong> And, in the meantime, his disciples came, and wondered that he talked with the woman. But no man said, What seekest thou, or why talkest thou with her? <strong>28.</strong> The woman, therefore, left her pitcher, and went away into the city, and said to the men, <strong>29.</strong> Come, and see a man who hath told me all things that I ever did: is not this the Christ? <strong>30.</strong> They went out of the city, therefore, and came to him. <strong>31.</strong> In the meantime his disciples asked him, saying, Master, eat. <strong>32.</strong> But he said to them, I have food to eat which you know not. <strong>33.</strong> The disciples, therefore, said among themselves, Hath any man brought him any thing to eat? <strong>34.</strong> Jesus saith to them, My food is, to do the will of him who sent me, and to finish his work.
 
@@ -1828,7 +1828,7 @@ The earnestness and promptitude of the woman are so much the more worthy of atte
 ## JOHN 4:35-38
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:35-38</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430435&gt;</span><span class="book-name">John</span> <span class="verse-range">4:35-38</span></p>
 
 <strong>35.</strong> Do you not say, There are yet four months, and harvest will come? Lo, I say to you, Lift up your eyes, and look at the fields, for they are already white for harvest. <strong>36.</strong> And he who reapeth receiveth reward, and gathereth fruit into life eternal; that both he that soweth, and he that reapeth, may rejoice together. <strong>37.</strong> For in this is the saying true, That there is one who soweth, and another who reapeth. <strong>38.</strong> I sent you to reap that on which you did not labor; other men labored, and you have entered into their labors.
 
@@ -1881,7 +1881,7 @@ his exhortation generally to all believers, but Christ here speaks to the
 ## JOHN 4:39-45
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:39-45</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430439&gt;</span><span class="book-name">John</span> <span class="verse-range">4:39-45</span></p>
 
 <strong>39.</strong> And many Samaritans out of that city believed in him on account of the saying of the woman, who testified, I told you all things that ever I did. <strong>40.</strong> When the Samaritans, therefore, came to him, they entreated him to remain with them; and he remained two days. <strong>41.</strong> And many more believed on account of his word; <strong>42.</strong> And said to the woman, We no longer believe on account of thy speech; for we ourselves have heard, and know, that this is actually the Christ, the Savior of the world. <strong>43.</strong> And after two days he departed, and went away into Galilee. <strong>44.</strong> For Jesus himself testified, [^f83] that a Prophet hath no honor in his own country. <strong>45.</strong> And when he came into Galilee, the Galileans received him, who had seen [^f84] all that he did in Jerusalem on the feast-day; for they had also come to the feast-day.
 
@@ -1922,7 +1922,7 @@ Now this proverb, and the meaning of it, may have a twofold origin; for it is a 
 ## JOHN 4:46-54
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 4:46-54</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430446&gt;</span><span class="book-name">John</span> <span class="verse-range">4:46-54</span></p>
 
 <strong>46.</strong> Jesus therefore came again into Cana of Galilee, where he had turned the water into wine. And there was a certain courtier, whose son was diseased, in Capernaum. <strong>47.</strong> When he heard that Jesus had come from Judea into Galilee, he went away to him, and entreated him to go down and cure his son; for he was near death. <strong>48.</strong> Jesus therefore said to him, Unless you see signs and wonders, you will not believe. <strong>49.</strong> The courtier himself said to him, Sir, come down ere my child die. <strong>50.</strong> Jesus said to him, Go, thy son liveth. The man believed the word which Jesus had spoken to him, and went away. <strong>51.</strong> And while he was still going down, his servants met and informed him, saying, Thy son liveth. <strong>52.</strong> Then he asked them at what hour he recovered; and they said to him, Yesterday at the seventh hour the fever left him. <strong>53.</strong> The father therefore knew that it was the same hour at which Jesus had said to him, Thy son liveth. And he believed, and all his house. <strong>54.</strong> This second miracle did Jesus again, when he had come out of Judea into Galilee.
 
@@ -1977,7 +1977,7 @@ Though it tarry, wait for it; because it will surely come, it will not tarry, ( 
 ## JOHN 5:1-9
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:1-9</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430501&gt;</span><span class="book-name">John</span> <span class="verse-range">5:1-9</span></p>
 
 <strong>1.</strong> After these things there was a feast of the Jews, and Jesus went up to Jerusalem. <strong>2.</strong> And there was in Jerusalem, at the sheep-market, a pool, which is called in Hebrew Bethesda, having five porches. <strong>3.</strong> In these lay a great multitude of diseased, blind, lame, withered, [^f91]
 
@@ -2050,7 +2050,7 @@ But there were two reasons why Christ, disregarding this danger, chose to make s
 ## JOHN 5:10-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:10-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430510&gt;</span><span class="book-name">John</span> <span class="verse-range">5:10-15</span></p>
 
 <strong>10.</strong> The Jews therefore said to him who had been cured, It is the Sabbath; it is not lawful for thee to carry thy bed. <strong>11.</strong> He answered them, He who made me whole said to me, Carry thy bed and walk. <strong>12.</strong> They therefore asked him, Who is that man who said to thee, Carry thy bed and walk? <strong>13.</strong> And he who had been cured knew not who he was; for Jesus had withdrawn himself, because there was a crowd in that place. [^f94] <strong>14.</strong> After these things, Jesus found him in the temple, and said to him, Lo, thou art made whole, sin no more, lest something worse befall thee. <strong>15.</strong> The man went away, and told the Jews that it was Jesus who had made him whole. <strong>16.</strong> And for that reason the Jews persecuted Jesus, and sought to slay him, because he did these things on the Sabbath-day.
 
@@ -2093,7 +2093,7 @@ are in deriving benefit from God’s chastisements; for if Christ’s exhortatio
 ## JOHN 5:17-19
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:17-19</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430517&gt;</span><span class="book-name">John</span> <span class="verse-range">5:17-19</span></p>
 
 <strong>17.</strong> But Jesus answered them, My Father worketh hitherto, and I work. <strong>18.</strong> For this reason, therefore, the Jews sought the more to kill him, because he not only broke the Sabbath, but likewise called God his Father, making himself equal with God. <strong>19.</strong> Jesus then answered, and said to them, Verily, verily, I say to you, The Son cannot do any thing of himself but what he hath seen the Father do; for whatsoever things he doeth, those also doeth the Son likewise.
 
@@ -2142,7 +2142,7 @@ Let us therefore keep Christ before our eyes, as he was sent into the world by t
 ## JOHN 5:20-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:20-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430520&gt;</span><span class="book-name">John</span> <span class="verse-range">5:20-24</span></p>
 
 <strong>20.</strong> For the Father loveth the Son, and showeth him all things which he doeth; and he will show him greater works than these, that you may wonder. <strong>21.</strong> For as the Father raiseth up the dead, and quickeneth them; so also the Son quickeneth whom he will. <strong>22.</strong> For the Father judgeth no man, but hath committed all judgment to the Son; <strong>23.</strong> That all men may honor the Son, as they honor the Father: he who honoureth not the Son honoureth not the Father who sent him. <strong>24.</strong> Verily, verily, I say to you, That he who heareth my word, and believeth in him who sent me, hath eternal life, and shall not come into condemnation, but hath passed from death to life.
 
@@ -2217,7 +2217,7 @@ And, indeed, this passage contains nothing that relates to the complete destruct
 ## JOHN 5:25-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:25-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430525&gt;</span><span class="book-name">John</span> <span class="verse-range">5:25-29</span></p>
 
 <strong>25.</strong> Verily, verily, I say to you, That the hour cometh, and now is, when the dead shall hear the voice of the Son of God, and they that hear shall live. <strong>26.</strong> For as the Father hath life in himself, so also hath he given to the Son to have life in himself. <strong>27.</strong> And he hath given him power to execute judgment also, because he is the Son of man. [^f100]
 
@@ -2302,7 +2302,7 @@ The inference which the Papists draw from those passages — that eternal life i
 ## JOHN 5:30-32
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:30-32</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430530&gt;</span><span class="book-name">John</span> <span class="verse-range">5:30-32</span></p>
 
 <strong>30.</strong> I can do nothing of myself; as I hear, I judge, and my judgment is just; because I seek not my own will, but the will of my Father who sent me. <strong>31.</strong> If I testify concerning myself, my testimony is not true. <strong>32.</strong> There is another who testifieth concerning me, and I know that the testimony which he testifieth concerning me is true.
 
@@ -2329,7 +2329,7 @@ We ought always to keep in remembrance that, whenever Christ speaks concerning h
 ## JOHN 5:33-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:33-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430533&gt;</span><span class="book-name">John</span> <span class="verse-range">5:33-36</span></p>
 
 <strong>33.</strong> You sent to John, and he gave testimony to the truth. <strong>34.</strong> But I receive not testimony from man; but these things I say that you may be saved. <strong>35.</strong> He was a burning and shining lamp, and for a time you were willing to amuse yourselves in his light. <strong>36.</strong> But I have greater testimony than that of John; for the works which my Father gave me to perform, the very works which I do, testify concerning me that the Father hath sent me.
 
@@ -2372,7 +2372,7 @@ I reply, Christ avails himself of the*testimony*of John, not because he needs it
 ## JOHN 5:37-40
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:37-40</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430537&gt;</span><span class="book-name">John</span> <span class="verse-range">5:37-40</span></p>
 
 <strong>37.</strong> And the Father who hath sent me, himself hath testified concerning me; you have never heard his voice, or seen his shape. <strong>38.</strong> And you have not his word abiding in you; for whom he hath sent, him you believe not. <strong>39.</strong> Search the Scriptures; for you think that you have eternal life in them: and they are they which testify concerning me. <strong>40.</strong> And you will not come to me, that you may have life.
 
@@ -2403,7 +2403,7 @@ Father (μεμαρτύρηκε)*testified*,in order to show that he did not come
 ## JOHN 5:41-47
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 5:41-47</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430541&gt;</span><span class="book-name">John</span> <span class="verse-range">5:41-47</span></p>
 
 <strong>41.</strong> I receive not glory from men. <strong>42.</strong> But I know you, that you have not the love of God in you. <strong>43.</strong> I come in the name of my Father, and you do not receive me; if another come in his own name, him you will receive. <strong>44.</strong> How can you believe, who receive glory from each other, and seek not the glory which cometh from God alone? <strong>45.</strong> Think not that I shall accuse you to the Father; it is Moses in whom you trust, that accuseth you. <strong>46.</strong> For if you believed Moses, you would also believe me; for he wrote concerning me. <strong>47.</strong> But if you do not believe his writings, how shall you believe my words?
 
@@ -2480,7 +2480,7 @@ But Christ accommodates his discourse to those to whom he speaks; for the author
 ## JOHN 6:1-13
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:1-13</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430601&gt;</span><span class="book-name">John</span> <span class="verse-range">6:1-13</span></p>
 
 <strong>1.</strong> Afterwards, Jesus went across the sea of Galilee, which is called (the sea) of Tiberias. <strong>2.</strong> And a great multitude followed him, because they had seen his miracles, which he performed on those who were diseased. <strong>3.</strong> And Jesus went up into a mountain, and there sat down with his disciples. <strong>4.</strong> And the passover, a feast of the Jews, was at hand. <strong>5.</strong> Jesus therefore, lifting up his eyes, and seeing that a great multitude came to him, saith to Philip, Whence shall we buy bread, that those men may eat? <strong>6.</strong> (Now he said this, trying him; for he himself knew what he would do.) <strong>7.</strong> Philip answered him, Two hundred denarii of bread is not sufficient for them, that each of them may take a little. <strong>8.</strong> One of his disciples, Andrew, Simon Peter’s brother, saith to him, <strong>9.</strong> There is here a boy, who hath five barley loaves, and two small fishes; but what are these among so many? <strong>10.</strong> And Jesus said, Make the men sit down. (Now there was much grass in that place.) The men therefore sat down, in number about five thousand. <strong>11.</strong> And Jesus took the loaves, and, having given thanks, distributed them to the disciples, and the disciples to those who had sat down, and likewise of the fishes, as much as they wished. <strong>12.</strong> And after they were satisfied, he said to his disciples, Gather the fragments which are left, that nothing may be lost. <strong>13.</strong> They therefore gathered, and filled twelve baskets with the fragments of the five loaves which were left by those who had eaten.
 
@@ -2555,7 +2555,7 @@ For we are so strongly attached to outward means, that nothing is more difficult
 ## JOHN 6:14-21
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:14-21</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430614&gt;</span><span class="book-name">John</span> <span class="verse-range">6:14-21</span></p>
 
 <strong>14.</strong> Those men, therefore, when they saw the miracle which Jesus had performed, said, This is truly the Prophet who is to come into the world. <strong>15.</strong> And when Jesus knew that they would come and take him by force, to make him a king, he again withdrew alone into a mountain. <strong>16.</strong> And when it was evening, his disciples went down to the sea. <strong>17.</strong> And having entered into a ship, they came across the sea into Capernaum; and it was now dark, and Jesus had not come to them. <strong>18.</strong> And the sea arose by means of a great wind that blew. <strong>19.</strong> When therefore they had rowed about five-and-twenty or thirty furlongs, they see Jesus walking on the sea; and when he approached the ship, [^f123] they were terrified. <strong>20.</strong> But he saith to them, It is I, be not terrified. <strong>21.</strong> They were willing, therefore, to receive him into the ship; and immediately the ship reached the place to which they were going.
 
@@ -2614,7 +2614,7 @@ sent as a Judge to the reprobate and unbelievers for their destruction; and, the
 ## JOHN 6:22-25
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:22-25</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430622&gt;</span><span class="book-name">John</span> <span class="verse-range">6:22-25</span></p>
 
 <strong>22.</strong> Next day, the multitude standing on the other side of the sea, when they saw that there was no other ship there but only that into which his disciples had entered, and that Jesus had not entered into the ship with his disciples, but that his disciples had gone away alone; <strong>23.</strong> And other ships came from Tiberias, near the place where they had eaten bread, after that the Lord had given thanks. <strong>24.</strong> When therefore the multitude saw that Jesus was not there, nor his disciples, they also entered into the ships, and came to Capernaum, seeking Jesus. <strong>25.</strong> And having found him on the opposite side of the sea, they said to him, Rabbi, when camest thou hither?
 
@@ -2635,7 +2635,7 @@ sent as a Judge to the reprobate and unbelievers for their destruction; and, the
 ## JOHN 6:26-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:26-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430626&gt;</span><span class="book-name">John</span> <span class="verse-range">6:26-29</span></p>
 
 <strong>26.</strong> Jesus answered them, and said, Verily, verily, I say to you, You seek me, not because you saw miracles, but because you ate of the loaves, and were satisfied. <strong>27.</strong> Labour for food, not that which perisheth, but the food which endureth to eternal life, which the Son of man shall give to you; for him hath God the Father sealed. <strong>28.</strong> They said therefore to him, What shall we do, that we may work the works of God? <strong>29.</strong> Jesus answered and said to them, This is the work of God, that you may believe in him whom he hath sent.
 
@@ -2694,7 +2694,7 @@ by *works*,we mean *works*by the merit of which men may obtain favor with God. N
 ## JOHN 6:30-33
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:30-33</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430630&gt;</span><span class="book-name">John</span> <span class="verse-range">6:30-33</span></p>
 
 <strong>30.</strong> They said therefore to him, What sign doest thou then, that we may see and believe thee? What dost thou work? [^f139] <strong>31.</strong> Our fathers ate manna in the wilderness, as it is written, He gave them bread of heaven to eat, (
 
@@ -2743,7 +2743,7 @@ for the reason why Christ *descended*to us was, that no man could ascend above.
 ## JOHN 6:34-40
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:34-40</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430634&gt;</span><span class="book-name">John</span> <span class="verse-range">6:34-40</span></p>
 
 <strong>34.</strong> They said therefore to him, Lord, give us always this bread. <strong>35.</strong> Jesus said to them, I am the bread of life; he that cometh to me shall never hunger, and he that believeth in me shall never thirst. <strong>36.</strong> But I have told you that you have also seen me and do not believe. <strong>37.</strong> All that the Father giveth me shall come to me; and him that cometh to me I will not cast out; <strong>38.</strong> For I came down from heaven, not to do my own will, but the will of him who sent me. <strong>39.</strong> And this is the will of the Father who sent me, that of all that he hath given me I should lose nothing, but should raise it up again at the last day. <strong>40.</strong> And this is the will of him who sent me, that whosoever seeth the Son, and believeth in him, shall have everlasting life, and I will raise him up at the last day.
 
@@ -2818,7 +2818,7 @@ faith is a sufficient attestation of the eternal predestination of God, so that 
 ## JOHN 6:41-45
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:41-45</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430641&gt;</span><span class="book-name">John</span> <span class="verse-range">6:41-45</span></p>
 
 <strong>41.</strong> The Jews therefore murmured concerning him, because he said, I am the bread which have come down from heaven. <strong>42.</strong> And they said, Is not this Jesus, the son of Joseph, whose father and mother we know? How therefore doth he say, I have come down from heaven? <strong>43.</strong> Jesus therefore answered, and said to them, Murmur not among yourselves. <strong>44.</strong> No man can come to me, unless the Father, who hath sent me, draw him; and I will raise him up at the last day. <strong>45.</strong> It is written in the Prophets, And they shall be all taught by God; whosoever therefore hath heard my Father, and hath learned,
 
@@ -2867,7 +2867,7 @@ These two clauses utterly overturn the whole power of free will, of which the Pa
 ## JOHN 6:46-51
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:46-51</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430646&gt;</span><span class="book-name">John</span> <span class="verse-range">6:46-51</span></p>
 
 <strong>46.</strong> Not that any man hath seen the Father, but he who is from God; he hath seen the Father. <strong>47.</strong> Verily, verily, I say to you, He who believeth in me hath eternal life. <strong>48.</strong> I am the bread of life. <strong>49.</strong> Your fathers ate manna in the wilderness, and are dead. <strong>50.</strong> This is the bread which hath come down from heaven, that any man may eat of it, and not die. <strong>51.</strong> I am the living bread which hath come down from heaven; if any man eat of this bread, he shall live for ever; and the bread which I shall give is my flesh, which I shall give for the life of the world.
 
@@ -2912,7 +2912,7 @@ which dwells intrinsically, as we say, in his Divinity. And in this sense it is 
 ## JOHN 6:52-58
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:52-58</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430652&gt;</span><span class="book-name">John</span> <span class="verse-range">6:52-58</span></p>
 
 <strong>52.</strong> The Jews therefore debated among themselves, saying, How can this man give us his flesh to eat? <strong>53.</strong> Jesus therefore said to them, Verily, verily, I say to you, Unless you eat the flesh of the Son of man, and drink his blood, you have not life in you. <strong>54.</strong> He who eateth my flesh, and drinketh my blood, hath eternal life; and I will raise him up at the last day. <strong>55.</strong> For my flesh is truly food, and my blood is truly drink. <strong>56.</strong> He who eateth my flesh, and drinketh my blood, dwelleth in me, and I in him. <strong>57.</strong> As the living Father hath sent me, and I live on account of my Father; and he who eateth me, even he shall live for my sake. <strong>58.</strong> This is the bread which hath come down from heaven; not as your fathers ate manna, and are dead; he who eateth this bread shall live for ever.
 
@@ -2985,7 +2985,7 @@ Let us observe, that this discourse also is accommodated to the capacity of thos
 ## JOHN 6:59-64
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:59-64</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430659&gt;</span><span class="book-name">John</span> <span class="verse-range">6:59-64</span></p>
 
 59 He spoke these things in the synagogue, while he was teaching in Capernaum. <strong>60.</strong> Many of his disciples, therefore, having heard it, said, This is a harsh saying; [^f165] who can hear it? <strong>61.</strong> But Jesus knowing in himself that his disciples murmured at it, said to them, Doth this offend you? <strong>62.</strong> What if you shall see the Son of man ascend to where he was before? <strong>63.</strong> It is the Spirit that quickeneth; the flesh profiteth nothing. The words which I speak to you are spirit and life. <strong>64.</strong> But there are some of you who do not believe. For Jesus knew from the beginning who they were that did not believe, and who he was that would betray him.
 
@@ -3056,7 +3056,7 @@ As to the sentence breaking off in so abrupt a manner, it is probable that this 
 ## JOHN 6:65-71
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 6:65-71</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430665&gt;</span><span class="book-name">John</span> <span class="verse-range">6:65-71</span></p>
 
 <strong>65.</strong> And he said, Therefore have I told you that no man can come to me, unless it be given to him by my Father. <strong>66.</strong> From that time many of his disciples went back, and walked no more with him. <strong>67.</strong> Jesus therefore said to the twelve, Do you also wish to go away? <strong>68.</strong> Simon Peter therefore answered him, Lord, to whom shall we go? Thou hast the words of eternal life. <strong>69.</strong> And we have believed and known that thou art the Christ, the Son of the living God. <strong>70.</strong> Jesus answered them, Have not I chosen you twelve, and one of you is a devil? <strong>71.</strong> Now he spoke of Judas Iscariot, son of Simon; for it was he that would betray him, although he was one of the twelve.
 
@@ -3135,7 +3135,7 @@ Justly, therefore, is he accounted *a devil,*who, after having been admitted to 
 ## JOHN 7:1-8
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:1-8</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430701&gt;</span><span class="book-name">John</span> <span class="verse-range">7:1-8</span></p>
 
 <strong>1.</strong> And after these things Jesus walked in Galilee; for he did not wish to walk in Judea, because the Jews sought to kill him. <strong>2.</strong> And the setting up of tabernacles, a feast of the Jews, was at hand. <strong>3.</strong> His brethren therefore said to him, Depart hence, and go away into Judea, that thy disciples also may see the works which thou dost. <strong>4.</strong> For no man doth any thing in secret, and seeketh to become known; if thou dost these things, show thyself to the world. <strong>5.</strong> For even his brethren did not believe in him. <strong>6.</strong> Jesus therefore said to them, My time is not yet come, but your time is always ready. <strong>7.</strong> The world cannot hate you, but me it hateth, because I testify of it that its works are evil. <strong>8.</strong> Go you up to this feast. I go not up yet to this feast, because my time is not yet completed.
 
@@ -3192,7 +3192,7 @@ When the Spirit shall come, he will reprove the world of sin, ( John 16:8.)
 ## JOHN 7:9-13
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:9-13</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430709&gt;</span><span class="book-name">John</span> <span class="verse-range">7:9-13</span></p>
 
 <strong>9.</strong> And having said these things, he remained in Galilee. <strong>10.</strong> And when his brethren had gone up, then he also went up to the feast, not openly, but, as it were, in secret. <strong>11.</strong> The Jews therefore sought him at the feast, and said, Where is he? <strong>12.</strong> And there was much murmuring concerning him among the crowds; for some said, He is a good man, and others said, No, but he seduceth the multitude. <strong>13.</strong> Yet no man spoke openly about him for fear of the Jews.
 
@@ -3217,7 +3217,7 @@ When the Spirit shall come, he will reprove the world of sin, ( John 16:8.)
 ## JOHN 7:14-19
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:14-19</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430714&gt;</span><span class="book-name">John</span> <span class="verse-range">7:14-19</span></p>
 
 <strong>14.</strong> And about the middle of the feast, Jesus went up into the temple, and taught. <strong>15.</strong> And the Jews wondered, saying, How doth this man know letters, since he did not learn them? <strong>16.</strong> Jesus answered them, and said, My doctrine is not mine, but that of him who sent me. <strong>17.</strong> If any man wish to do his will, he shall know of the doctrine, if it be of God, or if I speak from myself. <strong>18.</strong> He who speaketh from himself seeketh his own glory; but he who seeketh the glory of him who sent him is true, and there is no unrighteousness in him. <strong>19.</strong> Did not Moses give you the law, and not one of you keepeth the law? Why do you seek to kill me?
 
@@ -3278,7 +3278,7 @@ Those who, in the present day, are the fiercest enemies of the Gospel and the mo
 ## JOHN 7:20-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:20-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430720&gt;</span><span class="book-name">John</span> <span class="verse-range">7:20-24</span></p>
 
 <strong>20.</strong> The multitude answered, and said, Thou hast a devil; who seeketh to kill thee? <strong>21.</strong> Jesus answered, and said to them, I have done one work, and you all wonder. <strong>22.</strong> Therefore Moses gave you circumcision, not because it is of Moses, but of the fathers, and on the Sabbath you circumcise a man. <strong>23.</strong> If a man receives circumcision on the Sabbath, that the law of Moses may not be broken, are you offended at me, because I have completely cured a man on the Sabbath? <strong>24.</strong> Judge not according to the appearance, but judge right judgment.
 
@@ -3307,7 +3307,7 @@ There might also be another reason for the comparison, namely, that the sacramen
 ## JOHN 7:25-30
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:25-30</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430725&gt;</span><span class="book-name">John</span> <span class="verse-range">7:25-30</span></p>
 
 <strong>25.</strong> Some of the inhabitants of Jerusalem therefore said, Is not this he whom they seekto kill? <strong>26.</strong> And, lo, he speaketh boldly, and they say nothing to him. Do the rulers actually know that this is truly the Christ? <strong>27.</strong> But we know whence this man is; but when Christ shall come, no man will know whence he is. <strong>28.</strong> Jesus therefore exclaimed in the temple, teaching and saying, You both know me, and you know whence I am; and I did not come of myself, but he who sent me is true, whom you know not. <strong>29.</strong> But I know him, for I am from him, and he hath sent me. <strong>30.</strong> Therefore they sought to seize him; but no man laid hands on him, because his hour was not yet come.
 
@@ -3364,7 +3364,7 @@ not be led away from the performance of his duty by any fears. Yet let no man go
 ## JOHN 7:31-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:31-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430731&gt;</span><span class="book-name">John</span> <span class="verse-range">7:31-36</span></p>
 
 <strong>31.</strong> And many of the multitude believed in him, and said, When Christ shall come, will he do more miracles than this man doth? <strong>32.</strong> The Pharisees heard the multitude muttering these things concerning him; and the Pharisees and priests sent officers to seize him. <strong>33.</strong> Jesus, therefore, said to them, Yet a little while am I with you, and I go to him who hath sent me. <strong>34.</strong> You shall seek me, and shall not find me; and where I am, you cannot come. <strong>35.</strong> The Jews, therefore, said among themselves, Whither will he go, that we shall not find him? Will he go to those who are scattered among the Greeks, [^f189] and teach the Greeks? <strong>36.</strong> What is this saying which he hath spoken, You shall seek me, and shall not find me, and whither I go, you cannot come?
 
@@ -3423,7 +3423,7 @@ The meaning of the words therefore is, “Will he cross the sea, to go to Jews w
 ## JOHN 7:37-39
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:37-39</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430737&gt;</span><span class="book-name">John</span> <span class="verse-range">7:37-39</span></p>
 
 <strong>37.</strong> Now on the last day, which was the greatest day of the feast, Jesus stood, and exclaimed, saying, If any man thirst, let him come to me, and drink. <strong>38.</strong> He who believeth in me, as the Scripture saith, out of his belly shall flow rivers of living water. 39 But this he spoke of the Spirit which they who believed in him were to receive. For the Holy Spirit was not yet given, because Jesus was not yet glorified.
 
@@ -3488,7 +3488,7 @@ But one question still remains to be answered. Does he mean here the visible gra
 ## JOHN 7:40-44
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:40-44</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430740&gt;</span><span class="book-name">John</span> <span class="verse-range">7:40-44</span></p>
 
 <strong>40.</strong> Many of the multitude, therefore, having heard this sermon, said, This is truly a Prophet. [^f197] <strong>41.</strong> Others said, This is the Christ. And others said, But will Christ come out of Galilee? <strong>42.</strong> Doth not the Scripture say that Christ will come from the seed of David, and from the town of Bethlehem, where David dwelt? <strong>43.</strong> There was therefore a difference of opinion in the multitude on account of him. <strong>44.</strong> And some of them wished to seize him, but no man laid hands on him.
 
@@ -3519,7 +3519,7 @@ Yet it ought also to be observed that divisions do not properly draw their origi
 ## JOHN 7:45-53
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 7:45-53</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430745&gt;</span><span class="book-name">John</span> <span class="verse-range">7:45-53</span></p>
 
 <strong>45.</strong> So the officers came to the chief priests and Pharisees, and they said to them, Why have you not brought him? <strong>46.</strong> The officers answered, Never man spoke like this man. <strong>47.</strong> The Pharisees therefore answered them, And are you also seduced? <strong>48.</strong> Hath any of the rulers, or of the Pharisees, believed in him? <strong>49.</strong> But this multitude, who know not the law, are accursed. <strong>50.</strong> Nicodemus said to them, (he who came to him by night, for he was one of them,) <strong>51.</strong> Doth our law judge a man before it hath heard him, and knoweth what he doth? <strong>52.</strong> They answered and said to him, Art thou also of Galilee? Search and see, that no Prophet hath arisen out of Galilee. <strong>53.</strong> And every man went to his own house.
 
@@ -3580,7 +3580,7 @@ Thisought to be the more carefully observed, because there are many in the prese
 ## JOHN 8:1-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:1-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430801&gt;</span><span class="book-name">John</span> <span class="verse-range">8:1-11</span></p>
 
 <strong>1.</strong> But Jesus went to the mountain of Olives. <strong>2.</strong> And early in the morning he again came to the temple, and all the people came to him; and sitting down, he taught them <strong>3.</strong> And the scribes and Pharisees bring to him a woman caught in adultery, and placing her in the midst, <strong>4.</strong> They say to him, Master, this woman was caught in the very act, while she was committing adultery. <strong>5.</strong> Now in the law Moses commanded us to stone such persons; but what sayest thou? <strong>6.</strong> Now they said this, trying him, that they might have ground for accusing him. But Jesus, casting down his eyes, [^f204] wrote with the finger on the ground. <strong>7.</strong> And as they persisted in asking him, he lifted up his eyes, [^f205] and said to them, He who is without sin amongst you, let him first cast a stone at her. <strong>8.</strong> And again he stooped down, and wrote on the ground. <strong>9.</strong> And having heard that, and being reproved by their conscience, they went out one by one, beginning at the eldest even to the last; so that Jesus was left alone, and the woman who stood in the midst. <strong>10.</strong> And Jesus, lifting up his eyes, having seen nobody but the woman, said to her, Woman, where are thy accusers? Hath no man condemned thee? <strong>11.</strong> She said, No man, Lord. Jesus answered her, Neither do I condemn thee: go, and sin no more.
 
@@ -3639,7 +3639,7 @@ Yet the Popish theology is, that in this passage Christ has brought to us the La
 ## JOHN 8:12-14
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:12-14</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430812&gt;</span><span class="book-name">John</span> <span class="verse-range">8:12-14</span></p>
 
 <strong>12.</strong> Therefore Jesus spoke again to them, saying, I am the light of the world; he who followeth me shall not walk in darkness, but shall have the light of life. <strong>13.</strong> The Pharisees therefore said to him, Thou testifiest concerning thyself, thy testimony is not true. [^f209] <strong>14.</strong> Jesus answered, and said to them, Though I testify concerning myself, my testimony is true: [^f210] for I know whence I came, and whither I go; but you know not whence I come, and whither I go.
 
@@ -3670,7 +3670,7 @@ But we must first ascertain what necessity there is for seeking this *light*; fo
 ## JOHN 8:15-20
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:15-20</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430815&gt;</span><span class="book-name">John</span> <span class="verse-range">8:15-20</span></p>
 
 <strong>15.</strong> You judge according to the flesh; I judge no man. <strong>16.</strong> And if I judge, my judgment is true; [^f214] for I am not alone, but I and the Father, who hath sent me. <strong>17.</strong> It is even written in your law, that the testimony of two men is true. <strong>18.</strong> I am one who testify concerning myself, and the Father who hath sent me testifieth concerning me. <strong>19.</strong> They said therefore to him, Where is thy Father? Jesus answered, You neither know me nor my Father. If you had known me, you would have known my Father also. <strong>20.</strong> These words Jesus spoke in the treasury, teaching in the temple; and no man seized him, because his hour was not yet come.
 
@@ -3713,7 +3713,7 @@ And certainly it is an astonishing reward of the obedience of faith, that whosoe
 ## JOHN 8:21-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:21-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430821&gt;</span><span class="book-name">John</span> <span class="verse-range">8:21-24</span></p>
 
 <strong>21.</strong> Jesus therefore spake again to them, I go, and you shall seek me, and you shall die in your sin. Whither I go, you cannot come. <strong>22.</strong> The Jews therefore said, Will he kill himself? Because he saith, Whither I go, you cannot come. <strong>23.</strong> Then he said to them, You are from beneath, I am from above; you are of this world, I am not of this world. <strong>24.</strong> Therefore I said to you, that you shall die in your sins; for if you do not believe that I am, you shall die in your sins.
 
@@ -3750,7 +3750,7 @@ In this manner, however wicked the scribes were, they would willingly have appli
 ## JOHN 8:25-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:25-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430825&gt;</span><span class="book-name">John</span> <span class="verse-range">8:25-29</span></p>
 
 <strong>25.</strong> Then they said to him. Who art thou? Jesus said to them, From the beginning, [^f223] because I also speak to you. [^f224] <strong>26.</strong> I have many things to speak and judge of you; but he who hath sent me is true, and I speak to the world those things which I have heard from him. <strong>27.</strong> They knew not that he spoke to them of the Father. Jesus therefore said to them, <strong>28.</strong> When you shall have exalted the Son of man, then shall you know that I am, and that I do nothing of myself; but as the Father hath taught me, I speak. <strong>29.</strong> And he who hath sent me is with me. The Father hath not left me alone, because I always do the things which please him.
 
@@ -3809,7 +3809,7 @@ preached, that this triumph began to be made known to men. The same thing which 
 ## JOHN 8:30-38
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:30-38</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430830&gt;</span><span class="book-name">John</span> <span class="verse-range">8:30-38</span></p>
 
 <strong>30.</strong> While he spoke these things, many believed on him. <strong>31.</strong> Jesus therefore said to the Jews who believed on him, If you continue in my word, you shall be truly my disciples. <strong>32.</strong> And you shall know the truth, and the truth shall make you free. <strong>33.</strong> They answered, We are Abraham’s seed, and never were enslaved to any one; how then sayest thou, You shall be free? <strong>34.</strong> Jesus answered them, Verily, verily, I say to you, That every man who committeth sin is the slave of sin. [^f130] <strong>35.</strong> And the slave [^f131] remaineth not always in the house, but the son remaineth always. <strong>36.</strong> If the Son then shall make you free, you shall be truly free. <strong>37.</strong> I know that you are the seed of Abraham, but you seek to kill me, because my word dwelleth not in you. [^f132] <strong>38.</strong> I speak what I have seen with my Father, and you do what you have seen with your father.
 
@@ -3876,7 +3876,7 @@ YOU *what you have seen with your father*;as if Christ had said, “Come, show t
 ## JOHN 8:39-42
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:39-42</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430839&gt;</span><span class="book-name">John</span> <span class="verse-range">8:39-42</span></p>
 
 <strong>39.</strong> They answered, and said to him, Abraham is our father. Jesus saith to them, If you were Abraham’s children, you would do the works of Abraham. <strong>40.</strong> But now you seek to kill me, a man who have spoken to you the truth which I have heard from God: Abraham did not this. <strong>41.</strong> You do the works of your father. They said therefore to him, We were not born of fornication; we have one Father, who is God. <strong>42.</strong> Jesus said to them, If God were your Father, you would love me: for I proceeded and came from God, for I did not proceed from myself, but he sent me.
 
@@ -3915,7 +3915,7 @@ Let us know, therefore, that they who have corrupted the seed of life are at the
 ## JOHN 8:43-45
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:43-45</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430843&gt;</span><span class="book-name">John</span> <span class="verse-range">8:43-45</span></p>
 
 <strong>43.</strong> Why do you not understand my language, that you cannot hear my word? <strong>44.</strong> You are of your father thedevil, and you wish to execute the desires of your father. He was a murderer from the beginning, and he did not remain in the truth, because there is no truth in him. <strong>45.</strong> And because I tell the truth, you do not believe me.
 
@@ -3962,7 +3962,7 @@ and has a thousand stratagems at his command for deceiving. So much the more oug
 ## JOHN 8:46-50
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:46-50</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430846&gt;</span><span class="book-name">John</span> <span class="verse-range">8:46-50</span></p>
 
 <strong>46.</strong> Which of you convicteth me of sin? And if I speak truth, why do you not believe me? <strong>47.</strong> He who is of God heareth the words of God; you hear them not, because you are not of God. <strong>48.</strong> The Jews therefore answered, and said to him, Do we not say well, that thou art a Samaritan, and hast a devil? <strong>49.</strong> Jesus answered, I have not a devil, but I honor my Father, and you have dishonored me. <strong>50.</strong> But I seek not my own glory; there is one who seeketh it, and judgeth of it. [^f239]
 
@@ -3999,7 +3999,7 @@ If men not only despise, but even load him with reproaches, let him calmly wait 
 ## JOHN 8:25-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:25-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430825&gt;</span><span class="book-name">John</span> <span class="verse-range">8:25-29</span></p>
 
 <strong>51.</strong> Verily, verily, I say to you, If any man keep my word, he shall never see death. <strong>52.</strong> The Jews said therefore to him, Now we know that thou hast the devil, [^f243] Abraham is dead, and the Prophets, and thou sayest, If any man keep my word, he shall never taste of death. <strong>53.</strong> Art thou greater than our father Abraham, who is dead? The Prophets also are dead. Whom makest thou thyself? <strong>54.</strong> Jesus answered, If I glorify myself, my glory is nothing; it is my Father who glorifieth me, of whom you say that he is your God. <strong>55.</strong> And you know him not, but I know him; and if I say that I do not know him, I shall be a liar like you; but I know him, and keep his word.
 
@@ -4052,7 +4052,7 @@ Besides, as we are destitute of the glory of God, let us learn to glory in Chris
 ## JOHN 8:25-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 8:25-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430825&gt;</span><span class="book-name">John</span> <span class="verse-range">8:25-29</span></p>
 
 <strong>56.</strong> Your father Abraham exulted to see my day; and he saw it and rejoiced. <strong>57.</strong> The Jews then said to him, Thou art not yet fifty years old, and hast thou seen Abraham? <strong>58.</strong> Jesus said to them, Verily, verily, I tell you, before Abraham was, I am. <strong>59.</strong> Then they took up stones to throw at him; but Jesus concealed himself, and went out of the temple.
 
@@ -4117,7 +4117,7 @@ retain possession of the outward temple; but they are greatly deceived, when the
 ## JOHN 9:1-5
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:1-5</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430901&gt;</span><span class="book-name">John</span> <span class="verse-range">9:1-5</span></p>
 
 <strong>1.</strong> And Jesus, passing by, saw a man blind from his birth. <strong>2.</strong> And his disciples asked him, saying, Rabbi, who hath sinned, this man, or his parents, that he was born blind? <strong>3.</strong> Jesus answered, Neither did this man sin, nor his parents; but that the works of God may be displayed in him. <strong>4.</strong> I must work the works of him who sent me, while it is day; the night cometh, when no man can work. <strong>5.</strong> While I am in the world, I am the light of the world.
 
@@ -4198,7 +4198,7 @@ And does Christ now give less light to the world than when he was in the presenc
 ## JOHN 9:6-12
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:6-12</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430906&gt;</span><span class="book-name">John</span> <span class="verse-range">9:6-12</span></p>
 
 <strong>6.</strong> Having said this, he spat on the ground, and made clay of the spittle, and anointed the eyes of the blind man with the day, <strong>7.</strong> And said to him, Go, wash in the pool of Siloam, which, being interpreted, means Sent. He went, therefore, and washed, and came seeing. <strong>8.</strong> Then the neighbors, and they who had formerly seen him, and that he was a beggar, said, Is not this he who sat and begged? <strong>9.</strong> Some said, This is he. And others, He is like him. But he said, I am he. <strong>10.</strong> They said, therefore, to him, How were thine eyes opened? <strong>11.</strong> He answered and said, A man, who is called Jesus, made clay, and anointed mine eyes, and said to me, Go into the pool of Siloam, and wash; and after I had gone and washed, I saw. <strong>12.</strong> They said, therefore, to him, Where is he? He said, I know not.
 
@@ -4237,7 +4237,7 @@ Let it be observed that, though Christ was present then, yet he did not wish to 
 ## JOHN 9:13-17
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:13-17</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430913&gt;</span><span class="book-name">John</span> <span class="verse-range">9:13-17</span></p>
 
 <strong>13.</strong> They bring to the Pharisees him who formerly had been blind. <strong>14.</strong> Now it was the Sabbath when Jesus had made the clay, and opened his eyes. <strong>15.</strong> The Pharisees also, therefore, asked him again, how he had received his sight. And he said to them, He put clay on mine eyes, and I washed, and I see. <strong>16.</strong> Wherefore some of the Pharisees said, This man is not of God, because he keepeth not the Sabbath. Others said, How can a man who is a sinner do these signs? And there was a division among them. <strong>17.</strong> They say to him who had been formerly blind,
 
@@ -4304,7 +4304,7 @@ As to the men themselves, though they act commendably in this respect, that they
 ## JOHN 9:18-23
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:18-23</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430918&gt;</span><span class="book-name">John</span> <span class="verse-range">9:18-23</span></p>
 
 <strong>18.</strong> But the Jews did not believe respecting him, that he had been blind and had received his sight, until they called the parents of him who had received his sight. <strong>19.</strong> And they asked them, saying, Is this your son who, you say, was born blind? How then doth he now see? <strong>20.</strong> His parents answered and said, We know that this is our son, and that he was born blind. <strong>21.</strong> But how he now seeth, we know not; or who hath opened his eyes, we know not; he is of age, ask him, he will speak of himself. <strong>22.</strong> These things said his parents, because they feared the Jews; for the Jews had already determined that, if any man confessed that he was the Christ, he should be thrown out of the synagogue. <strong>23.</strong> On this account his parents said, He is of age, ask him.
 
@@ -4339,7 +4339,7 @@ In short, nothing can be more certain than that those who, we see, are not subje
 ## JOHN 9:24-33
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:24-33</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430924&gt;</span><span class="book-name">John</span> <span class="verse-range">9:24-33</span></p>
 
 <strong>24.</strong> A second time, therefore, they called the man who had been blind, and said to him, Give glory to God; we know that this man is a sinner. <strong>25.</strong> Therefore he answered and said, Whether he be a sinner, I know not; one thing I know, that though I was blind, I now see. <strong>26.</strong> Again, therefore, they said to him, What did he to thee? How did he open thine eyes? <strong>27.</strong> He answered them, I told you already, and you did not hear; why do you wish to hear it again? Do you wish also to become his disciples? <strong>28.</strong> Then they upbraided him, and said, Be thou his disciple; as for us, [^f264] we are the disciples of Moses. <strong>29.</strong> We know that God spoke to Moses; but as for this man, we do not know whence he is. <strong>30.</strong> The man answered, and said to them, Certainly this is wonderful, that you do not know whence he is, and yet [^f265] he hath opened mine eyes. <strong>31.</strong> Now we know that God heareth not sinners; but if any man be a worshipper of God, and do his will, him he heareth. <strong>32.</strong> Never before was it heard [^f266] that any man opened the eyes of him who had been born blind. <strong>33.</strong> If this man were not from God, he could do nothing.
 
@@ -4392,7 +4392,7 @@ God, unless his heart be purified by faith. But wicked men profane the sacred na
 ## JOHN 9:34-41
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 9:34-41</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430934&gt;</span><span class="book-name">John</span> <span class="verse-range">9:34-41</span></p>
 
 <strong>34.</strong> They answered, and said to him, Thou wast altogether born in sins, and dost thou teach us? And they cast him out. <strong>35.</strong> Jesus heard that they had cast him out, and having found him, he said to him, Dost thou believe in the Son of God? <strong>36.</strong> He answered and said, Who is he, Lord, that I should believe in him? <strong>37.</strong> And Jesus said to him, Thou hast both seen him, and it is he who talketh with thee. <strong>38.</strong> And he said, Lord, I believe; and he worshipped him. <strong>39.</strong> Then Jesus said, For judgment am I come into this world, that they who see not may see, and that they who see may become blind. <strong>40.</strong> Some of the Pharisees, who were with him, heard these things, and said to him, And are we blind also? <strong>41.</strong> Jesus said to them, If you were blind, you would not have sin; [^f270] but now you say, We see: therefore your sin remaineth.
 
@@ -4481,7 +4481,7 @@ But as it is added in this passage,*but now you say you see,*in order that the p
 ## JOHN 10:1-6
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:1-6</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431001&gt;</span><span class="book-name">John</span> <span class="verse-range">10:1-6</span></p>
 
 <strong>1.</strong> Verily, verily, I say to you, He who entereth not by the door into the sheepfold, but climbeth by another way, is a thief and a robber. <strong>2.</strong> But he who entereth by the door is the shepherd of the sheep. <strong>3.</strong> To him the porter openeth, and the sheep hear his voice, and he calleth his own sheep by name, and leadeth them out. <strong>4.</strong> And having put out his own sheep, he goeth before them, and the sheep follow him; for they know his voice. <strong>5.</strong> But they will not follow a stranger, but will flee from him; for they know not the voice of strangers. <strong>6.</strong> Jesus spoke this parable to them; but they did not understand what those things were which he spoke to them.
 
@@ -4524,7 +4524,7 @@ he who turns aside from him to go elsewhere neither keeps the road nor *enters b
 ## JOHN 10:7-10
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:7-10</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431007&gt;</span><span class="book-name">John</span> <span class="verse-range">10:7-10</span></p>
 
 <strong>7.</strong> And Jesus again said to them, Verily, verily, I say to you, that I am the door of the sheep. <strong>8.</strong> All who have entered before me are thieves and robbers; but the sheep did not hear them. <strong>9.</strong> I am the door. If any man enter by me, he shall be saved, and shall go in and out, and find pasture. <strong>10.</strong> The thief cometh not but to steal, and to kill, and to destroy; I am come, that they may have life, and that they may have it more abundantly.
 
@@ -4581,7 +4581,7 @@ and — to give them greater confidence — he declares that *life*is continuall
 ## JOHN 10:11-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:11-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431011&gt;</span><span class="book-name">John</span> <span class="verse-range">10:11-15</span></p>
 
 <strong>11.</strong> I am the good shepherd; the good shepherd giveth his life for the sheep. <strong>12.</strong> But the hireling, and he who is not theshepherd, whose own the sheep are not, seeth the wolf coming, and leaveth the sheep, and fleeth, and the wolf teareth them, and scattereth the sheep. <strong>13.</strong> The hireling fleeth, because he is a hireling, and careth not for the sheep. <strong>14.</strong> I am the good shepherd, and know my sheep, and am known by mine. <strong>15.</strong> As the Father knoweth me, I also know the Father, and I lay down my life for the sheep.
 
@@ -4622,7 +4622,7 @@ But here a question may be put. Ought we to reckon that man *a hireling,* who, f
 ## JOHN 10:16-18
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:16-18</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431016&gt;</span><span class="book-name">John</span> <span class="verse-range">10:16-18</span></p>
 
 <strong>16.</strong> And I have other sheep, which are not of this fold: them also I must bring, and they shall hear my voice, and there shall be one fold and one shepherd. <strong>17.</strong> On this account the Father loveth me, because I lay down my life, that I may take it again. <strong>18.</strong> No man taketh it from me, but I lay it down of myself. I have power to lay it down, and I have power to take it again. This commandment have I received from my Father.
 
@@ -4701,7 +4701,7 @@ By the obedience of one many were made righteous, ( Romans 5:19.)
 ## JOHN 10:19-30
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:19-30</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431019&gt;</span><span class="book-name">John</span> <span class="verse-range">10:19-30</span></p>
 
 <strong>19.</strong> A division therefore arose again among the Jews on account of those sayings. <strong>20.</strong> And many of them said, He hath a devil, and is mad: why do you hear him? <strong>21.</strong> Others said, These are not the words of a demoniac. Can a devil open the eyes of the blind? <strong>22.</strong> And it was the feast of Dedication at Jerusalem, and it was winter. <strong>23.</strong> And Jesus was walking in the temple in Solomon’s porch. <strong>24.</strong> The Jews then surrounded him, and said to him, How long dost thou keep our soul in suspense? If thou be the Christ, tell us plainly. <strong>25.</strong> Jesus answered them, I have told you, but you do not believe. The works which I do in my Father’s name testify of me. <strong>26.</strong> But you do not believe, because you are not of my sheep, as I said to you. <strong>27.</strong> My sheep hear my voice, and I know them, and they follow me. <strong>28.</strong> And I give them eternal life, and they shall never perish, nor shall any one wrest them out of my hand. <strong>29.</strong> My Father, who gave them to me, is greater than all; and none can wrest them out of my Father’s hand. <strong>30.</strong> I and my Father are one.
 
@@ -4774,7 +4774,7 @@ Hence, too, we infer how mad is the confidence of the Papists, which relies on f
 ## JOHN 10:31-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:31-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431031&gt;</span><span class="book-name">John</span> <span class="verse-range">10:31-36</span></p>
 
 <strong>31.</strong> Then the Jews again took up stones to stone him. <strong>32.</strong> Jesus answered them, Many good works I have shown you from my Father. For which of those works do you stone me? <strong>33.</strong> The Jews answered him, We stone thee not for the sake of a good work, but for blasphemy, and, because thou, being a man, makest thyself God. <strong>34.</strong> Jesus answered them, Is it not written in your Law, I said, You are gods? <strong>35.</strong> If it called them gods, to whom the word of God was addressed, and Scripture cannot, be broken, <strong>36.</strong> Do you say that I, whom the Father sanctified and sent into the world, blaspheme, because I said, I am the Son of God?
 
@@ -4823,7 +4823,7 @@ But this refers strictly to the person of Christ, so far as he is manifested in 
 ## JOHN 10:37-42
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 10:37-42</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431037&gt;</span><span class="book-name">John</span> <span class="verse-range">10:37-42</span></p>
 
 <strong>37.</strong> If I do not the works of my Father, believe me not. <strong>38.</strong> But if I do, [^f299] though you believe not me, believe the works; that you may know and believe that the Father is in me, and I in him. <strong>39.</strong> Therefore they sought again to seize him, but he escaped [^f300] out of their hands. <strong>40.</strong> And again he went away beyond Jordan, to the place where John first baptized, and abode there. <strong>41.</strong> And many came to him, and said, John indeed did no miracle; but all that John spoke about this man was true. <strong>42.</strong> And many believed on him there.
 
@@ -4866,7 +4866,7 @@ Church of God was collected in a despised place.
 ## JOHN 11:1-10
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:1-10</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431101&gt;</span><span class="book-name">John</span> <span class="verse-range">11:1-10</span></p>
 
 l. Now one named Lazarus, of Bethany, the village of Mary and her sister Martha, was sick. <strong>2.</strong> And it was that Mary who anointed the Lord with ointment, and wiped his feet with her hair, whose brother Lazarus was sick. <strong>3.</strong> The sisters therefore sent to him, saying, Lord, lo, he whom thou lovest is sick. <strong>4.</strong> And Jesus, having heard this, said, This sickness is not to death, but for the glory of God, that the Son of God may be glorified by it. <strong>5.</strong> Now Jesus loved Martha, and her sister, and Lazarus. <strong>6.</strong> Having therefore heard that he was sick, he then remained two days in the place where he was. <strong>7.</strong> And after this he saith to his disciples, Let us go into Judea again. <strong>8.</strong> The disciples say to him, The Jews but lately sought to stone thee, and dost thou go thither again? <strong>9.</strong> Jesus answered, Are there not twelve hours in the day? If any man walk by day, he stumbleth not, because he seeth the light of this world. <strong>10.</strong> But if any man walk by night, he stumbleth, because there is no light in him.
 
@@ -4933,7 +4933,7 @@ This rule of regulating our life well is followed by a confident expectation of 
 ## JOHN 11:11-17
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:11-17</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431111&gt;</span><span class="book-name">John</span> <span class="verse-range">11:11-17</span></p>
 
 <strong>11.</strong> He spoke these things, and after this he saith to them, Our friend Lazarus sleepeth, but I go that I may awake him. <strong>12.</strong> Then his disciples said, Lord, if he sleepeth, he will recover. <strong>13.</strong> Now Jesus spoke of his death; but they thought that he spoke of the repose of sleep. <strong>14.</strong> Then Jesus, therefore, said to them plainly, Lazarus is dead. <strong>15.</strong> And I rejoice, on your account, that I was not there, that you may believe. But let us go to him. <strong>16.</strong> Then Thomas, who is called Didymus, [^f310] said to his fellow-disciples, Let us also go, that we may die with him. <strong>17.</strong> Jesus therefore came, and found that he had been already four days in the tomb.
 
@@ -4970,7 +4970,7 @@ We ought to remember, however, what I formerly observed, that the fatherly kindn
 ## JOHN 11:18-27
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:18-27</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431118&gt;</span><span class="book-name">John</span> <span class="verse-range">11:18-27</span></p>
 
 <strong>18.</strong> Now Bethany was near Jerusalem, about fifteen furlongs. <strong>19.</strong> And many of the Jews had come to Martha and Mary, to comfort them concerning their brother. <strong>20.</strong> When Martha, therefore, heard that Jesus was coming, she went to meet him; but Mary sat at home. <strong>21.</strong> Martha then said to Jesus, Lord, if thou hadst been here, my brother would not have died. <strong>22.</strong> But I know that even now, whatsoever thou shalt ask of God, God will give it thee. <strong>23.</strong> Jesus saith to her, Thy brother shall rise again. <strong>24.</strong> Martha saith to him, I know that he shall rise again in the resurrection at the last day. <strong>25.</strong> Jesus said to her, I am the resurrection and the life; he who believeth in me, though he were dead, shall live. <strong>26.</strong> And whosoever liveth and believeth in me shall never die. Believest thou this? 27.She saith to him, Yes, Lord, I believe that thou art the Christ, the Son of God, who was to come into the world.
 
@@ -5035,7 +5035,7 @@ more, death itself is a sort of emancipation from the bondage of death.
 ## JOHN 11:28-38
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:28-38</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431128&gt;</span><span class="book-name">John</span> <span class="verse-range">11:28-38</span></p>
 
 <strong>28.</strong> Having said these things, she went away, and called Mary her sister secretly, saying, The Master is here, and calleth for thee. <strong>29.</strong> As soon as she heard it, she immediately arose, and came to him. <strong>30.</strong> Now Jesus had not yet come into the village, but was in the place where Martha met him. <strong>31.</strong> Then the Jews, who were with her in the house, and comforted her, perceiving that Mary suddenly arose and went out, followed her, saying, She goeth to the tomb, to weep there. <strong>32.</strong> Mary therefore, having come where Jesus was, and having seen him, fell at his feet, saying to him, Lord, if thou hadst been here, my brother would not have died. <strong>33.</strong> Jesus therefore, when he saw her weeping, and the Jews who came with her also [^f318] weeping, groaned in his spirit, and was troubled, <strong>34.</strong> And said, Where have you laid him? They say to him, Lord, come and see. <strong>35.</strong> Jesus wept. <strong>36.</strong> The Jews therefore said, Behold how he loved him? [^f319] <strong>37.</strong> And some of them said, Could not this man, who opened the eyes of the blind, have caused that even this man should not die? <strong>38.</strong> Then Jesus, again groaning within himself, came to the tomb. Now it was a cave, and a stone was placed on it.
 
@@ -5088,7 +5088,7 @@ in our mourning, that we may not abandon ourselves to grief, like unbelievers wh
 ## JOHN 11:39-44
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:39-44</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431139&gt;</span><span class="book-name">John</span> <span class="verse-range">11:39-44</span></p>
 
 <strong>39.</strong> Jesus saith, Remove the stone. Martha, the sister of him who was dead, saith to him, Lord, he already stinketh, for this is the fourth day. <strong>40.</strong> Jesus saith to her, Did I not tell thee that, if thou believe, thou shalt see the glory of God? <strong>41.</strong> They therefore removed the stone from the place where he who was dead lay. And Jesus again lifted up his eyes, and said, Father, I thank thee that thou hast heard me. <strong>42.</strong> And I knew that thou hearest me always, but, on account of the multitude around me, I said it, that they may believe that thou hast sent me. <strong>43.</strong> Having spoken these words, he cried with a loud voice, Lazarus, come forth. <strong>44.</strong> And he who had been dead came forth, bound hand and foot with bandages, and his face was wrapped in a napkin. Jesus saith to them, Loose him, and let him go.
 
@@ -5147,7 +5147,7 @@ The Papists act an excessively ridiculous part, by endeavoring to draw auricular
 ## JOHN 11:45-52
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:45-52</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431145&gt;</span><span class="book-name">John</span> <span class="verse-range">11:45-52</span></p>
 
 <strong>45.</strong> Many therefore of the Jews, who had come to Mary, and had seen the things which Jesus did, believed on him. <strong>46.</strong> But some of them went away to the Pharisees, and told them what Jesus had done. <strong>47.</strong> Then the chief priests and Pharisees assembled the council, and said, What do we? for this man doth many miracles. <strong>48.</strong> If we let him go on thus, all will believe on him; and the Romans will come, and will take away our place and nation. <strong>49.</strong> But one of them, named Caiaphas, who was the high priest of that year, said to them, You know nothing at all, <strong>50.</strong> Nor consider that it is expedient for us, that one man should die for the people, and that the whole nation should not perish. <strong>51.</strong> Now this he spoke, not of himself, but being the high priest of that year, he prophesied that Jesus would die for the nation; <strong>52.</strong> And not for that nation only, but that he might assemble, in one body, the children of God who were scattered abroad.
 
@@ -5226,7 +5226,7 @@ Wherefore, that we may enjoy the salvation brought by Christ, discord must be re
 ## JOHN 11:53-57
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 11:53-57</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431153&gt;</span><span class="book-name">John</span> <span class="verse-range">11:53-57</span></p>
 
 <strong>53.</strong> From that day, therefore, they consulted to put him to death. <strong>54.</strong> Therefore Jesus no longer walked openly among the Jews, but retired to a country near the wilderness, into a city which is called Ephraim, and there dwelt with his disciples. <strong>55.</strong> Now the passover of the Jews was at hand, and many of that country went up to Jerusalem before the passover, to purify themselves. <strong>56.</strong> They therefore sought Jesus, and said among themselves, while they stood in the temple, What think you? will he not come to the feast? <strong>57.</strong> Now the chief priests [^f329] and Pharisees had issued an order, that if any one knew where he was, he would show it, that they might seize him.
 
@@ -5253,7 +5253,7 @@ Wherefore, that we may enjoy the salvation brought by Christ, discord must be re
 ## JOHN 12:1-8
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:1-8</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431201&gt;</span><span class="book-name">John</span> <span class="verse-range">12:1-8</span></p>
 
 <strong>1.</strong> Jesus therefore, six days before the Passover, came to Bethany, where Lazarus was, who had been dead, whom he had raised from the dead. <strong>2.</strong> There therefore they made him a banquet, and Martha served; [^f330] and Lazarus was one of those who sat at table with him. <strong>3.</strong> Then Mary took a pound of ointment of costly spikenard, and anointed the feet of Jesus, and wiped his feet with her hair; and the house was filled with the odor of the ointment. <strong>4.</strong> Then one of his disciples, Judas Iscariot, the son of Simon, who was to betray him, saith, <strong>5.</strong> Why was not this ointment sold for three hunted denarii, and given to the poor? <strong>6.</strong> Now he said this, not because he cared for the poor, but because he was a thief, and had the purse, and carried what was put into it. <strong>7.</strong> Jesus therefore said, Let her alone; for the day of my burial she hath kept it. <strong>8.</strong> For the poor you have always with you, but me you have not always.
 
@@ -5330,7 +5330,7 @@ had formed respecting it. As it was the will of God that the childhood of his an
 ## JOHN 12:9-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:9-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431209&gt;</span><span class="book-name">John</span> <span class="verse-range">12:9-15</span></p>
 
 <strong>9.</strong> Then a great multitude of the Jews knew that he was there, and came, not on account of Jesus only, but that they might see Lazarus also, whom he had raised from the dead. <strong>10.</strong> Now the chief priests consulted, that they might put Lazarus also to death; <strong>11.</strong> For many of the Jews on his account went away, and believed on Jesus. <strong>12.</strong> next day, a great multitude, who had come to the feast, when they heard that Jesus was come to Jerusalem, <strong>13.</strong> Took branches of palm trees, trod went out to meet him, and shouted, Hosanna, Blessed be the King of Israel, that cometh in the name of the Lord. <strong>14.</strong> And Jesus, having found a young’ ass, sat upon it, as it is written, <strong>15.</strong> Fear not, daughter of Zion, because thy King cometh sitting on the foal of an ass.
 
@@ -5427,7 +5427,7 @@ that, freed from the tyranny of Satan, the yoke of sin being broken, guilt cance
 ## JOHN 12:16-19
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:16-19</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431216&gt;</span><span class="book-name">John</span> <span class="verse-range">12:16-19</span></p>
 
 <strong>16.</strong> These things his disciples did not understand at first; but when Jesus was glorified, then they remembered that these things had been written concerning him, and that they had done these things to him. <strong>17.</strong> And the multitude, which were with him, gave their testimony that he had called Lazarus out of the tomb, and had raised him from the dead. <strong>18.</strong> For this reason the multitude met him, because they had heard that he had performed. this miracle. <strong>19.</strong> The Pharisees therefore said among themselves, Perceive you not that you gain nothing? Behold, the world is gone after him.
 
@@ -5452,7 +5452,7 @@ Taught by this example, let us learn to form our judgment of every thing that re
 ## JOHN 12:20-26
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:20-26</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431220&gt;</span><span class="book-name">John</span> <span class="verse-range">12:20-26</span></p>
 
 <strong>20.</strong> Low there were some Greeks among these who had come up to worship at the feast. <strong>21.</strong> These therefore went to Philip, who was of Bethsaida of Galilee, and asked him, saying, Sir, we wish to see Jesus. <strong>22.</strong> Philip cometh and telleth, Andrew, and again Andrew and Philip tell Jesus. <strong>23.</strong> And Jesus answered them, saying, The hour is come, when the Son of man must be glorified. <strong>24.</strong> Verily, verily, I say to you, Unless a grain of wheat, having fallen into the ground, die, it remaineth alone; but if it die, it bringeth forth much fruit. <strong>25.</strong> He who loveth his soul shall destroy it; and he who hateth his soul in this world shall keep it to eternal life. <strong>26.</strong> If any man serves me, let him follow me; and where I am, there also shall my servant be. And if any man shall serve me, my Father will honor him.
 
@@ -5515,7 +5515,7 @@ arouses us so violently, it would be the height of folly to sleep a mortal sleep
 ## JOHN 12:27-33
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:27-33</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431227&gt;</span><span class="book-name">John</span> <span class="verse-range">12:27-33</span></p>
 
 <strong>27.</strong> Now is my soul troubled, and what shall I say? Father, save me from this hour; but for this cause came I into this hour. <strong>28.</strong> Father, glorify thy name. Then came a voice from heaven, I have both glorified and will glorify it again. <strong>29.</strong> Therefore the multitude, who were there, and heard it, said that it thundered. Others said, An angel spoke to him. <strong>30.</strong> Jesus answered and said, This voice came not for my sake, but for yours. <strong>31.</strong> Now is the judgment of this world; now is the prince of this world cast out. <strong>32.</strong> And I, if I be lifted up from the earth, will draw all men to me. <strong>33.</strong> Now this he said, intimating by what death he should die.
 
@@ -5590,7 +5590,7 @@ The old Latin translation has, *I will draw* ALL THINGS *to me*; and Augustine m
 ## JOHN 12:34-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:34-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431234&gt;</span><span class="book-name">John</span> <span class="verse-range">12:34-36</span></p>
 
 <strong>34.</strong> The multitude answered, We have heard from the law, that Christ remaineth for ever; and how sayest thou, that the Son of man must be lifted up.? Who is that Son of man? <strong>35.</strong> Jesus therefore said to them, Yet a little while you have the light with you. Walk while you have the light, lest darkness overtake you; for he who walketh in darkness knoweth not whither he goeth. <strong>36.</strong> While you have the light, believe in the light, that you may be the children of light. These things spoke Jesus, and went away, and hid himself from them.
 
@@ -5625,7 +5625,7 @@ But all ought to *walk* cautiously, because contempt of *the light* is followed 
 ## JOHN 12:37-41
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:37-41</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431237&gt;</span><span class="book-name">John</span> <span class="verse-range">12:37-41</span></p>
 
 <strong>37.</strong> And though he had done so many signs in their presence, they believed not in him: <strong>38.</strong> That the saying of Isaiah the prophet might be fulfilled, which he spoke, Lord, who hath believed our report? [^f357]
 
@@ -5680,7 +5680,7 @@ God hath not given you a heart to understand, (Deuteronomy 29:4.)
 ## JOHN 12:42-46
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:42-46</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431242&gt;</span><span class="book-name">John</span> <span class="verse-range">12:42-46</span></p>
 
 <strong>42.</strong> Nevertheless, many of the rulers believed on him, but on account of the Pharisees they did not confess it, lest they should be cast out of the synagogue. <strong>43.</strong> For they loved the glory of men more than the glory of God. <strong>44.</strong> And Jesus stood, and said, He who believeth on me, believeth not on me, but on him who sent me; <strong>45.</strong> And he who seeth me seeth him that sent me. <strong>46.</strong> I am come into the world as a light, that whosoever believeth on me may not remain in darkness.
 
@@ -5745,7 +5745,7 @@ The term, *whosoever,* appears to have been added on purpose, partly, that all b
 ## JOHN 12:47-50
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 12:47-50</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431247&gt;</span><span class="book-name">John</span> <span class="verse-range">12:47-50</span></p>
 
 <strong>47.</strong> And if any man hear my words, and do not believe them, [^f364] I do not judge him; for I came not to judge the world, but to save the world. <strong>48.</strong> He who rejecteth me, and receiveth not my words, hath one who judgeth him. The word which I have spoken shall judge him at the last day. <strong>49.</strong> For I have not spoken from myself; but the Father who hath sent me hath given me a commandment what to say and what to speak. <strong>50.</strong> And I know that his commandment is eternal life: those things, therefore, which I speak, I speak as my Father hath told me.
 
@@ -5794,7 +5794,7 @@ We may likewise infer from it, how monstrous, is the sacrilege of the Pope in da
 ## JOHN 13:1-7
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:1-7</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431301&gt;</span><span class="book-name">John</span> <span class="verse-range">13:1-7</span></p>
 
 <strong>1.</strong> Before the feast of the passover, Jesus, knowing that his hour was come, that he should remove out of this world to the Father, having loved his own, who were in the world, he loved them to the end. <strong>2.</strong> And after supper, [^f366] the devil having already put it into the heart of Judas Iscariot, the son of Simon, to betray him, <strong>3.</strong> Jesus, knowing that the Father had given all things into his hands, and that he had come from God, and was going to God, <strong>4.</strong> Riseth from supper, and layeth aside his garments, and, taking a towel, he girdeth himself. <strong>5.</strong> Then he poureth water into a basin, and began to wash the feet of his disciples, and to wipe them with the towel with which he was girded. <strong>6.</strong> He cometh, therefore, to Simon Peter, who saith to him, Lord, dost thou wash my feet? <strong>7.</strong> Jesus answered and said to him, What I do thou knowest not now, but thou shalt know hereafter.
 
@@ -5835,7 +5835,7 @@ The words are, that Christ *loved even to the end his own, who were in the* *wor
 ## JOHN 13:8-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:8-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431308&gt;</span><span class="book-name">John</span> <span class="verse-range">13:8-11</span></p>
 
 <strong>8.</strong> Peter saith to him, Thou shalt never wash my feet. Jesus answered him, If I wash thee not, thou shalt have no part with me. <strong>9.</strong> Simon Peter saith to him, Lord, not my feet only, but also my hands and my head. <strong>10.</strong> Jesus saith to, him, lie who is washed needeth not to wash more than his feet, but is altogether clean; and you are clean, but not all. <strong>11.</strong> For he knew who it was that should betray him; [^f370]
 
@@ -5874,7 +5874,7 @@ Again, the other comparison was also applied to the case in hand, that Peter mig
 ## JOHN 13:12-17
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:12-17</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431312&gt;</span><span class="book-name">John</span> <span class="verse-range">13:12-17</span></p>
 
 <strong>12.</strong> After then he had washed their feet, and had taken his garments, sitting down again at table, [^f374] he saith to them, Know ye what I have done to you? <strong>13.</strong> You call me Master and Lord; and you say well, for so I am. <strong>14.</strong> If I then, who am the Lord and Master, have washed your feet, you ought also to wash one another’s feet. <strong>15.</strong> For I have given you an example, that, as I have done to you, you should do also. <strong>16.</strong> Verily, verily, I tell you, the servant is not greater than his lord, nor the ambassador [^f375] greater than he who sent him. <strong>17.</strong> If you know these things, happy are you if you do them.
 
@@ -5901,7 +5901,7 @@ Again, the other comparison was also applied to the case in hand, that Peter mig
 ## JOHN 13:18-20
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:18-20</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431318&gt;</span><span class="book-name">John</span> <span class="verse-range">13:18-20</span></p>
 
 <strong>18.</strong> I speak not of you all; I know whom I have chosen; but that the Scripture may be fulfilled, He who eateth bread with me hath lifted up his heel against me. <strong>19.</strong> I tell you this now, before it happen, that when it shall have happened, you may believe that I am. [^f381] <strong>20.</strong> Verily, verily, I tell you, if I send any one. he who receiveth him receiveth me; and he who receiveth me receiveth him who sent me.
 
@@ -5956,7 +5956,7 @@ The Papists act a foolish and ridiculous part, when they endeavor to obtain this
 ## JOHN 13:21-29
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:21-29</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431321&gt;</span><span class="book-name">John</span> <span class="verse-range">13:21-29</span></p>
 
 <strong>21.</strong> When Jesus had said these words, he was troubled in spirit, and testified, and said, Verily, verily, I tell you, that one of you will betray me. <strong>22.</strong> The disciples, therefore, looked on one another, doubting of whom he spoke. <strong>23.</strong> And one of the disciples, whom Jesus loved, was lying at table in Jesus’ bosom. <strong>24.</strong> Therefore Simon Peter made a sign to him, to ask who it was of whom he spoke. <strong>25.</strong> Lying on the breast of Jesus.,., therefore, he saith to him, Lord, who is he? <strong>26.</strong> Jesus answered, It is he to whom I shall give the dipped sop; and when he had dipped the sop, he gave it to Judas Iscariot, the son of Simon. <strong>27.</strong> And after the sop, Satan entered into him. Then said Jesus to him, What thou doest, do quickly. <strong>28.</strong> And no one of those who were at table knew why he said this to him. <strong>29.</strong> For some thought, because Judas had the purse, that Jesus said to him, Buy the things which we need for the feast; or, that he should give something to the poor.
 
@@ -6011,7 +6011,7 @@ enraged and inflamed [^f384] to their destruction. And yet no blame is due, on t
 ## JOHN 13:30-35
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:30-35</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431330&gt;</span><span class="book-name">John</span> <span class="verse-range">13:30-35</span></p>
 
 <strong>30.</strong> When, therefore, he had received the sop, he went immediately out; and it was night. <strong>31.</strong> When, therefore, he was gone out, Jesus said, Now is the Son of man glorified, and God is glorified in him. <strong>32.</strong> If God is glorified in him, God will also glorify him in himself, and will immediately glorify him. <strong>33.</strong> Little children, but a little while am I yet with you. You shall seek me, and as I said to the Jews, that whither I go, you cannot come, so now I say to you. <strong>34.</strong> A new commandment I give you, That you love one another; as I have loved you, that you also love one another. <strong>35.</strong> By this will all men know that you are my disciples, if you have love one to another.
 
@@ -6058,7 +6058,7 @@ In short, we see that it was the design of Christ, in this passage, to exhort hi
 ## JOHN 13:36-38
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 13:36-38</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431336&gt;</span><span class="book-name">John</span> <span class="verse-range">13:36-38</span></p>
 
 <strong>36.</strong> Simon Peter saith to him, Lord, whither goest thou? Jesus answered him, Whither I go, thou canst not follow me now; but thou shalt follow me afterwards. <strong>37.</strong> Peter saith to him, Lord, why cannot I follow thee now? I, will lay down my life for thee. <strong>38.</strong> Jesus answered him, Wilt thou lay down thy life for me? Verily, verily, I tell thee, The cock will not crow until thou hast denied me thrice.
 
@@ -6093,7 +6093,7 @@ From this it is evident how ignorant Peter was, who, after having been so freque
 ## JOHN 14:1-7
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:1-7</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431401&gt;</span><span class="book-name">John</span> <span class="verse-range">14:1-7</span></p>
 
 <strong>1.</strong> Let not your heart be troubled- you believe in God, believe also in me. <strong>2.</strong> In my Father’s house are many dwellings, and if it were not so, I would have told you: I go to prepare a place for you. <strong>3.</strong> And if I go away and prepare a place for you, [^f389] I will return again, and receive you to myself; that where! am, you may be also. <strong>4.</strong> And whither I go you know, and you know the way. <strong>5.</strong> Thomas saith to him, Lord, we know not whither thou goest, and how can we know the way? <strong>6.</strong> Jesus saith to him, I am the way, and the truth, and the life. No man cometh to the Father but by me. <strong>7.</strong> If you had known me, you would have known my Farther also; and henceforth you know him, and have seen him.
 
@@ -6168,7 +6168,7 @@ be enjoyed in any other way than in Christ. Wherefore all theology, when separat
 ## JOHN 14:8-14
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:8-14</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431408&gt;</span><span class="book-name">John</span> <span class="verse-range">14:8-14</span></p>
 
 <strong>8.</strong> Philip saith to him, Lord, show us the Father, and it sufficeth us. <strong>9.</strong> Jesus saith to him, Have I been so long time with you, and hast thou not known me, Philip? He who hath seen me hath seen the Father; and how sayest thou, Show us the Father? <strong>10.</strong> Believest thou not that I am in the Father, and the Father in me? The words which I speak to you I speak not from myself; but my Father who dwelleth in me, he doeth the works. <strong>11.</strong> Believe me, that I am in the Father, and the Father in me; but if not, believe me on account of the works themselves. <strong>12.</strong> Verily, verily, I tell you, He who believeth in me shall himself also do the works which I do, and shall do greater works than these, because I go to my Father. <strong>13.</strong> And whatever you ask in my name, that I will do, that the Father may be, glorified in the Son. <strong>14.</strong> If you shall ask any thing in my name, I will do it.
 
@@ -6227,7 +6227,7 @@ He that honoureth not the Son honoureth not the Father, ( John 6:23.)
 ## JOHN 14:15-18
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:15-18</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431415&gt;</span><span class="book-name">John</span> <span class="verse-range">14:15-18</span></p>
 
 <strong>15.</strong> If you love me, keep my commandments. <strong>16.</strong> And I will pray to the Father, and he will give you another Comforter, that he may abide with you for ever; <strong>17.</strong> The Spirit of truth, whom the world cannot receive, because it seeth him not, and knoweth him not; but you know him; for he dwelleth with you, and shall be in you. <strong>18.</strong> I will not leave you orphans; I come to you. [^f396]
 
@@ -6266,7 +6266,7 @@ For the mercy of God towards the Church deserves so much the higher praise, when
 ## JOHN 14:19-20
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:19-20</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431419&gt;</span><span class="book-name">John</span> <span class="verse-range">14:19-20</span></p>
 
 <strong>19.</strong> Yet a little while, and the world shall see me no more; but you see me: because I live, you also shall live. <strong>20.</strong> At that day you shall know that I am in the Father, and you in me, and I in you.
 
@@ -6289,7 +6289,7 @@ As to the manner in which this passage was formerly abused by the Aryans, to pro
 ## JOHN 14:21-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:21-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431421&gt;</span><span class="book-name">John</span> <span class="verse-range">14:21-24</span></p>
 
 <strong>21.</strong> He who hath my commandments, and keepeth them, is he that loveth me; and he that loveth me will be loved by my Father; and I will love him, and will manifest myself to him. <strong>22.</strong> Judas (not Iscariot) saith to him, Lord, why is it [^f399] that thou wilt manifest thyself to us, and not to the world? <strong>23.</strong> Jesus answered and said to him, “If any one love me, he will keep my word; and my Father will love him, and we will come to him, and make our abode with him. <strong>24.</strong> He who loveth me not keepeth not my words; and the word which you have heard is not mine, but that of the Father who sent me.”
 
@@ -6346,7 +6346,7 @@ The Papists; therefore are wrong in inferring from this passage that there are t
 ## JOHN 14:25-28
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:25-28</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431425&gt;</span><span class="book-name">John</span> <span class="verse-range">14:25-28</span></p>
 
 <strong>25.</strong> These things I have spoken to you, while I remain with you. <strong>26.</strong> But the Comforter, (who is [^f401]) the Holy Spirit, whom the Father will send in my name, he will teach you all things, and will bring to your remembrance all things that I have said to you. <strong>27.</strong> Peace I leave with you, my peace I give to you: not as the world giveth, give I it to you. [^f402] Let not your heart be troubled, and let it not be afraid. <strong>28.</strong> You heard that I said to you, I go away, and come to you. If you loved me, you would certainly rejoice that I said, I go to the Father; for the Father is greater than I.
 
@@ -6389,7 +6389,7 @@ Christ certainly reigns, not only in human nature, but as he is God manifested i
 ## JOHN 14:29-31
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 14:29-31</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431429&gt;</span><span class="book-name">John</span> <span class="verse-range">14:29-31</span></p>
 
 <strong>29.</strong> And I have told you now, before it take place, that, when it shall take place, you may believe. <strong>30.</strong> Henceforth I will not talk much with you: for the prince of this world cometh, and hath nothing in me. <strong>31.</strong> But that the world may know that I love the Father, and that I do as the Father hath commanded me. Arise, let us go hence.
 
@@ -6422,7 +6422,7 @@ The devil is called *the prince of this world,*not because he has a kingdom sepa
 ## JOHN 15:1-6
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 15:1-6</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431501&gt;</span><span class="book-name">John</span> <span class="verse-range">15:1-6</span></p>
 
 <strong>1.</strong> I am the true Vine, and my Father is the Husbandman. <strong>2.</strong> Every branch in me that beareth not fruit he will take away, and every branch that beareth fruit he will prune, that it may bear more fruit. <strong>3.</strong> You are already clean, on account of the word which I have spoken to you. <strong>4.</strong> Abide in me, and I in you. As the branch cannot bear fruit of itself, unless it abide in the vine, so neither can you, unless you abide in me. <strong>5.</strong> I am the Vine, you are the branches. He who abideth in me, and I in him, beareth much fruit; for without me you can do nothing. <strong>6.</strong> If any one abide not in me, he shall be cast out, and wither as a branch; and men shall gather it, and cast it into the fire, and it shall be burned.
 
@@ -6469,7 +6469,7 @@ Next follows another sophism; for they allege that *the branch*has something fro
 ## JOHN 15:7-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 15:7-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431507&gt;</span><span class="book-name">John</span> <span class="verse-range">15:7-11</span></p>
 
 <strong>7.</strong> If you abide in me, and my words abide in you, you shall ask what you will, [^f411] and it shall be done for you. <strong>8.</strong> In this my Father is glorified, that you bear much fruit, and become my disciples. <strong>9.</strong> As the Father hath loved me, so have I loved you; abide in my love. <strong>10.</strong> If you keep my commandments, you will abide in my love, as I also have kept my Father’s commandments, and abide in his love. <strong>11.</strong> These things I have spoken to you, that my joy may abide in you, and that your joy may be full.
 
@@ -6532,7 +6532,7 @@ the chastisement of our peace was laid on him, ( Isaiah 53:5.)
 ## JOHN 15:12-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 15:12-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431512&gt;</span><span class="book-name">John</span> <span class="verse-range">15:12-15</span></p>
 
 <strong>12.</strong> This is my commandment, that you love one another, as I have loved you. <strong>13.</strong> Greater love hath no one than this, that one should lay down his life for his friends. <strong>14.</strong> You are my friends, if you do the things that I command you. [^f412] <strong>15.</strong> Henceforth I will not call you servants, for the servant knoweth not what his lord doeth; but I have called you friends, because I have made known to you all things that I have heard from my Father.
 
@@ -6585,7 +6585,7 @@ But far higher is the distinction which God hath conferred on us, since God hath
 ## JOHN 15:16-21
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 15:16-21</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431516&gt;</span><span class="book-name">John</span> <span class="verse-range">15:16-21</span></p>
 
 <strong>16.</strong> You have not chosen me, but I have chosen you; and I have ordained you to go and bear fruit, and that your fruit should continue; that whatever you shall ask from the Father in my name he may give you. <strong>17.</strong> These things I command you, that you may love another. <strong>18.</strong> If the world hate you, you know that it hated me before it hated you. <strong>19.</strong> If you were of the world, the world would love what was its own; but because you are not of the world, but I have chosen you out of the world, therefore the world hateth you. <strong>20.</strong> Remember the word which I said to you, The servant is not greater than his master. If they have persecuted me, they will also persecute you; if they have kept my word, they will keep yours also. <strong>21.</strong> But all these things they will do to you on account of my name, because they know not him who sent me.
 
@@ -6678,7 +6678,7 @@ for the exception which he adds amounts to saying, that we ought to see what is 
 ## JOHN 15:22-27
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 15:22-27</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431522&gt;</span><span class="book-name">John</span> <span class="verse-range">15:22-27</span></p>
 
 <strong>22.</strong> If I had not come and spoken to them, they would not have sin; but now they have no excuse for their sin. <strong>23.</strong> He who hateth me hateth my Father also. <strong>24.</strong> If I had not done among them the works which no other man did, they would not have had sin; but now have they both seen and hated both me and my Father. <strong>25.</strong> But that the word may be fulfilled which is written in their law. They have hated me without a cause. <strong>26.</strong> But when the Comforter is come, whom I will send to you from the Father, the Spirit of truth, who proceedeth from the Father, will testify of me: <strong>27.</strong> And you also will bear testimony, (or, are witnesses) because from the beginning you are with me.
 
@@ -6775,7 +6775,7 @@ for thus the Lord intended to provide for our welfare in every possible way, tha
 ## JOHN 16:1-7
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:1-7</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431601&gt;</span><span class="book-name">John</span> <span class="verse-range">16:1-7</span></p>
 
 <strong>1.</strong> These things I have spoken to you, that you may not be offended. <strong>2.</strong> They will drive you out of the synagogues; yea, the time cometh, that whosoever shall kill you will think that he offereth service to God. <strong>3.</strong> And they will do these things to you, because they have not known the Father, nor me. <strong>4.</strong> But these things I have spoken to you, that, when the time shall come, you may remember that I told you of them. And I told you not these things at the beginning, because I was with you. <strong>5.</strong> And now I go to him who sent me, and none of you asketh me, Whither goest thou? <strong>6.</strong> But because I have told you these things, sorrow hath filled your hearts. <strong>7.</strong> But I tell you the truth; It is expedient for you that I go away: for if I go not away, the Comforter will not come to you; but shall go away, I will send him to you.
 
@@ -6830,7 +6830,7 @@ Here Christ reproves the apostles for two faults; first, that they were too much
 ## JOHN 16:8-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:8-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431608&gt;</span><span class="book-name">John</span> <span class="verse-range">16:8-15</span></p>
 
 <strong>8.</strong> And when he is come, he will convince the world of sin, and of righteousness, and of judgment <strong>9.</strong> Of sin, because they believe not in me <strong>10.</strong> Of righteousness, because I go to my Father, and you see me no more. <strong>11.</strong> Of judgment, because the prince of this world hath been judged. <strong>12.</strong> I have yet many things to say to you, but you cannot bear them now. <strong>13.</strong> But when he, the Spirit of truth, is come, he will lead you into all truth; for he will not speak from himself, but will speak all that he has heard, and will declare to you the things that are to come. <strong>14.</strong> He will glorify me, for he will take of what is mine, and will declare it to you. <strong>15.</strong> All things that the Father hath are mine; therefore I said to you, He will take of what is mine, and will declare it to you.
 
@@ -6949,7 +6949,7 @@ Other commentators explain these words to mean, that *all that the Father* *hath
 ## JOHN 16:16-20
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:16-20</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431616&gt;</span><span class="book-name">John</span> <span class="verse-range">16:16-20</span></p>
 
 <strong>16.</strong> A little while, and you do not see me [^f427] and again a little while, and you will see me; because I go to the Father. <strong>17.</strong> Then said some of his disciples among themselves, What is this that he saith to us, a little while, and you do not see me and again a little while, and you will see me: and, Because I go to the Father? <strong>18.</strong> They said, therefore, What is this that he saith, A little while? We know not what he saith. <strong>19.</strong> Jesus, therefore. knew that they wished to ask him, and he said to them, You ask among yourselves about what I said, A little while, and you do not see me: and again a little while, and you will see me. <strong>20.</strong> Verily, verily, I tell you, That you will weep and lament, but the world will rejoice; and you will be sorrowful, but your sorrow will be turned into joy.
 
@@ -6986,7 +6986,7 @@ Though we have known Christ according to the flesh, yet we know him no more; if 
 ## JOHN 16:21-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:21-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431621&gt;</span><span class="book-name">John</span> <span class="verse-range">16:21-24</span></p>
 
 <strong>21.</strong> A woman, when she is in labor, hath sorrow, because her hour is come; but when she hath brought forth a child, she remembereth no more her anguish, on account of the joy that a man is born into the world. <strong>22.</strong> And you therefore have sorrow now; but I will see you again, and your heart will rejoice, and your joy no man shall take from you. <strong>23.</strong> And in that day you will ask me nothing. Verily, verily, I tell you, That whatever you shall ask from the Father in my name, he will give to you. <strong>24.</strong> Hitherto you have asked nothing in my name: ask, and receive, that your joy may be full.
 
@@ -7047,7 +7047,7 @@ Nor is there any absurdity in saying that theyprayed to God, with confidence in 
 ## JOHN 16:25-28
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:25-28</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431625&gt;</span><span class="book-name">John</span> <span class="verse-range">16:25-28</span></p>
 
 <strong>25.</strong> These things I have spoken to you in proverbs; but the time cometh when I shall no longer speak to you in parables, but will tell you plainly about the Father. <strong>26.</strong> In that day you shall ask in my name and I do not say that I will pray the Father for you; <strong>27.</strong> For the Father himself loveth you, because you have loved me, and have believed that I came out from God. <strong>28.</strong> I came out from the Father, and am come into the world again, I leave the world, and go to the Father.
 
@@ -7124,7 +7124,7 @@ to us wisdom, and righteousness, and sanctification, and redemption, ( 1 Corinth
 ## JOHN 16:29-33
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 16:29-33</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431629&gt;</span><span class="book-name">John</span> <span class="verse-range">16:29-33</span></p>
 
 <strong>29.</strong> His disciples say to him, Lo, now thou speakest openly, and speakest no proverb. <strong>30.</strong> Now we know that thou knowest all things, and needest not that any one should ask thee; by this we believe that thou camest out from God. <strong>31.</strong> Jesus answered them, Do you now believe? <strong>32.</strong> Behold, the hour cometh, and is now come, when you. shall be scattered, every one to his own, and shall leave me alone; yet I am not alone, because the Father is with me. <strong>33.</strong> These things I have spoken to you, that you may have peace in me. In the world you will have tribulation; but be of good courage; I have overcome the world.
 
@@ -7163,7 +7163,7 @@ The question put by Christ is therefore ironical; as if he had said, “Do you b
 ## JOHN 17:1-5
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:1-5</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431701&gt;</span><span class="book-name">John</span> <span class="verse-range">17:1-5</span></p>
 
 <strong>1.</strong> These words spake Jesus, and lifted up his eyes to heaven, and said, Father, the hour is come; glorify thy Son, that thy Son also may glorify thee: <strong>2.</strong> As thou hast given him power over all flesh, that he may give eternal life to all whom thou hast given to him. <strong>3.</strong> And this is eternal life, that they may know thee, the only true God, and him whom thou hast sent, Jesus Christ. <strong>4.</strong> I have glorified thee on the earth; I have finished the work which thou gavest me to do. <strong>5.</strong> And now, O Father, glorify thou me with thyself, with the glory which I had with thee before the world was.
 
@@ -7240,7 +7240,7 @@ he died to sin once, but now he liveth to God, ( Romans 6:10.)
 ## JOHN 17:6-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:6-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431706&gt;</span><span class="book-name">John</span> <span class="verse-range">17:6-11</span></p>
 
 <strong>6.</strong> I have manifested thy name to the men whom thou hast given me out of the world; thine they were, and thou hast given them to me, and they have kept thy word. <strong>7.</strong> Now they have known that all things which thou hast given me are from thee; <strong>8.</strong> For I have given to them the words which thou gavest me, and they have received them, and have known truly that I came out from thee, and have believed that thou hast sent me. <strong>9.</strong> I pray for them; I do not pray for the world, but for those whom thou hast given me, for they are thine; <strong>10.</strong> And all that is mine is thine, and thine is mine; [^f441] and I am glorified in them. <strong>11.</strong> And I am no longer in the world, but these are in the world, and I come to thee. Holy Father, keep in thy name those whom thou hast given me, that they may be one, as we are.
 
@@ -7307,7 +7307,7 @@ but now that he is about to depart, he asks that the Father will guard them by h
 ## JOHN 17:12-13
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:12-13</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431712&gt;</span><span class="book-name">John</span> <span class="verse-range">17:12-13</span></p>
 
 <strong>12.</strong> While I was with them in the world, I kept them in thy name. Those whom thou hast given to me I have kept, and none of them is lost, but the son of perdition; that the Scripture might be fulfilled. <strong>13.</strong> And now I come to thee, and speak those things in the world, that they may have my joy fulfilled in themselves.
 
@@ -7338,7 +7338,7 @@ but now that he is about to depart, he asks that the Father will guard them by h
 ## JOHN 17:14-19
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:14-19</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431714&gt;</span><span class="book-name">John</span> <span class="verse-range">17:14-19</span></p>
 
 <strong>14.</strong> I have given them thy word, and the world hath hated them; because they are not of the world, even as I am not of the world. <strong>15.</strong> I ask not that thou shouldest take them out of the world, but that thou shouldest keep them from the evil. <strong>16.</strong> They are not of the world, even as I am not of the world. <strong>17.</strong> Sanctify them by thy truth: thy word is truth. <strong>18.</strong> As thou hast sent me into the world, I also have sent them into the world. <strong>19.</strong> And for their sakes I sanctify myself, that they also may be sanctified by the truth.
 
@@ -7387,7 +7387,7 @@ presented us to his Father in his own person, that we may be renewed to true hol
 ## JOHN 17:20-23
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:20-23</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431720&gt;</span><span class="book-name">John</span> <span class="verse-range">17:20-23</span></p>
 
 <strong>20.</strong> And I ask not for these only, but for those also who shall believe on me through their word; <strong>21.</strong> That all may be one; as thou, rather, art in me, and I in thee, that they also may be one in us: that the world may believe that thou hast sent me. <strong>22.</strong> And I have given to them the glory which thou gavest to me; that they may be one, as we are one: <strong>23.</strong> I in them, and thou in me, that they may be perfect in one; and that the world may know that thou hast sent me, and hast loved them, F451 as thou hast loved me.
 
@@ -7464,7 +7464,7 @@ the same time the enemies and the friends of God, until, atonement having been m
 ## JOHN 17:24-26
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 17:24-26</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431724&gt;</span><span class="book-name">John</span> <span class="verse-range">17:24-26</span></p>
 
 <strong>24.</strong> Father, I will that those whom thou hast given me may also be with me where I am; that they may behold my glory, which thou hast given me; for thou lovedst me before the creation of the world. <strong>25.</strong> Righteous Father, the world hath not known thee, but I have known thee, and these have known that thou hast sent me. <strong>26.</strong> And I have declared to them thy name, and will declare it; that the love with which thou hast loved me may be in them, and I in them.
 
@@ -7501,7 +7501,7 @@ the same time the enemies and the friends of God, until, atonement having been m
 ## JOHN 18:1-6
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:1-6</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431801&gt;</span><span class="book-name">John</span> <span class="verse-range">18:1-6</span></p>
 
 <strong>1.</strong> When Jesus had spoken these words, he went out with his disciples over the brook Kedron, where was a garden, into which he entered, and his disciples. <strong>2.</strong> And Judas also, who betrayed him, knew the place; for Jesus often resorted thither with his disciples. <strong>3.</strong> Then Judas, having received a band of soldiers, and officers from the chief pricsts and Pharisees, came thither with lanterns, and torches, and weapons. <strong>4.</strong> Now Jesus, knowing all the things which were coming upon him, went forward and said to them, Whom seek ye? <strong>5.</strong> They answered him, Jesus of Nazareth. Jesus saith to them, It is I. And Judas also, who betrayed him, stood with them. <strong>6.</strong> As soon therefore as he said to them, It is I, they went backward, and fell to the ground.
 
@@ -7540,7 +7540,7 @@ wicked, with all their rage and pride, struck down by the voice of Christ; and, 
 ## JOHN 18:7-9
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:7-9</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431807&gt;</span><span class="book-name">John</span> <span class="verse-range">18:7-9</span></p>
 
 <strong>7.</strong> He therefore asked them again, Whom seek ye? And they said, Jesus of Nazareth. <strong>8.</strong> Jesus answered, I told you that it is I: if therefore you seek me, allow these to go away. <strong>9.</strong> That the word which he had spoken might be fulfilled, Of those whom thou gavest to me I have lost none.
 
@@ -7565,7 +7565,7 @@ about rushing against God than if they had only to do with a fly. They feel his 
 ## JOHN 18:10-14
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:10-14</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431810&gt;</span><span class="book-name">John</span> <span class="verse-range">18:10-14</span></p>
 
 <strong>10.</strong> Then Simon Peter, having a sword, drew it, and struck the high priest's servant, and cut off his right ear; and the servant's name was Malchus. <strong>11.</strong> Jesus therefore said to Peter, Put up thy sword into the sheath. Shall I not drink the cup which my Father hath given me? <strong>12.</strong> Then the band, and the captain, and officers of the Jews, took Jesus, and bound him; <strong>13.</strong> And led him away to Annas first; for he was father-in-law to Caiaphas, who was the high priest of that year. <strong>14.</strong> And Caiaphas was he who had given counsel to the Jews, that it was expedient that one man should die for the people.
 
@@ -7644,7 +7644,7 @@ John is not very exact in arranging the narrative, being satisfied with drawing 
 ## JOHN 18:19-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:19-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431819&gt;</span><span class="book-name">John</span> <span class="verse-range">18:19-24</span></p>
 
 <strong>19.</strong> The high priest then asked Jesus concerning his disciples, and concerning his doctrine. <strong>20.</strong> Jesus answered him, I spoke openly in the world; I always taught in the synagogue and in the temple, where all the Jews assemble, and in secret I have spoken nothing. <strong>21.</strong> Why askest thou me? Ask those who have heard what I have spoken to them: behold, they know what I have said. <strong>22.</strong> When he had said these things, one of the officers that stood by struck Jesus with the palm of his hand, saying, Answerest thou the high priest so? <strong>23.</strong> Jesus answered him, If I have spoken evil, bear witness of the evil; but if well, why smitest thou me? <strong>24.</strong> Now Annas had sent him bound to Calaphas the high priest.
 
@@ -7685,7 +7685,7 @@ Wicked men are already too powerfully impelled by the spirit of Satan to do inju
 ## JOHN 18:25-27
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:25-27</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431825&gt;</span><span class="book-name">John</span> <span class="verse-range">18:25-27</span></p>
 
 <strong>25.</strong> And Simon Peter was standing there and warming, himself. They said therefore to him, Art not thou also one of his discipYes? He denied it? F471 and said, I am not. <strong>26.</strong> One of the servants of the high priest, who was a kinsman of him whose ear Peter had cut off, said, Did not I see thee in the garden with him? <strong>27.</strong> Then Peter denied it again; F472 and immediately the cock crew.
 
@@ -7708,7 +7708,7 @@ Thus, when any person has once begun to fall through the suggestions of Satan, n
 ## JOHN 18:28-32
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:28-32</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431828&gt;</span><span class="book-name">John</span> <span class="verse-range">18:28-32</span></p>
 
 <strong>28.</strong> Then they lead Jesus from Caiaphas into the hall of the governor; [^f473] and it was early in the morning; and they themselves did not enter into the hall, that they might not be defiled, but might eat the passover F474 <strong>29.</strong> Pilate therefore went out to them, and said, What accusation do you bring against this man? <strong>30.</strong> They answered and said to him, If he were not a malefactor, we would not have delivered him to thee. <strong>31.</strong> Pilate therefore said to them, Take you him, and judge him according to your law. The Jews therefore said to him, We are not allowed to put any man to death: <strong>32.</strong> That the word of Jesus might be fulfilled, which he had spoken, signifying by what death he should die.
 
@@ -7755,7 +7755,7 @@ And, indeed, if we wish to read with advantage the history of Christ’s death, 
 ## JOHN 18:33-36
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:33-36</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431833&gt;</span><span class="book-name">John</span> <span class="verse-range">18:33-36</span></p>
 
 <strong>33.</strong> Then Pilate went again into the hall, and called Jesus, and said to him, Art thou the King of the Jews? <strong>34.</strong> Jesus answered him, Sayest thou this from thyself, or did others tell it thee of me? <strong>35.</strong> Pilate answered, Am I a Jew? Thine own nation and the priests have delivered thee to me: what hast thou done? <strong>36.</strong> Jesus answered, My kingdom is not of this world: if my kingdom were of this world, my servants would have striven that I should not be delivered to the Jews. But now my kingdom is not from hence.
 
@@ -7794,7 +7794,7 @@ to his authority in their private capacity, but also to employ all the power tha
 ## JOHN 18:37-40
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 18:37-40</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431837&gt;</span><span class="book-name">John</span> <span class="verse-range">18:37-40</span></p>
 
 <strong>37.</strong> Pilate therefore said to him, Art thou then aking? Jesus answered, Thou sayest that I am a king. For this cause was I born, and for this cause came I into the world, that I may bear testimony to the truth: every one that is of the truth heareth my voice. <strong>38.</strong> Pilate saith to him, What is truth? And when he had said this, he went out again to the Jews, and said to them, I find no guilt in him. <strong>39.</strong> But you have a custom, that I should release to you some one at the passover; do you wish then that I should release to you the King of the Jews? <strong>40.</strong> Then they all cried out again, saying, Not this man, but Barabbas. Now Barabbas was a robber.
 
@@ -7843,7 +7843,7 @@ and therefore he is far from taking delight in that improper kind of forgiveness
 ## JOHN 19:1-6
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:1-6</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431901&gt;</span><span class="book-name">John</span> <span class="verse-range">19:1-6</span></p>
 
 <strong>1.</strong> Then Pilate therefore took Jesus, and scourged him. <strong>2.</strong> And the soldiers, platting a crown of thorns, put it on his head, and put on him a purple robe, <strong>3.</strong> And said, Hail, King of the Jews ! and struck him with the palms of their hands. <strong>4.</strong> Pilate therefore went out again, and said to them, Behold, I bring him out to you, that you may know that I find no guilt in him. <strong>5.</strong> Jesus then went out, wearing the crown of thorns and the purple robe. Then he said to them, F485 Behold the man! <strong>6.</strong> When therefore the chief priests and officers saw him, they cried out, saying, Crucify him, crucify him. Pilate saith to them, Take you him, and crucify him; for I find no guilt in him.
 
@@ -7866,7 +7866,7 @@ We all condemn *Pilate;*and yet, it is shameful to relate that there are so many
 ## JOHN 19:7-11
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:7-11</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431907&gt;</span><span class="book-name">John</span> <span class="verse-range">19:7-11</span></p>
 
 <strong>7.</strong> The Jews answered him, We have a law, and according to our law he ought to die, because he made himself the Son of God. <strong>8.</strong> When therefore Pilate heard this saying, he was the more afraid; <strong>9.</strong> And went again into the hall, and said to Jesus, Whence art thou? And Jesus gave him no answer. <strong>10.</strong> Then Pilate said to him, Speakest thou not to me? Knowest thou not that I have power to crucify thee, and have power to release thee? <strong>11.</strong> Jesus answered, Thou wouldest have no power against me, unless it were given to thee from above; therefore he who hath delivered me to thee hath the greater sin.
 
@@ -7921,7 +7921,7 @@ Again, we see in Pilate an image of a proud man, who is driven to madness by his
 ## JOHN 19:12-16
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:12-16</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431912&gt;</span><span class="book-name">John</span> <span class="verse-range">19:12-16</span></p>
 
 <strong>12.</strong> From that time Pilate sought to release him; but the Jews cried out, saying, If thou release this man, thou art not Caesar's friend: whoever maketh himself a king speaketh against Caesar. <strong>13.</strong> When Pilate, therefore, had heard this saying, he brought Jesus out, and sat down on the judgment-seat, in a place which is called the Stone-pavement, and in Hebrew, Gabbatha. <strong>14.</strong> And it was the preparation of the passover, about the sixth hour; and he saith to the Jews, Behold your King! F492 <strong>15.</strong> But they cried out, Away with him, away with him, crucify him. Pilate saith to them, Shall I crucify your King? The chief priests answered, We have no king but Caesar. <strong>16.</strong> Then, therefore, he delivered him to them to be crucified; and they took Jesus, and led him away.
 
@@ -7962,7 +7962,7 @@ may be easily explained. It is plain enough from other passages that the day was
 ## JOHN 19:17-22
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:17-22</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431917&gt;</span><span class="book-name">John</span> <span class="verse-range">19:17-22</span></p>
 
 <strong>17.</strong> And he, bearing his cross, went forth to a place which is called (the place) of a Skull, and: in Hebrew, Golgotha; F495 <strong>18.</strong> Where they crucified him, and two others with him, on either side one, and Jesus in the midst. <strong>19.</strong> And Pilate wrote also a title, and put it on the cross; and it was written, JESUS OF NAZARETH, THE KING OF THE JEWS·20. This title then many of the Jews read, because the place where Jesus was crucified was near to the city; and it was written in Hebrew, and Greek, and Latin·21. The chief priests of the Jews, therefore, said to Pilate, Write not, The King of the Jews; but that he said, I am King, of the Jews. <strong>22.</strong> Pilate answered, What I have written I have written.
 
@@ -8013,7 +8013,7 @@ But the providence of God, which guided the pen of Pilate, had a higher object i
 ## JOHN 19:23-24
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:23-24</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431923&gt;</span><span class="book-name">John</span> <span class="verse-range">19:23-24</span></p>
 
 <strong>23.</strong> Then the soldiers, when they had crucified Jesus, took his garments, and made four parts, to each soldier a part. They took also his coat. F499 But the coat was without seam, woven from the top throughout. <strong>24.</strong> They said therefore among themselves, Let us not rend it, but cast lots for it, whose it shall be; that the Scripture might be fulfilled, which saith, They divided my garments among them, and cast lots on my vesture: these things therefore the soldiers did.
 
@@ -8040,7 +8040,7 @@ Let us also learn that. Christ was stripped of his *garments,*that he might clot
 ## JOHN 19:25-27
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:25-27</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431925&gt;</span><span class="book-name">John</span> <span class="verse-range">19:25-27</span></p>
 
 <strong>25.</strong> :Now there stood by the cross of Jesus his mother, and his mother's sister, Mary of Cleophas, and Mary Magdalene. <strong>26.</strong> Jesus, therefore, seeing his mother, and the disciple whom he loved standing by her, saith to his mother, Woman, behold thy son! <strong>27.</strong> Then he saith to the disciple, :Behold thy mother! And from that hour, the disciple took her to his own home.
 
@@ -8091,7 +8091,7 @@ In refraining from mentioning his *mother’s*name and in simply calling her *Wo
 ## JOHN 19:28-30
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:28-30</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431928&gt;</span><span class="book-name">John</span> <span class="verse-range">19:28-30</span></p>
 
 <strong>28.</strong> After this, Jesus, knowing that all things were now accomplished, that the Scripture might be fulfilled, saith, I thirst. <strong>29.</strong> And a vessel full of vinegar was placed there; and, filling a sponge with vinegar, they fixed it on hyssop, and put it to his mouth. <strong>30.</strong> When, therefore, Jesus had received the vinegar, he said, It is finished; and, bowing his head, he yielded up his breath.
 
@@ -8146,7 +8146,7 @@ But the whole religion of Popery tends to lead men to contrive for themselves in
 ## JOHN 19:31-37
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:31-37</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431931&gt;</span><span class="book-name">John</span> <span class="verse-range">19:31-37</span></p>
 
 <strong>31.</strong> The Jews, therefore, that the bodies might not remain upon the cross on the Sabbath-day, (for it was the preparation, and it was the great day of that Sabbath,)besought Pilate that their legs might be broken, and that they might be taken away. <strong>32.</strong> Then the soldiers came, and broke the legs of the first, and of the other who was crucified with him. <strong>33.</strong> But when they came to Jesus, and saw that he was already dead, they broke not his legs; <strong>34.</strong> But one of the soldiers pierced his side with a spear, and immediately there came out of it blood and water. <strong>35.</strong> And he who saw it hath borne testimony of it, and his testimony is true, and he knoweth that he saith true, that you may believe. <strong>36.</strong> And these things were done F513 that the Scripture might be fulfilled, A bone of him shall not be broken. <strong>37.</strong> And again, another Scripture saith, They shall look on him whom they pierced.
 
@@ -8207,7 +8207,7 @@ A question now arises as to this passage taken from the prophet, F518 Does God p
 ## JOHN 19:38-42
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 19:38-42</p>
+<p class="scripture-ref"><span class="ages-code">&lt;431938&gt;</span><span class="book-name">John</span> <span class="verse-range">19:38-42</span></p>
 
 <strong>38.</strong> After these things, Joseph of Arimathen (who was a disciple of Jesus, but secretly, through fear of the Jews) besought Pilate that he might take away the body of Jesus, and Pilate gave him leave. He came, then, and took the body of Jesus. <strong>39.</strong> And :Nicodemus, also, (who at first came to Jesus by night,) came bearing a mixture of myrrh and aloes, about a hundred pounds weight. <strong>40.</strong> Then they took the body of Jesus, and wound it in linen clothes with spices, as the custom of the Jews is to bury. <strong>41.</strong> And in the place where he was crucified there was a garden; and in the garden there was a new sepulcher, in which no person had yet been laid. <strong>42.</strong> There they laid Jesus, therefore, on account of the preparation of the Jews; for the sepulcher was near at hand.
 
@@ -8266,7 +8266,7 @@ Corinthians 15:20) he had a *new sepulcher, in which no person had ever* *been l
 ## JOHN 20:1-9
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:1-9</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432001&gt;</span><span class="book-name">John</span> <span class="verse-range">20:1-9</span></p>
 
 <strong>1.</strong> Now, on;he first day of the week, F522 Mary Magdelene goeth early to the sepulcher, while it was, yet dark, and seeth the stone rolled away from the sepulchre. <strong>2.</strong> Then she runneth, and cometh to Simon Peter, and to the other disciple whom Jesus loved, and saith to them, They have taken away the Lord out of the sepulcher, and we know not where they have laid him. <strong>3.</strong> Peter therefore went forth, and the other disciple, and came to the sepulcher. <strong>4.</strong> And they both ran together, and the other disciple outran Peter, and came first to the sepulchre. <strong>5.</strong> And, stooping down, he saw the linen clothes lying; yet he went not in. <strong>6.</strong> Then Simon Peter came following him, and entered into the sepulcher, and saw the linen clothes lying; <strong>7.</strong> And the napkin that was about his head, not lying with the linen clothes, but wrapped together in a place by itself. <strong>8.</strong> Then the other disciple, who came first to the sepulcher, went in also, and he saw and believed. <strong>9.</strong> For as yet they knew not the scripture, that tie must must rise from the dead.
 
@@ -8367,7 +8367,7 @@ believe that the doctrine of Scripture is so full and complete in every respect 
 ## JOHN 20:10-15
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:10-15</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432010&gt;</span><span class="book-name">John</span> <span class="verse-range">20:10-15</span></p>
 
 <strong>10.</strong> Then the disciples went away again to their own homes. <strong>11.</strong> But Mary stood without at the sepulcher, weeping; and as she wept, she stooped down to the sepulcher, <strong>12.</strong> And seeth two angels in white garments sitting, one at the head, and the other at the feet, where the body of Jesus had lain. <strong>13.</strong> And they say to her, Woman, why weepest thou? She saith to them, Because they have taken away my Lord, and I know not where they have laid him. <strong>14.</strong> Having said this, she turned back, and seeth Jesus standing, and knew not that it was Jesus. <strong>15.</strong> Jesus saith to her, Woman, why weepest thou? She, thinking that he was the gardener, saith to him, Sir, if thou hast carried him hence, tell me where thou hast laid hint, and I will take him away.
 
@@ -8418,7 +8418,7 @@ In Mary we have an example of the mistakes into which the human mind frequently 
 ## JOHN 20:16-18
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:16-18</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432016&gt;</span><span class="book-name">John</span> <span class="verse-range">20:16-18</span></p>
 
 <strong>16.</strong> Jesus saith to her, Mary! She turned herself, and said to him, Rabboni! which means, Master! <strong>17.</strong> Jesus saith to her, Touch me not; for I am not yet ascended to my Father; but go to my brethren, and say to them, I ascend to my Father and your Father, and to my God and your God. <strong>18.</strong> Mary Magdalene went and told the disciples that she had seen the Lord, and that he had said these things to her.
 
@@ -8501,7 +8501,7 @@ This is, therefore, peculiar to his human nature, but is applied to his whole pe
 ## JOHN 20:19-23
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:19-23</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432019&gt;</span><span class="book-name">John</span> <span class="verse-range">20:19-23</span></p>
 
 <strong>19.</strong> When, therefore, it was evening on that day, which was the first day of the Sabbath F533 and while the doors were shut, where the disciples were assembled through fear of the Jews, Jesus came, and stood in the midst, and saith to them, Peace be to you. <strong>20.</strong> And when he had said this, he showed them his hands and his side. Then the disciples rejoiced when they saw the Lord. <strong>21.</strong> Then said Jesus to them again, Peace be to you; as the Father hath sent me, I also send you. <strong>22.</strong> When he had said this, he breathed on them, and said to them, Receive the Holy Spirit. <strong>23.</strong> To those whose sins you remit they shall be remitted; and to those whose sins you retain they shall be retained.
 
@@ -8636,7 +8636,7 @@ necessary for condemning the reprobate, for by nature we are all lost, and, in a
 ## JOHN 20:24-25
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:24-25</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432024&gt;</span><span class="book-name">John</span> <span class="verse-range">20:24-25</span></p>
 
 <strong>24.</strong> But Thomas, one of the twelve, who was called Didymus, F540 was not with them when Jesus came. <strong>25.</strong> The other disciples, therefore, said to him, We have seen the Lord. But he said to them, If I do not see in his hands the print F541 of the nails, and put my finger into the print of the nails, F542 and put my hand into his side, I will not believe. <strong>26.</strong> And after eight days, his disciples were again within, and Thomas with them. Then Jesus came, while the doors were shut, and stood in the midst, and said, Peace be to you. <strong>27.</strong> Then he saith to Thomas, Reach hither thy linger, and behold my hands; and reach thy hand, and put it into mv side; and be not faithless, but believing. <strong>28.</strong> Thomas answered, and said to him, My Lord and my God! <strong>29.</strong> Jesus saith to him, Because thou hast seen me, Thomas, thou hast believed; blessed are they who have not seen, and have believed.
 
@@ -8705,7 +8705,7 @@ The manner in which the Papists torture these words, to prove their doctrine of 
 ## JOHN 20:30-31
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 20:30-31</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432030&gt;</span><span class="book-name">John</span> <span class="verse-range">20:30-31</span></p>
 
 <strong>30.</strong> Many other signs also Jesus did in the presence of the disciples, which are not written in this book. <strong>31.</strong> But these are written, that you may believe that Jesus is the Christ, the Son of God; and that, believing, you may have life through his name.
 
@@ -8740,7 +8740,7 @@ Although, therefore, strictly speaking, faith rests on the word of God, and look
 ## JOHN 21:1-14
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 21:1-14</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432101&gt;</span><span class="book-name">John</span> <span class="verse-range">21:1-14</span></p>
 
 <strong>1.</strong> After these things Jesus manifested himself again to the disciples at the sea of Tiberias; and he manifested himself thus. <strong>2.</strong> Simon Peter, and Thomas, who is called Didymus, F554 and Nathanael, who was of Cana of Galilee, and the sons of Zebedee, and two others of his disciples, were together. <strong>3.</strong> Simon Peter saith to them, I am going to fish; they say to him, We also go with thee. They went forth, and entered into a ship immediately; and that night they caught nothing. <strong>4.</strong> And when it was morning, Jesus stood on the shore; and the disciples knew not that it was Jesus. <strong>5.</strong> Jesus saith to them, Children, have you ally thing to eat? F555 They answered him, No. <strong>6.</strong> But he said to them, Cast the net on the right side of the ship, and you will find. They cast it, therefore; and now they were not able to draw it for the multitude of fishes. <strong>7.</strong> Therefore the disciple whom Jesus loved saith to Peter, It is the Lord. When, therefore, Simon Peter heard that it was the Lord, he girded his coat about him, (for he was naked,)and threw himself into the sea. <strong>8.</strong> And the other disciples carne in the boat, (for they were not far from land, but about two hundred cubits,) dragging the net with fishes. <strong>9.</strong> As soon, then, as they came to land, they saw a fire burning, and fish laid on it, and bread. <strong>10.</strong> Jesus saith to them, Bring some of the fish which you have now caught. <strong>11.</strong> Simon Peter, therefore, went up, and drew the net to land, full of great fishes, a hundred and fifty-three; and although they were so many, the net was not broken. <strong>12.</strong> Jesus saith to them, Come and dine. And not one of the disciples dared to ask him, Who art thou? knowing that he was the Lord. <strong>13.</strong> Jesus therefore cometh, and taketh the bread, and giveth it to them, and fish likewise. <strong>14.</strong> This is now the third time that Jesus manifested himself to his disciples, after that he was risen from the dead.
 
@@ -8781,7 +8781,7 @@ That *Simon Peter*WAS NAKED, is a proof that the disciples had labored in earnes
 ## JOHN 21:15-19
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 21:15-19</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432115&gt;</span><span class="book-name">John</span> <span class="verse-range">21:15-19</span></p>
 
 <strong>15.</strong> When, therefore, they had dined, Jesus saith to Simon Peter, Simon (son) of John, lovest thou me more than these? He saith to him, Yea, Lord, thou knowest that I love thee. He saith to him, Feed my lambs. <strong>16.</strong> He saith to him again the second time, Simon (son) of John, lovest thou me? He saith to him, Yea, Lord, thou knowest that I love thee. He saith to him, Feed my sheep. <strong>17.</strong> He saith to him the third time, Simon (son) of John, F558 lovest thou me? Peter was grieved because he said to him the third time, Lovest thou me? And he said to him, Lord, thou knowest all things: thou knowest that I love thee. Jesus saith to him, Feed my sheep. <strong>18.</strong> Verily, verily, I tell thee, When thou wast young, thou girdedst thyself, and walkedst whither thou wouldest; but when thou shalt be old, thou shalt stretch out thy hands, and another will gird thee, and will carry thee whither thou wouldest not. <strong>19.</strong> And this he said, signifying by what death he should glorify God; and when he had spoken this, he saith to him, Follow me.
 
@@ -8862,7 +8862,7 @@ which the death of Peter has yielded; for it ought to be imputed to our indolenc
 ## JOHN 21:20-25
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 21:20-25</p>
+<p class="scripture-ref"><span class="ages-code">&lt;432120&gt;</span><span class="book-name">John</span> <span class="verse-range">21:20-25</span></p>
 
 <strong>20.</strong> And Peter, turning about, seeth the disciple following whom Jesus loved, who had also leaned on his breast at the supper, and had said, Lord, which is he who betrayeth thee? <strong>21.</strong> When, therefore, Peter saw him, he said to Jesus, Lord, and what shall he do? <strong>22.</strong> Jesus saith to him, If I will that he remain till I come, what is that to thee? follow thou me. <strong>23.</strong> Then this saying went forth among the brethren, that that disciple would not die; yet Jesus had not said to him that he would not die; but, If I will that he tarry till I come, what is that to thee? <strong>24.</strong> This is the disciple who testifieth of these things, and wrote these things; and we know that his testimony is true. <strong>25.</strong> There are also many other things which Jesus did, which, if they were written every one, I think that even the world itself would not contain the books that would be written.
 
