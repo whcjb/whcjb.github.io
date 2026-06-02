@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: john-en
 book_name: "Calvin on John"
 title: "Preface"
-date: 2026-06-02 12:04
+date: 2026-06-02 13:22
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -141,17 +141,13 @@ The meaning of the Greek word, <span style="color:#0000d4">εὐαγγέλιον
 
 Some consider the word *Gospel* as extending to all the gracious promises of God which are found scattered even in the Law and the Prophets. Nor can it be denied that, whenever God declares that he will be reconciled to men, and forgives their sins, he at the same time exhibits Christ, whose peculiar office it is, wherever he shines, to spread abroad the rays of joy. I acknowledge, therefore, that the Fathers were partakers of the same *Gospel* with ourselves, so far as relates to the faith of a gratuitous salvation. But as it is the ordinary declaration made by the Holy Spirit in the Scriptures, that the *Gospel* was first proclaimed when Christ came, let us also adhere to this mode of expression; and let us keep by that definition of the *Gospel* which I have given, that it is a solemn publication of the grace revealed in Christ. On this account the *Gospel* is called
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 1:16)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 1:16)</span></p>
 
 <!-- PAGE 14 -->
 
 because in it God displays his righteousness. It is called also an
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 5:20)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 5:20)</span></p>
 
 and as Christ is the pledge of the mercy of God, and of his fatherly love towards us, so he is, in a peculiar manner, the subject of the Gospel.
 

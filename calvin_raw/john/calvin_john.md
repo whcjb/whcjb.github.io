@@ -131,17 +131,13 @@ The meaning of the Greek word, <span style="color:#0000d4">εὐαγγέλιον
 
 Some consider the word *Gospel* as extending to all the gracious promises of God which are found scattered even in the Law and the Prophets. Nor can it be denied that, whenever God declares that he will be reconciled to men, and forgives their sins, he at the same time exhibits Christ, whose peculiar office it is, wherever he shines, to spread abroad the rays of joy. I acknowledge, therefore, that the Fathers were partakers of the same *Gospel* with ourselves, so far as relates to the faith of a gratuitous salvation. But as it is the ordinary declaration made by the Holy Spirit in the Scriptures, that the *Gospel* was first proclaimed when Christ came, let us also adhere to this mode of expression; and let us keep by that definition of the *Gospel* which I have given, that it is a solemn publication of the grace revealed in Christ. On this account the *Gospel* is called
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 1:16)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God to salvation to every one who believeth,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 1:16)</span></p>
 
 <!-- PAGE 14 -->
 
 because in it God displays his righteousness. It is called also an
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 5:20)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">embassy, by which he reconciles men to himself,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 5:20)</span></p>
 
 and as Christ is the pledge of the mercy of God, and of his fatherly love towards us, so he is, in a peculiar manner, the subject of the Gospel.
 
@@ -182,9 +178,7 @@ As to the Evangelist calling the Son of God <span style="color:#800000">*the Spe
 
 Now as God, in creating the world, revealed himself by that <span style="color:#800000">*Speech*</span>, so he formerly had him concealed with himself, so that there is a twofold relation; the former to God, and the latter to men. Servetus, a haughty scoundrel belonging to the Spanish nation, invents the statement, that this eternal <span style="color:#800000">*Speech*</span> began to exist at that time when he was displayed in the creation of the world, as if he did not exist before his power was made known by external operation. Very differently does the Evangelist teach in this passage; for he does not ascribe to <span style="color:#800000">*the Speech*</span> a <span style="color:#800000">*beginning*</span> of time, but says that he was *from the beginning*, and thus rises beyond all ages. I am fully aware how this dog barks against us, and what cavils were formerly raised by the Arians, namely, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in the beginning God created the heaven and the earth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Genesis 1:1)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in the beginning God created the heaven and the earth,</span> <span style="color:#000080">(</span><span style="color:#000080">Genesis 1:1)</span></p>
 
 which nevertheless are not eternal, because the word *beginning* refers to order, instead of denoting eternity. But the Evangelist meets this calumny when he says,
 
@@ -271,9 +265,7 @@ But as there are fanatics who rashly strain and torture this passage, so as to i
 <!-- PAGE 29 -->
 Here both the Verb and the Noun are highly emphatic. <span style="color:#800000">*He came*</span>. The Evangelist says that the Son of God <span style="color:#800000">*came*</span> to that place where he formerly was; and by this expression he must mean a new and extraordinary kind of presence, by which the Son of God was manifested, so that men might have a nearer view of him. <span style="color:#800000">*Into his own*</span>. By this phrase the Evangelist compares the Jews with other nations; because by an extraordinary privilege they had been adopted into the family of God. Christ therefore was first offered to them as his own household, and as belonging to his empire by a peculiar right. To the same purpose is that complaint of God by Isaiah:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The ox knoweth his owner, and the ass his master’s crib, but Israel</span> <span style="color:#000080">knoweth me not, (</span></p>
-
-<span style="color:#000080">Isaiah 1:3;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The ox knoweth his owner, and the ass his master’s crib, but Israel</span> <span style="color:#000080">knoweth me not, (</span><span style="color:#000080">Isaiah 1:3;)</span></p>
 
 for though he has dominion over the whole world, yet he represents himself to be, in peculiar manner, the Lord of Israel, whom he had collected, as it were, into a sacred fold.
 
@@ -286,15 +278,11 @@ Gospel, which might be said to have been banished from them, began to be spread 
 
 The circumlocution which the Evangelist has employed tends more to magnify the excellence of grace, than if he had said in a single word, that all who believe in Christ are made by him <span style="color:#800000">*sons of God*</span>. For he speaks here of the unclean and profane, who, having been condemned to perpetual ignominy, lay in the darkness of death. Christ exhibited an astonishing instance of his grace in conferring this honor on such persons, so that they began, all at once, to be <span style="color:#800000">*sons of God*</span>; and the greatness of this privilege is justly extolled by the Evangelist, as also by Paul, when he ascribes it to
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God, who is rich in mercy, for his great love</span> <span style="color:#000080">with which he loved us, (</span></p>
-
-<span style="color:#000080">Ephesians 2:4.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God, who is rich in mercy, for his great love</span> <span style="color:#000080">with which he loved us, (</span><span style="color:#000080">Ephesians 2:4.)</span></p>
 
 But if any person shall prefer to take the word *power* in its ordinary acceptation, still the Evangelist does not mean by it any intermediate faculty, or one which does not include the full and complete effect; but, on the contrary, means that Christ gave to the unclean and the uncircumcised what appeared to be impossible; for an incredible change took place when *out of stones* Christ *raised up children to God*, (Matthew 3:9.) The <span style="color:#800000">*power*</span>, therefore, is that *fitness* (<span style="color:#0000d4">ἱκανότης</span>) which Paul mentions, when he
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">gives thanks to God, who hath made us FIT</span> (or <span style="color:#000080">MEET</span>) <span style="color:#000080">to be</span> <span style="color:#000080">partakers of the inheritance of the saints, (</span></p>
-
-<span style="color:#000080">Colossians 1:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">gives thanks to God, who hath made us FIT</span> (or <span style="color:#000080">MEET</span>) <span style="color:#000080">to be</span> <span style="color:#000080">partakers of the inheritance of the saints, (</span><span style="color:#000080">Colossians 1:12.)</span></p>
 
 <!-- PAGE 31 -->
 <span style="color:#800000">*Who believe in his name*</span>. He expresses briefly the manner of *receiving* Christ, that is, *believing in him*. Having been engrafted into Christ by faith, we obtain the right of adoption, so as to be <span style="color:#800000">*the sons of God*</span>. And, indeed, as he is the only-begotten Son of God, it is only so far as we are members of him that this honor at all belongs to us. Here again the notion of the Papists about the word <span style="color:#800000">*power*</span> is refuted. <span style="color:#800000">[^f20]</span> The Evangelist declares that this <span style="color:#800000">*power*</span> is given to those who already <span style="color:#800000">*believe*</span>. Now it is certain that such persons are in reality <span style="color:#800000">*the sons of God*</span>. They detract too much from the value of faith who say that, by <span style="color:#800000">*believing*</span>, a man obtains nothing more than that he may become <span style="color:#800000">*a son of God*</span>, if he chooses; for instead of present effect they put a <span style="color:#800000">*power*</span> which is held in uncertainty and suspense.
@@ -378,9 +366,7 @@ But we must attend to the antithesis, when he contrasts <span style="color:#8000
 <!-- PAGE 40 -->
 The word <span style="color:#800000">*Truth*</span> denotes, in my opinion, a fixed and permanent state of things. By the word <span style="color:#800000">*Grace*</span> I understand the spiritual fulfillment of those things, the bare letter of which was contained in <span style="color:#800000">*the Law*</span>. And those two words may be supposed to refer to the same thing, by a well-known figure of speech, (hypallage;) as if he had said, that <span style="color:#800000">*grace*</span>, in which the *truth* of *the Law* consists, was at length exhibited in <span style="color:#800000">*Christ*</span>. But as the meaning will be in no degree affected, it is of no importance whether you view them as united or as distinguished. This at least is certain, that the Evangelist means, that in <span style="color:#800000">*the Law*</span> there was nothing more than a shadowy image of spiritual blessings, but that they are actually found in <span style="color:#800000">*Christ*</span>; whence it follows, that if you separate <span style="color:#800000">*the Law*</span> from <span style="color:#800000">*Christ*</span>, there remains nothing in it but empty figures. For this reason Paul says that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*the shadows*</span> <span style="color:#000080">were in</span> <span style="color:#000080">*the law*</span><span style="color:#000080">, but</span> <span style="color:#000080">*the body*</span> <span style="color:#000080">is</span> <span style="color:#000080">*in Christ*</span><span style="color:#000080">,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 2:17.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*the shadows*</span> <span style="color:#000080">were in</span> <span style="color:#000080">*the law*</span><span style="color:#000080">, but</span> <span style="color:#000080">*the body*</span> <span style="color:#000080">is</span> <span style="color:#000080">*in Christ*</span><span style="color:#000080">,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 2:17.)</span></p>
 
 And yet it must not be supposed that anything was exhibited by <span style="color:#800000">*the Law*</span> in a manner fitted to deceive; for <span style="color:#800000">*Christ*</span> is the soul which gives life to that which would otherwise have been dead under <span style="color:#800000">*the law*</span>. But here a totally different question meets us, namely, what <span style="color:#800000">*the law*</span> could do by itself and without Christ; and the Evangelist maintains that nothing permanently valuable is found in it until we come to Christ. This <span style="color:#800000">*truth*</span> consists in our obtaining through Christ that <span style="color:#800000">*grace*</span> which <span style="color:#800000">*the law*</span> could not at all bestow; and therefore I take the word <span style="color:#800000">*grace*</span> in a general sense, as denoting both the unconditional forgiveness of sins, and the renewal of the heart. For while the Evangelist points out briefly the distinction between the Old and New Testaments, <span style="color:#800000">[^f29Ά</span> (which is more fully described in Jeremiah 31:31,) he includes in this word all that relates to spiritual righteousness. Now this righteousness consists of two parts; first, that God is reconciled to us by free <span style="color:#800000">*grace*</span>, in not imputing to us our sins; and, secondly, that he has engraven his <span style="color:#800000">*law*</span> in our hearts, and, by his Spirit, renews men within to obedience to it; from which it is evident that <span style="color:#800000">*the Law*</span> is incorrectly and falsely expounded, if there are any whose attention it fixes on itself, or whom it hinders from coming to <span style="color:#800000">*Christ*</span>.
 
@@ -398,9 +384,7 @@ If it be thought unreasonable that the fathers are deprived of the knowledge of 
 
 <span style="color:#800000">f30</span> That vision which Moses obtained on the mountain was remarkable and more excellent than almost all the rest; and yet God expressly declares,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">thou shalt not be able to see my face, only thou shalt see my back,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Exodus 33:23;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">thou shalt not be able to see my face, only thou shalt see my back,</span> <span style="color:#000080">(</span><span style="color:#000080">Exodus 33:23;)</span></p>
 
 by which metaphor he shows that the time for a full and clear revelation had not yet come. It must also be observed that, when the fathers wished to behold God, they always turned their eyes towards Christ. I do not only mean that they beheld God in his eternal <span style="color:#800000">*Speech*</span>, but also that they attended, with their whole mind and with their whole heart, to the promised manifestation of Christ. For this reason we shall find that Christ afterwards said, *Abraham saw my day*, (John 8:56;) and that which is subordinate is not contradictory. It is therefore a fixed principle, that God, who was formerly invisible, hath now made himself visible in Christ.
 
@@ -460,9 +444,7 @@ It is a foolish mistake, however, into which some people have been led, of suppo
 
 <!-- PAGE 48 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">are in-grafted into the body of Christ, that our old man is crucified,</span> <span style="color:#000080">and that we rise again to newness of life, (</span></p>
-
-<span style="color:#000080">Romans 6:4, 5, 6;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">are in-grafted into the body of Christ, that our old man is crucified,</span> <span style="color:#000080">and that we rise again to newness of life, (</span><span style="color:#000080">Romans 6:4, 5, 6;)</span></p>
 
 and, in those cases, Scripture joins the power of Christ with the ministry of man; as, indeed, man is nothing else than the hand of Christ. Such modes of expression show, not what man can of himself accomplish, but what Christ performs by man, and by the sign, as his instruments. But as there is a strong tendency to fall into superstition, and as men, through the pride which is natural to them, take from God the honor due to him, and basely appropriate it to themselves; so Scripture, in order to restrain this blasphemous arrogance, sometimes distinguishes ministers from Christ, as in this passage, that we may learn that ministers are nothing and can do nothing.
 
@@ -496,9 +478,7 @@ Besides, he lays down but one method of <span style="color:#800000">*taking away
 
 The verb <span style="color:#0000d4">αίρειν</span> (*to take away*) may be explained in two ways; either that Christ took upon himself the load which weighed us down, as it is said that he *carried our sins on the tree*, (1 Peter 2:24;) and Isaiah says that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the chastisement of our peace was laid on him, (</span></p>
-
-<span style="color:#000080">Isaiah 53:5;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the chastisement of our peace was laid on him, (</span><span style="color:#000080">Isaiah 53:5;)</span></p>
 
 or that he *blots out* sins. But as the latter statement depends on the former, I gladly embrace both; namely, that Christ, by bearing our sins, *takes them away*. Although, therefore, sin continually dwells in us, yet there is none in the judgment of God, because when it has been annulled by the grace of Christ, it is not imputed to us. Nor do I dislike the remark of Chrysostom, that the verb in the present tense — <span style="color:#0000d4">ὁ αίρων</span>, *who taketh away*, denotes a continued act; for the satisfaction which Christ once made is always in full vigor. But he does not merely teach us that Christ *takes away sin*, but points out also the method, namely, that he hath reconciled the Father to us by means of his death; for this is what he means by the word <span style="color:#800000">*Lamb*</span>. Let us therefore learn that we become reconciled to God by the grace of
 
@@ -508,9 +488,7 @@ Christ, if we go straight to his death, and when we believe that he who was nail
 
 **30.** <span style="color:#800000">*This is he of whom I said.*</span> He comprehends every thing in a few words, when he declares that Christ is the person who, he said, was to be preferred to him; for hence it follows that John is nothing more than a herald sent on his account; and hence again it is evident that Christ is the Messiah. Three things are here stated; for when he says that a man <span style="color:#800000">*cometh after him,*</span> he means that he himself was before him in the order of time, to prepare the way for Christ, according to the testimony of Malachi,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Behold, I send my messenger before my face, (</span></p>
-
-<span style="color:#000080">Malachi 3:1.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Behold, I send my messenger before my face, (</span><span style="color:#000080">Malachi 3:1.)</span></p>
 
 Again, when he says that <span style="color:#800000">*he was preferred to himself*</span>, this relates to the glory with which God adorned his Son, when he came into the world to fulfill the office of a Redeemer. At last, the reason is added, which is, that Christ is far superior in dignity to John the Baptist. That honor, therefore, which the Father bestowed upon him was not accidental, but was due to his eternal majesty. But of this expression, <span style="color:#800000">*he was preferred to me*</span><span style="color:#800000">,</span> <span style="color:#800000">*because he was before me*</span>, I have already Spoken. <span style="color:#800000">[^f36]</span> **31.** <span style="color:#800000">*And I knew him not.*</span> That his testimony may not be suspected of having been given either from friendship or favor, he anticipates such a doubt, by affirming that he had no other knowledge of Christ than what he had obtained by divine inspiration. The meaning, therefore, amounts to this, that John does not speak at his own suggestion, nor for the favor of man, but by the inspiration of the Spirit and the command of God.
 
@@ -521,9 +499,7 @@ Again, when he says that <span style="color:#800000">*he was preferred to himsel
 
 A question now arises, why did <span style="color:#800000">*the Spirit*</span> at that time appear in the form of a <span style="color:#800000">*dove*</span>? We must always hold that there is a correspondence between the sign and the reality. When <span style="color:#800000">*the Spirit*</span> was given to the apostles, they *saw cloven tongues of fire*, (Acts 2:3,) because the preaching of the gospel was to be spread through all tongues, and was to possess the power of fire. But in this passage God intended to make a public representation of that mildness of Christ of which Isaiah speaks in lofty terms,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The smoking flax he will not quench, and the bruised reed he will</span> <span style="color:#000080">not break, (</span></p>
-
-<span style="color:#000080">Isaiah 42:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The smoking flax he will not quench, and the bruised reed he will</span> <span style="color:#000080">not break, (</span><span style="color:#000080">Isaiah 42:3.)</span></p>
 
 <!-- PAGE 54 -->
 It was then, for the first time, that <span style="color:#800000">*the Spirit was seen descending on him;*</span> not that he had formerly been destitute of him, but because he might be said to be then consecrated by a solemn rite. For we know that he remained in concealment, during thirty years, like a private individual, because the time for his manifestation was not yet come; but when he intended to make himself known to the world, he began with his baptism. At that time, therefore, he received <span style="color:#800000">*the Spirit*</span> not only for himself, but for his people; and on that account his descent was visible, that we may know that there dwells in him an abundance of all gifts of which we are empty and destitute. This may easily be inferred from the words of the Baptist; for when he says, <span style="color:#800000">*Upon whom thou shalt see the Spirit descending, and remaining on him, it is he who baptizeth with the Spirit*</span>, his meaning is, that the reason why *the Spirit* was beheld in a visible form, and *remained on* Christ, was, that he might water all his people with his fullness. What it is to <span style="color:#800000">*baptize with the Spirit*</span> I have already noticed in a few words; namely, that he imparts its efficacy to baptism, that it may not be vain or useless, and this he accomplishes by the power of his Spirit.
@@ -536,9 +512,7 @@ In the first place, it ought to be observed, that the *knowledge* here mentioned
 
 John indeed saw it, but it was rather for others than for himself. *Bucer* appropriately quotes that saying of Moses,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This shall be a sign to you, that after three days journey, you shall</span> <span style="color:#000080">sacrifice to me on the mountain, (</span></p>
-
-<span style="color:#000080">Exodus 3:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This shall be a sign to you, that after three days journey, you shall</span> <span style="color:#000080">sacrifice to me on the mountain, (</span><span style="color:#000080">Exodus 3:12.)</span></p>
 
 Undoubtedly, when they were going out, they already knew that God would conduct and watch over their deliverance; but this was a confirmation *a posteriori*, as the phrase is; that is, from the event, after it had taken place. In like manner, this came as an addition to the former revelation which had been given to John.
 
@@ -574,9 +548,7 @@ Undoubtedly, when they were going out, they already knew that God would conduct 
 
 **40.** <span style="color:#800000">*Andrew, Simon Peter’s brother.*</span> The design of the Evangelist, down to the end of the chapter, is to inform us how gradually the disciples were brought to Christ. Here he relates about Peter, and afterwards he will mention Philip and Nathanael. The circumstance of <span style="color:#800000">*Andrew*</span> immediately bringing his brother expresses the nature of faith, which does not conceal or quench the light, but rather spreads it in every direction. <span style="color:#800000">*Andrew*</span> has scarcely a spark, and yet, by means of it, he enlightens his brother. Woe to our indolence, therefore, if we do not, after having been fully enlightened, endeavor to make others partakers of the same grace. We may observe in <span style="color:#800000">*Andrew*</span> two things which Isaiah requires from the children of God; namely, that each should take his neighbor by the hand, and next, that he should say,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Come, let us go up into the mountain of the Lord,</span> <span style="color:#000080">and he will teach us, (</span></p>
-
-<span style="color:#000080">Isaiah 2:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Come, let us go up into the mountain of the Lord,</span> <span style="color:#000080">and he will teach us, (</span><span style="color:#000080">Isaiah 2:3.)</span></p>
 
 <!-- PAGE 58 -->
 For Andrew stretches out the hand to his brother, but at the same time he has this object in view, that he may become a fellow-disciple with him in the school of Christ. We ought also to observe the purpose of God, which determined that <span style="color:#800000">*Peter,*</span> who was to be far more eminent, was brought to the knowledge of Christ by the agency and ministry of Andrew; that none of us, however excellent, may refuse to be taught by an inferior; for that man will be severely punished for his peevishness, or rather for his pride, who, through his contempt of a man, will not deign to come to Christ.
@@ -744,9 +716,7 @@ The same arguments do not apply, in the present day, to our buildings for public
 
 <span style="color:#800000">*The zeal of thine house hath eaten me up.*</span> The meaning is, that the disciples at length came to know, that the zeal for the house of God, with which Christ burned, excited him to drive out of it those profanations. By a figure of speech, in which a part is taken for the whole, David employs the name of the temple to denote the whole worship of God; for the entire verse runs thus:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the zeal of thy house hath eaten me up, and the reproaches of them</span> <span style="color:#000080">who reproached thee have fallen on me, (</span></p>
-
-<span style="color:#000080">Psalm 69:9.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the zeal of thy house hath eaten me up, and the reproaches of them</span> <span style="color:#000080">who reproached thee have fallen on me, (</span><span style="color:#000080">Psalm 69:9.)</span></p>
 
 The second clause corresponds to the first, or rather it is nothing else than a repetition explaining what had been said. The amount of both clauses is, that David’s anxiety about maintaining the worship of God was so intense, that he cheerfully laid down his head to receive all *the reproaches* which wicked men threw against God; and that he burned with such <span style="color:#800000">*zeal,*</span> that this single feeling swallowed up every other. He tells us that he himself had such feelings; but there can be no doubt that he described in his own person what strictly belonged to the Messiah.
 
@@ -784,9 +754,7 @@ Corinthians 6:19; 2 Corinthians 6:16) but it is in a different sense, namely, be
 
 <span style="color:#800000">*I will raise it up again.*</span> Here Christ claims for himself the glory of his resurrection, though, in many passages of Scripture, it is declared to be the work of God the Father. But these two statements perfectly agree with each other; for, in order to give us exalted conceptions of the power of God, Scripture expressly ascribes to the Father that he raised up his Son from the dead; but here, Christ in a special manner asserts his own Divinity. And Paul reconciles both.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If THE SPIRIT OF HIM, that raised up Jesus from the dead dwell in</span> <span style="color:#000080">you, he that raised up Christ from the dead shall also quicken your</span> <span style="color:#000080">mortal bodies by HIS SPIRIT that dwelleth in you,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 8:11.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If THE SPIRIT OF HIM, that raised up Jesus from the dead dwell in</span> <span style="color:#000080">you, he that raised up Christ from the dead shall also quicken your</span> <span style="color:#000080">mortal bodies by HIS SPIRIT that dwelleth in you,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 8:11.)</span></p>
 
 While he makes *the Spirit* the Author of the resurrection, he calls Him indiscriminately sometimes *the Spirit of Christ*, and sometimes *the Spirit of the Father*.
 
@@ -823,9 +791,7 @@ When the Evangelist says, therefore, that those men <span style="color:#800000">
 
 <span style="color:#800000">*Because he knew them all.*</span> Nothing is more dangerous than hypocrisy, for this reason among others, that it is an exceedingly common fault. There is scarcely any man who is not pleased with himself; and while we deceive ourselves by empty flatteries, we imagine that God is blind like ourselves. But here we are reminded how widely his judgment differs from ours; for he sees clearly those things which we cannot perceive, because they are concealed by some disguise; and he estimates according to their hidden source, that is, according to the most secret feeling of the heart, those things which dazzle our eyes by false luster. This is what Solomon says, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God weighs in his balance the hearts of men, while they flatter</span> <span style="color:#000080">themselves in their ways, (</span></p>
-
-<span style="color:#000080">Proverbs 21:2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God weighs in his balance the hearts of men, while they flatter</span> <span style="color:#000080">themselves in their ways, (</span><span style="color:#000080">Proverbs 21:2.)</span></p>
 
 <!-- PAGE 86 -->
 
@@ -969,17 +935,13 @@ Whoever exclaims that he is offended by such meanness of language, or pleads it 
 <!-- PAGE 102 -->
 **13.** <span style="color:#800000">*No one hath ascended to heaven.*</span> He again exhorts Nicodemus not to trust to himself and his own sagacity, because no mortal man can, by his own unaided powers, enter into heaven, but only he who goes thither under the guidance of the Son of God. For *to ascend to heaven* means here, “to have a pure knowledge of the mysteries of God, and the light of spiritual understanding.” For Christ gives here the same instruction which is given by Paul, when he declares that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the sensual man does not comprehend the things which are of God,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Corinthians 2:16;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the sensual man does not comprehend the things which are of God,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians 2:16;)</span></p>
 
 and, therefore, he excludes from divine things all the acuteness of the human understanding, for it is far below God.
 
 But we must attend to the words, that Christ alone, who is heavenly, *ascends to heaven*, but that the entrance is closed against all others. For, in the former clause, he humbles us, when he excludes the whole world from *heaven*. Paul enjoins
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">those who are desirous to be wise with God to be fools with</span> <span style="color:#000080">themselves, (</span></p>
-
-<span style="color:#000080">1 Corinthians 3:18.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">those who are desirous to be wise with God to be fools with</span> <span style="color:#000080">themselves, (</span><span style="color:#000080">1 Corinthians 3:18.)</span></p>
 
 There is nothing which we do with greater reluctance. For this purpose we ought to remember, that all our senses fail and give way when we come to God; but, after having shut us out from heaven, Christ quickly proposes a remedy, when he adds, that what was denied to all others is granted to the Son of God. And this too is the reason why he calls himself the Son of man, that we may not doubt that we have an entrance into heaven in common with him who clothed himself with our flesh, that he might make us partakers of all blessings. Since, therefore, he is the Father’s only Counselor, (Isaiah 9:6,) he admits us into those secrets which otherwise would have remained in concealment.
 
@@ -998,9 +960,7 @@ A question now arises: Does Christ compare himself to the *serpent*, because the
 <!-- PAGE 105 -->
 And the words of Christ mean nothing else, when he declares the cause to be in the love of God. For if we wish to ascend higher, the Spirit shuts the door by the mouth of Paul, when he informs us that this love was founded on *the purpose of his will*, (Ephesians 1:5.) And, indeed, it is very evident that Christ spoke in this manner, in order to draw away men from the contemplation of themselves to look at the mercy of God alone. Nor does he say that God was moved to deliver us, because he perceived in us something that was worthy of so excellent a blessing, but ascribes the glory of our deliverance entirely to his love. And this is still more clear from what follows; for he adds, that <span style="color:#800000">*God gave his Son to men, that they may not perish.*</span> Hence it follows that, until Christ bestow his aid in rescuing the lost, all are destined to eternal destruction. This is also demonstrated by Paul from a consideration of the time;
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for he loved us while we were still enemies by sin,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 5:8, 10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for he loved us while we were still enemies by sin,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 5:8, 10.)</span></p>
 
 And, indeed, where sin reigns, we shall find nothing but the wrath of God, which draws death along with it. It is mercy, therefore, that reconciles us to God, that he may likewise restore us to life.
 
@@ -1026,15 +986,11 @@ when he is said to be *set for the destruction of many*, (Luke 2:34:) this may b
 
 <!-- PAGE 108 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God for salvation to every one who believeth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 1:16,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the power of God for salvation to every one who believeth,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 1:16,)</span></p>
 
 the ingratitude of many causes it to become to them death.. Both have been well expressed by Paul, when he boasts of
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having vengeance at hand, by which he will punish all the</span> <span style="color:#000080">adversaries of his doctrine after that the obedience of the godly</span> <span style="color:#000080">shall have been fulfilled, (</span></p>
-
-<span style="color:#000080">2 Corinthians 10:6)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having vengeance at hand, by which he will punish all the</span> <span style="color:#000080">adversaries of his doctrine after that the obedience of the godly</span> <span style="color:#000080">shall have been fulfilled, (</span><span style="color:#000080">2 Corinthians 10:6)</span></p>
 
 The meaning amounts to this, that the Gospel is especially, and in the first instance, appointed for believers, that it may be salvation to them; but that afterwards believers will not escape unpunished who, despising the grace of Christ, chose to have him as the Author of death rather than of life.
 
@@ -1122,9 +1078,7 @@ But what are ministers to do? Certainly, the Son of God calls them, that they ma
 <!-- PAGE 117 -->
 But it may be asked, Did not John also *come from heaven*, as to his calling and office, and was it not therefore the duty of men to hear the Lord speaking by his mouth? For he appears to do injustice to the heavenly doctrine which he delivers. I reply, this was not said absolutely, but by comparison. If ministers be separately considered, they speak as *from heaven*, with the highest authority, what God commanded them; but, as soon as they begin to be contrasted with Christ, they must no longer be anything. Thus the Apostle, comparing the Law with the Gospel, says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Since they escaped not who despised him that spoke on earth,</span> <span style="color:#000080">beware lest you despise him who is from heaven,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Hebrews 12:25.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Since they escaped not who despised him that spoke on earth,</span> <span style="color:#000080">beware lest you despise him who is from heaven,</span> <span style="color:#000080">(</span><span style="color:#000080">Hebrews 12:25.)</span></p>
 
 Christ, therefore, wishes to be acknowledged in his ministers, but in such a manner that he may remain the only Lord, and that they may be satisfied with the rank of servants; but especially when a comparison is made, he wishes to be so distinguished that he alone may be exalted.
 
@@ -1150,9 +1104,7 @@ But I am more disposed to follow Augustine, who explains that it was said concer
 
 The meaning is now plain, that *the Spirit was not given* to Christ <span style="color:#800000">*by measure,*</span> as if the power of grace which he possesses were in any way limited; as Paul teaches that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to every one is given according to the measure of the gift,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Ephesians 4:7,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to every one is given according to the measure of the gift,</span> <span style="color:#000080">(</span><span style="color:#000080">Ephesians 4:7,)</span></p>
 
 <!-- PAGE 120 -->
 
@@ -1206,9 +1158,7 @@ Abimelech, a native of the place, afterwards razed to its thundations, (Judges 9
 
 <span style="color:#800000">*And Jesus, fatigued by the journey.*</span> He did not pretend weariness, but was actually fatigued; for, in order that he might be better prepared for the exercise of sympathy and compassion towards us, he took upon him our weaknesses, as the Apostle shows that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we have not a high priest who cannot be touched with the feeling</span> <span style="color:#000080">of our infirmities, (</span></p>
-
-<span style="color:#000080">Hebrews 4:15.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we have not a high priest who cannot be touched with the feeling</span> <span style="color:#000080">of our infirmities, (</span><span style="color:#000080">Hebrews 4:15.)</span></p>
 
 <!-- PAGE 126 -->
 With this agrees the circumstance of the time; for it is not wonderful that, being thirsty and <span style="color:#800000">*fatigued,*</span> he rested at the well about noon; for as the day, from sunrise to sunset, had twelve hours, <span style="color:#800000">*the sixth hour*</span> was *Noon*. When the Evangelist says that *he sat* THUS, he means that it was the attitude of a man who was *fatigued*.
@@ -1235,9 +1185,7 @@ But this woman does what is natural to almost all of us; for, being desirous to 
 <!-- PAGE 128 -->
 **10.** <span style="color:#800000">*Jesus answered.*</span> Christ now, availing himself of the opportunity, begins to preach about the grace and power of his Spirit, and that to a woman who did not at all deserve that he should speak a word to her. This is certainly an astonishing instance of his goodness. For what was there in this wretched woman, that, from being a prostitute, she suddenly became a disciple of the Son of God? Though in all of us he has displayed a similar instance of his compassion. All the women, indeed, are not prostitutes, nor are all the men stained by some heinous crime; but what excellence can any of us plead as a reason why he deigned to bestow on us the heavenly doctrine, and the honor of being admitted into his family? Nor was it by accident that the conversation with such a person occurred; for the Lord showed us, as in a model, that those to whom he imparts the doctrine of salvation are not selected on the ground of merit. And it appears at first sight a wonderful arrangement, that he passed by so many great men in Judea, and yet held familiar discourse with this woman. But it was necessary that, in his person, it should be explained how true is that saying of the Prophet,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I was found by them that sought me not; I was made manifest to</span> <span style="color:#000080">them that asked not after me. I said to those who sought me not,</span> <span style="color:#000080">Behold, here I am, (</span></p>
-
-<span style="color:#000080">Isaiah 65:1.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I was found by them that sought me not; I was made manifest to</span> <span style="color:#000080">them that asked not after me. I said to those who sought me not,</span> <span style="color:#000080">Behold, here I am, (</span><span style="color:#000080">Isaiah 65:1.)</span></p>
 
 <span style="color:#800000">*If thou knewest the gift of God.*</span> These two clauses, <span style="color:#800000">*If thou knewest the gift of God,*</span> and, <span style="color:#800000">*who it is that talketh with thee,*</span> I read separately, viewing the latter as an interpretation of the former. For it was a wonderful kindness of God to have Christ present, who brought with him eternal life. The meaning will be more plain if, instead of *and*, we put *namely*, or some other word of that kind, <span style="color:#800000">[^f73]</span> thus: <span style="color:#800000">*If thou knewest the gift of God*</span>, NAMELY, *who it is that talketh with thee*. By these words we are taught that then only do we know what Christ is, when we understand what the Father hath given to us in him, and what benefits he brings to us. Now that knowledge begins with a conviction of our poverty; for, before any one desires a remedy, he must be previously affected with the view of his distresses. Thus the Lord invites not those who have drunk enough, but the thirsty, not those who are satiated, but the hungry, to eat and drink. And why would Christ be sent with the fullness of the Spirit, if we were not empty?
 
@@ -1279,9 +1227,7 @@ It ought also to be observed that the Samaritans falsely boasted of being descen
 
 **19.** <span style="color:#800000">*Sir, I perceive that thou art a Prophet.*</span> The fruit of the reproof now becomes evident; for not only does the woman modestly acknowledge her fault, but, being ready and prepared to listen to the doctrine of Christ, which she had formerly disdained, she now desires and requests it of her own accord. Repentance, therefore, is the commencement of true docility, as I have already said, and opens the gate for entering into the school of Christ. Again, the woman teaches us by her example, that when we meet with any teacher, we ought to avail ourselves of this opportunity, that we may not be ungrateful to God, who never sends *Prophets* to us without, as it were, stretching out the hand to invite us to himself. But we must remember what Paul teaches, that they who have grace given to them to teach well <span style="color:#800000">[^f75]</span> are sent to us by God; for
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">how shall they preach unless they are sent? (</span></p>
-
-<span style="color:#000080">Romans 10:15.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">how shall they preach unless they are sent? (</span><span style="color:#000080">Romans 10:15.)</span></p>
 
 **20.** <span style="color:#800000">*Our fathers.*</span> It is a mistaken opinion which some hold, that the woman, finding the reproof to be disagreeable and hateful, cunningly changes the subject. On the contrary, she passes from what is particular to what is general, and, having been informed of her sin, wishes to be generally instructed concerning the pure <span style="color:#800000">*worship*</span> of God. She takes a proper and regular course, when she consults <span style="color:#800000">*a Prophet,*</span> that she may not fall into a mistake in the <span style="color:#800000">*worship*</span> of God. It is as if she inquired at God himself in what manner he chooses to be *worshipped*; for nothing is more wicked than to contrive various modes of <span style="color:#800000">*worship*</span> without the authority of the word of God.
 
@@ -1307,9 +1253,7 @@ That we may not fall into this error, we ought always to be attentive to the pre
 
 The Samaritans were led astray by not considering, in the example of Jacob, how widely it differed from the condition of their own time. The Patriarchs were permitted to erect altars everywhere, because the place had not yet been fixed which the Lord afterwards selected; but from the time that God ordered the temple to be built on mount Zion, the freedom which they formerly enjoyed ceased. For this reason Moses said,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Hereafter you shall not do every one what appears right in his own</span> <span style="color:#000080">eyes, but only what I command you,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Deuteronomy 12:8, 14;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Hereafter you shall not do every one what appears right in his own</span> <span style="color:#000080">eyes, but only what I command you,</span> <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 12:8, 14;)</span></p>
 
 for, from the time that the Lord gave the Law, he restricted the true worship of himself to the requirements of that Law, though formerly a greater degree of liberty was enjoyed. A similar pretense was offered by those who worshipped in Bethel; for there Jacob had offered a solemn sacrifice to God, but after that the Lord had fixed the place of sacrifice at Jerusalem, it was no longer Bethel, *the house of God*, but Bethaven, *the house of wickedness*.
 
@@ -1338,9 +1282,7 @@ He now explains more largely what he had briefly glanced at about the abolition 
 
 <span style="color:#800000">*Because salvation is from the Jews.*</span> By these words he means that they have the superiority in this respect, that God had made with them a covenant of eternal salvation. Some restrict it to Christ, who was descended from the Jews; and, indeed, since
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the promises of God were confirmed and ratified in him,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 1:20,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the promises of God were confirmed and ratified in him,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 1:20,)</span></p>
 
 there is no salvation but in him. But as there can be no doubt that Christ gives the preference to the Jews on this ground, that they do not worship some unknown deity, but God alone, who revealed himself to them, and by whom they were adopted as his people; by the word *salvation* we ought to understand that saving manifestation which had been made to them concerning the heavenly doctrine.
 
@@ -1349,9 +1291,7 @@ But why does he say that it was <span style="color:#800000">*from the Jews,*</sp
 
 It ought to be observed that the Jews, when they had treacherously set aside the covenant of eternal life which God had made with their fathers, were deprived of the treasure which they had till that time enjoyed; for they had not yet been driven out of the Church of God. Now that they deny the Son, they have nothing in common with the Father;
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for whosoever denieth the Son hath not the Father,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 John 2:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for whosoever denieth the Son hath not the Father,</span> <span style="color:#000080">(</span><span style="color:#000080">1 John 2:23.)</span></p>
 
 The same judgment must be formed concerning all who have turned aside from the pure faith of the Gospel to their own inventions and the traditions of men. Although they who worship God according to their own judgment or human traditions flatter and applaud themselves in their obstinacy, this single word, thundering from heaven, lays prostrate all that they imagine to be divine and holy, <span style="color:#800000">*You worship what you do not know*</span>. It follows from this that, if we wish our religion to be approved by God, it must rest on knowledge obtained from His word.
 
@@ -1444,9 +1384,7 @@ Hypocrites, you discern by the face of the sky what sort of day tomorrow will be
 
 **36.** <span style="color:#800000">*And he who reapeth receiveth reward.*</span> How diligently we ought to devote ourselves to the work of God, he proves by another argument; namely, because a large and most excellent reward is reserved for our labor; for he promises that there will be <span style="color:#800000">*fruit,*</span> and <span style="color:#800000">*fruit*</span> not corruptible or fading. What he adds about <span style="color:#800000">*fruit*</span> may be explained in two ways; either it is an announcement of the <span style="color:#800000">*reward,*</span> and on that supposition he would say the same thing twice in different words; or, he applauds the labors of those who enrich the kingdom of God, as we shall afterwards find him repeating,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I have chosen you, that you may go and bear fruit, and that your</span> <span style="color:#000080">fruit may remain, (</span></p>
-
-<span style="color:#000080">John 15:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I have chosen you, that you may go and bear fruit, and that your</span> <span style="color:#000080">fruit may remain, (</span><span style="color:#000080">John 15:16.)</span></p>
 
 And certainly both considerations ought greatly to encourage the ministers of the word, that they may never sink under the toil, when they hear that a crown of glory is prepared for them in heaven, and know that the <span style="color:#800000">*fruit*</span> of their <span style="color:#800000">*harvest*</span> will not only be precious in the sight of God, but will also be eternal. It is for this purpose that Scripture everywhere mentions <span style="color:#800000">*reward,*</span> and not for the purpose of leading us to judge from it as to the merits of works; for which of us, if we come to a reckoning, will not be found more worthy of being punished for slothfulness than of being <span style="color:#800000">*rewarded*</span> for diligence? To the best laborers nothing else will be left than to approach to God in all humility to implore forgiveness. But the Lord, who acts towards us with the kindness of a father, in order to correct our sloth, and to encourage us who would otherwise be dismayed, deigns to bestow upon us an undeserved reward.
 
@@ -1457,9 +1395,7 @@ This is so far from overturning justification by faith that it rather confirms i
 
 But, in order that this passage may be properly understood, we must comprehend the contrast between <span style="color:#800000">*sowing*</span> and <span style="color:#800000">*reaping*</span>. The <span style="color:#800000">*sowing*</span> was the doctrine of the Law and the Prophets; for at that time the seed thrown into the soil remained, as it were, in the blade; but the doctrine of the Gospel, which brings men to proper maturity, is on that account justly compared to the <span style="color:#800000">*harvest.*</span> For the Law was very far from that perfection which has at length been exhibited to us in Christ. To the same purpose is the well-known comparison between infancy and manhood which Paul employs, when he says, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the heir, as long as he is a child, differeth not from a servant,</span> <span style="color:#000080">though he be lord of all, but is under tutors and governors until the</span> <span style="color:#000080">time appointed by the father, (</span></p>
-
-<span style="color:#000080">Galatians 4:1, 2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the heir, as long as he is a child, differeth not from a servant,</span> <span style="color:#000080">though he be lord of all, but is under tutors and governors until the</span> <span style="color:#000080">time appointed by the father, (</span><span style="color:#000080">Galatians 4:1, 2.)</span></p>
 
 In short, since the coming of Christ brought along with it present salvation, we need not wonder if the Gospel, by which the door of the heavenly kingdom is opened, be called the <span style="color:#800000">*harvest*</span> of the doctrine of the Prophets. And yet it is not at all inconsistent with this statement, that the Fathers under the Law were gathered into God’s barn; but this comparison must be referred to the manner of teaching; for, as the infancy of the Church lasted to the end of the Law, but, as soon as the Gospel had been preached, it immediately arrived at manhood, so at that time the salvation began to ripen, of which the <span style="color:#800000">*sowing*</span> only had been accomplished by the Prophets.
 
@@ -1535,9 +1471,7 @@ To the same purpose is that reproach which Paul brings against them, *the Jews d
 <!-- PAGE 160 -->
 **51.** <span style="color:#800000">*While he was still going down.*</span> Here is described the effect of faith, together with the efficacy of the word; for as Christ, by a word, restores to life this child who was just dying, so in one moment the father, by his faith, regains his son safe and sound. Let us therefore know that, whenever the Lord offers his benefits to us, his power will always be ready to accomplish whatever he promises, provided that the door be not shut against him by our unbelief. It does not always happen, I acknowledge, and even is not frequent or ordinary, that God instantly displays his arm for giving us assistance; but whenever he delays, he has always a good reason, and one that is highly advantageous to us. This at least is certain, that so far is he from delaying unnecessarily, that he rather contends with the obstacles which we throw in the way; and, therefore, when we do not see his immediate aid, let us consider how much of concealed distrust there is in us, or at least how small and limited our faith is. And we ought not to wonder if He is unwilling to allow his benefits to be lost, or to throw them at random on the ground, but chooses to bestow them on those who, by opening the bosom of their faith, are ready to receive them. And though he does not always assist his people in the same manner, yet in no instance will the faith of any one be fruitless, or hinder us from experiencing the truth of what the Prophet says, that the promises of God, even when they seem to delay, are in reality making great haste.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though it tarry, wait for it; because it will surely come,</span> <span style="color:#000080">it will not tarry, (</span></p>
-
-<span style="color:#000080">Habakkuk 2:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though it tarry, wait for it; because it will surely come,</span> <span style="color:#000080">it will not tarry, (</span><span style="color:#000080">Habakkuk 2:3.)</span></p>
 
 **52.** <span style="color:#800000">*Therefore he inquired at them.*</span> That this courtier asked his servants at what time his son began to recover, was done by a secret impulse from God, that the truth of the miracle might be rendered more conspicuous. For by nature we have an exceedingly wicked disposition to extinguish the light of the power of God, and Satan labors, by various means, to hide the works of God from our view; and, therefore, in order that they may obtain from us that praise which is due to them, they must be made so manifest that no room is left for doubt. Whatever then may be the ingratitude of men, still this circumstance does not permit so illustrious a work of Christ to be ascribed to chance.
 
@@ -1566,9 +1500,7 @@ To the same purpose is that reproach which Paul brings against them, *the Jews d
 <!-- PAGE 163 -->
 **3.** <span style="color:#800000">*In these lay a great multitude.*</span> It is possible that diseased persons lay in the porches to ask alms when the people were passing there who were going into the temple to worship; and there, too, it was customary to purchase the beasts which were to be offered in sacrifice. Yet at each feast God cured a certain number, that, in this way, he might recommend the worship prescribed in the Law and the holiness of the temple. But might it not appear foolish to believe, while we read of nothing of this kind having been done at a time when religion was in the most flourishing condition, and even since in the age of the Prophets miracles were not performed but on extraordinary occasions, that when the affairs of the nation were so decayed and almost ruinous, the power and grace of God were displayed with more than ordinary lustre? I reply, there were, in my opinion, two reasons. As the Holy Spirit, dwelling in the Prophets, was a sufficient witness of the divine presence, religion at that time needed no other confirmation; for the Law had been sanctioned by abundantly sufficient miracles, and God ceased not to express, by innumerable testimonies, his approbation of the worship which he had enjoined. But about the time of Christ’s coming, as they were deprived of the Prophets and their condition was very wretched, and as various temptations pressed upon them on every hand, they needed this extraordinary aid, that they might not think that God had entirely left them, and thus might be discouraged and fall away. For we know that Malachi was the last of the Prophets, and, therefore, he closes his doctrine with this admonition, that the Jews may
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">remember the Law delivered by Moses, (</span></p>
-
-<span style="color:#000080">Malachi 4:4,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">remember the Law delivered by Moses, (</span><span style="color:#000080">Malachi 4:4,)</span></p>
 
 until Christ appear. God saw it to be advantageous to deprive them of the Prophets, and to keep them in suspense for a time, that they might be inflamed with a stronger desire for Christ, and might receive him with greater reverence, when he should be manifested to them. Yet, that testimonies might not be wanting to the temple and sacrifices, and to the whole of that worship by which salvation should be made known to the world, the Lord retained among the Jews this gift of healing, that they might know that there was a good reason why God separated them from the other nations. For God, by curing the diseased, showed plainly — as by an arm stretched out from heaven — that he approved of this kind of worship which they derived from the injunction of the Law. Secondly, I have no doubt that God intended to remind them by these signs that the time of redemption was approaching, and that Christ, the Author of salvation, was already at hand, that the minds of all might be the better aroused. I think that signs, in that age, served this twofold purpose; first, that the Jews might know that God was present with them, and thus might remain steady in their obedience to the Law; and, secondly, that they might earnestly hope for a new and unwonted condition.
 
@@ -1591,9 +1523,7 @@ until Christ appear. God saw it to be advantageous to deprive them of the Prophe
 
 **9.** <span style="color:#800000">*And it was the Sabbath.*</span> Christ was well aware how great offense would immediately arise, when they saw a man walk along laden with burdens; for the Law expressly forbids
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to carry any burden whatever on the Sabbath-day,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Jeremiah 17:21.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to carry any burden whatever on the Sabbath-day,</span> <span style="color:#000080">(</span><span style="color:#000080">Jeremiah 17:21.)</span></p>
 
 <!-- PAGE 167 -->
 But there were two reasons why Christ, disregarding this danger, chose to make such an exhibition; first, that the miracle might be more extensively known; and, secondly, that he might give occasion, and, as it were, open up the way for the beautiful discourse which he delivered immediately afterwards. Of so great importance was the knowledge of that miracle, that he found it to be his duty to despise boldly the offense taken by the people, particularly because he had at hand a just defense, by which, though he did not pacify the ungodly, he abundantly refuted their calumnies. We ought therefore to observe this rule, that though the whole world kindle into rage, we ought to proclaim the glory of God and celebrate His works, so far as His glory requires that they should be made known. Nor ought we to be uneasy or discouraged, though our labors should not be immediately successful, provided that we keep in view the object which I have stated, and do not go beyond the limits of our office.
@@ -1650,9 +1580,7 @@ If it be objected, that the example of God is held out to men, that they may res
 
 <span style="color:#800000">*And I work.*</span> Leaving the defense of the present cause, Christ now explains the end and use of the miracle, namely, that by means of it he may be acknowledged to be the Son of God; for the object which he had in view in all his words and actions was, to show that he was the Author of salvation. What he now claims for himself belongs to his Divinity, as the Apostle also says, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he upholdeth all things by his powerful will, (</span></p>
-
-<span style="color:#000080">Hebrews 1:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he upholdeth all things by his powerful will, (</span><span style="color:#000080">Hebrews 1:3.)</span></p>
 
 <!-- PAGE 173 -->
 
@@ -1696,9 +1624,7 @@ Let us therefore keep Christ before our eyes, as he was sent into the world by t
 
 John elsewhere declares,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who hath not the Son hath not the Father, (</span></p>
-
-<span style="color:#000080">1 John 2:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who hath not the Son hath not the Father, (</span><span style="color:#000080">1 John 2:23.)</span></p>
 
 Mahometans and Jews do indeed adorn with beautiful and magnificent titles the God whom they worship; but we ought to remember that the name of God, when it is separated from Christ, is nothing else than a vain imagination. Whoever then desires to have his worship approved by the true God, let him not turn aside from Christ. Nor was it otherwise with the Fathers under the Law; for though they beheld Christ darkly under shadows, yet never did God reveal himself out of Christ. But now, since Christ has been manifested in the flesh and appointed to be King over us, the whole world must bend the knee to him, in order to obey God; for the Father having made him sit at his right hand, he who forms a conception of God without Christ takes away the half of him.
 
@@ -1714,9 +1640,7 @@ Mahometans and Jews do indeed adorn with beautiful and magnificent titles the Go
 
 WILL PASS *from death to life*; but this has arisen from the ignorance and rashness of some person who, not understanding the meaning of the Evangelist, has taken more liberty than he ought to have taken; for the Greek word <span style="color:#0000d4">μεταβέβηκε</span> (*hath passed*) has no ambiguity whatever. There is no impropriety in saying that we have already *passed from death to life*; for the *incorruptible seed* of life (1 Peter 1:23) resides in the children of God, and they already sit in the heavenly glory with Christ by hope, (Colossians 3:3,) and they have *the kingdom of God* already established *within them*, (Luke 17:21.) For though their *life be hidden*, they do not on that account cease to possess it by faith; and though they are besieged on every side by faith, they do not cease to be calm on this account, that they know that they are in perfect safety through the protection of Christ. Yet let us remember that believers are now in life in such a manner that they always carry about with them the cause of death; but the Spirit, who dwells in us, is *life*, which will at length destroy the remains of *death*; for it is a true saying of Paul, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">death is the last enemy that shall be destroyed,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Corinthians 15:26.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">death is the last enemy that shall be destroyed,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians 15:26.)</span></p>
 
 And, indeed, this passage contains nothing that relates to the complete destruction of death, or the entire manifestation of life. But though life be only begun in us, Christ declares that believers are so certain of obtaining it, that they ought not to fear *death*; and we need not wonder at this, since they are united to him who is the inexhaustible fountain of *life*.
 
@@ -1753,9 +1677,7 @@ God, being far removed from us, would resemble an unknown and hidden source, for
 
 <span style="color:#800000">*Because he is the Son of man.*</span> This reason, which is immediately added, deserves particularly to be observed, for it means that he comes forth to men, adorned with such magnificence of power, that he may impart to them what he has received from the Father. Some think that this passage contains nothing else than what is said by Paul, that Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having been in the form of God emptied himself by taking upon</span> <span style="color:#000080">him the form of a servant, and humbled himself even to the death</span> <span style="color:#000080">of the cross; and therefore God hath exalted him, and given him a</span> <span style="color:#000080">name more illustrious than any name, that every knee may bow</span> <span style="color:#000080">before him (</span></p>
-
-<span style="color:#000080">Philippians 2:7-10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having been in the form of God emptied himself by taking upon</span> <span style="color:#000080">him the form of a servant, and humbled himself even to the death</span> <span style="color:#000080">of the cross; and therefore God hath exalted him, and given him a</span> <span style="color:#000080">name more illustrious than any name, that every knee may bow</span> <span style="color:#000080">before him (</span><span style="color:#000080">Philippians 2:7-10.)</span></p>
 
 <!-- PAGE 183 -->
 But for my own part, I regard the meaning as more extensive: that Christ, so far as he is man, was appointed by the Father to be the Author of life, that it may not be necessary for us to go far to seek it; for Christ did not receive it for himself, as if he needed it, but in order to enrich us by his wealth. It may be summed up thus: “What had been hidden in God is revealed to us in Christ as man, and *life*, which was formerly inaccessible, is now placed before our eyes.” There are some who separate this argument from its immediate connection, and join it to the following clause; but this is a forced interpretation, and is at variance with Christ’s meaning.
@@ -1811,9 +1733,7 @@ Father’s will is his rule, and therefore that He will defend him against all a
 
 **34.** <span style="color:#800000">*I receive not testimony from men.*</span> Yet it was not in vain that God chose Christ to be a witness to him, and Christ himself declares, on another occasion, that the disciples
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">will be his witnesses. You shall be witnesses to me, both in</span> <span style="color:#000080">Jerusalem, and in all Judea, and in Samaria, and unto the uttermost</span> <span style="color:#000080">part of the earth, (</span></p>
-
-<span style="color:#000080">Acts 1:8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">will be his witnesses. You shall be witnesses to me, both in</span> <span style="color:#000080">Jerusalem, and in all Judea, and in Samaria, and unto the uttermost</span> <span style="color:#000080">part of the earth, (</span><span style="color:#000080">Acts 1:8.)</span></p>
 
 <!-- PAGE 188 -->
 I reply, Christ avails himself of the <span style="color:#800000">*testimony*</span> of John, not because he needs it, but so far as it is advantageous to us to receive from it some confirmation. Men borrow <span style="color:#800000">*testimony*</span> from one another, because they cannot dispense with that assistance. The case is different with God and Christ. For if philosophers assert that virtue has no need of foreign aid, what has man in himself to lend support to the truth of God? And Christ immediately adds, that he produces the TESTIMONY of John on their account: <span style="color:#800000">*these things I say that you may be saved.*</span> By this statement he means that it is not so much from a regard to himself as from a desire to promote the advantage of men, that he raises up the heralds of his Gospel by whom he testifies to us concerning his will. In this we see also a striking proof of his wonderful goodness, by which he regulates all things for our salvation. It is therefore our duty, on the other hand, to strive that the great care which he bestows in *saving* us may not be fruitless.
@@ -1871,9 +1791,7 @@ Again, we are taught by this passage, that if we wish to obtain the knowledge of
 
 **42.** <span style="color:#800000">*That you have not the love of God in you. The love of God*</span> is here put for all religious feelings; for no man can <span style="color:#800000">*love God*</span> without beholding him with admiration and submitting entirely to his authority; as, on the other hand, when <span style="color:#800000">*the love of God*</span> does not prevail, there can be no desire to obey him. That is the reason why Moses gives this as the summary or recapitulation (<span style="color:#0000d4">ἀνακεφαλαίωσις</span>) of the Law:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">thou shalt love the Lord thy God with all thy heart, and with all</span> <span style="color:#000080">thy soul, and with all thy might, (</span></p>
-
-<span style="color:#000080">Deuteronomy 6:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">thou shalt love the Lord thy God with all thy heart, and with all</span> <span style="color:#000080">thy soul, and with all thy might, (</span><span style="color:#000080">Deuteronomy 6:5.)</span></p>
 
 <!-- PAGE 194 -->
 
@@ -1882,9 +1800,7 @@ Again, we are taught by this passage, that if we wish to obtain the knowledge of
 <!-- PAGE 195 -->
 <span style="color:#800000">*If another come in his own name, him you will receive.*</span> That the Jews *do not love God*, and have no reverence for him, Christ proves by this argument, that they will eagerly receive the false prophets, while they refuse to obey God; for he takes for granted, that it is a sign of a wicked and ungodly mind, when men disregard truth and willingly assent to falsehoods. If it be objected that this is generally done rather through ignorance than through malice, the answer is easy. No man is exposed to the impostures of Satan, except so far as, through some wicked disposition, he prefers falsehood to truth. For how comes it that we are deaf when God speaks, <span style="color:#800000">[^f109]</span> and that Satan finds us ready and active, but because we are averse to righteousness, and of our own accord desire iniquity? Though it ought to be observed that here Christ speaks chiefly of those whom God peculiarly enlightened, as he bestowed on the Jews this privilege, that, having been instructed in his Law, they might keep the right way of salvation. It is certain that such persons lend an ear to false teachers for no other reason than because they wish to be deceived. Accordingly, Moses says that, when false prophets arise, this is intended to prove and try the people *if they love the Lord their God*, (Deuteronomy 13:3.) In many persons, no doubt, there appears to be an innocent and guileless simplicity, <span style="color:#800000">[^f110]</span> but their eyes are undoubtedly blinded by the hypocrisy which lurks within their minds. For it is certain that God never shuts the door to those who knock, (Matthew 7:8,) never disappoints those who sincerely pray to him, (Isaiah 45:19.) Justly, therefore, does Paul ascribe it to the vengeance of God, when the power of deceiving is given to Satan,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that they who have rejected the truth, and taken pleasure in</span> <span style="color:#000080">unrighteousness, may believe a lie, and says that they perish who</span> <span style="color:#000080">did not receive the love of the truth, that they might be saved,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Thessalonians 2:9, 12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that they who have rejected the truth, and taken pleasure in</span> <span style="color:#000080">unrighteousness, may believe a lie, and says that they perish who</span> <span style="color:#000080">did not receive the love of the truth, that they might be saved,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Thessalonians 2:9, 12.)</span></p>
 
 In this manner is discovered the hypocrisy of many who, devoted to the impostures and wicked superstitions of the Pope, burn with envenomed rage against the Gospel; for if they had hearts disposed to the fear of God, that fear would likewise produce obedience.
 
@@ -1954,9 +1870,7 @@ Let us now sum up the meaning of the whole miracle. It has this in common with t
 
 Besides, Christ plainly showed that he not only bestows spiritual life on the world, but that his Father commanded him also to nourish the body. For abundance of all blessings is committed to his hand, that, as a channel, he may convey them to us; though I speak incorrectly by calling him a *channel*, for he is rather the living fountain flowing from the eternal Father. Accordingly, Paul prays that all blessings may come to us *from God the Father*, *and from the Lord Jesus Christ*, in common, (1 Corinthians 1:3;) and, in another passage, he shows that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in all things we ought to give thanks to God the Father, through our</span> <span style="color:#000080">Lord Jesus Christ, (</span></p>
-
-<span style="color:#000080">Ephesians 5:20.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in all things we ought to give thanks to God the Father, through our</span> <span style="color:#000080">Lord Jesus Christ, (</span><span style="color:#000080">Ephesians 5:20.)</span></p>
 
 And not only does this office belong to his eternal Divinity, but even in his human nature, and so far as he has taken upon him our flesh, <span style="color:#800000">[^f120]</span> the Father has appointed him to be the dispenser, that by his hands he may feed us. Now, though we do not every day see miracles before our eyes, yet not less bountifully does God display his power in feeding us. And indeed we do not read that, when he wished to give a supper to his people, he used any new means; and, therefore, it would be an inconsiderate prayer, if any one were to ask that meat and drink might be given to him by some unusual method.
 
@@ -1964,9 +1878,7 @@ And not only does this office belong to his eternal Divinity, but even in his hu
 
 Again, Christ did not provide great delicacies for the people, but they who saw his amazing power displayed in that supper, were obliged to rest satisfied with barley-bread and fish without sauce. <span style="color:#800000">[^f121]</span> And though he does not now satisfy <span style="color:#800000">*five thousand men with five loaves*</span><span style="color:#800000">,</span> still he does not cease to feed the whole world in a wonderful manner. It sounds to us, no doubt, like a paradox, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">man liveth not by bread alone, but by the word which proceedeth</span> <span style="color:#000080">out of the mouth of God, (</span></p>
-
-<span style="color:#000080">Deuteronomy 8:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">man liveth not by bread alone, but by the word which proceedeth</span> <span style="color:#000080">out of the mouth of God, (</span><span style="color:#000080">Deuteronomy 8:3.)</span></p>
 
 For we are so strongly attached to outward means, that nothing is more difficult than to depend on the providence of God. Hence it arises that we tremble so much, as soon as we have not bread at hand. And if we consider every thing aright, we shall be compelled to discern the blessing of God in all the creatures which serve for our bodily support; <span style="color:#800000">[^f122]</span> but use and frequency lead us to undervalue the miracles of nature. And yet, in this respect, it is not so much our stupidity as our malignity that hinders us; for where is the man to be found who does not choose to wander astray in his mind, and to encompass heaven and earth a hundred times, rather than look at God who presents himself to his view?
 
@@ -1987,9 +1899,7 @@ For we are so strongly attached to outward means, that nothing is more difficult
 
 **15.** <span style="color:#800000">*To make him a king.*</span> When those men intended to give to Christ the title and honor of king, there was some ground for what they did. But they erred egregiously in taking upon themselves the liberty of *making a king*; for Scripture ascribes this as peculiar to God alone, as it is said,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I have appointed my king on my holy hill of Zion,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Psalm 2:6.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I have appointed my king on my holy hill of Zion,</span> <span style="color:#000080">(</span><span style="color:#000080">Psalm 2:6.)</span></p>
 
 <!-- PAGE 206 -->
 Again, what sort of *kingdom* do they contrive for him? An earthly one, which is utterly inconsistent with his person. Hence let us learn how dangerous it is, in the things of God, to neglect His word, and to contrive anything of our own opinion; for there is nothing which the foolish subtlety of our understanding does not corrupt. And what avails the pretense of zeal, when by our disorderly worship we offer a greater insult to God than if a person were expressly and deliberately to make an attack on his glory?
@@ -2048,9 +1958,7 @@ Pliny, in his fifth book, states that this lake was six miles in breadth, and si
 
 It is of great importance, therefore, what we keep in view in the miracles of Christ; for he who does not aspire to the kingdom of God, but rests satisfied with the conveniences of the present life, seeks nothing else than to fill his belly. In like manner, there are many persons in the present day who would gladly embrace the gospel, if it were free from the bitterness of the cross, and if it brought nothing but carnal pleasures. Nay, we see many who make a Christian profession, that they may live in greater gaiety and with less restraint. Some through the expectation of gain, others through fear, and others for the sake of those whom they wish to please, profess to be the disciples of Christ. In seeking Christ, therefore, the chief point is, to despise the world and
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">seek the kingdom of God and his righteousness,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 6:33.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">seek the kingdom of God and his righteousness,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 6:33.)</span></p>
 
 <!-- PAGE 212 -->
 
@@ -2064,9 +1972,7 @@ Next, we ought to see what is the present question; for, since the power of Chri
 
 <!-- PAGE 213 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">commences the work of our salvation, that he may perform it till</span> <span style="color:#000080">the day of Christ, (</span></p>
-
-<span style="color:#000080">Philippians 1:6.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">commences the work of our salvation, that he may perform it till</span> <span style="color:#000080">the day of Christ, (</span><span style="color:#000080">Philippians 1:6.)</span></p>
 
 For this reason we must receive the gifts of the Spirit, that they may be earnests and pledges of eternal life. For, though the reprobate, after having tasted this food, frequently reject it, so that it is not permanent in them, yet believing souls feel that enduring power, when they are made partakers of the power of the Holy Spirit in his gifts, which is not of short duration, but, on the contrary, never fails.
 
@@ -2115,9 +2021,7 @@ What he formerly called <span style="color:#800000">*the bread of heaven,*</span
 
 <span style="color:#800000">*Which hath come down from heaven.*</span> In the <span style="color:#800000">*coming down from heaven*</span> two things are worthy of observation; first, that we have a Divine life in Christ, because he has come from God to be the Author of life to us; secondly, that the heavenly life is near us,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">so that we do not need to fly above the clouds or to cross the sea,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Deuteronomy 30:12, 13;</span> <span style="color:#000080">Romans 10:6-8;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">so that we do not need to fly above the clouds or to cross the sea,</span> <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 30:12, 13;</span> <span style="color:#000080">Romans 10:6-8;)</span></p>
 
 for the reason why Christ *descended* to us was, that no man could ascend above.
 
@@ -2149,9 +2053,7 @@ Those who infer from this passage that *to eat* Christ is *faith*, and nothing e
 
 **36.** <span style="color:#800000">*But I have told you.*</span> He now reproves them for wickedly rejecting the gift of God, which is offered to them. Now, that man is chargeable with wicked contempt of God, who rejects what he knows that God has given him. If Christ had not made known his power, and plainly showed that he came from God, the plea of ignorance might have alleviated their guilt; but when they reject the doctrine of him whom they formerly acknowledged to be the Lord’s Messiah, it is extreme baseness. It is no doubt true, that men never resist God purposely, so as to reflect that they have to do with God; and to this applies the saying of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They would never have crucified the Lord of glory, if they had</span> <span style="color:#000080">known him (</span></p>
-
-<span style="color:#000080">1 Corinthians 2:8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They would never have crucified the Lord of glory, if they had</span> <span style="color:#000080">known him (</span><span style="color:#000080">1 Corinthians 2:8.)</span></p>
 
 But unbelievers, because they willingly shut their eyes against the light are justly said to see that which immediately vanishes from their sight, because Satan darkens their understandings. This, at least, is beyond all controversy, that when he said that they *saw*, we must not understand him to mean his bodily appearance, but rather that he describes their voluntary blindness, because they might have known what he was, if their malice had not prevented them.
 
@@ -2194,9 +2096,7 @@ They are madmen, therefore, who seek their own salvation or that of others in th
 
 **41.** <span style="color:#800000">*The Jews therefore murmured concerning him.*</span> The Evangelist explains the cause of the murmuring to have been, that the Jews were offended at the mean condition of Christ’s human nature, <span style="color:#800000">[^f148]</span> and did not perceive in him any thing Divine or heavenly. Yet he shows that they had a twofold obstruction. One they had framed for themselves out of a false opinion, when they said, <span style="color:#800000">*Is not this Jesus, the son of Joseph, whose father and mother we hnow?*</span> Another arose from a wicked sentiment, that they did not think that Christ was the Son of God, because he came down to men clothed with our flesh. <span style="color:#800000">[^f149]</span> But we are guilty of excessive malignity, if we despise the Lord of glory because on our account
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he emptied himself, and took upon him the form of a servant,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Philippians 2:7;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he emptied himself, and took upon him the form of a servant,</span> <span style="color:#000080">(</span><span style="color:#000080">Philippians 2:7;)</span></p>
 
 for this was rather an illustrious proof of his boundless love towards us, and of his wonderful grace. Besides, the Divine majesty of Christ was not so concealed under the mean and contemptible appearance of the flesh, as not to give out the rays of his brightness in a variety of ways; but those gross and stupid men wanted eyes to see his conspicuous glory.
 
@@ -2332,9 +2232,7 @@ Thus we ought to repress the wickedness of those who, urged on by nothing but th
 
 **62.** <span style="color:#800000">*What if you shall see the Son of man ascend to where he was before?*</span> The mean and despicable condition of Christ which they saw before their eyes, while, clothed with flesh, he was not at all different from other men, prevented them from submitting to his Divine power; but now — by withdrawing, as it were, the veil — he calls them to behold his heavenly glory, as if he had said, “Because I converse among men without honor, I am despised by you, and you recognize in me nothing that is Divine; but ere long God will adorn me with splendid power, and, withdrawing me from the contemptible state of mortal life, will raise me above the heavens.” For, in the resurrection of Christ, so great was the power displayed by the Holy Spirit, that it plainly showed Christ to be the Son of God, as Paul also shows, (Romans 1:4.) And when it is said,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou art my Son, today have I begotten thee, (</span></p>
-
-<span style="color:#000080">Psalm 2:7,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou art my Son, today have I begotten thee, (</span><span style="color:#000080">Psalm 2:7,)</span></p>
 
 the resurrection is brought forward as a proof from which that glory of Christ ought to be acknowledged, and his *ascension* to heaven was the completion of that glory. When he says that *he was formerly in heaven*, this does not apply strictly to his human nature, and yet he speaks of <span style="color:#800000">*the Son of man;*</span> but since the two natures in Christ constitute one person, it is not an unusual way of speaking to transfer to one nature what is peculiar to the other.
 
@@ -2372,9 +2270,7 @@ As to the sentence breaking off in so abrupt a manner, it is probable that this 
 
 **66.** <span style="color:#800000">*From that time many of his disciples went back.*</span> The Evangelist now relates what trouble was the consequence of that sermon. It is a dreadful and monstrous thing, that so kind and gracious an invitation of Christ could have alienated the minds of many, and especially of those who had formerly professed to belong to him, and were even his ordinary <span style="color:#800000">*disciples.*</span> But this example is held out to us for a mirror, as it were, in which we may perceive how great is the wickedness and ingratitude of men, who turn a plain road into an occasion of stumbling to them, that they may not come to Christ. Many would say that it would have been better that a sermon of this kind should never have been preached, which occasioned the apostacy of many. But we ought to entertain a widely different view; for it was then necessary, and now is daily necessary, that what had been foretold concerning Christ should be perceived in his doctrine, namely, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he is the stone of stumbling, (</span></p>
-
-<span style="color:#000080">Isaiah 8:14.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he is the stone of stumbling, (</span><span style="color:#000080">Isaiah 8:14.)</span></p>
 
 <!-- PAGE 245 -->
 We ought, indeed, to regulate our doctrine in such a manner that none may be offended through our fault; as far as possible, we ought to retain all; and, in short, we ought to take care that we do not, by talking inconsiderately or at random, <span style="color:#800000">[^f173]</span> disturb ignorant or weak minds. But it will never be possible for us to exercise such caution that the doctrine of Christ shall not be the occasion of offense to many; because the reprobate, who are devoted to destruction, suck venom from the most wholesome food, and gall from honey. The Son of God undoubtedly knew well what was useful, and yet we see that he cannot avoid <span style="color:#800000">[^f174]</span> offending <span style="color:#800000">*many of his disciples.*</span> Whatever then may be the dislike entertained by many persons for pure doctrine, still we are not at liberty to suppress it. Only let the teachers of the Church remember the advice given by Paul, that *the word of God* ought to be *properly divided*, (2 Timothy 2:15;) and next let them advance boldly amidst all offenses. And if it happen that many apostatize, let us not be disgusted at the word of God, because it is not relished by the reprobate; for they who are so much shaken by the revolt of some that, when those persons fall away, they are immediately discouraged, are too delicate and tender.
@@ -2383,9 +2279,7 @@ We ought, indeed, to regulate our doctrine in such a manner that none may be off
 
 **67.** <span style="color:#800000">*Jesus therefore said to the twelve.*</span> As the faith of the apostles might be greatly shaken, when they saw that they were so small a remnant of a great multitude, Christ directs his discourse to them, and shows that there is no reason why they should allow themselves to be hurried away by the lightness and unsteadiness of others. When he asks them if <span style="color:#800000">*they also wish to go away,*</span> he does so in order to confirm their faith; for, by exhibiting to them himself, that they may remain with him, he likewise exhorts them not to become the companions of apostates. And, indeed, if faith be founded on Christ, it will not depend on men, and will never waver, though it should see heaven and earth mingling. We ought also to observe this circumstance, that Christ, when deprived of nearly all his disciples, retains <span style="color:#800000">*the twelve*</span> only, in like manner as Isaiah was formerly commanded to
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">bind the testimony and seal the law among the disciples,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Isaiah 8:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">bind the testimony and seal the law among the disciples,</span> <span style="color:#000080">(</span><span style="color:#000080">Isaiah 8:16.)</span></p>
 
 By such examples, every one of the believers is taught to follow God, even though he should have no companion.
 
@@ -2397,9 +2291,7 @@ Christ, along with his brethren; namely, because they feel that his doctrine is 
 
 <span style="color:#800000">*Thou hast the words of eternal life.*</span> When he says <span style="color:#800000">*the words of life*</span>, by the phrase <span style="color:#800000">*of life*</span>, he means *quickening*, using the genitive case instead of the adjective, which is a very common mode of expression among the Hebrews. It is a remarkable commendation bestowed on the Gospel, that it administers to us *eternal life*, as Paul testifies, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it is the power of God for salvation to every one who believeth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 1:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it is the power of God for salvation to every one who believeth,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 1:16.)</span></p>
 
 True, the Law also contains *life*, but because it denounces against all transgressors <span style="color:#800000">[^f175]</span> the condemnation of eternal death, it can do nothing but kill. Widely different is the manner in which life is offered to us in the Gospel, that is, when *God reconciles us to himself* through free grace, *by not imputing our sins*, (2 Corinthians 5:19.) It is no ordinary assertion that Peter makes concerning Christ, when he says that he has <span style="color:#800000">*the words of eternal life;*</span> but he ascribes this to Christ as belonging to him alone. Hence follows the second statement which I glanced at a little ago, that as soon as they have gone away from Christ, there remains for them everywhere nothing but death. Certain destruction, therefore, awaits all who, not satisfied with that Teacher, fly to the inventions of men.
 
@@ -2412,9 +2304,7 @@ True, the Law also contains *life*, but because it denounces against all transgr
 
 <span style="color:#800000">*And one of you is a devil.*</span> He unquestionably intended, by this name, to hold up Judas to the utmost detestation; for they are mistaken who extenuate the atrocity implied in the name and indeed we cannot sufficiently execrate those who dishonor so sacred an office. Teachers who faithfully discharge their office are called *angels*.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They should seek the law at his mouth, for he is THE ANGEL of the</span> <span style="color:#000080">Lord of Hosts, (</span></p>
-
-<span style="color:#000080">Malachi 2:7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They should seek the law at his mouth, for he is THE ANGEL of the</span> <span style="color:#000080">Lord of Hosts, (</span><span style="color:#000080">Malachi 2:7.)</span></p>
 
 <!-- PAGE 248 -->
 Justly, therefore, is he accounted <span style="color:#800000">*a devil,*</span> who, after having been admitted to so honorable a rank, is corrupted through his treachery and wickedness. Another reason is, that God allows more power and liberty to Satan over wicked and ungodly ministers, than over other ordinary men; and therefore, if they who were <span style="color:#800000">*chosen*</span> to be pastors are driven by diabolical rage, so as to resemble wild and monstrous beasts, so far are we from being entitled, on that account, to despise the honorable rank to which they belong, that we ought rather to honor it the more, when the profanation of it is followed by so fearful a punishment.
@@ -2436,9 +2326,7 @@ Justly, therefore, is he accounted <span style="color:#800000">*a devil,*</span>
 
 **1.** <span style="color:#800000">*Jesus walked in Galilee.*</span> The Evangelist appears not to pursue a continued narrative, but to select out of what occurred at different times those events which were worthy of being related. He says that Christ sojourned for a time in Galilee, because he could not remain in safety anywhere among the Jews. If any person think it strange that Christ sought a place of concealment, who, by the mere act of his will, could break and render powerless all the efforts of his enemies, it is easy to reply, that he remembered the commission which he had received from the Father, and determined to confine himself within the limits which belonged to him as man; for,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having taken upon him the form of a servant, he emptied himself,</span> <span style="color:#000080">till the Father exalted him, (</span></p>
-
-<span style="color:#000080">Philippians 2:6-8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">having taken upon him the form of a servant, he emptied himself,</span> <span style="color:#000080">till the Father exalted him, (</span><span style="color:#000080">Philippians 2:6-8.)</span></p>
 
 If it be objected that, as he knew the time of his death, which had been foreordained and determined in the purpose of God, <span style="color:#800000">[^f176]</span> he had no reason for avoiding it, the former solution applies here also; for he conducted himself as a man who was liable to dangers, and, therefore, it was not proper that he should throw himself at random into dangerous situations.
 
@@ -2456,9 +2344,7 @@ Jews might call to remembrance, that their fathers lived forty years in <span st
 <!-- PAGE 252 -->
 **4.** <span style="color:#800000">*If thou dost these things;*</span> that is, if thou aspirest to such greatness that all may applaud thee, direct towards thee the eyes of all. And they add, <span style="color:#800000">*show thyself to the world,*</span> using the word <span style="color:#800000">*world,*</span> as contrasted with the small number of persons among whom he was spending his time without honor. We might also draw from it another meaning. “<span style="color:#800000">*If thou dost these things*</span>, that is, since thou art endued with so great power as to procure reputation for thyself by miracles, do not throw them away; for all that has been given to thee by God thou spendest here to no purpose, because there are none to bear thee testimony, or to hold thee in just estimation.” Hence we perceive how great is the indolence of men in considering the works of God; for the relations of Christ would never have spoken in this manner, if they had not — as it were — trampled under foot the manifest proofs of his Divine power, which they ought to have beheld with the greatest admiration and reverence. What is here told us concerning Christ happens in daily experience, that the children of God suffer greater annoyance from their near relations than from strangers; for they are instruments of Satan which tempt, sometimes to ambition, and sometimes to avarice, those who desire to serve God purely and faithfully. But such Satans receive a vigorous repulse from Christ, who thus instructs us by his example, that we ought not to yield to the foolish wishes of <span style="color:#800000">*brethren*</span> or relations. <span style="color:#800000">[^f177]</span> **5.** <span style="color:#800000">*For even his brethren did not believe in him.*</span> Hence we infer how small is the value of carnal relationship; for the Holy Spirit stamps with a perpetual mark of infamy the relations of Christ, because, though convinced by the testimonies of so many works, they did not even then believe. *Therefore*, *whosoever wishes to be thought to be in Christ*, as Paul says, *let him be a new creature*, (2 Corinthians 5:17; Galatians 6:15;) for they who dedicate themselves wholly to God obtain the place of father, and mother, and brethren to Christ, and all others he utterly disavows, (Matthew 12:50.) So much the more ridiculous is the superstition of Papists, who, disregarding everything else in the Virgin Mary, extol her only on the ground of relationship, bestowing on her the title of the Mother of Christ, <span style="color:#800000">[^f178]</span> as if Christ himself had not reproved the woman who exclaimed from the midst of the crowd,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Blessed is the womb that bore thee, and the breasts that suckled</span> <span style="color:#000080">thee; for Christ replied, Nay, rather, blessed are they who hear the</span> <span style="color:#000080">word of God, (</span></p>
-
-<span style="color:#000080">Luke 11:27, 28.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Blessed is the womb that bore thee, and the breasts that suckled</span> <span style="color:#000080">thee; for Christ replied, Nay, rather, blessed are they who hear the</span> <span style="color:#000080">word of God, (</span><span style="color:#000080">Luke 11:27, 28.)</span></p>
 
 **6.** <span style="color:#800000">*My time is not yet come.*</span> There are some who erroneously interpret this as referring to the <span style="color:#800000">*time*</span> of his death, for it denotes the <span style="color:#800000">*time*</span> of his setting out on the journey to go to the feast. <span style="color:#800000">[^f179]</span> He assures them that, in this respect, he differs from his relations. They may freely and without danger appear, at all hours, before the world, because the world is friendly and favorable to them; but he is in dread of his person, and justly, because the world is his mortal enemy. By these words he means that they do wrong in giving advice on a matter which they do not understand.
 
@@ -2468,9 +2354,7 @@ Jews might call to remembrance, that their fathers lived forty years in <span st
 
 <span style="color:#800000">*Because I testify of it, that its works are evil.*</span> When Christ says that *the world hateth him* on this account, he means that the Gospel cannot be faithfully preached without summoning the whole world, as guilty, to the judgment-seat of God, that flesh and blood may thus be crushed and reduced to nothing, according to that saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When the Spirit shall come, he will reprove the world of sin,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 16:8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When the Spirit shall come, he will reprove the world of sin,</span> <span style="color:#000080">(</span><span style="color:#000080">John 16:8.)</span></p>
 
 <!-- PAGE 253 -->
 
@@ -2524,9 +2408,7 @@ This statement is highly worthy of observation. Satan continually plots against 
 
 Hence it is evident how wickedly and foolishly many persons in the present day, dreading the danger of falling into error, by that very dread shut the door against all desire to learn; as if our Savior had not good ground for saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Knock, and it shall be opened to you, (</span></p>
-
-<span style="color:#000080">Matthew 7:7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Knock, and it shall be opened to you, (</span><span style="color:#000080">Matthew 7:7.)</span></p>
 
 On the contrary, if we be entirely devoted to obedience to God, let us not doubt that He will give us the spirit of discernment, to be our continual director and guide. If others choose to waver, they will ultimately find how flimsy are the pretences for their ignorance. And, indeed, we see that all who now hesitate, and prefer to cherish their doubt rather than, by reading or hearing, to inquire earnestly where the truth of God is, have the hardihood to set God at defiance by general principles. One man will say that he prays for the dead, because, distrusting his own judgment, he cannot venture to condemn the false doctrines invented by wicked men about purgatory; and yet he will freely allow himself to commit fornication. Another will say that he has not so much acuteness as to be able to distinguish between the pure doctrine of Christ and the spurious contrivances of men, but yet he will have acuteness enough to steal or commit perjury. In short, all those doubters, who cover themselves with a veil of doubt in all those matters which are at present the subject of controversy, display a manifest contempt of God on subjects that are not at all obscure.
 
@@ -2589,15 +2471,11 @@ There might also be another reason for the comparison, namely, that the sacramen
 
 <span style="color:#800000">*But he who hath sent me is true.*</span> He calls God <span style="color:#800000">*true*</span> in the same sense that Paul calls him *faithful*.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If we are unbelievers, says he, he remaineth faithful, he cannot</span> <span style="color:#000080">deny himself, (</span></p>
-
-<span style="color:#000080">2 Timothy 2:13.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If we are unbelievers, says he, he remaineth faithful, he cannot</span> <span style="color:#000080">deny himself, (</span><span style="color:#000080">2 Timothy 2:13.)</span></p>
 
 For his object is to prove, that the credit due to the Gospel is not in the smallest degree diminished by the utmost exertions of the world to overthrow it; that though wicked men may attempt to take from Christ what belonged to him, still he remains unimpaired, because the truth of God is firm and is always like itself. Christ sees that he is despised; but so far is he from yielding, that, on the contrary, he boldly repels the furious arrogance of those who hold him in no estimation. With such unshaken and heroic fortitude all believers ought to be endued; nay, more, our faith will never be solid or lasting, unless it treat with contempt the presumption of wicked men, when they rise up against Christ. Above all, godly teachers, relying on this support, ought to persevere in maintaining sound doctrine, even though it should be opposed by the whole world. Thus Jeremiah appeals to God as his defender and guardian, because he is condemned as an impostor:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou hast deceived me, O Lord, says he, and I was deceived,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Jeremiah 20:7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou hast deceived me, O Lord, says he, and I was deceived,</span> <span style="color:#000080">(</span><span style="color:#000080">Jeremiah 20:7.)</span></p>
 
 Thus Isaiah, overwhelmed on all sides by calumnies and reproaches, flies to this refuge, that God will approve his cause, (Isaiah 50:8.) Thus
 
@@ -2636,9 +2514,7 @@ God. It is difficult to believe that, while we are subject to so many accidents,
 
 <span style="color:#800000">*I go to him who hath sent me.*</span> By these words he testifies that he will not be extinguished by his death, but, on the contrary, when he shall have laid aside his mortal body, will be declared to be the Son of God by the magnificent triumph of his resurrection; as if he had said, “Labour as much as you please, yet you will never hinder my Father from receiving me into his heavenly glory, when I have discharged the embassy which he has committed to me. Thus not only will my rank remain undiminished after my death, but a more excellent condition is then provided for me.” Besides, we ought to draw from it a general admonition; for as often as Christ calls us to the hope of salvation by the preaching of the Gospel, he is present with us. For not without reason is the preaching of the Gospel called Christ’s descent to us, where it is said,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he came and preached peace to those who were far off, and to</span> <span style="color:#000080">those who were near, (</span></p>
-
-<span style="color:#000080">Ephesians 2:17.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he came and preached peace to those who were far off, and to</span> <span style="color:#000080">those who were near, (</span><span style="color:#000080">Ephesians 2:17.)</span></p>
 
 If we accept the hand which he holds out, he will lead us to the Father; and so long as we must sojourn in the world, not only will he show himself to be near us, but will constantly dwell in us. And if we disregard his presence, he will lose nothing, but, departing from us, will leave us altogether strangers to God and to life.
 
@@ -2652,9 +2528,7 @@ Redeemer. But for my own part, I explain it as merely denoting the groans of dis
 
 <span style="color:#800000">*And shall not find me.*</span> When they *seek* him, they do not seek him; for unbelief and obstinacy — by shutting up their hearts, as it were — hinders them from approaching to God. They would desire, indeed, that God should aid them, and should be their Redeemer, but, by impenitence and hardness of heart, they obstruct their path. We have a very striking example <span style="color:#800000">[^f190]</span> in Esau, who, on account of having lost his birthright, not only is oppressed with grief, but groans and gnashes his teeth, and breaks out into furious indignation, (Genesis 27:38; Hebrews 12:17.) But yet so far is he from the right way of seeking the blessing, that, at the very time when he is seeking it, <span style="color:#800000">[^f191]</span> he renders himself more unworthy of it. In this manner God usually punishes the contempt of his grace in the reprobate, so that, either afflicted by severe punishments, or oppressed by a conviction of their misery, or reduced to other extremities, they complain, and cry, and howl, but without reaping any advantage; for, being always like themselves, they nourish within their hearts the same cruelty which they formerly displayed, and do not go to God, but rather wish that he were changed, since they cannot destroy him. Hence let us learn that we ought to receive Christ without delay, while he is still present with us, that the opportunity of enjoying him may not pass away from us; for if the door be once shut, it will be vain for us to try to open it.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Seek the Lord, says Isaiah, while he may be found; call upon him,</span> <span style="color:#000080">while he is near, (</span></p>
-
-<span style="color:#000080">Isaiah 55:6.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Seek the Lord, says Isaiah, while he may be found; call upon him,</span> <span style="color:#000080">while he is near, (</span><span style="color:#000080">Isaiah 55:6.)</span></p>
 
 We ought therefore to go to God early, *while the time of his good pleasure lasts*, as the prophet speaks, (Isaiah 49:8;) for we know not how long
 
@@ -2687,9 +2561,7 @@ As to the present passage, we ought to observe, first, that none are called to o
 
 <!-- PAGE 273 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">those who are rich and full he sendeth empty away,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Luke 1:53.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">those who are rich and full he sendeth empty away,</span> <span style="color:#000080">(</span><span style="color:#000080">Luke 1:53.)</span></p>
 
 He therefore enjoins us to come direct to himself, as if he had said, that it is he alone who can fully satisfy the <span style="color:#800000">*thirst*</span> of all, and that all who seek even the smallest alleviation of their thirst anywhere else are mistaken, and labor in vain.
 
@@ -2700,9 +2572,7 @@ He therefore enjoins us to come direct to himself, as if he had said, that it is
 <!-- PAGE 274 -->
 <span style="color:#800000">*Out of his belly shall flow rivers of living water.*</span> The metaphor appears, no doubt, to be somewhat harsh, when he says that <span style="color:#800000">*rivers of living water shall flow out of the belly of believers*</span>; but there can be no doubt as to the meaning, that they who believe shall suffer no want of spiritual blessings. He calls it <span style="color:#800000">*living water,*</span> the fountain of which never grows dry, nor ceases to flow continually. As to the word <span style="color:#800000">*rivers*</span> being in the plural number, I interpret it as denoting the diversified graces of the Spirit, which are necessary for the spiritual life of the soul. In short, the perpetuity, as well as the abundance, of the gifts and graces of the Holy Spirit, <span style="color:#800000">[^f193]</span> is here promised to us. Some understand the saying — that <span style="color:#800000">*waters flow out of the belly*</span> of believers — to mean, that he to whom the Spirit has been given makes a part *to flow* to his brethren, as there ought to be mutual communication between us. But I consider it to be a simpler meaning, that whosoever shall believe in Christ shall have a fountain of life springing up, as it were, in himself, as Christ said formerly,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who shall drink of this water shall never thirst,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 4:14;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who shall drink of this water shall never thirst,</span> <span style="color:#000080">(</span><span style="color:#000080">John 4:14;)</span></p>
 
 for while ordinary drinking quenches thirst only for a short time, Christ says that by faith we draw the Spirit, that he may become a <span style="color:#800000">*fountain of water springing up into everlasting life*</span>.
 
@@ -2710,9 +2580,7 @@ Still he does not say that, on the first day, believers are so fully satisfied w
 
 <span style="color:#800000">*As the Scripture saith.*</span> Some confine this to the former clause, and others to the latter clause; for my own part, I extend it to the entire scope of the discourse. Besides, Christ does not here, in my opinion, point out any particular passage of Scripture, but produces a testimony drawn from the ordinary doctrine of the Prophets. For whenever the Lord, promising an abundance of his Spirit, compares it to <span style="color:#800000">*living waters,*</span> he looks principally to the kingdom of Christ, to which he directs the minds of believers. All the predictions of <span style="color:#800000">*living waters,*</span> therefore, have their fulfillment in Christ, because he alone hath opened and displayed the hidden treasures of God. The reason why the graces of the Spirit are poured out on him is,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that we may all draw out of his fullness, (</span></p>
-
-<span style="color:#000080">John 1:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that we may all draw out of his fullness, (</span><span style="color:#000080">John 1:16.)</span></p>
 
 <!-- PAGE 275 -->
 
@@ -2764,9 +2632,7 @@ Yet it ought also to be observed that divisions do not properly draw their origi
 
 <!-- PAGE 279 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he will prostrate the wicked by the breath of his mouth,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Isaiah 11:4.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he will prostrate the wicked by the breath of his mouth,</span> <span style="color:#000080">(</span><span style="color:#000080">Isaiah 11:4.)</span></p>
 
 Nay more, we shall afterwards see how those who were attempting to put him to death, overwhelmed by the voice of Christ alone, and as if they had been struck down with mallets, fell backwards, (John 18:6.) Let us, therefore, learn that the doctrine of Christ possesses such power as even to terrify the wicked; but as this tends to their destruction, let us take care that we be softened, instead of being broken. Even in the present day, we see many persons who too much resemble those officers, who are reluctantly drawn into admiration of the doctrine of the Gospel, and yet are so far from yielding to Christ, that they still remain in the enemy’s camp. There are others even worse, who, for the sake of obtaining favor with the wicked, employ all the opprobrious terms which they can find for basely slandering that doctrine, which, notwithstanding, they acknowledge to be from God, because they are convinced of it in their hearts. <span style="color:#800000">[^f201]</span> **47.** <span style="color:#800000">*And are you also seduced?*</span> While they reprove their officers, they endeavor, at the same time, to keep them in subjection. For by these words they mean, that it would be unreasonable and unbecoming that they should not remain steady, though the whole people should revolt. But we must see on what argument they rest, when they so haughtily insult Christ.
 
@@ -2886,9 +2752,7 @@ But we must first ascertain what necessity there is for seeking this *light*; fo
 <!-- PAGE 294 -->
 Let us know that the same thing is spoken to us all; for whoever aspires to know God, and does not begin with Christ, must wander — as it were — in a labyrinth; for it is not without good reason that Christ is called the image of the Father, as has been already said. Again, as all who, leaving Christ, attempt to rise to heaven, after the manner of *the giants*, <span style="color:#800000">[^f217]</span> are destitute of all right knowledge of God, so every man who shall direct his mind and all his senses to Christ, will be led straight to the Father. For on good grounds does God declare that,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">by the mirror of the Gospel, we clearly behold God in the person</span> <span style="color:#000080">of Christ, (</span></p>
-
-<span style="color:#000080">2 Corinthians 3:18.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">by the mirror of the Gospel, we clearly behold God in the person</span> <span style="color:#000080">of Christ, (</span><span style="color:#000080">2 Corinthians 3:18.)</span></p>
 
 And certainly it is an astonishing reward of the obedience of faith, that whosoever humbles himself before the Lord Jesus, <span style="color:#800000">[^f218]</span> penetrates above all the heavens, even to those mysteries which the angels behold and adore.
 
@@ -2945,9 +2809,7 @@ In short, this reply consists of two clauses; for, under the word <span style="c
 
 **26.** <span style="color:#800000">*I have many things to say and judge of you.*</span> Perceiving that he is in the position of one who sings to the deaf, he pursues his discourse no farther, but only declares that God will defend that doctrine, which they despise, because he is the Author of it. “If I wished to accuse you,” says he, “your malice and wickedness supply me with ample materials; but I leave you for the present. But my Father, who committed to me the office of a teacher, will not fail to fulfill his promise; for he will always vindicate his word against the wicked and sacrilegious contempt of men.” This saying of Christ is of the same import with that of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If we deny him, he remaineth faithful, he cannot deny himself,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Timothy 2:13.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If we deny him, he remaineth faithful, he cannot deny himself,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Timothy 2:13.)</span></p>
 
 In short, he threatens the judgment of God against unbelievers, who refuse to give credit to his word; and he does so on this ground, that God must inevitably defend his truth. Now this is the true firmness of faith, when we believe that God is alone sufficient to establish the authority of his doctrine, though the world should reject it. All who, relying on this doctrine, serve Christ faithfully, may fearlessly accuse the whole world of falsehood.
 
@@ -3039,9 +2901,7 @@ Christ appears to say nothing more here than what was formerly said by philosoph
 
 <span style="color:#800000">*If you were the children of Abraham, you would do the works of Abraham.*</span> Christ now distinguishes more plainly between the bastard and degenerate <span style="color:#800000">*children of Abraham*</span>, and the true and lawful children; <span style="color:#800000">[^f234]</span> for he refuses to give the very name to all who do not resemble <span style="color:#800000">*Abraham*</span>. True, it frequently happens that <span style="color:#800000">*children*</span> do not resemble, in their conduct, the parents from whom they are sprung; but here Christ does not argue about carnal descent, but only affirms that they who do not retain by faith the grace of adoption are not reckoned among <span style="color:#800000">*the children of Abraham*</span> before God. For since God promised to the seed of Abraham that he would be their God, saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I will establish my covenant between me and thee, and thy seed</span> <span style="color:#000080">after thee, in their generations, for an everlasting covenant, to be a</span> <span style="color:#000080">God unto thee, and to thy seed after thee, (</span></p>
-
-<span style="color:#000080">Genesis 17:7,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I will establish my covenant between me and thee, and thy seed</span> <span style="color:#000080">after thee, in their generations, for an everlasting covenant, to be a</span> <span style="color:#000080">God unto thee, and to thy seed after thee, (</span><span style="color:#000080">Genesis 17:7,)</span></p>
 
 all unbelievers, by rejecting this promise, excluded themselves from the family of *Abraham*.
 
@@ -3083,9 +2943,7 @@ The Manicheans foolishly and ineffectually abused this passage to prove their ab
 
 <span style="color:#800000">*He did not remain in the truth.*</span> For though those who imagine that the devil was wicked by nature, endeavor to make evasions, yet these words plainly state that there was a change for the worse, and that the reason why Satan was *a liar* was, that *he revolted from the truth*. That he is *a liar*, arises not from his nature having been always contrary to truth, but because he fell from it by a voluntary fall. This description of Satan is highly useful to us, that every person for himself may endeavor to beware of his snares, and, at the same time, to repel his violence and fury; for
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he goeth about as a roaring lion, seeking whom he may devour,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Peter 5:8,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he goeth about as a roaring lion, seeking whom he may devour,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Peter 5:8,)</span></p>
 
 <!-- PAGE 314 -->
 and has a thousand stratagems at his command for deceiving. So much the more ought believers to be supplied with spiritual arms for fighting, and so much the more earnestly ought they to keep watch with vigilance and sobriety. Now, if Satan cannot lay aside this disposition, we ought not to be alarmed at it, as if it were a new and uncommon occurrence, when errors exceedingly numerous and varied spring up; for Satan stirs up his followers like bellows, to deceive the world by their impostures. And we need not wonder that Satan puts forth such strenuous efforts to extinguish the light of *truth*; for it is the only life of the soul. So, then, the most important and most deadly wound for killing the soul is *falsehood*. As all who have eyes to see perceive, in the present day, such a picture of Satan in Popery, they ought, first, to consider with what enemy they carry on war, and, next, to betake themselves to the protection of Christ their Captain, under whose banner they fight.
@@ -3121,9 +2979,7 @@ Besides, though they bring a double reproach against Christ, still they wish to 
 
 <span style="color:#800000">*You have dishonored me.*</span> This clause may be explained, as if it were a complaint of Christ, that he does not receive the honor due to him on account of his promoting the glory of God. But I think that he looks much higher, and connects the glory of the Father with his own, in this manner. “I claim nothing for myself which does not tend to the glory of God; for his majesty shines in me, his power and authority dwells in me; and therefore, when you treat me so disdainfully, you pour contempt on God himself.” He immediately adds, therefore, that God will revenge this insult. For they might have alleged that he was ambitious, if he had not testified that it was not from any personal feelings of a carnal nature that he cared about the honor or contempt showed to himself, but so far as the honor or contempt of God is concerned. Besides, though we are at a great distance from Christ, let every man be fully convinced that, if he be sincerely desirous to promote the glory of God, he will find that God has secured for him abundant commendation; for we shall always find that saying to be true,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Those who honor me, I will render honorable,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Samuel 2:30.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Those who honor me, I will render honorable,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Samuel 2:30.)</span></p>
 
 If men not only despise, but even load him with reproaches, let him calmly wait till the day of the Lord come.
 
@@ -3148,9 +3004,7 @@ Hebrews in the same sense; namely, *to die*. But they are false interpreters in 
 
 because, united to Christ their Head, they cannot be extinguished by death; because *death* is to them a passage into the heavenly kingdom; because
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Spirit, dwelling in them, is life on account of righteousness,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 8:10,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Spirit, dwelling in them, is life on account of righteousness,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 8:10,)</span></p>
 
 until he swallow up all that remains of death. But those men, being carnal, cannot perceive any deliverance from death, unless it appear manifestly in the body. And it is a disease too common in the world, that the greatest part of men care almost nothing about the grace of Christ, because they judge of it only by their carnal perception. That the same thing may not happen to us, we must arouse our minds, that they may discern spiritual life in the midst of death.
 
@@ -3163,9 +3017,7 @@ Meanwhile, those voices sounding from heaven, *Kiss the Son*, (Psalm 2:12,) *Let
 
 *Let the Gentiles seek him*, (Romans 15:11,) and *Let all flesh be* *humbled*, ought greatly to encourage believers to render honor and reverence to Christ. We are also reminded by these words, that all the honor which men procure for themselves is trivial and worthless. How blind then is ambition, when we labor so earnestly about nothing! Let, us continually keep before our eyes that saying of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Not he who commendeth himself is approved, but whom God</span> <span style="color:#000080">commendeth, (</span></p>
-
-<span style="color:#000080">2 Corinthians 10:18.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Not he who commendeth himself is approved, but whom God</span> <span style="color:#000080">commendeth, (</span><span style="color:#000080">2 Corinthians 10:18.)</span></p>
 
 Besides, as we are destitute of the glory of God, let us learn to glory in Christ alone, so far as by his grace he makes us partakers of his glory.
 
@@ -3191,9 +3043,7 @@ Besides, as we are destitute of the glory of God, let us learn to glory in Chris
 
 But a question now arises, How did Abraham behold, even with the eyes of faith, the manifestation of Christ? For this appears not to agree with another statement of Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Many kings and prophets desired to see the things which you see,</span> <span style="color:#000080">and yet did not see them, (</span></p>
-
-<span style="color:#000080">Luke 10:24.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Many kings and prophets desired to see the things which you see,</span> <span style="color:#000080">and yet did not see them, (</span><span style="color:#000080">Luke 10:24.)</span></p>
 
 I reply, faith has its degrees in beholding Christ. Thus the ancient prophets beheld Christ at a distance, as he had been promised to them, and yet were not permitted to behold him present, as he made himself familiarly and completely visible, when he came down from heaven to men.
 
@@ -3217,9 +3067,7 @@ We ought also to observe the solemn form of an oath, <span style="color:#800000"
 
 **59.** <span style="color:#800000">*Then they took up stones.*</span> There is reason to believe that they did this, as if Christ ought to be stoned according to the injunction of the Law, (Leviticus 24:16.) Hence we infer how great is the madness of inconsiderate zeal; for they have no ears to know the cause, but they have hands ready to commit murder. I have no doubt that Christ rescued himself by his secret power, but yet under the appearance of a low condition; for he did not intend to make a clear display of his Divinity without leaving something for human infirmity. Some copies have the words, *And so Jesus passed through the midst of them*; which Erasmus justly considers to have been borrowed from the Gospel by Luke 4:30. It deserves notice also, that the wicked priests and scribes, after having banished Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in whom dwelleth all the fullness of the Godhead,</span> <span style="color:#000080">\|(</span></p>
-
-<span style="color:#000080">Colossians 2:9,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in whom dwelleth all the fullness of the Godhead,</span> <span style="color:#000080">\|(</span><span style="color:#000080">Colossians 2:9,)</span></p>
 
 retain possession of the outward temple; but they are greatly deceived, when they think that they have a temple in which God does not dwell. Such is the course now pursued by the Pope and his followers. After having banished Christ, and in this manner profaned the Church, they foolishly glory in the false disguise of a Church.
 
@@ -3249,9 +3097,7 @@ Thirdly, we do wrong in this respect, that we pronounce condemnation on all, wit
 
 Wherefore, there are two things here that ought to be observed: that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">judgment begins, for the most part, at the house of God,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Peter 4:17;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">judgment begins, for the most part, at the house of God,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Peter 4:17;)</span></p>
 
 <!-- PAGE 327 -->
 and, consequently, that while he passes by the wicked, he punishes his own people with severity when they have offended, and that, in correcting the sinful actions of the Church, his stripes are far more severe. Next, we ought to observe that there are various reasons why he afflicts men; for he gave Peter and Paul, not less than the most wicked robbers, into the hands of the executioner. Hence we infer, that we cannot always put our finger on the causes of the punishments which men endure.
@@ -3264,15 +3110,11 @@ It is not without reason that the disciples put the question, *Did his parents s
 
 <!-- PAGE 328 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the soul which hath sinned shall itself die, (</span></p>
-
-<span style="color:#000080">Ezekiel 18:20,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the soul which hath sinned shall itself die, (</span><span style="color:#000080">Ezekiel 18:20,)</span></p>
 
 yet it is not an empty threatening, that the Lord throws the crimes of the parents into the bosom of the children, and
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">revenges them to the third and fourth generation,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Exodus 20:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">revenges them to the third and fourth generation,</span> <span style="color:#000080">(</span><span style="color:#000080">Exodus 20:5.)</span></p>
 
 Thus it frequently happens that the anger of God rests on one house for many generations; and, as he blesses the children of believers for the sake of their fathers, so he also rejects a wicked offspring, destining the children, by a just punishment, to the same ruin with their fathers. Nor can any man complain, on this account, that he is unjustly punished on account of the sin of another man; for, where the grace of the Spirit is wanting, from bad crows — as the proverb says <span style="color:#800000">[^f254]</span> — there must be produced bad eggs. This gave reason to the apostles to doubt if the Lord punished, in the son, some crime of *his parents*.
 
@@ -3296,9 +3138,7 @@ He therefore employs the word <span style="color:#800000">*Day*</span> to denote
 
 But here arises another question. After the death of Christ, the power of God shone more illustriously, both in the fruit of the doctrine and in miracles; and Paul applies this strictly to the time of his own preaching, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God, who from the beginning of the world commanded the light to</span> <span style="color:#000080">shine out of darkness, at that time shone in the face of Christ by</span> <span style="color:#000080">the Gospel, (</span></p>
-
-<span style="color:#000080">2 Corinthians 4:6.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God, who from the beginning of the world commanded the light to</span> <span style="color:#000080">shine out of darkness, at that time shone in the face of Christ by</span> <span style="color:#000080">the Gospel, (</span><span style="color:#000080">2 Corinthians 4:6.)</span></p>
 
 And does Christ now give less light to the world than when he was in the presence of men, and conversed with them? I reply, when Christ had finished the course of his office, he labored not less powerfully by his ministers than he had labored by himself, while he lived in the world. This I acknowledge to be true; but, first, it is not inconsistent with what he had said, that he was bound to perform, in his own person, what had been enjoined on him by the Father, and at the time when he was manifested in the flesh for that purpose. Secondly, it is not inconsistent with what he said, that his bodily presence was the true and remarkable *day of the world*, the lustre of which was diffused over all ages. For whence did the holy fathers in ancient times, or whence do we now, desire *light and day*, but because the manifestation of Christ always darted its rays to a great distance, so as to form one continued day? Whence it follows, that all who have not Christ for their guide grope in the dark like the blind, and wander about in confusion and disorder. Yet we must hold by this meaning of the words, that, as the sun discovers to our view the lovely spectacle of earth and heaven, and the whole arrangement of nature, so God has visibly displayed the chief glory of his works in his Son.
 
@@ -3320,9 +3160,7 @@ And does Christ now give less light to the world than when he was in the presenc
 
 As to <span style="color:#800000">*the pool of Siloam,*</span> he perhaps ordered <span style="color:#800000">*the blind man*</span> to <span style="color:#800000">*wash in it,*</span> in order to reprove the Jews for not being able to discern the power of God when present; as Isaiah reproaches the men of his time, that they
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">despise the waters of Siloam, which flow softly, (</span></p>
-
-<span style="color:#000080">Isaiah 8:6,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">despise the waters of Siloam, which flow softly, (</span><span style="color:#000080">Isaiah 8:6,)</span></p>
 
 and prefer rapid and impetuous streams. This was also the reason, I think, why Elisha ordered Naaman the Syrian to *go and wash in Jordan*, (2 Kings 5:10.) This *pool*, if we may believe Jerome, was formed by waters which flowed at certain hours from Mount Zion.
 
@@ -3366,9 +3204,7 @@ Thus the Palmists do not cease to bring forward, with hardened effrontery, their
 
 **16.** <span style="color:#800000">*How can a man who is a sinner do these things?*</span> The word <span style="color:#800000">*sinner*</span> is employed here, as in many other passages, to denote a person of immoral conduct and a despiser of God.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Why doth your Master eat with publicans and sinners?</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Mark 2:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Why doth your Master eat with publicans and sinners?</span> <span style="color:#000080">(</span><span style="color:#000080">Mark 2:16.)</span></p>
 
 <!-- PAGE 337 -->
 That is, “Why doth your Master eat with men of ungodly and wicked lives, whose baseness is stamped with universal infamy?” For from the violation of the Sabbath the enemies of Christ inferred that he was a profane person, and destitute of all religion. Those who stand neutral and judge more candidly, on the other hand, conclude that he is a good and religious man, because God has endued him with remarkable power to work miracles. And yet the argument does not appear to be quite conclusive; for God sometimes permits false prophets to perform some miracles, and we know that Satan, like an ape, counterfeits the works of God so as to deceive the incautious.
@@ -3400,9 +3236,7 @@ As to the men themselves, though they act commendably in this respect, that they
 
 <!-- PAGE 340 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">whose understandings the god of this world hath blinded,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 4:3, 4.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">whose understandings the god of this world hath blinded,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 4:3, 4.)</span></p>
 
 Warned by such examples, let us learn not to bring upon ourselves those obstacles which drive us away from the faith. By <span style="color:#800000">*the Jews,*</span> the Evangelist means that part of them which held the government of the people.
 
@@ -3497,9 +3331,7 @@ It is true that we are all born *blind*, but still, amidst the darkness of corru
 
 We now perceive the amount of what is stated in this passage, that Christ came into the world to give sight to the *blind*, and to drive to madness those who think that they are wise. In the first part of it, he mentions illumination, <span style="color:#800000">*that they who see not may see;*</span> because this is strictly the cause of his coming, for he did not come to *judge* the world, but rather *to save that which was lost*, (Matthew 18:11.) In like manner Paul, when he declares that he has *vengeance prepared against all rebels*, at the same time adds, that this punishment will take place
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">after that believers shall have fulfilled their obedience,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 10:6.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">after that believers shall have fulfilled their obedience,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 10:6.)</span></p>
 
 And this vengeance ought not to be limited to the person of Christ, as if he did not perform the same thing daily by the ministers of his Gospel.
 
@@ -3507,9 +3339,7 @@ And this vengeance ought not to be limited to the person of Christ, as if he did
 
 We ought to be the more careful that none of us, through a foolish and extravagant opinion of his wisdom, draw down upon himself this dreadful punishment. But experience shows us the truth of this statement which Christ uttered; for we see many persons struck with giddiness and rage, for no other reason but because they cannot endure the rising of the Sun of righteousness. Adam lived, and was endued with the true light of understanding, while he lost that divine blessing by desiring to see more than was allowed him. Now if, while we are plunged in *blindness* and thus humbled by the Lord, we still flatter ourselves in our darkness, and oppose our mad views to heavenly wisdom, we need not wonder if the vengeance of God fall heavily upon us, so that we are rendered doubly *blind* This very punishment was formerly inflicted on the wicked and unbelievers <span style="color:#800000">[^f278]</span> under the Law; for Isaiah is sent to blind the ancient people, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">seeing they may not see: blind the heart of this people, and shut</span> <span style="color:#000080">their ears, (</span></p>
-
-<span style="color:#000080">Isaiah 6:9.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">seeing they may not see: blind the heart of this people, and shut</span> <span style="color:#000080">their ears, (</span><span style="color:#000080">Isaiah 6:9.)</span></p>
 
 But in proportion as the brightness of the divine light is more fully displayed in Christ than in the Prophets, so much the more remarkably must this example of *blindness* have been manifested and perceived; as even now the noon-day light of the Gospel drives hypocrites to extreme rage.
 
@@ -3522,9 +3352,7 @@ The word <span style="color:#800000">*also*</span> is emphatic; for it means tha
 
 **41.** <span style="color:#800000">*If you were blind.*</span> These words may be explained in two ways; either, that ignorance would, in some degree, alleviate their guilt, if they were not fully convinced, and did not deliberately fight against the truth; or, that there was reason to hope that their disease of ignorance might be cured, if they would only acknowledge it. The former view is supported by the words of Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If I had not come and spoken to them, they would have no sin,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 15:22.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If I had not come and spoken to them, they would have no sin,</span> <span style="color:#000080">(</span><span style="color:#000080">John 15:22.)</span></p>
 
 But as it is added in this passage, <span style="color:#800000">*but now you say you see,*</span> in order that the points of contrast may correspond to each other, it appears to be more consistent to explain them to mean, that he is *blind* who, aware of his own blindness, seeks a remedy to cure his disease. <span style="color:#800000">[^f279]</span> In this way the meaning will be, “If you would acknowledge your disease, it would not be altogether incurable; but now because you think that you are in perfect health, you continue in a desperate state.” When he says that *they who are blind have no sin*, this does not excuse ignorance, as if it were harmless, and were placed beyond the reach of condemnation. He only means that the disease may easily be cured, when it is truly felt; because, when a *blind* man is desirous to obtain deliverance, God is ready to assist him; but they who, insensible to their diseases, despise the grace of God, are incurable.
 
@@ -3552,9 +3380,7 @@ We must therefore, above all things, guard against being deceived by pretended <
 
 But all this relates to doctrine; for, since
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the treasures of wisdom and knowledge are hidden in Christ,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 2:3,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the treasures of wisdom and knowledge are hidden in Christ,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 2:3,)</span></p>
 
 he who turns aside from him to go elsewhere neither keeps the road nor <span style="color:#800000">*enters by the door.*</span> Now, whoever shall not despise Christ or his instructor will easily rid himself of that hesitation which keeps so many in a state of perplexity, what is the Church, and who are they to whom we ought to listen as <span style="color:#800000">*shepherds*</span>. For if they who are called shepherds attempt to lead us away from Christ, we ought to flee from them, at the command of
 
@@ -3585,9 +3411,7 @@ Christ, as we would flee from *wolves* or *thieves*; and we ought not to form or
 
 **7.** <span style="color:#800000">*I am the door.*</span> If this explanation had not been added, the whole discourse would have been allegorical. He now explains more clearly what was the chief part of the parable when he declares that <span style="color:#800000">*he is the door*</span>. The amount of what is stated is, that the principal point of all spiritual doctrine, on which souls are fed, consists in Christ. Hence also Paul, one of the shepherds, says:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I reckon nothing to be worth knowing but Jesus Christ,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Corinthians 2:2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I reckon nothing to be worth knowing but Jesus Christ,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians 2:2.)</span></p>
 
 And this mode of expression conveys the same meaning as if Christ had testified that to him alone we must all be gathered together. Therefore, he invokes and exhorts all who desire salvation to come to him. By these words, he means that in vain do they wander about who leave him to go to God, because there is but one open <span style="color:#800000">*door*</span>, and all approach in any other way is prohibited.
 
@@ -3603,9 +3427,7 @@ But here a question arises, When does a person begin to belong to the flock of t
 
 It will perhaps be objected, that even those who had been devoted to Christ frequently go astray, and that this is proved by frequent experience, and that it is not without good reason that Ezekiel ascribes it to the good Shepherd, that he gathers *the scattered sheep*, (Ezekiel 34:12.) I readily acknowledge that it frequently happens, that they who had belonged to the household of faith are, for a time, estranged; but this is not at variance with Christ’s statement, for, so far as they go astray, they cease, in some respects, to be <span style="color:#800000">*sheep*</span>. What Christ means is simply this, that all the elect of God, though they were tempted to go astray in innumerable ways, were kept in obedience to the pure faith, so that they were not exposed as a prey to Satan, or to his ministers. But this work of God is not less astonishing, when he again gathers <span style="color:#800000">*the sheep*</span> which had wandered for a little, than if they had all along continued to be shut up in the fold. It is always true, and without a single exception, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they who go out from us were not of us, but that they who were of</span> <span style="color:#000080">us remain with us to the end, (</span></p>
-
-<span style="color:#000080">1 John 2:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they who go out from us were not of us, but that they who were of</span> <span style="color:#000080">us remain with us to the end, (</span><span style="color:#000080">1 John 2:19.)</span></p>
 
 This passage ought to strike us with the deepest shame; first, because we are so ill accustomed to *the voice* of our *Shepherd*, that there are hardly any who do not listen to it with indifference; and, next, because we are so slow and indolent to follow him. I speak of the good, or of those who are at least passable; for the greater part of those who boast that they are
 
@@ -3620,9 +3442,7 @@ Christ’s disciples kick fiercely against him. Lastly, as soon as the voice of 
 <!-- PAGE 360 -->
 **10.** <span style="color:#800000">*The thief cometh not.*</span> By this saying, Christ — if we may use the expression — pulls our ear, that the ministers of Satan may not come upon us by surprise, when we are in a drowsy and careless state; for our excessive indifference exposes us, on every side, to false doctrines. For whence arises credulity so great, that they who ought to have remained fixed in Christ, fly about in a multitude of errors, but because they do not sufficiently dread or guard against so many false teachers? And not only so, but our insatiable curiosity is so delighted with the new and strange inventions of men, that, of our own accord, we rush with mad career to meet thieves and wolves. Not without reason, therefore, does Christ testify that false teachers, whatever may be the mildness and plausibility of their demeanour, always carry about a deadly poison, that we may be more careful to drive them away from us. A similar warning is given by Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">See that no man ROB you through vain philosophy,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 2:8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">See that no man ROB you through vain philosophy,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 2:8.)</span></p>
 
 <span style="color:#800000">*I am come.*</span> This is a different comparison; for Christ, having hitherto called himself <span style="color:#800000">*the door,*</span> and declared that they who bring sheep to this *door* are true *shepherds*, now assumes the character of a shepherd, and indeed affirms that he is the only *shepherd*. Indeed, there is no other to whom this honor and title strictly belongs; for, as to all the faithful *shepherds* of the Church, it is he who raises them up, endows them with the necessary qualifications, governs them by his Spirit, and works by them; and therefore they do not prevent him from being the only Governor of his Church, or from holding the distinction of being the only *Shepherd*. For, though he employs their ministry, still he does not cease to fulfill and discharge the office of a *shepherd* by his own power; and they are masters and teachers in such a manner as not to interfere with his authority as a Master. In short, when the term *shepherd* is applied to men, it is used, as we say, in a subordinate sense; and Christ shares the honor with his ministers in such a manner, that he still continues to be the only *shepherd* both of themselves and of the whole flock.
 
@@ -3681,33 +3501,23 @@ Augustine’s observation on this passage is undoubtedly true, that, as there ar
 
 But it may be asked, How were the Gentiles brought to be associated with the Jews? For the Jews were not under the necessity of rejecting the covenant which God made with their fathers, in order to become Christ’s disciples; and the Gentiles, on the other hand, were not under the necessity of submitting to the yoke of the Law, that, being ingrafted in Christ, they might be associated with the Jews. Here we must attend to the distinction between the substance of the covenant and the outward appendages. For the Gentiles could not assent to the faith of Christ in any other way than by embracing that everlasting covenant on which the salvation of the world was founded. In this manner were fulfilled the predictions,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Strangers shall speak the language of Canaan, (</span></p>
-
-<span style="color:#000080">Isaiah 19:18.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Strangers shall speak the language of Canaan, (</span><span style="color:#000080">Isaiah 19:18.)</span></p>
 
 Again,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Ten men of the Gentiles shall take hold of the cloak of one Jew,</span> <span style="color:#000080">and say, We will go with you, (</span></p>
-
-<span style="color:#000080">Zechariah 8:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Ten men of the Gentiles shall take hold of the cloak of one Jew,</span> <span style="color:#000080">and say, We will go with you, (</span><span style="color:#000080">Zechariah 8:23.)</span></p>
 
 <!-- PAGE 366 -->
 
 Again,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Many nations shall come, and say, Come, and let us go up to the</span> <span style="color:#000080">mountain of the Lord, (</span></p>
-
-<span style="color:#000080">Isaiah 2:4;</span> <span style="color:#000080">Micah 4:2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Many nations shall come, and say, Come, and let us go up to the</span> <span style="color:#000080">mountain of the Lord, (</span><span style="color:#000080">Isaiah 2:4;</span> <span style="color:#000080">Micah 4:2.)</span></p>
 
 Abraham was also called
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*a father of many nations*</span><span style="color:#000080">,</span> <span style="color:#000080">(</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*a father of many nations*</span><span style="color:#000080">,</span> <span style="color:#000080">(</span><span style="color:#000080">Genesis 17:5;</span> <span style="color:#000080">Romans 4:17,)</span></p>
 
-<span style="color:#000080">Genesis 17:5;</span> <span style="color:#000080">Romans 4:17,)</span>
-
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">because they shall come from the East and from the West, who</span> <span style="color:#000080">shall sit down with him in the kingdom of God, (</span></p>
-
-<span style="color:#000080">Matthew</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">because they shall come from the East and from the West, who</span> <span style="color:#000080">shall sit down with him in the kingdom of God, (</span><span style="color:#000080">Matthew</span></p>
 
 <p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">8:11.)</span></p>
 
@@ -3715,9 +3525,7 @@ As to ceremonies, they are *the middle wall of partition*, which, Paul informs u
 
 <span style="color:#800000">*And there shall be one fold*</span> <span style="color:#800000">[^f289]</span> <span style="color:#800000">*and one shepherd*</span>. That is, that all the children of God may be gathered and united <span style="color:#800000">[^f290]</span> into one body; as we acknowledge that there is one holy universal Church, <span style="color:#800000">[^f291]</span> and there must be one body with one head.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There is one God, says Paul, one faith, one baptism. Therefore we</span> <span style="color:#000080">ought to be one, as we are called into one hope,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Ephesians 4:4, 5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There is one God, says Paul, one faith, one baptism. Therefore we</span> <span style="color:#000080">ought to be one, as we are called into one hope,</span> <span style="color:#000080">(</span><span style="color:#000080">Ephesians 4:4, 5.)</span></p>
 
 Now though this *flock* appears to be divided into different <span style="color:#800000">*folds,*</span> yet they are kept within enclosures which are common to all believers who are scattered throughout the whole world; because the same word is preached to all, they use the same sacraments, they have the same order of prayer, and every thing that belongs to the profession of faith.
 
@@ -3726,9 +3534,7 @@ Now though this *flock* appears to be divided into different <span style="color:
 
 **17.** <span style="color:#800000">*On this account the Father loveth me.*</span> There is, indeed, another and a higher reason why <span style="color:#800000">*the Father loveth the Son*</span>; for it was not in vain that a voice was heard from heaven,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This is my beloved Son, in whom the good-pleasure of God dwells,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 3:17; 17:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This is my beloved Son, in whom the good-pleasure of God dwells,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 3:17; 17:5.)</span></p>
 
 But as he was made man on our account, and as the Father delighted in him, in order that he might reconcile us to himself, we need not wonder if he declares it to be the reason why <span style="color:#800000">*the Father loveth him*</span>, that our salvation is dearer to him than his own life. This is a wonderful commendation of the goodness of God to us, and ought justly to arouse our whole souls into rapturous admiration, that not only does God extend to us the love which is due to the only-begotten Son, but he refers it to us as the final cause. And indeed there was no necessity that Christ should take upon him our flesh, in which he was *beloved*, but that it might be the pledge of the mercy of *his Father* in redeeming us.
 
@@ -3740,9 +3546,7 @@ But as he was made man on our account, and as the Father delighted in him, in or
 
 Not only does he affirm that men have no power to put him to death, except so far as he permits them, but he declares that he is free from every violence of necessity. It is otherwise with us, for we are laid under a necessity of dying on account of our sins. True, Christ himself was born a mortal man; but this was a voluntary submission, and not a bondage laid upon him by another. Christ intended, therefore, to fortify his disciples, that, when they saw him shortly afterwards dragged to death, they might not be dismayed, as if he had been oppressed by enemies, but might acknowledge that it was done by the wonderful Providence of God, that he should die for the redemption of his flock. And this doctrine is of perpetual advantage, that the death of Christ is an expiation for our sins, because it was a voluntary sacrifice, according to the saying of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">By the obedience of one many were made righteous,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 5:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">By the obedience of one many were made righteous,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 5:19.)</span></p>
 
 <span style="color:#800000">*But I lay it down of myself.*</span> These words may be explained in two ways; either that Christ divests himself of life, but still remains what he was, just as a person would lay aside a garment from his body, or, that he dies by his own choice.
 
@@ -3775,9 +3579,7 @@ Thus, the wickedness of many is still the reason why the Church is troubled by <
 
 <span style="color:#800000">*How long dost thou keep our soul in suspense?*</span> By complaining of being <span style="color:#800000">*kept in suspense*</span>, they pretend that they are so ardently desirous of the promised redemption, that their minds are eagerly and incessantly occupied by the expectation of Christ. And this is the true feeling of piety, to find nowhere else than in Christ alone, what will satisfy our minds, or give them true composure; as he himself says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Come to me, all you who labor and are heavy laden, and I will</span> <span style="color:#000080">refresh you, and your souls shall find rest,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 11:28, 29.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Come to me, all you who labor and are heavy laden, and I will</span> <span style="color:#000080">refresh you, and your souls shall find rest,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 11:28, 29.)</span></p>
 
 Therefore, those who come to Christ ought to be prepared in the same manner as those men pretend to be. But they are wrong in accusing Christ, as if he had not hitherto confirmed their faith; for it was entirely their own fault that they had not a full and perfect knowledge of him. But this is always the case with unbelievers, that they choose rather to remain in doubt than to be founded on the certainty of the word of God. Thus, in our own day, we see many who voluntarily shut their eyes, and spread the clouds of their doubt, in order to darken the clear light of the Gospel. We see also many light spirits, who fly about in idle speculations, and never find, throughout their whole life, a permanent abode.
 
@@ -3839,9 +3641,7 @@ where God expostulates with the kings and judges of the earth, who tyrannically 
 
 **35.** <span style="color:#800000">*To whom the word of God was addressed.*</span> For Christ means that they were authorized by an undoubted command of God. Hence we infer that empires did not spring up at random, nor by the mistakes of men, but that they were appointed by the will of God, because he wishes that political order should exist among men, and that we should be governed by usages and laws. For this reason Paul says, that all who
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">resist the power are rebels against God, because there is no power</span> <span style="color:#000080">but what is ordained by God, (</span></p>
-
-<span style="color:#000080">Romans 13:1, 2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">resist the power are rebels against God, because there is no power</span> <span style="color:#000080">but what is ordained by God, (</span><span style="color:#000080">Romans 13:1, 2.)</span></p>
 
 It will, perhaps, be objected, that other callings also are from God, and are approved by him, and yet that we do not, on that account, call farmers, or cowherds, or cobblers, *gods*. I reply, this is not a general declaration, that all who have been called by God to any particular way of living are called *gods*; but Christ speaks of kings, whom God has raised to a more elevated station, that they may rule and govern. In short, let us know that magistrates are called *gods*, because God has given them authority. Under the term <span style="color:#800000">*Law,*</span> Christ includes the whole doctrine by which God governed his ancient Church; for since the prophets were only expounders of the Law, the Psalms are justly regarded as an appendage to the Law. That <span style="color:#800000">*the*</span>
 
@@ -3919,9 +3719,7 @@ It is really too ridiculous a blunder, to suppose that Monks, and such fry as th
 
 <span style="color:#800000">*For the glory, of God, that the Son of God may be glorified.*</span> This expression is highly emphatic; for we learn from it that God wishes to be acknowledged in the person of his Son in such a manner, that all the reverence which he requires to be given to his own majesty <span style="color:#800000">[^f307]</span> may be ascribed to the Son. Hence we were told formerly,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who doth not honor the Son doth not honor the Father,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 5:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who doth not honor the Son doth not honor the Father,</span> <span style="color:#000080">(</span><span style="color:#000080">John 5:23.)</span></p>
 
 It is in vain for Mahometans and Jews, therefore, to pretend to worship God; for they blaspheme against Christ, and even endeavor, in this manner, to rob God of himself.
 
@@ -3937,9 +3735,7 @@ It is in vain for Mahometans and Jews, therefore, to pretend to worship God; for
 <!-- PAGE 386 -->
 First, Christ borrows a comparison from Day and Night. For if any man perform a journey in the dark, we need not wonder if he frequently stumble, or go astray, or fall; but the light of the sun *by day* points out the road, so that there is no danger. Now the calling of God is like the light of day, which does not allow us to mistake our road or to stumble. Whoever, then, obeys the word of God, and undertakes nothing but according to his command, always has God to guide and direct him from heaven, and with this confidence he may safely and boldly pursue his journey. For, as we are informed,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever walketh in his ways hath angels to guard him, and,</span> <span style="color:#000080">under their direction, is safe, so that he cannot strike his foot</span> <span style="color:#000080">against a stone, (</span></p>
-
-<span style="color:#000080">Psalm 91:11.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever walketh in his ways hath angels to guard him, and,</span> <span style="color:#000080">under their direction, is safe, so that he cannot strike his foot</span> <span style="color:#000080">against a stone, (</span><span style="color:#000080">Psalm 91:11.)</span></p>
 
 Relying on this protection, therefore, Christ advances boldly into Judea, without any dread of being stoned; for there is no danger of going astray, when God, performing the part of the sun, shines on us, and directs our course.
 
@@ -4017,9 +3813,7 @@ The only conclusion therefore is, that she inconsiderately yields to her own wis
 
 <span style="color:#800000">*He who believeth in me, though, he were dead, shall live.*</span> Why then is Christ *the resurrection*? Because by his Spirit he regenerates the children of Adam, who had been alienated from God by sin, so that they begin to live a new life. On this subject, I have spoken more fully under John 5:21 and 24; <span style="color:#800000">[^f316]</span> and Paul is an excellent interpreter of this passage, (Ephesians 2:5, and Ephesians 5:8.) Away now with those who idly talk that men are prepared for receiving the grace of God by the movement of nature. They might as well say that the dead walk. For that men live and breathe, and are endued with sense, understanding, and will, all this tends to their destruction, because there is no part or faculty of the soul that is not corrupted and turned aside from what is right. Thus it is that death everywhere holds dominion, for the death of the soul is nothing else than its being estranged and turned aside from God. <span style="color:#800000">[^f317]</span> Accordingly, they who believe in Christ, though they were formerly dead, begin to live, because faith is a spiritual resurrection of the soul, and — so to speak — animates the soul itself that it may live to God; according to that passage,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The dead shall hear the voice of the Son of God, and they who hear</span> <span style="color:#000080">shall live (</span></p>
-
-<span style="color:#000080">John 5:25.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The dead shall hear the voice of the Son of God, and they who hear</span> <span style="color:#000080">shall live (</span><span style="color:#000080">John 5:25.)</span></p>
 
 This is truly a remarkable commendation of faith, that it conveys to us the life of Christ, and thus frees us from death.
 
@@ -4029,9 +3823,7 @@ This is truly a remarkable commendation of faith, that it conveys to us the life
 
 Christ dwelling in them, from whom they derive perpetual vigor; for, though
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the body be subject to death on account of sin, yet the spirit is life</span> <span style="color:#000080">on account of righteousness, (</span></p>
-
-<span style="color:#000080">Romans 8:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the body be subject to death on account of sin, yet the spirit is life</span> <span style="color:#000080">on account of righteousness, (</span><span style="color:#000080">Romans 8:10.)</span></p>
 
 <!-- PAGE 394 -->
 
@@ -4075,9 +3867,7 @@ To make this matter still more clear, it will be of importance for us to disting
 
 The example of Christ ought to be sufficient of itself for setting aside the unbending sternness which the Stoics demand; for whence ought we to look for the rule of supreme perfection but from Christ? We ought rather to endeavor to correct and subdue that obstinacy which pervades our affections on account of the sin of Adam, and, in so doing, to follow Christ as our leader, that he may bring us into subjection. Thus Paul does not demand from us hardened stupidity, but enjoins us to observe moderation
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in our mourning, that we may not abandon ourselves to grief, like</span> <span style="color:#000080">unbelievers who have no hope (</span></p>
-
-<span style="color:#000080">1 Thessalonians 4:13;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">in our mourning, that we may not abandon ourselves to grief, like</span> <span style="color:#000080">unbelievers who have no hope (</span><span style="color:#000080">1 Thessalonians 4:13;)</span></p>
 
 <!-- PAGE 399 -->
 
@@ -4110,9 +3900,7 @@ this was no ordinary proof of her piety; and yet she does not cease to throw dif
 
 <span style="color:#800000">*If thou believe.*</span> This is said, not only because faith opens our eyes, that we may be able to see the power of God shining in his works, but because our faith prepares the way for the power, mercy, and goodness of God, that they may be displayed towards us, as it is said, *Open thy mouth wide*, *and I will fill it*, (Psalm 81:10.) In like manner, unbelief, on the other hand, hinders God from approaching us, and may be said to keep his hands shut. On this account it is said elsewhere, that Jesus
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">could not perform any miracle there on account of their unbelief,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 13:58.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">could not perform any miracle there on account of their unbelief,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 13:58.)</span></p>
 
 Not that the power of God is bound by the caprice of men, but because, as far as they are able, their malice opposes the exercise of that power, and therefore they do not deserve that it should be manifested to them. Frequently, indeed, does God overcome such obstacles; but yet, whenever he withdraws his hand, so as not to assist unbelievers, this is done because, shut up within the narrow limits of their unbelief, they do not allow it to enter.
 
@@ -4189,9 +3977,7 @@ But it is highly ridiculous in the Papists to infer from this that we ought to r
 
 <!-- PAGE 411 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that he might gather together all things which are in heaven and in</span> <span style="color:#000080">earth, (</span></p>
-
-<span style="color:#000080">Ephesians 1:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">that he might gather together all things which are in heaven and in</span> <span style="color:#000080">earth, (</span><span style="color:#000080">Ephesians 1:10.)</span></p>
 
 Wherefore, that we may enjoy the salvation brought by Christ, discord must be removed, and we must be made one with God and with angels, and among ourselves. The cause and pledge of this unity was the death of Christ, by which he drew all things to himself; but we are daily *gathered* by the Gospel into the fold of Christ.
 
@@ -4240,15 +4026,11 @@ is different from what is mentioned here; but they are mistaken. They have been 
 
 Christ was anointed, speak of two days as having elapsed. But the solution is easy, and may be given in two ways. For John does not say that Christ was anointed on the first day after his arrival; so that this might happen even when he was preparing to depart. Yet, as I have already said, there is another conjecture which is more probable, that he was anointed one day, at least, or two days, before his departure; for it is certain that Judas had made a bargain with the priests, before Christ sent two of his disciples to make ready the passover. <span style="color:#800000">[^f332]</span> Now, at the very least, one day must have intervened. The Evangelists add, that he
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">sought a convenient opportunity for betraying Christ,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 26:16,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">sought a convenient opportunity for betraying Christ,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 26:16,)</span></p>
 
 after having received the bribe. When, therefore, after mentioning *two days*, they add the history of the anointing, they place last in the narrative what happened first. And the reason is, that after having related the words of Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">You know that after two days the Son of man shall be betrayed,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 26:2,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">You know that after two days the Son of man shall be betrayed,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 26:2,)</span></p>
 
 they now add — what had been formerly omitted — in what manner and on what occasion he was betrayed by his disciple. There is thus a perfect agreement in the account of his having been anointed at Bethany.
 
@@ -4395,9 +4177,7 @@ Taught by this example, let us learn to form our judgment of every thing that re
 
 **24.** <span style="color:#800000">*Unless a grain of wheat having fallen into the ground, die, it remaineth alone.*</span> *If a grain of wheat do not die* or putrefy, it continues to be dry and unfruitful; but the death of the seed has the beneficial effect of quickening it, that it may yield fruit. In short, Christ compares his death to sowing, which appears to tend to the destruction of the <span style="color:#800000">*wheat,*</span> but yet is the cause of far more abundant increase. Though this admonition was especially necessary at that time, yet it is of continual use in the Church. And, first, we ought to begin with the Head. That dreadful appearance of disgrace and cursing, which appears in the death of Christ, not only obscures his glory, but removes it altogether from our view. We must not, therefore, confine our attention to his death alone, but must likewise consider the fruit which has been yielded by his glorious resurrection. <span style="color:#800000">[^f350]</span> Thus there will be nothing to prevent his glory from being every where displayed. From him we must next come to the members; for not only do we think that we perish in death, but our life also is a sort of continual death, (Colossians 3:3.) We shall therefore be undone, unless we be supported by that consolation which Paul holds out:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">if our outward man decays, the inward man is renewed</span> <span style="color:#000080">from day to day, (</span></p>
-
-<span style="color:#000080">2 Corinthians 4:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">if our outward man decays, the inward man is renewed</span> <span style="color:#000080">from day to day, (</span><span style="color:#000080">2 Corinthians 4:16.)</span></p>
 
 When, therefore, the godly are distressed by various afflictions, when they are pressed hard by the difficulties of their situation, when they suffer hunger, or nakedness, or disease, when they are assailed by reproaches, when it appears as if they would every hour be almost overwhelmed by death, let them unceasingly consider that this is a sowing which, in due time, will yield fruit.
 
@@ -4474,9 +4254,7 @@ Yet it must also be observed, that this proper arrangement cannot be established
 
 <span style="color:#800000">*I will draw all men to myself.*</span> The word <span style="color:#800000">*all,*</span> which he employs, must be understood to refer to the children of God, who belong to his flock. Yet I agree with Chrysostom, who says that Christ used the universal term, *all*, because the Church was to be gathered equally from among Gentiles and Jews, according to that saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There shall be one shepherd, and one sheepfold, (</span></p>
-
-<span style="color:#000080">John 10:16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There shall be one shepherd, and one sheepfold, (</span><span style="color:#000080">John 10:16.)</span></p>
 
 The old Latin translation has, *I will draw* ALL THINGS *to me*; and Augustine maintains that we ought to read it in that manner; but the agreement of all the Greek manuscripts ought to have greater weight with us.
 
@@ -4500,9 +4278,7 @@ The old Latin translation has, *I will draw* ALL THINGS *to me*; and Augustine m
 
 <span style="color:#800000">*Walk while you have the light lest darkness overtake you.*</span> This statement, that <span style="color:#800000">*the light*</span> does not continue to shine on them but for *a little while*, Applies equally to all unbelievers; for Scripture promises that to the children of God *the Sun of righteousness* (Malachi 4:2) will rise, and will never go down.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The sun shall no longer be your light by day, nor the moon by</span> <span style="color:#000080">night, but the Lord shall be your everlasting light,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Isaiah 60:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The sun shall no longer be your light by day, nor the moon by</span> <span style="color:#000080">night, but the Lord shall be your everlasting light,</span> <span style="color:#000080">(</span><span style="color:#000080">Isaiah 60:19.)</span></p>
 
 But all ought to <span style="color:#800000">*walk*</span> cautiously, because contempt of *the light* is followed by darkness. This, too, is the reason why night so thick and dark sat down on the world for many centuries. It was because there were few who deigned to walk in the brightness of heavenly wisdom; for Christ enlightens us by his Gospel, in order that we may follow the way of salvation, which he points out to us. For this reason, they who do not avail themselves of the grace of God extinguish, as far as lies in their power, the light which is offered to them.
 
@@ -4573,9 +4349,7 @@ The word *even* is emphatic; for in the order of *the rulers*, there existed so 
 
 <span style="color:#800000">*On account of the Pharisees.*</span> It may be thought that he speaks incorrectly, when he separates faith from *confession*; for
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">with the heart we believe to righteousness, and with the mouth</span> <span style="color:#000080">confession is made unto salvation, (</span></p>
-
-<span style="color:#000080">Romans 10:10)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">with the heart we believe to righteousness, and with the mouth</span> <span style="color:#000080">confession is made unto salvation, (</span><span style="color:#000080">Romans 10:10)</span></p>
 
 <!-- PAGE 447 -->
 and it is impossible that the faith, which has been kindled in the heart, shall not put forth its flame. I reply, he points out here how weak was the faith of those men who were so lukewarm, or rather cold. In short, John means that they embraced the doctrine of Christ, because they knew that it had come from God, but that they have not a lively faith, or a faith so vigorous as it ought to have been; for Christ does not grant to his followers a spirit of fear, but of firmness, that they may boldly and fearlessly confess what they have learned from him. Yet I do not think that they were altogether silent; but as their *confession* was not sufficiently open, the Evangelist, in my opinion, simply declares that they did not make profession of their faith; for the proper kind of profession was, openly to declare that they were the disciples of Christ. Let no man, therefore, flatter himself who, in any respect, conceals or dissembles his faith for fear of incurring the hatred of men; for however hateful the name of Christ may be, that cowardice which compels us to turn aside, in the smallest degree, from the confession of him, admits of no excuse.
@@ -4589,9 +4363,7 @@ John says that they were afraid of <span style="color:#800000">*the Pharisees;*<
 
 **43.** <span style="color:#800000">*For they loved the glory of men.*</span> The Evangelist expressly states that those men were not guided by any superstition, but only endeavored to avoid disgrace among men; for if ambition had greater influence over them than the fear of God, it follows, that it was no vain scruple of conscience that gave them uneasiness. Now, let the reader observe how great ignominy is incurred before God, by the cowardice of those who, from the fear of being hated, dissemble their faith before men. Can any thing be more foolish, or rather, can any thing be more beastly, than to prefer the silly applause of men to the judgment of God? But he declares that all who shrink from the hatred of men, when the pure faith ought to be confessed, are seized with this kind of madness. And justly; for the apostle, in applauding the unshaken steadiness of Moses, says that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he remained firm, as if he had seen him who is invisible,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Hebrews 11:27.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he remained firm, as if he had seen him who is invisible,</span> <span style="color:#000080">(</span><span style="color:#000080">Hebrews 11:27.)</span></p>
 
 By these words he means that, when any person has fixed his eyes on God, his heart will be invincible, and utterly incapable of being moved.
 
@@ -4644,9 +4416,7 @@ But when Christ mentions the last judgment, he means that they are now destitute
 <!-- PAGE 453 -->
 **49.** <span style="color:#800000">*For I do not speak from myself.*</span> That the outward appearance of man may not lessen the majesty of God, Christ frequently sends us to the Father. This is the reason why he so often mentions the Father; and, indeed, since it would be unlawful to transfer to another a single spark of the Divine glory, <span style="color:#800000">*the word,*</span> to which *judgment* is ascribed, must have proceeded from God. Now Christ here distinguishes himself from the Father, not simply as to his Divine Person, but rather as to his flesh; lest the doctrine should be judged after the manner of men, and, therefore, should have less weight. But if consciences were subject to the laws and doctrine of men, this argument of Christ would not apply, “My word (he says) will judge, because it has not proceeded from man;” according to that saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There is one lawgiver, who is able to save and to destroy,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">James 4:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">There is one lawgiver, who is able to save and to destroy,</span> <span style="color:#000080">(</span><span style="color:#000080">James 4:12.)</span></p>
 
 We may likewise infer from it, how monstrous, is the sacrilege of the Pope in daring to bind souls by his inventions; for in this way he claims more for himself than the Son of God does, who declares that he does not speak but by the commandment of his Father.
 
@@ -4752,9 +4522,7 @@ Again, the other comparison was also applied to the case in hand, that Peter mig
 
 In another passage he includes Judas in the number of the *elect*.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Have not I chosen (or, elected) you twelve,</span> <span style="color:#000080">and one of you is a devil? (</span></p>
-
-<span style="color:#000080">John 6:70.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Have not I chosen (or, elected) you twelve,</span> <span style="color:#000080">and one of you is a devil? (</span><span style="color:#000080">John 6:70.)</span></p>
 
 <!-- PAGE 464 -->
 But in that passage the mode of expression, though different, is not opposite’, for there the word denotes a temporal *election*, by which God appoints us to any particular work; in the same manner as Saul, who was *elected* to be a king, and yet was a reprobate. But here Christ speaks of the eternal *election*, by which we become the children of God, and by which God predestinated us to life before the creation of the world. And, indeed, the reprobate are sometime, endued by God with the gifts of the Spirit, to execute the office with which he invests them. Thus, in Saul, we perceive, for a time, the splendor of royal virtues, and thus Judas also was distinguished by eminent gifts, and such as were adapted to an apostle of Christ. But this is widely different from the sanctification of the Holy Spirit, which the Lord bestows on none but his own children; for he renews them in understanding and heart, that they may be holy and unblameable in his sight. Besides, that sanctification has a deep root in them, which cannot be removed; because the adoption of God is without repentance. Meanwhile, let us regard it as a settled point, that it results from the election of God, when, having embraced by faith the doctrine of Christ, we also follow it during our life; and that this is the only cause of our happiness, by which we are distinguished from the reprobate; for they, being destitute of the grace of the Spirit, miserably perish, while we have Christ for our guardian, who guides us by his hand, and upholds us by his power.
@@ -4873,9 +4641,7 @@ In short, we see that it was the design of Christ, in this passage, to exhort hi
 
 **36.** <span style="color:#800000">*Lord, whither goest thou?*</span> This question is founded on that saying of Christ,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I said to the Jews, that whither I go you cannot come, so now I say</span> <span style="color:#000080">to you, (</span></p>
-
-<span style="color:#000080">John 13:33.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">I said to the Jews, that whither I go you cannot come, so now I say</span> <span style="color:#000080">to you, (</span><span style="color:#000080">John 13:33.)</span></p>
 
 <!-- PAGE 476 -->
 From this it is evident how ignorant Peter was, who, after having been so frequently warned about; Christ’s departure, was as greatly perplexed as if he had heard something new. Yet in this respect we are too like him; for we hear daily from the mouth of Christ all that is fitted for usefulness in life, and all that is necessary to be known, and, when we come to practice, we are as much astonished as apprentices to whom not a word had ever been spoken. Besides, Peter shows that he is under the influence of an immoderate desire of Christ’s bodily presence; for he reckons it absurd that, while he remains, Christ shall go elsewhere.
@@ -4989,9 +4755,7 @@ The repetition of the words, <span style="color:#800000">*I am in the Father, an
 
 <span style="color:#800000">*That the Father may be glorified in the Son.*</span> This passage agrees with what Paul says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">That every tongue may confess that Jesus Christ is Lord, to the</span> <span style="color:#000080">glory of God the Father, (</span></p>
-
-<span style="color:#000080">Philippians 2:11.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">That every tongue may confess that Jesus Christ is Lord, to the</span> <span style="color:#000080">glory of God the Father, (</span><span style="color:#000080">Philippians 2:11.)</span></p>
 
 The end of all things is the sanctification of the name of God; but here the true method of sanctifying it is declared; that is, *in the Son*, and *by the Son*.
 
@@ -4999,9 +4763,7 @@ The end of all things is the sanctification of the name of God; but here the tru
 
 For, though the majesty of God be in itself hidden from us, it shines *in Christ*; though his hand be concealed, we have it visible *in Christ*. Consequently, in the benefits which the Father bestows upon us, we have no right to separate *the Father* from *the Son*, according to that saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He that honoureth not the Son honoureth not the Father,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 6:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He that honoureth not the Son honoureth not the Father,</span> <span style="color:#000080">(</span><span style="color:#000080">John 6:23.)</span></p>
 
 **14.** <span style="color:#800000">*If you shall ask any thing in my name, I will do it.*</span> This is not a useless repetition. All see and feel that they are unworthy to approach God; and yet the greater part of men burst forward, as if they were out of their senses, and rashly and haughtily address God; and afterwards, when that unworthiness, of which I have spoken, comes to their recollection, every man contrives for himself various expedients. On the other hand, when God invites us to himself, he holds out to us one Mediator only, by whom he is willing to be appeased and reconciled. But here again the wickedness of the human mind breaks out for the greater part do not cease to forsake the road, and to pass through many windings. The reason why they do so is, that they have but a poor and slender perception of the power and goodness of God in Christ. To this is added a second error, that we do not consider that we are justly excluded from approaching God, until he calls us, and that we are called only through the Son. And if one passage has not sufficient weight with us, let us know that, when Christ repeats, a second time, that we must pray to the Father in his name, he lays his hand on us, as it were, that we may not lose our pains by fruitlessly seeking other intercessors.
 
@@ -5070,23 +4832,17 @@ As to the manner in which this passage was formerly abused by the Aryans, to pro
 
 **21.** <span style="color:#800000">*He who hath my commandments. He*</span> again repeats the former statement, that the undoubted proof of our love to him lies in our *keeping his commandments*; and the reason why he so frequently reminds the disciples of this is, that they may not turn aside from this object; for there is nothing to which we are more prone than to slide into a carnal affection, so as to love something else than Christ under the name of Christ. Such is also the import of that saying of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though we have known Christ after the flesh, yet henceforth we</span> <span style="color:#000080">know him no longer in this manner. Let us therefore be a new</span> <span style="color:#000080">creature, (</span></p>
-
-<span style="color:#000080">2 Corinthians 5:16, 17.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though we have known Christ after the flesh, yet henceforth we</span> <span style="color:#000080">know him no longer in this manner. Let us therefore be a new</span> <span style="color:#000080">creature, (</span><span style="color:#000080">2 Corinthians 5:16, 17.)</span></p>
 
 <span style="color:#800000">*To*</span> <span style="color:#800000">HAVE</span> <span style="color:#800000">*his commandments*</span> means to be properly instructed in them; and *to* KEEP *his commandments* is to conform ourselves and our life to their rule.
 
 <span style="color:#800000">*And he that loveth me will be loved by my Father.*</span> Christ speaks as if men loved God before he loved them; which is absurd, for,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">when we were enemies, he reconciled us to him,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 5:10;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">when we were enemies, he reconciled us to him,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 5:10;)</span></p>
 
 and the words of John are well known,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Not that we first loved him, but he first loved us,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 John 4:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Not that we first loved him, but he first loved us,</span> <span style="color:#000080">(</span><span style="color:#000080">1 John 4:10.)</span></p>
 
 <!-- PAGE 494 -->
 
@@ -5103,9 +4859,7 @@ Now, this mark comes after the commencement of faith, for it is the effect of th
 
 <span style="color:#800000">*And we will come to him who loveth me;*</span> that is, he will feel that the grace of God dwelleth in him, and will every day receive additions to the gifts of God. He therefore speaks, not of that eternal love with which he loved us, before we were born, and even before the world was created, but since the time when he seals it on our hearts by making us partakers of his adoption. Nor does he even mean the first illumination, but those degrees of faith by which believers must continually advance, according to that saying,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever hath it shall be given to him, (</span></p>
-
-<span style="color:#000080">Matthew 13:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever hath it shall be given to him, (</span><span style="color:#000080">Matthew 13:12.)</span></p>
 
 <!-- PAGE 496 -->
 The Papists; therefore are wrong in inferring from this passage that there are two kinds of love with which we love God. They falsely maintain that we naturally love God, before he regenerates us by his Spirit, and even that by this preparation we merit the grace of regeneration; as if Scripture did not everywhere teach, and as if experience also did not loudly proclaim, that we are altogether alienated from God, and that we are infected and filled with hatred of him, until he change our hearts. We must therefore keep in view the design of Christ, that he *and the Father will come*, to confirm believers, in uninterrupted confidence in his grace.
@@ -5145,9 +4899,7 @@ THAT I HAVE SAID. Hence it follows, that he will not be a builder of new revelat
 
 There is a similar passage in the writings of Paul, where he says that Christ
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">will deliver up the Kingdom to God his Father, that God may be all</span> <span style="color:#000080">in all, (</span></p>
-
-<span style="color:#000080">1 Corinthians 15:24.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">will deliver up the Kingdom to God his Father, that God may be all</span> <span style="color:#000080">in all, (</span><span style="color:#000080">1 Corinthians 15:24.)</span></p>
 
 <!-- PAGE 500 -->
 Christ certainly reigns, not only in human nature, but as he is God manifested in the flesh. In what manner, therefore, will he lay aside the kingdom? It is, because the Divinity which is now beheld in Christ’s face alone, will then be openly visible in him. The only point of difference is, that Paul there describes the highest perfection of the Divine brightness, the rays of which began to shine from the time when Christ ascended to heaven. To make the matter more clear, we must use still greater plainness of speech. Christ does not here make a comparison between the Divinity of the Father and his own, nor between his own human nature and the Divine essence of the Father, but rather between his present state and the heavenly glory, to which he would soon afterwards be received; as if he had said, “You wish to detain me in the world, but it is better that I should ascend to heaven.” Let us therefore learn to behold Christ humbled in the flesh, so that he may conduct us to the fountain of a blessed immortality; for he was not appointed to be our guide, merely to raise us to the sphere of the moon or of the sun, but to make us one with God the Father.
@@ -5206,9 +4958,7 @@ There is scarcely any one who is ashamed to acknowledge that every thing good wh
 
 **4.** <span style="color:#800000">*Abide in me.*</span> He again exhorts them to be earnest and careful in keeping the grace which they had received, for the carelessness of the flesh can never be sufficiently aroused. And, indeed, Christ has no other object in view than to keep us
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">as a hen keepeth her chickens under her wings,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 23:37)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">as a hen keepeth her chickens under her wings,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 23:37)</span></p>
 
 lest our indifference should carry us away, and make us fly to our destruction. In order to prove that he did not begin the work of our salvation for the purpose of leaving it imperfect in the middle of the course, he promises that his Spirit will always be efficacious in us, if we do not prevent him. *Abide in me*, says he; <span style="color:#800000">*for I am ready to abide in you*</span><span style="color:#800000">.</span> And again, <span style="color:#800000">*He who abideth in me beareth much fruit.*</span> By these words he declares that all who have a living root in him are fruit-bearing *branches*.
 
@@ -5249,9 +4999,7 @@ The conclusion which some draw from these words, that there is no efficacy in th
 
 **10.** <span style="color:#800000">*If you keep my commandments.*</span> He points out to us the method of perseverance. his, to follow where he calls, for, as Paul says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They who are in Christ walk not according to the flesh, but</span> <span style="color:#000080">according to the Spirit, (</span></p>
-
-<span style="color:#000080">Romans 8:1.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">They who are in Christ walk not according to the flesh, but</span> <span style="color:#000080">according to the Spirit, (</span><span style="color:#000080">Romans 8:1.)</span></p>
 
 For these two things are continually united, that faith which perceives the undeserved love of Christ toward us, and a good conscience and newness of life. And, indeed, Christ does not reconcile believers to the Father, that they may indulge in wickedness without reserve, and without punishment; but that, governing them by his Spirit, he may keep them under the authority and dominion of his Father. Hence it follows, that the love of Christ is rejected by those who do not prove, by true obedience, that they are his disciples.
 
@@ -5270,9 +5018,7 @@ But again, it may be thought that the condition imposed on us is too difficult, 
 
 <span style="color:#800000">*My joy and your joy.*</span> It is called *Christ*’*s joy* and *our joy* in various respects. It is *Christ*’s, because it is given to us by him; for he is both the Author and the Cause of it. I say that he is the *Cause* of it, because we were freed from guilt, when
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the chastisement of our peace was laid on him, (</span></p>
-
-<span style="color:#000080">Isaiah 53:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the chastisement of our peace was laid on him, (</span><span style="color:#000080">Isaiah 53:5.)</span></p>
 
 <!-- PAGE 511 -->
 
@@ -5296,38 +5042,28 @@ I call him also the Author of it, because by his Spirit he drives away dread and
 
 **13.** <span style="color:#800000">*Greater love hath no one than this.*</span> Christ sometimes proclaims the greatness of his love to us, that he may more fully confirm our confidence in our salvation; but now he proceeds further, in order to inflame us, by his example, to love the brethren. Yet he joins both together; for he means that we should taste by faith how inestimably delightful his goodness is, and next he allures us, in this way, to cultivate brotherly love. Thus Paul writes:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Walk in love, as Christ also hath loved us, and hath given himself</span> <span style="color:#000080">for us an offering and sacrifice to God of a sweet-smelling savor,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Ephesians 5:2.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Walk in love, as Christ also hath loved us, and hath given himself</span> <span style="color:#000080">for us an offering and sacrifice to God of a sweet-smelling savor,</span> <span style="color:#000080">(</span><span style="color:#000080">Ephesians 5:2.)</span></p>
 
 God might have redeemed us by a single word, or by a mere act of his will, if he had not thought it better to do otherwise for our own benefit, that, by not sparing his own well-beloved Son, he might testify in his person how much he cares for our salvation. But now our hearts, if they are not softened by the inestimable sweetness of Divine love, must be harder than stone or iron.
 
 But a question is put. How did Christ die for friends, since
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we were enemies, before he reconciled us, (</span></p>
-
-<span style="color:#000080">Romans 5:10;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we were enemies, before he reconciled us, (</span><span style="color:#000080">Romans 5:10;)</span></p>
 
 for, by expiating our sins through the sacrifice of his death, he destroyed the enmity that was between God and us? The answer to this question will be found under the third chapter, where we said that, in reference to us, there is a state of variance between us and God, till our sins are blotted out by the death of Christ; but that the cause of this grace, which has been manifested in Christ, was the <span style="color:#800000">f413</span> In this way, too, Christ laid down his life for those who were strangers, but whom, even while they were strangers, he loved, otherwise he would not have died for them.
 
 <!-- PAGE 513 -->
 **14.** <span style="color:#800000">*You are my friends.*</span> He does not mean that we obtain so great an honor by our own merit, but only reminds them of the condition on which he receives us into favor, and deigns to reckon us among his friends; as he said a little before,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If you keep my commandments, you will abide in my love,</span> <span style="color:#000080">(</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If you keep my commandments, you will abide in my love,</span> <span style="color:#000080">(</span><span style="color:#000080">John 15:10.)</span></p>
 
-<span style="color:#000080">John 15:10.)</span>
-
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">For the grace of God our Savior hath appeared, teaching us that,</span> <span style="color:#000080">denying ungodliness and worldly desires, we should live soberly,</span> <span style="color:#000080">and righteously, and piously, in this world, (</span></p>
-
-<span style="color:#000080">Titus 2:11.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">For the grace of God our Savior hath appeared, teaching us that,</span> <span style="color:#000080">denying ungodliness and worldly desires, we should live soberly,</span> <span style="color:#000080">and righteously, and piously, in this world, (</span><span style="color:#000080">Titus 2:11.)</span></p>
 
 But ungodly men, who, through wicked contempt of the Gospel, want only oppose Christ, renounce his friendship.
 
 **15.** <span style="color:#800000">*Henceforth I will not call you servants.*</span> By another argument he shows his love toward the disciples, which was, that he opened his mind fully to them, as familiar communication is maintained among <span style="color:#800000">*friends.*</span> “I have condescended,” he says, “far more to you than a mortal man is wont to condescend to his <span style="color:#800000">*servants*</span>. Let this be regarded by you, therefore, as a pledge of my love toward you, that I have, in a kind and friendly manner, explained to you the secrets of heavenly wisdom which I had heard from the Father.” It is indeed a noble commendation of the Gospel, that we have the heart of Christ opened (so to speak) in it, so that we can no longer doubt of it or perceive it slightly. We have no reason for desiring to rise above the clouds, or to penetrate into the deep, (Romans 10:6, 7) to obtain the certainty of our salvation. Let us be satisfied with this testimony of his love toward us which is contained in the Gospel, for it will never deceive us. Moses said to the ancient people,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">What nation under heaven is so highly favored as to have God near</span> <span style="color:#000080">to them, as God talked, with you this day?</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Deuteronomy 4:7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">What nation under heaven is so highly favored as to have God near</span> <span style="color:#000080">to them, as God talked, with you this day?</span> <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 4:7.)</span></p>
 
 But far higher is the distinction which God hath conferred on us, since God hath entirely conveyed himself to us in his Son. So much the greater is the ingratitude and wickedness of those who, not satisfied with the admirable wisdom of the Gospel, fly with proud eagerness to new speculations.
 
@@ -5352,17 +5088,13 @@ He takes, as the ground of his exhortation, the undeserved favor which he had be
 
 <!-- PAGE 516 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he had been separated from his mother’s womb,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Galatians 1:15.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he had been separated from his mother’s womb,</span> <span style="color:#000080">(</span><span style="color:#000080">Galatians 1:15.)</span></p>
 
 Nay more, since we are altogether useless servants, those who appear to be the most excellent of all will not be fit for the smallest calling, till they have been *chosen*. Yet the higher the degree of honor to which any one has been raised, let him remember that he is under the deeper obligations to God.
 
 <span style="color:#800000">*And I have appointed you.*</span> The election is hidden till it is actually made known, when a man receives an office to which he had been appointed; as Paul, in the passage which I quoted a little ago, where he says that <span style="color:#800000">*he had been separated from his mother*</span><span style="color:#800000">’</span><span style="color:#800000">*s womb*</span>, adds, that he was created an apostle, because *it so pleased God*. His words are:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When it pleased God, who separated me from my mother’s womb,</span> <span style="color:#000080">and called me by his grace, (</span></p>
-
-<span style="color:#000080">Galatians 1:15.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When it pleased God, who separated me from my mother’s womb,</span> <span style="color:#000080">and called me by his grace, (</span><span style="color:#000080">Galatians 1:15.)</span></p>
 
 Thus also the Lord testifies that he *knew* Jeremiah *before he was in his mother*’*s womb*, (Jeremiah 1:5,) though he calls him to the prophetical office at the proper and appointed time. It may happen, no doubt, that one who is duly qualified enters into the office of teaching; or rather, it usually happens in the Church that no one is called till he be endued and furnished with the necessary qualifications. That Christ declares himself to be the Author of both is not wonderful; since it is only by him that God acts, and he acts along with the Father. So then, both election and ordination belong equally to both.
 
@@ -5396,9 +5128,7 @@ BEFORE the Apostles were *hated*. But I prefer the second exposition, namely, th
 
 <span style="color:#800000">*But I have chosen you out of the world.*</span> *To choose* means here *to separate*. Now, if they were <span style="color:#800000">*chosen out of the world*</span>, it follows that they were a part *of the world*, and that it is only by the mercy of God that they are distinguished from the rest who perish. Again, by the term, <span style="color:#800000">*the world*</span>, Christ describes, in this passage, all who have not been regenerated by the Spirit of God; for he contrasts the Church with *the world*, as we shall see more fully under the seventeenth chapter. And yet this doctrine does not contradict the exhortation of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Be at peace with all men, as far as lieth in you,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 12:18;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Be at peace with all men, as far as lieth in you,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 12:18;)</span></p>
 
 for the exception which he adds amounts to saying, that we ought to see what is right and proper for us to do that no man, by seeking to please *the world*, may give himself up to its corruptions.
 
@@ -5432,9 +5162,7 @@ Christ assigns the reason to be, that it is hurried on by blind ignorance to its
 
 But there is still another question that arises: “Was not unbelief sufficient to condemn men before the coming of Christ?” There are fanatics who reason inconclusively from this passage, that all who died before the coming of Christ died without faith, and remained in a state of doubt and suspense till Christ manifested himself to them; as if there were not many passages of Scripture which testify that their conscience alone was sufficient to condemn them. *Death*, says Paul, *reigned in the world even to Moses*, (Romans 5:14.) And again he declares, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they who have sinned without law shall perish without law,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 2:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they who have sinned without law shall perish without law,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 2:12.)</span></p>
 
 <!-- PAGE 523 -->
 
@@ -5444,17 +5172,13 @@ What, then, does Christ mean? There is undoubtedly an admission made in these wo
 
 **23.** <span style="color:#800000">*He who hateth me hateth my Father also.*</span> This is a remarkable passage, which teaches us that no man can hate the doctrine of the Gospel without manifesting his impiety against God. There are many, indeed, who profess differently in words; for, though they abhor the Gospel, still they wish to be thought very good servants of God; but it is false, for a contempt of God is concealed within. In this manner Christ discovers the hypocrisy of many by the light of his doctrine; and on this subject we have spoken more largely under that passage,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever doeth what is evil hateth the light</span> <span style="color:#800000">[^f418]</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 3:20,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Whosoever doeth what is evil hateth the light</span> <span style="color:#800000">[^f418]</span> <span style="color:#000080">(</span><span style="color:#000080">John 3:20,)</span></p>
 
 and under that passage,
 
 <p style="text-align:center">He who honoureth not the Son honoureth not the Father, [^f419]</p>
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 5:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">(</span><span style="color:#000080">John 5:23.)</span></p>
 
 <!-- PAGE 524 -->
 **24.** <span style="color:#800000">*If I had not done among them the works*</span>. Under the word <span style="color:#800000">*works*</span> he includes, in my opinion, all the proofs which he gave of his Divine glory; for by miracles, and by the power of the Holy Spirit, and by other demonstrations, he clearly proved that he was the Son of God, so that in him was plainly seen the majesty *of the Only-begotten Son*, as we have seen under John 1:14. <span style="color:#800000">[^f420]</span> It is commonly objected, that he did not perform more miracles or greater miracles than Moses and the Prophets. The answer is well known, that Christ is more eminent in miracles in this respect, that he was not merely a minister, like the rest, but was strictly the Author of them; for he employed his own name, his own authority, and his own power, in performing miracles. But, as I have said, he includes in general all the testimonies of heavenly and spiritual power by which his Divinity was displayed.
@@ -5470,9 +5194,7 @@ and under that passage,
 
 We ought, therefore, to observe carefully in what manner we ought to remain firm among so many storms. It is because
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we have received, not the spirit of the world, but the Spirit which</span> <span style="color:#000080">is of God, that we may know the things which have been given to</span> <span style="color:#000080">us by God, (</span></p>
-
-<span style="color:#000080">1 Corinthians 2:12.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we have received, not the spirit of the world, but the Spirit which</span> <span style="color:#000080">is of God, that we may know the things which have been given to</span> <span style="color:#000080">us by God, (</span><span style="color:#000080">1 Corinthians 2:12.)</span></p>
 
 This single witness powerfully drives away, scatters, and overturns, all that the world rears up to obscure or crush the truth of God. All who are endued with this Spirit are so far from being in danger of falling into despondency on account of the hatred or contempt of the world, that every one of them will obtain glorious victory over the whole world. Yet we must beware of relying on the good opinion of men; for so long as faith shall wonder in this manner, or rather, as soon as it shall have gone out of the sanctuary of God, it must become involved in miserable uncertainty. It must, therefore, be brought back to the inward and secret testimony of the Spirit, which, believers know, has been given to them from heaven.
 
@@ -5483,23 +5205,17 @@ When he says that he *will send him from the Father*, and, again, that <span sty
 
 **27.** <span style="color:#800000">*And you also bear testimony.*</span> Christ means that the testimony of *the Spirit* will not be of such a nature that the apostles shall have it for their private advantage, or that they alone shall enjoy it, but that by them it will be widely diffused, because they will be organs of the Holy Spirit, as indeed, he spoke by their mouth. We now see in what way *faith is by hearing*, (Romans 10:17,) and yet it derives its certainty from the *seal* and *earnest of the Spirit*, (Ephesians 1:13, 14.) Those who do not sufficiently know the darkness of the human mind imagine that faith is formed naturally by hearing and preaching alone;17 and there are many fanatics who disdain the outward preaching, and talk in lofty terms about secret revelations and inspirations, (<span style="color:#0000d4">ἐνθουσιασμοὺς</span>) But we see how Christ joins these two things together; and, therefore, though there is no faith till the Spirit of God seal our minds and hearts, still we must not go to seek visions or oracles in the clouds; but the word,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">which is near us, in our mouth and heart, (</span></p>
-
-<span style="color:#000080">Romans 10:8,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">which is near us, in our mouth and heart, (</span><span style="color:#000080">Romans 10:8,)</span></p>
 
 must keep all our senses bound and fixed on itself, as Isaiah says beautifully:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">My Spirit that is upon thee, and my words which I have put in</span> <span style="color:#000080">thy mouth, shall not depart out of thy mouth, nor out of the</span> <span style="color:#000080">mouth of thy seed, nor out of the mouth of thy seed’s seed saith</span> <span style="color:#000080">the Lord, from henceforth and for ever, (</span></p>
-
-<span style="color:#000080">Isaiah 59:21.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">My Spirit that is upon thee, and my words which I have put in</span> <span style="color:#000080">thy mouth, shall not depart out of thy mouth, nor out of the</span> <span style="color:#000080">mouth of thy seed, nor out of the mouth of thy seed’s seed saith</span> <span style="color:#000080">the Lord, from henceforth and for ever, (</span><span style="color:#000080">Isaiah 59:21.)</span></p>
 
 <!-- PAGE 527 -->
 
 <span style="color:#800000">*Because you are with me from the beginning.*</span> This clause was added in order to inform us that so much the greater credit is due to the apostles on this ground, that they were eye-witnesses of what they relate; as John says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">what we have heard, what we have seen, what our hands have</span> <span style="color:#000080">handled, we declare to you; (</span></p>
-
-<span style="color:#000080">1 John 1:1)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">what we have heard, what we have seen, what our hands have</span> <span style="color:#000080">handled, we declare to you; (</span><span style="color:#000080">1 John 1:1)</span></p>
 
 for thus the Lord intended to provide for our welfare in every possible way, that nothing might be wanting for a full confirmation of the Gospel.
 
@@ -5568,9 +5284,7 @@ Under the term <span style="color:#800000">*world*</span> are, I think, included
 
 We now perceive in what manner the Spirit was to CONVINCE *the world* by the apostles. It was, because God revealed his <span style="color:#800000">*judgment*</span> in the Gospel, by which their consciences were struck, and began to perceive their evils and the grace of God. for the verb <span style="color:#0000d4">ἐλέγχειν</span> here signifies *to convince* or *convict*; and, for understanding this passage, not a little light will be obtained from the words of the Apostle Paul, when he says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If all shall prophesy, and an unbeliever or unlearned man enter, he</span> <span style="color:#000080">is CONVICTED by all, he is judged by all, and thus shall the secrets</span> <span style="color:#000080">of his heart be made manifest, (</span></p>
-
-<span style="color:#000080">1 Corinthians 14:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If all shall prophesy, and an unbeliever or unlearned man enter, he</span> <span style="color:#000080">is CONVICTED by all, he is judged by all, and thus shall the secrets</span> <span style="color:#000080">of his heart be made manifest, (</span><span style="color:#000080">1 Corinthians 14:23.)</span></p>
 
 In that passage Paul speaks particularly of one kind of *conviction*, that is; when the Lord brings his elect to repentance by the Gospel; but this plainly shows in what manner *the Spirit* of God, by the sound of the human voice, constrains men, who formerly were not accustomed to his yoke, to acknowledge and submit to his authority.
 
@@ -5607,17 +5321,13 @@ If we do not wish to be ungrateful to God, let us rest satisfied with that doctr
 
 Beyond this let us not reckon ourselves at liberty to go; for our *height*, and *breadth*, and *depth*, consist in *knowing the love of God*, which is manifested to us in Christ. This *knowledge*, as Paul informs us, *far exceeds all learning*, (Ephesians 3:18;) and when he declares that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the treasures of wisdom and knowledge are hidden in Christ,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 2:3,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">all the treasures of wisdom and knowledge are hidden in Christ,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 2:3,)</span></p>
 
 he does not contrive some unknown Christ, but one whom by his preaching he painted to the life, so that, as he tells the Galatians,
 
 <!-- PAGE 539 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we see him, as it were, crucified before our eyes,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Galatians 3:1.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we see him, as it were, crucified before our eyes,</span> <span style="color:#000080">(</span><span style="color:#000080">Galatians 3:1.)</span></p>
 
 But that no ambiguity may remain, Christ himself afterwards explains by his own words what those things are which the apostles *were not yet able to bear*.
 
@@ -5662,15 +5372,11 @@ Other commentators explain these words to mean, that *all that the Father hath* 
 
 Nor ought we to think it strange when he says that he is *seen*, when he dwells in the disciples by the Spirit; for, though he is not *seen* with the bodily eyes, <span style="color:#800000">[^f428]</span> yet his presence is known by the undoubted experience of faith. What we are taught by Paul is indeed true, that believers,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">so long as they remain on earth, are absent from the Lord, because</span> <span style="color:#000080">they walk, by faith, and not by sight, (</span></p>
-
-<span style="color:#000080">2 Corinthians 5:6, 7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">so long as they remain on earth, are absent from the Lord, because</span> <span style="color:#000080">they walk, by faith, and not by sight, (</span><span style="color:#000080">2 Corinthians 5:6, 7.)</span></p>
 
 But it is equally true that they may justly, in the meantime, glory in having Christ dwelling in them by faith, in being united to him as members to the Head, in possessing heaven along with him by hope. Thus the grace of the Spirit is a mirror, in which Christ wishes to be seen by us, according to the words of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though we have known Christ according to the flesh, yet we know</span> <span style="color:#000080">him no more; if any man be in Christ, let him be a new creature,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 5:16, 17)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Though we have known Christ according to the flesh, yet we know</span> <span style="color:#000080">him no more; if any man be in Christ, let him be a new creature,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 5:16, 17)</span></p>
 
 <span style="color:#800000">*Because I go to the Father.*</span> Some explain these words as meaning that Christ will no longer be seen by the disciples, because he will be in heaven, and they on earth. For my part, I would rather refer it to the second clause, *You will soon see me*; for my death is not a destruction to separate me from you, but a passage into the heavenly glory, from which my divine power will diffuse itself even to you.” He intended, therefore, in my opinion, to teach what would be his condition after his death, that they might rest satisfied with his spiritual presence, and might not think that it would be any loss to them that he no longer dwelt with them as a mortal man.
 
@@ -5702,9 +5408,7 @@ We ought now to appropriate the use of this doctrine to ourselves. Having been r
 
 But since it is an obligation laid
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">on all creatures to labor till the last day of redemption,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Romans 8:22, 23,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">on all creatures to labor till the last day of redemption,</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 8:22, 23,)</span></p>
 
 let us know that we too must groan, until, having been delivered from the incessant afflictions of the present life, we obtain a full view of the fruit of our faith. To sum up the whole in a few words, believers are like *women in labor*, because, having been born again in Christ, they have not yet entered into the heavenly kingdom of God and a blessed life; and they are like pregnant women who are in childbirth, because, being still held captive in the prison of the flesh, they long for that blessed state which lies hidden under hope.
 
@@ -5717,9 +5421,7 @@ let us know that we too must groan, until, having been delivered from the incess
 
 True, the apostles did not cease to *ask* at the mouth of Christ, even when they had been elevated to the highest degree of wisdom, but this is only a comparison between the two conditions; as if Christ had said that their ignorance would be corrected, so that, instead of being stopped — as they now were — by the smallest obstructions, they would penetrate into the deepest mysteries without any difficulty. Such is the import of that passage in Jeremiah,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">No longer shall every man teach his neighbor, saying, Know the</span> <span style="color:#000080">Lord for all shall know me, from the least to the greatest, saith the</span> <span style="color:#000080">Lord, (</span></p>
-
-<span style="color:#000080">Jeremiah 31:34.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">No longer shall every man teach his neighbor, saying, Know the</span> <span style="color:#000080">Lord for all shall know me, from the least to the greatest, saith the</span> <span style="color:#000080">Lord, (</span><span style="color:#000080">Jeremiah 31:34.)</span></p>
 
 The prophet assuredly does not take away or set aside instruction, which must be in its most vigorous state in the kingdom of Christ; but he affirms that, when all shall be taught by God, no room will be any longer left for this gross ignorance, which holds the minds of men, till Christ, *the Sun of Righteousness*, (Malachi 4:2,) shall enlighten them by the rays of his
 
@@ -5757,9 +5459,7 @@ But we ought to attend to the frequent repetition of this clause, that we must p
 
 We now see what I mentioned a little ago, that this is intended to encourage the disciples by holding out to them the expectation of making greater progress, that they may not reject the doctrine, because they do not yet understand what it means; for, if we are not animated by the hope of profiting, the desire of learning must, unavoidably, be cooled. The fact, however, clearly shows that Christ did not employ terms purposely obscure, but addressed his disciples in a simple and even homely style but such was their ignorance that they hung on his lips with astonishment. That obscurity, therefore, did not lie so much in the doctrine as in their understandings; and, indeed, the same thing happens to us in the present day, for not without good reason does the word of God receive this commendation, that it is our *light*, (<span style="color:#800000"><19B9A5></span>Psalm 119:105; 2 Peter 1:19;) but its brightness is so obscured by our darkness, that, what we hear we reckon to be pure allegories. For, as he threatens by the prophet, that he will be a barbarian to the unbelievers and reprobate, as if he had a *stammering tongue*, (Isaiah 28:11;) and Paul says that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Gospel is hidden from such persons, because Satan hath</span> <span style="color:#000080">blinded their understandings, (</span></p>
-
-<span style="color:#000080">2 Corinthians 4:3, 4;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Gospel is hidden from such persons, because Satan hath</span> <span style="color:#000080">blinded their understandings, (</span><span style="color:#000080">2 Corinthians 4:3, 4;)</span></p>
 
 <!-- PAGE 551 -->
 
@@ -5769,9 +5469,7 @@ so to the weak and ignorant it commonly appears to be something so confused that
 
 <span style="color:#800000">*But will tell you plainly about the Father.*</span> When he says that he *will tell them about the Father*, he reminds us that the design of his doctrine is to lead us to God, in whom true happiness lies. But another question remains: How does he *say*, elsewhere, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it was given to the disciples to know the mysteries of the kingdom</span> <span style="color:#000080">of heaven? (</span></p>
-
-<span style="color:#000080">Matthew 13:11.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it was given to the disciples to know the mysteries of the kingdom</span> <span style="color:#000080">of heaven? (</span><span style="color:#000080">Matthew 13:11.)</span></p>
 
 For here he acknowledges that he has spoken to them in obscure language, but there he lays down a distinction between them and the rest of the people, that *he speaketh to the people in parables*, (Matthew 13:13.)
 
@@ -5789,17 +5487,13 @@ Besides, when Christ is said to intercede with <span style="color:#800000">*the 
 
 God loves men in a secret way, before they are called, if they are among the elect; for he loves his own before they are created; but, as they are not yet reconciled, they are justly accounted *enemies* of God, as Paul speaks,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When we were ENEMIES</span>, <span style="color:#000080">we were reconciled to God by the death</span> <span style="color:#000080">of his Son, (</span></p>
-
-<span style="color:#000080">Romans 5:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">When we were ENEMIES</span>, <span style="color:#000080">we were reconciled to God by the death</span> <span style="color:#000080">of his Son, (</span><span style="color:#000080">Romans 5:10.)</span></p>
 
 On this ground it is said that we are *loved by God*, when we *love Christ*; because we have the pledge of the fatherly love of Him from whom we formerly recoiled as our offended Judge.
 
 **28.** <span style="color:#800000">*I came out from the Father.*</span> This mode of expression draws our attention to the Divine power which is in Christ. Our faith in him would not be steady, if it did not perceive his Divine power; for his death and resurrection, the two pillars of faith, would be of little avail to us, if heavenly power were not connected with them. We now understand in what manner we ought to *love* Christ. Our *love* ought to be of such a nature that our faith shall contemplate the purpose and power of God, by whose hand he is offered to us. for we must not receive coldly the statement that *he came out from God*, but must also understand for what reason and for what purpose *he came out*, namely, that he might be
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to us wisdom, and righteousness, and sanctification, and</span> <span style="color:#000080">redemption, (</span></p>
-
-<span style="color:#000080">1 Corinthians 1:30.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">to us wisdom, and righteousness, and sanctification, and</span> <span style="color:#000080">redemption, (</span><span style="color:#000080">1 Corinthians 1:30.)</span></p>
 
 <!-- PAGE 554 -->
 <span style="color:#800000">*Again, I leave the world, and go to the Father.*</span> By this second clause he points out to us that this power is perpetual- for the disciples might have thought that it was a temporary blessing, that he was sent into the world to be a Redeemer. He therefore said that *he returns to the Father*, that they may be fully persuaded that none of those blessings which he brought are lost by his departure, because from his heavenly glory he sheds on the world the power and efficacy of his death and resurrection. He therefore *left the world* when, laying aside our weaknesses, he was received into heaven; but his grace toward us is still in all its force, because he is seated at the right hand of the Father, that he may sway the scepter of the whole world. <span style="color:#800000">[^f435]</span>
@@ -5884,9 +5578,7 @@ But it may be thought that Christ disclaims for himself the right and title of D
 
 As to the opinion entertained by some, that it would be unjust, if men were to perish solely on account of their ignorance of God, it arises from their not considering that there is no fountain of <span style="color:#800000">*life*</span> but in God alone, and that all who are alienated from him are deprived of <span style="color:#800000">*life*</span>. Now, if there be no approach to God but by faith, we are forced to conclude, that unbelief keeps us in a state of death. If it be objected, that persons otherwise righteous and innocent are unjustly treated, if they are condemned, the answer is obvious, that nothing right or sincere is found in men, so long as they remain in their natural state. Now, Paul informs us that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we are renewed in the image of God by the knowledge of him,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 3:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we are renewed in the image of God by the knowledge of him,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 3:10.)</span></p>
 
 It will be of importance for us now to bring into one view those three articles of faith; first, that the kingdom of Christ brings <span style="color:#800000">*life*</span>, and salvation; secondly, that all do not receive *life* from him, and it is not the office of Christ to *give life* to all, but only to the elect whom the Father has committed to his protection; and, thirdly, that this life consists in faith, and Christ bestow, it on those whom he enlightens in the faith of the Gospel. Hence we infer that the gift of illumination and heavenly wisdom is not common to all, but peculiar to the elect. It is unquestionably true that the Gospel is offered to all, but Christ speaks here of that secret and efficacious manner of teaching by which the children of God only are drawn to faith.
 
@@ -5894,15 +5586,11 @@ It will be of importance for us now to bring into one view those three articles 
 
 **4.** <span style="color:#800000">*I have glorified thee.*</span> His reason for saying this is, that God had been made known to the world both by the doctrine of Christ, and by his miracles; and the *glory* of God is, when we know what he is. When he adds, <span style="color:#800000">*I have finished the work which thou gavest me to do*</span>, he means that he has completed the whole course of his calling; for the full time was come when he ought to be received into the heavenly *glory*. Nor does he speak only of the office of teaching, but includes also the other parts of his ministry; for, though the chief part of it still remained to be accomplished, namely, the sacrifice of death, by which he was to take away the iniquities of us all, yet, as the hour of his death was already at hand, he speaks as if he had already endured it. The amount of his request, therefore, *is* that the Father would put him in possession of the kingdom; since, having completed his course, nothing more remained for him to do, than to display, by the power of the Spirit, the fruit and efficacy of all that he had done on earth by the command of his Father, according to the saying of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He humbled and annihilated himself,</span> <span style="color:#800000">[^f440]</span> <span style="color:#000080">by taking the form of a</span> <span style="color:#000080">servant. Therefore God hath highly exalted him, and given him a</span> <span style="color:#000080">name which is above every name, (</span></p>
-
-<span style="color:#000080">Philippians 2:7, 10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He humbled and annihilated himself,</span> <span style="color:#800000">[^f440]</span> <span style="color:#000080">by taking the form of a</span> <span style="color:#000080">servant. Therefore God hath highly exalted him, and given him a</span> <span style="color:#000080">name which is above every name, (</span><span style="color:#000080">Philippians 2:7, 10.)</span></p>
 
 **5.** <span style="color:#800000">*The glory which I had with thee.*</span> He desires to be *glorified* WITH THE FATHER, not that the Father may *glorify* him secretly, without any witnesses, but that, having been received into heaven, he may give a magnificent display of his greatness and power, *that every knee may bow to him*, (Philippians 2:10.) Consequently, that phrase in the former clause, *with the Father*, is contrasted with earthly and fading glory, as Paul describes the blessed immortality of Christ, by saying that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he died to sin once, but now he liveth to God, (</span></p>
-
-<span style="color:#000080">Romans 6:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he died to sin once, but now he liveth to God, (</span><span style="color:#000080">Romans 6:10.)</span></p>
 
 <!-- PAGE 563 -->
 <span style="color:#800000">*The glory which I had with thee before the world was.*</span> He now declares that he desires nothing that does not strictly belong to him, but only that he may appear in the flesh, such as he was before the creation of the world; or, to speak more plainly, that the Divine majesty, which he had always possessed, may now be illustriously displayed in the person of the Mediator, and in the human flesh with which he was clothed. This is a remarkable passage, which teaches us that Christ is not a God who has been newly contrived, or who has existed only for a time; for if his <span style="color:#800000">*glory*</span> was eternal, himself also has always been. Besides, a manifest distinction between the person of Christ and the person of the rather is here expressed; from which we infer, that he is not only the eternal God, but also that he is the eternal Word of God, begotten by the rather before all ages.
@@ -5937,9 +5625,7 @@ Father; for, since his own condition was still mean, while he was in the flesh, 
 
 **9.** <span style="color:#800000">*I pray for them*</span>. Hitherto Christ has brought forward what might procure for the disciples favor with the Father. He now forms the prayer itself, in which he shows that he asks nothing but what is agreeable to the will of the Father, because he pleads with the Father in behalf of those only whom the Father himself willingly loves. He openly declares that he <span style="color:#800000">*does not pray for the world*</span>, because he has no solicitude but about his own flock, which he received from the hand of the Father. But this might be thought to be absurd; for no better rule of prayer can be found than to follow Christ as our Guide and Teacher. Now, we are commanded to *pray for all*, (1 Timothy 2:17) and Christ himself afterwards prayed indiscriminately for all,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Father, forgive them; for they know not what they do,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Luke 23:34.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Father, forgive them; for they know not what they do,</span> <span style="color:#000080">(</span><span style="color:#000080">Luke 23:34.)</span></p>
 
 <!-- PAGE 566 -->
 
@@ -5957,9 +5643,7 @@ Besides, we learn from these words, that God chooses out of the world those whom
 
 <span style="color:#800000">*And I am glorified in them.*</span> This is connected with the second clause of the verse, *and thine are mine;* for it follows that it is reasonable that he, for his part, should promote their salvation; and this is a most excellent testimony for confirming our faith, that Christ never will cease to care for our salvation, since he *is glorified in us.* **11.** <span style="color:#800000">*And I am no longer in the world.*</span> He assigns another reason why he prays so earnestly for the disciples, namely, because they will very soon be deprived of his bodily presence, under which they had reposed till now. So long as he dwelt with them, he cherished them,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">as a hen gathereth her chichens under her wings,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 23:37;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">as a hen gathereth her chichens under her wings,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 23:37;)</span></p>
 
 but now that he is about to depart, he asks that the Father will guard them by his protection. And he does so on their account; for he provides a remedy for their trembling, that they may rely on God himself, to whose hands, as it were, he now commits them. It yields no small consolation to us, when we learn that the Son of God becomes so much the more earnest about the salvation of his people, when he leaves them as to his bodily presence; for we ought to conclude from it, that, while we are labouring under difficulties in the world, he keeps his eye on us, to send down, from his heavenly glory, relief from our distresses.
 
@@ -6032,9 +5716,7 @@ True, it is God alone who *sanctifies;* but as
 
 <!-- PAGE 573 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Gospel is the power of God to salvation to every one that</span> <span style="color:#000080">believeth, (</span></p>
-
-<span style="color:#000080">Romans 1:16,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Gospel is the power of God to salvation to every one that</span> <span style="color:#000080">believeth, (</span><span style="color:#000080">Romans 1:16,)</span></p>
 
 whoever departs from the Gospel as the means must become more and more filthy and polluted.
 
@@ -6074,9 +5756,7 @@ We must also observe that form of expression, *to believe through the word,* whi
 
 <!-- PAGE 576 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Head, from whom the whole body joined together, and</span> <span style="color:#000080">connected by every bond of supply, according to the operation in</span> <span style="color:#000080">the measure of every part, maketh increase of it to edifcation,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Ephesians 4:3, 11-16.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Head, from whom the whole body joined together, and</span> <span style="color:#000080">connected by every bond of supply, according to the operation in</span> <span style="color:#000080">the measure of every part, maketh increase of it to edifcation,</span> <span style="color:#000080">(</span><span style="color:#000080">Ephesians 4:3, 11-16.)</span></p>
 
 Wherefore, whenever Christ speaks about unity, let us remember how basely and shockingly, when separated from him, the world is scattered; and, next, let. us learn that the commencement of a blessed life is, that we be all governed, and that we all live, by the Spirit of Christ alone.
 
@@ -6090,9 +5770,7 @@ The verb, *to believe,* has been inaccurately used by the Evangelist for the ver
 
 **22.** <span style="color:#800000">*And I have given to them the glory which thou gavest to me.*</span> Let it be observed here, that, while a pattern of perfect happiness was exhibited in Christ, he had nothing that belonged peculiarly to himself, but rather was rich, in order to enrich those who believed in him. Our happiness lies in having the image of God restored and formed anew in us, which was defaced by sin. Christ is not only the lively image of God, in so far as he is the eternal Word of God. but even on his human nature, which he has in common with us, the likeness of <span style="color:#800000">*the glory*</span> of the Father has been engraved, so as to form his members to the resemblance of it. Paul also teaches us this, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we all, with unveiled face, by beholding THE GLORY OF GOD,</span> <span style="color:#000080">are changed into the same image, (</span></p>
-
-<span style="color:#000080">2 Corinthians 3:18.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">we all, with unveiled face, by beholding THE GLORY OF GOD,</span> <span style="color:#000080">are changed into the same image, (</span><span style="color:#000080">2 Corinthians 3:18.)</span></p>
 
 Hence it follows, that no one ought to be reckoned among the disciples of Christ, unless we perceive *the glory of God* impressed on him, as with a seal, by the likeness of Christ. To the same purpose are the words which immediately follow:
 
@@ -6103,9 +5781,7 @@ Hence it follows, that no one ought to be reckoned among the disciples of Christ
 
 Yet this gives rise to some appearance of contradiction; for Christ, as we have seen elsewhere <span style="color:#800000">F456</span> declares that the unspeakable *love of God* towards *the world* was the reason why *he gave his only-begotten Son,* (John 3:16.) If the cause must go before the effect, we infer that God the Father *loved* men apart from Christ; that is, before he was appointed to be the Redeemer. I reply, in that, and similar passages, *love* denotes the mercy with which God was moved towards unworthy persons, and even towards his enemies, before he reconciled them to himselfi It is, indeed, a wonderful goodness of God, and inconceivable by the human mind, that, exercising benevolence towards men whom he could not but hate, he removed the cause of the hatred, that there might be no obstruction to his love. And, indeed, Paul informs us that there are two ways in which we are *loved* in Christ; first, because the Father
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">chose us in him before the creation of the world,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Ephesians 1:4;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">chose us in him before the creation of the world,</span> <span style="color:#000080">(</span><span style="color:#000080">Ephesians 1:4;)</span></p>
 
 <!-- PAGE 579 -->
 and, secondly, because in Christ God *hath reconciled us to himself,* and hath showed that he is gracious to us, (Romans 5:10.) Thus we are at the same time the enemies and the friends of God, until, atonement having been made for our sins, we are restored to favor with God. But when we are justified by faith, it is then, properly, that we begin to be *loved* by God, as children by a father. That *love* by which Christ was appointed to be the person, in whom we should be fiercly chosen before we were born, and while we were still ruined in Adam, is hidden in the breast of God, and far exceeds the capacity of the human mind. True, no man will ever feel that God is gracious to him, unless he perceives that God is pacified in Christ. But as all relish for the love of God vanishes when Christ is taken away, so we may safely conclude that, since by faith we are ingrafted into his body, there is no danger of our falling from *the love of God;* for this foundation cannot be overturned, that we are *loved,* because the Father *hath loved* his Son <span style="color:#800000">F457</span>
@@ -6169,9 +5845,7 @@ The chief thing to be considered is, the intention of the Evangelist in pointing
 <!-- PAGE 584 -->
 We may infer from this how dreadful and alarming to the wicked the voicc of Christ will be, when he shall ascend his throne to judge the world. At that time he stood as a lamb ready to be sacrificed; his majesty, so far as outward appearance was concerned, was utterly gone; and yet when he utters but a single word, his armed and courageous enemies fall down. And what was the word? He thunders no fearful excommunication against them, but only replies, <span style="color:#800000">*It is I*</span>. What then will be the result, when he shall come, not to be judged by a man, but to be the Judge of the living and the dead; not in that mean and despicable appearance but shining in heavenly glory, and accompanied by his angels? He intended, at that time, to give a proof of that efficacy which Isaiah ascribes to his voice. Among other glorious attributes of Christ, the Prophet relates that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he will strike the earth with the rod of his mouth, and will slay the</span> <span style="color:#000080">wicked by the breath of his lips, (</span></p>
-
-<span style="color:#000080">Isaiah 11:4.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he will strike the earth with the rod of his mouth, and will slay the</span> <span style="color:#000080">wicked by the breath of his lips, (</span><span style="color:#000080">Isaiah 11:4.)</span></p>
 
 True, the fulfillment of this prophecy is declared by Paul to be delayed till the end of the world, (2 Thessalonians 2:8.) Yet we daily see the wicked, with all their rage and pride, struck down by the voice of Christ; and, when those men fell down who had come to bind Christ, there was exhibited a visible token of that alarm which wicked men feel within themselves, whether they will or not, when Christ speaks by his ministers. Besides, as this was in some measure accidental to the voice of Christ, to whom it peculiarly belongs to raise up men who were lying in a state of death, he will undoubtedly display toward us such power as to raise us even to heaven.
 
@@ -6210,9 +5884,7 @@ Warned by so striking an example, let us learn to keep our zeal within proper bo
 
 **11.** <span style="color:#800000">*Put up thy sword into the sheath.*</span> By this command Christ reproves Peter’s action. :But we must attend to the reason, which is, that a private individual was not permitted to rise in opposition to those who had been invested with public authority; for this may be inferred from the other three Evangelists, who relate Christ’s general declaration,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who strikes with the sword shall perish by the sword,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 26:52.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who strikes with the sword shall perish by the sword,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 26:52.)</span></p>
 
 We must also beware of repelling our enemies by force or violence, even when they unjustly provoke us, except so far as the institutions and laws of the community admit; for whoever goes beyond the limits of his calling, though he should gain the applause of the whole world, will never obtain for his conduct the approbation of God <span style="color:#800000">F463</span>
 
@@ -6278,15 +5950,11 @@ This passage, however, appears to be inconsistent with another saying of Christ,
 
 <!-- PAGE 593 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">proclaim on the house-tops what he had whispered in their ear,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 10:27;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">proclaim on the house-tops what he had whispered in their ear,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 10:27;)</span></p>
 
 and again, when he declares that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it is not given to all to know the mysteries of the kingdom of</span> <span style="color:#000080">heaven, (</span></p>
-
-<span style="color:#000080">Matthew 13:14)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">it is not given to all to know the mysteries of the kingdom of</span> <span style="color:#000080">heaven, (</span><span style="color:#000080">Matthew 13:14)</span></p>
 
 and that he therefore confers this favor on none but the twelve apostles. I answer, when he says in the passage now under review, that *he spoke nothing in secret,* this refers to the substance of the doctrine, which was always the same, though the form of teaching it was various; for he did not speak differently among the disciples, so as to instruct them in something different; nor did he act cunningly, as if he purposely intended to conceal from the people what he spoke to a small number of persons in the house. He could, therefore, testify with a good conscience that he had openly declared and honestly proclaimed the substance of his doctrine.
 
@@ -6298,9 +5966,7 @@ But Christ appears not to observe, in the present instance, the rule which he el
 
 <!-- PAGE 594 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">hold out the right cheek to him who had struck him on the left,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 5:39.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">hold out the right cheek to him who had struck him on the left,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 5:39.)</span></p>
 
 I answer, in Christian patience it is not always the duty of him who has been struck to brook the injury done him, without saying a word, but, first, to endure it with patience, and, secondly, to give up all thoughts of revenge, and to endeavor to *overcome evil by good,* (Romans 12:21.)
 
@@ -6339,9 +6005,7 @@ Thus, when any person has once begun to fall through the suggestions of Satan, n
 
 <span style="color:#800000">*That they might not be defiled.*</span> In abstaining from all *defilement,* that, being purified according to the injunction of the Law, *they may eat* the Lord’s *Passover,* their religion, in this respect, deserves commendation. But there are two faults, and both of them are very heinous. The first is, <span style="color:#800000">F477</span> they do not consider that they carry more pollution within their hearts, than they can contract by entering any place however profane; and the second is, they carry to excess their care about smaller matters, and neglect what is of the highest importance.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">To the defiled and to unbelievers, says Paul, nothing is pure;</span> <span style="color:#000080">because their minds are polluted, (</span></p>
-
-<span style="color:#000080">Titus 1:15.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">To the defiled and to unbelievers, says Paul, nothing is pure;</span> <span style="color:#000080">because their minds are polluted, (</span><span style="color:#000080">Titus 1:15.)</span></p>
 
 But these hypocrites, though they are so full of malice, ambition, fraud, cruelty, and avarice, that they ahnost infect heaven and earth with their abominable smell, are only afraid of external pollutions. So then it is an intolerable mockery, that they expect to please God, provided that they do not contract defilement by touching some unclean thing, though they have disregarded true purity.
 
@@ -6360,9 +6024,7 @@ Another fault connected with hypocrisy is, that, while it is careful in performi
 
 **32.** <span style="color:#800000">*That the word of Jesus might be fulfilled.*</span> Finally, the Evangelist adds, that it was necessary that this should be done, in order that the prediction which Christ had uttered
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">might be fulfilled, The Son of man shall be delivered into the hands</span> <span style="color:#000080">of the Gentiles, (</span></p>
-
-<span style="color:#000080">Matthew 20:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">might be fulfilled, The Son of man shall be delivered into the hands</span> <span style="color:#000080">of the Gentiles, (</span><span style="color:#000080">Matthew 20:19.)</span></p>
 
 And, indeed, if we wish to read with advantage the history of Christ’s death, the chief point is, to consider the eternal purpose of God. The Son of God is placed before the tribunal of a mortal man. If we suppose that this is done by the caprice of men, and do not raise our eyes to God, our faith must necessarily be confounded and put to shame. But when we perceive that by the condemnation of Christ, our condemnation before God is blotted out, because it pleased the Heavenly Father to take this method of reconciling mankind to himself, raised on high by this single consideration, we boldly, and without shame, glory even in Christ’s ignominy. Let us therefore learn, in each part of this narrative, to turn our eyes to God as the Author of our redemption.
 
@@ -6387,9 +6049,7 @@ Pilate appears to have taken amiss that Christ asked him why he suspected him of
 
 **36.** <span style="color:#800000">*My kingdom is not of this world.*</span> By these words he acknowledges that he is *a king,* but, so far as was necessary to prove his innocence, he clears himself of the calumny; for he declares, that there is no disagreement between his kingdom and political government or order; <span style="color:#800000">F483</span> as if he had said, “I am falsely accused, as if I had attempted to produce a disturbanee, or to make a revolution in public affairs. I have preached about *the kingdom of God;* but that is spiritual, and, therefore, you have no right to suspect me of aspiring to kingly power.” This *defense* was made by Christ before Pilate, but the same doctrine is useful to believers to the end of the world; for if the kingdom of Christ were earthly, it would be frail and changeable, because
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the fashion of this world passeth away, (</span></p>
-
-<span style="color:#000080">1 Corinthians 7:31;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the fashion of this world passeth away, (</span><span style="color:#000080">1 Corinthians 7:31;)</span></p>
 
 but now, since it is pronounced to *be* heavenly, this assures us of its perpetuity. Thus, should it happen, that the whole world were overturned, provided that our consciences are always directed to *the kingdom* of Christ, they will, nevertheless, remain firm, not only amidst shakings and convulsions, but even amidst dreadful ruin and destruction. If we are cruelly treated by wicked men, still our salvation is secured by *the kingdom* of Christ, which is not subject to the caprice of men. In short, thougll there are innumerable storms by which *the world* is continually agitated, *the kingdom* of Christ, in which we ought to seek tranquillity, is separated from *the world.*
 
@@ -6431,9 +6091,7 @@ That the Jews preferred him to Christ, did not happen without a singular interpo
 
 This *custom,* by which the Roman governor delivered up to the Jews, every year, at the passover, some criminal, involved a base and heinous crime. It was done, no doubt in order to honor the sacredness of the day, but was, in reality, nothing else than a shameful profanation of it; for Scripture declares, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he who acquitteth the guilty is abomination in the sight of God,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Proverbs 17:15;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he who acquitteth the guilty is abomination in the sight of God,</span> <span style="color:#000080">(</span><span style="color:#000080">Proverbs 17:15;)</span></p>
 
 <!-- PAGE 605 -->
 and therefore he is far from taking delight in that improper kind of forgiveness. Let us learn by this example, that nothing is more ridiculous, than to attempt to serve God by our inventions; for, as soon as men begin to follow their own imaginations, there will be no end till, by falling into some of the most absurd fooleries, they openly insult God. The rule for the worship of God, therefore, ought to be taken from nothing else tl,an from his own appointment.
@@ -6485,9 +6143,7 @@ This example is highly worthy of observation. Though the countenance of Christ w
 
 <span style="color:#800000">*And Jesus gave him no answer.*</span> We ought not to think it strange that Jesus makes no reply; at least, if we keep in mind what I have formerly mentioned, that he did not stand before Pilate to plead his own cause, — as is customary with persons accused who are desirous to be acquitted, — but rather to suffer condemnation; for it was proper that he should be condemned, when he appeared in our room. This is the reason why he makes no defense; and yet Christ’s silence is not inconsistent with what Paul says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Remember that Christ, before Pilate, made a good confession,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">1 Timothy 6:13;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Remember that Christ, before Pilate, made a good confession,</span> <span style="color:#000080">(</span><span style="color:#000080">1 Timothy 6:13;)</span></p>
 
 <!-- PAGE 611 -->
 for there he maintained the faith of the Gospel, as far as was necessary, and his death was nothing else than the sealing of the doctrine delivered by him. Christ left nothing undone of what was necessary to make a lawful confession, but he kept silence as to asking an acquittal. Besides, there was some danger that Pilate would acquit Christ as one of the pretended gods, as Tiberius wished to rank him among the gods of the Romans. Justly, therefore, does Christ, by his silence, frown on this foolish superstition.
@@ -6542,21 +6198,15 @@ Again, we see in Pilate an image of a proud man, who is driven to madness by his
 
 **17.** <span style="color:#800000">*He went forth to a place.*</span> The circumstances which are here related contribute greatly, not only to show the truth of the narrative, but likewise to build up our faith. We must look for righteousness through the satisfaction made by Christ. To prove that he is the sacrifice for our sins, he wished both to be led out of the city, and to be hanged on a tree; for the custom was, in compliance with the injunction of the Law, that the sacrifices, the blood of which was shed for sin, were carried out of the camp, (Leviticus 6:30; 16:27;) and the same Law declares that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he who hangeth on a tree is accursed, (</span></p>
-
-<span style="color:#000080">Deuteronomy 21:23.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he who hangeth on a tree is accursed, (</span><span style="color:#000080">Deuteronomy 21:23.)</span></p>
 
 Both were fulfilled in Christ, that we might be fully convinced that atonement has been made for our sins by the sacrifice of his death; that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he was made subject to the curse, in order that he might redeem us</span> <span style="color:#000080">from the curse of the law, (</span></p>
-
-<span style="color:#000080">Galatians 3:13;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he was made subject to the curse, in order that he might redeem us</span> <span style="color:#000080">from the curse of the law, (</span><span style="color:#000080">Galatians 3:13;)</span></p>
 
 that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he was made sin, in order that we might be the righteousness of</span> <span style="color:#000080">God in him, (</span></p>
-
-<span style="color:#000080">2 Corinthians 5:21;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">he was made sin, in order that we might be the righteousness of</span> <span style="color:#000080">God in him, (</span><span style="color:#000080">2 Corinthians 5:21;)</span></p>
 
 that he was led out of the city, in order that he might carry with him, and take away, our defilements which were laid on him, (Hebrews 12:12.)
 
@@ -6602,15 +6252,11 @@ Let us also learn that. Christ was stripped of his *garments,* that he might clo
 
 And yet the commands of the first and second table of the Law never jar with each other, though at first sight they appear to do so; but we must begin with the worship of God, and afterwards assign to men an inferior place. Such is the import of the following statements:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who loveth father or mother more than me, is not worthy of</span> <span style="color:#000080">me, (</span></p>
-
-<span style="color:#000080">Matthew 10:41;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">He who loveth father or mother more than me, is not worthy of</span> <span style="color:#000080">me, (</span><span style="color:#000080">Matthew 10:41;)</span></p>
 
 and,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If any one hate not his father, and mother, and wife, and children,</span> <span style="color:#000080">and brethren, and sisters, he cannot be my disciple,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Luke 14:26.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If any one hate not his father, and mother, and wife, and children,</span> <span style="color:#000080">and brethren, and sisters, he cannot be my disciple,</span> <span style="color:#000080">(</span><span style="color:#000080">Luke 14:26.)</span></p>
 
 <!-- PAGE 622 -->
 We ought, therefore, to devote ourselves to the interests of men, so as not in any degree to interfere with the worship and obedience which we owe to God. When we have obeyed God, it will then be the proper time to think about parents, and wife, and children; as Christ attends to *his mother,* but it is after that he is on the cross, to which he has been called by his Father’s decree.
@@ -6683,9 +6329,7 @@ But the whole religion of Popery tends to lead men to contrive for themselves in
 
 **31.** <span style="color:#800000">*For it was the preparation.*</span> This narrative also tends to the edification of our faith; first, because it shows that what had been foretold in the Scriptures is fulfilled in the person of Christ; and, secondly, because it contains a mystery of no ordinary value. The Evangelist says, that *the Jews besought* that the bodies *might be taken down* from the crosses. This had undoubtedly been enjoined by the Law of God; but the Jews, as is usually the case with hypocrites, direct their whole attention to small matters, and yet pass by the greatest crimes without any hesitation; for, in order to a strict observance of their Sabbath, they are careful to avoid outward pollution; and yet they do not consider how shocking a crime it is to take away the life of an innocent man. Thus we saw a little before, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they did not enter into the governor’s hall, that they might not be</span> <span style="color:#000080">defiled, (</span></p>
-
-<span style="color:#000080">John 18:28,)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">they did not enter into the governor’s hall, that they might not be</span> <span style="color:#000080">defiled, (</span><span style="color:#000080">John 18:28,)</span></p>
 
 while the whole country was polluted by their wickedness. Yet, by their agency, the Lord carries into effect what was of the greatest importance for our salvation, that, by a wonderful arrangement, the body of Christ remains uninjured, and *blood and water low out of his side.*
 
@@ -6704,9 +6348,7 @@ That faith may no longer rest on these elements, John declares that the fulfillm
 <!-- PAGE 630 -->
 **36.** <span style="color:#800000">*A bone of him shall not be broken.*</span> This citation is made from Exodus 12:46, and Numbers 9:12, where Moses treats of the paschal lamb. Note, Moses takes for granted that that lamb was a figure of the true and only sacrifice, by which the Church was to be redeemed. Nor is this inconsistent with the fact, that it was sacrificed as the memorial of a redemption which had been already made; for, while God intended that it should celebrate the former favor, he also intended that it should exhibit the spiritual deliverance of the Church, which was still future. On that account Paul, without any hesitation, applies to Christ the rule which Moses lays down about eating the lamb:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for even Christ, our Passover, is sacred for us. Therefore let us</span> <span style="color:#000080">keep the feast, not with old leaven, neither with, the leaven of</span> <span style="color:#000080">malice and wickedness, but with the unleavened bread of sincerity</span> <span style="color:#000080">and truth, (</span></p>
-
-<span style="color:#000080">1 Corinthians 5:7, 8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for even Christ, our Passover, is sacred for us. Therefore let us</span> <span style="color:#000080">keep the feast, not with old leaven, neither with, the leaven of</span> <span style="color:#000080">malice and wickedness, but with the unleavened bread of sincerity</span> <span style="color:#000080">and truth, (</span><span style="color:#000080">1 Corinthians 5:7, 8.)</span></p>
 
 From this analogy, or resemblance,faith derives no ordinary advantage, for, in all the ceremonies of the Law, it beholds the salvation which has been manifested in Christ. Such is also the design of the Evangelist John, when he says that Christ was not only the pledge of our redemption, but also the price of it, because in him we see accomplished what was formerly exhibited to the ancient people under the figure of the passover. Thus also the Jews are reminded that they ought to seek in Christ the substance of all those things which the Law prefigured, but did not actually accomplish.
 
@@ -6737,9 +6379,7 @@ Whence, therefore, do they derive such heroic magnanimity that, when affairs are
 
 They bring their spices to embalm the body of Christ; but they would never have done so, if they had been perfumed with the sweet sayour of his death. This shows the truth of what Christ had said,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Unless a grain of corn die, it remaineth alone; but widen it is dead,</span> <span style="color:#000080">it bringeth forth much fruit, (</span></p>
-
-<span style="color:#000080">John 12:24.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Unless a grain of corn die, it remaineth alone; but widen it is dead,</span> <span style="color:#000080">it bringeth forth much fruit, (</span><span style="color:#000080">John 12:24.)</span></p>
 
 For here we have a striking proof that his death was more quickening than his life; and so great was the efficacy of that sweet sayour which the death of Christ conveyed to the minds of those two men, that it quickly extinguished all the passions belonging to the flesh. So long as ambition and the love of money reigned in thenb the grace of Christ had no charms for them; but now they begin to disrelish the whole world.
 
@@ -6776,9 +6416,7 @@ Among the heathen, too, there was great anxiety and ceremony in burying the dead
 
 **1.** <span style="color:#800000">*Now, on the first day of the week.*</span> As the resurrection of Christ is the most important article of our faith, and without it the hope of eternal life is extinguished, for this reason the Evangelists are the more careful to prove it, as John here collects many proofs, in order to assure us that Christ is risen from the dead. It may be thought strange, however, that he does not produce more competent witnesses; for he begins with a woman; but thus the saying is fulfilled, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God chooseth what is weak, and foolish, and contemptible in the</span> <span style="color:#000080">world, that he may bring to nought the wisdom, and excellence, and</span> <span style="color:#000080">glory, of the flesh, (</span></p>
-
-<span style="color:#000080">1 Corinthians 1:27.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">God chooseth what is weak, and foolish, and contemptible in the</span> <span style="color:#000080">world, that he may bring to nought the wisdom, and excellence, and</span> <span style="color:#000080">glory, of the flesh, (</span><span style="color:#000080">1 Corinthians 1:27.)</span></p>
 
 <!-- PAGE 637 -->
 There certainly was nothing more of earthly grandeur in the disciples than in the women who followed Christ; but as Christ was pleased to reckon them the principal witnesses of his resurrection, on this single ground their testimony is entitled to the greatest deference, and is not liable to any objection. As to the priests ,and scribes, and the whole people, and even Pilate, nothing but gross and wilful blindness prevented them from firmly believing that Christ was risen. All of them, therefore, deserved that *seeing they should not see;* yet Christ revealed himself to the little flock.
@@ -6799,9 +6437,7 @@ When Luke relates that Christ appeared to Mary before that she had informed the 
 
 When Scripture speaks of the feeble beginnings of faith, it says that Christ is born in us, and that we, on the other hand, are born in him; but the disciples must be placed almost below infancy, for they are ignorant of the resurrection of Christ, but yet the Lord nourishes them as a mother nourishes the child that is contained in her womb. Formerly they resembled children, and had made a little progress, but the death of Christ had rendered them so weak, that they must be again begotten *and formed,* as Paul says of the Galatians,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*My*</span> <span style="color:#000080">*little children, of whom*</span> <span style="color:#000080">I TRAVAIL IN BIRTH</span> <span style="color:#000080">*again until*</span> <span style="color:#000080">CHRIST</span> <span style="color:#000080">BE FORMED</span> <span style="color:#000080">*in you,*</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Galatians 4:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*My*</span> <span style="color:#000080">*little children, of whom*</span> <span style="color:#000080">I TRAVAIL IN BIRTH</span> <span style="color:#000080">*again until*</span> <span style="color:#000080">CHRIST</span> <span style="color:#000080">BE FORMED</span> <span style="color:#000080">*in you,*</span> <span style="color:#000080">(</span><span style="color:#000080">Galatians 4:19.)</span></p>
 
 When we find that Peter, though he made less haste, is the first to enter into the sepulcher, let us learn from it that many persons have more given to them in the end than appears at the beginning. And, indeed, we sometimes see many, who were full of fervour at the commencement, give way when they come to the conflict; while others, who appeared to be slow and indolent, assume new courage when danger is at hand.
 
@@ -6821,9 +6457,7 @@ Not to go farther for an instance of this, it may be thought that the resurrecti
 
 There are many passages of the same kind, which it is not, now necessary to collect. Let us therefore rest satisfied with the three following. It is written,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou wilt not permit thy Holy One to see corruption,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Psalm 16:10.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Thou wilt not permit thy Holy One to see corruption,</span> <span style="color:#000080">(</span><span style="color:#000080">Psalm 16:10.)</span></p>
 
 Peter and Paul explain this prediction as referring to Christ, (Acts 2:27, and Acts 13:35,)and justly; for there is not one of all the sons of
 
@@ -6883,9 +6517,7 @@ In Mary we have an example of the mistakes into which the human mind frequently 
 
 **16.** <span style="color:#800000">*Jesus saith to her, Mary!*</span> That Christ allowed Mary, a short time, to fall into a mistake, was useful for confirming her faith; but now, by a single word, he corrects her mistake. He had formerly addressed her, but his discourse seemed to be that of an unknown person; he now assumes the character of the Master, and addresses his disciple by name, as we have formerly seen that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the good shepherd calleth to him by name every sheep of his flock,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">John 10:3.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the good shepherd calleth to him by name every sheep of his flock,</span> <span style="color:#000080">(</span><span style="color:#000080">John 10:3.)</span></p>
 
 That *voice of the shepherd,* therefore, enters into Mary’s heart, opens her eyes, arouses all her senses, and affects her in such a manner, that she immediately surrenders herself to Christ.
 
@@ -6893,9 +6525,7 @@ Thus in *Mary* we have a lively image of our calling; for the only way in which 
 
 <!-- PAGE 646 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">After that you have known God, or rather, after that you have</span> <span style="color:#000080">been known by him, (</span></p>
-
-<span style="color:#000080">Galatians 4:9.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">After that you have known God, or rather, after that you have</span> <span style="color:#000080">been known by him, (</span><span style="color:#000080">Galatians 4:9.)</span></p>
 
 <span style="color:#800000">*And said to him, Rabboni!*</span> The efficacy of the address is evident from this circumstance, that Mary immediately renders to Christ the honor which is due to him; for the word <span style="color:#800000">*Rabboni*</span> is not only respectful, but involves a profession of obedience. Mary therefore declares, that she is a disciple of Christ, and submits to him as her *Master.* This is a secret and wonderful change effected on the human understanding, when God, enlightening her by his Spirit, renders her clear-sighted, who formerly was slow of apprehension, and, indeed, altogether blind. Besides, the example of Mary ought to serve the purpose of exhortation, that all whom Christ invites to himself may reply to him without delay.
 
@@ -6904,9 +6534,7 @@ The word <span style="color:#800000">*Rabboni*</span> is Chaldee, though the Cha
 <!-- PAGE 647 -->
 <span style="color:#800000">*For I am not yet ascended to my Father.*</span> We ought to attend to this reason which he adds; for by these words he enjoins the women to restrain their feelings, until he be received into the heavenly glory. In short, he pointed out the design of his resurrection; not such as they had imagined it to be, that, after having returned to life, he should triumph in the world, but rather that, by his *ascension* to heaven, he should enter into the possession of the kingdom which had been promised to him, and, seated at the right hand *of the Father,* should govern the Church by the power of his Spirit. The meaning of the words therefore is, that his state of resurrection would not be full and complete, until he should sit down in heaven at the right hand of the Father; and, therefore, that the women did wrong in satisfying themselves with having nothing more than the half of his resurrection, and desiring to enjoy his presence in the world. This doctrine yields two advantages. The first is, that those who are desirous to succeed in seeking Christ must raise their minds upwards; and the second is, that all who endeavor to go to him must rid themselves of the earthly affections of the flesh, as Paul exhorts,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If ye then be risen with Christ seek those things which are above,</span> <span style="color:#000080">where Christ sitteth at the right hand of God,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Colossians 3:1.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">If ye then be risen with Christ seek those things which are above,</span> <span style="color:#000080">where Christ sitteth at the right hand of God,</span> <span style="color:#000080">(</span><span style="color:#000080">Colossians 3:1.)</span></p>
 
 <span style="color:#800000">*But go to my brethren.*</span> Some limit the word *brethren* to the cousins and relatives <span style="color:#800000">F528</span> of Christ, but, in my opinion, improperly; for why should he have sent to them rather than to the disciples? They reply, Because John elsewhere testifies, that HIS BRETHREN *did not believe in him.* (John 7:5.)
 
@@ -6924,9 +6552,7 @@ If it be objected, that there was no reason why Christ should prefer the women t
 
 <span style="color:#800000">*I ascend to my Father.*</span> By using the word *ascend* he confirms the doctrine which I have lately explained; that he rose from the dead, not for the purpose of remaining any longer on the earth, but that he might enter into the heavenly life, and might thus draw believers to heaven along with him. In short, by this term he forbids the Apostles to fix their whole attention on his resurrection viewed simply in itself, but exhorts them to proceed farther, until they come to the spiritual kingdom, to the heavenly glory, to God himself. There is great emphasis, therefore, in this word *ascend;* for Christ stretches out his hand to his disciples that they may not seek their happiness anywhere else than in heaven;
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for where our treasure is, there also must our heart be,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 6:21.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">for where our treasure is, there also must our heart be,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 6:21.)</span></p>
 
 Now, Christ declares, that he *ascends* on high; and, therefore, we must *ascend,* if we do not wish to be separated from him.
 
@@ -6937,9 +6563,7 @@ When he adds, that he *ascends* TO GOD, he quickly dispels the grief and anxiety
 
 Christ calls Him *his God,* in so far as, by
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">taking upon him the form of a servant, he humbled himself,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Philippians 2:7.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">taking upon him the form of a servant, he humbled himself,</span> <span style="color:#000080">(</span><span style="color:#000080">Philippians 2:7.)</span></p>
 
 This is, therefore, peculiar to his human nature, but is applied to his whole person, on account of the unity, because he is both God and Man. As to the second clause, in which he says that he *ascends to his  Father and our Father,* <span style="color:#800000">F532</span> there is also a diversity between him and us; for he is the Son of God by nature, while we are the sons of God only by adoption; but the grace which we obtain through him is so firmly established, that it cannot be shaken by any efforts of the devil, so as to hinder us from always calling him our Father, who hath adopted us through his Only-begotten Son.
 
@@ -6977,9 +6601,7 @@ His words amount to a declaration, that hitherto he has discharged the *office* 
 <!-- PAGE 654 -->
 It is not without reason, therefore, that Christ communicates to his Apostles the authority which he <span style="color:#800000">*received from the Father*</span>, that thus he may declare that the preaching of the Gospel was committed to him, nut by human authority, but by the command of God. But he does not substitute them in his room, in such a manner as to resign to them the highest authority as a teacher, which the Father intended to be vested in him alone. He therefore continues, and will eternally continue to be, the only Teacher of the Church; but there is only this difference, that he spoke with his mouth so long as he dwelt on earth, but now speaks by the Apostles. The succession or substitution, <span style="color:#800000">F534</span> therefore, is of such a nature that it takes nothing from Christ, but his authority remains full and entire, and his honor unimpaired; for that decree by which we are enjoined to hear him, and not others, cannot be set aside:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This is my beloved Son, in whom I am well pleased; hear ye him,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Matthew 17:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">This is my beloved Son, in whom I am well pleased; hear ye him,</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 17:5.)</span></p>
 
 In short, Christ intended here to adorn the doctrine of the Gospel and not men.
 
@@ -6994,9 +6616,7 @@ It ought to be observed, that those whom Christ calls to the pastoral office he 
 
 What Christ chiefly, however, intended by it was, to uphold the dignity of the rank of the Apostles; for it was reasonable that those, who had been chosen to be the earliest and most distinguished preachers of the Gospel, should possess uncommon authority. But if Christ, at that time, bestowed the Spirit on the Apostles by *breathing,* it may be thought that it was superfluous to send the Holy Spirit afterwards. I reply, the Spirit was given to the Apostles on this occasion in such a manner, that they were only sprinkled by his grace, but were not filled with full power; for, when the Spirit appeared on them in *tongues of fire,* (Acts 2:3,) they were entirely renewed. And, indeed, he did not appoint them to be heralds of his Gospel, so as to send them forth immediately to the work, but ordered them to take repose, as we read elsewhere,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Remain ye in the city of Jerusalem till ye are endued with power</span> <span style="color:#000080">from on high, (</span></p>
-
-<span style="color:#000080">Luke 24:49.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Remain ye in the city of Jerusalem till ye are endued with power</span> <span style="color:#000080">from on high, (</span><span style="color:#000080">Luke 24:49.)</span></p>
 
 <!-- PAGE 656 -->
 
@@ -7023,9 +6643,7 @@ But it may be asked, Since he appoints them to be only the witnesses or heralds 
 
 God employs the testimony of men to prove it, consciences will never yield to it, unless they perceive God himself speaking in their person. Paul accordingly says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">We exhort you to be reconciled to God, as if Christ besought you</span> <span style="color:#000080">by us, (</span></p>
-
-<span style="color:#000080">2 Corinthians 5:20.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">We exhort you to be reconciled to God, as if Christ besought you</span> <span style="color:#000080">by us, (</span><span style="color:#000080">2 Corinthians 5:20.)</span></p>
 
 We now see the reason why Christ employs such magnificent terms, to commend and adorn that ministry which he bestows and enjoins on the Apostles. It is, that believers may be fully convinced, that what they hear concerning the forgiveness of sins is ratified, and may not less highly value the reconciliation which is offered by the voice of men, than if God himself stretched out his hand from heaven. And the Church daily receives the most abundant benefit from this doctrine, when it perceives that her pastors are divinely ordained to be sureties for eternal salvation, and that it must not go to a distance to seek the forgiveness of sins, which is committed to their trust.
 
@@ -7037,9 +6655,7 @@ Most absurdly do the Papists, on the other hand, torture this passage, to suppor
 
 <span style="color:#800000">*And to those whose sins you retain.*</span> Christ adds this second clause, in order to terrify the despisers of his Gospel, that they may know that they will not escape punishment for this pride. As the embassy of salvation and of eternal life has been committed to the apostles, so, on the other hand, they have been armed with *vengeance* against all the ungodly, who reject the salvation offered to them, as Paul teaches, (2 Corinthians 10:6.) But this is placed last in order, because it was proper that the true and real design of preaching the Gospel should be first exhibited. That we are reconciled to God belongs to the nature of the Gospel; that believers are ad-judged to eternal life may be said to be accidentally connected with it. <span style="color:#800000">F539</span> For this reason, Paul, in the passage which I lately quoted, when he threatens vengeance against unbelievers, immediately adds,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">after that your obedience shall have been fulfilled,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">2 Corinthians 10:6;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">after that your obedience shall have been fulfilled,</span> <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 10:6;)</span></p>
 
 for he means, that it belongs peculiarly to the Gospel to invite all to salvation, but that it is accidental to it that it brings destruction to any.
 
@@ -7080,18 +6696,14 @@ God, but, being awakened from sleep, he recalled to remembrance the doctrine whi
 
 <span style="color:#800000">*Blessed are they who have not seen, and have believed*</span> Here Christ commends faith on this ground, that it acquiesces in the bare word, and does not depend on carnal views or human reason <span style="color:#800000">F550</span> He therefore includes, in a short definition, the power and nature of faith; namely, that it does not rest satisfied with the immediate exercise of sight, but penetrates even to heaven, so as to believe those things which are hidden from the human senses. And, indeed, we ought to give to God this honor, that we should view His truth as (<span style="color:#0000d4">αὐτόπιστος</span> <span style="color:#800000">F551</span>) beyond all doubt without any other proof <span style="color:#800000">F552</span> Faith has, indeed, its own *sight* but one which does not confine its view to the world, and to earthly objects. For this reason it is called
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">a demonstration of things invisible or not seen,</span> <span style="color:#000080">(</span></p>
-
-<span style="color:#000080">Hebrews 11:1;)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">a demonstration of things invisible or not seen,</span> <span style="color:#000080">(</span><span style="color:#000080">Hebrews 11:1;)</span></p>
 
 and Paul contrasts it with *sight,* (2 Corinthians 5:7,) meaning, that it does not rest satisfied with looking at the condition of present object, and does not cast its eye in all directions to *those things which are visible* in the world, but depends on the mouth of God, and, relying on His word, rises above the whole world, so as to fix its anchor in heaven. It amounts to this, that faith is not of a right kind, unless it be founded on the word of God, and rise to the invisible kingdom of God, so as to go beyond all human capacity.
 
 <!-- PAGE 665 -->
 If it be objected, that this saying of Christ is inconsistent with another of his sayings, in which he declares that *the eyes which behold him are blessed,* (Matthew 13:16,) I answer, Christ does not there speak merely of bodily sight, as he does in this passage, but of revelation, which is common to all believers, since he appeared to the world as a Redeemer. He draws a comparison between the Apostles and *the holy kings and prophets,* (Matthew 13:17,) who had been kept under the dark shadows of the Mosaic Law. He says, that now the condition of believers is much more desirable, because a brighter light shines around them, or rather, because the substance and truth of the figures was made known to them. There were many unbelievers who, at that time, *beheld* Christ with *the eyes* of flesh, and yet were not more *blessed* on that account; but we, who have never beheld Christ with the eyes, enjoy that *blessedness* of which Christ speaks with commendation. Hence it follows, that he calls those eyes *blessed* which spiritually behold in him what is heavenly and divine; for we now behold Christ in the Gospel in the same manner as if he visibly stood before us. In this sense Paul says to the Galatians, (Galatians 3:1,) that *Christ was crucified before their eyes;* and, therefore, if we desire to see in Christ what may render us *happy* and *blessed,* let us learn to *believe,* when we *do not see.* To these words of Christ corresponds what is stated in another passage, in which the Apostle commends believers, who
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">love Christ whom they have not seen, and rejoice with unspeakable</span> <span style="color:#000080">joy, though they do not behold him. (</span></p>
-
-<span style="color:#000080">1 Peter 1:8.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">love Christ whom they have not seen, and rejoice with unspeakable</span> <span style="color:#000080">joy, though they do not behold him. (</span><span style="color:#000080">1 Peter 1:8.)</span></p>
 
 The manner in which the Papists torture these words, to prove their doctrine of transubstantiation, is exceedingly absurd. That we may be *blessed,* they bid us believe that Christ is present under the appearance of bread. :But we know that nothing was farther from Christ’s intention than to subject faith to the inventions of men; and as soon as it passes, in the smallest degree, beyond the limits of the word, it ceases to be faith. If we must believe without reserve all that we do not see, then every monster which men may be pleased to form, every fable which they may contrive, will hold our faith in bondage. That this saying of Christ may apply to the case in hand, we must first prove from the word of God the very point in question. They bring forward the word of God, indeed, in support of their doctrine of transubstantiation; but when the word is properly expounded, it gives no countenance to their foolish notion.
 
@@ -7114,9 +6726,7 @@ It may be thought strange, however, that faith is founded on miracles, while it 
 
 <!-- PAGE 667 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Lord working with them, and confirming the word by</span> <span style="color:#000080">accompanying signs, (</span></p>
-
-<span style="color:#000080">Mark 16:20.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">the Lord working with them, and confirming the word by</span> <span style="color:#000080">accompanying signs, (</span><span style="color:#000080">Mark 16:20.)</span></p>
 
 Although, therefore, strictly speaking, faith rests on the word of God, and looks to the word as its only end, still the addition of miracles is not superfluous, provided that they be also viewed as relating to the word, and direct faith towards it. Why miracles are called <span style="color:#800000">*signs*</span> we have already explained. It is because, by means of them, the Lord arouses men to contemplate his power, when he exhibits any thing strange and unusual.
 
@@ -7181,9 +6791,7 @@ That *Simon Peter* WAS NAKED, is a proof that the disciples had labored in earne
 
 <span style="color:#800000">*Simon*</span> <span style="color:#800000">(</span><span style="color:#800000">*son*</span><span style="color:#800000">)</span> <span style="color:#800000">*of John*</span> <span style="color:#800000">F560</span> <span style="color:#800000">*lovest thou me?*</span> By these words Christ means that no man can faithfully serve the Church, and employ himself *in feeding* the flock, if he do not look higher than to men. First, the office *of feeding* <span style="color:#800000">F561</span> is in itself laborious and troublesome; since nothing is more difficult than to keep men under the yoke of God, among whom there are many who are weak, others who are wanton and unsteady, others who are dull and sluggish, and others who are slow and unteachable. Satan now brings forward as many causes of offense as he can, that he may destroy or weaken the courage of a good pastor. <span style="color:#800000">F562</span> In addition to this, we must take into account the ingratitude of many and other causes of disgust. No man, therefore, will steadily persevere in the discharge of this office, unless the love of Christ shall reign in his heart, in such a manner that, forgetful of himself and devoting himself entirely to Christ, he overcomes every obstacle. Thus Paul declares this to have been the state of his own feelings, when he says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The love of Christ constraineth us, judging thus, that if one died for</span> <span style="color:#000080">all, then all must have been dead, (</span></p>
-
-<span style="color:#000080">2 Corinthians 5:14.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">The love of Christ constraineth us, judging thus, that if one died for</span> <span style="color:#000080">all, then all must have been dead, (</span><span style="color:#000080">2 Corinthians 5:14.)</span></p>
 
 For, though he means that *love* with which Christ hath *loved* us, and of which he hath given us a proof by his death, yet he connects with us that mutual *love* which springs from the conviction of having received so great a blessing. Ungodly and false teachers, on the other hand, are pointed out by him in another passage by this mark, that they *do not love the Lord Jesus,* (1 Corinthians 16:22.)
 
@@ -7200,9 +6808,7 @@ In vain, therefore, do the Papists maintain that he holds the highest rank, beca
 
 **16.** <span style="color:#800000">*Feed my sheep.*</span> Christ does not give to Peter and others the office *of feeding* all sorts of persons, but only *his sheep* or *his lambs.* He elsewhere describes who they are whom he reckons to belong to his flock.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">My sheep, says he, hear my voice, and follow me; they hear not</span> <span style="color:#000080">the voice of a stranger, (</span></p>
-
-<span style="color:#000080">John 10:5, 27.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">My sheep, says he, hear my voice, and follow me; they hear not</span> <span style="color:#000080">the voice of a stranger, (</span><span style="color:#000080">John 10:5, 27.)</span></p>
 
 True, faithful teachers ought to endeavor to gather all to Christ; and as they cannot distinguish between *sheep* and wild beasts, they ought to try by all methods if they can tame those who resemble wolves rather than *sheep.* But after having put forth their utmost efforts, their labor will be of no avail to any but the elect *sheep;* for docility and faith arise from this, that the heavenly Father delivers to his Son, that they may obey him, those whom he elected before the creation of the world. Again, we are taught by this passage, that none can *be fed* to salvation by the doctrine of the Gospel but those who are mild and teachable; for it is not without reason that Christ compares his disciples to *lambs* and *sheep;* but it must also be observed, that the Spirit of God tames those who by nature were bears or lions.
 
@@ -7224,9 +6830,7 @@ In this respect, we behold in many persons base ingratitude; for the more gently
 <!-- PAGE 679 -->
 <span style="color:#800000">*And will lead thee whither thou wouldst not.*</span> The meaning is, that Peter did not die a natural death, but by violence and by the sword. It may be thought strange that Christ should say that Peter’s death will not be voluntary; for, when one is hurried unwillingly to death, there is no firmness and none of the praise of martyrdom. But this must be understood as referring to the contest between the flesh and the Spirit, which believers feel within themselves; for we never obey God in a manner so free and unrestrained as not to be drawn, as it were, by ropes, in an opposite direction, by the world and the flesh. Hence that complaint of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“The good that I would I do not, but the evil that I would not, that</span> <span style="color:#000080">I do,” (</span></p>
-
-<span style="color:#000080">Romans 7:19.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“The good that I would I do not, but the evil that I would not, that</span> <span style="color:#000080">I do,” (</span><span style="color:#000080">Romans 7:19.)</span></p>
 
 Besides, it ought to be observed, that the dread of death is naturally implanted in us, for to wish to be separated from the body is revolting to nature. Accordingly, Christ, though he was prepared to obey God with his whole heart, prays that he may be delivered from death. Moreover, Peter dreaded the cross on account of the cruelty of men; and, therefore, we need not wonder if, in some measure, he recoiled from death. But this showed the more clearly the obedience which he rendered to God, that he would willingly have avoided death on its own account, and yet he endured it voluntarily, because he knew that such was the will of God; for if there had not been a struggle of the mind, there would have been no need of patience.
 
@@ -7250,9 +6854,7 @@ This doctrine is highly useful to be known; for it urges us to prayer, because w
 
 **20.** <span style="color:#800000">*And Peter, turning about.*</span> We have in Peter an instance of our curiosity, which is not only superfluous, but even hurtful, when we are drawn aside from our duty by looking at others; for it is almost natural to us to examine the way in which other people live, instead of examining our own, and to attempt to find in them idle excuses. We willingly deceive ourselves by this semblance of apology, that other people are no better than we are, as if their indolence freed us from blame. Scarce one person in a hundred considers the import of those words of Paul,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Every man shall bear his own burden, (</span></p>
-
-<span style="color:#000080">Galatians 6:5.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">Every man shall bear his own burden, (</span><span style="color:#000080">Galatians 6:5.)</span></p>
 
 In the person of one man, therefore, there is a general reproof of all who look around them in every direction, to see how other men act, and pay no attention to the duties which God has enjoined on themselves. Above all, they are grievously mistaken in this respect, that they neglect and overlook what is demanded by every man’s special calling.
 
@@ -7497,9 +7099,7 @@ I am he.” <span style="color:#800000">ft384</span> “Ils se despitent et enfl
 
 <!-- PAGE 708 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“That servant, who knew his master’s will, and did not make</span> <span style="color:#000080">himself ready, nor did according to his will, shall be beaten with</span> <span style="color:#000080">many stripes, (</span></p>
-
-<span style="color:#000080">Luke 12:47.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“That servant, who knew his master’s will, and did not make</span> <span style="color:#000080">himself ready, nor did according to his will, shall be beaten with</span> <span style="color:#000080">many stripes, (</span><span style="color:#000080">Luke 12:47.)</span></p>
 
 — *Ed*. <span style="color:#800000">ft418</span> See volulme 1. <span style="color:#800000">ft419</span> See volulme 1. <span style="color:#800000">ft420</span> See volulme 1. <span style="color:#800000">ft421</span> “De la seule ouye et predication.”
 
@@ -7615,9 +7215,7 @@ Pere.” <span style="color:#800000">ft431</span> “Le peuple sous l’Ancien T
 
 <span style="color:#800000">FT489</span> These statements regarding “The *Church*” our Author considers to be what logicians call the major proposition of the syllogism; and by the Latin word *“hypothesis”* rendered in French *“l’application,”* he evidently means the minor proposition, which he declares not only to be unsupported by proof, but to be utterly false. His own early training and habits, as a lawyer, naturally led him to throw the argument into this form, especially when it related to a criminal prosecution; for even in our own times indictments invariably take the form of a syllogism. He appears to have conceived the accusation against Christ to run thus: “Any mere man, declaring himself to be *the Son of God,* is guilty of blasphemy, and deserves to die. But Jesus of Nazareth, who is a mere man, *hath made himself to be the Son of God.* Therefore, *according to our law,* Jesus *ought to die.”* The major proposition cannot, be questioned, being manifestly taken from the law of Moses. The minor proposmon consrots of two parts. 1. Jesus is a mere man. 2. Jesus *hath made himself to be the Son of God.* The second part is true, but the first is i,alse; and, consequently, the whole argument, plausible as it had seemed, falls to the ground. It ought to have been known and acknowledged by the *Jews,* that the honorable rank of *the Son of God,* though it could not without blasphemy be claimed by a mere child of Adam, belonged of right to Jesus of Nazareth, of whom, even before his birth, the angel stud to the Virgin Mary,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">That holy thing which shall be born of thee shall be called the Son</span> <span style="color:#000080">of God, (</span></p>
-
-<span style="color:#000080">Luke 1:85.)</span>
+<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">That holy thing which shall be born of thee shall be called the Son</span> <span style="color:#000080">of God, (</span><span style="color:#000080">Luke 1:85.)</span></p>
 
 <span style="color:#800000">FT490</span> “Ces fumees, par lesquelles ils abusent les simples.”
 

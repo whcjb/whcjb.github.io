@@ -619,7 +619,24 @@ def convert(structured_path: Path, out_path: Path) -> None:
                                       '<table', '<tr', '<td', '<th', '<thead',
                                       '<tbody', '</div', '</p', '</table',
                                       '---', '|', '{')
-                    if j >= 0 and not out[j].lstrip().startswith(BLOCK_PREFIXES):
+                    # SPECIAL: navy scripture-quote <p> — its Ages cross-ref `(BookN:M)`
+                    # often comes as a separate [FOOTNOTE] line right after. Inject the
+                    # ref text INSIDE the closing </p> so the whole quote stays one block.
+                    prior = out[j] if j >= 0 else ''
+                    is_navy_quote_p = bool(re.match(r'\s*<p\s+style="[^"]*color:#000080', prior))
+                    if is_navy_quote_p and prior.rstrip().endswith('</p>'):
+                        # Insert body before the closing </p>. Avoid double-space
+                        # when prior ends with `(` (the Ages bible-ref opener).
+                        before_close = re.sub(r'\s*</p>\s*$', '', out[j])
+                        # Peek at the last visible char (strip trailing </span> wraps too)
+                        peek = before_close.rstrip()
+                        peek = re.sub(r'(?:</span>|</sty>|\s)+$', '', peek)
+                        sep = '' if peek.endswith(('(', '[')) else ' '
+                        # If injecting body, also wrap it in <span> so it inherits
+                        # the navy color (otherwise plain text shows in default body color).
+                        body_styled = body if '<span' in body else f'<span style="color:#000080">{body}</span>'
+                        out[j] = before_close.rstrip() + sep + body_styled + '</p>'
+                    elif j >= 0 and not out[j].lstrip().startswith(BLOCK_PREFIXES):
                         out[j] = out[j].rstrip() + ' ' + body
                     else:
                         out.append('')
