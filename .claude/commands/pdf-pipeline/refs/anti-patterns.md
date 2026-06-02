@@ -639,37 +639,85 @@ PDF byline 类典型几何（Romans p0 "by John Calvin"）：
 
 ---
 
+## M16. `_starts_with_continuation` verse-num 正则 必须接受 `**N.**` bold 形式
+
+**Trigger**：同章 verse 5 / verse 12 commentary 段被合到 verse 4 / verse 11 段尾，形如 `... "He was crucified." [^f18] **5.** *To whom be glory*. By this sudden...` 单行连续，不换段。
+
+**根因**：`_starts_with_continuation` 检查 next 段是否以 verse-num 起首：
+
+```python
+if c.isdigit() and not re.match(r'^\d+\.\s', s):  # ❌ 要求 \d+\. 紧跟 \s
+    return True  # 数字开头但不是 verse-num → 续接
+```
+
+但实际 markdown 形式是 `**N.** ` (bold-wrapped)。我的代码 strip 前导 `\*+\s+` 后 `s = '5.** *To whom...'`。`^\d+\.\s` 不匹配（`.` 后是 `*` 不是 `\s`）→ 误判为续接（普通数字开头）→ merge 到上段。
+
+**Fix**：正则改为 `^\d+\.\**\s` 接受任意 `**` 包裹：
+
+```python
+if c.isdigit() and not re.match(r'^\d+\.\**\s', s):
+    return True
+```
+
+**通用规则**：任何"verse-num 检测正则"都要同时接受 raw `N. ` 和 bolded `N.** ` 两种形式（实际产物是 bold 包裹的）。
+
+---
+
+## M17. PyMuPDF 上标小字提取丢数字（PDF 源 bug，非本管线问题）
+
+**Trigger**：注释段中本应是 `[^fN]` 上标 fn ref，输出残留**孤立红色 `f`**（没数字）。grep 出现 `<span[^>]*color:#800000[^>]*>f</span>` 类（单字符）。
+
+**根因**：某些 PDF 字体的上标 fn ref（如 "f19"）用 ligature 渲染，PyMuPDF 提取时只拿到 `f` 字符，数字 `19` 丢失。这是 **PDF 源数据/字体问题**，无法在 PyMuPDF 层修复。
+
+**当前对策**：留作已知 SEV-1 残留，不阻断发布。下游可加 fail-fast 警告：
+
+```bash
+grep -n '<span[^>]*color:#800000[^>]*>f</span>' calvin/BOOK-en/*.md
+# 命中时报警：可能是 PyMuPDF 提取丢数字的 orphan f
+```
+
+**可选 fix（未实现）**：扫描 fn def 序列找缺号位（如 def 有 f18 / f20 但缺 f19）+ 体内出现孤立 `<span color:#800000>f</span>` → 推断是 f19，回填 ref + 用 PDF 文本无关方法（如打 OCR）寻找 missing def。
+
+---
+
 ## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
 
-**Trigger**：新书（如 romans-en）需要复用 john-en 的 PDF-faithful scripture-box 样式（双蓝边/浅黄底/灰 banner/暗红 Ages 代码/小型大写卷名）。
+**Trigger**：新书（如 romans-en / galatians-en）需要复用 john-en 的 PDF-faithful scripture-box 样式。
 
-**Fix**：在 `_layouts/calvin-en.html` 已有的 `.calvin-en-content[data-book="john-en"] .scripture-box {...}` CSS 上，把目标 book-id **作为额外选择器逗号扩展**——**每条 CSS 规则都改**（不要漏）：
+**Fix**：在 `_layouts/calvin-en.html` 的 `.scripture-box` CSS 规则上把新 book-id 作为额外选择器**逗号扩展**——**每条 CSS 规则的每个选择器都完整路径到 `.scripture-box`**：
 
 ```css
 .calvin-en-content[data-book="john-en"] .scripture-box,
-.calvin-en-content[data-book="romans-en"] .scripture-box {
+.calvin-en-content[data-book="romans-en"] .scripture-box,
+.calvin-en-content[data-book="galatians-en"] .scripture-box {
   border: 3px double #1d28e0;
   background: #fffce8;
   /* ... */
 }
-.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref,
-.calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref {
-  /* ... */
-}
-/* 重复 7 条规则 — ages-code / book-name / verse-range / p / strong */
+/* 重复 7 条规则 — .scripture-ref / .ages-code / .book-name / .verse-range / p / strong */
 ```
 
-**关键陷阱**：CSS 逗号在选择器列表中是 OR，但**作用域受空格优先级影响**。错误写法：
+**陷阱（已被多次踩中）**：用 `replace_all` 或 sed 替换 `romans-en` → `romans-en,\ngalatians-en` 会产生**错误嵌套**：
 
 ```css
-/* ❌ 错：第二个选择器变成 「data-book=romans-en 整个 content」 而不是
-   「data-book=romans-en 内的 scripture-box」 */
-.calvin-en-content[data-book="john-en"], .calvin-en-content[data-book="romans-en"] .scripture-box {
+/* ❌ 错：第二个 selector "data-book=galatians-en" 后接 .scripture-box，
+   但 john-en 后是 .scripture-box;  romans-en 没有 — 整个 content 区被选中 */
+.calvin-en-content[data-book="john-en"] .scripture-box,
+.calvin-en-content[data-book="romans-en"],
+.calvin-en-content[data-book="galatians-en"] .scripture-box {
   ...
 }
 ```
 
-正确写法每个逗号前后都要有**完整层级路径**到 `.scripture-box`。
+正确写法：**完整复写每个 selector**（不要尝试用 replace 简化）：
+
+```css
+[A] .scripture-box,
+[B] .scripture-box,
+[C] .scripture-box {
+  ...
+}
+```
 
 ---
 
