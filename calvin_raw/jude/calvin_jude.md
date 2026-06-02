@@ -1,0 +1,372 @@
+
+<!-- PAGE 1 -->
+
+## THE AGES DIGITAL LIBRARY
+
+# COMMENTARY
+
+# COMMENTARY ON THE EPISTLE OF JUDE
+
+<p style="text-align:right;" markdown="1">*by John Calvin*</p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+
+<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+
+<!-- PAGE 2 -->
+
+<p style="text-align:center" markdown="1">COMMENTARY ON</p>
+
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE OF JUDE</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ARGUMENT</span></p>
+
+THOUGH there was a dispute among the ancients respecting this Epistle, yet as the reading of it is useful, and as it contains nothing inconsistent with the purity of apostolic doctrine, and was received as authentic formerly, by some of the best, I willingly add it to the others. Its brevity, moreover, does not require a long statement of its contents; and almost the whole of it is nearly the same with the second chapter of the last Epistle.
+
+As unprincipled men, under the name of Christians, had crept in, whose chief object was to lead the unstable and weak to a profane contempt of God, Jude first shews, that the faithful ought not to have been moved by agents of this kind, by which the Church has always been assailed; and yet he exhorts them carefully to beware of such pests. And to render them more hateful and detestable, he denounces on them the approaching vengeance of God, such as their impiety deserved. Now, if we consider what Satan has attempted in our age, from the commencement of the revived gospel, and what arts he still busily employs to subvert the faith, and the fear of God, what was a useful warning in the time of Jude, is more than necessary in our age. But this will appear more fully as we proceed in reading the Epistle.
+
+<!-- PAGE 3 -->
+
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE OF JUDE</span></p>
+
+<h2 class="scripture-anchor" id="jude-1-2" data-ref="JUDE 1-2" style="display:none">JUDE 1-2</h2>
+
+<p style="margin-left:2em;" markdown="1">**1.** Jude, the servant of Jesus Christ, and brother of James, to them that are sanctified by God the Father, and preserved in Jesus Christ, *and* called.</p>
+
+<p style="text-align:right;" markdown="1">1. Judas Jesu Christi servus, frater autem Jacobi,, vocatis qui in Deo Patre sanctificati sunt, et in Jesu Christo custoditi,</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Mercy unto you, and peace, et and love, be multiplied.</p>
+
+<p style="text-align:right;" markdown="1">2. Misericordia vobis et pax et dilectio augeatur.</p>
+
+**1.** <span style="color:#800000">*Jude the servant of Jesus Christ*</span>. He calls himself the servant of Christ, not as the name applies to all the godly, but with respect to his apostleship; for they were deemed peculiarly the servants of Christ, who had some public office committed to them. And we know why the apostles were wont to give themselves this honorable name. Whosoever is not called, arrogates to himself presumptuously the right and authority of teaching. Then their calling was an evidence to the apostles, that they did not thrust themselves into their office through their own will. It was not, however, of itself sufficient to be appointed to their office, except they faithfully discharged it. And, no doubt, he who declares himself to be the servant of God, includes both these things, that is, that God is the bestower of the office which he exercises, and that he faithfully performs what has been committed to him. Many act falsely, and falsely boast to be what they are very far from being: we ought always to examine whether the reality corresponds with the profession.
+
+<!-- PAGE 4 -->
+<span style="color:#800000">*And brother of James*</span>. He mentions a name more celebrated than his own, and more known to the churches. For though faithfulness of doctrine and authority do not depend on the names of mortal men, yet it is a confirmation to the faith, when the integrity of the man who undertakes the office of a teacher is made certain to us. Besides, the authority of James is not here brought forward as that of a private individual, but because he was counted by all the Church as one of the chief apostles of Christ. He was the son of Alpheus, as I have said elsewhere. Nay, this very passage is a sufficient proof to me against Eusebius and others, who say, that he was a disciple, named Oblias, [James,] mentioned by Luke, in Acts 15:13; Acts 21:18, who was more eminent than the apostles in the Church. <span style="color:#800000">[^f1]</span> But there is no doubt but that Jude mentions here his own brother, because he was eminent among the apostles. It is, then, probable, that he was the person to whom the chief honor was conceded by the rest, according to what Luke relates.
+
+<span style="color:#800000">*To them that are sanctified by God the Father*</span>, or, to the called who are sanctified, etc. <span style="color:#800000">[^f2]</span> By this expression, “the called,” he denotes all the faithful, because the Lord has separated them for himself. But as calling is nothing else but the effect of eternal election, it is sometimes taken for it. In this place it makes but little difference in which way you take it; for he, no doubt, commends the grace of God, by which he has been pleased to choose them as his peculiar treasure. And he intimates that men do not anticipate God, and that they never come to him until he draws them.
+
+Of the same he says that they were <span style="color:#800000">*sanctified in God the Father*</span>, which may be rendered, “by God the Father.” I have, however, retained the very form of the expression, that readers may exercise their own judgment. For it may be, that this is the sense, — that being profane in themselves, they had their holiness in God. But the way in which God sanctifies is, by regenerating us by his Spirit.
+
+Another reading, which the Vulgate has followed, is somewhat harsh, “To the beloved (<span style="color:#0000d4">ἠγαπημένοις</span>) in God the Father.” I therefore regard it as corrupt; and it is, indeed, found but in a few copies.
+
+He further adds, that they were <span style="color:#800000">*preserved in Jesus Christ*</span>. For we should be always in danger of death through Satan, and he might take us at any moment as an easy prey, were we not safe under the protection of Christ, whom the Father has given to be our guardian, so that none of those whom he has received under his care and shelter should perish.
+
+Jude then mentions here a threefold blessing, or favor of God, with regard to all the godly, — that he has made them by his calling partakers of the gospel; that he has regenerated them, by his Spirit, unto newness of life; and that he has preserved them by the hand of Christ, so that they might not fall away from salvation.
+
+<!-- PAGE 5 -->
+
+**2.** <span style="color:#800000">*Mercy to you.*</span> Mercy means nearly the same as grace in the salutations of Paul. Were any one to wish for a refined distinction, it may be said that grace is properly the effect of mercy; for there is no other reason why God has embraced us in love, but that he pitied our miseries. *Love* may be understood as that of God towards men, as well as that of men towards one another. <span style="color:#800000">[^f3]</span> If it be referred to God, the meaning is, that it might increase towards them, and that the assurance of divine love might be daily more confirmed in their hearts. The other meaning is, however, not unsuitable, that God would kindle and confirm in them mutual love.
+
+<h2 class="scripture-anchor" id="jude-3-4" data-ref="JUDE 3-4" style="display:none">JUDE 3-4</h2>
+
+<p style="margin-left:2em;" markdown="1">**3.** Beloved, when I gave all diligence to write unto you of the common salvation, it was needful for me to write unto you, and exhort  *you*, that ye should earnestly contend for the faith which was once delivered unto the saints.</p>
+
+<p style="text-align:right;" markdown="1">3. Dilecti, quum omne studium adhiberem ad scribendum vobis de communi salute, necesse habui scribere vobis ad vos hortandos ut certando adjuvetis eam, quae semel tradita est sanctis, fidem.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** For there are certain men crept in unawares, who were before of old ordained to this condemnation; ungodly men, turning the grace of our God into lasciviousness, and denying the only Lord God, and our Lord Jesus Christ.</p>
+
+<p style="text-align:right;" markdown="1">4. Subingressi enim sunt quidam homines, olim praescripti judicium, impii, Dei nostri gratiam transferentes in lasciviam, et Deum, qui solus est Herus, et Dominum Jesum Christum negantes.</p>
+
+<!-- PAGE 6 -->
+**3.** <span style="color:#800000">*When I gave diligence*</span>. I have rendered the words <span style="color:#0000d4">σπουδὴν</span> <span style="color:#0000d4">ποιούμενος</span>, “Applying care:” literally they are, “Making diligence.” But many interpreters explain the sentence in this sense, that a strong desire constrained Jude to write, as we usually say of those under the influence of some strong feeling, that they cannot govern or restrain themselves. Then, according to these expounders, Jude was under a sort of necessity, because a desire to write suffered him not to rest. But I rather think that the two clauses are separate, that though he was inclined and solicitous to write, yet a necessity compelled him. He then intimates, that he was indeed glad and anxious to write to them, but yet necessity urged him to do so, even because they were assailed (according to what follows) by the ungodly, and stood in need of being prepared to fight with them. <span style="color:#800000">[^f4]</span>
+
+Then, in the first place, Jude testifies that he felt so much concern for their salvation, that he wished himself, and was indeed anxious to write to them; and, secondly, in order to rouse their attention, he says that the state of things required him to do so. For necessity adds strong stimulants. Had they not been forewarned how necessary his exhortation was, they might have been slothful and negligent; but when he makes this preface, that he wrote on account of the necessity of their case, it was the same as though he had blown a trumpet to awake them from their torpor.
+
+<span style="color:#800000">*Of the common salvation*</span>. Some copies add “your,” but without reason, as I think; for he makes salvation common to them and to himself. And it adds not a little weight to the doctrine that is announced, when any one speaks according to his own feelings and experience; for vain is what we say, if we speak of salvation to others, when we ourselves have no real knowledge of it. Then, Jude professed himself to be (so to speak) an experimental teacher, when he associated himself with the godly in the participation of the same salvation.
+
+<span style="color:#800000">*And exhort you*</span>. Literally, “exhorting you;” but as he points out the end of his counsel, the sentence ought to be thus expressed. What I have rendered, “to help the faith by contending,” means the same as to strive in retaining the faith, and courageously to sustain the contrary assaults of Satan. <span style="color:#800000">[^f5]</span> For he reminds them that in order to persevere in the faith, various contests must be encountered and continual warfare maintained. He says that faith had been <span style="color:#800000">*once delivered*</span>, that they might know that they had obtained it for this end, that they might never fail or fall away.
+
+**4.** <span style="color:#800000">*For there are certain men crept in unawares*</span>. Though Satan is ever an enemy to the godly, and never ceases to harass them, yet Jude reminds those to whom he was writing of the state of things at that time. Satan now, he says, attacks and harasses you in a peculiar manner; it is therefore necessary to take up arms to resist him. We hence learn that a good and faithful pastor ought wisely to consider what the present state of the Church requires, so as to accommodate his doctrine to its wants.
+
+<!-- PAGE 7 -->
+The word <span style="color:#0000d4">παρεισέδυσαν</span>, which he uses, denotes an indirect and stealthy insinuation, by which the ministers of Satan deceive the unwary; for Satan sows his tares in the night, and while husbandmen are asleep, in order that he may corrupt the seed of God. And at the same time he teaches us that it is an intestine evil; for Satan in this respect also is crafty, as he raises up those who are of the flock to do mischief, in order that they may more easily creep in.
+
+<span style="color:#800000">*Before of old ordained*</span>. He calls that judgment, or condemnation, or a reprobate mind, by which they were led astray to pervert the doctrine of godliness; for no one can do such a thing except to his own ruin. But the metaphor is taken from this circumstance, because the eternal counsel of God, by which the faithful are ordained unto salvation, is called a book: and when the faithful heard that these were given up to eternal death, it behooved them to take heed lest they should involve themselves in the same destruction. It was at the same time the object of Jude to obviate danger, lest the novelty of the thing should disturb and distress any of them; for if these were already long ago ordained, it follows that the Church is not tried or exercised but according to the infallible counsel of God. <span style="color:#800000">[^f6]</span>
+
+<span style="color:#800000">*The grace of our God*</span>. He now expresses more clearly what the evil was; for he says that they abused the grace of God, so as to lead themselves and others to take an impure and profane liberty in sinning. But the grace of God has appeared for a far different purpose, even that, denying ungodliness and worldly lusts, we may live soberly, righteously, and godly in this world. Let us, then, know that nothing is more pestilential than men of this kind, who from the grace of Christ take a cloak to indulge in lasciviousness. <span style="color:#800000">[^f7]</span>
+
+Because we teach that salvation is obtained through God’s mercy alone, the Papists accuse us of this crime. But why should we use words to refute their effrontery, since we everywhere urge repentance, the fear of God, and newness of life, and since they themselves not only corrupt the whole world with the worst examples, but also by their ungodly teaching take away from the world true holiness and the pure worship of God? though I rather think, that those of whom Jude speaks, were like the libertines of our time, as it will be more evident from what follows.
+
+<!-- PAGE 8 -->
+<span style="color:#800000">*The only Lord God*</span>, or, God who alone is Lord. Some old copies have, “ Christ, who alone is God and Lord.” And, indeed, in the Second Epistle of Peter, Christ alone is mentioned, and there he is called Lord. <span style="color:#800000">[^f8]</span> But He means that <span style="color:#800000">*Christ*</span> is <span style="color:#800000">*denied*</span>, when they who had been redeemed by his blood, become again the vassals of the Devil, and thus render void as far as they can that incomparable price. That Christ, then, may retain us as his peculiar treasure, me must remember that he died and rose again for us, that he might have dominion over our life and death.
+
+<h2 class="scripture-anchor" id="jude-5-7" data-ref="JUDE 5-7" style="display:none">JUDE 5-7</h2>
+
+<p style="margin-left:2em;" markdown="1">**5.** I will therefore put you in remembrance, though ye once knew this, how that the Lord, having saved the people out of the land of Egypt, afterward destroyed them that believed not.</p>
+
+<p style="text-align:right;" markdown="1">5. Commonefacere autem vos volo, quum istud semel noveritis, quod Dominus postquam ex terra Egypti populum servaverat, postea non credentes perdidit.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** And the angels which kept not their first estate, but left their own habitation, he hath reserved in everlasting chains, under darkness, in unto the judgment of the great day.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Angelos vero qui principatum (vel, initium) suum non servaverant, sed reliquerant suum domicilium, judicium magnae diei vinculis aeternis sub caligine servavit. 7. Even as Sodom and the cities about them, in like manner, giving themselves over to fornication, and going after strange flesh, are set forth for an example, in exemplar, suffering the vengeance of eternal fire.</p>
+
+<p style="text-align:right;" markdown="1">7. Quemadmodum Sodoma et Gomorrha, et qae circum erant urbes, quum simili modo scortatae essent, et abiissent post carnem alienam, propositae sunt ignis aeterni judicium sustinentes.</p>
+
+<!-- PAGE 9 -->
+**5.** <span style="color:#800000">*I will therefore put you in remembrance*</span>, or, remind you. He either modestly excuses himself, lest he should seem to teach as it were the ignorant things unknown to them; or, indeed, he openly declares in an emphatical manner, (which I approve more of,) that he adduced nothing new or unheard of before, in order that what he was going to say might gain more credit and authority. I only recall, he says, to your mind what you have already learnt. As he ascribes knowledge to them, so he says that they stood in need of warnings, lest they should think that the labor he undertook towards them was superfluous; for the use of God’s word is not only to teach what we could not have otherwise known, but also to rouse us to a serious meditation of those things which we already understand, and not to suffer us to grow torpid in a cold knowledge.
+
+Now, the meaning is, that after having; been called by God, we ought not to glory carelessly in his grace, but on the contrary, to walk watchfully in his fear; for if any trifles thus with God, the contempt of his grace will not be unpunished. And this he proves by three examples. He first refers to the vengeance which God executed on those unbelievers, whom he had chosen as his people, and delivered by his power. Nearly the same reference is made by Paul in the tenth chapter of the First Epistle to the Corinthians. The import of what he says is, that those whom God had honored with the greatest blessings, whom he had extolled to the same degree of honor as we enjoy at this day, he afterwards severely punished. Then in vain were all they Proud of God’s grace, who did not live in n manner suitable to their calling.
+
+The word <span style="color:#800000">*people*</span> is by way of honor taken for the holy and chosen nation, as though he had said that it availed them nothing, that they by a singular favor had been taken into covenant. By calling them <span style="color:#800000">*unbelieving*</span>, he denotes the fountain of all evils; for all their sins, mentioned by Moses, were owing to this, because they refused to be ruled by God’s word. For where there is the subjection of faith, there obedience towards God necessarily appears in all the duties of life.
+
+**6.** <span style="color:#800000">*And the angels*</span>. This is an argument from the greater to the less; for the state of angels is higher than ours; and yet God punished their defection in a dreadful manner. He will not then forgive our perfidy, if we depart from the grace unto which he has called us. This punishment, inflicted on the inhabitants of heaven, and on such superior ministers of God, ought surely to be constantly before our eyes, so that we may at no time be led to despise God’s grace, and thus rush headlong into destruction.
+
+The word <span style="color:#0000d4">ἀρχὴ</span> in this place, may be aptly taken for beginning as well as for principality or dominion. For Jude intimates that they suffered punishment, because they had despised the goodness of God and deserted their first vocation. And there follows immediately an explanation, for he says that they had <span style="color:#800000">*left their own habitation*</span>; for, like military deserters, they left the station in which they had been placed.
+
+<!-- PAGE 10 -->
+
+We must also notice the atrocity of the punishment which the Apostle mentions. They are not only free spirits but celestial powers; they are now held bound by perpetual chains. They not only enjoyed the glorious light of God, but his brightness shone forth in them, so that from them, as by rays, it spread over all parts of the universe; now they are sunk in darkness. But we are not to imagine a certain place in which the devils are shut up, for the Apostle simply intended to teach us how miserable their condition is, since the time they apostatized and lost their dignity. For wherever they go, they drag with them their own chains, and remain involved in darkness. Their extreme punishment is in the meantime, deferred until the great day comes.
+
+**7.** <span style="color:#800000">*Even as Sodom and Gomorrha*</span>. This example is more general, for he testifies that God, excepting none of mankind, punishes without any difference all the ungodly. And Jude also mentions in what follows, that the fire through which the five cities perished was a type of the eternal fire. Then God at that time exhibited a remarkable example, in order to keep men in fear till the end of the world. Hence it is that it is so often mentioned in Scripture; nay, whenever the prophets wished to designate some memorable and dreadful judgment of God, they painted it under the figure of sulfurous fire, and alluded to the destruction of Sodom and Gomorrha. It is not, therefore, without reason that Jude strikes all ages with terror, by exhibiting the same view.
+
+When he says, <span style="color:#800000">*the cities about them in like manner, giving themselves over to fornication*</span>, I do not apply these words to the Israelites and the angels, but to Sodom and Gomorrha. It is no objection that the pronoun <span style="color:#0000d4">τούτοις</span> is masculine; for Jude refers to the inhabitants and not to the places. To <span style="color:#800000">*go after strange flesh*</span>, is the same as to be given up to monstrous lusts; for we know that the Sodomites, not content with the common manner of committing fornication, polluted themselves in a way the most filthy and detestable. We ought to observe, that he devotes them to eternal fire; for we hence learn, that the dreadful spectacle which Moses describes, was only an image of a much heavier punishment.
+
+<!-- PAGE 11 -->
+
+<h2 class="scripture-anchor" id="jude-8-10" data-ref="JUDE 8-10" style="display:none">JUDE 8-10</h2>
+
+<p style="margin-left:2em;" markdown="1">**8.** Likewise also these filthy dreamers defile the flesh, despise dominion, and speak evil of dignities.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Similiter isti quoque somniis delusi, carnem quidem contaminant, dominationem vero, rejiciunt, et in glorias maledicta congerunt. 9. Yet Michael the archangel, when contending with the devil, (he disputed about the body of Moses,) durst not bring against him a railing accusation, but said, The Lord rebuke thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Atqui Michael archangelus, quando judicio disceptans cum diabolo, disputabat de corpore Mosis, non ausus fuit judicium inferre contumeliae; sed dixit, Increpet te Dominus. 10. But these speak evil of those things which they know not; but what they know naturally, as brute beasts, in those things they corrupt themselves.</p>
+
+<p style="text-align:right;" markdown="1">10. Isti vero quae cumque non noverunt, convitiis incessunt; quaecunque vero naturaliter tanquam bruta animalia sciunt, in iis corrumpuntur.</p>
+
+**8.** <span style="color:#800000">*Likewise also these*</span>. This comparison is not to be pressed too strictly, as though he compared these whom he mentions in all things to be Sodomites, or to the fallen angels, or to the unbelieving people. He only shews that they were vessels of wrath appointed to destruction, and that they could not escape the hand of God, but that he would some time or another make them examples of his vengeance. For his design was to terrify the godly to whom he was writing, lest they should entangle themselves in their society.
+
+But he begins here more clearly to describe these impostors. And he says first, that they polluted their flesh as it were by dreaming, by which words he denotes their stupid effrontery, as though he had said that they abandoned themselves to all kinds of filth, which the most wicked abhor, except sleep took away shame and also consciousness. It is then a metaphorical mode of speaking, by which he intimates that they were so dull and stupid as to give up themselves without any shame to every kind of baseness. <span style="color:#800000">[^f9]</span>
+
+<!-- PAGE 12 -->
+There is a contrast to be noticed, when he says that they <span style="color:#800000">*defiled*</span> or polluted <span style="color:#800000">*the flesh*</span>, that is, that they degraded what was less excellent, and that yet they despised as disgraceful what is deemed especially excellent among mankind.
+
+It appears from the second clause that they were seditious men, who sought anarchy, that, being loosed from the fear of the laws, they might sin more freely. But these two things are nearly always connected, that they who abandon themselves to iniquity, do also wish to abolish all order. Though, indeed, their chief object is to be free from every yoke, it yet appears from the words of Jude that they were wont to speak insolently and reproachfully of magistrates, like the fanatics of the present day, who not only grumble because they are restrained by the authority of magistrates, but furiously declaim against all government, and say that the power of the sword is profane and opposed to godliness; in short, they superciliously reject from the Church of God all kings and all magistrates. <span style="color:#800000">*Dignities*</span> or glories are orders or ranks eminent in power or honor.
+
+**9.** <span style="color:#800000">*Yet Michael the archangel*</span>. Peter gives this argument shorter, and states generally, that angels, far more excellent than men, dare not bring forward a railing judgment.
+
+But as this history is thought to have been taken from an apocryphal book, it has hence happened that less weight has been attached to this Epistle. But since the Jews at that time had many things from the traditions of the fathers, I see nothing unreasonable in saying that Jude referred to what had already been handed down for many ages. I know indeed that many puerilities had obtained the name of tradition, as at this day the Papists relate as traditions many of the silly dotages of the monks; but this is no reason why they should not have had *some* historical facts not committed to writing.
+
+It is beyond controversy that Moses was buried by the Lord, that is, that his grave was concealed according to the known purpose of God. And the reason for concealing his grave is evident to all, that is, that the Jews might not bring forth his body to promote superstition. What wonder then is it, when the body of the prophet was hidden by God, Satan should attempt to make it known; and that angels, who are ever ready to serve God, should on the other hand resist him? And doubtless we see that Satan almost in all ages has been endeavoring to make the bodies of God’s saints idols to foolish men. Therefore this Epistle ought not to be suspected on account of this testimony, though it is not found in Scripture.
+
+<!-- PAGE 13 -->
+
+That Michael is introduced alone as disputing against Satan is not new. We know that myriads of angels are ever ready to render service to God; but he chooses this or that to do his business as he pleases. What Jude relates as having been said by Michael, is found also in the book of Zechariah,
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">“Let God chide (or check) thee, Satan.” (</span><span style="color:#000080">Zechariah 3:2.)</span></p>
+
+And it is a comparison, as they say, between the greater and the less. Michael dared not to speak more severely against Satan (though a reprobate and condemned) than to deliver him to God to be restrained; but those men hesitated not to load with extreme reproaches the powers which God had adorned with peculiar honors.
+
+**10.** <span style="color:#800000">*But these speak evil of those things which they know not.*</span> He means that they had no taste for anything but what was gross, and as it were beastly, and therefore did not perceive what was worthy of honor; and that yet they added audacity to madness, so that they feared not to condemn things above their comprehension; and that they also labored under another evil — for when like beasts they were carried away to those things which gratified the senses of the body, they observed no moderation, but gorged themselves excessively like the swine which roll themselves in stinking mud. The adverb <span style="color:#800000">*naturally*</span> is set in opposition to reason and judgment for the instinct of nature alone rules in brute animals; but reason ought to govern men and to bridle their appetites.
+
+<!-- PAGE 14 -->
+
+<h2 class="scripture-anchor" id="jude-11-13" data-ref="JUDE 11-13" style="display:none">JUDE 11-13</h2>
+
+<p style="margin-left:2em;" markdown="1">**11.** Woe unto them! For they have gone in the way of Cain, and ran greedily after the error of Balaam for reward, and perished in the gainsaying of Core.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Vae illis, quoniam viam Cain ingressi sunt (Genesis 4:12;) et deceptione mercedis Balaam effusi sunt (Numbers 22:21;) et contradictione Core perierunt (Numbers 26:2.) 12. These are spots in your feasts of charity, when they feast with you, feeding themselves without fear: clouds they are without water, carried about of winds; trees whose fruit withereth, without fruit, twice dead, plucked up by the roots;</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Hi sunt in fraternis vestris conviviis maculae, inter se (vel vobiscum)convivantes, secure pascentes seipsos; nubes aqua carentes, quae a ventis circum aguntur; arbores fruit withereth, autummi emarcidae, infrugiferae, bis emortuae, et eradicatae; 13. Raging waves of the sea, foaming out their own shame; wandering stars, to whom is reserved the blackness of darkness for ever.</p>
+
+<p style="text-align:right;" markdown="1">13. Undae efferatae maris,despumantes sua ipserum dedecora; stelie erraticae, quibus caligo tenebrarum in aeternum servata est.</p>
+
+**11.** <span style="color:#800000">*Woe unto them.*</span> It is a wonder that he inveighs against them so severely, when he had just said that it was not permitted to an angel to bring a railing accusation against Satan. But it was not his purpose to lay down a general rule. He only shewed briefly, by the example of Michael, how intolerable was their madness when they insolently reproached what God honored. It was certainly lawful for Michael to fulminate against Satan his final curse; and we see how vehemently the prophets threatened the ungodly; but when Michael forbore extreme severity (otherwise lawful), what madness was it to observe no moderation towards those excelling in glory? But when he pronounced woe on them, he did not so much imprecate evil on them, but rather reminded them what sort of end awaited them; and he did so, lest they should carry others with them to perdition.
+
+<!-- PAGE 15 -->
+He says that they were the imitators of <span style="color:#800000">*Cain*</span>, who being ungrateful to God and perverting his worship through an ungodly and wicked heart, forfeited his birthright. He says that they were deceived like <span style="color:#800000">*Balaam*</span> by a reward, because they adulterated the doctrine of true religion for the sake of filthy lucre. But the metaphor he uses, expresses something more; for he says that they *overflowed*, even because their excess was like overflowing water. He says in the third place, that they imitated the <span style="color:#800000">*contradiction of Core*</span>, because they disturbed the order and quietness of tile church.
+
+**12.** <span style="color:#800000">*These are spots in your feasts of charity*</span>. They who read, “among your charities,” do not, as I think;, sufficiently explain the true meaning. For he calls those feasts <span style="color:#800000">*charities*</span>, (<span style="color:#0000d4">ἀγάπαις</span>,) which the faithful had among themselves for the sake of testifying their brotherly unity. Such feasts, he says, were disgraced by impure men, who afterwards fed themselves to an excess; for in these there was the greatest frugality and moderation. It was then not right that these gorgers should be admitted, who afterwards indulged themselves to an excess elsewhere.
+
+Some copies have, “Feasting with you,” which reading, if approved, has this meaning, that they were not only a disgrace, but that they were also troublesome and expensive, as they crammed themselves without fear, at the public expense of the church. Peter speaks somewhat different, who says that they took delight in errors, and feasted together with the faithful, as though he had said that they acted inconsiderately who cherished such noxious serpents, and that they were very foolish who encouraged their excessive luxury. And at this day I wish there were more judgment in some good men, who, by seeking to be extremely kind to wicked men, bring great damage to the whole church.
+
+<span style="color:#800000">*Clouds*</span> they are <span style="color:#800000">*without water*</span>. The two similitudes found in Peter are here given in one, but to the same purpose, for both condemn vain ostentation: these unprincipled men, though promising much, were yet barren within and empty, like clouds driven by stormy winds, which give hope of rain, but soon vanish into nothing. Peter adds the similitude of a dry and empty fountain; but Jude employs other metaphors for the same end, that they were <span style="color:#800000">*trees fading*</span>, as the vigor of trees in autumn disappears. He then calls them trees <span style="color:#800000">*unfruitful, rooted up*</span>, and <span style="color:#800000">*twice dead*</span>; <span style="color:#800000">[^f10]</span> as though he had said, that there was no sap within, though leaves might appear.
+
+<!-- PAGE 16 -->
+**13.** <span style="color:#800000">*Raging waves of the sea*</span>. Why this was added, we may learn more fully from the words of Peter: it was to shew, that being inflated with pride, they breathed out, or rather cast out the scum of high-flown stuff of words in grandiloquent style. At the same time they brought forth nothing spiritual, their object being on the contrary to make men as stupid as brute animals. Such, as it has been before stated, are the fanatics of our day, who call themselves Libertines. You may justly say that they make only rumbling sounds; for, despising common language, they form for themselves an exotic idiom, I know not what. They seem at one time to carry their disciples above heaven, then they suddenly fall down to beastly errors, for they imagine a state of innocency in which there is no difference between baseness and honesty; they imagine a spiritual life, when fear is extinguished, and when every one heedlessly indulges himself; they imagine that we become gods, because God absorbs the spirits when they quit their bodies. With the more care and reverence ought the simplicity of Scripture to be studied, lest, by reasoning more refinedly than is right, we should not draw men to heaven, but on the contrary be involved in manifold labyrinths. He therefore calls them *wandering stars*, because they dazzled the eyes by a sort of evanescent light.
+
+<h2 class="scripture-anchor" id="jude-14-16" data-ref="JUDE 14-16" style="display:none">JUDE 14-16</h2>
+
+<p style="margin-left:2em;" markdown="1">**14.** And Enoch also, the seventh from Adam, prophesied of these, saying, Behold, the Lord cometh, with ten thousand of his saints,</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Prius autem etiam de iis vaticinatus est septimus ab Adam Enoch, dicens, Ecce venit Dominus in sanctis millibus suis, 15. To execute judgment upon all, and to convince all that are ungodly among them of all their ungodly deeds which they have ungodly committed, and of all their hard *speeches* which ungodly sinners have spoken against him.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Ut faciat judicium adversus omnes, et redarguat ex eis omnes impios de factis omnibus impietatis quae impie patrarunt deque omnibusduris quae loquuti sunt adversus Deum peccatores impii. 16. These are murmurers, complainers, walking after their own lusts; and their mouth speaketh great swelling *words*, having men’s persons in admiration because of advantage.</p>
+
+<p style="text-align:right;" markdown="1">16. Hi sunt murmuratores,queruli, juxta concupiscentias suasambulantes, et os illorum loquiturtumida, admirantes personas, utilitatis gratia.</p>
+
+<!-- PAGE 17 -->
+
+**14.** <span style="color:#800000">*And Enoch also*</span>. I rather think that this prophecy was unwritten, than that it was taken from an apocryphal book; for it may have been delivered down by memory to posterity by the ancients. <span style="color:#800000">[^f11]</span> Were any one to ask, that since similar sentences occur in many parts of Scripture, why did he not quote a testimony written by one of the prophets? the answer is obvious, that he wished to repeat from the oldest antiquity what the Spirit had pronounced respecting them: and this is what the words intimate; for he says expressly that he was the <span style="color:#800000">*seventh*</span> from Adam, in order to commend the antiquity of the prophecy, because it existed in the world before the flood.
+
+But I have said that this prophecy was known to the Jews by being reported; but if any one thinks otherwise, I will not contend with him, nor, indeed, respecting the epistle itself, whether it be that of Jude or of some other. In things doubtful, I only follow what seems probable.
+
+<span style="color:#800000">*Behold, the Lord cometh*</span>, or came. The past tense, after the manner of the prophets, is used for the future. He says, that the Lord would <span style="color:#800000">*come with ten thousand of his saints;*</span> <span style="color:#800000">[^f12]</span> and by saints he means the faithful as well as angels; for both will adorn the tribunal of Christ, when he shall descend to judge the world. He says, <span style="color:#800000">*ten thousand*</span>, as Daniel also mentions myriads of angels, (Daniel 7:10;) in order that, the multitude of the ungodly may not, like a violent sea, overwhelm the children of God; but that they may think of this, that the Lord will sometime collect his own people, a part of whom are dwelling in heaven, unseen by us, and a part are hid under a great mass of chaff.
+
+But the vengeance suspended over the wicked ought to keep the elect in fear and watchfulness. He speaks of <span style="color:#800000">*deeds*</span> and <span style="color:#800000">*words*</span>, Because their corrupters did much evil, not only by their wicked life, but also by their impure and false speech. And their words were *hard*, on account of the refractory audacity, by which, being elated, they acted insolently. <span style="color:#800000">[^f13]</span>
+
+<!-- PAGE 18 -->
+**16.** <span style="color:#800000">*These are murmurers*</span>. They who indulge their depraved lusts, are hard to please, and morose, so that they are never satisfied. Hence it is, that they always murmur and complain, however kindly good men may treat them. <span style="color:#800000">[^f14]</span> He condemns their proud language, because they haughtily made a boast of themselves; but at the same time he shews that they were mean in their disposition, for they were servilely submissive for the sake of gain. And, commonly, this sort of inconsistency is seen in unprincipled men of this kind. When there is no one to check their insolence, or when there is nothing that stands in their way, their pride is intolerable, so that they imperiously arrogate everything to themselves; but they meanly flatter those whom they fear, and from whom they expect some advantage. He takes *persons* as signifying eternal greatness and power.
+
+<h2 class="scripture-anchor" id="jude-17-19" data-ref="JUDE 17-19" style="display:none">JUDE 17-19</h2>
+
+<p style="margin-left:2em;" markdown="1">**17.** But, beloved, remember ye the words which were spoken before of the apostles of our Lord Jesus Christ:</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Vos autem dilecti, memores estis (vel, estote) verborum quae praedicta sunt ab apostolis Domini Christ: nostri Jesu nempe, 18. How that they told you there should be mockers in the last time, who should walk after their own ungodly lusts.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Quod vobis dixerunt, ultimo tempore futuros (vel, venturos) derisores, qui secundum concupiscentias tias suarum impietatum ambularent. 19. These be they which separate themselves, sensual, having not the Spirit.</p>
+
+<p style="text-align:right;" markdown="1">19. Hi sunt qui seipsos segregant, animales, Spiritum non habentes.</p>
+
+**17.** <span style="color:#800000">*But, beloved*</span>. To a most ancient prophecy he now adds the admonitions of the apostles, the memory of whom was recent. As to the verb <span style="color:#0000d4">μνήσθητε</span>, it makes no great difference, whether you read it as declarative or as an exhortation; for the meaning remains the same, that being fortified by the prediction he quotes, they ought to be terrified. By <span style="color:#800000">*the last time*</span> he means that in which the renewed condition of the Church received a fixed form till the end of the world; and it began at the first coming of Christ.
+
+<!-- PAGE 19 -->
+After the usual manner of Scripture, he calls them scoffers who, being inebriated with a profane and impious contempt of God, rush headlong into a brutal contempt of the Divine Being, so that no fear nor reverence keeps them any longer within the limits of duty: as no dread of a future judgment exists in their hearts, so no hope of eternal life. So at this day the world is full of Epicurean despisers of God, who having cast off every fear, madly scoff at the whole doctrine of true religion, regarding it as fabulous.
+
+**19.** <span style="color:#800000">*These be they who separate themselves*</span>. Some Greek copies have the participle by itself, other copies add <span style="color:#0000d4">ἑαυτοὺς</span>, “themselves;” but the meaning is nearly the same. He means that they separated from the Church, because they would not bear the yoke of discipline, as they who indulge the flesh dislike spiritual life. <span style="color:#800000">[^f15]</span> The word <span style="color:#800000">*sensual*</span>, or animal, stands opposed to spiritual, or to the renovation of grace; and hence it means the vicious or corrupt, such as men are when not regenerated. For in that degenerated nature which we derive from Adam, there is nothing but what is gross and earthly; so that no part of us aspires to God, until we are renewed by his Spirit.
+
+<h2 class="scripture-anchor" id="jude-20-25" data-ref="JUDE 20-25" style="display:none">JUDE 20-25</h2>
+
+<p style="margin-left:2em;" markdown="1">**20.** But ye, beloved, building up yourselves on your most holy faith, praying in the Holy Ghost,</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Vos autem dilecti, sanctissimaevestrae fidei vosmet superstruentes, in Spiritu Sancti precantes, 21. Keep yourselves in the love of God, looking for the mercy of our Lord Jesus Christ unto eternal life.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Vosmet in charitate servate, expectantes misericordiam Domini nostri Jesu Christi in vitam eternam. 22. And of some have compassion, making a difference.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Et hos quidem miseramini, dijudicantes; 23. And others save with fear, pulling *them* out of the fire; hating even the garment spotted by the flesh.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Illos verò per timorem servate, ex incendio rapientes, odio prosquentes etiam maculatam a’ carne tunicam. 24. Now unto him that is able to keep you from falling, and to present *you* faultless before the presence of his glory with exceeding joy,</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Ei autem qui servare potest vos (*vel*, eos) à peccato immunes, et statuere in conspectu gloriae suae reprehensibiles cum exultatione, 25. To the only wise God our Savior, *be* glory and majesty, dominion and power, both now and ever. Amen.</p>
+
+<p style="text-align:right;" markdown="1">25. Soli sapienti Deo, Servatori nostro, gloria et magnificentia et perium et potestas, nunc, et in omnia secula. Amen.</p>
+
+<!-- PAGE 20 -->
+
+**20.** <span style="color:#800000">*But ye, beloved*</span>. He shews the manner in which they could overcome all the devices of Satan, that is, by having love connected with faith, and by standing on their guard as it were in their watch-tower, until the coming of Christ. But as he uses often and thickly his metaphors, so he has here a way of speaking peculiar to himself, which must be briefly noticed.
+
+He bids them first to <span style="color:#800000">*build*</span> themselves on <span style="color:#800000">*faith*</span>; by which he means, that the foundation of faith ought to be retained, but that the first instruction is not sufficient, except they who have been already grounded on true faith, went on continually towards perfection. He calls their faith <span style="color:#800000">*most holy,*</span> in order that they might wholly rely on it, and that, leaning on its firmness, they might never vacillate.
+
+But since the whole perfection of man consists in faith, it may seem strange that he bids them to build upon it another building, as though faith were only a commencement to man. This difficulty is removed by the Apostle in the words which follow, when he adds, that men build on faith when love is added; Except, perhaps, some one may prefer to take this meaning, that men build on faith, as far as they make proficiency in it, and doubtless the daily progress of faith is such, that itself rises up as a building. <span style="color:#800000">[^f16]</span> Thus the Apostle teaches us, that in order to increase in faith, we must be instant in prayer and maintain our calling by love.
+
+<span style="color:#800000">*Praying in the Holy Ghost*</span>. The way of persevering is, when we are endued with the power of God. Hence whenever the question is respecting the constancy of faith, we must flee to prayer. And as we commonly pray in a formal manner, he adds, <span style="color:#800000">*In the Spirit*</span>; as though he had said, that such is our sloth, and that such is the coldness of our flesh, that no one can pray aright except he be roused by the Spirit of God; and that we are also so inclined to diffidence and trembling, that no one dares to call God his Father, except through the teaching of the same Spirit; for from him is solicitude, from him is ardor and vehemence, from him is alacrity, from him is confidence in obtaining what we ask; in short, from him are those unutterable groanings mentioned by Paul (Romans 8:26.) It is not, then, without reason that Jude teaches us, that no one can pray as he ought without having the Spirit as his guide.
+
+<!-- PAGE 21 -->
+
+**21.** <span style="color:#800000">*Keep yourselves in the love of God.*</span> He has made love as it were the guardian and the ruler of our life; not that he might set it in opposition to the grace of God, but that it is the right course of our calling, when we make progress in love. But as many things entice us to apostasy, so that it is difficult to keep us faithful to God to the end, he calls the attention of the faithful to the last day. For the hope of that alone ought to sustain us, so that we may at no time despond; otherwise we must necessarily fail every moment.
+
+But it ought to be noticed that he would not have us to hope for eternal life, except through the mercy of Christ: for he will in such a manner be our judge, as to have no other rule in judging us than that gratuitous benefit of redemption obtained by himself.
+
+**22.** <span style="color:#800000">*And of some have compassion*</span>. He adds another exhortation, shewing how the faithful ought to act in reproving their brethren, in order to restore them to the Lord. He reminds them that such ought to be treated in different ways, every one according to his disposition: for to the meek and teachable we ought to use kindness; but others, who are hard and perverse, must be subdued By terror. <span style="color:#800000">[^f17]</span> This is the <span style="color:#800000">*difference*</span> which he mentions.
+
+The participle <span style="color:#0000d4">διακρινόμενοι</span>, I know not why this is rendered in a passive sense by Erasmus. It may, indeed, be rendered in either way, but its active meaning is more suitable to the context. The meaning then is, that if we wish to consult the well-being of such as go astray, we must consider the character and disposition of every one; so that they who are meek and tractable may in a kind manner be restored to the right way, as being objects of pity; but if any be perverse, he is to be corrected with more severity. And as asperity is almost hateful, he excuses it on the ground of necessity; for otherwise, they who do not willingly follow good counsels, cannot he saved.
+
+<!-- PAGE 22 -->
+Moreover, he employs a striking metaphor. When there is a danger of fire, we hesitate not to snatch away violently whom we desire to save; for it would not be enough to beckon with the finger, or kindly to stretch forth the hand. So also the salvation of some ought to be cared for, because they will not come to God, except when rudely drawn. Very different is the old translation, which reading is however found in many of the Greek copies; the Vulgate is, “Rebuke the judged,” (*Arguite dijudicatos*.) But the first meaning is more suitable, and is, I think, according to the old and genuine reading. The word to <span style="color:#800000">*save*</span>, is transferred to men, not that they are the authors, but the ministers of salvation.
+
+**23.** <span style="color:#800000">*Hating even the garment*</span>. This passage, which otherwise would appear obscure, will have no difficulty in it, when the metaphor is rightly explained. He would have the faithful not only to beware of contact with vices, but that no contagion might reach them, he reminds them that everything that borders on vices and is near to them ought to be avoided: as, when we speak of lasciviousness, we say that all excitements to lusts ought to be removed. The passage will also become clearer, when the whole sentence is filled up, that is, that we should hate not only the flesh, but also the garment, which, by a contact with it, is infected. The particle <span style="color:#0000d4">καὶ</span> even serves to give greater emphasis. He, then, does not allow evil be cherished by indulgence, so that he bids all preparations and all accessories, as they say, to be cut off.
+
+**24.** <span style="color:#800000">*Now unto him that is able to keep you*</span>. He closes the Epistle with praise to God; by which he shews that our exhortations and labors can do nothing except through the power of God accompanying them. <span style="color:#800000">[^f18]</span>
+
+Some copies have “them” instead of “you.” If we receive this reading, the sense will be, “It is, indeed, your duty to endeavor to save them; but it is God alone who can do this “ However, the other reading is what I prefer; in which there is an allusion to the preceding verse; for after having exhorted the faithful to save what was perishing, that they might understand that all their efforts would be vain except God worked with them, he testifies that they could not be otherwise saved than through the power of God. In the latter clause there is indeed a different verb, <span style="color:#0000d4">φυλάξαι</span>, which means to guard; so the allusion is to a remoter clause, when he said, <span style="color:#800000">*Keep yourselves*</span>.
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">END OF THE EPISTLE OF JUDE</span></p>
+
+<!-- PAGE 23 -->
+
+<p style="text-align:center" markdown="1">A TRANSLATION OF</p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN’S VERSION</span></p>
+
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE OF JUDE.</span></p>
+
+<span style="color:#800000">1</span> JUDE, a servant of Jesus Christ, and the brother of James, to the called, who are sanctified by God the Father, and preserved by Jesus Christ;
+
+<span style="color:#800000">2</span> Mercy to you and peace and love be increased.
+
+<span style="color:#800000">3</span> Beloved, when I was applying all care to write to you of the common salvation, I deemed it necessary to write to you in order to exhort *you,* that ye should by contending help the faith once delivered to the saints.
+
+<span style="color:#800000">4</span> For crept in stealthily have certain men, ordained of old to this judgment, ungodly, turning the grace of our God into lasciviousness, and denying God, the only sovereign, and our Lord Jesus Christ.
+
+<span style="color:#800000">5</span> Now I wish to remind you, though ye once knew this, that the Lord, after having saved the people from the land of Egypt, afterwards destroyed the unbelieving;
+
+<span style="color:#800000">6</span> And the angels, who had not kept their own pre-eminence, but left their own abode, he has reserved under darkness in eternal chains for the judgment of the great day.
+
+<span style="color:#800000">7</span> As Sodom and Gomorrha, and the cities around them, having in like manner committed fornication and gone after strange flesh, have been set forth for an example, undergoing the judgment of eternal fire:
+
+<span style="color:#800000">8</span> In like manner also do these, deluded with dreams, pollute the flesh, reject government, and heap curses on dignities:
+
+<!-- PAGE 24 -->
+
+<span style="color:#800000">9</span> Yet Michael the archangel, when, contending with the devil, he disputed about the body of Moses, dared not to bring against him a reviling judgment, but said, <span style="color:#800000">10</span> “The Lord rebuke thee.” But these revile those things which they know not, but what things they know naturally, as brute beasts; in these they corrupt themselves.
+
+<span style="color:#800000">11</span> Woe to them! for they have gone in the way of Cain, and abandoned themselves to the error of Balaam's reward, and perished in the gainsaying of Core.
+
+<span style="color:#800000">12</span> These are stains in your brotherly feasts, feasting with you, heedlessly feeding themselves; clouds without water, driven about by winds; withering trees of autumn, fruitless, twice dead, rooted up;
+
+<span style="color:#800000">13</span> Raging waves of the sea, foaming out their own shame; wandering stars, for whom is reserved the blackness of darkness for ever:
+
+<span style="color:#800000">14</span> And Enoch also, the seventh from Adam, formerly prophesied of these, saying, “Behold, the Lord cometh with thousands of his saints, <span style="color:#800000">15</span> To execute .judgment on all, and to convict all the ungodly of the ungodly deeds of ungodliness which they have in an ungodly manner done, and of all the hard things which ungodly sinners have spoken against God.”
+
+<span style="color:#800000">16</span> These are murmurers, complainers, walking after their own lusts; and their mouth speaks swelling words, admiring persons for the sake of gain.
+
+<span style="color:#800000">17</span> But ye, beloved, remember the words which have been spoken before by the Apostles of our Lord Jesus Christ;
+
+<span style="color:#800000">18</span> For they have told you, that in the last time scoffers would come, walking after their own ungodly lusts.
+
+<span style="color:#800000">19</span> These are they who separate themselves, being sensual, having not the Spirit.
+
+<!-- PAGE 25 -->
+
+<span style="color:#800000">20</span> But ye, beloved, building up yourselves on your most holy faith, praying in the Holy Spirit, <span style="color:#800000">21</span> Keep yourselves in the love of God, looking for the mercy of our Lord Jesus Christ unto eternal life.
+
+<span style="color:#800000">22</span> And on some have mercy, making a difference;
+
+<span style="color:#800000">23</span> But others save by fear, snatching them from the fire, hating even the garment spotted by the flesh.
+
+<span style="color:#800000">24</span> Now to him who can keep you free from sin and set you faultless before the presence of his glory with exultation <span style="color:#800000">25</span> To the only wise God our Savior, be glory and majesty, dominion and power, both now and to all ages. Amen.
+
+<!-- PAGE 26 -->
+
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">FOOTNOTES</span></p>
+
+[^f1]: Some have held, that James, mentioned in the forecited places in Acts, was not James the apostle, but another James, a disciple, and one of the seventy, who was also called Oblias: but this is not correct. — *Ed*.
+
+[^f2]: So *Beza* renders the words, “ To the called, sanctified by God the Father, and preserved by Jesus Christ:” that is, to the effectually called, (as the word commonly means,) set apart and separated by God from the ungodly world, and kept by Christ, having been committed to his care and protection. — *Ed*.
+
+[^f3]: As *mercy* is that of God, so it is more consistent to consider “peace” and “love’’ to be those of God: “ may the mercy” of God, “and the peace” of God, “and the love” of God, “be increased (or multiplied) to you” — *Ed*.
+
+[^f4]: Then the rendering would be, “Beloved, when I was applying all care to write to you of the common salvation, I deemed (or found) it necessary to write to you, in order to exhort you to contend for the faith once delivered to the saints.” *Macknight* and some others give another meaning to the first clause, and one more literal: “Beloved, making all haste to write to you, concerning the common salvation, I have thought it necessary,” etc. For this haste the Apostle gives a reason in the following verse, “For some men have stealthily crept in,” etc.. This is the most obvious meaning of the passage. — *Ed*.
+
+[^f5]: The meaning of the verb is, to combat for, to strive, fight or contend for. It is a word derived from the games, and expresses a strenuous effort. Our version conveys well its meaning, “earnestly contend for the faith;” or, the words may be rendered, “strenuously combat for the faith;” not with the sword, says *Beza*, but with sound doctrine and the example of a holy life. — *Ed*.
+
+[^f6]: The words literally are, “Who have been long ago (or, some time past) forewritten of for (or, as to) this judgment.” The reference is to prophecy; such creepers in for the purpose of corrupting the truth had been foretold; and this creeping in for such a purpose was a judgment for yielding up themselves to the delusions of Satan. The word <span style="color:#0000d4">πάλαι</span> refers indefinitely to what is past, either long ago, or some time past. See Matthew 11:21, and Mark 15:44. The reference may be to ancient prophecies, or to those of our Savior and his Apostles. — *Ed*.
+
+<!-- PAGE 27 -->
+
+[^f7]: “The grace of God” here is evidently the gospel. They transformed, says *Grotius*, the gospel to a libidinous doctrine. — *Ed*.
+
+[^f8]: *Griesbach* excludes <span style="color:#0000d4">Θεὸν</span>,  “God,”  from the text: then the passage would correspond in sense, with 2 Peter 2:1; literally, “denying the only sovereign and Lord of us, Jesus Christ.” The word <span style="color:#0000d4">δεσπότην</span>, sovereign, or master, is used by Jude as well as by Peter. It was not the grace, but the ruling power of Christ that was denied; they boasted of his grace, but did not submit to him as a king. Hence the word <span style="color:#0000d4">δεσπότης</span> is used — one exercising absolute power. We may render the words, “denying our only sovereign and Lord, Jesus Christ.” — *Ed*.
+
+[^f9]: The “dreaming” is connected with the three things which follow, defiling the flesh, despising government. and slandering dignities. Hence the idea conveyed by our version, in which *filthy* is introduced, is by no means correct. Allusion seems to be made to the pretensions of false prophets in former times. See Jeremiah 23:25-27. The false prophets taught what they pretended to see in dreams, as dreams as well as visions were vouchsafed to true prophets. See Joel 2:28. It is not improbable that those referred to here pretended that they had received what they taught., by supernatural dreams; for how otherwise could they deceive others, especially respecting errors so gross and palpable as are here mentioned? The eighth verse is, as to its construction, connected with the seventh. The <span style="color:#0000d4">ὡς</span> and the <span style="color:#0000d4">ὁμοίως</span> are corresponding terms; “as Sodom and Gomorrha, etc., are set forth for an example, in like manner also these would be.” This is the drift of the passage; — <span style="color:#000080">8. “In like manner, indeed,shall also these dreamers be</span> <span style="color:#000080">that is, an example of divine vengeance,</span> <span style="color:#000080">who defile the flesh, despise dominion, and revile dignities.”</span> Peter threatened them with “swift destruction,” 2 Peter 2:1. There are here three things mentioned which apply to the three instances previously adduced: like the Sodomites they defiled the flesh; like the fallen angels they despised dominion; and like the Israelites in the wilderness, they reviled dignities; for it was especially by opposing the power given to Moses that the Israelites manifested their unbelief. — *Ed*.
+
+<!-- PAGE 28 -->
+
+[^f10]: “Twice dead” is deemed by some a proverbial expression to signify what is altogether dead; or, as by *Macknight*, it means that they were dead when professing Judaism, and dead after having made a profession of the gospel. — Ed. <span style="color:#800000">ft11.</span> This is the most common opinion. There is no evidence of such a *book* being known for some time after this epistle was written; and the book so called was probably a forgery, occasioned by this reference to Enoch’s prophecy. See *Macknight*’s Preface to this Epistle. Until of late, it was supposed to be lost; but in 1821, the late Archbishop *Laurence*, having found an Ethiopia version of it, published it with a translation. — *Ed*.
+
+[^f12]: Literally, ‘‘ with his holy myriads.” — *Ed*
+
+[^f13]: There seems to be a want of due order in the 15th verse; the execution of judgment is mentioned first, and then the conviction of the ungodly; but it is an order which exactly corresponds with numberless passages in Scripture: the final action first, and then that which lends to it. — *Ed*.
+
+[^f14]: We may render the words “ Grumblers and fault-finders,” that is, as the word means, with their own lot: they grumbled or murmured against others, and were discontented with their own condition; and yet walked in such a way (that is, in indulging their lusts,) as made their lot worse and occasioned still more grumbling. — *Ed*.
+
+[^f15]: This is the common interpretation, and yet it seems inconsistent with what is previously said of these men, that they crept in stealthily, and “feasted” with the members of the Church. The <span style="color:#0000d4">ἑαυτοὺς</span>, though retained by *Griesbach*, is excluded by *Wetstein* and others, being absent from most of the MSS. The verb <span style="color:#0000d4">ἀποδιορίζω</span>, means to separate by a boundary two portions from one another, and hence metaphorically to separate or cause divisions: “These be they who cause divisions.” They were doing the same thing as those mentioned by Paul in Romans 16:17. They were producing discords *in* the Church, and not separations *from* it; and by continuing in it, they became “spots and stains” to its members. — *Ed*.
+
+<!-- PAGE 29 -->
+
+[^f16]: It is better to take “faith” here metonymically for the word or  doctrine of faith, the gospel; and the sense would be more evident, were we to render <span style="color:#0000d4">ἑαυτοὺς</span>, “one another,” as it means in 1 Thessalonians 5:13. <span style="color:#000080">20 “But ye, beloved, building one another on your most holy faith,</span> <span style="color:#000080">(on the most holy doctrine which you believe,) praying by the</span> <span style="color:#000080">21 Holy Spirit, keep one another in love to God, waiting for the</span> <span style="color:#000080">mercy of our Lord Jesus Christ to eternal life. And on some,</span> <span style="color:#000080">indeed, have compassion, making a difference; but others save With</span> <span style="color:#000080">fear,’ etc.</span> The whole passage would read thus better, when their duty towards one another is specifically pointed out. — *Ed*.
+
+[^f17]: Though most agree that by “ fear” here is meant terror, that is, that the persons referred to are to be terrified by the judgment which awaited them; yet what follows seems favorable to another view, that fear means the care and caution with which they were to be treated; for the act of saving them is compared to that of a man snatching anything from the fire, in doing which he must be careful lest he himself should be burnt; and then the other comparison, that of a man shunning an infected garment lest he should catch the contagion, favors the same view. Hence our version seems right — “*with* fear.” — *Ed*.
+
+[^f18]: The doxology is as follows, — “To the only wise God (or, to the wise God alone) our Savior, be glory and greatness, might and dominion, both now and through all ages.” “Dominion” (<span style="color:#0000d4">ἐξουσία</span>) is the right to govern, imperial authority or power; “might” (<span style="color:#0000d4">χράτος</span>) is strength to effect his purpose, omnipotence; “greatness” (<span style="color:#0000d4">μεγαλωσύνη</span>) comprises knowledge, wisdom, holiness, and everything that constitutes what is really great and magnificent; and (<span style="color:#0000d4">δόξα</span>) is the result of all these things which belong to God; all terminate in his glory. The ultimate issue is first mentioned, then the things which lead to it. It is by acknowledging his sovereign power, his capacity to exercise that power — his omnipotence, and his greatness in everything that constitutes greatness, that we give him the glory, the honor, and the praise due to his name. — Ed
+
