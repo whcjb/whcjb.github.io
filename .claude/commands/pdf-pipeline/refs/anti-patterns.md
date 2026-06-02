@@ -383,15 +383,17 @@ elif tag in ('CENTERED_H1', 'CENTERED_H2'):
 **Fix（双管齐下）**：
 
 ```python
-# extractor: 加 INDENT tag
+# extractor: 加 INDENT tag，双触发：列表项 OR 窄块
 block_lm = block['bbox'][0]
+block_w_local = block['bbox'][2] - block['bbox'][0]
+is_outline_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+is_narrow_indented = block_w_local < page_w * 0.55  # 短签名行 "J. O." / "W.P. AUCHTERARDER"
 is_indented_subitem = (
     block_lm >= 35
     and not is_centered_block
     and line_class == 'BODY'
     and rm > 20
-    # 起首是 IVX. / 数字. / lIi. （后者：PDF 字体把 "1" 渲成 "l"/"I"/"i" 的常见 misread）
-    and bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+    and (is_outline_item or is_narrow_indented)
 )
 if is_indented_subitem:
     line_class = 'INDENT'
@@ -400,16 +402,19 @@ if is_indented_subitem:
 starts_with_list_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s', block_text_preview))
 is_centered_block = is_centered_block_geom and not ends_with_continuation and not starts_with_list_item
 
-# converter [INDENT] 分支
+# converter [INDENT] 分支 — 必须 markdown="1" 让 kramdown 展开 inline italic/fn
 elif tag == 'INDENT':
     pending_fn_idx = None
     body = format_inline(content)
     body = apply_verse_styling(body)
     body = bold_leading_verse_num(body)
-    out.append(f'<p style="margin-left:2em;">{body}</p>')
+    out.append(f'<p style="margin-left:2em;" markdown="1">{body}</p>')
 ```
 
-**关键**：`<p ` 起首在 BLOCK_PREFIXES 中，自动阻断 `_merge_paragraph_fragments`，避免子条目被合到上一段。
+**关键**：
+- `<p ` 起首在 BLOCK_PREFIXES 中，自动阻断 `_merge_paragraph_fragments`，避免子条目被合到上一段
+- `markdown="1"` 必加（否则 `*J. O.*` 在 `<p>` 内显示为字面 `*J. O.*`，不渲染为 `<em>`）
+- 双触发：列表项 (`1./2./IVX./l.`) **或**窄块（`block_w < 55% page_w`）— 后者覆盖签名行如 "J. O." (w=23)
 
 ---
 
@@ -508,6 +513,53 @@ is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text_no_fn))
 # publish 脚本: find_chapter_starts 容忍尾随 [^fN] ref
 re.match(r'^# CHAPTER (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$', line)
 ```
+
+---
+
+## M12. CENTERED_H1/H2 emit 必须保留 `<sty>` 颜色 + 加 `markdown="1"`
+
+**Trigger**：扉页 / 题献页大字标题在 PDF 是彩色（蓝 #0000d4 / 深绿 #006411 等），网页输出灰白默认色；或者标题内 `[^fN]` 字面残留没渲染为上标。
+
+**根因**：CENTERED_H1/H2 emit 代码错误顺序——先 `re.sub(r'</?(?:verse|sty[^>]*)>', '', cleaned)` 剥掉 `<sty>` 然后才 emit，颜色信息丢失。且 `<p>` 包装没有 `markdown="1"`，kramdown 不展开内部的 `[^fN]` / `*italic*` / `**bold**`。
+
+**Fix**：
+
+```python
+elif tag in ('CENTERED_H1', 'CENTERED_H2'):
+    # ... CHAPTER N skip check first ...
+    pending_fn_idx = None
+    cleaned = collapse_spaced_caps(format_inline(content))
+    cleaned = apply_verse_styling(cleaned)  # ← 必须：<sty> → <span style="color:#...">
+    cleaned = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', cleaned)  # 仅剥剩余空标签
+    if cleaned.strip():
+        size_class = 'title-block-h1' if tag == 'CENTERED_H1' else 'title-block-h2'
+        font_size = '22px' if tag == 'CENTERED_H1' else '16px'
+        out.append('')
+        out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:bold; margin:18px 0 12px;" markdown="1">{cleaned}</p>')
+```
+
+**关键**：
+- `apply_verse_styling` 在 `re.sub` 剥 sty 之前调用（颜色信息先转 `<span>`，剥的是空标签）
+- `markdown="1"` 让 kramdown 展开 `[^fN]` 等 inline markdown
+
+通用规则：**任何 emit `<p ...>` 包装内容（无论 CENTERED / INDENT / 其它）都要 `markdown="1"`**——否则 kramdown 把整个 `<p>` 当 HTML 块跳过 inline 解析。
+
+---
+
+## M13. `collapse_spaced_caps` 第二趟必须排除 'A'/'I' 单字母英文词
+
+**Trigger**：标题或居中段含 "A MAN" 被错合并为 "AMAN"；"I AM" → "IAM"。
+
+**根因**：第二趟正则 `\b([A-Z]) ([A-Z]+)\b` 把 single-cap + multi-cap 都视为 spaced-caps（PDF 装饰用法），但 "A" / "I" 在英文中是合法单字母词，应保留为词间空格。
+
+**Fix**：
+
+```python
+# 加负向先行 (?![AI]\b) 排除 'A'/'I' 单字母词
+text = re.sub(r"(?<!['‘’])\b(?![AI]\b)([A-Z]) ([A-Z]+)\b", r'\1\2', text)
+```
+
+**注意**：边缘 case 仍可能有问题（如 PDF small-caps 形式 "I N THE BEGINNING" 应该是 "IN THE BEGINNING"——但因 `I` 被排除，"N THE" 被合并为 "NTHE"）。这种 case 罕见，暂时接受。
 
 ---
 
