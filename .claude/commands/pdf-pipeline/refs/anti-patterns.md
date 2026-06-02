@@ -680,6 +680,68 @@ grep -n '<span[^>]*color:#800000[^>]*>f</span>' calvin/BOOK-en/*.md
 
 ---
 
+## M18. PDF 后部"CALVIN'S VERSION"重译附录污染最后章节（500+ 行垃圾）
+
+**Trigger**：最后一章 .md 文件远大于其他章节（如 ch6 = 123 KB vs ch1 = 60 KB），尾部包含 `END OF THE COMMENTARIES`、`A TRANSLATION OF CALVIN'S VERSION`、整本 Eph 1-6 双语经文重译、独立的 `TRANSLATION FOOTNOTES` section。
+
+**根因**：某些 Ages PDF（Ephesians 等）在主体注释 + 真正 FOOTNOTES def section 之间，插入一段"CALVIN'S VERSION"双语重译。结构如下：
+
+```
+[main body ch1-6] ... [END OF THE COMMENTARIES] ... 
+[CALVIN'S VERSION re-translation Eph 1-6, 双语 ~300 行] 
+[FOOTNOTES heading] ... [^f1]: ... [^f132]: 
+```
+
+publisher 默认按 `# CHAPTER N` 分章，最后一章吞下从 ch6 起一直到 file end 的所有内容 → 包括 END + appendix + FOOTNOTES。
+
+**Fix（关键：选择性 excise，不要全切）**：
+
+```python
+def excise_translation_appendix(lines: list[str]) -> list[str]:
+    """切除 END..FOOTNOTES 之间的 translation appendix，保留 FOOTNOTES def section。"""
+    end_idx = fn_idx = None
+    for i, line in enumerate(lines):
+        t = re.sub(r'<[^>]+>', '', line).strip()
+        if end_idx is None and re.search(r'END OF THE COMMENTARIES', t, re.I):
+            end_idx = i
+        elif end_idx is not None and re.match(r'^\s*(?:#\s+)?FOOTNOTES\s*$', t, re.I):
+            fn_idx = i
+            break
+    if end_idx is None:
+        return lines  # no appendix
+    if fn_idx is None:
+        return lines[:end_idx]  # cut everything after END if no FOOTNOTES heading
+    return lines[:end_idx] + lines[fn_idx:]  # keep FOOTNOTES def section
+```
+
+**通用规则**：
+- `appendix_start` (END marker) **必须** 在 `collect_all_definitions` 之前 excise
+- **绝不要**直接 `lines = lines[:end_idx]`（会把合法 FOOTNOTES def section 也丢）
+- excise 之后 publisher 正常工作；ch6.md 由 78 KB 降到 49 KB
+
+---
+
+## M19. 跨段冠词/介词后大写词应合并（"...2. The | Gentiles were 'aliens'..."）
+
+**Trigger**：PDF 一句话被切成两段，prev 段以 `The` / `A` / `An` / `Of` 等冠词/介词结尾（无标点），next 段大写起首（如专有名词）。
+
+**根因**：`_starts_with_continuation` 原检查 `\b(?:and|or|but|nor|for|yet|so)\s*$` 只覆盖连词。Calvin 注释中常见"...2. The Gentiles were 'aliens'..."这种"冠词在末尾断"的情况（PyMuPDF block 边界恰在冠词后）。
+
+**Fix**：
+
+```python
+# Conjunction + capitalized continuation (既有)
+if re.search(r'\b(?:and|or|but|nor|for|yet|so)\s*$', prev_tail):
+    if c.isupper(): return True
+# Article / preposition + capitalized continuation (新增)
+if re.search(r'\b(?:The|A|An|Of|In|On|At|To|For|With|By|From|Through)\s*$', prev_tail):
+    return True
+```
+
+注意是 `\bThe\s*$` 不是简单 `the\s*$`——需要大写形式（PDF 中跨行后第二段总以大写起首，第一段尾词遵循"原句词形"，所以大写 `The/A/An`）。
+
+---
+
 ## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
 
 **Trigger**：新书（如 romans-en / galatians-en）需要复用 john-en 的 PDF-faithful scripture-box 样式。
