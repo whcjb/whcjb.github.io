@@ -103,6 +103,41 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     return starts
 
 
+_APPENDIX_END_RE = re.compile(r'END OF THE COMMENTARIES', re.IGNORECASE)
+_FOOTNOTES_HEADING_RE = re.compile(r'^\s*(?:#\s+)?FOOTNOTES\s*$', re.IGNORECASE)
+
+
+def excise_translation_appendix(lines: list[str]) -> list[str]:
+    """Some Ages PDFs (Ephesians) have a bilingual re-translation appendix
+    between "END OF THE COMMENTARIES..." and the legitimate FOOTNOTES section.
+    Cut that segment out, KEEP the FOOTNOTES def section after it.
+
+    Pipeline:
+      [main body] ... END OF THE COMMENTARIES ... [TRANSLATION] ... FOOTNOTES heading ... [^fN]: defs
+      ↓ excise
+      [main body] ... [^fN]: defs
+    """
+    end_idx = None
+    fn_idx = None
+    for i, line in enumerate(lines):
+        t = re.sub(r'<[^>]+>', '', line).strip()
+        if end_idx is None and _APPENDIX_END_RE.search(t):
+            end_idx = i
+        elif end_idx is not None and _FOOTNOTES_HEADING_RE.match(t):
+            fn_idx = i
+            break
+    if end_idx is None:
+        return lines  # no appendix
+    if fn_idx is None:
+        # END marker but no FOOTNOTES heading after — cut everything after END
+        print(f'  cutting from line {end_idx + 1} to EOF ({len(lines) - end_idx} lines)')
+        return lines[:end_idx]
+    # Excise [end_idx, fn_idx + 1) — drop END marker line and translation
+    # appendix, but keep FOOTNOTES heading + everything after.
+    print(f'  excising translation appendix lines {end_idx + 1}-{fn_idx} ({fn_idx - end_idx} lines)')
+    return lines[:end_idx] + lines[fn_idx:]
+
+
 def find_footnotes_section_start(lines: list[str]) -> int:
     """Return line index of `# FOOTNOTES` heading (back-section)."""
     for i, line in enumerate(lines):
@@ -264,6 +299,11 @@ def main():
 
     # Step 1: normalize FT### → [^fN]:
     lines = normalize_back_footnotes(lines)
+
+    # Step 1.5: Excise PDF translation appendix (CALVIN'S VERSION re-translation
+    # between "END OF THE COMMENTARIES" and the legitimate FOOTNOTES section).
+    # Keeps the [^fN]: defs that follow.
+    lines = excise_translation_appendix(lines)
 
     # Step 2: collect global fn defs
     all_defs = collect_all_definitions(lines)

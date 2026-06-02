@@ -383,6 +383,10 @@ def _starts_with_continuation(line: str, prev_tail: str = '', prev_full: str = '
         if re.search(r'\b(?:and|or|but|nor|for|yet|so)\s*$', prev_tail):
             if c.isupper():
                 return True
+        # Article / preposition + capitalized continuation (mid-sentence break).
+        # E.g. "...2. The | Gentiles were 'aliens'..." should merge.
+        if re.search(r'\b(?:The|A|An|Of|In|On|At|To|For|With|By|From|Through)\s*$', prev_tail):
+            return True
         # All-caps phrase wrap: prev ends with all-caps word(s) (no punct),
         # next starts with all-caps word(s). E.g. "ON THE SON" + "OF MAN,".
         prev_tail_stripped = re.sub(r'</?(?:sty(?:\s[^>]*)?|span(?:\s[^>]*)?|verse)>', '', prev_tail).rstrip()

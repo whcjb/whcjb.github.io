@@ -168,6 +168,9 @@ english:
   - id: galatians-en
     name: Galatians
     chapters: 6
+  - id: ephesians-en
+    name: Ephesians
+    chapters: 6
   - id: 1corinthians-en
     name: 1 Corinthians
     chapters: 16

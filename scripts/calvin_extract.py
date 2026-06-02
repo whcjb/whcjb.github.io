@@ -212,6 +212,13 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_GALA.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/galatians/calvin_galatians_structured.txt'),
     },
+    'ephesians': {
+        # Ages bilingual. 410×626; 175 pages; x0 双峰 (30/220);
+        # 5 colors (#800000/#000080/#0000d4/#008080); 37/50 sample Ages markers.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_EPHS.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/ephesians/calvin_ephesians_structured.txt'),
+    },
 }
 
 
