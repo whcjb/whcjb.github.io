@@ -374,6 +374,177 @@ elif tag in ('CENTERED_H1', 'CENTERED_H2'):
 
 ---
 
+## M7. PDF outline 子条目（`1./2./3.` 等）顶格无缩进
+
+**Trigger**：preface 类页面有 outline 结构 —— 顶级 `I./II./III.` 顶格红色，子条目 `1./2./3.` PDF 中明显缩进（约 18px）；网页输出所有条目顶格平铺，子条目无缩进。
+
+**根因**：PDF 子条目 block_lm ≈ 44（vs body_lm ≈ 26），是排版上的「缩进列表项」语义。extractor 默认按 BODY 输出，丢失 lm 信息。Worse: PDF 子条目 lm/rm 经常对称（lm=44 rm=45），被 `is_centered_block` 误判为居中标题 → 第一条 emit 为 `<p style="text-align:center">`。
+
+**Fix（双管齐下）**：
+
+```python
+# extractor: 加 INDENT tag
+block_lm = block['bbox'][0]
+is_indented_subitem = (
+    block_lm >= 35
+    and not is_centered_block
+    and line_class == 'BODY'
+    and rm > 20
+    # 起首是 IVX. / 数字. / lIi. （后者：PDF 字体把 "1" 渲成 "l"/"I"/"i" 的常见 misread）
+    and bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s|^\s*[liI]\.\s', block_text_preview))
+)
+if is_indented_subitem:
+    line_class = 'INDENT'
+
+# is_centered_block 加内容 guard：起首是 numbered/Roman list item 永不算居中
+starts_with_list_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s', block_text_preview))
+is_centered_block = is_centered_block_geom and not ends_with_continuation and not starts_with_list_item
+
+# converter [INDENT] 分支
+elif tag == 'INDENT':
+    pending_fn_idx = None
+    body = format_inline(content)
+    body = apply_verse_styling(body)
+    body = bold_leading_verse_num(body)
+    out.append(f'<p style="margin-left:2em;">{body}</p>')
+```
+
+**关键**：`<p ` 起首在 BLOCK_PREFIXES 中，自动阻断 `_merge_paragraph_fragments`，避免子条目被合到上一段。
+
+---
+
+## M8. PDF 字体把数字 "1" 渲成字母 "l"/"I"/"i"
+
+**Trigger**：PDF outline 子条目应该是 `1.` `2.` `3.`，但提取出 `l.` `2.` `3.` — 第一项的 "1" 被识别为小写字母 L（或大写 I 或小写 i）。
+
+**根因**：PDF 某些字体（特别是 Symbol 或老式衬线）数字 "1" 的 glyph 与字母 L 几乎相同。PyMuPDF 按字符编码取，字体里"1"被映射到 L → 提取结果是 L。
+
+**Fix**：任何处理"数字 N. ..."模式的正则**必须同时接受**这些字母变体：
+
+```python
+# 顺序：digits, Roman numerals (IVX), 单字母 L/I/i
+re.match(r'^\s*\d+\.\s|^\s*[IVX]+\.\s|^\s*[liI]\.\s', text)
+
+# 渲染时如确认是数字 1 的 misread，可恢复：
+text = re.sub(r'^([liI])\.\s', r'1.\s', text)  # 仅在 outline 上下文中
+```
+
+不需要修复显示文本本身（让 "l. Election" 保持原文就好），但**识别逻辑**必须接受这种变体。
+
+---
+
+## M9. 双语 Ages PDF（Romans/1Cor 等）的 scripture 块如何渲染
+
+**两种方案，按用户/书的偏好选**：
+
+### 方案 A：双语 `<table class="calvin-scripture">`（左英右拉）
+- 适用：希望忠实还原 PDF 双栏视觉的书卷
+- extractor 在 bilingual block 内按 x0 分流 → emit `[TABLE_LEFT]` / `[TABLE_RIGHT]`
+- converter 已有 TABLE_LEFT/RIGHT 渲染为 `<table>`
+
+### 方案 B：单列 `<div class="scripture-box">`（仅英文，丢拉丁）
+- 适用：用户偏好 john 同款视觉风格
+- extractor scripture-mode 加 buffer，跨多个 PyMuPDF block 累积**仅** x<200 的英文 lines
+- 累积时按行末连字符 `-` glue（无空格 join）
+- exit scripture-mode（遇全宽 commentary block）或下一个 section header → flush 为单 `[BODY]`
+- converter scripture-section 检测识别为单段经文 → 出 scripture-box
+
+**关键代码（方案 B）**：
+
+```python
+# extractor 状态：
+scripture_buffer = []
+
+def flush_scripture_buffer():
+    nonlocal scripture_buffer
+    if scripture_buffer:
+        joined = ' '.join(scripture_buffer)
+        output_lines.append(f'[BODY] {joined}')
+        scripture_buffer = []
+
+# scripture-mode 内 (bilingual or narrow block)：
+for ln in line_lefts:  # x < LATIN_X_MIN only
+    txt = _render_spans_with_italic(ln['spans']).rstrip()
+    if not txt.strip(): continue
+    if scripture_buffer and scripture_buffer[-1].endswith('-'):
+        scripture_buffer[-1] = scripture_buffer[-1][:-1] + txt.lstrip()
+    else:
+        scripture_buffer.append(txt)
+
+# 进入新 section header / 退出 mode / 页末 → flush_scripture_buffer()
+```
+
+**重要**：converter `H2` 分支也要触发 scripture-box 状态机（之前只有 FOOTNOTE 分支会触发；Romans extractor 用 H2 直接标 section header）：
+
+```python
+elif tag == 'H2':
+    line_for_sec = re.sub(r'</?sty(?:\s[^>]*)?>', '', content)
+    sec_h2 = SCRIPTURE_SECTION_RE.match(line_for_sec.strip())
+    if sec_h2:
+        # ... same scripture-mode init as FOOTNOTE branch ...
+        in_scripture = True
+        scripture_ref = _build_ref_banner(...)
+    else:
+        out.append(f'## {cleaned}')
+```
+
+---
+
+## M10. PDF 章节标题尾随脚注 ref（"CHAPTER 15 f432"）
+
+**Trigger**：某章被错误降级为 CENTERED_H1，publish 时拆不出，章节缺失；或 publish 阶段 `find_chapter_starts` regex 不匹配，章节直接被跳过。
+
+**根因**：PDF 有时给章节标题加脚注 ref（如 ROMANS CHAPTER 15 后跟 ` f432`），导致：
+- extractor 的 `is_chapter_h1` regex `^CHAPTER\s+\d+\s*$` 不匹配（尾部有 ` f432`）→ 降级 H1
+- 即使 H1 出来了，markdown 形如 `# CHAPTER 15 [^f432]`，publish 的 `find_chapter_starts` regex `^# CHAPTER (\d+)\s*$` 也不匹配
+
+**Fix**（两端都要改）：
+
+```python
+# extractor: is_chapter_h1 检测前剥脚注尾巴
+stripped_text_no_fn = re.sub(r'\s+f\d+[A-Za-z]?\s*$', '', stripped_text).strip()
+is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text_no_fn))
+
+# publish 脚本: find_chapter_starts 容忍尾随 [^fN] ref
+re.match(r'^# CHAPTER (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$', line)
+```
+
+---
+
+## M11. 添加新书继承现有 PDF 样式：CSS 用逗号选择器
+
+**Trigger**：新书（如 romans-en）需要复用 john-en 的 PDF-faithful scripture-box 样式（双蓝边/浅黄底/灰 banner/暗红 Ages 代码/小型大写卷名）。
+
+**Fix**：在 `_layouts/calvin-en.html` 已有的 `.calvin-en-content[data-book="john-en"] .scripture-box {...}` CSS 上，把目标 book-id **作为额外选择器逗号扩展**——**每条 CSS 规则都改**（不要漏）：
+
+```css
+.calvin-en-content[data-book="john-en"] .scripture-box,
+.calvin-en-content[data-book="romans-en"] .scripture-box {
+  border: 3px double #1d28e0;
+  background: #fffce8;
+  /* ... */
+}
+.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref,
+.calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref {
+  /* ... */
+}
+/* 重复 7 条规则 — ages-code / book-name / verse-range / p / strong */
+```
+
+**关键陷阱**：CSS 逗号在选择器列表中是 OR，但**作用域受空格优先级影响**。错误写法：
+
+```css
+/* ❌ 错：第二个选择器变成 「data-book=romans-en 整个 content」 而不是
+   「data-book=romans-en 内的 scripture-box」 */
+.calvin-en-content[data-book="john-en"], .calvin-en-content[data-book="romans-en"] .scripture-box {
+  ...
+}
+```
+
+正确写法每个逗号前后都要有**完整层级路径**到 `.scripture-box`。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
