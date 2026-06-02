@@ -390,13 +390,13 @@ Ages Digital Library PDF 中表格头有两种编码形式，均需识别：
 - 经文段 block：x0 ≈ 40（轻微内缩），紧接在居中 `<NNNNNN>BOOK Ch:V-V'` header（x0 > 80）之后
 - 居中段落（如 `COMMENTARY ON`、`ACCORDING TO`）：x0 居中，单行
 
-**正确产物结构（每个经段）**：
+**正确产物结构（每个经段）—— 含 Ages 代码 + 小型大写卷名**：
 
 ```markdown
 ## JOHN 1:1-5
 
 <div class="scripture-box" markdown="1">
-<p class="scripture-ref" style="text-align:center; font-weight:bold; color:#0085a1;">JOHN 1:1-5</p>
+<p class="scripture-ref"><span class="ages-code">&lt;430101&gt;</span><span class="book-name">John</span> <span class="verse-range">1:1-5</span></p>
 
 <strong>1.</strong> In the beginning was the Speech... <strong>2.</strong> He was in the beginning with God. ...
 
@@ -405,18 +405,132 @@ Ages Digital Library PDF 中表格头有两种编码形式，均需识别：
 
 要点：
 - 外层 `<div class="scripture-box" markdown="1">` —— `markdown="1"` 让 kramdown 仍处理内部 markdown（脚注引用、链接等）
-- 居中 `<p class="scripture-ref">` 重复显示卷名+章节（与 phil-en 双列表的 `<th colspan>` 视觉一致）
+- ref banner 必须**保留 Ages 代码** `<NNNNNN>`（暗红色上标）+ **拆三个 span**：`.ages-code` / `.book-name` / `.verse-range`，CSS 才能分别赋样式
+- **卷名 emit 为 Title Case**（如 `John` 而非 `JOHN`）—— 这样 CSS `font-variant: small-caps` 才能渲染出 PDF 同款「Cap-J + 小型大写 ohn」效果；emit 全大写则 small-caps 失效
 - 节号用 `<strong>N.</strong>` 而非 `**N.**` —— scripture-box 内是一整个 `<p>`，markdown 加粗会被 kramdown 误识为段间空白；用 HTML strong 直出最稳
 - 经文段必须独立成 paragraph，前后空行，`</div>` 前留空行（kramdown 才会闭合 paragraph 并退出 markdown 处理）
 
+**section header 正则必须 2 组捕获**（Ages 代码 + 卷名节号）：
+
+```python
+SCRIPTURE_SECTION_RE = re.compile(
+    r'^\s*<(\d{6,7})>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d+)?)\s*$'
+)
+# group(1) → "430101"; group(2) → "JOHN 1:1-5"
+```
+
+ref banner 构造函数（converter 内）：
+
+```python
+def _build_ref_banner(ages_code: str, book_verse: str) -> str:
+    m = re.match(r'^([A-Z][A-Z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$', book_verse)
+    if m:
+        book = m.group(1).strip()
+        verse = m.group(2)
+        book_html = book.title()  # 'JOHN' → 'John' for CSS small-caps
+        return (
+            f'<p class="scripture-ref">'
+            f'<span class="ages-code">&lt;{ages_code}&gt;</span>'
+            f'<span class="book-name">{book_html}</span> '
+            f'<span class="verse-range">{verse}</span>'
+            f'</p>'
+        )
+    return f'<p class="scripture-ref">{book_verse}</p>'
+```
+
 **检测/触发规则（converter 状态机）**：
-1. 当 emit `<NNNNNN>BOOK Ch:V-V'` 形式的 section header 时，**置位 `in_scripture = True; scripture_lines = []`**
+1. 当 emit `<NNNNNN>BOOK Ch:V-V'` 形式的 section header 时，**置位 `in_scripture = True; scripture_lines = []`**，并把 `_build_ref_banner(ages_code, ref_text)` 的结果存入 `scripture_ref`
 2. 下一个 `[BODY]` 块：用 `len(re.findall(r'(?:^|\s)\d+\s*\.\s', content))` 数节号锚点
    - **≥ 2 个锚点** → 视为经文段，丢进 scripture-box，emit 后清除状态
    - **< 2 个锚点** → 不是经文段（可能是段间评论），关闭 in_scripture，按普通 body emit
 3. 遇到 PAGE / 下一个 section header / H1 / H2 / 文件末尾 → 强制 flush 已积累的 scripture-box
 
 **陷阱**：纯几何阈值（x0 ∈ [30, 60]）会误判太多。john PDF 实测「indented body」≈ 333 个块，但真经文段只有 ~190 个；前言里的签名（"W.P. AUCHTERARDER"）、献辞落款、缩进引文都同样落在 x0 ≈ 40。**必须用「section header 紧邻」+「节号锚点 ≥ 2」双重门控**。这是 §0.3「几何信号必须搭配内容信号」的具体应用。
+
+### 2.5b scripture-box 视觉样式必须按 PDF 原样还原（不能用通用样式凑合）
+
+**这是 john-en 第三轮（用户连续两次抱怨）的根因——只输出 `<div class="scripture-box">` 就以为完成，但通用 CSS（灰边白底）和 PDF 实物（双蓝边 + 浅黄底 + 灰色 ref banner + 暗红 Ages 代码 + 小型大写卷名）差距巨大。**
+
+**PDF 视觉信号清单**（拿到新书 PDF 第一步必须采集）：
+
+| 元素 | 观察 PDF 取值 | CSS 属性 |
+|------|--------------|---------|
+| 外框 | 单线 / 双线 / 阴影 / 圆角；颜色；粗细 | `border`、`border-radius`、`box-shadow` |
+| 内底色 | 白 / 浅黄 / 浅灰 / 透明 | `background` |
+| ref banner 底色 | 是否独立横条；底色 | banner 用 `.scripture-ref { background: ... }` |
+| ref banner 分隔 | 是否有横线分开 banner 和经文 | `.scripture-ref { border-bottom: ... }` |
+| Ages 代码 | 颜色（暗红 ≈ `#7a1d1d`）；上标 / 行内；字号 | `.ages-code { color: ...; vertical-align: super; font-size: ... }` |
+| 卷名字形 | 全大写 / 小型大写 / 衬线 / 无衬线 | `font-variant: small-caps`；`font-family: serif` |
+| 节号字重 | 加粗 / 普通 | `<strong>` + `font-weight: bold` |
+| 字体族 | Times 衬线 / Helvetica 无衬线 | `.scripture-box { font-family: ... }` |
+
+**john-en 实测样本（可作其他 Ages 单语英文 PDF 参考起点）**：
+
+```css
+/* per-book scoped，仅作用于 data-book="john-en" 的页面 */
+.calvin-en-content[data-book="john-en"] .scripture-box {
+  border: 3px double #1d28e0;            /* 双蓝色边框 */
+  background: #fffce8;                    /* 浅黄底色 */
+  padding: 0;
+  margin: 24px 0;
+  font-family: "Times New Roman", Times, "Noto Serif", serif;
+}
+.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref {
+  background: #dcdcdc;                    /* 灰色 banner */
+  border-bottom: 1px solid #999;          /* 与经文分隔的横线 */
+  margin: 0;
+  padding: 10px 16px;
+  text-align: center;
+  color: #000;
+  font-size: 19px;
+  font-weight: bold;
+}
+.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref .ages-code {
+  color: #7a1d1d;                         /* 暗红色 Ages 代码 */
+  font-size: 0.55em;
+  vertical-align: super;
+  margin-right: 2px;
+  font-weight: normal;
+}
+.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref .book-name {
+  font-variant: small-caps;               /* Cap-J + 小型大写 ohn */
+  font-weight: bold;
+  font-size: 1.15em;
+}
+.calvin-en-content[data-book="john-en"] .scripture-box .scripture-ref .verse-range {
+  font-weight: bold;
+}
+.calvin-en-content[data-book="john-en"] .scripture-box > p:not(.scripture-ref) {
+  padding: 12px 18px;
+  margin: 0;
+  font-size: 16px;
+  color: #000;
+  line-height: 1.7;
+  text-align: left;
+}
+```
+
+**per-book CSS scoping 模式（强制约束，记忆 [feedback_book_style_isolation.md]）**：
+
+1. `_layouts/calvin-en.html` 的内容容器必须挂 `data-book="{{ page.book_id }}"` 属性：
+
+   ```liquid
+   <div class="calvin-en-content" data-book="{{ page.book_id }}">
+     {{ content }}
+   </div>
+   ```
+
+2. 新书的 PDF-原样还原样式**必须**用 `[data-book="<book-id>"]` 选择器 scope，绝不能直接改通用 `.scripture-box`——否则会污染 harmony-1/-1-en/-2-en/-3-en 等已发布书卷（它们也用 `.scripture-box` 但视觉风格各异）。
+
+3. 检查：每次新增书的 PDF 还原样式后，`grep -l 'scripture-box' calvin/*/` 列出的其他书的 ch1，在浏览器里看一眼是否被你的改动意外破坏。
+
+**操作流程（新书发布前必做的视觉对照）**：
+
+1. 在 PDF 阅读器里打开新书第 1 章首个经段所在页，**截图保留**作为视觉基准
+2. 按上面"视觉信号清单"逐项填表，记录颜色/字号/边距
+3. 写 `[data-book="<new-book>"]` scoped CSS，参考 john-en 起点
+4. `bundle exec jekyll serve` 在浏览器打开新书 ch1，与 PDF 截图并排对照
+5. 调到肉眼难辨差异为止——**「机器跑通构建」+「scripture-box 存在」+「机器特征数 ≥ 基准」三项都通过都不算完成，必须视觉对照通过**
 
 ### 2.6 Calvin 注释红色斜体经文短语：约定与实现
 
@@ -1281,8 +1395,13 @@ def bold_leading_verse_num(text):
 5. 若提供了 `book_id`，继续执行**发布到网站**步骤
 6. 发布后再运行**发布质检 Checklist**，逐项排查
 7. **🔴 P0 视觉对照（绝不能跳过）**：从已发布的同格式英文书卷（如 `calvin/philippians-en/`）拉 ch1 来对照。grep 经文方框/红色短语/脚注引用/bold 节号/分页标记 5 类特征，新书每类计数必须 ≥ 同基准书的同类计数；任一类为 0 而基准 > 0，**必有遗漏**，回阶段 2 补功能（多半是 extractor 漏 italic 标记、或 converter 漏 scripture-box 包裹）。详细命令见"发布质检"小节顶部 §🔴。
+8. **🔴 P0 PDF 视觉还原（连续翻车两次，绝不能跳过）**：上一步只检查「特征是否存在」，这一步检查「视觉是否与 PDF 一致」。打开 PDF 任意经段所在页放到 200%，截图作为基准；浏览器打开同段，按 §2.5b "PDF 视觉信号清单" 逐项核对边框/底色/banner/Ages 代码/卷名字形/字体族；任何肉眼可见差异 → 回 §2.5b 写 `[data-book="..."]` scoped CSS 调到吻合。
 
-**反例（曾经踩过的）**：john-en 第一版仅看「H1 数、orphan 引用数」就提交，完全没有 scripture-box / 红色短语，浏览器看起来与 phil-en 视觉差异巨大。用户一句「看下腓立比书英文是怎么处理的」就揭穿了。**永远先 grep 同类特征数，再宣布完成。**
+**反例（曾经踩过的）**：
+- john-en 第一版仅看「H1 数、orphan 引用数」就提交，完全没有 scripture-box / 红色短语，浏览器看起来与 phil-en 视觉差异巨大。用户一句「看下腓立比书英文是怎么处理的」就揭穿了。
+- john-en 第二版补齐 scripture-box 和红色短语后又提交，但通用 `.scripture-box` 是灰边白底，PDF 实物是双蓝边 + 浅黄底 + 灰色 banner + 暗红 Ages 代码 + 小型大写卷名。用户截图对照后说「改成严格一模一样」。**机器对照过 ≠ 视觉对照过。**
+
+**永远：先 grep 同类特征数，再 PDF 视觉并排对照，再宣布完成。**
 
 ---
 
@@ -1455,6 +1574,17 @@ for page_num in range(...):
    - 脚注角标是否为上标蓝色链接
    - 跨页注释是否流畅、无突兀截断
 
+4. **🔴 关键：经段块视觉与 PDF 原页对照（不要拿基准书比，要拿 PDF 原文比）**
+
+   john-en 第二轮发布完成、机器特征也都达标后，用户依然不满意——因为「`<div class="scripture-box">` 存在」不等于「视觉与 PDF 一致」。通用 scripture-box 是灰边白底，PDF 是双蓝边 + 浅黄底 + 灰色 ref banner + 暗红 Ages 代码 + 小型大写卷名。**机器对照通过 ≠ 视觉对照通过。**
+
+   流程：
+   - 打开 PDF 阅读器，在新书 ch1 任意经段所在页放到 200% 缩放
+   - 截图保留作基准
+   - 浏览器打开同章节，目视并排比对（具体清单见 §2.5b "PDF 视觉信号清单"）
+   - 任何一项肉眼可见差异 → 回 §2.5b 写 `[data-book="..."]` scoped CSS 调到吻合
+   - **「全 §🔴 检查通过 + 视觉对照通过」才算「发布完成」**，否则继续修
+
 **视觉对照通不过，不算"发布完成"**——继续修。
 
 #### 机器可验证指标
@@ -1584,6 +1714,16 @@ parts = ['\n\n---\n']
 - **`_layouts/calvin-en-book.html`**：书卷目录页，列出 Preface + Chapter 1–N
 
 **序言文件名必须是 `preface.md`**：`calvin-en-book.html` 的目录页硬编码链接 `/calvin/BOOK_ID/preface/`。publish 脚本中第一个 section（`'introduction'` label）输出文件名必须写 `preface.md`，标题写 `Translator's Preface`，导航 label 也用 `preface`。若写成 `introduction.md` 则目录页链接 404，序言内容无法访问。
+
+**内容容器必须挂 `data-book` 属性**（per-book CSS scoping 的基础设施，记忆 [feedback_book_style_isolation.md]）：
+
+```liquid
+<div class="calvin-en-content" data-book="{{ page.book_id }}">
+  {{ content }}
+</div>
+```
+
+之后所有"按 PDF 还原视觉"的样式（如 §2.5b 的 john-en scripture-box 双蓝边 + 浅黄底）都用 `.calvin-en-content[data-book="<book-id>"] .scripture-box {...}` 作用域写，**不要改通用 `.scripture-box`**——否则会污染所有共用 `.scripture-box` 的书（harmony 系列等）。
 
 关键样式（`calvin-en.html` 内）：
 ```css
