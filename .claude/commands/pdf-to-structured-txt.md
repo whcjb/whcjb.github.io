@@ -1129,18 +1129,145 @@ agent 报告**作为 source of truth**——我自己的 grep 不算数。grep �
 
 **反例的具体演化**：第 1 轮我说"加了 scripture-box 就 done"——用户骂；第 2 轮说"加了红色短语就 done"——用户骂；第 3 轮说"PDF 视觉对齐了就 done"——用户骂；第 4 轮说"13 类修完就 done"——用户："你列举的都没修完。" **教训：宣布完成前必须 sub-agent 实证检查每一项声明，否则一定有隐藏的 SEV-1。**
 
+#### 2.7.20 颜色必须严格按 PDF 原色还原（不能用「红色 = commentary italic」一刀切）
+
+**症状（第 6 轮）**：用户："字体颜色和 pdf 原文还是没有保持严格一致，pdf 不只有红色，还有其他颜色，每一个颜色都要与原文保持一致，严格一致！"
+
+**根因**：之前用「in_commentary_section 状态机」简化处理——commentary 区所有 italic 染红、preface 区所有 italic 不染。这只对应了 PDF 的"两种 italic 颜色"，但 PDF 实际有多种颜色，每种 italic 也分多色。
+
+**实测 PDF 颜色清单**（约翰福音前 50 页）：
+
+| Color int | Hex | 用途 | 字号 | italic? |
+|-----------|-----|------|------|---------|
+| 0 | #000000 | 普通正文 / 大部分 italic 强调（拉丁词、释义） | 12pt | 部分 |
+| 8388608 | #800000 | **经文引语 italic** + 脚注上标 `f1/f2` | 12pt / 8pt | 大部分 |
+| 212 | #0000d4 | 扉页大字标题（"THE AGES"）、Greek λόγος | 20-28pt / 12pt | 否 |
+| 128 | #000080 | 缩进引文 / "Books For The Ages" / 部分 Bible 引语 | 12-18pt | 部分 |
+| 25617 | #006411 | 扉页装饰 "COMMENTARY" 等 | 22-28pt | 否 |
+| 32896 | #008080 | Hebrew 转写（`ˆnjwhy`、`µç`）| 12pt | 否 |
+
+**关键发现**：commentary 区的 italic **同时存在红色和黑色两种**：
+
+- `<verse>In the beginning was the Speech</verse>` — PDF color=#800000（红） — Calvin 真正在引用的经文片段
+- `<verse>definition</verse>` / `<verse>reasoning</verse>` — PDF color=#000000（黑）— 拉丁词或同义释义，**不该染红**
+
+「commentary 段所有 italic 染红」这套规则**对一半**——红色经文引语对了，但拉丁词被错误染红。
+
+**正确实现：span 级保留颜色**
+
+**extractor**：废弃 `<verse>X</verse>` binary 标签，改输出 `<sty c="rrggbb" i="0|1">X</sty>`：
+
+```python
+def _render_spans_with_italic(spans):
+    """同时编码 (color_int, italic_flag) 二元组到 <sty> 标签。
+    默认 (黑色非斜体) 直接出纯文本不 wrap。同 style 相邻 span 合并。"""
+    parts = []
+    open_style = None
+    for s in spans:
+        text = s['text']
+        if not text:
+            continue
+        is_italic = bool(s['flags'] & 2)
+        color = s.get('color', 0)
+        style = (color, is_italic) if (color != 0 or is_italic) else None
+        if style != open_style:
+            if open_style is not None:
+                parts.append('</sty>')
+            if style is not None:
+                parts.append(f'<sty c="{style[0]:06x}" i="{1 if style[1] else 0}">')
+            open_style = style
+        parts.append(text)
+    if open_style is not None:
+        parts.append('</sty>')
+    return ''.join(parts)
+```
+
+**converter**：废弃 `in_commentary_section` 状态机，按 `<sty>` 颜色直接渲染：
+
+```python
+_STY_RE = re.compile(r'<sty c="([0-9a-fA-F]{6})" i="([01])">(.*?)</sty>', re.DOTALL)
+
+def apply_verse_styling(body):  # red 参数已废弃
+    def _wrap(color_hex, italic, inner):
+        if not inner.strip():
+            return inner
+        m = re.match(r'^(\s*)(.+?)(\s*)$', inner, re.DOTALL)
+        lead, core, trail = m.group(1), m.group(2), m.group(3)
+        is_black = color_hex.lower() == '000000'
+        if is_black and not italic:
+            return lead + core + trail
+        if is_black and italic:
+            return f'{lead}*{core}*{trail}' if len(core) >= 2 else lead + core + trail
+        rendered = f'*{core}*' if italic else core
+        return f'{lead}<span style="color:#{color_hex.lower()}">{rendered}</span>{trail}'
+    return _STY_RE.sub(lambda m: _wrap(m.group(1), m.group(2) == '1', m.group(3)), body)
+```
+
+**配套修改（容易漏的）**：
+
+1. **Greek 转换占位符**：`<sty c="..." i="...">` 是可变长度，不能用固定 token 替换。改为分别 stash 每个开标签：
+
+   ```python
+   sty_opens = []
+   def _stash_open(m):
+       sty_opens.append(m.group(0))
+       return f'\x00S{len(sty_opens)-1:04d}\x00'
+   text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]">', _stash_open, text)
+   text = text.replace('</sty>', '\x00E\x00')
+   # ... Greek 转换 ...
+   text = re.sub(r'\x00S(\d{4})\x00', lambda m: sty_opens[int(m.group(1))], text)
+   text = text.replace('\x00E\x00', '</sty>')
+   ```
+
+2. **SCRIPTURE_SECTION_RE 前剥 `<sty>` wrap**：PyMuPDF 给 `<NNNNNN>` Ages 代码单独染色 → 行变成 `<sty c="800000" i="0"><430101></sty>JOHN 1:1-5`，原正则匹配失败。
+
+   ```python
+   line_for_sec = re.sub(r'</?sty(?:\s[^>]*)?>', '', line)
+   sec_m = SCRIPTURE_SECTION_RE.match(line_for_sec.replace('[FOOTNOTE]', '').strip())
+   ```
+
+3. **`is_chapter_h1` 测试前剥 `<sty>` wrap**：`CHAPTER 1` 块字号 24pt 颜色 #0000d4 → `<sty c="0000d4" i="0">CHAPTER 1</sty>`，`re.match(r'^CHAPTER\s+\d+\s*$', full_text)` 失败 → 章被降级为 CENTERED_H1 → publish 脚本拆章失败 → preface 吞下全书。**必修**：
+
+   ```python
+   stripped_text = re.sub(r'</?sty(?:\s[^>]*)?>', '', full_text).strip()
+   is_chapter_h1 = bool(re.match(r'^CHAPTER\s+\d+\s*$', stripped_text))
+   ```
+
+4. **`has_leading_italic` 检查改用 `<sty c="..." i="1">` 正则**：scripture-box 触发条件中检测 commentary 段的 italic 引语，改成：
+
+   ```python
+   has_leading_italic = bool(re.search(
+       r'<sty\s+c="[0-9a-fA-F]{6}"\s+i="1">', stripped_content[:60]))
+   ```
+
+5. **format_inline 增加 `<sty>` 内 Ages 代码剥离**：
+
+   ```python
+   text = re.sub(r'<sty\s[^>]*>\s*<(\d{6,7})>\s*</sty>', '', text)
+   ```
+
+6. **各处 `re.sub(r'</?verse>', ...)` 改为 `re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', ...)`**（H1/H2 cleanup、`_is_sentence_end`、`_starts_with_continuation` 等）。
+
+**验证结果（约翰福音 ch1）**：
+- `color:#800000` 红色: 432 处（PDF 真正的经文引语）
+- `color:#000080` navy: 43 处
+- `color:#0000d4` blue: 25 处
+- `color:#008080` teal: 2 处（Hebrew）
+- 其余 italic 全部按 PDF 出黑色普通 italic，**完全不再误染红**
+
+**关键教训**：**永远不要用「段落上下文」决定 span 颜色**。span 颜色是 PyMuPDF 直接给出的客观属性，必须 1:1 还原。状态机只适用于 PDF 没有提供属性时的兜底。
+
 #### 2.7 小结：拿到新 Ages 单语英文 PDF 的执行清单
 
 1. **审计先行**（§2.7.1）：派 sub-agent 对照 PDF + 现有产物列 SEV-1/2/3 清单
-2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED/CENTERED_H1/CENTERED_H2（§2.7.6 + §2.7.18）、保留 italic 包 `<verse>`（§2.6）
+2. **抽取**：`phil_reconstruct_page` 接收 `page_num`、剥页码（§2.7.2）、标 CENTERED/CENTERED_H1/CENTERED_H2（§2.7.6 + §2.7.18）、**保留 span 级 (color, italic) 二元组到 `<sty c="..." i="0|1">` 标签**（§2.7.20，**绝不再用 binary `<verse>` 或 commentary 状态机**）；is_chapter_h1 检测前先剥 sty wrap（§2.7.20）
 3. **转换**：
-   - section header → 隐藏 anchor h2（§2.7.4）
-   - scripture-box 触发条件三件套（§2.7.5）
+   - section header → 隐藏 anchor h2（§2.7.4）；SCRIPTURE_SECTION_RE 前剥 sty wrap（§2.7.20）
+   - scripture-box 触发条件三件套（§2.7.5）；has_leading_italic 用 sty regex 检测（§2.7.20）
    - `[CENTERED]` 路由（§2.7.6 + §2.7.5 in_scripture 优先）
    - `CENTERED_H1`/`CENTERED_H2` → styled `<p>`（§2.7.18）
-   - 状态机 `in_commentary_section` 控制红色（§2.7.12）
-   - **`apply_verse_styling` 边界空格外移**（§2.7.14，**必修**）
-   - Greek 转换含 `<verse>` 占位符（§3）+ elision（§2.7.9）+ 扩 `_GCOMB`/`_GR_PAT`/dict 兜底（§2.7.16）
+   - **`apply_verse_styling` 按 `<sty>` 颜色 1:1 还原**（§2.7.20，**严禁状态机一刀切**）；边界空格外移（§2.7.14）
+   - Greek 转换含 `<sty>` 可变长占位符（§2.7.20）+ elision（§2.7.9）+ 扩 `_GCOMB`/`_GR_PAT`/dict 兜底（§2.7.16）
    - 裸 fn 正则带字母后缀（§2.7.10）
    - `collapse_spaced_caps` 负向先行（§2.7.8）
    - inline cross-ref 折入过滤器（§2.7.11）
