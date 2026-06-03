@@ -29,13 +29,19 @@ JOHN_1 = CUV["43"]["1"]
 
 
 # 6 scripture-box sections — page ranges match Calvin's commentary structure.
-# Disjoint page ranges — each page belongs to exactly one section.
+# Content-aligned page ranges — boundaries chosen by locating the first
+# OCR page on which each section's lead-verse commentary opener begins:
+#   v6  「有一个人」     → page 25
+#   v14 「道成了肉身」  → page 33
+#   v19 「约翰所作的见证 / 问。」  → page 44 (verse opener for v19 about priest inquiry)
+#   v29 「看哪，神的羔羊」 → page 49
+#   v35 「再次日，约翰同两个门徒」 → page 56
 SECTIONS = [
-    {"verses": (1, 5),   "title": "太初有道、生命与光",                  "pages": (16, 23)},
-    {"verses": (6, 13),  "title": "施洗约翰为光作见证；信子者得作神的儿女",  "pages": (24, 30)},
-    {"verses": (14, 18), "title": "道成了肉身；从他丰满的恩典里我们都领受了", "pages": (31, 39)},
-    {"verses": (19, 28), "title": "约翰回答祭司：我不是基督",              "pages": (40, 47)},
-    {"verses": (29, 34), "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",        "pages": (48, 55)},
+    {"verses": (1, 5),   "title": "太初有道、生命与光",                  "pages": (16, 24)},
+    {"verses": (6, 13),  "title": "施洗约翰为光作见证；信子者得作神的儿女",  "pages": (25, 32)},
+    {"verses": (14, 18), "title": "道成了肉身；从他丰满的恩典里我们都领受了", "pages": (33, 43)},
+    {"verses": (19, 28), "title": "约翰回答祭司：我不是基督",              "pages": (44, 48)},
+    {"verses": (29, 34), "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",        "pages": (49, 55)},
     {"verses": (35, 51), "title": "首批门徒；耶稣呼召拿但业",                "pages": (56, 65)},
 ]
 
@@ -433,13 +439,26 @@ def split_long_paragraphs(text: str, max_len: int = 1400) -> str:
 # Main assemble
 # ────────────────────────────────────────────────────────────────────────
 
-_CONTINUATION_RE = re.compile(r"^[一-鿿]{1,3}[，、；]")
-
-
-def _looks_like_continuation(para: str) -> bool:
-    """A paragraph starting with `X，` where X is 1-3 CJK chars indicates
-    mid-sentence continuation from previous page (OCR page break)."""
-    return bool(_CONTINUATION_RE.match(para.strip()))
+def _is_section_continuation(prev_last: str, cur_first: str) -> bool:
+    """True iff the previous section ends mid-sentence (no terminator) and
+    the current section's first paragraph is plain prose (not a verse
+    opener, anchor, scripture-box, fn def, heading). Covers cases like
+    `...可以说是满` + `满地赐下，使我们都得以饱足...` split across the
+    section 3 (page 39) → section 4 (page 40) boundary.
+    """
+    if not prev_last or not cur_first:
+        return False
+    if prev_last[-1] in _TERM_PUNCT:
+        return False
+    if (cur_first.startswith("**约翰福音")
+            or cur_first.startswith("<")
+            or cur_first.startswith("[^")
+            or cur_first.startswith("#")):
+        return False
+    # First char must be a CJK character (typical mid-sentence start)
+    if not ("一" <= cur_first[0] <= "鿿"):
+        return False
+    return True
 
 
 def build_chapter_md() -> str:
@@ -475,24 +494,51 @@ def build_chapter_md() -> str:
         section_bodies.append(split_long_paragraphs(comm))
         all_defs.extend(sec_defs)
 
-    # Stitch continuations: if section N's first paragraph looks like
-    # mid-sentence continuation, append it to section N-1's last paragraph.
+    # Stitch continuations: keep moving section N's first paragraph back
+    # to section N-1 while either of two conditions holds:
+    #   1) Mid-sentence continuation (prev_last lacks terminator + cur_first
+    #      starts with plain CJK char)
+    #   2) Cur_first is a verse opener for a verse BELONGING to section N-1
+    #      (e.g. v27 commentary that spans pages, with its continuation
+    #      ending up in section 5 when it actually belongs to section 4)
     for i in range(1, len(section_bodies)):
-        cur = section_bodies[i]
-        if not cur:
-            continue
-        paras = re.split(r"\n{2,}", cur)
-        if not paras:
-            continue
-        first = paras[0]
-        if _looks_like_continuation(first):
-            # Find previous section's last paragraph (skip scripture-anchor/box)
+        prev_v_lo, prev_v_hi = SECTIONS[i - 1]["verses"]
+        while True:
+            cur = section_bodies[i]
             prev = section_bodies[i - 1]
+            if not cur or not prev:
+                break
+            cur_paras = re.split(r"\n{2,}", cur)
             prev_paras = re.split(r"\n{2,}", prev)
-            if prev_paras:
-                prev_paras[-1] = prev_paras[-1].rstrip() + first.lstrip()
-                section_bodies[i - 1] = "\n\n".join(prev_paras)
-                section_bodies[i] = "\n\n".join(paras[1:])
+            if not cur_paras or not prev_paras:
+                break
+            prev_last = prev_paras[-1].rstrip()
+            cur_first = cur_paras[0].lstrip()
+
+            should_merge = False
+            # Rule 1: mid-sentence continuation
+            if _is_section_continuation(prev_last, cur_first):
+                should_merge = True
+            else:
+                # Rule 2: cur_first looks like a verse opener whose verse
+                # number falls in prev section's range.
+                stripped = _strip_corrupt_marker(cur_first)
+                first_sent, _ = _split_first_sentence(stripped)
+                first_clean = _normalize_for_match(first_sent)
+                v = _verse_for_opener(first_clean, JOHN_1)
+                if v is not None and prev_v_lo <= v <= prev_v_hi:
+                    should_merge = True
+
+            if not should_merge:
+                break
+            # Merge: append cur_first as a SEPARATE paragraph if rule 2
+            # (verse opener) or in-place join if rule 1 (no terminator).
+            if prev_last and prev_last[-1] not in _TERM_PUNCT:
+                prev_paras[-1] = prev_last + cur_first
+            else:
+                prev_paras.append(cur_first)
+            section_bodies[i - 1] = "\n\n".join(prev_paras)
+            section_bodies[i] = "\n\n".join(cur_paras[1:])
 
     for hdr, sec_body in zip(section_headers, section_bodies):
         body.append(hdr)
