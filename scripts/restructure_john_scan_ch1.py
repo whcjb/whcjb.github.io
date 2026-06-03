@@ -95,25 +95,129 @@ RUNNING_HDR_PATTERNS = [
 ]
 
 
-def fix_inline_h2(line: str) -> str:
+# Map circled digit Unicode → arabic int (for v1-v20; v21+ use other code points
+# and we'll match by content instead).
+_CIRCLE_DIGIT = {chr(0x2460 + i): i + 1 for i in range(20)}  # ① to ⑳
+_CIRCLE_DIGIT.update({chr(0x3251 + i): i + 21 for i in range(15)})  # ㉑ to ㉟
+_CIRCLE_DIGIT.update({chr(0x32B1 + i): i + 36 for i in range(15)})  # ㊱ to ㊿
+
+
+def _strip_leading_circle(s: str) -> str:
+    """Drop any leading circled digit + whitespace."""
+    s = s.lstrip()
+    while s and s[0] in _CIRCLE_DIGIT:
+        s = s[1:].lstrip()
+    return s
+
+
+def find_john_verse(opener_text: str, chapter_verses: dict[str, str]) -> int | None:
+    """Fuzzy-match an OCR'd commentary opener against CUV John 1.
+
+    Strategy: strip circled digits, take first ~8 chars of opener, find a
+    verse whose text starts with these chars (or contains them in the
+    first 12 chars). Returns verse number or None.
+    """
+    head = _strip_leading_circle(opener_text)
+    head = re.sub(r"[，。、；：（）\s]", "", head)[:8]
+    if not head:
+        return None
+    best = None
+    for vstr, text in chapter_verses.items():
+        ct = re.sub(r"[，。、；：（）　\s]", "", text)
+        if ct.startswith(head):
+            return int(vstr)
+        # Allow opener to match early in the verse (verse marker prefix)
+        if head[:6] in ct[:16]:
+            if best is None:
+                best = int(vstr)
+    return best
+
+
+def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
     """OCR produced `## verseN.` heading + entire paragraph as one ## line.
-    Convert to `**verseN-opener.**` bold + prose form (matches harmony-1).
+    Convert to `**约翰福音 1:N。** *opener。* prose...` form (matches
+    harmony-1 verse-nav requirements: the JS regex
+    `^书卷名 Ch:N[.。]$` triggers pill generation).
+
     Only applies when `## XX` content is too long to be a real heading
-    (>40 chars) — short ## lines (real sub-headings) pass through.
+    (>40 chars).
     """
     if not line.startswith("## "):
         return line
     content = line[3:].strip()
     if len(content) <= 40:
-        return line  # genuine sub-heading, keep
-    # Split at first 。 — bold the opener, keep the rest as prose.
+        return line
     period = content.find("。")
     if period == -1 or period > 60:
-        # No period in first 60 chars: bold first 30 chars as opener
-        return f"**{content[:30]}**{content[30:]}"
-    opener = content[:period + 1]
-    rest = content[period + 1:]
-    return f"**{opener}**{rest}"
+        opener = content[:30]
+        rest = content[30:]
+    else:
+        opener = content[:period + 1]
+        rest = content[period + 1:]
+    v = find_john_verse(opener, john_1)
+    opener_clean = _strip_leading_circle(opener)
+    if v is not None:
+        return f"**约翰福音 1:{v}。** *{opener_clean}* {rest}"
+    return f"**{opener_clean}** {rest}"
+
+
+# A circled digit OR a Chinese opening phrase, followed by enough Chinese to
+# look like a verse quote. Used to detect verse-opener paragraphs.
+_CIRCLE_DIGITS = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿"
+
+
+def maybe_promote_verse_opener(para: str, john_1: dict[str, str]) -> str:
+    """If a paragraph starts with a CUV-John-1 verse quote (with or without
+    leading circled digit), reformat as `**约翰福音 1:N。** *quote* rest`
+    so the calvin-en layout JS finds it for the Jump-to-verse pill nav.
+
+    Skip:
+      - footnote lines (start with `[^...]:`)
+      - existing well-formed openers (already start with `**约翰福音`)
+      - short paragraphs (likely captions / single line refs)
+    """
+    if not para or para.startswith("[^") or para.startswith("**约翰福音"):
+        return para
+    if len(para) < 30:
+        return para
+    head = para[:20]
+    # Optional leading circled digit
+    body = head
+    if body and body[0] in _CIRCLE_DIGITS:
+        body = body[1:].lstrip()
+    # Try to match the first 4-12 chars against any verse's opening text.
+    body_clean = re.sub(r"[，。、；：（）　\s\"“”]", "", body)[:10]
+    if len(body_clean) < 4:
+        return para
+    best_v = None
+    best_len = 0
+    for vstr, text in john_1.items():
+        text_clean = re.sub(r"[，。、；：（）　\s]", "", text)
+        # Find common prefix length
+        m = 0
+        for i in range(min(len(body_clean), len(text_clean))):
+            if body_clean[i] == text_clean[i]:
+                m += 1
+            else:
+                break
+        if m >= 4 and m > best_len:
+            best_v = int(vstr)
+            best_len = m
+    if best_v is None:
+        return para
+    # Found a verse match. Split paragraph at first 。 (period) — opener is
+    # the quoted verse text, rest is commentary.
+    # Strip leading circle from para
+    para_no_circ = para[1:].lstrip() if para[0] in _CIRCLE_DIGITS else para
+    period = para_no_circ.find("。")
+    if period == -1 or period > 40:
+        # No period in first 40 chars — pick 12 chars as opener
+        opener = para_no_circ[:12]
+        rest = para_no_circ[12:]
+    else:
+        opener = para_no_circ[:period + 1]
+        rest = para_no_circ[period + 1:]
+    return f"**约翰福音 1:{best_v}。** *{opener}* {rest}".rstrip()
 
 
 def normalize_page(text: str) -> str:
@@ -121,8 +225,12 @@ def normalize_page(text: str) -> str:
     for line in text.splitlines():
         if any(p.match(line.rstrip()) for p in RUNNING_HDR_PATTERNS):
             continue
-        out.append(fix_inline_h2(line.rstrip()))
-    return re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip()
+        out.append(fix_inline_h2(line.rstrip(), JOHN_1))
+    text2 = re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip()
+    # Second pass: paragraph-level promotion to verse-opener form.
+    paras = re.split(r"\n{2,}", text2)
+    promoted = [maybe_promote_verse_opener(p, JOHN_1) for p in paras]
+    return "\n\n".join(promoted)
 
 
 def load_pages(start: int, end: int) -> str:
