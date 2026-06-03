@@ -24,12 +24,23 @@ layout: default
                 <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
             </p>
 
+            {% if page.has_preface %}
+            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">序言部分</h3>
+            <div class="row" style="margin-bottom:24px;">
+                <div class="col-xs-4 col-sm-3 col-md-2" style="margin-bottom:10px;">
+                    <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="calvin-chapter-btn calvin-chapter-btn--has-content">序言</a>
+                </div>
+            </div>
+            {% endif %}
+
             <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
                 {{ page.book_name }} · 章节目录
             </h3>
 
             {% assign calvin_pages = site.pages | where: "layout", "calvin-chapter" %}
-            {% assign book_chapters = calvin_pages | where: "book_id", page.book_id %}
+            {% assign calvin_en_pages = site.pages | where: "layout", "calvin-en" %}
+            {% assign all_pages = calvin_pages | concat: calvin_en_pages %}
+            {% assign book_chapters = all_pages | where: "book_id", page.book_id %}
             {% assign chapter_nums = book_chapters | map: "chapter" %}
             <div class="row">
                 {% for i in (1..page.chapters) %}
