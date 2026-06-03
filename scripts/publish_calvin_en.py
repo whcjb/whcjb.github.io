@@ -115,6 +115,18 @@ _SCRIPTURE_ANCHOR_RE = re.compile(
     r'^<h2\s+class="scripture-anchor"\s+id="[a-z0-9\-]+?-(\d+)-'
 )
 
+# Harmony-of-the-Law section heading: Calvin's Harmony of Last 4 Books of Moses
+# uses `EXODUS|LEVITICUS|NUMBERS|DEUTERONOMY N` as section labels instead of
+# CHAPTER N. Used as a heuristic for the single-chapter-book fallback start.
+_LAW_SECTION_HTML_RE = re.compile(
+    r'^<p\s+class="title-block-h[12]"[^>]*>'
+    r'(?:<span[^>]*>)?\s*'
+    r'(?:EXODUS|LEVITICUS|NUMBERS|DEUTERONOMY|GENESIS)\s+\d+\.?\s*'
+    r'(?:</span>\s*)?'
+    r'</p>\s*$',
+    re.IGNORECASE,
+)
+
 
 def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     """Return {key: line_index (0-based)} for preface + chapters 1..N.
@@ -151,11 +163,15 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
             if ch not in starts:
                 starts[ch] = i
     # Single-chapter book detection: no chapter headings found →
-    # synthesize chapter "1" starting at the first scripture-anchor h2
-    # (which marks the start of the actual commentary on the book).
+    # synthesize chapter "1" starting at the earliest of:
+    #   - first scripture-anchor h2 (typical Pauline / OT prophet books)
+    #   - first EXODUS|LEVITICUS|NUMBERS|DEUTERONOMY|GENESIS N section heading
+    #     (used by Calvin's Harmony of the Law where the entire volume is
+    #     organized by Bible-book chapter section rather than CHAPTER N)
     if not starts:
         for i, line in enumerate(lines):
-            if re.match(r'^<h2\s+class="scripture-anchor"', line):
+            if (re.match(r'^<h2\s+class="scripture-anchor"', line)
+                    or _LAW_SECTION_HTML_RE.match(line)):
                 starts['1'] = i
                 break
     else:

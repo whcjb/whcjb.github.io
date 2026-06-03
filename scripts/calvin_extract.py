@@ -273,6 +273,14 @@ VOLUMES = {
     'jeremiah-2':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER2.pdf', 'out': os.path.join(BASE, 'calvin_raw/jeremiah-2/calvin_jeremiah-2_structured.txt') },
     'psalms-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-1/calvin_psalms-1_structured.txt') },
     'psalms-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-2/calvin_psalms-2_structured.txt') },
+    # Calvin's Harmony of the Law (4 vols) — covers Exodus + Leviticus +
+    # Numbers + Deuteronomy in topical / parallel-passage arrangement.
+    # Calvin never wrote a sequential Exodus commentary; this Harmony is
+    # his treatment of those 4 books. Same Ages 410×626 format.
+    'harmony-law-1':   { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAL1.pdf', 'out': os.path.join(BASE, 'calvin_raw/harmony-law-1/calvin_harmony-law-1_structured.txt') },
+    'harmony-law-2':   { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAL2.pdf', 'out': os.path.join(BASE, 'calvin_raw/harmony-law-2/calvin_harmony-law-2_structured.txt') },
+    'harmony-law-3':   { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAL3.pdf', 'out': os.path.join(BASE, 'calvin_raw/harmony-law-3/calvin_harmony-law-3_structured.txt') },
+    'harmony-law-4':   { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAL4.pdf', 'out': os.path.join(BASE, 'calvin_raw/harmony-law-4/calvin_harmony-law-4_structured.txt') },
 }
 
 

@@ -150,6 +150,18 @@ english_old_testament:
   - id: genesis-en
     name: Genesis
     chapters: 50
+  - id: harmony-law-1-en
+    name: Harmony of the Law (Vol. 1)
+    chapters: 1
+  - id: harmony-law-2-en
+    name: Harmony of the Law (Vol. 2)
+    chapters: 1
+  - id: harmony-law-3-en
+    name: Harmony of the Law (Vol. 3)
+    chapters: 1
+  - id: harmony-law-4-en
+    name: Harmony of the Law (Vol. 4)
+    chapters: 1
   - id: joshua-en
     name: Joshua
     chapters: 24
