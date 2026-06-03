@@ -44,6 +44,10 @@ MARKDOWN_PROMPT = (
     "请OCR这张图片，输出 Markdown 格式：\n"
     "- 大标题（如『第N章』、卷头题目）用 # 开头\n"
     "- 小节标题（小字号居中标题）用 ## 开头\n"
+    "- **黑体字 / 加粗字 / 标题样的强调**：用 **文字** 包裹\n"
+    "  （Calvin 注释里经常把每段开头的经文短语印成黑体，例如\n"
+    "  '**太初有道**' '**道成了肉身**' 等——必须保留这个加粗）\n"
+    "- 斜体（italic / oblique）：用 *文字* 包裹\n"
     "- 正文段落保留原换行/分段（段落间空行）\n"
     "- 脚注标记（①②③等圈号）原样保留\n"
     "- 希腊文/拉丁文/经文引用原样保留\n"
@@ -169,7 +173,7 @@ def main() -> int:
             end=end_1based,
             url=url,
             prompt=None,
-            timeout=180,
+            timeout=900,  # 5x the historical 180s default
             strip_spaces=True,
         )
 
@@ -182,7 +186,10 @@ def main() -> int:
     ap.add_argument("--start", type=int, default=0, help="first page index (0-based, inclusive)")
     ap.add_argument("--end", type=int, default=None, help="last page index exclusive")
     ap.add_argument("--url", default=OCR_URL_DEFAULT)
-    ap.add_argument("--timeout", type=int, default=300)
+    ap.add_argument("--timeout", type=int, default=1500,
+                    help="Per-request OCR timeout in seconds (default 1500=25min). "
+                         "GPU contention / large pages can stretch a single page "
+                         "well past the 5-min default; 25min gives plenty of margin.")
     ap.add_argument(
         "--markdown-prompt", action="store_true",
         help="Send the Markdown-output prompt to the VLM (writes structured md)",
