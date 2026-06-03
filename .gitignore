@@ -33,3 +33,7 @@ Temporary Items
 
 # debug file
 _site
+
+# OCR per-page intermediates (large, resumable; only commit the assembled
+# calvin_<book>_zh.md)
+calvin_raw/*-scan/ocr/

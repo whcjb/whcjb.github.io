@@ -1,82 +1,220 @@
 #!/usr/bin/env python3
-"""
-PDF OCR 脚本 —— 调用本地 Qwen3 服务器
-用法：
-    python3 scripts/ocr_pdf.py <pdf路径> <输出目录> [起始页] [结束页] [服务器URL]
+"""OCR a scanned PDF page-by-page via Qwen-VL endpoint.
 
-示例：
-    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi3.pdf ~/Documents/论文/ocr_output/yaoyi3
-    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 1 100
-    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 215 361 http://10.192.2.11:8765
-    python3 scripts/ocr_pdf.py ~/Documents/论文/calvin_yaoyi2.pdf ~/Documents/论文/ocr_output/yaoyi2 362 508 http://10.192.2.11:8766
+Each PDF page is rendered to PNG, POSTed to the OCR endpoint, and written
+to a per-page output file in OUT_DIR/ocr/ . Resumable: pages with an
+existing non-empty output file are skipped, so a kill/restart picks up
+where it stopped.
 
-输出：每页存为 page_NNNN.txt，支持断点续跑（已存在的文件自动跳过）。
+Two CLI styles supported:
+
+  # Modern (named flags) — used by the ocr-pipeline skill.
+  python3 scripts/ocr_pdf.py \
+      --pdf "/Users/.../加尔文--约翰福音注释.pdf" \
+      --out-dir calvin_raw/john-scan \
+      --workers 4 --dpi 200 --ext md --markdown-prompt
+
+  # Legacy (positional) — kept for compat with older one-off jobs.
+  python3 scripts/ocr_pdf.py <pdf> <out_dir> [start] [end] [server]
+  # ↑ writes page_NNNN.txt at DPI 150 single-threaded, default Qwen prompt.
+
+After all pages are OCR'd, run scripts/ocr_assemble.py to merge per-page
+files into a single book-level markdown.
 """
-import base64, time, sys, warnings
+from __future__ import annotations
+
+import argparse
+import base64
+import json
+import re
+import sys
+import time
+import urllib.request
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-warnings.filterwarnings('ignore')
 
-try:
-    import fitz
-except ImportError:
-    sys.exit("缺少 PyMuPDF，请运行：pip install pymupdf")
-try:
-    import requests
-except ImportError:
-    sys.exit("缺少 requests，请运行：pip install requests")
+import fitz  # PyMuPDF
 
-OCR_SERVER = "http://10.192.2.11:8765"
-DPI = 150   # 150dpi 足够文字识别，速度快 3-4 倍
 
-def ocr_pdf(pdf_path: str, out_dir: str, start: int = 1, end: int = None, server: str = None):
-    pdf_path = Path(pdf_path).expanduser()
-    out_dir  = Path(out_dir).expanduser()
+OCR_URL_DEFAULT = "http://10.192.2.11:8765/ocr"
+
+# Markdown-output prompt: ask the VLM to emit structured markdown so the
+# downstream assemble step can detect chapter boundaries by `# 第N章`.
+MARKDOWN_PROMPT = (
+    "请OCR这张图片，输出 Markdown 格式：\n"
+    "- 大标题（如『第N章』、卷头题目）用 # 开头\n"
+    "- 小节标题（小字号居中标题）用 ## 开头\n"
+    "- 正文段落保留原换行/分段（段落间空行）\n"
+    "- 脚注标记（①②③等圈号）原样保留\n"
+    "- 希腊文/拉丁文/经文引用原样保留\n"
+    "- 不要添加任何解释或额外内容，只输出 OCR 结果\n"
+)
+
+
+def ocr_request(url: str, png_bytes: bytes, prompt: str | None, timeout: int) -> str:
+    body = {"image": base64.b64encode(png_bytes).decode()}
+    if prompt:
+        body["prompt"] = prompt
+    req = urllib.request.Request(
+        url, data=json.dumps(body).encode(), headers={"Content-Type": "application/json"}
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        data = json.loads(r.read().decode())
+    return data.get("text", "")
+
+
+def render_page(doc: fitz.Document, page_idx: int, dpi: int) -> bytes:
+    pix = doc[page_idx].get_pixmap(dpi=dpi)
+    return pix.tobytes("png")
+
+
+def strip_inner_cjk_spaces(text: str) -> str:
+    """OCR sometimes inserts a single space between adjacent CJK chars;
+    drop those. Keeps spaces around ASCII / Greek / Latin tokens."""
+    return re.sub(r"(?<=[一-鿿]) +(?=[一-鿿])", "", text)
+
+
+def run(pdf: str, out_dir: Path, workers: int, dpi: int, ext: str,
+        start: int, end: int | None, url: str, prompt: str | None,
+        timeout: int, strip_spaces: bool) -> int:
+    out_dir = out_dir / "ocr"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    srv   = server or OCR_SERVER
-    doc   = fitz.open(str(pdf_path))
-    total = len(doc)
-    end   = min(end or total, total)
-    print(f"PDF: {pdf_path.name}，共 {total} 页，处理第 {start}–{end} 页  服务器: {srv}", flush=True)
-
-    ok = err = 0
-    start_time = time.time()
-
-    for i in range(start - 1, end):
-        out_file = out_dir / f"page_{i+1:04d}.txt"
-        if out_file.exists() and out_file.stat().st_size > 10:
-            ok += 1
+    doc = fitz.open(pdf)
+    n = len(doc)
+    end_eff = n if end is None else min(end, n)
+    todo: list[int] = []
+    for p in range(start, end_eff):
+        path = out_dir / f"page_{p+1:04d}.{ext}"
+        if path.exists() and path.stat().st_size > 0:
             continue
-        try:
-            pix  = doc[i].get_pixmap(dpi=DPI)
-            b64  = base64.b64encode(pix.tobytes("png")).decode()
-            resp = requests.post(f"{srv}/ocr", json={"image": b64}, timeout=180)
-            resp.raise_for_status()
-            text = resp.json()["text"]
-            # 清除汉字之间的多余空格（OCR 换行 artifact）
-            import re as _re
-            text = _re.sub(r'(?<=[\u4e00-\u9fff]) +(?=[\u4e00-\u9fff])', '', text)
-            out_file.write_text(text, encoding="utf-8")
-            ok += 1
-            elapsed = time.time() - start_time
-            avg = elapsed / ok
-            eta = avg * (end - i - 1)
-            print(f"[{i+1}/{end}] {len(text)}字  {avg:.1f}s/页  ETA={eta/60:.0f}min", flush=True)
-        except Exception as e:
-            err += 1
-            print(f"[{i+1}/{end}] ERROR: {e}", flush=True)
-            time.sleep(5)
+        todo.append(p)
 
-    print(f"\n完成：{ok} 页成功，{err} 页失败")
-    print(f"输出目录：{out_dir}")
+    print(f"[ocr] PDF: {pdf}", flush=True)
+    print(
+        f"[ocr] Pages: total={n} range=[{start},{end_eff}) "
+        f"skipped={(end_eff-start)-len(todo)} todo={len(todo)} "
+        f"workers={workers} dpi={dpi} ext={ext}",
+        flush=True,
+    )
+    if prompt:
+        print(f"[ocr] prompt: {prompt[:60]}...", flush=True)
+    if not todo:
+        print("[ocr] Nothing to do.", flush=True)
+        return 0
+
+    t0 = time.time()
+    done = 0
+    fails = 0
+
+    def work(p: int):
+        png = render_page(doc, p, dpi)
+        t_start = time.time()
+        text = ocr_request(url, png, prompt, timeout)
+        if strip_spaces:
+            text = strip_inner_cjk_spaces(text)
+        return p, text, time.time() - t_start
+
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = {ex.submit(work, p): p for p in todo}
+        for fut in as_completed(futs):
+            p = futs[fut]
+            try:
+                pidx, text, dur = fut.result()
+                (out_dir / f"page_{pidx+1:04d}.{ext}").write_text(text, encoding="utf-8")
+                done += 1
+                elapsed = time.time() - t0
+                rate = done / max(elapsed, 0.1)
+                eta_min = (len(todo) - done) / max(rate, 0.01) / 60
+                print(
+                    f"[ocr] p{pidx+1:04d} {len(text):5d}c {dur:5.1f}s "
+                    f"({done}/{len(todo)} rate={rate:.2f}/s eta={eta_min:.1f}m)",
+                    flush=True,
+                )
+            except Exception as e:
+                fails += 1
+                print(f"[ocr] p{p+1:04d} FAIL: {e}", flush=True)
+
+    elapsed_min = (time.time() - t0) / 60
+    print(
+        f"[ocr] Done. ok={done} fail={fails} pages in {elapsed_min:.1f}m",
+        flush=True,
+    )
+    doc.close()
+    return 0 if fails == 0 else 2
+
+
+def main() -> int:
+    # Detect legacy positional vs. modern flag style.
+    argv = sys.argv[1:]
+    legacy = bool(argv) and not argv[0].startswith("-")
+    if legacy:
+        # python ocr_pdf.py <pdf> <out_dir> [start] [end] [server]
+        if len(argv) < 2:
+            print(__doc__)
+            return 1
+        pdf = argv[0]
+        out_dir = Path(argv[1])
+        start_1based = int(argv[2]) if len(argv) > 2 else 1
+        end_1based = int(argv[3]) if len(argv) > 3 else None
+        srv = argv[4] if len(argv) > 4 else None
+        url = (srv.rstrip("/") + "/ocr") if srv else OCR_URL_DEFAULT
+        return run(
+            pdf=pdf,
+            out_dir=out_dir,
+            workers=1,
+            dpi=150,
+            ext="txt",
+            start=start_1based - 1,
+            end=end_1based,
+            url=url,
+            prompt=None,
+            timeout=180,
+            strip_spaces=True,
+        )
+
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pdf", required=True)
+    ap.add_argument("--out-dir", required=True, help="e.g. calvin_raw/john-scan (ocr/ subdir auto-created)")
+    ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--dpi", type=int, default=200)
+    ap.add_argument("--ext", default="md", choices=["md", "txt"])
+    ap.add_argument("--start", type=int, default=0, help="first page index (0-based, inclusive)")
+    ap.add_argument("--end", type=int, default=None, help="last page index exclusive")
+    ap.add_argument("--url", default=OCR_URL_DEFAULT)
+    ap.add_argument("--timeout", type=int, default=300)
+    ap.add_argument(
+        "--markdown-prompt", action="store_true",
+        help="Send the Markdown-output prompt to the VLM (writes structured md)",
+    )
+    ap.add_argument("--prompt", default=None, help="Custom prompt (overrides --markdown-prompt)")
+    ap.add_argument(
+        "--no-strip-cjk-spaces", action="store_true",
+        help="Keep OCR-inserted spaces between adjacent CJK characters",
+    )
+    args = ap.parse_args()
+
+    if args.prompt:
+        prompt = args.prompt
+    elif args.markdown_prompt:
+        prompt = MARKDOWN_PROMPT
+    else:
+        prompt = None
+
+    return run(
+        pdf=args.pdf,
+        out_dir=Path(args.out_dir),
+        workers=args.workers,
+        dpi=args.dpi,
+        ext=args.ext,
+        start=args.start,
+        end=args.end,
+        url=args.url,
+        prompt=prompt,
+        timeout=args.timeout,
+        strip_spaces=not args.no_strip_cjk_spaces,
+    )
+
 
 if __name__ == "__main__":
-    if len(sys.argv) < 3:
-        print(__doc__)
-        sys.exit(1)
-    pdf  = sys.argv[1]
-    odir = sys.argv[2]
-    s    = int(sys.argv[3]) if len(sys.argv) > 3 else 1
-    e    = int(sys.argv[4]) if len(sys.argv) > 4 else None
-    srv  = sys.argv[5] if len(sys.argv) > 5 else None
-    ocr_pdf(pdf, odir, s, e, srv)
+    sys.exit(main())
