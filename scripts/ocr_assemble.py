@@ -24,7 +24,13 @@ DEFAULT_STRIP_PATTERNS = [
     r"^#\s*约翰福音注释\s*$",
     r"^加尔文文集.*约翰福音注释\s*$",
     r"^约翰福音注释\s*$",
+    # Bare page-number lines (1-3 digits, sometimes followed by a space) —
+    # appears at top/bottom of OCR'd page.
+    r"^\d{1,3}\s*$",
 ]
+
+# Pattern matching `# 第N章` chapter heading (with optional trailing `*`/`.`).
+_CHAPTER_HDR_RE = re.compile(r"^#\s*第([一二三四五六七八九十百零〇0-9]+)\s*章\s*[\*\.\s]*$")
 
 
 def normalize_page(text: str, strip_res: list[re.Pattern]) -> str:
@@ -41,6 +47,30 @@ def normalize_page(text: str, strip_res: list[re.Pattern]) -> str:
     return text.strip()
 
 
+def dedupe_running_chapter_headers(text: str) -> str:
+    """Strip `# 第N章` lines that repeat as page running headers.
+
+    Keeps only the FIRST occurrence of each chapter heading in the whole
+    document; subsequent identical headings (from page-top reprints) are
+    removed.
+    """
+    seen: set[str] = set()
+    out: list[str] = []
+    for line in text.splitlines():
+        m = _CHAPTER_HDR_RE.match(line.rstrip())
+        if m:
+            key = m.group(1)
+            if key in seen:
+                continue  # running header — drop
+            seen.add(key)
+            # Canonicalize: strip trailing `*` so the chapter-detect regex
+            # in publish_ocr_zh matches cleanly.
+            out.append(f"# 第{key}章")
+            continue
+        out.append(line)
+    return "\n".join(out)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw-dir", required=True,
@@ -51,6 +81,10 @@ def main() -> int:
                     help="Extra regex to strip (running header). Repeatable.")
     ap.add_argument("--no-default-strip", action="store_true",
                     help="Skip the default running-header strip patterns.")
+    ap.add_argument("--start-page", type=int, default=1,
+                    help="Page index (1-based, inclusive). Default 1.")
+    ap.add_argument("--end-page", type=int, default=None,
+                    help="Page index (1-based, inclusive). Default = last.")
     args = ap.parse_args()
 
     raw_dir = Path(args.raw_dir)
@@ -69,17 +103,28 @@ def main() -> int:
         return 1
 
     out_parts: list[str] = []
+    used = 0
     for p in pages:
         page_num = int(re.search(r"page_(\d+)", p.name).group(1))
+        if page_num < args.start_page:
+            continue
+        if args.end_page is not None and page_num > args.end_page:
+            continue
         text = p.read_text(encoding="utf-8")
         text = normalize_page(text, strip_res)
         if not text:
             continue
+        used += 1
         out_parts.append(f"<!-- PAGE {page_num} -->\n\n{text}")
 
+    combined = "\n\n".join(out_parts)
+    combined = dedupe_running_chapter_headers(combined)
     out_path = raw_dir / f"calvin_{args.book}_zh.md"
-    out_path.write_text("\n\n".join(out_parts) + "\n", encoding="utf-8")
-    print(f"[assemble] {len(pages)} pages → {out_path} ({out_path.stat().st_size:,} bytes)")
+    out_path.write_text(combined + "\n", encoding="utf-8")
+    print(
+        f"[assemble] {used} pages → {out_path} "
+        f"({out_path.stat().st_size:,} bytes)"
+    )
     return 0
 
 

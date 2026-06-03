@@ -85,6 +85,9 @@ new_testament:
   - id: john
     name: 约翰福音
     chapters: 21
+  - id: john-scan
+    name: 约翰福音（扫描版）
+    chapters: 1
   - id: acts
     name: 使徒行传
     chapters: 28
