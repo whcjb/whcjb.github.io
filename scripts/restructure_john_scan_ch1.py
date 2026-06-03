@@ -29,12 +29,13 @@ JOHN_1 = CUV["43"]["1"]
 
 
 # 6 scripture-box sections — page ranges match Calvin's commentary structure.
+# Disjoint page ranges — each page belongs to exactly one section.
 SECTIONS = [
-    {"verses": (1, 5),   "title": "太初有道、生命与光",                  "pages": (16, 24)},
-    {"verses": (6, 13),  "title": "施洗约翰为光作见证；信子者得作神的儿女",  "pages": (24, 31)},
-    {"verses": (14, 18), "title": "道成了肉身；从他丰满的恩典里我们都领受了", "pages": (31, 40)},
-    {"verses": (19, 28), "title": "约翰回答祭司：我不是基督",              "pages": (40, 48)},
-    {"verses": (29, 34), "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",        "pages": (48, 56)},
+    {"verses": (1, 5),   "title": "太初有道、生命与光",                  "pages": (16, 23)},
+    {"verses": (6, 13),  "title": "施洗约翰为光作见证；信子者得作神的儿女",  "pages": (24, 30)},
+    {"verses": (14, 18), "title": "道成了肉身；从他丰满的恩典里我们都领受了", "pages": (31, 39)},
+    {"verses": (19, 28), "title": "约翰回答祭司：我不是基督",              "pages": (40, 47)},
+    {"verses": (29, 34), "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",        "pages": (48, 55)},
     {"verses": (35, 51), "title": "首批门徒；耶稣呼召拿但业",                "pages": (56, 65)},
 ]
 
@@ -117,47 +118,141 @@ def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
     return f"**{opener_clean}** {rest}"
 
 
-def maybe_promote_verse_opener(para: str, john_1: dict[str, str]) -> str:
-    """Detect a paragraph that opens with a CUV John 1 verse quote and
-    rewrite it as `**约翰福音 1:N。** *quote。* commentary` (verse-nav).
+_NOISE_CHARS_RE = re.compile(r"[，。、；：（）！？「」『』　\s\"“”'‘’·‧·…]")
+
+
+def _normalize_for_match(s: str) -> str:
+    """Normalize Chinese text for fuzzy matching between OCR and CUV.
+    - Strip noise chars (punctuation, whitespace, middle dots)
+    - Unify 上帝 ↔ 神 (Calvin uses 上帝, CUV uses 神; treat as equivalent)
+    """
+    s = _NOISE_CHARS_RE.sub("", s)
+    s = s.replace("上帝", "神")
+    return s
+
+
+def _strip_corrupt_marker(para: str) -> str:
+    """Strip OCR-corrupted verse markers from paragraph start.
+
+    Patterns seen:
+      ①太初有道 ...               (single circled digit, valid)
+      ⑤0耶稣对他说 ...             (㊿ rendered as ⑤0)
+      ⑤1你们将要 ...               (verse 51 rendered as ⑤1)
+      0耶稣对他说 ...               (leading bare digit)
+      1你们将要 ...
+    """
+    p = para
+    # Drop one circled digit + optional 0-9 digits (e.g. ⑤0, ⑤1)
+    if p and p[0] in _CIRCLE_TO_INT:
+        p = p[1:]
+        while p and p[0].isdigit():
+            p = p[1:]
+        return p.lstrip()
+    # Drop leading bare 0-9 digit (corrupt marker like "0耶稣" "1你们")
+    if p and p[0].isdigit() and len(p) > 1 and not p[1].isdigit():
+        return p[1:].lstrip()
+    return p
+
+
+def _split_first_sentence(text: str) -> tuple[str, str]:
+    """Return (first_sentence, rest). The first sentence ends at the first
+    of 。？！, or includes up to first 30 chars if no terminator.
+    """
+    m = re.search(r"[。？！]", text)
+    if m and m.start() <= 30:
+        return text[: m.start() + 1], text[m.start() + 1 :]
+    return text[:30], text[30:]
+
+
+def _verse_for_opener(opener_clean: str, john_1: dict[str, str],
+                       verse_range: tuple[int, int] | None = None) -> int | None:
+    """Find verse whose text contains opener_clean as substring.
+
+    opener_clean is expected to have been already passed through
+    `_normalize_for_match`. CUV verse texts are normalized on the fly.
+
+    If `verse_range` is given (e.g. (35, 51) for section 6), only verses
+    in that range are considered — drastically reduces ambiguity when
+    opener is short (e.g. "拉比" appears in both v38 and v49 but only
+    v38 is in section 6's range).
+
+    Returns None if no match. If multiple verses match, returns the
+    earliest one (Calvin's reading order).
+    """
+    min_len = 2 if verse_range else 3
+    if len(opener_clean) < min_len:
+        return None
+    matches: list[int] = []
+    for vstr, text in john_1.items():
+        v = int(vstr)
+        if verse_range is not None and not (verse_range[0] <= v <= verse_range[1]):
+            continue
+        if opener_clean in _normalize_for_match(text):
+            matches.append(v)
+    if not matches:
+        return None
+    if len(matches) == 1:
+        return matches[0]
+    # Ambiguous: pick earliest. Threshold is more permissive (>=2) when a
+    # verse_range is supplied, since the range already narrows candidates.
+    threshold = 2 if verse_range else 3
+    if len(opener_clean) >= threshold:
+        return min(matches)
+    return None
+
+
+def _maybe_match_elided(body: str, john_1: dict[str, str],
+                         verse_range: tuple[int, int] | None) -> int | None:
+    """Handle Calvin's elided citations like '我们遇见了……耶稣。'.
+
+    Split on `……` (ellipsis) and try to match the first chunk.
+    """
+    if "……" not in body[:30] and "…" not in body[:30]:
+        return None
+    head = re.split(r"…+", body[:30])[0]
+    head_clean = _normalize_for_match(head)
+    if len(head_clean) >= 3:
+        return _verse_for_opener(head_clean, john_1, verse_range)
+    return None
+
+
+def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
+                                 verse_range: tuple[int, int] | None = None) -> str:
+    """Detect a paragraph opening with a John 1 verse quote → rewrite as
+    `**约翰福音 1:N。** *quote。* commentary` for verse-nav JS pickup.
+
+    If `verse_range` is given, only consider verses in that range (used
+    per-section to disambiguate short openers like '拉比').
     """
     if not para or para.startswith("[^") or para.startswith("**约翰福音"):
         return para
-    if len(para) < 30:
+    if len(para) < 12:
         return para
-    body = para[1:].lstrip() if para[0] in _CIRCLE_TO_INT else para
-    body_clean = re.sub(r"[，。、；：（）　\s\"“”]", "", body)[:10]
-    if len(body_clean) < 4:
+
+    body = _strip_corrupt_marker(para)
+    first_sent, rest = _split_first_sentence(body)
+    first_clean = _normalize_for_match(first_sent)
+
+    v = _verse_for_opener(first_clean, john_1, verse_range)
+    if v is None:
+        # Try elided form (Calvin's `X……Y。` quoted)
+        v = _maybe_match_elided(body, john_1, verse_range)
+    if v is None:
+        body_clean = _normalize_for_match(body)[:10]
+        if len(body_clean) >= 4:
+            v = _verse_for_opener(body_clean, john_1, verse_range)
+    if v is None:
         return para
-    best_v = None
-    best_len = 0
-    for vstr, text in john_1.items():
-        text_clean = re.sub(r"[，。、；：（）　\s]", "", text)
-        m = 0
-        for i in range(min(len(body_clean), len(text_clean))):
-            if body_clean[i] == text_clean[i]:
-                m += 1
-            else:
-                break
-        if m >= 4 and m > best_len:
-            best_v = int(vstr)
-            best_len = m
-    if best_v is None:
-        return para
-    para_no_circ = para[1:].lstrip() if para[0] in _CIRCLE_TO_INT else para
-    period = para_no_circ.find("。")
-    if period == -1 or period > 40:
-        opener, rest = para_no_circ[:12], para_no_circ[12:]
-    else:
-        opener, rest = para_no_circ[: period + 1], para_no_circ[period + 1 :]
-    return f"**约翰福音 1:{best_v}。** *{opener}* {rest}".rstrip()
+
+    return f"**约翰福音 1:{v}。** *{first_sent}* {rest}".rstrip()
 
 
 # ────────────────────────────────────────────────────────────────────────
 # Page-level processing with fn mapping
 # ────────────────────────────────────────────────────────────────────────
 
-def process_page(text: str, fn_counter: int) -> tuple[str, list[tuple[int, str]], int]:
+def process_page(text: str, fn_counter: int,
+                  verse_range: tuple[int, int] | None = None) -> tuple[str, list[tuple[int, str]], int]:
     """Process one OCR'd page.
 
     Returns:
@@ -167,7 +262,7 @@ def process_page(text: str, fn_counter: int) -> tuple[str, list[tuple[int, str]]
 
     Strategy:
       1) Normalize lines (drop running headers, transform long `## ` lines).
-      2) Promote verse-opener paragraphs.
+      2) Promote verse-opener paragraphs (restricted to `verse_range` if set).
       3) Extract footnote def paragraphs (split multi-line concat blocks).
       4) Assign sequential global IDs to defs.
       5) In remaining body, replace circled digits with `[^N]` refs using
@@ -190,7 +285,7 @@ def process_page(text: str, fn_counter: int) -> tuple[str, list[tuple[int, str]]
     for p in paras:
         if not p:
             continue
-        promoted = maybe_promote_verse_opener(p, JOHN_1)
+        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range)
         if promoted != p or promoted.startswith("**约翰福音"):
             body_paras.append(promoted)
             continue
@@ -241,7 +336,46 @@ def process_page(text: str, fn_counter: int) -> tuple[str, list[tuple[int, str]]
     return body, fn_defs, fn_counter
 
 
-def load_pages(start: int, end: int, fn_counter: int) -> tuple[str, list[tuple[int, str]], int]:
+_TERM_PUNCT = "。？！」』\""
+
+
+def _join_cross_page(prev: str, cur: str) -> tuple[str, str]:
+    """If prev page ends mid-sentence (no terminal punctuation on last
+    paragraph) and cur page starts with a non-marker, non-footnote, non-
+    promoted continuation, merge prev's last paragraph with cur's first
+    paragraph.
+    """
+    if not prev or not cur:
+        return prev, cur
+    prev_paras = re.split(r"\n{2,}", prev)
+    cur_paras = re.split(r"\n{2,}", cur)
+    if not prev_paras or not cur_paras:
+        return prev, cur
+    last = prev_paras[-1].rstrip()
+    first = cur_paras[0].lstrip()
+    if not last or not first:
+        return prev, cur
+    # Skip if last already ends with terminal punctuation
+    if last[-1] in _TERM_PUNCT:
+        return prev, cur
+    # Skip if first paragraph is a promoted opener, anchor, fn def, scripture-box
+    if (first.startswith("**约翰福音")
+            or first.startswith("<")
+            or first.startswith("[^")
+            or first.startswith("# ")
+            or first.startswith("## ")):
+        return prev, cur
+    # Skip if first starts with a circled digit (likely a new section/fn)
+    if first[0] in _CIRCLE_TO_INT:
+        return prev, cur
+    # Merge: append first to last
+    prev_paras[-1] = last + first
+    cur_paras = cur_paras[1:]
+    return "\n\n".join(prev_paras), "\n\n".join(cur_paras)
+
+
+def load_pages(start: int, end: int, fn_counter: int,
+                verse_range: tuple[int, int] | None = None) -> tuple[str, list[tuple[int, str]], int]:
     body_parts: list[str] = []
     all_defs: list[tuple[int, str]] = []
     for p in range(start, end + 1):
@@ -249,12 +383,18 @@ def load_pages(start: int, end: int, fn_counter: int) -> tuple[str, list[tuple[i
         if not f.exists():
             continue
         body, defs, fn_counter = process_page(
-            f.read_text(encoding="utf-8"), fn_counter
+            f.read_text(encoding="utf-8"), fn_counter, verse_range
         )
+        if not body:
+            all_defs.extend(defs)
+            continue
+        if body_parts:
+            merged_prev, body = _join_cross_page(body_parts[-1], body)
+            body_parts[-1] = merged_prev
         if body:
             body_parts.append(body)
         all_defs.extend(defs)
-    return "\n\n".join(body_parts), all_defs, fn_counter
+    return "\n\n".join(p for p in body_parts if p), all_defs, fn_counter
 
 
 # ────────────────────────────────────────────────────────────────────────
@@ -293,6 +433,15 @@ def split_long_paragraphs(text: str, max_len: int = 1400) -> str:
 # Main assemble
 # ────────────────────────────────────────────────────────────────────────
 
+_CONTINUATION_RE = re.compile(r"^[一-鿿]{1,3}[，、；]")
+
+
+def _looks_like_continuation(para: str) -> bool:
+    """A paragraph starting with `X，` where X is 1-3 CJK chars indicates
+    mid-sentence continuation from previous page (OCR page break)."""
+    return bool(_CONTINUATION_RE.match(para.strip()))
+
+
 def build_chapter_md() -> str:
     fm = (
         "---\n"
@@ -311,15 +460,44 @@ def build_chapter_md() -> str:
     body = ["# 约翰福音 1 —— 道成肉身\n"]
     all_defs: list[tuple[int, str]] = []
     fn_counter = 0
+    # Two-pass: build raw section bodies, then stitch cross-section
+    # continuations (move section N's first continuation paragraph to
+    # end of section N-1's commentary).
+    section_bodies: list[str] = []
+    section_headers: list[str] = []
     for sec in SECTIONS:
         v_lo, v_hi = sec["verses"]
-        body.append(f'## 约翰福音 1:{v_lo}-{v_hi} —— {sec["title"]}\n')
-        body.append(scripture_block(sec["verses"]))
-        comm, sec_defs, fn_counter = load_pages(*sec["pages"], fn_counter)
-        comm = split_long_paragraphs(comm)
-        body.append(comm)
-        body.append("")
+        section_headers.append(
+            f'## 约翰福音 1:{v_lo}-{v_hi} —— {sec["title"]}\n\n'
+            + scripture_block(sec["verses"])
+        )
+        comm, sec_defs, fn_counter = load_pages(*sec["pages"], fn_counter, sec["verses"])
+        section_bodies.append(split_long_paragraphs(comm))
         all_defs.extend(sec_defs)
+
+    # Stitch continuations: if section N's first paragraph looks like
+    # mid-sentence continuation, append it to section N-1's last paragraph.
+    for i in range(1, len(section_bodies)):
+        cur = section_bodies[i]
+        if not cur:
+            continue
+        paras = re.split(r"\n{2,}", cur)
+        if not paras:
+            continue
+        first = paras[0]
+        if _looks_like_continuation(first):
+            # Find previous section's last paragraph (skip scripture-anchor/box)
+            prev = section_bodies[i - 1]
+            prev_paras = re.split(r"\n{2,}", prev)
+            if prev_paras:
+                prev_paras[-1] = prev_paras[-1].rstrip() + first.lstrip()
+                section_bodies[i - 1] = "\n\n".join(prev_paras)
+                section_bodies[i] = "\n\n".join(paras[1:])
+
+    for hdr, sec_body in zip(section_headers, section_bodies):
+        body.append(hdr)
+        body.append(sec_body)
+        body.append("")
 
     # Footnote definitions — kramdown auto-renders them as a numbered list
     # at the very bottom with backlinks. Two leading newlines before defs
