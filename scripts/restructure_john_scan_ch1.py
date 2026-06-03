@@ -233,15 +233,74 @@ def normalize_page(text: str) -> str:
     return "\n\n".join(promoted)
 
 
-def load_pages(start: int, end: int) -> str:
-    """Concatenate OCR'd pages [start, end] (1-based, inclusive)."""
-    parts = []
+# A line that looks like a footnote *definition*: starts with one of the
+# circled digits, then whitespace, then Chinese / foreign content.
+# Caveat: some verse openers also have `① 这等人不是从血气生的` form, but those
+# will already have been promoted to `**约翰福音 1:N。**` by
+# maybe_promote_verse_opener (called BEFORE this step), so anything still
+# starting with circled-digit-and-space is a footnote.
+_FN_DEF_RE = re.compile(r"^([" + _CIRCLE_DIGITS + r"])[ 　](.+)$")
+
+
+def extract_footnote_defs(text: str) -> tuple[str, list[str]]:
+    """Pull out footnote-definition paragraphs from a section body.
+
+    Paragraphs are separated by blank lines. Within a paragraph, multiple
+    lines starting with circled digits (e.g. `① def`\\n`② def`) are split
+    into separate footnotes since the OCR keeps them in one block.
+
+    Returns (body_without_defs, list_of_def_strings). Each def string is
+    the content after the leading circled digit + whitespace.
+    """
+    paras = re.split(r"\n{2,}", text)
+    body_paras: list[str] = []
+    fn_defs: list[str] = []
+    for p in paras:
+        if not p:
+            continue
+        if p.startswith("**约翰福音"):
+            body_paras.append(p)
+            continue
+        first_line = p.splitlines()[0]
+        m = _FN_DEF_RE.match(first_line)
+        if not m:
+            body_paras.append(p)
+            continue
+        # Paragraph is a footnote def block. Split its lines: each line
+        # that starts with circled digit is its own footnote; any line
+        # without circled digit is continuation of the previous footnote.
+        cur: list[str] = []
+        for line in p.splitlines():
+            mline = _FN_DEF_RE.match(line)
+            if mline:
+                if cur:
+                    fn_defs.append("\n".join(cur).strip())
+                cur = [mline.group(2)]
+            else:
+                cur.append(line)
+        if cur:
+            fn_defs.append("\n".join(cur).strip())
+    return "\n\n".join(body_paras), fn_defs
+
+
+def load_pages(start: int, end: int) -> tuple[str, list[str]]:
+    """Concatenate OCR'd pages [start, end] (1-based, inclusive).
+    Returns (body_md, footnote_defs_list).
+    """
+    body_parts = []
+    all_fns: list[str] = []
     for p in range(start, end + 1):
         f = REPO / f"calvin_raw/john-scan/ocr/page_{p:04d}.md"
         if not f.exists():
             continue
-        parts.append(normalize_page(f.read_text(encoding="utf-8")))
-    return "\n\n".join(p for p in parts if p)
+        page = normalize_page(f.read_text(encoding="utf-8"))
+        if not page:
+            continue
+        body, fns = extract_footnote_defs(page)
+        if body:
+            body_parts.append(body)
+        all_fns.extend(fns)
+    return "\n\n".join(body_parts), all_fns
 
 
 def build_chapter_md() -> str:
@@ -260,14 +319,22 @@ def build_chapter_md() -> str:
         "---\n\n"
     )
     body = ["# 约翰福音 1 —— 道成肉身\n"]
+    chapter_fns: list[str] = []
     for sec in SECTIONS:
         v_lo, v_hi = sec["verses"]
         body.append(f'## 约翰福音 1:{v_lo}-{v_hi} —— {sec["title"]}\n')
         body.append(scripture_box(sec["verses"]))
         body.append("")
-        comm = load_pages(*sec["pages"])
+        comm, sec_fns = load_pages(*sec["pages"])
         body.append(comm)
         body.append("")
+        chapter_fns.extend(sec_fns)
+    if chapter_fns:
+        body.append("---\n")
+        body.append("## 脚注\n")
+        for i, fn in enumerate(chapter_fns, 1):
+            body.append(f"**{i}.** {fn}")
+            body.append("")
     return fm + "\n".join(body) + "\n"
 
 
