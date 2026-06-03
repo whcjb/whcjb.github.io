@@ -86,6 +86,11 @@ RUNNING_HDR_PATTERNS = [
     re.compile(r"^#\s*约翰福音注释\s*$"),
     re.compile(r"^#\s*第[一二三四五六七八九十百零〇0-9]+\s*章\s*\*?\s*$"),
     re.compile(r"^\d{1,3}\s*$"),
+    # Horizontal rules — the PDF often has a separator line between body
+    # and footnote section, OCR'd as `---`. Strip these so they don't
+    # leak into body text or block cross-page paragraph joining.
+    re.compile(r"^-{3,}\s*$"),
+    re.compile(r"^—{3,}\s*$"),  # em-dash variant
 ]
 
 _FN_DEF_RE = re.compile(r"^([" + _CIRCLE_DIGITS + r"])[ 　](.+)$")
@@ -500,6 +505,41 @@ def build_chapter_md() -> str:
         comm, sec_defs, fn_counter = load_pages(*sec["pages"], fn_counter, sec["verses"])
         section_bodies.append(split_long_paragraphs(comm))
         all_defs.extend(sec_defs)
+
+    # Forward migration: if section N's LAST paragraph is a verse opener
+    # for a verse in section N+1's range, move it forward.
+    # After moving, also check if it should be joined with the next
+    # section's then-current first paragraph (cross-page continuation
+    # that happened to straddle the section boundary).
+    for i in range(len(section_bodies) - 1):
+        next_v_lo, next_v_hi = SECTIONS[i + 1]["verses"]
+        while True:
+            cur = section_bodies[i]
+            if not cur:
+                break
+            cur_paras = re.split(r"\n{2,}", cur)
+            last_para = cur_paras[-1].rstrip() if cur_paras else ""
+            if not last_para:
+                break
+            stripped = _strip_corrupt_marker(last_para)
+            first_sent, _ = _split_first_sentence(stripped)
+            first_clean = _normalize_for_match(first_sent)
+            v = _verse_for_opener(first_clean, JOHN_1)
+            if v is None or not (next_v_lo <= v <= next_v_hi):
+                break
+            promoted = maybe_promote_verse_opener(
+                last_para, JOHN_1, (next_v_lo, next_v_hi)
+            )
+            next_paras = re.split(r"\n{2,}", section_bodies[i + 1])
+            # If promoted ends mid-sentence and next_paras[0] starts with
+            # mid-sentence continuation, join them.
+            if (next_paras and promoted
+                    and promoted[-1] not in _TERM_PUNCT
+                    and _is_section_continuation(promoted, next_paras[0].lstrip())):
+                promoted = promoted + next_paras[0].lstrip()
+                next_paras = next_paras[1:]
+            section_bodies[i + 1] = "\n\n".join([promoted] + next_paras)
+            section_bodies[i] = "\n\n".join(cur_paras[:-1])
 
     # Stitch continuations: keep moving section N's first paragraph back
     # to section N-1 while either of two conditions holds:
