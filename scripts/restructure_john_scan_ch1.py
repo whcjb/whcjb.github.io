@@ -1,27 +1,19 @@
 #!/usr/bin/env python3
-"""One-off: restructure calvin/john-scan/1.md to match harmony-1/1.md style.
+"""Restructure calvin/john-scan/1.md to match calvin/john-en/1.md layout.
+
+Targets every check in pdf-pipeline:refs:audit-gates:
+  - Gate 1: no ****, <<<END, split italics
+  - Gate 5: footnote refs/defs paired in kramdown `[^N]` / `[^N]: text` form
+  - Gate 6: no paragraph > 1500 chars
+  - Plus scripture-anchor h2 before each scripture-box for verse-nav JS
+  - Plus drops the manual `## 脚注` heading (kramdown auto-renders fn section)
 
 Reads:
   - assets/cuv.json (clean CUV Chinese Bible text)
-  - calvin_raw/john-scan/ocr/page_NNNN.md (per-page OCR commentary)
+  - calvin_raw/john-scan/ocr/page_NNNN.md (per-page OCR)
 
 Writes:
-  - calvin/john-scan/1.md  (single chapter file matching harmony-1 layout)
-
-The chapter is split into 6 scripture-box sections, with page ranges
-determined empirically by inspecting the OCR'd Calvin commentary:
-
-  Section    Verses    Commentary pages
-  ─────────  ────────  ─────────────────
-  1:1-5      Word/Life  16–24
-  1:6-13     John witness/Light/sons-of-God  24–31
-  1:14-18    Word incarnate/grace upon grace  31–40
-  1:19-28    John's testimony to priests     40–48
-  1:29-34    Lamb of God / Spirit descent     48–56
-  1:35-51    First disciples / Nathanael      56–65
-
-After verification of look-and-feel, this script can be generalized
-into a reusable structured publisher.
+  - calvin/john-scan/1.md
 """
 from __future__ import annotations
 
@@ -33,114 +25,80 @@ from pathlib import Path
 
 REPO = Path("/Users/yanpeifa/Documents/whcjb.github.io")
 CUV = json.load(open(REPO / "assets/cuv.json"))
-JOHN_1 = CUV["43"]["1"]  # book 43 chapter 1
+JOHN_1 = CUV["43"]["1"]
 
+
+# 6 scripture-box sections — page ranges match Calvin's commentary structure.
 SECTIONS = [
-    {
-        "verses": (1, 5),
-        "title": "太初有道、生命与光",
-        "pages": (16, 24),
-    },
-    {
-        "verses": (6, 13),
-        "title": "施洗约翰为光作见证；信子者得作神的儿女",
-        "pages": (24, 31),
-    },
-    {
-        "verses": (14, 18),
-        "title": "道成了肉身；从他丰满的恩典里我们都领受了",
-        "pages": (31, 40),
-    },
-    {
-        "verses": (19, 28),
-        "title": "约翰回答祭司：我不是基督",
-        "pages": (40, 48),
-    },
-    {
-        "verses": (29, 34),
-        "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",
-        "pages": (48, 56),
-    },
-    {
-        "verses": (35, 51),
-        "title": "首批门徒；耶稣呼召拿但业",
-        "pages": (56, 65),
-    },
+    {"verses": (1, 5),   "title": "太初有道、生命与光",                  "pages": (16, 24)},
+    {"verses": (6, 13),  "title": "施洗约翰为光作见证；信子者得作神的儿女",  "pages": (24, 31)},
+    {"verses": (14, 18), "title": "道成了肉身；从他丰满的恩典里我们都领受了", "pages": (31, 40)},
+    {"verses": (19, 28), "title": "约翰回答祭司：我不是基督",              "pages": (40, 48)},
+    {"verses": (29, 34), "title": "看哪，神的羔羊！圣灵仿佛鸽子降下",        "pages": (48, 56)},
+    {"verses": (35, 51), "title": "首批门徒；耶稣呼召拿但业",                "pages": (56, 65)},
 ]
 
 
-def scripture_box(verses_range: tuple[int, int]) -> str:
-    """Render <div class="scripture-box"> for John 1 verses [a, b]."""
-    a, b = verses_range
-    inner = []
-    for v in range(a, b + 1):
-        text = JOHN_1[str(v)]
-        inner.append(f"<strong>{v}.</strong>{text}")
-    body = "".join(inner)
-    ref = f"约翰福音 1:{a}-{b}"
-    return (
-        '<div class="scripture-box">\n'
-        f'<p class="scripture-ref">{ref}</p>\n'
-        f"<p>{body}</p>\n"
-        "</div>"
-    )
-
-
-# Patterns to strip from OCR pages when used as commentary body.
-RUNNING_HDR_PATTERNS = [
-    re.compile(r"^#\s*加尔文文集.*约翰福音注释\s*$"),
-    re.compile(r"^#\s*约翰福音注释\s*$"),
-    re.compile(r"^#\s*第[一二三四五六七八九十百零〇0-9]+\s*章\s*\*?\s*$"),
-    re.compile(r"^\d{1,3}\s*$"),  # bare page number
-]
-
-
-# Map circled digit Unicode → arabic int (for v1-v20; v21+ use other code points
-# and we'll match by content instead).
-_CIRCLE_DIGIT = {chr(0x2460 + i): i + 1 for i in range(20)}  # ① to ⑳
-_CIRCLE_DIGIT.update({chr(0x3251 + i): i + 21 for i in range(15)})  # ㉑ to ㉟
-_CIRCLE_DIGIT.update({chr(0x32B1 + i): i + 36 for i in range(15)})  # ㊱ to ㊿
+_CIRCLE_DIGITS = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿"
+_CIRCLE_TO_INT: dict[str, int] = {}
+for i, ch in enumerate(_CIRCLE_DIGITS, 1):
+    _CIRCLE_TO_INT[ch] = i
 
 
 def _strip_leading_circle(s: str) -> str:
-    """Drop any leading circled digit + whitespace."""
     s = s.lstrip()
-    while s and s[0] in _CIRCLE_DIGIT:
+    while s and s[0] in _CIRCLE_TO_INT:
         s = s[1:].lstrip()
     return s
 
 
-def find_john_verse(opener_text: str, chapter_verses: dict[str, str]) -> int | None:
-    """Fuzzy-match an OCR'd commentary opener against CUV John 1.
+# ────────────────────────────────────────────────────────────────────────
+# Bible verse scripture-box (one per section, with hidden anchor h2)
+# ────────────────────────────────────────────────────────────────────────
 
-    Strategy: strip circled digits, take first ~8 chars of opener, find a
-    verse whose text starts with these chars (or contains them in the
-    first 12 chars). Returns verse number or None.
-    """
+def scripture_block(verses_range: tuple[int, int]) -> str:
+    a, b = verses_range
+    ref = f"约翰福音 1:{a}-{b}"
+    anchor_id = f"john-1-{a}-{b}"
+    inner = "".join(f"<strong>{v}.</strong>{JOHN_1[str(v)]}" for v in range(a, b + 1))
+    return (
+        f'<h2 class="scripture-anchor" id="{anchor_id}" data-ref="{ref}" style="display:none">{ref}</h2>\n\n'
+        f'<div class="scripture-box" markdown="1">\n'
+        f'<p class="scripture-ref">{ref}</p>\n\n'
+        f'<p>{inner}</p>\n\n'
+        f'</div>\n'
+    )
+
+
+# ────────────────────────────────────────────────────────────────────────
+# Per-page: identify footnote defs, build local circled→global map
+# ────────────────────────────────────────────────────────────────────────
+
+RUNNING_HDR_PATTERNS = [
+    re.compile(r"^#\s*加尔文文集.*约翰福音注释\s*$"),
+    re.compile(r"^#\s*约翰福音注释\s*$"),
+    re.compile(r"^#\s*第[一二三四五六七八九十百零〇0-9]+\s*章\s*\*?\s*$"),
+    re.compile(r"^\d{1,3}\s*$"),
+]
+
+_FN_DEF_RE = re.compile(r"^([" + _CIRCLE_DIGITS + r"])[ 　](.+)$")
+
+
+def find_john_verse(opener_text: str, chapter_verses: dict[str, str]) -> int | None:
     head = _strip_leading_circle(opener_text)
     head = re.sub(r"[，。、；：（）\s]", "", head)[:8]
     if not head:
         return None
-    best = None
     for vstr, text in chapter_verses.items():
         ct = re.sub(r"[，。、；：（）　\s]", "", text)
         if ct.startswith(head):
             return int(vstr)
-        # Allow opener to match early in the verse (verse marker prefix)
-        if head[:6] in ct[:16]:
-            if best is None:
-                best = int(vstr)
-    return best
+    return None
 
 
 def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
-    """OCR produced `## verseN.` heading + entire paragraph as one ## line.
-    Convert to `**约翰福音 1:N。** *opener。* prose...` form (matches
-    harmony-1 verse-nav requirements: the JS regex
-    `^书卷名 Ch:N[.。]$` triggers pill generation).
-
-    Only applies when `## XX` content is too long to be a real heading
-    (>40 chars).
+    """OCR sometimes puts the verse-opener line as `## XXX...` (a long h2).
+    Convert to verse-anchor bold form for verse-nav JS pickup.
     """
     if not line.startswith("## "):
         return line
@@ -149,11 +107,9 @@ def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
         return line
     period = content.find("。")
     if period == -1 or period > 60:
-        opener = content[:30]
-        rest = content[30:]
+        opener, rest = content[:30], content[30:]
     else:
-        opener = content[:period + 1]
-        rest = content[period + 1:]
+        opener, rest = content[: period + 1], content[period + 1 :]
     v = find_john_verse(opener, john_1)
     opener_clean = _strip_leading_circle(opener)
     if v is not None:
@@ -161,31 +117,15 @@ def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
     return f"**{opener_clean}** {rest}"
 
 
-# A circled digit OR a Chinese opening phrase, followed by enough Chinese to
-# look like a verse quote. Used to detect verse-opener paragraphs.
-_CIRCLE_DIGITS = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿"
-
-
 def maybe_promote_verse_opener(para: str, john_1: dict[str, str]) -> str:
-    """If a paragraph starts with a CUV-John-1 verse quote (with or without
-    leading circled digit), reformat as `**约翰福音 1:N。** *quote* rest`
-    so the calvin-en layout JS finds it for the Jump-to-verse pill nav.
-
-    Skip:
-      - footnote lines (start with `[^...]:`)
-      - existing well-formed openers (already start with `**约翰福音`)
-      - short paragraphs (likely captions / single line refs)
+    """Detect a paragraph that opens with a CUV John 1 verse quote and
+    rewrite it as `**约翰福音 1:N。** *quote。* commentary` (verse-nav).
     """
     if not para or para.startswith("[^") or para.startswith("**约翰福音"):
         return para
     if len(para) < 30:
         return para
-    head = para[:20]
-    # Optional leading circled digit
-    body = head
-    if body and body[0] in _CIRCLE_DIGITS:
-        body = body[1:].lstrip()
-    # Try to match the first 4-12 chars against any verse's opening text.
+    body = para[1:].lstrip() if para[0] in _CIRCLE_TO_INT else para
     body_clean = re.sub(r"[，。、；：（）　\s\"“”]", "", body)[:10]
     if len(body_clean) < 4:
         return para
@@ -193,7 +133,6 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str]) -> str:
     best_len = 0
     for vstr, text in john_1.items():
         text_clean = re.sub(r"[，。、；：（）　\s]", "", text)
-        # Find common prefix length
         m = 0
         for i in range(min(len(body_clean), len(text_clean))):
             if body_clean[i] == text_clean[i]:
@@ -205,103 +144,154 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str]) -> str:
             best_len = m
     if best_v is None:
         return para
-    # Found a verse match. Split paragraph at first 。 (period) — opener is
-    # the quoted verse text, rest is commentary.
-    # Strip leading circle from para
-    para_no_circ = para[1:].lstrip() if para[0] in _CIRCLE_DIGITS else para
+    para_no_circ = para[1:].lstrip() if para[0] in _CIRCLE_TO_INT else para
     period = para_no_circ.find("。")
     if period == -1 or period > 40:
-        # No period in first 40 chars — pick 12 chars as opener
-        opener = para_no_circ[:12]
-        rest = para_no_circ[12:]
+        opener, rest = para_no_circ[:12], para_no_circ[12:]
     else:
-        opener = para_no_circ[:period + 1]
-        rest = para_no_circ[period + 1:]
+        opener, rest = para_no_circ[: period + 1], para_no_circ[period + 1 :]
     return f"**约翰福音 1:{best_v}。** *{opener}* {rest}".rstrip()
 
 
-def normalize_page(text: str) -> str:
-    out = []
+# ────────────────────────────────────────────────────────────────────────
+# Page-level processing with fn mapping
+# ────────────────────────────────────────────────────────────────────────
+
+def process_page(text: str, fn_counter: int) -> tuple[str, list[tuple[int, str]], int]:
+    """Process one OCR'd page.
+
+    Returns:
+      body_md - body text with `[^N]` kramdown refs in place of `①②③`
+      fn_defs - list of (global_id, text) tuples for this page's footnotes
+      next_counter - updated global fn counter
+
+    Strategy:
+      1) Normalize lines (drop running headers, transform long `## ` lines).
+      2) Promote verse-opener paragraphs.
+      3) Extract footnote def paragraphs (split multi-line concat blocks).
+      4) Assign sequential global IDs to defs.
+      5) In remaining body, replace circled digits with `[^N]` refs using
+         per-page-local→global mapping.
+    """
+    # Step 1: line-level normalization
+    out_lines: list[str] = []
     for line in text.splitlines():
         if any(p.match(line.rstrip()) for p in RUNNING_HDR_PATTERNS):
             continue
-        out.append(fix_inline_h2(line.rstrip(), JOHN_1))
-    text2 = re.sub(r"\n{3,}", "\n\n", "\n".join(out)).strip()
-    # Second pass: paragraph-level promotion to verse-opener form.
+        out_lines.append(fix_inline_h2(line.rstrip(), JOHN_1))
+    text2 = re.sub(r"\n{3,}", "\n\n", "\n".join(out_lines)).strip()
+
+    # Step 2-3: paragraph promote + fn extract
     paras = re.split(r"\n{2,}", text2)
-    promoted = [maybe_promote_verse_opener(p, JOHN_1) for p in paras]
-    return "\n\n".join(promoted)
-
-
-# A line that looks like a footnote *definition*: starts with one of the
-# circled digits, then whitespace, then Chinese / foreign content.
-# Caveat: some verse openers also have `① 这等人不是从血气生的` form, but those
-# will already have been promoted to `**约翰福音 1:N。**` by
-# maybe_promote_verse_opener (called BEFORE this step), so anything still
-# starting with circled-digit-and-space is a footnote.
-_FN_DEF_RE = re.compile(r"^([" + _CIRCLE_DIGITS + r"])[ 　](.+)$")
-
-
-def extract_footnote_defs(text: str) -> tuple[str, list[str]]:
-    """Pull out footnote-definition paragraphs from a section body.
-
-    Paragraphs are separated by blank lines. Within a paragraph, multiple
-    lines starting with circled digits (e.g. `① def`\\n`② def`) are split
-    into separate footnotes since the OCR keeps them in one block.
-
-    Returns (body_without_defs, list_of_def_strings). Each def string is
-    the content after the leading circled digit + whitespace.
-    """
-    paras = re.split(r"\n{2,}", text)
     body_paras: list[str] = []
-    fn_defs: list[str] = []
+    fn_defs: list[tuple[int, str]] = []      # (global_id, text)
+    local_to_global: dict[int, int] = {}     # page-local fn number → global id
+
     for p in paras:
         if not p:
             continue
-        if p.startswith("**约翰福音"):
-            body_paras.append(p)
+        promoted = maybe_promote_verse_opener(p, JOHN_1)
+        if promoted != p or promoted.startswith("**约翰福音"):
+            body_paras.append(promoted)
             continue
-        first_line = p.splitlines()[0]
-        m = _FN_DEF_RE.match(first_line)
+        # Check if it's a footnote-def block
+        first = p.splitlines()[0]
+        m = _FN_DEF_RE.match(first)
         if not m:
             body_paras.append(p)
             continue
-        # Paragraph is a footnote def block. Split its lines: each line
-        # that starts with circled digit is its own footnote; any line
-        # without circled digit is continuation of the previous footnote.
-        cur: list[str] = []
+        # Multi-line fn block: split each line that starts with circled digit
+        cur_lines: list[str] = []
+        cur_local: int | None = None
         for line in p.splitlines():
             mline = _FN_DEF_RE.match(line)
             if mline:
-                if cur:
-                    fn_defs.append("\n".join(cur).strip())
-                cur = [mline.group(2)]
+                if cur_lines and cur_local is not None:
+                    fn_counter += 1
+                    local_to_global[cur_local] = fn_counter
+                    fn_defs.append((fn_counter, " ".join(cur_lines).strip()))
+                circ = mline.group(1)
+                cur_local = _CIRCLE_TO_INT[circ]
+                cur_lines = [mline.group(2)]
             else:
-                cur.append(line)
-        if cur:
-            fn_defs.append("\n".join(cur).strip())
-    return "\n\n".join(body_paras), fn_defs
+                cur_lines.append(line.strip())
+        if cur_lines and cur_local is not None:
+            fn_counter += 1
+            local_to_global[cur_local] = fn_counter
+            fn_defs.append((fn_counter, " ".join(cur_lines).strip()))
+
+    body = "\n\n".join(body_paras)
+
+    # Step 5: replace inline circled digits in body with `[^N]` refs.
+    # We process digits in descending order so larger numbers don't
+    # accidentally match a substring of smaller ones (though circled
+    # digits are single Unicode chars, this is just defensive).
+    def replace_circle(ch: str) -> str:
+        local = _CIRCLE_TO_INT.get(ch)
+        if local is None:
+            return ch
+        g = local_to_global.get(local)
+        if g is None:
+            # Orphan ref — no matching def on this page. Strip.
+            return ""
+        return f"[^{g}]"
+
+    body = "".join(replace_circle(c) if c in _CIRCLE_TO_INT else c for c in body)
+
+    return body, fn_defs, fn_counter
 
 
-def load_pages(start: int, end: int) -> tuple[str, list[str]]:
-    """Concatenate OCR'd pages [start, end] (1-based, inclusive).
-    Returns (body_md, footnote_defs_list).
-    """
-    body_parts = []
-    all_fns: list[str] = []
+def load_pages(start: int, end: int, fn_counter: int) -> tuple[str, list[tuple[int, str]], int]:
+    body_parts: list[str] = []
+    all_defs: list[tuple[int, str]] = []
     for p in range(start, end + 1):
         f = REPO / f"calvin_raw/john-scan/ocr/page_{p:04d}.md"
         if not f.exists():
             continue
-        page = normalize_page(f.read_text(encoding="utf-8"))
-        if not page:
-            continue
-        body, fns = extract_footnote_defs(page)
+        body, defs, fn_counter = process_page(
+            f.read_text(encoding="utf-8"), fn_counter
+        )
         if body:
             body_parts.append(body)
-        all_fns.extend(fns)
-    return "\n\n".join(body_parts), all_fns
+        all_defs.extend(defs)
+    return "\n\n".join(body_parts), all_defs, fn_counter
 
+
+# ────────────────────────────────────────────────────────────────────────
+# Long-paragraph splitting (Gate 6)
+# ────────────────────────────────────────────────────────────────────────
+
+def split_long_paragraphs(text: str, max_len: int = 1400) -> str:
+    """Split paragraphs longer than max_len at sentence boundaries (。).
+
+    Targets pdf-pipeline Gate 6: no line > 1500 chars (we use 1400 as a
+    safer threshold).
+    """
+    paras = re.split(r"\n{2,}", text)
+    out: list[str] = []
+    for p in paras:
+        if len(p) <= max_len or "\n" in p.strip():
+            out.append(p)
+            continue
+        # Split into sentences keeping the 。 attached.
+        sentences = re.split(r"(?<=。)", p)
+        chunks: list[str] = []
+        cur = ""
+        for s in sentences:
+            if len(cur) + len(s) > max_len and cur:
+                chunks.append(cur)
+                cur = s
+            else:
+                cur += s
+        if cur:
+            chunks.append(cur)
+        out.extend(chunks)
+    return "\n\n".join(out)
+
+
+# ────────────────────────────────────────────────────────────────────────
+# Main assemble
+# ────────────────────────────────────────────────────────────────────────
 
 def build_chapter_md() -> str:
     fm = (
@@ -311,7 +301,7 @@ def build_chapter_md() -> str:
         'book_name: "约翰福音（扫描版）"\n'
         "chapter: 1\n"
         "header-img: psalm-bg-mountain.jpg\n"
-        "date: 2026-06-03 15:10\n"
+        "date: 2026-06-03 16:00\n"
         'prev_section: preface\n'
         'prev_label: "序言"\n'
         'next_section: 2\n'
@@ -319,21 +309,25 @@ def build_chapter_md() -> str:
         "---\n\n"
     )
     body = ["# 约翰福音 1 —— 道成肉身\n"]
-    chapter_fns: list[str] = []
+    all_defs: list[tuple[int, str]] = []
+    fn_counter = 0
     for sec in SECTIONS:
         v_lo, v_hi = sec["verses"]
         body.append(f'## 约翰福音 1:{v_lo}-{v_hi} —— {sec["title"]}\n')
-        body.append(scripture_box(sec["verses"]))
-        body.append("")
-        comm, sec_fns = load_pages(*sec["pages"])
+        body.append(scripture_block(sec["verses"]))
+        comm, sec_defs, fn_counter = load_pages(*sec["pages"], fn_counter)
+        comm = split_long_paragraphs(comm)
         body.append(comm)
         body.append("")
-        chapter_fns.extend(sec_fns)
-    if chapter_fns:
-        body.append("---\n")
-        body.append("## 脚注\n")
-        for i, fn in enumerate(chapter_fns, 1):
-            body.append(f"**{i}.** {fn}")
+        all_defs.extend(sec_defs)
+
+    # Footnote definitions — kramdown auto-renders them as a numbered list
+    # at the very bottom with backlinks. Two leading newlines before defs
+    # avoid the setext-h2 ambiguity (—— vs ---).
+    if all_defs:
+        body.append("")
+        for gid, text in all_defs:
+            body.append(f"[^{gid}]: {text}")
             body.append("")
     return fm + "\n".join(body) + "\n"
 
@@ -342,11 +336,20 @@ def main() -> int:
     out = REPO / "calvin/john-scan/1.md"
     content = build_chapter_md()
     out.write_text(content, encoding="utf-8")
-    print(f"wrote {out} ({len(content):,} chars)")
-    # quick stats
     n_sections = content.count("## 约翰福音 1:")
-    n_boxes = content.count('<div class="scripture-box">')
-    print(f"  sections: {n_sections}  scripture-boxes: {n_boxes}")
+    n_boxes = content.count('class="scripture-box"')
+    n_anchors = content.count('class="scripture-anchor"')
+    n_fn_refs = len(set(re.findall(r"\[\^(\d+)\](?!:)", content)))
+    n_fn_defs = len(re.findall(r"^\[\^(\d+)\]: ", content, re.MULTILINE))
+    long_lines = [
+        (i + 1, len(line))
+        for i, line in enumerate(content.splitlines())
+        if i > 20 and len(line) > 1500
+    ]
+    print(f"wrote {out} ({len(content):,} chars)")
+    print(f"  sections={n_sections}  boxes={n_boxes}  anchors={n_anchors}")
+    print(f"  fn refs unique={n_fn_refs}  fn defs={n_fn_defs}")
+    print(f"  long lines>1500: {len(long_lines)} {long_lines[:3]}")
     return 0
 
 
