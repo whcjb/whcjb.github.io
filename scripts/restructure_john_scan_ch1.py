@@ -178,32 +178,39 @@ def _verse_for_opener(opener_clean: str, john_1: dict[str, str],
     `_normalize_for_match`. CUV verse texts are normalized on the fly.
 
     If `verse_range` is given (e.g. (35, 51) for section 6), only verses
-    in that range are considered — drastically reduces ambiguity when
-    opener is short (e.g. "拉比" appears in both v38 and v49 but only
-    v38 is in section 6's range).
+    in that range are considered.
 
-    Returns None if no match. If multiple verses match, returns the
-    earliest one (Calvin's reading order).
+    Tries the full opener first; if no match, progressively shortens
+    from the right (removes one CJK char at a time, min 4 chars) to
+    accommodate cases where Calvin uses an alternative transliteration
+    (e.g. "伯大巴喇" vs CUV "伯大尼") — the shared prefix
+    「这是在约旦河外」 still matches.
     """
     min_len = 2 if verse_range else 3
     if len(opener_clean) < min_len:
         return None
-    matches: list[int] = []
-    for vstr, text in john_1.items():
-        v = int(vstr)
-        if verse_range is not None and not (verse_range[0] <= v <= verse_range[1]):
+
+    candidates = [opener_clean]
+    # Shorter prefixes (longest first) — try down to 4 chars or min_len.
+    cutoff = max(min_len, 4)
+    for n in range(len(opener_clean) - 1, cutoff - 1, -1):
+        candidates.append(opener_clean[:n])
+
+    for opener in candidates:
+        matches: list[int] = []
+        for vstr, text in john_1.items():
+            v = int(vstr)
+            if verse_range is not None and not (verse_range[0] <= v <= verse_range[1]):
+                continue
+            if opener in _normalize_for_match(text):
+                matches.append(v)
+        if not matches:
             continue
-        if opener_clean in _normalize_for_match(text):
-            matches.append(v)
-    if not matches:
-        return None
-    if len(matches) == 1:
-        return matches[0]
-    # Ambiguous: pick earliest. Threshold is more permissive (>=2) when a
-    # verse_range is supplied, since the range already narrows candidates.
-    threshold = 2 if verse_range else 3
-    if len(opener_clean) >= threshold:
-        return min(matches)
+        if len(matches) == 1:
+            return matches[0]
+        threshold = 2 if verse_range else 3
+        if len(opener) >= threshold:
+            return min(matches)
     return None
 
 
@@ -536,7 +543,15 @@ def build_chapter_md() -> str:
             if prev_last and prev_last[-1] not in _TERM_PUNCT:
                 prev_paras[-1] = prev_last + cur_first
             else:
-                prev_paras.append(cur_first)
+                # Re-promote with the prev section's verse_range now that
+                # the paragraph is in the correct section — verse 27 etc.
+                # didn't get promoted on first pass because it was inside
+                # section 5 (range 29-34) which excluded it.
+                prev_range = SECTIONS[i - 1]["verses"]
+                cur_first_promoted = maybe_promote_verse_opener(
+                    cur_first, JOHN_1, prev_range
+                )
+                prev_paras.append(cur_first_promoted)
             section_bodies[i - 1] = "\n\n".join(prev_paras)
             section_bodies[i] = "\n\n".join(cur_paras[1:])
 
