@@ -239,12 +239,17 @@ def _maybe_match_elided(body: str, john_1: dict[str, str],
     return None
 
 
-# OCR pattern: `**N、opener。** rest` or `**N. opener。** rest`
-# Galatians-style: bold-wrapped verse opener with explicit verse number
-# inside the bold. We recognize and rewrite it directly without needing
-# CUV fuzzy match (verse number is given).
+# OCR pattern: `**N、opener。** rest` (bold-wrapped) OR
+# `N、opener。 rest` (no bold) — both have explicit verse number N + 、/./, +
+# opener phrase. Galatians OCR sometimes wraps with **, sometimes not.
+# We recognize either form and rewrite directly without needing CUV fuzzy
+# match (verse number is given by N).
 _BOLD_VERSE_OPENER_RE = re.compile(
     r"^\*\*\s*(\d{1,3})\s*[、.,]\s*([^\*]+?)\s*\*\*\s*(.*)$",
+    re.DOTALL,
+)
+_BARE_VERSE_OPENER_RE = re.compile(
+    r"^(\d{1,3})[、.,]\s*([^。？！]{2,40}[。？！])\s*(.*)$",
     re.DOTALL,
 )
 
@@ -272,16 +277,25 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
     if len(para) < 12:
         return para
 
-    # Form 1: `**N、phrase。** rest` — strong signal, use the N directly
+    # Form 1: `**N、phrase。** rest` — bold-wrapped, verse N explicit
     m = _BOLD_VERSE_OPENER_RE.match(para)
     if m:
         n_str, opener, rest = m.group(1), m.group(2).strip(), m.group(3).lstrip()
         v = int(n_str)
-        # Verify the verse is in chapter range (and section range if given)
         max_v = len(john_1)
         if 1 <= v <= max_v and (verse_range is None or
                                   verse_range[0] <= v <= verse_range[1]):
             return f"**{book_cn} {chapter}:{v}。** *{opener}。* {rest}".rstrip()
+
+    # Form 2: `N、phrase。 rest` — no bold, but explicit N + 、/./, + phrase
+    m = _BARE_VERSE_OPENER_RE.match(para)
+    if m:
+        n_str, opener_with_punct, rest = m.group(1), m.group(2).strip(), m.group(3).lstrip()
+        v = int(n_str)
+        max_v = len(john_1)
+        if 1 <= v <= max_v and (verse_range is None or
+                                  verse_range[0] <= v <= verse_range[1]):
+            return f"**{book_cn} {chapter}:{v}。** *{opener_with_punct}* {rest}".rstrip()
 
     body = _strip_corrupt_marker(para)
     first_sent, rest = _split_first_sentence(body)
