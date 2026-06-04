@@ -187,11 +187,14 @@ def _patch_running_headers(book_cn: str):
         # `# 歌罗西书注释`
         re.compile(rf"^#\s*{re.escape(book_cn)}注释\s*$"),
         # `# 歌罗西书·第N章` — per-page running header in scanned books
-        re.compile(rf"^#\s*{re.escape(book_cn)}\s*[·•‧]\s*第[一二三四五六七八九十]+章\s*$"),
+        re.compile(rf"^#?\s*{re.escape(book_cn)}\s*[·•‧]\s*第[一二三四五六七八九十]+章\s*$"),
+        # `# 歌罗西书·纲要` (running header form, with `·`)
+        re.compile(rf"^#?\s*{re.escape(book_cn)}\s*[·•‧]\s*纲要\s*$"),
+        re.compile(rf"^#?\s*{re.escape(book_cn)}\s*[·•‧]\s*序言\s*$"),
+        re.compile(rf"^#?\s*{re.escape(book_cn)}\s*[·•‧]\s*前言\s*$"),
         # `# 歌罗西书`
         re.compile(rf"^#\s*{re.escape(book_cn)}\s*$"),
         # Non-# prefixed variants
-        re.compile(rf"^{re.escape(book_cn)}\s*[·•‧]\s*第[一二三四五六七八九十]+章\s*$"),
         re.compile(rf"^加尔文文集\s*[·•‧]\s*{re.escape(book_cn)}注释\s*$"),
         # Translator credit lines often appearing at chapter start
         re.compile(r"^[^\s#]{1,4}[译校].\s*$"),
