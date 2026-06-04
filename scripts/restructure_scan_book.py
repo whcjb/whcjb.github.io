@@ -245,7 +245,8 @@ def _restore_running_headers(saved):
 
 
 def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
-                              chapter_verses: dict, book_cn: str) -> tuple[list[str], list]:
+                              chapter_verses: dict, book_cn: str,
+                              chapter: int = 1) -> tuple[list[str], list]:
     import restructure_john_scan_ch1 as ch1mod
     saved_verses = ch1mod.JOHN_1
     saved_hdrs = _patch_running_headers(book_cn)
@@ -262,7 +263,7 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
             raw_text = f.read_text(encoding="utf-8")
             raw_text = _strip_bible_text_dumps(raw_text, book_cn)
             body, defs, fn_counter = process_page(
-                raw_text, fn_counter, all_vr
+                raw_text, fn_counter, all_vr, book_cn, chapter
             )
             if not body:
                 all_defs.extend(defs)
@@ -305,7 +306,7 @@ def build_chapter_md(book_id: str, book_cn: str, cuv_book: str,
         pages = sorted((raw_dir / "ocr").glob("page_*.md"))
         page_hi = int(re.search(r"page_(\d+)", pages[-1].name).group(1)) if pages else page_lo
 
-    paras, all_defs = load_chapter_paragraphs(raw_dir, page_lo, page_hi, chapter_verses, book_cn)
+    paras, all_defs = load_chapter_paragraphs(raw_dir, page_lo, page_hi, chapter_verses, book_cn, chapter)
     # Drop Bible-text dumps (OCR captured full chapter Bible text in one
     # paragraph; scripture-box already renders the clean CUV version).
     paras = [p for p in paras if not looks_like_bible_text_dump(p)]

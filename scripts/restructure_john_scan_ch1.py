@@ -239,18 +239,49 @@ def _maybe_match_elided(body: str, john_1: dict[str, str],
     return None
 
 
-def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
-                                 verse_range: tuple[int, int] | None = None) -> str:
-    """Detect a paragraph opening with a John 1 verse quote → rewrite as
-    `**约翰福音 1:N。** *quote。* commentary` for verse-nav JS pickup.
+# OCR pattern: `**N、opener。** rest` or `**N. opener。** rest`
+# Galatians-style: bold-wrapped verse opener with explicit verse number
+# inside the bold. We recognize and rewrite it directly without needing
+# CUV fuzzy match (verse number is given).
+_BOLD_VERSE_OPENER_RE = re.compile(
+    r"^\*\*\s*(\d{1,3})\s*[、.,]\s*([^\*]+?)\s*\*\*\s*(.*)$",
+    re.DOTALL,
+)
 
-    If `verse_range` is given, only consider verses in that range (used
-    per-section to disambiguate short openers like '拉比').
+
+def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
+                                 verse_range: tuple[int, int] | None = None,
+                                 book_cn: str = "约翰福音",
+                                 chapter: int = 1) -> str:
+    """Detect a paragraph opening with a verse quote → rewrite as
+    `**{book_cn} {ch}:N。** *quote。* commentary` for verse-nav JS pickup.
+
+    Forms recognized:
+      1) `**N、phrase。** rest`  (OCR bold-wrapped, verse N explicit)
+      2) `①phrase。 rest`        (leading circled digit, fuzzy match)
+      3) `phrase。 rest`          (no marker, fuzzy match to CUV)
+
+    `verse_range` (lo, hi): only accept v in range (disambiguates short
+    openers like '拉比').
     """
-    if not para or para.startswith("[^") or para.startswith("**约翰福音"):
+    if not para or para.startswith("[^"):
+        return para
+    # Already in promoted form — skip
+    if re.match(rf"^\*\*{re.escape(book_cn)} \d+:\d+。\*\*", para):
         return para
     if len(para) < 12:
         return para
+
+    # Form 1: `**N、phrase。** rest` — strong signal, use the N directly
+    m = _BOLD_VERSE_OPENER_RE.match(para)
+    if m:
+        n_str, opener, rest = m.group(1), m.group(2).strip(), m.group(3).lstrip()
+        v = int(n_str)
+        # Verify the verse is in chapter range (and section range if given)
+        max_v = len(john_1)
+        if 1 <= v <= max_v and (verse_range is None or
+                                  verse_range[0] <= v <= verse_range[1]):
+            return f"**{book_cn} {chapter}:{v}。** *{opener}。* {rest}".rstrip()
 
     body = _strip_corrupt_marker(para)
     first_sent, rest = _split_first_sentence(body)
@@ -267,7 +298,7 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
     if v is None:
         return para
 
-    return f"**约翰福音 1:{v}。** *{first_sent}* {rest}".rstrip()
+    return f"**{book_cn} {chapter}:{v}。** *{first_sent}* {rest}".rstrip()
 
 
 # ────────────────────────────────────────────────────────────────────────
@@ -275,7 +306,9 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
 # ────────────────────────────────────────────────────────────────────────
 
 def process_page(text: str, fn_counter: int,
-                  verse_range: tuple[int, int] | None = None) -> tuple[str, list[tuple[int, str]], int]:
+                  verse_range: tuple[int, int] | None = None,
+                  book_cn: str = "约翰福音",
+                  chapter: int = 1) -> tuple[str, list[tuple[int, str]], int]:
     """Process one OCR'd page.
 
     Returns:
@@ -308,7 +341,7 @@ def process_page(text: str, fn_counter: int,
     for p in paras:
         if not p:
             continue
-        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range)
+        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range, book_cn, chapter)
         if promoted != p or promoted.startswith("**约翰福音"):
             body_paras.append(promoted)
             continue
