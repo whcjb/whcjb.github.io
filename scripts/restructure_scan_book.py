@@ -104,14 +104,18 @@ def _looks_like_bible_fragment(text: str) -> bool:
 
     Match if any of:
       - Starts with `N. <CJK>` or `N、<CJK>` (verse marker w/ separator)
-      - Starts with `N<CJK>` directly (digit fused to verse text, no
-        separator) — OCR style for some Chinese editions
+      - Starts with `N <CJK>` (digit + WHITESPACE + CJK) — OCR style for
+        Ephesians-like books where verse number is separated by space
+      - Starts with `N<CJK>` directly (digit fused to verse text)
       - Short paragraph with dense `、` list separators (4+ in <100 chars)
     """
     s = text.lstrip()
     if not s:
         return False
     if re.match(r"^\d{1,3}[.、,]\s*[一-鿿]", s):
+        return True
+    # Digit + whitespace + CJK (Ephesians style: `1 奉神旨意...`)
+    if re.match(r"^\d{1,3}\s+[一-鿿]", s):
         return True
     # Bare digit fused to CJK (no separator) — single-verse Bible fragment
     if re.match(r"^\d{1,3}[一-鿿]", s):
@@ -259,24 +263,55 @@ def _book_abbrs(book_cn: str) -> list[str]:
     return out
 
 
-def _convert_pending_verse_labels(text: str, book_cn: str) -> str:
-    """Some scanned commentaries use a short verse-label line (e.g.
-    `弗 1：3` for Ephesians) BEFORE the paragraph that discusses that
-    verse. The label itself isn't content — it just tells us which verse
-    the next paragraph is about. Convert these to inline verse openers.
+def _is_bible_verse_text(text: str, cuv_book: str, ch: int, v: int,
+                          threshold: float = 0.6) -> bool:
+    """Heuristic: does `text` closely match CUV book {cuv_book} ch {ch}
+    verse {v}? Used to filter out OCR-captured Bible text passages that
+    follow a `弗 N：M` label (they aren't commentary — they're the verse
+    itself, which the scripture-box already shows).
+
+    Match: > threshold of the CUV verse's CJK characters appear in `text`
+    (in order), AND text length is comparable (<2.5x verse length).
+    """
+    try:
+        verse = CUV[cuv_book][str(ch)][str(v)]
+    except (KeyError, IndexError):
+        return False
+    NOISE = re.compile(r"[，。、；：（）！？「」『』　\s\"“”'‘’·‧·…]")
+    cuv_clean = NOISE.sub("", verse)
+    text_clean = NOISE.sub("", text)
+    if not cuv_clean or len(text_clean) > len(cuv_clean) * 2.5:
+        return False
+    # Order-preserving substring overlap
+    i = j = 0
+    matched = 0
+    while i < len(cuv_clean) and j < len(text_clean):
+        if cuv_clean[i] == text_clean[j]:
+            matched += 1
+            i += 1
+            j += 1
+        else:
+            j += 1
+    return matched / len(cuv_clean) >= threshold
+
+
+def _convert_pending_verse_labels(text: str, book_cn: str,
+                                    cuv_book: str | None = None) -> str:
+    """Convert short verse-label lines (e.g. `弗 1：3`) + following paragraph
+    into inline verse openers.
 
     Algorithm:
-      - Walk paragraphs in order.
-      - If a paragraph matches `^<abbr> N：M\\s*$` (only the ref), capture
-        the verse and DROP the paragraph.
-      - Carry the verse forward to the NEXT non-empty body paragraph: if
-        that paragraph starts with `**phrase**`, rewrite to
-        `**以弗所书 N:M。** *phrase* rest`.
-      - If the next paragraph already starts with the standard form
-        `**<book_cn> N:M。**`, leave it alone.
+      - Walk paragraphs.
+      - If a paragraph is JUST `<abbr> N：M` (verse label), capture and drop.
+      - For the NEXT body paragraph:
+        * If it closely matches the CUV verse N:M text → it's a Bible-text
+          dump (the verse itself, not Calvin commentary), DROP it too.
+          (scripture-box already renders the clean CUV.)
+        * Else if it starts with `**phrase**`, rewrite to
+          `**{book_cn} N:M。** *phrase* rest`.
+        * Else plain prose: prepend `**{book_cn} N:M。**`.
     """
     abbrs = _book_abbrs(book_cn)
-    # Pattern: optional book abbr + N + full/half-width colon + M
     label_re = re.compile(
         r"^(?:" + "|".join(re.escape(a) for a in abbrs) + r")?\s*"
         r"(\d{1,3})\s*[：:]\s*(\d{1,3})\s*$"
@@ -289,25 +324,38 @@ def _convert_pending_verse_labels(text: str, book_cn: str) -> str:
         if not s:
             out.append(p)
             continue
-        # Check if this paragraph is a verse-label only
         if "\n" not in s and len(s) < 20:
             m = label_re.match(s)
             if m:
                 pending = (int(m.group(1)), int(m.group(2)))
-                continue  # drop label line
-        # If we have pending verse, prepend it
+                continue
         if pending is not None:
             ch, v = pending
-            # Skip if already has standard form opener
+            # Drop if this paragraph IS the Bible verse text itself
+            # (scripture-box already shows CUV)
+            if cuv_book is not None and _is_bible_verse_text(s, cuv_book, ch, v):
+                pending = None
+                continue
+            # Drop if this paragraph is a Bible-text fragment (e.g.
+            # `1 奉神旨意...`, `2 愿恩惠...`) — the pending label was
+            # before the FULL Bible passage, so each verse line is a
+            # fragment that scripture-box will render cleanly.
+            if _looks_like_bible_fragment(s):
+                pending = None
+                continue
+            # Skip if this is a non-commentary heading (e.g. `# 第一章`)
+            # — don't attach the verse marker to a chapter heading.
+            if s.startswith("#"):
+                # Keep heading as-is, KEEP pending for the NEXT paragraph.
+                out.append(s)
+                continue
             if not re.match(rf"^\*\*{re.escape(book_cn)} \d+:\d+。\*\*", s):
-                # If starts with **phrase**, extract phrase and rewrite
                 m_bold = re.match(r"^\*\*([^*\n]+?)\*\*\s*(.*)$", s, re.DOTALL)
                 if m_bold:
                     phrase = m_bold.group(1).strip()
                     rest = m_bold.group(2).lstrip()
                     s = f"**{book_cn} {ch}:{v}。** *{phrase}* {rest}".rstrip()
                 else:
-                    # Plain prose continuation — prepend just the verse marker
                     s = f"**{book_cn} {ch}:{v}。** {s}"
             pending = None
         out.append(s)
@@ -351,7 +399,8 @@ def _restore_running_headers(saved):
 
 def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
                               chapter_verses: dict, book_cn: str,
-                              chapter: int = 1) -> tuple[list[str], list]:
+                              chapter: int = 1,
+                              cuv_book: str | None = None) -> tuple[list[str], list]:
     import restructure_john_scan_ch1 as ch1mod
     saved_verses = ch1mod.JOHN_1
     saved_hdrs = _patch_running_headers(book_cn)
@@ -367,7 +416,7 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
                 continue
             raw_text = f.read_text(encoding="utf-8")
             raw_text = _strip_bible_text_dumps(raw_text, book_cn)
-            raw_text = _convert_pending_verse_labels(raw_text, book_cn)
+            raw_text = _convert_pending_verse_labels(raw_text, book_cn, cuv_book)
             body, defs, fn_counter = process_page(
                 raw_text, fn_counter, all_vr, book_cn, chapter
             )
@@ -412,7 +461,7 @@ def build_chapter_md(book_id: str, book_cn: str, cuv_book: str,
         pages = sorted((raw_dir / "ocr").glob("page_*.md"))
         page_hi = int(re.search(r"page_(\d+)", pages[-1].name).group(1)) if pages else page_lo
 
-    paras, all_defs = load_chapter_paragraphs(raw_dir, page_lo, page_hi, chapter_verses, book_cn, chapter)
+    paras, all_defs = load_chapter_paragraphs(raw_dir, page_lo, page_hi, chapter_verses, book_cn, chapter, cuv_book)
     # Drop Bible-text dumps (OCR captured full chapter Bible text in one
     # paragraph; scripture-box already renders the clean CUV version).
     paras = [p for p in paras if not looks_like_bible_text_dump(p)]
