@@ -96,21 +96,47 @@ def verse_prefix_re(book_cn: str) -> re.Pattern:
     return _VERSE_PREFIX_RE_CACHE[book_cn]
 
 
-def _strip_bible_text_dumps(text: str) -> str:
-    """Drop paragraphs from raw OCR that look like the chapter's Bible
-    text passage (many circled-digit verse markers in close proximity).
+_BARE_VERSE_NUM_RE = re.compile(r"(?:^|[^0-9])(\d{1,3})\.\s*[一-鿿]")
 
-    Detect: paragraph has >= 5 circled digits AND > 300 chars. The
-    scripture-box already renders the clean CUV version, so this OCR'd
-    Bible dump is redundant.
+
+def _strip_bible_text_dumps(text: str, book_cn: str | None = None) -> str:
+    """Drop paragraphs from raw OCR that look like the chapter's Bible
+    text passage. Two detection forms:
+      1) Many circled-digit verse markers in close proximity: paragraph
+         has >= 5 circled digits AND > 300 chars (John/Colossians style).
+      2) Many bare `N.` verse markers + paragraph length: >= 5 bare
+         numbered markers AND > 200 chars (Galatians style — OCR prompt
+         asked for cleaner output so verses come as `1. 作使徒... 2. 和`).
+
+    Also drops the Bible-reference heading line that often precedes the
+    dump (e.g. `加拉太书 1:1-5` alone on a line).
+
+    scripture-box already renders the clean CUV version, so these OCR'd
+    Bible dumps are redundant.
     """
     from restructure_john_scan_ch1 import _CIRCLE_TO_INT
     paras = re.split(r"\n{2,}", text)
     out: list[str] = []
+    # Pattern for `<book_cn> N:N-N` standalone Bible-ref heading
+    ref_re = None
+    if book_cn:
+        ref_re = re.compile(rf"^{re.escape(book_cn)}\s+\d+:\d+(?:[-－—]\d+)?\s*$")
     for p in paras:
+        s = p.strip()
+        if ref_re and ref_re.match(s):
+            continue  # drop bare bible-ref heading
         n_circles = sum(1 for c in p if c in _CIRCLE_TO_INT)
         if n_circles >= 5 and len(p) > 300:
-            continue  # drop
+            continue
+        n_bare = len(_BARE_VERSE_NUM_RE.findall(p))
+        # Bible-text dump: 4+ bare `N. CJK` markers in close succession.
+        # 4 is a safer threshold than 5 because Calvin commentary doesn't
+        # typically enumerate 4 sequential CJK-starting items as `1. X
+        # 2. Y 3. Z 4. W` in one paragraph; whereas a Bible passage with
+        # 4 consecutive verses on one OCR'd line fits this pattern. The
+        # scripture-box already renders the clean CUV.
+        if n_bare >= 4:
+            continue
         out.append(p)
     return "\n\n".join(out)
 
@@ -234,7 +260,7 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
             if not f.exists():
                 continue
             raw_text = f.read_text(encoding="utf-8")
-            raw_text = _strip_bible_text_dumps(raw_text)
+            raw_text = _strip_bible_text_dumps(raw_text, book_cn)
             body, defs, fn_counter = process_page(
                 raw_text, fn_counter, all_vr
             )
