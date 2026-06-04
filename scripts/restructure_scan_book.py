@@ -99,43 +99,60 @@ def verse_prefix_re(book_cn: str) -> re.Pattern:
 _BARE_VERSE_NUM_RE = re.compile(r"(?:^|[^0-9])(\d{1,3})\.\s*[一-鿿]")
 
 
+def _looks_like_bible_fragment(text: str) -> bool:
+    """Bible-text fragment heuristic: starts with `N. <CJK>` (verse marker)
+    or is a continuation that has many `、`-style list separators in
+    short space (Bible verse passages have lots: 「奸淫、污秽、邪荡」).
+    """
+    s = text.lstrip()
+    if not s:
+        return False
+    # Starts with a verse marker `N.` or `N、`
+    if re.match(r"^\d{1,3}[.、,]\s*[一-鿿]", s):
+        return True
+    # Continuation: dense list-style separators `、` (4+ in <100 chars)
+    if len(s) < 100 and s.count("、") >= 4:
+        return True
+    return False
+
+
 def _strip_bible_text_dumps(text: str, book_cn: str | None = None) -> str:
-    """Drop paragraphs from raw OCR that look like the chapter's Bible
-    text passage. Two detection forms:
-      1) Many circled-digit verse markers in close proximity: paragraph
-         has >= 5 circled digits AND > 300 chars (John/Colossians style).
-      2) Many bare `N.` verse markers + paragraph length: >= 5 bare
-         numbered markers AND > 200 chars (Galatians style — OCR prompt
-         asked for cleaner output so verses come as `1. 作使徒... 2. 和`).
+    """Drop OCR Bible-text passages (already rendered by scripture-box).
 
-    Also drops the Bible-reference heading line that often precedes the
-    dump (e.g. `加拉太书 1:1-5` alone on a line).
-
-    scripture-box already renders the clean CUV version, so these OCR'd
-    Bible dumps are redundant.
+    Detection forms:
+      1) Paragraph has >= 5 circled digits AND > 300 chars (John style).
+      2) Paragraph has >= 4 bare `N.` verse markers (Colossians style).
+      3) Paragraph EITHER starts with `N. <CJK>` verse-marker pattern
+         OR is short with dense `、` separators (Galatians style, where
+         OCR splits the Bible passage into 2-3 small lines that don't
+         individually hit thresholds 1/2).
+      4) Standalone `<book_cn> N:N-N` Bible-ref heading line — drop
+         (no-space form `加拉太书5:19-21` also accepted).
     """
     from restructure_john_scan_ch1 import _CIRCLE_TO_INT
     paras = re.split(r"\n{2,}", text)
     out: list[str] = []
-    # Pattern for `<book_cn> N:N-N` standalone Bible-ref heading
     ref_re = None
     if book_cn:
-        ref_re = re.compile(rf"^{re.escape(book_cn)}\s+\d+:\d+(?:[-－—]\d+)?\s*$")
+        # Allow optional whitespace between book name and verse range
+        ref_re = re.compile(
+            rf"^{re.escape(book_cn)}\s*\d+:\d+(?:[-－—]\d+)?\s*$"
+        )
     for p in paras:
         s = p.strip()
         if ref_re and ref_re.match(s):
-            continue  # drop bare bible-ref heading
+            continue
         n_circles = sum(1 for c in p if c in _CIRCLE_TO_INT)
         if n_circles >= 5 and len(p) > 300:
             continue
         n_bare = len(_BARE_VERSE_NUM_RE.findall(p))
-        # Bible-text dump: 4+ bare `N. CJK` markers in close succession.
-        # 4 is a safer threshold than 5 because Calvin commentary doesn't
-        # typically enumerate 4 sequential CJK-starting items as `1. X
-        # 2. Y 3. Z 4. W` in one paragraph; whereas a Bible passage with
-        # 4 consecutive verses on one OCR'd line fits this pattern. The
-        # scripture-box already renders the clean CUV.
         if n_bare >= 4:
+            continue
+        # Form 3: Bible-text fragment (short, list-style or N. opener).
+        # Apply only if no `**` (real verse-opener commentary) markup —
+        # commentary openers like `**1、作使徒的保罗。**` look similar but
+        # would have ** wrapping and proper sentence structure.
+        if "**" not in p and len(p) < 200 and _looks_like_bible_fragment(p):
             continue
         out.append(p)
     return "\n\n".join(out)

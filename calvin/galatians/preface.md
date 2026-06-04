@@ -5,7 +5,7 @@ book_name: "加拉太书"
 chapter: 0
 header-img: psalm-bg-mountain.jpg
 title: "序言"
-date: 2026-06-04 14:41
+date: 2026-06-04 14:52
 next_section: 1
 next_label: "第一章"
 ---
