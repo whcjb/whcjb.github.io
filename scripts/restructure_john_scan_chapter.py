@@ -27,7 +27,7 @@ from restructure_john_scan_ch1 import (
     process_page, _join_cross_page, _strip_corrupt_marker,
     _split_first_sentence, _normalize_for_match, _verse_for_opener,
     maybe_promote_verse_opener,
-    split_long_paragraphs, _TERM_PUNCT,
+    split_long_paragraphs, _TERM_PUNCT, _now,
 )
 
 
@@ -201,7 +201,7 @@ def build_chapter_md(chapter: int) -> str:
         'book_name: "约翰福音（扫描版）"',
         f"chapter: {chapter}",
         "header-img: psalm-bg-mountain.jpg",
-        "date: 2026-06-03 18:30",
+        f"date: {_now()}",
         f"prev_section: {prev_section}",
         f'prev_label: "{prev_label}"',
     ]

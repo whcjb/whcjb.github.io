@@ -21,10 +21,15 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import datetime as _dt
 import json
 import re
 import sys
 from pathlib import Path
+
+
+def _now() -> str:
+    return _dt.datetime.now().strftime("%Y-%m-%d %H:%M")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from restructure_john_scan_ch1 import (
@@ -300,7 +305,7 @@ def build_chapter_md(book_id: str, book_cn: str, cuv_book: str,
         f'book_name: "{book_cn}"',
         f"chapter: {chapter}",
         f"header-img: {header_img}",
-        f"date: 2026-06-03 19:00",
+        f"date: {_now()}",
         f"prev_section: {prev_section}",
         f'prev_label: "{prev_label}"',
     ]
@@ -350,7 +355,7 @@ def _build_preface_md_inner(book_id: str, book_cn: str, raw_dir: Path,
         "chapter: 0\n"
         f"header-img: {header_img}\n"
         'title: "序言"\n'
-        "date: 2026-06-03 19:00\n"
+        f"date: {_now()}\n"
         'next_section: 1\n'
         'next_label: "第一章"\n'
         "---\n\n"

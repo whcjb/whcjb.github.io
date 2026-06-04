@@ -18,7 +18,7 @@ from pathlib import Path
 # Reuse ch1's pipeline pieces.
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from restructure_john_scan_ch1 import (
-    process_page, _join_cross_page, _TERM_PUNCT,
+    process_page, _join_cross_page, _TERM_PUNCT, _now,
 )
 
 
@@ -35,7 +35,7 @@ def build_preface_md() -> str:
         "chapter: 0\n"
         "header-img: psalm-bg-mountain.jpg\n"
         'title: "序言"\n'
-        "date: 2026-06-03 18:00\n"
+        f"date: {_now()}\n"
         'next_section: 1\n'
         'next_label: "第一章"\n'
         "---\n\n"

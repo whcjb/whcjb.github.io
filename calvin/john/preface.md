@@ -5,7 +5,7 @@ book_name: "约翰福音"
 chapter: 0
 header-img: psalm-bg-mountain.jpg
 title: "序言"
-date: 2026-06-03 18:00
+date: 2026-06-04 10:10
 next_section: 1
 next_label: "第一章"
 ---

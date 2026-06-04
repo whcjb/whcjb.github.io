@@ -17,10 +17,15 @@ Writes:
 """
 from __future__ import annotations
 
+import datetime as _dt
 import json
 import re
 import sys
 from pathlib import Path
+
+
+def _now() -> str:
+    return _dt.datetime.now().strftime("%Y-%m-%d %H:%M")
 
 
 REPO = Path("/Users/yanpeifa/Documents/whcjb.github.io")
@@ -481,7 +486,7 @@ def build_chapter_md() -> str:
         'book_name: "约翰福音（扫描版）"\n'
         "chapter: 1\n"
         "header-img: psalm-bg-mountain.jpg\n"
-        "date: 2026-06-03 16:00\n"
+        f"date: {_now()}\n"
         'prev_section: preface\n'
         'prev_label: "序言"\n'
         'next_section: 2\n'

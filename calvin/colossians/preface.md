@@ -5,7 +5,7 @@ book_name: "歌罗西书"
 chapter: 0
 header-img: psalm-bg-mountain.jpg
 title: "序言"
-date: 2026-06-03 19:00
+date: 2026-06-04 10:32
 next_section: 1
 next_label: "第一章"
 ---
