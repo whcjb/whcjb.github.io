@@ -55,8 +55,13 @@ def _cn(n: int) -> str:
 
 
 def detect_chapter_first_pages(raw_dir: Path) -> dict[int, int]:
-    """Scan OCR pages for `# 第N章` markers; return {ch_num: first_page}."""
-    CN_RE = re.compile(r"^# 第([一二三四五六七八九十]+)章\*?\s*$", re.MULTILINE)
+    """Scan OCR pages for chapter heading markers; return {ch_num: first_page}.
+
+    Matches `# 第N章` OR bare `第N章` (some PDFs/OCR don't emit the
+    leading `#`). Filters out lines that are TOC entries (have dots and
+    page-numbers, e.g. `第一章………………11`).
+    """
+    CN_RE = re.compile(r"^#?\s*第([一二三四五六七八九十]+)章\*?\s*$", re.MULTILINE)
     CN = {'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9,'十':10,
           '十一':11,'十二':12,'十三':13,'十四':14,'十五':15,'十六':16,
           '十七':17,'十八':18,'十九':19,'二十':20,'二十一':21,'二十二':22,
