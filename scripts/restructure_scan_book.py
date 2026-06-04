@@ -296,21 +296,27 @@ def _is_bible_verse_text(text: str, cuv_book: str, ch: int, v: int,
 
 
 def _convert_pending_verse_labels(text: str, book_cn: str,
-                                    cuv_book: str | None = None) -> str:
-    """Convert short verse-label lines (e.g. `弗 1：3`) + following paragraph
-    into inline verse openers.
+                                    cuv_book: str | None = None,
+                                    prev_tail: str = "") -> str:
+    """Strip standalone `<abbr> N：M` page-top running-header labels.
 
-    Algorithm:
-      - Walk paragraphs.
-      - If a paragraph is JUST `<abbr> N：M` (verse label), capture and drop.
-      - For the NEXT body paragraph:
-        * If it closely matches the CUV verse N:M text → it's a Bible-text
-          dump (the verse itself, not Calvin commentary), DROP it too.
-          (scripture-box already renders the clean CUV.)
-        * Else if it starts with `**phrase**`, rewrite to
-          `**{book_cn} N:M。** *phrase* rest`.
-        * Else plain prose: prepend `**{book_cn} N:M。**`.
+    Across all scanned Calvin commentaries we've processed (John,
+    Colossians, Galatians, Ephesians), the short standalone `<abbr> N：M`
+    line is ALWAYS a per-page running header showing the current verse
+    being discussed — never a structural section divider. The actual
+    verse boundaries come from bold lemma openers like
+    `**phrase（N）** ...` or `**N、phrase。** ...` which are handled by
+    `maybe_promote_verse_opener`.
+
+    Previously this function tried to use these labels as verse markers
+    and ended up injecting `**book N:M。**` mid-sentence whenever a label
+    appeared between a page break that split a paragraph (e.g. Eph 1:10
+    was injected between '假使有人辯稱，' on page 16 and '外邦人被選' on
+    page 17). Always-drop is both simpler and correct for our corpus.
+
+    The `prev_tail` / `cuv_book` args are kept for API stability.
     """
+    del cuv_book, prev_tail  # no longer used
     abbrs = _book_abbrs(book_cn)
     label_re = re.compile(
         r"^(?:" + "|".join(re.escape(a) for a in abbrs) + r")?\s*"
@@ -318,47 +324,11 @@ def _convert_pending_verse_labels(text: str, book_cn: str,
     )
     paras = re.split(r"\n{2,}", text)
     out: list[str] = []
-    pending: tuple[int, int] | None = None
     for p in paras:
         s = p.strip()
-        if not s:
-            out.append(p)
+        if s and "\n" not in s and len(s) < 20 and label_re.match(s):
             continue
-        if "\n" not in s and len(s) < 20:
-            m = label_re.match(s)
-            if m:
-                pending = (int(m.group(1)), int(m.group(2)))
-                continue
-        if pending is not None:
-            ch, v = pending
-            # Drop if this paragraph IS the Bible verse text itself
-            # (scripture-box already shows CUV)
-            if cuv_book is not None and _is_bible_verse_text(s, cuv_book, ch, v):
-                pending = None
-                continue
-            # Drop if this paragraph is a Bible-text fragment (e.g.
-            # `1 奉神旨意...`, `2 愿恩惠...`) — the pending label was
-            # before the FULL Bible passage, so each verse line is a
-            # fragment that scripture-box will render cleanly.
-            if _looks_like_bible_fragment(s):
-                pending = None
-                continue
-            # Skip if this is a non-commentary heading (e.g. `# 第一章`)
-            # — don't attach the verse marker to a chapter heading.
-            if s.startswith("#"):
-                # Keep heading as-is, KEEP pending for the NEXT paragraph.
-                out.append(s)
-                continue
-            if not re.match(rf"^\*\*{re.escape(book_cn)} \d+:\d+。\*\*", s):
-                m_bold = re.match(r"^\*\*([^*\n]+?)\*\*\s*(.*)$", s, re.DOTALL)
-                if m_bold:
-                    phrase = m_bold.group(1).strip()
-                    rest = m_bold.group(2).lstrip()
-                    s = f"**{book_cn} {ch}:{v}。** *{phrase}* {rest}".rstrip()
-                else:
-                    s = f"**{book_cn} {ch}:{v}。** {s}"
-            pending = None
-        out.append(s)
+        out.append(p)
     return "\n\n".join(out)
 
 
@@ -410,13 +380,18 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
         all_defs: list = []
         fn_counter = 0
         all_vr = (1, len(chapter_verses))
+        prev_tail = ""
         for p in range(page_lo, page_hi + 1):
             f = raw_dir / f"ocr/page_{p:04d}.md"
             if not f.exists():
                 continue
             raw_text = f.read_text(encoding="utf-8")
             raw_text = _strip_bible_text_dumps(raw_text, book_cn)
-            raw_text = _convert_pending_verse_labels(raw_text, book_cn, cuv_book)
+            raw_text = _convert_pending_verse_labels(
+                raw_text, book_cn, cuv_book, prev_tail=prev_tail
+            )
+            page_paras = [q for q in re.split(r"\n{2,}", raw_text) if q.strip()]
+            prev_tail = page_paras[-1].strip() if page_paras else prev_tail
             body, defs, fn_counter = process_page(
                 raw_text, fn_counter, all_vr, book_cn, chapter
             )

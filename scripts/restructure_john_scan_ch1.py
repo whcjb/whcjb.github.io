@@ -252,6 +252,14 @@ _BARE_VERSE_OPENER_RE = re.compile(
     r"^(\d{1,3})[、.,]\s*([^。？！]{2,40}[。？！])\s*(.*)$",
     re.DOTALL,
 )
+# OCR pattern: `**phrase（N）** rest` (Ephesians scan style) — verse N is
+# embedded as parenthetical at the end of the bold lemma. Accepts both
+# full-width `（N）` and half-width `(N)` (OCR sometimes flips them, cf.
+# `**藉祂的血得蒙救贖(7)**`).
+_PAREN_VERSE_OPENER_RE = re.compile(
+    r"^\*\*\s*([^\*\n（(]+?)\s*[（(]\s*(\d{1,3})\s*[)）]\s*\*\*\s*(.*)$",
+    re.DOTALL,
+)
 
 
 def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
@@ -286,6 +294,17 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
         if 1 <= v <= max_v and (verse_range is None or
                                   verse_range[0] <= v <= verse_range[1]):
             return f"**{book_cn} {chapter}:{v}。** *{opener}。* {rest}".rstrip()
+
+    # Form 1.5: `**phrase（N）** rest` — bold lemma with verse N in parens
+    # at end. Ephesians scan-OCR style.
+    m = _PAREN_VERSE_OPENER_RE.match(para)
+    if m:
+        opener, n_str, rest = m.group(1).strip(), m.group(2), m.group(3).lstrip()
+        v = int(n_str)
+        max_v = len(john_1)
+        if 1 <= v <= max_v and (verse_range is None or
+                                  verse_range[0] <= v <= verse_range[1]):
+            return f"**{book_cn} {chapter}:{v}。** *{opener}* {rest}".rstrip()
 
     # Form 2: `N、phrase。 rest` — no bold, but explicit N + 、/./, + phrase
     m = _BARE_VERSE_OPENER_RE.match(para)

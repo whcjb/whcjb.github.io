@@ -5,7 +5,7 @@ book_name: "以弗所书"
 chapter: 0
 header-img: psalm-bg-mountain.jpg
 title: "序言"
-date: 2026-06-04 17:39
+date: 2026-06-04 17:52
 next_section: 1
 next_label: "第一章"
 ---
