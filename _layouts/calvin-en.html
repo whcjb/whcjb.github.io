@@ -257,7 +257,8 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box,
 .calvin-en-content[data-book="galatians-en"] .scripture-box,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box,
-.calvin-en-content[data-book="colossians-en"] .scripture-box {
+.calvin-en-content[data-book="colossians-en"] .scripture-box,
+.calvin-en-content[data-book="philemon-en"] .scripture-box {
   border: 3px double #1d28e0;
   background: #fffce8;
   padding: 0;
@@ -269,7 +270,8 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref,
 .calvin-en-content[data-book="galatians-en"] .scripture-box .scripture-ref,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box .scripture-ref,
-.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref {
+.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref,
+.calvin-en-content[data-book="philemon-en"] .scripture-box .scripture-ref {
   background: #dcdcdc;
   border-bottom: 1px solid #999;
   margin: 0;
@@ -284,7 +286,8 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref .ages-code,
 .calvin-en-content[data-book="galatians-en"] .scripture-box .scripture-ref .ages-code,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box .scripture-ref .ages-code,
-.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .ages-code {
+.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .ages-code,
+.calvin-en-content[data-book="philemon-en"] .scripture-box .scripture-ref .ages-code {
   color: #7a1d1d;
   font-size: 0.55em;
   vertical-align: super;
@@ -296,7 +299,8 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref .book-name,
 .calvin-en-content[data-book="galatians-en"] .scripture-box .scripture-ref .book-name,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box .scripture-ref .book-name,
-.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .book-name {
+.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .book-name,
+.calvin-en-content[data-book="philemon-en"] .scripture-box .scripture-ref .book-name {
   font-variant: small-caps;
   font-weight: bold;
   font-size: 1.15em;
@@ -305,14 +309,16 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box .scripture-ref .verse-range,
 .calvin-en-content[data-book="galatians-en"] .scripture-box .scripture-ref .verse-range,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box .scripture-ref .verse-range,
-.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .verse-range {
+.calvin-en-content[data-book="colossians-en"] .scripture-box .scripture-ref .verse-range,
+.calvin-en-content[data-book="philemon-en"] .scripture-box .scripture-ref .verse-range {
   font-weight: bold;
 }
 .calvin-en-content[data-book="john-en"] .scripture-box > p:not(.scripture-ref),
 .calvin-en-content[data-book="romans-en"] .scripture-box > p:not(.scripture-ref),
 .calvin-en-content[data-book="galatians-en"] .scripture-box > p:not(.scripture-ref),
 .calvin-en-content[data-book="ephesians-en"] .scripture-box > p:not(.scripture-ref),
-.calvin-en-content[data-book="colossians-en"] .scripture-box > p:not(.scripture-ref) {
+.calvin-en-content[data-book="colossians-en"] .scripture-box > p:not(.scripture-ref),
+.calvin-en-content[data-book="philemon-en"] .scripture-box > p:not(.scripture-ref) {
   padding: 12px 18px;
   margin: 0;
   font-size: 16px;
@@ -324,7 +330,8 @@ layout: default
 .calvin-en-content[data-book="romans-en"] .scripture-box > p:not(.scripture-ref) strong,
 .calvin-en-content[data-book="galatians-en"] .scripture-box > p:not(.scripture-ref) strong,
 .calvin-en-content[data-book="ephesians-en"] .scripture-box > p:not(.scripture-ref) strong,
-.calvin-en-content[data-book="colossians-en"] .scripture-box > p:not(.scripture-ref) strong {
+.calvin-en-content[data-book="colossians-en"] .scripture-box > p:not(.scripture-ref) strong,
+.calvin-en-content[data-book="philemon-en"] .scripture-box > p:not(.scripture-ref) strong {
   font-weight: bold;
   color: #000;
 }
@@ -344,12 +351,49 @@ layout: default
   word-wrap: break-word;
   overflow-wrap: break-word;
 }
-/* 窄屏（≤640px）：缩小内边距与字号，避免溢出引发横向滚动 */
+/* 窄屏（≤640px）：3 列经文表横向太挤会出现内容重叠。改为纵向堆叠 —
+   thead 隐藏，每个 td 作为一个独立块占满整行，前面用 data-label 显示
+   原列标题（如「马太福音 10:1-8」）。 */
 @media (max-width: 640px) {
+  .calvin-en-content .scripture-table,
+  .calvin-en-content .scripture-table thead,
+  .calvin-en-content .scripture-table tbody,
+  .calvin-en-content .scripture-table tr,
   .calvin-en-content .scripture-table th,
   .calvin-en-content .scripture-table td {
-    padding: 5px 6px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .calvin-en-content .scripture-table thead {
+    display: none;  /* 标题改成 data-label 注入 td 前面 */
+  }
+  .calvin-en-content .scripture-table tr {
+    margin-bottom: 0;
+    border: 1px solid #888;
+    border-bottom: none;
+  }
+  .calvin-en-content .scripture-table tr:last-child {
+    border-bottom: 1px solid #888;
+  }
+  .calvin-en-content .scripture-table td {
+    border: none;
+    border-top: 1px solid #ddd;
+    padding: 6px 10px;
     font-size: 13px;
+  }
+  .calvin-en-content .scripture-table td:first-child {
+    border-top: none;
+  }
+  .calvin-en-content .scripture-table td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    color: #0085a1;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    margin-bottom: 4px;
+    padding-bottom: 3px;
+    border-bottom: 1px dashed rgba(0,133,161,0.3);
   }
 }
 .calvin-en-content .scripture-table th {
@@ -379,6 +423,24 @@ layout: default
 </style>
 
 <script>
+// ── Mobile responsive scripture-table: inject data-label from <th> ──
+// On ≤640px screens the table stacks vertically; each <td> needs to
+// know which column header it corresponded to so the CSS pseudo-element
+// can show the per-cell label (e.g. "马太福音 10:1-8").
+(function() {
+  document.querySelectorAll('.calvin-en-content .scripture-table').forEach(function(table) {
+    var headers = Array.from(table.querySelectorAll('thead th')).map(function(th) {
+      return th.textContent.trim();
+    });
+    if (!headers.length) return;
+    table.querySelectorAll('tbody tr').forEach(function(tr) {
+      tr.querySelectorAll('td').forEach(function(td, idx) {
+        if (idx < headers.length) td.setAttribute('data-label', headers[idx]);
+      });
+    });
+  });
+})();
+
 // ── Footnote backref numbers ───────────────────────
 (function() {
   var lists = document.querySelectorAll('.calvin-en-content .footnotes ol');
