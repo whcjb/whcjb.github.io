@@ -524,8 +524,20 @@ layout: default
       return;
     }
 
-    p.id = anchorId;
-    entries.push({anchorId: anchorId, pillLabel: pillLabel});
+    // Calvin sometimes comments on the same verse in multiple paragraphs
+    // (e.g. v6 first focus on greeting, then v6 again on different phrase).
+    // Only generate ONE pill per unique anchorId; subsequent occurrences
+    // still get a unique DOM id (with -2, -3 suffix) so the verse marker
+    // still acts as a clickable anchor, but the pill bar stays clean.
+    if (window.__verseAnchorsSeen && window.__verseAnchorsSeen[anchorId]) {
+      window.__verseAnchorsSeen[anchorId]++;
+      p.id = anchorId + '-' + window.__verseAnchorsSeen[anchorId];
+    } else {
+      window.__verseAnchorsSeen = window.__verseAnchorsSeen || {};
+      window.__verseAnchorsSeen[anchorId] = 1;
+      p.id = anchorId;
+      entries.push({anchorId: anchorId, pillLabel: pillLabel});
+    }
 
     // Clicking the verse marker：滚动到 verse-nav 区域并展开 pills，
     // 让用户看到自己所在的章节定位
