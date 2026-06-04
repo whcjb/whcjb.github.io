@@ -100,17 +100,22 @@ _BARE_VERSE_NUM_RE = re.compile(r"(?:^|[^0-9])(\d{1,3})\.\s*[一-鿿]")
 
 
 def _looks_like_bible_fragment(text: str) -> bool:
-    """Bible-text fragment heuristic: starts with `N. <CJK>` (verse marker)
-    or is a continuation that has many `、`-style list separators in
-    short space (Bible verse passages have lots: 「奸淫、污秽、邪荡」).
+    """Bible-text fragment heuristic.
+
+    Match if any of:
+      - Starts with `N. <CJK>` or `N、<CJK>` (verse marker w/ separator)
+      - Starts with `N<CJK>` directly (digit fused to verse text, no
+        separator) — OCR style for some Chinese editions
+      - Short paragraph with dense `、` list separators (4+ in <100 chars)
     """
     s = text.lstrip()
     if not s:
         return False
-    # Starts with a verse marker `N.` or `N、`
     if re.match(r"^\d{1,3}[.、,]\s*[一-鿿]", s):
         return True
-    # Continuation: dense list-style separators `、` (4+ in <100 chars)
+    # Bare digit fused to CJK (no separator) — single-verse Bible fragment
+    if re.match(r"^\d{1,3}[一-鿿]", s):
+        return True
     if len(s) < 100 and s.count("、") >= 4:
         return True
     return False
@@ -226,6 +231,89 @@ def patch_book_ref_format(book_cn: str):
     pass  # Use the function directly; book name passed at output time.
 
 
+# Map full book name → 1-char abbreviation used in PDFs.
+_BOOK_ABBR = {
+    "约翰福音": "约", "马太福音": "太", "马可福音": "可", "路加福音": "路",
+    "使徒行传": "徒", "罗马书": "罗",
+    "哥林多前书": ["林前", "前"], "哥林多后书": ["林后", "后"],
+    "加拉太书": "加", "以弗所书": "弗", "腓立比书": "腓", "歌罗西书": "西",
+    "帖撒罗尼迦前书": "帖前", "帖撒罗尼迦后书": "帖后",
+    "提摩太前书": "提前", "提摩太后书": "提后", "提多书": "提",
+    "腓利门书": "门", "希伯来书": "来",
+    "雅各书": "雅", "彼得前书": "彼前", "彼得后书": "彼后",
+    "约翰一书": "约一", "约翰二书": "约二", "约翰三书": "约三",
+    "犹大书": "犹", "启示录": "启",
+    "创世记": "创", "出埃及记": "出",
+    "诗篇": "诗", "以赛亚书": "赛", "耶利米书": "耶",
+}
+
+
+def _book_abbrs(book_cn: str) -> list[str]:
+    """Return all known abbreviations for a book (incl. full name itself)."""
+    out = [book_cn]
+    abbr = _BOOK_ABBR.get(book_cn, [])
+    if isinstance(abbr, str):
+        out.append(abbr)
+    else:
+        out.extend(abbr)
+    return out
+
+
+def _convert_pending_verse_labels(text: str, book_cn: str) -> str:
+    """Some scanned commentaries use a short verse-label line (e.g.
+    `弗 1：3` for Ephesians) BEFORE the paragraph that discusses that
+    verse. The label itself isn't content — it just tells us which verse
+    the next paragraph is about. Convert these to inline verse openers.
+
+    Algorithm:
+      - Walk paragraphs in order.
+      - If a paragraph matches `^<abbr> N：M\\s*$` (only the ref), capture
+        the verse and DROP the paragraph.
+      - Carry the verse forward to the NEXT non-empty body paragraph: if
+        that paragraph starts with `**phrase**`, rewrite to
+        `**以弗所书 N:M。** *phrase* rest`.
+      - If the next paragraph already starts with the standard form
+        `**<book_cn> N:M。**`, leave it alone.
+    """
+    abbrs = _book_abbrs(book_cn)
+    # Pattern: optional book abbr + N + full/half-width colon + M
+    label_re = re.compile(
+        r"^(?:" + "|".join(re.escape(a) for a in abbrs) + r")?\s*"
+        r"(\d{1,3})\s*[：:]\s*(\d{1,3})\s*$"
+    )
+    paras = re.split(r"\n{2,}", text)
+    out: list[str] = []
+    pending: tuple[int, int] | None = None
+    for p in paras:
+        s = p.strip()
+        if not s:
+            out.append(p)
+            continue
+        # Check if this paragraph is a verse-label only
+        if "\n" not in s and len(s) < 20:
+            m = label_re.match(s)
+            if m:
+                pending = (int(m.group(1)), int(m.group(2)))
+                continue  # drop label line
+        # If we have pending verse, prepend it
+        if pending is not None:
+            ch, v = pending
+            # Skip if already has standard form opener
+            if not re.match(rf"^\*\*{re.escape(book_cn)} \d+:\d+。\*\*", s):
+                # If starts with **phrase**, extract phrase and rewrite
+                m_bold = re.match(r"^\*\*([^*\n]+?)\*\*\s*(.*)$", s, re.DOTALL)
+                if m_bold:
+                    phrase = m_bold.group(1).strip()
+                    rest = m_bold.group(2).lstrip()
+                    s = f"**{book_cn} {ch}:{v}。** *{phrase}* {rest}".rstrip()
+                else:
+                    # Plain prose continuation — prepend just the verse marker
+                    s = f"**{book_cn} {ch}:{v}。** {s}"
+            pending = None
+        out.append(s)
+    return "\n\n".join(out)
+
+
 def _patch_running_headers(book_cn: str):
     """Add book-CN-specific running-header strip patterns to ch1mod."""
     import restructure_john_scan_ch1 as ch1mod
@@ -279,6 +367,7 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
                 continue
             raw_text = f.read_text(encoding="utf-8")
             raw_text = _strip_bible_text_dumps(raw_text, book_cn)
+            raw_text = _convert_pending_verse_labels(raw_text, book_cn)
             body, defs, fn_counter = process_page(
                 raw_text, fn_counter, all_vr, book_cn, chapter
             )
