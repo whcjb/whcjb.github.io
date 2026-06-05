@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: zephaniah-en
 book_name: "Calvin on Zephaniah"
 title: "Preface"
-date: 2026-06-02 17:31
+date: 2026-06-02 18:13
 next_section: 1
 next_label: "Chapter 1"
 ---

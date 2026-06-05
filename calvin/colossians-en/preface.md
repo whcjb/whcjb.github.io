@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: colossians-en
 book_name: "Calvin on Colossians"
 title: "Preface"
-date: 2026-06-02 17:15
+date: 2026-06-02 18:13
 next_section: 1
 next_label: "Chapter 1"
 ---

@@ -183,9 +183,13 @@ def collapse_spaced_caps(text: str) -> str:
 
 
 # ── Scripture-ref detection ──────────────────────────────────────────────
-# Group 1: Ages code (e.g. "430101"); Group 2: book+verse range (e.g. "JOHN 1:1-5")
+# Group 1: Ages code (e.g. "430101") — OPTIONAL (some books like Philemon
+# don't have Ages cross-ref codes in H2 headers)
+# Group 2: book+verse range (e.g. "JOHN 1:1-5" / "Colossians 1:1-8" /
+# "PHILEMON 1-7" — Philemon as single-chapter has verse-only range)
 SCRIPTURE_SECTION_RE = re.compile(
-    r'^\s*<(\d{6,7})>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d+)?)\s*$'
+    r'^\s*(?:<(\d{6,7})>\s*)?'
+    r'([1-3]?\s*[A-Z][A-Za-z]*(?:\s\d)?[A-Za-z\s]*?\s*(?:\d+:\d+|\d+)(?:[-,]\d+)?)\s*$'
 )
 
 # Inline scripture cross-references like "(<540416>1 Timothy 4:16.)"
@@ -455,26 +459,29 @@ def _merge_paragraph_fragments(out: list[str]) -> list[str]:
     return new_out
 
 
-def _build_ref_banner(ages_code: str, book_verse: str) -> str:
+def _build_ref_banner(ages_code, book_verse: str) -> str:
     """Render the scripture-ref banner with separable Ages code / book / verse spans
     so per-book CSS can style them PDF-faithfully (small-caps book name, dark-red
     Ages code, bold verse range). Returns a single <p> tag.
 
-    Accepts both all-caps "JOHN 1:1-5" (PDF small-caps font) and title-case
-    "Colossians 1:1-8" (PDF normal font) — both forms appear across Ages PDFs.
+    Accepts:
+    - all-caps "JOHN 1:1-5" (PDF small-caps font)
+    - title-case "Colossians 1:1-8" (PDF normal font)
+    - single-chapter book "PHILEMON 1-7" (verse-only range, no chapter)
+    `ages_code` may be None for books without Ages cross-ref codes.
     """
     m = re.match(
-        r'^([1-3]?\s*[A-Z][A-Za-z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?)\s*$',
+        r'^([1-3]?\s*[A-Z][A-Za-z\s]*?)\s+(\d+:\d+(?:[-,]\d+)?|\d+(?:-\d+)?)\s*$',
         book_verse,
     )
     if m:
         book = m.group(1).strip()
         verse = m.group(2)
-        # Title-case so CSS `font-variant: small-caps` renders cap-letter + small caps
         book_html = book.title()
+        ages_html = f'<span class="ages-code">&lt;{ages_code}&gt;</span>' if ages_code else ''
         return (
             f'<p class="scripture-ref">'
-            f'<span class="ages-code">&lt;{ages_code}&gt;</span>'
+            f'{ages_html}'
             f'<span class="book-name">{book_html}</span> '
             f'<span class="verse-range">{verse}</span>'
             f'</p>'

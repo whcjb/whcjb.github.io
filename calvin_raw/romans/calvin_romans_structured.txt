@@ -5,7 +5,7 @@
 [H1] <sty c="0000d4" i="0">COMMENTARY</sty>
 
 [H1] <sty c="006411" i="0">COMMENTARY</sty> <sty c="006411" i="0">ON THE EPISTLE TO THE</sty> <sty c="006411" i="0">ROMANS</sty>
-[BODY] <sty c="000000" i="1">by John Calvin</sty>
+[RIGHT] <sty c="000000" i="1">by John Calvin</sty>
 
 [CENTERED_H2] <sty c="000080" i="0">B o o k s F o r T h e A g e s </sty>
 [CENTERED] AGES Software • Albany, OR  USA Version 1.0 © 1998
@@ -174,7 +174,7 @@
 
 [BODY] It has not been deemed necessary to give in this Edition any specimens of title-pages, etc., from former Editions, either In Latin or in English; as they are to be found in the Old Translation already in the hands of the subscribers.
 
-[BODY] <sty c="000000" i="1">J. O.</sty>
+[INDENT] <sty c="000000" i="1">J. O.</sty>
 
 --- PAGE 16 ---
 
@@ -212,7 +212,7 @@
 [BODY] more benefit than I can with any modesty dare to promise. Now, that I some times dissent from others, or somewhat differ from them, it is but right that I should be excused. Such veneration we ought indeed to entertain for the Word of God, that we ought not to pervert it in the least degree by varying expositions; for its majesty is diminished, I know not how much, especially when not expounded with great discretion and with great sobriety. And if it be deemed a great wickedness to contaminate any thing that is dedicated to God, he surely cannot be endured, who, with impure, or even with unprepared hands, will handle that very thing, which of all things is the most sacred on earth. It is therefore an audacity, closely allied to a sacrilege, rashly to turn Scripture in any way we please, and to indulge our fancies as in sport; which has been done-by many in former times.
 [BODY] But we ever find, that even those who have not been deficient in their zeal for piety, nor in reverence and sobriety in handling the mysteries of God, have by no means agreed among themselves on every point; for God hath never favored his servants with so great a benefit, that they were all endued with a full and perfect knowledge in every thing; and, no doubt, for this end — that he might first keep them humble; and secondly, render them disposed to cultivate brotherly intercourse. Since then what would otherwise be very desirable cannot be expected in this life, that is, universal consent among us in the interpretation of all parts of Scripture, we must endeavour, that, when we depart from the sentiments of our predecessors, we may not be stimulated by any humour for novelty, nor impelled by any lust or defaming others, nor instigated by hatred, nor tickled by any ambition, but constrained by necessity alone, and by the motive of seeking to do good: and then, when this is done in interpreting Scripture, less liberty will be taken in the principles of religion, in which God would have the minds of his people to be especially unanimous. Readers will easily perceive that I had both these things in view.
 [BODY] But as it becomes not me to decide or to pronounce any thing respecting myself, I willingly allow you this office; to whose judgment, since almost all in most things defer, I ought in everything to defer, inasmuch as you are intimately known to me by familiar intercourse; which is wont somewhat to diminish the esteem had for others, but does not a little increase yours, as is well known among al the learned. Farewell.
-[BODY] <sty c="000000" i="1">STRASBURGH, 18th October 1539.</sty>
+[INDENT] <sty c="000000" i="1">STRASBURGH, 18th October 1539.</sty>
 
 --- PAGE 20 ---
 
@@ -225,7 +225,7 @@
 
 [BODY] The whole Epistle is so methodical, that even its very beginning is framed according to the rules of art. As contrivance appears in many parts, which shall be noticed as we proceed, so also especially in the way in which the main argument is deduced: for having begun with the proof of his Apostleship, he then comes to the Gospel with the view of recommending it; and as this necessarily draws with it the subject of faith, he glides into that, being led by the chain of words as by the hand: and thus he enters on the main subject of the whole Epistle justification by faith; in treating which he is engaged to the end of the fifth chapter.
 
-[CENTERED] <sty c="000000" i="1">The subject then of these chapters By be stated thus, — man’s only</sty> <sty c="000000" i="1">righteousness is through the mercy of God in Christ, which being</sty> <sty c="000000" i="1">offered by the Gospel is apprehended by faith.</sty>
+[INDENT] <sty c="000000" i="1">The subject then of these chapters By be stated thus, — man’s only</sty> <sty c="000000" i="1">righteousness is through the mercy of God in Christ, which being</sty> <sty c="000000" i="1">offered by the Gospel is apprehended by faith.</sty>
 
 [BODY] But as men are asleep in their sins, and flatter and delude themselves with a false notion about righteousness, so that they think not that they need the righteousness of faith, except they be cast down from all selfconfidence, — and further, as they are inebriated with the sweetness of lusts, and sunk in deep self-security, so that they are not-easily roused to seek righteousness, except they are struck down by the terror of divine
 
@@ -570,7 +570,7 @@
 [INDENT] 30. Backbiters, haters of God, despiteful, proud, boasters, inventors of evil things, disobedient to parents,
 [INDENT] 30. Obtrectatores, osores Dei, malefici, contumeliosi, fastuosi, repertores malorum, parentibus immorigeri, 31. Without understanding, covenant breakers, without natural affection, implacable, unmerciful:
 [INDENT] 31. Intelligentiæ expertes, insociabiles, affectu humanitatis carentes, fœdifragi, sine misericordiæ sensu; 32 Who, knowing the judgment of God, that they which commit such things are worthy of death, not only do the same, but have pleasure in them that do them.
-[INDENT] 32. Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.
+[RIGHT] 32. Qui, quum Dei judicium cognoverint, quod qui talia agunt, digni sunt morte, non tantum ea faciunt, sed assentiuntur facientibus.
 
 [BODY] 24. <sty c="800000" i="1">God therefore gave them up,</sty> etc. As impiety is a hidden evil, lest they should still find an evasion, he shows, by a more palpable demonstration, that, they cannot escape, but must be held fast by a just condemnation, since such fruits have followed this impiety as cannot be viewed otherwise than manifest evidences of the Lord’s wrath. As the Lord’s wrath is always just, it follows, that what has exposed them to condemnation, must have preceded it. By these evidences then he now proves the apostasy and defection of men: for the Lord indeed does so punish those, who alienate them selves from his goodness, that he casts them headlong into various courses which lead to perdition and ruin. And by comparing the vices, of which they were guilty, with the impiety, of which he had before accused them, he shows that they suffered punishment through the just judgment of God: for since nothing is dearer to us than our own honor, it is extreme blindness, when we fear not to bring disgrace on ourselves; and it is the most suitable punishment for a reproach done to the Divine Majesty. This is the very thing which he treats of to the end of the chapter; but he handles it in various ways, for the subject required ample illustration.
 
@@ -2560,7 +2560,7 @@
 [H2] <sty c="800000" i="0"><450838></sty>ROMANS 8:38-39
 [BODY] 38. For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come,
 [INDENT] 38. Persuasus enim sum, quod neque mors, neque vita,<sty c="800000" i="0"> f276 </sty>neque angeli neque principatus, neque virtutes, neque principatus, neque virtutes, neque præasentia, neque futura, 39. Nor height, nor depth, nor any other creature, shall be able to which is in Christ Jesus our Lord.
-[INDENT] 39. Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.
+[RIGHT] 39. Neque altitudo, neque profunditas, neque ulla alia creatura,poterit nos dirimere a charitate Dei,Quæ est in Christo Iesu.
 
 [BODY] 38. He is now carried away into hyperbolic expressions, that he might confirm us more fully in those things which are to be experienced. Whatever, he says, there is in life or in death, which seems capable of tearing us away from God, shall effect nothing; nay, the very angels, were they to attempt to overturn this foundation, shall do us no harm. It is no objection, that angels are ministering spirits, appointed for the salvation of the elect, (<sty c="800000" i="0"><580114></sty>Hebrews 1:14:) for Paul reasons here on what is impossible, as he does in <sty c="800000" i="0"><480108></sty>Galatians 1:8; and we may hence observe, that all things ought to be deemed of no worth, compared with the glory of God, since it is lawful to dishonor even angels in vindicating his truth.<sty c="800000" i="0"> f277</sty>
 [BODY] Angels are also meant by <sty c="000000" i="1">principalities</sty> and <sty c="000000" i="1">powers</sty>,<sty c="800000" i="0"> f278 </sty>and they are so called, because they are the primary instruments of the Divine power: and these two words were added, that if the word angels sounded too insignificant, something more might be expressed. But you would, perhaps, prefer this meaning, “Nor angels, and whatever powers there may be;” which is a mode of speaking that is used, when we refer to things unknown to us, and exceeding our capacities.
@@ -4277,7 +4277,7 @@
 [INDENT] 13. Salutate Rufum electum in Domino et matrem illius ac meam. 14. Salute Asyneritus, Phlegon, Hermas, Patrobas, Hermes, and the brethren which are with them.
 [INDENT] 14. Salutate Asynchritum, Phlegontem, Hermam, Patrobam, Mercurium, et qui cum his sunt fratres. 15. Salute Philologus, and Julia, Nereus, and his sister, and Olympas, and all the saints which are with them.
 [INDENT] 15. Salutate Philologum et Iuluiam, Nereum et sororem ejus, et Olympam, et qui cum his sunt omnes sanctos. 16. Salute one another with an holy kiss. The churches of Christ salute you.
-[INDENT] 16. Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.
+[RIGHT] 16. Salutate vos invicem in osculo sancto. Salutant vos ecelesiae Christi.
 
 [BODY] 1.<sty c="000000" i="1"> </sty><sty c="800000" i="1">I commend to you,</sty><sty c="000000" i="1"> etc.</sty> The greater part of this chapter is taken up with salutations; and as they contain no difficulties, it would be useless to dwell long on them. I shall only touch on those things which require some light by an explanation.
 
@@ -6399,7 +6399,7 @@
 
 --- PAGE 553 ---
 
-[BODY] <sty c="000000" i="1">quas habere nolebat, et tamen habebat</sty>,<sty c="000000" i="1"> strenue conflixisse</sty>,<sty c="000000" i="1"> eundemque</sty> <sty c="000000" i="1">conflictum suum illis suis verbis contestatum fuisse senserunt. — Ed.</sty>
+[INDENT] <sty c="000000" i="1">quas habere nolebat, et tamen habebat</sty>,<sty c="000000" i="1"> strenue conflixisse</sty>,<sty c="000000" i="1"> eundemque</sty> <sty c="000000" i="1">conflictum suum illis suis verbis contestatum fuisse senserunt. — Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0">ft219</sty> It appears from this, that <sty c="000000" i="1">Calvin</sty> did not apply the foregoing words, “I
 [BODY] am carnal, sold under sin,” in the same way: but they are evidently connected together. They are indeed strong words, and some explain them in such a way as to be wholly unsuitable to a renewed man; but we ought to take the explanation as given by the Apostle himself in what follows, for he handles the subject to the end of the chapter.
 [BODY] Various fictions have been resorted to by critics on this point. The Apostle has been supposed by some to speak of himself as under the law, or as <sty c="000000" i="1">Stuart</sty> terms it, “in a law state,” and such is the scheme of <sty c="000000" i="1">Hammond.</sty> Others have imagined, that he personates a Jew living during the time between Abraham and the giving of the law; and this was <sty c="000000" i="1">Locke’s </sty>idea. A third party have entertained the notion, that the Apostle, speaking in his own person, represents, by a sort of fiction, as <sty c="000000" i="1">Vitringa </sty>and some others have imagined, the effects of the law in Jews and proselytes, as opposed to the effects of the gospel, as delineated in the next chapter. And a fourth party maintain, that the Apostle describes a man in a transition state, in whom God’s Spirit works for his conversion, but who is as yet doubtful which way to turn, to sin or to God.
@@ -7408,7 +7408,7 @@
 [BODY] thing, but with this difference, that the first seems to be an hindrance or an obstacle which occasions stumbling or falling, and the other is an obstacle which stops or impedes progress in the way. See
 [FOOTNOTE] <sty c="800000" i="0"><401623></sty>Matthew 16:23. The two parties, the strong and the weak, are
 [BODY] here evidently addressed; the former was not, by eating, to put a stumblingblock in the way of the weak brother; nor was the weak, by condemning, to be a hindrance or impediment in the way of the strong so as to prevent him to advance in his course. Thus we see that forbearance is enjoined on both parties, though the Apostle afterwards dwells more on what the strong was to do.
-[BODY] The clause might be thus rendered, —
+[INDENT] The clause might be thus rendered, —
 [VERSE] <sty c="000080" i="1">“But rather judge it right to do this, —</sty> <sty c="000080" i="1">not to lay before a brother a stumbling-stone, or an impediment.” —</sty><sty c="000080" i="0"> Ed.</sty>
 
 [FOOTNOTE] <sty c="800000" i="0">ft422</sty> “At the very time of giving forth the sentence, and on the highest of all

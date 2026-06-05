@@ -7,6 +7,412 @@ date: 2026-05-20 10:38
 ---
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Ma+Shan+Zheng&display=swap');
+
+/* ── zechariah 水晶透明风 ──────────────────────────── */
+
+/* 容器：冷蓝晶体渐变 */
+#mhenry-col {
+    background: linear-gradient(160deg,
+        #D6F8DC 0%, #C8EFCE 30%,
+        #D8F8DD 60%, #CCF0D2 100%) !important;
+    min-height: 100vh;
+    padding-bottom: 40px !important;
+}
+
+/* 全局文字色 */
+#mhenry-col { color: #0D2E13; }
+
+/* 顶部导航栏：玻璃面板 */
+.mh-nav-bar {
+    background: rgba(255,255,255,0.30) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.60) !important;
+    border-radius: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+.mh-nav-bar a {
+    color: #0D5018 !important;
+    font-size: 13px;
+    text-decoration: none;
+}
+.mh-nav-bar a:hover { text-decoration: underline; }
+
+/* 章节标题 */
+#mhenry-col > h2 {
+    padding: 36px 20px 10px;
+    margin: 0;
+    font-size: 1.55em;
+    font-weight: 800;
+    color: #0D2E13;
+    letter-spacing: 0.16em;
+    text-align: center;
+    background: transparent;
+    border-bottom: none;
+    text-shadow:
+        0 1px 0 rgba(255,255,255,0.95),
+        0 2px 12px rgba(80,230,105,0.25);
+}
+#mhenry-col > h2::after {
+    content: '◆';
+    display: block;
+    font-size: 0.38em;
+    color: rgba(80,220,103,0.45);
+    margin: 12px auto 0;
+    letter-spacing: 0;
+    text-shadow: 0 0 10px rgba(100,255,126,0.55);
+}
+
+/* 章节综述：水晶玻璃卡 */
+.mh-overview {
+    margin: 2px 0 32px;
+    padding: 24px 20px;
+    background: rgba(255,255,255,0.22) !important;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255,255,255,0.72) !important;
+    border-top: none !important;
+    border-radius: 0 0 18px 18px !important;
+    box-shadow:
+        inset 1px 0 0 rgba(255,255,255,0.80),
+        inset -1px 0 0 rgba(100,200,117,0.12),
+        inset 0 -1px 0 rgba(100,200,117,0.15),
+        0 12px 40px rgba(30,160,52,0.12);
+    color: #1A6A27 !important;
+    line-height: 2;
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", "楷体", cursive !important;
+    font-size: 0.96em;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-overview::before {
+    content: '◆  本章综述  ◆' !important;
+    display: block !important;
+    color: rgba(40,180,63,0.55) !important;
+    font-size: 10px !important;
+    letter-spacing: 0.35em;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+/* 日期标题：flex 两侧水晶分隔线 */
+.mh-date-heading {
+    display: flex !important;
+    align-items: center;
+    gap: 14px;
+    margin: 44px 0 16px;
+    padding: 6px 0;
+    background: rgba(255,255,255,0.22) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    color: #0A3D13 !important;
+    font-size: 0.9em;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+}
+.mh-date-heading::before,
+.mh-date-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right,
+        rgba(100,220,120,0.3) 0%,
+        rgba(255,255,255,0.9) 100%);
+}
+.mh-date-heading::after {
+    background: linear-gradient(to left,
+        rgba(100,220,120,0.3) 0%,
+        rgba(255,255,255,0.9) 100%);
+}
+
+/* 经节卡片：水晶棱面效果 */
+.mh-unit {
+    margin: 0 0 24px;
+    border: 1px solid rgba(255,255,255,0.72);
+    border-top: 2px solid rgba(120,255,143,0.55);
+    border-radius: 16px;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.90),
+        inset -1px -1px 0 rgba(100,200,117,0.12),
+        0 10px 36px rgba(30,160,52,0.13),
+        0 2px 8px rgba(30,160,52,0.07);
+    overflow: clip;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* 经文块：水晶透明 */
+.mh-unit > .mh-verse {
+    padding: 18px 20px;
+    padding-right: calc(5% + 22px);
+    background: rgba(255,255,255,0.22) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-left: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.45);
+    border-radius: 0;
+    line-height: 2.1;
+    color: #1C692A;
+    font-size: 1.05em;
+    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", "楷体", serif !important;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
+}
+
+/* 注释块：磨砂水晶 */
+.mh-unit-body {
+    padding: 22px 0 20px !important;
+    background: rgba(255,255,255,0.28);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    line-height: 2.05;
+    color: #0D2E13;
+    font-size: 0.97em;
+    font-family: "Klee One", "STKaiti", "KaiTi", "楷体", serif !important;
+    border-radius: 0 0 15px 15px;
+    border-left: none !important;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.60);
+}
+.mh-unit-body > p {
+    margin: 0 0 0.9em;
+    text-align: justify;
+    text-indent: 2em;
+    font-size: 0.96em;
+    letter-spacing: 0.02em;
+}
+.mh-unit-body > p:last-child { margin-bottom: 0; }
+.mh-unit-body > p b,
+.mh-unit-body > p strong {
+    color: #0D5018;
+    font-weight: 700;
+}
+.mh-unit-body .mh-l1 > p,
+.mh-unit-body .mh-l2 > p,
+.mh-unit-body .mh-l3 > p { text-indent: 0; }
+
+/* I. II. 大纲（一级） */
+#mhenry-col .mh-l1 {
+    margin: 26px 0 12px;
+    padding: 12px 0;
+    background: rgba(255,255,255,0.18) !important;
+    border: none !important;
+    border-left: 3px solid rgba(80,240,107,0.55) !important;
+    border-radius: 0 12px 12px 0 !important;
+    border-bottom: none !important;
+    line-height: 1.95;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-l1 > .mh-label {
+    background: rgba(30,200,58,0.20) !important;
+    backdrop-filter: blur(8px) !important;
+    color: #0D5018 !important;
+    font-weight: 800 !important;
+    font-size: 0.88em !important;
+    padding: 1px 11px !important;
+    border-radius: 20px !important;
+    border: 1px solid rgba(120,255,143,0.55) !important;
+    margin-right: 8px !important;
+    box-shadow: 0 1px 6px rgba(30,160,52,0.12) !important;
+    vertical-align: middle;
+}
+
+/* 1. 2. 3. 次级（二级） */
+#mhenry-col .mh-l2 {
+    margin: 10px 0 6px 0;
+    padding: 8px 0;
+    background: rgba(255,255,255,0.14) !important;
+    border: none !important;
+    border-left: 2px solid rgba(120,255,143,0.40) !important;
+    border-radius: 0 8px 8px 0 !important;
+    line-height: 1.95;
+    text-align: justify;
+    letter-spacing: 0.02em;
+}
+#mhenry-col .mh-l2 > .mh-label {
+    color: #1A802B !important;
+    font-weight: 700 !important;
+    margin-right: 6px;
+}
+
+/* （1）（2）三级 */
+#mhenry-col .mh-l3 {
+    margin: 6px 0 4px 0;
+    padding: 4px 0;
+    border: none !important;
+    border-left: 1px dashed rgba(100,240,123,0.40) !important;
+    line-height: 1.9;
+    text-align: justify;
+}
+#mhenry-col .mh-l3 > .mh-label {
+    color: #2A903B !important;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+/* 展开按钮 */
+#mhenry-col .mh-expand-tab,
+#mhenry-col .mh-unit > .mh-verse .mh-expand-tab {
+    background: rgba(30,200,58,0.40) !important;
+    backdrop-filter: blur(8px);
+    border-left: 1px solid rgba(255,255,255,0.30) !important;
+    color: #E8FFEC !important;
+}
+#mhenry-col .mh-expand-tab:hover {
+    background: rgba(30,200,58,0.65) !important;
+}
+#mhenry-col .mh-unit.mh-expanded .mh-expand-tab {
+    background: rgba(20,180,47,0.60) !important;
+}
+
+/* 脚注 */
+.mhenry-footnotes {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.50);
+    color: #1A6A27;
+}
+
+/* ── 顶部导航：水晶蓝主题 ── */
+.font-size-ctrl {
+    border: 1px solid rgba(100,240,123,0.60) !important;
+    border-radius: 8px !important;
+}
+.font-size-ctrl button {
+    background: rgba(255,255,255,0.40) !important;
+    border-right: 1px solid rgba(100,240,123,0.40) !important;
+    color: #0D5018 !important;
+}
+.font-size-ctrl button:hover {
+    background: rgba(30,200,58,0.30) !important;
+    color: #E8FFEC !important;
+}
+button[onclick="toggleCalvinCompare()"] {
+    background: rgba(255,255,255,0.35) !important;
+    border: 1px solid rgba(100,240,123,0.60) !important;
+    color: #0D5018 !important;
+    border-radius: 8px !important;
+}
+button[onclick="toggleCalvinCompare()"]:hover {
+    background: rgba(30,200,58,0.30) !important;
+}
+
+/* ── TTS 朗读栏：水晶蓝主题 ── */
+.tts-bar {
+    background: rgba(200,255,209,0.20) !important;
+    border: 1px solid rgba(180,255,193,0.45) !important;
+    border-radius: 10px !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+.tts-btn {
+    background: rgba(30,200,58,0.40) !important;
+    color: #E8FFEC !important;
+    border-radius: 6px !important;
+}
+.tts-btn:hover { background: rgba(30,200,58,0.60) !important; }
+.tts-speed { color: #1A6A27 !important; }
+.tts-speed input[type="range"] { accent-color: #4AD962 !important; }
+.tts-progress { background: rgba(180,255,193,0.35) !important; }
+.tts-progress-fill { background: rgba(30,200,58,0.55) !important; }
+.tts-highlight { background: rgba(30,200,58,0.14) !important; }
+
+/* ── 页脚：水晶蓝主题 ── */
+.mh-footer hr {
+    border-color: rgba(100,240,123,0.35) !important;
+    border-top: 1px solid rgba(100,240,123,0.35) !important;
+    margin-top: 0;
+}
+.mh-footer > div:first-child {
+    color: rgba(60,220,87,0.55) !important;
+    text-shadow: 0 0 12px rgba(80,255,109,0.40);
+}
+.mh-footer a[href$="/zechariah/"] {
+    background: rgba(30,200,58,0.30) !important;
+    border: 1px solid rgba(180,255,193,0.60) !important;
+    color: #E8FFEC !important;
+    border-radius: 8px !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.50),
+        0 2px 10px rgba(30,160,52,0.20) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: background 0.15s;
+}
+.mh-footer a[href$="/zechariah/"]:hover {
+    background: rgba(30,200,58,0.50) !important;
+}
+.mh-footer a:not([href$="/zechariah/"]) {
+    background: rgba(255,255,255,0.35) !important;
+    border: 1px solid rgba(180,255,193,0.70) !important;
+    color: #0D5018 !important;
+    border-radius: 8px !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.80),
+        0 2px 8px rgba(30,160,52,0.12) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.15s, box-shadow 0.15s;
+}
+.mh-footer a:not([href$="/zechariah/"]):hover {
+    background: rgba(255,255,255,0.55) !important;
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.90),
+        0 4px 14px rgba(30,160,52,0.18) !important;
+}
+.mh-footer p {
+    color: rgba(40,180,63,0.60) !important;
+}
+.mh-footer > div:last-child {
+    border-top: 1px dashed rgba(100,240,123,0.30) !important;
+}
+</style>
+
+<div class="preface-wrap">
+
+<div class="preface-emblem">✦</div>
+
+<div class="preface-title-block">
+  <div class="preface-label">历史简介</div>
+  <div class="preface-book-name">约书亚记</div>
+  <div class="preface-sub">马太亨利注释 · 书卷导言</div>
+</div>
+
+<div class="preface-divider"><span>◆</span></div>
+
+<div class="preface-body">
+<p>I.摆在我们面前的是犹太国民的历史，从这卷书开始，直到以斯帖记为止。犹太学者将旧约圣经分为律法、先知和诗歌智慧三个部份（路加福音 24：44），将本书直到列王纪各卷统称为先知书上卷。列王纪以后的历史书则归入诗歌智慧。这些书卷的主题虽是历史，但想必都由先知写成。纯预言性的书卷都以先知的名字来命名，因为预言的可信度和先知本人很有关系；而这些历史书卷原先可能是国家史记，由一些先知在神亲自引导和帮助下写成，供末世教会使用；犹太会众蒙神赐福，长期以来或多或少总有这样的先知出现。犹太人中的官长从天上得权柄，犹太人中的史学家也从天上得权柄。这些历史书的主体虽都是在事件发生的当时，蒙神的引领记录下来，却似乎是在很久以后由别人蒙神同样的引领整理而成；可能由一人整理完成，也可能在同一时期完成。
+这种猜测的依据是：1.书中常常提到以前的作品：雅煞珥书（约书亚记10：13；撒母耳记下1：18），以色列诸王记，犹大列王记，迦得的书，拿单的书，易多的传等。2.有些事件被说成是发生在从前，譬如撒母耳记上 9：9 说：现在称为先知的，从前称为先见。3.书中经常提到有些东西存留下来，直到今日，譬如石头（约书亚记 4：9；7：26；8：29；10：27；撒母耳记上 6：18），地名（约书亚记 5：9；7：26；士师记1：26；15：19；18：12；列王纪下 14：7），权利或属地（士师记 1：21；撒母耳记上 27：6），风俗习惯（撒母耳记上 5：5；列王纪下 17：41）
+等；后来的编者被圣灵感动，把这样的短句加到历史书里，为的是给同时代的人举例为证。倘若纯粹是猜一猜的话，这些书卷直到列王纪为止，说不定都是由先知耶利米在被掳之前编篡而成，
+因为撒母耳记上 27：6 说：洗革拉属犹大王，直到今日；犹大王乃是所罗门以后、被掳以前的称呼。而列王纪之后的书卷则很有可能由文士以斯拉在被掳以后整理而成。我们虽对书卷的作者模糊不清，对书卷的权威性却毫无疑问，这些都是神的圣言，交托给了犹太人，也是我们的救主和众使徒所接受、所引用的。
+摩西的五卷书详述旧约会众的崛起、兴旺和成型，包括其原生家族，神的应许，会众成型所需的宪章，会众发展所需的神迹，以及会众管理所需的律法条例，由此所展望和期待的会众特点和精神面貌与我们在这些历史书中见到的却大不相同。一个民族具备如此公义的律例典章，国民本该十分圣洁；一个民族具有如此丰富的应许，国民本该十分幸福。然而，这段历史却多半在描写他们的罪孽和苦楚，真是悲哀！正是：律法原来一无所成，就引进了更美的指望（希伯来书7：19）。不过，若把基督教会历史和教会宪章作一比较，也同样令人感慨万千，其中也是充满错谬和败坏；福音在今天这个世界同样一无所成，却叫我们对将来世界有更美的指望。
+II.摆在我们面前的下一卷书是约书亚记；称为约书亚记，可能不是因为作者是约书亚，因为此书的作者不详。莱福特博士1认为此书由非尼哈所写。帕特里克主教2则坚称是约书亚自己写的。无论如何，此书写的是约书亚的故事，即便由别人执笔，其内容也必出自约书亚的日记或回忆。这卷书写的是约书亚统领并管理下的以色列民，以及他作为以色列军队的元帅，如何带领他们：1.
+进迦南（第 1-5 章）。2.征服迦南（第 6-12 章）。3.把迦南地分给以色列各支派（第 13-21
+章）。4.在以色列各支派建立信仰体系（第 22-24 章）。他在这一切的事上，给所有当官的作出了智慧、勇气、忠心和敬虔的榜样。但这段历史的作用远不止这些：1.我们还从中多多看见神和他的旨意，在自然国度彰显能力，在迦南人恶贯满盈的时候施行审判，秉公行义，信守他与先祖所立的约，恩待以色列民，尽管他们常常惹怒他。我们看见他作为万军之耶和华，左右战争的胜负，又引导他们掣签，命定世人居住的疆界。2.我们还从中多多看见基督和他的恩典。新约圣经虽没有明说约书亚预表基督，但路人皆知，他是卓越的预表。他和救主同名，另一位同名的也是预表，就是大祭司约书亚（撒迦利亚书 6：11-12）。七十士译本将约书亚的名字翻成希腊文时，
+始终称他为耶稣，在使徒行传 7：45 和希伯来书4：8 也称为耶稣。殉道者游斯丁3是基督教会的早期学者之一，他说出埃及记 23：20 中的应许：我差遣使者在你前面，领你到我所预备的地方去，指的就是约书亚，还说后面那句话：他是奉我名来的，意思是说此人的名字与弥赛亚的名字相同。约书亚这个名字的意思是：他必拯救。约书亚拯救神的百姓脱离迦南人的手，我们的主耶
+1约翰·莱福特（1602–1675）：英国神职人员，犹太拉比学者。
+2西蒙·帕特里克（1626-1707）：英国神学家，主教。
+3殉道者游斯丁：第二世纪护教学者。
+稣则拯救他们脱离罪恶。基督作为约书亚，乃是救我们的元帅（希伯来书2：10），万民的君王和司令（以赛亚书55：4），叫他们把撒但踩在脚下，得着天上的迦南，并且得享安息；而最后这一点，按希伯来书4：8 所言，约书亚没有做到。</p>
+</div>
+
+<div class="preface-closing">✦ &ensp; ✦ &ensp; ✦</div>
+
+</div>
+
+<style>
 /* ── 前言装饰 ── */
 .mhenry-preface-body { padding: 8px 20px 24px !important; }
 
@@ -29,7 +435,7 @@ date: 2026-05-20 10:38
 .preface-title-block {
     text-align: center;
     margin-bottom: 6px;
-    padding: 20px 24px 22px;
+    padding: 0;
     background: rgba(255,255,255,0.28);
     border: 1px solid rgba(255,255,255,0.70);
     border-top: 2px solid rgba(120,255,143,0.55);
@@ -95,7 +501,7 @@ date: 2026-05-20 10:38
     background: rgba(255,255,255,0.22);
     border: 1px solid rgba(255,255,255,0.60);
     border-radius: 14px;
-    padding: 24px 26px;
+    padding: 0;
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     box-shadow:
@@ -132,17 +538,3 @@ date: 2026-05-20 10:38
     color: rgba(80,220,103,0.35);
 }
 </style>
-
-<p>I.摆在我们面前的是犹太国民的历史，从这卷书开始，直到以斯帖记为止。犹太学者将旧约圣经分为律法、先知和诗歌智慧三个部份（路加福音 24：44），将本书直到列王纪各卷统称为先知书上卷。列王纪以后的历史书则归入诗歌智慧。这些书卷的主题虽是历史，但想必都由先知写成。纯预言性的书卷都以先知的名字来命名，因为预言的可信度和先知本人很有关系；而这些历史书卷原先可能是国家史记，由一些先知在神亲自引导和帮助下写成，供末世教会使用；犹太会众蒙神赐福，长期以来或多或少总有这样的先知出现。犹太人中的官长从天上得权柄，犹太人中的史学家也从天上得权柄。这些历史书的主体虽都是在事件发生的当时，蒙神的引领记录下来，却似乎是在很久以后由别人蒙神同样的引领整理而成；可能由一人整理完成，也可能在同一时期完成。
-这种猜测的依据是：1.书中常常提到以前的作品：雅煞珥书（约书亚记10：13；撒母耳记下1：18），以色列诸王记，犹大列王记，迦得的书，拿单的书，易多的传等。2.有些事件被说成是发生在从前，譬如撒母耳记上 9：9 说：现在称为先知的，从前称为先见。3.书中经常提到有些东西存留下来，直到今日，譬如石头（约书亚记 4：9；7：26；8：29；10：27；撒母耳记上 6：18），地名（约书亚记 5：9；7：26；士师记1：26；15：19；18：12；列王纪下 14：7），权利或属地（士师记 1：21；撒母耳记上 27：6），风俗习惯（撒母耳记上 5：5；列王纪下 17：41）
-等；后来的编者被圣灵感动，把这样的短句加到历史书里，为的是给同时代的人举例为证。倘若纯粹是猜一猜的话，这些书卷直到列王纪为止，说不定都是由先知耶利米在被掳之前编篡而成，
-因为撒母耳记上 27：6 说：洗革拉属犹大王，直到今日；犹大王乃是所罗门以后、被掳以前的称呼。而列王纪之后的书卷则很有可能由文士以斯拉在被掳以后整理而成。我们虽对书卷的作者模糊不清，对书卷的权威性却毫无疑问，这些都是神的圣言，交托给了犹太人，也是我们的救主和众使徒所接受、所引用的。
-摩西的五卷书详述旧约会众的崛起、兴旺和成型，包括其原生家族，神的应许，会众成型所需的宪章，会众发展所需的神迹，以及会众管理所需的律法条例，由此所展望和期待的会众特点和精神面貌与我们在这些历史书中见到的却大不相同。一个民族具备如此公义的律例典章，国民本该十分圣洁；一个民族具有如此丰富的应许，国民本该十分幸福。然而，这段历史却多半在描写他们的罪孽和苦楚，真是悲哀！正是：律法原来一无所成，就引进了更美的指望（希伯来书7：19）。不过，若把基督教会历史和教会宪章作一比较，也同样令人感慨万千，其中也是充满错谬和败坏；福音在今天这个世界同样一无所成，却叫我们对将来世界有更美的指望。
-II.摆在我们面前的下一卷书是约书亚记；称为约书亚记，可能不是因为作者是约书亚，因为此书的作者不详。莱福特博士1认为此书由非尼哈所写。帕特里克主教2则坚称是约书亚自己写的。无论如何，此书写的是约书亚的故事，即便由别人执笔，其内容也必出自约书亚的日记或回忆。这卷书写的是约书亚统领并管理下的以色列民，以及他作为以色列军队的元帅，如何带领他们：1.
-进迦南（第 1-5 章）。2.征服迦南（第 6-12 章）。3.把迦南地分给以色列各支派（第 13-21
-章）。4.在以色列各支派建立信仰体系（第 22-24 章）。他在这一切的事上，给所有当官的作出了智慧、勇气、忠心和敬虔的榜样。但这段历史的作用远不止这些：1.我们还从中多多看见神和他的旨意，在自然国度彰显能力，在迦南人恶贯满盈的时候施行审判，秉公行义，信守他与先祖所立的约，恩待以色列民，尽管他们常常惹怒他。我们看见他作为万军之耶和华，左右战争的胜负，又引导他们掣签，命定世人居住的疆界。2.我们还从中多多看见基督和他的恩典。新约圣经虽没有明说约书亚预表基督，但路人皆知，他是卓越的预表。他和救主同名，另一位同名的也是预表，就是大祭司约书亚（撒迦利亚书 6：11-12）。七十士译本将约书亚的名字翻成希腊文时，
-始终称他为耶稣，在使徒行传 7：45 和希伯来书4：8 也称为耶稣。殉道者游斯丁3是基督教会的早期学者之一，他说出埃及记 23：20 中的应许：我差遣使者在你前面，领你到我所预备的地方去，指的就是约书亚，还说后面那句话：他是奉我名来的，意思是说此人的名字与弥赛亚的名字相同。约书亚这个名字的意思是：他必拯救。约书亚拯救神的百姓脱离迦南人的手，我们的主耶
-1约翰·莱福特（1602–1675）：英国神职人员，犹太拉比学者。
-2西蒙·帕特里克（1626-1707）：英国神学家，主教。
-3殉道者游斯丁：第二世纪护教学者。
-稣则拯救他们脱离罪恶。基督作为约书亚，乃是救我们的元帅（希伯来书2：10），万民的君王和司令（以赛亚书55：4），叫他们把撒但踩在脚下，得着天上的迦南，并且得享安息；而最后这一点，按希伯来书4：8 所言，约书亚没有做到。</p>

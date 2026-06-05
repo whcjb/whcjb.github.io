@@ -62,20 +62,26 @@ def split_chapters(text: str) -> list[tuple[int, str, str]]:
     return parts
 
 
-def front_matter(book_id: str, book_name: str, chapter: int | str,
+def front_matter(book_id: str, book_name: str, chapter: int,
                  total: int, header_img: str, now: str,
-                 title: str | None = None) -> str:
+                 section_title: str | None = None) -> str:
+    """Front matter for calvin-chapter layout.
+
+    For preface use chapter=0 + section_title='序言' (matches existing
+    `calvin/john/preface.md` convention). The layout uses `chapter > 1`
+    as an integer test, so the chapter field MUST be an int.
+    """
     fm = [
         "---",
         "layout: calvin-chapter",
         f"book_id: {book_id}",
         f"book_name: {book_name}",
-    ]
-    if title:
-        fm.append(f"title: {title}")
-    fm += [
         f"chapter: {chapter}",
         f"total_chapters: {total}",
+    ]
+    if section_title:
+        fm.append(f'section_title: "{section_title}"')
+    fm += [
         f"header-img: {header_img}",
         f"date: {now}",
         "---",
@@ -118,8 +124,8 @@ def main() -> int:
     preface_body = text[:first_match.start()].strip() if first_match else text
     preface_path = out_dir / "preface.md"
     preface_path.write_text(
-        front_matter(book_id, args.book_name, "preface", total,
-                     args.header_img, now, title="序言") + preface_body + "\n",
+        front_matter(book_id, args.book_name, 0, total,
+                     args.header_img, now, section_title="序言") + preface_body + "\n",
         encoding="utf-8",
     )
     print(f"  → preface.md ({len(preface_body):,} chars)")
