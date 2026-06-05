@@ -82,6 +82,24 @@ def transform(raw: str, en_ch: int) -> str:
     # `<sup>N</sup>` so they at least render as superscript numbers.
     text = re.sub(r'\[\^(\d+)\]', r'<sup>\1</sup>', text)
 
+    # 4.6. Front-matter key un-translation: must run BEFORE the renumber
+    # step below, since the renumber matches the English key `chapter: N`.
+    # Also strip <sup>N</sup> wrap from numeric values (leaked from an
+    # over-eager bare-digit footnote-wrap on the en source).
+    pre_fm_fixes = [
+        (r'^章[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',     r'chapter: \1'),
+        (r'^章节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',   r'chapter: \1'),
+        (r'^上一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'prev_section: \1'),
+        (r'^下一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'next_section: \1'),
+        (r'^chapter:\s*<sup>(\d+)</sup>$',              r'chapter: \1'),
+        (r'^prev_section:\s*<sup>(\d+)</sup>$',         r'prev_section: \1'),
+        (r'^next_section:\s*<sup>(\d+)</sup>$',         r'next_section: \1'),
+        (r'^上一节标签[：:]\s*"',  r'prev_label: "'),
+        (r'^下一节标签[：:]\s*"',  r'next_label: "'),
+    ]
+    for pat, rep in pre_fm_fixes:
+        text = re.sub(pat, rep, text, flags=re.M)
+
     # 5. Front-matter — swap book id/name and renumber chapter
     text = re.sub(r'book_id: harmony-2-en\b', 'book_id: harmony-2', text)
     text = re.sub(r'book_name: "[^"]+"',
@@ -123,12 +141,19 @@ def transform(raw: str, en_ch: int) -> str:
         text = re.sub(r'^next_section: .*\n', '', text, flags=re.M)
         text = re.sub(r'^next_label: ".*"\n', '', text, flags=re.M)
 
-    # 6. Front-matter key translation fixes (Claude sometimes translates keys)
+    # 6. Front-matter key translation fixes (Claude sometimes translates keys).
+    # Also handle <sup>N</sup>-wrapped numeric values: an earlier bare-digit
+    # footnote-wrap pass over the en source corrupted the front matter (a
+    # `chapter: 14` line became `chapter: <sup>14</sup>` because the digit
+    # after `: ` matched the bare-digit pattern). Strip the wrap.
     fm_key_fixes = [
-        (r'^章[：:]\s*(\d+)$',     r'chapter: \1'),
-        (r'^章节[：:]\s*(\d+)$',   r'chapter: \1'),
-        (r'^上一节[：:]\s*(\d+)$', r'prev_section: \1'),
-        (r'^下一节[：:]\s*(\d+)$', r'next_section: \1'),
+        (r'^章[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',     r'chapter: \1'),
+        (r'^章节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',   r'chapter: \1'),
+        (r'^上一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'prev_section: \1'),
+        (r'^下一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'next_section: \1'),
+        (r'^chapter:\s*<sup>(\d+)</sup>$',              r'chapter: \1'),
+        (r'^prev_section:\s*<sup>(\d+)</sup>$',         r'prev_section: \1'),
+        (r'^next_section:\s*<sup>(\d+)</sup>$',         r'next_section: \1'),
         (r'^上一节标签[：:]\s*"',  r'prev_label: "'),
         (r'^下一节标签[：:]\s*"',  r'next_label: "'),
     ]
