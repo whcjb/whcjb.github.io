@@ -251,18 +251,34 @@ def append_footnotes_to_chapter(ch: int, defs: list[tuple[int, str]]) -> int:
         path.write_text(text, encoding='utf-8')
         return 0
 
-    # Wrap inline <sup>N</sup> refs as clickable links to the footnote def
+    # Wrap inline <sup>N</sup> refs as clickable links to the footnote def.
+    # The FIRST occurrence of each N gets id="fnref:N" so the def can
+    # link back. (If fn referenced multiple times, only first is linked back.)
     def_nums = {n for n, _ in defs}
+    seen_refs: set[int] = set()
 
     def link_sup(m: re.Match) -> str:
         n = int(m.group(1))
-        if n in def_nums:
+        if n not in def_nums:
+            return m.group(0)
+        if n in seen_refs:
+            # Subsequent occurrences: still link forward but no id
             return f'<sup><a href="#fn:{n}">{n}</a></sup>'
-        return m.group(0)
+        seen_refs.add(n)
+        return f'<sup id="fnref:{n}"><a href="#fn:{n}">{n}</a></sup>'
+
+    # Also handle already-wrapped form (<sup><a href="#fn:N">N</a></sup>)
+    # from a prior run by unwrapping first
+    text = re.sub(
+        r'<sup(?:\s+id="fnref:\d+")?><a href="#fn:\d+">(\d+)</a></sup>',
+        r'<sup>\1</sup>',
+        text,
+    )
     text = re.sub(r'<sup>(\d+)</sup>', link_sup, text)
 
+    # Footnote defs: backref-num is now a link back to fnref:N
     items = '\n'.join(
-        f'  <li id="fn:{n}"><span class="fn-backref-num">{n}</span> {content}</li>'
+        f'  <li id="fn:{n}"><a class="fn-backref-num" href="#fnref:{n}">{n}</a> {content}</li>'
         for n, content in sorted(defs)
     )
     block = (
