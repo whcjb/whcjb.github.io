@@ -180,11 +180,19 @@ def _split_by_text_pattern(text: str) -> list[tuple[int, str]]:
 
 
 def chapter_for_footnote(n: int, en_chapter_files: dict[int, str]) -> int | None:
-    """Find which chapter file contains `<sup>N</sup>`."""
+    """Find which chapter file contains a `<sup>N</sup>` ref (raw or
+    link-wrapped). If multiple chapters contain it, return the one with
+    the most occurrences (the primary commentary location)."""
+    counts: dict[int, int] = {}
+    patterns = [f'<sup>{n}</sup>', f'<sup><a href="#fn:{n}">{n}</a></sup>']
     for ch, text in en_chapter_files.items():
-        if f'<sup>{n}</sup>' in text:
-            return ch
-    return None
+        c = sum(text.count(p) for p in patterns)
+        if c > 0:
+            counts[ch] = c
+    if not counts:
+        return None
+    # Return chapter with most occurrences
+    return max(counts.items(), key=lambda x: x[1])[0]
 
 
 def build_chapter_ranges(en_chapter_files: dict[int, str]) -> dict[int, tuple[int, int]]:
@@ -285,17 +293,15 @@ def main():
 
     ranges = build_chapter_ranges(en_chapter_files)
 
-    # Group defs by chapter using RANGE assignment. Direct `<sup>N</sup>`
-    # lookup is unreliable because some chapters have stray refs from
-    # quoted/copied text (e.g. ch22 incorrectly references fns 291-293
-    # that really belong to ch13). Range-based assignment uses each
-    # chapter's <sup> min/max as boundaries and picks the chapter whose
-    # range contains the fn number, falling back to nearest if no range
-    # contains it.
+    # Group defs by chapter: prefer DIRECT `<sup>N</sup>` ref match (most
+    # accurate — the fn def goes to whichever chapter's commentary uses
+    # it). Fall back to range-based when no ref found in any chapter.
     by_chapter: dict[int, list[tuple[int, str]]] = {}
     unassigned: list[tuple[int, str]] = []
     for n, content in all_defs:
-        ch = chapter_for_unassigned_fn(n, ranges, len(all_defs))
+        ch = chapter_for_footnote(n, en_chapter_files)
+        if ch is None:
+            ch = chapter_for_unassigned_fn(n, ranges, len(all_defs))
         if ch is None:
             unassigned.append((n, content))
         else:
