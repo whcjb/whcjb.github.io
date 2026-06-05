@@ -158,6 +158,7 @@ def parse_page_footnotes(page: fitz.Page) -> list[tuple[int, str]]:
     # Clean: strip trailing page-numbers and empty
     cleaned: list[tuple[int, str]] = []
     for n, content in out:
+        content = content.replace('\x00', '').strip()
         content = re.sub(r'\s+\d{1,4}\s*$', '', content).strip()
         if content:
             cleaned.append((n, content))

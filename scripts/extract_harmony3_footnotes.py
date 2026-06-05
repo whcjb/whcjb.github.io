@@ -60,6 +60,7 @@ def parse_page_footnotes(page: fitz.Page) -> list[tuple[int, str]]:
             out.append((current_n, ' '.join(current_text).strip()))
     cleaned: list[tuple[int, str]] = []
     for n, content in out:
+        content = content.replace('\x00', '').strip()
         content = re.sub(r'\s+\d{1,4}\s*$', '', content).strip()
         if content:
             cleaned.append((n, content))
