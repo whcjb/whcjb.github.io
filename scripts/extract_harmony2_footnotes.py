@@ -188,10 +188,12 @@ def chapter_for_footnote(n: int, en_chapter_files: dict[int, str]) -> int | None
 
 
 def build_chapter_ranges(en_chapter_files: dict[int, str]) -> dict[int, tuple[int, int]]:
-    """For each chapter, find min and max <sup>N</sup> footnote numbers."""
+    """For each chapter, find min and max footnote numbers — matches both
+    raw `<sup>N</sup>` and link-wrapped `<sup><a href="#fn:N">N</a></sup>`."""
     ranges: dict[int, tuple[int, int]] = {}
+    pat = re.compile(r'<sup>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>')
     for ch, text in en_chapter_files.items():
-        nums = [int(m.group(1)) for m in re.finditer(r'<sup>(\d+)</sup>', text)]
+        nums = [int(m.group(1)) for m in pat.finditer(text)]
         if nums:
             ranges[ch] = (min(nums), max(nums))
     return ranges

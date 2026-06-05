@@ -372,9 +372,13 @@ def collect_raw_sections() -> list[tuple[str, str]]:
 
 
 def patch_chapter(ch: int, section_blocks: list[tuple[str, str]]) -> int:
-    """In each section of calvin/harmony-2-en/{ch}.md, replace ONLY the
-    `<div class="scripture-box ...">...</div>` with a cleaned version.
-    Commentary paragraphs after the box are kept as-is."""
+    """In each section of calvin/harmony-2-en/{ch}.md:
+      - Replace the `<div class="scripture-box ...">...</div>` with the
+        cleaned single-row Bible version.
+      - If the en file has NO commentary paragraphs between `</div>` and
+        the next `##` header (i.e. the section's commentary got swallowed
+        into the original merged table), inject the commentary extracted
+        from the raw multi-row table at that gap."""
     path = EN_DIR / f'{ch}.md'
     if not path.exists():
         print(f'skip ch{ch}: no file')
@@ -383,13 +387,11 @@ def patch_chapter(ch: int, section_blocks: list[tuple[str, str]]) -> int:
 
     patched = 0
     for header, raw_table in section_blocks:
-        # Find the header in en file
         h_pat = re.escape(header)
         m_hdr = re.search(h_pat + r'\n', text)
         if not m_hdr:
             print(f'  ch{ch}: header NOT found in en file: {header[:60]}')
             continue
-        # Find the FIRST <div class="scripture-box ...">...</div> after header
         m_div = re.search(
             r'<div class="scripture-box[^"]*">.*?</div>',
             text[m_hdr.end():], re.DOTALL,
@@ -405,7 +407,32 @@ def patch_chapter(ch: int, section_blocks: list[tuple[str, str]]) -> int:
             print(f'  ch{ch}: failed to generate clean box for {header[:50]}')
             continue
 
-        text = text[:div_start] + clean_box + text[div_end:]
+        # Determine if this section is missing commentary paragraphs.
+        # Find end of section: next `\n## ` header or end of text.
+        next_hdr_m = re.search(r'\n##\s+[A-Z]', text[div_end:])
+        section_end = div_end + next_hdr_m.start() if next_hdr_m else len(text)
+        after_div = text[div_end:section_end]
+        existing_commentary_count = len(re.findall(
+            r'^\*\*(Matthew|Mark|Luke|John)\s+\d+:\d+\.\*\*', after_div, re.M,
+        ))
+
+        if existing_commentary_count == 0:
+            # Section commentary was swallowed — extract from raw and inject
+            full_block = process_section(header, raw_table)
+            # `process_section` returns: header + box + commentary paragraphs
+            # Extract just the commentary portion (after the </div>)
+            m_box_in_block = re.search(
+                r'</div>\s*\n\n(.*)$', full_block, re.DOTALL,
+            )
+            commentary_text = m_box_in_block.group(1).rstrip() if m_box_in_block else ''
+            if commentary_text:
+                # Insert: clean_box + \n\n + commentary + then existing after
+                replacement = clean_box + '\n\n' + commentary_text + '\n'
+                text = text[:div_start] + replacement + text[div_end:]
+            else:
+                text = text[:div_start] + clean_box + text[div_end:]
+        else:
+            text = text[:div_start] + clean_box + text[div_end:]
         patched += 1
 
     path.write_text(text, encoding='utf-8')
