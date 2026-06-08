@@ -116,7 +116,8 @@ def main():
         for ch in index[book]:
             index[book][ch].sort()
 
-    # Generate HTML
+    # Generate HTML — one row per Bible chapter, pills arranged left→right
+    # by verse, scrollable horizontally.
     book_zh = {'MATTHEW': 'Matthew', 'MARK': 'Mark', 'LUKE': 'Luke', 'JOHN': 'John'}
     book_display_order = ['MATTHEW', 'MARK', 'LUKE', 'JOHN']
 
@@ -125,17 +126,32 @@ def main():
         if book not in index:
             continue
         rows_html.append(f'<h2 id="{book.lower()}">{book_zh[book]}</h2>\n')
-        rows_html.append('<div class="verse-index-table">')
         for ch in sorted(index[book]):
+            # Deduplicate verse ranges (a single passage may appear in
+            # multiple harmony sections; pick the first occurrence).
+            seen = set()
+            pills = []
             for v_lo, v_hi, url, label in index[book][ch]:
-                verse_ref = f'{ch}:{v_lo}' if v_lo == v_hi else f'{ch}:{v_lo}-{v_hi}'
-                rows_html.append(
-                    f'<div class="verse-row">'
-                    f'<span class="verse-ref">{book_zh[book]} {verse_ref}</span>'
-                    f'<a class="verse-link" href="{{{{ site.baseurl }}}}{url}">{label}</a>'
-                    f'</div>'
+                key = (v_lo, v_hi)
+                if key in seen:
+                    continue
+                seen.add(key)
+                verse_ref = f'{v_lo}' if v_lo == v_hi else f'{v_lo}-{v_hi}'
+                pills.append(
+                    f'<a class="verse-pill" href="{{{{ site.baseurl }}}}{url}" '
+                    f'title="{book_zh[book]} {ch}:{verse_ref} → {label}">'
+                    f'<span class="pill-verse">{verse_ref}</span>'
+                    f'<span class="pill-loc">{label}</span>'
+                    f'</a>'
                 )
-        rows_html.append('</div>\n')
+            rows_html.append(
+                f'<div class="ch-row">\n'
+                f'  <div class="ch-label">{book_zh[book]} {ch}</div>\n'
+                f'  <div class="ch-track">\n    '
+                + '\n    '.join(pills)
+                + f'\n  </div>\n'
+                f'</div>'
+            )
 
     nav_html = ' &middot; '.join(
         f'<a href="#{b.lower()}">{book_zh[b]}</a>'
@@ -179,40 +195,73 @@ title: "Harmony of the Evangelists — Scripture Index"
 .verse-index-nav a {{
   color: #0085a1;
   font-weight: bold;
+  padding: 0 6px;
 }}
-.calvin-en-content h2,
-[class*="verse-index"] ~ h2 {{
-  margin-top: 28px;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
-}}
-.verse-index-table {{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-  gap: 4px 16px;
-  margin-bottom: 20px;
-}}
-.verse-row {{
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 4px 0;
-  border-bottom: 1px dashed #eee;
-  font-size: 14px;
-}}
-.verse-ref {{
-  font-family: Georgia, serif;
-  color: #444;
-  white-space: nowrap;
-}}
-.verse-link {{
+h2[id="matthew"], h2[id="mark"], h2[id="luke"], h2[id="john"] {{
+  margin-top: 36px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #0085a1;
   color: #0085a1;
-  text-decoration: none;
-  font-size: 13px;
-  white-space: nowrap;
 }}
-.verse-link:hover {{
-  text-decoration: underline;
+.ch-row {{
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 6px;
+  gap: 12px;
+}}
+.ch-label {{
+  flex: 0 0 90px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+  padding: 8px 4px;
+  text-align: right;
+  border-right: 2px solid #0085a1;
+}}
+.ch-track {{
+  flex: 1 1 auto;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 8px 8px 8px;
+  scrollbar-width: thin;
+}}
+.ch-track::-webkit-scrollbar {{ height: 6px; }}
+.ch-track::-webkit-scrollbar-thumb {{ background: #c0d4d9; border-radius: 3px; }}
+.verse-pill {{
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 14px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  transition: background 0.12s;
+  min-width: 64px;
+}}
+.verse-pill:hover {{
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}}
+.pill-verse {{
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+}}
+.pill-loc {{
+  font-size: 10px;
+  opacity: 0.75;
+  margin-top: 1px;
 }}
 </style>
 '''
