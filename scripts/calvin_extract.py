@@ -1217,7 +1217,10 @@ def ccel_pg_is_footnote(block, cfg):
 
 def ccel_pg_is_section_header(block):
     span = get_first_span(block)
-    if not span or span.get('size', 0) < 18 or block['bbox'][0] < 100:
+    # x0 ≥ 80：section header 居中 ~99，col label 也可能 x0 ≥ 90
+    # 不能用 x0 ≥ 100（实测有 section header x0=99.8 被误漏）。
+    # size ≥ 18 + uppercase 已足够区分（col label size 16.8 < 18）。
+    if not span or span.get('size', 0) < 18 or block['bbox'][0] < 80:
         return False
     return bool(re.search(r'(MATTHEW|MARK|LUKE|JOHN|HARMONY)',
                            get_block_text(block).strip().upper()))

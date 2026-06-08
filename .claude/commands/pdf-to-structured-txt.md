@@ -87,6 +87,7 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | narrow N-col 表格某 cell 含别 col 词（"into their the synagogue" 等 word merging）| col split 用了 label/K-means（内容分布敏感）(§R3) | 改 page 几何等分 BODY_LEFT=74 BODY_RIGHT=538 |
 | cell 内容每词出现两次连续（"87 87 that that they they should should"）| PyMuPDF 多 block bbox 重叠，word 被收集两次 (§R4) | build_verse_table 收集时按 (pn, y, x, text) dedupe |
 | 续接经文（Mark v11-12 等）跑错 col（Mark 末尾续接到了 Matt cell）| extract 用了 `<td colspan>` 单 col 行 (§R5) | extract 一律 emit per-col `<td>`，不塌成 colspan |
+| section header 与 col labels 不对应（A 的 header + B 的 col labels + A+B 内容合并成超大畸形表）| section header x0 阈值 ≥100 过严，x0=99.8 失败 (§R6) | 阈值改 ≥80；size+uppercase 已足够区分 |
 
 ---
 

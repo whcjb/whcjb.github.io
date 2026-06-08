@@ -959,6 +959,32 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R6. ccel_pg_is_section_header x0 阈值过严 → 后续 section 被吞合并
+
+**Trigger**：section A 之后紧接 section B 的内容 + col labels，但 section B 的 header 没出现在输出中。结果 section A 的 header + col labels（B 的）+ A 和 B 的所有 verse blocks/commentary 全部塌成一张超大畸形表。
+
+**根因**：section header 检测条件 `block['bbox'][0] >= 100` 太严。实测 vol 2 中某些 section header 的 block.bbox.x0 = 99.81（小数差 0.2px 失败）。比如 Matt 13:18-23 那个 section header（size 19.2 居中）就因 x0=99.81 被漏掉，flush 没触发，B 的 verse 全部累计到 A 的 verse_buf。
+
+**Fix**：把 `x0 >= 100` 改为 `x0 >= 80`。size ≥ 18 + uppercase MATTHEW/MARK/LUKE 已足以区分 col labels（size 16.8）和正文（size 12）。
+
+```python
+def ccel_pg_is_section_header(block):
+    span = get_first_span(block)
+    if not span or span.get('size', 0) < 18 or block['bbox'][0] < 80:
+        return False
+    return bool(re.search(r'(MATTHEW|MARK|LUKE|JOHN|HARMONY)',
+                           get_block_text(block).strip().upper()))
+```
+
+**实测**：vol 2 sections 从 78 → 80（多识别 2 个之前被吞的 section）。Matt 13:1-17 + Matt 13:18-23 + Matt 19:xx 等正确分裂。
+
+**通用启示**：
+- 几何阈值用 `>=` 必须**留出至少 1-2px 容差**——浮点比较 + 字体渲染微差异，会导致边缘 case 被漏
+- 多重信号判定时，**至少有 2 个强信号即可放宽其他阈值**（这里 size ≥ 18 + 全大写 + 关键词 已构成 3 重信号）
+- 调阈值前先 dump 真实失败 case 的实测值，再决定改多少
+
+---
+
 ## R5. ccel_pg_build_verse_table 单 col 行 colspan 化 → publish 路由错
 
 **Trigger**：narrow N-col table 末尾出现 colspan="N" 行（仅某 col 有续接内容），publish 默认把 colspan 放第一栏，导致 Mark v11-12 等续接被推到 Matt cell。
