@@ -47,6 +47,69 @@ def is_skip_block(block):
     return not t
 
 
+# ─── scripture-table transform ──────────────────────────────────────────
+# 把 raw 里 <table class="calvin-scripture"> 旧格式（多 <tr> + colspan）
+# 转成 <div class="scripture-box scripture-box--multi"> + <table class="scripture-table">
+# 与卷一/卷三同款（不滑动、多列同时显示）。
+# 详见 anti-pattern N: scripture-table 不能用 calvin-scripture 类。
+TABLE_RE = re.compile(
+    r'<table class="calvin-scripture">\s*'
+    r'<thead><tr><th colspan="\d+"[^>]*>(?P<title>[^<]+)</th></tr></thead>\s*'
+    r'<thead><tr>(?P<hcols>(?:<th[^>]*>[^<]+</th>\s*)+)</tr></thead>\s*'
+    r'<tbody>(?P<rows>.*?)</tbody></table>',
+    re.DOTALL,
+)
+ROW_RE = re.compile(r'<tr>(.*?)</tr>', re.DOTALL)
+CELL_RE = re.compile(r'<td(?P<attrs>[^>]*)>(?P<content>.*?)</td>', re.DOTALL)
+
+
+def _parse_title_to_ref(title):
+    """'MATTHEW 11:1-6; LUKE 7:18-23' → 'Matthew 11:1-6; Luke 7:18-23'"""
+    parts = [p.strip() for p in title.split(';')]
+    def cap(p):
+        m = re.match(r'^([A-Z]+)\s+(.+)$', p)
+        return f'{m.group(1).capitalize()} {m.group(2)}' if m else p
+    return '; '.join(cap(p) for p in parts)
+
+
+def transform_scripture_table(m):
+    title = m.group('title').strip()
+    hcols = m.group('hcols').strip()
+    rows_html = m.group('rows').strip()
+    n_cols = hcols.count('<th')
+
+    col_texts = [[] for _ in range(n_cols)]
+    for row in ROW_RE.findall(rows_html):
+        cells = list(CELL_RE.finditer(row))
+        if not cells:
+            continue
+        if len(cells) == 1 and 'colspan' in cells[0].group('attrs'):
+            col_texts[0].append(cells[0].group('content').strip())
+        else:
+            for ci, c in enumerate(cells[:n_cols]):
+                col_texts[ci].append(c.group('content').strip())
+
+    new_cells = ''
+    for texts in col_texts:
+        joined = ' '.join(t for t in texts if t)
+        new_cells += f'<td><p>{joined}</p></td>'
+
+    ref = _parse_title_to_ref(title)
+    return (
+        f'<div class="scripture-box scripture-box--multi">\n'
+        f'<p class="scripture-ref">{ref}</p>\n'
+        f'<table class="scripture-table">\n'
+        f'<thead><tr>{hcols}</tr></thead>\n'
+        f'<tbody><tr>{new_cells}</tr></tbody>\n'
+        f'</table>\n'
+        f'</div>'
+    )
+
+
+def apply_scripture_table_transform(text):
+    return TABLE_RE.sub(transform_scripture_table, text)
+
+
 def read_raw(path):
     with open(path, encoding="utf-8") as f:
         return f.read()
@@ -118,6 +181,8 @@ date: {DATE}
 
     title = CHAPTER_TITLES.get(ch, f"Matthew {ch}")
     body = "\n\n".join(blocks)
+    # 把 raw 中的 <table class="calvin-scripture"> 转成 scripture-table 同款
+    body = apply_scripture_table_transform(body)
     content = front_matter + "\n" + f"# {title}\n\n" + body + "\n"
 
     with open(path, "w", encoding="utf-8") as f:

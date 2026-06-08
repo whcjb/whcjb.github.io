@@ -857,6 +857,36 @@ return lines[:end_idx] + lines[fn_def_start:]
 
 ---
 
+## O. ccel_pg_is_footnote 只看首 span 字号 → 经文续接整页丢失
+
+**Trigger**：harmony-2-en 某章 scripture-table 末尾 verse 缺失（如 Matt 21:1-9 只到 v3，Mark 11:1-10 只到 v3）。对照 PDF 多页表格的**第二页内容完全没出现**在 raw txt。
+
+**根因**：CCEL parallel 格式（vol 2）中，跨页 verse 续接块的首 span 常是上一节的 footnote-ref 数字（如 `699 4. Now all this was done...`），字号 6.6pt < `footnote_size_max` (7.5)。原 `ccel_pg_is_footnote` 只看首 span 字号 → **整页跨页续接块被误判为脚注 → 全部过滤掉**。
+
+具体踩坑现场（matthew_make2.pdf p283）：
+- B2 y=185 首 span=6.6 「699」第二 span=12.0 「 4. Now all this was done...」
+- B3 y=246 首 span=6.6 「708」第二 span=12.0 「 said to them...」
+- 两块共含 Matt v4-9 / Mark v3 续-10 / Luke v32-38 完整内容
+
+**Fix**：两个信号同时满足才判脚注：
+```python
+def ccel_pg_is_footnote(block, cfg):
+    spans = [s for line in block.get('lines', [])
+             for s in line.get('spans', []) if s.get('text', '').strip()]
+    if not spans:
+        return False
+    if spans[0].get('size', 0) >= cfg['footnote_size_max']:
+        return False
+    # 首 span 小，再看第二 — 正文字号则不是脚注
+    if len(spans) >= 2 and spans[1].get('size', 0) >= 10:
+        return False
+    return True
+```
+
+**通用启示**（见 [principles §0.3](principles.md)）：「首 span 几何特征」是单点信号，需配合「第二 span 字号」「block 位置」等内容信号联合判断。光看首 span 字号是单几何信号的反例。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。

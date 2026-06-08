@@ -21,6 +21,22 @@ python3 scripts/calvin_extract.py harmony2
 
 ---
 
+## ⚠️ 已知坑：跨页经文表续接整页丢失（[anti-pattern O](refs/anti-patterns.md#o)）
+
+CCEL parallel 格式 vol 2 中，**跨页 verse 续接块**的首 span 常是上一节的 footnote-ref 数字（6.6pt < `footnote_size_max`）。原 `ccel_pg_is_footnote` 只看首 span 字号 → **整页续接块被误判为脚注全部过滤**。
+
+修复后逻辑：两个信号同时满足才判脚注：
+```python
+spans[0].size < footnote_size_max  AND  spans[1].size < 10
+```
+
+真脚注：first=6.3 + second=9.0 → IS fn ✓
+经文续接：first=6.6 + second=12.0 → NOT fn ✓（第二 span 是正文字号说明本块是正文）
+
+**写新提取器时**：每个 `is_*` 分类函数都问自己「光看首 span 够不够？」绝大多数情况都需要看第二 span / 字号分布 / block 位置等额外信号。
+
+---
+
 ## 2. 关键 helper（`ccel_pg_*` 前缀）
 
 见 [refs/helpers.md](refs/helpers.md) §1.3：

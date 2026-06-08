@@ -1184,8 +1184,35 @@ def ccel_pg_is_page_number(block):
 
 
 def ccel_pg_is_footnote(block, cfg):
-    span = get_first_span(block)
-    return span is not None and span.get('size', 0) < cfg['footnote_size_max']
+    """⚠️ 不要只看 first span size——CCEL parallel 中 verse 续接块的首 span
+    常是上一节的 6.6pt footnote ref（如 `699 4. Now all this was done...`），
+    其余正文 spans 是 12pt。只看首 span 会把整页跨页续接块误判为 fn，导致
+    scripture-table 跨页内容全丢（harmony-2-en/21.md Matt 21:1-9 即此 bug）。
+
+    正确判定（两个信号必须同时满足）：
+    1. 首 span 字号 < footnote_size_max（fn 起首必为小字数字）
+    2. 第二个 non-empty span 字号 < 10（fn 正文字号 < 主文）
+
+    Vol 2 PDF 中：
+      - 真脚注块：first=6.3 + second=9.0  → IS fn
+      - 经文续接块：first=6.6 + second=12.0 → NOT fn
+    """
+    spans = []
+    for line in block.get('lines', []):
+        for span in line.get('spans', []):
+            if span.get('text', '').strip():
+                spans.append(span)
+    if not spans:
+        return False
+    first_size = spans[0].get('size', 0)
+    if first_size >= cfg['footnote_size_max']:
+        return False
+    # 首 span 小，再看第二个 — 正文字号则不是脚注
+    if len(spans) >= 2:
+        second_size = spans[1].get('size', 0)
+        if second_size >= 10:
+            return False
+    return True
 
 
 def ccel_pg_is_section_header(block):
