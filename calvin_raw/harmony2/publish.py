@@ -78,13 +78,32 @@ def transform_scripture_table(m):
     rows_html = m.group('rows').strip()
     n_cols = hcols.count('<th')
 
+    # Bible cross-ref label pattern：col 末尾 "Luke 16:16"/"Matthew 3:1" 这种
+    # 表示该 col 即将引入跨节经文。如某 col 末尾含此 label，下个 colspan
+    # 单元格的内容应追加到该 col（而非默认的第一栏 Matt）。
+    CROSS_REF_RE = re.compile(
+        r'\b(Matthew|Mark|Luke|John|Acts|Romans|[12] Corinthians|Galatians|'
+        r'Ephesians|Philippians|Colossians|[12] Thessalonians|[12] Timothy|'
+        r'Titus|Philemon|Hebrews|James|[12] Peter|[123] John|Jude|Revelation)'
+        r'\s+\d+:\d+\s*\.?\s*$'
+    )
+
     col_texts = [[] for _ in range(n_cols)]
     for row in ROW_RE.findall(rows_html):
         cells = list(CELL_RE.finditer(row))
         if not cells:
             continue
         if len(cells) == 1 and 'colspan' in cells[0].group('attrs'):
-            col_texts[0].append(cells[0].group('content').strip())
+            content = cells[0].group('content').strip()
+            # 选哪个 col：检查每 col 末尾是否含 cross-ref label
+            target_col = 0   # 默认放第一栏
+            for ci in range(n_cols):
+                if col_texts[ci]:
+                    last = col_texts[ci][-1].rstrip()
+                    if CROSS_REF_RE.search(last):
+                        target_col = ci
+                        break
+            col_texts[target_col].append(content)
         else:
             for ci, c in enumerate(cells[:n_cols]):
                 col_texts[ci].append(c.group('content').strip())
