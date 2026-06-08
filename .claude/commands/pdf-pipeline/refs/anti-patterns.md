@@ -959,6 +959,39 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R2. scripture-table 不同 col 数需要不同 split 策略
+
+**Trigger**：3-col 表格某 cell 起首出现别 col 末尾词（如 Luke col 开头「he 1. And it happened that...」——「he」是 Mark v25 末尾词）。Or 2-col 表格 cell 末尾混入别 col 起首词（Matt 11 case [§Q](#q)）。
+
+**根因**：用统一 split 策略（如 page 几何等分）对所有 col 数都不对。不同 col 数有不同 cell 布局：
+
+| col 数 | 典型 cell 宽 | label gutter 中点是否对齐 cell 边界 |
+|---|---|---|
+| 2 | ~187px | ❌ label gutter (322) 远比 cell 间实际 gutter (302-308) 宽 |
+| 3 | ~143px | ✓ label gutter midpoint 与 cell 间 gutter 对齐良好 |
+
+**Fix**：
+
+```python
+if n_cols == 2:
+    splits = [305]   # empirical（vol 2 narrow 2-col）
+elif n_cols >= 3 and len(col_info[0]) >= 3:
+    # 用 label gutter midpoint
+    splits = [(col_info[i][2] + col_info[i + 1][1]) / 2
+              for i in range(n_cols - 1)]
+```
+
+`col_info` 必须含 `x1`（label bbox 右边界，3-元组形式）：
+
+```python
+def ccel_pg_extract_col_info(block):
+    return [(text, line['bbox'][0], line['bbox'][2]) for line in ...]
+```
+
+**已知限制**：3-col narrow tables（vol 2 ~143px/col）仍有 boundary word 分桶不稳——某些行 col 间 word x0 变化超过 30px，固定 split 不能完美对齐。如踩到可用 word-x0 histogram 检测 gutter（动态 split）。
+
+---
+
 ## R. 跨页 word 排序必须含 page_idx，否则 p11 y=88 排到 p10 y=600 前
 
 **Trigger**：scripture-table cell 内容顺序错乱——后页 v11 出现在前页 v7 之前，或 cross-ref 注脚跑到 cell 顶部。
