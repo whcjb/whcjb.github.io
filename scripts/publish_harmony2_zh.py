@@ -91,14 +91,41 @@ def transform(raw: str, en_ch: int) -> str:
         (r'^章节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',   r'chapter: \1'),
         (r'^上一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'prev_section: \1'),
         (r'^下一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'next_section: \1'),
-        (r'^chapter:\s*<sup>(\d+)</sup>$',              r'chapter: \1'),
-        (r'^prev_section:\s*<sup>(\d+)</sup>$',         r'prev_section: \1'),
-        (r'^next_section:\s*<sup>(\d+)</sup>$',         r'next_section: \1'),
+        (r'^chapter:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
+         r'chapter: \1'),
+        (r'^prev_section:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
+         r'prev_section: \1'),
+        (r'^next_section:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
+         r'next_section: \1'),
         (r'^上一节标签[：:]\s*"',  r'prev_label: "'),
         (r'^下一节标签[：:]\s*"',  r'next_label: "'),
     ]
     for pat, rep in pre_fm_fixes:
         text = re.sub(pat, rep, text, flags=re.M)
+
+    # 4.7. Claude sometimes drops the `chapter:` key entirely and writes
+    # `第N章` as a bare line (no key prefix). Restore the key.
+    # Detect 第N章 / 第二十章 etc. lines in front matter (between two `---`).
+    cn_num = {'一': 1, '二': 2, '三': 3, '四': 4, '五': 5,
+              '六': 6, '七': 7, '八': 8, '九': 9, '十': 10}
+    def _cn_to_int(s):
+        s = s.strip()
+        if s.isdigit():
+            return int(s)
+        if s == '十': return 10
+        if s.startswith('十'):
+            return 10 + cn_num.get(s[1:], 0)
+        if s.endswith('十'):
+            return cn_num.get(s[:-1], 1) * 10
+        if '十' in s:
+            tens, ones = s.split('十', 1)
+            return cn_num.get(tens or '一', 1) * 10 + cn_num.get(ones, 0)
+        return cn_num.get(s)
+    def _replace_bare_cn(m):
+        n_int = _cn_to_int(m.group(1))
+        return f'chapter: {n_int}' if n_int else m.group(0)
+    text = re.sub(r'^第([零一二三四五六七八九十百\d]+)章$',
+                  _replace_bare_cn, text, count=1, flags=re.M)
 
     # 5. Front-matter — swap book id/name and renumber chapter
     text = re.sub(r'book_id: harmony-2-en\b', 'book_id: harmony-2', text)
