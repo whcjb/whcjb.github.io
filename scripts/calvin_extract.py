@@ -1235,11 +1235,15 @@ def ccel_pg_is_col_label(block):
 
 
 def ccel_pg_extract_col_info(block):
+    """返回 [(text, x0, x1), ...] — 含 label bbox 两端，build_verse_table
+    据此估算 col 间 gutter 中点作为分桶 split。
+    单 x0 不够：col label 是 left-aligned，x0 反映 label 起点而非 cell 起点。
+    用 (cur.x1 + next.x0)/2 才是真正的 gutter 中点。"""
     cols = []
     for line in block.get('lines', []):
         text = ''.join(s['text'] for s in line.get('spans', [])).strip()
         if text:
-            cols.append((text, line['bbox'][0]))
+            cols.append((text, line['bbox'][0], line['bbox'][2]))
     return sorted(cols, key=lambda c: c[1])
 
 
@@ -1266,35 +1270,90 @@ def ccel_pg_is_decoration(block):
 
 
 def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
-    if len(col_info) >= 2:
-        xs     = [x for _, x in col_info]
-        splits = [(xs[i] + xs[i + 1]) / 2 for i in range(len(xs) - 1)]
+    """⚠️ verse_blocks 现在是 [(block_dict, words_list), ...]
+    words_list 是 page.get_text("words") 过滤到 block.bbox 内的 word 列表。
+
+    span-level 分桶遇到 PyMuPDF 把多列同 y 的不同 spans **合并为一个 span**
+    时无解（Matt v10 末 + Matt v11 起首 + Luke v27 末 全在一个 span 内）。
+    word-level 给每个 word 独立的 x0 → 可靠分桶。
+
+    页面几何等分作为 split。经验偏移：vol 2 narrow cols 中 Matt 内容
+    occasionally 跨入 gutter（如「I」x=300，Luke「will」x=308），
+    用 split=289 会误把 Matt boundary 词分到 Luke。
+    所以 2 cols 用 split=305 (Matt 右沿)；3+ cols 等分。"""
+    BODY_LEFT, BODY_RIGHT = 74, 504    # vol 2 page geometry
+    n_cols = max(1, len(col_info))
+    if n_cols == 2:
+        splits = [305]
+    elif n_cols >= 3:
+        cw = (BODY_RIGHT - BODY_LEFT) / n_cols
+        splits = [BODY_LEFT + cw * (i + 1) for i in range(n_cols - 1)]
     else:
-        splits = [290]
-    n_cols    = len(splits) + 1
+        splits = []
     col_lines = [[] for _ in range(n_cols)]
 
-    for block in verse_blocks:
-        for line in block.get('lines', []):
-            # ⚠️ 不能直接拼 span['text']——会丢失行内 fn-ref 上标（PDF 中
-            # 6.6pt + sup flag 的小数字）。必须按 span 判定，小字号 sup 数字
-            # 包成 <sup>N</sup>。详见 anti-pattern: fn-ref 渲染缺失。
-            parts = []
-            for sp in line.get('spans', []):
-                t = sp['text']
-                sz = sp.get('size', 0)
-                is_sup = bool(sp.get('flags', 0) & 1)
-                stripped = t.strip()
-                if is_sup and stripped.isdigit() and sz < 9.5:
-                    parts.append(f'<sup>{stripped}</sup>')
-                else:
-                    parts.append(t)
+    # ── word-level 分桶 ──
+    # 1. 把所有 verse_blocks 的 words 合并并按 (y0, x0) 排序
+    # 2. 按 y0 聚成 visual lines（同 y 内多个 word 属同视觉行）
+    # 3. 每个 word 按 x0 vs splits 分桶到对应 col
+    # 4. 同 col 同行 words 拼成 line text，按 verse-start (^\d+\.) 分段
+    #
+    # sup 上标识别：用与每个 word 关联的字号信息（从 span_size_map）。
+    # 该 map 在 verse_buf 收集时构建，把 (round(y), round(x0)) → size
+    all_word_recs = []   # (page_idx, y0, x0, x1, text, size, is_sup)
+    for entry in verse_blocks:
+        # 兼容 (block_dict, words_list, span_size_map) 老格式（无 page_idx）
+        if len(entry) == 4:
+            block_dict, words_list, span_size_map, pn = entry
+        else:
+            block_dict, words_list, span_size_map = entry
+            pn = 0
+        for w in words_list:
+            wx0, wy0, wx1, wy1, wtext = w[:5]
+            key = (round(wy0), round(wx0))
+            size, is_sup = span_size_map.get(key, (12.0, False))
+            all_word_recs.append((pn, wy0, wx0, wx1, wtext, size, is_sup))
+
+    # 按 (page_idx, y, x) 排序 — 跨页时必须先按 page 排序
+    all_word_recs.sort(key=lambda r: (r[0], round(r[1]), r[2]))
+
+    # 聚成行：y 接近的 word 同一行
+    Y_TOL = 2
+    line_groups = []
+    cur_group = []
+    cur_y = None
+    cur_pn = None
+    for rec in all_word_recs:
+        pn, y = rec[0], rec[1]
+        # 同页 + y 接近才同行；跨页强制断行
+        if (cur_pn == pn and cur_y is not None and abs(y - cur_y) <= Y_TOL):
+            cur_group.append(rec)
+        else:
+            if cur_group:
+                line_groups.append(cur_group)
+            cur_group = [rec]
+            cur_pn = pn
+            cur_y = y
+    if cur_group:
+        line_groups.append(cur_group)
+
+    # 每行按 x0 分桶到 col
+    for grp in line_groups:
+        bucks = [[] for _ in range(n_cols)]
+        for pn, y0, x0, x1, text, size, is_sup in grp:
+            ci = sum(1 for s in splits if x0 >= s)
+            stripped = text.strip()
+            if is_sup and stripped.isdigit() and size < 9.5:
+                bucks[ci].append(f'<sup>{stripped}</sup>')
+            else:
+                bucks[ci].append(text)
+        for ci in range(n_cols):
             line_text = re.sub(r'\s+', ' ',
-                ''.join(parts).replace('\xa0', ' ')).strip()
-            if not line_text:
-                continue
-            ci = sum(1 for s in splits if line['bbox'][0] >= s)
-            col_lines[ci].append((bool(re.match(r'^\d+\.?\s', line_text)), line_text))
+                ' '.join(bucks[ci]).replace('\xa0', ' ')).strip()
+            if line_text:
+                col_lines[ci].append(
+                    (bool(re.match(r'^\d+\.?\s', line_text)), line_text)
+                )
 
     def lines_to_rows(lines):
         rows, cur = [], []
@@ -1379,6 +1438,24 @@ def extract_ccel_parallel(cfg):
                 pending_continuation = None
             output_blocks.append(rich)
 
+    def block_to_verse_buf_entry(block, page, page_idx):
+        """build_verse_table 现在要 (block_dict, words_list, span_size_map, page_idx)。
+        page_idx 必须随 word 进 sort key——否则跨页块词混排序错乱。"""
+        x0, y0, x1, y1 = block['bbox']
+        page_words = page.get_text('words')
+        wlist = [w for w in page_words
+                 if y0 - 1 <= w[1] and w[3] <= y1 + 1]
+        sm = {}
+        for line in block.get('lines', []):
+            for sp in line.get('spans', []):
+                if not sp.get('text', '').strip():
+                    continue
+                sx0, sy0 = sp['bbox'][0], sp['bbox'][1]
+                sz = sp.get('size', 12.0)
+                is_sup = bool(sp.get('flags', 0) & 1)
+                sm[(round(sy0), round(sx0))] = (sz, is_sup)
+        return (block, wlist, sm, page_idx)
+
     for page_idx in range(cfg['skip_pages'], total):
         page   = doc[page_idx]
         blocks = sorted(
@@ -1420,11 +1497,11 @@ def extract_ccel_parallel(cfg):
             elif ccel_pg_is_col_label(block):
                 current_col_info = ccel_pg_extract_col_info(block)
             elif in_verse_section and ccel_pg_is_verse_block(block):
-                verse_buf.append(block)
+                verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
             elif in_verse_section:
                 first_span = get_first_nonempty_span(block)
                 if verse_buf and first_span and not bool(first_span.get('flags', 0) & 16):
-                    verse_buf.append(block)
+                    verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
                 else:
                     flush()
                     in_verse_section = False
