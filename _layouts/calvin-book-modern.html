@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div style="margin: 32px 0 24px;">
+        <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+      </div>
+
+      <h2 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:24px;">
+        {{ page.book_name }}
+      </h2>
+
+      {% if page.has_preface %}
+      <div style="margin-bottom: 16px;">
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="preface-link">序言 &rarr;</a>
+      </div>
+      {% endif %}
+
+      <div class="ch-pills">
+        {% for i in (1..page.chapters) %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">第 {{ i }} 章</a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.preface-link {
+  font-family: Georgia, serif;
+  font-size: 14px;
+  color: #0085a1;
+}
+.preface-link:hover {
+  text-decoration: underline;
+}
+.ch-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+.ch-pill {
+  display: inline-block;
+  padding: 7px 18px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 20px;
+  font-size: 14px;
+  font-family: Georgia, serif;
+  color: #2e7d32;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ch-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+</style>
