@@ -352,7 +352,38 @@ layout: default
   overflow-wrap: break-word;
 }
 /* Ages-format parallel English+Latin table (used by Jude, 1John, etc.):
-   uses default `.scripture-table` borders (matches PDF grid layout). */
+   borderless, equal columns, Latin column italicized + gray for visual
+   distinction from English. */
+.calvin-en-content .scripture-table.calvin-parallel {
+  border: none !important;
+  border-collapse: collapse;
+}
+.calvin-en-content .scripture-table.calvin-parallel tr,
+.calvin-en-content .scripture-table.calvin-parallel th,
+.calvin-en-content .scripture-table.calvin-parallel td {
+  border: none !important;
+  background: transparent;
+}
+.calvin-en-content .scripture-table.calvin-parallel td {
+  padding: 6px 16px 6px 0;
+  font-size: 15px;
+  vertical-align: top;
+}
+.calvin-en-content .scripture-table.calvin-parallel td:nth-child(2) {
+  font-style: italic;
+  color: #555;
+  padding-right: 0;
+  padding-left: 16px;
+}
+@media (max-width: 640px) {
+  .calvin-en-content .scripture-table.calvin-parallel tr,
+  .calvin-en-content .scripture-table.calvin-parallel td {
+    border: none !important;
+  }
+  .calvin-en-content .scripture-table.calvin-parallel td:first-child {
+    border-top: none !important;
+  }
+}
 /* 窄屏（≤640px）：3 列经文表横向太挤会出现内容重叠。改为纵向堆叠 —
    thead 隐藏，每个 td 作为一个独立块占满整行，前面用 data-label 显示
    原列标题（如「马太福音 10:1-8」）。 */
