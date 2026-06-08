@@ -1276,8 +1276,21 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
 
     for block in verse_blocks:
         for line in block.get('lines', []):
+            # ⚠️ 不能直接拼 span['text']——会丢失行内 fn-ref 上标（PDF 中
+            # 6.6pt + sup flag 的小数字）。必须按 span 判定，小字号 sup 数字
+            # 包成 <sup>N</sup>。详见 anti-pattern: fn-ref 渲染缺失。
+            parts = []
+            for sp in line.get('spans', []):
+                t = sp['text']
+                sz = sp.get('size', 0)
+                is_sup = bool(sp.get('flags', 0) & 1)
+                stripped = t.strip()
+                if is_sup and stripped.isdigit() and sz < 9.5:
+                    parts.append(f'<sup>{stripped}</sup>')
+                else:
+                    parts.append(t)
             line_text = re.sub(r'\s+', ' ',
-                ''.join(s['text'] for s in line.get('spans', [])).replace('\xa0', ' ')).strip()
+                ''.join(parts).replace('\xa0', ' ')).strip()
             if not line_text:
                 continue
             ci = sum(1 for s in splits if line['bbox'][0] >= s)

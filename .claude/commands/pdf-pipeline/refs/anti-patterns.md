@@ -887,6 +887,32 @@ def ccel_pg_is_footnote(block, cfg):
 
 ---
 
+## P. scripture-table 单元格里行内 fn-ref 数字未渲染为上标
+
+**Trigger**：harmony-2-en 表格 cell 中出现裸数字（如 `Gospel. 5 6. And blessed...`）夹在两节经文之间——这个 `5` 应该是上一节的脚注引用（`<sup>5</sup>`），但被当成普通字符显示。
+
+**根因**：`ccel_pg_build_verse_table` 直接 `''.join(s['text'] for s in spans)` 拼行文本——**完全跳过了 span 字号/flags 判定**。CCEL parallel PDF 中行内 fn-ref 是 6.6pt + flags=5 (`sup|serif`) 的小数字，与正文 12pt 区分明显，但暴力 join 后看不出。
+
+**Fix**：build 行文本时按 span 处理，小字号 sup 数字包成 `<sup>N</sup>`：
+
+```python
+parts = []
+for sp in line.get('spans', []):
+    t = sp['text']
+    sz = sp.get('size', 0)
+    is_sup = bool(sp.get('flags', 0) & 1)
+    stripped = t.strip()
+    if is_sup and stripped.isdigit() and sz < 9.5:
+        parts.append(f'<sup>{stripped}</sup>')
+    else:
+        parts.append(t)
+line_text = ''.join(parts).strip()
+```
+
+**通用启示**：`ccel_pg_spans_to_md`（正文用）已经处理了 fn-ref → `<sup>`，但 `ccel_pg_build_verse_table`（表格用）是独立路径——**两条路径都需要同样的 fn-ref 包装逻辑**。新格式提取器抄正文路径的 span→md 逻辑时容易漏复制。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
