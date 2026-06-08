@@ -959,36 +959,66 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
-## R2. scripture-table 不同 col 数需要不同 split 策略
+## R2. scripture-table col split 必须用 word-x0 histogram，不用 label 位置
 
-**Trigger**：3-col 表格某 cell 起首出现别 col 末尾词（如 Luke col 开头「he 1. And it happened that...」——「he」是 Mark v25 末尾词）。Or 2-col 表格 cell 末尾混入别 col 起首词（Matt 11 case [§Q](#q)）。
+**Trigger**：narrow N-col 表格某 cell 含明显属于别 col 的内容（如 Luke 开头「he 1.」——「he」是 Mark 末尾词；或 Matt v3-4 含 Mark v25-26 的「high-priest」词）。
 
-**根因**：用统一 split 策略（如 page 几何等分）对所有 col 数都不对。不同 col 数有不同 cell 布局：
+**根因**：固定 split 策略对 narrow cols 不够精确——任何**外部信号**（label x、page 几何）都无法精确反映 cell 内容边界：
 
-| col 数 | 典型 cell 宽 | label gutter 中点是否对齐 cell 边界 |
-|---|---|---|
-| 2 | ~187px | ❌ label gutter (322) 远比 cell 间实际 gutter (302-308) 宽 |
-| 3 | ~143px | ✓ label gutter midpoint 与 cell 间 gutter 对齐良好 |
+| 策略 | 问题 |
+|---|---|
+| page 几何等分（body_left + cw×i） | 假设 cell 等宽，但布局可能偏移 |
+| label gutter midpoint（`(col[i].x1 + col[i+1].x0)/2`）| label 位置 ≠ cell 边界（label 在 cell 内 left/center-aligned）|
+| empirical 305（2-col vol 2）| 仅对特定布局有效 |
 
-**Fix**：
+narrow cols（~143px/col）中 word x0 在不同行漂移 30+px，**外部信号 split 都不能完美对齐**。
 
-```python
-if n_cols == 2:
-    splits = [305]   # empirical（vol 2 narrow 2-col）
-elif n_cols >= 3 and len(col_info[0]) >= 3:
-    # 用 label gutter midpoint
-    splits = [(col_info[i][2] + col_info[i + 1][1]) / 2
-              for i in range(n_cols - 1)]
-```
-
-`col_info` 必须含 `x1`（label bbox 右边界，3-元组形式）：
+**正解：用 section-level word-x0 histogram 找真 gutter**（让内容自己决定 cell 边界）
 
 ```python
-def ccel_pg_extract_col_info(block):
-    return [(text, line['bbox'][0], line['bbox'][2]) for line in ...]
+def find_splits_by_histogram(words, n_cols):
+    """words: 本 section 所有 word x0 list（int）"""
+    if len(words) < 20 or n_cols < 2:
+        return None
+    xmin, xmax = min(words), max(words)
+    bin_w = 2
+    bins = [0] * ((xmax - xmin) // bin_w + 2)
+    for x in words:
+        bins[(x - xmin) // bin_w] += 1
+    # 找连续 ≥3 bins（6px+）的空 bin 段 = 真 gutter
+    empty_runs = []
+    i = 0
+    while i < len(bins):
+        if bins[i] == 0:
+            j = i
+            while j < len(bins) and bins[j] == 0:
+                j += 1
+            if j - i >= 3:
+                empty_runs.append((j - i, (i + j) / 2 * bin_w + xmin))
+            i = j
+        else:
+            i += 1
+    empty_runs.sort(key=lambda r: -r[0])  # gap 宽度降序
+    chosen = empty_runs[:n_cols - 1]
+    if len(chosen) == n_cols - 1:
+        return sorted([r[1] for r in chosen])
+    return None
 ```
 
-**已知限制**：3-col narrow tables（vol 2 ~143px/col）仍有 boundary word 分桶不稳——某些行 col 间 word x0 变化超过 30px，固定 split 不能完美对齐。如踩到可用 word-x0 histogram 检测 gutter（动态 split）。
+**实测（vol 2 Matt 12:1-8 三栏 narrow table）**：
+- Mark cell **完全干净** v23-28 ✓
+- Matt v1-8 / Luke v1-3 cell 各列分别 ✓
+- 仅少量 Luke v4-5 boundary 词漏到 Matt 尾（~10% 残留）
+
+**回退顺序**（histogram 找不够 gutter 时）：
+1. 3-col → label gutter midpoint
+2. 2-col → empirical 305
+3. 兜底 → page 几何等分
+
+**通用启示**（与 §0.3 互补）：
+- **直接从内容自身决定 cell 边界**最可靠（histogram 看 word 位置分布）
+- label / page 几何是**间接信号**，narrow 布局下不够精确
+- 「让数据说话」优于「让几何说话」当内容密度高时
 
 ---
 
