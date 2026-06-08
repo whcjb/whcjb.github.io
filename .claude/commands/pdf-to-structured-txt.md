@@ -81,6 +81,9 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | 章末出现孤立 "CHAPTER N" 居中标记（PDF 没有）| 后部脚注页页眉 #006411 深绿 CHAPTER N 被 emit 又被 fn def 吞 (§M6) | converter CENTERED_H1/CENTERED_H2 起始 SKIP 内容 `^CHAPTER \d+$` 的块 |
 | 用户问"前言怎么没了" | publish 脚本生成 index.html 缺 `has_preface: true` → 目录页前言链接被 `{% if %}` 隐藏 | publish 脚本 Step 7 index.html front matter 必须含 `has_preface: true` |
 | 中文翻译 raw 没 chmod 444 | 违反保留规则 | 立刻 `chmod 444` |
+| narrow cols 表格 cell 含别 col 内容（Matt cell 含 Luke v27 末尾）| PyMuPDF dict 跨列 span 合并 (§Q) | 用 `page.get_text("words")` 替代 span-level 分桶 |
+| cell 内容顺序错乱（跨页时 p11 y=88 排到 p10 y=600 前）| word sort key 漏 page_idx (§R) | sort key 第一字段 = page_idx |
+| Luke 16:16 经文出现在 Matt cell | `<td colspan>` 无脑放第一栏 (§S) | 按 cross-ref label `Book N:M$` 路由到对应 col |
 
 ---
 

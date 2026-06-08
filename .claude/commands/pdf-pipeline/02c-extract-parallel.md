@@ -35,6 +35,45 @@ spans[0].size < footnote_size_max  AND  spans[1].size < 10
 
 **写新提取器时**：每个 `is_*` 分类函数都问自己「光看首 span 够不够？」绝大多数情况都需要看第二 span / 字号分布 / block 位置等额外信号。
 
+## ⚠️ 已知坑 2：narrow cols 跨列 span 合并 → 必须 word-level 提取（[§Q](refs/anti-patterns.md#q)）
+
+vol 2 平行福音 cells ~187px 窄，PyMuPDF `get_text('dict')` 偶尔把**多列同 y 文本合并成单一 span**。span 起点 x0 在 Matt cell 内，但 span text 横跨 Matt + Luke 两列。span-level 和 line-level x0 分桶都无解。
+
+修复：`extract_ccel_parallel` 在 verse_buf 收集时记录 word-level 数据：
+
+```python
+verse_buf.append((block, page.get_text('words'), span_size_map, page_idx))
+```
+
+`ccel_pg_build_verse_table` 按 word 的独立 bbox.x0 分桶，绕过 span 合并。
+
+## ⚠️ 已知坑 3：跨页 word 排序必须含 page_idx（[§R](refs/anti-patterns.md#r)）
+
+跨页 word 收集后排序，sort key **第一字段必须是 page_idx**：
+
+```python
+all_word_recs.sort(key=lambda r: (r[0], round(r[1]), r[2]))
+#                                  ^页^    ^y^      ^x^
+```
+
+否则 p11 y=88 排到 p10 y=600 前 → cell 内容顺序错乱（v11 出现在 v7 之前）。
+
+## ⚠️ 已知坑 4：`<td colspan="2">` 跨全宽行内容路由（[§S](refs/anti-patterns.md#s)）
+
+PDF 中 Calvin 偶尔用跨全宽行表达「跨节经文引用」：在某 col 末尾标「Luke 16:16」label，下方跨全宽放该节经文。`transform_scripture_table` 必须检测 col 末尾 cross-ref label，把后续 colspan 内容路由到该 col：
+
+```python
+CROSS_REF_RE = re.compile(r'\b(Matthew|Mark|Luke|...)\s+\d+:\d+\s*\.?\s*$')
+if 'colspan' in cell.attrs:
+    target_col = 0
+    for ci in range(n_cols):
+        if col_texts[ci] and CROSS_REF_RE.search(col_texts[ci][-1].rstrip()):
+            target_col = ci; break
+    col_texts[target_col].append(cell.content)
+```
+
+无脑放第一栏 = Luke 16:16 内容跑到 Matt cell。
+
 ---
 
 ## 2. 关键 helper（`ccel_pg_*` 前缀）

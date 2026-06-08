@@ -62,6 +62,12 @@ for grp in groups:
 | `ccel_pg_*` | `is_page_header`, `is_page_number`, `is_footnote`, `is_section_header`, `is_col_label`, `extract_col_info`, `is_verse_block`, `is_index_start`, `is_decoration`, `spans_to_md`, `build_verse_table` |
 | 入口 | `extract_ccel_parallel(cfg)` |
 
+**⚠️ 关键设计**：
+- `ccel_pg_is_footnote` 用**双信号验证**（首 span + 第二 span 字号），不能只看首 span — 否则跨页 verse 续接整页丢失（[§O](anti-patterns.md#o)）
+- `ccel_pg_build_verse_table` 接受 `verse_buf` 中**每项是 `(block, words_list, span_size_map, page_idx)` 4-元组**而非单 block — PyMuPDF dict 模式在 narrow cols 会合并跨列 span，必须 word-level 分桶（[§Q](anti-patterns.md#q)）
+- `ccel_pg_extract_col_info` 返回 `[(text, x0, x1)]` 3-元组（含 label bbox 右边界）
+- word 排序 sort key 必须含 page_idx（[§R](anti-patterns.md#r)）：`key=(page_idx, round(y0), x0)`
+
 ### 1.4 CCEL Acts
 
 | 函数前缀 | 函数列表 |

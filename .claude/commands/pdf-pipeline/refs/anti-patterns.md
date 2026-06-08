@@ -913,6 +913,103 @@ line_text = ''.join(parts).strip()
 
 ---
 
+## Q. PyMuPDF dict 模式下 narrow cols 多列同 y 文本合并成单一 span → 必须 word-level 提取
+
+**Trigger**：scripture-table 某 col cell 含明显属于另一 col 的文字（如 Matt v11 里串入 Luke v27 末尾「will prepare the way before thee」+ Luke v28 marker「28.」）。raw 中**单一 span x0 看起来在 Matt cell 起点**但 span 文本横跨两列。
+
+**根因**：PyMuPDF `get_text('dict')` 在 narrow cols（vol 2 平行福音 ~187px/col）+ 多列同 y 文本时偶尔把**多列的相邻文本合并到一个 span**：
+
+```
+B0 line0 spans:
+  x0=74  "will prepare the way before thee. "     (Matt v10 end)
+  x0=244 "11"                                      (Matt v11 marker)
+  x0=256 ".\xa0Verily, I will prepare the way before thee. "  ← 跨列合并！
+  x0=466 "28"                                      (Luke v28 marker)
+  x0=478 ".\xa0For I say to"                       (Luke v28 start)
+```
+
+x0=256 的 span 起点在 Matt cell 内，但 span text 含 Matt v11 起首「Verily, I」+ Luke v27 末尾「will prepare the way before thee」**全在一个 span**。span-level 和 line-level x0 分桶都无解——单点 x0 不能反映 span 跨越的物理位置。
+
+**Fix**：用 **word-level** 提取（`page.get_text("words")` 给每个 word 独立 bbox）：
+
+```python
+def block_to_verse_buf_entry(block, page, page_idx):
+    x0, y0, x1, y1 = block['bbox']
+    page_words = page.get_text('words')
+    wlist = [w for w in page_words
+             if y0 - 1 <= w[1] and w[3] <= y1 + 1]
+    # span_size_map: (round(y0), round(x0)) → (size, is_sup) 让 word
+    # 也能识别 sup fn-ref（words 没字号/flags 信息）
+    sm = {}
+    for line in block.get('lines', []):
+        for sp in line.get('spans', []):
+            if not sp.get('text', '').strip(): continue
+            sm[(round(sp['bbox'][1]), round(sp['bbox'][0]))] = (
+                sp.get('size', 12.0), bool(sp.get('flags', 0) & 1)
+            )
+    return (block, wlist, sm, page_idx)
+```
+
+`build_verse_table` 按 word 的 x0 分桶（不是 span/line 的 x0）。
+
+**通用启示**（与 §0.3 互补）：
+- 同一物理特征（span x0）在不同密度下含义不同——稀疏布局可靠，密集布局欺骗
+- 「**几何信号**」必须配合「**几何粒度**」一起判断：span 在 narrow cols 不可靠，需降到 word 粒度
+- 新写多列检测时**默认用 words 路径**，仅在 spans 已被验证足够时降级
+
+---
+
+## R. 跨页 word 排序必须含 page_idx，否则 p11 y=88 排到 p10 y=600 前
+
+**Trigger**：scripture-table cell 内容顺序错乱——后页 v11 出现在前页 v7 之前，或 cross-ref 注脚跑到 cell 顶部。
+
+**根因**：用 word-level 提取多页内容时（§Q），sort key 只用 `(y0, x0)`。PDF 每页 y 范围都是 0-792，所以 p11 的 y=88（顶部）会**排到 p10 的 y=600（底部）前**。
+
+**Fix**：sort key 必须含 page_idx 作为**最高优先级**：
+
+```python
+all_word_recs.append((page_idx, y0, x0, x1, text, size, is_sup))
+all_word_recs.sort(key=lambda r: (r[0], round(r[1]), r[2]))
+#                                  ^页^    ^y^     ^x^
+```
+
+verse_buf 记录条目时也必须**保留 page_idx**（不能只存 block）：
+
+```python
+verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
+                                          # ↑ 必传
+```
+
+**通用启示**：任何跨页/跨文档的字符级排序，**page_idx / doc_idx 必须是 sort key 的第一字段**。这种 bug 不会 fail loudly——content 在但顺序错。
+
+---
+
+## S. scripture-table `<td colspan="N">` 跨全宽行内容必须按 cross-ref label 路由到正确 col
+
+**Trigger**：scripture-table Matt cell 末尾出现明显属于 Luke 的内容（如「16. The Law and the Prophets (were) till John...」是 Luke 16:16 经文，但出现在 Matt cell）。
+
+**根因**：PDF 原文有 `<tr><td colspan="2">` 跨全宽行表达「跨节经文引用」——Calvin 在 Luke col 末尾标「Luke 16:16」label，下方跨全宽放该节经文（视觉上跨两 col 底部）。`transform_scripture_table` 旧逻辑无脑放第一栏 (Matt)。
+
+**Fix**：检测前面已渲染 col 的末尾是否含 cross-ref label 模式 `Book N:M$`，有则把 colspan 内容追加到该 col：
+
+```python
+CROSS_REF_RE = re.compile(
+    r'\b(Matthew|Mark|Luke|John|Acts|Romans|[12] Corinthians|...)'
+    r'\s+\d+:\d+\s*\.?\s*$'
+)
+if 'colspan' in cell.attrs:
+    target_col = 0   # 默认放第一栏（兼顾 Matt-only 无 Luke 平行的旧情况）
+    for ci in range(n_cols):
+        if col_texts[ci] and CROSS_REF_RE.search(col_texts[ci][-1].rstrip()):
+            target_col = ci
+            break
+    col_texts[target_col].append(cell.content)
+```
+
+**通用启示**：HTML 结构信号（如 `colspan="N"`）的语义往往依赖**上下文**——同一个 colspan 在不同上下文里可能是「Matt-only 段」「Luke cross-ref」「真正跨栏分享」。需要看**前后 col 内容**才能判断正确路由。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。
