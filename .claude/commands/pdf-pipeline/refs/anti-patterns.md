@@ -973,11 +973,14 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 narrow cols（~143px/col）中 word x0 在不同行漂移 30+px，**外部信号 split 都不能完美对齐**。
 
-**正解：用 section-level word-x0 histogram 找真 gutter**（让内容自己决定 cell 边界）
+**正解：用 section-level word-x0 histogram + 期望位置匹配**（让内容自己决定 cell 边界）
+
+⚠️ **不能按 gap width 排序选 top n-1**——页边 gap（body_left 之前的空白）常比 cell 间 gutter 更宽，会优先误选页边而漏真 gutter。
+
+正确：用 page 几何等分作为「期望 split 位置」，对每个期望找**最近的 empty run**：
 
 ```python
-def find_splits_by_histogram(words, n_cols):
-    """words: 本 section 所有 word x0 list（int）"""
+def find_splits_by_histogram(words, n_cols, body_left=74, body_right=504):
     if len(words) < 20 or n_cols < 2:
         return None
     xmin, xmax = min(words), max(words)
@@ -985,7 +988,7 @@ def find_splits_by_histogram(words, n_cols):
     bins = [0] * ((xmax - xmin) // bin_w + 2)
     for x in words:
         bins[(x - xmin) // bin_w] += 1
-    # 找连续 ≥3 bins（6px+）的空 bin 段 = 真 gutter
+    # 找连续 ≥3 bins（≥6px）的空 bin 段
     empty_runs = []
     i = 0
     while i < len(bins):
@@ -998,17 +1001,29 @@ def find_splits_by_histogram(words, n_cols):
             i = j
         else:
             i += 1
-    empty_runs.sort(key=lambda r: -r[0])  # gap 宽度降序
-    chosen = empty_runs[:n_cols - 1]
+    # 期望位置 = page 几何等分
+    cw = (body_right - body_left) / n_cols
+    expected = [body_left + cw * (i + 1) for i in range(n_cols - 1)]
+    # 对每个期望位置找最近 empty run（必须在 body 范围内，距期望 < 60px）
+    chosen = []
+    for exp in expected:
+        cands = [r for r in empty_runs
+                 if body_left < r[1] < body_right and r not in chosen]
+        if cands:
+            closest = min(cands, key=lambda r: abs(r[1] - exp))
+            if abs(closest[1] - exp) < 60:
+                chosen.append(closest)
     if len(chosen) == n_cols - 1:
         return sorted([r[1] for r in chosen])
     return None
 ```
 
-**实测（vol 2 Matt 12:1-8 三栏 narrow table）**：
-- Mark cell **完全干净** v23-28 ✓
-- Matt v1-8 / Luke v1-3 cell 各列分别 ✓
-- 仅少量 Luke v4-5 boundary 词漏到 Matt 尾（~10% 残留）
+**实测（vol 2 Matt 12:9-13 三栏 narrow table）**：
+- Matt v9-13 **完整干净** ✓
+- Mark v1-5 **完整干净** ✓
+- Luke v6-10 **完整干净** ✓
+
+之前用 gap-width 排序的版本会选 [88, 394]（页边 + 错位 gutter），现在用 expected-position 匹配选 [226, 394]（接近真 gutter）。
 
 **回退顺序**（histogram 找不够 gutter 时）：
 1. 3-col → label gutter midpoint
