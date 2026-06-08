@@ -2,20 +2,33 @@
 """Publish Calvin's Commentary on Acts (English) to the Jekyll site.
 
 Per pdf-pipeline skill §03-publish-en.md:
-- CCEL Acts uses harmony_utils.process_section_blocks pipeline
-- Scripture passages get <div class="scripture-box"> wrap with cyan border
-- Preface (Fetherstone dedicatory + Calvin's dedication + The Argument) is
-  emitted as a separate preface.md file (not skipped)
-
-Reads acts1_raw.txt (Acts 1-13) + acts2_raw.txt (Acts 14-28), groups by
-chapter, calls process_section_blocks per section, writes 28 chapter
-files + 1 preface.md + index.html with has_preface: true.
+- CCEL Acts uses harmony_utils._scripture_box + the standard helpers, but
+  Acts commentary blocks lack the *italic* markers that the harmony_utils
+  auto-classifier relies on, so we split scripture vs commentary EXPLICITLY:
+  the first body block of each section is scripture (always multi-verse),
+  the remainder is commentary.
+- Inline footnote refs come through as `[^N]` from the extraction layer
+  (sup-digit detection in ccel_acts_extract_block_rich).
+- Footnote definitions come from TWO sources:
+    1. Footer fn blocks already emitted as `[^N]: text` by extract_ccel_acts
+    2. Body-flow fn-def blocks (`^N "..."` paragraphs in raw) that this
+       publish layer recognizes + converts to `[^N]: text`
+  Both are buffered per chapter and emitted at chapter end so kramdown can
+  render them in a bordered footnote section with bidirectional nav.
+- Preface (Fetherstone dedicatory + Calvin's dedication + ARGUMENT) is
+  emitted as a separate preface.md file.
 """
 import os
 import re
 import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..'))
-from scripts.harmony_utils import process_section_blocks
+from scripts.harmony_utils import (
+    _scripture_box,
+    split_rich_by_verse,
+    join_orphan_verse_numbers,
+    merge_split_paragraphs,
+    expand_verse_refs,
+)
 
 RAW1 = "/Users/yanpeifa/Documents/whcjb.github.io/calvin_raw/acts1/acts1_raw.txt"
 RAW2 = "/Users/yanpeifa/Documents/whcjb.github.io/calvin_raw/acts2/acts2_raw.txt"
@@ -25,10 +38,26 @@ BOOK_NAME = "Calvin on Acts"
 TOTAL_CHAPTERS = 28
 DATE = "2026-06-08 14:30"
 
-FOOTNOTE_RE = re.compile(r'^\d+\s+[“”‘’"\'a-z]')
 SECTION_HEADER_RE = re.compile(r'^##\s+Acts\s+(\d+):')
+FN_DEF_LINE_RE = re.compile(r'^\[\^(\d+)\]:\s*(.+)$')
 
-# Pre-Acts-1 front matter sections — captured into preface.md instead of skipped.
+
+def _is_fn_def_block(block):
+    """True if block consists of `[^N]: text` lines only (one or more)."""
+    s = block.strip()
+    if not s:
+        return False
+    lines = [ln for ln in s.split('\n') if ln.strip()]
+    return bool(lines) and all(FN_DEF_LINE_RE.match(ln.strip()) for ln in lines)
+# Body-flow fn-def block:  starts with `<digit>(space)"quotedtext"` —
+# leading digit was preserved by extract because the block hadn't yet
+# seen non-digit content (page-number-vs-fn-marker ambiguity).
+BODY_FN_BLOCK_RE = re.compile(r'^(\d+)\s+["“]')
+# Multi-fn inside a single body block: split point between defs. Don't
+# require a leading quote on the NEXT def — some defs are bare prose
+# (e.g. `[^48] More properly, For the Lord doth...`).
+INNER_FN_BREAK_RE = re.compile(r'\s+\[\^(\d+)\]\s+')
+
 PREFACE_SECTION_KEYS = [
     "TO THE RIGHT HONORABLE",
     "THE EPISTLE TO THE READER",
@@ -36,17 +65,12 @@ PREFACE_SECTION_KEYS = [
     "THE ARGUMENT",
 ]
 
-# Running-header / chapter-marker blocks to drop unconditionally
 SKIP_PATTERNS = [
     r'^COMMENTARY UPON THE ACTS',
     r'^CHAPTER\s+\d+$',
     r'^BY JOHN CALVIN$',
     r'^UPON THE ACTS OF THE APOSTLES\s*\.?$',
 ]
-
-
-def is_footnote_def(block):
-    return bool(FOOTNOTE_RE.match(block.strip()))
 
 
 def is_running_header(block):
@@ -64,9 +88,33 @@ def parse_blocks(text):
     return [b.strip() for b in raw_blocks if b.strip()]
 
 
+def convert_body_fn_block(block):
+    """If `block` is a body-flow fn-def aggregate like
+        '39 "Haesissent attoniti," might have stood astonished. [^40] "Quam in edito..."'
+    return a list of `[^N]: text` def lines. Otherwise return None.
+    """
+    m = BODY_FN_BLOCK_RE.match(block.strip())
+    if not m:
+        return None
+    n = m.group(1)
+    rest = block.strip()[m.end(1):].lstrip()
+    # Now split on inner ` [^M] ` markers preceding quotes
+    parts = INNER_FN_BREAK_RE.split(rest)
+    # parts: [first_def_text, num2, def2_text, num3, def3_text, ...]
+    defs = [(n, parts[0].strip())]
+    for i in range(1, len(parts), 2):
+        if i + 1 >= len(parts):
+            break
+        defs.append((parts[i], parts[i + 1].strip()))
+    return [f'[^{num}]: {txt}' for num, txt in defs]
+
+
 def split_preface_and_chapters(blocks):
-    """Walk blocks; collect everything BEFORE first `## Acts N:M` as preface
-    candidate, then group remainder by chapter."""
+    """Return (preface_blocks, {ch_num: [blocks]}).
+    Footnote-def lines (`[^N]: ...`) and body-flow fn-def blocks are
+    collected per chapter into the chapter's block list (publish stage
+    will sort + emit them as a chapter-end FOOTNOTES section).
+    """
     preface_blocks = []
     chapters = {}
     current_ch = None
@@ -82,17 +130,88 @@ def split_preface_and_chapters(blocks):
         if not seen_first_acts:
             preface_blocks.append(block)
             continue
-        if is_footnote_def(block) or is_running_header(block):
+        if is_running_header(block):
             continue
         if current_ch is not None:
             chapters[current_ch].append(block)
     return preface_blocks, chapters
 
 
-def format_chapter_content(blocks):
-    """blocks starts with `## Acts N:M-K` headers. Split into sections,
-    run process_section_blocks on each, concatenate."""
-    # Group: list of (header, body_lines)
+def format_section(header, body_blocks, chapter_fn_defs):
+    """Render one `## Acts N:M-K` section.
+
+    body_blocks[0] = scripture (a single block w/ multiple **N.** markers
+                     concatenated, possibly with inline [^N] refs)
+    body_blocks[1:] = commentary blocks; fn-def-block fragments are
+                      extracted into chapter_fn_defs (mutated in place).
+
+    Returns a list of markdown blocks (no header — the header is added
+    by the caller).
+    """
+    out = []
+    if not body_blocks:
+        return out
+
+    # Pull scripture (first block) — also strip any fn-def fragments from
+    # the front of the block list in case the raw started with a stray
+    # body-flow fn def before scripture (shouldn't happen but defensive).
+    scripture_block = None
+    rest = []
+    for b in body_blocks:
+        fn_lines = convert_body_fn_block(b)
+        if fn_lines:
+            chapter_fn_defs.extend(fn_lines)
+            continue
+        if _is_fn_def_block(b):
+            # block consists of one or more `[^N]: text` def lines —
+            # split per line so each def is tracked individually.
+            for ln in b.strip().split('\n'):
+                ln = ln.strip()
+                if FN_DEF_LINE_RE.match(ln):
+                    chapter_fn_defs.append(ln)
+            continue
+        if scripture_block is None:
+            scripture_block = b
+        else:
+            rest.append(b)
+
+    if scripture_block is None:
+        return out
+
+    out.append(_scripture_box(header, scripture_block))
+
+    # Process remaining commentary blocks (extract fn-defs as we go)
+    commentary_blocks = []
+    for b in rest:
+        fn_lines = convert_body_fn_block(b)
+        if fn_lines:
+            chapter_fn_defs.extend(fn_lines)
+            continue
+        if _is_fn_def_block(b):
+            for ln in b.strip().split('\n'):
+                ln = ln.strip()
+                if FN_DEF_LINE_RE.match(ln):
+                    chapter_fn_defs.append(ln)
+            continue
+        commentary_blocks.append(b)
+
+    if commentary_blocks:
+        comm_all = [f'## {header}'] + commentary_blocks
+        comm_all = split_rich_by_verse(comm_all)
+        comm_all = join_orphan_verse_numbers(comm_all)
+        comm_all = merge_split_paragraphs(comm_all)
+        comm_all = expand_verse_refs(comm_all)
+        if comm_all and comm_all[0].startswith('## '):
+            comm_all = comm_all[1:]
+        out.extend(comm_all)
+
+    return out
+
+
+def format_chapter(blocks):
+    """blocks: list of blocks for a single chapter, starting with
+    `## Acts N:M` headers. Returns the chapter body markdown."""
+    # Group: [(header, body_blocks), ...]
     sections = []
     current_header = None
     current_body = []
@@ -108,11 +227,34 @@ def format_chapter_content(blocks):
     if current_header is not None:
         sections.append((current_header, current_body))
 
+    chapter_fn_defs = []
     out = []
     for header, body_blocks in sections:
         out.append(f'## {header}')
-        body_text = '\n\n'.join(body_blocks)
-        out.extend(process_section_blocks(header, body_text))
+        out.extend(format_section(header, body_blocks, chapter_fn_defs))
+
+    # De-dup fn defs (keep first occurrence), sort numerically for tidy
+    seen = set()
+    unique_defs = []
+    for line in chapter_fn_defs:
+        m = FN_DEF_LINE_RE.match(line)
+        if not m:
+            continue
+        n = m.group(1)
+        if n in seen:
+            continue
+        seen.add(n)
+        unique_defs.append((int(n), line))
+    unique_defs.sort(key=lambda x: x[0])
+
+    # Footnote defs MUST be separated from preceding body by a blank line
+    # AND by a `\n---\n` rule (matches harmony3 style). They're emitted as
+    # ordinary `[^N]: text` lines so kramdown generates the auto-footnotes
+    # section with bidirectional nav.
+    if unique_defs:
+        out.append('\n\n---\n')
+        out.append('\n'.join(line for _, line in unique_defs))
+
     return '\n\n'.join(out)
 
 
@@ -140,42 +282,35 @@ def write_chapter(ch, blocks, prev_ch=None, next_ch=None):
         front_matter += f'next_label: "Chapter {next_ch}"\n'
     front_matter += "---\n\n"
 
-    body = format_chapter_content(blocks)
+    body = format_chapter(blocks)
     with open(path, "w", encoding="utf-8") as f:
         f.write(front_matter + body + "\n")
     print(f"  Written: {path}")
 
 
 def write_preface(preface_blocks):
-    """Emit calvin/acts-en/preface.md from pre-Acts-1 blocks.
-
-    Preface sections often appear as ONE long paragraph where the
-    ALL-CAPS title sits inline with body text (e.g. "TO THE RIGHT
-    HONORABLE ... HAPPY DAYS. If that (Right Honorable) ..."). So we
-    can't rely on per-block upper-ratio; instead we:
-      1. Concatenate all preface text
-      2. Locate each PREFACE_SECTION_KEYS position
-      3. For each section, split title → body at the first
-         `. <Capital-word> <lowercase-word>` sentence boundary
+    """Position-based split: each PREFACE_SECTION_KEYS occurrence opens a
+    new section; title runs until the first `. <word> <lowercase-3+>` boundary.
     """
-    # Drop noise blocks and concatenate
     clean = []
     for b in preface_blocks:
         t = b.strip()
         if not t:
             continue
-        if is_running_header(t) or is_footnote_def(t):
+        if is_running_header(t):
             continue
-        # Page-footer noise like "John Calvin Comm on Acts (V1)" or bare page numbers
         if re.match(r'^John Calvin Comm', t):
             continue
         if re.match(r'^\d{1,4}\s*$', t):
             continue
+        # Drop fn-def fragments and `[^N]: text` lines from preface
+        m = FN_DEF_LINE_RE.match(t)
+        if m:
+            continue
         clean.append(t)
     full = '\n\n'.join(clean)
 
-    # Find each section key position in order
-    positions = []  # (start_idx, key)
+    positions = []
     for key in PREFACE_SECTION_KEYS:
         for m in re.finditer(re.escape(key), full):
             positions.append((m.start(), key))
@@ -184,10 +319,7 @@ def write_preface(preface_blocks):
         print("  WARN: no preface sections found")
         return
 
-    # Title→body splitter: a period, then within the next 0-3 words a 3+
-    # letter lowercase token. Handles "If that", "THOU hast", "WHEREAS I have"
-    # — body sentences whose first one or two tokens may themselves be
-    # all-caps or single-letter pronouns before normal prose kicks in.
+    # Find body start: period + word + (0-3 words) + 3+ lowercase letters
     title_end_re = re.compile(r'\.\s+\S+(?:\s+\S+){0,3}?\s+[a-z]{3,}')
 
     sections = []
@@ -196,20 +328,15 @@ def write_preface(preface_blocks):
         chunk = full[start:end].strip()
         m = title_end_re.search(chunk)
         if m:
-            # Title is everything up to and including the period
-            title_end = m.start() + 1  # include the `.`
+            title_end = m.start() + 1
             title = chunk[:title_end].rstrip(' .,').strip()
-            body = chunk[m.start() + 2:].strip()  # skip ". "
+            body = chunk[m.start() + 2:].strip()
         else:
-            # No body in this section (e.g. THE ARGUMENT might be title only)
             title = chunk
             body = ''
-        # Normalize whitespace in title and body
         title = re.sub(r'\s+', ' ', title).strip().rstrip('.,').strip()
-        # Split body into paragraphs on \n\n
         paras = re.split(r'\n{2,}', body) if body else []
         paras = [re.sub(r'\s+', ' ', p).strip() for p in paras if p.strip()]
-        # De-hyphenate
         paras = [re.sub(r'-\s+([a-z])', r'\1', p) for p in paras]
         sections.append((title, paras))
 
@@ -218,7 +345,6 @@ def write_preface(preface_blocks):
         out_parts.append(f'## {title}')
         if paras:
             out_parts.append('\n\n'.join(paras))
-
     body = '\n\n'.join(out_parts)
 
     front_matter = (

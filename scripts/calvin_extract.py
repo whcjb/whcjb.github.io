@@ -144,6 +144,7 @@ VOLUMES = {
         'skip_pages': 6,
         'header_y_max': 55,
         'footer_y_min': 705,
+        'footnote_size_max': 7.5,
     },
     'acts2': {
         'format': 'ccel_acts',
@@ -152,6 +153,7 @@ VOLUMES = {
         'skip_pages': 6,
         'header_y_max': 55,
         'footer_y_min': 705,
+        'footnote_size_max': 7.5,
     },
     'heb': {
         'format': 'ages_heb',
@@ -1399,9 +1401,11 @@ def ccel_acts_is_scripture_header(block):
     if not span:
         return False
     x = block['bbox'][0]
+    # Allow optional whitespace after `:` — some headers in calvin_acts*.pdf
+    # render as "Acts 2: 5-12" with a space after the colon.
     return (span.get('size', 0) >= 14 and bool(span.get('flags', 0) & 20)
             and 180 < x < 360
-            and bool(re.match(r'^Acts\s+\d+:\d+', get_block_text(block).strip())))
+            and bool(re.match(r'^Acts\s+\d+:\s*\d+', get_block_text(block).strip())))
 
 
 def ccel_acts_is_page_header(block, cfg):
@@ -1442,16 +1446,62 @@ def ccel_acts_is_verse_block(block):
     return bool(fs.get('flags', 0) & 4) and bool(re.match(r'^\d+\.$', fs['text'].strip()))
 
 
-def ccel_acts_extract_block_rich(block):
+def ccel_acts_extract_block_rich(block, fn_size_max=7.5):
+    """Extract block as markdown, preserving:
+    - **N.** bold-italic verse-number markers (font flag bit 4 = bold-italic
+      in this PDF; matches `^\\d+\\.$`)
+    - *text* italic markup (flag bit 2 = italic). Calvin's commentary cites
+      scripture phrases in italic; missing this caused commentary blocks to
+      be misclassified as scripture in the publish pipeline.
+    - [^N] footnote refs (small-font sup digits inline in body text). Without
+      this, refs appeared as bare digits like " 39 " mid-sentence.
+    """
     parts = []
+    block_seen_content = False  # have we emitted any non-digit content yet?
     for line in block.get('lines', []):
+        spans = line.get('spans', [])
         lp = []
-        for span in line.get('spans', []):
-            t = span['text'].strip()
-            if bool(span.get('flags', 0) & 4) and re.match(r'^\d+\.$', t):
+        italic_open = False
+        for span in spans:
+            text = span['text']
+            t = text.strip()
+            flags = span.get('flags', 0)
+            size = span.get('size', 99)
+            # Verse marker (bold-italic, e.g. "**9.**")
+            if bool(flags & 4) and re.match(r'^\d+\.$', t):
+                if italic_open:
+                    lp.append('*'); italic_open = False
                 lp.append(f'**{t}**')
-            else:
-                lp.append(span['text'])
+                block_seen_content = True
+                continue
+            # Inline footnote ref: small-font digit-only span → [^N]
+            # ONLY when block has already seen non-digit content; a digit at
+            # the very start of a block could be a merged page number (PyMuPDF
+            # sometimes glues the page-number into the next body block) and
+            # gets disambiguated in publish_acts.py.
+            if t.isdigit() and size < fn_size_max + 1:
+                if block_seen_content:
+                    if italic_open:
+                        lp.append('*'); italic_open = False
+                    lp.append(f'[^{t}]')
+                else:
+                    # Preserve leading digit verbatim; publish layer decides.
+                    lp.append(text)
+                continue
+            # Italic toggle (flag bit 2)
+            is_italic = bool(flags & 2) and not bool(flags & 4) and t != ''
+            if is_italic and not italic_open:
+                lp.append('*')
+                italic_open = True
+            elif not is_italic and italic_open:
+                lp.append('*')
+                italic_open = False
+            lp.append(text)
+            if t:
+                block_seen_content = True
+        if italic_open:
+            lp.append('*')
+            italic_open = False
         parts.append(''.join(lp))
     return ' '.join(parts).strip()
 
@@ -1486,6 +1536,18 @@ def extract_ccel_acts(cfg):
 
     output_blocks        = []
     pending_continuation = None
+    pending_fns          = []   # accumulated [^N]: defs since last scripture header
+
+    fn_size_max = cfg.get('footnote_size_max', 7.5)
+
+    def flush_pending_fns_before_header():
+        # Emit accumulated footnote defs as kramdown ref lines BEFORE the next
+        # scripture header — keeps the defs scoped to the previous section so
+        # the publish step can group them per chapter at the right boundary.
+        nonlocal pending_fns
+        if pending_fns:
+            output_blocks.append('\n'.join(pending_fns))
+            pending_fns = []
 
     for page_idx in range(cfg['skip_pages'], total):
         page   = doc[page_idx]
@@ -1501,6 +1563,9 @@ def extract_ccel_acts(cfg):
             if ccel_acts_is_page_number(block):
                 continue
             if ccel_acts_is_footnote(block, cfg):
+                # Footer footnote block — parse and capture as `[^N]: text`
+                for num, fn_text in parse_ccel_footnote_block(block):
+                    pending_fns.append(f'[^{num}]: {fn_text}')
                 continue
             text = get_block_text(block).strip()
             if not text:
@@ -1512,6 +1577,7 @@ def extract_ccel_acts(cfg):
                 if pending_continuation:
                     output_blocks.append(pending_continuation)
                     pending_continuation = None
+                flush_pending_fns_before_header()
                 doc.close()
                 write_txt_output(output_blocks, cfg['out'])
                 return
@@ -1520,14 +1586,17 @@ def extract_ccel_acts(cfg):
                 if pending_continuation:
                     output_blocks.append(pending_continuation)
                     pending_continuation = None
-                output_blocks.append(f'\n## {text.replace(chr(10), " ").strip()}\n')
+                flush_pending_fns_before_header()
+                normalized = re.sub(r':\s+(\d)', r':\1',
+                                    text.replace(chr(10), ' ').strip())
+                output_blocks.append(f'\n## {normalized}\n')
             elif ccel_acts_is_verse_block(block):
                 if pending_continuation:
                     output_blocks.append(pending_continuation)
                     pending_continuation = None
-                output_blocks.append(ccel_acts_extract_block_rich(block))
+                output_blocks.append(ccel_acts_extract_block_rich(block, fn_size_max))
             else:
-                rich = ccel_acts_extract_block_rich(block)
+                rich = ccel_acts_extract_block_rich(block, fn_size_max)
                 if rich.endswith('-'):
                     pending_continuation = (pending_continuation or '') + rich[:-1]
                 else:
@@ -1539,6 +1608,7 @@ def extract_ccel_acts(cfg):
 
     if pending_continuation:
         output_blocks.append(pending_continuation)
+    flush_pending_fns_before_header()
     doc.close()
     write_txt_output(output_blocks, cfg['out'])
 
