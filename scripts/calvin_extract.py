@@ -1299,7 +1299,9 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             bins = [0] * ((xmax - xmin) // 2 + 2)
             for x in all_x0s:
                 bins[(x - xmin) // 2] += 1
-            # 找连续 ≥3 bins (≥6px) 的空 bin 段
+            # 找连续 ≥2 bins (≥4px) 的空 bin 段
+            # 之前 ≥3 (≥6px) 会漏掉 narrow cols 间 4-5px 细 gutter
+            # （Matt 12:1-8 Matt-Mark 间隙仅 5px：cell content x 在 220 vs 230）
             empty_runs = []   # (mid_x, width)
             i = 0
             while i < len(bins):
@@ -1307,7 +1309,7 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
                     j = i
                     while j < len(bins) and bins[j] == 0:
                         j += 1
-                    if j - i >= 3:
+                    if j - i >= 2:
                         mid = (i + j) / 2 * 2 + xmin
                         empty_runs.append((mid, j - i))
                     i = j
