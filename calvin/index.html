@@ -89,13 +89,13 @@ header-img: img/psalm-bg-mountain.jpg
             <div class="row calvin-book-grid">
                 {% for book in site.data.calvin_books.english_new_testament %}
                 <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if books_with_content contains book.id %}
+                    {% if book.is_index or books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
                     {% else %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
                     {% endif %}
                         {{ book.name }}
-                        <small>（{{ book.chapters }} chs）</small>
+                        {% if book.is_index %}<small>📖</small>{% else %}<small>（{{ book.chapters }} chs）</small>{% endif %}
                     </a>
                 </div>
                 {% endfor %}

@@ -239,6 +239,9 @@ english_new_testament:
   - id: harmony-3-en
     name: Harmony of the Evangelists (Vol. 3)
     chapters: 9
+  - id: harmony-index-en
+    name: "Harmony · Scripture Index"
+    is_index: true
   - id: john-en
     name: John
     chapters: 21
