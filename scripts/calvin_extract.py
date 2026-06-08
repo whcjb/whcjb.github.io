@@ -1277,26 +1277,57 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
     时无解（Matt v10 末 + Matt v11 起首 + Luke v27 末 全在一个 span 内）。
     word-level 给每个 word 独立的 x0 → 可靠分桶。
 
-    每张表用自己的 col label bbox 计算 split（不同表 col 数+位置不同）：
-    - 2 cols：narrow cols 内容偶尔越过 label gutter（如 Matt 11「I」x=300，
-      Luke「will」x=308），用 empirical 305
-    - 3 cols：用 (col[i].x1 + col[i+1].x0) / 2 = label gutter 中点
-      （3-col label 较窄，gutter 与 cell 边界对齐良好）
-    col_info 现是 [(text, x0, x1), ...]"""
+    Splits 选择策略（按可靠性顺序）：
+    1. **section-level word x0 histogram**：扫整节所有 word x0，
+       2px bin，找 (n_cols-1) 个最大的"空 bin 段"作为 gutter
+       —— 这是最可靠：直接从内容自身决定 cell 边界
+    2. 回退 label gutter：col_info 中 (x1, next.x0) 的中点
+    3. 最终回退 page 几何等分"""
     n_cols = max(1, len(col_info))
-    if n_cols == 2:
+    splits = []
+
+    if n_cols >= 2:
+        # 收集本节所有 word x0
+        all_x0s = []
+        for entry in verse_blocks:
+            words_list = entry[1] if len(entry) >= 2 else []
+            all_x0s.extend(int(w[0]) for w in words_list)
+
+        if len(all_x0s) >= 20:
+            # 2px bin histogram
+            xmin, xmax = min(all_x0s), max(all_x0s)
+            bins = [0] * ((xmax - xmin) // 2 + 2)
+            for x in all_x0s:
+                bins[(x - xmin) // 2] += 1
+            # 找空 bin 段（连续 0 计数 >= 3 bins = >= 6px wide gap）
+            # 选最长的 n_cols-1 个空段作为 gutters
+            empty_runs = []
+            i = 0
+            while i < len(bins):
+                if bins[i] == 0:
+                    j = i
+                    while j < len(bins) and bins[j] == 0:
+                        j += 1
+                    if j - i >= 3:   # >=6px 空 = 真 gutter
+                        empty_runs.append((j - i, (i + j) / 2 * 2 + xmin))
+                    i = j
+                else:
+                    i += 1
+            empty_runs.sort(key=lambda r: -r[0])
+            chosen = empty_runs[:n_cols - 1]
+            if len(chosen) == n_cols - 1:
+                splits = sorted([r[1] for r in chosen])
+
+    # 回退：label gutter midpoint
+    if not splits and n_cols == 2:
         splits = [305]
-    elif n_cols >= 3 and len(col_info[0]) >= 3:
-        # 用每对相邻 label 之间的 gutter midpoint
+    elif not splits and n_cols >= 3 and len(col_info[0]) >= 3:
         splits = [(col_info[i][2] + col_info[i + 1][1]) / 2
                   for i in range(n_cols - 1)]
-    elif n_cols >= 3:
-        # 兼容旧 (text, x0) 2-元组：用 page 几何等分
+    elif not splits and n_cols >= 3:
         BODY_LEFT, BODY_RIGHT = 74, 504
         cw = (BODY_RIGHT - BODY_LEFT) / n_cols
         splits = [BODY_LEFT + cw * (i + 1) for i in range(n_cols - 1)]
-    else:
-        splits = []
     col_lines = [[] for _ in range(n_cols)]
 
     # ── word-level 分桶 ──
@@ -1344,7 +1375,7 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
     if cur_group:
         line_groups.append(cur_group)
 
-    # 每行按 x0 分桶到 col
+    # 每行按 x0 分桶到 col（用 section-level 全局 splits）
     for grp in line_groups:
         bucks = [[] for _ in range(n_cols)]
         for pn, y0, x0, x1, text, size, is_sup in grp:
