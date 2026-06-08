@@ -197,6 +197,16 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_JOHN.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/john/calvin_john_structured.txt'),
     },
+    'acts': {
+        # Ages Digital Library single-column English (Beveridge/Fetherstone tr).
+        # Diagnosed 2026-06-08: 410×626 page, 886 pages, x0 peak 30 (body);
+        # F#-prefixed sup footnote refs; Ages <NNNNNN> scripture markers;
+        # 28 chapters across the whole book (acts1+acts2 merged in one PDF).
+        # Same format family as john/eph/colossians → ages_phil extractor.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ACTS.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/acts/calvin_acts_structured.txt'),
+    },
     'romans': {
         # Ages Digital Library single-column English. Diagnosed 2026-06:
         # 410×626 page; x0 双峰 (30/200) — 30 是 body, 200 是居中标题/题献。

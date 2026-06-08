@@ -220,7 +220,7 @@ def format_inline(text: str) -> str:
     # non-letter (space / punct / italic-close `*` / span-close `</span>` etc.)
     # to avoid English words containing "fN".
     text = re.sub(
-        r'(?<![A-Za-z])[Ff](\d{1,3}[A-Z]?)\b',
+        r'(?<![A-Za-z])[Ff](\d{1,4}[A-Z]?)\b',
         lambda m: f'[^f{m.group(1)}]', text)
     # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
