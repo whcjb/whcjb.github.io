@@ -1299,24 +1299,39 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             bins = [0] * ((xmax - xmin) // 2 + 2)
             for x in all_x0s:
                 bins[(x - xmin) // 2] += 1
-            # 找空 bin 段（连续 0 计数 >= 3 bins = >= 6px wide gap）
-            # 选最长的 n_cols-1 个空段作为 gutters
-            empty_runs = []
+            # 找连续 ≥3 bins (≥6px) 的空 bin 段
+            empty_runs = []   # (mid_x, width)
             i = 0
             while i < len(bins):
                 if bins[i] == 0:
                     j = i
                     while j < len(bins) and bins[j] == 0:
                         j += 1
-                    if j - i >= 3:   # >=6px 空 = 真 gutter
-                        empty_runs.append((j - i, (i + j) / 2 * 2 + xmin))
+                    if j - i >= 3:
+                        mid = (i + j) / 2 * 2 + xmin
+                        empty_runs.append((mid, j - i))
                     i = j
                 else:
                     i += 1
-            empty_runs.sort(key=lambda r: -r[0])
-            chosen = empty_runs[:n_cols - 1]
+            # ⚠️ 不能按 gap width 排序选 top n-1：页边 gap 常比 cell 间
+            # gutter 更宽，会误选页边。改用「**最接近期望位置**」选：
+            # 期望 splits 来自 page 几何等分（body_left + cw*i）
+            # 每个期望位置找最近的 empty run mid
+            BODY_LEFT, BODY_RIGHT = 74, 504
+            cw_expected = (BODY_RIGHT - BODY_LEFT) / n_cols
+            expected = [BODY_LEFT + cw_expected * (i + 1)
+                        for i in range(n_cols - 1)]
+            chosen = []
+            for exp in expected:
+                # 找距期望最近的 empty run（且未被用过、必须在 body 范围内）
+                cands = [r for r in empty_runs
+                         if BODY_LEFT < r[0] < BODY_RIGHT and r not in chosen]
+                if cands:
+                    closest = min(cands, key=lambda r: abs(r[0] - exp))
+                    if abs(closest[0] - exp) < 60:   # 距期望 < 60px 才认
+                        chosen.append(closest)
             if len(chosen) == n_cols - 1:
-                splits = sorted([r[1] for r in chosen])
+                splits = sorted([r[0] for r in chosen])
 
     # 回退：label gutter midpoint
     if not splits and n_cols == 2:
