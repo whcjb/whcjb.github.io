@@ -27,9 +27,12 @@ from pathlib import Path
 # Pattern 1: a `<p>` that has Latin v(N) + English v(N+1) smushed.
 # PDF extraction sometimes mis-tagged the line as INDENT when it should
 # have been RIGHT (Latin) followed by INDENT (English).
+# Smushed paragraph: a `<p>` containing Latin v(N) + English v(N+1).
+# Accept both `**N.**` (bold) and `N.` (no bold) verse prefixes — the
+# PDF extractor sometimes drops the bold formatting on continuation lines.
 SMUSHED_RE = re.compile(
     r'<p style="margin-left:2em;" markdown="1">'
-    r'\*\*(\d+)\.\*\*\s*'
+    r'(?:\*\*(\d+)\.\*\*|(\d+)\.\s*[—–-]?)\s*'    # **N.** or N. (with optional dash)
     r'([^<]+?)\s+(\d+)\.\s+'
     r'([A-Z(“"\'][^<]+?)</p>',
 )
@@ -43,10 +46,11 @@ PAIR_RE = re.compile(
 
 
 def split_smushed(m: re.Match) -> str:
-    n = int(m.group(1))
-    latin_body = m.group(2).strip()
-    m2 = int(m.group(3))
-    english_body = m.group(4).strip()
+    # group(1) is **N.** form, group(2) is bare N. form
+    n = int(m.group(1) or m.group(2))
+    latin_body = m.group(3).strip()
+    m2 = int(m.group(4))
+    english_body = m.group(5).strip()
     if m2 != n + 1:
         return m.group(0)
     return (
@@ -113,30 +117,66 @@ def group_and_replace(text: str) -> tuple[str, int]:
     return new_text, len(replacements)
 
 
-def fix_file(path: Path) -> tuple[int, int]:
-    """Apply both fixes to one file. Returns (n_smushed_split, n_tables)."""
+def wrap_bare_verse_lines(text: str) -> tuple[str, int]:
+    """Some verse lines lost their `<p>` wrapper during extraction (the
+    line appears unwrapped as `19. *And* we know that ...` between the
+    scripture-anchor h2 and the Latin paragraph). Wrap them in proper
+    `<p style="margin-left:2em;">` so PAIR_RE can later pair them.
+
+    Detection: a bare line starting with `N. ` (optional em-dash), where
+    the NEXT non-blank line is a `<p text-align:right;>N. ...</p>`
+    (Latin partner).
+    """
+    BARE_PAIR_RE = re.compile(
+        r'^(\d+)\.\s*(?:[—–-]\s*)?([*A-Z“"\'][^\n]+\.)\s*\n+'
+        r'(?=<p style="text-align:right;" markdown="1">(\d+)\.)',
+        re.M,
+    )
+    count = 0
+    def wrap(m: re.Match) -> str:
+        nonlocal count
+        n = m.group(1)
+        latin_n = m.group(3)
+        if int(n) != int(latin_n):
+            return m.group(0)  # not a real pair, skip
+        body = m.group(2).strip()
+        count += 1
+        return f'<p style="margin-left:2em;" markdown="1">**{n}.** {body}</p>\n\n'
+
+    return BARE_PAIR_RE.sub(wrap, text), count
+
+
+def fix_file(path: Path) -> tuple[int, int, int]:
+    """Apply all fixes. Returns (n_bare_wrapped, n_smushed_split, n_tables).
+    Order matters: SMUSHED first (so Latin halves become standalone
+    text-align:right <p>), THEN bare-verse wrap (which uses the Latin
+    text-align:right partner as the trigger), then PAIR for table."""
     text = path.read_text(encoding='utf-8')
     text, n_smushed = SMUSHED_RE.subn(split_smushed, text)
+    text, n_bare = wrap_bare_verse_lines(text)
     text, n_tables = group_and_replace(text)
     path.write_text(text, encoding='utf-8')
-    return n_smushed, n_tables
+    return n_bare, n_smushed, n_tables
 
 
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
         sys.exit(1)
-    total_smushed = total_tables = 0
+    total_bare = total_smushed = total_tables = 0
     for arg in sys.argv[1:]:
         path = Path(arg)
         if not path.exists():
             print(f'  skip (not found): {path}')
             continue
-        n_smushed, n_tables = fix_file(path)
-        print(f'  {path}: split {n_smushed} smushed, created {n_tables} tables')
+        n_bare, n_smushed, n_tables = fix_file(path)
+        print(f'  {path}: wrapped {n_bare} bare verses, '
+              f'split {n_smushed} smushed, created {n_tables} tables')
+        total_bare += n_bare
         total_smushed += n_smushed
         total_tables += n_tables
-    print(f'TOTAL: {total_smushed} smushed split, {total_tables} tables created')
+    print(f'TOTAL: wrapped {total_bare}, split {total_smushed} smushed, '
+          f'{total_tables} tables created')
 
 
 if __name__ == '__main__':
