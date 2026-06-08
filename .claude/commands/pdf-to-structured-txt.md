@@ -84,7 +84,8 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | narrow cols 表格 cell 含别 col 内容（Matt cell 含 Luke v27 末尾）| PyMuPDF dict 跨列 span 合并 (§Q) | 用 `page.get_text("words")` 替代 span-level 分桶 |
 | cell 内容顺序错乱（跨页时 p11 y=88 排到 p10 y=600 前）| word sort key 漏 page_idx (§R) | sort key 第一字段 = page_idx |
 | Luke 16:16 经文出现在 Matt cell | `<td colspan>` 无脑放第一栏 (§S) | 按 cross-ref label `Book N:M$` 路由到对应 col |
-| narrow N-col 表格某 cell 含别 col 词（"into their the synagogue" 等 word merging）| col split 用了 label/page-geometry/histogram（间接信号）(§R3) | 改 K-means 聚类 word x0 找 col 中心 |
+| narrow N-col 表格某 cell 含别 col 词（"into their the synagogue" 等 word merging）| col split 用了 label/K-means（内容分布敏感）(§R3) | 改 page 几何等分 BODY_LEFT=74 BODY_RIGHT=538 |
+| cell 内容每词出现两次连续（"87 87 that that they they should should"）| PyMuPDF 多 block bbox 重叠，word 被收集两次 (§R4) | build_verse_table 收集时按 (pn, y, x, text) dedupe |
 
 ---
 

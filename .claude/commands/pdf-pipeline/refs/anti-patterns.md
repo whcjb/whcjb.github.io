@@ -959,54 +959,78 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
-## R3. scripture-table col split 用 K-means 聚类（终极正解）
+## R4. PyMuPDF 多 block bbox 重叠 → word 被收集两次（"87 87 that that they they" 双词模式）
 
-**Trigger**：与 R2 同——narrow N-col 表格某 cell 含别 col 内容。R2 的 histogram empty-run + expected-match 策略在 narrow cols 间 gap < 5px 时探测不到，且对**单一 PyMuPDF block 横跨所有 cols**（block.bbox 74→538）无效——单一 block 内 line_min_x 总在最左 col。
+**Trigger**：scripture-table cell 内容**每个词出现两次连续**——「87 87 that that they they should should not not make make」。
 
-**根因**（追加于 R2）：narrow 3-col 中 Mark|Luke 之间真 gap 可能仅 4px（如 Mark 末词 x=382 vs Luke 首词 x=386），histogram empty-bin 阈值 ≥5px 漏掉这种 gutter。histogram gap-finding 本质要求**显式 gap 存在**——而 PyMuPDF 渲染密集时 gap 不显式。
+**根因**：`block_to_verse_buf_entry` 用 `block.bbox.y` 范围过滤 `page.get_text("words")`。但 PyMuPDF 偶尔在同一页生成**两个 bbox 重叠**的 block：
 
-**正解：K-means 聚类**——不找 gap，直接找 n_cols 个 col 中心（=平均位置）：
+```
+blk A: bbox=(230, 88, 382, 114) nwords=23   ← Mark col 顶部
+blk B: bbox=(74, 88, 382, 373) nwords=213   ← Matt+Mark cols 区域
+```
+
+A 完全位于 B 内 → y=88-114 内的 words 在 A 的过滤结果和 B 的过滤结果中**都出现** → 收集进 `verse_buf` 后每词出现 2 次。
+
+**Fix**：build_verse_table 收集 all_word_recs 时按 `(page_idx, round(y), round(x), text)` dedupe：
+
+```python
+seen_words = set()
+for entry in verse_blocks:
+    block_dict, words_list, span_size_map, pn = entry
+    for w in words_list:
+        wx0, wy0, wx1, wy1, wtext = w[:5]
+        dkey = (pn, round(wy0), round(wx0), wtext)
+        if dkey in seen_words: continue
+        seen_words.add(dkey)
+        # ... append
+```
+
+**通用启示**：
+- PyMuPDF 的 block 边界不保证互斥，多 block 可能 bbox 重叠
+- 凡用 block.bbox y 过滤页 word 的地方都要 dedupe
+- 或改用「整页 word 一次性收集 + 按 y 分配给 block」逻辑
+
+---
+
+## R3. scripture-table col split 用 page 几何等分（vol 2 narrow parallel 终极正解）
+
+**Trigger**：narrow N-col 表格某 cell 含别 col 内容（K-means 后续测试中发现仍有问题）。
+
+**演化历史**：
+1. histogram empty-bin gap finding：narrow cols 间真 gap < 5px 时漏掉
+2. K-means 聚类：内容分布不均衡时（如 Luke 6:11 仅 1 节而 Mark 3:6-12 长篇大论）centroids 被密集词区拉偏，Luke centroid ≈362 而非 460 → splits 偏左，Mark 内容落入 Luke col
+3. **page 几何等分**（当前正解）：完全不看内容，splits 仅由 body 范围决定
+
+**根因（K-means 失败）**：K-means 假设 cluster size 相对均衡。当某 col 内容量远少于其他 col 时，centroid 收敛错位。
+
+**正解：page 几何 fixed splits**（vol 2 narrow parallel body=74-538）：
 
 ```python
 if n_cols >= 2 and all_x0s:
     BODY_LEFT, BODY_RIGHT = 74, 538
     cw = (BODY_RIGHT - BODY_LEFT) / n_cols
-    centroids = [BODY_LEFT + cw * (i + 0.5) for i in range(n_cols)]
-    for _ in range(20):  # K-means 迭代
-        buckets = [[] for _ in range(n_cols)]
-        for x in all_x0s:
-            ci = min(range(n_cols), key=lambda i: abs(x - centroids[i]))
-            buckets[ci].append(x)
-        new = [sum(b) / len(b) if b else centroids[i]
-               for i, b in enumerate(buckets)]
-        if all(abs(new[i] - centroids[i]) < 0.5 for i in range(n_cols)):
-            centroids = new
-            break
-        centroids = new
-    splits = [(centroids[i] + centroids[i + 1]) / 2
-              for i in range(n_cols - 1)]
+    splits = [BODY_LEFT + cw * (i + 1) for i in range(n_cols - 1)]
 ```
 
-**为何优于 histogram**：
-- 不需要 gap 存在——直接收敛到 col 内容**重心**
-- 中心间中点 = 真实 gutter（即使原始 gap 为 0px 也能识别）
-- 对 word 分布噪声鲁棒——离群 word 被多数主导
-- 初始化：page 几何等分（74-538 等分 n_cols）→ 实测 5-10 次迭代收敛
+- 3-col → splits = [228, 386]
+- 2-col → splits = [306]
 
-**实测（vol 2 Matt 12:9-13 三栏 narrow）**：
-- col_info label 给出 [Matt: 98-219, Mark: 274-355, Luke: 427-514]
-- K-means 收敛中心 [138, 290, 450]，splits [214, 370]
-- 与"真实 cell 范围 Matt 74-225 / Mark 230-385 / Luke 386-530"中点完全吻合
-- Matt/Mark/Luke 三列**全部干净** ✓
+**为何优于 K-means**：
+- 不受内容分布影响（Luke 1 节 / Mark 7 节都没问题）
+- vol 2 narrow parallel 的 cell 几何是**布局固定**的（PDF 模板约束）
+- page 几何反映**物理 cell 边界**，不像 label/centroid 是间接信号
 
-**实测（vol 2 Matt 11:7-15 两栏 narrow）**：
-- 中心 [175, 408]，split 291.4
-- Matt v7-15 + Luke v24-28 干净 ✓
+**实测（vol 2）**：
+- Matt 12:1-8 / 12:9-13 / 12:14-21 / 11:7-15 全部干净 ✓
+- 与 R4 dedupe fix 配合，narrow parallel 提取**质量稳定**
 
 **通用启示**（与 §0.3 / R2 互补）：
-- **聚类**优于**找 gap**：聚类不依赖 gap 显式存在
-- 初始化用 page 几何 + 迭代收敛——比 hand-tuned 阈值（empirical 305 等）通用
-- N-col 几何问题用 K-means 是经典——以后所有 multi-col 提取默认 K-means
+- 知道布局规律时，**固定 split** > 自适应算法（K-means / histogram）
+- 自适应算法在**内容分布意外**时会出错
+- 「让数据说话」并非总是最优——当布局有外部约束时，「让布局说话」更稳
+
+**何时不能用 fixed splits**：PDF 布局**不固定**或**多种 body 范围共存**时（如不同书卷不同 cell 宽度）。此时需自适应——优先尝试 K-means + 单 col 内容检查，centroid 偏移过大时回退 page 几何。
 
 ---
 

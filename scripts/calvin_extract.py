@@ -1293,32 +1293,16 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             words_list = entry[1] if len(entry) >= 2 else []
             all_x0s.extend(int(w[0]) for w in words_list)
 
-        # K-means 聚类找 n_cols 个 col 中心（最稳健）。
-        # 关键洞察：PyMuPDF 经常把整张多列表塞进一个 block（block.bbox
-        # 横跨所有 col 74→538），per-block x0 边界不可用，必须在
-        # SECTION-LEVEL 对所有 word x0 做无监督聚类。
-        # K-means 优于 histogram gap finding：
-        # - 不依赖"找空 bin"，narrow 3-col 间真 gap 可能仅 4px
-        # - 中心自动收敛到 col 真实内容中心
-        # - splits = 相邻中心中点（=真实 gutter）
-        # 初始化：page 几何等分，迭代收敛
+        # page 几何等分 splits（最稳定）
+        # vol 2 narrow parallel：body 74-538，等分 n_cols（3-col → 228/386）
+        # K-means 在内容分布不均时（如 Luke 6:11 仅 1 节经文，词量远少
+        # 于 Matt/Mark）会把中心拉向词密集区，导致 Luke 中心 ≈362 而非
+        # 真实位置 460 → splits 偏左，Mark 内容落入 Luke。
+        # page 几何是 fixed signal，不受内容分布影响。
         if n_cols >= 2 and all_x0s:
             BODY_LEFT, BODY_RIGHT = 74, 538
             cw = (BODY_RIGHT - BODY_LEFT) / n_cols
-            centroids = [BODY_LEFT + cw * (i + 0.5) for i in range(n_cols)]
-            for _ in range(20):
-                buckets = [[] for _ in range(n_cols)]
-                for x in all_x0s:
-                    ci = min(range(n_cols), key=lambda i: abs(x - centroids[i]))
-                    buckets[ci].append(x)
-                new = [sum(b) / len(b) if b else centroids[i]
-                       for i, b in enumerate(buckets)]
-                if all(abs(new[i] - centroids[i]) < 0.5 for i in range(n_cols)):
-                    centroids = new
-                    break
-                centroids = new
-            splits = [(centroids[i] + centroids[i + 1]) / 2
-                      for i in range(n_cols - 1)]
+            splits = [BODY_LEFT + cw * (i + 1) for i in range(n_cols - 1)]
 
     # 回退：label gutter midpoint
     if not splits and n_cols == 2:
@@ -1341,6 +1325,12 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
     # sup 上标识别：用与每个 word 关联的字号信息（从 span_size_map）。
     # 该 map 在 verse_buf 收集时构建，把 (round(y), round(x0)) → size
     all_word_recs = []   # (page_idx, y0, x0, x1, text, size, is_sup)
+    seen_words = set()   # 去重 key (pn, round(y0), round(x0), text)
+    # 跨 block 去重：PyMuPDF 偶尔生成两个 bbox 重叠的 block（如 block A
+    # bbox=(230,88,382,114) 完全位于 block B bbox=(74,88,382,373) 内），
+    # block_to_verse_buf_entry 用 y range 过滤会导致 A∩B 区域的 word
+    # 被收集两次 → 输出 "87 87 that that they they should should"
+    # 双词字串。dedupe 用 (page, round(y), round(x), text) 强 key。
     for entry in verse_blocks:
         # 兼容 (block_dict, words_list, span_size_map) 老格式（无 page_idx）
         if len(entry) == 4:
@@ -1350,6 +1340,10 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             pn = 0
         for w in words_list:
             wx0, wy0, wx1, wy1, wtext = w[:5]
+            dkey = (pn, round(wy0), round(wx0), wtext)
+            if dkey in seen_words:
+                continue
+            seen_words.add(dkey)
             key = (round(wy0), round(wx0))
             size, is_sup = span_size_map.get(key, (12.0, False))
             all_word_recs.append((pn, wy0, wx0, wx1, wtext, size, is_sup))
