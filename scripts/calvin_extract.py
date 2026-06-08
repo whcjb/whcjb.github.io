@@ -1293,47 +1293,32 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             words_list = entry[1] if len(entry) >= 2 else []
             all_x0s.extend(int(w[0]) for w in words_list)
 
-        if len(all_x0s) >= 20:
-            # 2px bin histogram
-            xmin, xmax = min(all_x0s), max(all_x0s)
-            bins = [0] * ((xmax - xmin) // 2 + 2)
-            for x in all_x0s:
-                bins[(x - xmin) // 2] += 1
-            # 找连续 ≥2 bins (≥4px) 的空 bin 段
-            # 之前 ≥3 (≥6px) 会漏掉 narrow cols 间 4-5px 细 gutter
-            # （Matt 12:1-8 Matt-Mark 间隙仅 5px：cell content x 在 220 vs 230）
-            empty_runs = []   # (mid_x, width)
-            i = 0
-            while i < len(bins):
-                if bins[i] == 0:
-                    j = i
-                    while j < len(bins) and bins[j] == 0:
-                        j += 1
-                    if j - i >= 2:
-                        mid = (i + j) / 2 * 2 + xmin
-                        empty_runs.append((mid, j - i))
-                    i = j
-                else:
-                    i += 1
-            # ⚠️ 不能按 gap width 排序选 top n-1：页边 gap 常比 cell 间
-            # gutter 更宽，会误选页边。改用「**最接近期望位置**」选：
-            # 期望 splits 来自 page 几何等分（body_left + cw*i）
-            # 每个期望位置找最近的 empty run mid
-            BODY_LEFT, BODY_RIGHT = 74, 504
-            cw_expected = (BODY_RIGHT - BODY_LEFT) / n_cols
-            expected = [BODY_LEFT + cw_expected * (i + 1)
-                        for i in range(n_cols - 1)]
-            chosen = []
-            for exp in expected:
-                # 找距期望最近的 empty run（且未被用过、必须在 body 范围内）
-                cands = [r for r in empty_runs
-                         if BODY_LEFT < r[0] < BODY_RIGHT and r not in chosen]
-                if cands:
-                    closest = min(cands, key=lambda r: abs(r[0] - exp))
-                    if abs(closest[0] - exp) < 60:   # 距期望 < 60px 才认
-                        chosen.append(closest)
-            if len(chosen) == n_cols - 1:
-                splits = sorted([r[0] for r in chosen])
+        # K-means 聚类找 n_cols 个 col 中心（最稳健）。
+        # 关键洞察：PyMuPDF 经常把整张多列表塞进一个 block（block.bbox
+        # 横跨所有 col 74→538），per-block x0 边界不可用，必须在
+        # SECTION-LEVEL 对所有 word x0 做无监督聚类。
+        # K-means 优于 histogram gap finding：
+        # - 不依赖"找空 bin"，narrow 3-col 间真 gap 可能仅 4px
+        # - 中心自动收敛到 col 真实内容中心
+        # - splits = 相邻中心中点（=真实 gutter）
+        # 初始化：page 几何等分，迭代收敛
+        if n_cols >= 2 and all_x0s:
+            BODY_LEFT, BODY_RIGHT = 74, 538
+            cw = (BODY_RIGHT - BODY_LEFT) / n_cols
+            centroids = [BODY_LEFT + cw * (i + 0.5) for i in range(n_cols)]
+            for _ in range(20):
+                buckets = [[] for _ in range(n_cols)]
+                for x in all_x0s:
+                    ci = min(range(n_cols), key=lambda i: abs(x - centroids[i]))
+                    buckets[ci].append(x)
+                new = [sum(b) / len(b) if b else centroids[i]
+                       for i, b in enumerate(buckets)]
+                if all(abs(new[i] - centroids[i]) < 0.5 for i in range(n_cols)):
+                    centroids = new
+                    break
+                centroids = new
+            splits = [(centroids[i] + centroids[i + 1]) / 2
+                      for i in range(n_cols - 1)]
 
     # 回退：label gutter midpoint
     if not splits and n_cols == 2:
