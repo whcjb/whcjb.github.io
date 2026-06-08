@@ -959,6 +959,29 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R5. ccel_pg_build_verse_table 单 col 行 colspan 化 → publish 路由错
+
+**Trigger**：narrow N-col table 末尾出现 colspan="N" 行（仅某 col 有续接内容），publish 默认把 colspan 放第一栏，导致 Mark v11-12 等续接被推到 Matt cell。
+
+**根因**：`ccel_pg_build_verse_table` 检测到一行只有 1 col 有内容时合并成 `<td colspan="N">`，但 publish.py `transform_scripture_table` 收到 colspan 单元格只能猜目标 col（用 cross-ref label 规则——但绝大多数续接行 col 末不含 cross-ref label）。
+
+**Fix**：extract 时不要 colspan 化——一律按 col emit `<td>`，空 col 用空 `<td></td>`。publish 透传到对应 col：
+
+```python
+# ccel_pg_build_verse_table
+for ri in range(max_rows):
+    cells = [col_rows[ci][ri] for ci in range(n_cols)]
+    if not any(cells): continue
+    html.append('<tr>' + ''.join(f'<td>{c}</td>' for c in cells) + '</tr>')
+    # 不要 if non_empty == 1: <td colspan>...
+```
+
+**实测**：Matt 12:14-21 之前 Mark v11-12 跑到 Matt cell，现在正确归 Mark cell。
+
+**通用启示**：上游 emit 的语义损失（多 col 信息塌成单 col colspan）下游无法 100% 还原。能保留 col 信息时就不要塌缩。
+
+---
+
 ## R4. PyMuPDF 多 block bbox 重叠 → word 被收集两次（"87 87 that that they they" 双词模式）
 
 **Trigger**：scripture-table cell 内容**每个词出现两次连续**——「87 87 that that they they should should not not make make」。

@@ -86,6 +86,7 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | Luke 16:16 经文出现在 Matt cell | `<td colspan>` 无脑放第一栏 (§S) | 按 cross-ref label `Book N:M$` 路由到对应 col |
 | narrow N-col 表格某 cell 含别 col 词（"into their the synagogue" 等 word merging）| col split 用了 label/K-means（内容分布敏感）(§R3) | 改 page 几何等分 BODY_LEFT=74 BODY_RIGHT=538 |
 | cell 内容每词出现两次连续（"87 87 that that they they should should"）| PyMuPDF 多 block bbox 重叠，word 被收集两次 (§R4) | build_verse_table 收集时按 (pn, y, x, text) dedupe |
+| 续接经文（Mark v11-12 等）跑错 col（Mark 末尾续接到了 Matt cell）| extract 用了 `<td colspan>` 单 col 行 (§R5) | extract 一律 emit per-col `<td>`，不塌成 colspan |
 
 ---
 

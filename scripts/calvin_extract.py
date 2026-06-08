@@ -1421,11 +1421,11 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
         non_empty = sum(1 for c in cells if c)
         if not non_empty:
             continue
-        if non_empty == 1 and n_cols > 1:
-            cell = next(c for c in cells if c)
-            html.append(f'<tr><td colspan="{n_cols}">{cell}</td></tr>')
-        else:
-            html.append('<tr>' + ''.join(f'<td>{c}</td>' for c in cells) + '</tr>')
+        # 一律按 col 渲染，不用 colspan——publish 透传 td 到对应 col。
+        # 之前 non_empty==1 时合 colspan 会让 publish.py 把内容路由错
+        # （Mark v11-12 单 col 续接被推到 Matt col，因为 colspan 默认
+        # 给第一栏）。
+        html.append('<tr>' + ''.join(f'<td>{c}</td>' for c in cells) + '</tr>')
     html.append('</tbody></table>')
     return '\n'.join(html)
 
