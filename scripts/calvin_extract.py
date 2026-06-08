@@ -1277,15 +1277,22 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
     时无解（Matt v10 末 + Matt v11 起首 + Luke v27 末 全在一个 span 内）。
     word-level 给每个 word 独立的 x0 → 可靠分桶。
 
-    页面几何等分作为 split。经验偏移：vol 2 narrow cols 中 Matt 内容
-    occasionally 跨入 gutter（如「I」x=300，Luke「will」x=308），
-    用 split=289 会误把 Matt boundary 词分到 Luke。
-    所以 2 cols 用 split=305 (Matt 右沿)；3+ cols 等分。"""
-    BODY_LEFT, BODY_RIGHT = 74, 504    # vol 2 page geometry
+    每张表用自己的 col label bbox 计算 split（不同表 col 数+位置不同）：
+    - 2 cols：narrow cols 内容偶尔越过 label gutter（如 Matt 11「I」x=300，
+      Luke「will」x=308），用 empirical 305
+    - 3 cols：用 (col[i].x1 + col[i+1].x0) / 2 = label gutter 中点
+      （3-col label 较窄，gutter 与 cell 边界对齐良好）
+    col_info 现是 [(text, x0, x1), ...]"""
     n_cols = max(1, len(col_info))
     if n_cols == 2:
         splits = [305]
+    elif n_cols >= 3 and len(col_info[0]) >= 3:
+        # 用每对相邻 label 之间的 gutter midpoint
+        splits = [(col_info[i][2] + col_info[i + 1][1]) / 2
+                  for i in range(n_cols - 1)]
     elif n_cols >= 3:
+        # 兼容旧 (text, x0) 2-元组：用 page 几何等分
+        BODY_LEFT, BODY_RIGHT = 74, 504
         cw = (BODY_RIGHT - BODY_LEFT) / n_cols
         splits = [BODY_LEFT + cw * (i + 1) for i in range(n_cols - 1)]
     else:
