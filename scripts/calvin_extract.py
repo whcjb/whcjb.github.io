@@ -1257,7 +1257,57 @@ def ccel_pg_is_verse_block(block):
     size = span.get('size', 0)
     if size < 10 or size > 14:
         return False
-    return bool(re.match(r'^\d+([.\xa0]|$)', span['text'].strip()))
+    if not re.match(r'^\d+([.\xa0]|$)', span['text'].strip()):
+        return False
+    # 排除 Calvin commentary verse-header block：
+    # 「**44.** *Again, the kingdom of heaven is like a treasure*. ...」
+    # 这种块 sp0 是粗体数字（满足上述判定），但 sp1 是斜体的 verse 引文
+    # （flags & 2），sp2 才是 roman 注释正文。
+    # Scripture verse block：sp0 粗体数字，sp1 是 ". And it happened..."
+    # 等正常 roman 经文文本（无 italic flag）。
+    all_spans = []
+    for line in block.get('lines', []):
+        for sp in line.get('spans', []):
+            if sp.get('text', '').strip():
+                all_spans.append(sp)
+                if len(all_spans) >= 3:
+                    break
+        if len(all_spans) >= 3:
+            break
+    if len(all_spans) >= 2:
+        sp1 = all_spans[1]
+        sp1_text = sp1.get('text', '').strip()
+        sp1_italic = bool(sp1.get('flags', 0) & 2)
+        # 斜体 sp1 且不以「.」起头 = commentary verse-header
+        if sp1_italic and not sp1_text.startswith('.'):
+            return False
+    return True
+
+
+def ccel_pg_block_is_multi_col(block, n_cols=3):
+    """检查 block 内是否含 multi-col scripture 布局——lines 起始 x 在
+    ≥ (n_cols - 1) 个 col 期望位置上（vol 2 narrow parallel：74/230/386）。
+
+    用途：区分多 col scripture 大块 vs 单 col commentary 大块（含 indented
+    quote 等）。单 col commentary 可能有 line.x0=[72, 90, 148, 264]，
+    cluster 数 >=2 但位置不在 col 边界 → 不算 multi-col。
+
+    要求至少 (n_cols - 1) 个 cluster 位置落在 [60, 90] ∪ [220, 240] ∪
+    [376, 396] 等 col 期望 ± 12px 区间。
+    """
+    line_x0s = sorted({round(line['bbox'][0])
+                       for line in block.get('lines', [])
+                       if line.get('spans')})
+    if not line_x0s:
+        return False
+    BODY_LEFT, BODY_RIGHT = 74, 538
+    cw = (BODY_RIGHT - BODY_LEFT) / max(n_cols, 1)
+    expected = [BODY_LEFT + cw * i for i in range(n_cols)]
+    hits = 0
+    for ex in expected:
+        if any(abs(x - ex) <= 12 for x in line_x0s):
+            hits += 1
+    return hits >= max(2, n_cols - 1)
 
 
 def ccel_pg_is_index_start(block):
@@ -1534,11 +1584,72 @@ def extract_ccel_parallel(cfg):
             elif ccel_pg_is_col_label(block):
                 current_col_info = ccel_pg_extract_col_info(block)
             elif in_verse_section and ccel_pg_is_verse_block(block):
-                verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
+                # multi-col section 中，宽 block 必须是 multi-col layout
+                # （line.x0 多 cluster），否则是 single-col commentary 段头
+                # 「**4.** *Bear forth fruit*」型——不能加入 verse_buf
+                n_cols = len(current_col_info)
+                bw = block['bbox'][2] - block['bbox'][0]
+                if n_cols >= 2 and bw >= 260 and not ccel_pg_block_is_multi_col(block, n_cols=n_cols):
+                    flush()
+                    in_verse_section = False
+                    handle_commentary(block)
+                else:
+                    verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
             elif in_verse_section:
                 first_span = get_first_nonempty_span(block)
                 if verse_buf and first_span and not bool(first_span.get('flags', 0) & 16):
-                    verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
+                    # 真 scripture continuation = 跨页续接（前页 verse 行
+                    # 中断，本页 top block 继续）。判定：本 block 必须在
+                    # 新页 TOP（y < 200）。同页中部出现的非粗体续接段
+                    # 几乎都是 commentary，不应加入 verse_buf。
+                    first_italic = bool(first_span.get('flags', 0) & 2)
+                    n_cols = len(current_col_info)
+                    bw = block['bbox'][2] - block['bbox'][0]
+                    not_mc = (
+                        n_cols >= 2 and bw >= 260
+                        and not ccel_pg_block_is_multi_col(block, n_cols=n_cols)
+                    )
+                    # 跨页续接判定：block 必须在新页 TOP (y < 200)。同一
+                    # section 跨页续接可能有多个 block（Mark-only 小块 +
+                    # 多 col 大块），都在 page top，都应接受——所以不能
+                    # 用「page_idx > last_buf_page」这种严比较（一旦加了
+                    # 一个 block，page_idx 就等于 last_buf_page）。
+                    # 只要 block_y0 < 200 + verse_buf 中有更早 page 的 block，
+                    # 就是合法的 cross-page top 续接。
+                    # 但单 col section + 块高度 > 150px → commentary（scripture
+                    # 续接通常仅 1-3 行，不超过 80px；commentary 跨页续接
+                    # 经常占满整页 500+px）。
+                    earliest_buf_page = min(
+                        (e[3] for e in verse_buf if len(e) >= 4),
+                        default=page_idx,
+                    )
+                    block_y0 = block['bbox'][1]
+                    block_h = block['bbox'][3] - block['bbox'][1]
+                    is_cross_page_top = (
+                        page_idx > earliest_buf_page and block_y0 < 200
+                        and not (n_cols <= 1 and block_h > 150)
+                    )
+                    # 同页续接判定：multi-col section（n_cols >= 2）才允许同
+                    # 页续接（PyMuPDF 经常把 multi-col 表中间断成几个 block）。
+                    # 单 col section（n_cols=1）禁止同页续接——commentary 也
+                    # 是单 col 全宽，无法可靠区分。除非 first span text 是
+                    # 纯数字（footnote ref 紧贴前个 verse_block 续接）。
+                    first_text = first_span.get('text', '').strip()
+                    is_pure_digit = bool(re.match(r'^\d+\.?$', first_text))
+                    is_same_page_continuation = (
+                        page_idx == earliest_buf_page
+                        and n_cols >= 2
+                    )
+                    is_legit_continuation = (
+                        is_cross_page_top or is_same_page_continuation
+                        or (n_cols == 1 and is_pure_digit)
+                    )
+                    if first_italic or not_mc or not is_legit_continuation:
+                        flush()
+                        in_verse_section = False
+                        handle_commentary(block)
+                    else:
+                        verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
                 else:
                     flush()
                     in_verse_section = False
