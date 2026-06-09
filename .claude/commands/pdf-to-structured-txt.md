@@ -91,6 +91,7 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | scripture-table cell 含 Calvin commentary 文字（"**4.** *Bear forth fruit*" 风格）| commentary 段头被 is_verse_block 误判 (§R7) | is_verse_block 加 sp1 italic 排除 |
 | multi-col 检测把 commentary 含缩进 quote 段误判 multi-col | cluster 数判定不看位置 (§R8) | line.x0 cluster 必须在 page-geom col 位置 ±12px 命中 ≥n_cols-1 |
 | 单 col section cell 含整页 commentary 续接 | 跨页 top 续接判定对 single-col commentary 失效 (§R9) | n_cols=1 且块高度 > 150px 视作 commentary，不加入 verse_buf |
+| commentary 段中 fn ref 数字（如 `399`）以正常字号出现，且独立成段 | PyMuPDF 把同段拆成两个相邻 block + sup flag 缺失 (§M5c, §P 末注) | handle_commentary 加 y 间距 ≤5px 合并 + ccel_pg_spans_to_md sup 判定加视觉小字号识别 |
 
 ---
 

@@ -351,6 +351,46 @@ else:  # inline cross-ref branch
 
 ---
 
+## M5c. CCEL parallel commentary 段被 PyMuPDF 拆成相邻两个 block → 输出分段错
+
+**Trigger**：harmony-2-en commentary 中部出现莫名其妙的段断 + 上一段末尾的 fn ref 数字（如 `399`）以**正常字号**单独出现在新段首：
+
+```
+...this absurd sprinkling is used for exorcising.
+
+399 But if it were lawful in itself, ...
+```
+
+视觉上 PDF 是同一段 `...exorcising. ³⁹⁹ But if it were lawful...`，但输出拆段且 `399` 没渲染为 `<sup>`。
+
+**根因**：与 §M5 同源——PyMuPDF 偶尔在同段中部断块（block A 结束 y=369，block B 起始 y=371，间距仅 2.4px，远小于段间距），且新块 sp0 是小字号 fn ref。`extract_ccel_parallel.handle_commentary` 每次 emit 一个独立段，没有视觉位置合并逻辑。同时 §P 的 sup 识别仅在 build_verse_table（表格内）生效，commentary 路径走 `ccel_pg_spans_to_md` 是独立判定。
+
+**Fix**：两点联动
+
+1. `handle_commentary` 加视觉续接合并——同页 + 块间距 ≤ 5px 时 append 到上一 output_blocks 末尾，不新开段：
+
+   ```python
+   last_commentary_pos = None  # (page_idx, y0, y1) — flush 时清空
+   def handle_commentary(block):
+       ...
+       cur_pos = (page_idx, block['bbox'][1], block['bbox'][3])
+       merged = False
+       if (last_commentary_pos and output_blocks
+               and last_commentary_pos[0] == page_idx
+               and 0 <= cur_pos[1] - last_commentary_pos[2] <= 5):
+           output_blocks[-1] = output_blocks[-1].rstrip() + ' ' + rich
+           merged = True
+       if not merged:
+           output_blocks.append(rich)
+       last_commentary_pos = cur_pos
+   ```
+
+2. `ccel_pg_spans_to_md` 的 sup 判定扩展到「视觉小字号 + 纯数字」（即使无 sup flag）。详见 §P 末「⚠️ 注意：commentary 路径」。
+
+**通用规则**：与 §M5 / §M5b 同源——PyMuPDF 经常把视觉上的一段拆成两个 block。任何 emit 段落的 handler 都要追踪上一 block 的 (page, y_end)，下一 block 若在 y 间距阈值内则合并，不另起段。
+
+---
+
 ## M6. 章末出现 "CHAPTER N" 居中标记（PDF 没有这内容）
 
 **Trigger**：章节最末显示一个孤立的 "CHAPTER N" 居中标题，PDF 原文该位置无此标记。grep `<p class="title-block-h2"[^>]*>CHAPTER\s+\d+` 在章节文件中命中。
@@ -910,6 +950,21 @@ line_text = ''.join(parts).strip()
 ```
 
 **通用启示**：`ccel_pg_spans_to_md`（正文用）已经处理了 fn-ref → `<sup>`，但 `ccel_pg_build_verse_table`（表格用）是独立路径——**两条路径都需要同样的 fn-ref 包装逻辑**。新格式提取器抄正文路径的 span→md 逻辑时容易漏复制。
+
+**⚠️ 注意：commentary 路径**（`ccel_pg_spans_to_md`）只看 `flags & 1` 不够。Calvin vol 2 PDF 偶尔 fn ref **不标 sup flag**（实测 `size=6.6, flags=0`），仅靠视觉小字号区分。判定要 OR 两条：
+
+```python
+is_sup_flag = bool(flags & 1)
+is_small_digit_ref = (
+    stripped.isdigit()
+    and span_sz < fn_size_max + 2  # < 9.5 for vol 2
+    and span_sz < 9  # 排除 page number size=10
+)
+if (is_sup_flag or is_small_digit_ref) and stripped.isdigit():
+    parts.append(f'<sup>{stripped}</sup>')
+```
+
+实测 Matt 15:2 commentary 中 fn ref "399" size=6.6 flags=0，加视觉识别后正确包成 `<sup>399</sup>`。配合 §M5c 段合并使用——sup 修了但段未合时，399 还是会以「正常段首」形式渲染。
 
 ---
 
