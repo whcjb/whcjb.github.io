@@ -959,6 +959,79 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R9. 跨页续接 block 误把 commentary continuation 当 scripture（单 col）
+
+**Trigger**：单 col scripture-table section 的 cell 包含整页 commentary。常见于 Matt 13:24-30 类「短 scripture + 大段 commentary」section——commentary 跨页时新页 TOP block 被当作 scripture continuation。
+
+**根因**：cross-page top 判定 `block_y0 < 200 + page_idx > earliest_buf_page` 对 scripture 续接成立，但 commentary 跨页时也满足（commentary 也跨页且从新页 TOP 开始）。单 col layout 下两者无几何区别。
+
+**Fix**：单 col section（n_cols=1）的跨页续接附加块高度限制：scripture 续接通常 1-3 行（< 80px），commentary 续接经常占满整页（500+px）。设阈值 150px：
+
+```python
+block_h = block['bbox'][3] - block['bbox'][1]
+is_cross_page_top = (
+    page_idx > earliest_buf_page and block_y0 < 200
+    and not (n_cols <= 1 and block_h > 150)
+)
+```
+
+**实测**：Matt 13:24-30 (n_cols=1) 之前 row 1 含 v24-43 + 整页 commentary (30K+ chars)，现在 row 1 仅含 v24-30 + v36-43 (1882 chars)。
+
+---
+
+## R8. multi-col block 判定按 page 几何 col 位置，不只看 cluster 数
+
+**Trigger**：单 col commentary 段含 indented quote（French/Latin 引用缩进），line.x0 = [74, 92, 148, 264]，简单的"≥2 cluster"判定误判为 multi-col → commentary 加入 verse_buf。
+
+**根因**：cluster 计数只看「相邻 x0 间距 > 50」，不看位置是否在 col 边界上。Commentary 缩进 quote 的 line.x0 在 148/264 等任意位置；真 multi-col scripture line.x0 在 col 几何边界 [74, 230, 386]。
+
+**Fix**：检查 cluster 命中 page-geometry 期望位置（±12px）的数量：
+
+```python
+def ccel_pg_block_is_multi_col(block, n_cols=3):
+    line_x0s = sorted({round(line['bbox'][0])
+                       for line in block.get('lines', []) if line.get('spans')})
+    BODY_LEFT, BODY_RIGHT = 74, 538
+    cw = (BODY_RIGHT - BODY_LEFT) / max(n_cols, 1)
+    expected = [BODY_LEFT + cw * i for i in range(n_cols)]
+    hits = sum(1 for ex in expected if any(abs(x - ex) <= 12 for x in line_x0s))
+    return hits >= max(2, n_cols - 1)
+```
+
+**实测**：Matt 13:1-17 page 65 commentary block（clusters=[72, 148, 264]）正确判定 single-col，不再被加进 verse_buf。
+
+---
+
+## R7. ccel_pg_is_verse_block 误把 commentary 段头当 scripture verse
+
+**Trigger**：scripture-table 某 cell 含 Calvin commentary 文字（如 "**4.** *Bear forth fruit* ..."）。这是 commentary 段头被 verse_block 检测器接受，加进 verse_buf 后被按 x 位置分到各 col。
+
+**根因**：Calvin commentary 段头形式「**44.** *Again, the kingdom of heaven is like a treasure*. ...」满足 is_verse_block 的所有条件（bold + 首数字 + size 10-14），无法仅凭首 span 区分。
+
+**辨识信号**：commentary 段头 sp1 是 italic verse 引文短语；scripture verse sp1 是 ". And ..." 罗马体（"."紧跟 verse num）。
+
+**Fix**：is_verse_block 加 sp1 检查：
+
+```python
+all_spans = []
+for line in block.get('lines', []):
+    for sp in line.get('spans', []):
+        if sp.get('text', '').strip():
+            all_spans.append(sp)
+            if len(all_spans) >= 2: break
+    if len(all_spans) >= 2: break
+if len(all_spans) >= 2:
+    sp1 = all_spans[1]
+    sp1_text = sp1.get('text', '').strip()
+    sp1_italic = bool(sp1.get('flags', 0) & 2)
+    if sp1_italic and not sp1_text.startswith('.'):
+        return False  # commentary 段头
+```
+
+**通用启示**：单一首 span 信号不够时，往**第二 span 的 style + 文本**找辨识——Calvin commentary 的 italic verse 引文 vs scripture 的 ". " 起始是稳定结构差异。
+
+---
+
 ## R6. ccel_pg_is_section_header x0 阈值过严 → 后续 section 被吞合并
 
 **Trigger**：section A 之后紧接 section B 的内容 + col labels，但 section B 的 header 没出现在输出中。结果 section A 的 header + col labels（B 的）+ A 和 B 的所有 verse blocks/commentary 全部塌成一张超大畸形表。

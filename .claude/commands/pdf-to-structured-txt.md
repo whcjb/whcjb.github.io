@@ -88,6 +88,9 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | cell 内容每词出现两次连续（"87 87 that that they they should should"）| PyMuPDF 多 block bbox 重叠，word 被收集两次 (§R4) | build_verse_table 收集时按 (pn, y, x, text) dedupe |
 | 续接经文（Mark v11-12 等）跑错 col（Mark 末尾续接到了 Matt cell）| extract 用了 `<td colspan>` 单 col 行 (§R5) | extract 一律 emit per-col `<td>`，不塌成 colspan |
 | section header 与 col labels 不对应（A 的 header + B 的 col labels + A+B 内容合并成超大畸形表）| section header x0 阈值 ≥100 过严，x0=99.8 失败 (§R6) | 阈值改 ≥80；size+uppercase 已足够区分 |
+| scripture-table cell 含 Calvin commentary 文字（"**4.** *Bear forth fruit*" 风格）| commentary 段头被 is_verse_block 误判 (§R7) | is_verse_block 加 sp1 italic 排除 |
+| multi-col 检测把 commentary 含缩进 quote 段误判 multi-col | cluster 数判定不看位置 (§R8) | line.x0 cluster 必须在 page-geom col 位置 ±12px 命中 ≥n_cols-1 |
+| 单 col section cell 含整页 commentary 续接 | 跨页 top 续接判定对 single-col commentary 失效 (§R9) | n_cols=1 且块高度 > 150px 视作 commentary，不加入 verse_buf |
 
 ---
 
