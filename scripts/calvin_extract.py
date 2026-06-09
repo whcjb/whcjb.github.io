@@ -1680,9 +1680,14 @@ def extract_ccel_parallel(cfg):
                                 nxt = flat_spans[i + 1]
                                 if not bool(nxt.get('flags', 0) & 2):
                                     scripture_markers += 1
+                    # 极短块（h < 60px ≈ 1-3 行）即使 markers 只有 1 个也
+                    # 是 scripture 续接（v30 末尾 "repent." 跨页接 v31，
+                    # 仅 1 markers）。commentary block 续接极少 < 60px。
+                    block_h = block['bbox'][3] - block['bbox'][1]
                     is_cross_page_top = (
                         page_idx > earliest_buf_page and block_y0 < 200
-                        and (n_cols >= 2 or scripture_markers >= 2)
+                        and (n_cols >= 2 or scripture_markers >= 2
+                             or block_h < 60)
                     )
                     # 同页续接判定：multi-col section（n_cols >= 2）才允许同
                     # 页续接（PyMuPDF 经常把 multi-col 表中间断成几个 block）。

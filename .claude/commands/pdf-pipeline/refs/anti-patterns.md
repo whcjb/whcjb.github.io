@@ -1058,9 +1058,13 @@ if n_cols <= 1:
             nxt = flat_spans[i + 1]
             if not bool(nxt.get('flags', 0) & 2):  # next 非 italic
                 scripture_markers += 1
+# 极短块（h < 60px ≈ 1-3 行）即使 markers 只 1 个也是 scripture 续接：
+# Luke 16:19-31 page 118 仅一行 "repent. 31. And he said..."，
+# markers=1 但 h=41，标准 commentary 续接 ≥ 100px。
+block_h = block['bbox'][3] - block['bbox'][1]
 is_cross_page_top = (
     page_idx > earliest_buf_page and block_y0 < 200
-    and (n_cols >= 2 or scripture_markers >= 2)
+    and (n_cols >= 2 or scripture_markers >= 2 or block_h < 60)
 )
 ```
 
@@ -1073,6 +1077,7 @@ is_cross_page_top = (
 - Luke 16:1-15 p113 commentary (h=386, markers=0) ✗
 - Luke 11:37-41 p103 commentary (h=516, bvm=2 但 markers=0 — bold "38." / "39." 后跟 italic) ✗
 - Luke 15:11-24 p218 commentary (h=127, markers=0) ✗
+- Luke 16:19-31 p118 scripture (h=41, markers=1) — 仅 1 markers 但 h<60 短续接 ✓
 
 vol 2 harmony-2-en 全 13 章扫描：cells 均 < 3000 chars，无回归。
 
