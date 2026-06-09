@@ -1204,13 +1204,16 @@ def ccel_pg_is_footnote(block, cfg):
     其余正文 spans 是 12pt。只看首 span 会把整页跨页续接块误判为 fn，导致
     scripture-table 跨页内容全丢（harmony-2-en/21.md Matt 21:1-9 即此 bug）。
 
-    正确判定（两个信号必须同时满足）：
-    1. 首 span 字号 < footnote_size_max（fn 起首必为小字数字）
-    2. 第二个 non-empty span 字号 < 10（fn 正文字号 < 主文）
+    判定两条路径：
+    A. 首 span 小字 (< footnote_size_max) + 第二 span 小字 (< 10)
+       —— 标准 fn 头：fn 编号 + 正文小字。
+    B. 全部 span 字号 < 10 —— fn 续接段（fn 跨多个 PyMuPDF block 时，
+       续接 block 的 first span 已不是数字编号，但 ALL 字号仍 < 10）。
 
     Vol 2 PDF 中：
-      - 真脚注块：first=6.3 + second=9.0  → IS fn
-      - 经文续接块：first=6.6 + second=12.0 → NOT fn
+      - 真脚注头块：first=6.3 + second=9.0  → IS fn (路径 A)
+      - 真脚注续接块：first=9.0 + all=9.0 → IS fn (路径 B)
+      - 经文续接块：first=6.6 + second=12.0 → NOT fn（first 小但 second 是正文）
     """
     spans = []
     for line in block.get('lines', []):
@@ -1219,10 +1222,13 @@ def ccel_pg_is_footnote(block, cfg):
                 spans.append(span)
     if not spans:
         return False
+    # 路径 B：所有 spans 字号 < 10 → fn 续接块
+    if all(sp.get('size', 12) < 10 for sp in spans):
+        return True
     first_size = spans[0].get('size', 0)
     if first_size >= cfg['footnote_size_max']:
         return False
-    # 首 span 小，再看第二个 — 正文字号则不是脚注
+    # 路径 A：首 span 小，第二 span 也小 → fn 头
     if len(spans) >= 2:
         second_size = spans[1].get('size', 0)
         if second_size >= 10:
@@ -1256,13 +1262,28 @@ def ccel_pg_extract_col_info(block):
     """返回 [(text, x0, x1), ...] — 含 label bbox 两端，build_verse_table
     据此估算 col 间 gutter 中点作为分桶 split。
     单 x0 不够：col label 是 left-aligned，x0 反映 label 起点而非 cell 起点。
-    用 (cur.x1 + next.x0)/2 才是真正的 gutter 中点。"""
-    cols = []
+    用 (cur.x1 + next.x0)/2 才是真正的 gutter 中点。
+
+    Col label 可能跨多行（如 "Luke 18:28-30, / 22:28-31" 占同一 col 两行），
+    需把 x 重叠的多行合并成一个 col label。
+    """
+    raw = []
     for line in block.get('lines', []):
         text = ''.join(s['text'] for s in line.get('spans', [])).strip()
         if text:
-            cols.append((text, line['bbox'][0], line['bbox'][2]))
-    return sorted(cols, key=lambda c: c[1])
+            raw.append((text, line['bbox'][0], line['bbox'][2]))
+    raw.sort(key=lambda c: c[1])
+    # 合并 x 范围重叠的相邻 cols（多行 col label）
+    merged = []
+    for entry in raw:
+        if merged and entry[1] < merged[-1][2]:
+            prev_text, prev_x0, prev_x1 = merged[-1]
+            merged[-1] = (prev_text + ' ' + entry[0],
+                          min(prev_x0, entry[1]),
+                          max(prev_x1, entry[2]))
+        else:
+            merged.append(entry)
+    return merged
 
 
 def ccel_pg_is_verse_block(block):
@@ -1641,17 +1662,12 @@ def extract_ccel_parallel(cfg):
             elif ccel_pg_is_col_label(block):
                 current_col_info = ccel_pg_extract_col_info(block)
             elif in_verse_section and ccel_pg_is_verse_block(block):
-                # multi-col section 中，宽 block 必须是 multi-col layout
-                # （line.x0 多 cluster），否则是 single-col commentary 段头
-                # 「**4.** *Bear forth fruit*」型——不能加入 verse_buf
-                n_cols = len(current_col_info)
-                bw = block['bbox'][2] - block['bbox'][0]
-                if n_cols >= 2 and bw >= 260 and not ccel_pg_block_is_multi_col(block, n_cols=n_cols):
-                    flush()
-                    in_verse_section = False
-                    handle_commentary(block)
-                else:
-                    verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
+                # ccel_pg_is_verse_block 已经检查 sp1 italic 排除了
+                # commentary 段头「**4.** *Bear forth fruit*」型。
+                # 这里直接加入 verse_buf——不要再用 ccel_pg_block_is_multi_col
+                # 否决（短 verse block 整行跨 3 col，line.x0=74 不被 multi-col
+                # 检测命中，会被误杀）。
+                verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
             elif in_verse_section:
                 first_span = get_first_nonempty_span(block)
                 if verse_buf and first_span and not bool(first_span.get('flags', 0) & 16):
