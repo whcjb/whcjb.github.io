@@ -74,13 +74,31 @@ def transform(raw: str, en_ch: int) -> str:
     # 4. <th> book names en→zh
     text = fix_th(text)
 
-    # 4.5. Vol 2 EN uses `<sup>N</sup>` for footnote markers (NOT the
-    # kramdown `[^N]` convention used in Vol 1). Claude occasionally
-    # converts `<sup>N</sup>` → `[^N]` during translation, which then
-    # renders as a literal "[^N]" because there is no matching
-    # `[^N]: definition`. Convert any leaked kramdown refs back to
-    # `<sup>N</sup>` so they at least render as superscript numbers.
-    text = re.sub(r'\[\^(\d+)\]', r'<sup>\1</sup>', text)
+    # 4.5. Vol 2 EN 现在用 kramdown footnote 风格：[^N] markdown refs +
+    # [^N]: definitions。Claude 翻译时偶尔把 EN 的
+    # <sup id="fnref:N"><a href="#fn:N">N</a></sup> 简化成 [^N]。这其实
+    # 对 commentary 段是正确的（kramdown 处理 [^N] → 自动渲染 sup 链接），
+    # 但对 scripture-table HTML cell（<td><p>...</p></td>）内的 [^N] 不
+    # 处理（kramdown 默认 raw HTML 内不解析 markdown）→ 显示成字面
+    # "[^N]" 字符。
+    #
+    # 解决：cell 内的 [^N] → 显式 HTML <sup id=fnref:N>...链接；
+    # cell 外的 [^N]（commentary）和 [^N]: defs 保留 markdown 形式。
+    def _wrap_sup_in_html_cells(t):
+        # 只在 <td>...</td> 范围内替换
+        def repl_td(m):
+            cell = m.group(0)
+            return re.sub(
+                r'\[\^(\d+)\]',
+                lambda mm: (
+                    f'<sup id="fnref:{mm.group(1)}">'
+                    f'<a href="#fn:{mm.group(1)}" class="footnote">'
+                    f'{mm.group(1)}</a></sup>'
+                ),
+                cell,
+            )
+        return re.sub(r'<td[^>]*>.*?</td>', repl_td, t, flags=re.DOTALL)
+    text = _wrap_sup_in_html_cells(text)
 
     # 4.6. Front-matter key un-translation: must run BEFORE the renumber
     # step below, since the renumber matches the English key `chapter: N`.
