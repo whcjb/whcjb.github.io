@@ -1014,6 +1014,32 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R11. multi-col section 单 col 跨页续接被 multi-col 检查误杀
+
+**Trigger**：multi-col scripture-table 最后一行 verse 在跨页处中断，例如 Matt 16:1-4 末尾「4. A wicked」断在页底，next page top 续接「and adulterous nation demandeth a sign... And he left them, and departed.」结果该续接没收回表内，暴露成段在 table 外。
+
+**根因**：跨页续接 block 只在 Matt 一列续接（无 Mark/Luke 续接），但 PyMuPDF block bbox 因为含 stray `\xa0` (nbsp) 在 x=404 撑宽到 w=333（看似多 col）。multi-col 检查（line.x0 在 col 几何位置 ±12px 命中 ≥ n_cols-1）只命中 x=74 一个位置 → 判 not_mc → flush 当 commentary。
+
+**Fix**：multi-col section 中，cross-page-top + 块 h < 100px 即使非 multi-col layout 也算 scripture 续接（commentary 续接基本 ≥ 100px）：
+
+```python
+cross_page_single_col_short = (
+    is_cross_page_top and not_mc and block_h < 100
+)
+if first_italic:
+    flush(); handle_commentary(block)
+elif cross_page_single_col_short:
+    verse_buf.append(...)         # ← 新加分支
+elif not_mc or not is_legit_continuation:
+    flush(); handle_commentary(block)
+else:
+    verse_buf.append(...)
+```
+
+**通用规则**：cross-page-top 在 multi-col section 中也可能是单 col 续接（某一栏的 verse 末尾跨页）。multi-col layout 检查不应作为绝对否决——配合短块阈值放宽。
+
+---
+
 ## R10. multi-col 跨页续接的「兄弟 block」被当 commentary 漏掉
 
 **Trigger**：multi-col scripture-table 后面紧跟一个明显是 3 col 交织的注释段（如「**31**. Therefore I say to you, ... sin and blasphemy **110** shall be **Luke 12:10**...」混合 Matt + Mark + Luke 内容）。说明跨页续接没全部进入 verse_buf。

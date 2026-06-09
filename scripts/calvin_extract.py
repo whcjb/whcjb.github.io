@@ -1673,6 +1673,10 @@ def extract_ccel_parallel(cfg):
                     # 一个 block，page_idx 就等于 last_buf_page）。
                     # 只要 block_y0 < 200 + verse_buf 中有更早 page 的 block，
                     # 就是合法的 cross-page top 续接。
+                    # multi-col section 中，cross-page-top block 可能只是
+                    # 某一 col 的延续（如 Matt v4 末尾仅 Matt col 有续接，
+                    # 没 Mark/Luke 续接）。此时块宽度 / col 数 / multi-col
+                    # layout 都不应作为否决条件。
                     # 单 col section 跨页续接判别：高度阈值不稳（scripture
                     # 续接可达 170px，commentary 可短到 127px）。
                     # 改用结构信号：scripture verse marker = 粗体小数字 +
@@ -1735,7 +1739,21 @@ def extract_ccel_parallel(cfg):
                         is_cross_page_top or is_same_page_continuation
                         or (n_cols == 1 and is_pure_digit)
                     )
-                    if first_italic or not_mc or not is_legit_continuation:
+                    # cross-page-top 在 multi-col section 中，块可能只是
+                    # 某一 col 的续接（如 Matt v4 末尾仅 Matt col 续接，无
+                    # Mark/Luke 续接 → not_mc=True 但实际是 scripture）。
+                    # 加豁免：cross-page-top + 块 h < 100px 即使非 multi-col
+                    # layout 也算 scripture（commentary 续接极少 < 100px）。
+                    cross_page_single_col_short = (
+                        is_cross_page_top and not_mc and block_h < 100
+                    )
+                    if first_italic:
+                        flush()
+                        in_verse_section = False
+                        handle_commentary(block)
+                    elif cross_page_single_col_short:
+                        verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
+                    elif not_mc or not is_legit_continuation:
                         flush()
                         in_verse_section = False
                         handle_commentary(block)
