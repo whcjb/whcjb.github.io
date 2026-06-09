@@ -1151,7 +1151,18 @@ def ccel_pg_spans_to_md(block, fn_size_max):
                 parts.append(' ')
             i += 1
             continue
-        if is_sup and stripped.isdigit() and span.get('size', 99) < fn_size_max + 2:
+        # 脚注上标识别：两种情况
+        # 1. is_sup flag + 数字 + 小字号（PyMuPDF 正常标记的 sup）
+        # 2. 数字 + 字号显著小于正文（如 6.6/7.5 vs 正文 12）—— Calvin
+        #    PDF 偶尔不标 sup flag，但视觉上仍是 sup（如 vol 2 fn ref "399"
+        #    flags=0 size=6.6）
+        span_sz = span.get('size', 99)
+        is_small_digit_ref = (
+            stripped.isdigit()
+            and span_sz < fn_size_max + 2  # < 9.5 for vol2
+            and span_sz < 9  # 排除 page number 等 size=10
+        )
+        if (is_sup or is_small_digit_ref) and stripped.isdigit():
             parts.append(f'<sup>{stripped}</sup>')
             i += 1
             continue
@@ -1495,6 +1506,10 @@ def extract_ccel_parallel(cfg):
     current_col_info    = []
     verse_buf           = []
     fn_size_max         = cfg['footnote_size_max']
+    # 上一个 commentary block 的 (page_idx, y_end) — 用于检测连续 block
+    # 是否属于同一段（视觉 y 间距小则合并）。Calvin vol 2 PDF 偶尔把同
+    # 一段拆成两个相邻 block（如 fn ref 起头的延续行单独成块）。
+    last_commentary_pos = None
 
     def get_first_nonempty_span(block):
         for line in block.get('lines', []):
@@ -1504,26 +1519,40 @@ def extract_ccel_parallel(cfg):
         return None
 
     def flush():
-        nonlocal verse_buf
+        nonlocal verse_buf, last_commentary_pos
         if verse_buf and current_header:
             tbl = ccel_pg_build_verse_table(current_header, verse_buf, current_col_info)
             if tbl:
                 output_blocks.append(tbl)
         verse_buf = []
+        last_commentary_pos = None  # section 切换重置 commentary 合并位置
 
     def handle_commentary(block):
-        nonlocal pending_continuation
+        nonlocal pending_continuation, last_commentary_pos
         rich = ccel_pg_spans_to_md(block, fn_size_max)
         rich = re.sub(r'-\s+([a-z])', r'\1', rich)
         if not rich:
             return
         if rich.endswith('-'):
             pending_continuation = (pending_continuation or '') + rich[:-1]
-        else:
-            if pending_continuation:
-                rich = pending_continuation + rich
-                pending_continuation = None
+            last_commentary_pos = None
+            return
+        if pending_continuation:
+            rich = pending_continuation + rich
+            pending_continuation = None
+        # 同段续接合并：同页 + 前块结束 y 与本块起始 y 间距 ≤ 5px → 视为
+        # 同一段（PyMuPDF 把段内换行点拆成两个 block，如 fn ref "399"
+        # 起头的延续行）。合并到上一 output_blocks 末尾，不新开段。
+        cur_pos = (page_idx, block['bbox'][1], block['bbox'][3])
+        merged = False
+        if (last_commentary_pos is not None and output_blocks
+                and last_commentary_pos[0] == page_idx
+                and 0 <= cur_pos[1] - last_commentary_pos[2] <= 5):
+            output_blocks[-1] = output_blocks[-1].rstrip() + ' ' + rich
+            merged = True
+        if not merged:
             output_blocks.append(rich)
+        last_commentary_pos = cur_pos
 
     def block_to_verse_buf_entry(block, page, page_idx):
         """build_verse_table 现在要 (block_dict, words_list, span_size_map, page_idx)。
