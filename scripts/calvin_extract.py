@@ -136,6 +136,7 @@ VOLUMES = {
         'skip_pages': 7,
         'header_y_max': 55,
         'footnote_size_max': 7.5,
+        'extract_footnotes': True,
     },
     'acts1': {
         'format': 'ccel_acts',
@@ -1163,7 +1164,10 @@ def ccel_pg_spans_to_md(block, fn_size_max):
             and span_sz < 9  # 排除 page number 等 size=10
         )
         if (is_sup or is_small_digit_ref) and stripped.isdigit():
-            parts.append(f'<sup>{stripped}</sup>')
+            # 用 kramdown footnote 引用 [^N] —— 配合 [^N]: 定义 kramdown
+            # 自动渲染成 <sup id=fnref:N><a href=#fn:N>N</a></sup> +
+            # 文末 ol 列表。与 harmony-3-en 同款。
+            parts.append(f'[^{stripped}]')
             i += 1
             continue
         lead = t[:len(t) - len(t.lstrip())]
@@ -1442,7 +1446,14 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
             ci = sum(1 for s in splits if x0 >= s)
             stripped = text.strip()
             if is_sup and stripped.isdigit() and size < 9.5:
-                bucks[ci].append(f'<sup>{stripped}</sup>')
+                # scripture-table cell 是 HTML（<td><p>）—— kramdown 不会
+                # 在 raw HTML 内处理 markdown 除非 markdown="1"。直接输出
+                # 显式链接 HTML，跳过 markdown 处理同样能跳到 fn def。
+                bucks[ci].append(
+                    f'<sup id="fnref:{stripped}">'
+                    f'<a href="#fn:{stripped}" class="footnote">{stripped}</a>'
+                    f'</sup>'
+                )
             else:
                 bucks[ci].append(text)
         for ci in range(n_cols):
@@ -1506,6 +1517,9 @@ def extract_ccel_parallel(cfg):
     current_col_info    = []
     verse_buf           = []
     fn_size_max         = cfg['footnote_size_max']
+    # 累计 fn defs，下一 section header 时 flush。让 fn defs 紧贴所属
+    # commentary，不要全部塞到文件末尾（章末效果差）。
+    pending_fns         = []
     # 上一个 commentary block 的 (page_idx, y_end) — 用于检测连续 block
     # 是否属于同一段（视觉 y 间距小则合并）。Calvin vol 2 PDF 偶尔把同
     # 一段拆成两个相邻 block（如 fn ref 起头的延续行单独成块）。
@@ -1586,6 +1600,11 @@ def extract_ccel_parallel(cfg):
             if ccel_pg_is_page_number(block):
                 continue
             if ccel_pg_is_footnote(block, cfg):
+                # 提取 fn defs 而非丢弃 —— inline body 有 <sup>N</sup>
+                # 引用，对应的 [^N]: 定义就在 page-bottom 这种 block 里。
+                if cfg.get('extract_footnotes'):
+                    for num, fn_text in parse_ccel_footnote_block(block):
+                        pending_fns.append(f'[^{num}]: {fn_text}')
                 continue
             if ccel_pg_is_decoration(block):
                 continue
@@ -1598,6 +1617,9 @@ def extract_ccel_parallel(cfg):
                 flush()
                 if pending_continuation:
                     output_blocks.append(pending_continuation)
+                if pending_fns:
+                    output_blocks.extend(pending_fns)
+                    pending_fns.clear()
                 doc.close()
                 write_txt_output(output_blocks, cfg['out'])
                 tbl_marker = '<table class="calvin-scripture">'
@@ -1606,6 +1628,12 @@ def extract_ccel_parallel(cfg):
 
             if ccel_pg_is_section_header(block):
                 flush()
+                # 在新 section header 前 flush pending fn defs，让 fn defs
+                # 紧贴所属 section 的 commentary（kramdown 全局 fn 也接受
+                # 散落 [^N]: 定义，不一定都到文末）。
+                if pending_fns:
+                    output_blocks.extend(pending_fns)
+                    pending_fns.clear()
                 current_header   = re.sub(r'\s+', ' ', text.replace('\n', ' ')).strip()
                 current_col_info = []
                 output_blocks.append(f'\n## {current_header}\n')
@@ -1723,6 +1751,9 @@ def extract_ccel_parallel(cfg):
     flush()
     if pending_continuation:
         output_blocks.append(pending_continuation)
+    if pending_fns:
+        output_blocks.extend(pending_fns)
+        pending_fns.clear()
     doc.close()
     write_txt_output(output_blocks, cfg['out'])
     tbl_marker = '<table class="calvin-scripture">'
