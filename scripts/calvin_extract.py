@@ -1755,19 +1755,20 @@ def extract_ccel_parallel(cfg):
                         is_cross_page_top or is_same_page_continuation
                         or (n_cols == 1 and is_pure_digit)
                     )
-                    # cross-page-top 在 multi-col section 中，块可能只是
-                    # 某一 col 的续接（如 Matt v4 末尾仅 Matt col 续接，无
-                    # Mark/Luke 续接 → not_mc=True 但实际是 scripture）。
-                    # 加豁免：cross-page-top + 块 h < 100px 即使非 multi-col
-                    # layout 也算 scripture（commentary 续接极少 < 100px）。
-                    cross_page_single_col_short = (
-                        is_cross_page_top and not_mc and block_h < 100
+                    # multi-col section 中，块可能只是某一 col 的续接（如
+                    # Matt v4 末尾仅 Matt col 续接 → not_mc=True 但仍是
+                    # scripture）。豁免：not_mc + 块 h < 100px 是 scripture
+                    # 单 col 续接（commentary 续接基本 ≥ 100px），不论 cross-
+                    # page 还是 same-page。
+                    single_col_short = (
+                        not_mc and block_h < 100
+                        and (is_cross_page_top or is_same_page_continuation)
                     )
                     if first_italic:
                         flush()
                         in_verse_section = False
                         handle_commentary(block)
-                    elif cross_page_single_col_short:
+                    elif single_col_short:
                         verse_buf.append(block_to_verse_buf_entry(block, page, page_idx))
                     elif not_mc or not is_legit_continuation:
                         flush()
