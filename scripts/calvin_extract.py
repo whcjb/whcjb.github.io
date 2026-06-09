@@ -1591,20 +1591,33 @@ def extract_ccel_parallel(cfg):
 
     def block_to_verse_buf_entry(block, page, page_idx):
         """build_verse_table 现在要 (block_dict, words_list, span_size_map, page_idx)。
-        page_idx 必须随 word 进 sort key——否则跨页块词混排序错乱。"""
+        page_idx 必须随 word 进 sort key——否则跨页块词混排序错乱。
+
+        ⚠️ span_size_map 必须从**全页**所有 blocks 构建，不只是当前
+        block。原因：PyMuPDF 偶尔生成 y-overlap 的兄弟 blocks（block A
+        bbox y=246-532 包含 block B bbox y=491-546），block A 的 word
+        过滤捕到 block B 区域的 word（如 "702" y=491.39 在 A 的 y 范围内），
+        但 word 的 span style 仅在 block B 的 spans 中。
+        如 sm 只包含 block A 的 spans，"702" 的 sup flag 丢失，渲染
+        成普通字号文字。
+        """
         x0, y0, x1, y1 = block['bbox']
         page_words = page.get_text('words')
         wlist = [w for w in page_words
                  if y0 - 1 <= w[1] and w[3] <= y1 + 1]
         sm = {}
-        for line in block.get('lines', []):
-            for sp in line.get('spans', []):
-                if not sp.get('text', '').strip():
-                    continue
-                sx0, sy0 = sp['bbox'][0], sp['bbox'][1]
-                sz = sp.get('size', 12.0)
-                is_sup = bool(sp.get('flags', 0) & 1)
-                sm[(round(sy0), round(sx0))] = (sz, is_sup)
+        # 全页 span 信息汇总（不只是 current block 的 spans）
+        for pb in page.get_text('dict', flags=fitz.TEXT_PRESERVE_WHITESPACE)['blocks']:
+            if pb.get('type') != 0:
+                continue
+            for line in pb.get('lines', []):
+                for sp in line.get('spans', []):
+                    if not sp.get('text', '').strip():
+                        continue
+                    sx0, sy0 = sp['bbox'][0], sp['bbox'][1]
+                    sz = sp.get('size', 12.0)
+                    is_sup = bool(sp.get('flags', 0) & 1)
+                    sm[(round(sy0), round(sx0))] = (sz, is_sup)
         return (block, wlist, sm, page_idx)
 
     for page_idx in range(cfg['skip_pages'], total):

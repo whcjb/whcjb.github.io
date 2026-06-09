@@ -908,22 +908,35 @@ return lines[:end_idx] + lines[fn_def_start:]
 - B3 y=246 首 span=6.6 「708」第二 span=12.0 「 said to them...」
 - 两块共含 Matt v4-9 / Mark v3 续-10 / Luke v32-38 完整内容
 
-**Fix**：两个信号同时满足才判脚注：
+**Fix**：两条判定路径并存：
+
 ```python
 def ccel_pg_is_footnote(block, cfg):
     spans = [s for line in block.get('lines', [])
              for s in line.get('spans', []) if s.get('text', '').strip()]
     if not spans:
         return False
+    # 路径 B：全部 spans 字号 < 10 → fn 续接块（跨多个 PyMuPDF block 的
+    # fn def 续接 first span 已不是数字编号但 ALL spans 仍 < 10）
+    if all(sp.get('size', 12) < 10 for sp in spans):
+        return True
     if spans[0].get('size', 0) >= cfg['footnote_size_max']:
         return False
-    # 首 span 小，再看第二 — 正文字号则不是脚注
+    # 路径 A：首 span 小 + 第二 span 也小 → 标准 fn 头
     if len(spans) >= 2 and spans[1].get('size', 0) >= 10:
         return False
     return True
 ```
 
-**通用启示**（见 [principles §0.3](principles.md)）：「首 span 几何特征」是单点信号，需配合「第二 span 字号」「block 位置」等内容信号联合判断。光看首 span 字号是单几何信号的反例。
+**路径 B 的必要性（Matt 19:27-30 case）**：page 255 y=667 是「supposed difficulty would have disappeared, and the most refined taste...」size 9.0 全行 — fn def 「633」从前一节延续过来的续接块。无 leading 数字编号但本质是 fn body。
+
+| block 类型 | first span size | second span size | 所有 spans 字号范围 | 判定 |
+|---|---|---|---|---|
+| 真脚注头块 | 6.3 | 9.0 | 6-9 | IS fn（路径 A） |
+| 真脚注续接块 | 9.0 | 9.0 | 9 | IS fn（路径 B） |
+| 经文续接块 | 6.6 | 12.0 | 6-12 | NOT fn（首小 second 大） |
+
+**通用启示**（见 [principles §0.3](principles.md)）：「首 span 几何特征」是单点信号，需配合「第二 span 字号」「block 位置」等内容信号联合判断。光看首 span 字号是单几何信号的反例。**关键**：跨 block 同一逻辑实体（如长 fn def 跨多个 PyMuPDF block）的续接 block，首 span 已不一定满足「头部识别签名」，需要 fallback 路径（全部小字 → 续接段）。
 
 ---
 
@@ -1014,21 +1027,26 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
-## R11. multi-col section 单 col 跨页续接被 multi-col 检查误杀
+## R11. multi-col section 单 col 续接（跨页 or 同页）被 multi-col 检查误杀
 
-**Trigger**：multi-col scripture-table 最后一行 verse 在跨页处中断，例如 Matt 16:1-4 末尾「4. A wicked」断在页底，next page top 续接「and adulterous nation demandeth a sign... And he left them, and departed.」结果该续接没收回表内，暴露成段在 table 外。
+**Trigger**：multi-col scripture-table 最后一行 verse 在断点处中断，例如：
+- Matt 16:1-4 末尾「4. A wicked」断在页底，next page top 续接「and adulterous nation demandeth a sign...」（跨页 case）
+- Matt 21:1-9 v9 末尾「Blessed be he 702 that cometh in the name of the Lord; Hosanna in the highest. 703」被 PyMuPDF 拆成单独短块在 fn 区下方（同页 case，块在 page 283 y=491-546 fn 区下方）
 
-**根因**：跨页续接 block 只在 Matt 一列续接（无 Mark/Luke 续接），但 PyMuPDF block bbox 因为含 stray `\xa0` (nbsp) 在 x=404 撑宽到 w=333（看似多 col）。multi-col 检查（line.x0 在 col 几何位置 ±12px 命中 ≥ n_cols-1）只命中 x=74 一个位置 → 判 not_mc → flush 当 commentary。
+无论哪种情况，续接没收回表内，暴露成段在 table 外。
 
-**Fix**：multi-col section 中，cross-page-top + 块 h < 100px 即使非 multi-col layout 也算 scripture 续接（commentary 续接基本 ≥ 100px）：
+**根因**：续接 block 只在 Matt 一列续接（无 Mark/Luke 续接）。block bbox 因含 stray `\xa0` (nbsp) 在 x>=400 撑宽到 w=333（看似 multi-col 但实际只有 Matt 列）。multi-col 检查（line.x0 在 col 几何位置 ±12px 命中 ≥ n_cols-1）只命中 x=74 一个位置 → 判 not_mc → flush 当 commentary。
+
+**Fix**：multi-col section 中，not_mc + 块 h < 100px 即使非 multi-col layout 也算 scripture 续接（commentary 续接基本 ≥ 100px）。豁免**同时包括跨页 top 和同页续接**：
 
 ```python
-cross_page_single_col_short = (
-    is_cross_page_top and not_mc and block_h < 100
+single_col_short = (
+    not_mc and block_h < 100
+    and (is_cross_page_top or is_same_page_continuation)
 )
 if first_italic:
     flush(); handle_commentary(block)
-elif cross_page_single_col_short:
+elif single_col_short:
     verse_buf.append(...)         # ← 新加分支
 elif not_mc or not is_legit_continuation:
     flush(); handle_commentary(block)
@@ -1036,7 +1054,9 @@ else:
     verse_buf.append(...)
 ```
 
-**通用规则**：cross-page-top 在 multi-col section 中也可能是单 col 续接（某一栏的 verse 末尾跨页）。multi-col layout 检查不应作为绝对否决——配合短块阈值放宽。
+**演化历史**：最初只支持 `is_cross_page_top`（跨页 top），但 Matt 21:1-9 v9 末尾分裂在同页（page 283 fn 区下方），不是 cross-page case → 漏。放宽到 `is_cross_page_top OR is_same_page_continuation`。
+
+**通用规则**：multi-col section 中也可能是单 col 续接（某一栏的 verse 末尾在表内或跨页或被 fn 区夹击）。multi-col layout 检查不应作为绝对否决——配合**短块阈值（h<100px）+ 在已知 buf_pages 内**两个条件放宽。
 
 ---
 
@@ -1162,6 +1182,10 @@ def ccel_pg_block_is_multi_col(block, n_cols=3):
 
 **实测**：Matt 13:1-17 page 65 commentary block（clusters=[72, 148, 264]）正确判定 single-col，不再被加进 verse_buf。
 
+**⚠️ 适用边界**：这个 multi-col 判定**不能用在 verse_block 路径**中（即 `ccel_pg_is_verse_block` 返回 True 的块）。短 verse block（如 Matt 19:27-30 page 255 y=603-629 h=26，整行跨 3 col 在同一 visual y）的 line.bbox.x0 始终 = 74（leftmost col 起点），cluster 数 = 1 → 误判 single-col → 直接被 flush。
+
+verse_block 路径的 commentary 头排除已由 §R7（sp1 italic 检查）承担，不需要再用 multi-col 判定否决。multi-col 判定只用在 elif 续接路径（非 verse_block）中区分 commentary 全宽段 vs scripture 续接。
+
 ---
 
 ## R7. ccel_pg_is_verse_block 误把 commentary 段头当 scripture verse
@@ -1217,6 +1241,38 @@ def ccel_pg_is_section_header(block):
 - 几何阈值用 `>=` 必须**留出至少 1-2px 容差**——浮点比较 + 字体渲染微差异，会导致边缘 case 被漏
 - 多重信号判定时，**至少有 2 个强信号即可放宽其他阈值**（这里 size ≥ 18 + 全大写 + 关键词 已构成 3 重信号）
 - 调阈值前先 dump 真实失败 case 的实测值，再决定改多少
+
+### R6b（同源延伸）：col label 跨多行被当成多个 col
+
+**Trigger**：multi-col section 的 col label 包含**跨行换行**（如 `Luke 18:28-30, / 22:28-31` 占两行），`ccel_pg_extract_col_info` 返回 4 个独立 col 而非 3 个。下游 split / cell 分配全乱（如 Matt 19:27-30 三栏内容被切成 4 栏的杂烩）。
+
+**根因**：原 `ccel_pg_extract_col_info` 把 block 内每个 line 视作独立 col。但 PDF 同一 col 的 label 文字过长时会换行，仍属同一 col。
+
+**Fix**：合并 x 范围重叠的相邻 cols：
+
+```python
+def ccel_pg_extract_col_info(block):
+    raw = []
+    for line in block.get('lines', []):
+        text = ''.join(s['text'] for s in line.get('spans', [])).strip()
+        if text:
+            raw.append((text, line['bbox'][0], line['bbox'][2]))
+    raw.sort(key=lambda c: c[1])
+    merged = []
+    for entry in raw:
+        if merged and entry[1] < merged[-1][2]:  # x 范围重叠
+            prev_text, prev_x0, prev_x1 = merged[-1]
+            merged[-1] = (prev_text + ' ' + entry[0],
+                          min(prev_x0, entry[1]),
+                          max(prev_x1, entry[2]))
+        else:
+            merged.append(entry)
+    return merged
+```
+
+**实测**：Matt 19:27-30 col label `Luke 18:28-30,` (x=417-524) + `22:28-31` (x=431-492) 重叠（431 < 524）→ 合并成 `Luke 18:28-30, 22:28-31` 一个 col。col_info 从 4 项回到 3 项。
+
+**通用规则**：「按 line 拆 col」是简单实现，但忽略了 line 内换行的现实。任何「block.lines → 离散单元」的转换都要考虑「同语义单元跨多行」的 case，用 spatial overlap 合并。
 
 ---
 
@@ -1274,6 +1330,44 @@ for entry in verse_blocks:
 - PyMuPDF 的 block 边界不保证互斥，多 block 可能 bbox 重叠
 - 凡用 block.bbox y 过滤页 word 的地方都要 dedupe
 - 或改用「整页 word 一次性收集 + 按 y 分配给 block」逻辑
+
+### R4b（同源延伸）：span_size_map 必须**全页**构建，不只 current block
+
+**Trigger**：scripture-table cell 里某个数字 fn ref（如 Matt 21:1-9 Matt 列的 `702` `703`）渲染成**正常字号文字**，不是 `<sup>` 链接。即使 PDF 里这些 span 明明带 sup flag + 字号 6.6。
+
+**根因**：block_to_verse_buf_entry 的 `span_size_map` 只从 current block 的 spans 构建。但因为 block-bbox y-overlap（同 §R4），word 可能被 block A 的 word-y 过滤捕获，但其 span style 仅在 block B 的 spans 中（B 在 A 内部）：
+
+```
+block A: bbox y=246-532 (大多列块)
+block B: bbox y=491-546 (Matt v9 末尾短块，A 内嵌)
+word "702" y=491.39 在 A 的 y 过滤范围内 → 进 A 的 wlist
+但 "702" span 在 B 的 spans 中，A 的 span_size_map 没这个 key
+→ word "702" 查找命中 default (12.0, False) → 渲染成普通字号文字
+```
+
+dedup（§R4）会保证 word 只出现一次，但用的是「先来的 block 的 span_size_map」。如先到的 block 没有这个 span 的 style info，sup flag 丢失。
+
+**Fix**：`block_to_verse_buf_entry` 把 span_size_map 从「current block.lines」改为「page.get_text('dict').blocks 所有 block.lines」：
+
+```python
+sm = {}
+for pb in page.get_text('dict', flags=fitz.TEXT_PRESERVE_WHITESPACE)['blocks']:
+    if pb.get('type') != 0: continue
+    for line in pb.get('lines', []):
+        for sp in line.get('spans', []):
+            if not sp.get('text', '').strip(): continue
+            sx0, sy0 = sp['bbox'][0], sp['bbox'][1]
+            sm[(round(sy0), round(sx0))] = (
+                sp.get('size', 12.0),
+                bool(sp.get('flags', 0) & 1)
+            )
+```
+
+任何 word 不论被哪个 block 的 y 过滤捕获，都能查到自己的 span style。
+
+**通用规则**：
+- block.bbox.y 过滤是「words 的 spatial 切片」，而 spans 是「lexical 切片」——两者切法不一致，map 必须按 spatial 全集构建
+- 凡是「word → span style」的查找，必须按页（甚至按文档）构建查找表，不要按 block 局部构建
 
 ---
 

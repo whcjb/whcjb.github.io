@@ -92,8 +92,11 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | multi-col 检测把 commentary 含缩进 quote 段误判 multi-col | cluster 数判定不看位置 (§R8) | line.x0 cluster 必须在 page-geom col 位置 ±12px 命中 ≥n_cols-1 |
 | 单 col section cell 含整页 commentary 续接 | 跨页 top 续接判定对 single-col commentary 失效 (§R9) | 统计粗体数字 + 紧跟非-italic span 数 ≥ 2 OR 极短块 (h<60px) → scripture |
 | multi-col 表后跟着 3-col 交织成段 commentary（v31-32 等暴露在表外） | PyMuPDF 把续接拆成 y-overlap 兄弟 block，同页续接判定漏 (§R10) | 同页续接改用 `page_idx in {buf_pages}` 集合，不再用 `== earliest` |
-| multi-col 表某 col 跨页续接（如 Matt v4 末尾「and adulterous nation...」）暴露在表外 | 续接 block 仅 1 col 内容，multi-col layout 检查误杀 (§R11) | cross-page-top + h < 100px 即使非 multi-col layout 也接受 |
+| multi-col 表某 col 续接（跨页 or 同页 fn 区下方）暴露在表外 | 续接 block 仅 1 col 内容，multi-col layout 检查误杀 (§R11) | not_mc + h < 100px + (cross-page OR same-page-continuation) 都接受 |
 | commentary 段中 fn ref 数字（如 `399`）以正常字号出现，且独立成段 | PyMuPDF 把同段拆成两个相邻 block + sup flag 缺失 (§M5c, §P 末注) | handle_commentary 加 y 间距 ≤5px 合并 + ccel_pg_spans_to_md sup 判定加视觉小字号识别 |
+| scripture-table cell 跨页续接整页丢失（fn def 跨多块时续接块全部小字）| ccel_pg_is_footnote 只命中标准头，漏 fn 续接块 (§O 路径 B) | 增加判定：ALL spans size < 10 即视为 fn |
+| scripture-table cell 出现「成段交织内容」(Matt 19:27-30 三 col 全合并)| col label 跨多行被当多个 col (§R6b) | ccel_pg_extract_col_info 合并 x 范围重叠的相邻 cols |
+| scripture-table cell 里某数字 fn ref（如 702/703）渲染成正常字号 | block_to_verse_buf_entry 用局部 block 的 span_size_map，y-overlap 块的 word 查不到 sup style (§R4b) | span_size_map 从全页所有 blocks 构建，不只 current block |
 
 ---
 
