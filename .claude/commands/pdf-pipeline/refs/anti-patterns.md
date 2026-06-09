@@ -1014,6 +1014,36 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ---
 
+## R10. multi-col 跨页续接的「兄弟 block」被当 commentary 漏掉
+
+**Trigger**：multi-col scripture-table 后面紧跟一个明显是 3 col 交织的注释段（如「**31**. Therefore I say to you, ... sin and blasphemy **110** shall be **Luke 12:10**...」混合 Matt + Mark + Luke 内容）。说明跨页续接没全部进入 verse_buf。
+
+**根因**：PyMuPDF 偶尔把跨页 multi-col 续接拆成两个**互相 y-overlap** 的 block：
+
+```
+block A: y=88-316  (page top, first text 非粗体)
+block B: y=304-488 (mid-page, first text 是 sup fn ref "113")
+```
+
+block A 通过 cross-page-top 判定（y < 200）被加入 verse_buf。但 block B 起始 y=304 NOT < 200，cross-page-top = False。同页续接判定原来用 `page_idx == earliest_buf_page`，earliest 仍是上一页（block A 的源页），返回 False。block B 被 flush 当 commentary，3-col 内容暴露成段。
+
+**Fix**：同页续接条件改用 `page_idx in {verse_buf 已收 page}`：
+
+```python
+buf_pages = {e[3] for e in verse_buf if len(e) >= 4}
+is_same_page_continuation = (
+    n_cols >= 2 and page_idx in buf_pages
+)
+```
+
+只要本页之前已经有 block 进 verse_buf（不论 earliest 还是 cross-page-top 才刚加），同页后续 multi-col block 都视为续接。
+
+**实测**：Matt 12:25-32 (n_cols=3) 之前漏 v31-32 (Matt) / Luke 12:10 cross-ref 暴露成 commentary，现在三列完整收入 cells。
+
+**通用规则**：PyMuPDF block 边界不保证互斥，可能 y-overlap。任何「同页续接」判定不能用 `page_idx == earliest`，应用 `page_idx in buf_pages` 集合形式。
+
+---
+
 ## R9. 跨页续接 block 误把 commentary continuation 当 scripture（单 col）
 
 **Trigger**：单 col scripture-table section 的 cell 包含整页 commentary。常见于 Matt 13:24-30 / Luke 16:1-15 / Luke 18:1-8 / Luke 19:1-10 类「scripture 横跨两页」section——commentary 跨页时新页 TOP block 被误当 scripture continuation。

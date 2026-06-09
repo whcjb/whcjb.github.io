@@ -1690,15 +1690,18 @@ def extract_ccel_parallel(cfg):
                              or block_h < 60)
                     )
                     # 同页续接判定：multi-col section（n_cols >= 2）才允许同
-                    # 页续接（PyMuPDF 经常把 multi-col 表中间断成几个 block）。
+                    # 页续接（PyMuPDF 经常把 multi-col 表中间断成几个 block，
+                    # 包括跨页后续表上有重叠 / 紧邻的多个 block）。
+                    # 范围：current page_idx 必须在 verse_buf 已收 page 集合
+                    # 内（之前 page 或当前 cross-page-top 已加的 page）。
                     # 单 col section（n_cols=1）禁止同页续接——commentary 也
                     # 是单 col 全宽，无法可靠区分。除非 first span text 是
                     # 纯数字（footnote ref 紧贴前个 verse_block 续接）。
                     first_text = first_span.get('text', '').strip()
                     is_pure_digit = bool(re.match(r'^\d+\.?$', first_text))
+                    buf_pages = {e[3] for e in verse_buf if len(e) >= 4}
                     is_same_page_continuation = (
-                        page_idx == earliest_buf_page
-                        and n_cols >= 2
+                        n_cols >= 2 and page_idx in buf_pages
                     )
                     is_legit_continuation = (
                         is_cross_page_top or is_same_page_continuation
