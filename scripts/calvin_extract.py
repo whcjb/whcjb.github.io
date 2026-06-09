@@ -1466,7 +1466,16 @@ def ccel_pg_build_verse_table(section_header, verse_blocks, col_info):
         for pn, y0, x0, x1, text, size, is_sup in grp:
             ci = sum(1 for s in splits if x0 >= s)
             stripped = text.strip()
-            if is_sup and stripped.isdigit() and size < 9.5:
+            # 脚注上标识别：两路（同 ccel_pg_spans_to_md 的策略）
+            # 1. is_sup flag + 数字 + 小字号（PyMuPDF 正常标记）
+            # 2. 数字 + 字号显著小 (< 9 且 < fn_size_max + 2)（Calvin vol 2
+            #    inline fn ref 偶尔不标 sup flag，如 Mark 3:30 末尾 "113"
+            #    sz=6.6 但 flags=0）
+            is_small_digit_ref = (
+                stripped.isdigit()
+                and 0 < size < 9
+            )
+            if (is_sup or is_small_digit_ref) and stripped.isdigit() and size < 9.5:
                 # scripture-table cell 是 HTML（<td><p>）—— kramdown 不会
                 # 在 raw HTML 内处理 markdown 除非 markdown="1"。直接输出
                 # 显式链接 HTML，跳过 markdown 处理同样能跳到 fn def。

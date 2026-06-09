@@ -979,6 +979,19 @@ if (is_sup_flag or is_small_digit_ref) and stripped.isdigit():
 
 实测 Matt 15:2 commentary 中 fn ref "399" size=6.6 flags=0，加视觉识别后正确包成 `<sup>399</sup>`。配合 §M5c 段合并使用——sup 修了但段未合时，399 还是会以「正常段首」形式渲染。
 
+**⚠️ scripture-table cell 路径**（`ccel_pg_build_verse_table`）同样需要这条「视觉小字号」fallback。原 `if is_sup and stripped.isdigit() and size < 9.5` 漏掉 Mark 3:30 末尾「113」（sz=6.6 但 flags=0）这种情况。建议三处 sup 识别统一规则：
+
+```python
+is_sup_flag = bool(flags & 1)
+is_small_digit_ref = (stripped.isdigit() and 0 < size < 9)
+if (is_sup_flag or is_small_digit_ref) and stripped.isdigit() and size < 9.5:
+    # 表格内：HTML <sup id=fnref:N>...</sup>
+    # 正文内：markdown [^N]
+    ...
+```
+
+**通用启示**：「PyMuPDF flag」是不可靠信号（同一 PDF 内 fn ref span 时有时无 sup flag）。识别 fn ref 必须**OR 视觉信号（小字号）**，不能纯依赖 flag。三条路径（commentary spans_to_md / scripture build_verse_table / 任何未来加的格式）规则要一致。
+
 ---
 
 ## Q. PyMuPDF dict 模式下 narrow cols 多列同 y 文本合并成单一 span → 必须 word-level 提取

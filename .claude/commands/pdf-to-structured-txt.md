@@ -97,6 +97,7 @@ echo "7. fn ref/def =    $ref/$def"                            # 必须相等
 | scripture-table cell 跨页续接整页丢失（fn def 跨多块时续接块全部小字）| ccel_pg_is_footnote 只命中标准头，漏 fn 续接块 (§O 路径 B) | 增加判定：ALL spans size < 10 即视为 fn |
 | scripture-table cell 出现「成段交织内容」(Matt 19:27-30 三 col 全合并)| col label 跨多行被当多个 col (§R6b) | ccel_pg_extract_col_info 合并 x 范围重叠的相邻 cols |
 | scripture-table cell 里某数字 fn ref（如 702/703）渲染成正常字号 | block_to_verse_buf_entry 用局部 block 的 span_size_map，y-overlap 块的 word 查不到 sup style (§R4b) | span_size_map 从全页所有 blocks 构建，不只 current block |
+| scripture-table cell 末尾数字（如 `113`）渲染成正常字号 | PDF span sup flag 缺失（仅 sz=6.6 没 flags=1）(§P 末注) | ccel_pg_build_verse_table 加视觉小字号 fallback（同 spans_to_md 策略） |
 
 ---
 
