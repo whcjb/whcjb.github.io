@@ -1016,21 +1016,67 @@ def block_to_verse_buf_entry(block, page, page_idx):
 
 ## R9. 跨页续接 block 误把 commentary continuation 当 scripture（单 col）
 
-**Trigger**：单 col scripture-table section 的 cell 包含整页 commentary。常见于 Matt 13:24-30 类「短 scripture + 大段 commentary」section——commentary 跨页时新页 TOP block 被当作 scripture continuation。
+**Trigger**：单 col scripture-table section 的 cell 包含整页 commentary。常见于 Matt 13:24-30 / Luke 16:1-15 / Luke 18:1-8 / Luke 19:1-10 类「scripture 横跨两页」section——commentary 跨页时新页 TOP block 被误当 scripture continuation。
 
-**根因**：cross-page top 判定 `block_y0 < 200 + page_idx > earliest_buf_page` 对 scripture 续接成立，但 commentary 跨页时也满足（commentary 也跨页且从新页 TOP 开始）。单 col layout 下两者无几何区别。
+**根因**：cross-page top 判定 `block_y0 < 200 + page_idx > earliest_buf_page` 对 scripture 续接成立，但 commentary 跨页时也满足。单 col layout 下几何特征无差别。
 
-**Fix**：单 col section（n_cols=1）的跨页续接附加块高度限制：scripture 续接通常 1-3 行（< 80px），commentary 续接经常占满整页（500+px）。设阈值 150px：
+**演化（重要：阈值法不稳，最终改结构信号）**：
+
+| 方案 | 实测问题 |
+|---|---|
+| 块高度 ≤ 150px = scripture | Luke 15:11-24 commentary 127px 漏过 |
+| 块高度 ≤ 80px = scripture | Luke 16:1-15 scripture 续接 170px 误杀 |
+| 高度阈值任一值都不稳 | scripture 续接可达 170px，commentary 可短到 84px |
+
+**正解：结构信号——粗体数字 + 紧跟 non-italic 的 span 计数**
+
+Calvin 排版规律：
+- Scripture verse marker：`<bold>8</bold> <roman>. And the master commended...</roman>`
+- Commentary verse-intro：`<bold>8.</bold> <italic>Again, the kingdom of heaven</italic> ...`
+
+差异在「粗体数字后跟的 span 字体样式」。统计「粗体小数字 (size ≥ 10, value < 100) 且紧跟 span 非 italic」的次数 — scripture 续接 ≥ 2 个，commentary 段 = 0 个（即使有 verse cross-ref bold 数字，后面跟的是 italic 引文短语）。
 
 ```python
-block_h = block['bbox'][3] - block['bbox'][1]
+scripture_markers = 0
+if n_cols <= 1:
+    flat_spans = [sp for line in block.get('lines', [])
+                  for sp in line.get('spans', [])
+                  if sp.get('text', '').strip()]
+    for i, sp in enumerate(flat_spans):
+        txt = sp.get('text', '').strip()
+        flags = sp.get('flags', 0)
+        if not (bool(flags & 16) and sp.get('size', 0) >= 10
+                and re.match(r'^\d+\.?$', txt)):
+            continue
+        try:
+            n = int(txt.rstrip('.'))
+        except ValueError:
+            continue
+        if n >= 100:  # 排除 fn ref 编号
+            continue
+        if i + 1 < len(flat_spans):
+            nxt = flat_spans[i + 1]
+            if not bool(nxt.get('flags', 0) & 2):  # next 非 italic
+                scripture_markers += 1
 is_cross_page_top = (
     page_idx > earliest_buf_page and block_y0 < 200
-    and not (n_cols <= 1 and block_h > 150)
+    and (n_cols >= 2 or scripture_markers >= 2)
 )
 ```
 
-**实测**：Matt 13:24-30 (n_cols=1) 之前 row 1 含 v24-43 + 整页 commentary (30K+ chars)，现在 row 1 仅含 v24-30 + v36-43 (1882 chars)。
+**实测覆盖**：
+- Matt 13:24-30 p77 scripture (h=41, markers=2) ✓
+- Matt 13:24-30 p77 commentary (h=487, markers=0) ✗
+- Luke 18:1-8 p126 scripture (h=84, markers=4) ✓
+- Luke 18:1-8 p126 commentary (h=444, markers 计算后 = 0；含 bold "8." 但下个 span italic) ✗
+- Luke 16:1-15 p113 scripture (h=170, markers=7) ✓
+- Luke 16:1-15 p113 commentary (h=386, markers=0) ✗
+- Luke 11:37-41 p103 commentary (h=516, bvm=2 但 markers=0 — bold "38." / "39." 后跟 italic) ✗
+- Luke 15:11-24 p218 commentary (h=127, markers=0) ✗
+
+vol 2 harmony-2-en 全 13 章扫描：cells 均 < 3000 chars，无回归。
+
+**通用规则**：单一几何特征（块高度）在 Calvin 排版下不可靠——scripture/commentary 高度分布重叠。**结构信号（span 字体 sequence）才是可靠区分器**——Calvin 排版规则把 scripture 和 commentary 在 verse-marker 后用 roman/italic 区分得很彻底。
 
 ---
 

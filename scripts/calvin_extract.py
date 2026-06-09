@@ -1645,18 +1645,44 @@ def extract_ccel_parallel(cfg):
                     # 一个 block，page_idx 就等于 last_buf_page）。
                     # 只要 block_y0 < 200 + verse_buf 中有更早 page 的 block，
                     # 就是合法的 cross-page top 续接。
-                    # 但单 col section + 块高度 > 80px → commentary（scripture
-                    # 续接通常仅 1-3 行 < 60px；commentary 跨页续接经常
-                    # 占满整页 500+px，但也可能仅几句话 ~100-150px）。
+                    # 单 col section 跨页续接判别：高度阈值不稳（scripture
+                    # 续接可达 170px，commentary 可短到 127px）。
+                    # 改用结构信号：scripture verse marker = 粗体小数字 +
+                    # 紧跟 non-italic span（". And the master..."）。
+                    # commentary verse-intro = 粗体数字 + 紧跟 italic span
+                    # （*Again, the kingdom...*）。统计前者 ≥ 2 → scripture。
                     earliest_buf_page = min(
                         (e[3] for e in verse_buf if len(e) >= 4),
                         default=page_idx,
                     )
                     block_y0 = block['bbox'][1]
-                    block_h = block['bbox'][3] - block['bbox'][1]
+                    scripture_markers = 0
+                    if n_cols <= 1:
+                        flat_spans = []
+                        for line in block.get('lines', []):
+                            for sp in line.get('spans', []):
+                                if sp.get('text', '').strip():
+                                    flat_spans.append(sp)
+                        for i, sp in enumerate(flat_spans):
+                            txt = sp.get('text', '').strip()
+                            flags = sp.get('flags', 0)
+                            spsz = sp.get('size', 0)
+                            if not (bool(flags & 16) and spsz >= 10
+                                    and re.match(r'^\d+\.?$', txt)):
+                                continue
+                            try:
+                                n = int(txt.rstrip('.'))
+                            except ValueError:
+                                continue
+                            if n >= 100:
+                                continue
+                            if i + 1 < len(flat_spans):
+                                nxt = flat_spans[i + 1]
+                                if not bool(nxt.get('flags', 0) & 2):
+                                    scripture_markers += 1
                     is_cross_page_top = (
                         page_idx > earliest_buf_page and block_y0 < 200
-                        and not (n_cols <= 1 and block_h > 80)
+                        and (n_cols >= 2 or scripture_markers >= 2)
                     )
                     # 同页续接判定：multi-col section（n_cols >= 2）才允许同
                     # 页续接（PyMuPDF 经常把 multi-col 表中间断成几个 block）。
