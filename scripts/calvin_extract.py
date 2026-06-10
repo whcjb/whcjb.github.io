@@ -1001,7 +1001,13 @@ def extract_ccel_harmony(cfg):
                 if n_books >= 2:
                     bl = cfg['body_left']; br = cfg['body_right']
                     slot_w = (br - bl) / n_books
-                    slot_x0s = [bl + i * slot_w + 5 for i in range(n_books)]
+                    # 注意：split_block_by_columns 把 expected_slot_x0s 当
+                    # **列中心**用（line / span 按最近中心归列），所以这里
+                    # 必须存中心 x，不能存左边 x。否则 cross-line span 拆分
+                    # 会把列右半部分文字误归到下一列（如 Mark 列右侧 x=333
+                    # 距 Luke 左边 377 比 Mark 左边 245 更近 → 错归 Luke）。
+                    slot_x0s = [bl + i * slot_w + slot_w / 2
+                                for i in range(n_books)]
                     section_col_layout = (n_books, slot_x0s)
                 else:
                     section_col_layout = None
