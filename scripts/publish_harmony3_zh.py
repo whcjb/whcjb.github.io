@@ -47,6 +47,12 @@ def now_minute() -> str:
 def fix_th(text: str) -> str:
     for en, zh in EN_TO_ZH_BOOK:
         text = re.sub(rf'<th>{en} ', f'<th>{zh} ', text)
+        # 也把 <p class="scripture-ref">Matthew X:Y</p> 类引用标头中文化
+        text = re.sub(
+            rf'(<p class="scripture-ref">[^<]*?){en} ',
+            rf'\1{zh} ',
+            text,
+        )
     return text
 
 

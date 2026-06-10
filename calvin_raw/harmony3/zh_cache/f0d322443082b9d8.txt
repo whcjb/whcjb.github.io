@@ -1,1 +1,1 @@
-未收到需要翻译的英文正文，仅看到提示词与一个未闭合的 `<div class="scripture-box">` 开头标签。请把要翻译的英文段落贴出来。
+<div class="scripture-box">

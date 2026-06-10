@@ -274,6 +274,17 @@ def classify(line: str):
         return ('pass', line)
     if re.match(r'^</?(?:table|tbody|thead|tr)[\s>]', line) and '<td>' not in line:
         return ('pass', line)
+    # HTML 结构包装标签（独立成行的开/闭 div、p class、span class 等无文本内容）
+    # 这类纯标签行不含可翻译英文，须 pass，否则被孤立发给 Claude，
+    # Claude 看不到正文会拒绝并产出 "未收到需要翻译的英文正文" meta-message
+    if re.match(r'^<div\b[^>]*>\s*$', stripped):
+        return ('pass', line)
+    if stripped == '</div>':
+        return ('pass', line)
+    if re.match(r'^<p\s+class="scripture-ref">[^<]+</p>\s*$', stripped):
+        # 形如 <p class="scripture-ref">马太福音 23:16</p> — 含书卷引用，
+        # 但格式固定，Claude 翻译时可能误抹格式；pass 让发布脚本另做处理
+        return ('pass', line)
 
     # H1 / H2
     m = re.match(r'^(#{1,2}) (.+)', line)
