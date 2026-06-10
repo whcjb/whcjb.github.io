@@ -92,16 +92,23 @@ def transform(raw: str, en_ch: int) -> str:
     pre_fm_fixes = [
         (r'^章[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',     r'chapter: \1'),
         (r'^章节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',   r'chapter: \1'),
-        (r'^上一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'prev_section: \1'),
-        (r'^下一节[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$', r'next_section: \1'),
+        # prev_section 多种译法
+        (r'^(?:上一节|前一节|前一段|上一段|前段|上一部分)[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',
+         r'prev_section: \1'),
+        # next_section 多种译法
+        (r'^(?:下一节|后一节|后一段|下一段|后段|下一部分)[：:]\s*(?:<sup>)?(\d+)(?:</sup>)?$',
+         r'next_section: \1'),
         (r'^chapter:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
          r'chapter: \1'),
         (r'^prev_section:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
          r'prev_section: \1'),
         (r'^next_section:\s*<sup[^>]*>(?:<a[^>]*>)?(\d+)(?:</a>)?</sup>$',
          r'next_section: \1'),
-        (r'^上一节标签[：:]\s*"',  r'prev_label: "'),
-        (r'^下一节标签[：:]\s*"',  r'next_label: "'),
+        # prev_label / next_label 多种译法
+        (r'^(?:上一节标签|前一节标签|前一段标签|上一段标签)[：:]\s*"',
+         r'prev_label: "'),
+        (r'^(?:下一节标签|后一节标签|后一段标签|下一段标签)[：:]\s*"',
+         r'next_label: "'),
     ]
     for pat, rep in pre_fm_fixes:
         text = re.sub(pat, rep, text, flags=re.M)
