@@ -64,6 +64,9 @@ class ColSpec(NamedTuple):
 
 def parse_header_cols(header_line: str) -> list[ColSpec]:
     s = re.sub(r'^##\s*', '', header_line).strip()
+    # 防御：PDF 提取偶尔丢失 BOOK 之间的 `;`（如 "MARK 12:40 LUKE 11:52;
+    # 20:47"），在两个连续 BOOK 关键词之间补入分隔符。
+    s = re.sub(r'(\d)(\s+)(MATTHEW|MARK|LUKE|JOHN)\b', r'\1; \3', s, flags=re.I)
     parts = re.split(r'\s*;\s*', s)
     cols: list[ColSpec] = []
     last_book: str | None = None
@@ -78,15 +81,14 @@ def parse_header_cols(header_line: str) -> list[ColSpec]:
             cols.append(ColSpec(last_book, last_chapter, verses))
         else:
             # 续接 same-gospel ref，如 "MARK 9:49-50; 4:21" 中的 "4:21"
+            # 或 "LUKE 11:52; 20:47" 中的 "20:47"（跨章续接同卷）
             m2 = re.match(r'^(\d+):(.+)$', part)
             if m2 and last_book is not None:
-                chapter = int(m2.group(1))
                 verses = _expand_verses(m2.group(2))
-                if chapter == cols[-1].chapter:
-                    cols[-1] = ColSpec(cols[-1].book, cols[-1].chapter,
-                                       cols[-1].verses | verses)
-                # 不同章则按"同一列继续"——但我们当前 verse_set 只存单章
-                # 若需精确，可扩展为 dict[chapter->set]，目前章首多用单章
+                # 同书跨章/同章续接：把 verse 全部并入同一列 verse_set
+                # （列只按"卷书"区分，不按章；redistribute 只用 verse 编号）
+                cols[-1] = ColSpec(cols[-1].book, cols[-1].chapter,
+                                   cols[-1].verses | verses)
             elif m2 and last_book is None:
                 continue
     return cols

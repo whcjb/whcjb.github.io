@@ -39,7 +39,11 @@ def parse_page_footnotes(page: fitz.Page) -> list[tuple[int, str]]:
                 spans_data.append((span.get('size', 0), span['text']))
         if not spans_data:
             continue
-        if max(s for s, _ in spans_data) > FN_FONT_SIZE_MAX:
+        # 过滤掉 large-size 的杂项 span（页码、印刷标记等），保留脚注本体。
+        # 旧版直接把 max(sizes) > FN_FONT_SIZE_MAX 的块整体丢弃——会
+        # 在同 block 里夹着 size 11 的 "63" 页码时丢失 fn 92 等。
+        spans_data = [(sz, t) for sz, t in spans_data if sz <= FN_FONT_SIZE_MAX]
+        if not spans_data:
             continue
         sizes = [s for s, _ in spans_data]
         min_size = min(sizes)
