@@ -257,20 +257,29 @@ def redistribute_section(header_line: str,
     # 按 verse 升序拼接每列
     out_segments: list[str] = []
     for col_idx in range(n_cols):
-        items = sorted(per_col_redistributed[col_idx], key=lambda p: p[0])
-        # 去重：相同 verse 出现多次（PDF 多页续接被切两段），取较长者
-        dedup: dict[int, str] = {}
+        items = per_col_redistributed[col_idx]  # 不排序：保持 source 顺序
+        # 去重：仅当**完全相同的 chunk text** 重复时才去（如多页续接切成
+        # 同样的两段）。不可按 verse 号去重——同一列可能含同卷不同章的
+        # 重叠 verse 号（如 Luke 17:26-37 + 21:34-36，都有 v.34/35/36），
+        # 用 len(t) > 之类的判定会丢失其中一组的内容。
+        seen_texts: set[str] = set()
+        ordered: list[str] = []
         for v, t in items:
-            if v not in dedup or len(t) > len(dedup[v]):
-                dedup[v] = t
-        ordered = [dedup[v] for v in sorted(dedup)]
+            key = re.sub(r'\s+', ' ', t).strip()[:80]
+            if key in seen_texts:
+                continue
+            seen_texts.add(key)
+            ordered.append(t)
         # 把 lead（出现在 col=col_idx 输入段最前的非 verse 文字）放在最前
         lead = leads[col_idx] if col_idx < len(leads) else ''
         body = (lead + ' ' if lead else '') + ' '.join(ordered)
-        # 清理：剥掉混入末尾/中间的孤立 "Book X:Y" 子标题（PDF 蓝色小标
-        # 题如 "Luke 20:47" 混入正文流，header 已显示卷书范围、不需重复）
-        body = re.sub(r'\s*(?:Matthew|Mark|Luke|John)\s+\d+:\d+\s*', ' ',
-                      body, flags=re.I)
+        # 清理：剥掉混入末尾/中间的孤立 "Book X:Y" / "Book X:Y-Z" 子标题
+        # （PDF 蓝色小标题如 "Luke 20:47" / "Luke 21:34-36" 混入正文流，
+        # header 已显示卷书范围、不需重复；遗漏 verse 范围将留下 "-N" 残尾）
+        body = re.sub(
+            r'\s*(?:Matthew|Mark|Luke|John)\s+\d+:\d+(?:[-–]\d+)?\s*',
+            ' ', body, flags=re.I,
+        )
         out_segments.append(re.sub(r'\s+', ' ', body).strip())
 
     # unassigned verses: 罕见的 verse 编号不在任何 cols verses 内（跨章续接、
