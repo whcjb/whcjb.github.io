@@ -25,6 +25,15 @@ verse 起头会被并入它前面的 verse 文本。可能仍归错列，但少�
 归错列问题（90%+ 的肉眼可见错误）被修复。
 
 不动 raw 之外的 section（commentary 段、单列 section、index 等）。
+
+⚠️ 配套步骤（必跑）：
+  本脚本 + publish.py 完成后，必须重跑 extract_harmony3_footnotes.py
+  才能恢复每章末尾 `[^N]: text` 脚注定义——这些定义不在 raw 里，是
+  publish 之后单独提取追加的。完整流程：
+
+    python3 scripts/refix_harmony3_columns.py --in-place
+    python3 calvin_raw/harmony3/publish.py
+    python3 scripts/extract_harmony3_footnotes.py
 """
 from __future__ import annotations
 
