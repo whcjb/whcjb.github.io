@@ -107,12 +107,14 @@ def _starts_new_quote(text):
 _P_CENTER_RE = re.compile(r'^<p[^>]*>(.*?)</p>\s*$', re.DOTALL)
 
 def _p_continuation_content(block):
-    """若 block 是 <p> centered 且像「上段引文的续接」，返回内容文本；否则 None。
+    """若 block 是 <p> centered 且**确定**是上段续接，返回内容文本；否则 None。
 
-    续接特征（任一即可）：
-    1. 内容以小写字母开头（被 PDF 跨行截断的句子续接）；
-    2. 内容含 `)` 闭合括号但不以 `(` 开头——典型如
-       `Galatians 3:10;)` 是上段 `(Deuteronomy 27:26;` 的尾巴。
+    本函数只识别"小写起首"这一保守信号——大写起首的居中段（如
+    `(Joel 2:28.)`、`I will pour out my Spirit...`）大概率是独立的
+    Calvin 风格内嵌引文，不可一概合并。
+
+    引文尾巴（如 `Galatians 3:10;)` 跟在 `(Deuteronomy 27:26;` 后）
+    需要前段未闭合括号信号才能识别，由 caller 在 merge 上下文中判断。
     """
     m = _P_CENTER_RE.match(block.strip())
     if not m:
@@ -123,10 +125,22 @@ def _p_continuation_content(block):
         return None
     if t[0].islower():
         return content
-    # 引文尾巴：含右括号但不以左括号起首（Calvin 标准居中引文皆以 `(` 起首）
-    if ')' in t and not t.startswith('('):
-        return content
     return None
+
+
+def _is_citation_tail_for(block, prev_text):
+    """True 若 block 是居中段且含 `)`，而 prev_text 有未闭合 `(`。
+    用于把 `Galatians 3:10;)` 之类的尾巴合并回前段。"""
+    m = _P_CENTER_RE.match(block.strip())
+    if not m:
+        return False
+    content = m.group(1).strip()
+    if ')' not in content:
+        return False
+    # prev 必须有未闭合括号（开括号数 > 闭括号数）
+    open_n = prev_text.count('(')
+    close_n = prev_text.count(')')
+    return open_n > close_n
 
 
 def merge_split_paragraphs(blocks):
@@ -156,11 +170,6 @@ def merge_split_paragraphs(blocks):
             if p_cont is not None:
                 block_end = block.rstrip()
                 last_ch = block_end[-1] if block_end else ''
-                # 引文尾巴（含 `)` 不以 `(` 起首）：只要 prev 不是真正完成
-                # 的句子（不以 . ! ? 收尾），就合并——典型 prev 以 `;`/`,`
-                # 等中段标点结尾，p_cont 是上段引文的闭合
-                is_citation_tail = ')' in p_cont and not p_cont.lstrip('*').startswith('(')
-                prev_complete = last_ch in '.!?'
                 if last_ch.isalpha() or last_ch == '-':
                     if last_ch == '-':
                         # Hyphenated word break: remove hyphen, join without space
@@ -169,20 +178,32 @@ def merge_split_paragraphs(blocks):
                         block = block_end + ' ' + p_cont.lstrip()
                     i += 1
                     continue
-                if is_citation_tail and not prev_complete:
-                    block = block_end + ' ' + p_cont.lstrip()
+                # else: previous block ends with punctuation → <p> is new centered element
+            # 引文尾巴（如 `Galatians 3:10;)`）需 prev 有未闭合 `(` 才合并
+            elif _is_citation_tail_for(next_block, block):
+                m = _P_CENTER_RE.match(next_block.strip())
+                tail = m.group(1).strip() if m else ''
+                if tail:
+                    block = block.rstrip() + ' ' + tail
                     i += 1
                     continue
-                # else: previous block ends with punctuation → <p> is new centered element
             if next_block.startswith('<p'):
                 break
             # 续行首字母小写、当前块末尾是功能词、或当前块末尾是中句标点
             # （`,`/`;`/`:`/`-` 等，常见跨页断行）。下一块以开引号开头则是独立
             # 圣经引文段，不合并。
+            # 守卫：下一块若以 `**Number.**`（verse marker，如 `**14.**`）或
+            # `**Book Ch:N.**`（commentary verse 段首）起首，必为新段，不合并。
+            nb_stripped = next_block.lstrip()
+            starts_with_verse_marker = bool(
+                re.match(r'\*\*\d+\.\*\*', nb_stripped) or
+                re.match(r'\*\*[A-Z][a-z]+ \d+:\d+\.\*\*', nb_stripped)
+            )
             if (_continuation_start(next_block)
                     or _ends_with_function_word(block)
                     or _ends_mid_sentence(block)) \
-                    and not _starts_new_quote(next_block):
+                    and not _starts_new_quote(next_block) \
+                    and not starts_with_verse_marker:
                 block = block.rstrip() + ' ' + next_block.lstrip()
                 i += 1
             else:
