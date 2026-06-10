@@ -128,19 +128,42 @@ def _p_continuation_content(block):
     return None
 
 
+_CITATION_TAIL_RE = re.compile(r'^\s*\d+:\d+(?:[,\s\d\-–]*\d)?\s*\.\s*\)\s*$')
+
+
 def _is_citation_tail_for(block, prev_text):
-    """True 若 block 是居中段且含 `)`，而 prev_text 有未闭合 `(`。
-    用于把 `Galatians 3:10;)` 之类的尾巴合并回前段。"""
-    m = _P_CENTER_RE.match(block.strip())
-    if not m:
-        return False
-    content = m.group(1).strip()
-    if ')' not in content:
+    """True 若 block 是引文尾（居中段含 `)` 或裸 `数字:数字.)`），
+    且 prev_text 有未闭合 `(`。
+
+    覆盖两种形态：
+    - `<p style="text-align:center">Galatians 3:10;)</p>` (centered <p>)
+    - 裸文字块 `12:11, 12.)`（PDF 居中片段未被包成 <p>）
+    """
+    stripped = block.strip()
+    # case 1: centered <p>
+    m = _P_CENTER_RE.match(stripped)
+    if m:
+        content = m.group(1).strip()
+        if ')' not in content:
+            return False
+    elif _CITATION_TAIL_RE.match(stripped):
+        # case 2: 裸引文尾（chapter:verse[,more].)）
+        pass
+    else:
         return False
     # prev 必须有未闭合括号（开括号数 > 闭括号数）
     open_n = prev_text.count('(')
     close_n = prev_text.count(')')
     return open_n > close_n
+
+
+def _extract_citation_tail(block):
+    """从 _is_citation_tail_for 已确认的 block 抽取尾巴文本。"""
+    stripped = block.strip()
+    m = _P_CENTER_RE.match(stripped)
+    if m:
+        return m.group(1).strip()
+    return stripped
 
 
 def merge_split_paragraphs(blocks):
@@ -179,10 +202,10 @@ def merge_split_paragraphs(blocks):
                     i += 1
                     continue
                 # else: previous block ends with punctuation → <p> is new centered element
-            # 引文尾巴（如 `Galatians 3:10;)`）需 prev 有未闭合 `(` 才合并
+            # 引文尾巴（如 `Galatians 3:10;)`、裸 `12:11, 12.)`）需
+            # prev 有未闭合 `(` 才合并
             elif _is_citation_tail_for(next_block, block):
-                m = _P_CENTER_RE.match(next_block.strip())
-                tail = m.group(1).strip() if m else ''
+                tail = _extract_citation_tail(next_block)
                 if tail:
                     block = block.rstrip() + ' ' + tail
                     i += 1

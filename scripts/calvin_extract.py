@@ -1023,7 +1023,31 @@ def extract_ccel_harmony(cfg):
                 bi += 1; continue
 
             # Body block
-            if cfg.get('centering'):
+            # 守卫：commentary block（含 italic 或 `**Book Ch:N.**` 段头）
+            # 不跑多列检测——内嵌居中圣经引文（如 PDF 中一行 "12:11, 12.)"
+            # 偏中央 x=283）会被 section_col_layout 误判为多列经文，把
+            # 整段 commentary 拆成 col=N 段。
+            def _block_looks_commentary(blk):
+                # 含 italic span？
+                for ln in blk.get('lines', []):
+                    for s in ln.get('spans', []):
+                        if (s.get('flags', 0) & 2) and s.get('text', '').strip():
+                            return True
+                # 块首匹配 commentary 段头 **Book Ch:V.**？
+                t = get_block_text(blk).lstrip()
+                if re.match(r'\*\*[A-Z][a-z]+\s+\d+:\d+\.\*\*', t):
+                    return True
+                return False
+
+            # 一旦本 section 出现 commentary 块（含 italic 或 `**Book Ch:V.**`
+            # 段头），则本 section 的多列经文阶段结束——重置 layout 让后续
+            # 所有 block 走单列路径，避免内嵌居中圣经引文（PDF 中一行偏中央
+            # x 位置）被误判为多列经文。
+            if cfg.get('centering') and _block_looks_commentary(block):
+                section_col_layout = None
+
+            if cfg.get('centering') and not _block_looks_commentary(block) \
+                    and section_col_layout is not None:
                 # 1) 跨 block 前瞻合并多列检测：当前是经文小片段（≤12 行），
                 #    尝试与紧邻的下一块合并 line 集再做多列检测。命中则一并消费，
                 #    解决 PyMuPDF 把章首多列经文拆成「小 intro 块 + 主体大块」
