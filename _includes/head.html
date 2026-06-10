@@ -14,7 +14,7 @@
     <meta name="keywords" content="马太亨利{{ page.book_name }}注释, 马太亨利注释第{{ page.chapter }}章, Matthew Henry commentary, 马太亨利圣经注释, {{ site.keyword }}">
     {% else %}
     <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="keywords" content="{{ site.keyword }}">
+    <meta name="keywords" content="{{ page.keywords | default: site.keyword }}">
     {% endif %}
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
 
