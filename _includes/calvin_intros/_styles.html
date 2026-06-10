@@ -1,0 +1,91 @@
+<style>
+.calvin-intro {
+  margin: 8px 0 28px;
+  padding: 18px 22px 14px;
+  border-radius: 3px;
+}
+.calvin-intro__heading {
+  margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+.calvin-intro__aliases {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.calvin-intro__aliases strong { font-weight: 600; }
+.calvin-intro__aliases em { font-style: normal; }
+.calvin-intro__meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 6px 18px;
+  margin: 8px 0 14px;
+  padding: 10px 0;
+  border-top: 1px dashed;
+  border-bottom: 1px dashed;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.calvin-intro__meta dl { margin: 0; }
+.calvin-intro__meta dt { display: inline-block; font-weight: 600; margin-right: 6px; }
+.calvin-intro__meta dd { display: inline; margin: 0; }
+.calvin-intro__body p {
+  margin: 0 0 8px;
+  font-size: 14px;
+  line-height: 1.85;
+  text-indent: 2em;
+}
+.calvin-intro__body p:last-child { margin-bottom: 0; }
+.calvin-intro__body strong { font-weight: 600; }
+.calvin-intro__body em { font-style: normal; border-bottom: 1px dotted; }
+
+/* A: parchment — 福音类 */
+.calvin-intro--parchment { background: #f7f3ec; border-left: 4px solid #b08d57; }
+.calvin-intro--parchment .calvin-intro__heading { color: #3b2e1e; }
+.calvin-intro--parchment .calvin-intro__aliases { color: #7a6a55; }
+.calvin-intro--parchment .calvin-intro__aliases strong { color: #4a3a26; }
+.calvin-intro--parchment .calvin-intro__aliases em { color: #8a6f4a; }
+.calvin-intro--parchment .calvin-intro__meta { color: #6b5a44; border-color: #d9caa8; }
+.calvin-intro--parchment .calvin-intro__meta dt { color: #4a3a26; }
+.calvin-intro--parchment .calvin-intro__body p { color: #3e3e3e; }
+.calvin-intro--parchment .calvin-intro__body strong { color: #1a1a1a; }
+.calvin-intro--parchment .calvin-intro__body em { color: #6b4d2a; border-bottom-color: #c9b89a; }
+
+/* B: scholar — 保罗主要书信 */
+.calvin-intro--scholar { background: #fafafa; border: 1px solid #e0e0e0; border-left: 4px solid #5f6b7a; }
+.calvin-intro--scholar .calvin-intro__heading { color: #1f2933; }
+.calvin-intro--scholar .calvin-intro__aliases { color: #5f6b7a; }
+.calvin-intro--scholar .calvin-intro__aliases strong { color: #1f2933; }
+.calvin-intro--scholar .calvin-intro__aliases em { color: #7a8794; }
+.calvin-intro--scholar .calvin-intro__meta { color: #4a5460; border-color: #d6dbe1; }
+.calvin-intro--scholar .calvin-intro__meta dt { color: #1f2933; }
+.calvin-intro--scholar .calvin-intro__body p { color: #2c333e; }
+.calvin-intro--scholar .calvin-intro__body strong { color: #0a0e14; }
+.calvin-intro--scholar .calvin-intro__body em { color: #2f4055; border-bottom-color: #b0bac4; }
+
+/* C: church-green — 普通书信、监狱书信、使徒行传 */
+.calvin-intro--church { background: #eaf4ec; border-left: 4px solid #4caf50; }
+.calvin-intro--church .calvin-intro__heading { color: #1b3a1f; }
+.calvin-intro--church .calvin-intro__aliases { color: #2e6b32; }
+.calvin-intro--church .calvin-intro__aliases strong { color: #1b3a1f; }
+.calvin-intro--church .calvin-intro__aliases em { color: #4d8a51; }
+.calvin-intro--church .calvin-intro__meta { color: #2a5f2d; border-color: #b6d6b9; }
+.calvin-intro--church .calvin-intro__meta dt { color: #1b3a1f; }
+.calvin-intro--church .calvin-intro__body p { color: #1f2e21; }
+.calvin-intro--church .calvin-intro__body strong { color: #0a1b0c; }
+.calvin-intro--church .calvin-intro__body em { color: #2a5f2d; border-bottom-color: #a5cba8; }
+
+/* D: pastoral-navy — 教牧书信、希伯来书 */
+.calvin-intro--pastoral { background: #eef2f7; border-left: 4px solid #2c5d8f; }
+.calvin-intro--pastoral .calvin-intro__heading { color: #14304e; }
+.calvin-intro--pastoral .calvin-intro__aliases { color: #355c83; }
+.calvin-intro--pastoral .calvin-intro__aliases strong { color: #14304e; }
+.calvin-intro--pastoral .calvin-intro__aliases em { color: #5577a0; }
+.calvin-intro--pastoral .calvin-intro__meta { color: #2a4868; border-color: #c5d4e5; }
+.calvin-intro--pastoral .calvin-intro__meta dt { color: #14304e; }
+.calvin-intro--pastoral .calvin-intro__body p { color: #1d2a3a; }
+.calvin-intro--pastoral .calvin-intro__body strong { color: #0a1626; }
+.calvin-intro--pastoral .calvin-intro__body em { color: #2c5d8f; border-bottom-color: #a8bbd1; }
+</style>

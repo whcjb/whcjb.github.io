@@ -2,7 +2,10 @@
 layout: default
 title: 罗马书 - 加尔文圣经注释
 header-img: psalm-bg-valley.jpg
+book_id: romans
 ---
+
+{% include calvin_intros/_styles.html %}
 
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-valley.jpg')">
     <div class="container">
@@ -24,6 +27,8 @@ header-img: psalm-bg-valley.jpg
             <p style="margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
             </p>
+
+            {% include calvin_intros/{{ page.book_id }}.html %}
 
             <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">序言部分</h3>
             <div class="row" style="margin-bottom:24px;">

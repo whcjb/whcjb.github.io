@@ -1,9 +1,12 @@
 ---
 layout: default
 title: 提摩太前书注释
+book_id: 1timothy
 ---
 
 <link href="https://fonts.googleapis.com/css2?family=LXGW+WenKai&display=swap" rel="stylesheet">
+
+{% include calvin_intros/_styles.html %}
 
 <style>
 .t1-index-header {
@@ -100,6 +103,8 @@ title: 提摩太前书注释
             <div class="t1-index-body">
 
                 <p class="t1-back"><a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a></p>
+
+                {% include calvin_intros/{{ page.book_id }}.html %}
 
                 <div class="t1-sec-label">前言与绪论</div>
                 <div class="t1-grid">

@@ -24,6 +24,11 @@ layout: default
                 <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
             </p>
 
+            {% assign nt_intro_ids = "1corinthians,1john,1peter,1thessalonians,1timothy,2corinthians,2peter,2thessalonians,2timothy,acts,colossians,ephesians,galatians,hebrews,james,john,jude,philemon,philippians,romans,titus" | split: "," %}
+            {% if nt_intro_ids contains page.book_id %}
+            {% include calvin_intros/{{ page.book_id }}.html %}
+            {% endif %}
+
             {% if page.has_preface %}
             <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">序言部分</h3>
             <div class="row" style="margin-bottom:24px;">
@@ -93,3 +98,5 @@ layout: default
     color: #fff !important;
 }
 </style>
+
+{% include calvin_intros/_styles.html %}

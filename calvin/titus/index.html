@@ -2,7 +2,10 @@
 layout: default
 title: 提多书注释
 header-img: psalm-bg-mountain.jpg
+book_id: titus
 ---
+
+{% include calvin_intros/_styles.html %}
 
 <header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
     <div class="container">
@@ -24,6 +27,8 @@ header-img: psalm-bg-mountain.jpg
             <p style="margin-bottom:24px;">
                 <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
             </p>
+
+            {% include calvin_intros/{{ page.book_id }}.html %}
 
             <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">
                 提多书 · 章节目录
