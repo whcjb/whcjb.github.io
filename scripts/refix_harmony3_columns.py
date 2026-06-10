@@ -198,15 +198,19 @@ def slice_by_verse(text: str) -> tuple[str, list[tuple[int, str]]]:
 
 def redistribute_section(header_line: str,
                           per_col_texts: list[list[str]],
-                          n_cols: int) -> list[str]:
+                          raw_n_cols: int) -> list[str]:
     """Given the header + raw per-col text fragments, redistribute by verse.
 
     Returns the new ordered list of col=N segment bodies (excluding markers,
-    which the caller re-attaches). Length = n_cols.
+    which the caller re-attaches). Length = max(header_n_cols, raw_n_cols)。
+    若 header 列数 > raw 列数（PDF 提取因 header 缺 `;` 误并列），
+    以 header 为准并按 verse 重切——把原 raw 单 col 里夹杂的多卷经文
+    分发到正确的列。
     """
     cols = parse_header_cols(header_line)
-    if len(cols) != n_cols:
-        # Header和 col 数不一致：跳过（不安全重分配）。返回原样拼好的每列。
+    n_cols = max(len(cols), raw_n_cols)
+    if len(cols) < 2:
+        # 只有 1 个 book — 仍按 raw 原样保留
         return [' '.join(parts).strip() for parts in per_col_texts]
 
     # 把所有 col 段（按 col index 顺序）拼成一个超大文本（保留 verse markers）
@@ -293,16 +297,19 @@ def rebuild_raw(raw: str) -> tuple[str, int, int]:
             skipped += 1
             continue
 
-        per_col_texts, n_cols = merge_col_blocks(blocks, col_idxs)
-        if n_cols < 2:
+        per_col_texts, raw_n_cols = merge_col_blocks(blocks, col_idxs)
+        if raw_n_cols < 2:
             skipped += 1
             continue
 
-        new_segments = redistribute_section(header_line, per_col_texts, n_cols)
+        new_segments = redistribute_section(header_line, per_col_texts, raw_n_cols)
+        # 实际输出列数 = header 列数 与 raw 列数 的较大者（header 缺 `;`
+        # 被 PDF 误判时优先以 header 为准 → 升列）
+        actual_n_cols = len(new_segments)
 
         # First col_idx becomes the new merged block (multiple col=N markers joined by \n\n)
         new_block_text = '\n\n'.join(
-            f'<!--SCRIPTURE col={i} of={n_cols}-->\n{seg}'
+            f'<!--SCRIPTURE col={i} of={actual_n_cols}-->\n{seg}'
             for i, seg in enumerate(new_segments)
             if seg.strip()
         )

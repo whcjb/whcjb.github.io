@@ -65,10 +65,27 @@ _FUNCTION_WORDS = {
 
 
 def _ends_with_function_word(text):
-    """True 表示块末尾是功能词（介词/冠词/连词），这类词绝对不能结句。"""
+    """True 表示块末尾是功能词（介词/冠词/连词），这类词绝对不能结句。
+
+    扩展规则：若末词无句末标点（. ! ?）且倒数第二个词是功能词（如 and/or/of），
+    则末词大概率只是名词短语的起首（如"the Old and **New**"），下一块多半
+    是其延续（"Testaments"），同样视为不能结句。
+    """
     t = re.sub(r'[\*_]+$', '', text.rstrip()).rstrip()
-    last_word = re.split(r'\s+', t)[-1].strip('.,;:!?"\'")(').lower() if t else ''
-    return last_word in _FUNCTION_WORDS
+    if not t:
+        return False
+    words = re.split(r'\s+', t)
+    last_word = words[-1].strip('.,;:!?"\'")(').lower()
+    if last_word in _FUNCTION_WORDS:
+        return True
+    # 末词大写且无句末标点 + 倒数第二词是 function word → 名词短语中段断行
+    last_raw = words[-1].rstrip(',;:')  # 容忍尾随次级标点
+    ends_with_terminal_punct = last_raw.endswith(('.', '!', '?'))
+    if not ends_with_terminal_punct and len(words) >= 2 and last_word:
+        prev_word = words[-2].strip('.,;:!?"\'")(').lower()
+        if prev_word in _FUNCTION_WORDS:
+            return True
+    return False
 
 
 def _ends_mid_sentence(text):
