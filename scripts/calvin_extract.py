@@ -543,7 +543,12 @@ def ccel_harmony_is_blue_label(block):
 
 def ccel_harmony_norm(text):
     text = re.sub(r'\s+', ' ', text.replace('\n', ' ')).strip()
-    return re.sub(r':\s+(\d)', r':\1', text)
+    text = re.sub(r':\s+(\d)', r':\1', text)
+    # PDF 偶尔丢失两个 BOOK 关键词之间的 `;`（如 "MARK 12:40 LUKE 11:52"），
+    # 自动补入分隔符，确保下游 split(';') 能正确数出书卷数。
+    text = re.sub(r'(\d)\s+(MATTHEW|MARK|LUKE|JOHN)\b', r'\1; \2',
+                  text, flags=re.I)
+    return text
 
 
 def split_block_by_columns(block, page_mid, col_gap_min=50, expected_slot_x0s=None):
