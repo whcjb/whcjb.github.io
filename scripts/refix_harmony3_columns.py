@@ -275,11 +275,14 @@ def redistribute_section(header_line: str,
         # 把 lead（出现在 col=col_idx 输入段最前的非 verse 文字）放在最前
         lead = leads[col_idx] if col_idx < len(leads) else ''
         body = (lead + ' ' if lead else '') + ' '.join(ordered)
-        # 清理：剥掉混入末尾/中间的孤立 "Book X:Y" / "Book X:Y-Z" 子标题
-        # （PDF 蓝色小标题如 "Luke 20:47" / "Luke 21:34-36" 混入正文流，
-        # header 已显示卷书范围、不需重复；遗漏 verse 范围将留下 "-N" 残尾）
+        # 清理：剥掉混入末尾/中间的孤立 "Book X:Y" / "Book X:Y-Z" /
+        # "Book X:Y-Z, V" / "Book X:Y, V-W" 等多段子标题（PDF 蓝色小标题
+        # 如 "Luke 20:47" / "Luke 21:34-36" / "Luke 23:33-34, 38" 混入正文流，
+        # header 已显示卷书范围、不需重复；遗漏 verse 范围/逗号续接将留下
+        # "-N" / ", N" 残尾）
         body = re.sub(
-            r'\s*(?:Matthew|Mark|Luke|John)\s+\d+:\d+(?:[-–]\d+)?\s*',
+            r'\s*(?:Matthew|Mark|Luke|John)\s+\d+:\d+(?:[-–]\d+)?'
+            r'(?:\s*,\s*\d+(?:[-–]\d+)?)*\s*',
             ' ', body, flags=re.I,
         )
         out_segments.append(re.sub(r'\s+', ' ', body).strip())
