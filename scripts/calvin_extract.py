@@ -535,10 +535,28 @@ def ccel_harmony_is_section_header(block):
 
 
 def ccel_harmony_is_blue_label(block):
+    """True 仅当 block 是纯蓝标签（章首小子标题等）。
+
+    block 第一 span 蓝色但 block 还含其他大量非蓝色 span，说明蓝色仅是
+    内嵌的子标题（如多列经文块开头的 "Luke 20:47" 子栏头），不可整块
+    丢弃——返回 False 让下游正常作 body 处理。
+    """
     span = get_first_span(block)
     if not span:
         return False
-    return span.get('color', 0) == 255 and not (span.get('flags', 0) & 16)
+    if span.get('color', 0) != 255 or (span.get('flags', 0) & 16):
+        return False
+    # 数本块非空 span：若 > 2 个且其中 > 1 个非蓝，认为是内嵌子标题，
+    # 不是纯标签
+    spans_all = [
+        s for ln in block.get('lines', [])
+        for s in ln.get('spans', [])
+        if s.get('text', '').strip()
+    ]
+    non_blue = sum(1 for s in spans_all if s.get('color', 0) != 255)
+    if len(spans_all) > 2 and non_blue >= 1:
+        return False
+    return True
 
 
 def ccel_harmony_norm(text):
@@ -667,10 +685,16 @@ def split_block_by_columns(block, page_mid, col_gap_min=50, expected_slot_x0s=No
         centers      = new_centers
 
     # 每列至少 N 行：默认 3 行避免误判；当 section header 已锁定布局
-    # （expected_slot_x0s 非 None）时降为 1 行
-    per_col_min = 1 if expected_slot_x0s is not None else 3
+    # （expected_slot_x0s 非 None）时降为 0（允许空列），这样跨页续接块
+    # 即使某一列在物理上已结束（如 Mark 12:40 一行就完，下一页只剩 Matt
+    # 与 Luke）也不会被整块丢弃；下游 emit_multi_col 会跳过空列。
+    per_col_min = 0 if expected_slot_x0s is not None else 3
     sizes = [len(c) for c in column_lines]
     if min(sizes) < per_col_min:
+        return None
+    # 至少有一列非空：全空说明本块根本不属于多列经文，回退到 None 让
+    # 上层走单列路径
+    if expected_slot_x0s is not None and max(sizes) == 0:
         return None
     # section_col_layout 锁定时跳过 y-轴交替检查（极短并列段无须验证）
     if expected_slot_x0s is not None:
@@ -832,11 +856,15 @@ def extract_ccel_harmony(cfg):
     def cols_look_like_commentary(cols):
         """检查 cols 是否含注释信号——避免把窄列注释（如分栏 commentary）
         错认作多列经文。任何一列出现 *italic*（去 **bold** 后）或
-        **Book Ch:N.** 起首，即视为注释。"""
+        **Book Ch:N.** 起首，即视为注释。
+
+        注：commentary 段头要求 **bold** 包裹 + 末尾 `.`（Calvin 标准格式
+        "Matthew 23:13."），不可仅凭 plain "Luke 20:47" 子标题就误判——
+        多列经文块内部偶有"Luke 20:47"等小标题，应允许通过。"""
         for col_lines in cols:
             text = ''.join(s['text'] for ln in col_lines
                            for s in (ln.get('spans') or []) if s['text'].strip())
-            if re.match(r'^\*?\*?[A-Z][a-z]+ \d+:\d+', text.strip()):
+            if re.match(r'^\s*\*\*[A-Z][a-z]+ \d+:\d+\.\*\*', text.strip()):
                 return True
             # ccel_spans_to_md 会把 italic span 包成 *...*，但 PDF 原 text 没标记，
             # 用 italic flag 判断

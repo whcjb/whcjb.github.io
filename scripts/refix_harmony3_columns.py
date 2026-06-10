@@ -267,7 +267,11 @@ def redistribute_section(header_line: str,
         # 把 lead（出现在 col=col_idx 输入段最前的非 verse 文字）放在最前
         lead = leads[col_idx] if col_idx < len(leads) else ''
         body = (lead + ' ' if lead else '') + ' '.join(ordered)
-        out_segments.append(body.strip())
+        # 清理：剥掉混入末尾/中间的孤立 "Book X:Y" 子标题（PDF 蓝色小标
+        # 题如 "Luke 20:47" 混入正文流，header 已显示卷书范围、不需重复）
+        body = re.sub(r'\s*(?:Matthew|Mark|Luke|John)\s+\d+:\d+\s*', ' ',
+                      body, flags=re.I)
+        out_segments.append(re.sub(r'\s+', ' ', body).strip())
 
     # unassigned verses: 罕见的 verse 编号不在任何 cols verses 内（跨章续接、
     # PDF 错读 verse 号）。简单方案：附在 src_col 末尾（保留信息不丢）。
