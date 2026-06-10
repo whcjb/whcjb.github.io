@@ -262,13 +262,23 @@ def redistribute_section(header_line: str,
         # 同样的两段）。不可按 verse 号去重——同一列可能含同卷不同章的
         # 重叠 verse 号（如 Luke 17:26-37 + 21:34-36，都有 v.34/35/36），
         # 用 len(t) > 之类的判定会丢失其中一组的内容。
+        # 同时丢弃"严重逆序"的尾巴：若 verse N 出现在前面已出现的更高
+        # verse 之后（≥ 5 差距），且本身是短碎片（< 150 字符），视为 PDF
+        # 列尾版式溢出（Calvin PDF 偶尔把某 verse 残留塞到 cell 末），丢弃。
         seen_texts: set[str] = set()
+        max_v_seen = -1
         ordered: list[str] = []
         for v, t in items:
             key = re.sub(r'\s+', ' ', t).strip()[:80]
             if key in seen_texts:
                 continue
+            # 逆序短碎片丢弃：v < max_v_seen 且文本短（< 150 字符）
+            # 视为 PDF 列尾版式溢出。同卷跨章续接（如 Luke 21:34 接 17:37）
+            # 通常 > 150 字符，不会误删。
+            if max_v_seen >= 0 and v < max_v_seen and len(t) < 150:
+                continue
             seen_texts.add(key)
+            max_v_seen = max(max_v_seen, v)
             ordered.append(t)
         # 把 lead（出现在 col=col_idx 输入段最前的非 verse 文字）放在最前
         lead = leads[col_idx] if col_idx < len(leads) else ''

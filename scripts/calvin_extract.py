@@ -1060,7 +1060,16 @@ def extract_ccel_harmony(cfg):
                         if is_c:
                             md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
                             if md:
-                                output_blocks.append(f'<p style="text-align:center">{md}</p>')
+                                fn_nums = re.findall(r'\[\^(\d+)\]', md)
+                                md_html = re.sub(
+                                    r'\[\^(\d+)\]',
+                                    r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+                                    md,
+                                )
+                                output_blocks.append(f'<p style="text-align:center">{md_html}</p>')
+                                if fn_nums:
+                                    stub = ' '.join(f'[^{n}]' for n in fn_nums)
+                                    output_blocks.append(f'{stub}\n{{:.scripture-fnref-stub}}')
                         else:
                             for para_lines in split_lines_by_paragraph_indent(grp_lines, cfg['body_left']):
                                 md = ccel_fix_hyphenation(ccel_spans_to_md(para_lines, cfg.get('footnote_size_max')))
@@ -1164,7 +1173,22 @@ def extract_ccel_harmony(cfg):
                     if is_c:
                         md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
                         if md:
-                            output_blocks.append(f'<p style="text-align:center">{md}</p>')
+                            # 居中 <p> 是 raw HTML，kramdown 不会处理内部 `[^N]`
+                            # 脚注引用，需在 emit 时手工转 <sup>。同时把原始
+                            # `[^N]` ref 收集到隐藏 md 占位，让 kramdown 仍能
+                            # 保留 `[^N]: ...` 定义条目（否则 orphan 被丢）。
+                            fn_nums = re.findall(r'\[\^(\d+)\]', md)
+                            md_html = re.sub(
+                                r'\[\^(\d+)\]',
+                                r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+                                md,
+                            )
+                            output_blocks.append(f'<p style="text-align:center">{md_html}</p>')
+                            if fn_nums:
+                                stub = ' '.join(f'[^{n}]' for n in fn_nums)
+                                output_blocks.append(
+                                    f'{stub}\n{{:.scripture-fnref-stub}}'
+                                )
                     else:
                         for para_lines in split_lines_by_paragraph_indent(grp_lines, cfg['body_left']):
                             md = ccel_fix_hyphenation(ccel_spans_to_md(para_lines, cfg.get('footnote_size_max')))
