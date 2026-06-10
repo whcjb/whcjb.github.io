@@ -107,13 +107,24 @@ def _starts_new_quote(text):
 _P_CENTER_RE = re.compile(r'^<p[^>]*>(.*?)</p>\s*$', re.DOTALL)
 
 def _p_continuation_content(block):
-    """若 block 是 <p> centered 且内容以小写字母开头（续行碎片），返回内容文本；否则返回 None。"""
+    """若 block 是 <p> centered 且像「上段引文的续接」，返回内容文本；否则 None。
+
+    续接特征（任一即可）：
+    1. 内容以小写字母开头（被 PDF 跨行截断的句子续接）；
+    2. 内容含 `)` 闭合括号但不以 `(` 开头——典型如
+       `Galatians 3:10;)` 是上段 `(Deuteronomy 27:26;` 的尾巴。
+    """
     m = _P_CENTER_RE.match(block.strip())
     if not m:
         return None
     content = m.group(1).strip()
     t = re.sub(r'^\*+', '', content)
-    if t and t[0].islower():
+    if not t:
+        return None
+    if t[0].islower():
+        return content
+    # 引文尾巴：含右括号但不以左括号起首（Calvin 标准居中引文皆以 `(` 起首）
+    if ')' in t and not t.startswith('('):
         return content
     return None
 
@@ -145,12 +156,21 @@ def merge_split_paragraphs(blocks):
             if p_cont is not None:
                 block_end = block.rstrip()
                 last_ch = block_end[-1] if block_end else ''
+                # 引文尾巴（含 `)` 不以 `(` 起首）：只要 prev 不是真正完成
+                # 的句子（不以 . ! ? 收尾），就合并——典型 prev 以 `;`/`,`
+                # 等中段标点结尾，p_cont 是上段引文的闭合
+                is_citation_tail = ')' in p_cont and not p_cont.lstrip('*').startswith('(')
+                prev_complete = last_ch in '.!?'
                 if last_ch.isalpha() or last_ch == '-':
                     if last_ch == '-':
                         # Hyphenated word break: remove hyphen, join without space
                         block = block_end[:-1] + p_cont.lstrip()
                     else:
                         block = block_end + ' ' + p_cont.lstrip()
+                    i += 1
+                    continue
+                if is_citation_tail and not prev_complete:
+                    block = block_end + ' ' + p_cont.lstrip()
                     i += 1
                     continue
                 # else: previous block ends with punctuation → <p> is new centered element

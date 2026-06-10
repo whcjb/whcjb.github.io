@@ -19,17 +19,43 @@ PDF = '/Users/yanpeifa/Documents/论文/calvin_matai_make3.pdf'
 EN_DIR = ROOT / 'calvin/harmony-3-en'
 
 FN_FONT_SIZE_MAX = 9.5
-FN_Y_MIN = 580
+FN_Y_MIN_HARD = 200  # 任何脚注定义至少在页中部以下；防止把页眉小字误判
+
+
+def _block_starts_with_small_digit(block) -> bool:
+    """True 若 block 的第一非空 span 是小字（≤ FN_FONT_SIZE_MAX）且全为数字。"""
+    for ln in block.get('lines', []):
+        for sp in ln.get('spans', []):
+            t = sp.get('text', '').strip()
+            if not t:
+                continue
+            return (sp.get('size', 0) <= FN_FONT_SIZE_MAX
+                    and t.isdigit())
+    return False
 
 
 def parse_page_footnotes(page: fitz.Page) -> list[tuple[int, str]]:
     """Per-page parser: find page-bottom footnote blocks, split by
-    superscript-number markers (smaller font than body)."""
+    superscript-number markers (smaller font than body)。
+
+    判定块为脚注：y ≥ FN_Y_MIN_HARD，且块首 span 是 ≤9.5pt 纯数字
+    （脚注定义起首一定是 marker 数字）。后续小字 block 通过历史延续判断。
+    """
     blocks = sorted(page.get_text('dict')['blocks'],
                      key=lambda b: b['bbox'][1])
     out: list[tuple[int, str]] = []
+    # 先定位本页脚注区起点：第一个"小字 + 数字起首"的 block，认为是 fn 区始
+    fn_zone_y = None
     for b in blocks:
-        if b['type'] != 0 or b['bbox'][1] < FN_Y_MIN:
+        if b['type'] != 0 or b['bbox'][1] < FN_Y_MIN_HARD:
+            continue
+        if _block_starts_with_small_digit(b):
+            fn_zone_y = b['bbox'][1]
+            break
+    if fn_zone_y is None:
+        return []
+    for b in blocks:
+        if b['type'] != 0 or b['bbox'][1] < fn_zone_y:
             continue
         spans_data: list[tuple[float, str]] = []
         for line in b.get('lines', []):
