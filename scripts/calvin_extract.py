@@ -1046,8 +1046,30 @@ def extract_ccel_harmony(cfg):
             if cfg.get('centering') and _block_looks_commentary(block):
                 section_col_layout = None
 
-            if cfg.get('centering') and not _block_looks_commentary(block) \
-                    and section_col_layout is not None:
+            # 多列检测仅在「非 commentary 块且 section_col_layout 仍在」时跑；
+            # 但单列 centering 分类（路径 4）对所有块都跑。
+            _run_multicol = (cfg.get('centering')
+                             and not _block_looks_commentary(block)
+                             and section_col_layout is not None)
+            if cfg.get('centering'):
+                if _run_multicol:
+                    pass  # 走下面 1/2/2.5/3 多列路径
+                else:
+                    # 直接跳到路径 4 单列处理（保留 centering 分类）
+                    for is_c, grp_lines in classify_lines_by_centering(block.get('lines', []), cfg):
+                        if is_c:
+                            md = ccel_fix_hyphenation(ccel_spans_to_md(grp_lines, cfg.get('footnote_size_max')))
+                            if md:
+                                output_blocks.append(f'<p style="text-align:center">{md}</p>')
+                        else:
+                            for para_lines in split_lines_by_paragraph_indent(grp_lines, cfg['body_left']):
+                                md = ccel_fix_hyphenation(ccel_spans_to_md(para_lines, cfg.get('footnote_size_max')))
+                                if md:
+                                    output_blocks.append(md)
+                    bi += 1
+                    continue
+
+            if _run_multicol:
                 # 1) 跨 block 前瞻合并多列检测：当前是经文小片段（≤12 行），
                 #    尝试与紧邻的下一块合并 line 集再做多列检测。命中则一并消费，
                 #    解决 PyMuPDF 把章首多列经文拆成「小 intro 块 + 主体大块」
