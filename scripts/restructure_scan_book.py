@@ -789,6 +789,12 @@ def _audit_gate(out_dir: Path, book_cn: str, cuv_book: str) -> int:
                     if 1 <= v <= max_v and not (lo <= v <= hi):
                         print(f"  MISPLC  {p.name}:{ps+1}  section {lo}-{hi}, paragraph opens with v.{v}")
                         issues += 1
+        # NOTE: orphan-fragment detection（孤立短段，疑似 Bible-dump
+        # 误删后的尾巴）误报率太高（合理的 60-100 字短注释段也会触发），
+        # 不放进必过 gate。如怀疑误删，跑下面手动脚本：
+        #   python3 scripts/audit_orphan_fragments.py <dir>
+        # 检查输出，若开头是续接词（"出于"/"且"/"但"...）人工核查 OCR 原文。
+
         # Orphan footnotes per file
         text = p.read_text(encoding="utf-8")
         body, _, fns = text.partition("\n## 脚注\n") if "## 脚注" in text else (text, "", "")

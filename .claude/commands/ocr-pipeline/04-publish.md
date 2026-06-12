@@ -96,7 +96,45 @@ python3 scripts/relocate_cross_chapter_verse.py \
 
 参考 romans 实战：**93 处章内 + 14 处跨章**，共 107 处 misplaced。
 
-### 3. Bible verse-count 表
+### 3. ⚠️ 内容丢失风险：Bible-dump 启发式不要太激进
+
+`_strip_bible_text_dumps` form 3 的设计意图是删掉 OCR 抓到的 Bible 文本
+碎片（scripture-box 已经渲染干净 CUV，重复的是噪音）。但 verse-opener
+commentary 段也以 `21 因为，他们虽然知道上帝...` 形式开头，前几个字
+看起来像 Bible 经文，整段会被误删。
+
+**症状**：发布后某节注释 opener 段消失，只剩跨页尾段孤立成一句话碎片
+（如 `出于偶然，亦非由其本身生成。但我们务必记得...`）。
+
+**检测**：跨页孤立短段是丢失的 telltale。Audit 加 orphan-fragment gate：
+
+```python
+# Gate-7: orphan-fragment（短独立段，无 `**` 加粗，前后均无 verse opener）
+# 长度 < 80 字符且不是 footnote 定义、scripture-box、html — 90% 概率是
+# 上一段开头被误删后剩下的尾巴。
+```
+
+**修复**：form 3 length 阈值从 < 200 改为 < 80，超过 80 字符要靠
+`_is_bible_verse_text` 做 CUV 相似度 ≥ 0.7 才删。Romans 实战恢复 ~700
+行漏删内容。
+
+### 4. OCR-fused running headers（页眉与正文拼成一行）
+
+OCR 偶尔不在页眉和正文之间断行，得到：
+
+- `第一章加尔文文集`（两个页眉拼一起，无内容）
+- `第一章骄傲地高抬自己，他们就丧失了...`（页眉拼到正文）
+- `加尔文文集12 保罗既对此...`（页眉拼到 verse 开头）
+
+逐行匹配 `RUNNING_HDR_PATTERNS` 在这里失效（不完全匹配整行）。
+`restructure_scan_book.py` 现有 `_strip_fused_running_headers` 在
+load_chapter_paragraphs 入口前做前缀剥离，匹配链：
+`第N章` / `加尔文文集` / `加尔文集`(OCR 笔误) / `{book_cn}注释` / `{book_cn}`。
+
+新书做 OCR 发布时，如发现 audit gate 报 leak 但裸形式 strip 已覆盖，
+检查是否是这种 fused 形式。
+
+### 5. Bible verse-count 表
 
 ```python
 VERSE_COUNTS = {
@@ -218,7 +256,22 @@ PY
 
 # Gate-6: Bible-text dump（OCR 抓整章 Bible 全段）
 grep -lE '^[①②③④⑤⑥⑦⑧⑨⑩]{5,}' calvin/<book>/*.md   # 应空
+
 ```
+
+### 软 gate（不阻塞，但要扫一眼）
+
+```bash
+# Soft-Gate-7: orphan-fragment（短独立段，疑似 Bible-dump 误删后的尾巴）
+python3 scripts/audit_orphan_fragments.py calvin/<book>
+# 输出 ★ LIKELY 标记的段（开头是续接词如 "出于"/"但"/"再者"...）
+# 重点人工核查；对照 calvin_raw/<book>-scan/ocr/page_NNNN.md 上一页页尾。
+```
+
+误报率较高（60-80 字的合理 Calvin 短注释段也会触发），不进必过 gate。
+但 ★ LIKELY 一栏务必扫一遍，**这是发现 Bible-dump 误删的最后防线**
+（romans v.21 commentary opener 被误删整段，靠这个软 gate 才能在
+publish 阶段发现，否则要等用户截图才暴露）。
 
 不要让用户帮你查 — 上线前自己跑一遍，0 命中再 commit。
 
