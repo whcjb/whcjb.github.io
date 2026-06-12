@@ -169,6 +169,32 @@ chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)")
 新书加 OCR-pipeline 时，header 列表一律按长度降序，**永远不要**
 用 `(?=\S)` 之类的 lookahead — 强制 first-match 即可。
 
+### ⚠️ Chapter boundary regex —— `第N章` 后跟脚注圈号会被卡住
+
+`detect_chapter_first_pages` 默认 regex 要求 `第N章` 行末是空白。
+但 OCR 经常把脚注圈号粘上来，例如罗马书 page 18 头行就是 `第一章①`。
+regex 卡住后，chapter_first[1] 被误设为下一处 bare `第一章` 行的 page
+（往往是后续页的 sidebar 或重复出现），page 18-19 的 v.1 commentary
+被划进 preface.md，正文丢失一大块。
+
+**症状**：preface.md 尾段莫名其妙含 v.N commentary；section 1:1-7
+缺少 v.1 commentary 主体（只剩跨页尾段孤立成短句）。
+
+**修复**：regex 末尾允许跟 ①-⑳：
+
+```python
+CN_RE = re.compile(
+    r"^#?\s*第([一二三四五六七八九十]+)章[\*①-⑳\s]*$", re.MULTILINE
+)
+```
+
+发布后用 grep 校验：
+
+```bash
+# preface.md 不应包含 verse-opener bold prefix
+grep -E '^\*\*[^\*]+ 1:1。\*\*' calvin/<book>/preface.md && echo "❌ v.1 commentary in preface"
+```
+
 ### 5. ⚠️ Section 顺序错乱 —— detect_paragraph_verse 漏识 OCR 格式
 
 OCR 输出的 verse opener 段格式有多种：
