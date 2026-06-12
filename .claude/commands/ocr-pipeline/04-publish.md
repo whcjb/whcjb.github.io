@@ -222,6 +222,40 @@ CN_RE = re.compile(
 grep -E '^\*\*[^\*]+ 1:1。\*\*' calvin/<book>/preface.md && echo "❌ v.1 commentary in preface"
 ```
 
+### ⚠️ Promote 严格模式：只对带数字前缀的段加 `**book N:V。**`
+
+`maybe_promote_verse_opener` 默认 4 个 form，最后一个（form 3）是 CUV
+**文本相似度模糊匹配** —— 段落即便没有 leading 数字，只要内容跟 CUV
+某节经文起首相似，也会被 promote 成 `**书卷 N:V。** *引文…* 余下注释`。
+
+这在某些书是希望的（OCR 漏数字时用 CUV 补救），但**用户反馈对罗马书
+不要这样**：
+
+> 只有前面带数字的，改成书卷名加章节号，不带的不要加
+
+具体例：
+- `1 保罗…… 关于保罗这个名字...` → `**罗马书 1:1。** 保罗…… ...`（√，有数字）
+- `耶稣基督的仆人，奉召为使徒…… 保罗这样指出他的身份...` → 保持原样
+  （×，无数字前缀，**不要按 CUV 相似度模糊 promote**）
+
+实现：模块 flag `restructure_john_scan_ch1.STRICT_DIGIT_ONLY`：
+
+- 默认 False（约翰福音 / 歌罗西书 等书保持原行为）
+- 罗马书 wrapper (`restructure_romans_scan.py`) 设 True：
+
+```python
+import restructure_john_scan_ch1 as ch1
+ch1.STRICT_DIGIT_ONLY = True
+```
+
+新书做 OCR 发布时，**先跑一遍看 promote 出来对不对**：
+- 如果某段无数字但被 promote 了，且引文跟 CUV 相似 → 这是模糊匹配
+  - 如果你希望这样：保留 STRICT_DIGIT_ONLY=False
+  - 如果用户希望"只对带数字的 promote"：在 wrapper 里设 True
+
+同时加了 form 2.5 (`^N <CJK>...` 空格分隔的 OCR opener)，所有 OCR 书
+受益，不需要 STRICT 开关。
+
 ### 5. ⚠️ Section 顺序错乱 —— detect_paragraph_verse 漏识 OCR 格式
 
 OCR 输出的 verse opener 段格式有多种：
