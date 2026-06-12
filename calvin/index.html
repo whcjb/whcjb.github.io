@@ -24,7 +24,8 @@ header-img: img/psalm-bg-mountain.jpg
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
             <p class="text-muted" style="margin-bottom:30px;">
-                约翰·加尔文（1509–1564）是改革宗神学最重要的奠基者之一，其圣经注释以严谨的文法分析、忠实于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。点击任意书卷查看章节列表。
+                约翰·加尔文（1509–1564）是改革宗神学最重要的奠基者之一，其圣经注释以严谨的文法分析、忠实于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。翻译及整理工作进行中，如有不便，敬请谅解。
+                已经整理和翻译的书卷包括-马太马可路加对观福音注释，约翰福音注释，罗马书注释，以弗所书注释，腓立比书注释，歌罗西书注释。
             </p>
 
             {% assign all_chapter_pages = site.pages | where: "layout", "calvin-chapter" %}
@@ -72,13 +73,13 @@ header-img: img/psalm-bg-mountain.jpg
             <div class="row calvin-book-grid" style="margin-bottom:40px;">
                 {% for book in site.data.calvin_books.new_testament %}
                 <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if books_with_content contains book.id %}
+                    {% if book.is_index or books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
                     {% else %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
                     {% endif %}
                         {{ book.name }}
-                        <small>（{{ book.chapters }}章）</small>
+                        {% if book.is_index %}<small>📖</small>{% else %}<small>（{{ book.chapters }}章）</small>{% endif %}
                     </a>
                 </div>
                 {% endfor %}

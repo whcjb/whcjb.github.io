@@ -73,6 +73,9 @@ old_testament:
     chapters: 4
 
 new_testament:
+  - id: harmony-index
+    name: "共观福音 · 经文索引"
+    is_index: true
   - id: harmony-1
     name: 共观福音（卷一）
     chapters: 10
