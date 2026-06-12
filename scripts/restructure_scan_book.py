@@ -332,11 +332,16 @@ def _convert_pending_verse_labels(text: str, book_cn: str,
     return "\n\n".join(out)
 
 
-def _patch_running_headers(book_cn: str):
-    """Add book-CN-specific running-header strip patterns to ch1mod."""
+def _patch_running_headers(book_cn: str, extra_patterns: list[str] | None = None):
+    """Add book-CN-specific running-header strip patterns to ch1mod.
+
+    extra_patterns: list of user-supplied regex strings (from --strip-line).
+    """
     import restructure_john_scan_ch1 as ch1mod
     saved = list(ch1mod.RUNNING_HDR_PATTERNS)
     extra = [
+        re.compile(p) for p in (extra_patterns or [])
+    ] + [
         # `# 加尔文文集·歌罗西书注释` style book-title page header
         re.compile(rf"^[-—]?\s*#\s*加尔文文集\s*[·•‧]\s*{re.escape(book_cn)}注释\s*$"),
         # `# 加尔文文集·保罗书信注释（上册）——` — series-level header in some
@@ -370,10 +375,11 @@ def _restore_running_headers(saved):
 def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
                               chapter_verses: dict, book_cn: str,
                               chapter: int = 1,
-                              cuv_book: str | None = None) -> tuple[list[str], list]:
+                              cuv_book: str | None = None,
+                              extra_strip_patterns: list[str] | None = None) -> tuple[list[str], list]:
     import restructure_john_scan_ch1 as ch1mod
     saved_verses = ch1mod.JOHN_1
-    saved_hdrs = _patch_running_headers(book_cn)
+    saved_hdrs = _patch_running_headers(book_cn, extra_strip_patterns)
     ch1mod.JOHN_1 = chapter_verses
     try:
         body_parts: list[str] = []
@@ -424,7 +430,8 @@ def build_chapter_md(book_id: str, book_cn: str, cuv_book: str,
                        chapter: int, raw_dir: Path,
                        chapter_first: dict[int, int],
                        total_chapters: int,
-                       header_img: str = "psalm-bg-mountain.jpg") -> str:
+                       header_img: str = "psalm-bg-mountain.jpg",
+                       extra_strip_patterns: list[str] | None = None) -> str:
     chapter_verses = CUV[cuv_book][str(chapter)]
     sec_ranges = section_ranges(len(chapter_verses))
 
@@ -436,7 +443,10 @@ def build_chapter_md(book_id: str, book_cn: str, cuv_book: str,
         pages = sorted((raw_dir / "ocr").glob("page_*.md"))
         page_hi = int(re.search(r"page_(\d+)", pages[-1].name).group(1)) if pages else page_lo
 
-    paras, all_defs = load_chapter_paragraphs(raw_dir, page_lo, page_hi, chapter_verses, book_cn, chapter, cuv_book)
+    paras, all_defs = load_chapter_paragraphs(
+        raw_dir, page_lo, page_hi, chapter_verses, book_cn, chapter, cuv_book,
+        extra_strip_patterns=extra_strip_patterns,
+    )
     # Drop Bible-text dumps (OCR captured full chapter Bible text in one
     # paragraph; scripture-box already renders the clean CUV version).
     paras = [p for p in paras if not looks_like_bible_text_dump(p)]
@@ -573,6 +583,12 @@ def main() -> int:
     ap.add_argument("--chapter", type=int, help="single chapter to process")
     ap.add_argument("--all", action="store_true")
     ap.add_argument("--header-img", default="psalm-bg-mountain.jpg")
+    ap.add_argument("--strip-line", action="append", default=[],
+                    help="Extra running-header regex to strip (repeatable)")
+    ap.add_argument("--skip-relocate", action="store_true",
+                    help="Skip post-build verse-commentary relocation")
+    ap.add_argument("--skip-audit", action="store_true",
+                    help="Skip final audit gate (exits non-zero on issues)")
     args = ap.parse_args()
 
     raw_dir = Path(args.raw_dir)
@@ -602,7 +618,8 @@ def main() -> int:
             continue
         content = build_chapter_md(
             args.book, args.book_cn, args.cuv_book, ch, raw_dir,
-            chapter_first, total_chapters, args.header_img
+            chapter_first, total_chapters, args.header_img,
+            extra_strip_patterns=args.strip_line,
         )
         (out_dir / f"{ch}.md").write_text(content, encoding="utf-8")
         n_box = content.count('class="scripture-box"')
@@ -615,7 +632,111 @@ def main() -> int:
         build_index_html(args.book, args.book_cn, total_chapters), encoding="utf-8"
     )
     print(f"  index.html: chapters={total_chapters}, has_preface=true")
+
+    # Post-build: relocate misplaced verse-commentary paragraphs
+    # (章内 + 跨章). OCR doesn't preserve `**{书卷} N:V。**` bold,
+    # so heuristic bucketing in build_chapter_md will mis-assign segments.
+    if not args.skip_relocate:
+        import subprocess as _sub
+        scripts_dir = Path(__file__).resolve().parent
+        for script in (
+            "relocate_misplaced_verse_commentary.py",
+            "relocate_cross_chapter_verse.py",
+        ):
+            sp = scripts_dir / script
+            if not sp.exists():
+                print(f"  ⚠ {script} not found; skip")
+                continue
+            print(f"\n→ {script}")
+            _sub.run([sys.executable, str(sp),
+                       "--book-cn", args.book_cn,
+                       "--dir", str(out_dir)], check=False)
+
+    # Final audit gate
+    if not args.skip_audit:
+        rc = _audit_gate(out_dir, args.book_cn, args.cuv_book)
+        if rc != 0:
+            print("\n❌ audit gate FAILED — fix issues above before commit")
+            return rc
+        print("\n✅ audit gate passed")
     return 0
+
+
+def _audit_gate(out_dir: Path, book_cn: str, cuv_book: str) -> int:
+    """Return 0 if all checks pass, non-zero otherwise.
+
+    Checks:
+      1. No misplaced verse-openers (bare-digit segs outside section range)
+      2. No running-header leak in body
+      3. No CIRCLED-DIGIT prefix (un-promoted ①-⑳)
+      4. No orphan footnote refs ([^N] in body but no [^N]: defn)
+    """
+    issues = 0
+    hdr_re = re.compile(rf"^## {re.escape(book_cn)} (\d+):(\d+)(?:-(\d+))?")
+    opener_re = re.compile(r"^(\d{1,3})[ 、.]\s*[一-鿿]")
+    leak_re = re.compile(
+        rf"^(加尔文文集|{re.escape(book_cn)}注释|{re.escape(book_cn)}\s*[·•‧]\s*第[一二三四五六七八九十]+章)\s*$"
+    )
+    circled_re = re.compile(r"^[①-⑳]")
+
+    chapter_verses = {int(ch): len(verses) for ch, verses in CUV[cuv_book].items()}
+
+    for p in sorted(out_dir.glob("*.md")):
+        if not p.stem.isdigit():
+            continue
+        ch = int(p.stem)
+        max_v = chapter_verses.get(ch, 999)
+        lines = p.read_text(encoding="utf-8").split("\n")
+        secs = []
+        for i, ln in enumerate(lines):
+            m = hdr_re.match(ln)
+            if m:
+                secs.append((i, int(m.group(2)),
+                             int(m.group(3)) if m.group(3) else int(m.group(2))))
+        # Iterate sections
+        for si, (start, lo, hi) in enumerate(secs):
+            end = secs[si + 1][0] if si + 1 < len(secs) else len(lines)
+            i = start + 1
+            while i < end:
+                ln = lines[i]
+                if not ln.strip():
+                    i += 1; continue
+                if leak_re.match(ln.strip()):
+                    print(f"  LEAK    {p.name}:{i+1}  {ln.strip()[:60]}")
+                    issues += 1
+                if circled_re.match(ln):
+                    print(f"  CIRCLED {p.name}:{i+1}  {ln[:60]}")
+                    issues += 1
+                if ln.lstrip().startswith(('<h2', '<div', '<a ', '</div>', '<p ', '[^', '{:.')):
+                    while i < end and lines[i].strip():
+                        i += 1
+                    continue
+                ps = i
+                while i < end and lines[i].strip():
+                    i += 1
+                m = opener_re.match(lines[ps])
+                if m:
+                    v = int(m.group(1))
+                    if 1 <= v <= max_v and not (lo <= v <= hi):
+                        print(f"  MISPLC  {p.name}:{ps+1}  section {lo}-{hi}, paragraph opens with v.{v}")
+                        issues += 1
+        # Orphan footnotes per file
+        text = p.read_text(encoding="utf-8")
+        body, _, fns = text.partition("\n## 脚注\n") if "## 脚注" in text else (text, "", "")
+        refs = set(re.findall(r"\[\^(\d+)\]", body))
+        # Exclude defn lines from refs
+        body_refs = set()
+        for ln in body.split("\n"):
+            if re.match(r"^\[\^\d+\]:", ln):
+                continue
+            body_refs |= set(re.findall(r"\[\^(\d+)\]", ln))
+        defs = set(re.findall(r"^\[\^(\d+)\]:", text, re.M))
+        orphan = body_refs - defs
+        if orphan:
+            print(f"  ORPHAN  {p.name}  fn refs without defn: {sorted(orphan)[:10]}")
+            issues += 1
+    print(f"\nAudit: {issues} issue(s)")
+    return 0 if issues == 0 else 1
 
 
 if __name__ == "__main__":
