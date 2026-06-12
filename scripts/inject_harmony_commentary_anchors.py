@@ -94,10 +94,26 @@ HDR_RE = re.compile(
 BOX_END_RE = re.compile(r'^</div>\s*$', re.M)
 # fnref-stub follow-on (optional after box)
 STUB_RE = re.compile(r'^\[\^.*\n\{:\.scripture-fnref-stub\}\s*$', re.M)
-# Already-injected anchor
+# Already-injected anchor (section-level or per-verse)
 EXISTING_ANCHOR_RE = re.compile(
-    r'<a class="commentary-anchor" id="[^"]+-comm"></a>'
+    r'<a class="(?:commentary|verse)-anchor" id="[^"]+"></a>\s*\n?'
 )
+
+# Per-verse commentary marker — e.g. `**Matthew 21:12.**` or `**马太福音 21:12。**`
+# (note ZH uses 「。」full-stop, EN uses ASCII `.`)
+VERSE_HDR_RE = re.compile(
+    r'\*\*'
+    r'(MATTHEW|MARK|LUKE|JOHN|马太福音|马可福音|路加福音|约翰福音)'
+    r'\s+(\d+):(\d+)[.。]'
+    r'\*\*'
+)
+
+BOOK_ABBR = {
+    'MATTHEW': 'matt', '马太福音': 'matt',
+    'MARK':    'mark', '马可福音': 'mark',
+    'LUKE':    'luke', '路加福音': 'luke',
+    'JOHN':    'john', '约翰福音': 'john',
+}
 
 
 def process_file(path: Path) -> int:
@@ -147,6 +163,17 @@ def process_file(path: Path) -> int:
         i += 1
 
     new = '\n'.join(out_lines)
+
+    # Second pass: insert per-verse anchors before each `**Book X:Y.**` marker
+    def inject_verse_anchor(m):
+        book, ch, v = m.group(1), m.group(2), m.group(3)
+        abbr = BOOK_ABBR.get(book, '')
+        if not abbr:
+            return m.group(0)
+        return (f'<a class="verse-anchor" id="{abbr}-{ch}-{v}"></a>\n\n'
+                + m.group(0))
+    new = VERSE_HDR_RE.sub(inject_verse_anchor, new)
+
     if new != text:
         # Need to chmod if locked (zh raw is 444)
         mode = path.stat().st_mode & 0o777
