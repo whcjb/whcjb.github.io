@@ -258,6 +258,14 @@ def apply_verse_styling(body: str, red: bool = False) -> str:
         lead, core, trail = m.group(1), m.group(2), m.group(3)
         color_hex_lower = color_hex.lower()
         is_black = color_hex_lower == '000000'
+        # 脚注标记 [^fN] / [^fNa] 不要被任何 span 包裹 —— 包了 kramdown
+        # 当 raw HTML 不处理内部，渲染成行内大字而非可点击上标链接
+        if re.fullmatch(r'\[\^f\w+\]', core):
+            return lead + core + trail
+        # 红色 + 非斜体 + 纯数字: 多是丢了 [^f] 括号的脚注上标残骸，
+        # 改用真上标 <sup>N</sup>（kramdown 不再当大字渲染）
+        if color_hex_lower == '800000' and not italic and re.fullmatch(r'\d+', core):
+            return f'{lead}<sup>{core}</sup>{trail}'
         if is_black and not italic:
             return lead + core + trail
         if is_black and italic:
