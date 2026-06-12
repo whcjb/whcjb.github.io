@@ -58,6 +58,16 @@ layout: default
 </div>
 
 <style>
+/* commentary 锚点：harmony-index 链接 `#slug-comm` 跳转目标。
+   inline 隐形（不占视觉空间），但保留 scroll-margin-top 让锚点对齐到
+   注释段顶部、避开 navbar 遮挡。 */
+a.commentary-anchor {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
 .calvin-en-content {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;

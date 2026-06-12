@@ -358,6 +358,32 @@ def _fn_stub(refs):
     return f'\n\n{refs_md}\n{{:.scripture-fnref-stub}}\n'
 
 
+def _commentary_anchor_slug(header):
+    """Derive a kramdown-compatible slug from a section header for use as the
+    commentary-anchor id.
+
+    Header is normally English-uppercase like "MATTHEW 21:10-22; MARK
+    11:11-24; LUKE 19:39-48" (as stored in raw — publish.py converts to
+    English form via ccel_harmony_norm). The same slug is used in EN/ZH
+    chapter pages so a single harmony-index can link to either.
+
+    Rules (matching kramdown's default header_id behavior on the EN form):
+      lowercase → remove `:` → `; ` and ` ` → `-`
+    "MATTHEW 21:10-22; MARK 11:11-24; LUKE 19:39-48"
+      → "matthew-2110-22-mark-1111-24-luke-1939-48"
+    """
+    if not header:
+        return ''
+    s = header.strip().lower()
+    s = s.replace(':', '')
+    # `;` (with optional surrounding spaces) → `-`
+    s = re.sub(r'\s*;\s*', '-', s)
+    s = re.sub(r'\s+', '-', s)
+    # collapse multiple hyphens
+    s = re.sub(r'-+', '-', s).strip('-')
+    return s
+
+
 def _scripture_box(header, text):
     """Render scripture block(s) as a bordered box matching the PDF layout.
 
@@ -497,6 +523,15 @@ def process_section_blocks(header, body):
             break
     if has_scripture:
         result.append(_scripture_box(header, blocks[:comm_start]))
+        # 在 scripture-box 与 commentary 之间插入 commentary 锚点。
+        # harmony-index 链接 `#slug-comm` 即可跳到注释段开头（而非
+        # scripture-box 顶部）。slug 用 kramdown-兼容规则从 EN header
+        # 计算（小写、移除 ':'、`; `/空格→`-`），EN/ZH 章节页均插入。
+        slug = _commentary_anchor_slug(header)
+        if slug:
+            result.append(
+                f'<a class="commentary-anchor" id="{slug}-comm"></a>'
+            )
     else:
         comm_start = 0
 
