@@ -242,7 +242,7 @@ In threatenings and promises, the Prophets have something peculiar; for what Mos
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Though thou be scattered and driven to the utmost parts of the</span> <span style="color:#000080">world, yet will I bring thee back.” (</span><span style="color:#000080">Deuteronomy 30:4.)</span></p>
 
-But by the Prophets he says, “Though I drive thee into Babylon, yet after seventy years will I restore thee.” <span style="color:#800000">[^f1]</span>
+But by the Prophets he says, “Though I drive thee into Babylon, yet after seventy years will I restore thee.” [^f1]
 
 As to the free covenant which God established with the Patriarchs in ancient times, the Prophets are much more distinct, and contribute more to strengthen the people’s attachment to it; for when they wish to comfort the godly, they always remind them of that covenant, and represent to them the coming of Christ, who was both the foundation of the covenant and the bond of the mutual relation between God and the people, and to whom therefore the whole extent of the promises must be understood to refer. Whoever understands this will easily learn what we ought to seek in the Prophets, and what is the purpose of their writings; and this is all that seemed necessary to be stated here on that subject.
 

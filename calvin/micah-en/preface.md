@@ -37,9 +37,9 @@ next_label: "Chapter 1"
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">CALVIN’S PREFACE TO MICAH</span></p>
 
-Among the Minor Prophets, Micah comes next, who is commonly called Micaiah. <span style="color:#800000">[^f1]</span> But he was the second, as they say, of this name; for the first was the Micaiah who had a contest with the wicked king Ahab; and he then exercised his Prophetic office. But the second was in the same age with Isaiah, perhaps a little later: at least Isaiah had been performing his office some years before Micah had been called. It appears then that he was added to Isaiah, that he might confirm his doctrine; for that holy man had to do with ungodly men, with men of a hardened neck, yea, and so wicked, that they were wholly irreclaimable. That their doctrine therefore might be more entitled to credit, it pleased God that Isaiah and Micah should deliver their message at the same time, as it were, with one mouth, and avow their consent, that all the disobedient might be proved guilty.
+Among the Minor Prophets, Micah comes next, who is commonly called Micaiah. [^f1] But he was the second, as they say, of this name; for the first was the Micaiah who had a contest with the wicked king Ahab; and he then exercised his Prophetic office. But the second was in the same age with Isaiah, perhaps a little later: at least Isaiah had been performing his office some years before Micah had been called. It appears then that he was added to Isaiah, that he might confirm his doctrine; for that holy man had to do with ungodly men, with men of a hardened neck, yea, and so wicked, that they were wholly irreclaimable. That their doctrine therefore might be more entitled to credit, it pleased God that Isaiah and Micah should deliver their message at the same time, as it were, with one mouth, and avow their consent, that all the disobedient might be proved guilty.
 
-But I will now come to his words: for the contents of this Book suggest what is useful for our instruction. <span style="color:#800000">[^f2]</span>
+But I will now come to his words: for the contents of this Book suggest what is useful for our instruction. [^f2]
 
 <!-- PAGE 4 -->
 

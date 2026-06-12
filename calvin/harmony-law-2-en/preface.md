@@ -43,7 +43,7 @@ next_label: "Chapter 1"
 
 <!-- PAGE 3 -->
 
-<p style="text-align:center" markdown="1">ANOTHER SUPPLEMENT AS TO THE SHUTTING. UP OF THE LEPROUS  <span style="color:#800000">[^f1]</span></p>
+<p style="text-align:center" markdown="1">ANOTHER SUPPLEMENT AS TO THE SHUTTING. UP OF THE LEPROUS  [^f1]</p>
 
 [^f1]: Heading added from the *Fr.* “Autre dependence de forclorre les lepreux.”
 
