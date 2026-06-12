@@ -222,6 +222,18 @@ def merge_split_paragraphs(blocks):
                 re.match(r'\*\*\d+\.\*\*', nb_stripped) or
                 re.match(r'\*\*[A-Z][a-z]+ \d+:\d+\.\*\*', nb_stripped)
             )
+            # 例外：prev 是裸 `**Book Ch:V[, and]**` 形式（仅 heading 加可选 "and"
+            # 续接词，无 commentary 正文），是与下一 verse heading 并列的引用——
+            # 应忽略 verse-marker 守卫，把两个 heading 合一以保留语意完整。
+            prev_stripped = block.strip()
+            prev_is_heading_only = bool(
+                re.match(r'^\*\*[A-Z][a-z]+ \d+:\d+(?:,\s*and|;)?\*\*$',
+                          prev_stripped)
+            )
+            if prev_is_heading_only and starts_with_verse_marker:
+                block = block.rstrip() + ' ' + next_block.lstrip()
+                i += 1
+                continue
             if (_continuation_start(next_block)
                     or _ends_with_function_word(block)
                     or _ends_mid_sentence(block)) \
