@@ -86,6 +86,10 @@ def scripture_block(verses_range: tuple[int, int]) -> str:
 # Per-page: identify footnote defs, build local circled→global map
 # ────────────────────────────────────────────────────────────────────────
 
+# When True, maybe_promote_verse_opener skips fuzzy-match form (form 3).
+# Romans wrapper sets this — only explicit digit prefixes get promoted.
+STRICT_DIGIT_ONLY = False
+
 RUNNING_HDR_PATTERNS = [
     re.compile(r"^#\s*加尔文文集.*约翰福音注释\s*$"),
     re.compile(r"^#\s*约翰福音注释\s*$"),
@@ -252,6 +256,12 @@ _BARE_VERSE_OPENER_RE = re.compile(
     r"^(\d{1,3})[、.,]\s*([^。？！]{2,40}[。？！])\s*(.*)$",
     re.DOTALL,
 )
+# OCR style: `N <CJK>...` — digit + SPACE + content. Verse N explicit.
+# (Romans OCR uses this form: `1 保罗…… 关于保罗这个名字...`)
+_BARE_SPACE_VERSE_OPENER_RE = re.compile(
+    r"^(\d{1,3})\s+([一-鿿][^\n]*?)$",
+    re.DOTALL,
+)
 # OCR pattern: `**phrase（N）** rest` (Ephesians scan style) — verse N is
 # embedded as parenthetical at the end of the bold lemma. Accepts both
 # full-width `（N）` and half-width `(N)` (OCR sometimes flips them, cf.
@@ -265,7 +275,8 @@ _PAREN_VERSE_OPENER_RE = re.compile(
 def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
                                  verse_range: tuple[int, int] | None = None,
                                  book_cn: str = "约翰福音",
-                                 chapter: int = 1) -> str:
+                                 chapter: int = 1,
+                                 strict_digit_only: bool = False) -> str:
     """Detect a paragraph opening with a verse quote → rewrite as
     `**{book_cn} {ch}:N。** *quote。* commentary` for verse-nav JS pickup.
 
@@ -315,6 +326,23 @@ def maybe_promote_verse_opener(para: str, john_1: dict[str, str],
         if 1 <= v <= max_v and (verse_range is None or
                                   verse_range[0] <= v <= verse_range[1]):
             return f"**{book_cn} {chapter}:{v}。** *{opener_with_punct}* {rest}".rstrip()
+
+    # Form 2.5: `N <CJK>...` — digit + SPACE (OCR style). Verse N explicit;
+    # no CUV fuzzy match needed.
+    m = _BARE_SPACE_VERSE_OPENER_RE.match(para)
+    if m:
+        n_str, body_after = m.group(1), m.group(2).lstrip()
+        v = int(n_str)
+        max_v = len(john_1)
+        if 1 <= v <= max_v and (verse_range is None or
+                                  verse_range[0] <= v <= verse_range[1]):
+            return f"**{book_cn} {chapter}:{v}。** {body_after}".rstrip()
+
+    # `strict_digit_only`：跳过模糊匹配 promote。仅当段落显式有数字前缀
+    # 时才 promote，避免对 `耶稣基督的仆人保罗...` 这类按 CUV 文本相似度
+    # 加 prefix（用户偏好：罗马书要求 only-leading-digit promote）。
+    if strict_digit_only:
+        return para
 
     body = _strip_corrupt_marker(para)
     first_sent, rest = _split_first_sentence(body)
@@ -374,7 +402,7 @@ def process_page(text: str, fn_counter: int,
     for p in paras:
         if not p:
             continue
-        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range, book_cn, chapter)
+        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range, book_cn, chapter, strict_digit_only=STRICT_DIGIT_ONLY)
         if promoted != p or promoted.startswith("**约翰福音"):
             body_paras.append(promoted)
             continue

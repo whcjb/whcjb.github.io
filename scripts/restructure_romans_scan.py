@@ -39,8 +39,13 @@ _ROMANS_EXTRA_STRIP_LINES = [
 # Push to publish module's globals before its main runs
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import restructure_scan_book as pub
+import restructure_john_scan_ch1 as ch1
 
 pub._BOOK_EXTRA_HEADER_ALTS = _ROMANS_EXTRA_HEADER_ALTS
+
+# 罗马书要求：只有显式数字前缀的段落才 promote 成 **罗马书 N:V。**
+# 不要按 CUV 文本相似度自动给无数字段落加 prefix
+ch1.STRICT_DIGIT_ONLY = True
 
 
 def main() -> int:
