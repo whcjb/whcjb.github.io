@@ -29,6 +29,9 @@ BOOK_LABEL = {
 # Iteration order for the index sections
 BOOK_ORDER = ['matt', 'mark', 'luke', 'john']
 
+# h2 anchor for each book section (matches original EN index + CSS selectors)
+H2_ID = {'matt': 'matthew', 'mark': 'mark', 'luke': 'luke', 'john': 'john'}
+
 ANCHOR_RE = re.compile(
     r'<a class="verse-anchor" id="(matt|mark|luke|john)-(\d+)-(\d+)"></a>'
 )
@@ -69,7 +72,7 @@ def render_index(book_map):
     # Compute existing books present
     present_books = [b for b in BOOK_ORDER if b in book_map]
     nav = ' &middot; '.join(
-        f'<a href="#{b}">{BOOK_LABEL[b]}</a>' for b in present_books
+        f'<a href="#{H2_ID[b]}">{BOOK_LABEL[b]}</a>' for b in present_books
     )
 
     out = []
@@ -98,7 +101,7 @@ def render_index(book_map):
     out.append('')
 
     for book in present_books:
-        out.append(f'<h2 id="{book}">{BOOK_LABEL[book]}</h2>')
+        out.append(f'<h2 id="{H2_ID[book]}">{BOOK_LABEL[book]}</h2>')
         out.append('')
         chapters = sorted(book_map[book].keys())
         for ch in chapters:
@@ -133,29 +136,83 @@ def render_index(book_map):
     out.append('  </div>')
     out.append('</div>')
     out.append('')
-    # Reuse existing CSS from EN index (we keep pill / ch-row classes in
-    # global hux-blog CSS). Add inline styles here too for safety.
+    # CSS — 与英文版 harmony-index-en 一致（绿色 pill + 滚动 ch-track）
     out.append('''<style>
-.verse-index-nav { font-size: 14px; margin-bottom: 24px; }
-.verse-index-nav a { margin-right: 8px; }
-h2 { border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 28px; }
-.ch-row { display: flex; align-items: flex-start; margin-bottom: 12px; gap: 10px; }
+.verse-index-nav {
+  margin: 24px 0;
+  font-size: 15px;
+}
+.verse-index-nav a {
+  color: #0085a1;
+  font-weight: bold;
+  padding: 0 6px;
+}
+h2[id="matthew"], h2[id="mark"], h2[id="luke"], h2[id="john"] {
+  margin-top: 36px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #0085a1;
+  color: #0085a1;
+}
+.ch-row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 6px;
+  gap: 12px;
+}
 .ch-label {
-  flex: 0 0 auto; min-width: 110px; font-weight: bold; color: #2c5282;
-  font-size: 14px; padding-top: 4px;
+  flex: 0 0 90px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+  padding: 8px 4px;
+  text-align: right;
+  border-right: 2px solid #0085a1;
 }
-.ch-track { display: flex; flex-wrap: wrap; gap: 6px; }
+.ch-track {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 8px 8px 8px;
+  scrollbar-width: thin;
+}
+.ch-track::-webkit-scrollbar { height: 6px; }
+.ch-track::-webkit-scrollbar-thumb { background: #c0d4d9; border-radius: 3px; }
 .verse-pill {
-  display: inline-flex; align-items: baseline; gap: 4px;
-  padding: 4px 10px; background: #f0f4f8;
-  border: 1px solid #cbd5e0; border-radius: 14px;
-  font-size: 13px; color: #2c5282; text-decoration: none !important;
-  transition: background .15s, border-color .15s;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 14px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  transition: background 0.12s;
+  min-width: 64px;
 }
-.verse-pill:hover { background: #2c5282; border-color: #2c5282; color: #fff !important; }
-.pill-verse { font-weight: bold; }
-.pill-loc { font-size: 11px; opacity: .7; }
-.verse-pill:hover .pill-loc { opacity: .9; }
+.verse-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+.pill-verse {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.pill-loc {
+  font-size: 10px;
+  opacity: 0.75;
+  margin-top: 1px;
+}
 a.verse-anchor { display: inline-block; width: 0; height: 0; scroll-margin-top: 80px; }
 </style>''')
     return '\n'.join(out)

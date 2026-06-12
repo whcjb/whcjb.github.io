@@ -19,9 +19,9 @@ title: "共观福音注释 — 经文索引"
         本索引按马太、马可、路加三福音逐节列出有 Calvin 注释的经节。点击任一胶囊按钮直接跳转到对应注释段（非经文块）。
       </p>
 
-      <p class="verse-index-nav"><a href="#matt">马太福音</a> &middot; <a href="#mark">马可福音</a> &middot; <a href="#luke">路加福音</a></p>
+      <p class="verse-index-nav"><a href="#matthew">马太福音</a> &middot; <a href="#mark">马可福音</a> &middot; <a href="#luke">路加福音</a></p>
 
-<h2 id="matt">马太福音</h2>
+<h2 id="matthew">马太福音</h2>
 
 <div class="ch-row">
   <div class="ch-label">马太福音 1</div>
@@ -1481,25 +1481,80 @@ title: "共观福音注释 — 经文索引"
 </div>
 
 <style>
-.verse-index-nav { font-size: 14px; margin-bottom: 24px; }
-.verse-index-nav a { margin-right: 8px; }
-h2 { border-bottom: 1px solid #ddd; padding-bottom: 4px; margin-top: 28px; }
-.ch-row { display: flex; align-items: flex-start; margin-bottom: 12px; gap: 10px; }
+.verse-index-nav {
+  margin: 24px 0;
+  font-size: 15px;
+}
+.verse-index-nav a {
+  color: #0085a1;
+  font-weight: bold;
+  padding: 0 6px;
+}
+h2[id="matthew"], h2[id="mark"], h2[id="luke"], h2[id="john"] {
+  margin-top: 36px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #0085a1;
+  color: #0085a1;
+}
+.ch-row {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 6px;
+  gap: 12px;
+}
 .ch-label {
-  flex: 0 0 auto; min-width: 110px; font-weight: bold; color: #2c5282;
-  font-size: 14px; padding-top: 4px;
+  flex: 0 0 90px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: #444;
+  padding: 8px 4px;
+  text-align: right;
+  border-right: 2px solid #0085a1;
 }
-.ch-track { display: flex; flex-wrap: wrap; gap: 6px; }
+.ch-track {
+  flex: 1 1 auto;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 8px 8px 8px;
+  scrollbar-width: thin;
+}
+.ch-track::-webkit-scrollbar { height: 6px; }
+.ch-track::-webkit-scrollbar-thumb { background: #c0d4d9; border-radius: 3px; }
 .verse-pill {
-  display: inline-flex; align-items: baseline; gap: 4px;
-  padding: 4px 10px; background: #f0f4f8;
-  border: 1px solid #cbd5e0; border-radius: 14px;
-  font-size: 13px; color: #2c5282; text-decoration: none !important;
-  transition: background .15s, border-color .15s;
+  flex: 0 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 12px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 14px;
+  color: #2e7d32;
+  text-decoration: none;
+  font-family: Georgia, serif;
+  white-space: nowrap;
+  transition: background 0.12s;
+  min-width: 64px;
 }
-.verse-pill:hover { background: #2c5282; border-color: #2c5282; color: #fff !important; }
-.pill-verse { font-weight: bold; }
-.pill-loc { font-size: 11px; opacity: .7; }
-.verse-pill:hover .pill-loc { opacity: .9; }
+.verse-pill:hover {
+  background: #4caf50;
+  border-color: #4caf50;
+  color: #fff;
+  text-decoration: none;
+}
+.pill-verse {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.pill-loc {
+  font-size: 10px;
+  opacity: 0.75;
+  margin-top: 1px;
+}
 a.verse-anchor { display: inline-block; width: 0; height: 0; scroll-margin-top: 80px; }
 </style>
