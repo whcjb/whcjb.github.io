@@ -3,50 +3,76 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% if page.layout == 'calvin-chapter' %}
-    <meta name="description" content="加尔文{{ page.book_name }}注释第{{ page.chapter }}章 - 约翰·加尔文(John Calvin)圣经注释中文全文在线阅读。改革宗经典释经著作。">
-    <meta name="keywords" content="加尔文{{ page.book_name }}注释, 加尔文注释第{{ page.chapter }}章, {{ page.book_name }}注释, Calvin {{ page.book_id }} commentary, 加尔文圣经注释, 改革宗圣经注释, {{ site.keyword }}">
-    {% elsif page.layout == 'calvin-book' %}
-    <meta name="description" content="加尔文{{ page.book_name }}注释全文 - 约翰·加尔文(John Calvin){{ page.book_name }}圣经注释中文在线阅读，共{{ page.chapters }}章。改革宗经典释经著作。">
-    <meta name="keywords" content="加尔文{{ page.book_name }}注释, Calvin {{ page.book_id }} commentary, {{ page.book_name }}注释, 加尔文圣经注释, 改革宗圣经注释, {{ site.keyword }}">
-    {% elsif page.layout == 'mhenry-chapter' %}
-    <meta name="description" content="马太亨利{{ page.book_name }}注释第{{ page.chapter }}章 - Matthew Henry圣经注释中文全文在线阅读。">
-    <meta name="keywords" content="马太亨利{{ page.book_name }}注释, 马太亨利注释第{{ page.chapter }}章, Matthew Henry commentary, 马太亨利圣经注释, {{ site.keyword }}">
-    {% else %}
-    <meta name="description" content="{{ page.description | default: site.description }}">
-    <meta name="keywords" content="{{ page.keywords | default: site.keyword }}">
-    {% endif %}
+
+    {%- comment -%} SEO: compute per-layout title/description/keywords once {%- endcomment -%}
+    {%- if page.layout == 'calvin-chapter' -%}
+        {%- capture seo_title -%}{{ page.book_name }}第{{ page.chapter }}章 - 加尔文圣经注释{%- endcapture -%}
+        {%- capture seo_description -%}加尔文{{ page.book_name }}注释第{{ page.chapter }}章 - 约翰·加尔文(John Calvin)圣经注释中文全文在线阅读。改革宗经典释经著作。{%- endcapture -%}
+        {%- capture seo_keywords -%}加尔文{{ page.book_name }}注释, 加尔文注释第{{ page.chapter }}章, {{ page.book_name }}注释, Calvin {{ page.book_id }} commentary, 加尔文圣经注释, 改革宗圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'calvin-book' or page.layout == 'calvin-zh-book' or page.layout == 'calvin-book-modern' -%}
+        {%- capture seo_title -%}{{ page.book_name }} - 加尔文圣经注释{%- endcapture -%}
+        {%- capture seo_description -%}加尔文{{ page.book_name }}注释全文 - 约翰·加尔文(John Calvin){{ page.book_name }}圣经注释中文在线阅读，共{{ page.chapters }}章。改革宗经典释经著作免费阅读。{%- endcapture -%}
+        {%- capture seo_keywords -%}加尔文{{ page.book_name }}注释, Calvin {{ page.book_id }} commentary, {{ page.book_name }}注释, 加尔文圣经注释, 改革宗圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'calvin-en' -%}
+        {%- capture seo_title -%}{{ page.book_name }} · {{ page.title }}{%- endcapture -%}
+        {%- capture seo_description -%}{{ page.book_name }}, {{ page.title }}. John Calvin's Bible commentary in English, full text online. Reformed classic exegesis by John Calvin (Calvin's Commentaries).{%- endcapture -%}
+        {%- capture seo_keywords -%}{{ page.book_name }}, Calvin {{ page.book_id }} commentary, John Calvin commentary, Calvin's Commentaries, Reformed Bible commentary{%- endcapture -%}
+    {%- elsif page.layout == 'calvin-en-book' -%}
+        {%- capture seo_title -%}{{ page.book_name }}{%- endcapture -%}
+        {%- capture seo_description -%}{{ page.book_name }}: full text of John Calvin's Bible commentary in English, {{ page.chapters }} chapters. Reformed classic exegesis by John Calvin (Calvin's Commentaries) online.{%- endcapture -%}
+        {%- capture seo_keywords -%}{{ page.book_name }}, Calvin {{ page.book_id }} commentary, John Calvin commentary, Calvin's Commentaries English, Reformed Bible commentary{%- endcapture -%}
+    {%- elsif page.layout == 'mhenry-chapter' -%}
+        {%- capture seo_title -%}{{ page.book_name }}第{{ page.chapter }}章 - 马太亨利圣经注释{%- endcapture -%}
+        {%- capture seo_description -%}马太亨利{{ page.book_name }}注释第{{ page.chapter }}章 - Matthew Henry圣经注释中文全文在线阅读。改革宗经典释经著作。{%- endcapture -%}
+        {%- capture seo_keywords -%}马太亨利{{ page.book_name }}注释, 马太亨利注释第{{ page.chapter }}章, Matthew Henry commentary, 马太亨利圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'mhenry-book' -%}
+        {%- capture seo_title -%}{{ page.book_name }} - 马太亨利圣经注释{%- endcapture -%}
+        {%- capture seo_description -%}马太亨利(Matthew Henry){{ page.book_name }}圣经注释中文全文在线阅读，共{{ page.chapters }}章。改革宗经典释经著作免费阅读。{%- endcapture -%}
+        {%- capture seo_keywords -%}马太亨利{{ page.book_name }}注释, Matthew Henry {{ page.book_id }} commentary, {{ page.book_name }}注释, 马太亨利圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'mhenry-preface' -%}
+        {%- capture seo_title -%}{{ page.book_name }} 前言 - 马太亨利圣经注释{%- endcapture -%}
+        {%- capture seo_description -%}马太亨利(Matthew Henry){{ page.book_name }}圣经注释前言。改革宗经典释经著作中文全文在线阅读，介绍本书背景、作者与释经原则。{%- endcapture -%}
+        {%- capture seo_keywords -%}马太亨利{{ page.book_name }}前言, 马太亨利{{ page.book_name }}注释, Matthew Henry {{ page.book_id }} preface, 马太亨利圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'reading-chapter' -%}
+        {%- assign _sec_title = page.section_title | default: page.title -%}
+        {%- capture seo_title -%}{{ _sec_title }} - {{ page.book_title }} - {{ page.author_name }}{%- endcapture -%}
+        {%- capture seo_description -%}{{ page.author_name }}《{{ page.book_title }}》{{ _sec_title }}{% if page.chapter_title %}：{{ page.chapter_title }}{% endif %}。改革宗属灵阅读中文全文在线阅读，南山圣約归正教会读书会推荐。{%- endcapture -%}
+        {%- capture seo_keywords -%}{{ page.author_name }}, {{ page.book_title }}, {{ _sec_title }}, 改革宗属灵阅读, 改革宗读书会, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'wcf-chapter' -%}
+        {%- capture seo_title -%}第{{ page.chapter }}章 {{ page.chapter_title }} - 威斯敏斯特信仰告白{%- endcapture -%}
+        {%- capture seo_description -%}威斯敏斯特信仰告白(Westminster Confession of Faith)第{{ page.chapter }}章《{{ page.chapter_title }}》（{{ page.chapter_title_en }}）中英对照在线阅读。改革宗历史信条全文。{%- endcapture -%}
+        {%- capture seo_keywords -%}威斯敏斯特信仰告白第{{ page.chapter }}章, {{ page.chapter_title }}, Westminster Confession {{ page.chapter }}, {{ page.chapter_title_en }}, 改革宗信条, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'dayaoli-chapter' -%}
+        {%- capture seo_title -%}第{{ page.section }}部分 {{ page.section_title }} - 大要理问答{%- endcapture -%}
+        {%- capture seo_description -%}《大要理问答》第{{ page.section }}部分《{{ page.section_title }}》第{{ page.questions }}问，{{ page.author }}讲解。改革宗教义问答中文在线阅读。{%- endcapture -%}
+        {%- capture seo_keywords -%}大要理问答第{{ page.section }}部分, {{ page.section_title }}, 威斯敏斯特大要理问答, 改革宗教义问答, {{ page.author }}, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.title -%}
+        {%- assign seo_title = page.title -%}
+        {%- if page.subtitle -%}
+            {%- capture seo_description -%}{{ page.subtitle }} - {{ page.title }} - 南山圣約归正教会博客文章。{%- endcapture -%}
+        {%- else -%}
+            {%- assign seo_description = page.description | default: site.description -%}
+        {%- endif -%}
+        {%- assign seo_keywords = page.keywords | default: site.keyword -%}
+    {%- else -%}
+        {%- assign seo_title = site.SEOTitle -%}
+        {%- assign seo_description = page.description | default: site.description -%}
+        {%- assign seo_keywords = page.keywords | default: site.keyword -%}
+    {%- endif -%}
+
+    <meta name="description" content="{{ seo_description }}">
+    <meta name="keywords" content="{{ seo_keywords }}">
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}">
 
-
-    {% if page.layout == 'calvin-chapter' %}
-    <title>{{ page.book_name }}第{{ page.chapter }}章 - 加尔文圣经注释 - {{ site.SEOTitle }}</title>
-    {% elsif page.layout == 'calvin-book' %}
-    <title>{{ page.book_name }} - 加尔文圣经注释 - {{ site.SEOTitle }}</title>
-    {% elsif page.layout == 'mhenry-chapter' %}
-    <title>{{ page.book_name }}第{{ page.chapter }}章 - 马太亨利圣经注释 - {{ site.SEOTitle }}</title>
-    {% elsif page.layout == 'mhenry-book' %}
-    <title>{{ page.book_name }} - 马太亨利圣经注释 - {{ site.SEOTitle }}</title>
-    {% elsif page.title %}
-    <title>{{ page.title }} - {{ site.SEOTitle }}</title>
-    {% else %}
+    {% if seo_title == site.SEOTitle %}
     <title>{{ site.SEOTitle }}</title>
+    {% else %}
+    <title>{{ seo_title }} - {{ site.SEOTitle }}</title>
     {% endif %}
 
     <!-- Open Graph / Social Sharing -->
-    {% if page.layout == 'calvin-chapter' %}
-    <meta property="og:title" content="加尔文{{ page.book_name }}注释第{{ page.chapter }}章">
-    <meta property="og:description" content="约翰·加尔文(John Calvin){{ page.book_name }}圣经注释中文全文在线阅读。改革宗经典释经著作。">
-    {% elsif page.layout == 'calvin-book' %}
-    <meta property="og:title" content="加尔文{{ page.book_name }}注释">
-    <meta property="og:description" content="约翰·加尔文{{ page.book_name }}圣经注释全文，共{{ page.chapters }}章。改革宗经典释经著作。">
-    {% elsif page.layout == 'mhenry-chapter' %}
-    <meta property="og:title" content="马太亨利{{ page.book_name }}注释第{{ page.chapter }}章">
-    <meta property="og:description" content="马太亨利(Matthew Henry){{ page.book_name }}圣经注释中文全文在线阅读。">
-    {% else %}
-    <meta property="og:title" content="{{ page.title | default: site.SEOTitle }}">
-    <meta property="og:description" content="{{ page.description | default: site.description }}">
-    {% endif %}
+    <meta property="og:title" content="{{ seo_title }}">
+    <meta property="og:description" content="{{ seo_description }}">
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:site_name" content="{{ site.title }}">
