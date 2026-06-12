@@ -361,34 +361,36 @@ def _strip_fused_running_headers(text: str, book_cn: str) -> str:
       `第一章加尔文文集`             ← two headers fused, no content
       `第一章骄傲地高抬自己，...`     ← header fused to body content
       `加尔文文集12 保罗既对此...`   ← header fused to verse-opener
+      `罗马书注释`                   ← bare full-line header (no `#`)
+      `第一章`                        ← bare chapter-running header
 
-    Strategy: split such lines on the boundary between the header glyphs
-    and the body. Headers we look for: `第[一二三四五六七八九十]+章`,
-    `加尔文文集`, `{book_cn}注释`, `{book_cn}`.
+    Strategy: greedily match longest header chain at line start. Drop
+    line if rest is empty; else keep only the rest.
+
+    Header order (longest-first to avoid regex backtracking issues — e.g.
+    `罗马书注释` matched before `罗马书` so we don't strip only `罗马书`
+    and leak orphan `注释`).
     """
-    # Build alternation of header glyph patterns (longest first)
+    # Longest-first ordering. Python re alternation tries left-to-right
+    # so we must list longer patterns before shorter ones.
     header_alts = [
-        r"第[一二三四五六七八九十百〇零0-9]+章",
-        r"加尔文文集",
-        r"加尔文集",  # OCR typo
-        rf"{re.escape(book_cn)}注释",
-        re.escape(book_cn),
+        rf"{re.escape(book_cn)}注释",       # `罗马书注释` (5)
+        r"加尔文文集",                      # 5
+        r"加尔文集",                        # 4 — OCR typo
+        r"第[一二三四五六七八九十百〇零0-9]+章",  # 3+
+        re.escape(book_cn),                  # `罗马书` (3) — shortest
     ]
-    # Match a sequence of one or more header glyphs at line start
-    chain_re = re.compile(
-        rf"^((?:{'|'.join(header_alts)})+)(?=\S)"
-    )
+    chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)")
     out_lines = []
     for line in text.splitlines():
         m = chain_re.match(line)
-        if m:
-            rest = line[m.end():]
-            # If rest is empty, drop the line (full-header)
-            if not rest.strip():
-                continue
-            out_lines.append(rest)
-        else:
+        if not m:
             out_lines.append(line)
+            continue
+        rest = line[m.end():]
+        if not rest.strip():
+            continue  # full-line header, drop
+        out_lines.append(rest)
     return "\n".join(out_lines)
 
 
