@@ -114,6 +114,8 @@ def _looks_like_bible_fragment(text: str) -> bool:
       - Starts with `N <CJK>` (digit + WHITESPACE + CJK) — OCR style for
         Ephesians-like books where verse number is separated by space
       - Starts with `N<CJK>` directly (digit fused to verse text)
+      - Starts with `N "quote"` (digit + quote — OCR 把整节经文当引文，
+        典型: `3 "主啊，他们杀了你的先知..."` Romans 11 那种)
       - Short paragraph with dense `、` list separators (4+ in <100 chars)
     """
     s = text.lstrip()
@@ -126,6 +128,10 @@ def _looks_like_bible_fragment(text: str) -> bool:
         return True
     # Bare digit fused to CJK (no separator) — single-verse Bible fragment
     if re.match(r"^\d{1,3}[一-鿿]", s):
+        return True
+    # Digit + space + 中文引号 — OCR 把单节经文整段提取成 `3 "经文..."`
+    # 引号字符不算 CJK 但内部肯定是经文（中文引号包裹 + 数字前缀）
+    if re.match(r'^\d{1,3}\s+["“”""][一-鿿]', s):
         return True
     if len(s) < 100 and s.count("、") >= 4:
         return True
