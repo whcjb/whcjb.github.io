@@ -375,11 +375,9 @@ def _commentary_anchor_slug(header):
     if not header:
         return ''
     s = header.strip().lower()
-    s = s.replace(':', '')
-    # `;` (with optional surrounding spaces) → `-`
-    s = re.sub(r'\s*;\s*', '-', s)
+    # Drop punctuation kramdown discards (`:` `;` `,` `.` `(` `)`)
+    s = re.sub(r'[:;,.()]', '', s)
     s = re.sub(r'\s+', '-', s)
-    # collapse multiple hyphens
     s = re.sub(r'-+', '-', s).strip('-')
     return s
 

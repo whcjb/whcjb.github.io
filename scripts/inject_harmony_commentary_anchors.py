@@ -70,12 +70,17 @@ def normalize_header_to_en(header):
 
 
 def slugify(header_en):
-    """Match kramdown's H2 slug rules: lowercase, remove `:`, `; `→`-`,
-    spaces→`-`, collapse hyphens."""
+    """Match kramdown's H2 slug rules: lowercase, drop `:` `;` `,` `.` `(` `)`,
+    spaces→`-`, collapse hyphens. E.g.,
+        "MATTHEW 27:33-38; MARK 15:22-28; LUKE 23:33-34, 38"
+          → "matthew-2733-38-mark-1522-28-luke-2333-34-38"
+    """
     s = header_en.lower()
-    s = s.replace(':', '')
-    s = re.sub(r'\s*;\s*', '-', s)
+    # Drop punctuation that kramdown discards
+    s = re.sub(r'[:;,.()]', '', s)
+    # Whitespace → hyphen
     s = re.sub(r'\s+', '-', s)
+    # Collapse consecutive hyphens
     s = re.sub(r'-+', '-', s).strip('-')
     return s
 
