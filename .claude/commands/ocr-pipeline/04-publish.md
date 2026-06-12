@@ -134,6 +134,41 @@ load_chapter_paragraphs 入口前做前缀剥离，匹配链：
 新书做 OCR 发布时，如发现 audit gate 报 leak 但裸形式 strip 已覆盖，
 检查是否是这种 fused 形式。
 
+⚠️ **正则陷阱：alternation + lookahead 触发回溯**
+
+`_strip_fused_running_headers` 早期版本写成：
+
+```python
+chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)(?=\S)")
+```
+
+`(?=\S)` 要求 header chain 之后有非空字符。对 `罗马书注释` 一行：
+1. 先匹配 `罗马书注释`（全部），但 `(?=\S)` 要求后续有 `\S` — 行尾失败
+2. 回溯到 `罗马书`（更短的 alternative），后续 `注释` 是 `\S` → 成功
+3. 剥掉 `罗马书`，留 `注释` 当孤立段
+
+症状：发布后正文出现孤立 `注释` 标题样的短段（这恰好被 kramdown
+渲染成 `<h2>注释</h2>`，看起来像章节标题，截图触目）。
+
+**正确写法**：
+1. 去掉 lookahead — chain 全匹配整段，无残骸
+2. Alternative **按长度降序排**（python re 是 first-match，长前缀必须排在前）
+
+```python
+header_alts = [
+    rf"{re.escape(book_cn)}注释",  # 罗马书注释 (5) — 长在前
+    r"加尔文文集",                  # 5
+    r"加尔文集",                    # 4 — OCR 笔误
+    r"第[一二三四五六七八九十百〇零0-9]+章",
+    re.escape(book_cn),             # 罗马书 (3) — 短在后
+]
+chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)")
+# 然后：rest = line[m.end():]; rest 空则 drop，否则保留 rest
+```
+
+新书加 OCR-pipeline 时，header 列表一律按长度降序，**永远不要**
+用 `(?=\S)` 之类的 lookahead — 强制 first-match 即可。
+
 ### 5. Bible verse-count 表
 
 ```python
