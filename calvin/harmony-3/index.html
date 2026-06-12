@@ -25,9 +25,13 @@ keywords: "加尔文共观福音注释, 加尔文对观福音注释, 加尔文�
 
       {% include calvin_intros/harmony-3.html %}
 
-      <p class="text-muted" style="margin-bottom:24px; font-size:13px; color:#9aa6ad;">
+      <p class="text-muted" style="margin-bottom:18px; font-size:13px; color:#9aa6ad;">
         中文翻译已完成（共 9 章）
       </p>
+
+      <a href="{{ site.baseurl }}/calvin/harmony-index/" class="harmony-index-link">
+        📖 经文索引 <span>按马太/马可/路加逐节检索</span>
+      </a>
 
       <div class="ch-pills">
         <a href="{{ site.baseurl }}/calvin/harmony-3/1/" class="ch-pill" data-title="马太福音 21 —— 圣殿中的争辩">第 1 章</a>
@@ -46,6 +50,30 @@ keywords: "加尔文共观福音注释, 加尔文对观福音注释, 加尔文�
 </div>
 
 <style>
+.harmony-index-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 8px 14px;
+  margin-bottom: 24px;
+  background: #fff3e0;
+  border: 1px solid #ffb74d;
+  border-radius: 4px;
+  color: #e65100;
+  font-size: 14px;
+  text-decoration: none !important;
+  transition: background 0.15s;
+}
+.harmony-index-link:hover {
+  background: #ffe0b2;
+  border-color: #f57c00;
+  color: #bf360c;
+}
+.harmony-index-link span {
+  font-size: 12px;
+  color: #8a4a1a;
+  opacity: 0.8;
+}
 .ch-pills {
   display: flex;
   flex-wrap: wrap;
