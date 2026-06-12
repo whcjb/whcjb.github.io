@@ -147,8 +147,9 @@
     var bookPat = BOOKS.map(function(b){
         return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
     }).join('|');
+    // 书名后可选空格（"罗马书 8:15" 也要识别，不只是"罗马书8:15"）
     var REF_RE = new RegExp(
-        '(' + bookPat + ')(\\d{1,3})[：:] *(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?',
+        '(' + bookPat + ')\\s*(\\d{1,3})\\s*[：:]\\s*(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?',
         'g'
     );
     // Bare reference: （49：7） or (49:7) — uses current book
