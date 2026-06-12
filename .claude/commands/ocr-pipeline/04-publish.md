@@ -169,7 +169,85 @@ chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)")
 新书加 OCR-pipeline 时，header 列表一律按长度降序，**永远不要**
 用 `(?=\S)` 之类的 lookahead — 强制 first-match 即可。
 
-### 5. Bible verse-count 表
+### 5. ⚠️ Section 顺序错乱 —— detect_paragraph_verse 漏识 OCR 格式
+
+OCR 输出的 verse opener 段格式有多种：
+
+| 格式                              | 来源       | 例 |
+|----------------------------------|-----------|---|
+| `**罗马书 1:22。** ...`          | promote 后  | `**罗马书 1:22。** *自称为聪明* ...` |
+| `22 **自称为聪明** ...`          | OCR raw    | bold lemma + 注释 |
+| `15 所以情愿尽我的力量…… ...`     | OCR raw    | 空格 + CJK 直接 |
+| `**自称为聪明** ...`             | OCR raw    | 仅 bold 无 digit |
+
+**老 bug**：`detect_paragraph_verse` 只走 `verse_prefix_re`（要求
+`**{书卷} N:V。**`）和 `_verse_for_opener` 模糊匹配。
+对 `22 **自称为聪明**...` 这种**数字 + 空格 + bold + CJK**，
+verse_prefix_re 不匹配，模糊匹配也碰不上（首字符是 `2`），返回 None。
+结果该段落停留在 cur_sec（上一节的 section）。罗马书 1.md 出过：
+- v.22 commentary 留在 section 1:15-21
+- v.15/v.16 commentary 漂到 section 1:15-21 末尾
+- v.24 注释（含 "意义是深远的"）随 cur_sec 错放
+
+**修复**：detect_paragraph_verse 加 `^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]`
+匹配，先识 verse number，再范围校验：
+
+```python
+m = re.match(r"^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]", para)
+if m:
+    v = int(m.group(1))
+    if 1 <= v <= len(chapter_verses):
+        return v
+```
+
+同步：`relocate_misplaced_verse_commentary.py` /
+`relocate_cross_chapter_verse.py` / `_audit_gate` 的
+`opener_re` 都用同一 pattern，**保持一致**才不会一边检测一边漏。
+
+**根本错误判断**：之前看到 OCR 末尾多 "这件事意义是深远的。" 时误判为
+Qwen-VL 幻觉，差点把 PDF 真文本删掉。按 [feedback_pdf_verify_before_change]
+必须先读 PDF，但同时也要看清是**顺序问题**还是**内容问题**——
+段落出现在错的 section 时，看起来就像"和原文不一样"。section 顺序
+错乱是 publish 启发式的常见 bug，第一直觉应该是它，不是 OCR 幻觉。
+
+### 7. ⚠️ OCR 幻觉风险（Qwen-VL 偶尔凭空添字）
+
+Qwen-VL 7B 在以下场景偶尔会**添加 PDF 中不存在的文本**：
+
+- 段落末尾添加"总结性"短句让段落"显得完整"
+  - 实战例：罗马书 ch1 v.24 注释原文以"...羞辱的痕迹，是深而不可消除的。"结束，
+    OCR 凭空多加 "这件事意义是深远的。" — 用户截图发现
+- 列表末尾添加"等等" / "等等"
+- 页脚断行处补完上一句
+
+**自动检测困难**：脚本无法区分合理短句和幻觉短句。靠：
+- 用户截图反馈后人工查 PDF（必须按 [feedback_pdf_verify_before_change]
+  先读 PDF 再改，禁止猜测）
+- 自查可疑模式：
+
+```bash
+# 找段落末尾 < 15 字符的孤立短句（页边幻觉的高发位置）
+python3 - <<'PY'
+import re, pathlib
+for p in pathlib.Path('calvin/<book>').glob('*.md'):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    for para in re.split(r'\n\n+', text):
+        if para.startswith(('<', '#', '**', '[^', '{:')): continue
+        # Look for paragraph ending with a short trailing sentence
+        sentences = re.split(r'(?<=[。！？])\s*', para.strip())
+        if len(sentences) >= 2 and 4 <= len(sentences[-1].rstrip('。')) <= 12:
+            tail = sentences[-1]
+            print(f'  {p.name}: ...{sentences[-2][-20:]}「{tail}」')
+PY
+# 输出"前段尾巴 + 「可疑短句」"，对照 PDF 该位置确认。
+```
+
+**修复**：发现后直接 Edit 已发布的 md（不要碰 OCR raw — 按
+[feedback_translation_raw_preserve] 保护）。重发会丢修正，所以发现一个
+就 commit 一个，不批量延迟。
+
+### 8. Bible verse-count 表
 
 ```python
 VERSE_COUNTS = {
