@@ -368,7 +368,8 @@ def _convert_pending_verse_labels(text: str, book_cn: str,
     return "\n\n".join(out)
 
 
-def _strip_fused_running_headers(text: str, book_cn: str) -> str:
+def _strip_fused_running_headers(text: str, book_cn: str,
+                                   extra_header_alts: list[str] | None = None) -> str:
     """Strip OCR-fused running-header prefixes from line starts.
 
     When OCR doesn't put a newline between a page-top running header and
@@ -388,13 +389,17 @@ def _strip_fused_running_headers(text: str, book_cn: str) -> str:
     """
     # Longest-first ordering. Python re alternation tries left-to-right
     # so we must list longer patterns before shorter ones.
+    # `extra_header_alts` lets per-book wrappers add OCR-quirk patterns
+    # (e.g., romans wrapper adds `加尔文集` for that OCR's typo).
     header_alts = [
         rf"{re.escape(book_cn)}注释",       # `罗马书注释` (5)
         r"加尔文文集",                      # 5
-        r"加尔文集",                        # 4 — OCR typo
         r"第[一二三四五六七八九十百〇零0-9]+章",  # 3+
         re.escape(book_cn),                  # `罗马书` (3) — shortest
     ]
+    if extra_header_alts:
+        # Insert before the shortest entry so longer patterns still beat them
+        header_alts[-1:-1] = extra_header_alts
     chain_re = re.compile(rf"^((?:{'|'.join(header_alts)})+)")
     out_lines = []
     for line in text.splitlines():
@@ -442,7 +447,6 @@ def _patch_running_headers(book_cn: str, extra_patterns: list[str] | None = None
         # page headers, never content.
         re.compile(rf"^{re.escape(book_cn)}注释\s*$"),
         re.compile(r"^加尔文文集\s*$"),
-        re.compile(r"^加尔文集\s*$"),       # OCR typo: 加尔文集 (missing 文)
         # Translator credit lines often appearing at chapter start
         re.compile(r"^[^\s#]{1,4}[译校].\s*$"),
     ]
@@ -475,7 +479,10 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
             if not f.exists():
                 continue
             raw_text = f.read_text(encoding="utf-8")
-            raw_text = _strip_fused_running_headers(raw_text, book_cn)
+            raw_text = _strip_fused_running_headers(
+                raw_text, book_cn,
+                extra_header_alts=globals().get("_BOOK_EXTRA_HEADER_ALTS"),
+            )
             raw_text = _strip_bible_text_dumps(raw_text, book_cn,
                                                 cuv_book=cuv_book,
                                                 chapter=chapter)

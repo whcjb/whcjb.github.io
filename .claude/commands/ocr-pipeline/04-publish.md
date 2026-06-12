@@ -18,6 +18,33 @@ python3 scripts/restructure_scan_book.py \
   --all
 ```
 
+## ⚠️ Per-book wrapper（OCR 怪癖隔离）
+
+**重要**：每本书 OCR 都会有书卷特有的版式 / 笔误 / 页眉怪癖（如罗马书
+OCR 的 `加尔文集` 笔误）。把这些怪癖塞到通用
+`restructure_scan_book.py` 会影响其他书卷的发布输出。
+
+**正确做法**：每本 OCR 书建一个 wrapper 脚本，注入书卷特有的 strip
+patterns + extra header alts，再调通用脚本。
+
+参考 `scripts/restructure_romans_scan.py`：
+
+```python
+# 罗马书 OCR 特有的 fused-running-header glyphs
+_ROMANS_EXTRA_HEADER_ALTS = [r"加尔文集"]  # OCR 笔误：丢了一个 "文"
+_ROMANS_EXTRA_STRIP_LINES = [r"^加尔文集\s*$"]
+
+import restructure_scan_book as pub
+pub._BOOK_EXTRA_HEADER_ALTS = _ROMANS_EXTRA_HEADER_ALTS
+
+# 默认填好 --book / --cuv-book / --book-cn / --raw-dir / --out-dir
+# 调用 pub.main()
+```
+
+通用脚本：`restructure_scan_book.py` —— 处理任何书都对的逻辑。
+书卷 wrapper：`restructure_<book>_scan.py` —— 注入 OCR 怪癖。
+跑 `python3 scripts/restructure_<book>_scan.py --all` 即可。
+
 参数：
 - `--cuv-book` = CUV `assets/cuv.json` 的卷号（Genesis=1, Matt=40, John=43,
   Acts=44, Romans=45, ..., Colossians=51, Hebrews=58, James=59, Rev=66）
