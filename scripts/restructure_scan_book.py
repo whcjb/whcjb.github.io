@@ -168,7 +168,11 @@ def _strip_bible_text_dumps(text: str, book_cn: str | None = None,
         if n_circles >= 5 and len(p) > 300:
             continue
         n_bare = len(_BARE_VERSE_NUM_RE.findall(p))
-        if n_bare >= 4:
+        # OCR 经常把 `1 经文。\n2 经文。\n3 ...` 这种空格分隔的圣经全章
+        # dump 抓到一起。`_BARE_VERSE_NUM_RE` 要求 `.` 分隔会漏；额外
+        # 用 line-start 空格分隔检测。
+        n_bare_space = len(re.findall(r"(?:^|\n)\s*\d{1,3}\s+[一-鿿]", p))
+        if n_bare >= 4 or n_bare_space >= 4:
             continue
         # Form 3: Bible-text fragment — tighter check now.
         if "**" not in p and _looks_like_bible_fragment(p):
@@ -394,7 +398,9 @@ def _strip_fused_running_headers(text: str, book_cn: str,
     header_alts = [
         rf"{re.escape(book_cn)}注释",       # `罗马书注释` (5)
         r"加尔文文集",                      # 5
-        r"第[一二三四五六七八九十百〇零0-9]+章",  # 3+
+        # `第N章①` 的 `①` 部分（章首脚注圈号），strip 完 `第N章`
+        # 后剩下的圈号也要 strip 掉，避免变成孤立 `[^1]` ref
+        r"第[一二三四五六七八九十百〇零0-9]+章[①-⑳]?",
         re.escape(book_cn),                  # `罗马书` (3) — shortest
     ]
     if extra_header_alts:

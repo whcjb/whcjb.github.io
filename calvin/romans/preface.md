@@ -5,7 +5,7 @@ book_name: "罗马书"
 chapter: 0
 header-img: psalm-bg-mountain.jpg
 title: "序言"
-date: 2026-06-12 17:48
+date: 2026-06-12 17:51
 next_section: 1
 next_label: "第一章"
 ---
