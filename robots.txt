@@ -1,6 +1,4 @@
 User-agent: *
-Allow: /
 Disallow: /sx-275b182e/
 
-Sitemap: https://whcjb.github.io/sitemap.xml
-Sitemap: https://whcjb.github.io/sitemap-priority.xml
+Sitemap: https://whcjb.github.io/sitemap_index.xml
