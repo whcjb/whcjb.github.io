@@ -206,6 +206,14 @@ def detect_paragraph_verse(para: str, chapter_verses: dict, book_cn: str) -> int
     m = verse_prefix_re(book_cn).match(para)
     if m:
         return int(m.group(1))
+    # OCR-style verse opener: `N <CJK>...` or `N **<CJK>...**` or `N. <CJK>`
+    # (OCR doesn't preserve **{书卷} N:V。** bold prefix, so we detect the
+    # leading digit-space pattern; optional `**` for bold lemma).
+    m = re.match(r"^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]", para)
+    if m:
+        v = int(m.group(1))
+        if 1 <= v <= len(chapter_verses):
+            return v
     if para.startswith(("[^", "<", "#")):
         return None
     stripped = _strip_corrupt_marker(para)
@@ -744,7 +752,7 @@ def _audit_gate(out_dir: Path, book_cn: str, cuv_book: str) -> int:
     """
     issues = 0
     hdr_re = re.compile(rf"^## {re.escape(book_cn)} (\d+):(\d+)(?:-(\d+))?")
-    opener_re = re.compile(r"^(\d{1,3})[ 、.]\s*[一-鿿]")
+    opener_re = re.compile(r"^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]")
     leak_re = re.compile(
         rf"^(加尔文文集|{re.escape(book_cn)}注释|{re.escape(book_cn)}\s*[·•‧]\s*第[一二三四五六七八九十]+章)\s*$"
     )

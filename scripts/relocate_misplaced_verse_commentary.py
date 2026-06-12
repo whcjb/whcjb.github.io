@@ -99,7 +99,7 @@ def find_misplaced_paragraphs(
 
         # Check opener
         first_line = lines[para_start]
-        m = re.match(r'^(\d{1,3})[ 、.]\s*[一-鿿]', first_line)
+        m = re.match(r'^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]', first_line)
         if not m:
             continue
         v = int(m.group(1))

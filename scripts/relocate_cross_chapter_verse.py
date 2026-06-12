@@ -50,7 +50,7 @@ def parse_sections(text: str, book_cn: str):
 def find_overflow_paragraphs(lines, secs, max_verse):
     """Return list of (verse, start_line, end_line) where verse > max_verse."""
     out = []
-    opener_re = re.compile(r'^(\d{1,3})[ 、.]\s*[一-鿿]')
+    opener_re = re.compile(r'^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]')
     for sec in secs:
         i = sec['start'] + 1
         while i < sec['end']:
