@@ -136,6 +136,18 @@ a.commentary-anchor {
   border-top: 1px solid #ddd;
   margin: 32px 0;
 }
+/* AGES Digital Library 圣经引用编码（如 <19B001>）—— 在 commentary 正文里
+   原本是红色普通字号 inline，视觉太抢；统一缩成小号上标暗红，与 scripture-box
+   里 .ages-code 样式呼应。scripture-box 内有更高优先级的 per-book 规则覆盖。 */
+.calvin-en-content .ages-code {
+  color: #7a1d1d;
+  font-size: 0.62em;
+  vertical-align: super;
+  margin-right: 1px;
+  font-weight: normal;
+  font-variant: normal;
+  letter-spacing: 0;
+}
 /* footnotes */
 .calvin-en-content .footnotes {
   margin-top: 40px;

@@ -37,7 +37,7 @@ As then the children of Israel were miserable in comparison with their own kindr
 
 We now then perceive the design of the Prophet: as adversity might have weakened the Israelites, and even utterly broken them down, the Prophet here applies comfort and props up their dejected minds, for the Lord would shortly look on them and take due vengeance on their enemies.
 
-And the reason why this prophecy is levelled against the Idumeans only is this, — that they, as we know, raged more cruelly than any others against the Israelites: for it is not said without a cause in <span style="color:#800000"><19D707></span>Psalm 137:7,
+And the reason why this prophecy is levelled against the Idumeans only is this, — that they, as we know, raged more cruelly than any others against the Israelites: for it is not said without a cause in <span class="ages-code">&lt;19D707&gt;</span>Psalm 137:7,
 
 <!-- PAGE 3 -->
 

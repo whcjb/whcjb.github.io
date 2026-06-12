@@ -266,6 +266,11 @@ def apply_verse_styling(body: str, red: bool = False) -> str:
         # 改用真上标 <sup>N</sup>（kramdown 不再当大字渲染）
         if color_hex_lower == '800000' and not italic and re.fullmatch(r'\d+', core):
             return f'{lead}<sup>{core}</sup>{trail}'
+        # 红色 + 非斜体 + AGES Digital Library 圣经引用编码（<19B001> 等）：
+        # 用 .ages-code class 出，匹配 scripture-box 已有样式（小号上标暗红）
+        ages_m = re.fullmatch(r'<([0-9A-Za-z][0-9A-Za-z ]*)>', core)
+        if color_hex_lower == '800000' and not italic and ages_m:
+            return f'{lead}<span class="ages-code">&lt;{ages_m.group(1)}&gt;</span>{trail}'
         if is_black and not italic:
             return lead + core + trail
         if is_black and italic:
