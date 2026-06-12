@@ -125,16 +125,22 @@ def _looks_like_bible_fragment(text: str) -> bool:
     return False
 
 
-def _strip_bible_text_dumps(text: str, book_cn: str | None = None) -> str:
+def _strip_bible_text_dumps(text: str, book_cn: str | None = None,
+                              cuv_book: str | None = None,
+                              chapter: int | None = None) -> str:
     """Drop OCR Bible-text passages (already rendered by scripture-box).
 
     Detection forms:
       1) Paragraph has >= 5 circled digits AND > 300 chars (John style).
       2) Paragraph has >= 4 bare `N.` verse markers (Colossians style).
-      3) Paragraph EITHER starts with `N. <CJK>` verse-marker pattern
-         OR is short with dense `、` separators (Galatians style, where
-         OCR splits the Bible passage into 2-3 small lines that don't
-         individually hit thresholds 1/2).
+      3) Paragraph starts with `N. <CJK>` / `N <CJK>` verse-marker AND
+         body closely matches CUV verse text (or is very short < 80
+         chars without commentary-style continuation).
+         Without the CUV check, we'd drop verse-opener commentary
+         paragraphs whose first 1–2 chars happen to look like the
+         Bible fragment (e.g. `21 因为，他们虽然知道上帝保罗于此公然宣证...`
+         where `因为，他们虽然知道上帝` looks like Bible text but the rest
+         is Calvin's exposition).
       4) Standalone `<book_cn> N:N-N` Bible-ref heading line — drop
          (no-space form `加拉太书5:19-21` also accepted).
     """
@@ -157,12 +163,27 @@ def _strip_bible_text_dumps(text: str, book_cn: str | None = None) -> str:
         n_bare = len(_BARE_VERSE_NUM_RE.findall(p))
         if n_bare >= 4:
             continue
-        # Form 3: Bible-text fragment (short, list-style or N. opener).
-        # Apply only if no `**` (real verse-opener commentary) markup —
-        # commentary openers like `**1、作使徒的保罗。**` look similar but
-        # would have ** wrapping and proper sentence structure.
-        if "**" not in p and len(p) < 200 and _looks_like_bible_fragment(p):
-            continue
+        # Form 3: Bible-text fragment — tighter check now.
+        if "**" not in p and _looks_like_bible_fragment(p):
+            drop = False
+            # Sub-rule 3a: very short fragment (< 80 chars) — likely a
+            # split Bible-text snippet (Galatians-style).
+            if len(p) < 80:
+                drop = True
+            # Sub-rule 3b: paragraph content closely matches the CUV text
+            # for the opener verse — definitely Bible, drop.
+            elif cuv_book and chapter is not None:
+                m = re.match(r"^\s*(\d{1,3})[. 、,]\s*", p)
+                if m:
+                    v = int(m.group(1))
+                    body_after = p[m.end():].strip()
+                    # Strict threshold: must really look like CUV text.
+                    if _is_bible_verse_text(
+                        body_after[:80], cuv_book, chapter, v, threshold=0.7
+                    ):
+                        drop = True
+            if drop:
+                continue
         out.append(p)
     return "\n\n".join(out)
 
@@ -332,6 +353,45 @@ def _convert_pending_verse_labels(text: str, book_cn: str,
     return "\n\n".join(out)
 
 
+def _strip_fused_running_headers(text: str, book_cn: str) -> str:
+    """Strip OCR-fused running-header prefixes from line starts.
+
+    When OCR doesn't put a newline between a page-top running header and
+    the body content, we get lines like:
+      `第一章加尔文文集`             ← two headers fused, no content
+      `第一章骄傲地高抬自己，...`     ← header fused to body content
+      `加尔文文集12 保罗既对此...`   ← header fused to verse-opener
+
+    Strategy: split such lines on the boundary between the header glyphs
+    and the body. Headers we look for: `第[一二三四五六七八九十]+章`,
+    `加尔文文集`, `{book_cn}注释`, `{book_cn}`.
+    """
+    # Build alternation of header glyph patterns (longest first)
+    header_alts = [
+        r"第[一二三四五六七八九十百〇零0-9]+章",
+        r"加尔文文集",
+        r"加尔文集",  # OCR typo
+        rf"{re.escape(book_cn)}注释",
+        re.escape(book_cn),
+    ]
+    # Match a sequence of one or more header glyphs at line start
+    chain_re = re.compile(
+        rf"^((?:{'|'.join(header_alts)})+)(?=\S)"
+    )
+    out_lines = []
+    for line in text.splitlines():
+        m = chain_re.match(line)
+        if m:
+            rest = line[m.end():]
+            # If rest is empty, drop the line (full-header)
+            if not rest.strip():
+                continue
+            out_lines.append(rest)
+        else:
+            out_lines.append(line)
+    return "\n".join(out_lines)
+
+
 def _patch_running_headers(book_cn: str, extra_patterns: list[str] | None = None):
     """Add book-CN-specific running-header strip patterns to ch1mod.
 
@@ -360,6 +420,12 @@ def _patch_running_headers(book_cn: str, extra_patterns: list[str] | None = None
         re.compile(rf"^#\s*{re.escape(book_cn)}\s*$"),
         # Non-# prefixed variants
         re.compile(rf"^加尔文文集\s*[·•‧]\s*{re.escape(book_cn)}注释\s*$"),
+        # Bare running-header forms (no `#`, no `·`) — common when OCR loses
+        # markdown header structure. These standalone lines are ALWAYS
+        # page headers, never content.
+        re.compile(rf"^{re.escape(book_cn)}注释\s*$"),
+        re.compile(r"^加尔文文集\s*$"),
+        re.compile(r"^加尔文集\s*$"),       # OCR typo: 加尔文集 (missing 文)
         # Translator credit lines often appearing at chapter start
         re.compile(r"^[^\s#]{1,4}[译校].\s*$"),
     ]
@@ -392,7 +458,10 @@ def load_chapter_paragraphs(raw_dir: Path, page_lo: int, page_hi: int,
             if not f.exists():
                 continue
             raw_text = f.read_text(encoding="utf-8")
-            raw_text = _strip_bible_text_dumps(raw_text, book_cn)
+            raw_text = _strip_fused_running_headers(raw_text, book_cn)
+            raw_text = _strip_bible_text_dumps(raw_text, book_cn,
+                                                cuv_book=cuv_book,
+                                                chapter=chapter)
             raw_text = _convert_pending_verse_labels(
                 raw_text, book_cn, cuv_book, prev_tail=prev_tail
             )
