@@ -147,13 +147,38 @@
     var bookPat = BOOKS.map(function(b){
         return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
     }).join('|');
-    // 书名后可选空格（"罗马书 8:15" 也要识别，不只是"罗马书8:15"）
+    // 经文末尾 verses 部分：v1[-v2] | v1, v2[, v3...]  支持范围和逗号列表
+    // 例: "8:15"  "8:15-17"  "12:11, 12"  "12:1, 5, 10"
+    var VERSES_TAIL = '(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3})|((?:\\s*[,，]\\s*\\d{1,3}){1,9}))?';
+    // 书名后可选空格（"罗马书 8:15" 也要识别）
     var REF_RE = new RegExp(
-        '(' + bookPat + ')\\s*(\\d{1,3})\\s*[：:]\\s*(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?',
+        '(' + bookPat + ')\\s*(\\d{1,3})\\s*[：:]\\s*' + VERSES_TAIL,
         'g'
     );
-    // Bare reference: （49：7） or (49:7) — uses current book
-    var BARE_RE = /[（(](\d{1,3})[：:] *(\d{1,3})(?:\s*[－\-–—]\s*(\d{1,3}))?[）)]/g;
+    // Bare reference: （49：7）等 — uses current book
+    var BARE_RE = new RegExp(
+        '[（(](\\d{1,3})\\s*[：:]\\s*' + VERSES_TAIL + '[）)]',
+        'g'
+    );
+
+    // 把正则匹配的 verse-tail group 解析为 verse number 数组
+    // m[3]=v1 必有, m[4]=v2 (range end) 或 m[5]=", v2, v3..." 逗号串
+    function parseVerses(v1, vEnd, vList) {
+        var arr = [parseInt(v1)];
+        if (vEnd) {
+            var end = parseInt(vEnd);
+            for (var v = arr[0] + 1; v <= end; v++) arr.push(v);
+        } else if (vList) {
+            vList.split(/[,，]/).forEach(function(s){
+                s = s.trim();
+                if (s) arr.push(parseInt(s));
+            });
+        }
+        // dedupe + sort
+        var seen = {}, out = [];
+        arr.forEach(function(n){ if(!seen[n]){ seen[n]=1; out.push(n); }});
+        return out;
+    }
 
     // ── CUV data loader (lazy; cached by Service Worker) ─
     var _cuv = null, _loading = false, _cbs = [];
@@ -214,16 +239,15 @@
         popup.style.left = Math.max(8, Math.min(left, maxLeft)) + 'px';
     }
 
-    function getVerses(cuv, vol, ch, v1, v2) {
+    function getVerses(cuv, vol, ch, verses) {
         var book = cuv[String(vol)];
         if (!book) return null;
         var chapter = book[String(ch)];
         if (!chapter) return null;
         var out = [];
-        var end = v2 || v1;
-        for (var v = v1; v <= end && v <= v1 + 9; v++) { // max 10 verses
+        verses.slice(0, 10).forEach(function(v) {  // 最多 10 节防爆
             if (chapter[String(v)]) out.push({v:v, text:chapter[String(v)]});
-        }
+        });
         return out.length ? out : null;
     }
 
@@ -237,12 +261,11 @@
     if (!col) return;
 
     var CJK_RE = /[一-鿿㐀-䶿]/;
-    function makeRefSpan(vol, ch, v1, v2, displayText, label) {
+    function makeRefSpan(vol, ch, verses, displayText, label) {
         return '<span class="scripture-ref"'
             + ' data-vol="' + vol + '"'
             + ' data-ch="' + ch + '"'
-            + ' data-v1="' + v1 + '"'
-            + (v2 ? ' data-v2="' + v2 + '"' : '')
+            + ' data-verses="' + verses.join(',') + '"'
             + (label ? ' data-label="' + escHtml(label) + '"' : '')
             + ' title="点击查看经文">'
             + escHtml(displayText) + '</span>';
@@ -286,7 +309,7 @@
             matches.push({
                 index: m.index, end: m.index + m[0].length,
                 vol: vol, ch: parseInt(m[2]),
-                v1: parseInt(m[3]), v2: m[4] ? parseInt(m[4]) : null,
+                verses: parseVerses(m[3], m[4], m[5]),
                 display: m[0], label: null
             });
         }
@@ -294,8 +317,8 @@
         if (PAGE_VOL) {
             BARE_RE.lastIndex = 0;
             while ((m = BARE_RE.exec(text)) !== null) {
-                var ch = parseInt(m[1]), v1 = parseInt(m[2]);
-                var v2 = m[3] ? parseInt(m[3]) : null;
+                var ch = parseInt(m[1]);
+                var verses = parseVerses(m[2], m[3], m[4]);
                 // Skip if overlaps with a named match
                 var overlap = false;
                 for (var i = 0; i < matches.length; i++) {
@@ -303,10 +326,13 @@
                     { overlap = true; break; }
                 }
                 if (overlap) continue;
-                var label = PAGE_BOOK_NAME + ch + '：' + v1 + (v2 ? '-' + v2 : '');
+                var vSuffix = verses.length > 1
+                    ? (verses[0] + '-' + verses[verses.length - 1])
+                    : String(verses[0]);
+                var label = PAGE_BOOK_NAME + ch + '：' + vSuffix;
                 matches.push({
                     index: m.index, end: m.index + m[0].length,
-                    vol: PAGE_VOL, ch: ch, v1: v1, v2: v2,
+                    vol: PAGE_VOL, ch: ch, verses: verses,
                     display: m[0], label: label
                 });
             }
@@ -319,7 +345,7 @@
         matches.forEach(function(mt) {
             if (mt.index < last) return; // skip overlaps
             html += escHtml(text.substring(last, mt.index));
-            html += makeRefSpan(mt.vol, mt.ch, mt.v1, mt.v2, mt.display, mt.label);
+            html += makeRefSpan(mt.vol, mt.ch, mt.verses, mt.display, mt.label);
             last = mt.end;
         });
         html += escHtml(text.substring(last));
@@ -335,7 +361,7 @@
         e.stopPropagation();
 
         var vol = +ref.dataset.vol, ch = +ref.dataset.ch;
-        var v1 = +ref.dataset.v1, v2 = ref.dataset.v2 ? +ref.dataset.v2 : null;
+        var verseNums = (ref.dataset.verses || '').split(',').map(function(s){ return +s; });
         // data-label holds the full "书名chapter：verse" for bare references
         var headerText = ref.dataset.label || ref.textContent;
 
@@ -345,7 +371,7 @@
             + '<div class="sp-loading">加载中…</div>');
 
         loadCUV(function(cuv) {
-            var verses = getVerses(cuv, vol, ch, v1, v2);
+            var verses = getVerses(cuv, vol, ch, verseNums);
             var inner = '<div class="sp-header">' + escHtml(headerText) + '</div>';
             if (verses && verses.length) {
                 verses.forEach(function(vv) {
