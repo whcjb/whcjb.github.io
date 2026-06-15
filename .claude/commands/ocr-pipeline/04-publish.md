@@ -147,21 +147,88 @@ commentary 段也以 `21 因为，他们虽然知道上帝...` 形式开头，�
 渲染时夹在 scripture-box 后面成为孤儿重复经文段（romans/11 中招）。
 2026-06-12 加入 `^\d+\s+["“”""][一-鿿]` 引号开头形式。
 
-**反例 2 (verse-opener commentary 误删)**：OCR 经常把
+**反例 2 (verse-opener commentary 跨页误删)**：OCR 跨页时经常把
 "N <verse-phrase>…… <commentary-start>" 这种 PDF verse-marker
-+ 经文短语 + 注释开头的混合行整段抓在一起，例如
-romans/12 page 260 起首：
++ 经文短语 + 注释开头的混合行整段抓在一起，例如 romans/12 p260：
 
-  1 弟兄们，我以上帝的慈悲劝你们我们知道不圣洁的人时
+```
+[OCR raw page 25/26 边界]
+9 上帝可以见证我…… 保罗凭他爱心的结果...他更不能特别
+<!-- PAGE 26 -->
+地由于自己的劳苦来促进他们的救恩...
+```
 
-此行 length < 80 且形如 N+space+CJK，sub-rule 3a 直接 drop。结果
-12:1 verse opener 整段消失，注释跳过 12:1，从"将身体献上"开始。
-**关键信号**：中文省略号 `……` 是 verse-phrase 与 commentary 分隔
-符。带 `……` 的 < 80 字符段不要 drop。2026-06-15 加入此规则。
+跨页**前段** (`9 上帝...他更不能特别`) 长度 < 80 + N+空格+CJK 形式
+→ sub-rule 3a 命中 → **整段删除**。
+跨页**后段** (`地由于...`) → 保留 → 段首单字 "地" 成孤儿。
 
-**修复**：form 3 length 阈值从 < 200 改为 < 80，超过 80 字符要靠
-`_is_bible_verse_text` 做 CUV 相似度 ≥ 0.7 才删。Romans 实战恢复 ~700
-行漏删内容。
+**关键信号**：中文省略号 `……` 是 verse-phrase 与 commentary 的分
+隔符。带 `……` 的 < 80 字符段不要 drop。2026-06-15 加入此规则。
+
+**修复 (前向)**：form 3 length 阈值 < 200 → < 80，> 80 字符要靠
+`_is_bible_verse_text` 做 CUV 相似度 ≥ 0.7 才删；< 80 字符且含
+`……` 也不删。新书 publish 不会再产生该 bug。
+
+---
+
+#### 已发布 .md 历史损坏 — 安全恢复方案 v2
+
+如果 publish 已经把 verse-opener 删掉、孤儿 continuation 留在
+published 里（romans 实测 71+ 处），不能用粗暴 fingerprint 匹配
+（会误插进 scripture-box `<p>` 里，2026-06-15 实测 378 处误插）。
+要用以下严格算法：
+
+**Step 1 — 候选孤儿段识别**（在 published）。段同时满足：
+- (a) 段首是 CJK 汉字（非 `#`/`<`/`*`/数字/空格）
+- (b) 段内不含 `<div class="scripture-box"` `<p class="scripture-ref"`
+  `<table` `<thead` `<tbody` `<h2`
+- (c) 段首 1 个 CJK 字符的"语义孤立度"：第 1 字符 + 第 2 字符**不
+  在常见词头白名单**（你/我们/他/上帝/保罗/基督/虽然/然而/因为/
+  所以/那/这/第/其/若/当/从/为/按/与/在/就/要/如/虽/所/本/又…）
+- (d) 段前一段末尾字符不是结句符（`.。！？；;:`），暗示是跨页延续
+
+**Step 2 — OCR raw 跨页前段定位**：扫 `<!-- PAGE N -->`，对每个
+PAGE 注释取注释后第 1 段前 12 字符与 published 候选段前 12 字符
+**完全一致** → 锁定，取注释前最后一段为跨页前段。
+
+**Step 3 — 跨页前段必须是 verse-opener**：
+- 段首 `^\d{1,2}\s+[一-鿿]`（数字+空格+CJK）
+- 段末非结句符（开放式被切）
+- 段长 30–500 字符
+- 含 `……`/`…` 或 commentary 关键词（保罗/我们/在此/这里/本节）
+
+**Step 4 — 双向唯一性**（关键防线）：
+- OCR raw 跨页后段前 12 字符在所有 calvin/<book>/*.md 中**只出现 1 次**
+  （否则放弃，避免误匹配 scripture-box 内经文）
+- published 候选段位置往前 200 字符内**不含** `</div>`（防 scripture-box
+  出口附近误判）
+
+**Step 5 — 构造新段**：
+```
+**<书名> <章>:<节>。** ***<verse-phrase>*** <commentary><orphan段原内容>
+```
+- 章号从 published 文件路径推断
+- 节号 = OCR raw 跨页前段的数字
+- verse phrase = 数字后到第一个 `……`/`…` 之间
+- commentary = `……` 后内容
+- 跨页前段末尾的截断词（如"他更不能特别"）与孤儿首字符（"地"）**直接
+  连成完整词**（"特别地"）
+
+**Step 6 — Dry-run 报告**强制：默认 dry-run；加 `--apply` 才改文件。
+每处打印 (文件:行号, OCR 来源段前 60 字, published 孤儿段前 60 字,
+拟生成新段)，用户审核后再执行。
+
+**Step 7 — 三层保险**：
+1. `git stash` 当前未提交改动
+2. `--apply` 后立刻 `bundle exec jekyll build`，build error → 自动
+   `git checkout` 回退
+3. 单文件 diff > 50 处插入 → 自动 abort（防止规模化误判）
+4. 抽样 5 处随机渲染验证 + 已修复段（如 12:1）保持不变
+
+**不在范围内（明确放弃）**：
+- 整章误归位（romans 16 等需另议）
+- A 类全丢（OCR raw 都没有，无法恢复）
+- 非 verse-opener 跨页（纯 intro 段跨页）
 
 ### 4. OCR-fused running headers（页眉与正文拼成一行）
 
