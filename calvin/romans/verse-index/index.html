@@ -40,11 +40,12 @@ sitemap: false
     border-bottom: 1px solid #ece8d8;
   }
   .vi-ch-name {
-    flex: 0 0 88px;
-    font-size: 14px;
-    font-weight: 600;
+    flex: 0 0 38px;
+    font-size: 15px;
+    font-weight: 700;
     color: #2e7d32;
-    letter-spacing: 0.02em;
+    text-align: center;
+    font-family: Georgia, serif;
   }
   .vi-pills {
     flex: 1 1 auto;
@@ -92,8 +93,9 @@ sitemap: false
 
   @media (max-width: 640px) {
     .vi-title { font-size: 19px; }
-    .vi-ch-name { flex: 0 0 76px; font-size: 13px; }
-    .vi-pill { min-width: 28px; height: 24px; padding: 0 7px; font-size: 12px; }
+    .vi-ch { gap: 8px; }
+    .vi-ch-name { flex: 0 0 28px; font-size: 14px; }
+    .vi-pill { min-width: 26px; height: 23px; padding: 0 6px; font-size: 11.5px; border-radius: 11px; }
   }
 </style>
 
@@ -113,7 +115,7 @@ sitemap: false
 
       <div class="vi-list">
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 1</div>
+          <div class="vi-ch-name" title="罗马书 1">1</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/1/#romans-1-1" title="罗马书 1:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/1/#romans-1-2" title="罗马书 1:2">2</a>
@@ -149,7 +151,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 2</div>
+          <div class="vi-ch-name" title="罗马书 2">2</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/2/#romans-2-1" title="罗马书 2:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/2/#romans-2-2" title="罗马书 2:2">2</a>
@@ -182,7 +184,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 3</div>
+          <div class="vi-ch-name" title="罗马书 3">3</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/3/#romans-3-1" title="罗马书 3:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/3/#romans-3-2" title="罗马书 3:2">2</a>
@@ -216,7 +218,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 4</div>
+          <div class="vi-ch-name" title="罗马书 4">4</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/4/#romans-4-1" title="罗马书 4:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/4/#romans-4-2" title="罗马书 4:2">2</a>
@@ -242,7 +244,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 5</div>
+          <div class="vi-ch-name" title="罗马书 5">5</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/5/#romans-5-1" title="罗马书 5:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/5/#romans-5-2" title="罗马书 5:2">2</a>
@@ -267,7 +269,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 6</div>
+          <div class="vi-ch-name" title="罗马书 6">6</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/6/#romans-6-1" title="罗马书 6:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/6/#romans-6-2" title="罗马书 6:2">2</a>
@@ -294,7 +296,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 7</div>
+          <div class="vi-ch-name" title="罗马书 7">7</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/7/#romans-7-1" title="罗马书 7:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/7/#romans-7-2" title="罗马书 7:2">2</a>
@@ -321,7 +323,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 8</div>
+          <div class="vi-ch-name" title="罗马书 8">8</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/8/#romans-8-1" title="罗马书 8:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/8/#romans-8-2" title="罗马书 8:2">2</a>
@@ -365,7 +367,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 9</div>
+          <div class="vi-ch-name" title="罗马书 9">9</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/9/#romans-9-1" title="罗马书 9:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/9/#romans-9-2" title="罗马书 9:2">2</a>
@@ -399,7 +401,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 10</div>
+          <div class="vi-ch-name" title="罗马书 10">10</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/10/#romans-10-1" title="罗马书 10:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/10/#romans-10-2" title="罗马书 10:2">2</a>
@@ -423,7 +425,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 11</div>
+          <div class="vi-ch-name" title="罗马书 11">11</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/11/#romans-11-1" title="罗马书 11:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/11/#romans-11-4" title="罗马书 11:4">4</a>
@@ -458,7 +460,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 12</div>
+          <div class="vi-ch-name" title="罗马书 12">12</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/12/#romans-12-1" title="罗马书 12:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/12/#romans-12-2" title="罗马书 12:2">2</a>
@@ -482,7 +484,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 13</div>
+          <div class="vi-ch-name" title="罗马书 13">13</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/13/#romans-13-1" title="罗马书 13:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/13/#romans-13-2" title="罗马书 13:2">2</a>
@@ -501,7 +503,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 14</div>
+          <div class="vi-ch-name" title="罗马书 14">14</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/14/#romans-14-1" title="罗马书 14:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/14/#romans-14-2" title="罗马书 14:2">2</a>
@@ -525,7 +527,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 15</div>
+          <div class="vi-ch-name" title="罗马书 15">15</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/15/#romans-15-1" title="罗马书 15:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/15/#romans-15-2" title="罗马书 15:2">2</a>
@@ -559,7 +561,7 @@ sitemap: false
           </div>
         </div>
         <div class="vi-ch">
-          <div class="vi-ch-name">罗马书 16</div>
+          <div class="vi-ch-name" title="罗马书 16">16</div>
           <div class="vi-pills">
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/16/#romans-16-1" title="罗马书 16:1">1</a>
             <a class="vi-pill" href="{{ site.baseurl }}/calvin/romans/16/#romans-16-2" title="罗马书 16:2">2</a>
