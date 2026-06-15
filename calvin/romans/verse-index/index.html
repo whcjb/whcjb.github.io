@@ -91,9 +91,22 @@ sitemap: false
   }
   .vi-pills {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 6px;
+    overflow-x: auto;
+    padding: 2px 2px 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #c8e6c9 transparent;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
   }
+  .vi-pills::-webkit-scrollbar { height: 6px; }
+  .vi-pills::-webkit-scrollbar-track { background: transparent; }
+  .vi-pills::-webkit-scrollbar-thumb {
+    background: #c8e6c9;
+    border-radius: 3px;
+  }
+  .vi-pills::-webkit-scrollbar-thumb:hover { background: #a5d6a7; }
   .vi-pill {
     flex: 0 0 auto;
     display: inline-flex;
@@ -110,6 +123,7 @@ sitemap: false
     font-weight: 600;
     text-decoration: none;
     transition: all .15s ease;
+    scroll-snap-align: start;
   }
   .vi-pill:hover {
     background: #4caf50;
