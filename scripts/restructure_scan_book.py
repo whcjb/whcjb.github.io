@@ -183,9 +183,13 @@ def _strip_bible_text_dumps(text: str, book_cn: str | None = None,
         # Form 3: Bible-text fragment — tighter check now.
         if "**" not in p and _looks_like_bible_fragment(p):
             drop = False
+            # 中文省略号 …… 是 verse-opener commentary 的强信号：
+            # "1 弟兄们，我以上帝的慈悲劝你们…… 我们知道不圣洁的人时常..."
+            # 这种行不是纯 Bible dump，是经文短语+注释 mix。保留。
+            has_ellipsis = '……' in p
             # Sub-rule 3a: very short fragment (< 80 chars) — likely a
             # split Bible-text snippet (Galatians-style).
-            if len(p) < 80:
+            if len(p) < 80 and not has_ellipsis:
                 drop = True
             # Sub-rule 3b: paragraph content closely matches the CUV text
             # for the opener verse — definitely Bible, drop.

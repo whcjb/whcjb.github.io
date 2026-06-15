@@ -147,6 +147,18 @@ commentary 段也以 `21 因为，他们虽然知道上帝...` 形式开头，�
 渲染时夹在 scripture-box 后面成为孤儿重复经文段（romans/11 中招）。
 2026-06-12 加入 `^\d+\s+["“”""][一-鿿]` 引号开头形式。
 
+**反例 2 (verse-opener commentary 误删)**：OCR 经常把
+"N <verse-phrase>…… <commentary-start>" 这种 PDF verse-marker
++ 经文短语 + 注释开头的混合行整段抓在一起，例如
+romans/12 page 260 起首：
+
+  1 弟兄们，我以上帝的慈悲劝你们我们知道不圣洁的人时
+
+此行 length < 80 且形如 N+space+CJK，sub-rule 3a 直接 drop。结果
+12:1 verse opener 整段消失，注释跳过 12:1，从"将身体献上"开始。
+**关键信号**：中文省略号 `……` 是 verse-phrase 与 commentary 分隔
+符。带 `……` 的 < 80 字符段不要 drop。2026-06-15 加入此规则。
+
 **修复**：form 3 length 阈值从 < 200 改为 < 80，超过 80 字符要靠
 `_is_bible_verse_text` 做 CUV 相似度 ≥ 0.7 才删。Romans 实战恢复 ~700
 行漏删内容。
