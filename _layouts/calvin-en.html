@@ -454,6 +454,19 @@ a.commentary-anchor {
 .calvin-en-content .verse-anchor {
   cursor: pointer;
 }
+/* Hidden anchors (h2 with .verse-anchor or .scripture-anchor) — 占 0 高度但保留 layout
+   位置，让 #romans-N-M 类锚点能 scroll-into-view 到注释段顶部。 */
+.calvin-en-content h2.verse-anchor,
+.calvin-en-content h2.scripture-anchor {
+  display: block;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  scroll-margin-top: 80px;
+}
 </style>
 
 <script>

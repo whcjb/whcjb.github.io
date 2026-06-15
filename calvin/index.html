@@ -2,31 +2,24 @@
 layout: default
 title: 加尔文圣经注释
 description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读。包含诗篇、罗马书、约翰福音、歌罗西书、提摩太前后书、提多书、腓利门书、雅各书、彼得前后书、约翰一书、犹大书及福音合参注释。改革宗经典释经著作免费阅读。"
-header-img: img/psalm-bg-mountain.jpg
 ---
 
-<!-- Page Header -->
-<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/psalm-bg-mountain.jpg')">
+<!-- Hero -->
+<header class="calvin-hero">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>加尔文圣经注释</h1>
-                    <span class="subheading">约翰·加尔文（John Calvin）著</span>
-                </div>
+            <div class="col-lg-10 col-lg-offset-1 text-center">
+                <h1 class="calvin-hero-title">加&nbsp;&nbsp;尔&nbsp;&nbsp;文&nbsp;&nbsp;圣&nbsp;&nbsp;经&nbsp;&nbsp;注&nbsp;&nbsp;释</h1>
+                <div class="calvin-hero-rule"></div>
+                <p class="calvin-hero-subtitle">Commentaries of John Calvin&nbsp;&nbsp;·&nbsp;&nbsp;1509–1564</p>
             </div>
         </div>
     </div>
 </header>
 
-<div class="container">
+<div class="container calvin-main">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-            <p class="text-muted" style="margin-bottom:30px;">
-                约翰·加尔文（1509–1564）是改革宗神学最重要的奠基者之一，其圣经注释以严谨的文法分析、忠实于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。翻译及整理工作进行中，如有不便，敬请谅解。
-                已经整理和翻译的书卷包括-马太马可路加对观福音注释，约翰福音注释，罗马书注释，以弗所书注释，腓立比书注释，歌罗西书注释。
-            </p>
+        <div class="col-lg-10 col-lg-offset-1">
 
             {% assign all_chapter_pages = site.pages | where: "layout", "calvin-chapter" %}
             {% assign all_calvin_en_pages = site.pages | where: "layout", "calvin-en" %}
@@ -34,72 +27,127 @@ header-img: img/psalm-bg-mountain.jpg
             {% assign books_en = all_calvin_en_pages | map: "book_id" %}
             {% assign books_with_content = books_ch | concat: books_en | uniq %}
 
-            <!-- 旧约 -->
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">旧　约</h3>
-            <div class="row calvin-book-grid" style="margin-bottom:40px;">
-                {% for book in site.data.calvin_books.old_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if books_with_content contains book.id %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
-                    {% else %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
-                    {% endif %}
-                        {{ book.name }}
-                        <small>（{{ book.chapters }}章）</small>
-                    </a>
+            {% comment %} 进度统计（中文版）{% endcomment %}
+            {% assign ot_total = site.data.calvin_books.old_testament | size %}
+            {% assign nt_total = 0 %}
+            {% for b in site.data.calvin_books.new_testament %}{% unless b.is_index %}{% assign nt_total = nt_total | plus: 1 %}{% endunless %}{% endfor %}
+            {% assign ot_done = 0 %}
+            {% for b in site.data.calvin_books.old_testament %}{% if books_with_content contains b.id %}{% assign ot_done = ot_done | plus: 1 %}{% endif %}{% endfor %}
+            {% assign nt_done = 0 %}
+            {% for b in site.data.calvin_books.new_testament %}{% unless b.is_index %}{% if books_with_content contains b.id %}{% assign nt_done = nt_done | plus: 1 %}{% endif %}{% endunless %}{% endfor %}
+            {% assign total_done = ot_done | plus: nt_done %}
+
+            <!-- 简介 -->
+            <p class="calvin-intro">
+                约翰·加尔文是改革宗神学最重要的奠基者之一。其圣经注释以严谨的文法分析与忠于原文的释经方法著称，至今仍是改革宗教会宝贵的属灵遗产。本站翻译及整理工作仍在进行中。
+            </p>
+
+            <!-- 进度行 -->
+            <div class="calvin-progress">
+                <div class="calvin-progress-stat">
+                    <span class="calvin-progress-num">{{ total_done }}</span>
+                    <span class="calvin-progress-label">已译卷数</span>
                 </div>
-                {% endfor %}
+                <div class="calvin-progress-divider"></div>
+                <div class="calvin-progress-stat">
+                    <span class="calvin-progress-num">{{ ot_done }}<span class="calvin-progress-of">&nbsp;/&nbsp;{{ ot_total }}</span></span>
+                    <span class="calvin-progress-label">旧约</span>
+                </div>
+                <div class="calvin-progress-divider"></div>
+                <div class="calvin-progress-stat">
+                    <span class="calvin-progress-num">{{ nt_done }}<span class="calvin-progress-of">&nbsp;/&nbsp;{{ nt_total }}</span></span>
+                    <span class="calvin-progress-label">新约</span>
+                </div>
             </div>
 
-            <!-- English — Old Testament -->
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">Old Testament</h3>
-            <div class="row calvin-book-grid" style="margin-bottom:40px;">
-                {% for book in site.data.calvin_books.english_old_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+            <!-- 旧约 -->
+            <section class="calvin-section">
+                <h3 class="calvin-section-title">
+                    <span class="calvin-section-zh">旧&nbsp;约</span>
+                    <span class="calvin-section-en">Old Testament</span>
+                </h3>
+
+                <div class="calvin-subsection-label">中文版</div>
+                <div class="calvin-book-grid">
+                    {% for book in site.data.calvin_books.old_testament %}
                     {% if books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
-                    {% else %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
-                    {% endif %}
-                        {{ book.name }}
-                        <small>（{{ book.chapters }} chs）</small>
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} 章</span>
                     </a>
+                    {% else %}
+                    <span class="calvin-book-btn calvin-book-btn--pending">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} 章</span>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% endfor %}
-            </div>
+
+                <div class="calvin-subsection-label">English Edition</div>
+                <div class="calvin-book-grid">
+                    {% for book in site.data.calvin_books.english_old_testament %}
+                    {% if books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} chs</span>
+                    </a>
+                    {% else %}
+                    <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} chs</span>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
 
             <!-- 新约 -->
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">新　约</h3>
-            <div class="row calvin-book-grid" style="margin-bottom:40px;">
-                {% for book in site.data.calvin_books.new_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
-                    {% if book.is_index or books_with_content contains book.id %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
-                    {% else %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
-                    {% endif %}
-                        {{ book.name }}
-                        {% if book.is_index %}<small>📖</small>{% else %}<small>（{{ book.chapters }}章）</small>{% endif %}
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
+            <section class="calvin-section">
+                <h3 class="calvin-section-title">
+                    <span class="calvin-section-zh">新&nbsp;约</span>
+                    <span class="calvin-section-en">New Testament</span>
+                </h3>
 
-            <!-- English — New Testament -->
-            <h3 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:20px;">New Testament</h3>
-            <div class="row calvin-book-grid">
-                {% for book in site.data.calvin_books.english_new_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                <div class="calvin-subsection-label">中文版</div>
+                <div class="calvin-book-grid">
+                    {% for book in site.data.calvin_books.new_testament %}
                     {% if book.is_index or books_with_content contains book.id %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
-                    {% else %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn">
-                    {% endif %}
-                        {{ book.name }}
-                        {% if book.is_index %}<small>📖</small>{% else %}<small>（{{ book.chapters }} chs）</small>{% endif %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content{% if book.is_index %} calvin-book-btn--index{% endif %}">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{% if book.is_index %}索引{% else %}{{ book.chapters }} 章{% endif %}</span>
                     </a>
+                    {% else %}
+                    <span class="calvin-book-btn calvin-book-btn--pending">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} 章</span>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% endfor %}
+
+                <div class="calvin-subsection-label">English Edition</div>
+                <div class="calvin-book-grid">
+                    {% for book in site.data.calvin_books.english_new_testament %}
+                    {% if book.is_index or books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en{% if book.is_index %} calvin-book-btn--index{% endif %}">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{% if book.is_index %}index{% else %}{{ book.chapters }} chs{% endif %}</span>
+                    </a>
+                    {% else %}
+                    <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">
+                        <span class="calvin-book-name">{{ book.name }}</span>
+                        <span class="calvin-book-meta">{{ book.chapters }} chs</span>
+                    </span>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </section>
+
+            <!-- 页脚装饰 -->
+            <div class="calvin-footnote">
+                <span class="calvin-footnote-ornament">❦</span>
+                <p>Soli Deo Gloria&nbsp;&nbsp;·&nbsp;&nbsp;愿荣耀独归于神</p>
             </div>
 
         </div>
@@ -107,42 +155,255 @@ header-img: img/psalm-bg-mountain.jpg
 </div>
 
 <style>
-.calvin-book-btn {
-    display: block;
-    padding: 10px 12px;
-    background: #6b7b8d;
-    border: 1px solid #5a6a7a;
-    border-radius: 4px;
-    color: rgba(255,255,255,0.7) !important;
-    text-decoration: none !important;
-    font-size: 14px;
-    line-height: 1.4;
-    transition: background 0.2s, border-color 0.2s;
-    pointer-events: none;
-    cursor: default;
+:root {
+    --calvin-bg: #faf7f0;
+    --calvin-ink: #3a342c;
+    --calvin-ink-light: #8a8275;
+    --calvin-primary: #2d4a3a;
+    --calvin-primary-dark: #1f3527;
+    --calvin-gold: #c9a96e;
+    --calvin-rule: #d4c5a8;
+    --calvin-pending-border: #d8cdb8;
+    --calvin-pending-text: #a89e8c;
 }
-.calvin-book-btn small {
+
+/* 整体页面底色：让页面隐隐透出米色 */
+body { background-color: var(--calvin-bg); }
+
+/* ── Hero ─────────────────────────────────────────── */
+.calvin-hero {
+    background: linear-gradient(180deg, #2d4a3a 0%, #243d30 100%);
+    color: #f0ead8;
+    padding: 100px 0 80px;
+    margin-bottom: 0;
+    border-bottom: 4px double var(--calvin-gold);
+}
+.calvin-hero-title {
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', 'STSong', '宋体', serif;
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: 0.15em;
+    margin: 0;
+    color: #f5efd9;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+.calvin-hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--calvin-gold);
+    margin: 24px auto;
+}
+.calvin-hero-subtitle {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #d4c5a8;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+/* ── 主内容容器 ───────────────────────────────────── */
+.calvin-main {
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+/* ── 简介段 ───────────────────────────────────────── */
+.calvin-intro {
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 15.5px;
+    line-height: 1.95;
+    color: var(--calvin-ink);
+    text-align: justify;
+    margin: 0 auto 40px;
+    max-width: 720px;
+    text-indent: 2em;
+}
+
+/* ── 进度行 ───────────────────────────────────────── */
+.calvin-progress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    padding: 22px 16px;
+    margin: 0 auto 60px;
+    max-width: 720px;
+    background: #fff;
+    border: 1px solid var(--calvin-rule);
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(58,52,44,0.04);
+}
+.calvin-progress-stat {
+    text-align: center;
+    flex: 1;
+}
+.calvin-progress-num {
     display: block;
-    color: rgba(255,255,255,0.45);
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 28px;
+    color: var(--calvin-primary);
+    font-weight: 600;
+    line-height: 1.1;
+}
+.calvin-progress-of {
+    font-size: 16px;
+    color: var(--calvin-ink-light);
+    font-weight: 400;
+}
+.calvin-progress-label {
+    display: block;
     font-size: 12px;
+    color: var(--calvin-ink-light);
+    letter-spacing: 0.2em;
+    margin-top: 6px;
 }
+.calvin-progress-divider {
+    width: 1px;
+    height: 36px;
+    background: var(--calvin-rule);
+}
+
+/* ── Section ─────────────────────────────────────── */
+.calvin-section { margin-bottom: 50px; }
+.calvin-section-title {
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: var(--calvin-ink);
+    margin: 0 0 24px;
+    padding: 0 0 12px 16px;
+    border-left: 4px solid var(--calvin-primary);
+    border-bottom: 1px solid var(--calvin-rule);
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+}
+.calvin-section-zh { letter-spacing: 0.1em; }
+.calvin-section-en {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--calvin-ink-light);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+}
+
+/* ── 子段标签 ─────────────────────────────────────── */
+.calvin-subsection-label {
+    font-size: 11px;
+    color: var(--calvin-ink-light);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin: 28px 0 14px;
+    padding-left: 4px;
+    font-family: 'Georgia', serif;
+}
+.calvin-subsection-label:first-of-type { margin-top: 8px; }
+
+/* ── 书卷按钮网格 ─────────────────────────────────── */
+.calvin-book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+}
+.calvin-book-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 12px 14px;
+    min-height: 62px;
+    border-radius: 3px;
+    text-decoration: none !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
+}
+.calvin-book-btn--en {
+    font-family: 'Georgia', 'Times New Roman', serif;
+}
+.calvin-book-name {
+    font-size: 15px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+}
+.calvin-book-meta {
+    font-size: 11px;
+    margin-top: 4px;
+    letter-spacing: 0.05em;
+    opacity: 0.75;
+    font-family: 'Georgia', serif;
+}
+
+/* 已译：墨绿填充 */
 .calvin-book-btn--has-content {
-    background: #e8f5e9;
-    border-color: #4caf50;
-    color: #2e7d32 !important;
-    font-weight: bold;
-    pointer-events: auto;
-    cursor: pointer;
-}
-.calvin-book-btn--has-content small {
-    color: #66bb6a;
+    background: #fff;
+    border: 1px solid var(--calvin-primary);
+    color: var(--calvin-primary) !important;
+    box-shadow: 0 1px 2px rgba(45,74,58,0.06);
 }
 .calvin-book-btn--has-content:hover {
-    background: #4caf50;
-    border-color: #4caf50;
-    color: #fff !important;
+    background: var(--calvin-primary);
+    color: #f5efd9 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(45,74,58,0.18);
+    text-decoration: none !important;
 }
-.calvin-book-btn--has-content:hover small {
-    color: rgba(255,255,255,0.8);
+.calvin-book-btn--has-content:hover .calvin-book-meta { opacity: 0.85; }
+
+/* 索引类型加金色印记 */
+.calvin-book-btn--index {
+    background: #fff8e8;
+    border-color: var(--calvin-gold);
+    color: #8b6914 !important;
+}
+.calvin-book-btn--index:hover {
+    background: var(--calvin-gold);
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(201,169,110,0.25);
+}
+
+/* 待译：浅描边，禁用交互 */
+.calvin-book-btn--pending {
+    background: transparent;
+    border: 1px dashed var(--calvin-pending-border);
+    color: var(--calvin-pending-text) !important;
+    cursor: default;
+}
+.calvin-book-btn--pending .calvin-book-meta { opacity: 0.7; }
+
+/* ── 页脚装饰 ─────────────────────────────────────── */
+.calvin-footnote {
+    text-align: center;
+    margin: 70px 0 30px;
+    color: var(--calvin-ink-light);
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+}
+.calvin-footnote-ornament {
+    display: block;
+    font-size: 22px;
+    color: var(--calvin-gold);
+    margin-bottom: 10px;
+}
+.calvin-footnote p { margin: 0; }
+
+/* ── 响应式 ───────────────────────────────────────── */
+@media (max-width: 768px) {
+    .calvin-hero { padding: 70px 0 55px; }
+    .calvin-hero-title { font-size: 30px; letter-spacing: 0.1em; }
+    .calvin-hero-subtitle { font-size: 13px; }
+    .calvin-main { padding-top: 35px; }
+    .calvin-intro { font-size: 14.5px; line-height: 1.85; }
+    .calvin-progress { gap: 12px; padding: 16px 8px; }
+    .calvin-progress-num { font-size: 22px; }
+    .calvin-progress-of { font-size: 13px; }
+    .calvin-progress-label { font-size: 11px; letter-spacing: 0.15em; }
+    .calvin-section-title { font-size: 21px; flex-wrap: wrap; gap: 8px; }
+    .calvin-section-en { font-size: 14px; }
+    .calvin-book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+    .calvin-book-btn { padding: 10px 12px; min-height: 56px; }
+    .calvin-book-name { font-size: 14px; }
 }
 </style>

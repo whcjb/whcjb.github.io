@@ -30,7 +30,7 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-plugins: [jekyll-paginate, jekyll-sitemap]
+plugins: [jekyll-paginate]
 
 
 
@@ -94,7 +94,7 @@ friends: [
         href: "http://brc.bensmark.org/brc/Pages/web/Home.aspx"
     },
 ]
-# sitemap 由 jekyll-sitemap 插件自动生成
+# sitemap 由手动维护的 sitemap.xml / sitemap-priority.xml 提供，不再使用 jekyll-sitemap 插件
 
 defaults:
   - scope:
