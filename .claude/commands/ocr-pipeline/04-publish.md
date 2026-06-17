@@ -503,6 +503,74 @@ python3 scripts/audit_verse_completeness.py --book romans
 
 理由：手工 fix 不固化 → 一次 `git checkout` 全部丢失（2026-06-17 romans 实测：一上午所有修复因 git checkout HEAD 回滚全部抹掉，用户怒批）。**修了就 commit + 写脚本**，永远不要靠记忆和手工记录。
 
+### 8.8 ⚠️ Sub-heading 段归位（无数字前缀的 verse 注释段）
+
+`relocate_misplaced_verse_commentary.py` 用 `^N\s+CJK` 数字前缀识别 verse 归属。
+但 verse 注释段中除了主体段（带 `N <经文 phrase> …` 数字前缀），还有 **sub-heading 段**：
+
+```
+**罗马书 9:30。** 这样我们可说什么呢…              ← 主体段（带数字 30）
+那本来不追求义的外邦人…… 这里一方面外邦人本是…   ← sub-heading 段，无数字前缀
+在本节的前半句，保罗的目的乃是…                  ← sub-heading 段，无数字前缀
+保罗在此明明讲到公义，因为除了义…                ← sub-heading 段，无数字前缀
+```
+
+publish 脚本对这些**无数字前缀**段的 verse 归属判断是 "属于 cur_sec"（继承上一段的 verse）。
+跨页错位 + cur_sec 状态错乱时，整组 sub-heading 段会被全部归到错的 verse（实战 2026-06-17 罗马书 9:30 注释 3 段被归到 9:29 后）。
+
+**修复 (前向)**：`detect_paragraph_verse` 加 CUV phrase 相似度匹配——对无数字前缀段，
+用该章每节经文 phrase 跟段首前 30 字做 fuzzy 匹配（threshold 0.7）。例如 "那本来不追求义的外邦人……" 高匹配 verse 9:30 经文 "那本来不追求义的外邦人反得了义" → 该段归 9:30 区块。
+
+**audit (已有 .md 检查)**：见下 Gate-9，扫描"主体段 + sub-heading 段不在同一 verse 区块"。
+
+### 8.9 ⚠️ 整段双重出现 (verse 区块内 + anchor 之前同时出现)
+
+publish 时 sub-heading 段错位 + 主体段双重生成的复合 bug：
+
+```
+[verse 9:29 anchor]
+[verse 9:29 注释]
+那本来不追求义的外邦人……      ← verse 9:30 sub-heading 错位
+在本节的前半句…              ← verse 9:30 sub-heading 错位
+保罗在此明明讲到公义…          ← verse 9:30 sub-heading 错位
+[scripture-box 9:30-33]
+[verse 9:31 anchor]            ← anchor 倒序!
+[verse 9:30 anchor]
+**罗马书 9:30。** 这样我们可说…  ← 主体段 (正确位置)
+在本节的前半句…                ← 重复 (跟前面 sub-heading 重复)
+```
+
+实战 2026-06-17 罗马书 9.md：用户截图 verse 9:9 后看到孤立"上帝，保罗现在就以人所能了解的说法…"段——是 verse 9:30 主体段被截断 + 错位到 verse 9:29 之后；正确位置 (L322) 又有完整主体段。
+
+**症状识别**：grep "^\*\*罗马书 N:V。\*\*" 同一 (N,V) 出现 2+ 次 → 双重出现。
+
+**修复**：删错位副本（在 anchor 之前的版本），保留正确位置（anchor 之后）。
+
+### 8.A ⚠️ verse-anchor 顺序倒置（同章 anchor 必须递增）
+
+publish 偶尔产生：
+
+```
+<h2 class="verse-anchor" id="romans-9-31">罗马书 9:31</h2>
+<h2 class="verse-anchor" id="romans-9-30">罗马书 9:30</h2>
+**罗马书 9:30。** ...
+```
+
+anchor 9:31 出现在 anchor 9:30 之前——前端导航跳转到错误位置。
+
+**audit (Gate-10)**：
+
+```python
+# 同章 anchor 顺序必须严格递增
+for ch in chapters:
+    seq = re.findall(rf'class="verse-anchor"\s+id="romans-{ch}-(\d+)"', text)
+    seq = [int(v) for v in seq]
+    for i in range(len(seq)-1):
+        assert seq[i] < seq[i+1], f'ch{ch}: anchor {seq[i]} > {seq[i+1]}'
+```
+
+应 0 失败再 commit.
+
 ### 8. Bible verse-count 表
 
 ```python
@@ -626,6 +694,52 @@ PY
 # Gate-6: Bible-text dump（OCR 抓整章 Bible 全段）
 grep -lE '^[①②③④⑤⑥⑦⑧⑨⑩]{5,}' calvin/<book>/*.md   # 应空
 
+# Gate-9: verse 主体段双重出现 (publish 错位副本)
+python3 -c "
+import re
+from pathlib import Path
+for p in sorted(Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    # 同一 verse 的 ** 主体段标记出现 2+ 次 → 错位副本
+    from collections import Counter
+    verses = re.findall(r'\*\*<书名>\s+(\d+:\d+)。\*\*', text)
+    dups = [v for v, n in Counter(verses).items() if n > 1]
+    if dups: print(f'{p.name}: 双重 verse 主体段 {dups}')
+"
+# 应无输出
+
+# Gate-10: verse-anchor 顺序倒置 (同章应严格递增)
+python3 -c "
+import re
+from pathlib import Path
+for p in sorted(Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    ch = int(p.stem)
+    seq = [int(v) for v in re.findall(rf'class=\"verse-anchor\"\s+id=\"<book>-{ch}-(\d+)\"', text)]
+    for i in range(len(seq)-1):
+        if seq[i] >= seq[i+1]:
+            print(f'{p.name}: anchor {ch}:{seq[i]} >= {ch}:{seq[i+1]}')
+"
+# 应无输出
+
+# Gate-11: verse 主体段位置早于其 anchor (publish 错位 root cause)
+python3 -c "
+import re
+from pathlib import Path
+for p in sorted(Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    ch = int(p.stem)
+    for m in re.finditer(rf'\*\*<书名>\s+{ch}:(\d+)。\*\*', text):
+        v = m.group(1)
+        # 找该 verse 的 anchor 位置
+        am = re.search(rf'class=\"verse-anchor\"\s+id=\"<book>-{ch}-{v}\"', text)
+        if am and am.start() > m.start():
+            print(f'{p.name}: ch{ch}:{v} 主体段在 anchor 之前')
+"
+# 应无输出
 ```
 
 ### 软 gate（不阻塞，但要扫一眼）
