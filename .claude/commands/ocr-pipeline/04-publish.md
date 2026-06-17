@@ -846,6 +846,60 @@ grep -l "<可能续文关键词>" calvin_raw/<book>-scan/ocr/*.md
 此时 OCR raw 该页确实不存在 → 才可从英文版翻译，且翻译要承认是补译，不能
 说成原中文。其他所有情况一律按 OCR raw 找。
 
+### ⚠️ Gate-14：跨页强分段（OCR 跨页 → publish 把同段断成两段）
+
+**Root cause**：`restructure_scan_book.py` 把每个 OCR per-page md 文件独立
+读取，page 文件之间内容自然以 `\n\n` 分隔。当 PDF 一段跨两页（OCR 把同段
+切到两个 page 文件）时，publish 把它当成两个段落，破坏了原段落结构。
+
+**实战案例**（2026-06-17 罗马书 10:5）：
+- PDF 物理页 221 末："...愚昧的罗马天主教徒想以空洞的许愿来证明功德的效果，
+  是极其可憎的。"（同段未完）
+- PDF 物理页 222 头："他们说：'上帝并没有徒然地将生命应许给敬拜他的人。'..."
+  （承上"罗马天主教徒"继续论述）
+- publish 后 10.md 两段被 `\n\n` 隔开，破坏阅读节奏
+- 用户截图："原文这里没有分段，你怎么在这里分段了"
+
+**检测规则**（detect-only，不自动合并以免误合）：
+- 两个相邻段（中间 `\n\n`），都不以 `<` / `#` / `**` / `[^` / `*` / `|` 开头
+- 前段最后非空字符**不在结句符号集** `。 ！ ？ ； " " 」 ） 】 > \n`
+- 下段开头是**连接词**（"但 / 然而 / 因此 / 所以 / 又 / 再者 / 此外 / 故 /
+  他们说 / 又如 / 即使 / 何况 / 至于 / 不过 / 可是 / 况且 / 于是" 等）
+
+```python
+python3 -c "
+import re, pathlib
+CONNECTORS = ('他们说', '但', '然而', '因此', '所以', '又', '再者', '故',
+              '于是', '此外', '可是', '不过', '至于', '虽然', '从而', '由此',
+              '另外', '其次', '况且', '尚且', '即使', '何况')
+ENDERS = ('。', '！', '？', '；', '\"', '\"', '」', '）', '】', '>', '\n')
+for p in sorted(pathlib.Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    paras = text.split('\n\n')
+    for i in range(len(paras)-1):
+        prev, nxt = paras[i].strip(), paras[i+1].strip()
+        if not prev or not nxt: continue
+        if prev.startswith(('<','#','**','[^','*','|','{:','---')): continue
+        if nxt.startswith(('<','#','**','[^','*','|','{:','---')): continue
+        if prev[-1] in ENDERS: continue
+        for c in CONNECTORS:
+            if nxt.startswith(c):
+                line = text[:text.find(paras[i+1])].count(chr(10))+1
+                print(f'{p.name} L{line}  ...{prev[-25:]} | {nxt[:25]}...')
+                break
+"
+```
+
+命中的需人工核查：对照 calvin_raw/<book>-scan/calvin_<book>_zh.md 看
+两段之间是否有 `<!-- PAGE N -->` 标记——若有，几乎肯定是 OCR 跨页强分段
+的 bug，删 `\n\n` 合并。
+
+**长期修复**（publish 阶段）：`restructure_scan_book.py` 应在合并 per-page
+md 之前，对每个 page 边界（`<!-- PAGE N -->` 注释处）检查前段末是否结句
+符号——若不是，把 `\n\n` 改为空字符串合并段。但已发布的书只能 detect +
+手工修，不再重跑 publish。
+
 ### 软 gate（不阻塞，但要扫一眼）
 
 ```bash
