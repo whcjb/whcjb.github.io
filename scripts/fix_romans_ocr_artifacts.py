@@ -211,6 +211,37 @@ def detect_embedded_main(text: str, ch: int):
     return issues
 
 
+def fix_unpromoted_opener(text: str, ch: int):
+    """Gate-18 自动修：OCR 原始 marker `**N CJK...**` 未 promote 成
+    标准 `**罗马书 N:V。** ***引文***` 形式 → 自动转换 + 补 anchor。
+
+    pattern: 段首 `**(N) (CJK 引文)**` (数字 + 空格 + 至多 40 字非 `*` + `**`)
+    """
+    ROMANS_VERSES = {1: 32, 2: 29, 3: 31, 4: 25, 5: 21, 6: 23, 7: 25, 8: 39,
+                     9: 33, 10: 21, 11: 36, 12: 21, 13: 14, 14: 23, 15: 33, 16: 27}
+    max_v = ROMANS_VERSES.get(ch, 40)
+    n_fixed = [0]
+
+    def replace(m):
+        v = int(m.group(1))
+        if v < 1 or v > max_v:
+            return m.group(0)
+        quote = m.group(2).strip()
+        prefix = m.group(0)[:2] if m.group(0).startswith('\n\n') else ''
+        has_anchor = bool(re.search(
+            rf'class="verse-anchor"\s+id="romans-{ch}-{v}"', text))
+        new = (f'\n\n<h2 class="verse-anchor" id="romans-{ch}-{v}" '
+               f'data-ref="罗马书 {ch}:{v}">罗马书 {ch}:{v}</h2>\n\n'
+               f'**罗马书 {ch}:{v}。** ***{quote}***') if not has_anchor else \
+              (f'{prefix}**罗马书 {ch}:{v}。** ***{quote}***')
+        n_fixed[0] += 1
+        return new
+
+    new_text = re.sub(r'(?:^|\n\n)\*\*(\d{1,3})\s+([^\*\n]{2,40})\*\*',
+                      replace, text)
+    return new_text, n_fixed[0]
+
+
 def fix_truncated_main(text: str, ch: int):
     """Gate-17 自动修：跨页截断的主体段 → 从 OCR raw 跨页边界拼接续文。
 
@@ -437,6 +468,7 @@ def main():
         text, n10 = fix_anchor_disorder(text, ch)
         text, n9 = fix_main_duplicate(text, ch)
         text, n16 = fix_duplicate_continuation(text, ch)
+        text, n18 = fix_unpromoted_opener(text, ch)  # 先 promote 再补 anchor
         text, n13_auto = fix_missing_anchor(text, ch)
         text, n17 = fix_truncated_main(text, ch)
 
