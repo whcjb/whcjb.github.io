@@ -27,8 +27,13 @@ python3 scripts/restructure_scan_book.py \
 
 **已发布书的正确修复流程**：
 1. 跑下面的 Mandatory audit gates 找问题 → 用 `relocate_*` 脚本修
-2. 手工 patch（grep + Edit）剩余 artifact
-3. 把修复固化成 idempotent post-process 脚本 `scripts/fix_<book>_ocr_artifacts.py`，commit 后**永不**重跑 publish
+2. 跑 idempotent post-process 脚本 `scripts/fix_<book>_ocr_artifacts.py`
+   （参考 `scripts/fix_romans_ocr_artifacts.py`：自动处理 Gate-9 双重主体段 /
+   Gate-10 anchor 倒序 / Gate-11 主体段早于 anchor。**重跑安全**，LOCKED_CHAPTERS
+   自动跳过）
+3. 手工 patch（grep + Edit）脚本无法自动判断的剩余 artifact —— 主要是
+   anchor 之后无副本的 Gate-11 case（主体段错位无重复，需要剪贴到 anchor 之后）
+4. 修复后再跑一遍 audit gates，0 命中才 commit。**永不**重跑 publish。
 
 实战教训（2026-06-17 romans）：跑了一次 `--all` 覆盖了用户校准好的 ch15/ch16（注入 ephesians 附录 + LLM 对话残留 "好的，这是根据您的要求..."），用户怒批"一上午白搞了"。**永不**重蹈。
 
