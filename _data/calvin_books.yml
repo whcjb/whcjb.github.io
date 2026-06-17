@@ -162,36 +162,46 @@ english_old_testament:
     chapters: 50
   - id: harmony-law-1-en
     name: Harmony of the Law (Vol. 1)
+    cn: 摩西五经合参（卷一）
     chapters: 1
   - id: harmony-law-2-en
     name: Harmony of the Law (Vol. 2)
+    cn: 摩西五经合参（卷二）
     chapters: 1
   - id: harmony-law-3-en
     name: Harmony of the Law (Vol. 3)
+    cn: 摩西五经合参（卷三）
     chapters: 1
   - id: harmony-law-4-en
     name: Harmony of the Law (Vol. 4)
+    cn: 摩西五经合参（卷四）
     chapters: 1
   - id: joshua-en
     name: Joshua
     chapters: 24
   - id: psalms-1-en
     name: Psalms (Vol. 1)
+    cn: 诗篇（卷一）
     chapters: 78
   - id: psalms-2-en
     name: Psalms (Vol. 2)
+    cn: 诗篇（卷二）
     chapters: 70
   - id: isaiah-1-en
     name: Isaiah (Vol. 1)
+    cn: 以赛亚书（卷一）
     chapters: 37
   - id: isaiah-2-en
     name: Isaiah (Vol. 2)
+    cn: 以赛亚书（卷二）
     chapters: 29
   - id: jeremiah-1-en
     name: Jeremiah (Vol. 1)
+    cn: 耶利米书（卷一）
     chapters: 24
   - id: jeremiah-2-en
     name: Jeremiah (Vol. 2)
+    cn: 耶利米书（卷二）
     chapters: 29
   - id: lamentations-en
     name: Lamentations
@@ -242,15 +252,19 @@ english_old_testament:
 english_new_testament:
   - id: harmony-index-en
     name: "Harmony · Scripture Index"
+    cn: 福音书合参 · 经文索引
     is_index: true
   - id: harmony-1-en
     name: Harmony of the Evangelists (Vol. 1)
+    cn: 福音书合参（卷一）
     chapters: 10
   - id: harmony-2-en
     name: Harmony of the Evangelists (Vol. 2)
+    cn: 福音书合参（卷二）
     chapters: 13
   - id: harmony-3-en
     name: Harmony of the Evangelists (Vol. 3)
+    cn: 福音书合参（卷三）
     chapters: 9
   - id: john-en
     name: John

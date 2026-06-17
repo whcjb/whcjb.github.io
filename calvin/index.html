@@ -29,6 +29,8 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
 
             {% comment %} 合并英文版数据，用于反查中文书卷对应的英文名 {% endcomment %}
             {% assign all_en_books = site.data.calvin_books.english_old_testament | concat: site.data.calvin_books.english_new_testament %}
+            {% comment %} 合并中文数据，用于英文版按钮反查中文小副标 {% endcomment %}
+            {% assign all_cn_books = site.data.calvin_books.old_testament | concat: site.data.calvin_books.new_testament %}
 
             {% comment %} 进度统计（中文版）{% endcomment %}
             {% assign ot_total = site.data.calvin_books.old_testament | size %}
@@ -94,14 +96,18 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                 <div class="calvin-subsection-label">English Edition</div>
                 <div class="calvin-book-grid">
                     {% for book in site.data.calvin_books.english_old_testament %}
+                    {% assign cn_id = book.id | remove: "-en" %}
+                    {% assign cn_book = all_cn_books | where: "id", cn_id | first %}
                     {% if books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en">
                         <span class="calvin-book-name">{{ book.name }}</span>
+                        {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
                         <span class="calvin-book-meta">{{ book.chapters }} chs</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">
                         <span class="calvin-book-name">{{ book.name }}</span>
+                        {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
                         <span class="calvin-book-meta">{{ book.chapters }} chs</span>
                     </span>
                     {% endif %}
@@ -140,14 +146,18 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                 <div class="calvin-subsection-label">English Edition</div>
                 <div class="calvin-book-grid">
                     {% for book in site.data.calvin_books.english_new_testament %}
+                    {% assign cn_id = book.id | remove: "-en" %}
+                    {% assign cn_book = all_cn_books | where: "id", cn_id | first %}
                     {% if book.is_index or books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en{% if book.is_index %} calvin-book-btn--index{% endif %}">
                         <span class="calvin-book-name">{{ book.name }}</span>
+                        {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
                         <span class="calvin-book-meta">{% if book.is_index %}index{% else %}{{ book.chapters }} chs{% endif %}</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">
                         <span class="calvin-book-name">{{ book.name }}</span>
+                        {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
                         <span class="calvin-book-meta">{{ book.chapters }} chs</span>
                     </span>
                     {% endif %}
@@ -329,8 +339,8 @@ body { background-color: var(--calvin-bg); }
     transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease;
     font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
 }
-/* 中文按钮含英文副标，需要更大高度容纳 3 行 */
-.calvin-book-btn:not(.calvin-book-btn--en) {
+/* 含副标按钮（中/英文版都有），需要更大高度容纳 3 行 */
+.calvin-book-btn:not(.calvin-book-btn--index) {
     min-height: 82px;
 }
 .calvin-book-btn--en {
@@ -349,6 +359,14 @@ body { background-color: var(--calvin-bg); }
     margin-top: 3px;
     opacity: 0.7;
     letter-spacing: 0.02em;
+}
+.calvin-book-name-cn {
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
+    font-size: 12px;
+    line-height: 1.25;
+    margin-top: 3px;
+    opacity: 0.7;
+    letter-spacing: 0.05em;
 }
 .calvin-book-meta {
     font-size: 11px;
@@ -428,6 +446,8 @@ body { background-color: var(--calvin-bg); }
     .calvin-section-en { font-size: 14px; }
     .calvin-book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
     .calvin-book-btn { padding: 10px 12px; min-height: 56px; }
+    .calvin-book-btn:not(.calvin-book-btn--index) { min-height: 74px; }
     .calvin-book-name { font-size: 14px; }
+    .calvin-book-name-cn { font-size: 11.5px; }
 }
 </style>
