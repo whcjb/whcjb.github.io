@@ -28,12 +28,14 @@ import re
 
 # 罗马书 OCR 特有的 fused-running-header glyphs
 _ROMANS_EXTRA_HEADER_ALTS = [
-    r"加尔文集",  # OCR 笔误：丢了一个 "文"
+    r"加尔文集",       # OCR 笔误：丢了一个 "文"
+    r"加拉太书文集",   # OCR 笔误：把 "加尔文文集" 误识为 "加拉太书文集"
 ]
 
 # 罗马书额外的整行 running-header strip patterns（无 `#` 无 `·` 的裸形式）
 _ROMANS_EXTRA_STRIP_LINES = [
-    r"^加尔文集\s*$",   # 笔误的整行版本
+    r"^加尔文集\s*$",      # 笔误的整行版本
+    r"^加拉太书文集\s*$",  # 另一种笔误的整行版本
 ]
 
 # Push to publish module's globals before its main runs

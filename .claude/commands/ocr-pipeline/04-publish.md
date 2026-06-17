@@ -18,6 +18,22 @@ python3 scripts/restructure_scan_book.py \
   --all
 ```
 
+## 🚫 对**已发布**的书禁止跑 `--all`（最重要的规则）
+
+`restructure_scan_book.py --all` 会**完全覆盖** `out-dir` 里所有文件。如果该书已上线、有人工修复或用户校准过的章节，**禁止重跑 `--all`**——会：
+- 覆盖手工修复的孤字段、verse 注释段补回、跨页错位 fix
+- 引入 OCR 输入原有 artifact（页眉残留、模型对话残留、ephesians 附录污染等）
+- 抹掉用户锁定章节（如 romans ch15/ch16）
+
+**已发布书的正确修复流程**：
+1. 跑下面的 Mandatory audit gates 找问题 → 用 `relocate_*` 脚本修
+2. 手工 patch（grep + Edit）剩余 artifact
+3. 把修复固化成 idempotent post-process 脚本 `scripts/fix_<book>_ocr_artifacts.py`，commit 后**永不**重跑 publish
+
+实战教训（2026-06-17 romans）：跑了一次 `--all` 覆盖了用户校准好的 ch15/ch16（注入 ephesians 附录 + LLM 对话残留 "好的，这是根据您的要求..."），用户怒批"一上午白搞了"。**永不**重蹈。
+
+锁定章节机制：wrapper 脚本（如 `restructure_romans_scan.py`）应设 `LOCKED_CHAPTERS = {15, 16}`，跑前检查跳过。
+
 ## ⚠️ Per-book wrapper（OCR 怪癖隔离）
 
 **重要**：每本书 OCR 都会有书卷特有的版式 / 笔误 / 页眉怪癖（如罗马书
@@ -418,6 +434,74 @@ PY
 **修复**：发现后直接 Edit 已发布的 md（不要碰 OCR raw — 按
 [feedback_translation_raw_preserve] 保护）。重发会丢修正，所以发现一个
 就 commit 一个，不批量延迟。
+
+### 8.5 ⚠️ 跨页未完段接续合并（per-page assemble 的根因 bug）
+
+`ocr_assemble.py` 按 per-page md 拼接时，page 之间插入空行 → markdown 上两段。但原 PDF 中 page 边界处常常是**同一段被切**：
+
+```
+[page N 末尾]  ...能够作圣徒或爱上帝的人的后裔        ← 段尾没有任何标点（未完）
+[page N+1 头]  也是很重要的，因为上帝曾应许敬虔的列祖们…  ← 小词延续
+```
+
+publish 不识别这种"未完段+延续"模式，按两段输出，导致：
+- verse 9:5 sub-heading 跟主段被强行拆开（用户截图反馈过两次）
+- verse 9:18 主体段大半丢失（"对于蒙选的以"截断 + 后续 1000+ 字符 page 整页内容被归到其他 verse 区块）
+- "色列人，" "为人为人。" "主了。" 等孤字段（OCR 把 page 末"以"+ page 首"色列人，" 切成两段）
+
+**根因**：`restructure_scan_book.py` 的段落处理逻辑没有 `_merge_cross_page_continuations()`。
+
+**修复启发式**（应加入通用脚本）：
+
+```python
+def _merge_cross_page_continuations(paras):
+    """合并跨页未完段。上段末非结句符 + 下段非段首符号 → 合并"""
+    SENTENCE_END = set('。！？；…："」』）)、')
+    out = []
+    for p in paras:
+        s = p.strip()
+        if not s:
+            out.append(p); continue
+        # 上段末未完 + 当前段是延续段
+        if out:
+            prev = out[-1].rstrip()
+            if (prev and prev[-1] not in SENTENCE_END
+                and not s.startswith(('**', '#', '<', '|', '[', '!', '{'))
+                and not re.match(r'^\d', s)):
+                out[-1] = out[-1].rstrip() + s  # 合并
+                continue
+        out.append(p)
+    return out
+```
+
+加入后**所有 OCR 扫描书**受益。新书做 OCR publish 不会再产生孤字段。
+
+### 8.6 ⚠️ 内容完整性 audit（防 verse 整段丢失）
+
+`relocate_*` gates 只检查 verse 段是否**错位**，不检查是否**丢失**。但 publish 可能把 OCR raw 中某个 verse 的整段注释（如 page_0206 整页）放到错的 verse 区块或直接丢弃。这种丢失从格式上看不出来。
+
+**audit 加 Gate-8: verse 字符数对比**：
+
+```bash
+# 对每个 verse N，比对 OCR raw 中该 verse 字符数 vs published 字符数
+# 丢失率 > 50% → 警告（很可能 publish 漏抓了某 page）
+python3 scripts/audit_verse_completeness.py --book romans
+```
+
+实战 (2026-06-17 romans)：用户截图 verse 9:18 注释只剩 "对于蒙选的以" 7 个字，page_0206 整页 1000+ 字符完全丢失。从 OCR raw `page_0205-0206` 手工补回。
+
+**新书 publish 必跑此 gate**——0 命中再 commit。
+
+### 8.7 ⚠️ 已发布书的 idempotent 修复脚本
+
+如果手工 fix 了已发布的 .md（删孤字段、合并跨页、补回丢失段），**立即** commit 并固化成 idempotent post-process 脚本 `scripts/fix_<book>_ocr_artifacts.py`：
+
+- 输入：扫 `calvin/<book>/*.md`
+- 修复：明确的 pattern 替换（孤字段删除、噪声删除、合并跨页等）
+- idempotent：重跑同结果，不会重复施加
+- 跑前检查：跳过锁定章节 (`LOCKED_CHAPTERS`)
+
+理由：手工 fix 不固化 → 一次 `git checkout` 全部丢失（2026-06-17 romans 实测：一上午所有修复因 git checkout HEAD 回滚全部抹掉，用户怒批）。**修了就 commit + 写脚本**，永远不要靠记忆和手工记录。
 
 ### 8. Bible verse-count 表
 
