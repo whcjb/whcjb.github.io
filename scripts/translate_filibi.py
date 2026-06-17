@@ -514,12 +514,15 @@ def main():
         out_dir = cfg['out']
         if args.chapter == 'all':
             chapters = sorted(int(p.stem) for p in src_dir.glob('*.md') if p.stem.isdigit())
+        elif args.chapter == 'preface':
+            chapters = ['preface']
         else:
             chapters = [int(args.chapter)]
         for ch in chapters:
             src = src_dir / f'{ch}.md'
             out = out_dir / f'{ch}.md'
-            print(f'\n=== 第 {ch} 章 ===')
+            label = '前言' if ch == 'preface' else f'第 {ch} 章'
+            print(f'\n=== {label} ===')
             translate_file(src, out, args.resume, args.dry_run)
 
 

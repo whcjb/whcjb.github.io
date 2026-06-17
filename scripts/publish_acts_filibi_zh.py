@@ -34,7 +34,9 @@ CN_NUM = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', 
           '二十六', '二十七', '二十八']
 
 
-def cn_chapter(n: int) -> str:
+def cn_chapter(n) -> str:
+    if n == 'preface':
+        return '前言'
     return f'第{CN_NUM[n]}章'
 
 
@@ -57,52 +59,60 @@ def clean_body(body: str) -> str:
     return '\n'.join(cleaned)
 
 
-def build_frontmatter(n: int, total: int, date: str) -> str:
+def build_frontmatter(n, total: int, date: str, has_preface: bool) -> str:
     fm  = '---\n'
     fm += 'layout: calvin-en\n'
     fm += f'book_id: {BOOK_ID}\n'
     fm += f'book_name: "{BOOK_NAME}"\n'
     fm += f'title: "{cn_chapter(n)}"\n'
     fm += f'date: {date}\n'
-    if n > 1:
-        fm += f'prev_section: {n - 1}\n'
-        fm += f'prev_label: "{cn_chapter(n - 1)}"\n'
-    if n < total:
-        fm += f'next_section: {n + 1}\n'
-        fm += f'next_label: "{cn_chapter(n + 1)}"\n'
+    if n == 'preface':
+        fm += 'next_section: 1\n'
+        fm += 'next_label: "第一章"\n'
+    else:
+        if n > 1:
+            fm += f'prev_section: {n - 1}\n'
+            fm += f'prev_label: "{cn_chapter(n - 1)}"\n'
+        elif has_preface:
+            fm += 'prev_section: preface\n'
+            fm += 'prev_label: "前言"\n'
+        if n < total:
+            fm += f'next_section: {n + 1}\n'
+            fm += f'next_label: "{cn_chapter(n + 1)}"\n'
     fm += '---\n\n'
     return fm
 
 
 def main():
     chapters = sorted(int(p.stem) for p in SRC_DIR.glob('*.md') if p.stem.isdigit())
-    if not chapters:
-        print(f'错误：{SRC_DIR} 下没有 <数字>.md 章节文件')
+    has_preface = (SRC_DIR / 'preface.md').exists()
+    if not chapters and not has_preface:
+        print(f'错误：{SRC_DIR} 下没有可发布章节')
         return
-    if chapters != list(range(1, len(chapters) + 1)):
+    if chapters and chapters != list(range(1, len(chapters) + 1)):
         print(f'警告：章节非连续 {chapters}')
 
-    total = max(chapters)
-    print(f'发现已译章节：{chapters} (共 {total} 章)', flush=True)
+    total = max(chapters) if chapters else 0
+    items = (['preface'] if has_preface else []) + chapters
+    print(f'发现已译：preface={has_preface}, chapters={chapters} (共 {total} 章)', flush=True)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     date = get_date()
 
-    for n in chapters:
+    for n in items:
         src = SRC_DIR / f'{n}.md'
         raw = src.read_text(encoding='utf-8')
         body = strip_frontmatter(raw)
         body = clean_body(body)
-        # body 第一行可能是 "# 第N章"，layout 已经渲染 title，不再需要重复
+        # body 第一行可能是 "# 第N章" 或 "# 前言"，layout 已经渲染 title，不再重复
         body_lines = body.lstrip('\n').split('\n')
-        if body_lines and re.match(r'^#\s+第.+?章\s*$', body_lines[0]):
+        if body_lines and re.match(r'^#\s+(?:第.+?章|前言|Preface)\s*$', body_lines[0]):
             body_lines.pop(0)
-            # 跳过紧随其后的空行
             while body_lines and not body_lines[0].strip():
                 body_lines.pop(0)
         body = '\n'.join(body_lines)
 
-        fm = build_frontmatter(n, total, date)
+        fm = build_frontmatter(n, total, date, has_preface)
         content = fm + body.rstrip() + '\n'
 
         out = OUT_DIR / f'{n}.md'
@@ -111,15 +121,17 @@ def main():
 
     # index.html
     idx = OUT_DIR / 'index.html'
-    idx.write_text(
+    idx_content = (
         '---\n'
         'layout: calvin-book-modern\n'
         f'book_id: {BOOK_ID}\n'
         'book_name: 使徒行传\n'
         f'chapters: {total}\n'
-        '---\n',
-        encoding='utf-8',
     )
+    if has_preface:
+        idx_content += 'has_preface: true\n'
+    idx_content += '---\n'
+    idx.write_text(idx_content, encoding='utf-8')
     print(f'  写入 {idx}', flush=True)
 
     print(f'\n✓ 发布完成 → {OUT_DIR}/ (chapters={total})')
