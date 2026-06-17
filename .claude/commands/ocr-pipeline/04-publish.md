@@ -745,7 +745,106 @@ for p in sorted(Path('calvin/<book>').glob('*.md')):
             print(f'{p.name}: ch{ch}:{v} 主体段在 anchor 之前')
 "
 # 应无输出
+
+# Gate-12: 嵌入式 verse 主体段（**书 N:V。** 出现在段中而非段首）
+# OCR 跨页时把下一 verse 主体段粘合到前段尾部, anchor 完全缺失
+# 示例：v.16 末段 "...肯顺服圣灵的引**罗马书 9:17。** 因为经上有话..."
+# 检测：main marker 前最近的 \n\n / </h2> / </div> 与 marker 之间有非空白文本
+# 注意：Gate-11 抓不到这种 (因为同时缺 anchor → 不会触发"主体段早于 anchor")
+python3 -c "
+import re
+from pathlib import Path
+for p in sorted(Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    ch = int(p.stem)
+    for m in re.finditer(rf'\*\*<书名>\s+{ch}:(\d+)。\*\*', text):
+        ms = m.start()
+        if ms == 0: continue
+        before = text[:ms]
+        para_start = max(before.rfind('\n\n')+2, before.rfind('</h2>'), before.rfind('</div>'))
+        between = text[para_start:ms].strip()
+        if between and not between.endswith(('>', '。', '\n')):
+            print(f'{p.name}: ch{ch}:{m.group(1)} 主体段嵌在段中 @L{text[:ms].count(chr(10))+1}')
+"
+# 应无输出。命中需手工拆段 + 在 scripture-box 后补 anchor
+
+# Gate-13: 有主体段但缺 verse-anchor（粘合后 anchor 完全丢失）
+# 排除单 verse section（## 书 N:V 单独 heading 已有 scripture-anchor）
+python3 -c "
+import re
+from pathlib import Path
+for p in sorted(Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    ch = int(p.stem)
+    main_v = {int(m.group(1)) for m in re.finditer(rf'\*\*<书名>\s+{ch}:(\d+)。\*\*', text)}
+    anchor_v = {int(m.group(1)) for m in re.finditer(rf'class=\"verse-anchor\"\s+id=\"<book>-{ch}-(\d+)\"', text)}
+    single = {int(m.group(1)) for m in re.finditer(rf'^## <书名> {ch}:(\d+)\s*$', text, re.MULTILINE)}
+    missing = sorted(main_v - anchor_v - single)
+    if missing:
+        print(f'{p.name}: ch{ch} 缺 anchor → {missing}')
+"
+# 应无输出
 ```
+
+**Gate-12 与 Gate-13 关联**：通常同时发生 —— 一次 OCR 跨页粘合既造成
+"主体段嵌段中"（Gate-12）也造成"对应 verse 缺 anchor"（Gate-13）。修复时：
+
+1. 找到嵌入位置，在 `**书 N:V。**` 之前加 `\n\n` 拆段
+2. **句尾被截断时必须先去 OCR raw 跨页边界找原中文**（见下方"⚠️ 跨页截断修复"）
+3. 在拆出来的 verse 主体段之前补 `<h2 class="verse-anchor" id="书-N-V">书名 N:V</h2>`
+4. 检查相邻 verse（N±1）的主体段是否也被错位 / 重复（OCR 跨页 bug 常成片出现）
+
+### ⚠️ 跨页截断修复：从 OCR raw 找原中文，**禁止从英文版翻译**
+
+**绝对规则**：当 publish 后的中文段尾被 OCR 截断（如 "并肯顺服圣灵的引" 之类
+看起来不完整的结尾），**禁止直接用 calvin/<book>-en/ 英文版翻译补译**。
+原中文译文绝大概率就在 OCR raw 的**下一页开头**，被 OCR 漏识别在了
+"页码 + 页眉" 行之后。
+
+**原因 / 真实案例**（2026-06-17 罗马书 9:13）：
+- publish 后 v.13 末段："...上帝的忿怒临到何处，何处就有死亡。然而何"
+- 看起来 "然而何" 是 OCR 噪音 → 我误以为是 → 删掉 + 从英文版补译
+  "他的爱在何处，何处就有生命"（英文 "where his love is, there is life"）
+- **真实情况**：OCR raw `page_0201.md` 开头是
+  ```
+  196 处有上帝的慈爱，何处就有生命。
+  加尔文文集
+  ```
+  原中文译文是 **"然而何处有上帝的慈爱，何处就有生命"** —— "然而何" 是这句
+  的前 3 字，不是噪音。OCR 把 "处有上帝的慈爱..." 当下一页正文，把 "然而何"
+  留在了上页末。我自己翻译的 "他的爱在何处" 是编造，与原译者用词不符。
+- 用户发现，要求"按原文找 OCR raw 改"，并明令以后不准自己从英文翻译。
+
+**修复流程**：
+
+```bash
+# 1. 定位被截断的 publish 段在 OCR raw 哪一页
+grep -ln "<前段尾巴 12-20 字>" calvin_raw/<book>-scan/ocr/page_*.md
+
+# 2. 看下一页开头（页码 + 页眉之后的第一段文字）
+head -10 calvin_raw/<book>-scan/ocr/page_<N+1>.md
+
+# 3. 续文几乎肯定在那里。把页末截断 + 下一页开头续文拼回完整句
+
+# 4. 如果跨页边界明确无续文（如 v.6/v.7 缺 191 整页），先 grep
+#    OCR raw 全文有没有遗漏到别处：
+grep -l "<可能续文关键词>" calvin_raw/<book>-scan/ocr/*.md
+
+# 5. 实在 OCR raw 没有 → 报告用户，让用户决定（截断 / 从英文翻 / 提供原文）
+#    不要自己默默从英文版补译。
+```
+
+**触发 OCR 漏识别的形式**：跨页 OCR 漏字几乎都发生在物理 page 文件开头，
+模式是 `<页码数字>\n\n<页眉>\n\n<正文>`，OCR 把页码识别成正文的一部分
+（如 `196 处有上帝的慈爱` —— "196" 是页码，"处有上帝的慈爱..." 才是正文，
+但 OCR 黏成一行）。**人眼一看就懂，脚本不易自动判断**，所以需要人工对照。
+
+**唯一允许从英文版翻译的情况**：用户**明确**指出某书内页整页漏失（如
+"原文 191 页漏掉了，对应 PDF 物理页数 196/197 之间，需要从英文版翻译补"），
+此时 OCR raw 该页确实不存在 → 才可从英文版翻译，且翻译要承认是补译，不能
+说成原中文。其他所有情况一律按 OCR raw 找。
 
 ### 软 gate（不阻塞，但要扫一眼）
 
