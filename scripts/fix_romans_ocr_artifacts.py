@@ -211,6 +211,41 @@ def detect_embedded_main(text: str, ch: int):
     return issues
 
 
+def detect_sub_heading_misplaced(text: str, ch: int):
+    """Gate-15: sub-heading 总论段错位到 section heading 之前。
+
+    publish 启发式（detect_paragraph_verse）只识别带数字前缀的段或 CUV
+    模糊匹配。verse 注释的"总论段"（无数字前缀、第一人称论说体）会被
+    fallback 到 cur_sec，错位在下一 section heading 之前。
+
+    检测：扫每个 `## 罗马书 N:A-B` heading 紧前的最后一段，段首是
+    sub-heading opener 列表词 → 报告。
+
+    返回 [(verse_section, line, snippet)] 不修改文本。
+    """
+    # 严格 opener: 仅"我在此/我将/我想"等第一人称论说体（calvin 总论段标志），
+    # 不含"我们/本节/本段/对于"等（这些常用于 verse 注释的正常延续段）
+    OPENERS = ('我在此不', '我在此愿', '我将坦然', '我想在此')
+    issues = []
+    for m in re.finditer(rf'\n## 罗马书 {ch}:[\d-]+\s*\n', text):
+        before = text[:m.start()].rstrip()
+        last_para_start = before.rfind('\n\n') + 2
+        if last_para_start <= 1:
+            continue
+        last_para = text[last_para_start:m.start()].strip()
+        if last_para.startswith(('<', '#', '**', '[^', '*', '|', '{:', '---')):
+            continue
+        for op in OPENERS:
+            if last_para.startswith(op):
+                line = text[:last_para_start].count('\n') + 1
+                # 下一 section 标识
+                next_sec = re.match(r'\n## 罗马书 (\d+:[\d-]+)', text[m.start():])
+                sec = next_sec.group(1) if next_sec else '?'
+                issues.append((sec, line, last_para[:50]))
+                break
+    return issues
+
+
 def detect_missing_anchor(text: str, ch: int):
     """Gate-13: 有 `**罗马书 N:V。**` 主体段但缺对应 verse-anchor。
 
@@ -254,10 +289,12 @@ def main():
         # Detect-only gates（不修改文本）
         embedded = detect_embedded_main(text, ch)
         missing = detect_missing_anchor(text, ch)
+        subhead = detect_sub_heading_misplaced(text, ch)
         total['embedded'] += len(embedded)
         total['missing_anchor'] += len(missing)
+        total['subhead_misplaced'] = total.get('subhead_misplaced', 0) + len(subhead)
 
-        if n11 + n10 + n9 > 0 or embedded or missing:
+        if n11 + n10 + n9 > 0 or embedded or missing or subhead:
             total['main_before_anchor'] += n11
             total['anchor_disorder'] += n10
             total['duplicate'] += n9
@@ -266,21 +303,29 @@ def main():
                 msg += f' Gate-12={len(embedded)}'
             if missing:
                 msg += f' Gate-13={len(missing)} (verses {missing})'
+            if subhead:
+                msg += f' Gate-15={len(subhead)}'
             print(msg)
             for v, line, ctx in embedded:
                 print(f'    Gate-12 v.{ch}:{v} @L{line}  ...{ctx}...')
+            for sec, line, snippet in subhead:
+                print(f'    Gate-15 next-sec={sec} @L{line}  "{snippet}..."')
             if args.apply and text != orig:
                 p.write_text(text, encoding='utf-8')
                 files_changed += 1
 
+    sub_total = total.get('subhead_misplaced', 0)
     print(f'\n汇总: Gate-11={total["main_before_anchor"]} '
           f'Gate-10={total["anchor_disorder"]} Gate-9={total["duplicate"]} '
-          f'Gate-12={total["embedded"]} Gate-13={total["missing_anchor"]}')
+          f'Gate-12={total["embedded"]} Gate-13={total["missing_anchor"]} '
+          f'Gate-15={sub_total}')
     print(f'{"已写入" if args.apply else "Dry-run"} {files_changed} 个文件')
-    if total['embedded'] or total['missing_anchor']:
-        print('\n⚠️  Gate-12/13 是 detect-only，不会自动修。需人工:')
+    if total['embedded'] or total['missing_anchor'] or sub_total:
+        print('\n⚠️  Gate-12/13/15 是 detect-only，不会自动修。需人工:')
         print('   - Gate-12: 主体段嵌在段中 → 段首加 \\n\\n 拆段')
         print('   - Gate-13: verse 缺 anchor → scripture-box 后插入 <h2 class="verse-anchor">')
+        print('   - Gate-15: sub-heading 总论段错位在 section heading 前 →')
+        print('             移到下一 section 的 v.A anchor 之后、主体段之前')
     if not args.apply:
         print('\n用 --apply 实际写入。')
 

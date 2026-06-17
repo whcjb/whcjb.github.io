@@ -900,6 +900,47 @@ md 之前，对每个 page 边界（`<!-- PAGE N -->` 注释处）检查前段�
 符号——若不是，把 `\n\n` 改为空字符串合并段。但已发布的书只能 detect +
 手工修，不再重跑 publish。
 
+### ⚠️ Gate-15：sub-heading 总论段错位（在 section heading 之前）
+
+**Root cause**：`detect_paragraph_verse` 启发式只识别带数字前缀的段（`14 …`）
+或 CUV 经文模糊匹配。verse 注释开头的 **"总论段"** —— 无数字前缀、第一
+人称论说体（如 "我在此不想提出别人的意见……" 这种 calvin 的 transition
+段）—— 既不带数字也不引用经文，启发式 fallback 到 `cur_sec`，于是这种
+本属于下一 section 的总论段被错放到上一 section 的最后位置（紧贴下一
+`## 罗马书 N:A-B` heading 之前）。
+
+**实战案例**（2026-06-17 罗马书 10:14）：
+- OCR raw page_0227 顺序正确：v.16 / v.17 经文段 → "我在此不想提出别人的
+  意见…" 总论段 → v.14 主体段（注：calvin 注释经常在 verse 组经文之后先有
+  总论段，再进入逐节注释）
+- publish 后总论段被错放到 `## 罗马书 10:14-17` heading 之前的 v.13
+  注释末尾位置
+- 用户截图：v.14-17 经文后应是"我在此不想提出..."，但网页是 scripture-box
+  之前
+
+**检测规则**（严格 opener 避免误报）：
+- 扫每个 `## 罗马书 N:A-B` heading 紧前的最后一段
+- 段首是 **特定 calvin 总论 opener**: "我在此不"、"我在此愿"、"我将坦然"、
+  "我想在此" 等第一人称论说体（**不包括** "本节/本段/我们/对于" 等，因为
+  这些在 verse 注释延续段中也很常见）
+- 命中 → 报告，需人工核查上下文是否确属下一 section 总论
+
+**修复操作**：
+1. 确认段在 `calvin_raw/<book>-scan/calvin_<book>_zh.md` 中的位置——若在
+   scripture-box 之后、下一 verse 主体段之前，则确为总论段错位
+2. 把段从 section heading 之前剪出，粘贴到下一 section 的 `<verse-anchor N:A>`
+   之后、`**书 N:A。**` 主体段之前
+3. 再跑 audit 确认所有 gate 0 命中
+
+**长期修复**（publish 阶段）：`detect_paragraph_verse` 应识别 sub-heading
+段并归到下一 section——目前已开 STRICT_DIGIT_ONLY 关闭了 CUV 模糊匹配，
+但缺正向识别。已发布书只能 detect + 手工修。
+
+**Opener 列表是渐进的**：如果用户发现新的 sub-heading 错位 case，根据该段
+首词加进 OPENERS 元组（见 `scripts/fix_romans_ocr_artifacts.py`）。务必
+确保新加的 opener 不会与 verse 注释正常延续段冲突（如 "我们/本节/本段"
+这种常见词不要加，会大量误报）。
+
 ### 软 gate（不阻塞，但要扫一眼）
 
 ```bash
