@@ -5,27 +5,34 @@ old_testament:
   - id: exodus
     name: 出埃及记
     chapters: 40
+    en: Exodus
   - id: leviticus
     name: 利未记
     chapters: 27
+    en: Leviticus
   - id: numbers
     name: 民数记
     chapters: 36
+    en: Numbers
   - id: deuteronomy
     name: 申命记
     chapters: 34
+    en: Deuteronomy
   - id: joshua
     name: 约书亚记
     chapters: 24
   - id: psalms
     name: 诗篇
     chapters: 150
+    en: Psalms
   - id: isaiah
     name: 以赛亚书
     chapters: 66
+    en: Isaiah
   - id: jeremiah
     name: 耶利米书
     chapters: 52
+    en: Jeremiah
   - id: lamentations
     name: 耶利米哀歌
     chapters: 5
