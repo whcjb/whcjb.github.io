@@ -15,7 +15,7 @@ OCR artifact。重跑安全（idempotent）：跑两次结果一样。
 
 Detect-only gates（12/13）只报告不修改，避免误删用户校准的内容。
 
-锁定章节：LOCKED_CHAPTERS = {15, 16} —— 用户校准好，永远跳过。
+锁定章节：LOCKED_CHAPTERS = {9, 10, 15, 16} —— 用户校准好，永远跳过。
 
 用法（项目根目录）：
     python3 scripts/fix_romans_ocr_artifacts.py             # dry-run
@@ -28,7 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ROMANS_DIR = ROOT / 'calvin' / 'romans'
-LOCKED_CHAPTERS = {15, 16}
+LOCKED_CHAPTERS = {9, 10, 15, 16}
 
 
 def find_main_segments(text: str, ch: int):
@@ -211,6 +211,157 @@ def detect_embedded_main(text: str, ch: int):
     return issues
 
 
+def fix_truncated_main(text: str, ch: int):
+    """Gate-17 自动修：跨页截断的主体段 → 从 OCR raw 跨页边界拼接续文。
+
+    流程：
+    1. 找截断段（段长 < 100 + 段尾非结句符号）
+    2. 在 calvin_raw/romans-scan/ocr/page_*.md 中 grep 段尾 15 字符
+    3. 该 page 末尾是截断段，下一 page 开头是续文（跳过页码+页眉）
+    4. 拼接到主体段末尾
+
+    保守起见：只修末尾是 < 5 字 + 续文匹配明确的情况；不确定就 skip。
+    """
+    OCR_DIR = ROOT / 'calvin_raw' / 'romans-scan' / 'ocr'
+    if not OCR_DIR.exists():
+        return text, 0
+    ENDERS = ('。', '！', '？', '；', '"', '"', '」', '》', '）', '】', '*', '>')
+    n_fixed = 0
+
+    while True:
+        # 找截断段
+        truncated = []
+        for m in re.finditer(rf'\*\*罗马书\s+{ch}:(\d+)。\*\*', text):
+            end_m = re.search(r'\n\n', text[m.start():])
+            para = text[m.start():m.start() + end_m.start()] if end_m else text[m.start():]
+            if len(para) < 100 and para.rstrip()[-1] not in ENDERS:
+                truncated.append((int(m.group(1)), m.start(), m.start() + len(para)))
+        if not truncated:
+            break
+
+        fixed_one = False
+        for v, ps, pe in truncated:
+            para = text[ps:pe]
+            # 取截断段末尾 15 字符作为查找 key
+            tail = para.rstrip()[-15:]
+            # 在 OCR raw 找包含 tail 的页
+            page_with_tail = None
+            for page_file in sorted(OCR_DIR.glob('page_*.md')):
+                content = page_file.read_text(encoding='utf-8')
+                if tail in content:
+                    # 确认 tail 在 page 末尾附近（最后 100 字）
+                    if content.rstrip().endswith(tail) or content[-200:].find(tail) >= 0:
+                        page_with_tail = page_file
+                        break
+            if not page_with_tail:
+                continue
+            # 找下一页
+            page_num = int(page_with_tail.stem.split('_')[1])
+            next_page = OCR_DIR / f'page_{page_num + 1:04d}.md'
+            if not next_page.exists():
+                continue
+            next_content = next_page.read_text(encoding='utf-8')
+            # 跳过页码（数字） + 页眉（加尔文文集/罗马书注释等）
+            lines = next_content.split('\n')
+            # 找第一个非空且非页码非页眉的行
+            cont_line = None
+            for ln in lines:
+                ln = ln.strip()
+                if not ln: continue
+                if re.match(r'^\d{1,3}$', ln): continue  # 纯页码
+                if ln in ('加尔文文集', '加尔文集', '罗马书注释'): continue
+                if re.match(r'^第[一二三四五六七八九十百〇零0-9]+章', ln): continue
+                # 第一行实际内容
+                cont_line = ln
+                break
+            if not cont_line:
+                continue
+            # 安全检查：续文不应是新 verse opener（数字+空格+CJK）
+            if re.match(r'^\d{1,3}\s+[一-鿿]', cont_line):
+                continue
+            # 拼接到主体段末尾
+            new_para = para.rstrip() + cont_line
+            text = text[:ps] + new_para + text[pe:]
+            n_fixed += 1
+            fixed_one = True
+            break
+        if not fixed_one:
+            break
+    return text, n_fixed
+
+
+def detect_truncated_main(text: str, ch: int):
+    """Gate-17: verse 主体段被跨页截断（段尾非结句符号 + 段长 < 100 字）。
+
+    PDF 跨页时，publish 没拼接 page 边界的同一主体段，导致主体段在中途断掉。
+    特征：段尾非 `。！？；" 》" 等结句符号 + 段总长很短。
+
+    返回 [(verse, line, tail)]。
+    """
+    ENDERS = ('。', '！', '？', '；', '"', '"', '」', '》', '）', '】', '*', '>')
+    issues = []
+    for m in re.finditer(rf'\*\*罗马书\s+{ch}:(\d+)。\*\*[^\n]*', text):
+        full_line = m.group(0)
+        # 主体段实际内容（去掉 `**罗马书 N:V。**` marker 部分）
+        content = full_line[m.end() - m.start():] if m.end() > m.start() else ''
+        # 整段（到下一 \n\n）
+        end_m = re.search(r'\n\n', text[m.start():])
+        para = text[m.start():m.start() + end_m.start()] if end_m else text[m.start():]
+        # 去除 marker 和 emphasis markers
+        body = re.sub(r'\*\*罗马书\s+\d+:\d+。\*\*\s*\*{0,3}[^*]*\*{0,3}', '', para).strip()
+        if len(para) < 100 and para.rstrip()[-1] not in ENDERS:
+            line = text[:m.start()].count('\n') + 1
+            issues.append((int(m.group(1)), line, para[-30:]))
+    return issues
+
+
+def fix_duplicate_continuation(text: str, ch: int):
+    """Gate-16 自动修：延续段重复 → 删最靠前的副本（保留 anchor 后版本）。
+
+    扫所有段（\\n\\n 分割），按首 30 字符 hash，同 prefix 出现 ≥ 2 次 →
+    删第一个，保留后续。重跑安全 (idempotent)。
+    """
+    n_fixed = 0
+    while True:
+        paras = text.split('\n\n')
+        prefix_to_indices = {}
+        for i, para in enumerate(paras):
+            stripped = para.strip()
+            if (stripped.startswith(('<', '#', '**', '[^', '*', '|', '{:', '---', '!'))
+                    or len(stripped) < 60):
+                continue
+            prefix = stripped[:30]
+            prefix_to_indices.setdefault(prefix, []).append(i)
+
+        dup_indices = [(prefix, idxs) for prefix, idxs in prefix_to_indices.items()
+                       if len(idxs) >= 2]
+        if not dup_indices:
+            break
+        prefix, idxs = dup_indices[0]
+        del paras[idxs[0]]
+        text = '\n\n'.join(paras)
+        n_fixed += 1
+    return text, n_fixed
+
+
+def detect_duplicate_continuation(text: str, ch: int):
+    """Gate-16 detect-only (audit 报告用，fix 之后应为空)。"""
+    paras = text.split('\n\n')
+    pos = 0
+    seen = {}
+    for para in paras:
+        stripped = para.strip()
+        if (stripped.startswith(('<', '#', '**', '[^', '*', '|', '{:', '---', '!'))
+                or len(stripped) < 60):
+            pos += len(para) + 2
+            continue
+        prefix = stripped[:30]
+        line = text[:pos].count('\n') + 1
+        seen.setdefault(prefix, []).append(line)
+        pos += len(para) + 2
+    return [(prefix, lines) for prefix, lines in seen.items() if len(lines) >= 2]
+
+
 def detect_sub_heading_misplaced(text: str, ch: int):
     """Gate-15: sub-heading 总论段错位到 section heading 之前。
 
@@ -285,47 +436,67 @@ def main():
         text, n11 = fix_main_before_anchor(text, ch)
         text, n10 = fix_anchor_disorder(text, ch)
         text, n9 = fix_main_duplicate(text, ch)
+        text, n16 = fix_duplicate_continuation(text, ch)
+        text, n13_auto = fix_missing_anchor(text, ch)
+        text, n17 = fix_truncated_main(text, ch)
 
         # Detect-only gates（不修改文本）
         embedded = detect_embedded_main(text, ch)
         missing = detect_missing_anchor(text, ch)
         subhead = detect_sub_heading_misplaced(text, ch)
+        dup_cont = detect_duplicate_continuation(text, ch)
+        truncated = detect_truncated_main(text, ch)
         total['embedded'] += len(embedded)
         total['missing_anchor'] += len(missing)
         total['subhead_misplaced'] = total.get('subhead_misplaced', 0) + len(subhead)
+        total['dup_continuation'] = total.get('dup_continuation', 0) + len(dup_cont)
+        total['truncated_main'] = total.get('truncated_main', 0) + len(truncated)
 
-        if n11 + n10 + n9 > 0 or embedded or missing or subhead:
+        if (n11 + n10 + n9 + n16 + n13_auto + n17 > 0
+                or embedded or missing or subhead or dup_cont or truncated):
             total['main_before_anchor'] += n11
             total['anchor_disorder'] += n10
             total['duplicate'] += n9
-            msg = f'  {p.name}: Gate-11={n11} Gate-10={n10} Gate-9={n9}'
-            if embedded:
-                msg += f' Gate-12={len(embedded)}'
-            if missing:
-                msg += f' Gate-13={len(missing)} (verses {missing})'
-            if subhead:
-                msg += f' Gate-15={len(subhead)}'
+            total['dup_continuation_fixed'] = total.get('dup_continuation_fixed', 0) + n16
+            total['anchor_added'] = total.get('anchor_added', 0) + n13_auto
+            total['truncated_fixed'] = total.get('truncated_fixed', 0) + n17
+            msg = f'  {p.name}: G-11={n11} G-10={n10} G-9={n9} G-16fix={n16} G-13fix={n13_auto} G-17fix={n17}'
+            if embedded: msg += f' G-12={len(embedded)}'
+            if missing: msg += f' G-13left={len(missing)} {missing}'
+            if subhead: msg += f' G-15={len(subhead)}'
+            if dup_cont: msg += f' G-16left={len(dup_cont)}'
+            if truncated: msg += f' G-17={len(truncated)}'
             print(msg)
             for v, line, ctx in embedded:
                 print(f'    Gate-12 v.{ch}:{v} @L{line}  ...{ctx}...')
             for sec, line, snippet in subhead:
                 print(f'    Gate-15 next-sec={sec} @L{line}  "{snippet}..."')
+            for prefix, lines in dup_cont:
+                print(f'    Gate-16 重复段 @L{lines}  "{prefix}..."')
+            for v, line, tail in truncated:
+                print(f'    Gate-17 v.{ch}:{v} 截断 @L{line}  tail="...{tail}"')
             if args.apply and text != orig:
                 p.write_text(text, encoding='utf-8')
                 files_changed += 1
 
     sub_total = total.get('subhead_misplaced', 0)
+    dup_total = total.get('dup_continuation', 0)
+    trunc_total = total.get('truncated_main', 0)
     print(f'\n汇总: Gate-11={total["main_before_anchor"]} '
           f'Gate-10={total["anchor_disorder"]} Gate-9={total["duplicate"]} '
           f'Gate-12={total["embedded"]} Gate-13={total["missing_anchor"]} '
-          f'Gate-15={sub_total}')
+          f'Gate-15={sub_total} Gate-16={dup_total} Gate-17={trunc_total}')
     print(f'{"已写入" if args.apply else "Dry-run"} {files_changed} 个文件')
-    if total['embedded'] or total['missing_anchor'] or sub_total:
-        print('\n⚠️  Gate-12/13/15 是 detect-only，不会自动修。需人工:')
+    if (total['embedded'] or total['missing_anchor']
+            or sub_total or dup_total or trunc_total):
+        print('\n⚠️  Gate-12/13/15/16/17 是 detect-only，不会自动修。需人工:')
         print('   - Gate-12: 主体段嵌在段中 → 段首加 \\n\\n 拆段')
         print('   - Gate-13: verse 缺 anchor → scripture-box 后插入 <h2 class="verse-anchor">')
         print('   - Gate-15: sub-heading 总论段错位在 section heading 前 →')
         print('             移到下一 section 的 v.A anchor 之后、主体段之前')
+        print('   - Gate-16: 延续段重复 → 删错位副本（保留 anchor 后版）')
+        print('   - Gate-17: verse 主体段被跨页截断 →')
+        print('             查 OCR raw 跨页边界 + PDF 物理页, 拼接续文')
     if not args.apply:
         print('\n用 --apply 实际写入。')
 

@@ -941,6 +941,83 @@ md 之前，对每个 page 边界（`<!-- PAGE N -->` 注释处）检查前段�
 确保新加的 opener 不会与 verse 注释正常延续段冲突（如 "我们/本节/本段"
 这种常见词不要加，会大量误报）。
 
+### ⚠️ Gate-16：延续段重复（无 verse-marker 的段被输出两次）
+
+**Root cause**：publish 把跨页延续段（无 `**罗马书 N:V。**` 主体段 marker
+的 verse 注释 continuation 段）有时输出两次——一次错位在上一 section 末
+（anchor 之前），一次在正常位置（anchor 之后）。Gate-9 只查带 marker 的
+主体段双重，抓不到无 marker 的延续段重复。
+
+**实战案例**（2026-06-17 罗马书 10:21）：
+- "我整天伸手是着重语气的表示..." 段同时出现在 v.20 后（L210）和 v.21
+  anchor 后（L223）
+- 用户截图发现，要求 skill 修复
+
+**检测**：扫所有段（按 `\n\n` 分割），排除控制段（HTML/heading/`**`/`[^`），
+按段首 30 字符 hash，如果同 prefix 出现 ≥ 2 次 → 报告。当前对 1-10 章
+扫到 22 处重复段（每处都是 publish 的真实 bug）。
+
+```python
+python3 -c "
+import re, pathlib
+for p in sorted(pathlib.Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    paras = text.split('\n\n')
+    pos = 0
+    seen = {}
+    for para in paras:
+        s = para.strip()
+        if (s.startswith(('<','#','**','[^','*','|','{:','---','!')) or len(s)<60):
+            pos += len(para)+2; continue
+        prefix = s[:30]
+        line = text[:pos].count(chr(10))+1
+        seen.setdefault(prefix, []).append(line)
+        pos += len(para)+2
+    for k, v in seen.items():
+        if len(v) >= 2: print(f'{p.name}: {v}  \"{k}...\"')
+"
+```
+
+**修复**：保留 anchor 之后的版本，删除错位副本（位置在 anchor 之前的）。
+
+### ⚠️ Gate-17：verse 主体段被跨页截断（段尾非结句符号 + 段短）
+
+**Root cause**：PDF 跨页时同一 verse 主体段被拆，publish 没拼接 page
+边界——结果主体段在 OCR 跨页处中断，最后是单字 + 立刻 `\n\n`。这是
+Gate-14（跨页强分段）的特例，但主体段更严重（影响 verse 语义）。
+
+**实战案例**（2026-06-17 罗马书 10:21）：
+- v.21 主体段被截断为 "**罗马书 10:21。** 至于以色列人，他说保罗再一次提到
+  上帝弃绝犹太人而恩"（"恩" 单字结尾，未接续 "待外邦人的理由..."）
+
+**检测**：扫所有 `**罗马书 N:V。**` 主体段，整段长 < 100 字 + 段尾不是
+结句符号集 `。！？；" 》 ） 】 * >` → 报告。
+
+```python
+python3 -c "
+import re, pathlib
+ENDERS = ('。','！','？','；','\"','\"','」','》','）','】','*','>')
+for p in sorted(pathlib.Path('calvin/<book>').glob('*.md')):
+    if not p.stem.isdigit(): continue
+    text = p.read_text(encoding='utf-8')
+    ch = int(p.stem)
+    for m in re.finditer(rf'\*\*<书名>\s+{ch}:(\d+)。\*\*', text):
+        end_m = re.search(r'\n\n', text[m.start():])
+        para = text[m.start():m.start()+end_m.start()] if end_m else text[m.start():]
+        if len(para) < 100 and para.rstrip()[-1] not in ENDERS:
+            line = text[:m.start()].count(chr(10))+1
+            print(f'{p.name}: v.{ch}:{m.group(1)} L{line}  tail=...{para[-25:]}')
+"
+```
+
+**修复**：
+1. 查 `calvin_raw/<book>-scan/ocr/page_NNNN.md` 边界确认续文
+2. 若 OCR raw 跨页有续文 → 拼接到主体段末尾
+3. 若 OCR raw 也漏 → 请求用户提供 PDF 物理页扫描（按
+   [reference-calvin-pdf-path]）
+4. **不要自己从英文版翻译续文**（[feedback-no-self-translation-from-en]）
+
 ### 软 gate（不阻塞，但要扫一眼）
 
 ```bash
