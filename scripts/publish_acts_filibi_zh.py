@@ -53,10 +53,18 @@ def strip_frontmatter(text: str) -> str:
 
 
 def clean_body(body: str) -> str:
-    """移除翻译过程中残留的 <<<END>>> 标记行"""
+    """移除翻译过程中残留的 <<<END>>> 标记行；
+    移除 scripture-anchor 上的 inline display:none（让 verse-index 的
+    #acts-N-... 锚点能 scroll-into-view，由 calvin-en 布局 CSS 接管隐藏）"""
     lines = body.split('\n')
     cleaned = [l for l in lines if l.strip() != '<<<END>>>']
-    return '\n'.join(cleaned)
+    body = '\n'.join(cleaned)
+    body = re.sub(
+        r'(<h2 class="scripture-anchor"[^>]*?) style="display:none"(>)',
+        r'\1\2',
+        body,
+    )
+    return body
 
 
 def build_frontmatter(n, total: int, date: str, has_preface: bool) -> str:
@@ -83,6 +91,94 @@ def build_frontmatter(n, total: int, date: str, has_preface: bool) -> str:
     return fm
 
 
+VERSE_MARK_RE = re.compile(r'^\*\*(\d{1,3})\.\*\*[\s<]')
+
+
+def add_verse_anchors_in_body(body: str, ch: int) -> str:
+    """在每个 `**N.**` 注释段前插入 per-verse commentary-anchor。
+    跳过 scripture-box 内的（那是经文本身用 <strong>N.</strong> HTML）。
+
+    verse-index 用 acts-CH-V 形式锚点，直接跳到该节注释段；同节多次出现时
+    后续 id 加后缀 -2/-3 避免冲突，但 verse-index 只用第一次。
+    """
+    lines = body.split('\n')
+    out: list[str] = []
+    in_box = False
+    seen: dict[int, int] = {}
+    for raw in lines:
+        s = raw.strip()
+        if s.startswith('<div class="scripture-box"'):
+            in_box = True
+            out.append(raw)
+            continue
+        if in_box:
+            if s == '</div>':
+                in_box = False
+            out.append(raw)
+            continue
+        m = VERSE_MARK_RE.match(raw)
+        if m:
+            v = int(m.group(1))
+            seen[v] = seen.get(v, 0) + 1
+            suffix = '' if seen[v] == 1 else f'-{seen[v]}'
+            out.append(f'<div class="commentary-anchor" id="acts-{ch}-{v}{suffix}"></div>')
+        out.append(raw)
+    return '\n'.join(out)
+
+
+def relocate_anchors_in_body(body: str) -> str:
+    """把 scripture-anchor 上的 id 从经文块前面挪到经文块后面（commentary-anchor），
+    让 verse-index 胶囊点击落在注释段而非经文块。
+
+    匹配的 h2：<h2 class="scripture-anchor" id="acts-N-..." ...>...</h2>
+    - 若紧随其后（跳过空行）的是 <div class="scripture-box"...>，则把 id 移到经文
+      块闭合 </div> 之后的 <span class="commentary-anchor">；
+    - 否则（h2 后无 scripture-box，注释紧贴 h2），commentary-anchor 紧贴 h2 之后。
+    """
+    h2_re = re.compile(
+        r'^(<h2 class="scripture-anchor")\s+id="(acts-[0-9-]+)"(.*?)>(.*)$'
+    )
+    lines = body.split('\n')
+    out: list[str] = []
+    i = 0
+    while i < len(lines):
+        m = h2_re.match(lines[i])
+        if not m:
+            out.append(lines[i])
+            i += 1
+            continue
+        pre, aid, post_attrs, h2_tail = m.groups()
+        new_h2 = f'{pre}{post_attrs}>{h2_tail}'
+        anchor = f'<div class="commentary-anchor" id="{aid}"></div>'
+
+        # 跳过空行后看是否为 scripture-box
+        j = i + 1
+        while j < len(lines) and lines[j].strip() == '':
+            j += 1
+        if j < len(lines) and lines[j].lstrip().startswith('<div class="scripture-box"'):
+            # 找 scripture-box 闭合
+            k = j + 1
+            depth = 1
+            while k < len(lines) and depth > 0:
+                depth += lines[k].count('<div') - lines[k].count('</div>')
+                if depth == 0:
+                    break
+                k += 1
+            if k >= len(lines):
+                out.append(lines[i])
+                i += 1
+                continue
+            out.append(new_h2)
+            out.extend(lines[i + 1:k + 1])
+            out.append(anchor)
+            i = k + 1
+        else:
+            out.append(new_h2)
+            out.append(anchor)
+            i += 1
+    return '\n'.join(out)
+
+
 def main():
     chapters = sorted(int(p.stem) for p in SRC_DIR.glob('*.md') if p.stem.isdigit())
     has_preface = (SRC_DIR / 'preface.md').exists()
@@ -104,6 +200,9 @@ def main():
         raw = src.read_text(encoding='utf-8')
         body = strip_frontmatter(raw)
         body = clean_body(body)
+        body = relocate_anchors_in_body(body)
+        if isinstance(n, int):
+            body = add_verse_anchors_in_body(body, n)
         # body 第一行可能是 "# 第N章" 或 "# 前言"，layout 已经渲染 title，不再重复
         body_lines = body.lstrip('\n').split('\n')
         if body_lines and re.match(r'^#\s+(?:第.+?章|前言|Preface)\s*$', body_lines[0]):

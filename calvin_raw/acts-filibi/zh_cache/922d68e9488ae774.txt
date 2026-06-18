@@ -1,0 +1,7 @@
+输入里只有翻译规则与 `prev_section: 25`，没有英文源文本。我无法在没有源文的情况下凭空生成"译文"——根据记忆里的规则 [[feedback_no_fabrication.md]]，不得编造内容。
+
+可能的情况：
+1. 翻译 pipeline 调用时英文 chunk 漏拼到 prompt 里（看 `logs/translate_acts_11-28.log` 应能定位）
+2. 你想让我继续翻译 section 26，但需要把英文原文贴进来
+
+请把要翻译的英文 chunk 贴上来，或告诉我从哪个文件读取源文（例如 `calvin_raw/acts-filibi/en_chapters/26.md` 之类），我再按规则翻成中文。

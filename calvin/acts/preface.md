@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: acts
 book_name: "使徒行传·加尔文注释"
 title: "前言"
-date: 2026-06-16 20:27
+date: 2026-06-18 14:59
 next_section: 1
 next_label: "第一章"
 ---
