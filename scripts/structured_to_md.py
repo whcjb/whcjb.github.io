@@ -197,7 +197,8 @@ INLINE_REF_RE = re.compile(r'<\d{6,7}>')
 
 
 # ── Footnote definition detection ────────────────────────────────────────
-FN_DEF_RE = re.compile(r'^\s*([fF][tT]?\d+)\s+(.*)$', re.DOTALL)
+# 允许 fn label 后面跟可选 dot（Ages 2cor 前半部分的 ftNN. 风格 def 用了这种格式）
+FN_DEF_RE = re.compile(r'^\s*([fF][tT]?\d+)\.?\s+(.*)$', re.DOTALL)
 
 
 def normalize_fn_label(label: str) -> str:
@@ -514,6 +515,8 @@ def convert(structured_path: Path, out_path: Path) -> None:
     table_header: str | None = None
     in_scripture = False
     scripture_lines: list[str] = []
+    # 双语经文 2 列模式：每条 (verse_num, en, la) 由 extractor 的 [SCRIPTURE_ROW] 投递
+    scripture_rows: list[tuple[str, str, str]] = []
     scripture_ref: str | None = None
     in_commentary_section = False  # True after first scripture-section header in chapter; reset on H1
     pending_blockquote_continuation = False
@@ -524,28 +527,68 @@ def convert(structured_path: Path, out_path: Path) -> None:
     pending_fn_idx: int | None = None
 
     def flush_scripture():
-        nonlocal in_scripture, scripture_lines, scripture_ref
-        if not scripture_lines:
+        nonlocal in_scripture, scripture_lines, scripture_rows, scripture_ref
+        if not scripture_lines and not scripture_rows:
             in_scripture = False
             scripture_ref = None
             return
         out.append('')
-        out.append('<div class="scripture-box" markdown="1">')
+        out.append('<div class="scripture-box scripture-box--bilingual" markdown="1">' if scripture_rows
+                   else '<div class="scripture-box" markdown="1">')
         if scripture_ref:
-            # scripture_ref is the structured HTML ref banner; emit verbatim.
             out.append(scripture_ref)
         out.append('')
-        # Merge scripture lines into one paragraph; bold verse numbers
-        body_text = ' '.join(s.strip() for s in scripture_lines if s.strip())
-        # Normalize "N . " or "N. " to bold-verse marker, but inside one paragraph
-        # so use HTML <strong> rather than markdown ** (which collides with kramdown)
-        body_text = re.sub(r'(?:^|(?<=\s))(\d+)\s*\.\s+', r'<strong>\1.</strong> ', body_text)
-        out.append(body_text)
+        if scripture_rows:
+            # 双语 2 列经文表：英文左列，拉丁文右列
+            out.append('<table class="scripture-bilingual">')
+            out.append('<tbody>')
+            fn_refs_in_table: list[str] = []
+            for n, en, la in scripture_rows:
+                # 节号 <strong> 化，便于 verse-anchor JS 识别
+                en_html = f'<strong>{n}.</strong> {en}' if en else ''
+                la_html = f'<strong>{n}.</strong> {la}' if la else ''
+                out.append(
+                    f'<tr><td class="scripture-en">{en_html}</td>'
+                    f'<td class="scripture-la">{la_html}</td></tr>'
+                )
+                # 收集 td 内出现的 [^fN]/[^N] 编号（已经被 _md_to_html_inline
+                # 转成 <sup id="fnref:N">，从 sup id 反向提取）
+                for m_sup in re.finditer(r'id="fnref:([Ff]?\d+[A-Za-z]?)"',
+                                          en_html + ' ' + la_html):
+                    fn_refs_in_table.append(m_sup.group(1))
+            out.append('</tbody>')
+            out.append('</table>')
+            # Kramdown stub：让 <td> 内的 <sup> 跳转目标 <li id="fn:N"> 仍由 kramdown
+            # 生成。隐藏段含一行 markdown 引用，CSS .scripture-fnref-stub 设
+            # display:none。保序去重。
+            seen: set[str] = set()
+            ordered: list[str] = []
+            for n in fn_refs_in_table:
+                if n not in seen:
+                    seen.add(n)
+                    ordered.append(n)
+            if ordered:
+                stub = ' '.join(f'[^{n}]' for n in ordered)
+                out.append('')
+                out.append(stub)
+                out.append('{:.scripture-fnref-stub}')
+        else:
+            # 单语：单段并排（acts/john/romans 单列模式）
+            def bold_verse_nums(s: str) -> str:
+                return re.sub(r'(?:^|(?<=\s))(\d+)\s*\.\s+', r'<strong>\1.</strong> ', s)
+            non_empty = [s.strip() for s in scripture_lines if s.strip()]
+            if len(non_empty) == 1:
+                out.append(bold_verse_nums(non_empty[0]))
+            else:
+                for s in non_empty:
+                    out.append(bold_verse_nums(s))
+                    out.append('')
         out.append('')
         out.append('</div>')
         out.append('')
         in_scripture = False
         scripture_lines = []
+        scripture_rows = []
         scripture_ref = None
 
     def flush_table():
@@ -630,6 +673,38 @@ def convert(structured_path: Path, out_path: Path) -> None:
             out.append('')
             out.append(f'# {cleaned}')
             out.append('')
+        elif tag == 'SCRIPTURE_ROW':
+            # 1cor 双语经文：extractor 已配对英文/拉丁文，编码 N|||EN|||en|||LA|||la
+            m_row = re.match(
+                r'^(\d+)\|\|\|EN\|\|\|(.*?)\|\|\|LA\|\|\|(.*)$',
+                content, flags=re.DOTALL)
+            if m_row:
+                n_str, en_raw, la_raw = m_row.group(1), m_row.group(2), m_row.group(3)
+
+                def _md_to_html_inline(s: str) -> str:
+                    """Convert *X* → <em>X</em>, **X** → <strong>X</strong>,
+                    [^fN]/[^N] → <sup id="fnref:N"><a href="#fn:N">N</a></sup>.
+                    Kramdown 不处理 <td> 内 markdown，必须在塞进 td 前手工转。
+                    [^fN] 风格的脚注标签也支持（1cor 用 f-prefix）。"""
+                    s = format_inline(s)
+                    s = apply_verse_styling(s, red=False)
+                    s = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', s)
+                    # 强调标记
+                    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+                    s = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<em>\1</em>', s)
+                    # 脚注引用 [^N] / [^fN]
+                    s = re.sub(
+                        r'\[\^([Ff]?\d+[A-Za-z]?)\]',
+                        r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+                        s,
+                    )
+                    return s.strip()
+
+                en = _md_to_html_inline(en_raw)
+                la = _md_to_html_inline(la_raw)
+                scripture_rows.append((n_str, en, la))
+            i += 1
+            continue
         elif tag == 'H2':
             # Check if this H2 is a scripture-section header (carries `<NNNNNN>BOOK Ch:V-V'`).
             # If so, route through the same scripture-box mechanism as FOOTNOTE-emitted
@@ -688,7 +763,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 # testing FN_DEF_RE (extractor colors the ftN label red).
                 # Allow whitespace inside the sty (e.g., `<sty>ft306 </sty>`).
                 content_for_fn = re.sub(
-                    r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
+                    r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*</sty>\s*',
                     r'\1 ', content)
                 fn_m = FN_DEF_RE.match(content_for_fn)
                 # Reject only when fn body starts with an Ages bible-ref marker
@@ -758,6 +833,25 @@ def convert(structured_path: Path, out_path: Path) -> None:
         elif tag in ('CENTERED_H1', 'CENTERED_H2'):
             # Strip <sty> and Ages markers to test the plain text content.
             test_text = re.sub(r'</?(?:verse|sty[^>]*)>', '', content)
+            # Check scripture-section first（含 <NNNNNN> 的章节经文头），同 H2 一样
+            # 路由进 scripture-box，否则同一章首段会变成裸 <p> 居中标题（1cor 踩过）。
+            line_for_sec = test_text
+            sec_h_centered = SCRIPTURE_SECTION_RE.match(line_for_sec.strip())
+            if sec_h_centered:
+                flush_scripture()
+                ages_code = sec_h_centered.group(1)
+                ref_text = collapse_spaced_caps(sec_h_centered.group(2).strip())
+                anchor_id = re.sub(r'[^a-z0-9-]+', '-', ref_text.lower()).strip('-')
+                out.append('')
+                out.append(f'<h2 class="scripture-anchor" id="{anchor_id}" data-ref="{ref_text}" style="display:none">{ref_text}</h2>')
+                out.append('')
+                scripture_ref = _build_ref_banner(ages_code, ref_text)
+                in_scripture = True
+                in_commentary_section = True
+                scripture_lines = []
+                pending_fn_idx = None
+                i += 1
+                continue
             test_text = re.sub(r'<\d{6,7}>', '', test_text).strip()
             # SKIP: back-matter footnote-page header "CHAPTER N" (dark green
             # #006411 in Ages PDF, vs real chapter head which is H1 blue).
@@ -790,6 +884,24 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # PDF outline subitem (indented from body), e.g. "1. A proof of its
             # necessity ..." at x=44 (body is x=26). Clear pending fn merge.
             pending_fn_idx = None
+            # If we're inside a scripture section and the INDENT block looks like
+            # a verse passage (`N. Capital` start, no leading italic phrase marker),
+            # route into scripture-box. 1cor 经文区 PDF 用 INDENT（左缩进英文）+
+            # RIGHT（右缩进拉丁文）交替，必须并入同一 scripture-box。
+            if in_scripture:
+                stripped_content = content.lstrip()
+                starts_with_verse = bool(re.match(r'^\d+\s*\.\s+', stripped_content))
+                # 注释段以「红色斜体短语」(`<sty c="800000" i="1">`) 开场；
+                # 经文段允许出现普通黑斜体（`<sty c="000000" i="1">`，如 KJV 风格的
+                # 强调词 *to be*）。只用红色斜体作为注释标志，避免误把经文当注释。
+                has_red_italic_marker = bool(re.search(
+                    r'<sty\s+c="800000"\s+i="1">', stripped_content[:60]))
+                if starts_with_verse and not has_red_italic_marker:
+                    body = format_inline(content)
+                    body = apply_verse_styling(body, red=False)
+                    scripture_lines.append(body)
+                    i += 1
+                    continue
             body = format_inline(content)
             body = apply_verse_styling(body)
             body = bold_leading_verse_num(body)
@@ -802,6 +914,18 @@ def convert(structured_path: Path, out_path: Path) -> None:
         elif tag == 'RIGHT':
             # PDF right-aligned narrow byline (e.g. "by John Calvin" at x=278-350)
             pending_fn_idx = None
+            # 同 INDENT：scripture 区内的 RIGHT 是拉丁文经节续接，并入 scripture-box
+            if in_scripture:
+                stripped_content = content.lstrip()
+                starts_with_verse = bool(re.match(r'^\d+\s*\.\s+', stripped_content))
+                has_red_italic_marker = bool(re.search(
+                    r'<sty\s+c="800000"\s+i="1">', stripped_content[:60]))
+                if starts_with_verse and not has_red_italic_marker:
+                    body = format_inline(content)
+                    body = apply_verse_styling(body, red=False)
+                    scripture_lines.append(body)
+                    i += 1
+                    continue
             body = format_inline(content)
             body = apply_verse_styling(body)
             out.append('')
@@ -850,7 +974,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # of [FOOTNOTE]. Detect `<sty>ftN</sty> body...` pattern at start →
             # treat as fn def (same logic as FOOTNOTE branch).
             body_strip_ftN = re.sub(
-                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\s*</sty>\s*',
+                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*</sty>\s*',
                 r'\1 ', content)
             body_fn_m = FN_DEF_RE.match(body_strip_ftN)
             body_fn_is_ages_ref = bool(body_fn_m and re.match(r'^<\d{6,7}>', body_fn_m.group(2)))
@@ -898,7 +1022,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 body = re.sub(r'\s+', ' ', body).strip()
                 if body:
                     out.append('')
-                    out.append(f'<p style="text-align:center; color:#000080; margin:14px 2em;">{body}</p>')
+                    out.append(f'<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">{body}</p>')
                     out.append('')
                 i += 1
                 continue
@@ -925,6 +1049,10 @@ def convert(structured_path: Path, out_path: Path) -> None:
                     i += 1
                     continue
                 else:
+                    # 不是经文段 → 注释开始；若已收集 scripture_lines 或 scripture_rows
+                    # 但还未 flush，现在 flush（确保经文 box 在注释之前出现）
+                    if scripture_lines or scripture_rows:
+                        flush_scripture()
                     in_scripture = False  # not a scripture passage, fall through
             # Red-italic for any body in a chapter's commentary section (after first
             # scripture-section header, before next H1). Outside that → plain italic

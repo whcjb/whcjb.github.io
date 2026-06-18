@@ -270,6 +270,39 @@ a.commentary-anchor {
   margin-bottom: 8px;
 }
 
+/* 双语 2 列经文表 (1cor 等 Ages 双语 PDF) — 左英文 / 右拉丁文 */
+.calvin-en-content .scripture-bilingual {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 0;
+}
+.calvin-en-content .scripture-bilingual td {
+  vertical-align: top;
+  padding: 6px 12px 6px 0;
+  width: 50%;
+}
+.calvin-en-content .scripture-bilingual td.scripture-la {
+  padding: 6px 0 6px 12px;
+  border-left: 1px dotted #888;
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .calvin-en-content .scripture-bilingual,
+  .calvin-en-content .scripture-bilingual tbody,
+  .calvin-en-content .scripture-bilingual tr,
+  .calvin-en-content .scripture-bilingual td {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 4px 0;
+  }
+  .calvin-en-content .scripture-bilingual td.scripture-la {
+    border-left: none;
+    border-top: 1px dotted #888;
+    padding-top: 6px;
+  }
+}
+
 /* ── Ages 单语英文版 PDF-faithful scripture-box (john / romans / galatians 同款) ──
    双蓝边框 + 浅黄底 + 灰色 ref banner + 暗红 Ages 代码 + 小型大写卷名
    适用 book_id: john-en / romans-en / galatians-en
@@ -467,6 +500,18 @@ a.commentary-anchor {
   visibility: hidden;
   scroll-margin-top: 80px;
 }
+/* Commentary anchor — 经文块之后、注释段之前的零高度跳转目标，
+   让 verse-index 胶囊点击落在注释开头而非经文块。 */
+.calvin-en-content .commentary-anchor {
+  display: block;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  scroll-margin-top: 80px;
+}
 </style>
 
 <script>
@@ -488,17 +533,30 @@ a.commentary-anchor {
   });
 })();
 
-// ── Footnote backref numbers ───────────────────────
+// ── Footnote labels (正文 sup + 底部 backref 都用 fn 原始 label) ───
+// kramdown 默认把 [^f35] 渲染成 <sup id="fnref:f35"><a>2</a></sup>，
+// 用顺序计数当显示文字，与 PDF 原版用的 fNN 标签不一致。
+// 这段 JS 把：
+//   1. 正文 <sup> 内 <a> 文字改成 fnref 后面的 label（f35/f36/...）
+//   2. 底部 <li> 行首加一个同样 label 的 backref 锚
 (function() {
+  // 1. 正文 sup 链接：用 id="fnref:XXX" 的 XXX 替换显示文字
+  document.querySelectorAll('.calvin-en-content sup[id^="fnref:"] > a.footnote').forEach(function(a) {
+    var sup = a.parentElement;
+    var label = sup.id.replace(/^fnref:/, '');
+    a.textContent = label;
+  });
+  // 2. 底部 fn 列表：每条前插一个 label backref 锚
   var lists = document.querySelectorAll('.calvin-en-content .footnotes ol');
   lists.forEach(function(ol) {
     var items = ol.querySelectorAll('li[id]');
-    items.forEach(function(li, idx) {
-      var refId = li.id.replace(/^fn:/, 'fnref:');
+    items.forEach(function(li) {
+      var label = li.id.replace(/^fn:/, '');
+      var refId = 'fnref:' + label;
       var a = document.createElement('a');
       a.href = '#' + refId;
       a.className = 'fn-backref-num';
-      a.textContent = (idx + 1) + '.';
+      a.textContent = label;
       a.title = '返回引用位置';
       li.insertBefore(a, li.firstChild);
     });

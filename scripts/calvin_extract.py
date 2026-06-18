@@ -217,6 +217,29 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ROMM.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/romans/calvin_romans_structured.txt'),
     },
+    '1cor': {
+        # Ages Digital Library single-column English (Pringle tr). Diagnosed 2026-06-18:
+        # CAL_1COR.pdf, 568 pages, 410×626 page; x0 peak ≈ 30; Ages <NNNNNN>
+        # scripture markers present (e.g. <460101> = 1Cor 1:1, book code 46);
+        # CHAPTER 1 starts p.35 (after TOC + Translator's Preface);
+        # Same family as acts/john/romans → ages_phil extractor.
+        # Replaces older 1cor-vol1 / 1cor-vol2 CCEL-based extraction.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_1COR.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/1cor/calvin_1cor_structured.txt'),
+    },
+    '2cor': {
+        # Ages Digital Library Pringle tr. Diagnosed 2026-06-18:
+        # CAL_2COR.pdf, 351 pages, 410×626; x0 main peak 30 (commentary body),
+        # scripture region bilingual (English col x0=40, Latin col x0=218);
+        # 53 <NNNNNN> markers in first 50 pages, book code 47 (2 Corinthians);
+        # CHAPTER 1 starts p.20. Same ages_phil bilingual scripture-only path
+        # as 1cor (see 02a-extract-ages.md §11).
+        # Replaces older 1cor-vol2 / 2cor CCEL-based extraction.
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_2COR.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/2cor/calvin_2cor_structured.txt'),
+    },
     'galatians': {
         # Ages bilingual (same as romans). 410×626; x0 单峰 30 + bilingual
         # peak 220; 6 colors; 36/50 sample pages have Ages markers; 197 pages
@@ -3025,14 +3048,50 @@ def phil_reconstruct_page(page, page_num=None):
     SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
     in_scripture_mode = False
     scripture_table_header = None
-    scripture_buffer = []  # accumulate English lines across scripture-mode blocks
+    scripture_buffer = []      # English (left column) lines accumulated
+    scripture_buffer_la = []   # Latin (right column) lines accumulated
+
+    def _split_verses(text: str) -> list[tuple[str, str]]:
+        """Split `1. text 2. text 3. text` 序列为 [(verse_num, text), ...]"""
+        if not text.strip():
+            return []
+        # 在每个段首 verse-num 处切分；保留 verse num 作为 key
+        parts = re.split(r'(?:^|(?<=\s))(\d+)\s*\.\s+', text.strip())
+        # parts: ['', '1', 'Paul, called...', '2', 'Unto the church...', '3', 'Grace ...']
+        result = []
+        i = 1
+        while i < len(parts) - 1:
+            n = parts[i]
+            txt = parts[i + 1].strip().rstrip(',').rstrip()
+            result.append((n, txt))
+            i += 2
+        return result
 
     def flush_scripture_buffer():
-        nonlocal scripture_buffer
-        if scripture_buffer:
-            joined = ' '.join(scripture_buffer)
-            output_lines.append(f'[BODY] {joined}')
+        nonlocal scripture_buffer, scripture_buffer_la
+        if not scripture_buffer and not scripture_buffer_la:
+            return
+        en_text = ' '.join(scripture_buffer)
+        la_text = ' '.join(scripture_buffer_la)
+        # 若没有 Latin 列：单列经文，沿用旧的 [BODY] 路径（acts/john/romans 等单列书）
+        if not la_text.strip():
+            output_lines.append(f'[BODY] {en_text}')
             scripture_buffer = []
+            scripture_buffer_la = []
+            return
+        # 双列：解析两边 verse 编号，配对后用 [SCRIPTURE_ROW] 编码每行
+        en_verses = _split_verses(en_text)
+        la_verses = _split_verses(la_text)
+        en_map = {n: t for n, t in en_verses}
+        la_map = {n: t for n, t in la_verses}
+        all_nums = sorted(set(en_map) | set(la_map), key=int)
+        for n in all_nums:
+            en = en_map.get(n, '').strip()
+            la = la_map.get(n, '').strip()
+            # 编码：每行 [SCRIPTURE_ROW] verse_num |||EN||| english ||||LA|||| latin
+            output_lines.append(f'[SCRIPTURE_ROW] {n}|||EN|||{en}|||LA|||{la}')
+        scripture_buffer = []
+        scripture_buffer_la = []
 
     for block_idx, block in enumerate(blocks):
         if prev_block_y1 is not None and block['bbox'][1] - prev_block_y1 > 8:
@@ -3049,8 +3108,12 @@ def phil_reconstruct_page(page, page_num=None):
         sec_line_idx = None
         for li_idx, line in enumerate(block['lines'][:3]):
             line_text = ''.join(s['text'] for s in line['spans']).strip()
+            # 书名可能以数字开头（1 CORINTHIANS / 2 CORINTHIANS / 1 JOHN 等），
+            # 允许 `^\d?\s*` 前缀；旧版 `[A-Z][A-Za-z]*` 不让 `1 C...` 通过，
+            # 导致 1cor 前两个 scripture-section 落到 centered-block 分支，
+            # scripture-mode 无法激活，进而双语经文渲染失败。
             m = re.match(
-                r'^<(\d{6,7})>\s*([A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d{1,3})?)\s*$',
+                r'^<(\d{6,7})>\s*(\d?\s*[A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d{1,3})?)\s*$',
                 line_text,
             )
             if m:
@@ -3106,9 +3169,8 @@ def phil_reconstruct_page(page, page_num=None):
                         line_rights.append(line)
                     else:
                         line_lefts.append(line)
-            # Accumulate ENGLISH lines into scripture_buffer; emit as a single
-            # [BODY] when scripture-mode exits (so ≥2 verse anchors in one
-            # paragraph triggers structured_to_md's scripture-box).
+            # Accumulate ENGLISH (left col) and LATIN (right col) lines separately.
+            # On flush_scripture_buffer 解析两边节号配对，渲染为 2 列经文表。
             for ln in line_lefts:
                 txt = _render_spans_with_italic(ln['spans']).rstrip()
                 if not txt.strip():
@@ -3117,6 +3179,14 @@ def phil_reconstruct_page(page, page_num=None):
                     scripture_buffer[-1] = scripture_buffer[-1][:-1] + txt.lstrip()
                 else:
                     scripture_buffer.append(txt)
+            for ln in line_rights:
+                txt = _render_spans_with_italic(ln['spans']).rstrip()
+                if not txt.strip():
+                    continue
+                if scripture_buffer_la and scripture_buffer_la[-1].endswith('-'):
+                    scripture_buffer_la[-1] = scripture_buffer_la[-1][:-1] + txt.lstrip()
+                else:
+                    scripture_buffer_la.append(txt)
             continue  # skip the rest of normal block processing
 
         # Centered block detection: symmetric left/right margins.
