@@ -119,4 +119,5 @@ push 后 1–2 分钟 GitHub Pages 才会重新部署。用户强刷（⌘+Shift
 任务全部结束。如有后续：
 - 更多章节翻译 → 回 [04-translate-zh.md](04-translate-zh.md)
 - 新书提取 → 回 [01-diagnose.md](01-diagnose.md)
+- 经文索引（首次或追加章节后）→ [07-verse-index.md](07-verse-index.md)
 - 修 bug → 查 [refs/anti-patterns.md](refs/anti-patterns.md)

@@ -60,12 +60,31 @@ grep -c 'calvin-scripture' calvin/harmony-*-en/*.md   # 全部应 = 0
 
 ```bash
 F=PATH/TO/FILE
-ref=$(grep -oE '\[\^[0-9]+\](?!:)' $F | sort -u | wc -l)
-def=$(grep -cE '^\[\^[0-9]+\]: ' $F)
+# 兼容 [^N] 与 [^fN]/[^ftN] 标签（acts/1cor/2cor 等 Ages 书用 f-prefix）
+ref=$(grep -oE '\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\](?!:)' $F | sort -u | wc -l)
+def=$(grep -cE '^\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\]: ' $F)
 echo "fn refs:  $ref   fn defs: $def"   # 必须 ref == def
 ```
 
 - 不等 = [anti-pattern H](anti-patterns.md#h)
+- **ref ≫ def**：典型 root cause 是 extractor → structured_to_md 之间 def 漏识别。
+  例如 2cor 踩过的 `<sty>ftN.</sty>` 带点 label，老 FN_DEF_RE 不允许尾点 →
+  ft11–ft240 全部走 body 路径不进 `[^fN]:`（详见 02a-extract-ages §11.4 反例条目）。
+
+---
+
+## Gate 5b：`<p>` 含 kramdown markdown 必须带 `markdown="1"`
+
+```bash
+F=PATH/TO/FILE
+# 找含 [^fN] 或 *italic* 的 <p>，但缺 markdown="1" 属性 → kramdown 不会处理
+grep -nE '<p[^>]*>(?:[^<]*\[\^|[^<]*\*[A-Za-z])' $F | grep -v 'markdown="1"' | head
+```
+
+- 有匹配 = 该 `<p>` emit 漏 `markdown="1"`，里面的 `[^fN]` / `*X*` 会渲染成字面字符
+- 2cor preface 踩过：navy-quote 居中 `<p style="text-align:center; color:#000080">` 漏 `markdown="1"`
+  → `[^f7]` `[^f8]` 显示为字面文本（详见 02a-extract-ages §11.4 反例条目）
+- 修法：structured_to_md.py 中所有 `out.append('<p ...>...</p>')` 含正文片段都加 `markdown="1"`
 
 ---
 
@@ -119,8 +138,8 @@ echo "5. calvin-script: $(grep -c 'calvin-scripture' $F)"
 echo "6. long para:     $(awk 'NR>20 && length($0)>1500' $F | wc -l)"
 echo "7. hyphen rem:    $(grep -cP '\b\w+- \w+' $F)"
 
-ref=$(grep -oE '\[\^[0-9]+\]' $F | sort -u | wc -l)
-def=$(grep -cE '^\[\^[0-9]+\]: ' $F)
+ref=$(grep -oE '\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\]' $F | grep -v ':$' | sort -u | wc -l)
+def=$(grep -cE '^\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\]: ' $F)
 echo "8. fn ref/def:    $ref / $def $([ $ref = $def ] && echo OK || echo MISMATCH)"
 ```
 

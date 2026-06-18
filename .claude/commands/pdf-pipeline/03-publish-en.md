@@ -194,7 +194,71 @@ PDF 经文表横跨两页时，第二页通常是单列续接片段（< 200px �
 
 ---
 
-## 9. 完成后 audit
+## 9. 脚注标签必须用原始 label（`f35` 不是 `2`）
+
+### 9.0 用户底线（被反复打回）
+
+> "这里用 f36, 就写 f36, 为什么使用 2"
+
+PDF body 用 `f36` 上标 / 底部 `ft36 text` —— 显示出来必须是 `f36`，不能是
+kramdown 自动计数的 `1./2./3.`。
+
+### 9.1 kramdown 默认行为不对
+
+kramdown 把 `[^f36]` 渲染成：
+
+```html
+<sup id="fnref:f36"><a href="#fn:f36" class="footnote">2</a></sup>
+   ↑ id/href 是 f36（对的）           ↑ 显示文字是 "2"（错的）
+```
+
+底部 `<li id="fn:f36">` 用 `<ol>` 编号显示 "1./2./3."（也错）。
+
+### 9.2 修复：calvin-en.html runtime JS 改写
+
+不要改 publish 脚本（kramdown 还要靠它生成 fn def `<li id="fn:N">` 链路），
+而是在 layout 加一段 DOMContentLoaded 后跑的 JS，把：
+
+1. 正文 `<sup>` 内 `<a>` 文字 → 用 sup.id 抽出 `fnref:` 后的 label
+2. 底部 `<li>` 行首 insert 一个 `.fn-backref-num` 锚，textContent 同样 label
+
+```javascript
+(function() {
+  // 1. 正文 sup 链接
+  document.querySelectorAll('.calvin-en-content sup[id^="fnref:"] > a.footnote').forEach(function(a) {
+    a.textContent = a.parentElement.id.replace(/^fnref:/, '');
+  });
+  // 2. 底部 fn 列表前缀
+  document.querySelectorAll('.calvin-en-content .footnotes ol li[id]').forEach(function(li) {
+    var label = li.id.replace(/^fn:/, '');
+    var a = document.createElement('a');
+    a.href = '#fnref:' + label;
+    a.className = 'fn-backref-num';
+    a.textContent = label;
+    a.title = '返回引用位置';
+    li.insertBefore(a, li.firstChild);
+  });
+})();
+```
+
+CSS 配套：`.footnotes ol { list-style: none; padding-left: 0; }` 去 ol 编号，
+`.fn-backref-num { ... }` 锚样式。
+
+**为什么 JS 不 publish 阶段做**：kramdown 解析 `[^fN]` 链路依赖默认渲染流程，
+build-time 改写正文 sup 会破坏 fn def 自动收集。runtime JS 改文字不动 id/href，
+保留 kramdown 跳转能力。
+
+### 9.3 反例
+
+| 现象 | 根因 | Fix |
+|---|---|---|
+| 正文 sup 显示 `2`，PDF 是 `f36` | kramdown 用顺序计数当 `<a>` 文字，id 是对的但文字不是 | layout JS 用 `sup.id.replace('fnref:','')` 替换 `<a>` 文字 |
+| 底部 fn 列表显示 `1./2./3.` 编号 | `<ol>` 默认编号 + 旧 JS 用 `idx+1` 当 backref num | `<ol> list-style:none` + JS 改用 li.id 的 label |
+| 手工 emit `<sup id="fnref:fN"><a>fN</a></sup>` 时正文显示 `fN`，但 kramdown 自动生成的还是 `2` | 两种来源对显示文字处理不同 | runtime JS 一并扫所有 `sup[id^="fnref:"]`，把 `<a>` 文字统一为 id label |
+
+---
+
+## 10. 完成后 audit
 
 ```bash
 for f in calvin/BOOK-en/*.md; do
@@ -206,6 +270,6 @@ done
 
 ---
 
-## 10. 进入下一步
+## 11. 进入下一步
 
 英文发布 OK → [04-translate-zh.md](04-translate-zh.md)（翻译中文）或 [06-finalize.md](06-finalize.md)（直接 commit + push）

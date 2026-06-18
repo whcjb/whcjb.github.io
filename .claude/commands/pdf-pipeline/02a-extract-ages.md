@@ -15,6 +15,10 @@
 进入本步骤前**必须**已完成 [01-diagnose.md](01-diagnose.md)。再问自己：
 
 - [ ] LATIN_X_MIN 已校准（通常 200，可能需调）
+- [ ] **经文块是单列还是双语 2 列**？翻几页 scripture-section 看左/右两列是否都有
+      `**N.**` 节号——是 → 必须走 §11 双语 table 路径（1cor / 2cor 等）
+- [ ] 书名是否数字前缀（`1 CORINTHIANS / 2 JOHN`）？是 → SCRIPTURE_SEC_RE 必须含
+      `\d?\s*` 前缀，否则 scripture-mode 无法激活（见 §11.1）
 - [ ] 含希腊文吗？ → 必须转 Unicode（见 §4）
 - [ ] 含 Ages 红色斜体经文吗？ → 染色阶段二（见 §5）
 - [ ] 段落首行缩进阈值已确认（PARA_INDENT_LOW）
@@ -254,7 +258,168 @@ def move_orphan_fnref(items):
 
 ---
 
-## 11. scripture-box 视觉样式必须按 PDF 还原
+## 11. 双语 2 列经文块（1cor 等 Ages 双语 PDF）
+
+部分 Ages PDF 经文区是**左英文 / 右拉丁文 2 列并排**（1 Corinthians、2 Corinthians、
+romans 双语段落等）。**不可**简化成 "只保留英文" 或 "英文/拉丁文交替单列"——
+两种都被用户打回过。必须按 PDF 原样还原 2 列布局。
+
+### 11.0 用户底线（被反复强调过）
+
+> "使用两列，一列英文，一列拉丁文，和 pdf 保持一致"
+> "经文块应该怎么处理"
+
+输出形态必须是单一 `<div class="scripture-box scripture-box--bilingual">` 包一个
+`<table class="scripture-bilingual">`，每节一行 `<tr><td.scripture-en><td.scripture-la></tr>`。
+不能是 6 个独立 `<p>`，也不能是英文+拉丁文塞同一段。
+
+### 11.1 extractor (`phil_reconstruct_page`)
+
+scripture-mode 状态机要点：
+
+```python
+LATIN_X_MIN = 200   # 由 diagnose 校准；1cor 410 页宽下 217 是 Latin 列起点
+SCRIPTURE_BLOCK_WIDTH_MAX = 290
+
+in_scripture_mode = False
+scripture_buffer    = []   # 左列（English）累积
+scripture_buffer_la = []   # 右列（Latin）累积  ← 旧版只有 EN buffer，把 Latin 丢了
+
+# 进入 scripture-mode：H2 行匹配 <NNNNNN>BOOK Ch:V-V'
+# 注意书名允许数字前缀：`\d?\s*[A-Z][A-Za-z]*...`
+#   旧 regex `^[A-Z]...` 无法匹 `1 CORINTHIANS / 2 JOHN`，scripture-mode 不激活
+SCRIPTURE_SEC_RE = re.compile(
+    r'^<(\d{6,7})>\s*(\d?\s*[A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d{1,3})?)\s*$'
+)
+
+# 在 scripture-mode 内对每个 block：
+# 1. 按 line.bbox.x0 < LATIN_X_MIN 切左列 / 右列
+# 2. 左列行 → scripture_buffer，右列行 → scripture_buffer_la
+# 3. 跨 block 续行：上一项 endswith('-') 时拼回去（PDF 末尾断字 hyphen）
+# 4. flush 时机：下一个 H2 / 全宽 block（注释起首） / page boundary
+
+def flush_scripture_buffer():
+    en_text = ' '.join(scripture_buffer)
+    la_text = ' '.join(scripture_buffer_la)
+    if not la_text.strip():
+        # 单列（acts/john/romans 这类纯英文版）→ 走旧 [BODY] 路径，不要影响这些书
+        output_lines.append(f'[BODY] {en_text}')
+        return
+    # 双列：按节号 split，配对后用 [SCRIPTURE_ROW] 投递给 structured_to_md
+    en_verses = _split_verses(en_text)   # 拆 `1. ... 2. ... 3. ...` 为 [('1', txt), ...]
+    la_verses = _split_verses(la_text)
+    en_map = {n: t for n, t in en_verses}
+    la_map = {n: t for n, t in la_verses}
+    for n in sorted(set(en_map) | set(la_map), key=int):
+        en = en_map.get(n, '').strip()
+        la = la_map.get(n, '').strip()
+        output_lines.append(f'[SCRIPTURE_ROW] {n}|||EN|||{en}|||LA|||{la}')
+```
+
+**为什么是 `_split_verses` 后再配对**：PyMuPDF 经常把 "Latin 节 N 末尾 + English
+节 N+1 起首" 合并到同一个 block，分行后整段会出现 `1. Paulus... 2. Unto the
+church...` 混着 Latin/English 的怪段。按节号 split 能消除这种合并产生的混乱。
+
+### 11.2 structured_to_md：`[SCRIPTURE_ROW]` 处理器
+
+⚠️ **kramdown 不处理 `<td>` 内 markdown**——即使外层 `<div class="scripture-box"
+markdown="1">` 设了 `markdown="1"`，`<td>` 内部依然是纯 HTML。所以塞进 td 前要
+手工转 `*X*`/`**X**`/`[^fN]` 这些 inline markdown：
+
+```python
+def _md_to_html_inline(s):
+    s = format_inline(s)
+    s = apply_verse_styling(s, red=False)
+    s = re.sub(r'</?(?:verse|sty(?:\s[^>]*)?)>', '', s)
+    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+    s = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<em>\1</em>', s)
+    # 1cor 用 [^f35] 风格脚注标签，兼容 [^N] 与 [^fN]
+    s = re.sub(
+        r'\[\^([Ff]?\d+[A-Za-z]?)\]',
+        r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+        s,
+    )
+    return s.strip()
+
+elif tag == 'SCRIPTURE_ROW':
+    m = re.match(r'^(\d+)\|\|\|EN\|\|\|(.*?)\|\|\|LA\|\|\|(.*)$', content, re.DOTALL)
+    if m:
+        n_str, en_raw, la_raw = m.groups()
+        scripture_rows.append((n_str, _md_to_html_inline(en_raw),
+                                       _md_to_html_inline(la_raw)))
+    continue
+```
+
+flush_scripture 的双语分支 render 完 table 后，还要 emit 一行 kramdown stub 让
+`<sup>` 跳转目标 `<li id="fn:fN">` 仍被 kramdown 生成：
+
+```python
+# 从 <sup id="fnref:N"> 反向提取所有出现过的脚注编号，保序去重
+ordered = unique_preserve_order(re.findall(r'id="fnref:([Ff]?\d+[A-Za-z]?)"', table_html))
+if ordered:
+    stub = ' '.join(f'[^{n}]' for n in ordered)
+    out.append('')
+    out.append(stub)
+    out.append('{:.scripture-fnref-stub}')   # CSS display:none，仅做 kramdown ref 占位
+```
+
+`scripture_rows` 是和 `scripture_lines` 并列的状态。`flush_scripture` 判断：
+
+```python
+if scripture_rows:
+    # 渲染 2 列 <table class="scripture-bilingual">
+elif scripture_lines:
+    # 旧的单列段落（acts/john/romans）
+```
+
+**关键**：BODY 注释段开始时（in_scripture 命中 fall-out 分支），必须**同时**检查
+`scripture_lines` 和 `scripture_rows` 是否非空，任一非空就 flush。否则双语 box 会
+落到注释段之后（用户视野里先看到注释、再看到经文，错位）。
+
+### 11.3 CSS：`<table class="scripture-bilingual">`
+
+```css
+.calvin-en-content .scripture-bilingual {
+  width: 100%; border-collapse: collapse; margin: 8px 0 0;
+}
+.calvin-en-content .scripture-bilingual td {
+  vertical-align: top; padding: 6px 12px 6px 0; width: 50%;
+}
+.calvin-en-content .scripture-bilingual td.scripture-la {
+  padding: 6px 0 6px 12px;
+  border-left: 1px dotted #888;
+  font-style: italic;       /* 拉丁文整列斜体 */
+}
+@media (max-width: 640px) {
+  /* 窄屏堆叠：英文上 / 拉丁下，用点线横线分隔 */
+  .calvin-en-content .scripture-bilingual,
+  .calvin-en-content .scripture-bilingual tbody,
+  .calvin-en-content .scripture-bilingual tr,
+  .calvin-en-content .scripture-bilingual td { display: block; width: 100%; border: none; padding: 4px 0; }
+  .calvin-en-content .scripture-bilingual td.scripture-la {
+    border-left: none; border-top: 1px dotted #888; padding-top: 6px;
+  }
+}
+```
+
+### 11.4 反例（已踩过）
+
+| 现象 | 根因 | Fix |
+|---|---|---|
+| 第 1/2 个 scripture-section 显示为 centered 标题，没框 | SCRIPTURE_SEC_RE 不允许 `1 CORINTHIANS` 数字前缀 → scripture-mode 不激活 | 加 `\d?\s*` 前缀 |
+| 经文块只显示英文，拉丁文消失 | scripture_buffer 只收 line_lefts，line_rights 被丢 | 加 scripture_buffer_la 同步收集 + flush 时配对 |
+| 经文块里 Latin/English 混在一段（`1. Paulus... 2. Unto the church...`）| PyMuPDF 把跨列邻行合并到同一 block，extractor 没按列切分就拼接 | 按 line.bbox.x0 切左/右列；flush 时按节号 split 再配对 |
+| scripture-box 出现在注释段之后（错位）| BODY 注释命中 fall-out 只 flush `scripture_lines`，没 flush `scripture_rows` | fall-out 路径同时检查两个 buffer，任一非空就 flush |
+| 用 `has_leading_italic = <sty c="*" i="1">` 当注释段标志 | 经文里 KJV 风格 `*to be*` 是 `i="1"` 黑斜体，会误判为注释 | 只匹红斜体 `<sty c="800000" i="1">` |
+| 渲染时所有经文挤一段（不分行）| flush_scripture 用 `' '.join(scripture_lines)` 一段输出 | len==1 合并，len>1 各自一段；双语走 table 分支 |
+| `<td>` 里出现原样 `*to be*` / `[^f35]` 字面字符 | kramdown 不处理 `<td>` 内 markdown（即便外层 div 有 markdown="1"）| SCRIPTURE_ROW 塞进 td 前手工转：`*X*`→`<em>`、`**X**`→`<strong>`、`[^fN]`→`<sup id="fnref:fN">`；并 emit `[^fN]\n{:.scripture-fnref-stub}` 占位让 kramdown 生成 `<li id="fn:fN">`（CSS `.scripture-fnref-stub{display:none}` 隐藏占位）|
+| 脚注标签是 `[^f35]` 不是 `[^35]` 也要支持 | 1cor 用 `f` 前缀的 fnN 标签 | fnref regex 用 `\[\^([Ff]?\d+[A-Za-z]?)\]` 兼容 `[^N]` 和 `[^fN]` |
+| Ages back-section 大量 `ftN.` 风格 def（带点）被丢，章节里只剩个位数 fn 定义 | 同一本 PDF 里 def 标签出现两种格式：`<sty>ftN</sty>` 不带点，`<sty>ftN.</sty>` 带点；structured_to_md 的 FN_DEF_RE / strip 正则只允许不带点版本，带点 def 走不到 `[^fN]:` 分支被当 body 正文 emit。2cor 前半 book 用了带点格式，ft11–ft240 全部漏译 | 两处正则都允许可选 `.`：`FN_DEF_RE = r'^\s*([fF][tT]?\d+)\.?\s+(.*)$'`；strip 内部 `<sty>...ftN\.?\s*</sty>` |
+| 居中段落里出现字面 `[^f7]` / `*italic*` 而不是渲染为 sup / em | structured_to_md 某条 `out.append('<p style="...">{body}</p>')` 漏了 `markdown="1"` 属性 → kramdown 不处理 `<p>` 内 markdown | 任何 emit `<p>` 含正文片段的位置都必须带 `markdown="1"`（即便外层 div 有也不传染）；2cor preface 踩到的是 navy-quote 居中段（行 1025）|
+
+---
+
+## 12. scripture-box 视觉样式必须按 PDF 还原
 
 Ages PDF 经文区有**双蓝边框 + 浅黄底 + 灰色 ref banner**。john-en 必须保留这套样式：
 
@@ -276,7 +441,7 @@ Ages PDF 经文区有**双蓝边框 + 浅黄底 + 灰色 ref banner**。john-en 
 
 ---
 
-## 12. 必读引用
+## 13. 必读引用
 
 - [refs/principles.md](refs/principles.md)
 - [refs/helpers.md](refs/helpers.md) §1.5（`heb_*` / Ages 函数）
@@ -284,12 +449,12 @@ Ages PDF 经文区有**双蓝边框 + 浅黄底 + 灰色 ref banner**。john-en 
 
 ---
 
-## 13. 完成后 audit
+## 14. 完成后 audit
 
 跑 [refs/audit-gates.md](refs/audit-gates.md) 全部 gate。
 
 ---
 
-## 14. 进入下一步
+## 15. 进入下一步
 
 raw txt 干净后 → [03-publish-en.md](03-publish-en.md)

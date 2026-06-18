@@ -35,12 +35,29 @@ doc.close()
 
 ## 3. 判断规则
 
-| x0 分布 | 格式 | 入口 / step |
+先看页面元数据 + Ages 指纹，再看 x0 分布：
+
+```python
+# Ages 指纹：metadata 含 'AGES'、第一页含 "THE AGES DIGITAL LIBRARY"
+# 经节锚点 <NNNNNN>（6 位数字 book+ch+v 编码）
+ages_markers = sum(len(re.findall(r'<\d{6}>', doc[i].get_text()))
+                   for i in range(min(50, len(doc))))
+# > 5 个 → Ages 系列（acts/john/romans/1cor/phil 等）
+```
+
+| 信号组合 | 格式 | 入口 / step |
 |---|---|---|
-| **单峰**（如 `x≈74: 90 blocks`，少量 outlier）| **CCEL 单列**（matthew1 / harmony3 / acts）| [02b-extract-ccel.md](02b-extract-ccel.md) |
-| **双峰**（如 `x≈74: 50` + `x≈220: 40`）| **Ages 双语**（heb / phil / john）| [02a-extract-ages.md](02a-extract-ages.md) |
-| **三峰**（如 `x≈74: 30` + `x≈230: 20` + `x≈310: 25`）| **CCEL 平行福音**（matthew old vol 2）| [02c-extract-parallel.md](02c-extract-parallel.md) |
+| **Ages 指纹 + 410×626 页 + 单峰 x≈30** | **ages_phil 单列**（acts / john / romans / 1cor 等）| [02a-extract-ages.md](02a-extract-ages.md) |
+| Ages 指纹 + 双峰 x≈74/220 | **ages_heb / ages_phil 双语全篇**（heb / phil）| [02a-extract-ages.md](02a-extract-ages.md) |
+| Ages 指纹 + 单峰 + scripture 区有 2 列 | **ages_phil 双语 scripture-only**（1cor / 2cor）| [02a-extract-ages.md §11](02a-extract-ages.md)（双语 table 路径必须走）|
+| 无 Ages 指纹 + 单峰 `x≈74: 90 blocks` | **CCEL 单列**（matthew1 / harmony3）| [02b-extract-ccel.md](02b-extract-ccel.md) |
+| 无 Ages 指纹 + 三峰 x≈74/230/310 | **CCEL 平行福音**（matthew old vol 2）| [02c-extract-parallel.md](02c-extract-parallel.md) |
 | 单峰 + 章首多列经文 | CCEL Harmony（harmony1/3，含共观平行节）| [02b-extract-ccel.md](02b-extract-ccel.md)，必须开 `centering: True` |
+
+**判断"双语 scripture-only"**（1cor 踩过）：x0 主峰单一不代表整本单列，因为 Ages
+单列 PDF 仍可能在 scripture 段做 2 列布局（英文 / 拉丁文左右排）。必须翻几页
+`<NNNNNN>` 锚点后面的内容 sample——左列 + 右列都有 `**N.**` 节号 = 双语。
+不查 → 经文块拉丁文丢失。
 
 **Ages 双语 vs 平行福音的区别**：
 - Ages：右列起始 `x≈200` 左右（英文 + 拉丁文）
@@ -56,9 +73,12 @@ doc.close()
 | `harmony2` | `ccel_parallel` | `calvin_matai_make2.pdf` | `extract_ccel_parallel` |
 | `harmony3` | `ccel_harmony` | `calvin_matai_make3.pdf` | `extract_ccel_harmony` |
 | `acts1` | `ccel_acts` | `calvin_acts1.pdf` | `extract_ccel_acts` |
-| `phil` | `ages_phil` | `calvin_philippians_eng_lat.pdf` | `extract_ages_phil` |
-| `heb` | `ages_heb` | `calvin_hebrews_eng_lat.pdf` | `extract_ages_heb` |
-| `john` | `ages_phil` | `calvin_john.pdf` | `extract_ages_phil` |
+| `phil` | `ages_phil` | `calvin_filibi.pdf` | `extract_ages_phil` |
+| `heb` | `ages_heb` | `calvin_xibolaishu.pdf` | `extract_ages_heb` |
+| `john` | `ages_phil` | `CAL_JOHN.pdf` | `extract_ages_phil` |
+| `acts` | `ages_phil` | `CAL_ACTS.pdf` | `extract_ages_phil` |
+| `romans` | `ages_phil` | `CAL_ROMM.pdf` | `extract_ages_phil` |
+| `1cor` | `ages_phil` | `CAL_1COR.pdf` | `extract_ages_phil`（双语 scripture-only，见 02a §11）|
 
 ---
 

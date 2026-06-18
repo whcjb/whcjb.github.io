@@ -147,3 +147,7 @@ done
 ## 7. 进入下一步
 
 中文发布 OK → [06-finalize.md](06-finalize.md)
+
+新增/重发已有书卷时也要重跑经文索引 → [07-verse-index.md](07-verse-index.md)
+（publish 脚本里必须内联 `relocate_anchors_in_body`，否则锚点会留在经文块前面，
+点击索引跳到经文而非注释。详见 07-verse-index §1–2。）
