@@ -163,6 +163,16 @@ python3 scripts/sort_intra_section_verses.py \
   同 verse 的多段变成相邻，dedupe 才能识别）。历史上跑过 dedupe 但是在 sort
   之前——同 verse 段未相邻，dedupe 误以为不是重复。**正确顺序：sort →
   dedupe**（已写入 §2.1 的"四件套"步骤）。
+- john 第五轮（2026-06-22）：**32 处 verse-marker 完全丢失**——OCR 把
+  `**约翰福音 N:V。** *phrase。*` 简化成 `**phrase。**`，verse-num 丢了，
+  既无 anchor 也跑不动 relocate（脚本只认 `**书名 N:V。**` 模式）。用户截图
+  打回 "这一节的注释怎么在网页没了"（ch7 v.1 *耶稣在加利利游行* 是典型）。
+  根因：OCR 把 PDF `❶耶稣在加利利游行。` 解成 `## ①耶稣在加利利游行。`，
+  restructure 阶段把 `## ①` 头剥掉只剩 `**phrase。**`，verse-num 信息丢失。
+  解法：新增 `restore_verse_markers_from_cuv.py`——对每个 `**phrase。**`
+  段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
+  必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
+  四件套）。已写入 §2.1 的"五件套"步骤。
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 
@@ -181,7 +191,9 @@ python3 scripts/sort_intra_section_verses.py \
 **必须强制工序**（写入工序文档；surgical 阶段不可省）：
 
 ```bash
-# 每次跑完 surgical sed/Edit/restructure 后立即跑四件套（顺序固定！）：
+# 每次跑完 surgical sed/Edit/restructure 后立即跑五件套（顺序固定！）：
+# 0. 恢复 OCR 丢失的 verse-marker 前缀（CUV phrase fuzzy match）
+python3 scripts/restore_verse_markers_from_cuv.py     --book-cn <书名> --cuv-abbrev <abbrev> --dir calvin/<book>
 python3 scripts/relocate_misplaced_verse_commentary.py --book-cn <书名> --dir calvin/<book>
 python3 scripts/relocate_cross_chapter_verse.py        --book-cn <书名> --dir calvin/<book>
 python3 scripts/sort_intra_section_verses.py           --book-cn <书名> --dir calvin/<book>
