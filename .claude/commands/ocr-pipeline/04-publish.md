@@ -155,6 +155,14 @@ python3 scripts/sort_intra_section_verses.py \
   marker 后的续段（非 marker 的注释续句、bold 小标题如 `**我是活的粮**`）作为
   block 一起搬移**，导致续段被遗弃在原位、与新位的 marker 脱节。已修：把
   "marker 段 + 直到下一个 marker 之间的所有 paras"打包成 block 再排序。
+- john 第四轮（2026-06-22）：sort 后 **再生 48 处同 verse 重复 marker**（ch6 v.55
+  既有"我的血真是可喝的"又有"我的肉是真正的食物"两段都标 `**约翰福音 6:55。**`，
+  用户截图打回 "怎么又是两个"）。
+  根因：Calvin 单 verse 多段评注 PDF 原本只第一段带节号，OCR/publish 给所有
+  段都加了 `**N:V。**` marker；而 dedupe 脚本 **必须排在 sort 之后**（sort 让
+  同 verse 的多段变成相邻，dedupe 才能识别）。历史上跑过 dedupe 但是在 sort
+  之前——同 verse 段未相邻，dedupe 误以为不是重复。**正确顺序：sort →
+  dedupe**（已写入 §2.1 的"四件套"步骤）。
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 
@@ -173,10 +181,11 @@ python3 scripts/sort_intra_section_verses.py \
 **必须强制工序**（写入工序文档；surgical 阶段不可省）：
 
 ```bash
-# 每次跑完 surgical sed/Edit/restructure 后立即跑三件套（顺序固定）：
+# 每次跑完 surgical sed/Edit/restructure 后立即跑四件套（顺序固定！）：
 python3 scripts/relocate_misplaced_verse_commentary.py --book-cn <书名> --dir calvin/<book>
 python3 scripts/relocate_cross_chapter_verse.py        --book-cn <书名> --dir calvin/<book>
 python3 scripts/sort_intra_section_verses.py           --book-cn <书名> --dir calvin/<book>
+python3 scripts/dedupe_same_verse_markers.py           --book-cn <书名> --dir calvin/<book>
 # 然后跑 Gate-Section-Order 自检（同 section 内 marker 序列 + section 越界）
 python3 -c "
 import re; from pathlib import Path
