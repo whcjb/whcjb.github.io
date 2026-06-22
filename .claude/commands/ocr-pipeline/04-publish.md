@@ -177,13 +177,88 @@ python3 scripts/sort_intra_section_verses.py \
 python3 scripts/relocate_misplaced_verse_commentary.py --book-cn <书名> --dir calvin/<book>
 python3 scripts/relocate_cross_chapter_verse.py        --book-cn <书名> --dir calvin/<book>
 python3 scripts/sort_intra_section_verses.py           --book-cn <书名> --dir calvin/<book>
-# 然后跑 Gate-8b 自检 backward jumps = 0
+# 然后跑 Gate-Section-Order 自检（同 section 内 marker 序列 + section 越界）
+python3 -c "
+import re; from pathlib import Path
+book_cn, book_dir = '<书名>', 'calvin/<book>'
+issues = 0
+for f in sorted(Path(book_dir).glob('*.md')):
+    if not f.stem.isdigit(): continue
+    ch = int(f.stem); text = f.read_text(encoding='utf-8'); lines = text.split(chr(10))
+    sections=[]; verses=[]
+    for i,l in enumerate(lines):
+        m = re.match(rf'^## {re.escape(book_cn)} {ch}:(\d+)(?:-(\d+))?', l)
+        if m: sections.append((i,int(m.group(1)),int(m.group(2)) if m.group(2) else int(m.group(1))))
+        m = re.match(rf'^\*\*{re.escape(book_cn)} {ch}:(\d+)。\*\*', l)
+        if m: verses.append((i,int(m.group(1))))
+    for si,(ln,lo,hi) in enumerate(sections):
+        nxt = sections[si+1][0] if si+1<len(sections) else len(lines)
+        seq = [v for l,v in verses if ln<l<nxt]
+        for k in range(len(seq)-1):
+            if seq[k] > seq[k+1]:
+                print(f'{f.name}: {lo}-{hi} v.{seq[k]} > v.{seq[k+1]}'); issues += 1
+        for v in seq:
+            if v < lo or v > hi:
+                print(f'{f.name}: {lo}-{hi} v.{v} 越界'); issues += 1
+print(f'剩余: {issues}')
+"   # 必须输出 "剩余: 0"
 ```
+
+**Gate-Section-Order 抓两类**：
+1. **section 内 verse 倒序**（如 6:43-49 出现 [43,44,48,49,47]）→ sort 脚本未跑
+   / 续段未一起搬（[算法 root cause](#23-sort-脚本算法注意续段必须打包)）
+2. **section 越界**（如 v.53 出现在 7:50-52 section）→ section 边界 / scripture-box
+   经文边界不一致；要么扩 section header 同时扩 scripture-box，要么 relocate
+   该 verse 到正确 section
 
 **反例（约翰福音第二轮 root cause）**：用户在多轮对话里手工修了 ch3-21 共 1024
 个 `**约翰福音 1:N。**` 硬编码、41 个 bare-digit、15 个 bold-N-phrase、5 个
 CUV 冲突 ……每次只做了 marker 修正没跑 relocate，累计 36 段段落物理位置错。
 直到用户截图打回 "55 怎么在 43，44 前面" 才发现。
+
+### 2.3 sort 脚本算法注意：续段必须打包
+
+`sort_intra_section_verses.py` 的稳定排序粒度必须是 **commentary block**，
+不能是单 marker 段。Block 定义：
+
+```
+block = [
+    verse-marker para,     # `**书名 ch:V。** *phrase。* commentary...`
+    follow-up para 1,      # 续段：bold 小标题（如 `**我是活的粮**`）
+    follow-up para 2,      # 续段：续注释正文
+    ...                    # 直到下一个 marker para 之前所有 para
+]
+```
+
+按 block 的 leading verse 号稳定排序——续段会跟着 marker 一起移动，
+不会被遗弃在原位置。
+
+**反例（已踩，2026-06-22 修）**：旧算法只把 marker 段单独移动：
+
+```
+原顺序 [v.48, v.49, "我是活的粮"续段, v.47]
+旧算法排序后 [v.47, v.48, v.49, "我是活的粮"续段]  ← 续段留在原位脱节
+正确结果      [v.47, v.48, "我是活的粮"续段, v.49]  ← 续段跟着 v.48 走
+```
+
+虽然就 ch6 这例子来看，旧算法结果跟续段当前位置接近（因为续段原本就在 v.48
+后面、v.47 前面），但其他章会出 bug：用户当时打回 "段落都搞错了" 就是这个
+原因，致我退缩不敢全跑 sort，留下 47 处倒序。修后算法对 ch6 输出
+character byte 数完全不变（39924），仅顺序更新。
+
+### 2.4 publish 阶段为何会产出乱序？（最深层根因）
+
+`restructure_scan_book.py` 在 OCR raw → published md 时按 verse-anchor 启发
+（CUV phrase fuzzy match）把每段塞进 section，但**段落顺序保持 OCR 物理顺
+序**——而 OCR 物理顺序受以下三个噪声破坏：
+
+1. PDF 跨页时下一 verse 注释开头被粘在前 verse 末段（OCR 拼页）
+2. 脚注溢出 / 页眉 leak 把不连续段落拼到一起
+3. CUV phrase fuzzy match 偶尔把 v.X 段误判成 v.Y，relocate 再移回时打乱原
+   邻接关系
+
+所以 publish 端不可能"一次性出对"，sort/relocate 三件套必须作为发布后的**确定性
+后处理**（不是 best-effort）。已纳入 §2.1 强制工序。
 
 **Gate-Surgical-Done**（自动化检查）：surgical 系列 commit message 含
 `bare-digit` / `章号修正` / `CUV phrase` / `bold-N-phrase` 等关键词时，commit
