@@ -112,8 +112,12 @@ def main():
         r'加拉太书|以弗所书|腓立比书|歌罗西书|帖撒罗尼迦|提摩太|提多书|腓利门书|'
         r'希伯来书|雅各书|彼得前书|彼得后书|约翰一书|约翰二书|约翰三书|犹大书|启示录)'
     )
-    # 允许 `**phrase**` 或 `** phrase **`（OCR 偶尔在 `**` 内外加空格）
-    bold_marker_re = re.compile(r'^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*(\s+.*)?$')
+    # 允许多种 `**phrase**` 形态:
+    #   `**phrase。** rest`            ← 标准形式 (period 在 ** 内)
+    #   `** phrase **`                 ← OCR 偶尔在 `**` 内外加空格
+    #   `**phrase**。rest`             ← period 在 ** 外 (OCR 漏吃 period, 如 `**太初有道**。`)
+    #   `**phrase。**rest`             ← 无空格紧贴 (如 `**有一个人。**现`)
+    bold_marker_re = re.compile(r'^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*([。.,，！？]?)\s*(.*)$')
     # section header
     sec_re = re.compile(rf'^## {re.escape(args.book_cn)} (\d+):\d+(?:-\d+)?')
     # italic-only phrase 段开头：`*phrase。* rest`
@@ -134,8 +138,13 @@ def main():
             if not m:
                 continue
             phrase = m.group(1).rstrip('。.')
-            rest = (m.group(2) or '').lstrip()
+            # m.group(2) 是 outside period (可能为空); m.group(3) 是剩余 commentary
+            outside_punct = m.group(2) or ''
+            rest = m.group(3).lstrip()
             if book_token_re.search(phrase):
+                continue
+            # 跳过已经是 marker 的 (**N:V。** 形式)
+            if re.match(r'^[一-鿿]+\s+\d+:\d+$', phrase):
                 continue
             v = find_verse(verse_text, ch, phrase)
             if not v:
