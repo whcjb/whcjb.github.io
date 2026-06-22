@@ -113,7 +113,11 @@ def main():
         r'希伯来书|雅各书|彼得前书|彼得后书|约翰一书|约翰二书|约翰三书|犹大书|启示录)'
     )
     # 允许 `**phrase**` 或 `** phrase **`（OCR 偶尔在 `**` 内外加空格）
-    marker_re = re.compile(r'^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*(\s+.*)?$')
+    bold_marker_re = re.compile(r'^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*(\s+.*)?$')
+    # section header
+    sec_re = re.compile(rf'^## {re.escape(args.book_cn)} (\d+):\d+(?:-\d+)?')
+    # italic-only phrase 段开头：`*phrase。* rest`
+    italic_marker_re = re.compile(r'^\*\s*([一-鿿][^*\n]{2,60}?)。?\s*\*\s+(.*)$')
 
     total = 0
     for f in sorted(Path(args.dir).glob('*.md')):
@@ -123,8 +127,10 @@ def main():
         text = f.read_text(encoding='utf-8')
         lines = text.split('\n')
         fixed = 0
+
+        # Pass 1: bold `**phrase。**` 加 verse-marker
         for i, ln in enumerate(lines):
-            m = marker_re.match(ln)
+            m = bold_marker_re.match(ln)
             if not m:
                 continue
             phrase = m.group(1).rstrip('。.')
@@ -138,7 +144,37 @@ def main():
             if new != ln:
                 lines[i] = new
                 fixed += 1
-                print(f'  {f.name}:L{i+1} → {ch}:{v} *{phrase[:24]}*')
+                print(f'  {f.name}:L{i+1} → {ch}:{v} *{phrase[:24]}*  [bold]')
+
+        # Pass 2: section 起始 italic 续段 `*phrase。* commentary` → 加 marker
+        # 只处理 section 起首第一个 *phrase* 段（之前没有任何 bold marker / 内容段）
+        # 因为 section 中间的 italic 续段属于上一个 marker 的同 verse 续段, 不该改
+        for k, ln_idx in enumerate([i for i, l in enumerate(lines) if sec_re.match(l)]):
+            sec_start = ln_idx
+            # 找 section 起首第一个非 boilerplate 段
+            j = sec_start + 1
+            while j < len(lines):
+                l = lines[j]
+                if not l.strip() or l.startswith('<') or l.strip() == '</div>':
+                    j += 1; continue
+                # bold marker → OK, no need to restore italic
+                if bold_marker_re.match(l):
+                    break
+                # italic phrase → 尝试 restore
+                im = italic_marker_re.match(l)
+                if im:
+                    phrase = im.group(1).rstrip('。.')
+                    rest = im.group(2)
+                    if not book_token_re.search(phrase):
+                        v = find_verse(verse_text, ch, phrase)
+                        if v:
+                            new = f'**{book_cn} {ch}:{v}。** *{phrase}。* {rest}'.rstrip()
+                            if new != l:
+                                lines[j] = new
+                                fixed += 1
+                                print(f'  {f.name}:L{j+1} → {ch}:{v} *{phrase[:24]}*  [italic-leading]')
+                break
+
         if fixed:
             f.write_text('\n'.join(lines), encoding='utf-8')
             total += fixed
