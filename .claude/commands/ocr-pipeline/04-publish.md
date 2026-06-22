@@ -150,6 +150,11 @@ python3 scripts/sort_intra_section_verses.py \
 - romans：**93 处章内 + 14 处跨章 = 107 处 misplaced**
 - john：**10 处跨 section + 65 处 section 内倒序 = 75 处**（之前漏了 sort_intra_section_verses 这一步，被用户截图打回 "4:14 出现在 4:9 之前"）
 - john 第二轮（2026-06-22）：surgical OCR-artifact 修复后 **再生 36 处跨 section 错位**（ch6 v.55 出现在 6:43-49 section 之前，被用户截图打回 "55 怎么在 43，44 前面"）
+- john 第三轮（2026-06-22）：surgical 后 **再生 47 处 section 内 verse 倒序**（ch6 v.47 出现在 v.48 / v.49 之后，被用户截图打回 "47 怎么在 48，49 后面"）。
+  根因：`sort_intra_section_verses.py` 原算法仅按 marker 段单独排序，**未把
+  marker 后的续段（非 marker 的注释续句、bold 小标题如 `**我是活的粮**`）作为
+  block 一起搬移**，导致续段被遗弃在原位、与新位的 marker 脱节。已修：把
+  "marker 段 + 直到下一个 marker 之间的所有 paras"打包成 block 再排序。
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 

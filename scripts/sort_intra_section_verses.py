@@ -58,45 +58,63 @@ def get_verse_num(para_lines: list[str], book_cn: str, chapter: int) -> int | No
 
 
 def sort_section(body_lines: list[str], book_cn: str, chapter: int) -> tuple[list[str], int]:
-    """Return (new_body_lines, n_swaps_avoided).
-    Stable sort verse paragraphs by verse number; other paragraphs stay anchored
-    to their relative position in the "skeleton" (non-verse) sequence.
+    """Return (new_body_lines, n_out).
+
+    安全粒度：把"verse marker 段 + 它后面所有非 marker 续段（含空行/小标题/续注释）
+    直到下一个 marker 段或 section 末"打包成一个 commentary block。然后按
+    block leading verse 号稳定排序。这样续段会跟着 marker 一起移动，不会
+    被遗弃在原 section。
+
+    block 前的 prefix（没有任何 marker 前的内容，如 scripture-box / 段总论）
+    保持原位不参与排序。
     """
     paras = parse_paragraphs(body_lines)
-    # Separate into two streams: skeleton (non-verse paragraphs incl. blanks/html)
-    # and verse paragraphs (with their verse number). We'll interleave them back:
-    # for each skeleton slot we insert any pending verse paragraphs in sorted
-    # order... actually simpler:
-    # 1. Extract all verse paragraphs (with positions and verse nums)
-    # 2. Sort them by verse num (stable)
-    # 3. Re-emit: walk paras in original order, when we hit a verse para, take
-    #    next from the sorted queue instead.
-    verse_positions = []
+
+    # 找第一个 verse-marker 段的位置
+    first_marker_idx = None
     for i, (typ, plines) in enumerate(paras):
-        if typ == 'para':
-            v = get_verse_num(plines, book_cn, chapter)
-            if v is not None:
-                verse_positions.append((i, v))
-    if len(verse_positions) < 2:
+        if typ == 'para' and get_verse_num(plines, book_cn, chapter) is not None:
+            first_marker_idx = i
+            break
+    if first_marker_idx is None:
         return body_lines, 0
-    # Count out-of-order before
-    n_out = sum(1 for k in range(1, len(verse_positions))
-                if verse_positions[k][1] < verse_positions[k - 1][1])
+
+    prefix_paras = paras[:first_marker_idx]
+    rest = paras[first_marker_idx:]
+
+    # 把 rest 按 marker 切成 blocks: 每个 block = [marker_para, follow_paras...]
+    blocks: list[tuple[int, list[tuple[str, list[str]]]]] = []
+    cur_block: list[tuple[str, list[str]]] = []
+    cur_v: int | None = None
+    for p in rest:
+        typ, plines = p
+        v = get_verse_num(plines, book_cn, chapter) if typ == 'para' else None
+        if v is not None:
+            if cur_block:
+                blocks.append((cur_v, cur_block))
+            cur_block = [p]
+            cur_v = v
+        else:
+            cur_block.append(p)
+    if cur_block:
+        blocks.append((cur_v, cur_block))
+
+    if len(blocks) < 2:
+        return body_lines, 0
+
+    # 计算 out-of-order block 数量
+    n_out = sum(1 for k in range(1, len(blocks)) if blocks[k][0] < blocks[k - 1][0])
     if n_out == 0:
         return body_lines, 0
-    # Build sorted list of verse paragraphs by verse num (stable)
-    sorted_verse_paras = sorted(verse_positions, key=lambda x: x[1])
-    verse_para_queue = [paras[idx] for idx, _ in sorted_verse_paras]
-    verse_idx_set = {idx for idx, _ in verse_positions}
-    # Reassemble: walk original paras; at each verse-para slot, pop next from queue
-    new_paras = []
-    q_iter = iter(verse_para_queue)
-    for i, p in enumerate(paras):
-        if i in verse_idx_set:
-            new_paras.append(next(q_iter))
-        else:
-            new_paras.append(p)
-    new_body = []
+
+    # 稳定排序 (Python sort 稳定)
+    sorted_blocks = sorted(blocks, key=lambda b: b[0])
+
+    new_paras = list(prefix_paras)
+    for _, bparas in sorted_blocks:
+        new_paras.extend(bparas)
+
+    new_body: list[str] = []
     for typ, plines in new_paras:
         new_body.extend(plines)
     return new_body, n_out
