@@ -173,6 +173,22 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第六轮（2026-06-22）：**OCR 高位圈号丢字 + italic-only 段落漂移**。
+  用户截图打回 "ch8 v.35 后 *我实实在在地告诉你们* 是 v.51 commentary,
+  错位到 v.35 后面"。
+  根因 1（**OCR 双圈号丢前位**）：PDF 的 `⑤①` (= verse 51) 圈号字符被
+  OCR 错读为 `①` (verse 1)。restructure 不把 `①开头` 当成 verse marker
+  （只接受 `## ①` 或 `## ❶`），就直接把整段当 italic 续段落落地——
+  保留了 `*我实实在在地告诉你们。*` 形式，verse-num 完全丢失。
+  根因 2（**italic 续段无法 restore**）：原 `restore_verse_markers_from_cuv`
+  只处理 `**phrase。**` (bold) 形式，对 `*phrase。*` (italic-only) 视而不见。
+  italic 续段在 Calvin 排版里**正常情况**是当前 verse 多段评注的续段
+  (e.g. v.55 的 *我的血真是可喝的* / *我的肉是真正的食物*)，但当 section
+  起首第一段就是 italic 续段时，几乎必然是 OCR 丢失 verse-num 的孤儿段。
+  解法：restore 脚本加 **Pass 2** ——对每个 section 起首的第一个内容段，
+  若为 `*phrase。* commentary` 形式，用 CUV phrase 反查 verse-num，
+  加 `**约翰福音 ch:V。**` 前缀。本轮 catch 7 处（ch4/6/8/13/18/20）。
+  **Gate-Section-Leading-Italic** 加入自检（见 §2.5）。
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 
@@ -266,6 +282,51 @@ block = [
 后面、v.47 前面），但其他章会出 bug：用户当时打回 "段落都搞错了" 就是这个
 原因，致我退缩不敢全跑 sort，留下 47 处倒序。修后算法对 ch6 输出
 character byte 数完全不变（39924），仅顺序更新。
+
+### 2.5 Gate-Section-Leading-Italic（必跑）
+
+**抓什么**：section 起首第一个内容段是 `*phrase。* commentary` 形式但
+**没有前置 `**N:V。**` marker**。在 Calvin 排版里 italic 续段属于上一个
+marker 的同 verse 续段；section 起首的 italic 续段没有上一个 marker，
+几乎必然是 OCR 高位圈号丢字（如 PDF `⑤①` → OCR `①` → restructure
+丢失 verse-num）。
+
+```bash
+# Gate-Section-Leading-Italic
+python3 -c "
+import re; from pathlib import Path
+book_cn, book_dir = '<书名>', 'calvin/<book>'
+sec_re = re.compile(rf'^## {re.escape(book_cn)} \\d+:\\d+(?:-\\d+)?')
+bold_re = re.compile(rf'^\\*\\*\\s*{re.escape(book_cn)} ')
+italic_re = re.compile(r'^\\*\\s*[一-鿿][^*\\n]{2,60}?。?\\s*\\*\\s+')
+flag = 0
+for f in sorted(Path(book_dir).glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8'); lines = text.split('\n')
+    sec_ix = [i for i, l in enumerate(lines) if sec_re.match(l)]
+    for k, si in enumerate(sec_ix):
+        j = si + 1
+        while j < len(lines):
+            l = lines[j]
+            if not l.strip() or l.startswith('<') or l.strip() == '</div>': j += 1; continue
+            if bold_re.match(l): break  # 起首 bold marker, OK
+            if italic_re.match(l):
+                print(f'  {f.name}:L{j+1} section 起首 italic 续段缺 marker: {l[:60]}')
+                flag += 1
+            break
+print(f'剩余 italic-leading 漂移: {flag}')
+"   # 必须输出 "剩余 italic-leading 漂移: 0"
+```
+
+**根因覆盖**：
+1. **OCR 双圈号高位丢字**（PDF `⑤①` → OCR `①`，verse 51 看成 verse 1）
+2. **OCR italic 续段没有 marker** 直接落地，restore 第一版只处理 bold 不
+   碰 italic（已加 Pass 2 修复）
+
+**剩余的不可自动检测类**：phrase 在多 verse 都出现（如 "我实实在在地告诉
+你们" 在 v.34 / v.51 都有）+ commentary 内容暗示高 verse 但 marker 选了
+低 verse——需要用户截图打回。**不要尝试自动 disambiguate**，phrase-only
+match 会误改正确的 v.34 commentary。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
