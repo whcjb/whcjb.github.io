@@ -173,6 +173,35 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第七轮（2026-06-22）：**OCR period 在 `**` 外形态 + verse-anchor 错位**。
+  用户截图打回 "ch1 v.1 *道与上帝同在* 放在后面, 但 PDF 原文 ❶太初有道
+  在 section 1:1-5 起首"。
+  根因 1（**period 在 ** 外**）：OCR 输出 `**太初有道**。在导言里...`，
+  `。` 在 `**` 之外，紧贴下一字（无空格）。原 restore regex
+  `^\*\*phrase\*\*(\s+.*)?$` 要求 `**` 后必须是空格或行尾——`。在` 既
+  不是空格也不是行尾，正则不匹配 → restore 跳过该段。同款 OCR 变体
+  `**phrase。**rest`（period 在 ** 内但无空格紧贴下一字，如 `**有一个人。**现`）
+  也被旧 regex 漏。
+  解法：regex 改为兼容 **4 种形态**：
+  ```
+  **phrase。** rest          标准
+  **phrase。**rest           无空格紧贴
+  **phrase**。rest           period 在 ** 外
+  ** phrase **               前后加空格
+  ```
+  正则： `^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*([。.,，！？]?)\s*(.*)$`
+  本轮 catch 2 处（1.md L27 `太初有道` → v.1, L90 `有一个人` → v.6）。
+  根因 2（**anchor 锚在后段**）：`add_john_verse_anchors.py` 用 seen
+  set 跳过已存在 anchor，但 restore 后某个 verse 的"第一出现位置"变了
+  （前段被新加 marker，后段原有 marker），seen set 让 anchor 仍留在
+  后段。verse-index 胶囊链到 `#john-N-V` 但跳到后段，跳过前段 commentary。
+  解法：**restore 后必须先清空 anchor 再 re-run add_anchors**，让
+  anchor 始终落在每 verse 首次出现位置：
+  ```python
+  # 删除所有 <h2 class="verse-anchor"...>...</h2> + 尾随空行
+  new_text = re.sub(r'<h2 class="verse-anchor"[^>]*>[^<]*</h2>\n+', '', text)
+  # 然后 re-run add_<book>_verse_anchors.py
+  ```
 - john 第六轮（2026-06-22）：**OCR 高位圈号丢字 + italic-only 段落漂移**。
   用户截图打回 "ch8 v.35 后 *我实实在在地告诉你们* 是 v.51 commentary,
   错位到 v.35 后面"。
