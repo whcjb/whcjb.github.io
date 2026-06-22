@@ -149,6 +149,48 @@ python3 scripts/sort_intra_section_verses.py \
 参考实战：
 - romans：**93 处章内 + 14 处跨章 = 107 处 misplaced**
 - john：**10 处跨 section + 65 处 section 内倒序 = 75 处**（之前漏了 sort_intra_section_verses 这一步，被用户截图打回 "4:14 出现在 4:9 之前"）
+- john 第二轮（2026-06-22）：surgical OCR-artifact 修复后 **再生 36 处跨 section 错位**（ch6 v.55 出现在 6:43-49 section 之前，被用户截图打回 "55 怎么在 43，44 前面"）
+
+### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
+
+**根因**：任何把 `**书名 N:V。**` marker 引入 / 移位 / 还原的 surgical fix，都
+会把段落的"实际 verse 归属"信息改变。但段落仍在原 section 区域内。例如：
+
+- bare-digit fix：`^26 你所见证的那位` → `**约翰福音 N:26。** *你所见证的那位。*`
+  插入 marker 后段落物理位置没动，但 marker 暴露出"这段属 v.26"——若该 section
+  覆盖 v.20-25，relocate 才能发现错位。
+- bold-N-phrase fix：`^\*\*48我就是生命的粮。\*\*` → `**约翰福音 6:48。** *我就是生命的粮。*` 同理。
+- CUV phrase-collision 修正：把误归 v.35 改为正确 v.59，新 verse 号往往跨 section。
+- 章号 hardcode 修复：`**约翰福音 1:V。**` 在 ch6 文件中改为 `**约翰福音 6:V。**`，
+  V 可能在 ch6 任意位置，几乎一定有跨 section 错位。
+- dedupe / restructure 脚本拆 / 合段后留下的 marker。
+
+**必须强制工序**（写入工序文档；surgical 阶段不可省）：
+
+```bash
+# 每次跑完 surgical sed/Edit/restructure 后立即跑三件套（顺序固定）：
+python3 scripts/relocate_misplaced_verse_commentary.py --book-cn <书名> --dir calvin/<book>
+python3 scripts/relocate_cross_chapter_verse.py        --book-cn <书名> --dir calvin/<book>
+python3 scripts/sort_intra_section_verses.py           --book-cn <书名> --dir calvin/<book>
+# 然后跑 Gate-8b 自检 backward jumps = 0
+```
+
+**反例（约翰福音第二轮 root cause）**：用户在多轮对话里手工修了 ch3-21 共 1024
+个 `**约翰福音 1:N。**` 硬编码、41 个 bare-digit、15 个 bold-N-phrase、5 个
+CUV 冲突 ……每次只做了 marker 修正没跑 relocate，累计 36 段段落物理位置错。
+直到用户截图打回 "55 怎么在 43，44 前面" 才发现。
+
+**Gate-Surgical-Done**（自动化检查）：surgical 系列 commit message 含
+`bare-digit` / `章号修正` / `CUV phrase` / `bold-N-phrase` 等关键词时，commit
+前必须先跑过 relocate 三件套。手工 commit 用以下脚本兜底：
+
+```bash
+# .git/hooks/pre-commit or 手工 audit
+if git diff --cached --name-only | grep -q '^calvin/<book>/[0-9]*\.md$'; then
+  python3 scripts/relocate_misplaced_verse_commentary.py --book-cn <书名> --dir calvin/<book> --dry-run
+  # 输出 "relocated 0 paragraphs" 才算 clean，否则强制中断 commit
+fi
+```
 
 ### 3. ⚠️ 内容丢失风险：Bible-dump 启发式不要太激进
 
