@@ -26,18 +26,63 @@ except Exception:
     convert = lambda s: s
 
 
+def _normalize(s):
+    s = re.sub(r'[ 。，！？、；：":“”‘’（）\(\)（）!？]', '', s)
+    s = re.sub(r'[a-zA-Z\d]+', '', s)
+    # Calvin 译本 vs CUV 字符 / 词汇差异，归一化以便 substring 匹配
+    s = s.replace('上帝', '神')
+    s = s.replace('著', '着')   # OpenCC t2s 偶尔留 著 (CUV 寫著)
+    s = s.replace('她', '他')   # Calvin 用 她, CUV 用 他
+    s = s.replace('基督', '耶稣')  # Calvin 注释 header 偶用 基督, CUV 用 耶稣
+    return s
+
+
+def _longest_common_substring(a, b):
+    """O(len(a)*len(b)) DP; returns longest substring length."""
+    if not a or not b:
+        return 0
+    la, lb = len(a), len(b)
+    prev = [0] * (lb + 1)
+    best = 0
+    for i in range(1, la + 1):
+        cur = [0] * (lb + 1)
+        ai = a[i - 1]
+        for j in range(1, lb + 1):
+            if ai == b[j - 1]:
+                cur[j] = prev[j - 1] + 1
+                if cur[j] > best:
+                    best = cur[j]
+        prev = cur
+    return best
+
+
 def find_verse(verse_text, ch, phrase):
-    clean = re.sub(r'[ 。，！？、；："“”‘’（）\(\)（）]', '', phrase)
-    clean = re.sub(r'[a-zA-Z\d]+', '', clean)
-    clean = re.sub(r'[…\.]+', '', clean)
-    if len(clean) < 4:
-        return None
     if ch not in verse_text:
         return None
-    matches = [v for v, txt in verse_text[ch].items() if clean in txt]
-    if not matches:
+    chunks = [c for c in re.split(r'[…\.]{1,}', phrase) if c.strip()]
+    chunks_n = [_normalize(c) for c in chunks]
+    chunks_n = [c for c in chunks_n if len(c) >= 2]
+    if chunks_n:
+        # 一阶段：exact substring（所有长 chunk 都在同一 verse）
+        matches = [v for v, txt in verse_text[ch].items()
+                   if all(c in _normalize(txt) for c in chunks_n)]
+        if matches:
+            return min(matches)
+    # 二阶段：longest-common-substring 兜底 (≥4 字符)；
+    # 适用于省略号短词（"他……来"）或词序差异（"他对腓力说" vs "就对腓力说"）
+    full = _normalize(re.sub(r'[…\.]+', '', phrase))
+    if len(full) < 4:
         return None
-    return min(matches)
+    best_v, best_len = None, 0
+    for v, txt in verse_text[ch].items():
+        norm_txt = _normalize(txt)
+        lcs = _longest_common_substring(full, norm_txt)
+        # 阈值与 phrase 长度成比例: ≥4 字符 + ≥phrase 60%
+        min_len = max(4, len(full) * 6 // 10)
+        if lcs >= min_len and lcs > best_len:
+            best_len = lcs
+            best_v = v
+    return best_v
 
 
 def main():
@@ -60,8 +105,15 @@ def main():
             verse_text[ch_i][v_i] = re.sub(r'\s', '', convert(t))
 
     book_cn = args.book_cn
-    book_token_re = re.compile(r'(约翰福音|约翰|马太|马可|路加|罗马|哥林多|加拉太|希伯来|彼得|启示录)')
-    marker_re = re.compile(r'^\*\*([一-鿿][^*\n]{1,60})\*\*(\s+.*)?$')
+    # 仅过滤完整书名引用（"路加福音"），不过滤裸人名（"约翰" / "马太"）——因为
+    # "约翰" 是 v.6 经文里 John the Baptist 的人名，phrase "名叫约翰" 必须能匹配。
+    book_token_re = re.compile(
+        r'(马太福音|马可福音|路加福音|约翰福音|罗马书|哥林多前书|哥林多后书|'
+        r'加拉太书|以弗所书|腓立比书|歌罗西书|帖撒罗尼迦|提摩太|提多书|腓利门书|'
+        r'希伯来书|雅各书|彼得前书|彼得后书|约翰一书|约翰二书|约翰三书|犹大书|启示录)'
+    )
+    # 允许 `**phrase**` 或 `** phrase **`（OCR 偶尔在 `**` 内外加空格）
+    marker_re = re.compile(r'^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*(\s+.*)?$')
 
     total = 0
     for f in sorted(Path(args.dir).glob('*.md')):
