@@ -692,6 +692,7 @@ verse-marker 段头格式有 **5 类**常见 bug，必须在发布前**一次性
 | 截断 commentary | ch15 v.22 `他已经说过犹太人恨恶福音是因`（断在"因"字后）| OCR 跨页时 publish 没把下一页续段拼回，commentary 头有但 body 截断 |
 | 同节多段都加 verse-ref | 一节有 phrase A + phrase B 两段评注时全部加 `**约翰福音 4:22。**`，导致页面显示两个 4:22 | PDF 原版圈号 ㉒ 只在第一段，第二段是 bold phrase 没有节号。publish-time 给每个 italic-phrase 开头都加 ref 太激进。修：跑 `scripts/dedupe_same_verse_markers.py` 把连续相同 verse-num 的第 2、3... 段 verse-ref 剥掉 |
 | bold-wrapped `**N 短语。**` 当 verse-marker | `**1 上帝是个灵。**` 出现在 ch4（实际应是 v.24）/`**25 我已经告诉你们。**`（ch10 v.25）| OCR 把圈号 ㉔ 错读为 `②1`（splits double-digit circled num into ② + 1），publish 把 `## ②1` 输出成 `**1 ...**`。修：扫 `^\*\*(\d) ([一-鿿]+。)\*\*` 模式，用 CUV (和合本) phrase 匹配找回真实 verse-num，重写为 `**约翰福音 ch:V。** *短语。*` 形式 |
+| phrase-only stub 残留 | `**约翰福音 5:10。** *褥子是不可的。*` 后面空一行，下一段是无 marker 的 Calvin 注释 | dump-strip 算法只截掉 dump body 留下 italic phrase，没把后续真实 Calvin 注释段的 marker 拼回来。修：phrase-only stub 检测后，要么 merge with next bare-italic 段，要么直接删除 stub（若没有真注释紧跟）|
 
 ```bash
 # Gate-1: BARE-DIGIT 段落开头但不在 section range
@@ -709,6 +710,21 @@ python3 scripts/sort_intra_section_verses.py \
 # Gate-2c: 同节连续多段都加 verse-ref（重复出现 4:22, 4:22 这种）
 python3 scripts/dedupe_same_verse_markers.py \
   --book-cn <书名> --dir calvin/<book>   # 应输出 Total: 0（已剥完）
+
+# Gate-2d: phrase-only stub — verse-marker 后只有 italic phrase 没有 commentary body
+# 触发例: `**约翰福音 5:10。** *褥子是不可的。*` 然后空行 — 是 dump-strip 残留
+python3 -c "
+import re
+from pathlib import Path
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    ch = int(f.stem)
+    text = f.read_text(encoding='utf-8')
+    for m in re.finditer(rf'\\*\\*<书名> {ch}:(\\d+)。\\*\\*\\s*\\*[^*]+\\*\\s*\\n\\n', text):
+        print(f'{f.name} v.{m.group(1)}: phrase-only stub (delete or merge with next)')
+"   # 应空 — 出现 = dump 删除时没拼回真实 commentary，需要：
+    # (a) 若下一段有 bare-italic Calvin 注释 → merge 进同一行
+    # (b) 否则直接删除 stub
 
 # Gate-3: Running-header leak
 for f in calvin/<book>/*.md; do
