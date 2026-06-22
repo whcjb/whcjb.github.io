@@ -35,6 +35,11 @@ VERSE_COUNTS = {
         1: 32, 2: 29, 3: 31, 4: 25, 5: 21, 6: 23, 7: 25, 8: 39,
         9: 33, 10: 21, 11: 36, 12: 21, 13: 14, 14: 23, 15: 33, 16: 27,
     },
+    '约翰福音': {
+        1: 51, 2: 25, 3: 36, 4: 54, 5: 47, 6: 71, 7: 53, 8: 59,
+        9: 41, 10: 42, 11: 57, 12: 50, 13: 38, 14: 31, 15: 27, 16: 33,
+        17: 26, 18: 40, 19: 42, 20: 31, 21: 25,
+    },
     # Add other books when applicable
 }
 
@@ -99,7 +104,12 @@ def find_misplaced_paragraphs(
 
         # Check opener
         first_line = lines[para_start]
-        m = re.match(r'^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]', first_line)
+        # 三种形式：
+        #   1. **书名 N:V。** opener   (regular published commentary)
+        #   2. 数字 + 空格 + 汉字       (bare-digit OCR artifact)
+        m = re.match(r'^\*\*[一-鿿]+ \d+:(\d+)。\*\*', first_line)
+        if not m:
+            m = re.match(r'^(\d{1,3})[ 、.]\s*\*{0,2}[一-鿿]', first_line)
         if not m:
             continue
         v = int(m.group(1))

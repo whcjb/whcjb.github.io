@@ -117,9 +117,12 @@ def find_john_verse(opener_text: str, chapter_verses: dict[str, str]) -> int | N
     return None
 
 
-def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
+def fix_inline_h2(line: str, john_1: dict[str, str], chapter: int = 1) -> str:
     """OCR sometimes puts the verse-opener line as `## XXX...` (a long h2).
     Convert to verse-anchor bold form for verse-nav JS pickup.
+
+    `chapter` 参数从 ch1 的默认值 1 改成调用方传入的实际章号。原版硬编码 1
+    导致 ch2-21 复用此函数时把所有 verse-marker 都打成 "约翰福音 1:N"，被打回。
     """
     if not line.startswith("## "):
         return line
@@ -134,7 +137,7 @@ def fix_inline_h2(line: str, john_1: dict[str, str]) -> str:
     v = find_john_verse(opener, john_1)
     opener_clean = _strip_leading_circle(opener)
     if v is not None:
-        return f"**约翰福音 1:{v}。** *{opener_clean}* {rest}"
+        return f"**约翰福音 {chapter}:{v}。** *{opener_clean}* {rest}"
     return f"**{opener_clean}** {rest}"
 
 
@@ -390,7 +393,7 @@ def process_page(text: str, fn_counter: int,
     for line in text.splitlines():
         if any(p.match(line.rstrip()) for p in RUNNING_HDR_PATTERNS):
             continue
-        out_lines.append(fix_inline_h2(line.rstrip(), JOHN_1))
+        out_lines.append(fix_inline_h2(line.rstrip(), JOHN_1, chapter=chapter))
     text2 = re.sub(r"\n{3,}", "\n\n", "\n".join(out_lines)).strip()
 
     # Step 2-3: paragraph promote + fn extract

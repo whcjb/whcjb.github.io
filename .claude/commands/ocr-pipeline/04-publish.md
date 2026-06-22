@@ -127,22 +127,28 @@ done
 OCR **不会** 保留 `**罗马书 N:V。**` 加粗格式，发布脚本的 fallback heuristic
 （按段落开头数字匹配 verse）会把段落放错 section。
 
-发布完成后必须跑 **两个** relocation 脚本：
+发布完成后必须跑 **三个** relocation/排序脚本：
 
 ```bash
-# 章内迁移：v.32 段落被错放到 section 1:22-28 → 移到 1:29-32
+# 1. 章内迁移：v.32 段落被错放到 section 1:22-28 → 移到 1:29-32
 python3 scripts/relocate_misplaced_verse_commentary.py \
   --book-cn 罗马书 --dir calvin/romans
 
-# 跨章迁移：v.22-36 段落被错放到 12.md（Rom 12 max 21）→ 移到 11.md
+# 2. 跨章迁移：v.22-36 段落被错放到 12.md（Rom 12 max 21）→ 移到 11.md
 python3 scripts/relocate_cross_chapter_verse.py \
+  --book-cn 罗马书 --dir calvin/romans
+
+# 3. 同 section 内排序：v.14 段落出现在 v.9 之前（OCR 段落落地顺序乱）
+python3 scripts/sort_intra_section_verses.py \
   --book-cn 罗马书 --dir calvin/romans
 ```
 
-两脚本都依赖 `VERSE_COUNTS` 表（CUV chapter-max-verse counts）。新书要
+三脚本都依赖 `VERSE_COUNTS` 表（CUV chapter-max-verse counts）。新书要
 在脚本里增加该书的 verse-count dict。
 
-参考 romans 实战：**93 处章内 + 14 处跨章**，共 107 处 misplaced。
+参考实战：
+- romans：**93 处章内 + 14 处跨章 = 107 处 misplaced**
+- john：**10 处跨 section + 65 处 section 内倒序 = 75 处**（之前漏了 sort_intra_section_verses 这一步，被用户截图打回 "4:14 出现在 4:9 之前"）
 
 ### 3. ⚠️ 内容丢失风险：Bible-dump 启发式不要太激进
 
@@ -663,8 +669,29 @@ new_testament:
 
 ## ✅ Mandatory audit gate（commit 之前必须 0 命中）
 
-下面 6 项 audit 全部 0 命中之前**不能** commit + push。如果用户截图发现
+下面 audit 全部 0 命中之前**不能** commit + push。如果用户截图发现
 任何一项有漏，说明这道门没把住。
+
+### 用户底线（被打回 5+ 次，每次都说"为什么还有")
+
+> "这是第三章了，为什么还显示 1:1"
+> "26、27 是什么意思"（裸数字开头的段落）
+> "怎么还有这个问题，为什么不彻底解决，我没那么多时间排查"
+> "这一节怎么放在这里了"（4:14 出现在 4:9 之前）
+> "为什么出现两个 4:9"（OCR 把 PDF 经文块当 commentary 错放）
+
+verse-marker 段头格式有 **5 类**常见 bug，必须在发布前**一次性**扫干净——不要分批 fix，
+用户每被打回一次就投入信任度急剧下降：
+
+| Bug 模式 | 例 | 根因 |
+|---|---|---|
+| 章号硬编码为 1 | `**约翰福音 1:26。**` 出现在 ch3 | `restructure_<book>_scan_ch1.py:137` 把 `f"**{书} 1:{v}。**"` 写死，chapter.py 直接复用导致所有章都是 `1:` |
+| 裸数字 + 空格 + 中文 | `26 你所见证的那位...` | OCR 提取出节号 `26` 但 verse-detection 失败时降级为 plain text，未包 markdown |
+| 圈号被切碎 | `③0 耶稣...` → 落入 published 变 `0 耶稣...` | OCR 把 `㉚`（圈 30）切成 `③` + `0`，正则只匹 `\d+` 漏 ㉑-㉛ 全角圈数字 |
+| scripture-text 误标 commentary | ch4 v.22-v.38 整页经文被当成 17 个 `**N:V。** *phrase。*` commentary 段 | OCR 抓 PDF 经文 block 时识别每节圈号，publish 沿用 verse-num 路由把整段经文当 commentary。检测：connected 段去 marker+italic+punct 后剩 < 25 字 |
+| 截断 commentary | ch15 v.22 `他已经说过犹太人恨恶福音是因`（断在"因"字后）| OCR 跨页时 publish 没把下一页续段拼回，commentary 头有但 body 截断 |
+| 同节多段都加 verse-ref | 一节有 phrase A + phrase B 两段评注时全部加 `**约翰福音 4:22。**`，导致页面显示两个 4:22 | PDF 原版圈号 ㉒ 只在第一段，第二段是 bold phrase 没有节号。publish-time 给每个 italic-phrase 开头都加 ref 太激进。修：跑 `scripts/dedupe_same_verse_markers.py` 把连续相同 verse-num 的第 2、3... 段 verse-ref 剥掉 |
+| bold-wrapped `**N 短语。**` 当 verse-marker | `**1 上帝是个灵。**` 出现在 ch4（实际应是 v.24）/`**25 我已经告诉你们。**`（ch10 v.25）| OCR 把圈号 ㉔ 错读为 `②1`（splits double-digit circled num into ② + 1），publish 把 `## ②1` 输出成 `**1 ...**`。修：扫 `^\*\*(\d) ([一-鿿]+。)\*\*` 模式，用 CUV (和合本) phrase 匹配找回真实 verse-num，重写为 `**约翰福音 ch:V。** *短语。*` 形式 |
 
 ```bash
 # Gate-1: BARE-DIGIT 段落开头但不在 section range
@@ -674,6 +701,14 @@ python3 scripts/relocate_misplaced_verse_commentary.py \
 # Gate-2: 跨章 BARE-DIGIT overflow
 python3 scripts/relocate_cross_chapter_verse.py \
   --book-cn <书名> --dir calvin/<book>   # 应输出 Total: 0
+
+# Gate-2b: 同 section 内 verse 顺序乱
+python3 scripts/sort_intra_section_verses.py \
+  --book-cn <书名> --dir calvin/<book>   # 应输出 Total: 0（已 sort 完不会再动）
+
+# Gate-2c: 同节连续多段都加 verse-ref（重复出现 4:22, 4:22 这种）
+python3 scripts/dedupe_same_verse_markers.py \
+  --book-cn <书名> --dir calvin/<book>   # 应输出 Total: 0（已剥完）
 
 # Gate-3: Running-header leak
 for f in calvin/<book>/*.md; do
@@ -698,6 +733,107 @@ PY
 
 # Gate-6: Bible-text dump（OCR 抓整章 Bible 全段）
 grep -lE '^[①②③④⑤⑥⑦⑧⑨⑩]{5,}' calvin/<book>/*.md   # 应空
+
+# Gate-6b: scripture-text dump 误标为 commentary（连续多段 `**N:V。** *经文。*` 但无注释）
+# 触发例：ch4 v.22-v.38 整页经文被 publish 当成 verse-marker commentary
+python3 -c "
+import re
+from pathlib import Path
+NOISE = re.compile(r'[\\s\"“”‘’。，！？；：（）\\[\\]<>]')
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    ch = int(f.stem)
+    text = f.read_text(encoding='utf-8')
+    paras = re.split(r'\\n\\n+', text)
+    suspects = []
+    for idx, para in enumerate(paras):
+        m = re.match(rf'^\\*\\*<书名> {ch}:(\\d+)。\\*\\*', para.split('\\n')[0])
+        if not m: continue
+        no_marker = re.sub(rf'^\\*\\*<书名> {ch}:\\d+。\\*\\*\\s*', '', para, count=1, flags=re.DOTALL)
+        no_italic = re.sub(r'^\\*[^*]+\\*\\s*', '', no_marker, count=1)
+        s = NOISE.sub('', no_italic)
+        if len(s) < 25:
+            suspects.append((idx, int(m.group(1)), para.split('\\n')[0][:80]))
+    # Report clusters ≥3 consecutive (indices within distance 2)
+    cur = []
+    clusters = []
+    for s in suspects:
+        if cur and s[0] - cur[-1][0] <= 2: cur.append(s)
+        else:
+            if len(cur) >= 3: clusters.append(cur)
+            cur = [s]
+    if len(cur) >= 3: clusters.append(cur)
+    for c in clusters:
+        print(f'{f.name} cluster v.{c[0][1]}-v.{c[-1][1]} ({len(c)} dumps)')
+"   # 应空 — 出现 = OCR 把 PDF scripture-block 错放成 commentary, 删掉这些段
+
+# Gate-7: 章号硬编码 bug（**书名 1:N。** 出现在非 ch1 章）
+for ch in $(seq 2 21); do
+  bad=$(grep -c "\\*\\*<书名> 1:[0-9]\+。\\*\\*" calvin/<book>/$ch.md 2>/dev/null)
+  [ "$bad" -gt 0 ] && echo "ch$ch: $bad wrong chapter refs"
+done   # 应空 — 出现 = restructure_<book>_scan_ch1.py:137 把 ch 硬编码为 1
+
+# Gate-8c: bold-wrapped "N text。" 当 verse-marker（OCR 错读圈号 ㉔→②1）
+# 触发：`**1 上帝是个灵。** ...` (N + 空格 + 中文短语，整段在 bold 内)
+# 来源：OCR 把圈号双位数 (㉔ ㉕ ㉖) 错读为 ②X，publish 沿用 X 当数字。
+# 必须用 CUV (和合本) phrase 匹配找出真实 verse 号 (1→24, 5→25...)
+python3 -c "
+import re, json, opencc
+from pathlib import Path
+bible = json.load(open('scripts/zh_cuv.json', encoding='utf-8-sig'))
+t2s = opencc.OpenCC('t2s')
+# Adjust book index for non-John books — 42 for John, 44 for Romans, etc.
+john = bible[42]
+def best_verse(ch, phrase):
+    cuv = {v+1: t2s.convert(john['chapters'][ch-1][v].replace(' ', '')) for v in range(len(john['chapters'][ch-1]))}
+    target = re.sub(r'[，。！？；：\"“”]', '', phrase)[:20]
+    if not target: return None
+    best = (None, 0)
+    for v, vt in cuv.items():
+        score = sum(1 for c in target if c in vt[:30])
+        if score > best[1]: best = (v, score)
+    return best[0] if best[1] >= len(target)*0.5 else None
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    ch = int(f.stem)
+    text = f.read_text(encoding='utf-8')
+    bad = re.findall(r'^\\*\\*(\\d{1,3}) ([一-鿿][^*]{0,80}?。)\\*\\*', text, re.MULTILINE)
+    if bad: print(f'{f.name}: {len(bad)} bold-N-phrase markers (need CUV-match fix)')
+"   # 应空 — 出现 = 跑 CUV-based 自动修复脚本（见 04 §11.4）
+
+# Gate-8: 裸数字开头 + 中文（verse-marker emit 失败的降级）
+python3 -c "
+import re
+from pathlib import Path
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8')
+    pats = {
+        '裸数字': r'^\d{1,3} [^\n*<]',         # 28 你们自己...
+        '0 开头': r'^0 [^\n*<]',                # 0 耶稣... (OCR 把 ㉚ 切成 ③+0)
+        'bold 无 period': r'^\*\*\d{1,3}\*\* ', # **26** opener
+    }
+    for n, p in pats.items():
+        ms = re.findall(p, text, re.MULTILINE)
+        if ms: print(f'{f.name} [{n}]: {len(ms)} - {ms[:2]}')
+"   # 应空
+
+# Gate-8b: verse 注释段顺序倒乱（同一 chapter 内 verse-marker 序列应单调不减）
+python3 -c "
+import re
+from pathlib import Path
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    ch = int(f.stem)
+    text = f.read_text(encoding='utf-8')
+    refs = [int(m.group(2)) for m in re.finditer(r'\\*\\*<书名> (\\d+):(\\d+)。\\*\\*', text) if m.group(1) == str(ch)]
+    prev, issues = 0, 0
+    for v in refs:
+        if v < prev: issues += 1
+        prev = max(prev, v)
+    if issues: print(f'{f.name}: {issues} backward jumps')
+"   # 应空 — 出现 = 跨 section relocate（relocate_misplaced_verse_commentary.py）
+    # + 同 section 内排序（sort_intra_section_verses.py）都要跑过
 
 # Gate-9: verse 主体段双重出现 (publish 错位副本)
 python3 -c "
