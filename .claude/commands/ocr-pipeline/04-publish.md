@@ -173,6 +173,21 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第十轮（2026-06-23）：**Calvin commentary 段被误捕为 `[^N]:` fn 定义**。
+  用户截图打回 "❶❷你是……西门 这段漏了"。Calvin v.42 第一 commentary 块
+  整段 ("你是……西门" + 给彼得取名注解) 在 ch1.md L506 被错以 `[^48]:` 起首,
+  body 无任何引用; 同时 v.42 marker 错挂到第二个 phrase "你要称为矶法"。
+  根因：OCR raw page_0058 那段 commentary 紧贴在前一脚注 ① "格拉提安..."
+  之后, restructure 把 `**你是……西门**` 当成"连续脚注定义流"的下一条
+  fn def 错误归类 (fn def 缺独立 `①` 锚号但 publish 仍生成 `[^48]:` ref)。
+  修复策略：
+  - v.42 marker 重挂到 *你是……西门*，"你要称为矶法" 变 italic 续段
+  - 删除孤立 [^48]: 定义 (body 无引用, 安全)
+  扫描验证：全 john 仅此 1 例 (扫 long fn def + 0-ref 嫌疑标准: > 300 字符
+  + body 0 引用); 其余 3 处长 fn def (`18.md:L266` / `19.md:L300` /
+  `20.md:L297`) 都是合法编者注 (ref 在 body 命中)。
+  **Gate-Orphan-Long-Fn-Def**：跑 publish 后自检 `[^N]:` body > 300 字符且
+  body 引用 = 0 的条目，0 命中才放行。
 - john 第九轮（2026-06-23）：**bare-CJK phrase 段无任何 markup**（OCR 圈号
   连 `**` / `*` 都剥光）。用户截图打回 "❷❶你是以利亚吗 md 没加"。Calvin
   PDF 用 `❷❶你是以利亚吗?他们为什么...` 圈号开头, OCR/restructure 把圈号
