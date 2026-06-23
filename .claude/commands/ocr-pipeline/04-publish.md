@@ -173,6 +173,35 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第十一轮（2026-06-23）：**OCR 跨页强切段 (第二例)**。
+  ch2 v.6 commentary "...一百五十人的筵席。" + "另外，石缸的数量和容量..."
+  在 PDF 是一段（中间隔页底脚注列表），OCR 跨页强切。同 [john 第六轮]
+  ch1 v.5 同类。用户两次截图打回，confirm 此 bug class **完全无法
+  自动检测**——前段以 `。` 结尾、后段以 continuation marker 起首
+  （另外/同样/同时/此外/再者）和正常段落分隔无法区分，必须看 PDF 原文。
+  扫描工具（review-only，不自动合并）：
+
+  ```bash
+  python3 -c "
+  import re; from pathlib import Path
+  CONT = ['另外','同样','同时','此外','再者','其次','另一方面','此处']
+  for f in sorted(Path('calvin/<book>').glob('*.md')):
+      if not f.stem.isdigit(): continue
+      text = f.read_text(encoding='utf-8')
+      paras = text.split('\n\n')
+      for i in range(1, len(paras)):
+          prev = paras[i-1].strip(); cur = paras[i].strip()
+          if not prev or not cur or cur.startswith(('<','#','|','[','*','**','---')): continue
+          if not any(cur.startswith(op) for op in CONT): continue
+          if not prev.endswith('。') or len(prev) < 50: continue
+          ln = text[:text.find(paras[i])].count(chr(10))+1
+          print(f'{f.name}:L~{ln} {cur[:30]}...')
+  "
+  ```
+
+  全 john 当前 37 个候选位置，**严禁批量自动合并**——很多 continuation
+  marker 段是 Calvin 正常另起段（如"另外"引出新论点）。仅作用户视觉
+  review 的提示清单。
 - john 第十轮（2026-06-23）：**Calvin commentary 段被误捕为 `[^N]:` fn 定义**。
   用户截图打回 "❶❷你是……西门 这段漏了"。Calvin v.42 第一 commentary 块
   整段 ("你是……西门" + 给彼得取名注解) 在 ch1.md L506 被错以 `[^48]:` 起首,
