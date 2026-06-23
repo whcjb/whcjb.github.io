@@ -175,12 +175,14 @@ sort → dedupe → Gate-Section-Order = 0。
    Calvin 排版里 italic 续段属于上一个 marker 的同 verse 续段，section 起首
    出现 italic 续段几乎必然是 OCR 双圈号高位丢字（`⑤①` → `①`）。
 
-3. **Pass 3（裸 CJK + 标点）**：扫段首是 `[一-鿿][一-鿿…\.]{1,30}?[一-鿿][？！。?!]`
-   形式的段落（OCR 把圈号剥成纯文本，phrase 内允许 `……` / `....` 省略号；
-   terminator 限定 `[？！。?!]` 不含单 `.` 防误切省略号）。COMMON_OPENERS
-   黑名单（首先 / 其次 / 然后 / 所以 / 但是 / 另外 / 同样 / 此外…）防误伤
-   普通续段；context-aware 优先 section range 内 verse（避免 "这就是我曾说"
-   在 v.15/v.30 都命中时误选）。
+3. **Pass 3（裸 CJK + 标点）**：扫段首是
+   `[（(]?[一-鿿][一-鿿…\.（）()]{1,30}?[一-鿿]）?[？！。?!]` 形式的段落：
+   - phrase 内允许中文省略号 `……` 或 ASCII `....`（Calvin 简写省略）
+   - phrase 内允许全角括号 `（...）`（如 `（因为）上帝爱世人。`）
+   - terminator 限定 `[？！。?!]` 不含单 `.` 防误切省略号
+   COMMON_OPENERS 黑名单（首先 / 其次 / 然后 / 所以 / 但是 / 另外 / 同样 /
+   此外…）防误伤普通续段；context-aware 优先 section range 内 verse
+   （避免 "这就是我曾说" 在 v.15/v.30 都命中时误选）。
 
 **匹配两阶段**（Pass 1 / Pass 3 共用）：
 - 阶段 1：exact substring (`p_norm in cuv_norm`)
