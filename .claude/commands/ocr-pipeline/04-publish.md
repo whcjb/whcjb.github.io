@@ -173,6 +173,24 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第八轮（2026-06-23）：**Calvin 同章 phrase 简写 → CUV 误匹配高 verse**。
+  用户截图打回 "*恩典和真理* 是在 15 节注释前面的"。
+  根因：Calvin v.14 commentary 用 `**恩典和真理**` 作为子标题（v.14 原文是
+  "充充满满地**有**恩典**有**真理"，Calvin 简写省"有"成 "恩典和真理"），
+  restore Pass 1 子串匹配 CUV 时 v.14 不含 "恩典和真理"（中间有"有"字隔开），
+  只命中 v.17 "恩典和真理都是由耶稣基督来的"——脚本盲目把这块标成 v.17 marker
+  并附加了原属 v.14 的 "总之，在一切事上他都显明..." 续段。Calvin 排版上这块
+  位置 BEFORE v.15 (在 v.14 commentary 末段)，按 verse-number 排序后被错置到
+  v.17 区，整段语义错乱。
+  解法 v1：手工把误标 marker 回退为 italic 续段 `*恩典和真理。*`，移到 v.14
+  正确位置；v.17 marker 改挂到真正的 v.17 phrase `*律法本是藉着摩西传的。*`。
+  防复发：restore Pass 1 应当**保守**——对每个新加 marker 计算 phrase 在更早
+  verse W 的 LCS 匹配度，若 ≥ phrase 80% 且 W < V_marker (-3 以上)，标记为
+  **shorthand 嫌疑**让人工 review，不自动加。本 case 这种 "Calvin 简写省字"
+  无法自动 disambiguate（"恩典和真理" 在 v.14 完全没有这 4 字连续子串）——
+  完全靠 LCS 也只能命中 v.14 "恩典有真理" (3/5 ≈ 60%)，临界值不稳。
+  **声明不可靠类**：restore Pass 1 对 < 6 字的短 phrase 不可靠（多 verse 重名
+  风险高），必须用户视觉 review 命中位置。
 - john 第七轮（2026-06-22）：**OCR period 在 `**` 外形态 + verse-anchor 错位**。
   用户截图打回 "ch1 v.1 *道与上帝同在* 放在后面, 但 PDF 原文 ❶太初有道
   在 section 1:1-5 起首"。
