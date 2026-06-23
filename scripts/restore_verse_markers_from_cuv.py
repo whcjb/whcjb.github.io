@@ -208,8 +208,11 @@ def main():
                 in_sec = [v for v in cands if sec[0] <= v <= sec[1]]
                 if in_sec:
                     v = min(in_sec)
+                elif len(cands) == 1:
+                    # 候选只 1 个 (unambiguous), 加 marker 让 relocate 移到正确 section
+                    v = cands[0]
                 else:
-                    # 候选都不在 section: 跳过 (避免误标到错 section)
+                    # 多个候选都不在 section: 跳过 (避免误标)
                     continue
             else:
                 v = min(cands)

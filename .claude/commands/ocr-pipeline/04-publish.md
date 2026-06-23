@@ -182,14 +182,20 @@ sort → dedupe → Gate-Section-Order = 0。
    普通续段；context-aware 优先 section range 内 verse（避免 "这就是我曾说"
    在 v.15/v.30 都命中时误选）。
 
+**匹配两阶段**（Pass 1 / Pass 3 共用）：
+- 阶段 1：exact substring (`p_norm in cuv_norm`)
+- 阶段 2：**LCS 兜底** (`_longest_common_substring ≥ max(6, len(phrase) * 70%)`)
+  覆盖 Calvin 简写省字（如 "许多人信了他的名" vs CUV "许多人...看见他所行
+  的神迹，就信了他的名" 中间夹字，substring 不命中但 LCS = 8/8 高分）
+
 **`_normalize` 必须用 OpenCC t2s** 把 phrase 转简体——Calvin 译本部分段落残留
 繁体，CUV 是简体，不归一化子串永不匹配。同时归一化 上帝↔神 / 著↔着 / 她↔他 /
 基督↔耶稣 等 Calvin vs CUV 词汇差异。
 
 **不可靠类（无法自动 disambiguate，必须用户视觉 review）**：
 - < 6 字短 phrase 多 verse 重名（CUV substring + LCS 两层都不稳）
-- Calvin 简写省字让 phrase 在原 verse 子串不命中（恩典和真理 vs 有恩典有真理）
-- 多 verse 都有同 phrase 但 commentary 内容暗示某个高 verse
+- 多 verse 都有同 phrase 但 commentary 内容暗示某个高 verse（如 "我实实在在
+  地告诉你们" 在 v.34 / v.51 都有，需 commentary 内容 disambiguate）
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 
