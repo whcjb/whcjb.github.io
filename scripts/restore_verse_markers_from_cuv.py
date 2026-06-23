@@ -27,6 +27,8 @@ except Exception:
 
 
 def _normalize(s):
+    # 先做繁→简转换（部分段落 OCR / Claude 翻译产物残留繁体）
+    s = convert(s)
     s = re.sub(r'[ 。，！？、；：":“”‘’（）\(\)（）!？]', '', s)
     s = re.sub(r'[a-zA-Z\d]+', '', s)
     # Calvin 译本 vs CUV 字符 / 词汇差异，归一化以便 substring 匹配
@@ -112,6 +114,10 @@ def main():
         r'加拉太书|以弗所书|腓立比书|歌罗西书|帖撒罗尼迦|提摩太|提多书|腓利门书|'
         r'希伯来书|雅各书|彼得前书|彼得后书|约翰一书|约翰二书|约翰三书|犹大书|启示录)'
     )
+    # Plain bare-CJK phrase + ?/。/. + space/CJK commentary (Pass 3 用):
+    # 形如 `你是以利亚吗？他们为什么提以利亚...` — OCR ❷❶ 圈号被剥后无任何 markup
+    bare_marker_re = re.compile(r'^([一-鿿]{2,18})([？！。?!.])\s*([一-鿿].{20,})$')
+
     # 允许多种 `**phrase**` 形态:
     #   `**phrase。** rest`            ← 标准形式 (period 在 ** 内)
     #   `** phrase **`                 ← OCR 偶尔在 `**` 内外加空格
@@ -154,6 +160,54 @@ def main():
                 lines[i] = new
                 fixed += 1
                 print(f'  {f.name}:L{i+1} → {ch}:{v} *{phrase[:24]}*  [bold]')
+
+        # Pass 3: plain bare-CJK phrase + ?/。/. + commentary → 加 marker
+        # context-aware: 优先选 phrase 命中且在当前 section range 内的 verse
+        # (避免 Calvin 短句简写歧义引出错误高/低 verse)
+        sections_in_ch = []
+        for li, l in enumerate(lines):
+            ms = re.match(rf'^## {re.escape(book_cn)} {ch}:(\d+)(?:-(\d+))?', l)
+            if ms:
+                sections_in_ch.append((li, int(ms.group(1)),
+                                      int(ms.group(2)) if ms.group(2) else int(ms.group(1))))
+
+        def section_for_line(li):
+            for k, (sln, lo, hi) in enumerate(sections_in_ch):
+                nxt = sections_in_ch[k+1][0] if k+1 < len(sections_in_ch) else len(lines)
+                if sln < li < nxt: return (lo, hi)
+            return None
+
+        for i, ln in enumerate(lines):
+            m = bare_marker_re.match(ln)
+            if not m: continue
+            phrase = m.group(1)
+            punct = m.group(2)
+            rest = m.group(3)
+            COMMON_OPENERS = {'首先', '其次', '然后', '所以', '但是', '因此', '另外', '同样',
+                              '此外', '总之', '换言之', '一方面', '反之', '现在', '当然',
+                              '虽然', '不过', '然而'}
+            if phrase in COMMON_OPENERS: continue
+            if book_token_re.search(phrase): continue
+            p_norm = _normalize(phrase)
+            if len(p_norm) < 4: continue
+            cands = [v for v, txt in verse_text[ch].items() if p_norm in _normalize(txt)]
+            if not cands: continue
+            # context-aware: 优先 section range 内的 verse
+            sec = section_for_line(i)
+            if sec:
+                in_sec = [v for v in cands if sec[0] <= v <= sec[1]]
+                if in_sec:
+                    v = min(in_sec)
+                else:
+                    # 候选都不在 section: 跳过 (避免误标到错 section)
+                    continue
+            else:
+                v = min(cands)
+            new = f'**{book_cn} {ch}:{v}。** *{phrase}{punct}* {rest}'
+            if new != ln:
+                lines[i] = new
+                fixed += 1
+                print(f'  {f.name}:L{i+1} → {ch}:{v} *{phrase[:24]}*  [bare]')
 
         # Pass 2: section 起始 italic 续段 `*phrase。* commentary` → 加 marker
         # 只处理 section 起首第一个 *phrase* 段（之前没有任何 bold marker / 内容段）
