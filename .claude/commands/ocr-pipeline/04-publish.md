@@ -127,180 +127,69 @@ done
 OCR **不会** 保留 `**罗马书 N:V。**` 加粗格式，发布脚本的 fallback heuristic
 （按段落开头数字匹配 verse）会把段落放错 section。
 
-发布完成后必须跑 **三个** relocation/排序脚本：
-
-```bash
-# 1. 章内迁移：v.32 段落被错放到 section 1:22-28 → 移到 1:29-32
-python3 scripts/relocate_misplaced_verse_commentary.py \
-  --book-cn 罗马书 --dir calvin/romans
-
-# 2. 跨章迁移：v.22-36 段落被错放到 12.md（Rom 12 max 21）→ 移到 11.md
-python3 scripts/relocate_cross_chapter_verse.py \
-  --book-cn 罗马书 --dir calvin/romans
-
-# 3. 同 section 内排序：v.14 段落出现在 v.9 之前（OCR 段落落地顺序乱）
-python3 scripts/sort_intra_section_verses.py \
-  --book-cn 罗马书 --dir calvin/romans
-```
-
-三脚本都依赖 `VERSE_COUNTS` 表（CUV chapter-max-verse counts）。新书要
-在脚本里增加该书的 verse-count dict。
+发布完成后必须按固定顺序跑 **五件套**：见 §2.1。三个 relocation/排序脚本都依赖
+`VERSE_COUNTS` 表（CUV chapter-max-verse counts）。新书要在脚本里增加该书的
+verse-count dict。
 
 参考实战：
 - romans：**93 处章内 + 14 处跨章 = 107 处 misplaced**
-- john：**10 处跨 section + 65 处 section 内倒序 = 75 处**（之前漏了 sort_intra_section_verses 这一步，被用户截图打回 "4:14 出现在 4:9 之前"）
-- john 第二轮（2026-06-22）：surgical OCR-artifact 修复后 **再生 36 处跨 section 错位**（ch6 v.55 出现在 6:43-49 section 之前，被用户截图打回 "55 怎么在 43，44 前面"）
-- john 第三轮（2026-06-22）：surgical 后 **再生 47 处 section 内 verse 倒序**（ch6 v.47 出现在 v.48 / v.49 之后，被用户截图打回 "47 怎么在 48，49 后面"）。
-  根因：`sort_intra_section_verses.py` 原算法仅按 marker 段单独排序，**未把
-  marker 后的续段（非 marker 的注释续句、bold 小标题如 `**我是活的粮**`）作为
-  block 一起搬移**，导致续段被遗弃在原位、与新位的 marker 脱节。已修：把
-  "marker 段 + 直到下一个 marker 之间的所有 paras"打包成 block 再排序。
-- john 第四轮（2026-06-22）：sort 后 **再生 48 处同 verse 重复 marker**（ch6 v.55
-  既有"我的血真是可喝的"又有"我的肉是真正的食物"两段都标 `**约翰福音 6:55。**`，
-  用户截图打回 "怎么又是两个"）。
-  根因：Calvin 单 verse 多段评注 PDF 原本只第一段带节号，OCR/publish 给所有
-  段都加了 `**N:V。**` marker；而 dedupe 脚本 **必须排在 sort 之后**（sort 让
-  同 verse 的多段变成相邻，dedupe 才能识别）。历史上跑过 dedupe 但是在 sort
-  之前——同 verse 段未相邻，dedupe 误以为不是重复。**正确顺序：sort →
-  dedupe**（已写入 §2.1 的"四件套"步骤）。
-- john 第五轮（2026-06-22）：**32 处 verse-marker 完全丢失**——OCR 把
-  `**约翰福音 N:V。** *phrase。*` 简化成 `**phrase。**`，verse-num 丢了，
-  既无 anchor 也跑不动 relocate（脚本只认 `**书名 N:V。**` 模式）。用户截图
-  打回 "这一节的注释怎么在网页没了"（ch7 v.1 *耶稣在加利利游行* 是典型）。
-  根因：OCR 把 PDF `❶耶稣在加利利游行。` 解成 `## ①耶稣在加利利游行。`，
-  restructure 阶段把 `## ①` 头剥掉只剩 `**phrase。**`，verse-num 信息丢失。
-  解法：新增 `restore_verse_markers_from_cuv.py`——对每个 `**phrase。**`
-  段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
-  必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
-  四件套）。已写入 §2.1 的"五件套"步骤。
-- john 第十二轮（2026-06-23）：**bare-CJK 段含省略号被 Pass 3 漏检**。
-  用户截图打回 "❶❷耶稣……下迦百农去 这里怎么没有经文节号"。restore Pass 3
-  原 regex `^[一-鿿]{2,18}[？！。?!.]\s*[一-鿿].{20,}$` phrase 部分只允许
-  纯 CJK，遇到 `耶稣……下迦百农去` 这种 phrase 含省略号的，第一个 `.`
-  被识别成 terminator → phrase 切成 "耶稣" 2 字（< 4 char min）→ 过滤掉。
-  修复：phrase 允许中文省略号 `……` 或 ASCII `..../...`（`[一-鿿…\.]`），
-  terminator 限定 `[？！。?!]`（去掉单 `.`，防止误切省略号）。
-- john 第十一轮（2026-06-23）：**OCR 跨页强切段 (第二例)**。
-  ch2 v.6 commentary "...一百五十人的筵席。" + "另外，石缸的数量和容量..."
-  在 PDF 是一段（中间隔页底脚注列表），OCR 跨页强切。同 [john 第六轮]
-  ch1 v.5 同类。用户两次截图打回，confirm 此 bug class **完全无法
-  自动检测**——前段以 `。` 结尾、后段以 continuation marker 起首
-  （另外/同样/同时/此外/再者）和正常段落分隔无法区分，必须看 PDF 原文。
-  扫描工具（review-only，不自动合并）：
+- john：累计修复 **75 处跨 section 错位 / 倒序 + 50 处 marker 完全丢失 +
+  48 处同 verse 重复 marker + 多处 misc**。所有发现的失效模式在 §2.2 表格汇总。
 
-  ```bash
-  python3 -c "
-  import re; from pathlib import Path
-  CONT = ['另外','同样','同时','此外','再者','其次','另一方面','此处']
-  for f in sorted(Path('calvin/<book>').glob('*.md')):
-      if not f.stem.isdigit(): continue
-      text = f.read_text(encoding='utf-8')
-      paras = text.split('\n\n')
-      for i in range(1, len(paras)):
-          prev = paras[i-1].strip(); cur = paras[i].strip()
-          if not prev or not cur or cur.startswith(('<','#','|','[','*','**','---')): continue
-          if not any(cur.startswith(op) for op in CONT): continue
-          if not prev.endswith('。') or len(prev) < 50: continue
-          ln = text[:text.find(paras[i])].count(chr(10))+1
-          print(f'{f.name}:L~{ln} {cur[:30]}...')
-  "
-  ```
+### 2.2 OCR-publish 失效模式速查表
 
-  全 john 当前 37 个候选位置，**严禁批量自动合并**——很多 continuation
-  marker 段是 Calvin 正常另起段（如"另外"引出新论点）。仅作用户视觉
-  review 的提示清单。
-- john 第十轮（2026-06-23）：**Calvin commentary 段被误捕为 `[^N]:` fn 定义**。
-  用户截图打回 "❶❷你是……西门 这段漏了"。Calvin v.42 第一 commentary 块
-  整段 ("你是……西门" + 给彼得取名注解) 在 ch1.md L506 被错以 `[^48]:` 起首,
-  body 无任何引用; 同时 v.42 marker 错挂到第二个 phrase "你要称为矶法"。
-  根因：OCR raw page_0058 那段 commentary 紧贴在前一脚注 ① "格拉提安..."
-  之后, restructure 把 `**你是……西门**` 当成"连续脚注定义流"的下一条
-  fn def 错误归类 (fn def 缺独立 `①` 锚号但 publish 仍生成 `[^48]:` ref)。
-  修复策略：
-  - v.42 marker 重挂到 *你是……西门*，"你要称为矶法" 变 italic 续段
-  - 删除孤立 [^48]: 定义 (body 无引用, 安全)
-  扫描验证：全 john 仅此 1 例 (扫 long fn def + 0-ref 嫌疑标准: > 300 字符
-  + body 0 引用); 其余 3 处长 fn def (`18.md:L266` / `19.md:L300` /
-  `20.md:L297`) 都是合法编者注 (ref 在 body 命中)。
-  **Gate-Orphan-Long-Fn-Def**：跑 publish 后自检 `[^N]:` body > 300 字符且
-  body 引用 = 0 的条目，0 命中才放行。
-- john 第九轮（2026-06-23）：**bare-CJK phrase 段无任何 markup**（OCR 圈号
-  连 `**` / `*` 都剥光）。用户截图打回 "❷❶你是以利亚吗 md 没加"。Calvin
-  PDF 用 `❷❶你是以利亚吗?他们为什么...` 圈号开头, OCR/restructure 把圈号
-  剥得只剩裸 CJK + 标点 + commentary（既不是 `**phrase**` 也不是 `*phrase*`）。
-  restore Pass 1（bold）/ Pass 2（italic-leading）**都漏**。
-  解法：新增 restore Pass 3，bare regex `^[一-鿿]{2,18}[？！。?!.]\s*[一-鿿].{20,}$`,
-  CUV 子串匹配 + context-aware（优先选当前 section range 内的 verse, 避免
-  Calvin 短句简写歧义如 "这就是我曾说" 在 v.15 和 v.30 都命中 → 段落在
-  1:29-34 → 选 v.30 不选 v.15）+ COMMON_OPENERS 黑名单（首先 / 其次 / 然后 /
-  所以 / 但是 等续段开头词不误标）。
-  **同时 _normalize 必须用 OpenCC t2s 转换 phrase**——Calvin 译本中部分段落
-  残留繁体（用户 review 后才发现），CUV 是简体，子串匹配前必须统一。
-  本轮 ch1 catch L301 *这就是我曾说* → v.30，L307 *我来用水施洗* → v.31 续段
-  （dedupe 处理）。ch1 12 段繁体残留 OpenCC 全文 t2s 转简体。
-- john 第八轮（2026-06-23）：**Calvin 同章 phrase 简写 → CUV 误匹配高 verse**。
-  用户截图打回 "*恩典和真理* 是在 15 节注释前面的"。
-  根因：Calvin v.14 commentary 用 `**恩典和真理**` 作为子标题（v.14 原文是
-  "充充满满地**有**恩典**有**真理"，Calvin 简写省"有"成 "恩典和真理"），
-  restore Pass 1 子串匹配 CUV 时 v.14 不含 "恩典和真理"（中间有"有"字隔开），
-  只命中 v.17 "恩典和真理都是由耶稣基督来的"——脚本盲目把这块标成 v.17 marker
-  并附加了原属 v.14 的 "总之，在一切事上他都显明..." 续段。Calvin 排版上这块
-  位置 BEFORE v.15 (在 v.14 commentary 末段)，按 verse-number 排序后被错置到
-  v.17 区，整段语义错乱。
-  解法 v1：手工把误标 marker 回退为 italic 续段 `*恩典和真理。*`，移到 v.14
-  正确位置；v.17 marker 改挂到真正的 v.17 phrase `*律法本是藉着摩西传的。*`。
-  防复发：restore Pass 1 应当**保守**——对每个新加 marker 计算 phrase 在更早
-  verse W 的 LCS 匹配度，若 ≥ phrase 80% 且 W < V_marker (-3 以上)，标记为
-  **shorthand 嫌疑**让人工 review，不自动加。本 case 这种 "Calvin 简写省字"
-  无法自动 disambiguate（"恩典和真理" 在 v.14 完全没有这 4 字连续子串）——
-  完全靠 LCS 也只能命中 v.14 "恩典有真理" (3/5 ≈ 60%)，临界值不稳。
-  **声明不可靠类**：restore Pass 1 对 < 6 字的短 phrase 不可靠（多 verse 重名
-  风险高），必须用户视觉 review 命中位置。
-- john 第七轮（2026-06-22）：**OCR period 在 `**` 外形态 + verse-anchor 错位**。
-  用户截图打回 "ch1 v.1 *道与上帝同在* 放在后面, 但 PDF 原文 ❶太初有道
-  在 section 1:1-5 起首"。
-  根因 1（**period 在 ** 外**）：OCR 输出 `**太初有道**。在导言里...`，
-  `。` 在 `**` 之外，紧贴下一字（无空格）。原 restore regex
-  `^\*\*phrase\*\*(\s+.*)?$` 要求 `**` 后必须是空格或行尾——`。在` 既
-  不是空格也不是行尾，正则不匹配 → restore 跳过该段。同款 OCR 变体
-  `**phrase。**rest`（period 在 ** 内但无空格紧贴下一字，如 `**有一个人。**现`）
-  也被旧 regex 漏。
-  解法：regex 改为兼容 **4 种形态**：
-  ```
-  **phrase。** rest          标准
-  **phrase。**rest           无空格紧贴
-  **phrase**。rest           period 在 ** 外
-  ** phrase **               前后加空格
-  ```
-  正则： `^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*([。.,，！？]?)\s*(.*)$`
-  本轮 catch 2 处（1.md L27 `太初有道` → v.1, L90 `有一个人` → v.6）。
-  根因 2（**anchor 锚在后段**）：`add_john_verse_anchors.py` 用 seen
-  set 跳过已存在 anchor，但 restore 后某个 verse 的"第一出现位置"变了
-  （前段被新加 marker，后段原有 marker），seen set 让 anchor 仍留在
-  后段。verse-index 胶囊链到 `#john-N-V` 但跳到后段，跳过前段 commentary。
-  解法：**restore 后必须先清空 anchor 再 re-run add_anchors**，让
-  anchor 始终落在每 verse 首次出现位置：
-  ```python
-  # 删除所有 <h2 class="verse-anchor"...>...</h2> + 尾随空行
-  new_text = re.sub(r'<h2 class="verse-anchor"[^>]*>[^<]*</h2>\n+', '', text)
-  # 然后 re-run add_<book>_verse_anchors.py
-  ```
-- john 第六轮（2026-06-22）：**OCR 高位圈号丢字 + italic-only 段落漂移**。
-  用户截图打回 "ch8 v.35 后 *我实实在在地告诉你们* 是 v.51 commentary,
-  错位到 v.35 后面"。
-  根因 1（**OCR 双圈号丢前位**）：PDF 的 `⑤①` (= verse 51) 圈号字符被
-  OCR 错读为 `①` (verse 1)。restructure 不把 `①开头` 当成 verse marker
-  （只接受 `## ①` 或 `## ❶`），就直接把整段当 italic 续段落落地——
-  保留了 `*我实实在在地告诉你们。*` 形式，verse-num 完全丢失。
-  根因 2（**italic 续段无法 restore**）：原 `restore_verse_markers_from_cuv`
-  只处理 `**phrase。**` (bold) 形式，对 `*phrase。*` (italic-only) 视而不见。
-  italic 续段在 Calvin 排版里**正常情况**是当前 verse 多段评注的续段
-  (e.g. v.55 的 *我的血真是可喝的* / *我的肉是真正的食物*)，但当 section
-  起首第一段就是 italic 续段时，几乎必然是 OCR 丢失 verse-num 的孤儿段。
-  解法：restore 脚本加 **Pass 2** ——对每个 section 起首的第一个内容段，
-  若为 `*phrase。* commentary` 形式，用 CUV phrase 反查 verse-num，
-  加 `**约翰福音 ch:V。**` 前缀。本轮 catch 7 处（ch4/6/8/13/18/20）。
-  **Gate-Section-Leading-Italic** 加入自检（见 §2.5）。
+约翰福音整本经历 12 轮用户截图打回，归纳出 8 类典型失效。**每类都对应五件套
+中某个步骤的盲区**——补足后该类不再复发。表格按修复优先级（影响面 × 是否
+易自动检测）排序：
+
+| # | 失效模式 | 症状 | 根因 | 修复 / 防御位 |
+|---|---|---|---|---|
+| A | **marker 完全丢失（bold/italic/bare 三态）** | 段落该有 `**书 N:V。**` 但没有，导致无 anchor + relocate 看不到该段 | OCR 把 PDF 圈号（❶/❷/①/❶❺ 等）剥得只剩 `**phrase**` / `*phrase*` / 裸 CJK 三态 | `restore_verse_markers_from_cuv.py` 三 Pass：Pass 1 bold（4 种 period 形态）/ Pass 2 section-起首 italic / Pass 3 bare-CJK（含 `……` 省略号 + COMMON_OPENERS 黑名单）。详 §2.3 |
+| B | **marker 误标到错 verse（Calvin shorthand）** | phrase 简写省字（如 "恩典和真理" 省 v.14 "有恩典有真理" 的两个"有"），CUV 子串只命中其他高 verse | restore Pass 1 子串匹配盲目选最低命中 verse，不看上下文 | 短 phrase（< 6 字）和 COMMON_OPENERS 不自动加 marker；context-aware 选优先 section-range 内 verse。**无法完全自动 disambiguate**，需用户截图打回 |
+| C | **跨 section / 跨章错位** | v.55 段出现在 6:43-49 section 之前；v.22-36 段在 12.md 但 Rom 12 只到 21 | OCR 物理顺序 ≠ verse 数字顺序；restructure 按 page 落地不重排 | `relocate_misplaced_verse_commentary.py` + `relocate_cross_chapter_verse.py`，五件套必跑 |
+| D | **section 内 verse 倒序** | 同 section 出现 [43,44,48,49,47] 这种 | OCR 物理顺序 ≠ verse 顺序 | `sort_intra_section_verses.py` block 化稳定排序。**block = marker 段 + 续段直到下个 marker**，续段必须跟着 marker 一起搬。详 §2.3 |
+| E | **同 verse 重复 marker** | v.55 既有 *我的血* 又有 *我的肉* 两段都标 `**6:55。**` | Calvin 单 verse 多段评注 PDF 只首段带节号，OCR 给所有段都加 | `dedupe_same_verse_markers.py`，**顺序必须排在 sort 之后**（sort 让同 verse 多段相邻后 dedupe 才识别） |
+| F | **verse-anchor 锚在后段** | verse-index 胶囊跳到第二个 v.X marker，跳过第一个 | `add_<book>_verse_anchors.py` 用 seen-set 跳已存在 anchor；restore 改变了"第一出现位置"后 seen-set 仍指向旧位 | **restore 后必须先清空所有 anchor 再 re-run add_anchors**（见 §2.5） |
+| G | **commentary 段误捕为 `[^N]:` fn 定义** | 整段 Calvin 注释塞到文件末做 fn def，body 0 引用 | OCR raw 中 commentary 紧贴在前一脚注 ① 之后，restructure 当作"连续 fn def 流"下一条错归 | **Gate-Orphan-Long-Fn-Def**：`[^N]:` body > 300 字符且 body 引用 = 0 必须 0 命中。详 §2.5 |
+| H | **OCR 跨页强切段** | PDF 一段被 OCR 切成两段，第二段以 "另外/同样/再者" 起首 | OCR 跨页时把"主段 + 页底脚注 + 主段续"切成两个独立段 | **完全无法自动检测**——和正常段落分隔无区别。提供 review-only 扫描列出候选位置（§2.5），人工对照 PDF 修 |
+
+**所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
+sort → dedupe → Gate-Section-Order = 0。
+
+### 2.2.1 restore 脚本（覆盖失效模式 A / B 的核心）
+
+`scripts/restore_verse_markers_from_cuv.py` 三 Pass：
+
+1. **Pass 1（bold）**：扫 `**phrase。**` 段，CUV 子串反查 verse → 加
+   `**约翰福音 N:V。**` 前缀。regex 兼容 4 种 OCR period 形态：
+   ```
+   **phrase。** rest          标准
+   **phrase。**rest           无空格紧贴
+   **phrase**。rest           period 在 ** 外（OCR 漏吃 period）
+   ** phrase **               前后加空格
+   ```
+   正则：`^\*\*\s*([一-鿿][^*\n]{1,60}?)\s*\*\*([。.,，！？]?)\s*(.*)$`
+
+2. **Pass 2（section-起首 italic）**：扫 section 起首第一个内容段，若为
+   `*phrase。* commentary` 形式（前面无 bold marker）→ CUV 反查 + 加 marker。
+   Calvin 排版里 italic 续段属于上一个 marker 的同 verse 续段，section 起首
+   出现 italic 续段几乎必然是 OCR 双圈号高位丢字（`⑤①` → `①`）。
+
+3. **Pass 3（裸 CJK + 标点）**：扫段首是 `[一-鿿][一-鿿…\.]{1,30}?[一-鿿][？！。?!]`
+   形式的段落（OCR 把圈号剥成纯文本，phrase 内允许 `……` / `....` 省略号；
+   terminator 限定 `[？！。?!]` 不含单 `.` 防误切省略号）。COMMON_OPENERS
+   黑名单（首先 / 其次 / 然后 / 所以 / 但是 / 另外 / 同样 / 此外…）防误伤
+   普通续段；context-aware 优先 section range 内 verse（避免 "这就是我曾说"
+   在 v.15/v.30 都命中时误选）。
+
+**`_normalize` 必须用 OpenCC t2s** 把 phrase 转简体——Calvin 译本部分段落残留
+繁体，CUV 是简体，不归一化子串永不匹配。同时归一化 上帝↔神 / 著↔着 / 她↔他 /
+基督↔耶稣 等 Calvin vs CUV 词汇差异。
+
+**不可靠类（无法自动 disambiguate，必须用户视觉 review）**：
+- < 6 字短 phrase 多 verse 重名（CUV substring + LCS 两层都不稳）
+- Calvin 简写省字让 phrase 在原 verse 子串不命中（恩典和真理 vs 有恩典有真理）
+- 多 verse 都有同 phrase 但 commentary 内容暗示某个高 verse
 
 ### 2.1 ⚠️ Surgical 修复后必须再跑 relocate（被反复打回的根因）
 
@@ -395,16 +284,11 @@ block = [
 原因，致我退缩不敢全跑 sort，留下 47 处倒序。修后算法对 ch6 输出
 character byte 数完全不变（39924），仅顺序更新。
 
-### 2.5 Gate-Section-Leading-Italic（必跑）
+### 2.5 五件套之外的额外 Gate
 
-**抓什么**：section 起首第一个内容段是 `*phrase。* commentary` 形式但
-**没有前置 `**N:V。**` marker**。在 Calvin 排版里 italic 续段属于上一个
-marker 的同 verse 续段；section 起首的 italic 续段没有上一个 marker，
-几乎必然是 OCR 高位圈号丢字（如 PDF `⑤①` → OCR `①` → restructure
-丢失 verse-num）。
+#### Gate-Section-Leading-Italic（失效模式 A 残留检测）
 
 ```bash
-# Gate-Section-Leading-Italic
 python3 -c "
 import re; from pathlib import Path
 book_cn, book_dir = '<书名>', 'calvin/<book>'
@@ -427,18 +311,62 @@ for f in sorted(Path(book_dir).glob('*.md')):
                 flag += 1
             break
 print(f'剩余 italic-leading 漂移: {flag}')
-"   # 必须输出 "剩余 italic-leading 漂移: 0"
+"   # 必须输出 0
 ```
 
-**根因覆盖**：
-1. **OCR 双圈号高位丢字**（PDF `⑤①` → OCR `①`，verse 51 看成 verse 1）
-2. **OCR italic 续段没有 marker** 直接落地，restore 第一版只处理 bold 不
-   碰 italic（已加 Pass 2 修复）
+#### Gate-Orphan-Long-Fn-Def（失效模式 G 检测）
 
-**剩余的不可自动检测类**：phrase 在多 verse 都出现（如 "我实实在在地告诉
-你们" 在 v.34 / v.51 都有）+ commentary 内容暗示高 verse 但 marker 选了
-低 verse——需要用户截图打回。**不要尝试自动 disambiguate**，phrase-only
-match 会误改正确的 v.34 commentary。
+```bash
+python3 -c "
+import re; from pathlib import Path
+flag = 0
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8')
+    for m in re.finditer(r'^\\[\\^([a-zA-Z0-9]+)\\]:\\s*([^\\n]+)\$', text, re.MULTILINE):
+        ref_n = m.group(1); body = m.group(2)
+        if len(body) <= 300: continue
+        used = len(re.findall(rf'\\[\\^{re.escape(ref_n)}\\][^:]', text))
+        if used == 0:
+            print(f'  {f.name} [^{ref_n}] body {len(body)}c 0 refs: {body[:60]}...')
+            flag += 1
+print(f'剩余孤立长 fn def: {flag}')
+"   # 必须输出 0
+```
+
+#### Verse-Anchor 校准（失效模式 F）
+
+restore 后**必须**清空所有 `<h2 class="verse-anchor"...>` 再重跑 add_anchors，
+保证 anchor 永远落在每 verse 首次出现位置之前：
+
+```python
+# 删除所有 <h2 class="verse-anchor"...>...</h2> + 尾随空行
+new_text = re.sub(r'<h2 class="verse-anchor"[^>]*>[^<]*</h2>\n+', '', text)
+# 然后 re-run scripts/add_<book>_verse_anchors.py
+```
+
+#### Cross-Page-Split 候选清单（失效模式 H，review-only）
+
+```bash
+python3 -c "
+import re; from pathlib import Path
+CONT = ['另外','同样','同时','此外','再者','其次','另一方面','此处']
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8')
+    paras = text.split('\n\n')
+    for i in range(1, len(paras)):
+        prev = paras[i-1].strip(); cur = paras[i].strip()
+        if not prev or not cur or cur.startswith(('<','#','|','[','*','**','---')): continue
+        if not any(cur.startswith(op) for op in CONT): continue
+        if not prev.endswith('。') or len(prev) < 50: continue
+        ln = text[:text.find(paras[i])].count(chr(10))+1
+        print(f'{f.name}:L~{ln} {cur[:30]}...')
+"
+```
+
+**严禁批量自动合并**——很多 continuation marker 段是 Calvin 正常另起段。
+仅作用户视觉 review 提示。约翰福音全 21 章约 37 个候选位置。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
