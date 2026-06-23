@@ -116,7 +116,10 @@ def main():
     )
     # Plain bare-CJK phrase + ?/。/. + space/CJK commentary (Pass 3 用):
     # 形如 `你是以利亚吗？他们为什么提以利亚...` — OCR ❷❶ 圈号被剥后无任何 markup
-    bare_marker_re = re.compile(r'^([一-鿿]{2,18})([？！。?!.])\s*([一-鿿].{20,})$')
+    # phrase 内允许中文省略号 `……` 或 ASCII `....` (Calvin 简写省略, 如
+    # `你是……西门。` `耶稣……下迦百农去。`); terminator 必须是 `。/?/!/？/！`
+    # 不允许单 `.` 作 terminator 以防把省略号中的 `.` 误切
+    bare_marker_re = re.compile(r'^([一-鿿][一-鿿…\.]{1,30}?[一-鿿])([？！。?!])\s*([一-鿿].{20,})$')
 
     # 允许多种 `**phrase**` 形态:
     #   `**phrase。** rest`            ← 标准形式 (period 在 ** 内)

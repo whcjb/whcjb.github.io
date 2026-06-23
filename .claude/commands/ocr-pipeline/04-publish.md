@@ -173,6 +173,13 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第十二轮（2026-06-23）：**bare-CJK 段含省略号被 Pass 3 漏检**。
+  用户截图打回 "❶❷耶稣……下迦百农去 这里怎么没有经文节号"。restore Pass 3
+  原 regex `^[一-鿿]{2,18}[？！。?!.]\s*[一-鿿].{20,}$` phrase 部分只允许
+  纯 CJK，遇到 `耶稣……下迦百农去` 这种 phrase 含省略号的，第一个 `.`
+  被识别成 terminator → phrase 切成 "耶稣" 2 字（< 4 char min）→ 过滤掉。
+  修复：phrase 允许中文省略号 `……` 或 ASCII `..../...`（`[一-鿿…\.]`），
+  terminator 限定 `[？！。?!]`（去掉单 `.`，防止误切省略号）。
 - john 第十一轮（2026-06-23）：**OCR 跨页强切段 (第二例)**。
   ch2 v.6 commentary "...一百五十人的筵席。" + "另外，石缸的数量和容量..."
   在 PDF 是一段（中间隔页底脚注列表），OCR 跨页强切。同 [john 第六轮]
