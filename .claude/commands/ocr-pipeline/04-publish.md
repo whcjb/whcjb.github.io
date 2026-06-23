@@ -173,6 +173,20 @@ python3 scripts/sort_intra_section_verses.py \
   段用 CUV phrase fuzzy match 反查 verse-num，恢复 marker 前缀。该步骤
   必须排在 relocate / sort / dedupe **之前**（恢复 marker 后才能驱动后续
   四件套）。已写入 §2.1 的"五件套"步骤。
+- john 第九轮（2026-06-23）：**bare-CJK phrase 段无任何 markup**（OCR 圈号
+  连 `**` / `*` 都剥光）。用户截图打回 "❷❶你是以利亚吗 md 没加"。Calvin
+  PDF 用 `❷❶你是以利亚吗?他们为什么...` 圈号开头, OCR/restructure 把圈号
+  剥得只剩裸 CJK + 标点 + commentary（既不是 `**phrase**` 也不是 `*phrase*`）。
+  restore Pass 1（bold）/ Pass 2（italic-leading）**都漏**。
+  解法：新增 restore Pass 3，bare regex `^[一-鿿]{2,18}[？！。?!.]\s*[一-鿿].{20,}$`,
+  CUV 子串匹配 + context-aware（优先选当前 section range 内的 verse, 避免
+  Calvin 短句简写歧义如 "这就是我曾说" 在 v.15 和 v.30 都命中 → 段落在
+  1:29-34 → 选 v.30 不选 v.15）+ COMMON_OPENERS 黑名单（首先 / 其次 / 然后 /
+  所以 / 但是 等续段开头词不误标）。
+  **同时 _normalize 必须用 OpenCC t2s 转换 phrase**——Calvin 译本中部分段落
+  残留繁体（用户 review 后才发现），CUV 是简体，子串匹配前必须统一。
+  本轮 ch1 catch L301 *这就是我曾说* → v.30，L307 *我来用水施洗* → v.31 续段
+  （dedupe 处理）。ch1 12 段繁体残留 OpenCC 全文 t2s 转简体。
 - john 第八轮（2026-06-23）：**Calvin 同章 phrase 简写 → CUV 误匹配高 verse**。
   用户截图打回 "*恩典和真理* 是在 15 节注释前面的"。
   根因：Calvin v.14 commentary 用 `**恩典和真理**` 作为子标题（v.14 原文是
