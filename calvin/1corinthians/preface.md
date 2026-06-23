@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: 1corinthians
 book_name: "哥林多前书·加尔文注释"
 title: "前言"
-date: 2026-06-22 09:07
+date: 2026-06-23 09:02
 next_section: 1
 next_label: "第一章"
 ---
