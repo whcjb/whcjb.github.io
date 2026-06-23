@@ -151,7 +151,7 @@ verse-count dict。
 | E | **同 verse 重复 marker** | v.55 既有 *我的血* 又有 *我的肉* 两段都标 `**6:55。**` | Calvin 单 verse 多段评注 PDF 只首段带节号，OCR 给所有段都加 | `dedupe_same_verse_markers.py`，**顺序必须排在 sort 之后**（sort 让同 verse 多段相邻后 dedupe 才识别） |
 | F | **verse-anchor 锚在后段** | verse-index 胶囊跳到第二个 v.X marker，跳过第一个 | `add_<book>_verse_anchors.py` 用 seen-set 跳已存在 anchor；restore 改变了"第一出现位置"后 seen-set 仍指向旧位 | **restore 后必须先清空所有 anchor 再 re-run add_anchors**（见 §2.5） |
 | G | **commentary 段误捕为 `[^N]:` fn 定义** | 整段 Calvin 注释塞到文件末做 fn def，body 0 引用 | OCR raw 中 commentary 紧贴在前一脚注 ① 之后，restructure 当作"连续 fn def 流"下一条错归 | **Gate-Orphan-Long-Fn-Def**：`[^N]:` body > 300 字符且 body 引用 = 0 必须 0 命中。详 §2.5 |
-| H | **OCR 跨页强切段** | PDF 一段被 OCR 切成两段，第二段以 "另外/同样/再者" 起首 | OCR 跨页时把"主段 + 页底脚注 + 主段续"切成两个独立段 | **完全无法自动检测**——和正常段落分隔无区别。提供 review-only 扫描列出候选位置（§2.5），人工对照 PDF 修 |
+| H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号 | **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker，无法判定真实 verse 归属。两类共用 review-only 扫描（§2.5），人工对照 PDF 修 |
 
 **所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
 sort → dedupe → Gate-Section-Order = 0。
