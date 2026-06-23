@@ -193,7 +193,14 @@ def main():
             if book_token_re.search(phrase): continue
             p_norm = _normalize(phrase)
             if len(p_norm) < 4: continue
+            # 阶段 1: exact substring
             cands = [v for v, txt in verse_text[ch].items() if p_norm in _normalize(txt)]
+            # 阶段 2: LCS 兜底 (Calvin 简写省字, 如 "许多人信了他的名" vs CUV
+            # "许多人...就信了他的名" 中间有夹字, substring 不命中但 LCS 高)
+            if not cands and len(p_norm) >= 6:
+                min_lcs = max(6, len(p_norm) * 7 // 10)
+                cands = [v for v, txt in verse_text[ch].items()
+                         if _longest_common_substring(p_norm, _normalize(txt)) >= min_lcs]
             if not cands: continue
             # context-aware: 优先 section range 内的 verse
             sec = section_for_line(i)
