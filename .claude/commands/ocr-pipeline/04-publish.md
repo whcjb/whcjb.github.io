@@ -153,6 +153,7 @@ verse-count dict。
 | G | **commentary 段误捕为 `[^N]:` fn 定义** | 整段 Calvin 注释塞到文件末做 fn def，body 0 引用 | OCR raw 中 commentary 紧贴在前一脚注 ① 之后，restructure 当作"连续 fn def 流"下一条错归 | **Gate-Orphan-Long-Fn-Def**：`[^N]:` body > 300 字符且 body 引用 = 0 必须 0 命中。详 §2.5 |
 | H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section + cascade 错锚）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） ③ **cascade misplacement**：narrative 短语（非真 verse 引文）被 Pass 1/2 升格为 `**N:V。** *PHRASE*`，紧跟的多个无 marker 续段全部塞到 verse N，整组错位（如 john/4 "现在我们看清楚了问题所在" 被错升 v.42，连带"现在我们明白"+"如今在天主教里"两段一起塞到 v.42） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号；CUV fuzzy match 太宽容 narrative 短语（如"现在我们" prefix 命中 v.42 的"现在我们信"） | ①② **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker；review-only 扫描（§2.5）人工对照 PDF 修。③ **可半自动**：扫 `**N:V。** *PHRASE*` header，若 PHRASE 在 CUV verse N:V 内最长连续匹配 < 3 字则标红（见 §2.5 Gate-Weak-Phrase-Match） |
 | I | **跨页合并残留尾片段（重复段）** | 跨页前后两半已正确合并成完整段，但 page 头侧片段也残留为独立的下一段，造成同一段文字"完整段 + 尾片段"重复（如 john/4 v.28 段尾"面前显明..."独立成段；john/14 v.22 段尾"别处曾告诉门徒..."同样模式） | publish restructure 既做了"跨页 merge"又没清掉被 merge 的 page 头片段 | **可自动检测**：扫连续两段 (prev, cur)，若 cur 前 15-25 字 substring 在 prev 内出现，则 cur 是 prev 的尾片段重复，应整段删除。详 §2.5 Gate-Duplicate-Tail-Fragment |
+| J | **单 verse 多段顺序倒置（bold 前缀挂错段）** | 同一 verse 内 Calvin 写了多段 commentary（按 OCR raw verse marker 标第一段），但 published 把 `**N:V。**` bold 前缀挂到了非首段，造成两段顺序对调（如 john/4 v.29 published "将我素来所行" 在前、"你们来看" 在后，但 OCR raw page_0144 line 5/7 显示"你们来看"是带 verse marker 的首段） | publish 用 CUV phrase fuzzy match 给 v.N 选 bold 锚段时，若多段 phrase 都命中同一 verse，picker 没保证选 OCR raw 中带 verse marker 的那段 | **半自动检测**：单 verse 多段时去 OCR raw 找带 verse marker（如 "29 你们..." / "①..." / "㉙..."）的那段，phrase 必须等于 published 中带 bold 前缀的首段。Calvin 写作顺序 ≠ CUV 字符位置顺序（如 v.4:42 Calvin 先讨论"不是因为你的话"后讨论"现在我们信"），所以**严禁**直接用 CUV position 排序。详 §2.5 Gate-Intra-Verse-Order |
 
 **所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
 sort → dedupe → Gate-Section-Order = 0。
@@ -431,6 +432,41 @@ for f in sorted(Path('calvin/<book>').glob('*.md')):
 **误报**：psalms 119 / 39 / 49 等"经文逐节复述+逐节注释"结构会触发。需排除
 "以阿拉伯数字 + 标点起首"的段（这类是经文引用 segment）。命中后逐处对照
 OCR raw（看 page 边界）确认是 publish artifact，整段删除。
+
+#### Gate-Intra-Verse-Order（失效模式 J）
+
+实战 (2026-06-24 john/4 v.29)：published `**约翰福音 4:29。** *将我素来所行的*`
++ `*你们来看*`，但 OCR raw page_0144 line 5 显示"你们来看"是带 verse 29 marker
+的首段，published bold 挂错段。
+
+**严禁用 CUV 位置排序**：Calvin 写作顺序不等于 CUV 字符位置（实证：john/4 v.42
+Calvin 先讨论"不是因为你的话"再讨论"现在我们信"，CUV 位置则相反；同样
+v.6:55 / v.16:16 等都是 Calvin 倒序，对照 OCR raw 全部合理）。
+
+**检测流程（review-only）**：
+
+```python
+# 对每个 verse anchor (calvin/<book>/<chN>.md)，列出所有 **book N:V。** *PHRASE*
+# 及紧邻的 *PHRASE_续* 段，在 OCR raw calvin_raw/<book>-scan/ocr/page_*.md 内
+# grep verse marker (如 "29 " 行首 / "①" / "㉙") 对应的首段 phrase
+# 若 published bold 前缀挂的段 ≠ OCR raw 首段 → 标红，人工对调
+import re; from pathlib import Path
+ocr = ''.join(p.read_text(encoding='utf-8')
+              for p in sorted(Path('calvin_raw/<book>-scan/ocr').glob('page_*.md')))
+text = Path('calvin/<book>/<ch>.md').read_text(encoding='utf-8')
+for m in re.finditer(r'\*\*<书> (\d+):(\d+)。\*\* \*([^*\n]{4,12})', text):
+    ch, v, pub_first = m.group(1), m.group(2), m.group(3)
+    # OCR raw 找"V 拼音首字" / "①NN" / "㉙NN" 等多种 marker
+    pat = rf'(?:^|\n\n)(?:## )?{v} (.{{4,8}})'  # 章四多见 bare 数字
+    om = re.search(pat, ocr)
+    if om and pub_first[:4] not in om.group(1) and om.group(1)[:4] not in pub_first:
+        print(f'v.{ch}:{v}: OCR raw首段「{om.group(1)}」 vs published bold「{pub_first}」 ≠')
+```
+
+**100% 自动防御做不到**：OCR raw verse marker 形态多变（bare 数字 / 圈号 ①
+② ㉙ / 双字符 ❷❾），不同书不同章用不同 marker；script 要识别全部模式 +
+排除 false positive（首段 OCR 缺 marker、Calvin 起首段是 narrative summary）
+工程量大。落地为 review-only Gate，逐书 publish 后人工跑一遍核对。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
