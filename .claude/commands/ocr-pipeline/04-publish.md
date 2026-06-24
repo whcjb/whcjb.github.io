@@ -151,7 +151,7 @@ verse-count dict。
 | E | **同 verse 重复 marker** | v.55 既有 *我的血* 又有 *我的肉* 两段都标 `**6:55。**` | Calvin 单 verse 多段评注 PDF 只首段带节号，OCR 给所有段都加 | `dedupe_same_verse_markers.py`，**顺序必须排在 sort 之后**（sort 让同 verse 多段相邻后 dedupe 才识别） |
 | F | **verse-anchor 锚在后段** | verse-index 胶囊跳到第二个 v.X marker，跳过第一个 | `add_<book>_verse_anchors.py` 用 seen-set 跳已存在 anchor；restore 改变了"第一出现位置"后 seen-set 仍指向旧位 | **restore 后必须先清空所有 anchor 再 re-run add_anchors**（见 §2.5） |
 | G | **commentary 段误捕为 `[^N]:` fn 定义** | 整段 Calvin 注释塞到文件末做 fn def，body 0 引用 | OCR raw 中 commentary 紧贴在前一脚注 ① 之后，restructure 当作"连续 fn def 流"下一条错归 | **Gate-Orphan-Long-Fn-Def**：`[^N]:` body > 300 字符且 body 引用 = 0 必须 0 命中。详 §2.5 |
-| H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号 | **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker，无法判定真实 verse 归属。两类共用 review-only 扫描（§2.5），人工对照 PDF 修 |
+| H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section + cascade 错锚）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） ③ **cascade misplacement**：narrative 短语（非真 verse 引文）被 Pass 1/2 升格为 `**N:V。** *PHRASE*`，紧跟的多个无 marker 续段全部塞到 verse N，整组错位（如 john/4 "现在我们看清楚了问题所在" 被错升 v.42，连带"现在我们明白"+"如今在天主教里"两段一起塞到 v.42） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号；CUV fuzzy match 太宽容 narrative 短语（如"现在我们" prefix 命中 v.42 的"现在我们信"） | ①② **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker；review-only 扫描（§2.5）人工对照 PDF 修。③ **可半自动**：扫 `**N:V。** *PHRASE*` header，若 PHRASE 在 CUV verse N:V 内最长连续匹配 < 3 字则标红（见 §2.5 Gate-Weak-Phrase-Match） |
 
 **所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
 sort → dedupe → Gate-Section-Order = 0。
@@ -377,6 +377,33 @@ for f in sorted(Path('calvin/<book>').glob('*.md')):
 
 **严禁批量自动合并**——很多 continuation marker 段是 Calvin 正常另起段。
 仅作用户视觉 review 提示。约翰福音全 21 章约 37 个候选位置。
+
+#### Gate-Weak-Phrase-Match（失效模式 H ③ cascade 错锚）
+
+实战 (2026-06-24 john/4)：用户截图 "现在我们看清楚了问题所在" 段被错挂 v.42，
+带出"现在我们明白" + "如今在天主教里" 两段一起塞到 v.42（真正属 v.20/v.23）。
+根因：CUV fuzzy match 把 narrative "现在我们" 命中 v.42 "现在我们信，不是因为
+你的话"。检测脚本（思路，未落地）：
+
+```python
+# 扫 **<book> N:V。** *PHRASE*，检查 PHRASE 在 CUV verse N:V 内最长连续匹配
+import re; from pathlib import Path; import json
+cuv = json.load(open('scripts/zh_cuv.json', encoding='utf-8-sig'))
+def longest_run(a, b):
+    n = max((len(s) for i in range(len(a)) for j in range(len(b))
+             for s in [_lcs_run(a, b, i, j)]), default=0)
+    return n  # 实现略
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    for m in re.finditer(r'\*\*<书> (\d+):(\d+)。\*\* \*([^*]+)\*', f.read_text()):
+        ch, v, ph = int(m.group(1)), int(m.group(2)), m.group(3).strip('。')
+        cuv_verse = lookup_cuv(book, ch, v)  # 简体去空格
+        if longest_run(ph, cuv_verse) < 3:
+            print(f'{f.name}: v.{ch}:{v} phrase "{ph}" 最长连续匹配 < 3 字')
+```
+
+阈值 < 3 字 = phrase 在 CUV 该 verse 内最长连续相同 substring 不足 3 字。这种
+极弱匹配几乎都是 narrative 误升 verse 引文。该 Gate 命中后人工对照 PDF 改 verse
+锚 + 检查后续无 marker 续段是否同样错位。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
