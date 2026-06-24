@@ -152,6 +152,7 @@ verse-count dict。
 | F | **verse-anchor 锚在后段** | verse-index 胶囊跳到第二个 v.X marker，跳过第一个 | `add_<book>_verse_anchors.py` 用 seen-set 跳已存在 anchor；restore 改变了"第一出现位置"后 seen-set 仍指向旧位 | **restore 后必须先清空所有 anchor 再 re-run add_anchors**（见 §2.5） |
 | G | **commentary 段误捕为 `[^N]:` fn 定义** | 整段 Calvin 注释塞到文件末做 fn def，body 0 引用 | OCR raw 中 commentary 紧贴在前一脚注 ① 之后，restructure 当作"连续 fn def 流"下一条错归 | **Gate-Orphan-Long-Fn-Def**：`[^N]:` body > 300 字符且 body 引用 = 0 必须 0 命中。详 §2.5 |
 | H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section + cascade 错锚）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） ③ **cascade misplacement**：narrative 短语（非真 verse 引文）被 Pass 1/2 升格为 `**N:V。** *PHRASE*`，紧跟的多个无 marker 续段全部塞到 verse N，整组错位（如 john/4 "现在我们看清楚了问题所在" 被错升 v.42，连带"现在我们明白"+"如今在天主教里"两段一起塞到 v.42） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号；CUV fuzzy match 太宽容 narrative 短语（如"现在我们" prefix 命中 v.42 的"现在我们信"） | ①② **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker；review-only 扫描（§2.5）人工对照 PDF 修。③ **可半自动**：扫 `**N:V。** *PHRASE*` header，若 PHRASE 在 CUV verse N:V 内最长连续匹配 < 3 字则标红（见 §2.5 Gate-Weak-Phrase-Match） |
+| I | **跨页合并残留尾片段（重复段）** | 跨页前后两半已正确合并成完整段，但 page 头侧片段也残留为独立的下一段，造成同一段文字"完整段 + 尾片段"重复（如 john/4 v.28 段尾"面前显明..."独立成段；john/14 v.22 段尾"别处曾告诉门徒..."同样模式） | publish restructure 既做了"跨页 merge"又没清掉被 merge 的 page 头片段 | **可自动检测**：扫连续两段 (prev, cur)，若 cur 前 15-25 字 substring 在 prev 内出现，则 cur 是 prev 的尾片段重复，应整段删除。详 §2.5 Gate-Duplicate-Tail-Fragment |
 
 **所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
 sort → dedupe → Gate-Section-Order = 0。
@@ -404,6 +405,32 @@ for f in sorted(Path('calvin/<book>').glob('*.md')):
 阈值 < 3 字 = phrase 在 CUV 该 verse 内最长连续相同 substring 不足 3 字。这种
 极弱匹配几乎都是 narrative 误升 verse 引文。该 Gate 命中后人工对照 PDF 改 verse
 锚 + 检查后续无 marker 续段是否同样错位。
+
+#### Gate-Duplicate-Tail-Fragment（失效模式 I）
+
+实战 (2026-06-24 john/4 v.28 + john/14 v.22)：publish 跨页 merge 正确生成完整段，
+但 page 头片段也残留为独立下一段，造成"完整段 + 尾片段"重复。检测脚本：
+
+```python
+from pathlib import Path
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8')
+    paras = text.split('\n\n')
+    for i in range(1, len(paras)):
+        prev = paras[i-1].strip(); cur = paras[i].strip()
+        if not prev or not cur: continue
+        if cur.startswith(('<','#','|','[','*','**','---','-','`')): continue
+        head = cur[:25]
+        if len(head) < 15: continue
+        if head in prev:
+            ln = text[:text.find(paras[i])].count(chr(10))+1
+            print(f'{f.name}:L~{ln} 重复尾片段: {head}...')
+```
+
+**误报**：psalms 119 / 39 / 49 等"经文逐节复述+逐节注释"结构会触发。需排除
+"以阿拉伯数字 + 标点起首"的段（这类是经文引用 segment）。命中后逐处对照
+OCR raw（看 page 边界）确认是 publish artifact，整段删除。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
