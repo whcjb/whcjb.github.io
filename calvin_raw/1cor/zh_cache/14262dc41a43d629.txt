@@ -1,0 +1,1 @@
+<h2 class="scripture-anchor" id="chapter-2" data-ref="第二章" style="display:none">第二章</h2>
