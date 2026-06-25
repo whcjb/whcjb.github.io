@@ -144,7 +144,7 @@ verse-count dict。
 
 | # | 失效模式 | 症状 | 根因 | 修复 / 防御位 |
 |---|---|---|---|---|
-| A | **marker 完全丢失（bold/italic/bare 三态）** | 段落该有 `**书 N:V。**` 但没有，导致无 anchor + relocate 看不到该段 | OCR 把 PDF 圈号（❶/❷/①/❶❺ 等）剥得只剩 `**phrase**` / `*phrase*` / 裸 CJK 三态 | `restore_verse_markers_from_cuv.py` 三 Pass：Pass 1 bold（4 种 period 形态）/ Pass 2 section-起首 italic / Pass 3 bare-CJK（含 `……` 省略号 + COMMON_OPENERS 黑名单）。详 §2.3 |
+| A | **marker 完全丢失（bold/italic/bare 三态 + bold 错挂后段子模式）** | ① 段落该有 `**书 N:V。**` 但没有，导致无 anchor + relocate 看不到该段。② 子模式 (2026-06-25 john/5 v.3)：v.N **首段**裸 CJK 失 marker、v.N 第二段拿到 `**书 N:V。**` bold 前缀；publish 把 verse anchor 误放在两段之间，导致 verse-index 胶囊跳到第二段，首段（含真正 verse phrase 如"躺着许多病人"）作 body emit | OCR 把 PDF 圈号（❶/❷/①/❶❺ 等）剥得只剩 `**phrase**` / `*phrase*` / 裸 CJK 三态；子模式根因：restore Pass 1/2 用 CUV phrase fuzzy match 时第二段命中分高（含原文短语整字），首段虽然 OCR raw 有 ③marker 但 publish 阶段已被剥成裸 CJK | `restore_verse_markers_from_cuv.py` 三 Pass：Pass 1 bold / Pass 2 section-起首 italic / Pass 3 bare-CJK（详 §2.3）。子模式半自动检测：扫 verse anchor 前段为裸 CJK 长段且段头 4+ 字在 CUV verse N:V 内（见 §2.5 Gate-Lost-Marker-First-Para） |
 | B | **marker 误标到错 verse（Calvin shorthand）** | phrase 简写省字（如 "恩典和真理" 省 v.14 "有恩典有真理" 的两个"有"），CUV 子串只命中其他高 verse | restore Pass 1 子串匹配盲目选最低命中 verse，不看上下文 | 短 phrase（< 6 字）和 COMMON_OPENERS 不自动加 marker；context-aware 选优先 section-range 内 verse。**无法完全自动 disambiguate**，需用户截图打回 |
 | C | **跨 section / 跨章错位** | v.55 段出现在 6:43-49 section 之前；v.22-36 段在 12.md 但 Rom 12 只到 21 | OCR 物理顺序 ≠ verse 数字顺序；restructure 按 page 落地不重排 | `relocate_misplaced_verse_commentary.py` + `relocate_cross_chapter_verse.py`，五件套必跑 |
 | D | **section 内 verse 倒序** | 同 section 出现 [43,44,48,49,47] 这种 | OCR 物理顺序 ≠ verse 顺序 | `sort_intra_section_verses.py` block 化稳定排序。**block = marker 段 + 续段直到下个 marker**，续段必须跟着 marker 一起搬。详 §2.3 |
@@ -467,6 +467,44 @@ for m in re.finditer(r'\*\*<书> (\d+):(\d+)。\*\* \*([^*\n]{4,12})', text):
 ② ㉙ / 双字符 ❷❾），不同书不同章用不同 marker；script 要识别全部模式 +
 排除 false positive（首段 OCR 缺 marker、Calvin 起首段是 narrative summary）
 工程量大。落地为 review-only Gate，逐书 publish 后人工跑一遍核对。
+
+#### Gate-Lost-Marker-First-Para（失效模式 A 子模式）
+
+实战 (2026-06-25 john/5 v.3)：published 把 verse anchor 放在两段之间，首段
+"躺着许多病人。病人躺在那里..."（OCR raw page_0161 line 3 = ③躺着许多病人）
+失 marker 作裸 CJK emit，第二段「瞎眼的、瘸腿的」拿到 `**约翰福音 5:3。**` bold。
+verse-index 胶囊跳到第二段，跳过真正首段。
+
+```python
+# Gate: anchor 前段裸 CJK 长段，段头 4+ 字在 CUV verse N:V 内 → 标红
+import re, json; from pathlib import Path; import opencc
+cuv = json.load(open('scripts/zh_cuv.json', encoding='utf-8-sig'))
+t2s = opencc.OpenCC('t2s')
+def get_verse(abbr, ch, v):
+    for b in cuv:
+        if b['abbrev'] == abbr and ch-1 < len(b['chapters']) and v-1 < len(b['chapters'][ch-1]):
+            return t2s.convert(b['chapters'][ch-1][v-1].replace(' ', ''))
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    text = f.read_text(encoding='utf-8'); ch = int(f.stem)
+    parts = re.split(r'(<h2 class="verse-anchor"[^>]*id="[^-]+-\d+-(\d+)"[^>]*>[^<]*</h2>)', text)
+    for i in range(1, len(parts), 3):
+        v = int(parts[i+1]); pre = parts[i-1].strip().split('\n\n')
+        if not pre: continue
+        last = pre[-1].strip()
+        if last.startswith(('<','#','|','[','*','**','---','-','`','>')) or len(last) < 50: continue
+        cuv_verse = get_verse('<abbrev>', ch, v)
+        if not cuv_verse: continue
+        head = last[:30]
+        for L in range(min(len(head),12), 3, -1):
+            if any(head[j:j+L] in cuv_verse for j in range(len(head)-L+1)):
+                print(f'{f.name}: v.{ch}:{v} 裸段头「{head[:25]}」可能丢 marker'); break
+```
+
+**误报**：v.(N-1) 末段 continuation 也常和当前 v.N CUV 有偶然字符重合（如
+"门徒问：还是他父母" 在 v.9:2 讨论"父母有罪"也命中 v.9:3 CUV "父母" 字符）；
+4 字阈值偏松。命中后人工对照 OCR raw 看裸段开头是否带 verse marker（① ② ③
+❶ ❷ ❸ 等），有 marker 即真正丢失，无 marker 即正常 continuation。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
