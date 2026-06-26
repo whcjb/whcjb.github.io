@@ -126,6 +126,10 @@ def build_frontmatter(n, date: str, has_preface: bool) -> str:
     fm += f'book_id: {BOOK_ID}\n'
     fm += f'book_name: "{BOOK_NAME}"\n'
     fm += f'title: "{cn_chapter(n)}"\n'
+    # 加 chapter:N 让旧 calvin-book index.html 通过 `where: chapter` 检测识别为"已译"
+    # 数值章节才加；preface 不加
+    if isinstance(n, int):
+        fm += f'chapter: {n}\n'
     fm += f'date: {date}\n'
     if n == 'preface':
         fm += 'next_section: 1\n'
