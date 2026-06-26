@@ -126,10 +126,6 @@ def build_frontmatter(n, date: str, has_preface: bool) -> str:
     fm += f'book_id: {BOOK_ID}\n'
     fm += f'book_name: "{BOOK_NAME}"\n'
     fm += f'title: "{cn_chapter(n)}"\n'
-    # 加 chapter:N 让旧 calvin-book index.html 通过 `where: chapter` 检测识别为"已译"
-    # 数值章节才加；preface 不加
-    if isinstance(n, int):
-        fm += f'chapter: {n}\n'
     fm += f'date: {date}\n'
     if n == 'preface':
         fm += 'next_section: 1\n'
@@ -258,9 +254,24 @@ def main():
         out.write_text(content, encoding='utf-8')
         print(f'  写入 {out}  ({out.stat().st_size:,} bytes)', flush=True)
 
-    print(f'\n✓ 发布完成 → {OUT_DIR}/  (本次已发布 {len(items)} 章)')
-    print(f'  注：ch4-{TOTAL_CHAPTERS} 仍为旧 calvin-chapter 格式，'
-          f'index.html 暂不动；待全书重译后改 calvin-book-modern。')
+    # 写 index.html → calvin-book-modern（对齐 1cor 模式）
+    # ch4-13 仍是旧 calvin-chapter 格式，但 modern index 只渲染 ch-pill，
+    # 不关心每章 layout；每个 /N/ URL 各自命中其 layout 解析。
+    idx = OUT_DIR / 'index.html'
+    idx_content = (
+        '---\n'
+        'layout: calvin-book-modern\n'
+        f'book_id: {BOOK_ID}\n'
+        'book_name: 哥林多后书\n'
+        f'chapters: {TOTAL_CHAPTERS}\n'
+    )
+    if has_preface:
+        idx_content += 'has_preface: true\n'
+    idx_content += '---\n'
+    idx.write_text(idx_content, encoding='utf-8')
+    print(f'  写入 {idx}', flush=True)
+
+    print(f'\n✓ 发布完成 → {OUT_DIR}/  (本次已发布 {len(items)} 章 + index.html)')
 
 
 if __name__ == '__main__':
