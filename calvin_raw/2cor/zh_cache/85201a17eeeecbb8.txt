@@ -1,0 +1,9 @@
+我收到的是翻译指令模板（译者守则 + `prev_section: 8`），但**没有附带任何英文原文需要翻译**。
+
+当前 `calvin_raw/2cor/zh_chapters/` 已有 1.md–8.md（与 `prev_section: 8` 对应），按 pipeline 推断下一段应为 ch9 的某个 section，但原文 chunk 没有出现在本轮对话里。
+
+按 [[feedback_no_fabrication]] 不能凭空生成译文。请补上：
+- 要翻译的英文 chunk（直接粘贴），或
+- 指向 `calvin_raw/2cor/` 下哪个文件 / 哪段范围
+
+我读到原文后立即按你的守则输出译文。
