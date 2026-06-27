@@ -1,0 +1,3 @@
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*Ergo placet nostros iterum vulgare furores?*</span> <span style="color:#000080">*Ergo semel non est desipuisse satis?*</span> <span style="color:#000080">*Sic, Volmare, iubes: et ego tibi (quaeso) iubenti*</span> <span style="color:#000080">*Quid tandem iusta cum ratione negem?*</span></p>
+
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">（如此说来，将我们的疯狂之作再次公之于众，乃是合宜的么？<br>难道一次的失态尚且不够么？<br>沃尔玛啊，你既如此吩咐：我又怎能（我求你）<br>以正当的理由拒绝你的吩咐呢？）</p>
