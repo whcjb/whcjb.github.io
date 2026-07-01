@@ -73,6 +73,23 @@ echo "fn refs:  $ref   fn defs: $def"   # 必须 ref == def
 
 ---
 
+## Gate 5d：OCR 扫描版 —— CUV bible-dump 尾巴溢出（假 verse-opener）
+
+```bash
+F=PATH/TO/FILE   # 如 calvin/john/10.md
+# `**书 N:V。** *quote。* body` promoted 段，body 里若有 2+ 个 inline
+# `<非数字非空白>\d+<CJK>` 模式（数字紧贴 CJK 且不在段首）→ CUV verse-
+# marker 残留被 replace_circle 剥成裸数字后的痕迹。
+grep -nE '\*\s+[^*]{0,10}[^0-9\s]\d{1,3}[一-鿿].{0,80}[^0-9\s]\d{1,3}[一-鿿]' $F | head
+```
+
+- 有命中 = 前一页整页 CUV 全章 dump 溢到当前段（page 0348→0349 踩过）
+- 典型：`**约翰福音 10:40。** *洗的地方，就住在那里。* 1有许多人…2在那里信耶稣的人就多了`
+- 修法：删该 verse-opener 段，从 body 后段找真正的 Calvin 引文（形如 `*耶稣又往约旦河外去。* 基督往约旦河外去…`）
+- 根因：[anti-patterns.md M5e](anti-patterns.md#m5e-cuv-bible-dump-尾巴溢出)
+
+---
+
 ## Gate 5c：OCR 扫描版 —— 脚注 def 泄漏进正文
 
 ```bash

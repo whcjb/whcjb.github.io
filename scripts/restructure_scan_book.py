@@ -180,6 +180,18 @@ def _strip_bible_text_dumps(text: str, book_cn: str | None = None,
         n_bare_space = len(re.findall(r"(?:^|\n)\s*\d{1,3}\s+[一-鿿]", p))
         if n_bare >= 4 or n_bare_space >= 4:
             continue
+        # Form 3-tail: bible-dump 尾巴跨页溢到下页首段（page 0349 踩过）。
+        # 前一页整页 CUV 全章 dump 被 Rule 1 剥掉后, 该 dump 的最后一节
+        # 可能溢到下页首段, 首字符是 CJK (verse text tail), 但段中会出现
+        # 2+ 个 inline `\d+[一-鿿]` (从 OCR 化的 `㊶`/`㊷` 等被拆成 `④1`/
+        # `④2` 或干净数字), 这些 marker 后紧贴 CJK verse text.
+        # 反例: `洗的地方，就住在那里。④1有许多人…④2在那里信耶稣的人就多了`
+        if "**" not in p:
+            # 段中 (非段首) 的 "digit + CJK" 模式；用 `[^\d\s]\d+[一-鿿]`
+            # 避免 lookback, 用前置非数字/非空白字符 anchor 保证 inline
+            inline_verse_marks = len(re.findall(r"[^\d\s]\d{1,3}[一-鿿]", p))
+            if inline_verse_marks >= 2 and len(p) < 400:
+                continue
         # Form 3: Bible-text fragment — tighter check now.
         if "**" not in p and _looks_like_bible_fragment(p):
             drop = False

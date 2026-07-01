@@ -442,6 +442,44 @@ if last[0] in _CIRCLE_TO_INT and len(last) > 1 and last[1] in (' ', '　'):
 
 ---
 
+## M5e. OCR 扫描版：CUV bible-dump 尾巴溢出（跨页假 verse-opener）
+
+**Trigger**：`calvin/<book>/N.md` 里 `**书 N:V。** *quote。* body` 段的 body 前段含 2+ 个 inline "数字+CJK"（`1有许多人`、`2在那里`），且 quote 是 CUV verse 的**尾部**（不是 Calvin 常规的 verse opening）。Gate 5d grep 命中。
+
+典型形态（john/10 v.40 踩过）：
+
+```
+**约翰福音 10:40。** *洗的地方，就住在那里。* 1有许多人来到他那里，
+他们说："约翰一件神迹没有行过…"2在那里信耶稣的人就多了。
+```
+
+Signal：
+- quote `*洗的地方，就住在那里。*` 是 CUV v.10:40 尾句（Calvin 引文通常引 verse 开头，不引 verse 结尾）
+- body 里 `1有` `2在` 是 CUV v.41 / v.42 的 verse marker 被 `replace_circle` 剥成裸数字后残留
+- 真正的 Calvin v.40 注释以孤立段形式出现在下一段（`*耶稣又往约旦河外去。* 基督往约旦河外去…`），marker `**约翰福音 10:40。**` 缺失
+
+**根因**（`scripts/restructure_scan_book.py:_strip_bible_text_dumps`）：
+
+1. 有些 OCR 扫描版书在**每章开头**印一段完整 CUV 章经文文本（如 page 0348 印 v.15-40 全文），用 `⑮㊵㊶㊷` 等 circled digits 标 verse marker。
+2. Rule 1（`n_circles ≥ 5 AND len > 300`）正确剥掉 page 0348 的整段 CUV dump。
+3. **但该 dump 的尾巴溢到下一页首段**（page 0349 line 1: `洗的地方…④1有许多人…④2在那里…`）。
+4. 溢出段只有 2 个 circle（`④` `④`），且首字符是 CJK（不是数字），现有 Rule 1/2/3 全不匹配。
+5. `maybe_promote_verse_opener` fuzzy match "洗的地方就住在那里" 命中 CUV v.10:40（因为该短语是 v.10:40 尾部）→ promote 成假 verse-opener。
+6. `④1`/`④2` 的 `④` inline circled 因无对应 fn def 被 `replace_circle` 当 orphan 剥成 `''` → 留下裸 `1`/`2` 紧贴 CJK。
+
+**Fix**（`scripts/restructure_scan_book.py:_strip_bible_text_dumps`）：新增 Sub-rule 3-tail — 段中 (非段首) 出现 2+ 个 `[^\d\s]\d+[一-鿿]` 模式 + 段长 < 400 → drop。
+
+```python
+if "**" not in p:
+    inline_verse_marks = len(re.findall(r"[^\d\s]\d{1,3}[一-鿿]", p))
+    if inline_verse_marks >= 2 and len(p) < 400:
+        continue
+```
+
+**通用规则**：OCR bible-dump 检测不能只看段首（Form 3 的 `_looks_like_bible_fragment`）。跨页溢出使得 dump 尾巴以 CJK 开头。**段中 inline verse-marker 密度**是稳定信号，无论 dump 从哪里跨页。
+
+---
+
 ## M6. 章末出现 "CHAPTER N" 居中标记（PDF 没有这内容）
 
 **Trigger**：章节最末显示一个孤立的 "CHAPTER N" 居中标题，PDF 原文该位置无此标记。grep `<p class="title-block-h2"[^>]*>CHAPTER\s+\d+` 在章节文件中命中。
