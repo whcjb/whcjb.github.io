@@ -405,15 +405,16 @@ def process_page(text: str, fn_counter: int,
     for p in paras:
         if not p:
             continue
-        promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range, book_cn, chapter, strict_digit_only=STRICT_DIGIT_ONLY)
-        if promoted != p or promoted.startswith("**约翰福音"):
-            body_paras.append(promoted)
-            continue
-        # Check if it's a footnote-def block
+        # Footnote-def check MUST run before maybe_promote_verse_opener.
+        # 反例（已踩过）：`① "是我自己舍的"英文为"But I lay it down of myself"…
+        # ——中文编者注` 会先被 _strip_corrupt_marker 剥掉 ①，然后 fuzzy
+        # match 命中「是我自己舍的」→ 当成 v.18 opener promote 到 body，
+        # 同时 local_to_global 缺映射，正文里的 ① inline ref 变孤儿被剥掉。
         first = p.splitlines()[0]
         m = _FN_DEF_RE.match(first)
         if not m:
-            body_paras.append(p)
+            promoted = maybe_promote_verse_opener(p, JOHN_1, verse_range, book_cn, chapter, strict_digit_only=STRICT_DIGIT_ONLY)
+            body_paras.append(promoted)
             continue
         # Multi-line fn block: split each line that starts with circled digit
         cur_lines: list[str] = []
@@ -477,6 +478,11 @@ def _join_cross_page(prev: str, cur: str) -> tuple[str, str]:
         return prev, cur
     # Skip if last already ends with terminal punctuation
     if last[-1] in _TERM_PUNCT:
+        return prev, cur
+    # Skip if last paragraph itself is a fn def (starts with circled digit +
+    # space). 反例：page 0363 尾段是 ① fn def, 若不 guard 会把 fn def 与
+    # page 0364 首字续段粘接，注释文本泄漏进 body。
+    if last[0] in _CIRCLE_TO_INT and len(last) > 1 and last[1] in (' ', '　'):
         return prev, cur
     # Skip if first paragraph is a promoted opener, anchor, fn def, scripture-box
     if (first.startswith("**约翰福音")

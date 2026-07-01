@@ -391,6 +391,57 @@ else:  # inline cross-ref branch
 
 ---
 
+## M5d. OCR 扫描版：fn def 泄漏正文（`① def-text——中文编者注`）
+
+**Trigger**：published `calvin/<book>/N.md` body 段里出现 `——中文编者注` / `——中文译者注` / `——编者注`（不是 `[^N]:` 行）。Gate 5c grep 命中：
+
+```bash
+grep -nE '^[^\[].*——中文?(编者|译者)?注' calvin/<book>/*.md
+```
+
+典型形态（john/10 v.18 踩过）：
+
+```
+*"是我自己舍的"英文为"But I lay it down * of myself"，...
+——中文编者注裂，我们应该为此深感忧伤。...
+```
+
+三个 signal 同时出现：段首多余 `*`（伪 italic 头）、段中孤立 `*`（伪 italic 尾）、`——中文编者注X`（X 是下一页首字如"裂"/"助"，说明还粘接了跨页续段）。
+
+**根因链**（`scripts/restructure_john_scan_ch1.py:process_page`）：
+
+1. OCR raw fn def 形式：`① "是我自己舍的"英文为"But I lay it down of myself"，...——中文编者注`
+2. `process_page` 原本先跑 `maybe_promote_verse_opener(p)`：
+   - `_strip_corrupt_marker` 剥掉前导 `①` → `"是我自己舍的"英文为...`
+   - fuzzy `_verse_for_opener` 命中 `是我自己舍的` 在 CUV v.18 → v=18
+   - 返回 `**约翰福音 10:18。** *fn-def-text* rest` 塞进 body
+3. `_FN_DEF_RE` 检查根本没跑（`promoted != p` 已 true，continue）→ fn 缺 def，`local_to_global[1]` 无映射
+4. 正文里对应的 inline `①` ref → `replace_circle` 返 `''`（孤儿），ref 丢失
+5. `_join_cross_page` 看到 prev 末段（这个 promoted fn def）不以 `。` 收尾 → 把 next page 首字 "裂"/"助" 粘上来
+6. 事后 dedup 脚本删掉重复的 `**约翰福音 10:V。**` → 只留 `*fn-def-text*` italic 壳，加上被粘接的续段首字 → 就是用户看到的怪段
+
+**Fix**（两点，`scripts/restructure_john_scan_ch1.py`）：
+
+```python
+# 1) process_page: _FN_DEF_RE 检查 MUST 在 maybe_promote_verse_opener 之前
+for p in paras:
+    if not p: continue
+    first = p.splitlines()[0]
+    if not _FN_DEF_RE.match(first):
+        promoted = maybe_promote_verse_opener(p, ...)
+        body_paras.append(promoted)
+        continue
+    # ...fn def extract...
+
+# 2) _join_cross_page: 若 prev 末段是 fn def（`①<空格>...`）→ 拒绝合并
+if last[0] in _CIRCLE_TO_INT and len(last) > 1 and last[1] in (' ', '　'):
+    return prev, cur
+```
+
+**通用规则**：任何"paragraph 首字符能唯一识别为 fn/anchor/opener"的 pipeline，classifier 顺序必须 **fn def 优先于 fuzzy verse-match**。`_strip_corrupt_marker` 剥前导 `①` 太激进——若不先做 fn def 判定，任何 `① ...` 都会被 fuzzy match 当成 verse opener promote，造成 def 与 ref 双向丢失。
+
+---
+
 ## M6. 章末出现 "CHAPTER N" 居中标记（PDF 没有这内容）
 
 **Trigger**：章节最末显示一个孤立的 "CHAPTER N" 居中标题，PDF 原文该位置无此标记。grep `<p class="title-block-h2"[^>]*>CHAPTER\s+\d+` 在章节文件中命中。

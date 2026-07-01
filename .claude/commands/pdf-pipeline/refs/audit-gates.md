@@ -73,6 +73,23 @@ echo "fn refs:  $ref   fn defs: $def"   # 必须 ref == def
 
 ---
 
+## Gate 5c：OCR 扫描版 —— 脚注 def 泄漏进正文
+
+```bash
+F=PATH/TO/FILE   # 如 calvin/john/10.md
+# body 段落里出现 "——中文编者注" / "——中文译者注" / "——编者注" 就是漏
+grep -nE '^[^\[].*——中文?(编者|译者)?注' $F | head
+```
+
+- 有命中 = OCR raw 里的 `① def-text——中文编者注` 被错误当 body 段落（应进 `[^N]:`）
+- 常见并发症：
+  - 段首多余 `*` (伪 italic wrap，来自 `maybe_promote_verse_opener` 把 fn def 当 verse-opener promote)
+  - 正文对应 inline `①` ref 被 replace_circle 当孤儿剥掉（`grep -o '①' $F` 应为 0，但对应 `[^N]` 也缺）
+  - 跨页续段被 `_join_cross_page` 粘到 fn def 尾（表现为 `——中文编者注X`，X 是下一页首字如"裂"/"助"）
+- 根因与修法：[anti-patterns.md M6](anti-patterns.md#m6-fn-def-泄漏正文)
+
+---
+
 ## Gate 5b：`<p>` 含 kramdown markdown 必须带 `markdown="1"`
 
 ```bash
