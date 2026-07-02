@@ -1643,6 +1643,31 @@ if 'colspan' in cell.attrs:
 
 ---
 
+## M22. scripture-box `<sup>` fn ref 反向 backref 跳转"看似失效"
+
+**Trigger**：用户报告"点击章末脚注 ↩ 无法跳转回到引用位置"，或"点脚注没反应"。
+
+**根因**：kramdown 自动生成 `<a href="#fnref:fN" class="reversefootnote">↩</a>`
+指向 `<sup id="fnref:fN">`。若 sup 被 fixed navbar 遮挡，用户视觉上以为
+"没跳"，其实浏览器已经 scroll 到 sup、只是覆盖在 navbar 下。
+
+**Fix**（`_layouts/calvin-en.html` CSS）：
+
+```css
+.calvin-en-content sup[id^="fnref:"] {
+  scroll-margin-top: 80px;
+}
+```
+
+与 `.commentary-anchor` / `.scripture-anchor` / `.ages-code` 保持同一 80px。
+凡是 fixed 顶部导航条的项目里所有会成为 anchor 目标的元素都要加
+`scroll-margin-top`，否则 landing 位置在 navbar 下、用户会以为跳转失败。
+
+**通用规则**：任何 `id="..."` 且可能成为 `href="#..."` 目标的元素，都要考虑
+是否会被 fixed 导航遮挡。1thess 首次上线时踩过。
+
+---
+
 ## N. 多栏 scripture-table 在窄屏横向滚动
 
 **Trigger**：用户报告"经文表滑动"且仅出现在共观福音类书卷。

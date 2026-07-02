@@ -400,7 +400,18 @@ elif scripture_lines:
     border-left: none; border-top: 1px dotted #888; padding-top: 6px;
   }
 }
+
+/* ⚠️ 必带：backref 反向跳回时避开 fixed navbar 遮挡 —
+   否则用户点章末 fn 的 ↩ 会以为 "无反应"（其实 sup 已跳到但被 navbar 覆盖）*/
+.calvin-en-content sup[id^="fnref:"] {
+  scroll-margin-top: 80px;
+}
 ```
+
+**关键**：`scroll-margin-top` 一定要给 `sup[id^="fnref:"]`，与 `.commentary-anchor`
+/ `.scripture-anchor` 那一套 80px 保持一致。1thess 首次上线时漏掉，用户反馈
+"点击脚注无法跳转回到引用位置"，实际是 kramdown 生成的 `<a href="#fnref:fN"
+class="reversefootnote">↩</a>` 跳转成功但 landing 位置被 navbar 遮挡。
 
 ### 11.4 反例（已踩过）
 

@@ -156,6 +156,18 @@ ls -l calvin_raw/BOOK/zh_chapters/N.md   # 必须显示 -r--r--r--
 
 ---
 
+## Gate 9：`<sup>` fn ref 有 scroll-margin-top（backref 跳回不被 navbar 遮挡）
+
+```bash
+# _layouts/calvin-en.html 必须含此规则
+grep -A2 'sup\[id\^="fnref:"\]' _layouts/calvin-en.html
+```
+
+- 应出现 `scroll-margin-top: 80px`
+- 缺 = [anti-pattern M22](anti-patterns.md#m22)，用户会报告 "点击脚注无法跳转"
+
+---
+
 ## 整合脚本：一次跑完所有 gate
 
 ```bash
