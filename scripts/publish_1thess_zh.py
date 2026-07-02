@@ -62,22 +62,56 @@ _TR_RE = re.compile(
 )
 
 
+def _fnref_to_sup(text: str) -> str:
+    """[^fN] / [^N] → <sup id="fnref:fN"><a href="#fn:fN" class="footnote">fN</a></sup>
+    (per skill 02a §11.2 — <td> 内 kramdown 不处理 markdown, 必须手工转)"""
+    return re.sub(
+        r'\[\^([Ff]?\d+[A-Za-z]?)\]',
+        r'<sup id="fnref:\1"><a href="#fn:\1" class="footnote">\1</a></sup>',
+        text,
+    )
+
+
 def inject_chinese_scripture(body: str) -> str:
-    """把 bilingual scripture-box 左列的英文替换为和合本中文。"""
+    """把 bilingual scripture-box 左列的英文替换为和合本中文；
+    Latin 列 [^fN] 转 HTML <sup>；box 末追加 scripture-fnref-stub 占位。"""
     def process_box(m_box):
         full = m_box.group(1)
         ch = int(m_box.group(2))
+        # 收集本 box 内所有出现过的 fn 编号（保序去重）
+        seen_refs = []
+        for ref in re.findall(r'\[\^([Ff]?\d+[A-Za-z]?)\]', full):
+            if ref not in seen_refs:
+                seen_refs.append(ref)
 
         def replace_tr(tr_m):
             n_str = tr_m.group(1)
             la_td = tr_m.group(2)
+            # Latin 列的 [^fN] 转 <sup>
+            la_td = _fnref_to_sup(la_td)
             zh = lookup_cuv(ch, int(n_str))
             if not zh:
-                return tr_m.group(0)
+                # 无 CUV 匹配时至少也修 la_td 的 fn refs
+                # 重构 tr, en 保留原 en 内容(先转 fn ref)
+                en_body_m = re.search(r'<td class="scripture-en">(.*?)</td>', tr_m.group(0), re.S)
+                en_body = _fnref_to_sup(en_body_m.group(1)) if en_body_m else ''
+                return (f'<tr><td class="scripture-en">{en_body}</td>{la_td}</tr>')
             return (f'<tr><td class="scripture-en"><strong>{n_str}.</strong> {zh}</td>'
                     f'{la_td}</tr>')
 
-        return _TR_RE.sub(replace_tr, full)
+        new_full = _TR_RE.sub(replace_tr, full)
+
+        # 在 </div> 前 emit scripture-fnref-stub 让 kramdown 生成 <li id="fn:fN">
+        if seen_refs:
+            stub_refs = ' '.join(f'[^{r}]' for r in seen_refs)
+            stub = (f'\n\n<p class="scripture-fnref-stub" style="display:none" '
+                    f'markdown="1">{stub_refs}</p>')
+            new_full = new_full.rstrip()
+            if new_full.endswith('</div>'):
+                new_full = new_full[:-len('</div>')].rstrip() + stub + '\n\n</div>'
+            else:
+                new_full = new_full + stub
+        return new_full
 
     return _BOX_RE.sub(process_box, body)
 
