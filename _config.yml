@@ -36,9 +36,6 @@ exclude:
   - logs
   - scripts
   - cf-worker
-  # mhenry 各 -en 的 zh_chapters 是翻译 raw 副本，与 mhenry/<book>/*.md 内容重复；
-  # 不需要作为独立 URL 页面渲染。glob 语法在 Jekyll 4 支持。
-  - "mhenry/*-en/zh_chapters"
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
