@@ -302,6 +302,37 @@ BOOKS = {
             "    new creature→新造的人，ambassador→大使/使者"
         ),
     },
+    '2thess': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/2thessalonians-en',
+        'cache':  ROOT / 'calvin_raw/2thessalonians/zh_cache',
+        'out':    ROOT / 'calvin_raw/2thessalonians/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《帖撒罗尼迦后书注释》。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签不变：<p style=\"...\"> <strong> <div> 等\n"
+            "5. 保留 AGES code 与 scripture-box 结构不变\n"
+            "6. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "7. 圣经书卷/人名用和合本标准译名：\n"
+            "   2 Thessalonians→帖撒罗尼迦后书，1 Thessalonians→帖撒罗尼迦前书\n"
+            "   1/2 Corinthians→哥林多前/后书，Acts→使徒行传\n"
+            "   Matthew→马太福音，Luke→路加福音，Romans→罗马书\n"
+            "   Ephesians→以弗所书，Colossians→歌罗西书\n"
+            "   Paul→保罗，Silvanus/Silas→西拉，Timothy→提摩太\n"
+            "   Thessalonica→帖撒罗尼迦，Corinth→哥林多\n"
+            "8. 章节引用格式：帖撒罗尼迦后书 2:1，罗马书 2:23（书卷名 章:节）\n"
+            "9. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "10. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    election→拣选，antichrist→敌基督，apostasy→背道/离道反教，\n"
+            "    man of sin→大罪人/不法之人，son of perdition→沉沦之子，\n"
+            "    coming/parousia→降临，wrath→忿怒，perdition→沉沦，\n"
+            "    lawless→不法，restrainer→拦阻者，delusion→迷惑"
+        ),
+    },
     '1thess': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/1thessalonians-en',
@@ -467,7 +498,7 @@ def classify(line: str):
         return ('pass', line)
     if stripped == '---':
         return ('pass', line)
-    if re.match(r'^</?(?:table|tbody|thead|tr)[\s>]', line) and '<td>' not in line:
+    if re.match(r'^</?(?:table|tbody|thead|tr)[\s>]', line) and '<td' not in line:
         return ('pass', line)
     # HTML 结构包装标签（独立成行的开/闭 div、p class、span class 等无文本内容）
     # 这类纯标签行不含可翻译英文，须 pass，否则被孤立发给 Claude，
@@ -515,13 +546,17 @@ def classify(line: str):
             return ('md_table_row', (left, right, line))
         return ('pass', line)
 
-    # HTML table row with two td columns
-    if line.startswith('<tr><td>'):
-        sep = line.find('</td><td>')
-        if sep != -1 and line.endswith('</td></tr>'):
-            left  = line[8:sep]
-            right = line[sep+9:-10]
-            return ('html_td_row', (left, right))
+    # HTML table row with two td columns (with optional class attributes)
+    m_tr = re.match(
+        r'^<tr>(<td[^>]*>)(.+?)</td>(<td[^>]*>)(.+?)</td></tr>\s*$',
+        line,
+    )
+    if m_tr:
+        left_open  = m_tr.group(1)
+        left_body  = m_tr.group(2)
+        right_open = m_tr.group(3)
+        right_body = m_tr.group(4)
+        return ('html_td_row', (left_open, left_body, right_open, right_body))
 
     # HTML table header th
     if '<th' in line and '<td>' not in line:
@@ -569,8 +604,10 @@ def translate_file(src_path: Path, out_path: Path, resume: bool, dry_run: bool):
             if data[0].strip():
                 to_translate.append((i, data[0]))  # 翻译左列（英文）
         elif kind == 'html_td_row':
-            if data[0].strip():
-                to_translate.append((i, data[0]))
+            # data = (left_open, left_body, right_open, right_body)
+            # 只翻译左列（英文）
+            if data[1].strip():
+                to_translate.append((i, data[1]))
         elif kind == 'html_th':
             to_translate.append((i, data[1]))
 
@@ -612,9 +649,11 @@ def translate_file(src_path: Path, out_path: Path, resume: bool, dry_run: bool):
             zh_left = zh if zh else left_en
             out_lines.append(f'| {zh_left} | {right_lat} |')
         elif kind == 'html_td_row':
-            left_en, right = data
-            zh_left = zh if zh else left_en
-            out_lines.append(f'<tr><td>{zh_left}</td><td>{right}</td></tr>')
+            left_open, left_body, right_open, right_body = data
+            zh_left = zh if zh else left_body
+            out_lines.append(
+                f'<tr>{left_open}{zh_left}</td>{right_open}{right_body}</td></tr>'
+            )
         elif kind == 'html_th':
             prefix, text_en, suffix, original = data
             out_lines.append(original.replace(text_en, zh, 1) if zh else original)
