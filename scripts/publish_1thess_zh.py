@@ -50,6 +50,7 @@ def lookup_cuv(ch: int, v: int):
 _BOX_RE = re.compile(
     r'(<div class="scripture-box scripture-box--bilingual"[^>]*>\s*'
     r'<p class="scripture-ref">.*?<span class="verse-range">(\d+):\d+(?:-\d+)?</span></p>\s*'
+    r'(?:<h2 class="scripture-anchor"[^>]*>[^<]+</h2>\s*)?'  # 可选 scripture-anchor h2
     r'<table class="scripture-bilingual">.*?</table>)',
     re.DOTALL,
 )
@@ -238,6 +239,13 @@ def main():
         raw = src.read_text(encoding='utf-8')
         body = strip_frontmatter(raw)
         body = clean_body(body)
+        # Claude 有时把 <strong>N.</strong> 翻译回 markdown **N.** —
+        # 在 inject_chinese_scripture 前修回 HTML, 否则 _TR_RE 抓不到
+        body = re.sub(
+            r'(<td class="scripture-en">)\s*\*\*(\d+)\.\*\*',
+            r'\1<strong>\2.</strong>',
+            body,
+        )
         body = inject_chinese_scripture(body)
         body = relocate_anchors_in_body(body)
         if isinstance(n, int):

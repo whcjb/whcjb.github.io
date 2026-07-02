@@ -50,7 +50,7 @@ def lookup_cuv(ch: int, v: int):
 _BOX_RE = re.compile(
     r'(<div class="scripture-box scripture-box--bilingual"[^>]*>\s*'
     r'<p class="scripture-ref">.*?<span class="verse-range">(\d+):\d+(?:-\d+)?</span></p>\s*'
-    r'<table class="scripture-bilingual">.*?</table>)',
+    r'(?:<h2 class="scripture-anchor"[^>]*>[^<]+</h2>\s*)?<table class="scripture-bilingual">.*?</table>)',
     re.DOTALL,
 )
 
@@ -238,6 +238,7 @@ def main():
         raw = src.read_text(encoding='utf-8')
         body = strip_frontmatter(raw)
         body = clean_body(body)
+        body = re.sub(r"(<td class=\"scripture-en\">)\s*\*\*(\d+)\.\*\*", r"\1<strong>\2.</strong>", body)
         body = inject_chinese_scripture(body)
         body = relocate_anchors_in_body(body)
         if isinstance(n, int):
