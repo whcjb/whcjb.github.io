@@ -68,6 +68,13 @@ a.commentary-anchor {
   overflow: hidden;
   scroll-margin-top: 80px;
 }
+
+/* footnote sup: 反向 backref 跳回时 landing 位置留出 navbar 空间, 
+   避免 sup 被 fixed navbar 遮挡看不到, 用户以为跳转失效 (skill 02a §11.2 补充) */
+.calvin-en-content sup[id^="fnref:"] {
+  scroll-margin-top: 80px;
+}
+
 .calvin-en-content {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 16px;
