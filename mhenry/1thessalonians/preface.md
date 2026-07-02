@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: 1thessalonians
 book_name: 帖撒罗尼迦前书
-header-img: nt-bg-097.jpg
+header-img: nt-hero-1thessalonians-preface.jpg
 date: 2026-05-20 10:38
 ---
 

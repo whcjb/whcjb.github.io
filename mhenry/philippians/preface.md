@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: philippians
 book_name: 腓立比书
-header-img: nt-bg-058.jpg
+header-img: nt-hero-philippians-preface.jpg
 date: 2026-05-20 10:38
 ---
 

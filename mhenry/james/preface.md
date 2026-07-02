@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: james
 book_name: 雅各书
-header-img: nt-bg-112.jpg
+header-img: nt-hero-james-preface.jpg
 date: 2026-05-20 10:38
 ---
 

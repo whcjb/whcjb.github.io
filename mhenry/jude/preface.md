@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: jude
 book_name: 犹大书
-header-img: nt-bg-066.jpg
+header-img: nt-hero-jude-preface.jpg
 date: 2026-05-20 10:38
 ---
 

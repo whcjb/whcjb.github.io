@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: 1john
 book_name: 约翰一书
-header-img: nt-bg-104.jpg
+header-img: nt-hero-1john-preface.jpg
 date: 2026-05-20 10:38
 ---
 

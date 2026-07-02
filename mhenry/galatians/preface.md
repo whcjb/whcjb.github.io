@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: galatians
 book_name: 加拉太书
-header-img: nt-bg-100.jpg
+header-img: nt-hero-galatians-preface.jpg
 date: 2026-05-20 10:38
 ---
 

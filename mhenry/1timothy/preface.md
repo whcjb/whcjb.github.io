@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: 1timothy
 book_name: 提摩太前书
-header-img: nt-bg-044.jpg
+header-img: nt-hero-1timothy-preface.jpg
 date: 2026-05-20 10:38
 ---
 

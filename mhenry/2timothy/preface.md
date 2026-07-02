@@ -2,7 +2,7 @@
 layout: mhenry-preface
 book_id: 2timothy
 book_name: 提摩太后书
-header-img: nt-bg-129.jpg
+header-img: nt-hero-2timothy-preface.jpg
 date: 2026-05-20 10:38
 ---
 
