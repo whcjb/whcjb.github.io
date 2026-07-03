@@ -21,6 +21,7 @@ publish-zh 完成后必跑一次；新章节追加翻译后重跑即可。
 | 1corinthians | 16 | ~400 | `build_1cor_verse_index.py` |
 | 2corinthians | 13 | ~250 | `build_2cor_verse_index.py` |
 | 1thessalonians | 5 | 72 | `build_1thess_verse_index.py` |
+| 2thessalonians | 3 | 38 | `build_2thess_verse_index.py` |
 
 新增中文注释书（如 1timothy / 2timothy / titus / hebrews / james / 2thess 等）publish-zh
 完成后立即建 verse-index：
