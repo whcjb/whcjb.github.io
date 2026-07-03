@@ -205,10 +205,9 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 1</sty>
 
 [H2] <sty c="800000" i="0"><600101></sty>1 PETER 1:1-2
-[BODY] 1. Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia,
-[INDENT] 1. Petrus, apostolus Jesu Christi, electis inquilinis qui dispersi sunt per Ponturn, Galatiam, Cappadociam, Asiam et Bithyniam, 2. Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.
-[RIGHT] 2. Secundum precognitionem DeiPatris in sanctificatione Spiritus, in obedientiam et aspersionem sangui nis Jesu Christi; Gratia vobis et pax multiplicetur.
 
+[SCRIPTURE_ROW] 1|||EN|||Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia|||LA|||Petrus, apostolus Jesu Christi, electis inquilinis qui dispersi sunt per Ponturn, Galatiam, Cappadociam, Asiam et Bithyniam
+[SCRIPTURE_ROW] 2|||EN|||Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.|||LA|||Secundum precognitionem DeiPatris in sanctificatione Spiritus, in obedientiam et aspersionem sangui nis Jesu Christi; Gratia vobis et pax multiplicetur.
 [BODY] 1<sty c="000000" i="1">. </sty><sty c="800000" i="1">Peter, an apostle</sty><sty c="000000" i="1">. </sty>What in this salutation is the same with those of Paul, requires no new explanation. When Paul prayed for <sty c="800000" i="1">grace</sty><sty c="000000" i="1"> </sty>and <sty c="800000" i="1">peace</sty><sty c="000000" i="1">, </sty>the verb is left out; but Peter adds it, and says, <sty c="800000" i="1">be multiplied</sty><sty c="000000" i="1">; </sty>still the meaning is the same; for Paul did not wish to the faithful the beginning of grace and peace, but the increase of them, that is, that God would complete what he had begun.
 
 [BODY] <sty c="800000" i="1">To the elect</sty><sty c="000000" i="1">, </sty>or the elected. It may be asked, how could this be found out, for the election of God is hid, and cannot be known without the special revelation of the Spirit; and as every one is made sure of his own election by the testimony of the Spirit, so he can know nothing certain of others. To this I answer, that we are not curiously to inquire about the election of our brethren, but ought on the contrary to regard their calling, so that all who are admitted by faith into the church, are to be counted as the elect; for God thus separates them from the world, which is a sign of election. It is no objection to say that many fall away, having nothing but the semblance; for it is the judgment of charity and not of faith, when we deem all those elect in whom appears the mark of God’s adoption. And that he does not fetch their election from the hidden counsel of God, but gathers it from the effect, is evident from the context; for afterwards he connects it
@@ -236,11 +235,10 @@
 --- PAGE 22 ---
 
 [H2] <sty c="800000" i="0"><600103></sty>1 PETER 1:3-5
-[BODY] 3. Blessed be the God and Father of our Lord Jesus Christ, which, according to his abundant mercy, hath begotten us again unto a lively hope, by the resurrection of Jesus Christ from the dead,
-[INDENT] 3. Benedictus Deus et Pater Domini nostri Jesu Christi, qui secundum multam suam misericordiam regenuit nos in spem vivare, per resurrectionem Jesu Christi ex mortuis, 4. To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you,
-[INDENT] 4. In haereditatem incorruptibilem et incontaminatam et immarcescibilem, repositum in caelis erga vos, 5. Who are kept by the power of God through faith unto salvation, ready to be revealed in the last time.
-[RIGHT] 5. Qui virtute Dei custodimini per fidem in salutem, qut parata est revelari tempore ultimo.
 
+[SCRIPTURE_ROW] 3|||EN|||Blessed be the God and Father of our Lord Jesus Christ, which, according to his abundant mercy, hath begotten us again unto a lively hope, by the resurrection of Jesus Christ from the dead|||LA|||Benedictus Deus et Pater Domini nostri Jesu Christi, qui secundum multam suam misericordiam regenuit nos in spem vivare, per resurrectionem Jesu Christi ex mortuis
+[SCRIPTURE_ROW] 4|||EN|||To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you|||LA|||In haereditatem incorruptibilem et incontaminatam et immarcescibilem, repositum in caelis erga vos
+[SCRIPTURE_ROW] 5|||EN|||Who are kept by the power of God through faith unto salvation, ready to be revealed in the last time.|||LA|||Qui virtute Dei custodimini per fidem in salutem, qut parata est revelari tempore ultimo.
 [BODY] <sty c="800000" i="1">Blessed be God</sty><sty c="000000" i="1">. </sty>We have said that he main object of this epistle is to raise us above the world, in order that we may be prepared and encouraged to sustain the spiritual contests of our warfare. For this end, the knowledge of God’s benefits avails much; for, when their value appears to us, all other things will be deemed worthless, especially when we consider what Christ and his blessings are; for everything without him is but dross. For this reason he highly extols the wonderful grace of God in Christ, that is, that we may not deem it much to give up the world in order that we may enjoy the invaluable treasure of a future life; and also that we may not be broken down by present troubles, but patiently endure them, being satisfied with eternal happiness.
 
 [BODY] Further, when he gives thanks to God, he invites the faithful to spiritual joy, which can swallow up all the opposite feelings of the flesh.
@@ -270,14 +268,12 @@
 [BODY] <sty c="800000" i="1">Unto salvation</sty><sty c="000000" i="1">. </sty>As we are by nature impatient of delay, and soon succumb under weariness, he therefore reminds us that salvation is not deferred because it is not yet prepared, but because the time of its revelation is not yet come. This doctrine is intended to nourish and sustain our hope. Moreover, he calls the day of judgment <sty c="800000" i="1">the last time</sty><sty c="000000" i="1">, </sty>because the restitution of all things is not to be previously expected, for the intervening time is still in progress. What is elsewhere called the last time, is the whole from the coming of Christ; it is so called from a comparison with the preceding ages. But Peter had a regard to the end of the world.
 
 [H2] <sty c="800000" i="0"><600106></sty>1 PETER 1:6-9
-[BODY] 6. Wherein ye greatly rejoice, though now for a season (if need be) ye are in heaviness through manifold temptations;
-[RIGHT] 6. In quo exultatis, paulisper nunc, si opus esti, contristati in variis tentationibus;
 
-[INDENT] 7. That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise, and honor, and glory, at the appearing of Jesus Christ:
-[INDENT] 7. Ut probatio fidel vestrae multo pretiosior auro, quod perit et tamen per ignem probatur, reperiatur in laudem et honorem et gloriam, quum revelabitur Jesus Christus: 8. Whom having not seen, ye love; in whom, though now ye see <sty c="000000" i="1">him</sty> not, yet believing, ye rejoice with joy unspeakable, and full of glory:
-[INDENT] 8. Quem quum non videritis, diligitis, in quem nunc credentes, quum eum non aspicitis, exultatis gaudio inenarrabili et glorificato; 9. Receiving the end of your faith, <sty c="000000" i="1">even </sty>the salvation of <sty c="000000" i="1">your </sty>souls.
-[RIGHT] 9. Reportantes finem fidel vestrae, salutem animarum.
 
+[SCRIPTURE_ROW] 6|||EN|||Wherein ye greatly rejoice, though now for a season (if need be) ye are in heaviness through manifold temptations;|||LA|||In quo exultatis, paulisper nunc, si opus esti, contristati in variis tentationibus;
+[SCRIPTURE_ROW] 7|||EN|||That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise, and honor, and glory, at the appearing of Jesus Christ:|||LA|||Ut probatio fidel vestrae multo pretiosior auro, quod perit et tamen per ignem probatur, reperiatur in laudem et honorem et gloriam, quum revelabitur Jesus Christus:
+[SCRIPTURE_ROW] 8|||EN|||Whom having not seen, ye love; in whom, though now ye see <sty c="000000" i="1">him</sty> not, yet believing, ye rejoice with joy unspeakable, and full of glory:|||LA|||Quem quum non videritis, diligitis, in quem nunc credentes, quum eum non aspicitis, exultatis gaudio inenarrabili et glorificato;
+[SCRIPTURE_ROW] 9|||EN|||Receiving the end of your faith, <sty c="000000" i="1">even </sty>the salvation of <sty c="000000" i="1">your </sty>souls.|||LA|||Reportantes finem fidel vestrae, salutem animarum.
 [BODY] 6<sty c="000000" i="1">. </sty><sty c="800000" i="1">Wherein ye greatly rejoice</sty><sty c="000000" i="1">, </sty>or, In which ye exult. Though the termination of the Greek verb is doubtful, yet the meaning requires that we read, “ye exult,” rather than “exult ye.” <sty c="800000" i="1">In which</sty><sty c="000000" i="1"> </sty>refers to the whole that is said of the hope of salvation laid up in heaven. But he rather exhorts than praises them; for his object was to shew what fruit was to come from the hope of salvation, even spiritual joy, by which not only the bitterness of all evil might be mitigated, but also all sorrow overcome. At the same time to exult is more expressive than to rejoice.<sty c="800000" i="0"> f10</sty>
 
 --- PAGE 26 ---
@@ -327,11 +323,10 @@
 --- PAGE 30 ---
 
 [H2] <sty c="800000" i="0"><600110></sty>1 PETER 1:10-12
-[BODY] 10. Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:
-[INDENT] 10. De qua salute exquisierunt et scrutati sunt prophetee, qui de futura erga nos gratia vaticinati sunt; 11. Searching what, or what manner of time, the Spirit of Christ which was in them did signify, when it testified beforehand the sufferings of Christ, and the glory that should follow.
-[INDENT] 11. Scrutantes in quem aut cujusmodi temporis articulum significaret qui in illis erat Spiritus Christi; prius testificans ventufas in Christum afflictiones, et quee sequuturae erant glorias; 12. Unto whom it was revealed, that not unto themselves, but unto us, they did minister the things which are now reported unto you by them that have preached the gospel unto you with the Holy Ghost sent down from heaven; which things the angels desire to look into.
-[RIGHT] 12. Quibus revelatum est quod non sibi ipsis, sed nobis ministrabant haec, quae nunc annunciata sunt vobis per cos qui vobis praedicarunt evangelitum, per Spiritum sanctum missum e coelo; in quae desiderant angeli prospicere.
 
+[SCRIPTURE_ROW] 10|||EN|||Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:|||LA|||De qua salute exquisierunt et scrutati sunt prophetee, qui de futura erga nos gratia vaticinati sunt;
+[SCRIPTURE_ROW] 11|||EN|||Searching what, or what manner of time, the Spirit of Christ which was in them did signify, when it testified beforehand the sufferings of Christ, and the glory that should follow.|||LA|||Scrutantes in quem aut cujusmodi temporis articulum significaret qui in illis erat Spiritus Christi; prius testificans ventufas in Christum afflictiones, et quee sequuturae erant glorias;
+[SCRIPTURE_ROW] 12|||EN|||Unto whom it was revealed, that not unto themselves, but unto us, they did minister the things which are now reported unto you by them that have preached the gospel unto you with the Holy Ghost sent down from heaven; which things the angels desire to look into.|||LA|||Quibus revelatum est quod non sibi ipsis, sed nobis ministrabant haec, quae nunc annunciata sunt vobis per cos qui vobis praedicarunt evangelitum, per Spiritum sanctum missum e coelo; in quae desiderant angeli prospicere.
 [BODY] He hence commends the value of salvation, because the prophets had their minds intensely fixed on it; for it must have been a great matter, and possessing peculiar excellency, which could have thus kindled in the prophets a spirit of inquiry respecting it. But still more clearly does God’s goodness toward us shine forth in this case, because much more is now made known to us than what all the prophets attained by their long and anxious inquiries. At the same time he confirms the certainty of salvation by this very antiquity; for from the beginning of the world it had received a plain testimony from the Holy Spirit.
 
 [BODY] These two things ought to be distinctly noticed: he declares that more has been given to us than to the ancient fathers, in order to amplify by this comparison the grace of the gospel; and then, that what is preached to us respecting salvation, cannot be suspected of any novelty, for the Spirit had formerly testified of it by the prophets. When, therefore, he says that the prophets searched and sedulously inquired, this does not belong to their
@@ -391,14 +386,12 @@
 --- PAGE 36 ---
 
 [H2] <sty c="800000" i="0"><600113></sty>1 PETER 1:13-16
-[BODY] 13. Wherefore gird up the loins of your mind, be sober, and hope to the end, for the grace that is to be brought unto you at the revelation of Jesus Christ:
-[RIGHT] 13. Quare succincti lumbis mentis vestrae, sobrii, perfecte sperate in eam quae ad vos defertur gratiam, in revelatione Jesu Christi;
 
-[INDENT] 14. As obedient children, not fashioning yourselves according to the former lusts in your ignorance:
-[INDENT] 14. Tanquam filii obedientes, non conformati pristinis, quae in ignorantia vestra regnarunt, cupiditatibus: 15. But as he which hath called you is holy, so be ye holy in all manner of conversation:
-[INDENT] 15. Sed quaemadmodum is qui vos vocavit sanctus est, ita ipsi sancti in tota conversatione reddamini; 16. Because it is written, Be ye holy; for I am holy.
-[RIGHT] 16. Propterea quòd scriptum est, Sancti estote, quia ego sanctus sum. (<sty c="800000" i="0"><031144></sty>Leviticus 11:44; 19:2; 20:7.)
 
+[SCRIPTURE_ROW] 13|||EN|||Wherefore gird up the loins of your mind, be sober, and hope to the end, for the grace that is to be brought unto you at the revelation of Jesus Christ:|||LA|||Quare succincti lumbis mentis vestrae, sobrii, perfecte sperate in eam quae ad vos defertur gratiam, in revelatione Jesu Christi;
+[SCRIPTURE_ROW] 14|||EN|||As obedient children, not fashioning yourselves according to the former lusts in your ignorance:|||LA|||Tanquam filii obedientes, non conformati pristinis, quae in ignorantia vestra regnarunt, cupiditatibus:
+[SCRIPTURE_ROW] 15|||EN|||But as he which hath called you is holy, so be ye holy in all manner of conversation:|||LA|||Sed quaemadmodum is qui vos vocavit sanctus est, ita ipsi sancti in tota conversatione reddamini;
+[SCRIPTURE_ROW] 16|||EN|||Because it is written, Be ye holy; for I am holy.|||LA|||Propterea quòd scriptum est, Sancti estote, quia ego sanctus sum. (<sty c="800000" i="0"><031144></sty>Leviticus 11:44; 19:2; 20:7.)
 [BODY] From the greatness and excellency of grace he draws an exhortation, that it surely behoved them the more readily to receive the grace of God, as the more bountifully he bestowed it upon them. And we must notice the connection: he had said, that so elevated was the kingdom of Christ, to which the gospel calls us, that even angels in heaven desire to see it; what then ought to be done by us who are in the world? Doubtless, as long as we live on earth, so great is the distance between us and Christ, that in vain he invites us to himself. It is hence necessary for us to put off the image of Adam and to cast aside the whole world and all hinderances, that being thus set at liberty we may rise upwards to Christ. And he exhorted those to whom he wrote, to be prepared and sober, and to hope for the graces offered to them, and also to renounce the world and their former life, and to be conformed to the will of God.<sty c="800000" i="0"> f15</sty>
 
 [BODY] Then the first part of the exhortation is, to gird up the loins of their mind and to direct their thoughts to the hope of the grace presented to them. In the second par, he prescribes the manner, that having their minds changed, they were to be formed after the image of God.
@@ -448,16 +441,14 @@
 --- PAGE 41 ---
 
 [H2] <sty c="800000" i="0"><600117></sty>1 PETER 1:17-22
-[BODY] 17. And if ye call on the Father, who without respect of persons judgeth according to every man’s work, pass the time of your sojourning here in fear:
-[INDENT] 17. Et si Patrem invocatis, eum qui sine personae acceptione secundum cujusque opus judicat, in timore conversantes, ternpus incolatus vestri transigite; 18. Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;
-[RIGHT] 18. Scientes quòd non corruptibilibus, argento vel auro, redempti sitis à vana conversatione à patribus tradita;
 
-[INDENT] 19. But with the precious blood of Christ, as of a lamb without blemish and without spot:
-[INDENT] 19. Sed pretioso sanguine velut agni immaculati et incontaminati Christi; 20. Who verily was fore-ordained before the foundation of the world, but was manifest in these last times for you,
-[INDENT] 20. Qui praeordinatus quidem fuerat ante conditum mundum, manifestatus autem est extremis temporibus propter vos; 21. Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God.
-[INDENT] 21. Qui per ipsum creditis in Deum, qui eum suscitavit ex mortuis, et gloriam illi dedit, ut fides vestra et spes sit in Deum; 22. Seeing ye have purified your souls in obeying the truth through the Spirit unto unfeigned love of the brethren, see that ye love one another with a pure heart fervently.
-[RIGHT] 22. Purificantes animas vestras in obedientia veritatis per Spiritum, in fraternam charitatem non fictam, ex puro corde diligite vos mutuò impensè.
 
+[SCRIPTURE_ROW] 17|||EN|||And if ye call on the Father, who without respect of persons judgeth according to every man’s work, pass the time of your sojourning here in fear:|||LA|||Et si Patrem invocatis, eum qui sine personae acceptione secundum cujusque opus judicat, in timore conversantes, ternpus incolatus vestri transigite;
+[SCRIPTURE_ROW] 18|||EN|||Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;|||LA|||Scientes quòd non corruptibilibus, argento vel auro, redempti sitis à vana conversatione à patribus tradita;
+[SCRIPTURE_ROW] 19|||EN|||But with the precious blood of Christ, as of a lamb without blemish and without spot:|||LA|||Sed pretioso sanguine velut agni immaculati et incontaminati Christi;
+[SCRIPTURE_ROW] 20|||EN|||Who verily was fore-ordained before the foundation of the world, but was manifest in these last times for you|||LA|||Qui praeordinatus quidem fuerat ante conditum mundum, manifestatus autem est extremis temporibus propter vos;
+[SCRIPTURE_ROW] 21|||EN|||Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God.|||LA|||Qui per ipsum creditis in Deum, qui eum suscitavit ex mortuis, et gloriam illi dedit, ut fides vestra et spes sit in Deum;
+[SCRIPTURE_ROW] 22|||EN|||Seeing ye have purified your souls in obeying the truth through the Spirit unto unfeigned love of the brethren, see that ye love one another with a pure heart fervently.|||LA|||Purificantes animas vestras in obedientia veritatis per Spiritum, in fraternam charitatem non fictam, ex puro corde diligite vos mutuò impensè.
 [BODY] 17<sty c="000000" i="1">. </sty><sty c="800000" i="1">And if ye call on the Father</sty><sty c="000000" i="1">. </sty>They are said here to call on God the Father, who professed themselves to be his children, as Moses says, that the name of Jacob was called on Ephraim and Manasseh, that they might be counted his children. (<sty c="800000" i="0"><014816></sty>Genesis 48:16.) According to this meaning also, we say in French <sty c="000000" i="1">reclamer. </sty>But he had a regard to what he had said before, “as obedient children.” And from the character of the Father himself, he shews what sort of obedience ought to be rendered. He <sty c="000000" i="1">judges,</sty> he says, <sty c="800000" i="1">without looking on the person</sty><sty c="000000" i="1">, </sty>that is, no outward mask is of any
 
 --- PAGE 42 ---
@@ -539,11 +530,10 @@
 --- PAGE 49 ---
 
 [H2] <sty c="800000" i="0"><600123></sty>1 PETER 1:23-25
-[BODY] 23. Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.
-[INDENT] 23. Regeniti non ex semine corruptibili, sed incorruptibili, per sermonem viventis Dei et manentis in aeternum. 24. For all flesh <sty c="000000" i="1">is </sty>as grass, and all the glory of man as the flower of grass, The grass withereth, and the flower thereof falleth away:
-[INDENT] 24. Quandoquidem omnis caro tanquam herba, et omnis gloria ejus tanquam flos herbae; exaruit herba et flos ejus decidit: 25. But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.
-[RIGHT] 25. Verbum autem Domini manet in aeternum; hoc autem est verbum quod annuntiatum est vobis.
 
+[SCRIPTURE_ROW] 23|||EN|||Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.|||LA|||Regeniti non ex semine corruptibili, sed incorruptibili, per sermonem viventis Dei et manentis in aeternum.
+[SCRIPTURE_ROW] 24|||EN|||For all flesh <sty c="000000" i="1">is </sty>as grass, and all the glory of man as the flower of grass, The grass withereth, and the flower thereof falleth away:|||LA|||Quandoquidem omnis caro tanquam herba, et omnis gloria ejus tanquam flos herbae; exaruit herba et flos ejus decidit:
+[SCRIPTURE_ROW] 25|||EN|||But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.|||LA|||Verbum autem Domini manet in aeternum; hoc autem est verbum quod annuntiatum est vobis.
 [BODY] 23. <sty c="800000" i="1">Being born again</sty><sty c="000000" i="1">. </sty>Here is another reason for an exhortation, — that since they were new men and born again of God, it behoved them to form a life worthy of God and of their spiritual regeneration. And this seems to be connected with a verse in the next chapter respecting the milk of the word, which they were to seek, that their way of living might correspond with their birth. It may, however, be extended wider, so as to be connected also with what has gone before; for Peter collected together those things which may lead us to an upright and a holy life. The object., then, of Peter was to teach us that we cannot be Christians without regeneration; for the Gospel is not preached, that it may be only heard by us, but that it may, as a seed of immortal life, altogether reform our hearts. <sty c="800000" i="0"> F18 </sty>Moreover, the <sty c="800000" i="1">corruptible</sty> <sty c="800000" i="1">seed</sty><sty c="000000" i="1"> </sty>is set in opposition to God’s word, in order that the faithful might know that they ought to renounce their former nature, and that it might be more evident how much is the difference between the children of Adam who are born only into the world, and the children of God who are renewed into a heavenly life. But as the construction of the Greek text is doubtful, we may read, “the living word of God,” as well as, “the word of the living God.” As, however, the latter reading is less forced, I prefer it; though it must be observed, that the term is applied to God owing to the character of the passage. For, as in <sty c="800000" i="0"><580412></sty>Hebrews 4:12, because God sees all things, and nothing is hid from him, the apostle argues that the word of
 
 --- PAGE 50 ---
@@ -583,13 +573,12 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 2</sty>
 
 [H2] <sty c="800000" i="0"><600201></sty>1 PETER 2:1-5
-[BODY] 1. Wherefore, laying aside all malice, and all guile, and hypocrisies, and envies, and all evil speakings,
-[INDENT] 1. Proinde deposita omni malitia et omni dolo et simulationibus et invidiis et omnibus obtrectationibus, 2. As new-born babes, desire the sincere milk of the word, that ye may grow thereby;
-[INDENT] 2. Tanquam modò geniti infantes, lac rationale et dolo vacuum appetite, ut per illud subolescatis: 3. If so be ye have tasted that the Lord <sty c="000000" i="1">is </sty>gracious:
-[INDENT] 3. Si quidem gustastis quòd benignus sit Dominus; 4. To whom coming, <sty c="000000" i="1">as unto </sty>a living stone, disallowed indeed of <sty c="000000" i="1">men, </sty>but chosen of God, <sty c="000000" i="1">and</sty> precious,
-[INDENT] 4. Ad quem accedentes, qui est lapis vivus, ab hominibus quidera reprobatus, apud Deum vero electus ac pretiosus; 5. Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.
-[RIGHT] 5. Ipsi quoque tanquam vivi lapides, aedificamini, domus spirituales, sacerdotium sanctum, ad offerendas spirituales hostias, acceptas Deo per Jesum Christum.
 
+[SCRIPTURE_ROW] 1|||EN|||Wherefore, laying aside all malice, and all guile, and hypocrisies, and envies, and all evil speakings|||LA|||Proinde deposita omni malitia et omni dolo et simulationibus et invidiis et omnibus obtrectationibus
+[SCRIPTURE_ROW] 2|||EN|||As new-born babes, desire the sincere milk of the word, that ye may grow thereby;|||LA|||Tanquam modò geniti infantes, lac rationale et dolo vacuum appetite, ut per illud subolescatis:
+[SCRIPTURE_ROW] 3|||EN|||If so be ye have tasted that the Lord <sty c="000000" i="1">is </sty>gracious:|||LA|||Si quidem gustastis quòd benignus sit Dominus;
+[SCRIPTURE_ROW] 4|||EN|||To whom coming, <sty c="000000" i="1">as unto </sty>a living stone, disallowed indeed of <sty c="000000" i="1">men, </sty>but chosen of God, <sty c="000000" i="1">and</sty> precious|||LA|||Ad quem accedentes, qui est lapis vivus, ab hominibus quidera reprobatus, apud Deum vero electus ac pretiosus;
+[SCRIPTURE_ROW] 5|||EN|||Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.|||LA|||Ipsi quoque tanquam vivi lapides, aedificamini, domus spirituales, sacerdotium sanctum, ad offerendas spirituales hostias, acceptas Deo per Jesum Christum.
 [BODY] After having taught the faithful that they had been regenerated by the word of God, he now exhorts them to lead a life corresponding with their birth. For if we live in the Spirit, we ought also to walk in the Spirit, as Paul says. (<sty c="800000" i="0"><480525></sty>Galatians 5:25.) It is not, then, sufficient for us to have been once called by the Lord, except we live as new creatures. This is the meaning. But as to the words, the Apostle continues the same metaphor. For as we have been born again, he requires from us a life like that of infants; by which he intimates that we are to put off the old man and his works. Hence this verse agrees with what Christ says,
 
 --- PAGE 54 ---
@@ -663,12 +652,10 @@
 [BODY] The sense, however, will remain the same; for we offer sacrifices through Christ, that they may be acceptable to God.
 
 [H2] <sty c="800000" i="0"><600206></sty>1 PETER 2:6-8
-[BODY] 6. Wherefore also it is contained in the Scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded.
-[INDENT] 6. Propterea etiam continet scriptura, Ecce pono in Sion lapidem angularem, electurn, pretiosum, et qui crediderit in illo, non pudefiet. 7. Unto you therefore which believe <sty c="000000" i="1">he is </sty>precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner,
-[RIGHT] 7. Vobis ergo qui creditis, pretiosus; incredulis vero, Lapis quem reprobaverunt aedificantes, hic positus est in caput anguli;
 
-[INDENT] 8. And a stone of stumbling, and a rock of offense, <sty c="000000" i="1">even to them</sty> which stumble at the word, being disobedient; whereunto also they were appointed.
-[RIGHT] 8. Et Lapis impactionis, et petra offendiculi iis qui impingunt in Sermonem, nec credunt; in quod etiam ordinati fuerant.
+[SCRIPTURE_ROW] 6|||EN|||Wherefore also it is contained in the Scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded.|||LA|||Propterea etiam continet scriptura, Ecce pono in Sion lapidem angularem, electurn, pretiosum, et qui crediderit in illo, non pudefiet.
+[SCRIPTURE_ROW] 7|||EN|||Unto you therefore which believe <sty c="000000" i="1">he is </sty>precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner|||LA|||Vobis ergo qui creditis, pretiosus; incredulis vero, Lapis quem reprobaverunt aedificantes, hic positus est in caput anguli;
+[SCRIPTURE_ROW] 8|||EN|||And a stone of stumbling, and a rock of offense, <sty c="000000" i="1">even to them</sty> which stumble at the word, being disobedient; whereunto also they were appointed.|||LA|||Et Lapis impactionis, et petra offendiculi iis qui impingunt in Sermonem, nec credunt; in quod etiam ordinati fuerant.
 
 --- PAGE 59 ---
 
@@ -741,10 +728,9 @@
 --- PAGE 65 ---
 
 [H2] <sty c="800000" i="0"><600209></sty>1 PETER 2:9-10
-[BODY] 9. But ye <sty c="000000" i="1">are </sty>a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shewforth the praises of him who hath called you out of darkness into his marvellous light:
-[INDENT] 9. Vos autem genus electum, regale sacerdotium, gens sancta, populus in acquisitionem, ut virtutes enarretis ejus qui vos ex tenebris vocavit in admirabile lumen suum: 10. Which in time past <sty c="000000" i="1">were </sty>not a people, but <sty c="000000" i="1">are </sty>now the people of God: which had not obtained mercy, but now have obtained mercy.
-[RIGHT] 10. Qui aliquando non populus, nunc autem populus Dei, qui non consequuti eratis misericordiam, nunc misericordiam consequuti estis.
 
+[SCRIPTURE_ROW] 9|||EN|||But ye <sty c="000000" i="1">are </sty>a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shewforth the praises of him who hath called you out of darkness into his marvellous light:|||LA|||Vos autem genus electum, regale sacerdotium, gens sancta, populus in acquisitionem, ut virtutes enarretis ejus qui vos ex tenebris vocavit in admirabile lumen suum:
+[SCRIPTURE_ROW] 10|||EN|||Which in time past <sty c="000000" i="1">were </sty>not a people, but <sty c="000000" i="1">are </sty>now the people of God: which had not obtained mercy, but now have obtained mercy.|||LA|||Qui aliquando non populus, nunc autem populus Dei, qui non consequuti eratis misericordiam, nunc misericordiam consequuti estis.
 [BODY] 9<sty c="000000" i="1">. </sty><sty c="800000" i="1">But ye are a chosen generation</sty><sty c="000000" i="1">, </sty>or race. He again separates them from the unbelieving, lest driven by their example (as it is often the case) they should fall away from the faith. As, then, it is unreasonable that those whom God has separated from the world, should mix themselves with the ungodly, Peter here reminds the faithful to what great honor they had been raised, and also to what purpose they had been called. But with the same high titles which he confers on them, Moses honored the ancient people, (<sty c="800000" i="0"><021906></sty>Exodus 19:6;) but the Apostle’s object was to shew that they had recovered again, through Christ, the great dignity and honor from which they had fallen. It is at the same time true, that God gave to the fathers an earthly taste only of these blessings, and that they are really given in Christ.
 
 [BODY] The meaning then is, as though he had said,
@@ -786,10 +772,9 @@
 [BODY] <sty c="800000" i="1">Which had not obtained mercy</sty><sty c="000000" i="1">. </sty>This was added by the Prophet, in order that the gratuitous covenant of God, by which he takes them to be his people, might be more clearly set forth; as though he had said, “There is no other reason why the Lord counts us his people, except that he, having mercy on us, graciously adopts us.” It is then God’s gratuitous goodness, which makes of no people a people to God, and reconciles the alienated.<sty c="800000" i="0"> f25</sty>
 
 [H2] <sty c="800000" i="0"><600211></sty>1 PETER 2:11-12
-[BODY] 11. Dearly beloved, I beseech <sty c="000000" i="1">you,</sty> as strangers and pilgrims, abstain from fleshly lusts, which war against the soul;
-[INDENT] 11. Amici, adhortor vos tanquam inquilinos et peregrinos, ut abstineatis à carnalibus desideriis, que militant adversus animam; 12. Having your conversation honest among the Gentiles; that, whereas they speak against you as evil-doers, they may, by <sty c="000000" i="1">your </sty>good works, which they shall behold, glorify God in the day of visitation.
-[RIGHT] 12. Conversationem vestram inter gentes bonam habentes, ut in quo detrahunt de vobis tanquam maleficis, ex bonis operibus aestimantes <sty c="000000" i="1">(vel,</sty> considerantes) glorificent Deum in die visitationis.
 
+[SCRIPTURE_ROW] 11|||EN|||Dearly beloved, I beseech <sty c="000000" i="1">you,</sty> as strangers and pilgrims, abstain from fleshly lusts, which war against the soul;|||LA|||Amici, adhortor vos tanquam inquilinos et peregrinos, ut abstineatis à carnalibus desideriis, que militant adversus animam;
+[SCRIPTURE_ROW] 12|||EN|||Having your conversation honest among the Gentiles; that, whereas they speak against you as evil-doers, they may, by <sty c="000000" i="1">your </sty>good works, which they shall behold, glorify God in the day of visitation.|||LA|||Conversationem vestram inter gentes bonam habentes, ut in quo detrahunt de vobis tanquam maleficis, ex bonis operibus aestimantes <sty c="000000" i="1">(vel,</sty> considerantes) glorificent Deum in die visitationis.
 [BODY] 11. <sty c="800000" i="1">As strangers</sty><sty c="000000" i="1">, </sty>or sojourners. There are two parts to this exhortation, — that their souls were to be free within from wicked and vicious lusts; and also, that they were to live honestly among men, and by the example of a good life not only to confirm the godly, but also to gain over the unbelieving to God.
 
 [BODY] And first, to call them away from the indulgence of carnal lusts, he employs this argument, that they were sojourners and strangers. And he so calls them, not because they were banished from their country, and scattered into various lands, but because the children of God, wherever they may be, are only guests in this world. In the former sense, indeed, he called them sojourners at the beginning of the Epistle, as it appears from the context; but what he says here is common to them all. For the lusts of the flesh hold us entangled, when in our minds we dwell in the world, and think not that heaven is our country; but when we pass as strangers through this life, we are not in bondage to the flesh.
@@ -809,12 +794,11 @@
 [BODY] that God employs the holy and honest life of his people, as a preparation, to bring back the wandering to the right way. For it is the beginning of our conversion, when God is pleased to look on us with a paternal eye; but when his face is turned away from us, we perish. Hence the day of visitation may justly be said to be the time when he invites us to himself.
 
 [H2] <sty c="800000" i="0"><600213></sty>1 PETER 2:13-16
-[BODY] 13. Submit yourselves to every ordinance of man for the Lord’s sake: whether it be to the king, as supreme;
-[INDENT] 13. Subditi ergo estote omni humanae ordinationi propter Dominum; sive regi tanquam supereminenti; 14. Or unto governors, as unto them that are sent by him for the punishment of evil-doers, and for the praise of them that do well.
-[INDENT] 14. Sive praesidibus, tanquam iis qui per ipsum mittuntur, in vindictam quidem maleficorum, laudem verò benè agentium. 15. For so is the will of God, that with well-doing ye may put to silence the ignorance of foolish men:
-[INDENT] 15. Sic enim est voluntas Dei, ut benefaciendo obstruatis ignorantiam stultorum horninum: 16. As free, and not using <sty c="000000" i="1">your</sty> liberty for a cloak of maliciousness, but as the servants of God.
-[RIGHT] 16. Ut liberi, et non quasi praetextum habentes malitiae, libertatem; sed tanquam servi Dei.
 
+[SCRIPTURE_ROW] 13|||EN|||Submit yourselves to every ordinance of man for the Lord’s sake: whether it be to the king, as supreme;|||LA|||Subditi ergo estote omni humanae ordinationi propter Dominum; sive regi tanquam supereminenti;
+[SCRIPTURE_ROW] 14|||EN|||Or unto governors, as unto them that are sent by him for the punishment of evil-doers, and for the praise of them that do well.|||LA|||Sive praesidibus, tanquam iis qui per ipsum mittuntur, in vindictam quidem maleficorum, laudem verò benè agentium.
+[SCRIPTURE_ROW] 15|||EN|||For so is the will of God, that with well-doing ye may put to silence the ignorance of foolish men:|||LA|||Sic enim est voluntas Dei, ut benefaciendo obstruatis ignorantiam stultorum horninum:
+[SCRIPTURE_ROW] 16|||EN|||As free, and not using <sty c="000000" i="1">your</sty> liberty for a cloak of maliciousness, but as the servants of God.|||LA|||Ut liberi, et non quasi praetextum habentes malitiae, libertatem; sed tanquam servi Dei.
 [BODY] 13. <sty c="800000" i="1">Submit yourselves</sty><sty c="000000" i="1">. </sty>He now comes to particular exhortations: and as obedience with regard to magistrates is a part of honest or good conversation, he draws this inference as to their duty, “Submit yourselves,” or, Be ye subject; for by refusing the yoke of government, they would have given to the Gentiles no small occasion for reproaching them. And, indeed, the Jews were especially hated and counted infamous for this reason, because they were regarded on account of their perverseness as ungovernable. And as the commotions which they raised up in the provinces, were causes of great calamities, so that every one of a quiet and peaceable disposition dreaded them as the plague, — this was the reason that induced Peter to speak so strongly on subjection. Besides, many thought the gospel was a proclamation of such liberty, that every one might deem himself as free from servitude. It seemed an unworthy
 
 --- PAGE 71 ---
@@ -856,8 +840,7 @@
 [BODY] In short, it is a free servitude, and a serving freedom. For as we ought to be the servants of God, that we may enjoy this benefit, so moderation is required in the use of it. In this way, indeed, our consciences become free; but this prevents us not to serve God, who requires us also to be subject to men.
 
 [H2] <sty c="800000" i="0"><600217></sty>1 PETER 2:17
-[BODY] 17. Honour all <sty c="000000" i="1">men. </sty>Love the brotherhood. Fear God. Honour the king.
-[RIGHT] 17. Omnes honorate, fraternitatem diligite, Deum timete, regem honorate.
+[SCRIPTURE_ROW] 17|||EN|||Honour all <sty c="000000" i="1">men. </sty>Love the brotherhood. Fear God. Honour the king.|||LA|||Omnes honorate, fraternitatem diligite, Deum timete, regem honorate.
 
 --- PAGE 75 ---
 
@@ -870,11 +853,10 @@
 --- PAGE 76 ---
 
 [H2] <sty c="800000" i="0"><600218></sty>1 PETER 2:18-20
-[BODY] 18. Servants, be subject to <sty c="000000" i="1">your</sty> masters with all fear; not only to the good and gentle, but also to the froward.
-[INDENT] 18. Famuli, subjecti sint cum omni timore dominis <sty c="000000" i="1">suis, </sty>non solum bonis et humanis, sed etiam pravis. 19. For this is thankworthy, if a man for conscience towards God endure grief, suffering wrongfully.
-[INDENT] 19. Haec enim est gratia, si propter conscientiam Dei quispiam molestias ferat patiens injustè. 20. For what glory is it, if, when ye be buffeted for your faults, ye shall take it patiently? but if, when ye do well, and suffer <sty c="000000" i="1">for </sty>it, ye take it patiently, this <sty c="000000" i="1">is </sty>acceptable with God.
-[RIGHT] 20. Qualis enim gloria, si quum peccantes alapis caedemini, suffertis? sed si bene facientes et in aliis affecti suffertis, haec gratia apud Deum.
 
+[SCRIPTURE_ROW] 18|||EN|||Servants, be subject to <sty c="000000" i="1">your</sty> masters with all fear; not only to the good and gentle, but also to the froward.|||LA|||Famuli, subjecti sint cum omni timore dominis <sty c="000000" i="1">suis, </sty>non solum bonis et humanis, sed etiam pravis.
+[SCRIPTURE_ROW] 19|||EN|||For this is thankworthy, if a man for conscience towards God endure grief, suffering wrongfully.|||LA|||Haec enim est gratia, si propter conscientiam Dei quispiam molestias ferat patiens injustè.
+[SCRIPTURE_ROW] 20|||EN|||For what glory is it, if, when ye be buffeted for your faults, ye shall take it patiently? but if, when ye do well, and suffer <sty c="000000" i="1">for </sty>it, ye take it patiently, this <sty c="000000" i="1">is </sty>acceptable with God.|||LA|||Qualis enim gloria, si quum peccantes alapis caedemini, suffertis? sed si bene facientes et in aliis affecti suffertis, haec gratia apud Deum.
 [BODY] 18<sty c="000000" i="1">. </sty><sty c="800000" i="1">Servants, be subject</sty><sty c="000000" i="1">. </sty>Though this is a particular admonition, yet it is connected with what is gone before, as well as the other things which follow; for the obedience of servants to masters, and of wives also to their husbands, forms a part of civil or social subjection.<sty c="800000" i="0"> f30</sty>
 
 [BODY] He first would have servants to be subject <sty c="800000" i="1">with all fear</sty><sty c="000000" i="1">; </sty>by which expression he means that sincere and willing reverence, which they acknowledge by their office to be due. He then sets this fear in opposition to dissimulation as well as to forced subjection; for an eye-service (<sty c="0000d4" i="0">ojfqalmodoulei>a</sty>, <sty c="800000" i="0"><510321></sty>Colossians 3:21,) as Paul calls it, is the opposite of this fear; and further, if servants clamor against severe treatment, being ready to throw off the yoke if they could, they cannot be said properly to fear. In short, fear arises from a right knowledge of duty. And though no exception is added in this place, yet, according to other places, it is to be understood. For subjection due to men is not to be so far extended as to lessen the authority of God. Then servants are to be subject to their masters, only as far as God permits, or as far as the altars, as they say. But as the word here is not <sty c="0000d4" i="0">dou~loi</sty>, slaves, but <sty c="0000d4" i="0">oijke>tai</sty><sty c="000000" i="1">, </sty>domestics, we may understand the free as well as the bond servants to be meant, though it be a difference of little moment.
@@ -896,11 +878,10 @@
 [BODY] It is not, however, an assertion without its difficulty, when he says, that there is nothing praiseworthy in him who is justly punished; for, when the Lord punishes our sins, patience is certainly a sacrifice of sweet odour to him, that is, when we bear with a submissive mind our punishment. But to this I reply, that Peter does not here speak simply but comparatively; for it is a small and slender praise to bear with submission a just punishment, in comparison with that of an innocent man, who willingly bears the wrongs of men, only because he fears God. At the same time he seems indirectly to refer to the motive; because they who suffer punishment for their faults, are influenced by the fear of men. But the reply already given is sufficient.
 
 [H2] <sty c="800000" i="0"><600221></sty>1 PETER 2:21-23
-[BODY] 21. For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps:
-[INDENT] 21. In hoc enim vocati estis; quoniam Christus quoque passus est pro vobis, relinquens vobis exemplum, ut sequeremini vestigia ejus: 22. Who did no sin, neither was guile found in his mouth:
-[INDENT] 22. Qui quum peccatum non fecisset, nec inventus esset dolus in ore ejus; 23. Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed <sty c="000000" i="1">himself </sty>to him that judgeth righteously:
-[RIGHT] 23. Quum probro afficeretur, non regerebat; quum pateretur, non comminabatur; causam vero commendabat ei qui juste judicat.
 
+[SCRIPTURE_ROW] 21|||EN|||For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps:|||LA|||In hoc enim vocati estis; quoniam Christus quoque passus est pro vobis, relinquens vobis exemplum, ut sequeremini vestigia ejus:
+[SCRIPTURE_ROW] 22|||EN|||Who did no sin, neither was guile found in his mouth:|||LA|||Qui quum peccatum non fecisset, nec inventus esset dolus in ore ejus;
+[SCRIPTURE_ROW] 23|||EN|||Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed <sty c="000000" i="1">himself </sty>to him that judgeth righteously:|||LA|||Quum probro afficeretur, non regerebat; quum pateretur, non comminabatur; causam vero commendabat ei qui juste judicat.
 [BODY] 21. <sty c="800000" i="1">For even hereunto were ye called</sty><sty c="000000" i="1">. </sty>For though his discourse was respecting servants, yet this passage ought not to be confined to that subject. For the Apostle here reminds all the godly in common as to what the condition of Christianity is, as though he had said, that we are called
 
 --- PAGE 79 ---
@@ -930,10 +911,9 @@
 [BODY] appears evident from the gospel-history, that Christ did thus refer his judgment to God, and yet did not demand vengeance to be taken on his enemies, but that, on the contrary, he prayed for them, “Father,” he said, “forgive them.” (<sty c="800000" i="0"><422334></sty>Luke 23:34.) And doubtless the feelings of our flesh are far from being in unison with the judgment of God. That any one then may commit his cause to him who judgeth righteously, it is necessary that he should first lay a check on himself, so that he may not ask anything inconsistent with the righteous judgment of God. For they who indulge themselves in looking for vengeance, concede not to God his office of a judge, but in a manner wish him to be an executioner. He then who is so calm in his spirit as to wish his adversaries to become his friends, and endeavors to bring them to the right way, rightly commits to God his own cause, and his prayer is, “Thou, O Lord, knowest my heart, how I wish them to be saved who seek to destroy me: were they converted, I should congratulate them; but if they continue obstinate in their wickedness, for I know that thou watchest over my safety, I commit my cause to thee.” This meekness was manifested by Christ; it is then the rule to be observed by us.
 
 [H2] <sty c="800000" i="0"><600224></sty>1 PETER 2:24-25
-[BODY] 24. Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.
-[INDENT] 24. Qui peccata nostra ipse pertulit in corpore suo super lignum, ut peccatis mortui, justitiae vivamus: cujus livori sanati estis. 25. For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.
-[RIGHT] 25. Eratis enim tanquam oves errantes; sed conversi estis nunc ad Pastorem et Episcopum animarum vestrarum.
 
+[SCRIPTURE_ROW] 24|||EN|||Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.|||LA|||Qui peccata nostra ipse pertulit in corpore suo super lignum, ut peccatis mortui, justitiae vivamus: cujus livori sanati estis.
+[SCRIPTURE_ROW] 25|||EN|||For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.|||LA|||Eratis enim tanquam oves errantes; sed conversi estis nunc ad Pastorem et Episcopum animarum vestrarum.
 [BODY] Had he commended nothing in Christ’s death except as an example, it would have been very frigid: he therefore refers to a fruit much more excellent. There are then three things to be noticed in this passage. The first is, that Christ by his death has given us an example of patience; the second, that by his death he restored us to life; it hence follows, that we are so bound to him, that we ought cheerfully to follow his example. In the
 
 --- PAGE 82 ---
@@ -965,15 +945,13 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 3</sty>
 
 [H2] <sty c="800000" i="0"><600301></sty>1 PETER 3:1-4
-[BODY] 1. Likewise, ye wives, <sty c="000000" i="1">be </sty>in subjection to your own husbands: that, if any obey not the word, they also may without the word be won by the conversation of the wives;
-[RIGHT] 1. Similiter mulieres subjectae sint propriis maritis; ut etiam siqui sunt increduli sermoni, per uxorum conversationem absque sermone lucrifiant;
 
-[INDENT] 2. Considerantes puram <sty c="000000" i="1">(vel,</sty> castam) vestram in timore conversationem; 3. Whose adorning, let it not be that outward <sty c="000000" i="1">adoring </sty>of plaiting the hair, and of wearing of gold, or of putting on of apparel;
-[INDENT] 2. While they behold your chaste conversation <sty c="000000" i="1">coupled </sty>with fear.
 
-[INDENT] 3. Quarum ornatus sit non externus, in plicatura capillorum et circumpositione auri, aut palliorum amictu; 4. But <sty c="000000" i="1">let it be </sty>the hidden man of the heart, in that which is not corruptible, <sty c="000000" i="1">even the ornament </sty>of a meek and quiet spirit, which is in the sight of God of great price.
-[RIGHT] 4. Sed interior cordis homo, qui in incorruptione situs est placidi et quieti spiritus, qui spiritus coram Deo pretiosus est <sty c="000000" i="1">(vel, </sty>quod est coram Deo pretiosum.)
 
+[SCRIPTURE_ROW] 1|||EN|||Likewise, ye wives, <sty c="000000" i="1">be </sty>in subjection to your own husbands: that, if any obey not the word, they also may without the word be won by the conversation of the wives;|||LA|||Similiter mulieres subjectae sint propriis maritis; ut etiam siqui sunt increduli sermoni, per uxorum conversationem absque sermone lucrifiant;
+[SCRIPTURE_ROW] 2|||EN|||While they behold your chaste conversation <sty c="000000" i="1">coupled </sty>with fear.|||LA|||Considerantes puram <sty c="000000" i="1">(vel,</sty> castam) vestram in timore conversationem;
+[SCRIPTURE_ROW] 3|||EN|||Whose adorning, let it not be that outward <sty c="000000" i="1">adoring </sty>of plaiting the hair, and of wearing of gold, or of putting on of apparel;|||LA|||Quarum ornatus sit non externus, in plicatura capillorum et circumpositione auri, aut palliorum amictu;
+[SCRIPTURE_ROW] 4|||EN|||But <sty c="000000" i="1">let it be </sty>the hidden man of the heart, in that which is not corruptible, <sty c="000000" i="1">even the ornament </sty>of a meek and quiet spirit, which is in the sight of God of great price.|||LA|||Sed interior cordis homo, qui in incorruptione situs est placidi et quieti spiritus, qui spiritus coram Deo pretiosus est <sty c="000000" i="1">(vel, </sty>quod est coram Deo pretiosum.)
 [BODY] HE proceeds now to another instance of subjection, and bids wives to be subject to their husbands. And as those seemed to have some pretense for shaking off the yoke, who were united to unbelieving men, he expressly reminds them of their duty, and brings forward a particular reason why they ought the more carefully to obey, even that they might by their probity allure their husbands to the faith. But if wives ought to obey ungodly husbands, with much more promptness ought they to obey, who have believing husbands.
 
 [BODY] But it may seem strange that Peter should say, that a husband might be <sty c="800000" i="1">gained</sty> to the Lord <sty c="800000" i="1">without the word</sty><sty c="000000" i="1">;</sty> for why is it said, that “faith cometh by hearing ?” <sty c="800000" i="0"><451017></sty>Romans 10:17. To this I reply, that Peter’s words are
@@ -999,12 +977,10 @@
 --- PAGE 87 ---
 
 [H2] <sty c="800000" i="0"><600305></sty>1 PETER 3:5-6
-[BODY] 5. For after this manner in the old time the holy women also, who trusted in God, adorned themselves, being in subjection unto their own husbands:
-[RIGHT] 5. Sic enim aliquando et sanctae mulieres quae sperabant in Deum, ornabant seipsas, subjectae propriis maritis:
 
-[INDENT] 6. Even as Sarah obeyed Abraham, calling him lord: whose daughters ye are as long as ye do well, and are not afraid with any amazement.
-[RIGHT] 6. Quemadmodum et Sara obediebat Abrahae, dominum ipsum appellans, cujus filiae estis factae, si benefeceritis, et non terreamini ullo pavore.
 
+[SCRIPTURE_ROW] 5|||EN|||For after this manner in the old time the holy women also, who trusted in God, adorned themselves, being in subjection unto their own husbands:|||LA|||Sic enim aliquando et sanctae mulieres quae sperabant in Deum, ornabant seipsas, subjectae propriis maritis:
+[SCRIPTURE_ROW] 6|||EN|||Even as Sarah obeyed Abraham, calling him lord: whose daughters ye are as long as ye do well, and are not afraid with any amazement.|||LA|||Quemadmodum et Sara obediebat Abrahae, dominum ipsum appellans, cujus filiae estis factae, si benefeceritis, et non terreamini ullo pavore.
 [BODY] He sets before them the example of pious women, who sought for spiritual adorning rather than outward meretricious ornaments. But he mentions Sarah above all others, who, having been the mother of all the faithful, is especially worthy of honor and imitation on the part of her sex. Moreover, he returns again to subjection, and confirms it by the example of Sarah, who, according to the words of Moses, called her husband Lord. (<sty c="800000" i="0"><011812></sty>Genesis 18:12.) God, indeed, does not regard such titles; and it may sometimes be, that one especially petulant and disobedient should use such a word with her tongue; but Peter means, that Sarah usually spoke thus, because she knew that a command had been given her by the Lord, to be subject to her husband. Peter adds, that they who imitated her fidelity would be her daughters, that is, reckoned among the faithful.
 
 [BODY] 6<sty c="000000" i="1">. </sty><sty c="800000" i="1">And are not afraid</sty><sty c="000000" i="1">. </sty>The weakness of the sex causes women to be suspicious and timid, and therefore morose; for they fear lest by their subjection, they should be more reproachfully treated. It was this that Peter seems to have had in view in forbidding them to be disturbed by any fear, as though he had said, “Willingly submit to the authority of your husbands, nor let fear prevent your obedience, as though your condition would be worse, were you to obey.” The words may be more general, “Let them not raise up commotions at home.” For as they are liable to be frightened, they often make much of a little thing, and thus disturb themselves and the family. Others think that the timidity of women, which is contrary to faith, is generally reproved, as though Peter exhorted them to perform the duties of their calling with a courageous and intrepid spirit.
@@ -1014,9 +990,8 @@
 [BODY] However, the first explanation is what I prefer, though the last does not differ much from it.<sty c="800000" i="0"> f37</sty>
 
 [H2] <sty c="800000" i="0"><600305></sty>1 PETER 3:7
-[INDENT] 7. Likewise, ye husbands, dwell with <sty c="000000" i="1">them </sty>according to knowledge, giving honor unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.
-[RIGHT] 7. Viri similiter cohabitent secundum scientiam, tanquam infirmiori vasi, muliebri impertientes honorem, tanquam etiam cohaeredes gratiae vitae (<sty c="000000" i="1">vel</sty>, multiplicis gratiae et vitae,) ne preces vestrae interrumpantur.
 
+[SCRIPTURE_ROW] 7|||EN|||Likewise, ye husbands, dwell with <sty c="000000" i="1">them </sty>according to knowledge, giving honor unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.|||LA|||Viri similiter cohabitent secundum scientiam, tanquam infirmiori vasi, muliebri impertientes honorem, tanquam etiam cohaeredes gratiae vitae (<sty c="000000" i="1">vel</sty>, multiplicis gratiae et vitae,) ne preces vestrae interrumpantur.
 [BODY] 7<sty c="000000" i="1">. </sty><sty c="800000" i="1">Likewise, ye husbands, dwell with them</sty>. From husbands he requires prudence; for dominion over their wives is not given them, except on this condition, that they exercise authority prudently. Then let husbands remember that they need prudence to do rightly their duty. And doubtless many foolish things must be endured by them, many unpleasant things must be borne with; and they must at the same time beware lest their indulgence should foster folly. Hence the admonition of Peter is not in vain, that the husbands ought to cohabit with them as with a <sty c="800000" i="1">weaker</sty> <sty c="800000" i="1">vessel.</sty><sty c="000000" i="1"> </sty>Part of the prudence which he mentions, is, that the husbands honor their wives. For nothing destroys the friendship of life more than contempt; nor can we really love any but those whom we esteem; for love must be connected with respect.
 
 [BODY] Moreover, he employs a twofold argument, in order to persuade husbands to treat their wives honourably and kindly. The first is derived from the weakness of the sex; the other, from the honor with which God favors them. These things seem indeed to be in a manner contrary, — that honor ought to be given to wives, because they are weak, and because they excel; but these things well agree together where love exists. It is evident, that God is despised in his gifts, except we honor those on whom he has conferred any excellency. But when we consider that we are members of the same body, we learn to bear with one another, and mutually to cover our infirmities. This is what Paul means when he says that greater honor is given to the weaker members, (<sty c="800000" i="0"><461223></sty>1 Corinthians 12:23;) even because
@@ -1040,12 +1015,10 @@
 [BODY] But the doctrine of Peter extends wider: and then Paul does not mean that prayers are interrupted by mutual cohabitation. Therefore the explanation which I have given ought to be retained.
 
 [H2] <sty c="800000" i="0"><600308></sty>1 PETER 3:8-9
-[BODY] 8. Finally, be ye all of one mind, having compassion one of another; love as brethren, be pitiful, be courteous:
-[RIGHT] 8. Denique sitis omnes idem sentientes, compatientes, fraternè vos diligentes, misericordes, humiles;
 
-[INDENT] 9. Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing.
-[RIGHT] 9. Non reddentes malum pro malo, vel convitium pro convitio; imo potius benedicentes, scientes quod in hoc vocati sitis, ut benedictionem hereditate consequamini.
 
+[SCRIPTURE_ROW] 8|||EN|||Finally, be ye all of one mind, having compassion one of another; love as brethren, be pitiful, be courteous:|||LA|||Denique sitis omnes idem sentientes, compatientes, fraternè vos diligentes, misericordes, humiles;
+[SCRIPTURE_ROW] 9|||EN|||Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing.|||LA|||Non reddentes malum pro malo, vel convitium pro convitio; imo potius benedicentes, scientes quod in hoc vocati sitis, ut benedictionem hereditate consequamini.
 [BODY] Now follow general precepts which indiscriminately belong to all.<sty c="800000" i="0"> f39</sty>
 [BODY] Moreover he summarily mentions some things which are especially necessary to foster friendship and love. The first is, <sty c="800000" i="1">Be ye all of one mind</sty><sty c="000000" i="1">,</sty> or, think ye all the same thing. For though friends are at liberty to think differently, yet to do so is a cloud which obscures love; yea, from this seed easily arises hatred. Sympathy (<sty c="0000d4" i="0">sumpa>qeia</sty>) extends to all our faculties, when concord exists between us; so that every one condoles with us in adversity as well as rejoices with us in prosperity, so that every one not only cares for himself, but also regards the benefit of others.
 
@@ -1064,14 +1037,13 @@
 --- PAGE 92 ---
 
 [H2] <sty c="800000" i="0"><600310></sty>1 PETER 3:10-15
-[BODY] 10. For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile:
-[INDENT] 10. Qui enim vult vitam diligere, et videre dies bonos, contineat linguam suam à malo, et labia sua, ne loquantur dolum; 11. Let him eschew evil, and do good; let him seek peace, and ensue it.
-[INDENT] 11. Declinet à malo et faciat bonum, quaerat pacem et persequatur eam: 12. For the eyes of the Lord are over the righteous, and his ears are open, unto their prayers: but the face of the Lord is against them that do evil.
-[INDENT] 12. Quoniam oculi Domini super justos, et aures ejus in preces eorum; vultus autem Domini super facientes mala. 13. And who is he that will harm you, if ye be followers of that which is good?
-[INDENT] 13. Et quis est qui vobis malè faciat, si boni aemuli sitis? 14. But and if ye suffer for righteousness’ sake, happy are ye: and be not afraid of their terror, neither be troubled;
-[INDENT] 14. Verum etiam si patiamini propter justitiam, beati; timorem vero eorum ne timeatis neque turbemini; 15. But sanctify the Lord God in your hearts.
-[RIGHT] 15. Sed Dominum exercituum sanctificate in cordibus vestris.
 
+[SCRIPTURE_ROW] 10|||EN|||For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile:|||LA|||Qui enim vult vitam diligere, et videre dies bonos, contineat linguam suam à malo, et labia sua, ne loquantur dolum;
+[SCRIPTURE_ROW] 11|||EN|||Let him eschew evil, and do good; let him seek peace, and ensue it.|||LA|||Declinet à malo et faciat bonum, quaerat pacem et persequatur eam:
+[SCRIPTURE_ROW] 12|||EN|||For the eyes of the Lord are over the righteous, and his ears are open, unto their prayers: but the face of the Lord is against them that do evil.|||LA|||Quoniam oculi Domini super justos, et aures ejus in preces eorum; vultus autem Domini super facientes mala.
+[SCRIPTURE_ROW] 13|||EN|||And who is he that will harm you, if ye be followers of that which is good?|||LA|||Et quis est qui vobis malè faciat, si boni aemuli sitis?
+[SCRIPTURE_ROW] 14|||EN|||But and if ye suffer for righteousness’ sake, happy are ye: and be not afraid of their terror, neither be troubled;|||LA|||Verum etiam si patiamini propter justitiam, beati; timorem vero eorum ne timeatis neque turbemini;
+[SCRIPTURE_ROW] 15|||EN|||But sanctify the Lord God in your hearts.|||LA|||Sed Dominum exercituum sanctificate in cordibus vestris.
 [BODY] 10. <sty c="800000" i="1">For he</sty><sty c="000000" i="1">.</sty> He confirms the last sentence by the testimony of David. The passage is taken from the thirty-fourth Psalm, where the Spirit testifies that it will be well with all who keep themselves from all evil-doing and wrong-doing. The common feeling indeed favors what is very different; for men think that they expose themselves to the insolence of enemies, if they do not boldly defend themselves. But the Spirit of God promises a happy life to none except to the meek, and those who endure evils; and we cannot be happy except God prospers our ways; and it is the good and the benevolent, and not the cruel and inhuman, that he will favor.
 
 [BODY] Peter has followed the Greek version, though the difference is but little. David’s words are literally these, — “He who loves life and desires to see good days,” etc. It is indeed a desirable thing, since God has placed us in this world, to pass our time in peace. Then, the way of obtaining this blessing is to conduct ourselves justly and harmlessly towards all.
@@ -1112,12 +1084,10 @@
 [BODY] possession of our minds, that the help promised by the Lord is sufficient for us, we shall be well fortified to repel all the fears of unbelief.
 
 [H2] <sty c="800000" i="0"><600315></sty>1 PETER 3:15-16
-[BODY] 15. And <sty c="000000" i="1">be </sty>ready always to <sty c="000000" i="1">give</sty> an answer to every man that asketh you a reason of the hope that is in you with meekness and fear:
-[RIGHT] 15<sty c="000000" i="1">. </sty>Parati autem sitis ad responsionem cuivis poscenti à vobis rationem ejus quae in vobis est spei;
 
-[INDENT] 16. Having a good conscience; that, whereas they speak evil of you, as of evil-doers, they may be ashamed that falsely accuse your good conversation in Christ.
-[RIGHT] 16. Cum mansuetudine et timore, conscientiam habentes bonam; ut in quo de vobis obtrectant, tanquam maleficis, pudefiant dum infamant bonam vestram in Christo conversationem.
 
+[SCRIPTURE_ROW] 15|||EN|||And <sty c="000000" i="1">be </sty>ready always to <sty c="000000" i="1">give</sty> an answer to every man that asketh you a reason of the hope that is in you with meekness and fear:|||LA|||
+[SCRIPTURE_ROW] 16|||EN|||Having a good conscience; that, whereas they speak evil of you, as of evil-doers, they may be ashamed that falsely accuse your good conversation in Christ.|||LA|||Cum mansuetudine et timore, conscientiam habentes bonam; ut in quo de vobis obtrectant, tanquam maleficis, pudefiant dum infamant bonam vestram in Christo conversationem.
 [BODY] Though this is a new precept, it yet depends on what is gone before, for he requires such constancy in the faithful, as boldly to give a reason for their faith to their adversaries. And this is a part of that sanctification which he had just mentioned; for we then really honor God, when neither fear nor shame hinders us from making a profession of our faith. But Peter does not expressly bid us to assert and proclaim what has been given us by the Lord everywhere, and always and among all indiscriminately, for the Lord gives his people the spirit of discretion, so that they may know when and how far and to whom it is expedient to speak. He bids them only to be ready to give an answer, lest by their sloth and the cowardly fear of the flesh they should expose the doctrine of Christ, by being silent, to the derision of the ungodly. The meaning then is, that we ought to be prompt in avowing our faith, so as to set it forth whenever necessary, lest the unbelieving through our silence should condemn the religion we follow.
 
 [BODY] But it ought to be noticed, that Peter here does not command us to be prepared to solve any question that may be mooted; for it is not the duty of all to speak on every subject. But it is the general doctrine that is meant, which belongs to the ignorant and the simple. Then Peter had in view no other thing, than that Christians should make it evident to unbelievers that
@@ -1139,12 +1109,10 @@
 [BODY] He therefore says, <sty c="800000" i="1">that they may be ashamed</sty><sty c="000000" i="1">, </sty>who blame your good conversation in Christ, and who speak against you as evil-doers; as though he had said, “If your adversaries have nothing to allege against you, except that you follow Christ, they will at length be ashamed of their malicious wickedness, or at least, your innocence will be sufficient to confute them.”
 
 [H2] <sty c="800000" i="0"><600317></sty>1 PETER 3:17-18
-[BODY] 17. For <sty c="000000" i="1">it is </sty>better, if the will of God be so, that ye suffer for welldoing, than for evil-doing.
-[RIGHT] 17. Praestat enim benefaciendo (si ita fert voluntas Dei) pati quàm malefaciendo:
 
-[INDENT] 18. For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:
-[RIGHT] 18. Quia et Christus semel pro peccatis passus est, justus pro injustis, ut nos adduceret Deo; mortificatus quidem carne, vivificatus autem spiritu.
 
+[SCRIPTURE_ROW] 17|||EN|||For <sty c="000000" i="1">it is </sty>better, if the will of God be so, that ye suffer for welldoing, than for evil-doing.|||LA|||Praestat enim benefaciendo (si ita fert voluntas Dei) pati quàm malefaciendo:
+[SCRIPTURE_ROW] 18|||EN|||For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:|||LA|||Quia et Christus semel pro peccatis passus est, justus pro injustis, ut nos adduceret Deo; mortificatus quidem carne, vivificatus autem spiritu.
 [BODY] 17. <sty c="800000" i="1">For it is better</sty><sty c="000000" i="1">. </sty>This belongs not only to what follows but to the whole context. He had spoken of the profession of faith, which at that time was attended with great danger; he says now that it is much better, if they sustained any loss in defending a good cause, to suffer thus unjustly than to be punished for their evil deeds. This consolation is understood rather by secret meditation, than by many words. It is what indeed occurs everywhere in profane authors, that there is a sufficient defense in a good
 
 --- PAGE 99 ---
@@ -1164,14 +1132,12 @@
 [BODY] we are to bear in our body the dying of Christ, in order that his life may be manifested in us. <sty c="800000" i="1">Flesh</sty><sty c="000000" i="1"> </sty>here means the outward man; and <sty c="800000" i="1">Spirit</sty><sty c="000000" i="1"> </sty>means the divine power, by which Christ emerged from death a conqueror.
 
 [H2] <sty c="800000" i="0"><600319></sty>1 PETER 3:19-22
-[BODY] 19. By which also he went and preached unto the spirits in prison;
-[RIGHT] 19. In quo et iis qui in specula <sty c="000000" i="1">(vel, </sty>in excubiis, <sty c="000000" i="1">vel, </sty>carcere) erant spiritibus, profectus prsedicavit;
 
-[INDENT] 20. Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls, were saved by water.
-[INDENT] 20. Quum inereduli fuissent olim, quum semel expectabatur Dei patientia in diebus Noe; dum apparabatur arca, in qua paucae, hoc est, octo animae servatae sunt per aquam. 21. The like figure whereunto <sty c="000000" i="1">even</sty> baptism doth also now save us, (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:
-[INDENT] 21. Cujus figura respondens baptismus, nos quoque salvos reddit, non abjectio sordium carnis, sed bonae conscientiae examen apud Deum, per resurrectionem Jesu Christi: 22. Who is gone into heaven, and is on the right hand of God; angels, and authorities, and powers, being made subject unto him.
-[RIGHT] 22. Qui est in dextera Dei profectus in coelum, subjectis sibi angelis, et potestatibus et virtutibus.
 
+[SCRIPTURE_ROW] 19|||EN|||By which also he went and preached unto the spirits in prison;|||LA|||In quo et iis qui in specula <sty c="000000" i="1">(vel, </sty>in excubiis, <sty c="000000" i="1">vel, </sty>carcere) erant spiritibus, profectus prsedicavit;
+[SCRIPTURE_ROW] 20|||EN|||Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls, were saved by water.|||LA|||Quum inereduli fuissent olim, quum semel expectabatur Dei patientia in diebus Noe; dum apparabatur arca, in qua paucae, hoc est, octo animae servatae sunt per aquam.
+[SCRIPTURE_ROW] 21|||EN|||The like figure whereunto <sty c="000000" i="1">even</sty> baptism doth also now save us, (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:|||LA|||Cujus figura respondens baptismus, nos quoque salvos reddit, non abjectio sordium carnis, sed bonae conscientiae examen apud Deum, per resurrectionem Jesu Christi:
+[SCRIPTURE_ROW] 22|||EN|||Who is gone into heaven, and is on the right hand of God; angels, and authorities, and powers, being made subject unto him.|||LA|||Qui est in dextera Dei profectus in coelum, subjectis sibi angelis, et potestatibus et virtutibus.
 [BODY] 19<sty c="000000" i="1">. </sty><sty c="800000" i="1">By which also</sty><sty c="000000" i="1">. </sty>Peter added this, that we might know that the vivifying power of the Spirit of which he spoke, was not only put forth as to Christ himself, but is also poured forth with regard to us, as Paul shews in
 [FOOTNOTE] <sty c="800000" i="0"><450505></sty>Romans 5:5. He then says, that Christ did not rise only for himself,
 [BODY] but that he made known to others the same power of his Spirit, so that it penetrated to the dead. It hence follows, that we shall not less feel it in vivifying whatever is mortal in us.
@@ -1241,15 +1207,13 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 4</sty>
 
 [H2] <sty c="800000" i="0"><600401></sty>1 PETER 4:1-5
-[BODY] 1. Forasmuch then as Christ hath suffered for us in the flesh, arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin;
-[RIGHT] 1. Christo igitur passo pro nobis carne, vos quoque eadem cogitatione armamini; quod scilicet qui passus est in carne, destitit à peccato;
 
-[INDENT] 2. That he no longer should live the rest of <sty c="000000" i="1">his </sty>time in the flesh to the lusts of men, but to the will of God.
-[INDENT] 2. Ne amplius hominum concupiscentiis, sed voluntati Dei, quod residuum est temporis in carne, vivat. 3. For the time past of <sty c="000000" i="1">our</sty> life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:
-[INDENT] 3. Satis enim nobis est quod anteacto vitae tempore voluntatem gentium patraverimus, quum ambularemus in lasciviis, concupiscentiis, comessationibus, potationibus et nefariis idololatriis: 4. Wherein <sty c="000000" i="1">they </sty>think it strange that ye run not with <sty c="000000" i="1">them </sty>to the same excess of riot, speaking evil of <sty c="000000" i="1">you;</sty>
-[INDENT] 4. Quod illis videtur insolens, quòd non concurratis in eandem luxus profusionem, ideoque malè loquuntur; 5. Who shall give account to him that is ready to judge the quick and the dead.
-[RIGHT] 5. Qui reddituri sunt rationem ei qui paratus est judicare vivos et mortuos.
 
+[SCRIPTURE_ROW] 1|||EN|||Forasmuch then as Christ hath suffered for us in the flesh, arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin;|||LA|||Christo igitur passo pro nobis carne, vos quoque eadem cogitatione armamini; quod scilicet qui passus est in carne, destitit à peccato;
+[SCRIPTURE_ROW] 2|||EN|||That he no longer should live the rest of <sty c="000000" i="1">his </sty>time in the flesh to the lusts of men, but to the will of God.|||LA|||Ne amplius hominum concupiscentiis, sed voluntati Dei, quod residuum est temporis in carne, vivat.
+[SCRIPTURE_ROW] 3|||EN|||For the time past of <sty c="000000" i="1">our</sty> life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:|||LA|||Satis enim nobis est quod anteacto vitae tempore voluntatem gentium patraverimus, quum ambularemus in lasciviis, concupiscentiis, comessationibus, potationibus et nefariis idololatriis:
+[SCRIPTURE_ROW] 4|||EN|||Wherein <sty c="000000" i="1">they </sty>think it strange that ye run not with <sty c="000000" i="1">them </sty>to the same excess of riot, speaking evil of <sty c="000000" i="1">you;</sty>|||LA|||Quod illis videtur insolens, quòd non concurratis in eandem luxus profusionem, ideoque malè loquuntur;
+[SCRIPTURE_ROW] 5|||EN|||Who shall give account to him that is ready to judge the quick and the dead.|||LA|||Qui reddituri sunt rationem ei qui paratus est judicare vivos et mortuos.
 [BODY] 1<sty c="000000" i="1">. </sty><sty c="800000" i="1">Forasmuch then as Christ</sty><sty c="000000" i="1">. </sty>When he had before set forth Christ before us, he only spoke of the suffering of the cross; for sometimes the cross means mortification, because the outward man is wasted by afflictions, and our flesh is also subdued. But he now ascends higher; for he speaks of the reformation of the whole man. The Scripture recommends to us a twofold likeness to the death of Christ, that we are to be conformed to him in reproaches and troubles, and also that the old man being dead and extinct in
 
 --- PAGE 108 ---
@@ -1299,14 +1263,13 @@
 --- PAGE 112 ---
 
 [H2] <sty c="800000" i="0"><600406></sty>1 PETER 4:6-11
-[BODY] 6. For, for this cause was the gospel preached also to them that are dead, that they might be judged according to men in the flesh, but live according to God in the spirit.
-[INDENT] 6. In hoc enim et mortuis evangelizatus fuit (vel, praedicatum fuit evangelium,) ut judicentur quiderm secundum homines carne, vivant autem secundum Deum spiritu. 7. But the end of all things is at hand: be ye therefore sober, and watch unto prayer.
-[INDENT] 7. Porro omnium finis propinquus est: sobrii itaque estote, et vigilantes ad precandum. 8. And above all things, have fervent charity among yourselves: for charity shall cover the multitude of sins.
-[INDENT] 8. Ante onmia vero charitatem inter vos intentam habentes; quia charitas operiet multitudinem peccatorum. 9. Use hospitality one to another without grudging.
-[INDENT] 9. Invicem hospitales sine murmurationibus. 10. As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.
-[INDENT] 10. Ut quisque aecepit donurn, ministrantes illud inter vos, tanquam boni dispensatores multiplicis gratiae Dei. 11. If any speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth; that God in all things may be glorified through Jesus Christ: to whom be praise and dominion for ever and ever. Amen.
-[RIGHT] 11. Siquis loquitur, loquatur tanquam eloquia Dei; siquis ministrat, tanquam ex virtute quam suppeditat Deus; ut in omnibus glorificetur Deus per Jesum Christurn; cui est gloria et imperium in secula seculorum. Amen.
 
+[SCRIPTURE_ROW] 6|||EN|||For, for this cause was the gospel preached also to them that are dead, that they might be judged according to men in the flesh, but live according to God in the spirit.|||LA|||In hoc enim et mortuis evangelizatus fuit (vel, praedicatum fuit evangelium,) ut judicentur quiderm secundum homines carne, vivant autem secundum Deum spiritu.
+[SCRIPTURE_ROW] 7|||EN|||But the end of all things is at hand: be ye therefore sober, and watch unto prayer.|||LA|||Porro omnium finis propinquus est: sobrii itaque estote, et vigilantes ad precandum.
+[SCRIPTURE_ROW] 8|||EN|||And above all things, have fervent charity among yourselves: for charity shall cover the multitude of sins.|||LA|||Ante onmia vero charitatem inter vos intentam habentes; quia charitas operiet multitudinem peccatorum.
+[SCRIPTURE_ROW] 9|||EN|||Use hospitality one to another without grudging.|||LA|||Invicem hospitales sine murmurationibus.
+[SCRIPTURE_ROW] 10|||EN|||As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.|||LA|||Ut quisque aecepit donurn, ministrantes illud inter vos, tanquam boni dispensatores multiplicis gratiae Dei.
+[SCRIPTURE_ROW] 11|||EN|||If any speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth; that God in all things may be glorified through Jesus Christ: to whom be praise and dominion for ever and ever. Amen.|||LA|||Siquis loquitur, loquatur tanquam eloquia Dei; siquis ministrat, tanquam ex virtute quam suppeditat Deus; ut in omnibus glorificetur Deus per Jesum Christurn; cui est gloria et imperium in secula seculorum. Amen.
 [BODY] 6<sty c="000000" i="1">. </sty><sty c="800000" i="1">For this cause was the gospel preached also to them that are dead</sty><sty c="000000" i="1">, </sty>or, He has been evangelized to the dead. We see in what sense he takes the former passage in the third chapter, even that death does not hinder Christ from being always our defender. It is then a remarkable consolation to the godly, that death itself brings no loss to their salvation. Though Christ, then, may not appear a deliverer in this life, yet his redemption is not void,
 
 --- PAGE 113 ---
@@ -1380,14 +1343,13 @@
 --- PAGE 119 ---
 
 [H2] <sty c="800000" i="0"><600412></sty>1 PETER 4:12-17
-[BODY] 12. Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you:
-[INDENT] 12. Dilecti, ne miramini quum exploramini per ignem ad probationem vestri, perinde ac si novum aliquid vobis obtingat: 13. But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.
-[INDENT] 13. Seal quatenus consortes estis passionurn Christi gaudere; ut in revelatione quoque glorie ejus gau deatis exultantes. 14. If ye be reproached for the name of Christ, happy are ye; for the Spirit of glory and of God resteth upon you: on their part he is evil spoken of, but on your part he is glorified.
-[INDENT] 14. Si probris afficimini in nomine Christi, beati estis, quoniam Spiritus glorite et Dei super vos requiescit; secundum ipsos quidem contumelia afflcitur, secundun vos aut em glorificatur. 15. But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busy-body in other men’s matters.
-[INDENT] 15. Ne quis enim vestrum patiatur, ut homicida, aut fur, aut maleficus, ant cupidè rebus alienis inhians. 16. Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.
-[INDENT] 16. Si autem ut Christianus, ne pudefiat, imo glorificet Deum in hac parte. 17. For the time is come that judgment must begin at the house of God : —
-[RIGHT] 17. Quandoquidem et tempus est, ut judicium incipiat a domo Dei:—
 
+[SCRIPTURE_ROW] 12|||EN|||Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you:|||LA|||Dilecti, ne miramini quum exploramini per ignem ad probationem vestri, perinde ac si novum aliquid vobis obtingat:
+[SCRIPTURE_ROW] 13|||EN|||But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.|||LA|||Seal quatenus consortes estis passionurn Christi gaudere; ut in revelatione quoque glorie ejus gau deatis exultantes.
+[SCRIPTURE_ROW] 14|||EN|||If ye be reproached for the name of Christ, happy are ye; for the Spirit of glory and of God resteth upon you: on their part he is evil spoken of, but on your part he is glorified.|||LA|||Si probris afficimini in nomine Christi, beati estis, quoniam Spiritus glorite et Dei super vos requiescit; secundum ipsos quidem contumelia afflcitur, secundun vos aut em glorificatur.
+[SCRIPTURE_ROW] 15|||EN|||But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busy-body in other men’s matters.|||LA|||Ne quis enim vestrum patiatur, ut homicida, aut fur, aut maleficus, ant cupidè rebus alienis inhians.
+[SCRIPTURE_ROW] 16|||EN|||Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.|||LA|||Si autem ut Christianus, ne pudefiat, imo glorificet Deum in hac parte.
+[SCRIPTURE_ROW] 17|||EN|||For the time is come that judgment must begin at the house of God : —|||LA|||Quandoquidem et tempus est, ut judicium incipiat a domo Dei:—
 [BODY] 12. <sty c="800000" i="1">Beloved, think it not strange</sty><sty c="000000" i="1">, </sty>or, wonder not. There is a frequent mention made in this Epistle of afflictions; the cause of which we have elsewhere explained. But this difference is to be observed, that when he exhorts the faithful to patience, he sometimes speaks generally of troubles common to man’s life; but here he speaks of wrongs done to the faithful for the name of Christ. And first, indeed, he reminded them that they ought not to have deemed it strange as for a thing sudden and unexpected; by which he intimates, that they ought by a long mediation to have been previously prepared to bear the cross. For whosoever has resolved to fight under Christ’s banner, will not be dismayed when persecution happens,
 
 --- PAGE 120 ---
@@ -1441,13 +1403,10 @@
 --- PAGE 125 ---
 
 [H2] <sty c="800000" i="0"><600417></sty>1 PETER 4:17-19
-[BODY] 17. — And if <sty c="000000" i="1">it </sty>first <sty c="000000" i="1">begin </sty>at us, what shall the end <sty c="000000" i="1">be </sty>of them that obey not the gospel of God?
-[RIGHT] 17. — Si autem primum a nobis, quis finis eorum qui non obediunt evangelio Dei?
 
-[INDENT] 18. And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?
-[INDENT] 18. Et si juslus vix servatur, impius et peccator ubi apparebunt? 19. Wherefore, let them that; suffer according to the will of God commit the keeping of their souls <sty c="000000" i="1">to him </sty>in well-doing, as unto a faithful Creator.
-[RIGHT] 19. Itaque qui patiuntur secundum Dei voluntatem, tanquam fideli possessori commendent animas suas benefacicndo.
 
+[SCRIPTURE_ROW] 18|||EN|||And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?|||LA|||Et si juslus vix servatur, impius et peccator ubi apparebunt?
+[SCRIPTURE_ROW] 19|||EN|||Wherefore, let them that; suffer according to the will of God commit the keeping of their souls <sty c="000000" i="1">to him </sty>in well-doing, as unto a faithful Creator.|||LA|||Itaque qui patiuntur secundum Dei voluntatem, tanquam fideli possessori commendent animas suas benefacicndo.
 [BODY] When the faithful see that it is well with the wicked, they are necessarily tempted to be envious; and this is a very dangerous trial; for present happiness is what all desire. Hence the Spirit of God carefully dwells on this, in many places, as well as in the thirty-seventh Psalm, lest the faithful should envy the prosperity of the ungodly. The same is what Peter speaks of, for he shews that afflictions ought to be calmly borne by the children of God, when they compare the lot of others with their own. But he takes it as granted that God is the judge of the world, and that, therefore, no one can escape his hand with impunity. He hence infers, that a dreadful vengeance will soon overtake those whose condition seems now favorable. The design of what he says, as I have already stated, is to shew that the children of God should not faint under the bitterness of present evils, but that they ought, on the contrary, calmly to bear their afflictions for a short time, as the issue will be salvation, while the ungodly will have to exchange a fading and fleeting prosperity for eternal perdition.
 
 [BODY] But the argument is from the less to the greater; for if God spares not his own children whom he loves and who obey him, how dreadful will be his severity against enemies and such as are rebellious! There is, then, nothing better than to obey the Gospel, so that God may kindly correct us by his paternal hand for our salvation.
@@ -1475,14 +1434,12 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 5</sty>
 
 [H2] <sty c="800000" i="0"><600501></sty>1 PETER 5:1-4
-[BODY] 1. The elders which are among you I exhort, who am also an elder, and a witness of the sufferings of Christ, and also a partaker of the glory that shall he revealed:
-[RIGHT] 1. Presbyteros qui inter vos sunt, hortor ego qui simul sum presbyter, et testis passionurn Christi, et gloriae qum revelabitur particeps:
 
-[INDENT] 2. Feed the flock of God which is among you, taking the oversight <sty c="000000" i="1">thereof; </sty>not by constraint, but willingly; not for filthy lucre, but of a ready mind;
-[INDENT] 2. Pascite, quantum in vobis est, gregem Dei (<sty c="000000" i="1">vel, </sty>Christi, <sty c="000000" i="1">vel,</sty> Domini,) episcopatu fungentes, non coactè, sed voluntariè; neque turpis lucri causâ, sed liberaliter; 3. Neither as being lords over <sty c="000000" i="1">God’s </sty>heritage, but being ensamples to the flock:
-[INDENT] 3. Nec tanquam dominium exercentes adversus cleros, sed ut sitis exemplaria gregis. 4. And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.
-[RIGHT] 4. Et quum apparuerit Princeps pastorum, reportabitis immarcescibilem gloriae coronam.
 
+[SCRIPTURE_ROW] 1|||EN|||The elders which are among you I exhort, who am also an elder, and a witness of the sufferings of Christ, and also a partaker of the glory that shall he revealed:|||LA|||Presbyteros qui inter vos sunt, hortor ego qui simul sum presbyter, et testis passionurn Christi, et gloriae qum revelabitur particeps:
+[SCRIPTURE_ROW] 2|||EN|||Feed the flock of God which is among you, taking the oversight <sty c="000000" i="1">thereof; </sty>not by constraint, but willingly; not for filthy lucre, but of a ready mind;|||LA|||Pascite, quantum in vobis est, gregem Dei (<sty c="000000" i="1">vel, </sty>Christi, <sty c="000000" i="1">vel,</sty> Domini,) episcopatu fungentes, non coactè, sed voluntariè; neque turpis lucri causâ, sed liberaliter;
+[SCRIPTURE_ROW] 3|||EN|||Neither as being lords over <sty c="000000" i="1">God’s </sty>heritage, but being ensamples to the flock:|||LA|||Nec tanquam dominium exercentes adversus cleros, sed ut sitis exemplaria gregis.
+[SCRIPTURE_ROW] 4|||EN|||And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.|||LA|||Et quum apparuerit Princeps pastorum, reportabitis immarcescibilem gloriae coronam.
 [BODY] IN exhorting pastors to their duty, he points out especially three vices which are found to prevail much, even sloth, desire of gain, and lust for power. In opposition to the first vice he sets alacrity or a willing attention; to the second, liberality; to the third, moderation and meekness, by which they are to keep themselves in their own rank or station.
 
 [BODY] He then says that pastors ought not to exercise care over the flock of the Lord, as far only as they are constrained; for they who seek to do no more than what constraint compels them, do their work formally and negligently. Hence he would have them to do willingly what they do, as those who are really devoted to their work. To correct avarice, he bids them to perform their office with a ready mind; for whosoever has not this end in view, to spend himself and his labor disinterestedly and gladly in
@@ -1528,11 +1485,10 @@
 [BODY] It ought also to be observed, that he calls Christ the <sty c="800000" i="1">chief Pastor</sty><sty c="000000" i="1">; </sty>for we are to rule the Church under him and in his name, in no other way but that he should be still really the Pastor. So the word <sty c="800000" i="1">chief </sty>here does not only mean the principal, but him whose power all others ought to submit to, as they do not represent him except according to his command and authority.
 
 [H2] <sty c="800000" i="0"><600505></sty>1 PETER 5:5-7
-[BODY] 5. Likewise, ye younger, submit yourselves unto the elder: yea, all of you be subject one to another, and be clothed with humility; for God resisteth the proud, and giveth grace to the humble.
-[INDENT] 5. Similiter juniores, subjecti estote senioribus; sic et omnes, alii allis subjiciamini; humilitatem animi induite; propterea quod Deus superbis resistit, humilibus vero dat gratiam. 6. Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:
-[INDENT] 6. Humiliamini ergo sub potenti manu Dei, ut vos extollat quum erit opportunum; 7. Casting all your care upon him; for he careth for you.
-[RIGHT] 7. Omni cura vestra in eum conjecta; quoniam illi cura est vestri.
 
+[SCRIPTURE_ROW] 5|||EN|||Likewise, ye younger, submit yourselves unto the elder: yea, all of you be subject one to another, and be clothed with humility; for God resisteth the proud, and giveth grace to the humble.|||LA|||Similiter juniores, subjecti estote senioribus; sic et omnes, alii allis subjiciamini; humilitatem animi induite; propterea quod Deus superbis resistit, humilibus vero dat gratiam.
+[SCRIPTURE_ROW] 6|||EN|||Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:|||LA|||Humiliamini ergo sub potenti manu Dei, ut vos extollat quum erit opportunum;
+[SCRIPTURE_ROW] 7|||EN|||Casting all your care upon him; for he careth for you.|||LA|||Omni cura vestra in eum conjecta; quoniam illi cura est vestri.
 [BODY] 5<sty c="000000" i="1">. </sty><sty c="800000" i="1">Likewise, ye younger</sty><sty c="000000" i="1">. </sty>The word <sty c="800000" i="1">elder</sty><sty c="000000" i="1"> </sty>is put here in a sense different from what it had before; for it is necessary, when a contrast is made between them and the younger, that the two clauses should correspond. Then he refers to the elders in age, having before spoken of the office; and thus he comes from the particular to the general. And in short, he bids every one that is inferior in age to obey the counsels of the elders, and to be teachable and humble; for the age of youth is inconstant, and requires a bridle. Besides, pastors could not have performed their duty, except this reverential feeling prevailed and was cultivated, so that the younger
 
 --- PAGE 133 ---
@@ -1564,12 +1520,11 @@
 [BODY] But we are not thus bidden to cast all our care on God, as though God wished us to have strong hearts, and to be void of all feeling; but lest fear or anxiety should drive us to impatience. In like manner, the knowledge of divine providence does not free men from every care, that they may securely indulge themselves; for it ought not to encourage the torpidity of the flesh, but to bring rest to faith.
 
 [H2] <sty c="800000" i="0"><600508></sty>1 PETER 5:8-11
-[BODY] 8. Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about seeking whom he may devour:
-[INDENT] 8. Sobrii estote, vigilate, quia adversarius vester diabolus, tanquam leo rugiens, circuit, quaerens quem devoret (vel, quempiam devorare;) 9. Whom resist steadfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.
-[INDENT] 9. Cui resistite firmi fide, scientes easdem passiones, vestrae quae in mundo fraternitati adimpleri. 10. But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle <sty c="000000" i="1">you:</sty>
-[INDENT] 10. Deus autera omnis gratiae, qui nos vocavit in aeternam suam gloriam per Christum Jesum, paulisper afflictos ipse vos perficiat, confirmet, corroboret, stabiliat: 11. To him <sty c="000000" i="1">be </sty>glory and dominion for ever and ever. Amen.
-[RIGHT] 11. Ei gloria et imperium in secula seculorum. Amen.
 
+[SCRIPTURE_ROW] 8|||EN|||Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about seeking whom he may devour:|||LA|||Sobrii estote, vigilate, quia adversarius vester diabolus, tanquam leo rugiens, circuit, quaerens quem devoret (vel, quempiam devorare;)
+[SCRIPTURE_ROW] 9|||EN|||Whom resist steadfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.|||LA|||Cui resistite firmi fide, scientes easdem passiones, vestrae quae in mundo fraternitati adimpleri.
+[SCRIPTURE_ROW] 10|||EN|||But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle <sty c="000000" i="1">you:</sty>|||LA|||Deus autera omnis gratiae, qui nos vocavit in aeternam suam gloriam per Christum Jesum, paulisper afflictos ipse vos perficiat, confirmet, corroboret, stabiliat:
+[SCRIPTURE_ROW] 11|||EN|||To him <sty c="000000" i="1">be </sty>glory and dominion for ever and ever. Amen.|||LA|||Ei gloria et imperium in secula seculorum. Amen.
 [BODY] 8<sty c="000000" i="1">. </sty><sty c="800000" i="1">Be sober</sty><sty c="000000" i="1">. </sty>This explanation extends wider, that as we have war with a most fierce and most powerful enemy, we are to be strenuous in resisting him. But he uses a twofold metaphor, that they were to be sober, and that they were to exercise watchfulness. Surfeiting produces sloth and sleep; even so they who indulge in earthly cares and pleasures, think of nothing else, being under the power of spiritual lethargy.
 
 --- PAGE 136 ---
@@ -1613,13 +1568,11 @@
 --- PAGE 139 ---
 
 [H2] <sty c="800000" i="0"><600512></sty>1 PETER 5:12-14
-[BODY] 12. By Silvanus, a faithful brother unto you, (as I suppose,) I have written briefly, exhorting, and testifying that this is the true grace of God wherein ye stand.
-[RIGHT] 12. Per Silvanum vobis fidum fratrem (ut arbitror) paucis scripsi, exhortans et testificans hanc esse veram gratiam in qua statis.
 
-[INDENT] 13. The <sty c="000000" i="1">church that is </sty>at Babylon, elected together with <sty c="000000" i="1">you,</sty> saluteth you; and <sty c="000000" i="1">so doth </sty>Marcus my son.
-[INDENT] 13. Salutat vos quae in Babylone est Ecclesia, simul vobiscum electa, et Marcus filius meus. 14. Greet ye one another with a kiss of charity. Peace <sty c="000000" i="1">be </sty>with you all that are in Christ Jesus. Amen.
-[RIGHT] 14. Salutate vos invicem in osculo charitatis. Gratia vobis omnibus qui estis in Christo Jesu.
 
+[SCRIPTURE_ROW] 12|||EN|||By Silvanus, a faithful brother unto you, (as I suppose,) I have written briefly, exhorting, and testifying that this is the true grace of God wherein ye stand.|||LA|||Per Silvanum vobis fidum fratrem (ut arbitror) paucis scripsi, exhortans et testificans hanc esse veram gratiam in qua statis.
+[SCRIPTURE_ROW] 13|||EN|||The <sty c="000000" i="1">church that is </sty>at Babylon, elected together with <sty c="000000" i="1">you,</sty> saluteth you; and <sty c="000000" i="1">so doth </sty>Marcus my son.|||LA|||Salutat vos quae in Babylone est Ecclesia, simul vobiscum electa, et Marcus filius meus.
+[SCRIPTURE_ROW] 14|||EN|||Greet ye one another with a kiss of charity. Peace <sty c="000000" i="1">be </sty>with you all that are in Christ Jesus. Amen.|||LA|||Salutate vos invicem in osculo charitatis. Gratia vobis omnibus qui estis in Christo Jesu.
 [BODY] 12. <sty c="800000" i="1">By Silvanus</sty><sty c="000000" i="1">. </sty>He exhorts them at the conclusion of the Epistle to constancy in the faith: yea, he declares that his design in writing, was to retain them in obedience to the doctrine which they had embraced. But he first commends the brevity of his Epistle, lest the reading of it should be tedious to them; and, secondly, he adds a short commendation of his messenger, that the living voice might be added to what was written; for this was the design of the testimony he bears to his fidelity. But the exception, <sty c="800000" i="1">as I suppose</sty><sty c="000000" i="1">, </sty>or think, was added, either as token of modesty or to let them surely know, that he spoke according to the conviction of his own mind; and it was unreasonable for them not to assent to the judgment of so great an apostle.
 
 [BODY] <sty c="800000" i="1">Exhorting and testifying</sty><sty c="000000" i="1">. </sty>How difficult it is to continue in the faith! evidences of this are the daily defections of many: nor, indeed, is such a thing to be wondered at, when we consider how great is the levity and inconsistency of men, and how great is their inclination to vanity. But as no doctrine can strike firm and perpetual roots in men’s hearts, if it be accompanied with any doubt, he testifies that God’s truth, in which they had been taught, was certain. And, doubtless, except its certainty appears to our minds, we must at all times necessarily vacillate, and be ready to

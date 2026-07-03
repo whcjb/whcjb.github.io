@@ -41,12 +41,11 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 1</sty>
 
 [H2] <sty c="800000" i="0"><610101></sty>2 PETER 1:1-4
-[BODY] 1. Simon Peter, a servant and an apostle of Jesus Christ, to them that have obtained like precious faith with us, through the righteousness of God and our Savior Jesus Christ :
-[INDENT] 1. Simeon Petrus, et servus et apostolus Jesu Christi, iis quid æquè pretiosam nobiscum sortiti sunt fidem, per justitiam Dei nostri et Servatoris Jesu Christí, 2. Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord,
-[INDENT] 2. Gratia vobis et pax multiplicetur per cognitionem (vel, cum cognitione) Dei et Jesu Domini nostri; 3. According as his divine power hath given unto us all things that pertain unto life and godliness, through the knowledge of him that hath called us to glory and virtue:
-[INDENT] 3. Quemadmodum divina ejus potentia omnia nobis quae spectant ad vitam et pietatem dedit per cognitionem ejus qui vocavit nos propria gloria et virtute (vel, per gloriam virtutem): 4. Whereby are given unto us exceeding great and precious promises; that by these ye might be partakers of the divine nature, having escaped the corruption that is in the world through lust.
-[RIGHT] 4. Quibus et maximae pretiosae promissiones nobis donatae sunt, ut per Haec fieretis divinæ consortes naturae, ubi fugeritis corruptionem quae in mundo est in concupiscentia.
 
+[SCRIPTURE_ROW] 1|||EN|||Simon Peter, a servant and an apostle of Jesus Christ, to them that have obtained like precious faith with us, through the righteousness of God and our Savior Jesus Christ :|||LA|||Simeon Petrus, et servus et apostolus Jesu Christi, iis quid æquè pretiosam nobiscum sortiti sunt fidem, per justitiam Dei nostri et Servatoris Jesu Christí
+[SCRIPTURE_ROW] 2|||EN|||Grace and peace be multiplied unto you through the knowledge of God, and of Jesus our Lord|||LA|||Gratia vobis et pax multiplicetur per cognitionem (vel, cum cognitione) Dei et Jesu Domini nostri;
+[SCRIPTURE_ROW] 3|||EN|||According as his divine power hath given unto us all things that pertain unto life and godliness, through the knowledge of him that hath called us to glory and virtue:|||LA|||Quemadmodum divina ejus potentia omnia nobis quae spectant ad vitam et pietatem dedit per cognitionem ejus qui vocavit nos propria gloria et virtute (vel, per gloriam virtutem):
+[SCRIPTURE_ROW] 4|||EN|||Whereby are given unto us exceeding great and precious promises; that by these ye might be partakers of the divine nature, having escaped the corruption that is in the world through lust.|||LA|||Quibus et maximae pretiosae promissiones nobis donatae sunt, ut per Haec fieretis divinæ consortes naturae, ubi fugeritis corruptionem quae in mundo est in concupiscentia.
 [BODY] 1. <sty c="800000" i="1">Simon Peter.</sty> Prayer takes the first place at the beginning of this Epistle, and then follows thanksgiving, by which he excites the Jews to gratitude, lest they should forget what great benefits they had already received from God's hand. Why he called himself the <sty c="800000" i="1">servant and an apostle</sty> of Jesus Christ, we have elsewhere stated, even because no one is to be heard in the Church, except he speaks as from the mouth of Christ. But the word <sty c="800000" i="1">servant</sty><sty c="800000" i="0"> </sty>has a more general meaning, because it includes all the ministers of Christ, who sustain any public office in the Church. There was in the apostleship a higher rank of honor. He then intimates, that he was not one
 
 --- PAGE 6 ---
@@ -100,14 +99,12 @@
 [BODY] <sty c="800000" i="1">Having escaped</sty><sty c="000000" i="1">.</sty> We have already explained that the design of the Apostle was, to set before us the dignity of the glory of heaven, to which God invites us, and thus to draw us away from the vanity of this world. Moreover, he sets the corruption of the world in opposition to the divine nature; but he shews that this corruption is not in the elements which surround us, but in our heart, because there vicious and depraved affections prevail, the fountain and root of which he points out by the word <sty c="800000" i="1">lust.</sty> Corruption, then, is thus placed in the world, that we may know that the world is in us.
 
 [H2] <sty c="800000" i="0"><610105></sty>2 PETER 1:5-9
-[BODY] 5. And besides this, giving all diligence, add to your faith, virtue; and to virtue, knowledge;
-[INDENT] 5. Atque in hoc ipsum omne studium applicantes, subministrate in fide vestra virtutem, in virtute autem scientiam; 6. And to knowledge, temperance; and to temperance, patience; and to patience, godliness;
-[INDENT] 6. In scientia verae temperantiam, in temperantia autem patientiam, in patientia verò pietatem, 7. And to godliness, brotherly kindness; and to brotherly kindness charity.
-[RIGHT] 7. In pietate autem fraternum amorem, in fraterno verò amore charitatem.
 
-[INDENT] 8. For if these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful in the knowledge of our Lord Jesus Christ.
-[INDENT] 8. Haec enim si vobis adsint, et abunde, suppetant, non otiosos neque infructuosos constituent vos in cognitione Domini nostri Jesu Christi. 9. But he that lacketh these things is blind, and cannot see afar off, and hath forgotten that he was purged from his old sins.
-[RIGHT] 9. Cui enim Haec non adsunt, caecus est, manu palpans, purgationis oblitus veterum delictorum.
+[SCRIPTURE_ROW] 5|||EN|||And besides this, giving all diligence, add to your faith, virtue; and to virtue, knowledge;|||LA|||Atque in hoc ipsum omne studium applicantes, subministrate in fide vestra virtutem, in virtute autem scientiam;
+[SCRIPTURE_ROW] 6|||EN|||And to knowledge, temperance; and to temperance, patience; and to patience, godliness;|||LA|||In scientia verae temperantiam, in temperantia autem patientiam, in patientia verò pietatem
+[SCRIPTURE_ROW] 7|||EN|||And to godliness, brotherly kindness; and to brotherly kindness charity.|||LA|||In pietate autem fraternum amorem, in fraterno verò amore charitatem.
+[SCRIPTURE_ROW] 8|||EN|||For if these things be in you, and abound, they make you that ye shall neither be barren nor unfruitful in the knowledge of our Lord Jesus Christ.|||LA|||Haec enim si vobis adsint, et abunde, suppetant, non otiosos neque infructuosos constituent vos in cognitione Domini nostri Jesu Christi.
+[SCRIPTURE_ROW] 9|||EN|||But he that lacketh these things is blind, and cannot see afar off, and hath forgotten that he was purged from his old sins.|||LA|||Cui enim Haec non adsunt, caecus est, manu palpans, purgationis oblitus veterum delictorum.
 
 --- PAGE 11 ---
 
@@ -143,15 +140,13 @@
 [BODY] washed,” etc.
 
 [H2] <sty c="800000" i="0"><610110></sty>2 PETER 1:10-15
-[BODY] 10. Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall:
-[INDENT] 10. Quamobrem magis, fratres, studete firmam vestram vocationem et electionem facere: Haec enim si feceritis, non cadetis unquam: 11. For so an entrance shall be ministered unto you abundantly into the everlasting kingdom of our Lord and Savior Jesus Christ.
-[INDENT] 11. Sic enim abundè subministrabitur vobis ingressus in regnum  eternum Domini nostri et Servatoris Jesu Christi. 12. Wherefore I will not be negligent to put you always in remembrance of these things, though ye know them, and be established in the present truth.
-[RIGHT] 12. Itaque non negligam semper de iis commonefacere, etiamsi noveritis, et confirmati sitis in prësenti veritate.
 
-[INDENT] 13. Yea, I think it meet, as long as I am in this tabernacle, to stir you up, by putting you in remembrance;
-[INDENT] 13. Justum autem arbitror, quandiu sum in hoc tabernaculo, vos admonitione; l4. Knowing that shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me.
-[INDENT] 14. Quum sciam brevi me depositurum hoc tabernaculum, quemadmodum et Dominus Jesus manifestavit mihi. 15. Moreover, I will endeavor that ye may be able after my decease to have these things always in remembrance.
-[RIGHT] 15. Dabo autem operam, ut etiam semper post meum discessum possitis horum habere memoriam.
+[SCRIPTURE_ROW] 10|||EN|||Wherefore the rather, brethren, give diligence to make your calling and election sure: for if ye do these things, ye shall never fall:|||LA|||Quamobrem magis, fratres, studete firmam vestram vocationem et electionem facere: Haec enim si feceritis, non cadetis unquam:
+[SCRIPTURE_ROW] 11|||EN|||For so an entrance shall be ministered unto you abundantly into the everlasting kingdom of our Lord and Savior Jesus Christ.|||LA|||Sic enim abundè subministrabitur vobis ingressus in regnum  eternum Domini nostri et Servatoris Jesu Christi.
+[SCRIPTURE_ROW] 12|||EN|||Wherefore I will not be negligent to put you always in remembrance of these things, though ye know them, and be established in the present truth.|||LA|||Itaque non negligam semper de iis commonefacere, etiamsi noveritis, et confirmati sitis in prësenti veritate.
+[SCRIPTURE_ROW] 13|||EN|||Yea, I think it meet, as long as I am in this tabernacle, to stir you up, by putting you in remembrance; l4. Knowing that shortly I must put off this my tabernacle, even as our Lord Jesus Christ hath shewed me.|||LA|||Justum autem arbitror, quandiu sum in hoc tabernaculo, vos admonitione;
+[SCRIPTURE_ROW] 14|||EN||||||LA|||Quum sciam brevi me depositurum hoc tabernaculum, quemadmodum et Dominus Jesus manifestavit mihi.
+[SCRIPTURE_ROW] 15|||EN|||Moreover, I will endeavor that ye may be able after my decease to have these things always in remembrance.|||LA|||Dabo autem operam, ut etiam semper post meum discessum possitis horum habere memoriam.
 
 --- PAGE 14 ---
 
@@ -210,11 +205,10 @@
 [BODY] appears that he died very far from Italy, except he flew in a moment over seas and lands. <sty c="800000" i="0">F12</sty> But the Papists, in order to claim for themselves the body of Peter, make themselves Babylonians, and say that Rome is called Babylon by Peter: this shall be refuted in its proper place. What he says of remembering these things after his death, was intended to shew, that posterity ought to learn from him when dead. For the apostles had not regard only for their own age, but purposed to do us good also. Though, then, they are dead, their doctrine lives and prevails: and it is our duty to profit by their writings, as though they were manifestly present with. us.
 
 [H2] <sty c="800000" i="0"><610116></sty>2 PETER 1:16-18
-[BODY] 16. For we have not followed cunningly-devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but were eye-witnesses of his majesty.
-[INDENT] 16. Neque enim fabulas snbtiliter excogitatas (vel, arte compositas) sequuti, notam vobis fecimus Domini nostri Jesu Christi potentiam et adventum; sed spectatores facti ejus magnificentiae. 17. For he received from God the Father honor and glory, when there came such n voice to him from the excellent glory: This is my beloved Son, in whom I am well pleased.
-[INDENT] 17. Accepit enim à Deo Patre honorém et gloriam, allata illi à magnifica gloria hujusmodi voce, Hie Filius meus dilectus, in quo mihi complacui. 18. And this voice which came from heaven we heard, when we, were with him in the holy mount.
-[RIGHT] 18. Et hanc vocem nos audivimus, dum essemus in monte sancto cum illo.
 
+[SCRIPTURE_ROW] 16|||EN|||For we have not followed cunningly-devised fables, when we made known unto you the power and coming of our Lord Jesus Christ, but were eye-witnesses of his majesty.|||LA|||Neque enim fabulas snbtiliter excogitatas (vel, arte compositas) sequuti, notam vobis fecimus Domini nostri Jesu Christi potentiam et adventum; sed spectatores facti ejus magnificentiae.
+[SCRIPTURE_ROW] 17|||EN|||For he received from God the Father honor and glory, when there came such n voice to him from the excellent glory: This is my beloved Son, in whom I am well pleased.|||LA|||Accepit enim à Deo Patre honorém et gloriam, allata illi à magnifica gloria hujusmodi voce, Hie Filius meus dilectus, in quo mihi complacui.
+[SCRIPTURE_ROW] 18|||EN|||And this voice which came from heaven we heard, when we, were with him in the holy mount.|||LA|||Et hanc vocem nos audivimus, dum essemus in monte sancto cum illo.
 [BODY] 16. <sty c="800000" i="1">For we have not followed cunningly-devised fables.</sty> It gives us much courage, when we know that we labor in a matter that is certain. Lest, then, the faithful should think that in these labors they were beating the air, he now comes to set forth the certainty of the gospel; and he denies that anything had been delivered by him but what was altogether true and indubitable: and they were encouraged to persevere, when they were sure of the prosperous issue of their calling.
 
 [BODY] In the first place, Peter indeed asserts that he had been an eye-witness; for he had himself seen with his own eyes the glory of Christ, of which he
@@ -244,11 +238,10 @@
 [CENTERED] <sty c="000080" i="0">“Be ye holy, for I am holy, who dwell in the midst of you.”</sty> <sty c="000080" i="0">(</sty><sty c="800000" i="0"><031144></sty><sty c="000080" i="0">Leviticus 11:44; 19:2)</sty>
 
 [H2] <sty c="800000" i="0"><610119></sty>2 PETER 1:19-21
-[BODY] 19. We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto a light that shineth in a dark place, until the day dawn, and the daystar arise in your hearts;
-[INDENT] 19. Et habemus firmiorem propheticum sermonem, cui bene facitis attendentes, tanquam lucernae apparenti in caliginoso loco, donee illuceat dies, et lucifer oriatur in cordibus vestris; 20. Knowing this first, that no prophecy of the scripture is of any private interpretation.
-[INDENT] 20. Hoc primùm cognito, quòd omnis prophetia scripturae privatae (vel, proprii motus) interpretationis non est: 21. For the prophecy came not in old time by the will of man; but holy men of God spake as they were moved by the Holy Ghost.
-[RIGHT] 21. Neque enim voluntate hominis allata est quondam prophetia; sed à Spiritu Sancto impulsi, loquuti sunt sancti Dei homines.
 
+[SCRIPTURE_ROW] 19|||EN|||We have also a more sure word of prophecy; whereunto ye do well that ye take heed, as unto a light that shineth in a dark place, until the day dawn, and the daystar arise in your hearts;|||LA|||Et habemus firmiorem propheticum sermonem, cui bene facitis attendentes, tanquam lucernae apparenti in caliginoso loco, donee illuceat dies, et lucifer oriatur in cordibus vestris;
+[SCRIPTURE_ROW] 20|||EN|||Knowing this first, that no prophecy of the scripture is of any private interpretation.|||LA|||Hoc primùm cognito, quòd omnis prophetia scripturae privatae (vel, proprii motus) interpretationis non est:
+[SCRIPTURE_ROW] 21|||EN|||For the prophecy came not in old time by the will of man; but holy men of God spake as they were moved by the Holy Ghost.|||LA|||Neque enim voluntate hominis allata est quondam prophetia; sed à Spiritu Sancto impulsi, loquuti sunt sancti Dei homines.
 [BODY] 19. <sty c="800000" i="1">We have also. </sty>He now shews that the truth of the gospel is founded on the oracles of the prophets, lest they who embraced it should hesitate to devote themselves wholly to Christ: for they who waver cannot be otherwise than remiss in their minds. But when he says, “We have,” he refers to himself and other teachers, as well as to their disciples. The apostles had the prophets as the patrons of their doctrine; the faithful also sought from them a confirmation of the gospel. I am the more disposed to take this view, because he speaks of the whole Church, and makes himself one among others. At the same time, he refers more especially to the Jews, who were well acquainted with the doctrine of the prophets. And hence, as I think, he calls their word <sty c="800000" i="1">more sure</sty> or firmer.
 
 [BODY] For they who take the comparative for a positive, that is, “more sure,” for “sure,” do not sufficiently consider the whole context. The sense also is a forced one, when it is said to be “more sure,” because God really completed what he had promised concerning his Son. For the truth of the
@@ -309,13 +302,11 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 2</sty>
 
 [H2] <sty c="800000" i="0"><610201></sty>2 PETER 2:1-3
-[BODY] 1. But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying the Lord that bought them, and bring upon themselves swift destruction.
-[INDENT] 1. Fuerunt autem et falsi prophetae in populo, sicuti et inter vos erunt falsi doctores, qui subinducent sectas perditionis, et etiam Dominum qui eos redemit abnegantes, accersentes sibi celerem interitum. 2. And many shall follow their pernicious ways; by reason of whom the way of truth shall be evil spoken of.
-[RIGHT] 2. Et multi sequentur eorum exitia, per quos via veritatis blssphemabitur;
 
-[INDENT] 3. And through covetousness shall they with feigned words make merchandise of you; whose judgment now of a long time lingereth not, and their damnation slumbereth not.
-[RIGHT] 3. Et in avaritia fictis sermonibus de vobis negotiabuntur; quorum judicium pridem non cessat, et quorum perditio non dormitat.
 
+[SCRIPTURE_ROW] 1|||EN|||But there were false prophets also among the people, even as there shall be false teachers among you, who privily shall bring in damnable heresies, even denying the Lord that bought them, and bring upon themselves swift destruction.|||LA|||Fuerunt autem et falsi prophetae in populo, sicuti et inter vos erunt falsi doctores, qui subinducent sectas perditionis, et etiam Dominum qui eos redemit abnegantes, accersentes sibi celerem interitum.
+[SCRIPTURE_ROW] 2|||EN|||And many shall follow their pernicious ways; by reason of whom the way of truth shall be evil spoken of.|||LA|||Et multi sequentur eorum exitia, per quos via veritatis blssphemabitur;
+[SCRIPTURE_ROW] 3|||EN|||And through covetousness shall they with feigned words make merchandise of you; whose judgment now of a long time lingereth not, and their damnation slumbereth not.|||LA|||Et in avaritia fictis sermonibus de vobis negotiabuntur; quorum judicium pridem non cessat, et quorum perditio non dormitat.
 [BODY] 1. <sty c="800000" i="1">But there were.</sty> As weak consciences are usually very grievously and dangerously shaken, when false teachers arise, who either corrupt or mutilate the doctrine of faith, it was necessary for the Apostle, while seeking to encourage the faithful to persevere, to remove out of the way an offense of this kind. He, moreover, comforted those to whom he was writing, and confirmed them by this argument, that God has always tried and proved his Church by such a temptation as this, in order that novelty might not disturb their hearts. “Not different,” he says, “will be the condition of the Church under the gospel, from what it was formerly under the law; false prophets disturbed the ancient Church; the same thing must also be expected by us.”
 
 [BODY] It was necessary expressly to shew this, because many imagined that the Church would enjoy tranquillity under the rein of Christ; for as the prophets had promised that at his coming there would be real peace, the
@@ -358,13 +349,12 @@
 --- PAGE 31 ---
 
 [H2] <sty c="800000" i="0"><610204></sty>2 PETER 2:4-8
-[BODY] 4. For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;
-[INDENT] 4. Si enim Angelis qui peccaverant, Deus non perpercit, sed catenis caliginis in tartarum praecipitatos tradidit servandos in judicium; 5. And spared not the old world, but saved Noah, the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;
-[INDENT] 5. Et prisco mundo non pepercit, sed octavum justitiae praeconem Noe servavit, diluvio in mundum impiorum inducto; 6. And turning the cities of Sodom and Gomorrha into ashes, condemned them with an overthrow, making them an example unto those that after should live ungodly;
-[INDENT] 6. Et civitates Sodomorum et Gomorrae  in cinerem redactas, subversione damnavit, easque statuit exemplum iis qui impia acturi forent; 7. And delivered just Lot, vexed with the filthy conversation of the wicked:
-[INDENT] 7. Et justum Lot qui opprimebatur à nefariis per libidinosam conversationem eripuit; 8. (For that righteous man dwelling among them, in seeing and hearing, vexed his righteous soul from day to day with their unlawful deeds;)
-[RIGHT] 8. Nam oculis et auribus justus ille, quum habitaret inter ipsos quotidie animam justam iniquis illorum operibus excruciabat;
 
+[SCRIPTURE_ROW] 4|||EN|||For if God spared not the angels that sinned, but cast them down to hell, and delivered them into chains of darkness, to be reserved unto judgment;|||LA|||Si enim Angelis qui peccaverant, Deus non perpercit, sed catenis caliginis in tartarum praecipitatos tradidit servandos in judicium;
+[SCRIPTURE_ROW] 5|||EN|||And spared not the old world, but saved Noah, the eighth person, a preacher of righteousness, bringing in the flood upon the world of the ungodly;|||LA|||Et prisco mundo non pepercit, sed octavum justitiae praeconem Noe servavit, diluvio in mundum impiorum inducto;
+[SCRIPTURE_ROW] 6|||EN|||And turning the cities of Sodom and Gomorrha into ashes, condemned them with an overthrow, making them an example unto those that after should live ungodly;|||LA|||Et civitates Sodomorum et Gomorrae  in cinerem redactas, subversione damnavit, easque statuit exemplum iis qui impia acturi forent;
+[SCRIPTURE_ROW] 7|||EN|||And delivered just Lot, vexed with the filthy conversation of the wicked:|||LA|||Et justum Lot qui opprimebatur à nefariis per libidinosam conversationem eripuit;
+[SCRIPTURE_ROW] 8|||EN|||(For that righteous man dwelling among them, in seeing and hearing, vexed his righteous soul from day to day with their unlawful deeds;)|||LA|||Nam oculis et auribus justus ille, quum habitaret inter ipsos quotidie animam justam iniquis illorum operibus excruciabat;
 [BODY] 4.<sty c="800000" i="1"> For if.</sty> We have stated how much it behoves us to know that the ungodly, who by their mischievous opinions corrupt the Church, cannot escape God’s vengeance; and this he proves especially by three remarkable examples of God's judgment, — that he spared not even angels, that he once destroyed the whole world by a deluge, that he reduced Sodom to ashes, and other neighboring cities. But Peter thought it sufficient to take as granted what ought to be never doubted by us, that is, that God is the judge of the whole world. It hence follows that the punishment he formerly inflicted on the ungodly and wicked, he will now also inflict on the like characters. For he can never be unlike himself, nor does he shew respect of persons, so as to forgive the same wickedness in one which he has punished in another; but he hates injustice and wrong equally, whenever it is found. <sty c="800000" i="0">F24</sty>
 
 --- PAGE 32 ---
@@ -396,13 +386,11 @@
 [BODY] But Peter expresses more than before, that is, that just Lot underwent voluntary sorrows; as it is right that all the godly should feel no small grief when they see the world rushing into every kind of evil, so the more necessary it is that they should groan for their own sins. And Peter expressly mentioned this, lest when impiety everywhere prevails, we should be captivated and inebriated by the allurements of vices, and perish together with others, but that we might prefer this grief, blessed by the Lord, to all the pleasures of the world.
 
 [H2] <sty c="800000" i="0"><610209></sty>2 PETER 2:9-11
-[BODY] 9. The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished;
-[RIGHT] 9. Novit Dominus pios ex tentatione eripere; injustos autem in diem judicii puniendos servare;
 
-[INDENT] 10. But chiefly them that walk after the flesh in the lust of uncleanness, and despise government: presumptuous are they, self-willed, they are not afraid to speak evil of dignities:
-[INDENT] 10. Praesertim verò eos qui post carnem in concupiscentia pollutionis ambulant, dominationem despiciunt, audaces, praefracti, qui excellentias non verentur probro afficere; 11. Whereas angels, which are greater in power and might, bring not railing accusation against them before the Lord.
-[RIGHT] 11. Quum angeli, qui sunt robore et potentia majores, non ferant adversus illas coram Domino contumeliosum judicium.
 
+[SCRIPTURE_ROW] 9|||EN|||The Lord knoweth how to deliver the godly out of temptations, and to reserve the unjust unto the day of judgment to be punished;|||LA|||Novit Dominus pios ex tentatione eripere; injustos autem in diem judicii puniendos servare;
+[SCRIPTURE_ROW] 10|||EN|||But chiefly them that walk after the flesh in the lust of uncleanness, and despise government: presumptuous are they, self-willed, they are not afraid to speak evil of dignities:|||LA|||Praesertim verò eos qui post carnem in concupiscentia pollutionis ambulant, dominationem despiciunt, audaces, praefracti, qui excellentias non verentur probro afficere;
+[SCRIPTURE_ROW] 11|||EN|||Whereas angels, which are greater in power and might, bring not railing accusation against them before the Lord.|||LA|||Quum angeli, qui sunt robore et potentia majores, non ferant adversus illas coram Domino contumeliosum judicium.
 [BODY] 9. <sty c="800000" i="1">The Lord knoweth.</sty> What first offends the weak is, that when the faithful anxiously seek aid, they are not immediately helped by God; but on the contrary he suffers them sometimes as it were to pine away through daily weariness and languor; and secondly, when the wicked grow wanton with impunity and God in the meantime Is silent, as though he connived at their evil deeds. This double offense Peter now removes; for he testifies that the Lord knows when it is expedient to deliver the godly from temptation. By these words he reminds us that this office ought to be left
 
 --- PAGE 35 ---
@@ -436,17 +424,14 @@
 --- PAGE 38 ---
 
 [H2] <sty c="800000" i="0"><610212></sty>2 PETER 2:12-16
-[BODY] 12. But these, as natural brute beasts, made to be taken and destroyed, speak evil of the things that they understand not; and shall utterly perish in their own corruption;
-[INDENT] 12. Isti autem tanquam bruta animalia, naturaliter genita in capturam et perniciem, in quibus nihil intelligunt maledicentes, in sua corruptione peribunt 13. And shall receive the reward of unrighteousness, as they that count it pleasure to riot in the daytime: spots they are and blemishes, sporting themselves with their own deceivings while they feast with you:
-[RIGHT] 13. Recipientes mercedem injustitiae, pro voluptate ducentes in diem frui deliciis, labes et maculae, deliciantes in erroribus suis, conviventes vobiscum;
 
-[INDENT] 14. Having eyes full of adultery, and that cannot cease from sin; beguiling unstable souls: an heart they have exercised with covetous practices; cursed children
-[INDENT] 14. Oculos habentes plenos adulterae, et inquietos ad peccandum, inescantes animas instabiles, cor habentes exercitatum cupiditatibus, execrabiles: filii; 15. Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;
-[RIGHT] 15. Qui relicta via aberraverunt, sequuti viam Balaam, filii Bozor, qui mercedem injustitiae dilexit;
 
-[INDENT] 16. But was rebuked for his inequity: the dumb ass, speaking with man’s voice, forbade the madness of the prophet.
-[RIGHT] 16. Sed redargutus fuit de sua iniquitate; animal subjugale mutum, humana voce loquens, prohibuit prophetae dementiam. (<sty c="800000" i="0"><042316></sty>Numbers 23:16, 28.)
 
+[SCRIPTURE_ROW] 12|||EN|||But these, as natural brute beasts, made to be taken and destroyed, speak evil of the things that they understand not; and shall utterly perish in their own corruption;|||LA|||Isti autem tanquam bruta animalia, naturaliter genita in capturam et perniciem, in quibus nihil intelligunt maledicentes, in sua corruptione peribunt
+[SCRIPTURE_ROW] 13|||EN|||And shall receive the reward of unrighteousness, as they that count it pleasure to riot in the daytime: spots they are and blemishes, sporting themselves with their own deceivings while they feast with you:|||LA|||Recipientes mercedem injustitiae, pro voluptate ducentes in diem frui deliciis, labes et maculae, deliciantes in erroribus suis, conviventes vobiscum;
+[SCRIPTURE_ROW] 14|||EN|||Having eyes full of adultery, and that cannot cease from sin; beguiling unstable souls: an heart they have exercised with covetous practices; cursed children|||LA|||Oculos habentes plenos adulterae, et inquietos ad peccandum, inescantes animas instabiles, cor habentes exercitatum cupiditatibus, execrabiles: filii;
+[SCRIPTURE_ROW] 15|||EN|||Which have forsaken the right way, and are gone astray, following the way of Balaam the son of Bosor, who loved the wages of unrighteousness;|||LA|||Qui relicta via aberraverunt, sequuti viam Balaam, filii Bozor, qui mercedem injustitiae dilexit;
+[SCRIPTURE_ROW] 16|||EN|||But was rebuked for his inequity: the dumb ass, speaking with man’s voice, forbade the madness of the prophet.|||LA|||Sed redargutus fuit de sua iniquitate; animal subjugale mutum, humana voce loquens, prohibuit prophetae dementiam. (<sty c="800000" i="0"><042316></sty>Numbers 23:16, 28.)
 [BODY] 12. <sty c="800000" i="1">But these.</sty> He proceeds with what he had begun to say respecting impious and wicked corrupters. And, first, he condemns their loose manners and the obscene wickedness of their whole life; and then he says that they were audacious and perverse, so that by their scurrilous garrulity they insinuated themselves into the favor of many.
 
 [BODY] He especially compares them to those <sty c="800000" i="1">brute animals, </sty>which seem to have come to existence to be ensnared, and to be driven to their own ruin by
@@ -478,13 +463,11 @@
 [BODY] Now, if any one considers the chief things which Peter says, he will see that his warning is equally suitable to the present age; for it is an evil which prevails everywhere, that men use scurrilous raillery for the purpose of deriding God and the Savior; nay, they ridicule all religion under the cloak of wit; and when addicted, like beasts, to their own lusts, they will mingle with the faithful; they prattle something about the gospel, and yet they prostitute their tongue to the service of the devil, that they may bring the whole world, as far as they can, to eternal perdition. They are in this respect worse than Balaam himself, because they gratuitously pour forth their maledictions, when he, induced by reward, attempted to curse.
 
 [H2] <sty c="800000" i="0"><610217></sty>2 PETER 2:17-19
-[BODY] 17. These are wells without water, clouds that are carried with a tempest; to whom the mist of darkness is reserved for ever.
-[INDENT] 17. Ii sunt fontes sine aqua, nebulae quae  turbine aguntur; quibus caligo tenebrarum in aeternum parata est. 18. For when they speak great swelling words of vanity, they allure through the lusts of the flesh, through much wantonness, those that were clean escaped from them who live in error.
-[RIGHT] 18. Nam ubi plusqum fastuosa vanitatis verba sonuerint, inescant per concupiscentias carnis, lasciviis, eos qui verè aufugerant ab iis qui in errore versantur.
 
-[INDENT] 19. While they promise them liberty, they themselves are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage.
-[RIGHT] 19. Dum libertatem illis promittunt, quum ipsi sint servi corruptionis: a quo enim quis superatus est, huie in servitutem est addictus.
 
+[SCRIPTURE_ROW] 17|||EN|||These are wells without water, clouds that are carried with a tempest; to whom the mist of darkness is reserved for ever.|||LA|||Ii sunt fontes sine aqua, nebulae quae  turbine aguntur; quibus caligo tenebrarum in aeternum parata est.
+[SCRIPTURE_ROW] 18|||EN|||For when they speak great swelling words of vanity, they allure through the lusts of the flesh, through much wantonness, those that were clean escaped from them who live in error.|||LA|||Nam ubi plusqum fastuosa vanitatis verba sonuerint, inescant per concupiscentias carnis, lasciviis, eos qui verè aufugerant ab iis qui in errore versantur.
+[SCRIPTURE_ROW] 19|||EN|||While they promise them liberty, they themselves are the servants of corruption: for of whom a man is overcome, of the same is he brought in bondage.|||LA|||Dum libertatem illis promittunt, quum ipsi sint servi corruptionis: a quo enim quis superatus est, huie in servitutem est addictus.
 [BODY] 17. <sty c="800000" i="1">These are wells,</sty> or fountains, <sty c="800000" i="1">without water.</sty> He shews by these two metaphors, that they had nothing within, though they made a great display. A fountain, by its appearance, draws men to itself, because it promises them water to drink, and for other purposes; as soon as clouds appear, they give hope of immediate rain to irrigate the earth. He then says that they were like fountains, because they excelled in boasting, and displayed some acuteness in their thoughts and elegance in their words; but
 
 --- PAGE 42 ---
@@ -518,11 +501,10 @@
 --- PAGE 45 ---
 
 [H2] <sty c="800000" i="0"><610220></sty>2 PETER 2:20-22
-[BODY] 20. For if after they have escaped the pollutions of the world, through the knowledge of the Lord and Savior Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning.
-[INDENT] 20. Nam si ii qui sufugerant ab inquinamentis mundi per cognitionem Domini et Servatoris Jesu Christi, rursum iisdem impliciti superantur, facta sunt illis postrema pejora prioribus. 21. For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.
-[INDENT] 21. Melius enim ipsis esset non cognovisse viam justitiae, qum ubi cognoverunt converti ab eo, quod illis traditum fuit, sancto praecepto. 22. But it is happened unto them according to the true proverb, The dog is turned to his own vomit, again; and the sow that was washed to her wallowing in the mire.
-[RIGHT] 22. Sed accidit illis quod vero proverbio dicitur, Canis reversus ad proprium vomitum; et sus lota, ad volutabrum coeni.
 
+[SCRIPTURE_ROW] 20|||EN|||For if after they have escaped the pollutions of the world, through the knowledge of the Lord and Savior Jesus Christ, they are again entangled therein, and overcome, the latter end is worse with them than the beginning.|||LA|||Nam si ii qui sufugerant ab inquinamentis mundi per cognitionem Domini et Servatoris Jesu Christi, rursum iisdem impliciti superantur, facta sunt illis postrema pejora prioribus.
+[SCRIPTURE_ROW] 21|||EN|||For it had been better for them not to have known the way of righteousness, than, after they have known it, to turn from the holy commandment delivered unto them.|||LA|||Melius enim ipsis esset non cognovisse viam justitiae, qum ubi cognoverunt converti ab eo, quod illis traditum fuit, sancto praecepto.
+[SCRIPTURE_ROW] 22|||EN|||But it is happened unto them according to the true proverb, The dog is turned to his own vomit, again; and the sow that was washed to her wallowing in the mire.|||LA|||Sed accidit illis quod vero proverbio dicitur, Canis reversus ad proprium vomitum; et sus lota, ad volutabrum coeni.
 [BODY] 20. <sty c="800000" i="1">For if after.</sty> He again shews how pernicious was the sect which led men consecrated to God back again to their old filth and the corruptions of the world. And he exhibits the heinousness of the evil by a comparison; for it was no common sin to depart from the holy doctrine of God. It would have been better for them, he says, not to have known the way of righteousness; for though there is no excuse for ignorance, yet the servant who knowingly and wilfully despises the commands of his lord, deserves a twofold punishment. There was besides ingratitude, because they wilfully extinguished the light of God, rejected the favor conferred on them, and having shaken off the yoke, became perversely wanton against God; yea, as far as they could, they profaned and abrogated the inviolable covenant of God, which had been ratified by the blood of Christ. The more earnest then ought we to be, to advance humbly and carefully in the course of our calling. We must now consider each sentence.
 
 [BODY] By naming <sty c="800000" i="1">the pollutions of the world,</sty> he shews that we roll in filth and are wholly polluted, until we renounce the world. <sty c="800000" i="1">By the knowledge of Christ</sty> he no doubt understands the gospel. He testifies that the design of it is, to deliver us from the defilements of the world, and to lead us far away from
@@ -543,14 +525,12 @@
 [H1] <sty c="0000d4" i="0">CHAPTER 3</sty>
 
 [H2] <sty c="800000" i="0"><610301></sty>2 PETER 3:1-4
-[BODY] 1. This second epistle, beloved, I now write unto you; in both which I stir up your pure minds by way of remembrance.
-[INDENT] 1. Hane jam, dilecti, secundam vobis scribo epistolam, in quibus excito per commonefactionem vestram puram mentem; 2. That ye may be mindful of the words which mere spoken before by the holy prophets, and of the commandment of us the apostles of the Lord and Savior:
-[RIGHT] 2. Ut memores sitis verborum quae predicta sunt a sanctis prophetis, et praecepti nostri, qui sumus apostoli Domini et Servatoris;
 
-[INDENT] 3. knowing this first, that there shall come in the last days scoffers, walking after their own lusts,
-[INDENT] 3. Hoc primum scientes, quòd venient in extremo dierum illusores, secundum suas ipsorum concupiscentias ambulantes, 4. And saying, Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were from the beginning of the creation.
-[RIGHT] 4. Ac dicentes, Ubi est promissio adventus ejus? Ex quo enim patres dormierunt, omnia sic permanent ab initio creationis.
 
+[SCRIPTURE_ROW] 1|||EN|||This second epistle, beloved, I now write unto you; in both which I stir up your pure minds by way of remembrance.|||LA|||Hane jam, dilecti, secundam vobis scribo epistolam, in quibus excito per commonefactionem vestram puram mentem;
+[SCRIPTURE_ROW] 2|||EN|||That ye may be mindful of the words which mere spoken before by the holy prophets, and of the commandment of us the apostles of the Lord and Savior:|||LA|||Ut memores sitis verborum quae predicta sunt a sanctis prophetis, et praecepti nostri, qui sumus apostoli Domini et Servatoris;
+[SCRIPTURE_ROW] 3|||EN|||knowing this first, that there shall come in the last days scoffers, walking after their own lusts|||LA|||Hoc primum scientes, quòd venient in extremo dierum illusores, secundum suas ipsorum concupiscentias ambulantes
+[SCRIPTURE_ROW] 4|||EN|||And saying, Where is the promise of his coming? for since the fathers fell asleep, all things continue as they were from the beginning of the creation.|||LA|||Ac dicentes, Ubi est promissio adventus ejus? Ex quo enim patres dormierunt, omnia sic permanent ab initio creationis.
 [BODY] 1. Lest they should be wearied with the Second Epistle as though the first was sufficient, he says that it was not written in vain, because they stood in need of being often stirred up. To make this more evident, he shews that they could not be beyond danger, except they were well fortified, because they would have to contend with desperate men, who would not only corrupt the purity of the faith, by false opinions, but do what they could to subvert entirely the whole faith.
 
 [BODY] By saying, <sty c="800000" i="1">I stir up your pure mind,</sty> he means the same as though he had said, “I wish to awaken you to a sincerity of mind.” And the words ought to be thus explained, “I stir up your mind that it may be pure and bright.” For the meaning is, that the minds of the godly become dim, and as it were contract rust, when admonitions cease. But we also hence learn, that men
@@ -580,18 +560,14 @@
 [BODY] many ages have passed sway. Hence they concluded that what was said of the destruction of the world was a fable; because they conjectured, that as it had lasted so long, it would be perpetual.
 
 [H2] <sty c="800000" i="0"><610305></sty>2 PETER 3:5-8
-[BODY] 5. For this they willingly are ignorant of, that by the word of God the heavens were of old, and the earth standing out of the water and in the water:
-[RIGHT] 5. Nam hoe nesciunt volentes. qnòd caeli jam olim fuerint, et terra ex aqua, et per aquam consistens, Dei sermone;
 
-[INDENT] 6. Whereby the world that then was, being overflowed with water, perished:
-[RIGHT] 6. Per quae mundus qui tunc erat, aqua inundatus periit:
 
-[INDENT] 7. But the heavens and the earth which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.
-[RIGHT] 7. Qui autem nunc sunt coeli et terra, ejusdem sermone repositi sunt, et servantur igni in diem judicii et perditionis impiorum.
 
-[INDENT] 8. But, beloved, be not ignorant of this one thing, that one day is with the Lord as a thousand years, and a thousand years as one day.
-[RIGHT] 8. Porri, ne hoc unum nos lateat, dilecti, quòd unus dies apud Dominum perinde est ut mille anni, et mille anni ut dies unus.
 
+[SCRIPTURE_ROW] 5|||EN|||For this they willingly are ignorant of, that by the word of God the heavens were of old, and the earth standing out of the water and in the water:|||LA|||Nam hoe nesciunt volentes. qnòd caeli jam olim fuerint, et terra ex aqua, et per aquam consistens, Dei sermone;
+[SCRIPTURE_ROW] 6|||EN|||Whereby the world that then was, being overflowed with water, perished:|||LA|||Per quae mundus qui tunc erat, aqua inundatus periit:
+[SCRIPTURE_ROW] 7|||EN|||But the heavens and the earth which are now, by the same word are kept in store, reserved unto fire against the day of judgment and perdition of ungodly men.|||LA|||Qui autem nunc sunt coeli et terra, ejusdem sermone repositi sunt, et servantur igni in diem judicii et perditionis impiorum.
+[SCRIPTURE_ROW] 8|||EN|||But, beloved, be not ignorant of this one thing, that one day is with the Lord as a thousand years, and a thousand years as one day.|||LA|||Porri, ne hoc unum nos lateat, dilecti, quòd unus dies apud Dominum perinde est ut mille anni, et mille anni ut dies unus.
 [BODY] 5. <sty c="800000" i="1">For this they willingly are ignorant of.</sty> By one argument only he confutes the scoff of the ungodly, even by this, that the world once perished by a deluge of waters, when yet it consisted of waters. (<sty c="800000" i="0"><010102></sty>Genesis 1:2.) And as the history of this was well known, he says that they <sty c="800000" i="1">willingly,</sty> or of their own accord, erred. For they who infer the perpetuity of the world from its present state, designedly close their eyes, so as not to see so clear a judgment of God. The world no doubt had its origin from waters, for Moses calls the chaos from which the earth emerged, waters; and further, it was sustained by waters; it yet pleased the Lord to use waters for the purpose of destroying it. It hence appears that the power of nature is not sufficient to sustain and preserve the world, but that on the contrary it contains the very element of its own ruin, whenever it may please God to destroy it.
 
 --- PAGE 51 ---
@@ -616,17 +592,14 @@
 --- PAGE 53 ---
 
 [H2] <sty c="800000" i="0"><610109></sty>2 PETER 1:9-13
-[BODY] 9. The Lord is not slack concerning his promise, as some men count but is long-suffering toward us, not willing that any should perish, but that all should come to repentance.
-[INDENT] 9. Non tardat Dominus in promissione, sicuti quidam tarditatem slackness; existimant; sed tolerantem se praebet erga nos, nolens ullos perire, sed omnes ad poenitentiam recipere (aut, colligi, vel, aggregari.) 10. But the day of the Lord will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also, and the works that are therein, shall be burnt up.
-[INDENT] 10. Veniet autem dies Domini tanquam fur in nocte, in qua coeli in modum procellae transibunt, elementa autem ardore solventur; et terra, quæque in ea sunt opera ardebunt. 11. Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness;
-[RIGHT] 11. Quum Haec igitur omnia solvantur, quales oportet nos esse in sanctis conversationibus et pietatibus;
 
-[INDENT] 12. Looking for and hasting unto the coming of the day of God, Wherein the heavens, being on fire, shall be dissolved, and the elements shall melt with fervent heat?.
-[RIGHT] 12. Expectantes properando adventum diei Dei, propter quem coeli solventur, et elementa ardore consumentur?
 
-[INDENT] 13. Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness.
-[RIGHT] 13. Novos autem coelos et terram novam juxta promissum ejus expectamus, ín quibus habitat justitia.
 
+[SCRIPTURE_ROW] 9|||EN|||The Lord is not slack concerning his promise, as some men count but is long-suffering toward us, not willing that any should perish, but that all should come to repentance.|||LA|||Non tardat Dominus in promissione, sicuti quidam tarditatem slackness; existimant; sed tolerantem se praebet erga nos, nolens ullos perire, sed omnes ad poenitentiam recipere (aut, colligi, vel, aggregari.)
+[SCRIPTURE_ROW] 10|||EN|||But the day of the Lord will come as a thief in the night; in the which the heavens shall pass away with a great noise, and the elements shall melt with fervent heat, the earth also, and the works that are therein, shall be burnt up.|||LA|||Veniet autem dies Domini tanquam fur in nocte, in qua coeli in modum procellae transibunt, elementa autem ardore solventur; et terra, quæque in ea sunt opera ardebunt.
+[SCRIPTURE_ROW] 11|||EN|||Seeing then that all these things shall be dissolved, what manner of persons ought ye to be in all holy conversation and godliness;|||LA|||Quum Haec igitur omnia solvantur, quales oportet nos esse in sanctis conversationibus et pietatibus;
+[SCRIPTURE_ROW] 12|||EN|||Looking for and hasting unto the coming of the day of God, Wherein the heavens, being on fire, shall be dissolved, and the elements shall melt with fervent heat?.|||LA|||Expectantes properando adventum diei Dei, propter quem coeli solventur, et elementa ardore consumentur?
+[SCRIPTURE_ROW] 13|||EN|||Nevertheless we, according to his promise, look for new heavens and a new earth, wherein dwelleth righteousness.|||LA|||Novos autem coelos et terram novam juxta promissum ejus expectamus, ín quibus habitat justitia.
 [BODY] 9. <sty c="800000" i="1">But the Lord is not slack,</sty> or, delays not. He checks extreme and unreasonable haste by another reason, that is, that the Lord defers his coming that he might invite all mankind to repentance. For our minds are always prurient, and a doubt often creeps in, why he does not come sooner. But when we hear that the Lord, in delaying, shews a concern for our salvation, and that he defers the time because he has a care for us, there is no reason why we should any longer complain of tardiness. He is tardy who allows an occasion to pass by through slothfulness: there is nothing like this in God, who in the best manner regulates time to promote our
 
 --- PAGE 54 ---
@@ -654,17 +627,14 @@
 --- PAGE 56 ---
 
 [H2] <sty c="800000" i="0"><610314></sty>2 PETER 3:14-18
-[BODY] 14. Wherefore, beloved, seeing that ye look for such things, be diligent, that ye may be found of him in peace, without spot, and blameless
-[INDENT] 14. Quare, dilecti, quum Haec expectetis, studete incontaminati et irreprehensibiles ab eo inyeniri in pace: 15. And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also, according to the wisdom given unto him, hath written unto you;
-[INDENT] 15. Et Domini nostri tolerantiam salutem existimate, quemadmodum et dilectus frater noster Paulus, secundum datam sibi sapientiam scripsit vobis; 16. As also in all his epistles, speaking in them of these things: in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.
-[RIGHT] 16. Sicuti in omnibus Epistolis, loquens de iis in quibus sunt quædam difficilia intellectu, quæ indocti et instabiles invertunt (ut et caeteras Scripturas) ad suam perniciem.
 
-[INDENT] 17. Ye therefore, beloved, seeing ye know these things before, beware, lest ye also, being led away with the error of the wicked, fall from your own stedfastness
-[RIGHT] 17. Vos igitur, dilecti, praemoniti cavete, ut ne simul nefariorum errore abacti, excidatis à vestra firmitate.
 
-[INDENT] 18. But grow in grace, and in the knowledge of our Lord and Savior Jesus Christ. To him be glory both nom and for ever. Amen
-[RIGHT] 18. Crescite autem in gratia et notitia Domini nostri et Servatoris Jesu Christi; ipsi gloria et nunc et in diem seternitatis
 
+[SCRIPTURE_ROW] 14|||EN|||Wherefore, beloved, seeing that ye look for such things, be diligent, that ye may be found of him in peace, without spot, and blameless|||LA|||Quare, dilecti, quum Haec expectetis, studete incontaminati et irreprehensibiles ab eo inyeniri in pace:
+[SCRIPTURE_ROW] 15|||EN|||And account that the longsuffering of our Lord is salvation; even as our beloved brother Paul also, according to the wisdom given unto him, hath written unto you;|||LA|||Et Domini nostri tolerantiam salutem existimate, quemadmodum et dilectus frater noster Paulus, secundum datam sibi sapientiam scripsit vobis;
+[SCRIPTURE_ROW] 16|||EN|||As also in all his epistles, speaking in them of these things: in which are some things hard to be understood, which they that are unlearned and unstable wrest, as they do also the other scriptures, unto their own destruction.|||LA|||Sicuti in omnibus Epistolis, loquens de iis in quibus sunt quædam difficilia intellectu, quæ indocti et instabiles invertunt (ut et caeteras Scripturas) ad suam perniciem.
+[SCRIPTURE_ROW] 17|||EN|||Ye therefore, beloved, seeing ye know these things before, beware, lest ye also, being led away with the error of the wicked, fall from your own stedfastness|||LA|||Vos igitur, dilecti, praemoniti cavete, ut ne simul nefariorum errore abacti, excidatis à vestra firmitate.
+[SCRIPTURE_ROW] 18|||EN|||But grow in grace, and in the knowledge of our Lord and Savior Jesus Christ. To him be glory both nom and for ever. Amen|||LA|||Crescite autem in gratia et notitia Domini nostri et Servatoris Jesu Christi; ipsi gloria et nunc et in diem seternitatis
 [BODY] 14.<sty c="800000" i="1"> Wherefore.</sty> He justly reasons from hope to its effect, or the practice of a godly life; for hope is living and efficacious; therefore it cannot be but that it will attract us to itself. He, then, who waits for new heavens, must begin with renewal as to himself, and diligently aspire after it; but they who cleave to their own filth, think nothing, it is certain, of God's kingdom, and have no taste for anything but for this corrupt world.
 
 [BODY] But we must notice that he says, that we ought to be found blameless by Christ; for by these words he intimates, that while the world engages and

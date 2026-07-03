@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: ephesians-en
 book_name: "Calvin on Ephesians"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-07-02 17:45
 next_section: 1
 next_label: "Chapter 1"
 ---

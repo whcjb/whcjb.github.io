@@ -55,7 +55,12 @@
 [H2] <sty c="800000" i="0"><490101></sty>EPHESIANS 1:1-6
 
 
-[BODY] 1. Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus: 2. Grace be to you, and peace, from God our Father, and from the Lord Jesus Christ. 3. Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ; 4. According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love: 5. Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will, 6. To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.
+[SCRIPTURE_ROW] 1|||EN|||Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus:|||LA|||Paulus Apostolus Iesu Christi per voluntatem Dei, sanctis omnibus qui sunt Ephesi, et fidelibus in Christo Iesu
+[SCRIPTURE_ROW] 2|||EN|||Grace be to you, and peace, from God our Father, and from the Lord Jesus Christ.|||LA|||Gratia vobis et pax a Deo Patre nostro, et Domino Iesu Christo
+[SCRIPTURE_ROW] 3|||EN|||Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ;|||LA|||Benedictus Deus et Pater Domini nostri Iesu Christi, qui benedixit nos in omni benedictione spirituali, in coelestibus Christo;
+[SCRIPTURE_ROW] 4|||EN|||According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love:|||LA|||Quemadmodum elegit nos in ipso ante mundi creationem, ut simus sancti et inculpati in conspectu suo per charitatem;
+[SCRIPTURE_ROW] 5|||EN|||Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will|||LA|||Qui praedestinavit nos in adoptionem per Iesum Christum in seipso, secundum beneplacitum voluntatis suae
+[SCRIPTURE_ROW] 6|||EN|||To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.|||LA|||In laudem glorise gratiae suae, qua nos gratos habuit in dilecto.
 [BODY] 1. <sty c="800000" i="1">Paul, an apostle.</sty> As the same form of salutation, or at least very little varied, is found in all the Epistles, it would be superfluous to repeat here the observations which we have formerly made. He calls himself “an
 
 --- PAGE 6 ---
@@ -125,7 +130,12 @@
 
 [H2] <sty c="800000" i="0"><490107></sty>EPHESIANS 1:7-12
 
-[BODY] 7. In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace; 8. Wherein he hath abounded toward us in all wisdom and prudence; 9. Having made known unto us the mystery of his will, according to his good pleasure, which he hath purposed in himself: 10. That, in the dispensation of the fullness of times, he might gather together in one all things in Christ, both which are in heaven, and which are on earth, even in him: 11. In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will; 12. That we should be to the praise of his glory, who first trusted in Christ.
+[SCRIPTURE_ROW] 7|||EN|||In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace;|||LA|||In quo habemus redemptionem per sangiunem ejus, remissionem peccatorum, secundum divitias gratiae ejus;
+[SCRIPTURE_ROW] 8|||EN|||Wherein he hath abounded toward us in all wisdom and prudence;|||LA|||Qua exundavit in nos in omni sapientia et prudentia;
+[SCRIPTURE_ROW] 9|||EN|||Having made known unto us the mystery of his will, according to his good pleasure, which he hath purposed in himself:|||LA|||Patefacto nobis arcano voluntatis suae, secundum beneplacitum suum, quod in seipso proposuerat.
+[SCRIPTURE_ROW] 10|||EN|||That, in the dispensation of the fullness of times, he might gather together in one all things in Christ, both which are in heaven, and which are on earth, even in him:|||LA|||In dispensationem plenitudinis temporum; ut recolligeret omnia in Christo, tam quae in eoelis sunt, quam quae super terram, in ipso.
+[SCRIPTURE_ROW] 11|||EN|||In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will;|||LA|||Per quem etiam in sortem adsciti sumus, praedestinati secundum propositum ejus, qui omnia efficit secundum consilium voluntatis suae;
+[SCRIPTURE_ROW] 12|||EN|||That we should be to the praise of his glory, who first trusted in Christ.|||LA|||Ut simus in laudem gloriae ipsius, nos qui ante speravimus in Christo.
 
 --- PAGE 12 ---
 
@@ -167,7 +177,8 @@
 
 [H2] <sty c="800000" i="0"><490113></sty>EPHESIANS 1:13-14
 
-[BODY] 13. In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also, after that ye believed, ye were sealed with that Holy Spirit of promise, 14. Which is the earnest of our inheritance, until the redemption of the purchased possession, unto the praise of his glory.
+[SCRIPTURE_ROW] 13|||EN|||In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also, after that ye believed, ye were sealed with that Holy Spirit of promise|||LA|||In quo vos etiam, audito sermone veritatis, Evangelio salutis vestrae; in quo etiam, postquam credidistis, obsignati estis Spiritu promissionis sancto
+[SCRIPTURE_ROW] 14|||EN|||Which is the earnest of our inheritance, until the redemption of the purchased possession, unto the praise of his glory.|||LA|||Qui est arrhabo haereditatis nostrae, in redemptionem acquisitae possessionis, in laudem gloriae ejus.
 
 --- PAGE 16 ---
 
@@ -219,7 +230,11 @@
 [H2] <sty c="800000" i="0"><490115></sty>EPHESIANS 1:15-19
 
 
-[BODY] 15. Wherefore I also, after I heard of your faith in the Lord Jesus, and love unto all the saints, 16. Cease not to give thanks for you, making mention of you in my prayers; 17. That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him: 18. The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints, 19. And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power.
+[SCRIPTURE_ROW] 15|||EN|||Wherefore I also, after I heard of your faith in the Lord Jesus, and love unto all the saints|||LA|||Quapropter ego etiam, audita fide quae apud vos est in Domino Iesu, et charitate erGalatiansomnes sanctos
+[SCRIPTURE_ROW] 16|||EN|||Cease not to give thanks for you, making mention of you in my prayers;|||LA|||Non cesso gratias agere pro vobis, memoriam vestri faciens in orationibus meis;
+[SCRIPTURE_ROW] 17|||EN|||That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him:|||LA|||Ut Deus Domini nostri Iesu Christi, Pater gloriae, det vobis Spiritum sapientiae et revelationis, in agnitione ipsius
+[SCRIPTURE_ROW] 18|||EN|||The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints|||LA|||Illuminatos oculos mentis vestrae, ut sciatis quae sit spes vocationis ipsius, et quae divitiae gloriae haereditatis ejus in sanctis
+[SCRIPTURE_ROW] 19|||EN|||And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power.|||LA|||Et quae superexcellens magnitudo potentiae ejus erGalatiansnos, qui credidimus secundum efficaciam potentiae roboris ejus.
 [BODY] 15. <sty c="800000" i="1">Wherefore I also.</sty> This thanksgiving was not simply an expression of his ardent love to the Ephesians. He congratulated them before God, that
 
 --- PAGE 20 ---
@@ -263,7 +278,10 @@
 [H2] <sty c="800000" i="0"><490120></sty>EPHESIANS 1:20-23
 
 
-[BODY] 20. Which he wrought in Christ, when he raised him from the dead, and set him at his own right hand in the heavenly places, 21. Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come; 22. And hath put all things under his feet, and gave him to be the head over all things to the church, 23. Which is his body, the fullness of him that filleth all in all.
+[SCRIPTURE_ROW] 20|||EN|||Which he wrought in Christ, when he raised him from the dead, and set him at his own right hand in the heavenly places|||LA|||Quam exeruit in Christo, dum illum excitavit a mortuis, et sedere fecit in dextera sua, in coelestibus;
+[SCRIPTURE_ROW] 21|||EN|||Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come;|||LA|||Super omnem principatum, et potestatem, et virtutem, et dominationem, et omne nomen quod nominatur, non tantum in seculo hoc, sed etiam in futuro;
+[SCRIPTURE_ROW] 22|||EN|||And hath put all things under his feet, and gave him to be the head over all things to the church|||LA|||Et omnia subjecit pedibus ejus, et ipsum posuit caput super omnia Ecclesiae
+[SCRIPTURE_ROW] 23|||EN|||Which is his body, the fullness of him that filleth all in all.|||LA|||Quae est corpus ejus et complementum ejus, qui omnia in omnibus adimplet.
 [BODY] 20. <sty c="800000" i="1">Which he wrought in Christ.</sty> The Greek verb is <sty c="0000d4" i="0">ejne>rghsen</sty>, from which <sty c="0000d4" i="0">ejne>rgeia</sty> is derived. It might run thus, <sty c="000000" i="1">According to</sty> <sty c="000000" i="1">the efficacy</sty> <sty c="000000" i="1">which he effected</sty>. But the translation which I have given conveys the same meaning, and is less harsh.
 
 [BODY] With the greatest propriety does he enjoin us to contemplate this power in Christ; for in us it is hitherto concealed. “My strength,” says he, “is made perfect in weakness.” (<sty c="800000" i="0"><471209></sty>2 Corinthians 12:9.) In what do we excel the children of the world but in this, that our condition appears to be somewhat worse than theirs? Though sin does not reign, it continues to dwell in us, and death is still strong. Our blessedness, which lies in hope, is not perceived by the world. The power of the Spirit is a thing unknown to flesh and blood. A thousand distresses, to which we are daily liable, render us more despised than other men.
@@ -304,7 +322,9 @@
 
 [H2] <sty c="800000" i="0"><490201></sty>EPHESIANS 2:1-3
 
-[BODY] 1. And you hath he quickened, who were dead in trespasses and sins; 2. Wherein in time past ye walked according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience: 3. Among whom also we all had our conversation in times past in the lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.
+[SCRIPTURE_ROW] 1|||EN|||And you hath he quickened, who were dead in trespasses and sins;|||LA|||Et vos, quum essetis mortui delictis et peccatis vestris;
+[SCRIPTURE_ROW] 2|||EN|||Wherein in time past ye walked according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience:|||LA|||In quibus aliquando ambulastis secundum saeculum mundi hujus, secundum principem potestatis aeris, spiritus scilicet, qui nunc operatur in filiis inobedientiae;
+[SCRIPTURE_ROW] 3|||EN|||Among whom also we all had our conversation in times past in the lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.|||LA|||Inter quos nos quoque omnes aliquando conversati sumus in concupiscentiis carnis nostrae, facientes quae carni libebant, et menti; et eramus natura filii irae, sicut et caeteri.
 [BODY] 1. <sty c="800000" i="1">And you who were dead.</sty> This is an <sty c="0000d4" i="0">ejpexergasi>a</sty> of the former statements, that is, an exposition accompanied by an illustration. <sty c="800000" i="0">F13</sty> To bring home more effectually to the Ephesians the general doctrine of Divine grace, he reminds them of their former condition. This application consists of two parts. “Ye were formerly lost; but now God, by his grace, has rescued you from destruction.” And here we must observe, that, in laboring to give an impressive view of both of these parts, the apostle makes a break in the style by (<sty c="0000d4" i="0">uJperbato<n</sty>) a transposition. There is some perplexity in the language; but, if we attend carefully to what the apostle says about those two parts, the meaning is clear. As to the first, he says that they <sty c="800000" i="1">were dead;</sty> and states, at the same time, the cause of the death — <sty c="800000" i="1">trespasses and sins.</sty> <sty c="800000" i="0">F14</sty> He does not mean simply that they were in danger of death; but he declares that it was a real and present death under which they labored. As spiritual death is nothing else than the alienation of the soul from God, we are all born as dead men, and we live as dead men, until we are made partakers of the life of Christ, — agreeably to the words of our Lord,
 
 --- PAGE 28 ---
@@ -367,7 +387,10 @@
 [H2] <sty c="800000" i="0"><490204></sty>EPHESIANS 2:4-7
 
 
-[BODY] 4. But God, who is rich in mercy, for his great love wherewith he loved us, 5. Even when we were dead in sins, hath quickened us together with Christ; (by grace ye are saved;) 6. And hath raised us up together, and made us sit together in heavenly places in Christ Jesus; 7. That in the ages to come he might shew the exceeding riches of his grace, in his kindness toward us through Christ Jesus.
+[SCRIPTURE_ROW] 4|||EN|||But God, who is rich in mercy, for his great love wherewith he loved us|||LA|||Deus autem, qui dives est in misericordia, propter multam suam dilectionem, qua nos dilexit
+[SCRIPTURE_ROW] 5|||EN|||Even when we were dead in sins, hath quickened us together with Christ; (by grace ye are saved;)|||LA|||Etiam quum essemus mortui peccatis, convivificavit cum Christo; (Gratia estis salvati;)
+[SCRIPTURE_ROW] 6|||EN|||And hath raised us up together, and made us sit together in heavenly places in Christ Jesus;|||LA|||Et simul excitavit, et sedere fecit in coelestibus in Christo Iesu
+[SCRIPTURE_ROW] 7|||EN|||That in the ages to come he might shew the exceeding riches of his grace, in his kindness toward us through Christ Jesus.|||LA|||Ut demonstraret in saeculis supervenientibus exsuperantes divitias gratiae suae, in benignitate erGalatiansnos in Christo Iesu.
 [BODY] 4. <sty c="800000" i="1">But God, who is rich in mercy.</sty> <sty c="800000" i="0">F17</sty> Now follows the second member of the sentence, the substance of which is, that God had delivered the Ephesians from the destruction to which they were formerly liable; but the words which he employs are different. <sty c="800000" i="1">God, who is rich in mercy, hath</sty> <sty c="800000" i="1">quickened you together with Christ</sty><sty c="000000" i="1">.</sty> The meaning is, that, there is no other life than that which is breathed into us by Christ: so that we begin to live only when we are ingrafted into him, and enjoy the same life with himself. This enables us to see what the apostle formerly meant by death, for that death and this resurrection are brought, into contrast. To be made partakers of the life of the Son of God, to be quickened by one Spirit, is an inestimable privilege.
 
 [BODY] On this ground he praises the <sty c="800000" i="1">mercy</sty> of God, meaning by its <sty c="800000" i="1">riches,</sty> that it had been poured out in a singularly large and abundant manner. The whole of our salvation is here ascribed to the mercy of God. But he presently adds, <sty c="800000" i="1">for his great love wherewith he loved us.</sty> <sty c="800000" i="0">F18</sty> This is a still more express declaration, that all was owing to undeserved goodness; for he declares that God was moved by this single consideration. “Herein,” says John, “is love, not that we loved God, but that he loved us. We love him because he first loved us.” (<sty c="800000" i="0"><620410></sty>1 John 4:10,19.)
@@ -392,7 +415,9 @@
 
 [H2] <sty c="800000" i="0"><490208></sty>EPHESIANS 2:8-10
 
-[BODY] 8. For by grace are ye saved through faith; and that not of yourselves: it is the gift Of God: 9. Not of works, lest any man should boast. 10. For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.
+[SCRIPTURE_ROW] 8|||EN|||For by grace are ye saved through faith; and that not of yourselves: it is the gift Of God:|||LA|||Gratia enim estis salvati per fidem; idque non ex vobis: Dei donurn est.
+[SCRIPTURE_ROW] 9|||EN|||Not of works, lest any man should boast.|||LA|||Non ex operibus; ne quis glorietur.
+[SCRIPTURE_ROW] 10|||EN|||For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.|||LA|||Ipsius enim opus sumus, creati in Christo Iesu ad opera bona, quae praeparavit Deus, ut in illis ambulemus.
 [BODY] 8. <sty c="800000" i="1">For by grace are ye saved.</sty> This is an inference from the former statements. Having treated of election and of effectual calling, he arrives at this general conclusion, that they had obtained salvation by faith alone. First, he asserts, that the salvation of the Ephesians was entirely the work, the gracious work of God. But then they had obtained this grace by faith. On one side, we must look at God; and, on the other, at man. God declares, that he owes us nothing; so that salvation is not a reward or recompense, but unmixed grace. The next question is, in what way do men receive that salvation which is offered to them by the hand of God? The answer is, <sty c="800000" i="1">by</sty> <sty c="800000" i="1">faith;</sty><sty c="800000" i="0"> </sty>and hence he concludes that nothing connected with it is our own. If,
 
 --- PAGE 35 ---
@@ -437,7 +462,9 @@
 [H2] <sty c="800000" i="0"><490211></sty>EPHESIANS 2:11-13
 
 
-[BODY] 11. Wherefore remember, that ye being in time past Gentiles in the flesh, who are called Uncircumcision by that which is called the Circumcision in the flesh made by hands; 12. That at that time ye were without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world: 13. But now, in Christ Jesus, ye who sometimes were far off are made nigh by the blood of Christ.
+[SCRIPTURE_ROW] 11|||EN|||Wherefore remember, that ye being in time past Gentiles in the flesh, who are called Uncircumcision by that which is called the Circumcision in the flesh made by hands;|||LA|||Quamobrem memores estote, quod aliquando vos Gentes in carne, qui dicebamini Praeputium ab ea, quae vocatur Circumcisio, in carne manu facta;
+[SCRIPTURE_ROW] 12|||EN|||That at that time ye were without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world:|||LA|||Illo tempore eratis absque Christo, alienati a republica Israelis, hospites tabularum promissionis, spem non habentes, et sine Deo in mundo.
+[SCRIPTURE_ROW] 13|||EN|||But now, in Christ Jesus, ye who sometimes were far off are made nigh by the blood of Christ.|||LA|||Nunc autem in Christo Iesu vos, qui quondam eratis procul, facti estis propinqui per Christi sanguinem.
 
 --- PAGE 39 ---
 
@@ -497,7 +524,9 @@
 [H2] <sty c="800000" i="0"><490214></sty>EPHESIANS 2:14-16
 
 
-[BODY] 14. For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; 15. Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; 16. And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby.
+[SCRIPTURE_ROW] 14|||EN|||For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us;|||LA|||Ipse enim est pax nostra, qui fecit utraque unum, et interstitium maceriae solvens, inimicitias in carne sua;
+[SCRIPTURE_ROW] 15|||EN|||Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace;|||LA|||Legem mandatorum in decretis positam abolens, ut duos conderet in se ipso, in unum novum hominem, faciens pacem;
+[SCRIPTURE_ROW] 16|||EN|||And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby.|||LA|||Ut reconciliaret ambos in uno corpore Deo per crucem, inimicitias in ipsa interimens.
 [BODY] 14.<sty c="800000" i="1"> For he is our Peace.</sty> He now includes Jews in the privilege of reconciliation, and shows that, through one Messiah, all are united to God. This consideration was fitted to repress the false confidence of the Jews,
 
 --- PAGE 43 ---
@@ -546,7 +575,12 @@
 [H2] <sty c="800000" i="0"><490217></sty>EPHESIANS 2:17-22
 
 
-[BODY] 17. And came and preached peace to you which were afar off, and to them that were nigh. 18. For through him we both have access by one Spirit unto the Father. 19. Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God; 20. And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief cornerstone; 21. In whom all the building, fitly framed together, groweth unto an holy temple in the Lord: 22. In whom ye also are builded together for an habitation of God through the Spirit.
+[SCRIPTURE_ROW] 17|||EN|||And came and preached peace to you which were afar off, and to them that were nigh.|||LA|||Et veniens evangelizavit pacem vobis, qui eratis procul, et pacem iis qui propinqui erant;
+[SCRIPTURE_ROW] 18|||EN|||For through him we both have access by one Spirit unto the Father.|||LA|||Quoniam per ipsum habemus accessum ambo in uno spiritu ad Patrem.
+[SCRIPTURE_ROW] 19|||EN|||Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God;|||LA|||Ergo non amplius estis hospites et inquilini; sed cives sanctorum et domestici Dei
+[SCRIPTURE_ROW] 20|||EN|||And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief cornerstone;|||LA|||Superaedificati fundamento Apostolorum et Prophetarum, cujus lapis summus angularis est ipse Christus;
+[SCRIPTURE_ROW] 21|||EN|||In whom all the building, fitly framed together, groweth unto an holy temple in the Lord:|||LA|||In quo toturn aedificium coagmentatum crescit in templum sanctum in Domino;
+[SCRIPTURE_ROW] 22|||EN|||In whom ye also are builded together for an habitation of God through the Spirit.|||LA|||In quo et vos coaedificamini in habitaculum Dei in Spiritu.
 [BODY] 17. <sty c="800000" i="1">And came and preached peace.</sty> All that Christ had done towards effecting a reconciliation would have been of no service, if it had not been proclaimed by the gospel; and therefore he adds, that the fruit of this peace has now been offered both to Jews and to Gentiles. Hence it follows, that to save Gentiles as well as Jews was the design of our Savior’s coming, as the preaching of the gospel, which is addressed indiscriminately to both, makes abundantly manifest. The same order is followed in the second Epistle to the Corinthians.
 
 --- PAGE 47 ---
@@ -623,7 +657,12 @@
 
 [H2] <sty c="800000" i="0"><490301></sty>EPHESIANS 3:1-6
 
-[BODY] 1. For this cause, I Paul, the prisoner of Jesus Christ for you Gentiles, 2. (If ye have heard of the dispensation of the grace of God which is given me to you-ward: 3. How that by revelation he made known unto me the mystery; as I wrote afore in few words; 4. Whereby, when ye read, ye may understand my knowledge in the mystery of Christ, 5. Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit; 6. That the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel.
+[SCRIPTURE_ROW] 1|||EN|||For this cause, I Paul, the prisoner of Jesus Christ for you Gentiles|||LA|||Hujus rei gratia ego Paulus, vinctus Iesu Christi, pro vobis Gentibus legatione fungor;
+[SCRIPTURE_ROW] 2|||EN|||(If ye have heard of the dispensation of the grace of God which is given me to you-ward:|||LA|||Siquidem audistis dispensationem gratiae Dei, mihi erGalatiansvos datae
+[SCRIPTURE_ROW] 3|||EN|||How that by revelation he made known unto me the mystery; as I wrote afore in few words;|||LA|||Quod per revelationem mihi patefecerit arcanum, quemadmodum scripsi paulo ante.
+[SCRIPTURE_ROW] 4|||EN|||Whereby, when ye read, ye may understand my knowledge in the mystery of Christ|||LA|||Ad quod potestis attendentes intelligere cognitionem meam in mysterio Christi
+[SCRIPTURE_ROW] 5|||EN|||Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit;|||LA|||Quod aliis saeculis non innotuit filiis hominum, quemadmodum nunc revelatum est sanctis Apostolis ejus et Prophetis per Spiritum
+[SCRIPTURE_ROW] 6|||EN|||That the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel.|||LA|||Gentes esse cohaeredes, et concorporeas, et consortes promissionis ejus in Christo per Evangelium.
 [BODY] 1. <sty c="800000" i="1">For this cause.</sty> Paul’s imprisonment, which ought to have been held as a confirmation of his apostleship, was undoubtedly presented by his adversaries in an opposite light. He therefore points out to the Ephesians that his chains served to prove and to declare his calling; and that the only reason why he had been imprisoned was, that he had preached the gospel to the Gentiles. His unshaken firmness was no small additional proof that he had discharged his office in a proper manner.
 
 [BODY] <sty c="800000" i="1">The prisoner of Jesus Christ.</sty> <sty c="800000" i="0">F26</sty> To strengthen his authority still more, he speaks in lofty terms of his prison. In the presence of the world and of
@@ -696,7 +735,13 @@
 
 
 
-[BODY] 7. Whereof I was made a minister, according to the gift of the grace of God given unto me by the effectual working of his power. 8. Unto me, who am less than the least of all saints, is this grace given, that I should preach among the Gentiles the unsearchable riches of Christ; 9. And to make all men see what is the fellowship of the mystery, which from the beginning of the world hath been hid in God, who created all things by Jesus Christ: 10. To the intent that now, unto the principalities and powers in heavenly places, might be known by the church the manifold wisdom of God, 11. According to the eternal purpose which he purposed in Christ Jesus our Lord: 12. In whom we have boldness and access with confidence by the faith of him. 13. Wherefore I desire that ye faint not at my tribulations for you, which is your glory.
+[SCRIPTURE_ROW] 7|||EN|||Whereof I was made a minister, according to the gift of the grace of God given unto me by the effectual working of his power.|||LA|||Cujus factus sum minister, secundum donum gratiae Dei, quod mihi datum est secundum efficaciam potentiae ejus.
+[SCRIPTURE_ROW] 8|||EN|||Unto me, who am less than the least of all saints, is this grace given, that I should preach among the Gentiles the unsearchable riches of Christ;|||LA|||Mihi omnium sanctorum minimo data est gratia haec, ut evangelizem in Gentibus impervestigabiles divitias Christi;
+[SCRIPTURE_ROW] 9|||EN|||And to make all men see what is the fellowship of the mystery, which from the beginning of the world hath been hid in God, who created all things by Jesus Christ:|||LA|||Et omnibus conspicuum faciam, quae sit communio mysterii, quod absconditum fuit a saeculis in Deo, qui omnia creavit per Iesum Christum;
+[SCRIPTURE_ROW] 10|||EN|||To the intent that now, unto the principalities and powers in heavenly places, might be known by the church the manifold wisdom of God|||LA|||Ut nunc patefieret principatibus et potestatibus in coelestibus per ecclesiam varie multiplex sapientia Dei
+[SCRIPTURE_ROW] 11|||EN|||According to the eternal purpose which he purposed in Christ Jesus our Lord:|||LA|||Secundum propositum aeternum, quod statuit in Christo Iesu Domino nostro
+[SCRIPTURE_ROW] 12|||EN|||In whom we have boldness and access with confidence by the faith of him.|||LA|||Perquem habemus audaciam, et aditum in fiducia, per fidem ejus.
+[SCRIPTURE_ROW] 13|||EN|||Wherefore I desire that ye faint not at my tribulations for you, which is your glory.|||LA|||Quare peto, ne deficiatis in afflictionibus meis pro vobis, quae est gloria vestra.
 [BODY] 7. <sty c="800000" i="1">Of which I was made a minister.</sty> Having declared the gospel to be the instrument employed in communicating grace to the Gentiles, he now adds, that he <sty c="800000" i="1">was made a minister</sty> of the Gospel; and thus applies to himself the general statements which had been made. But, to avoid claiming for himself more than is proper, he affirms that it is<sty c="800000" i="1"> the gift of the grace of God,</sty> and that this gift was an exhibition of divine <sty c="800000" i="1">power.</sty> As if he had said, “Inquire not what I have deserved; for in the free exercise of kindness, the Lord
 
 --- PAGE 60 ---
@@ -773,7 +818,12 @@
 [H2] <sty c="800000" i="0"><490314></sty>EPHESIANS 3:14-19
 
 
-[BODY] 14. For this cause I bow my knees unto the Father of our Lord Jesus Christ, 15. Of whom the whole family in heaven and earth is named, 16. That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man; 17. That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love, 18. May be able to comprehend with all saints what is the breadth, and length, and depth, and height; 19. And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fullness of God.
+[SCRIPTURE_ROW] 14|||EN|||For this cause I bow my knees unto the Father of our Lord Jesus Christ|||LA|||Hujus rei gratia flecto genua ad Patrem Domini nostri Iesu Christi
+[SCRIPTURE_ROW] 15|||EN|||Of whom the whole family in heaven and earth is named|||LA|||Ex quo omnis cognatio in coelis et super terram nominatur
+[SCRIPTURE_ROW] 16|||EN|||That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man;|||LA|||Ut det vobis secundum divitias gloriae suae, potentia roborari per Spiritum suum in hominem interiorem
+[SCRIPTURE_ROW] 17|||EN|||That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love|||LA|||Ut inhabitet Christus per fidem in cordibus vestris, ut sitis in charitate radicati atque fundati
+[SCRIPTURE_ROW] 18|||EN|||May be able to comprehend with all saints what is the breadth, and length, and depth, and height;|||LA|||Quo valeatis comprehendere cum omnibus sanctis, quae sit latitudo, et longitudo, et profunditas, et altitudo;
+[SCRIPTURE_ROW] 19|||EN|||And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fullness of God.|||LA|||Cognoscere, inquam, dilectionem Christi, quae cognitionem exsuperat, ut completi sitis in omnem plenitudinem Dei.
 [BODY] 14. <sty c="800000" i="1">For this cause.</sty> His prayers for them are mentioned, not only to testify his regard for them, but likewise to excite them to pray in the same manner; for the seed of the word is scattered in vain, unless the Lord render it fruitful by his blessing. Let pastors learn from Paul’s example, not only to admonish and exhort their people, but to entreat the Lord to bless their labors, that they may not be unfruitful. Nothing will be gained by their industry and toil, — all their study and application will be to no purpose, except so far as the Lord bestows his blessing. This ought not to be regarded by them as an encouragement to sloth. It is their duty, on the contrary, to labor earnestly in sowing and watering, provided they, at the same time, ask and expect the increase from the Lord.
 
 [BODY] We are thus enabled to refute the slanders of the Pelagians and Papists, who argue, that, if the grace of the Holy Spirit performs the whole work of
@@ -836,7 +886,8 @@
 
 [H2] <sty c="800000" i="0"><490320></sty>EPHESIANS 3:20-21
 
-[BODY] 20. Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us, 21. Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.
+[SCRIPTURE_ROW] 20|||EN|||Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us|||LA|||Ei autem, qui potest cumulate super omnia facere, quae petimus aut cogitamus, secundum potentiam in nobis agentem
+[SCRIPTURE_ROW] 21|||EN|||Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.|||LA|||Sit gloria in Ecclesia per Iesum Christum, in omnes aetates seculi seculorum. Amen.
 [BODY] 20. <sty c="800000" i="1">Now to him.</sty> He now breaks out into thanksgiving, which serves the additional purpose of exhorting the Ephesians to maintain “good hope through grace,” (<sty c="800000" i="0"><530216></sty>2 Thessalonians 2:16,) and to endeavor constantly to obtain more and more adequate conceptions of the value of the grace of God.
 
 [BODY] <sty c="800000" i="1">Who is able. </sty><sty c="800000" i="0">F32</sty> This refers to the future, and agrees with what we are taught concerning hope; and indeed we cannot offer to God proper or sincere thanksgivings for favors received, unless we are convinced that his goodness to us will be without end. When he says that God is <sty c="800000" i="1">able</sty><sty c="000000" i="1">,</sty> he does not mean power viewed apart, as the phrase is, from the act, but power which is exerted, and which we actually feel. Believers ought always to connect it with the work, when the promises made to them, and their own salvation, form the subject of inquiry. Whatever God can do, he unquestionably will do, if he has promised it. This the apostle proves both by former instances, and by the efficacy of the Spirit, which was at this very time exerted on their own minds.
@@ -905,7 +956,10 @@
 
 [H2] <sty c="800000" i="0"><490407></sty>EPHESIANS 4:7-10
 
-[BODY] 7. But unto every one of us is given grace according to the measure of the gift of Christ. 8. Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men. 9. (Now that he ascended, what is it but that he also descended first into the lower parts of the earth? 10. He that descended is the same also that ascended up far above all heavens, that he might fill all things.)
+[SCRIPTURE_ROW] 7|||EN|||But unto every one of us is given grace according to the measure of the gift of Christ.|||LA|||Unicuique autem nostrum data est gratia; secundum mensuram donationis Christi.
+[SCRIPTURE_ROW] 8|||EN|||Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men.|||LA|||Propterea dicit: Postquam ascendit in altum, captivam duxit captivitatem, et dedit dona hominibus. (<sty c="800000" i="0"><196819></sty>Psalm 68:19.)
+[SCRIPTURE_ROW] 9|||EN|||(Now that he ascended, what is it but that he also descended first into the lower parts of the earth?|||LA|||Illud autem Ascendit, quid est, nisi quod etiam descenderat prius in inferiores partes terrae?
+[SCRIPTURE_ROW] 10|||EN|||He that descended is the same also that ascended up far above all heavens, that he might fill all things.)|||LA|||Qui descendit, ipse est etiam qui ascendit super omnes coelos, ut impleret omnia.
 [BODY] 7. <sty c="800000" i="1">But to every one. </sty>He now describes the manner in which God establishes and preserves among us a mutual relation. No member of the body of Christ is endowed with such perfection as to be able, without the assistance of others, to supply his own necessities. A certain proportion is allotted to each; and it is only by communicating with each other, that all enjoy what is sufficient for maintaining their respective places in the body. The diversity of gifts is discussed in another Epistle, and very nearly with the same object.
 
 [CENTERED] “<sty c="000080" i="0">There are diversities of gifts, but the same Spirit”</sty> <sty c="000080" i="0">(</sty><sty c="800000" i="0"><461204></sty><sty c="000080" i="0">1 Corinthians</sty> <sty c="000080" i="0">12:4.)</sty>
@@ -975,7 +1029,10 @@
 [H2] <sty c="800000" i="0"><490411></sty>EPHESIANS 4:11-14
 
 
-[BODY] 11. And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; 12. For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: 13. Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fullness of Christ: 14. That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive.
+[SCRIPTURE_ROW] 11|||EN|||And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;|||LA|||Et ipse dedit alios quidem apostolos, alios autem prophetas, alios vero evangelistas, alios pastores et doctores
+[SCRIPTURE_ROW] 12|||EN|||For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ:|||LA|||Ad instaurationem sanctorum, in opus ministerii, in aedificationem corporis Christi
+[SCRIPTURE_ROW] 13|||EN|||Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fullness of Christ:|||LA|||Usquedum occurramus omnes in unitatem fidei, et cognitionis Filii Dei, in virum perfectum, in mensuram aetatis plenitudinis Christi;
+[SCRIPTURE_ROW] 14|||EN|||That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive.|||LA|||Ne amplius simus pueri, qui fluctuemur, et circumferamur quovis vento doctrinae, per aestum hominum, per versutiam ad circumventionem imposturae.
 [BODY] He returns to explain the distribution of gifts, and illustrates at greater length what he had slightly hinted, that out of this variety arises unity in the church, as the various tones in music produce sweet melody. The meaning may be thus summed up. “The external ministry of the word is also commended, on account of the advantages which it yields. Certain men appointed to that office, are employed in preaching the gospel. This is the arrangement by which the Lord is pleased to govern his church, to maintain its existence, and ultimately to secure its highest perfection.”
 
 [BODY] It may excite surprise, that, when the gifts of the Holy Spirit form the subject of discussion, Paul should enumerate offices instead of gifts. I reply, when men are called by God, gifts are necessarily connected with offices. God does not confer on men the mere name of Apostles or Pastors, but also endows them with gifts, without which they cannot properly discharge their office. He whom God has appointed to be an apostle does not bear an empty and useless title; for the divine command,
@@ -1062,7 +1119,8 @@
 
 [H2] <sty c="800000" i="0"><490415></sty>EPHESIANS 4:15-16
 
-[BODY] 15. But, speaking the truth in love, may grow up into him in all things, which is the head, even Christ: 16. From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body, unto the edifying of itself in love.
+[SCRIPTURE_ROW] 15|||EN|||But, speaking the truth in love, may grow up into him in all things, which is the head, even Christ:|||LA|||Veritatem autem sectantes in charitate, crescamus in eum per omnia, qui est caput, nempe Christum;
+[SCRIPTURE_ROW] 16|||EN|||From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body, unto the edifying of itself in love.|||LA|||Ex quo totum corpus compositum et compactum per omnem juncturam subministrationis, secundum efficaciam in mensura uniuscujusque partis, incrementum corporis facit in aedificationem sui, in charitate.
 [BODY] 15. <sty c="800000" i="1">But, speaking the truth.</sty> Having already said that we ought not to be children, destitute of reason and judgment, he now enjoins us to <sty c="800000" i="0">F40</sty> Though we have not arrived at man’s estate, we ought at least, as we have already said, to be advanced children. The truth of God ought to have such a firm hold of us, that all the contrivances and attacks of Satan shall not draw us from our course; and yet, as we have not hitherto attained full and complete strength, we must make progress until death.
 
 [BODY] He points out the design of this progress, that Christ may be <sty c="000000" i="1">the head</sty>, “that in all things he may have the pre-eminence,” (<sty c="800000" i="0"><510118></sty>Colossians 1:18,) and that in him alone we may grow in vigor or in stature. Again, we
@@ -1085,7 +1143,9 @@
 
 [H2] <sty c="800000" i="0"><490417></sty>EPHESIANS 4:17-19
 
-[BODY] 17. This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind; 18. Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart: 19. Who, being past feeling, have given themselves over unto lasciviousness, to work all uncleanness with greediness.
+[SCRIPTURE_ROW] 17|||EN|||This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind;|||LA|||Hoc ergo dico et testificor in Domino, ne ambuletis amplius, quemadmodum et gentes reliquae ambulant
+[SCRIPTURE_ROW] 18|||EN|||Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:|||LA|||In vanitate mentis suae, excaecatae in intelligentia, alienatae a vita Dei propter ignorantiam, quae in illis est, propter caecitatem cordis earum;
+[SCRIPTURE_ROW] 19|||EN|||Who, being past feeling, have given themselves over unto lasciviousness, to work all uncleanness with greediness.|||LA|||Quae postquam dolore tangi desierunt, seipsas tradiderunt lasciviae, ad perpetrandam omnem immunditiam cum aviditate.
 [BODY] 17.<sty c="800000" i="1"> This I say therefore.</sty> That government which Christ has appointed for the edification of his church has now been considered. He next inquires what fruits the doctrine of the gospel ought to yield in the lives of Christians; or, if you prefer it, he begins to explain minutely the nature of that edification by which doctrine ought to be followed.
 
 [BODY] <sty c="800000" i="1">That ye henceforth walk not in vanity.</sty> He first exhorts them to renounce the <sty c="800000" i="1">vanity</sty> of unbelievers, arguing from its inconsistency with their present views. That those who have been taught in the school of Christ, and
@@ -1146,7 +1206,11 @@
 
 [H2] <sty c="800000" i="0"><490420></sty>EPHESIANS 4:20-24
 
-[BODY] 20. But ye have not so learned Christ; 21. If so be that ye have heard him, and have been taught by him, as the truth is in Jesus: 22. That ye put off, concerning the former conversation, the old man, which is corrupt according to the deceitful lusts; 23. And be renewed in the spirit of your mind; 24. And that ye put on the new man, which after God is created in righteousness and true holiness.
+[SCRIPTURE_ROW] 20|||EN|||But ye have not so learned Christ;|||LA|||Vos autem non ita didicistis Christum;
+[SCRIPTURE_ROW] 21|||EN|||If so be that ye have heard him, and have been taught by him, as the truth is in Jesus:|||LA|||Si quidem ipsum audistis, et in ipso estis edocti, quemadmodum est veritas in Iesu;
+[SCRIPTURE_ROW] 22|||EN|||That ye put off, concerning the former conversation, the old man, which is corrupt according to the deceitful lusts;|||LA|||Ut deponatis, secundum pristinam conversationem, Veterem hominem, qui corrumpitur secundum concupiscentias erroris;
+[SCRIPTURE_ROW] 23|||EN|||And be renewed in the spirit of your mind;|||LA|||Renovemini autem spiritu mentis vestrae
+[SCRIPTURE_ROW] 24|||EN|||And that ye put on the new man, which after God is created in righteousness and true holiness.|||LA|||Et induatis Novum hominem, qui secundum Deum creatus est, in justitia et sanctitate veritatis.
 [BODY] 20. <sty c="800000" i="1">But ye have not.</sty> He now draws a contrast of a Christian life, so as to make it evident how utterly inconsistent it is with the character of a godly man to defile himself regardlessly with the abominations of the Gentiles. Because the Gentiles walk in darkness, therefore they do not distinguish between right and wrong; but those on whom the truth of God shines ought to live in a different manner. That those to whom the vanity of the senses is a rule of life, should yield themselves up to base lusts, is not surprising; but the doctrine of Christ teaches us to renounce our natural dispositions. He whose life differs not from that of unbelievers, has learned nothing of Christ; for the knowledge of Christ cannot be separated from the mortification of the flesh.
 
 [BODY] 21. <sty c="800000" i="1">If ye have heard him.</sty> To excite their attention and earnestness the more, he not only tells them that they had <sty c="800000" i="1">heard Christ,</sty> but employs a still stronger expression, <sty c="800000" i="1">ye have been taught in him,</sty> as if he had said, that this doctrine had not been slightly pointed out, but faithfully delivered and explained.
@@ -1186,7 +1250,10 @@
 
 [H2] <sty c="800000" i="0"><490425></sty>EPHESIANS 4:25-28
 
-[BODY] 25. Wherefore, putting away lying, speak every man truth with his neighbor: for we are members one of another. 26. Be ye angry, and sin not: let not the sun go down upon your wrath: 27. Neither give place to the devil. 28. Let him that stole steal no more: but rather let him labor, working with his hands the thing which is good, that he may have to give to him that needeth.
+[SCRIPTURE_ROW] 25|||EN|||Wherefore, putting away lying, speak every man truth with his neighbor: for we are members one of another.|||LA|||Quare, deposito mendacio, loquimini veritatem unusquisque cum proximo suo; quia sumus vicissim inter nos membra.
+[SCRIPTURE_ROW] 26|||EN|||Be ye angry, and sin not: let not the sun go down upon your wrath:|||LA|||Irascimini, et ne peccetis. (<sty c="800000" i="0"><190405></sty>Psalm 4:5.) Sol non occidat super iracundiam vestram:
+[SCRIPTURE_ROW] 27|||EN|||Neither give place to the devil.|||LA|||Et ne detis locum diabolo.
+[SCRIPTURE_ROW] 28|||EN|||Let him that stole steal no more: but rather let him labor, working with his hands the thing which is good, that he may have to give to him that needeth.|||LA|||Qui furabatur, jam non furetur; magis autem laboret, operando quod bonum est manibus, ut habeat quod eroget opus habenti.
 [BODY] 25. <sty c="800000" i="1">Wherefore, putting away lying.</sty> From this head of doctrine, that is, from the righteousness of the new man, all godly exhortations flow, like streams from a fountain; for if all the precepts which relate to life were collected, yet, without this principle, they would be of little value. Philosophers take a different method; but, in the doctrine of godliness, there is no other way than this for regulating the life. Now, therefore, he comes to lay down particular exhortations, drawn from the general doctrine. Having concluded
 
 --- PAGE 102 ---
@@ -1216,7 +1283,9 @@
 [H2] <sty c="800000" i="0"><490429></sty>EPHESIANS 4:29-31
 
 
-[BODY] 29. Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers. 30. And grieve not the Holy Spirit of God, whereby ye are sealed unto the day of redemption. 31. Let all bitterness, and wrath, and anger, and clamor, and evil-speaking, be put away from you, with all malice.
+[SCRIPTURE_ROW] 29|||EN|||Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.|||LA|||Omnis sermo spurcus ex ore vestro non procedat; sed si quis est bonus ad edificationem usus, ut det gratiam audientibus.
+[SCRIPTURE_ROW] 30|||EN|||And grieve not the Holy Spirit of God, whereby ye are sealed unto the day of redemption.|||LA|||Et ne contristetis Spiritum Sanctum Dei, quo obsignati estis in diem redemptionis.
+[SCRIPTURE_ROW] 31|||EN|||Let all bitterness, and wrath, and anger, and clamor, and evil-speaking, be put away from you, with all malice.|||LA|||Omnis amarulentia, et indignatio, et ira, et clamor, et maledicentia, removeatur a vobis cum omni malitia.
 [BODY] 29. <sty c="800000" i="1">No filthy speech.</sty> He first forbids believers to use any <sty c="800000" i="1">filthy</sty> language, including under this name all those expressions which are wont to be employed for the purpose of inflaming lust. Not satisfied with the removal of the vice, he enjoins them to frame their discourse for edification. In
 
 --- PAGE 105 ---
@@ -1237,7 +1306,7 @@
 
 [H2] <sty c="800000" i="0"><490432></sty>EPHESIANS 4:32
 
-[BODY] 32. And be ye kind one to another, tender-hearted, forgiving one another, even as God for Christ’s sake hath forgiven you.
+[SCRIPTURE_ROW] 32|||EN|||And be ye kind one to another, tender-hearted, forgiving one another, even as God for Christ’s sake hath forgiven you.|||LA|||Sitis autem mutuo comes, misericordes, condonantes vobis inter vos, quemadmodum et Deus vobis in Christo condonavit.
 [BODY] 32. <sty c="800000" i="1">And be ye kind one to another.</sty> With <sty c="800000" i="1">bitterness</sty> he contrasts <sty c="800000" i="1">kindness,</sty> or gentleness of countenance, language, and manners. And as this virtue will never reign in us, unless attended by <sty c="000000" i="1">compassion,</sty> (<sty c="0000d4" i="0">oumpa>qeia</sty>,) he recommends to us to be <sty c="800000" i="1">tender-hearted</sty><sty c="000000" i="1">.</sty> This will lead us not only to sympathize with the distresses of our brethren, as if they were our own, but to cultivate that true humanity which is affected by everything that happens to them, in the same manner as if we were in their situation. The
 
 --- PAGE 107 ---
@@ -1252,7 +1321,8 @@
 
 [H2] <sty c="800000" i="0"><490501></sty>EPHESIANS 5:1-2
 
-[BODY] 1. Be ye therefore followers of God, as dear children; 2. And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweet smelling savor.
+[SCRIPTURE_ROW] 1|||EN|||Be ye therefore followers of God, as dear children;|||LA|||Sitis ergo imitatores Dei quemadmodum filii dilecti;
+[SCRIPTURE_ROW] 2|||EN|||And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweet smelling savor.|||LA|||Et ambulate in charitate quemadmodum et Christus nos dilexit, ac se ipsum tradidit pro nobis oblationem et hostiam Deo, in odorem bonae fragrantiae.
 [BODY] 1.<sty c="800000" i="1"> Be ye therefore followers.</sty> The same principle is followed out and enforced by the consideration that children ought to be like their father. He reminds us that we are the children of God, and that therefore we ought, as far as possible, to resemble Him in acts of kindness. It is impossible not to perceive, that the division of chapters, in the present instance, is particularly unhappy, as it has made a separation between parts of the subject which are very closely related. If, then, we are the children of God, we ought to be <sty c="800000" i="1">followers of God.</sty> Christ also declares, that, unless we shew kindness to the unworthy, we cannot be the children of our heavenly Father.
 
 [CENTERED] “<sty c="000080" i="0">Love your enemies, bless them that curse you, do good to them</sty> <sty c="000080" i="0">that hate you, and pray for them who despitefully use you and</sty> <sty c="000080" i="0">persecute you; </sty><sty c="000080" i="1">that ye may be the children of your</sty><sty c="000080" i="0"> </sty><sty c="000080" i="1">Father which is</sty> <sty c="000080" i="1">in heaven</sty><sty c="000080" i="0">; for he maketh his sun to rise on the evil and on the good,</sty> <sty c="000080" i="0">and sendeth rain on the just and on the unjust.</sty>” <sty c="000080" i="0">(</sty><sty c="800000" i="0"><400544></sty><sty c="000080" i="0">Matthew 5:44,45.) </sty><sty c="800000" i="0">F48</sty>
@@ -1313,7 +1383,13 @@
 [BODY] <sty c="800000" i="1">Upon the children of disobedience,</sty> — upon <sty c="000000" i="1">unbelievers</sty> or <sty c="000000" i="1">rebels.</sty> This expression must not be overlooked. Paul is now addressing believers, and his object is not so much to present alarming views of their own danger, as to rouse them to behold reflected in wicked men, as in mirrors, the dreadful judgments of God. God does not make himself an object of terror to his children, that they may avoid him, but does all that can be done in a fatherly manner, to draw them to himself. They ought to learn this lesson, not to involve themselves in a dangerous fellowship with the ungodly, whose ruin is thus foreseen.
 
 [H2] <sty c="800000" i="0"><490508></sty>EPHESIANS 5:8-14
-[BODY] 8. For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light; 9. (For the fruit of the Spirit is in all goodness, and righteousness, and truth;) 10. Proving what is acceptable unto the Lord. 10. Probantes, quid sit acceptum Deo. 11. And have no fellowship with the unfruitful works of darkness, but rather reprove them. 12. For it is a shame even to speak of those things which are done of them in secret. 13. But all things that are reproved are made manifest by the light: for whatsoever doth make manifest is light. 14. Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.
+[SCRIPTURE_ROW] 8|||EN|||For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light;|||LA|||Eratis aliquando tenabrae; nunc autem lux in Domino; tanquam filii lucis ambulate;
+[SCRIPTURE_ROW] 9|||EN|||(For the fruit of the Spirit is in all goodness, and righteousness, and truth;)|||LA|||(Fructus enim lucis in omni bonitate, et justitia, et veritate:)
+[SCRIPTURE_ROW] 10|||EN|||Probantes, quid sit acceptum Deo.|||LA|||
+[SCRIPTURE_ROW] 11|||EN|||And have no fellowship with the unfruitful works of darkness, but rather reprove them.|||LA|||Et ne communicetis operibus infructuosis tenebrarum; quin potius etiam redarguitote.
+[SCRIPTURE_ROW] 12|||EN|||For it is a shame even to speak of those things which are done of them in secret.|||LA|||Quae enim clam fiunt ab illis, turpe est vel dicere.
+[SCRIPTURE_ROW] 13|||EN|||But all things that are reproved are made manifest by the light: for whatsoever doth make manifest is light.|||LA|||Omnia autem, dum coarguuntur, a luce manifestantur; omne enim quod manifestat lux est.
+[SCRIPTURE_ROW] 14|||EN|||Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.|||LA|||Quamobrem dicit: Surge qui dormis, et exsurge ex mortuis; et illucescet tibi Christus.
 
 --- PAGE 114 ---
 
@@ -1363,7 +1439,12 @@
 
 [H2] <sty c="800000" i="0"><490515></sty>EPHESIANS 5:15-20
 
-[BODY] 15. See then that ye walk circumspectly, not as fools, but as wise, 16. Redeeming the time, because the days are evil. 17. Wherefore be ye not unwise, but understanding what the will of the Lord is. 18. And be not drunk with wine, wherein is excess; but be filled with the Spirit; 19. Speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart to the Lord; 20. Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ.
+[SCRIPTURE_ROW] 15|||EN|||See then that ye walk circumspectly, not as fools, but as wise|||LA|||Videte igitur, quomodo exacte ambuletis; non tanquam insipientes, sed tanquam sapientes:
+[SCRIPTURE_ROW] 16|||EN|||Redeeming the time, because the days are evil.|||LA|||Redimentes tempus, quoniam dies mali sunt.
+[SCRIPTURE_ROW] 17|||EN|||Wherefore be ye not unwise, but understanding what the will of the Lord is.|||LA|||Quare ne sitis imprudentes, sed intelligentes, quae sit voluntas Domini.
+[SCRIPTURE_ROW] 18|||EN|||And be not drunk with wine, wherein is excess; but be filled with the Spirit;|||LA|||Et ne inebriemini vino, in quo inest lascivia, sed impleamini Spiritu.
+[SCRIPTURE_ROW] 19|||EN|||Speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart to the Lord;|||LA|||Vobis ipsis loquentes psalmis et hymnis, et canticis spiritualibus, canentes et psallentes in corde vestro, Domino;
+[SCRIPTURE_ROW] 20|||EN|||Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ.|||LA|||Gratias agentes semper de omnibus, in nomine Domini nostri Iesu Christi, Deo et Patri.
 [BODY] 15. <sty c="800000" i="1">See then.</sty> If believers must not neglect to drive away the darkness of others by their own brightness, how much less ought they to be blind as to their own conduct in life? What darkness shall conceal those on whom Christ, the Sun of righteousness, has arisen? Placed, as it were, in a crowded theater, they ought to live under the eye of God and of angels. Let them stand in awe of these witnesses, though they may be concealed from the view of all mortals. Dismissing the metaphor of darkness and light, he enjoins them to regulate their life <sty c="800000" i="1">circumspectly as wise men, </sty><sty c="800000" i="0">F55</sty> who have been educated by the Lord in the school of true wisdom. Our understanding must shew itself by taking God for our guide and instructor, to teach us his own will.
 
 [BODY] 16. <sty c="800000" i="1">Redeeming the time.</sty> By a consideration of the time he enforces his exhortation.<sty c="800000" i="1"> The days are evil.</sty> Everything around us tends to corrupt and mislead; so that it is difficult for godly persons, who walk among so many
@@ -1402,7 +1483,13 @@
 [H2] <sty c="800000" i="0"><490521></sty>EPHESIANS 5:21-27
 
 
-[BODY] 21. Submitting yourselves one to another in the fear of God. 22. Wives, submit yourselves unto your own husbands, as unto the Lord. 23. For the husband is the head of the wife, even as Christ is the head of the church; and he is the savior of the body. 24. Therefore, as the church is subject unto Christ, so let the wives be to their own husbands in every thing. 25. Husbands, love your wives, even as Christ also loved the church, and gave himself for it; 26. That he might sanctify and cleanse it with the washing of water by the word; 27. That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy, and without blemish.
+[SCRIPTURE_ROW] 21|||EN|||Submitting yourselves one to another in the fear of God.|||LA|||Subditi estote invicem in timore Christi (vel, Dei.)
+[SCRIPTURE_ROW] 22|||EN|||Wives, submit yourselves unto your own husbands, as unto the Lord.|||LA|||Mulieres suis maritis subditae sint tanquam Domino;
+[SCRIPTURE_ROW] 23|||EN|||For the husband is the head of the wife, even as Christ is the head of the church; and he is the savior of the body.|||LA|||Quoniam vir est caput uxoris, quemadmodum et Christus caput est Ecclesiae, qui idem est servator corporis.
+[SCRIPTURE_ROW] 24|||EN|||Therefore, as the church is subject unto Christ, so let the wives be to their own husbands in every thing.|||LA|||Caeterum quemadmodum Ecclesia subest Christo, ita et mulieres suis maritis in omnibus.
+[SCRIPTURE_ROW] 25|||EN|||Husbands, love your wives, even as Christ also loved the church, and gave himself for it;|||LA|||Viri, diligite vestras uxores; quemadmodum et Christus dilexit Ecclesiam, et se ipsum tradidit pro ea
+[SCRIPTURE_ROW] 26|||EN|||That he might sanctify and cleanse it with the washing of water by the word;|||LA|||Ut eam sanctificaret, mundans lavacro aquae in Verbo;
+[SCRIPTURE_ROW] 27|||EN|||That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy, and without blemish.|||LA|||Ut sisteret eam sibi gloriosam Ecclesiam, non habentem maculam, aut rugam, aut quicquam tale; sed ut esset sancta et irreprehensibilis.
 [BODY] 21. <sty c="800000" i="1">Submit yourselves.</sty> God has bound us so strongly to each other, that no man ought to endeavor to avoid subjection; and where love reigns, mutual services will be rendered. I do not except even kings and governors, whose very authority is held for the <sty c="000000" i="1">service</sty> of the community. It is highly proper that all should be exhorted to be subject to each other in their turn.
 
 [BODY] But as nothing is more irksome to the mind of man than this mutual subjection, he directs us to <sty c="800000" i="1">the fear of Christ,</sty><sty c="800000" i="0"> </sty>who alone can subdue our fierceness, that we may not refuse the yoke, and can humble our pride, that we may not be ashamed of serving our neighbors. It does not much affect the sense, whether we interpret <sty c="800000" i="1">the fear of Christ,</sty> passively, thus,
@@ -1459,7 +1546,12 @@
 
 [H2] <sty c="800000" i="0"><490528></sty>EPHESIANS 5:28-33
 
-[BODY] 28. So ought men to love their wives as their own bodies: he that loveth his wife loveth himself. 29. For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church: 30. For we are members of his body, of his flesh, and of his bones. 31. For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh. 32. This is a great mystery: but I speak concerning Christ and the church. 33. Nevertheless, let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband.
+[SCRIPTURE_ROW] 28|||EN|||So ought men to love their wives as their own bodies: he that loveth his wife loveth himself.|||LA|||Ita viri debent diligere suas uxores, tanquam sua corpora. Qui diligit uxorem suam, se ipsum diligit.
+[SCRIPTURE_ROW] 29|||EN|||For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church:|||LA|||Nemo enim unquam carnem suam odio habuit, sed nutrit et fovet eam; quemadmodum et Christus Ecclesiam.
+[SCRIPTURE_ROW] 30|||EN|||For we are members of his body, of his flesh, and of his bones.|||LA|||Quia membra sumus corporis ejus, ex ejus carne et ex ejus ossibus.
+[SCRIPTURE_ROW] 31|||EN|||For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.|||LA|||Hujus causa relinquet homo patrem et matrem suam, et adhaerebit uxori suae; et erunt duo in carnem unam. (<sty c="800000" i="0"><010224></sty>Genesis 2:24.)
+[SCRIPTURE_ROW] 32|||EN|||This is a great mystery: but I speak concerning Christ and the church.|||LA|||Arcanum hoc magnum est; ego autem dico in Christo et in Ecclesia.
+[SCRIPTURE_ROW] 33|||EN|||Nevertheless, let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband.|||LA|||Caeterum vos quoque singuli, suam quisque uxorem diligat; mulier autem timeat maritum.
 [BODY] 28.<sty c="800000" i="1"> He that loveth his wife.</sty> An argument is now drawn from nature itself, to prove that men ought to love their wives. Every man, by his very nature, loves himself. But no man can love himself without loving his wife. Therefore, the man who does not love his wife is a monster. The minor proposition is proved in this manner. Marriage was appointed by God on the condition that the two should be <sty c="000000" i="1">one flesh;</sty> and that this unity may be the more sacred, he again recommends it to our notice by the consideration
 
 --- PAGE 127 ---
@@ -1504,7 +1596,10 @@
 
 [H2] <sty c="800000" i="0"><490601></sty>EPHESIANS 6:1-4
 
-[BODY] 1. Children, obey your parents in the Lord: for this is right. 2. Honor thy father and mother, (which is the first commandment with promise,) 3. That it may be well with thee, and thou mayest live long on the earth. 4. And, ye fathers, provoke not your children to wrath; but bring them up in the nurture and admonition of the Lord.
+[SCRIPTURE_ROW] 1|||EN|||Children, obey your parents in the Lord: for this is right.|||LA|||Filii, obedite parentibus vestris in Domino; hoc enim est justum.
+[SCRIPTURE_ROW] 2|||EN|||Honor thy father and mother, (which is the first commandment with promise,)|||LA|||Honora patrem tuum et matrem; (quod est mandatum primum cum promissione:)
+[SCRIPTURE_ROW] 3|||EN|||That it may be well with thee, and thou mayest live long on the earth.|||LA|||Ut bene tibi sit, et sis longaevus super terram.
+[SCRIPTURE_ROW] 4|||EN|||And, ye fathers, provoke not your children to wrath; but bring them up in the nurture and admonition of the Lord.|||LA|||Vos etiam, patres, ne ad iram provocetis filios vestros; sed educate eos in disciplina et correptione Domini.
 [BODY] 1. <sty c="800000" i="1">Children, obey.</sty> Why does the apostle use the word <sty c="800000" i="1">obey</sty> instead of <sty c="000000" i="1">honor, </sty><sty c="800000" i="0">F62</sty> which has a greater extent of meaning? It is because <sty c="800000" i="1">Obedience</sty> is the evidence of that <sty c="000000" i="1">honor</sty> which children owe to their parents, and is therefore more earnestly enforced. It is likewise more difficult; for the human mind recoils from the idea of subjection, and with difficulty allows itself to be placed under the control of another. Experience shews how rare this virtue is; for do we find one among a thousand that is obedient to his parents? By a figure of speech, a part is here put for the whole, but it is the most important part, and is necessarily accompanied by all the others.
 
 [BODY] <sty c="800000" i="1">In the Lord.</sty> Besides the law of nature, which is acknowleged by all nations, the obedience of children is enforced by the authority of God. Hence it follows, that parents are to be obeyed, so far only as is consistent with piety to God, which comes first in order. If the command of God is the rule by which the submission of children is to be regulated, it would be foolish to suppose that the performance of this duty could lead away from God himself.
@@ -1540,7 +1635,11 @@
 
 
 
-[BODY] 5. Servants, be obedient to them that are your masters according to the flesh, with fear and trembling, in singleness of your heart, as unto Christ; 6. Not with eye-service, as menpleasers; but as the servants of Christ, doing the will of God from the heart; 7. With good will doing service, as to the Lord, and not to men: 8. Knowing, that whatsoever good thing any man doeth, the same shall he receive of the Lord, whether he be bond or free. 9. And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; neither is there respect of persons with him.
+[SCRIPTURE_ROW] 5|||EN|||Servants, be obedient to them that are your masters according to the flesh, with fear and trembling, in singleness of your heart, as unto Christ;|||LA|||Servi, obedite dominis secundum carnem, cum timore et tremore in simplicitate cordis vestri, tanquam Christo;
+[SCRIPTURE_ROW] 6|||EN|||Not with eye-service, as menpleasers; but as the servants of Christ, doing the will of God from the heart;|||LA|||Non quasi ad oculum servientes, tanquam hominibus studentes placere, sed tanquam servi Christi, facientes voluntatem Dei ex animo
+[SCRIPTURE_ROW] 7|||EN|||With good will doing service, as to the Lord, and not to men:|||LA|||Cum benevolentia, servientes Domino, et non hominibus;
+[SCRIPTURE_ROW] 8|||EN|||Knowing, that whatsoever good thing any man doeth, the same shall he receive of the Lord, whether he be bond or free.|||LA|||Scientes quod unusquisque quicquid boni fecerit, recipiet a Domino, sive servus, sive liber.
+[SCRIPTURE_ROW] 9|||EN|||And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; neither is there respect of persons with him.|||LA|||Et vos, domini, mutuum officium praestate erGalatiansillos, remittentes minas; scientes quod illorum et vester Dominus est in coelis; et non est apud eum personarum acceptio.
 [BODY] 5. <sty c="800000" i="1">Servants, be obedient.</sty> His exhortation to servants is so much the more earnest, on account of the hardship and bitterness of their condition, which renders it more difficult to be endured. And he does not speak merely of outward obedience, but says more about <sty c="800000" i="1">fear</sty> willingly rendered; for it is a very rare occurrence to find one who willingly yields himself to the control of another. The <sty c="800000" i="1">servants</sty><sty c="800000" i="0"> </sty>(<sty c="0000d4" i="0">dou~loi</sty>) whom he immediately addresses were not hired servants, like those of the present day, but <sty c="000000" i="1">slaves,</sty> such as were in ancient times, whose <sty c="000000" i="1">slavery</sty> was perpetual, unless, through the favor of their masters, they obtained freedom, — whom their masters bought with money, that they might impose upon them the most degrading employments, and might, with the full protection of the law, exercise over them the power of life and death. To such he says, <sty c="800000" i="1">obey your masters,</sty> lest
 
 --- PAGE 135 ---
@@ -1581,7 +1680,10 @@
 
 [H2] <sty c="800000" i="0"><490610></sty>EPHESIANS 6:10-13
 
-[BODY] 10. Finally, my brethren, be strong in the Lord, and in the power of his might. 11. Put on the whole armor of God, that ye may be able to stand against the wiles of the devil. 12. For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places. 13. Wherefore take unto you the whole armor of God, that ye may be able to withstand in the evil day, and having done all, to stand.
+[SCRIPTURE_ROW] 10|||EN|||Finally, my brethren, be strong in the Lord, and in the power of his might.|||LA|||Quod superest, fratres mei, sitis fortes in Domino, et in robore potentiae ipsius.
+[SCRIPTURE_ROW] 11|||EN|||Put on the whole armor of God, that ye may be able to stand against the wiles of the devil.|||LA|||Induite totam armaturam Dei, ut possitis stare adversus insidias Diaboli.
+[SCRIPTURE_ROW] 12|||EN|||For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.|||LA|||Quia non est nobis lucta adversus carnem et sanguinem, sed adversus principatus, adversus potestates, adversus mundanos principes tenebrarum saeculi hujus, adversus spirituales malitias in coelestibus.
+[SCRIPTURE_ROW] 13|||EN|||Wherefore take unto you the whole armor of God, that ye may be able to withstand in the evil day, and having done all, to stand.|||LA|||Quapropter assumite totam armaturam Dei, ut possitis resistere in die malo, et omnibus peractis stare.
 [BODY] 10. <sty c="800000" i="1">Finally.</sty> Resuming his general exhortations, he again enjoins them to <sty c="800000" i="1">be</sty> <sty c="800000" i="1">strong,</sty> — to summon up courage and vigor; for there is always much to enfeeble us, and we are ill fitted to resist. But when our weakness is considered, an exhortation like this would have no effect, unless <sty c="800000" i="1">the Lord</sty> were present, and stretched out his hand to render assistance, or rather, unless he supplied us with all the power. Paul therefore adds, in the Lord. As if he had said, “‘You have no right to reply, that you have not the ability; for all that I require of you is, <sty c="800000" i="1">be strong in the Lord.</sty>” To explain his meaning more fully, he adds, in the power of his might, which tends
 
 --- PAGE 139 ---
@@ -1617,7 +1719,13 @@
 
 
 
-[BODY] 14. Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness; 15. And your feet shod with the preparation of the gospel of peace; 16. Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked. 17. And take the helmet of salvation, and the sword of the Spirit, which is the word of God: 18. Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints; 19. And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel, 20. For which I am an ambassador in bonds; that therein I may speak boldly, as I ought to speak.
+[SCRIPTURE_ROW] 14|||EN|||Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;|||LA|||State igitur succincti lumbos veritate, et induti thoracem justitiae
+[SCRIPTURE_ROW] 15|||EN|||And your feet shod with the preparation of the gospel of peace;|||LA|||Et calceati pedes praeparatione evangelii pacis;
+[SCRIPTURE_ROW] 16|||EN|||Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.|||LA|||In omnibus assumpto scuto fidei, quo possitis omnia tela maligni ignita exstinguere.
+[SCRIPTURE_ROW] 17|||EN|||And take the helmet of salvation, and the sword of the Spirit, which is the word of God:|||LA|||Et galeam salutaris accipite, et gladium Spiritus, qui est verbum Dei;
+[SCRIPTURE_ROW] 18|||EN|||Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints;|||LA|||Per omnem precationem et orationem omni tempore precantes in Spiritu, et in hoc ipsum vigilantes, cum omni assiduitate et deprecatione pro omnibus sanctis;
+[SCRIPTURE_ROW] 19|||EN|||And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel|||LA|||Et pro me, ut mihi detur sermo in apertione oris mei cum fiducia, ut patefaciam mysterium evangelii;
+[SCRIPTURE_ROW] 20|||EN|||For which I am an ambassador in bonds; that therein I may speak boldly, as I ought to speak.|||LA|||Pro quo legatione fungor in catena; ut confidenter me geram in eo, quemadmodum oportet me loqui.
 [BODY] 14. <sty c="800000" i="1">Stand therefore.</sty> Now follows a description of the arms which they were enjoined to wear. We must not, however, inquire very minutely into the meaning of each word; for all allusion to military customs is all that was intended. Nothing can be more idle than the extraordinary pains which some have taken to discover the reason why <sty c="800000" i="1">righteousness</sty><sty c="800000" i="0"> </sty>is made a <sty c="800000" i="1">breastplate,</sty> instead of a <sty c="000000" i="1">girdle.</sty> Paul’s design was to touch briefly on the most important points required in a Christian, and to adapt them to the comparison which he had already used.
 
 --- PAGE 143 ---
@@ -1668,7 +1776,10 @@
 
 [H2] <sty c="800000" i="0"><490621></sty>EPHESIANS 6:21-24
 
-[BODY] 21. But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things: 22. Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts. 23. Peace be to the brethren, and love with faith, from God the Father, and the Lord Jesus Christ 24. Grace be with all them that love our Lord Jesus Christ in sincerity. Amen.
+[SCRIPTURE_ROW] 21|||EN|||But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things:|||LA|||Ut autem sciatis vos etiam quae circa me aguntur, quid faciam, omnia vobis patefaciet Tychicus, dilectus frater et fidelis minister in Domino;
+[SCRIPTURE_ROW] 22|||EN|||Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts.|||LA|||Quem misi ad vos in eum finem, ut statum meum cognosceretis, et consolaretur corda vestra.
+[SCRIPTURE_ROW] 23|||EN|||Peace be to the brethren, and love with faith, from God the Father, and the Lord Jesus Christ|||LA|||Pax fratribus, et dilectio cum fide a Deo Patre et Domino Iesu Christo.
+[SCRIPTURE_ROW] 24|||EN|||Grace be with all them that love our Lord Jesus Christ in sincerity. Amen.|||LA|||Gratia cum omnibus, qui diligunt Dominum nostrum Iesum Christum in sinceritate. Amen.
 [BODY] 21. <sty c="800000" i="1">But that, ye also may know.</sty> Uncertain or false reports frequently produce uneasiness, chiefly, no doubt, in weak minds, but sometimes also in thoughtful and steady persons. To prevent this danger, Paul sends Tychicus, from whom the Ephesians would receive full information. The holy solicitude which Paul felt about the interests of religion, or, to use his own language, “the care of all the churches,” (<sty c="800000" i="0"><471128></sty>2 Corinthians 11:28,) was thus strikingly evinced. When death stood constantly before his eyes, neither the dread of death, nor anxiety about himself, prevented him from making provision for the most distant churches. Another man would have
 
 --- PAGE 148 ---

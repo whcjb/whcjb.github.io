@@ -35,7 +35,10 @@
 [H2] <sty c="800000" i="0"><590101></sty>JAMES 1:1-4
 
 
-[BODY] 1 James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting. 2 My brethren, count it all joy when ye fall into divers temptations; 3 Knowing this, that the trying of your faith worketh patience. 4 But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.
+[SCRIPTURE_ROW] 1|||EN|||James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting.|||LA|||Jacobus, Dei ac Domini Jesu Christi servus, duodecim tribubus quae in dispersione sunt, salutem.
+[SCRIPTURE_ROW] 2|||EN|||My brethren, count it all joy when ye fall into divers temptations;|||LA|||Omne gaudium existimate, fratres mei, quum in tentationes varias incideritis;
+[SCRIPTURE_ROW] 3|||EN|||Knowing this, that the trying of your faith worketh patience.|||LA|||Scientes quod probatio fidei vestrae, patientiam operatur
+[SCRIPTURE_ROW] 4|||EN|||But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.|||LA|||Patientia vero opus perfectum habeat, ut sitis perfecti et integri, in nullo deficientes.
 [BODY] 1. <sty c="800000" i="1">To the twelve tribes</sty>. When the ten tribes were banished, the Assyrian king placed them in different parts. Afterwards, as it usually happens in the revolutions of kingdoms (such as then took place,) it is very probable that they moved here and there in all directions. And the Jews had been scattered almost unto all quarters of the world. He then wrote and exhorted all those whom he could not personally address, because they had been scattered far and wide. But that he speaks not of the grace of Christ and of faith in him, the reason seems to be this, because he addressed those who had already been rightly taught by others; so that they had need, not so much of doctrine, as of the goads of exhortations.<sty c="800000" i="0">f1</sty>
 
 [BODY] 2. <sty c="800000" i="1">All joy</sty>. The first exhortation is, to bear trials with a cheerful mind. And it was especially necessary at that time to comfort the Jews, almost overwhelmed as they were with troubles. For the very name of the nation was so infamous, that they were hated and despised by all people wherever they went; and their condition as Christians rendered them still more miserable, because they held their own nation as their most inveterate enemies. At the same time, this consolation was not so suited to one time,
@@ -70,7 +73,10 @@
 
 [H2] <sty c="800000" i="0"><590105></sty>JAMES 1:5-8
 
-[BODY] 5 If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. 6 But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed. 7 For let not that man think that he shall receive any thing of the Lord. 8 A double minded man is unstable in all his ways.
+[SCRIPTURE_ROW] 5|||EN|||If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.|||LA|||Porro si quis autem vestrum destituitur sapientia, postulet a Deo, qui dat omnibus simpliciter, nec exprobrat; et dabitur ei.
+[SCRIPTURE_ROW] 6|||EN|||But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed.|||LA|||Postulet autem in fide, nihil haesitans; nam qui haesitat similis est fluctui maris, qui a vento agitur et circumfertur.
+[SCRIPTURE_ROW] 7|||EN|||For let not that man think that he shall receive any thing of the Lord.|||LA|||non ergo existimet homo ille quod sit quicquam accepturus a Domino.
+[SCRIPTURE_ROW] 8|||EN|||A double minded man is unstable in all his ways.|||LA|||Vir duplici animo, instabilis est in omnibus viis suis.
 [BODY] 5. <sty c="800000" i="1">If any of you lack wisdom.</sty> As our reason, and all our feelings are averse to the thought that we can be happy in the midst of evils, he bids us to ask of the Lord to give us wisdom. For <sty c="000000" i="1">wisdom</sty> here, I confine to the subject of the passage, as though he had said, “If this doctrine is higher than what your minds can reach to, ask of the Lord to illuminate you by his Spirit; for as this consolation alone is sufficient to mitigate all the bitterness of evils, that what is grievous to the flesh is salutary to us; so we must necessarily be overcome with impatience, except we be sustained by this kind of comfort.” Since we see that the Lord does not so require from us what is above our strength, but that he is ready to help us, provided we ask, let us, therefore, learn, whenever he commands anything, to ask from him the power to perform it.
 
 [BODY] Though in this place to be wise is to submit to God in the endurance of evils, under a due conviction that he so orders all things as to promote our
@@ -111,7 +117,9 @@
 
 [H2] <sty c="800000" i="0"><590109></sty>JAMES 1:9-11
 
-[BODY] 9 Let the brother of low degree rejoice in that he is exalted: 10 But the rich, in that he is made low: because as the flower of the grass he shall pass away. 11 For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways.
+[SCRIPTURE_ROW] 9|||EN|||Let the brother of low degree rejoice in that he is exalted:|||LA|||Porro glorietur frater humilis in sublimate sua;
+[SCRIPTURE_ROW] 10|||EN|||But the rich, in that he is made low: because as the flower of the grass he shall pass away.|||LA|||Dives autem in humilitate sua, quia tanquam flos herbae prateteribit.
+[SCRIPTURE_ROW] 11|||EN|||For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways.|||LA|||Nam sol exortus est cum aestu, et exarescit herba, et flos ejus cecidit, et decor aspectus ejus periit; sic et dives in suis viis (vel, copiis) marcescet.
 [BODY] 9. <sty c="800000" i="1">Let the brother of low degree</sty>. As Paul, exhorting servants submissively to bear their lot, sets before them this consolation, that they were the freemen of God, having been set free by his grace from the most miserable bondage of Satan, and reminds them, though free, yet to remember that they were the servants of God; so here James in the same manner bids the lowly to glory in this, that they had been adopted by the Lord as his children; and the rich, because they had been brought down into the same condition, the world’s vanity having been made evident to them. Thus the first he would have to be content with their humble and low state; and he forbids the rich to be proud. Since it is incomparably the greatest dignity
 
 --- PAGE 11 ---
@@ -131,7 +139,10 @@
 [H2] <sty c="800000" i="0"><590112></sty>JAMES 1:12-15
 
 
-[BODY] 12 Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him. 13 Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man: 14 But every man is tempted, when he is drawn away of his own lust, and enticed. 15 Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.
+[SCRIPTURE_ROW] 12|||EN|||Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.|||LA|||Beatus vir qui suffert temptationem; quod quum probatus fuerit, accipiet coronam vitae, quam promisit Deus diligentibus ipsum.
+[SCRIPTURE_ROW] 13|||EN|||Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:|||LA|||Nemo quum tentatur dicat, A Deo tentor; Deus enim nec tentari malis potest, nec quenquam tentat.
+[SCRIPTURE_ROW] 14|||EN|||But every man is tempted, when he is drawn away of his own lust, and enticed.|||LA|||Sed unusquisque tentatur, dum a sua concupiscentia abstrahitur, et inescatur.
+[SCRIPTURE_ROW] 15|||EN|||Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.|||LA|||Postquam antum concupiscentia conceperit, parit peccatum vero perfectum generat mortem.
 [BODY] 12. <sty c="800000" i="1">Blessed is the man</sty>. After having applied consolation, he moderated the sorrow of those who were severely handled in this world, and again humbled the arrogance of the great. He now draws this conclusion, that they are happy who magnanimously endure troubles and other trials, so as to rise above them. The word temptation may indeed be otherwise understood, even for the stings of lusts which annoy the soul within; but which is here commended, as I think, is fortitude of mind in enduring adversities. It is, however, a paradox, that they are not happy to whom all things come according to their wishes, but such as are not overcome with evils.
 
 [BODY] <sty c="800000" i="1">For when he is tried</sty>. He gives a reason for the preceding sentence; for the crown follows the contest. If, then, it be our chief happiness to be crowned in the kingdom of God, it follows, that the contests with which the Lord tries us, are aids and helps to our happiness. Thus the argument is from the end or the effect: hence we conclude, that the faithful are harassed by so many evils for this purpose, that their piety and obedience may be made manifest, and that they may be thus at length prepared to receive the crown of life.
@@ -170,7 +181,9 @@
 
 [H2] <sty c="800000" i="0"><590116></sty>JAMES 1:16-18
 
-[BODY] 16 Do not err, my beloved brethren. 17 Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning. 18 Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures.
+[SCRIPTURE_ROW] 16|||EN|||Do not err, my beloved brethren.|||LA|||Ne erretis, fratres mei dilecti:
+[SCRIPTURE_ROW] 17|||EN|||Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.|||LA|||Omnis donatio bona et omne donum perfectum desursum est, descendens a Patre luminum; apud quem non est transmutatio, aut conversionis obumbratio.
+[SCRIPTURE_ROW] 18|||EN|||Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures.|||LA|||Is sua voluntate genuit nos veritatis, ut essemus primitiae quaedam suaram creaturarum.
 [BODY] 16.<sty c="000000" i="1"> </sty><sty c="800000" i="1">Do not err</sty>. This is an argument from what is opposite; for as God is the author of all good, it is absurd to suppose him to be the author of evil. To do good is what properly belongs to him, and according to his nature; and from him all good things come to us. Then, whatever evil he does, is not agreeable to his nature. But as it sometimes happens, that he who quits himself well through life, yet in some things fails, he meets this doubt by
 
 --- PAGE 16 ---
@@ -197,7 +210,9 @@
 
 [H2] <sty c="800000" i="0"><590119></sty>JAMES 1:19-21
 
-[BODY] 19 Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath: 20 For the wrath of man worketh not the righteousness of God. 21 Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.
+[SCRIPTURE_ROW] 19|||EN|||Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:|||LA|||Itaque, fratres mei dilecti, sit omnis homo celer ad audiendum, tardus autem ad loquendum, tardus ad iram:
+[SCRIPTURE_ROW] 20|||EN|||For the wrath of man worketh not the righteousness of God.|||LA|||Ira enim hominus justitiam Dei non operatur.
+[SCRIPTURE_ROW] 21|||EN|||Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.|||LA|||Quapropter deposita omni inmunditie, et redundantia malitiae, cum mansuetudine suscipite insitum sermonem qui potest servare animas vestras.
 [BODY] 19.<sty c="800000" i="1"> Let every man</sty>. Were this a general sentence, the inference would be farfetched; but as he immediately adds a sentence respecting the word of truth suitable to the last verse, I doubt not but that he accommodates this exhortation peculiarly to the subject in hand. Having then set before us the goodness of God, he shews how it becomes us to be prepared to receive
 
 --- PAGE 18 ---
@@ -231,7 +246,12 @@
 [H2] <sty c="800000" i="0"><590122></sty>JAMES 1:22-27
 
 
-[BODY] 22 But be ye doers of the word, and not hearers only, deceiving your own selves. 23 For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass: 24 For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was. 25 But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed. 26 If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain. 27 Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.
+[SCRIPTURE_ROW] 22|||EN|||But be ye doers of the word, and not hearers only, deceiving your own selves.|||LA|||Estote factores sermones, et non auditores solum, fallentes vos ipsos.
+[SCRIPTURE_ROW] 23|||EN|||For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:|||LA|||Nam si quis auditor est sermones, et non factor, hic similis est homini consideranti faciem nativitatis suae in speculo.
+[SCRIPTURE_ROW] 24|||EN|||For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was.|||LA|||Consideravit enim seipsum, et abiit, et protinus oblitus est qualis sit.
+[SCRIPTURE_ROW] 25|||EN|||But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.|||LA|||Qui vero intuitus fuerit in legem perfectam, quae est libertatis, et permanserit, hic non auditor obliviosus, sed factor operis, beatus in opere suo erit.
+[SCRIPTURE_ROW] 26|||EN|||If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain.|||LA|||Si quis videtur religiosus esse inter vos, nec refraenat linguam suam, sed decipits cor suum, hujus inanus est religio.
+[SCRIPTURE_ROW] 27|||EN|||Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.|||LA|||Religio pura et impolluta coram Deo et Patre, haec est, Visitare pupillos et viduas in afflictione ipsorum, inmaculatum servare se a mundo.
 [BODY] 22.<sty c="000000" i="1"> </sty><sty c="800000" i="1">Be ye doers of the word</sty>. The doer here is not the same as in
 [FOOTNOTE] <sty c="800000" i="0"><450213></sty>Romans 2:13, who satisfied the law of God and fulfilled it in every
 [BODY] part, but the doer is he who from the heart embraces God’s word and
@@ -284,7 +304,10 @@
 
 [H2] <sty c="800000" i="0"><590201></sty>JAMES 2:1-4
 
-[BODY] 1 My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons. 2 For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment; 3 And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say to the poor, Stand thou there, or sit here under my footstool: 4 Are ye not then partial in yourselves, and are become judges of evil thoughts?
+[SCRIPTURE_ROW] 1|||EN|||My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons.|||LA|||Fratres mei, ne in acceptionabus personarum fidem habeatis Domini Jesu Christi ex opinione, (vel, gloriae.)
+[SCRIPTURE_ROW] 2|||EN|||For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment;|||LA|||Si enim ingressus fuerit in coetum vestrum vir aureos anulos gestans, veste indudus spliendida; ingressus autem fuerit et pauper in sordida veste;
+[SCRIPTURE_ROW] 3|||EN|||And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say to the poor, Stand thou there, or sit here under my footstool:|||LA|||Et respexeritis in cum qui vestem fert splendidam, et ei dixeritis, Tu sede hic honeste, et pauperi dixeritis, Tu sta illic, vel, Sede hic sub scabello pedum meorum;
+[SCRIPTURE_ROW] 4|||EN|||Are ye not then partial in yourselves, and are become judges of evil thoughts?|||LA|||An non dijudicati eestis in vobisipsis, et facti judices malarum cogitationum?
 [BODY] This reproof seems at first sight to be hard and unreasonable; for it is one of the duties of courtesy, not to be neglected, to honor those who are elevated in the world. Further, if respect of persons be vicious, servants are to be freed from all subjection; for freedom and servitude are deemed by Paul as conditions of life. The same must be thought of magistrates. But the solution of these questions is not difficult, if what James writes is not separated. For he does not simply disapprove of honor being paid to the rich, but that this, should not be done in a way so as to despise or reproach the poor; and this will appear more clearly, when he proceeds to speak of the rule of love.
 
 [BODY] Let us therefore remember that the respect of persons here condemned is that by which the rich is so extolled, wrong is done to the poor, which also
@@ -308,7 +331,9 @@
 [H2] <sty c="800000" i="0"><590205></sty>JAMES 2:5-7
 
 
-[BODY] 5 Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him? 6 But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats? 7 Do not they blaspheme that worthy name by the which ye are called?
+[SCRIPTURE_ROW] 5|||EN|||Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?|||LA|||Audite, fratres mei dilecti, nonne Deus elegit pauperes mundi hujus divites in fide et heredes regni quod promisit iis qui diligunt eum?
+[SCRIPTURE_ROW] 6|||EN|||But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?|||LA|||Vos autem contemptui habiustis pauperem: nonne divites tyrnnidem in vos exercent et iidem trahunt vos ad tribunalia?
+[SCRIPTURE_ROW] 7|||EN|||Do not they blaspheme that worthy name by the which ye are called?|||LA|||Et iidem contumelia afficiunt bonum nomen quod invocatum est super vos?
 [BODY] 5. <sty c="800000" i="1">Hearken, my beloved brethren</sty>. He proves now by a two-fold argument, that they acted preposterously, when for the sake of the rich they despised the poor: The first is, that it is unbecoming and disgraceful to cast down those whom God exalts, and to treat reproachfully those whom he honors. As God honors the poor, then every one who repudiates them, reverses the order of God. The other argument is taken from common experience; for since the rich are for the most part vexatious to the good and innocent, it is very unreasonable to render such a reward for the wrongs they do, so that they should be more approved by us than the poor, who aid us more than they wrong us. We shall now see how he proceeds with these two points.
 
 [BODY] <sty c="800000" i="1">Hath not God chosen the poor of this world?</sty> Not indeed alone, but he wished to begin with them, that he might beat down the pride of the rich. This is also what Paul says, that God hath chosen, not many noble, not many mighty in the world, but those who are weak, that he might make ashamed such as are strong (<sty c="800000" i="0"><460125></sty>1 Corinthians 1:25.) In short, though God pours forth his grace on the rich in common with the poor, yet his will is to prefer these to those, that the mighty might learn not to flatter themselves, and that the ignoble and the obscure might ascribe in what
@@ -333,7 +358,10 @@
 
 [H2] <sty c="800000" i="0"><590208></sty>JAMES 2:8-11
 
-[BODY] 8 If ye fulfill the royal law according to the scripture, Thou shalt love thy neighbor as thyself, ye do well: 9 But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors. 10 For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all. 11 For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.
+[SCRIPTURE_ROW] 8|||EN|||If ye fulfill the royal law according to the scripture, Thou shalt love thy neighbor as thyself, ye do well:|||LA|||Si legem quidem regiam perfectis juxta scripturum, Diliges proximum tuum sicut teipsum, benefacitis. (<sty c="800000" i="0"><031918></sty>Leviticus 19:18; <sty c="800000" i="0"><402239></sty>Matthew 22:39; <sty c="800000" i="0"><411231></sty>Mark 12:31; <sty c="800000" i="0"><451309></sty>Romans 13:9; <sty c="800000" i="0"><480514></sty>Galatians 5:14.)
+[SCRIPTURE_ROW] 9|||EN|||But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors.|||LA|||Sin personam respicitis, peccatum committis, et redarguimini a lege veluti transgressores. (<sty c="800000" i="0"><031915></sty>Leviticus 19:15; <sty c="800000" i="0"><050117></sty>Deuteronomy 1:17, 19.)
+[SCRIPTURE_ROW] 10|||EN|||For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.|||LA|||Quisquis enim totam legem servaverit, offenderit autem in uno, factus est omnium reus.
+[SCRIPTURE_ROW] 11|||EN|||For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.|||LA|||Nam qui dixit, Ne moecheris, dixit etiam, Ne occidas. Quod si non fueris moechatus, occideris tamen, factus es transgressor legis.
 [BODY] Now follows a plainer declaration; for he expressly points out the cause of the last reproof, for they were officiously attentive to the rich, not from love, but on the contrary, from a vain desire of attaining their favor: And it is in anticipation, by which he obviated an excuse on the other side; for they might have objected and said, that he ought not to be blamed, who humbly submiteth himself to the unworthy. James, indeed, concedes that
 
 --- PAGE 29 ---
@@ -371,7 +399,8 @@
 [H2] <sty c="800000" i="0"><590212></sty>JAMES 2:12-13
 
 
-[BODY] 12 So speak ye, and so do, as they that shall be judged by the law of liberty. 13 For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.
+[SCRIPTURE_ROW] 12|||EN|||So speak ye, and so do, as they that shall be judged by the law of liberty.|||LA|||Sic loquimini, et sic facite, ut per legem libertatis judicandi.
+[SCRIPTURE_ROW] 13|||EN|||For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.|||LA|||Judicium enim sine misericordia ei qui non praestiterit misericordiam ;et gloriatur misericordia adversus judicium.
 [BODY] 12. <sty c="800000" i="1">So speak ye</sty>. Some give this explanation, that as they flattered themselves too much, they are summoned to the right tribunal; for men absolve themselves according to their own notions, because they withdraw themselves from the judgment of the divine law. He then reminds them that all deeds and words are there to be accounted for, because God will judge the world according to his law. As, however, such a declaration might have smitten them with immoderate terror, to correct or mitigate what they might have thought severe, he adds,<sty c="000000" i="1"> </sty><sty c="800000" i="1">the law of liberty</sty>. For we know what Paul says,
 
 [CENTERED] <sty c="000080" i="0">“Whosoever are under the law are under a curse.”</sty> <sty c="000080" i="0">(</sty><sty c="800000" i="0"><480310></sty><sty c="000080" i="0">Galatians 3:10.)</sty>
@@ -398,7 +427,10 @@
 
 [H2] <sty c="800000" i="0"><590214></sty>JAMES 2:14-17
 
-[BODY] 14 What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him? 15 If a brother or sister be naked, and destitute of daily food, 16 And one of you say unto them, Depart in peace, be ye warmed and filled; notwithstanding ye give them not those things which are needful to the body; what doth it profit? 17 Even so faith, if it hath not works, is dead, being alone.
+[SCRIPTURE_ROW] 14|||EN|||What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?|||LA|||Quid prodest, fratres mei, si fidem dicataliquis se habere, opera autem non habeat? nunquid potest fides salvum facere ipsum?
+[SCRIPTURE_ROW] 15|||EN|||If a brother or sister be naked, and destitute of daily food|||LA|||Quod si frater aut soror nudi fuerint, et egentes quotidiano victu
+[SCRIPTURE_ROW] 16|||EN|||And one of you say unto them, Depart in peace, be ye warmed and filled; notwithstanding ye give them not those things which are needful to the body; what doth it profit?|||LA|||Dicat autem aliquis vestrum illis, Abite cum pace, calescite et saturamini; non tamen dederitis quae sunt necessaria corpori, quae utilitas?
+[SCRIPTURE_ROW] 17|||EN|||Even so faith, if it hath not works, is dead, being alone.|||LA|||Sic et fides, si opera non habuerit, mortua est per se.
 [BODY] 14. <sty c="800000" i="1">What doth it profit</sty>. He proceeds to commend mercy. And as he had threatened that God would be a severe Judge to us, and at the same time very dreadful, except we be kind and merciful towards our neighbors, and as on the other hand hypocrites objected and said, that faith is sufficient to us, in which the salvation of men consists, he now condemns this vain boasting. The sum, then, of what is said is, that faith without love avails nothing, and that it is therefore wholly dead.
 
 [BODY] But here a question arises, Can faith be separated from love? It is indeed true that the exposition of this passage has produced that common distinction of the Sophists, between unformed and formed faith; but of such a thing James knew nothing, for it appears from the first words, that he speaks of false profession of faith: for he does not begin thus, “If any one has faith;” but, “If any says that he has faith;” by which he certainly intimates that hypocrites boast of the empty name of faith, which really does not belong to them.
@@ -419,7 +451,8 @@
 
 [H2] <sty c="800000" i="0"><590218></sty>JAMES 2:18-19
 
-[BODY] 18 Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works. 19 Thou believest that there is one God; thou doest well: the devils also believe and tremble.
+[SCRIPTURE_ROW] 18|||EN|||Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works.|||LA|||Quin dicat quispam, Tu fidem habes, et ego opera habeo; ostende mihi fidem tuam sine operibus (alias, ex operibus) tuis, et ego tibi ex operibus meis ostendam fidem meam.
+[SCRIPTURE_ROW] 19|||EN|||Thou believest that there is one God; thou doest well: the devils also believe and tremble.|||LA|||Tu credis quod Deus unus est, bene facis; et daemones credunt, ac contremiscunt.
 [BODY] 18. <sty c="800000" i="1">Yea, a man may say</sty>. Erasmus introduces here two persons as speakers; one of whom boasts of faith without works, and the other of works without faith; and he thinks that both are at length confuted by the Apostle. But this view seems to me too forced. He thinks it strange, that this should be said by James, <sty c="800000" i="1">Thou hast faith</sty>, who acknowledges no faith without works. But in this he is much mistaken, that he does not acknowledge an irony in these words. Then <sty c="0000d4" i="0">ajlla<</sty> I take for “nay rather;” and <sty c="0000d4" i="0">ti<v</sty> for “any one;” for the design of James was to expose the foolish boasting of those who imagined that they had faith when by their life they shewed that they were unbelievers; for he intimates that it would be easy for all the godly who led a holy life to strip hypocrites of that boasting with which they were inflated.<sty c="800000" i="0">f17A</sty>
 
 [BODY] <sty c="800000" i="1">Shew me</sty>. Though the more received reading is, “by works,” yet the old Latin is more suitable, and the reading is also found in some Greek copies. I therefore hesitated not to adopt it. Then he bids to shew faith without works, and thus reasons from what is impossible, to prove what does not exist. So he speaks ironically. But if any one prefers the other reading, it comes to the same thing, “Shew me by works thy faith;” for since it is not an idle thing, it must necessarily be proved by works. The meaning then is, “Unless thy faith brings forth fruits, I deny that thou hast any faith.”<sty c="800000" i="0">f18</sty>
@@ -433,7 +466,13 @@
 [BODY] <sty c="800000" i="1">Thou doest well</sty>, is put down for the purpose of extenuating, as though he had said, “It is, forsooth! a great thing to sink down below the devils.” <sty c="800000" i="0">f19</sty>
 
 [H2] <sty c="800000" i="0"><590220></sty>JAMES 2:20-26
-[BODY] 20 But wilt thou know, O vain man, that faith without works is dead? 21 Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar? 22 Seest thou how faith wrought with his works, and by works was faith made perfect? 23 And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God. 24 Ye see then how that by works a man is justified, and not by faith only. 25 Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way? 26 For as the body without the spirit is dead, so faith without works is dead also.
+[SCRIPTURE_ROW] 20|||EN|||But wilt thou know, O vain man, that faith without works is dead?|||LA|||Vis autem scire, O homo inanis! quod fides absque operibus mortua sit?
+[SCRIPTURE_ROW] 21|||EN|||Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?|||LA|||Abraham pater noster, nonne ex operibus justificatus est, quum filium suum Isaac super altare?
+[SCRIPTURE_ROW] 22|||EN|||Seest thou how faith wrought with his works, and by works was faith made perfect?|||LA|||Vides quod fides co-operata fuerit ejus operibus, et ex operibus fides perfecta fuerit?
+[SCRIPTURE_ROW] 23|||EN|||And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.|||LA|||Atque implenta fuit scriptura, quae dicit, Credidit Abraham Deo, et imputatum illi fuit in justitiam, et Amicus Deo vacatus est?
+[SCRIPTURE_ROW] 24|||EN|||Ye see then how that by works a man is justified, and not by faith only.|||LA|||Videtis igitur quod ex operibus justificatur homo, et non ex fide solum.
+[SCRIPTURE_ROW] 25|||EN|||Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?|||LA|||Similiter et Rahab meretrix, nonne ex operibus justificata est, quum excepit nuntios, et alia via ejecit?
+[SCRIPTURE_ROW] 26|||EN|||For as the body without the spirit is dead, so faith without works is dead also.|||LA|||Quemadmodum enim corpus sine anima mortuum est, ita et fides sine operibus mortua est.
 
 --- PAGE 37 ---
 
@@ -465,7 +504,11 @@
 
 [H2] <sty c="800000" i="0"><590301></sty>JAMES 3:1-5
 
-[BODY] 1 My brethren, be not many masters, knowing that we shall receive the greater condemnation. 2 For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body. 3 Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body. 4 Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth. 5 Even so the tongue is a little member, and boasteth great things.
+[SCRIPTURE_ROW] 1|||EN|||My brethren, be not many masters, knowing that we shall receive the greater condemnation.|||LA|||Nolite plures magistri fieri, fratres mei; scientes quod majus judicium sumpturi sumus.
+[SCRIPTURE_ROW] 2|||EN|||For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.|||LA|||In multis enim labimur omnes: si quis in sermone non labitur, hic perfectus est vir, ut qui posssit fraeno moderari totum etiam corpus.
+[SCRIPTURE_ROW] 3|||EN|||Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body.|||LA|||Ecce equis fraena in ora injicimus, ut obediant nobis; et totum illorum corpus circumagimus:
+[SCRIPTURE_ROW] 4|||EN|||Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth.|||LA|||Ecce etiam naves, cum tantae sint, et a saevis ventis pulsentur, circumagnuntur a minimo gubernaculo, quocunque affectus dirigentis voluerit:
+[SCRIPTURE_ROW] 5|||EN|||Even so the tongue is a little member, and boasteth great things.|||LA|||Ita et lingua pusillum membrum est, et magna jactat.
 [BODY] 1. <sty c="800000" i="1">Be not many masters</sty>. The common and almost universal interpretation of this passage is, that the Apostle discourages the desire for the office of teaching, and for this reason, because it is dangerous, and exposes one to a heavier judgment, in case he transgresses: and they think that he said<sty c="000000" i="1">, </sty><sty c="800000" i="1">Be</sty> <sty c="800000" i="1">not many masters</sty>, because there ought to have been some. But I take masters not to be those who performed a public duty in the Church, but such as took upon them the right of passing judgment upon others: for such reprovers sought to be accounted as masters of morals. And it has a mode of speaking usual among the Greeks as well as Latins, that they were called masters who superciliously animadverted on others.
 
 --- PAGE 41 ---
@@ -496,7 +539,8 @@
 
 [H2] <sty c="800000" i="0"><590305></sty>JAMES 3:5-6
 
-[BODY] 5  —  Behold how great a matter a little fire kindleth! 6 And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.
+[SCRIPTURE_ROW] 5|||EN||||||LA|||Ecce exiguus ignis quantam sylvam incendit.
+[SCRIPTURE_ROW] 6|||EN|||And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.|||LA|||Et lingua ignis est, et mundus iniquitatis: sic inquam lingua constituta est in membris nostris, inquinans totum corpus, inflammans rotam nativitatis, et inflammatur a gehenna.
 [BODY] He now explains the evils which proceed from the neglect of restraining the tongue, in order that we may know that the tongue may do much good or much evil, — that if it be modest and well regulated, it becomes a bridle to the whole life, but that if it be petulant and violent, like a fire it destroys all things.
 
 [BODY] He represents it as a small or <sty c="800000" i="1">little fire</sty>, to intimate that this smallness of the tongue will not be a hindrance that its power should not extend far and wide to do harm.
@@ -517,7 +561,12 @@
 
 [H2] <sty c="800000" i="0"><590307></sty>JAMES 3:7-12
 
-[BODY] 7 For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind: 8 But the tongue can no man tame; it is an unruly evil, full of deadly poison. 9 Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God. 10 Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be. 11 Doth a fountain send forth at the same place sweet water and bitter? 12 Can the fig tree, my brethren, bear olive berries? either a vine, figs? so can no fountain both yield salt water and fresh.
+[SCRIPTURE_ROW] 7|||EN|||For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind:|||LA|||Omnis enim natura ferarum et volucrum et serpentium et marinorum, a natura humana domatur et dimota est:
+[SCRIPTURE_ROW] 8|||EN|||But the tongue can no man tame; it is an unruly evil, full of deadly poison.|||LA|||Linguam vero nullus hominum domare potest, incoercibile malum, plena veneno mortifero.
+[SCRIPTURE_ROW] 9|||EN|||Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God.|||LA|||Per ipsam benedicimus Deum et Patrem; et per ipsam execramur homines ad similitudinem ejus factos.
+[SCRIPTURE_ROW] 10|||EN|||Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.|||LA|||Ex eodem ore procedit benedictio et maledictio. Non onvenit, fratres mei, haec ita fieri.
+[SCRIPTURE_ROW] 11|||EN|||Doth a fountain send forth at the same place sweet water and bitter?|||LA|||An fons ex codem foramine ejicit dulce et amarum?
+[SCRIPTURE_ROW] 12|||EN|||Can the fig tree, my brethren, bear olive berries? either a vine, figs? so can no fountain both yield salt water and fresh.|||LA|||Non potest, fratres mei, ficus oleas proferre; aut vitis ficus; sic nullus fons salsam et dulcem gignere aquam.
 
 --- PAGE 45 ---
 
@@ -538,7 +587,12 @@
 [BODY] 11. <sty c="800000" i="1">Doth a fountain</sty>. He adduces these comparisons in order to shew that a cursing tongue is something monstrous, contrary to all nature, and subverts the order everywhere established by God. For God hath so arranged things which are contrary, that inanimate things ought to deter us from a chaotic mixture, sure as is found in a double tongue.<sty c="800000" i="0">f25</sty>
 
 [H2] <sty c="800000" i="0"><590313></sty>JAMES 3:13-18
-[BODY] 13 Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom. 14 But if ye have bitter envying and strife in your hearts, glory not, and lie not against the truth. 15 This wisdom descendeth not from above, but is earthly, sensual, devilish. 16 For where envying and strife is, there is confusion and every evil work. 17 But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy. 18 And the fruit of righteousness is sown in peace of them that make peace.
+[SCRIPTURE_ROW] 13|||EN|||Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom.|||LA|||Quis sapiens et intelligens inter vos? ostendat ex honesta conversatione opera sua in mansuetudine sapientiae.
+[SCRIPTURE_ROW] 14|||EN|||But if ye have bitter envying and strife in your hearts, glory not, and lie not against the truth.|||LA|||Si vero aemulationem amaraem habetis, et contentionem in corde vestro, ne gloriemini, et mentiamini adversus veritatem.
+[SCRIPTURE_ROW] 15|||EN|||This wisdom descendeth not from above, but is earthly, sensual, devilish.|||LA|||Non est haec sapientia de sursum veniens, sed terrestris, animalis, daemonica.
+[SCRIPTURE_ROW] 16|||EN|||For where envying and strife is, there is confusion and every evil work.|||LA|||Ubi enim aemulatio et contentio, ibi perturbatio et omne pravum opus.
+[SCRIPTURE_ROW] 17|||EN|||But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.|||LA|||Quae autem e sursum est sapientia, primum pura est, deinde pacata, aequa, comis, plena misericordiae et bonorum operum, sine disquisitione, sine simulatione.
+[SCRIPTURE_ROW] 18|||EN|||And the fruit of righteousness is sown in peace of them that make peace.|||LA|||Fructus autem justitiae in pace seminatur facientibus pacem.
 
 --- PAGE 47 ---
 
@@ -589,7 +643,9 @@
 
 [H2] <sty c="800000" i="0"><590401></sty>JAMES 4:1-3
 
-[BODY] 1 From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members? 2 Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, because ye ask not. 3 Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.
+[SCRIPTURE_ROW] 1|||EN|||From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?|||LA|||Unde bella et pugnae inter vos? nonne hinc, ex voluptatibus vestris, quae militant in membris vestris.
+[SCRIPTURE_ROW] 2|||EN|||Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, because ye ask not.|||LA|||Concupiscitis et non habetis; invidetis et aemulamini, et non potestis obtinere; pugnatis et belligeramini, non habetis, propterea quod non petitis;
+[SCRIPTURE_ROW] 3|||EN|||Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.|||LA|||Petitis, et non accipitis, quia male petitis, ut in voluptates vestras insumatis.
 [BODY] 1. <sty c="800000" i="1">From whence come wars</sty>. As he had spoken of peace, and had reminded them that vices are to be exterminated in such a way as to preserve peace, he now comes to their contentions, by which they created confusion among themselves; and he shews that these arose from their invidious desires and lusts, rather than from a zeal for what was just and right; for if every one observed moderation, they would not have disturbed and annoyed one another. They had their hot conflicts, because their lusts were allowed to prevail unchecked.
 
 [BODY] It hence appears, that greater peace would have been among them, had every one abstained from doing wrong to others; but the vices which prevailed among them were so many attendants armed to excite contentions. He calls our faculties <sty c="800000" i="1">members</sty>. He takes <sty c="800000" i="1">lusts</sty> as designating all illicit and lustful desires or propensities which cannot be satisfied without doing injury to others.
@@ -612,7 +668,9 @@
 [H2] <sty c="800000" i="0"><590404></sty>JAMES 4:4-6
 
 
-[BODY] 4 Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God. 5 Do ye think that the scripture saith in vain, The spirit that dwelleth in us lusteth to envy? 6 But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.
+[SCRIPTURE_ROW] 4|||EN|||Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.|||LA|||Adulteri et adulterae, an nescitis quod amicitia mundi inimictia Dei est? qui ergo voluerit amicus esse mundi, inimicus Dei constituitur.
+[SCRIPTURE_ROW] 5|||EN|||Do ye think that the scripture saith in vain, The spirit that dwelleth in us lusteth to envy?|||LA|||An putatis quod frustra dicat scriptura? An ad invidiam concupiscit spiritus qui habitat in nobis?
+[SCRIPTURE_ROW] 6|||EN|||But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.|||LA|||Quin majorem dat gratiam: —
 [BODY] 4. <sty c="800000" i="1">Ye adulterers</sty>. I connect this verse with the foregoing verses: for he calls them <sty c="000000" i="1">adulterers</sty>, as I think, metaphorically; for they corrupted themselves with the vanities of this world, and alienated themselves from God; as though he had said, that they had become degenerated, or were become bastards. We know how frequent, in Holy Scripture, is that marriage mentioned which God forms with us. He would have us, then, to be like a chaste virgin, as Paul says, (<sty c="800000" i="0"><471102></sty>2 Corinthians 11:2.) This chastity is violated and corrupted by all impure affections towards the world. James, then, does not without reason compare the love of the world to adultery.
 
 [BODY] They, then, who take his words literally, do not sufficiently observe the context: for he goes on still to speak against the lusts of men, which lead away those entangled with the world from God, as it follows, —
@@ -636,7 +694,10 @@
 [H2] <sty c="800000" i="0"><590407></sty>JAMES 4:7-10
 
 
-[BODY] 7 Submit yourselves therefore to God. Resist the devil, and he will flee from you. 8 Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded. 9 Be afflicted, and mourn, and weep: let your laughter be turned to mourning, and your joy to heaviness. 10 Humble yourselves in the sight of the Lord, and he shall lift you up.
+[SCRIPTURE_ROW] 7|||EN|||Submit yourselves therefore to God. Resist the devil, and he will flee from you.|||LA|||Subjecti igitur estote Deo; Resistite diabolo, et fugiet a vobis;
+[SCRIPTURE_ROW] 8|||EN|||Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.|||LA|||Appropinquate Deo, et appropinquabit vobis; mundate manus, peccatores; purificate corda duplici animo;
+[SCRIPTURE_ROW] 9|||EN|||Be afflicted, and mourn, and weep: let your laughter be turned to mourning, and your joy to heaviness.|||LA|||Affligimini, lugete et plorate; risus vester in luctum vertatur et gaudium in moerorem.
+[SCRIPTURE_ROW] 10|||EN|||Humble yourselves in the sight of the Lord, and he shall lift you up.|||LA|||Humiliamini coram Deo, et eriget vos.
 [BODY] 7. <sty c="800000" i="1">Submit yourselves</sty>. The submission which he recommends is that of humility; for he does not exhort us generally to obey God, but requires submission; for the Spirit of God rests on the humble and the meek. (<sty c="800000" i="0"><235715></sty>Isaiah 57:15.) On this account he uses the illative particle. For as he had declared that God’s Spirit is bountiful in increasing his gifts, he hence concludes that we ought to lay aside envy, and to submit to God.
 
 [BODY] Many copies have introduced here the following sentence: “Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.” But in others it is not found. Erasmus suspects that it was first a note in the margin, and afterwards crept into the text. It may have been so, though it is not unsuitable to the passage. For what some think, that it is strange that what is found only in Peter, should be quoted as Scripture, may be easily disposed of. But I rather conjecture that this sentence which accords with the common doctrine of Scripture, had become then a sort of proverbial saying common among the Jews. And, indeed, it is no more than what is found in <sty c="800000" i="0"><191827></sty>Psalm 18:27,
@@ -676,7 +737,8 @@
 [H2] <sty c="800000" i="0"><590411></sty>JAMES 4:11-12
 
 
-[BODY] 11 Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge. 12 There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?
+[SCRIPTURE_ROW] 11|||EN|||Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.|||LA|||Ne detrahatis invicem, fratres; qui detrahit fratri, aut judicat fratrem suum, detrahit legi, et judicat legem; si autem judicas legem, non es factor legis sed judex.
+[SCRIPTURE_ROW] 12|||EN|||There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?|||LA|||Unus est legislator, qui potest servare et perdere: tu, quis es qui judicas alterum?
 [BODY] 11. <sty c="800000" i="1">Speak not evil</sty><sty c="000000" i="1">, </sty>or, defame not. We see how much labor James takes in correcting the lust for slandering. For hypocrisy is always presumptuous, and we are by nature hypocrites, fondly exalting ourselves by calumniating others. There is also another disease innate in human nature, that every one would have all others to live according to his own will or fancy. This presumption James suitably condemns in this passage, that is, because we dare to impose on our brethren our rule of life. He then takes <sty c="000000" i="1">detraction</sty> as including all the calumnies and suspicious works which flow from a malignant and perverted judgment. The evil of slandering takes a wide range; but here he properly refers to that kind of slandering which I have mentioned, that is, when we superciliously determine respecting the deeds and sayings of others, as though our own morosity were the law, when we confidently condemn whatever does not please us.
 
 [BODY] That such presumption is here reproved is evident from the reason that is immediately added, <sty c="800000" i="1">He that speaketh evil of,</sty> or defames <sty c="800000" i="1">his brother,</sty> <sty c="800000" i="1">speaketh evil of, </sty>or defames the law. He intimates, that so much is taken away from the law as one claims of authority over his brethren. Detraction, then, against the law is opposed to that reverence with which it behooves us to regard it.
@@ -705,7 +767,11 @@
 
 [H2] <sty c="800000" i="0"><590413></sty>JAMES 4:13-17
 
-[BODY] 13 Go to now, ye that say, To-day or to-morrow we will go into such a city, and continue there a year, and buy and sell, and get gain: 14 Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapor, that appeareth for a little time, and then vanisheth away. 15 For that ye ought to say, If the Lord will, we shall live, and do this, or that. 16 But now ye rejoice in your boastings: all such rejoicing is evil. 17 Therefore to him that knoweth to do good, and doeth it not, to him it is sin.
+[SCRIPTURE_ROW] 13|||EN|||Go to now, ye that say, To-day or to-morrow we will go into such a city, and continue there a year, and buy and sell, and get gain:|||LA|||Age nunc, qui dicitis, Hodie et cras eamus in civitatem, et transigamus illic annum unum, et mercemur et lucremur;
+[SCRIPTURE_ROW] 14|||EN|||Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapor, that appeareth for a little time, and then vanisheth away.|||LA|||Qui nescitis quid cras futurum sit; quae enim est vita nostra? vapor est scilicet ad exiguum tempus apparens, deinde evanescens:
+[SCRIPTURE_ROW] 15|||EN|||For that ye ought to say, If the Lord will, we shall live, and do this, or that.|||LA|||Quum dicere debeatis, Si Dominus voluerit, et vixerimus, faciemus hoc vel illud.
+[SCRIPTURE_ROW] 16|||EN|||But now ye rejoice in your boastings: all such rejoicing is evil.|||LA|||Nunc autem gloriamini in superbiis vestris; omnia gloriatio talis, mala est.
+[SCRIPTURE_ROW] 17|||EN|||Therefore to him that knoweth to do good, and doeth it not, to him it is sin.|||LA|||Qui ergo novit facere bonum, nec facit, peccati reus est.
 [BODY] 13. <sty c="800000" i="1">Go to now</sty>. He condemns here another kind of presumption, that many, who ought to have depended on God’s providence, confidently settled what they were to do, and arranged their plans for a long time, as though they had many years at their own disposal, while they were not sure, no not even of one moment. Solomon also sharply ridicules this kind of foolish boasting, when he says that
 
 [CENTERED] <sty c="000080" i="0">“men settle their ways in their heart, and that the Lord in the mean</sty> <sty c="000080" i="0">time rules the tongue.” (</sty><sty c="800000" i="0"><201601></sty><sty c="000080" i="0">Proverbs 16:1.)</sty>
@@ -736,7 +802,12 @@
 
 
 
-[BODY] 1 Go to now, ye rich men, weep and howl for your miseries that shall come upon you. 2 Your riches are corrupted, and your garments are moth-eaten. 3 Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days. 4 Behold, the hire of the laborers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth. 5 Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter. 6 Ye have condemned and killed the just; and he doth not resist you.
+[SCRIPTURE_ROW] 1|||EN|||Go to now, ye rich men, weep and howl for your miseries that shall come upon you.|||LA|||Agedum nunc divites, plorate, ululantes super miseriis vestris quae advenient vobis.
+[SCRIPTURE_ROW] 2|||EN|||Your riches are corrupted, and your garments are moth-eaten.|||LA|||Divitiae vestrae putrefactae sunt, vestimenta vestra a tineis excesa sunt.
+[SCRIPTURE_ROW] 3|||EN|||Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.|||LA|||Aurum et argentum vestrum aerugine corruptum est; et aerugo eorum in testimonium vobis erit, et exedet carnes vestras sicut ignis: thesaurum congessistis in extremis diebus.
+[SCRIPTURE_ROW] 4|||EN|||Behold, the hire of the laborers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.|||LA|||Ecce merces operariorum, qui messuerunt regiones vestras, quae fraude aversa est a vobis, clamat; et clamores eorum qui messuerunt, in aures Domini Sabaoth introierunt.
+[SCRIPTURE_ROW] 5|||EN|||Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.|||LA|||In deliciis vixistis super terram; lacivistis, enutristis corda vestra, sicut in die mactationis.
+[SCRIPTURE_ROW] 6|||EN|||Ye have condemned and killed the just; and he doth not resist you.|||LA|||Condemnastis et occidistis justum, et non resistit vobis.
 [BODY] 1. <sty c="800000" i="1">Go to now</sty>. They are mistaken, as I think, who consider that James here exhorts the rich to repentance. It seems to me to be a simple denunciation of God’s judgment, by which he meant to terrify them without giving them any hope of pardon; for all that he says tends only to despair. He, therefore, does not address them in order to invite them to repentance; but, on the contrary, he has a regard to the faithful, that they, hearing of the
 
 --- PAGE 65 ---
@@ -779,7 +850,9 @@
 
 [H2] <sty c="800000" i="0"><590507></sty>JAMES 5:7-9
 
-[BODY] 7 Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain. 8 Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh. 9 Grudge not one against another, brethren, lest ye be condemned: behold, the judge standeth before the door.
+[SCRIPTURE_ROW] 7|||EN|||Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.|||LA|||Patienter ergo agite, fratres, usque in adventum Domini. Ecce agricola expectat pretiosum fructum terrae, patienter se gerens erga eum, donec recipiat pluvium matutinam et vespertinam.
+[SCRIPTURE_ROW] 8|||EN|||Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh.|||LA|||Patienter ergo agite et vos; confirmate corda vestra, quonim adventus Domini propinquus est.
+[SCRIPTURE_ROW] 9|||EN|||Grudge not one against another, brethren, lest ye be condemned: behold, the judge standeth before the door.|||LA|||Ne ingemiscatis alii in alios, fratres, ne condemnemeni: ecce judex stat pro foribus.
 [BODY] 7. <sty c="800000" i="1">Be patient therefore</sty>. From this inference it is evident that what has hitherto been said against the rich, pertains to the consolation of those who seemed for a time to be exposed to their wrongs with impunity. For after having mentioned the causes of those calamities which were hanging over the rich, and having stated this among others, that they proudly and
 
 --- PAGE 69 ---
@@ -810,7 +883,8 @@
 
 [H2] <sty c="800000" i="0"><590510></sty>JAMES 5:10-11
 
-[BODY] 10 Take, my brethren, the prophets, who have spoken in the name of the Lord, for an example of suffering affliction, and of patience. 11 Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.
+[SCRIPTURE_ROW] 10|||EN|||Take, my brethren, the prophets, who have spoken in the name of the Lord, for an example of suffering affliction, and of patience.|||LA|||Exemplum accipite afflictionis, fratres mei, et tolerentiae, prophetas, qui loquuti sunt in nomine Domini.
+[SCRIPTURE_ROW] 11|||EN|||Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.|||LA|||Ecce beatos esse ducimus eos qui sustinent: patientiam Job audistis, et finem Domini vidistis, quod multum sit misericors et commiserans.
 [BODY] 10. <sty c="800000" i="1">Take, my brethren, the prophets</sty>. The comfort which he brings is not that which is according to the common proverb, that the miserable hope for like companions in evils. That they set before them associates, in whose number it was desirable to be classed; and to have the same condition with them, was no misery. For as we must necessarily feel extreme grief, when any evil happens to us which the children of God have never experienced, so it is a singular consolation when we know that we suffer nothing different from them; nay, when we know that we have to sustain the same yoke with them.
 
 [BODY] When Job heard from his friends,
@@ -839,7 +913,8 @@
 
 [H2] <sty c="800000" i="0"><590512></sty>JAMES 5:12-13
 
-[BODY] 12 But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation. 13 Is any among you afflicted? let him pray. Is any merry? let him sing psalms.
+[SCRIPTURE_ROW] 12|||EN|||But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.|||LA|||Ante omnia vero, fratres mei, Ne juretis, neque per coelum, neque per terram, neque aliud quodvis jusjurandum; sit autem vestrum. Est, est; Non, non: ne in judicium (vel, simulationem) incidatis.
+[SCRIPTURE_ROW] 13|||EN|||Is any among you afflicted? let him pray. Is any merry? let him sing psalms.|||LA|||Afflgitur quis inter vos? oret: hilari est animo? psallat.
 [BODY] 12. <sty c="800000" i="1">But above all things</sty>. It has been a common vice almost in all ages, to swear lightly and inconsiderately. For so bad is our nature that we do not consider what an atrocious crime it is to profane the name of God. For though the Lord strictly commands us to reverence his name, yet men devise various subterfuges, and think that they can swear with impunity. They imagine, then, that there is no evil, provided they do not openly
 
 --- PAGE 74 ---
@@ -868,7 +943,8 @@
 
 [H2] <sty c="800000" i="0"><590514></sty>JAMES 5:14-15
 
-[BODY] 14 Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord: 15 And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.
+[SCRIPTURE_ROW] 14|||EN|||Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord:|||LA|||Infirmatur quis inter vos? Advocet presbyteros ecclesiae, et orent super eum, unguentes oleo in nomine Domini:
+[SCRIPTURE_ROW] 15|||EN|||And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.|||LA|||Et oratio fidei servabit aegrotum, et excitabit eum Dominus; et si peccata admiserit, remittentur illi.
 [BODY] 14. <sty c="800000" i="1">Is any sick among you</sty>. As the gift of healing as yet continued, he directs the sick to have recourse to that remedy. It is, indeed, certain that they were not all healed; but the Lord granted this favor as often and as far as he knew it would be expedient; nor is it probable that the oil was indiscriminately applied, but only when there was some hope of restoration. For, together with the power there was given also discretion to the ministers, lest they should by abuse profane the symbol. The design of James was no other than to commend the grace of God which the faithful might then enjoy, lest the benefit of it should be lost through contempt or neglect.
 
 [BODY] For this purpose he ordered the presbyters to be sent for, but the use of the anointing must have been confined to the power of the Holy Spirit.
@@ -898,7 +974,9 @@
 [H2] <sty c="800000" i="0"><590516></sty>JAMES 5:16-18
 
 
-[BODY] 16 Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much. 17 Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months. 18 And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.
+[SCRIPTURE_ROW] 16|||EN|||Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.|||LA|||Confitemini invicem peccata vestra, et orate invicem alii pro aliis, ut salvemini: multum valet precatio justi efficax.
+[SCRIPTURE_ROW] 17|||EN|||Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.|||LA|||Elias homo erat passionibus similiter obnoxius ut nos; et precatione precatus est, ne plueret; et non pluit super terram annos tres et sex menses.
+[SCRIPTURE_ROW] 18|||EN|||And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.|||LA|||Et rursum oravit, et coelum dedit pluviam, et terra protulit fructum suum.
 [BODY] 16. <sty c="800000" i="1">Confess your faults one to another</sty>. In some copies the illative particle is given, nor is it unsuitable; for though when not expressed, it must be understood. He had said, that sins were remitted to the sick over whom the elders prayed: he now reminds them how useful it is to discover our sins to our brethren, even that we may obtain the pardon of them by their intercession.<sty c="800000" i="0">f44</sty>
 
 [BODY] This passage, I know, is explained by many as referring to the reconciling of offenses; for they who wish to return to favor must necessarily know
@@ -933,7 +1011,8 @@
 
 [H2] <sty c="800000" i="0"><590519></sty>JAMES 5:19-20
 
-[BODY] 19 Brethren, if any of you do err from the truth, and one convert him; 20 Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.
+[SCRIPTURE_ROW] 19|||EN|||Brethren, if any of you do err from the truth, and one convert him;|||LA|||Fratres mei, si quis inter vos erraverit a veritate, et converterit quispiam eum;
+[SCRIPTURE_ROW] 20|||EN|||Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.|||LA|||Cognoscat quod qui converterit peccatorem ab errore viae suae, servabit animam a morte, et multitudinem operiet peccatorum.
 [BODY] 20. <sty c="800000" i="1">Let him know</sty>. I doubt whether this ought rather to have been written, <sty c="0000d4" i="0">givw>skete</sty>, “know ye.” Both ways the meaning however is the same. For James recommends to us the correction of our brethren from the effect produced that we may more assiduously attend to this duty. Nothing is better or more desirable than to deliver a soul from eternal death; and this is what he does who restores an erring brother to the right way: therefore a work so excellent ought by no means to be neglected. To give food to the hungry, and drink to the thirsty, we see how much Christ values such acts; but the salvation of the soul is esteemed by him much more precious than the life of the body. We must therefore take heed lest souls perish through our sloth, whose salvation God puts in a manner in our hands. Not that we can bestow salvation on them; but that God by our ministry delivers and saves those who seem otherwise to be nigh destruction.
 
 [BODY] Some copies have <sty c="000000" i="1">his soul</sty>, which makes no change in the sense. I, however, prefer the other reading, for it has more force in it.

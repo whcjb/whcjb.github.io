@@ -21,7 +21,7 @@
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE ARGUMENT</span></p>
 
-Ephesus, which is familiarly known in history under a great variety of names, <span style="color:#800000">[^f1]</span> was a very celebrated city of Lesser Asia. The remarkable events connected with the work of God in “forming there a people for himself,” (Isaiah 43:21,) through the labors of Paul, together with the commencement and progress of that church, are related by Luke in the Acts of the Apostles. At present, I shall do nothing more than glance at what bears directly on the argument of the Epistle. The Ephesians had been instructed by Paul in the pure doctrine of the gospel. At a later period, while he was a prisoner at Rome, and perceiving that they needed confirmation, he wrote to them, on that account, the present Epistle.
+Ephesus, which is familiarly known in history under a great variety of names, [^f1] was a very celebrated city of Lesser Asia. The remarkable events connected with the work of God in “forming there a people for himself,” (Isaiah 43:21,) through the labors of Paul, together with the commencement and progress of that church, are related by Luke in the Acts of the Apostles. At present, I shall do nothing more than glance at what bears directly on the argument of the Epistle. The Ephesians had been instructed by Paul in the pure doctrine of the gospel. At a later period, while he was a prisoner at Rome, and perceiving that they needed confirmation, he wrote to them, on that account, the present Epistle.
 
 The first three chapters are chiefly occupied with commending the grace of God. Immediately after the salutation in the commencement of the first chapter, he treats of God’s free election. This affords him an opportunity of stating that they were now called into the kingdom of God, because they had been appointed to life before they were born. And here occurs a striking display of God’s wonderful mercy, when the salvation of men is traced to its true and native source, the free act of adoption. But as the minds of men are ill fitted to receive so sublime a mystery, he betakes himself to prayer, that God would enlighten the Ephesians in the full knowledge of Christ.
 
@@ -37,7 +37,7 @@ but “the dispensation” (Ephesians 3:2) of which had been intrusted to himsel
 Towards the close of the chapter, he again prays that God would grant to the Ephesians such an intimate knowledge of Christ, that they would have no desire to know anything else. His object in doing so is not merely to lead them to gratitude to God for so many favors, and to the expression of that gratitude by entire devotion to his service, but still more to remove all doubt about his own calling. Paul was probably afraid that the false apostles would shake their faith by insinuating that they had been only half-instructed. They had been Gentiles, and, when they embraced pure Christianity, had been told nothing about ceremonies or circumcision. But all who enjoined on Christians the observance of the law were loud in the avowal, that those who have not been introduced into the church of God by circumcision must be held as profane persons. This was their ordinary song, that no man who is not circumcised is entitled to be reckoned among the people of God, and that all the rites prescribed by Moses ought to be observed. Accordingly, they brought it as a charge against Paul, that he exhibited Christ as equally the Savior of Gentiles and of Jews. They asserted that his apostleship was a profanation of the heavenly doctrine, because it threw open to wicked men, without discrimination, a share in the covenant of grace.
 
 <!-- PAGE 4 -->
-That the Ephesians, when assailed by these calumnies, might not give way, he resolved to meet them. While he argues so earnestly that they were called to the gospel because they had been chosen before the creation of the world, he charges them, on the other hand, not to imagine that the gospel had been accidentally brought to them by the will of men, or that it flew to them by chance; <span style="color:#800000">[^f2]</span> for the preaching of Christ among them was nothing else than the announcement of that eternal decree. While he lays before them the unhappy condition of their former life, he at the same time reminds them that the singular and astonishing mercy of God appeared in rescuing them from so deep a gulf. While he sets before their eyes his own commission as the apostle of the Gentiles, he confirms them in the faith which they had once received, because they had been divinely admitted into the communion of the church. And yet each of the sentences to which we have now referred must be viewed as an exhortation fitted to excite the Ephesians to gratitude.
+That the Ephesians, when assailed by these calumnies, might not give way, he resolved to meet them. While he argues so earnestly that they were called to the gospel because they had been chosen before the creation of the world, he charges them, on the other hand, not to imagine that the gospel had been accidentally brought to them by the will of men, or that it flew to them by chance; [^f2] for the preaching of Christ among them was nothing else than the announcement of that eternal decree. While he lays before them the unhappy condition of their former life, he at the same time reminds them that the singular and astonishing mercy of God appeared in rescuing them from so deep a gulf. While he sets before their eyes his own commission as the apostle of the Gentiles, he confirms them in the faith which they had once received, because they had been divinely admitted into the communion of the church. And yet each of the sentences to which we have now referred must be viewed as an exhortation fitted to excite the Ephesians to gratitude.
 
 In the fourth chapter, he describes the manner in which the Lord governs and protects his church, which is, by the gospel preached by men. Hence it follows, that in no other way can its integrity be preserved, and that the object at which it aims is true perfection. The apostle’s design is, to commend to the Ephesians the ministry by which God reigns amongst us. He afterwards details the fruits of this preaching, — a holy life and all the duties of piety. Nor does he satisfy himself with describing in general terms how Christians ought to live, but lays down particular exhortations adapted to the various relations of society.
 
@@ -51,10 +51,19 @@ In the fourth chapter, he describes the manner in which the Lord governs and pro
 
 <h2 class="scripture-anchor" id="ephesians-1-1-6" data-ref="EPHESIANS 1:1-6" style="display:none">EPHESIANS 1:1-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490101&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">1:1-6</span></p>
 
-<strong>1.</strong> Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus: <strong>2.</strong> Grace be to you, and peace, from God our Father, and from the Lord Jesus Christ. <strong>3.</strong> Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ; <strong>4.</strong> According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love: <strong>5.</strong> Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will, <strong>6.</strong> To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Paul, an apostle of Jesus Christ by the will of God, to the saints which are at Ephesus, and to the faithful in Christ Jesus:</td><td class="scripture-la"><strong>1.</strong> Paulus Apostolus Iesu Christi per voluntatem Dei, sanctis omnibus qui sunt Ephesi, et fidelibus in Christo Iesu</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Grace be to you, and peace, from God our Father, and from the Lord Jesus Christ.</td><td class="scripture-la"><strong>2.</strong> Gratia vobis et pax a Deo Patre nostro, et Domino Iesu Christo</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Blessed be the God and Father of our Lord Jesus Christ, who hath blessed us with all spiritual blessings in heavenly places in Christ;</td><td class="scripture-la"><strong>3.</strong> Benedictus Deus et Pater Domini nostri Iesu Christi, qui benedixit nos in omni benedictione spirituali, in coelestibus Christo;</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> According as he hath chosen us in him before the foundation of the world, that we should be holy and without blame before him in love:</td><td class="scripture-la"><strong>4.</strong> Quemadmodum elegit nos in ipso ante mundi creationem, ut simus sancti et inculpati in conspectu suo per charitatem;</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Having predestinated us unto the adoption of children by Jesus Christ to himself, according to the good pleasure of his will</td><td class="scripture-la"><strong>5.</strong> Qui praedestinavit nos in adoptionem per Iesum Christum in seipso, secundum beneplacitum voluntatis suae</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> To the praise of the glory of his grace, wherein he hath made us accepted in the beloved.</td><td class="scripture-la"><strong>6.</strong> In laudem glorise gratiae suae, qua nos gratos habuit in dilecto.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -65,7 +74,7 @@ He adds, <span style="color:#800000">*by the will of God;*</span> for “no man 
 
 To all the saints. He gives the name of <span style="color:#800000">*saints*</span> to those whom he afterwards denominates faithful in Christ Jesus. No man, therefore, is a believer who is not also a saint; and, on the other hand, no man is a saint who is not a believer. Most of the Greek copies want the word <span style="color:#800000">*all;*</span> but I was unwilling to strike it out, because it must, at all events, be understood.
 
-**3.** <span style="color:#800000">*Blessed*</span> <span style="color:#800000">[^f3]</span> <span style="color:#800000">*be the God and Father of our Lord Jesus Christ.*</span> The lofty terms in which he extolls the grace of God toward the Ephesians, are intended to rouse their hearts to gratitude, to set them all on flame, to fill them even to overflowing with this thought. They who perceive in themselves discoveries of the Divine goodness, so full and absolutely perfect, and who make them the subject of earnest meditation, will never embrace new doctrines, by which the very grace which they feel so powerfully in themselves is thrown into the shade. The design of the apostle, therefore, in asserting the riches of divine grace toward the Ephesians, was to protect them against having their faith shaken by the false apostles, as if their calling were doubtful, or salvation were to be sought in some other way. He shews, at the same time, that the full certainty of future happiness rests on the revelation of his love to us in Christ, which God makes in the gospel. But to confirm the matter more fully, he rises to the first cause, to the fountain, — the eternal election of God, by which, ere we are born, (Romans 9:11,) we are adopted as sons. This makes it evident that their salvation was accomplished, not by any accidental or unlooked-for occurrence, but by the eternal and unchangeable decree of God.
+**3.** <span style="color:#800000">*Blessed*</span> [^f3] <span style="color:#800000">*be the God and Father of our Lord Jesus Christ.*</span> The lofty terms in which he extolls the grace of God toward the Ephesians, are intended to rouse their hearts to gratitude, to set them all on flame, to fill them even to overflowing with this thought. They who perceive in themselves discoveries of the Divine goodness, so full and absolutely perfect, and who make them the subject of earnest meditation, will never embrace new doctrines, by which the very grace which they feel so powerfully in themselves is thrown into the shade. The design of the apostle, therefore, in asserting the riches of divine grace toward the Ephesians, was to protect them against having their faith shaken by the false apostles, as if their calling were doubtful, or salvation were to be sought in some other way. He shews, at the same time, that the full certainty of future happiness rests on the revelation of his love to us in Christ, which God makes in the gospel. But to confirm the matter more fully, he rises to the first cause, to the fountain, — the eternal election of God, by which, ere we are born, (Romans 9:11,) we are adopted as sons. This makes it evident that their salvation was accomplished, not by any accidental or unlooked-for occurrence, but by the eternal and unchangeable decree of God.
 
 <!-- PAGE 7 -->
 
@@ -102,21 +111,30 @@ The inference, too, which the Catharists, Celestines, and Donatists drew from th
 
 To the first belongs the whole of the following statement <span style="color:#800000">*God hath predestinated us in himself, according to the good pleasure of his will, unto the adoption of sons, and hath made us accepted by his grace*</span>. In the word <span style="color:#800000">*predestinate*</span> we must again attend to the order. We were not then in existence, and therefore there was no merit of ours. The cause of our salvation did not proceed from us, but from God alone. Yet Paul, not satisfied with these statements, adds <span style="color:#800000">*in himself.*</span> The Greek phrase is, <span style="color:#0000d4">eijv</span> <span style="color:#0000d4">αὑτὸν</span>, and has the same meaning with <span style="color:#0000d4">ἐν αὑτῳ</span>. By this he means that God did not seek a cause out of himself, but predestinated us, because such was his will.
 
-But this is made still more clear by what follows, <span style="color:#800000">*according to the good pleasure of his will.*</span> The word <span style="color:#800000">*will*</span> was enough, for Paul very frequently contrasts it with all outward causes by which men are apt to imagine that the mind of God is influenced. But that no doubt may remain, he employs the word <span style="color:#800000">*good pleasure,*</span> which expressly sets aside all merit. In adopting us, therefore, God does not inquire what we are, and is not reconciled to us by any personal worth. His single motive is the eternal good pleasure, by which he predestinated us.<span style="color:#800000">[^f4]</span> Why, then, are the sophists not ashamed to mingle with them other considerations, when Paul so strongly forbids us to look at anything else than the good pleasure of God?
+But this is made still more clear by what follows, <span style="color:#800000">*according to the good pleasure of his will.*</span> The word <span style="color:#800000">*will*</span> was enough, for Paul very frequently contrasts it with all outward causes by which men are apt to imagine that the mind of God is influenced. But that no doubt may remain, he employs the word <span style="color:#800000">*good pleasure,*</span> which expressly sets aside all merit. In adopting us, therefore, God does not inquire what we are, and is not reconciled to us by any personal worth. His single motive is the eternal good pleasure, by which he predestinated us.[^f4] Why, then, are the sophists not ashamed to mingle with them other considerations, when Paul so strongly forbids us to look at anything else than the good pleasure of God?
 
-Lest anything should still be wanting, he adds, <span style="color:#0000d4">ἐχαρίτωσεν ἐν χάριτι</span> <span style="color:#800000">[^f5]</span>
+Lest anything should still be wanting, he adds, <span style="color:#0000d4">ἐχαρίτωσεν ἐν χάριτι</span> [^f5]
 
 <!-- PAGE 11 -->
-This intimates, that, in the freest manner, and on no mercenary grounds, does God bestow upon us his love and favor, just as, when we were not yet born, and when he was prompted by nothing but his own will, he fixed upon us his choice. <span style="color:#800000">[^f6]</span>
+This intimates, that, in the freest manner, and on no mercenary grounds, does God bestow upon us his love and favor, just as, when we were not yet born, and when he was prompted by nothing but his own will, he fixed upon us his choice. [^f6]
 
 The material cause both of eternal election, and of the love which is now revealed, is <span style="color:#800000">*Christ, the Beloved.*</span> This name is given, to remind us that by him the love of God is communicated to us. Thus he is the well-beloved, in order that we may be reconciled by him. The highest and last end is immediately added, the glorious praise of such abundant grace. Every man, therefore, who hides this glory, is endeavoring to overturn the everlasting purpose of God. Such is the doctrine of the sophists, which entirely overturns the doctrine of Christ, lest the whole glory of our salvation should be ascribed undividedly to God alone.
 
 <h2 class="scripture-anchor" id="ephesians-1-7-12" data-ref="EPHESIANS 1:7-12" style="display:none">EPHESIANS 1:7-12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490107&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">1:7-12</span></p>
 
-<strong>7.</strong> In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace; <strong>8.</strong> Wherein he hath abounded toward us in all wisdom and prudence; <strong>9.</strong> Having made known unto us the mystery of his will, according to his good pleasure, which he hath purposed in himself: <strong>10.</strong> That, in the dispensation of the fullness of times, he might gather together in one all things in Christ, both which are in heaven, and which are on earth, even in him: <strong>11.</strong> In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will; <strong>12.</strong> That we should be to the praise of his glory, who first trusted in Christ.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> In whom we have redemption through his blood, the forgiveness of sins, according to the riches of his grace;</td><td class="scripture-la"><strong>7.</strong> In quo habemus redemptionem per sangiunem ejus, remissionem peccatorum, secundum divitias gratiae ejus;</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Wherein he hath abounded toward us in all wisdom and prudence;</td><td class="scripture-la"><strong>8.</strong> Qua exundavit in nos in omni sapientia et prudentia;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Having made known unto us the mystery of his will, according to his good pleasure, which he hath purposed in himself:</td><td class="scripture-la"><strong>9.</strong> Patefacto nobis arcano voluntatis suae, secundum beneplacitum suum, quod in seipso proposuerat.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> That, in the dispensation of the fullness of times, he might gather together in one all things in Christ, both which are in heaven, and which are on earth, even in him:</td><td class="scripture-la"><strong>10.</strong> In dispensationem plenitudinis temporum; ut recolligeret omnia in Christo, tam quae in eoelis sunt, quam quae super terram, in ipso.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> In whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things after the counsel of his own will;</td><td class="scripture-la"><strong>11.</strong> Per quem etiam in sortem adsciti sumus, praedestinati secundum propositum ejus, qui omnia efficit secundum consilium voluntatis suae;</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> That we should be to the praise of his glory, who first trusted in Christ.</td><td class="scripture-la"><strong>12.</strong> Ut simus in laudem gloriae ipsius, nos qui ante speravimus in Christo.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -124,10 +142,10 @@ The material cause both of eternal election, and of the love which is now reveal
 
 **7.** <span style="color:#800000">*In whom we have redemption.*</span> The apostle is still illustrating the material cause, the manner in which we are reconciled to God through Christ. By his death he has restored us to favor with the Father; and therefore we ought always to direct our minds to the blood of Christ, as the means by which we obtain divine grace. After mentioning that, through the blood of Christ, we obtain redemption, he immediately styles it <span style="color:#800000">*the forgiveness of sins,*</span> — to intimate that we are redeemed, because our sins are not imputed to us. Hence it follows, that we obtain by free grace that righteousness by which we are accepted of God, and freed from the chains of the devil and of death. The close connection which is here preserved, between our redemption itself and the manner in which it is obtained, deserves our notice; for, so long as we remain exposed to the judgment of God, we are bound by miserable chains, and therefore our exemption from guilt, becomes an invaluable freedom.
 
-According to the riches of his grace. He now returns to the efficient cause, — the largeness of the divine kindness, which has given Christ to us as our Redeemer. <span style="color:#800000">*Riches,*</span> and the corresponding word *overflow,* in the following verse, are intended to give us large views of divine grace. The apostle feels himself unable to celebrate, in a proper manner, the goodness of God, and desires that the contemplation of it would occupy the minds of men till they are entirely lost in admiration. How desirable is it that men were deeply impressed with “the riches of that grace” which is here commended! No place would any longer be found for pretended satisfactions, or for those trifles by which the world vainly imagines that it can redeem itself; as if the blood of Christ, when unsupported by additional aid, had lost all its efficacy.<span style="color:#800000">[^f7]</span>
+According to the riches of his grace. He now returns to the efficient cause, — the largeness of the divine kindness, which has given Christ to us as our Redeemer. <span style="color:#800000">*Riches,*</span> and the corresponding word *overflow,* in the following verse, are intended to give us large views of divine grace. The apostle feels himself unable to celebrate, in a proper manner, the goodness of God, and desires that the contemplation of it would occupy the minds of men till they are entirely lost in admiration. How desirable is it that men were deeply impressed with “the riches of that grace” which is here commended! No place would any longer be found for pretended satisfactions, or for those trifles by which the world vainly imagines that it can redeem itself; as if the blood of Christ, when unsupported by additional aid, had lost all its efficacy.[^f7]
 
 <!-- PAGE 13 -->
-**8.** <span style="color:#800000">*In all wisdom.*</span> He now comes to the formal cause, the preaching of the gospel, by which the goodness of God *overflows upon us.* <span style="color:#800000">[^f8]</span> It is through faith that we receive Christ, by whom we come to God, and by whom we enjoy the privilege of adoption. Paul gives to the gospel the magnificent appellations of <span style="color:#800000">*wisdom and prudence*</span>, for the purpose of leading the Ephesians to despise all contrary doctrines. The false apostles insinuated themselves, under the pretense of imparting views more elevated than the elementary instructions which Paul conveyed. And the devil, in order to undermine our faith, labors, as far as he can, to disparage the gospel. Paul, on the other hand, builds up the authority of the gospel, that believers may rest upon it with unshaken confidence. <span style="color:#800000">*All wisdom*</span> means — full or perfect wisdom.
+**8.** <span style="color:#800000">*In all wisdom.*</span> He now comes to the formal cause, the preaching of the gospel, by which the goodness of God *overflows upon us.* [^f8] It is through faith that we receive Christ, by whom we come to God, and by whom we enjoy the privilege of adoption. Paul gives to the gospel the magnificent appellations of <span style="color:#800000">*wisdom and prudence*</span>, for the purpose of leading the Ephesians to despise all contrary doctrines. The false apostles insinuated themselves, under the pretense of imparting views more elevated than the elementary instructions which Paul conveyed. And the devil, in order to undermine our faith, labors, as far as he can, to disparage the gospel. Paul, on the other hand, builds up the authority of the gospel, that believers may rest upon it with unshaken confidence. <span style="color:#800000">*All wisdom*</span> means — full or perfect wisdom.
 
 **9.** <span style="color:#800000">*Having made known to us the mystery of his will.*</span> Some were alarmed at the novelty of his doctrine. With a view to such persons, he very properly denominates it a <span style="color:#800000">*mystery of the divine will*</span>, and yet a mystery which God has now been pleased to reveal. As he formerly ascribed their election, so he now ascribes their calling, to the good pleasure of God. The Ephesians are thus led to consider that Christ has been made known, and the gospel preached to them, not because they deserved any such thing, but because it pleased God.
 
@@ -135,7 +153,7 @@ According to the riches of his grace. He now returns to the efficient cause, —
 
 **10.** <span style="color:#800000">*That in the dispensation of the fullness of times.*</span> That no man may inquire, why one time rather than another was selected, the apostle anticipates such curiosity, by calling the appointed period <span style="color:#800000">*the fullness of times,*</span> the fit and proper season, as he also did in a former epistle. (Galatians 4:4) Let human presumption restrain itself, and, in judging of the succession of events, let it bow to the providence of God. The same lesson is taught by the word <span style="color:#800000">*dispensation,*</span> for by the judgment of God the lawful administration of all events is regulated.
 
-<span style="color:#800000">*That he might gather together in one.*</span> In the old translation it is rendered *(instaurare) restore;* to which Erasmus has added *(summatim) comprehensively.* I have chosen to abide closely by the meaning of the Greek word, <span style="color:#0000d4">ἀνακεφαλαιώσασθαι</span>, <span style="color:#800000">[^f9]</span> because it is more agreeable to the context. The meaning appears to me to be, that out of Christ all things were disordered, and that through him they have been restored to order.
+<span style="color:#800000">*That he might gather together in one.*</span> In the old translation it is rendered *(instaurare) restore;* to which Erasmus has added *(summatim) comprehensively.* I have chosen to abide closely by the meaning of the Greek word, <span style="color:#0000d4">ἀνακεφαλαιώσασθαι</span>, [^f9] because it is more agreeable to the context. The meaning appears to me to be, that out of Christ all things were disordered, and that through him they have been restored to order.
 
 <!-- PAGE 14 -->
 
@@ -154,10 +172,15 @@ This is no doubt true; but what hinders us from saying that the angels also have
 
 <h2 class="scripture-anchor" id="ephesians-1-13-14" data-ref="EPHESIANS 1:13-14" style="display:none">EPHESIANS 1:13-14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490113&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">1:13-14</span></p>
 
-<strong>13.</strong> In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also, after that ye believed, ye were sealed with that Holy Spirit of promise, <strong>14.</strong> Which is the earnest of our inheritance, until the redemption of the purchased possession, unto the praise of his glory.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> In whom ye also trusted, after that ye heard the word of truth, the gospel of your salvation: in whom also, after that ye believed, ye were sealed with that Holy Spirit of promise</td><td class="scripture-la"><strong>13.</strong> In quo vos etiam, audito sermone veritatis, Evangelio salutis vestrae; in quo etiam, postquam credidistis, obsignati estis Spiritu promissionis sancto</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> Which is the earnest of our inheritance, until the redemption of the purchased possession, unto the praise of his glory.</td><td class="scripture-la"><strong>14.</strong> Qui est arrhabo haereditatis nostrae, in redemptionem acquisitae possessionis, in laudem gloriae ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -190,7 +213,7 @@ But is it not the faith itself which is here said to be sealed by the Holy Spiri
 <span style="color:#800000">*With that Holy Spirit of promise.*</span> This title is derived from the effect produced; for to him we owe it that the promise of salvation is not made to us in vain. As God promises in his word, “that he will be to us a Father,” (2 Corinthians 6:18,) so he gives to us the evidence of having adopted us by the Holy Spirit.
 
 <!-- PAGE 18 -->
-**14.** <span style="color:#800000">*Which is the earnest*</span> <span style="color:#800000">[^f10]</span> <span style="color:#800000">*of our inheritance.*</span> This phrase is twice used by Paul in another Epistle. (2 Corinthians 1:22; 5:5.) The metaphor is taken from bargains, in which, when a pledge has been given and accepted, the whole is confirmed, and no room is left for a change of mind. Thus, when we have received the Spirit of God, his promises are confirmed to us, and no dread is felt that they will be revoked. In themselves, indeed, the promises of God are not weak; but, until we are supported by the testimony of the Spirit, we never rest upon them with unshaken confidence. The Spirit, then, is <span style="color:#800000">*the earnest of our inheritance*</span> of eternal life, <span style="color:#800000">*until the redemption,*</span> that is, until the day of complete redemption is arrived. So long as we are in this world, our warfare is sustained by hope, and therefore this earnest is necessary; but when the possession itself shall have been obtained, the necessity and use of the earnest will then cease.
+**14.** <span style="color:#800000">*Which is the earnest*</span> [^f10] <span style="color:#800000">*of our inheritance.*</span> This phrase is twice used by Paul in another Epistle. (2 Corinthians 1:22; 5:5.) The metaphor is taken from bargains, in which, when a pledge has been given and accepted, the whole is confirmed, and no room is left for a change of mind. Thus, when we have received the Spirit of God, his promises are confirmed to us, and no dread is felt that they will be revoked. In themselves, indeed, the promises of God are not weak; but, until we are supported by the testimony of the Spirit, we never rest upon them with unshaken confidence. The Spirit, then, is <span style="color:#800000">*the earnest of our inheritance*</span> of eternal life, <span style="color:#800000">*until the redemption,*</span> that is, until the day of complete redemption is arrived. So long as we are in this world, our warfare is sustained by hope, and therefore this earnest is necessary; but when the possession itself shall have been obtained, the necessity and use of the earnest will then cease.
 
 The significance of a pledge lasts no longer than till both parties have fulfilled the bargain; and, accordingly, he afterwards adds, *ye are sealed to the day of redemption,* (Ephesians 4:30,) which means the day of judgment. Though we are now redeemed by the blood of Christ, the fruit of that redemption does not yet appear; for “every creature groaneth, desiring to be delivered from the bondage of corruption. And not only they, but ourselves also, who have the first-fruits of the Spirit, even we ourselves groan within ourselves, waiting for the adoption, to wit, *the redemption* of our body;” for we have not yet obtained it, but by hope. (Romans 8:21-23.) But we shall obtain it in reality, when Christ shall appear to judgment. Such is the meaning of the word *redemption* in the passage now quoted from the Epistle to the Romans, and in a saying of our Lord,
 
@@ -200,7 +223,7 @@ The significance of a pledge lasts no longer than till both parties have fulfill
 
 <span style="color:#0000d4">Περιποίησις</span>, which we translate *the possession obtained,* is not the kingdom of heaven, or a blessed immortality, but the Church itself. This is added for their consolation, that they might not think it hard to cherish their hope till the day of Christ’s coming, or be displeased that they have not yet obtained the promised inheritance; for such is the common lot of the whole Church.
 
-<span style="color:#800000">*To the praise of his glory.*</span> The word <span style="color:#800000">*praise,*</span> as in the twelfth verse, Ephesians 1:12 signifies “making known.” <span style="color:#800000">[^f11]</span> The glory of God may sometimes be concealed, or imperfectly exhibited. But in the Ephesians God had given proofs of his goodness, that his glory might be celebrated and openly proclaimed. Those persons, therefore, who slighted the calling of the Ephesians, might be charged with envying and slighting the glory of God.
+<span style="color:#800000">*To the praise of his glory.*</span> The word <span style="color:#800000">*praise,*</span> as in the twelfth verse, Ephesians 1:12 signifies “making known.” [^f11] The glory of God may sometimes be concealed, or imperfectly exhibited. But in the Ephesians God had given proofs of his goodness, that his glory might be celebrated and openly proclaimed. Those persons, therefore, who slighted the calling of the Ephesians, might be charged with envying and slighting the glory of God.
 
 <!-- PAGE 19 -->
 
@@ -208,15 +231,23 @@ The frequent mention of the glory of God ought not to be regarded as superfluous
 
 <h2 class="scripture-anchor" id="ephesians-1-15-19" data-ref="EPHESIANS 1:15-19" style="display:none">EPHESIANS 1:15-19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490115&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">1:15-19</span></p>
 
-<strong>15.</strong> Wherefore I also, after I heard of your faith in the Lord Jesus, and love unto all the saints, <strong>16.</strong> Cease not to give thanks for you, making mention of you in my prayers; <strong>17.</strong> That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him: <strong>18.</strong> The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints, <strong>19.</strong> And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> Wherefore I also, after I heard of your faith in the Lord Jesus, and love unto all the saints</td><td class="scripture-la"><strong>15.</strong> Quapropter ego etiam, audita fide quae apud vos est in Domino Iesu, et charitate erGalatiansomnes sanctos</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Cease not to give thanks for you, making mention of you in my prayers;</td><td class="scripture-la"><strong>16.</strong> Non cesso gratias agere pro vobis, memoriam vestri faciens in orationibus meis;</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> That the God of our Lord Jesus Christ, the Father of glory, may give unto you the spirit of wisdom and revelation in the knowledge of him:</td><td class="scripture-la"><strong>17.</strong> Ut Deus Domini nostri Iesu Christi, Pater gloriae, det vobis Spiritum sapientiae et revelationis, in agnitione ipsius</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> The eyes of your understanding being enlightened; that ye may know what is the hope of his calling, and what the riches of the glory of his inheritance in the saints</td><td class="scripture-la"><strong>18.</strong> Illuminatos oculos mentis vestrae, ut sciatis quae sit spes vocationis ipsius, et quae divitiae gloriae haereditatis ejus in sanctis</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> And what is the exceeding greatness of his power to us-ward who believe, according to the working of his mighty power.</td><td class="scripture-la"><strong>19.</strong> Et quae superexcellens magnitudo potentiae ejus erGalatiansnos, qui credidimus secundum efficaciam potentiae roboris ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 20 -->
-**15.** <span style="color:#800000">*Wherefore I also.*</span> This thanksgiving was not simply an expression of his ardent love to the Ephesians. He congratulated them before God, that the opinion which he had formed respecting them was highly favorable. Observe here, that under <span style="color:#800000">*faith and love*</span> Paul includes generally the whole excellence of Christian character. He uses the expression, <span style="color:#800000">*faith in the Lord Jesus,*</span> <span style="color:#800000">[^f12]</span> because Christ is the aim and object of faith. <span style="color:#800000">*Love*</span> ought to embrace all men, but here the <span style="color:#800000">*saints*</span> are particularly mentioned; because love, when properly regulated, begins with them, and is afterwards extended to all others. If our love must have a view to God, the nearer any man approaches to God, the stronger unquestionably must be his claims to our love.
+**15.** <span style="color:#800000">*Wherefore I also.*</span> This thanksgiving was not simply an expression of his ardent love to the Ephesians. He congratulated them before God, that the opinion which he had formed respecting them was highly favorable. Observe here, that under <span style="color:#800000">*faith and love*</span> Paul includes generally the whole excellence of Christian character. He uses the expression, <span style="color:#800000">*faith in the Lord Jesus,*</span> [^f12] because Christ is the aim and object of faith. <span style="color:#800000">*Love*</span> ought to embrace all men, but here the <span style="color:#800000">*saints*</span> are particularly mentioned; because love, when properly regulated, begins with them, and is afterwards extended to all others. If our love must have a view to God, the nearer any man approaches to God, the stronger unquestionably must be his claims to our love.
 
 **16.** <span style="color:#800000">*Making mention of you.*</span> To thanksgiving, as his custom is, he adds prayer, in order to excite them to additional progress. It was necessary that the Ephesians should understand that they had entered upon the proper course. But it was equally necessary that they should not turn aside to any new scheme of doctrine, or become indifferent about proceeding farther; for nothing is more dangerous than to be satisfied with that measure of spiritual benefits which has been already obtained. Whatever, then, may be the height of our attainments, let them be always accompanied by the desire of something higher.
 
@@ -251,10 +282,17 @@ Foolish men imagine that this language is absurdly hyperbolical; but godly perso
 
 <h2 class="scripture-anchor" id="ephesians-1-20-23" data-ref="EPHESIANS 1:20-23" style="display:none">EPHESIANS 1:20-23</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490120&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">1:20-23</span></p>
 
-<strong>20.</strong> Which he wrought in Christ, when he raised him from the dead, and set him at his own right hand in the heavenly places, <strong>21.</strong> Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come; <strong>22.</strong> And hath put all things under his feet, and gave him to be the head over all things to the church, <strong>23.</strong> Which is his body, the fullness of him that filleth all in all.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> Which he wrought in Christ, when he raised him from the dead, and set him at his own right hand in the heavenly places</td><td class="scripture-la"><strong>20.</strong> Quam exeruit in Christo, dum illum excitavit a mortuis, et sedere fecit in dextera sua, in coelestibus;</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come;</td><td class="scripture-la"><strong>21.</strong> Super omnem principatum, et potestatem, et virtutem, et dominationem, et omne nomen quod nominatur, non tantum in seculo hoc, sed etiam in futuro;</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> And hath put all things under his feet, and gave him to be the head over all things to the church</td><td class="scripture-la"><strong>22.</strong> Et omnia subjecit pedibus ejus, et ipsum posuit caput super omnia Ecclesiae</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> Which is his body, the fullness of him that filleth all in all.</td><td class="scripture-la"><strong>23.</strong> Quae est corpus ejus et complementum ejus, qui omnia in omnibus adimplet.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -289,14 +327,20 @@ But why did he not simply call them Angels? I answer, it was to convey exalted v
 
 <h2 class="scripture-anchor" id="ephesians-2-1-3" data-ref="EPHESIANS 2:1-3" style="display:none">EPHESIANS 2:1-3</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490201&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:1-3</span></p>
 
-<strong>1.</strong> And you hath he quickened, who were dead in trespasses and sins; <strong>2.</strong> Wherein in time past ye walked according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience: <strong>3.</strong> Among whom also we all had our conversation in times past in the lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> And you hath he quickened, who were dead in trespasses and sins;</td><td class="scripture-la"><strong>1.</strong> Et vos, quum essetis mortui delictis et peccatis vestris;</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Wherein in time past ye walked according to the course of this world, according to the prince of the power of the air, the spirit that now worketh in the children of disobedience:</td><td class="scripture-la"><strong>2.</strong> In quibus aliquando ambulastis secundum saeculum mundi hujus, secundum principem potestatis aeris, spiritus scilicet, qui nunc operatur in filiis inobedientiae;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Among whom also we all had our conversation in times past in the lusts of our flesh, fulfilling the desires of the flesh and of the mind; and were by nature the children of wrath, even as others.</td><td class="scripture-la"><strong>3.</strong> Inter quos nos quoque omnes aliquando conversati sumus in concupiscentiis carnis nostrae, facientes quae carni libebant, et menti; et eramus natura filii irae, sicut et caeteri.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-**1.** <span style="color:#800000">*And you who were dead.*</span> This is an <span style="color:#0000d4">ἐπεξεργασία</span> of the former statements, that is, an exposition accompanied by an illustration. <span style="color:#800000">[^f13]</span> To bring home more effectually to the Ephesians the general doctrine of Divine grace, he reminds them of their former condition. This application consists of two parts. “Ye were formerly lost; but now God, by his grace, has rescued you from destruction.” And here we must observe, that, in laboring to give an impressive view of both of these parts, the apostle makes a break in the style by (<span style="color:#0000d4">ὑπερβατὸν</span>) a transposition. There is some perplexity in the language; but, if we attend carefully to what the apostle says about those two parts, the meaning is clear. As to the first, he says that they <span style="color:#800000">*were dead;*</span> and states, at the same time, the cause of the death — <span style="color:#800000">*trespasses and sins.*</span> <span style="color:#800000">[^f14]</span> He does not mean simply that they were in danger of death; but he declares that it was a real and present death under which they labored. As spiritual death is nothing else than the alienation of the soul from God, we are all born as dead men, and we live as dead men, until we are made partakers of the life of Christ, — agreeably to the words of our Lord,
+**1.** <span style="color:#800000">*And you who were dead.*</span> This is an <span style="color:#0000d4">ἐπεξεργασία</span> of the former statements, that is, an exposition accompanied by an illustration. [^f13] To bring home more effectually to the Ephesians the general doctrine of Divine grace, he reminds them of their former condition. This application consists of two parts. “Ye were formerly lost; but now God, by his grace, has rescued you from destruction.” And here we must observe, that, in laboring to give an impressive view of both of these parts, the apostle makes a break in the style by (<span style="color:#0000d4">ὑπερβατὸν</span>) a transposition. There is some perplexity in the language; but, if we attend carefully to what the apostle says about those two parts, the meaning is clear. As to the first, he says that they <span style="color:#800000">*were dead;*</span> and states, at the same time, the cause of the death — <span style="color:#800000">*trespasses and sins.*</span> [^f14] He does not mean simply that they were in danger of death; but he declares that it was a real and present death under which they labored. As spiritual death is nothing else than the alienation of the soul from God, we are all born as dead men, and we live as dead men, until we are made partakers of the life of Christ, — agreeably to the words of our Lord,
 
 <!-- PAGE 28 -->
 
@@ -304,7 +348,7 @@ But why did he not simply call them Angels? I answer, it was to convey exalted v
 
 The Papists, who are eager to seize every opportunity of undervaluing the grace of God, say, that while we are out of Christ, we are half dead. But we are not at liberty to set aside the declarations of our Lord and of the Apostle Paul, that, while we remain in Adam, we are entirely devoid of life; and that regeneration is a new life of the soul, by which it rises from the dead. Some kind of life, I acknowledge, does remain in us, while we are still at a distance from Christ; for unbelief does not altogether destroy the outward senses, or the will, or the other faculties of the soul. But what has this to do with the kingdom of God? What has it to do with a happy life, so long as every sentiment of the mind, and every act of the will, is death? Let this, then, be held as a fixed principle, that the union of our soul with God is the true and only life; and that out of Christ we are altogether dead, because sin, the cause of death, reigns in us.
 
-**2.** <span style="color:#800000">*In which for some time ye walked.*</span> From the effects or fruits, he draws a proof that sin formerly reigned in them; for, until sin displays itself in outward acts, men are not sufficiently aware of its power. When he adds, <span style="color:#800000">[^f15]</span> he intimates that the death which he had mentioned rages in the nature of man, and is a universal disease. He does not mean that course of the world which God has ordained, nor the elements, such as the heaven, and earth, and air, but the depravity with which we are all infected; so that sin is not peculiar to a few, but pervades the whole world.
+**2.** <span style="color:#800000">*In which for some time ye walked.*</span> From the effects or fruits, he draws a proof that sin formerly reigned in them; for, until sin displays itself in outward acts, men are not sufficiently aware of its power. When he adds, [^f15] he intimates that the death which he had mentioned rages in the nature of man, and is a universal disease. He does not mean that course of the world which God has ordained, nor the elements, such as the heaven, and earth, and air, but the depravity with which we are all infected; so that sin is not peculiar to a few, but pervades the whole world.
 
 <!-- PAGE 29 -->
 <span style="color:#800000">*According to the prince of the power of the air.*</span> He now proceeds farther, and explains the cause of our corruption to be the dominion which the devil exercises over us. A more severe condemnation of mankind could not have been pronounced. What does he leave to us, when he declares us to be the slaves of Satan, and subject to his will, so long as we live out of the kingdom of Christ? Our condition, therefore, though many treat it with ridicule, or, at least, with little disapprobation, may well excite our horror. Where is now the free-will, the guidance of reason, the moral virtue, about which Papists babble to much? What will they find that is pure or holy under the tyranny of the devil? On this subject, indeed, they are extremely cautious, and denounce this doctrine of Paul as a grievous heresy. I maintain, on the contrary, that there is no obscurity in the apostle’s language; and that all men who live <span style="color:#800000">*according to the world,*</span> that is, according to the inclinations of their flesh, are here declared to fight under the reign of Satan.
@@ -332,7 +376,7 @@ I reply, the statement applies to all who have not been regenerated by the Spiri
 
 <span style="color:#800000">*Fulfilling the desires of the flesh and of the mind.*</span> To fulfill these desires, is to live according to the guidance of our natural disposition and of our mind. <span style="color:#800000">*The flesh*</span> means here the disposition, or, what is called, the inclination of the nature; and the next expression (<span style="color:#0000d4">τῶν διανοιῶν</span>) means what proceeds from the mind. Now, <span style="color:#800000">*the mind*</span> includes reason, such as it exists in men by nature; so that *lusts* do not refer exclusively to the lower appetites, or what is called the sensual part of man, but extend to the whole.
 
-<span style="color:#800000">*And were by nature*</span> <span style="color:#800000">[^f16]</span> <span style="color:#800000">*children of wrath.*</span> All men without exception, whether Jews or Gentiles, (Galatians 2:15,16,) are here pronounced to be guilty, until they are redeemed by Christ; so that out of Christ there is no righteousness, no salvation, and, in short, no excellence. <span style="color:#800000">*Children of wrath*</span> are those who are lost, and who deserve eternal death. <span style="color:#800000">*Wrath*</span> means the judgment of God; so that <span style="color:#800000">*the children of wrath*</span> are those who are condemned before God. Such, the apostle tells us, had been the Jews, — such had been all the excellent men that were now in the Church; and they were so <span style="color:#800000">*by nature,*</span> that is, from their very commencement, and from their mother’s womb.
+<span style="color:#800000">*And were by nature*</span> [^f16] <span style="color:#800000">*children of wrath.*</span> All men without exception, whether Jews or Gentiles, (Galatians 2:15,16,) are here pronounced to be guilty, until they are redeemed by Christ; so that out of Christ there is no righteousness, no salvation, and, in short, no excellence. <span style="color:#800000">*Children of wrath*</span> are those who are lost, and who deserve eternal death. <span style="color:#800000">*Wrath*</span> means the judgment of God; so that <span style="color:#800000">*the children of wrath*</span> are those who are condemned before God. Such, the apostle tells us, had been the Jews, — such had been all the excellent men that were now in the Church; and they were so <span style="color:#800000">*by nature,*</span> that is, from their very commencement, and from their mother’s womb.
 
 <!-- PAGE 31 -->
 This is a remarkable passage, in opposition to the views of the Pelagians, and of all who deny original sin. What dwells naturally in all is certainly original; but Paul declares that we are all naturally liable to condemnation; therefore sin dwells naturally in us, for God does not condemn the innocent. Pelagians were wont to object, that sin spread from Adam to the whole human race, not by descent, but by imitation. But Paul affirms that we are born with sin, as serpents bring their venom from the womb. Others who think that it is not in reality sin, are not less at variance with Paul’s language; for where condemnation is, there must unquestionably be sin. It is not with blameless men, but with sin, that God is offended. Nor is it wonderful that the depravity which we inherit from our parents is reckoned as sin before God; for the seeds of sin, before they have been openly displayed, are perceived and condemned.
@@ -349,16 +393,23 @@ offspring of a degenerate and sinful man.
 
 <h2 class="scripture-anchor" id="ephesians-2-4-7" data-ref="EPHESIANS 2:4-7" style="display:none">EPHESIANS 2:4-7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490204&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:4-7</span></p>
 
-<strong>4.</strong> But God, who is rich in mercy, for his great love wherewith he loved us, <strong>5.</strong> Even when we were dead in sins, hath quickened us together with Christ; (by grace ye are saved;) <strong>6.</strong> And hath raised us up together, and made us sit together in heavenly places in Christ Jesus; <strong>7.</strong> That in the ages to come he might shew the exceeding riches of his grace, in his kindness toward us through Christ Jesus.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> But God, who is rich in mercy, for his great love wherewith he loved us</td><td class="scripture-la"><strong>4.</strong> Deus autem, qui dives est in misericordia, propter multam suam dilectionem, qua nos dilexit</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Even when we were dead in sins, hath quickened us together with Christ; (by grace ye are saved;)</td><td class="scripture-la"><strong>5.</strong> Etiam quum essemus mortui peccatis, convivificavit cum Christo; (Gratia estis salvati;)</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> And hath raised us up together, and made us sit together in heavenly places in Christ Jesus;</td><td class="scripture-la"><strong>6.</strong> Et simul excitavit, et sedere fecit in coelestibus in Christo Iesu</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> That in the ages to come he might shew the exceeding riches of his grace, in his kindness toward us through Christ Jesus.</td><td class="scripture-la"><strong>7.</strong> Ut demonstraret in saeculis supervenientibus exsuperantes divitias gratiae suae, in benignitate erGalatiansnos in Christo Iesu.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-**4.** <span style="color:#800000">*But God, who is rich in mercy.*</span> <span style="color:#800000">[^f17]</span> Now follows the second member of the sentence, the substance of which is, that God had delivered the Ephesians from the destruction to which they were formerly liable; but the words which he employs are different. <span style="color:#800000">*God, who is rich in mercy, hath quickened you together with Christ*</span>. The meaning is, that, there is no other life than that which is breathed into us by Christ: so that we begin to live only when we are ingrafted into him, and enjoy the same life with himself. This enables us to see what the apostle formerly meant by death, for that death and this resurrection are brought, into contrast. To be made partakers of the life of the Son of God, to be quickened by one Spirit, is an inestimable privilege.
+**4.** <span style="color:#800000">*But God, who is rich in mercy.*</span> [^f17] Now follows the second member of the sentence, the substance of which is, that God had delivered the Ephesians from the destruction to which they were formerly liable; but the words which he employs are different. <span style="color:#800000">*God, who is rich in mercy, hath quickened you together with Christ*</span>. The meaning is, that, there is no other life than that which is breathed into us by Christ: so that we begin to live only when we are ingrafted into him, and enjoy the same life with himself. This enables us to see what the apostle formerly meant by death, for that death and this resurrection are brought, into contrast. To be made partakers of the life of the Son of God, to be quickened by one Spirit, is an inestimable privilege.
 
-On this ground he praises the <span style="color:#800000">*mercy*</span> of God, meaning by its <span style="color:#800000">*riches,*</span> that it had been poured out in a singularly large and abundant manner. The whole of our salvation is here ascribed to the mercy of God. But he presently adds, <span style="color:#800000">*for his great love wherewith he loved us.*</span> <span style="color:#800000">[^f18]</span> This is a still more express declaration, that all was owing to undeserved goodness; for he declares that God was moved by this single consideration. “Herein,” says John, “is love, not that we loved God, but that he loved us. We love him because he first loved us.” (1 John 4:10,19.)
+On this ground he praises the <span style="color:#800000">*mercy*</span> of God, meaning by its <span style="color:#800000">*riches,*</span> that it had been poured out in a singularly large and abundant manner. The whole of our salvation is here ascribed to the mercy of God. But he presently adds, <span style="color:#800000">*for his great love wherewith he loved us.*</span> [^f18] This is a still more express declaration, that all was owing to undeserved goodness; for he declares that God was moved by this single consideration. “Herein,” says John, “is love, not that we loved God, but that he loved us. We love him because he first loved us.” (1 John 4:10,19.)
 
 <!-- PAGE 33 -->
 
@@ -377,10 +428,16 @@ Whether the words, <span style="color:#800000">*by grace ye are saved,*</span> h
 
 <h2 class="scripture-anchor" id="ephesians-2-8-10" data-ref="EPHESIANS 2:8-10" style="display:none">EPHESIANS 2:8-10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490208&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:8-10</span></p>
 
-<strong>8.</strong> For by grace are ye saved through faith; and that not of yourselves: it is the gift Of God: <strong>9.</strong> Not of works, lest any man should boast. <strong>10.</strong> For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> For by grace are ye saved through faith; and that not of yourselves: it is the gift Of God:</td><td class="scripture-la"><strong>8.</strong> Gratia enim estis salvati per fidem; idque non ex vobis: Dei donurn est.</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Not of works, lest any man should boast.</td><td class="scripture-la"><strong>9.</strong> Non ex operibus; ne quis glorietur.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> For we are his workmanship, created in Christ Jesus unto good works, which God hath before ordained that we should walk in them.</td><td class="scripture-la"><strong>10.</strong> Ipsius enim opus sumus, creati in Christo Iesu ad opera bona, quae praeparavit Deus, ut in illis ambulemus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -389,7 +446,7 @@ Whether the words, <span style="color:#800000">*by grace ye are saved,*</span> h
 
 Ought we not then to be silent about free-will, and good intentions, and fancied preparations, and merits, and satisfactions? There is none of these which does not claim a share of praise in the salvation of men; so that the praise of grace would not, as Paul shews, remain undiminished. When, on the part of man, the act of receiving salvation is made to consist in faith alone, all other means, on which men are accustomed to rely, are discarded. Faith, then, brings a man empty to God, that he may be filled with the blessings of Christ. And so he adds, <span style="color:#800000">*not of yourselves;*</span> that claiming nothing for themselves, they may acknowledge God alone as the author of their salvation.
 
-**9.** <span style="color:#800000">*Not of works.*</span> Instead of what he had said, that their salvation is of grace, he now affirms, that “it is the gift of God.” <span style="color:#800000">[^f19]</span> Instead of what he had said, “<span style="color:#800000">*Not of yourselves,*</span>” he now says, “<span style="color:#800000">*Not of works.*</span>” Hence we see, that the apostle leaves nothing to men in procuring salvation. In these three phrases, — <span style="color:#800000">*not of yourselves,*</span> — <span style="color:#800000">*it is the gift of God,*</span> — <span style="color:#800000">*not of works,*</span> — he embraces the substance of his long argument in the Epistles to the Romans and to the Galatians, that righteousness comes to us from the mercy of God alone, — is offered to us in Christ by the gospel, — and is received by faith alone, without the merit of works.
+**9.** <span style="color:#800000">*Not of works.*</span> Instead of what he had said, that their salvation is of grace, he now affirms, that “it is the gift of God.” [^f19] Instead of what he had said, “<span style="color:#800000">*Not of yourselves,*</span>” he now says, “<span style="color:#800000">*Not of works.*</span>” Hence we see, that the apostle leaves nothing to men in procuring salvation. In these three phrases, — <span style="color:#800000">*not of yourselves,*</span> — <span style="color:#800000">*it is the gift of God,*</span> — <span style="color:#800000">*not of works,*</span> — he embraces the substance of his long argument in the Epistles to the Romans and to the Galatians, that righteousness comes to us from the mercy of God alone, — is offered to us in Christ by the gospel, — and is received by faith alone, without the merit of works.
 
 This passage affords an easy refutation of the idle cavil by which Papists attempt to evade the argument, that we are justified without works. Paul, they tell us, is speaking about ceremonies. But the present question is not confined to one class of works. Nothing can be more clear than this. The whole righteousness of man, which consists in works, — nay, the whole man, and everything that he can call his own, is set aside. We must attend to the contrast between God and Man, between grace and works. Why should God be contrasted with man, if the controversy related to nothing more than ceremonies?
 
@@ -419,10 +476,16 @@ We must look to Paul’s design. He intends to shew that we have brought nothing
 
 <h2 class="scripture-anchor" id="ephesians-2-11-13" data-ref="EPHESIANS 2:11-13" style="display:none">EPHESIANS 2:11-13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490211&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:11-13</span></p>
 
-<strong>11.</strong> Wherefore remember, that ye being in time past Gentiles in the flesh, who are called Uncircumcision by that which is called the Circumcision in the flesh made by hands; <strong>12.</strong> That at that time ye were without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world: <strong>13.</strong> But now, in Christ Jesus, ye who sometimes were far off are made nigh by the blood of Christ.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Wherefore remember, that ye being in time past Gentiles in the flesh, who are called Uncircumcision by that which is called the Circumcision in the flesh made by hands;</td><td class="scripture-la"><strong>11.</strong> Quamobrem memores estote, quod aliquando vos Gentes in carne, qui dicebamini Praeputium ab ea, quae vocatur Circumcisio, in carne manu facta;</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> That at that time ye were without Christ, being aliens from the commonwealth of Israel, and strangers from the covenants of promise, having no hope, and without God in the world:</td><td class="scripture-la"><strong>12.</strong> Illo tempore eratis absque Christo, alienati a republica Israelis, hospites tabularum promissionis, spem non habentes, et sine Deo in mundo.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> But now, in Christ Jesus, ye who sometimes were far off are made nigh by the blood of Christ.</td><td class="scripture-la"><strong>13.</strong> Nunc autem in Christo Iesu vos, qui quondam eratis procul, facti estis propinqui per Christi sanguinem.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -463,7 +526,7 @@ Take away the covenant of salvation, and there remains no hope. I have translate
 
 And without God in the world. But at no period were the Ephesians, or any other Gentiles, destitute of all religion. Why, then, are they styled (<span style="color:#0000d4">άθεοι</span>) *Atheists?* for (<span style="color:#0000d4">άθεος</span>) an *Atheist,* strictly speaking, is one who does not believe, and who absolutely ridicules, the being of a God. That appellation, certainly, is not usually given to superstitious persons, but to those who have no feeling of religion, and who desire to see it utterly destroyed. I answer, Paul was right in giving them this name, for he treated all the notions entertained respecting false gods as nothing; and with the utmost propriety do godly persons regard all idols as “nothing in the world.” (1 Corinthians 8:4.) Those who do not worship the true God, whatever may be the variety of their worship, or the multitude of laborious ceremonies which they perform, are without God: they adore what they know not. (Acts 17:23.) Let it be carefully observed, that the Ephesians are not charged with (<span style="color:#0000d4">ajqei`σμὸς</span>) *Atheism,* in the same degree as Diagoras, and others of the same stamp, who were subjected to that reproach. Persons who imagined themselves to be very religious are charged with that crime; for an idol is a forgery, an imposition, not a Divinity.
 
-From what has been said, the conclusion will be easily drawn, that out of Christ there are none but idols. Those who were formerly declared to be <span style="color:#800000">*without Christ,*</span> are now declared to be *without God;* <span style="color:#800000">[^f20]</span> as John says,
+From what has been said, the conclusion will be easily drawn, that out of Christ there are none but idols. Those who were formerly declared to be <span style="color:#800000">*without Christ,*</span> are now declared to be *without God;* [^f20] as John says,
 
 <p style="text-align:center" markdown="1">“<span style="color:#000080">Whosoever hath not the Son, hath not the Father,</span>”</p>
 
@@ -483,21 +546,27 @@ Let us know, therefore, that all who do not keep this way wander from the true G
 
 <h2 class="scripture-anchor" id="ephesians-2-14-16" data-ref="EPHESIANS 2:14-16" style="display:none">EPHESIANS 2:14-16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490214&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:14-16</span></p>
 
-<strong>14.</strong> For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us; <strong>15.</strong> Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace; <strong>16.</strong> And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> For he is our peace, who hath made both one, and hath broken down the middle wall of partition between us;</td><td class="scripture-la"><strong>14.</strong> Ipse enim est pax nostra, qui fecit utraque unum, et interstitium maceriae solvens, inimicitias in carne sua;</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> Having abolished in his flesh the enmity, even the law of commandments contained in ordinances; for to make in himself of twain one new man, so making peace;</td><td class="scripture-la"><strong>15.</strong> Legem mandatorum in decretis positam abolens, ut duos conderet in se ipso, in unum novum hominem, faciens pacem;</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> And that he might reconcile both unto God in one body by the cross, having slain the enmity thereby.</td><td class="scripture-la"><strong>16.</strong> Ut reconciliaret ambos in uno corpore Deo per crucem, inimicitias in ipsa interimens.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 43 -->
 **14.** <span style="color:#800000">*For he is our Peace.*</span> He now includes Jews in the privilege of reconciliation, and shows that, through one Messiah, all are united to God. This consideration was fitted to repress the false confidence of the Jews, who, despising the grace of Christ, boasted that they were the holy people, and chosen inheritance, of God. If Christ <span style="color:#800000">*is our peace,*</span> all who are out of him must be at variance with God. What a beautiful title is this which Christ possesses, the peace between God and men! Let no one who dwells in Christ entertain a doubt that he is reconciled to God.
 
-<span style="color:#800000">*Who hath made both one.*</span> This distinction was necessary. <span style="color:#800000">[^f21]</span> All intercourse with the Gentiles was held to be inconsistent with their own superior claims. <span style="color:#800000">[^f22]</span> To subdue this pride, he tells them that they and the Gentiles have been united into one body. Put all these things together, and you will frame the following syllogism: If the Jews wish to enjoy peace with God, they must have Christ as their Mediator. But Christ will not be their peace in any other way than by making them one body with the Gentiles. Therefore, unless the Jews admit the Gentiles to fellowship with them, they have no friendship with God.
+<span style="color:#800000">*Who hath made both one.*</span> This distinction was necessary. [^f21] All intercourse with the Gentiles was held to be inconsistent with their own superior claims. [^f22] To subdue this pride, he tells them that they and the Gentiles have been united into one body. Put all these things together, and you will frame the following syllogism: If the Jews wish to enjoy peace with God, they must have Christ as their Mediator. But Christ will not be their peace in any other way than by making them one body with the Gentiles. Therefore, unless the Jews admit the Gentiles to fellowship with them, they have no friendship with God.
 
 <span style="color:#800000">*And breaking down the middle wall of partitions.*</span> To understand this passage, two things must be observed. The Jews were separated, for a certain time, from the Gentiles, by the appointment of God; and ceremonial observances were the open and avowed symbols of that separation. Passing by the Gentiles, God had chosen the Jews to be a peculiar people to himself. A wide distinction was thus made, when the one class were “fellow-citizens and of the household” (Ephesians 2:19) of the Church, and the other were foreigners. This is stated in the Song of Moses:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">When the Most High divided to the nations their inheritance,</span> <span style="color:#000080">when he separated the sons of Adam, he set the bounds of the</span> <span style="color:#000080">people according to the number of the children of Israel for the</span> <span style="color:#000080">Lord’s portion is his people, Jacob is the lot of his inheritance.</span>” <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 32:8,9)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">When the Most High divided to the nations their inheritance,</span> <span style="color:#000080">when he separated the sons of Adam, he set the bounds of the</span> <span style="color:#000080">people according to the number of the children of Israel for the</span> <span style="color:#000080">Lord’s portion is his people, Jacob is the lot of his inheritance.</span>” <span style="color:#000080">(</span><span style="color:#000080">Deuteronomy 32:8,9)</span></p>
 
 Bounds were thus fixed by God to separate one people from the rest; and hence arose <span style="color:#800000">*the enmity*</span> which is here mentioned. A separation is thus made. The Gentiles are set aside. God is pleased to choose and sanctify the Jewish people, by freeing them from the ordinary pollution of mankind. Ceremonial observances were afterwards added, which, like walls, enclosed the inheritance of God, prevented it from being open to all or mixed with other possessions, and thus excluded the Gentiles from the kingdom of God.
 
@@ -509,10 +578,10 @@ But now, the apostle, says, the *enmity* is removed, and the wall is broken down
 
 **15.** <span style="color:#800000">*Having abolished in his flesh the enmity.*</span> The meaning of Paul’s words is now clear. <span style="color:#800000">*The middle wall of partition*</span> hindered Christ from forming Jews and Gentiles into one body, and therefore the wall has been <span style="color:#800000">*broken down*</span>. The reason why it is broken down is now added — <span style="color:#800000">*to abolish the enmity*</span>, by the flesh of Christ. The Son of God, by assuming a nature common to all, has formed in his own body a perfect unity.
 
-Even the law of commandments contained in ordinances. What had been metaphorically understood by the word <span style="color:#800000">*wall*</span> is now more plainly expressed. The ceremonies, by which the distinction was declared, have been abolished through Christ. What were circumcision, sacrifices, washings, and abstaining from certain kinds of food, but symbols of sanctification, reminding the Jews that their lot was different from that of other nations; just as the white and the red cross distinguish the French of the present day from the inhabitants of Burgundy. Paul declares not only that the Gentiles are equally with the Jews admitted to the fellowship of grace, so that they no longer differ from each other, but that the mark of difference has been taken away; for ceremonies have been abolished. If two contending nations were brought under the dominion of one prince, he would not only desire that they should live in harmony, but would remove the badges and marks of their former enmity. When an obligation is discharged, the *handwriting* is destroyed, a metaphor which Paul employs on this very subject in another Epistle. <span style="color:#800000">[^f23]</span> (Colossians 2:14.)
+Even the law of commandments contained in ordinances. What had been metaphorically understood by the word <span style="color:#800000">*wall*</span> is now more plainly expressed. The ceremonies, by which the distinction was declared, have been abolished through Christ. What were circumcision, sacrifices, washings, and abstaining from certain kinds of food, but symbols of sanctification, reminding the Jews that their lot was different from that of other nations; just as the white and the red cross distinguish the French of the present day from the inhabitants of Burgundy. Paul declares not only that the Gentiles are equally with the Jews admitted to the fellowship of grace, so that they no longer differ from each other, but that the mark of difference has been taken away; for ceremonies have been abolished. If two contending nations were brought under the dominion of one prince, he would not only desire that they should live in harmony, but would remove the badges and marks of their former enmity. When an obligation is discharged, the *handwriting* is destroyed, a metaphor which Paul employs on this very subject in another Epistle. [^f23] (Colossians 2:14.)
 
 <!-- PAGE 45 -->
-Some interpreters, <span style="color:#800000">[^f24]</span> — though, in my opinion, erroneously, — connect the words, <span style="color:#800000">*in ordinances,*</span> with <span style="color:#800000">*abolished*</span>, making the ordinances to be the act of abolishing the ceremonies. This is Paul’s ordinary phrase for describing the ceremonial law, in which the Lord not only enjoined upon the Jews a simple rule of life, but also bound them by various statutes. It is evident, too, that Paul is here treating exclusively of the ceremonial law; for the moral law is not a wall of partition separating us from the Jews, but lays down instructions in which the Jews were not less deeply concerned than ourselves. This passage affords the means of refuting an erroneous view held by some, that circumcision and all the ancient rites, though they are not binding on the Gentiles, are in force at the present day upon the Jews. On this principle there would still be a middle wall of partition between us, which is proved to be false.
+Some interpreters, [^f24] — though, in my opinion, erroneously, — connect the words, <span style="color:#800000">*in ordinances,*</span> with <span style="color:#800000">*abolished*</span>, making the ordinances to be the act of abolishing the ceremonies. This is Paul’s ordinary phrase for describing the ceremonial law, in which the Lord not only enjoined upon the Jews a simple rule of life, but also bound them by various statutes. It is evident, too, that Paul is here treating exclusively of the ceremonial law; for the moral law is not a wall of partition separating us from the Jews, but lays down instructions in which the Jews were not less deeply concerned than ourselves. This passage affords the means of refuting an erroneous view held by some, that circumcision and all the ancient rites, though they are not binding on the Gentiles, are in force at the present day upon the Jews. On this principle there would still be a middle wall of partition between us, which is proved to be false.
 
 <span style="color:#800000">*That he might make in himself*</span>. When the apostle says, <span style="color:#800000">*in himself*</span>, he turns away the Ephesians from viewing the diversity of men, and bids them look for unity nowhere but in Christ. To whatever extent the two might differ in their former condition, in Christ they are become one man. But he emphatically adds, <span style="color:#800000">*one new man,*</span> intimating (what he explains at greater length on another occasion) that
 
@@ -529,10 +598,19 @@ but that “a new creature” holds the first and the last place. The principle 
 
 <h2 class="scripture-anchor" id="ephesians-2-17-22" data-ref="EPHESIANS 2:17-22" style="display:none">EPHESIANS 2:17-22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490217&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">2:17-22</span></p>
 
-<strong>17.</strong> And came and preached peace to you which were afar off, and to them that were nigh. <strong>18.</strong> For through him we both have access by one Spirit unto the Father. <strong>19.</strong> Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God; <strong>20.</strong> And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief cornerstone; <strong>21.</strong> In whom all the building, fitly framed together, groweth unto an holy temple in the Lord: <strong>22.</strong> In whom ye also are builded together for an habitation of God through the Spirit.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> And came and preached peace to you which were afar off, and to them that were nigh.</td><td class="scripture-la"><strong>17.</strong> Et veniens evangelizavit pacem vobis, qui eratis procul, et pacem iis qui propinqui erant;</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> For through him we both have access by one Spirit unto the Father.</td><td class="scripture-la"><strong>18.</strong> Quoniam per ipsum habemus accessum ambo in uno spiritu ad Patrem.</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Now therefore ye are no more strangers and foreigners, but fellowcitizens with the saints, and of the household of God;</td><td class="scripture-la"><strong>19.</strong> Ergo non amplius estis hospites et inquilini; sed cives sanctorum et domestici Dei</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> And are built upon the foundation of the apostles and prophets, Jesus Christ himself being the chief cornerstone;</td><td class="scripture-la"><strong>20.</strong> Superaedificati fundamento Apostolorum et Prophetarum, cujus lapis summus angularis est ipse Christus;</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> In whom all the building, fitly framed together, groweth unto an holy temple in the Lord:</td><td class="scripture-la"><strong>21.</strong> In quo toturn aedificium coagmentatum crescit in templum sanctum in Domino;</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> In whom ye also are builded together for an habitation of God through the Spirit.</td><td class="scripture-la"><strong>22.</strong> In quo et vos coaedificamini in habitaculum Dei in Spiritu.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -558,7 +636,7 @@ No reference to distance of place is conveyed by the words <span style="color:#8
 
 The apostles were forbidden, while he was still in the world, to carry their first embassy to the Gentiles.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">Go not into the way of the Gentiles, and into any city of the</span> <span style="color:#000080">Samaritans, enter ye not. But go rather to the lost sheep of the</span> <span style="color:#000080">house of Israel.</span>” <span style="color:#000080">(</span><span style="color:#000080">Matthew 10:5,6,)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">Go not into the way of the Gentiles, and into any city of the</span> <span style="color:#000080">Samaritans, enter ye not. But go rather to the lost sheep of the</span> <span style="color:#000080">house of Israel.</span>” <span style="color:#000080">(</span><span style="color:#000080">Matthew 10:5,6,)</span></p>
 
 <!-- PAGE 48 -->
 His apostles were afterwards employed as trumpets for proclaiming the gospel to the Gentiles. What they did, not only in his name, and by his command, but as it were in his own person, is justly ascribed to none other than himself. We too speak as if Christ himself exhorted you by us. (2 Corinthians 5:20) The faith of the gospel would be weak indeed, were we to look no higher than to men. Its whole authority is derived from viewing men as God’s instruments, and hearing Christ speak to us by their mouth. Observe here, the gospel is the message of <span style="color:#800000">*peace,*</span> by which God declares himself to be reconciled to us, and makes known his paternal love. Take away the gospel, and war and enmity continue to subsist between God and men; and, on the other hand, the native tendency of the gospel is, to give peace, and calmness to the conscience, which would otherwise be tormented by distressing alarm.
@@ -580,7 +658,7 @@ Though the Apostles have become our teachers, the instruction of the prophets ha
 
 I have been led to make this remark by the conduct of the Marcionites in ancient times, who expunged the word <span style="color:#800000">*prophets*</span> from this passage; and by that of certain fanatics in the present day, who, following their footsteps, exclaim loudly that we have nothing to do with the law and the prophets, because the gospel has put an end to their authority. The Holy Spirit everywhere declares, that he has spoken to us by the mouth of the prophets, and demands that we shall listen to him in their writings. This is of no small consequence for maintaining the authority of our faith. All the servants of God, from first to last, are so perfectly agreed, that their harmony is in itself a clear demonstration that it is one God who speaks in them all. The commencement of our religion must be traced to the creation of the world. In vain do Papists, Mahometans, and other sects, boast of their antiquity, while they are mere counterfeits of the true, the pure religion.
 
-<span style="color:#800000">*Jesus Christ, himself is the chief corner-stone*</span>. <span style="color:#800000">[^f25]</span> Those who transfer this honor to Peter, and maintain that on him the church is founded, are so void of shame, as to attempt to justify their error by quoting this passage. They hold out that Christ is called <span style="color:#800000">*the chief corner-stone,*</span> by comparison with others; and that there are many stones on which the church is founded. But this difficulty is easily solved. Various metaphors are employed by the apostles according to the diversity of circumstances, but still with the same meaning. In writing to the Corinthians, Paul lays down an incontestable proposition, that “no other foundation can be laid.” (1 Corinthians 3:11.) He does not therefore mean, that Christ is merely a corner, or a part of the foundation; for then he would contradict himself. What then? He means that Jews and Gentiles were two separate walls, but are formed into one spiritual building. Christ is placed in the middle of the corner for the purpose of uniting both, and this is the force of the metaphor. What is immediately added shews sufficiently that he is very far from limiting Christ to any one part of the building.
+<span style="color:#800000">*Jesus Christ, himself is the chief corner-stone*</span>. [^f25] Those who transfer this honor to Peter, and maintain that on him the church is founded, are so void of shame, as to attempt to justify their error by quoting this passage. They hold out that Christ is called <span style="color:#800000">*the chief corner-stone,*</span> by comparison with others; and that there are many stones on which the church is founded. But this difficulty is easily solved. Various metaphors are employed by the apostles according to the diversity of circumstances, but still with the same meaning. In writing to the Corinthians, Paul lays down an incontestable proposition, that “no other foundation can be laid.” (1 Corinthians 3:11.) He does not therefore mean, that Christ is merely a corner, or a part of the foundation; for then he would contradict himself. What then? He means that Jews and Gentiles were two separate walls, but are formed into one spiritual building. Christ is placed in the middle of the corner for the purpose of uniting both, and this is the force of the metaphor. What is immediately added shews sufficiently that he is very far from limiting Christ to any one part of the building.
 
 <!-- PAGE 51 -->
 **21.** <span style="color:#800000">*In whom all the building groweth.*</span> If this be true, what will become of Peter? When Paul, in writing to the Corinthians, speaks of Christ as a “Foundation,” he does not mean that the church is begun by him and completed by others, but draws a distinction arising out of a comparison of his own labors with those of other men. It had been his duty to found the church at Corinth, and to leave to his successors the completion of the building.
@@ -605,17 +683,26 @@ Spirit; and secondly, to point out the superiority of the spiritual building to 
 
 <h2 class="scripture-anchor" id="ephesians-3-1-6" data-ref="EPHESIANS 3:1-6" style="display:none">EPHESIANS 3:1-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490301&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">3:1-6</span></p>
 
-<strong>1.</strong> For this cause, I Paul, the prisoner of Jesus Christ for you Gentiles, <strong>2.</strong> (If ye have heard of the dispensation of the grace of God which is given me to you-ward: <strong>3.</strong> How that by revelation he made known unto me the mystery; as I wrote afore in few words; <strong>4.</strong> Whereby, when ye read, ye may understand my knowledge in the mystery of Christ, <strong>5.</strong> Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit; <strong>6.</strong> That the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> For this cause, I Paul, the prisoner of Jesus Christ for you Gentiles</td><td class="scripture-la"><strong>1.</strong> Hujus rei gratia ego Paulus, vinctus Iesu Christi, pro vobis Gentibus legatione fungor;</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> (If ye have heard of the dispensation of the grace of God which is given me to you-ward:</td><td class="scripture-la"><strong>2.</strong> Siquidem audistis dispensationem gratiae Dei, mihi erGalatiansvos datae</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> How that by revelation he made known unto me the mystery; as I wrote afore in few words;</td><td class="scripture-la"><strong>3.</strong> Quod per revelationem mihi patefecerit arcanum, quemadmodum scripsi paulo ante.</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> Whereby, when ye read, ye may understand my knowledge in the mystery of Christ</td><td class="scripture-la"><strong>4.</strong> Ad quod potestis attendentes intelligere cognitionem meam in mysterio Christi</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Which in other ages was not made known unto the sons of men, as it is now revealed unto his holy apostles and prophets by the Spirit;</td><td class="scripture-la"><strong>5.</strong> Quod aliis saeculis non innotuit filiis hominum, quemadmodum nunc revelatum est sanctis Apostolis ejus et Prophetis per Spiritum</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> That the Gentiles should be fellowheirs, and of the same body, and partakers of his promise in Christ by the gospel.</td><td class="scripture-la"><strong>6.</strong> Gentes esse cohaeredes, et concorporeas, et consortes promissionis ejus in Christo per Evangelium.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 **1.** <span style="color:#800000">*For this cause.*</span> Paul’s imprisonment, which ought to have been held as a confirmation of his apostleship, was undoubtedly presented by his adversaries in an opposite light. He therefore points out to the Ephesians that his chains served to prove and to declare his calling; and that the only reason why he had been imprisoned was, that he had preached the gospel to the Gentiles. His unshaken firmness was no small additional proof that he had discharged his office in a proper manner.
 
 <!-- PAGE 54 -->
-<span style="color:#800000">*The prisoner of Jesus Christ.*</span> <span style="color:#800000">[^f26]</span> To strengthen his authority still more, he speaks in lofty terms of his prison. In the presence of the world and of wicked men, this might have appeared to be foolish boasting; but, in addressing godly persons, it was a dignified and faithful manner. The glory of Christ not only overcomes the ignominy of the chains, but converts what was in itself a reproach into the highest honor. If he had merely said, “I am a prisoner,” this would not have conveyed the idea of his being an ambassador. Imprisonment alone has no claim to this honor, being usually the mark of wickedness and crime. But the crowns and sceptres of kings, to say nothing of the imposing splendor of an ambassador, are less honorable than the chains of a prisoner of Jesus Christ. Men might think otherwise, but it is our duty to judge of the reasons. So highly ought the name of Christ to be revered by us, that what men consider to be the greatest reproach, ought to be viewed by us as the greatest honour.
+<span style="color:#800000">*The prisoner of Jesus Christ.*</span> [^f26] To strengthen his authority still more, he speaks in lofty terms of his prison. In the presence of the world and of wicked men, this might have appeared to be foolish boasting; but, in addressing godly persons, it was a dignified and faithful manner. The glory of Christ not only overcomes the ignominy of the chains, but converts what was in itself a reproach into the highest honor. If he had merely said, “I am a prisoner,” this would not have conveyed the idea of his being an ambassador. Imprisonment alone has no claim to this honor, being usually the mark of wickedness and crime. But the crowns and sceptres of kings, to say nothing of the imposing splendor of an ambassador, are less honorable than the chains of a prisoner of Jesus Christ. Men might think otherwise, but it is our duty to judge of the reasons. So highly ought the name of Christ to be revered by us, that what men consider to be the greatest reproach, ought to be viewed by us as the greatest honour.
 
 <span style="color:#800000">*For you Gentiles.*</span> Another circumstance greatly fitted to interest the Ephesians was, that the persecutions of Paul were endured for the Gentiles, — that his troubles and dangers were on their account.
 
@@ -662,7 +749,7 @@ and,
 
 <!-- PAGE 58 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">Ye shall be witnesses to me both in Jerusalem, and in all Judea,</span> <span style="color:#000080">and in Samaria, and to the uttermost part of the earth,</span>” <span style="color:#000080">(</span><span style="color:#000080">Acts 1:8,)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">Ye shall be witnesses to me both in Jerusalem, and in all Judea,</span> <span style="color:#000080">and in Samaria, and to the uttermost part of the earth,</span>” <span style="color:#000080">(</span><span style="color:#000080">Acts 1:8,)</span></p>
 
 they dreaded and recoiled from the calling of the Gentiles as a proposal absolutely monstrous, because the manner of its accomplishment was still unknown. Before the actual event arrived, they had dark and confused apprehensions of our Savior’s words; for ceremonies were
 
@@ -678,10 +765,20 @@ These few words, <span style="color:#800000">*as it is now revealed,*</span> thr
 
 <h2 class="scripture-anchor" id="ephesians-3-7-13" data-ref="EPHESIANS 3:7-13" style="display:none">EPHESIANS 3:7-13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490307&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">3:7-13</span></p>
 
-<strong>7.</strong> Whereof I was made a minister, according to the gift of the grace of God given unto me by the effectual working of his power. <strong>8.</strong> Unto me, who am less than the least of all saints, is this grace given, that I should preach among the Gentiles the unsearchable riches of Christ; <strong>9.</strong> And to make all men see what is the fellowship of the mystery, which from the beginning of the world hath been hid in God, who created all things by Jesus Christ: <strong>10.</strong> To the intent that now, unto the principalities and powers in heavenly places, might be known by the church the manifold wisdom of God, <strong>11.</strong> According to the eternal purpose which he purposed in Christ Jesus our Lord: <strong>12.</strong> In whom we have boldness and access with confidence by the faith of him. <strong>13.</strong> Wherefore I desire that ye faint not at my tribulations for you, which is your glory.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> Whereof I was made a minister, according to the gift of the grace of God given unto me by the effectual working of his power.</td><td class="scripture-la"><strong>7.</strong> Cujus factus sum minister, secundum donum gratiae Dei, quod mihi datum est secundum efficaciam potentiae ejus.</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Unto me, who am less than the least of all saints, is this grace given, that I should preach among the Gentiles the unsearchable riches of Christ;</td><td class="scripture-la"><strong>8.</strong> Mihi omnium sanctorum minimo data est gratia haec, ut evangelizem in Gentibus impervestigabiles divitias Christi;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> And to make all men see what is the fellowship of the mystery, which from the beginning of the world hath been hid in God, who created all things by Jesus Christ:</td><td class="scripture-la"><strong>9.</strong> Et omnibus conspicuum faciam, quae sit communio mysterii, quod absconditum fuit a saeculis in Deo, qui omnia creavit per Iesum Christum;</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> To the intent that now, unto the principalities and powers in heavenly places, might be known by the church the manifold wisdom of God</td><td class="scripture-la"><strong>10.</strong> Ut nunc patefieret principatibus et potestatibus in coelestibus per ecclesiam varie multiplex sapientia Dei</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> According to the eternal purpose which he purposed in Christ Jesus our Lord:</td><td class="scripture-la"><strong>11.</strong> Secundum propositum aeternum, quod statuit in Christo Iesu Domino nostro</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> In whom we have boldness and access with confidence by the faith of him.</td><td class="scripture-la"><strong>12.</strong> Perquem habemus audaciam, et aditum in fiducia, per fidem ejus.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Wherefore I desire that ye faint not at my tribulations for you, which is your glory.</td><td class="scripture-la"><strong>13.</strong> Quare peto, ne deficiatis in afflictionibus meis pro vobis, quae est gloria vestra.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -702,7 +799,7 @@ But let us observe, that, when he speaks of himself as the meanest of all, he co
 
 <!-- PAGE 61 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">I am ordained a preacher, and an apostle, (I speak the truth in</span> <span style="color:#000080">Christ, and lie not,) a teacher of the Gentiles in faith and truth.</span>” <span style="color:#000080">(</span><span style="color:#000080">1 Timothy 2:7.)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">I am ordained a preacher, and an apostle, (I speak the truth in</span> <span style="color:#000080">Christ, and lie not,) a teacher of the Gentiles in faith and truth.</span>” <span style="color:#000080">(</span><span style="color:#000080">1 Timothy 2:7.)</span></p>
 
 By <span style="color:#800000">*the unsearchable riches of Christ*</span> are meant the astonishing and boundless treasures of grace, which God had suddenly and unexpectedly bestowed on the Gentiles. The Ephesians are thus reminded how eagerly the gospel ought to be embraced, and how highly it ought to be esteemed. This subject has been treated in the Exposition of the Epistle to the Galatians, (Galatians 1:15, 16; 2:7, 9.) And certainly, while Paul held the office of apostleship in common with others, it was an honor peculiar to himself to be appointed apostle of the Gentiles.
 
@@ -713,14 +810,14 @@ By <span style="color:#800000">*the unsearchable riches of Christ*</span> are me
 <!-- PAGE 62 -->
 <span style="color:#800000">*Who created all things by Jesus Christ.*</span> This cannot so properly be understood of the first creation as of the spiritual renewal. It is, no doubt, true, and is frequently declared in Scripture, that by the Word of God all things were created; but the connection of the passage lays us under the necessity of understanding by it that renewal which is comprehended in the blessing of redemption. But it may, perhaps, be thought that the apostle is illustrating this renewal, by an argument drawn from the creation. “By Christ, as God, the Father created (John 1:3) all things; and why, then, should we wonder, if by Christ, as Mediator, all the Gentiles are now brought back to one body?” I have no objection to this view. A similar argument is used by him in another Epistle.
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">For God, who commanded the light to shine out of darkness, is</span> <span style="color:#000080">the same who hath shined in our hearts, to give the light of the</span> <span style="color:#000080">knowledge of the glory of God in the face of Jesus Christ.</span>” <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 4:6.)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">For God, who commanded the light to shine out of darkness, is</span> <span style="color:#000080">the same who hath shined in our hearts, to give the light of the</span> <span style="color:#000080">knowledge of the glory of God in the face of Jesus Christ.</span>” <span style="color:#000080">(</span><span style="color:#000080">2 Corinthians 4:6.)</span></p>
 
 From the creation of the world he concludes, that it is the work of God to enlighten the darkness; but what was visible in the former case is ascribed to the Spirit, when he comes to speak of the kingdom of Christ.
 
 **10.** <span style="color:#800000">*That now to the principalities and powers.*</span> Some are of opinion that these words cannot apply to angels, because such ignorance, as is here supposed, could not be found in those who are permitted to behold the brightness of God’s countenance. They choose rather to refer them to devils, but without due reflection; for what could have been regarded as extraordinary in the assertion, that, by the preaching of the gospel and the calling of the Gentiles, information was, for the first time, conveyed to devils? There can be no doubt that the apostle labors to place in the strongest light the mercy of God toward the Gentiles, and the high value of the gospel. For this purpose he declares, that the preaching of the gospel exhibits the manifold grace of God, with which, till now, the heavenly angels themselves were unacquainted. The wisdom of God, therefore, which was manifested by uniting Jews and Gentiles in the fellowship of the gospel, ought to be regarded by men with the highest admiration.
 
 <!-- PAGE 63 -->
-He calls it <span style="color:#0000d4">πολυποίκιλον σοφίαν</span>, <span style="color:#800000">*manifold wisdom,*</span> because men are accustomed to try it by a false standard, confining their view to a particular department, and thus forming a most inadequate conception of the whole. The Jews thought, for example, that the dispensation under the law, with which they were acquainted and familiar, was the only form in which the wisdom of God could be seen. But, by making the gospel to be proclaimed to all men without exception, God has brought forth to view another instance and proof of his wisdom. Not that it was new wisdom, but that it was so large and <span style="color:#800000">*manifold,*</span> <span style="color:#800000">[^f27]</span> as to transcend our limited capacity. Let us rest assured that the knowledge, whatever it may be, which we have acquired, is, after all, but a slender proportion. And if the calling of the Gentiles draws the attention, and excites the reverence, of angels in heaven, how shameful that it should be slighted or disdained by men upon earth!
+He calls it <span style="color:#0000d4">πολυποίκιλον σοφίαν</span>, <span style="color:#800000">*manifold wisdom,*</span> because men are accustomed to try it by a false standard, confining their view to a particular department, and thus forming a most inadequate conception of the whole. The Jews thought, for example, that the dispensation under the law, with which they were acquainted and familiar, was the only form in which the wisdom of God could be seen. But, by making the gospel to be proclaimed to all men without exception, God has brought forth to view another instance and proof of his wisdom. Not that it was new wisdom, but that it was so large and <span style="color:#800000">*manifold,*</span> [^f27] as to transcend our limited capacity. Let us rest assured that the knowledge, whatever it may be, which we have acquired, is, after all, but a slender proportion. And if the calling of the Gentiles draws the attention, and excites the reverence, of angels in heaven, how shameful that it should be slighted or disdained by men upon earth!
 
 The inference which some draw from this passage, that angels are present in our assemblies, and make progress along with ourselves in knowledge, is a groundless speculation. We must always keep in view the purposes for which God appointed the ministry of his word. If angels, who are permitted to see the face of God, do not walk in faith neither do they need the outward administration of the word. The preaching of the gospel, therefore, is of no service but to human beings, among whom alone the practice exists. Paul’s meaning is this. “The church, composed both of Jews and Gentiles, is a mirror, in which angels behold the astonishing wisdom of God displayed in a manner unknown to them before. They see a work which is new to them, and the reason of which was hid in God. In this manner, and not by learning anything from the lips of men, do they make progress.”
 
@@ -741,18 +838,27 @@ Observe the expression, <span style="color:#800000">*access with confidence.*</s
 
 <p style="margin-left:2em;" markdown="1"><span style="color:#000080">Lord.</span>” <span style="color:#000080">(</span><span style="color:#000080">James 1:6,7)</span></p>
 
-The sophists of the *Sorbonne,* <span style="color:#800000">[^f28]</span> when they enjoin men to hesitate, know not what it is to call upon God.
+The sophists of the *Sorbonne,* [^f28] when they enjoin men to hesitate, know not what it is to call upon God.
 
-**13.** <span style="color:#800000">*Wherefore I desire.*</span> His reason for alluding formerly to his imprisonment is now manifest. It was to prevent them from being discouraged when they heard of his persecution. <span style="color:#800000">[^f29]</span> O heroic breast, which drew from a prison, and from death itself, comfort to those who were not in danger! He says that, he endured <span style="color:#800000">*tribulations for*</span> the Ephesians, because they tended to promote the edification of all the godly. How powerfully is the faith of the people confirmed, when a pastor does not hesitate to seal his doctrine by the surrender of his life ! And accordingly he adds, <span style="color:#800000">*which is your glory.*</span> Such lustre was thrown around his instructions, that, all the churches among whom he had labored, had good reason to glory, when they beheld their faith ratified by the best of all pledges.
+**13.** <span style="color:#800000">*Wherefore I desire.*</span> His reason for alluding formerly to his imprisonment is now manifest. It was to prevent them from being discouraged when they heard of his persecution. [^f29] O heroic breast, which drew from a prison, and from death itself, comfort to those who were not in danger! He says that, he endured <span style="color:#800000">*tribulations for*</span> the Ephesians, because they tended to promote the edification of all the godly. How powerfully is the faith of the people confirmed, when a pastor does not hesitate to seal his doctrine by the surrender of his life ! And accordingly he adds, <span style="color:#800000">*which is your glory.*</span> Such lustre was thrown around his instructions, that, all the churches among whom he had labored, had good reason to glory, when they beheld their faith ratified by the best of all pledges.
 
 <!-- PAGE 66 -->
 
 <h2 class="scripture-anchor" id="ephesians-3-14-19" data-ref="EPHESIANS 3:14-19" style="display:none">EPHESIANS 3:14-19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490314&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">3:14-19</span></p>
 
-<strong>14.</strong> For this cause I bow my knees unto the Father of our Lord Jesus Christ, <strong>15.</strong> Of whom the whole family in heaven and earth is named, <strong>16.</strong> That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man; <strong>17.</strong> That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love, <strong>18.</strong> May be able to comprehend with all saints what is the breadth, and length, and depth, and height; <strong>19.</strong> And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fullness of God.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> For this cause I bow my knees unto the Father of our Lord Jesus Christ</td><td class="scripture-la"><strong>14.</strong> Hujus rei gratia flecto genua ad Patrem Domini nostri Iesu Christi</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> Of whom the whole family in heaven and earth is named</td><td class="scripture-la"><strong>15.</strong> Ex quo omnis cognatio in coelis et super terram nominatur</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> That he would grant you, according to the riches of his glory, to be strengthened with might by his Spirit in the inner man;</td><td class="scripture-la"><strong>16.</strong> Ut det vobis secundum divitias gloriae suae, potentia roborari per Spiritum suum in hominem interiorem</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> That Christ may dwell in your hearts by faith; that ye, being rooted and grounded in love</td><td class="scripture-la"><strong>17.</strong> Ut inhabitet Christus per fidem in cordibus vestris, ut sitis in charitate radicati atque fundati</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> May be able to comprehend with all saints what is the breadth, and length, and depth, and height;</td><td class="scripture-la"><strong>18.</strong> Quo valeatis comprehendere cum omnibus sanctis, quae sit latitudo, et longitudo, et profunditas, et altitudo;</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> And to know the love of Christ, which passeth knowledge, that ye might be filled with all the fullness of God.</td><td class="scripture-la"><strong>19.</strong> Cognoscere, inquam, dilectionem Christi, quae cognitionem exsuperat, ut completi sitis in omnem plenitudinem Dei.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -763,7 +869,7 @@ We are thus enabled to refute the slanders of the Pelagians and Papists, who arg
 
 <span style="color:#800000">*I bow my knees.*</span> The bodily attitude is here put for the religious exercise itself. Not that prayer, in all cases, requires the bending of the knees, but because this expression of reverence is commonly employed, especially where it is not an incidental petition, but a continued prayer.
 
-**15.** <span style="color:#800000">*Of whom the whole family.*</span> <span style="color:#800000">[^f30]</span> The relative, <span style="color:#0000d4">ἐξ ou=</span>, <span style="color:#800000">*of whom,*</span> may apply equally to the Father and to the Son. Erasmus restricts it entirely to the Father. I do not approve of this; for readers ought to have been allowed a liberty of choice; nay, the other interpretation appears to be far more probable. The apostle alludes to that relationship which the Jews had with each other, through their father Abraham, to whom they trace their lineage. He proposes, on the contrary, to remove the distinction between Jews and Gentiles; and tells them, not only that all men have been brought into one family and one race through Christ, but that they are enabled to claim kindred even with angels.
+**15.** <span style="color:#800000">*Of whom the whole family.*</span> [^f30] The relative, <span style="color:#0000d4">ἐξ ou=</span>, <span style="color:#800000">*of whom,*</span> may apply equally to the Father and to the Son. Erasmus restricts it entirely to the Father. I do not approve of this; for readers ought to have been allowed a liberty of choice; nay, the other interpretation appears to be far more probable. The apostle alludes to that relationship which the Jews had with each other, through their father Abraham, to whom they trace their lineage. He proposes, on the contrary, to remove the distinction between Jews and Gentiles; and tells them, not only that all men have been brought into one family and one race through Christ, but that they are enabled to claim kindred even with angels.
 
 To apply it to God the Father would not be equally defensible, being liable to this obvious exception, that God formerly passed by the Gentiles, and adopted the Jews as his peculiar people. But when we apply it to Christ, the whole of Paul’s statement agrees with the facts; for all come and blend together, as one family, and, related to one God the Father, are mutually brethren. Let us therefore understand that, through the mediation of Christ, a relationship has been constituted between Jews and Gentiles, because, by reconciling us to the Father, he has made us all one. Jews have no longer any reason to boast that they are the posterity of Abraham, or that they belong to this or that tribe, — to despise others as profane, and claim the exclusive honor of being a holy people. There is but one relationship which ought to be reckoned, both in heaven and on earth, both among angels and among men a union to the body of Christ. Out of him all will be found scattered. He alone is the bond by which we are united.
 
@@ -790,7 +896,7 @@ Justly, therefore, does Paul affirm that the persons who are endowed by God with
 <span style="color:#800000">*May dwell through faith.*</span> The method by which so great a benefit is obtained is also expressed. What a remarkable commendation is here bestowed on <span style="color:#800000">*faith,*</span> that, by means of it, the Son of God becomes our own, and “makes his abode with us!” (John 14:23.) By faith we not only acknowledge that Christ suffered and rose from the dead on our account, but, accepting the offers which he makes of himself, we possess and enjoy him as our Savior. This deserves our careful attention. Most people consider fellowship with Christ, and believing in Christ, to be the same thing; but the fellowship which we have with Christ is the consequence of faith. In a word, faith is not a distant view, but a warm embrace, of Christ, by which he dwells in us, and we are filled with the Divine Spirit.
 
 <!-- PAGE 70 -->
-<span style="color:#800000">*That ye may be rooted and grounded in love.*</span> Among the fruits of Christ’s dwelling in us the apostle enumerates love and gratitude for the Divine grace and kindness exhibited to us in Christ. Hence it follows, that this is true and solid excellence; so that, whenever he treats of the perfection of the saints, he views it as consisting of these two parts. The firmness and constancy which our love ought to possess are pointed out by two metaphors. There are many persons not wholly destitute of love; but it is easily removed or shaken, because its roots are not deep. Paul desires that it should be <span style="color:#800000">*rooted*</span> <span style="color:#800000">[^f31]</span> <span style="color:#800000">*and grounded,*</span> — thoroughly fixed in our minds, so as to resemble a well-founded building or deeply-planted tree. The true meaning is, that our roots ought to be so deeply planted, and our foundation so firmly laid in love, that nothing will be able to shake us. It is idle to infer from these words, that love is the foundation and root of our salvation. Paul does not inquire here, as any one may perceive, on what our salvation is founded, but with what firmness and constancy we ought to continue in the exercise of love.
+<span style="color:#800000">*That ye may be rooted and grounded in love.*</span> Among the fruits of Christ’s dwelling in us the apostle enumerates love and gratitude for the Divine grace and kindness exhibited to us in Christ. Hence it follows, that this is true and solid excellence; so that, whenever he treats of the perfection of the saints, he views it as consisting of these two parts. The firmness and constancy which our love ought to possess are pointed out by two metaphors. There are many persons not wholly destitute of love; but it is easily removed or shaken, because its roots are not deep. Paul desires that it should be <span style="color:#800000">*rooted*</span> [^f31] <span style="color:#800000">*and grounded,*</span> — thoroughly fixed in our minds, so as to resemble a well-founded building or deeply-planted tree. The true meaning is, that our roots ought to be so deeply planted, and our foundation so firmly laid in love, that nothing will be able to shake us. It is idle to infer from these words, that love is the foundation and root of our salvation. Paul does not inquire here, as any one may perceive, on what our salvation is founded, but with what firmness and constancy we ought to continue in the exercise of love.
 
 **18.** <span style="color:#800000">*May be able to comprehend.*</span> The second fruit is, that the Ephesians should perceive the greatness of Christ’s love to men. Such an apprehension or knowledge springs from faith. By desiring that they should comprehend it <span style="color:#800000">*with all saints,*</span> he shows that it is the most excellent blessing which they can obtain in the present life; that it is the highest wisdom, to which all the children of God aspire. What follows is sufficiently clear in itself, but has hitherto been darkened by a variety of interpretations. Augustine is quite delighted with his own acuteness, which throws no light on the subject. Endeavouring to discover some kind of mysterious allusion to the figure of the cross, he makes the <span style="color:#800000">*breadth*</span> to be love, — the <span style="color:#800000">*height*</span>, hope, — the <span style="color:#800000">*length,*</span> patience, and the <span style="color:#800000">*depth,*</span> humility. This is very ingenious and entertaining: but what has it to do with Paul’s meaning? Not more, certainly, than the opinion of Ambrose, that the allusion is to the figure of a sphere. Laying aside the views of others, I shall state what will be universally acknowledged to be the simple and true meaning.
 
@@ -811,16 +917,21 @@ No man can approach to God without being raised above himself and above the worl
 
 <h2 class="scripture-anchor" id="ephesians-3-20-21" data-ref="EPHESIANS 3:20-21" style="display:none">EPHESIANS 3:20-21</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490320&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">3:20-21</span></p>
 
-<strong>20.</strong> Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us, <strong>21.</strong> Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> Now unto him that is able to do exceeding abundantly above all that we ask or think, according to the power that worketh in us</td><td class="scripture-la"><strong>20.</strong> Ei autem, qui potest cumulate super omnia facere, quae petimus aut cogitamus, secundum potentiam in nobis agentem</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> Unto him be glory in the church by Christ Jesus throughout all ages, world without end. Amen.</td><td class="scripture-la"><strong>21.</strong> Sit gloria in Ecclesia per Iesum Christum, in omnes aetates seculi seculorum. Amen.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 **20.** <span style="color:#800000">*Now to him.*</span> He now breaks out into thanksgiving, which serves the additional purpose of exhorting the Ephesians to maintain “good hope through grace,” (2 Thessalonians 2:16,) and to endeavor constantly to obtain more and more adequate conceptions of the value of the grace of God.
 
-<span style="color:#800000">*Who is able.*</span> <span style="color:#800000">[^f32]</span> This refers to the future, and agrees with what we are taught concerning hope; and indeed we cannot offer to God proper or sincere thanksgivings for favors received, unless we are convinced that his goodness to us will be without end. When he says that God is <span style="color:#800000">*able*</span>, he does not mean power viewed apart, as the phrase is, from the act, but power which is exerted, and which we actually feel. Believers ought always to connect it with the work, when the promises made to them, and their own salvation, form the subject of inquiry. Whatever God can do, he unquestionably will do, if he has promised it. This the apostle proves both by former instances, and by the efficacy of the Spirit, which was at this very time exerted on their own minds.
+<span style="color:#800000">*Who is able.*</span> [^f32] This refers to the future, and agrees with what we are taught concerning hope; and indeed we cannot offer to God proper or sincere thanksgivings for favors received, unless we are convinced that his goodness to us will be without end. When he says that God is <span style="color:#800000">*able*</span>, he does not mean power viewed apart, as the phrase is, from the act, but power which is exerted, and which we actually feel. Believers ought always to connect it with the work, when the promises made to them, and their own salvation, form the subject of inquiry. Whatever God can do, he unquestionably will do, if he has promised it. This the apostle proves both by former instances, and by the efficacy of the Spirit, which was at this very time exerted on their own minds.
 
 <span style="color:#800000">*According to the power that worketh in us,*</span> — according to what we feel within ourselves; for every benefit which God bestows upon us is a manifestation of his grace, and love, and power, in consequence of which we ought to cherish a stronger confidence for the future<span style="color:#800000">*. Exceeding abundantly above all that we ask or think,*</span> is a remarkable expression, and bids us entertain no fear lest faith of a proper kind should go to excess. Whatever expectations we form of Divine blessings, the infinite goodness of God will exceed all our wishes and all our thoughts.
 
@@ -855,7 +966,7 @@ The three remaining chapters consist entirely of practical exhortations. Mutual 
 
 <!-- PAGE 74 -->
 
-That ye may walk worthy. This is a general sentiment, a sort of preface, on which all the following statements are founded. He had formerly illustrated <span style="color:#800000">*the calling with which they were called,*</span> <span style="color:#800000">[^f33]</span> and now reminds them that they must live in obedience to God, in order that they may not be unworthy of such distinguished grace.
+That ye may walk worthy. This is a general sentiment, a sort of preface, on which all the following statements are founded. He had formerly illustrated <span style="color:#800000">*the calling with which they were called,*</span> [^f33] and now reminds them that they must live in obedience to God, in order that they may not be unworthy of such distinguished grace.
 
 **2.** <span style="color:#800000">*With all humility*</span>. He now descends to particulars, and first of all he mentions <span style="color:#800000">*humility*</span>. The reason is, that he was about to enter on the subject of Unity, to which humility is the first step. This again produces <span style="color:#800000">*meekness,*</span> which disposes us to bear with our brethren, and thus to preserve that unity which would otherwise be broken a hundred times in a day. Let us remember, therefore, that, in cultivating brotherly kindness, we must begin with humility. Whence come rudeness, pride, and disdainful language towards brethren? Whence come quarrels, insults, and reproaches? Come they not from this, that every one carries his love of himself, and his regard to his own interests, to excess? By laying aside haughtiness and a desire of pleasing ourselves, we shall become meek and gentle, and acquire that moderation of temper which will overlook and forgive many things in the conduct of our brethren. Let us carefully observe the order and arrangement of these exhortations. It will be to no purpose that we inculcate forbearance till the natural fierceness has been subdued, and mildness acquired; and it will be equally vain to discourse of *meekness,* till we have begun with *humility.*
 
@@ -867,7 +978,7 @@ That ye may walk worthy. This is a general sentiment, a sort of preface, on whic
 
 We must live at peace, if we would wish that brotherly kindness should be permanent amongst us.
 
-**4.** <span style="color:#800000">*There is one body.*</span> <span style="color:#800000">[^f34]</span> He proceeds to show more fully in how complete a manner Christians ought to be united. The union ought to be such that we shall form <span style="color:#800000">*one body and one soul*</span>. These words denote the whole man. We ought to be united, not in part only, but in body and soul. He supports this by a powerful argument, <span style="color:#800000">*as ye have been called in one hope of your calling.*</span> We are called to one inheritance and one life; and hence it follows, that we cannot obtain eternal life without living in mutual harmony in this world. One Divine invitation being addressed to all, they ought to be united in the same profession of faith, and to render every kind of assistance to each other. Oh, were this thought deeply impressed upon our minds, that we are subject to a law which no more permits the children of God to differ among themselves than the kingdom of heaven to be divided, how earnestly should we cultivate brotherly kindness! How should we dread every kind of animosity, if we duly reflected that all who separate us from brethren, estrange us from the kingdom of God! And yet, strangely enough, while we forget the duties which brethren owe to each other, we go on boasting that we are the sons of God. Let us learn from Paul, that none are at all fit for that inheritance who are not one body and one spirit.
+**4.** <span style="color:#800000">*There is one body.*</span> [^f34] He proceeds to show more fully in how complete a manner Christians ought to be united. The union ought to be such that we shall form <span style="color:#800000">*one body and one soul*</span>. These words denote the whole man. We ought to be united, not in part only, but in body and soul. He supports this by a powerful argument, <span style="color:#800000">*as ye have been called in one hope of your calling.*</span> We are called to one inheritance and one life; and hence it follows, that we cannot obtain eternal life without living in mutual harmony in this world. One Divine invitation being addressed to all, they ought to be united in the same profession of faith, and to render every kind of assistance to each other. Oh, were this thought deeply impressed upon our minds, that we are subject to a law which no more permits the children of God to differ among themselves than the kingdom of heaven to be divided, how earnestly should we cultivate brotherly kindness! How should we dread every kind of animosity, if we duly reflected that all who separate us from brethren, estrange us from the kingdom of God! And yet, strangely enough, while we forget the duties which brethren owe to each other, we go on boasting that we are the sons of God. Let us learn from Paul, that none are at all fit for that inheritance who are not one body and one spirit.
 
 **5.** <span style="color:#800000">*One Lord.*</span> In the first Epistle to the Corinthians, he employs the word <span style="color:#800000">*Lord,*</span> to denote simply the government of God.
 
@@ -897,10 +1008,17 @@ This is true indeed, in a general sense, not only of all men but of all creature
 
 <h2 class="scripture-anchor" id="ephesians-4-7-10" data-ref="EPHESIANS 4:7-10" style="display:none">EPHESIANS 4:7-10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490407&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:7-10</span></p>
 
-<strong>7.</strong> But unto every one of us is given grace according to the measure of the gift of Christ. <strong>8.</strong> Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men. <strong>9.</strong> (Now that he ascended, what is it but that he also descended first into the lower parts of the earth? <strong>10.</strong> He that descended is the same also that ascended up far above all heavens, that he might fill all things.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> But unto every one of us is given grace according to the measure of the gift of Christ.</td><td class="scripture-la"><strong>7.</strong> Unicuique autem nostrum data est gratia; secundum mensuram donationis Christi.</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Wherefore he saith, When he ascended up on high, he led captivity captive, and gave gifts unto men.</td><td class="scripture-la"><strong>8.</strong> Propterea dicit: Postquam ascendit in altum, captivam duxit captivitatem, et dedit dona hominibus. (Psalm 68:19.)</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> (Now that he ascended, what is it but that he also descended first into the lower parts of the earth?</td><td class="scripture-la"><strong>9.</strong> Illud autem Ascendit, quid est, nisi quod etiam descenderat prius in inferiores partes terrae?</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> He that descended is the same also that ascended up far above all heavens, that he might fill all things.)</td><td class="scripture-la"><strong>10.</strong> Qui descendit, ipse est etiam qui ascendit super omnes coelos, ut impleret omnia.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -926,7 +1044,7 @@ This mode of expression is sufficiently common and familiar; and, in short, the 
 
 Perceiving that it is a song of triumph, in which David celebrates all the victories which God had wrought for the salvation of his Church, Paul very properly quoted the account given of God’s ascension, and applied it to the person of Christ. The noblest triumph which God ever gained was when Christ, after subduing sin, conquering death, and putting Satan to flight, rose majestically to heaven, that he might exercise his glorious reign over the Church. Hitherto there is no ground for the objection, that Paul has applied this quotation in a manner inconsistent with the design of the Psalmist. The continued existence of the Church is represented by David to be a manifestation of the Divine glory. But no ascension of God more triumphant or memorable will ever occur, than that which took place when Christ was carried up to the right hand of the Father, that he might rule over all authorities and powers, and might become the everlasting guardian and protector of his people.
 
-<span style="color:#800000">*He led captivity captive. Captivity*</span> is a collective noun for *captive enemies;* and the plain meaning is, that God reduced his enemies to subjection, which was more fully accomplished in Christ than in any other way. He has not only gained a complete victory over the devil, and sin, and death, and all the power of hell, — but out of rebels he forms every day a willing people,” (<span style="color:#800000"><19B003></span>Psalm 110:3,) when he subdues by his word the obstinacy of our flesh. On the other hand, his enemies to which class all wicked men belong are held bound by chains of iron, and are restrained by his power from exerting their fury beyond the limits which he shall assign.
+<span style="color:#800000">*He led captivity captive. Captivity*</span> is a collective noun for *captive enemies;* and the plain meaning is, that God reduced his enemies to subjection, which was more fully accomplished in Christ than in any other way. He has not only gained a complete victory over the devil, and sin, and death, and all the power of hell, — but out of rebels he forms every day a willing people,” (<span class="ages-code">&lt;19B003&gt;</span>Psalm 110:3,) when he subdues by his word the obstinacy of our flesh. On the other hand, his enemies to which class all wicked men belong are held bound by chains of iron, and are restrained by his power from exerting their fury beyond the limits which he shall assign.
 
 <!-- PAGE 80 -->
 And gave gifts to men. There is rather more difficulty in this clause; for the words of the Psalm are, “thou hast *received* gifts for men,” while the apostle changes this expression into <span style="color:#800000">*gave gifts,*</span> and thus appears to exhibit an opposite meaning. Still there is no absurdity here; for Paul does not always quote the exact words of Scripture, but, after referring to the passage, satisfies himself with conveying the substance of it in his own language. Now, it is clear that the *gifts* which David mentions were not *received* by God for himself, but for his people; and accordingly we are told, in an earlier part of the Psalm, that “the spoil” had been “divided” among the families of Israel. (Psalm 68:12.) Since therefore the intention of *receiving* was to *give* gifts, Paul can hardly be said to have departed from the substance, whatever alteration there may be in the words.
@@ -942,15 +1060,15 @@ I answer, Paul does not here reason in the manner of a logician, as to what nece
 
 Besides, it is not necessary to inquire very carefully into the literal exposition of the Psalm, since Paul merely alludes to the prophet’s words, in the same manner as, on another occasion, he accommodates to his own subject a passage taken from the writings of Moses. “The righteousness which is of faith speaketh in this manner, Say not in thine heart, who shall ascend into heaven? (that is, to bring Christ down from above;) or, who shall descend into the deep (that is, to bring up Christ again from the dead.”) (Romans 10:6,7 Deuteronomy 30:12.) But the appropriateness of the application which Paul makes of the passage to the person of Christ is not the only ground on which it must be defended. Sufficient evidence is afforded by the Psalm itself, that this ascription of praise relates to Christ’s kingdom. Not to mention other reasons which might be urged, it contains a distinct prophecy of the calling of the Gentiles.
 
-<span style="color:#800000">*Into the lower parts of the earth.*</span> <span style="color:#800000">[^f35]</span> These words mean nothing more than the condition of the present life. To torture them so as to make them mean purgatory or hell, is exceedingly foolish. The argument taken from the comparative degree, “the *lower* parts,” is quite untenable. A comparison is drawn, not between one part of the earth and another, but between the whole earth and heaven; as if he had said, that from that lofty habitation Christ descended into our deep gulf.
+<span style="color:#800000">*Into the lower parts of the earth.*</span> [^f35] These words mean nothing more than the condition of the present life. To torture them so as to make them mean purgatory or hell, is exceedingly foolish. The argument taken from the comparative degree, “the *lower* parts,” is quite untenable. A comparison is drawn, not between one part of the earth and another, but between the whole earth and heaven; as if he had said, that from that lofty habitation Christ descended into our deep gulf.
 
-**10.** <span style="color:#800000">*That ascended up far above all heavens;*</span> that is, beyond this created world. When Christ is said to be in heaven, we must not view him as dwelling among the spheres and numbering the stars. Heaven denotes a place higher than all the spheres, which was assigned to the Son of God after his resurrection. <span style="color:#800000">[^f36]</span> Not that it is literally a place beyond the world, but we cannot speak of the kingdom of God without using our ordinary language. Others, again, considering that the expressions, <span style="color:#800000">*above all heavens,*</span> and <span style="color:#800000">*ascension into heaven,*</span> are of the same import, conclude that Christ is not separated from us by distance of place. But one point they have overlooked. When Christ is placed above the heavens, or in the heavens, all that surrounds the earth all that lies beneath the sun and stars, beneath the whole frame of the visible world is excluded.
+**10.** <span style="color:#800000">*That ascended up far above all heavens;*</span> that is, beyond this created world. When Christ is said to be in heaven, we must not view him as dwelling among the spheres and numbering the stars. Heaven denotes a place higher than all the spheres, which was assigned to the Son of God after his resurrection. [^f36] Not that it is literally a place beyond the world, but we cannot speak of the kingdom of God without using our ordinary language. Others, again, considering that the expressions, <span style="color:#800000">*above all heavens,*</span> and <span style="color:#800000">*ascension into heaven,*</span> are of the same import, conclude that Christ is not separated from us by distance of place. But one point they have overlooked. When Christ is placed above the heavens, or in the heavens, all that surrounds the earth all that lies beneath the sun and stars, beneath the whole frame of the visible world is excluded.
 
 <!-- PAGE 82 -->
 
 <span style="color:#800000">*That he might fill all things. To fill*</span> often signifies to Finish, and it might have that meaning here; for, by his ascension into heaven, Christ entered into the possession of the authority given to him by the Father, that he might rule and govern all things. But a more beautiful view, in my opinion, will be obtained by connecting two meanings which, though apparently contradictory, are perfectly consistent. When we hear of the ascension of Christ, it instantly strikes our minds that he is removed to a great distance from us; and so he actually is, with respect to his body and human presence. But Paul reminds us, that, while he is removed from us in bodily presence, he <span style="color:#800000">*fills all things*</span> by the power of his Spirit. Wherever the right hand of God, which embraces heaven and earth, is displayed, Christ is spiritually present by his boundless power; although, as respects his body, the saying of Peter holds true, that
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">the heaven must receive him until the times of restitution of all</span> <span style="color:#000080">things, which God hath spoken by the mouth of all his holy</span> <span style="color:#000080">prophets since the world began.</span>” <span style="color:#000080">(</span><span style="color:#000080">Acts 3:21.)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">the heaven must receive him until the times of restitution of all</span> <span style="color:#000080">things, which God hath spoken by the mouth of all his holy</span> <span style="color:#000080">prophets since the world began.</span>” <span style="color:#000080">(</span><span style="color:#000080">Acts 3:21.)</span></p>
 
 By alluding to the seeming contradiction, the apostle has added not a little beauty to his language. <span style="color:#800000">*He ascended;*</span> but it was that he, who was formerly bounded by a little space, <span style="color:#800000">*might fill all things*</span>. But did he not fill them before? In his divine nature, I own, he did; but the power of his Spirit was not so exerted, nor his presence so manifested, as after he had entered into the possession of his kingdom.
 
@@ -960,16 +1078,23 @@ And again,
 
 <p style="text-align:center" markdown="1">“<span style="color:#000080">It is expedient for you that I go away; for, if I go not away, the</span> <span style="color:#000080">Comforter will not come to you.</span>” <span style="color:#000080">(</span><span style="color:#000080">John 16:7.)</span></p>
 
-In a word, when he began to sit at the right hand of the Father, he began also to fill all things. <span style="color:#800000">[^f37]</span>
+In a word, when he began to sit at the right hand of the Father, he began also to fill all things. [^f37]
 
 <!-- PAGE 83 -->
 
 <h2 class="scripture-anchor" id="ephesians-4-11-14" data-ref="EPHESIANS 4:11-14" style="display:none">EPHESIANS 4:11-14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490411&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:11-14</span></p>
 
-<strong>11.</strong> And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers; <strong>12.</strong> For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ: <strong>13.</strong> Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fullness of Christ: <strong>14.</strong> That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> And he gave some, apostles; and some, prophets; and some, evangelists; and some, pastors and teachers;</td><td class="scripture-la"><strong>11.</strong> Et ipse dedit alios quidem apostolos, alios autem prophetas, alios vero evangelistas, alios pastores et doctores</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> For the perfecting of the saints, for the work of the ministry, for the edifying of the body of Christ:</td><td class="scripture-la"><strong>12.</strong> Ad instaurationem sanctorum, in opus ministerii, in aedificationem corporis Christi</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Till we all come in the unity of the faith, and of the knowledge of the Son of God, unto a perfect man, unto the measure of the stature of the fullness of Christ:</td><td class="scripture-la"><strong>13.</strong> Usquedum occurramus omnes in unitatem fidei, et cognitionis Filii Dei, in virum perfectum, in mensuram aetatis plenitudinis Christi;</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> That we henceforth be no more children, tossed to and fro, and carried about with every wind of doctrine, by the sleight of men, and cunning craftiness, whereby they lie in wait to deceive.</td><td class="scripture-la"><strong>14.</strong> Ne amplius simus pueri, qui fluctuemur, et circumferamur quovis vento doctrinae, per aestum hominum, per versutiam ad circumventionem imposturae.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -980,14 +1105,14 @@ It may excite surprise, that, when the gifts of the Holy Spirit form the subject
 
 **11.** <span style="color:#800000">*And he gave.*</span> The government of the church, by the preaching of the word, is first of all declared to be no human contrivance, but a most sacred ordinance of Christ. The apostles did not appoint themselves, but were chosen by Christ; and, at the present day, true pastors do not rashly thrust themselves forward by their own judgment, but are raised up by the Lord. In short, the government of the church, by the ministry of the word, is not a contrivance of men, but an appointment made by the Son of God. As his own unalterable law, it demands our assent. They who reject or despise this ministry offer insult and rebellion to Christ its Author. It is himself who <span style="color:#800000">*gave*</span> them; for, if he does not raise them up, there will be none. Another inference is, that no man will be fit or qualified for so distinguished an office who has not been formed and moulded by the hand of Christ himself. To Christ we owe it that we have ministers of the gospel, that they abound in necessary qualifications, that they execute the trust committed to them. All, all is his *gift.*
 
-<span style="color:#800000">*Some, apostles.*</span> The different names and offices assigned to different persons take their rise from that diversity of the members which goes to form the completeness of the whole body, — every ground of emulation, and envy, and ambition, being thus removed. If every person shall display a selfish character, shall strive to outshine his neighbor, and shall disregard all concerns but his own, — or, if more eminent persons shall be the object of envy to those who occupy a lower place, — in each, and in all of these cases, gifts are not applied to their proper use. He therefore reminds them, that the gifts bestowed on individuals are intended, not to be held for their personal and separate interests, but to be employed for the benefit of the whole. Of the offices which are here enumerated, we have already spoken at considerable length, <span style="color:#800000">[^f38]</span> and shall now say nothing more than the exposition of the passage seems to demand. Five classes of office-bearers are mentioned, though on this point, I am aware, there is a diversity of opinion; for some consider the two last to make but one office. Leaving out of view the opinions of others, I shall proceed to state my own.
+<span style="color:#800000">*Some, apostles.*</span> The different names and offices assigned to different persons take their rise from that diversity of the members which goes to form the completeness of the whole body, — every ground of emulation, and envy, and ambition, being thus removed. If every person shall display a selfish character, shall strive to outshine his neighbor, and shall disregard all concerns but his own, — or, if more eminent persons shall be the object of envy to those who occupy a lower place, — in each, and in all of these cases, gifts are not applied to their proper use. He therefore reminds them, that the gifts bestowed on individuals are intended, not to be held for their personal and separate interests, but to be employed for the benefit of the whole. Of the offices which are here enumerated, we have already spoken at considerable length, [^f38] and shall now say nothing more than the exposition of the passage seems to demand. Five classes of office-bearers are mentioned, though on this point, I am aware, there is a diversity of opinion; for some consider the two last to make but one office. Leaving out of view the opinions of others, I shall proceed to state my own.
 
 <!-- PAGE 85 -->
 I take the word <span style="color:#800000">*apostles*</span> not in that general sense which the derivation of the term might warrant, but in its own peculiar signification, for those highly favored persons whom Christ exalted to the highest honor. Such were the twelve, to whose number Paul was afterwards added. Their office was to spread the doctrine of the gospel throughout the whole world, to plant churches, and to erect the kingdom of Christ. They had not churches of their own committed to them; but the injunction given to all of them was, to preach the gospel wherever they went.
 
 Next to them come the <span style="color:#800000">*Evangelists,*</span> who were closely allied in the nature of their office, but held an inferior rank. To this class belonged Timothy and others; for, while Paul mentions them along with himself in the salutations of his epistles, he does not speak of them as his companions in the apostleship, but claims this name as peculiarly his own. The services in which the Lord employed them were auxiliary to those of the apostles, to whom they were next in rank.
 
-To these two classes the apostle adds <span style="color:#800000">*Prophets.*</span> By this name some understand those persons who possessed the gift of predicting future events, among whom was Agabus. (Acts 11:28; 21:10.) But, for my own part, as doctrine is the present subject, I would rather define the word *prophets,* as on a former occasion, <span style="color:#800000">[^f39]</span> to mean distinguished interpreters of prophecies, who, by a remarkable gift of revelation, applied them to the subjects which they had occasion to handle; not excluding, however, the gift of prophecy, by which their doctrinal instruction was usually accompanied.
+To these two classes the apostle adds <span style="color:#800000">*Prophets.*</span> By this name some understand those persons who possessed the gift of predicting future events, among whom was Agabus. (Acts 11:28; 21:10.) But, for my own part, as doctrine is the present subject, I would rather define the word *prophets,* as on a former occasion, [^f39] to mean distinguished interpreters of prophecies, who, by a remarkable gift of revelation, applied them to the subjects which they had occasion to handle; not excluding, however, the gift of prophecy, by which their doctrinal instruction was usually accompanied.
 
 <span style="color:#800000">*Pastors and Teachers*</span> are supposed by some to denote one office, because the apostle does not, as in the other parts of the verse, say, <span style="color:#800000">*and some, pastors; and some, teachers*</span>; but, <span style="color:#0000d4">τοὺς δὲ, ποιμένας καὶ</span> <span style="color:#0000d4">διδασκάλους</span>, <span style="color:#800000">*and some, pastors and teachers*</span>. Chrysostom and Augustine are of this opinion; not to mention the commentaries of Ambrose, whose observations on the subject are truly childish and unworthy of himself. I partly agree with them, that Paul speaks indiscriminately of pastors and teachers as belonging to one and the same class, and that the name <span style="color:#800000">*teacher*</span> does, to some extent, apply to all <span style="color:#800000">*pastors.*</span> But this does not appear to me a sufficient reason why two offices, which I find to differ from each other, should be confounded. Teaching is, no doubt, the duty of all pastors; but to maintain sound doctrine requires a talent for interpreting Scripture, and a man may be a *teacher* who is not qualified to preach.
 
@@ -1041,21 +1166,26 @@ The Greek word <span style="color:#0000d4">κυβεία</span>, which I have tra
 
 <h2 class="scripture-anchor" id="ephesians-4-15-16" data-ref="EPHESIANS 4:15-16" style="display:none">EPHESIANS 4:15-16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490415&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:15-16</span></p>
 
-<strong>15.</strong> But, speaking the truth in love, may grow up into him in all things, which is the head, even Christ: <strong>16.</strong> From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body, unto the edifying of itself in love.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> But, speaking the truth in love, may grow up into him in all things, which is the head, even Christ:</td><td class="scripture-la"><strong>15.</strong> Veritatem autem sectantes in charitate, crescamus in eum per omnia, qui est caput, nempe Christum;</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> From whom the whole body fitly joined together and compacted by that which every joint supplieth, according to the effectual working in the measure of every part, maketh increase of the body, unto the edifying of itself in love.</td><td class="scripture-la"><strong>16.</strong> Ex quo totum corpus compositum et compactum per omnem juncturam subministrationis, secundum efficaciam in mensura uniuscujusque partis, incrementum corporis facit in aedificationem sui, in charitate.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-**15.** <span style="color:#800000">*But, speaking the truth.*</span> Having already said that we ought not to be children, destitute of reason and judgment, he now enjoins us to <span style="color:#800000">[^f40]</span> Though we have not arrived at man’s estate, we ought at least, as we have already said, to be advanced children. The truth of God ought to have such a firm hold of us, that all the contrivances and attacks of Satan shall not draw us from our course; and yet, as we have not hitherto attained full and complete strength, we must make progress until death.
+**15.** <span style="color:#800000">*But, speaking the truth.*</span> Having already said that we ought not to be children, destitute of reason and judgment, he now enjoins us to [^f40] Though we have not arrived at man’s estate, we ought at least, as we have already said, to be advanced children. The truth of God ought to have such a firm hold of us, that all the contrivances and attacks of Satan shall not draw us from our course; and yet, as we have not hitherto attained full and complete strength, we must make progress until death.
 
 <!-- PAGE 92 -->
 He points out the design of this progress, that Christ may be *the head*, “that in all things he may have the pre-eminence,” (Colossians 1:18,) and that in him alone we may grow in vigor or in stature. Again, we see that no man is excepted; all are enjoined to be subject, and to take their own places in the body.
 
 What aspect then does Popery present, but that of a crooked, deformed person? Is not the whole symmetry of the church destroyed, when one man, acting in opposition to the head, refuses to be reckoned one of the members? The Papists deny this, and allege that the Pope is nothing more than a ministerial head. But such cavils do them no service. The tyranny of their idol must be acknowledged to be altogether inconsistent with that order which Paul here recommends. In a word, a healthful condition of the church requires that Christ alone “must increase,” and all others “must decrease.” (John 3:30.) Whatever increase we obtain must be regulated in such a manner, that we shall remain in our own place, and contribute to exalt the head.
 
-When he bids us give heed to the truth *in love,* he uses the preposition *in*, (<span style="color:#0000d4">ἐν</span>,) like the corresponding Hebrew preposition <span style="color:#008080">b</span>, (*beth*,) as signifying *with*, — <span style="color:#800000">*speaking the truth With love*</span>. <span style="color:#800000">[^f41]</span> If each individual, instead of attending exclusively to his own concerns, shall desire mutual intercourse, there will be agreeable and general progress. Such, the Apostle assures us, must be the nature of this harmony, that men shall not be suffered to forget the claims of truth, or, disregarding them, to frame an agreement according to their own views. This proves the wickedness of the Papists, who lay aside the word of God, and labor to force our compliance with their decisions.
+When he bids us give heed to the truth *in love,* he uses the preposition *in*, (<span style="color:#0000d4">ἐν</span>,) like the corresponding Hebrew preposition <span style="color:#008080">b</span>, (*beth*,) as signifying *with*, — <span style="color:#800000">*speaking the truth With love*</span>. [^f41] If each individual, instead of attending exclusively to his own concerns, shall desire mutual intercourse, there will be agreeable and general progress. Such, the Apostle assures us, must be the nature of this harmony, that men shall not be suffered to forget the claims of truth, or, disregarding them, to frame an agreement according to their own views. This proves the wickedness of the Papists, who lay aside the word of God, and labor to force our compliance with their decisions.
 
 <!-- PAGE 93 -->
 **16.** <span style="color:#800000">*From whom the whole body.*</span> All our increase should tend to exalt more highly the glory of Christ. This is now proved by the best possible reason. It is he who supplies all our wants, and without whose protection we cannot be safe. As the root conveys sap to the whole tree, so all the vigor which we possess must flow to us from Christ. There are three things here which deserve our attention. The first is what has now been stated. All the life or health which is diffused through the members flows from the head; so that the members occupy a subordinate rank. The second is, that, by the distribution made, the limited share of each renders the communication between all the members absolutely necessary. The third is, that, without mutual love, the health of the body cannot be maintained. Through the members, as canals, is conveyed from the head all that is necessary for the nourishment of the body. While this connection is upheld, the body is alive and healthy. Each member, too, has its own proper share, — <span style="color:#800000">*according to the effectual working in the measure of every part.*</span>
@@ -1064,24 +1194,30 @@ Lastly, he shows that by love the church is edified, — <span style="color:#800
 
 <h2 class="scripture-anchor" id="ephesians-4-17-19" data-ref="EPHESIANS 4:17-19" style="display:none">EPHESIANS 4:17-19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490417&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:17-19</span></p>
 
-<strong>17.</strong> This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind; <strong>18.</strong> Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart: <strong>19.</strong> Who, being past feeling, have given themselves over unto lasciviousness, to work all uncleanness with greediness.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> This I say therefore, and testify in the Lord, that ye henceforth walk not as other Gentiles walk, in the vanity of their mind;</td><td class="scripture-la"><strong>17.</strong> Hoc ergo dico et testificor in Domino, ne ambuletis amplius, quemadmodum et gentes reliquae ambulant</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> Having the understanding darkened, being alienated from the life of God through the ignorance that is in them, because of the blindness of their heart:</td><td class="scripture-la"><strong>18.</strong> In vanitate mentis suae, excaecatae in intelligentia, alienatae a vita Dei propter ignorantiam, quae in illis est, propter caecitatem cordis earum;</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Who, being past feeling, have given themselves over unto lasciviousness, to work all uncleanness with greediness.</td><td class="scripture-la"><strong>19.</strong> Quae postquam dolore tangi desierunt, seipsas tradiderunt lasciviae, ad perpetrandam omnem immunditiam cum aviditate.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 **17.** <span style="color:#800000">*This I say therefore.*</span> That government which Christ has appointed for the edification of his church has now been considered. He next inquires what fruits the doctrine of the gospel ought to yield in the lives of Christians; or, if you prefer it, he begins to explain minutely the nature of that edification by which doctrine ought to be followed.
 
 <!-- PAGE 94 -->
-<span style="color:#800000">*That ye henceforth walk not in vanity.*</span> He first exhorts them to renounce the <span style="color:#800000">*vanity*</span> of unbelievers, arguing from its inconsistency with their present views. That those who have been taught in the school of Christ, and enlightened by the doctrine of salvation, should follow vanity, and in no respect differ from those unbelieving and blind nations on whom no light of truth has ever shone, would be singularly foolish. On this ground he very properly calls upon them to demonstrate, by their life, that they had gained some advantage by becoming the disciples of Christ. To impart to his exhortation the greater earnestness, he beseeches them by the name of God, — <span style="color:#800000">*this I say and testify in the Lord,*</span> <span style="color:#800000">[^f42]</span> — reminding them, that, if they despised this instruction, they must one day give an account.
+<span style="color:#800000">*That ye henceforth walk not in vanity.*</span> He first exhorts them to renounce the <span style="color:#800000">*vanity*</span> of unbelievers, arguing from its inconsistency with their present views. That those who have been taught in the school of Christ, and enlightened by the doctrine of salvation, should follow vanity, and in no respect differ from those unbelieving and blind nations on whom no light of truth has ever shone, would be singularly foolish. On this ground he very properly calls upon them to demonstrate, by their life, that they had gained some advantage by becoming the disciples of Christ. To impart to his exhortation the greater earnestness, he beseeches them by the name of God, — <span style="color:#800000">*this I say and testify in the Lord,*</span> [^f42] — reminding them, that, if they despised this instruction, they must one day give an account.
 
 <span style="color:#800000">*As other Gentiles walk.*</span> He means those who had not yet been converted to Christ. But, at the same time, he reminds the Ephesians how necessary it was that they should repent, since by nature they resembled lost and condemned men. The miserable and shocking condition of other nations is held out as the motive to a change of disposition, He asserts that believers differ from unbelievers; and points out, as we shall see, the causes of this difference. With regard to the former, he accuses their mind of <span style="color:#800000">*vanity:*</span> and let us remember, that he speaks generally of all who have not been renewed by the Spirit of Christ.
 
 <span style="color:#800000">*In the vanity of their mind.*</span> Now, *the mind* holds the highest rank in the human constitution, is the seat of reason, presides over the will, and restrains sinful desires; so that our theologians of the *Sorbonne* are in the habit of calling her the Queen. But, Paul makes the *mind* to consist of nothing else than vanity; and, as if he had not expressed his meaning strongly enough, he gives no better title to her daughter, *the understanding.* Such is my interpretation of the word <span style="color:#0000d4">διανοία</span>; for, though it signifies the thought, yet, as it is in the singular number, it refers to the thinking faculty. Plato, about the close of his Sixth Book on a Republic, assigns to <span style="color:#0000d4">διανοία</span> an intermediate place between <span style="color:#0000d4">νόησις</span> and <span style="color:#0000d4">πόστις</span> but his observations are so entirely confined to geometrical subjects, as not to admit of application to this passage. Having formerly asserted that men see nothing, Paul now adds, that they are blind in reasoning, even on the most important subjects.
 
 <!-- PAGE 95 -->
-Let men now go and be proud of free-will, whose guidance is here marked by so deep disgrace. But experience, we shall be told, is openly at variance with this opinion; for men are not so blind as to be incapable of seeing anything, nor so vain as to be incapable of forming any judgment. I answer, with respect to the kingdom of God, and all that relates to the spiritual life, the light of human reason differs little from darkness; for, before it has pointed out the road, it is extinguished; and its power of perception is little else than blindness, for ere it has reached the fruit it is gone. The true principles held by the human mind resemble sparks; <span style="color:#800000">[^f43]</span> but; these are choked by the depravity of our nature, before they have been applied to their proper use. All men know, for instance, that there is a God, and that it is our duty to worship him; but such is the power of sin and ignorance, that from this confused knowledge we pass all at once to an idol, and worship it in the place of God. And even in the worship of God, it leads to great errors, particularly in the first table of the law.
+Let men now go and be proud of free-will, whose guidance is here marked by so deep disgrace. But experience, we shall be told, is openly at variance with this opinion; for men are not so blind as to be incapable of seeing anything, nor so vain as to be incapable of forming any judgment. I answer, with respect to the kingdom of God, and all that relates to the spiritual life, the light of human reason differs little from darkness; for, before it has pointed out the road, it is extinguished; and its power of perception is little else than blindness, for ere it has reached the fruit it is gone. The true principles held by the human mind resemble sparks; [^f43] but; these are choked by the depravity of our nature, before they have been applied to their proper use. All men know, for instance, that there is a God, and that it is our duty to worship him; but such is the power of sin and ignorance, that from this confused knowledge we pass all at once to an idol, and worship it in the place of God. And even in the worship of God, it leads to great errors, particularly in the first table of the law.
 
 As to the second objection, our judgment does indeed agree with the law of God in regard to the mere outward actions; but sinful desire, which is the source of everything evil, escapes our notice. Besides, Paul does not speak merely of the natural blindness which we brought with us from the womb, but refers also to a still grosser blindness, by which, as we shall afterwards see, God punishes former transgressions. We conclude with observing, that the reason and understanding which men naturally possess, make them in the sight of God without excuse; but, so long as they allow themselves to live according to their natural disposition, they can only wander, and fall, and stumble in their purposes and actions. Hence it appears in what estimation and value false worship must appear in the sight of God, when it proceeds from the gulf of vanity and the maze of ignorance.
 
@@ -1094,7 +1230,7 @@ As to the second objection, our judgment does indeed agree with the law of God i
 <!-- PAGE 96 -->
 or, that life which God bestows on his elect by the Spirit of regeneration. In both cases the meaning is the same. Our ordinary life, as men, is nothing more than an empty image of life, not only because it quickly passes, but also because, while we live, our souls, not keeping close to God, are dead. There are three kinds of life in this world. The first is animal life, which consists only of motion and the bodily senses, and which we have in common with the brutes; the second is human life, which we have as the children of Adam; and the third is that supernatural life, which believers alone obtain. And all of them are from God, so that each of them may be called <span style="color:#800000">*the life of God.*</span> As to the first, Paul, in his sermon at Athens, says, (Acts 17:28,) “In him we live, and move, and have our being;” and the Psalmist says,
 
-<p style="text-align:center" markdown="1">“<span style="color:#000080">Send forth thy Spirit, and they shall be created; and thou wilt</span> <span style="color:#000080">renew the face of the earth.</span>” <span style="color:#000080">(</span><span style="color:#800000"><19A430></span><span style="color:#000080">Psalm 104:30.)</span></p>
+<p style="text-align:center" markdown="1">“<span style="color:#000080">Send forth thy Spirit, and they shall be created; and thou wilt</span> <span style="color:#000080">renew the face of the earth.</span>” <span style="color:#000080">(</span><span class="ages-code">&lt;19A430&gt;</span><span style="color:#000080">Psalm 104:30.)</span></p>
 
 Of the second Job says,
 
@@ -1121,10 +1257,18 @@ Most properly, therefore, does Paul exhibit that dreadful example of Divine veng
 
 <h2 class="scripture-anchor" id="ephesians-4-20-24" data-ref="EPHESIANS 4:20-24" style="display:none">EPHESIANS 4:20-24</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490420&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:20-24</span></p>
 
-<strong>20.</strong> But ye have not so learned Christ; <strong>21.</strong> If so be that ye have heard him, and have been taught by him, as the truth is in Jesus: <strong>22.</strong> That ye put off, concerning the former conversation, the old man, which is corrupt according to the deceitful lusts; <strong>23.</strong> And be renewed in the spirit of your mind; <strong>24.</strong> And that ye put on the new man, which after God is created in righteousness and true holiness.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> But ye have not so learned Christ;</td><td class="scripture-la"><strong>20.</strong> Vos autem non ita didicistis Christum;</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> If so be that ye have heard him, and have been taught by him, as the truth is in Jesus:</td><td class="scripture-la"><strong>21.</strong> Si quidem ipsum audistis, et in ipso estis edocti, quemadmodum est veritas in Iesu;</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> That ye put off, concerning the former conversation, the old man, which is corrupt according to the deceitful lusts;</td><td class="scripture-la"><strong>22.</strong> Ut deponatis, secundum pristinam conversationem, Veterem hominem, qui corrumpitur secundum concupiscentias erroris;</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> And be renewed in the spirit of your mind;</td><td class="scripture-la"><strong>23.</strong> Renovemini autem spiritu mentis vestrae</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> And that ye put on the new man, which after God is created in righteousness and true holiness.</td><td class="scripture-la"><strong>24.</strong> Et induatis Novum hominem, qui secundum Deum creatus est, in justitia et sanctitate veritatis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1148,7 +1292,7 @@ So here he affirms that any knowledge of Christ, which is not accompanied by mor
 
 **23.** <span style="color:#800000">*And be renewed.*</span> The second part of the rule for a devout and holy life is to live, not in our own spirit, but in the Spirit of Christ. But what is meant by — <span style="color:#800000">*the spirit of your mind?*</span> I understand it simply to mean, — <span style="color:#800000">*Be renewed,*</span> not only with respect to the inferior appetites or desires, which are manifestly sinful, but with respect also to that part of the soul which is reckoned most noble and excellent. And here again, he brings forward to view that Queen which philosophers are accustomed almost to adore. There is an implied contrast between <span style="color:#800000">*the spirit of our mind*</span> and the Divine and heavenly Spirit, who produces in us another and a new mind. How much there is in us that is sound or uncorrupted may be easily gathered from this passage, which enjoins us to correct chiefly the reason or <span style="color:#800000">*mind,*</span> in which we are apt to imagine that there is nothing but what is virtuous and deserves commendation.
 
-**24.** <span style="color:#800000">*And that ye put on the new man.*</span> All that is meant is, “Be renewed in the spirit, or, be renewed *within* or *completely,* — beginning with the mind, which appears to be the part most free from all taint of sin.” What is added about the creation, may refer either to the first creation of man, or to the second creation, which is effected by the grace of Christ. Both expositions will be true. Adam was at first created after the image of God, and reflected, as in a mirror, the Divine righteousness; but that image, having been defaced by sin, must now be restored in Christ. The regeneration of the godly is indeed as we have formerly explained <span style="color:#800000">[^f44]</span> — nothing else than the formation anew of the image of God in them. There is, no doubt, a far more rich and powerful manifestation of Divine grace in this second creation than in the first; but our highest perfection is uniformly represented in Scripture as consisting in our conformity and resemblance to God. Adam lost the image which he had originally received, and therefore it becomes necessary that it shall be restored to us by Christ. The design contemplated by regeneration is to recall us from our wanderings to that end for which we were created.
+**24.** <span style="color:#800000">*And that ye put on the new man.*</span> All that is meant is, “Be renewed in the spirit, or, be renewed *within* or *completely,* — beginning with the mind, which appears to be the part most free from all taint of sin.” What is added about the creation, may refer either to the first creation of man, or to the second creation, which is effected by the grace of Christ. Both expositions will be true. Adam was at first created after the image of God, and reflected, as in a mirror, the Divine righteousness; but that image, having been defaced by sin, must now be restored in Christ. The regeneration of the godly is indeed as we have formerly explained [^f44] — nothing else than the formation anew of the image of God in them. There is, no doubt, a far more rich and powerful manifestation of Divine grace in this second creation than in the first; but our highest perfection is uniformly represented in Scripture as consisting in our conformity and resemblance to God. Adam lost the image which he had originally received, and therefore it becomes necessary that it shall be restored to us by Christ. The design contemplated by regeneration is to recall us from our wanderings to that end for which we were created.
 
 <!-- PAGE 101 -->
 <span style="color:#800000">*In righteousness.*</span> If <span style="color:#800000">*righteousness*</span> be taken as a general term for uprightness, <span style="color:#800000">*holiness*</span> will be something higher, or that purity which lies in being devoted to the service of God. I am rather inclined to consider <span style="color:#800000">*holiness*</span> as referring to the first table, and <span style="color:#800000">*righteousness*</span> to the second table, of the law, as in the song of Zacharias,
@@ -1159,17 +1303,24 @@ Plato lays down the distinction correctly, that holiness (<span style="color:#00
 
 <h2 class="scripture-anchor" id="ephesians-4-25-28" data-ref="EPHESIANS 4:25-28" style="display:none">EPHESIANS 4:25-28</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490425&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:25-28</span></p>
 
-<strong>25.</strong> Wherefore, putting away lying, speak every man truth with his neighbor: for we are members one of another. <strong>26.</strong> Be ye angry, and sin not: let not the sun go down upon your wrath: <strong>27.</strong> Neither give place to the devil. <strong>28.</strong> Let him that stole steal no more: but rather let him labor, working with his hands the thing which is good, that he may have to give to him that needeth.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>25.</strong> Wherefore, putting away lying, speak every man truth with his neighbor: for we are members one of another.</td><td class="scripture-la"><strong>25.</strong> Quare, deposito mendacio, loquimini veritatem unusquisque cum proximo suo; quia sumus vicissim inter nos membra.</td></tr>
+<tr><td class="scripture-en"><strong>26.</strong> Be ye angry, and sin not: let not the sun go down upon your wrath:</td><td class="scripture-la"><strong>26.</strong> Irascimini, et ne peccetis. (Psalm 4:5.) Sol non occidat super iracundiam vestram:</td></tr>
+<tr><td class="scripture-en"><strong>27.</strong> Neither give place to the devil.</td><td class="scripture-la"><strong>27.</strong> Et ne detis locum diabolo.</td></tr>
+<tr><td class="scripture-en"><strong>28.</strong> Let him that stole steal no more: but rather let him labor, working with his hands the thing which is good, that he may have to give to him that needeth.</td><td class="scripture-la"><strong>28.</strong> Qui furabatur, jam non furetur; magis autem laboret, operando quod bonum est manibus, ut habeat quod eroget opus habenti.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 102 -->
 **25.** <span style="color:#800000">*Wherefore, putting away lying.*</span> From this head of doctrine, that is, from the righteousness of the new man, all godly exhortations flow, like streams from a fountain; for if all the precepts which relate to life were collected, yet, without this principle, they would be of little value. Philosophers take a different method; but, in the doctrine of godliness, there is no other way than this for regulating the life. Now, therefore, he comes to lay down particular exhortations, drawn from the general doctrine. Having concluded from the truth of the gospel, that righteousness and holiness ought to be true, he now argues from the general statement to a particular instance, that <span style="color:#800000">*every man should speak truth with his neigbbour. Lying*</span> is here put for every kind of deceit, hypocrisy, or cunning; and <span style="color:#800000">*truth*</span> for honest dealing. He demands that every kind of communication between them shall be sincere; and enforces it by this consideration, for we are members one of another. That <span style="color:#800000">*members*</span> should not agree among themselves, that they should act in a deceitful manner towards each other, is prodigious wickedness.
 
-**26.** <span style="color:#800000">*Be ye angry, and sin not.*</span> Whether or not the apostle had in his eye a part of the fourth Psalm is uncertain. The words used by him (<span style="color:#0000d4">Οργίζεσθε</span> <span style="color:#0000d4">καὶ υὴ ἁμαρτάνετε</span>) occur in the Greek translation, though the word <span style="color:#0000d4">ὀργίζεσθε</span>, which is translated, <span style="color:#800000">*be ye angry,*</span> is considered by some to mean *tremble.* <span style="color:#800000">[^f45]</span> The Hebrew verb <span style="color:#008080">zgr</span> (*ragaz*) signifies either to be agitated by anger, or, to tremble. As to the passage of the Psalm, the idea of <span style="color:#800000">*trembling*</span> will be quite appropriate. “Do not choose to resemble madmen, who rush fearlessly in any direction, but let the dread of being accounted foolhardy keep you in awe.” The word sometimes signifies to *strive* or *quarrel*, as, in that instance, (Genesis 45:24,) “See that ye *fall not out* by the way;” and accordingly, the Psalmist adds, “Commune with your own heart, and be still,” — abstain from furious encounters.
+**26.** <span style="color:#800000">*Be ye angry, and sin not.*</span> Whether or not the apostle had in his eye a part of the fourth Psalm is uncertain. The words used by him (<span style="color:#0000d4">Οργίζεσθε</span> <span style="color:#0000d4">καὶ υὴ ἁμαρτάνετε</span>) occur in the Greek translation, though the word <span style="color:#0000d4">ὀργίζεσθε</span>, which is translated, <span style="color:#800000">*be ye angry,*</span> is considered by some to mean *tremble.* [^f45] The Hebrew verb <span style="color:#008080">zgr</span> (*ragaz*) signifies either to be agitated by anger, or, to tremble. As to the passage of the Psalm, the idea of <span style="color:#800000">*trembling*</span> will be quite appropriate. “Do not choose to resemble madmen, who rush fearlessly in any direction, but let the dread of being accounted foolhardy keep you in awe.” The word sometimes signifies to *strive* or *quarrel*, as, in that instance, (Genesis 45:24,) “See that ye *fall not out* by the way;” and accordingly, the Psalmist adds, “Commune with your own heart, and be still,” — abstain from furious encounters.
 
 In my opinion, Paul merely alludes to the passage with the following view. There are three faults by which we offend God in being angry. The first is, when our anger arises from slight causes, and often from no cause whatever, or at least from private injuries or offenses. The second is, when we go beyond the proper bounds, and are hurried into intemperate excesses. The third is, when our anger, which ought to have been directed against ourselves or against sins, is turned against our brethren. Most appropriately, therefore, did Paul, when he wished to describe the proper limitation of anger, employ the well-known passage<span style="color:#800000">*, Be ye angry, and sin not.*</span> We comply with this injunction, if the objects of our anger are sought, not in others, but in ourselves, — if we pour out our indignation against our own faults. With respect to others, we ought to be angry, not at their persons, but at their faults; nor ought we to be excited to anger by private offenses, but by zeal for the glory of the Lord. Lastly, our anger, after a reasonable time, ought to be allowed to subside, without mixing itself with the violence of carnal passions.
 
@@ -1191,17 +1342,23 @@ But a question arises, does Paul oblige all men to labor with their hands? This 
 
 <h2 class="scripture-anchor" id="ephesians-4-29-31" data-ref="EPHESIANS 4:29-31" style="display:none">EPHESIANS 4:29-31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490429&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:29-31</span></p>
 
-<strong>29.</strong> Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers. <strong>30.</strong> And grieve not the Holy Spirit of God, whereby ye are sealed unto the day of redemption. <strong>31.</strong> Let all bitterness, and wrath, and anger, and clamor, and evil-speaking, be put away from you, with all malice.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>29.</strong> Let no corrupt communication proceed out of your mouth, but that which is good to the use of edifying, that it may minister grace unto the hearers.</td><td class="scripture-la"><strong>29.</strong> Omnis sermo spurcus ex ore vestro non procedat; sed si quis est bonus ad edificationem usus, ut det gratiam audientibus.</td></tr>
+<tr><td class="scripture-en"><strong>30.</strong> And grieve not the Holy Spirit of God, whereby ye are sealed unto the day of redemption.</td><td class="scripture-la"><strong>30.</strong> Et ne contristetis Spiritum Sanctum Dei, quo obsignati estis in diem redemptionis.</td></tr>
+<tr><td class="scripture-en"><strong>31.</strong> Let all bitterness, and wrath, and anger, and clamor, and evil-speaking, be put away from you, with all malice.</td><td class="scripture-la"><strong>31.</strong> Omnis amarulentia, et indignatio, et ira, et clamor, et maledicentia, removeatur a vobis cum omni malitia.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 105 -->
 **29.** <span style="color:#800000">*No filthy speech.*</span> He first forbids believers to use any <span style="color:#800000">*filthy*</span> language, including under this name all those expressions which are wont to be employed for the purpose of inflaming lust. Not satisfied with the removal of the vice, he enjoins them to frame their discourse for edification. In another Epistle he says, “Let your speech be seasoned with salt.” (Colossians 4:6.) Here a different phrase is employed, <span style="color:#800000">*if any*</span> (speech) <span style="color:#800000">*be good to the use of edifying,*</span> which means simply, *if it be useful.* The genitive, *of* <span style="color:#800000">*use,*</span> may no doubt be viewed, according to the Hebrew idiom, as put for an adjective, so that <span style="color:#800000">*for the edification of use*</span> (<span style="color:#0000d4">οἰκοδομὴν</span> <span style="color:#0000d4">τῆς χρείας</span>) may mean *for useful edification;* but when I consider how frequently, and in how extensive a meaning, the metaphor of <span style="color:#800000">*edifying*</span> occurs in Paul’s writings, I prefer the former exposition. <span style="color:#800000">*The edification of use*</span> will thus mean the progress of our edification, for to edify is to carry forward. To explain the manner in which this is done, he adds, <span style="color:#800000">*that it may impart grace to the hearers,*</span> meaning by the word <span style="color:#800000">*grace,*</span> comfort, advice, and everything that aids the salvation of the soul.
 
-**30.** <span style="color:#800000">*And grieve not.*</span> As the Holy Spirit dwells in us, to him every part of our soul and of our body ought to be devoted. But if we give ourselves up to aught that is impure, we may be said to drive him away from making his abode with us; and, to express this still more familiarly, human affections, such as joy and grief, are ascribed to the Holy Spirit. <span style="color:#800000">[^f46]</span> Endeavour that the Holy Spirit may dwell cheerfully with you, as in a pleasant and joyful dwelling, and give him no occasion for grief. Some take a different view of it, that we grieve the Holy Spirit in others, when we offend by filthy language, or, in any other way, godly brethren, who are led by the Spirit of God. (Romans 8:14.) Whatever is contrary to godliness is not only disrelished by godly ears, but is no sooner heard than it produces in them deep grief and pain. But that Paul’s meaning was different appears from what follows.
+**30.** <span style="color:#800000">*And grieve not.*</span> As the Holy Spirit dwells in us, to him every part of our soul and of our body ought to be devoted. But if we give ourselves up to aught that is impure, we may be said to drive him away from making his abode with us; and, to express this still more familiarly, human affections, such as joy and grief, are ascribed to the Holy Spirit. [^f46] Endeavour that the Holy Spirit may dwell cheerfully with you, as in a pleasant and joyful dwelling, and give him no occasion for grief. Some take a different view of it, that we grieve the Holy Spirit in others, when we offend by filthy language, or, in any other way, godly brethren, who are led by the Spirit of God. (Romans 8:14.) Whatever is contrary to godliness is not only disrelished by godly ears, but is no sooner heard than it produces in them deep grief and pain. But that Paul’s meaning was different appears from what follows.
 
 <!-- PAGE 106 -->
 By whom ye are sealed. As God has sealed us by his Spirit, we grieve him when we do not follow his guidance, but pollute ourselves by wicked passions. No language can adequately express this solemn truth, that the Holy Spirit rejoices and is glad on our account, when we are obedient to him in all things, and neither think nor speak anything, but what is pure and holy; and, on the other hand, is grieved, when we admit anything into our minds that is unworthy of our calling. Now, let any man reflect what shocking wickedness there must be in grieving the Holy Spirit to such a degree as to compel him to withdraw from us. The same mode of speaking is used by the prophet Isaiah , but in a different sense; for he merely says, that they “vexed his Holy Spirit,” (Isaiah 63:10.) in the same sense in which we are accustomed to speak of vexing the mind of a man. <span style="color:#800000">*By*</span> <span style="color:#800000">*whom ye are sealed.*</span> The Spirit of God is the seal, by which we are distinguished from the wicked, and which is impressed on our hearts as a sure evidence of adoption.
@@ -1212,17 +1369,21 @@ By whom ye are sealed. As God has sealed us by his Spirit, we grieve him when we
 
 <h2 class="scripture-anchor" id="ephesians-4-32" data-ref="EPHESIANS 4:32" style="display:none">EPHESIANS 4:32</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490432&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">4:32</span></p>
 
-<strong>32.</strong> And be ye kind one to another, tender-hearted, forgiving one another, even as God for Christ’s sake hath forgiven you.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>32.</strong> And be ye kind one to another, tender-hearted, forgiving one another, even as God for Christ’s sake hath forgiven you.</td><td class="scripture-la"><strong>32.</strong> Sitis autem mutuo comes, misericordes, condonantes vobis inter vos, quemadmodum et Deus vobis in Christo condonavit.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 107 -->
 **32.** <span style="color:#800000">*And be ye kind one to another.*</span> With <span style="color:#800000">*bitterness*</span> he contrasts <span style="color:#800000">*kindness,*</span> or gentleness of countenance, language, and manners. And as this virtue will never reign in us, unless attended by *compassion,* (<span style="color:#0000d4">ουμπάθεια</span>,) he recommends to us to be <span style="color:#800000">*tender-hearted*</span>. This will lead us not only to sympathize with the distresses of our brethren, as if they were our own, but to cultivate that true humanity which is affected by everything that happens to them, in the same manner as if we were in their situation. The contrary of this is the cruelty of those iron-hearted, barbarous men, by whom the sufferings of others are beheld without any concern whatever.
 
-<span style="color:#800000">*Forgiving one another.*</span> The Greek word here rendered <span style="color:#800000">*forgiving,*</span> (<span style="color:#0000d4">χαριζόμενοι ἑαυτοῖς</span>,) is supposed by to mean beneficence. Erasmus, accordingly, renders it (*largientes*) *bountiful.* Though the word admits of that meaning, yet the context induces me to prefer the other view, that we should be ready to <span style="color:#800000">*forgive*</span>. It may sometimes happen, that men are <span style="color:#800000">*kind*</span> and <span style="color:#800000">*tender-hearted,*</span> and yet, when they receive improper treatment, do not so easily forgive injuries. That those whose kindness of heart in other respects disposes them to acts of humanity, may not fail in their duty through the ingratitude of men, he exhorts them to discover a readiness to lay aside resentment. To give his exhortation the greater weight, he holds out the example of God, who has forgiven to us, through Christ, far more than any mortal man can forgive to his brethren. <span style="color:#800000">[^f47]</span>
+<span style="color:#800000">*Forgiving one another.*</span> The Greek word here rendered <span style="color:#800000">*forgiving,*</span> (<span style="color:#0000d4">χαριζόμενοι ἑαυτοῖς</span>,) is supposed by to mean beneficence. Erasmus, accordingly, renders it (*largientes*) *bountiful.* Though the word admits of that meaning, yet the context induces me to prefer the other view, that we should be ready to <span style="color:#800000">*forgive*</span>. It may sometimes happen, that men are <span style="color:#800000">*kind*</span> and <span style="color:#800000">*tender-hearted,*</span> and yet, when they receive improper treatment, do not so easily forgive injuries. That those whose kindness of heart in other respects disposes them to acts of humanity, may not fail in their duty through the ingratitude of men, he exhorts them to discover a readiness to lay aside resentment. To give his exhortation the greater weight, he holds out the example of God, who has forgiven to us, through Christ, far more than any mortal man can forgive to his brethren. [^f47]
 
 <!-- PAGE 108 -->
 
@@ -1230,23 +1391,28 @@ By whom ye are sealed. As God has sealed us by his Spirit, we grieve him when we
 
 <h2 class="scripture-anchor" id="ephesians-5-1-2" data-ref="EPHESIANS 5:1-2" style="display:none">EPHESIANS 5:1-2</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490501&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">5:1-2</span></p>
 
-<strong>1.</strong> Be ye therefore followers of God, as dear children; <strong>2.</strong> And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweet smelling savor.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Be ye therefore followers of God, as dear children;</td><td class="scripture-la"><strong>1.</strong> Sitis ergo imitatores Dei quemadmodum filii dilecti;</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweet smelling savor.</td><td class="scripture-la"><strong>2.</strong> Et ambulate in charitate quemadmodum et Christus nos dilexit, ac se ipsum tradidit pro nobis oblationem et hostiam Deo, in odorem bonae fragrantiae.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 **1.** <span style="color:#800000">*Be ye therefore followers.*</span> The same principle is followed out and enforced by the consideration that children ought to be like their father. He reminds us that we are the children of God, and that therefore we ought, as far as possible, to resemble Him in acts of kindness. It is impossible not to perceive, that the division of chapters, in the present instance, is particularly unhappy, as it has made a separation between parts of the subject which are very closely related. If, then, we are the children of God, we ought to be <span style="color:#800000">*followers of God.*</span> Christ also declares, that, unless we shew kindness to the unworthy, we cannot be the children of our heavenly Father.
 
-<p style="text-align:center" markdown="1">“<span style="color:#000080">Love your enemies, bless them that curse you, do good to them</span> <span style="color:#000080">that hate you, and pray for them who despitefully use you and</span> <span style="color:#000080">persecute you;</span> <span style="color:#000080">*that ye may be the children of your*</span> <span style="color:#000080">*Father which is*</span> <span style="color:#000080">*in heaven*</span><span style="color:#000080">; for he maketh his sun to rise on the evil and on the good,</span> <span style="color:#000080">and sendeth rain on the just and on the unjust.</span>” <span style="color:#000080">(</span><span style="color:#000080">Matthew 5:44,45.)</span> <span style="color:#800000">[^f48]</span></p>
+<p style="text-align:center" markdown="1">“<span style="color:#000080">Love your enemies, bless them that curse you, do good to them</span> <span style="color:#000080">that hate you, and pray for them who despitefully use you and</span> <span style="color:#000080">persecute you;</span> <span style="color:#000080">*that ye may be the children of your*</span> <span style="color:#000080">*Father which is*</span> <span style="color:#000080">*in heaven*</span><span style="color:#000080">; for he maketh his sun to rise on the evil and on the good,</span> <span style="color:#000080">and sendeth rain on the just and on the unjust.</span>” <span style="color:#000080">(</span><span style="color:#000080">Matthew 5:44,45.)</span> [^f48]</p>
 
 **2.** <span style="color:#800000">*And walk in love as Christ also hath loved us.*</span> Having called on us to imitate God, he now calls on us to imitate Christ, who is our true model. We ought to embrace each other with that love with which Christ has embraced us, for what we perceive in Christ is our true guide.
 
 <!-- PAGE 109 -->
 <span style="color:#800000">*And gave himself for us.*</span> This was a remarkable proof of the highest love. Forgetful, as it were, of himself, Christ spared not his own life, that he might redeem us from death. If we desire to be partakers of this benefit, we must cultivate similar affections toward our neighbors. Not that any of us has reached such high perfection, but all must aim and strive according to the measure of their ability.
 
-<span style="color:#800000">*An offering and a sacrifice to God of a sweet smelling savor.*</span> While this statement leads us to admire the grace of Christ, it bears directly on the present subject. No language, indeed, can fully represent the consequences and efficacy of Christ’s death. This is the only price by which we are reconciled to God. The doctrine of faith on this subject holds the highest rank. But the more extraordinary the discoveries which have reached us of the Redeemer’s kindness, the more strongly are we bound to his service. Besides, we may infer from Paul’s words, that, unless we love one another, none of our duties will be acceptable in the sight of God. If the reconciliation of men, effected by Christ, was *a sacrifice of a sweet smelling savor,* <span style="color:#800000">[^f49]</span> we, too, shall be “unto God a sweet savor,” (2 Corinthians 2:15,) when this holy perfume is spread over us. To this applies the saying of Christ,
+<span style="color:#800000">*An offering and a sacrifice to God of a sweet smelling savor.*</span> While this statement leads us to admire the grace of Christ, it bears directly on the present subject. No language, indeed, can fully represent the consequences and efficacy of Christ’s death. This is the only price by which we are reconciled to God. The doctrine of faith on this subject holds the highest rank. But the more extraordinary the discoveries which have reached us of the Redeemer’s kindness, the more strongly are we bound to his service. Besides, we may infer from Paul’s words, that, unless we love one another, none of our duties will be acceptable in the sight of God. If the reconciliation of men, effected by Christ, was *a sacrifice of a sweet smelling savor,* [^f49] we, too, shall be “unto God a sweet savor,” (2 Corinthians 2:15,) when this holy perfume is spread over us. To this applies the saying of Christ,
 
 <p style="text-align:center" markdown="1">“<span style="color:#000080">Leave thy gift before the altar, and go and be reconciled to thy brother.</span>”</p>
 
@@ -1254,26 +1420,31 @@ By whom ye are sealed. As God has sealed us by his Spirit, we grieve him when we
 
 <!-- PAGE 110 -->
 
-## EPHESIANS 5:3-7
+<h2 class="scripture-anchor" id="ephesians-5-3-7" data-ref="EPHESIANS 5:3-7" style="display:none">EPHESIANS 5:3-7</h2>
 
-<p style="margin-left:2em;" markdown="1">**3.** But fornication, and all uncleanness, or covetousness, let it not be once named among you, as becometh saints;</p>
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Ephesians</span> <span class="verse-range">5:3-7</span></p>
 
-<p style="text-align:right;" markdown="1">3. Scortatio vero et omnis immundities, aut avaritia, ne nominentur quidem inter vos; sicut decet sanctos.</p>
+<strong>3.</strong> But fornication, and all uncleanness, or covetousness, let it not be once named among you, as becometh saints;
 
-<p style="margin-left:2em;" markdown="1">**4.** Neither filthiness, nor foolish talking, nor jesting, which are not convenient; but rather giving of thanks.</p>
+<strong>3.</strong> Scortatio vero et omnis immundities, aut avaritia, ne nominentur quidem inter vos; sicut decet sanctos.
 
-<p style="margin-left:2em;" markdown="1">**4.** Turpitudo, stultiloquium, facetia; quae non conveniunt, sed magis gratia. 5. For this ye know, that no whoremonger, nor unclean person, nor covetous man, who is an idolater, hath any inheritance in the kingdom of Christ and of God.</p>
+<strong>4.</strong> Neither filthiness, nor foolish talking, nor jesting, which are not convenient; but rather giving of thanks.
 
-<p style="margin-left:2em;" markdown="1">**5.** Hoc enim scitis, quod omnis scortator, vel immundus, vel avarus, qui est idololatra, non obtinebit haereditatem in regno Christi et Dei. 6. Let no man deceive you with vain words: for because of these things cometh the wrath of God upon the children of disobedience.</p>
+<strong>4.</strong> Turpitudo, stultiloquium, facetia; quae non conveniunt, sed magis gratia. <strong>5.</strong> For this ye know, that no whoremonger, nor unclean person, nor covetous man, who is an idolater, hath any inheritance in the kingdom of Christ and of God.
 
-<p style="margin-left:2em;" markdown="1">**6.** Nemo vos decipiat inanibus verbis; nam propter haec venit ira Dei in filios inobedientes (vel, incredulos.) 7. Be not ye therefore partakers with them.</p>
+<strong>5.</strong> Hoc enim scitis, quod omnis scortator, vel immundus, vel avarus, qui est idololatra, non obtinebit haereditatem in regno Christi et Dei. <strong>6.</strong> Let no man deceive you with vain words: for because of these things cometh the wrath of God upon the children of disobedience.
 
-<p style="text-align:right;" markdown="1">7. Ne sitis igitur illorum consortes.</p>
+<strong>6.</strong> Nemo vos decipiat inanibus verbis; nam propter haec venit ira Dei in filios inobedientes (vel, incredulos.) <strong>7.</strong> Be not ye therefore partakers with them.
+
+<strong>7.</strong> Ne sitis igitur illorum consortes.
+
+</div>
 
 **3.** <span style="color:#800000">*But fornication.*</span> This chapter, and the third of the Epistle to the Colossians, contain many parallel passages, which an intelligent reader will be at no loss to compare without my assistance. Three things are here enumerated, which the apostle desires Christians to hold in such abhorrence, that they shall not even be named, or, in other words, shall be entirely unknown among them. By <span style="color:#800000">*uncleanness*</span> he means all base and impure lusts; so that this word differs from <span style="color:#800000">*fornication,*</span> only as the whole class differs from a single department. The third is <span style="color:#800000">*covetousness,*</span> which is nothing more than an immoderate desire of gain. To this precept he adds the authoritative declaration, that he demands nothing from them but that which <span style="color:#800000">*becometh saints,*</span> — manifestly excluding from the number and fellowship of the saints all fornicators, and impure and covetous persons.
 
 <!-- PAGE 111 -->
-**4.** <span style="color:#800000">*Neither filthiness.*</span> To those three — other three are now added. By <span style="color:#800000">*filthiness*</span> I understand all that is indecent or inconsistent with the modesty of the godly. By <span style="color:#800000">*foolish talking*</span> I understand conversations that are either unprofitably or wickedly foolish; and as it frequently happens that idle talk is concealed under the garb of *jesting* or wit, he expressly mentions pleasantry, — which is so agreeable as to seem worthy of commendation, — and condemns it as a part of <span style="color:#800000">*foolish talking*</span>. The Greek word <span style="color:#0000d4">εὐτραπελία</span> is often used by heathen writers, in a good sense, for that ready and ingenious pleasantry in which able and intelligent men may properly indulge. But as it is exceedingly difficult to be witty without becoming satirical, and as jesting itself carries in it a portion of conceit not at all in keeping with the character of a godly man, Paul very properly dissuades from this practice. <span style="color:#800000">[^f50]</span> Of all the three offenses now mentioned, Paul declares that they are <span style="color:#800000">*not convenient*</span>, or, in other words, that they are inconsistent with Christian duty.
+**4.** <span style="color:#800000">*Neither filthiness.*</span> To those three — other three are now added. By <span style="color:#800000">*filthiness*</span> I understand all that is indecent or inconsistent with the modesty of the godly. By <span style="color:#800000">*foolish talking*</span> I understand conversations that are either unprofitably or wickedly foolish; and as it frequently happens that idle talk is concealed under the garb of *jesting* or wit, he expressly mentions pleasantry, — which is so agreeable as to seem worthy of commendation, — and condemns it as a part of <span style="color:#800000">*foolish talking*</span>. The Greek word <span style="color:#0000d4">εὐτραπελία</span> is often used by heathen writers, in a good sense, for that ready and ingenious pleasantry in which able and intelligent men may properly indulge. But as it is exceedingly difficult to be witty without becoming satirical, and as jesting itself carries in it a portion of conceit not at all in keeping with the character of a godly man, Paul very properly dissuades from this practice. [^f50] Of all the three offenses now mentioned, Paul declares that they are <span style="color:#800000">*not convenient*</span>, or, in other words, that they are inconsistent with Christian duty.
 
 *But rather grace.* Others render it <span style="color:#800000">*giving of thanks;*</span> but I prefer Jerome’s interpretation. With the vices which had been formerly mentioned it was proper that Paul should contrast something of a general character, displaying itself in all our communications with each other. If he had said, “While they take pleasure in idle or abusive talk, do you give thanks to God,” the exhortation would have been too limited. The Greek word, <span style="color:#0000d4">εὐχαριστία</span>, though it usually signifies *Thanksgiving,* admits of being translated *Grace.* “All our conversations ought to be, in the true sense of the words, sweet and graceful; and this end will be gained if the useful and the agreeable are properly mingled.”
 
@@ -1281,13 +1452,13 @@ By whom ye are sealed. As God has sealed us by his Spirit, we grieve him when we
 
 <!-- PAGE 112 -->
 
-<p style="text-align:center; color:#000080; margin:14px 2em;">“<span style="color:#000080">And such were some of you; but ye are washed, but ye are</span> <span style="color:#000080">sanctified, but ye are justified, in the name of the Lord Jesus, and</span> <span style="color:#000080">by the Spirit of our God.</span>” <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians</span> <span style="color:#000080">6:11.)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1">“<span style="color:#000080">And such were some of you; but ye are washed, but ye are</span> <span style="color:#000080">sanctified, but ye are justified, in the name of the Lord Jesus, and</span> <span style="color:#000080">by the Spirit of our God.</span>” <span style="color:#000080">(</span><span style="color:#000080">1 Corinthians</span> <span style="color:#000080">6:11.)</span></p>
 
 When men have repented, and thus give evidence that they are reconciled to God, they are no longer the same persons that they formerly were. But let all fornicators, or unclean or covetous persons, so long as they continue such, be assured that they have no friendship with God, and are deprived of all hope of salvation. It is called <span style="color:#800000">*the kingdom of Christ and of God,*</span> because God hath given it to his Son that we may obtain it through him.
 
 <span style="color:#800000">*Nor covetous man, who is an idolater.*</span> “Covetousness,” as he says in another place, “is idolatry,” (Colossians 3:5,) — not the idolatry which is so frequently condemned in Scripture, but one of a different description. All covetous men must deny God, and put wealth in his place; such is their blind greediness of wretched gain. But why does Paul attribute to covetousness alone what belongs equally to other carnal passions? In what respect is covetousness better entitled to this disgraceful name than ambition, or than a vain confidence in ourselves? I answer, that this disease is widely spread, and not a few minds have caught the infection. Nay, it is not reckoned a disease, but receives, on the contrary, very general commendation. This accounts for the harshness of Paul’s language, which arose from a desire to tear from our hearts the false view.
 
-**6.** <span style="color:#800000">*Let no man deceive you.*</span> There have always been ungodly dogs, <span style="color:#800000">[^f51]</span> by whom the threatenings of the prophets were made the subject of merriment and ridicule. We find such characters in our own day. In all ages, indeed, Satan raises up sorcerers of this description, who endeavor by unholy scoffs to escape the Divine judgment, and who actually exercise a kind of fascination over consciences not sufficiently established in the fear of God. “This is a trivial fault. Fornication is viewed by God as a light matter. Under the law of grace God is not so cruel. He has not formed us so as to be our own executioners. The frailty of nature excuses us.” These and similar expressions are often used by the scoffers. Paul, on the contrary, exclaims that we must guard against that sophistry by which consciences are ensnared to their ruin.
+**6.** <span style="color:#800000">*Let no man deceive you.*</span> There have always been ungodly dogs, [^f51] by whom the threatenings of the prophets were made the subject of merriment and ridicule. We find such characters in our own day. In all ages, indeed, Satan raises up sorcerers of this description, who endeavor by unholy scoffs to escape the Divine judgment, and who actually exercise a kind of fascination over consciences not sufficiently established in the fear of God. “This is a trivial fault. Fornication is viewed by God as a light matter. Under the law of grace God is not so cruel. He has not formed us so as to be our own executioners. The frailty of nature excuses us.” These and similar expressions are often used by the scoffers. Paul, on the contrary, exclaims that we must guard against that sophistry by which consciences are ensnared to their ruin.
 
 <!-- PAGE 113 -->
 <span style="color:#800000">*For because of these things cometh the wrath of God.*</span> If we consider the present tense to be here used, agreeably to the Hebrew idiom, for the future, these words are a threatening of the last judgment. But I agree with those who take the word <span style="color:#800000">*cometh*</span> in all indefinite sense, — <span style="color:#800000">*the word of God*</span> usually <span style="color:#800000">*cometh*</span>, — as reminding them of the ordinary judgments of God which were executed before their own eyes. And certainly, if we were not blind and slothful, there are sufficiently numerous examples by which God testifies that he is the just avenger of such crimes, — examples of the pouring out of divine indignation, privately against individuals, and publicly against cities, and kings, and nations.
@@ -1296,10 +1467,20 @@ When men have repented, and thus give evidence that they are reconciled to God, 
 
 <h2 class="scripture-anchor" id="ephesians-5-8-14" data-ref="EPHESIANS 5:8-14" style="display:none">EPHESIANS 5:8-14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490508&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">5:8-14</span></p>
 
-<strong>8.</strong> For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light; <strong>9.</strong> (For the fruit of the Spirit is in all goodness, and righteousness, and truth;) <strong>10.</strong> Proving what is acceptable unto the Lord. <strong>10.</strong> Probantes, quid sit acceptum Deo. <strong>11.</strong> And have no fellowship with the unfruitful works of darkness, but rather reprove them. <strong>12.</strong> For it is a shame even to speak of those things which are done of them in secret. <strong>13.</strong> But all things that are reproved are made manifest by the light: for whatsoever doth make manifest is light. <strong>14.</strong> Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> For ye were sometimes darkness, but now are ye light in the Lord: walk as children of light;</td><td class="scripture-la"><strong>8.</strong> Eratis aliquando tenabrae; nunc autem lux in Domino; tanquam filii lucis ambulate;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> (For the fruit of the Spirit is in all goodness, and righteousness, and truth;)</td><td class="scripture-la"><strong>9.</strong> (Fructus enim lucis in omni bonitate, et justitia, et veritate:)</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> Probantes, quid sit acceptum Deo.</td><td class="scripture-la"></td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> And have no fellowship with the unfruitful works of darkness, but rather reprove them.</td><td class="scripture-la"><strong>11.</strong> Et ne communicetis operibus infructuosis tenebrarum; quin potius etiam redarguitote.</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> For it is a shame even to speak of those things which are done of them in secret.</td><td class="scripture-la"><strong>12.</strong> Quae enim clam fiunt ab illis, turpe est vel dicere.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> But all things that are reproved are made manifest by the light: for whatsoever doth make manifest is light.</td><td class="scripture-la"><strong>13.</strong> Omnia autem, dum coarguuntur, a luce manifestantur; omne enim quod manifestat lux est.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> Wherefore he saith, Awake thou that sleepest, and arise from the dead, and Christ shall give thee light.</td><td class="scripture-la"><strong>14.</strong> Quamobrem dicit: Surge qui dormis, et exsurge ex mortuis; et illucescet tibi Christus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1307,11 +1488,11 @@ When men have repented, and thus give evidence that they are reconciled to God, 
 
 **8.** <span style="color:#800000">*For ye were once darkness.*</span> The precepts which immediately follow derive greater weight from the motives with which they are mingled. Having spoken of unbelievers, and warned the Ephesians not to become partakers of their crimes and their destruction, he argues still further, that they ought to differ widely from the life and conduct of those men. At the same time, in order to guard them against ingratitude to God, he refreshes their remembrance of their own past life. “You ought,” he says, “to be very different persons from what you formerly were; for out of darkness God hath made you light.” <span style="color:#800000">*Darkness*</span> is the name here given to the whole nature of man before regeneration; for, where the brightness of God does not shine, there is nothing but fearful darkness. <span style="color:#800000">*Light,*</span> again, is the name given to those who are *enlightened* by the Spirit of God; for immediately afterwards in the same sense, he calls them <span style="color:#800000">*children of light,*</span> and draws the inference, that they ought to walk in light, because by the mercy of God they had been rescued from darkness. Observe here, we are said to be <span style="color:#800000">*light in the Lord,*</span> because, while we are out of Christ, all is under the dominion of Satan, whom we know to be the Prince of darkness.
 
-**9.** <span style="color:#800000">*For the fruit of the light.*</span> <span style="color:#800000">[^f52]</span> This parenthesis is introduced, to point out the road in which the <span style="color:#800000">*children of light*</span> ought to walk. A complete description is not given, but a few parts of a holy and pious life are introduced by way of example. To give them a general view of duty, their attention is again directed to the will of God. Whoever desires to live in a proper and safe manner, let him resolve to obey God, and to take his will as the rule. To regulate life entirely by his command is, as he says in another Epistle, *a reasonable service,* (Romans 12:1,) or, as another inspired man expresses it, *To obey is better than sacrifice.* (1 Samuel 15:22.) I wonder how the word Spirit (<span style="color:#0000d4">pneumatoj</span>) has crept into many Greek manuscripts, as the other reading is more consistent, — <span style="color:#800000">*the fruit of the light*</span>. Paul’s meaning indeed is not affected; for in either case it will be this, that believers must walk in the light, because they are “children of the light.” This is done, when they do not live according to their own will, but devote themselves entirely to obedience to God, when they undertake nothing but by his command. Besides, such obedience is testified by its fruits, such as <span style="color:#800000">*goodness, righteousness, and truth.*</span>
+**9.** <span style="color:#800000">*For the fruit of the light.*</span> [^f52] This parenthesis is introduced, to point out the road in which the <span style="color:#800000">*children of light*</span> ought to walk. A complete description is not given, but a few parts of a holy and pious life are introduced by way of example. To give them a general view of duty, their attention is again directed to the will of God. Whoever desires to live in a proper and safe manner, let him resolve to obey God, and to take his will as the rule. To regulate life entirely by his command is, as he says in another Epistle, *a reasonable service,* (Romans 12:1,) or, as another inspired man expresses it, *To obey is better than sacrifice.* (1 Samuel 15:22.) I wonder how the word Spirit (<span style="color:#0000d4">pneumatoj</span>) has crept into many Greek manuscripts, as the other reading is more consistent, — <span style="color:#800000">*the fruit of the light*</span>. Paul’s meaning indeed is not affected; for in either case it will be this, that believers must walk in the light, because they are “children of the light.” This is done, when they do not live according to their own will, but devote themselves entirely to obedience to God, when they undertake nothing but by his command. Besides, such obedience is testified by its fruits, such as <span style="color:#800000">*goodness, righteousness, and truth.*</span>
 
 <!-- PAGE 115 -->
 
-**11.** <span style="color:#800000">*And have no fellowship.*</span> As “the children of light” dwell amidst the darkness, or, in other words, in the midst of “a perverse and crooked generation,” (Deuteronomy 32:5,) — there is good reason for warning them to keep themselves apart from wicked actions. It is not enough that we do not, of our own accord, undertake anything wicked. We must beware of joining or assisting those who do wrong. In short, we must abstain from giving any consent, or advice, or approbation, or assistance; for in all these ways we <span style="color:#800000">*have fellowship*</span>. And lest any one should imagine that he has done his duty, merely by not conniving, he adds, <span style="color:#800000">*but rather reprove them.*</span> <span style="color:#800000">[^f53]</span> Such a course is opposed to all dissimulation. Where a manifest offense is committed against God, every man will be eager to vindicate himself from any share in the guilt, but very few will guard against connivance; nearly all will practice some kind of dissimulation. But rather than the truth of God shall not remain unshaken, let a hundred worlds perish.
+**11.** <span style="color:#800000">*And have no fellowship.*</span> As “the children of light” dwell amidst the darkness, or, in other words, in the midst of “a perverse and crooked generation,” (Deuteronomy 32:5,) — there is good reason for warning them to keep themselves apart from wicked actions. It is not enough that we do not, of our own accord, undertake anything wicked. We must beware of joining or assisting those who do wrong. In short, we must abstain from giving any consent, or advice, or approbation, or assistance; for in all these ways we <span style="color:#800000">*have fellowship*</span>. And lest any one should imagine that he has done his duty, merely by not conniving, he adds, <span style="color:#800000">*but rather reprove them.*</span> [^f53] Such a course is opposed to all dissimulation. Where a manifest offense is committed against God, every man will be eager to vindicate himself from any share in the guilt, but very few will guard against connivance; nearly all will practice some kind of dissimulation. But rather than the truth of God shall not remain unshaken, let a hundred worlds perish.
 
 The word <span style="color:#0000d4">ἐλέγχειν</span>, which is translated <span style="color:#800000">*reprove,*</span> answers to the metaphor of darkness; for it literally signifies to drag forth to the light what was formerly unknown. As ungodly men flatter themselves in their vices, (Psalm 36:2,) and wish their crimes to be concealed, or to be reckoned virtues, Paul enjoins that they shall be <span style="color:#800000">*reproved*</span>. He calls them <span style="color:#800000">*unfruitful;*</span> because they not only do no good, but are absolutely hurtful.
 
@@ -1329,7 +1510,7 @@ It may be thought that the word is used here in an unusual acceptation. Erasmus,
 <!-- PAGE 117 -->
 **14.** <span style="color:#800000">*Wherefore he saith.*</span> Interpreters are at great pains to discover the passage of Scripture which Paul appears to quote, and which is nowhere to be found. I shall state my opinion. He first exhibits Christ as speaking by his ministers; for this is the ordinary message which is every day delivered by preachers of the gospel. What other object do they propose than to raise the dead to life?
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">“The hour is coming, and now is, when the dead shall hear the</span> <span style="color:#000080">voice of the Son of God, and they that hear shall live”</span> <span style="color:#000080">(</span><span style="color:#000080">John</span> <span style="color:#000080">5:25.)</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">“The hour is coming, and now is, when the dead shall hear the</span> <span style="color:#000080">voice of the Son of God, and they that hear shall live”</span> <span style="color:#000080">(</span><span style="color:#000080">John</span> <span style="color:#000080">5:25.)</span></p>
 
 Let us now attend to the context. “Unbelievers,” Paul had said, “must be reproved, that, being brought forth to the light, they may begin to acknowledge their wickedness.” He therefore represents Christ as uttering a voice which is constantly heard in the preaching of the gospel,
 
@@ -1339,20 +1520,29 @@ Let us now attend to the context. “Unbelievers,” Paul had said, “must be r
 
 Let us therefore endeavor, as far as lies in our power, to rouse the sleeping and dead, that we may bring them to the light of Christ.
 
-<span style="color:#800000">*And Christ shall give thee light.*</span> This does not mean that, when we have risen from death to life, his light begins to shine upon us, as if our performances came before his grace. All that is intended is to show that, when Christ enlightens us, we rise from death to life, — and thus to confirm the former statement, that unbelievers must be recovered from their blindness, in order to be saved. Instead of <span style="color:#0000d4">ἐπιφαύσει</span>, *he shall give light,* some copies read <span style="color:#0000d4">ἐφαύεται</span>, *he shall touch;* but this reading is an evident blunder, and may be dismissed without any argument. <span style="color:#800000">[^f54]</span>
+<span style="color:#800000">*And Christ shall give thee light.*</span> This does not mean that, when we have risen from death to life, his light begins to shine upon us, as if our performances came before his grace. All that is intended is to show that, when Christ enlightens us, we rise from death to life, — and thus to confirm the former statement, that unbelievers must be recovered from their blindness, in order to be saved. Instead of <span style="color:#0000d4">ἐπιφαύσει</span>, *he shall give light,* some copies read <span style="color:#0000d4">ἐφαύεται</span>, *he shall touch;* but this reading is an evident blunder, and may be dismissed without any argument. [^f54]
 
 <!-- PAGE 118 -->
 
 <h2 class="scripture-anchor" id="ephesians-5-15-20" data-ref="EPHESIANS 5:15-20" style="display:none">EPHESIANS 5:15-20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490515&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">5:15-20</span></p>
 
-<strong>15.</strong> See then that ye walk circumspectly, not as fools, but as wise, <strong>16.</strong> Redeeming the time, because the days are evil. <strong>17.</strong> Wherefore be ye not unwise, but understanding what the will of the Lord is. <strong>18.</strong> And be not drunk with wine, wherein is excess; but be filled with the Spirit; <strong>19.</strong> Speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart to the Lord; <strong>20.</strong> Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> See then that ye walk circumspectly, not as fools, but as wise</td><td class="scripture-la"><strong>15.</strong> Videte igitur, quomodo exacte ambuletis; non tanquam insipientes, sed tanquam sapientes:</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Redeeming the time, because the days are evil.</td><td class="scripture-la"><strong>16.</strong> Redimentes tempus, quoniam dies mali sunt.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Wherefore be ye not unwise, but understanding what the will of the Lord is.</td><td class="scripture-la"><strong>17.</strong> Quare ne sitis imprudentes, sed intelligentes, quae sit voluntas Domini.</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> And be not drunk with wine, wherein is excess; but be filled with the Spirit;</td><td class="scripture-la"><strong>18.</strong> Et ne inebriemini vino, in quo inest lascivia, sed impleamini Spiritu.</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart to the Lord;</td><td class="scripture-la"><strong>19.</strong> Vobis ipsis loquentes psalmis et hymnis, et canticis spiritualibus, canentes et psallentes in corde vestro, Domino;</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ.</td><td class="scripture-la"><strong>20.</strong> Gratias agentes semper de omnibus, in nomine Domini nostri Iesu Christi, Deo et Patri.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-**15.** <span style="color:#800000">*See then.*</span> If believers must not neglect to drive away the darkness of others by their own brightness, how much less ought they to be blind as to their own conduct in life? What darkness shall conceal those on whom Christ, the Sun of righteousness, has arisen? Placed, as it were, in a crowded theater, they ought to live under the eye of God and of angels. Let them stand in awe of these witnesses, though they may be concealed from the view of all mortals. Dismissing the metaphor of darkness and light, he enjoins them to regulate their life <span style="color:#800000">*circumspectly as wise men,*</span> <span style="color:#800000">[^f55]</span> who have been educated by the Lord in the school of true wisdom. Our understanding must shew itself by taking God for our guide and instructor, to teach us his own will.
+**15.** <span style="color:#800000">*See then.*</span> If believers must not neglect to drive away the darkness of others by their own brightness, how much less ought they to be blind as to their own conduct in life? What darkness shall conceal those on whom Christ, the Sun of righteousness, has arisen? Placed, as it were, in a crowded theater, they ought to live under the eye of God and of angels. Let them stand in awe of these witnesses, though they may be concealed from the view of all mortals. Dismissing the metaphor of darkness and light, he enjoins them to regulate their life <span style="color:#800000">*circumspectly as wise men,*</span> [^f55] who have been educated by the Lord in the school of true wisdom. Our understanding must shew itself by taking God for our guide and instructor, to teach us his own will.
 
 <!-- PAGE 119 -->
 **16.** <span style="color:#800000">*Redeeming the time.*</span> By a consideration of the time he enforces his exhortation. <span style="color:#800000">*The days are evil.*</span> Everything around us tends to corrupt and mislead; so that it is difficult for godly persons, who walk among so many thorns, to escape unhurt. Such corruption having infected the age, the devil appears to have obtained tyrannical sway; so that <span style="color:#800000">*time*</span> cannot be dedicated to God without being in some way <span style="color:#800000">*redeemed.*</span> And what shall be the price of its redemption? To withdraw from the endless variety of allurements which would easily lead us astray; to rid ourselves from the cares and pleasures of the world; and, in a word, to abandon every hinderance. Let us be eager to recover it in every possible way, and let the numerous offenses and arduous toil, which many are in the habit of alleging as an apology for indolence, serve rather to awaken our vigilance.
@@ -1365,18 +1555,18 @@ Let us therefore endeavor, as far as lies in our power, to rouse the sleeping an
 
 will triumph over every obstacle which Satan can oppose to his progress. Whence comes it that some wander, others fall, others strike against a rock, others go away, — but because we allow ourselves to be gradually blinded by Satan, and lose sight of the will of God, which we ought constantly to remember? And observe, that Paul defines <span style="color:#800000">*wisdom*</span> to be, <span style="color:#800000">*understanding what the will of the Lord is*</span>.
 
-<p style="text-align:center" markdown="1">“<span style="color:#000080">How shall a young man,</span>” <span style="color:#000080">says David,</span> “<span style="color:#000080">direct his way? By</span> <span style="color:#000080">attending to thy word, O Lord.</span>” <span style="color:#000080">(</span><span style="color:#800000"><19B909></span><span style="color:#000080">Psalm 119:9.)</span></p>
+<p style="text-align:center" markdown="1">“<span style="color:#000080">How shall a young man,</span>” <span style="color:#000080">says David,</span> “<span style="color:#000080">direct his way? By</span> <span style="color:#000080">attending to thy word, O Lord.</span>” <span style="color:#000080">(</span><span class="ages-code">&lt;19B909&gt;</span><span style="color:#000080">Psalm 119:9.)</span></p>
 
 <p style="text-align:center" markdown="1">He speaks of youths, but it is the same wisdom which belongs to old men.</p>
 
 **18.** <span style="color:#800000">*And be not drunk with wine.*</span> When he enjoins them <span style="color:#800000">*not to be drunk,*</span> he forbids excessive and immoderate drinking of every description. “Be not intemperate in drinking.”
 
-<span style="color:#800000">*In which*</span> <span style="color:#800000">[^f56]</span> <span style="color:#800000">*is lasciviousness.*</span> The Greek word <span style="color:#0000d4">ἀσωτία</span>, which is translated “lasciviousness,” points out the evils which arise from drunkenness. I understand by it all that is implied in a wanton and dissolute life; for to translate it *luxury,* would quite enfeeble the sense. The meaning therefore is, that drunkards throw off quickly every restraint of modesty or shame; that where wine reigns, profligacy naturally follows; and consequently, that all who have any regard to moderation or decency ought to avoid and abhor drunkenness.
+<span style="color:#800000">*In which*</span> [^f56] <span style="color:#800000">*is lasciviousness.*</span> The Greek word <span style="color:#0000d4">ἀσωτία</span>, which is translated “lasciviousness,” points out the evils which arise from drunkenness. I understand by it all that is implied in a wanton and dissolute life; for to translate it *luxury,* would quite enfeeble the sense. The meaning therefore is, that drunkards throw off quickly every restraint of modesty or shame; that where wine reigns, profligacy naturally follows; and consequently, that all who have any regard to moderation or decency ought to avoid and abhor drunkenness.
 
 <!-- PAGE 120 -->
-The children of this world are accustomed to indulge in deep drinking as an excitement to mirth. Such carnal excitement is contrasted with that holy joy of which the Spirit of God is the Author, and which produces entirely opposite effects. To what does drunkenness lead? To unbounded licentiousness, — to unbridled, indecent merriment. And to what does spiritual joy lead, when it is most strongly excited? <span style="color:#800000">[^f57]</span>
+The children of this world are accustomed to indulge in deep drinking as an excitement to mirth. Such carnal excitement is contrasted with that holy joy of which the Spirit of God is the Author, and which produces entirely opposite effects. To what does drunkenness lead? To unbounded licentiousness, — to unbridled, indecent merriment. And to what does spiritual joy lead, when it is most strongly excited? [^f57]
 
-**19.** <span style="color:#800000">*To psalms, and hymns, and spiritual songs.*</span> These are truly pleasant and delightful fruits. The <span style="color:#800000">*Spirit*</span> means “joy in the Holy Ghost,” (Romans 14:17;) and the exhortation, <span style="color:#800000">*be ye filled*</span>, (Ephesians 5.18,) alludes to deep drinking, with which it is indirectly contrasted<span style="color:#800000">*. Speaking to themselves,*</span> is *speaking among themselves.* Nor does he enjoin them to sing inwardly or alone; for he immediately adds, <span style="color:#800000">*singing in your hearts;*</span> as if he had said, “Let your praises be not merely on the tongue, as hypocrites do, but from the heart.” What may be the exact difference between <span style="color:#800000">*psalms*</span> and <span style="color:#800000">*hymns*</span>, or between <span style="color:#800000">*hymns*</span> and <span style="color:#800000">*songs*</span>, it is not easy to determine, though a few remarks on this subject shall be offered on a future occasion. <span style="color:#800000">[^f58]</span> The appellation <span style="color:#800000">*spiritual*</span>, given to these songs, is strikingly appropriate; for the songs most frequently used are almost always on trifling subjects, and very far from being chaste.
+**19.** <span style="color:#800000">*To psalms, and hymns, and spiritual songs.*</span> These are truly pleasant and delightful fruits. The <span style="color:#800000">*Spirit*</span> means “joy in the Holy Ghost,” (Romans 14:17;) and the exhortation, <span style="color:#800000">*be ye filled*</span>, (Ephesians 5.18,) alludes to deep drinking, with which it is indirectly contrasted<span style="color:#800000">*. Speaking to themselves,*</span> is *speaking among themselves.* Nor does he enjoin them to sing inwardly or alone; for he immediately adds, <span style="color:#800000">*singing in your hearts;*</span> as if he had said, “Let your praises be not merely on the tongue, as hypocrites do, but from the heart.” What may be the exact difference between <span style="color:#800000">*psalms*</span> and <span style="color:#800000">*hymns*</span>, or between <span style="color:#800000">*hymns*</span> and <span style="color:#800000">*songs*</span>, it is not easy to determine, though a few remarks on this subject shall be offered on a future occasion. [^f58] The appellation <span style="color:#800000">*spiritual*</span>, given to these songs, is strikingly appropriate; for the songs most frequently used are almost always on trifling subjects, and very far from being chaste.
 
 **20.** <span style="color:#800000">*Giving thanks always.*</span> He means that this is a pleasure which ought never to lose its relish; that this is an exercise of which we ought never to weary. Innumerable benefits which we receive from God yield fresh cause of joy and thanksgiving. At the same time, he reminds believers that it will argue ungodly and disgraceful sloth, if they shall not <span style="color:#800000">*always*</span> give thanks, — if their whole life shall not be spent in the study and exercise of praising God.
 
@@ -1384,10 +1574,20 @@ The children of this world are accustomed to indulge in deep drinking as an exci
 
 <h2 class="scripture-anchor" id="ephesians-5-21-27" data-ref="EPHESIANS 5:21-27" style="display:none">EPHESIANS 5:21-27</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490521&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">5:21-27</span></p>
 
-<strong>21.</strong> Submitting yourselves one to another in the fear of God. <strong>22.</strong> Wives, submit yourselves unto your own husbands, as unto the Lord. <strong>23.</strong> For the husband is the head of the wife, even as Christ is the head of the church; and he is the savior of the body. <strong>24.</strong> Therefore, as the church is subject unto Christ, so let the wives be to their own husbands in every thing. <strong>25.</strong> Husbands, love your wives, even as Christ also loved the church, and gave himself for it; <strong>26.</strong> That he might sanctify and cleanse it with the washing of water by the word; <strong>27.</strong> That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy, and without blemish.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> Submitting yourselves one to another in the fear of God.</td><td class="scripture-la"><strong>21.</strong> Subditi estote invicem in timore Christi (vel, Dei.)</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Wives, submit yourselves unto your own husbands, as unto the Lord.</td><td class="scripture-la"><strong>22.</strong> Mulieres suis maritis subditae sint tanquam Domino;</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> For the husband is the head of the wife, even as Christ is the head of the church; and he is the savior of the body.</td><td class="scripture-la"><strong>23.</strong> Quoniam vir est caput uxoris, quemadmodum et Christus caput est Ecclesiae, qui idem est servator corporis.</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> Therefore, as the church is subject unto Christ, so let the wives be to their own husbands in every thing.</td><td class="scripture-la"><strong>24.</strong> Caeterum quemadmodum Ecclesia subest Christo, ita et mulieres suis maritis in omnibus.</td></tr>
+<tr><td class="scripture-en"><strong>25.</strong> Husbands, love your wives, even as Christ also loved the church, and gave himself for it;</td><td class="scripture-la"><strong>25.</strong> Viri, diligite vestras uxores; quemadmodum et Christus dilexit Ecclesiam, et se ipsum tradidit pro ea</td></tr>
+<tr><td class="scripture-en"><strong>26.</strong> That he might sanctify and cleanse it with the washing of water by the word;</td><td class="scripture-la"><strong>26.</strong> Ut eam sanctificaret, mundans lavacro aquae in Verbo;</td></tr>
+<tr><td class="scripture-en"><strong>27.</strong> That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it should be holy, and without blemish.</td><td class="scripture-la"><strong>27.</strong> Ut sisteret eam sibi gloriosam Ecclesiam, non habentem maculam, aut rugam, aut quicquam tale; sed ut esset sancta et irreprehensibilis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1397,7 +1597,7 @@ But as nothing is more irksome to the mind of man than this mutual subjection, h
 
 <!-- PAGE 122 -->
 
-— let us submit to our neighbors, because we fear Christ; or actively, let us submit to them, because the minds of all godly persons ought to be influenced by such fear under the reign of Christ. Some Greek manuscripts read, “the fear of *God.*” The change may have been introduced by some person, who thought that the other phrase, *the fear of Christ,* though by far the most appropriate, sounded a little harsh. <span style="color:#800000">[^f59]</span>
+— let us submit to our neighbors, because we fear Christ; or actively, let us submit to them, because the minds of all godly persons ought to be influenced by such fear under the reign of Christ. Some Greek manuscripts read, “the fear of *God.*” The change may have been introduced by some person, who thought that the other phrase, *the fear of Christ,* though by far the most appropriate, sounded a little harsh. [^f59]
 
 **22.** <span style="color:#800000">*Wives, submit yourselves.*</span> He comes now to the various conditions of life; for, besides the universal bond of subjection, some are more closely bound to each other, according to their respective callings. The community at large is divided, as it were, into so many yokes, out of which arises mutual obligation. There is, first, the yoke of marriage between husband and wife; — secondly, the yoke which binds parents and children; — and, thirdly, the yoke which connects masters and servants. By this arrangement there are six different classes, for each of whom Paul lays down peculiar duties. He begins with wives, whom he enjoins to be subject to their husbands, in the same manner as to Christ, — <span style="color:#800000">*as to the Lord.*</span> Not that the authority is equal, but wives cannot obey Christ without yielding obedience to their husbands.
 
@@ -1422,7 +1622,7 @@ Others again suppose that too much importance is given to the sign, by saying th
 Equally groundless is their fear, that by this interpretation the freedom of God will be restrained. The grace of God is not confined to the sign; so that God may not, if he pleases, bestow it without the aid of the sign. Besides, many receive the sign who are not made partakers of grace; for the sign is common to all, to the good and to the bad alike; but the Spirit is bestowed on none but the elect, and the sign, as we have said, has no efficacy without the Spirit. The Greek participle <span style="color:#0000d4">καθαρίσας</span>, is in the past tense, as if he had said, “After having washed.” But, as the Latin language has no active participle in the past tense, I chose rather to disregard this, and to translate it (*mundans*) <span style="color:#800000">*washing,*</span> instead of (*mundatam*) *having been washed;* which would have kept out of view a matter of far greater importance, namely, that to God alone belongs the work of cleansing.
 
 <!-- PAGE 125 -->
-<span style="color:#800000">*In the word.*</span> <span style="color:#800000">[^f60]</span> This is very far from being a superfluous addition; for, if the *word* is taken away, the whole power of the sacraments is gone. What else are the sacraments but seals of the word? This single consideration will drive away superstition. How comes it that superstitious men are confounded by signs, but because their minds are not directed to the <span style="color:#800000">*Word,*</span> which would lead them to God? Certainly, when we look to anything else than to the word, there is nothing sound, nothing pure; but one absurdity springs out of another, till at length the signs, which were appointed by God for the salvation of men, become profane, and degenerate into gross idolatry. The only difference, therefore, between the sacraments of the godly and the contrivances of unbelievers, is found in the Word.
+<span style="color:#800000">*In the word.*</span> [^f60] This is very far from being a superfluous addition; for, if the *word* is taken away, the whole power of the sacraments is gone. What else are the sacraments but seals of the word? This single consideration will drive away superstition. How comes it that superstitious men are confounded by signs, but because their minds are not directed to the <span style="color:#800000">*Word,*</span> which would lead them to God? Certainly, when we look to anything else than to the word, there is nothing sound, nothing pure; but one absurdity springs out of another, till at length the signs, which were appointed by God for the salvation of men, become profane, and degenerate into gross idolatry. The only difference, therefore, between the sacraments of the godly and the contrivances of unbelievers, is found in the Word.
 
 By the <span style="color:#800000">*Word*</span> is here meant the promise, which explains the value and use of the signs. Hence it appears, that the Papists do not at all observe the signs in a proper manner. They boast indeed, of having “the Word,” but appear to regard it as a sort of enchantment; for they mutter it in an unknown tongue; as if it were addressed to dead matter, and not to men. No explanation of the mystery is made to the people; and in this respect, were there no other, the sacrament begins to be nothing more than the dead element of water. <span style="color:#800000">*In the word*</span> is equivalent to “By the word.”
 
@@ -1435,10 +1635,19 @@ The word <span style="color:#800000">*present*</span> (<span style="color:#0000d
 
 <h2 class="scripture-anchor" id="ephesians-5-28-33" data-ref="EPHESIANS 5:28-33" style="display:none">EPHESIANS 5:28-33</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490528&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">5:28-33</span></p>
 
-<strong>28.</strong> So ought men to love their wives as their own bodies: he that loveth his wife loveth himself. <strong>29.</strong> For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church: <strong>30.</strong> For we are members of his body, of his flesh, and of his bones. <strong>31.</strong> For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh. <strong>32.</strong> This is a great mystery: but I speak concerning Christ and the church. <strong>33.</strong> Nevertheless, let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>28.</strong> So ought men to love their wives as their own bodies: he that loveth his wife loveth himself.</td><td class="scripture-la"><strong>28.</strong> Ita viri debent diligere suas uxores, tanquam sua corpora. Qui diligit uxorem suam, se ipsum diligit.</td></tr>
+<tr><td class="scripture-en"><strong>29.</strong> For no man ever yet hated his own flesh; but nourisheth and cherisheth it, even as the Lord the church:</td><td class="scripture-la"><strong>29.</strong> Nemo enim unquam carnem suam odio habuit, sed nutrit et fovet eam; quemadmodum et Christus Ecclesiam.</td></tr>
+<tr><td class="scripture-en"><strong>30.</strong> For we are members of his body, of his flesh, and of his bones.</td><td class="scripture-la"><strong>30.</strong> Quia membra sumus corporis ejus, ex ejus carne et ex ejus ossibus.</td></tr>
+<tr><td class="scripture-en"><strong>31.</strong> For this cause shall a man leave his father and mother, and shall be joined unto his wife, and they two shall be one flesh.</td><td class="scripture-la"><strong>31.</strong> Hujus causa relinquet homo patrem et matrem suam, et adhaerebit uxori suae; et erunt duo in carnem unam. (Genesis 2:24.)</td></tr>
+<tr><td class="scripture-en"><strong>32.</strong> This is a great mystery: but I speak concerning Christ and the church.</td><td class="scripture-la"><strong>32.</strong> Arcanum hoc magnum est; ego autem dico in Christo et in Ecclesia.</td></tr>
+<tr><td class="scripture-en"><strong>33.</strong> Nevertheless, let every one of you in particular so love his wife even as himself; and the wife see that she reverence her husband.</td><td class="scripture-la"><strong>33.</strong> Caeterum vos quoque singuli, suam quisque uxorem diligat; mulier autem timeat maritum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1469,7 +1678,7 @@ We see then the hammer and anvil with which they fabricated this sacrament. But 
 <!-- PAGE 130 -->
 <span style="color:#800000">*But I speak concerning Christ and the church.*</span> He intended to give express warning that no man should understand him as speaking of marriage; so that his meaning is more fully expressed than if he had uttered the former sentiment without any exception. The <span style="color:#800000">*great mystery*</span> is, that Christ breathes into the church his own life and power. But who would discover here anything like a sacrament? This blunder arose from the grossest ignorance.
 
-**33.** <span style="color:#800000">*Nevertheless, let every one.*</span> Having digressed a little from this subject, though the very digression aided his design, he adopts the method usually followed in short precepts, by giving a brief summary of duties. Husbands are required to love their wives, and wives to *fear* (<span style="color:#0000d4">φοβῆται</span>) their husbands, understanding by *fear* that <span style="color:#800000">*reverence*</span> which will lead them to be submissive. Where reverence does not exist, there will be no willing subjection. <span style="color:#800000">[^f61]</span>
+**33.** <span style="color:#800000">*Nevertheless, let every one.*</span> Having digressed a little from this subject, though the very digression aided his design, he adopts the method usually followed in short precepts, by giving a brief summary of duties. Husbands are required to love their wives, and wives to *fear* (<span style="color:#0000d4">φοβῆται</span>) their husbands, understanding by *fear* that <span style="color:#800000">*reverence*</span> which will lead them to be submissive. Where reverence does not exist, there will be no willing subjection. [^f61]
 
 <!-- PAGE 131 -->
 
@@ -1477,14 +1686,21 @@ We see then the hammer and anvil with which they fabricated this sacrament. But 
 
 <h2 class="scripture-anchor" id="ephesians-6-1-4" data-ref="EPHESIANS 6:1-4" style="display:none">EPHESIANS 6:1-4</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490601&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">6:1-4</span></p>
 
-<strong>1.</strong> Children, obey your parents in the Lord: for this is right. <strong>2.</strong> Honor thy father and mother, (which is the first commandment with promise,) <strong>3.</strong> That it may be well with thee, and thou mayest live long on the earth. <strong>4.</strong> And, ye fathers, provoke not your children to wrath; but bring them up in the nurture and admonition of the Lord.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Children, obey your parents in the Lord: for this is right.</td><td class="scripture-la"><strong>1.</strong> Filii, obedite parentibus vestris in Domino; hoc enim est justum.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Honor thy father and mother, (which is the first commandment with promise,)</td><td class="scripture-la"><strong>2.</strong> Honora patrem tuum et matrem; (quod est mandatum primum cum promissione:)</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> That it may be well with thee, and thou mayest live long on the earth.</td><td class="scripture-la"><strong>3.</strong> Ut bene tibi sit, et sis longaevus super terram.</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> And, ye fathers, provoke not your children to wrath; but bring them up in the nurture and admonition of the Lord.</td><td class="scripture-la"><strong>4.</strong> Vos etiam, patres, ne ad iram provocetis filios vestros; sed educate eos in disciplina et correptione Domini.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-**1.** <span style="color:#800000">*Children, obey.*</span> Why does the apostle use the word <span style="color:#800000">*obey*</span> instead of *honor,* <span style="color:#800000">[^f62]</span> which has a greater extent of meaning? It is because <span style="color:#800000">*Obedience*</span> is the evidence of that *honor* which children owe to their parents, and is therefore more earnestly enforced. It is likewise more difficult; for the human mind recoils from the idea of subjection, and with difficulty allows itself to be placed under the control of another. Experience shews how rare this virtue is; for do we find one among a thousand that is obedient to his parents? By a figure of speech, a part is here put for the whole, but it is the most important part, and is necessarily accompanied by all the others.
+**1.** <span style="color:#800000">*Children, obey.*</span> Why does the apostle use the word <span style="color:#800000">*obey*</span> instead of *honor,* [^f62] which has a greater extent of meaning? It is because <span style="color:#800000">*Obedience*</span> is the evidence of that *honor* which children owe to their parents, and is therefore more earnestly enforced. It is likewise more difficult; for the human mind recoils from the idea of subjection, and with difficulty allows itself to be placed under the control of another. Experience shews how rare this virtue is; for do we find one among a thousand that is obedient to his parents? By a figure of speech, a part is here put for the whole, but it is the most important part, and is necessarily accompanied by all the others.
 
 <span style="color:#800000">*In the Lord.*</span> Besides the law of nature, which is acknowleged by all nations, the obedience of children is enforced by the authority of God. Hence it follows, that parents are to be obeyed, so far only as is consistent with piety to God, which comes first in order. If the command of God is the rule by which the submission of children is to be regulated, it would be foolish to suppose that the performance of this duty could lead away from God himself.
 
@@ -1499,7 +1715,7 @@ We see then the hammer and anvil with which they fabricated this sacrament. But 
 
 But this is universal, applying indiscriminately to the whole law, and cannot be said to be annexed to that commandment. Paul’s assertion still holds true, that no other commandment but that which enjoins the obedience due by children to their parents is distinguished by a promise.
 
-**3.** <span style="color:#800000">*That it may be well with thee*</span>. The promise is a long life; from which we are led to understand that the present life is not to be overlooked among the gifts of God. On this and other kindred subjects I must refer my reader to the *Institutes of the Christian Religion;* <span style="color:#800000">[^f63]</span> satisfying myself at present with saying, in a few words, that the reward promised to the obedience of children is highly appropriate. Those who shew kindness to their parents from whom they derived life, are assured by God, that in this life it will <span style="color:#800000">*be well with them.*</span>
+**3.** <span style="color:#800000">*That it may be well with thee*</span>. The promise is a long life; from which we are led to understand that the present life is not to be overlooked among the gifts of God. On this and other kindred subjects I must refer my reader to the *Institutes of the Christian Religion;* [^f63] satisfying myself at present with saying, in a few words, that the reward promised to the obedience of children is highly appropriate. Those who shew kindness to their parents from whom they derived life, are assured by God, that in this life it will <span style="color:#800000">*be well with them.*</span>
 
 <span style="color:#800000">*And that thou mayest live long on the earth.*</span> Moses expressly mentions the land of Canaan,
 
@@ -1515,10 +1731,18 @@ Beyond this the Jews could not conceive of any life more happy or desirable. But
 
 <h2 class="scripture-anchor" id="ephesians-6-5-9" data-ref="EPHESIANS 6:5-9" style="display:none">EPHESIANS 6:5-9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490605&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">6:5-9</span></p>
 
-<strong>5.</strong> Servants, be obedient to them that are your masters according to the flesh, with fear and trembling, in singleness of your heart, as unto Christ; <strong>6.</strong> Not with eye-service, as menpleasers; but as the servants of Christ, doing the will of God from the heart; <strong>7.</strong> With good will doing service, as to the Lord, and not to men: <strong>8.</strong> Knowing, that whatsoever good thing any man doeth, the same shall he receive of the Lord, whether he be bond or free. <strong>9.</strong> And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; neither is there respect of persons with him.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> Servants, be obedient to them that are your masters according to the flesh, with fear and trembling, in singleness of your heart, as unto Christ;</td><td class="scripture-la"><strong>5.</strong> Servi, obedite dominis secundum carnem, cum timore et tremore in simplicitate cordis vestri, tanquam Christo;</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> Not with eye-service, as menpleasers; but as the servants of Christ, doing the will of God from the heart;</td><td class="scripture-la"><strong>6.</strong> Non quasi ad oculum servientes, tanquam hominibus studentes placere, sed tanquam servi Christi, facientes voluntatem Dei ex animo</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> With good will doing service, as to the Lord, and not to men:</td><td class="scripture-la"><strong>7.</strong> Cum benevolentia, servientes Domino, et non hominibus;</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Knowing, that whatsoever good thing any man doeth, the same shall he receive of the Lord, whether he be bond or free.</td><td class="scripture-la"><strong>8.</strong> Scientes quod unusquisque quicquid boni fecerit, recipiet a Domino, sive servus, sive liber.</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> And, ye masters, do the same things unto them, forbearing threatening: knowing that your Master also is in heaven; neither is there respect of persons with him.</td><td class="scripture-la"><strong>9.</strong> Et vos, domini, mutuum officium praestate erGalatiansillos, remittentes minas; scientes quod illorum et vester Dominus est in coelis; et non est apud eum personarum acceptio.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1556,19 +1780,26 @@ Masters and servants are not indeed on the same level; but there is a mutual law
 
 <h2 class="scripture-anchor" id="ephesians-6-10-13" data-ref="EPHESIANS 6:10-13" style="display:none">EPHESIANS 6:10-13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490610&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">6:10-13</span></p>
 
-<strong>10.</strong> Finally, my brethren, be strong in the Lord, and in the power of his might. <strong>11.</strong> Put on the whole armor of God, that ye may be able to stand against the wiles of the devil. <strong>12.</strong> For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places. <strong>13.</strong> Wherefore take unto you the whole armor of God, that ye may be able to withstand in the evil day, and having done all, to stand.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Finally, my brethren, be strong in the Lord, and in the power of his might.</td><td class="scripture-la"><strong>10.</strong> Quod superest, fratres mei, sitis fortes in Domino, et in robore potentiae ipsius.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Put on the whole armor of God, that ye may be able to stand against the wiles of the devil.</td><td class="scripture-la"><strong>11.</strong> Induite totam armaturam Dei, ut possitis stare adversus insidias Diaboli.</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.</td><td class="scripture-la"><strong>12.</strong> Quia non est nobis lucta adversus carnem et sanguinem, sed adversus principatus, adversus potestates, adversus mundanos principes tenebrarum saeculi hujus, adversus spirituales malitias in coelestibus.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Wherefore take unto you the whole armor of God, that ye may be able to withstand in the evil day, and having done all, to stand.</td><td class="scripture-la"><strong>13.</strong> Quapropter assumite totam armaturam Dei, ut possitis resistere in die malo, et omnibus peractis stare.</td></tr>
+</tbody>
+</table>
 
 </div>
 
 <!-- PAGE 139 -->
 **10.** <span style="color:#800000">*Finally.*</span> Resuming his general exhortations, he again enjoins them to <span style="color:#800000">*be strong,*</span> — to summon up courage and vigor; for there is always much to enfeeble us, and we are ill fitted to resist. But when our weakness is considered, an exhortation like this would have no effect, unless <span style="color:#800000">*the Lord*</span> were present, and stretched out his hand to render assistance, or rather, unless he supplied us with all the power. Paul therefore adds, in the Lord. As if he had said, “‘You have no right to reply, that you have not the ability; for all that I require of you is, <span style="color:#800000">*be strong in the Lord.*</span>” To explain his meaning more fully, he adds, in the power of his might, which tends greatly to increase our confidence, particularly as it shews the remarkable assistance which God usually bestows upon believers. If the Lord aids us by <span style="color:#800000">*his mighty power*</span>, we have no reason to shrink from the combat. But it will be asked, What purpose did it serve to enjoin the Ephesians to be strong in the Lord’s mighty power, which they could not of themselves accomplish? I answer, there are two clauses here which must be considered. He exhorts them to be courageous, but at the same time reminds them to ask from God a supply of their own deficiencies, and promises that, in answer to their prayers, the power of God will be displayed.
 
-**11.** <span style="color:#800000">*Put on the whole armor.*</span> God has furnished us with various defensive weapons, provided we do not indolently refuse what is offered. But we are almost all chargeable with carelessness and hesitation in using the offered grace; just as if a soldier, about to meet the enemy, should take his helmet, and neglect his shield. To correct this security, or, we should rather say, this indolence, Paul borrows a comparison from the military art, and bids us <span style="color:#800000">*put on the whole armor of God.*</span> We ought to be prepared on all sides, so as to want nothing. The Lord offers to us arms for repelling every kind of attack. It remains for us to apply them to use, and not leave them hanging on the wall. To quicken our vigilance, he reminds us that we must not only engage in open warfare, but that we have a crafty and insidious foe to encounter, who frequently lies in ambush; for such is the import of the apostle’s phrase, THE WILES <span style="color:#800000">[^f64]</span> (<span style="color:#0000d4">τὰς μεθοδείας</span>) <span style="color:#800000">*of the devil*</span>.
+**11.** <span style="color:#800000">*Put on the whole armor.*</span> God has furnished us with various defensive weapons, provided we do not indolently refuse what is offered. But we are almost all chargeable with carelessness and hesitation in using the offered grace; just as if a soldier, about to meet the enemy, should take his helmet, and neglect his shield. To correct this security, or, we should rather say, this indolence, Paul borrows a comparison from the military art, and bids us <span style="color:#800000">*put on the whole armor of God.*</span> We ought to be prepared on all sides, so as to want nothing. The Lord offers to us arms for repelling every kind of attack. It remains for us to apply them to use, and not leave them hanging on the wall. To quicken our vigilance, he reminds us that we must not only engage in open warfare, but that we have a crafty and insidious foe to encounter, who frequently lies in ambush; for such is the import of the apostle’s phrase, THE WILES [^f64] (<span style="color:#0000d4">τὰς μεθοδείας</span>) <span style="color:#800000">*of the devil*</span>.
 
-**12.** <span style="color:#800000">*For we wrestle*</span> <span style="color:#800000">[^f65]</span> <span style="color:#800000">*not.*</span> To impress them still more deeply with their danger, he points out the nature of the enemy, which he illustrates by a comparative statement, <span style="color:#800000">*Not against flesh and blood.*</span> The meaning is, that our difficulties are far greater than if we had to fight with men. There we resist human strength, sword is opposed to sword, man contends with man, force is met by force, and skill by skill; but here the case is widely different. All amounts to this, that our enemies are such as no human power can withstand. By <span style="color:#800000">*flesh and blood*</span> the apostle denotes men, who are so denominated in order to contrast them with spiritual assailants. This is no bodily struggle.
+**12.** <span style="color:#800000">*For we wrestle*</span> [^f65] <span style="color:#800000">*not.*</span> To impress them still more deeply with their danger, he points out the nature of the enemy, which he illustrates by a comparative statement, <span style="color:#800000">*Not against flesh and blood.*</span> The meaning is, that our difficulties are far greater than if we had to fight with men. There we resist human strength, sword is opposed to sword, man contends with man, force is met by force, and skill by skill; but here the case is widely different. All amounts to this, that our enemies are such as no human power can withstand. By <span style="color:#800000">*flesh and blood*</span> the apostle denotes men, who are so denominated in order to contrast them with spiritual assailants. This is no bodily struggle.
 
 <!-- PAGE 140 -->
 Let us remember this when the injurious treatment of others provokes us to revenge. Our natural disposition would lead us to direct all our exertions against the men themselves; but this foolish desire will be restrained by the consideration that the men who annoy us are nothing more than darts thrown by the hand of Satan. While we are employed in destroying those darts, we lay ourselves open to be wounded on all sides. To <span style="color:#800000">*wrestle with flesh and blood*</span> will not only be useless, but highly pernicious. We must go straight to the enemy, who attacks and wounds us from his concealment, — who slays before he appears.
@@ -1588,10 +1819,20 @@ An argument drawn from this passage by the *Manicheans,* to support their wild n
 
 <h2 class="scripture-anchor" id="ephesians-6-14-20" data-ref="EPHESIANS 6:14-20" style="display:none">EPHESIANS 6:14-20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490614&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">6:14-20</span></p>
 
-<strong>14.</strong> Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness; <strong>15.</strong> And your feet shod with the preparation of the gospel of peace; <strong>16.</strong> Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked. <strong>17.</strong> And take the helmet of salvation, and the sword of the Spirit, which is the word of God: <strong>18.</strong> Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints; <strong>19.</strong> And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel, <strong>20.</strong> For which I am an ambassador in bonds; that therein I may speak boldly, as I ought to speak.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> Stand therefore, having your loins girt about with truth, and having on the breastplate of righteousness;</td><td class="scripture-la"><strong>14.</strong> State igitur succincti lumbos veritate, et induti thoracem justitiae</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> And your feet shod with the preparation of the gospel of peace;</td><td class="scripture-la"><strong>15.</strong> Et calceati pedes praeparatione evangelii pacis;</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Above all, taking the shield of faith, wherewith ye shall be able to quench all the fiery darts of the wicked.</td><td class="scripture-la"><strong>16.</strong> In omnibus assumpto scuto fidei, quo possitis omnia tela maligni ignita exstinguere.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> And take the helmet of salvation, and the sword of the Spirit, which is the word of God:</td><td class="scripture-la"><strong>17.</strong> Et galeam salutaris accipite, et gladium Spiritus, qui est verbum Dei;</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> Praying always with all prayer and supplication in the Spirit, and watching thereunto with all perseverance and supplication for all saints;</td><td class="scripture-la"><strong>18.</strong> Per omnem precationem et orationem omni tempore precantes in Spiritu, et in hoc ipsum vigilantes, cum omni assiduitate et deprecatione pro omnibus sanctis;</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> And for me, that utterance may be given unto me, that I may open my mouth boldly, to make known the mystery of the gospel</td><td class="scripture-la"><strong>19.</strong> Et pro me, ut mihi detur sermo in apertione oris mei cum fiducia, ut patefaciam mysterium evangelii;</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> For which I am an ambassador in bonds; that therein I may speak boldly, as I ought to speak.</td><td class="scripture-la"><strong>20.</strong> Pro quo legatione fungor in catena; ut confidenter me geram in eo, quemadmodum oportet me loqui.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1639,10 +1880,17 @@ Let us therefore remember that Paul, when he resorted to the intercessions of hi
 
 <h2 class="scripture-anchor" id="ephesians-6-21-24" data-ref="EPHESIANS 6:21-24" style="display:none">EPHESIANS 6:21-24</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;490621&gt;</span><span class="book-name">Ephesians</span> <span class="verse-range">6:21-24</span></p>
 
-<strong>21.</strong> But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things: <strong>22.</strong> Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts. <strong>23.</strong> Peace be to the brethren, and love with faith, from God the Father, and the Lord Jesus Christ <strong>24.</strong> Grace be with all them that love our Lord Jesus Christ in sincerity. Amen.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> But that ye also may know my affairs, and how I do, Tychicus, a beloved brother and faithful minister in the Lord, shall make known to you all things:</td><td class="scripture-la"><strong>21.</strong> Ut autem sciatis vos etiam quae circa me aguntur, quid faciam, omnia vobis patefaciet Tychicus, dilectus frater et fidelis minister in Domino;</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Whom I have sent unto you for the same purpose, that ye might know our affairs, and that he might comfort your hearts.</td><td class="scripture-la"><strong>22.</strong> Quem misi ad vos in eum finem, ut statum meum cognosceretis, et consolaretur corda vestra.</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> Peace be to the brethren, and love with faith, from God the Father, and the Lord Jesus Christ</td><td class="scripture-la"><strong>23.</strong> Pax fratribus, et dilectio cum fide a Deo Patre et Domino Iesu Christo.</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> Grace be with all them that love our Lord Jesus Christ in sincerity. Amen.</td><td class="scripture-la"><strong>24.</strong> Gratia cum omnibus, qui diligunt Dominum nostrum Iesum Christum in sinceritate. Amen.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1670,273 +1918,349 @@ Tychicus is commended, that his statements may be more fully believed. <span sty
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">EPISTLE OF PAUL TO THE</span> <span style="color:#0000d4">EPHESIANS.</span></p>
 
-<span style="color:#800000">1</span> PAUL, an apostle of Jesus Christ by the will of God, to all the saints who are at Ephesus, and to the believers in Christ Jesus;
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
-<span style="color:#800000">2</span> Grace (be) to you, and peace, from God our Father, and from the Lord Jesus Christ.
+<sup>1</sup> PAUL, an apostle of Jesus Christ by the will of God, to all the saints who are at Ephesus, and to the believers in Christ Jesus;
 
-<span style="color:#800000">3</span> Blessed <span style="color:#800000">[^f101]</span> (be) the God and Father of our Lord Jesus Christ, who hath blessed us with every spiritual blessing in heavenly <span style="color:#800000">[^f102]</span> (places) in Christ;
+<sup>2</sup> Grace (be) to you, and peace, from God our Father, and from the Lord Jesus Christ.
 
-<span style="color:#800000">4</span> As he hath chosen us in him before the creation of the world, that we might be holy and blameless in his sight through love:
+<sup>3</sup> Blessed [^f101] (be) the God and Father of our Lord Jesus Christ, who hath blessed us with every spiritual blessing in heavenly [^f102] (places) in Christ;
 
-<span style="color:#800000">5</span> Who hath predestinated us in adoption in himself through Jesus Christ, according to the good pleasure of his will, <span style="color:#800000">6</span> To the praise of the glory of his grace, by which he hath made us accepted in the Beloved.
+<sup>4</sup> As he hath chosen us in him before the creation of the world, that we might be holy and blameless in his sight through love:
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">7</span> In whom we have redemption through his blood, the forgiveness of sins,</p>
+<sup>5</sup> Who hath predestinated us in adoption in himself through Jesus Christ, according to the good pleasure of his will,
 
-<span style="color:#800000">8</span> According to the riches of his grace; in which he hath abounded toward us in all wisdom and prudence;
+<sup>6</sup> To the praise of the glory of his grace, by which he hath made us accepted in the Beloved.
+
+<p style="text-align:center" markdown="1"><sup>7</sup> In whom we have redemption through his blood, the forgiveness of sins,</p>
+
+<sup>8</sup> According to the riches of his grace; in which he hath abounded toward us in all wisdom and prudence;
 
 <!-- PAGE 152 -->
 
-<span style="color:#800000">9</span> Having made known to us the secret of his will, according to his good pleasure, which he had purposed in himself;
+<sup>9</sup> Having made known to us the secret of his will, according to his good pleasure, which he had purposed in himself;
 
-<span style="color:#800000">10</span> In order to the dispensation of the fullness of the times; <span style="color:#800000">[^f103]</span> that he might gather together all things in Christ, both those things which are in heaven, and those things which are on the earth, in him;
+<sup>10</sup> In order to the dispensation of the fullness of the times; [^f103] that he might gather together all things in Christ, both those things which are in heaven, and those things which are on the earth, in him;
 
-<span style="color:#800000">11</span> Through whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things according to the purpose of his will;
+<sup>11</sup> Through whom also we have obtained an inheritance, being predestinated according to the purpose of him who worketh all things according to the purpose of his will;
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">12</span> That we, who first hoped in Christ, might be to the praise of his glory.</p>
+<p style="text-align:center" markdown="1"><sup>12</sup> That we, who first hoped in Christ, might be to the praise of his glory.</p>
 
-<span style="color:#800000">13</span> In whom ye also (trusted,) having heard the word of truth, the gospel of your salvation; in whom also, after having believed, ye were sealed with the Holy Spirit of promise, <span style="color:#800000">14</span> Who is the earnest of our inheritance, till the redemption of the possession obtained, to the praise of his glory.
+<sup>13</sup> In whom ye also (trusted,) having heard the word of truth, the gospel of your salvation; in whom also, after having believed, ye were sealed with the Holy Spirit of promise,
 
-<span style="color:#800000">15</span> Wherefore I also, having heard of the faith which ye have in the Lord Jesus, and of the love (which ye have) toward all the saints, <span style="color:#800000">16</span> Cease not to give thanks for you, making mention of you in my prayers;
+<sup>14</sup> Who is the earnest of our inheritance, till the redemption of the possession obtained, to the praise of his glory.
 
-<span style="color:#800000">17</span> That the God of our Lord Jesus Christ, the Father of glory, may give to you the spirit of wisdom and revelation, by the knowledge of him, <span style="color:#800000">[^f104]</span> <span style="color:#800000">18</span> The eyes of your mind enlightened, that ye may know what is the hope of his calling, and what are the riches of the glory of his inheritance in the saints, <span style="color:#800000">19</span> And what is the surpassing greatness of his power toward us who believe, according to the efficacy of the power of his strength;
+<sup>15</sup> Wherefore I also, having heard of the faith which ye have in the Lord Jesus, and of the love (which ye have) toward all the saints,
+
+<sup>16</sup> Cease not to give thanks for you, making mention of you in my prayers;
+
+<sup>17</sup> That the God of our Lord Jesus Christ, the Father of glory, may give to you the spirit of wisdom and revelation, by the knowledge of him, [^f104]
+
+<sup>18</sup> The eyes of your mind enlightened, that ye may know what is the hope of his calling, and what are the riches of the glory of his inheritance in the saints,
+
+<sup>19</sup> And what is the surpassing greatness of his power toward us who believe, according to the efficacy of the power of his strength;
 
 <!-- PAGE 153 -->
 
-<span style="color:#800000">20</span> Which he wrought in Christ, when he raised him from the dead, and caused him to sit at his own right hand in the heavenly (places);
+<sup>20</sup> Which he wrought in Christ, when he raised him from the dead, and caused him to sit at his own right hand in the heavenly (places);
 
-<span style="color:#800000">21</span> Above all principality, and power, and might, and dominion, and every name that is named, not only in this age, but also in (the age) which is to come;
+<sup>21</sup> Above all principality, and power, and might, and dominion, and every name that is named, not only in this age, but also in (the age) which is to come;
 
-<span style="color:#800000">22</span> And hath put all things under his feet, and hath appointed him head over all things to the church <span style="color:#800000">[^f105]</span> <span style="color:#800000">23</span> Which is his body, and the fulness of him that filleth all in all.
+<sup>22</sup> And hath put all things under his feet, and hath appointed him head over all things to the church [^f105]
 
-<span style="color:#800000">1</span> And when ye were dead in your trespasses and sins;
+<sup>23</sup> Which is his body, and the fulness of him that filleth all in all.
 
-<span style="color:#800000">2</span> In which for some time ye walked, according to the course <span style="color:#800000">[^f106]</span> of this world, according to the prince of the power of air, that *is,* of the spirit that now worketh <span style="color:#800000">[^f107]</span> in the children of disobedience;
+<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
 
-<span style="color:#800000">3</span> Among whom we all also, for some time, had our conversation in the lusts of our flesh, executing what was agreeable to the flesh and to the mind; <span style="color:#800000">[^f108]</span> and were by nature children of wrath, even as others.
+<sup>1</sup> And when ye were dead in your trespasses and sins;
 
-<span style="color:#800000">4</span> But God, who is rich in mercy, on account of his great love, with which he loved us, <span style="color:#800000">5</span> Even when we were dead in sins, quickened (us) together with Christ; (by grace ye are saved ;)
+<sup>2</sup> In which for some time ye walked, according to the course [^f106] of this world, according to the prince of the power of air, that *is,* of the spirit that now worketh [^f107] in the children of disobedience;
 
-<span style="color:#800000">6</span> And hath raised us up together, and hath made us sit together in heavenly (places) in Christ Jesus;
+<sup>3</sup> Among whom we all also, for some time, had our conversation in the lusts of our flesh, executing what was agreeable to the flesh and to the mind; [^f108] and were by nature children of wrath, even as others.
 
-<span style="color:#800000">7</span> That he might shew, in the ages to come, the surpassing riches of his grace, in (his) kindness <span style="color:#800000">[^f109]</span> toward us in Christ Jesus.
+<sup>4</sup> But God, who is rich in mercy, on account of his great love, with which he loved us,
 
-<span style="color:#800000">8</span> For by grace are ye saved through faith; and that not of yourselves; (it is) the gift of God.
+<sup>5</sup> Even when we were dead in sins, quickened (us) together with Christ; (by grace ye are saved ;)
 
-<span style="color:#800000">9</span> Not of works, that no one may boast.
+<sup>6</sup> And hath raised us up together, and hath made us sit together in heavenly (places) in Christ Jesus;
+
+<sup>7</sup> That he might shew, in the ages to come, the surpassing riches of his grace, in (his) kindness [^f109] toward us in Christ Jesus.
+
+<sup>8</sup> For by grace are ye saved through faith; and that not of yourselves; (it is) the gift of God.
+
+<sup>9</sup> Not of works, that no one may boast.
 
 <!-- PAGE 154 -->
 
-<span style="color:#800000">10</span> For we are his workmanship, having been created in Christ Jesus to good works, which God hath prepared, that we may walk in them.
+<sup>10</sup> For we are his workmanship, having been created in Christ Jesus to good works, which God hath prepared, that we may walk in them.
 
-<span style="color:#800000">11</span> Wherefore remember that *you,* at one time Gentiles in the flesh, who were called Uncircumcision by that which is called Circumcision, made by the hand in the flesh, <span style="color:#800000">12</span> At that time were without Christ, having been alienated from the commonwealth of Israel <span style="color:#800000">[^f110]</span> strangers from the tables of promise,” <span style="color:#800000">[^f111]</span> not having hope, <span style="color:#800000">[^f112]</span> and without God in the world;
+<sup>11</sup> Wherefore remember that *you,* at one time Gentiles in the flesh, who were called Uncircumcision by that which is called Circumcision, made by the hand in the flesh,
 
-<span style="color:#800000">13</span> But now in Christ Jesus <span style="color:#800000">[^f113]</span> you, who formerly were far off, have been made nigh through the blood of Christ.
+<sup>12</sup> At that time were without Christ, having been alienated from the commonwealth of Israel [^f110] strangers from the tables of promise,” [^f111] not having hope, [^f112] and without God in the world;
 
-<span style="color:#800000">14</span> For he is our peace, who hath made both one, <span style="color:#800000">[^f114]</span> and breaking down the middle wall of partition, the enmities in our flesh;
+<sup>13</sup> But now in Christ Jesus [^f113] you, who formerly were far off, have been made nigh through the blood of Christ.
 
-<span style="color:#800000">15</span> Abolishing in his flesh the law of commandments (which is) contained in ordinances, that he might unite in himself the two into one new man, making peace;
+<sup>14</sup> For he is our peace, who hath made both one, [^f114] and breaking down the middle wall of partition, the enmities in our flesh;
 
-<span style="color:#800000">16</span> That he might reconcile both to God in one body through the cross, slaying <span style="color:#800000">[^f115]</span> the enmities by it;
+<sup>15</sup> Abolishing in his flesh the law of commandments (which is) contained in ordinances, that he might unite in himself the two into one new man, making peace;
 
-<span style="color:#800000">17</span> And coming, preached peace to you who were far off, and peace to those who were nigh;
+<sup>16</sup> That he might reconcile both to God in one body through the cross, slaying [^f115] the enmities by it;
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">18</span> For through him we both have access in one Spirit to the Father.</p>
+<sup>17</sup> And coming, preached peace to you who were far off, and peace to those who were nigh;
 
-<span style="color:#800000">19</span> Therefore ye are no longer strangers and foreigners, but fellowcitizens of the saints, and of the household of God, <span style="color:#800000">20</span> Having been built on the foundation of the apostles and prophets, of which Jesus Christ himself is the chief cornerstone;
+<p style="text-align:center" markdown="1"><sup>18</sup> For through him we both have access in one Spirit to the Father.</p>
 
-<span style="color:#800000">21</span> In whom the whole building joined together groweth into a holy temple in the Lord;
+<sup>19</sup> Therefore ye are no longer strangers and foreigners, but fellowcitizens of the saints, and of the household of God,
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">22</span> In whom ye also are built together <span style="color:#800000">[^f116]</span> for a habitation of God in the Spirit.</p>
+<sup>20</sup> Having been built on the foundation of the apostles and prophets, of which Jesus Christ himself is the chief cornerstone;
+
+<sup>21</sup> In whom the whole building joined together groweth into a holy temple in the Lord;
+
+<p style="text-align:center" markdown="1"><sup>22</sup> In whom ye also are built together [^f116] for a habitation of God in the Spirit.</p>
 
 <!-- PAGE 155 -->
 
-<span style="color:#800000">1</span> For this cause I Paul, the prisoner of Jesus Christ, discharge the office of ambassador for you Gentiles;
+<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
 
-<span style="color:#800000">2</span> If ye have heard of dispensation of the grace of God, (which was) given me towards you;
+<sup>1</sup> For this cause I Paul, the prisoner of Jesus Christ, discharge the office of ambassador for you Gentiles;
 
-<span style="color:#800000">3</span> That through revelation he made known to me the secret, as I wrote a little before;
+<sup>2</sup> If ye have heard of dispensation of the grace of God, (which was) given me towards you;
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">4</span> By attending to which ye may understand my knowledge in the mystery of Christ,</p>
+<sup>3</sup> That through revelation he made known to me the secret, as I wrote a little before;
 
-<span style="color:#800000">5</span> Which in other ages was not made known to the sons of men, as it hath now been revealed to his holy apostles and prophets through the Spirit, <span style="color:#800000">6</span> That the Gentiles are fellow-heirs, and of the same body, and partakers of his promise in Christ through the gospel.
+<p style="text-align:center" markdown="1"><sup>4</sup> By attending to which ye may understand my knowledge in the mystery of Christ,</p>
 
-<span style="color:#800000">7</span> Of which I was made a minister, according to the gift of the grace of God, which was given to me according to the efficacy of his power.
+<sup>5</sup> Which in other ages was not made known to the sons of men, as it hath now been revealed to his holy apostles and prophets through the Spirit,
 
-<span style="color:#800000">8</span> To me, the least of all saints, was this grace given, that I should preach among the Gentiles the unsearchable riches of Christ;
+<sup>6</sup> That the Gentiles are fellow-heirs, and of the same body, and partakers of his promise in Christ through the gospel.
 
-<span style="color:#800000">9</span> And that I should make manifest to all, what is the fellowship of the mystery, which hath been hid from ages in God, who created all things through Jesus Christ;
+<sup>7</sup> Of which I was made a minister, according to the gift of the grace of God, which was given to me according to the efficacy of his power.
 
-<span style="color:#800000">10</span> That the manifold wisdom of God might now be manifested to principalities and powers in heavenly places through the church, <span style="color:#800000">11</span> According to the eternal purpose which he purposed in Christ Jesus our Lord, <span style="color:#800000">12</span> Through whom we have boldness, and access with confidence, through the faith of him.
+<sup>8</sup> To me, the least of all saints, was this grace given, that I should preach among the Gentiles the unsearchable riches of Christ;
 
-<span style="color:#800000">13</span> Wherefore I desire that ye faint not at my afflictions for you, which is your glory.
+<sup>9</sup> And that I should make manifest to all, what is the fellowship of the mystery, which hath been hid from ages in God, who created all things through Jesus Christ;
+
+<sup>10</sup> That the manifold wisdom of God might now be manifested to principalities and powers in heavenly places through the church,
+
+<sup>11</sup> According to the eternal purpose which he purposed in Christ Jesus our Lord,
+
+<sup>12</sup> Through whom we have boldness, and access with confidence, through the faith of him.
+
+<sup>13</sup> Wherefore I desire that ye faint not at my afflictions for you, which is your glory.
 
 <!-- PAGE 156 -->
 
-<span style="color:#800000">14</span> For this cause I bend my knees to the Father of our Lord Jesus Christ, <span style="color:#800000">15</span> Of whom the whole family in heaven and on earth is named, <span style="color:#800000">16</span> That he would give to you, according to the riches of his glory, to be strengthened with might through his Spirit in the inner man, <span style="color:#800000">17</span> That Christ may dwell in your hearts through faith, that ye may be rooted and grounded in love, <span style="color:#800000">[^f117]</span> <span style="color:#800000">18</span> That ye may be able to comprehend with all saints, what is the breadth, and length, and depth, and height;
+<sup>14</sup> For this cause I bend my knees to the Father of our Lord Jesus Christ,
 
-<span style="color:#800000">19</span> To know, I say, the love of Christ, which *surpasseth* knowledge, that ye may be filled with all the fullness of God.
+<sup>15</sup> Of whom the whole family in heaven and on earth is named,
 
-<span style="color:#800000">20</span> Now to him who is able to do abundantly above all that we ask or think, according to the power working in you, <span style="color:#800000">21</span> Be glory in the church through Jesus Christ, in all ages, for ever and ever. Amen.
+<sup>16</sup> That he would give to you, according to the riches of his glory, to be strengthened with might through his Spirit in the inner man,
 
-<span style="color:#800000">1</span> I therefore, a prisoner in the Lord, beseech you, that ye may walk worthy of the calling to which ye have been called, <span style="color:#800000">2</span> With all humility and meekness, with patience forbearing one another in love, <span style="color:#800000">3</span> Endeavoring to keep the unity of the Spirit in’ the bond of peace.
+<sup>17</sup> That Christ may dwell in your hearts through faith, that ye may be rooted and grounded in love, [^f117]
 
-<span style="color:#800000">4</span> One body and one spirit; <span style="color:#800000">[^f118]</span> as ye have been called in one hope of your calling.
+<sup>18</sup> That ye may be able to comprehend with all saints, what is the breadth, and length, and depth, and height;
 
-<span style="color:#800000">5</span> One Lord <span style="color:#800000">[^f119]</span> one faith, one baptism.
+<sup>19</sup> To know, I say, the love of Christ, which *surpasseth* knowledge, that ye may be filled with all the fullness of God.
 
-<span style="color:#800000">6</span> One God and Father of all, who is above all things, and through all things, *(or, above all men and through all men,)* and in you all.
+<sup>20</sup> Now to him who is able to do abundantly above all that we ask or think, according to the power working in you,
+
+<sup>21</sup> Be glory in the church through Jesus Christ, in all ages, for ever and ever. Amen.
+
+<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
+
+<sup>1</sup> I therefore, a prisoner in the Lord, beseech you, that ye may walk worthy of the calling to which ye have been called,
+
+<sup>2</sup> With all humility and meekness, with patience forbearing one another in love,
+
+<sup>3</sup> Endeavoring to keep the unity of the Spirit in’ the bond of peace.
+
+<sup>4</sup> One body and one spirit; [^f118] as ye have been called in one hope of your calling.
+
+<sup>5</sup> One Lord [^f119] one faith, one baptism.
+
+<sup>6</sup> One God and Father of all, who is above all things, and through all things, *(or, above all men and through all men,)* and in you all.
 
 <!-- PAGE 157 -->
 
-<span style="color:#800000">7</span> But to each of us hath grace been given, according to <span style="color:#800000">8</span> the measure of the gift of Christ.
+<sup>7</sup> But to each of us hath grace been given, according to <sup>8</sup> the measure of the gift of Christ.
 
-<span style="color:#800000">8</span> Wherefore he saith: After having ascended on high, he led captivity captive <span style="color:#800000">[^f120]</span> and gave gifts to men. (Psalm 68:18.)
+<sup>8</sup> Wherefore he saith: After having ascended on high, he led captivity captive [^f120] and gave gifts to men. (Psalm 68:18.)
 
-<span style="color:#800000">9</span> Now that (word) he ascended, what is it but that he also descended first into the lower parts of the earth?
+<sup>9</sup> Now that (word) he ascended, what is it but that he also descended first into the lower parts of the earth?
 
-<span style="color:#800000">10</span> He who descended is the same also who ascended above all heavens, that he might fill all things. <span style="color:#800000">[^f121]</span> <span style="color:#800000">11</span> And he gave some apostles, and some prophets, and some evangelists, and others pastors and teachers, <span style="color:#800000">12</span> For the renewing of the saints, for the work of the ministry, for the edification of the body of Christ;
+<sup>10</sup> He who descended is the same also who ascended above all heavens, that he might fill all things. [^f121]
 
-<span style="color:#800000">13</span> Till we all come into the unity of the faith, and of the knowledge of the Son of God, into a perfect man, into the measure of the age of fullness <span style="color:#800000">[^f122]</span> of Christ;
+<sup>11</sup> And he gave some apostles, and some prophets, and some evangelists, and others pastors and teachers,
 
-<span style="color:#800000">14</span> That we may no longer be children, who are tossed and driven about by every wind of doctrine, by the cunning of men, by craftiness for lying in wait to deceive;
+<sup>12</sup> For the renewing of the saints, for the work of the ministry, for the edification of the body of Christ;
 
-<span style="color:#800000">15</span> But, following truth with love, may grow up in all things into him who is the head, that is, Christ;
+<sup>13</sup> Till we all come into the unity of the faith, and of the knowledge of the Son of God, into a perfect man, into the measure of the age of fullness [^f122] of Christ;
 
-<span style="color:#800000">16</span> From whom the whole body fitly joined together and compacted by every joint of supply, according to the efficacy in the measure of every part, maketh increase of the body, to the edifying of itself, in love.
+<sup>14</sup> That we may no longer be children, who are tossed and driven about by every wind of doctrine, by the cunning of men, by craftiness for lying in wait to deceive;
 
-<span style="color:#800000">17</span> This I say, therefore, and testify in the Lord, that ye no longer walk, as other Gentiles walk, in the vanity of their mind <span style="color:#800000">18</span> Blinded in the understanding, alienated from the life of God on account of the ignorance which is in them, on account of the blindness of their heart;
+<sup>15</sup> But, following truth with love, may grow up in all things into him who is the head, that is, Christ;
+
+<sup>16</sup> From whom the whole body fitly joined together and compacted by every joint of supply, according to the efficacy in the measure of every part, maketh increase of the body, to the edifying of itself, in love.
+
+<sup>17</sup> This I say, therefore, and testify in the Lord, that ye no longer walk, as other Gentiles walk, in the vanity of their mind
+
+<sup>18</sup> Blinded in the understanding, alienated from the life of God on account of the ignorance which is in them, on account of the blindness of their heart;
 
 <!-- PAGE 158 -->
 
-<span style="color:#800000">19</span> Who, after having ceased to hare any feeling, <span style="color:#800000">[^f123]</span> have given themselves up to lasciviousness, to commit all uncleanness with greediness.
+<sup>19</sup> Who, after having ceased to hare any feeling, [^f123] have given themselves up to lasciviousness, to commit all uncleanness with greediness.
 
-<span style="color:#800000">20</span> But ye have not so learned Christ;
+<sup>20</sup> But ye have not so learned Christ;
 
-<span style="color:#800000">21</span> If indeed ye have heard him, and have been taught in him, as the truth is in Jesus;
+<sup>21</sup> If indeed ye have heard him, and have been taught in him, as the truth is in Jesus;
 
-<span style="color:#800000">22</span> That ye put off, according to the former conversation, the old man, which is corrupted according to the lusts of deceit; <span style="color:#800000">[^f124]</span> <span style="color:#800000">23</span> And that ye be renewed in the spirit of your mind;
+<sup>22</sup> That ye put off, according to the former conversation, the old man, which is corrupted according to the lusts of deceit; [^f124]
 
-<span style="color:#800000">24</span> And that ye put on the new man, which hath been created according to God, in righteousness and holiness of truth. <span style="color:#800000">[^f125]</span> <span style="color:#800000">25</span> Wherefore, putting away lying, speak every one the truth with his neighbor;
+<sup>23</sup> And that ye be renewed in the spirit of your mind;
 
-<span style="color:#800000">26</span> For we are members one of another.
+<sup>24</sup> And that ye put on the new man, which hath been created according to God, in righteousness and holiness of truth. [^f125]
 
-<span style="color:#800000">27</span> Be ye angry, and do not sin. (Psalm 4:4.) Let not the sun go down on your wrath; and give not place to the devil.
+<sup>25</sup> Wherefore, putting away lying, speak every one the truth with his neighbor;
 
-<span style="color:#800000">28</span> He that stole, let him steal no more; but rather let him labor, by working with his hands what is good, that he may have to give to him that needeth.
+<sup>26</sup> For we are members one of another.
 
-<span style="color:#800000">29</span> Let no filthy speech proceed out of your mouth; but if any (speech) is good for the edification of use, that it may impart grace to the hearers <span style="color:#800000">30</span> And grieve not the Holy Spirit of God, by whom ye have been sealed to the day of redemption.
+<sup>27</sup> Be ye angry, and do not sin. (Psalm 4:4.) Let not the sun go down on your wrath; and give not place to the devil.
 
-<span style="color:#800000">31</span> Let all bitterness, and anger, and wrath, and clamuor, and slander, be put away from you with all malice.
+<sup>28</sup> He that stole, let him steal no more; but rather let him labor, by working with his hands what is good, that he may have to give to him that needeth.
 
-<span style="color:#800000">32</span> And be ye kind one to another, merciful, forgiving one another, as God hath forgiven you in Christ.
+<sup>29</sup> Let no filthy speech proceed out of your mouth; but if any (speech) is good for the edification of use, that it may impart grace to the hearers
+
+<sup>30</sup> And grieve not the Holy Spirit of God, by whom ye have been sealed to the day of redemption.
+
+<sup>31</sup> Let all bitterness, and anger, and wrath, and clamuor, and slander, be put away from you with all malice.
+
+<sup>32</sup> And be ye kind one to another, merciful, forgiving one another, as God hath forgiven you in Christ.
 
 <!-- PAGE 159 -->
 
-<span style="color:#800000">1</span> Be ye therefore imitators of God, as beloved children;
+<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
 
-<span style="color:#800000">2</span> And walk in love, as Christ also hath loved us, and hath given himself for us an offering and sacrifice to God, for a smell of delightful fragrance.
+<sup>1</sup> Be ye therefore imitators of God, as beloved children;
 
-<span style="color:#800000">3</span> But fornication, and all uncleanness, or covetousness, let <span style="color:#800000">4</span> them not even be named among you, as becometh *saints.* <span style="color:#800000">4</span> Or filthiness, foolish talking, jesting; which are not convenient; but rather grace. <span style="color:#800000">[^f126]</span> <span style="color:#800000">5</span> For this ye know, that no fornicator, or unclean person, or covetous man, who is an idolater, shall obtain inheritance in the kingdom of Christ and of God.
+<sup>2</sup> And walk in love, as Christ also hath loved us, and hath given himself for us an offering and sacrifice to God, for a smell of delightful fragrance.
 
-<span style="color:#800000">6</span> Let no man deceive you by vain words; for on account of these things cometh the wrath of God on disobedient *(or, unbelieving)* children, <span style="color:#800000">[^f127]</span> <span style="color:#800000">7</span> Be not ye therefore their companions.
+<sup>3</sup> But fornication, and all uncleanness, or covetousness, let <sup>4</sup> them not even be named among you, as becometh *saints.*
 
-<span style="color:#800000">8</span> Ye were once darkness; but now ye are light in the Lord; walk as children of light;
+<sup>4</sup> Or filthiness, foolish talking, jesting; which are not convenient; but rather grace. [^f126]
 
-<span style="color:#800000">9</span> (For the fruit of the light is in all goodness, and righteousness, and truth;)
+<sup>5</sup> For this ye know, that no fornicator, or unclean person, or covetous man, who is an idolater, shall obtain inheritance in the kingdom of Christ and of God.
 
-<span style="color:#800000">10</span> Proving what is acceptable to God. <span style="color:#800000">[^f128]</span> <span style="color:#800000">11</span> And have no fellowship with the unfruitful works of darkness; but rather reprove them.
+<sup>6</sup> Let no man deceive you by vain words; for on account of these things cometh the wrath of God on disobedient *(or, unbelieving)* children, [^f127]
 
-<span style="color:#800000">12</span> For it is a shame even to speak of those things which are done by them in secret.
+<sup>7</sup> Be not ye therefore their companions.
 
-<span style="color:#800000">13</span> But all things, when they are brought forward, are made manifest by the light; for every thing that maketh manifest is light.
+<sup>8</sup> Ye were once darkness; but now ye are light in the Lord; walk as children of light;
 
-<span style="color:#800000">14</span> Wherefore he saith: Awake, thou that sleepest, and arise from the dead; and Christ shall give thee light.
+<sup>9</sup> (For the fruit of the light is in all goodness, and righteousness, and truth;)
+
+<sup>10</sup> Proving what is acceptable to God. [^f128]
+
+<sup>11</sup> And have no fellowship with the unfruitful works of darkness; but rather reprove them.
+
+<sup>12</sup> For it is a shame even to speak of those things which are done by them in secret.
+
+<sup>13</sup> But all things, when they are brought forward, are made manifest by the light; for every thing that maketh manifest is light.
+
+<sup>14</sup> Wherefore he saith: Awake, thou that sleepest, and arise from the dead; and Christ shall give thee light.
 
 <!-- PAGE 160 -->
 
-<span style="color:#800000">15</span> See then how you walk carefully, not as fools, but as wise;
+<sup>15</sup> See then how you walk carefully, not as fools, but as wise;
 
-<span style="color:#800000">16</span> Redeeming the time, because the days are evil.
+<sup>16</sup> Redeeming the time, because the days are evil.
 
-<span style="color:#800000">17</span> Wherefore be ye not *imprudent,* but understanding what is the will of the Lord.
+<sup>17</sup> Wherefore be ye not *imprudent,* but understanding what is the will of the Lord.
 
-<span style="color:#800000">18</span> And be not drunk with wine, in which is lasciviousness;
+<sup>18</sup> And be not drunk with wine, in which is lasciviousness;
 
-<span style="color:#800000">19</span> But be filled with the Spirit; speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart, to the Lord;
+<sup>19</sup> But be filled with the Spirit; speaking to yourselves in psalms, and hymns, and spiritual songs, singing and making melody in your heart, to the Lord;
 
-<span style="color:#800000">20</span> Giving thanks always for all things, in the name of our Lord Jesus Christ, to God and the Father.
+<sup>20</sup> Giving thanks always for all things, in the name of our Lord Jesus Christ, to God and the Father.
 
-<span style="color:#800000">21</span> Submit yourselves to one another in the fear of Christ *(or, of God).* <span style="color:#800000">22</span> Let wives be subject to their own husbands as to the Lord;
+<sup>21</sup> Submit yourselves to one another in the fear of Christ *(or, of God).*
 
-<span style="color:#800000">23</span> For the husband is the head of the wife, as Christ also is the savior of the church; and he is the savior of the body.
+<sup>22</sup> Let wives be subject to their own husbands as to the Lord;
 
-<span style="color:#800000">24</span> But, as the church is subject to Christ, in like manner (let) wives (he subject) to their own husbands in all things.
+<sup>23</sup> For the husband is the head of the wife, as Christ also is the savior of the church; and he is the savior of the body.
 
-<span style="color:#800000">25</span> Husbands, love your wives; as Christ also loved the church, and gave himself for it,
+<sup>24</sup> But, as the church is subject to Christ, in like manner (let) wives (he subject) to their own husbands in all things.
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">26</span> That he might sanctify it, cleansing it with the washing of water by the word;</p>
+<sup>25</sup> Husbands, love your wives; as Christ also loved the church, and gave himself for it,
 
-<span style="color:#800000">27</span> That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it might be holy and unblamable.
+<p style="text-align:center" markdown="1"><sup>26</sup> That he might sanctify it, cleansing it with the washing of water by the word;</p>
 
-<span style="color:#800000">28</span> So ought husbands to love their wives, as their own bodies. He who loveth his wife loveth himself.
+<sup>27</sup> That he might present it to himself a glorious church, not having spot, or wrinkle, or any such thing; but that it might be holy and unblamable.
 
-<span style="color:#800000">29</span> For no man ever hated his own flesh, but nourisheth and cherisheth it; as also Christ <span style="color:#800000">[^f129]</span> the church;
+<sup>28</sup> So ought husbands to love their wives, as their own bodies. He who loveth his wife loveth himself.
 
-<span style="color:#800000">30</span> For we are members of his body, of his flesh, and of his bones.
+<sup>29</sup> For no man ever hated his own flesh, but nourisheth and cherisheth it; as also Christ [^f129] the church;
+
+<sup>30</sup> For we are members of his body, of his flesh, and of his bones.
 
 <!-- PAGE 161 -->
 
-<span style="color:#800000">31</span> For this reason shall a man leave his father and mother, and shall cleave to his wife; and the two shall be one flesh.
+<sup>31</sup> For this reason shall a man leave his father and mother, and shall cleave to his wife; and the two shall be one flesh.
 
-<span style="color:#800000">32</span> This is a great secret; but I speak concerning Christ and the church.
+<sup>32</sup> This is a great secret; but I speak concerning Christ and the church.
 
-<span style="color:#800000">33</span> Yet let every one of you love his wife; and let the woman reverence her husband.
+<sup>33</sup> Yet let every one of you love his wife; and let the woman reverence her husband.
 
-<span style="color:#800000">1</span> Children, obey your parents in the Lord; for this is right.
+<h2 class="scripture-anchor" id="chapter-6" data-ref="CHAPTER 6" style="display:none">CHAPTER 6</h2>
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">2</span> Honour thy father and mother; (which is the first commandment with promise;)</p>
+<sup>1</sup> Children, obey your parents in the Lord; for this is right.
 
-<span style="color:#800000">3</span> That it may be well with thee, and that thou mayest be longlived on the earth.
+<p style="text-align:center" markdown="1"><sup>2</sup> Honour thy father and mother; (which is the first commandment with promise;)</p>
 
-<span style="color:#800000">4</span> Ye fathers also, provoke not your children to wrath; but bring them up in the instruction and reproof of the Lord.
+<sup>3</sup> That it may be well with thee, and that thou mayest be longlived on the earth.
 
-<span style="color:#800000">5</span> Servants, obey your masters <span style="color:#800000">[^f130]</span> according to the flesh, with fear and trembling, in the simplicity of your hearts, as to Christ;
+<sup>4</sup> Ye fathers also, provoke not your children to wrath; but bring them up in the instruction and reproof of the Lord.
 
-<span style="color:#800000">6</span> Not with eye-service, as endeavoring to please men, but as the servants of Christ, doing the will of God from the heart: <span style="color:#800000">[^f131]</span> <span style="color:#800000">7</span> With good-will, serving the Lord, and not men;
+<sup>5</sup> Servants, obey your masters [^f130] according to the flesh, with fear and trembling, in the simplicity of your hearts, as to Christ;
 
-<span style="color:#800000">8</span> Knowing that everyone, whether he be bond or free, shall receive from the Lord whatever good he shall have done.
+<sup>6</sup> Not with eye-service, as endeavoring to please men, but as the servants of Christ, doing the will of God from the heart: [^f131]
 
-<span style="color:#800000">9</span> And ye, masters, perform your mutual duty toward them, forbearing threatenings; knowing that their Master and yours is in heaven; and there is no respect of persons with him.
+<sup>7</sup> With good-will, serving the Lord, and not men;
 
-<span style="color:#800000">10</span> Finally, my brethren, be strong in the Lord, and in the power of his might.
+<sup>8</sup> Knowing that everyone, whether he be bond or free, shall receive from the Lord whatever good he shall have done.
 
-<span style="color:#800000">11</span> Put on the whole armor of God, that ye may be able to stand against the crafty devices of the devil.
+<sup>9</sup> And ye, masters, perform your mutual duty toward them, forbearing threatenings; knowing that their Master and yours is in heaven; and there is no respect of persons with him.
+
+<sup>10</sup> Finally, my brethren, be strong in the Lord, and in the power of his might.
+
+<sup>11</sup> Put on the whole armor of God, that ye may be able to stand against the crafty devices of the devil.
 
 <!-- PAGE 162 -->
 
-<span style="color:#800000">12</span> For we wrestle not against flesh and blood, but against principalities, against powers, against the princes of the world, of the darkness of this age, against spiritual wickednesses in heavenly places.
+<sup>12</sup> For we wrestle not against flesh and blood, but against principalities, against powers, against the princes of the world, of the darkness of this age, against spiritual wickednesses in heavenly places.
 
-<span style="color:#800000">13</span> Wherefore take to you the whole armor of God, that ye may be able to resist in the evil day, and, having accomplished everything: to stand.
+<sup>13</sup> Wherefore take to you the whole armor of God, that ye may be able to resist in the evil day, and, having accomplished everything: to stand.
 
-<span style="color:#800000">14</span> Stand therefore, having your loins girt with truth, and having put on the breastplate of righteousness,
+<sup>14</sup> Stand therefore, having your loins girt with truth, and having put on the breastplate of righteousness,
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">15</span> And having your feet shod with the preparation of the gospel of peace;</p>
+<p style="text-align:center" markdown="1"><sup>15</sup> And having your feet shod with the preparation of the gospel of peace;</p>
 
-<span style="color:#800000">16</span> Above all, taking the shield of faith, by which ye may be able to quench all the fiery darts of the wicked one.
+<sup>16</sup> Above all, taking the shield of faith, by which ye may be able to quench all the fiery darts of the wicked one.
 
-<span style="color:#800000">17</span> And take the helmet of salvation, and the sword of the Spirit, which is the word of God;
+<sup>17</sup> And take the helmet of salvation, and the sword of the Spirit, which is the word of God;
 
-<span style="color:#800000">18</span> Praying at all times in the Spirit, with all prayer and supplication, and watching for this very purpose, with all perseverance and supplication for all saints;
+<sup>18</sup> Praying at all times in the Spirit, with all prayer and supplication, and watching for this very purpose, with all perseverance and supplication for all saints;
 
-<span style="color:#800000">19</span> And for me, that speech may be given to me, in the opening of my mouth with boldness, that I may make known the mystery of the gospel; <span style="color:#800000">[^f132]</span> <span style="color:#800000">20</span> For which I discharge the office of ambassador, in the chain; that I may conduct myself in it courageously, as I ought to speak.
+<sup>19</sup> And for me, that speech may be given to me, in the opening of my mouth with boldness, that I may make known the mystery of the gospel; [^f132]
 
-<span style="color:#800000">21</span> But that ye also may know my affairs, what I do, Tychicus, a beloved brother and faithful minister in the Lord, will make known to you all things;
+<sup>20</sup> For which I discharge the office of ambassador, in the chain; that I may conduct myself in it courageously, as I ought to speak.
 
-<span style="color:#800000">22</span> Whom I have sent to you for that purpose, that ye might know my affairs, and might comfort your hearts.
+<sup>21</sup> But that ye also may know my affairs, what I do, Tychicus, a beloved brother and faithful minister in the Lord, will make known to you all things;
 
-<span style="color:#800000">23</span> Peace (be) to the brethren, and love, with faith, from God the Father and the Lord Jesus Christ.
+<sup>22</sup> Whom I have sent to you for that purpose, that ye might know my affairs, and might comfort your hearts.
 
-<span style="color:#800000">24</span> Grace (be)with all who love our Lord Jesus Christ in sincerity. Amen.
+<sup>23</sup> Peace (be) to the brethren, and love, with faith, from God the Father and the Lord Jesus Christ.
+
+<sup>24</sup> Grace (be)with all who love our Lord Jesus Christ in sincerity. Amen.
 
 <!-- PAGE 163 -->
 
@@ -2020,7 +2344,7 @@ Tychicus is commended, that his statements may be more fully believed. <span sty
 
 [^f34]: “There are ancient medals now extant, which have the figure of Diana on them, with this inscription, <span style="color:#0000d4">κοινὸν τῆς Ασίας</span>, denoting that the cities of Asia were one body or commonwealth. Thus also were all Christians of all nations, Jews and Gentiles, under Christ.” — Chandler.
 
-[^f35]: For ‘the lower parts of the earth,’ they may possibly signify no more than the place beneath; as when our Savior said, (John 8:23,) ‘Ye are from beneath, I am from above; ye are of this world, I am not of this world;’ or as God spake by the prophet, ‘I will shew wonders in heaven above, and signs in the earth beneath.’ Nay, they may well refer to his incarnation, according to that of David, (<span style="color:#800000"><19D915></span>Psalm 139:15,) or to his burial. (Psalm 63:9.)” — Pearson.
+[^f35]: For ‘the lower parts of the earth,’ they may possibly signify no more than the place beneath; as when our Savior said, (John 8:23,) ‘Ye are from beneath, I am from above; ye are of this world, I am not of this world;’ or as God spake by the prophet, ‘I will shew wonders in heaven above, and signs in the earth beneath.’ Nay, they may well refer to his incarnation, according to that of David, (<span class="ages-code">&lt;19D915&gt;</span>Psalm 139:15,) or to his burial. (Psalm 63:9.)” — Pearson.
 
 [^f36]: “This was the place of which our Savior spake to his disciples, ‘What and if ye shall see the Son of Man ascend up where he was before?’ Had he been there before in body, it had been no such wonder that he should have ascended thither again; but that his body should ascend unto that place where the majesty of God was most resplendent; that the flesh of our flesh, and bone of our bone, should be seated far above all angels and archangels, all principalities and powers, even at the right hand of God; this was that which Christ propounded as worthy of their greatest admiration. Whatsoever heaven there is higher than all the rest that are called heavens; whatsoever sanctuary is holier than all which are called holies; whatsoever place is of greatest dignity in all those courts above, into that place did he ascend, where, in the splendor of his Deity, he was before he took upon him our humanity.” — Pearson.
 
@@ -2126,7 +2450,7 @@ Tychicus is commended, that his statements may be more fully believed. <span sty
 
 [^f115]: “Ayant destruit.” “Having destroyed.”
 
-[^f116]: Or, “In whom also be ye builded together.” <span style="color:#800000">[^f17]</span> “Ou, Afin qu’estans enracinez et fondez en charite, vous puissiez comprendre.” “Or, That, being rooted and founded in love, ye may be able to comprehend.”
+[^f116]: Or, “In whom also be ye builded together.” [^f17] “Ou, Afin qu’estans enracinez et fondez en charite, vous puissiez comprendre.” “Or, That, being rooted and founded in love, ye may be able to comprehend.”
 
 [^f118]: “Soyez un corps et un esprit; ou, Il n’y a qu’un corps et un esprit.” “Be ye one body and one spirit; or, There is but one body and one spirit.”
 

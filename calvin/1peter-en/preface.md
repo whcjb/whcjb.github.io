@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: 1peter-en
 book_name: "Calvin on 1 Peter"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-07-02 17:47
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -190,5 +190,7 @@ As to the place from which he wrote, all do not agree. There is, however, no rea
 
 
 [^f3]: *Horne,* in his Introduction, vol. 4:p. 425, mentions four opinions on this subject. According to Bishop Pearson, Mill, and Le Clerc, it was Babylon in Egypt; according to Erasmus, Drusius, Beza, Dr. Lightfoot, Basnage, Beausobre, Dr. Cave, Wetstein, Drs. Benson and A. Clarke, it was Babylon in Assyria; according to Michaelis, it was Babylon in Mesopotamia; and according to Grotius, Drs. Whitby, Lardner, Macknight, and Hales, Bishop Tomline, and all the learned of the Romish communion, it is to be taken figuratively for Rome, according to what was done by John in Revelation 17:and 18:What renders the last opinion very improbable is, that to date an epistle at a place to which a figurative name is given, is without another instance in Scripture, and the thing itself seems quite absurd. The language of prophecy is quite a different matter. Paul wrote several of his epistles at Rome, and in no instance did he do anything of this kind. Such an opinion would have never gained ground, had there not been from early times a foolish attempt to connect Peter with Rome. And it is to be regretted that some learned Protestants have been duped on this subject by a mass of fictitious evidence which has been collected by the partisans of the Romish Church. — *Ed.*
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 

@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: james-en
 book_name: "Calvin on James"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-07-02 17:31
 next_section: 1
 next_label: "Chapter 1"
 ---

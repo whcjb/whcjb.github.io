@@ -56,7 +56,7 @@ The canonicity of James’s Epistle has been a subject of dispute, though almost
 <!-- PAGE 5 -->
 The occasion of writing the Epistle appears to have been the abuse made of the doctrine of free grace by professing Christians, — a subject referred to also by Paul in Romans vi., and in his other Epistles. Abounding grace is at one time despised and rejected; at another time it is turned into licentiousness: these are evils which have ever prevailed in the Church. The Pharisee is too proud to receive grace; the Antinomian pretends to receive and magnify grace, that he may gratify the inclinations of his sinful nature. It was against the Antinomian that James wrote his Epistle.
 
-According to *Lardner* and *Macknight,* the Epistle was addressed to the whole Jewish nation, at home and abroad, believers and unbelievers; according to *Grotius* and *Wall,* to the Jews dispersed abroad indiscriminately, believing and unbelieving; according to *Michaelis,* to the believing Jews, while the unbelieving were not overlooked; but according to *Beza* and *Scott,* to the scattered Jews who professed the Christian faith. And this last opinion has the strongest reasons and evidence in its favor. <span style="color:#800000">[^f1]</span>
+According to *Lardner* and *Macknight,* the Epistle was addressed to the whole Jewish nation, at home and abroad, believers and unbelievers; according to *Grotius* and *Wall,* to the Jews dispersed abroad indiscriminately, believing and unbelieving; according to *Michaelis,* to the believing Jews, while the unbelieving were not overlooked; but according to *Beza* and *Scott,* to the scattered Jews who professed the Christian faith. And this last opinion has the strongest reasons and evidence in its favor. [^f1]
 
 With regard to the *First* Epistle of PETER, there has never been a doubt respecting its genuineness. This Apostle took a prominent part at first in the cause of Christianity, but of his labors after the council at Jerusalem, in the year 49, recorded in Acts 15., we have no account in Scripture. Mention is indeed made, in Galatians 2:11, of his being afterwards at Antioch. It has been justly concluded from the superscription of this Epistle that he exercised his ministry in those parts which are here mentioned.
 
@@ -71,7 +71,7 @@ Though there is no name attached to it, yet there has been universal consent fro
 
 JUDE, or Judas, was, as he says, the brother of James, and therefore the son of Alphaeus or Cleopas. Though he does not call himself an apostle, yet he proved himself to be so by saying that he was the brother of James. He is called, as James was, the brother of our Lord, Matthew 13:55. We have in Scripture no account of his ministry after the day of Pentecost.
 
-His Epistle was not at first universally received as canonical. This is acknowledged by *Origen, Eusebius,* and *Jerome;* at the same time, they themselves so regarded it; and Jerome says that in his day it was by most received as genuine; and it has been quoted as a part of Scripture by *Clement* of Alexandria, *Tertullian, Cyril* of Jerusalem, *Athanasius, Ambrose,* and *Augustine.* <span style="color:#800000">[^f2]</span>
+His Epistle was not at first universally received as canonical. This is acknowledged by *Origen, Eusebius,* and *Jerome;* at the same time, they themselves so regarded it; and Jerome says that in his day it was by most received as genuine; and it has been quoted as a part of Scripture by *Clement* of Alexandria, *Tertullian, Cyril* of Jerusalem, *Athanasius, Ambrose,* and *Augustine.* [^f2]
 
 That some of the Epistles were not universally received as authentic at first is no matter of wonder, when we consider the scattered condition of the Church, and the scanty means of communication. The fact, that *some* had doubts respecting them does not in the least degree invalidate their genuineness; on the contrary, it has conduced to strengthen the evidence in their favor; for the doubts of some must have occasioned a more minute inquiry as to their authenticity. And it was not long before all the Epistles, about which there had been some doubts, had attained the universal approbation of the Church; and what *Lardner* states is worthy of special attention, — That no writings, received by the primitive Church as genuine, have been since proved to be spurious; and that no writings, regarded by it as spurious, have been since proved to be genuine.
 
@@ -169,7 +169,7 @@ As, however, it happened to Christians, that how much soever they sought peace, 
 
 At the beginning of the fifth chapter he reminds the elders of their duty, that they were not to tyrannize over the Church, but to preside under Christ with moderation. He recommends to the young modesty and teachableness. At length, after a short exhortation, he closes the Epistle with a prayer.
 
-As to the place from which he wrote, all do not agree. There is, however, no reason that I see why we should doubt that he was then at Babylon, as he expressly declares. <span style="color:#800000">[^f3]</span> But as the persuasion had prevailed, that he had moved from Antioch to Rome, and that he died at Rome, the ancients, led by this sole argument, imagined that Rome is here allegorically called Babylon. But as without any probable conjecture they rashly believed what they have said of the Roman episcopate of Peter, so also this allegorical figment ought to be regarded as nothing. It is indeed much more probable that Peter, according to the character of his apostleship, traveled over those parts in which most of the Jews resided; and we know that a great number of them were in Babylon and in the surrounding countries.
+As to the place from which he wrote, all do not agree. There is, however, no reason that I see why we should doubt that he was then at Babylon, as he expressly declares. [^f3] But as the persuasion had prevailed, that he had moved from Antioch to Rome, and that he died at Rome, the ancients, led by this sole argument, imagined that Rome is here allegorically called Babylon. But as without any probable conjecture they rashly believed what they have said of the Roman episcopate of Peter, so also this allegorical figment ought to be regarded as nothing. It is indeed much more probable that Peter, according to the character of his apostleship, traveled over those parts in which most of the Jews resided; and we know that a great number of them were in Babylon and in the surrounding countries.
 
 <!-- PAGE 19 -->
 
@@ -177,16 +177,17 @@ As to the place from which he wrote, all do not agree. There is, however, no rea
 
 <h2 class="scripture-anchor" id="1-peter-1-1-2" data-ref="1 PETER 1:1-2" style="display:none">1 PETER 1:1-2</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600101&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:1-2</span></p>
 
-<strong>1.</strong> Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia,
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Peter, an apostle of Jesus Christ, to the strangers scattered throughout Pontus, Galatia, Cappadocia, Asia, and Bithynia</td><td class="scripture-la"><strong>1.</strong> Petrus, apostolus Jesu Christi, electis inquilinis qui dispersi sunt per Ponturn, Galatiam, Cappadociam, Asiam et Bithyniam</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.</td><td class="scripture-la"><strong>2.</strong> Secundum precognitionem DeiPatris in sanctificatione Spiritus, in obedientiam et aspersionem sangui nis Jesu Christi; Gratia vobis et pax multiplicetur.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**1.** Petrus, apostolus Jesu Christi, electis inquilinis qui dispersi sunt per Ponturn, Galatiam, Cappadociam, Asiam et Bithyniam, 2. Elect according to the foreknowledge of God the Father, through sanctification of the Spirit, unto obedience and sprinkling of the blood of Jesus Christ: Grace unto you, and peace, be multiplied.</p>
-
-<p style="text-align:right;" markdown="1">2. Secundum precognitionem DeiPatris in sanctificatione Spiritus, in obedientiam et aspersionem sangui nis Jesu Christi; Gratia vobis et pax multiplicetur.</p>
 
 **1.** <span style="color:#800000">*Peter, an apostle*</span>. What in this salutation is the same with those of Paul, requires no new explanation. When Paul prayed for <span style="color:#800000">*grace*</span> and <span style="color:#800000">*peace*</span>, the verb is left out; but Peter adds it, and says, <span style="color:#800000">*be multiplied*</span>; still the meaning is the same; for Paul did not wish to the faithful the beginning of grace and peace, but the increase of them, that is, that God would complete what he had begun.
 
@@ -200,28 +201,28 @@ But we ought wisely to consider what this precognition or foreknowledge is. For 
 As however in our election he assigns the first place to the gratuitous favor of God, so again he would have us to know it by the effects, for there is nothing more dangerous or more preposterous than to overlook our calling and to seek for the certainty of our election in the hidden prescience of God, which is the deepest labyrinth. Therefore to obviate this danger, Peter supplies the best correction; for though in the first place he would have us to consider the counsel of God, the cause of which is alone in himself; yet he invites us to notice the effect, by which he sets forth and bears witness to our election. That effect is the sanctification of the Spirit, even effectual calling, when faith is added to the outward preaching of the gospel, which faith is begotten by the inward operation of the Spirit.
 
 <!-- PAGE 21 -->
-<span style="color:#800000">*To the sojourners*</span>.  <span style="color:#800000">[^f4]</span> They who think that all the godly are thus called, because they are strangers in the world, and are advancing towards the celestial country, are much mistaken, and this mistake is evident from the word *dispersion* which immediately follows; for this can apply only to the Jews, not only because they were banished from their own country and scattered here and there, but also because they had been driven out of that land which had been promised to them by the Lord as a perpetual inheritance. He indeed afterwards calls all the faithful sojourners, because they are pilgrims on the earth; but the reason here is different. They were sojourners, because they had been dispersed, some in Pontus, some in Galatia, and some in Bithynia. It is nothing strange that he designed this Epistle more especially for the Jews, for he knew that he was appointed in a particular manner their apostle, as Paul teaches us in Galatians 2:8. In the countries he enumerates, he includes the whole of Asia Minor, from the Euxine to Cappadocia. <span style="color:#800000">[^f5]</span>
+<span style="color:#800000">*To the sojourners*</span>.  [^f4] They who think that all the godly are thus called, because they are strangers in the world, and are advancing towards the celestial country, are much mistaken, and this mistake is evident from the word *dispersion* which immediately follows; for this can apply only to the Jews, not only because they were banished from their own country and scattered here and there, but also because they had been driven out of that land which had been promised to them by the Lord as a perpetual inheritance. He indeed afterwards calls all the faithful sojourners, because they are pilgrims on the earth; but the reason here is different. They were sojourners, because they had been dispersed, some in Pontus, some in Galatia, and some in Bithynia. It is nothing strange that he designed this Epistle more especially for the Jews, for he knew that he was appointed in a particular manner their apostle, as Paul teaches us in Galatians 2:8. In the countries he enumerates, he includes the whole of Asia Minor, from the Euxine to Cappadocia. [^f5]
 
 <span style="color:#800000">*Unto obedience*</span>. He adds two things to sanctification, and seems to understand newness of life by <span style="color:#800000">*obedience*</span>, and by the *sprinkling* of the blood of Christ the remission of sins. But if these be parts or *effects* of sanctification, then sanctification is to be taken here somewhat different from what it means when used by Paul, that is, more generally. God then sanctifies us by an effectual calling; and this is done when we are renewed to an obedience to his righteousness, and when we are sprinkled by the blood of Christ, and thus are cleansed from our sins. And there seems to be an implied allusion to the ancient rite of sprinkling used under the law. For as it was not then sufficient for the victim to be slain and the blood to be poured out, except the people were sprinkled; so now the blood of Christ which has been shed will avail us nothing, except our consciences are by it cleansed. There is then to be understood here a contrast, that, as formerly under the law the sprinkling of blood was made by the hand of the priest; so now the Holy Spirit sprinkles our souls with the blood of Christ for the expiation of our sins.
 
-Let us now state the substance of the whole; which is, that our salvation flows from the gratuitous election of God; but that it is to be ascertained by the experience of faith, because he sanctifies us by his Spirit; and then that there are two effects or ends of our calling, even renewal into obedience and ablution by the blood of Christ; and further, that both are the work of the Holy Spirit. <span style="color:#800000">[^f6]</span> We hence conclude, that election is not to be separated from calling, nor the gratuitous righteousness of faith from newness of life.
+Let us now state the substance of the whole; which is, that our salvation flows from the gratuitous election of God; but that it is to be ascertained by the experience of faith, because he sanctifies us by his Spirit; and then that there are two effects or ends of our calling, even renewal into obedience and ablution by the blood of Christ; and further, that both are the work of the Holy Spirit. [^f6] We hence conclude, that election is not to be separated from calling, nor the gratuitous righteousness of faith from newness of life.
 
 <!-- PAGE 22 -->
 
 <h2 class="scripture-anchor" id="1-peter-1-3-5" data-ref="1 PETER 1:3-5" style="display:none">1 PETER 1:3-5</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600103&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:3-5</span></p>
 
-<strong>3.</strong> Blessed be the God and Father of our Lord Jesus Christ, which, according to his abundant mercy, hath begotten us again unto a lively hope, by the resurrection of Jesus Christ from the dead,
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>3.</strong> Blessed be the God and Father of our Lord Jesus Christ, which, according to his abundant mercy, hath begotten us again unto a lively hope, by the resurrection of Jesus Christ from the dead</td><td class="scripture-la"><strong>3.</strong> Benedictus Deus et Pater Domini nostri Jesu Christi, qui secundum multam suam misericordiam regenuit nos in spem vivare, per resurrectionem Jesu Christi ex mortuis</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you</td><td class="scripture-la"><strong>4.</strong> In haereditatem incorruptibilem et incontaminatam et immarcescibilem, repositum in caelis erga vos</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Who are kept by the power of God through faith unto salvation, ready to be revealed in the last time.</td><td class="scripture-la"><strong>5.</strong> Qui virtute Dei custodimini per fidem in salutem, qut parata est revelari tempore ultimo.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**3.** Benedictus Deus et Pater Domini nostri Jesu Christi, qui secundum multam suam misericordiam regenuit nos in spem vivare, per resurrectionem Jesu Christi ex mortuis, 4. To an inheritance incorruptible, and undefiled, and that fadeth not away, reserved in heaven for you,</p>
-
-<p style="margin-left:2em;" markdown="1">**4.** In haereditatem incorruptibilem et incontaminatam et immarcescibilem, repositum in caelis erga vos, 5. Who are kept by the power of God through faith unto salvation, ready to be revealed in the last time.</p>
-
-<p style="text-align:right;" markdown="1">5. Qui virtute Dei custodimini per fidem in salutem, qut parata est revelari tempore ultimo.</p>
 
 <span style="color:#800000">*Blessed be God*</span>. We have said that he main object of this epistle is to raise us above the world, in order that we may be prepared and encouraged to sustain the spiritual contests of our warfare. For this end, the knowledge of God’s benefits avails much; for, when their value appears to us, all other things will be deemed worthless, especially when we consider what Christ and his blessings are; for everything without him is but dross. For this reason he highly extols the wonderful grace of God in Christ, that is, that we may not deem it much to give up the world in order that we may enjoy the invaluable treasure of a future life; and also that we may not be broken down by present troubles, but patiently endure them, being satisfied with eternal happiness.
 
@@ -233,17 +234,17 @@ Further, when he gives thanks to God, he invites the faithful to spiritual joy, 
 
 Turks. Whosoever, then, seeks really to know the only true God, must regard him as the Father of Christ; for, whenever our mind seeks God, except Christ be thought of, it will wander and be confused, until it be wholly lost. Peter meant at the same time to intimate how God is so bountiful and kind towards us; for, except Christ stood as the middle person, his goodness could never be really known by us.
 
-<span style="color:#800000">*Who hath begotten us again*</span>. He shews that supernatural life is a gift, because we are born the children of wrath; for had we been born to the hope of life according to the flesh, there would have been no necessity of being begotten again by God. Therefore Peter teaches us, that we who are by nature destined to eternal death, are restored to life by God’s mercy. And this is, as it were, our second creation, as it is said in the first chapter of the Epistle to the Ephesians. *Lively* or *living hope,* means the hope of life. <span style="color:#800000">[^f7]</span> At the same time there seems to be an implied contrast between the hope fixed on the incorruptible kingdom of God, and the fading and transient hopes of man.
+<span style="color:#800000">*Who hath begotten us again*</span>. He shews that supernatural life is a gift, because we are born the children of wrath; for had we been born to the hope of life according to the flesh, there would have been no necessity of being begotten again by God. Therefore Peter teaches us, that we who are by nature destined to eternal death, are restored to life by God’s mercy. And this is, as it were, our second creation, as it is said in the first chapter of the Epistle to the Ephesians. *Lively* or *living hope,* means the hope of life. [^f7] At the same time there seems to be an implied contrast between the hope fixed on the incorruptible kingdom of God, and the fading and transient hopes of man.
 
 <span style="color:#800000">*According to his abundant mercy*</span>. He first mentions the efficient cause, and then he points out the mediating cause, as they say. He shews that God was induced by no merits of ours to regenerate us unto a living hope, because he assigns this wholly to his mercy. But that he might more completely reduce the merits of works to nothing, he says, *great (multam)* <span style="color:#800000">*mercy*</span>. All, indeed, confess that God is the only author of our salvation, but they afterwards invent extraneous causes, which take away so much from his mercy. But Peter commends mercy alone; and he immediately connects the way or manner, <span style="color:#800000">*by the resurrection of Christ*</span>; for God does not in any other way discover his mercy; hence Scripture ever directs our attention to this point. And that Christ’s death is not mentioned, but his resurrection, involves no inconsistency, for it is included; because a thing cannot be completed without having a beginning; and he especially brought forward the resurrection, because he was speaking of a new life.
 
-**4.** <span style="color:#800000">*To an inheritance*</span>. <span style="color:#800000">[^f8]</span> The three words which follow are intended to amplify God’s grace; for Peter (as I have before said) had this object in view, to impress our minds thoroughly as to its excellency. Moreover, these two clauses, “to an inheritance incorruptible,” etc., and “to salvation ready to be revealed,” I deem as being in apposition, the latter being explanatory of the former; for he expresses the same thing in two ways.
+**4.** <span style="color:#800000">*To an inheritance*</span>. [^f8] The three words which follow are intended to amplify God’s grace; for Peter (as I have before said) had this object in view, to impress our minds thoroughly as to its excellency. Moreover, these two clauses, “to an inheritance incorruptible,” etc., and “to salvation ready to be revealed,” I deem as being in apposition, the latter being explanatory of the former; for he expresses the same thing in two ways.
 
 <!-- PAGE 24 -->
 
 Every word which follows is weighty. The inheritance is said to be *reserved,* or preserved, that we may know that it is beyond the reach of danger. For, were it not in God’s hand, it might be exposed to endless dangers. If it were in this world, how could we regard it as safe amidst so many changes? That he might then free us from every fear, he testifies that our salvation is placed in safety beyond the harms which Satan can do. But as the certainty of salvation can bring us but little comfort, except each one knows that it belongs to himself, Peter adds, <span style="color:#800000">*for you*</span>. For consciences will calmly recumb here, that is, when the Lord cries to them from heaven, “Behold, your salvation is in my hand and is kept for you.” But as salvation is not indiscriminately for all, he calls our attention to faith, that all who are endued with faith, might be distinguished from the rest, and that they might not doubt but that they are the true and legitimate heirs of God. For, as faith penetrates into the heavens, so also it appropriates to us the blessings which are in heaven.
 
-**5.** <span style="color:#800000">*Who are kept by the power of God*</span>. We are to notice the connection when he says, that we are kept while in the world, and at the same time our inheritance is reserved in heaven; otherwise this thought would immediately creep in, “What does it avail us that our salvation is laid up in heaven, when we are tossed here and there in this world as in a turbulent sea? What can it avail us that our salvation is secured in a quiet harbour, when we are driven to and fro amidst thousand shipwrecks?” The apostle, therefore, anticipates objections of this kind, when he shews, that though we are in the world exposed to dangers, we are yet kept by faith; and that though we are thus nigh to death, we are yet safe under the guardianship of faith. But as faith itself, through the infirmity of the flesh, often quails, we might be always anxious about the morrow, were not the Lord to aid us. <span style="color:#800000">[^f9]</span>
+**5.** <span style="color:#800000">*Who are kept by the power of God*</span>. We are to notice the connection when he says, that we are kept while in the world, and at the same time our inheritance is reserved in heaven; otherwise this thought would immediately creep in, “What does it avail us that our salvation is laid up in heaven, when we are tossed here and there in this world as in a turbulent sea? What can it avail us that our salvation is secured in a quiet harbour, when we are driven to and fro amidst thousand shipwrecks?” The apostle, therefore, anticipates objections of this kind, when he shews, that though we are in the world exposed to dangers, we are yet kept by faith; and that though we are thus nigh to death, we are yet safe under the guardianship of faith. But as faith itself, through the infirmity of the flesh, often quails, we might be always anxious about the morrow, were not the Lord to aid us. [^f9]
 
 And, indeed, we see that under the Papacy a diabolical opinion prevails, that we ought to doubt our final perseverance, because we are uncertain whether we shall be tomorrow in the same state of grace. But Peter did not thus leave us in suspense; for he testifies that we stand by the power of God, lest any doubt arising from a consciousness of our own infirmity, should disquiet us. How weak soever we may then be, yet our salvation is not uncertain, because it is sustained by God’s power. As, then, we are begotten by faith, so faith itself receives its stability from God’s power. Hence is its security, not only for the present, but also for the future.
 
@@ -253,24 +254,21 @@ And, indeed, we see that under the Papacy a diabolical opinion prevails, that we
 
 <h2 class="scripture-anchor" id="1-peter-1-6-9" data-ref="1 PETER 1:6-9" style="display:none">1 PETER 1:6-9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600106&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:6-9</span></p>
 
-<strong>6.</strong> Wherein ye greatly rejoice, though now for a season (if need be) ye are in heaviness through manifold temptations;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> Wherein ye greatly rejoice, though now for a season (if need be) ye are in heaviness through manifold temptations;</td><td class="scripture-la"><strong>6.</strong> In quo exultatis, paulisper nunc, si opus esti, contristati in variis tentationibus;</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise, and honor, and glory, at the appearing of Jesus Christ:</td><td class="scripture-la"><strong>7.</strong> Ut probatio fidel vestrae multo pretiosior auro, quod perit et tamen per ignem probatur, reperiatur in laudem et honorem et gloriam, quum revelabitur Jesus Christus:</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Whom having not seen, ye love; in whom, though now ye see <em>him</em> not, yet believing, ye rejoice with joy unspeakable, and full of glory:</td><td class="scripture-la"><strong>8.</strong> Quem quum non videritis, diligitis, in quem nunc credentes, quum eum non aspicitis, exultatis gaudio inenarrabili et glorificato;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Receiving the end of your faith, <em>even</em> the salvation of <em>your</em> souls.</td><td class="scripture-la"><strong>9.</strong> Reportantes finem fidel vestrae, salutem animarum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-<p style="text-align:right;" markdown="1">6. In quo exultatis, paulisper nunc, si opus esti, contristati in variis tentationibus;</p>
-
-<p style="margin-left:2em;" markdown="1">**7.** That the trial of your faith, being much more precious than of gold that perisheth, though it be tried with fire, might be found unto praise, and honor, and glory, at the appearing of Jesus Christ:</p>
-
-<p style="margin-left:2em;" markdown="1">**7.** Ut probatio fidel vestrae multo pretiosior auro, quod perit et tamen per ignem probatur, reperiatur in laudem et honorem et gloriam, quum revelabitur Jesus Christus: 8. Whom having not seen, ye love; in whom, though now ye see *him* not, yet believing, ye rejoice with joy unspeakable, and full of glory:</p>
-
-<p style="margin-left:2em;" markdown="1">**8.** Quem quum non videritis, diligitis, in quem nunc credentes, quum eum non aspicitis, exultatis gaudio inenarrabili et glorificato; 9. Receiving the end of your faith, *even* the salvation of *your* souls.</p>
-
-<p style="text-align:right;" markdown="1">9. Reportantes finem fidel vestrae, salutem animarum.</p>
-
-**6.** <span style="color:#800000">*Wherein ye greatly rejoice*</span>, or, In which ye exult. Though the termination of the Greek verb is doubtful, yet the meaning requires that we read, “ye exult,” rather than “exult ye.” <span style="color:#800000">*In which*</span> refers to the whole that is said of the hope of salvation laid up in heaven. But he rather exhorts than praises them; for his object was to shew what fruit was to come from the hope of salvation, even spiritual joy, by which not only the bitterness of all evil might be mitigated, but also all sorrow overcome. At the same time to exult is more expressive than to rejoice. <span style="color:#800000">[^f10]</span>
+**6.** <span style="color:#800000">*Wherein ye greatly rejoice*</span>, or, In which ye exult. Though the termination of the Greek verb is doubtful, yet the meaning requires that we read, “ye exult,” rather than “exult ye.” <span style="color:#800000">*In which*</span> refers to the whole that is said of the hope of salvation laid up in heaven. But he rather exhorts than praises them; for his object was to shew what fruit was to come from the hope of salvation, even spiritual joy, by which not only the bitterness of all evil might be mitigated, but also all sorrow overcome. At the same time to exult is more expressive than to rejoice. [^f10]
 
 <!-- PAGE 26 -->
 
@@ -283,11 +281,11 @@ By saying, <span style="color:#800000">*though now for a season*</span>, or, a l
 
 We must notice that he does not mention one temptation, but many; and not temptations of one kind, but *manifold temptations.* It is, however, better to seek the exposition of this passage in the first chapter of James.
 
-**7.** <span style="color:#800000">*Much more precious than of gold*</span>. The argument is from the less to the greater; for if gold, a corruptible metal, is deemed of so much value that we prove it by fire, that it may become really valuable, what wonder is it that God should require a similar trial as to faith, since faith is deemed by him so excellent? And though the words seem to have a different meaning, he yet compares faith to gold, and makes it more precious than gold, that hence he might draw the conclusion, that it ought to be fully proved. <span style="color:#800000">[^f11]</span> It is moreover uncertain how far he extends the meaning of the words, “tried” <span style="color:#0000d4">δοκιμάζεσθαι</span> and “trial” <span style="color:#0000d4">δοκίμιον</span>.
+**7.** <span style="color:#800000">*Much more precious than of gold*</span>. The argument is from the less to the greater; for if gold, a corruptible metal, is deemed of so much value that we prove it by fire, that it may become really valuable, what wonder is it that God should require a similar trial as to faith, since faith is deemed by him so excellent? And though the words seem to have a different meaning, he yet compares faith to gold, and makes it more precious than gold, that hence he might draw the conclusion, that it ought to be fully proved. [^f11] It is moreover uncertain how far he extends the meaning of the words, “tried” <span style="color:#0000d4">δοκιμάζεσθαι</span> and “trial” <span style="color:#0000d4">δοκίμιον</span>.
 
 Gold is, indeed, tried twice by fire; first. when it is separated from its dross; and then, when a judgment. is to be formed of its purity. Both modes of trial may very suitably be applied to faith; for when there is much of the dregs of unbelief remaining in us, and when by various afflictions we are refined as it were in God’s furnace, the dross of our faith is removed, so that it. becomes pure and clean before God; and, at the same time, a trial of it is made, as to whether it be true or fictitious. I am disposed to take these two views, and what immediately follows seems to favor this explanation; for as silver is without honor or value before it be refined, so he intimates that our faith is not to be honored and crowned by God until it be duly proved.
 
-<span style="color:#800000">*At the appearing of Jesus Christ*</span>, or, when Jesus Christ shall be revealed. This is added, that the faithful might learn to hold on courageously to the last day. For our life is now hidden in Christ, and will remain hidden, and as it were buried, until Christ shall appear from heaven; and the whole course of our life leads to the destruction of the external man, and all the things we suffer are, as it were, the preludes of death. It is hence necessary, that we should cast our own eyes on Christ, if we wish in our afflictions to behold glory and praise. For trials as to us are full of reproach and shame, and they become glorious in Christ; but that glory in Christ is not yet plainly seen, for the day of consolation is not yet come. <span style="color:#800000">[^f12]</span>
+<span style="color:#800000">*At the appearing of Jesus Christ*</span>, or, when Jesus Christ shall be revealed. This is added, that the faithful might learn to hold on courageously to the last day. For our life is now hidden in Christ, and will remain hidden, and as it were buried, until Christ shall appear from heaven; and the whole course of our life leads to the destruction of the external man, and all the things we suffer are, as it were, the preludes of death. It is hence necessary, that we should cast our own eyes on Christ, if we wish in our afflictions to behold glory and praise. For trials as to us are full of reproach and shame, and they become glorious in Christ; but that glory in Christ is not yet plainly seen, for the day of consolation is not yet come. [^f12]
 
 <!-- PAGE 28 -->
 
@@ -300,9 +298,9 @@ The second clause is, that faith is not a cold notion, but that it kindles in ou
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Where your treasure is, there is also your heart.”</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 6:21.)</span></p>
 
 <!-- PAGE 29 -->
-<span style="color:#800000">*Ye rejoice*</span>, or, Ye exult. He again refers to the fruit of faith which he had mentioned, and not without reason; for it is an incomparable benefit, that consciences are not only at peace before God, but confidently exult in the hope of eternal life. And he calls it <span style="color:#800000">*joy unspeakable*</span>, or unutterable, because the peace of God exceeds all comprehension. What is added, <span style="color:#800000">*full of glory*</span>, or glorified, admits of two explanations. It means either what is magnificent and glorious, or what is contrary to that which is empty and fading, of which men will soon be ashamed. Thus *“glorified”* is the same with what is solid and permanent, beyond the danger of being brought to nothing. <span style="color:#800000">[^f13]</span> Those who are not elevated by this joy above the heavens, so that being content with Christ alone, they despise the world, in vain boast that they have faith.
+<span style="color:#800000">*Ye rejoice*</span>, or, Ye exult. He again refers to the fruit of faith which he had mentioned, and not without reason; for it is an incomparable benefit, that consciences are not only at peace before God, but confidently exult in the hope of eternal life. And he calls it <span style="color:#800000">*joy unspeakable*</span>, or unutterable, because the peace of God exceeds all comprehension. What is added, <span style="color:#800000">*full of glory*</span>, or glorified, admits of two explanations. It means either what is magnificent and glorious, or what is contrary to that which is empty and fading, of which men will soon be ashamed. Thus *“glorified”* is the same with what is solid and permanent, beyond the danger of being brought to nothing. [^f13] Those who are not elevated by this joy above the heavens, so that being content with Christ alone, they despise the world, in vain boast that they have faith.
 
-**9.** <span style="color:#800000">*Receiving the end of your faith*</span>. He reminds the faithful where they ought to direct all their thoughts, even to eternal salvation. For this world holds all our affections ensnared by is allurements; this life and all things belonging to the body are great impediments, which prevent us from applying our minds to the contemplation of the future and spiritual life. Hence the Apostle sets before us this future life as a subject of deep meditation, and he indirectly intimates that the loss of all other things is to be deemed as nothing, provided our souls be saved. By saying <span style="color:#800000">*receiving*</span>, he takes away all doubt, in order that they might more cheerfully go on, being certain of obtaining salvation. <span style="color:#800000">[^f14]</span> In the meantime, however, he shews what the end of faith is, lest they should be over-anxious, because it is as yet deferred. For our adoption ought now to satisfy us; nor ought we to ask to be introduced before the time into the possession of our inheritance. We may also take *the end* for reward; but the meaning would be the same. For we learn from the Apostle’s words, that salvation is not otherwise obtained than by faith; and we know that faith leans on the sole promise of gratuitous adoption; but if it be so, doubtless salvation is not owing to the merits of works, nor can it be hoped for on their account.
+**9.** <span style="color:#800000">*Receiving the end of your faith*</span>. He reminds the faithful where they ought to direct all their thoughts, even to eternal salvation. For this world holds all our affections ensnared by is allurements; this life and all things belonging to the body are great impediments, which prevent us from applying our minds to the contemplation of the future and spiritual life. Hence the Apostle sets before us this future life as a subject of deep meditation, and he indirectly intimates that the loss of all other things is to be deemed as nothing, provided our souls be saved. By saying <span style="color:#800000">*receiving*</span>, he takes away all doubt, in order that they might more cheerfully go on, being certain of obtaining salvation. [^f14] In the meantime, however, he shews what the end of faith is, lest they should be over-anxious, because it is as yet deferred. For our adoption ought now to satisfy us; nor ought we to ask to be introduced before the time into the possession of our inheritance. We may also take *the end* for reward; but the meaning would be the same. For we learn from the Apostle’s words, that salvation is not otherwise obtained than by faith; and we know that faith leans on the sole promise of gratuitous adoption; but if it be so, doubtless salvation is not owing to the merits of works, nor can it be hoped for on their account.
 
 But why does he mention *souls* only, when the glory of a resurrection is promised to our bodies? As the soul is immortal, salvation is properly ascribed to it, as Paul sometimes is wont to speak, —
 
@@ -314,18 +312,18 @@ But it is the same as though he had said “Eternal salvation.” For there is a
 
 <h2 class="scripture-anchor" id="1-peter-1-10-12" data-ref="1 PETER 1:10-12" style="display:none">1 PETER 1:10-12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600110&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:10-12</span></p>
 
-<strong>10.</strong> Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Of which salvation the prophets have enquired and searched diligently, who prophesied of the grace that should come unto you:</td><td class="scripture-la"><strong>10.</strong> De qua salute exquisierunt et scrutati sunt prophetee, qui de futura erga nos gratia vaticinati sunt;</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Searching what, or what manner of time, the Spirit of Christ which was in them did signify, when it testified beforehand the sufferings of Christ, and the glory that should follow.</td><td class="scripture-la"><strong>11.</strong> Scrutantes in quem aut cujusmodi temporis articulum significaret qui in illis erat Spiritus Christi; prius testificans ventufas in Christum afflictiones, et quee sequuturae erant glorias;</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> Unto whom it was revealed, that not unto themselves, but unto us, they did minister the things which are now reported unto you by them that have preached the gospel unto you with the Holy Ghost sent down from heaven; which things the angels desire to look into.</td><td class="scripture-la"><strong>12.</strong> Quibus revelatum est quod non sibi ipsis, sed nobis ministrabant haec, quae nunc annunciata sunt vobis per cos qui vobis praedicarunt evangelitum, per Spiritum sanctum missum e coelo; in quae desiderant angeli prospicere.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**10.** De qua salute exquisierunt et scrutati sunt prophetee, qui de futura erga nos gratia vaticinati sunt; 11. Searching what, or what manner of time, the Spirit of Christ which was in them did signify, when it testified beforehand the sufferings of Christ, and the glory that should follow.</p>
-
-<p style="margin-left:2em;" markdown="1">**11.** Scrutantes in quem aut cujusmodi temporis articulum significaret qui in illis erat Spiritus Christi; prius testificans ventufas in Christum afflictiones, et quee sequuturae erant glorias; 12. Unto whom it was revealed, that not unto themselves, but unto us, they did minister the things which are now reported unto you by them that have preached the gospel unto you with the Holy Ghost sent down from heaven; which things the angels desire to look into.</p>
-
-<p style="text-align:right;" markdown="1">12. Quibus revelatum est quod non sibi ipsis, sed nobis ministrabant haec, quae nunc annunciata sunt vobis per cos qui vobis praedicarunt evangelitum, per Spiritum sanctum missum e coelo; in quae desiderant angeli prospicere.</p>
 
 He hence commends the value of salvation, because the prophets had their minds intensely fixed on it; for it must have been a great matter, and possessing peculiar excellency, which could have thus kindled in the prophets a spirit of inquiry respecting it. But still more clearly does God’s goodness toward us shine forth in this case, because much more is now made known to us than what all the prophets attained by their long and anxious inquiries. At the same time he confirms the certainty of salvation by this very antiquity; for from the beginning of the world it had received a plain testimony from the Holy Spirit.
 
@@ -372,24 +370,21 @@ The passage indeed admits of a twofold meaning; either that the treasure we have
 
 <h2 class="scripture-anchor" id="1-peter-1-13-16" data-ref="1 PETER 1:13-16" style="display:none">1 PETER 1:13-16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600113&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:13-16</span></p>
 
-<strong>13.</strong> Wherefore gird up the loins of your mind, be sober, and hope to the end, for the grace that is to be brought unto you at the revelation of Jesus Christ:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Wherefore gird up the loins of your mind, be sober, and hope to the end, for the grace that is to be brought unto you at the revelation of Jesus Christ:</td><td class="scripture-la"><strong>13.</strong> Quare succincti lumbis mentis vestrae, sobrii, perfecte sperate in eam quae ad vos defertur gratiam, in revelatione Jesu Christi;</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> As obedient children, not fashioning yourselves according to the former lusts in your ignorance:</td><td class="scripture-la"><strong>14.</strong> Tanquam filii obedientes, non conformati pristinis, quae in ignorantia vestra regnarunt, cupiditatibus:</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> But as he which hath called you is holy, so be ye holy in all manner of conversation:</td><td class="scripture-la"><strong>15.</strong> Sed quaemadmodum is qui vos vocavit sanctus est, ita ipsi sancti in tota conversatione reddamini;</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Because it is written, Be ye holy; for I am holy.</td><td class="scripture-la"><strong>16.</strong> Propterea quòd scriptum est, Sancti estote, quia ego sanctus sum. (Leviticus 11:44; 19:2; 20:7.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
-<p style="text-align:right;" markdown="1">13. Quare succincti lumbis mentis vestrae, sobrii, perfecte sperate in eam quae ad vos defertur gratiam, in revelatione Jesu Christi;</p>
-
-<p style="margin-left:2em;" markdown="1">**14.** As obedient children, not fashioning yourselves according to the former lusts in your ignorance:</p>
-
-<p style="margin-left:2em;" markdown="1">**14.** Tanquam filii obedientes, non conformati pristinis, quae in ignorantia vestra regnarunt, cupiditatibus: 15. But as he which hath called you is holy, so be ye holy in all manner of conversation:</p>
-
-<p style="margin-left:2em;" markdown="1">**15.** Sed quaemadmodum is qui vos vocavit sanctus est, ita ipsi sancti in tota conversatione reddamini; 16. Because it is written, Be ye holy; for I am holy.</p>
-
-<p style="text-align:right;" markdown="1">16. Propterea quòd scriptum est, Sancti estote, quia ego sanctus sum. (Leviticus 11:44; 19:2; 20:7.)</p>
-
-From the greatness and excellency of grace he draws an exhortation, that it surely behoved them the more readily to receive the grace of God, as the more bountifully he bestowed it upon them. And we must notice the connection: he had said, that so elevated was the kingdom of Christ, to which the gospel calls us, that even angels in heaven desire to see it; what then ought to be done by us who are in the world? Doubtless, as long as we live on earth, so great is the distance between us and Christ, that in vain he invites us to himself. It is hence necessary for us to put off the image of Adam and to cast aside the whole world and all hinderances, that being thus set at liberty we may rise upwards to Christ. And he exhorted those to whom he wrote, to be prepared and sober, and to hope for the graces offered to them, and also to renounce the world and their former life, and to be conformed to the will of God. <span style="color:#800000">[^f15]</span>
+From the greatness and excellency of grace he draws an exhortation, that it surely behoved them the more readily to receive the grace of God, as the more bountifully he bestowed it upon them. And we must notice the connection: he had said, that so elevated was the kingdom of Christ, to which the gospel calls us, that even angels in heaven desire to see it; what then ought to be done by us who are in the world? Doubtless, as long as we live on earth, so great is the distance between us and Christ, that in vain he invites us to himself. It is hence necessary for us to put off the image of Adam and to cast aside the whole world and all hinderances, that being thus set at liberty we may rise upwards to Christ. And he exhorted those to whom he wrote, to be prepared and sober, and to hope for the graces offered to them, and also to renounce the world and their former life, and to be conformed to the will of God. [^f15]
 
 Then the first part of the exhortation is, to gird up the loins of their mind and to direct their thoughts to the hope of the grace presented to them. In the second par, he prescribes the manner, that having their minds changed, they were to be formed after the image of God.
 
@@ -436,26 +431,21 @@ It is added, <span style="color:#800000">*In all manner of conversation*</span>,
 
 <h2 class="scripture-anchor" id="1-peter-1-17-22" data-ref="1 PETER 1:17-22" style="display:none">1 PETER 1:17-22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600117&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:17-22</span></p>
 
-<strong>17.</strong> And if ye call on the Father, who without respect of persons judgeth according to every man’s work, pass the time of your sojourning here in fear:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> And if ye call on the Father, who without respect of persons judgeth according to every man’s work, pass the time of your sojourning here in fear:</td><td class="scripture-la"><strong>17.</strong> Et si Patrem invocatis, eum qui sine personae acceptione secundum cujusque opus judicat, in timore conversantes, ternpus incolatus vestri transigite;</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;</td><td class="scripture-la"><strong>18.</strong> Scientes quòd non corruptibilibus, argento vel auro, redempti sitis à vana conversatione à patribus tradita;</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> But with the precious blood of Christ, as of a lamb without blemish and without spot:</td><td class="scripture-la"><strong>19.</strong> Sed pretioso sanguine velut agni immaculati et incontaminati Christi;</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> Who verily was fore-ordained before the foundation of the world, but was manifest in these last times for you</td><td class="scripture-la"><strong>20.</strong> Qui praeordinatus quidem fuerat ante conditum mundum, manifestatus autem est extremis temporibus propter vos;</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God.</td><td class="scripture-la"><strong>21.</strong> Qui per ipsum creditis in Deum, qui eum suscitavit ex mortuis, et gloriam illi dedit, ut fides vestra et spes sit in Deum;</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Seeing ye have purified your souls in obeying the truth through the Spirit unto unfeigned love of the brethren, see that ye love one another with a pure heart fervently.</td><td class="scripture-la"><strong>22.</strong> Purificantes animas vestras in obedientia veritatis per Spiritum, in fraternam charitatem non fictam, ex puro corde diligite vos mutuò impensè.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**17.** Et si Patrem invocatis, eum qui sine personae acceptione secundum cujusque opus judicat, in timore conversantes, ternpus incolatus vestri transigite; 18. Forasmuch as ye know that ye were not redeemed with corruptible things, as silver and gold, from your vain conversation received by tradition from your fathers;</p>
-
-<p style="text-align:right;" markdown="1">18. Scientes quòd non corruptibilibus, argento vel auro, redempti sitis à vana conversatione à patribus tradita;</p>
-
-<p style="margin-left:2em;" markdown="1">**19.** But with the precious blood of Christ, as of a lamb without blemish and without spot:</p>
-
-<p style="margin-left:2em;" markdown="1">**19.** Sed pretioso sanguine velut agni immaculati et incontaminati Christi; 20. Who verily was fore-ordained before the foundation of the world, but was manifest in these last times for you,</p>
-
-<p style="margin-left:2em;" markdown="1">**20.** Qui praeordinatus quidem fuerat ante conditum mundum, manifestatus autem est extremis temporibus propter vos; 21. Who by him do believe in God, that raised him up from the dead, and gave him glory; that your faith and hope might be in God.</p>
-
-<p style="margin-left:2em;" markdown="1">**21.** Qui per ipsum creditis in Deum, qui eum suscitavit ex mortuis, et gloriam illi dedit, ut fides vestra et spes sit in Deum; 22. Seeing ye have purified your souls in obeying the truth through the Spirit unto unfeigned love of the brethren, see that ye love one another with a pure heart fervently.</p>
-
-<p style="text-align:right;" markdown="1">22. Purificantes animas vestras in obedientia veritatis per Spiritum, in fraternam charitatem non fictam, ex puro corde diligite vos mutuò impensè.</p>
 
 <!-- PAGE 42 -->
 **17.** <span style="color:#800000">*And if ye call on the Father*</span>. They are said here to call on God the Father, who professed themselves to be his children, as Moses says, that the name of Jacob was called on Ephraim and Manasseh, that they might be counted his children. (Genesis 48:16.) According to this meaning also, we say in French *reclamer.* But he had a regard to what he had said before, “as obedient children.” And from the character of the Father himself, he shews what sort of obedience ought to be rendered. He *judges,* he says, <span style="color:#800000">*without looking on the person*</span>, that is, no outward mask is of any account with him, as the case is with men, but he sees the heart, (1 Samuel 16:7;) and his eyes look on faithfulness. (Jeremiah 5:3.) This also is what Paul means when he says that God’s judgment is according to truth, (Romans 2:2;) for he there inveighs against hypocrites, who think that they deceive God by a vain pretense. The meaning is, that we by no means discharge our duty towards God, when we obey him only in appearance; for he is not a mortal man, whom the outward appearance pleases, but he reads what we are inwardly in our hearts. He not only prescribes laws for our feet and hands, but he also requires what is just and right as to the mind and spirit.
@@ -470,7 +460,7 @@ By saying, <span style="color:#800000">*According to every man’s work*</span>,
 
 <span style="color:#800000">*Silver and gold*</span>. For the sake of amplifying he mentions these things in contrast, so that we may know that the whole world, and all things deemed precious by men, are nothing to the excellency and value of this price.
 
-But he says that they had been <span style="color:#800000">*redeemed from*</span> their <span style="color:#800000">*vain conversation*</span>, <span style="color:#800000">[^f16]</span> in order that we might know that the whole life of man, until he is converted to Christ, is a ruinous labyrinth of wanderings. He also intimates, that it is not through our merits that we are restored to the right way, but because it is God’s will that the price, offered for our salvation, should be effectual in our behalf. Then the blood of Christ is not only the pledge of our salvation, but also the cause of our calling.
+But he says that they had been <span style="color:#800000">*redeemed from*</span> their <span style="color:#800000">*vain conversation*</span>, [^f16] in order that we might know that the whole life of man, until he is converted to Christ, is a ruinous labyrinth of wanderings. He also intimates, that it is not through our merits that we are restored to the right way, but because it is God’s will that the price, offered for our salvation, should be effectual in our behalf. Then the blood of Christ is not only the pledge of our salvation, but also the cause of our calling.
 
 Moreover, Peter warns us to beware lest our unbelief should render this price void or of no effect. As Paul boasts that he worshipped God with a pure conscience from his forefathers, (1 Timothy 1:3,)and as he also commends to Timothy for his imitation the piety of his grandmother Lois, and of his mother Eunice, (2 Timothy 1:5,) and as Christ also said of the Jews that they knew whom they worshipped (John 4:22,) it may seem strange that Peter should assert that the Jews of his time learnt nothing from their fathers but mere vanity. To this I answer, that Christ, when he declared that the way or the knowledge of true religion belonged to the Jews, referred to the law and the commandments of God rather than to the people; for the temple had not to no purpose been built at Jerusalem, nor was God worshipped there according to the fancies of men, but according to what was prescribed in the Law; he, therefore, said that the Jews were not going astray while observing the Law. As to Paul’s forefathers, and as to Lois, Eunice, and similar cases, there is no doubt but that God ever had at least a small remnant among that people, in whom sincere piety continued, while the body of the people had become wholly corrupt, and had plunged themselves into all kinds of errors. Innumerable superstitions were followed, hypocrisy prevailed, the hope of salvation was built on the merest trifles; they were not only imbued with false opinions, but also fascinated with the grossest dotages; and they who had been scattered to various parts of the world, were implicated in still greater corruptions. In short, the greater part of that nation had either wholly fallen away from true religion, or had much degenerated. When, therefore, Peter condemned the doctrine of the fathers, he viewed it as unconnected with Christ, who is the soul and the truth of the Law.
 
@@ -515,7 +505,7 @@ It is said also, in Hebrews 4:16, that relying on our high priest, we can come w
 
 As, then, our salvation depends on the resurrection of Christ and his supreme power, faith and hope find here what can support them. For, except he had by rising again triumphed over death, and held now the highest sovereignty, to protect us by his power, what would become of us, exposed to so great a power as that of our enemies, and to such violent attacks? Let us, therefore, learn to what mark we ought to direct our aim, so that we may really believe in God.
 
-**22.** <span style="color:#800000">*Seeing ye have purified your souls*</span>, or, Purifying your souls. Erasmus badly renders the words, “Who have purified,” etc. For Peter does not declare what they had done, but reminds them of what they ought to do. The participle is indeed in the past tense, but it may be rendered as a gerund, “By purifying, etc.” The meaning is, that their souls would not be capable of receiving grace until they were purified, and by this our uncleanness is proved. <span style="color:#800000">[^f17]</span> But that he might not seem to ascribe to us the power of purifying our souls, he immediately adds, <span style="color:#800000">*through the Spirit*</span>; as though he had said, “Your souls are to be purified, but as ye cannot do this, offer them to God, that he may take away your filth by his Spirit.” He only mentions souls, though they needed to be cleansed also from the defilements of the flesh, as Paul bids the Corinthians, (2 Corinthians 7:1;)but as the principal uncleanness is within, and necessarily draws with it that which is outward, Peter was satisfied with mentioning only the former, as though he had said, that not outward actions only ought to be corrected, but the very hearts ought to be thoroughly reformed.
+**22.** <span style="color:#800000">*Seeing ye have purified your souls*</span>, or, Purifying your souls. Erasmus badly renders the words, “Who have purified,” etc. For Peter does not declare what they had done, but reminds them of what they ought to do. The participle is indeed in the past tense, but it may be rendered as a gerund, “By purifying, etc.” The meaning is, that their souls would not be capable of receiving grace until they were purified, and by this our uncleanness is proved. [^f17] But that he might not seem to ascribe to us the power of purifying our souls, he immediately adds, <span style="color:#800000">*through the Spirit*</span>; as though he had said, “Your souls are to be purified, but as ye cannot do this, offer them to God, that he may take away your filth by his Spirit.” He only mentions souls, though they needed to be cleansed also from the defilements of the flesh, as Paul bids the Corinthians, (2 Corinthians 7:1;)but as the principal uncleanness is within, and necessarily draws with it that which is outward, Peter was satisfied with mentioning only the former, as though he had said, that not outward actions only ought to be corrected, but the very hearts ought to be thoroughly reformed.
 
 <!-- PAGE 48 -->
 He afterwards points out the manner, for purity of soul consists in obedience to God. <span style="color:#800000">*Truth*</span> is to be taken for the rule which God prescribes to us in the Gospel. Nor does he speak only of works, but rather faith holds here the primacy. Hence Paul specially teaches us in the first and last chapter of the Epistle to the Romans, that faith is fiat by which we obey God; and Peter in Acts, the fifteenth chapter, bestows on it this eulogy, that God by it purifies the heart.
@@ -530,20 +520,20 @@ He calls it <span style="color:#800000">*unfeigned*</span>, <span style="color:#
 
 <h2 class="scripture-anchor" id="1-peter-1-23-25" data-ref="1 PETER 1:23-25" style="display:none">1 PETER 1:23-25</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600123&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">1:23-25</span></p>
 
-<strong>23.</strong> Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>23.</strong> Being born again, not of corruptible seed, but of incorruptible, by the word of God, which liveth and abideth for ever.</td><td class="scripture-la"><strong>23.</strong> Regeniti non ex semine corruptibili, sed incorruptibili, per sermonem viventis Dei et manentis in aeternum.</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> For all flesh <em>is</em> as grass, and all the glory of man as the flower of grass, The grass withereth, and the flower thereof falleth away:</td><td class="scripture-la"><strong>24.</strong> Quandoquidem omnis caro tanquam herba, et omnis gloria ejus tanquam flos herbae; exaruit herba et flos ejus decidit:</td></tr>
+<tr><td class="scripture-en"><strong>25.</strong> But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.</td><td class="scripture-la"><strong>25.</strong> Verbum autem Domini manet in aeternum; hoc autem est verbum quod annuntiatum est vobis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-<p style="margin-left:2em;" markdown="1">**23.** Regeniti non ex semine corruptibili, sed incorruptibili, per sermonem viventis Dei et manentis in aeternum. 24. For all flesh *is* as grass, and all the glory of man as the flower of grass, The grass withereth, and the flower thereof falleth away:</p>
-
-<p style="margin-left:2em;" markdown="1">**24.** Quandoquidem omnis caro tanquam herba, et omnis gloria ejus tanquam flos herbae; exaruit herba et flos ejus decidit: 25. But the word of the Lord endureth for ever. And this is the word which by the gospel is preached unto you.</p>
-
-<p style="text-align:right;" markdown="1">25. Verbum autem Domini manet in aeternum; hoc autem est verbum quod annuntiatum est vobis.</p>
-
-**23.** <span style="color:#800000">*Being born again*</span>. Here is another reason for an exhortation, — that since they were new men and born again of God, it behoved them to form a life worthy of God and of their spiritual regeneration. And this seems to be connected with a verse in the next chapter respecting the milk of the word, which they were to seek, that their way of living might correspond with their birth. It may, however, be extended wider, so as to be connected also with what has gone before; for Peter collected together those things which may lead us to an upright and a holy life. The object., then, of Peter was to teach us that we cannot be Christians without regeneration; for the Gospel is not preached, that it may be only heard by us, but that it may, as a seed of immortal life, altogether reform our hearts.  <span style="color:#800000">[^f18]</span> Moreover, the <span style="color:#800000">*corruptible seed*</span> is set in opposition to God’s word, in order that the faithful might know that they ought to renounce their former nature, and that it might be more evident how much is the difference between the children of Adam who are born only into the world, and the children of God who are renewed into a heavenly life. But as the construction of the Greek text is doubtful, we may read, “the living word of God,” as well as, “the word of the living God.” As, however, the latter reading is less forced, I prefer it; though it must be observed, that the term is applied to God owing to the character of the passage. For, as in Hebrews 4:12, because God sees all things, and nothing is hid from him, the apostle argues that the word of
+**23.** <span style="color:#800000">*Being born again*</span>. Here is another reason for an exhortation, — that since they were new men and born again of God, it behoved them to form a life worthy of God and of their spiritual regeneration. And this seems to be connected with a verse in the next chapter respecting the milk of the word, which they were to seek, that their way of living might correspond with their birth. It may, however, be extended wider, so as to be connected also with what has gone before; for Peter collected together those things which may lead us to an upright and a holy life. The object., then, of Peter was to teach us that we cannot be Christians without regeneration; for the Gospel is not preached, that it may be only heard by us, but that it may, as a seed of immortal life, altogether reform our hearts.  [^f18] Moreover, the <span style="color:#800000">*corruptible seed*</span> is set in opposition to God’s word, in order that the faithful might know that they ought to renounce their former nature, and that it might be more evident how much is the difference between the children of Adam who are born only into the world, and the children of God who are renewed into a heavenly life. But as the construction of the Greek text is doubtful, we may read, “the living word of God,” as well as, “the word of the living God.” As, however, the latter reading is less forced, I prefer it; though it must be observed, that the term is applied to God owing to the character of the passage. For, as in Hebrews 4:12, because God sees all things, and nothing is hid from him, the apostle argues that the word of
 
 <!-- PAGE 50 -->
 
@@ -580,22 +570,20 @@ There is here, besides, no common eulogy on preaching; for Peter declares that w
 
 <h2 class="scripture-anchor" id="1-peter-2-1-5" data-ref="1 PETER 2:1-5" style="display:none">1 PETER 2:1-5</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600201&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:1-5</span></p>
 
-<strong>1.</strong> Wherefore, laying aside all malice, and all guile, and hypocrisies, and envies, and all evil speakings,
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Wherefore, laying aside all malice, and all guile, and hypocrisies, and envies, and all evil speakings</td><td class="scripture-la"><strong>1.</strong> Proinde deposita omni malitia et omni dolo et simulationibus et invidiis et omnibus obtrectationibus</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> As new-born babes, desire the sincere milk of the word, that ye may grow thereby;</td><td class="scripture-la"><strong>2.</strong> Tanquam modò geniti infantes, lac rationale et dolo vacuum appetite, ut per illud subolescatis:</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> If so be ye have tasted that the Lord <em>is</em> gracious:</td><td class="scripture-la"><strong>3.</strong> Si quidem gustastis quòd benignus sit Dominus;</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> To whom coming, <em>as unto</em> a living stone, disallowed indeed of <em>men,</em> but chosen of God, <em>and</em> precious</td><td class="scripture-la"><strong>4.</strong> Ad quem accedentes, qui est lapis vivus, ab hominibus quidera reprobatus, apud Deum vero electus ac pretiosus;</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.</td><td class="scripture-la"><strong>5.</strong> Ipsi quoque tanquam vivi lapides, aedificamini, domus spirituales, sacerdotium sanctum, ad offerendas spirituales hostias, acceptas Deo per Jesum Christum.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**1.** Proinde deposita omni malitia et omni dolo et simulationibus et invidiis et omnibus obtrectationibus, 2. As new-born babes, desire the sincere milk of the word, that ye may grow thereby;</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** Tanquam modò geniti infantes, lac rationale et dolo vacuum appetite, ut per illud subolescatis: 3. If so be ye have tasted that the Lord *is* gracious:</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** Si quidem gustastis quòd benignus sit Dominus; 4. To whom coming, *as unto* a living stone, disallowed indeed of *men,* but chosen of God, *and* precious,</p>
-
-<p style="margin-left:2em;" markdown="1">**4.** Ad quem accedentes, qui est lapis vivus, ab hominibus quidera reprobatus, apud Deum vero electus ac pretiosus; 5. Ye also, as lively stones, are built up a spiritual house, an holy priesthood, to offer up spiritual sacrifices, acceptable to God by Jesus Christ.</p>
-
-<p style="text-align:right;" markdown="1">5. Ipsi quoque tanquam vivi lapides, aedificamini, domus spirituales, sacerdotium sanctum, ad offerendas spirituales hostias, acceptas Deo per Jesum Christum.</p>
 
 After having taught the faithful that they had been regenerated by the word of God, he now exhorts them to lead a life corresponding with their birth. For if we live in the Spirit, we ought also to walk in the Spirit, as Paul says. (Galatians 5:25.) It is not, then, sufficient for us to have been once called by the Lord, except we live as new creatures. This is the meaning. But as to the words, the Apostle continues the same metaphor. For as we have been born again, he requires from us a life like that of infants; by which he intimates that we are to put off the old man and his works. Hence this verse agrees with what Christ says,
 
@@ -622,7 +610,7 @@ That no one might think that infancy, void of understanding and full of fatuity,
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Be ye wise as serpents, and harmless as doves.”</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 10:16.)</span></p>
 
-And thus is solved the question which might have been otherwise raised. <span style="color:#800000">[^f19]</span>
+And thus is solved the question which might have been otherwise raised. [^f19]
 
 Paul reproves the Corinthians because they were like children, and therefore they could not take strong food, but were fed with milk. (1 Corinthians 3:1.) Almost the same words are found in Hebrews 5:12. But in these passages those are compared to children who remain always novices and ignorant scholars in the doctrine of religion, who continued in the first elements, and never penetrated into the higher knowledge of God. *Milk* is called the simpler mode of teaching, and one suitable to children, when there is no progress made beyond the first rudiments. Justly, then, does Paul charge this as a fault, as well as the author of the Epistle to the Hebrews. But milk, here, is not elementary doctrine, which one perpetually learns; and never comes to the knowledge of the truth, but a mode of living which has the savor of the new birth, when we surrender ourselves to be brought up by God. In the same manner infancy is not set in opposition to manhood, or full age in Christ, as Paul calls it in Ephesians 4:13, but to the ancientness of the flesh and of former life. Moreover, as the infancy of the new life is perpetual, so Peter recommends milk as a perpetual aliment, for he would have those nourished by it to grow.
 
@@ -658,24 +646,22 @@ The sense, however, will remain the same; for we offer sacrifices through Christ
 
 <h2 class="scripture-anchor" id="1-peter-2-6-8" data-ref="1 PETER 2:6-8" style="display:none">1 PETER 2:6-8</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600206&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:6-8</span></p>
 
-<strong>6.</strong> Wherefore also it is contained in the Scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> Wherefore also it is contained in the Scripture, Behold, I lay in Sion a chief corner stone, elect, precious: and he that believeth on him shall not be confounded.</td><td class="scripture-la"><strong>6.</strong> Propterea etiam continet scriptura, Ecce pono in Sion lapidem angularem, electurn, pretiosum, et qui crediderit in illo, non pudefiet.</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> Unto you therefore which believe <em>he is</em> precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner</td><td class="scripture-la"><strong>7.</strong> Vobis ergo qui creditis, pretiosus; incredulis vero, Lapis quem reprobaverunt aedificantes, hic positus est in caput anguli;</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> And a stone of stumbling, and a rock of offense, <em>even to them</em> which stumble at the word, being disobedient; whereunto also they were appointed.</td><td class="scripture-la"><strong>8.</strong> Et Lapis impactionis, et petra offendiculi iis qui impingunt in Sermonem, nec credunt; in quod etiam ordinati fuerant.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-<p style="margin-left:2em;" markdown="1">**6.** Propterea etiam continet scriptura, Ecce pono in Sion lapidem angularem, electurn, pretiosum, et qui crediderit in illo, non pudefiet. 7. Unto you therefore which believe *he is* precious: but unto them which be disobedient, the stone which the builders disallowed, the same is made the head of the corner,</p>
-
-<p style="text-align:right;" markdown="1">7. Vobis ergo qui creditis, pretiosus; incredulis vero, Lapis quem reprobaverunt aedificantes, hic positus est in caput anguli;</p>
-
-<p style="margin-left:2em;" markdown="1">**8.** And a stone of stumbling, and a rock of offense, *even to them* which stumble at the word, being disobedient; whereunto also they were appointed.</p>
-
-<p style="text-align:right;" markdown="1">8. Et Lapis impactionis, et petra offendiculi iis qui impingunt in Sermonem, nec credunt; in quod etiam ordinati fuerant.</p>
-
 <!-- PAGE 59 -->
 
-**6.** <span style="color:#800000">*Wherefore also it is contained in Scripture*</span>; or, Wherefore also the Scripture contains. <span style="color:#800000">[^f20]</span> They who refer the verb “contain” (<span style="color:#0000d4">περιέχειν</span>) to Christ, and render it “embrace,” because through him all these unite together, wholly depart from the meaning of the Apostle. No better is another exposition, that Christ excels others; for Peter simply intended to quote the testimony of Scripture. <span style="color:#800000">[^f21]</span> He then shews what had been taught by the Holy Spirit in the Scriptures, or, which is the same thing, that what he adds is contained in them. Nor is it an unsuitable confirmation of the preceding verse. For we see for what slight reasons, and almost for none, many reject Christ, and some fall away from him; but this is a stumblingblock which above all other things stands in the way of some; they are drawn away, because not only the common people despise and reject Christ, but also those who are high in dignity and honor, and seem to excel others. This evil has almost ever prevailed in the world, and at this day it prevails much; for a great part of mankind judge of Christ according to the false opinion of the world. Moreover, such is the ingratitude and impiety of men, that Christ is everywhere despised. Thus it is, that while they regard one another, few pay him his due honor. Hence Peter reminds us of what had been foretold of Christ, lest the contempt or the rejection of him should move us from the faith.
+**6.** <span style="color:#800000">*Wherefore also it is contained in Scripture*</span>; or, Wherefore also the Scripture contains. [^f20] They who refer the verb “contain” (<span style="color:#0000d4">περιέχειν</span>) to Christ, and render it “embrace,” because through him all these unite together, wholly depart from the meaning of the Apostle. No better is another exposition, that Christ excels others; for Peter simply intended to quote the testimony of Scripture. [^f21] He then shews what had been taught by the Holy Spirit in the Scriptures, or, which is the same thing, that what he adds is contained in them. Nor is it an unsuitable confirmation of the preceding verse. For we see for what slight reasons, and almost for none, many reject Christ, and some fall away from him; but this is a stumblingblock which above all other things stands in the way of some; they are drawn away, because not only the common people despise and reject Christ, but also those who are high in dignity and honor, and seem to excel others. This evil has almost ever prevailed in the world, and at this day it prevails much; for a great part of mankind judge of Christ according to the false opinion of the world. Moreover, such is the ingratitude and impiety of men, that Christ is everywhere despised. Thus it is, that while they regard one another, few pay him his due honor. Hence Peter reminds us of what had been foretold of Christ, lest the contempt or the rejection of him should move us from the faith.
 
 Now, the first passage, which he adduces, is taken from Isaiah 28:16; where the Prophet, after having inveighed against the desperate wickedness of his own nation, at length adds,
 
@@ -696,7 +682,7 @@ Corresponding with this is what is said in the Psalms,
 
 <!-- PAGE 61 -->
 
-<p style="text-align:center" markdown="1"><span style="color:#000080">“The scepter of thy power will the Lord send forth from Sion.”</span> <span style="color:#000080">(</span><span style="color:#800000"><19B002></span><span style="color:#000080">Psalm 110:2.)</span></p>
+<p style="text-align:center" markdown="1"><span style="color:#000080">“The scepter of thy power will the Lord send forth from Sion.”</span> <span style="color:#000080">(</span><span class="ages-code">&lt;19B002&gt;</span><span style="color:#000080">Psalm 110:2.)</span></p>
 
 <span style="color:#800000">*He that believeth*</span>. The Prophet does not say <span style="color:#800000">*in him*</span>, but declares generally, “He that believeth shall not make haste.” As, however, there is no doubt but that God sets forth Christ there as the object of our faith, the faith of which the Prophet speaks must look on him alone. And, doubtless, no one can rightly believe, but he who is fully convinced that in Christ he ought wholly to trust.
 
@@ -704,7 +690,7 @@ But the words of the Prophet may be taken in two ways, either as a promise or as
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“In silence and in quietness shall be your strength,”</span> <span style="color:#000080">(</span><span style="color:#000080">Isaiah 30:15.)</span></p>
 
-But as the other reading seems to come nearer to Peter’s interpretation, I give it the preference. Then the sense would not be unsuitable, “He who believeth shall not waver” or vacillate; for he has a firm and permanent foundation. And it is a valuable truth, that relying on Christ, we are beyond the danger of falling. Moreover, to be ashamed (*pudefieri*) means the same thing. Peter has retained the real sense of the Prophet, though he has followed the Greek version. <span style="color:#800000">[^f22]</span>
+But as the other reading seems to come nearer to Peter’s interpretation, I give it the preference. Then the sense would not be unsuitable, “He who believeth shall not waver” or vacillate; for he has a firm and permanent foundation. And it is a valuable truth, that relying on Christ, we are beyond the danger of falling. Moreover, to be ashamed (*pudefieri*) means the same thing. Peter has retained the real sense of the Prophet, though he has followed the Greek version. [^f22]
 
 **7.** <span style="color:#800000">*Unto you therefore which believe*</span>. God having pronounced Christ to be a precious and a chosen stone, Peter draws the inference that he is so to us. For, no doubt, Christ is there described such as we apprehend him by faith, and such as he proves himself to be by real evidences. We ought, then, carefully to notice this inference: Christ is a precious stone in the sight of God; then he is such to the faithful. It is faith alone which reveals to us the value and excellency of Christ.
 
@@ -712,7 +698,7 @@ But as the design of the Apostle was to obviate the offense which the multitude 
 
 <!-- PAGE 62 -->
 
-<span style="color:#800000"><19B822></span>Psalm 118:22, is quoted, that the stone which the builders rejected, is become, nevertheless, the head of the corner. It hence follows, that Christ, though opposed by his enemies, yet continues in that dignity to which he has been appointed by the Father. But we must take notice of the two things here said, — the first is, that Christ was rejected by those who bore rule in the Church of God; and the other, that their efforts were all in vain, because necessarily fulfilled must have been what God had decreed, that is, that he, as the corner-stone, should sustain the edifice.
+<span class="ages-code">&lt;19B822&gt;</span>Psalm 118:22, is quoted, that the stone which the builders rejected, is become, nevertheless, the head of the corner. It hence follows, that Christ, though opposed by his enemies, yet continues in that dignity to which he has been appointed by the Father. But we must take notice of the two things here said, — the first is, that Christ was rejected by those who bore rule in the Church of God; and the other, that their efforts were all in vain, because necessarily fulfilled must have been what God had decreed, that is, that he, as the corner-stone, should sustain the edifice.
 
 Moreover, that this passage ought properly to be understood of Christ, not only the Holy Spirit is a witness, and Christ himself, who has thus explained it, (Matthew 21:42;) but it appears also evident from this, that it was thus commonly understood before Christ came into the world; nor is there a doubt but this exposition had been delivered as it were from hand to hand from the fathers. We hence see that this was, as it were, a common saying even among children respecting the Messiah. I shall, therefore, no longer discuss this point. We may take it as granted, that David was thus rejected by his own age, that he might typify Christ.
 
@@ -723,7 +709,7 @@ The Pope calls himself the vicar of Christ, and yet we know how fiercely he oppo
 
 <span style="color:#800000">*And a stone of stumbling*</span>. After having comforted the faithful, that they would have in Christ a firm and permanent foundation, though the greater part, and even the chief men, allowed him no place in the building, he now denounces the punishment which awaits all the unbelieving, in order that they might be terrified by their example. For this purpose he quotes the testimony of Isaiah 8:14. The Prophet there declares that the Lord would be to the Jews a stone of stumbling and rock of offense. This properly refers to Christ, as it may be seen from the context; and Paul applies it to Christ, (Romans 9:32.) For in him the God of hosts has plainly manifested himself.
 
-Here, then, the terrible vengeance of God is denounced on all the ungodly, because Christ would be to them an offense and a stumbling, inasmuch as they refused to make him their foundation. For as the firmness and stability of Christ is such that it can sustain all who by faith recumb on him; so his hardness is so great that it will break and tear in pieces all who resist him. For there is no medium between these two things, — we must either build on him, or be dashed against him. <span style="color:#800000">[^f23]</span>
+Here, then, the terrible vengeance of God is denounced on all the ungodly, because Christ would be to them an offense and a stumbling, inasmuch as they refused to make him their foundation. For as the firmness and stability of Christ is such that it can sustain all who by faith recumb on him; so his hardness is so great that it will break and tear in pieces all who resist him. For there is no medium between these two things, — we must either build on him, or be dashed against him. [^f23]
 
 <!-- PAGE 64 -->
 
@@ -731,17 +717,23 @@ Here, then, the terrible vengeance of God is denounced on all the ungodly, becau
 
 And this is especially what deserves to be noticed, lest our fault should be imputed to Christ; for, as he has been given to us as a foundation, it is as it were an accidental thing that he becomes a rock of offense. In short, his proper office is to prepare us for a spiritual temple to God; but it is the fault of men that they stumble at him, even because unbelief leads men to contend with God. Hence Peter, in order to set forth the character of the conflict, said that they were the unbelieving.
 
-<span style="color:#800000">*Whereunto also they were appointed*</span>, or, to which they had been ordained. This passage may be explained in two ways. It is, indeed, certain that Peter spoke of the Jews; and the common interpretation is, that they were appointed to believe, for the promise of salvation was destined for them. But the other sense is equally suitable, that they had been appointed to unbelief; as Pharaoh is said to have been set up for this end, that he might resist God, and all the reprobate are destined for the same purpose. And what inclines me to this meaning is the particle <span style="color:#0000d4">καὶ</span> (also) which is put in. <span style="color:#800000">[^f24]</span> If, however, the first view be preferred, then it is a vehement upbraiding; for Peter does hence enhance the sin of unbelief in the people who had been chosen by God, because they rejected the salvation that had been peculiarly ordained for them. And no doubt this circumstance rendered them doubly inexcusable, that having been called in preference to others, they had refused to hear God. But, by saying that they were appointed to believe, he refers only to their outward call, even according to the covenant which God had made generally with the whole nation. At the same time their ingratitude, as it has been said, was sufficiently proved, when they rejected the word preached to them.
+<span style="color:#800000">*Whereunto also they were appointed*</span>, or, to which they had been ordained. This passage may be explained in two ways. It is, indeed, certain that Peter spoke of the Jews; and the common interpretation is, that they were appointed to believe, for the promise of salvation was destined for them. But the other sense is equally suitable, that they had been appointed to unbelief; as Pharaoh is said to have been set up for this end, that he might resist God, and all the reprobate are destined for the same purpose. And what inclines me to this meaning is the particle <span style="color:#0000d4">καὶ</span> (also) which is put in. [^f24] If, however, the first view be preferred, then it is a vehement upbraiding; for Peter does hence enhance the sin of unbelief in the people who had been chosen by God, because they rejected the salvation that had been peculiarly ordained for them. And no doubt this circumstance rendered them doubly inexcusable, that having been called in preference to others, they had refused to hear God. But, by saying that they were appointed to believe, he refers only to their outward call, even according to the covenant which God had made generally with the whole nation. At the same time their ingratitude, as it has been said, was sufficiently proved, when they rejected the word preached to them.
 
 <!-- PAGE 65 -->
 
 <h2 class="scripture-anchor" id="1-peter-2-9-10" data-ref="1 PETER 2:9-10" style="display:none">1 PETER 2:9-10</h2>
 
-**9.** But ye *are* a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shewforth the praises of him who hath called you out of darkness into his marvellous light:
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600209&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:9-10</span></p>
 
-<p style="margin-left:2em;" markdown="1">**9.** Vos autem genus electum, regale sacerdotium, gens sancta, populus in acquisitionem, ut virtutes enarretis ejus qui vos ex tenebris vocavit in admirabile lumen suum: 10. Which in time past *were* not a people, but *are* now the people of God: which had not obtained mercy, but now have obtained mercy.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> But ye <em>are</em> a chosen generation, a royal priesthood, an holy nation, a peculiar people; that ye should shewforth the praises of him who hath called you out of darkness into his marvellous light:</td><td class="scripture-la"><strong>9.</strong> Vos autem genus electum, regale sacerdotium, gens sancta, populus in acquisitionem, ut virtutes enarretis ejus qui vos ex tenebris vocavit in admirabile lumen suum:</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> Which in time past <em>were</em> not a people, but <em>are</em> now the people of God: which had not obtained mercy, but now have obtained mercy.</td><td class="scripture-la"><strong>10.</strong> Qui aliquando non populus, nunc autem populus Dei, qui non consequuti eratis misericordiam, nunc misericordiam consequuti estis.</td></tr>
+</tbody>
+</table>
 
-<p style="text-align:right;" markdown="1">10. Qui aliquando non populus, nunc autem populus Dei, qui non consequuti eratis misericordiam, nunc misericordiam consequuti estis.</p>
+</div>
 
 **9.** <span style="color:#800000">*But ye are a chosen generation*</span>, or race. He again separates them from the unbelieving, lest driven by their example (as it is often the case) they should fall away from the faith. As, then, it is unreasonable that those whom God has separated from the world, should mix themselves with the ungodly, Peter here reminds the faithful to what great honor they had been raised, and also to what purpose they had been called. But with the same high titles which he confers on them, Moses honored the ancient people, (Exodus 19:6;) but the Apostle’s object was to shew that they had recovered again, through Christ, the great dignity and honor from which they had fallen. It is at the same time true, that God gave to the fathers an earthly taste only of these blessings, and that they are really given in Christ.
 
@@ -773,15 +765,21 @@ And truly we cannot be otherwise than sunk in darkness, after having departed fr
 
 <!-- PAGE 68 -->
 
-<span style="color:#800000">*Which had not obtained mercy*</span>. This was added by the Prophet, in order that the gratuitous covenant of God, by which he takes them to be his people, might be more clearly set forth; as though he had said, “There is no other reason why the Lord counts us his people, except that he, having mercy on us, graciously adopts us.” It is then God’s gratuitous goodness, which makes of no people a people to God, and reconciles the alienated. <span style="color:#800000">[^f25]</span>
+<span style="color:#800000">*Which had not obtained mercy*</span>. This was added by the Prophet, in order that the gratuitous covenant of God, by which he takes them to be his people, might be more clearly set forth; as though he had said, “There is no other reason why the Lord counts us his people, except that he, having mercy on us, graciously adopts us.” It is then God’s gratuitous goodness, which makes of no people a people to God, and reconciles the alienated. [^f25]
 
 <h2 class="scripture-anchor" id="1-peter-2-11-12" data-ref="1 PETER 2:11-12" style="display:none">1 PETER 2:11-12</h2>
 
-**11.** Dearly beloved, I beseech *you,* as strangers and pilgrims, abstain from fleshly lusts, which war against the soul;
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600211&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:11-12</span></p>
 
-<p style="margin-left:2em;" markdown="1">**11.** Amici, adhortor vos tanquam inquilinos et peregrinos, ut abstineatis à carnalibus desideriis, que militant adversus animam; 12. Having your conversation honest among the Gentiles; that, whereas they speak against you as evil-doers, they may, by *your* good works, which they shall behold, glorify God in the day of visitation.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Dearly beloved, I beseech <em>you,</em> as strangers and pilgrims, abstain from fleshly lusts, which war against the soul;</td><td class="scripture-la"><strong>11.</strong> Amici, adhortor vos tanquam inquilinos et peregrinos, ut abstineatis à carnalibus desideriis, que militant adversus animam;</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> Having your conversation honest among the Gentiles; that, whereas they speak against you as evil-doers, they may, by <em>your</em> good works, which they shall behold, glorify God in the day of visitation.</td><td class="scripture-la"><strong>12.</strong> Conversationem vestram inter gentes bonam habentes, ut in quo detrahunt de vobis tanquam maleficis, ex bonis operibus aestimantes <em>(vel,</em> considerantes) glorificent Deum in die visitationis.</td></tr>
+</tbody>
+</table>
 
-<p style="text-align:right;" markdown="1">12. Conversationem vestram inter gentes bonam habentes, ut in quo detrahunt de vobis tanquam maleficis, ex bonis operibus aestimantes *(vel,* considerantes) glorificent Deum in die visitationis.</p>
+</div>
 
 **11.** <span style="color:#800000">*As strangers*</span>, or sojourners. There are two parts to this exhortation, — that their souls were to be free within from wicked and vicious lusts; and also, that they were to live honestly among men, and by the example of a good life not only to confirm the godly, but also to gain over the unbelieving to God.
 
@@ -793,32 +791,31 @@ By the <span style="color:#800000">*lusts*</span> or desires <span style="color:
 
 <span style="color:#800000">*Which war against the soul*</span>. Here is another argument, that they could not comply with the desires of the flesh, except to their own ruin. For he refers not here to the contest described by Paul in the seventh chapter of Romans, and in the fifth of the Galatians, as he makes the soul to be an antagonist to the flesh: but what he says here is, that the desires of the flesh, whenever the soul consents to them, lead to perdition. He proves our carelessness in this respect, that while we anxiously shun enemies from whom we apprehend danger to the body, we willingly allow enemies hurtful to the soul to destroy us; nay, we as it were stretch forth our neck to them.
 
-**12.** <span style="color:#800000">*Your conversation*</span>. The second part of the exhortation is, that they were to conduct themselves honestly towards men. What, indeed, precedes this in order is, that their minds should be cleansed before God; but a regard should also be had to men, lest we should become a hindrance to them. And he expressly says *among the Gentiles;* for the Jews were not only hated everywhere, but were also almost abhorred. The more carefully, therefore, ought they to have labored to wipe off the odium and infamy attached to their name by a holy life and a well-regulated conduct. <span style="color:#800000">[^f26]</span> For that admonition of Paul ought to be attended to, “To give no occasion to those who seek occasion.” Therefore the evil speakings and the wicked insinuations of the ungodly ought to stimulate us to lead an upright life; for it is no time for living listlessly and securely, when they sharply watch us in order to find out whatever we do amiss.
+**12.** <span style="color:#800000">*Your conversation*</span>. The second part of the exhortation is, that they were to conduct themselves honestly towards men. What, indeed, precedes this in order is, that their minds should be cleansed before God; but a regard should also be had to men, lest we should become a hindrance to them. And he expressly says *among the Gentiles;* for the Jews were not only hated everywhere, but were also almost abhorred. The more carefully, therefore, ought they to have labored to wipe off the odium and infamy attached to their name by a holy life and a well-regulated conduct. [^f26] For that admonition of Paul ought to be attended to, “To give no occasion to those who seek occasion.” Therefore the evil speakings and the wicked insinuations of the ungodly ought to stimulate us to lead an upright life; for it is no time for living listlessly and securely, when they sharply watch us in order to find out whatever we do amiss.
 
 <!-- PAGE 70 -->
 <span style="color:#800000">*That they — may glorify God*</span>. He intimates that we ought thus to strive, not for our own sake, that men may think and speak well of us; but that we may glorify God, as Christ also teaches us. And Peter shews how this would be effected, even that the unbelieving, led by our good works, would become obedient to God, and thus by their own conversion give glory to him; for this he intimates by the words, *in the day of visitation.* I know that some refer this to the last coming of Christ; but I take it otherwise, even that God employs the holy and honest life of his people, as a preparation, to bring back the wandering to the right way. For it is the beginning of our conversion, when God is pleased to look on us with a paternal eye; but when his face is turned away from us, we perish. Hence the day of visitation may justly be said to be the time when he invites us to himself.
 
 <h2 class="scripture-anchor" id="1-peter-2-13-16" data-ref="1 PETER 2:13-16" style="display:none">1 PETER 2:13-16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600213&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:13-16</span></p>
 
-<strong>13.</strong> Submit yourselves to every ordinance of man for the Lord’s sake: whether it be to the king, as supreme;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Submit yourselves to every ordinance of man for the Lord’s sake: whether it be to the king, as supreme;</td><td class="scripture-la"><strong>13.</strong> Subditi ergo estote omni humanae ordinationi propter Dominum; sive regi tanquam supereminenti;</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> Or unto governors, as unto them that are sent by him for the punishment of evil-doers, and for the praise of them that do well.</td><td class="scripture-la"><strong>14.</strong> Sive praesidibus, tanquam iis qui per ipsum mittuntur, in vindictam quidem maleficorum, laudem verò benè agentium.</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> For so is the will of God, that with well-doing ye may put to silence the ignorance of foolish men:</td><td class="scripture-la"><strong>15.</strong> Sic enim est voluntas Dei, ut benefaciendo obstruatis ignorantiam stultorum horninum:</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> As free, and not using <em>your</em> liberty for a cloak of maliciousness, but as the servants of God.</td><td class="scripture-la"><strong>16.</strong> Ut liberi, et non quasi praetextum habentes malitiae, libertatem; sed tanquam servi Dei.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**13.** Subditi ergo estote omni humanae ordinationi propter Dominum; sive regi tanquam supereminenti; 14. Or unto governors, as unto them that are sent by him for the punishment of evil-doers, and for the praise of them that do well.</p>
-
-<p style="margin-left:2em;" markdown="1">**14.** Sive praesidibus, tanquam iis qui per ipsum mittuntur, in vindictam quidem maleficorum, laudem verò benè agentium. 15. For so is the will of God, that with well-doing ye may put to silence the ignorance of foolish men:</p>
-
-<p style="margin-left:2em;" markdown="1">**15.** Sic enim est voluntas Dei, ut benefaciendo obstruatis ignorantiam stultorum horninum: 16. As free, and not using *your* liberty for a cloak of maliciousness, but as the servants of God.</p>
-
-<p style="text-align:right;" markdown="1">16. Ut liberi, et non quasi praetextum habentes malitiae, libertatem; sed tanquam servi Dei.</p>
 
 <!-- PAGE 71 -->
 **13.** <span style="color:#800000">*Submit yourselves*</span>. He now comes to particular exhortations: and as obedience with regard to magistrates is a part of honest or good conversation, he draws this inference as to their duty, “Submit yourselves,” or, Be ye subject; for by refusing the yoke of government, they would have given to the Gentiles no small occasion for reproaching them. And, indeed, the Jews were especially hated and counted infamous for this reason, because they were regarded on account of their perverseness as ungovernable. And as the commotions which they raised up in the provinces, were causes of great calamities, so that every one of a quiet and peaceable disposition dreaded them as the plague, — this was the reason that induced Peter to speak so strongly on subjection. Besides, many thought the gospel was a proclamation of such liberty, that every one might deem himself as free from servitude. It seemed an unworthy thing that God’s children should be servants, and that the heirs of the world should not have a free possession, no, not even of their own bodies. Then there was another trial, — All the magistrates were Christ’s adversaries; and they used their own authority, so that no representation of God, which secures the chief reverence, appeared in them. We now perceive the design of Peter: he exhorted the Jews, especially for these reasons, to shew respect to the civil power.
 
-<span style="color:#800000">*To every ordinance of man*</span>. Some render the words, “to every creature;” and from a rendering so obscure and ambiguous, much labor has been taken to elicit some meaning. But I have no doubt but that Peter meant to point out the distinct manner in which God governs mankind: for the verb <span style="color:#0000d4">κτίζειν</span> in Greek, from which <span style="color:#0000d4">κτίσις</span> comes, means to form and to construct a building. Suitable, then, is the word “ordination;” by which Peter reminds us, that God the maker of the world has not left the human race in a state of confusion, that they might live after the manner of beasts, but as it were in a building regularly formed, and divided into several compartments. And it is called a *human ordination,* not because it has been invented by man, but because a mode of living, well arranged and duly ordered, is peculiar to men. <span style="color:#800000">[^f27]</span>
+<span style="color:#800000">*To every ordinance of man*</span>. Some render the words, “to every creature;” and from a rendering so obscure and ambiguous, much labor has been taken to elicit some meaning. But I have no doubt but that Peter meant to point out the distinct manner in which God governs mankind: for the verb <span style="color:#0000d4">κτίζειν</span> in Greek, from which <span style="color:#0000d4">κτίσις</span> comes, means to form and to construct a building. Suitable, then, is the word “ordination;” by which Peter reminds us, that God the maker of the world has not left the human race in a state of confusion, that they might live after the manner of beasts, but as it were in a building regularly formed, and divided into several compartments. And it is called a *human ordination,* not because it has been invented by man, but because a mode of living, well arranged and duly ordered, is peculiar to men. [^f27]
 
 <span style="color:#800000">*Whether it be to the king*</span>. So he calls Caesar, as I think, whose empire extended over all those countries mentioned at the beginning of the Epistle. For though “king” was a name extremely hated by the Romans, yet it was in use among the Greeks. They, indeed, often called him autocrat, (<span style="color:#0000d4">αὐτοκράτορα</span> ) but sometimes he was also called by them king, (<span style="color:#0000d4">βασιλεὺς</span>.) But as he subjoins a reason, that he ought to be obeyed because he excelled, or was eminent or supreme, there is no comparison made between Caesar and other magistrates. He held, indeed, the supreme power; but that eminence which Peter extols, is common to all who exercise public authority. And so Paul, in Romans 13:1, extends it to all magistrates. Now the meaning is, that obedience is due to all who rule, because they have been raised to that honor not by chance, but by God’s providence. For many are wont to inquire too scrupulously by what right power has been attained; but we ought to be satisfied with this alone, that power is possessed and exercised. And so Paul cuts off the handle of useless objections when he declares that there is no power but from God. And for this reason it is that Scripture so often says, that it is
 
@@ -840,7 +837,7 @@ It may, however, be objected here and said, that kings and magistrates often abu
 
 Were any one again to object and say, that we ought not to obey princes who, as far as they can, pervert the holy ordinance of God, and thus become savage wild beasts, while magistrates ought to bear the image of God. My reply is this, that government established by God ought to be so highly valued by us, as to honor even tyrants when in power. There is yet another reply still more evident, — that there has never been a tyranny, (nor can one be imagined,) however cruel and unbridled, in which some portion of equity has not appeared; and further, some kind of government, however deformed and corrupt it may be, is still better and more beneficial than anarchy.
 
-**15.** <span style="color:#800000">*For so is the will of God*</span>. He returns to his former doctrine, lest an occasion should be given to the unbelieving to speak evil, though he expresses less than what he had said before; for he says only that the mouths of the foolish ought to be stopped. The phrase which he adopts, “to stop up ignorance,” though it may seem harsh on account of its novelty, does not yet obscure the sense. <span style="color:#800000">[^f28]</span> For he not only calls the unbelieving foolish, but also points out the reason why they slandered, even because they were ignorant of God. But inasmuch as he makes the unbelieving to be without understanding and reason, we hence conclude, that a right understanding cannot exist without the knowledge of God. How much soever, then, the unbelieving may boast of their own acuteness, and may seem to themselves to bewise and prudent, yet the Spirit of God charges them with folly, in order that we may know that, apart from God, we cannot be really wise, as without him there is nothing perfect.
+**15.** <span style="color:#800000">*For so is the will of God*</span>. He returns to his former doctrine, lest an occasion should be given to the unbelieving to speak evil, though he expresses less than what he had said before; for he says only that the mouths of the foolish ought to be stopped. The phrase which he adopts, “to stop up ignorance,” though it may seem harsh on account of its novelty, does not yet obscure the sense. [^f28] For he not only calls the unbelieving foolish, but also points out the reason why they slandered, even because they were ignorant of God. But inasmuch as he makes the unbelieving to be without understanding and reason, we hence conclude, that a right understanding cannot exist without the knowledge of God. How much soever, then, the unbelieving may boast of their own acuteness, and may seem to themselves to bewise and prudent, yet the Spirit of God charges them with folly, in order that we may know that, apart from God, we cannot be really wise, as without him there is nothing perfect.
 
 <!-- PAGE 74 -->
 But he prescribes the way in which the evil-speaking of the unbelieving is to be restrained, even by <span style="color:#800000">*well-doing*</span>, or, by doing good. In this expression he includes all the duties of humanity and kindness which we ought to perform towards our neighbors. And in these is included obedience to magistrates, without which concord among men cannot be cultivated. Were any one to object and say, that the faithful can never be so careful to do good, but that they will be evil-spoken of by the unbelieving: to this the obvious answer is, that the Apostle here does not in any degree exempt them from calumnies and reproaches; but he means that no occasion of slandering ought to be given to the unbelieving, however much they may desire it. And lest any one should further object and say, that the unbelieving are by no means worthy of so much regard that God’s children should form their life to please them, Peter expressly reminds us that we are bound by God’s command to shut up their mouths.
@@ -851,13 +848,20 @@ In short, it is a free servitude, and a serving freedom. For as we ought to be t
 
 <h2 class="scripture-anchor" id="1-peter-2-17" data-ref="1 PETER 2:17" style="display:none">1 PETER 2:17</h2>
 
-**17.** Honour all *men.* Love the brotherhood. Fear God. Honour the king.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600217&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:17</span></p>
 
-<p style="text-align:right;" markdown="1">17. Omnes honorate, fraternitatem diligite, Deum timete, regem honorate.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> Honour all <em>men.</em> Love the brotherhood. Fear God. Honour the king.</td><td class="scripture-la"><strong>17.</strong> Omnes honorate, fraternitatem diligite, Deum timete, regem honorate.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 75 -->
 
-This is a summary of what is gone before; for he intimates that God is not feared, nor their just right rendered to men, except civil order prevails among us, and magistrates retain their authority. That he bids honor to be rendered to all, I explain thus, that none are to be neglected; for it is a general precept, which refers to the social intercourse of men. <span style="color:#800000">[^f29]</span> The word <span style="color:#800000">*honor*</span> has a wide meaning in Hebrew, and we know that the apostles, though they wrote in Greek, followed the meaning of words in the former language. Therefore, this word conveys no other idea to me, than that a regard ought to be had for all, since we ought to cultivate, as far as we can, peace and friendship with all; there is, indeed, nothing more adverse to concord than contempt.
+This is a summary of what is gone before; for he intimates that God is not feared, nor their just right rendered to men, except civil order prevails among us, and magistrates retain their authority. That he bids honor to be rendered to all, I explain thus, that none are to be neglected; for it is a general precept, which refers to the social intercourse of men. [^f29] The word <span style="color:#800000">*honor*</span> has a wide meaning in Hebrew, and we know that the apostles, though they wrote in Greek, followed the meaning of words in the former language. Therefore, this word conveys no other idea to me, than that a regard ought to be had for all, since we ought to cultivate, as far as we can, peace and friendship with all; there is, indeed, nothing more adverse to concord than contempt.
 
 What he adds respecting the love of brethren is special, as contrasted with the first clause; for he speaks of that particular love which we are bidden to have towards the household of faith, because we are connected with them by a closer relationship. And so Peter did not omit this connection; but yet he reminds us, that though brethren are to be specially regarded, yet this ought not to prevent our love from being extended to the whole human race. The word *fraternity,* or brotherhood, I take collectively for brethren.
 
@@ -867,25 +871,30 @@ What he adds respecting the love of brethren is special, as contrasted with the 
 
 <h2 class="scripture-anchor" id="1-peter-2-18-20" data-ref="1 PETER 2:18-20" style="display:none">1 PETER 2:18-20</h2>
 
-**18.** Servants, be subject to *your* masters with all fear; not only to the good and gentle, but also to the froward.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600218&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:18-20</span></p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Famuli, subjecti sint cum omni timore dominis *suis,* non solum bonis et humanis, sed etiam pravis. 19. For this is thankworthy, if a man for conscience towards God endure grief, suffering wrongfully.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>18.</strong> Servants, be subject to <em>your</em> masters with all fear; not only to the good and gentle, but also to the froward.</td><td class="scripture-la"><strong>18.</strong> Famuli, subjecti sint cum omni timore dominis <em>suis,</em> non solum bonis et humanis, sed etiam pravis.</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> For this is thankworthy, if a man for conscience towards God endure grief, suffering wrongfully.</td><td class="scripture-la"><strong>19.</strong> Haec enim est gratia, si propter conscientiam Dei quispiam molestias ferat patiens injustè.</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> For what glory is it, if, when ye be buffeted for your faults, ye shall take it patiently? but if, when ye do well, and suffer <em>for</em> it, ye take it patiently, this <em>is</em> acceptable with God.</td><td class="scripture-la"><strong>20.</strong> Qualis enim gloria, si quum peccantes alapis caedemini, suffertis? sed si bene facientes et in aliis affecti suffertis, haec gratia apud Deum.</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">**19.** Haec enim est gratia, si propter conscientiam Dei quispiam molestias ferat patiens injustè. 20. For what glory is it, if, when ye be buffeted for your faults, ye shall take it patiently? but if, when ye do well, and suffer *for* it, ye take it patiently, this *is* acceptable with God.</p>
+</div>
 
-<p style="text-align:right;" markdown="1">20. Qualis enim gloria, si quum peccantes alapis caedemini, suffertis? sed si bene facientes et in aliis affecti suffertis, haec gratia apud Deum.</p>
-
-**18.** <span style="color:#800000">*Servants, be subject*</span>. Though this is a particular admonition, yet it is connected with what is gone before, as well as the other things which follow; for the obedience of servants to masters, and of wives also to their husbands, forms a part of civil or social subjection. <span style="color:#800000">[^f30]</span>
+**18.** <span style="color:#800000">*Servants, be subject*</span>. Though this is a particular admonition, yet it is connected with what is gone before, as well as the other things which follow; for the obedience of servants to masters, and of wives also to their husbands, forms a part of civil or social subjection. [^f30]
 
 He first would have servants to be subject <span style="color:#800000">*with all fear*</span>; by which expression he means that sincere and willing reverence, which they acknowledge by their office to be due. He then sets this fear in opposition to dissimulation as well as to forced subjection; for an eye-service (<span style="color:#0000d4">ὀφθαλμοδουλεία</span>, Colossians 3:21,) as Paul calls it, is the opposite of this fear; and further, if servants clamor against severe treatment, being ready to throw off the yoke if they could, they cannot be said properly to fear. In short, fear arises from a right knowledge of duty. And though no exception is added in this place, yet, according to other places, it is to be understood. For subjection due to men is not to be so far extended as to lessen the authority of God. Then servants are to be subject to their masters, only as far as God permits, or as far as the altars, as they say. But as the word here is not <span style="color:#0000d4">δοῦλοι</span>, slaves, but <span style="color:#0000d4">οἰκέται</span>, domestics, we may understand the free as well as the bond servants to be meant, though it be a difference of little moment.
 
 <!-- PAGE 77 -->
 
-<span style="color:#800000">*Not only to the good*</span>. Though as to the duty of servants to obey their masters, it is wholly a matter of conscience; if, however, they are unjustly treated, as to themselves, they ought not to resist authority. Whatever, then, masters may be, there is no excuse for servants for not faithfully obeying them. For when a superior abuses his power, he must indeed hereafter render an account to God, yet he does not for the present lose his right. For this law is laid on servants, that they are to serve their masters, though they may be unworthy. For *the froward* he sets in opposition to the equitable or humane; and by this word he refers to the cruel and the perverse, or those who have no humanity and kindness. <span style="color:#800000">[^f31]</span>
+<span style="color:#800000">*Not only to the good*</span>. Though as to the duty of servants to obey their masters, it is wholly a matter of conscience; if, however, they are unjustly treated, as to themselves, they ought not to resist authority. Whatever, then, masters may be, there is no excuse for servants for not faithfully obeying them. For when a superior abuses his power, he must indeed hereafter render an account to God, yet he does not for the present lose his right. For this law is laid on servants, that they are to serve their masters, though they may be unworthy. For *the froward* he sets in opposition to the equitable or humane; and by this word he refers to the cruel and the perverse, or those who have no humanity and kindness. [^f31]
 
 It is a wonder what could have induced an interpreter to change one Greek word for another, and render it “wayward.” I should say nothing of the gross ignorance of the Sorbons, who commonly understand by wayward, (*dyscolos*,) the dissolute or dissipated, were it not that they seek by this absurd rendering to build up for us an article of faith, that we ought to obey the Pope and his horned wild beasts, however grievous and intolerable a tyranny they may exercise. This passage, then, shews how boldly they trifle with the Word of God.
 
-**19.** <span style="color:#800000">*For this is thankworthy*</span>. The word grace or favor, has the meaning of praise; for he means that no grace or praise shall be found before God, if we bear the punishment which we have by our faults deserved; but that they who patiently bear injuries and wrongs are worthy of praise and accepted by God. <span style="color:#800000">[^f32]</span> To testify that it was acceptable to God, when any one from conscience towards God persevered in doing his duty, though unjustly and unworthily treated, was at that time very necessary; for the condition of servants was very hard: they were counted no better than cattle. Such indignity might have driven them to despair; the only thing left for them was to look to God.
+**19.** <span style="color:#800000">*For this is thankworthy*</span>. The word grace or favor, has the meaning of praise; for he means that no grace or praise shall be found before God, if we bear the punishment which we have by our faults deserved; but that they who patiently bear injuries and wrongs are worthy of praise and accepted by God. [^f32] To testify that it was acceptable to God, when any one from conscience towards God persevered in doing his duty, though unjustly and unworthily treated, was at that time very necessary; for the condition of servants was very hard: they were counted no better than cattle. Such indignity might have driven them to despair; the only thing left for them was to look to God.
 
 <!-- PAGE 78 -->
 <span style="color:#800000">*For conscience towards God*</span> means this, that one performs his duty, not from a regard to men, but to God. For, when a wife is submissive and obedient to her husband, in order to please him, she has her reward in this world, as Christ says of the ambitious, who looked to the praise of men, (Matthew 6:16.) The same view is to be taken of other cases: When a son obeys his father in order to secure his favor and bounty, he will have his reward from his father, not from God. It is, in short, a general truth, that what we do is approved by God, if our object be to serve him, and if we are not influenced by a regard to man alone. Moreover, he who considers that he has to do with God, must necessarily endeavor to overcome evil with good. For, God not only requires that we should be such to every one as he is to us, but also that we should be good to the unworthy and to such as persecute us.
@@ -894,23 +903,23 @@ It is not, however, an assertion without its difficulty, when he says, that ther
 
 <h2 class="scripture-anchor" id="1-peter-2-21-23" data-ref="1 PETER 2:21-23" style="display:none">1 PETER 2:21-23</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600221&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:21-23</span></p>
 
-<strong>21.</strong> For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> For even hereunto were ye called: because Christ also suffered for us, leaving us an example, that ye should follow his steps:</td><td class="scripture-la"><strong>21.</strong> In hoc enim vocati estis; quoniam Christus quoque passus est pro vobis, relinquens vobis exemplum, ut sequeremini vestigia ejus:</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Who did no sin, neither was guile found in his mouth:</td><td class="scripture-la"><strong>22.</strong> Qui quum peccatum non fecisset, nec inventus esset dolus in ore ejus;</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed <em>himself</em> to him that judgeth righteously:</td><td class="scripture-la"><strong>23.</strong> Quum probro afficeretur, non regerebat; quum pateretur, non comminabatur; causam vero commendabat ei qui juste judicat.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**21.** In hoc enim vocati estis; quoniam Christus quoque passus est pro vobis, relinquens vobis exemplum, ut sequeremini vestigia ejus: 22. Who did no sin, neither was guile found in his mouth:</p>
-
-<p style="margin-left:2em;" markdown="1">**22.** Qui quum peccatum non fecisset, nec inventus esset dolus in ore ejus; 23. Who, when he was reviled, reviled not again; when he suffered, he threatened not; but committed *himself* to him that judgeth righteously:</p>
-
-<p style="text-align:right;" markdown="1">23. Quum probro afficeretur, non regerebat; quum pateretur, non comminabatur; causam vero commendabat ei qui juste judicat.</p>
 
 <!-- PAGE 79 -->
 **21.** <span style="color:#800000">*For even hereunto were ye called*</span>. For though his discourse was respecting servants, yet this passage ought not to be confined to that subject. For the Apostle here reminds all the godly in common as to what the condition of Christianity is, as though he had said, that we are called by the Lord for this end, patiently to bear wrongs; and as he says in another place that we are appointed to this. Lest, however, this should seem grievous to us, he consoles us with the example of Christ. Nothing seems more unworthy, and therefore less tolerable, than undeservedly to suffer; but when we turn our eyes to the Son of God, this bitterness is mitigated; for who would refuse to follow him going before us?
 
-But we must notice the words, <span style="color:#800000">*Leaving us an example*</span>. <span style="color:#800000">[^f33]</span> For as he treats of imitation, it is necessary to know what in Christ is to be our example. He walked on the sea, he cleansed the leprous, he raised the dead, he restored sight to the blind: to try to imitate him in these things would be absurd. For when he gave these evidences of his power, it was not his object that we should thus imitate him. It has hence happened that his fasting for forty days has been made without reason an example; but what he had in view was far otherwise. We ought, therefore, to exercise in this respect a right judgment; as also Augustine somewhere reminds us, when explaining the following passage,
+But we must notice the words, <span style="color:#800000">*Leaving us an example*</span>. [^f33] For as he treats of imitation, it is necessary to know what in Christ is to be our example. He walked on the sea, he cleansed the leprous, he raised the dead, he restored sight to the blind: to try to imitate him in these things would be absurd. For when he gave these evidences of his power, it was not his object that we should thus imitate him. It has hence happened that his fasting for forty days has been made without reason an example; but what he had in view was far otherwise. We ought, therefore, to exercise in this respect a right judgment; as also Augustine somewhere reminds us, when explaining the following passage,
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Learn of me, for I am meek and lowly in heart.”</span> <span style="color:#000080">(</span><span style="color:#000080">Matthew 11:29.)</span></p>
 
@@ -931,16 +940,17 @@ It may however be asked, How did Christ commit his cause to the Father; for if h
 
 <h2 class="scripture-anchor" id="1-peter-2-24-25" data-ref="1 PETER 2:24-25" style="display:none">1 PETER 2:24-25</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600224&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">2:24-25</span></p>
 
-<strong>24.</strong> Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>24.</strong> Who his own self bare our sins in his own body on the tree, that we, being dead to sins, should live unto righteousness: by whose stripes ye were healed.</td><td class="scripture-la"><strong>24.</strong> Qui peccata nostra ipse pertulit in corpore suo super lignum, ut peccatis mortui, justitiae vivamus: cujus livori sanati estis.</td></tr>
+<tr><td class="scripture-en"><strong>25.</strong> For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.</td><td class="scripture-la"><strong>25.</strong> Eratis enim tanquam oves errantes; sed conversi estis nunc ad Pastorem et Episcopum animarum vestrarum.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**24.** Qui peccata nostra ipse pertulit in corpore suo super lignum, ut peccatis mortui, justitiae vivamus: cujus livori sanati estis. 25. For ye were as sheep going astray; but are now returned unto the Shepherd and Bishop of your souls.</p>
-
-<p style="text-align:right;" markdown="1">25. Eratis enim tanquam oves errantes; sed conversi estis nunc ad Pastorem et Episcopum animarum vestrarum.</p>
 
 <!-- PAGE 82 -->
 Had he commended nothing in Christ’s death except as an example, it would have been very frigid: he therefore refers to a fruit much more excellent. There are then three things to be noticed in this passage. The first is, that Christ by his death has given us an example of patience; the second, that by his death he restored us to life; it hence follows, that we are so bound to him, that we ought cheerfully to follow his example. In the third place, he refers to the general design of his death, that we, being dead to sins, ought to live to righteousness. And all these things confirm his previous exhortation.
@@ -952,7 +962,7 @@ This great benefit the Sophists in their schools obscure as much as they can; fo
 But this clause and that which follows, <span style="color:#800000">*by whose stripes ye were healed,*</span> may be also applied to the subject in hand, that is, that it behoves us to bear on our shoulders the sins of others, not indeed to expiate for them, but only to bear them as a burden laid on us.
 
 <!-- PAGE 83 -->
-<span style="color:#800000">*Being dead to sins*</span>. <span style="color:#800000">[^f34]</span> He had before pointed out another end, even an example of patience; but here, as it has been stated, it is made more manifest, that we are to live a holy and righteous life. The Scripture sometimes mentions both, that is, that the Lord tries us with troubles and adversities, that we might be conformed to the death of Christ, and also that the old man has been crucified in the death of Christ, that we might walk in newness of life. (Philippians 3:10; Romans 6:4.) At the same time, this end of which he speaks, differs from the former, not only as that which is general from what is particular; for in patience there is simply an example; but when he says that Christ suffered, that we being dead to sins should live to righteousness, he intimates that there is power in Christ’s death to mortify our flesh, as Paul explains more fully in the sixth chapter of the Epistle to the Romans. For he has not only brought this great benefit to us, that God justifies us freely, by not imputing to us our sins; but. he also makes us to die to the world and to the flesh, that we may rise again to a new life: not that one day makes complete this death; but wherever it is, the death of Christ is efficacious for the expiation of sins, and also for the mortification of the flesh.
+<span style="color:#800000">*Being dead to sins*</span>. [^f34] He had before pointed out another end, even an example of patience; but here, as it has been stated, it is made more manifest, that we are to live a holy and righteous life. The Scripture sometimes mentions both, that is, that the Lord tries us with troubles and adversities, that we might be conformed to the death of Christ, and also that the old man has been crucified in the death of Christ, that we might walk in newness of life. (Philippians 3:10; Romans 6:4.) At the same time, this end of which he speaks, differs from the former, not only as that which is general from what is particular; for in patience there is simply an example; but when he says that Christ suffered, that we being dead to sins should live to righteousness, he intimates that there is power in Christ’s death to mortify our flesh, as Paul explains more fully in the sixth chapter of the Epistle to the Romans. For he has not only brought this great benefit to us, that God justifies us freely, by not imputing to us our sins; but. he also makes us to die to the world and to the flesh, that we may rise again to a new life: not that one day makes complete this death; but wherever it is, the death of Christ is efficacious for the expiation of sins, and also for the mortification of the flesh.
 
 **25.** <span style="color:#800000">*For ye were as sheep*</span>. This also has Peter borrowed from Isaiah, except that the Prophet makes it a universal statement,
 
@@ -960,7 +970,7 @@ But this clause and that which follows, <span style="color:#800000">*by whose st
 
 But on the word <span style="color:#800000">*sheep*</span> there is no particular stress; he indeed compares us to sheep, but the emphasis is on what the Prophet adds, when he says that every one had turned to his own way. The meaning then is, that we are all going astray from the way of salvation, and proceeding in the way of ruin, until Christ brings us back from this wandering.
 
-And this appears still more evident from the clause which follows, <span style="color:#800000">*but are now returned to the Shepherd*</span>, etc.; <span style="color:#800000">[^f35]</span> for all who are not ruled by Christ, are wandering like lost sheep in the ways of error. Thus, then, is condemned the whole wisdom of the world, which does not submit to the government of Christ. But the two titles given here to Christ are remarkable, that he is the <span style="color:#800000">*Shepherd and Bishop of souls*</span>. There is then no cause to fear, but that he will faithfully watch over the safety of those who are in his fold and under his care. And it is his office to keep us safe both in body and soul; yet Peter mentions only souls, because this celestial Shepherd keeps us under his own spiritual protection unto eternal life.
+And this appears still more evident from the clause which follows, <span style="color:#800000">*but are now returned to the Shepherd*</span>, etc.; [^f35] for all who are not ruled by Christ, are wandering like lost sheep in the ways of error. Thus, then, is condemned the whole wisdom of the world, which does not submit to the government of Christ. But the two titles given here to Christ are remarkable, that he is the <span style="color:#800000">*Shepherd and Bishop of souls*</span>. There is then no cause to fear, but that he will faithfully watch over the safety of those who are in his fold and under his care. And it is his office to keep us safe both in body and soul; yet Peter mentions only souls, because this celestial Shepherd keeps us under his own spiritual protection unto eternal life.
 
 <!-- PAGE 84 -->
 
@@ -968,17 +978,19 @@ And this appears still more evident from the clause which follows, <span style="
 
 <h2 class="scripture-anchor" id="1-peter-3-1-4" data-ref="1 PETER 3:1-4" style="display:none">1 PETER 3:1-4</h2>
 
-**1.** Likewise, ye wives, *be* in subjection to your own husbands: that, if any obey not the word, they also may without the word be won by the conversation of the wives;
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600301&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:1-4</span></p>
 
-<p style="text-align:right;" markdown="1">1. Similiter mulieres subjectae sint propriis maritis; ut etiam siqui sunt increduli sermoni, per uxorum conversationem absque sermone lucrifiant;</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Likewise, ye wives, <em>be</em> in subjection to your own husbands: that, if any obey not the word, they also may without the word be won by the conversation of the wives;</td><td class="scripture-la"><strong>1.</strong> Similiter mulieres subjectae sint propriis maritis; ut etiam siqui sunt increduli sermoni, per uxorum conversationem absque sermone lucrifiant;</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> While they behold your chaste conversation <em>coupled</em> with fear.</td><td class="scripture-la"><strong>2.</strong> Considerantes puram <em>(vel,</em> castam) vestram in timore conversationem;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Whose adorning, let it not be that outward <em>adoring</em> of plaiting the hair, and of wearing of gold, or of putting on of apparel;</td><td class="scripture-la"><strong>3.</strong> Quarum ornatus sit non externus, in plicatura capillorum et circumpositione auri, aut palliorum amictu;</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> But <em>let it be</em> the hidden man of the heart, in that which is not corruptible, <em>even the ornament</em> of a meek and quiet spirit, which is in the sight of God of great price.</td><td class="scripture-la"><strong>4.</strong> Sed interior cordis homo, qui in incorruptione situs est placidi et quieti spiritus, qui spiritus coram Deo pretiosus est <em>(vel,</em> quod est coram Deo pretiosum.)</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">**2.** Considerantes puram *(vel,* castam) vestram in timore conversationem; 3. Whose adorning, let it not be that outward *adoring* of plaiting the hair, and of wearing of gold, or of putting on of apparel;</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** While they behold your chaste conversation *coupled* with fear.</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** Quarum ornatus sit non externus, in plicatura capillorum et circumpositione auri, aut palliorum amictu; 4. But *let it be* the hidden man of the heart, in that which is not corruptible, *even the ornament* of a meek and quiet spirit, which is in the sight of God of great price.</p>
-
-<p style="text-align:right;" markdown="1">4. Sed interior cordis homo, qui in incorruptione situs est placidi et quieti spiritus, qui spiritus coram Deo pretiosus est *(vel,* quod est coram Deo pretiosum.)</p>
+</div>
 
 HE proceeds now to another instance of subjection, and bids wives to be subject to their husbands. And as those seemed to have some pretense for shaking off the yoke, who were united to unbelieving men, he expressly reminds them of their duty, and brings forward a particular reason why they ought the more carefully to obey, even that they might by their probity allure their husbands to the faith. But if wives ought to obey ungodly husbands, with much more promptness ought they to obey, who have believing husbands.
 
@@ -992,7 +1004,7 @@ But it may seem strange that Peter should say, that a husband might be <span sty
 <!-- PAGE 86 -->
 It may be now asked, whether the Apostle wholly condemns the use of gold in adorning the body. Were any one to urge these words, it may be said, that he prohibits precious garments no less than gold; for he immediately adds, <span style="color:#800000">*the putting on of apparel*</span>, or, of clothes. But it would be an immoderate strictness wholly to forbid neatness and elegance in clothing. If the material is said to be too sumptuous, the Lord has created it; and we know that skill in art has proceeded from him. Then Peter did not intend to condemn every sort of ornament, but the evil of vanity, to which women are subject. Two things are to be regarded in clothing, usefulness and decency; and what decency requires is moderation and modesty. Were, then, a woman to go forth with her hair wantonly curled and decked, and make an extravagant display, her vanity could not be excused. They who object and say, that to clothe one’s-self in this or that manner is an indifferent thing, in which all are free to do as they please, may be easily confuted; for excessive elegance and superfluous display, in short, all excesses, arise from a corrupted mind. Besides, ambition, pride, affectation of display, and all things of this kind, are not indifferent things. Therefore they whose minds are purified from all vanity, will duly order all things, so as not to exceed moderation.
 
-**4.** <span style="color:#800000">*But let it be the hidden, man of the heart*</span>. The contrast here ought to be carefully observed. Cato said, that they who are anxiously engaged in adorning the body, neglect the adorning of the mind: so Peter, in order to restrain this desire in women, introduces a remedy, that they are to devote themselves to the cultivation of their minds. The word <span style="color:#800000">*heart*</span>, no doubt means the whole soul. He at the same time shews in what consists the spiritual adorning of women, even in <span style="color:#800000">*the incorruptness of a meek and quiet spirit*</span>. “Incorruptness,” as I think, is set in opposition to things which fade and vanish away, things which serve to adorn the body. Therefore the version of Erasmus departs from the real meaning. In short, Peter means that the ornament of the soul is not like a fading flower, nor consists in vanishing splendor, but is incorruptible. By mentioning *quiet* and a tranquil *spirit,* he marks out what especially belongs to women; for nothing becomes them more than a placid and a sedate temper of mind. <span style="color:#800000">[^f36]</span> For we know how outrageous a being is an imperious and a self-willed woman. And further, nothing is more fitted to correct the vanity of which Peter speaks than a placid quietness of spirit.
+**4.** <span style="color:#800000">*But let it be the hidden, man of the heart*</span>. The contrast here ought to be carefully observed. Cato said, that they who are anxiously engaged in adorning the body, neglect the adorning of the mind: so Peter, in order to restrain this desire in women, introduces a remedy, that they are to devote themselves to the cultivation of their minds. The word <span style="color:#800000">*heart*</span>, no doubt means the whole soul. He at the same time shews in what consists the spiritual adorning of women, even in <span style="color:#800000">*the incorruptness of a meek and quiet spirit*</span>. “Incorruptness,” as I think, is set in opposition to things which fade and vanish away, things which serve to adorn the body. Therefore the version of Erasmus departs from the real meaning. In short, Peter means that the ornament of the soul is not like a fading flower, nor consists in vanishing splendor, but is incorruptible. By mentioning *quiet* and a tranquil *spirit,* he marks out what especially belongs to women; for nothing becomes them more than a placid and a sedate temper of mind. [^f36] For we know how outrageous a being is an imperious and a self-willed woman. And further, nothing is more fitted to correct the vanity of which Peter speaks than a placid quietness of spirit.
 
 What follows, that it is <span style="color:#800000">*in the sight of God of great price*</span>, may be referred to the whole previous sentence as well as to the word <span style="color:#800000">*spirit*</span>; the meaning indeed will remain the same. For why do women take so much care to adorn themselves, except that they may turn the eyes of men on themselves? But Peter, on the contrary, bids them to be more anxious for what is before God of a great price.
 
@@ -1000,18 +1012,17 @@ What follows, that it is <span style="color:#800000">*in the sight of God of gre
 
 <h2 class="scripture-anchor" id="1-peter-3-5-6" data-ref="1 PETER 3:5-6" style="display:none">1 PETER 3:5-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600305&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:5-6</span></p>
 
-<strong>5.</strong> For after this manner in the old time the holy women also, who trusted in God, adorned themselves, being in subjection unto their own husbands:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> For after this manner in the old time the holy women also, who trusted in God, adorned themselves, being in subjection unto their own husbands:</td><td class="scripture-la"><strong>5.</strong> Sic enim aliquando et sanctae mulieres quae sperabant in Deum, ornabant seipsas, subjectae propriis maritis:</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> Even as Sarah obeyed Abraham, calling him lord: whose daughters ye are as long as ye do well, and are not afraid with any amazement.</td><td class="scripture-la"><strong>6.</strong> Quemadmodum et Sara obediebat Abrahae, dominum ipsum appellans, cujus filiae estis factae, si benefeceritis, et non terreamini ullo pavore.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">5. Sic enim aliquando et sanctae mulieres quae sperabant in Deum, ornabant seipsas, subjectae propriis maritis:</p>
-
-<p style="margin-left:2em;" markdown="1">**6.** Even as Sarah obeyed Abraham, calling him lord: whose daughters ye are as long as ye do well, and are not afraid with any amazement.</p>
-
-<p style="text-align:right;" markdown="1">6. Quemadmodum et Sara obediebat Abrahae, dominum ipsum appellans, cujus filiae estis factae, si benefeceritis, et non terreamini ullo pavore.</p>
 
 He sets before them the example of pious women, who sought for spiritual adorning rather than outward meretricious ornaments. But he mentions Sarah above all others, who, having been the mother of all the faithful, is especially worthy of honor and imitation on the part of her sex. Moreover, he returns again to subjection, and confirms it by the example of Sarah, who, according to the words of Moses, called her husband Lord. (Genesis 18:12.) God, indeed, does not regard such titles; and it may sometimes be, that one especially petulant and disobedient should use such a word with her tongue; but Peter means, that Sarah usually spoke thus, because she knew that a command had been given her by the Lord, to be subject to her husband. Peter adds, that they who imitated her fidelity would be her daughters, that is, reckoned among the faithful.
 
@@ -1019,13 +1030,20 @@ He sets before them the example of pious women, who sought for spiritual adornin
 
 <!-- PAGE 88 -->
 
-However, the first explanation is what I prefer, though the last does not differ much from it. <span style="color:#800000">[^f37]</span>
+However, the first explanation is what I prefer, though the last does not differ much from it. [^f37]
 
 <h2 class="scripture-anchor" id="1-peter-3-7" data-ref="1 PETER 3:7" style="display:none">1 PETER 3:7</h2>
 
-<p style="margin-left:2em;" markdown="1">**7.** Likewise, ye husbands, dwell with *them* according to knowledge, giving honor unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.</p>
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600305&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:7</span></p>
 
-<p style="text-align:right;" markdown="1">7. Viri similiter cohabitent secundum scientiam, tanquam infirmiori vasi, muliebri impertientes honorem, tanquam etiam cohaeredes gratiae vitae (*vel*, multiplicis gratiae et vitae,) ne preces vestrae interrumpantur.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> Likewise, ye husbands, dwell with <em>them</em> according to knowledge, giving honor unto the wife, as unto the weaker vessel, and as being heirs together of the grace of life; that your prayers be not hindered.</td><td class="scripture-la"><strong>7.</strong> Viri similiter cohabitent secundum scientiam, tanquam infirmiori vasi, muliebri impertientes honorem, tanquam etiam cohaeredes gratiae vitae (<em>vel</em>, multiplicis gratiae et vitae,) ne preces vestrae interrumpantur.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **7.** <span style="color:#800000">*Likewise, ye husbands, dwell with them*</span>. From husbands he requires prudence; for dominion over their wives is not given them, except on this condition, that they exercise authority prudently. Then let husbands remember that they need prudence to do rightly their duty. And doubtless many foolish things must be endured by them, many unpleasant things must be borne with; and they must at the same time beware lest their indulgence should foster folly. Hence the admonition of Peter is not in vain, that the husbands ought to cohabit with them as with a <span style="color:#800000">*weaker vessel.*</span> Part of the prudence which he mentions, is, that the husbands honor their wives. For nothing destroys the friendship of life more than contempt; nor can we really love any but those whom we esteem; for love must be connected with respect.
 
@@ -1034,7 +1052,7 @@ Moreover, he employs a twofold argument, in order to persuade husbands to treat 
 
 The word <span style="color:#800000">*vessel*</span>, as it is well known, means in Scripture any sort of instrument.
 
-<span style="color:#800000">*Being heirs together (or co-heirs) of the grace of life*</span>. Some copies have “of manifold grace;” others, instead of “life,” have the word “living.” Some read “co-heirs” in the dative case, which makes no difference in the sense. A conjunction is put by others between manifold grace and life; which reading is the most suitable. <span style="color:#800000">[^f38]</span> For since the Lord is pleased to bestow in common on husbands and wives the same graces, he invites them to seek an equality in them; and we know that those graces are manifold in which wives are partakers with their husbands. For some belong to the present life, and some to God’s spiritual kingdom. He afterwards adds, that they are co-heirs also of life, which is the chief thing. And though some are strangers to the hope of salvation, yet as it is offered by the Lord to them no less than to their husbands, it is a sufficient honor to the sex.
+<span style="color:#800000">*Being heirs together (or co-heirs) of the grace of life*</span>. Some copies have “of manifold grace;” others, instead of “life,” have the word “living.” Some read “co-heirs” in the dative case, which makes no difference in the sense. A conjunction is put by others between manifold grace and life; which reading is the most suitable. [^f38] For since the Lord is pleased to bestow in common on husbands and wives the same graces, he invites them to seek an equality in them; and we know that those graces are manifold in which wives are partakers with their husbands. For some belong to the present life, and some to God’s spiritual kingdom. He afterwards adds, that they are co-heirs also of life, which is the chief thing. And though some are strangers to the hope of salvation, yet as it is offered by the Lord to them no less than to their husbands, it is a sufficient honor to the sex.
 
 <span style="color:#800000">*That your prayers be not hindered*</span>. For God cannot be rightly called upon, unless our minds be calm and peaceable. Among strifes and contentions there is no place for prayer. Peter indeed addresses the husband and the wife, when he bids them to be at peace one with another, so that they might with one mind pray to God. But we may hence gather a general doctrine — that no one ought to come to God except he is united to his brethren. Then as this reason ought to restrain all domestic quarrels and strifes, in order that each one of the family may pray to God; so in common life it ought to be as it were a bridle to check all contentions. For we are more than insane, if we knowingly and wilfully close up the way to God’s presence by prayer, since this is the only asylum of our salvation.
 
@@ -1048,25 +1066,24 @@ But the doctrine of Peter extends wider: and then Paul does not mean that prayer
 
 <h2 class="scripture-anchor" id="1-peter-3-8-9" data-ref="1 PETER 3:8-9" style="display:none">1 PETER 3:8-9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600308&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:8-9</span></p>
 
-<strong>8.</strong> Finally, be ye all of one mind, having compassion one of another; love as brethren, be pitiful, be courteous:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> Finally, be ye all of one mind, having compassion one of another; love as brethren, be pitiful, be courteous:</td><td class="scripture-la"><strong>8.</strong> Denique sitis omnes idem sentientes, compatientes, fraternè vos diligentes, misericordes, humiles;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing.</td><td class="scripture-la"><strong>9.</strong> Non reddentes malum pro malo, vel convitium pro convitio; imo potius benedicentes, scientes quod in hoc vocati sitis, ut benedictionem hereditate consequamini.</td></tr>
+</tbody>
+</table>
 
 </div>
 
-<p style="text-align:right;" markdown="1">8. Denique sitis omnes idem sentientes, compatientes, fraternè vos diligentes, misericordes, humiles;</p>
-
-<p style="margin-left:2em;" markdown="1">**9.** Not rendering evil for evil, or railing for railing: but contrariwise blessing; knowing that ye are thereunto called, that ye should inherit a blessing.</p>
-
-<p style="text-align:right;" markdown="1">9. Non reddentes malum pro malo, vel convitium pro convitio; imo potius benedicentes, scientes quod in hoc vocati sitis, ut benedictionem hereditate consequamini.</p>
-
-Now follow general precepts which indiscriminately belong to all. <span style="color:#800000">[^f39]</span>
+Now follow general precepts which indiscriminately belong to all. [^f39]
 
 Moreover he summarily mentions some things which are especially necessary to foster friendship and love. The first is, <span style="color:#800000">*Be ye all of one mind*</span>, or, think ye all the same thing. For though friends are at liberty to think differently, yet to do so is a cloud which obscures love; yea, from this seed easily arises hatred. Sympathy (<span style="color:#0000d4">συμπάθεια</span>) extends to all our faculties, when concord exists between us; so that every one condoles with us in adversity as well as rejoices with us in prosperity, so that every one not only cares for himself, but also regards the benefit of others.
 
 <!-- PAGE 91 -->
-What next follows, <span style="color:#800000">*Love as brethren*</span>, belongs peculiarly to the faithful; for where God is known as a Father, there only brotherhood really exists. Be <span style="color:#800000">*pitiful*</span>, or merciful, which is added, means that we are not only to help our brethren and relieve their miseries, but also to bear with their infirmities. In what follows there are two readings in Greek; but what seems to me the most probable is the one I have put as the text; for we know that it is the chief bond to preserve friendship, when every one thinks modestly and humbly of himself; as there is nothing on the other hand which produces more discords than when we think too highly of ourselves. Wisely then does Peter bid us to be humble-minded (<span style="color:#0000d4">ταπεινόφρονες</span>,) lest pride and haughtiness should lead us to despise our neighbors. <span style="color:#800000">[^f40]</span>
+What next follows, <span style="color:#800000">*Love as brethren*</span>, belongs peculiarly to the faithful; for where God is known as a Father, there only brotherhood really exists. Be <span style="color:#800000">*pitiful*</span>, or merciful, which is added, means that we are not only to help our brethren and relieve their miseries, but also to bear with their infirmities. In what follows there are two readings in Greek; but what seems to me the most probable is the one I have put as the text; for we know that it is the chief bond to preserve friendship, when every one thinks modestly and humbly of himself; as there is nothing on the other hand which produces more discords than when we think too highly of ourselves. Wisely then does Peter bid us to be humble-minded (<span style="color:#0000d4">ταπεινόφρονες</span>,) lest pride and haughtiness should lead us to despise our neighbors. [^f40]
 
 **9.** <span style="color:#800000">*Not rendering evil for evil*</span>. In these words every kind of revenge is forbidden; for in order to preserve love, we must bear with many things. At the same time he does not speak here of mutual benevolence, but he would have us to endure wrongs, when provoked by ungodly men. And though it is commonly thought that it is an instance of a weak and abject mind, not to avenge injuries, yet it is counted before God as the highest magnanimity. Nor is it indeed enough to abstain from revenge; but Peter requires also that we should pray for those who reproach us; for to <span style="color:#800000">*bless*</span> here means to pray, as it is set in opposition to the second clause. But Peter teaches us in general, that evils are to be overcome by acts of kindness. This is indeed very hard, but we ought to imitate in this case our heavenly Father, who makes his sun to rise on the unworthy. What the sophists imagine to be the meaning, is a futile evasion; for when Christ said, “Love your enemies,” he at the same time confirmed his own doctrine by saying, “That ye might be the children of God.”
 
@@ -1078,24 +1095,21 @@ The verb, <span style="color:#0000d4">κληρονόμειν</span>, to inherit,
 
 <h2 class="scripture-anchor" id="1-peter-3-10-15" data-ref="1 PETER 3:10-15" style="display:none">1 PETER 3:10-15</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600310&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:10-15</span></p>
 
-<strong>10.</strong> For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> For he that will love life, and see good days, let him refrain his tongue from evil, and his lips that they speak no guile:</td><td class="scripture-la"><strong>10.</strong> Qui enim vult vitam diligere, et videre dies bonos, contineat linguam suam à malo, et labia sua, ne loquantur dolum;</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Let him eschew evil, and do good; let him seek peace, and ensue it.</td><td class="scripture-la"><strong>11.</strong> Declinet à malo et faciat bonum, quaerat pacem et persequatur eam:</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> For the eyes of the Lord are over the righteous, and his ears are open, unto their prayers: but the face of the Lord is against them that do evil.</td><td class="scripture-la"><strong>12.</strong> Quoniam oculi Domini super justos, et aures ejus in preces eorum; vultus autem Domini super facientes mala.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> And who is he that will harm you, if ye be followers of that which is good?</td><td class="scripture-la"><strong>13.</strong> Et quis est qui vobis malè faciat, si boni aemuli sitis?</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> But and if ye suffer for righteousness’ sake, happy are ye: and be not afraid of their terror, neither be troubled;</td><td class="scripture-la"><strong>14.</strong> Verum etiam si patiamini propter justitiam, beati; timorem vero eorum ne timeatis neque turbemini;</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> But sanctify the Lord God in your hearts.</td><td class="scripture-la"><strong>15.</strong> Sed Dominum exercituum sanctificate in cordibus vestris.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**10.** Qui enim vult vitam diligere, et videre dies bonos, contineat linguam suam à malo, et labia sua, ne loquantur dolum; 11. Let him eschew evil, and do good; let him seek peace, and ensue it.</p>
-
-<p style="margin-left:2em;" markdown="1">**11.** Declinet à malo et faciat bonum, quaerat pacem et persequatur eam: 12. For the eyes of the Lord are over the righteous, and his ears are open, unto their prayers: but the face of the Lord is against them that do evil.</p>
-
-<p style="margin-left:2em;" markdown="1">**12.** Quoniam oculi Domini super justos, et aures ejus in preces eorum; vultus autem Domini super facientes mala. 13. And who is he that will harm you, if ye be followers of that which is good?</p>
-
-<p style="margin-left:2em;" markdown="1">**13.** Et quis est qui vobis malè faciat, si boni aemuli sitis? 14. But and if ye suffer for righteousness’ sake, happy are ye: and be not afraid of their terror, neither be troubled;</p>
-
-<p style="margin-left:2em;" markdown="1">**14.** Verum etiam si patiamini propter justitiam, beati; timorem vero eorum ne timeatis neque turbemini; 15. But sanctify the Lord God in your hearts.</p>
-
-<p style="text-align:right;" markdown="1">15. Sed Dominum exercituum sanctificate in cordibus vestris.</p>
 
 **10.** <span style="color:#800000">*For he*</span>. He confirms the last sentence by the testimony of David. The passage is taken from the thirty-fourth Psalm, where the Spirit testifies that it will be well with all who keep themselves from all evil-doing and wrong-doing. The common feeling indeed favors what is very different; for men think that they expose themselves to the insolence of enemies, if they do not boldly defend themselves. But the Spirit of God promises a happy life to none except to the meek, and those who endure evils; and we cannot be happy except God prospers our ways; and it is the good and the benevolent, and not the cruel and inhuman, that he will favor.
 
@@ -1112,7 +1126,7 @@ The first thing he points out are the vices of the tongue; which are to be avoid
 <!-- PAGE 94 -->
 <span style="color:#800000">*But the face of the Lord*</span>. By this clause he intimates that the Lord will be our avenger, because he will not always suffer the insolence of the ungodly to prevail; and at the same time he shews how it will be, if we seek to defend our life from injuries, even that God will be an adversary to us. But it may, on the other hand, be objected and said, that we experience it daily far otherwise, for the more righteous any one is, and the greater lover of peace he is, the more he is harassed by the wicked. To this I reply, that no one is so attentive to righteousness and peace, but that he sometimes sins in this respect. But it ought to be especially observed, that the promises as to this life do not extend further than as to what is expedient for us to be fulfilled. Hence, our peace with the world is often disturbed, that our flesh may be subdued, in order that we may serve God, and also for other reasons; so that nothing may be a loss to us.
 
-**13.** <span style="color:#800000">*Who is he that will harm you*</span>. He further confirms the previous sentence by an argument drawn from common experience. For it happens for the most part, that the ungodly disturb us, or are provoked by us, or that we do not labor to do them good as it behoves us; for they who seek to do good, do even soften minds which are otherwise hard as iron. This very thing is mentioned by Plato in his first book on the Republic, “Injustice,” he says, “causes seditions and hatreds and fightings one with another; but justice, concord and friendship.” <span style="color:#800000">[^f41]</span> However, though this commonly happens, yet it is not always the case; for the children of God, how much soever they may strive to pacify the ungodly by kindness, and shew themselves kind towards all, are yet often assailed undeservedly by many.
+**13.** <span style="color:#800000">*Who is he that will harm you*</span>. He further confirms the previous sentence by an argument drawn from common experience. For it happens for the most part, that the ungodly disturb us, or are provoked by us, or that we do not labor to do them good as it behoves us; for they who seek to do good, do even soften minds which are otherwise hard as iron. This very thing is mentioned by Plato in his first book on the Republic, “Injustice,” he says, “causes seditions and hatreds and fightings one with another; but justice, concord and friendship.” [^f41] However, though this commonly happens, yet it is not always the case; for the children of God, how much soever they may strive to pacify the ungodly by kindness, and shew themselves kind towards all, are yet often assailed undeservedly by many.
 
 **14.** Hence Peter adds, <span style="color:#800000">*But if ye suffer for righteousness’ sake*</span>. The meaning is, that the faithful will do more towards obtaining a quiet life by kindness, than by violence and prompfitude in taking revenge; but that when they neglect nothing to secure peace, were they to suffer, they are still blessed, because they suffer for the sake of righteousness. Indeed, this latter clause differs much from the judgment of our flesh; but Christ has not without reason thus declared; nor has Peter without reason repeated the sentence from his mouth; for God will at length come as a deliverer, and then openly will appear what now seems incredible, that is, that the miseries of the godly have been blessed when endured with patience.
 
@@ -1127,17 +1141,21 @@ But Peter no doubt meant to allude to a passage in the eighth chapter of Isaiah;
 I do not, however, object, if any one prefers to render Peter’s words thus, <span style="color:#800000">*Fear ye not their fear*</span>; as though he had said, “Be ye not afraid as the unbelieving, or the children of this world are wont to be, because they understand nothing of God’s providence.” But this, as I think, would be a forced explanation. There is, indeed, no need for us to toil much on this point, since Peter here did not intend to explain every word used by the Prophet, but only referred to this one thing, that the faithful will firmly stand, and can never be moved from a right course of duty by any dread or fear, if they will sanctify the Lord.
 
 <!-- PAGE 96 -->
-But this sanctification ought to be confined to the present case. For whence is it that we are overwhelmed with fear, and think ourselves lost, when danger is impending, except that we ascribe to mortal man more power to injure us than to God to save us? God promises that he will be the guardian of our salvation; the ungodly, on the other hand, attempt to subvert it. Unless God’s promise sustain us, do we not deal unjustly with him, and in a manner profane him? Then the Prophet teaches us that we ought to think honourably of the Lord of hosts; for how much soever the ungodly may contrive to destroy us, and whatever power they may possess, he alone is more than sufficiently powerful to secure our safety. <span style="color:#800000">[^f42]</span> Peter then adds, *in your hearts.* For if this conviction takes full possession of our minds, that the help promised by the Lord is sufficient for us, we shall be well fortified to repel all the fears of unbelief.
+But this sanctification ought to be confined to the present case. For whence is it that we are overwhelmed with fear, and think ourselves lost, when danger is impending, except that we ascribe to mortal man more power to injure us than to God to save us? God promises that he will be the guardian of our salvation; the ungodly, on the other hand, attempt to subvert it. Unless God’s promise sustain us, do we not deal unjustly with him, and in a manner profane him? Then the Prophet teaches us that we ought to think honourably of the Lord of hosts; for how much soever the ungodly may contrive to destroy us, and whatever power they may possess, he alone is more than sufficiently powerful to secure our safety. [^f42] Peter then adds, *in your hearts.* For if this conviction takes full possession of our minds, that the help promised by the Lord is sufficient for us, we shall be well fortified to repel all the fears of unbelief.
 
 <h2 class="scripture-anchor" id="1-peter-3-15-16" data-ref="1 PETER 3:15-16" style="display:none">1 PETER 3:15-16</h2>
 
-**15.** And *be* ready always to *give* an answer to every man that asketh you a reason of the hope that is in you with meekness and fear:
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600315&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:15-16</span></p>
 
-<p style="text-align:right;" markdown="1">15. Parati autem sitis ad responsionem cuivis poscenti à vobis rationem ejus quae in vobis est spei;</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> And <em>be</em> ready always to <em>give</em> an answer to every man that asketh you a reason of the hope that is in you with meekness and fear:</td><td class="scripture-la"></td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Having a good conscience; that, whereas they speak evil of you, as of evil-doers, they may be ashamed that falsely accuse your good conversation in Christ.</td><td class="scripture-la"><strong>16.</strong> Cum mansuetudine et timore, conscientiam habentes bonam; ut in quo de vobis obtrectant, tanquam maleficis, pudefiant dum infamant bonam vestram in Christo conversationem.</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">**16.** Having a good conscience; that, whereas they speak evil of you, as of evil-doers, they may be ashamed that falsely accuse your good conversation in Christ.</p>
-
-<p style="text-align:right;" markdown="1">16. Cum mansuetudine et timore, conscientiam habentes bonam; ut in quo de vobis obtrectant, tanquam maleficis, pudefiant dum infamant bonam vestram in Christo conversationem.</p>
+</div>
 
 Though this is a new precept, it yet depends on what is gone before, for he requires such constancy in the faithful, as boldly to give a reason for their faith to their adversaries. And this is a part of that sanctification which he had just mentioned; for we then really honor God, when neither fear nor shame hinders us from making a profession of our faith. But Peter does not expressly bid us to assert and proclaim what has been given us by the Lord everywhere, and always and among all indiscriminately, for the Lord gives his people the spirit of discretion, so that they may know when and how far and to whom it is expedient to speak. He bids them only to be ready to give an answer, lest by their sloth and the cowardly fear of the flesh they should expose the doctrine of Christ, by being silent, to the derision of the ungodly. The meaning then is, that we ought to be prompt in avowing our faith, so as to set it forth whenever necessary, lest the unbelieving through our silence should condemn the religion we follow.
 
@@ -1158,13 +1176,17 @@ He therefore says, <span style="color:#800000">*that they may be ashamed*</span>
 
 <h2 class="scripture-anchor" id="1-peter-3-17-18" data-ref="1 PETER 3:17-18" style="display:none">1 PETER 3:17-18</h2>
 
-**17.** For *it is* better, if the will of God be so, that ye suffer for welldoing, than for evil-doing.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600317&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:17-18</span></p>
 
-<p style="text-align:right;" markdown="1">17. Praestat enim benefaciendo (si ita fert voluntas Dei) pati quàm malefaciendo:</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> For <em>it is</em> better, if the will of God be so, that ye suffer for welldoing, than for evil-doing.</td><td class="scripture-la"><strong>17.</strong> Praestat enim benefaciendo (si ita fert voluntas Dei) pati quàm malefaciendo:</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:</td><td class="scripture-la"><strong>18.</strong> Quia et Christus semel pro peccatis passus est, justus pro injustis, ut nos adduceret Deo; mortificatus quidem carne, vivificatus autem spiritu.</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">**18.** For Christ also hath once suffered for sins, the just for the unjust, that he might bring us to God, being put to death in the flesh, but quickened by the Spirit:</p>
-
-<p style="text-align:right;" markdown="1">18. Quia et Christus semel pro peccatis passus est, justus pro injustis, ut nos adduceret Deo; mortificatus quidem carne, vivificatus autem spiritu.</p>
+</div>
 
 <!-- PAGE 99 -->
 **17.** <span style="color:#800000">*For it is better*</span>. This belongs not only to what follows but to the whole context. He had spoken of the profession of faith, which at that time was attended with great danger; he says now that it is much better, if they sustained any loss in defending a good cause, to suffer thus unjustly than to be punished for their evil deeds. This consolation is understood rather by secret meditation, than by many words. It is what indeed occurs everywhere in profane authors, that there is a sufficient defense in a good conscience, whatever evils may happen, and must be endured. These have spoken courageously; but then the only really bold man is he who looks to God. Therefore Peter added this clause, <span style="color:#800000">*If the will of God be so*</span>. For in these words he reminds us, that if we suffer unjustly, it is not by chance, but according to the divine will; and he assumes, that God wills nothing or appoints nothing but for the best reason. Hence the faithful have always this comfort in their miseries, that they know that they have God as their witness, and that they also know that they are led by him to the contest, in order that they may under his protection give a proof of their faith.
@@ -1180,22 +1202,19 @@ Here, however, a question may be raised, Does not God chastise the faithful, whe
 
 <h2 class="scripture-anchor" id="1-peter-3-19-22" data-ref="1 PETER 3:19-22" style="display:none">1 PETER 3:19-22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600319&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">3:19-22</span></p>
 
-<strong>19.</strong> By which also he went and preached unto the spirits in prison;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> By which also he went and preached unto the spirits in prison;</td><td class="scripture-la"><strong>19.</strong> In quo et iis qui in specula <em>(vel,</em> in excubiis, <em>vel,</em> carcere) erant spiritibus, profectus prsedicavit;</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls, were saved by water.</td><td class="scripture-la"><strong>20.</strong> Quum inereduli fuissent olim, quum semel expectabatur Dei patientia in diebus Noe; dum apparabatur arca, in qua paucae, hoc est, octo animae servatae sunt per aquam.</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> The like figure whereunto <em>even</em> baptism doth also now save us, (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:</td><td class="scripture-la"><strong>21.</strong> Cujus figura respondens baptismus, nos quoque salvos reddit, non abjectio sordium carnis, sed bonae conscientiae examen apud Deum, per resurrectionem Jesu Christi:</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Who is gone into heaven, and is on the right hand of God; angels, and authorities, and powers, being made subject unto him.</td><td class="scripture-la"><strong>22.</strong> Qui est in dextera Dei profectus in coelum, subjectis sibi angelis, et potestatibus et virtutibus.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">19. In quo et iis qui in specula *(vel,* in excubiis, *vel,* carcere) erant spiritibus, profectus prsedicavit;</p>
-
-<p style="margin-left:2em;" markdown="1">**20.** Which sometime were disobedient, when once the longsuffering of God waited in the days of Noah, while the ark was a preparing, wherein few, that is, eight souls, were saved by water.</p>
-
-<p style="margin-left:2em;" markdown="1">**20.** Quum inereduli fuissent olim, quum semel expectabatur Dei patientia in diebus Noe; dum apparabatur arca, in qua paucae, hoc est, octo animae servatae sunt per aquam. 21. The like figure whereunto *even* baptism doth also now save us, (not the putting away of the filth of the flesh, but the answer of a good conscience toward God,) by the resurrection of Jesus Christ:</p>
-
-<p style="margin-left:2em;" markdown="1">**21.** Cujus figura respondens baptismus, nos quoque salvos reddit, non abjectio sordium carnis, sed bonae conscientiae examen apud Deum, per resurrectionem Jesu Christi: 22. Who is gone into heaven, and is on the right hand of God; angels, and authorities, and powers, being made subject unto him.</p>
-
-<p style="text-align:right;" markdown="1">22. Qui est in dextera Dei profectus in coelum, subjectis sibi angelis, et potestatibus et virtutibus.</p>
 
 **19.** <span style="color:#800000">*By which also*</span>. Peter added this, that we might know that the vivifying power of the Spirit of which he spoke, was not only put forth as to Christ himself, but is also poured forth with regard to us, as Paul shews in Romans 5:5. He then says, that Christ did not rise only for himself, but that he made known to others the same power of his Spirit, so that it penetrated to the dead. It hence follows, that we shall not less feel it in vivifying whatever is mortal in us.
 
@@ -1221,7 +1240,7 @@ After having then said that Christ was manifested to the dead, he immediately ad
 
 He then comforted the godly, lest they should be cast down and destroyed because they were so few; and he chose an example the most remarkable in antiquity, even that of the world drowned by the deluge; for then in the common ruin of mankind, the family of Noah alone escaped. And he points out the manner, and says that it was a kind of baptism. There is then in this respect also nothing unsuitable.
 
-The sum of what is said is this, that the world has always been full of unbelievers, but that the godly ought not to be terrified by their vast number; for though Noah was surrounded on every side by the ungodly, and had very few as his friends, he was not yet drawn aside from the right course of his faith. <span style="color:#800000">[^f43]</span>
+The sum of what is said is this, that the world has always been full of unbelievers, but that the godly ought not to be terrified by their vast number; for though Noah was surrounded on every side by the ungodly, and had very few as his friends, he was not yet drawn aside from the right course of his faith. [^f43]
 
 <span style="color:#800000">*When once the long-suffering of God waited*</span>. This ought to be applied to the ungodly, whom God’s patience rendered more slothful; for when God deferred his vengeance and did not immediately execute it, the ungodly boldly disregarded all threatenings; but Noah, on the contrary, being warned by God, had the deluge for a long time before his eyes. Hence his assiduity in building the ark; for being terrified by God’s judgment, he shook off all torpidity.
 
@@ -1250,24 +1269,20 @@ But we must notice what follows, <span style="color:#800000">*by the resurrectio
 
 <h2 class="scripture-anchor" id="1-peter-4-1-5" data-ref="1 PETER 4:1-5" style="display:none">1 PETER 4:1-5</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600401&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">4:1-5</span></p>
 
-<strong>1.</strong> Forasmuch then as Christ hath suffered for us in the flesh, arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Forasmuch then as Christ hath suffered for us in the flesh, arm yourselves likewise with the same mind: for he that hath suffered in the flesh hath ceased from sin;</td><td class="scripture-la"><strong>1.</strong> Christo igitur passo pro nobis carne, vos quoque eadem cogitatione armamini; quod scilicet qui passus est in carne, destitit à peccato;</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> That he no longer should live the rest of <em>his</em> time in the flesh to the lusts of men, but to the will of God.</td><td class="scripture-la"><strong>2.</strong> Ne amplius hominum concupiscentiis, sed voluntati Dei, quod residuum est temporis in carne, vivat.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> For the time past of <em>our</em> life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:</td><td class="scripture-la"><strong>3.</strong> Satis enim nobis est quod anteacto vitae tempore voluntatem gentium patraverimus, quum ambularemus in lasciviis, concupiscentiis, comessationibus, potationibus et nefariis idololatriis:</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> Wherein <em>they</em> think it strange that ye run not with <em>them</em> to the same excess of riot, speaking evil of <em>you;</em></td><td class="scripture-la"><strong>4.</strong> Quod illis videtur insolens, quòd non concurratis in eandem luxus profusionem, ideoque malè loquuntur;</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Who shall give account to him that is ready to judge the quick and the dead.</td><td class="scripture-la"><strong>5.</strong> Qui reddituri sunt rationem ei qui paratus est judicare vivos et mortuos.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Christo igitur passo pro nobis carne, vos quoque eadem cogitatione armamini; quod scilicet qui passus est in carne, destitit à peccato;</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** That he no longer should live the rest of *his* time in the flesh to the lusts of men, but to the will of God.</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** Ne amplius hominum concupiscentiis, sed voluntati Dei, quod residuum est temporis in carne, vivat. 3. For the time past of *our* life may suffice us to have wrought the will of the Gentiles, when we walked in lasciviousness, lusts, excess of wine, revellings, banquetings, and abominable idolatries:</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** Satis enim nobis est quod anteacto vitae tempore voluntatem gentium patraverimus, quum ambularemus in lasciviis, concupiscentiis, comessationibus, potationibus et nefariis idololatriis: 4. Wherein *they* think it strange that ye run not with *them* to the same excess of riot, speaking evil of *you;*</p>
-
-<p style="margin-left:2em;" markdown="1">**4.** Quod illis videtur insolens, quòd non concurratis in eandem luxus profusionem, ideoque malè loquuntur; 5. Who shall give account to him that is ready to judge the quick and the dead.</p>
-
-<p style="text-align:right;" markdown="1">5. Qui reddituri sunt rationem ei qui paratus est judicare vivos et mortuos.</p>
 
 <!-- PAGE 108 -->
 **1.** <span style="color:#800000">*Forasmuch then as Christ*</span>. When he had before set forth Christ before us, he only spoke of the suffering of the cross; for sometimes the cross means mortification, because the outward man is wasted by afflictions, and our flesh is also subdued. But he now ascends higher; for he speaks of the reformation of the whole man. The Scripture recommends to us a twofold likeness to the death of Christ, that we are to be conformed to him in reproaches and troubles, and also that the old man being dead and extinct in us, we are to be renewed to a spiritual life. (Philippians 3:10; Romans 6:4.) Yet Christ is not simply to be viewed as our example, when we speak of the mortificaion of the flesh; but it is by his Spirit that we are really made conformable to his death, so that it becomes effectual to the crucifying of our flesh. In short, as Peter at the end of the last chapter exhorted us to patience after the example of Christ, because death was to him a passage to life; so now from the same death he deduces a higher doctrine, that we ought to die to the flesh and to the world, as Paul teaches us more at large in the sixth chapter of his Epistle to the Romans. He therefore says, <span style="color:#800000">*arm yourselves*</span>, or be ye armed, intimating that we are really and effectually supplied with invincible weapons to subdue the flesh, if we partake as we ought of the efficacy of Christ’s death.
@@ -1276,7 +1291,7 @@ But we must notice what follows, <span style="color:#800000">*by the resurrectio
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“He who is dead is justified or freed from sin;”</span></p>
 
-for both the Apostles intimate, that when we become dead to the flesh, we have no more to do with sin, that it should reign in us, and exercise its power in our life. <span style="color:#800000">[^f44]</span>
+for both the Apostles intimate, that when we become dead to the flesh, we have no more to do with sin, that it should reign in us, and exercise its power in our life. [^f44]
 
 It may, however, be objected, that Peter here speaks unsuitably in making us to be conformable to Christ in this respect, that we suffer in the flesh; for it is certain that there was nothing sinful in Christ which required to be corrected. But the answer is obvious, that it is not necessary that a comparison should correspond in all its parts. It is then enough that we should in a measure be made conformable to the death of Christ. In the same way is also explained, not unfitly, what Paul says, that we are planted in the likeness of his death, (Romans 6:5;) for the manner is not altogether the same, but that his death is become in a manner the type and pattern of our mortification.
 
@@ -1308,31 +1323,28 @@ Then the Apostle anticipated this, and forbade the faithful to be discouraged by
 
 <h2 class="scripture-anchor" id="1-peter-4-6-11" data-ref="1 PETER 4:6-11" style="display:none">1 PETER 4:6-11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600406&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">4:6-11</span></p>
 
-<strong>6.</strong> For, for this cause was the gospel preached also to them that are dead, that they might be judged according to men in the flesh, but live according to God in the spirit.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> For, for this cause was the gospel preached also to them that are dead, that they might be judged according to men in the flesh, but live according to God in the spirit.</td><td class="scripture-la"><strong>6.</strong> In hoc enim et mortuis evangelizatus fuit (vel, praedicatum fuit evangelium,) ut judicentur quiderm secundum homines carne, vivant autem secundum Deum spiritu.</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> But the end of all things is at hand: be ye therefore sober, and watch unto prayer.</td><td class="scripture-la"><strong>7.</strong> Porro omnium finis propinquus est: sobrii itaque estote, et vigilantes ad precandum.</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> And above all things, have fervent charity among yourselves: for charity shall cover the multitude of sins.</td><td class="scripture-la"><strong>8.</strong> Ante onmia vero charitatem inter vos intentam habentes; quia charitas operiet multitudinem peccatorum.</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Use hospitality one to another without grudging.</td><td class="scripture-la"><strong>9.</strong> Invicem hospitales sine murmurationibus.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.</td><td class="scripture-la"><strong>10.</strong> Ut quisque aecepit donurn, ministrantes illud inter vos, tanquam boni dispensatores multiplicis gratiae Dei.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> If any speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth; that God in all things may be glorified through Jesus Christ: to whom be praise and dominion for ever and ever. Amen.</td><td class="scripture-la"><strong>11.</strong> Siquis loquitur, loquatur tanquam eloquia Dei; siquis ministrat, tanquam ex virtute quam suppeditat Deus; ut in omnibus glorificetur Deus per Jesum Christurn; cui est gloria et imperium in secula seculorum. Amen.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**6.** In hoc enim et mortuis evangelizatus fuit (vel, praedicatum fuit evangelium,) ut judicentur quiderm secundum homines carne, vivant autem secundum Deum spiritu. 7. But the end of all things is at hand: be ye therefore sober, and watch unto prayer.</p>
-
-<p style="margin-left:2em;" markdown="1">**7.** Porro omnium finis propinquus est: sobrii itaque estote, et vigilantes ad precandum. 8. And above all things, have fervent charity among yourselves: for charity shall cover the multitude of sins.</p>
-
-<p style="margin-left:2em;" markdown="1">**8.** Ante onmia vero charitatem inter vos intentam habentes; quia charitas operiet multitudinem peccatorum. 9. Use hospitality one to another without grudging.</p>
-
-<p style="margin-left:2em;" markdown="1">**9.** Invicem hospitales sine murmurationibus. 10. As every man hath received the gift, even so minister the same one to another, as good stewards of the manifold grace of God.</p>
-
-<p style="margin-left:2em;" markdown="1">**10.** Ut quisque aecepit donurn, ministrantes illud inter vos, tanquam boni dispensatores multiplicis gratiae Dei. 11. If any speak, let him speak as the oracles of God; if any man minister, let him do it as of the ability which God giveth; that God in all things may be glorified through Jesus Christ: to whom be praise and dominion for ever and ever. Amen.</p>
-
-<p style="text-align:right;" markdown="1">11. Siquis loquitur, loquatur tanquam eloquia Dei; siquis ministrat, tanquam ex virtute quam suppeditat Deus; ut in omnibus glorificetur Deus per Jesum Christurn; cui est gloria et imperium in secula seculorum. Amen.</p>
 
 <!-- PAGE 113 -->
 **6.** <span style="color:#800000">*For this cause was the gospel preached also to them that are dead*</span>, or, He has been evangelized to the dead. We see in what sense he takes the former passage in the third chapter, even that death does not hinder Christ from being always our defender. It is then a remarkable consolation to the godly, that death itself brings no loss to their salvation. Though Christ, then, may not appear a deliverer in this life, yet his redemption is not void, or without effect; for his power extends to the dead. But as the Greek word is doubtful, it may be rendered in the masculine, or in the neuter gender; but the meaning is almost the same, that is, that Christ had been made known as a redeemer to the dead, or that salvation had been made known to them by the gospel. But if the grace of Christ once penetrated to the dead, there is no doubt but that we shall partake of it when dead. We then set for it limits much too narrow, if we confine it to the present life.
 
 <span style="color:#800000">*That they might be judged*</span>. I omit the explanations of others, for they seem to me to be very remote from the Apostle’s meaning. This has been said, as I think, by way of anticipation, for it might have been objected, that the gospel is of no benefit to the dead, as it does not restore them to life. Peter concedes a part of this objection, and yet in such a way, that they are not deprived of the salvation obtained by Christ. Therefore, in the first clause, when he says, “that they might be judged in the flesh, according to men,” it is a concession; and “judged” means here, as often elsewhere, condemned; and <span style="color:#800000">*flesh*</span> is the outward man. So that the meaning is, that though according to the estimation of the world the dead suffer destruction in their flesh, and are deemed condemned as to the outward man, yet they cease not to live with God, and that in their spirit, because Christ quickens them by his Spirit.
 
-But we ought to add what Paul teaches us in Romans 8:10, that the Spirit is life; and hence it will be, that he will at length absorb the relics of death which still cleave to us. The sum of what he says is, that though the condition of the dead in the flesh is worse, according to man, yet it is enough that the Spirit of Christ revives them, and will eventually lead them to the perfection of life. <span style="color:#800000">[^f45]</span>
+But we ought to add what Paul teaches us in Romans 8:10, that the Spirit is life; and hence it will be, that he will at length absorb the relics of death which still cleave to us. The sum of what he says is, that though the condition of the dead in the flesh is worse, according to man, yet it is enough that the Spirit of Christ revives them, and will eventually lead them to the perfection of life. [^f45]
 
 **7.** <span style="color:#800000">*But*</span>, or, moreover, <span style="color:#800000">*the end of all things is at hand*</span>. Though the faithful hear that their felicity is elsewhere than in the world, yet, as they think that they should live long, this false thought renders them careless, and even slothful, so that they direct not their thoughts to the kingdom of God. Hence the Apostle, that he might rouse them from the drowsiness of the flesh, reminds them that the end of all things was nigh; by which he intimates that we ought not to sit still in the world, from which we must soon remove. He does not, at the same time, speak only of the end of individuals, but of the universal renovation of the world; as though he had said, “Christ will shortly come, who will put an end to all things.”
 
@@ -1340,7 +1352,7 @@ But we ought to add what Paul teaches us in Romans 8:10, that the Spirit is life
 
 It is, then, no wonder that the cares of this world overwhelm us, and make us drowsy, if the view of present things dazzles our eyes: for we promise, almost all of us, an eternity to ourselves in this world; at least, the end never comes to our mind. But were the trumpet of Christ to sound in our ears, it would powerfully rouse us and not suffer us to lie torpid.
 
-But it may be objected and said, that a long series of ages has passed away since Peter wrote this, and yet that the end is not come. My reply to this is, that the time seems long to us, because we measure its length by the spaces of this fleeting life; but if we could understand the perpetuity of future life, many ages would appear to us like a moment, as Peter will also tell us in his second epistle. Besides, we must remember this principle, that from the time when Christ once appeared, there is nothing left for the faithful, but with suspended minds ever to look forward to his second coming. <span style="color:#800000">[^f46]</span>
+But it may be objected and said, that a long series of ages has passed away since Peter wrote this, and yet that the end is not come. My reply to this is, that the time seems long to us, because we measure its length by the spaces of this fleeting life; but if we could understand the perpetuity of future life, many ages would appear to us like a moment, as Peter will also tell us in his second epistle. Besides, we must remember this principle, that from the time when Christ once appeared, there is nothing left for the faithful, but with suspended minds ever to look forward to his second coming. [^f46]
 
 The *watchfulness* and the *sobriety* to which he exhorted them, belong, as I think, to the mind rather than to the body. The words are similar to those of Christ:
 
@@ -1356,13 +1368,13 @@ By adding <span style="color:#800000">*prayer*</span>, he points out an exercise
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Hatred discovers reproaches, but love covers a multitude of sins.”</span></p>
 
-What Solomon meant is sufficiently clear, for the two clauses contain things which are set in contrast the one with the other. As then he says in the first clause that hatred is the cause why men traduce and defame one another, and spread whatever is reproachful and dishonorable; so it follows that a contrary effect is ascribed to love, that is, that men who love one another, kindly and courteously forgive one another; hence it comes that, willingly burying each other’s vices, one seeks to preserve the honor of another. <span style="color:#800000">[^f47]</span> Thus Peter confirms his exhortation, that nothing is more necessary than to cherish mutual love. For who is there that has not many faults? Therefore all stand in need of forgiveness, and there is no one who does not wish to be forgiven.
+What Solomon meant is sufficiently clear, for the two clauses contain things which are set in contrast the one with the other. As then he says in the first clause that hatred is the cause why men traduce and defame one another, and spread whatever is reproachful and dishonorable; so it follows that a contrary effect is ascribed to love, that is, that men who love one another, kindly and courteously forgive one another; hence it comes that, willingly burying each other’s vices, one seeks to preserve the honor of another. [^f47] Thus Peter confirms his exhortation, that nothing is more necessary than to cherish mutual love. For who is there that has not many faults? Therefore all stand in need of forgiveness, and there is no one who does not wish to be forgiven.
 
 This singular benefit love brings to us when it exists among us, so that innumerable evils are covered in oblivion. On the other hand, where loose reins are given to hatred, men by mutual biting and tearing must necessarily consume one another, as Paul says (Galatians 5:15.)
 
 And it ought to be noticed that Solomon does not say that only a few sins are covered, but a multitude of sins, according to what Christ declares, when he bids us to forgive our brethren seventy times seven, (Matthew 18:22.) But the more sins love covers, the more evident appears its usefulness for the wellbeing of mankind.
 
-This is the plain meaning of the words. It hence appears how absurd are the Papists, who seek to elicit from this passage their own satisfactions, as though almsgiving and other duties of charity were a sort of a compensation to God for blotting out their sins. <span style="color:#800000">[^f48]</span> It is enough to point out by the way their gross ignorance, for in a matter so clear it would be superfluous to add many words.
+This is the plain meaning of the words. It hence appears how absurd are the Papists, who seek to elicit from this passage their own satisfactions, as though almsgiving and other duties of charity were a sort of a compensation to God for blotting out their sins. [^f48] It is enough to point out by the way their gross ignorance, for in a matter so clear it would be superfluous to add many words.
 
 <!-- PAGE 116 -->
 **9.** <span style="color:#800000">*Use hospitality*</span>, or, Be hospitable. After having generally exhorted them to love one another, he specially mentions one of the duties of love. At that time hospitality was commonly used, and it was deemed in a manner a sacred kind of humanity, as we have stated elsewhere. He then bids them mutually to exercise it, so that no one might require more from others than what he himself was prepared to render. He adds, <span style="color:#800000">*without murmurings*</span>, for it is a rare example that one spends himself and his own on his neighbor without any disparaging reflection. Then the Apostle would have us to show kindness willingly and with a cheerful mind.
@@ -1392,24 +1404,21 @@ In the meantime, we learn from these words of Peter, that it is not lawful for t
 
 <h2 class="scripture-anchor" id="1-peter-4-12-17" data-ref="1 PETER 4:12-17" style="display:none">1 PETER 4:12-17</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600412&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">4:12-17</span></p>
 
-<strong>12.</strong> Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> Beloved, think it not strange concerning the fiery trial which is to try you, as though some strange thing happened unto you:</td><td class="scripture-la"><strong>12.</strong> Dilecti, ne miramini quum exploramini per ignem ad probationem vestri, perinde ac si novum aliquid vobis obtingat:</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.</td><td class="scripture-la"><strong>13.</strong> Seal quatenus consortes estis passionurn Christi gaudere; ut in revelatione quoque glorie ejus gau deatis exultantes.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> If ye be reproached for the name of Christ, happy are ye; for the Spirit of glory and of God resteth upon you: on their part he is evil spoken of, but on your part he is glorified.</td><td class="scripture-la"><strong>14.</strong> Si probris afficimini in nomine Christi, beati estis, quoniam Spiritus glorite et Dei super vos requiescit; secundum ipsos quidem contumelia afflcitur, secundun vos aut em glorificatur.</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busy-body in other men’s matters.</td><td class="scripture-la"><strong>15.</strong> Ne quis enim vestrum patiatur, ut homicida, aut fur, aut maleficus, ant cupidè rebus alienis inhians.</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.</td><td class="scripture-la"><strong>16.</strong> Si autem ut Christianus, ne pudefiat, imo glorificet Deum in hac parte.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> For the time is come that judgment must begin at the house of God : —</td><td class="scripture-la"><strong>17.</strong> Quandoquidem et tempus est, ut judicium incipiat a domo Dei:—</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**12.** Dilecti, ne miramini quum exploramini per ignem ad probationem vestri, perinde ac si novum aliquid vobis obtingat: 13. But rejoice, inasmuch as ye are partakers of Christ’s sufferings; that, when his glory shall be revealed, ye may be glad also with exceeding joy.</p>
-
-<p style="margin-left:2em;" markdown="1">**13.** Seal quatenus consortes estis passionurn Christi gaudere; ut in revelatione quoque glorie ejus gau deatis exultantes. 14. If ye be reproached for the name of Christ, happy are ye; for the Spirit of glory and of God resteth upon you: on their part he is evil spoken of, but on your part he is glorified.</p>
-
-<p style="margin-left:2em;" markdown="1">**14.** Si probris afficimini in nomine Christi, beati estis, quoniam Spiritus glorite et Dei super vos requiescit; secundum ipsos quidem contumelia afflcitur, secundun vos aut em glorificatur. 15. But let none of you suffer as a murderer, or as a thief, or as an evildoer, or as a busy-body in other men’s matters.</p>
-
-<p style="margin-left:2em;" markdown="1">**15.** Ne quis enim vestrum patiatur, ut homicida, aut fur, aut maleficus, ant cupidè rebus alienis inhians. 16. Yet if any man suffer as a Christian, let him not be ashamed; but let him glorify God on this behalf.</p>
-
-<p style="margin-left:2em;" markdown="1">**16.** Si autem ut Christianus, ne pudefiat, imo glorificet Deum in hac parte. 17. For the time is come that judgment must begin at the house of God : —</p>
-
-<p style="text-align:right;" markdown="1">17. Quandoquidem et tempus est, ut judicium incipiat a domo Dei:—</p>
 
 <!-- PAGE 120 -->
 **12.** <span style="color:#800000">*Beloved, think it not strange*</span>, or, wonder not. There is a frequent mention made in this Epistle of afflictions; the cause of which we have elsewhere explained. But this difference is to be observed, that when he exhorts the faithful to patience, he sometimes speaks generally of troubles common to man’s life; but here he speaks of wrongs done to the faithful for the name of Christ. And first, indeed, he reminded them that they ought not to have deemed it strange as for a thing sudden and unexpected; by which he intimates, that they ought by a long mediation to have been previously prepared to bear the cross. For whosoever has resolved to fight under Christ’s banner, will not be dismayed when persecution happens, but, as one accustomed to it, will patiently bear it. That we may then be in a prepared state of mind when the waves of persecutions roll over us, we ought in due time to habituate ourselves to such an event by meditating continually on the cross.
@@ -1428,7 +1437,7 @@ Hence, then, is the whole consolation of the godly, that they are associates wit
 
 Were any one to object and say, that no one can be found to be so innocent but that he deserves for many faults to be chastised by God; to this I reply, that Peter here speaks of sins from which we ought to be entirely freed, such as thefts and murders; and I give further this reply, that the Apostle commands Christians to be such as they ought to be. It, is, then, no wonder, that he points out a difference between us and the children of this world, who being without God’s Spirit, abandon themselves to every kind of wickedness. He would not have God’s children to be in the same condition, so as to draw on themselves by a wicked life the punishment allotted by the laws. But we have already said elsewhere, that though there are always many sins in the elect, which God might justly punish, yet according to his paternal indulgence he spares his own children, so that he does not inflict the punishment they deserve, and that in the meantime, for honour’s sake, he adorns them with his own tokens and those of his Christ, when he suffers them to be afflicted for the testimony of the Gospel.
 
-The word <span style="color:#0000d4">ἀλλοτριοεπίσκοπος</span> seems to me to designate one who covets what belongs to another. For they who gape after plunder or fraud, inquire into affairs of others with tortuous or crooked eyes, as Horace says; <span style="color:#800000">[^f49]</span> but the despiser of money, as the same says elsewhere, looks on vast heaps of gold with a straight eye. <span style="color:#800000">[^f50]</span>
+The word <span style="color:#0000d4">ἀλλοτριοεπίσκοπος</span> seems to me to designate one who covets what belongs to another. For they who gape after plunder or fraud, inquire into affairs of others with tortuous or crooked eyes, as Horace says; [^f49] but the despiser of money, as the same says elsewhere, looks on vast heaps of gold with a straight eye. [^f50]
 
 <!-- PAGE 123 -->
 **16.** <span style="color:#800000">*Yet if*</span> any man suffer <span style="color:#800000">*as a Christian*</span>. After having forbidden the Christians to do any hurt or harm, lest for their evil deeds, like the unbelieving, they should become hateful to the world, he now bids them to give thanks to God, if they suffered persecutions for the name of Christ. And truly it is no common kindness from God, that he calls us, freed and exempted from the common punishment of our sins, to so honorable a warfare as to undergo for the testimony of his Gospel either exiles, or prisons, or reproaches, or even death itself. Then he intimates that those are ungrateful to God, who clamor or murmur on account of persecutions, as though they were unworthily dealt with, since on the contrary they ought to regard it as gain and to acknowledge God’s favor.
@@ -1450,15 +1459,17 @@ But why does he say that it was <span style="color:#800000">*now the time*</span
 
 <h2 class="scripture-anchor" id="1-peter-4-17-19" data-ref="1 PETER 4:17-19" style="display:none">1 PETER 4:17-19</h2>
 
-17. — And if *it* first *begin* at us, what shall the end *be* of them that obey not the gospel of God?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;600417&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">4:17-19</span></p>
 
-<p style="text-align:right;" markdown="1">17. — Si autem primum a nobis, quis finis eorum qui non obediunt evangelio Dei?</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>18.</strong> And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?</td><td class="scripture-la"><strong>18.</strong> Et si juslus vix servatur, impius et peccator ubi apparebunt?</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Wherefore, let them that; suffer according to the will of God commit the keeping of their souls <em>to him</em> in well-doing, as unto a faithful Creator.</td><td class="scripture-la"><strong>19.</strong> Itaque qui patiuntur secundum Dei voluntatem, tanquam fideli possessori commendent animas suas benefacicndo.</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">**18.** And if the righteous scarcely be saved, where shall the ungodly and the sinner appear?</p>
-
-<p style="margin-left:2em;" markdown="1">**18.** Et si juslus vix servatur, impius et peccator ubi apparebunt? 19. Wherefore, let them that; suffer according to the will of God commit the keeping of their souls *to him* in well-doing, as unto a faithful Creator.</p>
-
-<p style="text-align:right;" markdown="1">19. Itaque qui patiuntur secundum Dei voluntatem, tanquam fideli possessori commendent animas suas benefacicndo.</p>
+</div>
 
 When the faithful see that it is well with the wicked, they are necessarily tempted to be envious; and this is a very dangerous trial; for present happiness is what all desire. Hence the Spirit of God carefully dwells on this, in many places, as well as in the thirty-seventh Psalm, lest the faithful should envy the prosperity of the ungodly. The same is what Peter speaks of, for he shews that afflictions ought to be calmly borne by the children of God, when they compare the lot of others with their own. But he takes it as granted that God is the judge of the world, and that, therefore, no one can escape his hand with impunity. He hence infers, that a dreadful vengeance will soon overtake those whose condition seems now favorable. The design of what he says, as I have already stated, is to shew that the children of God should not faint under the bitterness of present evils, but that they ought, on the contrary, calmly to bear their afflictions for a short time, as the issue will be salvation, while the ungodly will have to exchange a fading and fleeting prosperity for eternal perdition.
 
@@ -1470,11 +1481,11 @@ But the argument is from the less to the greater; for if God spares not his own 
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Behold, the just shall on the earth be recompensed; how much</span> <span style="color:#000080">more the ungodly and the sinner?”</span></p>
 
-Now, whether Peter intended to quote this passage, or repeated a common and a proverbial saying, (which seems to me more probable,) <span style="color:#800000">[^f51]</span> the meaning is, that God’s judgment would be dreadful against the ungodly, since the way to salvation was so thorny and difficult to the elect. And this is said, lest we should securely indulge ourselves, but carefully proceed in our course, and lest we should also seek the smooth and easy road, the end of which is a terrible precipice.
+Now, whether Peter intended to quote this passage, or repeated a common and a proverbial saying, (which seems to me more probable,) [^f51] the meaning is, that God’s judgment would be dreadful against the ungodly, since the way to salvation was so thorny and difficult to the elect. And this is said, lest we should securely indulge ourselves, but carefully proceed in our course, and lest we should also seek the smooth and easy road, the end of which is a terrible precipice.
 
 But when he says, that a <span style="color:#800000">*righteous man is scarcely saved*</span>, he refers to the difficulties of the present life, for our course in the world is like a dangerous sailing between many rocks, and exposed to many storms and tempests; and thus no one arrives at the port, except he who has escaped from thousand deaths. It is in the meantime certain that we are guided by God’s hand, and that we are in no danger of shipwreck as long as we have him as our pilot.
 
-Absurd, then, are those interpreters who think that we shall be hardly and with difficulty saved, when we shall come before God in judgment; for it is the present and not the future time that Peter refers to; nor does he speak of God’s strictness or rigour, but shews how many and what arduous difficulties must be surmounted by the Christian before he reaches the goal. <span style="color:#800000">*Sinner*</span> here means a *wicked* man <span style="color:#800000">[^f52]</span> and the righteous are not those who are altogether perfect in righteousness, but who strive to live righteously.
+Absurd, then, are those interpreters who think that we shall be hardly and with difficulty saved, when we shall come before God in judgment; for it is the present and not the future time that Peter refers to; nor does he speak of God’s strictness or rigour, but shews how many and what arduous difficulties must be surmounted by the Christian before he reaches the goal. <span style="color:#800000">*Sinner*</span> here means a *wicked* man [^f52] and the righteous are not those who are altogether perfect in righteousness, but who strive to live righteously.
 
 <!-- PAGE 127 -->
 **19.** <span style="color:#800000">*Wherefore let them that suffer*</span>. He draws this conclusion, that persecutions ought to be submissively endured, for the condition of the godly in them is much happier than that of the unbelieving, who enjoy prosperity to their utmost wishes. He, however, reminds us that we suffer nothing except according to the permission of God, which tends much to comfort us; when he says, <span style="color:#800000">*Let them commit themselves to God*</span>, it is the same as though he had said, “Let them deliver themselves and their life to the safe keeping of God.” And he calls him a <span style="color:#800000">*faithful possessor*</span>, because he faithfully keeps and defends whatever is under his protection or power. Some render the word “Creator;” and the term <span style="color:#0000d4">κτίστης</span> means both; but the former meaning I prefer, for by bidding us to deposit our life with God, he makes him its safe keeper. He adds, <span style="color:#800000">*in well-doing*</span>, lest the faithful should retaliate the wrongs done to them, but that they might on the contrary contend with the ungodly, who injured them, by well-doing.
@@ -1485,22 +1496,19 @@ Absurd, then, are those interpreters who think that we shall be hardly and with 
 
 <h2 class="scripture-anchor" id="1-peter-5-1-4" data-ref="1 PETER 5:1-4" style="display:none">1 PETER 5:1-4</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600501&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">5:1-4</span></p>
 
-<strong>1.</strong> The elders which are among you I exhort, who am also an elder, and a witness of the sufferings of Christ, and also a partaker of the glory that shall he revealed:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> The elders which are among you I exhort, who am also an elder, and a witness of the sufferings of Christ, and also a partaker of the glory that shall he revealed:</td><td class="scripture-la"><strong>1.</strong> Presbyteros qui inter vos sunt, hortor ego qui simul sum presbyter, et testis passionurn Christi, et gloriae qum revelabitur particeps:</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Feed the flock of God which is among you, taking the oversight <em>thereof;</em> not by constraint, but willingly; not for filthy lucre, but of a ready mind;</td><td class="scripture-la"><strong>2.</strong> Pascite, quantum in vobis est, gregem Dei (<em>vel,</em> Christi, <em>vel,</em> Domini,) episcopatu fungentes, non coactè, sed voluntariè; neque turpis lucri causâ, sed liberaliter;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Neither as being lords over <em>God’s</em> heritage, but being ensamples to the flock:</td><td class="scripture-la"><strong>3.</strong> Nec tanquam dominium exercentes adversus cleros, sed ut sitis exemplaria gregis.</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.</td><td class="scripture-la"><strong>4.</strong> Et quum apparuerit Princeps pastorum, reportabitis immarcescibilem gloriae coronam.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Presbyteros qui inter vos sunt, hortor ego qui simul sum presbyter, et testis passionurn Christi, et gloriae qum revelabitur particeps:</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** Feed the flock of God which is among you, taking the oversight *thereof;* not by constraint, but willingly; not for filthy lucre, but of a ready mind;</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** Pascite, quantum in vobis est, gregem Dei (*vel,* Christi, *vel,* Domini,) episcopatu fungentes, non coactè, sed voluntariè; neque turpis lucri causâ, sed liberaliter; 3. Neither as being lords over *God’s* heritage, but being ensamples to the flock:</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** Nec tanquam dominium exercentes adversus cleros, sed ut sitis exemplaria gregis. 4. And when the chief Shepherd shall appear, ye shall receive a crown of glory that fadeth not away.</p>
-
-<p style="text-align:right;" markdown="1">4. Et quum apparuerit Princeps pastorum, reportabitis immarcescibilem gloriae coronam.</p>
 
 IN exhorting pastors to their duty, he points out especially three vices which are found to prevail much, even sloth, desire of gain, and lust for power. In opposition to the first vice he sets alacrity or a willing attention; to the second, liberality; to the third, moderation and meekness, by which they are to keep themselves in their own rank or station.
 
@@ -1510,7 +1518,7 @@ He then says that pastors ought not to exercise care over the flock of the Lord,
 **1.** <span style="color:#800000">*The elders*</span>. By this name he designates pastors and all those who are appointed for the government of the Church. But they called them presbyters or elders for honor’s sake, not because they were all old in age, but because they were principally chosen from the aged, for old age for the most part has more prudence, gravity, and experience. But as sometimes hoariness is not wisdom, according to a Greek proverb, and as young men are found more fit, such as Timothy, these were also usually called presbyters, after having been chosen into that order. Since Peter calls himself in like manner a <span style="color:#800000">*presbyter*</span>, it appears that it was a common name, which is still more evident from many other passages. Moreover, by this title he secured for himself more authority, as though he had said that he had a right to admonish pastors, because he was one of themselves, for there ought to be mutual liberty between colleagues. But if he had the right of primacy he would have claimed it; and this would have been most suitable on the present occasion. But though he was an Apostle, he yet knew that authority was by no means delegated to him over his colleagues, but that on the contrary he was joined with the rest in the participation of the same office.
 
 <!-- PAGE 130 -->
-<span style="color:#800000">*A witness of the sufferings of Christ*</span>. This may be explained of doctrine, yet I prefer to regard it as referring to his own life. At the same time both may be admitted; but I am more disposed to embrace the latter view, because these two clauses will be more in harmony, — that Peter speaks of the sufferings of Christ in his own flesh, and that he would be also a partaker of his glory. For the passage agrees with that of Paul, “If we suffer together, we shall also reign together.” Besides, it avails much to make us believe his words, that he gave a proof of his faith by enduring the cross. For it hence appears evident that he spoke in earnest; and the Lord, by thus proving his people, seals as it were their ministry, that it might have more honor and reverence among men. Peter, then, had probably this in view, so that he might be heard as the faithful minister of Christ, a proof of which he gave in the persecutions he had suffered, and in the hope which he had of future life. <span style="color:#800000">[^f53]</span>
+<span style="color:#800000">*A witness of the sufferings of Christ*</span>. This may be explained of doctrine, yet I prefer to regard it as referring to his own life. At the same time both may be admitted; but I am more disposed to embrace the latter view, because these two clauses will be more in harmony, — that Peter speaks of the sufferings of Christ in his own flesh, and that he would be also a partaker of his glory. For the passage agrees with that of Paul, “If we suffer together, we shall also reign together.” Besides, it avails much to make us believe his words, that he gave a proof of his faith by enduring the cross. For it hence appears evident that he spoke in earnest; and the Lord, by thus proving his people, seals as it were their ministry, that it might have more honor and reverence among men. Peter, then, had probably this in view, so that he might be heard as the faithful minister of Christ, a proof of which he gave in the persecutions he had suffered, and in the hope which he had of future life. [^f53]
 
 But we must observe that Peter confidently declares that he would be a partaker of that glory which was not yet revealed; for it is the character of faith to acquiesce in hidden blessings.
 
@@ -1518,9 +1526,9 @@ But we must observe that Peter confidently declares that he would be a partaker 
 
 Hence pastors are not mute hypocrites, nor those who spread their own figments, which, like deadly poison, destroy the souls of men.
 
-The words, <span style="color:#800000">*as much as it is in you*</span>, mean the same as though he had said, “Apply all your strength to this very thing, and whatever power God has conferred on you.” The old interpreter has given this rendering, “Which is among you;” and this may be the sense of the words: more correct, however, is the rendering of Erasmus, which I have followed, though I do not reject nor disapprove of the other. <span style="color:#800000">[^f54]</span>
+The words, <span style="color:#800000">*as much as it is in you*</span>, mean the same as though he had said, “Apply all your strength to this very thing, and whatever power God has conferred on you.” The old interpreter has given this rendering, “Which is among you;” and this may be the sense of the words: more correct, however, is the rendering of Erasmus, which I have followed, though I do not reject nor disapprove of the other. [^f54]
 
-<span style="color:#800000">*The flock of God,*</span> or, of the Lord, or, of Christ: it matters little which you take, for the three readings are found in different copies. <span style="color:#800000">[^f55]</span>
+<span style="color:#800000">*The flock of God,*</span> or, of the Lord, or, of Christ: it matters little which you take, for the three readings are found in different copies. [^f55]
 
 <span style="color:#800000">*Taking the oversight*</span>, or, discharging the office of a bishop. Erasmus renders the words, “Taking care of it,” (*curam illius agentes;*) but as the
 
@@ -1539,18 +1547,18 @@ It ought also to be observed, that he calls Christ the <span style="color:#80000
 
 <h2 class="scripture-anchor" id="1-peter-5-5-7" data-ref="1 PETER 5:5-7" style="display:none">1 PETER 5:5-7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600505&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">5:5-7</span></p>
 
-<strong>5.</strong> Likewise, ye younger, submit yourselves unto the elder: yea, all of you be subject one to another, and be clothed with humility; for God resisteth the proud, and giveth grace to the humble.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> Likewise, ye younger, submit yourselves unto the elder: yea, all of you be subject one to another, and be clothed with humility; for God resisteth the proud, and giveth grace to the humble.</td><td class="scripture-la"><strong>5.</strong> Similiter juniores, subjecti estote senioribus; sic et omnes, alii allis subjiciamini; humilitatem animi induite; propterea quod Deus superbis resistit, humilibus vero dat gratiam.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:</td><td class="scripture-la"><strong>6.</strong> Humiliamini ergo sub potenti manu Dei, ut vos extollat quum erit opportunum;</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> Casting all your care upon him; for he careth for you.</td><td class="scripture-la"><strong>7.</strong> Omni cura vestra in eum conjecta; quoniam illi cura est vestri.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**5.** Similiter juniores, subjecti estote senioribus; sic et omnes, alii allis subjiciamini; humilitatem animi induite; propterea quod Deus superbis resistit, humilibus vero dat gratiam. 6. Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time:</p>
-
-<p style="margin-left:2em;" markdown="1">**6.** Humiliamini ergo sub potenti manu Dei, ut vos extollat quum erit opportunum; 7. Casting all your care upon him; for he careth for you.</p>
-
-<p style="text-align:right;" markdown="1">7. Omni cura vestra in eum conjecta; quoniam illi cura est vestri.</p>
 
 <!-- PAGE 133 -->
 **5.** <span style="color:#800000">*Likewise, ye younger*</span>. The word <span style="color:#800000">*elder*</span> is put here in a sense different from what it had before; for it is necessary, when a contrast is made between them and the younger, that the two clauses should correspond. Then he refers to the elders in age, having before spoken of the office; and thus he comes from the particular to the general. And in short, he bids every one that is inferior in age to obey the counsels of the elders, and to be teachable and humble; for the age of youth is inconstant, and requires a bridle. Besides, pastors could not have performed their duty, except this reverential feeling prevailed and was cultivated, so that the younger suffered themselves to be ruled; for if there be no subjection, government is overturned. When they have no authority who ought by right or order of nature to rule, all will immediately become insolently wanton.
@@ -1575,20 +1583,19 @@ But we are not thus bidden to cast all our care on God, as though God wished us 
 
 <h2 class="scripture-anchor" id="1-peter-5-8-11" data-ref="1 PETER 5:8-11" style="display:none">1 PETER 5:8-11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600508&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">5:8-11</span></p>
 
-<strong>8.</strong> Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about seeking whom he may devour:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> Be sober, be vigilant; because your adversary the devil, as a roaring lion, walketh about seeking whom he may devour:</td><td class="scripture-la"><strong>8.</strong> Sobrii estote, vigilate, quia adversarius vester diabolus, tanquam leo rugiens, circuit, quaerens quem devoret (vel, quempiam devorare;)</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Whom resist steadfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.</td><td class="scripture-la"><strong>9.</strong> Cui resistite firmi fide, scientes easdem passiones, vestrae quae in mundo fraternitati adimpleri.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle <em>you:</em></td><td class="scripture-la"><strong>10.</strong> Deus autera omnis gratiae, qui nos vocavit in aeternam suam gloriam per Christum Jesum, paulisper afflictos ipse vos perficiat, confirmet, corroboret, stabiliat:</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> To him <em>be</em> glory and dominion for ever and ever. Amen.</td><td class="scripture-la"><strong>11.</strong> Ei gloria et imperium in secula seculorum. Amen.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**8.** Sobrii estote, vigilate, quia adversarius vester diabolus, tanquam leo rugiens, circuit, quaerens quem devoret (vel, quempiam devorare;) 9. Whom resist steadfast in the faith, knowing that the same afflictions are accomplished in your brethren that are in the world.</p>
-
-<p style="margin-left:2em;" markdown="1">**9.** Cui resistite firmi fide, scientes easdem passiones, vestrae quae in mundo fraternitati adimpleri. 10. But the God of all grace, who hath called us unto his eternal glory by Christ Jesus, after that ye have suffered a while, make you perfect, stablish, strengthen, settle *you:*</p>
-
-<p style="margin-left:2em;" markdown="1">**10.** Deus autera omnis gratiae, qui nos vocavit in aeternam suam gloriam per Christum Jesum, paulisper afflictos ipse vos perficiat, confirmet, corroboret, stabiliat: 11. To him *be* glory and dominion for ever and ever. Amen.</p>
-
-<p style="text-align:right;" markdown="1">11. Ei gloria et imperium in secula seculorum. Amen.</p>
 
 **8.** <span style="color:#800000">*Be sober*</span>. This explanation extends wider, that as we have war with a most fierce and most powerful enemy, we are to be strenuous in resisting him. But he uses a twofold metaphor, that they were to be sober, and that they were to exercise watchfulness. Surfeiting produces sloth and sleep; even so they who indulge in earthly cares and pleasures, think of nothing else, being under the power of spiritual lethargy.
 
@@ -1618,7 +1625,7 @@ The words, <span style="color:#800000">*that are in the world*</span>, may be ex
 
 Some copies have the future tense, as though a promise is made; but the other reading is more commonly received. At the same time, the Apostle, by praying God, confirms those to whom he was writing, for when he calls God the author of <span style="color:#800000">*all grace*</span>, and reminds them that they were called to eternal glory, his purpose no doubt was, to confirm them in the conviction, that the work of their salvation, which he had begun, would be completed.
 
-He is called the <span style="color:#800000">*God of all grace*</span> from the effect, from the gifts he bestows, according to the Hebrew manner. <span style="color:#800000">[^f56]</span> And he mentions expressly <span style="color:#800000">*all grace*</span>, first that they might learn that every blessing is to be ascribed to God; and secondly, that one grace is connected with another, so that they might hope in future for the addition of those graces in which they were hitherto wanting.
+He is called the <span style="color:#800000">*God of all grace*</span> from the effect, from the gifts he bestows, according to the Hebrew manner. [^f56] And he mentions expressly <span style="color:#800000">*all grace*</span>, first that they might learn that every blessing is to be ascribed to God; and secondly, that one grace is connected with another, so that they might hope in future for the addition of those graces in which they were hitherto wanting.
 
 <!-- PAGE 138 -->
 
@@ -1626,7 +1633,7 @@ He is called the <span style="color:#800000">*God of all grace*</span> from the 
 
 It may also be right, by the way, to observe that when he says that we are called <span style="color:#800000">*in Christ*</span>, first, our calling is established, because it is rightly founded; and secondly, that all respect to our worthiness and merit is excluded; for that God, by the preaching of the gospel, invites us to himself, it is altogether gratuitous; and it is still a greater grace that he efficaciously touches our hearts so as to lead us to obey his voice. Now Peter especially addresses the faithful; he therefore connects the efficacious power of the Spirit with the outward doctrine.
 
-As to the three words which follow, some copies have them in the ablative case, which may be rendered in Latin by gerunds (*fulciendo, roborando, stabiliendo*) by supporting, by strengthening, by establishing. <span style="color:#800000">[^f57]</span> But in this there is not much importance with regard to the meaning. Besides, Peter intends the same thing by all these words, even to confirm the faithful; and he uses these several words for this purpose, that we may know that to follow our course is a matter of no common difficulty, and that therefore we need the special grace of God. The words <span style="color:#800000">*suffered a while*</span>, inserted here, shew that the time of suffering is but short, and this is no small consolation.
+As to the three words which follow, some copies have them in the ablative case, which may be rendered in Latin by gerunds (*fulciendo, roborando, stabiliendo*) by supporting, by strengthening, by establishing. [^f57] But in this there is not much importance with regard to the meaning. Besides, Peter intends the same thing by all these words, even to confirm the faithful; and he uses these several words for this purpose, that we may know that to follow our course is a matter of no common difficulty, and that therefore we need the special grace of God. The words <span style="color:#800000">*suffered a while*</span>, inserted here, shew that the time of suffering is but short, and this is no small consolation.
 
 **11.** <span style="color:#800000">*To him be glory*</span>. That he might add more confidence to the godly, he breaks out into thanksgiving. Though this be read in the indicative as well as in the optative mood, still the meaning is nearly the same.
 
@@ -1634,20 +1641,18 @@ As to the three words which follow, some copies have them in the ablative case, 
 
 <h2 class="scripture-anchor" id="1-peter-5-12-14" data-ref="1 PETER 5:12-14" style="display:none">1 PETER 5:12-14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;600512&gt;</span><span class="book-name">1 Peter</span> <span class="verse-range">5:12-14</span></p>
 
-<strong>12.</strong> By Silvanus, a faithful brother unto you, (as I suppose,) I have written briefly, exhorting, and testifying that this is the true grace of God wherein ye stand.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> By Silvanus, a faithful brother unto you, (as I suppose,) I have written briefly, exhorting, and testifying that this is the true grace of God wherein ye stand.</td><td class="scripture-la"><strong>12.</strong> Per Silvanum vobis fidum fratrem (ut arbitror) paucis scripsi, exhortans et testificans hanc esse veram gratiam in qua statis.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> The <em>church that is</em> at Babylon, elected together with <em>you,</em> saluteth you; and <em>so doth</em> Marcus my son.</td><td class="scripture-la"><strong>13.</strong> Salutat vos quae in Babylone est Ecclesia, simul vobiscum electa, et Marcus filius meus.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> Greet ye one another with a kiss of charity. Peace <em>be</em> with you all that are in Christ Jesus. Amen.</td><td class="scripture-la"><strong>14.</strong> Salutate vos invicem in osculo charitatis. Gratia vobis omnibus qui estis in Christo Jesu.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">12. Per Silvanum vobis fidum fratrem (ut arbitror) paucis scripsi, exhortans et testificans hanc esse veram gratiam in qua statis.</p>
-
-<p style="margin-left:2em;" markdown="1">**13.** The *church that is* at Babylon, elected together with *you,* saluteth you; and *so doth* Marcus my son.</p>
-
-<p style="margin-left:2em;" markdown="1">**13.** Salutat vos quae in Babylone est Ecclesia, simul vobiscum electa, et Marcus filius meus. 14. Greet ye one another with a kiss of charity. Peace *be* with you all that are in Christ Jesus. Amen.</p>
-
-<p style="text-align:right;" markdown="1">14. Salutate vos invicem in osculo charitatis. Gratia vobis omnibus qui estis in Christo Jesu.</p>
 
 **12.** <span style="color:#800000">*By Silvanus*</span>. He exhorts them at the conclusion of the Epistle to constancy in the faith: yea, he declares that his design in writing, was to retain them in obedience to the doctrine which they had embraced. But he first commends the brevity of his Epistle, lest the reading of it should be tedious to them; and, secondly, he adds a short commendation of his messenger, that the living voice might be added to what was written; for this was the design of the testimony he bears to his fidelity. But the exception, <span style="color:#800000">*as I suppose*</span>, or think, was added, either as token of modesty or to let them surely know, that he spoke according to the conviction of his own mind; and it was unreasonable for them not to assent to the judgment of so great an apostle.
 
@@ -1660,7 +1665,7 @@ Since, then, Peter had Mark as his companion when he wrote this Epistle, it is v
 
 In saying that the Church there was a partaker of the same election, his object was to confirm others more and more in the faith; for it was a great matter that the Jews were gathered into the Church, in so remote a part of the world.
 
-<span style="color:#800000">*My son*</span>. So he calls Mark for honor’s sake; the reason, however, is, because he had begotten him in the faith, as Paul did Timothy. Of the *kiss of love* we have spoken elsewhere. Now he bids this to be the kiss of love, <span style="color:#800000">[^f58]</span> so that the sincerity of the heart might correspond with the external act.
+<span style="color:#800000">*My son*</span>. So he calls Mark for honor’s sake; the reason, however, is, because he had begotten him in the faith, as Paul did Timothy. Of the *kiss of love* we have spoken elsewhere. Now he bids this to be the kiss of love, [^f58] so that the sincerity of the heart might correspond with the external act.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">END OF THE FIRST EPISTLE OF PETER</span></p>
 
@@ -1672,212 +1677,241 @@ In saying that the Church there was a partaker of the same election, his object 
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE FIRST EPISTLE OF PETER</span></p>
 
-<span style="color:#800000">1</span> PETER, an apostle of Jesus Christ, to the sojourners who are scattered through Pontus, Galatia, Cappadocia, Asia, and Bithyuia, <span style="color:#800000">2</span> Elected according to the foreknowledge of God the Father, through the sanctification of the Spirit, unto obedience and the sprinkling of the blood of Jesus Christ: Grace to you and peace be multiplied.
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
-<span style="color:#800000">3</span> Blessed be God, even the Father of our Lord Jesus Christ, who, according to his great mercy hath begotten us again to a living hope, through the resurrection of Jesus Christ from the dead, <span style="color:#800000">4</span> To an inheritance incorruptible, and undefiled, and unfading, laid up in heaven for you;
+<sup>1</sup> PETER, an apostle of Jesus Christ, to the sojourners who are scattered through Pontus, Galatia, Cappadocia, Asia, and Bithyuia,
 
-<span style="color:#800000">5</span> Who by the power of God are kept through faith unto salvation, which is ready to be revealed at the last time:
+<sup>2</sup> Elected according to the foreknowledge of God the Father, through the sanctification of the Spirit, unto obedience and the sprinkling of the blood of Jesus Christ: Grace to you and peace be multiplied.
 
-<span style="color:#800000">6</span> On account of which ye exult, though now for a little while, if it be necessary, ye are made sorrowful through various temptations;
+<sup>3</sup> Blessed be God, even the Father of our Lord Jesus Christ, who, according to his great mercy hath begotten us again to a living hope, through the resurrection of Jesus Christ from the dead,
 
-<span style="color:#800000">7</span> That the probation of your faith, much more precious than gold which perisheth, though even it be proved by fire, may be found unto praise, and honour, and glory, when Jesus Christ shall be revealed:
+<sup>4</sup> To an inheritance incorruptible, and undefiled, and unfading, laid up in heaven for you;
+
+<sup>5</sup> Who by the power of God are kept through faith unto salvation, which is ready to be revealed at the last time:
+
+<sup>6</sup> On account of which ye exult, though now for a little while, if it be necessary, ye are made sorrowful through various temptations;
+
+<sup>7</sup> That the probation of your faith, much more precious than gold which perisheth, though even it be proved by fire, may be found unto praise, and honour, and glory, when Jesus Christ shall be revealed:
 
 <!-- PAGE 142 -->
 
-<span style="color:#800000">8</span> Whom, though ye have not seen, ye love; on whom believing, though ye see him not, ye exult with joy unspeakable and glorious;
+<sup>8</sup> Whom, though ye have not seen, ye love; on whom believing, though ye see him not, ye exult with joy unspeakable and glorious;
 
-<span style="color:#800000">9</span> Receiving the end of your faith, the salvation of your souls.
+<sup>9</sup> Receiving the end of your faith, the salvation of your souls.
 
-<span style="color:#800000">10</span> Of which, salvation the prophets inquired and searched, who prophesied of future grace to us;
+<sup>10</sup> Of which, salvation the prophets inquired and searched, who prophesied of future grace to us;
 
-<span style="color:#800000">11</span> Searching what or what manner of time the Spirit of Christ who was in them did signify, previously testifying of the sufferings of Christ, and of the glories which were to follow:
+<sup>11</sup> Searching what or what manner of time the Spirit of Christ who was in them did signify, previously testifying of the sufferings of Christ, and of the glories which were to follow:
 
-<span style="color:#800000">12</span> To whom it was revealed, that not to themselves, but to us they ministered the things which have been now declared to you by those who have preached to you the gospel, through the Holy Spirit sent from heaven; into which things the angels desire to look.
+<sup>12</sup> To whom it was revealed, that not to themselves, but to us they ministered the things which have been now declared to you by those who have preached to you the gospel, through the Holy Spirit sent from heaven; into which things the angels desire to look.
 
-<span style="color:#800000">13</span> Therefore, girding up the loins of your mind, being sober, perfectly hope for the grace which is to be brought to you at the revelation of Jesus Christ;
+<sup>13</sup> Therefore, girding up the loins of your mind, being sober, perfectly hope for the grace which is to be brought to you at the revelation of Jesus Christ;
 
-<span style="color:#800000">14</span> As obedient children, not conformed to former lusts which prevailed during your ignorance:
+<sup>14</sup> As obedient children, not conformed to former lusts which prevailed during your ignorance:
 
-<span style="color:#800000">15</span> But as he who has called you is holy, be ye also yourselves holy in *your* whole conduct;
+<sup>15</sup> But as he who has called you is holy, be ye also yourselves holy in *your* whole conduct;
 
-<span style="color:#800000">16</span> Because it is written, "Be ye holy, for I sin holy."
+<sup>16</sup> Because it is written, "Be ye holy, for I sin holy."
 
-<span style="color:#800000">17</span> And since ye call on the Father, who, without respect of persons, judgeth the work of every one, puss in fear the time of your <span style="color:#800000">18</span> Sojourning; knowing that not with corruptible things, silver or gold, you have been redeemed from your vain way of living, delivered down from the fathers;
+<sup>17</sup> And since ye call on the Father, who, without respect of persons, judgeth the work of every one, puss in fear the time of your
 
-<span style="color:#800000">19</span> But with the precious blood of Christ, as of a lamb unspotted and undefiled:
+<sup>18</sup> Sojourning; knowing that not with corruptible things, silver or gold, you have been redeemed from your vain way of living, delivered down from the fathers;
+
+<sup>19</sup> But with the precious blood of Christ, as of a lamb unspotted and undefiled:
+
+<sup>20</sup> Who had been, indeed, foreordained before the world was founded, but has been manifested in the last times for you,
 
 <!-- PAGE 143 -->
-<span style="color:#800000">20</span> Who had been, indeed, foreordained before the world was founded, but has been manifested in the last times for you, <span style="color:#800000">21</span> Who through him believe in God, who has raised him from the dead, and has given him glory, that your faith and hope may be in God:
 
-<span style="color:#800000">22</span> Purifying your souls by obedience to the truth through the Spirit, with an unfeigned brotherly love, love ye one another from a pure heart fervently;
+<sup>21</sup> Who through him believe in God, who has raised him from the dead, and has given him glory, that your faith and hope may be in God:
 
-<span style="color:#800000">23</span> Having been begotten again, not from a seed that is corruptible, but incorruptible, through the word of the living God, which abideth for ever.
+<sup>22</sup> Purifying your souls by obedience to the truth through the Spirit, with an unfeigned brotherly love, love ye one another from a pure heart fervently;
 
-<span style="color:#800000">24</span> For all flesh is as grass, and all his glory as the flower of the grass: wither does the grass, and its flower fades;
+<sup>23</sup> Having been begotten again, not from a seed that is corruptible, but incorruptible, through the word of the living God, which abideth for ever.
 
-<span style="color:#800000">25</span> but the word of the Lord remains for ever: and this is the word which has been declared to you.
+<sup>24</sup> For all flesh is as grass, and all his glory as the flower of the grass: wither does the grass, and its flower fades;
 
-<span style="color:#800000">1</span> Laying aside, therefore, all wickedness, and all guile, and dissimulations, and envyings, and all slanderings, <span style="color:#800000">2</span> As infants lately born, desire the milk that is rational and guileless, that by it ye may grow;
+<sup>25</sup> but the word of the Lord remains for ever: and this is the word which has been declared to you.
 
-<span style="color:#800000">3</span> If indeed ye have tasted that the Lord is gracious:
+<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
 
-<span style="color:#800000">4</span> To whom coming as to a living stone, rejected indeed by men, but chosen by God and precious, <span style="color:#800000">5</span> Ye also yourselves as living stones are built up a spiritual house, a holy priesthood, to offer spiritual sacrifices, acceptable to God through Jesus Christ.
+<sup>1</sup> Laying aside, therefore, all wickedness, and all guile, and dissimulations, and envyings, and all slanderings,
 
-<span style="color:#800000">6</span> Therefore also the Scripture contains *this,* "Behold, I lay in Sion a corner-stone, chosen, precious; and he who believeth in him shall not be ashamed."
+<sup>2</sup> As infants lately born, desire the milk that is rational and guileless, that by it ye may grow;
 
-<span style="color:#800000">7</span> To you, then, who believe, he is precious; but to the unbelieving, the stone which the builders rejected, this has become the head of the corner;
+<sup>3</sup> If indeed ye have tasted that the Lord is gracious:
+
+<sup>4</sup> To whom coming as to a living stone, rejected indeed by men, but chosen by God and precious,
+
+<sup>5</sup> Ye also yourselves as living stones are built up a spiritual house, a holy priesthood, to offer spiritual sacrifices, acceptable to God through Jesus Christ.
+
+<sup>6</sup> Therefore also the Scripture contains *this,* "Behold, I lay in Sion a corner-stone, chosen, precious; and he who believeth in him shall not be ashamed."
+
+<sup>7</sup> To you, then, who believe, he is precious; but to the unbelieving, the stone which the builders rejected, this has become the head of the corner;
 
 <!-- PAGE 144 -->
 
-<span style="color:#800000">8</span> And a stone of stumbling and a rock of offense to those who stumble at the word, being unbelieving; to which also they had been appointed.
+<sup>8</sup> And a stone of stumbling and a rock of offense to those who stumble at the word, being unbelieving; to which also they had been appointed.
 
-<span style="color:#800000">9</span> But ye are a chosen race, a royal priesthood, a holy nation, a peculiar people, that ye may declare the virtues of him who has called you out of darkness <span style="color:#800000">10</span> Into his marvelous light: who sometimes were not a people, but now are the people of God; who had not obtained mercy, but now have obtained mercy.
+<sup>9</sup> But ye are a chosen race, a royal priesthood, a holy nation, a peculiar people, that ye may declare the virtues of him who has called you out of darkness
 
-<span style="color:#800000">11</span> Beloved, I exhort you as sojourners and strangers, to abstain from carnal desires, which war against the soul;
+<sup>10</sup> Into his marvelous light: who sometimes were not a people, but now are the people of God; who had not obtained mercy, but now have obtained mercy.
 
-<span style="color:#800000">12</span> Having your behavior good among the Gentiles, that whereas they speak against you as evil-doers, they may, considering your good works, glorify God in the day of visitation.
+<sup>11</sup> Beloved, I exhort you as sojourners and strangers, to abstain from carnal desires, which war against the soul;
 
-<span style="color:#800000">13</span> Be then subject to every human ordinance for the Lord's sake;
+<sup>12</sup> Having your behavior good among the Gentiles, that whereas they speak against you as evil-doers, they may, considering your good works, glorify God in the day of visitation.
 
-<span style="color:#800000">14</span> Whether to the king, as supreme; or to governors, as those who are sent by him, for the punishment indeed of evil-doers, but for the praise of those who do well:
+<sup>13</sup> Be then subject to every human ordinance for the Lord's sake;
 
-<span style="color:#800000">15</span> For so is the will of God, that by well-doing ye should put a stop to the ignorance of foolish men;
+<sup>14</sup> Whether to the king, as supreme; or to governors, as those who are sent by him, for the punishment indeed of evil-doers, but for the praise of those who do well:
 
-<span style="color:#800000">16</span> As free, and not having liberty as a cloak for wickedness, but as the servants of God.
+<sup>15</sup> For so is the will of God, that by well-doing ye should put a stop to the ignorance of foolish men;
 
-<span style="color:#800000">17</span> Honor all, love the brotherhood, fear God, honor the king.
+<sup>16</sup> As free, and not having liberty as a cloak for wickedness, but as the servants of God.
 
-<span style="color:#800000">18</span> The servants, let them be subject with all fear to *their* lords, not only to the good and humane, but also to the perverse.
+<sup>17</sup> Honor all, love the brotherhood, fear God, honor the king.
 
-<span style="color:#800000">19</span> For this is acceptable, if for conscience towards God any one bears sorrows, suffering unjustly:
+<sup>18</sup> The servants, let them be subject with all fear to *their* lords, not only to the good and humane, but also to the perverse.
 
-<span style="color:#800000">20</span> For what sort of glory is it, if ye bear it when having done evil ye be buffeted ? but if, having done well and suffering, ye bear it, this is acceptable with God.
+<sup>19</sup> For this is acceptable, if for conscience towards God any one bears sorrows, suffering unjustly:
+
+<sup>20</sup> For what sort of glory is it, if ye bear it when having done evil ye be buffeted ? but if, having done well and suffering, ye bear it, this is acceptable with God.
 
 <!-- PAGE 145 -->
 
-<span style="color:#800000">21</span> For to this end you have been called; because Christ also suffered for you, leaving you an example, that ye may follow his footsteps;
+<sup>21</sup> For to this end you have been called; because Christ also suffered for you, leaving you an example, that ye may follow his footsteps;
 
-<span style="color:#800000">22</span> Who did no sin, nor was guile found in his mouth; who, when reviled, reviled not again;
+<sup>22</sup> Who did no sin, nor was guile found in his mouth; who, when reviled, reviled not again;
 
-<span style="color:#800000">23</span> When suffering, threatened not; but committed his cause to him who judgeth righteously;
+<sup>23</sup> When suffering, threatened not; but committed his cause to him who judgeth righteously;
 
-<span style="color:#800000">24</span> Who bare himself our sins in his own body on the tree, that we, being dead to sin, may live to righteousness; by whose bruise have ye been healed.
+<sup>24</sup> Who bare himself our sins in his own body on the tree, that we, being dead to sin, may live to righteousness; by whose bruise have ye been healed.
 
-<span style="color:#800000">25</span> For ye were as sheep going astray; but ye have been now turned to the Shepherd and Bishop of your souls.
+<sup>25</sup> For ye were as sheep going astray; but ye have been now turned to the Shepherd and Bishop of your souls.
 
-<span style="color:#800000">1</span> In like manner the wives, let them be subject to their own husbands, that even if any believe not the word, they may without the word be gained by the behavior of *their* wives, <span style="color:#800000">2</span> While observing your pure behavior and fear:
+<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
 
-<span style="color:#800000">3</span> Whose adorning, let it not be the outward, in the plaiting of the hair and the encircling of gold, or the putting on of cloaks;
+<sup>1</sup> In like manner the wives, let them be subject to their own husbands, that even if any believe not the word, they may without the word be gained by the behavior of *their* wives,
 
-<span style="color:#800000">4</span> But the inner man of the heart, which is in the incorruption of a placid and quiet spirit, which before God is precious.
+<sup>2</sup> While observing your pure behavior and fear:
 
-<span style="color:#800000">5</span> For so formerly also holy women who hoped in God, adorned themselves, being subject to their own husbands;
+<sup>3</sup> Whose adorning, let it not be the outward, in the plaiting of the hair and the encircling of gold, or the putting on of cloaks;
 
-<span style="color:#800000">6</span> As Sara, *who* obeyed Abraham, calling him lord; whose daughters ye become, when ye do well, and are not terrified by any dread.
+<sup>4</sup> But the inner man of the heart, which is in the incorruption of a placid and quiet spirit, which before God is precious.
 
-<span style="color:#800000">7</span> Let husbands in like manner dwell with *them* according to knowledge, giving honor to the wife as the weaker vessel, and as joint-heirs of the grace of life, that your prayers may not be hindered.
+<sup>5</sup> For so formerly also holy women who hoped in God, adorned themselves, being subject to their own husbands;
+
+<sup>6</sup> As Sara, *who* obeyed Abraham, calling him lord; whose daughters ye become, when ye do well, and are not terrified by any dread.
+
+<sup>7</sup> Let husbands in like manner dwell with *them* according to knowledge, giving honor to the wife as the weaker vessel, and as joint-heirs of the grace of life, that your prayers may not be hindered.
 
 <!-- PAGE 146 -->
 
-<span style="color:#800000">8</span> Finally, *be ye* of one mind, compassionate, loving to the brethren, merciful, humble-minded;
+<sup>8</sup> Finally, *be ye* of one mind, compassionate, loving to the brethren, merciful, humble-minded;
 
-<span style="color:#800000">9</span> Not rendering evil for evil, or railing for railing, but on the contrary, bless ye, knowing that you have been called for this end, that ye may inherit a blessing.
+<sup>9</sup> Not rendering evil for evil, or railing for railing, but on the contrary, bless ye, knowing that you have been called for this end, that ye may inherit a blessing.
 
-<span style="color:#800000">10</span> For let him who would love life and see good days, keep his tongue from evil and his lips from speaking guile; let him turn away from evil and do good;
+<sup>10</sup> For let him who would love life and see good days, keep his tongue from evil and his lips from speaking guile; let him turn away from evil and do good;
 
-<span style="color:#800000">11</span> Let him seek peace and pursue it:
+<sup>11</sup> Let him seek peace and pursue it:
 
-<span style="color:#800000">12</span> Because the eyes of the Lord are on the righteous, and his cars to their prayers; but the face of the Lord is against them who do evil.
+<sup>12</sup> Because the eyes of the Lord are on the righteous, and his cars to their prayers; but the face of the Lord is against them who do evil.
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">13</span> And who is he who can do you harm, if ye be followers of what is good ?</p>
+<p style="text-align:center" markdown="1"><sup>13</sup> And who is he who can do you harm, if ye be followers of what is good ?</p>
 
-<span style="color:#800000">14</span> But if ye also suffer for righteousness, happy *are ye;* and the fear of them fear not, nor be troubled;
+<sup>14</sup> But if ye also suffer for righteousness, happy *are ye;* and the fear of them fear not, nor be troubled;
 
-<span style="color:#800000">15</span> But sanctify the Lord of hosts in your hearts, and be ready always for an answer to any one asking you a reason for the hope that is in you, with meekness and fear;
+<sup>15</sup> But sanctify the Lord of hosts in your hearts, and be ready always for an answer to any one asking you a reason for the hope that is in you, with meekness and fear;
 
-<span style="color:#800000">16</span> Having a good conscience, that whereas they speak against you as evil-doers, they may be ashamed who slander your good behavior in Christ.
+<sup>16</sup> Having a good conscience, that whereas they speak against you as evil-doers, they may be ashamed who slander your good behavior in Christ.
 
-<span style="color:#800000">17</span> For it is better to suffer, if so be the will of God, for doing good than for doing evil:
+<sup>17</sup> For it is better to suffer, if so be the will of God, for doing good than for doing evil:
 
-<span style="color:#800000">18</span> Because Christ also once suffered for sins, the just for the unjust, that he might bring us to God, having indeed been put to death in the flesh, but brought to life by file Spirit:
+<sup>18</sup> Because Christ also once suffered for sins, the just for the unjust, that he might bring us to God, having indeed been put to death in the flesh, but brought to life by file Spirit:
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">19</span> By whom having also gone, he preached to the spirits who were in prison,</p>
+<p style="text-align:center" markdown="1"><sup>19</sup> By whom having also gone, he preached to the spirits who were in prison,</p>
 
-<span style="color:#800000">20</span> When there were formerly unbelievers, when once the patience of God waited in the days of Noah, while the ark was prepared; in which a few, that is, eight souls, were saved by water;
+<sup>20</sup> When there were formerly unbelievers, when once the patience of God waited in the days of Noah, while the ark was prepared; in which a few, that is, eight souls, were saved by water;
 
 <!-- PAGE 147 -->
 
-<span style="color:#800000">21</span> Corresponding to which, baptism saves us also now (not the casting away of the filth of the flesh, but the answer of a good conscience towards God) through the resurrection of Jesus Christ;
+<sup>21</sup> Corresponding to which, baptism saves us also now (not the casting away of the filth of the flesh, but the answer of a good conscience towards God) through the resurrection of Jesus Christ;
 
-<span style="color:#800000">22</span> Who is at the right hand of God, having gone into heaven, angels and dominions and powers being made subject to him.
+<sup>22</sup> Who is at the right hand of God, having gone into heaven, angels and dominions and powers being made subject to him.
 
-<span style="color:#800000">1</span> Christ then having suffered for us in the flesh, be ye also armed with the same mind: because he who hath suffered in the flesh hath ceased from sin;
+<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
 
-<span style="color:#800000">2</span> That he may no longer live the rest of his time in the flesh to the lusts of men, but to the will of God.
+<sup>1</sup> Christ then having suffered for us in the flesh, be ye also armed with the same mind: because he who hath suffered in the flesh hath ceased from sin;
 
-<span style="color:#800000">3</span> For it is enough for us, that we have wrought, in the past time of life, the will of the Gentiles, when we walked in lasciviousness, lusts, excesses in wine, revellings, banquetings, and wicked idolatries:
+<sup>2</sup> That he may no longer live the rest of his time in the flesh to the lusts of men, but to the will of God.
 
-<span style="color:#800000">4</span> On account of which they think it strange, that ye run not with *them* into the same excess of riot, speaking evil *of you;* <span style="color:#800000">5</span> Who shall give account to him who is ready to judge the living and the dead.
+<sup>3</sup> For it is enough for us, that we have wrought, in the past time of life, the will of the Gentiles, when we walked in lasciviousness, lusts, excesses in wine, revellings, banquetings, and wicked idolatries:
 
-<span style="color:#800000">6</span> For the gospel has for this end been also preached to the dead, that they may indeed be judged according to men in the flesh, but live according to God in the Spirit.
+<sup>4</sup> On account of which they think it strange, that ye run not with *them* into the same excess of riot, speaking evil *of you;*
 
-<span style="color:#800000">7</span> But the end of all things is near; be ye then sober, and watchful to pray;
+<sup>5</sup> Who shall give account to him who is ready to judge the living and the dead.
 
-<span style="color:#800000">8</span> And above all things having fervent love among yourselves; for love will cover a multitude of sins.
+<sup>6</sup> For the gospel has for this end been also preached to the dead, that they may indeed be judged according to men in the flesh, but live according to God in the Spirit.
 
-<span style="color:#800000">9</span> Be hospitable towards one another, without murmurings.
+<sup>7</sup> But the end of all things is near; be ye then sober, and watchful to pray;
 
-<span style="color:#800000">10</span> As every one has received a gift, minister the same one to another, as good dispensers of the manifold grace of God;
+<sup>8</sup> And above all things having fervent love among yourselves; for love will cover a multitude of sins.
+
+<sup>9</sup> Be hospitable towards one another, without murmurings.
+
+<sup>10</sup> As every one has received a gift, minister the same one to another, as good dispensers of the manifold grace of God;
 
 <!-- PAGE 148 -->
 
-<span style="color:#800000">11</span> If any one speak, *let him speak* as the oracles of God; if any one minister, *let him do so* as by the power which God supplies; that in all things God may be glorified through Jesus Christ; to whom be the glory and the dominion for ever and ever. Amen.
+<sup>11</sup> If any one speak, *let him speak* as the oracles of God; if any one minister, *let him do so* as by the power which God supplies; that in all things God may be glorified through Jesus Christ; to whom be the glory and the dominion for ever and ever. Amen.
 
-<span style="color:#800000">12</span> Beloved, think it not strange when ye are tried by fire for the purpose of proving you, as though some new thing had happened to you;
+<sup>12</sup> Beloved, think it not strange when ye are tried by fire for the purpose of proving you, as though some new thing had happened to you;
 
-<span style="color:#800000">13</span> But inasmuch as ye are partakers of the sufferings of Christ, rejoice; that at the revelation also of his glory ye may exultingly rejoice.
+<sup>13</sup> But inasmuch as ye are partakers of the sufferings of Christ, rejoice; that at the revelation also of his glory ye may exultingly rejoice.
 
-<span style="color:#800000">14</span> If ye be reproached for the name of Christ, happy *are ye;* for the Spirit of glory and of God rests upon you: by them, indeed, he is slandered, but by you he is glorified.
+<sup>14</sup> If ye be reproached for the name of Christ, happy *are ye;* for the Spirit of glory and of God rests upon you: by them, indeed, he is slandered, but by you he is glorified.
 
-<span style="color:#800000">15</span> But let none of you suffer as a murderer, or a thief, or an evildoer, or as a coveter of another man's goods; but if as a Christian, let him not be ashamed;
+<sup>15</sup> But let none of you suffer as a murderer, or a thief, or an evildoer, or as a coveter of another man's goods; but if as a Christian, let him not be ashamed;
 
-<span style="color:#800000">16</span> Nay, let him in this case glorify God: for it is the time, when judgment begins at the house of God;
+<sup>16</sup> Nay, let him in this case glorify God: for it is the time, when judgment begins at the house of God;
 
-<span style="color:#800000">17</span> But if it be first on us, what *will be* the end of those who obey not the gospel of God?
+<sup>17</sup> But if it be first on us, what *will be* the end of those who obey not the gospel of God?
 
-<span style="color:#800000">18</span> And if the righteous be hardly saved, the ungodly and the sinner, where will they appear ?
+<sup>18</sup> And if the righteous be hardly saved, the ungodly and the sinner, where will they appear ?
 
-<span style="color:#800000">19</span> Let therefore those who suffer according to the will of God, commit their souls to him, in doing good, as to a faithful possessor.
+<sup>19</sup> Let therefore those who suffer according to the will of God, commit their souls to him, in doing good, as to a faithful possessor.
 
-<span style="color:#800000">1</span> The elders who are among you I exhort, who am also an elder and a witness of the sufferings of Christ, and a partaker of the glory which shall be revealed:
+<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
+
+<sup>1</sup> The elders who are among you I exhort, who am also an elder and a witness of the sufferings of Christ, and a partaker of the glory which shall be revealed:
 
 <!-- PAGE 149 -->
 
-<span style="color:#800000">2</span> Feed as much as in you lieth the flock of God, discharging the office of bishops, not constrainedly, but willingly; not for the sake of filthy lucre, but liberally;
+<sup>2</sup> Feed as much as in you lieth the flock of God, discharging the office of bishops, not constrainedly, but willingly; not for the sake of filthy lucre, but liberally;
 
-<span style="color:#800000">3</span> And not as exercising tyranny over *God's* heritages, but that ye may be patterns to the flock:
+<sup>3</sup> And not as exercising tyranny over *God's* heritages, but that ye may be patterns to the flock:
 
-<span style="color:#800000">4</span> And when the Chief Shepherd shall appear, ye shall receive an unfading crown of glory.
+<sup>4</sup> And when the Chief Shepherd shall appear, ye shall receive an unfading crown of glory.
 
-<span style="color:#800000">5</span> In like manner the younger, be ye subject to the elder; yea, be ye all subject to one another: put ye on humility of mind; because God resisteth the proud, but giveth grace to the humble.
+<sup>5</sup> In like manner the younger, be ye subject to the elder; yea, be ye all subject to one another: put ye on humility of mind; because God resisteth the proud, but giveth grace to the humble.
 
-<span style="color:#800000">6</span> Be ye then humbled under the mighty hand of God, that he may exalt you in due time;
+<sup>6</sup> Be ye then humbled under the mighty hand of God, that he may exalt you in due time;
 
-<span style="color:#800000">7</span> All your care being cast on him, for he cares for you.
+<sup>7</sup> All your care being cast on him, for he cares for you.
 
-<span style="color:#800000">8</span> Be sober, be vigilant, because your adversary, the Devil, as a roaring lion, goeth around, seeking whom he may devour:
+<sup>8</sup> Be sober, be vigilant, because your adversary, the Devil, as a roaring lion, goeth around, seeking whom he may devour:
 
-<span style="color:#800000">9</span> Whom resist ye, being firm in the faith, knowing that the same sufferings are accomplished in your brethren in the world.
+<sup>9</sup> Whom resist ye, being firm in the faith, knowing that the same sufferings are accomplished in your brethren in the world.
 
-<span style="color:#800000">10</span> Now the God of all grace, who hath called us to his eternal glory through Christ Jesus, — may he perfect you, while suffering for a short time, confirm, strengthen, *and* establish *you:*
+<sup>10</sup> Now the God of all grace, who hath called us to his eternal glory through Christ Jesus, — may he perfect you, while suffering for a short time, confirm, strengthen, *and* establish *you:*
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">11</span> To him be the glory and the dominion, for ever and ever. Amen.</p>
+<p style="text-align:center" markdown="1"><sup>11</sup> To him be the glory and the dominion, for ever and ever. Amen.</p>
 
-<span style="color:#800000">12</span> By Sylvanus, a faithful brother to you, as I suppose, I have written in a few words, exhorting *you* and testifying that this is the true grace of God in which ye stand.
+<sup>12</sup> By Sylvanus, a faithful brother to you, as I suppose, I have written in a few words, exhorting *you* and testifying that this is the true grace of God in which ye stand.
 
-<span style="color:#800000">13</span> The *church,* elected together with you, which is in Babylon, saluteth you, and Marcus my son.
+<sup>13</sup> The *church,* elected together with you, which is in Babylon, saluteth you, and Marcus my son.
 
-<span style="color:#800000">14</span> Salute ye one another with the kiss of love. Grace *be* to you all who are in Christ Jesus. Amen.
+<sup>14</sup> Salute ye one another with the kiss of love. Grace *be* to you all who are in Christ Jesus. Amen.
 
 <!-- PAGE 150 -->
 
@@ -1892,6 +1926,8 @@ In saying that the Church there was a partaker of the same election, his object 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">ARGUMENT</span></p>
 
 [^f3]: *Horne,* in his Introduction, vol. 4:p. 425, mentions four opinions on this subject. According to Bishop Pearson, Mill, and Le Clerc, it was Babylon in Egypt; according to Erasmus, Drusius, Beza, Dr. Lightfoot, Basnage, Beausobre, Dr. Cave, Wetstein, Drs. Benson and A. Clarke, it was Babylon in Assyria; according to Michaelis, it was Babylon in Mesopotamia; and according to Grotius, Drs. Whitby, Lardner, Macknight, and Hales, Bishop Tomline, and all the learned of the Romish communion, it is to be taken figuratively for Rome, according to what was done by John in Revelation 17:and 18:What renders the last opinion very improbable is, that to date an epistle at a place to which a figurative name is given, is without another instance in Scripture, and the thing itself seems quite absurd. The language of prophecy is quite a different matter. Paul wrote several of his epistles at Rome, and in no instance did he do anything of this kind. Such an opinion would have never gained ground, had there not been from early times a foolish attempt to connect Peter with Rome. And it is to be regretted that some learned Protestants have been duped on this subject by a mass of fictitious evidence which has been collected by the partisans of the Romish Church. — *Ed.*
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 [^f4]: *Inquilinis;* they are those who dwell in a hired house, tenants. The original, <span style="color:#0000d4">παρεπιδήμοις</span>, means those who dwell among a people, that is, not their own. Sojourners or pilgrims would be the best word. The sentence literally is, “To the sojourners of the dispersion of Pontus.” etc. — *Ed.*
 
@@ -1931,6 +1967,8 @@ In saying that the Church there was a partaker of the same election, his object 
 
 <!-- PAGE 154 -->
 
+<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
+
 [^f19]: Our version here seems to convey the most suitable meaning, by taking <span style="color:#0000d4">λογικὸν</span> for <span style="color:#0000d4">τοῦ λόγου</span>; see similar instances in ver. 13 and 1 Peter 3:7. It is the wordy milk, or milk made up of the word; the word is the milk. Then <span style="color:#0000d4">άδολον</span> is to be taken in its secondary meaning: when applied to persons, it means undeceitful, or guileless; but when to things, genuine, pure, unadulterated, unmixed with anything deleterious. We may, therefore, render the words, “Desire the pure milk of the word.” It is a milk not adulterated by water or by anything poisonous. There is no contrast here between milk and strong food; but it includes all that is necessary as an aliment for the soul, when renewed. The Word had before been represented as the instrument of the new birth; it is now spoken of as the food and aliment of the newborn. — *Ed.*
 
 [^f20]: Several copies have <span style="color:#0000d4">ἡ γραπὴ</span> instead of <span style="color:#0000d4">ἐν τῃ γραπὴ</span>; and this reading *Calvin* has followed. But the verb <span style="color:#0000d4">περιέχω</span> is used by *Josephus* and others in a passive sense. — *Ed.*
@@ -1939,7 +1977,7 @@ In saying that the Church there was a partaker of the same election, his object 
 
 [^f22]: As to this verb he has, but in the previous parts he comes nearer to the Hebrew than to the *Sept.* Paul quotes this sentence twice, Romans 9:33; 10:11, and follows the *Sept.* as Peter does. Indeed, the difference between <span style="color:#008080">çyjy</span> he shall make haste, and <span style="color:#008080">çby</span>, he shall be ashamed, is very small; and further, the former verb admits of a similar meaning with the latter. — *Ed.*
 
-[^f23]: There are in this verse two quotations, one from <span style="color:#800000"><19B822></span>Psalm 118:22, and the other from Isaiah 8:14. That from the Psalms is literally the *Sept.,* and is the same as quoted in Matthew 21:42; Mark 12:10; and Luke 20:17. In all these instances it is <span style="color:#0000d4">λίθον</span>, and not <span style="color:#0000d4">λίθος</span> according to the Hebrew. It is therefore necessary to consider <span style="color:#0000d4">κατὰ</span> *as to,* or, *with respect to,* as understood, a thing not uncommon in Greek. With regard to <span style="color:#0000d4">ἡ τιμὴ</span> , a noun foran adjective, it refers to the stone, or to *him,* in the preceding verse; but as the metaphor of stone is still continued in this verse, it is better to retain it here, “it is precious,” that is, the stone; and especially as Christ is represented before, in verse 4, a stone “precious” in the sight of God. — *Ed.*
+[^f23]: There are in this verse two quotations, one from <span class="ages-code">&lt;19B822&gt;</span>Psalm 118:22, and the other from Isaiah 8:14. That from the Psalms is literally the *Sept.,* and is the same as quoted in Matthew 21:42; Mark 12:10; and Luke 20:17. In all these instances it is <span style="color:#0000d4">λίθον</span>, and not <span style="color:#0000d4">λίθος</span> according to the Hebrew. It is therefore necessary to consider <span style="color:#0000d4">κατὰ</span> *as to,* or, *with respect to,* as understood, a thing not uncommon in Greek. With regard to <span style="color:#0000d4">ἡ τιμὴ</span> , a noun foran adjective, it refers to the stone, or to *him,* in the preceding verse; but as the metaphor of stone is still continued in this verse, it is better to retain it here, “it is precious,” that is, the stone; and especially as Christ is represented before, in verse 4, a stone “precious” in the sight of God. — *Ed.*
 
 <!-- PAGE 155 -->
 
@@ -1971,6 +2009,8 @@ In saying that the Church there was a partaker of the same election, his object 
 
 [^f35]: I would render the clause thus, “But you have been now restored,” that is, from your wandering, “to the shepherd and the bishop (or, overseer) of your souls.” *Macknight* thinks, that our Lord took the title of shepherd in order to shew that he is the person foretold in Ezekiel 34:23, and that Peter alludes, in calling him bishop or overseer, to the eleventh verse of that chapter, the latter clause of which, according to the *Sept.* is, “I will oversee them,” (<span style="color:#0000d4">ἐπισκέψομαι</span>.) — *Ed.*
 
+<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
+
 [^f36]: The best construction is to regard “adorning,” or ornament, as understood after “incorruptible:” “But the hidden man of the heart, *clothed* in (or with) the incorruptible *adorning* of a mild and quiet spirit.” “Mild” or meek, not given to passion or wrath, patient, not proud nor arrogant; quiet, peaceable, not garrulous, not turbulent, nor given to strife and contention. — *Ed.*
 
 [^f37]: The words are, “Whose daughters ye become, when ye do well and fear no terror.” Terror here stands for what terrifies. The paraphrase of *Macknight* seems to give the real and simple meaning of the passage, “Whose daughters ye Christian women have become, by behaving well towards your husbands, and not being frightened to actions contrary to your religion through fear of displeasing them.”
@@ -1990,6 +2030,8 @@ In saying that the Church there was a partaker of the same election, his object 
 <!-- PAGE 159 -->
 
 [^f43]: The most satisfactory explanation of this passage is that of *Beza, Doddridge, Macknight,* and *Scott;* that the reference is to what was done in the time of Noah, that is, that Christ by his Spirit employed him as a preacher of righteousness, though with no success, as the spirits of the men to whom he preached were then in prison, reserved, as the fallen angels are represented to be, for the judgment of the last day. The Apostle had before said that Christ’s Spirit was in the prophets who foretold his coming, 1 Peter 1:11. The passage may be thus rendered, — 19. “By which also he, having gone, preached to the spirits who are in prison, formerly disobedient, when the long-suffering of God waited in the days of Noah,” etc.; or, according to *Mackight,* “to the spirits *now* in prison, who formerly were disobedient,” etc. The word “formerly” seems to require “now” in the previous clause, or, “who are,” as rendered by *Beza.* “He, having gone, preached,” is similar to a phrase in Ephesians 2:17, “And came and preached,” etc.; or, literally, “And having come he preached,” etc. Paul does not speak of his coming personally, but by his ministers: and Peter evidently speaks of his going in the same sense. For <span style="color:#0000d4">a[pax ἐξεδέχετο</span>, *Griesbach* substitutes <span style="color:#0000d4">ἀπεξεδέχετο</span> as being the most approved reading. — *Ed.*
+
+<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
 
 [^f44]: The subject of this passage, from 1 Peter 3:14 to 1 Peter 4:6, is suffering unjustly, or for righteousness’ sake, and Christ is brought as an example, he being just, suffered for the unjust. After a digression at the 19th verse of the third chapter, the Apostle returns here to his former subject, the example of Christ suffering in the flesh or in his body and in order to retain still the idea that he was just when he suffered, this clause seems to have been put in parenthetically, “For he who suffered ceased from sin,” that is, had no sin, but was just. And hence in the following verses he exhorts them to lead a holy life whatever might be the opposition from the world, so that they might be like their Savior, suffering unjustly, they themselves being innocent.
 
@@ -2020,6 +2062,8 @@ They were exhorted to resolve to follow the example of Christ, but in such a way
 [^f51]: It certainly *appears* as a quotation, as the words are literally the same. It is to be observed that the Hebrew has “on earth,” which seems to confirm the view that saved here refers to deliverances from the troubles, trials, and persecutions, which the righteous have to go through during life; and that *scarcely,* or hardly, or with difficulty, as rendered by *Doddridge* and *Macknight,* is to be limited to the time of the Christian’s course in this world; for, as *Macknight* observes, the Apostle speaks in his Second Epistle of an abundant entrance into the heavenly kingdom being vouchsafed to all faithful Christians. See 2 Peter 1:11*. — Ed.*
 
 [^f52]: The two words, “ungodly,” <span style="color:#0000d4">ἀσεβὴς</span>, and “sinner,” <span style="color:#0000d4">ἀμαρτωλὸς</span>, exactly correspond with <span style="color:#008080">[çr</span> and <span style="color:#008080">afwj</span> in Hebrew; the first is he who is not pious, not a worshipper of God, having neither fear nor love towards him; and the second is the wicked, and open and shameless transgressor, who regards not what is just and right. *Grotius* says, that the first is he who shews no piety towards God; and that the second is one who observes no justice towards man. — *Ed.*
+
+<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
 
 [^f53]: The most obvious meaning is, that Peter had been an *eye-witness* of Christ’s sufferings. So the word “witness” is taken by *Grotius, Macknight, Doddridge,* and *Scott.* — *Ed.*
 

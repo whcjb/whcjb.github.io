@@ -58,6 +58,8 @@ BOOK_DIR = {
 
 def md_to_html(s: str) -> str:
     s = re.sub(r'^\*\*(\d+)\.\*\*', r'<strong>\1.</strong>', s)
+    # 也处理裸 `N.` 起首 (Latin 列常见, 如 `1. Filioli mei`)
+    s = re.sub(r'^(\d+)\.\s+', r'<strong>\1.</strong> ', s)
     s = re.sub(r'\*\*([^*]+?)\*\*', r'<strong>\1</strong>', s)
     s = re.sub(r'(?<!\*)\*([^*\n]+?)\*(?!\*)', r'<em>\1</em>', s)
     return s
@@ -75,6 +77,7 @@ def strip_p_wrap(s: str) -> str:
 BLOCK_RE = re.compile(
     r'<h2 class="scripture-anchor"\s+id="([^"]+)"\s+data-ref="([^"]+)"'
     r'\s+style="display:none">[^<]+</h2>\s*\n+'
+    r'(?:<p class="scripture-ref">.*?</p>\s*\n+)?'  # 可选 scripture-ref <p>
     r'<table class="scripture-table calvin-parallel">\s*\n'
     r'<tbody>\s*\n'
     r'((?:<tr><td><p>.+?</p></td><td><p>.+?</p></td></tr>\s*\n)+)'

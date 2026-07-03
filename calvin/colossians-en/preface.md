@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: colossians-en
 book_name: "Calvin on Colossians"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-07-02 17:45
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -100,5 +100,7 @@ In the beginning of the *Fourth Chapter* he follows out the same subject: afterw
 
 
 [^f16]: “Par plusieurs signes et tesmoignages;” – “By many signs and evidences.”
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 

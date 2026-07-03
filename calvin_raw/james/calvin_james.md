@@ -34,9 +34,21 @@ But as to the author, there is somewhat more reason for doubting. It is indeed c
 
 <h2 class="scripture-anchor" id="james-1-1-4" data-ref="JAMES 1:1-4" style="display:none">JAMES 1:1-4</h2>
 
-1 James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting. 2 My brethren, count it all joy when ye fall into divers temptations; 3 Knowing this, that the trying of your faith worketh patience. 4 But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590101&gt;</span><span class="book-name">James</span> <span class="verse-range">1:1-4</span></p>
 
-**1.** <span style="color:#800000">*To the twelve tribes*</span>. When the ten tribes were banished, the Assyrian king placed them in different parts. Afterwards, as it usually happens in the revolutions of kingdoms (such as then took place,) it is very probable that they moved here and there in all directions. And the Jews had been scattered almost unto all quarters of the world. He then wrote and exhorted all those whom he could not personally address, because they had been scattered far and wide. But that he speaks not of the grace of Christ and of faith in him, the reason seems to be this, because he addressed those who had already been rightly taught by others; so that they had need, not so much of doctrine, as of the goads of exhortations.<span style="color:#800000">[^f1]</span>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are scattered abroad, greeting.</td><td class="scripture-la"><strong>1.</strong> Jacobus, Dei ac Domini Jesu Christi servus, duodecim tribubus quae in dispersione sunt, salutem.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> My brethren, count it all joy when ye fall into divers temptations;</td><td class="scripture-la"><strong>2.</strong> Omne gaudium existimate, fratres mei, quum in tentationes varias incideritis;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Knowing this, that the trying of your faith worketh patience.</td><td class="scripture-la"><strong>3.</strong> Scientes quod probatio fidei vestrae, patientiam operatur</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> But let patience have her perfect work, that ye may be perfect and entire, wanting nothing.</td><td class="scripture-la"><strong>4.</strong> Patientia vero opus perfectum habeat, ut sitis perfecti et integri, in nullo deficientes.</td></tr>
+</tbody>
+</table>
+
+</div>
+
+**1.** <span style="color:#800000">*To the twelve tribes*</span>. When the ten tribes were banished, the Assyrian king placed them in different parts. Afterwards, as it usually happens in the revolutions of kingdoms (such as then took place,) it is very probable that they moved here and there in all directions. And the Jews had been scattered almost unto all quarters of the world. He then wrote and exhorted all those whom he could not personally address, because they had been scattered far and wide. But that he speaks not of the grace of Christ and of faith in him, the reason seems to be this, because he addressed those who had already been rightly taught by others; so that they had need, not so much of doctrine, as of the goads of exhortations.[^f1]
 
 <!-- PAGE 5 -->
 **2.** <span style="color:#800000">*All joy*</span>. The first exhortation is, to bear trials with a cheerful mind. And it was especially necessary at that time to comfort the Jews, almost overwhelmed as they were with troubles. For the very name of the nation was so infamous, that they were hated and despised by all people wherever they went; and their condition as Christians rendered them still more miserable, because they held their own nation as their most inveterate enemies. At the same time, this consolation was not so suited to one time, but that it is always useful to believers, whose life is a constant warfare on earth.
@@ -57,14 +69,26 @@ etc. We certainly dread diseases, and want, and exile, and prison, and reproach,
 
 Paul says, in Romans 5:3, that we are to glory in tribulations; and James says here, that we are to rejoice. “We glory,” says Paul, “in tribulations, knowing that tribulation worketh patience.” What immediately follows seems contrary to the words of James; for he mentions probation in the third place, as the effect of patience, which is here put first as though it were the cause. But the solution is obvious; the word there has an active, but here a passive meaning. Probation or trial is said by James to produce patience; for were not God to try us, but leave us free from trouble, there would be no patience, which is no other thing than fortitude of mind in bearing evils. But Paul means, that while by enduring we conquer evils, we experience how much God’s help avails in necessities; for then the truth of God is as it were in reality manifested to us. Hence it comes that we dare to entertain more hope as to futurity; for the truth of God, known by experience, is more fully believed by us. Hence Paul teaches that by such a probation, that is, by such an experience of divine grace, hope is produced, not that hope then only begins, but that it increases and is confirmed. But both mean, that tribulation is the means by which patience is produced.
 
-Moreover, the minds of men are not so formed by nature, that affliction of itself produces patience in them. But Paul and Peter regard not so much the nature of men as the providence of God through which it comes, that the faithful learn patience from troubles; for the ungodly are thereby more and more provoked to madness, as the example of Pharaoh proves.<span style="color:#800000">[^f2]</span>
+Moreover, the minds of men are not so formed by nature, that affliction of itself produces patience in them. But Paul and Peter regard not so much the nature of men as the providence of God through which it comes, that the faithful learn patience from troubles; for the ungodly are thereby more and more provoked to madness, as the example of Pharaoh proves.[^f2]
 
 <!-- PAGE 7 -->
-**4.** <span style="color:#800000">*But let patience have her perfect work.*</span> As boldness and courage often appear in us and soon fail, he therefore requires perseverance. “Real patience,” he says, “is that which endures to the end.” For <span style="color:#800000">*work*</span> here means the effort not only to overcome in one contest, but to persevere through life. His perfection may also he referred to the sincerity of the soul, that men ought willingly and not feignedly to submit to God; but as the word <span style="color:#800000">*work*</span> is added, I prefer to explain it of constancy. For there are many, as we have said, who shew at first an heroic greatness, and shortly after grow weary and faint. He therefore bids those who would be *perfect* and *entire*,<span style="color:#800000">[^f3]</span> to persevere to the end. But what he means by these two words, he afterwards explains of those who fail not, or become not wearied: for they, who being overcome as to patience, be broken down, must, by degrees, be necessarily weakened, and at length wholly fail.
+**4.** <span style="color:#800000">*But let patience have her perfect work.*</span> As boldness and courage often appear in us and soon fail, he therefore requires perseverance. “Real patience,” he says, “is that which endures to the end.” For <span style="color:#800000">*work*</span> here means the effort not only to overcome in one contest, but to persevere through life. His perfection may also he referred to the sincerity of the soul, that men ought willingly and not feignedly to submit to God; but as the word <span style="color:#800000">*work*</span> is added, I prefer to explain it of constancy. For there are many, as we have said, who shew at first an heroic greatness, and shortly after grow weary and faint. He therefore bids those who would be *perfect* and *entire*,[^f3] to persevere to the end. But what he means by these two words, he afterwards explains of those who fail not, or become not wearied: for they, who being overcome as to patience, be broken down, must, by degrees, be necessarily weakened, and at length wholly fail.
 
 <h2 class="scripture-anchor" id="james-1-5-8" data-ref="JAMES 1:5-8" style="display:none">JAMES 1:5-8</h2>
 
-5 If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him. 6 But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed. 7 For let not that man think that he shall receive any thing of the Lord. 8 A double minded man is unstable in all his ways.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590105&gt;</span><span class="book-name">James</span> <span class="verse-range">1:5-8</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.</td><td class="scripture-la"><strong>5.</strong> Porro si quis autem vestrum destituitur sapientia, postulet a Deo, qui dat omnibus simpliciter, nec exprobrat; et dabitur ei.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> But let him ask in faith, nothing wavering. For he that wavereth is like a wave of the sea driven with the wind and tossed.</td><td class="scripture-la"><strong>6.</strong> Postulet autem in fide, nihil haesitans; nam qui haesitat similis est fluctui maris, qui a vento agitur et circumfertur.</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> For let not that man think that he shall receive any thing of the Lord.</td><td class="scripture-la"><strong>7.</strong> non ergo existimet homo ille quod sit quicquam accepturus a Domino.</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> A double minded man is unstable in all his ways.</td><td class="scripture-la"><strong>8.</strong> Vir duplici animo, instabilis est in omnibus viis suis.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **5.** <span style="color:#800000">*If any of you lack wisdom.*</span> As our reason, and all our feelings are averse to the thought that we can be happy in the midst of evils, he bids us to ask of the Lord to give us wisdom. For *wisdom* here, I confine to the subject of the passage, as though he had said, “If this doctrine is higher than what your minds can reach to, ask of the Lord to illuminate you by his Spirit; for as this consolation alone is sufficient to mitigate all the bitterness of evils, that what is grievous to the flesh is salutary to us; so we must necessarily be overcome with impatience, except we be sustained by this kind of comfort.” Since we see that the Lord does not so require from us what is above our strength, but that he is ready to help us, provided we ask, let us, therefore, learn, whenever he commands anything, to ask from him the power to perform it.
 
@@ -83,7 +107,7 @@ To the same purpose is the promise which immediately follows; for as by this com
 
 The word *liberally*, or freely, denotes promptitude in giving. So Paul, in Romans 12:8, requires simplicity in deacons. And in 2
 
-Corinthians 8 and 2 Corinthians 9, when speaking of charity or love, he repeats the same word several times. The meaning, then, is, that God is so inclined and ready to give, that he rejects none, or haughtily puts them off, being not like the niggardly and grasping, who either sparingly, as with a closed hand, give but little, or give only a part of what they were about to give, or long debate with themselves whether to give or not.<span style="color:#800000">[^f4]</span>
+Corinthians 8 and 2 Corinthians 9, when speaking of charity or love, he repeats the same word several times. The meaning, then, is, that God is so inclined and ready to give, that he rejects none, or haughtily puts them off, being not like the niggardly and grasping, who either sparingly, as with a closed hand, give but little, or give only a part of what they were about to give, or long debate with themselves whether to give or not.[^f4]
 
 <!-- PAGE 9 -->
 
@@ -96,28 +120,51 @@ He <span style="color:#800000">*that wavereth*</span>, or doubteth. By this simi
 <!-- PAGE 10 -->
 This is a remarkable passage, fitted to disprove that impious dogma which is counted as an oracle under the whole Papacy, that is, that we ought to pray doubtingly, and with uncertainty as to our success. This principle, then, we hold, that our prayers are not heard by the Lord, except when we have a confidence that we shall obtain. It cannot indeed be otherwise, but that through the infirmity of our flesh we must be tossed by various temptations, which are like engines employed to shake our confidence; so that no one is found who does not vacillate and tremble according to the feeling of his flesh; but temptations of this kind are at length to be overcome by faith. The case is the same as with a tree, which has struck firm roots; it shakes, indeed, through the blowing of the wind, but is not rooted up; on the contrary, it remains firm in its own place.
 
-**8.** <span style="color:#800000">*A double-minded man*</span>, or, a man of a double mind. This sentence may be read by itself, as he speaks generally of hypocrites. It seems, however, to me to be rather the conclusion of the preceding doctrine; and thus there is an implied contrast between the simplicity or liberality of God, mentioned before, and the double-mindedness of man; for as God gives to us with a stretched out hand, so it behooves us in our turn to open the bosom of our heart. He then says that the unbelieving, who have tortuous recesses, are *unstable*; because they are never firm or fixed, but at one time they swell with the confidence of the flesh, at another they sink into the depth of despair.<span style="color:#800000">[^f5]</span>
+**8.** <span style="color:#800000">*A double-minded man*</span>, or, a man of a double mind. This sentence may be read by itself, as he speaks generally of hypocrites. It seems, however, to me to be rather the conclusion of the preceding doctrine; and thus there is an implied contrast between the simplicity or liberality of God, mentioned before, and the double-mindedness of man; for as God gives to us with a stretched out hand, so it behooves us in our turn to open the bosom of our heart. He then says that the unbelieving, who have tortuous recesses, are *unstable*; because they are never firm or fixed, but at one time they swell with the confidence of the flesh, at another they sink into the depth of despair.[^f5]
 
 <h2 class="scripture-anchor" id="james-1-9-11" data-ref="JAMES 1:9-11" style="display:none">JAMES 1:9-11</h2>
 
-9 Let the brother of low degree rejoice in that he is exalted: 10 But the rich, in that he is made low: because as the flower of the grass he shall pass away. 11 For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590109&gt;</span><span class="book-name">James</span> <span class="verse-range">1:9-11</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Let the brother of low degree rejoice in that he is exalted:</td><td class="scripture-la"><strong>9.</strong> Porro glorietur frater humilis in sublimate sua;</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> But the rich, in that he is made low: because as the flower of the grass he shall pass away.</td><td class="scripture-la"><strong>10.</strong> Dives autem in humilitate sua, quia tanquam flos herbae prateteribit.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> For the sun is no sooner risen with a burning heat, but it withereth the grass, and the flower thereof falleth, and the grace of the fashion of it perisheth: so also shall the rich man fade away in his ways.</td><td class="scripture-la"><strong>11.</strong> Nam sol exortus est cum aestu, et exarescit herba, et flos ejus cecidit, et decor aspectus ejus periit; sic et dives in suis viis (vel, copiis) marcescet.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 11 -->
 **9.** <span style="color:#800000">*Let the brother of low degree*</span>. As Paul, exhorting servants submissively to bear their lot, sets before them this consolation, that they were the freemen of God, having been set free by his grace from the most miserable bondage of Satan, and reminds them, though free, yet to remember that they were the servants of God; so here James in the same manner bids the lowly to glory in this, that they had been adopted by the Lord as his children; and the rich, because they had been brought down into the same condition, the world’s vanity having been made evident to them. Thus the first he would have to be content with their humble and low state; and he forbids the rich to be proud. Since it is incomparably the greatest dignity to be introduced into the company of angels, nay, to be made the associates of Christ, he who estimates this favor of God aright, will regard all other things as worthless. Then neither poverty, nor contempt, nor nakedness, nor famine nor thirst, will make his mind so anxious, but that he will sustain himself with this consolation. “Since the Lord has conferred on me the principal thing, it behooves me patiently to bear the loss of other things, which are inferior.”
 
 Behold, how a lowly brother ought to glory in his elevation or exaltation; for if he be accepted of God, he has sufficient consolation in his adoption alone, so as not to grieve unduly for a less prosperous state of life.
 
-**13.** <span style="color:#800000">*But the rich, in that he is made low*</span>, or; in his lowness. He has mentioned the particular for the general; for this admonition pertains to all those who excel in honor; or in dignity, or in any other external thing. He bids them to glory in their lowness or littleness, in order to repress the haughtiness of those who are usually inflated with prosperity. But he calls it *lowness*, because the manifested kingdom of God ought to lead us to despise the world, as we know that all the things we previously greatly admired, are either nothing or very little things. For Christ, who is not a teacher except of babes, checks by his doctrine all the haughtiness of the flesh. Lest, then, the vain joy of the world should captivate the rich, they ought to habituate themselves to glory in the casting down of their carnal excellency.<span style="color:#800000">[^f6]</span>
+**13.** <span style="color:#800000">*But the rich, in that he is made low*</span>, or; in his lowness. He has mentioned the particular for the general; for this admonition pertains to all those who excel in honor; or in dignity, or in any other external thing. He bids them to glory in their lowness or littleness, in order to repress the haughtiness of those who are usually inflated with prosperity. But he calls it *lowness*, because the manifested kingdom of God ought to lead us to despise the world, as we know that all the things we previously greatly admired, are either nothing or very little things. For Christ, who is not a teacher except of babes, checks by his doctrine all the haughtiness of the flesh. Lest, then, the vain joy of the world should captivate the rich, they ought to habituate themselves to glory in the casting down of their carnal excellency.[^f6]
 
 <span style="color:#800000">*As the flower of the grass*</span>. Were any one to say that James alludes to the words of Isaiah, I would not much object; but I cannot allow that he quotes the testimony of the Prophet, who speaks not only of the things of this life and the fading character of the world, but of the whole man, both body and soul; but here what is spoken of is the pomp of wealth or of riches. And the meaning is, that glorying in riches is foolish and preposterous, because they pass away in a moment. The philosophers teach the same thing; but the song is sung to the deaf, until the ears are opened by the Lord to hear the truth concerning the eternity of the celestial kingdom. Hence he mentions *brother*; intimating that there is no place for this truth, until we are admitted into the order of God’s children.
 
-Though the received reading is <span style="color:#0000d4">ἐν ταῖς πορείαις</span>, yetI agree with Erasmus, and read the last word,<span style="color:#0000d4">πορίαις</span>, without the diphthong “in his riches,” or; with his riches; and the latter I prefer.<span style="color:#800000">[^f7]</span>
+Though the received reading is <span style="color:#0000d4">ἐν ταῖς πορείαις</span>, yetI agree with Erasmus, and read the last word,<span style="color:#0000d4">πορίαις</span>, without the diphthong “in his riches,” or; with his riches; and the latter I prefer.[^f7]
 
 <!-- PAGE 12 -->
 
 <h2 class="scripture-anchor" id="james-1-12-15" data-ref="JAMES 1:12-15" style="display:none">JAMES 1:12-15</h2>
 
-12 Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him. 13 Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man: 14 But every man is tempted, when he is drawn away of his own lust, and enticed. 15 Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590112&gt;</span><span class="book-name">James</span> <span class="verse-range">1:12-15</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.</td><td class="scripture-la"><strong>12.</strong> Beatus vir qui suffert temptationem; quod quum probatus fuerit, accipiet coronam vitae, quam promisit Deus diligentibus ipsum.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Let no man say when he is tempted, I am tempted of God: for God cannot be tempted with evil, neither tempteth he any man:</td><td class="scripture-la"><strong>13.</strong> Nemo quum tentatur dicat, A Deo tentor; Deus enim nec tentari malis potest, nec quenquam tentat.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> But every man is tempted, when he is drawn away of his own lust, and enticed.</td><td class="scripture-la"><strong>14.</strong> Sed unusquisque tentatur, dum a sua concupiscentia abstrahitur, et inescatur.</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> Then when lust hath conceived, it bringeth forth sin: and sin, when it is finished, bringeth forth death.</td><td class="scripture-la"><strong>15.</strong> Postquam antum concupiscentia conceperit, parit peccatum vero perfectum generat mortem.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **12.** <span style="color:#800000">*Blessed is the man*</span>. After having applied consolation, he moderated the sorrow of those who were severely handled in this world, and again humbled the arrogance of the great. He now draws this conclusion, that they are happy who magnanimously endure troubles and other trials, so as to rise above them. The word temptation may indeed be otherwise understood, even for the stings of lusts which annoy the soul within; but which is here commended, as I think, is fortitude of mind in enduring adversities. It is, however, a paradox, that they are not happy to whom all things come according to their wishes, but such as are not overcome with evils.
 
@@ -140,9 +187,9 @@ But the whole doctrine of scripture seems to be inconsistent with this passage; 
 
 Scripture asserts that the reprobate are delivered up to depraved lusts; but is it because the Lord depraves or corrupts their hearts? By no means; for their hearts are subjected to depraved lusts, because they are already corrupt and vicious. But since God blinds or hardens, is he not the author or minister of evil? Nay, but in this manner he punishes sins, and renders a just reward to the ungodly, who have refused to be ruled by his Spirit. (Romans 1:6.) It hence follows that the origin of sin is not in God, and no blame can be imputed to him as though he took pleasure in evils. (Genesis 6:6.)
 
-The meaning is, that man in vain evades, who attempts to cast the blame of his vices on God, because every evil proceeds from no other fountain than from the wicked lust of man. And the fact really is, that we are not otherwise led astray, except that every one has his own inclination as his leader and impeller. But that God tempts no one, he proves by this, because he is not <span style="color:#800000">*tempted with evils*</span>.<span style="color:#800000">[^f8]</span> For it is the devil who allures us to sin, and for this reason, because he wholly burns with the mad lust of sinning. But God does not desire what is evil: he is not, therefore, the author of doing evil in us.
+The meaning is, that man in vain evades, who attempts to cast the blame of his vices on God, because every evil proceeds from no other fountain than from the wicked lust of man. And the fact really is, that we are not otherwise led astray, except that every one has his own inclination as his leader and impeller. But that God tempts no one, he proves by this, because he is not <span style="color:#800000">*tempted with evils*</span>.[^f8] For it is the devil who allures us to sin, and for this reason, because he wholly burns with the mad lust of sinning. But God does not desire what is evil: he is not, therefore, the author of doing evil in us.
 
-**14.** <span style="color:#800000">*When he is drawn away by his own lust.*</span> As the inclination and excitement to sin are inward, in vain does the sinner seek an cause from an external impulse. At the same time these two effects of lust ought to be noticed — that it ensnares us by its allurements, and that it does us away; each of which is sufficient to render us guilty.<span style="color:#800000">[^f9]</span>
+**14.** <span style="color:#800000">*When he is drawn away by his own lust.*</span> As the inclination and excitement to sin are inward, in vain does the sinner seek an cause from an external impulse. At the same time these two effects of lust ought to be noticed — that it ensnares us by its allurements, and that it does us away; each of which is sufficient to render us guilty.[^f9]
 
 **15.** <span style="color:#800000">*Then when lust hath conceived*</span>. He first calls that *lust* which is not any kind of evil affection or desire, but that which is the fountain of all evil affections; by which, as he shews, are conceived vicious broods, which at length break forth into sins. It seems, however, improper, and not according to the usage of Scripture, to restrict the word *sin* to outward works, as though indeed lust itself were not a sin, and as though corrupt desires, remaining closed up within and suppressed, were not so many sins. But as the use of a word is various, there is nothing unreasonable if it be taken here, as in many other places, for actual sin.
 
@@ -154,14 +201,25 @@ By perfected sin, therefore, I understand, not any one act of sin perpetrated, b
 
 <h2 class="scripture-anchor" id="james-1-16-18" data-ref="JAMES 1:16-18" style="display:none">JAMES 1:16-18</h2>
 
-16 Do not err, my beloved brethren. 17 Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning. 18 Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590116&gt;</span><span class="book-name">James</span> <span class="verse-range">1:16-18</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>16.</strong> Do not err, my beloved brethren.</td><td class="scripture-la"><strong>16.</strong> Ne erretis, fratres mei dilecti:</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Every good gift and every perfect gift is from above, and cometh down from the Father of lights, with whom is no variableness, neither shadow of turning.</td><td class="scripture-la"><strong>17.</strong> Omnis donatio bona et omne donum perfectum desursum est, descendens a Patre luminum; apud quem non est transmutatio, aut conversionis obumbratio.</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> Of his own will begat he us with the word of truth, that we should be a kind of firstfruits of his creatures.</td><td class="scripture-la"><strong>18.</strong> Is sua voluntate genuit nos veritatis, ut essemus primitiae quaedam suaram creaturarum.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 16 -->
 **16.** <span style="color:#800000">*Do not err*</span>. This is an argument from what is opposite; for as God is the author of all good, it is absurd to suppose him to be the author of evil. To do good is what properly belongs to him, and according to his nature; and from him all good things come to us. Then, whatever evil he does, is not agreeable to his nature. But as it sometimes happens, that he who quits himself well through life, yet in some things fails, he meets this doubt by denying that God is mutable like men. But if God is in all things and always like himself, it hence follows that well-doing is his perpetual work.
 
 This reasoning is far different from that of Plato, who maintained that no calamities are sent on men by God, because he is good; for though it is just that the crimes of men should be punished by God, yet it is not right, with regard to him, to regard among evils that punishment which he justly inflicts. Plato, indeed, was ignorant; but James, leaving to God his right and office of punishing, only removes blame from him. This passage teaches us, that we ought to be so affected by God’s innumerable blessings, which we daily receive from his hand, as to think of nothing but of his glory; and that we should abhor whatever comes to our mind, or is suggested by others, which is not compatible with his praise.
 
-God is called the <span style="color:#800000">*Father of lights*</span>, as possessing all excellency and the highest dignity. And when he immediately adds, that there is in him <span style="color:#800000">*no shadow of turning*</span>, he continues the metaphor; so that we may not measure the brightness of God by the irradiation of the sun which appears to us.<span style="color:#800000">[^f10]</span>
+God is called the <span style="color:#800000">*Father of lights*</span>, as possessing all excellency and the highest dignity. And when he immediately adds, that there is in him <span style="color:#800000">*no shadow of turning*</span>, he continues the metaphor; so that we may not measure the brightness of God by the irradiation of the sun which appears to us.[^f10]
 
 **18.** <span style="color:#800000">*Of his own will*</span>. He now brings forward a special proof of the goodness of God which he had mentioned, even that he has regenerated us unto eternal life. This invaluable benefit every one of the faithful feels in himself. Then the goodness of God, when known by experience, ought to remove from them all a contrary opinion respecting him.
 
@@ -175,11 +233,22 @@ But this passage teaches us, that as our election before the foundation of the w
 
 The word *begotten* means that we become new men, so that we put off our former nature when we are effectually called by God. He adds how God begets us, even by the <span style="color:#800000">*word of truth*</span>, so that we may know that we cannot enter the kingdom of God by any other door.
 
-<span style="color:#800000">*That we should be a kind of firstfruits of his creatures*</span>. The word <span style="color:#0000d4">τινὰ</span>, “some,” has the meaning of likeness, as though he had said, that we are in a manner firstfruits. But this ought not to be restricted to a few of the faithful; but it belongs to all in common. For as man excels among all creatures, so the Lord elects some from the whole mass and separates them as a holy offering, to himself.<span style="color:#800000">[^f11]</span> It is no common nobility into which God extols his own children. Then justly are they said to be excellent as firstfruits, when God’s image is renewed in them.
+<span style="color:#800000">*That we should be a kind of firstfruits of his creatures*</span>. The word <span style="color:#0000d4">τινὰ</span>, “some,” has the meaning of likeness, as though he had said, that we are in a manner firstfruits. But this ought not to be restricted to a few of the faithful; but it belongs to all in common. For as man excels among all creatures, so the Lord elects some from the whole mass and separates them as a holy offering, to himself.[^f11] It is no common nobility into which God extols his own children. Then justly are they said to be excellent as firstfruits, when God’s image is renewed in them.
 
 <h2 class="scripture-anchor" id="james-1-19-21" data-ref="JAMES 1:19-21" style="display:none">JAMES 1:19-21</h2>
 
-19 Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath: 20 For the wrath of man worketh not the righteousness of God. 21 Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590119&gt;</span><span class="book-name">James</span> <span class="verse-range">1:19-21</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> Wherefore, my beloved brethren, let every man be swift to hear, slow to speak, slow to wrath:</td><td class="scripture-la"><strong>19.</strong> Itaque, fratres mei dilecti, sit omnis homo celer ad audiendum, tardus autem ad loquendum, tardus ad iram:</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> For the wrath of man worketh not the righteousness of God.</td><td class="scripture-la"><strong>20.</strong> Ira enim hominus justitiam Dei non operatur.</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> Wherefore lay apart all filthiness and superfluity of naughtiness, and receive with meekness the engrafted word, which is able to save your souls.</td><td class="scripture-la"><strong>21.</strong> Quapropter deposita omni inmunditie, et redundantia malitiae, cum mansuetudine suscipite insitum sermonem qui potest servare animas vestras.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 18 -->
 **19.** <span style="color:#800000">*Let every man*</span>. Were this a general sentence, the inference would be farfetched; but as he immediately adds a sentence respecting the word of truth suitable to the last verse, I doubt not but that he accommodates this exhortation peculiarly to the subject in hand. Having then set before us the goodness of God, he shews how it becomes us to be prepared to receive the blessing which he exhibits towards us. And this doctrine is very useful, for spiritual generation is not a work of one moment. Since some remnants of the old man ever abide in us, we must necessarily be through life renewed, until the flesh be abolished; for either our perverseness, or arrogance, or sloth, is a great impediment to God in perfecting in us his work. Hence, when James would have us to be swift to hear, he commends promptitude, as though he had said, “When God so freely and kindly presents himself to you, you also ought to render yourselves teachable, lest your slowness should cause him to desist from speaking.”
@@ -200,21 +269,35 @@ Hence it is, that so far profit in the school of God, because hardly one in a hu
 
 But as men are never thus tamed, so as to have a calm and meek heart, except they are purged from depraved affections, so he bids us to <span style="color:#800000">*lay aside uncleanness and redundancy of wickedness*</span>. And as James borrowed a comparison from agriculture, it was necessary for him to observe this order, to begin by rooting up noxious weeds. And since he addressed all, we may hence conclude that these are the innate evils of our nature, and that they cleave to us all; yea, since he addresses the faithful, he shews that we are never wholly cleansed from them in this life, but that they are continually sprouting up, and therefore he requires that care should be constantly taken to eradicate them. As the word of God is especially a holy thing; to be fitted to receive it, we must put off the filthy things by which we have been polluted.
 
-Under the word<span style="color:#0000d4">κακία</span>he comprehends hypocrisy and obstinacy as well as unlawful desires or lusts. Not satisfied with specifying the seat of wickedness as being in the soul of man, he teaches us that so abounding is the wickedness that dwells there, that it overflows, or that it rises up as it were into a heap; and doubtless, whosoever will well examine himself will find that there is within him an immense chaos of evils.<span style="color:#800000">[^f12]</span>
+Under the word<span style="color:#0000d4">κακία</span>he comprehends hypocrisy and obstinacy as well as unlawful desires or lusts. Not satisfied with specifying the seat of wickedness as being in the soul of man, he teaches us that so abounding is the wickedness that dwells there, that it overflows, or that it rises up as it were into a heap; and doubtless, whosoever will well examine himself will find that there is within him an immense chaos of evils.[^f12]
 
 <!-- PAGE 20 -->
 <span style="color:#800000">*Which is able to save*</span>. It is a high eulogy on heavenly truth, that we obtain through it a sure salvation; and this is added, that we may learn to seek and love and magnify the word as a treasure that is incomparable. It is then a sharp goad to chastise our idleness, when he says that the word which we are wont to hear so negligently, is the means of our salvation, though for this purpose the power of saving is not ascribed to the word, as if salvation is conveyed by the external sound of the word, or as if the office of saving is taken away from God and transferred elsewhere; for James speaks of the word which by faith penetrates into the hearts of men, and only intimates that God, the author of salvation, conveys it by his Gospel.
 
 <h2 class="scripture-anchor" id="james-1-22-27" data-ref="JAMES 1:22-27" style="display:none">JAMES 1:22-27</h2>
 
-22 But be ye doers of the word, and not hearers only, deceiving your own selves. 23 For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass: 24 For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was. 25 But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed. 26 If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain. 27 Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590122&gt;</span><span class="book-name">James</span> <span class="verse-range">1:22-27</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>22.</strong> But be ye doers of the word, and not hearers only, deceiving your own selves.</td><td class="scripture-la"><strong>22.</strong> Estote factores sermones, et non auditores solum, fallentes vos ipsos.</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> For if any be a hearer of the word, and not a doer, he is like unto a man beholding his natural face in a glass:</td><td class="scripture-la"><strong>23.</strong> Nam si quis auditor est sermones, et non factor, hic similis est homini consideranti faciem nativitatis suae in speculo.</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> For he beholdeth himself, and goeth his way, and straightway forgetteth what manner of man he was.</td><td class="scripture-la"><strong>24.</strong> Consideravit enim seipsum, et abiit, et protinus oblitus est qualis sit.</td></tr>
+<tr><td class="scripture-en"><strong>25.</strong> But whoso looketh into the perfect law of liberty, and continueth therein, he being not a forgetful hearer, but a doer of the work, this man shall be blessed in his deed.</td><td class="scripture-la"><strong>25.</strong> Qui vero intuitus fuerit in legem perfectam, quae est libertatis, et permanserit, hic non auditor obliviosus, sed factor operis, beatus in opere suo erit.</td></tr>
+<tr><td class="scripture-en"><strong>26.</strong> If any man among you seem to be religious, and bridleth not his tongue, but deceiveth his own heart, this man’s religion is vain.</td><td class="scripture-la"><strong>26.</strong> Si quis videtur religiosus esse inter vos, nec refraenat linguam suam, sed decipits cor suum, hujus inanus est religio.</td></tr>
+<tr><td class="scripture-en"><strong>27.</strong> Pure religion and undefiled before God and the Father is this, To visit the fatherless and widows in their affliction, and to keep himself unspotted from the world.</td><td class="scripture-la"><strong>27.</strong> Religio pura et impolluta coram Deo et Patre, haec est, Visitare pupillos et viduas in afflictione ipsorum, inmaculatum servare se a mundo.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 21 -->
 **22.** <span style="color:#800000">*Be ye doers of the word*</span>. The doer here is not the same as in Romans 2:13, who satisfied the law of God and fulfilled it in every part, but the doer is he who from the heart embraces God’s word and testifies by his life that he really believes, according to the saying of Christ,
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“Blessed are they who hear God’s word and keep it,”</span> <span style="color:#000080">(</span><span style="color:#000080">Luke 11:28;)</span></p>
 
-for he shews by the fruits what that implanting is, before mentioned. We must further observe, that faith with all its works is included by James, yea, faith especially, as it is the chief work which God requires from us. The import of the whole is, that we ought to labor that the word of the Lord should strike root in us, so that it may afterwards fructify.<span style="color:#800000">[^f13]</span>
+for he shews by the fruits what that implanting is, before mentioned. We must further observe, that faith with all its works is included by James, yea, faith especially, as it is the chief work which God requires from us. The import of the whole is, that we ought to labor that the word of the Lord should strike root in us, so that it may afterwards fructify.[^f13]
 
 **23.** <span style="color:#800000">*He is like to a man*</span>. Heavenly doctrine is indeed a mirror in which God presents himself to our view; but so that we may be transformed unto his image, as Paul says in 2 Corinthians 3:18. But here he speaks of the external glance of the eye, not of the vivid and efficacious meditation which penetrates into the heart. It is a striking comparison, by which he briefly intimates, that a doctrine merely heard and not received inwardly into the heart avails nothing, because it soon vanishes away.
 
@@ -225,7 +308,7 @@ But why he calls it a <span style="color:#800000">*perfect law*</span>, and a la
 
 Moreover, since it is a blessing of the Old Testament that the law of God should reform us, as it appears from Jeremiah 31:35, and other passages, it follows that it cannot be obtained until we come to Christ. And, doubtless, he alone is the end and perfection of the law; and James adds *liberty*, as an inseparable associate, because the Spirit of Christ never regenerates but that he becomes also a witness and an earnest of our divine adoption, so as to free our hearts from fear and trembling.
 
-<span style="color:#800000">*And continueth*</span>. This is firmly to persevere in the knowledge of God; and when he adds, <span style="color:#800000">*this man shall be blessed in his deed*</span>, or work, he means that blessedness is to be found in doing, not in cold hearing.<span style="color:#800000">[^f14]</span>
+<span style="color:#800000">*And continueth*</span>. This is firmly to persevere in the knowledge of God; and when he adds, <span style="color:#800000">*this man shall be blessed in his deed*</span>, or work, he means that blessedness is to be found in doing, not in cold hearing.[^f14]
 
 **26.** <span style="color:#800000">*Seem to be religious*</span>. He now reproves even in those who boasted that they were doers of the law, a vice under which hypocrites commonly labor, that is, the wantonness of the tongue in detraction. He has before touched on the duty of restraining the tongue, but for a different end; for he then bade silence before God, that we might be more fitted to learn. He speaks now of another thing, that the faithful should not employ their tongue in evil speaking.
 
@@ -251,7 +334,19 @@ And he says, <span style="color:#800000">*before God*</span>, to intimate that i
 
 <h2 class="scripture-anchor" id="james-2-1-4" data-ref="JAMES 2:1-4" style="display:none">JAMES 2:1-4</h2>
 
-1 My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons. 2 For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment; 3 And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say to the poor, Stand thou there, or sit here under my footstool: 4 Are ye not then partial in yourselves, and are become judges of evil thoughts?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590201&gt;</span><span class="book-name">James</span> <span class="verse-range">2:1-4</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> My brethren, have not the faith of our Lord Jesus Christ, the Lord of glory, with respect of persons.</td><td class="scripture-la"><strong>1.</strong> Fratres mei, ne in acceptionabus personarum fidem habeatis Domini Jesu Christi ex opinione, (vel, gloriae.)</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> For if there come unto your assembly a man with a gold ring, in goodly apparel, and there come in also a poor man in vile raiment;</td><td class="scripture-la"><strong>2.</strong> Si enim ingressus fuerit in coetum vestrum vir aureos anulos gestans, veste indudus spliendida; ingressus autem fuerit et pauper in sordida veste;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> And ye have respect to him that weareth the gay clothing, and say unto him, Sit thou here in a good place; and say to the poor, Stand thou there, or sit here under my footstool:</td><td class="scripture-la"><strong>3.</strong> Et respexeritis in cum qui vestem fert splendidam, et ei dixeritis, Tu sede hic honeste, et pauperi dixeritis, Tu sta illic, vel, Sede hic sub scabello pedum meorum;</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> Are ye not then partial in yourselves, and are become judges of evil thoughts?</td><td class="scripture-la"><strong>4.</strong> An non dijudicati eestis in vobisipsis, et facti judices malarum cogitationum?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 This reproof seems at first sight to be hard and unreasonable; for it is one of the duties of courtesy, not to be neglected, to honor those who are elevated in the world. Further, if respect of persons be vicious, servants are to be freed from all subjection; for freedom and servitude are deemed by Paul as conditions of life. The same must be thought of magistrates. But the solution of these questions is not difficult, if what James writes is not separated. For he does not simply disapprove of honor being paid to the rich, but that this, should not be done in a way so as to despise or reproach the poor; and this will appear more clearly, when he proceeds to speak of the rule of love.
 
@@ -265,11 +360,22 @@ Here then is the contrary vice condemned, that is, when from respect alone to ri
 In rendering <span style="color:#0000d4">τῆς δόξης</span>, “on account of esteem,” (*ex opinione*,) I have followed Erasmus; though the old interpreter cannot be blamed, who has rendered it “glory,” for the word means both; and it may be fitly applied to Christ, and that according to the drift of the passage. For so great is the brightness of Christ, that it easily extinguishes all the glories of the world, if indeed it irradiates our eyes. It hence follows, that Christ is little esteemed by us, when the admiration of worldly glory lays hold on us. But the other exposition is also very suitable, for when the esteem or value of riches or of honors dazzles our eyes, the truth is suppressed, which ought alone to prevail. To *sit becomingly* means to sit honorably.
 
 <!-- PAGE 26 -->
-**4.** <span style="color:#800000">*Are ye not then partial in yourselves*</span>? or, are ye not condemned in yourselves. This may be read affirmatively as well as interrogatively, but the sense would be the same, for he amplifies the fault by this, that they took delight and indulged themselves in so great a wickedness. If it be read interrogatively, the meaning is, “Does not your own conscience hold you convicted, so that you need no other judge?” If the affirmative be preferred, it is the same as though he had said, “This evil also happens, that ye think not that ye sin, nor know that your thoughts are so wicked as they are.”<span style="color:#800000">[^f15]</span>
+**4.** <span style="color:#800000">*Are ye not then partial in yourselves*</span>? or, are ye not condemned in yourselves. This may be read affirmatively as well as interrogatively, but the sense would be the same, for he amplifies the fault by this, that they took delight and indulged themselves in so great a wickedness. If it be read interrogatively, the meaning is, “Does not your own conscience hold you convicted, so that you need no other judge?” If the affirmative be preferred, it is the same as though he had said, “This evil also happens, that ye think not that ye sin, nor know that your thoughts are so wicked as they are.”[^f15]
 
 <h2 class="scripture-anchor" id="james-2-5-7" data-ref="JAMES 2:5-7" style="display:none">JAMES 2:5-7</h2>
 
-5 Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him? 6 But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats? 7 Do not they blaspheme that worthy name by the which ye are called?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590205&gt;</span><span class="book-name">James</span> <span class="verse-range">2:5-7</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> Hearken, my beloved brethren, Hath not God chosen the poor of this world rich in faith, and heirs of the kingdom which he hath promised to them that love him?</td><td class="scripture-la"><strong>5.</strong> Audite, fratres mei dilecti, nonne Deus elegit pauperes mundi hujus divites in fide et heredes regni quod promisit iis qui diligunt eum?</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> But ye have despised the poor. Do not rich men oppress you, and draw you before the judgment seats?</td><td class="scripture-la"><strong>6.</strong> Vos autem contemptui habiustis pauperem: nonne divites tyrnnidem in vos exercent et iidem trahunt vos ad tribunalia?</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> Do not they blaspheme that worthy name by the which ye are called?</td><td class="scripture-la"><strong>7.</strong> Et iidem contumelia afficiunt bonum nomen quod invocatum est super vos?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **5.** <span style="color:#800000">*Hearken, my beloved brethren*</span>. He proves now by a two-fold argument, that they acted preposterously, when for the sake of the rich they despised the poor: The first is, that it is unbecoming and disgraceful to cast down those whom God exalts, and to treat reproachfully those whom he honors. As God honors the poor, then every one who repudiates them, reverses the order of God. The other argument is taken from common experience; for since the rich are for the most part vexatious to the good and innocent, it is very unreasonable to render such a reward for the wrongs they do, so that they should be more approved by us than the poor, who aid us more than they wrong us. We shall now see how he proceeds with these two points.
 
@@ -289,7 +395,19 @@ There are, indeed, some of the rich who are just, and meek, and hate all unright
 
 <h2 class="scripture-anchor" id="james-2-8-11" data-ref="JAMES 2:8-11" style="display:none">JAMES 2:8-11</h2>
 
-8 If ye fulfill the royal law according to the scripture, Thou shalt love thy neighbor as thyself, ye do well: 9 But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors. 10 For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all. 11 For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590208&gt;</span><span class="book-name">James</span> <span class="verse-range">2:8-11</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> If ye fulfill the royal law according to the scripture, Thou shalt love thy neighbor as thyself, ye do well:</td><td class="scripture-la"><strong>8.</strong> Si legem quidem regiam perfectis juxta scripturum, Diliges proximum tuum sicut teipsum, benefacitis. (Leviticus 19:18; Matthew 22:39; Mark 12:31; Romans 13:9; Galatians 5:14.)</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> But if ye have respect to persons, ye commit sin, and are convinced of the law as transgressors.</td><td class="scripture-la"><strong>9.</strong> Sin personam respicitis, peccatum committis, et redarguimini a lege veluti transgressores. (Leviticus 19:15; Deuteronomy 1:17, 19.)</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> For whosoever shall keep the whole law, and yet offend in one point, he is guilty of all.</td><td class="scripture-la"><strong>10.</strong> Quisquis enim totam legem servaverit, offenderit autem in uno, factus est omnium reus.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> For he that said, Do not commit adultery, said also, Do not kill. Now if thou commit no adultery, yet if thou kill, thou art become a transgressor of the law.</td><td class="scripture-la"><strong>11.</strong> Nam qui dixit, Ne moecheris, dixit etiam, Ne occidas. Quod si non fueris moechatus, occideris tamen, factus es transgressor legis.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 29 -->
 Now follows a plainer declaration; for he expressly points out the cause of the last reproof, for they were officiously attentive to the rich, not from love, but on the contrary, from a vain desire of attaining their favor: And it is in anticipation, by which he obviated an excuse on the other side; for they might have objected and said, that he ought not to be blamed, who humbly submiteth himself to the unworthy. James, indeed, concedes that this is true, but he shews that it was falsely pretended by them, because they shewed this submission of homage, not from love to their neighbors, but from respect of persons.
@@ -321,7 +439,17 @@ We further see, that the transgressor of the law, and the guilty of all, mean th
 
 <h2 class="scripture-anchor" id="james-2-12-13" data-ref="JAMES 2:12-13" style="display:none">JAMES 2:12-13</h2>
 
-12 So speak ye, and so do, as they that shall be judged by the law of liberty. 13 For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590212&gt;</span><span class="book-name">James</span> <span class="verse-range">2:12-13</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> So speak ye, and so do, as they that shall be judged by the law of liberty.</td><td class="scripture-la"><strong>12.</strong> Sic loquimini, et sic facite, ut per legem libertatis judicandi.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> For he shall have judgment without mercy, that hath shewed no mercy; and mercy rejoiceth against judgment.</td><td class="scripture-la"><strong>13.</strong> Judicium enim sine misericordia ei qui non praestiterit misericordiam ;et gloriatur misericordia adversus judicium.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **12.** <span style="color:#800000">*So speak ye*</span>. Some give this explanation, that as they flattered themselves too much, they are summoned to the right tribunal; for men absolve themselves according to their own notions, because they withdraw themselves from the judgment of the divine law. He then reminds them that all deeds and words are there to be accounted for, because God will judge the world according to his law. As, however, such a declaration might have smitten them with immoderate terror, to correct or mitigate what they might have thought severe, he adds, <span style="color:#800000">*the law of liberty*</span>. For we know what Paul says,
 
@@ -346,7 +474,19 @@ Hard and forced is the explanation of those who regard mercy as put here for the
 
 <h2 class="scripture-anchor" id="james-2-14-17" data-ref="JAMES 2:14-17" style="display:none">JAMES 2:14-17</h2>
 
-14 What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him? 15 If a brother or sister be naked, and destitute of daily food, 16 And one of you say unto them, Depart in peace, be ye warmed and filled; notwithstanding ye give them not those things which are needful to the body; what doth it profit? 17 Even so faith, if it hath not works, is dead, being alone.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590214&gt;</span><span class="book-name">James</span> <span class="verse-range">2:14-17</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> What doth it profit, my brethren, though a man say he hath faith, and have not works? can faith save him?</td><td class="scripture-la"><strong>14.</strong> Quid prodest, fratres mei, si fidem dicataliquis se habere, opera autem non habeat? nunquid potest fides salvum facere ipsum?</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> If a brother or sister be naked, and destitute of daily food</td><td class="scripture-la"><strong>15.</strong> Quod si frater aut soror nudi fuerint, et egentes quotidiano victu</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> And one of you say unto them, Depart in peace, be ye warmed and filled; notwithstanding ye give them not those things which are needful to the body; what doth it profit?</td><td class="scripture-la"><strong>16.</strong> Dicat autem aliquis vestrum illis, Abite cum pace, calescite et saturamini; non tamen dederitis quae sunt necessaria corpori, quae utilitas?</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Even so faith, if it hath not works, is dead, being alone.</td><td class="scripture-la"><strong>17.</strong> Sic et fides, si opera non habuerit, mortua est per se.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **14.** <span style="color:#800000">*What doth it profit*</span>. He proceeds to commend mercy. And as he had threatened that God would be a severe Judge to us, and at the same time very dreadful, except we be kind and merciful towards our neighbors, and as on the other hand hypocrites objected and said, that faith is sufficient to us, in which the salvation of men consists, he now condemns this vain boasting. The sum, then, of what is said is, that faith without love avails nothing, and that it is therefore wholly dead.
 
@@ -355,9 +495,9 @@ But here a question arises, Can faith be separated from love? It is indeed true 
 <!-- PAGE 34 -->
 That he calls it then *faith,* is a concession, as the Rhetoricians say; for when we discuss a point, it does no harm, nay, it is sometimes expedient, to concede to an adversary what he demands, for as soon as the thing itself is known, what is conceded may be easily taken away from him. James then, as he was satisfied that it was a false pretext by which hypocrites covered themselves, was not disposed to raise a dispute about a word or an expression. Let us, however, remember that he does not speak according to the impression of his own mind when he mentions faith, but that on the contrary he disputes against those who made a false pretense as to faith, of which they were wholly destitute.
 
-<span style="color:#800000">*Can faith save him?*</span> This is the same as though he had said, that we do not attain salvation by a frigid and bare knowledge of God, which all confess to be most true; for salvation comes to us by faith for this reason, because it joins us to God. And this comes not in any other way than by being united to the body of Christ, so that, living through his Spirit, we are also governed by him. There is no such thing as this in the dead image of faith. There is then no wonder that James denies that salvation is connected with it.<span style="color:#800000">[^f16]</span>
+<span style="color:#800000">*Can faith save him?*</span> This is the same as though he had said, that we do not attain salvation by a frigid and bare knowledge of God, which all confess to be most true; for salvation comes to us by faith for this reason, because it joins us to God. And this comes not in any other way than by being united to the body of Christ, so that, living through his Spirit, we are also governed by him. There is no such thing as this in the dead image of faith. There is then no wonder that James denies that salvation is connected with it.[^f16]
 
-**15.** <span style="color:#800000">*If a brother*</span>, or, For if a brother. He takes an example from what was connected with his subject; for he had been exhorting them to exercise the duties of love. If any one, on the contrary, boasted that he was satisfied with faith without works, he compares this shadowy faith to the saying of one who bids a famished man to be filled without supplying him with the food of which he is destitute. As, then, he who sends away a poor man with words, and offers him no help, treats him with mockery, so they who devise for themselves faith without works, and without any of the duties of religion, trifle with God.<span style="color:#800000">[^f17]</span>
+**15.** <span style="color:#800000">*If a brother*</span>, or, For if a brother. He takes an example from what was connected with his subject; for he had been exhorting them to exercise the duties of love. If any one, on the contrary, boasted that he was satisfied with faith without works, he compares this shadowy faith to the saying of one who bids a famished man to be filled without supplying him with the food of which he is destitute. As, then, he who sends away a poor man with words, and offers him no help, treats him with mockery, so they who devise for themselves faith without works, and without any of the duties of religion, trifle with God.[^f17]
 
 **17.** <span style="color:#800000">*Is dead, being alone*</span>. He says that faith is dead, being by itself, that is, when destitute of good works. We hence conclude that it is indeed no faith, for when dead, it does not properly retain the name. The Sophists plead this expression and say, that some sort of faith is found by itself; but this frivolous caviling is easily refuted; for it is sufficiently evident that the Apostle reasons from what is impossible, as Paul calls an angel anathema, if he attempted to subvert the gospel. (Galatians 1:8.)
 
@@ -365,22 +505,47 @@ That he calls it then *faith,* is a concession, as the Rhetoricians say; for whe
 
 <h2 class="scripture-anchor" id="james-2-18-19" data-ref="JAMES 2:18-19" style="display:none">JAMES 2:18-19</h2>
 
-18 Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works. 19 Thou believest that there is one God; thou doest well: the devils also believe and tremble.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590218&gt;</span><span class="book-name">James</span> <span class="verse-range">2:18-19</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>18.</strong> Yea, a man may say, Thou hast faith, and I have works: shew me thy faith without thy works, and I will shew thee my faith by my works.</td><td class="scripture-la"><strong>18.</strong> Quin dicat quispam, Tu fidem habes, et ego opera habeo; ostende mihi fidem tuam sine operibus (alias, ex operibus) tuis, et ego tibi ex operibus meis ostendam fidem meam.</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Thou believest that there is one God; thou doest well: the devils also believe and tremble.</td><td class="scripture-la"><strong>19.</strong> Tu credis quod Deus unus est, bene facis; et daemones credunt, ac contremiscunt.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **18.** <span style="color:#800000">*Yea, a man may say*</span>. Erasmus introduces here two persons as speakers; one of whom boasts of faith without works, and the other of works without faith; and he thinks that both are at length confuted by the Apostle. But this view seems to me too forced. He thinks it strange, that this should be said by James, <span style="color:#800000">*Thou hast faith*</span>, who acknowledges no faith without works. But in this he is much mistaken, that he does not acknowledge an irony in these words. Then <span style="color:#0000d4">ἀλλὰ</span> I take for “nay rather;” and <span style="color:#0000d4">τὶς</span> for “any one;” for the design of James was to expose the foolish boasting of those who imagined that they had faith when by their life they shewed that they were unbelievers; for he intimates that it would be easy for all the godly who led a holy life to strip hypocrites of that boasting with which they were inflated.<span style="color:#800000">[^f17Ά</span>
 
-<span style="color:#800000">*Shew me*</span>. Though the more received reading is, “by works,” yet the old Latin is more suitable, and the reading is also found in some Greek copies. I therefore hesitated not to adopt it. Then he bids to shew faith without works, and thus reasons from what is impossible, to prove what does not exist. So he speaks ironically. But if any one prefers the other reading, it comes to the same thing, “Shew me by works thy faith;” for since it is not an idle thing, it must necessarily be proved by works. The meaning then is, “Unless thy faith brings forth fruits, I deny that thou hast any faith.”<span style="color:#800000">[^f18]</span>
+<span style="color:#800000">*Shew me*</span>. Though the more received reading is, “by works,” yet the old Latin is more suitable, and the reading is also found in some Greek copies. I therefore hesitated not to adopt it. Then he bids to shew faith without works, and thus reasons from what is impossible, to prove what does not exist. So he speaks ironically. But if any one prefers the other reading, it comes to the same thing, “Shew me by works thy faith;” for since it is not an idle thing, it must necessarily be proved by works. The meaning then is, “Unless thy faith brings forth fruits, I deny that thou hast any faith.”[^f18]
 
 <!-- PAGE 36 -->
 But it may be asked, whether the outward uprightness of life is a sure evidence of faith? For James says, “<span style="color:#800000">*I will shew thee my faith by my works*</span>.” To this I reply, that the unbelieving sometimes excel in specious virtues, and lead an honorable life free from every crime; and hence works apparently excellent may exist apart from faith. Nor indeed does James maintain that every one who seems good possesses faith. This only he means, that faith, without the evidence of good works, is vainly pretended, because fruit ever comes from the living root of a good tree.
 
 **19.** <span style="color:#800000">*Thou believest that there is one God*</span>. From this one sentence it appears evident that the whole dispute is not about faith, but of the common knowledge of God, which can no more connect man with God, than the sight of the sun carry him up to heaven; but it is certain that by faith we come nigh to God. Besides, it would be ridiculous were any one to say, that the devils have faith; and James prefers them in this respect to hypocrites. The devil *trembles*, he says, at the mention of God’s name, because when he acknowledges his own judge he is filled with the fear of him. He then who despises an acknowledged God is much worse.
 
-<span style="color:#800000">*Thou doest well*</span>, is put down for the purpose of extenuating, as though he had said, “It is, forsooth! a great thing to sink down below the devils.” <span style="color:#800000">[^f19]</span>
+<span style="color:#800000">*Thou doest well*</span>, is put down for the purpose of extenuating, as though he had said, “It is, forsooth! a great thing to sink down below the devils.” [^f19]
 
 <h2 class="scripture-anchor" id="james-2-20-26" data-ref="JAMES 2:20-26" style="display:none">JAMES 2:20-26</h2>
 
-20 But wilt thou know, O vain man, that faith without works is dead? 21 Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar? 22 Seest thou how faith wrought with his works, and by works was faith made perfect? 23 And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God. 24 Ye see then how that by works a man is justified, and not by faith only. 25 Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way? 26 For as the body without the spirit is dead, so faith without works is dead also.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590220&gt;</span><span class="book-name">James</span> <span class="verse-range">2:20-26</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> But wilt thou know, O vain man, that faith without works is dead?</td><td class="scripture-la"><strong>20.</strong> Vis autem scire, O homo inanis! quod fides absque operibus mortua sit?</td></tr>
+<tr><td class="scripture-en"><strong>21.</strong> Was not Abraham our father justified by works, when he had offered Isaac his son upon the altar?</td><td class="scripture-la"><strong>21.</strong> Abraham pater noster, nonne ex operibus justificatus est, quum filium suum Isaac super altare?</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> Seest thou how faith wrought with his works, and by works was faith made perfect?</td><td class="scripture-la"><strong>22.</strong> Vides quod fides co-operata fuerit ejus operibus, et ex operibus fides perfecta fuerit?</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> And the scripture was fulfilled which saith, Abraham believed God, and it was imputed unto him for righteousness: and he was called the Friend of God.</td><td class="scripture-la"><strong>23.</strong> Atque implenta fuit scriptura, quae dicit, Credidit Abraham Deo, et imputatum illi fuit in justitiam, et Amicus Deo vacatus est?</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> Ye see then how that by works a man is justified, and not by faith only.</td><td class="scripture-la"><strong>24.</strong> Videtis igitur quod ex operibus justificatur homo, et non ex fide solum.</td></tr>
+<tr><td class="scripture-en"><strong>25.</strong> Likewise also was not Rahab the harlot justified by works, when she had received the messengers, and had sent them out another way?</td><td class="scripture-la"><strong>25.</strong> Similiter et Rahab meretrix, nonne ex operibus justificata est, quum excepit nuntios, et alia via ejecit?</td></tr>
+<tr><td class="scripture-en"><strong>26.</strong> For as the body without the spirit is dead, so faith without works is dead also.</td><td class="scripture-la"><strong>26.</strong> Quemadmodum enim corpus sine anima mortuum est, ita et fides sine operibus mortua est.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 37 -->
 
@@ -388,13 +553,13 @@ But it may be asked, whether the outward uprightness of life is a sure evidence 
 
 **21.** <span style="color:#800000">*Was not Abraham*</span>. The Sophists lay hold on the word <span style="color:#800000">*justified*</span>, and then they cry out as being victorious, that justification is partly by works. But we ought to seek out a right interpretation according to the general drift of the whole passage. We have already said that James does not speak here of the cause of justification, or of the manner how men obtain righteousness, and this is plain to every one; but that his object was only to shew that good works are always connected with faith; and, therefore, since he declares that Abraham was <span style="color:#800000">*justified by works*</span>, he is speaking of the proof he gave of his justification.
 
-When, therefore, the Sophists set up James against Paul, they go astray through the ambiguous meaning of a term. When Paul says that we are justified by faith, he means no other thing than that by faith we are counted righteous before God. But James has quite another thing in view, even to shew that he who professes that he has faith, must prove the reality of his faith by his works. Doubtless James did not mean to teach us here the ground on which our hope of salvation ought to rest; and it is this alone that Paul dwells upon.<span style="color:#800000">[^f20]</span>
+When, therefore, the Sophists set up James against Paul, they go astray through the ambiguous meaning of a term. When Paul says that we are justified by faith, he means no other thing than that by faith we are counted righteous before God. But James has quite another thing in view, even to shew that he who professes that he has faith, must prove the reality of his faith by his works. Doubtless James did not mean to teach us here the ground on which our hope of salvation ought to rest; and it is this alone that Paul dwells upon.[^f20]
 
 That we may not then fall into that false reasoning which has deceived the Sophists, we must take notice of the two fold meaning, of the word <span style="color:#800000">*justified*</span>. Paul means by it the gratuitous imputation of righteousness before the tribunal of God; and James, the manifestation of righteousness by the conduct, and that before men, as we may gather from the preceding words, “Shew to me thy faith,” etc. In this sense we fully allow that man is justified by works, as when any one says that a man is enriched by the purchase of a large and valuable chest, because his riches, before hid, shut up in a chest, were thus made known.
 
 <!-- PAGE 38 -->
 
-**22.** <span style="color:#800000">*By works was faith made perfect*</span>.<span style="color:#800000">[^f21]</span> By this he again shews, that the question here is not respecting the cause of our salvation, but whether works necessarily accompany faith; for in this sense it is said to have been perfected by works, because it was not idle. It is said to have been perfected by works, not because it received thence its own perfection, but because it was thus proved to be true. For the futile distinction which the Sophists draw from these words, between formed and unformed faith, needs no labored refutation; for the faith of Abram was formed and therefore perfected before he sacrificed his son. And this work was not as it were the finishing, or last work. Formerly things afterwards followed by which Abraham proved the increase of his faith. Hence this was not the perfection of his faith, nor did it then for the first time put on its form. James then understood no other thing, than that the integrity of his faith then appeared, because it brought forth that remarkable fruit of obedience.
+**22.** <span style="color:#800000">*By works was faith made perfect*</span>.[^f21] By this he again shews, that the question here is not respecting the cause of our salvation, but whether works necessarily accompany faith; for in this sense it is said to have been perfected by works, because it was not idle. It is said to have been perfected by works, not because it received thence its own perfection, but because it was thus proved to be true. For the futile distinction which the Sophists draw from these words, between formed and unformed faith, needs no labored refutation; for the faith of Abram was formed and therefore perfected before he sacrificed his son. And this work was not as it were the finishing, or last work. Formerly things afterwards followed by which Abraham proved the increase of his faith. Hence this was not the perfection of his faith, nor did it then for the first time put on its form. James then understood no other thing, than that the integrity of his faith then appeared, because it brought forth that remarkable fruit of obedience.
 
 **23.** <span style="color:#800000">*And the Scripture was fulfilled*</span>. They who seek to prove from this passage of James that the works of Abraham were imputed for righteousness, must necessarily confess that Scripture is perverted by him; for however they may turn and twist, they can never make the effect to be its own cause. The passage is quoted from Moses. (Genesis 15:6.) The imputation of righteousness which Moses mentions, preceded more than thirty years the work by which they would have Abraham to have been justified. Since faith was imputed to Abraham fifteen years before the birth of Isaac, this could not surely have been done through the work of sacrificing him. I consider that all those are bound fast by an indissoluble knot, who imagine that righteousness was imputed to Abraham before God, because he sacrificed his son Isaac, who was not yet born when the Holy Spirit declared that Abraham was justified. It hence necessarily follows that something posterior is pointed out here.
 
@@ -404,7 +569,7 @@ Why then does James say that it was fulfilled? Even because he intended to shew 
 
 **25.** <span style="color:#800000">*Likewise also was not Rahab*</span>. It seems strange that he connected together those who were so unlike. Why did he not rather choose some one from so large a number of illustrious fathers, and join him to Abraham? Why did he prefer a harlot to all others? he designedly put together two persons so different in their character, in order more clearly to shew, that no one, whatever may have been his or her condition, nation, or class in society, has ever been counted righteous without good works. He had named the patriarch, by far the most eminent of all; he now includes under the person of a harlot, all those who, being aliens, were joined to the Church. Whosoever, then, seeks to be counted righteous, though he may even be among the lowest, must yet shew that he is such by good works.
 
-James, according to his manner of speaking, declares that Rahab was justified by works; and the Sophists hence conclude that we obtain righteousness by the merits of works. But he deny that the dispute here is concerning the mode of obtaining righteousness. We, indeed, allow that good works are required for righteousness; we only take away from them the power of conferring righteousness, because they cannot stand before the tribunal of God.<span style="color:#800000">[^f22]</span>
+James, according to his manner of speaking, declares that Rahab was justified by works; and the Sophists hence conclude that we obtain righteousness by the merits of works. But he deny that the dispute here is concerning the mode of obtaining righteousness. We, indeed, allow that good works are required for righteousness; we only take away from them the power of conferring righteousness, because they cannot stand before the tribunal of God.[^f22]
 
 <!-- PAGE 40 -->
 
@@ -412,7 +577,20 @@ James, according to his manner of speaking, declares that Rahab was justified by
 
 <h2 class="scripture-anchor" id="james-3-1-5" data-ref="JAMES 3:1-5" style="display:none">JAMES 3:1-5</h2>
 
-1 My brethren, be not many masters, knowing that we shall receive the greater condemnation. 2 For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body. 3 Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body. 4 Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth. 5 Even so the tongue is a little member, and boasteth great things.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590301&gt;</span><span class="book-name">James</span> <span class="verse-range">3:1-5</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> My brethren, be not many masters, knowing that we shall receive the greater condemnation.</td><td class="scripture-la"><strong>1.</strong> Nolite plures magistri fieri, fratres mei; scientes quod majus judicium sumpturi sumus.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> For in many things we offend all. If any man offend not in word, the same is a perfect man, and able also to bridle the whole body.</td><td class="scripture-la"><strong>2.</strong> In multis enim labimur omnes: si quis in sermone non labitur, hic perfectus est vir, ut qui posssit fraeno moderari totum etiam corpus.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Behold, we put bits in the horses’ mouths, that they may obey us; and we turn about their whole body.</td><td class="scripture-la"><strong>3.</strong> Ecce equis fraena in ora injicimus, ut obediant nobis; et totum illorum corpus circumagimus:</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> Behold also the ships, which though they be so great, and are driven of fierce winds, yet are they turned about with a very small helm, whithersoever the governor listeth.</td><td class="scripture-la"><strong>4.</strong> Ecce etiam naves, cum tantae sint, et a saevis ventis pulsentur, circumagnuntur a minimo gubernaculo, quocunque affectus dirigentis voluerit:</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Even so the tongue is a little member, and boasteth great things.</td><td class="scripture-la"><strong>5.</strong> Ita et lingua pusillum membrum est, et magna jactat.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **1.** <span style="color:#800000">*Be not many masters*</span>. The common and almost universal interpretation of this passage is, that the Apostle discourages the desire for the office of teaching, and for this reason, because it is dangerous, and exposes one to a heavier judgment, in case he transgresses: and they think that he said, <span style="color:#800000">*Be not many masters*</span>, because there ought to have been some. But I take masters not to be those who performed a public duty in the Church, but such as took upon them the right of passing judgment upon others: for such reprovers sought to be accounted as masters of morals. And it has a mode of speaking usual among the Greeks as well as Latins, that they were called masters who superciliously animadverted on others.
 
@@ -444,7 +622,17 @@ I have rendered what Erasmus has translated the *impetuosity*, the *inclination*
 
 <h2 class="scripture-anchor" id="james-3-5-6" data-ref="JAMES 3:5-6" style="display:none">JAMES 3:5-6</h2>
 
-5  —  Behold how great a matter a little fire kindleth! 6 And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590305&gt;</span><span class="book-name">James</span> <span class="verse-range">3:5-6</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"></td><td class="scripture-la"><strong>5.</strong> Ecce exiguus ignis quantam sylvam incendit.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> And the tongue is a fire, a world of iniquity: so is the tongue among our members, that it defileth the whole body, and setteth on fire the course of nature; and it is set on fire of hell.</td><td class="scripture-la"><strong>6.</strong> Et lingua ignis est, et mundus iniquitatis: sic inquam lingua constituta est in membris nostris, inquinans totum corpus, inflammans rotam nativitatis, et inflammatur a gehenna.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 He now explains the evils which proceed from the neglect of restraining the tongue, in order that we may know that the tongue may do much good or much evil, — that if it be modest and well regulated, it becomes a bridle to the whole life, but that if it be petulant and violent, like a fire it destroys all things.
 
@@ -455,19 +643,51 @@ He represents it as a small or <span style="color:#800000">*little fire*</span>,
 <span style="color:#800000">*So is the tongue*</span>. He explains what he meant by the term *world*, even because the contagion of the tongue spreads through every part of life; or rather he shews what he understood by the metaphor *fire*, even that the tongue pollutes the whole man. He however immediately returns to the fire, and says, that the *whole* <span style="color:#800000">*course of nature*</span> is set on fire by the tongue. And he compares human life to a course or a wheel: and <span style="color:#0000d4">γένεσις</span>, as before, he takes for nature, (James 1:23.)
 
 <!-- PAGE 44 -->
-The meaning is, that when other vices are corrected by age or by the succession of time, or when at least then do not possess the whole man, the vice of the tongue spreads and prevails over every part of life; except one prefers to take <span style="color:#800000">*setting on fire*</span> as signifying a violent impulse, for we call that fervid which is accompanied with violence. And thus Horace speaks of wheels, for he calls chariots in battle fervid, on account of their rapidity. The meaning then would be, that the tongue is like untamed horses; for as these draw violently the chariots, so the tongue hurries a man headlong by its own wantonness. <span style="color:#800000">[^f23]</span>
+The meaning is, that when other vices are corrected by age or by the succession of time, or when at least then do not possess the whole man, the vice of the tongue spreads and prevails over every part of life; except one prefers to take <span style="color:#800000">*setting on fire*</span> as signifying a violent impulse, for we call that fervid which is accompanied with violence. And thus Horace speaks of wheels, for he calls chariots in battle fervid, on account of their rapidity. The meaning then would be, that the tongue is like untamed horses; for as these draw violently the chariots, so the tongue hurries a man headlong by its own wantonness. [^f23]
 
 When he says that it is <span style="color:#800000">*set on fire by hell*</span>, it is the same as though he had said, that the outrageousness of the tongue is the flame of the infernal fire.
 
-[^f24]: For as heathen poets imagined that the wicked are tormented by the torches of the Furies; so it is true, that Satan by the fans of temptations kindles the fire of all evils in the world: but James means, that fire, sent by Satan, is most easily caught by the tongue, so that it immediately burns; in short, that it is a material fitted for receiving or fostering and increasing the fire of hell. 7 For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind: 8 But the tongue can no man tame; it is an unruly evil, full of deadly poison. 9 Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God. 10 Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be. 11 Doth a fountain send forth at the same place sweet water and bitter? 12 Can the fig tree, my brethren, bear olive berries? either a vine, figs? so can no fountain both yield salt water and fresh. 7. <span style="color:#800000">*For every kind of beasts*</span>. This is a confirmation of the last clause; for that Satan by the tongue rules most effectively he proves by this — that it can by no means be brought to due order; and he amplifies this by comparisons. For he says that there is no animal so savage or fierce, which is not tamed by the skill of man, — that fishes, which in a manner inhabit another world, — that birds, which are so quick and roving — and that serpents, which are so inimical to mankind, are sometimes tamed. Since then the tongue cannot be restrained, there must be some secret fire of hell hidden in it. What he says of wild beasts, of serpents, and of other animals, is not to be understood of them all; it is enough that the skill of man should subdue and tame some of the most ferocious of them, and also that serpents are sometimes tamed. He refers to present and to past time: the present regards power and capacity, and the past, usage or experience. He hence justly concludes that the tongue is full of deadly poison. Though all these things most suitably refer in the first place to the subject of this passage — that they claim an unreasonable command over others, who labor under a worse vice; yet a universal doctrine may be understood as taught here, — that if we desire to form our life aright, we must especially strive to restrain the tongue, for no part of man does more harm. 9. <span style="color:#800000">*Therewith*</span>, or, by it, <span style="color:#800000">*bless we God*</span>. It is a clear instance of its deadly poison, that it can thus through a monstrous levity transform itself; for when it pretends to bless God, it immediately curses him in his own image, even by cursing men. For since God ought to be blessed in all his works, he ought to be so especially as to men, in whom his image and glory peculiarly shine forth. It is then a hypocrisy not to be borne, when man employs the same tongue in blessing God and in cursing men. There can be then no calling on God, and his praises must necessarily cease, when evilspeaking prevails; for it is impious profanation of God’s name, which the tongue is virulent towards our brethren and pretends to praise him. That he may therefore rightly praise God, the view of evil speaking as to our neighbor must especially be corrected. This particular truth ought also to be borne in mind, that severe censors discover their own virulence, which they suddenly vomit forth against their brethren whatever curses they can imagine, after having in sweet strains offered praises to God. Were any one to object and say, that the image of God in human nature has been blotted out by the sin of Adam; we must, indeed, confess that it has been miserably deformed, but in such a way that some of its lineaments still appear. Righteousness and rectitude, and the freedom of choosing what is good, have been lost; but many excellent endowments, by which we excel the brutes, still remain. He, then, who truly worships and honors God, will be afraid to speak slanderously of man. 11. <span style="color:#800000">*Doth a fountain*</span>. He adduces these comparisons in order to shew that a cursing tongue is something monstrous, contrary to all nature, and subverts the order everywhere established by God. For God hath so arranged things which are contrary, that inanimate things ought to deter us from a chaotic mixture, sure as is found in a double tongue.<span style="color:#800000">[^f25]</span> 13 Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom. 14 But if ye have bitter envying and strife in your hearts, glory not, and lie not against the truth. 15 This wisdom descendeth not from above, but is earthly, sensual, devilish. 16 For where envying and strife is, there is confusion and every evil work. 17 But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy. 18 And the fruit of righteousness is sown in peace of them that make peace. 13. <span style="color:#800000">*Who is a wise man*</span>. As the lust of slandering arises mostly from pride, and as the false conceit of wisdom for the most part generates pride, he therefore speaks here of wisdom. It is usual with hypocrites to exalt and shew off themselves by criminating all others, as the case was formerly with many of the philosophers, who sought glory for themselves by a bitter abuse of all other orders. Such haughtiness as slanderous men swell with and are blinded by, James checked, by denying that the conceit of wisdom, with which men flatter themselves, has in it anything divine; but, on the contrary, he declares that it proceeds from the devil. Then the meaning is, that supercilious censors, who largely indulge themselves, and at the same time spare none, seem to themselves to be very wise, but are greatly mistaken; for the Lord teaches his people far otherwise, even to be meek, and to be courteous to others. They, then, are alone wise in the sight of God, who connect this meekness with an honest conversation; for they who are severe and inexorable, though they may excel others in many virtues, do not yet follow the right way of wisdom.<span style="color:#800000">[^f26]</span> l4. <span style="color:#800000">*But if ye have bitter envying*</span>. He points out the fruits which proceed from that extreme austerity which is contrary to meekness; for immoderate rigor necessarily begets mischievous emulations, which presently break forth into contentions. It is, indeed, an improper mode of speaking, to place contentions in the heart; but this affects not the meaning; for the object was to shew that the evil disposition of the heart is the fountain of these evils. He has called <span style="color:#800000">*envying*</span>, or emulation, <span style="color:#800000">*bitter*</span>; for it prevails not, except when minds are so infected with the poison of malignity, that they turn all things into bitterness.<span style="color:#800000">[^f27]</span> That we may then really glory that we are the children of God, he bids us to act calmly and meekly towards our brethren; otherwise he declares that we are lying in assuming the Christian name. But it is not without reason that he has added the associate of envying, even <span style="color:#800000">*strife*</span>, or contention, for contests and quarrels ever arise from malignity and envy. 15. <span style="color:#800000">*This wisdom descendeth not*</span>. As hypocrites with difficulty give way, he sharply checked their haughtiness, denying that to be true wisdom with which they were inflated, while they were extremely morose in searching out the vices of others. Conceding to them, however, the term <span style="color:#800000">*wisdom*</span>, he shews by the words he applies to it its true character, and says that it is *earthly, sensual, devilish*, or demoniac, while true wisdom must be heavenly, spiritual, divine; which three things are directly contrary to the three preceding ones. For James takes it as granted, that we are not wise, except when we are illuminated by God from above through his Spirit. However, then, the mind of man may enlarge itself, all its acuteness will be vanity; and not only so, but being at length entangled in the wiles of Satan, it will become wholly delirious.<span style="color:#800000">[^f28]</span> <span style="color:#800000">*Sensual*</span>, or animal, is in opposition to what is spiritual, as in 1 Corinthians 2:14, where Paul says that the sensual or animal man receives not the things of God. And the pride of man could not have been more effectually cast down, than when thus is condemned whatever wisdom he has from himself, without the Spirit of God; nay, when from himself a transition is made to the devil. For it is the same as though he had said, that men, following their own sense, or minds, or feelings, soon became a prey to the delusions of Satan. 16. <span style="color:#800000">*For where envying is*</span>. It is an argument from what is contrary; for envying, by which hypocrites are influenced, produces effects contrary to wisdom. For wisdom requires a state of mind that is calm and composed, but envying disturbs it, so that in itself it becomes in a manner tumultuous, and boils up immoderately against others. Some render <span style="color:#0000d4">ἀκαταστασία</span> inconstancy, and sometimes it means this, but as it signifies also sedition and tumult, perturbation seems the most suitable to this passage. For James meant to express something more than levity, even that the malignant and the slanderer does everything confusedly and rashly, as though he were beside himself; and hence he adds, <span style="color:#800000">*every evil work*</span>. 17. <span style="color:#800000">*But the wisdom which is from above*</span>. He now mentions the effects of celestial wisdom which are wholly contrary to the former effects. He says first that it is <span style="color:#800000">*pure*</span>; by which term he excludes hypocrisy and ambition.<span style="color:#800000">[^f29]</span> He, in the second place, calls it <span style="color:#800000">*peaceable*</span>, to intimate that it is not contentious. In the third place, he calls it <span style="color:#800000">*kind*</span> or humane, that we may know that it is far away from that immoderate austerity which tolerates nothing in our brethren. He also calls it <span style="color:#800000">*gentle*</span> or tractable; by which he means that it widely differs from pride and malignity. In the last place, he says that it is <span style="color:#800000">*full of mercy*</span>, etc., while hypocrisy is inhuman and inexorable. By <span style="color:#800000">*good fruits*</span> he generally refers to all those duties which benevolent men perform towards their brethren; as though he had said, it is full of benevolence. It hence follows, that they lie who glory in their cruel austerity. But though he had sufficiently condemned hypocrisy, when he said that wisdom is <span style="color:#800000">*pure*</span> or sincere; he makes it more clear by repeating the same thing at the end. We are hence reminded, that for no other reason are we beyond measure morose or austere, but this, because we too much spare ourselves, and connive at our own vices. But what he says, <span style="color:#800000">*without discerning*</span> (*sine dijudicatione*,) seems strange; for the Spirit of God does not take away the difference between good and evil; nor does he render us so senseless as to be so void of judgment as to praise vice, and regard it as virtue. To this I reply, that James here, by <span style="color:#800000">*discerning*</span> or distinguishing refers to that overanxious and overscrupulous inquiry, such as is commonly carried on by hypocrites, who too minutely examine the sayings and doings of their brethren, and put on them the worst construction.<span style="color:#800000">[^f30]</span> 18. <span style="color:#800000">*And the fruit of righteousness*</span>. This admits of two meanings, — that fruit is sown by the peaceable, which afterwards they gather, — or, that they themselves, though they meekly tolerate many things in their neighbors, do not yet cease to sow righteousness. It is, however, an anticipation of an objection; for they who are carried away to evil speaking by the lust of slandering, have always this excuse, “What! can we then remove evil by our courteousness?” Hence James says, that those who are wise according to God’s will, are so kind, meek, and merciful, as yet not to cover vices nor favor them; but on the contrary in such a way as to strive to correct them, and yet in a peaceable manner, that is, in moderation, so that union is preserved. And thus he testifies that what he had hitherto said tends in no degree to do away with calm reproofs; but that those who wish to be physicians to heal vices ought not to be executioners. He therefore adds, <span style="color:#800000">*by those who make peace*</span>; which ought to be thus explained: they who study peace, are nevertheless careful to sow righteousness; nor are they slothful or negligent in promoting and encouraging good works; but they moderate their zeal with the condiment of peace, while hypocrites throw all things into confusion by a blind and furious violence.
+[^f24]: For as heathen poets imagined that the wicked are tormented by the torches of the Furies; so it is true, that Satan by the fans of temptations kindles the fire of all evils in the world: but James means, that fire, sent by Satan, is most easily caught by the tongue, so that it immediately burns; in short, that it is a material fitted for receiving or fostering and increasing the fire of hell. 7. <span style="color:#800000">*For every kind of beasts*</span>. This is a confirmation of the last clause; for that Satan by the tongue rules most effectively he proves by this — that it can by no means be brought to due order; and he amplifies this by comparisons. For he says that there is no animal so savage or fierce, which is not tamed by the skill of man, — that fishes, which in a manner inhabit another world, — that birds, which are so quick and roving — and that serpents, which are so inimical to mankind, are sometimes tamed. Since then the tongue cannot be restrained, there must be some secret fire of hell hidden in it. What he says of wild beasts, of serpents, and of other animals, is not to be understood of them all; it is enough that the skill of man should subdue and tame some of the most ferocious of them, and also that serpents are sometimes tamed. He refers to present and to past time: the present regards power and capacity, and the past, usage or experience. He hence justly concludes that the tongue is full of deadly poison. Though all these things most suitably refer in the first place to the subject of this passage — that they claim an unreasonable command over others, who labor under a worse vice; yet a universal doctrine may be understood as taught here, — that if we desire to form our life aright, we must especially strive to restrain the tongue, for no part of man does more harm. 9. <span style="color:#800000">*Therewith*</span>, or, by it, <span style="color:#800000">*bless we God*</span>. It is a clear instance of its deadly poison, that it can thus through a monstrous levity transform itself; for when it pretends to bless God, it immediately curses him in his own image, even by cursing men. For since God ought to be blessed in all his works, he ought to be so especially as to men, in whom his image and glory peculiarly shine forth. It is then a hypocrisy not to be borne, when man employs the same tongue in blessing God and in cursing men. There can be then no calling on God, and his praises must necessarily cease, when evilspeaking prevails; for it is impious profanation of God’s name, which the tongue is virulent towards our brethren and pretends to praise him. That he may therefore rightly praise God, the view of evil speaking as to our neighbor must especially be corrected. This particular truth ought also to be borne in mind, that severe censors discover their own virulence, which they suddenly vomit forth against their brethren whatever curses they can imagine, after having in sweet strains offered praises to God. Were any one to object and say, that the image of God in human nature has been blotted out by the sin of Adam; we must, indeed, confess that it has been miserably deformed, but in such a way that some of its lineaments still appear. Righteousness and rectitude, and the freedom of choosing what is good, have been lost; but many excellent endowments, by which we excel the brutes, still remain. He, then, who truly worships and honors God, will be afraid to speak slanderously of man. 11. <span style="color:#800000">*Doth a fountain*</span>. He adduces these comparisons in order to shew that a cursing tongue is something monstrous, contrary to all nature, and subverts the order everywhere established by God. For God hath so arranged things which are contrary, that inanimate things ought to deter us from a chaotic mixture, sure as is found in a double tongue.[^f25] 13. <span style="color:#800000">*Who is a wise man*</span>. As the lust of slandering arises mostly from pride, and as the false conceit of wisdom for the most part generates pride, he therefore speaks here of wisdom. It is usual with hypocrites to exalt and shew off themselves by criminating all others, as the case was formerly with many of the philosophers, who sought glory for themselves by a bitter abuse of all other orders. Such haughtiness as slanderous men swell with and are blinded by, James checked, by denying that the conceit of wisdom, with which men flatter themselves, has in it anything divine; but, on the contrary, he declares that it proceeds from the devil. Then the meaning is, that supercilious censors, who largely indulge themselves, and at the same time spare none, seem to themselves to be very wise, but are greatly mistaken; for the Lord teaches his people far otherwise, even to be meek, and to be courteous to others. They, then, are alone wise in the sight of God, who connect this meekness with an honest conversation; for they who are severe and inexorable, though they may excel others in many virtues, do not yet follow the right way of wisdom.[^f26] l4. <span style="color:#800000">*But if ye have bitter envying*</span>. He points out the fruits which proceed from that extreme austerity which is contrary to meekness; for immoderate rigor necessarily begets mischievous emulations, which presently break forth into contentions. It is, indeed, an improper mode of speaking, to place contentions in the heart; but this affects not the meaning; for the object was to shew that the evil disposition of the heart is the fountain of these evils. He has called <span style="color:#800000">*envying*</span>, or emulation, <span style="color:#800000">*bitter*</span>; for it prevails not, except when minds are so infected with the poison of malignity, that they turn all things into bitterness.[^f27] That we may then really glory that we are the children of God, he bids us to act calmly and meekly towards our brethren; otherwise he declares that we are lying in assuming the Christian name. But it is not without reason that he has added the associate of envying, even <span style="color:#800000">*strife*</span>, or contention, for contests and quarrels ever arise from malignity and envy. 15. <span style="color:#800000">*This wisdom descendeth not*</span>. As hypocrites with difficulty give way, he sharply checked their haughtiness, denying that to be true wisdom with which they were inflated, while they were extremely morose in searching out the vices of others. Conceding to them, however, the term <span style="color:#800000">*wisdom*</span>, he shews by the words he applies to it its true character, and says that it is *earthly, sensual, devilish*, or demoniac, while true wisdom must be heavenly, spiritual, divine; which three things are directly contrary to the three preceding ones. For James takes it as granted, that we are not wise, except when we are illuminated by God from above through his Spirit. However, then, the mind of man may enlarge itself, all its acuteness will be vanity; and not only so, but being at length entangled in the wiles of Satan, it will become wholly delirious.[^f28] <span style="color:#800000">*Sensual*</span>, or animal, is in opposition to what is spiritual, as in 1 Corinthians 2:14, where Paul says that the sensual or animal man receives not the things of God. And the pride of man could not have been more effectually cast down, than when thus is condemned whatever wisdom he has from himself, without the Spirit of God; nay, when from himself a transition is made to the devil. For it is the same as though he had said, that men, following their own sense, or minds, or feelings, soon became a prey to the delusions of Satan. 16. <span style="color:#800000">*For where envying is*</span>. It is an argument from what is contrary; for envying, by which hypocrites are influenced, produces effects contrary to wisdom. For wisdom requires a state of mind that is calm and composed, but envying disturbs it, so that in itself it becomes in a manner tumultuous, and boils up immoderately against others. Some render <span style="color:#0000d4">ἀκαταστασία</span> inconstancy, and sometimes it means this, but as it signifies also sedition and tumult, perturbation seems the most suitable to this passage. For James meant to express something more than levity, even that the malignant and the slanderer does everything confusedly and rashly, as though he were beside himself; and hence he adds, <span style="color:#800000">*every evil work*</span>. 17. <span style="color:#800000">*But the wisdom which is from above*</span>. He now mentions the effects of celestial wisdom which are wholly contrary to the former effects. He says first that it is <span style="color:#800000">*pure*</span>; by which term he excludes hypocrisy and ambition.[^f29] He, in the second place, calls it <span style="color:#800000">*peaceable*</span>, to intimate that it is not contentious. In the third place, he calls it <span style="color:#800000">*kind*</span> or humane, that we may know that it is far away from that immoderate austerity which tolerates nothing in our brethren. He also calls it <span style="color:#800000">*gentle*</span> or tractable; by which he means that it widely differs from pride and malignity. In the last place, he says that it is <span style="color:#800000">*full of mercy*</span>, etc., while hypocrisy is inhuman and inexorable. By <span style="color:#800000">*good fruits*</span> he generally refers to all those duties which benevolent men perform towards their brethren; as though he had said, it is full of benevolence. It hence follows, that they lie who glory in their cruel austerity. But though he had sufficiently condemned hypocrisy, when he said that wisdom is <span style="color:#800000">*pure*</span> or sincere; he makes it more clear by repeating the same thing at the end. We are hence reminded, that for no other reason are we beyond measure morose or austere, but this, because we too much spare ourselves, and connive at our own vices. But what he says, <span style="color:#800000">*without discerning*</span> (*sine dijudicatione*,) seems strange; for the Spirit of God does not take away the difference between good and evil; nor does he render us so senseless as to be so void of judgment as to praise vice, and regard it as virtue. To this I reply, that James here, by <span style="color:#800000">*discerning*</span> or distinguishing refers to that overanxious and overscrupulous inquiry, such as is commonly carried on by hypocrites, who too minutely examine the sayings and doings of their brethren, and put on them the worst construction.[^f30] 18. <span style="color:#800000">*And the fruit of righteousness*</span>. This admits of two meanings, — that fruit is sown by the peaceable, which afterwards they gather, — or, that they themselves, though they meekly tolerate many things in their neighbors, do not yet cease to sow righteousness. It is, however, an anticipation of an objection; for they who are carried away to evil speaking by the lust of slandering, have always this excuse, “What! can we then remove evil by our courteousness?” Hence James says, that those who are wise according to God’s will, are so kind, meek, and merciful, as yet not to cover vices nor favor them; but on the contrary in such a way as to strive to correct them, and yet in a peaceable manner, that is, in moderation, so that union is preserved. And thus he testifies that what he had hitherto said tends in no degree to do away with calm reproofs; but that those who wish to be physicians to heal vices ought not to be executioners. He therefore adds, <span style="color:#800000">*by those who make peace*</span>; which ought to be thus explained: they who study peace, are nevertheless careful to sow righteousness; nor are they slothful or negligent in promoting and encouraging good works; but they moderate their zeal with the condiment of peace, while hypocrites throw all things into confusion by a blind and furious violence.
 
 <h2 class="scripture-anchor" id="james-3-7-12" data-ref="JAMES 3:7-12" style="display:none">JAMES 3:7-12</h2>
+
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590307&gt;</span><span class="book-name">James</span> <span class="verse-range">3:7-12</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed, and hath been tamed of mankind:</td><td class="scripture-la"><strong>7.</strong> Omnis enim natura ferarum et volucrum et serpentium et marinorum, a natura humana domatur et dimota est:</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> But the tongue can no man tame; it is an unruly evil, full of deadly poison.</td><td class="scripture-la"><strong>8.</strong> Linguam vero nullus hominum domare potest, incoercibile malum, plena veneno mortifero.</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Therewith bless we God, even the Father; and therewith curse we men, which are made after the similitude of God.</td><td class="scripture-la"><strong>9.</strong> Per ipsam benedicimus Deum et Patrem; et per ipsam execramur homines ad similitudinem ejus factos.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> Out of the same mouth proceedeth blessing and cursing. My brethren, these things ought not so to be.</td><td class="scripture-la"><strong>10.</strong> Ex eodem ore procedit benedictio et maledictio. Non onvenit, fratres mei, haec ita fieri.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Doth a fountain send forth at the same place sweet water and bitter?</td><td class="scripture-la"><strong>11.</strong> An fons ex codem foramine ejicit dulce et amarum?</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> Can the fig tree, my brethren, bear olive berries? either a vine, figs? so can no fountain both yield salt water and fresh.</td><td class="scripture-la"><strong>12.</strong> Non potest, fratres mei, ficus oleas proferre; aut vitis ficus; sic nullus fons salsam et dulcem gignere aquam.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 45 -->
 
 <!-- PAGE 46 -->
 
 <h2 class="scripture-anchor" id="james-3-13-18" data-ref="JAMES 3:13-18" style="display:none">JAMES 3:13-18</h2>
+
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590313&gt;</span><span class="book-name">James</span> <span class="verse-range">3:13-18</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Who is a wise man and endued with knowledge among you? let him shew out of a good conversation his works with meekness of wisdom.</td><td class="scripture-la"><strong>13.</strong> Quis sapiens et intelligens inter vos? ostendat ex honesta conversatione opera sua in mansuetudine sapientiae.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> But if ye have bitter envying and strife in your hearts, glory not, and lie not against the truth.</td><td class="scripture-la"><strong>14.</strong> Si vero aemulationem amaraem habetis, et contentionem in corde vestro, ne gloriemini, et mentiamini adversus veritatem.</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> This wisdom descendeth not from above, but is earthly, sensual, devilish.</td><td class="scripture-la"><strong>15.</strong> Non est haec sapientia de sursum veniens, sed terrestris, animalis, daemonica.</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> For where envying and strife is, there is confusion and every evil work.</td><td class="scripture-la"><strong>16.</strong> Ubi enim aemulatio et contentio, ibi perturbatio et omne pravum opus.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> But the wisdom that is from above is first pure, then peaceable, gentle, and easy to be intreated, full of mercy and good fruits, without partiality, and without hypocrisy.</td><td class="scripture-la"><strong>17.</strong> Quae autem e sursum est sapientia, primum pura est, deinde pacata, aequa, comis, plena misericordiae et bonorum operum, sine disquisitione, sine simulatione.</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> And the fruit of righteousness is sown in peace of them that make peace.</td><td class="scripture-la"><strong>18.</strong> Fructus autem justitiae in pace seminatur facientibus pacem.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 47 -->
 
@@ -483,7 +703,18 @@ When he says that it is <span style="color:#800000">*set on fire by hell*</span>
 
 <h2 class="scripture-anchor" id="james-4-1-3" data-ref="JAMES 4:1-3" style="display:none">JAMES 4:1-3</h2>
 
-1 From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members? 2 Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, because ye ask not. 3 Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590401&gt;</span><span class="book-name">James</span> <span class="verse-range">4:1-3</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> From whence come wars and fightings among you? come they not hence, even of your lusts that war in your members?</td><td class="scripture-la"><strong>1.</strong> Unde bella et pugnae inter vos? nonne hinc, ex voluptatibus vestris, quae militant in membris vestris.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Ye lust, and have not: ye kill, and desire to have, and cannot obtain: ye fight and war, yet ye have not, because ye ask not.</td><td class="scripture-la"><strong>2.</strong> Concupiscitis et non habetis; invidetis et aemulamini, et non potestis obtinere; pugnatis et belligeramini, non habetis, propterea quod non petitis;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Ye ask, and receive not, because ye ask amiss, that ye may consume it upon your lusts.</td><td class="scripture-la"><strong>3.</strong> Petitis, et non accipitis, quia male petitis, ut in voluptates vestras insumatis.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **1.** <span style="color:#800000">*From whence come wars*</span>. As he had spoken of peace, and had reminded them that vices are to be exterminated in such a way as to preserve peace, he now comes to their contentions, by which they created confusion among themselves; and he shews that these arose from their invidious desires and lusts, rather than from a zeal for what was just and right; for if every one observed moderation, they would not have disturbed and annoyed one another. They had their hot conflicts, because their lusts were allowed to prevail unchecked.
 
@@ -492,9 +723,9 @@ It hence appears, that greater peace would have been among them, had every one a
 <!-- PAGE 52 -->
 **2.** <span style="color:#800000">*Ye lust*</span>, or covet, <span style="color:#800000">*and have not*</span>. He seems to intimate that the soul of man is insatiable, when he indulges wicked lusts; and truly it is so; for he who suffers his sinful propensities to rule uncontrolled, will know no end to his lust. Were even the world given to him, he would wish other worlds to be created for him. It thus happens, that men seek torments which exceed the cruelty of all executioners. For that saying of Horace is true:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*The tyrants of Sicily found no torment greater than envy.*</span><span style="color:#800000">31</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*The tyrants of Sicily found no torment greater than envy.*</span><sup>31</sup></p>
 
-Some copies have <span style="color:#0000d4">φονεύετε</span>, “ye kill;” but I doubt not but that we ought to read, <span style="color:#0000d4">φθονεῖτε</span>, “ye envy,” as I have rendered it; for the verb, to kill, does in no way suit the context.<span style="color:#800000">[^f32]</span> <span style="color:#800000">*Ye fight*</span>: he does not mean those wars and fightings, which men engage in with drawn swords, but the violent contentions which prevailed among them. They derived no benefit from contentions of this kind, for he affirms that they received the punishment of their own wickedness. God, indeed, whom they owned not as the author of blessings, justly disappointed them. For when they contended in ways so unlawful, they sought to be enriched through the favor of Satan rather than through the favor of God. One by fraud, another by violence, one by calumnies, and all by some evil or wicked arts, strove for happiness. They then sought to be happy, but not through God. It was therefore no wonder that they were frustrated in their efforts, since no success can be expected except through the blessings of God alone.
+Some copies have <span style="color:#0000d4">φονεύετε</span>, “ye kill;” but I doubt not but that we ought to read, <span style="color:#0000d4">φθονεῖτε</span>, “ye envy,” as I have rendered it; for the verb, to kill, does in no way suit the context.[^f32] <span style="color:#800000">*Ye fight*</span>: he does not mean those wars and fightings, which men engage in with drawn swords, but the violent contentions which prevailed among them. They derived no benefit from contentions of this kind, for he affirms that they received the punishment of their own wickedness. God, indeed, whom they owned not as the author of blessings, justly disappointed them. For when they contended in ways so unlawful, they sought to be enriched through the favor of Satan rather than through the favor of God. One by fraud, another by violence, one by calumnies, and all by some evil or wicked arts, strove for happiness. They then sought to be happy, but not through God. It was therefore no wonder that they were frustrated in their efforts, since no success can be expected except through the blessings of God alone.
 
 **3.** <span style="color:#800000">*Ye seek and receive not*</span>. He goes farther: though they sought, yet they were deservedly denied; because they wished to make God the minister of their own lusts. For they set no bounds to their wishes, as he had commanded; but gave unbridled license to themselves, so as to ask those things of which man, conscious of what is right, ought especially to be ashamed. Pliny somewhere ridicules this impudence, that men so wickedly abuse the ears of God. The less tolerable is such a thing in Christians, who have had the rule of prayer given them by their heavenly Master.
 
@@ -504,7 +735,18 @@ And doubtless there appears to be in us no reverence for God, no fear of him, in
 
 <h2 class="scripture-anchor" id="james-4-4-6" data-ref="JAMES 4:4-6" style="display:none">JAMES 4:4-6</h2>
 
-4 Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God. 5 Do ye think that the scripture saith in vain, The spirit that dwelleth in us lusteth to envy? 6 But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590404&gt;</span><span class="book-name">James</span> <span class="verse-range">4:4-6</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> Ye adulterers and adulteresses, know ye not that the friendship of the world is enmity with God? whosoever therefore will be a friend of the world is the enemy of God.</td><td class="scripture-la"><strong>4.</strong> Adulteri et adulterae, an nescitis quod amicitia mundi inimictia Dei est? qui ergo voluerit amicus esse mundi, inimicus Dei constituitur.</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Do ye think that the scripture saith in vain, The spirit that dwelleth in us lusteth to envy?</td><td class="scripture-la"><strong>5.</strong> An putatis quod frustra dicat scriptura? An ad invidiam concupiscit spiritus qui habitat in nobis?</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> But he giveth more grace. Wherefore he saith, God resisteth the proud, but giveth grace unto the humble.</td><td class="scripture-la"><strong>6.</strong> Quin majorem dat gratiam: —</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **4.** <span style="color:#800000">*Ye adulterers*</span>. I connect this verse with the foregoing verses: for he calls them *adulterers*, as I think, metaphorically; for they corrupted themselves with the vanities of this world, and alienated themselves from God; as though he had said, that they had become degenerated, or were become bastards. We know how frequent, in Holy Scripture, is that marriage mentioned which God forms with us. He would have us, then, to be like a chaste virgin, as Paul says, (2 Corinthians 11:2.) This chastity is violated and corrupted by all impure affections towards the world. James, then, does not without reason compare the love of the world to adultery.
 
@@ -515,7 +757,7 @@ The <span style="color:#800000">*friendship of the world*</span>. He calls it th
 <!-- PAGE 54 -->
 **5.** <span style="color:#800000">*Do ye think*</span>. He seems to adduce from Scripture the next following sentence. Hence interpreters toil much, because none such, at least none exactly alike, is found in Scripture. But nothing hinders the reference to be made to what has been already said, that is, that the friendship of the world is adverse to God. Moreover; it has been rightly said, that this is a truth which occurs everywhere in Scripture. And that he has omitted the pronoun, which would have rendered the sentence clearer, is not to be wondered at, for, as it is evident, he is everywhere very concise.
 
-<span style="color:#800000">*The Spirit*</span>, or, Does the Spirit? Some think that the soul of man is meant, and therefore read the sentence affirmatively, and according to this meaning, — that the spirit of man, as it is malignant, is so infected with envy, that it has ever a mixture of it. They, however, think better who regard the Spirit of God as intended; for it is he that is given to dwell in us.<span style="color:#800000">[^f33]</span> I then take the Spirit as that of God, and read the sentence as a question; for it was his object to prove, that because they envied they were not ruled by the Spirit of God; because he teaches the faithful otherwise; and this he confirms in the next verse, by adding that he <span style="color:#800000">*giveth more grace*</span>.
+<span style="color:#800000">*The Spirit*</span>, or, Does the Spirit? Some think that the soul of man is meant, and therefore read the sentence affirmatively, and according to this meaning, — that the spirit of man, as it is malignant, is so infected with envy, that it has ever a mixture of it. They, however, think better who regard the Spirit of God as intended; for it is he that is given to dwell in us.[^f33] I then take the Spirit as that of God, and read the sentence as a question; for it was his object to prove, that because they envied they were not ruled by the Spirit of God; because he teaches the faithful otherwise; and this he confirms in the next verse, by adding that he <span style="color:#800000">*giveth more grace*</span>.
 
 For it is an argument arising from what is contrary. Envy is a proof or sign of malignity; but the Spirit of God proves himself to be bountiful by the affluence of his blessings. There is then nothing more repugnant to his nature than envy. In short, James denies that the Spirit of God rules where depraved lusts prevail, which excite to mutual contention; because it is peculiarly the office of the Spirit to enrich men more and more continually with new gifts.
 
@@ -525,7 +767,19 @@ I will not stop to refute other explanations. Some give this meaning that the Sp
 
 <h2 class="scripture-anchor" id="james-4-7-10" data-ref="JAMES 4:7-10" style="display:none">JAMES 4:7-10</h2>
 
-7 Submit yourselves therefore to God. Resist the devil, and he will flee from you. 8 Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded. 9 Be afflicted, and mourn, and weep: let your laughter be turned to mourning, and your joy to heaviness. 10 Humble yourselves in the sight of the Lord, and he shall lift you up.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590407&gt;</span><span class="book-name">James</span> <span class="verse-range">4:7-10</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> Submit yourselves therefore to God. Resist the devil, and he will flee from you.</td><td class="scripture-la"><strong>7.</strong> Subjecti igitur estote Deo; Resistite diabolo, et fugiet a vobis;</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Draw nigh to God, and he will draw nigh to you. Cleanse your hands, ye sinners; and purify your hearts, ye double minded.</td><td class="scripture-la"><strong>8.</strong> Appropinquate Deo, et appropinquabit vobis; mundate manus, peccatores; purificate corda duplici animo;</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Be afflicted, and mourn, and weep: let your laughter be turned to mourning, and your joy to heaviness.</td><td class="scripture-la"><strong>9.</strong> Affligimini, lugete et plorate; risus vester in luctum vertatur et gaudium in moerorem.</td></tr>
+<tr><td class="scripture-en"><strong>10.</strong> Humble yourselves in the sight of the Lord, and he shall lift you up.</td><td class="scripture-la"><strong>10.</strong> Humiliamini coram Deo, et eriget vos.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **7.** <span style="color:#800000">*Submit yourselves*</span>. The submission which he recommends is that of humility; for he does not exhort us generally to obey God, but requires submission; for the Spirit of God rests on the humble and the meek. (Isaiah 57:15.) On this account he uses the illative particle. For as he had declared that God’s Spirit is bountiful in increasing his gifts, he hence concludes that we ought to lay aside envy, and to submit to God.
 
@@ -533,7 +787,7 @@ Many copies have introduced here the following sentence: “Wherefore he saith, 
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">“The humble O Lord, thou wilt save;</span> <span style="color:#000080">and the eyes of the proud wilt thou cast down:”</span></p>
 
-and similar sentences are found in many other passages.<span style="color:#800000">[^f34]</span>
+and similar sentences are found in many other passages.[^f34]
 
 <!-- PAGE 56 -->
 
@@ -552,7 +806,7 @@ In short, James meant no other thing in this passage, than that God is never wan
 
 in the same sense a woman is called a sinner by Luke. (Luke 7:36.) It is said by the same and the other evangelists, “He drinketh and eateth with sinners.” He, therefore, does not smite all indiscriminately to that sort of repentance mentioned here, but those who are wicked and corrupt in heart, and whose life is base and flagitious or at least wicked; it is from these he requires a purity of heart and outward cleanliness.
 
-We hence learn what is the true character of repentance. It is not only an outward amendment of life, but its beginning is the cleansing of the heart. It is also necessary on the other hand that the fruits of inward repentance should appear in the brightness of our works.<span style="color:#800000">[^f35]</span>
+We hence learn what is the true character of repentance. It is not only an outward amendment of life, but its beginning is the cleansing of the heart. It is also necessary on the other hand that the fruits of inward repentance should appear in the brightness of our works.[^f35]
 
 **9.** <span style="color:#800000">*Be afflicted and mourn*</span>. Christ denounces mourning on those who laugh, as a curse, (Luke 6:25;) and James, in what shortly follows, alluding to the same words, threatens the rich with mourning. But here he speaks of that salutary mourning or sorrow which leads us to repentance. He addresses those who, being inebriated in their minds, did not perceive God’s judgment. Thus it happened that they flattered themselves in their vices. That he might shake off from them this deadly torpor, he admonishes them to learn to mourn, that being touched with sorrow of conscience they might cease to flatter themselves and to exult on the verge of destruction. Then *laughter* is to be taken as signifying the flattering with which the ungodly deceive themselves, while they are infatuated by the sweetness of their sins and forget the judgment of God.
 
@@ -562,7 +816,17 @@ We hence learn what is the true character of repentance. It is not only an outwa
 
 <h2 class="scripture-anchor" id="james-4-11-12" data-ref="JAMES 4:11-12" style="display:none">JAMES 4:11-12</h2>
 
-11 Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge. 12 There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590411&gt;</span><span class="book-name">James</span> <span class="verse-range">4:11-12</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Speak not evil one of another, brethren. He that speaketh evil of his brother, and judgeth his brother, speaketh evil of the law, and judgeth the law: but if thou judge the law, thou art not a doer of the law, but a judge.</td><td class="scripture-la"><strong>11.</strong> Ne detrahatis invicem, fratres; qui detrahit fratri, aut judicat fratrem suum, detrahit legi, et judicat legem; si autem judicas legem, non es factor legis sed judex.</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> There is one lawgiver, who is able to save and to destroy: who art thou that judgest another?</td><td class="scripture-la"><strong>12.</strong> Unus est legislator, qui potest servare et perdere: tu, quis es qui judicas alterum?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **11.** <span style="color:#800000">*Speak not evil*</span>, or, defame not. We see how much labor James takes in correcting the lust for slandering. For hypocrisy is always presumptuous, and we are by nature hypocrites, fondly exalting ourselves by calumniating others. There is also another disease innate in human nature, that every one would have all others to live according to his own will or fancy. This presumption James suitably condemns in this passage, that is, because we dare to impose on our brethren our rule of life. He then takes *detraction* as including all the calumnies and suspicious works which flow from a malignant and perverted judgment. The evil of slandering takes a wide range; but here he properly refers to that kind of slandering which I have mentioned, that is, when we superciliously determine respecting the deeds and sayings of others, as though our own morosity were the law, when we confidently condemn whatever does not please us.
 
@@ -575,7 +839,7 @@ Paul handles nearly the same argument in Romans 14, though on a different occasi
 
 Were any one to object and say, that still the saints will be the judges of the world, (1 Corinthians 6:2,) the answer is obvious, that this honor does not belong to them according to their own right, but inasmuch as they are the members of Christ; and that they now judge according to the law, so that they are not to be deemed judges because they only obediently assent to God as their own judge and the judge of all. With regard to God he is not to be deemed the doer of the law, because his righteousness is prior to the law; for the law has flown from the eternal and infinite righteousness of God as a river from its fountain.
 
-**12.** <span style="color:#800000">*There is one lawgiver*</span>.<span style="color:#800000">[^f36]</span> Now he connects the power of saying and destroying with the office of a lawgiver, he intimates that the whole majesty of God is forcibly assumed by those who claim for themselves the right of making a law; and this is what is done by those who impose as a law on others their own nod or will. And let us remember that the subject here is not civil government, in which the edicts and laws of magistrates have place, but the spiritual government of the soul, in which the word of
+**12.** <span style="color:#800000">*There is one lawgiver*</span>.[^f36] Now he connects the power of saying and destroying with the office of a lawgiver, he intimates that the whole majesty of God is forcibly assumed by those who claim for themselves the right of making a law; and this is what is done by those who impose as a law on others their own nod or will. And let us remember that the subject here is not civil government, in which the edicts and laws of magistrates have place, but the spiritual government of the soul, in which the word of
 
 <!-- PAGE 60 -->
 
@@ -589,7 +853,20 @@ It hence appears what is to be thought of human precepts, which cast the snare o
 
 <h2 class="scripture-anchor" id="james-4-13-17" data-ref="JAMES 4:13-17" style="display:none">JAMES 4:13-17</h2>
 
-13 Go to now, ye that say, To-day or to-morrow we will go into such a city, and continue there a year, and buy and sell, and get gain: 14 Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapor, that appeareth for a little time, and then vanisheth away. 15 For that ye ought to say, If the Lord will, we shall live, and do this, or that. 16 But now ye rejoice in your boastings: all such rejoicing is evil. 17 Therefore to him that knoweth to do good, and doeth it not, to him it is sin.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590413&gt;</span><span class="book-name">James</span> <span class="verse-range">4:13-17</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Go to now, ye that say, To-day or to-morrow we will go into such a city, and continue there a year, and buy and sell, and get gain:</td><td class="scripture-la"><strong>13.</strong> Age nunc, qui dicitis, Hodie et cras eamus in civitatem, et transigamus illic annum unum, et mercemur et lucremur;</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> Whereas ye know not what shall be on the morrow. For what is your life? It is even a vapor, that appeareth for a little time, and then vanisheth away.</td><td class="scripture-la"><strong>14.</strong> Qui nescitis quid cras futurum sit; quae enim est vita nostra? vapor est scilicet ad exiguum tempus apparens, deinde evanescens:</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> For that ye ought to say, If the Lord will, we shall live, and do this, or that.</td><td class="scripture-la"><strong>15.</strong> Quum dicere debeatis, Si Dominus voluerit, et vixerimus, faciemus hoc vel illud.</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> But now ye rejoice in your boastings: all such rejoicing is evil.</td><td class="scripture-la"><strong>16.</strong> Nunc autem gloriamini in superbiis vestris; omnia gloriatio talis, mala est.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Therefore to him that knoweth to do good, and doeth it not, to him it is sin.</td><td class="scripture-la"><strong>17.</strong> Qui ergo novit facere bonum, nec facit, peccati reus est.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **13.** <span style="color:#800000">*Go to now*</span>. He condemns here another kind of presumption, that many, who ought to have depended on God’s providence, confidently settled what they were to do, and arranged their plans for a long time, as though they had many years at their own disposal, while they were not sure, no not even of one moment. Solomon also sharply ridicules this kind of foolish boasting, when he says that
 
@@ -613,10 +890,24 @@ But James roused the stupidity of those who disregarded God’s providence, and 
 
 <h2 class="scripture-anchor" id="james-5-1-6" data-ref="JAMES 5:1-6" style="display:none">JAMES 5:1-6</h2>
 
-1 Go to now, ye rich men, weep and howl for your miseries that shall come upon you. 2 Your riches are corrupted, and your garments are moth-eaten. 3 Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days. 4 Behold, the hire of the laborers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth. 5 Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter. 6 Ye have condemned and killed the just; and he doth not resist you.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590501&gt;</span><span class="book-name">James</span> <span class="verse-range">5:1-6</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Go to now, ye rich men, weep and howl for your miseries that shall come upon you.</td><td class="scripture-la"><strong>1.</strong> Agedum nunc divites, plorate, ululantes super miseriis vestris quae advenient vobis.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> Your riches are corrupted, and your garments are moth-eaten.</td><td class="scripture-la"><strong>2.</strong> Divitiae vestrae putrefactae sunt, vestimenta vestra a tineis excesa sunt.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> Your gold and silver is cankered; and the rust of them shall be a witness against you, and shall eat your flesh as it were fire. Ye have heaped treasure together for the last days.</td><td class="scripture-la"><strong>3.</strong> Aurum et argentum vestrum aerugine corruptum est; et aerugo eorum in testimonium vobis erit, et exedet carnes vestras sicut ignis: thesaurum congessistis in extremis diebus.</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> Behold, the hire of the laborers who have reaped down your fields, which is of you kept back by fraud, crieth: and the cries of them which have reaped are entered into the ears of the Lord of sabaoth.</td><td class="scripture-la"><strong>4.</strong> Ecce merces operariorum, qui messuerunt regiones vestras, quae fraude aversa est a vobis, clamat; et clamores eorum qui messuerunt, in aures Domini Sabaoth introierunt.</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> Ye have lived in pleasure on the earth, and been wanton; ye have nourished your hearts, as in a day of slaughter.</td><td class="scripture-la"><strong>5.</strong> In deliciis vixistis super terram; lacivistis, enutristis corda vestra, sicut in die mactationis.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> Ye have condemned and killed the just; and he doth not resist you.</td><td class="scripture-la"><strong>6.</strong> Condemnastis et occidistis justum, et non resistit vobis.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 65 -->
-**1.** <span style="color:#800000">*Go to now*</span>. They are mistaken, as I think, who consider that James here exhorts the rich to repentance. It seems to me to be a simple denunciation of God’s judgment, by which he meant to terrify them without giving them any hope of pardon; for all that he says tends only to despair. He, therefore, does not address them in order to invite them to repentance; but, on the contrary, he has a regard to the faithful, that they, hearing of the miserable and of the rich, might not envy their fortune, and also that knowing that God would be the avenger of the wrongs they suffered, they might with a calm and resigned mind bear them.<span style="color:#800000">[^f38]</span>
+**1.** <span style="color:#800000">*Go to now*</span>. They are mistaken, as I think, who consider that James here exhorts the rich to repentance. It seems to me to be a simple denunciation of God’s judgment, by which he meant to terrify them without giving them any hope of pardon; for all that he says tends only to despair. He, therefore, does not address them in order to invite them to repentance; but, on the contrary, he has a regard to the faithful, that they, hearing of the miserable and of the rich, might not envy their fortune, and also that knowing that God would be the avenger of the wrongs they suffered, they might with a calm and resigned mind bear them.[^f38]
 
 But he does not speak of the rich indiscriminately, but of those who, being immersed in pleasures and inflated with pride, thought of nothing but of the world, and who, like inexhaustible gulfs, devoured everything; for they, by their tyranny, oppressed others, as it appears from the whole passage.
 
@@ -624,7 +915,7 @@ But he does not speak of the rich indiscriminately, but of those who, being imme
 
 **2.** <span style="color:#800000">*Your riches*</span>. The meaning may be twofold: — that he ridicules their foolish confidence, because the riches in which they placed their happiness, were wholly fading, yea, that they could be reduced to nothing by one blast from God — or that he condemns as their insatiable avarice, because they heaped together wealth only for this, that they might perish without any benefit. This latter meaning is the most suitable. It is, indeed, true that those rich men are insane who glory in things so fading as garments, gold, silver, and such things, since it is nothing else than to make their glory subject to rust and moths; and well known is that saying “What is ill got is soon lost;” because the curse of God consumes it all, for it is not right that the ungodly or their heirs should enjoy riches which they have snatched, as it were, by violence from the hand of God.
 
-But as James enumerates the vices of which the rich brought on themselves the calamity which he mentions, the context requires, as I think, that we should say, that what he condemns here is the extreme rapacity of the rich, in retaining everything they could lay hold on, that it might rot uselessly in their chests. For thus it was, that what God had created for the use of men, they destroyed, as though they were the enemies of mankind.<span style="color:#800000">[^f39]</span>
+But as James enumerates the vices of which the rich brought on themselves the calamity which he mentions, the context requires, as I think, that we should say, that what he condemns here is the extreme rapacity of the rich, in retaining everything they could lay hold on, that it might rot uselessly in their chests. For thus it was, that what God had created for the use of men, they destroyed, as though they were the enemies of mankind.[^f39]
 
 <!-- PAGE 66 -->
 
@@ -632,7 +923,7 @@ But it must be observed, that the vices which he mentions here do not belong to 
 
 **3.** <span style="color:#800000">*A witness against you*</span>. He confirms the explanation I have already given. For God has not appointed gold for rust, nor garments for moths; but, on the contrary, be has designed them as aids and helps to human life. Therefore, even spending without benefit is a witness of inhumanity. The rusting of gold and silver will be, as it were, the occasion of inflaming the wrath of God, so that it will, like fire, consume them.
 
-<span style="color:#800000">*Ye have heaped treasure together*</span>: These words may also admit of two explanations: — that the rich, as they would always live, are never satisfied, but weary themselves in heaping together what may be sufficient to the end of the world, — or, that they heap together the wrath and curse of God for the last day; and this second view I embrace.<span style="color:#800000">[^f40]</span>
+<span style="color:#800000">*Ye have heaped treasure together*</span>: These words may also admit of two explanations: — that the rich, as they would always live, are never satisfied, but weary themselves in heaping together what may be sufficient to the end of the world, — or, that they heap together the wrath and curse of God for the last day; and this second view I embrace.[^f40]
 
 **4.** <span style="color:#800000">*Behold, the hire*</span>. He now condemns cruelty, the invariable companion of avarice. But he refers only to one kind, which, above all others, ought justly to be deemed odious. For if a humane and a just man, as Solomon says in Proverbs 12:10, regards the life of his beast, it is a monstrous barbarity, when man feels no pity towards the man whose sweat he has employed for his own benefit. Hence the Lord has strictly forbidden, in the law, the hire of the laborer to sleep with us (Deuteronomy 24:15). Besides, James does not refer to laborers in common, but, for the sake of amplifying, he mentions husbandmen and reapers. For what can be more base than that they, who supply us with bread by their labor should be pined through want? And yet this monstrous thing is common; for there are many of such a tyrannical disposition, that they think that the rest of mankind live only for their benefit alone.
 
@@ -648,13 +939,24 @@ And though the Lord allows them to live freely on what they have, yet profusion 
 
 <!-- PAGE 68 -->
 
-**6.** <span style="color:#800000">*Ye have condemned*</span>. Here follows another kind of inhumanity, that the rich by their power oppressed and destroyed the poor and weak. He says by a metaphor that the just were condemned and killed; for when they did not kill them by their own hand, or condemn them as judges, they yet employed the authority which they had to do wrong, they corrupted judgments, and contrived various arts to destroy the innocent, that is, really to condemn and kill them.<span style="color:#800000">[^f41]</span>
+**6.** <span style="color:#800000">*Ye have condemned*</span>. Here follows another kind of inhumanity, that the rich by their power oppressed and destroyed the poor and weak. He says by a metaphor that the just were condemned and killed; for when they did not kill them by their own hand, or condemn them as judges, they yet employed the authority which they had to do wrong, they corrupted judgments, and contrived various arts to destroy the innocent, that is, really to condemn and kill them.[^f41]
 
 By adding that the just did *not resist* them, he intimates that the audacity of the rich was greater; because those whom they oppressed were without any protection. He, however, reminds them that the more ready and prompt would be the vengeance of God, when the poor have no protection from men. But though the just did not resist, because he ought to have patiently endured wrongs, I yet think that their weakness is at the same time referred to, that is he did not resist, because he was unprotected and without any help from men.
 
 <h2 class="scripture-anchor" id="james-5-7-9" data-ref="JAMES 5:7-9" style="display:none">JAMES 5:7-9</h2>
 
-7 Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain. 8 Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh. 9 Grudge not one against another, brethren, lest ye be condemned: behold, the judge standeth before the door.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590507&gt;</span><span class="book-name">James</span> <span class="verse-range">5:7-9</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> Be patient therefore, brethren, unto the coming of the Lord. Behold, the husbandman waiteth for the precious fruit of the earth, and hath long patience for it, until he receive the early and latter rain.</td><td class="scripture-la"><strong>7.</strong> Patienter ergo agite, fratres, usque in adventum Domini. Ecce agricola expectat pretiosum fructum terrae, patienter se gerens erga eum, donec recipiat pluvium matutinam et vespertinam.</td></tr>
+<tr><td class="scripture-en"><strong>8.</strong> Be ye also patient; stablish your hearts: for the coming of the Lord draweth nigh.</td><td class="scripture-la"><strong>8.</strong> Patienter ergo agite et vos; confirmate corda vestra, quonim adventus Domini propinquus est.</td></tr>
+<tr><td class="scripture-en"><strong>9.</strong> Grudge not one against another, brethren, lest ye be condemned: behold, the judge standeth before the door.</td><td class="scripture-la"><strong>9.</strong> Ne ingemiscatis alii in alios, fratres, ne condemnemeni: ecce judex stat pro foribus.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 69 -->
 **7.** <span style="color:#800000">*Be patient therefore*</span>. From this inference it is evident that what has hitherto been said against the rich, pertains to the consolation of those who seemed for a time to be exposed to their wrongs with impunity. For after having mentioned the causes of those calamities which were hanging over the rich, and having stated this among others, that they proudly and cruelly ruled over the poor, he immediately adds, that we who are unjustly oppressed, have this reason to be patient, because God would become the judge. For this is what he means when he says, <span style="color:#800000">*unto the coming of the Lord*</span>, that is, that the confusion of things which is now seen in the world will not be perpetual, because the Lord at his coming will reduce things to order, and that therefore our minds ought to entertain good hope; for it is not without reason that the restoration of all things is promised to us at that day. And though the day of the Lord is everywhere called in the Scriptures a manifestation of his judgment and grace, when he succors his people and chastises the ungodly, yet I prefer to regard the expression here as referring to our final deliverance.
@@ -676,7 +978,17 @@ God will be the common judge of all. What, then, will be the case, but that ever
 
 <h2 class="scripture-anchor" id="james-5-10-11" data-ref="JAMES 5:10-11" style="display:none">JAMES 5:10-11</h2>
 
-10 Take, my brethren, the prophets, who have spoken in the name of the Lord, for an example of suffering affliction, and of patience. 11 Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590510&gt;</span><span class="book-name">James</span> <span class="verse-range">5:10-11</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Take, my brethren, the prophets, who have spoken in the name of the Lord, for an example of suffering affliction, and of patience.</td><td class="scripture-la"><strong>10.</strong> Exemplum accipite afflictionis, fratres mei, et tolerentiae, prophetas, qui loquuti sunt in nomine Domini.</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Behold, we count them happy which endure. Ye have heard of the patience of Job, and have seen the end of the Lord; that the Lord is very pitiful, and of tender mercy.</td><td class="scripture-la"><strong>11.</strong> Ecce beatos esse ducimus eos qui sustinent: patientiam Job audistis, et finem Domini vidistis, quod multum sit misericors et commiserans.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **10.** <span style="color:#800000">*Take, my brethren, the prophets*</span>. The comfort which he brings is not that which is according to the common proverb, that the miserable hope for like companions in evils. That they set before them associates, in whose number it was desirable to be classed; and to have the same condition with them, was no misery. For as we must necessarily feel extreme grief, when any evil happens to us which the children of God have never experienced, so it is a singular consolation when we know that we suffer nothing different from them; nay, when we know that we have to sustain the same yoke with them.
 
@@ -699,11 +1011,21 @@ And he says, <span style="color:#800000">*the prophets who have spoken in the na
 
 If, however, it be asked, Why does the Apostle so much commend the patience of Job, as he had displayed many signs of impatience, being carried away by a hasty spirit? To this I reply, that though he sometimes failed through the infirmity of the flesh, or murmured within himself, yet he ever surrendered himself to God, and was ever willing to be restrained and ruled by him. Though, then, his patience was somewhat deficient, it is yet deservedly commended.
 
-<span style="color:#800000">*The end of the Lord.*</span> By these words he intimates that afflictions ought ever to be estimated by their end. For at first God seems to be far away, and Satan in the meantime revels in the confusion; the flesh suggests to us that we are forsaken of God and lost. We ought, then, to extend our view farther, for near and around us there appears no light. Moreover, he has called it the end of the Lord, because it is his work to give a prosperous issue to adversities. If we do our duty in bearing evils obediently, he will by no means be wanting in performing his part. Hope directs us only to the end; God will then shew himself very merciful, how ever rigid and severe he may seem to be while afflicting us.<span style="color:#800000">[^f42]</span>
+<span style="color:#800000">*The end of the Lord.*</span> By these words he intimates that afflictions ought ever to be estimated by their end. For at first God seems to be far away, and Satan in the meantime revels in the confusion; the flesh suggests to us that we are forsaken of God and lost. We ought, then, to extend our view farther, for near and around us there appears no light. Moreover, he has called it the end of the Lord, because it is his work to give a prosperous issue to adversities. If we do our duty in bearing evils obediently, he will by no means be wanting in performing his part. Hope directs us only to the end; God will then shew himself very merciful, how ever rigid and severe he may seem to be while afflicting us.[^f42]
 
 <h2 class="scripture-anchor" id="james-5-12-13" data-ref="JAMES 5:12-13" style="display:none">JAMES 5:12-13</h2>
 
-12 But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation. 13 Is any among you afflicted? let him pray. Is any merry? let him sing psalms.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590512&gt;</span><span class="book-name">James</span> <span class="verse-range">5:12-13</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> But above all things, my brethren, swear not, neither by heaven, neither by the earth, neither by any other oath: but let your yea be yea; and your nay, nay; lest ye fall into condemnation.</td><td class="scripture-la"><strong>12.</strong> Ante omnia vero, fratres mei, Ne juretis, neque per coelum, neque per terram, neque aliud quodvis jusjurandum; sit autem vestrum. Est, est; Non, non: ne in judicium (vel, simulationem) incidatis.</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Is any among you afflicted? let him pray. Is any merry? let him sing psalms.</td><td class="scripture-la"><strong>13.</strong> Afflgitur quis inter vos? oret: hilari est animo? psallat.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 74 -->
 **12.** <span style="color:#800000">*But above all things*</span>. It has been a common vice almost in all ages, to swear lightly and inconsiderately. For so bad is our nature that we do not consider what an atrocious crime it is to profane the name of God. For though the Lord strictly commands us to reverence his name, yet men devise various subterfuges, and think that they can swear with impunity. They imagine, then, that there is no evil, provided they do not openly mention the name of God; and this is an old gloss. So the Jews, when they swore by heaven or earth, thought that they did not profane God’s name, because they did not mention it. But while men seek to be ingenious in dissembling with God, they delude themselves with the most frivolous evasions.
@@ -719,7 +1041,7 @@ And this is what the words clearly mean, <span style="color:#800000">*Neither by
 
 Some copies have, “ Let your word (or speech) be, yea, yea; no, no.” The true reading however, is what I have given, and is commonly received; and what he means I have already explained, that is, that we ought to tell the truth, and to be faithful in our words. To the same purpose is what Paul says in 2 Corinthians 1:18, that he was not in his preaching yea and nay, but pursued the same course from the beginning.
 
-<span style="color:#800000">*Lest ye fall into condemnation*</span>. There is a different reading, owing to the affinity of the words <span style="color:#0000d4">ὑπὸ κρίσιν</span> and <span style="color:#0000d4">ὑπόκρισιν</span>.<span style="color:#800000">[^f43]</span> If you read, “into judgment” or condemnation, the sense will clearly be, that to take God’s name in vain will not be unpunished. But it is not unsuitable to say, “into hypocrisy;” because when simplicity, as it has been already said, prevails among us, the occasion for superfluous oaths is cut off. If, then, fidelity appears in all we say, the dissimulation, which leads us to swear rashly, will be removed.
+<span style="color:#800000">*Lest ye fall into condemnation*</span>. There is a different reading, owing to the affinity of the words <span style="color:#0000d4">ὑπὸ κρίσιν</span> and <span style="color:#0000d4">ὑπόκρισιν</span>.[^f43] If you read, “into judgment” or condemnation, the sense will clearly be, that to take God’s name in vain will not be unpunished. But it is not unsuitable to say, “into hypocrisy;” because when simplicity, as it has been already said, prevails among us, the occasion for superfluous oaths is cut off. If, then, fidelity appears in all we say, the dissimulation, which leads us to swear rashly, will be removed.
 
 **13.** <span style="color:#800000">*Is any among you afflicted*</span>? he means that there is no time in which God does not invite us to himself. For afflictions ought to stimulate us to pray; prosperity supplies us with an occasion to praise God. But such is the perverseness of men, that they cannot rejoice without forgetting God, and that when afflicted they are disheartened and driven to despair. We ought, then, to keep within due bounds, so that the joy, which usually makes us to forget God, may induce us to set forth the goodness of God, and that our sorrow may teach us to pray. For he has set the *singing of psalms* in opposition to profane and unbridled joy; and thus they express their joy who are led, as they ought to be, by prosperity to God.
 
@@ -727,7 +1049,17 @@ Some copies have, “ Let your word (or speech) be, yea, yea; no, no.” The tru
 
 <h2 class="scripture-anchor" id="james-5-14-15" data-ref="JAMES 5:14-15" style="display:none">JAMES 5:14-15</h2>
 
-14 Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord: 15 And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590514&gt;</span><span class="book-name">James</span> <span class="verse-range">5:14-15</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord:</td><td class="scripture-la"><strong>14.</strong> Infirmatur quis inter vos? Advocet presbyteros ecclesiae, et orent super eum, unguentes oleo in nomine Domini:</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> And the prayer of faith shall save the sick, and the Lord shall raise him up; and if he have committed sins, they shall be forgiven him.</td><td class="scripture-la"><strong>15.</strong> Et oratio fidei servabit aegrotum, et excitabit eum Dominus; et si peccata admiserit, remittentur illi.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **14.** <span style="color:#800000">*Is any sick among you*</span>. As the gift of healing as yet continued, he directs the sick to have recourse to that remedy. It is, indeed, certain that they were not all healed; but the Lord granted this favor as often and as far as he knew it would be expedient; nor is it probable that the oil was indiscriminately applied, but only when there was some hope of restoration. For, together with the power there was given also discretion to the ministers, lest they should by abuse profane the symbol. The design of James was no other than to commend the grace of God which the faithful might then enjoy, lest the benefit of it should be lost through contempt or neglect.
 
@@ -751,9 +1083,20 @@ The prophets are full of this doctrine, that men are relieved from their evils w
 
 <h2 class="scripture-anchor" id="james-5-16-18" data-ref="JAMES 5:16-18" style="display:none">JAMES 5:16-18</h2>
 
-16 Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much. 17 Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months. 18 And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590516&gt;</span><span class="book-name">James</span> <span class="verse-range">5:16-18</span></p>
 
-**16.** <span style="color:#800000">*Confess your faults one to another*</span>. In some copies the illative particle is given, nor is it unsuitable; for though when not expressed, it must be understood. He had said, that sins were remitted to the sick over whom the elders prayed: he now reminds them how useful it is to discover our sins to our brethren, even that we may obtain the pardon of them by their intercession.<span style="color:#800000">[^f44]</span>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>16.</strong> Confess your faults one to another, and pray one for another, that ye may be healed. The effectual fervent prayer of a righteous man availeth much.</td><td class="scripture-la"><strong>16.</strong> Confitemini invicem peccata vestra, et orate invicem alii pro aliis, ut salvemini: multum valet precatio justi efficax.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Elias was a man subject to like passions as we are, and he prayed earnestly that it might not rain: and it rained not on the earth by the space of three years and six months.</td><td class="scripture-la"><strong>17.</strong> Elias homo erat passionibus similiter obnoxius ut nos; et precatione precatus est, ne plueret; et non pluit super terram annos tres et sex menses.</td></tr>
+<tr><td class="scripture-en"><strong>18.</strong> And he prayed again, and the heaven gave rain, and the earth brought forth her fruit.</td><td class="scripture-la"><strong>18.</strong> Et rursum oravit, et coelum dedit pluviam, et terra protulit fructum suum.</td></tr>
+</tbody>
+</table>
+
+</div>
+
+**16.** <span style="color:#800000">*Confess your faults one to another*</span>. In some copies the illative particle is given, nor is it unsuitable; for though when not expressed, it must be understood. He had said, that sins were remitted to the sick over whom the elders prayed: he now reminds them how useful it is to discover our sins to our brethren, even that we may obtain the pardon of them by their intercession.[^f44]
 
 <!-- PAGE 79 -->
 This passage, I know, is explained by many as referring to the reconciling of offenses; for they who wish to return to favor must necessarily know first their own faults and confess them. For hence it comes, that hatreds take root, yea, and increase and become irreconcilable, because every one perniciously defends his own cause. Many therefore think that James points out here the way of brotherly reconciliation, that is, by mutual acknowledgment of sins. But as it has been said, his object was different; for he connects mutual prayer with mutual confession; by which he intimates that confession avails for this end, that we may be helped as to God by the prayers of our brethren; for they who know our necessities, are stimulated to pray that they may assist us; but they to whom our diseases are unknown are more tardy to bring us help.
@@ -765,7 +1108,7 @@ For the words clearly mean, that confession is required for no other end, but th
 <span style="color:#800000">*Availeth much.*</span> That no one may think that this is done without fruit, that is, when others pray for us, he expressly mentions the benefit and the effect of prayer. But he names expressly the <span style="color:#800000">*prayer of a righteous*</span> or just *man;* because God does not hear the ungodly; nor is access to God open, except through a good conscience: not that our prayers are founded on our own worthiness, but because the heart must be cleansed by faith before we can present ourselves before God. Then James testifies that the righteous or the faithful pray for us beneficially and not without fruit.
 
 <!-- PAGE 80 -->
-But what does he mean by adding *effectual* or efficacious? For this seems superfluous; for if the prayer avails much, it is doubtless effectual. The ancient interpreter has rendered it “assiduous;” but this is too forced. For James uses the Greek participle, <span style="color:#0000d4">ἐνερουμένη</span>, which means “working.” And the sentence may be thus explained, “It avails much, because it is effectual.”<span style="color:#800000">[^f45]</span> As it is an argument drawn from this principle, that God will not allow the prayers of the faithful to be void or useless, he does not therefore unjustly conclude that it avails much. But I would rather confine it to the present case: for our prayers may properly be said to be <span style="color:#0000d4">ἐνεργούμεναι</span>, working, when some necessity meets us which excites in us earnest prayer. We pray daily for the whole Church, that God may pardon its sins; but then only is our prayer really in earnest, when we go forth to succor those who are in trouble. But such efficacy cannot be in the prayers of our brethren, except they know that we are in difficulties. Hence the reason given is not general, but must be specially referred to the former sentence.
+But what does he mean by adding *effectual* or efficacious? For this seems superfluous; for if the prayer avails much, it is doubtless effectual. The ancient interpreter has rendered it “assiduous;” but this is too forced. For James uses the Greek participle, <span style="color:#0000d4">ἐνερουμένη</span>, which means “working.” And the sentence may be thus explained, “It avails much, because it is effectual.”[^f45] As it is an argument drawn from this principle, that God will not allow the prayers of the faithful to be void or useless, he does not therefore unjustly conclude that it avails much. But I would rather confine it to the present case: for our prayers may properly be said to be <span style="color:#0000d4">ἐνεργούμεναι</span>, working, when some necessity meets us which excites in us earnest prayer. We pray daily for the whole Church, that God may pardon its sins; but then only is our prayer really in earnest, when we go forth to succor those who are in trouble. But such efficacy cannot be in the prayers of our brethren, except they know that we are in difficulties. Hence the reason given is not general, but must be specially referred to the former sentence.
 
 **17.** <span style="color:#800000">*Elias was a man*</span>. There are innumerable instances in Scripture of what he meant to prove; but he chose one that is remarkable above all others; for it was a great thing that God should make heaven in a manner subject to the prayers of Elias, so as to obey his wishes. Elias kept heaven shut by his prayers for three years and a half; he again opened it, so that it poured down abundance of rain. Hence appeared the wonderful power of prayer. Well known is this remarkable history, and is found in 1 Kings 17 and 1 Kings 18. And though it is not there expressly said, that Elias prayed for drought, it may yet be easily gathered, and that the rain also was given to his prayers.
 
@@ -778,7 +1121,17 @@ It hence appears how childish the Papists are, who teach men to flee to the prot
 
 <h2 class="scripture-anchor" id="james-5-19-20" data-ref="JAMES 5:19-20" style="display:none">JAMES 5:19-20</h2>
 
-19 Brethren, if any of you do err from the truth, and one convert him; 20 Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;590519&gt;</span><span class="book-name">James</span> <span class="verse-range">5:19-20</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> Brethren, if any of you do err from the truth, and one convert him;</td><td class="scripture-la"><strong>19.</strong> Fratres mei, si quis inter vos erraverit a veritate, et converterit quispiam eum;</td></tr>
+<tr><td class="scripture-en"><strong>20.</strong> Let him know, that he which converteth the sinner from the error of his way shall save a soul from death, and shall hide a multitude of sins.</td><td class="scripture-la"><strong>20.</strong> Cognoscat quod qui converterit peccatorem ab errore viae suae, servabit animam a morte, et multitudinem operiet peccatorum.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 **20.** <span style="color:#800000">*Let him know*</span>. I doubt whether this ought rather to have been written, <span style="color:#0000d4">γιςώσκετε</span>, “know ye.” Both ways the meaning however is the same. For James recommends to us the correction of our brethren from the effect produced that we may more assiduously attend to this duty. Nothing is better or more desirable than to deliver a soul from eternal death; and this is what he does who restores an erring brother to the right way: therefore a work so excellent ought by no means to be neglected. To give food to the hungry, and drink to the thirsty, we see how much Christ values such acts; but the salvation of the soul is esteemed by him much more precious than the life of the body. We must therefore take heed lest souls perish through our sloth, whose salvation God puts in a manner in our hands. Not that we can bestow salvation on them; but that God by our ministry delivers and saves those who seem otherwise to be nigh destruction.
 
@@ -798,229 +1151,249 @@ Some copies have *his soul*, which makes no change in the sense. I, however, pre
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE EPISTLE OF JAMES.</span></p>
 
-<span style="color:#800000">1</span> James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are in the dispersion, health:
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
-<span style="color:#800000">2</span> Count it all joy, my brethren, when ye fall into various temptations;
+<sup>1</sup> James, a servant of God and of the Lord Jesus Christ, to the twelve tribes which are in the dispersion, health:
 
-<span style="color:#800000">3</span> Knowing that the trying of your faith works patience:
+<sup>2</sup> Count it all joy, my brethren, when ye fall into various temptations;
 
-<span style="color:#800000">4</span> But let patience have its perfect work, so that ye may be perfect and entire, in nothing deficient.
+<sup>3</sup> Knowing that the trying of your faith works patience:
 
-<span style="color:#800000">5</span> But if any of you be deficient in wisdom, let him ask *it from* God, who giveth to all freely, and does not upbraid: and it shall be given to him.
+<sup>4</sup> But let patience have its perfect work, so that ye may be perfect and entire, in nothing deficient.
 
-<span style="color:#800000">6</span> But let him ask in faith, by no means doubting; for he who doubts, is like a wave of the sea, which by the wind is driven and tossed to and fro.
+<sup>5</sup> But if any of you be deficient in wisdom, let him ask *it from* God, who giveth to all freely, and does not upbraid: and it shall be given to him.
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">7</span> Let not, then, that man think that he shall receive anything from the Lord.</p>
+<sup>6</sup> But let him ask in faith, by no means doubting; for he who doubts, is like a wave of the sea, which by the wind is driven and tossed to and fro.
 
-<span style="color:#800000">8</span> A man of a double mind is unstable in all his ways.
+<p style="text-align:center" markdown="1"><sup>7</sup> Let not, then, that man think that he shall receive anything from the Lord.</p>
 
-<span style="color:#800000">9</span> Now, let a brother who is low, rejoice in his exaltation; and the rich in his lowness:
+<sup>8</sup> A man of a double mind is unstable in all his ways.
 
-<span style="color:#800000">10</span> Because as a flower of grass shall he pass away:
+<sup>9</sup> Now, let a brother who is low, rejoice in his exaltation; and the rich in his lowness:
+
+<sup>10</sup> Because as a flower of grass shall he pass away:
 
 <!-- PAGE 84 -->
 
-<span style="color:#800000">11</span> For the sun rises with heat and withers the grass, and the flower falls, and the beauty of its appearance perishes; so also shall the rich fade away in his riches.
+<sup>11</sup> For the sun rises with heat and withers the grass, and the flower falls, and the beauty of its appearance perishes; so also shall the rich fade away in his riches.
 
-<span style="color:#800000">12</span> Blessed *is* the man, who endures temptation; for when he is tried, he shall receive the crown of life: which the Lord hath promised to them who love him.
+<sup>12</sup> Blessed *is* the man, who endures temptation; for when he is tried, he shall receive the crown of life: which the Lord hath promised to them who love him.
 
-<span style="color:#800000">13</span> Let no one, when he is tempted, say, “By God I am tempted:” for God cannot be tempted by evils, nor does he tempt any one.
+<sup>13</sup> Let no one, when he is tempted, say, “By God I am tempted:” for God cannot be tempted by evils, nor does he tempt any one.
 
-<span style="color:#800000">14</span> But every one is tempted, when he is drawn away by his own lusts, and is ensnared.
+<sup>14</sup> But every one is tempted, when he is drawn away by his own lusts, and is ensnared.
 
-<span style="color:#800000">15</span> Then lust, having conceived, brings forth sin; and sin, being perfected, begets death.
+<sup>15</sup> Then lust, having conceived, brings forth sin; and sin, being perfected, begets death.
 
-<span style="color:#800000">16</span> Do not err, my beloved brethren:
+<sup>16</sup> Do not err, my beloved brethren:
 
-<span style="color:#800000">17</span> Every good gift and every perfect gift is from above, descending from the Father of lights, with whom there is no change nor shadow of turning.
+<sup>17</sup> Every good gift and every perfect gift is from above, descending from the Father of lights, with whom there is no change nor shadow of turning.
 
-<span style="color:#800000">18</span> Of his own will has he begotten us by the word of truth, that we might be some firstfruits of his creatures.
+<sup>18</sup> Of his own will has he begotten us by the word of truth, that we might be some firstfruits of his creatures.
 
-<span style="color:#800000">19</span> Let every man, therefore, my beloved brethren, be swift to hear, slow to speak, slow to wrath:
+<sup>19</sup> Let every man, therefore, my beloved brethren, be swift to hear, slow to speak, slow to wrath:
 
-<span style="color:#800000">20</span> For the wrath of man worketh not the righteousness of God.
+<sup>20</sup> For the wrath of man worketh not the righteousness of God.
 
-<span style="color:#800000">21</span> *Laying* aside then all filthiness and redundancy of wickedness, receive with meekness the ιμπαντεδ word, which is able to save your souls.
+<sup>21</sup> *Laying* aside then all filthiness and redundancy of wickedness, receive with meekness the ιμπαντεδ word, which is able to save your souls.
 
-<span style="color:#800000">22</span> And be ye doers of the word and not hearers only, deceiving yourselves.
+<sup>22</sup> And be ye doers of the word and not hearers only, deceiving yourselves.
 
-<span style="color:#800000">23</span> For if any one be a hearer of the word and not a doer, he is like a man who looks on his natural face in a glass;
+<sup>23</sup> For if any one be a hearer of the word and not a doer, he is like a man who looks on his natural face in a glass;
 
-<span style="color:#800000">24</span> For he hath looked on himself and departed, and hath immediately forgotten what manner of man he was.
+<sup>24</sup> For he hath looked on himself and departed, and hath immediately forgotten what manner of man he was.
 
 <!-- PAGE 85 -->
 
-<span style="color:#800000">25</span> But he who attentively looks on the perfect law of liberty and continues *to do* so,--this *man,* being not a forgetful hearer, but a doer of the work, shall be blessed in his work.
+<sup>25</sup> But he who attentively looks on the perfect law of liberty and continues *to do* so,--this *man,* being not a forgetful hearer, but a doer of the work, shall be blessed in his work.
 
-<span style="color:#800000">26</span> If any one seems to be religious among you and bridleth not his tongue, but deceiveth his own heart, his religion is vain.
+<sup>26</sup> If any one seems to be religious among you and bridleth not his tongue, but deceiveth his own heart, his religion is vain.
 
-<span style="color:#800000">27</span> Pure religion and undefiled before God even the Father, is this,-To visit the orphans and widows in their affliction, to keep himself unspotted from the world.
+<sup>27</sup> Pure religion and undefiled before God even the Father, is this,-To visit the orphans and widows in their affliction, to keep himself unspotted from the world.
 
-<span style="color:#800000">1</span> My brethren, have not the faith of our Lord Jesus Christ with respect of persons on account of reputation.
+<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
 
-<span style="color:#800000">2</span> For if there enter into your assembly a man wearing gold rings, having on a splendid dress, and there enter in also a poor man in sordid clothing;
+<sup>1</sup> My brethren, have not the faith of our Lord Jesus Christ with respect of persons on account of reputation.
 
-<span style="color:#800000">3</span> And ye have respect to him who wears a splendid dress, and say to him, “Sit thou here honorably,” and ye say to the poor, “Stand thou there,” or, “Sit here under my foot- stool;”
+<sup>2</sup> For if there enter into your assembly a man wearing gold rings, having on a splendid dress, and there enter in also a poor man in sordid clothing;
 
-<span style="color:#800000">4</span> Are ye not condemned in yourselves, and become judges of evil thoughts?
+<sup>3</sup> And ye have respect to him who wears a splendid dress, and say to him, “Sit thou here honorably,” and ye say to the poor, “Stand thou there,” or, “Sit here under my foot- stool;”
 
-<span style="color:#800000">5</span> Hear, my beloved brethren, Has not God chosen the poor of this world *to be* rich in faith and heirs of the kingdom which he hath promised to them who love Him?
+<sup>4</sup> Are ye not condemned in yourselves, and become judges of evil thoughts?
 
-<span style="color:#800000">6</span> But ye have despised the poor. Do not the rich domineer over you, and draw you before judgment-seats?
+<sup>5</sup> Hear, my beloved brethren, Has not God chosen the poor of this world *to be* rich in faith and heirs of the kingdom which he hath promised to them who love Him?
 
-<span style="color:#800000">7</span> Do they not blaspheme the good name which is called on you?
+<sup>6</sup> But ye have despised the poor. Do not the rich domineer over you, and draw you before judgment-seats?
 
-<span style="color:#800000">8</span> If indeed ye fulfill the royal law, according to Scripture, <span style="color:#800000">9</span> “Thou shalt love thy neighbor as thyself,” ye do well: but if ye respect persons, ye commit sin, and are reproved by the law as transgressors.
+<sup>7</sup> Do they not blaspheme the good name which is called on you?
+
+<sup>8</sup> If indeed ye fulfill the royal law, according to Scripture,
+
+<sup>9</sup> “Thou shalt love thy neighbor as thyself,” ye do well: but if ye respect persons, ye commit sin, and are reproved by the law as transgressors.
 
 <!-- PAGE 86 -->
 
-<span style="color:#800000">10</span> For whosoever shall keep the whole law, and yet offend in one thing, becomes guilty of all:
+<sup>10</sup> For whosoever shall keep the whole law, and yet offend in one thing, becomes guilty of all:
 
-<span style="color:#800000">11</span> For he who hath said, “Thou shalt not commit adultery,” hath said also, “Thou shalt not kill.” Now if thou committest no adultery, yet if thou killest, thou becomest a transgressor of the law.
+<sup>11</sup> For he who hath said, “Thou shalt not commit adultery,” hath said also, “Thou shalt not kill.” Now if thou committest no adultery, yet if thou killest, thou becomest a transgressor of the law.
 
-<span style="color:#800000">12</span> So speak ye and so do, as those who shall be judged by the law of liberty.
+<sup>12</sup> So speak ye and so do, as those who shall be judged by the law of liberty.
 
-<span style="color:#800000">13</span> For judgment will be without mercy to him who hath not shewed mercy; and mercy glorieth against judgment.
+<sup>13</sup> For judgment will be without mercy to him who hath not shewed mercy; and mercy glorieth against judgment.
 
-<span style="color:#800000">14</span> What does it avail, my brethren, if any one say that he hath faith, and have not works? Can faith save him?
+<sup>14</sup> What does it avail, my brethren, if any one say that he hath faith, and have not works? Can faith save him?
 
-<span style="color:#800000">15</span> Now, if a brother or a sister be naked and in want of daily bread, and one of you say to them, “Go away in peace, be warmed and be filled;”
+<sup>15</sup> Now, if a brother or a sister be naked and in want of daily bread, and one of you say to them, “Go away in peace, be warmed and be filled;”
 
-<span style="color:#800000">16</span> Though ye give them not those things which are necessary for the body, what does it avail?
+<sup>16</sup> Though ye give them not those things which are necessary for the body, what does it avail?
 
-<span style="color:#800000">17</span> Even so faith, if it hath no works, being by itself, is dead.
+<sup>17</sup> Even so faith, if it hath no works, being by itself, is dead.
 
-<span style="color:#800000">18</span> Nay, rather, one may say, *“Thou* hast faith and I have works; shew me thy faith without thy works, and I will by my works shew thee my faith.”
+<sup>18</sup> Nay, rather, one may say, *“Thou* hast faith and I have works; shew me thy faith without thy works, and I will by my works shew thee my faith.”
 
-<span style="color:#800000">19</span> Then believest that there is one God; thou doest right: the devils also believe and tremble.
+<sup>19</sup> Then believest that there is one God; thou doest right: the devils also believe and tremble.
 
-<span style="color:#800000">20</span> But wilt thou know, O vain man, that faith without works is dead?
+<sup>20</sup> But wilt thou know, O vain man, that faith without works is dead?
 
-<span style="color:#800000">21</span> Abraham our father, was he not justified by works, when he offered up Isaac his son on the altar?
+<sup>21</sup> Abraham our father, was he not justified by works, when he offered up Isaac his son on the altar?
 
-<span style="color:#800000">22</span> Seest thou that faith co-operated with his works, and faith was by works made perfect?
+<sup>22</sup> Seest thou that faith co-operated with his works, and faith was by works made perfect?
 
 <!-- PAGE 87 -->
 
-<span style="color:#800000">23</span> And fulfilled was the Scripture which saith, “Abraham believed God, and it was counted to him for righteousness:” and he was called the Friend of God <span style="color:#800000">24</span> Ye then see, that by works is man justified, and not by faith only <span style="color:#800000">25</span> In like manner also Rahab the harlot, was not she justified by works, when she received the messengers, and sent them forth another way?
+<sup>23</sup> And fulfilled was the Scripture which saith, “Abraham believed God, and it was counted to him for righteousness:” and he was called the Friend of God
 
-<span style="color:#800000">26</span> For as the body without the soul is dead, so also faith without works is dead.
+<sup>24</sup> Ye then see, that by works is man justified, and not by faith only
 
-<span style="color:#800000">1</span> Be not many masters, my brethren, knowing that we shall receive greater judgment:
+<sup>25</sup> In like manner also Rahab the harlot, was not she justified by works, when she received the messengers, and sent them forth another way?
 
-<span style="color:#800000">2</span> For in many things we all offend. If any one offend not in word, he is a perfect man, as one who can bridle also the whole body.
+<sup>26</sup> For as the body without the soul is dead, so also faith without works is dead.
 
-<span style="color:#800000">3</span> Behold, we put bridles in horses’ months, that they may obey us, and we turn about their whole body.
+<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
 
-<span style="color:#800000">4</span> Behold also the ships, however large they may be and driven by fierce winds, yet they are turned about by a very small helm wherever the will of the pilot wishes.
+<sup>1</sup> Be not many masters, my brethren, knowing that we shall receive greater judgment:
 
-<span style="color:#800000">5</span> So also the tongue is a very small member and boasts great things.
+<sup>2</sup> For in many things we all offend. If any one offend not in word, he is a perfect man, as one who can bridle also the whole body.
 
-<span style="color:#800000">6</span> Behold, a little fire, what quantity of wood it burns! And the tongue is a fire, and a world of iniquity. So is the tongue among our members; it defiles the whole body and sets on fire the whole course of nature, and it is set on fire by hell.
+<sup>3</sup> Behold, we put bridles in horses’ months, that they may obey us, and we turn about their whole body.
 
-<span style="color:#800000">7</span> For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed and has been tamed by mankind:
+<sup>4</sup> Behold also the ships, however large they may be and driven by fierce winds, yet they are turned about by a very small helm wherever the will of the pilot wishes.
 
-<span style="color:#800000">8</span> But the tongue no man can tame, an unrestrainable evil, full of deadly poison.
+<sup>5</sup> So also the tongue is a very small member and boasts great things.
+
+<sup>6</sup> Behold, a little fire, what quantity of wood it burns! And the tongue is a fire, and a world of iniquity. So is the tongue among our members; it defiles the whole body and sets on fire the whole course of nature, and it is set on fire by hell.
+
+<sup>7</sup> For every kind of beasts, and of birds, and of serpents, and of things in the sea, is tamed and has been tamed by mankind:
+
+<sup>8</sup> But the tongue no man can tame, an unrestrainable evil, full of deadly poison.
 
 <!-- PAGE 88 -->
 
-<span style="color:#800000">9</span> By it we bless God, even the Father; and by it we curse men made after his likeness!
+<sup>9</sup> By it we bless God, even the Father; and by it we curse men made after his likeness!
 
-<span style="color:#800000">10</span> From the same mouth proceeds blessing and cursing! These things, my brethren, ought not to be so.
+<sup>10</sup> From the same mouth proceeds blessing and cursing! These things, my brethren, ought not to be so.
 
-<p style="text-align:center" markdown="1"><span style="color:#800000">11</span> Does a fountain from the same opening send forth the sweet and the bitter?</p>
+<p style="text-align:center" markdown="1"><sup>11</sup> Does a fountain from the same opening send forth the sweet and the bitter?</p>
 
-<span style="color:#800000">12</span> Can a fig-tree, my brethren, bear olive-berries; or a vine, figs? so no fountain can bring forth briny and sweet water.
+<sup>12</sup> Can a fig-tree, my brethren, bear olive-berries; or a vine, figs? so no fountain can bring forth briny and sweet water.
 
-<span style="color:#800000">13</span> Who is wise and intelligent among you? Let him shew by a good conduct his works with meekness of wisdom.
+<sup>13</sup> Who is wise and intelligent among you? Let him shew by a good conduct his works with meekness of wisdom.
 
-<span style="color:#800000">14</span> But if ye have bitter emulation and contention in your heart, glory not, and lie not against the truth.
+<sup>14</sup> But if ye have bitter emulation and contention in your heart, glory not, and lie not against the truth.
 
-<span style="color:#800000">15</span> This is not the wisdom which comes from above, but earthly, animal, demoniacal:
+<sup>15</sup> This is not the wisdom which comes from above, but earthly, animal, demoniacal:
 
-<span style="color:#800000">16</span> For where emulation and contention *are,* there is confusion and every evil work.
+<sup>16</sup> For where emulation and contention *are,* there is confusion and every evil work.
 
-<span style="color:#800000">17</span> But the wisdom which is from above, is first pure, then peaceable, humane, tractable, full of mercy and of good works, not officiously prying, not dissembling:
+<sup>17</sup> But the wisdom which is from above, is first pure, then peaceable, humane, tractable, full of mercy and of good works, not officiously prying, not dissembling:
 
-<span style="color:#800000">18</span> And the fruit of righteousness is sown in peace by those who make peace.
+<sup>18</sup> And the fruit of righteousness is sown in peace by those who make peace.
 
-<span style="color:#800000">1</span> Whence wars and fightings among you? are they not hence,-from your lusts which war in your members?
+<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
 
-<span style="color:#800000">2</span> Ye covet and have not; ye envy and emulate, and cannot obtain; ye fight and war, yet ye have not, because ye do not ask;
+<sup>1</sup> Whence wars and fightings among you? are they not hence,-from your lusts which war in your members?
 
-<span style="color:#800000">3</span> Ye ask and receive not, because ye ask amiss, that ye may spend it on your lusts.
+<sup>2</sup> Ye covet and have not; ye envy and emulate, and cannot obtain; ye fight and war, yet ye have not, because ye do not ask;
+
+<sup>3</sup> Ye ask and receive not, because ye ask amiss, that ye may spend it on your lusts.
 
 <!-- PAGE 89 -->
 
-<span style="color:#800000">4</span> Adulterers and adulteresses! know ye not, that the friendship of the world is enmity to God? Whosoever then will be a friend of the world, becomes the enemy of God.
+<sup>4</sup> Adulterers and adulteresses! know ye not, that the friendship of the world is enmity to God? Whosoever then will be a friend of the world, becomes the enemy of God.
 
-<span style="color:#800000">5</span> Do ye think that the Scripture speaks in vain? Does the Spirit who dwells in us, lust to envy?
+<sup>5</sup> Do ye think that the Scripture speaks in vain? Does the Spirit who dwells in us, lust to envy?
 
-<span style="color:#800000">6</span> Nay, he giveth more grace: hence He saith, God resists the proud, but giveth grace to the humble.
+<sup>6</sup> Nay, he giveth more grace: hence He saith, God resists the proud, but giveth grace to the humble.
 
-<span style="color:#800000">7</span> Be ye then subject to God; resist the devil and he will flee from you.
+<sup>7</sup> Be ye then subject to God; resist the devil and he will flee from you.
 
-<span style="color:#800000">8</span> Draw nigh to God, and he will draw nigh to you: cleanse your hands, ye sinners; and purify *your* hearts, ye double-minded.
+<sup>8</sup> Draw nigh to God, and he will draw nigh to you: cleanse your hands, ye sinners; and purify *your* hearts, ye double-minded.
 
-<span style="color:#800000">9</span> Be afflicted and mourn and weep; let your laughter be turned to mourning, and your joy to sorrow.
+<sup>9</sup> Be afflicted and mourn and weep; let your laughter be turned to mourning, and your joy to sorrow.
 
-<span style="color:#800000">10</span> Be humbled before God, and he will exalt you.
+<sup>10</sup> Be humbled before God, and he will exalt you.
 
-<span style="color:#800000">11</span> Defame not one another, brethren; he who defames a brother and judges his brother, defames the law and judges the law; but if thou judge the law, thou art not a doer of the law, but a judge.
+<sup>11</sup> Defame not one another, brethren; he who defames a brother and judges his brother, defames the law and judges the law; but if thou judge the law, thou art not a doer of the law, but a judge.
 
-<span style="color:#800000">12</span> One is the lawgiver, who can save and destroy; who art thou who judgest another?
+<sup>12</sup> One is the lawgiver, who can save and destroy; who art thou who judgest another?
 
-<span style="color:#800000">13</span> Come now ye who say, “To-day, or, to-morrow, we shall go into the city and pass there a year, and trade and make gain:” who know not what is to be to-morrow; for what is your life?
+<sup>13</sup> Come now ye who say, “To-day, or, to-morrow, we shall go into the city and pass there a year, and trade and make gain:” who know not what is to be to-morrow; for what is your life?
 
-<span style="color:#800000">14</span> It is indeed a vapor, which for a short time appears, and then vanishes away.
+<sup>14</sup> It is indeed a vapor, which for a short time appears, and then vanishes away.
 
-<span style="color:#800000">15</span> On the contrary ye ought to say, “If the Lord will, and we live, we shall do this or that.” But now ye glory in your presumptions: all such glorying is evil. He then who knows to do good and doeth it not, is guilty of sin.
+<sup>15</sup> On the contrary ye ought to say, “If the Lord will, and we live, we shall do this or that.” But now ye glory in your presumptions: all such glorying is evil. He then who knows to do good and doeth it not, is guilty of sin.
 
 <!-- PAGE 90 -->
 
-<span style="color:#800000">1</span> Come now ye rich, weep and howl for your miseries, which shall come upon *you.* <span style="color:#800000">2</span> Your riches are become rotten, and your garments are eaten by moths;
+<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
 
-<span style="color:#800000">3</span> Your gold and silver are rusted, and their rust will be a witness against you, and shall eat all your flesh as fire: ye have heaped together a treasure for the last days.
+<sup>1</sup> Come now ye rich, weep and howl for your miseries, which shall come upon *you.*
 
-<span style="color:#800000">4</span> Behold the wages of the workmen, who have reaped your fields, fraudulently kept back by you, loudly cry; and the cries of those who have been reaping have entered into the ears of the Lord of Sabaoth.
+<sup>2</sup> Your riches are become rotten, and your garments are eaten by moths;
 
-<span style="color:#800000">5</span> In pleasures have ye lived on the earth, and have been wanton; ye have nourished your hearts as in a day of slaughter.
+<sup>3</sup> Your gold and silver are rusted, and their rust will be a witness against you, and shall eat all your flesh as fire: ye have heaped together a treasure for the last days.
 
-<span style="color:#800000">6</span> Ye have condemned *and* killed the just; and he does not resist you.
+<sup>4</sup> Behold the wages of the workmen, who have reaped your fields, fraudulently kept back by you, loudly cry; and the cries of those who have been reaping have entered into the ears of the Lord of Sabaoth.
 
-<span style="color:#800000">7</span> Be patient then, brethren, until the coming of the Lord. Behold, the husbandman waits for the precious fruit of the earth, having long patience for it, until he receives the early and the latter rain.
+<sup>5</sup> In pleasures have ye lived on the earth, and have been wanton; ye have nourished your hearts as in a day of slaughter.
 
-<span style="color:#800000">8</span> Be ye then also patient; strengthen your hearts; because the coming of the Lord is nigh.
+<sup>6</sup> Ye have condemned *and* killed the just; and he does not resist you.
 
-<span style="color:#800000">9</span> Groan not one against another, brethren, lest ye be condemned; behold, the Judge stands before the door.
+<sup>7</sup> Be patient then, brethren, until the coming of the Lord. Behold, the husbandman waits for the precious fruit of the earth, having long patience for it, until he receives the early and the latter rain.
 
-<span style="color:#800000">10</span> Take, my brethren, the prophets, who have spoken in the name of the Lord, as an example of suffering affliction, and of patience.
+<sup>8</sup> Be ye then also patient; strengthen your hearts; because the coming of the Lord is nigh.
 
-<span style="color:#800000">11</span> Behold, we count them blessed who endure: ye have heard of the patience of Job, and have seen the end of the Lord, that he is very merciful and compassionate.
+<sup>9</sup> Groan not one against another, brethren, lest ye be condemned; behold, the Judge stands before the door.
+
+<sup>10</sup> Take, my brethren, the prophets, who have spoken in the name of the Lord, as an example of suffering affliction, and of patience.
+
+<sup>11</sup> Behold, we count them blessed who endure: ye have heard of the patience of Job, and have seen the end of the Lord, that he is very merciful and compassionate.
 
 <!-- PAGE 91 -->
 
-<span style="color:#800000">12</span> But above all things, my brethren, swear not, neither by heaven, nor by the earth, nor by any other oath; but let yours be, yea, yea; no, no; lest ye fall into condemnation.
+<sup>12</sup> But above all things, my brethren, swear not, neither by heaven, nor by the earth, nor by any other oath; but let yours be, yea, yea; no, no; lest ye fall into condemnation.
 
-<span style="color:#800000">13</span> Is any one afflicted among you? let him pray: is any cheerful? let him sing psalms:
+<sup>13</sup> Is any one afflicted among you? let him pray: is any cheerful? let him sing psalms:
 
-<span style="color:#800000">14</span> Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord;
+<sup>14</sup> Is any sick among you? let him call for the elders of the church; and let them pray over him, anointing him with oil in the name of the Lord;
 
-<span style="color:#800000">15</span> And the prayer of faith shall save the sick, and the Lord shall raise him up: and if he have committed sins, they shall be forgiven him.
+<sup>15</sup> And the prayer of faith shall save the sick, and the Lord shall raise him up: and if he have committed sins, they shall be forgiven him.
 
-<span style="color:#800000">16</span> Confess mutually your sins, and pray for one another, that ye may be healed: the efficacious prayer of a righteous man availeth much.
+<sup>16</sup> Confess mutually your sins, and pray for one another, that ye may be healed: the efficacious prayer of a righteous man availeth much.
 
-<span style="color:#800000">17</span> Elias was a man subject to passions in the like manner as we; and he earnestly prayed that it might not rain; and it rained not on the earth for three years and six months:
+<sup>17</sup> Elias was a man subject to passions in the like manner as we; and he earnestly prayed that it might not rain; and it rained not on the earth for three years and six months:
 
-<span style="color:#800000">18</span> And he prayed again, and the heaven gave rain, and the earth brought forth its fruit.
+<sup>18</sup> And he prayed again, and the heaven gave rain, and the earth brought forth its fruit.
 
-<span style="color:#800000">19</span> My brethren, if any one among you err from the truth, and some one convert him;
+<sup>19</sup> My brethren, if any one among you err from the truth, and some one convert him;
 
-<span style="color:#800000">20</span> Let him know, that he who converts a sinner from the error of his way shall save a soul from death, and shall cover a multitude of sins.
+<sup>20</sup> Let him know, that he who converts a sinner from the error of his way shall save a soul from death, and shall cover a multitude of sins.
 
 <!-- PAGE 92 -->
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">FOOTNOTES</span></p>
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 [^f1]: The salutation is peculiar; but in the same form with the letter send to Antioch by the Apostles, (of whom James was one,) and the church at Jerusalem, Acts 15:23. It is therefore apostolic, although adopted from a form commonly used by the heathen writers. See Acts 23:26. John in John 2:10 and John 2:11 uses the verb <span style="color:#0000d4">χαίζειν</span> in a similar sense; and it means properly to rejoice. It being an infinitive, the verb <span style="color:#0000d4">λέγω</span>, to say or to bid, is put before it by John, and is evidently understood here. Hence the salutation may thus be rendered, — “James, a servant of God and of the Lord Jesus Christ, bids, (or sends, or wishes) joy to the twelve tribes who are in their dispersion.” There had been an *eastern* and a *western* dispersion, the first at the Assyrian and Babylonian captivity, and the second during the predominancy of the Grecian power, which commenced with Alexander the Great. As this epistle was written in Greek, it was no doubt intended more especially for those of the latter dispersion. But the benefit of the eastern dispersion was soon consulted, as the very *first* version of the New Testament was made into this language, that is, the Syriac; and this was done at the beginning of the second century.
 
@@ -1058,6 +1431,8 @@ Some copies have *his soul*, which makes no change in the sense. I, however, pre
 
 [^f14]: It may be rendered thus, — ”The same shall be blessed in (or by) the doing of it,” that is, the work. The very doing of the law of liberty, of what the gospel prescribes, makes a man blessed or happy.
 
+<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
+
 [^f15]: It is commonly admitted to be an interrogatory sentence: “And do ye not make a difference among (or, in) yourselves, and become judges, having evil thoughts?” literally, “judges of evil thoughts,” it being, as they say, the genitive case of possession. Or the words may be rendered, “and become judges of evil (or, false) reasonings?” or as *Beza* renders the sentence, “and become judges, reasoning falsely,” concluding that the rich man was good and the poor man bad. It is said by *Beza* and others, that<span style="color:#0000d4">διαχρίνομαι</span>never means to be judged or condemned, but to distinguish, to discriminate, to make a difference, and also to contend and to doubt. The difference made here was the respect of persons that was shewn, and they made this difference in themselves, in their own minds, through the perverse or false thoughts or reasonings which they entertained. But it appears that these preferences were shewn, not to the members of the Church, but to such strangers as might happen to come to their assemblies.
 
 [^f16]: When he says “Can faith save him?” his meaning is “Can the faith which he says he has save him?” that is, faith which is dead and produces no works; for that is the faith clearly intended here, as it appears from what follows. To make the meaning more evident, *Macknight* renders the sentence thus, — ”Can this faith save him?” that is, the faith that has not works.
@@ -1078,13 +1453,15 @@ Some copies have *his soul*, which makes no change in the sense. I, however, pre
 
 [^f22]: The last verse is left unnoticed, — <span style="color:#000080">James 2:26 “For as the body without the spirit is dead, so</span> <span style="color:#000080">faith without works (or, having no works) is dead.”</span> The meaning is not, that works are to faith what the spirit is to the body, for that would make works to be the life of faith, the reverse of the fact; but the meaning is, that faith having no works is like a dead carcass without life.
 
+<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
+
 [^f23]: “The course of nature,” or the compass of nature, that is, all that is included in nature, means evidently the same with “the whole body” in the preceding clause. There is no sense, compatible with the passage, in what some have suggested, “the whole course of life;” for what idea is conveyed, when we say that the tongue inflames or sets in a flame the whole course of life? But there is an intelligible meaning, when it is said, that the tongue sets in a flame the whole machinery of our nature, every faculty that belongs to man.
 
 <!-- PAGE 98 -->
 
 [^f24]: “A bad tongue is the organ of the devil.” — *Estius*.
 
-[^f25]: There is a different reading at the end of the James 3:12, adopted by *Griesbach*, though rejected by Mill and others: <span style="color:#0000d4">ou[twv ούτε</span> <span style="color:#0000d4">ἁλυχὸν γλυχὺ ποιῆσαι u[dwr</span>, “So neither can salt water produce sweet.” This reading is favored by the *Syr.* and *Vulg.*, though the words are somewhat different.
+[^f25]: There is a different reading at the end of the James 3:12, adopted by *Griesbach*, though rejected by Mill and others: <span style="color:#0000d4">ou[twv ou]te</span> <span style="color:#0000d4">ἁλυχὸν γλυχὺ ποιῆσαι u[dwr</span>, “So neither can salt water produce sweet.” This reading is favored by the *Syr.* and *Vulg.*, though the words are somewhat different.
 
 [^f26]: “Who is wise and intelligent among you?” let him by a good conduct shew his works in meekness of wisdom.” The arrangement here is according to what is common in scripture: Wisdom the effect first, then knowledge the cause or what precedes it. In what follows the order is reversed; knowledge distinguishes between good and bad works, and the good ought to be exhibited with that meekness which wisdom dictates.
 
@@ -1097,6 +1474,8 @@ Some copies have *his soul*, which makes no change in the sense. I, however, pre
 <!-- PAGE 99 -->
 
 [^f30]: The word <span style="color:#0000d4">ἀδιύχριτος</span> is found only here, and has been variously rendered, because the verb from which it comes has various meanings, — to discern, to make a difference, to judge, to examine, to contend or litigate, and to doubt. It is rendered by the *Vulg.*, as “not judging” — uncensorious; by *Beza*, “without contending” — incontroversial; by *Erasmus*, “making no difference” — impartial; and by *Hammond*, “not doubting,” *i.e.*, as to the faith. “Uncensorious ,” or, “impartial;” seems the most suitable rendering; not given to rashness in judging of others, or not shewing respect of persons, previously condemned in James 2:1. Then follows “undissembling,” not saying one thing and meaning another. There seems to be a complete contrast between the two kinds of wisdom. The wisdom from above is not envious, but pure; is not contentious, but peaceable; does not create confusion, but is patient and conciliatory; and instead of producing “every evil work,” it is full of mercy or benevolence, and of the fruits of benevolence, being not censorious or partial in judgment, and not dissembling, or acting dishonestly. By this comparison, we see what were some of the things included in “every evil work;” they were the reverse of mercy or benevolence, and its fruits, even censoriousness or partiality, and dissimilation. And yet those who exhibited all those evil things thought that they had wisdom! and even gloried in it!
+
+<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
 
 [^f31]: Invidia Siculi non invenere tyranni Majus tormentum. — EPIST. Lib. I. 2:58.
 
@@ -1117,6 +1496,8 @@ Some copies have *his soul*, which makes no change in the sense. I, however, pre
 [^f37]: The words may be rendered thus, “If the Lord will, we shall both live and do this or that.” So that living and doing are both dependent on God’s will.
 
 <!-- PAGE 102 -->
+
+<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
 
 [^f38]: Many commentators, such as *Grotius*, *Doddridge*, *Macknight*, and *Scott,* consider that the Apostle refers at the beginning of this chapter, not to professing Christians, but to unbelieving Jews. There is nothing said that can lead to such an opinion: and if the two preceding chapters were addressed (as admitted by all) to those who *professed* the faith, there is no reason why this should not have been addressed to them; the sins here condemned are not worse than those previously condemned. Indeed, we find by the Epistles of Peter, and by that of Jude, that there were men professing religion at that time, who were not a whit better (if not worse) than many who profess religion in our age. Besides, it was not unusual , in addresses to Christians, to address unbelievers. Indeed, Paul expressly says, “What have I to do to judge them that are without?” That there were rich men professing the gospel at that time, is evident from James 1:10.
 

@@ -164,6 +164,16 @@ VOLUMES = {
         'header_y_max': 55,
         'latin_x_min': 200,
     },
+    # Ages Digital Library sabda.org 版 (2026-07 下载, 464 pages)
+    # - 2 列双语, LATIN_X_MIN=200, book_num=58
+    # - <58NNNN> 段头; F<N> 正文脚注上标; FT<N> 章末/附录脚注定义 (从 p392 起 FOOTNOTES 段)
+    # - 红色 800000 verse 短语; 蓝色 0000d4 交叉引用; Greek 用 <><~{}+] transliteration
+    # - 复用 ages_phil handler (2 列双语, 用 §11 双语 table 路径)
+    'hebrews': {
+        'format': 'ages_phil',
+        'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_HEBR.pdf',
+        'out':  os.path.join(BASE, 'calvin_raw/hebrews/calvin_hebrews_structured.txt'),
+    },
     '1cor-vol1': {
         'format': 'ages_corinth',
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin_gelinduo1.pdf',
@@ -3052,11 +3062,17 @@ def phil_reconstruct_page(page, page_num=None):
     scripture_buffer_la = []   # Latin (right column) lines accumulated
 
     def _split_verses(text: str) -> list[tuple[str, str]]:
-        """Split `1. text 2. text 3. text` 序列为 [(verse_num, text), ...]"""
+        """Split `1. text 2. text 3. text` 序列为 [(verse_num, text), ...]
+        Ages 有两种格式:
+          - 带点: `1. James, a servant...` (Hebrews 等)
+          - 裸数字: `1 James, a servant...` (James 等)
+        正则允许可选 `.`；后续词首字母可 upper 或 lower（Titus Latin `2 in spem`
+        以小写起首，不允许 lowercase 会漏 v.2/v.3 拆分）
+        """
         if not text.strip():
             return []
-        # 在每个段首 verse-num 处切分；保留 verse num 作为 key
-        parts = re.split(r'(?:^|(?<=\s))(\d+)\s*\.\s+', text.strip())
+        # 在每个段首 verse-num 处切分；`.` 可选; 后跟 letter/quote/[ 都算
+        parts = re.split(r'(?:^|(?<=\s))(\d+)\.?\s+(?=[A-Za-z(“"\'\[])', text.strip())
         # parts: ['', '1', 'Paul, called...', '2', 'Unto the church...', '3', 'Grace ...']
         result = []
         i = 1
@@ -3116,6 +3132,26 @@ def phil_reconstruct_page(page, page_num=None):
                 r'^<(\d{6,7})>\s*(\d?\s*[A-Z][A-Za-z]*(?:\s\d)?[A-Z\s]*?\d+:\d+(?:[-,]\d{1,3})?)\s*$',
                 line_text,
             )
+            # Hebrews CAL_HEBR.PDF chapters 3+ 用 `HEBREWS CHAPTER N:M(-M)?` 无 <58NNNN> 前缀
+            # Also handles "James CHAPTER N:M" if similar edition exists. group(1)=None
+            # 后续 emit H2 时需检测 group(1)/(2) 兼容
+            if not m:
+                m2 = re.match(
+                    r'^(\d?\s*[A-Z][A-Za-z]+(?:\s\d)?[A-Z\s]*?)\s+CHAPTER\s+(\d+):(\d+)(?:-(\d+))?\s*$',
+                    line_text,
+                )
+                if m2:
+                    # 合成 fake groups 兼容 sec_match.group(1) / group(2)
+                    class FakeMatch:
+                        def __init__(self, book, ch, vf, vt):
+                            code = None
+                            self._g = (
+                                code,
+                                f'{book.strip()} {ch}:{vf}' + (f'-{vt}' if vt else ''),
+                            )
+                        def group(self, i):
+                            return self._g[i - 1]
+                    m = FakeMatch(m2.group(1), m2.group(2), m2.group(3), m2.group(4))
             if m:
                 sec_match = m
                 sec_line_idx = li_idx
@@ -3154,7 +3190,11 @@ def phil_reconstruct_page(page, page_num=None):
         if treat_as_scripture:
             if sec_match:
                 # Emit H2 first
-                output_lines.append(f'[H2] <sty c="800000" i="0"><{sec_match.group(1)}></sty>{sec_match.group(2)}')
+                ages_code = sec_match.group(1)
+                if ages_code:
+                    output_lines.append(f'[H2] <sty c="800000" i="0"><{ages_code}></sty>{sec_match.group(2)}')
+                else:
+                    output_lines.append(f'[H2] {sec_match.group(2)}')
                 # Re-split lines, skipping the section header line itself
                 line_lefts = []
                 line_rights = []

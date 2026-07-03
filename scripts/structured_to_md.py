@@ -121,6 +121,15 @@ def convert_ages_greek(text: str) -> str:
         return f'\x00S{len(sty_opens)-1:04d}\x00'
     text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]">', _stash_open, text)
     text = text.replace('</sty>', '\x00E\x00')
+    # Hide KJV-supplied [word] brackets — Ages uses `[his]` / `[he saith]` for
+    # KJV translator-inserted words. Inside `[...]` the trailing `]` looks like
+    # a Greek acute marker to _AGES_GR_PAT (hebrews v.2 `[his]` → `[ηις`).
+    # Stash short `[word...]` blocks (letters + spaces only, no digits/tags).
+    kjv_brackets = []
+    def _stash_kjv(m):
+        kjv_brackets.append(m.group(0))
+        return f'\x00K{len(kjv_brackets)-1:04d}\x00'
+    text = re.sub(r'\[[A-Za-z][A-Za-z\s]{0,30}\]', _stash_kjv, text)
     def _repl(m):
         if m.group(1):
             return m.group(1)
@@ -157,6 +166,10 @@ def convert_ages_greek(text: str) -> str:
         return sty_opens[idx]
     text = re.sub(r'\x00S(\d{4})\x00', _restore_open, text)
     text = text.replace('\x00E\x00', '</sty>')
+    # Restore KJV [word] brackets
+    def _restore_kjv(m):
+        return kjv_brackets[int(m.group(1))]
+    text = re.sub(r'\x00K(\d{4})\x00', _restore_kjv, text)
     return text
 
 

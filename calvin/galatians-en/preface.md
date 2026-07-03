@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: galatians-en
 book_name: "Calvin on Galatians"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-07-02 17:45
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -155,5 +155,7 @@ In the *fifth* Chapter, Galatians 5, he exhorts them to hold fast the Liberty wh
 
 
 [^f12]: “En quoy consiste ceste liberte, et quel en est le vray et droit usage” “In what that liberty consists, and what is the true and lawful use of it.”
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 
