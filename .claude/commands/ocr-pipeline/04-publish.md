@@ -154,6 +154,7 @@ verse-count dict。
 | H | **OCR 段落落地噪声**（含跨页强切段 + 段落塞错 section + cascade 错锚）| ① PDF 一段被 OCR 切两段（第二段以 "另外/同样/再者" 起首） ② 不带 marker 的 bare-CJK 段塞到错的 section（如 v.25 commentary 末段被塞进 section 3:19-24） ③ **cascade misplacement**：narrative 短语（非真 verse 引文）被 Pass 1/2 升格为 `**N:V。** *PHRASE*`，紧跟的多个无 marker 续段全部塞到 verse N，整组错位（如 john/4 "现在我们看清楚了问题所在" 被错升 v.42，连带"现在我们明白"+"如今在天主教里"两段一起塞到 v.42） | OCR raw 段落落地位置受跨页 / 脚注溢出 / restructure 启发式影响；published md 阶段段落已无 verse 归属信号；CUV fuzzy match 太宽容 narrative 短语（如"现在我们" prefix 命中 v.42 的"现在我们信"） | ①② **完全无法自动检测**——bare-CJK 段不含 CUV phrase 也不含 marker；review-only 扫描（§2.5）人工对照 PDF 修。③ **可半自动**：扫 `**N:V。** *PHRASE*` header，若 PHRASE 在 CUV verse N:V 内最长连续匹配 < 3 字则标红（见 §2.5 Gate-Weak-Phrase-Match） |
 | I | **跨页合并残留尾片段（重复段）** | 跨页前后两半已正确合并成完整段，但 page 头侧片段也残留为独立的下一段，造成同一段文字"完整段 + 尾片段"重复（如 john/4 v.28 段尾"面前显明..."独立成段；john/14 v.22 段尾"别处曾告诉门徒..."同样模式） | publish restructure 既做了"跨页 merge"又没清掉被 merge 的 page 头片段 | **可自动检测**：扫连续两段 (prev, cur)，若 cur 前 15-25 字 substring 在 prev 内出现，则 cur 是 prev 的尾片段重复，应整段删除。详 §2.5 Gate-Duplicate-Tail-Fragment |
 | J | **单 verse 多段顺序倒置（bold 前缀挂错段）** | 同一 verse 内 Calvin 写了多段 commentary（按 OCR raw verse marker 标第一段），但 published 把 `**N:V。**` bold 前缀挂到了非首段，造成两段顺序对调（如 john/4 v.29 published "将我素来所行" 在前、"你们来看" 在后，但 OCR raw page_0144 line 5/7 显示"你们来看"是带 verse marker 的首段） | publish 用 CUV phrase fuzzy match 给 v.N 选 bold 锚段时，若多段 phrase 都命中同一 verse，picker 没保证选 OCR raw 中带 verse marker 的那段 | **半自动检测**：单 verse 多段时去 OCR raw 找带 verse marker（如 "29 你们..." / "①..." / "㉙..."）的那段，phrase 必须等于 published 中带 bold 前缀的首段。Calvin 写作顺序 ≠ CUV 字符位置顺序（如 v.4:42 Calvin 先讨论"不是因为你的话"后讨论"现在我们信"），所以**严禁**直接用 CUV position 排序。详 §2.5 Gate-Intra-Verse-Order |
+| K | **跨页拆句 —— 前一段的宾语/短语被误当作下一段 italic keyword** | 前一段结尾在页尾被截断（如 "因为他实在爱"），下一页首出现 `*他们。* 的确，他道成肉身...` 独立段；OCR/publish 把 `他们。` 误当 italic verse keyword 起新段。渲染出来：前一段主语宾语缺失（"他实在爱" 悬空），孤立 `*他们。*` 段的关键词是一个代词（他们/我们/你们/它/她），点开无法对应任何原文经文短语 | ① OCR 在页边界把跨页续句切成两段。② 下一页开头的短词（尤其宾语代词）被 OCR 加 italic 或本身来自 raw 的错标。③ publish restructure 未做"续段回粘"，把独立段视为新 keyword commentary。（2026-07-03 john/13 v.33 尾片段"他们. 的确, 他道成肉身, 目的就是要成为我们的弟兄"被错置到 13:1 与 13:2 anchor 之间） | **可自动检测**：`*X。*` italic keyword 起首段，若 X 长度 ≤ 3 汉字且属于代词集 `{他,她,它,他们,她们,我们,你们,它们,自己}`，且**前一段末字非。！？** ——极大概率是跨页拆句误标。详 §2.5 Gate-Pronoun-Keyword-Continuation |
 
 **所有失效模式公共修复入口 = §2.1 五件套**：restore → relocate → cross-chapter →
 sort → dedupe → Gate-Section-Order = 0。
@@ -505,6 +506,46 @@ for f in sorted(Path('calvin/<book>').glob('*.md')):
 "门徒问：还是他父母" 在 v.9:2 讨论"父母有罪"也命中 v.9:3 CUV "父母" 字符）；
 4 字阈值偏松。命中后人工对照 OCR raw 看裸段开头是否带 verse marker（① ② ③
 ❶ ❷ ❸ 等），有 marker 即真正丢失，无 marker 即正常 continuation。
+
+#### Gate-Pronoun-Keyword-Continuation（失效模式 K）
+
+实战 (2026-07-03 john/13 v.33)：OCR 页 0461 首段是`*他们。* 的确，他道成肉身，
+目的就是要成为我们的弟兄` —— 上一页 v.33 commentary 尾"因为他实在爱"没写完，
+"他们" 是 "爱" 的宾语被跨页切走。OCR 把 `他们。` 当成 italic keyword，publish
+按 keyword 起新段，导致这段被错置到 v.33 之前的 v.1 与 v.2 anchor 之间。渲染后
+读者看到：
+- 前一段 v.33 commentary 悬空："...因为他实在爱" (没写完)
+- 后面孤立 `*他们。*` 段起首，不像 Calvin 会讨论的 keyword（原文 keyword 是
+  `*Little children*` 小子们，不是"他们"）
+
+**检测规则**：每章扫全部 italic-keyword 起首段 `*(X)。* rest`，若同时满足：
+1. `X` 长度 ≤ 3 汉字，且 X ∈ 代词集 `{他,她,它,他们,她们,我们,你们,它们,自己,这,那,此}`
+2. 前一段末字非 `。！？` 句末标点（说明前段被截断）
+
+→ 极大概率是跨页拆句错标。人工对照 OCR raw 找回归属，合并回前段。
+
+```python
+# Gate 检测代码
+import re
+from pathlib import Path
+PRONOUNS = {'他','她','它','他们','她们','我们','你们','它们','自己','这','那','此'}
+for f in sorted(Path('calvin/<book>').glob('*.md')):
+    if not f.stem.isdigit(): continue
+    paras = f.read_text(encoding='utf-8').split('\n\n')
+    for i in range(1, len(paras)):
+        m = re.match(r'^\*([一-鿿]{1,3})。\*\s+', paras[i])
+        if not m: continue
+        if m.group(1) not in PRONOUNS: continue
+        prev = re.sub(r'<[^>]+>', '', paras[i-1]).strip()
+        if not prev: continue
+        if prev[-1] not in '。！？!?': continue if False else None
+        # 前段末字非标点 → 极可能是被截断
+        if prev[-1] not in '。！？!?':
+            print(f'{f.name}: 段 {i} 起首 *{m.group(1)}。* 疑跨页拆句 (前段末字="{prev[-1]}")')
+```
+
+**修复方式**：删掉孤立段的 `*代词。*` italic 前缀 → 剩余文本作为宾语并入前段
+末尾。示例见 commit `d17ae7d8`（john/13 v.33 尾片段 relocate）。
 
 ### 2.4 publish 阶段为何会产出乱序？（最深层根因）
 
