@@ -17,7 +17,7 @@
     color: inherit;
     border-bottom: none;
     background: transparent;
-    cursor: inherit;
+    cursor: text;
     white-space: inherit;
     text-decoration: none;
 }
@@ -147,12 +147,19 @@
     var bookPat = BOOKS.map(function(b){
         return b[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
     }).join('|');
-    // 经文末尾 verses 部分：v1[-v2] | v1, v2[, v3...]  支持范围和逗号列表
-    // 例: "8:15"  "8:15-17"  "12:11, 12"  "12:1, 5, 10"
-    var VERSES_TAIL = '(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3})|((?:\\s*[,，]\\s*\\d{1,3}){1,9}))?';
-    // 书名后可选空格（"罗马书 8:15" 也要识别）
+    // 经文末尾 verses 部分：v1[-v2][、v3、v4...]  支持范围和逗号/顿号列表混合
+    // 例: "8:15"  "8:15-17"  "12:11, 12"  "12:1, 5, 10"  "8:16-18、23"  "8:15、17-19、22"
+    var VERSES_TAIL = '(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?((?:\\s*[,，、]\\s*\\d{1,3}(?:\\s*[－\\-–—]\\s*\\d{1,3})?){0,9})';
+    // Format A: 书名后可选空格（"罗马书 8:15" 也要识别; `《...》` 括号可选）
+    // 允许两侧 `《》` / `〈〉` 包裹
     var REF_RE = new RegExp(
-        '(' + bookPat + ')\\s*(\\d{1,3})\\s*[：:]\\s*' + VERSES_TAIL,
+        '[《〈]?(' + bookPat + ')[》〉]?\\s*(\\d{1,3})\\s*[：:]\\s*' + VERSES_TAIL,
+        'g'
+    );
+    // Format C: `《诗篇》第 118 篇 25 节` / `《以赛亚书》第 6 章 9 节` / `《罗马书》第 8 章 1 节`
+    // 中文口语式引用: 第N章|篇 M 节[-M2 节]
+    var REF_CN_RE = new RegExp(
+        '《(' + bookPat + ')》\\s*第\\s*(\\d{1,3})\\s*[章篇]\\s*(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?\\s*节',
         'g'
     );
     // Bare reference: （49：7）等 — uses current book
@@ -162,19 +169,28 @@
     );
 
     // 把正则匹配的 verse-tail group 解析为 verse number 数组
-    // m[3]=v1 必有, m[4]=v2 (range end) 或 m[5]=", v2, v3..." 逗号串
+    // v1: 起始节, vEnd: 范围末（可选）, vList: "、v3-v4、v5..." 追加列表（可选）
     function parseVerses(v1, vEnd, vList) {
         var arr = [parseInt(v1)];
         if (vEnd) {
             var end = parseInt(vEnd);
             for (var v = arr[0] + 1; v <= end; v++) arr.push(v);
-        } else if (vList) {
-            vList.split(/[,，]/).forEach(function(s){
+        }
+        if (vList) {
+            // 每段可能是单节 "23" 或范围 "17-19"
+            vList.split(/[,，、]/).forEach(function(s){
                 s = s.trim();
-                if (s) arr.push(parseInt(s));
+                if (!s) return;
+                var rm = s.match(/^(\d+)\s*[－\-–—]\s*(\d+)$/);
+                if (rm) {
+                    var a = parseInt(rm[1]), b = parseInt(rm[2]);
+                    for (var v = a; v <= b; v++) arr.push(v);
+                } else {
+                    arr.push(parseInt(s));
+                }
             });
         }
-        // dedupe + sort
+        // 去重（保留顺序）
         var seen = {}, out = [];
         arr.forEach(function(n){ if(!seen[n]){ seen[n]=1; out.push(n); }});
         return out;
@@ -267,7 +283,7 @@
             + ' data-ch="' + ch + '"'
             + ' data-verses="' + verses.join(',') + '"'
             + (label ? ' data-label="' + escHtml(label) + '"' : '')
-            + ' title="点击查看经文">'
+            + '>'
             + escHtml(displayText) + '</span>';
     }
 
@@ -290,7 +306,7 @@
         }
         if (skip) continue;
         REF_RE.lastIndex = 0; BARE_RE.lastIndex = 0;
-        if (REF_RE.test(tn.textContent) || (PAGE_VOL && BARE_RE.test(tn.textContent)))
+        if (REF_RE.test(tn.textContent) || REF_CN_RE.test(tn.textContent) || (PAGE_VOL && BARE_RE.test(tn.textContent)))
             textNodes.push(tn);
     }
 
@@ -303,7 +319,7 @@
 
         // 同书续接: "出埃及记 18:22；24:1" 分号后跟 ch:v，沿用上一个 book
         // 锚定在上次匹配尾部紧贴位置（^ 在子串上），最多续 5 段
-        var CONT_RE = /^\s*[;；]\s*(\d{1,3})\s*[：:]\s*(\d{1,3})(?:\s*[－\-–—]\s*(\d{1,3})|((?:\s*[,，]\s*\d{1,3}){1,9}))?/;
+        var CONT_RE = /^\s*[;；]\s*(\d{1,3})\s*[：:]\s*(\d{1,3})(?:\s*[－\-–—]\s*(\d{1,3}))?((?:\s*[,，、]\s*\d{1,3}(?:\s*[－\-–—]\s*\d{1,3})?){0,9})/;
 
         REF_RE.lastIndex = 0;
         while ((m = REF_RE.exec(text)) !== null) {
@@ -336,6 +352,33 @@
                 endIdx += contLen;
             }
             REF_RE.lastIndex = endIdx;
+        }
+
+        // Format C: `《诗篇》第 118 篇 25 节` 中文口语式
+        REF_CN_RE.lastIndex = 0;
+        while ((m = REF_CN_RE.exec(text)) !== null) {
+            var vol = bookMap[m[1]];
+            if (!vol) continue;
+            var bookName = m[1];
+            var ch = parseInt(m[2]);
+            var v1 = parseInt(m[3]);
+            var vEnd = m[4] ? parseInt(m[4]) : null;
+            var verses = [v1];
+            if (vEnd) for (var vv = v1 + 1; vv <= vEnd; vv++) verses.push(vv);
+            // Skip if overlaps with an earlier match
+            var mEnd = m.index + m[0].length;
+            var overlapCN = false;
+            for (var ii = 0; ii < matches.length; ii++) {
+                if (m.index < matches[ii].end && mEnd > matches[ii].index)
+                { overlapCN = true; break; }
+            }
+            if (overlapCN) continue;
+            var vSuffixCN = vEnd ? (v1 + '-' + vEnd) : String(v1);
+            matches.push({
+                index: m.index, end: mEnd,
+                vol: vol, ch: ch, verses: verses,
+                display: m[0], label: bookName + ch + '：' + vSuffixCN
+            });
         }
 
         if (PAGE_VOL) {
