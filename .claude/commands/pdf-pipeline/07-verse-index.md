@@ -1,11 +1,39 @@
 # Step 7: 注释经文索引（verse-index）
 
+**Step 7 是每一本中文注释书 publish 后的必做步骤**——不是可选项。
+publish-zh 完成后必跑一次；新章节追加翻译后重跑即可。
+
 为 calvin/<book>/ 生成"按章逐节"的索引页，点击节号胶囊跳到对应注释段。
-仅在 publish 完成后做一次；新章节追加翻译后重跑即可。
 
 参考实现：
 - `scripts/build_romans_verse_index.py`（romans，每节一个胶囊 → `#romans-N-V`）
-- `scripts/build_acts_verse_index.py`（acts，按范围锚点展开为单节胶囊）
+- `scripts/build_acts_verse_index.py`（acts，按范围锚点展开为单节胶囊；**推荐 clone 模板**）
+- `scripts/build_1thess_verse_index.py`（1thess，clone acts 加 anchor 前缀替换）
+- `scripts/build_1cor_verse_index.py` / `scripts/build_2cor_verse_index.py` / `scripts/build_john_verse_index.py`
+
+## 已建 verse-index 的书
+
+| 书 | 章数 | pills | 生成脚本 |
+|---|---|---|---|
+| romans | 16 | ~500 | `build_romans_verse_index.py` |
+| acts | 28 | ~700 | `build_acts_verse_index.py` |
+| john | 21 | ~700 | `build_john_verse_index.py` |
+| 1corinthians | 16 | ~400 | `build_1cor_verse_index.py` |
+| 2corinthians | 13 | ~250 | `build_2cor_verse_index.py` |
+| 1thessalonians | 5 | 72 | `build_1thess_verse_index.py` |
+
+新增中文注释书（如 1timothy / 2timothy / titus / hebrews / james / 2thess 等）publish-zh
+完成后立即建 verse-index：
+
+Checklist:
+- [ ] clone `scripts/build_acts_verse_index.py` → `build_<book>_verse_index.py`
+- [ ] 全局替换 acts → book_id，anchor 前缀 `id="acts-` → `id="<book_id_flat>-"`
+      **注意 `book_id_flat` 是不带连字符的 id**（`1thessalonians-` 不是 `1-thessalonians-`）
+- [ ] 更新中文标题、`title=` 属性、返回链接、"未列出的节号"说明文字
+- [ ] `python3 scripts/build_<book>_verse_index.py` 生成 `calvin/<book>/verse-index/index.html`
+- [ ] `_includes/calvin_intros/<book>.html` 末尾加 📖 经文索引按钮（橙色胶囊，模板见 §5）
+- [ ] `bundle exec jekyll build --quiet` 通过
+- [ ] Gate: `grep 'scripture-anchor.*id="<book>-' calvin/<book>/*.md` 必须 = 空（id 已 relocate 到 commentary-anchor）
 
 入口：`_includes/calvin_intros/<book>.html`（橙色按钮，与首页风格统一）
 
