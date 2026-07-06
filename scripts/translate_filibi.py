@@ -425,6 +425,54 @@ BOOKS = {
             "    wrath to come→将来的忿怒，idols→偶像，conversion→归主/悔改归正"
         ),
     },
+    'titus': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/titus-en',
+        'cache':  ROOT / 'calvin_raw/titus/zh_cache',
+        'out':    ROOT / 'calvin_raw/titus/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《提多书注释》。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签不变：<p style=\"...\"> <strong> <div> <h2 class=\"scripture-anchor\"...> 等\n"
+            "5. 保留 AGES code 与 scripture-box 结构不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）\n"
+            "6. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "7. 圣经书卷/人名用和合本标准译名：\n"
+            "   Titus→提多书，1 Timothy→提摩太前书，2 Timothy→提摩太后书\n"
+            "   1 Thessalonians→帖撒罗尼迦前书，2 Thessalonians→帖撒罗尼迦后书\n"
+            "   1 Corinthians→哥林多前书，2 Corinthians→哥林多后书\n"
+            "   Acts→使徒行传，Matthew→马太福音，Mark→马可福音，Luke→路加福音，John→约翰福音\n"
+            "   Romans→罗马书，Galatians→加拉太书\n"
+            "   Ephesians→以弗所书，Philippians→腓立比书，Colossians→歌罗西书\n"
+            "   Hebrews→希伯来书，James→雅各书，Peter→彼得书，Jude→犹大书，Revelation→启示录\n"
+            "   Genesis→创世记，Exodus→出埃及记，Numbers→民数记，Deuteronomy→申命记\n"
+            "   Psalm(s)→诗篇，Isaiah→以赛亚书，Jeremiah→耶利米书\n"
+            "   Paul→保罗，Titus→提多，Timothy→提摩太，Artemas→亚提马，Tychicus→推基古\n"
+            "   Zenas→西纳，Apollos→亚波罗\n"
+            "   Erasmus→伊拉斯谟，Chrysostom→屈梭多模\n"
+            "   Vulgate→武加大\n"
+            "   Israel→以色列，Egypt→埃及\n"
+            "   Cretans/Cretians→革哩底人，Crete→革哩底\n"
+            "   Pharisees→法利赛人，Sadducees→撒都该人，Gentiles→外邦人，Jews→犹太人\n"
+            "   Ephesus→以弗所，Rome→罗马，Nicopolis→尼哥波立\n"
+            "8. 章节引用格式：提多书 1:5，罗马书 2:23（书卷名 章:节）\n"
+            "9. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "10. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    sanctification→成圣，covenant→约/盟约，atonement→赎罪/挽回祭，\n"
+            "    regeneration→重生，election→拣选，predestination→预定，\n"
+            "    sovereignty→主权，providence→护理，redemption→救赎，\n"
+            "    apostle→使徒，ministry→事奉/职事，doctrine→教义/教训，\n"
+            "    gospel→福音，kingdom of God→神的国，Holy Ghost/Spirit→圣灵，\n"
+            "    hope→盼望，faith→信心，charity/love→爱心/爱，patience→忍耐，\n"
+            "    resurrection→复活，flesh→肉体，Coming (of Christ)→（基督的）降临，\n"
+            "    wrath to come→将来的忿怒，idols→偶像，conversion→归主/悔改归正，\n"
+            "    bishop/elder→监督/长老，presbyter→长老，deacon→执事，\n"
+            "    heretic→异端，schism→分裂，heresy→异端邪说"
+        ),
+    },
     '1thess': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/1thessalonians-en',
