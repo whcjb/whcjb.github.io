@@ -1,12 +1,13 @@
 ---
 layout: calvin-en
-book_id: 1timothy
-book_name: "提摩太前书·加尔文注释"
-title: "前言"
-date: 2026-07-06 15:04
+book_id: 1timothy-en
+book_name: "加尔文提摩太前书注释"
+title: "序言"
+date: 2026-06-02 18:13
 next_section: 1
-next_label: "第一章"
+next_label: "第 1 章"
 ---
+
 
 <!-- PAGE 1 -->
 
@@ -125,3 +126,5 @@ next_label: "第一章"
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">提摩太前书</span></p>
 
 [^f1]: "En l'estat de prestrise, c'est a dire du ministers." "进入长老的职分，即事奉的职分。"
+
+
