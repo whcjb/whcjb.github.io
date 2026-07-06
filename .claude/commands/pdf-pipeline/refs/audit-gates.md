@@ -90,6 +90,42 @@ grep -nE '\*\s+[^*]{0,10}[^0-9\s]\d{1,3}[一-鿿].{0,80}[^0-9\s]\d{1,3}[一-鿿]
 
 ---
 
+## Gate 5f：OCR 扫描版 —— verse-anchor 漂移（段落挂错 verse）
+
+```bash
+F=PATH/TO/FILE   # 如 calvin/john/14.md
+BOOK=john        # 与 verse-anchor id 前缀一致
+CH=14
+
+# F1：找 scripture-box 里出现但正文缺 verse-anchor 的 verse
+python3 -c "
+import re,sys
+p=open('$F').read()
+box=set()
+for m in re.finditer(r'<strong>(\d+)\.</strong>', p): box.add(int(m.group(1)))
+anc=set(int(m.group(1)) for m in re.finditer(r'verse-anchor\" id=\"$BOOK-$CH-(\d+)\"', p))
+missing=sorted(box-anc)
+if missing: print('MISSING verse-anchor for:', missing)
+else: print('OK: 所有 scripture-box verse 都有 anchor')
+"
+
+# F2：找同一 verse-anchor 段内含 2+ 个 *keyword。* 段头
+awk -v RS='<h2 class=\"verse-anchor\"' '
+NR>1 { n=gsub(/\*[^*\n]+。\*/,"&"); if(n>=2) print "verse-anchor #"NR" 内含", n, "个 sub-phrase *X。*" }
+' $F | head
+
+# F3：找紧邻 `## 书 N:A-B` header 前的 orphan 段（无 verse 前缀、无 sub-phrase 前缀）
+grep -B2 '^## 约翰福音' $F | grep -E '^[^\*<#].{5,200}$' | head
+```
+
+- F1 命中 = anchor 缺失，见 [anti-patterns.md M5f](anti-patterns.md#m5f)
+- F2 命中 = 一个 anchor 下有多个 sub-phrase，可能吞掉了相邻 verse 的段
+- F3 命中 = orphan 短句待归位
+
+**Fix**：对照 `calvin_raw/<book>-scan/ocr/page_NNNN.md` 逐段核对 verse marker（`⑳`/`㉑`/`③9`），迁移段落 + 补 anchor + 加 `**书 N:V。**` 前缀。**严禁**用英文源反译判断段落归属。
+
+---
+
 ## Gate 5c：OCR 扫描版 —— 脚注 def 泄漏进正文
 
 ```bash

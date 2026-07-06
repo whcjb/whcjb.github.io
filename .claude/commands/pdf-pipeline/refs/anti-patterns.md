@@ -480,6 +480,59 @@ if "**" not in p:
 
 ---
 
+## M5f. OCR 扫描版：verse-anchor 漂移（段落挂错 verse）
+
+**Trigger**：`calvin/<book>/N.md` 里出现下列任一形态（Gate 5f 命中）：
+
+- **F1（anchor 缺失）**：scripture-box 里出现 v.V，但正文无对应 `<h2 class="verse-anchor" id="X-N-V">`。
+- **F2（相邻 orphan italic）**：某 `<h2 verse-anchor id="X-N-V">` 段内含**多个** `*keyword。*` 段头，但相邻 verse V±1 却缺 anchor。
+- **F3（page-top orphan 短句）**：紧接下一个 `## X N:A-B` header 前，出现一个仅 1 句、无 `**书 N:V。**` 前缀、无 `*keyword。*` 前缀的 orphan 段。
+- **F4（sub-phrase 顺序反）**：同一 verse 内 `*keyword₁*` `*keyword₂*` 的顺序与 OCR raw 页扫描顺序相反。
+
+**典型形态**（john/11 + john/13 集中踩过）：
+
+```
+# F1 案例：john/11 v.27 缺失
+<h2 verse-anchor id="john-11-2">约翰福音 11:2</h2>
+**约翰福音 11:2。** *这马利亚就是那用香膏抹主…*  <!-- 正常 -->
+
+*主啊，是的。* 基督说自己是复活和生命，马大…  <!-- 这段本是 v.27，被挤到 v.2 与 v.3 之间 -->
+
+<h2 verse-anchor id="john-11-3">约翰福音 11:3</h2>
+```
+
+```
+# F3 案例：john/13 v.23 结尾 orphan
+**约翰福音 13:21。** *心里忧愁。* …叫我们憎恶那些毁坏圣洁职分的人。
+
+这节经文表明：我们责备恶人的时候…      <!-- 本是 v.22 第二段 -->
+
+而人们之间相互的爱除非导向上帝…       <!-- 本是 v.23 段尾一句 -->
+
+## 约翰福音 13:22-28
+```
+
+Signal：
+- OCR raw 中 verse marker 是 circled digit (`⑳` `㉑` `㉒`) 或复合 (`③9` `④0`)。跨页时首行的 marker 常被 OCR 漏识。
+- 若同一句 CUV verse text 在**多个 verse**中重复（e.g., v.21 v.32 都是"主啊，你若早在这里"，v.29 v.32 都可能是"就俯伏在他脚前"），publish 的 fuzzy match 会把两处注释合并到较早的 verse。
+- 注释若跨 sub-phrase（Calvin 引 verse 中间几个短句分别解释），OCR 每个 `*keyword。*` 段头是稳定信号；但 OCR 页起始的 sub-phrase 若被识别成整段续接，就会挂错 verse。
+
+**根因**（`scripts/restructure_scan_book.py` 系列）：
+1. OCR raw 页首字符 `⑳`/`㉑`/`③9` 复合 verse marker 有 20-30% 漏识率（尤其 30+ 复合体），导致该 verse 首段无 verse marker → publish 判定为「上一 verse 续段」。
+2. Fuzzy-match verse quote 时，若 CUV 中同一短语在多个 verse 出现（`主啊，你若早在这里` v.21/v.32、`就俯伏在他脚前` v.29/v.32），无 verse marker 的段落被合并到较早那次匹配。
+3. Sub-phrase promote 时，多个 `*x。*` 头会被按 CUV 文本顺序（不是 OCR 出现顺序）重排——但 Calvin 原文并不总按 CUV 顺序展开。
+
+**Fix**（人工）：
+
+1. **grep 定位**（[Gate 5f](audit-gates.md#gate-5f)）：出所有缺失/可疑 verse-anchor 位置。
+2. **对照 OCR raw**：`calvin_raw/<book>-scan/ocr/page_NNNN.md` 逐页扫，识别 orphan/errant 段所属的 verse marker（circled digit）。**禁止**用英文源反译判断——见 [feedback_no_self_translation_from_en](../../../projects/-Users-yanpeifa-Documents-whcjb-github-io/memory/feedback_no_self_translation_from_en.md)。
+3. **迁移**：删除错位段，补 `<h2 verse-anchor>` 头 + `**约翰福音 N:V。**` 前缀（若段首是 `*keyword。*` sub-phrase 且非本 verse 首段则不加），插入正确位置。
+4. **保留其余上下文**：段落文字**一字不改**（这是翻译成品，不重写）。
+
+**Fix**（工具化 - 未实现）：`restructure_scan_book.py` 增加以 CUV 短语在同一章多 verse 出现次数为特征的 disambiguator；跨页首段若与前段主题跳跃过大，加 verse-anchor probe。
+
+---
+
 ## M6. 章末出现 "CHAPTER N" 居中标记（PDF 没有这内容）
 
 **Trigger**：章节最末显示一个孤立的 "CHAPTER N" 居中标题，PDF 原文该位置无此标记。grep `<p class="title-block-h2"[^>]*>CHAPTER\s+\d+` 在章节文件中命中。
