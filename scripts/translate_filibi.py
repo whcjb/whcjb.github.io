@@ -425,6 +425,73 @@ BOOKS = {
             "    wrath to come→将来的忿怒，idols→偶像，conversion→归主/悔改归正"
         ),
     },
+    'hebrews': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/hebrews-en',
+        'cache':  ROOT / 'calvin_raw/hebrews/zh_cache',
+        'out':    ROOT / 'calvin_raw/hebrews/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《希伯来书注释》。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签不变：<p style=\"...\"> <strong> <div> <h2 class=\"scripture-anchor\"...> 等\n"
+            "5. 保留 AGES code 与 scripture-box 结构不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）\n"
+            "6. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "7. 圣经书卷/人名用和合本标准译名：\n"
+            "   Hebrews→希伯来书，Romans→罗马书，Galatians→加拉太书\n"
+            "   1 Corinthians→哥林多前书，2 Corinthians→哥林多后书\n"
+            "   Ephesians→以弗所书，Philippians→腓立比书，Colossians→歌罗西书\n"
+            "   1 Timothy→提摩太前书，2 Timothy→提摩太后书，Titus→提多书，Philemon→腓利门书\n"
+            "   1 Thessalonians→帖撒罗尼迦前书，2 Thessalonians→帖撒罗尼迦后书\n"
+            "   James→雅各书，Peter→彼得书，Jude→犹大书，Revelation→启示录\n"
+            "   Acts→使徒行传，Matthew→马太福音，Mark→马可福音，Luke→路加福音，John→约翰福音\n"
+            "   Genesis→创世记，Exodus→出埃及记，Leviticus→利未记，Numbers→民数记，Deuteronomy→申命记\n"
+            "   Joshua→约书亚记，Judges→士师记，Ruth→路得记\n"
+            "   1 Samuel→撒母耳记上，2 Samuel→撒母耳记下，1 Kings→列王纪上，2 Kings→列王纪下\n"
+            "   1 Chronicles→历代志上，2 Chronicles→历代志下\n"
+            "   Psalm(s)→诗篇，Proverbs→箴言，Ecclesiastes→传道书，Song of Solomon→雅歌\n"
+            "   Isaiah→以赛亚书，Jeremiah→耶利米书，Lamentations→耶利米哀歌\n"
+            "   Ezekiel→以西结书，Daniel→但以理书\n"
+            "   Hosea→何西阿书，Joel→约珥书，Amos→阿摩司书，Obadiah→俄巴底亚书\n"
+            "   Jonah→约拿书，Micah→弥迦书，Nahum→那鸿书，Habakkuk→哈巴谷书\n"
+            "   Zephaniah→西番雅书，Haggai→哈该书，Zechariah→撒迦利亚书，Malachi→玛拉基书\n"
+            "   Paul→保罗，Timothy→提摩太，Titus→提多\n"
+            "   Abraham→亚伯拉罕，Isaac→以撒，Jacob→雅各，Moses→摩西，Aaron→亚伦\n"
+            "   Melchizedek/Melchisedek→麦基洗德，Levi→利未\n"
+            "   David→大卫，Solomon→所罗门，Enoch→以诺，Noah→挪亚\n"
+            "   Sarah→撒拉，Rahab→喇合，Gideon→基甸，Barak→巴拉，Samson→参孙\n"
+            "   Jephthah→耶弗他，Samuel→撒母耳\n"
+            "   Erasmus→伊拉斯谟，Chrysostom→屈梭多模\n"
+            "   Vulgate→武加大\n"
+            "   Israel→以色列，Egypt→埃及，Sinai→西乃山\n"
+            "   Pharisees→法利赛人，Sadducees→撒都该人，Gentiles→外邦人，Jews→犹太人\n"
+            "   Jerusalem→耶路撒冷\n"
+            "8. 章节引用格式：希伯来书 1:3，罗马书 2:23（书卷名 章:节）\n"
+            "9. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "10. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    sanctification→成圣，covenant→约/盟约，atonement→赎罪/挽回祭，\n"
+            "    regeneration→重生，election→拣选，predestination→预定，\n"
+            "    sovereignty→主权，providence→护理，redemption→救赎，\n"
+            "    apostle→使徒，ministry→事奉/职事，doctrine→教义/教训，\n"
+            "    gospel→福音，kingdom of God→神的国，Holy Ghost/Spirit→圣灵，\n"
+            "    hope→盼望，faith→信心，charity/love→爱心/爱，patience→忍耐，\n"
+            "    resurrection→复活，flesh→肉体，Coming (of Christ)→（基督的）降临\n"
+            "11. 希伯来书专属术语：\n"
+            "    high priest→大祭司，priest/priesthood→祭司/祭司职分\n"
+            "    tabernacle→帐幕，sanctuary→圣所，holy of holies→至圣所\n"
+            "    sacrifice→祭/献祭，offering→供物/祭物，burnt offering→燔祭\n"
+            "    sin offering→赎罪祭，propitiation→挽回祭，expiation→赎罪\n"
+            "    Melchizedek/Melchisedec→麦基洗德，Levitical→利未\n"
+            "    ark of the covenant→约柜，mercy-seat→施恩座\n"
+            "    Old Testament/covenant→旧约，New Testament/covenant→新约\n"
+            "    Mediator→中保，intercession→代求，Redeemer→救赎主\n"
+            "    firstborn→长子，heir→后嗣，inheritance→产业/基业\n"
+            "    Word (of God)→（神的）道/话语"
+        ),
+    },
     'philemon': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/philemon-en',
