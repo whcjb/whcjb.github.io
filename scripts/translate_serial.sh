@@ -13,6 +13,7 @@ case "$BOOK" in
     1timothy) PUBLISH=scripts/publish_1timothy_zh.py; RAW_DIR=calvin_raw/1timothy/zh_chapters; PUB_DIR=calvin/1timothy ;;
     2timothy) PUBLISH=scripts/publish_2timothy_zh.py; RAW_DIR=calvin_raw/2timothy/zh_chapters; PUB_DIR=calvin/2timothy ;;
     titus)    PUBLISH=scripts/publish_titus_zh.py;    RAW_DIR=calvin_raw/titus/zh_chapters;         PUB_DIR=calvin/titus ;;
+    philemon) PUBLISH=scripts/publish_philemon_zh.py; RAW_DIR=calvin_raw/philemon/zh_chapters;      PUB_DIR=calvin/philemon ;;
     1thess)   PUBLISH=scripts/publish_1thess_zh.py;    RAW_DIR=calvin_raw/1thessalonians/zh_chapters; PUB_DIR=calvin/1thessalonians ;;
     2thess)   PUBLISH=scripts/publish_2thess_zh.py;    RAW_DIR=calvin_raw/2thessalonians/zh_chapters; PUB_DIR=calvin/2thessalonians ;;
     *) echo "unknown book: $BOOK"; exit 1 ;;
