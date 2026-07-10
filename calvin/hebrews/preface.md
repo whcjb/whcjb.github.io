@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: hebrews
 book_name: "希伯来书·加尔文注释"
 title: "前言"
-date: 2026-07-10 05:01
+date: 2026-07-10 09:28
 next_section: 1
 next_label: "第一章"
 ---

@@ -137,7 +137,8 @@ def strip_frontmatter(text: str) -> str:
 
 
 def clean_body(body: str) -> str:
-    """移除翻译残留的 <<<END>>>；剥 scripture-anchor 上 inline display:none。"""
+    """移除翻译残留的 <<<END>>>；剥 scripture-anchor 上 inline display:none；
+    规范化经文引用后的 "&c."(etc.) 标记（等/等等 → ……，对齐 romans 约定）。"""
     lines = body.split('\n')
     cleaned = [l for l in lines if l.strip() != '<<<END>>>']
     body = '\n'.join(cleaned)
@@ -146,6 +147,41 @@ def clean_body(body: str) -> str:
         r'\1\2',
         body,
     )
+    body = _normalize_etc_markers(body)
+    return body
+
+
+def _normalize_etc_markers(body: str) -> str:
+    """Calvin 引用经文开头后的 "&c."(etc.) 被 Claude 译成"等/等等"，读起来不自然。
+    改用省略号 ……（与已校准的 calvin/romans 约定一致）。
+
+    仅命中紧跟 </span>（经文/术语引文闭合）之后的 等标记，不动正文中的真词"等"。"""
+    ETC = r'(?:等等?|等语)'      # 等 / 等等 / 等语
+    P = r'[。，；、,;]'           # 全角/半角句读
+    # 1) 引文内已有省略号（…… / ⋯⋯）：只删外部多余的 等标记
+    body = re.sub(
+        rf'((?:……|⋯⋯)[，,]?\*?</span>)[ \t]*[，,]?{ETC}{P}',
+        r'\1 ',
+        body,
+    )
+    # 2) 带 italic 星号的引文（#800000 经文开头）：…… 移入 *…*，去引文末逗号
+    body = re.sub(
+        rf'[，,]?(\*</span>)[ \t]*[，,]?{ETC}{P}',
+        r'……\1 ',
+        body,
+    )
+    # 3) 无 italic 的术语引文（希腊 #0000d4 / navy #000080）：…… 加在 </span> 前
+    body = re.sub(
+        rf'([^*\s])(</span>)[ \t]*[，,]?{ETC}{P}',
+        r'\1……\2 ',
+        body,
+    )
+    # 4) ch2 特例：交替读法 "……或作，既然儿女如此,等等。" 句中第二个 etc（不接 </span>）
+    body = body.replace('，或作,既然儿女如此,等等。', ' 或作：既然儿女如此…… ')
+    body = body.replace('或作,既然儿女如此,等等。', '或作：既然儿女如此…… ')
+    # 收尾：合并多余空格 + 去行尾空白
+    body = re.sub(r'(</span>) +', r'\1 ', body)
+    body = re.sub(r'[ \t]+\n', '\n', body)
     return body
 
 
