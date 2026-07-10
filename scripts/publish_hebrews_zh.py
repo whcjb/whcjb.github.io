@@ -137,8 +137,7 @@ def strip_frontmatter(text: str) -> str:
 
 
 def clean_body(body: str) -> str:
-    """移除翻译残留的 <<<END>>>；剥 scripture-anchor 上 inline display:none；
-    规范化经文引用后的 "&c."(etc.) 标记（等/等等 → ……，对齐 romans 约定）。"""
+    """移除翻译残留的 <<<END>>>；剥 scripture-anchor 上 inline display:none。"""
     lines = body.split('\n')
     cleaned = [l for l in lines if l.strip() != '<<<END>>>']
     body = '\n'.join(cleaned)
@@ -147,15 +146,19 @@ def clean_body(body: str) -> str:
         r'\1\2',
         body,
     )
-    body = _normalize_etc_markers(body)
     return body
+
+
+# 用户目前只要求 ch10/ch11 应用 &c. → …… 规范化；其余章节保持原样（等/等等）
+ETC_NORMALIZE_CHAPTERS = {10, 11}
 
 
 def _normalize_etc_markers(body: str) -> str:
     """Calvin 引用经文开头后的 "&c."(etc.) 被 Claude 译成"等/等等"，读起来不自然。
     改用省略号 ……（与已校准的 calvin/romans 约定一致）。
 
-    仅命中紧跟 </span>（经文/术语引文闭合）之后的 等标记，不动正文中的真词"等"。"""
+    仅命中紧跟 </span>（经文/术语引文闭合）之后的 等标记，不动正文中的真词"等"。
+    仅对 ETC_NORMALIZE_CHAPTERS 里的章节调用（当前 ch10/ch11）。"""
     ETC = r'(?:等等?|等语)'      # 等 / 等等 / 等语
     P = r'[。，；、,;]'           # 全角/半角句读
     # 1) 引文内已有省略号（…… / ⋯⋯）：只删外部多余的 等标记
@@ -309,6 +312,8 @@ def main():
         raw = src.read_text(encoding='utf-8')
         body = strip_frontmatter(raw)
         body = clean_body(body)
+        if isinstance(n, int) and n in ETC_NORMALIZE_CHAPTERS:
+            body = _normalize_etc_markers(body)
         # Claude 有时把 <strong>N.</strong> 翻译回 markdown **N.** —
         # 在 inject_chinese_scripture 前修回 HTML, 否则 _TR_RE 抓不到
         body = re.sub(
