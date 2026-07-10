@@ -492,6 +492,72 @@ BOOKS = {
             "    Word (of God)→（神的）道/话语"
         ),
     },
+    'james': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/james-en',
+        'cache':  ROOT / 'calvin_raw/james/zh_cache',
+        'out':    ROOT / 'calvin_raw/james/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《雅各书注释》。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签不变：<p style=\"...\"> <strong> <div> <h2 class=\"scripture-anchor\"...> 等\n"
+            "5. 保留 AGES code 与 scripture-box 结构不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）\n"
+            "6. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "7. 圣经书卷/人名用和合本标准译名：\n"
+            "   James→雅各书，Hebrews→希伯来书，Romans→罗马书，Galatians→加拉太书\n"
+            "   1 Corinthians→哥林多前书，2 Corinthians→哥林多后书\n"
+            "   Ephesians→以弗所书，Philippians→腓立比书，Colossians→歌罗西书\n"
+            "   1 Timothy→提摩太前书，2 Timothy→提摩太后书，Titus→提多书，Philemon→腓利门书\n"
+            "   1 Thessalonians→帖撒罗尼迦前书，2 Thessalonians→帖撒罗尼迦后书\n"
+            "   1 Peter→彼得前书，2 Peter→彼得后书，Jude→犹大书，Revelation→启示录\n"
+            "   1 John→约翰一书，2 John→约翰二书，3 John→约翰三书\n"
+            "   Acts→使徒行传，Matthew→马太福音，Mark→马可福音，Luke→路加福音，John→约翰福音\n"
+            "   Genesis→创世记，Exodus→出埃及记，Leviticus→利未记，Numbers→民数记，Deuteronomy→申命记\n"
+            "   Joshua→约书亚记，Judges→士师记，Ruth→路得记\n"
+            "   1 Samuel→撒母耳记上，2 Samuel→撒母耳记下，1 Kings→列王纪上，2 Kings→列王纪下\n"
+            "   Psalm(s)→诗篇，Proverbs→箴言，Ecclesiastes→传道书，Song of Solomon→雅歌\n"
+            "   Isaiah→以赛亚书，Jeremiah→耶利米书，Lamentations→耶利米哀歌\n"
+            "   Ezekiel→以西结书，Daniel→但以理书\n"
+            "   Hosea→何西阿书，Joel→约珥书，Amos→阿摩司书，Obadiah→俄巴底亚书\n"
+            "   Jonah→约拿书，Micah→弥迦书，Nahum→那鸿书，Habakkuk→哈巴谷书\n"
+            "   Zephaniah→西番雅书，Haggai→哈该书，Zechariah→撒迦利亚书，Malachi→玛拉基书\n"
+            "   Paul→保罗，James→雅各，Peter→彼得，John→约翰\n"
+            "   Abraham→亚伯拉罕，Isaac→以撒，Jacob→雅各，Moses→摩西\n"
+            "   David→大卫，Solomon→所罗门，Job→约伯，Elijah/Elias→以利亚\n"
+            "   Rahab→喇合，Isaac→以撒\n"
+            "   Erasmus→伊拉斯谟，Chrysostom→屈梭多模，Augustine→奥古斯丁\n"
+            "   Vulgate→武加大\n"
+            "   Israel→以色列，Gentiles→外邦人，Jews→犹太人，Jerusalem→耶路撒冷\n"
+            "8. 章节引用格式：雅各书 1:3，罗马书 2:23（书卷名 章:节）\n"
+            "9. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "10. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    sanctification→成圣，covenant→约/盟约，atonement→赎罪/挽回祭，\n"
+            "    regeneration→重生，election→拣选，predestination→预定，\n"
+            "    sovereignty→主权，providence→护理，redemption→救赎，\n"
+            "    apostle→使徒，ministry→事奉/职事，doctrine→教义/教训，\n"
+            "    gospel→福音，kingdom of God→神的国，Holy Ghost/Spirit→圣灵，\n"
+            "    hope→盼望，faith→信心，charity/love→爱心/爱，patience→忍耐，\n"
+            "    resurrection→复活，flesh→肉体，Coming (of Christ)→（基督的）降临\n"
+            "11. 雅各书专属术语：\n"
+            "    works→行为，faith and works→信心与行为，justified by works→因行为称义\n"
+            "    trial/temptation→试炼/试探，to try/prove→试验，tempt→引诱\n"
+            "    wisdom→智慧，double-minded→心怀二意，unstable→摇摆不定\n"
+            "    the tongue→舌头，bridle→勒住/约束\n"
+            "    doer of the word→行道者，hearer→听道者\n"
+            "    the perfect law of liberty→使人得自由的完全律法\n"
+            "    respect of persons/partiality→按外貌待人/偏心\n"
+            "    firstfruits→初熟的果子，pure religion→纯正的虔诚/敬虔\n"
+            "    elders→长老，anointing (with oil)→（用油）抹\n"
+            "    the prayer of faith→出于信心的祈祷，patience→忍耐/恒忍\n"
+            "    the husbandman→农夫，the early and latter rain→秋雨和春雨\n"
+            "    brother→弟兄，Lord of Sabaoth→万军之主\n"
+            "    Word (of God)→（神的）道/话语"
+        ),
+    },
     'philemon': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/philemon-en',
