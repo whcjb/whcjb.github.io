@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: james
 book_name: "雅各书·加尔文注释"
 title: "前言"
-date: 2026-07-10 19:59
+date: 2026-07-10 20:35
 next_section: 1
 next_label: "第一章"
 ---
