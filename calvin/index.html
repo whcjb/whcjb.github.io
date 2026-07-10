@@ -70,6 +70,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                 <h3 class="calvin-section-title">
                     <span class="calvin-section-zh">旧&nbsp;约</span>
                     <span class="calvin-section-en">Old Testament</span>
+                    <button type="button" class="calvin-anchor-copy" data-anchor="old-testament" aria-label="复制本段链接" title="复制本段链接">🔗</button>
                 </h3>
 
                 <div class="calvin-subsection-label">中文版</div>
@@ -120,6 +121,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                 <h3 class="calvin-section-title">
                     <span class="calvin-section-zh">新&nbsp;约</span>
                     <span class="calvin-section-en">New Testament</span>
+                    <button type="button" class="calvin-anchor-copy" data-anchor="new-testament" aria-label="复制本段链接" title="复制本段链接">🔗</button>
                 </h3>
 
                 <div class="calvin-subsection-label">中文版</div>
@@ -301,6 +303,37 @@ body { background-color: var(--calvin-bg); }
     gap: 14px;
 }
 .calvin-section-zh { letter-spacing: 0.1em; }
+.calvin-anchor-copy {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    padding: 4px 6px;
+    margin-left: 2px;
+    border-radius: 6px;
+    opacity: 0.35;
+    transition: opacity 0.15s, background 0.15s;
+    color: var(--calvin-ink-light);
+    position: relative;
+}
+.calvin-anchor-copy:hover { opacity: 1; background: rgba(127,127,127,0.12); }
+.calvin-anchor-copy.copied::after {
+    content: "已复制";
+    position: absolute;
+    left: 50%;
+    top: -26px;
+    transform: translateX(-50%);
+    background: var(--calvin-primary, #2f5d50);
+    color: #fff;
+    font-size: 11px;
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', serif;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    pointer-events: none;
+}
 .calvin-section-en {
     font-family: 'Georgia', serif;
     font-style: italic;
@@ -451,3 +484,28 @@ body { background-color: var(--calvin-bg); }
     .calvin-book-name-cn { font-size: 11.5px; }
 }
 </style>
+
+<script>
+(function () {
+    document.querySelectorAll('.calvin-anchor-copy').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            var anchor = btn.getAttribute('data-anchor');
+            var link = location.origin + location.pathname + '#' + anchor;
+            // 更新地址栏 hash（浏览器地址栏也可直接复制）
+            history.replaceState(null, '', '#' + anchor);
+            function done() {
+                btn.classList.add('copied');
+                setTimeout(function () { btn.classList.remove('copied'); }, 1400);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(link).then(done, done);
+            } else {
+                var ta = document.createElement('textarea');
+                ta.value = link; document.body.appendChild(ta); ta.select();
+                try { document.execCommand('copy'); } catch (e) {}
+                document.body.removeChild(ta); done();
+            }
+        });
+    });
+})();
+</script>
