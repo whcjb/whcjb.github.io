@@ -17,6 +17,9 @@ case "$BOOK" in
     hebrews)  PUBLISH=scripts/publish_hebrews_zh.py;  RAW_DIR=calvin_raw/hebrews/zh_chapters;       PUB_DIR=calvin/hebrews ;;
     1thess)   PUBLISH=scripts/publish_1thess_zh.py;    RAW_DIR=calvin_raw/1thessalonians/zh_chapters; PUB_DIR=calvin/1thessalonians ;;
     2thess)   PUBLISH=scripts/publish_2thess_zh.py;    RAW_DIR=calvin_raw/2thessalonians/zh_chapters; PUB_DIR=calvin/2thessalonians ;;
+    james)    PUBLISH=scripts/publish_james_zh.py;    RAW_DIR=calvin_raw/james/zh_chapters;   PUB_DIR=calvin/james ;;
+    1peter)   PUBLISH=scripts/publish_1peter_zh.py;   RAW_DIR=calvin_raw/1peter/zh_chapters; PUB_DIR=calvin/1peter ;;
+    2peter)   PUBLISH=scripts/publish_2peter_zh.py;   RAW_DIR=calvin_raw/2peter/zh_chapters; PUB_DIR=calvin/2peter ;;
     *) echo "unknown book: $BOOK"; exit 1 ;;
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache
