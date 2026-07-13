@@ -608,4 +608,4 @@ I now come to the words themselves, I wished, as I said, just to catch a foretas
 
 [^f67]: Latine, “malam, *bene positum:*” the French translation takes the phrase as a proverbs” *comme dit le proverb, un mal qui est bien en repos.*” Anglice, “well-poised.”
 
-
+[^f56]: See the Appendix where the opinions of various writers are collected.
