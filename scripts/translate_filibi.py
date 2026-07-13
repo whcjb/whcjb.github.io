@@ -789,6 +789,58 @@ BOOKS = {
             "    sensual/natural (ψυχικοί)→属血气的，to condemn→定罪，judgment→审判"
         ),
     },
+    'genesis': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/genesis-en',
+        'cache':  ROOT / 'calvin_raw/genesis/zh_cache',
+        'out':    ROOT / 'calvin_raw/genesis/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《创世记注释》。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签不变：<p style=\"...\"> <strong> <div> <span style=\"...\"> 等\n"
+            "5. 保留 AGES code 不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）；\n"
+            "   居中经文导航 <span style=\"color:#000080\">GO TO GENESIS X:Y</span> 中的 GO TO 可译为「前往」，书卷章节照和合本\n"
+            "6. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "7. 圣经书卷/人名用和合本标准译名：\n"
+            "   Genesis→创世记，Exodus→出埃及记，Leviticus→利未记，Numbers→民数记\n"
+            "   Deuteronomy→申命记，Psalm(s)→诗篇，Isaiah→以赛亚书，Romans→罗马书\n"
+            "   Matthew→马太福音，John→约翰福音，Hebrews→希伯来书，Galatians→加拉太书\n"
+            "   Acts→使徒行传，Ephesians→以弗所书，1 Corinthians→哥林多前书\n"
+            "   人名：Adam→亚当，Eve→夏娃，Cain→该隐，Abel→亚伯，Seth→塞特\n"
+            "   Enoch→以诺，Noah→挪亚，Shem→闪，Ham→含，Japheth→雅弗\n"
+            "   Abraham/Abram→亚伯拉罕/亚伯兰，Sarah/Sarai→撒拉/撒莱，Hagar→夏甲\n"
+            "   Ishmael→以实玛利，Isaac→以撒，Rebekah→利百加，Esau→以扫\n"
+            "   Jacob→雅各，Leah→利亚，Rachel→拉结，Laban→拉班，Joseph→约瑟\n"
+            "   Lot→罗得，Melchizedek→麦基洗德，Pharaoh→法老，Moses→摩西\n"
+            "   Sodom→所多玛，Gomorrah→蛾摩拉，Canaan→迦南，Egypt→埃及\n"
+            "   Eden→伊甸，Babel→巴别，Ararat→亚拉腊，Israel→以色列\n"
+            "   神名：Elohim→以罗欣（神），Jehovah→耶和华，El Shaddai→全能的神\n"
+            "   Erasmus→伊拉斯谟，Chrysostom→屈梭多模，Augustine→奥古斯丁\n"
+            "   Jerome→耶柔米，Servetus→塞尔维特，Vulgate→武加大\n"
+            "8. 章节引用格式：创世记 1:1，罗马书 2:23（书卷名 章:节）\n"
+            "9. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "10. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    sanctification→成圣，covenant→约/盟约，atonement→赎罪/挽回祭，\n"
+            "    regeneration→重生，election→拣选，predestination→预定，\n"
+            "    sovereignty→主权，providence→护理，redemption→救赎，\n"
+            "    faith→信心，grace→恩典，promise→应许，flesh→肉体\n"
+            "11. 创世记专属术语：\n"
+            "    the beginning→起初，creation→创造，to create→创造\n"
+            "    chaos→混沌，without form and void→空虚混沌，the deep/abyss→深渊\n"
+            "    firmament→穹苍，the waters→水，the image of God→神的形象\n"
+            "    the fall→堕落，the flood/deluge→洪水，the ark→方舟\n"
+            "    the serpent→蛇，the tree of life→生命树，the tree of knowledge→分别善恶树\n"
+            "    the seed→后裔/种子，blessing→祝福，birthright→长子名分\n"
+            "    the patriarchs→列祖，the covenant→约，circumcision→割礼\n"
+            "    the firstborn→长子，altar→祭坛，sacrifice→祭物/献祭\n"
+            "    the Sabbath→安息日，to bless→赐福，to curse→咒诅\n"
+            "    dominion→治理/管辖，the Word→道，the Spirit→（圣）灵"
+        ),
+    },
     'philemon': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/philemon-en',
