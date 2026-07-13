@@ -21,6 +21,7 @@ case "$BOOK" in
     1peter)   PUBLISH=scripts/publish_1peter_zh.py;   RAW_DIR=calvin_raw/1peter/zh_chapters; PUB_DIR=calvin/1peter ;;
     2peter)   PUBLISH=scripts/publish_2peter_zh.py;   RAW_DIR=calvin_raw/2peter/zh_chapters; PUB_DIR=calvin/2peter ;;
     1john)    PUBLISH=scripts/publish_1john_zh.py;    RAW_DIR=calvin_raw/1john/zh_chapters;  PUB_DIR=calvin/1john ;;
+    jude)     PUBLISH=scripts/publish_jude_zh.py;     RAW_DIR=calvin_raw/jude/zh_chapters;  PUB_DIR=calvin/jude ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache
