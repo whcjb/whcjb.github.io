@@ -180,6 +180,15 @@ def _normalize_etc_markers(body: str) -> str:
     # 4) ch2 特例：交替读法 "……或作，既然儿女如此,等等。" 句中第二个 etc（不接 </span>）
     body = body.replace('，或作,既然儿女如此,等等。', ' 或作：既然儿女如此…… ')
     body = body.replace('或作,既然儿女如此,等等。', '或作：既然儿女如此…… ')
+    # 5) etc 在经文引文 span 内、闭合 </span> 之前（含前置引号）：…… 移到引号前
+    QUOTE = r'[“”‘’"\']'
+    body = re.sub(
+        rf'[，,]?({QUOTE})?{ETC}{P}(\s*</span>)',
+        lambda m: '……' + (m.group(1) or '') + m.group(2),
+        body,
+    )
+    # 6) 交替读法/经文续引：, 等等。紧接脚注引用 [^fN] → ……（去 etc 保留 ref）
+    body = re.sub(rf'[，,]?{ETC}{P}(\s*\[\^)', r'……\1', body)
     # 收尾：合并多余空格 + 去行尾空白
     body = re.sub(r'(</span>) +', r'\1 ', body)
     body = re.sub(r'[ \t]+\n', '\n', body)
