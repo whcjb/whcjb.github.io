@@ -163,7 +163,7 @@ date: 2026-05-20 10:38
     line-height: 2.1;
     color: #69231C;
     font-size: 1.05em;
-    font-family: "Ma Shan Zheng", "STKaiti", "KaiTi", "楷体", serif !important;
+    font-family: "LXGW WenKai", "STKaiti", "KaiTi", "楷体", serif !important;
     font-weight: 400;
     letter-spacing: 0.05em;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.55);
@@ -263,16 +263,16 @@ date: 2026-05-20 10:38
 /* 展开按钮 */
 #mhenry-col .mh-expand-tab,
 #mhenry-col .mh-unit > .mh-verse .mh-expand-tab {
-    background: rgba(200,44,30,0.40) !important;
+    background: rgba(200,44,30,0.85) !important;
     backdrop-filter: blur(8px);
     border-left: 1px solid rgba(255,255,255,0.30) !important;
     color: #FFEAE8 !important;
 }
 #mhenry-col .mh-expand-tab:hover {
-    background: rgba(200,44,30,0.65) !important;
+    background: rgba(200,44,30,0.95) !important;
 }
 #mhenry-col .mh-unit.mh-expanded .mh-expand-tab {
-    background: rgba(180,33,20,0.60) !important;
+    background: rgba(180,33,20,0.30) !important;
 }
 
 /* 脚注 */
