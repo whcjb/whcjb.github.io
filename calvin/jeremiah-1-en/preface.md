@@ -409,7 +409,7 @@ But it may be that some rigid and severe critics will deem it a present unworthy
 
 But, to omit now what I have slightly mentioned at the beginning, I should condemn myself for ingratitude, were I not to consider myself under obligations to you for being so ready and disposed to receive The Christian Exiles who flee to you. It is the saying of a heathen woman, as mentioned by a poet-
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">*“*</span> <span style="color:#000080">Being</span> <span style="color:#000080">*acquainted with evil, I learn to aid the miserable.”*</span> <span style="color:#800000">fA4</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“*</span> <span style="color:#000080">Being</span> <span style="color:#000080">*acquainted with evil, I learn to aid the miserable.”*</span> <span style="color:#800000">fA4</span></p>
 
 Let all who worship God and serve Christ be not ashamed, under similar circumstances, to be at least of the same mind. As my power of aiding is not equal to my wish, it becomes me at least to regard every kindness shewn to them as done to myself. Thirty years have passed away since my voluntary exile from FRANCE, because thence were exiled the truth of the Gospel, pure Religion, and the true Worship of God. I am now become so inured to my peregrination, that I feel no desire to return to my country. I am indeed here so far a stranger, (though once banished, I was yet so recalled, that I never feel ashamed,) that they deem me no more a foreigner than if I could name my ancestors as the citizens of this place. But the more kindly God has dealt with me, the greater concern ought I to feel for my brethren from FRANCE as well as from FLANDERS: and as they have been received with the same kindness by your Highness, this
 
@@ -445,7 +445,7 @@ It remains for you, Christian Reader, to ascribe to God alone whatever benefit y
 
 <p style="text-align:center" markdown="1">THE PRAYER WHICH JOHN CALVIN WAS WONT TO USE AT THE BEGINNING OF HIS LECTURES:</p>
 
-<p style="text-align:center; color:#000080; margin:14px 2em;"><span style="color:#000080">MAY the Lord grant, that we may engage in contemplating</span> <span style="color:#000080">the mysteries of his heavenly wisdom with really increas —</span> <span style="color:#000080">ing devotion, to his glory and to our edification. AMEN.</span></p>
+<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">MAY the Lord grant, that we may engage in contemplating</span> <span style="color:#000080">the mysteries of his heavenly wisdom with really increas —</span> <span style="color:#000080">ing devotion, to his glory and to our edification. AMEN.</span></p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CALVIN’S PREFACE</span></p>
 
