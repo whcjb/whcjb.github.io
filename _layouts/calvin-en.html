@@ -4,10 +4,20 @@ layout: default
 
 <div class="container" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div style="margin: 16px 0 16px;">
+      <div class="cmp-topbar">
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        <!-- 顶部空白 = 隐形热区：静止无按钮，点击就地弹出「对比马太亨利注释」 -->
+        <div class="cmp-hotwrap">
+          <div class="cmp-hotspot" id="cmpHotspot" role="button" tabindex="0"
+               aria-haspopup="true" aria-expanded="false" title="更多">
+            <span class="cmp-hint"><span class="cmp-dot"><i></i><i></i><i></i></span>对比 / 更多</span>
+          </div>
+          <div class="cmp-pop" id="cmpPop" role="menu">
+            <button id="cmpBtn" type="button" role="menuitem"><span class="cmp-mk"></span>对比马太亨利注释</button>
+          </div>
+        </div>
       </div>
 
       {% if page.prev_section %}
@@ -34,8 +44,20 @@ layout: default
         </div>
       </div>
 
-      <div class="calvin-en-content" data-book="{{ page.book_id }}">
-        {{ content }}
+      <div class="cmp-stage" id="cmpStage">
+        <div class="calvin-en-content cmp-calvin" data-book="{{ page.book_id }}">
+          {{ content }}
+        </div>
+        <aside class="cmp-henry" id="cmpHenry" aria-hidden="true">
+          <div class="cmp-henry-inner">
+            <div class="cmp-henry-head">
+              <span class="cmp-henry-lbl">马太亨利注释</span>
+              <button type="button" class="cmp-close" id="cmpClose">关闭对比 &times;</button>
+            </div>
+            <iframe class="cmp-henry-frame" id="cmpFrame" title="马太亨利注释"></iframe>
+            <div class="cmp-henry-msg" id="cmpMsg" hidden>本章暂无马太亨利注释。</div>
+          </div>
+        </aside>
       </div>
 
       {% if page.date %}
@@ -624,6 +646,59 @@ a.commentary-anchor {
   visibility: hidden;
   scroll-margin-top: 80px;
 }
+
+/* ══ 对比马太亨利注释：隐形热区 + 就地弹层 + 右侧 iframe 两栏 ══ */
+.cmp-topbar{display:flex;align-items:stretch;gap:16px;margin:16px 0;min-height:26px}
+.cmp-topbar > a{flex:0 0 auto;align-self:center}
+/* 隐形热区：占据 back-link 右侧空白，静止无边框无底色 */
+.cmp-hotwrap{position:relative;flex:1 1 auto}
+.cmp-hotspot{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;
+  padding-right:8px;border:1px solid transparent;border-radius:8px;cursor:pointer;
+  transition:border-color .18s,background .18s}
+.cmp-hotspot:hover,.cmp-hotspot:focus-visible{border-color:#e2e2e2;background:#fafafa;outline:none}
+.cmp-hint{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#9a9a9a;
+  letter-spacing:.08em;opacity:0;transition:opacity .18s;pointer-events:none}
+.cmp-hotspot:hover .cmp-hint,.cmp-hotspot:focus-visible .cmp-hint,
+.cmp-hotspot[aria-expanded=true] .cmp-hint{opacity:.85}
+.cmp-dot{display:inline-flex;gap:3px}
+.cmp-dot i{width:3px;height:3px;border-radius:50%;background:#b5b5b5;display:block}
+/* 弹层：JS 按点击坐标定位 */
+.cmp-pop{position:absolute;z-index:30;background:#fff;border:1px solid #e0e0e0;border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.14);min-width:196px;padding:6px;
+  opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top left;
+  pointer-events:none;transition:opacity .16s,transform .16s}
+.cmp-pop.flip-x{transform-origin:top right}
+.cmp-pop.open{opacity:1;transform:none;pointer-events:auto}
+.cmp-pop button{width:100%;text-align:left;background:none;border:none;color:#333;cursor:pointer;
+  font-size:14.5px;padding:11px 14px;border-radius:7px;display:flex;align-items:center;gap:10px;
+  font-family:inherit}
+.cmp-pop button:hover{background:#f2f2f2}
+.cmp-pop .cmp-mk{width:15px;height:15px;border-radius:3px;background:#C9922A;flex:0 0 auto}
+
+/* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半 */
+.cmp-stage{display:flex;align-items:flex-start;gap:0}
+.cmp-calvin{min-width:0;flex:1 1 100%;transition:flex-basis .32s ease,padding .32s ease}
+.cmp-henry{flex:0 0 0;max-width:0;overflow:hidden;opacity:0;
+  transition:flex-basis .32s ease,max-width .32s ease,opacity .28s ease .04s}
+.cmp-stage.split .cmp-calvin{flex:1 1 50%;padding-right:26px}
+.cmp-stage.split .cmp-henry{flex:1 1 50%;max-width:none;opacity:1}
+.cmp-henry-inner{position:sticky;top:74px;border-left:1px solid #e5e5e5;padding-left:26px}
+.cmp-henry-head{display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #eee}
+.cmp-henry-lbl{font-size:13px;letter-spacing:.1em;font-weight:700;color:#8a6a1e}
+.cmp-close{background:none;border:1px solid #e0e0e0;color:#888;border-radius:6px;
+  padding:4px 11px;font-size:12.5px;cursor:pointer;font-family:inherit}
+.cmp-close:hover{color:#333;border-color:#b0b0b0}
+.cmp-henry-frame{width:100%;height:calc(100vh - 110px);border:0;background:#fff}
+.cmp-henry-msg{color:#aaa;text-align:center;padding:60px 0;font-size:14px}
+@media(max-width:820px){
+  .cmp-stage.split{flex-direction:column}
+  .cmp-stage.split .cmp-calvin,.cmp-stage.split .cmp-henry{flex:1 1 100%;padding:0}
+  .cmp-henry-inner{position:static;border-left:none;border-top:1px solid #e5e5e5;
+    padding-left:0;padding-top:18px;margin-top:24px}
+  .cmp-henry-frame{height:70vh}
+}
+@media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-pop,.cmp-hotspot,.cmp-hint{transition:none}}
 </style>
 
 <script>
@@ -823,6 +898,77 @@ function closeVerseNav() {
   pills.style.display = 'none';
   arrow.classList.remove('open');
 }
+
+// ── 对比马太亨利注释：隐形热区 → 就地弹层 → 右侧 iframe 两栏 ──
+(function(){
+  var hotspot=document.getElementById('cmpHotspot');
+  if(!hotspot) return;
+  var pop=document.getElementById('cmpPop'),
+      hotwrap=hotspot.parentElement,
+      col=document.getElementById('cmpCol'),
+      stage=document.getElementById('cmpStage'),
+      henry=document.getElementById('cmpHenry'),
+      frame=document.getElementById('cmpFrame'),
+      msg=document.getElementById('cmpMsg'),
+      cmpBtn=document.getElementById('cmpBtn'),
+      closeBtn=document.getElementById('cmpClose'),
+      origColClass=col.className, loaded=false;
+
+  // 马太亨利章节 URL：把当前 /calvin/<书>/<章>/ 换成 /mhenry/...
+  var henryUrl=location.pathname.replace('/calvin/','/mhenry/');
+
+  function placePop(cx,cy){
+    var w=hotwrap.getBoundingClientRect(), x=cx-w.left, y=cy-w.top, pw=pop.offsetWidth||200;
+    var flip=(x+pw+8)>w.width;
+    pop.classList.toggle('flip-x',flip);
+    pop.style.left=flip?'auto':x+'px';
+    pop.style.right=flip?(w.width-x)+'px':'auto';
+    pop.style.top=(y+6)+'px';
+  }
+  function openPop(cx,cy){pop.classList.add('open');hotspot.setAttribute('aria-expanded','true');placePop(cx,cy);}
+  function closePop(){pop.classList.remove('open');hotspot.setAttribute('aria-expanded','false');}
+
+  hotspot.addEventListener('click',function(e){e.stopPropagation();
+    if(pop.classList.contains('open')){closePop();return;} openPop(e.clientX,e.clientY);});
+  hotspot.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();
+      var r=hotspot.getBoundingClientRect();openPop(r.right-40,r.top+r.height/2);}});
+  pop.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',closePop);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+
+  // iframe 载入后：隐藏 mhenry 页 chrome + 自动展开注释；无内容则提示
+  frame.addEventListener('load',function(){
+    try{
+      var d=frame.contentDocument;
+      if(!d||!d.querySelector('#mhenry-col')){frame.style.display='none';msg.hidden=false;return;}
+      frame.style.display='';msg.hidden=true;
+      var s=d.createElement('style');
+      s.textContent=
+        '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer{display:none!important}'+
+        '.container{padding-top:14px!important}'+
+        '#mhenry-col .mh-unit-body{display:block!important}'+
+        '#mhenry-col .mh-unit>.mh-verse.mh-folded{max-height:none!important}'+
+        '#mhenry-col .mh-expand-tab{display:none!important}';
+      d.head.appendChild(s);
+    }catch(err){/* 跨域兜底：保持 iframe 原样 */}
+  });
+
+  function openCompare(){
+    if(!loaded){frame.src=henryUrl;loaded=true;}
+    col.className='col-lg-12';
+    stage.classList.add('split');
+    henry.setAttribute('aria-hidden','false');
+    closePop();
+  }
+  function closeCompare(){
+    stage.classList.remove('split');
+    henry.setAttribute('aria-hidden','true');
+    col.className=origColClass;
+  }
+  cmpBtn.addEventListener('click',function(e){e.stopPropagation();openCompare();});
+  closeBtn.addEventListener('click',closeCompare);
+})();
 </script>
 
 {% include scripture-popup.html container_selector=".calvin-en-content" %}
