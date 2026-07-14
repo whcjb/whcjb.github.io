@@ -952,13 +952,12 @@ function closeVerseNav() {
       var d=frame.contentDocument;
       if(!d||!d.querySelector('#mhenry-col')){frame.style.display='none';msg.hidden=false;return;}
       frame.style.display='';msg.hidden=true;
+      // 只隐藏 mhenry 页 chrome（头图/导航/朗读条/页脚）；
+      // 注释折叠/展开交给 mhenry 页自带 JS，保持与原始网页一致（默认折叠 + 「注释」按钮）
       var s=d.createElement('style');
       s.textContent=
         '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer{display:none!important}'+
-        '.container{padding-top:14px!important}'+
-        '#mhenry-col .mh-unit-body{display:block!important}'+
-        '#mhenry-col .mh-unit>.mh-verse.mh-folded{max-height:none!important}'+
-        '#mhenry-col .mh-expand-tab{display:none!important}';
+        '.container{padding-top:14px!important}';
       d.head.appendChild(s);
     }catch(err){/* 跨域兜底：保持 iframe 原样 */}
   });
