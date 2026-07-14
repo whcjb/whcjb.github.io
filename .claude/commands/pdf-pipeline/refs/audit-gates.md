@@ -12,7 +12,7 @@
 F=PATH/TO/FILE
 echo "**** count:       $(grep -c '\*\*\*\*' $F)"             # 必须 = 0
 echo "<<<END count:     $(grep -c '<<<END' $F)"               # 必须 = 0
-echo "split italic:     $(grep -cP '\*[\"\"]\*' $F)"          # 必须 = 0
+echo "split italic:     $(grep -cE '\*[“”\"]\*' $F)"          # 必须 = 0（macOS 用 -E 非 -P）
 ```
 
 - `****` 触发 [anti-pattern B](anti-patterns.md#b)
@@ -25,7 +25,7 @@ echo "split italic:     $(grep -cP '\*[\"\"]\*' $F)"          # 必须 = 0
 
 ```bash
 F=calvin/BOOK/N.md
-echo "zh fm keys:       $(grep -cP '^[一-鿿]+[:：]' $F)"      # 必须 = 0
+echo "zh fm keys:       $(awk 'NR==1&&/^---/{f=1;next} f&&/^---/{exit} f' $F | grep -cE '^[^ -~]+[:：]')"  # 必须 = 0（仅查 fm 区，-E）
 echo "book_id-en mix:   $(grep -c 'book_id: harmony-.*-en\b' $F)"  # 中文 md 应 = 0
 ```
 
@@ -146,15 +146,25 @@ grep -nE '^[^\[].*——中文?(编者|译者)?注' $F | head
 ## Gate 5b：`<p>` 含 kramdown markdown 必须带 `markdown="1"`
 
 ```bash
-F=PATH/TO/FILE
-# 找含 [^fN] 或 *italic* 的 <p>，但缺 markdown="1" 属性 → kramdown 不会处理
-grep -nE '<p[^>]*>(?:[^<]*\[\^|[^<]*\*[A-Za-z])' $F | grep -v 'markdown="1"' | head
+TARGET=calvin/           # 单文件或整目录皆可（-r 递归）
+# 行首独立 <p ...> 块，含 [^fN] 或成对 *斜体*（中/英/引号后皆可），但无 markdown 属性
+grep -rnE '^<p [^>]*>' $TARGET | grep -v 'markdown=' \
+  | grep -E '\[\^[Ff]?[Tt]?[0-9]+\]|\*[^*]+\*' | head
 ```
 
-- 有匹配 = 该 `<p>` emit 漏 `markdown="1"`，里面的 `[^fN]` / `*X*` 会渲染成字面字符
-- 2cor preface 踩过：navy-quote 居中 `<p style="text-align:center; color:#000080">` 漏 `markdown="1"`
-  → `[^f7]` `[^f8]` 显示为字面文本（详见 02a-extract-ages §11.4 反例条目）
-- 修法：structured_to_md.py 中所有 `out.append('<p ...>...</p>')` 含正文片段都加 `markdown="1"`
+三个关键点，缺一即漏判（都被踩过）：
+- **`^<p `**（行首 + 带属性）：只查独立 block 级 `<p>`。表格单元格 `<td><p markdown="span">…`
+  与无属性拉丁经文 `<p>Sermo…</p>` 另有机制，不能一起 flag（否则一堆误报）。
+- **`grep -v 'markdown='`**（不是 `markdown="1"`）：`markdown="span"` 同样触发 kramdown，
+  只排 `"1"` 会把正常的 span 块误报。
+- **`\*[^*]+\*`**（成对星号任意字符），**不能**用 `\*[A-Za-z]`：中文斜体 `*"因为生命…"*`
+  星号后是引号/CJK，旧写法漏判——1timothy/5 的居中经文块因此逃过审计
+  （2026-07 用户发现，全库 1012 行受影响，be1e3b96 修）。
+
+有匹配 = 该 `<p>` 漏 `markdown="1"`，里面 `[^fN]`/`*X*` 会渲染成字面字符。
+- 2cor preface 也踩过：navy-quote 居中 `<p style="text-align:center; color:#000080">` 漏属性。
+- 修法：structured_to_md.py 中所有 `out.append('<p ...>...</p>')` 含正文片段都加 `markdown="1"`（line ~1038 已含）；
+  历史文件用上面的 grep 定位后**纯追加**补 `markdown="1"`（勿重生成，会覆盖脚注校准）。
 
 ---
 
@@ -174,7 +184,7 @@ awk 'NR>20 && length($0)>1500 {print NR": "length}' $F | head
 
 ```bash
 F=PATH/TO/FILE
-grep -cP '\b\w+- \w+' $F   # 应 ≈ 0
+grep -cE '[[:alnum:]]+- [[:alnum:]]' $F   # 应 ≈ 0（macOS 用 -E 非 -P）
 ```
 
 - 多于 5 个 = [anti-pattern J](anti-patterns.md#j)（hyphenation 没跑）
@@ -214,18 +224,25 @@ F=$1
 echo "=== $F ==="
 echo "1. **** count:    $(grep -c '\*\*\*\*' $F)"
 echo "2. <<<END:        $(grep -c '<<<END' $F)"
-echo "3. split italic:  $(grep -cP '\*[\"\"]\*' $F)"
-echo "4. zh fm keys:    $(grep -cP '^[一-鿿]+[:：]' $F)"
-echo "5. calvin-script: $(grep -c 'calvin-scripture' $F)"
-echo "6. long para:     $(awk 'NR>20 && length($0)>1500' $F | wc -l)"
-echo "7. hyphen rem:    $(grep -cP '\b\w+- \w+' $F)"
+echo "3. split italic:  $(grep -cE '\*[“”\"]\*' "$F")"
+# 4. 仅查 front-matter 区被译成中文的键（全文跑会把正文"他说："等误报）
+fm4=$(awk 'NR==1&&/^---/{f=1;next} f&&/^---/{exit} f' "$F" | grep -cE '^[^ -~]+[:：]')
+echo "4. zh fm keys:    $fm4"
+echo "5. calvin-script: $(grep -c 'calvin-scripture' "$F")"
+echo "6. long para:     $(awk 'NR>20 && length($0)>1500' "$F" | wc -l | tr -d ' ')"
+echo "7. hyphen rem:    $(grep -cE '[[:alnum:]]+- [[:alnum:]]' "$F")"
 
 ref=$(grep -oE '\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\]' $F | grep -v ':$' | sort -u | wc -l)
 def=$(grep -cE '^\[\^[Ff]?[Tt]?[0-9]+[A-Za-z]?\]: ' $F)
 echo "8. fn ref/def:    $ref / $def $([ $ref = $def ] && echo OK || echo MISMATCH)"
+
+# Gate 5b：独立 <p> 块漏 markdown 属性（含 markdown 却不处理 → 字面星号/[^fN]）
+echo "9. <p> no md attr: $(grep -E '^<p [^>]*>' $F | grep -v 'markdown=' | grep -cE '\[\^[Ff]?[Tt]?[0-9]+\]|\*[^*]+\*')"
 ```
 
 保存为 `scripts/audit-md.sh`，每次 commit 前跑：`bash scripts/audit-md.sh calvin/BOOK/N.md`。
+（check 9 非 0 = 有 `<p>` 漏 `markdown="1"`，用 Gate 5b 的 grep 定位；其余 Gate 5c/5d/5f/9
+按需单独跑。）
 
 ---
 
