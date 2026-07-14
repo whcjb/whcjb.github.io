@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: jude
 book_name: "犹大书·加尔文注释"
 title: "前言"
-date: 2026-07-14 09:09
+date: 2026-07-14 09:14
 next_section: 1
 next_label: "第一章"
 ---
