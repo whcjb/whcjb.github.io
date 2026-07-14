@@ -45,6 +45,14 @@ layout: default
       </div>
 
       <div class="cmp-stage" id="cmpStage">
+        <!-- 手机端整屏二选一切换条（桌面隐藏，窄屏 split 时显示） -->
+        <div class="cmp-toggle" id="cmpToggle">
+          <div class="cmp-tg-group">
+            <button type="button" class="cmp-tg cmp-tg-active" data-target="calvin">加尔文</button>
+            <button type="button" class="cmp-tg" data-target="henry">马太亨利</button>
+          </div>
+          <button type="button" class="cmp-tg-close" id="cmpToggleClose">关闭 &times;</button>
+        </div>
         <div class="calvin-en-content cmp-calvin" data-book="{{ page.book_id }}">
           {{ content }}
         </div>
@@ -705,14 +713,28 @@ a.commentary-anchor {
 .cmp-close:hover{color:#333;border-color:#b0b0b0}
 .cmp-henry-frame{flex:1 1 auto;width:100%;border:0;background:#fff}
 .cmp-henry-msg{color:#aaa;text-align:center;padding:60px 0;font-size:14px}
+/* 手机端顶部切换条：默认隐藏，仅窄屏 split 时显示 */
+.cmp-toggle{display:none}
+.cmp-tg-group{display:inline-flex;border:1px solid #d4d4d4;border-radius:8px;overflow:hidden}
+.cmp-tg{background:#fff;border:none;padding:8px 20px;font-size:14px;color:#555;
+  cursor:pointer;font-family:inherit}
+.cmp-tg+.cmp-tg{border-left:1px solid #d4d4d4}
+.cmp-tg.cmp-tg-active{background:#0085a1;color:#fff;font-weight:700}
+.cmp-tg[data-target="henry"].cmp-tg-active{background:#C9922A}
+.cmp-tg-close{background:none;border:none;color:#999;font-size:14px;cursor:pointer;font-family:inherit}
 @media(max-width:820px){
-  /* 窄屏：改为上下堆叠、整页滚动（不固定高度） */
+  /* 窄屏：不并排，整屏二选一（顶部切换条控制显示哪一家） */
   .cmp-stage.split{flex-direction:column;height:auto!important;align-items:stretch}
-  .cmp-stage.split .cmp-calvin,.cmp-stage.split .cmp-henry{flex:1 1 100%;padding:0;
-    height:auto;overflow:visible}
-  .cmp-henry-inner{height:auto;border-left:none;border-top:1px solid #e5e5e5;
-    padding-left:0;padding-top:18px;margin-top:24px}
-  .cmp-henry-frame{height:70vh;flex:none}
+  .cmp-stage.split .cmp-toggle{display:flex;justify-content:space-between;align-items:center;
+    position:sticky;top:0;z-index:5;background:#fff;padding:8px 0;margin-bottom:12px;
+    border-bottom:1px solid #eee}
+  .cmp-stage.split .cmp-calvin,.cmp-stage.split .cmp-henry{flex:1 1 100%;max-width:none;
+    opacity:1;padding:0;height:auto;overflow:visible}
+  .cmp-stage.split.show-calvin .cmp-henry{display:none}
+  .cmp-stage.split.show-henry .cmp-calvin{display:none}
+  .cmp-henry-inner{height:auto;border-left:none;padding-left:0}
+  .cmp-henry-head{display:none}
+  .cmp-henry-frame{height:calc(100vh - 150px);flex:none}
 }
 @media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-pop,.cmp-hotspot,.cmp-hint{transition:none}}
 </style>
@@ -975,22 +997,35 @@ function closeVerseNav() {
     var top=stage.getBoundingClientRect().top;
     stage.style.height=Math.max(360,window.innerHeight-top-16)+'px';
   }
+  // 手机端切换条：整屏二选一
+  var toggle=document.getElementById('cmpToggle'),
+      tgBtns=toggle?toggle.querySelectorAll('.cmp-tg'):[],
+      tgClose=document.getElementById('cmpToggleClose');
+  function setPane(target){
+    stage.classList.toggle('show-henry',target==='henry');
+    stage.classList.toggle('show-calvin',target!=='henry');
+    tgBtns.forEach(function(b){b.classList.toggle('cmp-tg-active',b.getAttribute('data-target')===target);});
+  }
+  tgBtns.forEach(function(b){b.addEventListener('click',function(){setPane(b.getAttribute('data-target'));});});
+
   function openCompare(){
     if(!loaded){frame.src=henryUrl;loaded=true;}
     col.className='col-lg-12';
     stage.classList.add('split');
+    setPane('calvin');            // 手机端默认先显示加尔文
     henry.setAttribute('aria-hidden','false');
     closePop();
     requestAnimationFrame(sizeStage);
   }
   function closeCompare(){
-    stage.classList.remove('split');
+    stage.classList.remove('split','show-calvin','show-henry');
     henry.setAttribute('aria-hidden','true');
     col.className=origColClass;
     stage.style.height='';
   }
   cmpBtn.addEventListener('click',function(e){e.stopPropagation();openCompare();});
   closeBtn.addEventListener('click',closeCompare);
+  if(tgClose) tgClose.addEventListener('click',closeCompare);
   window.addEventListener('resize',sizeStage);
 })();
 </script>
