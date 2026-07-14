@@ -21,14 +21,14 @@ layout: default
       </div>
 
       {% if page.prev_section %}
-      <div style="display:flex; justify-content:space-between; margin-bottom:32px; font-size:13px;">
+      <div class="cmp-nav" style="display:flex; justify-content:space-between; margin-bottom:32px; font-size:13px;">
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
         {% if page.next_section %}
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
         {% endif %}
       </div>
       {% elsif page.next_section %}
-      <div style="text-align:right; margin-bottom:32px; font-size:13px;">
+      <div class="cmp-nav" style="text-align:right; margin-bottom:32px; font-size:13px;">
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
       </div>
       {% endif %}
@@ -648,14 +648,22 @@ a.commentary-anchor {
 }
 
 /* ══ 对比马太亨利注释：隐形热区 + 就地弹层 + 右侧 iframe 两栏 ══ */
-.cmp-topbar{display:flex;align-items:stretch;gap:16px;margin:16px 0;min-height:26px}
-.cmp-topbar > a{flex:0 0 auto;align-self:center}
-/* 隐形热区：占据 back-link 右侧空白，静止无边框无底色 */
-.cmp-hotwrap{position:relative;flex:1 1 auto}
-.cmp-hotspot{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;
-  padding-right:8px;border:1px solid transparent;border-radius:8px;cursor:pointer;
-  transition:border-color .18s,background .18s}
-.cmp-hotspot:hover,.cmp-hotspot:focus-visible{border-color:#e2e2e2;background:#fafafa;outline:none}
+#cmpCol{position:relative}
+.cmp-topbar{display:flex;align-items:center;gap:16px;margin:16px 0;min-height:26px;
+  position:relative;z-index:1}
+.cmp-topbar > a{flex:0 0 auto}
+/* 隐形热区：覆盖顶部右侧一大片空白（返回行~经节导航一带），静止无边框无底色。
+   绝对定位在 topbar 内，向下延伸覆盖上下章行；用 z-index+pointer-events 分层，
+   让链接仍可点、空白处点击穿透到热区。 */
+.cmp-hotwrap{position:absolute;top:-6px;right:0;left:33%;height:150px;z-index:0}
+.cmp-hotspot{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:flex-end;
+  padding:8px 8px 0 0;border:1px solid transparent;border-radius:8px;cursor:pointer;
+  pointer-events:auto;transition:border-color .18s,background .18s}
+.cmp-hotspot:hover,.cmp-hotspot:focus-visible{border-color:#e6e6e6;background:#fafafa;outline:none}
+/* 顶部交互元素浮在热区之上，空白处点击穿透 */
+.cmp-nav{position:relative;z-index:2;pointer-events:none}
+.cmp-nav a{pointer-events:auto}
+#verse-nav{position:relative;z-index:2}
 .cmp-hint{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#9a9a9a;
   letter-spacing:.08em;opacity:0;transition:opacity .18s;pointer-events:none}
 .cmp-hotspot:hover .cmp-hint,.cmp-hotspot:focus-visible .cmp-hint,
@@ -675,8 +683,9 @@ a.commentary-anchor {
 .cmp-pop button:hover{background:#f2f2f2}
 .cmp-pop .cmp-mk{width:15px;height:15px;border-radius:3px;background:#C9922A;flex:0 0 auto}
 
-/* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半 */
-.cmp-stage{display:flex;align-items:flex-start;gap:0}
+/* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半。
+   position/z-index 让正文浮在热区之上，热区只捕获正文以上的空白区点击 */
+.cmp-stage{display:flex;align-items:flex-start;gap:0;position:relative;z-index:1}
 .cmp-calvin{min-width:0;flex:1 1 100%;transition:flex-basis .32s ease,padding .32s ease}
 .cmp-henry{flex:0 0 0;max-width:0;overflow:hidden;opacity:0;
   transition:flex-basis .32s ease,max-width .32s ease,opacity .28s ease .04s}
