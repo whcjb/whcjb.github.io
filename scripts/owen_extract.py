@@ -35,11 +35,16 @@ def page_lines(page):
             txt = ''.join(s['text'] for s in spans).rstrip()
             if not txt.strip():
                 continue
-            y = l['bbox'][1]; x = l['bbox'][0]
+            y = l['bbox'][1]; x = l['bbox'][0]; x1 = l['bbox'][2]
             sz = spans[0]['size'] if spans else 0
-            out.append({'y': y, 'x': x, 'sz': sz, 't': txt})
+            out.append({'y': y, 'x': x, 'x1': x1, 'sz': sz, 't': txt})
     out.sort(key=lambda r: r['y'])
     return out
+
+def starts_marker(t):
+    """段首分点/章节标记 → 新段"""
+    s = t.strip()
+    return bool(re.match(r'^(\d{1,3}\.|\(\d{1,3}\.?\)|\[\d{1,3}\.?\]|CHAPTER\s|EXERCITATION\s|Vers?e?s?\.\s|PART\s|[IVXLC]{1,5}\.\s)', s))
 
 
 def is_chrome(r):
@@ -87,16 +92,25 @@ def extract(vol):
             text = dehyphen(text, nx)
         paras.append(text.strip())
         cur.clear()
+    prev_y = None; prev_x1 = None; prev_right = None
     for i in range(d.page_count):
-        prev_y = None
-        for r in page_lines(d[i]):
-            if is_chrome(r):
-                continue
-            gap = None if prev_y is None else r['y'] - prev_y
-            if gap is not None and gap > PARA_GAP:
-                flush()
+        lines = [r for r in page_lines(d[i]) if not is_chrome(r)]
+        if not lines:
+            continue
+        page_right = max(r['x1'] for r in lines)   # 本页正文右边距
+        for j, r in enumerate(lines):
+            if j == 0:
+                # 跨页边界: 上页末行"短"(段落结束) 或 本行是分点标记 → 分段; 否则续接
+                if cur and (prev_x1 is None
+                            or prev_x1 < (prev_right or page_right) - 28
+                            or starts_marker(r['t'])):
+                    flush()
+            else:
+                if r['y'] - prev_y > PARA_GAP:
+                    flush()
             cur.append(r['t'])
-            prev_y = r['y']
+            prev_y = r['y']; prev_x1 = r['x1']
+        prev_right = page_right
     flush()
     # 分类每段
     return [(classify(p), p) for p in paras if p.strip()]
