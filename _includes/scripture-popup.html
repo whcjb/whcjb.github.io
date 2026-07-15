@@ -232,7 +232,7 @@
     }
 
     // ── Popup ───────────────────────────────────────────
-    var popup = null;
+    var popup = null, hideTimer = null, currentRef = null;
     function ensurePopup() {
         if (popup) return;
         popup = document.createElement('div');
@@ -253,11 +253,18 @@
             if (e.key === 'Escape') hidePopup();
         });
     }
+    // 收回：反向平移滑回出票口，动画结束再隐藏（不是瞬间消失）
     function hidePopup() {
-        if (popup) { popup.classList.remove('sp-open'); popup.style.overflow = 'hidden'; popup.style.display = 'none'; }
+        if (!popup || popup.style.display === 'none') return;
+        clearTimeout(hideTimer);
+        currentRef = null;
+        popup.style.overflow = 'hidden';       // 裁剪，准备滑回
+        popup.classList.remove('sp-open');     // 触发反向平移
+        hideTimer = setTimeout(function(){ popup.style.display = 'none'; }, 460);
     }
     function showPopupAt(anchor, html) {
         ensurePopup();
+        clearTimeout(hideTimer);             // 取消未完成的收回
         document.getElementById('scripture-popup-content').innerHTML = html;
         popup.classList.remove('sp-open');   // 票复位到出票口内
         popup.style.overflow = 'hidden';     // 滑动期间裁剪
@@ -447,6 +454,13 @@
         var ref = e.target;
         if (!ref.classList || !ref.classList.contains('scripture-ref')) return;
         e.stopPropagation();
+
+        // 再点同一引用 → 滑动收回（toggle）
+        if (popup && popup.style.display !== 'none' && currentRef === ref) {
+            hidePopup();
+            return;
+        }
+        currentRef = ref;
 
         var vol = +ref.dataset.vol, ch = +ref.dataset.ch;
         var verseNums = (ref.dataset.verses || '').split(',').map(function(s){ return +s; });
