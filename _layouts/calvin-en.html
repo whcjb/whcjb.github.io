@@ -8,23 +8,25 @@ layout: default
 
       <div class="cmp-topbar">
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
-        <!-- 顶部空白 = 隐形热区：静止无按钮，点击就地弹出「对比马太亨利注释」 -->
+        <!-- 顶部空白 = 隐形触控区（无悬浮效果）：点击后从其下边线滑出对照卡片 -->
         <div class="cmp-hotwrap">
           <div class="cmp-hotspot" id="cmpHotspot" role="button" tabindex="0"
-               aria-haspopup="true" aria-expanded="false" title="更多">
-            <span class="cmp-hint"><span class="cmp-dot"><i></i><i></i><i></i></span>对比 / 更多</span>
-          </div>
+               aria-haspopup="true" aria-expanded="false" title="对照其他注释"></div>
         </div>
       </div>
-      <!-- 弹层：移出热区、直挂 #cmpCol（高 z-index，永在最上层可点），JS 按点击坐标定位 -->
-      <div class="cmp-pop" id="cmpPop" role="menu">
-        <button id="cmpBtn" type="button" role="menuitem">
-          <svg class="cmp-ic" width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
-            <rect x="2" y="3.5" width="7" height="13" rx="1.6" fill="#0085a1"></rect>
-            <rect x="11" y="3.5" width="7" height="13" rx="1.6" fill="#C9922A"></rect>
-          </svg>
-          <span>对比马太亨利注释</span>
-        </button>
+      <!-- 对照卡片：直挂 #cmpCol（高 z-index，永在最上层可点），JS 定位到热区下边线，缓慢滑出 -->
+      <div class="cmp-drawer" id="cmpDrawer">
+        <div class="cmp-card">
+          <div class="cmp-card-title">对照其他注释</div>
+          <!-- 选项列表：现只有马太亨利，后续加约翰欧文等，照此追加 data-source 即可 -->
+          <button type="button" class="cmp-opt" data-source="mhenry">
+            <svg class="cmp-ic" width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
+              <rect x="2" y="3.5" width="7" height="13" rx="1.6" fill="#0085a1"></rect>
+              <rect x="11" y="3.5" width="7" height="13" rx="1.6" fill="#C9922A"></rect>
+            </svg>
+            <span>对比马太亨利注释</span>
+          </button>
+        </div>
       </div>
 
       {% if page.prev_section %}
@@ -671,32 +673,27 @@ a.commentary-anchor {
    绝对定位在 topbar 内，向下延伸覆盖上下章行；用 z-index+pointer-events 分层，
    让链接仍可点、空白处点击穿透到热区。 */
 .cmp-hotwrap{position:absolute;top:-6px;left:29%;right:15%;height:160px;z-index:0}
-.cmp-hotspot{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:flex-end;
-  padding:8px 8px 0 0;border:1px solid transparent;border-radius:8px;cursor:pointer;
-  pointer-events:auto;transition:border-color .18s,background .18s}
-.cmp-hotspot:hover,.cmp-hotspot:focus-visible{border-color:#e6e6e6;background:#fafafa;outline:none}
+/* 隐形触控区：无悬浮效果、无提示，纯点击 */
+.cmp-hotspot{position:absolute;inset:0;cursor:pointer;pointer-events:auto}
 /* 顶部交互元素浮在热区之上，空白处点击穿透 */
 .cmp-nav{position:relative;z-index:2;pointer-events:none}
 .cmp-nav a{pointer-events:auto}
 #verse-nav{position:relative;z-index:2}
-.cmp-hint{display:flex;align-items:center;gap:7px;font-size:12.5px;color:#9a9a9a;
-  letter-spacing:.08em;opacity:0;transition:opacity .18s;pointer-events:none}
-.cmp-hotspot:hover .cmp-hint,.cmp-hotspot:focus-visible .cmp-hint,
-.cmp-hotspot[aria-expanded=true] .cmp-hint{opacity:.85}
-.cmp-dot{display:inline-flex;gap:3px}
-.cmp-dot i{width:3px;height:3px;border-radius:50%;background:#b5b5b5;display:block}
-/* 弹层：JS 按点击坐标定位 */
-.cmp-pop{position:absolute;z-index:50;background:#fff;border:1px solid #ececec;border-radius:12px;
-  box-shadow:0 12px 34px rgba(30,30,40,.16),0 2px 6px rgba(0,0,0,.06);min-width:212px;padding:7px;
-  opacity:0;transform:translateY(-6px) scale(.98);transform-origin:top left;
-  pointer-events:none;transition:opacity .16s,transform .16s}
-.cmp-pop.flip-x{transform-origin:top right}
-.cmp-pop.open{opacity:1;transform:none;pointer-events:auto}
-.cmp-pop button{width:100%;text-align:left;background:none;border:none;color:#2c2c2c;cursor:pointer;
-  font-size:14.5px;padding:11px 14px;border-radius:9px;display:flex;align-items:center;gap:11px;
+/* 对照卡片抽屉：从热区下边线像出票一样缓慢滑出。
+   drawer 裁剪(overflow) + card 从上方 translateY(-102%) 滑下 = 出票效果。JS 定位。 */
+.cmp-drawer{position:absolute;z-index:50;overflow:hidden;max-height:0;pointer-events:none;
+  transition:max-height .46s cubic-bezier(.22,.61,.36,1)}
+.cmp-drawer.open{max-height:480px;pointer-events:auto}
+.cmp-card{background:#fff;border:1px solid #ececec;border-radius:12px;
+  box-shadow:0 16px 38px rgba(30,30,40,.18),0 3px 8px rgba(0,0,0,.06);padding:7px;
+  transform:translateY(-102%);transition:transform .46s cubic-bezier(.22,.61,.36,1)}
+.cmp-drawer.open .cmp-card{transform:translateY(0)}
+.cmp-card-title{font-size:11px;letter-spacing:.16em;color:#b3ab97;padding:7px 12px 5px}
+.cmp-opt{width:100%;text-align:left;background:none;border:none;color:#2c2c2c;cursor:pointer;
+  font-size:14.5px;padding:11px 13px;border-radius:9px;display:flex;align-items:center;gap:11px;
   font-family:inherit;transition:background .14s}
-.cmp-pop button:hover{background:#faf4e8}
-.cmp-pop .cmp-ic{flex:0 0 auto;display:block}
+.cmp-opt:hover{background:#faf4e8}
+.cmp-opt .cmp-ic{flex:0 0 auto;display:block}
 
 /* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半。
    position/z-index 让正文浮在热区之上，热区只捕获正文以上的空白区点击 */
@@ -743,7 +740,7 @@ a.commentary-anchor {
   .cmp-henry-head{display:none}
   .cmp-henry-frame{height:calc(100vh - 150px);flex:none}
 }
-@media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-pop,.cmp-hotspot,.cmp-hint{transition:none}}
+@media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-drawer,.cmp-card{transition:none}}
 </style>
 
 <script>
@@ -948,40 +945,44 @@ function closeVerseNav() {
 (function(){
   var hotspot=document.getElementById('cmpHotspot');
   if(!hotspot) return;
-  var pop=document.getElementById('cmpPop'),
-      hotwrap=hotspot.parentElement,
+  var drawer=document.getElementById('cmpDrawer'),
       col=document.getElementById('cmpCol'),
       stage=document.getElementById('cmpStage'),
       henry=document.getElementById('cmpHenry'),
       frame=document.getElementById('cmpFrame'),
       msg=document.getElementById('cmpMsg'),
-      cmpBtn=document.getElementById('cmpBtn'),
       closeBtn=document.getElementById('cmpClose'),
       origColClass=col.className, loaded=false;
 
   // 马太亨利章节 URL：把当前 /calvin/<书>/<章>/ 换成 /mhenry/...
   var henryUrl=location.pathname.replace('/calvin/','/mhenry/');
 
-  function placePop(cx,cy){
-    /* 弹层直挂 #cmpCol，按其坐标系定位 */
-    var w=col.getBoundingClientRect(), x=cx-w.left, y=cy-w.top, pw=pop.offsetWidth||210;
-    var flip=(x+pw+8)>w.width;
-    pop.classList.toggle('flip-x',flip);
-    pop.style.left=flip?'auto':x+'px';
-    pop.style.right=flip?(w.width-x)+'px':'auto';
-    pop.style.top=(y+6)+'px';
+  // 卡片定位到热区「下边线」：左边/宽度对齐热区，顶边贴热区底边，从这条线滑出
+  function placeDrawer(){
+    var c=col.getBoundingClientRect(), h=hotspot.getBoundingClientRect();
+    drawer.style.left=(h.left-c.left)+'px';
+    drawer.style.top=(h.bottom-c.top)+'px';
+    drawer.style.width=Math.max(h.width,220)+'px';
   }
-  function openPop(cx,cy){pop.classList.add('open');hotspot.setAttribute('aria-expanded','true');placePop(cx,cy);}
-  function closePop(){pop.classList.remove('open');hotspot.setAttribute('aria-expanded','false');}
+  function openDrawer(){placeDrawer();drawer.classList.add('open');hotspot.setAttribute('aria-expanded','true');}
+  function closeDrawer(){drawer.classList.remove('open');hotspot.setAttribute('aria-expanded','false');}
 
   hotspot.addEventListener('click',function(e){e.stopPropagation();
-    if(pop.classList.contains('open')){closePop();return;} openPop(e.clientX,e.clientY);});
+    if(drawer.classList.contains('open')){closeDrawer();return;} openDrawer();});
   hotspot.addEventListener('keydown',function(e){
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();
-      var r=hotspot.getBoundingClientRect();openPop(r.right-40,r.top+r.height/2);}});
-  pop.addEventListener('click',function(e){e.stopPropagation();});
-  document.addEventListener('click',closePop);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closePop();});
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();openDrawer();}});
+  drawer.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+
+  // 卡片选项路由（可扩展：新增注释源在 HTML 加 .cmp-opt[data-source]，此处加分支）
+  drawer.querySelectorAll('.cmp-opt').forEach(function(opt){
+    opt.addEventListener('click',function(e){e.stopPropagation();
+      var src=opt.getAttribute('data-source');
+      if(src==='mhenry') openCompare();
+      closeDrawer();
+    });
+  });
 
   // iframe 载入后：隐藏 mhenry 页 chrome + 自动展开注释；无内容则提示
   frame.addEventListener('load',function(){
@@ -1022,7 +1023,7 @@ function closeVerseNav() {
     stage.classList.add('split');
     setPane('calvin');            // 手机端默认先显示加尔文
     henry.setAttribute('aria-hidden','false');
-    closePop();
+    closeDrawer();
     requestAnimationFrame(sizeStage);
   }
   function closeCompare(){
@@ -1031,7 +1032,6 @@ function closeVerseNav() {
     col.className=origColClass;
     stage.style.height='';
   }
-  cmpBtn.addEventListener('click',function(e){e.stopPropagation();openCompare();});
   closeBtn.addEventListener('click',closeCompare);
   if(tgClose) tgClose.addEventListener('click',closeCompare);
   window.addEventListener('resize',sizeStage);
