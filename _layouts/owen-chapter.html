@@ -65,4 +65,16 @@ layout: default
 /* 导论 eyebrow */
 .owen-content .owen-exer-eyebrow{color:#7a8f85;font-size:12.5px;letter-spacing:.06em;
   text-transform:uppercase;text-align:center;margin:0 0 6px}
+/* 内容总纲 → 锚点导航 */
+.owen-content .owen-outline{display:block;border:1px solid #dfe6e0;border-left:3px solid #1f5a4b;
+  border-radius:8px;background:#fbfaf6;padding:14px 16px 6px;margin:0 0 26px}
+.owen-content .owen-outline-hd{font-size:12px;font-weight:bold;letter-spacing:.12em;
+  text-transform:uppercase;color:#7a8f85;margin-bottom:10px}
+.owen-content .owen-outline-item{display:block;color:#33443e;text-decoration:none;
+  font-size:14.5px;line-height:1.6;padding:3px 0 3px 4px;border-bottom:1px dotted #e2ebe5}
+.owen-content .owen-outline-item:last-child{border-bottom:none}
+.owen-content .owen-outline-item b{color:#1f5a4b;font-family:Georgia,serif;margin-right:5px}
+.owen-content .owen-outline-item:hover{color:#1f5a4b;background:#f2f7f4}
+/* 正文节锚点: 避开固定头 */
+.owen-content [id^="sec-"]{scroll-margin-top:80px}
 </style>

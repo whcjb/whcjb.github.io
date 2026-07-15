@@ -16,6 +16,7 @@ translate_owen.py — 约翰·欧文《希伯来书注释》英文页 → 中文
 import sys, re, argparse
 from pathlib import Path
 import translate_filibi as tf   # 同目录, 复用其 CLI/缓存
+from owen_outline import linkify as outline_linkify
 
 ROOT = Path(__file__).resolve().parent.parent
 
@@ -51,31 +52,46 @@ def translate_page(page_path, resume, publish):
     lines = body.split('\n')
 
     # 收集可译单元: (line_idx, kind, inner)
-    units = []
+    # 收集可译单元。英文页已 linkify: 段可能带 id(<p id="sec-N">), 总纲是
+    # <nav class="owen-outline">…<a …><b>N.</b> 文字</a>…</nav>。均提取内文翻译后按结构套回。
+    NAV_ITEM = re.compile(r'(<a class="owen-outline-item" href="#sec-\d+"><b>\d+\.</b> )(.*?)(</a>)', re.S)
+    units = []          # (line_idx, kind, text, meta)
     for i, l in enumerate(lines):
         s = l.strip()
         if s.startswith('# '):
-            units.append((i, 'h1', s[2:]))
+            units.append((i, 'h1', s[2:], None))
+        elif s.startswith('<nav class="owen-outline"'):
+            for k, m in enumerate(NAV_ITEM.finditer(s)):
+                units.append((i, f'nav', m.group(2), k))   # 每个纲目条目
         else:
-            mh = re.match(r'^<h2>(.*)</h2>$', s)
-            mp = re.match(r'^<p>(.*)</p>$', s)
+            mh = re.match(r'^<h2>(.*)</h2>$', s, re.S)
+            mp = re.match(r'^(<p(?:\s+id="[^"]*")?>)(.*)(</p>)$', s, re.S)
             if mh:
-                units.append((i, 'h2', mh.group(1)))
+                units.append((i, 'h2', mh.group(1), None))
             elif mp:
-                units.append((i, 'p', mp.group(1)))
+                units.append((i, 'p', mp.group(2), mp.group(1)))   # meta = 原开标签(含 id)
     print(f'{page_path}: {len(units)} 个可译单元', flush=True)
 
     texts = [u[2] for u in units]
     zh_list = tf.cached_translate(texts, resume)
-
-    for (i, kind, _), zh in zip(units, zh_list):
-        zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()   # 剥 Claude 分批标记 artifact
+    zmap = {}
+    for (i, kind, _, meta), zh in zip(units, zh_list):
+        zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
         if kind == 'h1':
             lines[i] = f'# {zh}'
         elif kind == 'h2':
             lines[i] = f'<h2>{zh}</h2>'
-        else:
-            lines[i] = f'<p>{zh}</p>'
+        elif kind == 'p':
+            lines[i] = f'{meta}{zh}</p>'
+        elif kind == 'nav':
+            zmap.setdefault(i, {})[meta] = zh
+    # 重建总纲 nav 行: 逐条替换链接文字, 保留 href/编号
+    for i, itemmap in zmap.items():
+        cnt = [0]
+        def _rep(m):
+            k = cnt[0]; cnt[0] += 1
+            return m.group(1) + itemmap.get(k, m.group(2)) + m.group(3)
+        lines[i] = NAV_ITEM.sub(_rep, lines[i])
 
     zh_body = '\n'.join(lines)
 

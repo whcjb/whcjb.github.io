@@ -9,6 +9,7 @@ owen_build.py — 把 owen_raw/hebrews/vol{N}_structured.txt 重组成:
 先 --map 打印章映射核对; 再 --emit 生成 markdown 到 owen/hebrews/。
 """
 import re, sys, os, glob
+from owen_outline import linkify as outline_linkify
 
 RAW = 'owen_raw/hebrews'
 VOL_BASE_CH = {3: 1, 4: 3, 5: 5, 6: 8, 7: 11}   # 各卷起始 Heb 章(粗基准, 供 verse-reset)
@@ -583,6 +584,7 @@ def emit_prefaces():
     for it in pieces:
         seq = it['seq']
         lines = [f'<p>{e(t)}</p>' for k, t in it['body']]   # 卷首(信件/序言)一律 <p>
+        lines = outline_linkify(lines)
         fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
               'book_name: "约翰欧文导论"',f'title: "{it["cn"]} · {it["en"][:40]}"',f'date: {date}']
         if seq > 1:
@@ -665,6 +667,7 @@ def emit_exercitations():
             fm += [f'next_url: "/owen/hebrews/exercitations/{seq+1}/"',
                    f'next_label: "导论 {seq+1}"']
         fm += ['---','']
+        lines = outline_linkify(lines)
         head = (f'<div class="owen-exer-eyebrow">{e(SERIES[it["series"]])} · Exercitation {e(it["roman"])}</div>\n\n'
                 f'# {e(htitle)}\n\n')
         os.makedirs(f'{EXER_OUT}/{seq}', exist_ok=True)
