@@ -231,8 +231,71 @@ def is_philology(p):
         return True
     return False
 
+# 层级 rank(实证得出, 越小越高): I. > First > 1. > (1.) > [1.]
+RANK = {'ROMAN': 0, 'FIRST': 1, 'NUM': 2, 'PAREN': 3, 'BRACK': 4}
+_FIRST = {'First':1,'Second':2,'Third':3,'Fourth':4,'Fifth':5,'Sixth':6,
+          'Seventh':7,'Eighth':8,'Ninth':9,'Tenth':10,'Lastly':99}
+def _roman(s):
+    R={'I':1,'V':5,'X':10,'L':50,'C':100}; tot=0; prev=0
+    for c in reversed(s.upper()):
+        v=R.get(c,0); tot += -v if v<prev else v; prev=max(prev,v)
+    return tot
+
+def parse_marker(t):
+    """-> (type, value, marker_str, rest) 或 None"""
+    m = re.match(r'^\[(\d{1,3})\.?\]\s*(.+)', t, re.S)
+    if m: return ('BRACK', int(m.group(1)), f'[{m.group(1)}.]', m.group(2))
+    m = re.match(r'^\((\d{1,3})\.?\)\s*(.+)', t, re.S)
+    if m: return ('PAREN', int(m.group(1)), f'({m.group(1)}.)', m.group(2))
+    m = re.match(r'^([IVX]{1,5})\.\s+(.+)', t, re.S)
+    if m: return ('ROMAN', _roman(m.group(1)), f'{m.group(1)}.', m.group(2))
+    m = re.match(r'^(\d{1,3})\.\s+(.+)', t, re.S)
+    if m: return ('NUM', int(m.group(1)), f'{m.group(1)}.', m.group(2))
+    m = re.match(r'^(First|Second|Third|Fourth|Fifth|Sixth|Seventh|Eighth|Ninth|Tenth|Lastly)(ly)?([,.]\s+.+)', t, re.S)
+    if m: return ('FIRST', _FIRST[m.group(1)], m.group(1)+(m.group(2) or ''), m.group(3).lstrip('., '))
+    return None
+
+# 内嵌分点切分: 句末标点后紧跟 N./(N.)/[N.] + 空格 + 大写(拉丁/希腊)= 下一个分点
+_INLINE = re.compile(r'(?<=[.;:!?"”’])\s+(?=(?:\d{1,3}\.|\(\d{1,3}\.?\)|\[\d{1,3}\.?\])\s+[A-Z"“Ͱ-Ͽἀ-῿])')
+def pre_split(t):
+    return [s.strip() for s in _INLINE.split(t) if s.strip()]
+
+def render_expo(paras):
+    """栈式解析真实嵌套深度: 值≥2 回到同类型开层并关子层; 值=1 按 rank 弹栈后压栈。
+    深度 = 当前开着的祖先层数。返回 [(depth, marker_str_or_None, text)]"""
+    stack = []   # [{'type','val'}]
+    out = []
+    for t in paras:
+        pm = parse_marker(t)
+        if not pm:
+            out.append((len(stack)-1 if stack else 0, None, t)); continue
+        typ, val, mstr, rest = pm
+        if val >= 2:
+            idx = next((i for i in range(len(stack)-1, -1, -1) if stack[i]['type']==typ), None)
+            if idx is not None:
+                del stack[idx+1:]; stack[idx]['val']=val; depth=idx
+            else:
+                while stack and RANK[stack[-1]['type']] >= RANK[typ]: stack.pop()
+                stack.append({'type':typ,'val':val}); depth=len(stack)-1
+        else:  # val == 1 新列表
+            while stack and RANK[stack[-1]['type']] >= RANK[typ]: stack.pop()
+            stack.append({'type':typ,'val':1}); depth=len(stack)-1
+        out.append((depth, mstr, rest))
+    return out
+
+def expo_html(paras):
+    e = _html.escape
+    html_lines = []
+    for depth, mstr, text in render_expo(paras):
+        d = min(depth, 4)   # 视觉缩进封顶 4 级
+        if mstr:
+            html_lines.append(f'<p class="owen-d{d} owen-mk"><b class="owen-num">{e(mstr)}</b> {e(text)}</p>')
+        else:
+            html_lines.append(f'<p class="owen-d{d}">{e(text)}</p>')
+    return html_lines
+
 def block_body(grp):
-    """经节组: 经文框(希/英) + 折叠的原文字词考据 + 释义正文"""
+    """经节组: 经文框(希/英) + 折叠的原文字词考据 + 释义正文(嵌套分点缩进)"""
     out = []; scr = []; body = []
     for k, t in grp:
         if k == 'VER':
@@ -264,7 +327,8 @@ def block_body(grp):
             det += f'<p>{_html.escape(p)}</p>'
         det += '</details>'
         out.append(det)
-    out.extend(expo)
+    expo = [frag for p in expo for frag in pre_split(p)]   # 先切开内嵌分点
+    out.extend(expo_html(expo))
     return '\n\n'.join(out)
 
 def emit_verse_pages():

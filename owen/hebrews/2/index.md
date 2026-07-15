@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 2
 title: "第二章"
-date: 2026-07-15 15:10
+date: 2026-07-15 15:37
 ---
 
 # 希伯来书 第二章
