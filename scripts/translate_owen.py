@@ -79,14 +79,34 @@ def translate_page(page_path, resume, publish):
 
     zh_body = '\n'.join(lines)
 
-    # 写中文 raw(翻译产物, 保留)
+    # 英文页 front matter 取值
+    def fmval(key):
+        m = re.search(rf'^{key}:\s*(.+)$', fm, re.M)
+        return m.group(1).strip().strip('"') if m else ''
     seq = re.search(r'/(\d+)/index\.md$', page_path)
+    seqn = seq.group(1) if seq else Path(page_path).parent.name
+    en_dir = '/' + str(Path(page_path).parent) + '/'      # /owen/hebrews/exercitations/N/
+    zh_url = en_dir + 'zh/'
+    zh_h1 = next((l[2:].strip() for l in lines if l.startswith('# ')), fmval('title'))
+
+    # 中文页独立 front matter(不混英文 prev/next; 加回英文链接)
+    fm_zh = ('---\n'
+             'layout: owen-chapter\n'
+             f'book_id: {fmval("book_id") or "hebrews/exercitations"}\n'
+             f'book_name: "{fmval("book_name") or "约翰欧文导论"}"\n'
+             f'title: "导论 {seqn} · {zh_h1[:40]}"\n'
+             f'date: {fmval("date")}\n'
+             f'en_url: "{en_dir}"\n'
+             '---\n')
+    zh_page = fm_zh + zh_body
+
+    # 1) 中文 raw(翻译产物, chmod 444 保留)
     raw_dir = ROOT / 'owen_raw/hebrews/zh_exercitations'
     raw_dir.mkdir(parents=True, exist_ok=True)
-    raw_out = raw_dir / (f'{seq.group(1)}.md' if seq else (Path(page_path).parent.name + '.md'))
+    raw_out = raw_dir / f'{seqn}.md'
     if raw_out.exists():
         raw_out.chmod(0o644)
-    raw_out.write_text(fm + zh_body, encoding='utf-8')
+    raw_out.write_text(zh_page, encoding='utf-8')
     raw_out.chmod(0o444)
     print(f'✓ 中文 raw → {raw_out}  (chmod 444)', flush=True)
 
@@ -94,8 +114,17 @@ def translate_page(page_path, resume, publish):
     print(f'  缓存命中 {hit} / {len(texts)}', flush=True)
 
     if publish:
-        src.write_text(fm + zh_body, encoding='utf-8')
-        print(f'✓ 已发布中文到 {page_path}', flush=True)
+        # 2) 中文页 → <en页>/zh/index.md (不覆盖英文)
+        zh_out = src.parent / 'zh' / 'index.md'
+        zh_out.parent.mkdir(parents=True, exist_ok=True)
+        zh_out.write_text(zh_page, encoding='utf-8')
+        print(f'✓ 中文页 → {zh_out}', flush=True)
+        # 3) 英文页回填 zh_url(仅当尚无), 使其显示「中文版」切换
+        en_txt = src.read_text(encoding='utf-8')
+        if 'zh_url:' not in en_txt:
+            en_txt = re.sub(r'\n---\n', f'\nzh_url: "{zh_url}"\n---\n', en_txt, count=1)
+            src.write_text(en_txt, encoding='utf-8')
+            print(f'✓ 英文页回填 zh_url → {page_path}', flush=True)
 
 def main():
     ap = argparse.ArgumentParser()

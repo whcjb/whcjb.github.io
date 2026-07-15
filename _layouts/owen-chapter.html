@@ -6,8 +6,10 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div style="margin: 16px 0 20px; font-size:13px;">
+      <div style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center;">
         <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 ↔</a>{% endif %}
+        {% if page.en_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.en_url }}">English ↔</a>{% endif %}
       </div>
 
       <div style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
@@ -56,6 +58,10 @@ layout: default
 .owen-content .owen-vg-prev{font-weight:normal;color:#8a8a82;font-size:13.5px;font-style:italic}
 .owen-content .owen-vg-body{padding:14px 18px 2px}
 .owen-content .owen-vg-body p.owen-ver{margin-top:0}
+/* 语言切换 pill */
+.owen-lang{display:inline-block;padding:3px 12px;border:1px solid #1f5a4b;border-radius:14px;
+  color:#1f5a4b !important;font-size:12px;text-decoration:none;white-space:nowrap}
+.owen-lang:hover{background:#1f5a4b;color:#fff !important}
 /* 导论 eyebrow */
 .owen-content .owen-exer-eyebrow{color:#7a8f85;font-size:12.5px;letter-spacing:.06em;
   text-transform:uppercase;text-align:center;margin:0 0 6px}
