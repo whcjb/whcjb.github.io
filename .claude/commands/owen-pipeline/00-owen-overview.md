@@ -45,13 +45,21 @@ python3 scripts/owen_extract.py <vol 1-7> --out owen_raw/hebrews/vol{N}_structur
 
 `owen_extract.py` 要点:
 - **段落边界 = 行间距**(正常 y 间距≈17, 段间≈32; 阈值 `PARA_GAP=25`)。
+- ⚠️ **跨页段落分界(踩过大坑)**:不能按页重置 `prev_y`——那样上页末段与下页首段会被错误粘连(如 `The ancients…made by him.` 与 `2. Others…` 本是两段被并成一段)。正确:跨页边界用「**上页末行是否短行**(x1 未达右边距−28 = 段落结束)**或** 下页首行是否分点/章节标记(`starts_marker`)」判定是否分段。
 - 去页眉页脚(y<66 / y>724)、页码、running header(`AN EXPOSITION`/`HEBREWS`…)。
 - 行末断字合并(`dehyphen`)。
 - 标题分类:`EXERCITATION N` / `PART` / 罗马数字节标题 / `Ver. N—经文`(逐节标题)/ `CHAPTER N`(阿拉伯数字!)。
 - 输出:段落一行, 非正文段前缀 `[H2]/[VER]/[EXER]/[PART]`。
 - ⚠️ 希腊文/叙利亚文/希伯来文原样保留(Owen 的 philology 对照段),grep 需 `-a`(文件含非 ASCII 被当二进制)。
 
+**覆盖率自检(必做)**:提取后按词数比对 PDF,应 ≈100%(差几十词 = 剥掉的页眉页脚页码):
+```
+fitz PDF 全文词数 vs owen_raw 词数 → we/wp ≈ 1.00
+```
+
 产物 `owen_raw/hebrews/vol{N}_structured.txt` 是**贵重产物**,勿删(见 refs/anti-patterns §M 同理)。
+
+**⚠️ 排版原则(用户明确要求, 血泪教训)**:**先严格照 PDF 忠实还原(段落原顺序原样、不折叠/不重排/不分级/不切分/不加结构), 优化留后**。`owen_build.py --emit`(`emit_faithful`)按章一页 `owen/hebrews/N/`, 段落照 PDF 顺序原样输出。曾反复用折叠考据/嵌套缩进/经节组分页等"优化"惹恼用户——**没有明确"优化"指令前, 保持忠实版**。
 
 ---
 
