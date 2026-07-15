@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 9
 title: "第九章"
-date: 2026-07-15 15:04
+date: 2026-07-15 15:10
 ---
 
 # 希伯来书 第九章

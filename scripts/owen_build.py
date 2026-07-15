@@ -216,8 +216,23 @@ def split_chapter(ps):
         blocks.append((f'Ver. {num}', slug_of(num or '0'), grp))
     return intro, blocks
 
+import html as _html
+PHIL_WITNESS = re.compile(r'^(V\.\s*L\.|Syr\.|Vulg\.|Beza|Eras\.|Arab\.|A\.\s*Montan|LXX|Sept\.|Chald\.| Æthiop)')
+def is_philology(p):
+    """Owen 逐词原文考据段: 以希腊/希伯来文起, 或以「词, "译解"」+多语版本标记起"""
+    s = p.strip()
+    if re.match(r'^[Ͱ-Ͽἀ-῿֐-׿]', s):   # 希腊/希伯来文开头
+        return True
+    if PHIL_WITNESS.match(s):
+        return True
+    # 短词 + 逗号 + 引号译解, 且含多语版本/拉丁标记
+    if re.match(r'^[A-Za-z][\w\-]{0,14},\s*["“]', s) and \
+       re.search(r'(Syr\.|Vulg\.|Beza|Eras\.|Chald\.|Lat\.|Montan)', s):
+        return True
+    return False
+
 def block_body(grp):
-    """经节组内容: 经文框(希/英) + 考据/释义正文"""
+    """经节组: 经文框(希/英) + 折叠的原文字词考据 + 释义正文"""
     out = []; scr = []; body = []
     for k, t in grp:
         if k == 'VER':
@@ -231,7 +246,25 @@ def block_body(grp):
             box += f'<p class="{cls}">{s}</p>'
         box += '</div>'
         out.append(box)
-    out.extend(body)
+    # 分离开头的字词考据区 → 折叠; 容忍考据间的短插句, 遇首段实质释义(长英文)即止
+    j = 0; started = False
+    while j < len(body):
+        if is_philology(body[j]):
+            started = True; j += 1
+        elif started and len(body[j]) < 140:   # 考据中夹的短句
+            j += 1
+        else:
+            break
+    phil, expo = body[:j], body[j:]
+    if not expo:            # 兜底: 若全被判为考据, 不折叠, 全显示
+        phil, expo = [], body
+    if phil:
+        det = '<details class="owen-philology" markdown="0"><summary>原文字词考据（希腊 / 希伯来 / 叙利亚 / 拉丁文逐词对照）</summary>'
+        for p in phil:
+            det += f'<p>{_html.escape(p)}</p>'
+        det += '</details>'
+        out.append(det)
+    out.extend(expo)
     return '\n\n'.join(out)
 
 def emit_verse_pages():

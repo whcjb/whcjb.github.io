@@ -51,4 +51,15 @@ layout: default
 .owen-content .owen-scr-en{color:#1f4a3f;font-weight:600;font-style:italic}
 .owen-content a{color:#1f5a4b}
 .owen-content a:hover{color:#14382f}
+/* 原文字词考据: 默认折叠, 弱化为参考 */
+.owen-content .owen-philology{margin:2px 0 18px;border:1px solid #e2e8e3;border-radius:6px;background:#f7faf8}
+.owen-content .owen-philology > summary{cursor:pointer;padding:9px 14px;font-size:13px;color:#5a7a6e;
+  letter-spacing:.04em;list-style:none;user-select:none}
+.owen-content .owen-philology > summary::-webkit-details-marker{display:none}
+.owen-content .owen-philology > summary::before{content:"▸ ";color:#8aa89b}
+.owen-content .owen-philology[open] > summary::before{content:"▾ "}
+.owen-content .owen-philology > summary:hover{color:#1f5a4b}
+.owen-content .owen-philology > p{margin:0 0 10px;padding:0 16px;font-size:13.5px;color:#555;line-height:1.75}
+.owen-content .owen-philology > p:first-of-type{padding-top:6px}
+.owen-content .owen-philology > p:last-child{padding-bottom:12px}
 </style>

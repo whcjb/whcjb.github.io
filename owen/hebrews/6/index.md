@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 6
 title: "第六章"
-date: 2026-07-15 15:04
+date: 2026-07-15 15:10
 ---
 
 # 希伯来书 第六章
