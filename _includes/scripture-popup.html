@@ -27,13 +27,25 @@
     z-index: 9999;
     background: #fff;
     border: 1px solid #e4dede;
-    border-top: 2px solid #800000;
+    border-left: 3px solid #800000;   /* 竖直出票口（酒红竖条） */
     border-radius: 8px;
     box-shadow: 0 6px 22px rgba(60,20,20,0.16), 0 2px 6px rgba(0,0,0,0.06);
     max-width: 360px;
     min-width: 180px;
     display: none;
     font-size: 14px;
+    /* 出票动画：从左边竖直出票口向右滑出（clip 由左向右揭示 + 轻微右移） */
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-10px);
+    transition: clip-path .42s cubic-bezier(.22,.61,.36,1),
+                transform .42s cubic-bezier(.22,.61,.36,1);
+}
+#scripture-popup.sp-open {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    #scripture-popup { transition: none; }
 }
 #scripture-popup-inner {
     padding: 12px 16px 14px;
@@ -240,10 +252,11 @@
             if (e.key === 'Escape') hidePopup();
         });
     }
-    function hidePopup() { if (popup) popup.style.display = 'none'; }
+    function hidePopup() { if (popup) { popup.classList.remove('sp-open'); popup.style.display = 'none'; } }
     function showPopupAt(anchor, html) {
         ensurePopup();
         document.getElementById('scripture-popup-content').innerHTML = html;
+        popup.classList.remove('sp-open');   // 复位到出票口（clip 全收）
         popup.style.display = 'block';
         // Position below the anchor, constrained to viewport
         var rect = anchor.getBoundingClientRect();
@@ -254,6 +267,8 @@
         var pw = popup.offsetWidth;
         var maxLeft = window.innerWidth - pw - 12;
         popup.style.left = Math.max(8, Math.min(left, maxLeft)) + 'px';
+        // 下一帧触发向右出票动画
+        requestAnimationFrame(function(){ popup.classList.add('sp-open'); });
     }
 
     function getVerses(cuv, vol, ch, verses) {
