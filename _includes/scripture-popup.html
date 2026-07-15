@@ -83,6 +83,16 @@
     vertical-align: super;
     margin-right: 2px;
 }
+.sp-grouplabel {
+    color: #800000;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: .03em;
+    margin: 10px 0 3px;
+    padding-top: 8px;
+    border-top: 1px dashed #e4dede;
+}
+.sp-grouplabel:first-child { margin-top: 2px; padding-top: 0; border-top: none; }
 .sp-not-found { color: #999; font-size: 13px; padding: 4px 0; }
 .sp-loading { color: #aaa; font-size: 13px; padding: 4px 0; }
 </style>
@@ -305,11 +315,12 @@
     if (!col) return;
 
     var CJK_RE = /[一-鿿㐀-䶿]/;
-    function makeRefSpan(vol, ch, verses, displayText, label) {
+    function makeRefSpan(vol, groups, displayText, label) {
+        // groups: [{ch, verses:[...]}, ...] → data-groups="5:10,11;14:3"（一处引用可含多组）
+        var g = groups.map(function(x){ return x.ch + ':' + x.verses.join(','); }).join(';');
         return '<span class="scripture-ref"'
             + ' data-vol="' + vol + '"'
-            + ' data-ch="' + ch + '"'
-            + ' data-verses="' + verses.join(',') + '"'
+            + ' data-groups="' + g + '"'
             + (label ? ' data-label="' + escHtml(label) + '"' : '')
             + '>'
             + escHtml(displayText) + '</span>';
@@ -355,31 +366,21 @@
             if (m[1].length <= 1 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
             var vol = bookMap[m[1]];
             if (!vol) continue;
-            var bookName = m[1];
-            var endIdx = m.index + m[0].length;
-            matches.push({
-                index: m.index, end: endIdx,
-                vol: vol, ch: parseInt(m[2]),
-                verses: parseVerses(m[3], m[4], m[5]),
-                display: m[0], label: null
-            });
-            // 尝试续接 ；ch:v...，最多 5 次
+            var startIdx = m.index, endIdx = m.index + m[0].length;
+            var groups = [{ ch: parseInt(m[2]), verses: parseVerses(m[3], m[4], m[5]) }];
+            var display = m[0];
+            // 同书续接（分号或空格分隔）合并进同一处引用，最多续 5 段 → 一张卡片显示全部
             for (var ci = 0; ci < 5; ci++) {
                 var mc = text.substring(endIdx).match(CONT_RE);
                 if (!mc) break;
-                var contCh = parseInt(mc[1]);
-                var contVerses = parseVerses(mc[2], mc[3], mc[4]);
-                var contLen = mc[0].length;
-                var vSuffix = contVerses.length > 1
-                    ? (contVerses[0] + '-' + contVerses[contVerses.length - 1])
-                    : String(contVerses[0]);
-                matches.push({
-                    index: endIdx, end: endIdx + contLen,
-                    vol: vol, ch: contCh, verses: contVerses,
-                    display: mc[0], label: bookName + contCh + '：' + vSuffix
-                });
-                endIdx += contLen;
+                groups.push({ ch: parseInt(mc[1]), verses: parseVerses(mc[2], mc[3], mc[4]) });
+                display += mc[0];
+                endIdx += mc[0].length;
             }
+            matches.push({
+                index: startIdx, end: endIdx,
+                vol: vol, groups: groups, display: display, label: null
+            });
             REF_RE.lastIndex = endIdx;
         }
 
@@ -405,7 +406,7 @@
             var vSuffixCN = vEnd ? (v1 + '-' + vEnd) : String(v1);
             matches.push({
                 index: m.index, end: mEnd,
-                vol: vol, ch: ch, verses: verses,
+                vol: vol, groups: [{ ch: ch, verses: verses }],
                 display: m[0], label: bookName + ch + '：' + vSuffixCN
             });
         }
@@ -428,7 +429,7 @@
                 var label = PAGE_BOOK_NAME + ch + '：' + vSuffix;
                 matches.push({
                     index: m.index, end: m.index + m[0].length,
-                    vol: PAGE_VOL, ch: ch, verses: verses,
+                    vol: PAGE_VOL, groups: [{ ch: ch, verses: verses }],
                     display: m[0], label: label
                 });
             }
@@ -441,7 +442,7 @@
         matches.forEach(function(mt) {
             if (mt.index < last) return; // skip overlaps
             html += escHtml(text.substring(last, mt.index));
-            html += makeRefSpan(mt.vol, mt.ch, mt.verses, mt.display, mt.label);
+            html += makeRefSpan(mt.vol, mt.groups, mt.display, mt.label);
             last = mt.end;
         });
         html += escHtml(text.substring(last));
@@ -463,8 +464,12 @@
         }
         currentRef = ref;
 
-        var vol = +ref.dataset.vol, ch = +ref.dataset.ch;
-        var verseNums = (ref.dataset.verses || '').split(',').map(function(s){ return +s; });
+        var vol = +ref.dataset.vol;
+        // data-groups="5:10,11;14:3" → [{ch,verses}]（一处引用可含多组，同卡展示）
+        var groups = (ref.dataset.groups || '').split(';').map(function(g){
+            var p = g.split(':');
+            return { ch: +p[0], verses: (p[1] || '').split(',').map(Number).filter(function(n){ return !isNaN(n); }) };
+        }).filter(function(g){ return g.ch; });
         // data-label holds the full "书名chapter：verse" for bare references
         var headerText = ref.dataset.label || ref.textContent;
 
@@ -474,16 +479,22 @@
             + '<div class="sp-loading">加载中…</div>');
 
         loadCUV(function(cuv) {
-            var verses = getVerses(cuv, vol, ch, verseNums);
             var inner = '<div class="sp-header">' + escHtml(headerText) + '</div>';
-            if (verses && verses.length) {
-                verses.forEach(function(vv) {
-                    inner += '<div class="sp-verse"><sup class="sp-vnum">' + vv.v + '</sup>'
-                          + escHtml(vv.text) + '</div>';
-                });
-            } else {
-                inner += '<div class="sp-not-found">未找到对应经文</div>';
-            }
+            var any = false;
+            groups.forEach(function(grp) {
+                var verses = getVerses(cuv, vol, grp.ch, grp.verses);
+                if (verses && verses.length) {
+                    any = true;
+                    // 多组时每组前加小标题「章:节」以区分不同章
+                    if (groups.length > 1)
+                        inner += '<div class="sp-grouplabel">' + grp.ch + ':' + grp.verses.join('、') + '</div>';
+                    verses.forEach(function(vv) {
+                        inner += '<div class="sp-verse"><sup class="sp-vnum">' + vv.v + '</sup>'
+                              + escHtml(vv.text) + '</div>';
+                    });
+                }
+            });
+            if (!any) inner += '<div class="sp-not-found">未找到对应经文</div>';
             if (popup && popup.style.display !== 'none') {
                 document.getElementById('scripture-popup-content').innerHTML = inner;
             }
