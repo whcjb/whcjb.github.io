@@ -131,6 +131,54 @@ def do_map():
             print(f'[Vol{vol} {np}段 {nv}节] ', end='')
         print()
 
+CN = ['零','一','二','三','四','五','六','七','八','九','十','十一','十二','十三']
+OUT = 'owen/hebrews'
+
+def para_to_md(k, t):
+    if k == 'VER':
+        return f'### {t}'
+    if k in ('H2', 'PART') and re.match(r'CHAPTER\s+\d+\s*$', t):
+        return None            # 章标记不入正文(front matter 已有章号)
+    if k in ('H2', 'PART'):
+        return f'## {t}'
+    return t
+
+def emit_chapters():
+    # 收集全部 13 章 segments(每章取其所属卷)
+    chapters = {}
+    for vol in [3,4,5,6,7]:
+        for ch, ps in chapter_segments(vol).items():
+            if ch not in chapters:      # 首次出现为准(避免跨卷重复)
+                chapters[ch] = ps
+    os.makedirs(OUT, exist_ok=True)
+    present = sorted(chapters)
+    from subprocess import check_output
+    date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    for ch in present:
+        ps = chapters[ch]
+        lines = []
+        for k, t in ps:
+            md = para_to_md(k, t)
+            if md is None:
+                continue
+            lines.append(md)
+        body = '\n\n'.join(lines)
+        fm = ['---', 'layout: owen-chapter', 'book_id: hebrews',
+              'book_name: "希伯来书·约翰欧文注释"', f'chapter: {ch}',
+              f'title: "第{CN[ch]}章"', f'date: {date}']
+        idx = present.index(ch)
+        if idx > 0:
+            pc = present[idx-1]; fm += [f'prev_section: {pc}', f'prev_label: "第{CN[pc]}章"']
+        if idx < len(present)-1:
+            nc = present[idx+1]; fm += [f'next_section: {nc}', f'next_label: "第{CN[nc]}章"']
+        fm += ['---', '']
+        open(f'{OUT}/{ch}.md','w',encoding='utf-8').write('\n'.join(fm) + f'# 希伯来书 第{CN[ch]}章\n\n' + body + '\n')
+        print(f'  写入 {OUT}/{ch}.md ({len(ps)} 段)')
+    return present
+
 if __name__ == '__main__':
-    if '--map' in sys.argv or len(sys.argv)==1:
+    if '--emit' in sys.argv:
+        chs = emit_chapters()
+        print(f'共 {len(chs)} 章: {chs}')
+    else:
         do_map()

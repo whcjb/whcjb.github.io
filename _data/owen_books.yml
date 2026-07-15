@@ -1,0 +1,7 @@
+# 约翰·欧文注释书目
+new_testament:
+  - id: hebrews
+    name: 希伯来书
+    en: Hebrews
+    chapters: 13
+    exercitations: 40   # Vol1-2 导论(待发布)

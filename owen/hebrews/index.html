@@ -1,0 +1,27 @@
+---
+layout: default
+title: 约翰欧文·希伯来书注释
+---
+<div class="container" style="padding-top:80px; max-width:840px;">
+  <div style="text-align:center; margin-bottom:8px;">
+    <h1 style="font-family:Georgia,'Songti SC',serif; color:#1f4a3f; font-size:30px; letter-spacing:.04em;">希伯来书</h1>
+    <div style="color:#1f5a4b; font-size:14px; letter-spacing:.12em; margin-top:6px;">约翰·欧文注释 · An Exposition of the Epistle to the Hebrews</div>
+    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">英文版（中文翻译进行中）</div>
+  </div>
+  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:34px 0;">
+    {% for n in (1..13) %}
+    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/"
+       style="display:flex; align-items:center; justify-content:center; width:70px; height:70px;
+              border:1px solid #cfe0d6; border-radius:10px; background:#fbfaf6; color:#1f5a4b;
+              font-family:Georgia,serif; font-size:20px; text-decoration:none;
+              box-shadow:0 1px 4px rgba(31,90,75,.10); transition:all .15s;"
+       onmouseover="this.style.background='#1f5a4b';this.style.color='#fff';"
+       onmouseout="this.style.background='#fbfaf6';this.style.color='#1f5a4b';">{{ n }}</a>
+    {% endfor %}
+  </div>
+  <p style="text-align:center; color:#8a8a82; font-size:13px; line-height:1.8; max-width:600px; margin:0 auto;">
+    约翰·欧文（John Owen, 1616–1683），清教神学家、牛津大学副校长。<br>
+    《希伯来书注释》共 7 卷，其中 1–13 章逐节注释取自 Vol 3–7；<br>
+    Vol 1–2 的 40 篇导论（Exercitations）待发布。
+  </p>
+</div>
