@@ -1015,7 +1015,21 @@ function closeVerseNav() {
     stage.classList.toggle('show-calvin',target!=='henry');
     tgBtns.forEach(function(b){b.classList.toggle('cmp-tg-active',b.getAttribute('data-target')===target);});
   }
-  tgBtns.forEach(function(b){b.addEventListener('click',function(){setPane(b.getAttribute('data-target'));});});
+  // 手机端加尔文靠窗口滚动，切到马太亨利页面变短会丢失滚动位置。
+  // 离开加尔文时记住 scrollY，切回时还原（桌面端两栏各自内部滚动，不受影响）。
+  var calvinScrollY=0, mqMobile=window.matchMedia('(max-width:820px)');
+  tgBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var target=b.getAttribute('data-target');
+      if(mqMobile.matches && target==='henry' && stage.classList.contains('show-calvin')){
+        calvinScrollY=window.scrollY||window.pageYOffset||0;
+      }
+      setPane(target);
+      if(mqMobile.matches && target==='calvin'){
+        requestAnimationFrame(function(){window.scrollTo(0,calvinScrollY);});
+      }
+    });
+  });
 
   function openCompare(){
     if(!loaded){frame.src=henryUrl;loaded=true;}
