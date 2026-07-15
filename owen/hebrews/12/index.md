@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 12
 title: "第十二章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/11/"
 prev_label: "第十一章"
 next_url: "/owen/hebrews/13/"
@@ -12,6 +12,8 @@ next_label: "第十三章"
 ---
 # 希伯来书 第十二章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1</span><span class="owen-vg-prev">Wherefore seeing we also are compassed about with so great a cloud of …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1.—Τονγαροῦν καὶ ἡμεῖς, τοσοῦτον ἔχοντες περικείμενον ἡμῖν νέφος μαρτύρων, ὄγκον ἀποθέμενοι πάντα καὶ τὴν εὐπερίστατον ἁμαρτίαν, διʼ ὑπομονῆς τρέχωμεν τὸν προκείμενον ἠμῖν ἀγῶνα.</p>
 
 <p>Τονγαροῦν, &quot;ideoque,&quot; &quot;quamobrem,&quot; &quot;igitur,&quot; &quot;proinde,&quot; &quot;quoniam;&quot; Syr., &quot;propter hoc,&quot; &quot;for this cause;&quot;—a vehement note of inference. Τοσοῦτον, etc., &quot;we also, who have all these witnesses, who compass us about as a cloud.&quot; Περικείμενον. Vulg. Lat., &quot;impositam nubem;&quot; Rhem., &quot;a cloud put upon us;&quot;—that is, ἐπικείμενον, which here hath no place, but is very improper. Ὄγκον ἀποθέμενοι πάντα. Vulg. Lat., &quot;deponentes omne pondus;&quot; Rhem., &quot;laying away all weight,&quot; for &quot;every weight.&quot; &quot;Abjecto omni pondere,&quot; &quot;casting away every weight.&quot; Others, &quot;deposito omni onere,&quot; &quot;laying aside every burden,&quot; a weight that is burdensome, and so a hinderance. Syr., &quot;loosing ourselves from all weight.&quot; Εὐπερίστατον ἁμαρτίαν. Vulg. Lat., &quot;et circumstans nos peccatum;&quot; Rhem., &quot;and the sin that compasseth us,&quot; &quot;that stands round us.&quot; Beza, &quot;peccatum ad nos circumcingendos proclive:&quot; which we render, &quot;the sin that doth so easily beset us;&quot; that is, to oppose and hinder us in our progress, which is to beset us. Syr., &quot;the sin which at all times is ready for us;&quot; that is, to act itself in us or against us. Erasmus, &quot;tenaciter inhaerens peccatum,&quot; &quot;the sin that doth so tenaciously inhere or cleave to us;&quot; perhaps to the sense of the place, though it mistakes the precise signification of the word. Smid., &quot;peccato facilè noxio,&quot; &quot;the sin that doth so easily hurt us;&quot; to comply with the exposition of the words which he embraceth. The mind of the Holy Ghost in this expression we must further inquire into.</p>
@@ -149,7 +151,11 @@ next_label: "第十三章"
 <p>Obs. VII. The reward that is proposed at the end of this race is every way worthy of all the pains, diligence, and patience, that are to be taken and exercised in the attainment of it.</p>
 
 <p>The apostle here riseth unto the highest direction, encouragement, and example, with respect unto the same duty, whereof we are capable. Hitherto he hath proposed unto us their example who had and professed the same faith with ourselves; now, he proposeth Him who is the author and finisher of that faith in us all. And therefore their faith is only proposed unto us for our imitation; his person is proposed unto us as a ground also of hope and expectation.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 2</span><span class="owen-vg-prev">Looking unto Jesus, the author and finisher of the faith; who, for the…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 2.—Ἀφορῶντες εἰς τὸν τῆς πίστεως ἀρχηγὸν καὶ τελειωτὴν Ἰησοῦν· ὅς ἀντὶ τῆς προκειμένης αὑτῷ χαρᾶς, ὑπέμεινε σταυρὸν, αἰσχύνης καταφρονήσας, ἐν δεξιᾷ τε τοῦ θρόνου τοῦ Θεοῦ ἐκάθισεν.</p>
 
 <p>Ἀφορῶντες. Vulg. Lat., &quot;aspicientes;&quot; Eras., &quot;respicientes;&quot; Bez., &quot;intuentes;&quot; Syr., וַנְחוּר, &quot;et respiciamus;&quot; &quot;looking:&quot; we want a word to express that act of intuition which is intended.</p>
@@ -231,7 +237,11 @@ next_label: "第十三章"
 <p>In the whole, we have an exact delineation of our Christian course in a time of persecution: 1. In the blessed example of it, which is the sufferings of Christ. 2. In the assured consequent of it, which is eternal glory: &quot;If we suffer with him, we shall also reign with him.&quot; 3. In a direction for the right successful discharge of our duty: which is the exercise of faith on Christ himself for assistance, (1.) As a sufferer and a Saviour; (2.) As the author and finisher of our faith. 4. An intimation of the great encouragement, which we ought to fix upon under all our sufferings; namely, the joy and glory that are set before us, as the issue of them.</p>
 
 <p>And the apostle carries on the same argument, with respect unto an especial improvement, of it in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3</span><span class="owen-vg-prev">For consider him [call things to account concerning him] that endured …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3.—Ἀναλογίσασθε γὰρ τὸν τοιαύτην ὑπομεμενηκότα ὑπὸ τῶν ἁμαρτωλῶν εἰς αὑτὸν ἀντιλογίαν, ἴνα μὴ κάμητε, ταῖς ψυχαῖς ὑμῶν ἐκλυόμενοι</p>
 
 <p>Ἀναλογίσασθε. Syr., חֲזַו, &quot;see,&quot; &quot;behold.&quot; Vulg., &quot;recogitate.&quot; Rhem., &quot;think diligently on;&quot; not unfitly. Beza, &quot;reputate quis ille sit,&quot; &quot;counting,&quot; &quot;reckoning,&quot; &quot;judging who he is;&quot; referring it to the person of Christ.</p>
@@ -309,7 +319,11 @@ next_label: "第十三章"
 <p>Obs. VIII. The constant consideration of Christ in his sufferings is the best means to keep up faith unto its due exercise in all times of trial.</p>
 
 <p>Οὔπω μέχρις αἵματος ἀντικατέστητε πρὸς τὴν ἀμαρτίαν ἀνταγωνιζόμενοι.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 4</span><span class="owen-vg-prev">Ye have not yet resisted unto blood, striving against sin.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 4.—Ye have not yet resisted unto blood, striving against sin.</p>
 
 <p>Having proposed the great example of Jesus Christ, and given directions unto the improvement of it, the apostle proceeds unto more general arguments, for the confirmation of his exhortation unto patience and perseverance in the times of suffering. That in this verse is taken from the consideration of their present state, and what yet they might be called unto, in the cause wherein they were engaged. For what can redeem them from ruin under greater trials who faint under the less?</p>
@@ -361,7 +375,11 @@ next_label: "第十三章"
 <p>Παιδείας. Vulg., &quot;disciplinam,&quot; &quot;the discipline.&quot; Syr., מַרְדוּתֵהּ, &quot;correction,&quot; &quot;rebuke;&quot; &quot;castigationem,&quot; &quot;the chastisement.&quot; Ἐκλύου. Vulg., &quot;ne fatigemini;&quot; &quot;be not weary;&quot; &quot;ne sis remissus;&quot; &quot;faint not.&quot;</p>
 
 <p>Ὀλιγώρει. Vulg., &quot;ne negligas:&quot; so others, &quot;neglect not:&quot; we, &quot;despise not,&quot; properly; for not only doth the word itself signify &quot;to set light by,&quot; but the Hebrew אַל־תִּמְאָס, Prov. 3:11, is &quot;to repudiate, to reject and contemn.&quot; And מוּסָר is properly &quot;correction.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 5</span><span class="owen-vg-prev">And ye have forgotten the exhortation which speaketh unto you as unto …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 5.—And ye have forgotten the exhortation which speaketh unto you as unto children, My son, despise not thou the chastening of the Lord, nor faint [or wax weary] when thou art rebuked of him.</p>
 
 <p>The apostle in these words proceeds unto a new argument, whereby to press his exhortation unto patience and perseverance under sufferings. And this is taken from the nature and end, on the part of God, of all those sufferings which he sends or calls us unto. For they are not only necessary, as testimonies unto the truth, but as unto us they are chastisements and afflictions, which we stand in need of, and wherein God hath a blessed design towards us. And this argument he enforceth, with sundry considerations, unto the end of verse 13.</p>
@@ -449,7 +467,11 @@ next_label: "第十三章"
 <p>The Syriac in the latter clause reads לַבְּנָיֵא, in the plural number, &quot;the sons;&quot; and in the last words retain the Hebraism, בְּהוּן צָבֵא דְּהָו, &quot;in whom he willeth,&quot; from רָצָה, that is, &quot;is well pleased.&quot;</p>
 
 <p>There may be a double distinction in reading of the last clause. Some place the incisum, or note of distinction, at πάντα; and then the sense is, &quot;He scourgeth every one, whom he receiveth or acknowledgeth as a son:&quot; some at υἱόν, as we render it, &quot;every son whom he receiveth;&quot; which is the better reading.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 6</span><span class="owen-vg-prev">For whom the Lord loveth he chasteneth, and scourgeth every son whom h…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 6.—For whom the Lord loveth he chasteneth, and scourgeth every son whom he receiveth.</p>
 
 <p>There is a reason given us in these words why we should not faint under divine chastisements, as the redditive conjunction &quot;for,&quot; signifies.</p>
@@ -499,7 +521,11 @@ next_label: "第十三章"
 <p>Πατήρ, אֲבוּהִי, &quot;his father.&quot;</p>
 
 <p>Tremellius renders the Syriac, &quot;Endure therefore chastisement, because God dealeth with you as with children;&quot; which somewhat alters the sense of the original but gives that which is good and wholesome.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 7</span><span class="owen-vg-prev">If ye endure chastening, God dealeth with you as with sons; for what s…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 7.—If ye endure chastening, God dealeth with you as with sons; for what son is he whom the father chasteneth not?</p>
 
 <p>It is not a new argument that is here produced, but an inference from and an especial application of that foregoing, and the exhortation confirmed by it. There are three things in the words: 1. A supposition of the performance of the duty exhorted unto: &quot;If ye endure,&quot; etc. 2. The benefit or advantage obtained thereby: &quot;God dealeth,&quot; etc. 3. An illustration of the whole, by a comparison with men in their dealings: &quot;For what son,&quot; etc.</p>
@@ -529,7 +555,11 @@ next_label: "第十三章"
 <p>Εἰ δὲ χωρίς ἐστε παιδείας, ἧς μέτοχοι γεγόνασι πάντες, ἄρα νόθοι ἐστὲ, και οὐχ υἱοί.</p>
 
 <p>Νόθοι. Syr., גוּכְיָיֵא, &quot;aliens,&quot; &quot;foreigners,&quot; &quot;strangers.&quot; Vulg. Lat., &quot;adulteri;&quot; which the Rhem. render &quot;bastards,&quot; because of the palpable mistake in the Latin. Bez., &quot;supposititii;&quot; which, as Renius on Valla observes, is ὑποβολιμαῖοι, properly &quot;spurii,&quot; &quot;bastards,&quot; children illegitimate, who have no right to the inheritance.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 8</span><span class="owen-vg-prev">But if ye be without chastisement, whereof all are partakers, then are…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 8.—But if ye be without chastisement, whereof all are partakers, then are ye bastards, and not sons.</p>
 
 <p>The rule which the apostle hath laid down concerning chastisements, as a necessary, inseparable adjunct of the relation between father and son, is so certain in nature and grace, that to the inference which he hath made on the one hand unto the evidence of sonship from them, he adds here another no less unto his purpose on the other; namely, that those who have no chastisements are no sons, no children.</p>
@@ -571,7 +601,11 @@ next_label: "第十三章"
 <p>Ἐπὶ τὸ συμφέρον, &quot;ad id quod utile est,&quot; &quot;unto that which is profitable.&quot; Syr., for ὁ δέ, דֵּין אֱלָהָא, &quot;but God,&quot; who is intended; לְעיּרְרָנַן, &quot;unto our aid&quot; or &quot;help.&quot; &quot;Ad commodum,&quot; that is, &quot;nostrum;&quot; &quot;for our profit.&quot;</p>
 
 <p>Εἰς τὸ μεταλαθεῖν τῆς ἁγιότητος αὐτοῦ. Vulg., &quot;in recipiendo sanctificationem ejus;&quot; Rhem., &quot;in receiving of his sanctification;&quot; missing the sense of both the words. Sanctification is ἁγιασμός, not ἁγιότης; and εἰς τό expresseth the final cause.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 9, 10</span><span class="owen-vg-prev">Moreover, we have had fathers of our flesh, who chastened [us,] and we…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 9, 10.—Moreover, we have had fathers of our flesh, who chastened [us,] and we gave [them] reverence: shall we not much rather be in subjection unto the Father of spirits, and live? For they verily for a few days chastened [us,] as it seemed good unto them; but he for [our] profit, that [we] might partake of his holiness.</p>
 
 <p>The design of these words is further to evince the equity of the duty exhorted unto, namely, the patient enduring of divine chastisement; which is done on such cogent principles of conviction as cannot be avoided.</p>
@@ -629,7 +663,11 @@ next_label: "第十三章"
 <p>Πᾶσα δὲ παιδεία πρὸς μὲν τὸ παρὸν οὐ δοκεῖ χαρᾶς εἶναι, ἀλλὰ λύπης· ὕστερον δὲ καρπὸν εἰρηνικὸν δἰ αὐτῆς γεγυμνασμένοις ἀποδίδωσι δικαιοσύνης.</p>
 
 <p>Καρπόν. Syr., וַדְזַדּיקוּתָא דָּשְׁלָמָא פִּארֵא, &quot;the fruit of peace and righteousness.&quot; Vulg., &quot;fructum pacatissimum;&quot; &quot;most peaceable,&quot; Rhem.; and ἀποδίδωσι it renders in the future, &quot;reddet,&quot; for &quot;reddit.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11</span><span class="owen-vg-prev">Now no chastening for the present seemeth to be joyous, but grievous; …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11.—Now no chastening for the present seemeth to be joyous, but grievous; nevertheless, afterward it yieldeth the peaceable fruit of righteousness, unto them which are exercised thereby.</p>
 
 <p>This is the close of the apostle&#x27;s dispute and arguing about sufferings and afflictions, with the use of them, and our duty in bearing them with patience. And he gives it us in a general rule, wherein he balanceth the good and evil of them, showing how incomparably the one exceedeth the other. The same argument he insisteth upon, 2 Cor. 4:17, &quot;For our light affliction, which is but for a moment, worketh for us a far more exceeding and eternal weight of glory.&quot;</p>
@@ -691,7 +729,11 @@ next_label: "第十三章"
 <p>Obs. X. Herein lies the wisdom of faith in this matter, not to pass a judgment on chastisements, from the present sense we have of what is evil and dolorous in them, but from their end and use, which are blessed and glorious.</p>
 
 <p>In these verses an entrance is made into the second part of the chapter, which is designed unto the application of the doctrine concerning sufferings, afflictions, and chastisements, before insisted on. And there are three parts of it: 1. A general exhortation unto an improvement of the said doctrine, in a conformity of mind unto it. 2. A prescription of sundry important duties, in their joint walking before God unto the same end, verses 14–16. 3. A confirmation of the whole, by an instance or example of one who did all things contrary unto the duties prescribed, namely, Esau; with the severe issue thereon, verses 16, 17. The first of these is contained in these two verses.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 12, 13</span><span class="owen-vg-prev">Wherefore lift up the hands which hang down, and the feeble knees; and…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 12, 13.—Διὸ τὰς παρειμένας χεῖρας καὶ τὰ παραλελυμένα γόνατα ἀνορθώσατε· καὶ τροχιὰς ὀρθὰς ποιήσατε τοῖς ποσὶν ὑμῶν, ἵνα μὴ τὸ χωλὸν ἐκτρπῇ, ἰαθῆ δὲ μᾶλλον.</p>
 
 <p class="owen-ver">Ver. 12, 13.—Wherefore lift up the hands which hang down, and the feeble knees; and make straight paths for your feet, lest that which is lame be turned out of the way; but let it rather be healed.</p>
@@ -785,7 +827,11 @@ next_label: "第十三章"
 <p>Obs. IX. It is good to deal with and endeavour the healing of such lame halters whilst they are yet in the way; when they are quite turned out, their recovery will be difficult, if not impossible.</p>
 
 <p>From his exhortation unto patient perseverance in the profession of the gospel, under sufferings and afflictions, the apostle proceeds unto a prescription of practical duties; and although they are such as are absolutely necessary in themselves at all times, yet they are here peculiarly enjoined with respect unto the same end, or our constancy in professing the gospel. For no light, no knowledge of the truth, no resolution or courage, will preserve any man in his profession, especially in times of trial, without a diligent attendance unto the duties of holiness and gospel obedience. And he begins with a precept general and comprehensive of all others.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 14</span><span class="owen-vg-prev">Earnestly follow peace with all [men], and holiness, without which no …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 14.—Εἰρήνην διώκετε μετὰ πάντων, καὶ τὸν ἁγιασμὸν, οὗ χωρὶς οὐδεὶς ὅψεται τὸν Κύριον.</p>
 
 <p>Διώκετε. Vulg., &quot;sequimini;&quot; others, &quot;sectamini,&quot; which comes nearer the original, and denotes a vehement pursuit. Syr., בָּתַר הַרְטוּ, &quot;run after&quot; peace. We elsewhere translate the same word in the same duty, by &quot;pursue&quot; and &quot;ensue,&quot; Ps. 34:14; 1 Pet. 3:11.</p>
@@ -827,7 +873,11 @@ next_label: "第十三章"
 <p>Obs. V. The same means is to be used for the securing of our present perseverance and of our future blessedness, namely, holiness.</p>
 
 <p>From a prescription of necessary duties, the apostle proceedeth to give caution and warning against sundry sins and evils that are contrary unto them, and such as, if admitted, would prove ruinous unto their profession. And concerning these he gives his caution not directly unto individual persons, but unto the whole church, or society of professors, with respect unto their mutual duty among themselves.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15</span><span class="owen-vg-prev">Looking diligently lest any man fail of the grace of God; lest any roo…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15.—Ἐπισκοποῦντες μή τις ὑστερῶν ἀπὸ τῆς χάριτος τοῦ Θεοῦ· μή τις ῥίζα πικρίας ἄνω φύουσα ἐνοχλῇ, καὶ διὰ ταύτης μιανθῶσι πολλοί.</p>
 
 <p>Ἐπισκοποῦντες. Vulg., &quot;contemplantes.&quot; The Rhemists more properly, &quot;looking diligently.&quot; Syr., זְהִרִין וַהֲוַיְתּיּן, &quot;and be ye watchful,&quot; &quot;take ye heed.&quot; &quot;Prospicientes,&quot; &quot;superintendentes;&quot; &quot;using a diligent inspection and oversight.&quot;</p>
@@ -903,7 +953,11 @@ next_label: "第十三章"
 <p>Ἀντὶ βρώσεως μιᾶς. Vulg., &quot;propter unam escam.&quot; Rhem., &quot;one dish of meat.&quot; Bez., &quot;uno edulio;&quot; &quot;one morsel,&quot; something to be eaten at once. We say, &quot;one morsel of meat;&quot; but it was &quot;broth,&quot; which is no less &quot;edulium&quot; than &quot;meat.&quot;</p>
 
 <p>Ἴστε γάρ. Vulg., &quot;scitote enim.&quot; &quot;For know ye,&quot; imperatively. &quot;For ye do know.&quot; Syr., אַנְהּוּן יָדְעִין, &quot;you are knowing of it.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 16, 17</span><span class="owen-vg-prev">Lest there be any fornicator, or profane person, as Esau, who for one …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 16, 17.—Lest there be any fornicator, or profane person, as Esau, who for one morsel of meat sold his birthright. For ye know that afterward, when he would have inherited the blessing, he was rejected: for he found no place of repentance, though he sought it carefully with tears.</p>
 
 <p>The apostle proceeds to give other instances of such evils as whereby Christian societies would be corrupted, and way made for total apostasy; which were to be diligently heeded and carefully watched against. And the end hereof is, that either such evils may be prevented, or those who are guilty of them be recovered, (the difficulty whereof in the latter instance is declared), or be cast out of the church, that it be not defiled; which are the ends of this inspection.</p>
@@ -1045,7 +1099,11 @@ next_label: "第十三章"
 <p>(2.) He issues and closeth the whole argumentative part of the epistle, here summarily represented, with a declaration of the end and issue of the two states which he had so compared; namely, that one of them was speedily to be removed and taken out of the way, and the other to be established for ever, verses 26, 27. And hereon he closeth the whole with a direction how to behave ourselves in the evangelical worship of God, in the consideration of his glorious majesty and holiness, both in giving the law and the gospel.</p>
 
 <p>A due attendance unto these rules will guide us in the exposition of this whole context.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 18, 19</span><span class="owen-vg-prev">For ye are not come unto the mount that might be touched, and that bur…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 18, 19.—Οὐ γὰρ προσεληλύθατε ψηλαφωμένῳ ὄρει, καὶ κεκαυμένῳ πυρὶ, καὶ γνόφῳ, καὶ σκότῳ, καὶ θυέλλῃ, καὶ σάλπιγγος ἤχῳ, καὶ φωνῇ ῥημάτων, ἧς οἱ ἀκούσαντες παρῃτήσαντο μὴ προστεθῆναι αὑτοῖς λόγον.</p>
 
 <p>Προσεληλύθατε. Προσέρχομαι is the word constantly used by our apostle to express a sacred access, or coming unto God in his worship. See chap. 10:1.</p>
@@ -1149,7 +1207,11 @@ next_label: "第十三章"
 <p>Obs. VII. That the speaking of the law doth immediately discover the invincible necessity of a mediator between God and sinners.—The people quickly found that there was no dealing with God for them in their own persons, and therefore desired that there might be one to mediate between God and them. And,—</p>
 
 <p>Obs. VIII. If the giving of the law was so full of terror that the people could not bear it, but apprehended that they must die, if God continued to speak it to them; what will be the execution of its curse in a way of vengeance at the last day!</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 20, 21</span><span class="owen-vg-prev">For they could not endure [bear] that which was commanded. And if so m…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 20, 21.—(Οὐκ ἔφερον γὰρ τὸ διαστελλόμενον· Κἂν θηρίον θίγῃ τοῦ ὄρους, λιθοβοληθήσεται, ἤ βολίδι κατατοξευθήσεται. Καί, οὕτω φοβερὸν ἦν τὸ φανταζόμενον, Μωϋσῆς εἶπεν, Ἔκφοβός εἰμι καὶ ἔντρομος.)</p>
 
 <p>Οὐκ ἔφερον. Vulg., &quot;non portabant;&quot; &quot;they did not bear.&quot; &quot;Non ferebant,&quot; Bez. Syr., לַמְסַיְבָרוּ חֲווּ מֶשְׁכְּהִין גֵיר לָא, &quot;for they were not able to sustain,&quot; or &quot;bear.&quot; We, &quot;to endure.&quot;</p>
@@ -1205,7 +1267,11 @@ next_label: "第十三章"
 <p>It is said that &quot;God answered him with a voice;&quot; but what he said unto him is not recorded. No doubt but God spake that which gave him relief, which delivered him out of his distress, and reduced him unto a frame of mind meet for the ministration committed unto him; which in his surprisal and consternation he was not. And therefore immediately afterwards, when the people fell into their great horror and distress, he was able to relieve and comfort them; no doubt with that kind of relief which he himself had received from God, Exod. 20:20. It appears, then, that,—</p>
 
 <p>Obs. All persons concerned were brought unto an utter loss and distress, by the renovation and giving of the law; from whence no relief is to be obtained, but by Him alone who is &quot;the end of the law for righteousness unto every one that believeth.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 22–24</span><span class="owen-vg-prev">But ye are come unto mount Sion, and unto the city of the living God, …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 22–24.—Ἀλλὰ προσεληλύθατε Σιὼν ὄρει, καὶ πόλει Θεοῦ ζῶντος, Ἰερουσαλὴμ ἐπουρανίῳ, καὶ μυριάσιν ἀγγέλων, πανηγύρει καὶ ἐκκλησίᾳ πρωτοτόκων ἐν οὐρανοῖς ἀπογεγραμμένων, καὶ κριτῇ Θεῷ πάντων, καὶ πνεύμασι δικαίων τετελειωμένων, καὶ διαθήκης νέας μεσίτῃ Ἰησοῦ, καὶ αἴματι ῥαντισμοῦ, κρείττονα λαλοῦντι παρὰ τὸν Ἄβελ.</p>
 
 <p>The Vulgar Latin and the Syriac seem to have read μυριάδων instead of μυριάσιν; hence they join πανηγύρει, the word following, unto those foregoing, &quot;unto the assembly of many thousands of angels;&quot; but without warrant from any copies of the original.</p>
@@ -1411,7 +1477,11 @@ next_label: "第十三章"
 <p>3. The means on our part whereby we come to this state and society, is faith in Christ alone. Hereby we come to him; and coming to him he makes us free citizens of the heavenly Jerusalem.</p>
 
 <p>If this only true notion of the catholic church were received, as it ought to be, it would cast contempt on all those contests about the church, or churches, which at this day so perplex the world. He who is first instated, by faith on the person and mediation of the Lord Jesus Christ, in this heavenly society, will be guided by the light and privileges of it into such ways of divine worship in churches here below as shall cause him to improve and grow in his interest in that above. And he who is not admitted into this society, let him be in the bosom, or at the head of all the churches in the world, it will be of no advantage unto him.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 25–27</span><span class="owen-vg-prev">See [take heed] that ye refuse not [turn not away from] him that speak…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 25–27.—Βλέπετε, μὴ παραιτήσησθε τὸν λαλοῦντα· εἰ γὰρ ἐκεῖνοι οὐκ ἔφυγον, τὸν ἐπὶ τῆς γῆς παραιτησάμενοι χρηματίζοντα, πολλῷ μᾶλλον ἡμεῖς οἱ τὸν ἀπʼ οὐρανῶν ἀποστρεφόμενοι; Οὗ ἡ φωνή τὴν γῆν ἐσάλευσε τότε· νῦν δὲ ἐπήγγελται λέγων, Ἔτι ἅπαξ, ἐγὼ σείω οὐ μὸνον τὴν γῆν, ἀλλὰ καὶ τὸν οὐρανόν. Τὸ δὲ, Ἔτι ἅπαξ, δηλοῖ τῶν σαλευομένων τὴν μετάθεσιν, ὡς πεποιημένων, ἵνα μείνῃ τὰ σαλευόμενα.</p>
 
 <p>Βλέπετε, &quot;videte,&quot; Vulg., Bez. So we, &quot;see&quot; Syr., אֶזְדַהֲרוּ, &quot;take heed:&quot; in which sense this verb is always used in the imperative mood, &quot;look to it,&quot; &quot;take heed,&quot; &quot;beware:&quot; and so it were better here translated; though &quot;see&quot; be of the same sense in common use.</p>
@@ -1563,7 +1633,11 @@ next_label: "第十三章"
 <p>4. In the room of these things removed, things that are not, that &quot;cannot be shaken,&quot; are to be established. These things in the next verse he calls &quot;a kingdom that cannot be moved,&quot; which believers do receive;—that is, the things of the spiritual kingdom of Jesus Christ; the gospel with all its privileges, worship, and excellency, in relation to Christ, his person, office, and grace; the things which the apostle hath proved to be signified by all the institutions of the law and to be every way more excellent than they. These are so to be introduced and established, as to remain unto the consummation of all things.</p>
 
 <p>We shall yet further observe, that although the removal of Mosaical worship and the old church-state be principally intended, which was effected at the coming of Christ, and the promulgation of the gospel from heaven by him, yet all other oppositions unto him and his kingdom are included therein; not only those that then were, but all that should ensue unto the end of the world. The &quot;things that cannot be moved,&quot; are to remain and be established against all opposition whatever. Wherefore, as the heavens and the earth of the idolatrous world were of old shaken and removed, so shall those also of the antichristian world, which at present in many places seem to prevail. All things must give way, whatever may be comprised in the names of heaven and earth here below, unto the gospel, and the kingdom of Christ therein. For if God made way for it by the removal of his own institutions, which he appointed for a season, what else shall hinder its establishment and progress unto the end?</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 28, 29</span><span class="owen-vg-prev">Wherefore we receiving a kingdom which cannot be moved, let us have gr…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 28, 29.—Διὸ βασιλείαν ἀσάλευτον παραλαμβάνοντες, ἔχωμεν χάριν δι ̓ ἧς λατρεύωμεν εὐαρέστως τῷ Θεῷ μετὰ αἰδοῦς καὶ εὐλαβεὶας· καὶ γὰρ ὁ Θεὸς ἡμῶν πῦρ καταναλίσκον.</p>
 
 <p class="owen-ver">Ver. 28, 29.—Wherefore we receiving a kingdom which cannot be moved, let us have grace, whereby we may serve God acceptably with reverence and godly fear: for our God [is] a consuming fire.</p>
@@ -1673,3 +1747,5 @@ next_label: "第十三章"
 <p>Ἡ φιλαδελφία μενέτω.</p>
 
 <p>Vulg. Lat., &quot;charitas fraternitatis,&quot; &quot;the love of the brotherhood;&quot; not so properly. Syr., &quot;love of the brethren.&quot; And unto μενέτω, both add, &quot;in vobis,&quot; &quot;in you.&quot; &quot;Amor fraternus,&quot; &quot;charitas fraterna.&quot; Μενέτω, &quot;maneat;&quot; that is, &quot;constans maneat.&quot; Why it is thus enjoined, we shall inquire.</p>
+</div>
+</details>

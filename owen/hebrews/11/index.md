@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 11
 title: "第十一章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/10/"
 prev_label: "第十章"
 next_url: "/owen/hebrews/12/"
@@ -32,6 +32,8 @@ next_label: "第十二章"
 
 <p>The first verse gives such a description of the nature of faith, as evidenceth its fitness and meetness unto the effecting of the great work assigned unto it, namely, the preservation of believers in the profession of the gospel with constancy and perseverance.</p>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1</span><span class="owen-vg-prev">Now faith is the substance of things hoped for, the evidence of things…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1.—Ἔστι δὲ πίστις ἐλπιζομένων ὑπόστασις, πραγμάτων ἔλεγχος οὐ βλεπομένων.</p>
 
 <p>The Vulgar translation placeth the comma after πραγμάτων; &quot;sperandarum substantia rerum,&quot; excluding &quot;rerum&quot; from the last clause. Both ἐλπιζομένων and βλεπομένων being of the neuter gender, may either of them agree with πραγμάτων, and the other be used absolutely. &quot;Sperandorum;&quot; that is, &quot;quae sperantur.&quot;</p>
@@ -115,7 +117,11 @@ next_label: "第十二章"
 <p>Obs. V. It is faith alone that takes believers out of this world whilst they are in it, that exalts them above it whilst they are under its rage; that enables them to live upon things future and invisible, giving such a real subsistence unto their power in them, and victorious evidence of their reality and truth in themselves, as secures them from fainting under all oppositions, temptations, and persecutions whatever.</p>
 
 <p>That the description which he hath given of faith, and the efficacy which he hath assigned thereunto, are true, and to be relied on, the apostle proves by the effects which, as such, it hath had in those of old in whom it was.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 2</span><span class="owen-vg-prev">For by it the elders obtained a good report: [or, were well testified …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 2.—Ἐν ταύτῃ γὰρ ἐμαρτυρήθησαν οἱ πρεσβύτεροι.</p>
 
 <p>Ἐν ταύτῃ, &quot;in hâc,&quot; &quot;de hâc,&quot; &quot;ob hanc,&quot; &quot;ob eam;&quot; all to the same purpose.</p>
@@ -157,7 +163,11 @@ next_label: "第十二章"
 <p>Obs. VI. However men may be despised, vilified, and reproached in the world, yet if they have faith, if they are true believers, they are accepted with God, and he will give them a good report.</p>
 
 <p>He enters on the confirmation and exemplification of his proposition by instances; first from an especial object of faith, and then proceeds unto the actings of it in them who by virtue of it did actually and really believe. The former he expresseth in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3</span><span class="owen-vg-prev">By faith we understand that the worlds were framed by the word of God;…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3.—Πίστει νοοῦμεν κατηρτίσθαι τοὺς αἰῶνας ῥήματι Θεοῦ, εἰς τὸ μὴ ἐκ φαινομένων τὰ βλεπόμενα γεγονέναι.</p>
 
 <p>Πίστει. Syr., בְּהַיְמָנוּתָא, &quot;by faith.&quot; So all others, &quot;per fidem,&quot; &quot;by faith;&quot; for being put absolutely, it denotes the instrumental cause.</p>
@@ -219,7 +229,11 @@ next_label: "第十二章"
 <p>Obs. IV. The aids of reason, with the due consideration of the nature, use, and end of all things, ought to be admitted of, to confirm our minds in the persuasion of the original creation of all things; yet are they not to be rested in, but we must betake ourselves unto faith fixed on divine revelation. For, (1.) If they are alone they will be often shaken with a contrary rational maxim, namely, &quot;Ex nihilo nihil fit.&quot; (2.) They can give us no light into the way and manner of the creation of all things, which faith alone discovers.</p>
 
 <p>From the proposition of the nature of faith in general, and a declaration of its efficacy with respect unto things believed, the apostle proceeds to give instances of its power and efficacy in particular persons, whose example in believing he proposeth unto the Hebrews for their encouragement. And he begins with Abel, suitably on all accounts unto his design. For, 1. He was the first whose faith is expressly recorded and commended in the Scripture, and so meet to be mentioned in the first place. He was the first in the distribution of the ages of the church that he makes. 2. He was the first that expressed his faith in duties of worship, or made public, solemn profession thereof,—the duty which he calls the Hebrews unto. 3. He was the first that suffered in the cause of Christ, or for a testimony given unto faith in him. 4. He suffered the utmost of what any among them could fear, even death itself, by the shedding of his blood; which they had not yet undergone,—they had &quot;not yet resisted unto blood.&quot; Wherefore on all accounts this was the meetest instance to begin withal, wherein his whole cause and argument, in all the parts of it, is confirmed.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 4</span><span class="owen-vg-prev">By faith Abel offered unto God a more excellent [acceptable] sacrifice…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 4.—Πίστει πλείονα θυσίαν Ἄβελ παρὰ Κάϊν προσήνεγκε τῷ Θεῷ, διʼ ἧς ἐμαρτυρήθη εἶναι δίκαιος, μαρτυροῦντος ἐπὶ τοῖς δώροις αὐτοῦ τοῦ Θεοῦ· καὶ διʼ αὐτῆς ἀποθανὼν ἔτι λαλεῖται.</p>
 
 <p>Πλείονα θυσίαν. Vulg. Lat., &quot;plurimam hostiam;&quot; using a word in the superlative degree, because &quot;plurem&quot; in the comparative is not usual. &quot;A greater host,&quot; say the Rhemists, attending to the first signification of the word, but forsaking its sense. The Syriac, טָב דַּמְיַתְּרָא דֶּבְחָתָא, &quot;a sacrifice more (far more) excellent,&quot; or &quot;precious.&quot; &quot;Hostiam majoris pretii,&quot; Beza; &quot;a sacrifice of more worth&quot; or &quot;value,&quot; referring it to the matter of the sacrifice. &quot;Gratiorem,&quot; &quot;more acceptable.&quot;</p>
@@ -309,7 +323,11 @@ next_label: "第十二章"
 <p>Obs. IX. Whatever troubles faith may engage us into in the profession of it, with obedience according to the mind of God, it will bring us safely off from them all at last (yea, though we should die in the cause), unto our eternal salvation and honour.</p>
 
 <p>His second instance is in Enoch; for he is the second man unto whom testimony is personally given that he &quot;pleased God,&quot; and was accepted with him. Others no doubt before him did so, and were so accepted; for he was &quot;the seventh from Adam:&quot; but as Abel was the first, so he is the second who was so peculiarly testified unto; and therefore the apostle instanceth in him in the second place, after Abel.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 5</span><span class="owen-vg-prev">By faith Enoch was translated that he should not see death; and was no…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 5.—Πίστει Ἐνὼχ μετετέθη τοῦ μὴ ἰδεῖν θάνατον, καὶ οὐχ εὑρίσκετο, διότι μετέθηκεν αὐτὸν ὁ Θεός· πρὸ γὰρ τῆς μεταθέσεως αὐτοῦ μεμαρτύρηται εὐηρεστηκέναι τῷ Θεῷ.</p>
 
 <p class="owen-ver">Ver. 5.—By faith Enoch was translated that he should not see death; and was not found, because God had translated him: for before his translation he had this testimony, that he pleased God.</p>
@@ -381,7 +399,11 @@ next_label: "第十二章"
 <p>In these two instances of Abel and Enoch we have a representation of the state of the old world before the flood. There were two sorts of persons in it;—believers, and such as believed not. Among these there were differences about religion and the worship of God, as between Abel and Cain. Some of them were approved of God, and some were not. Hence arose persecution on the part of the world; and in the church, the wicked, scoffing, persecuting world, was threatened by predictions of judgments and divine vengeance to come, as they were in the preaching and prophecy of Enoch. God in the meantime exercised patience and longsuffering towards them that were disobedient, 1 Pet. 3:20; yet not without some instances of his especial favour towards believers. And thus it is at this day.</p>
 
 <p>There being no direct mention made of faith in the testimony given unto Enoch, but only that by walking with God he pleased him, the apostle in this verse proves from thence that it was by faith that he so pleased God, and consequently that thereby he obtained his translation.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 6</span><span class="owen-vg-prev">But without faith [it is] impossible to please him. For it behoveth hi…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 6.—Χωρὶς δὲ πίστεως ἀδύνατον εὐαρεστῆσαι· πιστεῦσαι γὰρ δεὶ τὸν προσερχόμενον τῷ Θεῷ ὅτι ἐστὶ, καὶ τοῖς ἐκζητοῦσιν αὐτόν μισθαποδότης γίνεται.</p>
 
 <p>Εὐαρεστῆσαι. Τῷ Θεῷ is not in the original, but is in all the old translations, and is to be supplied. We add &quot;him,&quot; as contained in the word, and not as a supplement.</p>
@@ -477,7 +499,11 @@ next_label: "第十二章"
 <p>Obs. VIII. The whole issue of our finding of God when we seek him, depends on the way and rule which we take and use in our so doing.</p>
 
 <p>Noah is the third person mentioned in the Scripture, unto whom testimony was given in particular that &quot;he was righteous;&quot; and therefore the apostle produceth him in the third place, as an instance of the power and efficacy of faith, declaring also wherein his faith wrought and was effectual.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 7</span><span class="owen-vg-prev">By faith Noah, being warned of God of things not as yet seen, moved wi…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 7.—Πίστει χρηματισθεὶς Νῶε περὶ τῶν μηδέπω βλεπομένων, εὐλαβηθεὶς κατεσκεύασε κιβωτὸν εἰς σωτηρίαν τοῦ οἴκου αὑτοῦ· διʼ ἧς κατέκρινε τὸν κόσμον, καὶ τῆς κατὰ πίστιν δικαιοσύνης ἐγένετο κληρονόμος.</p>
 
 <p>Χρηματισθείς. Vulg. Lat., &quot;responso accepto;&quot; Rhem., &quot;having received an answer.&quot; Hence sundry expositors, who adhere unto that translation, inquire how Noah may be said to have an answer from God, whereas no mention is made of any inquiry of his in this matter. Some say, that Adam had foretold that the world should be twice destroyed, once by water, and again by fire. Hereon Noah inquired of God to know when the first of them should fall out, and received this answer, that it was now approaching. Some say, that &quot;to answer,&quot; in Scripture, is ofttimes used for &quot;to begin a speech unto another,&quot; when there was nothing spoken before; whereof they give instances. I mention these things only to show what needless pains men put themselves unto, out of a prejudicate adherence unto what may deceive them, as they do here, by following a false translation; for in the original word there is nothing that intimates an answer upon an inquiry. But the truth is, the translation hath not so much deceived them as they have deceived themselves. For &quot;responsum&quot; in Latin is a &quot;divine oracle,&quot; and so used in all good authors. &quot;Responsa deorum,&quot; &quot;responsa Aruspicum,&quot; are oracular directions; and so is &quot;responsum&quot; absolutely. Syr., עַמֵּהּ אֶתְמַלֵל כַּד, &quot;when he was spoken to,&quot; &quot;when there was a word with him.&quot; &quot;Divinitus admonitus,&quot; as we say properly, &quot;warned of God.&quot;</p>
@@ -593,7 +619,11 @@ next_label: "第十二章"
 <p>Hence he proceeds unto the next period of time, from the flood, and the renovation of the world in the family of Noah, unto the giving of the law; so to manifest that in every state of the church the way of pleasing God was one and the same; as also, that faith still retained its efficacy under all alterations.</p>
 
 <p>He who, in this period of time, is first testified unto in the Scripture, is he whose example on all accounts was most forcible with these Hebrews, which he had before at large proposed unto them and insisted on, chap. 6:11–15; the exposition of which place may be consulted, to give light to this context. This is Abraham; whose example, by reason of the eminency of his person, the relation of the Hebrews unto him, from whom they derived all their privileges temporal and spiritual, the efficacy of his faith, with the various successful exercises of it, he declares and urgeth at large from hence unto the end of the 19th verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 8</span><span class="owen-vg-prev">By faith Abraham, being called [of God], obeyed to go out into a place…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 8—Πίστει καλούμενος Ἀβραὰμ ὑπήκουσεν ἐξελθεῖν εἰς τὸν τόπον ὃν ἤμελλε λαμβάνειν εἰς κληρονομίαν, καὶ ἐξῆλθε μὴ ἐπιστάμενος ποῦ ἔρχεται.</p>
 
 <p>Καλούμενος Ἀβραάμ. Vulg. Lat., &quot;qui vocatur Abraham;&quot; Rhem., &quot;he who is called Abraham:&quot; which can no way be reconciled unto the text. Those who will adhere unto that translation do suppose that the change of his name is here intimated, when from Abram he was called Abraham: but that is not &quot;vocatus,&quot; but &quot;cognominatus;&quot; not καλούμενος, but προσαγορευθείς. And if καλούμενος were ever used in such a sense, as it is not, it should have been ὅς ἐκλήθη, and not καλούμενος, without any article. Besides, as the apostle had no reason to speak of Abraham in that manner, &quot;he who is called Abraham,&quot; as if he were a person but little known to them, so this interpretation takes away the whole foundation of the faith of Abraham, and of all the effects of it, and so of the whole argument of the apostle, which was his divine call, which he refers unto. Wherefore all other translations avoid this mistake. Syr., אֶתְקְרִי כַּד, &quot;when he was called.&quot; &quot;Evocatus,&quot; &quot;called forth.&quot;</p>
@@ -683,7 +713,11 @@ next_label: "第十二章"
 <p>Having declared the foundation of the faith of Abraham, and given the first signal instance of it, he proceeds to declare his progress in its exercise, first in general, and then in particular acts and duties; wherein he intermixeth some especial acts of it, whereby he was enabled and encouraged in and unto all other duties of it.</p>
 
 <p>That which he ascribes unto his faith in general is laid down in this verse; whereunto he adjoins that encouraging act of it which enabled him in his duty, verse 10.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 9</span><span class="owen-vg-prev">By faith he sojourned in the land of promise as [in] a strange country…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 9.—Πίστει παρῴκησεν εἰς τὴν γὴν τῆς ἐπαγγελίας ὡς ἀλλοτρίαν, ἐν σκηναῖς κατοικήσας μετὰ Ἰσαὰκ καὶ Ἰακὼβ τῶν συγκληρονόμων τῆς ἐπαγγελίας τῆς αὐτῆς.</p>
 
 <p>Παρῴκησεν. Syr., תַּוְתָבָא הַוָא, &quot;he was a stranger,&quot; &quot;a sojourner.&quot; Vulg. Lat., &quot;demoratus est,&quot; &quot;he tarried.&quot; Rhem., &quot;he abode.&quot; Erasm., &quot;commigravit;&quot; that is, μετῴκησεν, saith Beza, &quot;he went,&quot; or &quot;wandered,&quot; to answer the preposition εἰς following, &quot;he went into the land.&quot; Beza, &quot;commoratus est,&quot; &quot;he abode;&quot; and then it must refer unto κατοικήσας, &quot;he dwelt in tents.&quot; Others, &quot;advena fuit;&quot; he was &quot;a stranger,&quot; &quot;a guest,&quot; &quot;a sojourner.&quot; Heb., הָיָה גֵּר, &quot;he was a stranger,&quot; or גוּר, &quot;he sojourned.&quot;</p>
@@ -731,7 +765,11 @@ next_label: "第十二章"
 <p>Obs. IV. Faith discerning aright the glory of spiritual promises, will make the soul of a believer contented and well satisfied with the smallest portion of earthly enjoyments, etc.</p>
 
 <p>The apostle gives a full indication in this discourse that Abraham was very well satisfied with the state and condition of a stranger and pilgrim in the world, without possession, without inheritance, which God had called him unto. And therefore he proceeds in the next place to declare the grounds and reasons whereon he was so satisfied.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 10</span><span class="owen-vg-prev">For he looked for a city [that city] which hath foundations, whose bui…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 10.—Ἐξεδέχετο γάρ τὴν τοὺς θεμελίους ἔχουσαν πόλιν, ἧς τεχνίτης καὶ δημιουργὸς ὁ Θεός.</p>
 
 <p class="owen-ver">Ver. 10.—For he looked for a city [that city] which hath foundations, whose builder and maker [is] God.</p>
@@ -785,7 +823,11 @@ next_label: "第十二章"
 <p>Here he proceeds unto the instances of his faith with respect unto the promise made unto him, namely, that in his seed all the nations of the earth should be blessed. And these also are two: 1. That which concerned the birth of Isaac, by whom the promise was to have its accomplishment; 2. What he did by faith on the command of God, in offering up of the son of the promise.</p>
 
 <p>In the first of these, or what concerned the birth of Isaac, the son of the promise, Abraham was not alone, but Sarah his wife was both naturally and spiritually no less concerned than himself. Wherefore the apostle in the midst of his discourse concerning Abraham and his faith, in this one instance introduceth Sarah in conjunction with him, as on many reasons she ought not to have been omitted.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11</span><span class="owen-vg-prev">Through faith also Sarah herself received strength to conceive seed; a…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11.—Πίστει καὶ αὐτὴ Σάῤῥα (στεῖρα οὖσα) δύναμιν εἰς καταβολὴν σπέρματος ἔλαβε, καὶ παρὰ καιρὸν ἡλικίας ἔτεκεν, ἐπεὶ πιστὸν ἡγήσατο τὸν ἐπαγγειλάμενον.</p>
 
 <p>Στεῖρα οὖσα, &quot;being barren.&quot; Vulg. Lat., &quot;sterilis.&quot; Syr., הֲוַת דַּעֲקרְתָא, &quot;who was barren.&quot; And the words are retained in many vulgar translations. We omit them, for they are found only in two copies of the original; nor are they taken notice of by the ancient scholiasts. And it is far more probable that these words were inserted in one or two copies, than that they were left out of all the rest: for there is no colour of reason why they should be omitted; but the addition of them, especially containing a truth, seems to set out more fully the great ness of the instance proposed.</p>
@@ -857,7 +899,11 @@ next_label: "第十二章"
 <p>Thus is &quot;the righteousness of God revealed from faith to faith;&quot; that is, the righteousness of Christ as tendered in the promise is made known and communicated from the faith of God therein unto the faith of them by whom it is believed.</p>
 
 <p>In this verse we have an illustration of the fruit of the faith before declared, by the eminent consequent of it, in the numerous or innumerable posterity of Abraham.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 12</span><span class="owen-vg-prev">Therefore sprang there even of one, and him as good as dead, [so many]…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 12.—Διὸ καὶ ἀφʼ ἑνὸς ἐγεννήθησαν, καὶ ταῦτα νενεκρωμένου, καθὼς τὰ ἄστρα τοῦ οὐρανοῦ τῷ πλήθει, καὶ ὡς ἡ ἂμμος ἡ παρὰ τὸ χεῖλος τῆς θαλάσσης ἡ ἀναρίθμητος.</p>
 
 <p class="owen-ver">Ver. 12.—Therefore sprang there even of one, and him as good as dead, [so many] as the stars of the sky in multitude, and as the sand which is by the sea-shore, innumerable.</p>
@@ -905,7 +951,11 @@ next_label: "第十二章"
 <p>Obs. IV. Whatever difficulties and oppositions lie in the way of the accomplishment of the promises under the new testament, made unto Jesus Christ concerning the increase and stability of his church and kingdom, they shall have an assured accomplishment.</p>
 
 <p>Upon the proposal of these instances, because there was somewhat peculiar in them, distinct from those before recounted and those which follow after, namely, their pilgrim estate after the call of Abraham, the apostle diverts unto the declaration of what they did, what they attained, and what they professed in that state. His entrance into it is in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 13</span><span class="owen-vg-prev">These all died in faith, not having received the promises, but having …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 13.—Κατὰ πίστιν ἀπέθανον οὗτοι πάντες, μὴ λαβόντες τὰς ἐπαγγελίας, ἀλλὰ πόῤῥωθεν αὐτὰς ἰδόντες, καὶ πεισθέντες, καὶ ἀσπασάμενοι, καὶ ὁμολογήσαντες ὅτι ξένοι καὶ παρεπίδημοί εἰσιν ἐπὶ τῆς γῆς.</p>
 
 <p>Κατὰ πίστιν. Vulg. Lat., &quot;juxta fidem,&quot; &quot;according to faith.&quot; Syr., בִּהַיְמָנוּתָא, &quot;in faith;&quot; as in the former places, where it is ἐν πίστει. Beza, &quot;secundum fidem;&quot; more properly than &quot;juxta.&quot;</p>
@@ -993,7 +1043,11 @@ next_label: "第十二章"
 <p>What it is to be &quot;strangers and pilgrims&quot; in this world; what actings of faith, what frames of spirit ought to be in them that are so; what evils and dangers they shall be assuredly exposed unto; what duties the consideration hereof is a motive unto; what use they may make of the world, and the things of it; what is required to state them in the heavenly polity, whereby, although they are pilgrims, yet they are not vagabonds; would be here too long to explain.</p>
 
 <p>From the profession of these patriarchs, that they were &quot;strangers and pilgrims on the earth,&quot; the apostle makes an inference from what is contained therein, which doth more expressly declare their faith than the words themselves which they were said to use.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 14</span><span class="owen-vg-prev">For they that say such things, declare plainly that they seek a countr…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 14.—Οἱ γὰρ τοιαῦτα λέγοντες ἐμφανίζουσιν ὅτι πατρίδα ἐπιζητοῦσι.</p>
 
 <p class="owen-ver">Ver. 14.—For they that say such things, declare plainly that they seek a country.</p>
@@ -1015,7 +1069,11 @@ next_label: "第十二章"
 <p>The inference of the apostle from these words of the patriarchs is so evident and uncontrollable, that he affirms themselves to &quot;declare plainly&quot; what he declares to be the sense contained in their words. And indeed, take the words precisely, without a consideration of the mind wherewith they were spoken, the circumstances in which, and the end for which they were spoken, and they do not express any peculiar act or fruit of faith; for the very heathen had an apprehension that this life is but a kind of pilgrimage. So speaks Cicero, &quot;De Senectute,&quot; cap. xxiii.: &quot;Ex vitâ ita discedo tanquam ex hospitio, non tanquam ex domo. Commorandi enim natura diversorium nobis, non habitandi locum dedit.&quot; But under their circumstances, there must be another sense in the words. For they speak them not as the common condition of mankind, but as their peculiar portion in the world, with respect unto the promises of God. And herein in general they declare a sense of want, of an indigent condition; that it is not with them as with others, who have their portion in this life. And whoever declares a sense of want, at the same time declares a desire of a suitable supply of that want; which is included in the sense of it. And the want which they so declared consisting in this, that in this world they were &quot;strangers and pilgrims,&quot;—the only supply whereof is a country of their own for them to inhabit and enjoy, with all its rights and privileges, —they declared plainly therein that they sought a country: that alone is wanting to any as they are strangers and pilgrims; that alone will cause them to cease so to be. Most men do meet with and are sensible of sundry wants, yet they are such as may be supplied in the place where they are in this world; and their great desire, with their utmost endeavour, is, that they may be here supplied. Such persons, be they never so poor, so indigent, so harbourless, are not &quot;pilgrims on the earth;&quot; this is their home, although they are but ordinarily provided for. Much less are they so who have an affluence of all things unto their satisfaction, though they sometimes meet with a pinch or loss. They only are so who live always in a sense of such wants as this world cannot supply.</p>
 
 <p>Whereas these patriarchs did thus express their desire of a country, and diligently sought after it, it may be because, having lost their own country, their relations, and enjoyments, meeting with the difficulties of a wandering course of life, they had a desire to return home again, where they might have quiet habitations. This objection, which, if of force, would overthrow his present design, the apostle obviates and removes in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15</span><span class="owen-vg-prev">And truly, if they had been mindful of that from whence they came out,…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15.—Καὶ εἰ μὲν ἐκείνης ἐμνημόνευον ἀφʼ ἧς ἐξῆλθον, εἶχον ἂν καιρὸν ἀνακάμψαι.</p>
 
 <p class="owen-ver">Ver. 15.—And truly, if they had been mindful of that from whence they came out, they might have had opportunity to have returned.</p>
@@ -1043,7 +1101,11 @@ next_label: "第十二章"
 <p>Obs. II. And it appears hence, that when the hearts and minds of believers are fixed on things spiritual and heavenly, as theirs were, it will take them off from inordinate cleaving unto things otherwise greatly desirable.</p>
 
 <p>The apostle hereon draws another inference, wherein he expresseth the true, real object of their faith and desires, with the great advantage and dignity which they obtained thereon.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 16</span><span class="owen-vg-prev">But now they [earnestly] desire a better [country], that is, an heaven…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 16.—Νυνὶ δὲ κρείττονος ὀρέγονται, τοῦτʼ ἔστιν ἐπουρανίου· διὸ οὐκ ἐπαισχύνεται αὐτοὺς ὁ Θεὸς, Θεὸς ἐπικαλεῖσθαι αὐτῶν· ἡτοίμασε γὰρ αὐτοῖς πόλιν.</p>
 
 <p>Νυνὶ δέ, &quot;atqui,&quot; &quot;nunc autem.&quot; Syr.,  דִיעָא דֵּין הָשָׁא, &quot;but now it is known,&quot; or &quot;certain;&quot; it appears by the event.</p>
@@ -1135,7 +1197,11 @@ next_label: "第十二章"
 <p>Obs. IX. Eternal rest and glory are made sure for all believers in the eternal purpose of the will of God, and his actual preparation of them by grace; which being embraced by faith, is a sufficient supportment for them under all the trials, troubles, and dangers of this life, Luke 12:32.</p>
 
 <p>Having spoken of the faith of the first patriarchs in the third period of time, the second from the flood, in general, with respect unto their peculiar state as pilgrims in the land of Canaan, he now singles them out in particular, giving particular instances of their faith, beginning with Abraham.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 17–19</span><span class="owen-vg-prev">By faith Abraham, when he was tried, [being tempted,] offered up Isaac…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 17–19.—Πίστει προσενήνοχεν Ἀβραὰμ τὸν Ἰσαὰκ πειραζόμενος, καὶ τὸν μονογενῆ προσέφερεν ὁ τὰς ἐπαγγελίας ἀναδεξάμενος· πρὸς ὃν ἐλαλήθη, ὅτι ἐν Ἰσαὰκ κληθήσεταί σοι σπέρμα· λογισάμενος ὅτι καὶ ἐκ νεκρῶν ἐγείρειν δυνατὸς ὁ Θεὸς, ὅθεν αὖτὸν καὶ ἐν παραβολῇ ἐκομίσατο.</p>
 
 <p>Προσέφερεν. Syr., לְמַדְבֵחָא אַסֵּק, &quot;he lifted him upon the altar;&quot; to intimate, it may be, the event, that he was not actually sacrificed; but the word is the same with that before.</p>
@@ -1331,7 +1397,11 @@ next_label: "第十二章"
 <p>Obs. V. We may also consider, that, 1. If we are children of Abraham, we have no reason to expect an exemption from the greatest trials, that the same faith which was in him is able to conflict withal. 2. We have no reason to be afraid of the fiercest and severest trials that may befall us, having so great an instance that faith is able to carry us through them all victoriously. 3. Difficult duties of obedience warranted by divine command, and successes of faith under trials, shall have a present reward in this life. &quot;In keeping thy commandments there is great reward.&quot; 4. Though death should seem to pass on any of the promises concerning the church, yet nothing need shake our faith, whilst we can believe the resurrection of the dead. They will be given as in a figure of it.</p>
 
 <p>Πίστει περὶ μελλόντων εὐλόγησεν Ἰσαὰκ τὸν Ἰακὼβ καὶ τὸν Ἠσαῦ.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 20</span><span class="owen-vg-prev">By faith Isaac blessed Jacob and Esau concerning things to come.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 20.—By faith Isaac blessed Jacob and Esau concerning things to come.</p>
 
 <p>Isaac was a holy person, who, though a pilgrim, yet, as far as appeareth, spent most of his time in peace, without great perils and dangers. Wherefore there is less spoken of him, and the trials of his faith, than either of his father or his son. Howbeit there is no doubt but that this son of the promise led his life in the faith of the promise; and the promise was particularly renewed unto him, Gen. 26:4.</p>
@@ -1387,7 +1457,11 @@ next_label: "第十二章"
 <p>Ἕκαστον, &quot;singulos filiorum,&quot; for ἑκάτερον or ἄμφω, &quot;each&quot; or &quot;both.&quot; &quot;Utrumque.&quot; Syr., חַד לְכֻל, &quot;every one.&quot; &quot;Both the sons of Joseph&quot; distinctly.</p>
 
 <p>Ἐπὶ τὸ ἄκρον τῆς ῥάβδου αὐτοῦ. Vulg. Lat., &quot;et adoravit fastigium virgae ejus,&quot; &quot;he adored the top of his rod.&quot; Leaving out the preposition ἐπί, &quot;on,&quot; it corrupts the sense, and forceth the meaning of the words to be, of Joseph&#x27;s rod; whence a vain and foolish opinion hath been fancied about adoring or worshipping of creatures,—as remote from the sense of this place as from truth. The Syriac properly, חוּטְרֵהּ רִישׁ עַל וַסְגֵד, &quot;he bowed&quot; (or &quot;adored&quot;) &quot;on the top of his own staff.&quot; Beza supplies &quot;innixus,&quot; which we render &quot;leaning.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 21</span><span class="owen-vg-prev">By faith Jacob, when he was dying, blessed both the sons of Joseph, [e…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 21.—By faith Jacob, when he was dying, blessed both the sons of Joseph, [each of them,] and worshipped, [leaning] on the top of his staff.</p>
 
 <p>There are two things mentioned in the words: 1. That &quot;Jacob blessed the sons of Joseph.&quot; 2. That he &quot;worshipped, leaning on the top of his staff.&quot; But they did not fall out in the order wherein they are here expressed. The latter of them is recorded before the former, Gen. 47:31, &quot;And Israel bowed himself upon the bed&#x27;s head.&quot; To which is added, that after these things Joseph brought his children unto him, chap. 48:1.</p>
@@ -1451,7 +1525,11 @@ next_label: "第十二章"
 <p>Obs. VII. There is an allowance for the infirmities of age and sickness, in our outward deportment in divine worship, so as that there be no indulgence unto sloth or custom, but that an evidence of a due reverence of God and holy things be preserved.—Those postures which are commended in Jacob, would not, it may be, become others in their health and strength. So David affirms, that he would rise at midnight out of his bed, to give thanks unto God, Ps. 119:62.</p>
 
 <p>Πίστει Ἰωσὴφ τελευτῶν περὶ τῆς ἐξόδου τῶν υἱῶν Ἰσραὴλ ἐμνημόνευσε, καὶ τερὶ τῶν ὀστέων αὑτοῦ ἐνετείλατο.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 22</span><span class="owen-vg-prev">By faith Joseph, when he died, made mention of the departing of the ch…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 22.—By faith Joseph, when he died, made mention of the departing of the children of Israel; and gave commandment concerning his bones.</p>
 
 <p>Two instances are here proposed of the faith of Joseph: 1. That &quot;he made mention of the departing of the children of Israel&quot; out of Egypt. 2. That he &quot;gave command concerning his bones.&quot; The account hereof is given in the close of the book of Genesis.</p>
@@ -1507,7 +1585,11 @@ next_label: "第十二章"
 <p>The plea of some of the Roman church from this place, for the preservation and veneration of relics, or the bones of saints departed, is weak unto the utmost contempt. For besides that this charge of Joseph concerning his bones and their disposal was singular, such a fruit of faith as could have no place in any other person, nor ever can there be the like occasion in the world, all that was done in compliance with that charge, was but the carrying of them shut up in a coffin into the land of Canaan, and there decently burying of them. To take an example from hence of digging men&#x27;s bones out of their graves, of enshrining and placing them on altars, of carrying them up and down in procession, of adoring them with all signs of religious veneration, applying them unto miraculous operations, in curing diseases, casting out of devils, and the like, is fond and ridiculous.</p>
 
 <p>In searching the sacred records for eminent examples of the power and efficacy of faith, the apostle is arrived unto that of Moses. And because this is the greatest instance, next to that of Abraham, he insists on sundry acts and fruits thereof. And indeed, if we consider aright his person and his circumstances; the work which he was called unto; the trials, difficulties, and temptations he had to conflict withal; the concernment of the glory of God and of the whole church in him; the illustrious representation of the redemption and deliverance of the church by Christ in what he did; with his success and victory over all opposition;—we must acknowledge that there cannot be a more excellent exemplification of the power of faith than what was given in him. For this cause the apostle takes one step backward, to declare the faith of his parents in his preservation in his infancy, whereon his future life and all that he was called unto did depend. For ofttimes, when God designeth persons to a great work, he giveth some previous indication of it, in or about their nativity: not by a fictitious horoscope, or the position and aspect of planets, a thing common to all born at the same time unto the most different events; but by some peculiar work and divine warning of his own. So was it in the birth of Samson, of Samuel, John the Baptist, and others. And so was it in the birth and preservation of this Moses, as it is declared in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 23</span><span class="owen-vg-prev">By faith Moses, when he was born, was hid three months of his parents,…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 23.—Πίστει Μωϋσῆς γεννηθεὶς ἐκρύβη τρίμηνον ὑπὸ τῶν πατέρων αὑτοῦ, διότι εἶδον ἀστεῖον τὸ παιδίον, καὶ οὐκ ἐφοβήθησαν τὸ διάταγμα τοῦ βασιλέως.</p>
 
 <p class="owen-ver">Ver. 23.—By faith Moses, when he was born, was hid three months of his parents, because they saw [he was] a proper child; and they were not afraid of the king&#x27;s commandment.</p>
@@ -1567,7 +1649,11 @@ next_label: "第十二章"
 <p>Ἑλόμενος. Syr., לֵהּ וַגְבָּא; &quot;and he chose to&quot; or &quot;for himself;&quot; he determined in himself and for himself.</p>
 
 <p>Ἡγησάμενος. Syr., וֶאתְרַעִי; &quot;and he thought;&quot; Vulg Lat., &quot;aestimans;&quot; as we, &quot;esteeming;&quot; &quot;arbitratus,&quot; &quot;reputans.&quot; Τὸν ὀνειδισμόν, &quot;probrum,&quot; &quot;opprobrium.&quot; Vulg. Lat., &quot;improbrium;&quot; which the Rhemists render &quot;reproach.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 24–26</span><span class="owen-vg-prev">By faith Moses, when he was come to years, [being grown up,] refused t…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 24–26.—By faith Moses, when he was come to years, [being grown up,] refused to be called the son of Pharaoh&#x27;s daughter; choosing rather to suffer affliction with the people of God, than to enjoy the pleasures of sin for a season, [the transitory pleasure of sin]; esteeming the reproach of Christ greater riches than the treasures of Egypt: for he had respect unto the recompence of reward.</p>
 
 <p>This example is great and signal. The apostle, as we showed before, takes his instances from the three states of the church under the old testament. The first was that which was constituted in the giving of the first promise, continuing unto the call of Abraham. Herein his first instance is that of Abel, in whose sacrifice the faith of that state of the church was first publicly professed, and by whose martyrdom it was confirmed. The next state had its beginning and confirmation in the call of Abraham, with the covenant made with him, and the token thereof. He therefore is the second great instance upon the roll of testimonies. The constitution and consecration of the third state of the church was in the giving of the law; and herein an instance is given in the lawgiver himself. All to manifest, that whatever outward variations the church was liable unto, and passed under, yet faith and the promises were the same, of the same efficacy and power under them all.</p>
@@ -1763,7 +1849,11 @@ next_label: "第十二章"
 <p>Τὸν θύμον. Vulg. Lat., &quot;animositatem;&quot; which the Rhemists translate, &quot;fierceness.&quot; Syr., חֵמָּתֵהּ מֵן, &quot;from the fury of the king.&quot; &quot;Iram,&quot; &quot;iracundiam;&quot; or as we, very properly, &quot;the wrath.&quot;</p>
 
 <p>Ἐκαρτέρησε. Vulg. Lat., &quot;invisibilem tanquam videns sustinuit.&quot; Rhem., &quot;for him that is invisible he sustained, as if he had seen him;&quot; very improperly, and without any due sense. They make ἐκαρτέρησε to be a verb transitive, and to affect &quot;him that is invisible;&quot; whereas it is plainly used in a neutral sense, or it hath none at all. Nor is the phrase of &quot;sustinere Deum&quot; anywhere used. Syr., וְסַבַּד, &quot;and he hoped,&quot; or &quot;trusted, as one who saw him who is invisible.&quot; &quot;Fortiter obduravit;&quot; &quot;forti animo fuit.&quot; We properly, &quot;endured.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 27</span><span class="owen-vg-prev">By faith he forsook Egypt, not fearing the wrath of the king: for he e…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 27.—By faith he forsook Egypt, not fearing the wrath of the king: for he endured, as seeing him who is invisible.</p>
 
 <p>Having declared the faith of Moses with respect unto the sufferings of the people of God, the apostle proceedeth in like manner to instance in the power and acting of it with respect unto their deliverance; which here he mentions in general, and afterwards insists on in some particulars.</p>
@@ -1811,7 +1901,11 @@ next_label: "第十二章"
 <p>Ὁ ὀλοθρεύων τὰ πρωτότοκα. Vulg., &quot;qui vastabat primitiva,&quot; &quot;he that wasted the firstlings;&quot; which is the best sense that word will bear. The Rhemists render it, &quot;the first-born,&quot; &quot;Qui perimebat,&quot; &quot;who slew.&quot; &quot;Qui destruxit,&quot; &quot;who destroyed.&quot; הַמַּשְׁחִית, &quot;the destroyer;&quot; ὀλοθρευτής, 1 Cor. 10:10.</p>
 
 <p>Θίγῃ αὐτῶν. Syr., לְהוּן נֶתְקָרַב, &quot;should come nigh them.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 28</span><span class="owen-vg-prev">By faith he kept the passover, and the sprinkling of blood, lest he th…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 28.—By faith he kept the passover, and the sprinkling of blood, lest he that destroyed the first-born should touch them; [or, that sprinkling of blood, that the destroyer of the first-born should not touch them.]</p>
 
 <p>The story which the apostle hath respect unto is recorded at large, Exod. 12; which it doth not appertain unto us here to insist upon.</p>
@@ -1861,7 +1955,11 @@ next_label: "第十二章"
 <p>Obs. VI. That which God would for ever instruct the church in by this ordinance is, that unless we are sprinkled with the blood of Christ, our paschal Lamb, no other privilege can secure us from eternal destruction. —Though a man had been really an Israelite, and had with others made himself ready that night for a departure, which was a high profession of faith, yet if the lintel and posts of his door had not been sprinkled with blood, he would have been destroyed. And on the other hand, where there is this sprinkling of blood, be the danger never so great or so near, there shall be certain deliverance. &quot;The blood of sprinkling speaks better things than the blood of Abel.&quot;</p>
 
 <p>Having fixed the foundation and beginning of the deliverance of the church on the exercise of faith in the observance of the holy institutions of divine worship, prescribed to be the signs and tokens thereof, the apostle proceeds to give an instance in one of the most remarkable passages of divine providence that befell them in the way of their deliverance.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 29</span><span class="owen-vg-prev">By faith they passed through the Red Sea as by dry [land:] which the E…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 29.—Πίστει διέβησαν τὴν Ἐρυθρὰν θὰλασσαν, ὡς διὰ ξηρᾶς· ἦς πεῖραν λαβόντες οἱ Αἰγύπτιοι, κατεπόθησαν.</p>
 
 <p>Τὴν Ἐρυθρὰν θάλασσαν. The Syriac retains the Hebrew name, דְסוּף יָמָּא, &quot;the Reedy Sea,&quot; the sea of reeds or canes, as this sea is called constantly in the Scripture.</p>
@@ -1923,7 +2021,11 @@ next_label: "第十二章"
 <p>Κατεπόθησαν. Lastly; The event of this essay or undertaking of the Egyptians, was, that they &quot;were drowned,&quot; they were swallowed up. The account hereof is given us so gloriously in the triumphant song of Moses, Exod. 15, that nothing needs to be added in its further illustration. And this destruction of the Egyptians, with the deliverance of Israel thereby, was a type and pledge of the victory and triumph which the church shall have over its antichristian adversaries, Rev. 15:2–4.</p>
 
 <p>In this verse the apostle adds another instance of the faith of the whole congregation, in the sense before declared; for although respect no doubt be had unto the faith of Joshua in an especial manner, yet that of the whole people is expressed.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 30</span><span class="owen-vg-prev">By faith the walls of Jericho fell down, after they were compassed abo…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 30.—Πίστει τὰ τείχη Ἱεριχὼ ἔπεσε, κυκλωθέντα ἐπὶ ἑπτὰ ἡμέρας.</p>
 
 <p class="owen-ver">Ver. 30.—By faith the walls of Jericho fell down, after they were compassed about seven days.</p>
@@ -1949,7 +2051,11 @@ next_label: "第十二章"
 <p>Obs. II. Faith will cast down walls and strong towers, that lie in the way of the work of God.—It is true, we have no stone walls to demolish, nor cities to destroy: but the same faith in exercise is required of us in all our concerns as was in Joshua when he entered on the conquest of Canaan; as the apostle declares, Heb. 13:5. And there are strongholds of sin in our minds, which nothing but faith can cast to the ground.</p>
 
 <p>Hitherto we have had the examples of men, with one woman only, in conjunction with her husband. In this verse the apostle puts a close unto his particular instances in that of one single woman, accompanied with many eminent circumstances, as we shall see.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 31</span><span class="owen-vg-prev">By faith Rahab the harlot perished not with them that believed not, [o…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 31.—Πίστει Ῥαὰβ ἡ πόρνη οὐ συναπώλετο τοῖς ἀπειθήσασι δεξαμένη τοὺς κατασκόπους μετ ̓ εἰρήνης.</p>
 
 <p class="owen-ver">Ver. 31.—By faith Rahab the harlot perished not with them that believed not, [or were disobedient,] when she had received the spies with peace.</p>
@@ -1995,7 +2101,11 @@ next_label: "第十二章"
 <p>And as unto the first we may observe two things: 1. That in the naming of them, Gideon, Barak, Samson, Jephthah, David, and Samuel, he doth not observe the order of time wherein they lived; for Barak was before Gideon, and Jephthah before Samson, and Samuel before David. 2. He doth not reckon up the things they did in the same order wherein he had named the persons; so as that the first thing mentioned should be ascribed unto him that was first named, and so on in order. But he useth his liberty in setting down both the names of the persons and the things ascribed unto them, an exact order and distribution of them no way belonging unto his purpose. Yea, the proposing of the persons with their names at once, and then amassing together the great and mighty fruits of their faith, gives a persuasive efficacy unto the example. Again it must be remarked, that although in the first part he reckoneth up the names of many of them who wrought these works of faith, yet he intimates that there were more of them; and therefore the things which he mentioneth cannot all of them absolutely be accommodated and applied unto the persons named, but some of them were wrought by others whose names he doth not express.</p>
 
 <p>Having given this account of the scope and argument of the apostle, I shall be very brief in the exposition of the particulars.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 32</span><span class="owen-vg-prev">And what shall I more say? [what do I say more?] for the time would fa…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 32.—Καὶ τί ἔτι λέγω; Ἐπιλείψει γάρ με διηγούμενον ὁ χρόνος περὶ Γεδεὼν, Βαράκ τε, καὶ Σαμψών, καὶ Ἰεφθάε, Δαυΐδ τε καὶ Σαμουὴλ, καὶ τῶν προφητῶν.</p>
 
 <p>Ἐπιλείψει γὰρ με Syr., דֶּאשְׁתַּעֵא זַבְנָא לִי הוּ זְעוּר, &quot;I have but a little time,&quot; or, &quot;there is but a little time for me that I should report:&quot; which is another sense of the words than that in the original, although to the same purpose, it being an excuse of his future brevity, which is not the direct meaning of the phrase. &quot;The time would fail me,&quot; is a usual expression with respect unto that wherein we are ready and abound, but repress it for present reasons.</p>
@@ -2051,7 +2161,11 @@ next_label: "第十二章"
 <p>Obs. V. There is nothing so great or difficult, or seemingly insuperable, no discouragement so great from a sense of our own unworthiness by sin, nor opposition arising against us from both of them in conjunction, that should hinder us from believing, and the exercise of faith in all things, when we are called thereunto.—The truth is, the first call of men to believe, is when they are under the greatest sense of sin; and some of them, it may be, of sins great and heinous,—as it was with them who were accessory to the murder of Christ himself, Acts 2: and our call is, to believe things more great and excellent than the conquest of earthly kingdoms.</p>
 
 <p>From the enumeration of the persons that believed, the apostle proceeds to declare the things which they wrought by faith; all unto the same end, —to encourage us to make use of the same grace in all our occasions. And four instances he giveth in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 33</span><span class="owen-vg-prev">Who through faith subdued kingdoms, wrought righteousness, obtained pr…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 33.—Οἳ διὰ πίστεως κατηγωνίσαντο βασιλείας, εἰργάσαντο δικαιοσύνην, ἐπέτυχον ἐπαγγελιῶν, ἔφραξαν στόματα λεόντων.</p>
 
 <p>Διὰ πίστεως, &quot;through faith:&quot; the same with πίστει all along in the chapter absolutely, an instrumental cause. The words are of common use, and there is no difference in the translation of them.</p>
@@ -2093,7 +2207,11 @@ next_label: "第十二章"
 <p>Obs. II. That faith that hath thus stopped the mouths of lions, can restrain, disappoint, and stop the rage of the most savage oppressors and persecutors of the church.</p>
 
 <p>Ἔσβεσαν δύναμιν πυρὸς, ἔφυγον στόματα μαχαίρας·, ἐνεδυναμώθησαν ἀπὸ ἀσθενείας, ἐγενήθησαν ἰσχυροὶ ἐν πολέμῳ, παρεμβολὰς ἔκλιναν ἀλλοτρίων· ἔλαβον γυναῖκες ἐξ ἀναστάσεως τοὺς νεκροὺς αὑτῶν.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 34, 35</span><span class="owen-vg-prev">Quenched the violence [the power] of fire; escaped [fled from] the edg…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 34, 35.—Quenched the violence [the power] of fire; escaped [fled from] the edge [edges] of the sword; out of weakness were made strong; waxed [were made] valiant [powerful, strong] in fight; turned to flight the armies of the aliens, [or, overthrew the tents or camps of the aliens.] Women received their dead [by a resurrection] raised to life again.</p>
 
 <p>Six more instances of the power of faith are added unto those foregoing; and these taken from things of all sorts, to let us know that there is nothing of any kind whatever, wherein we may be concerned, but that faith will be useful and helpful in it.</p>
@@ -2181,7 +2299,11 @@ next_label: "第十二章"
 <p>Schlichtingius on this place acknowledged, that believers under the old testament had hopes of a blessed resurrection, but not by virtue of any promise of God, only they gathered it up out of some considerations of his goodness, and of his being a rewarder of them that seek him;—a vain, foolish opinion, striking at the very foundation of all religion, laying the ground of faith in the conjectures of men, and not on the veracity and faithfulness of God. But,—</p>
 
 <p>Obs. Sufferings will stir us up unto the exercise of faith on the most difficult objects of it, and bring in the comforts of them into our souls.— Faith of the resurrection hath been always most eminent in prisons and under tortures.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 36</span><span class="owen-vg-prev">In the next place we have the example of them who suffered also, but n…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 36.—In the next place we have the example of them who suffered also, but not by tortures, nor unto death, yet in such ways as were a great trial of their faith.</p>
 
 <p class="owen-ver">Ver. 36.—Ἓτεροι δὲ ἐμπαιγμῶν καὶ μαστίγων πεῖραν ἔλαβον, ἔτι δὲ δεσμῶν καὶ φυλακῆς.</p>
@@ -2209,7 +2331,11 @@ next_label: "第十二章"
 <p>Of the last two ways of trial, namely, &quot;bonds and imprisonment,&quot; we have had so full an exposition in the days wherein we live, that they need no further explication. And,—</p>
 
 <p>Obs. There may be sufferings sufficient for the trial of the faith of the church, when the world is restrained from blood and death.—But how long at present it will be so, God only knows.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 37</span><span class="owen-vg-prev">They were stoned, they were sawn asunder, were tempted, were slain wit…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 37.—Ἐλιθάσθησαν, ἐπρίσθησαν, ἐπειράσθησαν, ἐν φόνῳ μαχαίρας ἀπέθανον· περιῆλθον ἐν μηλωταῖς, ἐν αἰγείοις δέρμασιν· ὑστερούμενοι, θλιβόμενοι, κακουχούμενοι.</p>
 
 <p>Ἐπρίσθησαν, &quot;dissecti,&quot; &quot;secti sunt,&quot; &quot;they were cut asunder;&quot; &quot;serrati sunt,&quot; &quot;they were sawn asunder,&quot;—cut asunder with a saw; which is usually referred to Isaiah, but without any ground from the Scripture: a punishment and torment used in the east, 2 Sam. 12:31; Amos 1:3.</p>
@@ -2277,7 +2403,11 @@ next_label: "第十二章"
 <p>Obs. III. He will be deceived who at any time, under a sincere profession of the gospel, looks for any other, any better treatment or entertainment in the world.</p>
 
 <p>The apostle hath not yet finished his account of the sufferings of these worthies; yet he thought meet to interpose a character of their persons. For men in this course of life might be looked on, and were so by some, as the &quot;offscouring of all things,&quot; and unmeet either for human converse or any of the good things of this world, but rather to be esteemed as the beasts of the field. These thoughts the apostle obviates in another kind of testimony concerning them, and so proceeds unto the end of his account concerning their sufferings:—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 38</span><span class="owen-vg-prev">Of whom the world was not worthy: they wandered in deserts, and [in] m…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 38.—Ὧν οὐκ ἦν ἄξιος ὁ κόσμος· ἐν ἐρημίαις πλανώμενοι, καὶ ὄρεσι, καὶ σπηλαίοις, καὶ ταῖς ὀπαῖς τῆς γῆς.</p>
 
 <p class="owen-ver">Ver. 38.—Of whom the world was not worthy: they wandered in deserts, and [in] mountains, and [in] dens and caves of the earth.</p>
@@ -2311,7 +2441,11 @@ next_label: "第十二章"
 <h2>VERSES 39, 40</h2>
 
 <p>Καὶ οὗτοι πάντες, μαρτυρηθέντες διὰ τῆς πίστεως, οὐκ ἐκομίσαντο τὴν ἐπαγγελίαν· τοῦ Θεοῦ περὶ ἡμῶν κρεῖττόν τι προβλεψαμένου, ἵνα μὴ χωρὶς ἡμῶν τελειωθῶσι.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 39, 40</span><span class="owen-vg-prev">And these all, having obtained a good report through faith, received n…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 39, 40.—And these all, having obtained a good report through faith, received not the promise; God having provided some better thing for us, that they without us should not be made perfect.</p>
 
 <p>There are, in this close of the apostle&#x27;s discourse, which is an observation concerning all the instances of the faith of believers under the old testament, and his judgment concerning their state, four things considerable: 1. Who they are of whom he speaks; and that is, &quot;All these.&quot; 2. What he allows and ascribes unto them: &quot;They obtained a good report through faith.&quot; 3. What he yet denies unto them; which is the receiving of the promise: &quot;They received not the promise.&quot; 4. The reason of it; which is God&#x27;s sovereign disposal of the states, times, seasons, and privileges of the church: &quot;God having provided,&quot; etc.</p>
@@ -2399,3 +2533,5 @@ next_label: "第十二章"
 <p>In the first general part, or enforcement of the exhortation, there are four things: 1. The deduction of it from the foregoing instances and examples, verse 1. 2. The confirmation of it from the consideration of Christ himself, and his sufferings, verses 2, 3. 3. The same is pressed from their known duty, verse 4. And, 4. From the nature of the things which they were to undergo in their patient perseverance, as far as they were afflictive; with the certain advantages and benefits which they should receive by them, verses 5–11.</p>
 
 <p>Having insisted long on a multitude of instances, to declare and evidence the power and efficacy of faith to carry and safeguard believers through all duties and difficulties that they may be called unto in the way of their profession, he proceeds thereon to press his exhortation on the Hebrews unto a patient perseverance in the profession of the gospel, notwithstanding all the sufferings which they might meet withal. And his discourse on this subject is exceedingly pregnant with arguments unto this purpose. For it both declares what hath been the lot of true believers in all ages from the beginning, which none ought now to be surprised with, or think strange of; what was the way whereby they so carried it as to please God; and what was the success or victory which they obtained in the end: all which were powerful motives unto them for the diligent attendance unto and discharge of their present duty.</p>
+</div>
+</details>

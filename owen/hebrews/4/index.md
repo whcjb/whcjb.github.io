@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 4
 title: "第四章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/3/"
 prev_label: "第三章"
 next_url: "/owen/hebrews/5/"
@@ -14,6 +14,8 @@ next_label: "第五章"
 
 <p>CHAPTER 5 HAVING demonstrated the pre-eminence of the Lord Christ above Moses in their respective ministries about the house of God, the apostle, according unto his design and method, proceeds unto the application of the truth he had evinced, in an exhortation unto stability and constancy in faith and obedience. And this he doth in a way that adds a double force to his inference and exhortation;—first, in that he presseth them with the words, testimonies, and examples recorded in the Old Testament, unto which they owned an especial reverence and subjection; and then the nature of the examples which he insists upon is such as supplies him with a new argument unto his purpose. Now this is taken from the dealing of God with them who were disobedient under the ministry and rule of Moses; which he further explains, verses 15–19. For if God dealt in severity with them who were unbelieving and disobedient with respect unto him and his work who was but a servant in the house, they might easily understand what his dispensation towards them would be who should be so with respect unto the Son and his work, who is Lord over the whole house, and &quot;whose house are we.&quot;</p>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 7–11</span><span class="owen-vg-prev">Wherefore, as the Holy Ghost saith, To-day, if ye will hear his voice,…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 7–11.—Διὸ, καθὼς λέγει τὸ Πνεῦμα τὸ ἅγιον· Σήμερον, ἐὰν τῆς φωνῆς αὐτοῦ ἀκούσητε, μὴ σκληρύνητε τὰς καρδίας ὑμῶν, ὡς ἐν τῷ παραπικρασμῷ, κατά τὴν ἡμέραν τοῦ πειρασμοῦ ἐν τῇ ἐρήμῳ, οὗ ἐπείρασάν με οἱ πατέρες ὑμῶν, ἐδοκίμασάν με, καὶ εἶδον τὰ ἔργα μου, τεσσαράκοντα ἔτη. Διὸ προσώχθισα τῇ γενεᾷ ἐκείνῃ, καὶ εἶπον· Ἀεὶ πλανῶνται τῇ καρδίᾳ· αὐτοὶ δὲ οὐκ ἔγνωσαν τὰς ὁδούς μον. Ὡς ὤμοσα ἐν τῇ ὀργῇ μου· Εἰ εἰσελεύσονται εἰς τὴν κατάπαυσίν μου.</p>
 
 <p>There are some little varieties in some words and letters observed in some old manuscripts, but of no importance or use, and for the most part mere mistakes; as ἐνδοκίμασυν for ἐδοκίμασαν, ταύτῃ for ἐκείνῃ, εἶπα for εἶπον; as many such differences occur, where some have tampered to make the apostle&#x27;s words and the translation of the LXX. in all things to agree.</p>
@@ -649,7 +651,11 @@ next_label: "第五章"
 <p>In the close of this chapter the apostle makes application of the example which he had produced out of the psalmist unto his present purpose; namely, to dehort the Hebrews from that sin which in them would answer unto the unbelief and disobedience of their forefathers, from the pernicious and destructive event which befell them thereon. And it must be still remembered that he presseth on them the consideration of that season of trial which they were then under, and which directly answered unto that time of trial which their fathers had in the wilderness. And there are three parts of that discourse of the apostle which ensueth unto the end of this chapter:—First, An exhortation, built upon what he had before laid down and given evidence of, with confirmation unto it by the example produced out of the psalmist, verses 12–14. Secondly, An especial consideration and improvement, unto the end aimed at, of sundry parts of the example insisted on, verses 15–18; and therein many enforcements of the exhortation laid down are contained. Thirdly, A general conclusion is drawn out of his whole previous discourse, and laid down as the ground of his future progress, verse 19.</p>
 
 <p>The first part of this discourse comes now under consideration in the ensuing words:—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 12–14</span><span class="owen-vg-prev">Take heed, brethren, lest there be in any of you an evil heart of unbe…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 12–14.—Βλέπετε, ἀδελφοὶ, μή ποτε ἔσται ἔν τινι ὑμῶν καρδία πονηρὰ ἀπιστίας, ἐν τῷ ἀποστῆναι ἀπὸ Θεοῦ ζῶντος· Ἀλλὰ παρακαλεῖτε ἐαυτοὺς, καθʼ ἑκάστην ἡμέραν, ἄχρις οὗ τὸ σήμερον καλεῖται, ἵνα μὴ σχληρυνθῇ τις ἐξ ὑμῶν ἀπάτῃ τῆς ἁμαρτίας. Μέτοχοι γὰρ γεγόναμεν τοῦ Χριστοῦ, ἐάνπερ τὴν ἀρχὴν τῆς ὑποστάσεως μέχρι τέλους βεβαίαν κατάσχωμεν.</p>
 
 <p>Μή ποτε. Ποτέ is omitted or neglected in many translations, as the Syriac, Arabic, Ethiopic; &quot;ne sit,&quot; &quot;that there be not,&quot; &quot;let there not be.&quot; Vulg. Lat., &quot;ne forte,&quot; &quot;lest haply;&quot; with respect unto the uncertainty of the event: some, &quot;ne quando,&quot; &quot;ne ullo tempore,&quot; &quot;lest at any time,&quot; &quot;that at no time,&quot; with respect unto the season of such event.</p>
@@ -1015,7 +1021,11 @@ next_label: "第五章"
 <p>4. He manifests that he doth not insist only on the danger of the sin dehorted from, and the penalty annexed unto it, as though the nature of this example were merely comminatory or threatening; but he declares also, partly expressly and partly by just consequence, the blessed success which they obtained who fell not into the sins of infidelity and apostasy from God; and so strengthens his exhortation from the promises of God and his faithfulness in them. This he doth in these words, &quot;Howbeit not all that came out of Egypt,&quot; verse 16; that is, [all] did not provoke God; which is but one head of the antithesis between the two several sorts mentioned, which is to be understood and preserved in all the other instances. As if he should have said, &#x27;Some on the other side &quot;hardened not their hearts,&quot; &quot;provoked not God,&quot; but believed and obeyed his voice; hence God was &quot;not angry with them,&quot; &quot;sware not against them,&quot; their &quot;carcasses fell not in the wilderness,&quot; but they &quot;entered into the rest of God.&quot; And thus will it be with them who shall continue to believe and obey the gospel.&#x27;</p>
 
 <p>5. He adds a general conclusion, as the sum of what he had evinced out of the words of the psalm; which also he intended further to improve, as he doth in the next chapter, verse 19.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15–19</span><span class="owen-vg-prev">Ἐν τῷ λέγεσθαι. Beza, &quot;interim dum dicitur,&quot;—&quot;in the meantime, while i…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15–19.—Ἐν τῷ λέγεσθαι· Σήμερον, ἐὰν τῆς φωνῆς αὐτοῦ ἀκούσητε· μὴ σκληρύνητε τὰς καρδίας ὑμῶν, ὡς ἐν τῷ παραπικρασμῷ. Τινὲς γὰρ ἀκούσαντες παρεπίκραναν, ἀλλʼ οὐ πάντες οἱ ἐξελθόντες ἐξ Αἰγύπτου διὰ Μωυσέως. Τίσι δὲ προσώχθισε τεσσαρακόντ α ἔτη; οὐχὶ τοῖς ἁμαρτήσασιν, ὧν τὰ κῶλα ἔπεσον ἐν τῇ ἐρήμῳ; Τίσι δὲ ὤμοσε μὴ εἰσελεύσεσθαι εἰς τὴν κατάπαυσιν αὑτοῦ, εἰ μὴ τοῖς ἀπειθήσασι; Καὶ βλέπομεν, ὅτι οὐκ ἠδυνήθησαν εἰσελθεῖν δἰ ἀπιστίαν.</p>
 
 <p>Some few differences there are amongst translations; such as may, some of them, give light into the sense of the words may be remarked.</p>
@@ -2807,3 +2817,5 @@ next_label: "第五章"
 <p>Τὰ πρὸς τὸν Θεόν. Τὰ πρὸς τὸν Θεόν. The expression is elliptical and sacred; but what is intended in it is sufficiently manifest, namely, the things that were to be done with God, or towards God, in his worship, to answer the duties and ends of the office of the priesthood,—that is, to do the things whereby God might be appeased, atoned; reconciled, pacified, and his anger turned away. See Heb. 2:17.</p>
 
 <p>Ἵνα προσφέρῃ. Ἵνα προσφέρῃ δῶρά τε καὶ θυσίας ὑπέρ ἁμαρτιῶν, —&quot;that he may offer,&quot; וַיּקְרֵב; the word compriseth the whole sacerdotal performance from first to last, in bringing, slaying, and burning the sacrifice, according to the law; of which see Leviticus, chap. 1–5, and our former Exercitations concerning the sacrifices of the Jews. Δῶρα καὶ θνσίας The object of this sacerdotal action is δῶρα καὶ θυσίαι. Interpreters are much divided about the application of these words unto the ancient sacrifices. Some think they answer מנְחוֹת and עוֹלוֹת, any &quot;offering&quot; in common, and &quot;whole burnt-offerings;&quot; some שְׁלָמים and עוֹלֹת, &quot;peace-offerings&quot; and &quot;burnt-offerings;&quot; some חַטָּאת and אָשְׁם, the &quot;sin&quot; and &quot;trespass-offering.&quot; The most general opinion is, that by &quot;gifts&quot; all offerings of things inanimate are intended,—as meats, drinks, oils, firstfruits, meal, and the like; and by &quot;sacrifices,&quot; the offerings of all creatures that were slain,—as lambs, goats, doves, whose blood was poured on the altar. And this difference the words would lead us unto, the latter signifying directly the offering of things killed or slain. But our Saviour seems to comprise all offerings whatever under the name of &quot;gifts,&quot; Matt. 5:23. And if a distinction be here to be supposed, I should think that by &quot;gifts&quot; all &quot;free-will offerings&quot; might be intended; and by &quot;sacrifices,&quot; those that were determined, as to occasions, times, and seasons, by the law. But I rather judge that the apostle useth these two words in general to express all sorts of sacrifices for sin whatever; and therefore that expression, ὑπὲρ ἁμαρτιῶν, &quot;for sins,&quot; may refer to δῶρα, &quot;gifts,&quot; as well as to θυσίας, &quot;sacrifices.&quot;</p>
+</div>
+</details>

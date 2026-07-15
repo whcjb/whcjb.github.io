@@ -192,29 +192,62 @@ def slug_of(nums):
     if not ds: return '0'
     return str(ds[0]) if len(ds) == 1 else f'{ds[0]}-{ds[-1]}'
 
+def ver_range(t):
+    """VER 文本 -> (lo, hi) 节号范围; 无则 None"""
+    m = re.match(r'Vers?e?s?\.?\s*([\d,\s–\-]+)', t)
+    if not m:
+        return None
+    ds = [int(x) for x in re.findall(r'\d+', m.group(1))]
+    return (ds[0], ds[-1]) if ds else None
+
 def split_chapter(ps):
-    """-> (intro_paras, [(label, slug, [paras])])"""
+    """-> (intro_paras, [(label, slug, [paras])])
+    切页边界: 只在节号「单调前进」(lo 超过本章已见最大节)时才开新页;
+    Owen 释义里回引的低节号(如讲完 Ver.9 又回引 Ver.5)并入当前块, 不另起页。
+    块内段落一律照 PDF 原顺序原样(忠实)。"""
     i = 0; intro = []
-    while i < len(ps) and ps[i][0] != 'VER':
+    # intro = 开头英文散文(章总论); 遇希腊/希伯来原文(经文/考据起点)或首个 VER 即止
+    while i < len(ps):
         k, t = ps[i]
+        if k == 'VER' or is_greek(t):
+            break
         if not (k in ('H2','PART') and re.match(r'CHAPTER\s+\d+\s*$', t)):
             intro.append((k, t))
         i += 1
-    blocks = []
+    blocks = []          # [{'num','slug','paras'}]
+    cur = None; cur_maxhi = 0; pending = []   # 首个 VER 前的经文/考据 → 并入第一个经节块
     while i < len(ps):
         k, t = ps[i]
-        if k != 'VER':
-            i += 1; continue
-        num, _ = ver_label(t)
-        grp = []
-        while i < len(ps):
-            k2, t2 = ps[i]
-            if k2 == 'VER':
-                n2, _ = ver_label(t2)
-                if grp and n2 != num: break
-            grp.append(ps[i]); i += 1
-        blocks.append((f'Ver. {num}', slug_of(num or '0'), grp))
-    return intro, blocks
+        if k == 'VER':
+            rng = ver_range(t)
+            if rng and (cur is None or rng[0] > cur_maxhi):   # 单调前进 = 新节块
+                num, _ = ver_label(t)
+                cur = {'num': num, 'slug': slug_of(num or '0'), 'paras': pending}
+                pending = []; blocks.append(cur); cur_maxhi = rng[1]
+            elif rng:                                          # 回引 = 并入当前块
+                cur_maxhi = max(cur_maxhi, rng[1])
+        if cur is None:                                        # 尚无块 → 暂存, 待首个 VER 领走
+            pending.append((k, t)); i += 1; continue
+        cur['paras'].append((k, t)); i += 1
+    if cur is None:                                            # 全章无 VER(纯散文) → pending 落回 intro
+        intro += pending
+    out = [(f"Ver. {b['num']}" if b['num'] else 'Ver.', b['slug'], b['paras']) for b in blocks]
+    return intro, out
+
+def block_body_faithful(grp):
+    """经节块忠实渲染: VER→owen-ver, H2/PART→h2, 其余→p; 照 PDF 原顺序, 不折叠/不缩进/不切分。"""
+    e = _html.escape
+    lines = []
+    for k, t in grp:
+        if k in ('H2','PART') and re.match(r'CHAPTER\s+\d+\s*$', t):
+            continue
+        if k == 'VER':
+            lines.append(f'<p class="owen-ver">{e(t)}</p>')
+        elif k in ('H2','PART'):
+            lines.append(f'<h2>{e(t)}</h2>')
+        else:
+            lines.append(f'<p>{e(t)}</p>')
+    return '\n\n'.join(lines)
 
 import html as _html
 PHIL_WITNESS = re.compile(r'^(V\.\s*L\.|Syr\.|Vulg\.|Beza|Eras\.|Arab\.|A\.\s*Montan|LXX|Sept\.|Chald\.| Æthiop)')
@@ -387,6 +420,60 @@ def emit_verse_pages():
     print(f'共 {len(present)} 章, {npages} 个经节组页面')
     return present
 
+def emit_verse_collapsed():
+    """按章一页; 页内每个经节组包成默认折叠的 <details>(summary=Ver.N+经文预览),
+    点开看该节注释。组内正文照 PDF 原顺序原样(忠实), 只加折叠外壳。"""
+    chapters = {}
+    for vol in [3,4,5,6,7]:
+        for ch, ps in chapter_segments(vol).items():
+            chapters.setdefault(ch, ps)
+    present = sorted(chapters)
+    from subprocess import check_output
+    date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    e = _html.escape
+    # 清旧: N/index.md 覆盖即可; 顺带删可能残留的 slug 子文件
+    for f in glob.glob(f'{OUT}/*/*.md'):
+        if not f.endswith('/index.md'):
+            os.remove(f)
+    for f in glob.glob(f'{OUT}/*.md'):
+        os.remove(f)
+    for ch in present:
+        intro, blocks = split_chapter(chapters[ch])
+        parts = []
+        # 章首导言(忠实, 不折叠)
+        for k, t in intro:
+            parts.append(f'<h2>{e(t)}</h2>' if k in ('H2','PART') else f'<p>{e(t)}</p>')
+        # 各经节组折叠块
+        for label, slug, grp in blocks:
+            prev = ''
+            for k, t in grp:
+                if k == 'VER':
+                    _, vt = ver_label(t)
+                    if vt and re.search(r'[A-Za-z]', vt):
+                        prev = vt; break
+            preview = (prev[:70] + '…') if len(prev) > 70 else prev
+            det = f'<details class="owen-vg"><summary><span class="owen-vg-ref">{e(label)}</span>'
+            if preview:
+                det += f'<span class="owen-vg-prev">{e(preview)}</span>'
+            det += '</summary>\n<div class="owen-vg-body">\n'
+            det += block_body_faithful(grp)
+            det += '\n</div>\n</details>'
+            parts.append(det)
+        idx = present.index(ch)
+        fm = ['---','layout: owen-chapter','book_id: hebrews',
+              'book_name: "希伯来书·约翰欧文注释"',f'chapter: {ch}',
+              f'title: "第{CN[ch]}章"',f'date: {date}']
+        if idx > 0:
+            fm += [f'prev_url: "/owen/hebrews/{present[idx-1]}/"', f'prev_label: "第{CN[present[idx-1]]}章"']
+        if idx < len(present)-1:
+            fm += [f'next_url: "/owen/hebrews/{present[idx+1]}/"', f'next_label: "第{CN[present[idx+1]]}章"']
+        fm += ['---','']
+        os.makedirs(f'{OUT}/{ch}', exist_ok=True)
+        open(f'{OUT}/{ch}/index.md','w',encoding='utf-8').write(
+            '\n'.join(fm) + f'# 希伯来书 第{CN[ch]}章\n\n' + '\n\n'.join(parts) + '\n')
+        print(f'  {OUT}/{ch}/ ({len(blocks)} 经节组)')
+    print(f'共 {len(present)} 章(折叠经节组版)')
+
 def emit_faithful():
     """严格照 PDF: 按章一页, 段落原顺序原样输出。不折叠/不重排/不分级/不切分。"""
     chapters = {}
@@ -431,6 +518,6 @@ def emit_faithful():
 
 if __name__ == '__main__':
     if '--emit' in sys.argv:
-        emit_faithful()
+        emit_verse_collapsed()
     else:
         do_map()

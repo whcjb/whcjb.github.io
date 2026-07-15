@@ -43,4 +43,17 @@ layout: default
 .owen-content p.owen-ver{font-weight:bold;color:#1f5a4b;margin-top:24px}
 .owen-content a{color:#1f5a4b}
 .owen-content a:hover{color:#14382f}
+/* 经节组折叠块(默认折叠) */
+.owen-content .owen-vg{border:1px solid #dfe6e0;border-radius:8px;margin:0 0 10px;background:#fbfaf6}
+.owen-content .owen-vg>summary{cursor:pointer;padding:12px 16px;list-style:none;
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;color:#1f5a4b}
+.owen-content .owen-vg>summary::-webkit-details-marker{display:none}
+.owen-content .owen-vg>summary::before{content:"▸";color:#7aa896;margin-right:4px;font-size:12px}
+.owen-content .owen-vg[open]>summary::before{content:"▾"}
+.owen-content .owen-vg[open]>summary{border-bottom:1px solid #eaf0ec;background:#f2f7f4;
+  border-radius:8px 8px 0 0}
+.owen-content .owen-vg-ref{font-weight:bold;font-size:15px;white-space:nowrap}
+.owen-content .owen-vg-prev{font-weight:normal;color:#8a8a82;font-size:13.5px;font-style:italic}
+.owen-content .owen-vg-body{padding:14px 18px 2px}
+.owen-content .owen-vg-body p.owen-ver{margin-top:0}
 </style>

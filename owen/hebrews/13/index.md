@@ -4,12 +4,14 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 13
 title: "第十三章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/12/"
 prev_label: "第十二章"
 ---
 # 希伯来书 第十三章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1</span><span class="owen-vg-prev">Let brotherly love continue, [abide constant.]</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1.—Let brotherly love continue, [abide constant.]</p>
 
 <p>The duty commanded is &quot;brotherly love;&quot; and the manner of the injunction of it is, that it &quot;remain,&quot; or &quot;continue.&quot;</p>
@@ -73,7 +75,11 @@ prev_label: "第十二章"
 <p>Ἔλαθον. Most copies of the Vulgar read &quot;placuerunt;&quot; which was put in by them who understood not the Grecism of &quot;latuerunt,&quot; for &quot;inscii,&quot; &quot;unawares,&quot; not knowing (that is, at first) who they were whom they entertained.</p>
 
 <p>The Syriac thus reads the whole verse: &quot;Forget not love unto strangers; for by this some were worthy, when they perceived it not, to receive angels.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 2</span><span class="owen-vg-prev">Be not forgetful [forget not] to entertain strangers; for thereby some…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 2.—Be not forgetful [forget not] to entertain strangers; for thereby some have entertained angels unawares.</p>
 
 <p>There are plainly in the words, first, A prescription of a duty; and, secondly, The enforcement of it by an effectual motive or reason.</p>
@@ -167,7 +173,11 @@ prev_label: "第十二章"
 <p>Obs. VI. When men, designing that which is good, do more good than they intended, they shall, or may, reap more benefit thereby than they expected.</p>
 
 <p>The first branch of the exercise of brotherly love, enjoined verse 1, is towards strangers, verse 2; the next is towards sufferers, verse 3.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3</span><span class="owen-vg-prev">Remember [be mindful of] them that are in bonds, [or bound,] as bound …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3.—Μιμνήσκεσθε τῶν δεσμίων ὡς συνδεδεμένοι, τῶν κακουχουμένων, ὡς καὶ αὐτοί ὄντες ἐν σὠματι.</p>
 
 <p>Μιμνήσκεσθς, &quot;mementote.&quot; Vulg., &quot;memores estote,&quot; &quot;be mindful of;&quot; it is more than a bare remembrance that is intended.</p>
@@ -259,7 +269,11 @@ prev_label: "第十二章"
 <p>Πόρνονς. Vulg., &quot;fornicators;&quot; Bez., &quot;scortatores;&quot; which we render &quot;whoremongers,&quot; not amiss. The difference between them and μοιχούς we shall see.</p>
 
 <p>Κρινεῖ. Syr., דָּאֵן, &quot;judicat;&quot; &quot;judicaturus est, judicabit,&quot; &quot;damnabit,&quot; Bez.; Arab., &quot;Marriage is every way honourable, and the bed thereof is pure.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 4</span><span class="owen-vg-prev">Marriage [is] honourable in all, and the bed undefiled; but whoremonge…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 4.—Marriage [is] honourable in all, and the bed undefiled; but whoremongers and adulterers God will judge.</p>
 
 <p>There is a double difficulty in the translation of the words of the first proposition, arising from a double defect in the original. The first is of the verb substantive, or the copula of the proposition; which some supply by ἔστι, &quot;is;&quot; others by ἔστω, &quot;let it be,&quot; or be accounted. The other is from the defect of the noun substantive, which πᾶσι, &quot;all,&quot; refers unto: some supply &quot;men,&quot; in all sorts of men; others, &quot;things,&quot; or every manner of way. For the first, the most of late incline to make it preceptive, and not judicative; &quot;Let it be,&quot; &quot;let it be so esteemed.&quot; We follow Beza, and render it indicatively; &quot;it is,&quot;—&quot;Marriage is honourable.&quot;</p>
@@ -333,7 +347,11 @@ prev_label: "第十二章"
 <p>Ἀφιλάργυρος. Syr., כֶּסְפָא רָחֵם הֲוָא לָא, &quot;let not [your mind] be loving of silver;&quot; &quot;love not silver,&quot; according to the original signification of the word; but its use is of larger extent, &quot;sine avaritiâ, alieni ab avaritiâ;&quot; &quot;not inclined unto, alien from covetousness.&quot;</p>
 
 <p>Ὁ τρὀπος. Syr., רַעֲיָנְכוּן, &quot;your mind;&quot; as τρόπος doth sometimes signify &quot;ingenium, animum, mentem, indolem,&quot; the mind with its bent and inclination. Other interpreters render it by &quot;mores,&quot; and supply &quot;vestri;&quot; &quot;your manners,&quot; &#x27;the way and manner of your conversation:&#x27; as it is well rendered by ours, &quot;your conversation;&quot; though that be properly ἀναστροφή, which we render &quot;conversation,&quot; verse 7; but we have no other word whereby to express the force of the Latin &quot;mores.&quot; Τρόπος is men&#x27;s &quot;moral conversation,&quot; or their conversation in morals. So we read χρηστὸς τρόπος, &quot;honest manners,&quot; an honest conversation; and βέλτιστος τρόπος, &quot;excellent manners;&quot; and τρόπος δίκαιος, &quot;a just, righteous conversation;&quot; and τρόπος ὅσιος, &quot;holy manners;&quot; and on the contrary, πικρὸς τρόπος, &quot;bitter, froward manners.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 5, 6</span><span class="owen-vg-prev">[Let your] conversation [be] without [free from] covetousness; [and be…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 5, 6.—[Let your] conversation [be] without [free from] covetousness; [and be] content with [present things] such things as ye have: for he hath said, I will never leave thee, nor forsake thee. So that we may boldly say, The Lord [is] my helper, and I will not fear what man can do unto me.</p>
 
 <p>From particular duties, the apostle proceeds unto that which is more general, which relates unto our whole course of walking before God. And the vice prohibited is frequently joined with that foregoing, fornication and covetousness, Eph. 5:3, 5; Col. 3:5; 1 Thess. 4:6: not that they have any especial affinity one with the other, but that they are both of them such as corrupt the whole Christian profession.</p>
@@ -459,7 +477,11 @@ prev_label: "第十二章"
 <p>Obs. XIII. That which in our sufferings delivereth us from the fear of men, takes out all that is evil in them, and secures our success.</p>
 
 <p>From a prescription of the foregoing duties of morality, and obedience in them, the apostle proceeds unto those which concern faith and worship, laying the foundation of them in that respect which is due unto them that declare unto us the word of truth, for their work&#x27;s sake, and on the account of the example which they give unto us.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 7</span><span class="owen-vg-prev">Remember your guides, who have spoken unto you the word of God: whose …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 7.—Μνημονεύετε τῶν ἡγουμένων ὑμῶν, οἵτινες ἐλάλησαν ὑμῖν τὸν λόγον τοῦ Θεοῦ· ὧν ἀναθεωροῦντες τὴν ἔκβασιν τῆς ἀναστροφῆς μιμεῖσθε τὴν πίστιν.</p>
 
 <p>Ἡγουμένων. Vulg., &quot;praepositorum.&quot; Rhem., &quot;your prelates;&quot; but yet they interpret the words of saints departed, with such a usual inconsistency as prejudice and interest produce. Syr., &quot;your leaders;&quot; &quot;ductorum,&quot; &quot;ducum.&quot; We, &quot;them that have the rule over you;&quot; as indeed the word is sometimes used to express rule; but it is not proper unto this place, wherein the apostle speaks of them who are departed this life; and so, whatever they had, they have not still the rule over us.</p>
@@ -517,7 +539,11 @@ prev_label: "第十二章"
 <p>Ἰησοῦς Χριστὸς χθὲς καὶ σήμερον ὁ αὐτὸς, καὶ εἰς τοῦς αἰῶνας.</p>
 
 <p>Vulg., &quot;Jesus Christus heri et hodie, ipse et in seculum;&quot; &quot;Jesus Christ, yesterday and to-day,&quot; (where it placeth the comma,) &quot;and he [is] the same for ever.&quot; So Beza; &quot;Jesus Christ yesterday, and to-day, and he is the same for ever.&quot; Others, better, &quot;Jesus Christus heri et hodie, idem etiam est in secula.&quot; So the Syriac, וֵלְעָלַם וְהוּיוּ, &quot;is the same, and for ever.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 8</span><span class="owen-vg-prev">Jesus Christ the same yesterday, to-day, and for ever.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 8.—Jesus Christ the same yesterday, to-day, and for ever.</p>
 
 <p>Two things are to be considered in these words: first, the occasion of them; and then their sense and meaning. And as unto the occasion of their use in this place, some think that they refer to what went before, in confirmation of it; some unto what follows after, as a direction in it; and some observe their usefulness unto both these ends. But this will be the more clearly discovered when the sense of them is agreed upon. For to me they appear as a glorious light which the apostle sets up to guide our minds in the consideration of his whole discourse, that we may see whence it all proceeds, and whereunto it tends. He is the Alpha and Omega, the first and the last, the beginner and finisher of our faith‚ as we shall see.</p>
@@ -573,7 +599,11 @@ prev_label: "第十二章"
 <p>6. He adds, in the last place, what we are to learn from the nature and use of our altar and sacrifice, in opposition unto the meats which belonged to the old typical altar. And hereof he instanceth in patient bearing of the cross, or suffering for Christ, verse 13; self-denial, as unto any interest in temporal enjoyments, verse 14; the continual worship of God in and by spiritual sacrifices, made acceptable in Christ, our altar, priest, and sacrifice, verse 15; and usefulness amongst men in all good works of piety and charity, verse 16; these being the only sacrifices that we are now called unto.</p>
 
 <p>I hope we have not missed the apostle&#x27;s design and reasoning in this analysis of his discourse; which makes his sublime way of arguing in this great mystery plain and evident, and gives us a safe rule for the interpretation of every particular passage in it.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 9</span><span class="owen-vg-prev">Be not carried about with divers and strange doctrines; for [it is] go…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 9.—Διδαχαῖς ποικίλαις καὶ ξέναις μὴ περιφέρεσθε· καλὸν γὰρ χάριτι βεβαιοῦσθαι τῆν καρδίαν, οὐ βρώμασιν, ἐν οἷς οὐκ ὠφελήθησαν οἱ περιπατήσαντες</p>
 
 <p class="owen-ver">Ver. 9.—Be not carried about with divers and strange doctrines; for [it is] good that the heart be established with grace; not with meats, which have not profited them that have walked in them.</p>
@@ -641,7 +671,11 @@ prev_label: "第十二章"
 <p>Ἐν οἷς οἱ περιπατήσαντες. 4. &quot;Which have not profited them who have walked in them.&quot; To walk in meats, is to assent unto and observe the doctrine concerning them—&quot;Touch not, taste not, handle not.&quot; And he speaketh of the time past, both whilst the distinction of meats was in force, and since it was taken away. For of themselves they profited not those who observed them, even whilst the institutions concerning them were in force; for they were a part of the &quot;yoke&quot; that was imposed on them &quot;until the time of reformation,&quot; Heb. 9:10. Οὐκ ὠφελήθησαν. And so far as they were trusted unto as a means of acceptance with God, they were pernicious unto them: which the apostle by a common figure intimates, in that &quot;they did not profit them;&quot; that is, they tended to their hurt. And it was much more so with them who continued to walk in them after the obligation thereunto did cease. They were so far from having their hearts established, as that they received no benefit or advantage, but much hurt and prejudice, by them. And we see,—</p>
 
 <p>Obs. VIII. That those who decline in any thing from grace, as the only means to establish their hearts in peace with God, shall labour and exercise themselves in other things and ways unto the same end, whereby they shall receive no advantage.—And this is the state of all false worshippers in the world, especially in the papal church, and those that follow its example.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 10</span><span class="owen-vg-prev">We have an altar, whereof they have no right to eat who serve the tabe…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 10.—Ἔχομεν θυσιαστήριον, ἐξ οὗ φαγεῖν οὐκ ἔχουσιν ἐξουσίαν οἱ τῇ σκηνῇ λατρεύοντες.</p>
 
 <p class="owen-ver">Ver. 10.—We have an altar, whereof they have no right to eat who serve the tabernacle.</p>
@@ -691,7 +725,11 @@ prev_label: "第十二章"
 <p>&quot;To eat:&quot; Eating was the only way of the participation of meats from the altar; what was every one&#x27;s portion was to be eaten. Hence the apostle useth &quot;to eat&quot; here, for any kind of participation. He doth not intend that we have an altar whereof some may eat, namely, of meats taken from it and consecrated by it, which they had no right to do; but only that they have no right to participate of the benefits of our altar in any way or kind. Hereunto they had &quot;no right&quot; or title; that is, they had not by virtue of any divine institution. He doth not absolutely exclude such persons from ever attaining an interest in our altar. But he doth it in two respects: (1.) They had no such right by virtue of their office and relation unto the tabernacle: (2.) That whilst they adhered unto that privilege, and the use of meats thereby for the establishment of their hearts in peace with God, they could have no interest in this altar of ours. And we may see,—</p>
 
 <p>Obs. VII. That all privileges, of what nature soever, without a participation of Christ, as the altar and sacrifice of the church, are of no advantage unto them that enjoy them.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11, 12</span><span class="owen-vg-prev">For the bodies of those beasts whose blood, [being] a sinoffering, is …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11, 12.—Ὧν γὰρ εἰσφέρεται ζώων τὸ αἷμα περὶ ἁμαρτίας εἰς τὰ ἅγια διὰ τοῦ ἀρχιερέως, τούτων τὰ σώματα κατακαίεται ἔξω τῆς παρεμβολῆς. Διὸ καὶ Ἰησοῦς, ἴνα ἁγιάσῃ διὰ τοῦ ἰδίου αἵματος τὸν λαὸν, ἔξω τῆς πὑλης ἔπαθε.</p>
 
 <p class="owen-ver">Ver. 11, 12.—For the bodies of those beasts whose blood, [being] a sinoffering, is brought into the sanctuary by the high priest, are burnt without the camp. Wherefore Jesus also, that he might sanctify the people with his own blood, suffered without the gate</p>
@@ -753,7 +791,11 @@ prev_label: "第十二章"
 <p>Obs. VI. When the Lord Jesus carried all the sins of his own people in his own body unto the tree, he left the city, as a type of all unbelievers, under the wrath and curse of God.</p>
 
 <p>Obs. VII. Going out of the city as a malefactor, he bore all the reproach that was due to the sins of the church; which was a part of the curse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 13, 14</span><span class="owen-vg-prev">Let us go forth therefore unto him without the camp, bearing his repro…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 13, 14.—Τοίνυν ἐξερχώμεθα πρὸς αὐτὸν ἔξω τῆς παρεμβολῆς, τὸν ὀνειδισμὸν αὐτοῦ φέροντες. Οὐ γὰρ ἔχομεν ὧδε μένουσαν πόλιν, ἀλλὰ τὴν μέλλουσαν ἐπιζητοῦμεν.</p>
 
 <p class="owen-ver">Ver. 13, 14.—Let us go forth therefore unto him without the camp, bearing his reproach. For we have here no abiding city, but we seek one to come.</p>
@@ -817,7 +859,11 @@ prev_label: "第十二章"
 <p>Obs. VIII. As God hath prepared a city of rest for us, so it is our duty continually to endeavour the attainment of it in the ways of his appointment.</p>
 
 <p>Obs. IX. The main business of believers in this world is diligently to seek after the city of God, or the attainment of eternal rest with him; and this is the character whereby they may be known.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15–17</span><span class="owen-vg-prev">Having declared of what nature our altar is, and the fundamental point…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15–17.—Having declared of what nature our altar is, and the fundamental points of our religion thence arising, namely, our faith in Christ Jesus, and the profession thereof, in readiness for the cross, and conformity unto him thereby, the apostle proceeds to declare the other necessary duty of our Christian profession, proceeding from the same cause, namely, the nature of our altar and sacrifice. And this he doth still in opposition unto those doctrines and observances about meats, and other things of an alike nature, which depended on the altar in the tabernacle with its institutions. And he reduceth all our Christian duties unto three heads, giving especial instances in each kind. Now, these are such as are, 1. Spiritual, with respect unto God; whereof he gives an instance, verse 15: 2. Moral, with respect unto men of all sorts; an instance whereof, comprehensive of all duties towards others, we have, verse 16: and, 3. Ecclesiastical, in the church-state whereinto we are called by the profession of the gospel; the principal duty whereof is instanced in, verse 17.</p>
 
 <p>We have therefore in these verses, which are upon the matter the close of the epistle, so far as it is instructive, a summary of the whole duty of believers, and that cast under three heads, in a most proper order. For, beginning with that duty that doth immediately concern God himself, which contains the sum of the first table, he proceeds unto that towards men, which eminently contains those of the second; and so concludes with that duty which ariseth peculiarly from divine institution, which is superadded unto the other. It is not my business to insist at large on the things themselves, but only to open the words, and declare what is the mind of the Holy Ghost in them.</p>
@@ -1005,7 +1051,11 @@ prev_label: "第十二章"
 <p>Μὴ στενάζοντες. [2.] It is pressed, for the avoidance of the contrary frame herein; namely, &quot;with grief,&quot; grieving or mourning. The sadness of the hearts of ministers of the gospel, upon the unprofitableness of the people under their ministry, or miscarriages of them, with respect unto church order and rule, is not easy to be expressed. With what sighing, what groaning, (as the word signifies,) what mourning, their accounts unto Christ are accompanied, he alone knows, and the last day will manifest. Ἀλυσιτελὲς γὰρ ὑμῖν τοῦτο. When it is thus, although they alone have the present burden and trouble of it, yet it is unprofitable for the people, both here and hereafter. It is, and will be so, in the discouragement of their guides, in the displeasure of Christ, and in all the severe consequents which will ensue thereon.</p>
 
 <p>Of the close of the epistle, which now only remains, there are three parts: 1. The apostle&#x27;s request of the prayers of the Hebrews for himself, verses 18, 19; 2. His solemn benedictive prayer for them, verses 20, 21; 3. An account of the state of Timothy, with the usual salutation, verses 22–25. The first of these is contained in—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 18, 19</span><span class="owen-vg-prev">Pray for us: for we trust we have a good conscience, in all things wil…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 18, 19.—Προσεύχεσθε περὶ ἡμῶν· πεποίθαμεν γὰρ ὅτι καλὴν συνείδησιν ἔχομεν, ἐν πᾶσι καλῶς θέλοντες ἀναστρέφεσθαι· περισσοτέρως δὲ παρακαλῶ τοῦτο ποιῆσαι, ἵνα τάχιον ἀποκατασταθῶ ὑμῖν.</p>
 
 <p class="owen-ver">Ver. 18, 19.—Pray for us: for we trust we have a good conscience, in all things willing to live honestly. But I beseech [you] the rather to do this, that I may be restored to you the sooner.</p>
@@ -1027,7 +1077,11 @@ prev_label: "第十二章"
 <p>Θέλοντες ἐν πᾶσι. The testimony of his having a good conscience consists in this, that he was &quot;willing in all things to live honestly.&quot; A will, resolution, and suitable endeavour, to live honestly in all things, is a fruit and evidence of a good conscience. Being willing, denotes readiness, resolution, and endeavour; and this extends to &quot;all things;&quot; that is, wherein conscience is concerned, or our whole duty towards God and men. The expression of &quot;living honestly,&quot; as it is commonly used, doth not reach the emphasis of the original. A beauty in conversation, or exact eminency therein, is intended. Καλῶς ἀναστρέφεσθαι. This was the design of the apostle in all things; and ought to be so of all ministers of the gospel, both for their own sakes, as unto what is in an especial manner required of them, as also that they may be examples unto the people.</p>
 
 <p>3. In the 19th verse he is further earnest in his request, with respect unto his present circumstances, and his design of coming in person unto them. Some few things may be observed therein; as, (1.) He had been with them formerly; as it is known that he had been partly at liberty, and partly in prison some good while, yea, for some years, at Jerusalem, and in other parts of Judea. (2.) He desires to be restored unto them; that is, to come unto them again, so as that they might have the benefit of his ministry, and he the comfort of their faith and obedience. (3.) He is earnest in this desire, and therefore the more urgent in requesting their prayers, that his desire might be accomplished. For, (4.) He knew that the Lord Christ did dispense the affairs of his church much according to their prayers, unto his own glory and their great consolation. Yet, (5.) It is uncertain whether ever this desire of his was accomplished or no; for this epistle was written after the close of the apostolical story in the Book of the Acts, and from thenceforward we have little certainty in matters of fact. For, (6.) According unto our present apprehensions of duty, we may lawfully have earnest desires after, and pray for such things as shall not come to pass. The secret purposes of God are not the rule of our prayers.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 20, 21</span><span class="owen-vg-prev">Now the God of peace, that brought again from the dead that great shep…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 20, 21.—Ὁ δὲ Θεὸς τῆς εἰρήνης, ὁ ἀναγαγὼν ἐκ νεκρῶν τὸν ποιμένα τῶν προβάτων τὸν μέγαν, ἐν αἵματι διαθήκης αἰωνίον, τὸν Κύριον ἡμῶν Ἰησοῦν Χριστὸν, καταρτίσαι ὑμᾶς ἐν παντὶ ἔργῳ ἀγαθῷ, εἰς τὸ ποιῆσαι τὸ θέλημα αὐτοῦ, ποιῶν ἐν ὑμῖν τὸ εὐάρεστον ἐνώπιον αὐτοῦ, διὰ Ἰησοῦ Χριστοῦ· ᾧ ἡ δόξα εἰς τοὺς αἰῶνας τῶν αἰώνων. Ἀμήν.</p>
 
 <p class="owen-ver">Ver. 20, 21.—Now the God of peace, that brought again from the dead that great shepherd of the sheep, our Lord Jesus Christ, through the blood of the everlasting covenant, make you perfect in every good work to do his will, working in you that which is well-pleasing in his sight through Jesus Christ, to whom [be] glory for ever and ever. Amen.</p>
@@ -1131,7 +1185,11 @@ prev_label: "第十二章"
 <p>And unto Him doth the poor unworthy author of this Exposition desire, in all humility, to ascribe and give eternal praise and glory, for all the mercy, grace, guidance, and assistance, which he hath received from Him in his labour and endeavours therein. And if any thing, word, or expression, through weakness, ignorance and darkness, which he yet laboureth under, have passed from him that doth not tend unto His glory, he doth here utterly condemn it. And he humbly prays, that if, through His assistance, and the guidance of His Holy Spirit of light and truth, any thing have been spoken aright concerning Him, His office, His sacrifice, His grace, His whole mediation, any light or direction communicated unto the understanding of the mind of the Holy Ghost in this glorious scripture, He would make it useful and acceptable unto His church, here and elsewhere. And he doth also humbly acknowledge His power, goodness, and patience, in that, beyond all his expectations, He hath continued his life under many weaknesses, temptations, sorrows, tribulations, to bring this work unto its end. To Him be glory for ever and ever. Amen.</p>
 
 <p>This is the solemn close of the epistle. What follows are certain additional postscripts, which were usual with our apostle in his other epistles; and we shall briefly give an account of them.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 22</span><span class="owen-vg-prev">And I beseech you, brethren, suffer the word of exhortation; for I hav…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 22.—Παρακαλῶ δὲ ὑμᾶς, ἀδελφοὶ, ἀνέχεσθε τοῦ λόγου τῆς παρακλήσεως· καὶ γὰρ διὰ βραχέων ἐπέστειλα ὑμῖν.</p>
 
 <p class="owen-ver">Ver. 22.—And I beseech you, brethren, suffer the word of exhortation; for I have written a letter unto you in few words.</p>
@@ -1149,13 +1207,21 @@ prev_label: "第十二章"
 <p>Καὶ γὰρ διὰ βραχέων ἐπέστειλα ὑμῖν. 4. He adds the reason of his present caution, &quot;For I have written a letter unto you in few words.&quot; There are two things in the words warranting his caution: (1.) That out of his love and care towards them he had written or sent this epistle to them; on the account whereof they ought to bear with him and it. (2.) That he had given them no more trouble than was necessary, in that he had &quot;written in a few words.&quot;</p>
 
 <p>Some inquiry is made why the apostle should affirm that he wrote this epistle &quot;briefly,&quot; or &quot;in few words,&quot; seeing it is of a considerable length,— one of the longest he ever wrote. A few words will satisfy this inquiry. For considering the importance of the cause wherein he was engaged; the necessity that was on him to unfold the whole design and mystery of the covenant and institutions of the law, with the office of Christ; the great contests that were amongst the Hebrews about these things; and the danger of their eternal ruin, through a misapprehension of them; all that he hath written may well be esteemed but a &quot;few words,&quot; and such as whereof none could have been spared. He hath in this matter written διὰ βραχέων, or given us a brief compendium, as the words signify, of the doctrine of the law and the gospel; which they ought to take in good part.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 23</span><span class="owen-vg-prev">Know ye that [our] brother Timothy is set at liberty; with whom, if he…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 23.—Γινώσκετε τὸν ἀδελφὸν Τιμόθεον ἀπολελυμένον, μεθʼ οὗ ἐὰν τάχιον ἔρχηται ὄψομαι ὑμᾶς.</p>
 
 <p class="owen-ver">Ver. 23.—Know ye that [our] brother Timothy is set at liberty; with whom, if he come shortly, I will see you.</p>
 
 <p>Who this Timothy was, what was his relation unto Paul, how he loved him, how he employed him, and honoured him, joining him with himself in the salutation prefixed unto some of his epistles, with what care and diligence he wrote unto him with reference unto his office of an evangelist, is known out of his writings. This Timothy was his perpetual companion in all his travels, labours, and sufferings, &quot;serving him as a son serveth his father,&quot; unless when he designed and sent him unto any especial work for the church. And being with him in Judea, he was well known unto them also; as were his worth and usefulness. He seems not to have gone to Rome with Paul, when he was sent thither a prisoner, but probably followed him not long after. And there, as it is most likely, being taken notice of, either as an associate of the apostle&#x27;s, or for preaching the gospel, he was cast into prison. Hereof the Hebrews had heard, and were no doubt concerned in it, and affected with it. He was at this present dismissed out of prison; whereof the apostle gives notice unto the Hebrews, as a matter wherein he knew they would rejoice. He writes them the good news of the release of Timothy. He doth not seem to have been present with the apostle at the despatch of this epistle, for he knew not his mind about his going into Judea directly; only, he apprehended that he had a mind and resolution so to do. And hereon he acquaints them with his own resolution to give them a visit; which that he might do he had before desired their prayers for him. However, he seems to intimate that, if Timothy, whose company he desired in his travels, could not come speedily, he knew not whether his work would permit him to do so or no. What was the event of this resolution, God only knows.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 24</span><span class="owen-vg-prev">Salute all them that have the rule over you, and all the saints. They …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 24.—Ἀσπάσασθε πάντας τούς ἡγουμένους ὑμῶν καὶ πάντας τοὺς ἁγίους. Ἀσπάζονται ὑμᾶς οἱ ἀπὸ τῆς Ἰταλίας.</p>
 
 <p class="owen-ver">Ver. 24.—Salute all them that have the rule over you, and all the saints. They of Italy salute you.</p>
@@ -1165,7 +1231,11 @@ prev_label: "第十二章"
 <p>Who these rulers were whom they are enjoined to salute, hath been fully declared on verse 17; and all the rest of the members of the church are called &quot;the saints,&quot; as is usual with our apostle. Such rulers and such members did constitute blessed churches.</p>
 
 <p>He adds, to complete this duty of communion in mutual salutation, the performance of it by those that were with him, as well as by himself: &quot;They of Italy salute you.&quot; They did it by him, or he did it unto the whole church by them. Hence it is taken for granted that Paul was in Italy at the writing of this epistle. But it is not unquestionably proved by the words. For οἱ ἀπὸ τῆς Ἰταλίας may as well be, &quot;those who were come to him out of Italy,&quot; as &quot;those that were with him in Italy.&quot; But in Italy there were then many Christians, both of Jews and Gentiles. Some of these, no doubt, were continually with the apostle; and so knowing his design of sending a letter to the Hebrews, desired to be remembered unto them; it being probable that many of them were their own countrymen, and well known unto them.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 25</span><span class="owen-vg-prev">Grace [be] with you all. Amen.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 25.—Ἡ χάρις μετὰ πάντων ὑμῶν. Ἀμήν.</p>
 
 <p class="owen-ver">Ver. 25.—Grace [be] with you all. Amen.</p>
@@ -1183,3 +1253,5 @@ prev_label: "第十二章"
 <p>All rights reserved under International and Pan-American Copyright Conventions. By payment of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this ebook on-screen. No part of this text may be reproduced, transmitted, downloaded, decompiled, reverse engineered, or stored in or introduced into any information storage and retrieval system, in any form or by any means, whether electronic or mechanical, now known or hereinafter invented, without the express written permission of Monergism Books.</p>
 
 <p>ePub, .mobi &amp; .pdf Editions September 2019 Requests for information should be addressed to: Monergism Books, PO Box 491, West Linn, OR 97068</p>
+</div>
+</details>

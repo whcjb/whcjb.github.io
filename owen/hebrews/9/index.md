@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 9
 title: "第九章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/8/"
 prev_label: "第八章"
 next_url: "/owen/hebrews/10/"
@@ -12,6 +12,8 @@ next_label: "第十章"
 ---
 # 希伯来书 第九章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1</span><span class="owen-vg-prev">Then verily even that first [covenant] had ordinances of worship, and …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1.—Then verily even that first [covenant] had ordinances of worship, and also a worldly sanctuary.</p>
 
 <p>Proceeding unto the comparison designed between the old covenant and the new, as unto the services and sacrifices wherewith the one and the other were established and confirmed, he introduceth the πρότασις of the first by way of concession, as unto what really belonged thereunto. And this is the constant method of the apostle in all the comparisons he makes. He still allows full weight and measure unto that comparate which he prefers the other above. And as this, on the one hand, taketh away all cause of complaint, as though the worth and value of what he determineth against were concealed, so it tends unto the real exaltation of that which he gives the preference unto. It is an honour unto the priesthood and sacrifice of Christ, that they are so much more glorious and excellent than those of the old covenant, which yet were excellent and glorious also.</p>
@@ -73,7 +75,11 @@ next_label: "第十章"
 <p>Obs. VII. A worldly sanctuary is enough for them whose service is worldly; and these things the men of the world are satisfied with.</p>
 
 <p>Two things were ascribed unto the first covenant in the verse foregoing: 1. Ordinances of worship; 2. A worldly sanctuary. In this verse the apostle enters upon a description of them both, inverting the order of their proposal, beginning with the latter, or the sanctuary itself.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 2</span><span class="owen-vg-prev">For there was a tabernacle made [prepared]; the first, wherein was the…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 2.—Σκηνὴ γὰρ κατεσκευάσθη ἡ πρώτη, ἐν ᾗ ἤ τε λυχνία, καὶ ἡ τράπεζα, καὶ ἡ πρόθεσις τῶν ἄρτων, ἥτις λέγεται ἁγία.</p>
 
 <p>Vulg. Lat., &quot;tabernaculum enim factum est primum;&quot; &quot;the first tabernacle was made;&quot; ambiguously, as we shall see. Syr., קַדְמָיָא בְּמַשְׁכְּנָא דֶּאתְעַבַד, &quot;in tabernaculo primo quod factum erat;&quot; &quot;in the first tabernacle that was made.&quot; Λυχνία. Vulg. Lat., &quot;candelabra,&quot; &quot;candlesticks.&quot; Syr., מְנָרְתָא בֵּהּ הָוָא, &quot;in it was the candlestick.&quot; Πρόθεσις τῶν ἄρτων. Vulg., &quot;propositio panum,&quot; &quot;the proposition of loaves.&quot; Others, &quot;propositi panes.&quot; Syr., אָפַא וַלְחֵם, &quot;and the bread of faces.&quot; Ἥτις λέγεται ἁγία. Vulg., &quot;quae dicitur sancta;&quot; &quot;quae dicitur sanctum;&quot; &quot;quod sancta vocant:&quot; for some read ἁγία, some ἅγια. Syr., וּמֶתְקְרָא קוּדָשֵׁא בֵית הֲוָא, &quot;and it was called the holy house.&quot;</p>
@@ -143,7 +149,11 @@ next_label: "第十章"
 <p>Χρυσοῦν ἔχουσα θυμιατήριον, &quot;aureum habens thuribulum;&quot; &quot;having the golden censer.&quot; Syr., &quot;and there were in it the house of incense of gold;&quot; whereby either the altar or the censer may be understood. Ἐν ᾗ στάμνος. Syr., &quot;and there was in it;&quot; referring plainly to the ark.</p>
 
 <p>Περὶ ὧν οὐκ ἔστι νῦν λέγειν κατὰ μέρος, &quot;non est tempus,&quot; &quot;non est propositum;&quot; &quot;it is not a time or place,&quot; &quot;it is not my purpose to speak;&quot; &quot;non est modo dicendum.&quot; Κατὰ μὲρος, &quot;singulatim;&quot; Vulg. Lat., &quot;per singula;&quot; Arias, &quot;per partes;&quot; Syr., &quot;by one and one,&quot; &quot;apart,&quot; &quot;particularly,&quot; according to the parts laid down distinctly. The Syriac adds the following words unto these, &quot;It is not time to speak of these things by one and one, which were thus disposed.&quot; But the original refers that expression unto what follows.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3–5</span><span class="owen-vg-prev">And after the second veil, the tabernacle which is called the Holiest …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3–5.—And after the second veil, the tabernacle which is called the Holiest of all; which had the golden censer, and the ark of the covenant overlaid [covered] round about [on every side] with gold, wherein was the golden pot that had manna, and Aaron&#x27;s rod that budded, and the tables of the covenant; and over it the churubim of glory shadowing the mercyseat; of which [things] we cannot [shall not] now speak particularly.</p>
 
 <p>The apostle in these verses proceedeth unto the description of the second part of the tabernacle, with the things contained in it, or the holy furniture thereof. His design is not to give us an exact description of these things, as he declares in the close of the fifth verse, but only to declare their use and signification. Wherefore he doth not propose an accurate account of their station and relation one to another, but makes such mention of them in general as was sufficient unto his end, namely, to manifest their use and signification. Wherefore they deal injuriously both with him and the text, who rigidly examine every word and passage, as though he had designed an exact account of the frame, positure, fashion, and measure, of this part of the tabernacle, and every thing contained in it; whereas the use and signification of the whole is all that he intends. A due consideration hereof renders the anxious inquiry that hath been made about the assignation of holy utensils unto this part of the sanctuary, and the placing of them with respect unto one another,—which was no part of his design,—altogether needless. For with respect unto the end he aimed at, the words he useth are exactly the truth.</p>
@@ -317,7 +327,11 @@ next_label: "第十章"
 <p>Obs. VIII. All the counsels of God concerning his worship in this world, and his eternal glory in the salvation of the church, do centre in the person and mediation of Christ.—The life, glory, and usefulness of all things whereof we have discoursed, arose from hence, that there was in them all a representation of the person and mediation of Christ. Hereunto were they designed by divine wisdom. In him alone is God well pleased; in him alone will he be glorified.</p>
 
 <p>Having given an account of the structure or fabric of the tabernacle in the two parts of it, and the furniture of those several parts distinctly, to complete his argument the apostle adds in these verses the consideration of the uses they were designed unto in the service of God. For in the application of these things unto his purpose and the argument he designeth from them, both of these in conjunction, namely, the structure of the tabernacle with its furniture, and the services performed therein, were to be made use of.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 6, 7</span><span class="owen-vg-prev">Now when these things were thus ordained, the priests went always into…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 6, 7.—Τούτων δὲ οὕτω κατεσκευασμένων, εἰς μὲν τὴν πρώτην σκηνὴν διαπαντὸς εἰσίασιν οἱ ἱερεῖς τὰς λατρείας ἐπιτελοῦντες· εἰς δὲ τὴν δευτέραν ἅπαξ τοῦ ἐνιαυτοῦ μόνος ὁ ἀρχιερεὺς, οὐ χωρὶς αἵματος, ὅ προσφέρει ὑπὲρ ἑαυτοῦ καὶ τῶν τοῦ λαοῦ ἀγνοημάτων.</p>
 
 <p>Τούτων δὲ οὕτω κατεσκευασμένων. Vulg. Lat., &quot;his verò ita compositis;&quot; &quot;so composed,&quot; &quot;so framed and put together.&quot; Syr., מְתַקְנֵן דְּהָכַנָּא הֲוַי, &quot;quae disposita erant,&quot; &quot;which things were so disposed;&quot; altering the absolute construction of the words, and carrying on the sense of the former [verse] thus far. Others, &quot;his verò ita ordinatis,&quot; &quot;ita praeparatis;&quot; &quot;thus ordered,&quot; &quot;thus prepared,&quot; &quot;thus ordained.&quot; &quot;Ornatis,&quot; &quot;adorned.&quot; Beza, &quot;constructis.&quot; Κατασκευάζω is the ordering, placing, or fixing of vessels, or any materials prepared for use.</p>
@@ -429,7 +443,11 @@ next_label: "第十章"
 <p>Τὴν τῶν ἁγίων ὁδόν. Vulg. Lat., &quot;viam sanctorum,&quot; &quot;the way of the holies.&quot; Beza, &quot;viam ad sacrarium,&quot; &quot;the way into the sanctuary.&quot; &quot;Viam in sancta sanctorum,&quot; &quot;the way into the most holy place.&quot; None suspect ἁγίων to be of the masculine gender.</p>
 
 <p>Ἐχούσης στάσιν. Vulg. Lat., &quot;habente statum,&quot; &quot;having&quot; or &quot;continuing its state or condition.&quot; And στάσις is sometimes so used; &quot;having its station;&quot; &quot;adhuc consistente,&quot; as yet abiding, continuing its state, standing, consisting.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 8</span><span class="owen-vg-prev">The Holy Ghost this signifying, [Syr., signifying hereby, evidently de…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 8.—The Holy Ghost this signifying, [Syr., signifying hereby, evidently declaring,] that the way into the holiest of all [the way of the most holy place, of the holies] was not as yet made manifest, whilst yet the first tabernacle was standing, [kept its station].</p>
 
 <p>The apostle in this verse enters on a declaration of the use which he designed to make of the description of the tabernacle, its furniture and its utensils, which he had before laid down. Now, this was not to give a particular account of the nature, use, and signification of every thing in it, —which he declined in his close of the recounting of them, affirming that it belonged not to his purpose to treat of them particularly on this occasion,—but from the consideration of the whole, in its structure, order, and services, he would prove the dignity, pre-eminence, and efficacy of the priesthood and sacrifice of Christ, above those which belonged thereunto. And hence would he manifest the unspeakable advantage of the church in the removal of the one and introduction of the other.</p>
@@ -521,7 +539,11 @@ next_label: "第十章"
 <p>Δικαιώμασι σαρκός. Vulg. Lat., &quot;justitiis carnis;&quot; so it renders δικαίωμα by &quot;justitia,&quot; or &quot;justificatio,&quot; constantly, but very improperly. Syr., כּוּקָדֵא דְּבֶסְרָא, &quot;precepts of the flesh.&quot; &quot;Ritibus carnalibus,&quot; &quot;ordinances, institutions, rites of the flesh, concerning fleshly things.&quot;</p>
 
 <p>Ἐπικείμενα. Vulg. Lat., &quot;impositis;&quot; others, &quot;imposita;&quot; &quot;incumbent on, lying on them.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 9, 10</span><span class="owen-vg-prev">Which [was] a figure for the time then present, in which were offered …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 9, 10.—Which [was] a figure for the time then present, in which were offered both gifts and sacrifices that could not make him that did the service perfect, as pertaining to the conscience; [which stood] only in meats and drinks, and divers washings, and carnal ordinances, imposed [on them] until the time of reformation.</p>
 
 <p>I shall not alter the translation, but show what might be more properly expressed, as unto some instances, in our exposition.</p>
@@ -631,7 +653,11 @@ next_label: "第十章"
 <p>But yet, although he hath a principal regard hereunto, he doth not respect it only and singly. The whole description of the sanctuary and its services he also regards, in the comparison he intends between the Lord Christ in his office and these things. In him, his office, sanctuary, and sacrifice, do the excellency and efficacy of the new covenant consist, in opposition unto all those of the like kind under the law. The want of a due observation hereof hath led some expositors into mistakes: for they would confine all that he says unto a correspondency with what was done on that solemn day by the high priest, whereas he doth also expressly declare that the truth, reality, and substance of the tabernacle, all its utensils, its services and sacrifices, were to be found in him alone; for unto this end doth he give us such a description of them all in particular.</p>
 
 <p>But, as was said, that which he principally respects in the comparison he makes between the type and the antitype, is the high priest and his especial service in the most holy place, which he makes an entrance into in this verse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11</span><span class="owen-vg-prev">But Christ being come, an high priest of good things to come, by a gre…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11.—Χριστὸς δὲ παραγενόμενος, ἀρχιερεὺς τῶν μελλόντων ἀγαθῶν, διὰ τῆς μείζονος καὶ τελειοτέρας σκηνῆς, οὐ χειροποιήτου, τουτʼ ἔστιν, οὐ ταὑτης τῆς κτίσεως.</p>
 
 <p>Παραγενόμενος. Vulg., &quot;assistens,&quot; &quot;assisting.&quot; Syr., דֵּאהָא, &quot;who cometh.&quot; &quot;Adveniens,&quot; &quot;coming.&quot;</p>
@@ -723,7 +749,11 @@ next_label: "第十章"
 <p>Obs. VII. God is so far from being obliged unto any means for the effecting of the holy counsels of his will, as that he can when he pleaseth exceed the whole order and course of the first creation of all things, and his providence in the rule thereof.</p>
 
 <p>From the comparison between the tabernacle of old and that of the high priest of the new covenant, there is a procedure in this verse unto another, between his sacerdotal actings and those of the high priest under the law. And whereas, in the description of the tabernacle and its especial services, the apostle had insisted in a peculiar manner on the entrance of the high priest every year into the most holy place,—which was the most solemn and most mystical part of the tabernacle service,—in the first place he gives an account of what answered thereunto in the sacerdotal administrations of Christ; and how much on all accounts, both of the sacrifice in the virtue whereof he entered into the most holy place, and of the place itself whereinto he entered, and of the time when, it did in glory and efficacy excel that service of the high priest under the law.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 12</span><span class="owen-vg-prev">Neither by the blood of goats and calves, but by his own blood he ente…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 12.—Οὐδὲ διʼ αἵματος τράγων καὶ μόσχων, διὰ δὲ τοῦ ἰδίου αἵματος εἰσῆλθεν ἐφάπαξ εἰς τὰ ἅγια, αἰωνίαν λύτρωσιν εὑράμενος.</p>
 
 <p>Διὰ δὲ τοῦ ἰδίον αἵματος. Syr., דְּנַפְשֵׁהּ בַּדְמָא, &quot;by the blood of his own soul&quot; or &quot;life.&quot; He made his soul an offering for sin, Isa. 53:10. Blood is the life of the sacrifice. Ἐφάπαξ. Syr., זְבַן חֲדָא, &quot;one time;&quot; not many times, not once every year, as they did under the law. Εἰς τὰ ἅγια. Syr., מַקְדְשָׁה לְבֵיח, &quot;into the house of the sanctuary;&quot; less properly, for by that expression the old tabernacle is intended, but the apostle respects heaven itself. &quot;In sancta,&quot; &quot;sancta sanctorum,&quot; &quot;sacrarium;&quot;—that which answers unto the most holy place in the tabernacle, where was the throne of God, the ark and mercy-seat. Αἰωνίαν λύτρωσιν εὑράμενος. Vulg., &quot;aeterna redemptione inventa;&quot; &quot;aeternam redemptionem nactus;&quot; &quot;aeterna redemptione acquisita;&quot; most properly, and according unto the use of the word in all good authors.</p>
@@ -831,7 +861,11 @@ next_label: "第十章"
 <p>Obs. VI. The nature of our redemption, the way of its procurement, with the duties required of us with respect thereunto, are greatly to be considered by us.</p>
 
 <p>There is in these verses an argument and comparison. But the comparison is such, as that the ground of it is laid in the relation of the comparates the one unto the other; namely, that the one was the type and the other the antitype, otherwise the argument will not hold. For although it follows, that he who can do the greater can do the less, whereon an argument will hold &quot;à majori ad minus;&quot; yet it doth not absolutely do so, that if that which is less can do that which is less, then that which is greater can do that which is greater; which would be the force of the argument if there were nothing but a naked comparison in it: but it necessarily follows hereon, if that which is less, in that less thing which it doth or did, was therein a type of that which was greater, in that greater thing which it was to effect. And this was the case in the thing here proposed by the apostle. The words are,—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 13, 14</span><span class="owen-vg-prev">For if the blood of bulls and of goats, and the ashes of an heifer spr…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 13, 14.—Εἰ γὰρ τὸ αἷμα ταύρων καὶ τρὰγων, καὶ σποδὸς δαμάλεως ῥαντίζουσα τοὺς κεκοινωμένους, ἁγιάζει πρὸς τὴν τῆς σαρκὸς καθαρότητα· πόσῳ μῦλλον τὸ αἷμα τοῦ Χριστῦ, ὅς διὰ Πνεὐματος αἰωνίου ἑαυτόν προσήνεγκεν ἄμωμον τῷ Θεῷ, καθκριεῖ τὴν συνείδησιν ἡμῶν (ὑμῶν) ἀπὸ νεκρῶν ἔργων, εἰς τὸ λατρεύειν Θεῷ ζῶντι.</p>
 
 <p>The words have no difficulty in them as to their grammatical sense; nor is there any considerable variation in the rendering of them in the old translations. Only the Syriac retains דְעֶנְלֵא, that is, μόσχων, from ver. 12, instead of ταύρων here used. And both that and the Vulgar place τράγων here before ταύρων, as in the foregoing verse, contrary unto all copies of the original, as to the order of the words.</p>
@@ -1233,7 +1267,11 @@ next_label: "第十章"
 <p>Εἰς ἀπολύτρωσιν τῶν παραβάσεων, &quot;in redemptionem eorum praevaricationum.&quot; Vulg., &quot;ad redemptionem eorum transgressionum;&quot; properly, &quot;for the redemption of transgressions,&quot; or those transgressions which were.</p>
 
 <p>Ἐπαγγελίαν λάβωσιν. Vulg., Syr., &quot;that they may receive the promise who are called to the eternal inheritance.&quot; But in the Original and in the Vulgar &quot;eternal inheritance&quot; is joined unto and regulated by &quot;the promise;&quot;—&quot;the promise of an eternal inheritance.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15</span><span class="owen-vg-prev">And for this cause he is the mediator of the new testament, that by me…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15.—And for this cause he is the mediator of the new testament, that by means of death, for the redemption of the transgressions under the first testament, they who are called might receive the promise of eternal inheritance.</p>
 
 <p>The things which are to be considered in this verse are, 1. The note of connection in the conjunction, &quot;and.&quot; 2. The ground of the ensuing assertion: &quot;For this cause.&quot; 3. The assertion itself: &quot;He is the mediator of the new testament.&quot; 4. The especial reason why he should be so: &quot;For the redemption of transgressions under the first testament.&quot; 5. The way whereby that was to be effected: &quot;By means of death.&quot; 6. The end of the whole: &quot;That they who are called might receive the promise of eternal inheritance.&quot;</p>
@@ -1387,7 +1425,11 @@ next_label: "第十章"
 <p>Ὅπου γὰρ διαθήκη, θάνατον ἀνάγκη φέρεσθαι τοῦ διαθεμένου· διαθήκη γὰρ ἐπὶ νεκροῖς βεβαία, ἐπεὶ μήποτε ἰσχύει ὅτε ζῇ ὁ διαθέμενος.</p>
 
 <p>Θάνατον ἀνάγκη φέρεσθαι. Syr., מְחַוְּיָא הוּ מַוְתָא, &quot;the death of him is declared,&quot; showed, argued, or proved. &quot;Mors intercedat necesse est;&quot; &quot;necesse est mortem intercedere.&quot; Ar., &quot;Necesse est mortem ferri;&quot; which is not proper in the Latin tongue: however, there is an emphasis in φέρεσθαι, more than is expressed by &quot;intercedo&quot; Διαθεμένου. Syr., דְּהָו דְּעַבְדָהּ, &quot;of him that made it;&quot; &quot;of the testator.&quot; Ἐπὶ νεκροῖς. Syr., מִיתָא עַל הוּ, &quot;in him that is dead;&quot; &quot;in mortuis,&quot; &quot;among them that are dead.&quot; Βεβαία. Vulg., &quot;confirmatum est;&quot; and so the Syriac, &quot;ratum est,&quot; more proper. Μήποτε ἰσχύει. Syr., חַשְׁהוּ בָּהּ לַית, &quot;there is no use, profit, or benefit in it.&quot; Ar., &quot;nunquam valet;&quot; &quot;quandoquidem nunquam valet;&quot; &quot;nondum valet;&quot; &quot;it is not yet of force.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 16, 17</span><span class="owen-vg-prev">For where a testament [is,] there must also of necessity be brought in…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 16, 17.—For where a testament [is,] there must also of necessity be brought in the death of the testator. For a testament [is] firm [or ratified] after men are dead; otherwise it is of no force whilst the testator liveth.</p>
 
 <p>There is not much more to be considered in these verses, but only how the observation contained in them doth promote and confirm the argument which the apostle insists upon. Now this is to prove the necessity and use of the death of Christ, from the nature, ends, and use of the covenant whereof he was the mediator; for it being a testament also, it was to be confirmed with the death of the testator. This is proved in these verses from the notion of a testament, and the only use of it amongst men. For the apostle in this epistle doth argue several times from such usages amongst men as, proceeding from the principles of reason and equity, were generally prevalent among them. So he doth in his discourse concerning the assurance given by the oath of God, chap. 6. And here he doth the same from what was commonly agreed upon, and suitable unto the reason of things, about the nature and use of a testament. The things here mentioned were known to all, approved by all, and were the principal means of the preservation of peace and property in human societies. For although testaments, as unto their especial regulation, owe their original unto the Roman civil law, yet as unto the substance of them, they were in use amongst all mankind from the foundation of the world. For a testament is the just determination of a man&#x27;s will concerning what he will have done with his goods after his decease; or, it is the will of him that is dead. Take this power from men, and you root up the whole foundation of all industry and diligence in the world. For what man will labour to increase his substance, if when he dies he may not dispose of it unto those which by nature, affinity, or other obligations, he hath most respect unto? Wherefore the foundation of the apostle&#x27;s arguing from this usage amongst men is firm and stable.</p>
@@ -1473,7 +1515,11 @@ next_label: "第十章"
 <p>Λαληθείσης γὰρ πάσης ἐντολῆς κατὰ νόμον. Syr., &quot;when the whole command was enjoined.&quot; Vulg. Lat., &quot;lecto omni mandato legis,&quot; &quot;the command of the law being read;&quot; taking ἐντολή and νόμος for the same. Arias, &quot;exposito secundum legem.&quot; Most, &quot;cum recitasset;&quot; &quot;having repeated,&quot; &quot;recited,&quot; namely, out of the book.</p>
 
 <p>Μόσχων καὶ τράγων. The Syriac reads only דַעְנֶלְתָא, &quot;of an heifer;&quot; as the Arabic omits τράγων also, &quot;of goats;&quot; it may be in compliance with the story in Moses, without cause, as we shall see. Σχεδόν is omitted in the Syriac.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 18–22</span><span class="owen-vg-prev">Whereupon neither the first [testament] was dedicated without blood. F…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 18–22.—Whereupon neither the first [testament] was dedicated without blood. For when Moses had spoken every precept to all the people according to the law, he took the blood of calves and of goats, with water, and scarlet wool, and hyssop, and sprinkled both the book and all the people, saying, This [is] the blood of the testament which God hath enjoined unto you. Moreover he sprinkled with blood both the tabernacle, and all the vessels of the ministry: and almost all things are by the law purged with blood; and without shedding of blood is no remission.</p>
 
 <p>What we have before observed is fully confirmed in this discourse, namely, that the apostle intended not to argue absolutely and precisely from the name and nature of a testament properly so called, and the use of it among men. For he makes use of these things no further but as unto what such a testament hath in common with a solemn covenant; which is, that they are both confirmed and ratified by death. Wherefore it was necessary that the new testament, as it was a testament, should be confirmed by death; and as it had the nature of a covenant, it was to be so by such a death as was accompanied by bloodshedding. The former was proved before, from the general nature and notion of a testament; the latter is here proved at large from the way and manner whereby the first covenant was confirmed or dedicated.</p>
@@ -1699,7 +1745,11 @@ next_label: "第十章"
 <p>In the following verses, unto the end of the chapter, the apostle makes an application of all that he had discoursed, concerning the services and sacrifices of the tabernacle, with their use and efficacy, on the one hand, and the sacrifice of Christ, its nature, use, and efficacy, on the other, unto his present argument. Now this was to demonstrate the excellency, dignity, and virtue of the priesthood of Christ, and the sacrifice of himself that he offered thereby, as he was the mediator of the new covenant. And he doth it in the way of comparison, as unto what there was of similitude between them; and of opposition, as unto what was singular in the person and priesthood of Christ, wherein they had no share; declaring on both accounts the incomparable excellency of him and his sacrifice above the priests of the law and theirs. And hereon he concludes his whole discourse with an elegant comparison and opposition between the law and the gospel, wherein he compriseth in few words the substance of them both, as unto their effects on the souls of men.</p>
 
 <p>That wherein in general there was a similitude in these things is expressed, verse 23.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 23</span><span class="owen-vg-prev">It was therefore necessary that the patterns of things in the heavens …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 23.—Ἀνάγκη οὖν τὰ μὲν ὑποδείγματα τῶν ἐν τοῖς οὐρανοῖς; τοὐτοις καθαρίζεσθαι· αὐτὰ δὲ τὰ ἐπουράνια κρείττοσι θυσίαις παρὰ ταύτας.</p>
 
 <p>There is no difference of importance in the translation of these words by any interpreters of reputation, and singly they have been all of them before spoken unto. Only the Syriac renders ὑποδείγματα by דְמוּחָא, &quot;similitudes;&quot; not unaptly.</p>
@@ -1779,7 +1829,11 @@ next_label: "第十章"
 <p>The opposition between the high priests of the law and their sacrifices, with their efficacy, and the Lord Christ with his sacrifice and its efficacy, is further carried on in this verse. And this is done in an instance of a dissimilitude between them, as it was showed in general before in how many things they did agree. And this dissimilitude consists in the place and manner of the discharge of their office, after the great expiatory sacrifice which each of them did offer.</p>
 
 <p>The causal connection of the words doth also intimate that a further evidence is given unto what was before laid down, namely, that heavenly things were purified by the blood of Christ: &#x27;For, as an assurance thereof, upon the dedication of the new covenant he entered into heaven itself.&#x27; Had he purified the things only on the earth, he could have entered only into an earthly sanctuary, as did the high priest of old. But he is entered, as the apostle now declares, into heaven itself; which, in the gracious presence of God therein, is the spring and centre of all the things purified by his sacrifice.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 24</span><span class="owen-vg-prev">For Christ is not entered into the holy places [the sanctuary] made wi…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 24.—Οὐ γὰρ εἰς χειροποίητα ἅγια εἰσῆλθεν ὁ Χριστὸς, ἀντίτυπα τῶν ἀληθινῶν, ἀλλʼ εἰς αὐτὸν τὀν οὐρανὸν, νῦν ἐμφανισθῆναι τῷ προσώπῳ τοῦ Θεοῦ ὑπὲρ ἡμῶν.</p>
 
 <p>Εἰς ἅγια. Syr., מַקְדְשָׁא לְבֵית, &quot;into the house of the sanctuary.&quot; &quot;Sancta;&quot; &quot;sacrarium;&quot; &quot;sanctuarium;&quot; &quot;sancta sanctorum;&quot; &quot;the most holy place.&quot; Χειροποίητα. &quot;Manufacta;&quot; &quot;manibus exstructa;&quot; &quot;built with hands.&quot; Ἀντίτυπα τῶν ἀληθινῶν. Syr., שַׁרִירָא דְּהָו דְּמנּתָא דִּאיתַוְהִי, &quot;which is the similitude of that which is true.&quot; Vulg., &quot;exemplaria verorum;&quot; &quot;exemplar respondens veris illis;&quot; &quot;an example answering unto the true,&quot; a &quot;resemblance of the true.&quot; Τῷ προσώπῳ. Syr., פַרְצוכֵּהּ קְדָם, &quot;before the face;&quot; &quot;faciei,&quot; &quot;vultui,&quot; &quot;conspectui;&quot; &quot;in the presence.&quot;</p>
@@ -1857,7 +1911,11 @@ next_label: "第十章"
 <p>Οὐδʼ ἵνα πολλάκις προσφέρῃ ἐαυτὸν, ὥσπερ ὁ ἀρχιερεὺς εἰσέρχεται εἰς τὰ ἃγια κατʼ ἐνιαυτὸν ἐν αἵματι ἀλλοτρίῳ.</p>
 
 <p>Οὐδέ. Syr., לָא אַף, &quot;and not also;&quot; &quot;neque,&quot; &quot;neither;&quot; &quot;nor yet.&quot; Ἑαυτόν. Syr., נַכְּשֵׁהּ, &quot;his soul;&quot; he made his soul an offering for sin. Πολλάκις. Syr., פַגְיָאתָא דַבְנָתָא, &quot;many times.&quot; Ἐν αἵματι ἀλλοτρίῳ. Syr., דִּילֵהּ דְּלָא בַּדְמָא, &quot;in&quot; or &quot;with blood that was not his own,&quot; properly, Heb., אַחֵר בְּדַּם, &quot;with other blood,&quot; or the blood of another.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 25</span><span class="owen-vg-prev">Nor yet that he should offer himself often, as the high priest enteret…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 25.—Nor yet that he should offer himself often, as the high priest entereth into the holy place every year with the blood of others.</p>
 
 <p>In the foregoing verse there is an opposition in the comparison between the Lord Christ and the high priest of the law; yet is it such as hath its foundation in a similitude that is between them, and therefore respects not so much the things themselves opposed as the manner of them. For as the Lord Christ entered not into the holy place made with hands, but into heaven itself; so the high priest had an entrance also, yet not into heaven, but into that other holy place. But in this verse there is an opposition in the comparison that hath no foundation in any similitude between them, and that is absolutely denied of Christ which belonged essentially unto the discharge of the office of the high priest of old. Many things ensued on the weakness and imperfection of the types which would not allow that there should be a perfect, complete resemblance in them of the substance itself, that all things between them should exactly answer unto one another. Hence they did at best but obscurely represent the good things to come, and in some things it was not possible but there should be a great discrepancy between them.</p>
@@ -1933,7 +1991,11 @@ next_label: "第十章"
 <p>Obs. IV. Whatever had the greatest glory in the old legal institutions, carried along with it the evidence of its own imperfection, compared with the thing signified in Christ and his office.—The entrance of the high priest into the holy place was the most glorious solemnity of the law; howbeit the annual repetition of it was a sufficient evidence of its imperfection, as the apostle disputes in the beginning of the next chapter. Ἐπεὶ ἔδει αὐτὸν πολλάκις παθεῖν ἀπὸ καταβολῆς κόσμου· νῦν δὲ ἅπαξ ἐπὶ συντελείᾳ τῶν αἰώνων, εἰς ἀθέτησιν ἀμαρτίας διὰ τῆς θυσίας αὑτοῦ πεφανέρωται.</p>
 
 <p>Ἐπεί is properly causal; &quot;quia,&quot; &quot;quandoquidem,&quot; &quot;quoniam.&quot; But it is generally rendered in this place by all expositors, &quot;alioquin,&quot; by concession,—&#x27;If it were so that he would offer, offer himself;&#x27; &quot;for otherwise.&quot; Ἔδει. Syr., הֲוָא חַיּבָ, &quot;he would have been a debtor;&quot; it would have been due from him. &quot;Oportebat,&quot; &quot;oportuisset;&quot; &quot;he ought.&quot; Πολλάκις παθεῖν. Vulg., &quot;frequenter pati.&quot; Others, &quot;saepe,&quot; &quot;saepius passum fuisse;&quot; &quot;to have suffered often,&quot; &quot;more often,&quot; &quot;frequently;&quot; that is, once every year. Syriac, סַגְיָאתָא דְּזַבְנָתָא, &quot;many times,&quot; and not once only. Ἀπὸ καταβολῆς κόσμου. Vulg., &quot;ab origine mundi;&quot; others, &quot;à condito mundo,&quot; &quot;from the foundation of the world;&quot; that is, after the entrance of sin. Ἐπὶ συντελείᾳ τῶν αἰώνων. Syr., דְּעָלְמָא בְּחַרְתֵהּ, &quot;in the end of the world.&quot; Vulg., &quot;in consummatione seculorum;&quot; &quot;sub consummationem seculorum;&quot; &quot;towards the consummation of all things.&quot; &quot;In the fulness of time.&quot; Εἰς ἀθέτησιν ἀμαρτίας, &quot;ad peccatum abolendum,&quot; &quot;ad abolitionem peccati.&quot; Vulg., &quot;ad destructionem peccati;&quot; Rhem., &quot;the destruction of sin.&quot; Πεφανἑρωται, &quot;apparuit,&quot; &quot;patefactus est.&quot; &quot;He was made manifest.&quot; Διὰ τῆς θυσίας αὑτοῦ. The Vulgar renders the words, &quot;per bostiam suam apparuit;&quot; which the Rhemists translate, &quot;he hath appeared by his own host;&quot; most absurdly, both as unto words and sense. Syr., &quot;at one time he offered his soul by the sacrifice&quot; or &quot;immolation of himself.&quot; What πεφανέρωται doth relate unto, we must inquire in the</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 26</span><span class="owen-vg-prev">For then [if otherwise] must he [he ought] often [to] have suffered si…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 26.—For then [if otherwise] must he [he ought] often [to] have suffered since [from] the foundation of the world: but now once in the end of the world [in the consummation of times] hath he appeared, [been made manifest,] to put away [to abolish, or for the destruction of] sin by the sacrifice of himself.</p>
 
 <p>There are sundry difficulties in these words, both as to the signification and construction of them, as also as unto their sense and importance, with the nature of the argument contained in them and the things treated of. I shall not repeat the various conjectures of expositors, most of which are alien from the mind of the apostle and easy to be refuted, if that belonged any way unto the edification of the reader; but I shall only give that account of the whole and the several parts of it which, according unto the best of my understanding, doth represent the mind of the Holy Ghost with perspicuity and clearness.</p>
@@ -2029,7 +2091,11 @@ next_label: "第十章"
 <p>So also Christ ἅπαξ. Syr., זְבַן חְדָא, &quot;one time,&quot; &quot;at one time.&quot; Εἰς τὸ ἀνενεγκεῖν. Vulg., &quot;ad exhaurienda peccata;&quot; Rhem.; &quot;to exhaust the sins of many;&quot; without any sense. Ἀναφέρω may signify &quot;to lift&quot; or &quot;bear up;&quot; not at all &quot;to draw out of any deep place,&quot; though there may be something in that allusion. Syr., חֲטָהֵא דְּבַח וְבקְנומֵהּ, &quot;and in himself he slew&quot; (or &quot;sacrificed&quot;) &quot;the sins of many.&quot; &quot;In himself;&quot; that is, by the sacrifice of himself he took them away. Beza, &quot;ut in seipso attolleret multorum peccata;&quot; that he might &quot;lift&quot; or &quot;bear up&quot; the sins of many in himself: he took them upon himself us a burden, which he bare upon the cross; as opposed to χωρὶς ἁμαρτίας, afterwards, &quot;not burdened with sin.&quot; Others, &quot;ad attollendum peccata multorum in semet ipsum;&quot; &quot;to take up unto himself&quot; (that is, &quot;upon himself&quot;) &quot;the sins of many.&quot;</p>
 
 <p>The Syriac reads the first clause, &quot;He shall appear the second time unto the salvation of them that expect&quot; or &quot;look for him.&quot; All others, &quot;He shall appear unto&quot; (or &quot;be seen by&quot;) &quot;them that look for him, unto salvation:&quot; unto which difference we shall speak afterwards.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 27, 28</span><span class="owen-vg-prev">And [in like manner] as it is appointed unto men once to die, but afte…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 27, 28.—And [in like manner] as it is appointed unto men once to die, but after this [afterwards] the judgment: so also Christ was once offered to bear [in himself] the sins of many; and unto them that look for him shall he appear the second time, without sin, unto salvation.</p>
 
 <p>These verses put a close unto the heavenly discourse of the apostle concerning the causes, nature, ends, and efficacy, of the sacrifice of Christ, wherewith the new covenant was dedicated and confirmed. And in the words there is a treble confirmation of that singularity and efficacy of the sacrifice of Christ which he had pleaded before: 1. In an elegant instructive similitude, &quot;And as it is appointed,&quot; etc. verse 27. 2. In a declaration of the use and end of the offering of Christ; &quot;He was once offered to bear the sins of many.&quot; 3. In the consequent of it; his second appearance, unto the salvation of believers, verse 28.</p>
@@ -2133,3 +2199,5 @@ next_label: "第十章"
 <p>Σκιὰν γὰρ ἔχων ὁ νόμος τῶν μελλόντων ἀγαθῶν, οὐκ αὐτὴν τὴν εἰκόνα τῶν πραγμάτων, κατʼ ἐνιαυτὸν ταῖς αὐταῖς θυσίαις ἅς προσφέρουσιν εἰς τὸ διηνεκὲς, οὐδέποτε δύναται τοὺς προσερχομένους τελειῶσαι.</p>
 
 <p>There is no difficulty in the reading, nor much difference about the translation of the words. Syr., הֲוָא אִית טְלָנִיתָא גֵּיר נָמוּסָא בֵה, &quot;for the law, a shadow was in it;&quot; קִנרּמָא הֲוָא לָא, &quot;not the substance itself.&quot; Προσερχομένους, לְהוּן דַּמְקַרְבִין, &quot;that shall offer them.&quot; Εἰς τὸ διηνεκές that translator omits, supposing it the same with κατʼ ἐνιαυτόν. But it hath its own signification: &quot;Continenter,&quot; &quot;in assiduum,&quot; &quot;in perpetuum.&quot; Ἔχων, &quot;habens,&quot; &quot;obtinens,&quot; &quot;continens.&quot; Αὐτὴν τὴν εἰκόνα, &quot;ipsam expressam formam,&quot; &quot;ipsam imaginem.&quot; Τελειῶσαι, &quot;sanctificare,&quot; &quot;perfectè sanctificare,&quot; &quot;perfectos facere,&quot; Vulg. Lat.; &quot;make perfect;&quot; &quot;perficere,&quot; &quot;confirmare;&quot; &quot;to perfect,&quot; &quot;to confirm.&quot;</p>
+</div>
+</details>

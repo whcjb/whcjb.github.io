@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 7
 title: "第七章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/6/"
 prev_label: "第六章"
 next_url: "/owen/hebrews/8/"
@@ -12,6 +12,8 @@ next_label: "第八章"
 ---
 # 希伯来书 第七章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1–3</span><span class="owen-vg-prev">For this Melchisedec, king of Salem, priest of the most high God, who …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1–3.—For this Melchisedec, king of Salem, priest of the most high God, who met Abraham returning from the slaughter of the kings, and blessed him; to whom also Abraham divided out a tenth part of all; first, being by interpretation King of righteousness, and after that also King of Salem, which is King of peace; without father, without mother, without pedigree, having neither beginning of days nor end of life, but made like unto the Son of God; abideth a priest continually.</p>
 
 <p>The words are an entire proposition, consisting of a subject and a predicate, or what is affirmed of it. Unto the subject spoken of, which is &quot;Melchisedec,&quot; there is adjoined a large description, by its properties and adjuncts in sundry particulars. That which is affirmed of him as so described, which is the predicate of the proposition, is contained in the last words, or the close of the third verse, &quot;But being made like unto the Son of God, abideth a priest for ever.&quot;</p>
@@ -283,7 +285,11 @@ next_label: "第八章"
 <p>That the old priesthood was to be removed, and the new one mentioned to be introduced, he proves in the first place by the greatness of the person who was first chosen of God to prefigure and represent the Lord Christ in his office of priesthood. For if he were so excellent in his person and office, as deservedly to be preferred above Aaron and all his successors, then he who was prefigured and represented by him must be so also; yea, be so much more, as that which is typed out and signified is, and always must be, more excellent than the type and sign, which are of no use but with respect thereunto.</p>
 
 <p>In these verses he chooseth out his first instance, in what he had observed before out of the narrative of Moses concerning the greatness and excellency of Melchisedec, in that he received tithes of Abraham. His design is to prove him more excellent and greater than all the Levitical priests. But herein he takes a step backward, and begins with Abraham himself, from whom both people and priests confessedly derived all their privileges. And he produceth his instance in the case of tithes, whereon, as it is known, the whole Levitical priesthood did depend. And this the apostle knew full well, that if once he proved him greater than Abraham, he should not need, with that people, to prove him above any of his posterity, but they would immediately give over the contest. So in their exceptions unto our Saviour&#x27;s testimony concerning himself, they acknowledge they could proceed no higher. &quot;Art thou,&quot; say they, &quot;greater than our father Abraham? whom makest thou thyself to be?&quot; John 8:53. But yet our apostle, not content herewith, to obviate all pretences, proves distinctly afterwards that the whole order of the Levitical priests were inferior unto him.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 4, 5</span><span class="owen-vg-prev">Consider then how great this man was, unto whom even the patriarch Abr…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 4, 5.—Θεωρεῖτε δὲ, πηλίκος οὗτος, ᾧ καὶ δεκάτην Ἀβραὰμ ἔδωκεν ἐκ τῶν ἀκροθινίων ὁ πατριάρχης. Καὶ οἱ μὲν ἐκ τῶν υἱῶν Αευῒ τὴν ἰερατείαν λαμβάνοντες ἐντολὴν ἔχουσιν ἀποδεκατοῦν τὸν λαὸν κατὰ τὸν νόμον, τοῦτʼ ἔστι, τοὺς ἀδελφοὺς αὑτῶν, καίπερ ἐξεληλυθότας ἐκ τῆς ὀσφύος Ἀβραάμ·</p>
 
 <p>Θεωρῖτε δέ, &quot;considerate,&quot; &quot;spectate.&quot; Syr., הֲזַו, &quot;videte.&quot; Vulg. Lat., &quot;intuemini.&quot; &quot;Consider,&quot; &quot;behold,&quot; &quot;contemplate.&quot; Serious consideration with diligent intuition is intended. Πηλίκος οὗτος· &quot;Quantus his;&quot; &quot;sit,&quot; Vulg. Lat. &quot;Fuerit&quot; is supplied by others; as by us, &quot;how great this man was.&quot; Syr., הָנָא רַב כְּמָא, &quot;quam magnus hic.&quot; Δεκάτην ἐκ τῶν ἀκροθινίων. Beza, &quot;decimas spoliorum;&quot; &quot;decimas de spoliis hostium;&quot; &quot;de spoliis;&quot; Vulg. Lat., &quot;decimas de præcipuis,&quot; of &quot;the chiefest things.&quot; The Syriac makes a distinction: וְרִישִׁיתָא מַצֲסָרֵא, &quot;tithes and first-fruits.&quot;</p>
@@ -393,7 +399,11 @@ next_label: "第八章"
 <p>Ἐξ αὐτῶν, &quot;from them,&quot; &quot;from among them.&quot; Vulg. Lat., &quot;in eis,&quot; for &quot;inter eos,&quot; &quot;among them;&quot; &quot;whose generation is not numbered among them.&quot; The meaning is, he was not of their stock or race; he sprang not of them, nor arose from among them.</p>
 
 <p>Δεδεκάτωκε, &quot;decimas tulit,&quot; &quot;sumpsit,&quot; &quot;exegit,&quot; &quot;accepit,&quot; &quot;decimavit.&quot; Δεκατεύω is &quot;decimo,&quot; or &quot;decimam partem excerpo;&quot; &quot;to take out the tenth part:&quot; Τὰ τῶν πολεμίων δεκατεύσειν εὐξάμενος τότε, Plut. in Camillo; &quot;ex spoliis hostium decimas excerpere.&quot; Δεκατόω, with an accusative case, as here, is &quot;to receive tithes of any;&quot; and ἀποδεκατόω, in the same construction, is of the same signification: verse 5, Ἀποδεκατοῦν τὸν λαόν. But absolutely it signifies &quot;to pay tithes,&quot; or, &quot;to give tithes,&quot; not to receive them; Luke 18:12, Ἀποδεκατῶ πάντα ὅσα κτῶμαι—&quot;I tithe all that I possess;&quot; that is, give tithe out of it.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 6</span><span class="owen-vg-prev">But he whose descent is not reckoned from them, received tithes from A…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 6.—But he whose descent is not reckoned from them, received tithes from Abraham, and blessed him that had the promises.</p>
 
 <p>A description there is in these words of Melchisedec, by a negation of a certain respect, useful to be observed unto the design of the apostle; and then an assertion upon a supposition thereof.</p>
@@ -417,7 +427,11 @@ next_label: "第八章"
 <p>Obs. III. Free and sovereign grace is the only foundation of all privileges. —All that is spoken of the dignity of Abraham is resolved into this, that &quot;he received the promises.&quot;</p>
 
 <p>But what if Abraham was thus blessed by Melchisedec, doth this prove that he was less than he by whom he was blessed? It doth so, saith the apostle, and that by virtue of an unquestionable general rule:—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 7</span><span class="owen-vg-prev">And, without all contradiction, the less is blessed of the greater.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 7.—Χωρὶς δὲ πάσης ἀντιλογίας, τὸ ἔλαττον ὑπὸ τοῦ κρείττονος εὐλογεῖται.</p>
 
 <p>Χωρὶς δὲ πάσης ἀντιλογίας. Erasm., &quot;porro nemo negat;&quot; &quot;absque ulla, omni contradictione;&quot; &quot;and without all contradiction.&quot;</p>
@@ -451,7 +465,11 @@ next_label: "第八章"
 <p>Obs. VI. Let those who are so appointed take heed lest, by their miscarriage, they prove a curse unto them whom they ought to bless.— For if they are negligent in the performance of their duties in the things mentioned, much more if therewithal they put the name of any false god upon them, they are no otherwise.</p>
 
 <p>The eighth verse carrieth on the same argument, by a particular application unto the matter in hand of the things which he had in general observed before in Melchisedec; for whereas the apostle had before declared, that he was &quot;without father, without mother, without beginning of days or end of life,&quot; he now shows how all this conduced unto his purpose.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 8</span><span class="owen-vg-prev">And here men verily that die receive tithes; but there he of whom it i…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 8.—Καὶ ὧδε μὲν δεκάτας ἀποθνήσκοντες ἄνθρωποι λαμβάνουσιν, ἐκεῖ δὲ, μαρτυρούμενος ὅτι ζῇ.</p>
 
 <p>Ἄνθρωποι. Syr., by a usual idiotism of that language, &quot;the sons of man.&quot; Ἀποθνήσκοντες &quot;qui moriuntur,&quot; &quot;who die.&quot; Vulg. Lat., &quot;homines morientes,&quot; &quot;dying men;&quot; of which difference we must speak afterwards. Μαρτυρούμενος ὅτι ζῇ, generally, &quot;de quo testatum est, quod vivat.&quot; Vulg. Lat., &quot;ibi autem contestatur quia vivit;&quot; which the Rhemists render, &quot;but there he hath witness that he liveth:&quot; both obscurely. Arias, &quot;testatione dictus quia vivit;&quot; to no advantage. Μαρτυρούμενος is properly, &quot;is de quo testatur;&quot; as Erasmus, Beza, Castalio, Schmidt, render it. The Arabic concurs with the Vulgar. The Syriac, by way of paraphrase, &quot;he of whom the Scripture witnesseth that he liveth.&quot;</p>
@@ -483,7 +501,11 @@ next_label: "第八章"
 <p>Obs. II. The life of the church depends on the everlasting life of Jesus Christ.—It is said of Melchisedec, as he was a type of him, &quot;It is witnessed that he liveth.&quot; Christ doth so, and that for ever; and hereon, under the failings, infirmities, and death of all other administrators, depend the preservation, life, continuance, and salvation of the church. But this must be spoken to peculiarly on verse 25, whither it is remitted.</p>
 
 <p>It may be objected unto the whole precedent argument of the apostle, &#x27;That although Abraham himself paid tithes unto Melchisedec, yet it followeth not that Melchisedec was superior unto the Levitical priests, concerning whom alone the question was between him and the Jews. For although Abraham might be a priest in some sense also, by virtue of common right, as were all the patriarchs, yet was he not so by virtue of any especial office, instituted of God to abide in the church. But when God afterwards, by peculiar law and ordinance, erected an order and office of priesthood in the family of Levi, it might be superior unto; or exalted above that of Melchisedec, although Abraham paid tithes unto him.&#x27; This objection, therefore, the apostle obviates in these verses; and therewithal, giving his former argument a further improvement, he makes a transition, according unto his usual custom (as it hath been often observed that it is his method to do), unto his especial design, in proving the excellency of the priesthood of Christ above that of the law, which is the main scope of this whole discourse.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 9, 10</span><span class="owen-vg-prev">And, as I may so say, Levi also, who receiveth tithes, paid tithes in …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 9, 10.—Καὶ, ὡς ἔπος εἰπεῖν, διὰ Ἀβραὰμ καὶ Λευῒ ὁ δεκάτας λαμβάνων δεδεκάτωται· ἔτι γὰρ ἐν τῇ ὀσφύϊ τοῦ πατρὸς ἦν, ὅτε συνήντησεν αὐτῷ ὁ Μελχισεδέκ.</p>
 
 <p>Ὡς ἔπος εἰπεῖν, &quot;ut verbum dicere,&quot; &quot;as to speak a word.&quot; Vulg. Lat., &quot;ut ita dictum sit,&quot; &quot;be it so said.&quot; Syr., &quot;as any one may say.&quot; Arab., &quot;and it is said that this discourse&quot; (or &quot;reason&quot;) &quot;may be some way ended.&quot; &quot;Ut ita loquar,&quot; &quot;as I may so speak.&quot; In the rest of the words there is neither difficulty nor difference among translators.</p>
@@ -541,7 +563,11 @@ next_label: "第八章"
 <p>Obs. II. It is of great concernment unto us what covenant we do belong unto, as being esteemed to do therein what is done by our representative in our name.—There were never absolutely any more than two covenants; wherein all persons indefinitely are concerned. The first was the covenant of works, made with Adam, and with all in him. And what he did as the head of that covenant, as our representative therein, is imputed unto us, as if we had done it, Rom. 5:12. The other is that of grace, made originally with Christ, and through him with all the elect. And here lie the life and hope of our souls,—that what Christ did as the head of that covenant, as our representative, is all imputed unto us for righteousness and salvation. And certainly there is nothing of more importance unto us, than to know whether of these covenants we belong unto. We are also some way concerned in them by whom the one or the other of these covenant-states is conveyed unto us; for before we make our own personal, voluntary choice, we are by the law of our nature, and of the covenant itself, enclosed in the same condition with our progenitors as to their covenantstate. And thence it is, that in the severest temporal judgments, children not guilty of the actual transgression of their parents, not having sinned after the similitude of them, by imitation, do yet ofttimes partake of the punishment they have deserved; being esteemed in some manner to have done what they did, so far as they were included in the same covenant with them. And many blessings, on the other hand, are they partakers of who are included in the covenant of those parents who are interested in the covenant of grace; for such parents succeed in the room of Abraham, every one of them. And what Abraham did, as to the administration of the covenant intrusted with him, his posterity, whose representative he was therein, are said to have done in him, as Levi is in this place; and therefore they had the seal of the covenant given unto them in their infancy. And an alteration in this dispensation of grace hath not yet been proved by any, or scarce attempted so to be.</p>
 
 <p>In this verse, after so long a preparation and introduction, whereby he cleared his way from objections and secured his future building, the apostle enters on his principal argument concerning the priesthood of Christ, and all the consequences of it, with respect unto righteousness, salvation, and the worship of God, which depend thereon. This being his main design, he would not engage into it before he had in every respect declared and vindicated the dignity and glory of the person of Christ as vested with his blessed offices. And from hence unto the didactical part of the epistle, he proceeds in a retrograde order unto what he had before insisted on. For whereas he had first declared the glory of the person of Christ in his kingly office, chap. 1; then in his prophetical, chap. 2, 3; having now entered on his sacerdotal, he goes on to enlarge upon this last function, then he returns unto his prophetical, and shuts up the whole with a renewed mention of his kingly power, as we shall see in their order and proper places.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11</span><span class="owen-vg-prev">If therefore perfection were by the Levitical priesthood, (for under i…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11.—Εἰ μὲν οὖν τελείωσις διὰ τῆς Λευϊτικῆς ἱερωσύνης ἦν (ὁ λαὸς γὰρ ἐπʼ αὐτῇ νενομοθέτητο) τίς ἔτι χρεία, κατὰ τὴν τάξιν Μελχισεδὲκ ἕτερον ἀνίτασθαι ἱερέα, καὶ οὐ κατὰ τὴν τάξιν Ἀαρών λέγεσθαι;</p>
 
 <p>Τελείωσις. Syr., גְּמִירוּתָא, &quot;consummatio,&quot; &quot;perfectio;&quot; a sacred &quot;perfection,&quot; or completeness of state and condition.</p>
@@ -729,7 +755,11 @@ next_label: "第八章"
 <p>Μετατιθεμένης γὰρ τῆς ἱερωσύνης, ἐξ ἀνάγκης καὶ νόμου μετάθεσις γίνεται.</p>
 
 <p>&quot;Mutato sacerdotio.&quot; Vulg. Lat., &quot;translato.&quot; Beza, &quot;hoc sacerdotio;&quot; expressing the article. Syr., &quot;Yea, even as a change was made in the priesthood, so a change was made also in the law;&quot; not to the mind of the apostle. Ethiop., &quot;If their law is passed away, their priesthood shall pass away;&quot; more out of the way than the other.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 12</span><span class="owen-vg-prev">For the priesthood being changed, there is made of necessity a change …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 12.—For the priesthood being changed, there is made of necessity a change of the law.</p>
 
 <p>In this verse the apostle evidently declares what he intended by &quot;the law&quot; in that foregoing, which &quot;the people received under the Levitical priesthood.&quot; It was the whole &quot;law of commandments contained in ordinances,&quot; or the whole law of Moses, so far as it was the rule of worship and obedience unto the church; for that law it is that followeth the fates of the priesthood.</p>
@@ -785,7 +815,11 @@ next_label: "第八章"
 <p>Obs. VIII. It is the highest vanity, to pretend use or continuance in the church, from possession or prescription, or pretended benefit, beauty, order, or advantage, when once the mind of God is declared against it.— The pleas of this kind for the old priesthood and law excelled all that can be insisted on, with respect unto any other things that any pretend a veneration for in divine worship; yet were they of no validity or efficacy. Ἐφʼ ὃν γὰρ λέγεται ταῦτα, φυλῆς ἑτέρας μετέσχηκεν, ἀφʼ ἧς οὐδεὶς προσέσχηκε τῷ θυσιαστηρίῳ.</p>
 
 <p>Ἐφʼ ὃν, &quot;in quem.&quot; &quot;In quo,&quot; Vulg. Lat. עֲלַוְהִי דֵּאתַאמְרִ גֵּיר הָו הָלֵין, Syr.; &quot;for he concerning whom these things are spoken.&quot; &quot;For he on whom these things are said,&quot; Rhem., improperly. Φυλῆς ἑτέρας μετέσχηκεν. Vulg., &quot;de alia tribu est;&quot; Rhem., &quot;is of another tribe:&quot; omitting the especial force of the word μετέσχηκεν, though the substance of the sense be retained. Syr., אֶתִילֵד, &quot;was born of another tribe.&quot; &quot;Particeps fuit,&quot; did derive his genealogy from, and so had his especial relation unto, another tribe. Προσέσχηκε, &quot;ministravit,&quot; &quot;attendit.&quot; Vulg., &quot;præsto fuit.&quot; The Ethiopic, &quot;And if any one will say so,&quot; (or &quot;as one may say,&quot;) &quot;he placeth another tribe, because they kept not the altar;&quot; mistaking both the meaning of the design and sense of the apostle&#x27;s words.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 13</span><span class="owen-vg-prev">For he of whom these things are spoken pertaineth unto another tribe, …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 13.—For he of whom these things are spoken pertaineth unto another tribe, of which no man gave attendance at the altar.</p>
 
 <p>Γάρ. The causal conjunction, γάρ, doth not only intimate a pursuit of the foregoing argument, and the confirmation of the supposition whereon it was built, but also an entrance upon the express application of the whole precedent discourse unto the person of Jesus Christ, the true and only high priest of the church.</p>
@@ -807,7 +841,11 @@ next_label: "第八章"
 <p>Obs. III. Seeing Christ himself had no right to minister at the material altar, the re-introduction of such altars is inconsistent with the perpetual continuance of his priesthood.</p>
 
 <p>The apostle confirms his assertion by a particular application of it unto the person of our Lord Jesus Christ.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 14</span><span class="owen-vg-prev">For it is evident [or manifest] that our Lord sprang out of Judah; of …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 14.—Πρόδηλον γὰρ ὅτι ἐξ Ἰούδα ἀνατέταλκεν ὁ Κύριος ἡμῶν, εἰς ἣν φυλὴν οὐδὲν περὶ ἱερωσύνης Μωϋσῆς ἐλάλησε.</p>
 
 <p>Περὶ ἱερωσύνης. Vulg. Lat., &quot;de sacerdotibus;&quot; without countenance from any copies of the original or ancient translation.</p>
@@ -835,7 +873,11 @@ next_label: "第八章"
 <p>Obs. II. Divine revelation gives bounds, positively and negatively, unto the worship of God.</p>
 
 <p>That the Aaronical priesthood was to be changed, and consequently the whole law of ordinances that depended thereon, and that the time wherein this change was to be made was now come, is that which is designed unto confirmation in all this discourse. And it is that truth whereinto our faith of the acceptance of evangelical worship is resolved; for without the removal of the old, there is no place for the new. This, therefore, the apostle now fully confirms by a recapitulation of the force and sum of his preceding arguments.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15–17</span><span class="owen-vg-prev">And it is yet far more evident: for that after the similitude of Melch…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15–17.—Καὶ περισσότερον ἔτι κατάδηλόν ἐστιν, εἰ κατὰ τὴν ὁμοιότητα Μελχισεδὲκ ἀνίσταται ἱερεὺς ἕτερος, ὃς οὐ κατὰ νόμον ἐντολῆς σαρκικῆς γέγονεν, ἀλλὰ κατὰ δύναμιν ζωῆς ἀκαταλύτου. Μαρτυρεῖ γὰρ, Ὅτι σὺ ἱερεὺς εἰς τὸν αἰῶνα κατὰ τὴν τάξιν Μελχισεδέκ.</p>
 
 <p class="owen-ver">Ver. 15–17.—And it is yet far more evident: for that after the similitude of Melchisedec there ariseth another priest, who is made not after the law of a carnal commandment, but after the power of an endless life. For he testifieth, Thou art a priest for ever, after the order of Melchisedec.</p>
@@ -941,7 +983,11 @@ next_label: "第八章"
 <p>2. There were others of them who, although they received the gospel and believed in Christ, yet were persuaded that the law was still in force, and the worship prescribed in it still to be observed. And of these there were very great multitudes, as the apostle declares, Acts 21:20. This error was, in the patience of God, for a while tolerated among them, because the time of their full conviction was not yet come. But those who were possessed with it began, after a while, to be very troublesome unto the church, and would not be content to observe the law themselves, but would impose the observation of it on all the Gentile converts, on the pain of eternal damnation: Acts 15:1, &quot;They said&quot; and contended, &quot;that unless they were circumcised, after the manner of Moses, they could not be saved.&quot; These also were to be restrained and convinced. And those of them who were obstinate in this persuasion, not long after apostatized from the whole of Christianity. And,—</p>
 
 <p>3. There were sincere believers, whose faith was to be strengthened and confirmed. With respect unto them all the apostle laboureth with great diligence in this argument, and evidently proves, both that it was the will and purpose of God that the administration of the law should have an end, and also that the time was now come wherein it was to cease and be abrogated. This, therefore, he proceeds withal in these verses.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 18, 19</span><span class="owen-vg-prev">For there is verily a disannulling of the commandment going before, fo…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 18, 19.—Ἀθέτησις μὲν γὰρ γίνεται προαγούσης ἐντολῆς, διὰ τὸ αὐτῇς ἀσθενὲς καὶ ἀνωφελές. Οὐδὲν γὰρ ἐτελείωσεν ὁ νόμος, ἐπεισαγωγὴ δὲ κρείττονος ἐλπίδος, διʼ ἧς ἐγγίζομεν τῷ Θεῷ.</p>
 
 <p>Ἀθέτησις. Vulg. Lat., &quot;reprobatio;&quot; Rhem., &quot;reprobation;&quot;—most improperly. Syr., שׁיחֲלָפָא, &quot;mutatio,&quot; a &quot;change;&quot; which reacheth not the force of the word. Ar., &quot;abrogatio.&quot; Bez., &quot;fit irritum;&quot; that is, &quot;mandatum.&quot; Ἀθετέω is rendered, &quot;loco moveo,&quot; &quot;abrogo,&quot; &quot;abdico,&quot; &quot;irritum facio,&quot;—&quot;to take out of the way,&quot; &quot;to abrogate,&quot; &quot;to disannul,&quot; &quot;to make void;&quot; and for the most part it hath respect unto a rule, law, or command, that was or is in force. Sometimes it is used of a person, who ought in duty to be regarded and honoured, but is despised; Luke 10:16, John 12:48, where it is rendered to &quot;despise.&quot; So 1 Thess. 4:8, Jude 8. Sometimes it represents things, Gal. 2:21, 1 Tim. 5:12. But commonly it respects a law, and is applied unto them who are absolutely under the power of the law, or such in whose power the law is. The first sort are said to &quot;make void the law,&quot; when they transgress it, neglecting the authority whereby it is given, Mark 7:9, Heb. 10:28. But when this word is applied unto him who hath power over the law, it signifies the abrogation of it, so far as that it shall have no more power to oblige unto its observance. Ἀθέτησις is used nowhere in the New Testament but here and chap. 9:26. Here it is applied unto the law, being the taking away of its power to oblige unto obedience; there unto sin, denoting the abrogating of its power to condemn.</p>
@@ -1117,7 +1163,11 @@ next_label: "第八章"
 <p>Obs. XII. All our approximation unto God in any kind, all our approaches unto him in holy worship, is by Him alone who was the blessed hope of the saints under the old testament, and is the life of them under the new. —These things must be afterwards spoken unto.</p>
 
 <p>The apostle had warned the Hebrews before, that he had &quot;many things to say,&quot; and those &quot;not easy to be understood,&quot; concerning Melchisedec. And herein he intended not only those things which he expresseth directly concerning that person and his office, but the things themselves signified thereby in the person and office of Christ. And therefore he omits nothing which may from thence be any way represented. So from that one testimony of the psalmist he makes sundry inferences unto his purpose; as,—1. That the Lord Christ was to be a priest; which included in it the cessation of the Levitical priesthood, seeing he was of the tribe of Judah, and not of the tribe of Levi. 2. That he was to be another priest; that is, a priest of another order, namely, that of Melchisedec. And this he variously demonstrates, to prove his pre-eminence above the Aaronical priesthood as also thereon, that upon his introduction that order was utterly to cease and be disannulled. 3. He observes from the same testimony, unto the same purpose, that he was to be a priest for ever, so as that there should never more, upon his death or otherwise, be any need of another priest, nor any possibility of the return of the former priesthood into the church. 4. Neither yet doth he rest here, but observes moreover the manner how God, in the testimony insisted on, declared his purpose of making the Lord Christ a priest, which was constitutive of his office; and that was by his oath: and thence he takes occasion to manifest how far his priesthood is exalted above that under the law. This is that which now lies before us in these verses. And we have in these things an instance given of what unsearchable stores of wisdom and truth are laid up in every parcel of the word of God, if we have a spiritual light in their investigation.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 20–22</span><span class="owen-vg-prev">And inasmuch as not without an oath: (for they truly were made without…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 20–22.—Καὶ καθʼ ὅσον οὐ χωρὶς ὁρκωμοσίας (οἱ μὲν γὰρ χωρὶς ὁρκωμοσίας εἰσὶν ἱερεῖς γεγονότες, ὁ δὲ μετὰ ὁρκωμοσίας διὰ τοῦ λέγοντος πρὸς αὐτόν· Ὤμοσε Κύριος, καὶ οὐ μεταμεληθήσεται· Σὺ ἱερεὺς εἰς τὸν αἰῶνα κατὰ τὴν τάξιν Μελχισεδέκ), κατὰ τοσοῦτον κρείττονος διαθήκης γέγονεν ἔγγυος Ἰησοῦς.</p>
 
 <p>The words of the 20th verse being elliptical, the sense of them is variously supplied. Most translators carry on the sense unto that which is the midst of the 21st in our translation, &quot;others were made priests without an oath.&quot; The Syriac refers the words unto them foregoing, בְּמַוְמָתָא לַן וְשַׁרְדֵהּ, &quot;and confirmed it&quot; (that is, &quot;the better hope&quot;) &quot;with an oath;&quot; and Beza, &quot;etiam quatenus non sine jurejurando superintroducta est, &quot;inasmuch as [that hope] is not brought in without an oath;&quot; and another since, &quot;et eò potior illa spes, quatenùs non absque jurejurando superintroducta est,&quot; Schmid. But this limits the comparison unto this verse, which the apostle really finisheth verse 22. Vulg. Lat., &quot;et quantum est non sine jurejurando;&quot; which the Rhemists render, &quot;and inasmuch as it is not without an oath.&quot; Ours supply, &quot;he was made a priest,&quot;—&quot;inasmuch as not without an oath he was made a priest:&quot; no doubt according to the mind of the apostle; for he hath a prospect in these words unto what ensues, where he expressly applies this oath unto the priesthood of Christ, and the consummation thereof.</p>
@@ -1369,7 +1419,11 @@ next_label: "第八章"
 <p>Τοὺς προσερχομένους, &quot;accedentes per semetipsum ad Deum.&quot; Rhemists, &quot;he is able to save for ever, going by himself unto God;&quot; strangely darkening the sense. For &quot;going&quot; seems to respect his own going to God, which the Vulg., &quot;accedentes,&quot; will not bear, &quot;eos qui per ipsum accedunt ad Deum,&quot; &quot;those who by him draw nigh to God.&quot;</p>
 
 <p>Πάντοτε ζῶν, &quot;semper vivens ad interpellandum pro nobis;&quot; &quot;always living to make intercession for us,&quot; instead of &quot;for them,&quot; αὐτῶν. Syr., חֲלָפַיְהוּן צְלַוְתֵא וּמַסֵּק, &quot;causing to ascend,&quot; or &quot;offering prayers for them.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 23–25</span><span class="owen-vg-prev">And they truly were many priests, because they were not suffered to co…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 23–25.—And they truly were many priests, because they were not suffered to continue by reason of death: but this [man], because he continueth ever, hath an unchangeable priesthood. Wherefore he is able to save them also to the uttermost that come unto God by him, seeing he ever liveth to make intercession for them.</p>
 
 <p>The apostle in these words proceedeth unto his last argument from the consideration of the priesthood of Christ, as typed and represented by that of Melchisedec. And his intention is still to prove the excellency of it above the Levitical, and of his person above theirs. And in particular, he makes it manifest that &quot;the bringing in of the better hope&quot; did &quot;perfect&quot; or &quot;consummate&quot; all things, which the law could not do.</p>
@@ -1597,7 +1651,11 @@ next_label: "第八章"
 <p>But how shall we know that the Lord Christ is thus tender, loving, and compassionate, that he continueth so to be; or what evidence or testimony have we of it? It is true he was eminently so when he was upon the earth in the days of his flesh, and when he laid down his life for us. We know not what change may be wrought in nature itself, by his investiture with glory; nor how inconsistent these affections are, which in us cannot be separated from some weakness and sorrow, with his present state and dignity. Nor can any solid satisfaction be received by curious contemplations of the nature of glorified affections. But herein we have an infallible demonstration of it, that he yet continueth in the exercise of that office with respect whereunto all these affections of love, pity, and compassion, are ascribed unto him. As our high priest, δύναται συμπαθῆσαι, he is &quot;able to suffer,&quot; to &quot;condole with,&quot; to have &quot;compassion on&quot; his poor tempted ones, Heb. 4:15. All these affections doth he continually act and exercise in his intercession. From a sense it is of their wants and weaknesses, of their distresses and temptations, of their states and duties, accompanied with inexpressible love and compassion, that he continually intercedes for them. For he doth so, that their sins may be pardoned, their temptations subdued, their sorrows removed, their trials sanctified, and their persons saved; and doing this continually as a high priest, he is in the continual exercise of love, care, pity, and compassion.</p>
 
 <p>In this verse the apostle renders a reason of his whole preceding discourse, and why he laid so great weight upon the description of our high priest. And he hath probably in it a respect unto what he had last asserted in particular, concerning his ability to save them to the utmost that come to God by him.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 26</span><span class="owen-vg-prev">For such an high priest became us, who is holy, harmless, undefiled, s…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 26.—Τοιοῦτος γὰρ ἡμῖν ἔπρεπεν ἀρχιερεὺς, ὅσιος, ἄκακος, ἀμίαντος, κεχωρισμένος ἀπὸ τῶν ἁμαρτωλῶν, καὶ ὑψηλότερος τῶν οὐρανῶν γενόμενος.</p>
 
 <p>Τοιοῦτος γὰρ ἡμῖν ἔπρεπεν. Syr., אַף כּוּמָרָא גֵיר חָנָא דַּאֵיךְ לַן הֲוָא זָדֵק, &quot;for yet also this high priest was just to us;&quot; that is, it was just, right, or meet, that we should have this high priest. All others, &quot;talis nos decebat.&quot;</p>
@@ -1737,7 +1795,11 @@ next_label: "第八章"
 <p>Ὃς οὐκ ἔχει καθʼ ἡμέραν ἀνάγκην, ὥσπερ οἱ ἀρχιερεῖς, πρότερον ὑπὲρ τῶν ἰδίων ἁμαρτιῶν θυσίας ἀναφέρειν, ἔπειτα τῶν τοῦ λαοῦ· τοῦτο γὰρ ἐποίησεν ἐφάπαξ, ἑαυτὸν ἀνενέγκας. Ὁ νόμος γὰρ ἀνθρώπους καθίστησιν ἀρχιερεῖς ἔχοντας ἀσθένειαν· ὁ λόγος δὲ τῆς ὁρκωμοσίας τῆς μετὰ τὸν νόμον, Υἱὸν εἰς τὸν αἰῶνα τετελειωμένον.</p>
 
 <p>The words used in this context have been opened in several places before. And in one thing only is there any material difference among the translators of them; and this is in these words, τῆς μετὰ τὸν νόμον. For the Syriac reads them, נָמוּסָא בָּתַר, דַּהֲוָת, rendering the article in the masculine gender, &quot;who was after the law;&quot; and so doth the Vulgar Latin also, &quot;qui post legem est,&quot; referring unto λόγος as the antecedent, and not ὁρκωμοσίας. And Erasmus renders μετὰ τὸν νόμον by &quot;supra legem,&quot; &quot;above the law.&quot; But others think, and that rightly, that μετά with an accusative case is never to be rendered by &quot;supra,&quot; or &quot;above.&quot;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 27, 28</span><span class="owen-vg-prev">Who needeth not daily, as those high priests, to offer up sacrifices, …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 27, 28.—Who needeth not daily, as those high priests, to offer up sacrifices, first for their own sins, and then for the people&#x27;s: for this he did once, when he offered up himself. For the law maketh men high priests which have infirmity; but the word of the oath, which was since the law, the Son, who is perfected for evermore.</p>
 
 <p>As these verses contain other instances of the pre-eminence of our high priest above those of the order of Aaron, so all those mentioned in the former of them do depend directly on and flow from the qualifications and endowments of his person expressed in that foregoing. For whereas he is such an one as is there described, &quot;holy, harmless, undefiled, separate from sinners, and made higher than the heavens,&quot;—for such an one alone &quot;became us,&quot;—he was above and freed from all those things and services which the Levitical priests were obliged unto, for want of these qualifications. For all the things ascribed, verse 27, unto them and denied concerning him, were all effects of the weakness and imperfection of their persons and their services; which he, as unto his person, was absolutely exempt and free from, so that he had no need to do as they did. And this being declared, the whole matter, with the fundamental reason of all the differences insisted on, is summarily expressed, verse 28, as we shall see in the exposition of the words.</p>
@@ -1937,3 +1999,5 @@ next_label: "第八章"
 <p>All rights reserved under International and Pan-American Copyright Conventions. By payment of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this ebook on-screen. No part of this text may be reproduced, transmitted, downloaded, decompiled, reverse engineered, or stored in or introduced into any information storage and retrieval system, in any form or by any means, whether electronic or mechanical, now known or hereinafter invented, without the express written permission of Monergism Books.</p>
 
 <p>ePub, .mobi &amp; .pdf Editions July 2019 Requests for information should be addressed to: Monergism Books, PO Box 491, West Linn, OR 97068</p>
+</div>
+</details>

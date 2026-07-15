@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 3
 title: "第三章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/2/"
 prev_label: "第二章"
 next_url: "/owen/hebrews/4/"
@@ -12,6 +12,8 @@ next_label: "第四章"
 ---
 # 希伯来书 第三章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1, 2</span><span class="owen-vg-prev">Wherefore, holy brethren, partakers of the heavenly calling, consider …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1, 2.—Ὅθεν, ἀδελφοὶ ἅγιοι, κλήσεως ἐπουρανίου μέτοχοι, κατανοήσατε τὸν ἀπόστολον καὶ ἀρχιερέα τῆς ὁμολογίας ἡμῶν, Χριστὸν Ἰησοῦν· πιστὸν ὄντα τῷ ποιήσαντι αὐτὸν, ὡς καὶ Μωυσῆς ἐν ὅλῳ τῷ οἴκῳ αὐτοῦ.</p>
 
 <p>The Vulgar leaves out Χριστόν, &quot;Christ;&quot; all ancient copies and translations beside retain it.</p>
@@ -271,7 +273,11 @@ next_label: "第四章"
 <p>XV. All things concerning the worship of God, in the whole church or house now under the gospel, are no less perfectly and completely ordered and ordained by the Lord Jesus Christ than they were by Moses under the law. The comparison is to be taken not only subjectively but objectively also, or it will not suit the apostle&#x27;s purpose. As the faithfulness of Moses extended itself unto the whole worship of God and all things concerning it under the old testament, so that of Christ must be extended to the whole worship of God and all the concernments of it under the new testament. It is true, the faithfulness of Christ intensively would be no less than that of Moses, if he revealed all that was committed unto him of his Father unto that purpose, for Moses did no more: but herein would Moses be preferred before him, if all things any way needful or useful to or in the worship of God, in matter and manner, were committed unto him, so that nothing might be added thereunto, and not so unto Jesus Christ; which surely neither the design of the apostle in this place nor the analogy of faith will allow.</p>
 
 <p>The apostle having made his entrance into the comparison designed by him between Christ and Moses, and showed in general wherein they were alike, and as to his purpose equal (which that those who are compared together should be in some things is necessary), he proceeds to evince the prelation of Christ and his exaltation above him in sundry signal instances, the matter principally aimed at:—</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3–6</span><span class="owen-vg-prev">For this [man] was counted worth of more glory [was more honourable] t…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3–6.—Πλείονος γὰρ δόξης οὗτος παρὰ Μωυσῆν ἠξίωται, καθʼ ὅσον πλείονα τιμὴν ἔχει τοῦ οἴκου ὁ κατασκευάσας αὐτόν· πᾶς γὰρ οἶκος κατασκευάζεται ὑπό τινος, ὁ δὲ τὰ πάντα κατασκευάσας, Θεός. Καὶ Μωυσῆς μὲν πιστὸς ἐν ὅλῳ τῷ οἴκῳ αὐτοῦ, ὡς θεράπων, εἰς μαρτύριον τῶν λαληθησομένων, Χριστὸς δὲ ὡς υἱὸς ἐπὶ τὸν οἷκον αὐτοῦ· οὗ οἶκός ἐσμεν ἡμεῖς, ἐάνπερ τὴν παῤῥησίαν, καὶ τὸ καύχημα τῆς ἐλπίδος μέχρι τέλους βεβαίαν κατάσχωμεν.</p>
 
 <p>Πλείονος. Vulg. Lat., &quot;Amplioris enim gloriae iste prae Moyse dignus est habitus.&quot; Retaining the case of the Greek substantive, the Latin is corrupt, as Valla, Erasmus, and Vatablus observe. But the sense is not obscured. The Syriac renders not ἠξίωται at all, but reads the words &quot;For the glory&quot; (or &quot;honour&quot;) &quot;of this man is more&quot; (or &quot;greater&quot;) &quot;than that of Moses.&quot;</p>
@@ -653,3 +659,5 @@ next_label: "第四章"
 <p>All rights reserved under International and Pan-American Copyright Conventions. By payment of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this ebook on-screen. No part of this text may be reproduced, transmitted, downloaded, decompiled, reverse engineered, or stored in or introduced into any information storage and retrieval system, in any form or by any means, whether electronic or mechanical, now known or hereinafter invented, without the express written permission of Monergism Books.</p>
 
 <p>ePub, .mobi &amp; .pdf Editions July 2019 Requests for information should be addressed to: Monergism Books, PO Box 491, West Linn, OR 97068</p>
+</div>
+</details>

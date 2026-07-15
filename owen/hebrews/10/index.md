@@ -4,7 +4,7 @@ book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
 chapter: 10
 title: "第十章"
-date: 2026-07-15 15:54
+date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/9/"
 prev_label: "第九章"
 next_url: "/owen/hebrews/11/"
@@ -12,6 +12,8 @@ next_label: "第十一章"
 ---
 # 希伯来书 第十章
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 1</span><span class="owen-vg-prev">For the law having a shadow of good things to come, not the very image…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 1.—For the law having a shadow of good things to come, not the very image of the things, can never with those sacrifices which they offer year by year continually, make the comers thereunto [the worshippers] perfect.</p>
 
 <p>There are in these words, 1. A note of inference, giving a connection unto the preceding discourse; &quot;for.&quot; 2. The subject spoken of; &quot;the law.&quot; 3. An ascription made unto it; it had &quot;a shadow of good things to come.&quot; 4. A negation concerning it, derogatory unto its perfection; it had &quot;not the very image of the things&quot; themselves. 5. An inference or conclusion from both; &quot;can never with those sacrifices,&quot; etc.</p>
@@ -111,7 +113,11 @@ next_label: "第十一章"
 <p>The Syriac translation refers that unto the persons which is affirmed of their offerings, הֲוָו גָמְרִין גֵיר אִלוּ, &quot;for if they had been perfect,&quot; or &quot;made perfect,&quot;—referring unto what went before, that they were not made perfect,—מֵן אֶתְנִיהוּ רֵּין כְבַר קוּרְבָנַיְהון, &quot;they would have long since ceased&quot; or &quot;rested from their oblations&quot; or &quot;offerings.&quot; &quot;They would have offered them no more.&quot; And although it doth not at all express τοὺς λατρεύοντας, which follows in the verse, yet it regulates the sense of the whole by that word, as it more plainly declares in rendering the following words, אֶתְדַכִּיו זְכַן דַּהֲדָא לְאִילֵין בַּחֲטָהֵא תִארְתְּהוּן לְהוּן הֲוָת טָרְיָא מֵכִיל דְּלָא מֶשוּל לְהון, &quot;because their conscience would no more have tossed&quot; or &quot;disquieted them for their sins, who had at one time been purified;&quot; which is a good exposition, though not an exact translation of the words. And so it renders the next verse, &quot;but in these sacrifices their sins are remembered (called to mind) every year.&quot; Ἐπεὶ ἄν ἐπαύσαντο. Many ancient copies add the negative, οὐκ,—ἐπεὶ οὐκ ἄν, whereof we shall speak immediately. Ἐπεί. Vulg., &quot;alioquin;&quot; and so others generally. Of the word, see chap. 9:26. &quot;For if so,&quot; ἐπαύσαντο προς φερόμεναι, &quot;cessassent (semel) oblata;&quot; &quot;they would have ceased, being once offered.&quot; Most render the participle by the infinitive mood, &quot;desiissent offerri,&quot; &quot;they would have ceased to be offered.&quot; Τοὺς λατρεύοντας, &quot;cultores,&quot; &quot;the worshippers:&quot; &quot;sacrificantes,&quot; &quot;the sacrificers,&quot; say some, I think improperly, both as to the proper sense of the word and the things intended. The priests only properly were &quot;sacrificantes,&quot; but the people are here intended. Κεκαθαρμένους, (MSS., κεκαθαρισμἐνους,) &quot;mundati,&quot; &quot;purificati,&quot; &quot;purgati;&quot; &quot;cleansed,&quot; &quot;purified,&quot; &quot;purged.&quot; Διὰ τὸ μηδεμέαν ἔχειν ἔτι συνείδησιν ἁμαρτιῶν. &quot;Ideo quod nullam habent ultrà conscientiam peccati.&quot; Vulg. Lat., &quot;ideo quòd,&quot; for &quot;propterea;&quot; &quot;peccati,&quot; for &quot;peccatorum.&quot; &quot;Nullorum peccatorum amplius sibi essent conscii,&quot; Beza; &quot;they should no more be conscious unto themselves of any sin.&quot; The sense is given in the Syriac before mentioned. Arab., &quot;they would have made more mention of the commemoration of sins,&quot; with respect unto the words following. Ἀνάμνησις. Syr., &quot;but in these they remembered their sins.&quot; &quot;Recommemoratio,&quot; &quot;repetita mentio;&quot; a calling to remembrance by acknowledgment.</p>
 
 <p>There is, as was observed, a different reading in the ancient copies of the first words in the second verse. The Syriac and the Vulgar Latin take no notice of the negative particle οὐκ, but read the words positively, &quot;then would they have ceased.&quot; Those who follow other copies take οὐκ for οὐχί, —&quot;non&quot; for &quot;nonne,&quot; and render the words interrogatively, as doth our translation; &quot;for then would they not have ceased?&quot; that is, they would have done so. And then ἐπεί ἄν is to be rendered adversatively, by &quot;alioquin,&quot; as it is by most, &quot;for otherwise.&quot; But it may be rendered causally, by &quot;for then,&quot; if an interrogation be allowed. But the sense is the same in both readings, as we shall see.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 2</span><span class="owen-vg-prev">For otherwise they would have ceased to be offered; because that the w…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 2.—For otherwise they would have ceased to be offered; because that the worshippers once purged should have had no more conscience of sins.</p>
 
 <p>The words contain a confirmation, by a new argument, of what was affirmed in the verse foregoing. And it is taken from the frequent repetition of those sacrifices. The thing to be proved is the insufficiency of the law to perfect the worshippers by its sacrifices. This he proves in the foregoing verse, from the formal cause of that insufficiency; which is, that in them all it had but &quot;a shadow of good things to come,&quot; and so could not effect that which was to be done only by the good things themselves. Here the same truth is proved &quot;ab effectu,&quot; or &quot;à, signo,&quot; from a demonstrative sign and evidence of it in their repetition.</p>
@@ -157,7 +163,11 @@ next_label: "第十一章"
 <p>Obs. II. All peace with God is resolved into a purging atonement made for sin: &quot;Being once purged.&quot;</p>
 
 <p>Obs. III. It is by a principle of gospel light alone that conscience is directed to condemn all sin, and yet to acquit all sinners that are purged. Its own natural light can give it no guidance herein.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 3</span><span class="owen-vg-prev">But in those [sacrifices there is] a remembrance again [made] of sins …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 3.—But in those [sacrifices there is] a remembrance again [made] of sins every year.</p>
 
 <p>It is the latter part of the foregoing assertion, namely, that the worshippers were not purged or perfected by them, in that they had still remaining a conscience for sins, which is proposed unto confirmation; for this being a matter of fact might be denied by the Hebrews. Wherefore the apostle proves the truth of his assertion from an inseparable adjunct, of the yearly repetition of these sacrifices, according unto divine institution.</p>
@@ -181,7 +191,11 @@ next_label: "第十一章"
 <p>Ἀδύνατον γὰρ αἷμα ταύρων καὶ τράγων ἀφαιρεῖν ἀμαρτίας.</p>
 
 <p>There is no difficulty in the words, and very little difference in the translations of them. The Vulgar renders ἀφαιρεῖν by the passive: &quot;Impossibile est enim sanguine taurorum et hircorum auferri peccata,&quot;—&quot;It is impossible that sins should be taken away by the blood of bulls and goats.&quot; The Syriac renders ἀφαιρεῖν by מַדֵךְ, which is to &quot;purge&quot; or &quot;cleanse,&quot; unto the same purpose.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 4</span><span class="owen-vg-prev">For it is impossible that the blood of bulls and of goats should take …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 4.—For it is impossible that the blood of bulls and of goats should take away sins.</p>
 
 <p>This is the last determinate resolution of the apostle concerning the insufficiency of the law and its sacrifices for the expiation of sin, and the perfecting of them who come unto God, as unto their consciences. And there is in the argument used unto this end an inference from what was spoken before, and a new enforcement from the nature or subject-matter of these sacrifices.</p>
@@ -237,7 +251,11 @@ next_label: "第十一章"
 <p>Obs. V. Herein also consists the great demonstration of the love, grace, and mercy of God, with an encouragement unto faith, in that when the old sacrifices neither would nor could perfectly expiate sin, he would not suffer the work itself to fail, but provided a way that should be infallibly effective of it, as is declared in the following verses.</p>
 
 <p>The provision that God made to supply the defect and insufficiency of legal sacrifices, as unto the expiation of sin, peace of conscience with himself, and the sanctification of the souls of the worshippers, is declared in this context; for the words contain the blessed undertaking of our Lord Jesus Christ to do, fulfil, perform, and suffer, all things required in the will, and by the wisdom, holiness, righteousness, and authority of God, unto the complete salvation of the church, with the reasons of the efficacy of what he so did and suffered unto that end. And we must consider both the words themselves, so far especially as they consist in a quotation out of the Old Testament, and the validity of his inferences from the testimony which he chooseth to insist on unto this purpose.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 5–10</span><span class="owen-vg-prev">Wherefore when he cometh into the world, he saith, Sacrifice and offer…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 5–10.—Διὸ εἰσερχόμενος εἰς τὸν κόσμον, λέγει, Θυσίαν καὶ προσφορὰν οὐκ ἠθέλησας, σῶμα δὲ κατηρτίσω μοι· ὁλοκαυτώματα καὶ περὶ ἁμαρτίας οὐκ εὐδόκησας. Τότε εἶπον, Ἰδοὺ ἥκω (ἐν κεφαλίδι βιβλίου γέγραπται περὶ ἐμοῦ) τοῦ ποιῆσαι, ὁ Θεὸς, τὸ θέλημά σου. Ἀνώτερον λέγων, Ὅτι θυσίαν καὶ προσφορὰν καὶ ὁλοκαυτώματα καὶ περὶ ἀμαρτίας οὐκ ἠθέλησας, οὐδὲ εὐδόκησας· (αἱτινες κατὰ τὸν νόμον προσφέρονται·) τότε εἴρηκεν, Ἰδοὺ ἥκω τοῦ ποιῆσαι, ὁ Θεὸς, τὸ θέλημά σου· ἀναιρεῖ τὸ πρῶτον, ἵνα τὸ δεύτερον στήσῃ· ἐν ᾧ θελήματι ἡγιασμένοι ἐσμὲν διὰ τῆς προσφορᾶς τοῦ σώματος τοῦ Ἰησοῦ Χριστοῦ ἐφάπαξ.</p>
 
 <p>Some few differences may be observed in the ancient and best translations.</p>
@@ -561,7 +579,11 @@ next_label: "第十一章"
 <p>Wherefore the apostle in the next verses argues from the dignity and efficacy of the sacrifice of Christ, by its difference from and opposition unto the legal sacrifices, which were often repeated.</p>
 
 <p>Καὶ πᾶς μὲν ἱερεὺς ἕστηκε καθʼ ἡμέραν λειτουργῶν, καὶ τὰς αὐτὰς πολλάκις προσφέρων θυσίας, αἵτινες οὐδέποτε δύνανται περιελεῖν ἁμαρτίας· αὐτὸς δὲ μίαν ὑπὲρ ἁμαρτιῶν προσενέγκας θυσίαν, εἰς τὸ διηνεκὲς ἐκάθισεν ἐν δεξιᾷ τοῦ Θεοῦ, τὸ λοιπὸν ἐκδεχόμενος ἕως τεθῶσιν οἱ ἐχθροὶ αὐτοῦ ὑποπόδιον τῶν ποδῶν αὐτοῦ· μιᾷ γὰρ προσφορᾷ τετελείωκεν εἰς τὸ διηνεκὲς τοὺς ἁγιαζομένους.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 11–14</span><span class="owen-vg-prev">And every priest standeth daily ministering, and offering oftentimes t…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 11–14.—And every priest standeth daily ministering, and offering oftentimes the same sacrifices, which can never take away sins: but this man, after he had offered one sacrifice for sins, for ever sat down on the right hand of God; from henceforth expecting till his enemies be made his footstool. For by one offering he hath perfected for ever them that are sanctified.</p>
 
 <p>These words are an entrance into the close of that long blessed discourse of the apostle concerning the priesthood and sacrifice of Christ, their dignity and efficacy, which he shuts up and finisheth in the following verses, confirming the whole with the testimony of the Holy Ghost before produced by him.</p>
@@ -679,7 +701,11 @@ next_label: "第十一章"
 <p>Obs. XIV. The sanctification and perfection of the church being the end designed in the death and sacrifice of Christ, all things necessary unto that end must be included therein, that it be not frustrated.</p>
 
 <p>Μαρτυρεῖ δὲ ἡμῖν καὶ τὸ Πνεῦμα τὸ ἅγιον· μετὰ γὰρ τὸ προειρηκέναι· Αὕτη ἡ διαθήκη ἣν διαθήσομαι πρὸς αὐτοὺς μετὰ τὰς ἡμέρας ἐκείνας, λέγει Κύριος, διδοὺς νόμους μου ἐπὶ καρδίας αὐτῶν, καὶ ἐπὶ τῶν διανοιῶν αὐτῶν ἐπιγράψω αὐτούς· καὶ, Τῶν ἁμαρτιῶν αὐτῶν καὶ τῶν ἀνομιῶν αὐτῶν οὐ μὴ μνησθῶ ἔτι. Ὅπου δὲ ἄφεσις τούτων, οὐκ ἔτι προσφορὰ περὶ ἀμαρτίας.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 15–18</span><span class="owen-vg-prev">[Whereof] the Holy Ghost also is a witness to us: for after that he ha…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 15–18.—[Whereof] the Holy Ghost also is a witness to us: for after that he had said before, This is the covenant that I will make with them after those days, saith the Lord, I will put my laws into their hearts, and in their minds will I write them: And their sins and iniquities will I remember no more. Now where remission of these [is, there is] no more offering for sin.</p>
 
 <p>The foundation of the whole preceding discourse of the apostle, concerning the glory of the priesthood of Christ, and the efficacy of his sacrifice, was laid in the description of the new covenant, whereof he was the mediator; which was confirmed and ratified by his sacrifice, as the old covenant was by the blood of bulls and goats, chap. 8:10–13. Having now abundantly proved and demonstrated what he designed concerning them both, his priesthood and his sacrifice, he gives us a confirmation of the whole from the testimony of the Holy Ghost, in the description of that covenant which he had given before. And because the crisis which he had brought his argument and disputation unto was, that the Lord Christ, by reason of the dignity of his person and office, with the everlasting efficacy of his sacrifice, was to offer himself but &quot;once,&quot;—which virtually includes all that he had before taught and declared, including in it an immediate demonstration of the insufficiency of all those sacrifices which were often repeated, and consequently their removal out of the church,—he returns unto those words of the Holy Ghost, for the proof of this particular also. And he doth it from the order of the words used by the Holy Ghost, as he had argued before from the order of the words in the psalmist, verses 8, 9.</p>
@@ -715,7 +741,11 @@ next_label: "第十一章"
 <p>I do therefore here, with all humility, and sense of my own weakness and utter disability for so great a work, thankfully own the guidance and assistance which have been given me in the interpretation of it, so far as it is or may be of use unto the church, as a mere effect of sovereign and undeserved grace. From that alone it is, that, having many and many a time been at an utter loss as to the mind of the Holy Ghost, and finding no relief in the worthy labours of others, he hath graciously answered my poor weak supplications, in supplies of the light and evidence of truth.</p>
 
 <p>Ἔχοντες οὗν, ἀδελφοί, παῤῥησίαν εἰς τὴν εἴσοδον τῶν ἁγίων ἐν τῷ αἵματι Ἰησοῦ, ἣν ἐνεκαίνισεν ἡμῖν ὁδὸν πρόσφατον καὶ ζῶσαν, διὰ τοῦ καταπετάσματος, τοῦτʼ ἔστι τὴς σαρκὸς αὑτοῦ, καὶ ἱερέα μέγαν ἐπὶ τὸν οἶκον τοῦ Θεοῦ, προσερχώμεθα μετὰ ἀληθινῆς καρδίας ἐν πληροφορίᾳ πίστεως, ἐῤῥαντισμένοι τὰς καρδίας ἀπὸ συνειδήσεως πονηρᾶς· καὶ λελουμένοι τὸ σῶμα ὕδατι καθαρῷ, κατέχωμεν τὴν ὁμολογίαν τῆς ἐλπίδος ἀκλινῆ· (πιστὸς γὰρ ὁ ἐπαγγειλάμενος.)</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 19–23</span><span class="owen-vg-prev">Having therefore, brethren, boldness to enter into the holiest by the …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 19–23.—Having therefore, brethren, boldness to enter into the holiest by the blood of Jesus, by a new and living way, which he hath consecrated for us, through the veil, that is to say, his flesh; and [having] an high priest over the house of God; let us draw near with a true heart, in full assurance of faith, having our hearts sprinkled from an evil conscience, and our bodies washed with pure water. Let us hold fast the profession of [our] faith without wavering: (for he [is] faithful that promised.)</p>
 
 <p>In these words the apostle enters on the last part of the epistle, which is wholly parenetical, or hortatory. For though there be some occasional intermixtures of doctrines consonant unto them before insisted on, yet the professed design of the whole remainder of the epistle is to propose unto and press on the Hebrews such duties, of various sorts, as the truths he had insisted upon do direct unto and make necessary unto all that believe. And in all his exhortations there is a mixture of the ground of the duties exhorted unto, of their necessity, and of the privilege which we have in being admitted unto them and accepted with them; all taken from the priesthood and sacrifice of Christ, with the effects of them, and the benefits which we receive thereby.</p>
@@ -931,7 +961,11 @@ next_label: "第十一章"
 <p>Obs. XXVI. The faithfulness of God in his promises is the great encouragement and supportment, under our continual profession of our faith against all oppositions.</p>
 
 <p>Καὶ κατανοῶμεν ἀλλήλους εἰς παροξυσμὸν ἀγάπης καὶ καλῶν ἔργων.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 24</span><span class="owen-vg-prev">And let us consider one another, to provoke unto love and good works.</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 24.—And let us consider one another, to provoke unto love and good works.</p>
 
 <p>Love and good works are the fruits, effects, and evidences, of the sincere profession of saving faith; wherefore a diligent attendance unto them is an effectual means of our constancy in our profession. This, therefore, the apostle in the next place exhorts unto, and thence declares the manner whereby we may be excited and enabled unto them. And there is in the words, 1. A profession of a duty, as a means unto another end. 2. The declaration of that end, namely, by and upon that consideration, to &quot;provoke one another to love and good works.&quot;</p>
@@ -957,7 +991,11 @@ next_label: "第十一章"
 <p>Obs. III. Diligence in mutual exhortation unto gospel duties, that men on all grounds of reason and example may be provoked unto them, is required of us, and is a most excellent duty, which in an especial manner we ought to attend unto.</p>
 
 <p>Μὴ ἐγκαταλείποντες τὴν ἐπισυναγωγὴν ἑαυτῶν, καθὼς ἔθος τισὶν, ἀλλὰ παρακαλοῦντες, καὶ τοσούτῳ μᾶλλον ὅσῳ βλέπετε ἐγγίζουσαν τὴν ἡμέραν.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 25</span><span class="owen-vg-prev">Not forsaking the assembling of ourselves together, as the manner of s…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 25.—Not forsaking the assembling of ourselves together, as the manner of some [is;] but exhorting [one another:] and so much the more, as ye see the day approaching.</p>
 
 <p>The words contain an enforcement of the preceding exhortation, in a caution against what is contrary thereunto, or the neglect of the general duty, which is the principal means to further us in all the things that we are exhorted unto, and without which some of them cannot at all be performed. And there is in the words, 1. The neglect and evil which they are cautioned against; that is, &quot;forsaking the assembling of ourselves.&quot; 2. This is exemplified, (1.) In an instance of some that were guilty of it; &quot;As is the manner of some.&quot; (2.) By the contrary duty; &quot;But exhorting one another.&quot; (3.) The degree of this duty; &quot;So much the more.&quot; (4.) The motive unto that degree; &quot;As ye see the day approaching.&quot;</p>
@@ -1041,7 +1079,11 @@ next_label: "第十一章"
 <p>Obs. XI. To see evidently such a day approaching, and not to be sedulous and diligent in the duties of divine worship, is a token of a backsliding frame tending unto final apostasy.</p>
 
 <p>Ἑκουσίως γὰρ ἀμαρτανόντων ἡμῶν μετὰ τὸ λαβεῖν τὴν ἐπίγνωσιν τῆς ἀληθείας, οὐκ ἔτι περὶ ἁμαρτιῶν ἀπολείπεται θυσία, φοβερὰ δέ τις ἐκδοχὴ κρίσεως, καὶ πυρὸς ζῆλος ἐσθίειν μἐλλοντος τοὺς ὑπεναντίους.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 26, 27</span><span class="owen-vg-prev">For if we sin wilfully after that we have received the knowledge of th…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 26, 27.—For if we sin wilfully after that we have received the knowledge of the truth, there remaineth no more sacrifice for sins, but a certain fearful looking for of judgment, and fiery indignation, which shall devour the adversaries.</p>
 
 <p>In these verses the apostle gives a vehement enforcement of his preceding exhortation, from the dreadful consequences of a total neglect of it, or uncompliance with it. And this he doth, 1. By expressing the nature of the sin which lies therein. 2. By an impossibility of deliverance from the guilt of it. 3. The punishment that would unavoidably follow upon it.</p>
@@ -1143,7 +1185,11 @@ next_label: "第十一章"
 <p>Obs. XIV. The dread and terror of God&#x27;s final judgments against the enemies of the gospel is in itself inconceivable, and only shadowed out by things of the greatest dread and terror in the world. Whence it is so, I shall now declare.</p>
 
 <p>Ἀθετήσας τις νόμον Μωϋσέως, χωρὶς οἰκτιρμῶν ἐπὶ δυσὶν ἢ τρισὶ μάρτυσιν ἀποθνήσκει· πόσῳ, δοκεῖτε, χείρονος ἀξιωθήσεται τιμωρίας ὁ τὸν Υἱὸν τοῦ Θεοῦ καταπατήσας, καὶ τὸ αἷμα τῆς διαθήκης κοινὸν ἡγησάμενος ἐν ᾧ ἡγιάσθη, καὶ τὸ Πνεῦμα τῆς χάριτος ἐνυβρίσας;</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 28, 29</span><span class="owen-vg-prev">He that despised Moses&#x27; law died without mercy under two or three witn…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 28, 29.—He that despised Moses&#x27; law died without mercy under two or three witnesses: of how much sorer punishment, suppose ye, shall he be thought worthy who hath trodden under foot the Son of God, and counted the blood of the covenant, wherewith he was sanctified, an unholy thing, and hath done despite unto the Spirit of grace?</p>
 
 <p>The apostle confirms what he had spoken of the sore and certain destruction of apostates from the gospel, by an argument &quot;à comparatis,&quot; and &quot;à minori ad majus;&quot; that is, by the consideration of the two states of the church, which he had all along compared and expressed. Wherefore, to convince the Hebrews not only of the certainty and severity of the judgment declared, but also of the equity and righteousness of it, he proposeth unto them the consideration of God&#x27;s constitution of punishment under the old testament with respect unto the law of Moses, which they could not deny to be just and equal.</p>
@@ -1251,7 +1297,11 @@ next_label: "第十一章"
 <p>Obs. XVII. It is our duty to justify and bear witness unto God in the righteousness of his judgments against gospel-despisers.</p>
 
 <p>Οἴδαμεν γὰρ τὸν εἰπόντα, Ἐμοὶ ἐκδίκησις, ἐγὼ ἀνταποδώσω, λέγει Κὑριος. Καὶ πάλιν, Κὐριος κρινεῖ τὸν λαὸν αὐτοῦ. Φοβερὸν τὸ ἐμπεσεῖν εἰς χεῖρας Θεοῦ ζῶντος.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 30, 31</span><span class="owen-vg-prev">For we know him that hath said, Vengeance [belongeth] unto me, I will …</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 30, 31.—For we know him that hath said, Vengeance [belongeth] unto me, I will recompense, saith the Lord. And again, The Lord shall judge his people. [It is] a fearful thing to fall into the hands of the living God.</p>
 
 <p>Γάρ. There is in these verses the confirmation of all that was spoken before, by the consideration of what God is in himself, with whom alone we have to do in this matter, and what he assumeth unto himself in this and the like cases; as if the apostle had said, &#x27;In the severe sentence which we have denounced against apostates, we have spoken nothing but what is suitable unto the holiness of God, and what, indeed, in such cases he hath declared that he will do.&#x27; The conjunction γάρ denotes the introduction of a reason of what was spoken before; but this is not all which he had discoursed on, on this subject, but more particularly the reference he had made unto their own judgments of what sore punishment was due unto apostates: &#x27;Thus it will be with them, thus you must needs determine concerning them in your own minds; for we know him with whom we have to do in these things.&#x27; Wherefore the apostle confirms the truth of his discourse, or rather illustrates the evidence of it, by a double consideration: 1. Of the person of him who is, and is to be the sole judge in this case, who is God alone: &quot;For we know him.&quot; Οἴδαμεν γάρ. And, 2. What he hath assumed unto himself, and affirmed concerning himself in the like cases; which he expresseth in a double testimony of Scripture. And then, lastly, there is the way whereby our minds are influenced from this person and what he hath said; which is, that &quot;we know him.&quot;</p>
@@ -1325,7 +1375,11 @@ next_label: "第十一章"
 <p>Herein, by this general assertion, the apostle sums up and closeth his blessed discourse concerning the greatest sin that men can make themselves guilty of, and the greatest punishment that the righteousness of God will inflict on any sinners. Nor is there any reaching of either part of this divine discourse unto the utmost. When he treats of this sin and its aggravations, no mind is able to search into, no heart is able truly to apprehend the evil and guilt which he chargeth it withal. No one can express or declare the least part of the evil which is comprised in every aggravation which he gives us of this sin. And in like manner concerning the punishment of it, he plainly intimates it shall be accompanied with an incomprehensible severity, dread, and terror. This, therefore, is a passage of holy writ which is much to be considered, especially in these days wherein we live, wherein men are apt to grow cold and careless in their profession, and to decline gradually from what they had attained unto. To be useful in such a season it was first written; and it belongs unto us no less than unto them unto whom it was originally sent. And we live in days wherein the security and contempt of God, the despite of the Lord Christ and his Spirit, are come to the full, so as to justify the truth that we have insisted on.</p>
 
 <p>Ἀναμιμνήσκεσθε δὲ τὰς πρότερον ἡμέρας, ἐν αἷς φωτισθέντες, πολλὴν ἄθλησιν ὑπεμείνατε παθημάτων, τοῦτο μὲν, ὀνειδισμοῖς τε καὶ θλίψεσι θεατριζόμενοι, τοῦτο δὲ, κοινωνοὶ τῶν οὔτως ἀναστρεφομένων γενηθέντες· Καὶ γὰρ τοῖς δεσμοῖς μου συνεπαθήσατε, καὶ τὴν ἀρπαγὴν τῶν ὑπαρχόντων ὑμῶν μετὰ χαρᾶς προσεδέξασθε, γινώσκοντες ἔχειν ἐν ἐαυτοῖς κρείττονα ὕπαρξιν ἐν οὐρανοῖς, καὶ μένουσαν.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 32–34</span><span class="owen-vg-prev">But call to remembrance the former days, in which, after ye were illum…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 32–34.—But call to remembrance the former days, in which, after ye were illuminated, ye endured a great fight of afflictions; partly whilst ye were made a gazing-stock, both by reproaches and afflictions; and partly whilst ye became companions of them that were so used. For ye had compassion of me in my bonds, and took joyfully the spoiling of your goods, knowing in yourselves that ye have in heaven a better and an enduring substance.</p>
 
 <p>The words in their coherence, intimated in the adversative δέ, &quot;but,&quot; have respect unto the exhortation laid down verse 25. All the verses interposed contain a dehortation from the evil which they are warned of. Hence the apostle returns unto his former exhortation unto the duties recommended unto them, and perseverance therein against all the difficulties which they might meet withal, wherewith others were turned unto destruction. And the present argument which he makes use of unto this purpose is this now mentioned. And there are in the words, 1. A direction unto a means useful unto the end of his exhortation: &quot;Call to remembrance the former days.&quot; 2. A description of those days which he would have them to call to mind: (1.) From the season of them, and their state therein, &quot;after they were enlightened;&quot; (2.) From what they suffered in them, &quot;a great fight of afflictions,&quot; which are enumerated in sundry instances, verse 33; (3.) From what they did in them, verse 34, with respect unto themselves and others; (4.) From the ground and reason whereon they were carried cheerfully through what they suffered and did, &quot;knowing in yourselves.&quot;</p>
@@ -1447,7 +1501,11 @@ next_label: "第十一章"
 <p>Obs. XVI. There is no rule of proportion between eternal and temporal things. Hence the enjoyment of the one will give joy in the loss of the other.</p>
 
 <p>Μὴ ἀποβάλητε οὖν τὴν παῤῥησίαν ὑμῶν, ἥτις ἔχει μισθαποδοσίαν μεγάλην. Ὑπομονῆς γὰρ ἔχετε χρείαν· ἵνα τὸ θέλημα τοῦ Θεοῦ ποιήσαντες, κομίσησθε τὴν ἐπαγγελίαν.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 35, 36</span><span class="owen-vg-prev">Cast not away therefore your confidence, which hath great recompence o…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 35, 36.—Cast not away therefore your confidence, which hath great recompence of reward. For ye have need of patience, that after ye have done the will of God, ye might receive the promise.</p>
 
 <p>In these two verses there is an inference from his former argument, and a confirmation of it from the necessity of what is required thereunto. The first is in verse 35, wherein the apostle gives us the peculiar design, use, and force of the preceding exhortation unto the consideration of what they had suffered in and for the profession of the gospel. And there are in the words, 1. A note of inference from the foregoing discourse, οὖν, &quot;therefore.&quot; 2. A grace and duty which in this inference he exhorts them to retain; and that is παῤῥησίαν. 3. The manner of their retaining it; &quot;cast not away.&quot; 4. The reason of the exhortation not to cast it away; because &quot;it hath great recompence of reward.&quot;</p>
@@ -1495,7 +1553,11 @@ next_label: "第十一章"
 <p>Obs. VI. The consideration of eternal life as the free effect of the grace of God and Christ, and as proposed in a gracious promise, is a thousand times more full of spiritual refreshment unto a believer, than if he should conceive of it or look upon it merely as a reward proposed unto our own doings or merits.</p>
 
 <p>Ἔτι γὰρ μικρὸν ὅσον ὅσον, ὁ ἐρχόμενος ἥξει, καὶ οὐ χρονιεῖ. Ὁ δὲ δίκαιος ἐκ πίστεως ζήσεται· καὶ ἐὰν ὑποστείληται, οὐκ εὐδοκεῖ ἠ ψυχή μου ἐν αὐτῷ. Ἡμεῖς δὲ οὐκ ἐσμὲν ὑποστολῆς εἰς ἀπώλειαν, ἀλλὰ πίστεως εἰς περιποίησιν ψυχῆς.</p>
+</div>
+</details>
 
+<details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 37–39</span><span class="owen-vg-prev">For yet a little while, and he that shall come will come, and will not…</span></summary>
+<div class="owen-vg-body">
 <p class="owen-ver">Ver. 37–39.—For yet a little while, and he that shall come will come, and will not tarry. Now the just shall live by faith: but if [any man] draw back, my soul shall have no pleasure in him. But we are not of them who draw back unto perdition; but of them that believe to the saving of the soul.</p>
 
 <p>The substance of the apostolical exhortation, as hath been often observed, is the constancy of the Hebrews in their profession, against persecutions and temptations. Unto this end he commends unto them the necessary use of confidence and patience, as those graces which would carry them through their difficulties and support them under them. But these graces are not the root whereon constancy and perseverance do grow; they are all branches of it. They do not give strength unto the soul to do and suffer according to the mind of God; but they are the way whereby it doth exercise its strength, which it hath from another grace. It is faith from whence alone all these things do spring. This the apostle knowing, he reserves the declaration of its nature, efficacy, and power, unto the close of his argument. And such an enarration of the nature and efficacy of it he intends as will certainly effect the great work of carrying them through their difficulties, even all that they may be called unto, because it hath done the same in all true believers from the foundation of the world. Wherefore, as is usual with him, in these verses he makes a transition unto the consideration of faith itself, whereinto he resolves the whole exhortation unto constancy in profession.</p>
@@ -1629,3 +1691,5 @@ next_label: "第十一章"
 <p>An Exposition of the Epistle to the Hebrews, Vol. 6, by John Owen, Copyright © 2019</p>
 
 <p>All rights reserved under International and Pan-American Copyright Conventions. By payment of the required fees, you have been granted the non-exclusive, non-transferable right to access and read the text of this ebook on-screen. No part of this text may be reproduced, transmitted, downloaded, decompiled, reverse engineered, or stored in or introduced into any information storage and retrieval system, in any form or by any means, whether electronic or mechanical, now known or hereinafter invented, without the express written permission of Monergism Books. ePub, .mobi &amp; .pdf Editions September 2019 Requests for information should be addressed to: Monergism Books, PO Box 491, West Linn, OR 97068</p>
+</div>
+</details>
