@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 7 · Of The Judaical Distribution Of The Old Testament"
-date: 2026-07-15 16:41
+date: 2026-07-15 16:54
 prev_url: "/owen/hebrews/exercitations/6/"
 prev_label: "导论 6"
 next_url: "/owen/hebrews/exercitations/8/"

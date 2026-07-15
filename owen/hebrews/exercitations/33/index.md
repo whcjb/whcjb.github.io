@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 33 · Of The Acts Of The Priesthood Of Christ, Their Obj"
-date: 2026-07-15 16:41
+date: 2026-07-15 16:54
 prev_url: "/owen/hebrews/exercitations/32/"
 prev_label: "导论 32"
 next_url: "/owen/hebrews/exercitations/34/"

@@ -530,6 +530,73 @@ def nicecase(s):
     s = s.lower()
     return re.sub(r"(?<![A-Za-z'])[a-z]", lambda m: m.group().upper(), s)
 
+FM_OUT = 'owen/hebrews/prefaces'
+_FM_SKIP = re.compile(r'^(—+\s*$|PREFATORY NOTICES|EXERCITATIONS ON)')
+
+def _fm_start(t):
+    """卷首 piece 起始标题 -> (cn, en); 否则 None"""
+    s = t.strip()
+    for key, cn, en in [
+        ('GENERAL PREFACE', '编者总序', 'General Preface (by the Editor)'),
+        ('NOTE IN REGARD TO THE PREFACES', '序言说明', 'Note in Regard to the Prefaces'),
+        ('TO THE RIGHT HONOURABLE', '献词', 'Epistle Dedicatory — To Sir William Morrice'),
+    ]:
+        if s == key:
+            return (cn, en)
+    m = re.match(r'^([IVX]+)\.\s*[—–-]\s*(.+)$', s)
+    if m and len(s) < 42 and m.group(2) == m.group(2).upper():   # 全大写=真序; 目录条目是首字母大写
+        cn = {'I':'序一','II':'序二','III':'序三','IV':'序四','V':'序五'}.get(m.group(1), '序')
+        return (cn, nicecase(m.group(2).strip()))
+    return None
+
+def front_matter_pieces():
+    """Vol1 卷首散文材料(跳过目录/分隔/容器标签) -> [{seq, cn, en, body:[(k,t)]}]"""
+    paras = load(1)
+    first_exer = next(i for i,(k,t) in enumerate(paras) if k == 'EXER')
+    start = next((i for i in range(first_exer) if _fm_start(paras[i][1])), None)
+    if start is None:
+        return []
+    pieces = []; cur = None
+    for i in range(start, first_exer):
+        k, t = paras[i]; s = t.strip()
+        st = _fm_start(t)
+        if st:
+            cur = {'cn': st[0], 'en': st[1], 'body': []}
+            pieces.append(cur); continue
+        if _FM_SKIP.match(s):
+            continue
+        if cur is not None:
+            cur['body'].append((k, t))
+    for n, p in enumerate(pieces, 1):
+        p['seq'] = n
+    return pieces
+
+def emit_prefaces():
+    """Vol1 卷首材料各一页(忠实流式), 返回 piece 列表供索引用。"""
+    from subprocess import check_output
+    date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    e = _html.escape
+    pieces = front_matter_pieces()
+    if os.path.isdir(FM_OUT):
+        for f in glob.glob(f'{FM_OUT}/**/*', recursive=True):
+            if os.path.isfile(f): os.remove(f)
+    for it in pieces:
+        seq = it['seq']
+        lines = [f'<p>{e(t)}</p>' for k, t in it['body']]   # 卷首(信件/序言)一律 <p>
+        fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
+              'book_name: "约翰欧文导论"',f'title: "{it["cn"]} · {it["en"][:40]}"',f'date: {date}']
+        if seq > 1:
+            fm += [f'prev_url: "/owen/hebrews/prefaces/{seq-1}/"', f'prev_label: "{pieces[seq-2]["cn"]}"']
+        if seq < len(pieces):
+            fm += [f'next_url: "/owen/hebrews/prefaces/{seq+1}/"', f'next_label: "{pieces[seq]["cn"]}"']
+        fm += ['---','']
+        head = (f'<div class="owen-exer-eyebrow">卷首 Front Matter · {e(it["cn"])}</div>\n\n'
+                f'# {e(it["en"])}\n\n')
+        os.makedirs(f'{FM_OUT}/{seq}', exist_ok=True)
+        open(f'{FM_OUT}/{seq}/index.md','w',encoding='utf-8').write(
+            '\n'.join(fm) + head + '\n\n'.join(lines) + '\n')
+    return pieces
+
 def exercitations():
     """-> [{seq, vol, roman, series, title, body:[(k,t)]}] 共 40 篇。
     标题 = EXER 后连续全大写行(含长标题); series 在 roman 重置到 I 时切换。"""
@@ -566,6 +633,7 @@ def emit_exercitations():
     from subprocess import check_output
     date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
     e = _html.escape
+    prefaces = emit_prefaces()
     items = exercitations()
     # 清旧
     if os.path.isdir(EXER_OUT):
@@ -611,11 +679,19 @@ def emit_exercitations():
             f'<span class="exn">{it["seq"]}</span>'
             f'<span class="ext"><b>Exercitation {e(it["roman"])}</b>{e(htitle)}</span></a></li>')
     secs = ''
+    if prefaces:
+        secs += '<h2 class="exer-series">卷首 · Front Matter &amp; Prefaces</h2>\n<ol class="exer-list">\n'
+        for p in prefaces:
+            secs += (f'<li><a href="{{{{ site.baseurl }}}}/owen/hebrews/prefaces/{p["seq"]}/">'
+                     f'<span class="exn">{p["seq"]}</span>'
+                     f'<span class="ext"><b>{e(p["cn"])}</b>{e(p["en"])}</span></a></li>\n')
+        secs += '</ol>\n'
     for s in sorted(cards):
         secs += f'<h2 class="exer-series">{e(SERIES[s])}</h2>\n<ol class="exer-list">\n' + '\n'.join(cards[s]) + '\n</ol>\n'
-    idx = ['---','layout: default','title: 约翰欧文·希伯来书导论','---','']
+    idx = ['---','layout: default','title: 约翰欧文·希伯来书导论与卷首','---','']
     open(f'{EXER_OUT}/index.html','w',encoding='utf-8').write('\n'.join(idx) + EXER_INDEX_TMPL.replace('{{SECTIONS}}', secs))
-    print(f'导论 {len(items)} 篇 → {EXER_OUT}/  (系列: ' + ', '.join(f'{SERIES[s]}={len([x for x in items if x["series"]==s])}' for s in sorted(cards)) + ')')
+    print(f'卷首 {len(prefaces)} 篇 → {FM_OUT}/;  导论 {len(items)} 篇 → {EXER_OUT}/  (系列: '
+          + ', '.join(f'{SERIES[s]}={len([x for x in items if x["series"]==s])}' for s in sorted(cards)) + ')')
 
 EXER_INDEX_TMPL = '''
 <div class="container" style="padding-top:80px; max-width:820px;">

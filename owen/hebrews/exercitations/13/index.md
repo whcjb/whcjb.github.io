@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 13 · Other Testimonies Proving The Messiah To Be Come"
-date: 2026-07-15 16:41
+date: 2026-07-15 16:54
 prev_url: "/owen/hebrews/exercitations/12/"
 prev_label: "导论 12"
 next_url: "/owen/hebrews/exercitations/14/"
