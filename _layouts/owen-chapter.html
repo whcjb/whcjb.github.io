@@ -6,10 +6,8 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div style="margin: 16px 0 16px; font-size:13px;">
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.chapter }}/">&larr; 希伯来书 第{{ page.chapter }}章</a>
-        &nbsp;·&nbsp;
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">{{ page.book_name }}</a>
+      <div style="margin: 16px 0 20px; font-size:13px;">
+        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
       </div>
 
       <div style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
@@ -37,37 +35,12 @@ layout: default
 </div>
 
 <style>
-/* 约翰欧文注释 —— 墨绿主题 */
-.owen-content{font-family:Georgia,"Iowan Old Style",Palatino,"Songti SC",STSong,serif;font-size:17px;line-height:1.95;color:#2a2a26;max-width:38em;margin:0 auto}
-.owen-content h1{font-size:22px;font-weight:bold;text-align:center;letter-spacing:.04em;margin:8px 0 4px;color:#1f4a3f}
-.owen-content .owen-vg-sub{text-align:center;color:#1f5a4b;font-size:13px;letter-spacing:.1em;margin-bottom:22px}
-.owen-content h2{font-size:17px;font-weight:bold;color:#1f4a3f;margin:28px 0 12px}
-.owen-content h3{font-size:15px;font-weight:bold;color:#1f5a4b;margin:26px 0 10px;padding-top:12px;border-top:1px solid #dfe6e0}
+/* 约翰欧文注释 —— 忠实版: 干净散文, 严格照 PDF, 不加结构 */
+.owen-content{font-family:Georgia,"Times New Roman","Songti SC",STSong,serif;font-size:16px;line-height:1.9;color:#2a2a26}
+.owen-content h1{font-size:22px;font-weight:bold;text-align:center;letter-spacing:.04em;margin:8px 0 24px;color:#1f4a3f}
+.owen-content h2{font-size:17px;font-weight:bold;color:#1f4a3f;margin:26px 0 12px}
 .owen-content p{margin:0 0 15px;text-align:justify}
-/* Owen 嵌套分点 —— 栈式解析真实深度 owen-d0..d4, 逐级缩进 + 绿色序号 */
-.owen-content .owen-num{color:#1f5a4b;font-weight:700;font-style:normal;margin-right:.15em}
-.owen-content p.owen-d0{margin-left:0}
-.owen-content p.owen-d1{margin-left:1.5em}
-.owen-content p.owen-d2{margin-left:3em}
-.owen-content p.owen-d3{margin-left:4.5em}
-.owen-content p.owen-d4{margin-left:6em}
-.owen-content p.owen-mk{padding-left:1.5em;text-indent:-1.5em}  /* 分点段悬挂缩进 */
-.owen-content .owen-scr{border-left:3px solid #1f5a4b;background:#f1f6f2;border-radius:0 6px 6px 0;padding:10px 16px;margin:4px 0 18px}
-.owen-content .owen-scr p{margin:0 0 6px;text-align:left}
-.owen-content .owen-scr p:last-child{margin-bottom:0}
-.owen-content .owen-scr-grk{color:#3a4a44;font-size:15px;line-height:1.7}
-.owen-content .owen-scr-en{color:#1f4a3f;font-weight:600;font-style:italic}
+.owen-content p.owen-ver{font-weight:bold;color:#1f5a4b;margin-top:24px}
 .owen-content a{color:#1f5a4b}
 .owen-content a:hover{color:#14382f}
-/* 原文字词考据: 默认折叠, 弱化为参考 */
-.owen-content .owen-philology{margin:2px 0 18px;border:1px solid #e2e8e3;border-radius:6px;background:#f7faf8}
-.owen-content .owen-philology > summary{cursor:pointer;padding:9px 14px;font-size:13px;color:#5a7a6e;
-  letter-spacing:.04em;list-style:none;user-select:none}
-.owen-content .owen-philology > summary::-webkit-details-marker{display:none}
-.owen-content .owen-philology > summary::before{content:"▸ ";color:#8aa89b}
-.owen-content .owen-philology[open] > summary::before{content:"▾ "}
-.owen-content .owen-philology > summary:hover{color:#1f5a4b}
-.owen-content .owen-philology > p{margin:0 0 10px;padding:0 16px;font-size:13.5px;color:#555;line-height:1.75}
-.owen-content .owen-philology > p:first-of-type{padding-top:6px}
-.owen-content .owen-philology > p:last-child{padding-bottom:12px}
 </style>

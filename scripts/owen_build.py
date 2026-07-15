@@ -387,8 +387,50 @@ def emit_verse_pages():
     print(f'共 {len(present)} 章, {npages} 个经节组页面')
     return present
 
+def emit_faithful():
+    """严格照 PDF: 按章一页, 段落原顺序原样输出。不折叠/不重排/不分级/不切分。"""
+    chapters = {}
+    for vol in [3,4,5,6,7]:
+        for ch, ps in chapter_segments(vol).items():
+            if ch not in chapters:
+                chapters[ch] = ps
+    present = sorted(chapters)
+    from subprocess import check_output
+    date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    e = _html.escape
+    # 清旧结构(经节组子目录 + 旧 md)
+    for d in glob.glob(f'{OUT}/*/'):
+        for f in glob.glob(d+'*'): os.remove(f)
+        os.rmdir(d)
+    for f in glob.glob(f'{OUT}/*.md'): os.remove(f)
+    for ch in present:
+        lines = []
+        for k, t in chapters[ch]:
+            if k in ('H2','PART') and re.match(r'CHAPTER\s+\d+\s*$', t):
+                continue                       # 章号已在页标题
+            if k == 'VER':
+                lines.append(f'<p class="owen-ver">{e(t)}</p>')
+            elif k in ('H2','PART'):
+                lines.append(f'<h2>{e(t)}</h2>')
+            else:
+                lines.append(f'<p>{e(t)}</p>')
+        idx = present.index(ch)
+        fm = ['---','layout: owen-chapter','book_id: hebrews',
+              'book_name: "希伯来书·约翰欧文注释"',f'chapter: {ch}',
+              f'title: "第{CN[ch]}章"',f'date: {date}']
+        if idx > 0:
+            fm += [f'prev_url: "/owen/hebrews/{present[idx-1]}/"', f'prev_label: "第{CN[present[idx-1]]}章"']
+        if idx < len(present)-1:
+            fm += [f'next_url: "/owen/hebrews/{present[idx+1]}/"', f'next_label: "第{CN[present[idx+1]]}章"']
+        fm += ['---','']
+        os.makedirs(f'{OUT}/{ch}', exist_ok=True)
+        open(f'{OUT}/{ch}/index.md','w',encoding='utf-8').write(
+            '\n'.join(fm) + f'# 希伯来书 第{CN[ch]}章\n\n' + '\n\n'.join(lines) + '\n')
+        print(f'  {OUT}/{ch}/ ({len(chapters[ch])} 段)')
+    print(f'共 {len(present)} 章(忠实版)')
+
 if __name__ == '__main__':
     if '--emit' in sys.argv:
-        emit_verse_pages()
+        emit_faithful()
     else:
         do_map()
