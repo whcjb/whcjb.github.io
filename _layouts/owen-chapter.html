@@ -6,22 +6,16 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div style="margin: 16px 0 16px;">
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      <div style="margin: 16px 0 16px; font-size:13px;">
+        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.chapter }}/">&larr; 希伯来书 第{{ page.chapter }}章</a>
+        &nbsp;·&nbsp;
+        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">{{ page.book_name }}</a>
       </div>
 
-      {% if page.prev_section %}
-      <div style="display:flex; justify-content:space-between; margin-bottom:32px; font-size:13px;">
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
-        {% if page.next_section %}
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
-        {% endif %}
+      <div style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
-      {% elsif page.next_section %}
-      <div style="text-align:right; margin-bottom:32px; font-size:13px;">
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
-      </div>
-      {% endif %}
 
       <div class="owen-content" data-book="{{ page.book_id }}">
         {{ content }}
@@ -33,13 +27,9 @@ layout: default
       </div>
       {% endif %}
 
-      <div style="display:flex; justify-content:space-between; margin-top:48px; padding-top:16px; border-top:1px solid #dfe6e0; font-size:13px;">
-        {% if page.prev_section %}
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
-        {% else %}<span></span>{% endif %}
-        {% if page.next_section %}
-        <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
-        {% else %}<span></span>{% endif %}
+      <div style="display:flex; justify-content:space-between; margin-top:44px; padding-top:16px; border-top:1px solid #dfe6e0; font-size:13px;">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
     </div>
@@ -47,43 +37,18 @@ layout: default
 </div>
 
 <style>
-/* 约翰欧文注释 —— 墨绿主题（区别于加尔文白/酒红/藏青、mhenry 暖金） */
-.owen-content {
-  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
-  font-size: 16px;
-  line-height: 1.9;
-  color: #2a2a26;
-}
-.owen-content h1 {
-  font-size: 22px;
-  font-weight: bold;
-  text-align: center;
-  letter-spacing: 0.04em;
-  margin: 8px 0 6px;
-  color: #1f4a3f;
-}
-.owen-content h1 + p { margin-top: 22px; }
-/* 经节标题 ### Ver. N—... */
-.owen-content h3 {
-  font-size: 15px;
-  font-weight: bold;
-  color: #1f5a4b;
-  margin: 28px 0 10px;
-  padding-top: 12px;
-  border-top: 1px solid #dfe6e0;
-  line-height: 1.6;
-}
-.owen-content h2 {
-  font-size: 17px;
-  font-weight: bold;
-  color: #1f4a3f;
-  margin: 30px 0 12px;
-}
-.owen-content p {
-  margin: 0 0 15px;
-  text-align: justify;
-}
-.owen-content a { color: #1f5a4b; }
-.owen-content a:hover { color: #14382f; }
-.container { }
+/* 约翰欧文注释 —— 墨绿主题 */
+.owen-content{font-family:Georgia,"Times New Roman","Songti SC",STSong,serif;font-size:16px;line-height:1.9;color:#2a2a26}
+.owen-content h1{font-size:22px;font-weight:bold;text-align:center;letter-spacing:.04em;margin:8px 0 4px;color:#1f4a3f}
+.owen-content .owen-vg-sub{text-align:center;color:#1f5a4b;font-size:13px;letter-spacing:.1em;margin-bottom:22px}
+.owen-content h2{font-size:17px;font-weight:bold;color:#1f4a3f;margin:28px 0 12px}
+.owen-content h3{font-size:15px;font-weight:bold;color:#1f5a4b;margin:26px 0 10px;padding-top:12px;border-top:1px solid #dfe6e0}
+.owen-content p{margin:0 0 15px;text-align:justify}
+.owen-content .owen-scr{border-left:3px solid #1f5a4b;background:#f1f6f2;border-radius:0 6px 6px 0;padding:10px 16px;margin:4px 0 18px}
+.owen-content .owen-scr p{margin:0 0 6px;text-align:left}
+.owen-content .owen-scr p:last-child{margin-bottom:0}
+.owen-content .owen-scr-grk{color:#3a4a44;font-size:15px;line-height:1.7}
+.owen-content .owen-scr-en{color:#1f4a3f;font-weight:600;font-style:italic}
+.owen-content a{color:#1f5a4b}
+.owen-content a:hover{color:#14382f}
 </style>

@@ -134,51 +134,164 @@ def do_map():
 CN = ['零','一','二','三','四','五','六','七','八','九','十','十一','十二','十三']
 OUT = 'owen/hebrews'
 
-def para_to_md(k, t):
-    if k == 'VER':
-        return f'### {t}'
-    if k in ('H2', 'PART') and re.match(r'CHAPTER\s+\d+\s*$', t):
-        return None            # 章标记不入正文(front matter 已有章号)
-    if k in ('H2', 'PART'):
-        return f'## {t}'
-    return t
+def ver_label(t):
+    """'Ver. 1, 2.—...' -> ('1, 2', '经文文本')"""
+    m = re.match(r'(Vers?e?s?\.?\s*([\d,\s–\-]+))\.?\s*[—\-–]\s*(.*)', t, re.S)
+    if not m:
+        return (None, t)
+    nums = re.sub(r'\s+', ' ', m.group(2)).strip().rstrip('.').strip()
+    return (nums, m.group(3).strip())
 
-def emit_chapters():
-    # 收集全部 13 章 segments(每章取其所属卷)
+def is_greek(s):
+    return bool(re.search(r'[Ͱ-Ͽἀ-῿]', s))
+
+def build_body(ps):
+    """按节分块: 章首导言 → 每节[Ver.N 标题 + 经文框(希/英) + 考据/释义正文]"""
+    out = []
+    i = 0
+    # 章首导言(第一个 VER 之前)
+    while i < len(ps) and ps[i][0] != 'VER':
+        k, t = ps[i]
+        if not (k in ('H2','PART') and re.match(r'CHAPTER\s+\d+\s*$', t)):
+            out.append(f'## {t}' if k in ('H2','PART') else t)
+        i += 1
+    # 逐节
+    while i < len(ps):
+        k, t = ps[i]
+        if k != 'VER':
+            out.append(t); i += 1; continue
+        num, _ = ver_label(t)
+        # 收集同节的连续 VER(希/英) + 之后的 body 直到下一个不同节号的 VER
+        scr = []
+        body = []
+        while i < len(ps):
+            k2, t2 = ps[i]
+            if k2 == 'VER':
+                n2, vt = ver_label(t2)
+                if scr and n2 != num:      # 新节
+                    break
+                scr.append(vt); i += 1
+            else:
+                body.append(t2); i += 1
+        # emit 节块
+        vlabel = f'Ver. {num}' if num else 'Ver.'
+        out.append(f'\n### {vlabel}')
+        if scr:
+            box = '<div class="owen-scr" markdown="0">'
+            for s in scr:
+                cls = 'owen-scr-grk' if is_greek(s) else 'owen-scr-en'
+                box += f'<p class="{cls}">{s}</p>'
+            box += '</div>'
+            out.append(box)
+        out.extend(body)
+    return out
+
+def slug_of(nums):
+    """'1, 2' -> '1-2';  '3' -> '3';  '10–14' -> '10-14'"""
+    ds = [int(x) for x in re.findall(r'\d+', nums)]
+    if not ds: return '0'
+    return str(ds[0]) if len(ds) == 1 else f'{ds[0]}-{ds[-1]}'
+
+def split_chapter(ps):
+    """-> (intro_paras, [(label, slug, [paras])])"""
+    i = 0; intro = []
+    while i < len(ps) and ps[i][0] != 'VER':
+        k, t = ps[i]
+        if not (k in ('H2','PART') and re.match(r'CHAPTER\s+\d+\s*$', t)):
+            intro.append((k, t))
+        i += 1
+    blocks = []
+    while i < len(ps):
+        k, t = ps[i]
+        if k != 'VER':
+            i += 1; continue
+        num, _ = ver_label(t)
+        grp = []
+        while i < len(ps):
+            k2, t2 = ps[i]
+            if k2 == 'VER':
+                n2, _ = ver_label(t2)
+                if grp and n2 != num: break
+            grp.append(ps[i]); i += 1
+        blocks.append((f'Ver. {num}', slug_of(num or '0'), grp))
+    return intro, blocks
+
+def block_body(grp):
+    """经节组内容: 经文框(希/英) + 考据/释义正文"""
+    out = []; scr = []; body = []
+    for k, t in grp:
+        if k == 'VER':
+            _, vt = ver_label(t); scr.append(vt)
+        else:
+            body.append(t)
+    if scr:
+        box = '<div class="owen-scr" markdown="0">'
+        for s in scr:
+            cls = 'owen-scr-grk' if is_greek(s) else 'owen-scr-en'
+            box += f'<p class="{cls}">{s}</p>'
+        box += '</div>'
+        out.append(box)
+    out.extend(body)
+    return '\n\n'.join(out)
+
+def emit_verse_pages():
     chapters = {}
     for vol in [3,4,5,6,7]:
         for ch, ps in chapter_segments(vol).items():
-            if ch not in chapters:      # 首次出现为准(避免跨卷重复)
+            if ch not in chapters:
                 chapters[ch] = ps
-    os.makedirs(OUT, exist_ok=True)
     present = sorted(chapters)
     from subprocess import check_output
     date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    # 先算全局经节组链(跨章 prev/next)
+    all_pages = []   # (ch, label, slug)
+    ch_blocks = {}
     for ch in present:
-        ps = chapters[ch]
-        lines = []
-        for k, t in ps:
-            md = para_to_md(k, t)
-            if md is None:
-                continue
-            lines.append(md)
-        body = '\n\n'.join(lines)
-        fm = ['---', 'layout: owen-chapter', 'book_id: hebrews',
-              'book_name: "希伯来书·约翰欧文注释"', f'chapter: {ch}',
-              f'title: "第{CN[ch]}章"', f'date: {date}']
-        idx = present.index(ch)
-        if idx > 0:
-            pc = present[idx-1]; fm += [f'prev_section: {pc}', f'prev_label: "第{CN[pc]}章"']
-        if idx < len(present)-1:
-            nc = present[idx+1]; fm += [f'next_section: {nc}', f'next_label: "第{CN[nc]}章"']
-        fm += ['---', '']
-        open(f'{OUT}/{ch}.md','w',encoding='utf-8').write('\n'.join(fm) + f'# 希伯来书 第{CN[ch]}章\n\n' + body + '\n')
-        print(f'  写入 {OUT}/{ch}.md ({len(ps)} 段)')
+        intro, blocks = split_chapter(chapters[ch])
+        ch_blocks[ch] = (intro, blocks)
+        for label, slug, grp in blocks:
+            all_pages.append((ch, label, slug))
+    # 清旧的 N.md
+    for f in glob.glob(f'{OUT}/*.md'):
+        os.remove(f)
+    npages = 0
+    for ch in present:
+        intro, blocks = ch_blocks[ch]
+        os.makedirs(f'{OUT}/{ch}', exist_ok=True)
+        # 章目录页
+        introhtml = '\n\n'.join(f'## {t}' if k in ('H2','PART') else t for k,t in intro)
+        links = '\n'.join(
+            f'<li><a href="{{{{ site.baseurl }}}}/owen/hebrews/{ch}/{slug}/">{label}</a></li>'
+            for label, slug, grp in blocks)
+        ci = ['---','layout: owen-book','book_id: hebrews',
+              'book_name: "希伯来书·约翰欧文注释"',f'chapter: {ch}',
+              f'title: "第{CN[ch]}章"',f'date: {date}','---','',
+              f'# 希伯来书 第{CN[ch]}章','']
+        open(f'{OUT}/{ch}/index.md','w',encoding='utf-8').write(
+            '\n'.join(ci) + introhtml + f'\n\n<ul class="owen-vg-list">\n{links}\n</ul>\n')
+        # 各经节组页
+        for label, slug, grp in blocks:
+            gi = all_pages.index((ch, label, slug))
+            fm = ['---','layout: owen-chapter','book_id: hebrews',
+                  'book_name: "希伯来书·约翰欧文注释"',f'chapter: {ch}',
+                  f'verse_group: "{slug}"',f'title: "希伯来书 {ch}:{slug}"',f'date: {date}']
+            if gi > 0:
+                pch,pl,psl = all_pages[gi-1]
+                plabel = pl if pch==ch else f'希 {pch}:{psl}'
+                fm += [f'prev_url: "/owen/hebrews/{pch}/{psl}/"', f'prev_label: "{plabel}"']
+            if gi < len(all_pages)-1:
+                nch,nl,nsl = all_pages[gi+1]
+                nlabel = nl if nch==ch else f'希 {nch}:{nsl}'
+                fm += [f'next_url: "/owen/hebrews/{nch}/{nsl}/"', f'next_label: "{nlabel}"']
+            fm += ['---','']
+            open(f'{OUT}/{ch}/{slug}.md','w',encoding='utf-8').write(
+                '\n'.join(fm) + f'# 希伯来书 {ch}:{slug}\n\n<div class="owen-vg-sub">约翰·欧文注释 · {label}</div>\n\n' + block_body(grp) + '\n')
+            npages += 1
+    print(f'共 {len(present)} 章, {npages} 个经节组页面')
     return present
 
 if __name__ == '__main__':
     if '--emit' in sys.argv:
-        chs = emit_chapters()
-        print(f'共 {len(chs)} 章: {chs}')
+        emit_verse_pages()
     else:
         do_map()
