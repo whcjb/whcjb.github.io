@@ -516,8 +516,135 @@ def emit_faithful():
         print(f'  {OUT}/{ch}/ ({len(chapters[ch])} 段)')
     print(f'共 {len(present)} 章(忠实版)')
 
+EXER_OUT = 'owen/hebrews/exercitations'
+SERIES = ['约翰欧文导论（Exercitations）', '安息日与主日专论（Day of Sacred Rest）']
+
+def _roman_num(s):
+    R={'I':1,'V':5,'X':10,'L':50,'C':100}; tot=0; prev=0
+    for c in reversed(s.upper()):
+        v=R.get(c,0); tot += -v if v<prev else v; prev=max(prev,v)
+    return tot
+
+def nicecase(s):
+    """全大写标题 → 词首大写(不越过撇号, 避免 Daniel'S)"""
+    s = s.lower()
+    return re.sub(r"(?<![A-Za-z'])[a-z]", lambda m: m.group().upper(), s)
+
+def exercitations():
+    """-> [{seq, vol, roman, series, title, body:[(k,t)]}] 共 40 篇。
+    标题 = EXER 后连续全大写行(含长标题); series 在 roman 重置到 I 时切换。"""
+    items = []
+    for vol in [1, 2]:
+        paras = load(vol)
+        idxs = [i for i,(k,t) in enumerate(paras) if k == 'EXER']
+        for a, i in enumerate(idxs):
+            end = idxs[a+1] if a+1 < len(idxs) else len(paras)
+            roman = paras[i][1].replace('EXERCITATION', '').strip().rstrip('.')
+            j = i + 1; tparts = []
+            while j < end:
+                k, t = paras[j]; s = t.strip()
+                if re.match(r'^\d+[.,]', s):          # 到内容提要 "1. ..." 停
+                    break
+                if re.sub(r'[^A-Za-z]', '', s) and s == s.upper():
+                    tparts.append(s); j += 1
+                else:
+                    break
+            title = ' '.join(tparts)
+            body = paras[j:end]
+            items.append({'vol': vol, 'roman': roman, 'title': title, 'body': body})
+    # 分系列 + 全局序号
+    seq = 0; series = 0; prev_n = 0
+    for it in items:
+        n = _roman_num(it['roman'])
+        if seq > 0 and n == 1 and prev_n >= 1:        # roman 重置到 I = 新系列
+            series += 1
+        prev_n = n; seq += 1
+        it['seq'] = seq; it['series'] = series
+    return items
+
+def emit_exercitations():
+    from subprocess import check_output
+    date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
+    e = _html.escape
+    items = exercitations()
+    # 清旧
+    if os.path.isdir(EXER_OUT):
+        for f in glob.glob(f'{EXER_OUT}/**/*', recursive=True):
+            if os.path.isfile(f): os.remove(f)
+    for f in glob.glob(f'{EXER_OUT}/*/'):
+        try: os.rmdir(f)
+        except OSError: pass
+    for it in items:
+        seq = it['seq']
+        lines = []
+        for k, t in it['body']:
+            if k == 'EXER':
+                continue
+            if k in ('H2','PART'):
+                lines.append(f'<h2>{e(t)}</h2>')
+            elif k == 'VER':
+                lines.append(f'<p class="owen-ver">{e(t)}</p>')
+            else:
+                lines.append(f'<p>{e(t)}</p>')
+        htitle = nicecase(it['title']) if it['title'] else f"Exercitation {it['roman']}"
+        fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
+              'book_name: "约翰欧文导论"',f'title: "导论 {seq} · {htitle[:50]}"',f'date: {date}']
+        if seq > 1:
+            p = items[seq-2]
+            fm += [f'prev_url: "/owen/hebrews/exercitations/{seq-1}/"',
+                   f'prev_label: "导论 {seq-1}"']
+        if seq < len(items):
+            fm += [f'next_url: "/owen/hebrews/exercitations/{seq+1}/"',
+                   f'next_label: "导论 {seq+1}"']
+        fm += ['---','']
+        head = (f'<div class="owen-exer-eyebrow">{e(SERIES[it["series"]])} · Exercitation {e(it["roman"])}</div>\n\n'
+                f'# {e(htitle)}\n\n')
+        os.makedirs(f'{EXER_OUT}/{seq}', exist_ok=True)
+        open(f'{EXER_OUT}/{seq}/index.md','w',encoding='utf-8').write(
+            '\n'.join(fm) + head + '\n\n'.join(lines) + '\n')
+    # 索引页
+    cards = {}
+    for it in items:
+        htitle = nicecase(it['title']) if it['title'] else f"Exercitation {it['roman']}"
+        cards.setdefault(it['series'], []).append(
+            f'<li><a href="{{{{ site.baseurl }}}}/owen/hebrews/exercitations/{it["seq"]}/">'
+            f'<span class="exn">{it["seq"]}</span>'
+            f'<span class="ext"><b>Exercitation {e(it["roman"])}</b>{e(htitle)}</span></a></li>')
+    secs = ''
+    for s in sorted(cards):
+        secs += f'<h2 class="exer-series">{e(SERIES[s])}</h2>\n<ol class="exer-list">\n' + '\n'.join(cards[s]) + '\n</ol>\n'
+    idx = ['---','layout: default','title: 约翰欧文·希伯来书导论','---','']
+    open(f'{EXER_OUT}/index.html','w',encoding='utf-8').write('\n'.join(idx) + EXER_INDEX_TMPL.replace('{{SECTIONS}}', secs))
+    print(f'导论 {len(items)} 篇 → {EXER_OUT}/  (系列: ' + ', '.join(f'{SERIES[s]}={len([x for x in items if x["series"]==s])}' for s in sorted(cards)) + ')')
+
+EXER_INDEX_TMPL = '''
+<div class="container" style="padding-top:80px; max-width:820px;">
+  <div style="text-align:center; margin-bottom:10px;">
+    <div style="margin-bottom:14px; font-size:13px;"><a href="{{ site.baseurl }}/owen/hebrews/" style="color:#1f5a4b;">&larr; 希伯来书</a></div>
+    <h1 style="font-family:Georgia,'Songti SC',serif; color:#1f4a3f; font-size:28px; letter-spacing:.03em;">导论 · Exercitations</h1>
+    <div style="color:#1f5a4b; font-size:14px; letter-spacing:.10em; margin-top:6px;">约翰·欧文《希伯来书注释》Vol 1–2</div>
+    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">英文版（中文翻译进行中）</div>
+  </div>
+  {{SECTIONS}}
+</div>
+<style>
+.exer-series{font-family:Georgia,'Songti SC',serif;color:#1f4a3f;font-size:18px;
+  margin:34px 0 14px;padding-bottom:8px;border-bottom:1px solid #cfe0d6}
+.exer-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.exer-list a{display:flex;align-items:baseline;gap:12px;padding:11px 14px;border:1px solid #e2ebe5;
+  border-radius:8px;background:#fbfaf6;text-decoration:none;color:#2a2a26;transition:all .15s}
+.exer-list a:hover{background:#1f5a4b;border-color:#1f5a4b}
+.exer-list a:hover .exn,.exer-list a:hover .ext,.exer-list a:hover b{color:#fff}
+.exn{flex:0 0 auto;width:26px;text-align:right;font-family:Georgia,serif;color:#7aa896;font-size:14px}
+.ext{font-size:14px;line-height:1.5;color:#3a3a34}
+.ext b{display:block;color:#1f5a4b;font-size:12.5px;font-weight:bold;letter-spacing:.02em;margin-bottom:1px}
+</style>
+'''
+
 if __name__ == '__main__':
-    if '--emit' in sys.argv:
+    if '--exer' in sys.argv:
+        emit_exercitations()
+    elif '--emit' in sys.argv:
         emit_verse_collapsed()
     else:
         do_map()
