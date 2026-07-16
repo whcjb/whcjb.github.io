@@ -52,17 +52,20 @@ def translate_page(page_path, resume, publish):
     lines = body.split('\n')
 
     # 收集可译单元: (line_idx, kind, inner)
-    # 收集可译单元。英文页已 linkify: 段可能带 id(<p id="sec-N">), 总纲是
-    # <nav class="owen-outline">…<a …><b>N.</b> 文字</a>…</nav>。均提取内文翻译后按结构套回。
-    NAV_ITEM = re.compile(r'(<a class="owen-outline-item" href="#sec-\d+"><b>\d+\.</b> )(.*?)(</a>)', re.S)
+    # 收集可译单元。英文页已 linkify: 段可能带 id(<p id="sec-N">), 总纲是折叠 details
+    # 内含 <a …><b>N.</b> 文字</a>。⚠️ 总纲必须**整段带上下文翻译**再按编号拆回——
+    # 拆成单条孤立翻译会丢上下文(如 power/efficacy 都塌成"效力"), 是严重质量事故。
+    from owen_outline import _split_outline
+    NAV_ITEM = re.compile(r'(<a class="owen-outline-item" href="#sec-(\d+)"><b>\d+\.</b> )(.*?)(</a>)', re.S)
     units = []          # (line_idx, kind, text, meta)
     for i, l in enumerate(lines):
         s = l.strip()
         if s.startswith('# '):
             units.append((i, 'h1', s[2:], None))
         elif 'class="owen-outline"' in s and 'owen-outline-item' in s:
-            for k, m in enumerate(NAV_ITEM.finditer(s)):
-                units.append((i, f'nav', m.group(2), k))   # 每个纲目条目
+            its = NAV_ITEM.findall(s)             # [(prefix, num, text, suffix)]
+            full_en = ' '.join(f'{n}. {t}' for (_p, n, t, _s) in its)   # 重建完整总纲带编号
+            units.append((i, 'outline', full_en, None))
         else:
             mh = re.match(r'^<h2>(.*)</h2>$', s, re.S)
             mp = re.match(r'^(<p(?:\s+id="[^"]*")?>)(.*)(</p>)$', s, re.S)
@@ -74,7 +77,6 @@ def translate_page(page_path, resume, publish):
 
     texts = [u[2] for u in units]
     zh_list = tf.cached_translate(texts, resume)
-    zmap = {}
     for (i, kind, _, meta), zh in zip(units, zh_list):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
         if kind == 'h1':
@@ -83,15 +85,12 @@ def translate_page(page_path, resume, publish):
             lines[i] = f'<h2>{zh}</h2>'
         elif kind == 'p':
             lines[i] = f'{meta}{zh}</p>'
-        elif kind == 'nav':
-            zmap.setdefault(i, {})[meta] = zh
-    # 重建总纲 nav 行: 逐条替换链接文字, 保留 href/编号
-    for i, itemmap in zmap.items():
-        cnt = [0]
-        def _rep(m):
-            k = cnt[0]; cnt[0] += 1
-            return m.group(1) + itemmap.get(k, m.group(2)) + m.group(3)
-        lines[i] = NAV_ITEM.sub(_rep, lines[i])
+        elif kind == 'outline':
+            zh_items = dict(_split_outline(zh) or [])   # {编号: 中文条目}
+            def _rep(m):
+                n = int(m.group(2))
+                return m.group(1) + zh_items.get(n, m.group(3)) + m.group(4)
+            lines[i] = NAV_ITEM.sub(_rep, lines[i])
 
     zh_body = '\n'.join(lines)
 
@@ -142,6 +141,19 @@ def translate_page(page_path, resume, publish):
             src.write_text(en_txt, encoding='utf-8')
             print(f'✓ 英文页回填 zh_url → {page_path}', flush=True)
 
+def load_glossary():
+    """受控术语表 → 注入 system prompt 的对照行(优先和合本, 禁撞词)。"""
+    import json
+    g = json.load(open(ROOT / 'scripts/owen_glossary.json', encoding='utf-8'))
+    lines = []
+    for cat, terms in g.items():
+        if cat.startswith('_'):
+            continue
+        for en, zh in terms.items():
+            lines.append(f'  {en} → {zh}')
+    return ('\n\n【受控术语表·必须严格遵守(优先和合本圣经用词; 不同英文词必须译成不同中文, '
+            '严禁把 power/authority/efficacy 等不同词译成同一中文)】\n' + '\n'.join(lines))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--page', required=True, help='已发布英文页相对路径')
@@ -149,7 +161,7 @@ def main():
     ap.add_argument('--publish', action='store_true')
     args = ap.parse_args()
 
-    tf.SYSTEM = SYSTEM
+    tf.SYSTEM = SYSTEM + load_glossary()
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
     translate_page(args.page, args.resume, args.publish)
