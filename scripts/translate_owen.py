@@ -69,6 +69,31 @@ def review_one(en, draft, resume):
     f.write_text(out, encoding='utf-8')
     return out
 
+_PUNCT_SKIP = set(' \t"\'“”‘’')
+def normalize_punct(t):
+    """中文标点全角化(，；：（）), 保护章节号冒号(43:24)与拉丁/希腊/英文句内标点;
+    「」→ 直双引号。sec-7 风格。"""
+    def cjk(c): return bool(c) and '一' <= c <= '鿿'
+    t = t.replace('「', '"').replace('」', '"')
+    out = []
+    for i, c in enumerate(t):
+        p = t[i-1] if i > 0 else ''
+        n = t[i+1] if i+1 < len(t) else ''
+        if c == ',' and (cjk(p) or cjk(n)): out.append('，'); continue
+        if c == ';' and (cjk(p) or cjk(n)): out.append('；'); continue
+        if c == ':' and (cjk(p) or cjk(n)) and not (p.isdigit() and n.isdigit()):
+            out.append('：'); continue
+        out.append(c)
+    t = ''.join(out)
+    def paren(m):
+        j = m.start() - 1
+        while j >= 0 and t[j] in _PUNCT_SKIP: j -= 1
+        before = t[j] if j >= 0 else ''
+        if re.search(r'[一-鿿]', m.group(1)) or (before and ord(before) > 0x00FF):
+            return '（' + m.group(1) + '）'
+        return m.group(0)
+    return re.sub(r'\(([^()]*)\)', paren, t)
+
 def split_page(text):
     """-> (fm_block, body_lines)  fm_block 含首尾 ---"""
     m = re.match(r'^(---\n.*?\n---\n)(.*)$', text, re.S)
@@ -134,7 +159,7 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
                 return m.group(1) + zh_items.get(n, m.group(3)) + m.group(4)
             lines[i] = NAV_ITEM.sub(_rep, lines[i])
 
-    zh_body = '\n'.join(lines)
+    zh_body = normalize_punct('\n'.join(lines))   # 标点全角化(sec-7 风格), 自动
 
     # 英文页 front matter 取值
     def fmval(key):
