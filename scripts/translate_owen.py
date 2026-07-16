@@ -60,7 +60,7 @@ def translate_page(page_path, resume, publish):
         s = l.strip()
         if s.startswith('# '):
             units.append((i, 'h1', s[2:], None))
-        elif s.startswith('<nav class="owen-outline"'):
+        elif 'class="owen-outline"' in s and 'owen-outline-item' in s:
             for k, m in enumerate(NAV_ITEM.finditer(s)):
                 units.append((i, f'nav', m.group(2), k))   # 每个纲目条目
         else:

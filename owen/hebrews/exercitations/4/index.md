@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 4 · The language wherein the Epistle to the Hebrews wa"
-date: 2026-07-16 09:11
+date: 2026-07-16 09:42
 prev_url: "/owen/hebrews/exercitations/3/"
 prev_label: "导论 3"
 next_url: "/owen/hebrews/exercitations/5/"
@@ -13,7 +13,7 @@ next_label: "导论 5"
 
 # The language wherein the Epistle to the Hebrews was originally written
 
-<nav class="owen-outline" markdown="0"><div class="owen-outline-hd">本篇纲目 · Argument</div><a class="owen-outline-item" href="#sec-1"><b>1.</b> Of the language wherein this Epistle was originally written—Supposed to be the Hebrew</a><a class="owen-outline-item" href="#sec-2"><b>2.</b> Grounds of that supposition disproved</a><a class="owen-outline-item" href="#sec-3"><b>3.</b> Not translated by Clemens</a><a class="owen-outline-item" href="#sec-4"><b>4.</b> Written in Greek—Arguments for the proof thereof</a><a class="owen-outline-item" href="#sec-5"><b>5.</b> Of citations out of the LXX</a></nav>
+<details class="owen-outline" markdown="0"><summary class="owen-outline-hd">本篇纲目 · Argument</summary><div class="owen-outline-body"><a class="owen-outline-item" href="#sec-1"><b>1.</b> Of the language wherein this Epistle was originally written—Supposed to be the Hebrew</a><a class="owen-outline-item" href="#sec-2"><b>2.</b> Grounds of that supposition disproved</a><a class="owen-outline-item" href="#sec-3"><b>3.</b> Not translated by Clemens</a><a class="owen-outline-item" href="#sec-4"><b>4.</b> Written in Greek—Arguments for the proof thereof</a><a class="owen-outline-item" href="#sec-5"><b>5.</b> Of citations out of the LXX</a></div></details>
 
 <p id="sec-1">1. BECAUSE this Epistle was written to the Hebrews, most of the ancients granted that it was written in Hebrew. Clemens Alexandrinus was the first who asserted it; after whom, Origen gave it countenance; from whom Eusebius received it; and from him Jerome: which is the most ordinary progression of old reports. The main reason which induced them to embrace this persuasion, was a desire to free the Epistle from an exception against its being written by Paul, taken from the dissimilitude of the style used in it unto that of his other epistles. This being once admitted, though causelessly, they could think of no better answer, than that this supposed difference of style arose from the translation of this Epistle, which by the apostle himself was first written in Hebrew. Clemens Romanus is the person generally fixed on as the author of this translation; though some do faintly intimate that Luke the evangelist might possibly be the man that did it. But this objection from the diversity of style, which alone begat this persuasion, hath been already removed out of the way, so that it cannot be allowed to be a foundation unto any other supposition.</p>
 

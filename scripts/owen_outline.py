@@ -55,7 +55,7 @@ def linkify(body_lines):
             links = ''.join(
                 f'<a class="owen-outline-item" href="#sec-{n}"><b>{n}.</b> {t}</a>'
                 for n, t in items)
-            out[oi] = ('<nav class="owen-outline" markdown="0">'
-                       '<div class="owen-outline-hd">本篇纲目 · Argument</div>'
-                       + links + '</nav>')
+            out[oi] = ('<details class="owen-outline" markdown="0">'
+                       '<summary class="owen-outline-hd">本篇纲目 · Argument</summary>'
+                       '<div class="owen-outline-body">' + links + '</div></details>')
     return out

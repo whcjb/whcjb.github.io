@@ -65,11 +65,17 @@ layout: default
 /* 导论 eyebrow */
 .owen-content .owen-exer-eyebrow{color:#7a8f85;font-size:12.5px;letter-spacing:.06em;
   text-transform:uppercase;text-align:center;margin:0 0 6px}
-/* 内容总纲 → 锚点导航 */
+/* 内容总纲 → 默认折叠的锚点导航下拉 */
 .owen-content .owen-outline{display:block;border:1px solid #dfe6e0;border-left:3px solid #1f5a4b;
-  border-radius:8px;background:#fbfaf6;padding:14px 16px 6px;margin:0 0 26px}
+  border-radius:8px;background:#fbfaf6;padding:0;margin:0 0 26px}
 .owen-content .owen-outline-hd{font-size:12px;font-weight:bold;letter-spacing:.12em;
-  text-transform:uppercase;color:#7a8f85;margin-bottom:10px}
+  text-transform:uppercase;color:#7a8f85;cursor:pointer;list-style:none;
+  padding:13px 16px;display:flex;align-items:center;gap:8px}
+.owen-content .owen-outline-hd::-webkit-details-marker{display:none}
+.owen-content .owen-outline-hd::before{content:"▸";color:#1f5a4b;font-size:11px}
+.owen-content .owen-outline[open] .owen-outline-hd::before{content:"▾"}
+.owen-content .owen-outline[open] .owen-outline-hd{border-bottom:1px solid #eaf0ec}
+.owen-content .owen-outline-body{padding:6px 16px 6px}
 .owen-content .owen-outline-item{display:block;color:#33443e;text-decoration:none;
   font-size:14.5px;line-height:1.6;padding:3px 0 3px 4px;border-bottom:1px dotted #e2ebe5}
 .owen-content .owen-outline-item:last-child{border-bottom:none}

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 30 · The necessity of the priesthood of Christ on the s"
-date: 2026-07-16 09:11
+date: 2026-07-16 09:42
 prev_url: "/owen/hebrews/exercitations/29/"
 prev_label: "导论 29"
 next_url: "/owen/hebrews/exercitations/31/"
@@ -13,7 +13,7 @@ next_label: "导论 31"
 
 # The necessity of the priesthood of Christ on the supposition of sin and grace
 
-<nav class="owen-outline" markdown="0"><div class="owen-outline-hd">本篇纲目 · Argument</div><a class="owen-outline-item" href="#sec-1"><b>1.</b> The vindictive justice of God confirmed by other arguments</a><a class="owen-outline-item" href="#sec-2"><b>2.</b> The common suffrage of mankind herein</a><a class="owen-outline-item" href="#sec-3"><b>3.</b> Expressed in sacrifices</a><a class="owen-outline-item" href="#sec-4"><b>4.</b> The anger of God, wherein it consists</a><a class="owen-outline-item" href="#sec-5"><b>5.</b> Arguments proving it necessary that sin should be punished</a><a class="owen-outline-item" href="#sec-6"><b>6.</b> Sum of the reasons for the necessity of the priesthood of Christ</a><a class="owen-outline-item" href="#sec-7"><b>7.</b> No necessity nor use of his death on any other supposition</a><a class="owen-outline-item" href="#sec-8"><b>8.</b> Conclusion</a></nav>
+<details class="owen-outline" markdown="0"><summary class="owen-outline-hd">本篇纲目 · Argument</summary><div class="owen-outline-body"><a class="owen-outline-item" href="#sec-1"><b>1.</b> The vindictive justice of God confirmed by other arguments</a><a class="owen-outline-item" href="#sec-2"><b>2.</b> The common suffrage of mankind herein</a><a class="owen-outline-item" href="#sec-3"><b>3.</b> Expressed in sacrifices</a><a class="owen-outline-item" href="#sec-4"><b>4.</b> The anger of God, wherein it consists</a><a class="owen-outline-item" href="#sec-5"><b>5.</b> Arguments proving it necessary that sin should be punished</a><a class="owen-outline-item" href="#sec-6"><b>6.</b> Sum of the reasons for the necessity of the priesthood of Christ</a><a class="owen-outline-item" href="#sec-7"><b>7.</b> No necessity nor use of his death on any other supposition</a><a class="owen-outline-item" href="#sec-8"><b>8.</b> Conclusion</a></div></details>
 
 <p id="sec-1">1. That which is proposed unto confirmation in these Exercitation is, that the justice or righteousness from whence it is that God punisheth sin, and which he exerciseth in so doing, is an essential property of his nature. There yet remain some other argument whereby the truth hereof is confirmed, which I shall only briefly represent, that we be not too long detained on this particular head of our design. Besides, I have both urged and vindicated these arguments already in another way.</p>
 
