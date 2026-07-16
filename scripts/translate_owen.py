@@ -51,10 +51,12 @@ def translate_page(page_path, resume, publish):
     fm, body = split_page(text)
     lines = body.split('\n')
 
-    # 收集可译单元: (line_idx, kind, inner)
-    # 收集可译单元。英文页已 linkify: 段可能带 id(<p id="sec-N">), 总纲是折叠 details
-    # 内含 <a …><b>N.</b> 文字</a>。⚠️ 总纲必须**整段带上下文翻译**再按编号拆回——
-    # 拆成单条孤立翻译会丢上下文(如 power/efficacy 都塌成"效力"), 是严重质量事故。
+    # 收集可译单元。英文页已 linkify: 正文段带 id(<p id="sec-N">), 总纲(折叠 details)
+    # 内含 <a …><b>N.</b> 文字</a>。
+    # ⚠️ 纲要**整份一起翻译**(40 条互为上下文, 是一份连贯清单)再按编号拆回。实测:
+    #    · 拆成单条孤立翻译 → 丢上下文塌成同义词(power/efficacy 都成"效力");
+    #    · 拿整段正文当上下文翻短标题 → 模型照段落改写, 严重幻觉(Circumstances→"祭司职分…")。
+    #    整份纲要一起翻是唯一零幻觉且能区分近义词的做法。
     from owen_outline import _split_outline
     NAV_ITEM = re.compile(r'(<a class="owen-outline-item" href="#sec-(\d+)"><b>\d+\.</b> )(.*?)(</a>)', re.S)
     units = []          # (line_idx, kind, text, meta)
@@ -63,12 +65,11 @@ def translate_page(page_path, resume, publish):
         if s.startswith('# '):
             units.append((i, 'h1', s[2:], None))
         elif 'class="owen-outline"' in s and 'owen-outline-item' in s:
-            its = NAV_ITEM.findall(s)             # [(prefix, num, text, suffix)]
-            full_en = ' '.join(f'{n}. {t}' for (_p, n, t, _s) in its)   # 重建完整总纲带编号
+            full_en = ' '.join(f'{n}. {t}' for (_p, n, t, _s) in NAV_ITEM.findall(s))
             units.append((i, 'outline', full_en, None))
         else:
             mh = re.match(r'^<h2>(.*)</h2>$', s, re.S)
-            mp = re.match(r'^(<p(?:\s+id="[^"]*")?>)(.*)(</p>)$', s, re.S)
+            mp = re.match(r'^(<p[^>]*>)(.*)(</p>)$', s, re.S)
             if mh:
                 units.append((i, 'h2', mh.group(1), None))
             elif mp:
@@ -79,14 +80,11 @@ def translate_page(page_path, resume, publish):
     zh_list = tf.cached_translate(texts, resume)
     for (i, kind, _, meta), zh in zip(units, zh_list):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
-        if kind == 'h1':
-            lines[i] = f'# {zh}'
-        elif kind == 'h2':
-            lines[i] = f'<h2>{zh}</h2>'
-        elif kind == 'p':
-            lines[i] = f'{meta}{zh}</p>'
+        if kind == 'h1':   lines[i] = f'# {zh}'
+        elif kind == 'h2': lines[i] = f'<h2>{zh}</h2>'
+        elif kind == 'p':  lines[i] = f'{meta}{zh}</p>'
         elif kind == 'outline':
-            zh_items = dict(_split_outline(zh) or [])   # {编号: 中文条目}
+            zh_items = dict(_split_outline(zh) or [])
             def _rep(m):
                 n = int(m.group(2))
                 return m.group(1) + zh_items.get(n, m.group(3)) + m.group(4)
@@ -161,7 +159,7 @@ def main():
     ap.add_argument('--publish', action='store_true')
     args = ap.parse_args()
 
-    tf.SYSTEM = SYSTEM + load_glossary()
+    tf.SYSTEM = SYSTEM          # 停用受控术语表(太死板), 靠上下文翻译
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
     translate_page(args.page, args.resume, args.publish)
