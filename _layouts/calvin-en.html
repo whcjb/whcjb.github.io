@@ -18,7 +18,7 @@ layout: default
       <div class="cmp-drawer" id="cmpDrawer">
         <div class="cmp-card">
           <div class="cmp-card-title">对照其他注释</div>
-          <!-- 选项列表：现只有马太亨利，后续加约翰欧文等，照此追加 data-source 即可 -->
+          <!-- 选项列表：追加注释源在此加 .cmp-opt[data-source]，JS 的 SRC 表加对应分支 -->
           <button type="button" class="cmp-opt" data-source="mhenry">
             <svg class="cmp-ic" width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
               <rect x="2" y="3.5" width="7" height="13" rx="1.6" fill="#800000"></rect>
@@ -26,6 +26,15 @@ layout: default
             </svg>
             <span>对比马太亨利注释</span>
           </button>
+          {% unless page.book_id contains '-en' %}
+          <button type="button" class="cmp-opt" data-source="calvin-en">
+            <svg class="cmp-ic" width="18" height="18" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M3 4h6a2 2 0 0 1 2 2v10a2 2 0 0 0-2-2H3z" fill="#800000"></path>
+              <path d="M17 4h-6a2 2 0 0 0-2 2v10a2 2 0 0 1 2-2h6z" fill="#800000" opacity=".55"></path>
+            </svg>
+            <span>对比英文版注释</span>
+          </button>
+          {% endunless %}
         </div>
       </div>
 
@@ -58,7 +67,7 @@ layout: default
         <div class="cmp-toggle" id="cmpToggle">
           <div class="cmp-tg-group">
             <button type="button" class="cmp-tg cmp-tg-active" data-target="calvin">加尔文</button>
-            <button type="button" class="cmp-tg" data-target="henry">马太亨利</button>
+            <button type="button" class="cmp-tg" data-target="henry" id="cmpTgHenry">马太亨利</button>
           </div>
           <button type="button" class="cmp-tg-close" id="cmpToggleClose">关闭 &times;</button>
         </div>
@@ -68,11 +77,11 @@ layout: default
         <aside class="cmp-henry" id="cmpHenry" aria-hidden="true">
           <div class="cmp-henry-inner">
             <div class="cmp-henry-head">
-              <span class="cmp-henry-lbl">马太亨利注释</span>
+              <span class="cmp-henry-lbl" id="cmpLbl">马太亨利注释</span>
               <button type="button" class="cmp-close" id="cmpClose">关闭对比 &times;</button>
             </div>
-            <iframe class="cmp-henry-frame" id="cmpFrame" title="马太亨利注释"></iframe>
-            <div class="cmp-henry-msg" id="cmpMsg" hidden>本章暂无马太亨利注释。</div>
+            <iframe class="cmp-henry-frame" id="cmpFrame" title="对照注释"></iframe>
+            <div class="cmp-henry-msg" id="cmpMsg" hidden>本章暂无对照注释。</div>
           </div>
         </aside>
       </div>
@@ -949,11 +958,22 @@ function closeVerseNav() {
       henry=document.getElementById('cmpHenry'),
       frame=document.getElementById('cmpFrame'),
       msg=document.getElementById('cmpMsg'),
+      lbl=document.getElementById('cmpLbl'),
+      tgHenry=document.getElementById('cmpTgHenry'),
       closeBtn=document.getElementById('cmpClose'),
-      origColClass=col.className, loaded=false;
+      origColClass=col.className;
 
-  // 马太亨利章节 URL：把当前 /calvin/<书>/<章>/ 换成 /mhenry/...
-  var henryUrl=location.pathname.replace('/calvin/','/mhenry/');
+  // 对照源表：mhenry / 加尔文英文版。URL 由当前中文页路径推导。
+  var BOOK='{{ page.book_id }}';
+  var SRC={
+    'mhenry':{
+      url: location.pathname.replace('/calvin/','/mhenry/'),
+      label:'马太亨利注释', tg:'马太亨利', msg:'本章暂无马太亨利注释。'},
+    'calvin-en':{
+      url: location.pathname.replace('/calvin/'+BOOK+'/','/calvin/'+BOOK+'-en/'),
+      label:'加尔文注释（英文版）', tg:'英文版', msg:'本章暂无英文版注释。'}
+  };
+  var loadedUrl=null;
 
   // 卡片定位到热区「下边线」：左边/宽度对齐热区，顶边贴热区底边，从这条线滑出
   function placeDrawer(){
@@ -977,7 +997,7 @@ function closeVerseNav() {
   drawer.querySelectorAll('.cmp-opt').forEach(function(opt){
     opt.addEventListener('click',function(e){e.stopPropagation();
       var src=opt.getAttribute('data-source');
-      if(src==='mhenry') openCompare();
+      if(SRC[src]) openCompare(src);
       closeDrawer();
     });
   });
@@ -986,13 +1006,16 @@ function closeVerseNav() {
   // 并按内容自动撑高 iframe —— 不内部滚动，让加尔文/马太亨利整页一起滚动（无独立窗口容器）
   frame.addEventListener('load',function(){
     try{
-      var d=frame.contentDocument;
-      if(!d||!d.querySelector('#mhenry-col')){frame.style.display='none';msg.hidden=false;return;}
+      var d=frame.contentDocument; if(!d){return;}
+      var isHenry=d.querySelector('#mhenry-col'),
+          isCalvin=d.querySelector('.calvin-en-content');
+      if(!isHenry && !isCalvin){frame.style.display='none';msg.hidden=false;return;}
       frame.style.display='';msg.hidden=true;
-      // iframe 固定高度、内部滚动（右栏独立于左栏加尔文滚动）
       var s=d.createElement('style');
+      // 隐藏被嵌页 chrome：导航/页脚/TTS，加尔文英文版另隐对比热区与章导航（避免嵌套对比）
       s.textContent=
-        '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer{display:none!important}'+
+        '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer,'+
+        '#cmpHotspot,.cmp-hotspot,.cmp-drawer,.cmp-nav,#verse-nav{display:none!important}'+
         '.container{padding-top:14px!important}';
       d.head.appendChild(s);
     }catch(err){/* 跨域兜底：保持 iframe 原样 */}
@@ -1024,8 +1047,13 @@ function closeVerseNav() {
     });
   });
 
-  function openCompare(){
-    if(!loaded){frame.src=henryUrl;loaded=true;}
+  function openCompare(source){
+    var cfg=SRC[source]||SRC['mhenry'];
+    if(lbl) lbl.textContent=cfg.label;
+    if(msg) msg.textContent=cfg.msg;
+    if(tgHenry) tgHenry.textContent=cfg.tg;
+    frame.title=cfg.label;
+    if(loadedUrl!==cfg.url){frame.style.display='';msg.hidden=true;frame.src=cfg.url;loadedUrl=cfg.url;}
     stage.classList.add('split');            // 全屏固定覆盖层，铺满屏宽
     setPane('calvin');                       // 手机端默认先显示加尔文
     henry.setAttribute('aria-hidden','false');
