@@ -59,6 +59,8 @@ def review_one(en, draft, resume):
         "④ 连接词/虚词意义漂移(如 Particularly 误作「尤有进者」应作「尤其」);\n"
         "⑤ 术语: 经文、书卷、人名一律和合本; 不同英文词须用不同中文(power 权能/energy 感力/"
         "efficacy 功效); authority 位格治权→权柄、圣经权威性→权威;\n"
+        "⑥ canonical 作表语/单用(如 called canonical)→「正典」或「正典书卷」, 勿作"
+        "「正典的」拖泥带水; 作定语修饰名词才用「正典的」, 但「正典的书卷」宜作「正典书卷」;\n"
         "若初译已准确通顺, 原样返回。\n\n"
         f"【英文原文】\n{en}\n\n【中文初译】\n{draft}")
     out = re.sub(r'<<<[^>]*>>>', '', tf.call_claude(prompt)).strip()
