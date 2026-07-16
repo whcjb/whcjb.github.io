@@ -38,6 +38,34 @@ SYSTEM = (
     "8. 保留段首编号(如 1. 2. 10. 31.)不变"
 )
 
+REVIEW_SYSTEM = ("你是资深改革宗神学译审, 精通清教神学与和合本圣经。"
+                 "你的任务是校对约翰·欧文《希伯来书注释》的中文初译, 使其对得起原著。")
+
+def review_one(en, draft, resume):
+    """二遍审校: 拿英文原文 + 中文初译, 逐条修正, 只输出修正后的中文。"""
+    if not draft.strip() or not re.search(r'[一-鿿]', draft):
+        return draft
+    key = tf.md5key('REVIEW2::' + en + '||' + draft)
+    f = tf.CACHE_DIR / f'{key}.txt'
+    if resume and f.exists() and f.stat().st_size > 1:
+        return f.read_text(encoding='utf-8')
+    prompt = (
+        "校对下面英文原文的中文初译。**只输出修正后的中文译文**, 不加任何说明。"
+        "保持所有 HTML 标签、脚注标记[^N]、以及希腊/希伯来/叙利亚/拉丁原文不变。\n"
+        "重点检查并修正:\n"
+        "① 意义偏差、漏译、擅自增译——须忠实英文;\n"
+        "② 幻觉——中文若出现英文原文中没有的专名或概念, 删除或改正;\n"
+        "③ 口语或现代词(如「力度」「能量」「搞」「到位」)→ 庄重书面的清教神学文体;\n"
+        "④ 连接词/虚词意义漂移(如 Particularly 误作「尤有进者」应作「尤其」);\n"
+        "⑤ 术语: 经文、书卷、人名一律和合本; 不同英文词须用不同中文(power 权能/energy 感力/"
+        "efficacy 功效); authority 位格治权→权柄、圣经权威性→权威;\n"
+        "若初译已准确通顺, 原样返回。\n\n"
+        f"【英文原文】\n{en}\n\n【中文初译】\n{draft}")
+    out = re.sub(r'<<<[^>]*>>>', '', tf.call_claude(prompt)).strip()
+    tf.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    f.write_text(out, encoding='utf-8')
+    return out
+
 def split_page(text):
     """-> (fm_block, body_lines)  fm_block 含首尾 ---"""
     m = re.match(r'^(---\n.*?\n---\n)(.*)$', text, re.S)
@@ -45,7 +73,7 @@ def split_page(text):
         return m.group(1), m.group(2)
     return '', text
 
-def translate_page(page_path, resume, publish):
+def translate_page(page_path, resume, publish, review=False, limit=0):
     src = ROOT / page_path
     text = src.read_text(encoding='utf-8')
     fm, body = split_page(text)
@@ -78,6 +106,19 @@ def translate_page(page_path, resume, publish):
 
     texts = [u[2] for u in units]
     zh_list = tf.cached_translate(texts, resume)
+    if review:                       # 二遍审校: 逐段比对英文, 修漂移/幻觉/口语/术语
+        base = tf.SYSTEM
+        tf.SYSTEM = REVIEW_SYSTEM
+        out = []; pcount = 0
+        for (i, kind, en, meta), zh in zip(units, zh_list):
+            if kind == 'p':
+                pcount += 1
+            do = kind in ('h1', 'h2', 'outline') or (kind == 'p' and (limit <= 0 or pcount <= limit))
+            out.append(review_one(en, zh, resume) if do else zh)
+        n_rev = sum(1 for u in units if u[1] == 'p' and (limit <= 0 or True)) if limit <= 0 else min(limit, sum(1 for u in units if u[1]=='p'))
+        print(f'  二遍审校: 前 {n_rev if limit>0 else "全部"} 段正文 + 标题/纲要', flush=True)
+        zh_list = out
+        tf.SYSTEM = base
     for (i, kind, _, meta), zh in zip(units, zh_list):
         zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
         if kind == 'h1':   lines[i] = f'# {zh}'
@@ -172,12 +213,14 @@ def main():
     ap.add_argument('--page', required=True, help='已发布英文页相对路径')
     ap.add_argument('--resume', action='store_true')
     ap.add_argument('--publish', action='store_true')
+    ap.add_argument('--review', action='store_true', help='二遍审校(逐段比对英文修正)')
+    ap.add_argument('--limit', type=int, default=0, help='仅审校前 N 段正文(0=全部)')
     args = ap.parse_args()
 
     tf.SYSTEM = SYSTEM + PLAN_GUIDE   # 方案指南(文风+近义防撞+双义+表外规则), 非死表
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
-    translate_page(args.page, args.resume, args.publish)
+    translate_page(args.page, args.resume, args.publish, args.review, args.limit)
 
 if __name__ == '__main__':
     main()
