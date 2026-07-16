@@ -106,7 +106,11 @@ python3 scripts/owen_build.py --map    # 核对: Heb 1-13 各归一卷
 
 ---
 
-## 5. 翻译(中英并存 —— 见 [[project_owen_bilingual_structure]])
+## 5. 翻译(中英并存 —— 完整方案见 [04-translate-zh.md](04-translate-zh.md))
+
+⚠️ **翻译前必读 [04-translate-zh.md](04-translate-zh.md)**(据改革宗译界翻译欧文的既定范式:
+赵中辉《英汉神学名词辞典》+ 和合本为术语权威; 文白相济庄重文风忌口语; 正文按段翻/纲要整份翻;
+authority 双义; 二遍质检门)。
 
 ⚠️ **中英双版并存,翻译绝不覆盖英文**(仿加尔文 calvin/BOOK 中 + BOOK-en 英)。用 `scripts/translate_owen.py`(复用 translate_filibi 的 CLI/md5 缓存):
 

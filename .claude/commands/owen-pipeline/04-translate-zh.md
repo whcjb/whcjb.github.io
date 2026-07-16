@@ -1,180 +1,128 @@
-# Step 4: 中文翻译执行
+# Owen 中译方案 —— 约翰·欧文《希伯来书注释》翻译规范
 
-英文版发布完成后，可启动中文翻译。
-
----
-
-## ⚠️ 最高优先级：中文翻译产物必须强制保留
-
-中文翻译耗时极高（单段 30–60s × 100–300 段 = 1–3 小时/章），且 Claude CLI 有会话额度限制。**绝不可以删除或无备份覆盖以下文件**：
-
-- `calvin_raw/BOOK/zh_chapters/*.md`（中文 raw 翻译产物）
-- `calvin_raw/BOOK/zh_cache/*.txt`（按 md5 缓存的逐段翻译）
-- `calvin_raw/BOOK/calvin_BOOK_zh.md`（单文件模式产物）
-
-**操作规则**：
-1. 翻译完成后**立刻 `chmod 444`** 让 raw 文件只读
-2. 重跑翻译前先 `chmod 644` 解锁，跑完后再 chmod 444
-3. cache 目录绝不能删，**重跑全量翻译成本极高**
-
-详见 [refs/anti-patterns.md](refs/anti-patterns.md) §M。
+本文是欧文注释**中文翻译的完整方案与执行规范**。据华人改革宗译界翻译欧文的既定范式制定
+(而非临时拍脑袋)。翻译前必读;每次翻译按 §5 质检门自检。
+(注:本 Owen 管线不走 translate_filibi, 走 `scripts/translate_owen.py`; 原加尔文 04 已被本文替换。)
 
 ---
 
-## 起手 checklist
+## 0. 调研依据(为什么这样定)
 
-- [ ] 英文版 raw 已稳定（grep [audit-gates.md](refs/audit-gates.md) Gate 1 全 0）
-- [ ] `translate_filibi.py` BOOKS dict 中已有该书的 entry
-- [ ] 当前 Claude CLI 会话有额度（如撞 limit 会等待重置）
-- [ ] 计划是单章还是全书？全书需多次重启 + cache 复用
-
----
-
-## 1. 主入口
-
-```bash
-# 全量翻译（耗时较长）
-python3 -u scripts/translate_filibi.py --book BOOK
-
-# 断点续翻（已缓存段直接读，不重新调 Claude）
-python3 -u scripts/translate_filibi.py --book BOOK --chapter N --resume
-
-# 只统计各类型行数，不翻译
-python3 scripts/translate_filibi.py --book BOOK --chapter N --dry-run
-
-# 多章模式：harmony1 / harmony2 等用 --chapter N 指定章号
-```
+- **译名标准**:**约翰·欧文**(John Owen),清教徒、改革宗神学家(各中译本、维基一致)。
+- **术语权威**:**赵中辉《英汉神学名词辞典》**(基督教改革宗翻译社/改革宗出版社, 2001,
+  2400+ 词条)—— 华人改革宗神学术语的行业标准; **改革宗出版社正是欧文中译本(《圣灵论》
+  《治死罪》《与神相交》等)的出版方**。术语以此辞典 + **和合本圣经**为准。
+- **文风标杆**:实读改革宗出版社欧文译本 —— **文白相济、庄重典雅**, 句式可长(呼应欧文
+  拉丁化长句), 术语学院化、严肃。**忌口语/现代词**(如"力度""能量"这类一律杜绝)。
 
 ---
 
-## 2. 后台运行 + 5% 进度监控（推荐做法）
+## 1. 质量底线(对得起大师作品)
 
-```bash
-python3 -u scripts/translate_filibi.py --book BOOK --chapter N --resume \
-  > /tmp/chN_translate.log 2>&1 &
-```
-
-然后用 Monitor 工具挂 5% 进度报告：
-
-```bash
-tail -F /tmp/chN_translate.log | python3 -u -c "
-import sys, re
-total = 0; uncached = 0; last = 0
-for line in sys.stdin:
-    m = re.search(r'共\s+(\d+)\s+段需要翻译', line)
-    if m: total = int(m.group(1))
-    m = re.search(r'翻译第\s+(\d+)[–-]\d+\s+段（共\s+(\d+)\s+段未缓存', line)
-    if m and total:
-        n = int(m.group(1))
-        uncached = int(m.group(2))
-        cached = total - uncached
-        overall = cached + n
-        pct = overall * 100 // total
-        bucket = (pct // 5) * 5
-        if bucket > last and bucket > 0:
-            last = bucket
-            print(f'[{bucket}%] chN 进度 {overall}/{total} 段', flush=True)
-    if 'retry' in line.lower() or 'session limit' in line.lower():
-        print('⚠ ' + line.rstrip(), flush=True)
-    if '✓ 写入' in line:
-        print(line.rstrip(), flush=True)
-        sys.exit(0)
-"
-```
+1. **忠实**:不增不删义; 长句可切分但不走味, 不臆测。
+2. **庄重书面**:文白相济的清教文风, 非口语。
+3. **术语精确且互不撞词**:不同英文词 → 不同中文(power 权能 ≠ energy 感力 ≠ efficacy
+   功效 ≠ authority)。
+4. **原文语种保留**:希腊/希伯来/叙利亚/拉丁原样保留 + 圆括号中文译义; 整句拉丁引文
+   保留 + 括注大意。
+5. **零幻觉**:中文不得出现英文原文没有的专名/概念。
 
 ---
 
-## 3. Claude CLI 会话额度处理
+## 2. 译名与术语处理
 
-```
-You've hit your session limit · resets 2pm (Asia/Shanghai)
-```
+### 2.1 经文 / 专名 —— 一律和合本
+- 圣经引用、书卷名、人名(麦基洗德/亚伦/摩西/以赛亚…)一律**和合本**。
+- 教父/学者按辞典通行译名(Chrysostom 屈梭多模、Jerome 耶柔米、Baronius 巴罗尼乌斯、
+  Josephus 约瑟夫…)。
 
-- 脚本内置 3 次重试（5/15/30s 指数退避）——会话超限重试无效，会失败退出
-- **不要轻易 kill**：cache 已保存进度，下次 `--resume` 会从 cache 继续
-- **会话重置后**：`pkill -f translate_filibi`（如有残留）+ 重新启动 `--resume`
-
-定时启动（如 19:02 重置）参考 scripts pattern（不在本 skill 范围）。
-
----
-
-## 4. 翻译 system prompt 关键规则
-
-translate_filibi.py BOOKS dict 中每个 book 都定义了 system prompt。必含：
-
-- 「只输出译文，不加任何说明，不重复原文」
-- 「保留所有脚注引用标记不变：`[^17]` `[^123]` 等」
-- 「保留所有 Markdown 标记不变：`**bold**` `*italic*`」
-- 「保留所有 HTML 标签不变：`<p style="...">` `<strong>` `<div>` 等」
-- 「拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义」
-- 「圣经书卷/人名用和合本标准译名（一长表）」
-- 「章节引用格式：路加福音 1:1，马太福音 2:23（书卷名 章:节）」
-- 「加尔文术语保留学术性：righteousness→义，justification→称义，...」
-
-新书加 entry 时复制现有 entry 改本书相关词汇。
+### 2.2 神学术语 —— 辞典 + 和合本为准, 作「指南」非「枷锁」
+- **不做机械 find-replace 词表**(实测太死板, 且会与上下文冲突)。
+- 把「本书关键术语参照」(附录, 据辞典 + 和合本)作为**参考**给模型:
+  「遵此约定, 但按上下文取舍; 不同英文词必须不同中文」。
+- **authority 双义**(用户拍板):位格被授予的治权/权利(基督/君王, ἐξουσία)→**权柄**
+  (和合本用词); 圣经/正典/本书信本身的权威性(抽象属性)→**权威**(神学惯用,
+  「圣经权柄」走味)。
 
 ---
 
-## 5. cache 机制
+## 3. 翻译单元与上下文规则(据实测, 杜绝幻觉/撞词)
 
-- key：每个英文段落的 md5 hash
-- value：Claude 翻译结果
-- 路径：`calvin_raw/BOOK/zh_cache/<md5>.txt`
+| 内容类型 | 做法 | 为什么 |
+|---|---|---|
+| **正文段落** | 按**段**翻(段自带上下文) | 段落上下文足够, 质量本就 OK |
+| **纲要/目录**(词条列表) | **整份一起翻**, 再按编号拆回 | 40 条互为上下文, 唯一零幻觉且能区分近义词 |
+| **短标题/纲要单条** | ❌ 不单独翻; ❌ 不拿整段正文当上下文翻 | 单条孤立→塌成同义词(power/efficacy 都成"效力"); 拿整段正文→模型照段落改写, 严重幻觉(Circumstances→"祭司职分"、κανών→"麦基洗德") |
+| **关键短标题** | 机器初译 + **人工按原文语境核** | 如 Energy: 结合 sec-31「secret energy… subjecting the minds of men」定为**感力**, 非"力度/能量" |
 
-**英文 raw 改动后**：MD5 变 → 该段新译。所以**重新提取英文版会 invalidate 缓存**——非必要不要重抽。
-
----
-
-## 6. 完成后操作
-
-```bash
-# 1. 验证输出
-ls -l calvin_raw/BOOK/zh_chapters/N.md
-# 期望：size > 10KB，含完整翻译
-
-# 2. chmod 444 强保留（关键！）
-chmod 444 calvin_raw/BOOK/zh_chapters/N.md
-
-# 3. 抽查若干段
-head -50 calvin_raw/BOOK/zh_chapters/N.md
-tail -30 calvin_raw/BOOK/zh_chapters/N.md
-```
+`scripts/translate_owen.py` 已实现:正文按段, 纲要整份翻再拆回。
 
 ---
 
-## 7. 已知翻译 bug 及修复
+## 4. 机制与工具
 
-Claude 翻译偶尔会产生：
-
-### 7.1 Front-matter 键名被翻译
-
-- `chapter: N` → `章：N` 或 `章节：N`
-- `prev_section: N` → `上一节：N`
-- `next_label: "X"` → `下一节标签: "X"`
-
-由 publish-zh transform 修正（见 [05-publish-zh.md](05-publish-zh.md) §1）。
-
-### 7.2 `<<<END1>>>` 分段标记
-
-Claude BATCH=1 偶尔吐出。由 publish-zh transform 剥除。
-
-### 7.3 `****` abut-bold
-
-Claude 偶尔把 `**A** **B**` 之间空格吃掉变 `**A****B**`。由 transform 中 `.replace('****', '')` 收尾。
-
-### 7.4 `<th>` 卷名未翻译
-
-Claude 经常保留 `<th>Matthew X:Y</th>` 原样。由 transform 改为 `<th>马太福音 X:Y</th>`。
+- 入口:`python3 -u scripts/translate_owen.py --page <英文页> --resume --publish`
+- **中英并存**:中文出 `<英文页>/zh/index.md`, **绝不覆盖英文**; 英文页回填 `zh_url` →
+  owen-chapter 布局显示切换 pill。见 [[project_owen_bilingual_structure]]。
+- **只翻正文**:front matter/eyebrow 保留; `#`/`<h2>`/`<p id="sec-N">`/纲要 `<nav>` 按结构解析。
+- **产物必存**:缓存 `owen_raw/hebrews/zh_cache/`(md5, **入 git**)、中文 raw
+  `owen_raw/hebrews/zh_exercitations/N.md`(chmod 444)。重跑全命中缓存秒回。
+- **清洗**:剥 `<<<…>>>` 分批标记 artifact。
+- **模型**:质量优先, 用最强模型。
 
 ---
 
-## 8. 必读引用
+## 5. 二遍质检门(发布前逐条过)
 
-- [refs/anti-patterns.md](refs/anti-patterns.md) §C/§D/§B/§M
-- [refs/audit-gates.md](refs/audit-gates.md) Gate 2
+**第一遍**:译。**第二遍**:逐页比对英文, 拦以下 5 类, 命中回炉重译:
+
+1. □ **幻觉** —— 中文出现英文原文没有的专名/概念(如凭空冒出麦基洗德/林后/祭司职分)
+2. □ **撞词** —— 不同英文词译成同一中文(power/energy/efficacy/authority 须各异)
+3. □ **口语/现代词** —— "力度""能量""搞""到位"等破坏清教文风的词
+4. □ **和合本一致** —— 经文、书卷、人名、神学术语是否依和合本/辞典
+5. □ **中英混排/漏译** —— 中文紧贴英文词、整英文段、`<<<>>>` 残留
+
+自动辅助(脚本):中文紧贴 `[a-z]{3,}`、整英文段、`<<<`、纲目条目数=锚点数; 关键短标题人工核。
 
 ---
 
-## 9. 进入下一步
+## 6. 执行流程
 
-raw zh 完成 → [05-publish-zh.md](05-publish-zh.md)
+1. **样板**:先按本方案重译**导论1 全文**(正文 + 纲要), 用户验收, 定下文风与术语基调。
+2. **批量**:认可后逐篇/逐章翻译(导论 40 + 卷首 8 + 正文 13 章), 每篇过 §5 质检门。
+3. 中文页上线后, 对比功能可加「对比欧文中译」源。
+
+---
+
+## 附录:本书关键术语参照(据赵中辉辞典 + 和合本; 指南, 非强制替换)
+
+### 希伯来书核心(和合本已核对, 卷 58)
+priesthood 祭司的职任(来7:12) · high priest 大祭司 · priest 祭司 · mediator 中保(来8:6) ·
+covenant 约 / 更美之约 · sacrifice 祭物(名)/献祭(动) · offering 供物 · blood 血 ·
+atonement/expiation 赎罪 · tabernacle 帐幕 · sanctuary 圣所 · holiest 至圣所 ·
+purge/cleanse 洗净 · conscience 良心 · rest 安息 · sabbath 安息日 · promise 应许 · oath 誓 ·
+glory 荣耀 · grace 恩典/施恩 · faith 信心 · worship/serve(神)侍奉 · angel 天使 ·
+firstborn 长子 · everlasting/eternal 永远的 · make perfect 得以完全 · salvation 救恩
+
+### 近义须区分(重点防撞词)
+power 权能(来1:3「权能的命令」) · energy 感力(内在折服人心之力) · efficacy 功效 ·
+authority 权柄(位格治权)/权威(圣经的权威) · virtue 德能
+
+### 一般神学
+Scripture 圣经 · canonical 正典的 · canon 正典 · gospel 福音 · apostle 使徒 · prophet 先知 ·
+church 教会 · righteousness 义 · justification 称义 · sanctification 成圣 · redemption 救赎 ·
+repentance 悔改 · the Son 圣子 · Holy Ghost/Spirit 圣灵 · the Father 圣父 · Messiah 弥赛亚 ·
+Old/New Testament 旧约/新约 · the Law 律法 · dissertation 专论 · exercitation 导论
+
+### 专名
+Melchisedec 麦基洗德 · Aaron 亚伦 · Moses 摩西 · Abraham 亚伯拉罕 · Isaiah 以赛亚 ·
+Daniel 但以理 · Paul 保罗 · Chrysostom 屈梭多模 · Jerome 耶柔米 · Augustine 奥古斯丁 ·
+Calvin 加尔文 · Baronius 巴罗尼乌斯 · Josephus 约瑟夫 · Tiberius 提庇留 · Augustus 奥古斯都
+
+### Owen 技术/考据词(和合本无, 辞典/通行)
+notation 词义 · signification 含义 · the Syriac 叙利亚译本 · the Vulgate 武加大译本 ·
+LXX/Septuagint 七十士译本 · the ancients 古代作家 · exposition 注释 · penman 执笔者 ·
+tradition 传统 · just exception 合理的质疑
+
+> 参照来源: 赵中辉《英汉神学名词辞典》(改革宗出版社) + 和合本圣经(assets/cuv.json 卷58)。
+> 附录是**指南**: 遵此约定, 但最终按上下文与原文语境定夺; 关键词人工核。
