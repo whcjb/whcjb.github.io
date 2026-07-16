@@ -89,12 +89,48 @@ python3 scripts/owen_build.py --map    # 核对: Heb 1-13 各归一卷
 
 ## 4. 建站板块 owen/
 
-- `owen/<book>/N.md`(章)+ 导论页;`owen/<book>/index.html`;`_data/owen_books.yml`;`_layouts/owen-*.html`。
+- 逐章:`owen/hebrews/N/index.md`(`owen_build.py --emit` = `emit_verse_collapsed`,整章一页,页内每经节组包成**默认折叠 `<details>`**,summary=Ver.N+经文预览;组内正文忠实原样)。
+- 导论/卷首:`owen_build.py --exer`(`emit_exercitations`+`emit_prefaces`)。导论 40 篇→`owen/hebrews/exercitations/N/`,卷首 8 篇→`owen/hebrews/prefaces/N/`,索引 `exercitations/index.html`(三段:卷首/释经导论 34/安息日专论 6)。
+- `_data/owen_books.yml`;`_layouts/owen-*.html`(owen-chapter / owen-book)。
 - 主题色**墨绿**(paper 暖白 `#fbfaf6`, accent 松墨绿 `#1f5a4b`),与 calvin/mhenry 区分。
-- 发布/审计沿用 refs/audit-gates(脚注/`markdown="1"`/etc 等适配后按需)。
+- **落地页顺序**:卷首·导论在前(全书之首),逐章注释在后。
+
+### 4.1 ⚠️ 标题必须取自 TOC,禁用正文全大写标题(血泪)
+正文里每篇的全大写标题**末词 `HEBREWS` 会被 `RE_RUNHEAD` 当页眉剥掉** → 标题截断(如「Of the penman of the Epistle to the」缺 Hebrews)。**必须用 `toc_title_map(vol)` 从卷首 TOC 取完整标题**(`(vol,roman)` 全 40 篇唯一:vol1=I–XXIV、vol2=XXV–XXXIV+I–VI 无冲突),缺项才回退 `nicecase(正文)`。TOC 切分要截掉尾随 `SUMMARY/PART/An advertisement/NOTE` 等。
+
+### 4.2 ⚠️ `--exer` 清旧禁用 `glob('**/*')`(会删中文译文!)
+`emit_exercitations`/`emit_prefaces` 清旧**只删英文 `*/index.md` 与 `index.html`**,**绝不能** `glob(f'{OUT}/**/*', recursive=True)`——那会把已翻译的 `N/zh/index.md` 中文页一并删除。重建英文前后必须确认 `N/zh/` 仍在。
+
+### 4.3 导论总纲 → 锚点导航
+`owen_outline.linkify(body_lines)`:正文段首递增 `N.` 加 `id="sec-N"`;开头「内容总纲」段拆成 `<a href="#sec-N">N. 文字</a>`。en(owen_build)/zh(translate_owen)**共用同套 sec-N 锚点**(语言无关)。owen_build 与 translate_owen 都调。
 
 ---
 
-## 5. 翻译(等命令)
+## 5. 翻译(中英并存 —— 见 [[project_owen_bilingual_structure]])
 
-英文版结构立好后,用 CLI(`translate_filibi` 系)翻中文,**等用户命令**再启动。参考 pdf-pipeline:04-translate-zh 的提示词与守护化机制([[reference_scheduled_translate]])。
+⚠️ **中英双版并存,翻译绝不覆盖英文**(仿加尔文 calvin/BOOK 中 + BOOK-en 英)。用 `scripts/translate_owen.py`(复用 translate_filibi 的 CLI/md5 缓存):
+
+```bash
+python3 -u scripts/translate_owen.py --page owen/hebrews/exercitations/N/index.md --resume --publish
+```
+
+- **中文出到 `<英文页>/zh/index.md`**(不覆盖英文);英文页自动回填 `zh_url` → owen-chapter 布局显示「中文版 ↔」/「English ↔」切换 pill。
+- **只翻正文**:front matter、eyebrow 保留;`#`/`<h2>`/`<p>` 提取内文翻译后按原标签套回。
+- ⚠️ **解析必须认带属性标签**(血泪):英文页已 linkify → 段是 `<p id="sec-N">`、总纲是 `<nav class="owen-outline">…<a>…</a></nav>`。旧正则只认无属性 `<p>` → 40 节段+nav **漏翻留英文**。translate_owen 已按结构解析(带 id 段提取内文套回 id;nav 逐条翻链接文字,保留 href)。
+- ⚠️ **清洗**:剥 `<<<END>>>`/`<<<N>>>` 分批标记 artifact;发布后自检**中英混排**(中文紧贴 `[a-z]{3,}` = 漏译/泄漏)与整英文段。
+- **缓存/产物必存**:`owen_raw/hebrews/zh_cache/`(md5,**入 git**)、`owen_raw/hebrews/zh_exercitations/N.md`(chmod 444)。重跑全命中缓存秒回。
+
+系统提示词见 translate_owen `SYSTEM`(清教文风、希/希伯来/拉丁保留+括注、和合本译名、保留段首编号)。
+
+---
+
+## 6. 禁止重复的错误(checklist,发布前逐条过)
+
+1. □ 标题取 TOC(§4.1),不是正文全大写(会缺 `Hebrews`)
+2. □ `--exer` 清旧没用 `glob('**/*')`,`N/zh/` 中文页仍在(§4.2)
+3. □ 翻译输出到 `zh/` 子路径,**没覆盖英文**;英文页有 `zh_url`(§5)
+4. □ translate_owen 认 `<p id=…>`/`<nav>`,无漏翻留英文(§5)
+5. □ 无 `<<<…>>>` artifact、无中英混排残留(§5)
+6. □ 缓存已入 git、raw chmod 444(§5)
+7. □ 忠实平铺,未擅自做层级缩进(§2 层级不可自动还原)
+8. □ mhenry/calvin 既有未提交改动不误提交,`date` 不改已有文件
