@@ -75,7 +75,10 @@ layout: default
 .owen-content .owen-outline-hd::before{content:"▸";color:#1f5a4b;font-size:11px}
 .owen-content .owen-outline[open] .owen-outline-hd::before{content:"▾"}
 .owen-content .owen-outline[open] .owen-outline-hd{border-bottom:1px solid #eaf0ec}
-.owen-content .owen-outline-body{padding:6px 16px 6px}
+.owen-content .owen-outline-body{padding:6px 16px 6px;max-height:340px;overflow-y:auto;
+  -webkit-overflow-scrolling:touch}
+.owen-content .owen-outline-body::-webkit-scrollbar{width:8px}
+.owen-content .owen-outline-body::-webkit-scrollbar-thumb{background:#cfe0d6;border-radius:4px}
 .owen-content .owen-outline-item{display:block;color:#33443e;text-decoration:none;
   font-size:14.5px;line-height:1.6;padding:3px 0 3px 4px;border-bottom:1px dotted #e2ebe5}
 .owen-content .owen-outline-item:last-child{border-bottom:none}
