@@ -21,6 +21,14 @@ ROOT = Path(__file__).resolve().parent.parent
 
 BATCH = 1  # 每批翻译段数（每次调用 claude CLI）
 
+# 所有加尔文书卷共用的追加规则(在 main 里 append 到各书 system 之后)
+SCRIPTURE_RULE = (
+    "\n【经文一律用和合本】被注释或引用的圣经经文句——尤其每段开头所要解释的那节经文、"
+    "经文引用块(scripture-ref / 经文表格)、以及正文中整句引用的经文——一律照抄"
+    "简体和合本原文，不得自行翻译或改写；唯有加尔文本人的解释性文字才翻译。"
+    "书卷名、人名、章节引用亦用和合本(如 腓立比书 1:1)。"
+)
+
 # ── 各书卷配置 ────────────────────────────────────────────────────────────────
 # 每项要么是 (src_path, cache_dir, out_path, system) 单文件配置，
 # 要么是按章号生成路径的回调（dict 含 src_fn / cache_dir / out_fn / system）。
@@ -1287,7 +1295,7 @@ def main():
 
     cfg = BOOKS[args.book]
     CACHE_DIR = cfg['cache']
-    SYSTEM    = cfg['system']
+    SYSTEM    = cfg['system'] + SCRIPTURE_RULE
 
     if cfg['mode'] == 'single':
         SRC = cfg['src']
