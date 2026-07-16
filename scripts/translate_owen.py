@@ -139,6 +139,21 @@ def translate_page(page_path, resume, publish):
             src.write_text(en_txt, encoding='utf-8')
             print(f'✓ 英文页回填 zh_url → {page_path}', flush=True)
 
+PLAN_GUIDE = (
+    "\n\n【文体与术语指南——遵此约定, 但按上下文取舍, 非机械替换】\n"
+    "1. 文风: 文白相济、庄重典雅的清教神学文体; 长句可照译, 不硬拆到走味; "
+    "严禁口语/现代词(如「力度」「能量」「搞」「到位」)与网络语。\n"
+    "2. 不同英文词必须译成不同中文(严禁撞词)。关键近义区分: "
+    "power 权能 / energy 感力 / efficacy 功效 / virtue 德能。\n"
+    "3. authority 双义: 位格被授予的治权(基督、君王, ἐξουσία)→权柄; "
+    "圣经/正典/本书信本身的权威性(抽象属性)→权威。\n"
+    "4. 神学术语依和合本 + 改革宗惯用: righteousness 义, justification 称义, "
+    "covenant 约, priesthood 祭司的职任, mediator 中保, canonical 正典的, "
+    "sanctification 成圣, repentance 悔改; 经文、书卷、人名一律和合本。\n"
+    "5. 表外术语: 先按经文(和合本对应处)→标准神学译法→上下文取义; "
+    "关键而拿不准者, 中文后括注英文, 如「德能(virtue)」。"
+)
+
 def load_glossary():
     """受控术语表 → 注入 system prompt 的对照行(优先和合本, 禁撞词)。"""
     import json
@@ -159,7 +174,7 @@ def main():
     ap.add_argument('--publish', action='store_true')
     args = ap.parse_args()
 
-    tf.SYSTEM = SYSTEM          # 停用受控术语表(太死板), 靠上下文翻译
+    tf.SYSTEM = SYSTEM + PLAN_GUIDE   # 方案指南(文风+近义防撞+双义+表外规则), 非死表
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
     translate_page(args.page, args.resume, args.publish)
