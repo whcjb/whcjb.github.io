@@ -111,7 +111,11 @@ def normalize_punct(t):
         p = t[i-1] if i > 0 else ''
         n = t[i+1] if i+1 < len(t) else ''
         if c == ',' and (cjk(p) or cjk(n)): out.append('，'); continue
-        if c == ';' and (cjk(p) or cjk(n)): out.append('；'); continue
+        if c == ';' and (cjk(p) or cjk(n)):
+            # 保护 HTML 实体结尾的分号(&quot; &#x27; &amp; 等), 勿全角化
+            if re.search(r'&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+)$', t[max(0, i-9):i]):
+                out.append(c); continue
+            out.append('；'); continue
         if c == ':' and (cjk(p) or cjk(n)) and not (p.isdigit() and n.isdigit()):
             out.append('：'); continue
         out.append(c)
