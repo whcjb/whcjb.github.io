@@ -609,7 +609,7 @@ def toc_title_map(vol):
     m = {}
     for i in range(1, len(parts)-1, 2):
         rom = parts[i]
-        title = re.split(r'\s{2,}|\bPART\s|\bCHAPTER\s|\bEXERCITATION|\bAn advertisement|\bNOTE\b',
+        title = re.split(r'\s{2,}|\bPART\s|\bCHAPTER\s|\bEXERCITATION|\bAn advertisement|\bNOTE\b|\bSUMMARY\b',
                          parts[i+1].strip())[0].strip().rstrip(' .,;')
         if title and (title[0].isupper() or title[0] == '[') and len(title) < 130:
             m.setdefault(rom, title)

@@ -2,14 +2,14 @@
 layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
-title: "导论 40 · The Practical Observance Of The Lord's Day"
-date: 2026-07-16 09:11
+title: "导论 40 · The practical observance of the Lord's Day"
+date: 2026-07-16 09:16
 prev_url: "/owen/hebrews/exercitations/39/"
 prev_label: "导论 39"
 ---
 <div class="owen-exer-eyebrow">安息日与主日专论（Day of Sacred Rest） · Exercitation VI</div>
 
-# The Practical Observance Of The Lord&#x27;s Day
+# The practical observance of the Lord&#x27;s Day
 
 <nav class="owen-outline" markdown="0"><div class="owen-outline-hd">本篇纲目 · Argument</div><a class="owen-outline-item" href="#sec-1"><b>1.</b> Practice the end of instruction and learning</a><a class="owen-outline-item" href="#sec-2"><b>2.</b> Practical observation of the Sabbath handled by many</a><a class="owen-outline-item" href="#sec-3"><b>3.</b> Complaints concerning too much rigour and strictness in directions for the observation of the Sabbath</a><a class="owen-outline-item" href="#sec-4"><b>4.</b> Extremes to be avoided in directions of sacred duties—Extreme of the Pharisees</a><a class="owen-outline-item" href="#sec-5"><b>5.</b> The worse extreme of others, in giving liberty to sin</a><a class="owen-outline-item" href="#sec-6"><b>6.</b> Mistakes in directions about the observation of the Lord&#x27;s day</a><a class="owen-outline-item" href="#sec-7"><b>7.</b> General directions unto that purpose proposed</a><a class="owen-outline-item" href="#sec-8"><b>8.</b> Of the beginning and ending of the Sabbath—The first rule about time</a><a class="owen-outline-item" href="#sec-9"><b>9.</b> The frame of spirit required under the gospel in the observation of the Lord&#x27;s day</a><a class="owen-outline-item" href="#sec-10"><b>10.</b> Rules and principles for its due observation</a><a class="owen-outline-item" href="#sec-11"><b>11.</b> Duties required thereunto of two sorts</a><a class="owen-outline-item" href="#sec-12"><b>12.</b> Preparatory duties, their necessity and nature</a><a class="owen-outline-item" href="#sec-13"><b>13.</b> Particular account of them</a><a class="owen-outline-item" href="#sec-14"><b>14.</b> Meditation</a><a class="owen-outline-item" href="#sec-15"><b>15.</b> Supplication</a><a class="owen-outline-item" href="#sec-16"><b>16.</b> Instruction</a><a class="owen-outline-item" href="#sec-17"><b>17.</b> Duties of the day itself</a><a class="owen-outline-item" href="#sec-18"><b>18.</b> Of public duties</a><a class="owen-outline-item" href="#sec-19"><b>19.</b> What refreshments and labour consistent with them</a><a class="owen-outline-item" href="#sec-20"><b>20.</b> Of private duties</a></nav>
 
