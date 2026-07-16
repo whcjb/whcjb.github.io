@@ -1,0 +1,26 @@
+The situation is now clear. I should not fabricate a translation — and none is actually needed from this session. Here's what's actually happening:
+
+## 状态报告：genesis 定时翻译正常运行中
+
+我收到的是 `translate_filibi.py` 用来调 `claude` CLI 的**译者系统提示**，末尾的 `next_section: 20` 是串行任务的状态标记（下一个待翻章节 = 第 20 章）。真正的翻译是后台逐段调用完成的，**这个交互会话本身不是翻译 worker，也没有拿到任何英文源段**——所以按「禁止编造」规则，我不会凭空产出一段"第 20 章译文"。
+
+实际进度（后台进程仍存活）：
+
+| 章 | 状态 | 说明 |
+|---|---|---|
+| 16、17 | ✅ 已发布提交 | git log 已见 |
+| **18** | 🔄 翻译中 | 第 37/53 段（22:02 档，PID 89417）；有几次 `Connection closed`/超时重试，均已自动续上 |
+| **19** | 🔄 翻译中 | 第 4/59 段（04:02 档，PID 90891）；一次 120s 超时重试 |
+| **20** | ⏳ 排队 | `translate_serial.sh genesis 19 20` 会在 ch19 翻完后**自动**开始，无需我介入 |
+
+两条 `translate_serial.sh`（16 17 18 / 19 20）并行跑不同章，互不冲突；每章翻完脚本会自动 `publish + commit + push`。
+
+**结论：管线健康，无待发布的完工章节，无需我做任何操作。** 第 20 章会在 19 完成后自动接续。
+
+如果你的本意是要我**手动、优先地翻译第 20 章**（而不是等串行队列），我可以直接跑：
+
+```bash
+python3 -u scripts/translate_filibi.py --book genesis --chapter 20 --resume
+```
+
+但目前 ch18/ch19 正在占用 API，手动再起 ch20 会加剧超时。要我现在就抢跑 ch20，还是让它按队列自动接续？
