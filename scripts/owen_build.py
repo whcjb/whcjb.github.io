@@ -599,9 +599,30 @@ def emit_prefaces():
             '\n'.join(fm) + head + '\n\n'.join(lines) + '\n')
     return pieces
 
+def toc_title_map(vol):
+    """从卷首 TOC 取完整正确标题(正文全大写标题会漏尾词 'HEBREWS' 被当页眉剥掉)。
+    -> {roman: title}; (vol,roman) 全 40 篇唯一(vol1=I-XXIV, vol2=XXV-XXXIV+I-VI 无冲突)。"""
+    paras = load(vol)
+    first = next(i for i,(k,t) in enumerate(paras) if k == 'EXER')
+    blob = ' '.join(t for k, t in paras[:first])
+    parts = re.split(r'\b([IVXLC]{1,6})\.\s*[—–-]{1,2}\s*', blob)
+    m = {}
+    for i in range(1, len(parts)-1, 2):
+        rom = parts[i]
+        title = re.split(r'\s{2,}|\bPART\s|\bCHAPTER\s|\bEXERCITATION|\bAn advertisement|\bNOTE\b',
+                         parts[i+1].strip())[0].strip().rstrip(' .,;')
+        if title and (title[0].isupper() or title[0] == '[') and len(title) < 130:
+            m.setdefault(rom, title)
+    return m
+
 def exercitations():
-    """-> [{seq, vol, roman, series, title, body:[(k,t)]}] 共 40 篇。
-    标题 = EXER 后连续全大写行(含长标题); series 在 roman 重置到 I 时切换。"""
+    """-> [{seq, vol, roman, series, title, htitle, body:[(k,t)]}] 共 40 篇。
+    标题 = EXER 后连续全大写行; htitle 优先取 TOC 完整标题, 缺则 nicecase(正文)。
+    series 在 roman 重置到 I 时切换。"""
+    toc = {}
+    for v in [1, 2]:
+        for rom, t in toc_title_map(v).items():
+            toc[(v, rom)] = t
     items = []
     for vol in [1, 2]:
         paras = load(vol)
@@ -620,7 +641,9 @@ def exercitations():
                     break
             title = ' '.join(tparts)
             body = paras[j:end]
-            items.append({'vol': vol, 'roman': roman, 'title': title, 'body': body})
+            htitle = toc.get((vol, roman)) or nicecase(title) or f'Exercitation {roman}'
+            items.append({'vol': vol, 'roman': roman, 'title': title,
+                          'htitle': htitle, 'body': body})
     # 分系列 + 全局序号
     seq = 0; series = 0; prev_n = 0
     for it in items:
@@ -656,7 +679,7 @@ def emit_exercitations():
                 lines.append(f'<p class="owen-ver">{e(t)}</p>')
             else:
                 lines.append(f'<p>{e(t)}</p>')
-        htitle = nicecase(it['title']) if it['title'] else f"Exercitation {it['roman']}"
+        htitle = it['htitle']
         fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
               'book_name: "约翰欧文导论"',f'title: "导论 {seq} · {htitle[:50]}"',f'date: {date}']
         if seq > 1:
@@ -676,7 +699,7 @@ def emit_exercitations():
     # 索引页
     cards = {}
     for it in items:
-        htitle = nicecase(it['title']) if it['title'] else f"Exercitation {it['roman']}"
+        htitle = it['htitle']
         cards.setdefault(it['series'], []).append(
             f'<li><a href="{{{{ site.baseurl }}}}/owen/hebrews/exercitations/{it["seq"]}/">'
             f'<span class="exn">{it["seq"]}</span>'
