@@ -1,0 +1,26 @@
+# 导论1 后部审校改动总结
+
+- [28. Eloquence and propriety of speec…] 口语现代词: 撩动→鼓动; 术语: 天地的伟大所有者→天地的大主(创14:19和合本); 标点: 尊大→宏大避歧义
+- [Besides, these things belong not ind…] 口语现代词: 瘸腿→跛足、扶持→救助; 意义偏差: 所行的→所产生的(effects)
+- [—&quot;Pleni moderantem frena theatr…] 增译（擅加拉丁文译注）
+- [And therefore the apostle tells us,…] 增译(删去希腊文后擅加的括号中译)/意义偏差(circumvented环绕欺蒙→诓骗蒙蔽)
+- [29. That the proper excellency of sp…] 增译:删希腊句括号重复译文;漏译:补脚注[^2];意义偏差:皆当承认→皆会承认(will)
+- [(1.) It becometh the majesty, author…] 术语(圣保罗→保罗);意义偏差(press 压迫→催逼);漏译(excellency or sublimity 补卓越)
+- [(2.) It everywhere becometh the subj…] 增译(删Latin/Greek重复中译括注)、术语(奥利金→俄利根、圣保罗→保罗、删英文名括注)
+- [(3.) The style of the holy penmen is…] 增译/幻觉:「holy penmen」误增「圣灵默示的/圣灵」→ 改「圣洁的众执笔者」
+- [31. Besides all these excellencies o…] 术语(energy 能力→感力; power 能力→权能)
+- [Whatever hath been thus spoken conce…] 术语:efficacy 效力→功效、energy 能力→感力
+- [No defect in any of these can be cha…] 增译(删「处处可见」)；术语(圣典→神圣正典/canon)；术语(语调→方言腔调/dialect)；意义偏差(身份→状况/state)
+- [32. Moreover, besides the peculiar e…] 口语现代词(施展其力→施展);增译(神的手笔→本源、属灵知觉→官能、删耶和华说);术语(power 能力→权能);连接词漂移(also 也尤其有分)
+- [33. From this authority they find a…] 术语(efficacy 效力→功效)、增译/意义偏差(obedience 真道→顺服)、意义偏差(exerting itself 施展其能力→施展自身)
+- [This efficacy and power is in the wh…] 术语(power 能力→权能)、术语(energy 效能→感力)
+- [A learned man said well, &quot;Non m…] 术语(conviction 责备→知罪、power 能力/大能→权能)、增译(巴西尔多余专名删除)
+- [And thus, I hope, we have made it ev…] 增译(删「(确据)」重复注解)/意义偏差(convicted 查验→证实;secured 确证→保障)/术语(exceptions 质疑→异议)
+- [35. The first consideration of this…] 增译（Προφητεία 后删去多余「（预言）」注）/术语（own understanding 悟性→聪明,和合本箴3:5）/撞词（人名括注「（English，中文）」重复,已清为犹大·马加比/安提阿古/拿乃/亚里斯多布罗/老底嘉会议/耶柔米/大贵格利）
+- [36. Circumstances of the general arg…] 漏译(补「第13节」)/增译幻觉(删臆造音译「犹滴」,还原「一犹太妇人」为 יְהוּדִית 之同位语)/意义偏差(情节→情形;毒害之辈异端→异端的毒裔)
+- [37. The most manifest eviction of an…] 术语(glorious in holiness→至圣至荣、authority of God→权柄、effectual→有效)、意义偏差(obnoxious to exception→招致此类异议、partially→偏私)、口语现代词(拉长→延长)
+- [38. The style and method of a writin…] 意义偏差(prejudice 质疑→成见)、术语(eloquentia 修辞→雄辩)
+- [39. Want of catholic tradition in al…] 增译:删去英文夹注「(catholic tradition)」
+- [40. Thus clear stands the canonical…] 口语现代词(赢得了完全的征服→完全征服了,搭配自然化)
+- [IT will be seen that Dr Owen, in his…] 连接词漂移(positively 断然)、撞词(positively/expressly 均作明确→断然/明确)、意义偏差(exploded 已被驳倒)
+- [Independently, however, of the quest…] 术语(经文和合本:他→神,希1:7)

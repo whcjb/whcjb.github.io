@@ -40,6 +40,8 @@ SYSTEM = (
 
 FRESH_REVIEW = False   # True 时二遍审校忽略旧审校缓存, 强制重审
 REVIEW_CACHED_ONLY = False   # True 时审校只用已有缓存, 未命中用初译(不新调模型)
+NOTE_ISSUES = False    # True 时边审校边总结, 审校器自报改动类别写入 NOTES_PATH
+NOTES_PATH = ROOT / 'owen_raw/hebrews/review_notes.md'
 REVIEW_SYSTEM = ("你是资深改革宗神学译审, 精通清教神学与和合本圣经。"
                  "你的任务是校对约翰·欧文《希伯来书注释》的中文初译, 使其对得起原著。")
 
@@ -65,9 +67,23 @@ def review_one(en, draft, resume):
         "efficacy 功效); authority 位格治权→权柄、圣经权威性→权威;\n"
         "⑥ canonical 作表语/单用(如 called canonical)→「正典」或「正典书卷」, 勿作"
         "「正典的」拖泥带水; 作定语修饰名词才用「正典的」, 但「正典的书卷」宜作「正典书卷」;\n"
-        "若初译已准确通顺, 原样返回。\n\n"
-        f"【英文原文】\n{en}\n\n【中文初译】\n{draft}")
-    out = re.sub(r'<<<[^>]*>>>', '', tf.call_claude(prompt)).strip()
+        "若初译已准确通顺, 原样返回。\n")
+    if NOTE_ISSUES:
+        prompt += ("先输出修正后的中文译文;然后另起一行输出「‖ISSUES‖」,其后用一行列出你本段所做"
+                   "修改的问题类别(从: 意义偏差/漏译/增译/幻觉/口语现代词/连接词漂移/术语/撞词/"
+                   "canonical表语/标点 中选,可多项,各附三五字例;若未作实质修改写「无」)。\n\n"
+                   f"【英文原文】\n{en}\n\n【中文初译】\n{draft}")
+    else:
+        prompt += f"\n【英文原文】\n{en}\n\n【中文初译】\n{draft}"
+    raw = re.sub(r'<<<[^>]*>>>', '', tf.call_claude(prompt)).strip()
+    if NOTE_ISSUES and '‖ISSUES‖' in raw:
+        out, _, issues = raw.partition('‖ISSUES‖')
+        out = out.strip(); issues = issues.strip()
+        if issues and issues != '无':
+            with open(NOTES_PATH, 'a', encoding='utf-8') as nf:
+                nf.write(f'- [{en[:36].strip()}…] {issues}\n')
+    else:
+        out = raw
     tf.CACHE_DIR.mkdir(parents=True, exist_ok=True)
     f.write_text(out, encoding='utf-8')
     return out
@@ -223,7 +239,17 @@ PLAN_GUIDE = (
     "covenant 约, priesthood 祭司的职任, mediator 中保, canonical 正典的, "
     "sanctification 成圣, repentance 悔改; 经文、书卷、人名一律和合本。\n"
     "5. 表外术语: 先按经文(和合本对应处)→标准神学译法→上下文取义; "
-    "关键而拿不准者, 中文后括注英文, 如「德能(virtue)」。"
+    "关键而拿不准者, 中文后括注英文, 如「德能(virtue)」。\n"
+    "【导论1 审校总结·高频错误, 务必规避】\n"
+    "A. 勿增译: 希腊/拉丁引文只保留原文 + 必要的简短中文括注; 切勿在原文后擅加**重复整句**"
+    "的中译, 删除原文后也不要补一段重复译文。\n"
+    "B. 专名: 保罗(非「圣保罗」)、俄利根(非奥利根/奥利金)、彼得/约翰等一律和合本; "
+    "外文人名首次可括注原文, 勿逐处重复英文括注。\n"
+    "C. 实词精准(防意义偏差): effects→所产生的(非所行的)、will→会/将(非当)、"
+    "press→催逼(非压迫)、circumvent→诓骗蒙蔽(非环绕)、becometh→相称/合宜。\n"
+    "D. 文言书面, 忌口语/现代词: 跛足(非瘸腿)、救助(非扶持)、鼓动(非撩动)、宏大(非尊大)。\n"
+    "E. 勿漏: 保留所有脚注标记[^N]与原文标点; 不漏词句。\n"
+    "F. 勿幻觉: 不擅加原文没有的概念(如 holy penmen 作「圣洁的众执笔者」, 勿加「圣灵默示的」)。"
 )
 
 def load_glossary():
@@ -248,14 +274,16 @@ def main():
     ap.add_argument('--limit', type=int, default=0, help='仅审校前 N 段正文(0=全部)')
     ap.add_argument('--fresh-review', action='store_true', help='强制重审(忽略旧审校缓存)')
     ap.add_argument('--review-cached-only', action='store_true', help='审校只用已有缓存, 未命中用初译')
+    ap.add_argument('--notes', action='store_true', help='边审校边总结改动类别, 写入 review_notes.md')
     args = ap.parse_args()
 
     tf.SYSTEM = SYSTEM + PLAN_GUIDE   # 方案指南(文风+近义防撞+双义+表外规则), 非死表
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
-    global FRESH_REVIEW, REVIEW_CACHED_ONLY
+    global FRESH_REVIEW, REVIEW_CACHED_ONLY, NOTE_ISSUES
     FRESH_REVIEW = args.fresh_review
     REVIEW_CACHED_ONLY = args.review_cached_only
+    NOTE_ISSUES = args.notes
     translate_page(args.page, args.resume, args.publish, args.review, args.limit)
 
 if __name__ == '__main__':
