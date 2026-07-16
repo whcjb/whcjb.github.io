@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 21 · The sanction of the law in promises and threatenin"
-date: 2026-07-16 09:11
+date: 2026-07-16 11:10
 prev_url: "/owen/hebrews/exercitations/20/"
 prev_label: "导论 20"
 next_url: "/owen/hebrews/exercitations/22/"

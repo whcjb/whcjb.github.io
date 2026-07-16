@@ -22,6 +22,9 @@ def _split_outline(text):
     for i, (s, e, n) in enumerate(kept):
         seg_end = kept[i+1][0] if i+1 < len(kept) else len(text)
         item = text[e:seg_end].strip(' 。；;.,、—–-　')
+        # 去掉条目尾部残留的连接词(英文 "; and" / 中文 ";及/;以及/和/与")
+        item = re.sub(r'[;；,，、]?\s*(and|及|以及|和|与|與)\s*$', '', item, flags=re.I)
+        item = item.strip(' 。；;.,、—–-　')
         items.append((n, item))
     return items
 

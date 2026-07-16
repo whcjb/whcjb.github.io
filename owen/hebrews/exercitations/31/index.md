@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 31 · The nature of the priesthood of Christ"
-date: 2026-07-16 09:42
+date: 2026-07-16 11:10
 prev_url: "/owen/hebrews/exercitations/30/"
 prev_label: "导论 30"
 next_url: "/owen/hebrews/exercitations/32/"

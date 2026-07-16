@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 30 · The necessity of the priesthood of Christ on the s"
-date: 2026-07-16 09:42
+date: 2026-07-16 11:10
 prev_url: "/owen/hebrews/exercitations/29/"
 prev_label: "导论 29"
 next_url: "/owen/hebrews/exercitations/31/"

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: "hebrews/exercitations"
 book_name: "约翰欧文导论"
 title: "导论 22 · Of the tabernacle and ark"
-date: 2026-07-16 09:11
+date: 2026-07-16 11:10
 prev_url: "/owen/hebrews/exercitations/21/"
 prev_label: "导论 21"
 next_url: "/owen/hebrews/exercitations/23/"
