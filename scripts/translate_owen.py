@@ -88,6 +88,18 @@ def review_one(en, draft, resume):
     f.write_text(out, encoding='utf-8')
     return out
 
+_APOSTLES = ['保罗','彼得','约翰','雅各','马太','马可','路加','安得烈','腓力','多马',
+             '巴拿巴','提摩太','提多','司提反','西门','犹大']
+_NAME_FIX = {'奥利根': '俄利根', '奥利金': '俄利根', '奥古斯汀': '奥古斯丁',
+             '耶罗米': '耶柔米', '克里索斯托': '屈梭多模'}
+def cleanup_terms(t):
+    """确定性术语清理(免费, 不调模型): 改革宗/和合本不加「圣」于使徒名; 标准译名归一。"""
+    for n in _APOSTLES:
+        t = t.replace('圣' + n, n)
+    for a, b in _NAME_FIX.items():
+        t = t.replace(a, b)
+    return t
+
 _PUNCT_SKIP = set(' \t"\'“”‘’')
 def normalize_punct(t):
     """中文标点全角化(，；：（）), 保护章节号冒号(43:24)与拉丁/希腊/英文句内标点;
@@ -178,7 +190,7 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
                 return m.group(1) + zh_items.get(n, m.group(3)) + m.group(4)
             lines[i] = NAV_ITEM.sub(_rep, lines[i])
 
-    zh_body = normalize_punct('\n'.join(lines))   # 标点全角化(sec-7 风格), 自动
+    zh_body = cleanup_terms(normalize_punct('\n'.join(lines)))   # 标点全角化 + 术语清理, 自动
 
     # 英文页 front matter 取值
     def fmval(key):
@@ -247,7 +259,8 @@ PLAN_GUIDE = (
     "外文人名首次可括注原文, 勿逐处重复英文括注。\n"
     "C. 实词精准(防意义偏差): effects→所产生的(非所行的)、will→会/将(非当)、"
     "press→催逼(非压迫)、circumvent→诓骗蒙蔽(非环绕)、becometh→相称/合宜。\n"
-    "D. 文言书面, 忌口语/现代词: 跛足(非瘸腿)、救助(非扶持)、鼓动(非撩动)、宏大(非尊大)。\n"
+    "D. 忌真正的现代/口语词(如「力度」「能量」「搞」「到位」); 但**不要为求文雅而改动本已"
+    "正确的词**——圣经词汇一律照和合本(如「瘸腿」勿改「跛足」), 常用书面词(撩动、扶持等)保留。\n"
     "E. 勿漏: 保留所有脚注标记[^N]与原文标点; 不漏词句。\n"
     "F. 勿幻觉: 不擅加原文没有的概念(如 holy penmen 作「圣洁的众执笔者」, 勿加「圣灵默示的」)。"
 )
