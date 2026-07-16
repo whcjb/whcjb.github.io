@@ -39,6 +39,7 @@ SYSTEM = (
 )
 
 FRESH_REVIEW = False   # True 时二遍审校忽略旧审校缓存, 强制重审
+REVIEW_CACHED_ONLY = False   # True 时审校只用已有缓存, 未命中用初译(不新调模型)
 REVIEW_SYSTEM = ("你是资深改革宗神学译审, 精通清教神学与和合本圣经。"
                  "你的任务是校对约翰·欧文《希伯来书注释》的中文初译, 使其对得起原著。")
 
@@ -50,6 +51,8 @@ def review_one(en, draft, resume):
     f = tf.CACHE_DIR / f'{key}.txt'
     if resume and not FRESH_REVIEW and f.exists() and f.stat().st_size > 1:
         return f.read_text(encoding='utf-8')
+    if REVIEW_CACHED_ONLY:        # 只用已有审校缓存, 未命中直接用初译(不新调模型)
+        return draft
     prompt = (
         "校对下面英文原文的中文初译。**只输出修正后的中文译文**, 不加任何说明。"
         "保持所有 HTML 标签、脚注标记[^N]、以及希腊/希伯来/叙利亚/拉丁原文不变。\n"
@@ -244,13 +247,15 @@ def main():
     ap.add_argument('--review', action='store_true', help='二遍审校(逐段比对英文修正)')
     ap.add_argument('--limit', type=int, default=0, help='仅审校前 N 段正文(0=全部)')
     ap.add_argument('--fresh-review', action='store_true', help='强制重审(忽略旧审校缓存)')
+    ap.add_argument('--review-cached-only', action='store_true', help='审校只用已有缓存, 未命中用初译')
     args = ap.parse_args()
 
     tf.SYSTEM = SYSTEM + PLAN_GUIDE   # 方案指南(文风+近义防撞+双义+表外规则), 非死表
     tf.CACHE_DIR = ROOT / 'owen_raw/hebrews/zh_cache'
     tf.BATCH = 1
-    global FRESH_REVIEW
+    global FRESH_REVIEW, REVIEW_CACHED_ONLY
     FRESH_REVIEW = args.fresh_review
+    REVIEW_CACHED_ONLY = args.review_cached_only
     translate_page(args.page, args.resume, args.publish, args.review, args.limit)
 
 if __name__ == '__main__':
