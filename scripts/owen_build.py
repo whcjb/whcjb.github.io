@@ -578,9 +578,9 @@ def emit_prefaces():
     date = check_output(['date','+%Y-%m-%d %H:%M']).decode().strip()
     e = _html.escape
     pieces = front_matter_pieces()
-    if os.path.isdir(FM_OUT):
-        for f in glob.glob(f'{FM_OUT}/**/*', recursive=True):
-            if os.path.isfile(f): os.remove(f)
+    # 只删英文卷首页(保留将来可能的 N/zh/ 中文译文)
+    for f in glob.glob(f'{FM_OUT}/*/index.md'):
+        os.remove(f)
     for it in pieces:
         seq = it['seq']
         lines = [f'<p>{e(t)}</p>' for k, t in it['body']]   # 卷首(信件/序言)一律 <p>
@@ -660,13 +660,9 @@ def emit_exercitations():
     e = _html.escape
     prefaces = emit_prefaces()
     items = exercitations()
-    # 清旧
-    if os.path.isdir(EXER_OUT):
-        for f in glob.glob(f'{EXER_OUT}/**/*', recursive=True):
-            if os.path.isfile(f): os.remove(f)
-    for f in glob.glob(f'{EXER_OUT}/*/'):
-        try: os.rmdir(f)
-        except OSError: pass
+    # 清旧英文页(只删英文 index.md 与索引; 绝不碰 N/zh/ 中文译文子目录)
+    for f in glob.glob(f'{EXER_OUT}/*/index.md') + glob.glob(f'{EXER_OUT}/index.html'):
+        os.remove(f)
     for it in items:
         seq = it['seq']
         lines = []
