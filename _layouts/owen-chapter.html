@@ -112,6 +112,9 @@ layout: default
 .owen-content .owen-outline-item:hover{color:#1f5a4b;background:#f2f7f4}
 /* 正文节锚点: 避开固定头 */
 .owen-content [id^="sec-"]{scroll-margin-top:80px}
+/* 纯破折号分隔线 → 雅致花饰 */
+.owen-content .owen-rule{text-align:center;color:#9ab8ab;margin:34px 0;font-size:16px;
+  letter-spacing:.4em;line-height:1;user-select:none}
 /* 段落序号标签(导论N.k): 仿加尔文约翰福音序号字号; 可点跳顶部纲目, 无下划线/无手指 */
 .owen-content .owen-secnum{font-weight:bold;font-size:16px;color:#1f5a4b;
   text-decoration:none !important;cursor:default;margin-right:6px;white-space:nowrap}
@@ -143,6 +146,16 @@ layout: default
 }
 </style>
 <script>
+// 纯破折号段(———) → 雅致花饰分隔符(中英页通用)
+(function(){
+  document.querySelectorAll('.container .owen-content p').forEach(function(p){
+    var t=p.textContent.trim();
+    if(t.length>=3 && /^[—–\-―\s]+$/.test(t)){
+      var d=document.createElement('div'); d.className='owen-rule'; d.textContent='❦';
+      p.replaceWith(d);
+    }
+  });
+})();
 // 段落序号 → 「导论N.k」标签, 点击滚到顶部纲目(无下划线/无手指); 仅导论页
 (function(){
   var m=location.pathname.match(/\/exercitations\/(\d+)\//);
