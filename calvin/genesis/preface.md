@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: genesis
 book_name: "创世记·加尔文注释"
 title: "前言"
-date: 2026-07-17 20:54
+date: 2026-07-18 01:45
 next_section: 1
 next_label: "第一章"
 ---
