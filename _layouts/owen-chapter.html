@@ -54,7 +54,9 @@ layout: default
     <button type="button" class="owen-cmp-close" id="owenCmpClose">关闭对照 &times;</button>
   </div>
   <div class="owen-cmp-cols">
-    <div class="owen-cmp-col owen-cmp-self"><div class="owen-content"></div></div>
+    <div class="owen-cmp-col owen-cmp-self">
+      <iframe class="owen-cmp-frame" id="owenCmpSelfFrame" title="本页"></iframe>
+    </div>
     <div class="owen-cmp-col owen-cmp-other">
       <iframe class="owen-cmp-frame" id="owenCmpFrame" title="对照"></iframe>
     </div>
@@ -135,10 +137,9 @@ layout: default
 .owen-cmp-t-active{background:#1f5a4b;color:#fff}
 .owen-cmp-close{border:none;background:none;color:#1f5a4b;font-size:14px;cursor:pointer}
 .owen-cmp-cols{flex:1 1 auto;display:flex;min-height:0}
-.owen-cmp-col{flex:1 1 50%;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:22px 26px}
+.owen-cmp-col{flex:1 1 50%;min-height:0;padding:0}
 .owen-cmp-self{border-right:1px solid #dfe6e0}
-.owen-cmp-frame{width:100%;height:100%;border:none}
-.owen-cmp-other{padding:0}
+.owen-cmp-frame{width:100%;height:100%;border:none;display:block}
 @media(max-width:820px){
   .owen-cmp-tg{display:inline-flex}
   .owen-cmp-col{flex-basis:100%}
@@ -188,14 +189,15 @@ layout: default
       btn=document.getElementById('owenCmpBtn');
   if(!stage||!btn) return;
   var frame=document.getElementById('owenCmpFrame'),
+      selfFrame=document.getElementById('owenCmpSelfFrame'),
       closeBtn=document.getElementById('owenCmpClose'),
-      selfBox=stage.querySelector('.owen-cmp-self .owen-content'),
-      pageContent=document.querySelector('.container .owen-content'),
       loaded=false;
-  // 左栏 = 当前页正文克隆
-  if(selfBox&&pageContent) selfBox.innerHTML=pageContent.innerHTML;
   function open(){
-    if(!loaded){frame.src=stage.getAttribute('data-other');loaded=true;}
+    if(!loaded){                                   // 左右都用 iframe(独立文档, 各自跳转/弹窗正常)
+      selfFrame.src=location.pathname;
+      frame.src=stage.getAttribute('data-other');
+      loaded=true;
+    }
     stage.classList.add('open','show-self');stage.classList.remove('show-other');
     document.body.style.overflow='hidden';
   }
@@ -212,15 +214,17 @@ layout: default
       stage.querySelectorAll('.owen-cmp-t').forEach(function(b){b.classList.toggle('owen-cmp-t-active',b===t);});
     });
   });
-  // iframe 载入后隐藏对方页的 chrome, 只留正文
-  frame.addEventListener('load',function(){
+  // 两个 iframe 载入后都隐藏页面 chrome(导航/页脚/对照按钮), 只留正文
+  function hideChrome(f){
     try{
-      var d=frame.contentDocument;if(!d)return;
+      var d=f.contentDocument;if(!d)return;
       var s=d.createElement('style');
       s.textContent='.navbar,footer,.owen-chrome{display:none!important}.container{padding-top:14px!important}';
       d.head.appendChild(s);
     }catch(e){}
-  });
+  }
+  frame.addEventListener('load',function(){hideChrome(frame);});
+  selfFrame.addEventListener('load',function(){hideChrome(selfFrame);});
 })();
 </script>
 
