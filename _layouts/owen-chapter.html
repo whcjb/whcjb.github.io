@@ -112,6 +112,10 @@ layout: default
 .owen-content .owen-outline-item:hover{color:#1f5a4b;background:#f2f7f4}
 /* 正文节锚点: 避开固定头 */
 .owen-content [id^="sec-"]{scroll-margin-top:80px}
+/* 段落序号标签(导论N.k): 仿加尔文约翰福音序号字号; 可点跳顶部纲目, 无下划线/无手指 */
+.owen-content .owen-secnum{font-weight:bold;font-size:16px;color:#1f5a4b;
+  text-decoration:none !important;cursor:default;margin-right:6px;white-space:nowrap}
+.owen-content .owen-secnum:hover{text-decoration:none;color:#14382f}
 /* 中英对照分屏 */
 .owen-cmp-btn{cursor:pointer;background:#1f5a4b;color:#fff !important;border:1px solid #1f5a4b}
 .owen-cmp-btn:hover{background:#14382f}
@@ -139,6 +143,30 @@ layout: default
 }
 </style>
 <script>
+// 段落序号 → 「导论N.k」标签, 点击滚到顶部纲目(无下划线/无手指); 仅导论页
+(function(){
+  var m=location.pathname.match(/\/exercitations\/(\d+)\//);
+  if(!m) return;
+  var prefix='导论'+m[1]+'.';
+  var main=document.querySelector('.container .owen-content');
+  if(!main) return;
+  var nav=main.querySelector('.owen-outline');
+  main.querySelectorAll('[id^="sec-"]').forEach(function(p){
+    var n=p.id.replace('sec-','');
+    p.innerHTML=p.innerHTML.replace(/^\s*\d+\.\s*/,'');   // 去正文开头的 "N. "
+    var a=document.createElement('a');                    // 无 href → 默认光标、无下划线
+    a.className='owen-secnum'; a.textContent=prefix+n;
+    a.addEventListener('click',function(){
+      if(nav){
+        if(nav.tagName==='DETAILS') nav.open=true;               // 展开纲目
+        var item=nav.querySelector('a[href="#sec-'+n+'"]');       // 顶部对应那条 verse
+        (item||nav).scrollIntoView({behavior:'smooth',block:'center'});
+      }else{ window.scrollTo({top:0,behavior:'smooth'}); }
+    });
+    p.insertBefore(document.createTextNode(' '),p.firstChild);
+    p.insertBefore(a,p.firstChild);
+  });
+})();
 (function(){
   var stage=document.getElementById('owenCmpStage'),
       btn=document.getElementById('owenCmpBtn');
