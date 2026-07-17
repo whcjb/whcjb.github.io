@@ -59,9 +59,18 @@
 @media (prefers-reduced-motion: reduce) {
     #scripture-popup-inner { transition: none; }
 }
+#scripture-popup-content {
+    max-height: 74vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+#scripture-popup-content::-webkit-scrollbar { width: 8px; }
+#scripture-popup-content::-webkit-scrollbar-thumb { background: rgba(0,0,0,.18); border-radius: 4px; }
 #scripture-popup-close {
     position: absolute;
     top: 6px; right: 8px;
+    z-index: 2;
     background: none; border: none;
     font-size: 18px; cursor: pointer;
     color: #aaa; line-height: 1; padding: 0 4px;
@@ -74,6 +83,11 @@
     margin-bottom: 8px;
     padding-right: 20px;
     letter-spacing: .04em;
+    position: sticky;        /* 滚动时标题常驻顶部 */
+    top: 0;
+    background: #fff;
+    padding-top: 2px;
+    z-index: 1;
 }
 .sp-verse {
     font-family: "STSong","SimSun","宋体",serif;
