@@ -147,7 +147,8 @@ layout: default
 (function(){
   var m=location.pathname.match(/\/exercitations\/(\d+)\//);
   if(!m) return;
-  var prefix='导论'+m[1]+'.';
+  var isZh=/\/zh\/?$/.test(location.pathname);
+  var prefix=(isZh?'导论'+m[1]:'Exer. '+m[1])+'.';
   var main=document.querySelector('.container .owen-content');
   if(!main) return;
   var nav=main.querySelector('.owen-outline');
