@@ -1,9 +1,9 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "献词 · Epistle Dedicatory — To Sir William Morr"
-date: 2026-07-15 16:54
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/prefaces/2/"
 prev_label: "序言说明"
 next_url: "/owen/hebrews/prefaces/4/"

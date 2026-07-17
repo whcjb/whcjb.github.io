@@ -1,9 +1,9 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "序一 · To The Christian Reader"
-date: 2026-07-15 16:54
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/prefaces/3/"
 prev_label: "献词"
 next_url: "/owen/hebrews/prefaces/5/"

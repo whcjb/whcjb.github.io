@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 32 · The nature of the priesthood of Christ"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/31/"
 prev_label: "导论 31"
 next_url: "/owen/hebrews/exercitations/33/"
 next_label: "导论 33"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XXXII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XXXII</div>
 
 # The nature of the priesthood of Christ
 

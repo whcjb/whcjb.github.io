@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 16 · Jewish traditions about the coming of the Messiah"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/15/"
 prev_label: "导论 15"
 next_url: "/owen/hebrews/exercitations/17/"
 next_label: "导论 17"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XVI</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XVI</div>
 
 # Jewish traditions about the coming of the Messiah
 

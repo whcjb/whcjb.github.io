@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 13 · Other testimonies proving the Messiah to be come"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/12/"
 prev_label: "导论 12"
 next_url: "/owen/hebrews/exercitations/14/"
 next_label: "导论 14"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XIII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XIII</div>
 
 # Other testimonies proving the Messiah to be come
 

@@ -518,7 +518,7 @@ def emit_faithful():
     print(f'共 {len(present)} 章(忠实版)')
 
 EXER_OUT = 'owen/hebrews/exercitations'
-SERIES = ['约翰欧文导论（Exercitations）', '安息日与主日专论（Day of Sacred Rest）']
+SERIES = ['约翰欧文希伯来书导论（Exercitations）', '安息日与主日专论（Day of Sacred Rest）']
 
 def _roman_num(s):
     R={'I':1,'V':5,'X':10,'L':50,'C':100}; tot=0; prev=0
@@ -586,7 +586,7 @@ def emit_prefaces():
         lines = [f'<p>{e(t)}</p>' for k, t in it['body']]   # 卷首(信件/序言)一律 <p>
         lines = outline_linkify(lines)
         fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
-              'book_name: "约翰欧文导论"',f'title: "{it["cn"]} · {it["en"][:40]}"',f'date: {date}']
+              'book_name: "约翰欧文希伯来书导论"',f'title: "{it["cn"]} · {it["en"][:40]}"',f'date: {date}']
         if seq > 1:
             fm += [f'prev_url: "/owen/hebrews/prefaces/{seq-1}/"', f'prev_label: "{pieces[seq-2]["cn"]}"']
         if seq < len(pieces):
@@ -677,7 +677,7 @@ def emit_exercitations():
                 lines.append(f'<p>{e(t)}</p>')
         htitle = it['htitle']
         fm = ['---','layout: owen-chapter','book_id: "hebrews/exercitations"',
-              'book_name: "约翰欧文导论"',f'title: "导论 {seq} · {htitle[:50]}"',f'date: {date}']
+              'book_name: "约翰欧文希伯来书导论"',f'title: "导论 {seq} · {htitle[:50]}"',f'date: {date}']
         if seq > 1:
             p = items[seq-2]
             fm += [f'prev_url: "/owen/hebrews/exercitations/{seq-1}/"',

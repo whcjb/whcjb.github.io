@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 24 · Sacrifices of the old law"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/23/"
 prev_label: "导论 23"
 next_url: "/owen/hebrews/exercitations/25/"
 next_label: "导论 25"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XXIV</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XXIV</div>
 
 # Sacrifices of the old law
 

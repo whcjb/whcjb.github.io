@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 5 · Testimonies cited by the apostle out of the Old Te"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/4/"
 prev_label: "导论 4"
 next_url: "/owen/hebrews/exercitations/6/"
 next_label: "导论 6"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation V</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation V</div>
 
 # Testimonies cited by the apostle out of the Old Testament
 

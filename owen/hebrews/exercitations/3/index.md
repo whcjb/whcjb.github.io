@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 3 · The time [and occasion] of the writing of the Epis"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/2/"
 prev_label: "导论 2"
 next_url: "/owen/hebrews/exercitations/4/"
 next_label: "导论 4"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation III</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation III</div>
 
 # The time [and occasion] of the writing of the Epistle to the Hebrews
 

@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 28 · Federal transactions between the Father and the So"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/27/"
 prev_label: "导论 27"
 next_url: "/owen/hebrews/exercitations/29/"
 next_label: "导论 29"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XXVIII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XXVIII</div>
 
 # Federal transactions between the Father and the Son
 

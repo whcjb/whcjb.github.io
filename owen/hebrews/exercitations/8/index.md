@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 8 · The first dissertation concerning the Messiah, pro"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/7/"
 prev_label: "导论 7"
 next_url: "/owen/hebrews/exercitations/9/"
 next_label: "导论 9"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation VIII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation VIII</div>
 
 # The first dissertation concerning the Messiah, proving him to be promised of old
 

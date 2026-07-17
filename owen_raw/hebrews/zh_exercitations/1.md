@@ -1,12 +1,12 @@
 ---
 layout: owen-chapter
 book_id: hebrews/exercitations
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 1 · 希伯来书的正典权威"
 date: 2026-07-16 11:10
 en_url: "/owen/hebrews/exercitations/1/"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation I</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation I</div>
 
 # 希伯来书的正典权威
 

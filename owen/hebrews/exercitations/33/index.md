@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 33 · Of the acts of the priesthood of Christ, their obj"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/32/"
 prev_label: "导论 32"
 next_url: "/owen/hebrews/exercitations/34/"
 next_label: "导论 34"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XXXIII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XXXIII</div>
 
 # Of the acts of the priesthood of Christ, their object, with the time and place of its exercise
 

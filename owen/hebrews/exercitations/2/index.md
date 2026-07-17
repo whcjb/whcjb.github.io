@@ -1,16 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 2 · Of the penman of the Epistle to the Hebrews"
-date: 2026-07-16 18:23
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/1/"
 prev_label: "导论 1"
 next_url: "/owen/hebrews/exercitations/3/"
 next_label: "导论 3"
-zh_url: "/owen/hebrews/exercitations/2/zh/"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation II</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation II</div>
 
 # Of the penman of the Epistle to the Hebrews
 

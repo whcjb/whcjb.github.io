@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 17 · The third general dissertation, proving Jesus of N"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/16/"
 prev_label: "导论 16"
 next_url: "/owen/hebrews/exercitations/18/"
 next_label: "导论 18"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation XVII</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XVII</div>
 
 # The third general dissertation, proving Jesus of Nazareth to be the only true and promised Messiah
 

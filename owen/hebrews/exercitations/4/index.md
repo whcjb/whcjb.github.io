@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 4 · The language wherein the Epistle to the Hebrews wa"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/3/"
 prev_label: "导论 3"
 next_url: "/owen/hebrews/exercitations/5/"
 next_label: "导论 5"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation IV</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation IV</div>
 
 # The language wherein the Epistle to the Hebrews was originally written
 

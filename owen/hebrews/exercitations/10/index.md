@@ -1,15 +1,15 @@
 ---
 layout: owen-chapter
 book_id: "hebrews/exercitations"
-book_name: "约翰欧文导论"
+book_name: "约翰欧文希伯来书导论"
 title: "导论 10 · Appearances of the Son of God under the old testam"
-date: 2026-07-16 11:10
+date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/9/"
 prev_label: "导论 9"
 next_url: "/owen/hebrews/exercitations/11/"
 next_label: "导论 11"
 ---
-<div class="owen-exer-eyebrow">约翰欧文导论（Exercitations） · Exercitation X</div>
+<div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation X</div>
 
 # Appearances of the Son of God under the old testament
 
