@@ -9,6 +9,9 @@
   依赖：page.book_id (英文 book key)、page.book_name (中文卷名)
         /assets/cuv.json (和合本经文 JSON)
 -->{% endraw %}
+{% assign sp_accent = include.accent | default: '#800000' %}
+{% assign sp_vnum = include.vnum | default: '#000080' %}
+{% assign sp_down = false %}{% if include.slide == 'down' %}{% assign sp_down = true %}{% endif %}
 <style>
 /* ── Scripture reference inline link ────────────────────
    Visually identical to surrounding text; clicks are handled
@@ -29,7 +32,8 @@
     z-index: 9999;
     overflow: hidden;
     border-radius: 8px;
-    border-left: 3px solid #800000;   /* 竖直出票口（酒红竖条） */
+    {% if sp_down %}border-top: 3px solid {{ sp_accent }};   /* 水平出票口（顶部色条, 向下出票）*/
+    {% else %}border-left: 3px solid {{ sp_accent }};   /* 竖直出票口（左侧色条）*/{% endif %}
     max-width: 360px;
     min-width: 180px;
     display: none;
@@ -40,14 +44,17 @@
     position: relative;
     background: #fff;
     border: 1px solid #e4dede;
-    border-left: none;
+    {% if sp_down %}border-top: none;
+    border-radius: 0 0 8px 8px;
+    transform: translateY(-101%);   /* 票藏在顶部出票口内 */
+    {% else %}border-left: none;
     border-radius: 0 8px 8px 0;
-    box-shadow: 0 6px 22px rgba(60,20,20,0.16), 0 2px 6px rgba(0,0,0,0.06);
-    transform: translateX(-101%);   /* 票藏在出票口内（左侧） */
+    transform: translateX(-101%);   /* 票藏在左侧出票口内 */{% endif %}
+    box-shadow: 0 6px 22px rgba(0,0,0,0.16), 0 2px 6px rgba(0,0,0,0.06);
     transition: transform .44s cubic-bezier(.22,.61,.36,1);
 }
 #scripture-popup.sp-open #scripture-popup-inner {
-    transform: translateX(0);        /* 向右平移滑出 */
+    transform: {% if sp_down %}translateY(0){% else %}translateX(0){% endif %};   /* 平移滑出 */
 }
 @media (prefers-reduced-motion: reduce) {
     #scripture-popup-inner { transition: none; }
@@ -62,7 +69,7 @@
 #scripture-popup-close:hover { color: #333; }
 .sp-header {
     font-weight: bold;
-    color: #800000;
+    color: {{ sp_accent }};
     font-size: 13px;
     margin-bottom: 8px;
     padding-right: 20px;
@@ -76,7 +83,7 @@
     margin: 2px 0;
 }
 .sp-vnum {
-    color: #000080;
+    color: {{ sp_vnum }};
     font-weight: bold;
     font-style: normal;
     font-size: 11px;
@@ -84,7 +91,7 @@
     margin-right: 2px;
 }
 .sp-grouplabel {
-    color: #800000;
+    color: {{ sp_accent }};
     font-size: 12px;
     font-weight: bold;
     letter-spacing: .03em;
