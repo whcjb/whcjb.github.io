@@ -15,21 +15,21 @@ title: 约翰欧文·希伯来书注释
   <div class="owen-sub">卷首 Front Matter · 8 篇（编者总序 · Owen 献词 · 5 篇原序）</div>
   <div class="owen-grid">
     {% for n in (1..8) %}
-    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/" class="owen-tile owen-tile-exer owen-tile-pref"><span>序</span>{{ n }}</a>
     {% endfor %}
   </div>
 
   <div class="owen-sub">释经导论 Exercitations · 34 篇</div>
   <div class="owen-grid">
     {% for n in (1..34) %}
-    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-exer"><span>Exer</span>{{ n }}</a>
     {% endfor %}
   </div>
 
   <div class="owen-sub">安息日与主日专论 Day of Sacred Rest · 6 篇</div>
   <div class="owen-grid">
     {% for n in (35..40) %}
-    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-exer"><span>Exer</span>{{ n }}</a>
     {% endfor %}
   </div>
 
@@ -62,8 +62,17 @@ title: 约翰欧文·希伯来书注释
 .owen-tile-intro{width:48px;height:48px;border:1.5px solid #1f5a4b;border-radius:8px;
   background:transparent;color:#1f5a4b;font-size:15px}
 .owen-tile-intro:hover{background:#1f5a4b;color:#fff}
+/* 导论/卷首带标签: EXER / 序 小字 + 大号编号(两行) */
+.owen-tile-exer{flex-direction:column;width:56px;height:52px;line-height:1;
+  border:1.5px solid #1f5a4b;border-radius:8px;background:transparent;color:#1f5a4b;font-size:19px}
+.owen-tile-exer span{font-size:9px;letter-spacing:.08em;text-transform:uppercase;
+  opacity:.62;margin-bottom:2px}
+.owen-tile-exer:hover{background:#1f5a4b;color:#fff}
+.owen-tile-pref{border-style:dashed}
 @media(max-width:600px){
   .owen-tile-ch{width:58px;height:58px;font-size:18px}
   .owen-tile-intro{width:42px;height:42px;font-size:14px}
+  .owen-tile-exer{width:50px;height:46px;font-size:17px}
+  .owen-tile-exer span{font-size:8px}
 }
 </style>
