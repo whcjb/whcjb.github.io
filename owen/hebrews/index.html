@@ -9,28 +9,35 @@ title: 约翰欧文·希伯来书注释
     <div style="color:#9a9a92; font-size:12px; margin-top:6px;">英文版（中文翻译进行中）</div>
   </div>
   <!-- 卷首·导论(全书之首, 置于逐章注释之前) -->
-  <div style="margin:30px 0 10px; font-size:12px; font-weight:bold; letter-spacing:.14em;
-              color:#7a8f85; text-transform:uppercase; text-align:center;">卷首 · 导论 Front Matter &amp; Exercitations</div>
-  <div style="text-align:center; margin-top:6px;">
-    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/"
-       style="display:inline-block; padding:11px 22px; border:1px solid #1f5a4b; border-radius:8px;
-              background:#1f5a4b; color:#fff; font-family:Georgia,serif; font-size:15px;
-              text-decoration:none; letter-spacing:.03em;">导论与卷首 · Exercitations &amp; Prefaces&rarr;</a>
-    <div style="color:#9a9a92; font-size:12px; margin-top:8px;">Vol 1–2 · 卷首 8 篇（编者总序·Owen 献词·5 篇原序）+ 释经导论 34 篇 + 安息日与主日专论 6 篇</div>
+  <div class="owen-sec-hd">卷首 · 导论 Front Matter &amp; Exercitations
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/" class="owen-listlink">全部列表 &rarr;</a></div>
+
+  <div class="owen-sub">卷首 Front Matter · 8 篇（编者总序 · Owen 献词 · 5 篇原序）</div>
+  <div class="owen-grid">
+    {% for n in (1..8) %}
+    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="owen-sub">释经导论 Exercitations · 34 篇</div>
+  <div class="owen-grid">
+    {% for n in (1..34) %}
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="owen-sub">安息日与主日专论 Day of Sacred Rest · 6 篇</div>
+  <div class="owen-grid">
+    {% for n in (35..40) %}
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/" class="owen-tile owen-tile-intro">{{ n }}</a>
+    {% endfor %}
   </div>
 
   <!-- 逐章注释 -->
-  <div style="margin:38px 0 4px; font-size:12px; font-weight:bold; letter-spacing:.14em;
-              color:#7a8f85; text-transform:uppercase; text-align:center;">逐章注释 Verse-by-verse Exposition</div>
-  <div style="display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:16px 0 0;">
+  <div class="owen-sec-hd" style="margin-top:40px;">逐章注释 Verse-by-verse Exposition</div>
+  <div class="owen-grid">
     {% for n in (1..13) %}
-    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/"
-       style="display:flex; align-items:center; justify-content:center; width:70px; height:70px;
-              border:1px solid #cfe0d6; border-radius:10px; background:#fbfaf6; color:#1f5a4b;
-              font-family:Georgia,serif; font-size:20px; text-decoration:none;
-              box-shadow:0 1px 4px rgba(31,90,75,.10); transition:all .15s;"
-       onmouseover="this.style.background='#1f5a4b';this.style.color='#fff';"
-       onmouseout="this.style.background='#fbfaf6';this.style.color='#1f5a4b';">{{ n }}</a>
+    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/" class="owen-tile owen-tile-ch">{{ n }}</a>
     {% endfor %}
   </div>
   <p style="text-align:center; color:#8a8a82; font-size:13px; line-height:1.8; max-width:600px; margin:34px auto 0;">
@@ -38,3 +45,25 @@ title: 约翰欧文·希伯来书注释
     《希伯来书注释》共 7 卷，其中 1–13 章逐节注释取自 Vol 3–7。
   </p>
 </div>
+
+<style>
+.owen-sec-hd{margin:30px 0 4px;font-size:12px;font-weight:bold;letter-spacing:.14em;
+  color:#7a8f85;text-transform:uppercase;text-align:center}
+.owen-listlink{font-size:11px;color:#1f5a4b;letter-spacing:0;text-transform:none;margin-left:8px;white-space:nowrap}
+.owen-sub{margin:16px 0 8px;font-size:12.5px;color:#8a8a82;text-align:center;letter-spacing:.02em}
+.owen-grid{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:0 auto 8px;max-width:760px}
+.owen-tile{display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;
+  text-decoration:none;transition:all .15s}
+/* 逐章: 实心纸底大方块 */
+.owen-tile-ch{width:70px;height:70px;border:1px solid #cfe0d6;border-radius:10px;
+  background:#fbfaf6;color:#1f5a4b;font-size:20px;box-shadow:0 1px 4px rgba(31,90,75,.10)}
+.owen-tile-ch:hover{background:#1f5a4b;color:#fff}
+/* 卷首/导论: 描边小方块(与章节区分) */
+.owen-tile-intro{width:48px;height:48px;border:1.5px solid #1f5a4b;border-radius:8px;
+  background:transparent;color:#1f5a4b;font-size:15px}
+.owen-tile-intro:hover{background:#1f5a4b;color:#fff}
+@media(max-width:600px){
+  .owen-tile-ch{width:58px;height:58px;font-size:18px}
+  .owen-tile-intro{width:42px;height:42px;font-size:14px}
+}
+</style>
