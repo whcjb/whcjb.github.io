@@ -5,6 +5,10 @@ book_name: "约翰欧文希伯来书导论"
 title: "导论 2 · 论希伯来书的执笔者"
 date: 2026-07-16 18:23
 en_url: "/owen/hebrews/exercitations/2/"
+prev_url: "/owen/hebrews/exercitations/1/zh/"
+prev_label: "导论 1"
+next_url: "/owen/hebrews/exercitations/3/zh/"
+next_label: "导论 3"
 ---
 <div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation II</div>
 

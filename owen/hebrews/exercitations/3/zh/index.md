@@ -5,6 +5,8 @@ book_name: "约翰欧文希伯来书导论"
 title: "导论 3 · 希伯来书写作的时间[与缘由]"
 date: 2026-07-17 10:44
 en_url: "/owen/hebrews/exercitations/3/"
+prev_url: "/owen/hebrews/exercitations/2/zh/"
+prev_label: "导论 2"
 ---
 <div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation III</div>
 

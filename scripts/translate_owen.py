@@ -206,14 +206,28 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     zh_url = en_dir + 'zh/'
     zh_h1 = next((l[2:].strip() for l in lines if l.startswith('# ')), fmval('title'))
 
-    # 中文页独立 front matter(不混英文 prev/next; 加回英文链接)
+    # 章导航: 链到相邻中文页(仅当已翻译存在)
+    exdir = src.parent.parent                       # .../exercitations
+    base = en_dir.rstrip('/').rsplit('/', 1)[0] + '/'   # /owen/hebrews/exercitations/
+    nav = []
+    try:
+        ni = int(seqn)
+        if (exdir / f'{ni-1}/zh/index.md').exists():
+            nav += [f'prev_url: "{base}{ni-1}/zh/"', f'prev_label: "导论 {ni-1}"']
+        if (exdir / f'{ni+1}/zh/index.md').exists():
+            nav += [f'next_url: "{base}{ni+1}/zh/"', f'next_label: "导论 {ni+1}"']
+    except ValueError:
+        pass
+    nav_block = ('\n'.join(nav) + '\n') if nav else ''
+    # 中文页独立 front matter(prev/next 指相邻中文页; 加回英文链接)
     fm_zh = ('---\n'
              'layout: owen-chapter\n'
              f'book_id: {fmval("book_id") or "hebrews/exercitations"}\n'
              f'book_name: "{fmval("book_name") or "约翰欧文导论"}"\n'
              f'title: "导论 {seqn} · {zh_h1[:40]}"\n'
              f'date: {fmval("date")}\n'
-             f'en_url: "{en_dir}"\n'
+             + nav_block
+             + f'en_url: "{en_dir}"\n'
              '---\n')
     zh_page = fm_zh + zh_body
 
@@ -242,6 +256,18 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
             en_txt = re.sub(r'\n---\n', f'\nzh_url: "{zh_url}"\n---\n', en_txt, count=1)
             src.write_text(en_txt, encoding='utf-8')
             print(f'✓ 英文页回填 zh_url → {page_path}', flush=True)
+        # 4) 回填上一篇中文页的 next(本页新出现, 让上一页能翻到本页)
+        try:
+            prev_zh = exdir / f'{int(seqn)-1}/zh/index.md'
+            if prev_zh.exists():
+                pt = prev_zh.read_text(encoding='utf-8')
+                if 'next_url:' not in pt:
+                    add = f'next_url: "{base}{seqn}/zh/"\nnext_label: "导论 {seqn}"\n'
+                    pt = re.sub(r'\nen_url:', '\n' + add + 'en_url:', pt, count=1)
+                    prev_zh.write_text(pt, encoding='utf-8')
+                    print(f'✓ 回填上一篇 next → 导论{int(seqn)-1}/zh', flush=True)
+        except ValueError:
+            pass
 
 PLAN_GUIDE = (
     "\n\n【翻译要求·遵此约定但按上下文取舍】\n"
