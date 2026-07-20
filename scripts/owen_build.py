@@ -685,6 +685,9 @@ def emit_exercitations():
         if seq < len(items):
             fm += [f'next_url: "/owen/hebrews/exercitations/{seq+1}/"',
                    f'next_label: "导论 {seq+1}"']
+        # 若已有中文译文页, 保留 zh_url(否则重生成会冲掉中英切换/对照)
+        if os.path.exists(f'{EXER_OUT}/{seq}/zh/index.md'):
+            fm += [f'zh_url: "/owen/hebrews/exercitations/{seq}/zh/"']
         fm += ['---','']
         lines = outline_linkify(lines)
         head = (f'<div class="owen-exer-eyebrow">{e(SERIES[it["series"]])} · Exercitation {e(it["roman"])}</div>\n\n'
