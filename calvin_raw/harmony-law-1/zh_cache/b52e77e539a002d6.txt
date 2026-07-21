@@ -1,0 +1,12 @@
+Chapter 2 translation is launched and running.
+
+**状态：**
+- **第 1 章**：仍在后台翻译中（PID 21142，进行到约第 25 段 / 共 185 段）
+- **第 2 章（本次 `next_section: 2`）**：已启动（PID 25003），`--resume` 断点续翻模式
+  - 源文件 `calvin/harmony-law-1-en/2.md`（206 KB）
+  - 行分类：pass 294 / body 142 / fn 65，共 **207 段待译，203 段未缓存**
+  - 正逐批调用 `claude` CLI 翻译，结果按 hash 缓存到 `calvin_raw/harmony-law-1/zh_cache/`，输出到 `calvin_raw/harmony-law-1/zh_chapters/2.md`
+
+两个任务用同一缓存目录但内容不同（hash 不冲突），并行安全。这是一个长时批处理任务，会持续运行；完成后需再跑对应 publish 脚本发布。
+
+需要说明一点：`translate_serial.sh` 里目前**没有 `harmony-law-1` 的 case**（没有对应的 publish 脚本与发布路径），所以翻完后不会自动 publish/commit/push。如果你希望翻译完成后自动发布，我可以为 harmony-law-1 补上 publish 脚本和 serial case——要我做吗？

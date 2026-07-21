@@ -1,0 +1,19 @@
+Confirmed the mechanism and the likely root cause. Here's what's going on:
+
+**Why nothing translated this turn:** The only "text" that reached me is `chapter: 1` — a YAML front-matter marker, not Calvin's prose. There's nothing to translate, so I'm not producing a fake translation.
+
+**Why your background job is timing out:** `call_claude()` (line 1074) shells out with `subprocess.run(['claude', '-p', SYSTEM], ..., timeout=120/300)`. Each call starts a **full `claude` session** — exactly like this one, which had to load *every* MCP connector (Gmail, Calendar, Drive, Feishu, PRD, plus dozens of deferred tools), memory, and skills before it can respond. That cold-start regularly exceeds the 120 s fallback timeout, which is exactly the `TimeoutExpired(120s)` in your log. The main batch call has 300 s but the per-paragraph fallback (line 1109) is only 120 s.
+
+**Extra problem:** two `translate_filibi.py --book harmony-law-1 --chapter 1` processes are running simultaneously (PIDs 20596 and 21142), both writing the same `zh_cache/` — they'll race and waste API calls.
+
+I have **not** killed anything or edited the script, since this is your live scheduled-translation mechanism and translation output must be preserved. Recommended fixes, pending your OK:
+
+1. **Kill the duplicate** — keep one `translate_filibi.py`, kill the other (they're redundant and racing on the cache).
+2. **Make the subprocess lightweight** so it doesn't load all MCP servers each call. Change line 1074–1077 to something like:
+   ```python
+   ['claude', '-p', SYSTEM, '--strict-mcp-config', '--mcp-config', '{}', '--max-turns', '1']
+   ```
+   (disables MCP connectors, prevents agentic tool loops) — this alone should turn multi-minute cold starts into a few seconds and eliminate the timeouts.
+3. Optionally bump the per-paragraph fallback timeout from 120 s.
+
+Want me to (a) kill the duplicate process, and (b) apply the `--strict-mcp-config`/`--max-turns` change to `call_claude()`? I'll confirm the exact `claude` CLI flag names against your installed version before editing.
