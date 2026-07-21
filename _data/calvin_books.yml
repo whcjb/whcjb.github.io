@@ -2,22 +2,22 @@ old_testament:
   - id: genesis
     name: 创世记
     chapters: 50
-  - id: exodus
-    name: 出埃及记
-    chapters: 40
-    en: Exodus
-  - id: leviticus
-    name: 利未记
-    chapters: 27
-    en: Leviticus
-  - id: numbers
-    name: 民数记
-    chapters: 36
-    en: Numbers
-  - id: deuteronomy
-    name: 申命记
-    chapters: 34
-    en: Deuteronomy
+  - id: harmony-law-1
+    name: 摩西五经合参（卷一）
+    chapters: 11
+    en: Harmony of the Law (Vol. 1)
+  - id: harmony-law-2
+    name: 摩西五经合参（卷二）
+    chapters: 11
+    en: Harmony of the Law (Vol. 2)
+  - id: harmony-law-3
+    name: 摩西五经合参（卷三）
+    chapters: 11
+    en: Harmony of the Law (Vol. 3)
+  - id: harmony-law-4
+    name: 摩西五经合参（卷四）
+    chapters: 7
+    en: Harmony of the Law (Vol. 4)
   - id: joshua
     name: 约书亚记
     chapters: 24
@@ -163,19 +163,19 @@ english_old_testament:
   - id: harmony-law-1-en
     name: Harmony of the Law (Vol. 1)
     cn: 摩西五经合参（卷一）
-    chapters: 1
+    chapters: 11
   - id: harmony-law-2-en
     name: Harmony of the Law (Vol. 2)
     cn: 摩西五经合参（卷二）
-    chapters: 1
+    chapters: 11
   - id: harmony-law-3-en
     name: Harmony of the Law (Vol. 3)
     cn: 摩西五经合参（卷三）
-    chapters: 1
+    chapters: 11
   - id: harmony-law-4-en
     name: Harmony of the Law (Vol. 4)
     cn: 摩西五经合参（卷四）
-    chapters: 1
+    chapters: 7
   - id: joshua-en
     name: Joshua
     chapters: 24
