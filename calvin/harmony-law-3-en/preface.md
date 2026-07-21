@@ -33,7 +33,7 @@ next_label: "Chapter 1"
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BY JOHN CALVIN</span></p>
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">VOLUME FOURTH</span></p>
+<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">VOLUME THIRD</span></p>
 
 <p style="margin-left:2em;" markdown="1">*Translated From The Original Latin, And Compared With The French Edition; With Annotations, Etc., By The Rev. Charles William Bingham, M.A. Rector Of Melcombe-Horsey, Dorset, And Formerly Fellow Of New College, Oxford*</p>
 
