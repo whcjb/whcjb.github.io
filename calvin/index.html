@@ -94,8 +94,9 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     {% endfor %}
                 </div>
 
-                <div class="calvin-subsection-label">English Edition</div>
-                <div class="calvin-book-grid">
+                <details class="calvin-en-fold">
+                    <summary class="calvin-subsection-label calvin-subsection-fold">English Edition</summary>
+                    <div class="calvin-book-grid">
                     {% for book in site.data.calvin_books.english_old_testament %}
                     {% assign cn_id = book.id | remove: "-en" %}
                     {% assign cn_book = all_cn_books | where: "id", cn_id | first %}
@@ -113,7 +114,8 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     </span>
                     {% endif %}
                     {% endfor %}
-                </div>
+                    </div>
+                </details>
             </section>
 
             <!-- 新约 -->
