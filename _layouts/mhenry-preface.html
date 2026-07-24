@@ -135,7 +135,16 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-{% include scripture-popup.html container_selector=".mhenry-preface-body" %}
+{% assign mh_theme = site.data.mhenry_theme[page.book_id] %}
+{% if mh_theme %}<style>
+:root {
+    --sp-accent: {{ mh_theme.accent }};
+    --sp-vnum: {{ mh_theme.vnum }};
+    --sp-bg: {{ mh_theme.bg }};
+    --sp-border: {{ mh_theme.border }};
+}
+</style>{% endif %}
+{% include scripture-popup.html container_selector=".mhenry-preface-body" crystal=true %}
 
 {% comment %} 钻石风格：叙事/福音书/较大书信统一银蓝；14 卷补译书信改用各自 inline 水晶风，不含于此表 {% endcomment %}
 {% assign diamond_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,philemon,hebrews,1peter,2peter,revelation" | split: "," %}

@@ -1,0 +1,464 @@
+{
+ "1chronicles": {
+  "accent": "#2BAB82",
+  "bg": "rgba(241,251,248,0.86)",
+  "border": "rgba(43,171,130,0.42)",
+  "hue": 160.6,
+  "vnum": "#299975"
+ },
+ "1corinthians": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "1john": {
+  "accent": "#AB2B2B",
+  "bg": "rgba(251,241,241,0.86)",
+  "border": "rgba(171,43,43,0.42)",
+  "hue": 0.0,
+  "vnum": "#992929"
+ },
+ "1kings": {
+  "accent": "#6B2BAB",
+  "bg": "rgba(246,241,251,0.86)",
+  "border": "rgba(107,43,171,0.42)",
+  "hue": 270.0,
+  "vnum": "#612999"
+ },
+ "1peter": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "1samuel": {
+  "accent": "#2B8DAB",
+  "bg": "rgba(241,249,251,0.86)",
+  "border": "rgba(43,141,171,0.42)",
+  "hue": 194.1,
+  "vnum": "#297F99"
+ },
+ "1thessalonians": {
+  "accent": "#2B91AB",
+  "bg": "rgba(241,249,251,0.86)",
+  "border": "rgba(43,145,171,0.42)",
+  "hue": 192.4,
+  "vnum": "#298299"
+ },
+ "1timothy": {
+  "accent": "#AB862B",
+  "bg": "rgba(251,248,241,0.86)",
+  "border": "rgba(171,134,43,0.42)",
+  "hue": 42.4,
+  "vnum": "#997829"
+ },
+ "2chronicles": {
+  "accent": "#2BAB58",
+  "bg": "rgba(241,251,244,0.86)",
+  "border": "rgba(43,171,88,0.42)",
+  "hue": 141.2,
+  "vnum": "#299950"
+ },
+ "2corinthians": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "2john": {
+  "accent": "#AB2B76",
+  "bg": "rgba(251,241,247,0.86)",
+  "border": "rgba(171,43,118,0.42)",
+  "hue": 324.7,
+  "vnum": "#99296B"
+ },
+ "2kings": {
+  "accent": "#952BAB",
+  "bg": "rgba(250,241,251,0.86)",
+  "border": "rgba(149,43,171,0.42)",
+  "hue": 289.4,
+  "vnum": "#852999"
+ },
+ "2peter": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "2samuel": {
+  "accent": "#2B60AB",
+  "bg": "rgba(241,245,251,0.86)",
+  "border": "rgba(43,96,171,0.42)",
+  "hue": 215.3,
+  "vnum": "#295799"
+ },
+ "2thessalonians": {
+  "accent": "#2B64AB",
+  "bg": "rgba(241,245,251,0.86)",
+  "border": "rgba(43,100,171,0.42)",
+  "hue": 213.5,
+  "vnum": "#295A99"
+ },
+ "2timothy": {
+  "accent": "#AB542B",
+  "bg": "rgba(251,244,241,0.86)",
+  "border": "rgba(171,84,43,0.42)",
+  "hue": 19.4,
+  "vnum": "#994D29"
+ },
+ "3john": {
+  "accent": "#AB2BA0",
+  "bg": "rgba(251,241,250,0.86)",
+  "border": "rgba(171,43,160,0.42)",
+  "hue": 305.3,
+  "vnum": "#99298F"
+ },
+ "acts": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "amos": {
+  "accent": "#AB362B",
+  "bg": "rgba(251,242,241,0.86)",
+  "border": "rgba(171,54,43,0.42)",
+  "hue": 5.3,
+  "vnum": "#993329"
+ },
+ "colossians": {
+  "accent": "#2B3EAB",
+  "bg": "rgba(241,242,251,0.86)",
+  "border": "rgba(43,62,171,0.42)",
+  "hue": 231.2,
+  "vnum": "#293999"
+ },
+ "daniel": {
+  "accent": "#7E2BAB",
+  "bg": "rgba(248,241,251,0.86)",
+  "border": "rgba(126,43,171,0.42)",
+  "hue": 278.8,
+  "vnum": "#712999"
+ },
+ "deuteronomy": {
+  "accent": "#542BAB",
+  "bg": "rgba(244,241,251,0.86)",
+  "border": "rgba(84,43,171,0.42)",
+  "hue": 259.4,
+  "vnum": "#4D2999"
+ },
+ "ecclesiastes": {
+  "accent": "#2BA0AB",
+  "bg": "rgba(241,250,251,0.86)",
+  "border": "rgba(43,160,171,0.42)",
+  "hue": 185.3,
+  "vnum": "#298F99"
+ },
+ "ephesians": {
+  "accent": "#8D2BAB",
+  "bg": "rgba(249,241,251,0.86)",
+  "border": "rgba(141,43,171,0.42)",
+  "hue": 285.9,
+  "vnum": "#7F2999"
+ },
+ "esther": {
+  "accent": "#AB2B82",
+  "bg": "rgba(251,241,248,0.86)",
+  "border": "rgba(171,43,130,0.42)",
+  "hue": 319.4,
+  "vnum": "#992975"
+ },
+ "exodus": {
+  "accent": "#AB672B",
+  "bg": "rgba(251,246,241,0.86)",
+  "border": "rgba(171,103,43,0.42)",
+  "hue": 28.2,
+  "vnum": "#995E29"
+ },
+ "ezekiel": {
+  "accent": "#422BAB",
+  "bg": "rgba(243,241,251,0.86)",
+  "border": "rgba(66,43,171,0.42)",
+  "hue": 250.6,
+  "vnum": "#3D2999"
+ },
+ "ezra": {
+  "accent": "#82AB2B",
+  "bg": "rgba(248,251,241,0.86)",
+  "border": "rgba(130,171,43,0.42)",
+  "hue": 79.4,
+  "vnum": "#759929"
+ },
+ "galatians": {
+  "accent": "#2BAB7E",
+  "bg": "rgba(241,251,248,0.86)",
+  "border": "rgba(43,171,126,0.42)",
+  "hue": 158.8,
+  "vnum": "#299971"
+ },
+ "genesis": {
+  "accent": "#AB8D2B",
+  "bg": "rgba(251,249,241,0.86)",
+  "border": "rgba(171,141,43,0.42)",
+  "hue": 45.9,
+  "vnum": "#997F29"
+ },
+ "habakkuk": {
+  "accent": "#AB6F2B",
+  "bg": "rgba(251,246,241,0.86)",
+  "border": "rgba(171,111,43,0.42)",
+  "hue": 31.8,
+  "vnum": "#996429"
+ },
+ "haggai": {
+  "accent": "#AB972B",
+  "bg": "rgba(251,250,241,0.86)",
+  "border": "rgba(171,151,43,0.42)",
+  "hue": 50.3,
+  "vnum": "#998729"
+ },
+ "hebrews": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "hosea": {
+  "accent": "#AB492B",
+  "bg": "rgba(251,243,241,0.86)",
+  "border": "rgba(171,73,43,0.42)",
+  "hue": 14.1,
+  "vnum": "#994329"
+ },
+ "isaiah": {
+  "accent": "#2B2BAB",
+  "bg": "rgba(241,241,251,0.86)",
+  "border": "rgba(43,43,171,0.42)",
+  "hue": 240.0,
+  "vnum": "#292999"
+ },
+ "james": {
+  "accent": "#6BAB2B",
+  "bg": "rgba(246,251,241,0.86)",
+  "border": "rgba(107,171,43,0.42)",
+  "hue": 90.0,
+  "vnum": "#619929"
+ },
+ "jeremiah": {
+  "accent": "#8DAB2B",
+  "bg": "rgba(249,251,241,0.86)",
+  "border": "rgba(141,171,43,0.42)",
+  "hue": 74.1,
+  "vnum": "#7F9929"
+ },
+ "job": {
+  "accent": "#2B82AB",
+  "bg": "rgba(241,248,251,0.86)",
+  "border": "rgba(43,130,171,0.42)",
+  "hue": 199.4,
+  "vnum": "#297599"
+ },
+ "joel": {
+  "accent": "#AB6F2B",
+  "bg": "rgba(251,246,241,0.86)",
+  "border": "rgba(171,111,43,0.42)",
+  "hue": 31.8,
+  "vnum": "#996429"
+ },
+ "john": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "jonah": {
+  "accent": "#2BAB7D",
+  "bg": "rgba(241,251,248,0.86)",
+  "border": "rgba(43,171,125,0.42)",
+  "hue": 158.6,
+  "vnum": "#299971"
+ },
+ "joshua": {
+  "accent": "#2BAB42",
+  "bg": "rgba(241,251,243,0.86)",
+  "border": "rgba(43,171,66,0.42)",
+  "hue": 130.6,
+  "vnum": "#29993D"
+ },
+ "jude": {
+  "accent": "#422BAB",
+  "bg": "rgba(243,241,251,0.86)",
+  "border": "rgba(66,43,171,0.42)",
+  "hue": 250.6,
+  "vnum": "#3D2999"
+ },
+ "judges": {
+  "accent": "#ABA02B",
+  "bg": "rgba(251,250,241,0.86)",
+  "border": "rgba(171,160,43,0.42)",
+  "hue": 54.7,
+  "vnum": "#998F29"
+ },
+ "lamentations": {
+  "accent": "#AB2B36",
+  "bg": "rgba(251,241,242,0.86)",
+  "border": "rgba(171,43,54,0.42)",
+  "hue": 354.7,
+  "vnum": "#992933"
+ },
+ "leviticus": {
+  "accent": "#AB2B45",
+  "bg": "rgba(251,241,243,0.86)",
+  "border": "rgba(171,43,69,0.42)",
+  "hue": 347.6,
+  "vnum": "#992940"
+ },
+ "luke": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "malachi": {
+  "accent": "#AB2B44",
+  "bg": "rgba(251,241,243,0.86)",
+  "border": "rgba(171,43,68,0.42)",
+  "hue": 348.4,
+  "vnum": "#99293E"
+ },
+ "mark": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "matthew": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "micah": {
+  "accent": "#AB882B",
+  "bg": "rgba(251,248,241,0.86)",
+  "border": "rgba(171,136,43,0.42)",
+  "hue": 43.4,
+  "vnum": "#997A29"
+ },
+ "nahum": {
+  "accent": "#7E2BAB",
+  "bg": "rgba(248,241,251,0.86)",
+  "border": "rgba(126,43,171,0.42)",
+  "hue": 278.8,
+  "vnum": "#712999"
+ },
+ "nehemiah": {
+  "accent": "#45AB2B",
+  "bg": "rgba(243,251,241,0.86)",
+  "border": "rgba(69,171,43,0.42)",
+  "hue": 107.6,
+  "vnum": "#409929"
+ },
+ "numbers": {
+  "accent": "#2BABA0",
+  "bg": "rgba(241,251,250,0.86)",
+  "border": "rgba(43,171,160,0.42)",
+  "hue": 174.7,
+  "vnum": "#29998F"
+ },
+ "obadiah": {
+  "accent": "#AB2B54",
+  "bg": "rgba(251,241,244,0.86)",
+  "border": "rgba(171,43,84,0.42)",
+  "hue": 340.6,
+  "vnum": "#99294D"
+ },
+ "philemon": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "philippians": {
+  "accent": "#AB2B49",
+  "bg": "rgba(251,241,243,0.86)",
+  "border": "rgba(171,43,73,0.42)",
+  "hue": 345.9,
+  "vnum": "#992943"
+ },
+ "proverbs": {
+  "accent": "#6BAB2B",
+  "bg": "rgba(246,251,241,0.86)",
+  "border": "rgba(107,171,43,0.42)",
+  "hue": 90.0,
+  "vnum": "#619929"
+ },
+ "psalms": {
+  "accent": "#2B42AB",
+  "bg": "rgba(241,243,251,0.86)",
+  "border": "rgba(43,66,171,0.42)",
+  "hue": 229.4,
+  "vnum": "#293D99"
+ },
+ "revelation": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "romans": {
+  "accent": "#3B6391",
+  "bg": "rgba(242,246,250,0.86)",
+  "border": "rgba(59,99,145,0.4)",
+  "hue": 212,
+  "vnum": "#355982"
+ },
+ "ruth": {
+  "accent": "#AB542B",
+  "bg": "rgba(251,244,241,0.86)",
+  "border": "rgba(171,84,43,0.42)",
+  "hue": 19.4,
+  "vnum": "#994D29"
+ },
+ "songofsolomon": {
+  "accent": "#AB2B60",
+  "bg": "rgba(251,241,245,0.86)",
+  "border": "rgba(171,43,96,0.42)",
+  "hue": 335.3,
+  "vnum": "#992957"
+ },
+ "titus": {
+  "accent": "#A8AB2B",
+  "bg": "rgba(251,251,241,0.86)",
+  "border": "rgba(168,171,43,0.42)",
+  "hue": 61.8,
+  "vnum": "#969929"
+ },
+ "zechariah": {
+  "accent": "#2B6FAB",
+  "bg": "rgba(241,246,251,0.86)",
+  "border": "rgba(43,111,171,0.42)",
+  "hue": 208.2,
+  "vnum": "#296499"
+ },
+ "zephaniah": {
+  "accent": "#2B40AB",
+  "bg": "rgba(241,242,251,0.86)",
+  "border": "rgba(43,64,171,0.42)",
+  "hue": 230.3,
+  "vnum": "#293B99"
+ }
+}

@@ -943,7 +943,16 @@ function flashEl(el) {
 
 </script>
 
-{% include scripture-popup.html container_selector="#mhenry-col" %}
+{% assign mh_theme = site.data.mhenry_theme[page.book_id] %}
+{% if mh_theme %}<style>
+:root {
+    --sp-accent: {{ mh_theme.accent }};
+    --sp-vnum: {{ mh_theme.vnum }};
+    --sp-bg: {{ mh_theme.bg }};
+    --sp-border: {{ mh_theme.border }};
+}
+</style>{% endif %}
+{% include scripture-popup.html container_selector="#mhenry-col" crystal=true %}
 
 <script>
 // ── Service Worker 注册 ──────────────────────────────────

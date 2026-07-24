@@ -12,6 +12,9 @@
 {% assign sp_accent = include.accent | default: '#800000' %}
 {% assign sp_vnum = include.vnum | default: '#000080' %}
 {% assign sp_down = false %}{% if include.slide == 'down' %}{% assign sp_down = true %}{% endif %}
+{% comment %} 颜色统一走 CSS 变量，调用方（如 mhenry 各卷）可用 --sp-accent/--sp-bg/--sp-vnum/--sp-border
+   注入「当前书卷主题色」；未注入时回退到上面的 Liquid 默认（calvin 酒红 / owen 墨绿）。
+   include.crystal=true 时给弹框加 .sp-crystal，启用磨砂玻璃「水晶」外观。 {% endcomment %}
 <style>
 /* ── Scripture reference inline link ────────────────────
    Visually identical to surrounding text; clicks are handled
@@ -32,8 +35,8 @@
     z-index: 9999;
     overflow: hidden;
     border-radius: 8px;
-    {% if sp_down %}border-top: 3px solid {{ sp_accent }};   /* 水平出票口（顶部色条, 向下出票）*/
-    {% else %}border-left: 3px solid {{ sp_accent }};   /* 竖直出票口（左侧色条）*/{% endif %}
+    {% if sp_down %}border-top: 3px solid var(--sp-accent, {{ sp_accent }});   /* 水平出票口（顶部色条, 向下出票）*/
+    {% else %}border-left: 3px solid var(--sp-accent, {{ sp_accent }});   /* 竖直出票口（左侧色条）*/{% endif %}
     max-width: 360px;
     min-width: 180px;
     display: none;
@@ -42,8 +45,8 @@
 #scripture-popup-inner {
     padding: 12px 16px 14px;
     position: relative;
-    background: #fff;
-    border: 1px solid #e4dede;
+    background: var(--sp-bg, #fff);
+    border: 1px solid var(--sp-border, #e4dede);
     {% if sp_down %}border-top: none;
     border-radius: 0 0 8px 8px;
     transform: translateY(-101%);   /* 票藏在顶部出票口内 */
@@ -52,6 +55,20 @@
     transform: translateX(-101%);   /* 票藏在左侧出票口内 */{% endif %}
     box-shadow: 0 6px 22px rgba(0,0,0,0.16), 0 2px 6px rgba(0,0,0,0.06);
     transition: transform .44s cubic-bezier(.22,.61,.36,1);
+}
+/* ── 水晶（磨砂玻璃）外观：仅 .sp-crystal 生效（mhenry 各卷） ── */
+#scripture-popup.sp-crystal { border-radius: 14px; }
+.sp-crystal #scripture-popup-inner {
+    background: var(--sp-bg, rgba(255,255,255,0.86));
+    backdrop-filter: blur(18px) saturate(1.15);
+    -webkit-backdrop-filter: blur(18px) saturate(1.15);
+    border: 1px solid var(--sp-border, rgba(180,180,180,0.4));
+    {% if sp_down %}border-top: none; border-radius: 0 0 14px 14px;
+    {% else %}border-left: none; border-radius: 0 14px 14px 0;{% endif %}
+    box-shadow:
+        inset 1px 1px 0 rgba(255,255,255,0.75),
+        0 12px 40px rgba(60,60,80,0.20),
+        0 2px 8px rgba(60,60,80,0.10);
 }
 #scripture-popup.sp-open #scripture-popup-inner {
     transform: {% if sp_down %}translateY(0){% else %}translateX(0){% endif %};   /* 平移滑出 */
@@ -78,16 +95,23 @@
 #scripture-popup-close:hover { color: #333; }
 .sp-header {
     font-weight: bold;
-    color: {{ sp_accent }};
+    color: var(--sp-accent, {{ sp_accent }});
     font-size: 13px;
     margin-bottom: 8px;
     padding-right: 20px;
     letter-spacing: .04em;
     position: sticky;        /* 滚动时标题常驻顶部 */
     top: 0;
-    background: #fff;
+    background: var(--sp-bg, #fff);
     padding-top: 2px;
     z-index: 1;
+}
+.sp-crystal .sp-header {
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    margin: -2px -4px 8px;
+    padding: 4px 4px 4px;
+    border-radius: 8px 8px 0 0;
 }
 .sp-verse {
     font-family: "STSong","SimSun","宋体",serif;
@@ -97,7 +121,7 @@
     margin: 2px 0;
 }
 .sp-vnum {
-    color: {{ sp_vnum }};
+    color: var(--sp-vnum, {{ sp_vnum }});
     font-weight: bold;
     font-style: normal;
     font-size: 11px;
@@ -105,13 +129,13 @@
     margin-right: 2px;
 }
 .sp-grouplabel {
-    color: {{ sp_accent }};
+    color: var(--sp-accent, {{ sp_accent }});
     font-size: 12px;
     font-weight: bold;
     letter-spacing: .03em;
     margin: 10px 0 3px;
     padding-top: 8px;
-    border-top: 1px dashed #e4dede;
+    border-top: 1px dashed var(--sp-border, #e4dede);
 }
 .sp-grouplabel:first-child { margin-top: 2px; padding-top: 0; border-top: none; }
 .sp-not-found { color: #999; font-size: 13px; padding: 4px 0; }
@@ -269,6 +293,7 @@
         if (popup) return;
         popup = document.createElement('div');
         popup.id = 'scripture-popup';
+        {% if include.crystal %}popup.classList.add('sp-crystal');{% endif %}
         popup.innerHTML = '<div id="scripture-popup-inner">'
             + '<button id="scripture-popup-close" title="关闭">×</button>'
             + '<div id="scripture-popup-content"></div>'
