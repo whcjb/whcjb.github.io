@@ -23,9 +23,18 @@ case "$BOOK" in
     1john)    PUBLISH=scripts/publish_1john_zh.py;    RAW_DIR=calvin_raw/1john/zh_chapters;  PUB_DIR=calvin/1john ;;
     jude)     PUBLISH=scripts/publish_jude_zh.py;     RAW_DIR=calvin_raw/jude/zh_chapters;  PUB_DIR=calvin/jude ;;
     genesis)  PUBLISH=scripts/publish_genesis_zh.py;  RAW_DIR=calvin_raw/genesis/zh_chapters; PUB_DIR=calvin/genesis ;;
+    harmony-law-1) PUBLISH="scripts/publish_harmony_law_zh.py --vol 1"; RAW_DIR=calvin_raw/harmony-law-1/zh_chapters; PUB_DIR=calvin/harmony-law-1 ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache
+
+# 串行锁：并发调用（如即时批次与定时批次重叠）时排队，避免 git index / push 竞争
+LOCK=/tmp/translate_serial.lock
+while ! mkdir "$LOCK" 2>/dev/null; do
+    echo "$(date '+%H:%M:%S') 另一翻译任务持锁，等待中..."
+    sleep 30
+done
+trap 'rmdir "$LOCK" 2>/dev/null' EXIT
 
 for CH in "$@"; do
     echo "=== $(date '+%H:%M:%S') 开始 $BOOK ch${CH} ==="
