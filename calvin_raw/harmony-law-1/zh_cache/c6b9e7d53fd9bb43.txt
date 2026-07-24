@@ -1,0 +1,2 @@
+<p class="scripture-ref"><span class="ages-code">&lt;021708&gt;</span><span class="book-name">出埃及记</span> <span class="verse-range">17:8-16</span></p>
+<<<END>>>
