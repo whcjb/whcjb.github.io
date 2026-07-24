@@ -20,19 +20,21 @@
     <!-- 微信内置浏览器：只能引导用户手动收藏 -->
     <div class="mh-share-wx-guide" id="mh-share-wx-guide" hidden>
         <div class="mh-share-wx-arrow">···&nbsp;↗</div>
-        <p>点右上角「···」→ <b>收藏</b>，即可离线在微信里阅读本章；<br>或选<b>发送给朋友 / 分享到朋友圈</b>。</p>
+        <p>点右上角「···」→ <b>发送给朋友 / 分享到朋友圈</b>；<br>
+           想<b>离线阅读</b>就点「···」→ <b>收藏</b>，之后在微信「我 → 收藏」里离线打开本章。</p>
     </div>
 
     <div class="mh-share-qr-wrap" id="mh-share-qr-wrap">
         <div id="mh-share-qr"><div class="mh-share-qr-ph">二维码生成中…</div></div>
-        <p class="mh-share-hint">微信「扫一扫」打开本章，再点右上角「···」发送 / 收藏。</p>
+        <p class="mh-share-hint">微信「扫一扫」打开本章，再点右上角「···」发送或收藏。</p>
     </div>
 
     <div class="mh-share-actions">
-        <button type="button" class="mh-share-btn mh-share-btn--primary" id="mh-share-wx">分享离线网页到微信</button>
-        <button type="button" class="mh-share-btn" id="mh-share-offline">保存离线文档</button>
+        <button type="button" class="mh-share-btn mh-share-btn--primary" id="mh-share-wx">分享到微信</button>
         <button type="button" class="mh-share-btn" id="mh-share-copy">复制链接</button>
+        <button type="button" class="mh-share-btn" id="mh-share-offline">保存离线网页（浏览器打开）</button>
     </div>
+    <p class="mh-share-tip">离线阅读：在微信中打开本章后，点右上角「···」→「收藏」，微信会存成可离线读的快照。</p>
     <p class="mh-share-note" id="mh-share-status"></p>
 </div>
 
@@ -115,7 +117,8 @@
 .mh-share-btn:hover { background: var(--sp-accent, #C9922A); color: #fff; }
 .mh-share-btn--primary { background: var(--sp-accent, #C9922A); color: #fff; }
 .mh-share-btn--primary:hover { filter: brightness(1.08); }
-.mh-share-note { margin: 12px 2px 0; min-height: 16px; font-size: 12.5px; color: var(--sp-accent, #7B5E3A); }
+.mh-share-tip { margin: 14px 2px 0; font-size: 12px; line-height: 1.7; color: #777; }
+.mh-share-note { margin: 8px 2px 0; min-height: 16px; font-size: 12.5px; color: var(--sp-accent, #7B5E3A); }
 </style>
 
 <script>
@@ -136,24 +139,19 @@
     var qrDone = false;
 
     var IS_WECHAT = /micromessenger/i.test(navigator.userAgent);
-    function canShareFiles() {
-        try { return !!(navigator.canShare && navigator.canShare({
-            files: [new File(['x'], 't.html', { type: 'text/html' })] })); }
-        catch (e) { return false; }
-    }
 
     function openPanel() {
         mask.hidden = false; panel.hidden = false;
         status.textContent = '';
         if (IS_WECHAT) {
-            // 微信内置浏览器：网页无法触发分享/收藏，只能引导手动操作
+            // 微信内置浏览器：网页无法触发分享/收藏，只能引导用户手动操作
             wxGuide.hidden = false;
             wxBtn.hidden = true;
             qrWrap.hidden = true;
         } else {
             wxGuide.hidden = true;
-            wxBtn.hidden = false;
-            wxBtn.textContent = canShareFiles() ? '分享离线网页到微信' : '下载离线网页（发给微信）';
+            // 有系统分享(手机)才显示「分享到微信」按钮；桌面靠二维码/复制链接
+            wxBtn.hidden = !navigator.share;
             renderQR();
         }
     }
@@ -188,32 +186,22 @@
         document.head.appendChild(s);
     }
 
-    // ── 分享离线网页到微信：把生成的离线 HTML 当作「文件」分享 ──
-    wxBtn.addEventListener('click', async function () {
-        wxBtn.disabled = true;
-        try {
-            status.textContent = '正在打包离线网页…';
-            var html = await buildOfflineHtml();
-            var file = new File([html], FILE_BASE + '.html', { type: 'text/html' });
-            if (navigator.canShare && navigator.canShare({ files: [file] })) {
-                await navigator.share({ files: [file], title: PAGE_TITLE,
-                    text: PAGE_TITLE + '（离线网页）' });
-                status.textContent = '已唤起分享，请选择「微信」发送给朋友或收藏 ✓';
-            } else {
-                // 不支持文件分享：下载文件，提示在微信中作为文件发送
-                downloadHtml(html);
-                status.textContent = '已下载离线网页；在微信聊天里点「+」→「文件」发送它，'
-                    + '对方即可离线打开。';
-            }
-        } catch (e) {
-            if (e && e.name === 'AbortError') { status.textContent = ''; }
-            else { console.error(e); status.textContent = '分享失败：' + (e && e.message || e); }
-        } finally { wxBtn.disabled = false; }
+    // ── 分享到微信：分享「链接」，用户在系统面板里选微信；离线靠微信「收藏」──
+    wxBtn.addEventListener('click', function () {
+        if (navigator.share) {
+            navigator.share({ title: PAGE_TITLE, url: SHARE_URL }).then(function () {
+                status.textContent = '已唤起分享，选「微信」发送；想离线看可在微信里点「···→收藏」';
+            }).catch(function (e) {
+                if (!(e && e.name === 'AbortError')) copyLink('已复制链接，请粘贴到微信发送');
+            });
+        } else {
+            copyLink('已复制链接，请粘贴到微信发送');
+        }
     });
 
     // ── 复制链接 ──
-    document.getElementById('mh-share-copy').addEventListener('click', function () {
-        var done = function () { status.textContent = '已复制链接 ✓'; };
+    function copyLink(msg) {
+        var done = function () { status.textContent = msg || '已复制链接 ✓'; };
         if (navigator.clipboard && navigator.clipboard.writeText) {
             navigator.clipboard.writeText(SHARE_URL).then(done, legacyCopy);
         } else legacyCopy();
@@ -225,7 +213,8 @@
             catch (e) { status.textContent = '复制失败，请手动复制'; }
             document.body.removeChild(ta);
         }
-    });
+    }
+    document.getElementById('mh-share-copy').addEventListener('click', function () { copyLink(); });
 
     // ── 保存离线文档 ──
     document.getElementById('mh-share-offline').addEventListener('click', async function () {
