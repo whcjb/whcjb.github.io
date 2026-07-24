@@ -1,0 +1,428 @@
+{% comment %}
+  马太亨利章节页「分享」功能 — 仅 mhenry-chapter/preface 使用。
+  - 微信：二维码（扫一扫打开本章）+ 系统分享(navigator.share) + 复制链接
+  - 保存离线文档：把当前章节打包成单文件 HTML，离线打开与在线基本一致
+    （内联同源 CSS + 全部 <style> + 头图 dataURI + 内嵌所引经文 + 交互脚本）
+  主题色沿用 :root 的 --sp-accent（当前书卷主题色）。
+{% endcomment %}
+<button id="mh-share-fab" type="button" aria-label="分享本章" title="分享 / 保存离线">
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+    </svg>
+    <span>分享</span>
+</button>
+
+<div id="mh-share-mask" hidden></div>
+<div id="mh-share-panel" role="dialog" aria-modal="true" aria-label="分享本章" hidden>
+    <button id="mh-share-close" type="button" aria-label="关闭">×</button>
+    <h4 class="mh-share-title">分享 · {{ page.book_name }}第{{ page.chapter }}章</h4>
+
+    <!-- 微信内置浏览器：只能引导用户手动收藏 -->
+    <div class="mh-share-wx-guide" id="mh-share-wx-guide" hidden>
+        <div class="mh-share-wx-arrow">···&nbsp;↗</div>
+        <p>点右上角「···」→ <b>收藏</b>，即可离线在微信里阅读本章；<br>或选<b>发送给朋友 / 分享到朋友圈</b>。</p>
+    </div>
+
+    <div class="mh-share-qr-wrap" id="mh-share-qr-wrap">
+        <div id="mh-share-qr"><div class="mh-share-qr-ph">二维码生成中…</div></div>
+        <p class="mh-share-hint">微信「扫一扫」打开本章，再点右上角「···」发送 / 收藏。</p>
+    </div>
+
+    <div class="mh-share-actions">
+        <button type="button" class="mh-share-btn mh-share-btn--primary" id="mh-share-wx">分享离线网页到微信</button>
+        <button type="button" class="mh-share-btn" id="mh-share-offline">保存离线文档</button>
+        <button type="button" class="mh-share-btn" id="mh-share-copy">复制链接</button>
+    </div>
+    <p class="mh-share-note" id="mh-share-status"></p>
+</div>
+
+<style id="mh-share-style">
+#mh-share-fab {
+    position: fixed; right: 18px; bottom: 22px; z-index: 9800;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 10px 15px 10px 13px;
+    background: var(--sp-accent, #C9922A); color: #fff;
+    border: none; border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+    font-size: 14px; font-weight: 700; cursor: pointer;
+    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+    transition: transform .15s, box-shadow .15s, opacity .2s;
+}
+#mh-share-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.28); }
+#mh-share-fab:active { transform: translateY(0); }
+#mh-share-fab svg { display: block; }
+@media (max-width: 767px) { #mh-share-fab span { display: none; } #mh-share-fab { padding: 12px; } }
+
+#mh-share-mask {
+    position: fixed; inset: 0; z-index: 9850;
+    background: rgba(20,24,32,0.45);
+    -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+#mh-share-panel {
+    position: fixed; z-index: 9860;
+    left: 50%; bottom: 0; transform: translateX(-50%);
+    width: 100%; max-width: 380px;
+    background: var(--sp-bg, #fff);
+    -webkit-backdrop-filter: blur(18px) saturate(1.1); backdrop-filter: blur(18px) saturate(1.1);
+    border: 1px solid var(--sp-border, rgba(180,180,180,0.4));
+    border-bottom: none;
+    border-radius: 18px 18px 0 0;
+    box-shadow: 0 -8px 40px rgba(0,0,0,0.25), inset 1px 1px 0 rgba(255,255,255,0.6);
+    padding: 20px 22px 26px;
+    color: #222;
+    animation: mhShareUp .28s cubic-bezier(.22,.61,.36,1);
+}
+@media (min-width: 600px) {
+    #mh-share-panel { bottom: auto; top: 50%; transform: translate(-50%,-50%); border-radius: 18px; border-bottom: 1px solid var(--sp-border, rgba(180,180,180,0.4)); }
+}
+@keyframes mhShareUp { from { transform: translate(-50%, 20px); opacity: 0; } to { opacity: 1; } }
+#mh-share-close {
+    position: absolute; top: 10px; right: 12px;
+    background: none; border: none; font-size: 24px; line-height: 1;
+    color: #999; cursor: pointer;
+}
+#mh-share-close:hover { color: #333; }
+.mh-share-title {
+    margin: 0 0 16px; font-size: 15px; font-weight: 700;
+    color: var(--sp-accent, #7B5E3A); letter-spacing: .03em; padding-right: 24px;
+}
+.mh-share-wx-guide {
+    text-align: center; margin: 0 0 16px; padding: 14px 12px;
+    background: rgba(7,193,96,0.10); border: 1px solid rgba(7,193,96,0.35);
+    border-radius: 12px; color: #2a5a3a; font-size: 13px; line-height: 1.7;
+}
+.mh-share-wx-arrow { font-size: 20px; font-weight: 700; color: #07C160; margin-bottom: 4px; }
+.mh-share-wx-guide b { color: #07C160; }
+.mh-share-qr-wrap { text-align: center; margin-bottom: 18px; }
+#mh-share-qr {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 200px; height: 200px; margin: 0 auto;
+    background: #fff; border-radius: 12px; padding: 10px;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+}
+#mh-share-qr img, #mh-share-qr canvas { display: block; }
+.mh-share-qr-ph { color: #aaa; font-size: 13px; }
+.mh-share-hint { margin: 12px 4px 0; font-size: 12.5px; line-height: 1.7; color: #666; }
+.mh-share-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.mh-share-btn {
+    flex: 1 1 40%; min-width: 120px;
+    padding: 11px 12px; border-radius: 10px;
+    border: 1px solid var(--sp-accent, #C9922A);
+    background: rgba(255,255,255,0.6); color: var(--sp-accent, #7B5E3A);
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: background .15s, color .15s;
+}
+.mh-share-btn:hover { background: var(--sp-accent, #C9922A); color: #fff; }
+.mh-share-btn--primary { background: var(--sp-accent, #C9922A); color: #fff; }
+.mh-share-btn--primary:hover { filter: brightness(1.08); }
+.mh-share-note { margin: 12px 2px 0; min-height: 16px; font-size: 12.5px; color: var(--sp-accent, #7B5E3A); }
+</style>
+
+<script>
+(function initMhenryShare() {
+    var SHARE_URL = (document.querySelector('link[rel="canonical"]') || {}).href
+                    || location.href.split('#')[0];
+    var CUV_URL = '{{ site.baseurl }}/assets/cuv.json';
+    var PAGE_TITLE = {{ page.book_name | jsonify }} + '第{{ page.chapter }}章 · 马太亨利圣经注释';
+    var FILE_BASE = {{ page.book_id | jsonify }} + '-{{ page.chapter }}';
+
+    var fab    = document.getElementById('mh-share-fab');
+    var mask   = document.getElementById('mh-share-mask');
+    var panel  = document.getElementById('mh-share-panel');
+    var status = document.getElementById('mh-share-status');
+    var wxBtn  = document.getElementById('mh-share-wx');
+    var wxGuide= document.getElementById('mh-share-wx-guide');
+    var qrWrap = document.getElementById('mh-share-qr-wrap');
+    var qrDone = false;
+
+    var IS_WECHAT = /micromessenger/i.test(navigator.userAgent);
+    function canShareFiles() {
+        try { return !!(navigator.canShare && navigator.canShare({
+            files: [new File(['x'], 't.html', { type: 'text/html' })] })); }
+        catch (e) { return false; }
+    }
+
+    function openPanel() {
+        mask.hidden = false; panel.hidden = false;
+        status.textContent = '';
+        if (IS_WECHAT) {
+            // 微信内置浏览器：网页无法触发分享/收藏，只能引导手动操作
+            wxGuide.hidden = false;
+            wxBtn.hidden = true;
+            qrWrap.hidden = true;
+        } else {
+            wxGuide.hidden = true;
+            wxBtn.hidden = false;
+            wxBtn.textContent = canShareFiles() ? '分享离线网页到微信' : '下载离线网页（发给微信）';
+            renderQR();
+        }
+    }
+    function closePanel() { mask.hidden = true; panel.hidden = true; }
+
+    fab.addEventListener('click', openPanel);
+    mask.addEventListener('click', closePanel);
+    document.getElementById('mh-share-close').addEventListener('click', closePanel);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) closePanel(); });
+
+    // ── 二维码（懒加载 qrcodejs；失败则显示链接兜底） ──
+    function renderQR() {
+        if (qrDone) return;
+        var box = document.getElementById('mh-share-qr');
+        function draw() {
+            if (!window.QRCode) { fallback(); return; }
+            box.innerHTML = '';
+            try {
+                new QRCode(box, { text: SHARE_URL, width: 180, height: 180,
+                    correctLevel: QRCode.CorrectLevel.M });
+                qrDone = true;
+            } catch (e) { fallback(); }
+        }
+        function fallback() {
+            box.innerHTML = '<div class="mh-share-qr-ph" style="word-break:break-all;padding:8px;">'
+                + '二维码加载失败<br><a href="' + SHARE_URL + '">' + SHARE_URL + '</a></div>';
+        }
+        if (window.QRCode) { draw(); return; }
+        var s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js';
+        s.onload = draw; s.onerror = fallback;
+        document.head.appendChild(s);
+    }
+
+    // ── 分享离线网页到微信：把生成的离线 HTML 当作「文件」分享 ──
+    wxBtn.addEventListener('click', async function () {
+        wxBtn.disabled = true;
+        try {
+            status.textContent = '正在打包离线网页…';
+            var html = await buildOfflineHtml();
+            var file = new File([html], FILE_BASE + '.html', { type: 'text/html' });
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                await navigator.share({ files: [file], title: PAGE_TITLE,
+                    text: PAGE_TITLE + '（离线网页）' });
+                status.textContent = '已唤起分享，请选择「微信」发送给朋友或收藏 ✓';
+            } else {
+                // 不支持文件分享：下载文件，提示在微信中作为文件发送
+                downloadHtml(html);
+                status.textContent = '已下载离线网页；在微信聊天里点「+」→「文件」发送它，'
+                    + '对方即可离线打开。';
+            }
+        } catch (e) {
+            if (e && e.name === 'AbortError') { status.textContent = ''; }
+            else { console.error(e); status.textContent = '分享失败：' + (e && e.message || e); }
+        } finally { wxBtn.disabled = false; }
+    });
+
+    // ── 复制链接 ──
+    document.getElementById('mh-share-copy').addEventListener('click', function () {
+        var done = function () { status.textContent = '已复制链接 ✓'; };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(SHARE_URL).then(done, legacyCopy);
+        } else legacyCopy();
+        function legacyCopy() {
+            var ta = document.createElement('textarea');
+            ta.value = SHARE_URL; ta.style.position = 'fixed'; ta.style.opacity = '0';
+            document.body.appendChild(ta); ta.select();
+            try { document.execCommand('copy'); done(); }
+            catch (e) { status.textContent = '复制失败，请手动复制'; }
+            document.body.removeChild(ta);
+        }
+    });
+
+    // ── 保存离线文档 ──
+    document.getElementById('mh-share-offline').addEventListener('click', async function () {
+        try { status.textContent = '正在打包本章…'; downloadHtml(await buildOfflineHtml());
+            status.textContent = '离线文档已保存 ✓'; }
+        catch (e) { console.error(e); status.textContent = '生成失败：' + (e && e.message || e); }
+    });
+
+    function downloadHtml(html) {
+        var blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = FILE_BASE + '.html';
+        document.body.appendChild(a); a.click();
+        setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    }
+
+    function sameOrigin(u) { try { return new URL(u, location.href).origin === location.origin; } catch (e) { return false; } }
+    function absCssUrls(css, baseHref) {
+        return css.replace(/url\(\s*(['"]?)([^'")]+)\1\s*\)/g, function (m, q, u) {
+            if (/^(data:|https?:|\/\/)/i.test(u)) return m;
+            try { return 'url(' + q + new URL(u, baseHref).href + q + ')'; } catch (e) { return m; }
+        });
+    }
+    async function fetchText(u) { var r = await fetch(u); if (!r.ok) throw new Error(r.status); return r.text(); }
+    async function toDataURI(u) {
+        var r = await fetch(u); var b = await r.blob();
+        return await new Promise(function (res, rej) {
+            var fr = new FileReader(); fr.onload = function () { res(fr.result); }; fr.onerror = rej;
+            fr.readAsDataURL(b);
+        });
+    }
+
+    async function buildOfflineHtml() {
+        // 1) 样式：内联同源 <link>，保留 CDN 字体 <link>，附上全部 <style>
+        var headStyles = [];
+        var links = document.querySelectorAll('link[rel="stylesheet"]');
+        for (var i = 0; i < links.length; i++) {
+            var href = links[i].href;
+            if (sameOrigin(href)) {
+                try { headStyles.push('<style>' + absCssUrls(await fetchText(href), href) + '</style>'); }
+                catch (e) { headStyles.push('<link rel="stylesheet" href="' + href + '">'); }
+            } else {
+                headStyles.push('<link rel="stylesheet" href="' + href + '">');
+            }
+        }
+        var styleEls = document.querySelectorAll('style');
+        for (var j = 0; j < styleEls.length; j++) {
+            if (styleEls[j].id === 'mh-share-style') continue;      // 跳过分享面板自身样式
+            if (styleEls[j].closest && styleEls[j].closest('#mh-share-panel')) continue;
+            headStyles.push('<style>' + styleEls[j].textContent + '</style>');
+        }
+
+        // 2) 头图 → dataURI
+        var heroHtml = '';
+        var hero = document.querySelector('header.intro-header');
+        if (hero) {
+            var clone = hero.cloneNode(true);
+            var bg = hero.style.backgroundImage || '';
+            var m = bg.match(/url\(["']?([^"')]+)["']?\)/);
+            if (m && sameOrigin(m[1])) {
+                try { clone.style.backgroundImage = 'url("' + await toDataURI(m[1]) + '")'; } catch (e) {}
+            }
+            heroHtml = clone.outerHTML;
+        }
+
+        // 3) 正文：克隆 #mhenry-outer，清理交互注入物 + 分享/对比面板，链接绝对化
+        var outer = document.getElementById('mhenry-outer').cloneNode(true);
+        rm(outer, '#mh-share-fab, #mh-share-mask, #mh-share-panel, #calvin-col, .mh-expand-tab');
+        outer.querySelectorAll('.mh-verse').forEach(function (v) { v.classList.remove('mh-folded'); });
+        outer.querySelectorAll('.mh-unit').forEach(function (u) { u.classList.remove('mh-expanded'); });
+        outer.querySelectorAll('.mh-unit-body').forEach(function (b) { b.style.display = ''; });
+        outer.querySelectorAll('.tts-highlight').forEach(function (t) { t.classList.remove('tts-highlight'); });
+        outer.querySelectorAll('a[href]').forEach(function (a) {
+            try { a.href = new URL(a.getAttribute('href'), location.href).href; } catch (e) {}
+        });
+
+        // 4) 收集本章所引经文（供离线弹框）
+        var cuvData = {};
+        try {
+            var cuv = await (await fetch(CUV_URL)).json();
+            document.querySelectorAll('#mhenry-col .scripture-ref').forEach(function (ref) {
+                var vol = ref.dataset.vol;
+                (ref.dataset.groups || '').split(';').forEach(function (g) {
+                    var p = g.split(':'); if (!p[1]) return;
+                    var ch = p[0];
+                    p[1].split(',').forEach(function (v) {
+                        var t = cuv[vol] && cuv[vol][ch] && cuv[vol][ch][v];
+                        if (t) { (cuvData[vol] = cuvData[vol] || {}); (cuvData[vol][ch] = cuvData[vol][ch] || {}); cuvData[vol][ch][v] = t; }
+                    });
+                });
+            });
+        } catch (e) { /* 无网或无 cuv：离线文档仍可读，弹框降级 */ }
+
+        // 5) 组装
+        var bodyClass = document.body.className || '';
+        var html = '<!doctype html>\n<html lang="zh-CN">\n<head>\n'
+            + '<meta charset="utf-8">\n'
+            + '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            + '<title>' + esc(PAGE_TITLE) + '</title>\n'
+            + '<meta name="generator" content="南山圣約归正教会 · 离线文档">\n'
+            + headStyles.join('\n') + '\n'
+            + '<style>#mh-share-fab,#mh-share-mask,#mh-share-panel{display:none!important}'
+            + '#calvin-compare-btn{display:none!important}</style>\n'
+            + '</head>\n<body class="' + esc(bodyClass) + '">\n'
+            + heroHtml + '\n' + outer.outerHTML + '\n'
+            + '<script>window.SP_OFFLINE_DATA=' + JSON.stringify(cuvData) + ';<\/script>\n'
+            + '<script>(' + offlineRuntime.toString() + ')();<\/script>\n'
+            + '</body>\n</html>';
+
+        return html;
+    }
+
+    function rm(root, sel) { root.querySelectorAll(sel).forEach(function (n) { n.remove(); }); }
+    function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
+
+    // ── 离线文档内运行的交互脚本（折叠/展开/经文弹框）——序列化后写入下载文件 ──
+    function offlineRuntime() {
+        // 经文折叠
+        document.querySelectorAll('.mh-unit > .mh-verse').forEach(function (v) {
+            v.classList.add('mh-folded');
+            v.addEventListener('click', function () { this.classList.toggle('mh-folded'); });
+        });
+        // 注释展开页签
+        document.querySelectorAll('.mh-unit').forEach(function (unit) {
+            var verse = unit.querySelector('.mh-verse'), body = unit.querySelector('.mh-unit-body');
+            if (!verse || !body) return;
+            var tab = document.createElement('div');
+            tab.className = 'mh-expand-tab'; tab.textContent = '注释';
+            tab.addEventListener('click', function (e) {
+                e.stopPropagation();
+                var open = unit.classList.toggle('mh-expanded');
+                body.style.display = open ? 'block' : 'none';
+            });
+            verse.appendChild(tab);
+        });
+        // 经文弹框（数据来自内嵌 SP_OFFLINE_DATA）
+        var DATA = window.SP_OFFLINE_DATA || {};
+        var popup = null, hideTimer = null, cur = null;
+        function ensure() {
+            if (popup) return;
+            popup = document.createElement('div');
+            popup.id = 'scripture-popup'; popup.classList.add('sp-crystal');
+            popup.innerHTML = '<div id="scripture-popup-inner"><button id="scripture-popup-close">×</button>'
+                + '<div id="scripture-popup-content"></div></div>';
+            document.body.appendChild(popup);
+            popup.querySelector('#scripture-popup-close').onclick = hide;
+            document.addEventListener('click', function (e) {
+                if (popup.style.display !== 'none' && !popup.contains(e.target)
+                    && !e.target.classList.contains('scripture-ref')) hide();
+            });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+        }
+        function hide() {
+            if (!popup || popup.style.display === 'none') return;
+            clearTimeout(hideTimer); cur = null;
+            popup.style.overflow = 'hidden'; popup.classList.remove('sp-open');
+            hideTimer = setTimeout(function () { popup.style.display = 'none'; }, 460);
+        }
+        function show(anchor, html) {
+            ensure(); clearTimeout(hideTimer);
+            popup.querySelector('#scripture-popup-content').innerHTML = html;
+            popup.classList.remove('sp-open'); popup.style.overflow = 'hidden'; popup.style.display = 'block';
+            var r = anchor.getBoundingClientRect();
+            popup.style.top = (r.bottom + window.pageYOffset + 6) + 'px';
+            popup.style.left = '0px';
+            var maxLeft = window.innerWidth - popup.offsetWidth - 12;
+            popup.style.left = Math.max(8, Math.min(r.left + window.pageXOffset, maxLeft)) + 'px';
+            requestAnimationFrame(function () { popup.classList.add('sp-open'); });
+            setTimeout(function () { if (popup.classList.contains('sp-open')) popup.style.overflow = 'visible'; }, 470);
+        }
+        function e2(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+        document.addEventListener('click', function (e) {
+            var ref = e.target;
+            if (!ref.classList || !ref.classList.contains('scripture-ref')) return;
+            e.stopPropagation();
+            if (popup && popup.style.display !== 'none' && cur === ref) { hide(); return; }
+            cur = ref;
+            var vol = ref.dataset.vol;
+            var groups = (ref.dataset.groups || '').split(';').map(function (g) {
+                var p = g.split(':');
+                return { ch: p[0], verses: (p[1] || '').split(',').filter(Boolean) };
+            }).filter(function (g) { return g.ch; });
+            var header = ref.dataset.label || ref.textContent;
+            var inner = '<div class="sp-header">' + e2(header) + '</div>', any = false;
+            groups.forEach(function (grp) {
+                var book = DATA[vol] && DATA[vol][grp.ch]; if (!book) return;
+                var got = grp.verses.filter(function (v) { return book[v]; });
+                if (!got.length) return; any = true;
+                if (groups.length > 1) inner += '<div class="sp-grouplabel">' + grp.ch + ':' + grp.verses.join('、') + '</div>';
+                got.forEach(function (v) { inner += '<div class="sp-verse"><sup class="sp-vnum">' + v + '</sup>' + e2(book[v]) + '</div>'; });
+            });
+            if (!any) inner += '<div class="sp-not-found">本离线文档未包含该经文</div>';
+            show(ref, inner);
+        });
+        // 恢复字号偏好
+        try { var fs = localStorage.getItem('reading-font-size'); if (fs) document.documentElement.style.setProperty('--reading-font-size', fs + 'px'); } catch (e) {}
+    }
+})();
+</script>
