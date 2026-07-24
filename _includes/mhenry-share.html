@@ -4,14 +4,8 @@
   - 保存离线文档：把当前章节打包成单文件 HTML，离线打开与在线基本一致
     （内联同源 CSS + 全部 <style> + 头图 dataURI + 内嵌所引经文 + 交互脚本）
   主题色沿用 :root 的 --sp-accent（当前书卷主题色）。
+  触发方式：点击页面顶部 hero 图片区域（不放浮动按钮，避免干扰阅读）。
 {% endcomment %}
-<button id="mh-share-fab" type="button" aria-label="分享本章" title="分享 / 保存离线">
-    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-        <path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
-    </svg>
-    <span>分享</span>
-</button>
-
 <div id="mh-share-mask" hidden></div>
 <div id="mh-share-panel" role="dialog" aria-modal="true" aria-label="分享本章" hidden>
     <button id="mh-share-close" type="button" aria-label="关闭">×</button>
@@ -39,21 +33,21 @@
 </div>
 
 <style id="mh-share-style">
-#mh-share-fab {
-    position: fixed; right: 18px; bottom: 22px; z-index: 9800;
-    display: inline-flex; align-items: center; gap: 6px;
-    padding: 10px 15px 10px 13px;
-    background: var(--sp-accent, #C9922A); color: #fff;
-    border: none; border-radius: 30px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.22);
-    font-size: 14px; font-weight: 700; cursor: pointer;
-    -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
-    transition: transform .15s, box-shadow .15s, opacity .2s;
+/* 顶部 hero 图片作为分享触发区：加指针 + 右上角轻提示徽标 */
+header.intro-header.mh-share-hero { cursor: pointer; position: relative; }
+#mh-share-hero-hint {
+    position: absolute; top: 14px; right: 14px; z-index: 30;
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 6px 11px; border-radius: 20px;
+    background: rgba(0,0,0,0.32); color: #fff;
+    font-size: 12px; font-weight: 600; letter-spacing: .02em;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.35);
+    pointer-events: none;   /* 点击落到 hero 上 */
+    transition: background .15s;
 }
-#mh-share-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.28); }
-#mh-share-fab:active { transform: translateY(0); }
-#mh-share-fab svg { display: block; }
-@media (max-width: 767px) { #mh-share-fab span { display: none; } #mh-share-fab { padding: 12px; } }
+header.intro-header.mh-share-hero:hover #mh-share-hero-hint { background: rgba(0,0,0,0.5); }
+#mh-share-hero-hint svg { display: block; }
 
 #mh-share-mask {
     position: fixed; inset: 0; z-index: 9850;
@@ -129,7 +123,7 @@
     var PAGE_TITLE = {{ page.book_name | jsonify }} + '第{{ page.chapter }}章 · 马太亨利圣经注释';
     var FILE_BASE = {{ page.book_id | jsonify }} + '-{{ page.chapter }}';
 
-    var fab    = document.getElementById('mh-share-fab');
+    var hero   = document.querySelector('header.intro-header');
     var mask   = document.getElementById('mh-share-mask');
     var panel  = document.getElementById('mh-share-panel');
     var status = document.getElementById('mh-share-status');
@@ -157,7 +151,21 @@
     }
     function closePanel() { mask.hidden = true; panel.hidden = true; }
 
-    fab.addEventListener('click', openPanel);
+    // 触发：点击顶部 hero 图片区域（并加一个不挡阅读的轻提示徽标）
+    if (hero) {
+        hero.classList.add('mh-share-hero');
+        hero.title = '点顶部图片：分享 / 保存本章';
+        hero.addEventListener('click', openPanel);
+        var hint = document.createElement('div');
+        hint.id = 'mh-share-hero-hint';
+        hint.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">'
+            + '<path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7'
+            + 's-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3'
+            + 'c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 '
+            + '2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92'
+            + '-1.31-2.92-2.92-2.92z"/></svg><span>分享</span>';
+        hero.appendChild(hint);
+    }
     mask.addEventListener('click', closePanel);
     document.getElementById('mh-share-close').addEventListener('click', closePanel);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) closePanel(); });
@@ -273,6 +281,8 @@
         var hero = document.querySelector('header.intro-header');
         if (hero) {
             var clone = hero.cloneNode(true);
+            clone.classList.remove('mh-share-hero');               // 去掉指针样式
+            rm(clone, '#mh-share-hero-hint');                      // 去掉分享提示徽标
             var bg = hero.style.backgroundImage || '';
             var m = bg.match(/url\(["']?([^"')]+)["']?\)/);
             if (m && sameOrigin(m[1])) {
@@ -283,7 +293,7 @@
 
         // 3) 正文：克隆 #mhenry-outer，清理交互注入物 + 分享/对比面板，链接绝对化
         var outer = document.getElementById('mhenry-outer').cloneNode(true);
-        rm(outer, '#mh-share-fab, #mh-share-mask, #mh-share-panel, #calvin-col, .mh-expand-tab');
+        rm(outer, '#mh-share-mask, #mh-share-panel, #calvin-col, .mh-expand-tab');
         outer.querySelectorAll('.mh-verse').forEach(function (v) { v.classList.remove('mh-folded'); });
         outer.querySelectorAll('.mh-unit').forEach(function (u) { u.classList.remove('mh-expanded'); });
         outer.querySelectorAll('.mh-unit-body').forEach(function (b) { b.style.display = ''; });
@@ -317,8 +327,8 @@
             + '<title>' + esc(PAGE_TITLE) + '</title>\n'
             + '<meta name="generator" content="南山圣約归正教会 · 离线文档">\n'
             + headStyles.join('\n') + '\n'
-            + '<style>#mh-share-fab,#mh-share-mask,#mh-share-panel{display:none!important}'
-            + '#calvin-compare-btn{display:none!important}</style>\n'
+            + '<style>#mh-share-mask,#mh-share-panel,#mh-share-hero-hint{display:none!important}'
+            + '#calvin-compare-btn{display:none!important}header.intro-header{cursor:auto!important}</style>\n'
             + '</head>\n<body class="' + esc(bodyClass) + '">\n'
             + heroHtml + '\n' + outer.outerHTML + '\n'
             + '<script>window.SP_OFFLINE_DATA=' + JSON.stringify(cuvData) + ';<\/script>\n'
