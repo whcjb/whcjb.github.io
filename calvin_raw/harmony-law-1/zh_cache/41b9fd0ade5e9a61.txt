@@ -1,0 +1,1 @@
+<span style="color:#008080">jsp</span> 与 <span style="color:#008080">rb[</span> 见于第 13 节与第 12 节。值得注意的是，*加尔文* 在其本人的注释中如今将 <span style="color:#008080">jsp</span> 正确地译作 *transilire*（跨越、越过）；然而，他先前注释此字时，只用了 transire 一词的若干部分，而这个词所表达的意思不过等同于 <span style="color:#008080">rb[</span>。 — W.
