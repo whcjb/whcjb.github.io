@@ -33,21 +33,8 @@
 </div>
 
 <style id="mh-share-style">
-/* 顶部 hero 图片作为分享触发区：加指针 + 右上角轻提示徽标 */
-header.intro-header.mh-share-hero { cursor: pointer; position: relative; }
-#mh-share-hero-hint {
-    position: absolute; top: 14px; right: 14px; z-index: 30;
-    display: inline-flex; align-items: center; gap: 5px;
-    padding: 6px 11px; border-radius: 20px;
-    background: rgba(0,0,0,0.32); color: #fff;
-    font-size: 12px; font-weight: 600; letter-spacing: .02em;
-    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.35);
-    pointer-events: none;   /* 点击落到 hero 上 */
-    transition: background .15s;
-}
-header.intro-header.mh-share-hero:hover #mh-share-hero-hint { background: rgba(0,0,0,0.5); }
-#mh-share-hero-hint svg { display: block; }
+/* 顶部 hero 图片作为分享触发区：无任何可见控件，点击即弹出 */
+header.intro-header.mh-share-hero { cursor: pointer; }
 
 #mh-share-mask {
     position: fixed; inset: 0; z-index: 9850;
@@ -151,20 +138,11 @@ header.intro-header.mh-share-hero:hover #mh-share-hero-hint { background: rgba(0
     }
     function closePanel() { mask.hidden = true; panel.hidden = true; }
 
-    // 触发：点击顶部 hero 图片区域（并加一个不挡阅读的轻提示徽标）
+    // 触发：点击顶部 hero 图片区域，无任何可见控件
     if (hero) {
         hero.classList.add('mh-share-hero');
         hero.title = '点顶部图片：分享 / 保存本章';
         hero.addEventListener('click', openPanel);
-        var hint = document.createElement('div');
-        hint.id = 'mh-share-hero-hint';
-        hint.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true">'
-            + '<path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7'
-            + 's-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3'
-            + 'c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 '
-            + '2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92'
-            + '-1.31-2.92-2.92-2.92z"/></svg><span>分享</span>';
-        hero.appendChild(hint);
     }
     mask.addEventListener('click', closePanel);
     document.getElementById('mh-share-close').addEventListener('click', closePanel);
@@ -282,7 +260,6 @@ header.intro-header.mh-share-hero:hover #mh-share-hero-hint { background: rgba(0
         if (hero) {
             var clone = hero.cloneNode(true);
             clone.classList.remove('mh-share-hero');               // 去掉指针样式
-            rm(clone, '#mh-share-hero-hint');                      // 去掉分享提示徽标
             var bg = hero.style.backgroundImage || '';
             var m = bg.match(/url\(["']?([^"')]+)["']?\)/);
             if (m && sameOrigin(m[1])) {
@@ -327,7 +304,7 @@ header.intro-header.mh-share-hero:hover #mh-share-hero-hint { background: rgba(0
             + '<title>' + esc(PAGE_TITLE) + '</title>\n'
             + '<meta name="generator" content="南山圣約归正教会 · 离线文档">\n'
             + headStyles.join('\n') + '\n'
-            + '<style>#mh-share-mask,#mh-share-panel,#mh-share-hero-hint{display:none!important}'
+            + '<style>#mh-share-mask,#mh-share-panel{display:none!important}'
             + '#calvin-compare-btn{display:none!important}header.intro-header{cursor:auto!important}</style>\n'
             + '</head>\n<body class="' + esc(bodyClass) + '">\n'
             + heroHtml + '\n' + outer.outerHTML + '\n'
