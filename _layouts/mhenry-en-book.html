@@ -1,0 +1,96 @@
+---
+layout: default
+---
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}nt-bg-101.jpg{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_name_en }}</h1>
+                    <span class="subheading">Matthew Henry's Commentary — {{ page.book_name_zh }}（英文版）</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+            <p class="mh-en-back">
+                <a href="{{ site.baseurl }}/mhenry/">&larr; Matthew Henry index</a>
+            </p>
+
+            {% assign book_chapters = site.pages | where: "book_id", page.book_id | where: "layout", "mhenry-en-chapter" %}
+            {% assign chapter_nums = book_chapters | map: "chapter" %}
+            {% assign has_preface = false %}
+            {% for c in book_chapters %}{% if c.is_preface %}{% assign has_preface = true %}{% endif %}{% endfor %}
+
+            <div class="mh-en-chapters-col">
+                <h3 class="mh-en-section-title">◇ {{ page.book_name_en }} · Chapters</h3>
+                {% if page.completed_by %}
+                <p class="mh-en-completer">{{ page.completed_by }}</p>
+                {% endif %}
+                <div class="row">
+                    {% if has_preface %}
+                    <div class="col-xs-4 col-sm-3 col-md-3" style="margin-bottom:10px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/preface/" class="mh-en-chapter-btn mh-en-chapter-btn--preface">
+                            Preface
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% for i in (1..page.total_chapters) %}
+                    {% if chapter_nums contains i %}
+                    <div class="col-xs-4 col-sm-3 col-md-3" style="margin-bottom:10px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ i }}/" class="mh-en-chapter-btn">
+                            Chapter {{ i }}
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+body { background: #F4F8FC; }
+.mh-en-back { display: flex; justify-content: space-between; margin-bottom: 24px; }
+.mh-en-back a { color: #1F3A52; }
+.mh-en-chapters-col {
+    background: #EEF4F9;
+    border: 1px solid rgba(74,109,140,0.25);
+    border-radius: 12px;
+    padding: 20px 18px 12px;
+    margin-bottom: 28px;
+}
+.mh-en-section-title {
+    border-bottom: 2px solid #4A6D8C;
+    padding-bottom: 8px;
+    margin: 0 0 6px;
+    color: #1F3A52;
+    letter-spacing: 0.04em;
+}
+.mh-en-completer { color: #4A6D8C; font-size: 13px; font-style: italic; margin: 0 0 16px; }
+.mh-en-chapter-btn {
+    display: block;
+    padding: 9px 6px;
+    background: #FFFFFF;
+    border: 2px solid #4A6D8C;
+    border-radius: 8px;
+    color: #1F3A52 !important;
+    text-decoration: none !important;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.mh-en-chapter-btn:hover { background: #1F3A52; border-color: #1F3A52; color: #fff !important; }
+.mh-en-chapter-btn--preface { background: #E4EDF5; border-color: #2A5070; }
+.mh-en-chapter-btn--preface:hover { background: #2A5070; border-color: #2A5070; }
+</style>

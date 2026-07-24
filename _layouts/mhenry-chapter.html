@@ -24,35 +24,6 @@ layout: default
 
             <div class="mh-nav-bar" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; padding-left:16px; padding-right:16px;">
                 <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; 返回{{ page.book_name }}章节列表</a>
-                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
-<div class="font-size-ctrl" title="调节字号">
-                        <button onclick="adjustFontSize(-1)" aria-label="缩小字号">A-</button>
-                        <button onclick="resetFontSize()" aria-label="默认字号">A</button>
-                        <button onclick="adjustFontSize(1)" aria-label="放大字号">A+</button>
-                    </div>
-                    <button onclick="toggleCalvinCompare()"
-                            style="padding:5px 16px; background:#e8f4f8; border:1px solid #0085a1; border-radius:3px;
-                                   color:#0085a1; cursor:pointer; font-size:13px; font-weight:bold;">
-                        对比注释
-                    </button>
-                </div>
-            </div>
-
-            <div class="tts-bar" id="ttsBar" style="padding-left:16px; padding-right:16px;">
-                <div class="tts-controls">
-                    <button class="tts-btn" id="ttsPlayBtn" onclick="ttsPlay()" title="朗读">&#9654; 朗读</button>
-                    <button class="tts-btn" id="ttsPauseBtn" onclick="ttsPause()" title="暂停" style="display:none;">&#10074;&#10074; 暂停</button>
-                    <button class="tts-btn" id="ttsStopBtn" onclick="ttsStop()" title="停止" style="display:none;">&#9632; 停止</button>
-                    <label class="tts-speed" title="语速">
-                        <span>语速</span>
-                        <input type="range" id="ttsSpeedRange" min="0.5" max="2" step="0.1" value="1" onchange="ttsSetSpeed(this.value)">
-                        <span id="ttsSpeedVal">1.0x</span>
-                    </label>
-                </div>
-                <div class="tts-progress" id="ttsProgress" onclick="ttsClickProgress(event)">
-                    <div class="tts-progress-fill" id="ttsProgressFill"></div>
-                    <span class="tts-progress-text" id="ttsProgressText">0/0</span>
-                </div>
             </div>
 
             {{ content }}
@@ -91,25 +62,8 @@ layout: default
                 发布于 {{ page.date | date: "%Y年%-m月%-d日 %H:%M" }}
             </p>
             {% endif %}
-
-            <!-- Calvin compare button -->
-            <div style="text-align:center; margin-top:28px; padding-top:20px; border-top:1px dashed #D7C4A3;">
-                <button id="calvin-compare-btn" onclick="toggleCalvinCompare()"
-                        style="padding:8px 22px; background:#e8f4f8; border:1px solid #0085a1; border-radius:3px;
-                               color:#0085a1; cursor:pointer; font-size:14px; font-weight:bold; letter-spacing:.03em;">
-                    加尔文注释
-                </button>
-            </div>
             </div><!-- /.mh-footer -->
 
-        </div>
-
-        <!-- Calvin side panel (hidden until activated) -->
-        <div id="calvin-col" style="display:none;">
-            <!-- .calvin-panel-header inserted by JS so it's sticky inside this scroll column -->
-            <div id="calvin-col-inner">
-                <div id="calvin-content-area"></div>
-            </div>
         </div>
     </div>
 </div>
@@ -988,7 +942,6 @@ function flashEl(el) {
 })();
 
 </script>
-{% include reading-progress.html %}
 
 {% include scripture-popup.html container_selector="#mhenry-col" %}
 
@@ -1000,5 +953,6 @@ if ('serviceWorker' in navigator) {
 </script>
 
 
-{% assign nt_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,galatians,ephesians,philippians,colossians,1thessalonians,2thessalonians,1timothy,2timothy,titus,philemon,hebrews,james,1peter,2peter,1john,2john,3john,jude,revelation" | split: "," %}
-{% if nt_books contains page.book_id %}{% include mhenry-diamond.html %}{% endif %}
+{% comment %} 钻石风格：叙事/福音书/较大书信统一银蓝；14 卷补译书信改用各自 inline 水晶风，不含于此表 {% endcomment %}
+{% assign diamond_books = "matthew,mark,luke,john,acts,romans,1corinthians,2corinthians,philemon,hebrews,1peter,2peter,revelation" | split: "," %}
+{% if diamond_books contains page.book_id %}{% include mhenry-diamond.html %}{% endif %}

@@ -64,6 +64,42 @@ header-img: img/mhenry-land-55.jpg
                 {% endfor %}
             </div>
 
+            <!-- 英文版（English）：中文原缺、由 CCEL Vol.6 提取的 14 卷续写书信 -->
+            {% assign en_pages = site.pages | where: "layout", "mhenry-en-book" %}
+            {% assign en_ids = en_pages | map: "book_id" %}
+            {% if en_pages.size > 0 %}
+            <h3 class="mhenry-section-heading mhenry-section-heading--en mhenry-en-toggle" id="mhenryEnToggle"
+                onclick="toggleMhenryEn()" role="button" tabindex="0"
+                onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleMhenryEn();}">
+                <span class="mhenry-en-caret">▸</span> 英文版（English）
+            </h3>
+            <div class="mhenry-en-panel" id="mhenryEnPanel" hidden>
+                <p class="mhenry-en-note">中文版未收录、由亨利同工续写的 14 卷（Galatians–Jude），据 CCEL Vol.6 英文原文提取。</p>
+                <div class="row mhenry-book-grid">
+                    {% for book in site.data.mhenry_books.new_testament %}
+                    {% assign en_id = book.id | append: '-en' %}
+                    {% if en_ids contains en_id %}
+                    <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                        <a href="{{ site.baseurl }}/mhenry/{{ en_id }}/" class="mhenry-book-btn mhenry-book-btn--en">
+                            {{ book.name }}
+                            <small>（{{ book.chapters }} ch.）</small>
+                        </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <script>
+            function toggleMhenryEn() {
+                var panel = document.getElementById('mhenryEnPanel');
+                var toggle = document.getElementById('mhenryEnToggle');
+                var open = panel.hasAttribute('hidden');
+                if (open) { panel.removeAttribute('hidden'); } else { panel.setAttribute('hidden', ''); }
+                toggle.classList.toggle('is-open', open);
+            }
+            </script>
+            {% endif %}
+
         </div>
     </div>
 </div>
@@ -122,5 +158,39 @@ header-img: img/mhenry-land-55.jpg
 .mhenry-book-btn--has-content:hover small {
     color: rgba(255,255,255,0.85);
 }
+
+/* ── English section: cold blue ────────────────────── */
+.mhenry-section-heading--en {
+    border-bottom-color: #4A6D8C;
+    color: #1F3A52;
+    margin-top: 44px;
+}
+.mhenry-en-toggle { cursor: pointer; user-select: none; outline: none; }
+.mhenry-en-toggle:hover { color: #4A6D8C; }
+.mhenry-en-caret { display: inline-block; transition: transform 0.2s; font-size: 0.85em; }
+.mhenry-en-toggle.is-open .mhenry-en-caret { transform: rotate(90deg); }
+.mhenry-en-note {
+    color: #4A6D8C;
+    font-size: 13px;
+    margin: -8px 0 18px;
+}
+.mhenry-book-btn--en {
+    background: #EEF4F9;
+    border: 1px solid #4A6D8C;
+    border-left: 4px solid #1F3A52;
+    color: #1F3A52 !important;
+    font-weight: bold;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.mhenry-book-btn--en small { display: block; color: #4A6D8C; font-size: 12px; }
+.mhenry-book-btn--en:hover {
+    background: #1F3A52;
+    border-color: #1F3A52;
+    border-left-color: #4A6D8C;
+    color: #fff !important;
+}
+.mhenry-book-btn--en:hover small { color: rgba(255,255,255,0.85); }
 
 </style>

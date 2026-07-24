@@ -15,7 +15,7 @@ OCR artifact。重跑安全（idempotent）：跑两次结果一样。
 
 Detect-only gates（12/13）只报告不修改，避免误删用户校准的内容。
 
-锁定章节：LOCKED_CHAPTERS = {1, 2, 3, 4, 9, 10, 15, 16} —— 用户校准好，永远跳过。
+锁定章节：LOCKED_CHAPTERS = {1, 2, 3, 4, 5, 9, 10, 15, 16} —— 用户校准好，永远跳过。
 
 用法（项目根目录）：
     python3 scripts/fix_romans_ocr_artifacts.py             # dry-run
@@ -28,7 +28,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ROMANS_DIR = ROOT / 'calvin' / 'romans'
-LOCKED_CHAPTERS = {1, 2, 3, 4, 9, 10, 15, 16}
+LOCKED_CHAPTERS = {1, 2, 3, 4, 5, 9, 10, 15, 16}
 
 
 def find_main_segments(text: str, ch: int):

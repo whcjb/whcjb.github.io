@@ -13,7 +13,7 @@ BOOK=$1
 shift
 # 剩余 args = 章节号
 
-LOG=/tmp/schedule_${BOOK}.log
+LOG=/tmp/schedule_${BOOK}_${TIME//:/}.log
 
 TARGET=$(date -j -f "%Y-%m-%d %H:%M:%S" "$(date +%Y-%m-%d) $TIME:00" +%s)
 NOW=$(date +%s)

@@ -1,0 +1,143 @@
+---
+layout: default
+---
+
+<link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+
+<!-- Page Header -->
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}nt-bg-101.jpg{% endif %}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ page.book_name_en }}{% unless page.is_preface %} · Chapter {{ page.chapter }}{% endunless %}</h1>
+                    <span class="subheading">Matthew Henry's Commentary — {{ page.book_name_zh }}（英文版）</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="mhenry-outer" class="container">
+    <div class="row">
+        <div id="mhenry-en-col" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+
+            <div class="mh-en-nav-bar">
+                <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">&larr; {{ page.book_name_en }} contents</a>
+            </div>
+
+            <div class="mh-en-body">
+                {{ content }}
+            </div>
+
+            <div class="mh-en-footer">
+                <div class="mh-en-diamond">◇</div>
+                <hr>
+                {% assign next_ch = page.chapter | plus: 1 %}
+                <div class="mh-en-pager">
+                    <div class="mh-en-pager-l">
+                        {% unless page.is_preface %}{% if page.chapter > 1 %}
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ page.chapter | minus: 1 }}/">&larr; Chapter {{ page.chapter | minus: 1 }}</a>
+                        {% endif %}{% endunless %}
+                    </div>
+                    <div class="mh-en-pager-c">
+                        <a class="mh-en-btn-solid" href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/">Contents</a>
+                    </div>
+                    <div class="mh-en-pager-r">
+                        {% unless page.is_preface %}{% if next_ch <= page.total_chapters %}
+                        <a href="{{ site.baseurl }}/mhenry/{{ page.book_id }}/{{ next_ch }}/">Chapter {{ next_ch }} &rarr;</a>
+                        {% endif %}{% endunless %}
+                    </div>
+                </div>
+                {% if page.date %}
+                <p class="mh-en-date">Published {{ page.date | date: "%B %-d, %Y" }}</p>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+/* ── 英文版：冷调蓝主题（与暖色中文版区分） ───────────────── */
+#mhenry-en-col {
+    background: linear-gradient(160deg, #EEF4F9 0%, #E4EDF5 45%, #EDF3F8 100%);
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 40px;
+    color: #21384A;
+    font-size: var(--reading-font-size, 17px);
+}
+.mh-en-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 4px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(74,109,140,0.30);
+}
+.mh-en-nav-bar a { color: #1F3A52 !important; font-size: 13px; text-decoration: none; }
+.mh-en-nav-bar a:hover { text-decoration: underline; }
+
+.mh-en-body {
+    line-height: 1.95;
+    font-family: Georgia, "Times New Roman", "LXGW WenKai", serif;
+    text-align: justify;
+    letter-spacing: 0.01em;
+}
+.mh-en-body h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #1F3A52;
+    text-align: center;
+    letter-spacing: 0.06em;
+    margin: 10px 0 6px;
+}
+.mh-en-body h1::after {
+    content: '◇';
+    display: block;
+    font-size: 0.4em;
+    color: rgba(74,109,140,0.6);
+    margin: 10px auto 0;
+}
+.mh-en-body h2, .mh-en-body h3 {
+    color: #2A5070;
+    font-family: Georgia, serif;
+    margin-top: 1.4em;
+}
+.mh-en-body p { margin: 0 0 1em; text-indent: 2em; }
+.mh-en-body p:first-of-type { text-indent: 0; }
+.mh-en-body b, .mh-en-body strong { color: #1F3A52; }
+.mh-en-body em, .mh-en-body i { color: #345; }
+
+.mh-en-footer { margin-top: 32px; }
+.mh-en-diamond { text-align: center; color: #4A6D8C; font-size: 20px; margin: 8px 0; }
+.mh-en-footer hr { border-color: rgba(74,109,140,0.35); margin-top: 0; }
+.mh-en-pager { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+.mh-en-pager-l { flex: 1; text-align: left; }
+.mh-en-pager-c { flex: 1; text-align: center; }
+.mh-en-pager-r { flex: 1; text-align: right; }
+.mh-en-pager a {
+    display: inline-block; padding: 6px 14px; border-radius: 4px;
+    border: 1px solid #4A6D8C; background: #F4F8FC; color: #1F3A52 !important;
+    text-decoration: none; font-size: 13px;
+}
+.mh-en-pager a.mh-en-btn-solid { background: #1F3A52; border-color: #1F3A52; color: #fff !important; }
+.mh-en-pager a:hover { background: #4A6D8C; border-color: #4A6D8C; color: #fff !important; }
+.mh-en-date { text-align: center; color: #6A87A0; font-size: 13px; font-style: italic; margin-top: 20px; }
+
+@media (max-width: 767px) {
+    #mhenry-en-col { border-radius: 0; padding-left: 16px; padding-right: 16px; }
+}
+</style>
+
+<script>
+// Font size control shares the same key as the Chinese reading pages
+(function () {
+    var saved = parseInt(localStorage.getItem('reading-font-size'));
+    if (saved) document.documentElement.style.setProperty('--reading-font-size', saved + 'px');
+})();
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
+}
+</script>
