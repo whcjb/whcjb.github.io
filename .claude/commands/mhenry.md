@@ -24,7 +24,8 @@
   - `fix_mhenry_verse_leak.py` — 修复经文泄漏到注释体
   - `inject_date_headings.py` — 注入日期大标题
   - `propagate_verse_style.py` — 经文块字体/配色推广
-  - `fix_henry_footnotes.py` — 章末脚注双向跳转修正
+  - `fix_henry_footnotes.py` — 章末脚注编号重排/双向跳转链接（只改链接不碰内容）
+  - `fix_nt_footnotes.py` — 对照 PDF 字号重建脚注内容、修脚注↔正文双向错乱（全 66 卷，§4.12）
   - `theme_book_index.py` — 书卷目录页 `index.html` 主题色注入（§4.8）
   - `bootstrap_ezra_preface.py` — 缺 `preface.md` 的单卷修复参考（§4.9）
   - `assign_nt_headers.py` — 新约 27 卷页头风景图分配（§1.8）
@@ -613,6 +614,28 @@ done
 
 **预防**：CSS 必须用 `#mhenry-col` 等顶层 scope 限定；每书的 `<style>` 都是 inline，互相独立。
 
+### 4.12 章末脚注与正文在页断处双向错乱（全书 66 卷普遍）
+
+**症状**：`<aside class="mhenry-footnotes">` 里混入正文片段（甚至整条真脚注前面挂着一段正文），或真脚注整条丢失；同时正文里嵌着脚注文字（如「钦定本将…译为…」突兀插在叙述中间），正文相应位置缺字。腓利门书更极端：整个 aside 全是被顶掉的正文碎片（另见早期「古旧福音」页眉水印事故）。
+
+**根因**：PDF 每页正文在**页脚注区上方**结束，PyMuPDF 抽取时把页底最后一行正文与其下的脚注块粘在一起，早期 `mhenry_pdf_to_md.py` 的脚注分类器（`FOOTNOTE_RE` / `INLINE_FN_RE`）在页断缝处误判，导致正文↔脚注双向串位、且个别脚注被丢。**新旧约全部受影响**（NT 109 章 / OT 768 章，2026-07 已全量修复）。
+
+**权威依据 = PDF 字号**（所有卷一致，已验证）：
+- **正文 = 12 号**，**脚注 = 10 号**，**章标题 = 14 号**（诗篇用「第N篇」；弥迦/哈巴谷/西番雅无 14 号标题，改用页眉「第N章」归属）。
+- 脚注按**左边距（x<60）小字号（≤8.5）纯数字**的引导编号切分成单条。
+- 运行头 `马太亨利…第N页 第N章` 在 y<40，抽正文时按 y 丢弃；章边界页按 14 号标题的 y 坐标切分（正文和脚注都要 y 感知，否则会漏掉本章在下一章标题页顶部的尾巴）。
+
+**修复工具**：`scripts/fix_nt_footnotes.py`（见 §6，`analyze` / `apply` 双模）。它重建 aside、把被顶掉的正文按 PDF 局部锚点桥接回原位，每处改动都要 `前文+桥接+后文` 是 PDF 连续子串才落地，**跨 HTML 标签一律跳过**（保护经文框/结构），不确定就标 residual 让人工处理。
+
+**人工修 residual 的判型**（工具跨标签跳过的少数）：
+- 脚注**追加在完整句后**、其后就是 `</div>` 或标题 → 直接删脚注（正文已完整）。
+- 脚注**前置在综述开头** → 删前缀。
+- 脚注**卡在句中**（前文未结句）→ 用 PDF 桥接缺失正文；注意 PDF gap 常延伸进已存在的标题/经文，只补「到下一结构元素之前」那截，别把已有 heading 重复插进去。
+
+**顺带发现的历史遗留**：撒迦利亚 1、7 章正文在页断处**整段截断**（各缺约 2900 / 1500 字，与脚注无关），已对照 PDF 逐字补回。修脚注时若发现某章 `md 正文字数 ≪ PDF 12 号正文字数`（比值 <0.85，注意先剥掉内联 `<style>` 再比），多半是这种预存截断。
+
+**勿混淆**：`fix_henry_footnotes.py`（§0 老脚本）只做**编号重排/双向跳转链接**，不碰内容；本条的内容重建用 `fix_nt_footnotes.py`。
+
 ---
 
 ## 5. 修改/批改流程模板
@@ -715,6 +738,20 @@ python3 scripts/theme_book_index.py --dry-run        # 预览
 ```
 
 幂等：已有 `custom_style:` 的 8 卷小先知会跳过，不被覆盖。
+
+### `fix_nt_footnotes.py`
+对照中文 PDF 重建章末脚注、修复脚注↔正文在页断处的双向错乱（详见 §4.12）。名字虽叫 nt，`BOOKS` dict 已含**全 66 卷**（新旧约）。
+
+```bash
+python3 scripts/fix_nt_footnotes.py analyze [book...]   # 只诊断，打印每章 PDF_fn/old_fn/body_edits/residual
+python3 scripts/fix_nt_footnotes.py apply   [book...]    # 落地：重建 aside + 桥接正文
+# 省略 book 则处理 BOOKS 里全部
+```
+
+- 靠 PDF 字号分层（正文 12 / 脚注 10 / 标题 14），见 §4.12。加新卷改 `BOOKS`（book_id → PDF 文件名列表，多卷按章顺序）。
+- `apply` 落地前断言 `aside == PDF 脚注`；跨 HTML 标签的桥接一律跳过并标 `⚠RESIDUAL`，**residual 必须人工对照 PDF 修**（判型见 §4.12）。
+- **改后校验**（务必跑）：残留嵌入脚注归零、`<div>` 平衡、标签内无弯引号、`git show HEAD:<f>` 与新版做 difflib 确认「删除的都是脚注文字」（正文零丢失）、`jekyll build`。
+- 已知**误报**：difflib 把「正文句末。+ 脚注」这种边界窗口报成删除——核对该文字是否已在 aside 即可排除。
 
 ---
 
