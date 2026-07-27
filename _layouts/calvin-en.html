@@ -325,7 +325,7 @@ a.commentary-anchor {
   margin-bottom: 8px;
 }
 
-/* 长经文段默认折叠 (harmony-law-1[-en])：JS 给超高的经文表/框包一层
+/* 长经文段默认折叠 (所有 harmony-law 卷，中英)：JS 给超高的经文表/框包一层
    .scripture-collapsible，折叠时裁高 + 底部渐隐，点按钮展开/收起。 */
 .calvin-en-content .scripture-collapsible {
   margin: 0 0 20px;
@@ -1126,7 +1126,7 @@ function closeVerseNav() {
     var content = document.querySelector('.calvin-en-content');
     if(!content) return;
     var book = content.getAttribute('data-book') || '';
-    if(book !== 'harmony-law-1' && book !== 'harmony-law-1-en') return;
+    if(!/^harmony-law-\d+(-en)?$/.test(book)) return;   // 所有律法合参卷（1-4，中英）
     var COLLAPSED_MAX = 300;   // 折叠时可见高度(px)
     var TRIGGER = 380;         // 超过此高度才折叠(px)
     var blocks = content.querySelectorAll('table.scripture-table.calvin-parallel, .scripture-box');
