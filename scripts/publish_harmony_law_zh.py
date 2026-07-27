@@ -69,6 +69,7 @@ def parse_fm(text):
 def publish(vol: int):
     src_dir = ROOT / f'calvin_raw/harmony-law-{vol}/zh_chapters'
     out_dir = ROOT / f'calvin/harmony-law-{vol}'
+    out_dir.mkdir(parents=True, exist_ok=True)
     book_id = f'harmony-law-{vol}'
     cn_vol = {1: '卷一', 2: '卷二', 3: '卷三', 4: '卷四'}[vol]
     book_name = f'摩西五经合参（{cn_vol}）'
