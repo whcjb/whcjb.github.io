@@ -24,6 +24,7 @@ case "$BOOK" in
     jude)     PUBLISH=scripts/publish_jude_zh.py;     RAW_DIR=calvin_raw/jude/zh_chapters;  PUB_DIR=calvin/jude ;;
     genesis)  PUBLISH=scripts/publish_genesis_zh.py;  RAW_DIR=calvin_raw/genesis/zh_chapters; PUB_DIR=calvin/genesis ;;
     harmony-law-1) PUBLISH="scripts/publish_harmony_law_zh.py --vol 1"; RAW_DIR=calvin_raw/harmony-law-1/zh_chapters; PUB_DIR=calvin/harmony-law-1 ;;
+    harmony-law-2) PUBLISH="scripts/publish_harmony_law_zh.py --vol 2"; RAW_DIR=calvin_raw/harmony-law-2/zh_chapters; PUB_DIR=calvin/harmony-law-2 ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache

@@ -904,6 +904,61 @@ BOOKS = {
             "    graven image→雕刻的偶像，the Lawgiver→立法者，Israelites→以色列人"
         ),
     },
+    'harmony-law-2': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/harmony-law-2-en',
+        'cache':  ROOT / 'calvin_raw/harmony-law-2/zh_cache',
+        'out':    ROOT / 'calvin_raw/harmony-law-2/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《律法合参》"
+            "（又称《摩西五经合参》，Harmony of the Law，即出埃及记至申命记"
+            "四卷按主题合参编排的注释）第二卷。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签与结构不变：<p style=\"...\"> <strong> <div> <span> "
+            "<table class=\"scripture-table calvin-parallel\"> <tr> <td> "
+            "<h2 class=\"scripture-anchor\"...> <p class=\"title-block-h1\">/<h2> 等\n"
+            "5. 保留 AGES code 不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）；\n"
+            "   居中经文导航 <span style=\"color:#000080\">GO TO EXODUS X:Y</span> 的 GO TO 译为「前往」，书卷章节照和合本\n"
+            "6. 双栏经文表 calvin-parallel：左栏英文经文→照抄简体和合本原文，右栏"
+            "拉丁文原样保留（不翻译）；表结构 <tr><td>...</td><td>...</td></tr> 不变\n"
+            "7. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "8. 标题块：THE FIRST/SECOND... COMMANDMENT→第一/第二…诫，"
+            "EXPOSITION OF...→…的阐释，PREFACE TO THE LAW→律法序言，"
+            "THE SUM/USE/SANCTIONS OF THE LAW→律法的总义/功用/赏罚，"
+            "SUPPLEMENTS→补充律例，TABLES OF SCRIPTURE→经文汇编，"
+            "THE SONG OF MOSES→摩西之歌，RETURN TO THE HISTORY→回到历史叙事\n"
+            "9. 圣经书卷用和合本标准译名：\n"
+            "   Exodus→出埃及记，Leviticus→利未记，Numbers→民数记，Deuteronomy→申命记\n"
+            "   Genesis→创世记，Psalm(s)→诗篇，Isaiah→以赛亚书，Matthew→马太福音\n"
+            "   Romans→罗马书，Hebrews→希伯来书，Acts→使徒行传，Galatians→加拉太书\n"
+            "10. 人名/地名用和合本标准译名：\n"
+            "    Moses→摩西，Aaron→亚伦，Pharaoh→法老，Israel→以色列，Egypt→埃及\n"
+            "    Jacob→雅各，Joseph→约瑟，Abraham→亚伯拉罕，Levi→利未，Judah→犹大\n"
+            "    Miriam→米利暗，Joshua→约书亚，Sinai→西奈，Horeb→何烈，Canaan→迦南\n"
+            "    the Red Sea→红海，Zipporah→西坡拉，Jethro→叶忒罗，Amalek→亚玛力\n"
+            "11. 章节引用格式：出埃及记 20:3，申命记 5:7（书卷名 章:节）\n"
+            "12. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "13. 加尔文术语保留学术性：righteousness→义，justification→称义，\n"
+            "    sanctification→成圣，covenant→约/盟约，atonement→赎罪/挽回祭，\n"
+            "    grace→恩典，faith→信心，promise→应许，flesh→肉体，election→拣选\n"
+            "14. 律法合参专属术语：\n"
+            "    the Law→律法，the Ten Commandments/the Decalogue→十诫\n"
+            "    the moral law→道德律，the ceremonial law→礼仪律，\n"
+            "    the judicial/political law→司法律/政治律，\n"
+            "    the First/Second Table→第一版/第二版（律法），\n"
+            "    commandment→诫命，precept→诫命/训诲，statute→律例，\n"
+            "    ordinance→典章/条例，the tabernacle→帐幕，the sanctuary→圣所，\n"
+            "    the ark (of the covenant)→约柜，the priesthood→祭司职分，\n"
+            "    the high priest→大祭司，sacrifice→祭物/献祭，burnt offering→燔祭，\n"
+            "    sin offering→赎罪祭，the Sabbath→安息日，circumcision→割礼，\n"
+            "    the Passover→逾越节，to worship→敬拜，idolatry→拜偶像，\n"
+            "    graven image→雕刻的偶像，the Lawgiver→立法者，Israelites→以色列人"
+        ),
+    },
     'philemon': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/philemon-en',
