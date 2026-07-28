@@ -626,6 +626,51 @@ a.commentary-anchor {
   font-style: italic;
   color: #555;
 }
+/* ── Harmony of the Law：忠实 AGES PDF 的双语经文框 ──
+   蓝色双线外框 + 引用头行 + 英文列浅黄 / 拉丁列浅青，对齐 CAL_HAL 版式。
+   仅 harmony-law-* 生效，不影响其它书（每本书样式隔离）。 */
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel {
+  border: 3px double #1a1ac8;
+  background: #fff;
+}
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel thead th {
+  background: #f2f2e6;
+  color: #1a1a1a;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  border: 1px solid #9a9ab0;
+  border-bottom: 2px solid #1a1ac8;
+  padding: 5px 8px;
+}
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel thead th .ages-code {
+  color: #7a1d1d;
+}
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel td {
+  border: 1px solid #b7b7c8;
+  font-size: 15px;
+}
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel td:first-child {
+  background: #ffffcc;          /* 英文列 — 浅黄 */
+  color: #1a1a28;
+  font-style: normal;
+}
+.calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel td:nth-child(2) {
+  background: #d6f0ff;          /* 拉丁列 — 浅青 */
+  color: #17222f;
+  font-style: normal;
+}
+@media (max-width: 640px) {
+  .calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel thead {
+    display: table-header-group;
+  }
+  .calvin-en-content[data-book^="harmony-law"] .scripture-table.calvin-parallel thead th {
+    display: block; font-size: 16px;
+  }
+}
 /* 窄屏（≤640px）：3 列经文表横向太挤会出现内容重叠。改为纵向堆叠 —
    thead 隐藏，每个 td 作为一个独立块占满整行，前面用 data-label 显示
    原列标题（如「马太福音 10:1-8」）。 */
@@ -808,7 +853,9 @@ a.commentary-anchor {
     var headers = Array.from(table.querySelectorAll('thead th')).map(function(th) {
       return th.textContent.trim();
     });
-    if (!headers.length) return;
+    // Only per-column headers (≥2) make stacked labels meaningful; skip the
+    // single colspan header used by the Harmony bilingual boxes.
+    if (headers.length < 2) return;
     table.querySelectorAll('tbody tr').forEach(function(tr) {
       tr.querySelectorAll('td').forEach(function(td, idx) {
         if (idx < headers.length) td.setAttribute('data-label', headers[idx]);
