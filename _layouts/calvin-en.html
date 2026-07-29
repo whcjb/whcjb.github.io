@@ -865,25 +865,22 @@ a.commentary-anchor {
 
     var anchorId, pillLabel;
 
-    // Format A: "Book Ch:N." e.g. "Matthew 11:26." — include book abbreviation in pill
-    var mFull = t.match(/^([A-Z][a-z]+) (\d+):(\d+)\.$/);
-    // Format A-zh: "书卷名 Ch:N." 或 "书卷名 Ch:N。" 中文版同步观福音节标
-    var mZh   = t.match(/^([一-鿿]+) (\d+):(\d+)[.。]$/);
-    // Format A-multi: 多卷并列起首 "**Mark 1:22**; **Luke 4:32.**" —
-    // 收集所有连续的 <strong> 经文标记，若全部匹配 Book Ch:N(.)? 则
-    // 视为多卷注释段起首，锚点用第一段，pill 显示前两段
-    var mMulti = null;
-    if (!mFull && !mZh) {
-      var refs = [], cur = first;
-      while (cur && cur.tagName === 'STRONG') {
-        var ct = cur.textContent.trim();
-        var mr = ct.match(/^([A-Z][a-z]+) (\d+):(\d+)\.?$/);
-        if (!mr) break;
-        refs.push({book: mr[1], ch: mr[2], v: mr[3]});
-        cur = cur.nextElementSibling;
-      }
-      if (refs.length >= 2) mMulti = refs;
+    // Collect consecutive leading <strong> refs (trailing period optional, so
+    // harmony-law full refs "Exodus 1:1" match as well as gospel "Matthew 11:26.").
+    // >=2 refs → multi-passage heading; exactly 1 → Format A single ref.
+    var refs = [], cur = first;
+    while (cur && cur.tagName === 'STRONG') {
+      var mr = cur.textContent.trim().match(/^([A-Z][a-z]+) (\d+):(\d+)\.?$/);
+      if (!mr) break;
+      refs.push({book: mr[1], ch: mr[2], v: mr[3]});
+      cur = cur.nextElementSibling;
     }
+    // Format A-multi: 多卷并列起首 "**Mark 1:22**; **Luke 4:32.**"，锚点用第一段，pill 显示前两段
+    var mMulti = refs.length >= 2 ? refs : null;
+    // Format A: single "Book Ch:N" (period optional)
+    var mFull  = (!mMulti && refs.length === 1) ? [t, refs[0].book, refs[0].ch, refs[0].v] : null;
+    // Format A-zh: "书卷名 Ch:N" / "书卷名 Ch:N。"（句号可省），中文版观福音 / 律法合参节标
+    var mZh    = (!mMulti && !mFull) ? t.match(/^([一-鿿]+) (\d+):(\d+)[.。]?$/) : null;
     if (mFull) {
       anchorId  = 'v-' + mFull[1].slice(0,4).toLowerCase() + '-' + mFull[2] + '-' + mFull[3];
       pillLabel = mFull[1].slice(0,4) + ' ' + mFull[2] + ':' + mFull[3];   // "Matt 11:26"

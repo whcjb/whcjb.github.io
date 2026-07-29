@@ -20,10 +20,18 @@ layout: default
       </div>
       {% endif %}
 
-      <div class="ch-pills">
-        {% for i in (1..page.chapters) %}
-        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">Ch {{ i }}</a>
-        {% endfor %}
+      {% assign lastsection = "___start___" %}
+      {% for i in (1..page.chapters) %}
+        {% assign chpage = site.pages | where: "book_id", page.book_id | where: "chapter", i | first %}
+        {% assign sec = chpage.section | default: "" %}
+        {% if sec != lastsection %}
+          {% unless forloop.first %}</div>{% endunless %}
+          {% if sec != "" %}<h3 class="ch-section">{{ sec }}</h3>{% endif %}
+          <div class="ch-pills">
+          {% assign lastsection = sec %}
+        {% endif %}
+        <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">{% if chpage.title %}{{ chpage.title }}{% else %}Ch {{ i }}{% endif %}</a>
+      {% endfor %}
       </div>
 
     </div>
@@ -40,27 +48,40 @@ layout: default
   text-decoration: underline;
 }
 .ch-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 8px;
+  margin: 10px 0 24px;
+}
+.ch-section {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+  color: #0085a1;
+  margin: 30px 0 6px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e0e0e0;
 }
 .ch-pill {
-  display: inline-block;
-  padding: 7px 18px;
-  background: #e8f5e9;
-  border: 1px solid #a5d6a7;
-  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 8px 14px;
+  background: #f5faf5;
+  border: 1px solid #d3e7d4;
+  border-radius: 6px;
   font-size: 14px;
+  line-height: 1.35;
   font-family: Georgia, serif;
   color: #2e7d32;
   text-decoration: none;
-  transition: background 0.15s;
+  transition: background 0.15s, border-color 0.15s;
 }
 .ch-pill:hover {
-  background: #4caf50;
+  background: #e8f5e9;
   border-color: #4caf50;
-  color: #fff;
+  color: #1b5e20;
   text-decoration: none;
 }
 </style>
