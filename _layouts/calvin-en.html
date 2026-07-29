@@ -325,54 +325,6 @@ a.commentary-anchor {
   margin-bottom: 8px;
 }
 
-/* 长经文段默认折叠 (所有 harmony-law 卷，中英)：JS 给超高的经文表/框包一层
-   .scripture-collapsible，折叠时裁高 + 底部渐隐，点按钮展开/收起。 */
-.calvin-en-content .scripture-collapsible {
-  margin: 0 0 20px;
-}
-.calvin-en-content .scripture-collapsible .scripture-clip {
-  position: relative;
-  overflow: hidden;
-  transition: max-height 0.25s ease;
-}
-.calvin-en-content .scripture-collapsible .scripture-clip > table,
-.calvin-en-content .scripture-collapsible .scripture-clip > .scripture-box {
-  margin-bottom: 0;
-}
-.calvin-en-content .scripture-collapsible.collapsed .scripture-clip::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 72px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
-  pointer-events: none;
-}
-.calvin-en-content .scripture-toggle {
-  display: block;
-  width: 100%;
-  margin-top: -1px;
-  padding: 7px 12px;
-  border: 1px solid #d9cdb3;
-  border-top: none;
-  background: #faf7ef;
-  color: #7a5c1e;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 0 0 4px 4px;
-}
-.calvin-en-content .scripture-toggle:hover {
-  background: #f2ead6;
-  color: #5a4415;
-}
-.calvin-en-content .scripture-toggle::after {
-  content: " ▾";
-}
-.calvin-en-content .scripture-collapsible:not(.collapsed) .scripture-toggle::after {
-  content: " ▴";
-}
-
 /* 双语 2 列经文表 (1cor 等 Ages 双语 PDF) — 左英文 / 右拉丁文 */
 .calvin-en-content .scripture-bilingual {
   width: 100%;
@@ -1162,48 +1114,6 @@ function closeVerseNav() {
   }
   closeBtn.addEventListener('click',closeCompare);
   if(tgClose) tgClose.addEventListener('click',closeCompare);
-})();
-</script>
-
-<script>
-/* 长经文段默认折叠（仅 harmony-law-1[-en]）。按渲染高度判断，超过阈值的
-   经文表/框裁高 + 渐隐，附「展开经文 / 收起」按钮。 */
-(function(){
-  function init(){
-    var content = document.querySelector('.calvin-en-content');
-    if(!content) return;
-    var book = content.getAttribute('data-book') || '';
-    if(!/^harmony-law-\d+(-en)?$/.test(book)) return;   // 所有律法合参卷（1-4，中英）
-    var COLLAPSED_MAX = 300;   // 折叠时可见高度(px)
-    var TRIGGER = 380;         // 超过此高度才折叠(px)
-    var blocks = content.querySelectorAll('table.scripture-table.calvin-parallel, .scripture-box');
-    Array.prototype.forEach.call(blocks, function(el){
-      if(el.closest('.scripture-collapsible')) return;      // 避免重复包裹
-      if(el.offsetHeight <= TRIGGER) return;                // 短段不折叠
-      var wrap = document.createElement('div');
-      wrap.className = 'scripture-collapsible collapsed';
-      var clip = document.createElement('div');
-      clip.className = 'scripture-clip';
-      clip.style.maxHeight = COLLAPSED_MAX + 'px';
-      el.parentNode.insertBefore(wrap, el);
-      clip.appendChild(el);
-      wrap.appendChild(clip);
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'scripture-toggle';
-      btn.textContent = '展开经文';
-      wrap.appendChild(btn);
-      btn.addEventListener('click', function(){
-        var collapsed = wrap.classList.toggle('collapsed');
-        clip.style.maxHeight = collapsed ? (COLLAPSED_MAX + 'px') : (el.scrollHeight + 40) + 'px';
-        btn.textContent = collapsed ? '展开经文' : '收起';
-        if(collapsed) wrap.scrollIntoView({block:'nearest'});
-      });
-    });
-  }
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else { init(); }
 })();
 </script>
 
