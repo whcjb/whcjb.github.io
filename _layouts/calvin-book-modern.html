@@ -6,8 +6,11 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div style="margin: 32px 0 24px;">
+      <div style="margin: 32px 0 24px; display:flex; justify-content:space-between; align-items:center;">
         <a href="{{ site.baseurl }}/calvin/">&larr; 返回书卷列表</a>
+        {% assign en_id = page.book_id | append: "-en" %}
+        {% assign en_idx = site.pages | where: "book_id", en_id | first %}
+        {% if en_idx %}<a href="{{ site.baseurl }}/calvin/{{ en_id }}/" class="lang-switch">English &rarr;</a>{% endif %}
       </div>
 
       <h2 style="border-bottom: 2px solid #0085a1; padding-bottom:8px; margin-bottom:24px;">
@@ -44,6 +47,18 @@ layout: default
 </div>
 
 <style>
+.lang-switch {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #0085a1;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 13px;
+  font-family: Georgia, serif;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.lang-switch:hover { background: #006680; color: #fff; text-decoration: none; }
 .preface-link {
   font-family: Georgia, serif;
   font-size: 14px;
