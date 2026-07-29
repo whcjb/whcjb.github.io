@@ -1,4 +1,5 @@
 User-agent: *
+Allow: /
 Disallow: /sx-275b182e/
 
 Sitemap: https://whcjb.github.io/sitemap.xml
