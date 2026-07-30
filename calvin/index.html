@@ -26,6 +26,8 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
             {% assign books_ch = all_chapter_pages | map: "book_id" %}
             {% assign books_en = all_calvin_en_pages | map: "book_id" %}
             {% assign books_with_content = books_ch | concat: books_en | uniq %}
+            {% comment %} 全部章节页(含中英)，用于实时统计每卷已发布章数 {% endcomment %}
+            {% assign all_chap = all_chapter_pages | concat: all_calvin_en_pages %}
 
             {% comment %} 合并英文版数据，用于反查中文书卷对应的英文名 {% endcomment %}
             {% assign all_en_books = site.data.calvin_books.english_old_testament | concat: site.data.calvin_books.english_new_testament %}
@@ -82,7 +84,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
                         <span class="calvin-book-name">{{ book.name }}</span>
                         {% if book.en %}<span class="calvin-book-name-en">{{ book.en }}</span>{% elsif en_book %}<span class="calvin-book-name-en">{{ en_book.name }}</span>{% endif %}
-                        <span class="calvin-book-meta">{{ book.chapters }} 章</span>
+                        <span class="calvin-book-meta">{% include calvin_book_chapters.html pages=all_chap bid=book.id %} 章</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending">
@@ -104,7 +106,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en">
                         <span class="calvin-book-name">{{ book.name }}</span>
                         {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
-                        <span class="calvin-book-meta">{{ book.chapters }} chs</span>
+                        <span class="calvin-book-meta">{% include calvin_book_chapters.html pages=all_chap bid=book.id %} chs</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">
@@ -135,7 +137,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content{% if book.is_index %} calvin-book-btn--index{% endif %}">
                         <span class="calvin-book-name">{{ book.name }}</span>
                         {% if book.en %}<span class="calvin-book-name-en">{{ book.en }}</span>{% elsif en_book %}<span class="calvin-book-name-en">{{ en_book.name }}</span>{% endif %}
-                        <span class="calvin-book-meta">{% if book.is_index %}索引{% else %}{{ book.chapters }} 章{% endif %}</span>
+                        <span class="calvin-book-meta">{% if book.is_index %}索引{% else %}{% include calvin_book_chapters.html pages=all_chap bid=book.id %} 章{% endif %}</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending">
@@ -157,7 +159,7 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content calvin-book-btn--en{% if book.is_index %} calvin-book-btn--index{% endif %}">
                         <span class="calvin-book-name">{{ book.name }}</span>
                         {% if book.cn %}<span class="calvin-book-name-cn">{{ book.cn }}</span>{% elsif cn_book %}<span class="calvin-book-name-cn">{{ cn_book.name }}</span>{% endif %}
-                        <span class="calvin-book-meta">{% if book.is_index %}index{% else %}{{ book.chapters }} chs{% endif %}</span>
+                        <span class="calvin-book-meta">{% if book.is_index %}index{% else %}{% include calvin_book_chapters.html pages=all_chap bid=book.id %} chs{% endif %}</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending calvin-book-btn--en">

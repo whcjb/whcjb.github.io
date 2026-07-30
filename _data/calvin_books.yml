@@ -4,19 +4,19 @@ old_testament:
     chapters: 50
   - id: harmony-law-1
     name: 摩西五经合参（卷一）
-    chapters: 11
+    chapters: 28
     en: Harmony of the Law (Vol. 1)
   - id: harmony-law-2
     name: 摩西五经合参（卷二）
-    chapters: 11
+    chapters: 23
     en: Harmony of the Law (Vol. 2)
   - id: harmony-law-3
     name: 摩西五经合参（卷三）
-    chapters: 11
+    chapters: 14
     en: Harmony of the Law (Vol. 3)
   - id: harmony-law-4
     name: 摩西五经合参（卷四）
-    chapters: 7
+    chapters: 2
     en: Harmony of the Law (Vol. 4)
   - id: joshua
     name: 约书亚记

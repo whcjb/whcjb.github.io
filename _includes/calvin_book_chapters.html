@@ -1,0 +1,14 @@
+{%- comment -%}
+实时统计某书卷已发布的章节数。
+参数：pages = 章节页集合(calvin-chapter + calvin-en)，bid = book_id。
+计数规则：只数「数字命名」的章节文件（1.md、2.md…）；前言/导论/献词等非数字页
+(preface/introduction/dedication/the-argument 等，与章节共用 calvin-en/calvin-chapter 布局)一律不计。
+{%- endcomment -%}
+{%- assign _bp = include.pages | where: "book_id", include.bid -%}
+{%- assign _n = 0 -%}
+{%- for _p in _bp -%}
+{%- assign _base = _p.name | split: "." | first -%}
+{%- assign _num = _base | times: 1 -%}
+{%- if _num > 0 -%}{%- assign _n = _n | plus: 1 -%}{%- endif -%}
+{%- endfor -%}
+{{- _n -}}
