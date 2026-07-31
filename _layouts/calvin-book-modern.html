@@ -28,19 +28,26 @@ layout: default
       </div>
       {% endif %}
 
+      {% comment %} 该书是否使用「带标题的章节」(如律法合参)：任一章节页带 chapter 字段即是。
+         这类书只渲染实际存在的章节，避免 chapters 声明大于已发布数时露出「第 N 章」占位；
+         无 chapter 字段的书(如罗马书)保持按 1..chapters 回退渲染。 {% endcomment %}
+      {% assign titled_book = site.pages | where: "book_id", page.book_id | where_exp: "p", "p.chapter" | first %}
       {% assign lastsection = "___start___" %}
+      {% assign pills_open = false %}
       {% for i in (1..page.chapters) %}
         {% assign chpage = site.pages | where: "book_id", page.book_id | where: "chapter", i | first %}
+        {% if titled_book and chpage == nil %}{% continue %}{% endif %}
         {% assign sec = chpage.section | default: "" %}
         {% if sec != lastsection %}
-          {% unless forloop.first %}</div>{% endunless %}
+          {% if pills_open %}</div>{% endif %}
           {% if sec != "" %}<h3 class="ch-section">{{ sec }}</h3>{% endif %}
           <div class="ch-pills">
+          {% assign pills_open = true %}
           {% assign lastsection = sec %}
         {% endif %}
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">{% if chpage.title %}{{ chpage.title }}{% else %}第 {{ i }} 章{% endif %}</a>
       {% endfor %}
-      </div>
+      {% if pills_open %}</div>{% endif %}
 
     </div>
   </div>
