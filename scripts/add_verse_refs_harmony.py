@@ -21,13 +21,18 @@ FULL  = re.compile(r'^(' + BOOKS + r')\s*(\d+):(\d+)[。.]\s*<span style="color:
 EN2CN = {'GENESIS':'创世记','EXODUS':'出埃及记','LEVITICUS':'利未记','NUMBERS':'民数记','DEUTERONOMY':'申命记'}
 THEAD = re.compile(r'<th[^>]*>.*?\b(GENESIS|EXODUS|LEVITICUS|NUMBERS|DEUTERONOMY)\s+(\d+):', re.I)
 BARE  = re.compile(r'^\*\*(\d+)\.\*\* (<span style="color:#800000">)')
+# 已有的【纯文本】全引用头(旧版转出的 或 原译文里的): "书卷 章:节。 <span maroon>" —— 需加粗
+PLAINFULL = re.compile(r'^(' + BOOKS + r') (\d+):(\d+)[。.] (<span style="color:#800000">)')
+# 已加粗的全引用头(幂等识别, 不重复处理但更新上下文): "**书卷 章:节。**"
+BOLDFULL = re.compile(r'^\*\*(' + BOOKS + r') (\d+):(\d+)[。.]\*\* <span style="color:#800000">')
 
 
 def transform(text):
+    """合参注释头 → 加粗完整引用 **书卷 章:节。**(与对观福音合参一致, 使布局JS识别为可点击verse锚)。"""
     book = chap = None
     out = []; changed = 0; warned = 0
     for ln in text.split('\n'):
-        for rx in (GREEN, GOTO, FULL):
+        for rx in (GREEN, GOTO, FULL, BOLDFULL):
             m = rx.search(ln)
             if m: book, chap = m.group(1), m.group(2)
         t = THEAD.search(ln)
@@ -35,10 +40,14 @@ def transform(text):
         b = BARE.match(ln)
         if b:
             if book and chap:
-                out.append(f'{book} {chap}:{b.group(1)}。 {b.group(2)}' + ln[b.end():])
+                out.append(f'**{book} {chap}:{b.group(1)}。** {b.group(2)}' + ln[b.end():])
                 changed += 1; continue
-            else:
-                warned += 1
+            warned += 1
+        pf = PLAINFULL.match(ln)
+        if pf:
+            book, chap = pf.group(1), pf.group(2)
+            out.append(f'**{pf.group(1)} {pf.group(2)}:{pf.group(3)}。** {pf.group(4)}' + ln[pf.end():])
+            changed += 1; continue
         out.append(ln)
     return '\n'.join(out), changed, warned
 
