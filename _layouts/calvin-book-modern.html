@@ -31,11 +31,13 @@ layout: default
       {% comment %} 该书是否使用「带标题的章节」(如律法合参)：任一章节页带 chapter 字段即是。
          这类书只渲染实际存在的章节，避免 chapters 声明大于已发布数时露出「第 N 章」占位；
          无 chapter 字段的书(如罗马书)保持按 1..chapters 回退渲染。 {% endcomment %}
-      {% assign titled_book = site.pages | where: "book_id", page.book_id | where_exp: "p", "p.chapter" | first %}
+      {% comment %} 只取 calvin/ 下的页面：mhenry/owen 可能共用同一 book_id(如 joshua)，
+         不过滤会让 where|first 撞到别的注释集(标题为空→回退「第 N 章」)。 {% endcomment %}
+      {% assign titled_book = site.pages | where: "book_id", page.book_id | where_exp: "p", "p.path contains 'calvin/'" | where_exp: "p", "p.chapter" | first %}
       {% assign lastsection = "___start___" %}
       {% assign pills_open = false %}
       {% for i in (1..page.chapters) %}
-        {% assign chpage = site.pages | where: "book_id", page.book_id | where: "chapter", i | first %}
+        {% assign chpage = site.pages | where: "book_id", page.book_id | where: "chapter", i | where_exp: "p", "p.path contains 'calvin/'" | first %}
         {% if titled_book and chpage == nil %}{% continue %}{% endif %}
         {% assign sec = chpage.section | default: "" %}
         {% if sec != lastsection %}
