@@ -850,6 +850,8 @@ a.commentary-anchor {
 (function() {
   var content = document.querySelector('.calvin-en-content');
   if (!content) return;
+  // 律法合参(harmony-law)：注释头只做静态加粗引用, 不绑定点击跳转(用户要求)。
+  var isLaw = (content.getAttribute('data-book') || '').indexOf('harmony-law') === 0;
 
   var paras = content.querySelectorAll('p');
   var entries = [];   // [{anchorId, pillLabel}, ...]
@@ -925,29 +927,32 @@ a.commentary-anchor {
     }
 
     // Clicking the verse marker：滚动到 verse-nav 区域并展开 pills，
-    // 让用户看到自己所在的章节定位
-    first.classList.add('verse-anchor');
-    first.title = '跳到经文导航';
-    first.dataset.anchor = anchorId;
-    first.addEventListener('click', function(e) {
-      e.preventDefault();
-      var nav = document.getElementById('verse-nav');
-      var pills = document.getElementById('verse-nav-pills');
-      var arrow = document.getElementById('verse-nav-arrow');
-      if (pills && pills.style.display === 'none') {
-        pills.style.display = 'flex';
-        if (arrow) arrow.classList.add('open');
-      }
-      // 高亮当前对应 pill
-      var anchor = this.dataset.anchor;
-      pills && pills.querySelectorAll('.verse-pill').forEach(function(pill) {
-        pill.classList.toggle('verse-pill--active',
-                              pill.getAttribute('href') === '#' + anchor);
+    // 让用户看到自己所在的章节定位。
+    // ★ 律法合参(isLaw)：注释头不绑定点击跳转, 只保留加粗引用样式(用户要求)。
+    if (!isLaw) {
+      first.classList.add('verse-anchor');
+      first.title = '跳到经文导航';
+      first.dataset.anchor = anchorId;
+      first.addEventListener('click', function(e) {
+        e.preventDefault();
+        var nav = document.getElementById('verse-nav');
+        var pills = document.getElementById('verse-nav-pills');
+        var arrow = document.getElementById('verse-nav-arrow');
+        if (pills && pills.style.display === 'none') {
+          pills.style.display = 'flex';
+          if (arrow) arrow.classList.add('open');
+        }
+        // 高亮当前对应 pill
+        var anchor = this.dataset.anchor;
+        pills && pills.querySelectorAll('.verse-pill').forEach(function(pill) {
+          pill.classList.toggle('verse-pill--active',
+                                pill.getAttribute('href') === '#' + anchor);
+        });
+        // 滚动到 verse-nav 顶部
+        if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
+        else window.scrollTo({top: 0, behavior: 'smooth'});
       });
-      // 滚动到 verse-nav 顶部
-      if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
-      else window.scrollTo({top: 0, behavior: 'smooth'});
-    });
+    }
   });
 
   if (entries.length === 0) return;
