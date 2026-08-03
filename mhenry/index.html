@@ -21,7 +21,7 @@ header-img: img/mhenry-land-55.jpg
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
             <p class="text-muted" style="margin-bottom:30px;">
                 马太亨利（1662–1714）是英国非国教派牧师，其《圣经注释》覆盖圣经全卷，以深入的经文解析、丰富的实用应用和敬虔的属灵洞见著称，数百年来深受信徒喜爱。点击任意书卷查看章节列表。
@@ -102,24 +102,21 @@ header-img: img/mhenry-land-55.jpg
 /* ── Book buttons：古书羊皮纸风(暖米黄渐变卡+青铜左竖条+宋体, 区别于加尔文墨绿白卡) ── */
 .mhenry-book-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
-    gap: 13px;
+    grid-template-columns: repeat(auto-fill, minmax(146px, 1fr));
+    gap: 8px;
 }
 .mhenry-book-btn {
     position: relative;
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 10px;
-    min-height: 58px;
-    padding: 15px 18px 15px 24px;
+    display: block;
+    padding: 9px 12px 9px 17px;
     background: linear-gradient(158deg, #f6ecd6 0%, #efe0c1 100%);
     border: 1px solid #ddc9a2;
-    border-radius: 6px;
-    box-shadow: 0 1px 2px rgba(120,80,40,0.08);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(120,80,40,0.07);
     font-family: 'Source Han Serif SC','Noto Serif SC','Songti SC','STSong','宋体',serif;
-    font-size: 16px;
+    font-size: 15px;
     letter-spacing: .02em;
+    line-height: 1.35;
     color: #a99268 !important;
     text-decoration: none !important;
     white-space: nowrap;
@@ -127,18 +124,19 @@ header-img: img/mhenry-land-55.jpg
     text-overflow: ellipsis;
     cursor: default;
     pointer-events: none;
-    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 .mhenry-book-btn::before {
     content: '';
-    position: absolute; left: 0; top: 9px; bottom: 9px;
+    position: absolute; left: 0; top: 7px; bottom: 7px;
     width: 3px; border-radius: 0 3px 3px 0;
     background: #cbb27a;
 }
 .mhenry-book-btn small {
-    flex: 0 0 auto;
+    display: block;
+    margin-top: 1px;
     font-family: 'Georgia', serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: normal;
     letter-spacing: 0;
     color: #bda676;
