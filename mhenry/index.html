@@ -34,7 +34,7 @@ header-img: img/mhenry-land-55.jpg
             <h3 class="mhenry-section-heading">❧ 旧　约</h3>
             <div class="row mhenry-book-grid" style="margin-bottom:40px;">
                 {% for book in site.data.mhenry_books.old_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="margin-bottom:6px;">
                     {% if books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">
                     {% else %}
@@ -51,7 +51,7 @@ header-img: img/mhenry-land-55.jpg
             <h3 class="mhenry-section-heading">❧ 新　约</h3>
             <div class="row mhenry-book-grid">
                 {% for book in site.data.mhenry_books.new_testament %}
-                <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="margin-bottom:6px;">
                     {% if books_with_content contains book.id %}
                     <a href="{{ site.baseurl }}/mhenry/{{ book.id }}/" class="mhenry-book-btn mhenry-book-btn--has-content">
                     {% else %}
@@ -79,7 +79,7 @@ header-img: img/mhenry-land-55.jpg
                     {% for book in site.data.mhenry_books.new_testament %}
                     {% assign en_id = book.id | append: '-en' %}
                     {% if en_ids contains en_id %}
-                    <div class="col-xs-6 col-sm-4 col-md-3" style="margin-bottom:12px;">
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" style="margin-bottom:6px;">
                         <a href="{{ site.baseurl }}/mhenry/{{ en_id }}/" class="mhenry-book-btn mhenry-book-btn--en">
                             {{ book.name }}
                             <small>（{{ book.chapters }} ch.）</small>
@@ -117,22 +117,26 @@ header-img: img/mhenry-land-55.jpg
 /* ── Book buttons ──────────────────────────────────── */
 .mhenry-book-btn {
     display: block;
-    padding: 10px 12px 10px 16px;
+    padding: 5px 8px 5px 10px;
     background: #F5F5F5;
     border: 1px solid #DDD;
-    border-left: 4px solid #CCC;
+    border-left: 3px solid #CCC;
     border-radius: 3px;
     color: #AAA !important;
     text-decoration: none !important;
-    font-size: 14px;
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: default;
     pointer-events: none;
 }
 .mhenry-book-btn small {
-    display: block;
+    display: inline;
+    margin-left: 3px;
     color: #CCC;
-    font-size: 12px;
+    font-size: 11px;
 }
 .mhenry-book-btn--has-content {
     background: #FFF8E1;
@@ -145,9 +149,10 @@ header-img: img/mhenry-land-55.jpg
     transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 .mhenry-book-btn--has-content small {
-    display: block;
+    display: inline;
+    margin-left: 3px;
     color: #C9922A;
-    font-size: 12px;
+    font-size: 11px;
 }
 .mhenry-book-btn--has-content:hover {
     background: #C9922A;
@@ -184,7 +189,7 @@ header-img: img/mhenry-land-55.jpg
     pointer-events: auto;
     transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
-.mhenry-book-btn--en small { display: block; color: #4A6D8C; font-size: 12px; }
+.mhenry-book-btn--en small { display: inline; margin-left: 3px; color: #4A6D8C; font-size: 11px; }
 .mhenry-book-btn--en:hover {
     background: #1F3A52;
     border-color: #1F3A52;
