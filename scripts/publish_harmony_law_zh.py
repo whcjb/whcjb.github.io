@@ -46,13 +46,17 @@ def localize_title(t: str) -> str:
 
 
 def clean_body(body: str) -> str:
-    lines = [l for l in body.split('\n') if l.strip() != '<<<END>>>']
-    body = '\n'.join(lines)
+    body = re.sub(r'<<<[^>]*?>>>', '', body)          # 剥 <<<END>>>/<<<END1>>>/<<</1>>> 等变体(含行内)
     body = body.replace('前往出埃及记', '前往 出埃及记')
     body = body.replace('前往申命记', '前往 申命记')
     body = body.replace('前往利未记', '前往 利未记')
     body = body.replace('前往民数记', '前往 民数记')
     body = re.sub(r'(<h2 class="scripture-anchor"[^>]*?) style="display:none"(>)', r'\1\2', body)
+    # 合参注释头 → 完整「书卷 章:节」引用(05-publish-zh §1b)
+    import sys, os
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from add_verse_refs_harmony import transform as _add_verse_refs
+    body, _, _ = _add_verse_refs(body)
     return body
 
 
