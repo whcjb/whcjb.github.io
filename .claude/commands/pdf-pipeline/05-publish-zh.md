@@ -82,6 +82,11 @@ python3 scripts/add_verse_refs_harmony.py calvin/harmony-law-3/14.md  # 指定�
 **发布每章后必跑此步**（harmony-law 已内联进 `publish_harmony_law_zh.py`）。
 校验：发布章正文不应再有行首 `**\d+\.**` 注释头（除非该头确无上下文而被警告保留）。
 
+**点击行为**（`_layouts/calvin-en.html` JS, `isLaw` 分支）：律法合参的注释头
+`<strong>书卷 章:节。</strong>` **点击 → 滚回本节所属的经文框 / 绿色章标题**（回到经文上下文），
+**不是**跳到章顶 verse-nav 导航条(否则"跳出经文框")。所以注释头**必须加粗成 `<strong>`** JS 才认。
+对观福音合参(非 isLaw)保持原有 verse-nav 行为。
+
 ## 2. 末章 next-link 必须剥
 
 最后一章的 raw zh 仍带 `next_section: 11` 这种**不存在的链**，会 404。发布末章后必须删：

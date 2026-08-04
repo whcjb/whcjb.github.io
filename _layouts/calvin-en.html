@@ -952,6 +952,22 @@ a.commentary-anchor {
         if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
         else window.scrollTo({top: 0, behavior: 'smooth'});
       });
+    } else {
+      // ★ 律法合参：点击注释头 → 滚到本节所属的经文框 / 绿色章标题(回到经文),
+      //   而非章顶 verse-nav 导航条(用户: 不要跳出经文框)。
+      first.style.cursor = 'pointer';
+      first.title = '回到本节经文';
+      first.addEventListener('click', function(ev) {
+        ev.preventDefault();
+        var node = p.previousElementSibling, target = null;
+        while (node) {
+          if (node.classList && (node.classList.contains('scripture-table') ||
+              node.classList.contains('scripture-anchor') ||
+              node.classList.contains('title-block-h2'))) { target = node; break; }
+          node = node.previousElementSibling;
+        }
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
+      });
     }
   });
 
