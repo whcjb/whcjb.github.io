@@ -1,0 +1,2 @@
+*法文版*增补，“sans les bourgades;”——不将村庄计算在内。
+<<<END>>>
