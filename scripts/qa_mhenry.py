@@ -37,6 +37,12 @@ qa_mhenry.py — 马太亨利注释内容质检工具
 
 [F] mh-verse 中混入注释文字（非圣经）
     mh-verse 内出现典型注释特征词（如「注意：」「由此可见」「先知在此」）。
+
+[G] mh-unit-body 开头被截断（孤立右括号 / 括号失衡）
+    症状：注释体开头缺失（含 I. 引言 + 首个大纲点），只剩一段以经文引用
+    右括号起头的残尾，如「书33：11）。」「翰福音11：50）；」「节）：」。
+    根因：PDF 抽取/OCR 在页首·分栏边界漏掉注释开头，跨边界的经文引用
+    「（书N：M）」只留下右括号。修复须对照中文 PDF 回填（勿翻译勿编造）。
 """
 
 import re
@@ -165,6 +171,18 @@ def check_md_file(md_path, pdf_doc=None, pdf_start=None, pdf_end=None):
                 err(f"[F] mh-verse 中混入注释文字（含「{marker}」）: …{plain[plain.index(marker)-10:plain.index(marker)+30]}…")
                 issues += 1
                 break
+
+    # [G] mh-unit-body 开头被截断（孤立右括号）
+    #     读每个 mh-unit-body 起始正文, 若从头到尾先遇到 ） 而其前无 （（括号失衡），
+    #     说明开头连同经文引用的 （ 一起被 PDF 抽取/OCR 漏掉（跨页·分栏边界），
+    #     只留下右括号。典型残尾: 「书33：11）。」「翰福音11：50）；」「节）：」。参见 skill §4.6。
+    for m in re.finditer(r'<div class="mh-unit-body">([\s\S]{0,300})', text):
+        seg = re.sub(r'<[^>]+>', '', m.group(1))
+        io = seg.find('（'); ic = seg.find('）')
+        if ic != -1 and (io == -1 or ic < io):
+            snip = re.sub(r'\s+', '', seg)[:40]
+            err(f"[G] mh-unit-body 开头疑似截断（孤立右括号）: 「{snip}…」")
+            issues += 1
 
     # [E] tag balance (simple check)
     n_unit      = text.count('<div class="mh-unit">')

@@ -398,6 +398,8 @@ specs = [
 
 **预防**：PDF 抽取时按"卷名头"+"`;`-分隔引用串"分组（详见 `pdf-to-structured-txt` skill §0.1）。经文识别要识别整个跨页段而不是单页。
 
+**另一种反向截断（注释体开头被吞，质检 `[G]`）**：`mh-unit-body` 开头**缺失**——引言句 + 首个大纲点（含 `I.` 标签）整段丢失，只剩一段以经文引用**右括号**起头的残尾，如 `书33：11）。` / `翰福音11：50）；` / `节）：`。根因：PDF 抽取/OCR 在**页首·分栏边界**漏掉注释开头，跨边界的经文引用 `（书N：M）` 只留下 `）`（那个孤立右括号就是残尾特征）。**检出**：`qa_mhenry.py [G]`（读每个 body 起始正文，先遇 `）` 而其前无 `（` = 括号失衡 = 截断）。**修复**：必须对照**中文 PDF**（`/Users/yanpeifa/Documents/论文/matthew_henry/`）回填丢失段落，按 PDF 原文补上引言 + `<div class="mh-l1"><span class="mh-label">I.</span>` 结构，**禁止**从英文版翻译或编造（见 `feedback_pdf_verify_before_change` / `feedback_no_self_translation_from_en`）。已知案例：`1peter/1`、`acts/12`、`deuteronomy/17·26·32`、`genesis/4`、`isaiah/30`、`judges/3·13`、`mark/14`、`psalms/89`、`romans/4` 共 12 处**已全部对照 PDF 修复**（2026-08，全卷 `[G]` 扫描=0）。其中 `deuteronomy/17` 是重度损坏（8-13 经文与注释被拆入一个伪 `mh-unit`、经文 14-15 泄漏、脚注碎片），修法=合并经文 8-13 + 注释 A/B/C、删伪单元、把 14-15 还给「拣选君王」单元；`psalms/89`/`romans/4` 是孤立括号 + 页边界拆段/经文缺闭括号漏入正文。
+
 ### 4.4 字数/标点级 OCR 噪音
 
 历史出现过的批修脚本：
