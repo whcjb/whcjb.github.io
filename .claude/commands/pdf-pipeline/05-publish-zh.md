@@ -82,10 +82,21 @@ python3 scripts/add_verse_refs_harmony.py calvin/harmony-law-3/14.md  # 指定�
 **发布每章后必跑此步**（harmony-law 已内联进 `publish_harmony_law_zh.py`）。
 校验：发布章正文不应再有行首 `**\d+\.**` 注释头（除非该头确无上下文而被警告保留）。
 
-**点击行为**（`_layouts/calvin-en.html` JS, `isLaw` 分支）：律法合参的注释头
-`<strong>书卷 章:节。</strong>` **点击 → 滚回本节所属的经文框 / 绿色章标题**（回到经文上下文），
-**不是**跳到章顶 verse-nav 导航条(否则"跳出经文框")。所以注释头**必须加粗成 `<strong>`** JS 才认。
-对观福音合参(非 isLaw)保持原有 verse-nav 行为。
+**点击行为**（`_layouts/calvin-en.html` JS，**全加尔文书卷统一，不分 isLaw**）：注释头点击 →
+**滚到「章顶的 verse-nav 导航条」并展开胶囊、高亮当前节**（跳到顶部的 verse，与对观福音合参一致）。
+**禁止**落到 / 弹出经文框（用户明确要求："跳到顶部的 verse，禁止弹出经文框"）。实现即
+`first.dataset.anchor = anchorId` + 点击 `nav.scrollIntoView` 滚到 `#verse-nav` 并
+`pills.style.display='flex'` 展开、`verse-pill--active` 高亮。
+
+⚠️ **"经文框"= `_includes/scripture-popup.html` 的经文卡片弹层**（不是 scripture-box）。该模块的
+linkifier 会把匹配「书卷 章:节」的正文文本包成可点 `scripture-ref` 弹和合本卡片；**注释头文本
+"罗马书 8:6"正好匹配**，会被误 linkify → 点注释头误弹卡片。修复：linkifier 的 skip 列表已含
+`verse-anchor`（verse-nav 脚本行~850 先于 popup include 行~1118 运行、已给注释头 `<strong>`
+加此类），故注释头不再被 linkify。正文内真正的引用（"创世记 6:5"）仍正常弹卡片。
+
+注释头**必须加粗成 `<strong>`** JS 才识别为注释头（`mZh` 中文模式 / `mFull` 英文全引用 /
+Format B 裸 `N.`），才纳入 verse 导航并可点击跳顶部。合参书注释头写全「书卷 章:节」是为
+verse-nav 胶囊标签正确显示书卷名，与跳转目标无关（跳转永远是章顶导航条）。
 
 ## 2. 末章 next-link 必须剥
 

@@ -381,12 +381,16 @@
         while (el && el !== col) {
             var tag = el.tagName;
             // 跳过：脚本/样式/链接，已处理的 scripture-ref，以及各 layout
-            // 的经文块（mh-verse=mhenry，calvin-verse=calvin 中文章节）
+            // 的经文块（mh-verse=mhenry，calvin-verse=calvin 中文章节）。
+            // verse-anchor = 加尔文注释头「书卷 章:节。」(calvin-en verse-nav 脚本先于本
+            // 模块运行, 已给注释头 <strong> 加此类): 它是本节跳转锚点、不是经文引用,
+            // 不可 linkify, 否则点注释头会误弹经文卡片(与"点头跳顶部 verse"冲突)。
             if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'A' ||
                 (el.classList && (
                     el.classList.contains('scripture-ref') ||
                     el.classList.contains('mh-verse') ||
-                    el.classList.contains('calvin-verse'))))
+                    el.classList.contains('calvin-verse') ||
+                    el.classList.contains('verse-anchor'))))
             { skip = true; break; }
             el = el.parentElement;
         }
