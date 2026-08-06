@@ -186,7 +186,10 @@
         ['该',37],['亚',38],['玛',39],['太',40],['可',41],
         ['路',42],['约',43],['徒',44],['罗',45],['加',48],
         ['弗',49],['腓',50],['西',51],['多',56],['门',57],
-        ['来',58],['雅',59],['犹',65],['启',66]
+        ['来',58],['雅',59],['犹',65],['启',66],
+        // 非标准缩写: 部分译文用「撒」指撒迦利亚(标准应为「亚」); 撒母耳记恒为撒上/撒下,
+        // 故裸「撒」+数字归撒迦利亚(38)。此项在 2-char(撒上/撒下)/全名之后, 不夺其匹配。
+        ['撒',38]
     ];
 
     var bookMap = {};
@@ -227,11 +230,26 @@
         'g'
     );
     // Format C: `《诗篇》第 118 篇 25 节` / `《以赛亚书》第 6 章 9 节` / `《罗马书》第 8 章 1 节`
-    // 中文口语式引用: 第N章|篇 M 节[-M2 节]
+    // 中文口语式引用: [第]N章|篇 <节号表达式> [两/数]节。「第」可省(`《申命记》30章12节`);
+    // 节号可为单节、范围(1-3)、或列表(1、2)，后可跟量词「两/三/数/几节」(`《以赛亚书》65章1、2两节`)。
+    // m[3] 捕获整个节号表达式, 交给 parseVerseExpr 解析。
     var REF_CN_RE = new RegExp(
-        '《(' + bookPat + ')》\\s*第\\s*(\\d{1,3})\\s*[章篇]\\s*(\\d{1,3})(?:\\s*[－\\-–—]\\s*(\\d{1,3}))?\\s*节',
+        '《(' + bookPat + ')》\\s*第?\\s*(\\d{1,3})\\s*[章篇]\\s*' +
+        '(\\d{1,3}(?:\\s*[、,，]\\s*\\d{1,3})*(?:\\s*[－\\-–—]\\s*\\d{1,3})?)' +
+        '\\s*[两三四五六七八九十数几]?\\s*节',
         'g'
     );
+    // 解析中文节号表达式("1"、"1-3"、"1、2、5"、"1-3、7")为节号数组
+    function parseVerseExpr(expr) {
+        var out = [], seen = {};
+        expr.split(/[、,，]/).forEach(function(part) {
+            part = part.trim();
+            var rm = part.match(/^(\d+)\s*[－\-–—]\s*(\d+)$/);
+            if (rm) { for (var v = +rm[1]; v <= +rm[2]; v++) { if (!seen[v]) { seen[v] = 1; out.push(v); } } }
+            else if (/^\d+$/.test(part)) { var n = +part; if (!seen[n]) { seen[n] = 1; out.push(n); } }
+        });
+        return out;
+    }
     // Bare reference: （49：7）等 — uses current book
     var BARE_RE = new RegExp(
         '[（(](\\d{1,3})\\s*[：:]\\s*' + VERSES_TAIL + '[）)]',
@@ -442,10 +460,8 @@
             if (!vol) continue;
             var bookName = m[1];
             var ch = parseInt(m[2]);
-            var v1 = parseInt(m[3]);
-            var vEnd = m[4] ? parseInt(m[4]) : null;
-            var verses = [v1];
-            if (vEnd) for (var vv = v1 + 1; vv <= vEnd; vv++) verses.push(vv);
+            var verses = parseVerseExpr(m[3]);
+            if (!verses.length) continue;
             // Skip if overlaps with an earlier match
             var mEnd = m.index + m[0].length;
             var overlapCN = false;
@@ -454,7 +470,8 @@
                 { overlapCN = true; break; }
             }
             if (overlapCN) continue;
-            var vSuffixCN = vEnd ? (v1 + '-' + vEnd) : String(v1);
+            var vSuffixCN = verses.length > 1
+                ? (verses[0] + '-' + verses[verses.length - 1]) : String(verses[0]);
             matches.push({
                 index: m.index, end: mEnd,
                 vol: vol, groups: [{ ch: ch, verses: verses }],
