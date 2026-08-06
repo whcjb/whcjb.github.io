@@ -186,14 +186,16 @@
         ['该',37],['亚',38],['玛',39],['太',40],['可',41],
         ['路',42],['约',43],['徒',44],['罗',45],['加',48],
         ['弗',49],['腓',50],['西',51],['多',56],['门',57],
-        ['来',58],['雅',59],['犹',65],['启',66],
-        // 非标准缩写: 部分译文用「撒」指撒迦利亚(标准应为「亚」); 撒母耳记恒为撒上/撒下,
-        // 故裸「撒」+数字归撒迦利亚(38)。此项在 2-char(撒上/撒下)/全名之后, 不夺其匹配。
-        ['撒',38]
+        ['来',58],['雅',59],['犹',65],['启',66]
     ];
 
     var bookMap = {};
     BOOKS.forEach(function(b){ if(!bookMap[b[0]]) bookMap[b[0]] = b[1]; });
+    // 卷号→书卷全名(每卷取最长名, 即全名): 供弹层标题显示全名(正文缩写不变)。
+    var VOL_NAME = {};
+    BOOKS.forEach(function(b){
+        if (!VOL_NAME[b[1]] || b[0].length > VOL_NAME[b[1]].length) VOL_NAME[b[1]] = b[0];
+    });
 
     // Current page book volume (for bare references like （49：7）)
     var BOOK_ID_VOL = {
@@ -446,9 +448,14 @@
                 display += mc[0];
                 endIdx += mc[0].length;
             }
+            // 弹层标题用书卷全名(正文缩写显示不变); 全名未知则回退原文
+            var labelA = VOL_NAME[vol] ? (VOL_NAME[vol] + ' ' + groups.map(function(g) {
+                return g.ch + ':' + (g.verses.length > 1
+                    ? g.verses[0] + '-' + g.verses[g.verses.length - 1] : g.verses[0]);
+            }).join('；')) : null;
             matches.push({
                 index: startIdx, end: endIdx,
-                vol: vol, groups: groups, display: display, label: null
+                vol: vol, groups: groups, display: display, label: labelA
             });
             REF_RE.lastIndex = endIdx;
         }
