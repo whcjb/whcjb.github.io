@@ -694,6 +694,16 @@ a.commentary-anchor {
 .calvin-en-content .verse-anchor {
   cursor: text;
 }
+/* 经文索引(harmony-index / harmony-law-index)插在注释头前的隐形逐节锚点
+   <a class="verse-anchor" id="书卷-章-节">: 0 尺寸, scroll-margin 让跳转落在固定
+   导航栏下方(对观福音合参 + 摩西五经合参共用)。 */
+.calvin-en-content a.verse-anchor {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  scroll-margin-top: 80px;
+}
 /* Hidden anchors (h2 with .verse-anchor or .scripture-anchor) — 占 0 高度但保留 layout
    位置，让 #romans-N-M 类锚点能 scroll-into-view 到注释段顶部。 */
 .calvin-en-content h2.verse-anchor,

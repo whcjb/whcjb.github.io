@@ -35,7 +35,8 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
             {% assign all_cn_books = site.data.calvin_books.old_testament | concat: site.data.calvin_books.new_testament %}
 
             {% comment %} 进度统计（中文版）{% endcomment %}
-            {% assign ot_total = site.data.calvin_books.old_testament | size %}
+            {% assign ot_total = 0 %}
+            {% for b in site.data.calvin_books.old_testament %}{% unless b.is_index %}{% assign ot_total = ot_total | plus: 1 %}{% endunless %}{% endfor %}
             {% assign nt_total = 0 %}
             {% for b in site.data.calvin_books.new_testament %}{% unless b.is_index %}{% assign nt_total = nt_total | plus: 1 %}{% endunless %}{% endfor %}
             {% assign ot_done = 0 %}
@@ -80,11 +81,11 @@ description: "约翰·加尔文(John Calvin)圣经注释中文全文在线阅读
                     {% for book in site.data.calvin_books.old_testament %}
                     {% assign en_id = book.id | append: "-en" %}
                     {% assign en_book = all_en_books | where: "id", en_id | first %}
-                    {% if books_with_content contains book.id %}
-                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content">
+                    {% if book.is_index or books_with_content contains book.id %}
+                    <a href="{{ site.baseurl }}/calvin/{{ book.id }}/" class="calvin-book-btn calvin-book-btn--has-content{% if book.is_index %} calvin-book-btn--index{% endif %}">
                         <span class="calvin-book-name">{{ book.name }}</span>
                         {% if book.en %}<span class="calvin-book-name-en">{{ book.en }}</span>{% elsif en_book %}<span class="calvin-book-name-en">{{ en_book.name }}</span>{% endif %}
-                        <span class="calvin-book-meta">{% include calvin_book_chapters.html pages=all_chap bid=book.id %} 章</span>
+                        <span class="calvin-book-meta">{% if book.is_index %}索引{% else %}{% include calvin_book_chapters.html pages=all_chap bid=book.id %} 章{% endif %}</span>
                     </a>
                     {% else %}
                     <span class="calvin-book-btn calvin-book-btn--pending">

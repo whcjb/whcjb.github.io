@@ -2,6 +2,9 @@ old_testament:
   - id: genesis
     name: 创世记
     chapters: 50
+  - id: harmony-law-index
+    name: "摩西五经合参 · 经文索引"
+    is_index: true
   - id: harmony-law-1
     name: 摩西五经合参（卷一）
     chapters: 28
