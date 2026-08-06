@@ -196,6 +196,14 @@
     BOOKS.forEach(function(b){
         if (!VOL_NAME[b[1]] || b[0].length > VOL_NAME[b[1]].length) VOL_NAME[b[1]] = b[0];
     });
+    // 全名相邻二字对: 单字缩写防误伤用 —— 前一字+缩写若是某书卷全名的相邻二字
+    // (如「以赛」属「以赛亚书」→缩写在词中间, 跳过), 否则(如「看赛」)放行, 使
+    // 「参看赛65:1」这类合法引用不被误滤。
+    var BOOK_PAIRS = {};
+    BOOKS.forEach(function(b){
+        var n = b[0];
+        if (n.length >= 2) for (var i = 0; i < n.length - 1; i++) BOOK_PAIRS[n.substr(i, 2)] = 1;
+    });
 
     // Current page book volume (for bare references like （49：7）)
     var BOOK_ID_VOL = {
@@ -441,7 +449,9 @@
 
         REF_RE.lastIndex = 0;
         while ((m = REF_RE.exec(text)) !== null) {
-            if (m[1].length <= 1 && m.index > 0 && CJK_RE.test(text[m.index - 1])) continue;
+            // 单字缩写: 仅当「前一字+缩写」是某书卷全名的相邻二字(在词中间)才跳过;
+            // 「看赛」等非书名二字放行, 使「参看赛65:1」可点。
+            if (m[1].length <= 1 && m.index > 0 && BOOK_PAIRS[text[m.index - 1] + m[1]]) continue;
             var vol = bookMap[m[1]];
             if (!vol) continue;
             var startIdx = m.index, endIdx = m.index + m[0].length;
