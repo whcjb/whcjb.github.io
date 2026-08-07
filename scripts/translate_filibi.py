@@ -1069,6 +1069,48 @@ BOOKS = {
             "    graven image→雕刻的偶像，the Lawgiver→立法者，Israelites→以色列人"
         ),
     },
+    'psalms-1': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/psalms-1-en',
+        'cache':  ROOT / 'calvin_raw/psalms-1/zh_cache',
+        'out':    ROOT / 'calvin_raw/psalms-1/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《诗篇注释》"
+            "（即 Calvin on the Psalms），诗篇是希伯来诗歌，记录大卫等圣徒的祷告、"
+            "哀歌、赞美与预言。\n"
+            "将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n"
+            "严格规则：\n"
+            "1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n"
+            "2. 保留所有脚注引用标记不变：[^17] [^f23] [^ft35] [^fa1] 等\n"
+            "3. 保留所有 Markdown 标记不变：**bold** *italic*\n"
+            "4. 保留所有 HTML 标签与结构不变：<p style=\"...\"> <strong> <div> <span> "
+            "<table class=\"scripture-table calvin-parallel\"> <tr> <td> "
+            "<h2 class=\"scripture-anchor\"...> <p class=\"scripture-ref\"> "
+            "<p class=\"title-block-h1\">/<h2> 等\n"
+            "5. 保留 AGES code 不变（<span class=\"ages-code\">&lt;NNNNNN&gt;</span>）；"
+            "居中经文导航 GO TO 译为「前往」，书卷章节照和合本\n"
+            "6. 经文框：英文经文→照抄简体和合本原文（诗篇按和合本），"
+            "拉丁文原样保留（不翻译）；`<span class=\"book-name\">Psalm</span>`→诗篇，"
+            "`<span class=\"verse-range\">` 内的章节数字不变；表结构不变\n"
+            "7. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n"
+            "8. 诗篇标题(superscription/题注)照和合本译；Selah→细拉；"
+            "PSALM N→诗篇 N；篇题如 THE ARGUMENT→题旨/引言\n"
+            "9. 圣经书卷用和合本标准译名：\n"
+            "   Psalm(s)→诗篇，Genesis→创世记，Exodus→出埃及记，Isaiah→以赛亚书，"
+            "Jeremiah→耶利米书，Matthew→马太福音，Romans→罗马书，Hebrews→希伯来书\n"
+            "10. 人名/地名用和合本标准译名：\n"
+            "    David→大卫，Saul→扫罗，Absalom→押沙龙，Solomon→所罗门，"
+            "Moses→摩西，Aaron→亚伦，Abraham→亚伯拉罕，Jacob→雅各，Israel→以色列\n"
+            "    Zion→锡安，Jerusalem→耶路撒冷，Judah→犹大，Philistines→非利士人\n"
+            "11. 章节引用格式：诗篇 1:1，以赛亚书 6:9（书卷名 章:节）\n"
+            "12. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n"
+            "13. 加尔文术语保留学术性：righteousness→义，justification→称义，"
+            "sanctification→成圣，covenant→约/盟约，grace→恩典，faith→信心，"
+            "promise→应许，flesh→肉体，election→拣选，the godly→敬虔人，"
+            "the wicked→恶人，the ungodly→不敬虔的人，providence→护理，"
+            "chastisement→管教，deliverance→拯救\n"
+        ),
+    },
     'joshua': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/joshua-en',

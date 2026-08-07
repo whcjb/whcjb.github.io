@@ -225,6 +225,10 @@ def format_inline(text: str) -> str:
     # Strip Ages scripture-code wrappers `[<NNNNNN>]` or `<NNNNNN>` — even when
     # wrapped in a coloring <sty>...</sty> (PyMuPDF often colors the code).
     text = re.sub(r'<sty\s[^>]*>\s*<(\d{6,7})>\s*</sty>', '', text)
+    # 诗篇附录脚注标记 fa/fb/fc/fe(2字母前缀+数字)指向 AGES 版省略的 Additional
+    # Criticisms 附录, 本源无定义 → 删除, 否则残留成乱码文本("...man. fa19 The")。
+    # [a-e] 排除 ft(章末脚注定义)与单 f\d(常规脚注), 对 phil/heb/john 等书卷安全。
+    text = re.sub(r'<sty\s[^>]*>\s*f[a-e]\d+\s*</sty>', '', text)
     text = INLINE_REF_RE.sub('', text)
     # Bracketed footnote refs `[fN]` or `[FtN]` → `[^fN]`
     text = re.sub(r'\[([fF][tT]?\d+)\]', lambda m: f'[^{normalize_fn_label(m.group(1))}]', text)
