@@ -1,27 +1,28 @@
 #!/usr/bin/env python3
-"""publish_psalms_zh.py — 把 calvin_raw/psalms-{1,2}/zh_chapters/N.md 发布到
-calvin/psalms/N.md（N=诗篇篇号，两卷合并为统一书卷 psalms）。
+"""publish_psalms_zh.py — 诗篇中译发布，**两卷**对齐英文(psalms-1-en / psalms-2-en)。
 
-- 严格遵循 pdf-pipeline skill：calvin-en 布局，front matter 本地化
-  (book_id psalms-{1,2}-en→psalms, book_name→诗篇, title「Chapter N」→「诗篇 N」)。
-- prev/next 按篇号 N±1(1..150)，过渡期与旧格式章节导航仍连通。
-- clean: 剥 <<<...>>>，「前往诗篇」补空格。
-- 已发布章保留原 date(不改历史时间戳)；新章用当前真实时间。
-- 不重建 index.html（诗篇全卷重做时另行处理，避免打乱现存章节列表）。
-用法: python3 scripts/publish_psalms_zh.py            # 发布所有已翻译 zh raw
-      python3 scripts/publish_psalms_zh.py 1 3 5     # 只发布指定篇号
+- 卷一：诗篇 1-78 → calvin/psalms-1/N.md (book_id psalms-1, 诗篇（卷一）)
+- 卷二：诗篇 79-150 → calvin/psalms-2/N.md (book_id psalms-2, 诗篇（卷二）)
+- 篇号用绝对值(与英文一致，切换 psalms-1↔psalms-1-en 对得上)。
+- calvin-en 布局；front matter 本地化；prev/next 卷内 N±1。
+- 已发布章保留原 date；新章用当前真实时间。
+- index.html: calvin-book-modern（chapter 字段使 titled_book 为真, 只渲染已译篇）。
+用法: python3 scripts/publish_psalms_zh.py            # 发布所有已翻译
+      python3 scripts/publish_psalms_zh.py 1 3        # 只发布指定篇号
 """
 import re, sys, datetime
 from pathlib import Path
 
 ROOT = Path('/Users/yanpeifa/Documents/whcjb.github.io')
-SRC_DIRS = [ROOT / 'calvin_raw/psalms-1/zh_chapters',
-            ROOT / 'calvin_raw/psalms-2/zh_chapters']
-OUT = ROOT / 'calvin/psalms'
-BOOK_ID = 'psalms'
-BOOK_NAME = '诗篇'
-TOTAL = 150
 now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+
+# 每卷: (源 zh_chapters, 输出目录, book_id, book_name, 篇号下限, 篇号上限, index chapters)
+VOLS = [
+    (ROOT / 'calvin_raw/psalms-1/zh_chapters', ROOT / 'calvin/psalms-1',
+     'psalms-1', '诗篇（卷一）', 1, 78, 78),
+    (ROOT / 'calvin_raw/psalms-2/zh_chapters', ROOT / 'calvin/psalms-2',
+     'psalms-2', '诗篇（卷二）', 79, 150, 150),
+]
 
 
 def clean_body(b):
@@ -31,8 +32,8 @@ def clean_body(b):
     return b
 
 
-def chapter_date(n):
-    p = OUT / f'{n}.md'
+def chapter_date(out_dir, n):
+    p = out_dir / f'{n}.md'
     if p.exists():
         m = re.search(r'^date:\s*(.+)$', p.read_text(encoding='utf-8'), re.M)
         if m:
@@ -41,41 +42,39 @@ def chapter_date(n):
 
 
 def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    # 收集所有已翻译的篇号 → 源文件
-    src_by_n = {}
-    for d in SRC_DIRS:
-        if not d.exists():
-            continue
-        for p in sorted(d.glob('*.md')):
-            if p.stem.isdigit():
-                src_by_n[int(p.stem)] = p
-    want = [int(a) for a in sys.argv[1:]] if len(sys.argv) > 1 else sorted(src_by_n)
-    for n in want:
-        if n not in src_by_n:
-            print(f'  跳过 {n}（无 zh raw）')
-            continue
-        raw = src_by_n[n].read_text(encoding='utf-8')
-        m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
-        body = clean_body(m.group(1).strip('\n')) if m else clean_body(raw)
-        fm = ['---', 'layout: calvin-en', f'book_id: {BOOK_ID}',
-              f'book_name: {BOOK_NAME}', f'chapter: {n}',
-              f'total_chapters: {TOTAL}', f'title: "诗篇 {n}"',
-              f'date: {chapter_date(n)}']
-        if n > 1:
-            fm += [f'prev_section: {n-1}', f'prev_label: "诗篇 {n-1}"']
-        if n < TOTAL:
-            fm += [f'next_section: {n+1}', f'next_label: "诗篇 {n+1}"']
-        fm += ['---', '']
-        (OUT / f'{n}.md').write_text('\n'.join(fm) + '\n' + body + '\n', encoding='utf-8')
-        print(f'  published psalms/{n}.md  诗篇 {n}')
-    # 主页(skill calvin-book-modern)：chapters=150, layout 靠 chapter 字段自动只渲染
-    # 已存在的篇(未译的不出 404 占位)。
-    (OUT / 'index.html').write_text(
-        '---\nlayout: calvin-book-modern\n'
-        f'book_id: {BOOK_ID}\nbook_name: {BOOK_NAME}\n'
-        f'chapters: {TOTAL}\nhas_preface: false\n---\n', encoding='utf-8')
-    print(f'  完成，已翻译篇号: {sorted(src_by_n)}；主页 index.html 已更新')
+    want = set(int(a) for a in sys.argv[1:]) if len(sys.argv) > 1 else None
+    for src_dir, out_dir, book_id, book_name, lo, hi, idx_chapters in VOLS:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        nums = sorted(int(p.stem) for p in src_dir.glob('*.md')
+                      if p.stem.isdigit()) if src_dir.exists() else []
+        for n in nums:
+            if want and n not in want:
+                continue
+            raw = (src_dir / f'{n}.md').read_text(encoding='utf-8')
+            m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
+            body = clean_body(m.group(1).strip('\n')) if m else clean_body(raw)
+            fm = ['---', 'layout: calvin-en', f'book_id: {book_id}',
+                  f'book_name: {book_name}', f'chapter: {n}',
+                  'total_chapters: 150', f'title: "诗篇 {n}"',
+                  f'date: {chapter_date(out_dir, n)}']
+            if n > lo:
+                fm += [f'prev_section: {n-1}', f'prev_label: "诗篇 {n-1}"']
+            if n < hi:
+                fm += [f'next_section: {n+1}', f'next_label: "诗篇 {n+1}"']
+            fm += ['---', '']
+            (out_dir / f'{n}.md').write_text('\n'.join(fm) + '\n' + body + '\n',
+                                             encoding='utf-8')
+            print(f'  published {book_id}/{n}.md  诗篇 {n}')
+        # index.html: 仅当该卷已有译章时写(空卷写了会渲染满屏 404 占位;
+        # 主页会把无内容的卷显示为 pending 非链接)。
+        if nums:
+            (out_dir / 'index.html').write_text(
+                '---\nlayout: calvin-book-modern\n'
+                f'book_id: {book_id}\nbook_name: {book_name}\n'
+                f'chapters: {idx_chapters}\nhas_preface: false\n---\n', encoding='utf-8')
+            print(f'  {book_id} index.html 已写；该卷已译篇: {nums}')
+        else:
+            print(f'  {book_id} 暂无译章, 跳过 index(主页显示为 pending)')
 
 
 if __name__ == '__main__':

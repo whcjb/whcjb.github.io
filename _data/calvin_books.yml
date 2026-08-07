@@ -24,10 +24,14 @@ old_testament:
   - id: joshua
     name: 约书亚记
     chapters: 24
-  - id: psalms
-    name: 诗篇
-    chapters: 150
-    en: Psalms
+  - id: psalms-1
+    name: 诗篇（卷一）
+    chapters: 78
+    en: Psalms (Vol. 1)
+  - id: psalms-2
+    name: 诗篇（卷二）
+    chapters: 72
+    en: Psalms (Vol. 2)
   - id: isaiah
     name: 以赛亚书
     chapters: 66
@@ -189,7 +193,7 @@ english_old_testament:
   - id: psalms-2-en
     name: Psalms (Vol. 2)
     cn: 诗篇（卷二）
-    chapters: 70
+    chapters: 72
   - id: isaiah-1-en
     name: Isaiah (Vol. 1)
     cn: 以赛亚书（卷一）
