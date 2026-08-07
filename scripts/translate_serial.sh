@@ -25,6 +25,7 @@ case "$BOOK" in
     genesis)  PUBLISH=scripts/publish_genesis_zh.py;  RAW_DIR=calvin_raw/genesis/zh_chapters; PUB_DIR=calvin/genesis ;;
     harmony-law-1) PUBLISH="scripts/publish_harmony_law_zh.py --vol 1"; RAW_DIR=calvin_raw/harmony-law-1/zh_chapters; PUB_DIR=calvin/harmony-law-1 ;;
     harmony-law-2) PUBLISH="scripts/publish_harmony_law_zh.py --vol 2"; RAW_DIR=calvin_raw/harmony-law-2/zh_chapters; PUB_DIR=calvin/harmony-law-2 ;;
+    psalms-1) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-1/zh_chapters; PUB_DIR=calvin/psalms-1 ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache
@@ -40,8 +41,13 @@ trap 'rmdir "$LOCK" 2>/dev/null' EXIT
 for CH in "$@"; do
     echo "=== $(date '+%H:%M:%S') 开始 $BOOK ch${CH} ==="
     [ -f "$RAW_DIR/${CH}.md" ] && chmod 644 "$RAW_DIR/${CH}.md" 2>/dev/null || true
-    python3 -u scripts/translate_filibi.py --book $BOOK --chapter $CH --resume \
-        > /tmp/${BOOK}_ch${CH}_translate.log 2>&1
+    # 撞会话额度等失败时不要拖垮整批：本章跳过, 缓存已存进度, 下次 --resume 续
+    if ! python3 -u scripts/translate_filibi.py --book $BOOK --chapter $CH --resume \
+            > /tmp/${BOOK}_ch${CH}_translate.log 2>&1; then
+        echo "!!! $(date '+%H:%M:%S') $BOOK ch${CH} 翻译失败, 跳过 publish, 继续下一章"
+        tail -5 /tmp/${BOOK}_ch${CH}_translate.log
+        continue
+    fi
     echo "=== $(date '+%H:%M:%S') $BOOK ch${CH} 翻译完成, 跑 publish ==="
     python3 $PUBLISH > /tmp/${BOOK}_ch${CH}_publish.log 2>&1
     chmod 444 "$RAW_DIR/${CH}.md" 2>/dev/null || true
@@ -49,7 +55,7 @@ for CH in "$@"; do
     git add "$PUB_DIR/" "$RAW_DIR/../zh_cache/" "$RAW_DIR/${CH}.md" 2>/dev/null || true
     git commit -m "feat(${BOOK}/ch${CH}): 定时任务发布中译
 
-Co-Authored-By: Claude Opus 4.7 <noreply@anthropic.com>" \
+Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>" \
         > /tmp/${BOOK}_ch${CH}_commit.log 2>&1 || echo "  (no changes to commit)"
     git push origin master > /tmp/${BOOK}_ch${CH}_push.log 2>&1 || true
     echo "=== $(date '+%H:%M:%S') $BOOK ch${CH} 完成 ==="
