@@ -69,7 +69,13 @@ def main():
         fm += ['---', '']
         (OUT / f'{n}.md').write_text('\n'.join(fm) + '\n' + body + '\n', encoding='utf-8')
         print(f'  published psalms/{n}.md  诗篇 {n}')
-    print(f'  完成，已翻译篇号: {sorted(src_by_n)}')
+    # 主页(skill calvin-book-modern)：chapters=150, layout 靠 chapter 字段自动只渲染
+    # 已存在的篇(未译的不出 404 占位)。
+    (OUT / 'index.html').write_text(
+        '---\nlayout: calvin-book-modern\n'
+        f'book_id: {BOOK_ID}\nbook_name: {BOOK_NAME}\n'
+        f'chapters: {TOTAL}\nhas_preface: false\n---\n', encoding='utf-8')
+    print(f'  完成，已翻译篇号: {sorted(src_by_n)}；主页 index.html 已更新')
 
 
 if __name__ == '__main__':
