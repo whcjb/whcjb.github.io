@@ -47,6 +47,7 @@ def main():
         out_dir.mkdir(parents=True, exist_ok=True)
         nums = sorted(int(p.stem) for p in src_dir.glob('*.md')
                       if p.stem.isdigit()) if src_dir.exists() else []
+        translated = set(nums)
         for n in nums:
             if want and n not in want:
                 continue
@@ -57,9 +58,10 @@ def main():
                   f'book_name: {book_name}', f'chapter: {n}',
                   'total_chapters: 150', f'title: "诗篇 {n}"',
                   f'date: {chapter_date(out_dir, n)}']
-            if n > lo:
+            # prev/next 只在**已译**篇之间连；否则会链到未发布篇 → 404
+            if n > lo and (n - 1) in translated:
                 fm += [f'prev_section: {n-1}', f'prev_label: "诗篇 {n-1}"']
-            if n < hi:
+            if n < hi and (n + 1) in translated:
                 fm += [f'next_section: {n+1}', f'next_label: "诗篇 {n+1}"']
             fm += ['---', '']
             (out_dir / f'{n}.md').write_text('\n'.join(fm) + '\n' + body + '\n',
