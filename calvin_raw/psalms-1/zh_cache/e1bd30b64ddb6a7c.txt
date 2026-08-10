@@ -1,10 +1,1 @@
-这一轮没有给我要翻译的正文——用户消息里只有译者角色与规则，没有任何英文源文本，所以没有可产出的译文。
-
-顺带查了一下当前实际状态（可能你正是想确认这个）：
-
-- **诗篇第 44 篇中译正在跑**：`translate_filibi.py --book psalms-1 --chapter 44 --resume`（PID 38528，15:43 启动），`zh_cache/` 最新分片写于 15:59（现在 16:00），进程活着、在推进。
-- 串行队列 `translate_serial.sh psalms-1 38…48` 与守护进程 `sched_translate_daemon.py 00:02` 都在运行，ch44 之后会自动接 45–48。
-- 已发布到 `calvin/psalms-1/` 的最新章是 43（commit `1d4399c8c`），`zh_chapters/44.md` 还没落盘，属正常在途。
-- 工作区另有一处无关改动：`calvin/romans/11.md` 未提交。
-
-如果你是想让我翻某段文字，把英文原文贴给我即可；如果是想让我在 ch44 跑完后自动 publish + commit，说一声我就盯着收尾。
+<p class="scripture-ref"><span class="ages-code">&lt;194404&gt;</span><span class="book-name">诗篇</span> <span class="verse-range">44:4-8</span></p>
