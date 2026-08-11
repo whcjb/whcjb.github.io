@@ -26,12 +26,21 @@ layout: default
 
       {% comment %} titled books (harmony) 只渲染实际存在的章节，避免 chapters 声明大于已发布数时露出「Ch N」占位；
          无 chapter 字段的书保持按 1..chapters 回退渲染。 {% endcomment %}
-      {% assign titled_book = site.pages | where: "book_id", page.book_id | where_exp: "p", "p.chapter" | first %}
+      {% comment %} 章号不一定从 1 起：诗篇卷二是 79–150。用 chapter_start /
+         chapter_end 覆盖，缺省仍是 1..chapters，其他书不受影响。 {% endcomment %}
+      {% assign ch_from = page.chapter_start | default: 1 %}
+      {% assign ch_to = page.chapter_end | default: page.chapters %}
+      {% assign bookpages = site.pages | where: "book_id", page.book_id %}
+      {% assign titled_book = bookpages | where_exp: "p", "p.chapter" | first %}
       {% assign lastsection = "___start___" %}
       {% assign pills_open = false %}
-      {% for i in (1..page.chapters) %}
-        {% assign chpage = site.pages | where: "book_id", page.book_id | where: "chapter", i | first %}
+      {% for i in (ch_from..ch_to) %}
+        {% assign chpage = bookpages | where: "chapter", i | first %}
         {% if titled_book and chpage == nil %}{% continue %}{% endif %}
+        {% comment %} 该章文件不存在就不要挂链接（中译尚未补齐的章会留空档）{% endcomment %}
+        {% assign churl = "/calvin/" | append: page.book_id | append: "/" | append: i | append: "/" %}
+        {% assign realpage = bookpages | where: "url", churl | first %}
+        {% if realpage == nil %}{% continue %}{% endif %}
         {% assign sec = chpage.section | default: "" %}
         {% if sec != lastsection %}
           {% if pills_open %}</div>{% endif %}
@@ -43,6 +52,18 @@ layout: default
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/{{ i }}/" class="ch-pill">{% if chpage.title %}{{ chpage.title }}{% else %}Ch {{ i }}{% endif %}</a>
       {% endfor %}
       {% if pills_open %}</div>{% endif %}
+
+      {% comment %} 附录页（脚注、诗篇新译等），slug 列在 index 的 appendices 里 {% endcomment %}
+      {% if page.appendices %}
+      <h3 class="ch-section">Appendices</h3>
+      <div class="ch-pills">
+        {% for slug in page.appendices %}
+          {% assign apurl = "/calvin/" | append: page.book_id | append: "/" | append: slug | append: "/" %}
+          {% assign appage = bookpages | where: "url", apurl | first %}
+          {% if appage %}<a href="{{ site.baseurl }}{{ apurl }}" class="ch-pill">{{ appage.title }}</a>{% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
 
     </div>
   </div>
