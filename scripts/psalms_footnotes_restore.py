@@ -41,7 +41,8 @@ def parse_appendix():
         # 附录里的分节标题（<p class="title-block-h1|h2">PSALM N</p>）不属于脚注正文，
         # 遇到就截断；而跨页折行产生的 <p style="text-align:center"> 包裹要脱掉标签
         # 保留文字——那是同一条脚注被版式切开的下半截。
-        cut = re.search(r'<p class="title-block-h[12]"', text)
+        # 除分节标题外，附录里穿插的经文锚点 h2 同样不属于脚注正文
+        cut = re.search(r'<p class="title-block-h[12]"|<h2 class="scripture-anchor"', text)
         if cut:
             text = text[:cut.start()]
         text = re.sub(r'</?p\b[^>]*>', ' ', text)
@@ -65,10 +66,14 @@ def body_markers():
                 for s in line['spans']:
                     t = s['text']
                     if s['flags'] & 1:                 # superscript
-                        m = re.fullmatch(r'\s*(f[a-z]\d+[a-z]?)\s*', t)
+                        # 上标 span 常把紧跟的标点一起吸进来（' fd43.'），
+                        # 只匹配纯代码会漏掉 57 条；标点要还回正文缓冲。
+                        m = re.fullmatch(r'\s*(f[a-z]\d+[a-z]?)\s*([.,;:!?\'"]*)\s*', t)
                         if m:
                             marks.append({'code': m.group(1), 'psalm': psalm,
                                           'context': norm(buf)[-70:]})
+                            if m.group(2):
+                                buf = (buf + m.group(2))[-400:]
                             continue
                         a = re.fullmatch(r'\s*<(\d{6})>\s*', t)
                         if a:                          # AGES 经节锚点 → 判断当前诗篇
@@ -114,9 +119,25 @@ def projection(md_body):
     return ''.join(out), idx
 
 
-def locate(ctx, chapters):
+def locate(ctx, chapters, whole=False):
     """在候选章节里找 ctx 的唯一出现；逐步缩短上下文提高召回。
+    whole=True 时整串匹配、不缩窗（lemma 定位用，宁可漏不可错）。
     返回 (chapter_key, md_offset) 或 None。"""
+    if whole:
+        if len(ctx) < 12:
+            return None
+        hits = []
+        for key, (norm_text, idx_map, _) in chapters.items():
+            start = 0
+            while True:
+                p = norm_text.find(ctx, start)
+                if p < 0:
+                    break
+                hits.append((key, idx_map[p + len(ctx) - 1] + 1))
+                start = p + 1
+                if len(hits) > 1:
+                    return None
+        return hits[0] if len(hits) == 1 else None
     variants = [ctx, re.sub(r'\d+', '', ctx)]      # 变体二：去掉混进来的页码数字
     for length in (60, 45, 32, 24):
       for v in variants:
@@ -138,6 +159,18 @@ def locate(ctx, chapters):
                 break
         if len(hits) == 1:
             return hits[0]
+    return None
+
+
+def lemma_of(text):
+    """脚注定义开头重复的被注释词句。取不到就返回 None（宁可不落位）。"""
+    t = re.sub(r'<[^>]+>', '', text).strip()
+    m = re.match(r'[“"\'‘]?\s*\*([^*]{10,90}?)\*', t)      # 开头的斜体短语
+    if m:
+        return m.group(1).strip(' .,;:')
+    m = re.match(r'[“"]([^”"]{14,90})[”"]', t)              # 开头的整句引语
+    if m:
+        return m.group(1).strip(' .,;:')
     return None
 
 
@@ -171,6 +204,10 @@ def apply(dry=True):
         chapters[p.stem] = (norm_text, idx_map, [fm, body])
     n_conv = sum(len(v) for v in converted.values())
 
+    # 已经落位过的 code（重复运行时不要再插一遍）
+    for key, (_, _, pair) in chapters.items():
+        have.update(re.findall(r'\[\^([a-z]{1,3}\d+[a-z]?)\]', pair[1]))
+
     # 第二轮：其余 code 靠 PDF 上下文定位插入
     placed, unmatched, nodef = [], [], []
     inserts = {}                                        # key -> [(offset, code, defkey)]
@@ -190,7 +227,28 @@ def apply(dry=True):
         inserts.setdefault(key, []).append((off, code, defkey))
         placed.append(code)
 
+    # 第三轮：PDF 里压根没有 marker 的条目，靠定义开头引用的经文短语（lemma）定位。
+    # AGES 的脚注惯例是先重复被注释的词句再作注，如
+    #   ftc601: “*They shall still bring forth fruit in old age*. Being thus planted…”
+    # 该短语在正文中唯一出现时才插，插在短语之后。
+    lemma_placed = []
+    for code, text in defs.items():
+        body_code = 'f' + code[2:]
+        if body_code in have:
+            continue
+        lem = lemma_of(text)
+        if not lem:
+            continue
+        hit = locate(norm(lem), chapters, whole=True)
+        if not hit:
+            continue
+        key, off = hit
+        inserts.setdefault(key, []).append((off, body_code, code))
+        have.add(body_code)
+        lemma_placed.append(body_code)
+
     print(f'死标记直接转换 {n_conv} 处（{len(converted)} 章）')
+    print(f'按定义 lemma 定位 {len(lemma_placed)} 条')
 
     print(f'定位成功 {len(placed)} / {len(marks)}  '
           f'(上下文匹配失败 {len(unmatched)}, 附录无定义 {len(nodef)})')
@@ -211,15 +269,23 @@ def apply(dry=True):
         for off, code, defkey in sorted(inserts.get(key, []), reverse=True):
             body = body[:off] + f'[^{code}]' + body[off:]
         codes = [c for _, c, _ in inserts.get(key, [])] + converted.get(key, [])
-        codes = sorted(set(codes), key=lambda c: (c[:2], int(re.sub(r'\D', '', c) or 0)))
+        already = set(re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:', body, re.M))
+        codes = sorted(set(codes) - already, key=lambda c: (c[:2], int(re.sub(r'\D', '', c) or 0)))
+        if not codes:
+            continue
         used.update(codes)
         tail = '\n\n' + '\n\n'.join(f'[^{c}]: {defs["ft" + c[1:]]}' for c in codes)
         (EN / f'{key}.md').write_text(fm + body.rstrip() + tail + '\n', encoding='utf-8')
     print(f'已写入 {len(touched)} 个章节文件，落位脚注 {len(used)} 条')
 
     # 附录页只保留没能落位的条目，避免与章末定义重复
-    leftover = {k: v for k, v in defs.items()
-                if not any('ft' + c[1:] == k for c in used)}
+    final_placed = set()
+    for p in EN.glob('*.md'):
+        if p.stem == 'footnotes':
+            continue
+        final_placed.update(re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:',
+                                       p.read_text(encoding='utf-8'), re.M))
+    leftover = {k: v for k, v in defs.items() if 'f' + k[2:] not in final_placed}
     fn = EN / 'footnotes.md'
     head = fn.read_text(encoding='utf-8').split('---\n', 2)[1]
     note = ('\n<p><em>本页只保留未能定位到具体章节的脚注条目；其余 '

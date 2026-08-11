@@ -6207,3 +6207,16 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 [^ff154]: “Their wounds.” — *Fr.*
 
 [^ff155]: Literally, “to the sons.”
+
+<!-- unplaced-footnotes -->
+<div class="unplaced-footnotes" markdown="1">
+#### Unanchored notes
+
+These notes belong to this chapter (their numbering falls between footnotes anchored here), but the in-text reference marks were lost in the source edition, so they cannot be attached to a specific word.
+{: .uf-note}
+
+- **f79** According to the Hebrew division, Part 2 extends from Psalm 42 to Psalm 72 inclusive.
+- **f96** In French version it is, “which thou hast acquired of old.”
+- **f110** In the French version it is, “Thou carriest them away as do floods of water.”
+- **f123** “With” or “from.” — *Fr.*
+</div>
