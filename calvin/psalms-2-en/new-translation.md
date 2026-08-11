@@ -6210,7 +6210,7 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 <div class="unplaced-footnotes" markdown="1">
 #### Unanchored notes
 
-These notes belong to this chapter (their numbering falls between footnotes anchored here), but the in-text reference marks were lost in the source edition, so they cannot be attached to a specific word.
+The source edition groups these notes under this psalm, but their in-text reference marks were lost, so they cannot be attached to a specific word.
 {: .uf-note}
 
 - **f79** According to the Hebrew division, Part 2 extends from Psalm 42 to Psalm 72 inclusive.

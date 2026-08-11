@@ -93,8 +93,14 @@ def main(vol):
                  f'{items}\n</div>\n')
         p.write_text(text.rstrip() + block, encoding='utf-8')
 
-    # 附录页只留真正归不了章的
+    # 附录页只留真正归不了章的；全部归章后该页已删除，此处跳过
     fn = en / 'footnotes.md'
+    if not unresolved:
+        if fn.exists():
+            fn.unlink()
+            print(f'  附录页已无条目，删除 {fn.name}')
+        print(f'卷{vol}: 归章 {len(mapping)} 条（{len(by_chapter)} 章），附录留 0 条')
+        return
     head = fn.read_text(encoding='utf-8').split('---\n', 1)[1].split('---\n', 1)[0]
     note = (f'\n<p><em>本页收录源版本中引用标记丢失、且前后编号跨章因而无法归属到'
             f'具体章节的脚注条目，共 {len(unresolved)} 条。能归章的已随文放在对应章末尾。</em></p>\n\n')
