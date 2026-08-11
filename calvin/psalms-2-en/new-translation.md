@@ -6,8 +6,6 @@ title: "A New Translation of the Psalms"
 date: 2026-06-02 18:13
 prev_section: 150
 prev_label: "Chapter 150"
-next_section: footnotes
-next_label: "Footnotes"
 ---
 
 <!-- PAGE 848 -->
@@ -6217,6 +6215,4 @@ These notes belong to this chapter (their numbering falls between footnotes anch
 
 - **f79** According to the Hebrew division, Part 2 extends from Psalm 42 to Psalm 72 inclusive.
 - **f96** In French version it is, “which thou hast acquired of old.”
-- **f110** In the French version it is, “Thou carriest them away as do floods of water.”
-- **f123** “With” or “from.” — *Fr.*
 </div>
