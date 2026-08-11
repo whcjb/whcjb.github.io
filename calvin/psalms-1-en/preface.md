@@ -144,7 +144,7 @@ The utility of the two Tables adverted to is too obvious to require to be dwelt 
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">EDWARD DE VERE, ERLE OF OXINFORD,</span></p>
 
-<p style="text-align:center" markdown="1">*Lord Great Chamberlain Of England, Vicount Bulbecke, Etc.* [^f10]</p>
+<p style="text-align:center" markdown="1">*Lord Great Chamberlain Of England, Vicount Bulbecke, Etc.* [^fa10]</p>
 
 <p style="text-align:center" markdown="1">ARTHUR GOLDING</p>
 
@@ -266,3 +266,5 @@ Certainly, if such persons were possessed of even a small portion of humanity, t
 [^fa17]: “Et je n’enten pas seulement les frians qui cherchent quelque lippee pour farcir leur ventre.” — Fr.
 
 [^fa18]: “Mais encore ce n’estoit pas assez d’estre traitte ainsi inhumainement par mes voisins, si non qu’en un pays lointain vers la mer glacee le temps se troublast aussi je ne scay comment par la phrenesie d’aucuns, pour puis apres faire lever contre moy comme un nuee de gens qui sont trop de loisir et n’ont que faire s’ils ne s’escarmouschent a empescher ceux qui travaillent a edification.”—Fr.
+
+[^fa10]: Edward de Vere, 17th Earl of Oxford, was highly distinguished for his wlt, valor, and Patriotism. In two several tournaments he was honored by receiving the prize from the hand of his mistress, Queen Elizabeth, baring been led armed, by two ladies, into the Royal Presence Chamber. Walpole notes that he was an admired poet, and reckoned the best waiter of comedy in his time. He died at a very advanced age, June 24, 1604. It is extremely probable that ARTHUR GOLDING, the old Translator, was related, perhaps not distantly, to this nobleman. It appeals from Dugdale, and other authorities, that John, 16th Earl of Oxford, his father, married Margaret, daughter of John Golding, and sister of Sir Edward Golding, for his second wife, by whom he had Earl Edward, after whom it is likely he was named, and a daughter.

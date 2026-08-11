@@ -22,9 +22,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-EN = ROOT / 'calvin/psalms-1-en'
-PDF = '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA1.pdf'
-WORK = ROOT / 'calvin_raw/psalms-1'
+VOL = '2' if '--vol' in sys.argv and sys.argv[sys.argv.index('--vol') + 1] == '2' else '1'
+EN = ROOT / f'calvin/psalms-{VOL}-en'
+PDF = f'/Users/yanpeifa/Documents/论文/calvin/CAL_PSA{VOL}.pdf'
+WORK = ROOT / f'calvin_raw/psalms-{VOL}'
 CODE_SPAN = re.compile(r'<span style="color:#800000">(ft[a-z]\d+[a-z]?)</span>')
 
 
@@ -156,10 +157,15 @@ def apply(dry=True):
             continue
         text = p.read_text(encoding='utf-8')
         fm, body = re.match(r'(---\n.*?\n---\n)(.*)$', text, re.S).groups()
-        found = LIVE.findall(body)
+        found = [c for c in LIVE.findall(body) if 'ft' + c[1:] in defs]
         if found:
-            body = LIVE.sub(lambda m: f'[^{m.group(1)}]', body)
-            converted[p.stem] = [c for c in found if 'ft' + c[1:] in defs]
+            # 只转换在附录里查得到定义的码。卷二有约 50 个死标记（fe49 等）
+            # 附录里根本没有对应条目，转了就会变成没有定义的孤儿引用，
+            # kramdown 会把 [^fe49] 原样吐在正文里。这类保持原状不动。
+            keep = set(found)
+            body = LIVE.sub(
+                lambda m: f'[^{m.group(1)}]' if m.group(1) in keep else m.group(0), body)
+            converted[p.stem] = found
             have.update(found)
         norm_text, idx_map = projection(body)
         chapters[p.stem] = (norm_text, idx_map, [fm, body])
