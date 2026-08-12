@@ -1,0 +1,1 @@
+- **a206** “Comme si un lion sortant de son giste se levoit furieusement pour mettre sa proye par pieces.” *——法文本。*“仿佛一头狮子从洞穴中出来，凶猛地跃起扑向猎物，将其撕成碎片。”布丰（Buffon）说：“狮子扑向猎物时，会纵身一跃十至十五尺，扑上去，用前爪抓住猎物，以利爪撕裂，随后用牙齿吞噬。”
