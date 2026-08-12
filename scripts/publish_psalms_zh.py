@@ -10,7 +10,7 @@
 用法: python3 scripts/publish_psalms_zh.py            # 发布所有已翻译
       python3 scripts/publish_psalms_zh.py 1 3        # 只发布指定篇号
 """
-import re, sys, datetime
+import json, re, sys, datetime
 from pathlib import Path
 
 ROOT = Path('/Users/yanpeifa/Documents/whcjb.github.io')
@@ -25,39 +25,48 @@ VOLS = [
 ]
 
 
-def clean_body(b):
+ZH_FOOTNOTES = {}          # {vol: {code: 中文定义}}，main() 里按卷载入
+
+
+def clean_body(b, zh_defs=None):
     b = re.sub(r'<<<[^>]*?>>>', '', b)
-    b = strip_dead_footnote_marks(b)
+    b, used = restore_footnotes(b, zh_defs or {})
     b = re.sub(r'\n[ \t]*\n[ \t]*\n', '\n\n', b)
     b = b.replace('前往诗篇', '前往 诗篇')
+    if used:
+        b = b.rstrip() + '\n\n' + '\n\n'.join(
+            f'[^{c}]: {zh_defs[c]}' for c in used) + '\n'
     return b
 
 
-def strip_dead_footnote_marks(b):
-    """去掉正文里的 fa/fb/fc… 死标记（skill 方案 B）。
+def restore_footnotes(b, zh_defs):
+    """正文里的 fa/fb/fc 死标记 → 真脚注引用 [^faN]。
 
-    这些标记的定义在英文版已经还原（附录一直埋在 ch78/ch150 里），但中文版
-    还没有译出脚注正文，标记留在正文里就是一串裸露的红色 "fc266"。按 skill
-    在 publish 层去掉——**只动发布产物，不动 zh_chapters raw**，位置信息保留，
-    等脚注正文译出后可直接照英文版的做法还原成真脚注。
+    标记本身是从英文源翻译时原样带过来的，位置就是 PDF 里上标的位置，不用猜。
+    只有中文定义已经译好（zh_footnote_defs.json 里有）的 code 才转换——转了却
+    没有定义，kramdown 会把 [^faN] 原样吐在正文里。
 
-    `[a-e]` 是 skill 定的范围：排除 ft（附录定义标签）和单个 f，避免误伤
-    phil/heb/john 等书的 [^fN] 引用。
+    `[a-e]` 是 skill 定的范围：排除 ft（附录定义标签）和单个 f，
+    避免误伤 phil/heb/john 等书的 [^fN] 引用。
     """
-    def cut(m):
-        # 标记两侧都是中文时把空格一并吃掉（中文正文不留空格）；
-        # 一侧是拉丁字母/数字则保留一个空格，避免把词粘连起来。
-        left, right = m.group(1), m.group(2)
-        cjk = r'[　-〿＀-￯一-鿿]'
-        if re.search(cjk + r'$', left) and re.match(cjk, right or ' '):
-            return left + (right or '')
-        return left + (' ' if left and right else '') + (right or '')
+    used = []
 
-    b = re.sub(r'([\s\S]?)[ \t]*<span style="color:#800000">\s*f[a-e]\d+[a-z]?\s*</span>'
-               r'[ \t]*([\s\S]?)', cut, b)
+    def repl(m):
+        code = m.group(1)
+        if code not in zh_defs:
+            return m.group(0)
+        if code not in used:
+            used.append(code)
+        return f'[^{code}]'
+
+    b = re.sub(r'<span style="color:#800000">\s*(f[a-e]\d+[a-z]?)\s*</span>', repl, b)
+    # 标记前后可能有多余空格（原文上标前有空格），中文正文不留
+    b = re.sub(r'([　-〿＀-￯一-鿿])[ \t]+(\[\^f)', r'\1\2', b)
+    b = re.sub(r'(\[\^f[a-e]\d+[a-z]?\])[ \t]+([　-〿＀-￯一-鿿])', r'\1\2', b)
     b = re.sub(r'[ \t]+([，。；：、？！）」』])', r'\1', b)
-    b = re.sub(r'[ \t]+$', '', b, flags=re.M)      # 行末残留空格
-    return b
+    b = re.sub(r'[ \t]+$', '', b, flags=re.M)
+    used.sort(key=lambda c: (c[:2], int(re.sub(r'\D', '', c))))
+    return b, used
 
 
 def chapter_date(out_dir, n):
@@ -72,6 +81,10 @@ def chapter_date(out_dir, n):
 def main():
     want = set(int(a) for a in sys.argv[1:]) if len(sys.argv) > 1 else None
     for src_dir, out_dir, book_id, book_name, lo, hi, idx_chapters in VOLS:
+        # 该卷已译好的脚注定义（没有就按无脚注发布，正文里的死标记原样保留）
+        zh_fn_path = src_dir.parent / 'zh_footnote_defs.json'
+        zh_defs = (json.loads(zh_fn_path.read_text(encoding='utf-8'))
+                   if zh_fn_path.exists() else {})
         out_dir.mkdir(parents=True, exist_ok=True)
         nums = sorted(int(p.stem) for p in src_dir.glob('*.md')
                       if p.stem.isdigit()) if src_dir.exists() else []
@@ -81,7 +94,7 @@ def main():
                 continue
             raw = (src_dir / f'{n}.md').read_text(encoding='utf-8')
             m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
-            body = clean_body(m.group(1).strip('\n')) if m else clean_body(raw)
+            body = clean_body(m.group(1).strip('\n') if m else raw, zh_defs)
             fm = ['---', 'layout: calvin-en', f'book_id: {book_id}',
                   f'book_name: {book_name}', f'chapter: {n}',
                   'total_chapters: 150', f'title: "诗篇 {n}"',

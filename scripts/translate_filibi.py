@@ -1323,6 +1323,17 @@ def md5key(text: str) -> str:
     return hashlib.md5(text.encode('utf-8')).hexdigest()[:16]
 
 
+# 翻译是纯文本任务，用不着工具、MCP、CLAUDE.md、hooks。默认调用会把这些
+# 全塞进每次请求的前缀——实测 22,014 token/次；加上这三个开关后降到 444，
+# 五十分之一。翻一本书几千次调用，差别是数量级的。
+#   --disallowedTools "*"   去掉全部工具定义（大头）
+#   --strict-mcp-config     不加载任何 MCP server
+#   --system-prompt         用翻译提示词**替换**默认 agent 提示词（而非追加）
+# 注意：prompt 必须走 stdin —— --disallowedTools 是可变参数，会把跟在后面的
+# 位置参数当成工具名吞掉。
+CLI_TRIM_FLAGS = ['--strict-mcp-config', '--disallowedTools', '*']
+
+
 def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3) -> str:
     """调用 claude CLI；遇到失败重试 max_retries 次（指数退避 5/15/30s）。"""
     import time
@@ -1334,7 +1345,7 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3) -> str:
             time.sleep(wait)
         try:
             r = subprocess.run(
-                ['claude', '-p', SYSTEM],
+                ['claude', '-p', *CLI_TRIM_FLAGS, '--system-prompt', SYSTEM],
                 input=prompt, capture_output=True, text=True, timeout=timeout
             )
         except subprocess.TimeoutExpired as e:
