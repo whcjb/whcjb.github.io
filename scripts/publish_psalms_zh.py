@@ -27,8 +27,36 @@ VOLS = [
 
 def clean_body(b):
     b = re.sub(r'<<<[^>]*?>>>', '', b)
+    b = strip_dead_footnote_marks(b)
     b = re.sub(r'\n[ \t]*\n[ \t]*\n', '\n\n', b)
     b = b.replace('前往诗篇', '前往 诗篇')
+    return b
+
+
+def strip_dead_footnote_marks(b):
+    """去掉正文里的 fa/fb/fc… 死标记（skill 方案 B）。
+
+    这些标记的定义在英文版已经还原（附录一直埋在 ch78/ch150 里），但中文版
+    还没有译出脚注正文，标记留在正文里就是一串裸露的红色 "fc266"。按 skill
+    在 publish 层去掉——**只动发布产物，不动 zh_chapters raw**，位置信息保留，
+    等脚注正文译出后可直接照英文版的做法还原成真脚注。
+
+    `[a-e]` 是 skill 定的范围：排除 ft（附录定义标签）和单个 f，避免误伤
+    phil/heb/john 等书的 [^fN] 引用。
+    """
+    def cut(m):
+        # 标记两侧都是中文时把空格一并吃掉（中文正文不留空格）；
+        # 一侧是拉丁字母/数字则保留一个空格，避免把词粘连起来。
+        left, right = m.group(1), m.group(2)
+        cjk = r'[　-〿＀-￯一-鿿]'
+        if re.search(cjk + r'$', left) and re.match(cjk, right or ' '):
+            return left + (right or '')
+        return left + (' ' if left and right else '') + (right or '')
+
+    b = re.sub(r'([\s\S]?)[ \t]*<span style="color:#800000">\s*f[a-e]\d+[a-z]?\s*</span>'
+               r'[ \t]*([\s\S]?)', cut, b)
+    b = re.sub(r'[ \t]+([，。；：、？！）」』])', r'\1', b)
+    b = re.sub(r'[ \t]+$', '', b, flags=re.M)      # 行末残留空格
     return b
 
 
