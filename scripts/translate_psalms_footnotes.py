@@ -22,6 +22,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MARK_RE = re.compile(r'<span style="color:#800000">(f[a-e]\d+[a-z]?)</span>')
+REF_RE = re.compile(r'\[\^(f[a-e]\d+[a-z]?)\](?!:)')     # 锚点脚本插入的引用
 
 SYSTEM = (
     "你是一位精通加尔文神学的中文译者，正在翻译加尔文《诗篇注释》的**脚注**。\n"
@@ -58,8 +59,10 @@ def call_claude(text, cache_dir, retries=3):
         # 每次调用前缀 22,014 → 444 token。prompt 走 stdin（--disallowedTools
         # 是可变参数，位置参数会被它吞掉）。
         r = subprocess.run(
-            ['claude', '-p', '--strict-mcp-config', '--disallowedTools', '*',
-             '--system-prompt', SYSTEM],
+            # 脚注正文的翻译用 opus——这是要读的内容，质量不能降；
+            # 定位那种机械活才用 haiku（见 psalms_footnote_anchors.py）。
+            ['claude', '-p', '--model', 'opus', '--strict-mcp-config',
+             '--disallowedTools', '*', '--system-prompt', SYSTEM],
             input=text, capture_output=True, text=True)
         out = r.stdout.strip()
         if r.returncode == 0 and out and 'weekly limit' not in out:
@@ -69,6 +72,54 @@ def call_claude(text, cache_dir, retries=3):
     raise RuntimeError(f'翻译失败: {last[:200]}')
 
 
+BATCH = 5
+
+
+def translate_chunk(codes, defs, cache_dir):
+    """一次调用翻译 BATCH 条脚注定义 → {code: 中文}
+
+    用 <<<N>>> 分隔并逐条写缓存；解析不出来的条目退回逐条翻译，
+    所以批处理只影响速度，不影响可靠性。
+    """
+    out, pending = {}, []
+    for c in codes:
+        f = cache_dir / f'{md5key(defs["ft" + c[1:]])}.txt'
+        if f.exists():
+            out[c] = f.read_text(encoding='utf-8')
+        else:
+            pending.append(c)
+    if not pending:
+        return out
+
+    parts = [f'<<<{i+1}>>>\n{defs["ft" + c[1:]]}' for i, c in enumerate(pending)]
+    prompt = ('请按编号逐条翻译以下脚注，输出保持 <<<N>>> 编号格式：\n\n'
+              + '\n\n'.join(parts))
+    raw = call_raw(prompt)
+    got = {}
+    for m in re.finditer(r'<<<(\d+)>>>\s*\n(.*?)(?=<<<\d+>>>|\Z)', raw, re.S):
+        i = int(m.group(1)) - 1
+        if 0 <= i < len(pending) and m.group(2).strip():
+            got[pending[i]] = m.group(2).strip()
+    for c in pending:
+        if c not in got:                       # 解析失败 → 逐条兜底
+            got[c], _ = call_claude(defs['ft' + c[1:]], cache_dir)
+    for c, zh in got.items():
+        (cache_dir / f'{md5key(defs["ft" + c[1:]])}.txt').write_text(zh, encoding='utf-8')
+        out[c] = zh
+    return out
+
+
+def call_raw(prompt, retries=3):
+    for _ in range(retries):
+        r = subprocess.run(
+            ['claude', '-p', '--model', 'opus', '--strict-mcp-config',
+             '--disallowedTools', '*', '--system-prompt', SYSTEM],
+            input=prompt, capture_output=True, text=True)
+        if r.returncode == 0 and r.stdout.strip() and 'weekly limit' not in r.stdout:
+            return r.stdout.strip()
+    raise RuntimeError('批量翻译失败')
+
+
 def codes_in_chapters(vol, chapters=None):
     """中译 raw 里还留着死标记的 code（位置正确，缺的只是中文定义）"""
     src = ROOT / f'calvin_raw/psalms-{vol}/zh_chapters'
@@ -76,7 +127,8 @@ def codes_in_chapters(vol, chapters=None):
     for p in sorted(src.glob('*.md'), key=lambda x: int(x.stem) if x.stem.isdigit() else 0):
         if not p.stem.isdigit() or (chapters and int(p.stem) not in chapters):
             continue
-        for c in MARK_RE.findall(p.read_text(encoding='utf-8')):
+        t = p.read_text(encoding='utf-8')
+        for c in MARK_RE.findall(t) + REF_RE.findall(t):
             found.setdefault(c, p.stem)
     return found
 
@@ -101,16 +153,31 @@ def main():
         todo = todo[:args.limit]
     print(f'待译 {len(todo)} 条（已有 {len(done)} 条）')
 
-    hits = 0
-    for i, code in enumerate(todo, 1):
-        en = defs['ft' + code[1:]]
-        zh, cached = call_claude(en, cache_dir)
-        hits += cached
-        done[code] = zh
+    # 逐条调用时每次固定开销约 5 秒（CLI 启动+认证+建会话），875 条光启动就 73 分钟；
+    # 一次送 BATCH 条，启动开销摊薄到 1/BATCH，生成也在同一个流里更省。
+    # 解析失败的条目自动退回逐条翻译，所以批处理不会降低可靠性。
+    # 按字符预算分组，不按固定条数：脚注长度差 300 倍（最短 4 字符、最长 7848），
+    # 固定条数要么长条撑爆输出、要么短条严重装不满。一批约 8000 字符英文，
+    # 对应中文输出约 5k token，安全且充分利用单次调用。
+    def chunks(codes):
+        buf, size = [], 0
+        for c in codes:
+            n = len(defs['ft' + c[1:]])
+            if buf and (size + n > 8000 or len(buf) >= 25):
+                yield buf
+                buf, size = [], 0
+            buf.append(c); size += n
+        if buf:
+            yield buf
+
+    done_n = 0
+    for chunk in chunks(todo):
+        for code, zh in translate_chunk(chunk, defs, cache_dir).items():
+            done[code] = zh
+        done_n += len(chunk)
         out_path.write_text(json.dumps(done, ensure_ascii=False, indent=1),
                             encoding='utf-8')
-        if i % 10 == 0 or i == len(todo):
-            print(f'  {i}/{len(todo)}（缓存命中 {hits}）', flush=True)
+        print(f'  {done_n}/{len(todo)}', flush=True)
     print(f'完成，共 {len(done)} 条中文定义 → {out_path.relative_to(ROOT)}')
 
 

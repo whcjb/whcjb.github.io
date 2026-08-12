@@ -19,7 +19,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
-BATCH = 1  # 每批翻译段数（每次调用 claude CLI）
+# 每批翻译段数（每次调用 claude CLI）。translate_batch 用 <<<N>>> 分隔并逐条
+# 缓存，解析失败会自动退回逐条翻译，所以 >1 是安全的。设 1 时一章 100+ 段就是
+# 100+ 次调用，一章要 20 分钟；设 3 后墙钟时间降到三分之一。
+BATCH = 3
 
 # 所有加尔文书卷共用的追加规则(在 main 里 append 到各书 system 之后)
 SCRIPTURE_RULE = (
