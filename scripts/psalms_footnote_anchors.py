@@ -28,7 +28,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-REF_RE = re.compile(r'\[\^([a-z]{1,3}\d+[a-z]?)\](?!:)')
+REF_RE = re.compile(r'\[\^([a-z]{1,3}\d+[A-Za-z]?)\](?!:)')
 
 
 def has_def(vol, code):
@@ -132,7 +132,7 @@ def anchors_for_chapter(items):
             continue
         code = parts[1].strip().strip('[]^ ')
         anchor = parts[2].strip()
-        if re.fullmatch(r'[a-z]{1,3}\d+[a-z]?', code) and anchor:
+        if re.fullmatch(r'[a-z]{1,3}\d+[A-Za-z]?', code) and anchor:
             res.setdefault(idx, []).append((code, anchor))
     return res
 
@@ -179,7 +179,7 @@ def process_chapter(vol, n, dry, loose=False):
         pairs = []
         for line in out.splitlines():
             parts = re.split(r'\t+|\s{2,}', line.strip(), maxsplit=2)
-            if len(parts) == 3 and re.fullmatch(r'[a-z]{1,3}\d+[a-z]?', parts[1].strip().strip('[]^ ')):
+            if len(parts) == 3 and re.fullmatch(r'[a-z]{1,3}\d+[A-Za-z]?', parts[1].strip().strip('[]^ ')):
                 pairs.append((parts[1].strip().strip('[]^ '), parts[2].strip()))
         new_body, ok, fail = insert(body, pairs)
         if not dry and ok:

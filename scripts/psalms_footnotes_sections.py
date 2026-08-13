@@ -22,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = {'1': ('47140659f', 'calvin/psalms-1-en/footnotes.md'),
        '2': ('be1e3b962', 'calvin/psalms-2-en/150.md')}
-CODE_SPAN = re.compile(r'<span style="color:#800000">(ft[a-z]\d+[a-z]?)</span>')
+CODE_SPAN = re.compile(r'<span style="color:#800000">(ft[a-z]\d+[A-Za-z]?)</span>')
 SECTION = re.compile(
     r'<p class="title-block-h2"[^>]*>(?:(?!</p>).)*?PSALM\s+(\d+)(?:(?!</p>).)*?</p>'
     r'|<h2 class="scripture-anchor" id="psalm-(\d+)"')
@@ -62,9 +62,9 @@ def placed_map(vol):
         if p.stem == 'footnotes':
             continue
         text = p.read_text(encoding='utf-8')
-        for c in re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:', text, re.M):
+        for c in re.findall(r'^\[\^([a-z]{1,3}\d+[A-Za-z]?)\]:', text, re.M):
             where['ft' + c[1:]] = p.stem
-        for c in re.findall(r'^- \*\*([a-z]\d+[a-z]?)\*\*', text, re.M):   # 未定位区块
+        for c in re.findall(r'^- \*\*([a-z]\d+[A-Za-z]?)\*\*', text, re.M):   # 未定位区块
             where['ft' + c] = p.stem
     return where
 

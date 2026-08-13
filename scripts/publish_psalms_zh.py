@@ -59,20 +59,20 @@ def restore_footnotes(b, zh_defs):
             used.append(code)
         return f'[^{code}]'
 
-    b = re.sub(r'<span style="color:#800000">\s*(f[a-e]\d+[a-z]?)\s*</span>', repl, b)
+    b = re.sub(r'<span style="color:#800000">\s*(f[a-e]\d+[A-Za-z]?)\s*</span>', repl, b)
     # 锚点脚本直接插进 raw 的引用同样要在章末补定义
-    for c in re.findall(r'\[\^(f[a-e]\d+[a-z]?)\](?!:)', b):
+    for c in re.findall(r'\[\^(f[a-e]\d+[A-Za-z]?)\](?!:)', b):
         if c in zh_defs and c not in used:
             used.append(c)
     # 标记前后可能有多余空格（原文上标前有空格），中文正文不留
     b = re.sub(r'([　-〿＀-￯一-鿿])[ \t]+(\[\^f)', r'\1\2', b)
-    b = re.sub(r'(\[\^f[a-e]\d+[a-z]?\])[ \t]+([　-〿＀-￯一-鿿])', r'\1\2', b)
+    b = re.sub(r'(\[\^f[a-e]\d+[A-Za-z]?\])[ \t]+([　-〿＀-￯一-鿿])', r'\1\2', b)
     b = re.sub(r'[ \t]+([，。；：、？！）」』])', r'\1', b)
     b = re.sub(r'[ \t]+$', '', b, flags=re.M)
     # 查不到定义的引用**只报警，不删**。删掉等于把线索一起抹了：ch45 曾出现的
     # [^f004] 根本不是脚注，而是 AGES 经文编码 <19F004> 在英文提取阶段被误拆成
     # <19[^f004]>，源头修好即可，删引用只会掩盖问题。
-    orphan = sorted({c for c in re.findall(r'\[\^([a-z]{1,3}\d+[a-z]?)\](?!:)', b)
+    orphan = sorted({c for c in re.findall(r'\[\^([a-z]{1,3}\d+[A-Za-z]?)\](?!:)', b)
                      if c not in zh_defs})
     if orphan:
         print(f'    ⚠ 引用无对应中文定义（未删除，请查源头）: {orphan}')

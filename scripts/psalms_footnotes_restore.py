@@ -26,7 +26,7 @@ VOL = '2' if '--vol' in sys.argv and sys.argv[sys.argv.index('--vol') + 1] == '2
 EN = ROOT / f'calvin/psalms-{VOL}-en'
 PDF = f'/Users/yanpeifa/Documents/论文/calvin/CAL_PSA{VOL}.pdf'
 WORK = ROOT / f'calvin_raw/psalms-{VOL}'
-CODE_SPAN = re.compile(r'<span style="color:#800000">(ft[a-z]\d+[a-z]?)</span>')
+CODE_SPAN = re.compile(r'<span style="color:#800000">(ft[a-z]\d+[A-Za-z]?)</span>')
 
 
 def parse_appendix():
@@ -68,7 +68,7 @@ def body_markers():
                     if s['flags'] & 1:                 # superscript
                         # 上标 span 常把紧跟的标点一起吸进来（' fd43.'），
                         # 只匹配纯代码会漏掉 57 条；标点要还回正文缓冲。
-                        m = re.fullmatch(r'\s*(f[a-z]\d+[a-z]?)\s*([.,;:!?\'"]*)\s*', t)
+                        m = re.fullmatch(r'\s*(f[a-z]\d+[A-Za-z]?)\s*([.,;:!?\'"]*)\s*', t)
                         if m:
                             marks.append({'code': m.group(1), 'psalm': psalm,
                                           'context': norm(buf)[-70:]})
@@ -183,7 +183,7 @@ def apply(dry=True):
     #
     # 必须在建 projection 之前做：ch17 这类章既有死标记、又有要靠上下文插入的
     # code，若先算偏移再做转换，`[^fa1]` 比原 span 短，后面所有偏移全部错位。
-    LIVE = re.compile(r'<span style="color:#800000">(f[a-z]\d+[a-z]?)</span>')
+    LIVE = re.compile(r'<span style="color:#800000">(f[a-z]\d+[A-Za-z]?)</span>')
     chapters, converted, have = {}, {}, set()
     for p in sorted(EN.glob('*.md')):
         if p.stem == 'footnotes':
@@ -206,7 +206,7 @@ def apply(dry=True):
 
     # 已经落位过的 code（重复运行时不要再插一遍）
     for key, (_, _, pair) in chapters.items():
-        have.update(re.findall(r'\[\^([a-z]{1,3}\d+[a-z]?)\]', pair[1]))
+        have.update(re.findall(r'\[\^([a-z]{1,3}\d+[A-Za-z]?)\]', pair[1]))
 
     # 第二轮：其余 code 靠 PDF 上下文定位插入
     placed, unmatched, nodef = [], [], []
@@ -269,7 +269,7 @@ def apply(dry=True):
         for off, code, defkey in sorted(inserts.get(key, []), reverse=True):
             body = body[:off] + f'[^{code}]' + body[off:]
         codes = [c for _, c, _ in inserts.get(key, [])] + converted.get(key, [])
-        already = set(re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:', body, re.M))
+        already = set(re.findall(r'^\[\^([a-z]{1,3}\d+[A-Za-z]?)\]:', body, re.M))
         codes = sorted(set(codes) - already, key=lambda c: (c[:2], int(re.sub(r'\D', '', c) or 0)))
         if not codes:
             continue
@@ -283,7 +283,7 @@ def apply(dry=True):
     for p in EN.glob('*.md'):
         if p.stem == 'footnotes':
             continue
-        final_placed.update(re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:',
+        final_placed.update(re.findall(r'^\[\^([a-z]{1,3}\d+[A-Za-z]?)\]:',
                                        p.read_text(encoding='utf-8'), re.M))
     leftover = {k: v for k, v in defs.items() if 'f' + k[2:] not in final_placed}
     fn = EN / 'footnotes.md'

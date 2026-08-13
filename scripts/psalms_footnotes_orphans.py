@@ -40,7 +40,7 @@ def chapter_of_leftovers(vol):
     for p in en.glob('*.md'):
         if p.stem == 'footnotes':
             continue
-        for c in re.findall(r'^\[\^([a-z]{1,3}\d+[a-z]?)\]:',
+        for c in re.findall(r'^\[\^([a-z]{1,3}\d+[A-Za-z]?)\]:',
                             p.read_text(encoding='utf-8'), re.M):
             where['ft' + c[1:]] = p.stem
 
@@ -95,11 +95,20 @@ def main(vol):
 
     # 附录页只留真正归不了章的；全部归章后该页已删除，此处跳过
     fn = en / 'footnotes.md'
+    if not fn.exists() and not unresolved:
+        print(f'卷{vol}: 归章 {len(mapping)} 条（{len(by_chapter)} 章），附录页已删除')
+        return
     if not unresolved:
         if fn.exists():
             fn.unlink()
             print(f'  附录页已无条目，删除 {fn.name}')
         print(f'卷{vol}: 归章 {len(mapping)} 条（{len(by_chapter)} 章），附录留 0 条')
+        return
+    if not fn.exists():
+        # 附录页已删（条目都已归章）。这里还剩的说明连分节都定不了，
+        # 只报告不建页——重建一个只有零星条目的附录页反而是噪音。
+        print(f'卷{vol}: 归章 {len(mapping)} 条；另有 {len(unresolved)} 条既无分节也无'
+              f'前后同章依据，未落位: {sorted(unresolved)[:8]}')
         return
     head = fn.read_text(encoding='utf-8').split('---\n', 1)[1].split('---\n', 1)[0]
     note = (f'\n<p><em>本页收录源版本中引用标记丢失、且前后编号跨章因而无法归属到'

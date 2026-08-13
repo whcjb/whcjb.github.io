@@ -21,8 +21,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MARK_RE = re.compile(r'<span style="color:#800000">(f[a-e]\d+[a-z]?)</span>')
-REF_RE = re.compile(r'\[\^(f[a-e]\d+[a-z]?)\](?!:)')     # 锚点脚本插入的引用
+MARK_RE = re.compile(r'<span style="color:#800000">(f[a-e]\d+[A-Za-z]?)</span>')
+REF_RE = re.compile(r'\[\^(f[a-e]\d+[A-Za-z]?)\](?!:)')     # 锚点脚本插入的引用
 
 SYSTEM = (
     "你是一位精通加尔文神学的中文译者，正在翻译加尔文《诗篇注释》的**脚注**。\n"
