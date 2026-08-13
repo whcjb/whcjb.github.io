@@ -96,11 +96,25 @@ def build(vol):
         if t is not None:
             groups[t].append(code)
 
+    # 每个附录页首个条目标签的 y，与该页正文起始 y 比较：
+    # 标签明显低于页首 → 页面开头是上一条的续文，才允许前置补上一条。
+    starts_mid = {}
+    for pno in by_page:
+        page = doc[pno]
+        tops = [b['bbox'][1] for b in page.get_text('dict')['blocks']
+                if b['type'] == 0 and page.get_text('text')]
+        first_label_y = min((y for p_, y, c in app if p_ == pno), default=None)
+        starts_mid[pno] = (first_label_y is not None and tops
+                           and first_label_y - min(tops) > 20)
+
     mapping, unsure = {}, []
     for page, marks in groups.items():
         entries = by_page.get(page, [])
-        # 标记比条目多 1 → 首条是上一页续下来的，前置补上
-        if len(marks) == len(entries) + 1 and entries and idx.get(entries[0], 0) > 0:
+        # 标记比条目多 1，且该页确实从半截条目开始 → 前置补上一条。
+        # 不加这个判据会整页错位：卷一 fa89-98 就是被无条件前置搞错的
+        # （fa90 上下文"大卫夸大其忧伤"对应 fta90，链接前置后错挂成 fta89）。
+        if (len(marks) == len(entries) + 1 and entries
+                and idx.get(entries[0], 0) > 0 and starts_mid.get(page)):
             entries = [order[idx[entries[0]] - 1]] + entries
         if len(marks) == len(entries):
             mapping.update(dict(zip(marks, entries)))
