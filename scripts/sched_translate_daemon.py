@@ -38,12 +38,16 @@ log(f"daemon 启动 pid={os.getpid()} ppid={os.getppid()} → 计划 {TIME} 翻�
 
 # ---- 计算目标时刻 ----
 now = datetime.datetime.now()
-hh, mm = map(int, TIME.split(":"))
-target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
-if target <= now:
-    target += datetime.timedelta(days=1)
-log(f"目标时刻 {target.strftime('%Y-%m-%d %H:%M:%S')} (PPID={os.getppid()})")
-target_ep = target.timestamp()
+if TIME == "now":
+    log(f"立即执行 (PPID={os.getppid()})")
+    target_ep = 0
+else:
+    hh, mm = map(int, TIME.split(":"))
+    target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
+    if target <= now:
+        target += datetime.timedelta(days=1)
+    log(f"目标时刻 {target.strftime('%Y-%m-%d %H:%M:%S')} (PPID={os.getppid()})")
+    target_ep = target.timestamp()
 
 # ---- 墙钟轮询等待 ----
 while time.time() < target_ep:
@@ -73,6 +77,10 @@ log("已获锁，开始翻译。")
 try:
     for ch in CHS:
         log(f"translate_filibi {BOOK} ch{ch} 开始")
+        raw_pre = f"{ROOT}/calvin_raw/{BOOK}/zh_chapters/{ch}.md"
+        if os.path.exists(raw_pre):
+            # 已译章的 raw 是 chmod 444, 不解锁则脚本写不进去; 缓存命中会原样重写
+            os.chmod(raw_pre, 0o644); log(f"ch{ch} raw 已存在, 解锁 644 待重写")
         with open(LOGF, "a") as out:
             subprocess.run(
                 ["python3", "-u", f"{ROOT}/scripts/translate_filibi.py",

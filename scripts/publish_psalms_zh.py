@@ -32,6 +32,8 @@ def clean_body(b, zh_defs=None):
     b = re.sub(r'<<<[^>]*?>>>', '', b)
     b, used = restore_footnotes(b, zh_defs or {})
     b = re.sub(r'\n[ \t]*\n[ \t]*\n', '\n\n', b)
+    # 翻译偶尔漏掉 scripture-anchor 的可见文本(display:none, 但保持一致)
+    b = re.sub(r'(<h2 class="scripture-anchor"[^>]*>)PSALM (\d)', r'\1诗篇 \2', b)
     b = b.replace('前往诗篇', '前往 诗篇')
     if used:
         b = b.rstrip() + '\n\n' + '\n\n'.join(
