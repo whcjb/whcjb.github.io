@@ -49,11 +49,24 @@ for CH in "$@"; do
         tail -5 /tmp/${BOOK}_ch${CH}_translate.log
         continue
     fi
+    # 诗篇: 正文里是 fa/fc 死标记, 中文定义得单独译, 否则 publish 还原不出脚注
+    case "$BOOK" in
+        psalms-*)
+            echo "=== $(date '+%H:%M:%S') $BOOK ch${CH} 译脚注定义 ==="
+            python3 -u scripts/translate_psalms_footnotes.py --vol "${BOOK#psalms-}" \
+                --chapters "$CH" > /tmp/${BOOK}_ch${CH}_fn.log 2>&1 \
+                || echo "  (脚注翻译失败, 继续 publish)"
+            ;;
+    esac
     echo "=== $(date '+%H:%M:%S') $BOOK ch${CH} 翻译完成, 跑 publish ==="
     python3 $PUBLISH > /tmp/${BOOK}_ch${CH}_publish.log 2>&1
     chmod 444 "$RAW_DIR/${CH}.md" 2>/dev/null || true
     # commit + push
     git add "$PUB_DIR/" "$RAW_DIR/../zh_cache/" "$RAW_DIR/${CH}.md" 2>/dev/null || true
+    case "$BOOK" in
+        psalms-*) git add "$RAW_DIR/../zh_footnote_cache/" \
+                          "$RAW_DIR/../zh_footnote_defs.json" 2>/dev/null || true ;;
+    esac
     git commit -m "feat(${BOOK}/ch${CH}): 定时任务发布中译
 
 Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>" \
