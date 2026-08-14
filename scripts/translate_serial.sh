@@ -53,8 +53,9 @@ for CH in "$@"; do
     case "$BOOK" in
         psalms-*)
             echo "=== $(date '+%H:%M:%S') $BOOK ch${CH} 译脚注定义 ==="
+            # 不限 --chapters: 缓存命中的免费跳过, 顺带补上别的批次漏译的 code
             python3 -u scripts/translate_psalms_footnotes.py --vol "${BOOK#psalms-}" \
-                --chapters "$CH" > /tmp/${BOOK}_ch${CH}_fn.log 2>&1 \
+                > /tmp/${BOOK}_ch${CH}_fn.log 2>&1 \
                 || echo "  (脚注翻译失败, 继续 publish)"
             ;;
     esac
