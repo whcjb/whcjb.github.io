@@ -72,8 +72,11 @@ def restore_footnotes(b, zh_defs):
     # 查不到定义的引用**只报警，不删**。删掉等于把线索一起抹了：ch45 曾出现的
     # [^f004] 根本不是脚注，而是 AGES 经文编码 <19F004> 在英文提取阶段被误拆成
     # <19[^f004]>，源头修好即可，删引用只会掩盖问题。
+    # 章节正文里可能自带定义行：英文源修好脚注之后翻译的章（psalms-1 ch33-37/77/78、
+    # psalms-2 全部），译文把 [^faN] 引用和 [^faN]: 定义一起带过来了，不需要查字典。
+    inline = set(re.findall(r'^\[\^([a-z]{1,3}\d+[A-Za-z]?)\]:', b, re.M))
     orphan = sorted({c for c in re.findall(r'\[\^([a-z]{1,3}\d+[A-Za-z]?)\](?!:)', b)
-                     if c not in zh_defs})
+                     if c not in zh_defs and c not in inline})
     if orphan:
         print(f'    ⚠ 引用无对应中文定义（未删除，请查源头）: {orphan}')
     # 含脚注引用的 <p> 必须带 markdown="1"，否则 kramdown 跳过整块 HTML，
@@ -84,6 +87,15 @@ def restore_footnotes(b, zh_defs):
             return m.group(0)
         return tag[:-1] + ' markdown="1">' + inner + '</p>'
     b = re.sub(r'(<p\b[^>]*>)((?:(?!</p>).)*)</p>', add_md, b, flags=re.S)
+
+    # 引用若嵌在 <span> 里，光给外层 <p> 加 markdown="1" 不够——那是块级语义，
+    # 内联元素要 markdown="span"，否则 [^fcN] 照样原样显示（ch72 踩过）。
+    def add_md_span(m):
+        tag, inner = m.group(1), m.group(2)
+        if 'markdown=' in tag or '[^' not in inner:
+            return m.group(0)
+        return tag[:-1] + ' markdown="span">' + inner + '</span>'
+    b = re.sub(r'(<span\b[^>]*>)((?:(?!</span>).)*)</span>', add_md_span, b, flags=re.S)
     used.sort(key=lambda c: (c[:2], int(re.sub(r'\D', '', c))))
     return b, used
 
