@@ -170,15 +170,24 @@ def main():
         if buf:
             yield buf
 
-    done_n = 0
+    done_n, failed = 0, []
     for chunk in chunks(todo):
-        for code, zh in translate_chunk(chunk, defs, cache_dir).items():
-            done[code] = zh
+        # 单批失败不该拖垮整轮: 其余批次照跑, 失败的下次 --resume 从缓存续
+        try:
+            for code, zh in translate_chunk(chunk, defs, cache_dir).items():
+                done[code] = zh
+        except RuntimeError as e:
+            failed += chunk
+            print(f'  !! 批次失败({e}), 跳过 {len(chunk)} 条: {chunk[:3]}…', flush=True)
+            continue
         done_n += len(chunk)
         out_path.write_text(json.dumps(done, ensure_ascii=False, indent=1),
                             encoding='utf-8')
         print(f'  {done_n}/{len(todo)}', flush=True)
     print(f'完成，共 {len(done)} 条中文定义 → {out_path.relative_to(ROOT)}')
+    if failed:
+        print(f'⚠ {len(failed)} 条未译，下次运行会重试: {failed}')
+        sys.exit(1)
 
 
 if __name__ == '__main__':
