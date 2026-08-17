@@ -99,6 +99,8 @@ def restore_footnotes(b, zh_defs):
         return tag[:-1] + ' markdown="span">' + inner + '</span>'
     b = re.sub(r'(<span\b[^>]*>)((?:(?!</span>).)*)</span>', add_md_span, b, flags=re.S)
     used.sort(key=lambda c: (c[:2], int(re.sub(r'\D', '', c))))
+    # raw 里已经带定义的 code 不要再从字典追加一遍——会得到两份同名定义
+    used = [c for c in used if c not in inline]
     return b, used
 
 
