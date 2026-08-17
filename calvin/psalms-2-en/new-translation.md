@@ -14,9 +14,7 @@ prev_label: "Chapter 150"
 
 # THE BOOK OF PSALMS
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#800000">FF64</span></p>
-
-<p style="margin-left:2em;" markdown="1">PART FIRST.</p>
+<p style="margin-left:2em;" markdown="1">PART FIRST.[^ff64]</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 1</span></p>
 
@@ -1467,7 +1465,7 @@ For thou, O Jehovah! in safety hast placed me, [*though*] alone.
 
 <sup>13</sup> Blessed *be* Jehovah, the God of Israel, For ever and ever. Amen and Amen.
 
-<p style="text-align:center" markdown="1">PART SECOND.<sup>79</sup></p>
+<p style="text-align:center" markdown="1">PART SECOND.[^ff79]</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 42</span></p>
 
@@ -2242,9 +2240,9 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>5</sup> Come ye, and see the works of God: He is terrible in his doing towards the sons of men.
 
-<sup>6</sup> He turned the sea into dry *land*; Through the river  [^ff91] they passed on foot; There we were glad in him.
+<sup>6</sup> He turned the sea into dry *land*; Through the river they passed on foot; There we were glad in him.
 
-<sup>7</sup> He ruleth by his might over the world;  [^ff92] His eyes upon the nations are fixed: The rebels shall not exalt themselves. Selah.
+<sup>7</sup> He ruleth by his might over the world;  [^ff91] His eyes upon the nations are fixed: The rebels shall not exalt themselves. Selah.
 
 <sup>8</sup> Bless, O ye people! our God, And resound the voice of his praise.
 
@@ -2503,7 +2501,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>17</sup> O God! thou hast taught me from my youth; And unto this time will I announce thy wonders.
 
-<sup>18</sup> And therefore  [^ff93] in old age and gray hairs, O God! forsake me not, Until I have declared thy strength to the generation, To all who are to come thy might.
+<sup>18</sup> And therefore  [^ff92] in old age and gray hairs, O God! forsake me not, Until I have declared thy strength to the generation, To all who are to come thy might.
 
 <sup>19</sup> And thy righteousness, O God! is very high: For thou hast done great things: O God! who is like to thee?
 
@@ -2513,7 +2511,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 935 -->
 
-<sup>22</sup> Moreover, I, even I, will sing to thee on instruments of music; [^ff94] For thy truth, O my God! I will sing psalms to thee upon the harp, O Holy One of Israel!
+<sup>22</sup> Moreover, I, even I, will sing to thee on instruments of music; [^ff93] For thy truth, O my God! I will sing psalms to thee upon the harp, O Holy One of Israel!
 
 <sup>23</sup> Exult shall my lips, when I sing psalms to thee; And my soul which thou hast redeemed.
 
@@ -2557,13 +2555,13 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>17</sup> His name shall be for ever; In presence of the sun propagated shall be his name: And bless themselves in him shall all nations, And blessed they shall call him.
 
-<sup>18</sup> Blessed be Jehovah God! the God of Israel! [^ff95] Who doeth wonderful things alone.
+<sup>18</sup> Blessed be Jehovah God! the God of Israel! [^ff94] Who doeth wonderful things alone.
 
 <sup>19</sup> And blessed be his glorious name for ever; And let all the earth be filled with his glory. Amen and Amen.
 
 <sup>20</sup> Finished are the prayers of David, the son of Jesse.
 
-<p style="text-align:center" markdown="1">PART THIRD<sup>96</sup></p>
+<p style="text-align:center" markdown="1">PART THIRD[^ff95]</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 73</span></p>
 
@@ -2635,13 +2633,13 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>1</sup> Wherefore, O God! hast thou cast us off for ever? [*Why*] smoketh thy wrath against the flock of thy pastures?
 
-<sup>2</sup> Remember thy congregation which thou hast possessed of old; [^ff97] *Which* thou hast redeemed, the rod of thy inheritance, This Mount Zion in which thou hast dwelt.
+<sup>2</sup> Remember thy congregation which thou hast possessed of old; [^ff96] *Which* thou hast redeemed, the rod of thy inheritance, This Mount Zion in which thou hast dwelt.
 
 <sup>3</sup> Lift up thy strokes to desolations perpetual, Against every enemy who doeth mischief to the sanctuary.
 
 <sup>4</sup> Roared *like lions* have thy adversaries in the midst of thy sanctuaries; They have set up their signs *for* signs.
 
-<sup>5</sup> He was renowned as doing an excellent work Who lifted up the axes upon the thick trees. [^ff98] <sup>6</sup> And now the carved works thereof together, With the hatchet and with hammers they break in pieces.
+<sup>5</sup> He was renowned as doing an excellent work Who lifted up the axes upon the thick trees. [^ff97] <sup>6</sup> And now the carved works thereof together, With the hatchet and with hammers they break in pieces.
 
 <sup>7</sup> They have set on fire thy sanctuaries; Leveling it with the ground, they have polluted the dwelling-place of thy name.
 
@@ -2653,7 +2651,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>12</sup> But God *is* my king from the beginning, Working salvations in the midst of the earth.
 
-<sup>13</sup> Thou didst divide  [^ff99] by thy power the sea; Thou didst break the heads of dragons in the waters.
+<sup>13</sup> Thou didst divide  [^ff98] by thy power the sea; Thou didst break the heads of dragons in the waters.
 
 <sup>14</sup> Thou didst break the head of the leviathan; Thou gavest him *for* food to *thy* people in the wilderness.
 
@@ -2868,7 +2866,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>45</sup> He sent among them a mixture which devoured them; And the frog which destroyed them.
 
-<sup>46</sup> And he gave to the caterpillar their fruit; And their labors to the locusts. [^ff100] <sup>47</sup> And he destroyed with hail their vine, And their wild fig-trees with hailstones.
+<sup>46</sup> And he gave to the caterpillar their fruit; And their labors to the locusts. [^ff99] <sup>47</sup> And he destroyed with hail their vine, And their wild fig-trees with hailstones.
 
 <sup>48</sup> And he gave lip to the hail their cattle, And their flocks to thunderbolts.
 
@@ -2950,7 +2948,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>10</sup> Wherefore should the heathen say, “Where is their God?” Let be made known among the heathen in our sight The vengeance of the blood of thy servants which is shed.
 
-<sup>11</sup> Let the sighing of the prisoner come before thy face: According to the greatness of thy arm, Reserve the children of death:  [^ff101] <sup>12</sup> And recompense our neighbors sevenfold into their bosom, Their reproach with which they have reproached thee, O Jehovah!
+<sup>11</sup> Let the sighing of the prisoner come before thy face: According to the greatness of thy arm, Reserve the children of death:  [^ff100] <sup>12</sup> And recompense our neighbors sevenfold into their bosom, Their reproach with which they have reproached thee, O Jehovah!
 
 <sup>13</sup> And we thy people, and the sheep of thy pastures, Will confess to thee for ever; From generation to generation declaring thy praise.
 
@@ -2986,7 +2984,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>13</sup> Wasted it hath the boar out of the forest; And the wild beast of the field hath eaten it up.
 
-<sup>14</sup> O God of armies! return, I beseech *thee*, Look down from heaven, and behold, And visit this vine, <sup>15</sup> And the vineyard which planted hath thy right hand, And [*look*] upon the shoot  [^ff102] *which* thou hast strengthened for thyself.
+<sup>14</sup> O God of armies! return, I beseech *thee*, Look down from heaven, and behold, And visit this vine, <sup>15</sup> And the vineyard which planted hath thy right hand, And [*look*] upon the shoot  [^ff101] *which* thou hast strengthened for thyself.
 
 <sup>16</sup> It is burnt with fire; it is cut down; At the rebuke of thy countenance they perish.
 
@@ -3002,7 +3000,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 952 -->
 
-<sup>2</sup> Take a song, and bring forth the timbrel, The harp of pleasantness with the nablum.  [^ff103] <sup>3</sup> Sound the trumpet  [^ff104] at the new moon; At the time appointed on the day of our sacrifice.
+<sup>2</sup> Take a song, and bring forth the timbrel, The harp of pleasantness with the nablum.  [^ff102] <sup>3</sup> Sound the trumpet  [^ff103] at the new moon; At the time appointed on the day of our sacrifice.
 
 <sup>4</sup> For a statute to Israel *is* this, A judgment to the God of Jacob.
 
@@ -3090,7 +3088,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 955 -->
 
-<sup>17</sup> Let them be ashamed, and terrified for ever;  [^ff105] And let them be confounded, and perish.
+<sup>17</sup> Let them be ashamed, and terrified for ever;  [^ff104] And let them be confounded, and perish.
 
 <sup>18</sup> And let them know that thou, even thou, art, thy name Jehovah, Thou alone the Most High over all the earth.
 
@@ -3220,9 +3218,9 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>2</sup> Come into thy presence let my prayer; Incline thy ear to my cry;
 
-<sup>3</sup> For filled with troubles is my soul; And my life to hell  [^ff106] hath drawn near.
+<sup>3</sup> For filled with troubles is my soul; And my life to hell  [^ff105] hath drawn near.
 
-<sup>4</sup> I am counted with those who go down to the sepulcher, [^ff107] I have been as a man who hath no strength:
+<sup>4</sup> I am counted with those who go down to the sepulcher, [^ff106] I have been as a man who hath no strength:
 
 <sup>5</sup> Free among the dead, As the slain lying in the grave, Whom thou rememberest no more, And who from thy hand are cut off.
 
@@ -3280,7 +3278,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>10</sup> Thou hast overthrown Egypt as a wounded mail; With the arm of thy strength thou hast scattered thy enemies.
 
-<sup>11</sup> Thine are the heavens, thine also is the earth: The world, and the fullness thereof thou hast formed. [^ff108] <sup>12</sup> The north and the south thou hast created: Tabor and Hermon in thy name shall exult.
+<sup>11</sup> Thine are the heavens, thine also is the earth: The world, and the fullness thereof thou hast formed. [^ff107] <sup>12</sup> The north and the south thou hast created: Tabor and Hermon in thy name shall exult.
 
 <sup>13</sup> Thou hast an arm of might: Thou wilt strengthen thy hand, Thou wilt exalt thy right hand.
 
@@ -3351,7 +3349,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>46</sup> How long, O Jehovah! wilt thou hide thyself for ever? Burn like fire shall thy indignation?
 
-<sup>47</sup> Remember how short-lived I am!  [^ff109] Wherefore in vain shouldst thou have created all the sons of men?
+<sup>47</sup> Remember how short-lived I am!  [^ff108] Wherefore in vain shouldst thou have created all the sons of men?
 
 <sup>48</sup> What man shall live, and shall not see death? *And* shall deliver his soul from the hand of the grave? Selah.
 
@@ -3363,7 +3361,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>52</sup> Blessed *be* Jehovah for evermore. Amen and Amen!
 
-<p style="text-align:center" markdown="1">PART FOURTH.<sup>110</sup></p>
+<p style="text-align:center" markdown="1">PART FOURTH.[^ff109]</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 90</span></p>
 
@@ -3377,7 +3375,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> For a thousand years in thy sight *are* as yesterday when it is past, And *as* a watch in the night.
 
-<sup>5</sup> Thou overflowest them;  [^ff111] they will be a sleep: In the morning as grass he shall grow.
+<sup>5</sup> Thou overflowest them;  [^ff110] they will be a sleep: In the morning as grass he shall grow.
 
 <sup>6</sup> In the morning he (*or* it) shall flourish and grow: At the evening he (*or* it) shall be cut down, and shall wither.
 
@@ -3449,7 +3447,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>2</sup> To proclaim in the morning thy goodness, And thy truth in the night.
 
-<sup>3</sup> Upon the psaltery, and upon the nablum,  [^ff112] Upon higgaion with the harp. [^ff113] <sup>4</sup> For thou hast made me glad, O Jehovah! in thy works; In the works of thy hands I will exult.
+<sup>3</sup> Upon the psaltery, and upon the nablum,  [^ff111] Upon higgaion with the harp. [^ff112] <sup>4</sup> For thou hast made me glad, O Jehovah! in thy works; In the works of thy hands I will exult.
 
 <p style="text-align:center" markdown="1"><sup>5</sup> How magnificent are thy works, O Jehovah! Exceeding deep are thy thoughts.</p>
 
@@ -3479,9 +3477,9 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>1</sup> Jehovah hath reigned, He hath put on glory, Put on hath Jehovah strength; He hath girded himself: Also he hath established the world, It shall not be moved.
 
-<sup>2</sup> Fixed is thy throne;  [*Even as*] from that time  [^ff114] thou art, and from eternity. [^ff115] <sup>3</sup> Raised have the floods, O Jehovah! Raised have the floods their voice; Raise shall the floods their waves.
+<sup>2</sup> Fixed is thy throne;  [*Even as*] from that time  [^ff113] thou art, and from eternity. [^ff114] <sup>3</sup> Raised have the floods, O Jehovah! Raised have the floods their voice; Raise shall the floods their waves.
 
-<sup>4</sup> By reason of the voices  [^ff116] of the great waters Terrible are the waves of the sea: Terrible on high is Jehovah.
+<sup>4</sup> By reason of the voices  [^ff115] of the great waters Terrible are the waves of the sea: Terrible on high is Jehovah.
 
 <sup>5</sup> Thy testimonies are verified exceedingly; To thy house *is* glory; The holiness of Jehovah *is* for length of days.
 
@@ -3663,13 +3661,13 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*A Psalm for praising*</span></p>
 
-<sup>1</sup> Sing aloud to Jehovah, [^ff117] all ye *inhabitants* of the earth.
+<sup>1</sup> Sing aloud to Jehovah, [^ff116] all ye *inhabitants* of the earth.
 
 <sup>2</sup> Serve Jehovah with gladness; Come into his presence with exultation.
 
 <sup>3</sup> Know that Jehovah He is God; He made us, and not we ourselves: *We are* his people, and the flock of his pasture.
 
-<sup>4</sup> Enter his gates with praise, his courts with exultation; Celebrate him, [^ff118] bless his name:
+<sup>4</sup> Enter his gates with praise, his courts with exultation; Celebrate him, [^ff117] bless his name:
 
 <sup>5</sup> For good is Jehovah, For ever *endureth* his mercy, And from generation to generation his truth.
 
@@ -3703,7 +3701,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>2</sup> Hide not thy face from me in the day of my afflictions; Incline to me thy ear; In the day when I cry, make haste, answer me.
 
-<sup>3</sup> For consumed like smoke are  [^ff119] my days, And my bones as a hearth are burnt up.
+<sup>3</sup> For consumed like smoke are  [^ff118] my days, And my bones as a hearth are burnt up.
 
 <sup>4</sup> Smitten like grass, and withered is my heart, Because I have forgotten to eat my bread.
 
@@ -3717,7 +3715,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>8</sup> Daily reproach me do my enemies; And those who are mad against me, by me have sworn.
 
-<sup>9</sup> For ashes as bread I have eaten, And my drink with weeping [^ff120] I have mingled.
+<sup>9</sup> For ashes as bread I have eaten, And my drink with weeping [^ff119] I have mingled.
 
 <sup>10</sup> Because of thy indignation and thy wrath; For thou hast lifted me up and cast me down.
 
@@ -3966,7 +3964,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>39</sup> He spread out a cloud for a covering; And fire to give light by the night.
 
-<sup>40</sup> He  [^ff121] asked, and brought quails, And with the bread of heaven he filled them.
+<sup>40</sup> He  [^ff120] asked, and brought quails, And with the bread of heaven he filled them.
 
 <sup>41</sup> He opened the rock, and there gushed out waters; They ran in the dry *places like* a river.
 
@@ -4066,7 +4064,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>39</sup> And they were defiled in their own works, And were adulterous in their own inventions.
 
-<sup>40</sup> Then  [^ff122] burn did the wrath of Jehovah against his people, And he abhorred his inheritance;
+<sup>40</sup> Then  [^ff121] burn did the wrath of Jehovah against his people, And he abhorred his inheritance;
 
 <sup>41</sup> And he delivered them into the hands of the heathen; And those had dominion over them who hated them:
 
@@ -4086,7 +4084,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>48</sup> Blessed *be* Jehovah, the God of Israel, From everlasting to everlasting; And say let all the people, Amen. Praise ye Jehovah.
 
-<p style="text-align:center" markdown="1">PART FIFTH.<sup>123</sup></p>
+<p style="text-align:center" markdown="1">PART FIFTH.[^ff122]</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 107</span></p>
 
@@ -4142,7 +4140,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>25</sup> He speaketh and raiseth the wind of storm, And lifteth high the waves thereof.
 
-<sup>26</sup> They mount up to the heavens, They descend into the deeps; Their soul in  [^ff124] *their* distress is melted away.
+<sup>26</sup> They mount up to the heavens, They descend into the deeps; Their soul in  [^ff123] *their* distress is melted away.
 
 <sup>27</sup> They are tossed and stagger as a drunken man, And all their skill is swallowed up.
 
@@ -4208,7 +4206,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>11</sup> Wilt not thou, O God! who hadst cast us off? And [*thou*] O God! [*who*] didst not go forth with our armies?
 
-<sup>12</sup> Grant us relief from  [^ff125] trouble; For vain is the help of man.
+<sup>12</sup> Grant us relief from  [^ff124] trouble; For vain is the help of man.
 
 <p style="text-align:center" markdown="1"><sup>13</sup> Through God we shall do valiantly, And he shall tread down our adversaries.</p>
 
@@ -4228,20 +4226,20 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>6</sup> Set thou over him an ungodly man; And let the adversary stand at his right hand.
 
-<sup>7</sup> When he is judged let him go forth condemned,  [^ff126] And let his prayer be turned into sin.
+<sup>7</sup> When he is judged let him go forth condemned,  [^ff125] And let his prayer be turned into sin.
 
 <sup>8</sup> Let his days be few; His office let another receive.
 
 <sup>9</sup> Let his children be fatherless, And his wife a widow.
 
 <!-- PAGE 993 -->
-<sup>10</sup> And in wandering let his children wander and beg,  [^ff127] And seek [*for bread*] out of their waste places. [^ff128] <sup>11</sup> Catch let the extortioner all which he hath, And let strangers plunder his labor.
+<sup>10</sup> And in wandering let his children wander and beg,  [^ff126] And seek [*for bread*] out of their waste places. [^ff127] <sup>11</sup> Catch let the extortioner all which he hath, And let strangers plunder his labor.
 
 <sup>12</sup> Let there be none prolonging mercy to him; And let there be none to have compassion upon his orphans.
 
-<sup>13</sup> Let his posterity be destroyed;  [^ff129] In the generation following let their name be blotted out.
+<sup>13</sup> Let his posterity be destroyed;  [^ff128] In the generation following let their name be blotted out.
 
-<sup>14</sup> Remembered let be the iniquity of his fathers before Jehovah; And the wickedness  [^ff130] of his mother let it not be blotted out.
+<sup>14</sup> Remembered let be the iniquity of his fathers before Jehovah; And the wickedness  [^ff129] of his mother let it not be blotted out.
 
 <sup>15</sup> Let them be before Jehovah continually, And let him blot out from the earth their memorial;
 
@@ -4251,7 +4249,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>18</sup> And let him be clothed with cursing as with a garment; And let it come as water into his entrails, And as oil into his bones.
 
-<sup>19</sup> Let it be to him as a mantle to cover him, And as a girdle with which continually he may gird himself <sup>20</sup> Let this be the recompense  [^ff131] of my adversaries from Jehovah, And of those who speak evil against my soul.
+<sup>19</sup> Let it be to him as a mantle to cover him, And as a girdle with which continually he may gird himself <sup>20</sup> Let this be the recompense  [^ff130] of my adversaries from Jehovah, And of those who speak evil against my soul.
 
 <sup>21</sup> But thou, O Jehovah, my Lord! deal thou with me for the sake of thy name: Because good *is* thy mercy, deliver me;
 
@@ -4305,7 +4303,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>2</sup> <span style="color:#008080">g</span> Great are the works of Jehovah, <span style="color:#008080">d</span> Sought out of all who have pleasure in them.
 
-<sup>3</sup> <span style="color:#008080">h</span> Beautiful and honorable  [^ff132] *is* his work; <span style="color:#008080">w</span> And his righteousness endureth for ever.
+<sup>3</sup> <span style="color:#008080">h</span> Beautiful and honorable  [^ff131] *is* his work; <span style="color:#008080">w</span> And his righteousness endureth for ever.
 
 <sup>4</sup> <span style="color:#008080">z</span> He hath made a memorial by his wonderful works: <span style="color:#008080">j</span> Merciful and compassionate *is* Jehovah.
 
@@ -4335,7 +4333,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> <span style="color:#008080">z</span> There ariseth in darkness light to the upright ones: <span style="color:#008080">j</span> *He is* merciful and compassionate and righteous.
 
-<sup>5</sup> <span style="color:#008080">f</span> A good man showeth pity and lendeth; <span style="color:#008080">y</span> He manageth his affairs  [^ff133] in uprightness.
+<sup>5</sup> <span style="color:#008080">f</span> A good man showeth pity and lendeth; <span style="color:#008080">y</span> He manageth his affairs  [^ff132] in uprightness.
 
 <sup>6</sup> <span style="color:#008080">k</span> Truly he shall not for ever be moved; <span style="color:#008080">l</span> In everlasting remembrance shall be the righteous one.
 
@@ -4361,7 +4359,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> High above all nations *is* Jehovah, Above the heavens is his glory.
 
-<sup>5</sup> Who *is* like Jehovah our God, <sup>6</sup> Who hath his dwelling on high,  [^ff134] Who humbleth himself to behold *that which* is done in heaven and on earth?
+<sup>5</sup> Who *is* like Jehovah our God, <sup>6</sup> Who hath his dwelling on high,  [^ff133] Who humbleth himself to behold *that which* is done in heaven and on earth?
 
 <sup>7</sup> Who raiseth from the dust the needy one; From the dunghill he lifteth up the wretched one;
 
@@ -4397,7 +4395,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> Their idols *are* silver and gold, The work of the hands of men.
 
-<sup>5</sup> A mouth have they,  [^ff135] and they do not speak: Eyes have they, and they do not see:
+<sup>5</sup> A mouth have they,  [^ff134] and they do not speak: Eyes have they, and they do not see:
 
 <sup>6</sup> Ears have they, and they do not hear: Noses have they, and they do not smell:
 
@@ -4431,7 +4429,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>1</sup> I have loved, because heard hath Jehovah the voice of my prayer;
 
-<sup>2</sup> Because he hath inclined his ear to me, When in my straits I called upon him. [^ff136] <sup>3</sup> They encompassed me, the snares of death, And the sorrows of the grave found me: Trouble and grief I found.
+<sup>2</sup> Because he hath inclined his ear to me, When in my straits I called upon him. [^ff135] <sup>3</sup> They encompassed me, the snares of death, And the sorrows of the grave found me: Trouble and grief I found.
 
 <sup>4</sup> And on the name of Jehovah I will call: “I beseech thee, O Jehovah! deliver my soul.”
 
@@ -4439,7 +4437,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <p style="text-align:center" markdown="1"><sup>6</sup> Guard doth Jehovah the simple: I was brought low and he saved me.</p>
 
-<sup>7</sup> Return, O my soul! to thy rest; For Jehovah hath dealt kindly with thee. [^ff137] <sup>8</sup> Because thou hast rescued my soul from death My eye from tears, My foot from falling.
+<sup>7</sup> Return, O my soul! to thy rest; For Jehovah hath dealt kindly with thee. [^ff136] <sup>8</sup> Because thou hast rescued my soul from death My eye from tears, My foot from falling.
 
 <!-- PAGE 1000 -->
 
@@ -4475,7 +4473,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 1001 -->
 
-<sup>2</sup> Let now Israel say: “For  [^ff138] to everlasting *endureth* his mercy.”
+<sup>2</sup> Let now Israel say: “For  [^ff137] to everlasting *endureth* his mercy.”
 
 <sup>3</sup> Let now the house of Aaron say: “For to everlasting *endureth* his mercy.”
 
@@ -4497,7 +4495,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>12</sup> They encompassed me as bees: They were extinguished as a fire of thorns: In the name of Jehovah I will surely cut them off.
 
-<sup>13</sup> Thou hast thrust and  [^ff139] thrust at me, that I might fall: But Jehovah helped me.
+<sup>13</sup> Thou hast thrust and  [^ff138] thrust at me, that I might fall: But Jehovah helped me.
 
 <sup>14</sup> My strength and *my* song is God, And he hath become to me salvation.
 
@@ -4509,7 +4507,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 1002 -->
 
-<sup>18</sup> Chastised me sorely hath  [^ff140] God; But he hath not delivered me up unto death.
+<sup>18</sup> Chastised me sorely hath  [^ff139] God; But he hath not delivered me up unto death.
 
 <sup>19</sup> Open to me the gates of righteousness; *And* having entered into them, I will celebrate God.
 
@@ -4672,7 +4670,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 <p style="text-align:center" markdown="1"><span style="color:#008080">j</span> [Cheth.]</p>
 
 <!-- PAGE 1007 -->
-<sup>57</sup> <span style="color:#008080">j</span> *Thou art* my portion, O Jehovah! I have said that I will keep thy words.  [^ff141] <sup>58</sup> <span style="color:#008080">j</span> I have sought thy face with my whole heart; Have mercy upon me according to thy word.
+<sup>57</sup> <span style="color:#008080">j</span> *Thou art* my portion, O Jehovah! I have said that I will keep thy words.  [^ff140] <sup>58</sup> <span style="color:#008080">j</span> I have sought thy face with my whole heart; Have mercy upon me according to thy word.
 
 <sup>59</sup> <span style="color:#008080">j</span> I thought upon my ways, And turned my feet to thy testimonies.
 
@@ -4696,7 +4694,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>68</sup> <span style="color:#008080">t</span> Good *art* thou, and beneficent: Teach me thy statutes.
 
-<sup>69</sup> <span style="color:#008080">t</span> Weaved a lie  [^ff142] against me have the proud ones; *But as for me* I with my whole heart will keep statutes.
+<sup>69</sup> <span style="color:#008080">t</span> Weaved a lie  [^ff141] against me have the proud ones; *But as for me* I with my whole heart will keep statutes.
 
 <sup>70</sup> <span style="color:#008080">t</span> Fat as grease is their heart; *But as for me* I in thy law do delight.
 
@@ -4818,7 +4816,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>119</sup> <span style="color:#008080">s</span> *As* dross thou hast made to cease all the ungodly of the earth; Therefore I have loved thy testimonies.
 
-<sup>120</sup> <span style="color:#008080">s</span> Tremble  [^ff143] for fear of thee did my flesh, And of thy judgments I was afraid.
+<sup>120</sup> <span style="color:#008080">s</span> Tremble  [^ff142] for fear of thee did my flesh, And of thy judgments I was afraid.
 
 <p style="text-align:center" markdown="1"><span style="color:#008080">[</span> [Ain.]</p>
 
@@ -4884,7 +4882,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>146</sup> <span style="color:#008080">q</span> I have called upon thee, save me, And I will keep thy testimonies.
 
-<sup>147</sup> <span style="color:#008080">q</span> I have prevented the dawn of the morning, [^ff144] and have cried: To thy word I have looked up.
+<sup>147</sup> <span style="color:#008080">q</span> I have prevented the dawn of the morning, [^ff143] and have cried: To thy word I have looked up.
 
 <p style="text-align:center" markdown="1"><sup>148</sup> <span style="color:#008080">q</span> Prevented have my eyes the watches *of the night*, To meditate upon thy word.</p>
 
@@ -4906,7 +4904,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>155</sup> <span style="color:#008080">r</span> Far from the ungodly is safety; Because thy statutes they have not sought.
 
-<sup>156</sup> <span style="color:#008080">r</span> Thy compassions *are* great, O Jehovah! According to thy judgments quicken me.
+[^ff155] <span style="color:#008080">r</span> Thy compassions *are* great, O Jehovah! According to thy judgments quicken me.
 
 <sup>157</sup> <span style="color:#008080">r</span> Many *are* my persecutors and my oppressors: From thy testimonies I have not declined.
 
@@ -5008,7 +5006,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> Thither ascended the tribes, the tribes of God, For a testimony to Israel, To celebrate the name of Jehovah.
 
-<sup>5</sup> For there have sat  [^ff145] thrones for judgment, The thrones of the house of David.
+<sup>5</sup> For there have sat  [^ff144] thrones for judgment, The thrones of the house of David.
 
 <sup>6</sup> Pray ye for the peace of Jerusalem: Prosper may those who love thee!
 
@@ -5046,7 +5044,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>6</sup> Blessed *be* Jehovah, Who gave us not for a prey to their teeth.
 
-<sup>7</sup> Our soul as a bird, hath been rescued  [^ff146] from the snare of the fowlers; The snare hath been broken, and we have been delivered.
+<sup>7</sup> Our soul as a bird, hath been rescued  [^ff145] from the snare of the fowlers; The snare hath been broken, and we have been delivered.
 
 <sup>8</sup> Our help *is* in the name of Jehovah, Who made heaven and earth.
 
@@ -5154,7 +5152,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 1022 -->
 
-<sup>7</sup> But  [^ff147] hope let Israel in Jehovah; For with Jehovah *there is* mercy, And with him there is plenteous redemption.
+<sup>7</sup> But  [^ff146] hope let Israel in Jehovah; For with Jehovah *there is* mercy, And with him there is plenteous redemption.
 
 <sup>8</sup> And he shall redeem Israel from all his iniquities.
 
@@ -5164,7 +5162,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>1</sup> O Jehovah! my heart hath not been elated, Nor lifted up have been my eyes, Nor have I exercised myself in great matters, Or in things hidden from me.
 
-<sup>2</sup> If I have not framed [*or set*] and quieted my soul, Like one that is weaned from his mother, —  [^ff148] Like a child that is weaned is my soul upon me.
+<sup>2</sup> If I have not framed [*or set*] and quieted my soul, Like one that is weaned from his mother, —  [^ff147] Like a child that is weaned is my soul upon me.
 
 <sup>3</sup> Hope shall Israel in Jehovah From henceforth, and for ever.
 
@@ -5176,7 +5174,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>2</sup> Who sware to Jehovah, [*Who*] vowed to the Mighty One of Jacob:
 
-<sup>3</sup> “If I shall enter into the tabernacle of my house, “If I shall go up upon the covering of my bed, <sup>4</sup> “If I give sleep to my eyes, “To my eyelids slumber, <sup>5</sup> “Until I find a place for Jehovah, “Habitations for the mighty God of Jacob,” —  [^ff149] <sup>6</sup> Lo! we heard of it at Ephratha; We found it in the fields of the wood.
+<sup>3</sup> “If I shall enter into the tabernacle of my house, “If I shall go up upon the covering of my bed, <sup>4</sup> “If I give sleep to my eyes, “To my eyelids slumber, <sup>5</sup> “Until I find a place for Jehovah, “Habitations for the mighty God of Jacob,” —  [^ff148] <sup>6</sup> Lo! we heard of it at Ephratha; We found it in the fields of the wood.
 
 <sup>7</sup> We will enter into his habitations, We will worship at his footstool.
 
@@ -5212,7 +5210,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <!-- PAGE 1024 -->
 
-<sup>2</sup> Like the precious oil upon the head, Which descendeth  [^ff150] upon the beard, the beard of Aaron, Which descendeth upon the skirt of his garments.
+<sup>2</sup> Like the precious oil upon the head, Which descendeth  [^ff149] upon the beard, the beard of Aaron, Which descendeth upon the skirt of his garments.
 
 <sup>3</sup> Like the dew of Hermon, Which descendeth upon the mountains of Zion: For there commanded hath Jehovah the blessing, Life for evermore.
 
@@ -5262,7 +5260,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>15</sup> The images of the nations *are* silver and gold, The work of the hands of man.
 
-<sup>16</sup> A mouth have they, and they will not speak;  [^ff151] Eyes have they, and they will not see.
+<sup>16</sup> A mouth have they, and they will not speak;  [^ff150] Eyes have they, and they will not see.
 
 <sup>17</sup> Ears have they, and they will not hear: Also, there is no breath in their mouth.
 
@@ -5344,7 +5342,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>4</sup> How shall we sing the song of Jehovah, In a strange land?
 
-<sup>5</sup> If I shall forget thee, O Jerusalem! Forget let my right hand [*its cunning*.] <sup>6</sup> Cleave let my tongue to my palate, If I do not remember thee, If I do not raise Jerusalem above my highest joy. [^ff152] <sup>7</sup> Remember, O Jehovah! the children of Edom in the day of Jerusalem: ‘Who said, “Lay it bare — “Lay it bare, even to the foundations thereof.”
+<sup>5</sup> If I shall forget thee, O Jerusalem! Forget let my right hand [*its cunning*.] <sup>6</sup> Cleave let my tongue to my palate, If I do not remember thee, If I do not raise Jerusalem above my highest joy. [^ff151] <sup>7</sup> Remember, O Jehovah! the children of Edom in the day of Jerusalem: ‘Who said, “Lay it bare — “Lay it bare, even to the foundations thereof.”
 
 <sup>8</sup> O daughter of Babylon laid waste! Happy he who shall repay thee The retribution with which thou hast retributed us!
 
@@ -5390,7 +5388,7 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>7</sup> Whither shall I go from thy Spirit? And whither from thy time shall I flee?
 
-<p style="text-align:center" markdown="1"><sup>8</sup> If I ascend up into the heavens, there thou art; If I lie down  [^ff153]</p>
+<p style="text-align:center" markdown="1"><sup>8</sup> If I ascend up into the heavens, there thou art; If I lie down  [^ff152]</p>
 
 <p style="margin-left:2em;" markdown="1">in the sepulcher, behold! thou [*art there*.]</p>
 
@@ -5401,11 +5399,11 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <sup>13</sup> For thou hast possessed my reins; Thou hast covered me in the womb of my mother.
 
-<sup>14</sup> I will celebrate thee; for I have been fearfully and wonderfully made:  [^ff154] Marvelous are thy works, And my soul shall know them full well.
+<sup>14</sup> I will celebrate thee; for I have been fearfully and wonderfully made:  [^ff153] Marvelous are thy works, And my soul shall know them full well.
 
 <sup>15</sup> Not hidden is my strength from thee, Which thou hast made in secret: I was woven together in the lowest parts of the earth.
 
-<sup>16</sup> My shapelessness see did thine eyes; [^ff155] In thy book all shall be written; They were formed *in many* days, And *there was* not one of them.
+<sup>16</sup> My shapelessness see did thine eyes; [^ff154] In thy book all shall be written; They were formed *in many* days, And *there was* not one of them.
 
 <sup>17</sup> And towards me how precious are thy thoughts, O God! How great *are* the sums of them!
 
@@ -6032,6 +6030,8 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 
 <p style="margin-left:2em;" markdown="1"><sup>110</sup>. Messiah’s Regal Character and Reign described, <sup>45</sup>, <sup>72</sup>. Messiah’s Victories, <sup>18</sup>, <sup>68</sup>. The certain Punishment of the Persecuting Wicked, <sup>52</sup>.</p>
 
+[^ff64]: According to the Hebrew division, Part 1 extends from Psalm 1 to Psalm 41 inclusive.
+
 [^ff65]: This line is freely rendered. For the literal translation, see the text as given in the commentary.
 
 [^ff66]: “I am poured out.” — *Fr.*
@@ -6059,6 +6059,8 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 [^ff77]: Calvin has inadvertently omitted in his Latin version to translate the word <span style="color:#008080">µyyj</span> “living.” But he translates it in his French version.
 
 [^ff78]: In the Latin version it is “aptasti;” and in the French, “tu as perce.”
+
+[^ff79]: According to the Hebrew division, Part 2 extends from Psalm 42 to Psalm 72 inclusive.
 
 [^ff80]: In the French Version it is “the whole oblation.”
 
@@ -6092,6 +6094,8 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 
 [^ff95]: According to the Hebrew division, Part 3 extends from Psalm 73 to Psalm 89 inclusive
 
+[^ff96]: In French version it is, “which thou hast acquired of old.”
+
 [^ff97]: From the obscurity of the literal translation of the Latin version, the free reading of the French version is adopted in these two lines.
 
 [^ff98]: Literally “break.”
@@ -6118,6 +6122,8 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 
 [^ff109]: According to the Hebrew division, Part 4 extends from Psalm 90 to Psalm 106 inclusive.
 
+[^ff110]: In the French version it is, “Thou carriest them away as do floods of water.”
+
 [^ff111]: In the French version it is “le manichordion,” which Randle Cotgrave translates “an (old fashioned) Clavicord.”
 
 [^ff112]: In the French version this line reads, — “With the song upon the harp.”
@@ -6141,6 +6147,8 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 [^ff121]: Literally, “And.”
 
 [^ff122]: According to the Hebrew Division, Part 5 extends from Psalm 107 to Psalm 150 inclusive.
+
+[^ff123]: “With” or “from.” — *Fr.*
 
 [^ff124]: In the French version it is “in.”
 
@@ -6205,14 +6213,3 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 [^ff154]: “Their wounds.” — *Fr.*
 
 [^ff155]: Literally, “to the sons.”
-
-<!-- unplaced-footnotes -->
-<div class="unplaced-footnotes" markdown="1">
-#### Unanchored notes
-
-The source edition groups these notes under this psalm, but their in-text reference marks were lost, so they cannot be attached to a specific word.
-{: .uf-note}
-
-- **f79** According to the Hebrew division, Part 2 extends from Psalm 42 to Psalm 72 inclusive.
-- **f96** In French version it is, “which thou hast acquired of old.”
-</div>
