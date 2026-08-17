@@ -1072,6 +1072,24 @@ BOOKS = {
             "    graven image→雕刻的偶像，the Lawgiver→立法者，Israelites→以色列人"
         ),
     },
+    'isaiah-1': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/isaiah-1-en',
+        'cache':  ROOT / 'calvin_raw/isaiah-1/zh_cache',
+        'out':    ROOT / 'calvin_raw/isaiah-1/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《以赛亚书注释》（即 Calvin on Isaiah）。以赛亚书是先知书，兼有审判的宣告、悔改的呼召、对余民的安慰，以及关乎弥赛亚的预言。\n将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n严格规则：\n1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n2. 保留所有脚注引用标记不变：[^17] [^123] 等\n3. 保留所有 Markdown 标记不变：**bold** *italic*\n4. 保留所有 HTML 标签与结构不变：<p style=\"...\"> <strong> <span> <p class=\"title-block-h1\">/<h2> 等\n5. 居中经文导航 GO TO ISAIAH 1:1-31 译为「前往 以赛亚书 1:1-31」\n6. 引用的圣经经文照简体和合本原文；先知书的经文务必核对和合本措辞\n7. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n8. 圣经书卷用和合本标准译名：\n   Isaiah→以赛亚书，Psalm(s)→诗篇，Genesis→创世记，Exodus→出埃及记，Jeremiah→耶利米书，Ezekiel→以西结书，Daniel→但以理书，Hosea→何西阿书，Matthew→马太福音，John→约翰福音，Romans→罗马书，Hebrews→希伯来书\n9. 人名/地名用和合本标准译名：\n   Isaiah→以赛亚，Uzziah→乌西雅，Jotham→约坦，Ahaz→亚哈斯，Hezekiah→希西家，Sennacherib→西拿基立，Cyrus→古列，Nebuchadnezzar→尼布甲尼撒，Moses→摩西，David→大卫，Abraham→亚伯拉罕，Jacob→雅各\n   Zion→锡安，Jerusalem→耶路撒冷，Judah→犹大，Samaria→撒玛利亚，Assyria→亚述，Babylon→巴比伦，Egypt→埃及，Ephraim→以法莲，Chaldeans→迦勒底人\n10. 章节引用格式：以赛亚书 6:9，诗篇 1:1（书卷名 章:节）\n11. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n12. 加尔文术语保留学术性：righteousness→义，justification→称义，sanctification→成圣，covenant→约/盟约，grace→恩典，faith→信心，promise→应许，flesh→肉体，election→拣选，the godly→敬虔人，the wicked→恶人，the ungodly→不敬虔的人，providence→护理，chastisement→管教，deliverance→拯救，remnant→余民，prophecy→预言\n"
+        ),
+    },
+    'isaiah-2': {
+        'mode':   'multi_chapter',
+        'src':    ROOT / 'calvin/isaiah-2-en',
+        'cache':  ROOT / 'calvin_raw/isaiah-2/zh_cache',
+        'out':    ROOT / 'calvin_raw/isaiah-2/zh_chapters',
+        'system': (
+            "你是一位精通加尔文神学的中文译者，正在翻译加尔文《以赛亚书注释》（即 Calvin on Isaiah）。以赛亚书是先知书，兼有审判的宣告、悔改的呼召、对余民的安慰，以及关乎弥赛亚的预言。\n将英文翻译成简体中文，忠实原文，保持加尔文神学深度与文体风格。\n严格规则：\n1. 只输出译文，不加任何说明，不重复原文，不要前言或解释\n2. 保留所有脚注引用标记不变：[^17] [^123] 等\n3. 保留所有 Markdown 标记不变：**bold** *italic*\n4. 保留所有 HTML 标签与结构不变：<p style=\"...\"> <strong> <span> <p class=\"title-block-h1\">/<h2> 等\n5. 居中经文导航 GO TO ISAIAH 1:1-31 译为「前往 以赛亚书 1:1-31」\n6. 引用的圣经经文照简体和合本原文；先知书的经文务必核对和合本措辞\n7. 拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义\n8. 圣经书卷用和合本标准译名：\n   Isaiah→以赛亚书，Psalm(s)→诗篇，Genesis→创世记，Exodus→出埃及记，Jeremiah→耶利米书，Ezekiel→以西结书，Daniel→但以理书，Hosea→何西阿书，Matthew→马太福音，John→约翰福音，Romans→罗马书，Hebrews→希伯来书\n9. 人名/地名用和合本标准译名：\n   Isaiah→以赛亚，Uzziah→乌西雅，Jotham→约坦，Ahaz→亚哈斯，Hezekiah→希西家，Sennacherib→西拿基立，Cyrus→古列，Nebuchadnezzar→尼布甲尼撒，Moses→摩西，David→大卫，Abraham→亚伯拉罕，Jacob→雅各\n   Zion→锡安，Jerusalem→耶路撒冷，Judah→犹大，Samaria→撒玛利亚，Assyria→亚述，Babylon→巴比伦，Egypt→埃及，Ephraim→以法莲，Chaldeans→迦勒底人\n10. 章节引用格式：以赛亚书 6:9，诗篇 1:1（书卷名 章:节）\n11. 脚注中的法文/拉丁文原文保留，破折号后附中文译文\n12. 加尔文术语保留学术性：righteousness→义，justification→称义，sanctification→成圣，covenant→约/盟约，grace→恩典，faith→信心，promise→应许，flesh→肉体，election→拣选，the godly→敬虔人，the wicked→恶人，the ungodly→不敬虔的人，providence→护理，chastisement→管教，deliverance→拯救，remnant→余民，prophecy→预言\n"
+        ),
+    },
     'psalms-1': {
         'mode':   'multi_chapter',
         'src':    ROOT / 'calvin/psalms-1-en',

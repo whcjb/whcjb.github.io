@@ -25,6 +25,8 @@ case "$BOOK" in
     genesis)  PUBLISH=scripts/publish_genesis_zh.py;  RAW_DIR=calvin_raw/genesis/zh_chapters; PUB_DIR=calvin/genesis ;;
     harmony-law-1) PUBLISH="scripts/publish_harmony_law_zh.py --vol 1"; RAW_DIR=calvin_raw/harmony-law-1/zh_chapters; PUB_DIR=calvin/harmony-law-1 ;;
     harmony-law-2) PUBLISH="scripts/publish_harmony_law_zh.py --vol 2"; RAW_DIR=calvin_raw/harmony-law-2/zh_chapters; PUB_DIR=calvin/harmony-law-2 ;;
+    isaiah-1) PUBLISH=scripts/publish_isaiah_zh.py; RAW_DIR=calvin_raw/isaiah-1/zh_chapters; PUB_DIR=calvin/isaiah-1 ;;
+    isaiah-2) PUBLISH=scripts/publish_isaiah_zh.py; RAW_DIR=calvin_raw/isaiah-2/zh_chapters; PUB_DIR=calvin/isaiah-2 ;;
     psalms-1) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-1/zh_chapters; PUB_DIR=calvin/psalms-1 ;;
     psalms-2) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-2/zh_chapters; PUB_DIR=calvin/psalms-2 ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;
