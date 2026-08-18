@@ -20,9 +20,9 @@ now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
 VOLS = [
     (ROOT / 'calvin_raw/isaiah-1/zh_chapters', ROOT / 'calvin/isaiah-1',
-     'isaiah-1', '以赛亚书注释（卷一）', 1, 37),
+     'isaiah-1', '以赛亚书（卷一）', 1, 37),
     (ROOT / 'calvin_raw/isaiah-2/zh_chapters', ROOT / 'calvin/isaiah-2',
-     'isaiah-2', '以赛亚书注释（卷二）', 38, 66),
+     'isaiah-2', '以赛亚书（卷二）', 38, 66),
 ]
 
 

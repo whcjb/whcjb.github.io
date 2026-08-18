@@ -32,10 +32,14 @@ old_testament:
     name: 诗篇（卷二）
     chapters: 72
     en: Psalms (Vol. 2)
-  - id: isaiah
-    name: 以赛亚书
-    chapters: 66
-    en: Isaiah
+  - id: isaiah-1
+    name: 以赛亚书（卷一）
+    chapters: 37
+    en: Isaiah (Vol. 1)
+  - id: isaiah-2
+    name: 以赛亚书（卷二）
+    chapters: 29
+    en: Isaiah (Vol. 2)
   - id: jeremiah
     name: 耶利米书
     chapters: 52
