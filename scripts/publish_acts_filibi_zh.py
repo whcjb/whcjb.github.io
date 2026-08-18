@@ -34,6 +34,19 @@ CN_NUM = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', 
           '二十六', '二十七', '二十八']
 
 
+def _existing_date(path):
+    """已发布章的 date 必须原样保留 —— 只有新章才用当前时间。
+    见 CLAUDE.md「已有文件的时间不要修改」。每次 publish 重刷 date 会把整卷
+    几十个文件都变成"已修改", 真正的内容改动被淹没在 date 噪音里。"""
+    try:
+        import re as _re
+        with open(path, encoding='utf-8') as f:
+            m = _re.search(r'^date:\s*(.+)$', f.read(), _re.M)
+        return m.group(1).strip() if m else None
+    except OSError:
+        return None
+
+
 def cn_chapter(n) -> str:
     if n == 'preface':
         return '前言'
@@ -73,7 +86,8 @@ def build_frontmatter(n, total: int, date: str, has_preface: bool) -> str:
     fm += f'book_id: {BOOK_ID}\n'
     fm += f'book_name: "{BOOK_NAME}"\n'
     fm += f'title: "{cn_chapter(n)}"\n'
-    fm += f'date: {date}\n'
+    # 已发布章保留原 date（CLAUDE.md：已有文件的时间不要修改）
+    fm += f'date: {_existing_date(OUT_DIR / f"{n}.md") or date}\n'
     if n == 'preface':
         fm += 'next_section: 1\n'
         fm += 'next_label: "第一章"\n'

@@ -27,6 +27,19 @@ CN_SPECIAL = {
 }
 
 
+def _existing_date(path):
+    """已发布章的 date 必须原样保留 —— 只有新章才用当前时间。
+    见 CLAUDE.md「已有文件的时间不要修改」。每次 publish 重刷 date 会把整卷
+    几十个文件都变成"已修改", 真正的内容改动被淹没在 date 噪音里。"""
+    try:
+        import re as _re
+        with open(path, encoding='utf-8') as f:
+            m = _re.search(r'^date:\s*(.+)$', f.read(), _re.M)
+        return m.group(1).strip() if m else None
+    except OSError:
+        return None
+
+
 def localize_title(t: str) -> str:
     t = t.strip()
     if t in CN_SPECIAL:
@@ -105,7 +118,8 @@ def publish(vol: int):
         title = titles.get(n, localize_title(fm.get('title', s)))
         # front matter
         out = ['---', 'layout: calvin-en', f'book_id: {book_id}',
-               f'book_name: "{book_name}"', f'title: "{title}"', f'date: {now}']
+               f'book_name: "{book_name}"', f'title: "{title}"',
+               f'date: {_existing_date(out_dir / f"{n}.md") or now}']
         if n == 0:
             if chapters:
                 out += [f'next_section: {chapters[0]}', f'next_label: "{titles.get(chapters[0], "")}"']
