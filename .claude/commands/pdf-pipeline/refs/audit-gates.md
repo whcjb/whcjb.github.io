@@ -86,8 +86,11 @@ python3 scripts/fix_page_split_paragraphs.py --dry-run
 ```
 
 - 非 0 = [anti-pattern M3b](anti-patterns.md#m3b)
-- Fix 后脚本会列出待 `--resume` 重跑中译的章节清单；
-  **只重跑有 `zh_chapters/` 的机翻书**，OCR 中译书（romans/john/acts…）不动。
+- Fix 后脚本会列出待 `--resume` 重跑中译的章节清单。判断哪些要重跑，须用
+  `translate_filibi.py` BOOKS 条目里的 `out` 路径反查（目录名 ≠ 书名，如
+  acts → `calvin_raw/acts-filibi/zh_chapters/`），不要按书名猜目录。
+- OCR 中译书（**罗马书 / 约翰福音 / 以弗所书 / 歌罗西书**）不动、不可重译；
+  **使徒行传是英译中，要重跑**。
 
 ---
 
