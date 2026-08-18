@@ -127,11 +127,15 @@ def publish(vol: int):
     # index.html
     idx = out_dir / 'index.html'
     has_pref = 0 in present
+    # chapters 必须按**目录里已存在的全部章节**统计，不能只看这次有 raw 的章 ——
+    # 早期无 zh_chapters raw 就发布过的章会被漏掉（hal1 曾因此只显示 21/28 章）
+    all_ch = sorted(int(f.stem) for f in out_dir.glob('*.md') if f.stem.isdigit())
+    total = max(all_ch) if all_ch else 0
     idx.write_text(
         f'---\nlayout: calvin-book-modern\nbook_id: {book_id}\n'
-        f'book_name: {book_name}\nchapters: {chapters[-1] if chapters else 0}\n'
+        f'book_name: {book_name}\nchapters: {total}\n'
         f'has_preface: {"true" if has_pref else "false"}\n---\n', encoding='utf-8')
-    print(f'✓ 发布 {published} 个文件 → {out_dir}/ (chapters={chapters[-1] if chapters else 0}, 已译章={chapters})')
+    print(f'✓ 发布 {published} 个文件 → {out_dir}/ (index chapters={total}, 本次有 raw 的章={chapters})')
 
 
 if __name__ == '__main__':
