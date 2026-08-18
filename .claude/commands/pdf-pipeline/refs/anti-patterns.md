@@ -249,6 +249,44 @@ if re.search(r'\b[A-Z]{2,}(?:\s+[A-Z]{2,})*\s*$', prev_tail_stripped):
 
 ---
 
+## M3b. 一句话被 `<!-- PAGE N -->` 拦腰截成两段（跨页断句）
+
+**Trigger**：网页上某段正文戛然而止（末尾无句号，常停在逗号/分号/冒号，甚至停在
+`and a part:` 这种半句），空一行后新起一段，且新段以**小写字母**开头。中译会照着
+拆译，读者看到「…一部分」断在那里、下一段突兀地从「埃及的财富之利」起头。
+
+**根因**：AGES PDF 的一句话跨页排版（上一页末 → 下一页首）。提取阶段按空行切段，
+PAGE 分页标记恰好落在句中，于是**一句被切成两个段落**。这不是排版差异，是结构错误
+——底本（PDF）里它就是一句话。律法合参卷四 ch1 的 Numbers 11:5 是典型案例：
+PDF 第 13 页末 `The fisheries of the Nile also are very productive, and a part:`
+第 14 页首 `of the wealth of Egypt: whilst the country is so well watered...`
+
+**检测**（三条件同时成立，全库 520 处抽样零误报）：
+1. 段尾**无**句末标点（`. ! ? » ” " ’`），且不是脚注定义/注释/标题行；
+2. 紧随其后（允许空行）是 `<!-- PAGE N -->`；
+3. 标记之后第一个非空段落以小写字母或 `（(’”` 起头。
+
+**Fix**：`python3 scripts/fix_page_split_paragraphs.py [--dry-run] [dir...]`
+合并回一段，PAGE 标记**原样留在行内**（HTML 注释不渲染，正文本就有行内 PAGE 先例），
+不删除任何原文字符。
+
+```bash
+# 普查（默认扫 calvin/*-en）
+python3 scripts/fix_page_split_paragraphs.py --dry-run
+# 修单卷
+python3 scripts/fix_page_split_paragraphs.py calvin/isaiah-1-en
+```
+
+**关键点**：
+- **英文改完必须重跑中译**：合并后该段 md5 变化，对受影响章节 `--resume`，
+  只有被合并的段落会重新翻译，其余缓存命中。脚本末尾会直接列出待重跑章节清单。
+- **只对机翻中译（有 `zh_chapters/`）重跑**。romans/john/acts 等的中译来自中文
+  出版译本 OCR，与英文结构无关，改英文不影响它们，**更不可重译**
+  （见 [§禁止自己从英文版翻译补中文]）。
+- 合并时 PAGE 标记要留着，不要"顺手清理"——它是页码溯源依据。
+
+---
+
 ## M4. 脚注 def 头部出现字面 `</span>` 文本
 
 **Trigger**：`grep -E "^\[\^f[0-9]+\]: </span>" calvin/BOOK-en/*.md` 出现命中。渲染后页脚显示 `</span> "Pource qu'il est..."` 等开头是字面 HTML close 标签。

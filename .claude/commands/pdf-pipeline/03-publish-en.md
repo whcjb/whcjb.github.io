@@ -268,6 +268,15 @@ done
 
 每个 chapter md 都必须通过 [audit-gates.md](refs/audit-gates.md) 全部 gate。
 
+**其中 Gate 5g（跨页断句）必须在开跑中译之前过。** 一句话被 `<!-- PAGE N -->`
+截成两段时，中译会照着断句拆译；事后再修英文，受影响章节的中译得全部 `--resume`
+重跑一遍。跑一条命令即可：
+
+```bash
+python3 scripts/fix_page_split_paragraphs.py --dry-run calvin/<book>-en   # 必须 0 处
+```
+
+
 ---
 
 ## 11. 进入下一步

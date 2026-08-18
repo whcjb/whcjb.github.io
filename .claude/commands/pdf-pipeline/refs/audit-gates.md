@@ -73,6 +73,24 @@ echo "fn refs:  $ref   fn defs: $def"   # 必须 ref == def
 
 ---
 
+## Gate 5g：跨页断句（一句被 `<!-- PAGE N -->` 截成两段）
+
+发布英文版后**必须**跑，且必须为 0。中译在此之后才能开跑——否则会照着断句拆译，
+事后修英文还得把受影响章节全部 `--resume` 重跑一遍。
+
+```bash
+# 单卷
+python3 scripts/fix_page_split_paragraphs.py --dry-run calvin/<book>-en   # 必须"发现 0 处"
+# 全库普查
+python3 scripts/fix_page_split_paragraphs.py --dry-run
+```
+
+- 非 0 = [anti-pattern M3b](anti-patterns.md#m3b)
+- Fix 后脚本会列出待 `--resume` 重跑中译的章节清单；
+  **只重跑有 `zh_chapters/` 的机翻书**，OCR 中译书（romans/john/acts…）不动。
+
+---
+
 ## Gate 5d：OCR 扫描版 —— CUV bible-dump 尾巴溢出（假 verse-opener）
 
 ```bash

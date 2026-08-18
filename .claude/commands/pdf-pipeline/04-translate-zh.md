@@ -24,6 +24,8 @@
 ## 起手 checklist
 
 - [ ] 英文版 raw 已稳定（grep [audit-gates.md](refs/audit-gates.md) Gate 1 全 0）
+- [ ] **英文版已过 Gate 5g 跨页断句检查**：`python3 scripts/fix_page_split_paragraphs.py --dry-run calvin/BOOK-en` 必须 0 处。
+      不先修就开译 = 照着断句拆译，事后修英文要把受影响章节全部 `--resume` 重跑
 - [ ] `translate_filibi.py` BOOKS dict 中已有该书的 entry
 - [ ] 当前 Claude CLI 会话有额度（如撞 limit 会等待重置）
 - [ ] 计划是单章还是全书？全书需多次重启 + cache 复用
