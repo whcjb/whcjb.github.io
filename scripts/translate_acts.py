@@ -19,6 +19,9 @@
 """
 import sys, time, subprocess
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from claude_usage import call_cli   # noqa: E402
 import fitz
 
 PDF    = Path('/Users/yanpeifa/Documents/论文/calvin_acts1.pdf')
@@ -71,18 +74,9 @@ def get_date():
 def translate_page(text: str) -> str:
     """调用 claude CLI 翻译一页文本"""
     prompt = f"请将以下加尔文《使徒行传注释》英文翻译成中文：\n\n{text}"
-    result = subprocess.run(
-        # 砍掉工具/MCP/CLAUDE.md/skills 前缀，见 translate_filibi.CLI_TRIM_FLAGS
-        ['claude', '-p', '--safe-mode', '--strict-mcp-config',
-         '--disallowedTools', '*', '--system-prompt', SYSTEM],
-        input=prompt,
-        capture_output=True,
-        text=True,
-        timeout=300
-    )
-    if result.returncode != 0:
-        raise RuntimeError(f"claude CLI error: {result.stderr[:200]}")
-    return result.stdout.strip()
+    # call_cli 带 CLI_TRIM_FLAGS（不发工具/MCP/CLAUDE.md/skills）并打印本次
+    # token 用量；脚本结束时 claude_usage 会打印汇总。
+    return call_cli(['--system-prompt', SYSTEM], prompt, timeout=300, label='页')
 
 # ── 汇总 ────────────────────────────────────────────────────────────────
 def assemble():

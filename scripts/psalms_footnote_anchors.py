@@ -27,6 +27,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from claude_usage import call_cli   # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 REF_RE = re.compile(r'\[\^([a-z]{1,3}\d+[A-Za-z]?)\](?!:)')
 
@@ -65,13 +68,13 @@ SYSTEM = (
 
 def call(prompt, model='haiku', retries=2):
     for _ in range(retries):
-        r = subprocess.run(
-            ['claude', '-p', '--model', model, '--safe-mode',
-             '--strict-mcp-config', '--disallowedTools', '*',
-             '--system-prompt', SYSTEM],
-            input=prompt, capture_output=True, text=True)
-        if r.returncode == 0 and r.stdout.strip():
-            return r.stdout.strip()
+        try:
+            out = call_cli(['--model', model, '--system-prompt', SYSTEM], prompt,
+                           label='锚点')
+        except (RuntimeError, subprocess.SubprocessError):
+            continue
+        if out:
+            return out
     return ''
 
 

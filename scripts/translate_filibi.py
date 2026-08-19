@@ -17,6 +17,9 @@ translate_filibi.py — Calvin 注释 MD → 中文 MD（支持多书卷）
 import sys, re, subprocess, hashlib, argparse
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from claude_usage import CLI_TRIM_FLAGS, call_cli, tracker   # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # 每批翻译段数（每次调用 claude CLI）。translate_batch 用 <<<N>>> 分隔并逐条
@@ -1386,21 +1389,17 @@ def md5key(text: str) -> str:
     return hashlib.md5(text.encode('utf-8')).hexdigest()[:16]
 
 
-# 翻译是纯文本任务，用不着工具、MCP、CLAUDE.md、skills、hooks。默认调用把这些
-# 全塞进每次请求的前缀——2026-08-19 实测（CLI 2.1.235，--output-format json 读
-# usage）：默认 29,142 token/次，加下面四个开关后 287，约百分之一。
-#   --disallowedTools "*"   去掉全部工具定义（最大头，约 18,700 token）
-#   --strict-mcp-config     不加载任何 MCP server
-#   --safe-mode             不加载 CLAUDE.md / auto-memory / skills / plugins /
-#                           hooks（约 5,540 token；auth、模型选择不受影响）
-#   --system-prompt         用翻译提示词**替换**默认 agent 提示词（而非追加）
-# 注意：prompt 必须走 stdin —— --disallowedTools 是可变参数，会把跟在后面的
-# 位置参数当成工具名吞掉。
-CLI_TRIM_FLAGS = ['--safe-mode', '--strict-mcp-config', '--disallowedTools', '*']
+# CLI_TRIM_FLAGS 见 claude_usage.py：不发工具定义 / MCP / CLAUDE.md / skills /
+# hooks，默认 29,142 token/次 → 287。这里 re-export 供老调用方（translate_owen
+# 等）继续 `tf.CLI_TRIM_FLAGS` 引用。
 
 
-def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3) -> str:
-    """调用 claude CLI；遇到失败重试 max_retries 次（指数退避 5/15/30s）。"""
+def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3,
+                label: str = '') -> str:
+    """调用 claude CLI；遇到失败重试 max_retries 次（指数退避 5/15/30s）。
+
+    每次调用会打印 token 用量（见 claude_usage.tracker），脚本结束打印汇总。
+    """
     import time
     last_err = ''
     for attempt in range(max_retries):
@@ -1409,17 +1408,17 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3) -> str:
             print(f'    [retry {attempt}] {last_err[:120]} | wait {wait}s', flush=True)
             time.sleep(wait)
         try:
-            r = subprocess.run(
-                ['claude', '-p', *CLI_TRIM_FLAGS, '--system-prompt', SYSTEM],
-                input=prompt, capture_output=True, text=True, timeout=timeout
-            )
-        except subprocess.TimeoutExpired as e:
+            out = call_cli(['--system-prompt', SYSTEM], prompt,
+                           timeout=timeout, label=label)
+        except subprocess.TimeoutExpired:
             last_err = f'TimeoutExpired({timeout}s)'
             continue
-        if r.returncode == 0 and r.stdout.strip():
-            return r.stdout.strip()
-        last_err = (f'rc={r.returncode} stderr={r.stderr[:200]!r} '
-                    f'stdout={r.stdout[:120]!r}')
+        except RuntimeError as e:
+            last_err = str(e)
+            continue
+        if out:
+            return out
+        last_err = 'CLI 返回空响应'
     raise RuntimeError(f'claude CLI failed after {max_retries} retries: {last_err}')
 
 

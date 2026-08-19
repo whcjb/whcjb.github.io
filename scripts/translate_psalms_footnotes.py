@@ -20,6 +20,9 @@ import subprocess
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from claude_usage import call_cli   # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 MARK_RE = re.compile(r'<span style="color:#800000">(f[a-e]\d+[A-Za-z]?)</span>')
 REF_RE = re.compile(r'\[\^(f[a-e]\d+[A-Za-z]?)\](?!:)')     # 锚点脚本插入的引用
@@ -55,21 +58,20 @@ def call_claude(text, cache_dir, retries=3):
         return cached.read_text(encoding='utf-8'), True
     last = ''
     for _ in range(retries):
-        # 见 translate_filibi.CLI_TRIM_FLAGS：去掉工具/MCP/CLAUDE.md/skills/
-        # 默认 agent 提示词，每次调用前缀 29,142 → 287 token。prompt 走 stdin
-        # （--disallowedTools 是可变参数，位置参数会被它吞掉）。
-        r = subprocess.run(
-            # 脚注正文的翻译用 opus——这是要读的内容，质量不能降；
-            # 定位那种机械活才用 haiku（见 psalms_footnote_anchors.py）。
-            ['claude', '-p', '--model', 'opus', '--safe-mode',
-             '--strict-mcp-config', '--disallowedTools', '*',
-             '--system-prompt', SYSTEM],
-            input=text, capture_output=True, text=True)
-        out = r.stdout.strip()
-        if r.returncode == 0 and out and 'weekly limit' not in out:
+        # call_cli 带 CLI_TRIM_FLAGS（不发工具/MCP/CLAUDE.md/skills，29,142 →
+        # 287 token/次）并顺带打印本次 token 用量。
+        # 脚注正文的翻译用 opus——这是要读的内容，质量不能降；
+        # 定位那种机械活才用 haiku（见 psalms_footnote_anchors.py）。
+        try:
+            out = call_cli(['--model', 'opus', '--system-prompt', SYSTEM], text,
+                           label='脚注')
+        except (RuntimeError, subprocess.SubprocessError) as e:
+            last = str(e)
+            continue
+        if out and 'weekly limit' not in out:
             cached.write_text(out, encoding='utf-8')
             return out, False
-        last = out or r.stderr.strip()
+        last = out or last
     raise RuntimeError(f'翻译失败: {last[:200]}')
 
 
@@ -112,13 +114,13 @@ def translate_chunk(codes, defs, cache_dir):
 
 def call_raw(prompt, retries=3):
     for _ in range(retries):
-        r = subprocess.run(
-            ['claude', '-p', '--model', 'opus', '--safe-mode',
-             '--strict-mcp-config', '--disallowedTools', '*',
-             '--system-prompt', SYSTEM],
-            input=prompt, capture_output=True, text=True)
-        if r.returncode == 0 and r.stdout.strip() and 'weekly limit' not in r.stdout:
-            return r.stdout.strip()
+        try:
+            out = call_cli(['--model', 'opus', '--system-prompt', SYSTEM], prompt,
+                           label='批量')
+        except (RuntimeError, subprocess.SubprocessError):
+            continue
+        if out and 'weekly limit' not in out:
+            return out
     raise RuntimeError('批量翻译失败')
 
 
