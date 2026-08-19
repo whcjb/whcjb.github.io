@@ -72,7 +72,9 @@ def translate_page(text: str) -> str:
     """调用 claude CLI 翻译一页文本"""
     prompt = f"请将以下加尔文《使徒行传注释》英文翻译成中文：\n\n{text}"
     result = subprocess.run(
-        ['claude', '-p', SYSTEM],
+        # 砍掉工具/MCP/CLAUDE.md/skills 前缀，见 translate_filibi.CLI_TRIM_FLAGS
+        ['claude', '-p', '--safe-mode', '--strict-mcp-config',
+         '--disallowedTools', '*', '--system-prompt', SYSTEM],
         input=prompt,
         capture_output=True,
         text=True,

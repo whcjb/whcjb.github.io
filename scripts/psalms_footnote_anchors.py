@@ -66,8 +66,9 @@ SYSTEM = (
 def call(prompt, model='haiku', retries=2):
     for _ in range(retries):
         r = subprocess.run(
-            ['claude', '-p', '--model', model, '--strict-mcp-config',
-             '--disallowedTools', '*', '--system-prompt', SYSTEM],
+            ['claude', '-p', '--model', model, '--safe-mode',
+             '--strict-mcp-config', '--disallowedTools', '*',
+             '--system-prompt', SYSTEM],
             input=prompt, capture_output=True, text=True)
         if r.returncode == 0 and r.stdout.strip():
             return r.stdout.strip()

@@ -55,14 +55,15 @@ def call_claude(text, cache_dir, retries=3):
         return cached.read_text(encoding='utf-8'), True
     last = ''
     for _ in range(retries):
-        # 见 translate_filibi.CLI_TRIM_FLAGS：去掉工具/MCP/默认 agent 提示词，
-        # 每次调用前缀 22,014 → 444 token。prompt 走 stdin（--disallowedTools
-        # 是可变参数，位置参数会被它吞掉）。
+        # 见 translate_filibi.CLI_TRIM_FLAGS：去掉工具/MCP/CLAUDE.md/skills/
+        # 默认 agent 提示词，每次调用前缀 29,142 → 287 token。prompt 走 stdin
+        # （--disallowedTools 是可变参数，位置参数会被它吞掉）。
         r = subprocess.run(
             # 脚注正文的翻译用 opus——这是要读的内容，质量不能降；
             # 定位那种机械活才用 haiku（见 psalms_footnote_anchors.py）。
-            ['claude', '-p', '--model', 'opus', '--strict-mcp-config',
-             '--disallowedTools', '*', '--system-prompt', SYSTEM],
+            ['claude', '-p', '--model', 'opus', '--safe-mode',
+             '--strict-mcp-config', '--disallowedTools', '*',
+             '--system-prompt', SYSTEM],
             input=text, capture_output=True, text=True)
         out = r.stdout.strip()
         if r.returncode == 0 and out and 'weekly limit' not in out:
@@ -112,8 +113,9 @@ def translate_chunk(codes, defs, cache_dir):
 def call_raw(prompt, retries=3):
     for _ in range(retries):
         r = subprocess.run(
-            ['claude', '-p', '--model', 'opus', '--strict-mcp-config',
-             '--disallowedTools', '*', '--system-prompt', SYSTEM],
+            ['claude', '-p', '--model', 'opus', '--safe-mode',
+             '--strict-mcp-config', '--disallowedTools', '*',
+             '--system-prompt', SYSTEM],
             input=prompt, capture_output=True, text=True)
         if r.returncode == 0 and r.stdout.strip() and 'weekly limit' not in r.stdout:
             return r.stdout.strip()
