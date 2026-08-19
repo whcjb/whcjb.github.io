@@ -1912,7 +1912,7 @@
 [FOOTNOTE] <sty c="800000" i="0"> ft22</sty>As to this verb he has, but in the previous parts he comes nearer to the
 [BODY] Hebrew than to the <sty c="000000" i="1">Sept. </sty>Paul quotes this sentence twice,
 [FOOTNOTE] <sty c="800000" i="0"><450933></sty>Romans 9:33; 10:11, and follows the <sty c="000000" i="1">Sept. </sty>as Peter does.
-[BODY] Indeed, the difference between <sty c="008080" i="0">çyjy</sty> he shall make haste, and <sty c="008080" i="0">çby</sty>, he shall be ashamed, is very small; and further, the former verb admits of a similar meaning with the latter. — <sty c="000000" i="1">Ed.</sty>
+[BODY] Indeed, the difference between <sty c="008080" i="0">יחיש</sty> he shall make haste, and <sty c="008080" i="0">יבש</sty>, he shall be ashamed, is very small; and further, the former verb admits of a similar meaning with the latter. — <sty c="000000" i="1">Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft23</sty>There are in this verse two quotations, one from <sty c="800000" i="0"><19B822></sty>Psalm 118:22,
 [BODY] and the other from <sty c="800000" i="0"><230814></sty>Isaiah 8:14. That from the Psalms is literally the <sty c="000000" i="1">Sept., </sty>and is the same as quoted in <sty c="800000" i="0"><402142></sty>Matthew 21:42;
 [FOOTNOTE] <sty c="800000" i="0"><411210></sty>Mark 12:10; and <sty c="800000" i="0"><422017></sty>Luke 20:17. In all these instances it is
@@ -1929,7 +1929,7 @@
 [FOOTNOTE] <sty c="800000" i="0"> ft26</sty>Neither “conversation” nor “honest” are suitable words. It is difficult to
 [BODY] find a proper word in English for <sty c="0000d4" i="0">ajnastroph<</sty> which means deportment, behavior, carriage, conduct, manner of live: perhaps life would be the best word, “Having your life good among the Gentiles;” that is, morally good (<sty c="0000d4" i="0">kalh<n</sty>) right, or upright. — <sty c="000000" i="1">Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft27</sty>The words literally are, “Submit ye to every human creation:” but, as
-[BODY] Calvin says, the Greek verb means sometimes to form, to construct; and so does <sty c="008080" i="0">arb</sty> to create, in Hebrew. The noun may hence be rendered “institution,” what is formed. As in the second verse, so here, the Apostle, in a way almost peculiar to himself, and the reverse of what is commonly done in Scripture, uses an adjective for a noun, “human” for “of man;” and he does the same in <sty c="800000" i="0"><600307></sty>1 Peter 3:7, “the
+[BODY] Calvin says, the Greek verb means sometimes to form, to construct; and so does <sty c="008080" i="0">ברא</sty> to create, in Hebrew. The noun may hence be rendered “institution,” what is formed. As in the second verse, so here, the Apostle, in a way almost peculiar to himself, and the reverse of what is commonly done in Scripture, uses an adjective for a noun, “human” for “of man;” and he does the same in <sty c="800000" i="0"><600307></sty>1 Peter 3:7, “the
 
 --- PAGE 156 ---
 
@@ -1943,7 +1943,7 @@
 [FOOTNOTE] <sty c="800000" i="0"> ft31</sty>“Good,” <sty c="0000d4" i="0">ajgaqoi~v</sty>, the kind, benevolent; “gentle,” <sty c="0000d4" i="0">ejpieike>sin</sty>, the
 [BODY] yielding, mild, patient; “froward,” <sty c="0000d4" i="0">skolio~iv</sty> the crooked, perverse, untoward, those of a cross disposition, self-willed, and hence cruel, being neither kind nor meek. — <sty c="000000" i="1">Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft32</sty>Literally, “this is favor,” that is, with God, as at the end of the next
-[BODY] verse. To “find favor with God” is a similar phrase, <sty c="800000" i="0"><420130></sty>Luke 1:30, which means to find acceptance with him. We may render the words, “This is acceptable:” with whom acceptable, is afterwards explained. So the word <sty c="008080" i="0">zj</sty> in Hebrew means a favorable acceptance, or approbation. See <sty c="800000" i="0"><010608></sty>Genesis 6:8; 32:5<sty c="000000" i="1">. — Ed.</sty>
+[BODY] verse. To “find favor with God” is a similar phrase, <sty c="800000" i="0"><420130></sty>Luke 1:30, which means to find acceptance with him. We may render the words, “This is acceptable:” with whom acceptable, is afterwards explained. So the word <sty c="008080" i="0">חז</sty> in Hebrew means a favorable acceptance, or approbation. See <sty c="800000" i="0"><010608></sty>Genesis 6:8; 32:5<sty c="000000" i="1">. — Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft33</sty>Calvin has “you” instead of” us,” and has also “you” after “suffered.”
 [BODY] The authority as to <sty c="000000" i="1">MSS.</sty> is nearly equal; but the verse reads better with having “you” in both instances, as the verb “follow” is in the second person plural, “that <sty c="000000" i="1">ye </sty>may follow in his footsteps.” The word for “example” is <sty c="0000d4" i="0">uJpogrammo<n</sty>, a copy set before scholars to be imitated, and may be rendered “a pattern.” — <sty c="000000" i="1">Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft34</sty>Or, “Being freed from sins:” <sty c="0000d4" i="0">ajpogeno>menoi</sty>, being away from, having
@@ -2030,7 +2030,7 @@
 [BODY] It is to be observed that the Hebrew has “on earth,” which seems to confirm the view that saved here refers to deliverances from the troubles, trials, and persecutions, which the righteous have to go through during life; and that <sty c="000000" i="1">scarcely, </sty>or hardly, or with difficulty, as rendered by <sty c="000000" i="1">Doddridge </sty>and <sty c="000000" i="1">Macknight, </sty>is to be limited to the time of the Christian’s course in this world; for, as <sty c="000000" i="1">Macknight </sty>observes, the Apostle speaks in his Second Epistle of an abundant entrance into the heavenly kingdom being vouchsafed to all faithful Christians. See
 [FOOTNOTE] <sty c="800000" i="0"><610111></sty>2 Peter 1:11<sty c="000000" i="1">. — Ed.</sty>
 [FOOTNOTE] <sty c="800000" i="0"> ft52</sty>The two words, “ungodly,” <sty c="0000d4" i="0">ajsebh<v</sty>, and “sinner,” <sty c="0000d4" i="0">ajmartwlo<v</sty>, exactly
-[BODY] correspond with <sty c="008080" i="0">[çr</sty> and <sty c="008080" i="0">afwj</sty> in Hebrew; the first is he who is not pious, not a worshipper of God, having neither fear nor love towards him; and the second is the wicked, and open and shameless transgressor, who regards not what is just and right. <sty c="000000" i="1">Grotius </sty>says, that the first is he who shews no piety towards God; and that the second is one who observes no justice towards man. — <sty c="000000" i="1">Ed.</sty>
+[BODY] correspond with <sty c="008080" i="0">רשע</sty> and <sty c="008080" i="0">חוטא</sty> in Hebrew; the first is he who is not pious, not a worshipper of God, having neither fear nor love towards him; and the second is the wicked, and open and shameless transgressor, who regards not what is just and right. <sty c="000000" i="1">Grotius </sty>says, that the first is he who shews no piety towards God; and that the second is one who observes no justice towards man. — <sty c="000000" i="1">Ed.</sty>
 
 [CENTERED_H2] <sty c="006411" i="0">CHAPTER 5</sty>
 

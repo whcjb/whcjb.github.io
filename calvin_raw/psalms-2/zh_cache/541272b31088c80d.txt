@@ -1,1 +1,0 @@
-[^fe29]: “La letre <span style="color:#008080">k</span>, qui signifie Sclon.” ——法文本作“字母 <span style="color:#008080">k</span>，意思是‘照着’。”

@@ -46,7 +46,10 @@ MAP = {
     #   H[wmç→שמועה shemugnah / La wnm[ yk→כי עמנו אל ki Immanu-el
     # 未见到实例的大写字母**不猜**，遇到再按音译核对后补。
     'T': 'ת', 'B': 'ב', '5': 'ך', 'L': 'ל', 'Y': 'י', 'R': 'ר', 'D': 'ד',
-    'H': 'ה',
+    'H': 'ה', 'W': 'ו', 'Ã': 'ף', 'i': 'י',
+    #   W: WgnAdb[→עבד־נגו gnebed-nego / W[xb→בצעו betzagno
+    #   Ã: Ãfj ypl→לפי חטף Lephi chataph（ã→ף 的大写位）
+    #   i: insbk→כבסני cabbeseni
     ' ': ' ',
 }
 HEB_RE = re.compile(r'[֐-׿]')
@@ -195,7 +198,14 @@ def main():
                 targets.append((p, None))
     for s in args.paths:
         p = ROOT / s
-        for q in (sorted(p.rglob('*.md')) if p.is_dir() else [p]):
+        if p.is_dir():
+            # .txt 含 structured 以及 zh_cache/ zh_footnote_cache/ 里的翻译缓存
+            # 内容——缓存文件名是**英文原文**的 md5，改内容不动 key，安全。
+            # 不改则 --resume 会把旧乱码从缓存读回正文，等于回归。
+            qs = sorted(p.rglob('*.md')) + sorted(p.rglob('*.txt'))
+        else:
+            qs = [p]
+        for q in qs:
             targets.append((q, None))
 
     tot = tot_skip = tot_moved = tot_missing = 0

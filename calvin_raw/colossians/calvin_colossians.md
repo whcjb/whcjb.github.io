@@ -1180,7 +1180,7 @@ When he speaks of the Church which was in the house of Nymphas, let us bear in m
 
 [^f36]: “Là il n’y a que tenebres;” — “There is nothing but darkness.”
 
-[^f37]: “One of the names which the Jews gave to Satan was <span style="color:#008080">5çj</span> — darkness” — Illustrated Commentary. — Ed.
+[^f37]: “One of the names which the Jews gave to Satan was <span style="color:#008080">חשך</span> — darkness” — Illustrated Commentary. — Ed.
 
 <!-- PAGE 96 -->
 

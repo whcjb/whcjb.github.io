@@ -4299,25 +4299,25 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*Hallelujah*</span></p>
 
-<sup>1</sup> <span style="color:#008080">a</span> I will celebrate Jehovah with *my* whole heart, <span style="color:#008080">b</span> In the congregation of the just, and in the assembly.
+<sup>1</sup> <span style="color:#008080">א</span> I will celebrate Jehovah with *my* whole heart, <span style="color:#008080">ב</span> In the congregation of the just, and in the assembly.
 
-<sup>2</sup> <span style="color:#008080">g</span> Great are the works of Jehovah, <span style="color:#008080">d</span> Sought out of all who have pleasure in them.
+<sup>2</sup> <span style="color:#008080">ג</span> Great are the works of Jehovah, <span style="color:#008080">ד</span> Sought out of all who have pleasure in them.
 
-<sup>3</sup> <span style="color:#008080">h</span> Beautiful and honorable  [^ff131] *is* his work; <span style="color:#008080">w</span> And his righteousness endureth for ever.
+<sup>3</sup> <span style="color:#008080">ה</span> Beautiful and honorable  [^ff131] *is* his work; <span style="color:#008080">ו</span> And his righteousness endureth for ever.
 
-<sup>4</sup> <span style="color:#008080">z</span> He hath made a memorial by his wonderful works: <span style="color:#008080">j</span> Merciful and compassionate *is* Jehovah.
+<sup>4</sup> <span style="color:#008080">ז</span> He hath made a memorial by his wonderful works: <span style="color:#008080">ח</span> Merciful and compassionate *is* Jehovah.
 
-<sup>5</sup> <span style="color:#008080">f</span> A portion he hath given to those who fear him: <span style="color:#008080">y</span> He will remember for ever his covenant.
+<sup>5</sup> <span style="color:#008080">ט</span> A portion he hath given to those who fear him: <span style="color:#008080">י</span> He will remember for ever his covenant.
 
-<sup>6</sup> <span style="color:#008080">k</span> The might of his works he hath proclaimed to his people, <span style="color:#008080">l</span> To give them the heritage of the heathen.
+<sup>6</sup> <span style="color:#008080">כ</span> The might of his works he hath proclaimed to his people, <span style="color:#008080">ל</span> To give them the heritage of the heathen.
 
-<p style="text-align:center" markdown="1"><sup>7</sup> <span style="color:#008080">m</span> The works of his hands *are* truth and judgment: <span style="color:#008080">n</span> True *are* all his statutes,</p>
+<p style="text-align:center" markdown="1"><sup>7</sup> <span style="color:#008080">מ</span> The works of his hands *are* truth and judgment: <span style="color:#008080">נ</span> True *are* all his statutes,</p>
 
-<sup>8</sup> <span style="color:#008080">s</span> And established for ever — <span style="color:#008080">[</span> Made in truth and rectitude.
+<sup>8</sup> <span style="color:#008080">ס</span> And established for ever — <span style="color:#008080">ע</span> Made in truth and rectitude.
 
-<sup>9</sup> <span style="color:#008080">p</span> Redemption he hath sent to his people; <span style="color:#008080">x</span> He hath commanded for ever his covenant: <span style="color:#008080">q</span> Holy and terrible *is* his name.
+<sup>9</sup> <span style="color:#008080">פ</span> Redemption he hath sent to his people; <span style="color:#008080">צ</span> He hath commanded for ever his covenant: <span style="color:#008080">ק</span> Holy and terrible *is* his name.
 
-<sup>10</sup> <span style="color:#008080">r</span> The beginning of wisdom is the fear of Jehovah; <span style="color:#008080">ç</span> A good understanding *have* all those who do them: <span style="color:#008080">t</span> His praise endureth for ever.
+<sup>10</sup> <span style="color:#008080">ר</span> The beginning of wisdom is the fear of Jehovah; <span style="color:#008080">ש</span> A good understanding *have* all those who do them: <span style="color:#008080">ת</span> His praise endureth for ever.
 
 <!-- PAGE 996 -->
 
@@ -4325,25 +4325,25 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*Hallelujah*</span></p>
 
-<sup>1</sup> <span style="color:#008080">a</span> Blessed is the man who feareth Jehovah; <span style="color:#008080">b</span> In his commandments he will delight greatly.
+<sup>1</sup> <span style="color:#008080">א</span> Blessed is the man who feareth Jehovah; <span style="color:#008080">ב</span> In his commandments he will delight greatly.
 
-<sup>2</sup> <span style="color:#008080">g</span> Mighty on the earth shall be his seed: <span style="color:#008080">d</span> The generation of the upright ones shall be blessed.
+<sup>2</sup> <span style="color:#008080">ג</span> Mighty on the earth shall be his seed: <span style="color:#008080">ד</span> The generation of the upright ones shall be blessed.
 
-<sup>3</sup> <span style="color:#008080">h</span> Wealth and riches *shall be* in his house; <span style="color:#008080">w</span> And his righteousness endureth for ever.
+<sup>3</sup> <span style="color:#008080">ה</span> Wealth and riches *shall be* in his house; <span style="color:#008080">ו</span> And his righteousness endureth for ever.
 
-<sup>4</sup> <span style="color:#008080">z</span> There ariseth in darkness light to the upright ones: <span style="color:#008080">j</span> *He is* merciful and compassionate and righteous.
+<sup>4</sup> <span style="color:#008080">ז</span> There ariseth in darkness light to the upright ones: <span style="color:#008080">ח</span> *He is* merciful and compassionate and righteous.
 
-<sup>5</sup> <span style="color:#008080">f</span> A good man showeth pity and lendeth; <span style="color:#008080">y</span> He manageth his affairs  [^ff132] in uprightness.
+<sup>5</sup> <span style="color:#008080">ט</span> A good man showeth pity and lendeth; <span style="color:#008080">י</span> He manageth his affairs  [^ff132] in uprightness.
 
-<sup>6</sup> <span style="color:#008080">k</span> Truly he shall not for ever be moved; <span style="color:#008080">l</span> In everlasting remembrance shall be the righteous one.
+<sup>6</sup> <span style="color:#008080">כ</span> Truly he shall not for ever be moved; <span style="color:#008080">ל</span> In everlasting remembrance shall be the righteous one.
 
-<sup>7</sup> <span style="color:#008080">m</span> Of evil tidings he shall not be afraid; <span style="color:#008080">n</span> Established is his heart, because he trusteth in Jehovah.
+<sup>7</sup> <span style="color:#008080">מ</span> Of evil tidings he shall not be afraid; <span style="color:#008080">נ</span> Established is his heart, because he trusteth in Jehovah.
 
-<sup>8</sup> <span style="color:#008080">s</span> Sustained *is* his heart, he shall not be afraid, <span style="color:#008080">[</span> Until he see *his desire* upon his adversaries.
+<sup>8</sup> <span style="color:#008080">ס</span> Sustained *is* his heart, he shall not be afraid, <span style="color:#008080">ע</span> Until he see *his desire* upon his adversaries.
 
-<sup>9</sup> <span style="color:#008080">p</span> He hath dispersed; he hath given to the poor ones; <span style="color:#008080">x</span> His righteousness continueth for ever; <span style="color:#008080">q</span> His horn shall be exalted with glory.
+<sup>9</sup> <span style="color:#008080">פ</span> He hath dispersed; he hath given to the poor ones; <span style="color:#008080">צ</span> His righteousness continueth for ever; <span style="color:#008080">ק</span> His horn shall be exalted with glory.
 
-<sup>10</sup> <span style="color:#008080">r</span> The ungodly one shall see *it*, and be incensed; <span style="color:#008080">ç</span> With his teeth he shall gnash and waste away: <span style="color:#008080">t</span> The desire of the ungodly ones shall perish.
+<sup>10</sup> <span style="color:#008080">ר</span> The ungodly one shall see *it*, and be incensed; <span style="color:#008080">ש</span> With his teeth he shall gnash and waste away: <span style="color:#008080">ת</span> The desire of the ungodly ones shall perish.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 113</span></p>
 
@@ -4533,424 +4533,424 @@ And he shall feed thee; He shall not suffer for ever the righteous man to stagge
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PSALM 119</span></p>
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">a</span> [Aleph.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">א</span> [Aleph.]</p>
 
-<sup>1</sup> <span style="color:#008080">a</span> Blessed *are* those who are upright in *their* way, Walking in the law of Jehovah.
+<sup>1</sup> <span style="color:#008080">א</span> Blessed *are* those who are upright in *their* way, Walking in the law of Jehovah.
 
 <!-- PAGE 1003 -->
 
-<sup>2</sup> <span style="color:#008080">a</span> Blessed *are* those who keep his testimonies, *Who* with *their* whole heart seek him.
+<sup>2</sup> <span style="color:#008080">א</span> Blessed *are* those who keep his testimonies, *Who* with *their* whole heart seek him.
 
-<sup>3</sup> <span style="color:#008080">a</span>, Surely they do not work iniquity, *Who* in his ways do walk.
+<sup>3</sup> <span style="color:#008080">א</span>, Surely they do not work iniquity, *Who* in his ways do walk.
 
-<sup>4</sup> <span style="color:#008080">a</span> Thou hast commanded That thy statutes be kept carefully.
+<sup>4</sup> <span style="color:#008080">א</span> Thou hast commanded That thy statutes be kept carefully.
 
-<sup>5</sup> <span style="color:#008080">a</span> O that my ways may be directed To the keeping of thy statutes!
+<sup>5</sup> <span style="color:#008080">א</span> O that my ways may be directed To the keeping of thy statutes!
 
-<sup>6</sup> <span style="color:#008080">a</span> Then shall I not be ashamed, When I shall have been attentive to all thy commandments.
+<sup>6</sup> <span style="color:#008080">א</span> Then shall I not be ashamed, When I shall have been attentive to all thy commandments.
 
-<sup>7</sup> <span style="color:#008080">a</span> I will celebrate thee with uprightness of heart, When I shall have learned the judgments of thy righteousness.
+<sup>7</sup> <span style="color:#008080">א</span> I will celebrate thee with uprightness of heart, When I shall have learned the judgments of thy righteousness.
 
-<sup>8</sup> <span style="color:#008080">a</span>, Thy statutes I will keep: Do not thou forsake me very far.
+<sup>8</sup> <span style="color:#008080">א</span>, Thy statutes I will keep: Do not thou forsake me very far.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">b</span> [Beth.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ב</span> [Beth.]</p>
 
-<sup>9</sup> <span style="color:#008080">b</span> By what [*means*] shall a young man cleanse his way? By taking heed according to thy word.
+<sup>9</sup> <span style="color:#008080">ב</span> By what [*means*] shall a young man cleanse his way? By taking heed according to thy word.
 
-<sup>10</sup> <span style="color:#008080">b</span> With my whole heart have I sought thee; Let me not go astray from thy commandments.
+<sup>10</sup> <span style="color:#008080">ב</span> With my whole heart have I sought thee; Let me not go astray from thy commandments.
 
-<sup>11</sup> <span style="color:#008080">b</span> In my heart I have hidden thy word, That I might not sin against thee.
+<sup>11</sup> <span style="color:#008080">ב</span> In my heart I have hidden thy word, That I might not sin against thee.
 
-<sup>12</sup> <span style="color:#008080">b</span> Blessed *art* thou, O Jehovah! Teach me thy statutes.
+<sup>12</sup> <span style="color:#008080">ב</span> Blessed *art* thou, O Jehovah! Teach me thy statutes.
 
-<p style="text-align:center" markdown="1"><sup>13</sup> <span style="color:#008080">b</span> With my lips have I declared All the judgments of thy mouth.</p>
+<p style="text-align:center" markdown="1"><sup>13</sup> <span style="color:#008080">ב</span> With my lips have I declared All the judgments of thy mouth.</p>
 
-<sup>14</sup> <span style="color:#008080">b</span> In the way of thy testimonies I have taken delight, As much as in all riches.
+<sup>14</sup> <span style="color:#008080">ב</span> In the way of thy testimonies I have taken delight, As much as in all riches.
 
-<sup>15</sup> <span style="color:#008080">b</span> Upon thy statutes will I meditate, And I will consider thy paths.
+<sup>15</sup> <span style="color:#008080">ב</span> Upon thy statutes will I meditate, And I will consider thy paths.
 
-<sup>16</sup> <span style="color:#008080">b</span> In thy commandments will I delight myself; I will not forget thy words.
+<sup>16</sup> <span style="color:#008080">ב</span> In thy commandments will I delight myself; I will not forget thy words.
 
 <!-- PAGE 1004 -->
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">g</span> [Gimel.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ג</span> [Gimel.]</p>
 
-<sup>17</sup> <span style="color:#008080">g</span> Do good to thy servant, And I shall live and keep thy word.
+<sup>17</sup> <span style="color:#008080">ג</span> Do good to thy servant, And I shall live and keep thy word.
 
-<sup>18</sup> <span style="color:#008080">g</span> Open mine eyes, And I shall behold the wonders of thy law.
+<sup>18</sup> <span style="color:#008080">ג</span> Open mine eyes, And I shall behold the wonders of thy law.
 
-<sup>19</sup> <span style="color:#008080">g</span> I am a stranger on the earth: Hide not from me thy commandments.
+<sup>19</sup> <span style="color:#008080">ג</span> I am a stranger on the earth: Hide not from me thy commandments.
 
-<sup>20</sup> <span style="color:#008080">g</span> Broken is my soul with the desire *it hath* To thy judgments at all times.
+<sup>20</sup> <span style="color:#008080">ג</span> Broken is my soul with the desire *it hath* To thy judgments at all times.
 
-<sup>21</sup> <span style="color:#008080">g</span> Thou hast destroyed the proud ones; Cursed are those who decline from thy commandments.
+<sup>21</sup> <span style="color:#008080">ג</span> Thou hast destroyed the proud ones; Cursed are those who decline from thy commandments.
 
-<sup>22</sup> <span style="color:#008080">g</span> Remove from me reproach and contempt; For thy testimonies I have kept.
+<sup>22</sup> <span style="color:#008080">ג</span> Remove from me reproach and contempt; For thy testimonies I have kept.
 
-<sup>23</sup> <span style="color:#008080">g</span> Princes also have sat, against me they have spoken: Thy servant meditated upon thy statutes.
+<sup>23</sup> <span style="color:#008080">ג</span> Princes also have sat, against me they have spoken: Thy servant meditated upon thy statutes.
 
-<p style="text-align:center" markdown="1"><sup>24</sup> <span style="color:#008080">g</span> Also thy testimonies *are* my delights, The men of my counsel.</p>
+<p style="text-align:center" markdown="1"><sup>24</sup> <span style="color:#008080">ג</span> Also thy testimonies *are* my delights, The men of my counsel.</p>
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">d</span> [Daleth.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ד</span> [Daleth.]</p>
 
-<p style="text-align:center" markdown="1"><sup>25</sup> <span style="color:#008080">d</span> Cleave to the dust doth my soul: Quicken me according to thy word.</p>
+<p style="text-align:center" markdown="1"><sup>25</sup> <span style="color:#008080">ד</span> Cleave to the dust doth my soul: Quicken me according to thy word.</p>
 
-<sup>26</sup> <span style="color:#008080">d</span> I have declared my ways, and thou hast answered me: Teach me thy statutes.
+<sup>26</sup> <span style="color:#008080">ד</span> I have declared my ways, and thou hast answered me: Teach me thy statutes.
 
-<sup>27</sup> <span style="color:#008080">d</span> The way of thy commandments make me to understand, And I will meditate upon thy wonders.
+<sup>27</sup> <span style="color:#008080">ד</span> The way of thy commandments make me to understand, And I will meditate upon thy wonders.
 
-<sup>28</sup> <span style="color:#008080">d</span> Drop away doth my soul for grief: Raise me up according to thy word.
+<sup>28</sup> <span style="color:#008080">ד</span> Drop away doth my soul for grief: Raise me up according to thy word.
 
-<p style="text-align:center" markdown="1"><sup>29</sup> <span style="color:#008080">d</span> The way of falsehood remove from me, And thy law grant me graciously.</p>
+<p style="text-align:center" markdown="1"><sup>29</sup> <span style="color:#008080">ד</span> The way of falsehood remove from me, And thy law grant me graciously.</p>
 
-<sup>30</sup> <span style="color:#008080">d</span> The way of truth I have chosen; Thy judgments I have set before me.
+<sup>30</sup> <span style="color:#008080">ד</span> The way of truth I have chosen; Thy judgments I have set before me.
 
 <!-- PAGE 1005 -->
 
-<sup>31</sup> <span style="color:#008080">d</span> I have cleaved to thy testimonies, O Jehovah Let me not be put to shame.
+<sup>31</sup> <span style="color:#008080">ד</span> I have cleaved to thy testimonies, O Jehovah Let me not be put to shame.
 
-<sup>32</sup> <span style="color:#008080">d</span> The way of thy statutes I will run, When thou shalt have enlarged my heart.
+<sup>32</sup> <span style="color:#008080">ד</span> The way of thy statutes I will run, When thou shalt have enlarged my heart.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">h</span> [He.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ה</span> [He.]</p>
 
-<sup>33</sup> <span style="color:#008080">h</span> Teach me, O Jehovah! the way of thy statutes, And I will keep it unto the end.
+<sup>33</sup> <span style="color:#008080">ה</span> Teach me, O Jehovah! the way of thy statutes, And I will keep it unto the end.
 
-<sup>34</sup> <span style="color:#008080">h</span> Make me to understand, and I will observe thy law, And keep it with my whole heart.
+<sup>34</sup> <span style="color:#008080">ה</span> Make me to understand, and I will observe thy law, And keep it with my whole heart.
 
-<sup>35</sup> <span style="color:#008080">h</span> Direct me in the way of thy statutes; For in it is my delight.
+<sup>35</sup> <span style="color:#008080">ה</span> Direct me in the way of thy statutes; For in it is my delight.
 
-<p style="text-align:center" markdown="1"><sup>36</sup> <span style="color:#008080">h</span> Incline my heart to thy testimonies, And not to covetousness.</p>
+<p style="text-align:center" markdown="1"><sup>36</sup> <span style="color:#008080">ה</span> Incline my heart to thy testimonies, And not to covetousness.</p>
 
-<sup>37</sup> <span style="color:#008080">h</span> Turn away my eyes from seeing vanity; In thy way quicken me.
+<sup>37</sup> <span style="color:#008080">ה</span> Turn away my eyes from seeing vanity; In thy way quicken me.
 
-<p style="text-align:center" markdown="1"><sup>38</sup> <span style="color:#008080">h</span> Confirm to thy servant thy word, Who to thy fear *is devoted*.</p>
+<p style="text-align:center" markdown="1"><sup>38</sup> <span style="color:#008080">ה</span> Confirm to thy servant thy word, Who to thy fear *is devoted*.</p>
 
-<sup>39</sup> <span style="color:#008080">h</span> Remove my reproach which I have dreaded, For thy judgments are good.
+<sup>39</sup> <span style="color:#008080">ה</span> Remove my reproach which I have dreaded, For thy judgments are good.
 
-<sup>40</sup> <span style="color:#008080">h</span> Behold! I have longed after thy commandments: In thy righteousness quicken me.
+<sup>40</sup> <span style="color:#008080">ה</span> Behold! I have longed after thy commandments: In thy righteousness quicken me.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">w</span>[Vau.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ו</span>[Vau.]</p>
 
-<sup>41</sup> <span style="color:#008080">w</span> And let come to me thy mercies, O Jehovah! Thy salvation according to thy word.
+<sup>41</sup> <span style="color:#008080">ו</span> And let come to me thy mercies, O Jehovah! Thy salvation according to thy word.
 
-<sup>42</sup> <span style="color:#008080">w</span> And I will answer a word to him who reproacheth me; For I have trusted in thy word.
+<sup>42</sup> <span style="color:#008080">ו</span> And I will answer a word to him who reproacheth me; For I have trusted in thy word.
 
-<sup>43</sup> <span style="color:#008080">w</span> And take not from my mouth the word of truth utterly: Because for thy judgments I wait.
+<sup>43</sup> <span style="color:#008080">ו</span> And take not from my mouth the word of truth utterly: Because for thy judgments I wait.
 
-<sup>44</sup> <span style="color:#008080">w</span> And I will keep thy law continually, For ever and ever.
+<sup>44</sup> <span style="color:#008080">ו</span> And I will keep thy law continually, For ever and ever.
 
 <!-- PAGE 1006 -->
 
-<sup>45</sup> <span style="color:#008080">w</span> And I will walk at large; For thy statutes I have sought.
+<sup>45</sup> <span style="color:#008080">ו</span> And I will walk at large; For thy statutes I have sought.
 
-<p style="text-align:center" markdown="1"><sup>46</sup> <span style="color:#008080">w</span> And I will speak of thy testimonies before kings, And will not be ashamed.</p>
+<p style="text-align:center" markdown="1"><sup>46</sup> <span style="color:#008080">ו</span> And I will speak of thy testimonies before kings, And will not be ashamed.</p>
 
-<sup>47</sup> <span style="color:#008080">w</span> And I will delight myself in thy commandments Which I have loved.
+<sup>47</sup> <span style="color:#008080">ו</span> And I will delight myself in thy commandments Which I have loved.
 
-<sup>48</sup> <span style="color:#008080">w</span> And I will lift up my hands to thy commandments Which I have loved; And I will meditate upon thy statutes.
+<sup>48</sup> <span style="color:#008080">ו</span> And I will lift up my hands to thy commandments Which I have loved; And I will meditate upon thy statutes.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">z</span> [Zain.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ז</span> [Zain.]</p>
 
-<sup>49</sup> <span style="color:#008080">z</span> Remember thy word to thy servant, Upon which thou hast caused me to hope.
+<sup>49</sup> <span style="color:#008080">ז</span> Remember thy word to thy servant, Upon which thou hast caused me to hope.
 
-<sup>50</sup> <span style="color:#008080">z</span> This is my consolation in my affliction; For thy word revives me.
+<sup>50</sup> <span style="color:#008080">ז</span> This is my consolation in my affliction; For thy word revives me.
 
-<sup>51</sup> <span style="color:#008080">z</span> The proud ones have derided me exceedingly: From thy law I have not declined.
+<sup>51</sup> <span style="color:#008080">ז</span> The proud ones have derided me exceedingly: From thy law I have not declined.
 
-<sup>52</sup> <span style="color:#008080">z</span> I remembered thy judgments of old, O Jehovah! And comforted myself.
+<sup>52</sup> <span style="color:#008080">ז</span> I remembered thy judgments of old, O Jehovah! And comforted myself.
 
-<sup>53</sup> <span style="color:#008080">z</span> Terror hath seized upon me, Because of the ungodly who forsake thy law.
+<sup>53</sup> <span style="color:#008080">ז</span> Terror hath seized upon me, Because of the ungodly who forsake thy law.
 
-<sup>54</sup> <span style="color:#008080">z</span> Thy statutes have been songs to me In the house of my pilgrimage.
+<sup>54</sup> <span style="color:#008080">ז</span> Thy statutes have been songs to me In the house of my pilgrimage.
 
-<sup>55</sup> <span style="color:#008080">z</span> I remembered in the night thy name, O Jehovah! And I will keep thy law.
+<sup>55</sup> <span style="color:#008080">ז</span> I remembered in the night thy name, O Jehovah! And I will keep thy law.
 
-<sup>56</sup> <span style="color:#008080">z</span> This is done to me, Because thy statutes I have observed.
+<sup>56</sup> <span style="color:#008080">ז</span> This is done to me, Because thy statutes I have observed.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">j</span> [Cheth.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ח</span> [Cheth.]</p>
 
 <!-- PAGE 1007 -->
-<sup>57</sup> <span style="color:#008080">j</span> *Thou art* my portion, O Jehovah! I have said that I will keep thy words.  [^ff140] <sup>58</sup> <span style="color:#008080">j</span> I have sought thy face with my whole heart; Have mercy upon me according to thy word.
+<sup>57</sup> <span style="color:#008080">ח</span> *Thou art* my portion, O Jehovah! I have said that I will keep thy words.  [^ff140] <sup>58</sup> <span style="color:#008080">ח</span> I have sought thy face with my whole heart; Have mercy upon me according to thy word.
 
-<sup>59</sup> <span style="color:#008080">j</span> I thought upon my ways, And turned my feet to thy testimonies.
+<sup>59</sup> <span style="color:#008080">ח</span> I thought upon my ways, And turned my feet to thy testimonies.
 
-<sup>60</sup> <span style="color:#008080">j</span> I made haste and delayed not To keep thy commandments.
+<sup>60</sup> <span style="color:#008080">ח</span> I made haste and delayed not To keep thy commandments.
 
-<sup>61</sup> <span style="color:#008080">j</span> The cords of the ungodly have caught hold of me; Thy law I have not forgotten.
+<sup>61</sup> <span style="color:#008080">ח</span> The cords of the ungodly have caught hold of me; Thy law I have not forgotten.
 
-<sup>62</sup> <span style="color:#008080">j</span> At midnight I will rise to praise thee, Because of the judgments of thy righteousness.
+<sup>62</sup> <span style="color:#008080">ח</span> At midnight I will rise to praise thee, Because of the judgments of thy righteousness.
 
-<sup>63</sup> <span style="color:#008080">j</span> A companion am I to all who fear thee, And who keep thy statutes.
+<sup>63</sup> <span style="color:#008080">ח</span> A companion am I to all who fear thee, And who keep thy statutes.
 
-<p style="text-align:center" markdown="1"><sup>64</sup> <span style="color:#008080">j</span> Of thy mercy, O Jehovah! the earth is full: Thy statutes teach thou me.</p>
+<p style="text-align:center" markdown="1"><sup>64</sup> <span style="color:#008080">ח</span> Of thy mercy, O Jehovah! the earth is full: Thy statutes teach thou me.</p>
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">t</span> [Teth.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ת</span> [Teth.]</p>
 
-<sup>65</sup> <span style="color:#008080">t</span> Kindly hast thou dealt with thy servant, O Jehovah! According to thy word.
+<sup>65</sup> <span style="color:#008080">ת</span> Kindly hast thou dealt with thy servant, O Jehovah! According to thy word.
 
-<sup>66</sup> <span style="color:#008080">t</span> Goodness of taste and knowledge teach me; For thy commandments I have believed.
+<sup>66</sup> <span style="color:#008080">ת</span> Goodness of taste and knowledge teach me; For thy commandments I have believed.
 
-<sup>67</sup> <span style="color:#008080">t</span> Before I was brought low I went astray; But now thy word I keep.
+<sup>67</sup> <span style="color:#008080">ת</span> Before I was brought low I went astray; But now thy word I keep.
 
-<sup>68</sup> <span style="color:#008080">t</span> Good *art* thou, and beneficent: Teach me thy statutes.
+<sup>68</sup> <span style="color:#008080">ת</span> Good *art* thou, and beneficent: Teach me thy statutes.
 
-<sup>69</sup> <span style="color:#008080">t</span> Weaved a lie  [^ff141] against me have the proud ones; *But as for me* I with my whole heart will keep statutes.
+<sup>69</sup> <span style="color:#008080">ת</span> Weaved a lie  [^ff141] against me have the proud ones; *But as for me* I with my whole heart will keep statutes.
 
-<sup>70</sup> <span style="color:#008080">t</span> Fat as grease is their heart; *But as for me* I in thy law do delight.
+<sup>70</sup> <span style="color:#008080">ת</span> Fat as grease is their heart; *But as for me* I in thy law do delight.
 
-<sup>71</sup> <span style="color:#008080">t</span> *It hath been* good for me that I have been afflicted, That I might learn thy statutes.
+<sup>71</sup> <span style="color:#008080">ת</span> *It hath been* good for me that I have been afflicted, That I might learn thy statutes.
 
 <!-- PAGE 1008 -->
 
-<sup>72</sup> <span style="color:#008080">t</span> Better to me is the law of thy mouth Than thousands of gold and silver.
+<sup>72</sup> <span style="color:#008080">ת</span> Better to me is the law of thy mouth Than thousands of gold and silver.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">y</span> [Yod.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">י</span> [Yod.]</p>
 
-<sup>73</sup> <span style="color:#008080">y</span> Thy hands have made and formed me; Make me to understand, and I shall learn thy commandments.
+<sup>73</sup> <span style="color:#008080">י</span> Thy hands have made and formed me; Make me to understand, and I shall learn thy commandments.
 
-<sup>74</sup> <span style="color:#008080">y</span> Those who fear thee shall see me and rejoice; Because for thy word I have waited.
+<sup>74</sup> <span style="color:#008080">י</span> Those who fear thee shall see me and rejoice; Because for thy word I have waited.
 
-<sup>75</sup> <span style="color:#008080">y</span> I have known, O Jehovah! that righteousness are thy judgments; And in truth thou hast humbled me.
+<sup>75</sup> <span style="color:#008080">י</span> I have known, O Jehovah! that righteousness are thy judgments; And in truth thou hast humbled me.
 
-<sup>76</sup> <span style="color:#008080">y</span> To thy word to thy servant.
+<sup>76</sup> <span style="color:#008080">י</span> To thy word to thy servant.
 
-<sup>77</sup> <span style="color:#008080">y</span> Let come to me thy compassions, and I shall live; For thy law is my delight.
+<sup>77</sup> <span style="color:#008080">י</span> Let come to me thy compassions, and I shall live; For thy law is my delight.
 
-<sup>78</sup> <span style="color:#008080">y</span> Ashamed let be the proud, for they have falsely wronged me: As for me I will meditate upon thy precepts.
+<sup>78</sup> <span style="color:#008080">י</span> Ashamed let be the proud, for they have falsely wronged me: As for me I will meditate upon thy precepts.
 
-<sup>79</sup> <span style="color:#008080">y</span> Let those turn unto me who fear thee, And have known thy testimonies.
+<sup>79</sup> <span style="color:#008080">י</span> Let those turn unto me who fear thee, And have known thy testimonies.
 
-<sup>80</sup> <span style="color:#008080">y</span> Let my heart be sound in thy statutes, That I may not be put to shame.
+<sup>80</sup> <span style="color:#008080">י</span> Let my heart be sound in thy statutes, That I may not be put to shame.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">k</span> [Caph.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">כ</span> [Caph.]</p>
 
-<sup>81</sup> <span style="color:#008080">k</span> Fainted for thy salvation hath my soul: For thy word I wait.
+<sup>81</sup> <span style="color:#008080">כ</span> Fainted for thy salvation hath my soul: For thy word I wait.
 
-<sup>82</sup> <span style="color:#008080">k</span> Failed have my eyes [*in looking*] for thy word, While I say, “When wilt thou comfort me?”
+<sup>82</sup> <span style="color:#008080">כ</span> Failed have my eyes [*in looking*] for thy word, While I say, “When wilt thou comfort me?”
 
-<sup>83</sup> <span style="color:#008080">k</span> For I have been as a bottle in the smoke; *And yet* thy statutes I have not forgotten.
+<sup>83</sup> <span style="color:#008080">כ</span> For I have been as a bottle in the smoke; *And yet* thy statutes I have not forgotten.
 
-<sup>84</sup> <span style="color:#008080">k</span> How many are the days of thy servant? When wilt thou execute judgment on my persecutors?
+<sup>84</sup> <span style="color:#008080">כ</span> How many are the days of thy servant? When wilt thou execute judgment on my persecutors?
 
 <!-- PAGE 1009 -->
 
-<sup>85</sup> <span style="color:#008080">k</span> The proud have digged pits for me, Which is not according to thy law.
+<sup>85</sup> <span style="color:#008080">כ</span> The proud have digged pits for me, Which is not according to thy law.
 
-<sup>86</sup> <span style="color:#008080">k</span> All thy commandments are truth: Deceitfully do they persecute me; *therefore* help thou me.
+<sup>86</sup> <span style="color:#008080">כ</span> All thy commandments are truth: Deceitfully do they persecute me; *therefore* help thou me.
 
-<sup>87</sup> <span style="color:#008080">k</span> Almost have they consumed me upon the earth; Yet I have not forsaken thy statutes.
+<sup>87</sup> <span style="color:#008080">כ</span> Almost have they consumed me upon the earth; Yet I have not forsaken thy statutes.
 
-<sup>88</sup> <span style="color:#008080">k</span> According to thy goodness quicken me; And I will keep the testimony of thy mouth.
+<sup>88</sup> <span style="color:#008080">כ</span> According to thy goodness quicken me; And I will keep the testimony of thy mouth.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">l</span> [Lamed.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ל</span> [Lamed.]</p>
 
-<sup>89</sup> <span style="color:#008080">l</span> For ever, O Jehovah! Thy word endureth in the heavens.
+<sup>89</sup> <span style="color:#008080">ל</span> For ever, O Jehovah! Thy word endureth in the heavens.
 
-<sup>90</sup> <span style="color:#008080">l</span> From generation to generation *is* thy truth: Thou hast established the earth, and it abideth.
+<sup>90</sup> <span style="color:#008080">ל</span> From generation to generation *is* thy truth: Thou hast established the earth, and it abideth.
 
-<sup>91</sup> <span style="color:#008080">l</span> By thy judgments they continue to this day; For all are thy servants.
+<sup>91</sup> <span style="color:#008080">ל</span> By thy judgments they continue to this day; For all are thy servants.
 
-<sup>92</sup> <span style="color:#008080">l</span> Unless thy law *had been* my delight, Then should I have perished in my affliction.
+<sup>92</sup> <span style="color:#008080">ל</span> Unless thy law *had been* my delight, Then should I have perished in my affliction.
 
-<sup>93</sup> <span style="color:#008080">l</span> Never will I forget thy statutes, For in them thou hast quickened me.
+<sup>93</sup> <span style="color:#008080">ל</span> Never will I forget thy statutes, For in them thou hast quickened me.
 
-<sup>94</sup> <span style="color:#008080">l</span> Thine I am; O save me! For thy statutes I have sought.
+<sup>94</sup> <span style="color:#008080">ל</span> Thine I am; O save me! For thy statutes I have sought.
 
-<p style="text-align:center" markdown="1"><sup>95</sup> <span style="color:#008080">l</span> For me wait do the ungodly to destroy me: *But* I consider thy testimonies.</p>
+<p style="text-align:center" markdown="1"><sup>95</sup> <span style="color:#008080">ל</span> For me wait do the ungodly to destroy me: *But* I consider thy testimonies.</p>
 
-<sup>96</sup> <span style="color:#008080">l</span> In all perfection I have seen an end: Broad is thy commandment exceedingly.
+<sup>96</sup> <span style="color:#008080">ל</span> In all perfection I have seen an end: Broad is thy commandment exceedingly.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">m</span> [Mem.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">מ</span> [Mem.]</p>
 
-<sup>97</sup> <span style="color:#008080">m</span> O how have I loved thy law! All the day it is my meditation.
+<sup>97</sup> <span style="color:#008080">מ</span> O how have I loved thy law! All the day it is my meditation.
 
-<sup>98</sup> <span style="color:#008080">m</span> Than my adversaries thou hast made me wiser by thy commandments; Because for ever they are with me.
+<sup>98</sup> <span style="color:#008080">מ</span> Than my adversaries thou hast made me wiser by thy commandments; Because for ever they are with me.
 
 <!-- PAGE 1010 -->
 
-<sup>99</sup> <span style="color:#008080">m</span> Than all my teachers thou hast made me wiser; Because thy testimonies are my meditation.
+<sup>99</sup> <span style="color:#008080">מ</span> Than all my teachers thou hast made me wiser; Because thy testimonies are my meditation.
 
-<sup>100</sup> <span style="color:#008080">m</span> Than the aged I have more understanding; Because thy statutes I have observed.
+<sup>100</sup> <span style="color:#008080">מ</span> Than the aged I have more understanding; Because thy statutes I have observed.
 
-<sup>101</sup> <span style="color:#008080">m</span> From every evil path I have restrained my feet, That I may keep thy word.
+<sup>101</sup> <span style="color:#008080">מ</span> From every evil path I have restrained my feet, That I may keep thy word.
 
-<sup>102</sup> <span style="color:#008080">m</span> From thy judgments I have not declined; For thou thyself hast taught me.
+<sup>102</sup> <span style="color:#008080">מ</span> From thy judgments I have not declined; For thou thyself hast taught me.
 
-<sup>103</sup> <span style="color:#008080">m</span> How sweet to my palate have been thy words! More [*sweet*] than honey to my mouth!
+<sup>103</sup> <span style="color:#008080">מ</span> How sweet to my palate have been thy words! More [*sweet*] than honey to my mouth!
 
-<sup>104</sup> <span style="color:#008080">m</span> By thy statutes I have gotten understanding; Therefore I have hated every path of falsehood.
+<sup>104</sup> <span style="color:#008080">מ</span> By thy statutes I have gotten understanding; Therefore I have hated every path of falsehood.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">n</span> [Nun.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">נ</span> [Nun.]</p>
 
-<sup>105</sup> <span style="color:#008080">n</span> A lamp to my feet is thy word, And a light to my path.
+<sup>105</sup> <span style="color:#008080">נ</span> A lamp to my feet is thy word, And a light to my path.
 
-<sup>106</sup> <span style="color:#008080">n</span> I have sworn and will make sure, To observe the judgments of thy righteousness.
+<sup>106</sup> <span style="color:#008080">נ</span> I have sworn and will make sure, To observe the judgments of thy righteousness.
 
-<sup>107</sup> <span style="color:#008080">n</span> I am afflicted exceedingly, O Jehovah! Quicken me according to thy word.
+<sup>107</sup> <span style="color:#008080">נ</span> I am afflicted exceedingly, O Jehovah! Quicken me according to thy word.
 
-<sup>108</sup> <span style="color:#008080">n</span> I Let the freewill *offerings* of my mouth, I pray thee, be pleasing to thee, O Jehovah! And thy judgments teach me.
+<sup>108</sup> <span style="color:#008080">נ</span> I Let the freewill *offerings* of my mouth, I pray thee, be pleasing to thee, O Jehovah! And thy judgments teach me.
 
-<sup>109</sup> <span style="color:#008080">n</span> My soul *is* in my hand continually; And thy law I have not forgotten.
+<sup>109</sup> <span style="color:#008080">נ</span> My soul *is* in my hand continually; And thy law I have not forgotten.
 
-<sup>110</sup> <span style="color:#008080">n</span> Laid have the ungodly a snare for me: Yet from thy statutes I have not erred.
+<sup>110</sup> <span style="color:#008080">נ</span> Laid have the ungodly a snare for me: Yet from thy statutes I have not erred.
 
-<sup>111</sup> <span style="color:#008080">n</span> I have as [*my*] inheritance thy testimonies for ever; For the joy of my heart are they.
+<sup>111</sup> <span style="color:#008080">נ</span> I have as [*my*] inheritance thy testimonies for ever; For the joy of my heart are they.
 
 <!-- PAGE 1011 -->
 
-<sup>112</sup> <span style="color:#008080">n</span> I have inclined my heart to perform thy statutes For ever, and even to the end.
+<sup>112</sup> <span style="color:#008080">נ</span> I have inclined my heart to perform thy statutes For ever, and even to the end.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">s</span> [Samech.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ס</span> [Samech.]</p>
 
-<sup>113</sup> <span style="color:#008080">s</span> *Crooked* thoughts I have hated; But thy law I have loved.
+<sup>113</sup> <span style="color:#008080">ס</span> *Crooked* thoughts I have hated; But thy law I have loved.
 
-<sup>114</sup> <span style="color:#008080">s</span> My hiding-place and my shield art thou: In thy word I have trusted.
+<sup>114</sup> <span style="color:#008080">ס</span> My hiding-place and my shield art thou: In thy word I have trusted.
 
-<sup>115</sup> <span style="color:#008080">s</span> Depart from me, ye wicked men! And I will keep the commandments of my God.
+<sup>115</sup> <span style="color:#008080">ס</span> Depart from me, ye wicked men! And I will keep the commandments of my God.
 
-<sup>116</sup> <span style="color:#008080">s</span> Sustain me by thy word, and I shall live: And make me not ashamed of my expectation.
+<sup>116</sup> <span style="color:#008080">ס</span> Sustain me by thy word, and I shall live: And make me not ashamed of my expectation.
 
-<sup>117</sup> <span style="color:#008080">s</span> Establish me, and I shall be safe, And I will consider thy statutes continually.
+<sup>117</sup> <span style="color:#008080">ס</span> Establish me, and I shall be safe, And I will consider thy statutes continually.
 
-<sup>118</sup> <span style="color:#008080">s</span> Thou hast trodden down all who go astray from thy statutes; For falsehood is their deceit.
+<sup>118</sup> <span style="color:#008080">ס</span> Thou hast trodden down all who go astray from thy statutes; For falsehood is their deceit.
 
-<sup>119</sup> <span style="color:#008080">s</span> *As* dross thou hast made to cease all the ungodly of the earth; Therefore I have loved thy testimonies.
+<sup>119</sup> <span style="color:#008080">ס</span> *As* dross thou hast made to cease all the ungodly of the earth; Therefore I have loved thy testimonies.
 
-<sup>120</sup> <span style="color:#008080">s</span> Tremble  [^ff142] for fear of thee did my flesh, And of thy judgments I was afraid.
+<sup>120</sup> <span style="color:#008080">ס</span> Tremble  [^ff142] for fear of thee did my flesh, And of thy judgments I was afraid.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">[</span> [Ain.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ע</span> [Ain.]</p>
 
-<sup>121</sup> <span style="color:#008080">[</span> I have done judgment and righteousness: Give me not up to my oppressors.
+<sup>121</sup> <span style="color:#008080">ע</span> I have done judgment and righteousness: Give me not up to my oppressors.
 
-<sup>122</sup> <span style="color:#008080">[</span> Become surety for thy servant for good, That the proud may not oppress me.
+<sup>122</sup> <span style="color:#008080">ע</span> Become surety for thy servant for good, That the proud may not oppress me.
 
-<sup>123</sup> <span style="color:#008080">[</span> My eyes have failed for thy salvation, And for the word of thy righteousness.
+<sup>123</sup> <span style="color:#008080">ע</span> My eyes have failed for thy salvation, And for the word of thy righteousness.
 
-<sup>124</sup> <span style="color:#008080">[</span> Deal with thy servant according to thy goodness, And thy statutes teach thou me.
+<sup>124</sup> <span style="color:#008080">ע</span> Deal with thy servant according to thy goodness, And thy statutes teach thou me.
 
 <!-- PAGE 1012 -->
 
-<sup>125</sup> <span style="color:#008080">[</span> Thy servant am I, give me understanding, That I may learn thy testimonies.
+<sup>125</sup> <span style="color:#008080">ע</span> Thy servant am I, give me understanding, That I may learn thy testimonies.
 
-<sup>126</sup> <span style="color:#008080">[</span> *It is* time [*for thee*] to work, O Jehovah! *For they* have destroyed thy law.
+<sup>126</sup> <span style="color:#008080">ע</span> *It is* time [*for thee*] to work, O Jehovah! *For they* have destroyed thy law.
 
-<sup>127</sup> <span style="color:#008080">[</span> Therefore I have loved thy statutes Mere than gold and fine gold.
+<sup>127</sup> <span style="color:#008080">ע</span> Therefore I have loved thy statutes Mere than gold and fine gold.
 
-<sup>128</sup> <span style="color:#008080">[</span> Therefore all *thy* commandments I have esteemed *to be* altogether right: Every way of falsehood I have hated:
+<sup>128</sup> <span style="color:#008080">ע</span> Therefore all *thy* commandments I have esteemed *to be* altogether right: Every way of falsehood I have hated:
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">p</span> [Phe.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">פ</span> [Phe.]</p>
 
-<sup>129</sup> <span style="color:#008080">p</span> Marvelous things *are* thy testimonies; Therefore observed them hath my soul.
+<sup>129</sup> <span style="color:#008080">פ</span> Marvelous things *are* thy testimonies; Therefore observed them hath my soul.
 
-<sup>130</sup> <span style="color:#008080">p</span> The entrance of thy words is light, Giving understanding to the little ones.
+<sup>130</sup> <span style="color:#008080">פ</span> The entrance of thy words is light, Giving understanding to the little ones.
 
-<p style="text-align:center" markdown="1"><sup>131</sup> <span style="color:#008080">p</span> My mouth I opened and panted, Because thy commandments I loved.</p>
+<p style="text-align:center" markdown="1"><sup>131</sup> <span style="color:#008080">פ</span> My mouth I opened and panted, Because thy commandments I loved.</p>
 
-<sup>132</sup> <span style="color:#008080">p</span> Look upon me and have pity upon me, According to *thy* judgment towards those who love thy name.
+<sup>132</sup> <span style="color:#008080">פ</span> Look upon me and have pity upon me, According to *thy* judgment towards those who love thy name.
 
-<sup>133</sup> <span style="color:#008080">p</span> My steps direct thou according to thy word, And let not any iniquity have dominion in me.
+<sup>133</sup> <span style="color:#008080">פ</span> My steps direct thou according to thy word, And let not any iniquity have dominion in me.
 
-<sup>134</sup> <span style="color:#008080">p</span> Redeem me from the oppression of men, And I will keep thy precepts.
+<sup>134</sup> <span style="color:#008080">פ</span> Redeem me from the oppression of men, And I will keep thy precepts.
 
-<p style="text-align:center" markdown="1"><sup>135</sup> <span style="color:#008080">p</span> Thy face cause thou to shine upon thy servant, And teach me thy statutes.</p>
+<p style="text-align:center" markdown="1"><sup>135</sup> <span style="color:#008080">פ</span> Thy face cause thou to shine upon thy servant, And teach me thy statutes.</p>
 
-<sup>136</sup> <span style="color:#008080">p</span> Rivers of waters run from my eyes, Because they have not kept thy law.
+<sup>136</sup> <span style="color:#008080">פ</span> Rivers of waters run from my eyes, Because they have not kept thy law.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">x</span> [Tsadde.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">צ</span> [Tsadde.]</p>
 
-<sup>137</sup> <span style="color:#008080">x</span> Righteous art thou, O Jehovah! And right *are* thy judgments.
+<sup>137</sup> <span style="color:#008080">צ</span> Righteous art thou, O Jehovah! And right *are* thy judgments.
 
 <!-- PAGE 1013 -->
 
-<sup>138</sup> <span style="color:#008080">x</span> Thou hast commanded righteousness *in* thy testimonies, And truth exceedingly.
+<sup>138</sup> <span style="color:#008080">צ</span> Thou hast commanded righteousness *in* thy testimonies, And truth exceedingly.
 
-<sup>139</sup> <span style="color:#008080">x</span> Consumed me hath my zeal, Because forgotten thy words have my adversaries.
+<sup>139</sup> <span style="color:#008080">צ</span> Consumed me hath my zeal, Because forgotten thy words have my adversaries.
 
-<sup>140</sup> <span style="color:#008080">x</span> Refined *is* thy word exceedingly: And thy servant hath loved it.
+<sup>140</sup> <span style="color:#008080">צ</span> Refined *is* thy word exceedingly: And thy servant hath loved it.
 
-<sup>141</sup> <span style="color:#008080">x</span> Small *am* I, and despised; [*Yet*] thy precepts I have not forgotten.
+<sup>141</sup> <span style="color:#008080">צ</span> Small *am* I, and despised; [*Yet*] thy precepts I have not forgotten.
 
-<sup>142</sup> <span style="color:#008080">x</span> Thy righteousness *is* righteousness for ever, And thy law is truth.
+<sup>142</sup> <span style="color:#008080">צ</span> Thy righteousness *is* righteousness for ever, And thy law is truth.
 
-<sup>143</sup> <span style="color:#008080">x</span> Trouble and anguish have come upon me; *But* thy commandments *have been* my delights.
+<sup>143</sup> <span style="color:#008080">צ</span> Trouble and anguish have come upon me; *But* thy commandments *have been* my delights.
 
-<sup>144</sup> <span style="color:#008080">x</span> The righteousness of thy testimonies *endureth* for ever; Make me to understand, and I shall live.
+<sup>144</sup> <span style="color:#008080">צ</span> The righteousness of thy testimonies *endureth* for ever; Make me to understand, and I shall live.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">q</span> [Koph.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ק</span> [Koph.]</p>
 
-<sup>145</sup> <span style="color:#008080">q</span> I have cried with my whole heart; Answer me, O Jehovah! *And* thy statutes I will keep.
+<sup>145</sup> <span style="color:#008080">ק</span> I have cried with my whole heart; Answer me, O Jehovah! *And* thy statutes I will keep.
 
-<sup>146</sup> <span style="color:#008080">q</span> I have called upon thee, save me, And I will keep thy testimonies.
+<sup>146</sup> <span style="color:#008080">ק</span> I have called upon thee, save me, And I will keep thy testimonies.
 
-<sup>147</sup> <span style="color:#008080">q</span> I have prevented the dawn of the morning, [^ff143] and have cried: To thy word I have looked up.
+<sup>147</sup> <span style="color:#008080">ק</span> I have prevented the dawn of the morning, [^ff143] and have cried: To thy word I have looked up.
 
-<p style="text-align:center" markdown="1"><sup>148</sup> <span style="color:#008080">q</span> Prevented have my eyes the watches *of the night*, To meditate upon thy word.</p>
+<p style="text-align:center" markdown="1"><sup>148</sup> <span style="color:#008080">ק</span> Prevented have my eyes the watches *of the night*, To meditate upon thy word.</p>
 
-<sup>149</sup> <span style="color:#008080">q</span> My voice hear thou, according to thy mercy, O Jehovah According to thy judgment quicken me.
+<sup>149</sup> <span style="color:#008080">ק</span> My voice hear thou, according to thy mercy, O Jehovah According to thy judgment quicken me.
 
-<sup>150</sup> <span style="color:#008080">q</span> Drawn near have the pursuers of malice; From thy law they have departed.
+<sup>150</sup> <span style="color:#008080">ק</span> Drawn near have the pursuers of malice; From thy law they have departed.
 
 <!-- PAGE 1014 -->
 
-<sup>151</sup> <span style="color:#008080">q</span> Near art thou, O Jehovah! And all thy commandments *are* truth.
+<sup>151</sup> <span style="color:#008080">ק</span> Near art thou, O Jehovah! And all thy commandments *are* truth.
 
-<sup>152</sup> <span style="color:#008080">q</span> From the beginning I have known from thy testimonies, That for ever thou hast founded them.
+<sup>152</sup> <span style="color:#008080">ק</span> From the beginning I have known from thy testimonies, That for ever thou hast founded them.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">r</span> [Resh.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ר</span> [Resh.]</p>
 
-<sup>153</sup> <span style="color:#008080">r</span> Behold my affliction, and rescue me; For thy law I have not forgotten.
+<sup>153</sup> <span style="color:#008080">ר</span> Behold my affliction, and rescue me; For thy law I have not forgotten.
 
-<sup>154</sup> <span style="color:#008080">r</span> Debate my cause, and redeem me; According to thy word quicken me.
+<sup>154</sup> <span style="color:#008080">ר</span> Debate my cause, and redeem me; According to thy word quicken me.
 
-<sup>155</sup> <span style="color:#008080">r</span> Far from the ungodly is safety; Because thy statutes they have not sought.
+<sup>155</sup> <span style="color:#008080">ר</span> Far from the ungodly is safety; Because thy statutes they have not sought.
 
-[^ff155] <span style="color:#008080">r</span> Thy compassions *are* great, O Jehovah! According to thy judgments quicken me.
+[^ff155] <span style="color:#008080">ר</span> Thy compassions *are* great, O Jehovah! According to thy judgments quicken me.
 
-<sup>157</sup> <span style="color:#008080">r</span> Many *are* my persecutors and my oppressors: From thy testimonies I have not declined.
+<sup>157</sup> <span style="color:#008080">ר</span> Many *are* my persecutors and my oppressors: From thy testimonies I have not declined.
 
-<sup>158</sup> <span style="color:#008080">r</span> I saw the perfidious, and chid them; Because thy word they have not kept.
+<sup>158</sup> <span style="color:#008080">ר</span> I saw the perfidious, and chid them; Because thy word they have not kept.
 
-<sup>159</sup> <span style="color:#008080">r</span> Behold how thy commandments I have loved: According to thy clemency quicken me.
+<sup>159</sup> <span style="color:#008080">ר</span> Behold how thy commandments I have loved: According to thy clemency quicken me.
 
-<sup>160</sup> <span style="color:#008080">r</span> The beginning of thy word *is* truth; And to everlasting *is* all the judgment of thy righteousness.
+<sup>160</sup> <span style="color:#008080">ר</span> The beginning of thy word *is* truth; And to everlasting *is* all the judgment of thy righteousness.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">ç</span> [Shin.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ש</span> [Shin.]</p>
 
-<sup>161</sup> <span style="color:#008080">ç</span> Princes have persecuted me without a cause Yet at thy word afraid hath been my heart.
+<sup>161</sup> <span style="color:#008080">ש</span> Princes have persecuted me without a cause Yet at thy word afraid hath been my heart.
 
-<sup>162</sup> <span style="color:#008080">ç</span> Joyful am I over thy word, As he who hath found much spoil.
+<sup>162</sup> <span style="color:#008080">ש</span> Joyful am I over thy word, As he who hath found much spoil.
 
-<sup>163</sup> <span style="color:#008080">ç</span> Deceit I *have* hated and abhorred; Thy law I *have* loved.
+<sup>163</sup> <span style="color:#008080">ש</span> Deceit I *have* hated and abhorred; Thy law I *have* loved.
 
 <!-- PAGE 1015 -->
 
-<sup>164</sup> <span style="color:#008080">ç</span> Seven times a day have I praised thee, Because of the judgments of thy righteousness.
+<sup>164</sup> <span style="color:#008080">ש</span> Seven times a day have I praised thee, Because of the judgments of thy righteousness.
 
-<sup>165</sup> <span style="color:#008080">ç</span> Much peace have those who love thy law, And they have no stumbling-block.
+<sup>165</sup> <span style="color:#008080">ש</span> Much peace have those who love thy law, And they have no stumbling-block.
 
-<sup>166</sup> <span style="color:#008080">ç</span> I have waited for thy salvation, O Jehovah! And thy commandments I have done.
+<sup>166</sup> <span style="color:#008080">ש</span> I have waited for thy salvation, O Jehovah! And thy commandments I have done.
 
-<sup>167</sup> <span style="color:#008080">ç</span> Kept hath my soul thy testimonies, And I have loved them exceedingly.
+<sup>167</sup> <span style="color:#008080">ש</span> Kept hath my soul thy testimonies, And I have loved them exceedingly.
 
-<sup>168</sup> <span style="color:#008080">ç</span> I have kept thy commandments and thy testimonies; For all my ways *are* before thee.
+<sup>168</sup> <span style="color:#008080">ש</span> I have kept thy commandments and thy testimonies; For all my ways *are* before thee.
 
-<p style="text-align:center" markdown="1"><span style="color:#008080">t</span> [Thau.]</p>
+<p style="text-align:center" markdown="1"><span style="color:#008080">ת</span> [Thau.]</p>
 
-<sup>169</sup> <span style="color:#008080">t</span> Come let my cry into thy presence, O Jehovah! According to thy word give me understanding.
+<sup>169</sup> <span style="color:#008080">ת</span> Come let my cry into thy presence, O Jehovah! According to thy word give me understanding.
 
-<sup>170</sup> <span style="color:#008080">t</span> Come let my prayer into thy presence: According to thy word deliver me.
+<sup>170</sup> <span style="color:#008080">ת</span> Come let my prayer into thy presence: According to thy word deliver me.
 
-<sup>171</sup> <span style="color:#008080">t</span> Speak shall my lips praise, When thou shalt have taught me thy statutes.
+<sup>171</sup> <span style="color:#008080">ת</span> Speak shall my lips praise, When thou shalt have taught me thy statutes.
 
-<sup>172</sup> <span style="color:#008080">t</span> Speak shall my tongue of thy word; For all thy precepts are righteousness.
+<sup>172</sup> <span style="color:#008080">ת</span> Speak shall my tongue of thy word; For all thy precepts are righteousness.
 
-<sup>173</sup> <span style="color:#008080">t</span> Let thy hand be to succor me; For thy commandments I have chosen.
+<sup>173</sup> <span style="color:#008080">ת</span> Let thy hand be to succor me; For thy commandments I have chosen.
 
-<sup>174</sup> <span style="color:#008080">t</span> I have longed for thy salvation, O Jehovah! And thy law *hath been* my delights.
+<sup>174</sup> <span style="color:#008080">ת</span> I have longed for thy salvation, O Jehovah! And thy law *hath been* my delights.
 
-<p style="text-align:center" markdown="1"><sup>175</sup> <span style="color:#008080">t</span> Live let my soul, and let it praise thee; And let thy judgments succor me.</p>
+<p style="text-align:center" markdown="1"><sup>175</sup> <span style="color:#008080">ת</span> Live let my soul, and let it praise thee; And let thy judgments succor me.</p>
 
-<sup>176</sup> <span style="color:#008080">t</span> I have wandered like a lost sheep; Seek thy servant, for thy statutes I have not forgotten.
+<sup>176</sup> <span style="color:#008080">ת</span> I have wandered like a lost sheep; Seek thy servant, for thy statutes I have not forgotten.
 
 <!-- PAGE 1016 -->
 
@@ -6056,7 +6056,7 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 
 [^ff76]: In French version the word is “terrible,” which is the idea of the original Hebrew term.
 
-[^ff77]: Calvin has inadvertently omitted in his Latin version to translate the word <span style="color:#008080">µyyj</span> “living.” But he translates it in his French version.
+[^ff77]: Calvin has inadvertently omitted in his Latin version to translate the word <span style="color:#008080">חיים</span> “living.” But he translates it in his French version.
 
 [^ff78]: In the Latin version it is “aptasti;” and in the French, “tu as perce.”
 
@@ -6088,7 +6088,7 @@ All Creatures, Rational and Irrational, Animate and Inanimate, are invited to Pr
 
 [^ff92]: Literally, “moreover.” But see the Commentary.
 
-[^ff93]: “In organo musico.” — *Lat.* “Avec irgyes de musique.” — *Fr.* The Hebrew is <span style="color:#008080">lbnAAylkb</span> *bichli-nebel,* “which is the instrument of the nebel, *or* psaltery.”
+[^ff93]: “In organo musico.” — *Lat.* “Avec irgyes de musique.” — *Fr.* The Hebrew is <span style="color:#008080">בכלי־־נבל</span> *bichli-nebel,* “which is the instrument of the nebel, *or* psaltery.”
 
 [^ff94]: In the French versions this line reads — “Blessed be the Lord *God* of Israel, the God of gods.”
 

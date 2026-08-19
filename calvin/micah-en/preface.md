@@ -45,7 +45,7 @@ But I will now come to his words: for the contents of this Book suggest what is 
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">LECTURE EIGHTY-FIRST</span></p>
 
-[^f1]: The confusion of the name has been through the Septuagint, in which *Michaiah,* the son of Imlah, about a hundred years before, is rendered <span style="color:#0000d4">Micaiav</span>, as well as this Prophet. The son of Imlah in Hebrew is <span style="color:#008080">hykym</span>, while our Prophet is <span style="color:#008080">hkym</span>.—*Ed.*
+[^f1]: The confusion of the name has been through the Septuagint, in which *Michaiah,* the son of Imlah, about a hundred years before, is rendered <span style="color:#0000d4">Micaiav</span>, as well as this Prophet. The son of Imlah in Hebrew is <span style="color:#008080">מיכיה</span>, while our Prophet is <span style="color:#008080">מיכה</span>.—*Ed.*
 
 
 [^f2]: “This Book,” says *Henderson,* “may be divided into two parts; the first consisting of chapters 1-5; and the second, the two remaining chapters, which are more general and didactic in their character.”
