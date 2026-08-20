@@ -148,7 +148,7 @@ body:has(.bridges-stage) footer{display:none}
 /* 经文：楷体（PDF 原为楷体 + 左缩进）；底色按要求改毛玻璃 alpha .39。
    rgba 取值全部来自现有色板：#FBF8F1 底 / #DCC9A6 描边 / #6B4E2E 投影。 */
 .bridges-scripture{
-  margin:0; padding:7px 44px 7px 26px;    /* 右侧 44px 让位给竖排按钮 */
+  margin:0; padding:7px 44px 7px 0;       /* 左侧顶格与正文对齐；右 44px 让位给竖排按钮 */
   cursor:pointer;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
@@ -192,7 +192,7 @@ body:has(.bridges-stage) footer{display:none}
   .bridges-glass-page{padding:18px 15px 15px; border-radius:13px}
   .bridges-nav-lr{gap:10px}
   .bridges-content{font-size:16px; line-height:1.9}
-  .bridges-scripture{padding-left:16px; padding-right:38px}
+  .bridges-scripture{padding-left:0; padding-right:38px}
   .bridges-toggle{width:26px; font-size:11px; letter-spacing:.18em}
   .bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{right:26px}
 }
