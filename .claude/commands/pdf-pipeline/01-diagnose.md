@@ -53,6 +53,7 @@ ages_markers = sum(len(re.findall(r'<\d{6}>', doc[i].get_text()))
 | 无 Ages 指纹 + 单峰 `x≈74: 90 blocks` | **CCEL 单列**（matthew1 / harmony3）| [02b-extract-ccel.md](02b-extract-ccel.md) |
 | 无 Ages 指纹 + 三峰 x≈74/230/310 | **CCEL 平行福音**（matthew old vol 2）| [02c-extract-parallel.md](02c-extract-parallel.md) |
 | 单峰 + 章首多列经文 | CCEL Harmony（harmony1/3，含共观平行节）| [02b-extract-ccel.md](02b-extract-ccel.md)，必须开 `centering: True` |
+| 无 Ages 指纹 + Quartz producer + 单峰 x≈60 + **楷体 FZKTK 经文** + 27pt 首字 | **中文单语注释**（非加尔文，如 RTF-USA 毕列志箴言）| 独立提取器，见 `scripts/extract_bridges_proverbs.py` + [anti-pattern M3c](refs/anti-patterns.md) |
 
 **判断"双语 scripture-only"**（1cor 踩过）：x0 主峰单一不代表整本单列，因为 Ages
 单列 PDF 仍可能在 scripture 段做 2 列布局（英文 / 拉丁文左右排）。必须翻几页

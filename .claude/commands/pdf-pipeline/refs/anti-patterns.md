@@ -292,6 +292,59 @@ python3 scripts/fix_page_split_paragraphs.py calvin/isaiah-1-en
 
 ---
 
+## M3c. 首字下沉（drop cap）把段首切成两半 / 经文 wrap 续行被当独立节
+
+**Trigger**：中文排版 PDF（如 RTF-USA 的 Bridges 箴言注释）里，单元首段渲染成
+
+```
+箴言书有一个自然的开端，从简短描述作者开始。按照     ← 独立一段
+圣经记载，所罗门是最有智慧的人……                    ← 又一段
+```
+
+或经文一节被拆成两行两段：
+
+```
+30 艳丽是虚假的，美容是虚浮的，惟敬畏耶和华的妇女
+必得称赞！
+```
+
+**成因（两个独立坑，常同时出现）**：
+
+1. **drop cap 右侧有多行**。27pt 首字是独立 block，它右侧被挤窄的正文**不止一行**
+   （首字占两行高 → x≈106 有两行），第三行才回到正常 x≈58。
+   - 只把 drop cap 和**第一行**拼接 → 第二行落单
+   - 反过来按 `x >= 70 → 新段落` 一刀切 → x≈106 那行被当成新段起始，同样切错
+
+2. **经文 wrap 续行 x 更小**。经文正文 x≈88，wrap 出来的续行 x≈68——比正文行**更靠左**，
+   任何「x 大者为续行」的直觉都反了。
+
+**Fix**：段首缩进认**区间**不认阈值，drop cap 后的续行由 x 上界排除；经文续行按**内容
+信号**（行首是否节号）而非几何判断——即 §0.3「几何信号必须搭配内容信号」。
+
+```python
+# 段首缩进 x≈77-79；正文续行 x≈58；drop cap 右侧行 x≈104-106
+INDENT_LO, INDENT_HI = 70.0, 95.0
+if pending_drop is not None:
+    para_buf = [pending_drop, text]                  # 首字 + 首行
+    pending_drop = None
+elif INDENT_LO <= x0 <= INDENT_HI and para_buf:
+    flush_para(); para_buf = [text]                  # 只有落在区间内才是新段
+else:
+    para_buf.append(text)                            # x≈58 续行 / x≈106 drop cap 旁行
+
+# 经文：行首是节号 = 新节，否则是上一节的 wrap 续行
+if re.match(r'^\d+\s', text) or not scr_buf:
+    scr_buf.append(text)
+else:
+    scr_buf[-1] += text
+```
+
+**校验**（必做）：PDF 侧字符总数 vs 产物字符总数逐类比对，差值必须能被逐条解释。
+Bridges 箴言实测 509,204 vs 509,202，差 2 = 并入 H1 的「总结」标题。
+参考实现 `scripts/extract_bridges_proverbs.py`。
+
+---
+
 ## M4. 脚注 def 头部出现字面 `</span>` 文本
 
 **Trigger**：`grep -E "^\[\^f[0-9]+\]: </span>" calvin/BOOK-en/*.md` 出现命中。渲染后页脚显示 `</span> "Pource qu'il est..."` 等开头是字面 HTML close 标签。
