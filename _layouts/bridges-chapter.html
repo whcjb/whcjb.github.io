@@ -99,6 +99,18 @@ layout: default
   backdrop-filter:blur(10px) saturate(118%);
   -webkit-backdrop-filter:blur(10px) saturate(118%);
   border:none; border-radius:0; box-shadow:none;   /* 不要凸起的卡片框 */
+  /* 默认只露两行：line-height 1.85 × 2 行 = 3.7em */
+  position:relative; max-height:3.7em; overflow:hidden;
+  transition:max-height .25s ease;
+}
+.bridges-unit.bridges-open > .bridges-unit-head .bridges-scripture{
+  max-height:none;
+}
+/* 折叠时底部渐隐，暗示经文还有下文 */
+.bridges-unit:not(.bridges-open) > .bridges-unit-head .bridges-scripture::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1.7em;
+  background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,0.92) 85%);
+  pointer-events:none;
 }
 .bridges-scripture p{margin:0 0 6px; text-align:left; line-height:1.85}
 .bridges-scripture p:last-child{margin-bottom:0}
@@ -121,7 +133,7 @@ layout: default
 </style>
 
 <script>
-// 默认只显示经文（引用 + 经文），注释折叠；点单元头展开/收起。
+// 默认：经文只露两行，注释折叠。点单元头展开经文全文 + 注释。
 // 展开后经文头转为 sticky，滚注释时经文一直钉在顶部（同马太亨利手感）。
 (function initBridgesUnits(){
   document.querySelectorAll('.bridges-unit').forEach(function(unit){
@@ -131,14 +143,14 @@ layout: default
 
     var tag = document.createElement('span');
     tag.className = 'bridges-toggle';
-    tag.textContent = '注释 ▾';
+    tag.textContent = '展开 ▾';
     head.appendChild(tag);
 
     head.addEventListener('click', function(e){
       // 点经文里的引用（scripture-popup 的链接）不触发折叠
       if (e.target.closest('a')) return;
       var open = unit.classList.toggle('bridges-open');
-      tag.textContent = open ? '收起 ▴' : '注释 ▾';
+      tag.textContent = open ? '收起 ▴' : '展开 ▾';
       // 收起时若单元已滚出视口上方，把它带回视野，避免页面「跳走」
       if (!open && head.getBoundingClientRect().top < 0) {
         head.scrollIntoView({block:'start'});
