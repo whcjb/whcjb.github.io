@@ -97,7 +97,7 @@ layout: default
 /* 经文：楷体（PDF 原为楷体 + 左缩进）；底色按要求改毛玻璃 alpha .39。
    rgba 取值全部来自现有色板：#FBF8F1 底 / #DCC9A6 描边 / #6B4E2E 投影。 */
 .bridges-scripture{
-  margin:0; padding:9px 44px 9px 26px;    /* 右侧 44px 让位给竖排按钮 */
+  margin:0; padding:7px 44px 7px 26px;    /* 右侧 44px 让位给竖排按钮 */
   cursor:pointer;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
@@ -106,7 +106,7 @@ layout: default
   -webkit-backdrop-filter:blur(10px) saturate(118%);
   border:none; border-radius:0; box-shadow:none;   /* 不要凸起的卡片框 */
   /* 默认只露两行：line-height 1.85 × 2 行 = 3.7em */
-  position:relative; max-height:4.05em; overflow:hidden;
+  position:relative; max-height:3.3em; overflow:hidden;
   transition:max-height .25s ease;
 }
 .bridges-unit.bridges-verse-open > .bridges-unit-head .bridges-scripture{
@@ -118,7 +118,7 @@ layout: default
   background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,0.92) 85%);
   pointer-events:none;
 }
-.bridges-scripture p{margin:0 0 5px; text-align:left; line-height:1.8}
+.bridges-scripture p{margin:0 0 1px; text-align:left; line-height:1.58}
 .bridges-scripture p:last-child{margin-bottom:0}
 /* 首字下沉——还原 PDF 里 27pt 的段首大字 */
 .bridges-content p.bridges-lead::first-letter{
