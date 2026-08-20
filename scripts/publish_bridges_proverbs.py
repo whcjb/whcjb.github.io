@@ -22,7 +22,7 @@ BOOK_NAME = '箴言书注释'
 AUTHOR = '查理·毕列志（Charles Bridges）'
 TRANSLATOR = '乔兰山以妲'
 TOTAL = 31
-HEADER_IMG = 'post-bg-2015.jpg'
+HEADER_IMG = 'nt-bg-100.jpg'   # 索引页整屏背景（晨雾湖景，留白多、文字可读）
 
 
 def now():
