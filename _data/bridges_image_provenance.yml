@@ -1,0 +1,140 @@
+# 毕列志《箴言书注释》各章头图来源（Unsplash）。
+# 由 scripts/fetch_bridges_headers.py 下载；每章一张，与 nt-bg-*/calvin 图池不共用。
+# 重新拉取：https://images.unsplash.com/photo-{id}?w=1800&q=80
+images:
+  bridges-bg-01.jpg:
+    id: 7VotVatHM7Q
+    author: "Davey Gravy"
+    alt: "a lake surrounded by trees with mountains in the background"
+  bridges-bg-02.jpg:
+    id: x1LysbPRYNU
+    author: "Getty Images"
+    alt: "View of Monument valley under the blue sky, USA"
+  bridges-bg-03.jpg:
+    id: jFCViYFYcus
+    author: "Lukasz Szmigiel"
+    alt: "forest trees Beautiful woodland path"
+  bridges-bg-04.jpg:
+    id: 83ck2jpvBBQ
+    author: "Tamara Bitter"
+    alt: "a large body of water sitting under a cloudy sky"
+  bridges-bg-05.jpg:
+    id: YwiV7r0R2qA
+    author: "Kamran Abdullayev"
+    alt: "a field of grass with hills in the background 'Journey Through the Ether: Surrealistic Lan"
+  bridges-bg-06.jpg:
+    id: J7aWxTVg4s4
+    author: "M. R."
+    alt: "green mountains under white clouds during daytime Elbrus district (Adyl-su valley)"
+  bridges-bg-07.jpg:
+    id: lSO-UsWU4CM
+    author: "Wesley Tingey"
+    alt: "a field of dry grass with mountains in the background"
+  bridges-bg-08.jpg:
+    id: uDlDUb1T_4M
+    author: "Joshua Earle"
+    alt: "the sun is setting over the ocean waves"
+  bridges-bg-09.jpg:
+    id: RwHv7LgeC7s
+    author: "Johannes Plenio"
+    alt: "forest heat by sunbeam Mystery Forest Light"
+  bridges-bg-10.jpg:
+    id: kbKEuU-YEIw
+    author: "Inggrid Koe"
+    alt: "gray forest with fog A walk in the forest"
+  bridges-bg-11.jpg:
+    id: w6ZMTahJGoE
+    author: "Getty Images"
+    alt: "Beautiful nature background with close up of Ears of ripe wheat on Cereal field"
+  bridges-bg-12.jpg:
+    id: MKtZEKQaPdw
+    author: "Anita Austvika"
+    alt: "a branch of an olive tree with olives on it"
+  bridges-bg-13.jpg:
+    id: twukN12EN7c
+    author: "simon"
+    alt: "landscape photography of mountains Pink toned thoughts on a hike — Everything comes in wa"
+  bridges-bg-14.jpg:
+    id: uvQmacxnfcE
+    author: "Hans Luiggi"
+    alt: "mountain aerial photography"
+  bridges-bg-15.jpg:
+    id: H8vhhepiiaU
+    author: "Maksim Shutov"
+    alt: "brown dirt road between green grass and trees during daytime"
+  bridges-bg-16.jpg:
+    id: w-EAWnIgoM0
+    author: "Alexandre Grégoire"
+    alt: "silhouette of trees and body of water in sunrise background The only great thing to come o"
+  bridges-bg-17.jpg:
+    id: c7mQFhvNARQ
+    author: "rolf neumann"
+    alt: "mountains near trees under white sky during daytime"
+  bridges-bg-18.jpg:
+    id: ipGnsZawLqY
+    author: "Rob Wingate"
+    alt: "A winding river flows through a forested valley in autumn"
+  bridges-bg-19.jpg:
+    id: pVr6wvUneMk
+    author: "Wolfgang Hasselmann"
+    alt: "rolling sand dunes in desert landscape after a sand storm the the air cleans up quickly"
+  bridges-bg-20.jpg:
+    id: LmTgQa7pqw0
+    author: "Peter Mason"
+    alt: "brown rocky mountain beside blue sea under blue sky during daytime"
+  bridges-bg-21.jpg:
+    id: pF1ug8ysTtY
+    author: "Federica Galli"
+    alt: "A dense forest of golden larch trees below jagged grey mountain peaks"
+  bridges-bg-22.jpg:
+    id: BS-Uxe8wU5Y
+    author: "Thomas Griesbeck"
+    alt: "Dense evergreen trees emerging from thick grey fog on a mountain slope www.jackscorner.de"
+  bridges-bg-23.jpg:
+    id: 1dGMs4hhcVA
+    author: "Polina Rytova"
+    alt: "wheat field 'Донбас - це Україна' Boundless fields of wheat in the east of Ukraine"
+  bridges-bg-24.jpg:
+    id: 6gFxye8SVoY
+    author: "Vasilis Caravitis"
+    alt: "a tree in a field with a blue sky in the background Tree in olive grove"
+  bridges-bg-25.jpg:
+    id: yIkD6xtaUgk
+    author: "Ales Krivec"
+    alt: "a view of a valley with mountains in the background Amazing landscape of Seiser Alm platea"
+  bridges-bg-26.jpg:
+    id: OJ02cQHePds
+    author: "max pruvost"
+    alt: "green trees on green grass field under blue sky and white clouds during daytime"
+  bridges-bg-27.jpg:
+    id: x8xJpClTvR0
+    author: "Adrien Tutin"
+    alt: "brown grass surrounded by green trees Mystic Autumn"
+  bridges-bg-28.jpg:
+    id: rlMw06pYp0c
+    author: "Frank van Hulst"
+    alt: "a body of water surrounded by a forest"
+  bridges-bg-29.jpg:
+    id: ugjUDUJDlvs
+    author: "Daniel Brzdęk"
+    alt: "a field of green grass with a hill in the background hill"
+  bridges-bg-30.jpg:
+    id: Il5AsRTgi3k
+    author: "JD Andrews"
+    alt: "green trees near river during daytime"
+  bridges-bg-31.jpg:
+    id: Us_dv71f1bc
+    author: "Juli Kosolapova"
+    alt: "dusty desert valley"
+  bridges-bg-32.jpg:
+    id: 8qpxkZ8epIA
+    author: "Bernhard"
+    alt: "A view of the ocean from the top of a hill"
+  bridges-bg-33.jpg:
+    id: 4PWEXNlnhbo
+    author: "Mathieu Odin"
+    alt: "a bench sitting in the middle of a forest next to a lake"
+  bridges-bg-34.jpg:
+    id: IjF9eroUhkc
+    author: "Ales Krivec"
+    alt: "a snowy mountain range Mist on a winter morning in the mountains. After the snowstorm duri"

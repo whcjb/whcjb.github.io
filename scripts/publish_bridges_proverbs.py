@@ -22,7 +22,16 @@ BOOK_NAME = '箴言书注释'
 AUTHOR = '查理·毕列志（Charles Bridges）'
 TRANSLATOR = '乔兰山以妲'
 TOTAL = 31
-HEADER_IMG = 'nt-bg-100.jpg'   # 索引页整屏背景（晨雾湖景，留白多、文字可读）
+# 每页一张独立风景图（img/bridges-bg-NN.jpg，由 scripts/fetch_bridges_headers.py
+# 从 Unsplash 下载，本书专用、不与 nt-bg-*/calvin 图池共用）。
+# 分配：index=01，前言=02，第 1–31 章=03–33，总结=34。
+HEADER_POOL = 'bridges-bg-{:02d}.jpg'
+
+
+def header_img(key):
+    order = seq()                      # ['preface', '1'..'31', 'summary']
+    idx = order.index(key) + 2 if key in order else 1
+    return HEADER_POOL.format(idx)
 
 
 def now():
@@ -61,7 +70,7 @@ def front_matter(key, stamp):
         f'book_id: {BOOK_ID}',
         f'book_name: {BOOK_NAME}',
         f'author: "{AUTHOR}"',
-        f'header-img: {HEADER_IMG}',
+        f'header-img: {header_img(key)}',
         f'title: "{BOOK_NAME} · {label(key)}"',
         f'date: {stamp}',
     ]
@@ -83,7 +92,7 @@ book_id: {BOOK_ID}
 book_name: {BOOK_NAME}
 author: "{AUTHOR}"
 chapters: {TOTAL}
-header-img: {HEADER_IMG}
+header-img: bridges-bg-01.jpg
 title: "{BOOK_NAME}"
 source_note: |
   英文原著 <em>An Exposition of the Book of Proverbs</em>, by Charles Bridges,

@@ -2,7 +2,9 @@
 layout: default
 ---
 
-{% assign bg = page.header-img | default: "nt-bg-100.jpg" %}
+{% comment %}必须用 page['header-img']：Liquid 里 page.header-img 的连字符
+   会被当成减号，取不到值而静默回落到 default。{% endcomment %}
+{% assign bg = page["header-img"] | default: "bridges-bg-01.jpg" %}
 
 <!-- 整屏背景图：固定不动，全部内容悬浮其上（与索引页同一风格） -->
 <div class="bridges-bg" style="background-image:url('{{ site.baseurl }}/img/{{ bg }}')"></div>

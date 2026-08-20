@@ -3,7 +3,7 @@ layout: bridges-chapter
 book_id: proverbs
 book_name: 箴言书注释
 author: "查理·毕列志（Charles Bridges）"
-header-img: nt-bg-100.jpg
+header-img: bridges-bg-02.jpg
 title: "箴言书注释 · 前言"
 date: 2026-08-20 11:16
 section: preface
