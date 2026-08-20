@@ -78,7 +78,7 @@ layout: default
 }
 /* 右下角展开提示胶囊 */
 .bridges-toggle{
-  position:absolute; right:0; bottom:9px;
+  position:absolute; right:0; bottom:9px; z-index:6; cursor:pointer;
   font-size:11.5px; letter-spacing:.08em; color:#8A6A3B;
   background:#FBF8F1; padding:2px 9px;
   border:1px solid #DCC9A6; border-radius:11px;
@@ -93,6 +93,7 @@ layout: default
    rgba 取值全部来自现有色板：#FBF8F1 底 / #DCC9A6 描边 / #6B4E2E 投影。 */
 .bridges-scripture{
   margin:0; padding:15px 18px 15px 26px;
+  cursor:pointer;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
   background:rgba(251,248,241,0.39);
@@ -103,11 +104,11 @@ layout: default
   position:relative; max-height:3.7em; overflow:hidden;
   transition:max-height .25s ease;
 }
-.bridges-unit.bridges-open > .bridges-unit-head .bridges-scripture{
+.bridges-unit.bridges-verse-open > .bridges-unit-head .bridges-scripture{
   max-height:none;
 }
 /* 折叠时底部渐隐，暗示经文还有下文 */
-.bridges-unit:not(.bridges-open) > .bridges-unit-head .bridges-scripture::after{
+.bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{
   content:""; position:absolute; left:0; right:0; bottom:0; height:1.7em;
   background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,0.92) 85%);
   pointer-events:none;
@@ -133,8 +134,10 @@ layout: default
 </style>
 
 <script>
-// 默认：经文只露两行，注释折叠。点单元头展开经文全文 + 注释。
-// 展开后经文头转为 sticky，滚注释时经文一直钉在顶部（同马太亨利手感）。
+// 两个互不干扰的开关：
+//   点经文块（或头部空白）→ 展开/收起**经文**，不动注释
+//   点右侧「注释」按钮   → 展开/收起**注释**，不动经文
+// 注释展开时经文头转 sticky，滚注释时经文一直钉在顶部。
 (function initBridgesUnits(){
   document.querySelectorAll('.bridges-unit').forEach(function(unit){
     var head = unit.querySelector(':scope > .bridges-unit-head');
@@ -143,15 +146,24 @@ layout: default
 
     var tag = document.createElement('span');
     tag.className = 'bridges-toggle';
-    tag.textContent = '展开 ▾';
+    tag.textContent = '注释 ▾';
+    tag.title = '展开注释';
     head.appendChild(tag);
 
+    // 经文开关
     head.addEventListener('click', function(e){
-      // 点经文里的引用（scripture-popup 的链接）不触发折叠
-      if (e.target.closest('a')) return;
+      if (e.target.closest('a')) return;              // 经文里的引用照常弹卡片
+      if (e.target.closest('.bridges-toggle')) return; // 按钮自己处理
+      unit.classList.toggle('bridges-verse-open');
+    });
+
+    // 注释开关
+    tag.addEventListener('click', function(e){
+      e.stopPropagation();
       var open = unit.classList.toggle('bridges-open');
-      tag.textContent = open ? '收起 ▴' : '展开 ▾';
-      // 收起时若单元已滚出视口上方，把它带回视野，避免页面「跳走」
+      tag.textContent = open ? '收起 ▴' : '注释 ▾';
+      tag.title = open ? '收起注释' : '展开注释';
+      // 收起后若单元已滚出视口上方，把它带回视野，避免页面「跳走」
       if (!open && head.getBoundingClientRect().top < 0) {
         head.scrollIntoView({block:'start'});
       }
