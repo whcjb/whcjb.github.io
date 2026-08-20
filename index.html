@@ -5,124 +5,138 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
 ---
 
 <style>
-/* ── Search bar ───────────────────────────────────── */
-.home-search {
-    margin: -8px 0 32px;
-    position: relative;
+/* ─────────────────────────────────────────────────────────
+   首页。原来六张高饱和渐变色块（两个绿、三个棕）互相打架，
+   改成统一的纸感卡片，各站点色只作为左侧色条 + 图标的点缀。
+   ───────────────────────────────────────────────────────── */
+
+/* ── 搜索 ─────────────────────────────────────────── */
+.home-search{margin:-4px 0 30px; position:relative}
+.home-search svg{
+  position:absolute; left:15px; top:50%; transform:translateY(-50%);
+  color:#b9ab93; pointer-events:none;
 }
-.home-search svg {
-    position: absolute; left: 14px; top: 50%;
-    transform: translateY(-50%); color: #bbb; pointer-events: none;
+.home-search input{
+  width:100%; box-sizing:border-box;
+  padding:12px 16px 12px 44px;
+  font-size:15px; font-family:inherit; color:#3a332a;
+  border:1px solid #e3dacb; border-radius:9px;
+  outline:none; background:#fdfbf7;
+  transition:border-color .2s, box-shadow .2s, background .2s;
 }
-.home-search input {
-    width: 100%; box-sizing: border-box;
-    padding: 11px 14px 11px 42px;
-    font-size: 15px; font-family: inherit;
-    border: 1.5px solid #ddd; border-radius: 6px;
-    outline: none; transition: border-color .2s, box-shadow .2s;
-    background: #fafafa;
-}
-.home-search input:focus {
-    border-color: #C9922A;
-    box-shadow: 0 0 0 3px rgba(201,146,42,.12);
-    background: #fff;
+.home-search input::placeholder{color:#b0a494}
+.home-search input:focus{
+  border-color:#C9922A; background:#fff;
+  box-shadow:0 0 0 3px rgba(201,146,42,.10);
 }
 
-/* ── Resource cards ───────────────────────────────── */
-.home-resources {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 36px;
+/* ── 资源卡片 ─────────────────────────────────────── */
+.home-resources{
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:12px; margin-bottom:38px;
 }
-@media (max-width: 480px) {
-    .home-resources { grid-template-columns: 1fr; }
-}
-.res-card {
-    display: block; text-decoration: none !important;
-    border-radius: 10px; padding: 20px 18px 18px;
-    transition: transform .18s, box-shadow .18s;
-    position: relative; overflow: hidden;
-}
-.res-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.13); }
-.res-card-calvin  { background: linear-gradient(135deg,#1a5276,#2e86c1); color: #fff; }
-.res-card-mhenry  { background: linear-gradient(135deg,#7B5E3A,#C9922A); color: #fff; }
-.res-card-owen    { background: linear-gradient(135deg,#14382f,#1f5a4b); color: #fff; }
-.res-card-bridges { background: linear-gradient(135deg,#5B3A29,#96613F); color: #fff; }
-.res-card-reading { background: linear-gradient(135deg,#1e6b4e,#27ae60); color: #fff; }
-.res-card-creeds  { background: linear-gradient(135deg,#3a1e00,#7a4000); color: #fff; }
-.res-card-icon {
-    font-size: 28px; margin-bottom: 10px; display: block; opacity: .9;
-}
-.res-card-name {
-    font-size: 15px; font-weight: bold; display: block; margin-bottom: 4px;
-}
-.res-card-sub {
-    font-size: 12px; opacity: .78; display: block;
-}
-.res-card::after {
-    content: '→';
-    position: absolute; right: 14px; bottom: 14px;
-    font-size: 18px; opacity: .5;
-}
+@media (max-width:860px){.home-resources{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.home-resources{grid-template-columns:1fr}}
 
-/* ── Section heading ──────────────────────────────── */
-.home-section-title {
-    font-size: 13px; font-weight: bold; letter-spacing: .12em;
-    color: #999; text-transform: uppercase;
-    margin: 0 0 16px; padding-bottom: 8px;
-    border-bottom: 2px solid #f0ebe3;
-    display: flex; align-items: center; gap: 8px;
+.res-card{
+  --accent:#8a7a5e;
+  position:relative; display:block; overflow:hidden;
+  padding:16px 16px 15px 19px;
+  background:#fdfbf7;
+  border:1px solid #e8e0d2; border-left:3px solid var(--accent);
+  border-radius:8px;
+  text-decoration:none !important;
+  transition:transform .16s, box-shadow .16s, border-color .16s, background .16s;
 }
-.home-section-title span { flex: 1; }
-.home-section-title a { font-size: 12px; color: #C9922A; text-transform: none; letter-spacing: 0; }
+.res-card:hover{
+  transform:translateY(-2px); background:#fff;
+  border-color:#ddd2be; border-left-color:var(--accent);
+  box-shadow:0 6px 18px rgba(90,70,40,.10);
+}
+.res-card-icon{
+  display:block; font-size:19px; line-height:1;
+  color:var(--accent); margin-bottom:9px; opacity:.92;
+}
+.res-card-name{
+  display:block; font-size:15px; font-weight:600;
+  color:#332d24; margin-bottom:3px; letter-spacing:.01em;
+}
+.res-card-sub{
+  display:block; font-size:11.5px; color:#9d9483;
+}
+.res-card::after{
+  content:'→'; position:absolute; right:13px; bottom:11px;
+  font-size:14px; color:var(--accent); opacity:0;
+  transform:translateX(-4px); transition:opacity .16s, transform .16s;
+}
+.res-card:hover::after{opacity:.65; transform:translateX(0)}
+/* 各站点色只做点缀 —— 取自各自版面的主色 */
+.res-card-calvin  {--accent:#1a5276}
+.res-card-mhenry  {--accent:#C9922A}
+.res-card-owen    {--accent:#1f5a4b}
+.res-card-bridges {--accent:#6B4E2E}
+.res-card-reading {--accent:#2e7d32}
+.res-card-creeds  {--accent:#7a4000}
 
-/* ── Post / content cards ─────────────────────────── */
-.home-card {
-    display: flex; gap: 12px; align-items: flex-start;
-    padding: 14px 0;
-    border-bottom: 1px solid #f0ebe3;
-    text-decoration: none !important;
-    transition: background .15s;
+/* ── 分节标题 ─────────────────────────────────────── */
+.home-section-title{
+  font-size:12px; font-weight:600; letter-spacing:.16em;
+  color:#a89a83; text-transform:uppercase;
+  margin:0 0 6px; padding-bottom:9px;
+  border-bottom:1px solid #ece5da;
+  display:flex; align-items:center; gap:8px;
 }
-.home-card:last-child { border-bottom: none; }
-.home-card:hover .hc-title { color: #C9922A; }
+.home-section-title span{flex:1}
+.home-section-title a{font-size:12px; color:#C9922A; text-transform:none; letter-spacing:0}
 
-.hc-badge {
-    flex-shrink: 0; margin-top: 3px;
-    font-size: 10px; font-weight: bold;
-    padding: 2px 6px; border-radius: 3px;
-    white-space: nowrap;
+/* ── 内容列表 ─────────────────────────────────────── */
+.home-card{
+  display:flex; gap:13px; align-items:flex-start;
+  padding:13px 10px 13px 2px; margin:0 -10px 0 -2px;
+  border-bottom:1px solid #f2ece2;
+  border-radius:6px;
+  text-decoration:none !important;
+  transition:background .15s;
 }
-.badge-calvin  { background: #e8f4f8; color: #0085a1; }
-.badge-mhenry  { background: #fef3e2; color: #C9922A; }
-.badge-reading { background: #eef6ee; color: #2e7d32; }
-.badge-post    { background: #f3e8f8; color: #7b3fa0; }
+.home-card:last-of-type{border-bottom:none}
+.home-card:hover{background:#fdfbf7}
+.home-card:hover .hc-title{color:#8a6a3b}
 
-.hc-body { flex: 1; min-width: 0; }
-.hc-title {
-    font-size: 15px; font-weight: bold; color: #333;
-    line-height: 1.45; margin-bottom: 3px;
-    transition: color .15s;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+.hc-badge{
+  flex-shrink:0; margin-top:2px;
+  font-size:10px; font-weight:600; letter-spacing:.04em;
+  padding:3px 7px; border-radius:4px; white-space:nowrap;
+  border:1px solid;
 }
-.hc-sub {
-    font-size: 13px; color: #888; line-height: 1.4;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.hc-date { flex-shrink: 0; font-size: 12px; color: #bbb; margin-top: 4px; }
+.badge-calvin  {background:#f2f7fa; color:#1a5276; border-color:#dbe8f0}
+.badge-mhenry  {background:#fdf6e9; color:#a8761d; border-color:#f0e3c8}
+.badge-bridges {background:#faf6ef; color:#6B4E2E; border-color:#e8dcc6}
+.badge-reading {background:#f1f7f1; color:#2e7d32; border-color:#dceadd}
+.badge-post    {background:#f7f2fa; color:#6b3f8f; border-color:#e8dcf0}
 
-/* ── Pager ────────────────────────────────────────── */
-.home-pager {
-    text-align: center; margin-top: 20px;
+.hc-body{flex:1; min-width:0}
+.hc-title{
+  font-size:15px; font-weight:600; color:#332e26;
+  line-height:1.5; margin-bottom:2px; transition:color .15s;
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+  overflow:hidden;                      /* 长标题折两行，不再一刀截断 */
 }
-.home-pager a {
-    display: inline-block; padding: 7px 20px;
-    border: 1.5px solid #C9922A; border-radius: 4px;
-    color: #C9922A !important; font-size: 13px; font-weight: bold;
-    text-decoration: none !important; transition: background .15s, color .15s;
+.hc-sub{
+  font-size:12.5px; color:#9a8f7f; line-height:1.4;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-.home-pager a:hover { background: #C9922A; color: #fff !important; }
+.hc-date{flex-shrink:0; font-size:11.5px; color:#bdb3a2; margin-top:3px; font-variant-numeric:tabular-nums}
+
+/* ── 分页 ─────────────────────────────────────────── */
+.home-pager{text-align:center; margin-top:26px}
+.home-pager a{
+  display:inline-block; padding:8px 22px;
+  border:1px solid #ddd0b6; border-radius:6px;
+  color:#8a6a3b !important; font-size:13px; font-weight:600;
+  background:#fdfbf7;
+  text-decoration:none !important; transition:background .15s, color .15s, border-color .15s;
+}
+.home-pager a:hover{background:#6B4E2E; border-color:#6B4E2E; color:#fff !important}
 </style>
 
 <!-- Search -->
@@ -156,12 +170,12 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
         <span class="res-card-sub">Charles Bridges · Proverbs</span>
     </a>
     <a class="res-card res-card-reading" href="{{ site.baseurl }}/reading/">
-        <span class="res-card-icon">❧</span>
+        <span class="res-card-icon">❈</span>
         <span class="res-card-name">属灵阅读</span>
         <span class="res-card-sub">Spiritual Reading</span>
     </a>
     <a class="res-card res-card-creeds" href="{{ site.baseurl }}/creeds/">
-        <span class="res-card-icon">✦</span>
+        <span class="res-card-icon">✜</span>
         <span class="res-card-name">信经信条</span>
         <span class="res-card-sub">Creeds &amp; Confessions</span>
     </a>
@@ -173,26 +187,63 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
 </div>
 
 {% if paginator.page == 1 %}
-    {% assign calvin_pages  = site.pages | where: "layout", "calvin-chapter"  | where_exp: "p", "p.date" %}
-    {% assign mhenry_pages  = site.pages | where: "layout", "mhenry-chapter"  | where_exp: "p", "p.date" %}
-    {% assign reading_pages = site.pages | where: "layout", "reading-chapter" | where_exp: "p", "p.date" %}
-    {% assign all_chapters = calvin_pages | concat: mhenry_pages | concat: reading_pages | sort: "date" | reverse %}
-    {% for item in all_chapters limit: 12 %}
+    {% comment %}
+      两件事：
+      1. 加尔文的正式章节 layout 是 calvin-en（1310 页，中英文共用这个名字），
+         原来只筛 calvin-chapter，那只有 7 个导论页——加尔文的更新一直没上首页，
+         还把导论页渲染成「第0章」。
+      2. 每个来源各取最新若干条再合并排序：一次批量发布（如毕列志箴言 33 章
+         同一时间戳）否则会把首页整屏刷满，别的书全被挤掉。
+      中英文都用 calvin-en，Liquid 没有 not-contains 没法反选，故候选池放大，
+      在输出循环里 continue 掉 book_id 以 -en 结尾的英文版，用计数器控制输出 12 条。
+    {% endcomment %}
+    {% assign calvin_all  = site.pages | where: "layout", "calvin-en"      | where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign intro_all   = site.pages | where: "layout", "calvin-chapter" | where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign mhenry_all  = site.pages | where: "layout", "mhenry-chapter" | where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign reading_all = site.pages | where: "layout", "reading-chapter"| where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign bridges_all = site.pages | where: "layout", "bridges-chapter"| where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign calvin_top  = calvin_all  | slice: 0, 20 %}
+    {% assign intro_top   = intro_all   | slice: 0, 1 %}
+    {% assign mhenry_top  = mhenry_all  | slice: 0, 4 %}
+    {% assign reading_top = reading_all | slice: 0, 3 %}
+    {% assign bridges_top = bridges_all | slice: 0, 2 %}
+    {% assign all_chapters = calvin_top | concat: intro_top | concat: mhenry_top | concat: reading_top | concat: bridges_top | sort: "date" | reverse %}
+    {% assign shown = 0 %}
+    {% assign calvin_shown = 0 %}
+    {% for item in all_chapters %}
+    {% if shown >= 12 %}{% break %}{% endif %}
+    {% assign bid = item.book_id | default: "" %}
+    {% if item.layout == "calvin-en" %}
+      {% if bid contains "-en" %}{% continue %}{% endif %}
+      {% comment %}候选池放大到 20 是为了过滤英文版，这里再限 4 条，
+         否则加尔文（每天定时更新）会把别的来源全挤下去。{% endcomment %}
+      {% if calvin_shown >= 4 %}{% continue %}{% endif %}
+      {% assign calvin_shown = calvin_shown | plus: 1 %}
+    {% endif %}
+    {% assign shown = shown | plus: 1 %}
     <a class="home-card" href="{{ site.baseurl }}{{ item.url }}">
-        {% if item.layout == 'calvin-chapter' %}
+        {% if item.layout == "calvin-en" or item.layout == "calvin-chapter" %}
         <span class="hc-badge badge-calvin">加尔文</span>
-        {% elsif item.layout == 'mhenry-chapter' %}
+        {% elsif item.layout == "mhenry-chapter" %}
         <span class="hc-badge badge-mhenry">亨利</span>
+        {% elsif item.layout == "bridges-chapter" %}
+        <span class="hc-badge badge-bridges">毕列志</span>
         {% else %}
         <span class="hc-badge badge-reading">阅读</span>
         {% endif %}
         <div class="hc-body">
-            {% if item.layout == 'reading-chapter' %}
+            {% if item.layout == "reading-chapter" %}
             <div class="hc-title">{{ item.section_title }}</div>
             {% if item.book_title %}<div class="hc-sub">{{ item.book_title }}{% if item.author_name %} · {{ item.author_name }}{% endif %}</div>{% endif %}
-            {% elsif item.layout == 'calvin-chapter' %}
-            <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
+            {% elsif item.layout == "calvin-chapter" %}
+            <div class="hc-title">{{ item.book_name }} · {{ item.section_title | default: "绪论" }}</div>
             <div class="hc-sub">加尔文圣经注释</div>
+            {% elsif item.layout == "calvin-en" %}
+            <div class="hc-title">{{ item.book_name }}{% if item.chapter %} 第{{ item.chapter }}章{% elsif item.title %} · {{ item.title }}{% endif %}</div>
+            <div class="hc-sub">加尔文圣经注释</div>
+            {% elsif item.layout == "bridges-chapter" %}
+            <div class="hc-title">{% if item.chapter %}箴言 第{{ item.chapter }}章{% elsif item.section == "preface" %}箴言书注释 · 前言{% else %}箴言书注释 · 总结{% endif %}</div>
+            <div class="hc-sub">毕列志箴言书注释</div>
             {% else %}
             <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
             <div class="hc-sub">马太亨利圣经注释</div>
