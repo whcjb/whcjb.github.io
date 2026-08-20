@@ -62,18 +62,12 @@ layout: default
 /* ── 解经单元：默认只显示经文，注释折叠；经文置顶（sticky）────────── */
 .bridges-unit{position:relative; margin:0 0 18px; scroll-margin-top:64px}
 .bridges-unit-head{
-  position:relative; padding:12px 0 14px;
+  position:relative; padding:4px 0 10px;
   border-bottom:1px solid #e6dcc9;
   cursor:pointer; user-select:none;
 }
-.bridges-unit-head h2{margin:0 0 10px; scroll-margin-top:64px}
-/* 标题里的「箴言 30:29-31」会被 Safari 的 Data Detector 或 popup linkifier
-   加成蓝色下划线链接——一律压掉，它是标题不是引用。 */
-.bridges-unit-head h2, .bridges-unit-head h2 *{
-  text-decoration:none !important; border-bottom:none !important;
-  color:#6B4E2E !important; background:none !important;
-}
-.bridges-unit-head h2 a{pointer-events:none; cursor:pointer}
+/* 单元不再有「箴言 N:a-b」标题（经文自带节号，标题是重复信息）；
+   引用留在 .bridges-unit[data-ref] 上，锚点为 #pv-章-节。 */
 /* 展开后经文钉在单元顶部，滚注释时始终看得见 */
 .bridges-unit.bridges-open{margin-bottom:34px}
 .bridges-unit.bridges-open > .bridges-unit-head{

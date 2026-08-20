@@ -176,17 +176,16 @@ def render(ch, units):
             continue
 
         norm = re.sub(r'^箴言\s*', '箴言 ', title.replace('：', ':'))
-        # 显式锚点：kramdown 给中文标题只会生成 section / section-1 这类无意义 id，
-        # 无法用来分享或跳转单元。这里按「章-节」造稳定 id，如 #pv-1-1-4。
+        # 不渲染「箴言 N:a-b」标题——经文本身已带节号，标题是重复信息。
+        # 引用仍保留在 data-ref 上，并按「章-节」给单元一个稳定 id（#pv-1-1-4）
+        # 供分享/跳转（kramdown 对中文标题只会生成 section / section-1 这类无意义 id）。
         m = UNIT_RE.match(title.replace(' ', '').replace('：', ':'))
-        slug = ''
         if m:
             verses = re.sub(r'[^\d]+', '-', m.group(2)).strip('-')
-            slug = f' {{#pv-{m.group(1)}-{verses}}}'
-        lines += ['<div class="bridges-unit">',
-                  f'<div class="bridges-unit-head" markdown="1" id="unit-pv-{m.group(1)}-{verses}">'
-                  if m else '<div class="bridges-unit-head" markdown="1">',
-                  '', f'## {norm}{slug}', '']
+            unit_open = f'<div class="bridges-unit" id="pv-{m.group(1)}-{verses}" data-ref="{norm}">'
+        else:
+            unit_open = f'<div class="bridges-unit" data-ref="{norm}">'
+        lines += [unit_open, '<div class="bridges-unit-head" markdown="1">', '']
         if scr:
             # PDF 里经文只是楷体 + 缩进，**没有边框/底色**——§0.0 反向约束
             lines += ['<div class="bridges-scripture" markdown="1">', '']
