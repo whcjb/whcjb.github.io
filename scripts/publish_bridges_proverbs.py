@@ -30,6 +30,15 @@ def now():
     return subprocess.check_output(['date', '+%Y-%m-%d %H:%M']).decode().strip()
 
 
+def existing_date(key):
+    """已发布过的章节沿用原 date——CLAUDE.md：已有文件的时间不要修改。"""
+    p = OUT / f'{key}.md'
+    if not p.exists():
+        return None
+    m = re.search(r'^date:\s*(.+)$', p.read_text(encoding='utf-8'), re.M)
+    return m.group(1).strip() if m else None
+
+
 def seq():
     """发布顺序：preface, 1..31, summary"""
     return ['preface'] + [str(i) for i in range(1, TOTAL + 1)] + ['summary']
@@ -112,7 +121,8 @@ def main():
         body = body.replace('****', '')
         body = re.sub(r'<<<[^>]*?>>>', '', body)
         out_p = OUT / f'{key}.md'
-        out_p.write_text(front_matter(key, stamp) + body, encoding='utf-8')
+        out_p.write_text(front_matter(key, existing_date(key) or stamp) + body,
+                         encoding='utf-8')
         print(f'✓ {out_p.relative_to(ROOT)} ({out_p.stat().st_size} bytes)')
 
     if not args.chapter:

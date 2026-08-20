@@ -59,13 +59,39 @@ layout: default
   margin:38px 0 18px; letter-spacing:.04em;
 }
 .bridges-content p{margin:0 0 16px; text-align:justify}
+/* ── 解经单元：引用 + 经文置顶（sticky），注释在下方滚动 ────────── */
+.bridges-unit{position:relative; margin:0 0 34px; scroll-margin-top:64px}
+.bridges-unit-head h2{scroll-margin-top:64px}
+.bridges-unit-head{
+  position:sticky; top:0; z-index:5;
+  background:#FBF8F1;                   /* 必须不透明，否则注释文字透上来 */
+  border-bottom:1px solid #e6dcc9;
+  padding:10px 0 12px;
+  cursor:pointer; user-select:none;
+  overflow:hidden; transition:max-height .25s ease;
+}
+.bridges-unit-head.bridges-folded{max-height:8.2em}
+/* 折叠时底部渐隐，提示还有内容 */
+.bridges-unit-head.bridges-folded::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:2.4em;
+  background:linear-gradient(to bottom,rgba(251,248,241,0),#FBF8F1 78%);
+  pointer-events:none;
+}
+.bridges-unit-head .bridges-more{
+  position:absolute; right:0; bottom:2px; z-index:6;
+  font-size:11.5px; letter-spacing:.08em; color:#8A6A3B;
+  background:#FBF8F1; padding:1px 6px; border:1px solid #DCC9A6; border-radius:10px;
+}
+.bridges-unit-head h2{margin:0 0 10px}
+.bridges-body{padding-top:18px}
 /* 经文：PDF 为楷体 + 左缩进，无边框、无底色 */
 .bridges-scripture{
-  margin:0 0 22px; padding-left:26px;
+  margin:0; padding-left:26px;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
 }
 .bridges-scripture p{margin:0 0 6px; text-align:left; line-height:1.85}
+.bridges-scripture p:last-child{margin-bottom:0}
 /* 首字下沉——还原 PDF 里 27pt 的段首大字 */
 .bridges-content p.bridges-lead::first-letter{
   float:left; font-size:2.9em; line-height:.92; font-weight:600;
@@ -80,7 +106,28 @@ layout: default
 @media(max-width:600px){
   .bridges-content{font-size:16px; line-height:1.9}
   .bridges-scripture{padding-left:16px}
+  .bridges-unit-head.bridges-folded{max-height:7.4em}
 }
 </style>
+
+<script>
+// 单元头（引用 + 经文）sticky 置顶；内容过高才折叠，点击展开/收起。
+// 只在真正超高时加折叠类——短经文不该出现「展开」提示。
+(function initBridgesUnits(){
+  var LIMIT = window.matchMedia('(max-width:600px)').matches ? 118 : 132;  // ≈ 折叠 max-height
+  document.querySelectorAll('.bridges-unit-head').forEach(function(head){
+    if (head.scrollHeight <= LIMIT + 8) { head.style.cursor = 'default'; return; }
+    head.classList.add('bridges-folded');
+    var tag = document.createElement('span');
+    tag.className = 'bridges-more';
+    tag.textContent = '展开经文';
+    head.appendChild(tag);
+    head.addEventListener('click', function(){
+      var folded = head.classList.toggle('bridges-folded');
+      tag.textContent = folded ? '展开经文' : '收起';
+    });
+  });
+})();
+</script>
 
 {% include scripture-popup.html container_selector=".bridges-content" accent="#6B4E2E" vnum="#8A6A3B" slide="down" %}

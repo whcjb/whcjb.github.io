@@ -156,29 +156,51 @@ def build_chapters(doc):
 
 
 def render(ch, units):
+    """每单元 → 一个 .bridges-unit：头部（引用 + 经文）sticky 置顶，注释在下滚动。
+
+    kramdown 需要逐层 markdown="1"，否则内层的 ## / {: .bridges-lead} 不解析
+    （见 memory: kramdown markdown 属性）。
+    """
     head = '# 总结' if ch == 'summary' else f'# 箴言第 {ch} 章'
     lines = [head, '']
     for title, parts in units:
-        if title.strip() == '总结':
-            pass                            # 总结无小标题，正文直接跟在 H1 后
-        else:
-            norm = re.sub(r'^箴言\s*', '箴言 ', title.replace('：', ':'))
-            lines += [f'## {norm}', '']
-        first_para = True
-        for kind, text in parts:
-            if kind == 'scripture':
-                # PDF 里经文只是楷体 + 缩进，**没有边框/底色**——§0.0 反向约束：
-                # 原文没有的视觉效果不得自创。样式见 bridges-chapter.html。
-                lines += ['<div class="bridges-scripture" markdown="1">', '']
-                for ln in text.split('\n'):
-                    lines += [ln, '']
-                lines += ['</div>', '']
-            else:
+        is_summary = title.strip() == '总结'
+        scr = [t for k, t in parts if k == 'scripture']
+        paras = [t for k, t in parts if k == 'para']
+
+        if is_summary:                      # 总结无引用无经文，正文直接排
+            for i, text in enumerate(paras):
                 lines += [text, '']
-                if first_para:
-                    # PDF 里每单元首段是 27pt 首字下沉，网页用 ::first-letter 还原
+                if i == 0:
                     lines += ['{: .bridges-lead}', '']
-                    first_para = False
+            continue
+
+        norm = re.sub(r'^箴言\s*', '箴言 ', title.replace('：', ':'))
+        # 显式锚点：kramdown 给中文标题只会生成 section / section-1 这类无意义 id，
+        # 无法用来分享或跳转单元。这里按「章-节」造稳定 id，如 #pv-1-1-4。
+        m = UNIT_RE.match(title.replace(' ', '').replace('：', ':'))
+        slug = ''
+        if m:
+            verses = re.sub(r'[^\d]+', '-', m.group(2)).strip('-')
+            slug = f' {{#pv-{m.group(1)}-{verses}}}'
+        lines += ['<div class="bridges-unit">',
+                  f'<div class="bridges-unit-head" markdown="1" id="unit-pv-{m.group(1)}-{verses}">'
+                  if m else '<div class="bridges-unit-head" markdown="1">',
+                  '', f'## {norm}{slug}', '']
+        if scr:
+            # PDF 里经文只是楷体 + 缩进，**没有边框/底色**——§0.0 反向约束
+            lines += ['<div class="bridges-scripture" markdown="1">', '']
+            for block in scr:
+                for ln in block.split('\n'):
+                    lines += [ln, '']
+            lines += ['</div>', '']
+        lines += ['</div>', '', '<div class="bridges-body" markdown="1">', '']
+        for i, text in enumerate(paras):
+            lines += [text, '']
+            if i == 0:
+                # PDF 里每单元首段是 27pt 首字下沉，网页用 ::first-letter 还原
+                lines += ['{: .bridges-lead}', '']
+        lines += ['</div>', '</div>', '']
     return '\n'.join(lines).rstrip() + '\n'
 
 
