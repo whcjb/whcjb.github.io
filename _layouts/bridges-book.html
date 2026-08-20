@@ -1,0 +1,68 @@
+---
+layout: default
+---
+
+<header class="intro-header" style="background-image: url('{{ site.baseurl }}/img/{% if page.header-img %}{{ page.header-img }}{% else %}post-bg-2015.jpg{% endif %}')">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="site-heading">
+          <h1>{{ page.book_name }}</h1>
+          <span class="subheading">{{ page.author }}　著</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="bridges-idx">
+        {{ content }}
+
+        {% assign chs = site.pages | where: "book_id", page.book_id | where: "layout", "bridges-chapter" %}
+        <div class="bridges-pills">
+          {% for extra in chs %}{% if extra.section == 'preface' %}
+          <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">前言</a>
+          {% endif %}{% endfor %}
+          {% for i in (1..page.chapters) %}
+            {% assign hit = chs | where: "chapter", i | first %}
+            {% if hit %}<a href="{{ site.baseurl }}{{ hit.url }}" class="bridges-pill">第 {{ i }} 章</a>{% endif %}
+          {% endfor %}
+          {% for extra in chs %}{% if extra.section == 'summary' %}
+          <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">总结</a>
+          {% endif %}{% endfor %}
+        </div>
+
+        {% if page.source_note %}
+        <div class="bridges-source">{{ page.source_note }}</div>
+        {% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* 毕列志《箴言书注释》索引页——独立样式 */
+.bridges-idx{
+  font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
+  color:#302a22; font-size:16px; line-height:1.9; padding:8px 0 40px;
+}
+.bridges-idx p{margin:0 0 16px; text-align:justify}
+.bridges-pills{display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 8px}
+.bridges-pill{
+  display:inline-block; min-width:78px; text-align:center;
+  padding:8px 14px; border:1px solid #DCC9A6; border-radius:6px;
+  background:#FBF8F1; color:#6B4E2E !important; font-size:14.5px;
+  text-decoration:none !important; transition:all .15s;
+}
+.bridges-pill:hover{background:#6B4E2E; border-color:#6B4E2E; color:#FBF8F1 !important}
+.bridges-pill--wide{min-width:92px; border-style:dashed}
+.bridges-source{
+  margin-top:34px; padding-top:16px; border-top:1px solid #e6dcc9;
+  font-size:12.5px; line-height:1.85; color:#8b8073;
+}
+</style>

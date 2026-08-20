@@ -1,0 +1,86 @@
+---
+layout: default
+---
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="bridges-chrome" style="margin:16px 0 22px; font-size:13px;">
+        <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">&larr; {{ page.book_name }}目录</a>
+      </div>
+
+      <div class="bridges-chrome bridges-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="bridges-content" data-book="{{ page.book_id }}">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="bridges-chrome" style="margin-top:32px; font-size:12px; color:#a09484; text-align:right;">
+        发布于 {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="bridges-chrome bridges-nav" style="margin-top:40px; padding-top:16px; border-top:1px solid #e6dcc9;">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">目录</a>
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* ─────────────────────────────────────────────────────────────
+   毕列志《箴言书注释》——独立样式，不与 calvin / mhenry 共用。
+   忠实还原 PDF：思源宋体正文、楷体经文、首字下沉；
+   PDF 经文块无边框无底色，故此处也不加（pdf-pipeline §0.0 反向约束）。
+   ───────────────────────────────────────────────────────────── */
+.bridges-content{
+  font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
+  font-size:16.5px; line-height:1.95; color:#302a22;
+}
+.bridges-content h1{
+  font-size:23px; font-weight:600; text-align:center; letter-spacing:.06em;
+  margin:6px 0 30px; color:#6B4E2E;
+}
+.bridges-content h1::after{
+  content:"❧"; display:block; font-size:15px; color:#C0A063;
+  margin-top:10px; font-weight:normal; letter-spacing:0;
+}
+/* 单元标题「箴言 1:1-4」——PDF 里是 16pt 居中加粗 */
+.bridges-content h2{
+  font-size:17.5px; font-weight:600; text-align:center; color:#6B4E2E;
+  margin:38px 0 18px; letter-spacing:.04em;
+}
+.bridges-content p{margin:0 0 16px; text-align:justify}
+/* 经文：PDF 为楷体 + 左缩进，无边框、无底色 */
+.bridges-scripture{
+  margin:0 0 22px; padding-left:26px;
+  font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
+  color:#4a4034;
+}
+.bridges-scripture p{margin:0 0 6px; text-align:left; line-height:1.85}
+/* 首字下沉——还原 PDF 里 27pt 的段首大字 */
+.bridges-content p.bridges-lead::first-letter{
+  float:left; font-size:2.9em; line-height:.92; font-weight:600;
+  margin:2px 6px 0 0; color:#6B4E2E;
+}
+.bridges-content a{color:#8A6A3B}
+.bridges-content a:hover{color:#6B4E2E}
+.bridges-chrome{font-size:13px}
+.bridges-chrome a{color:#8A6A3B; text-decoration:none}
+.bridges-chrome a:hover{color:#6B4E2E; text-decoration:underline}
+.bridges-nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:26px}
+@media(max-width:600px){
+  .bridges-content{font-size:16px; line-height:1.9}
+  .bridges-scripture{padding-left:16px}
+}
+</style>
+
+{% include scripture-popup.html container_selector=".bridges-content" accent="#6B4E2E" vnum="#8A6A3B" slide="down" %}
