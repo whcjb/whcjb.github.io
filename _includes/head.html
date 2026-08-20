@@ -46,6 +46,15 @@
         {%- capture seo_title -%}第{{ page.section }}部分 {{ page.section_title }} - 大要理问答{%- endcapture -%}
         {%- capture seo_description -%}《大要理问答》第{{ page.section }}部分《{{ page.section_title }}》第{{ page.questions }}问，{{ page.author }}讲解。改革宗教义问答中文在线阅读。{%- endcapture -%}
         {%- capture seo_keywords -%}大要理问答第{{ page.section }}部分, {{ page.section_title }}, 威斯敏斯特大要理问答, 改革宗教义问答, {{ page.author }}, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'bridges-chapter' -%}
+        {%- capture _bsec -%}{% if page.chapter %}箴言第{{ page.chapter }}章{% elsif page.section == 'preface' %}前言{% else %}总结{% endif %}{%- endcapture -%}
+        {%- capture seo_title -%}{{ _bsec }} - 毕列志箴言书注释{%- endcapture -%}
+        {%- capture seo_description -%}查理·毕列志(Charles Bridges)《箴言书注释》{{ _bsec }} - 逐段解经，先列箴言经文再逐层解说，注重把箴言的智慧应用到信徒的日常生活。改革宗翻译社简体中文版全文在线阅读。{%- endcapture -%}
+        {%- capture seo_keywords -%}毕列志箴言注释, Charles Bridges Proverbs, 箴言书注释, {{ _bsec }}, 箴言解经, 改革宗圣经注释, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'bridges-book' -%}
+        {%- capture seo_title -%}箴言书注释 - 查理·毕列志{%- endcapture -%}
+        {%- capture seo_description -%}查理·毕列志(Charles Bridges)《箴言书注释》中文全文在线阅读，共{{ page.chapters }}章、571 个解经单元。英文原著 An Exposition of the Book of Proverbs (1850)，改革宗翻译社简体中文版，逐章免费阅读。{%- endcapture -%}
+        {%- capture seo_keywords -%}毕列志箴言注释, 箴言书注释, Charles Bridges, An Exposition of the Book of Proverbs, 箴言解经, 改革宗圣经注释, 改革宗翻译社, {{ site.keyword }}{%- endcapture -%}
     {%- elsif page.title -%}
         {%- assign seo_title = page.title -%}
         {%- if page.subtitle -%}
@@ -76,7 +85,9 @@
     <meta property="og:type" content="article">
     <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <meta property="og:site_name" content="{{ site.title }}">
-    {%- assign og_img = page.header-img | default: 'home-galilee-ancient.jpg' -%}
+    {%- comment -%} 必须写 page['header-img']：assign + filter 上下文里 page.header-img
+        的连字符会被当成减号，静默取不到值 —— 结果全站分享缩略图都回落成默认图。 {%- endcomment -%}
+    {%- assign og_img = page['header-img'] | default: 'home-galilee-ancient.jpg' -%}
     {%- unless og_img contains 'img/' -%}{%- assign og_img = og_img | prepend: 'img/' -%}{%- endunless -%}
     <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ og_img }}">
     <meta property="og:image:width" content="1200">
