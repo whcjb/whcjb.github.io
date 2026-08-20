@@ -71,7 +71,9 @@ layout: default
 .bridges-unit.bridges-open{margin-bottom:34px}
 .bridges-unit.bridges-open > .bridges-unit-head{
   position:sticky; top:0; z-index:5;
-  background:#FBF8F1;                   /* 必须不透明，否则注释文字透上来 */
+  background:rgba(251,248,241,0.94);    /* 配 blur 遮住下面滚过的注释文字 */
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
 }
 /* 右下角展开提示胶囊 */
 .bridges-toggle{
@@ -86,11 +88,19 @@ layout: default
 /* 注释默认折叠 */
 .bridges-body{display:none; padding-top:18px}
 .bridges-unit.bridges-open > .bridges-body{display:block}
-/* 经文：PDF 为楷体 + 左缩进，无边框、无底色 */
+/* 经文：楷体（PDF 原为楷体 + 左缩进）；底色按要求改毛玻璃 alpha .39。
+   rgba 取值全部来自现有色板：#FBF8F1 底 / #DCC9A6 描边 / #6B4E2E 投影。 */
 .bridges-scripture{
-  margin:0; padding-left:26px;
+  margin:0; padding:15px 18px 15px 26px;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
+  background:rgba(251,248,241,0.39);
+  backdrop-filter:blur(10px) saturate(118%);
+  -webkit-backdrop-filter:blur(10px) saturate(118%);
+  border:1px solid rgba(220,201,166,0.45);
+  border-radius:10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.60),
+             0 2px 10px rgba(107,78,46,0.06);
 }
 .bridges-scripture p{margin:0 0 6px; text-align:left; line-height:1.85}
 .bridges-scripture p:last-child{margin-bottom:0}
