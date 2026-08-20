@@ -113,8 +113,7 @@ body:has(.bridges-stage) footer{display:none}
 /* ── 解经单元：默认只显示经文，注释折叠；经文置顶（sticky）────────── */
 .bridges-unit{position:relative; margin:0 0 12px; scroll-margin-top:64px}
 .bridges-unit-head{
-  position:relative; padding:2px 0 4px;
-  border-bottom:1px solid #e6dcc9;
+  position:relative; padding:0; border:none;
   cursor:pointer; user-select:none;
 }
 /* 单元不再有「箴言 N:a-b」标题（经文自带节号，标题是重复信息）；
@@ -123,16 +122,15 @@ body:has(.bridges-stage) footer{display:none}
 .bridges-unit.bridges-open{margin-bottom:24px}
 .bridges-unit.bridges-open > .bridges-unit-head{
   position:sticky; top:0; z-index:5;
-  /* 也走磨砂，而不是实色板；blur 拉到 30px，下面滚过的注释被揉成模糊色块，
-     不影响经文可读，又保住玻璃质感 */
-  background:rgba(251,248,241,.30);
-  backdrop-filter:blur(34px) saturate(140%);
-  -webkit-backdrop-filter:blur(34px) saturate(140%);
+  /* 只当 sticky 容器，本身不铺玻璃：head 与经文块两层 backdrop-filter 嵌套时，
+     head 的 padding 一圈只有外层玻璃，会在经文块上下露出更亮的横带（还有
+     backdrop-filter 的边缘光晕）。玻璃统一由 .bridges-scripture 承担。 */
+  background:transparent; backdrop-filter:none; -webkit-backdrop-filter:none;
 }
 /* 右侧竖排「注释」按钮（同马太亨利的 mh-expand-tab，配色用本书棕金）。
    不占正文行高——贴在经文块右侧，与经文等高。 */
 .bridges-toggle{
-  position:absolute; right:0; top:2px; bottom:4px; z-index:6;
+  position:absolute; right:0; top:0; bottom:0; z-index:6;
   width:30px; display:flex; align-items:center; justify-content:center;
   writing-mode:vertical-rl; text-orientation:mixed;
   font-size:12px; letter-spacing:.24em; font-weight:600;
@@ -156,9 +154,9 @@ body:has(.bridges-stage) footer{display:none}
   color:#4a4034;
   /* 磨砂水玻璃：半透明 + 强模糊 + 一道顶部内高光。
      不加 border / 外阴影 / 圆角——那些会让它重新变成「凸出来的框」。 */
-  background:rgba(255,255,255,.10);
-  backdrop-filter:blur(22px) saturate(155%);
-  -webkit-backdrop-filter:blur(22px) saturate(155%);
+  background:rgba(251,248,241,.30);
+  backdrop-filter:blur(34px) saturate(150%);
+  -webkit-backdrop-filter:blur(34px) saturate(150%);
   border:none; border-radius:0;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.34),
              inset 0 -1px 0 rgba(255,255,255,.14);
