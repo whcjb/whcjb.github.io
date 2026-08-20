@@ -2,56 +2,105 @@
 layout: default
 ---
 
-<div class="container" style="padding-top: 70px;">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+{% assign bg = page.header-img | default: "nt-bg-100.jpg" %}
 
-      <div class="bridges-chrome" style="margin:16px 0 22px; font-size:13px;">
-        <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">&larr; {{ page.book_name }}目录</a>
+<!-- 整屏背景图：固定不动，全部内容悬浮其上（与索引页同一风格） -->
+<div class="bridges-bg" style="background-image:url('{{ site.baseurl }}/img/{{ bg }}')"></div>
+<div class="bridges-bg-veil"></div>
+
+<div class="bridges-stage">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <div class="bridges-chrome bridges-chrome--float bridges-nav">
+          <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">&larr; {{ page.book_name }}目录</a>
+          <span class="bridges-nav-lr">
+            {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% endif %}
+            {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% endif %}
+          </span>
+        </div>
+
+        <header class="bridges-hero">
+          <h1>{% if page.chapter %}箴言第 {{ page.chapter }} 章{% elsif page.section == 'preface' %}前言{% else %}总结{% endif %}</h1>
+        </header>
+
+        <div class="bridges-glass-page">
+          <div class="bridges-content" data-book="{{ page.book_id }}">
+            {{ content }}
+          </div>
+        </div>
+
+        {% if page.date %}
+        <div class="bridges-chrome bridges-chrome--float" style="margin-top:14px; font-size:12px; text-align:right;">
+          发布于 {{ page.date | date: "%Y-%m-%d %H:%M" }}
+        </div>
+        {% endif %}
+
+        <div class="bridges-chrome bridges-chrome--float bridges-nav" style="margin-top:22px">
+          {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+          <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">目录</a>
+          {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        </div>
+
       </div>
-
-      <div class="bridges-chrome bridges-nav">
-        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
-      </div>
-
-      <div class="bridges-content" data-book="{{ page.book_id }}">
-        {{ content }}
-      </div>
-
-      {% if page.date %}
-      <div class="bridges-chrome" style="margin-top:32px; font-size:12px; color:#a09484; text-align:right;">
-        发布于 {{ page.date | date: "%Y-%m-%d %H:%M" }}
-      </div>
-      {% endif %}
-
-      <div class="bridges-chrome bridges-nav" style="margin-top:40px; padding-top:16px; border-top:1px solid #e6dcc9;">
-        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        <a href="{{ site.baseurl }}/bridges/{{ page.book_id }}/">目录</a>
-        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
-      </div>
-
     </div>
   </div>
 </div>
 
 <style>
 /* ─────────────────────────────────────────────────────────────
-   毕列志《箴言书注释》——独立样式，不与 calvin / mhenry 共用。
-   忠实还原 PDF：思源宋体正文、楷体经文、首字下沉；
-   PDF 经文块无边框无底色，故此处也不加（pdf-pipeline §0.0 反向约束）。
+   毕列志《箴言书注释》章节页——独立样式，不与 calvin / mhenry 共用。
+   整屏背景图 + 内容悬浮（与索引页同一风格）；经文置顶、点击展开等
+   交互全部保留。忠实还原 PDF：思源宋体正文、楷体经文、首字下沉。
    ───────────────────────────────────────────────────────────── */
+.bridges-bg{
+  position:fixed; inset:0; z-index:-2;
+  background-position:center; background-size:cover; background-repeat:no-repeat;
+}
+.bridges-bg-veil{
+  position:fixed; inset:0; z-index:-1;
+  background:linear-gradient(165deg,
+      rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%);
+}
+/* 白色页脚会把整屏图割断 */
+body:has(.bridges-stage) footer{display:none}
+.bridges-stage{padding:88px 0 60px; position:relative}
+
+/* 图上的章标题 */
+.bridges-hero{text-align:center; margin:0 0 18px}
+.bridges-hero h1{
+  font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
+  font-size:30px; font-weight:600; letter-spacing:.08em; margin:0; color:#fff;
+  text-shadow:0 2px 18px rgba(30,20,10,.55), 0 1px 3px rgba(30,20,10,.5);
+}
+.bridges-hero h1::after{
+  content:"❧"; display:block; font-size:15px; font-weight:400;
+  color:#EBD9AE; margin-top:11px; letter-spacing:0;
+  text-shadow:0 1px 8px rgba(30,20,10,.5);
+}
+/* 正文毛玻璃卡：正文长，透明度比索引页略高一点保证可读 */
+.bridges-glass-page{
+  background:rgba(251,248,241,.68);
+  backdrop-filter:blur(20px) saturate(115%);
+  -webkit-backdrop-filter:blur(20px) saturate(115%);
+  border:1px solid rgba(255,255,255,.42);
+  border-radius:16px;
+  padding:26px 30px 22px;
+  box-shadow:0 18px 50px rgba(30,20,10,.26);
+}
+/* 悬浮在图上的导航/日期：白字 + 阴影 */
+.bridges-chrome--float, .bridges-chrome--float a{
+  color:rgba(255,255,255,.92) !important;
+  text-shadow:0 1px 10px rgba(30,20,10,.6);
+}
+.bridges-chrome--float a:hover{color:#fff !important; text-decoration:underline}
+.bridges-nav-lr{display:flex; gap:16px; align-items:center}
+/* 章标题已移到卡外的 hero，正文里的 H1 不再重复显示 */
+.bridges-content h1{display:none}
 .bridges-content{
   font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
   font-size:16.5px; line-height:1.95; color:#302a22;
-}
-.bridges-content h1{
-  font-size:23px; font-weight:600; text-align:center; letter-spacing:.06em;
-  margin:6px 0 30px; color:#6B4E2E;
-}
-.bridges-content h1::after{
-  content:"❧"; display:block; font-size:15px; color:#C0A063;
-  margin-top:10px; font-weight:normal; letter-spacing:0;
 }
 /* 单元标题「箴言 1:1-4」——PDF 里是 16pt 居中加粗 */
 .bridges-content h2{
@@ -130,8 +179,12 @@ layout: default
 .bridges-chrome{font-size:13px}
 .bridges-chrome a{color:#8A6A3B; text-decoration:none}
 .bridges-chrome a:hover{color:#6B4E2E; text-decoration:underline}
-.bridges-nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:26px}
+.bridges-nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:16px}
 @media(max-width:600px){
+  .bridges-stage{padding:74px 0 44px}
+  .bridges-hero h1{font-size:23px}
+  .bridges-glass-page{padding:18px 15px 15px; border-radius:13px}
+  .bridges-nav-lr{gap:10px}
   .bridges-content{font-size:16px; line-height:1.9}
   .bridges-scripture{padding-left:16px; padding-right:38px}
   .bridges-toggle{width:26px; font-size:11px; letter-spacing:.18em}
