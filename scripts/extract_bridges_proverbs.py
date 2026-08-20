@@ -131,8 +131,13 @@ def build_chapters(doc):
                 chapters.setdefault(ch, []).append(cur_unit)
             elif kind == 'scripture':
                 flush_para()
-                # 以节号开头 = 新节；否则是上一节的 wrap 续行（x≈68），要接回去
-                if re.match(r'^\d+\s', text) or not scr_buf:
+                # 以节号开头 = 新节；否则是上一节的 wrap 续行（x≈68），要接回去。
+                # 节号可能是合并写法「31-32 酒发红…」「18–19 人欺凌邻舍…」（en dash），
+                # 只判 ^\d+\s 会把它当续行粘到上一节末尾（箴言 23:30 踩到）。
+                # 「（箴言1:16 的新约引用：罗马书3:15）」这类整行括注在 PDF 里也是
+                # 独立一行（同 x=88、同楷体），不是 wrap 续行，不能粘到上一节尾巴。
+                if (re.match(r'^\d+(?:\s*[-–—－]\s*\d+)?\s', text)
+                        or re.match(r'^[（(]', text) or not scr_buf):
                     scr_buf.append(text)
                 else:
                     scr_buf[-1] += text
