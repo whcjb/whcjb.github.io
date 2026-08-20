@@ -76,23 +76,28 @@ layout: default
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter:blur(12px);
 }
-/* 右下角展开提示胶囊 */
+/* 右侧竖排「注释」按钮（同马太亨利的 mh-expand-tab，配色用本书棕金）。
+   不占正文行高——贴在经文块右侧，与经文等高。 */
 .bridges-toggle{
-  position:absolute; right:0; bottom:9px; z-index:6; cursor:pointer;
-  font-size:11.5px; letter-spacing:.08em; color:#8A6A3B;
-  background:#FBF8F1; padding:2px 9px;
-  border:1px solid #DCC9A6; border-radius:11px;
-  white-space:nowrap;
+  position:absolute; right:0; top:4px; bottom:10px; z-index:6;
+  width:30px; display:flex; align-items:center; justify-content:center;
+  writing-mode:vertical-rl; text-orientation:mixed;
+  font-size:12px; letter-spacing:.24em; font-weight:600;
+  color:#FBF8F1; background:#6B4E2E;
+  border-left:1px solid rgba(251,248,241,.28);
+  cursor:pointer; user-select:none; white-space:nowrap;
 }
-.bridges-unit-head:hover .bridges-toggle{background:#6B4E2E; color:#FBF8F1; border-color:#6B4E2E}
-.bridges-unit.bridges-open .bridges-toggle{opacity:.55}
+.bridges-toggle:hover{background:#573D22}
+/* 展开后淡化（折叠浓、展开淡，不可反） */
+.bridges-unit.bridges-open .bridges-toggle{background:rgba(107,78,46,.30); color:#FBF8F1}
+.bridges-unit.bridges-open .bridges-toggle:hover{background:rgba(107,78,46,.48)}
 /* 注释默认折叠 */
 .bridges-body{display:none; padding-top:18px}
 .bridges-unit.bridges-open > .bridges-body{display:block}
 /* 经文：楷体（PDF 原为楷体 + 左缩进）；底色按要求改毛玻璃 alpha .39。
    rgba 取值全部来自现有色板：#FBF8F1 底 / #DCC9A6 描边 / #6B4E2E 投影。 */
 .bridges-scripture{
-  margin:0; padding:15px 18px 15px 26px;
+  margin:0; padding:15px 44px 15px 26px;   /* 右侧 44px 让位给竖排按钮 */
   cursor:pointer;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
@@ -109,7 +114,7 @@ layout: default
 }
 /* 折叠时底部渐隐，暗示经文还有下文 */
 .bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{
-  content:""; position:absolute; left:0; right:0; bottom:0; height:1.7em;
+  content:""; position:absolute; left:0; right:30px; bottom:0; height:1.7em;
   background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,0.92) 85%);
   pointer-events:none;
 }
@@ -128,8 +133,9 @@ layout: default
 .bridges-nav{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:26px}
 @media(max-width:600px){
   .bridges-content{font-size:16px; line-height:1.9}
-  .bridges-scripture{padding-left:16px}
-  .bridges-toggle{font-size:11px; padding:2px 7px}
+  .bridges-scripture{padding-left:16px; padding-right:38px}
+  .bridges-toggle{width:26px; font-size:11px; letter-spacing:.18em}
+  .bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{right:26px}
 }
 </style>
 
@@ -146,7 +152,7 @@ layout: default
 
     var tag = document.createElement('span');
     tag.className = 'bridges-toggle';
-    tag.textContent = '注释 ▾';
+    tag.textContent = '注释';
     tag.title = '展开注释';
     head.appendChild(tag);
 
@@ -161,7 +167,7 @@ layout: default
     tag.addEventListener('click', function(e){
       e.stopPropagation();
       var open = unit.classList.toggle('bridges-open');
-      tag.textContent = open ? '收起 ▴' : '注释 ▾';
+      tag.textContent = open ? '收起' : '注释';
       tag.title = open ? '收起注释' : '展开注释';
       // 收起后若单元已滚出视口上方，把它带回视野，避免页面「跳走」
       if (!open && head.getBoundingClientRect().top < 0) {
