@@ -123,9 +123,11 @@ body:has(.bridges-stage) footer{display:none}
 .bridges-unit.bridges-open{margin-bottom:24px}
 .bridges-unit.bridges-open > .bridges-unit-head{
   position:sticky; top:0; z-index:5;
-  background:rgba(251,248,241,0.94);    /* 配 blur 遮住下面滚过的注释文字 */
-  backdrop-filter:blur(12px);
-  -webkit-backdrop-filter:blur(12px);
+  /* 也走磨砂，而不是实色板；blur 拉到 30px，下面滚过的注释被揉成模糊色块，
+     不影响经文可读，又保住玻璃质感 */
+  background:rgba(251,248,241,.50);
+  backdrop-filter:blur(30px) saturate(140%);
+  -webkit-backdrop-filter:blur(30px) saturate(140%);
 }
 /* 右侧竖排「注释」按钮（同马太亨利的 mh-expand-tab，配色用本书棕金）。
    不占正文行高——贴在经文块右侧，与经文等高。 */
@@ -152,10 +154,14 @@ body:has(.bridges-stage) footer{display:none}
   cursor:pointer;
   font-family:"Kaiti SC",STKaiti,"LXGW WenKai","FangSong",serif;
   color:#4a4034;
-  background:rgba(251,248,241,0.39);
-  backdrop-filter:blur(10px) saturate(118%);
-  -webkit-backdrop-filter:blur(10px) saturate(118%);
-  border:none; border-radius:0; box-shadow:none;   /* 不要凸起的卡片框 */
+  /* 磨砂水玻璃：半透明 + 强模糊 + 一道顶部内高光。
+     不加 border / 外阴影 / 圆角——那些会让它重新变成「凸出来的框」。 */
+  background:rgba(251,248,241,.46);
+  backdrop-filter:blur(26px) saturate(150%) brightness(1.04);
+  -webkit-backdrop-filter:blur(26px) saturate(150%) brightness(1.04);
+  border:none; border-radius:0;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.52),
+             inset 0 -1px 0 rgba(255,255,255,.20);
   /* 默认只露两行：line-height 1.85 × 2 行 = 3.7em */
   position:relative; max-height:3.3em; overflow:hidden;
   transition:max-height .25s ease;
@@ -166,7 +172,7 @@ body:has(.bridges-stage) footer{display:none}
 /* 折叠时底部渐隐，暗示经文还有下文 */
 .bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{
   content:""; position:absolute; left:0; right:30px; bottom:0; height:1.1em;
-  background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,0.92) 85%);
+  background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,.72) 88%);
   pointer-events:none;
 }
 .bridges-scripture p{margin:0 0 1px; text-align:left; line-height:1.58}
