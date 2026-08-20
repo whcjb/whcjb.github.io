@@ -93,47 +93,48 @@ layout: default
   -webkit-backdrop-filter:blur(22px) saturate(120%);
   border:1px solid rgba(255,255,255,.42);
   border-radius:16px;
-  padding:30px 32px 26px;
+  padding:22px 26px 20px;
   box-shadow:0 18px 50px rgba(30,20,10,.26);
 }
 .bridges-idx{
   font-family:"Source Han Serif SC","Noto Serif CJK SC","Songti SC",STSong,serif;
-  color:#2f281f; font-size:15.5px; line-height:1.95;
+  color:#2f281f; font-size:14px; line-height:1.62;
 }
-.bridges-idx p{margin:0 0 15px; text-align:justify}
+.bridges-idx p{margin:0 0 9px; text-align:justify}
 .bridges-idx p:last-of-type{margin-bottom:4px}
 
 /* 章节胶囊：数字为主，前言/总结加宽 */
-.bridges-pills{display:flex; flex-wrap:wrap; gap:8px; margin:22px 0 2px}
+.bridges-pills{display:flex; flex-wrap:wrap; gap:7px; margin:14px 0 2px}
 .bridges-pill{
   display:inline-flex; align-items:center; justify-content:center;
-  min-width:40px; height:36px; padding:0 10px;
-  border:1px solid rgba(107,78,46,.28); border-radius:8px;
+  min-width:50px; height:44px; padding:0 12px;
+  border:1px solid rgba(107,78,46,.28); border-radius:9px;
   background:rgba(255,255,255,.42);
-  color:#5d4326 !important; font-size:14.5px;
+  color:#5d4326 !important; font-size:16.5px;
   text-decoration:none !important; transition:all .15s;
 }
 .bridges-pill:hover{
   background:#6B4E2E; border-color:#6B4E2E; color:#FBF8F1 !important;
   transform:translateY(-1px);
 }
-.bridges-pill--wide{min-width:66px; border-style:dashed}
+.bridges-pill--wide{min-width:74px; font-size:15px; border-style:dashed}
 
 /* 出处说明：更淡的一层玻璃 */
 .bridges-source-glass{
-  margin:18px 0 0; padding:16px 20px;
+  margin:14px 0 0; padding:13px 18px;
   background:rgba(251,248,241,.58);
   backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
   border:1px solid rgba(255,255,255,.34); border-radius:12px;
-  font-size:12.5px; line-height:1.9; color:#4a4034;
+  font-size:12px; line-height:1.65; color:#4a4034;
   box-shadow:0 10px 30px rgba(30,20,10,.18);
 }
 
 @media(max-width:600px){
   .bridges-stage{padding:76px 0 50px}
   .bridges-hero h1{font-size:29px}
-  .bridges-glass{padding:22px 18px 18px; border-radius:13px}
-  .bridges-idx{font-size:15px}
-  .bridges-pill{min-width:36px; height:33px; font-size:14px}
+  .bridges-glass{padding:17px 15px 15px; border-radius:13px}
+  .bridges-idx{font-size:13.5px; line-height:1.6}
+  .bridges-pill{min-width:44px; height:40px; font-size:15.5px}
+  .bridges-pill--wide{min-width:64px; font-size:14px}
 }
 </style>
