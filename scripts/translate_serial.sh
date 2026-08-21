@@ -27,6 +27,9 @@ case "$BOOK" in
     harmony-law-2) PUBLISH="scripts/publish_harmony_law_zh.py --vol 2"; RAW_DIR=calvin_raw/harmony-law-2/zh_chapters; PUB_DIR=calvin/harmony-law-2 ;;
     isaiah-1) PUBLISH=scripts/publish_isaiah_zh.py; RAW_DIR=calvin_raw/isaiah-1/zh_chapters; PUB_DIR=calvin/isaiah-1 ;;
     isaiah-2) PUBLISH=scripts/publish_isaiah_zh.py; RAW_DIR=calvin_raw/isaiah-2/zh_chapters; PUB_DIR=calvin/isaiah-2 ;;
+    jeremiah-1) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-1/zh_chapters; PUB_DIR=calvin/jeremiah-1 ;;
+    jeremiah-2) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-2/zh_chapters; PUB_DIR=calvin/jeremiah-2 ;;
+    hosea)      PUBLISH=scripts/publish_hosea_zh.py;    RAW_DIR=calvin_raw/hosea/zh_chapters;      PUB_DIR=calvin/hosea ;;
     psalms-1) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-1/zh_chapters; PUB_DIR=calvin/psalms-1 ;;
     psalms-2) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-2/zh_chapters; PUB_DIR=calvin/psalms-2 ;;
      *) echo "unknown book: $BOOK"; exit 1 ;;

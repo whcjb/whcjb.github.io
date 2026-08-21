@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """定时翻译守护进程。
-用法: python3 scripts/sched_translate_daemon.py HH:MM <book> <ch1> [ch2] ... [--serial]
+用法: python3 scripts/sched_translate_daemon.py HH:MM[+Nd] <book> <ch1> [ch2] ... [--serial]
+     时刻可加 +1d 把目标推到明天（同一时刻排两天的任务时用）。
 - 默认: 仅翻译, 产出 raw+缓存, 不发布/不提交(直接调 translate_filibi.py)。
 - --serial: 走 scripts/translate_serial.sh, 每章翻完自动 publish + commit + push
   (锁交给 translate_serial.sh 自己的 /tmp/translate_serial.lock, 本脚本不再另加锁,
@@ -42,10 +43,18 @@ if TIME == "now":
     log(f"立即执行 (PPID={os.getppid()})")
     target_ep = 0
 else:
-    hh, mm = map(int, TIME.split(":"))
+    # 支持 "19:02+1d"：把目标推到明天的该时刻。用于同一时刻要排两天的任务
+    # （例：今天 19:02 跑以赛亚剩余，明天 19:02 跑何西阿）。
+    plus_days = 0
+    tspec = TIME
+    if '+' in tspec:
+        tspec, off = tspec.split('+', 1)
+        plus_days = int(off.rstrip('dD') or 0)
+    hh, mm = map(int, tspec.split(":"))
     target = now.replace(hour=hh, minute=mm, second=0, microsecond=0)
     if target <= now:
         target += datetime.timedelta(days=1)
+    target += datetime.timedelta(days=plus_days)
     log(f"目标时刻 {target.strftime('%Y-%m-%d %H:%M:%S')} (PPID={os.getppid()})")
     target_ep = target.timestamp()
 
