@@ -83,9 +83,9 @@ body:has(.bridges-stage) footer{display:none}
 }
 /* 正文毛玻璃卡：正文长，透明度比索引页略高一点保证可读 */
 .bridges-glass-page{
-  background:rgba(251,248,241,.44);
-  backdrop-filter:blur(30px) saturate(122%);
-  -webkit-backdrop-filter:blur(30px) saturate(122%);
+  background:rgba(251,248,241,.28);
+  backdrop-filter:blur(38px) saturate(126%);
+  -webkit-backdrop-filter:blur(38px) saturate(126%);
   border:1px solid rgba(255,255,255,.42);
   border-radius:16px;
   padding:26px 0 22px;      /* 左右顶到卡边缘，只留上下 */
@@ -154,9 +154,9 @@ body:has(.bridges-stage) footer{display:none}
   color:#4a4034;
   /* 磨砂水玻璃：半透明 + 强模糊 + 一道顶部内高光。
      不加 border / 外阴影 / 圆角——那些会让它重新变成「凸出来的框」。 */
-  background:rgba(251,248,241,.30);
-  backdrop-filter:blur(34px) saturate(150%);
-  -webkit-backdrop-filter:blur(34px) saturate(150%);
+  background:rgba(251,248,241,.20);
+  backdrop-filter:blur(40px) saturate(150%);
+  -webkit-backdrop-filter:blur(40px) saturate(150%);
   border:none; border-radius:0;
   box-shadow:inset 0 1px 0 rgba(255,255,255,.34),
              inset 0 -1px 0 rgba(255,255,255,.14);
@@ -170,7 +170,7 @@ body:has(.bridges-stage) footer{display:none}
 /* 折叠时底部渐隐，暗示经文还有下文 */
 .bridges-unit:not(.bridges-verse-open) > .bridges-unit-head .bridges-scripture::after{
   content:""; position:absolute; left:0; right:30px; bottom:0; height:1.1em;
-  background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,.52) 88%);
+  background:linear-gradient(to bottom,rgba(251,248,241,0),rgba(251,248,241,.38) 88%);
   pointer-events:none;
 }
 .bridges-scripture p{margin:0 0 1px; text-align:left; line-height:1.58}
