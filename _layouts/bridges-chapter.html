@@ -78,27 +78,24 @@ body:has(.bridges-stage) footer{display:none}
    不动底色，所以落定时只是「变清晰」，亮度没有跳变。
    ⚠️ clip-path 会成为后代 sticky/fixed 的包含块，动画结束必须清掉，
    否则经文置顶失灵。 */
-/* 起点必须是**屏幕最顶端**。.bridges-stage 的顶边确实在 y=0，但它有 88px
-   padding、下面还有导航行，第一行文字落在 y≈250——那 250px 是空白，展开经过
-   时画面毫无变化，看着就成了「从文字块自己的顶部开始」。
-   所以第一帧把整块上提 --drop-lift（= 第一行文字到视口顶的距离，由 JS 实测），
-   让文字贴着屏幕最上沿冒出来，再随展开匀速回落到正常位置。
+/* ── 入场：文字块从天降下 ────────────────────────────────────────
+   整块从屏幕最顶端往下落到它平时的位置，不做逐行展开。
+   下落距离 --drop-lift = 第一行文字到文档顶的实测距离（JS 用 offsetTop 累加，
+   不能用 getBoundingClientRect——动画一渲染就开始，那时已带 transform，量到的
+   是变换后的位置）。配 opacity 0→1，所以落下来之前画面上只有风景。
 
-   行程按**视口高度**算而不是内容高度：内容几千 px，用 100%→0 的话边界头半秒
-   就扫过整个屏幕，剩下两秒都在扫视口外看不见的部分。视口以下的内容等动画结束
-   清掉 clip-path 时一次放开，那部分本就在屏幕外。 */
+   ⚠️ 动画期间关 backdrop-filter：三层毛玻璃跟着 transform 每帧重算会掉帧。
+   ⚠️ transform 会成为后代 sticky 的包含块，落定后必须清掉，否则经文置顶失灵。 */
 @keyframes bridges-drop{
-  from {clip-path:inset(0 0 100% 0);
-        transform:translateY(calc(-1 * var(--drop-lift, 200px)))}
-  to   {clip-path:inset(0 0 max(0px, 100% - 100vh) 0);
-        transform:translateY(0)}
+  from {transform:translateY(calc(-1 * var(--drop-lift, 240px))); opacity:0}
+  to   {transform:translateY(0); opacity:1}
 }
 .bridges-stage{
-  animation:bridges-drop 2.9s linear both;   /* 匀速，像卷轴被匀速拉开 */
-  will-change:clip-path;
+  animation:bridges-drop 1.15s cubic-bezier(.17,.84,.34,1) both;
+  will-change:transform, opacity;
 }
 .bridges-stage.bridges-drop-done{
-  animation:none; clip-path:none; transform:none; will-change:auto;
+  animation:none; transform:none; opacity:1; will-change:auto;
 }
 .bridges-stage:not(.bridges-drop-done) .bridges-glass-page,
 .bridges-stage:not(.bridges-drop-done) .bridges-scripture{
@@ -258,7 +255,7 @@ body:has(.bridges-stage) footer{display:none}
   }
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   stage.addEventListener('animationend', done, {once:true});
-  setTimeout(done, 3800);          // 兜底：动画被跳过/不支持时也要还原
+  setTimeout(done, 1800);          // 兜底：动画被跳过/不支持时也要还原
 })();
 
 // 两个互不干扰的开关：
