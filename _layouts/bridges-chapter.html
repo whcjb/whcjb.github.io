@@ -245,11 +245,15 @@ body:has(.bridges-stage) footer{display:none}
 (function initBridgesIntro(){
   var stage = document.querySelector('.bridges-stage');
   if (!stage) return;
-  // 第一行文字到视口顶的距离：动画第一帧把整块上提这么多，文字就从屏幕
+  // 第一行文字到文档顶的距离：动画第一帧把整块上提这么多，文字就贴着屏幕
   // 最上沿开始出现，而不是从文字块自己的顶部。
+  // ⚠️ 必须用 offsetTop 累加，不能用 getBoundingClientRect：CSS 动画在页面
+  // 一渲染就开始了，这段 JS 跑的时候整块已经带着 transform，rect 量到的是
+  // 变换后的位置，算出来的抬升距离是错的。offsetTop 不受 transform 影响。
   var first = stage.querySelector('.bridges-chrome, .bridges-hero');
   if (first) {
-    var lift = first.getBoundingClientRect().top + (window.pageYOffset || 0);
+    var lift = 0, el = first;
+    while (el) { lift += el.offsetTop; el = el.offsetParent; }
     stage.style.setProperty('--drop-lift', Math.max(0, Math.round(lift)) + 'px');
   }
   var done = function(){ stage.classList.add('bridges-drop-done'); };
