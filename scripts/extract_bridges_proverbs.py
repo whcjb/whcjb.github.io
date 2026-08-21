@@ -37,6 +37,19 @@ BODY_START_PAGE = 26        # 0-based：p27 是「箴言1:1-4」第一单元
 PREFACE_PAGES = (4, 14)     # 0-based 半开区间：p5–p14 前言
 UNIT_RE = re.compile(r'^箴言\s*(\d+)\s*[:：]\s*([\d\-—－,，\s]+)$')
 
+# PDF 字体映射错误：个别汉字被导出成完全不相干的符号（同 AGES 希伯来乱码那类
+# 问题，不是 OCR）。**每一个都渲染 PDF 原字形肉眼确认过**再列进来——
+#   U+26FF ⛿ → 住（215 处：记住/抓住/立得住/居住/守住/托住/堵住…）
+#   U+2700 ✀ → 佐（2 处：佐证。先按上下文猜成「印证」，渲染后发现是「佐」）
+# 不确定的绝不猜，宁可留着让 qa 报出来。
+GLYPH_FIX = {'\u26ff': '住', '\u2700': '佐'}
+
+
+def fix_glyphs(s: str) -> str:
+    for bad, good in GLYPH_FIX.items():
+        s = s.replace(bad, good)
+    return s
+
 # 段首缩进的 x 区间。正文续行 x≈58，段首缩进 x≈77-79，drop cap 右侧行 x≈104-106。
 # 只有落在 [INDENT_LO, INDENT_HI] 的才是新段落起始。
 INDENT_LO, INDENT_HI = 70.0, 95.0
@@ -51,7 +64,7 @@ def classify(block):
     ss = spans_of(block)
     if not ss:
         return 'skip', '', 0
-    text = ''.join(s['text'] for s in ss)
+    text = fix_glyphs(''.join(s['text'] for s in ss))
     if not text.strip():
         return 'skip', '', 0
     size = max(round(s['size'], 1) for s in ss)
@@ -87,7 +100,7 @@ def extract_page(page):
             for s in ss:
                 kind = 'dropcap' if round(s['size'], 1) >= 20 else 'body'
                 if s['text'].strip():
-                    items.append((kind, s['text'].strip(), b['bbox'][0]))
+                    items.append((kind, fix_glyphs(s['text'].strip()), b['bbox'][0]))
             continue
         kind, text, x0 = classify(b)
         if kind in ('skip', 'header', 'pagenum'):

@@ -146,6 +146,21 @@ def main():
         if extra:
             issues['B-beyond'].append(f'ch{ch} 出现超出该章的节号: {extra}')
 
+    # [F] 异常字符（PDF 字体映射错误：汉字被导出成不相干的符号）
+    import unicodedata
+    OKCH = re.compile(r'[一-鿿㐀-䶿　-〿＀-￯a-zA-Z0-9\s'
+                      r'.,;:!?\'"()\[\]{}<>/\\|@#$%^&*+=_~`\-—–…·°′″“”‘’]')
+    for ch in range(1, 32):
+        p2 = PUB / f'{ch}.md'
+        if not p2.exists():
+            continue
+        body = re.sub(r'<[^>]+>', '', re.sub(r'^---.*?^---', '', p2.read_text(encoding='utf-8'),
+                                             flags=re.S | re.M))
+        for i, c in enumerate(body):
+            if not OKCH.match(c):
+                issues['F-bad-glyph'].append(
+                    f'ch{ch} U+{ord(c):04X} {unicodedata.name(c,"?")[:26]}：…{body[max(0,i-10):i+11]}…')
+
     # [E] 重复段落
     for para, where in para_seen.items():
         if len(where) > 1:
@@ -154,7 +169,8 @@ def main():
     print(f'扫描 31 章：{n_units} 个单元，{n_verses} 条经文\n')
     order = ['missing-chapter','no-unit','no-scripture','ref-chapter-mismatch',
              'A-range-mismatch','B-overlap','B-gap','B-beyond',
-             'C-empty-body','D-verse-out-of-range','D-length-off','E-duplicate-para']
+             'C-empty-body','D-verse-out-of-range','D-length-off','E-duplicate-para',
+             'F-bad-glyph']
     total_issues = 0
     for k in order:
         v = issues.get(k)

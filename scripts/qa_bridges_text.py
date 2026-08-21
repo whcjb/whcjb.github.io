@@ -62,8 +62,14 @@ def main():
 
     # PDF 里部分单元标题用全角冒号（「箴言9：1-6」），产物统一成半角以生成锚点，
     # 属有意规范化，比对前先归一化，否则 56 处噪声盖住真差异。
-    norm = lambda s: (s.replace('：', ':').replace('－', '-')
-                       .replace('—', '-').replace('–', '-'))
+    # PDF 文字层里有字体映射错误（⛿=住、✀=佐，见 extract 的 GLYPH_FIX），产物
+    # 已修正，比对时对 PDF 侧应用同一张表，否则 217 处「差异」全是这个噪声。
+    from extract_bridges_proverbs import GLYPH_FIX
+    def norm(s):
+        for bad, good in GLYPH_FIX.items():
+            s = s.replace(bad, good)
+        return (s.replace('：', ':').replace('－', '-')
+                 .replace('—', '-').replace('–', '-'))
     a, b = norm(pdf_stream()), norm(md_stream())
     print(f'PDF 字符流 {len(a):,}   产物字符流 {len(b):,}   差 {len(a)-len(b):+,}\n')
     if a == b:
