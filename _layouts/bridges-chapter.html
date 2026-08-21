@@ -86,9 +86,40 @@ body:has(.bridges-stage) footer{display:none}
   100% {clip-path:inset(0 0 0 0);    opacity:1}
 }
 .bridges-stage{
-  animation:bridges-drop 2.6s cubic-bezier(.26,.72,.26,1) both;
+  animation:bridges-drop 2.9s cubic-bezier(.33,.66,.3,1) both;
   will-change:clip-path;
 }
+/* 竹简的「帘面」：一层极淡的纸色，让展开从屏幕最顶端就看得见——
+   否则前 88px 是空白 padding，那一段展开时画面毫无变化，看着像从中间才开始。
+   落定后淡到几乎不可见，不影响背景风景。 */
+.bridges-stage::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
+  background:linear-gradient(180deg,
+      rgba(251,248,241,.20) 0%, rgba(251,248,241,.10) 45%, rgba(251,248,241,.05) 100%);
+  animation:bridges-paper 2.9s cubic-bezier(.33,.66,.3,1) both;
+}
+@keyframes bridges-paper{0%,70%{opacity:1} 100%{opacity:.35}}
+/* 展开边缘：一道随裁剪下沿走的暖金光线，竹简/卷轴摊开的那条边。
+   用 transform 位移（合成属性，不重排），行程由 JS 写进 --stage-h。 */
+.bridges-stage::after{
+  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  z-index:3; pointer-events:none;
+  background:linear-gradient(90deg,
+      transparent, rgba(235,217,174,.15) 12%, rgba(245,232,198,.92) 50%,
+      rgba(235,217,174,.15) 88%, transparent);
+  box-shadow:0 0 22px rgba(235,217,174,.55), 0 6px 26px rgba(120,92,48,.30);
+  animation:bridges-edge 2.9s cubic-bezier(.33,.66,.3,1) both;
+}
+@keyframes bridges-edge{
+  0%   {transform:translateY(0);                 opacity:0}
+  6%   {opacity:.95}
+  88%  {opacity:.95}
+  100% {transform:translateY(var(--stage-h,100vh)); opacity:0}
+}
+.bridges-stage.bridges-drop-done::before,
+.bridges-stage.bridges-drop-done::after{animation:none}
+.bridges-stage.bridges-drop-done::after{display:none}
+.bridges-stage.bridges-drop-done::before{opacity:.35}
 .bridges-stage.bridges-drop-done{
   animation:none; clip-path:none; transform:none; will-change:auto;
 }
@@ -104,7 +135,8 @@ body:has(.bridges-stage) footer{display:none}
 /* 落定后毛玻璃回来，给一段过渡免得「啪」地一跳 */
 .bridges-glass-page, .bridges-scripture{transition:background .5s ease}
 @media (prefers-reduced-motion: reduce){
-  .bridges-stage{animation:none}
+  .bridges-stage, .bridges-stage::before, .bridges-stage::after{animation:none}
+  .bridges-stage::after{display:none}
 }
 
 /* 图上的章标题 */
@@ -242,9 +274,12 @@ body:has(.bridges-stage) footer{display:none}
 (function initBridgesIntro(){
   var stage = document.querySelector('.bridges-stage');
   if (!stage) return;
+  // 展开边缘要走完整块内容的高度；百分比 translateY 是相对自身（2px）的，
+  // 所以把实际高度写进 CSS 变量给 keyframes 用。
+  stage.style.setProperty('--stage-h', stage.offsetHeight + 'px');
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   stage.addEventListener('animationend', done, {once:true});
-  setTimeout(done, 3400);          // 兜底：动画被跳过/不支持时也要还原
+  setTimeout(done, 3800);          // 兜底：动画被跳过/不支持时也要还原
 })();
 
 // 两个互不干扰的开关：
