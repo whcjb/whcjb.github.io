@@ -79,19 +79,18 @@ body:has(.bridges-stage) footer{display:none}
    ⚠️ clip-path 会成为后代 sticky/fixed 的包含块，动画结束必须清掉，
    否则经文置顶失灵。 */
 /* ── 入场：文字块从天降下 ────────────────────────────────────────
-   整块从屏幕最顶端往下落到它平时的位置，不做逐行展开。
-   下落距离 --drop-lift = 第一行文字到文档顶的实测距离（JS 用 offsetTop 累加，
-   不能用 getBoundingClientRect——动画一渲染就开始，那时已带 transform，量到的
-   是变换后的位置）。配 opacity 0→1，所以落下来之前画面上只有风景。
+   整块从**屏幕外面**（视口上方一整屏）落到它平时的位置，不做逐行展开。
+   起点用 -100vh 而不是「第一行文字到顶的距离」——后者只有 250px 左右，起点
+   还在屏幕里面，看着就不像从最顶部降下来。配 opacity 0→1，落下之前只有风景。
 
    ⚠️ 动画期间关 backdrop-filter：三层毛玻璃跟着 transform 每帧重算会掉帧。
    ⚠️ transform 会成为后代 sticky 的包含块，落定后必须清掉，否则经文置顶失灵。 */
 @keyframes bridges-drop{
-  from {transform:translateY(calc(-1 * var(--drop-lift, 240px))); opacity:0}
+  from {transform:translateY(-100vh); opacity:0}
   to   {transform:translateY(0); opacity:1}
 }
 .bridges-stage{
-  animation:bridges-drop 1.15s cubic-bezier(.17,.84,.34,1) both;
+  animation:bridges-drop 1.4s cubic-bezier(.17,.84,.34,1) both;
   will-change:transform, opacity;
 }
 .bridges-stage.bridges-drop-done{
@@ -242,20 +241,9 @@ body:has(.bridges-stage) footer{display:none}
 (function initBridgesIntro(){
   var stage = document.querySelector('.bridges-stage');
   if (!stage) return;
-  // 第一行文字到文档顶的距离：动画第一帧把整块上提这么多，文字就贴着屏幕
-  // 最上沿开始出现，而不是从文字块自己的顶部。
-  // ⚠️ 必须用 offsetTop 累加，不能用 getBoundingClientRect：CSS 动画在页面
-  // 一渲染就开始了，这段 JS 跑的时候整块已经带着 transform，rect 量到的是
-  // 变换后的位置，算出来的抬升距离是错的。offsetTop 不受 transform 影响。
-  var first = stage.querySelector('.bridges-chrome, .bridges-hero');
-  if (first) {
-    var lift = 0, el = first;
-    while (el) { lift += el.offsetTop; el = el.offsetParent; }
-    stage.style.setProperty('--drop-lift', Math.max(0, Math.round(lift)) + 'px');
-  }
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   stage.addEventListener('animationend', done, {once:true});
-  setTimeout(done, 1800);          // 兜底：动画被跳过/不支持时也要还原
+  setTimeout(done, 2100);          // 兜底：动画被跳过/不支持时也要还原
 })();
 
 // 两个互不干扰的开关：
