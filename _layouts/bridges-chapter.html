@@ -68,6 +68,22 @@ layout: default
 /* 白色页脚会把整屏图割断 */
 body:has(.bridges-stage) footer{display:none}
 .bridges-stage{padding:88px 0 60px; position:relative}
+/* ── 入场：整块内容像卷帘一样从顶部拉下来，拉下来之前只见风景 ──────────
+   用 clip-path 从「上边缘裁到底」逐渐放开，配一点点下移与淡入。
+   ⚠️ clip-path / transform 会成为后代 position:sticky、fixed 的包含块，
+   动画一结束必须清掉，否则经文置顶（sticky）会失灵——故 animationend 后
+   加 .bridges-drop-done 把两者都还原成 none。背景图在 .bridges-stage
+   之外，不受裁剪影响，所以拉下来之前画面上只有风景。 */
+@keyframes bridges-drop{
+  0%   {clip-path:inset(0 0 100% 0); transform:translateY(-16px); opacity:.3}
+  55%  {opacity:1}
+  100% {clip-path:inset(0 0 0 0);    transform:translateY(0);     opacity:1}
+}
+.bridges-stage{animation:bridges-drop 1.5s cubic-bezier(.16,.68,.28,1) both}
+.bridges-stage.bridges-drop-done{animation:none; clip-path:none; transform:none}
+@media (prefers-reduced-motion: reduce){
+  .bridges-stage{animation:none}
+}
 
 /* 图上的章标题 */
 .bridges-hero{text-align:center; margin:0 0 18px}
@@ -199,6 +215,16 @@ body:has(.bridges-stage) footer{display:none}
 </style>
 
 <script>
+// 入场动画结束后清掉 clip-path/transform：它们会成为后代 sticky/fixed 的
+// 包含块，留着经文就没法置顶了。
+(function initBridgesIntro(){
+  var stage = document.querySelector('.bridges-stage');
+  if (!stage) return;
+  var done = function(){ stage.classList.add('bridges-drop-done'); };
+  stage.addEventListener('animationend', done, {once:true});
+  setTimeout(done, 2200);          // 兜底：动画被跳过/不支持时也要还原
+})();
+
 // 两个互不干扰的开关：
 //   点经文块（或头部空白）→ 展开/收起**经文**，不动注释
 //   点右侧「注释」按钮   → 展开/收起**注释**，不动经文
