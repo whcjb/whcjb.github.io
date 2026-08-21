@@ -88,7 +88,7 @@ body:has(.bridges-stage) footer{display:none}
   -webkit-backdrop-filter:blur(30px) saturate(122%);
   border:1px solid rgba(255,255,255,.42);
   border-radius:16px;
-  padding:26px 30px 22px;
+  padding:26px 0 22px;      /* 左右顶到卡边缘，只留上下 */
   box-shadow:0 18px 50px rgba(30,20,10,.26);
 }
 /* 悬浮在图上的导航/日期：白字 + 阴影 */
@@ -189,7 +189,7 @@ body:has(.bridges-stage) footer{display:none}
 @media(max-width:600px){
   .bridges-stage{padding:74px 0 44px}
   .bridges-hero h1{font-size:23px}
-  .bridges-glass-page{padding:18px 15px 15px; border-radius:13px}
+  .bridges-glass-page{padding:18px 0 15px; border-radius:13px}
   .bridges-nav-lr{gap:10px}
   .bridges-content{font-size:16px; line-height:1.9}
   .bridges-scripture{padding-left:0; padding-right:38px}
