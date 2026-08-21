@@ -5,10 +5,12 @@
 - 卷二：耶利米书 24-52 → calvin/jeremiah-2/N.md
 - 章号用绝对值(与英文一致，切换 jeremiah-1↔jeremiah-1-en 对得上)。
 
-⚠️ 英文源两处章边界有问题，**不要翻、也不会发布**：
-   jeremiah-1-en/24.md 613KB（卷一末章吞了后续内容，正常单章约 90KB）
-   jeremiah-2-en/52.md 482KB（卷二末章吞尾）
-   ch24 用卷二那份（13KB，正常）。修好边界后再单独补这两章。
+英文源原有两处末章吞附录，已由 scripts/jeremiah_footnotes_restore.py 修好：
+   jeremiah-1-en/24.md 613KB → 41KB（切出 596 条脚注定义，配回各章）
+   jeremiah-2-en/52.md 482KB → 17KB（切出脚注 + 卷末「Calvin's Version」译本
+     附录到 appendix-calvin-version.md）
+   ch24 两卷都有，卷一那份是真 ch24 正文，卷二那份 13KB 是重复的开头，
+   发布时以卷二为准（章号 24 归卷二区间）。
 
 - calvin-en 布局；front matter 本地化；prev/next 只在已译章之间连。
 - 已发布章保留原 date；新章用当前真实时间。
@@ -28,8 +30,8 @@ VOLS = [
     (ROOT / 'calvin_raw/jeremiah-2/zh_chapters', ROOT / 'calvin/jeremiah-2',
      'jeremiah-2', '耶利米书（卷二）', 24, 52),
 ]
-# 英文源章边界坏掉、暂不发布的章（见 docstring）
-SKIP = {('jeremiah-1', 24), ('jeremiah-2', 52)}
+# 章边界与脚注已修好（jeremiah_footnotes_restore.py），无需跳过任何章
+SKIP = set()
 
 
 def clean_body(b):
