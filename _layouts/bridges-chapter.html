@@ -96,9 +96,9 @@ body:has(.bridges-stage) footer{display:none}
   animation:bridges-drop 1.4s cubic-bezier(.17,.84,.34,1) both;
   will-change:transform, opacity;
 }
-/* 章标题、上下导航、发布时间：等文字块落定后才淡入 */
+/* 章标题、上下导航、发布时间：文字块落到一半时开始淡入 */
 .bridges-hero, .bridges-chrome{
-  animation:bridges-fade .55s ease 1.4s both;
+  animation:bridges-fade .55s ease .7s both;
 }
 .bridges-stage.bridges-drop-done .bridges-glass-page{
   animation:none; transform:none; opacity:1; will-change:auto;
