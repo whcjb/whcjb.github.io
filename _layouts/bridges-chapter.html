@@ -80,10 +80,15 @@ body:has(.bridges-stage) footer{display:none}
    否则经文置顶失灵。 */
 @keyframes bridges-drop{
   from {clip-path:inset(0 0 100% 0)}
-  to   {clip-path:inset(0 0 0 0)}
+  /* 行程按**视口高度**算，不是内容高度：内容有几千 px，用 100%→0 的话边界
+     在头半秒就扫过整个屏幕了，剩下两秒都在扫视口外看不见的部分——观感就成了
+     「文字唰一下出现」。改成边界在整段时间里从屏幕顶匀速走到屏幕底；
+     视口以下的部分等动画结束由 .bridges-drop-done 清掉 clip-path 一次放开，
+     那部分本来就在屏幕外，看不见。 */
+  to   {clip-path:inset(0 0 max(0px, 100% - 100vh) 0)}
 }
 .bridges-stage{
-  animation:bridges-drop 2.9s cubic-bezier(.33,.66,.3,1) both;
+  animation:bridges-drop 2.9s linear both;   /* 匀速，像卷轴被匀速拉开 */
   will-change:clip-path;
 }
 .bridges-stage.bridges-drop-done{
