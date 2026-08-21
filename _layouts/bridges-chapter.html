@@ -69,18 +69,40 @@ layout: default
 body:has(.bridges-stage) footer{display:none}
 .bridges-stage{padding:88px 0 60px; position:relative}
 /* ── 入场：整块内容像卷帘一样从顶部拉下来，拉下来之前只见风景 ──────────
-   用 clip-path 从「上边缘裁到底」逐渐放开，配一点点下移与淡入。
-   ⚠️ clip-path / transform 会成为后代 position:sticky、fixed 的包含块，
-   动画一结束必须清掉，否则经文置顶（sticky）会失灵——故 animationend 后
-   加 .bridges-drop-done 把两者都还原成 none。背景图在 .bridges-stage
-   之外，不受裁剪影响，所以拉下来之前画面上只有风景。 */
+   clip-path 从「上边缘裁到底」逐渐放开。只动 clip-path + opacity，不再叠
+   translateY——同时变的属性越少越稳。
+
+   ⚠️ 卡顿的真正来源是毛玻璃：本页有三层 backdrop-filter（正文卡 blur 38px、
+   经文块 blur 40px、背景纱），clip-path 每帧改变裁剪区，这些模糊就要跟着
+   重算一遍，必然掉帧。所以**动画期间整体关掉 backdrop-filter**，用略实的
+   纯色顶替（视觉上很接近），落定后再恢复真毛玻璃。
+
+   ⚠️ clip-path 会成为后代 position:sticky / fixed 的包含块，动画一结束必须
+   清掉，否则经文置顶失灵——故 animationend 后加 .bridges-drop-done。
+   背景图在 .bridges-stage 之外，不受裁剪影响，拉下来之前画面上只有风景。 */
 @keyframes bridges-drop{
-  0%   {clip-path:inset(0 0 100% 0); transform:translateY(-16px); opacity:.3}
-  55%  {opacity:1}
-  100% {clip-path:inset(0 0 0 0);    transform:translateY(0);     opacity:1}
+  0%   {clip-path:inset(0 0 100% 0); opacity:.35}
+  50%  {opacity:1}
+  100% {clip-path:inset(0 0 0 0);    opacity:1}
 }
-.bridges-stage{animation:bridges-drop 1.5s cubic-bezier(.16,.68,.28,1) both}
-.bridges-stage.bridges-drop-done{animation:none; clip-path:none; transform:none}
+.bridges-stage{
+  animation:bridges-drop 2.6s cubic-bezier(.26,.72,.26,1) both;
+  will-change:clip-path;
+}
+.bridges-stage.bridges-drop-done{
+  animation:none; clip-path:none; transform:none; will-change:auto;
+}
+/* 动画期间：关掉昂贵的毛玻璃，用等效纯色顶上 */
+.bridges-stage:not(.bridges-drop-done) .bridges-glass-page{
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  background:rgba(251,248,241,.62);
+}
+.bridges-stage:not(.bridges-drop-done) .bridges-scripture{
+  backdrop-filter:none; -webkit-backdrop-filter:none;
+  background:rgba(251,248,241,.52);
+}
+/* 落定后毛玻璃回来，给一段过渡免得「啪」地一跳 */
+.bridges-glass-page, .bridges-scripture{transition:background .5s ease}
 @media (prefers-reduced-motion: reduce){
   .bridges-stage{animation:none}
 }
@@ -222,7 +244,7 @@ body:has(.bridges-stage) footer{display:none}
   if (!stage) return;
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   stage.addEventListener('animationend', done, {once:true});
-  setTimeout(done, 2200);          // 兜底：动画被跳过/不支持时也要还原
+  setTimeout(done, 3400);          // 兜底：动画被跳过/不支持时也要还原
 })();
 
 // 两个互不干扰的开关：
