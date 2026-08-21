@@ -95,19 +95,21 @@ body:has(.bridges-stage) footer{display:none}
 .bridges-stage::before{
   content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
   background:linear-gradient(180deg,
-      rgba(251,248,241,.20) 0%, rgba(251,248,241,.10) 45%, rgba(251,248,241,.05) 100%);
+      rgba(250,245,232,.52) 0%, rgba(250,245,232,.40) 50%, rgba(250,245,232,.30) 100%);
   animation:bridges-paper 2.9s cubic-bezier(.33,.66,.3,1) both;
 }
-@keyframes bridges-paper{0%,70%{opacity:1} 100%{opacity:.35}}
+/* 展开时帘子要看得见（原来 .20 铺在风景上几乎无感，前 88px 那段等于没动静），
+   落定后完全隐去——常驻会给整页蒙一层白纱，把背景压淡。 */
+@keyframes bridges-paper{0%,62%{opacity:1} 100%{opacity:0}}
 /* 展开边缘：一道随裁剪下沿走的暖金光线，竹简/卷轴摊开的那条边。
    用 transform 位移（合成属性，不重排），行程由 JS 写进 --stage-h。 */
 .bridges-stage::after{
-  content:""; position:absolute; top:0; left:0; right:0; height:2px;
+  content:""; position:absolute; top:0; left:0; right:0; height:3px;
   z-index:3; pointer-events:none;
   background:linear-gradient(90deg,
-      transparent, rgba(235,217,174,.15) 12%, rgba(245,232,198,.92) 50%,
-      rgba(235,217,174,.15) 88%, transparent);
-  box-shadow:0 0 22px rgba(235,217,174,.55), 0 6px 26px rgba(120,92,48,.30);
+      transparent, rgba(232,210,160,.25) 10%, rgba(252,242,214,1) 50%,
+      rgba(232,210,160,.25) 90%, transparent);
+  box-shadow:0 0 30px rgba(240,222,178,.85), 0 10px 34px rgba(110,84,42,.42);
   animation:bridges-edge 2.9s cubic-bezier(.33,.66,.3,1) both;
 }
 @keyframes bridges-edge{
@@ -119,7 +121,7 @@ body:has(.bridges-stage) footer{display:none}
 .bridges-stage.bridges-drop-done::before,
 .bridges-stage.bridges-drop-done::after{animation:none}
 .bridges-stage.bridges-drop-done::after{display:none}
-.bridges-stage.bridges-drop-done::before{opacity:.35}
+.bridges-stage.bridges-drop-done::before{opacity:0}
 .bridges-stage.bridges-drop-done{
   animation:none; clip-path:none; transform:none; will-change:auto;
 }
