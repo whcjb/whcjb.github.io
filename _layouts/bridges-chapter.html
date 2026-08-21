@@ -78,21 +78,27 @@ body:has(.bridges-stage) footer{display:none}
    不动底色，所以落定时只是「变清晰」，亮度没有跳变。
    ⚠️ clip-path 会成为后代 sticky/fixed 的包含块，动画结束必须清掉，
    否则经文置顶失灵。 */
+/* 起点必须是**屏幕最顶端**。.bridges-stage 的顶边确实在 y=0，但它有 88px
+   padding、下面还有导航行，第一行文字落在 y≈250——那 250px 是空白，展开经过
+   时画面毫无变化，看着就成了「从文字块自己的顶部开始」。
+   所以第一帧把整块上提 --drop-lift（= 第一行文字到视口顶的距离，由 JS 实测），
+   让文字贴着屏幕最上沿冒出来，再随展开匀速回落到正常位置。
+
+   行程按**视口高度**算而不是内容高度：内容几千 px，用 100%→0 的话边界头半秒
+   就扫过整个屏幕，剩下两秒都在扫视口外看不见的部分。视口以下的内容等动画结束
+   清掉 clip-path 时一次放开，那部分本就在屏幕外。 */
 @keyframes bridges-drop{
-  from {clip-path:inset(0 0 100% 0)}
-  /* 行程按**视口高度**算，不是内容高度：内容有几千 px，用 100%→0 的话边界
-     在头半秒就扫过整个屏幕了，剩下两秒都在扫视口外看不见的部分——观感就成了
-     「文字唰一下出现」。改成边界在整段时间里从屏幕顶匀速走到屏幕底；
-     视口以下的部分等动画结束由 .bridges-drop-done 清掉 clip-path 一次放开，
-     那部分本来就在屏幕外，看不见。 */
-  to   {clip-path:inset(0 0 max(0px, 100% - 100vh) 0)}
+  from {clip-path:inset(0 0 100% 0);
+        transform:translateY(calc(-1 * var(--drop-lift, 200px)))}
+  to   {clip-path:inset(0 0 max(0px, 100% - 100vh) 0);
+        transform:translateY(0)}
 }
 .bridges-stage{
   animation:bridges-drop 2.9s linear both;   /* 匀速，像卷轴被匀速拉开 */
   will-change:clip-path;
 }
 .bridges-stage.bridges-drop-done{
-  animation:none; clip-path:none; will-change:auto;
+  animation:none; clip-path:none; transform:none; will-change:auto;
 }
 .bridges-stage:not(.bridges-drop-done) .bridges-glass-page,
 .bridges-stage:not(.bridges-drop-done) .bridges-scripture{
@@ -239,6 +245,13 @@ body:has(.bridges-stage) footer{display:none}
 (function initBridgesIntro(){
   var stage = document.querySelector('.bridges-stage');
   if (!stage) return;
+  // 第一行文字到视口顶的距离：动画第一帧把整块上提这么多，文字就从屏幕
+  // 最上沿开始出现，而不是从文字块自己的顶部。
+  var first = stage.querySelector('.bridges-chrome, .bridges-hero');
+  if (first) {
+    var lift = first.getBoundingClientRect().top + (window.pageYOffset || 0);
+    stage.style.setProperty('--drop-lift', Math.max(0, Math.round(lift)) + 'px');
+  }
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   stage.addEventListener('animationend', done, {once:true});
   setTimeout(done, 3800);          // 兜底：动画被跳过/不支持时也要还原
