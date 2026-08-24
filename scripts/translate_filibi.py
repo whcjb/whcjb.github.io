@@ -1421,9 +1421,15 @@ def md5key(text: str) -> str:
 # 等）继续 `tf.CLI_TRIM_FLAGS` 引用。
 
 
-def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3,
+def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
                 label: str = '') -> str:
-    """调用 claude CLI；遇到失败重试 max_retries 次（指数退避 5/15/30s）。
+    """调用 claude CLI；遇到失败重试 max_retries 次（退避 5/15/45/90/180s）。
+
+    ⚠️ 重试次数从 3 提到 6：CLI 会间歇性返回
+    `is_error / stop_reason=stop_sequence / num_turns=1`，耗时只有 1-10 秒，
+    与送进去的内容无关（同一批第 3 次就过，事后单独重跑一次即过）。
+    2026-08-24 那轮 jeremiah-1 ch1/ch2 就是连吃 3 次这种故障整章中止的，
+    ch2 白跑 22 分钟。退避上限也拉长，跨过 API 侧的短时抖动。
 
     每次调用会打印 token 用量（见 claude_usage.tracker），脚本结束打印汇总。
     """
@@ -1431,7 +1437,7 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3,
     last_err = ''
     for attempt in range(max_retries):
         if attempt:
-            wait = 5 * (3 ** (attempt - 1))
+            wait = min(5 * (3 ** (attempt - 1)), 180)
             print(f'    [retry {attempt}] {last_err[:120]} | wait {wait}s', flush=True)
             time.sleep(wait)
         try:

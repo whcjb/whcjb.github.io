@@ -117,8 +117,24 @@ def call_cli(extra_flags, prompt: str, timeout: int = 300, label: str = '',
                        timeout=timeout)
     if r.returncode != 0 or not r.stdout.strip():
         tracker.record_failure()
-        raise RuntimeError(f'rc={r.returncode} stderr={r.stderr[:200]!r} '
-                           f'stdout={r.stdout[:120]!r}')
+        # rc≠0 时 stdout 往往仍是合法 JSON，里面的 result/subtype 才说明原因。
+        # 早先只截 120 字符原样抛出，把「is_error + stop_reason=stop_sequence」
+        # 的真实报错文本挡在了外面，白查了一轮。落盘完整 JSON 供事后翻。
+        detail = ''
+        try:
+            d = json.loads(r.stdout)
+            detail = (f' subtype={d.get("subtype")!r}'
+                      f' stop_reason={d.get("stop_reason")!r}'
+                      f' result={str(d.get("result"))[:300]!r}')
+            dump = Path('/tmp/cli_errors.jsonl')
+            with dump.open('a', encoding='utf-8') as fh:
+                fh.write(json.dumps({'ts': time.strftime('%F %T'),
+                                     'label': label, 'resp': d},
+                                    ensure_ascii=False) + '\n')
+        except Exception:
+            pass
+        raise RuntimeError(f'rc={r.returncode} stderr={r.stderr[:200]!r}'
+                           f'{detail or " stdout=" + repr(r.stdout[:120])}')
     try:
         d = json.loads(r.stdout)
     except json.JSONDecodeError:
