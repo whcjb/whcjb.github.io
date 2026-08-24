@@ -1,0 +1,1 @@
+[^fE3]: 我会这样翻译这一节：——<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3. 次日，巴施户珥将耶利米从枷锁中释放出来；</span> <span style="color:#000080">耶利米对他说：耶和华不叫你的名为巴施户珥，</span> <span style="color:#000080">乃叫你玛歌珥·米撒毕（就是四面惊吓的意思）。</span></p> 我认为 <span style="color:#008080">קרא</span> 是一个分词，而非过去时的动词。——英编
