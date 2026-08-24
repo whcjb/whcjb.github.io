@@ -14,8 +14,10 @@ translate_filibi.py — Calvin 注释 MD → 中文 MD（支持多书卷）
 支持的 --book 配置见下方 BOOKS 字典。harmony1 多文件模式按 --chapter
 指定章号；phil 等单文件模式忽略 --chapter。
 """
-import sys, re, subprocess, hashlib, argparse
+import sys, os, re, subprocess, hashlib, argparse
 from pathlib import Path
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from claude_usage import CLI_TRIM_FLAGS, call_cli, tracker   # noqa: E402
@@ -26,6 +28,15 @@ ROOT = Path(__file__).resolve().parent.parent
 # 缓存，解析失败会自动退回逐条翻译，所以 >1 是安全的。设 1 时一章 100+ 段就是
 # 100+ 次调用，一章要 20 分钟；设 3 后墙钟时间降到三分之一。
 BATCH = 3
+
+# 并发路数。实测（jeremiah-1 ch7，链条同时占着 API）：
+#   串行 BATCH=3  5.7s/段   ← 基线
+#   串行 BATCH=8  7.0s/段   ← 反而更慢，瓶颈是输出 token 生成速度，不是调用
+#                              次数，攒批只是把等待挪进单次调用里
+#   3 路并发      2.4s/段   ← 2.4×，27/27 全成功，未触发限流
+# 提速只能靠并发。git commit/push 仍由 translate_serial.sh 串行做，这里并发的
+# 只是 CLI 调用；每段写各自的缓存文件，互不干扰。
+PARALLEL = int(os.environ.get('TRANSLATE_PARALLEL', '3'))
 
 # 所有加尔文书卷共用的追加规则(在 main 里 append 到各书 system 之后)
 SCRIPTURE_RULE = (
@@ -1504,16 +1515,30 @@ def cached_translate(texts: list, resume: bool) -> list:
         else:
             pending_idx.append(i)
 
-    # 分批翻译未命中缓存的
-    for batch_start in range(0, len(pending_idx), BATCH):
-        batch_pos = pending_idx[batch_start:batch_start + BATCH]
+    # 分批翻译未命中缓存的，PARALLEL 路并发
+    batches = [pending_idx[i:i + BATCH]
+               for i in range(0, len(pending_idx), BATCH)]
+    done = [0]
+    lock = threading.Lock()
+
+    def run_batch(batch_pos):
         batch_texts = [texts[i] for i in batch_pos]
-        print(f'  翻译第 {batch_start+1}–{batch_start+len(batch_pos)} 段（共 {len(pending_idx)} 段未缓存）...', flush=True)
         zh_list = translate_batch(batch_texts)
         for i, zh in zip(batch_pos, zh_list):
             results[i] = zh
-            f = CACHE_DIR / f'{md5key(texts[i])}.txt'
-            f.write_text(zh, encoding='utf-8')
+            (CACHE_DIR / f'{md5key(texts[i])}.txt').write_text(zh, encoding='utf-8')
+        with lock:
+            done[0] += len(batch_pos)
+            print(f'  已翻 {done[0]}/{len(pending_idx)} 段', flush=True)
+
+    if PARALLEL > 1 and len(batches) > 1:
+        with ThreadPoolExecutor(max_workers=PARALLEL) as ex:
+            futs = [ex.submit(run_batch, b) for b in batches]
+            for fu in futs:
+                fu.result()      # 任一批彻底失败仍然抛出，整章中止语义不变
+    else:
+        for b in batches:
+            run_batch(b)
 
     return results
 

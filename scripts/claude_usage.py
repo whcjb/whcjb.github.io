@@ -9,7 +9,7 @@
     from claude_usage import call_cli, CLI_TRIM_FLAGS, tracker
     text = call_cli(['--model', 'opus', '--system-prompt', SYSTEM], prompt)
 """
-import atexit, json, subprocess, sys, time
+import atexit, json, subprocess, sys, threading, time
 
 # 翻译是纯文本任务，用不着工具、MCP、CLAUDE.md、skills、hooks。默认调用把这些
 # 全塞进每次请求的前缀——2026-08-19 实测（CLI 2.1.235）：默认 29,142 token/次，
@@ -41,15 +41,17 @@ class UsageTracker:
         self.cost = 0.0
         self.t0 = time.time()
         self._registered = False
+        self._lock = threading.Lock()   # translate_filibi 并发调用，计数要串起来
 
     # ── 记账 ──────────────────────────────────────────────────────────
     def record(self, usage: dict, cost: float, label: str = '', quiet=False):
-        self.calls += 1
-        self.input       += usage.get('input_tokens') or 0
-        self.cache_write += usage.get('cache_creation_input_tokens') or 0
-        self.cache_read  += usage.get('cache_read_input_tokens') or 0
-        self.output      += usage.get('output_tokens') or 0
-        self.cost        += cost or 0.0
+        with self._lock:
+            self.calls += 1
+            self.input       += usage.get('input_tokens') or 0
+            self.cache_write += usage.get('cache_creation_input_tokens') or 0
+            self.cache_read  += usage.get('cache_read_input_tokens') or 0
+            self.output      += usage.get('output_tokens') or 0
+            self.cost        += cost or 0.0
         self._register()
         if quiet:
             return
@@ -65,7 +67,8 @@ class UsageTracker:
               f' | 累计 {_fmt(self.total)} tok ${self.cost:.3f}', flush=True)
 
     def record_failure(self):
-        self.failed += 1
+        with self._lock:
+            self.failed += 1
         self._register()
 
     @property
