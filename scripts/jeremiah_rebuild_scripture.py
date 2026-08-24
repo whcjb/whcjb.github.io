@@ -68,6 +68,16 @@ def main():
     for raw_name, en_dir in VOLS:
         merged = (ROOT / f'calvin_raw/{raw_name}/calvin_{raw_name}.md').read_text(encoding='utf-8')
         new_blocks = {m.group(1): m.group(0) for m in NEW_BLOCK.finditer(merged)}
+        # 有些双语块前面没有 <h2 scripture-anchor>（直接就是 div），上面按
+        # h2+data-ref 配对的正则抓不到它们。补一份按块内 ages-code 索引的表，
+        # 替换时用旧块自己的 h2 兜底。
+        BARE = re.compile(r'<div class="scripture-box scripture-box--bilingual"[^>]*>'
+                          + _NO_CROSS + r'\n</div>', re.S)
+        new_by_code = {}
+        for m in BARE.finditer(merged):
+            cm = re.search(r'ages-code">&lt;(\d{6})&gt;', m.group(0))
+            if cm:
+                new_by_code.setdefault(cm.group(1), m.group(0))
         print(f'== {raw_name}: 新双语块 {len(new_blocks)} 个')
 
         n_file = n_repl = n_stray = n_fn = n_keep = n_bad = 0
@@ -80,7 +90,15 @@ def main():
                 ref = m.group(1)
                 new = new_blocks.get(ref)
                 if not new:
-                    continue
+                    # 退路：按旧块内的 ages-code 找那些「没有 h2」的新双语块，
+                    # 并把旧块自己的 h2 接到前面，保住锚点与导航
+                    cm = re.search(r'ages-code">&lt;(\d{6})&gt;', m.group(0))
+                    bare = new_by_code.get(cm.group(1)) if cm else None
+                    if not bare:
+                        continue
+                    h2m = re.match(r'(<h2 class="scripture-anchor".*?</h2>)\s*\n+',
+                                   m.group(0), re.S)
+                    new = (h2m.group(1) + '\n\n' + bare) if h2m else bare
                 table_plain = plain(new)
                 start, end = m.start(), m.end()
                 # 逐段检查其后的缩进/右对齐段：只有内容已被新表覆盖的才吃掉
