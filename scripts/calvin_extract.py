@@ -315,8 +315,16 @@ VOLUMES = {
     'malachi':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_MALC.pdf', 'out': os.path.join(BASE, 'calvin_raw/malachi/calvin_malachi_structured.txt') },
     'isaiah-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-1/calvin_isaiah-1_structured.txt') },
     'isaiah-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-2/calvin_isaiah-2_structured.txt') },
-    'jeremiah-1':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER1.pdf', 'out': os.path.join(BASE, 'calvin_raw/jeremiah-1/calvin_jeremiah-1_structured.txt') },
-    'jeremiah-2':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER2.pdf', 'out': os.path.join(BASE, 'calvin_raw/jeremiah-2/calvin_jeremiah-2_structured.txt') },
+    'jeremiah-1':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER1.pdf',
+                       # 拉丁列 x0=198（1cor 是 218），默认阈值 200 会把整列
+                       # 判成英文左栏、双语状态机激活不了 —— 经文散在框外。
+                       'latin_x_min': 190,
+                       'out': os.path.join(BASE, 'calvin_raw/jeremiah-1/calvin_jeremiah-1_structured.txt') },
+    'jeremiah-2':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER2.pdf',
+                       # 拉丁列 x0=198（1cor 是 218），默认阈值 200 会把整列
+                       # 判成英文左栏、双语状态机激活不了 —— 经文散在框外。
+                       'latin_x_min': 190,
+                       'out': os.path.join(BASE, 'calvin_raw/jeremiah-2/calvin_jeremiah-2_structured.txt') },
     'psalms-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-1/calvin_psalms-1_structured.txt') },
     'psalms-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-2/calvin_psalms-2_structured.txt') },
     # Calvin's Harmony of the Law (4 vols) — covers Exodus + Leviticus +
@@ -3035,6 +3043,9 @@ def _render_spans_with_italic(spans):
     return ''.join(parts)
 
 
+_LATIN_X_MIN_OVERRIDE = None   # 由 VOLUMES 的 latin_x_min 在 dispatch 时设置
+
+
 def phil_reconstruct_page(page, page_num=None):
     page_w = page.rect.width
     page_cx = page_w / 2
@@ -3054,7 +3065,9 @@ def phil_reconstruct_page(page, page_num=None):
     #   - Exit scripture-mode on first full-width block (commentary starts).
     # For single-column books (John): no H2 marker emits NNNNNN OR no x≥200
     # lines means mode quietly stays off; emits identical to old behavior.
-    LATIN_X_MIN = 200
+    # 默认 200 是照 1cor（拉丁列 x0=218）定的；有的书拉丁列更靠左（耶利米书 198），
+    # 必须由 VOLUMES 的 latin_x_min 覆盖，否则整列被判成英文、双语路径不激活。
+    LATIN_X_MIN = _LATIN_X_MIN_OVERRIDE or 200
     SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
     in_scripture_mode = False
     scripture_table_header = None
@@ -3423,9 +3436,13 @@ def phil_reconstruct_page(page, page_num=None):
 
 
 def extract_ages_phil(cfg):
+    global _LATIN_X_MIN_OVERRIDE
+    # 双语列分界按书校准：默认 200 照 1cor（拉丁列 x0=218）定，耶利米书是 198，
+    # 不覆盖就会把整列判成英文左栏，双语状态机激活不了（经文散落框外）。
+    _LATIN_X_MIN_OVERRIDE = cfg.get('latin_x_min')
     doc   = fitz.open(cfg['pdf'])
     total = len(doc)
-    print(f"Processing {total} pages...")
+    print(f"Processing {total} pages... (LATIN_X_MIN={_LATIN_X_MIN_OVERRIDE or 200})")
 
     all_output = []
     for page_num in range(total):
