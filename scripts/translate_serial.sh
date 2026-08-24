@@ -29,6 +29,9 @@ case "$BOOK" in
     isaiah-2) PUBLISH=scripts/publish_isaiah_zh.py; RAW_DIR=calvin_raw/isaiah-2/zh_chapters; PUB_DIR=calvin/isaiah-2 ;;
     jeremiah-1) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-1/zh_chapters; PUB_DIR=calvin/jeremiah-1 ;;
     jeremiah-2) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-2/zh_chapters; PUB_DIR=calvin/jeremiah-2 ;;
+    lamentations) PUBLISH=scripts/publish_lamentations_zh.py; RAW_DIR=calvin_raw/lamentations/zh_chapters; PUB_DIR=calvin/lamentations ;;
+    daniel)   PUBLISH=scripts/publish_daniel_zh.py;   RAW_DIR=calvin_raw/daniel/zh_chapters;   PUB_DIR=calvin/daniel ;;
+    ezekiel)  PUBLISH=scripts/publish_ezekiel_zh.py;  RAW_DIR=calvin_raw/ezekiel/zh_chapters;  PUB_DIR=calvin/ezekiel ;;
     hosea)      PUBLISH=scripts/publish_hosea_zh.py;    RAW_DIR=calvin_raw/hosea/zh_chapters;      PUB_DIR=calvin/hosea ;;
     psalms-1) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-1/zh_chapters; PUB_DIR=calvin/psalms-1 ;;
     psalms-2) PUBLISH=scripts/publish_psalms_zh.py; RAW_DIR=calvin_raw/psalms-2/zh_chapters; PUB_DIR=calvin/psalms-2 ;;
