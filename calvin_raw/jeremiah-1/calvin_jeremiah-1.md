@@ -661,16 +661,17 @@ We at the same time see that though the treachery of men constrains God to use s
 
 <h2 class="scripture-anchor" id="jeremiah-1-11-12" data-ref="JEREMIAH 1:11-12" style="display:none">JEREMIAH 1:11-12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240111&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">1:11-12</span></p>
 
-<strong>11.</strong> Moreover, the word of the Lord came unto me, saying, Jeremiah, what seest thou? And I said, I see a rod of an almond — tree,
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Moreover, the word of the Lord came unto me, saying, Jeremiah, what seest thou? And I said, I see a rod of an almond — tree</td><td class="scripture-la"><strong>11.</strong> Et (<em>hoc est,</em> postea) factus est sermo Jehovae ad me (<em>datus est mihi,</em> fuit, <em>ad verbum</em>,) dicendo, Quid tu vides, Jeremia? Et dixi, Baculum vigilis (<em>aut,</em> amigdali) ego video.</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> Then said the Lord unto me, Thou hast well seen: for I will hasten my word to perform it.</td><td class="scripture-la"><strong>12.</strong> Et dixit Jehova ad me, Bene fecisti ad videndam (<em>hoc est,</em> recte vidisti,) quia vigilo (<em>aut,</em> festino, vigilans ego, <em>ad verbum</em>) super sermonem meum ut ipsum faciam (<em>hoc est,</em> ut compleam.)</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**11.** Et (*hoc est,* postea) factus est sermo Jehovae ad me (*datus est mihi,* fuit, *ad verbum*,) dicendo, Quid tu vides, Jeremia? Et dixi, Baculum vigilis (*aut,* amigdali) ego video. 12. Then said the Lord unto me, Thou hast well seen: for I will hasten my word to perform it.</p>
-
-<p style="text-align:right;" markdown="1">12. Et dixit Jehova ad me, Bene fecisti ad videndam (*hoc est,* recte vidisti,) quia vigilo (*aut,* festino, vigilans ego, *ad verbum*) super sermonem meum ut ipsum faciam (*hoc est,* ut compleam.)</p>
 
 <!-- PAGE 52 -->
 God confirms in this passage what he had previously said of the power of his word. These two verses, then, are to be taken as explanatory, for no new subject is introduced; but the former part is confirmed — that the Prophets spoke not in vain, or to no purpose, because they were invested with celestial power to plant and to build, and, on the other hand, to pull down and to root up, according to what we have quoted from Paul, who says that true teachers are armed with such power. (2 Corinthians 10:5, 6) We have in readiness, he says, vengeance against all the unbelieving, however proud they may be: and though their height may terrify the whole world, yet we have a sword in our hands which will stay them; for God’s word has sufficient power to destroy the rebellious.
@@ -760,10 +761,14 @@ He then says, <span style="color:#800000">*On its walls around, and on all the c
 
 <h2 class="scripture-anchor" id="jeremiah-1-16" data-ref="JEREMIAH 1:16" style="display:none">JEREMIAH 1:16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240116&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">1:16</span></p>
 
-<strong>16.</strong> And I will utter my judgments against them touching all their wickedness, who have forsaken me, and have burnt incense unto other gods, and worshipped the works of their own hands. <strong>16.</strong> Et loquar (*vel,* proferam) judicia mea cum ipsis super omni malitia eorum; quia (*nam* <span style="color:#008080">rça</span> h*ic ponitur vice* <span style="color:#008080">yk</span> *valet causalem particulam,* quia) dereliquerunt me, et suffitum fecerunt diis alienis et prostrati fuerunt (*vel,* se prostraverunt) coram operibus manuum suarum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>16.</strong> And I will utter my judgments against them touching all their wickedness, who have forsaken me, and have burnt incense unto other gods, and worshipped the works of their own hands.</td><td class="scripture-la"><strong>16.</strong> Et loquar (<em>vel,</em> proferam) judicia mea cum ipsis super omni malitia eorum; quia (<em>nam</em> <span style="color:#008080">rça</span> h<em>ic ponitur vice</em> <span style="color:#008080">yk</span> <em>valet causalem particulam,</em> quia) dereliquerunt me, et suffitum fecerunt diis alienis et prostrati fuerunt (<em>vel,</em> se prostraverunt) coram operibus manuum suarum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -783,10 +788,14 @@ It is afterwards added, for the sake of illustration, that they <span style="col
 
 <h2 class="scripture-anchor" id="jeremiah-1-17" data-ref="JEREMIAH 1:17" style="display:none">JEREMIAH 1:17</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240117&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">1:17</span></p>
 
-<strong>17.</strong> Thou therefore gird up thy loins, and arise, and speak unto them all that I command thee: be not dismayed at their faces, lest I confouml thee before them. <strong>17.</strong> Et tu accinge lumbos tuos et surge, et loquere ad ipsos quaecunque (*vel,* omnia quae) ego mandavero tibi; ne timeas a facie ipsorum, ne to conteram (*vel,* timere faciam) a facie ipsorum (*est enim verbum sumptum ex eadem radice*.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> Thou therefore gird up thy loins, and arise, and speak unto them all that I command thee: be not dismayed at their faces, lest I confouml thee before them.</td><td class="scripture-la"><strong>17.</strong> Et tu accinge lumbos tuos et surge, et loquere ad ipsos quaecunque (<em>vel,</em> omnia quae) ego mandavero tibi; ne timeas a facie ipsorum, ne to conteram (<em>vel,</em> timere faciam) a facie ipsorum (<em>est</em> <em>enim verbum sumptum ex eadem</em> <em>radice</em>.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -905,7 +914,16 @@ And the same thing is confirmed in other words: <span style="color:#800000">*Whe
 
 <h2 class="scripture-anchor" id="jeremiah-2-3" data-ref="JEREMIAH 2:3" style="display:none">JEREMIAH 2:3</h2>
 
-**3.** Israel *was* holiness unto the Lord, *and* the first — fruits of his increase: all that devour him shall offend; evil shall come upon them, saith the Lord. 3. Sanctitas Israel Jehovae, primitiae frugum ejus; quicunque comederint contrahent noxam (*alii vertunt,* peccabunt; *sed ego potius ad poenam refero,)* malun veniet super eos (*exegetice additur hoc membrum*) dicit Jehova.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240203&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:3</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>3.</strong> Israel <em>was</em> holiness unto the Lord, <em>and</em> the first — fruits of his increase: all that devour him shall offend; evil shall come upon them, saith the Lord.</td><td class="scripture-la"><strong>3.</strong> Sanctitas Israel Jehovae, primitiae frugum ejus; quicunque comederint contrahent noxam (<em>alii vertunt,</em> peccabunt; <em>sed ego potius ad poenam refero,)</em> malun veniet super eos (<em>exegetice additur hoc</em> <em>membrum</em>) dicit Jehova.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 God here more clearly reprobates the ingratitude of the people: and first he enumerates his favors by which he had bound the people for ever to himself; and secondly, he shews how malignantly the people responded to the many blessings which they had received.
 
@@ -991,7 +1009,16 @@ Hence he adds, <span style="color:#800000">*And ye have polluted my land*</span>
 
 <h2 class="scripture-anchor" id="jeremiah-2-8" data-ref="JEREMIAH 2:8" style="display:none">JEREMIAH 2:8</h2>
 
-**8.** The priests said not, Where *is* the Lord? and they that handle the law knew me not: the pastors also transgressed against me, and the prophets prophesied by Baal, and walked after *things that* do not profit, 8. Sacerdotes non dixerunt, Ubi Jehova? et qui tenebant (*vel,* servabant) legem (*ad verbum est,* apprehendentes, *vel,* tenentes legem) non cognoverunt me: et pastores perfide egerunt mecum; et prophetae prophetarunt in Baal (*hoc est,* per Baal,) et post ea qua non prosunt ambulaverunt (*vel,* profecti sunt).
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240208&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:8</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> The priests said not, Where <em>is</em> the Lord? and they that handle the law knew me not: the pastors also transgressed against me, and the prophets prophesied by Baal, and walked after <em>things</em> <em>that</em> do not profit</td><td class="scripture-la"><strong>8.</strong> Sacerdotes non dixerunt, Ubi Jehova? et qui tenebant (<em>vel,</em> servabant) legem (<em>ad verbum est,</em> apprehendentes, <em>vel,</em> tenentes legem) non cognoverunt me: et pastores perfide egerunt mecum; et prophetae prophetarunt in Baal (<em>hoc</em> <em>est,</em> per Baal,) et post ea qua non prosunt ambulaverunt (<em>vel,</em> profecti sunt).</td></tr>
+</tbody>
+</table>
+
+</div>
 
 God assails here especially the teachers and those to whom was committed the power of ruling the people. It often happens that the common people fall away, while yet some integrity remains in the rulers. But God shews here that such was the falling away among the whole community, that priests as well as prophets and all the chief men had departed from the true worship of God, and from all uprightness.
 
@@ -1047,16 +1074,17 @@ Let us then learn from this passage, that whenever God reproves us, not only in 
 
 <h2 class="scripture-anchor" id="jeremiah-2-10-11" data-ref="JEREMIAH 2:10-11" style="display:none">JEREMIAH 2:10-11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240210&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:10-11</span></p>
 
-<strong>10.</strong> For pass over the isles of Chittim, and see; and send into Kedar, and consider diligently, and see if there be such a thing:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> For pass over the isles of Chittim, and see; and send into Kedar, and consider diligently, and see if there be such a thing:</td><td class="scripture-la"><strong>10.</strong> Nempe (<em>vel,</em> nam) transite ad insulas Chittim (Graeciae, <em>hoc est,</em> ad omnes regiones transmarinas,) et videte, et in Kedar (<em>hoc est, in oppositam partem, nempe</em> <em>versus Aratbiam</em>) mittite, et considerate diligenter, et videte, an factum sit sicut hoc (<em>id est,</em> an factum sit aliquid simile:)</td></tr>
+<tr><td class="scripture-en"><strong>11.</strong> Hath a nation changed <em>their</em> gods, which <em>are</em> yet no gods? but my people have changed their glory for <em>that which</em> doth not profit</td><td class="scripture-la"><strong>11.</strong> An mutaverit gens deos, et ipsi non sunt dii? et populus meus mutavit gloriam suam in id quod non prodest.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**10.** Nempe (*vel,* nam) transite ad insulas Chittim (Graeciae, *hoc est,* ad omnes regiones transmarinas,) et videte, et in Kedar (*hoc est, in oppositam partem, nempe versus Aratbiam*) mittite, et considerate diligenter, et videte, an factum sit sicut hoc (*id est,* an factum sit aliquid simile:) 11. Hath a nation changed *their* gods, which *are* yet no gods? but my people have changed their glory for *that which* doth not profit,</p>
-
-<p style="text-align:right;" markdown="1">11. An mutaverit gens deos, et ipsi non sunt dii? et populus meus mutavit gloriam suam in id quod non prodest.</p>
 
 Here, by a comparison, he amplifies the wickedness and ingratitude of his own nation, — that they had surpassed in levity all heathen nations; for he says that all nations so agreed in one religion, that each nation followed what it had received from its ancestors. How then was it that the God of Israel was repudiated and rejected by his own people? If there was such persistency in error, why did not truth secure credit among them who had been taught by the mouth of God himself, as though they had been even in heaven? This is the drift of the Prophet’s meaning, when he says, <span style="color:#800000">*Go into the islands of Chittim, and send into Kedar*</span>.
 
@@ -1129,20 +1157,19 @@ We now perceive what the Prophet meant, — that we cannot possibly be free from
 
 <h2 class="scripture-anchor" id="jeremiah-2-14-17" data-ref="JEREMIAH 2:14-17" style="display:none">JEREMIAH 2:14-17</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240214&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:14-17</span></p>
 
-<strong>14.</strong> Is Israel a servant? is he a home — born slave? why is he spoiled?
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> Is Israel a servant? is he a home — born slave? why is he spoiled?</td><td class="scripture-la"><strong>14.</strong> An servus Israel? An (vel, si) genitus domi? (hoc est, an verna? accipiunt enim puerum, domi natum pro verna:) quare factus est in praedam?</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> The young lions roared upon him, <em>and</em> yelled, and they made his land waste: his cities are burnt without inhabitant.</td><td class="scripture-la"><strong>15.</strong> Super eum rugient (vel, rugiunt) leones (alii vertunt, catulos leonum, et soepe significat minores leones hoc nomen sed ubi adjungitur reliquis, ubi autem solum ponitur, ego semper interpretor generaliter pro leonibus,) miserunt vocem suam; posuerunt terram ejus in vastitatem; urbes ejus exustae sunt (vel, destructae, nam, <span style="color:#008080">XXX</span> <em>tandem</em> <em>valet</em> atque <em>hoc loco</em>) absque habitatore.</td></tr>
+<tr><td class="scripture-en"><strong>16.</strong> Also the children of Noph and Tahapanes have broken the crown of thy head.</td><td class="scripture-la"><strong>16.</strong> Etiam filii Noph (hoc est, Mempheos, vocant enim Hebroei Noph urbem quae fuit olim metropo!is Egypti) et Thaphanes (vel, Thaphis, ut vertunt Grraeci) frangent tibi verticem.</td></tr>
+<tr><td class="scripture-en"><strong>17.</strong> Hast thou not procured this unto thyself, in that thou hast forsaken the Lord thy God, when he led thee by the way?</td><td class="scripture-la"><strong>17.</strong> An non hoc fuit tibi, deserere tuum, (hoc est, quod deserueris) Jehovam Deum tuum, quo tempore ducebat to per viam.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**14.** An servus Israel? An (vel, si) genitus domi? (hoc est, an verna? accipiunt enim puerum, domi natum pro verna:) quare factus est in praedam? 15. The young lions roared upon him, *and* yelled, and they made his land waste: his cities are burnt without inhabitant.</p>
-
-<p style="margin-left:2em;" markdown="1">**15.** Super eum rugient (vel, rugiunt) leones (alii vertunt, catulos leonum, et soepe significat minores leones hoc nomen sed ubi adjungitur reliquis, ubi autem solum ponitur, ego semper interpretor generaliter pro leonibus,) miserunt vocem suam; posuerunt terram ejus in vastitatem; urbes ejus exustae sunt (vel, destructae, nam, <span style="color:#008080">XXX</span> *tandem valet* atque *hoc loco*) absque habitatore. 16. Also the children of Noph and Tahapanes have broken the crown of thy head.</p>
-
-<p style="margin-left:2em;" markdown="1">**16.** Etiam filii Noph (hoc est, Mempheos, vocant enim Hebroei Noph urbem quae fuit olim metropo!is Egypti) et Thaphanes (vel, Thaphis, ut vertunt Grraeci) frangent tibi verticem. 17. Hast thou not procured this unto thyself, in that thou hast forsaken the Lord thy God, when he led thee by the way?</p>
-
-<p style="text-align:right;" markdown="1">17. An non hoc fuit tibi, deserere tuum, (hoc est, quod deserueris) Jehovam Deum tuum, quo tempore ducebat to per viam.</p>
 
 These verses are to be read together; for the Prophet first shews that Israel was not as to his original condition miserable, but that this happened through a new cause, and then he mentions the cause. He then first asks, <span style="color:#800000">*whether Israel was a servant or a slave*</span>? God had adopted them as his people, and had promised to be so bountiful to them as to render them in every way happy; and what was more, as a proof of their happiness, he said, In thee shall all nations be blessed. (Genesis 12:3; Genesis 22:18; Genesis 26:4; Genesis 28:14.) We then see what was the original condition of Israel; they excelled all other nations, because they were God’s peculiar people, they were his heritage, they were a royal priesthood.
 
@@ -1283,10 +1310,14 @@ But we must further notice the comparison: he says, that they were like harlots,
 
 <h2 class="scripture-anchor" id="jeremiah-2-21" data-ref="JEREMIAH 2:21" style="display:none">JEREMIAH 2:21</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240221&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:21</span></p>
 
-<strong>21.</strong> Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me? <strong>21.</strong> Et ego plantavi to vineam electam (vineam nobilem, *vel,* exquisitam, *hoc enim significat nomen,* <span style="color:#008080">qrwç</span>,) totam fidele semen (*hoc est,* semen probum); et quomodo conversa es mihi degenerationes vitis alienae?
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> Yet I had planted thee a noble vine, wholly a right seed: how then art thou turned into the degenerate plant of a strange vine unto me?</td><td class="scripture-la"><strong>21.</strong> Et ego plantavi to vineam electam (vineam nobilem, <em>vel,</em> exquisitam, <em>hoc</em> <em>enim significat nomen,</em> <span style="color:#008080">qrwç</span>,) totam fidele semen (<em>hoc est,</em> semen probum); et quomodo conversa es mihi degenerationes vitis alienae?</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1321,10 +1352,14 @@ But the Prophet says, that the <span style="color:#800000">*stains were marked*<
 
 <h2 class="scripture-anchor" id="jeremiah-2-23" data-ref="JEREMIAH 2:23" style="display:none">JEREMIAH 2:23</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240223&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:23</span></p>
 
-<strong>23.</strong> How canst thou say, I am not polluted, I have not gone after Baalim? See thy way in the valley, know what thou hast done: *thou art* a swift dromedary traversing her ways. <strong>23.</strong> Quomodo dices (*hoc est,* quomodo dicis; n*am futurum tempus saepe accipitur apud Hebraeos pro acu continuo,* quomodo *igitur* dicis) non sum polluta, post Baalim non profecta sum? Vide vias tuas in valle, cognosce quid feceris dromedaria velox corripiens vias suas (*vel,* circumiens, *nam deducitur vox ista a corrigia calceamenti*).
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>23.</strong> How canst thou say, I am not polluted, I have not gone after Baalim? See thy way in the valley, know what thou hast done: <em>thou art</em> a swift dromedary traversing her ways.</td><td class="scripture-la"><strong>23.</strong> Quomodo dices (<em>hoc est,</em> quomodo dicis; n<em>am futurum tempus saepe accipitur apud</em> <em>Hebraeos pro acu continuo,</em> quomodo <em>igitur</em> dicis) non sum polluta, post Baalim non profecta sum? Vide vias tuas in valle, cognosce quid feceris dromedaria velox corripiens vias suas (<em>vel,</em> circumiens, <em>nam</em> <em>deducitur vox ista a corrigia calceamenti</em>).</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1338,10 +1373,14 @@ Now this passage teaches us, that the people had become so hardened, that they i
 
 <h2 class="scripture-anchor" id="jeremiah-2-24" data-ref="JEREMIAH 2:24" style="display:none">JEREMIAH 2:24</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240224&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:24</span></p>
 
-<strong>24.</strong> A wild ass used to the wilderness, that snuffeth up the wind at her pleasure: in her occasion who can turn her away? all they that seek her will not weary themselves; in her month they shall find her. <strong>24.</strong> Onager (sed adhuc retinet foemineum genus, foemina igitur onagri) assueta deserto, in appetitu animae sum (hoc est, pro desiderio, vel, cupidine animae suae colligens ventura occasionis suae (vel, occursus sui) quis inde reducet eam? Quisquis persequitur earn non fatigabitur, in mense suo inveniet eam.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>24.</strong> A wild ass used to the wilderness, that snuffeth up the wind at her pleasure: in her occasion who can turn her away? all they that seek her will not weary themselves; in her month they shall find her.</td><td class="scripture-la"><strong>24.</strong> Onager (sed adhuc retinet foemineum genus, foemina igitur onagri) assueta deserto, in appetitu animae sum (hoc est, pro desiderio, vel, cupidine animae suae colligens ventura occasionis suae (vel, occursus sui) quis inde reducet eam? Quisquis persequitur earn non fatigabitur, in mense suo inveniet eam.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1367,10 +1406,14 @@ Let us now see how this similitude applies to the people. The verse contains two
 
 <h2 class="scripture-anchor" id="jeremiah-2-25" data-ref="JEREMIAH 2:25" style="display:none">JEREMIAH 2:25</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240225&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:25</span></p>
 
-<strong>25.</strong> Withhold thy foot from being unshod, and thy throat from thirst; but thou saidst, There is no hope: no; for I have loved strangers, and after them will I go. <strong>25.</strong> Prohibe pedem tuum a discalceare (*hoc est,* ne discalceeris) et guttur tuum a siti (*quanquam alii existimant esse nomen substantivum* <span style="color:#008080">ãjy</span>, *et mihi placet; ita vertendum erit,* Prohibe pedem tuum a discalceatione et guttur tuum a siti;) et dixisti, Acturm est; non, quia dilexi alienos, et post illos ambulabo.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>25.</strong> Withhold thy foot from being unshod, and thy throat from thirst; but thou saidst, There is no hope: no; for I have loved strangers, and after them will I go.</td><td class="scripture-la"><strong>25.</strong> Prohibe pedem tuum a discalceare (<em>hoc</em> <em>est,</em> ne discalceeris) et guttur tuum a siti (<em>quanquam alii existimant esse nomen</em> <em>substantivum</em> <span style="color:#008080">ãjy</span>, <em>et mihi placet; ita</em> <em>vertendum erit,</em> Prohibe pedem tuum a discalceatione et guttur tuum a siti;) et dixisti, Acturm est; non, quia dilexi alienos, et post illos ambulabo.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1514,10 +1557,14 @@ We must, then, understand the meaning to be what I have stated, — that when Go
 
 <h2 class="scripture-anchor" id="jeremiah-2-31" data-ref="JEREMIAH 2:31" style="display:none">JEREMIAH 2:31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240231&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:31</span></p>
 
-<strong>31.</strong> O generation, see ye the word of the Lord. Have I been a wilderness unto Israel? a land of darkness? Wherefore say my people, We are lords; we will come no more unto thee? <strong>31.</strong> Generatio, vos vidite verbum Jehovae, an deserturn fui Israel? an terra caliginis? Quare dixerunt populus meus (hoc est, dixit, sed plurali utitur, quia est nomen collectivum) dominati sumus (alii, recessimus,) non veniemus amplius ad to.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>31.</strong> O generation, see ye the word of the Lord. Have I been a wilderness unto Israel? a land of darkness? Wherefore say my people, We are lords; we will come no more unto thee?</td><td class="scripture-la"><strong>31.</strong> Generatio, vos vidite verbum Jehovae, an deserturn fui Israel? an terra caliginis? Quare dixerunt populus meus (hoc est, dixit, sed plurali utitur, quia est nomen collectivum) dominati sumus (alii, recessimus,) non veniemus amplius ad to.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1579,10 +1626,14 @@ We now understand the Prophet’s meaning: for he condemns the Jews, because the
 
 <h2 class="scripture-anchor" id="jeremiah-2-34" data-ref="JEREMIAH 2:34" style="display:none">JEREMIAH 2:34</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240234&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">2:34</span></p>
 
-<strong>34.</strong> Also in thy skirts is found the blood of the souls of the poor innocents: I have not found it by secret search, but upon all these, <strong>34.</strong> Etiam in alis tuis repertus est sanguis animarum pauperum innocentum; non in suffossione repertae erant, sed super omnibus his (alii vertunt quia in onmibus illis; et particula est causalis, sed tamen hic adversative debet resolvi, quemadmodum multis locis.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>34.</strong> Also in thy skirts is found the blood of the souls of the poor innocents: I have not found it by secret search, but upon all these</td><td class="scripture-la"><strong>34.</strong> Etiam in alis tuis repertus est sanguis animarum pauperum innocentum; non in suffossione repertae erant, sed super omnibus his (alii vertunt quia in onmibus illis; et particula est causalis, sed tamen hic adversative debet resolvi, quemadmodum multis locis.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1872,10 +1923,14 @@ Or, it may be said that the land was made guilty. How so? The reason why they ar
 
 <h2 class="scripture-anchor" id="jeremiah-3-10" data-ref="JEREMIAH 3:10" style="display:none">JEREMIAH 3:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240310&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">3:10</span></p>
 
-<strong>10.</strong> And yet for all this her treacherous sister Judah hath not turned unto me with her whole heart, but feignedly, saith the Lord. <strong>10.</strong> Atque etiam in tote hoc (*vel,* in his onmibus) non reversa est ad me perfida (*vel,* fraudulenta: <span style="color:#008080">dgb</span> *est fraudare*) sorer ejus Jehudah in toto corde suo, sed in mendacio, inquit Jehova.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> And yet for all this her treacherous sister Judah hath not turned unto me with her whole heart, but feignedly, saith the Lord.</td><td class="scripture-la"><strong>10.</strong> Atque etiam in tote hoc (<em>vel,</em> in his onmibus) non reversa est ad me perfida (<em>vel,</em> fraudulenta: <span style="color:#008080">dgb</span> <em>est fraudare</em>) sorer ejus Jehudah in toto corde suo, sed in mendacio, inquit Jehova.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1915,10 +1970,14 @@ The language indeed is not to be strictly taken when it is said, that she <span 
 
 <h2 class="scripture-anchor" id="jeremiah-3-12" data-ref="JEREMIAH 3:12" style="display:none">JEREMIAH 3:12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240312&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">3:12</span></p>
 
-<strong>12.</strong> Go and proclaim these words toward the north, and say, Return, thou backsliding Israel, saith the Lord, *and* I will not cause mine anger to fall upon you: for I am merciful, saith the Lord, *and* I will not keep *anger* for ever. <strong>12.</strong> Vade et clama (*hoc est,* cum clamore intona) sermones hos versus Aquilonem, et dic, Revertere rebellis Israel, dicit Jehova: non, non faciam incumbere (cadere, *ad verbum*) iram meam (*alii vertunt,* faciem meam; *sed metaphorice sl*g*nificat* iram) in vos, quia clemens ego, dicit Jehova, non servabo in seculum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> Go and proclaim these words toward the north, and say, Return, thou backsliding Israel, saith the Lord, <em>and</em> I will not cause mine anger to fall upon you: for I am merciful, saith the Lord, <em>and</em> I will not keep <em>anger</em> for ever.</td><td class="scripture-la"><strong>12.</strong> Vade et clama (<em>hoc est,</em> cum clamore intona) sermones hos versus Aquilonem, et dic, Revertere rebellis Israel, dicit Jehova: non, non faciam incumbere (cadere, <em>ad verbum</em>) iram meam (<em>alii vertunt,</em> faciem meam; <em>sed</em> <em>metaphorice sl</em>g<em>nificat</em> iram) in vos, quia clemens ego, dicit Jehova, non servabo in seculum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -1970,10 +2029,14 @@ We now then perceive the meaning of this verse: God *first* requires a confessio
 
 <h2 class="scripture-anchor" id="jeremiah-3-14" data-ref="JEREMIAH 3:14" style="display:none">JEREMIAH 3:14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240314&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">3:14</span></p>
 
-<strong>14.</strong> Turn, O backsliding children, saith the Lord; for I am married unto you: and I will take you one of a city, and two of a family, and I will bring you to Zion. <strong>14.</strong> Revertimini filii rebelles, dieit Jehova, quoniam ego maritus vester (*vel,* dominatus sum in vobis, *ut alii vertunt; alii,* taedio affectus sum in vobis; *dicemus postea de hoc verbo,)* et assumam vos, unum e civitate, et duos e familia (*vel,* cognatione, *vel,* tribu,) et addueam vos in Sion.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> Turn, O backsliding children, saith the Lord; for I am married unto you: and I will take you one of a city, and two of a family, and I will bring you to Zion.</td><td class="scripture-la"><strong>14.</strong> Revertimini filii rebelles, dieit Jehova, quoniam ego maritus vester (<em>vel,</em> dominatus sum in vobis, <em>ut</em> <em>alii vertunt; alii,</em> taedio affectus sum in vobis; <em>dicemus postea de</em> <em>hoc verbo,)</em> et assumam vos, unum e civitate, et duos e familia (<em>vel,</em> cognatione, <em>vel,</em> tribu,) et addueam vos in Sion.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2102,10 +2165,14 @@ We now, then, perceive the meaning of the Prophet: for he humbles the Israelites
 
 <h2 class="scripture-anchor" id="jeremiah-3-20" data-ref="JEREMIAH 3:20" style="display:none">JEREMIAH 3:20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240320&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">3:20</span></p>
 
-<strong>20.</strong> Surely as a wife treacherously departeth from her husband, so have ye dealt treacherously with me, O house of Israel, saith the Lord. <strong>20.</strong> Certe (*subaudienda est particula* sicut) perfideagit mulier a socio suo <span style="color:#800000">fA93</span> (*hoc est,* perfide agit cum marito, *ubi ab ipso discedit, vel, se alienat,)* sic perfide egistis in me, domus Israel, inquit Jehovah.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> Surely as a wife treacherously departeth from her husband, so have ye dealt treacherously with me, O house of Israel, saith the Lord.</td><td class="scripture-la"><strong>20.</strong> Certe (<em>subaudienda est particula</em> sicut) perfideagit mulier a socio suo <span style="color:#800000">fA93</span> (<em>hoc est,</em> perfide agit cum marito, <em>ubi ab ipso</em> <em>discedit, vel, se alienat,)</em> sic perfide egistis in me, domus Israel, inquit Jehovah.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2318,10 +2385,15 @@ By these words the Prophet again reproves them sharply, and shews that they gain
 
 <h2 class="scripture-anchor" id="jeremiah-4-5-6" data-ref="JEREMIAH 4:5-6" style="display:none">JEREMIAH 4:5-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240405&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:5-6</span></p>
 
-<strong>5.</strong> Declare ye in Judah, and publish in Jerusalem; and say, Blow ye the trumpet in the land: cry, gather together, and say, Assemble yourselves, and let us go into the defensed cities. <strong>5.</strong> Nuntiate (*vel,* promulgate) in Jehudah, et Jerusalem facite audire, (*hoc est,* publicate,) et dicite et clangite tuba in terra; vocate, colligite et dicite, Congregamini, et intremus civitates munitas. <strong>6.</strong> Tollite signum (*vel,* vexilium) in Sion; congregamini (*vel,* confugite; *alii vertunt,* viriliter agite, *deducunt enim hoc verbum ab* <span style="color:#008080">zz[</span>, *sed plures sequuntur diversum sensum ab* <span style="color:#008080">zz[</span>*, quod est* fugere, *vel,* se colligere *metus causa,)* ne stetis (*vel,* non stabitis,) quoniam malum ego accerso (venire facio) ab aquilone, et contritionem magnam. <strong>6.</strong> Set up the standard toward Zion: retire, stay not: for I will bring evil from the north, and a great destruction.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> Declare ye in Judah, and publish in Jerusalem; and say, Blow ye the trumpet in the land: cry, gather together, and say, Assemble yourselves, and let us go into the defensed cities.</td><td class="scripture-la"><strong>5.</strong> Nuntiate (<em>vel,</em> promulgate) in Jehudah, et Jerusalem facite audire, (<em>hoc est,</em> publicate,) et dicite et clangite tuba in terra; vocate, colligite et dicite, Congregamini, et intremus civitates munitas.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> Set up the standard toward Zion: retire, stay not: for I will bring evil from the north, and a great destruction.</td><td class="scripture-la"><strong>6.</strong> Tollite signum (<em>vel,</em> vexilium) in Sion; congregamini (<em>vel,</em> confugite; <em>alii vertunt,</em> viriliter agite, <em>deducunt enim hoc verbum</em> <em>ab</em> <span style="color:#008080">zz[</span>, <em>sed plures sequuntur diversum</em> <em>sensum ab</em> <span style="color:#008080">zz[</span><em>, quod est</em> fugere, <em>vel,</em> se colligere <em>metus causa,)</em> ne stetis (<em>vel,</em> non stabitis,) quoniam malum ego accerso (venire facio) ab aquilone, et contritionem magnam.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2448,16 +2520,17 @@ He afterwards adds, <span style="color:#800000">*And reached has the sword unto 
 
 <h2 class="scripture-anchor" id="jeremiah-4-11-12" data-ref="JEREMIAH 4:11-12" style="display:none">JEREMIAH 4:11-12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240411&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:11-12</span></p>
 
-<strong>11.</strong> At that time shall it be said to this people and to Jerusalem, A dry wind of the high places in the wilderness toward the daughter of my people, not to fan, nor to cleanse,
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> At that time shall it be said to this people and to Jerusalem, A dry wind of the high places in the wilderness toward the daughter of my people, not to fan, nor to cleanse, 12. <em>Even</em> a full wind from those <em>places</em> shall come unto me: now also will I give sentence against them.</td><td class="scripture-la"><strong>11.</strong> In tempore illo dicetur populo huic (<em>hoc est,</em> de populo hoc; <span style="color:#008080">l</span> <em>enim hic</em> <em>accipitur pro</em> <span style="color:#008080">b</span>,) et de Jerusalem, ventus siccus (<em>alii transferunt,</em> vehementem) in excelsis deserti (in deserto, <em>ad verbum,)</em> versus viam filiae populi mei, non ad spargendum, neque ad purgandum;</td></tr>
+<tr><td class="scripture-en"></td><td class="scripture-la"><strong>12.</strong> Ventus plenior illis veniet mihi: nunc etiam ego loquar judicia cum illis (<em>hoc</em> <em>est,</em> proferam judicia cum illis.)</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**11.** In tempore illo dicetur populo huic (*hoc est,* de populo hoc; <span style="color:#008080">l</span> *enim hic accipitur pro* <span style="color:#008080">b</span>,) et de Jerusalem, ventus siccus (*alii transferunt,* vehementem) in excelsis deserti (in deserto, *ad verbum,)* versus viam filiae populi mei, non ad spargendum, neque ad purgandum; 12. *Even* a full wind from those *places* shall come unto me: now also will I give sentence against them.</p>
-
-<p style="text-align:right;" markdown="1">12. Ventus plenior illis veniet mihi: nunc etiam ego loquar judicia cum illis (*hoc est,* proferam judicia cum illis.)</p>
 
 <!-- PAGE 200 -->
 Jeremiah proceeds with the same prediction: he says, that a terrible <span style="color:#800000">*wind*</span> was coming, which would not only *disperse* or *clear away,* but dissipate and overthrow all things. He then expresses how great and how grievous would be the calamity which he had before mentioned. He compares it to dry or and wind; for <span style="color:#008080">jx</span>, *tsach,* sometimes means “clear,” and sometimes “arid,” as the greatest dryness is found on high places. He means, no doubt, here the wind, which is violent, and disturbs the whole atmosphere, when there are no clouds, and where no trees impede its course. Hence, he speaks of high and desert places. It is the same as though he had said, that so great would be the violence of God’s vengeance, and so irresistible would be the eruption, that it would be like a violent wind when it passes through high regions and through dry land or desert places. He says, <span style="color:#800000">*Towards the way of the daughter of my people*</span>; as though he had said, — that the course of the wind would be such as to bear directly on Judea. The mode of speaking here used is well known to all who are in any degree acquainted with the writings of the prophets. “The daughter of my people, “means the people themselves. <span style="color:#800000">*Come*</span>, then, <span style="color:#800000">*shall wind*</span> towards Judea.
@@ -2495,10 +2568,14 @@ The Prophet, in the last place, exclaims, in the name of the whole people, <span
 
 <h2 class="scripture-anchor" id="jeremiah-4-14" data-ref="JEREMIAH 4:14" style="display:none">JEREMIAH 4:14</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240414&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:14</span></p>
 
-<strong>14.</strong> O Jerusalem, wash thine heart from wickedness, that thou mayest be saved. How long shall thy vain thoughts lodge within thee? <strong>14.</strong> Munda a malitia cor tuum, Jerusalem, ut salva sis: quousque manebunt in medio tui cogitationes vanitatis tuae? (*alii vertunt,* doloris tui; *alii,* concupiscentiae tuae; *alii,* iniquitatis, *ac si esset* <span style="color:#008080">˚nw[</span>.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>14.</strong> O Jerusalem, wash thine heart from wickedness, that thou mayest be saved. How long shall thy vain thoughts lodge within thee?</td><td class="scripture-la"><strong>14.</strong> Munda a malitia cor tuum, Jerusalem, ut salva sis: quousque manebunt in medio tui cogitationes vanitatis tuae? (<em>alii vertunt,</em> doloris tui; <em>alii,</em> concupiscentiae tuae; <em>alii,</em> iniquitatis, <em>ac si esset</em> <span style="color:#008080">˚nw[</span>.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2605,10 +2682,14 @@ In the second clause of the verse, <span style="color:#008080">[gn yk rm yk</spa
 
 <h2 class="scripture-anchor" id="jeremiah-4-19" data-ref="JEREMIAH 4:19" style="display:none">JEREMIAH 4:19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240419&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:19</span></p>
 
-<strong>19.</strong> My bowels, my bowels! I am pained at my very heart; my heart maketh a noise in me; I cannot hold my peace, because thou hast heard, O my soul, the sound of the trumpet, the alarm of war. <strong>19.</strong> Viscera mea, viscera mea doleo, parietes cordis mei (*ad verbum*, hoc est, praecordia mea,) cor meum tumultuatur mihi (*hoc est*, intra me;) non tacebo, quoniam vocem tubae (*vel*, clangorem tubae) audivit (*vel* audivisti) anima mea; et clamor belli auditus est (*vel*, clamourem belli audivit anima mea.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> My bowels, my bowels! I am pained at my very heart; my heart maketh a noise in me; I cannot hold my peace, because thou hast heard, O my soul, the sound of the trumpet, the alarm of war.</td><td class="scripture-la"><strong>19.</strong> Viscera mea, viscera mea doleo, parietes cordis mei (<em>ad</em> <em>verbum</em>, hoc est, praecordia mea,) cor meum tumultuatur mihi (<em>hoc est</em>, intra me;) non tacebo, quoniam vocem tubae (<em>vel</em>, clangorem tubae) audivit (<em>vel</em> audivisti) anima mea; et clamor belli auditus est (<em>vel</em>, clamourem belli audivit anima mea.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2675,10 +2756,14 @@ Now we ought to know that at this day there is no less dullness than among the J
 
 <h2 class="scripture-anchor" id="jeremiah-4-22" data-ref="JEREMIAH 4:22" style="display:none">JEREMIAH 4:22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240422&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:22</span></p>
 
-<strong>22.</strong> For my people is foolish, they have not known me; they are sottish children, and they have none understanding: they are wise to do evil, but to do good they have no knowledge. <strong>22.</strong> Quoniam stultus populus meus, me non cognovit; filii insipientes ipsi, et non intelligentes ipsi (sunt; <span style="color:#008080">hmj</span> demonstrativum pronomen ponitur vice verbi:) astuti ipsi (vel, sapientes) ad malum; sed ad benefaciendum non intelligunt.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>22.</strong> For my people is foolish, they have not known me; they are sottish children, and they have none understanding: they are wise to do evil, but to do good they have no knowledge.</td><td class="scripture-la"><strong>22.</strong> Quoniam stultus populus meus, me non cognovit; filii insipientes ipsi, et non intelligentes ipsi (sunt; <span style="color:#008080">hmj</span> demonstrativum pronomen ponitur vice verbi:) astuti ipsi (vel, sapientes) ad malum; sed ad benefaciendum non intelligunt.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2749,10 +2834,14 @@ Now, as to the sum of what is here said, the Jews at that time no doubt enjoyed 
 
 <h2 class="scripture-anchor" id="jeremiah-4-27" data-ref="JEREMIAH 4:27" style="display:none">JEREMIAH 4:27</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240427&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:27</span></p>
 
-<strong>27.</strong> For thus hath the LORD said, The whole land shall be desolate; yet will I not make a full end. <strong>27.</strong> Quia sic dicit Jehova, Desolata erit (vasta, perdita erit) tota terra; et finem (*vel*, consumptionem) non faciam (*atque tunc copula resolvetur in adversativam*, non tamen consumptionem faciam.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>27.</strong> For thus hath the LORD said, The whole land shall be desolate; yet will I not make a full end.</td><td class="scripture-la"><strong>27.</strong> Quia sic dicit Jehova, Desolata erit (vasta, perdita erit) tota terra; et finem (<em>vel</em>, consumptionem) non faciam (<em>atque</em> <em>tunc copula resolvetur in adversativam</em>, non tamen consumptionem faciam.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2778,10 +2867,14 @@ I indeed allow that God’s threatenings cannot avail for our salvation, unless 
 
 <h2 class="scripture-anchor" id="jeremiah-4-28" data-ref="JEREMIAH 4:28" style="display:none">JEREMIAH 4:28</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240428&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:28</span></p>
 
-<strong>28.</strong> For this shall the earth mourn, and the heavens above be black: because I have spoken *it*, I have purposed *it*, and will not repent, neither will I turn back from it. <strong>28.</strong> Super hoc lugebit terra, et nigrescent (*vel*, caligine *aut* nigredine obducti erunt) coeli desursum (*nescio tamen an posset verti*, a transgressione; nam <span style="color:#008080">l[m</span> *significat etiam* transgredi et inquietare;) quia 1oquutus sum; cogitavi et non poenituit, et non convertar ab hoc.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>28.</strong> For this shall the earth mourn, and the heavens above be black: because I have spoken <em>it</em>, I have purposed <em>it</em>, and will not repent, neither will I turn back from it.</td><td class="scripture-la"><strong>28.</strong> Super hoc lugebit terra, et nigrescent (<em>vel</em>, caligine <em>aut</em> nigredine obducti erunt) coeli desursum (<em>nescio tamen an posset</em> <em>verti</em>, a transgressione; nam <span style="color:#008080">l[m</span> <em>significat etiam</em> transgredi et inquietare;) quia 1oquutus sum; cogitavi et non poenituit, et non convertar ab hoc.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2798,10 +2891,14 @@ He then adds, <span style="color:#800000">*It has not repented me, and I will no
 
 <h2 class="scripture-anchor" id="jeremiah-4-29" data-ref="JEREMIAH 4:29" style="display:none">JEREMIAH 4:29</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240429&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:29</span></p>
 
-<strong>29.</strong> The whole city shall flee for the noise of the horsemen and bowmen; they shall go into thickets, and climb up upon the rocks: every city *shall be* forsaken, and not a man dwell therein. <strong>29.</strong> A voce equitis et jaculantis arcu fugiet omnis civitas; penetrabunt (*vel*, ingredientur) in densitates (*alii*, in nubes; <span style="color:#008080">µyb[</span> *significat densitates*, *ut sunt loca arboribus perplexa*, *significat etiam nubes*; *potius hic existimo accipi pro nubibus, quia sequitur*,) ascendent in rupes (*postea*:) omnis civitas relicta erit, et nullus vir habitabit in illis.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>29.</strong> The whole city shall flee for the noise of the horsemen and bowmen; they shall go into thickets, and climb up upon the rocks: every city <em>shall be</em> forsaken, and not a man dwell therein.</td><td class="scripture-la"><strong>29.</strong> A voce equitis et jaculantis arcu fugiet omnis civitas; penetrabunt (<em>vel</em>, ingredientur) in densitates (<em>alii</em>, in nubes; <span style="color:#008080">µyb[</span> <em>significat densitates</em>, <em>ut sunt loca</em> <em>arboribus perplexa</em>, <em>significat etiam nubes</em>; <em>potius hic existimo accipi pro nubibus,</em> <em>quia sequitur</em>,) ascendent in rupes (<em>postea</em>:) omnis civitas relicta erit, et nullus vir habitabit in illis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2852,10 +2949,14 @@ But he says, that they would be an abomination to their <span style="color:#8000
 
 <h2 class="scripture-anchor" id="jeremiah-4-31" data-ref="JEREMIAH 4:31" style="display:none">JEREMIAH 4:31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240431&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">4:31</span></p>
 
-<strong>31.</strong> For I have heard a voice as of a woman in travail, *and* the anguish as of her that bringeth forth her first child, the voice of the daughter of Zion, *that* bewaileth herself, *that* spreadeth her hands, *saying*, Woe *is* me now! for my soul is wearied because of murderers. <strong>31.</strong> Certa vocem parturientis audivi, afflictionem (*vel,* anxietatem) quasi puerperae (*vel,* parientis primogenitum; *nam proprie hoc significat nomen*) vocem filiae Sion; lugebit (*vel,* conqueretur, *vel,* ingemiscet,) scindet (*vel,* extender, *ut alii vertunt, vel,* confliget) manus suas: Vae nunc mihi, quia defecit anima mea propter interfectos (*alii active,* propter interfectores.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>31.</strong> For I have heard a voice as of a woman in travail, <em>and</em> the anguish as of her that bringeth forth her first child, the voice of the daughter of Zion, <em>that</em> bewaileth herself, <em>that</em> spreadeth her hands, <em>saying</em>, Woe <em>is</em> me now! for my soul is wearied because of murderers.</td><td class="scripture-la"><strong>31.</strong> Certa vocem parturientis audivi, afflictionem (<em>vel,</em> anxietatem) quasi puerperae (<em>vel,</em> parientis primogenitum; <em>nam proprie hoc significat nomen</em>) vocem filiae Sion; lugebit (<em>vel,</em> conqueretur, <em>vel,</em> ingemiscet,) scindet (<em>vel,</em> extender, <em>ut</em> <em>alii vertunt, vel,</em> confliget) manus suas: Vae nunc mihi, quia defecit anima mea propter interfectos (<em>alii active,</em> propter interfectores.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -2873,10 +2974,14 @@ He then concludes by saying, <span style="color:#800000">*Woe to me, for failed 
 
 <h2 class="scripture-anchor" id="jeremiah-5-1" data-ref="JEREMIAH 5:1" style="display:none">JEREMIAH 5:1</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240501&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:1</span></p>
 
-<strong>1.</strong> Run ye to and fro through the streets of Jerusalem, and see now, and know, and seek in the broad places thereof, if ye can find a man, if there be *any* that executeth judgment, that seeketh the truth; and I will pardon it. <strong>1.</strong> Circuite per vias (*alii vertunt,* inquirite, *vel,* explorate, *vel,* investigate per vias) Jerusalem, et videte, agedum, (*hic enim* <span style="color:#008080">an</span> *est hortantis, proximo versu debuit verti* nunc, vae nunc mihi,) et cognoscite, et inquirite, in vicis ejus (in compitis ejus,) an invenietis virum, an erit quifaciat judicium (*hoc est,* rectitudinem,) qui quaerat veritatem, et parcam illi.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Run ye to and fro through the streets of Jerusalem, and see now, and know, and seek in the broad places thereof, if ye can find a man, if there be <em>any</em> that executeth judgment, that seeketh the truth; and I will pardon it.</td><td class="scripture-la"><strong>1.</strong> Circuite per vias (<em>alii vertunt,</em> inquirite, <em>vel,</em> explorate, <em>vel,</em> investigate per vias) Jerusalem, et videte, agedum, (<em>hic enim</em> <span style="color:#008080">an</span> <em>est hortantis, proximo versu debuit verti</em> nunc, vae nunc mihi,) et cognoscite, et inquirite, in vicis ejus (in compitis ejus,) an invenietis virum, an erit quifaciat judicium (<em>hoc est,</em> rectitudinem,) qui quaerat veritatem, et parcam illi.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3034,10 +3139,14 @@ At the end of the verse he repeats again, and speaks more fully of what he meant
 
 <h2 class="scripture-anchor" id="jeremiah-5-7" data-ref="JEREMIAH 5:7" style="display:none">JEREMIAH 5:7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240507&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:7</span></p>
 
-<strong>7.</strong> How shall I pardon thee for this? thy children have forsaken me, and sworn by *them that are* no gods: when I had fed them to the full, they then committed adultery, and assembled themselves by troops in the harlots’ houses. <strong>7.</strong> Quomodo super hoc parcam tibi (hoc est, parcerem, nam debet resolvi futurum tempus in modum potentialem, quomodo, inquit, parcerem tibi super hoc?) Filii tui dereliquerunt me, et jurarunt in non Deo: ego autem saturavi eos, et scortati sunt (tamen scortati sunt;) et domus meretricis congregaverunt se (vel, in domum meretricis, *ita subaudienda erit litera* <span style="color:#008080">b</span> *servilis.*)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> How shall I pardon thee for this? thy children have forsaken me, and sworn by <em>them</em> <em>that are</em> no gods: when I had fed them to the full, they then committed adultery, and assembled themselves by troops in the harlots’ houses.</td><td class="scripture-la"><strong>7.</strong> Quomodo super hoc parcam tibi (hoc est, parcerem, nam debet resolvi futurum tempus in modum potentialem, quomodo, inquit, parcerem tibi super hoc?) Filii tui dereliquerunt me, et jurarunt in non Deo: ego autem saturavi eos, et scortati sunt (tamen scortati sunt;) et domus meretricis congregaverunt se (vel, in domum meretricis, <em>ita subaudienda erit litera</em> <span style="color:#008080">b</span> <em>servilis.</em>)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3073,7 +3182,16 @@ We now then understand the Prophet’s object: the sum of the whole is, — that
 
 <h2 class="scripture-anchor" id="jeremiah-5-9" data-ref="JEREMIAH 5:9" style="display:none">JEREMIAH 5:9</h2>
 
-**9.** Shall I not visit for these *things*? saith the LORD: and shall not my soul be avenged on such a nation as this? 9. An non super his (*vel,* super hoc) visitabo (*vel,* non visitarem,) dicit Jehova? et an in gente quae talis est (quae secundum hanc) non se ulciscetur anima mea?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240509&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:9</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Shall I not visit for these <em>things</em>? saith the LORD: and shall not my soul be avenged on such a nation as this?</td><td class="scripture-la"><strong>9.</strong> An non super his (<em>vel,</em> super hoc) visitabo (<em>vel,</em> non visitarem,) dicit Jehova? et an in gente quae talis est (quae secundum hanc) non se ulciscetur anima mea?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 God again holds, as it were, a conference with them, and for this purpose, — that he might check all their complaints and close their mouths, lest they should object and say, that they were too severely treated. That this objection then might be removed, God repeats that he could not pardon such atrocious sins. And this principle is adopted, that it was impossible not to punish such wicked men who would not repent. For since God is the Judge of the world, he can no more surrender his judgment than his essence. As, then, the majesty of God and his office of a Judge are inseparably connected, the Prophet concludes, that what the Jews thought was impossible, that is, that they could escape unpunished, and yet continue to provoke God, as it were, by open war, with their dreadful sins: <span style="color:#800000">*Should I not then visit for this, saith Jehovah?*</span>
 
@@ -3094,10 +3212,14 @@ When therefore our conversion will be of this kind, then God will be merciful to
 
 <h2 class="scripture-anchor" id="jeremiah-5-10" data-ref="JEREMIAH 5:10" style="display:none">JEREMIAH 5:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240510&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:10</span></p>
 
-<strong>10.</strong> Go ye up upon her walls, and destroy; but make not a full end: take away her battlements; for they *are* not the Lord’s. <strong>10.</strong> Ascendite muros ejus et diruite (*vel,* dissipate;) et consumptionem ne feceritis (*vel potius,* finem;) auferte propagines ejus (*vel,* ramos, *vel,* dentes murorum, *ut alii vertunt, vel,* pinnas,) quia non sunt Jehovae.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Go ye up upon her walls, and destroy; but make not a full end: take away her battlements; for they <em>are</em> not the Lord’s.</td><td class="scripture-la"><strong>10.</strong> Ascendite muros ejus et diruite (<em>vel,</em> dissipate;) et consumptionem ne feceritis (<em>vel potius,</em> finem;) auferte propagines ejus (<em>vel,</em> ramos, <em>vel,</em> dentes murorum, <em>ut alii</em> <em>vertunt, vel,</em> pinnas,) quia non sunt Jehovae.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3211,10 +3333,14 @@ But he says that this people would be <span style="color:#800000">*wood*</span>:
 
 <h2 class="scripture-anchor" id="jeremiah-5-15" data-ref="JEREMIAH 5:15" style="display:none">JEREMIAH 5:15</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240515&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:15</span></p>
 
-<strong>15.</strong> Lo, I will bring a nation upon you from far, O house of Israel, saith the LORD: it *is* a mighty nation, it *is* an ancient nation, a nation whose language thou knowest not, neither understandest what they say. <strong>15.</strong> Ecce ego adduco super vos gentem e longinquo, domus Israel, dicit Jehova; gentem duram (*hoc est,* quae dura erit, *quia sequitur* <span style="color:#008080">awh</span>,) gentem quae est e seculo, gentem cujus non tenebis (*vel,* cognosces) linguam (*nam relativum est* <span style="color:#008080">w</span>) et non audies quid loquatur.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> Lo, I will bring a nation upon you from far, O house of Israel, saith the LORD: it <em>is</em> a mighty nation, it <em>is</em> an ancient nation, a nation whose language thou knowest not, neither understandest what they say.</td><td class="scripture-la"><strong>15.</strong> Ecce ego adduco super vos gentem e longinquo, domus Israel, dicit Jehova; gentem duram (<em>hoc est,</em> quae dura erit, <em>quia sequitur</em> <span style="color:#008080">awh</span>,) gentem quae est e seculo, gentem cujus non tenebis (<em>vel,</em> cognosces) linguam (<em>nam relativum est</em> <span style="color:#008080">w</span>) et non audies quid loquatur.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3240,16 +3366,7 @@ He afterwards speaks of its barbarity: <span style="color:#800000">*Thou wilt no
 
 <h2 class="scripture-anchor" id="jeremiah-5-16" data-ref="JEREMIAH 5:16" style="display:none">JEREMIAH 5:16</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;240516&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:16</span></p>
-
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>16.</strong> Their quiver <em>is</em> as an open sepulcher, they <em>are</em> all mighty men.</td><td class="scripture-la"><strong>16.</strong> Pharetra ejus tanquam sepulchrum apertum; omnes fortes.</td></tr>
-</tbody>
-</table>
-
-</div>
+**16.** Their quiver *is* as an open sepulcher, they *are* all mighty men. 16. Pharetra ejus tanquam sepulchrum apertum; omnes fortes.
 
 THE Prophet had already threatened the Jews with the vengeance of God, and had said that the ministers and executioners of it would be the Chaldeans: he now continues the same subject, and says that their *quiver* would be like an <span style="color:#800000">*open sepulcher*</span>. The nations of the East, we know, made much use of arrows and darts, for they had no pitched battles; but they pretended a flight, and then suddenly turning, they hurled their darts and arrows against their enemies. The Prophet then had a regard to this mode of fighting, when he says that their quivers would be like open sepulchres. It may seem at first sight an unnatural comparison; but it is the same as though he had said, that they would be so skillful in throwing arrows as to destroy all who met them. <span style="color:#800000">fA145</span>
 
@@ -3276,14 +3393,10 @@ Hence he says, <span style="color:#800000">*They will eat*</span> (it will eat, 
 
 <h2 class="scripture-anchor" id="jeremiah-5-18" data-ref="JEREMIAH 5:18" style="display:none">JEREMIAH 5:18</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
+<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240518&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:18</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>18.</strong> Nevertheless in those days, saith the LORD, I will not make a full end with you.</td><td class="scripture-la"><strong>18.</strong> Atque etiam in diebus illis dicit Jehova, non faciam vobiscum finem (<em>alii vertunt,</em> consumptionem.)</td></tr>
-</tbody>
-</table>
+<strong>18.</strong> Nevertheless in those days, saith the LORD, I will not make a full end with you. <strong>18.</strong> Atque etiam in diebus illis dicit Jehova, non faciam vobiscum finem (*alii vertunt,* consumptionem.)
 
 </div>
 
@@ -3299,10 +3412,14 @@ Then <span style="color:#800000">*also*</span>, he says; for the particle <span 
 
 <h2 class="scripture-anchor" id="jeremiah-5-19" data-ref="JEREMIAH 5:19" style="display:none">JEREMIAH 5:19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240519&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:19</span></p>
 
-<strong>19.</strong> And it shall come to pass, when ye shall say, Wherefore doeth the LORD our God all these things unto us? then shalt thou answer them, Like as ye have forsaken me, and served strange gods in your land, so shall ye serve strangers in a land that is not yours. <strong>19.</strong> Et erit quum dixeritis, Quare fecit Jehova Deus noster nobis omnia haec? Tunc dices illis, Sicuti dereliquistis me et serviistis diis alienorum (alieni, ad verbum, sed est enallage numeri) in terra vestra; sic servietis alienis (subaudiunt alii interpretes deos, sed pervertunt sensum Prophetae) in terra non vobis (hoc est, in terra quae non erit vestra.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> And it shall come to pass, when ye shall say, Wherefore doeth the LORD our God all these things unto us? then shalt thou answer them, Like as ye have forsaken me, and served strange gods in your land, so shall ye serve strangers in a land that is not yours.</td><td class="scripture-la"><strong>19.</strong> Et erit quum dixeritis, Quare fecit Jehova Deus noster nobis omnia haec? Tunc dices illis, Sicuti dereliquistis me et serviistis diis alienorum (alieni, ad verbum, sed est enallage numeri) in terra vestra; sic servietis alienis (subaudiunt alii interpretes deos, sed pervertunt sensum Prophetae) in terra non vobis (hoc est, in terra quae non erit vestra.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3347,10 +3464,14 @@ He no doubt alludes to the idols to which they had become devoted: for it is sai
 
 <h2 class="scripture-anchor" id="jeremiah-5-22" data-ref="JEREMIAH 5:22" style="display:none">JEREMIAH 5:22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240522&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:22</span></p>
 
-<strong>22.</strong> Fear ye not me? saith the LORD: will ye not tremble at my presence, which have placed the sand *for* the bound of the sea by a perpetual decree, that it cannot pass it: and though the waves thereof toss themselves, yet can they not prevail; though they roar, yet can they not pass over it? <strong>22.</strong> An me non timebitis, dicit Jehova? an a facie mea non contremiscetis? Qui posui arenam terminum mari, statutum seculi aeternum, et non praeteribit illud (*vel,* terminum illud; *quidam enim ad proximum referunt, alii ad prius,)* et movebunt se et non praevalebunt, et tumultuabuntur (*vel,* resonabunt) fluctus ejus (*istud* <span style="color:#008080">wylg</span> *extendunt ad duo verba,)* et non transgredientur ipsum (non transilient, *est idem verbum quod paulo ante usurpavit.*)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>22.</strong> Fear ye not me? saith the LORD: will ye not tremble at my presence, which have placed the sand <em>for</em> the bound of the sea by a perpetual decree, that it cannot pass it: and though the waves thereof toss themselves, yet can they not prevail; though they roar, yet can they not pass over it?</td><td class="scripture-la"><strong>22.</strong> An me non timebitis, dicit Jehova? an a facie mea non contremiscetis? Qui posui arenam terminum mari, statutum seculi aeternum, et non praeteribit illud (<em>vel,</em> terminum illud; <em>quidam enim ad</em> <em>proximum referunt, alii ad prius,)</em> et movebunt se et non praevalebunt, et tumultuabuntur (<em>vel,</em> resonabunt) fluctus ejus (<em>istud</em> <span style="color:#008080">wylg</span> <em>extendunt ad</em> <em>duo verba,)</em> et non transgredientur ipsum (non transilient, <em>est idem verbum</em> <em>quod paulo ante usurpavit.</em>)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3457,10 +3578,14 @@ These two things are then both true, — that God is not without a testimony as 
 
 <h2 class="scripture-anchor" id="jeremiah-5-26" data-ref="JEREMIAH 5:26" style="display:none">JEREMIAH 5:26</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240526&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:26</span></p>
 
-<strong>26.</strong> For among my people are found wicked *men*: they lay wait, as he that setteth snares; they set a trap, they catch men. <strong>26.</strong> Quia inventi sunt (*aut*, inveniuntur) in populo meo scelerati; aspicient (*hoc est,* astute observabunt) secundum ponere laqueos (*hoc est,* ac si decipulas tenderent;) perditionem locant, in qua homines capiant.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>26.</strong> For among my people are found wicked <em>men</em>: they lay wait, as he that setteth snares; they set a trap, they catch men.</td><td class="scripture-la"><strong>26.</strong> Quia inventi sunt (<em>aut</em>, inveniuntur) in populo meo scelerati; aspicient (<em>hoc</em> <em>est,</em> astute observabunt) secundum ponere laqueos (<em>hoc est,</em> ac si decipulas tenderent;) perditionem locant, in qua homines capiant.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3493,10 +3618,14 @@ We now perceive, that the meaning of the Prophet is, — that there was no longe
 
 <h2 class="scripture-anchor" id="jeremiah-5-28" data-ref="JEREMIAH 5:28" style="display:none">JEREMIAH 5:28</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240528&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:28</span></p>
 
-<strong>28.</strong> They are waxen fat, they shine: yea, they overpass the deeds of the wicked: they judge not the cause, the cause of the fatherless, yet they prosper; and the right of the needy do they not judge. <strong>28.</strong> Impinguati sunt (*nam* <span style="color:#008080">wnmç</span> *deducitur ab oleo,* perfusi sunt pinguedine, *si Latine et proprie reddere velimus,)* postea nitent (*vel,* sunt candidi, *alludit ad pingues et bene saginatos, quorum cutis est nitida;*) etiam excedunt (*vel,* quamvis excesserint) verba impii (*hoc est,* scelera impiorum:) causam non judicant, causam pupilli, et prosperantur; et judicium pauperum non judicant.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>28.</strong> They are waxen fat, they shine: yea, they overpass the deeds of the wicked: they judge not the cause, the cause of the fatherless, yet they prosper; and the right of the needy do they not judge.</td><td class="scripture-la"><strong>28.</strong> Impinguati sunt (<em>nam</em> <span style="color:#008080">wnmç</span> <em>deducitur ab</em> <em>oleo,</em> perfusi sunt pinguedine, <em>si Latine et</em> <em>proprie reddere velimus,)</em> postea nitent (<em>vel,</em> sunt candidi, <em>alludit ad pingues et bene</em> <em>saginatos, quorum cutis est nitida;</em>) etiam excedunt (<em>vel,</em> quamvis excesserint) verba impii (<em>hoc est,</em> scelera impiorum:) causam non judicant, causam pupilli, et prosperantur; et judicium pauperum non judicant.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3529,16 +3658,17 @@ God transfers here to himself, as we have said elsewhere, what does not strictly
 
 <h2 class="scripture-anchor" id="jeremiah-5-30-31" data-ref="JEREMIAH 5:30-31" style="display:none">JEREMIAH 5:30-31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240530&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">5:30-31</span></p>
 
-<strong>30.</strong> A wonderful and horrible thing is committed in the land;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>30.</strong> A wonderful and horrible thing is committed in the land;</td><td class="scripture-la"><strong>30.</strong> Stupor (<em>vel,</em> res stupenda) et foeditas in terra (<em>vel,</em> res pudenda; <span style="color:#008080">r[ç</span>, <em>unde nomen</em> <em>deductum est, significat proprie cogitare vel</em> <em>reputare; sed videtur per antiphrasin Deus hoc</em> <em>loco, ut aliis quibusdam, notare rem</em> <em>prodigiosam, quae non cadit sub sensum</em> <em>humanum, quasi diceret hoc non posse concipi</em> <em>neque apprehendi hominis mente; scio hoc</em> <em>posse videri novum, sed tamen subest optima</em> <em>ratio, ut mihi videtur. Postea addit.</em>)</td></tr>
+<tr><td class="scripture-en"><strong>31.</strong> The prophets prophesy falsely, and the priests bear rule by their means; and my people love <em>to have it</em> so: and what will ye do in the end thereof?</td><td class="scripture-la"><strong>31.</strong> Prophetae prophetant in mendacio, et sacerdotes dominantur per manum ipsorum (<em>vel,</em> accipiunt in manus suas,) et populus meus voluit ita (<em>hoc est,</em> ita vult et appetit:) et quid facietis in novissimo ejus?</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**30.** Stupor (*vel,* res stupenda) et foeditas in terra (*vel,* res pudenda; <span style="color:#008080">r[ç</span>, *unde nomen deductum est, significat proprie cogitare vel reputare; sed videtur per antiphrasin Deus hoc loco, ut aliis quibusdam, notare rem prodigiosam, quae non cadit sub sensum humanum, quasi diceret hoc non posse concipi neque apprehendi hominis mente; scio hoc posse videri novum, sed tamen subest optima ratio, ut mihi videtur. Postea addit.*) 31. The prophets prophesy falsely, and the priests bear rule by their means; and my people love *to have it* so: and what will ye do in the end thereof?</p>
-
-<p style="margin-left:2em;" markdown="1">**31.** Prophetae prophetant in mendacio, et sacerdotes dominantur per manum ipsorum (*vel,* accipiunt in manus suas,) et populus meus voluit ita (*hoc est,* ita vult et appetit:) et quid facietis in novissimo ejus?</p>
 
 <!-- PAGE 283 -->
 The Prophet, being not satisfied with the reproof which we have observed, speaks still more strongly against the wickedness of the people. He then says, that so deplorable was their state as to make all to feel amazed. <span style="color:#800000">*A stupendous thing*</span>, he says, has happened, which exceeds all human conception, and cannot be comprehended. By the two words he uses, he intimates that the impiety of the people could not be expressed in words or could not be conceived by the mind; for it was a monstrous thing. This is the meaning. <span style="color:#800000">fA157</span>
@@ -3646,10 +3776,14 @@ He afterwards adds, <span style="color:#800000">*Arise ye, and let us ascend in 
 
 <h2 class="scripture-anchor" id="jeremiah-6-6" data-ref="JEREMIAH 6:6" style="display:none">JEREMIAH 6:6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240606&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:6</span></p>
 
-<strong>6.</strong> For thus hath the LORD of hosts said, Hew ye down trees, and cast a mount against Jerusalem: this *is* the city to be visited; she *is* wholly oppression in the midst of her. <strong>6.</strong> Quia sic dicit Jehova exercituum, Excidite ligna et fundite super Jerusalem aggerem (*alii vertunt*, balistam; *sed nomen aggeris hic melius convenit*;) ipsa est urbs visitationis (*hic variant interpretes*, *et quidem exercitati in lingua Hebraea sic depravant sensum ut piqeat referre quid ipsi ausi sunt scribere*,) tota oppressio (*vel*, rapina; *nam* <span style="color:#008080">qç[</span> *significat rapere*, rapina *ergo*) in medio ejus.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> For thus hath the LORD of hosts said, Hew ye down trees, and cast a mount against Jerusalem: this <em>is</em> the city to be visited; she <em>is</em> wholly oppression in the midst of her.</td><td class="scripture-la"><strong>6.</strong> Quia sic dicit Jehova exercituum, Excidite ligna et fundite super Jerusalem aggerem (<em>alii</em> <em>vertunt</em>, balistam; <em>sed nomen aggeris hic</em> <em>melius convenit</em>;) ipsa est urbs visitationis (<em>hic variant interpretes</em>, <em>et quidem exercitati</em> <em>in lingua Hebraea sic depravant sensum ut</em> <em>piqeat referre quid ipsi ausi sunt scribere</em>,) tota oppressio (<em>vel</em>, rapina; <em>nam</em> <span style="color:#008080">qç[</span> <em>significat rapere</em>, rapina <em>ergo</em>) in medio ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3667,10 +3801,14 @@ The Prophet obviates here, as I have already said, all those complaints which th
 
 <h2 class="scripture-anchor" id="jeremiah-6-7" data-ref="JEREMIAH 6:7" style="display:none">JEREMIAH 6:7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240607&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:7</span></p>
 
-<strong>7.</strong> As a fountain casteth out her waters, so she casteth out her wickedness: violence and spoil is heard in her; before me continually *is* grief and wounds. <strong>7.</strong> Sicuti scaturire facit puteus aquas suas (*hoc est*, sicuti scaturiunt aquae ex fonte, *vel*, puteo,) sic scaturire fecit malitiam suam; violentia et deceptio (*aut*, vastatio) audita fuit in ea coram facie mea assidue, dolor et percussio (*alii vertunt*, plagam; *sed nomen percussionis melius convenit*.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> As a fountain casteth out her waters, so she casteth out her wickedness: violence and spoil is heard in her; before me continually <em>is</em> grief and wounds.</td><td class="scripture-la"><strong>7.</strong> Sicuti scaturire facit puteus aquas suas (<em>hoc est</em>, sicuti scaturiunt aquae ex fonte, <em>vel</em>, puteo,) sic scaturire fecit malitiam suam; violentia et deceptio (<em>aut</em>, vastatio) audita fuit in ea coram facie mea assidue, dolor et percussio (<em>alii vertunt</em>, plagam; <em>sed nomen percussionis melius convenit</em>.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3744,10 +3882,14 @@ We now then apprehend the Prophet’s object. And then he says, <span style="col
 
 <h2 class="scripture-anchor" id="jeremiah-6-10" data-ref="JEREMIAH 6:10" style="display:none">JEREMIAH 6:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240610&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:10</span></p>
 
-<strong>10.</strong> To whom shall I speak, and give warning, that they may hear? behold, their ear *is* uncircumcised, and they cannot hearken: behold, the word of the LORD is unto them a reproach; they have no delight in it. <strong>10.</strong> Ad quem loquar? et quem contestabor ut audiant? Ecce incircumcisa auris eorum, et non poterunt attendere; ecce verbum Jehovae fuit illis opprobrio? non acquieverunt in eo (*hoc est,* non oblectati sunt; <span style="color:#008080">≈pj</span> *significat capere oblectationem*, Ils n’y ont prins nul plaisir.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> To whom shall I speak, and give warning, that they may hear? behold, their ear <em>is</em> uncircumcised, and they cannot hearken: behold, the word of the LORD is unto them a reproach; they have no delight in it.</td><td class="scripture-la"><strong>10.</strong> Ad quem loquar? et quem contestabor ut audiant? Ecce incircumcisa auris eorum, et non poterunt attendere; ecce verbum Jehovae fuit illis opprobrio? non acquieverunt in eo (<em>hoc est,</em> non oblectati sunt; <span style="color:#008080">≈pj</span> <em>significat capere</em> <em>oblectationem</em>, Ils n’y ont prins nul plaisir.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3775,10 +3917,14 @@ And this we learn more fully from what follows; for he says, <span style="color:
 
 <h2 class="scripture-anchor" id="jeremiah-6-11" data-ref="JEREMIAH 6:11" style="display:none">JEREMIAH 6:11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240611&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:11</span></p>
 
-<strong>11.</strong> Therefore I am full of the fury of the LORD; I am weary with holding in: I will pour it out upon the children abroad, and upon the assembly of young men together: for even the husband with the wife shall be taken, the aged with *him that is* full of days. <strong>11.</strong> Ergo indignatione (*vel,* ira) Jehovae repletus sum (*copula hic ponitur vice illativae particulae, nisi adversative resolvere libeat,* atqui, *vel,* ego autem) et laboravi continendo, ad effundendum super parvulum in compitis (*hoc est,* in publico, foris,) et super consilium juvenum (<span style="color:#008080">µyrwjb</span> *sunt proprie electi, nam* <span style="color:#008080">rjb</span> *est eligere; sed ita vocantur juvenes, qui sunt in flore aetatis*) similiter: quoniam etiam vir cum uxore capientur, senex cum pleno dierum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Therefore I am full of the fury of the LORD; I am weary with holding in: I will pour it out upon the children abroad, and upon the assembly of young men together: for even the husband with the wife shall be taken, the aged with <em>him that is</em> full of days.</td><td class="scripture-la"><strong>11.</strong> Ergo indignatione (<em>vel,</em> ira) Jehovae repletus sum (<em>copula hic ponitur vice</em> <em>illativae particulae, nisi adversative</em> <em>resolvere libeat,</em> atqui, <em>vel,</em> ego autem) et laboravi continendo, ad effundendum super parvulum in compitis (<em>hoc est,</em> in publico, foris,) et super consilium juvenum (<span style="color:#008080">µyrwjb</span> <em>sunt proprie electi,</em> <em>nam</em> <span style="color:#008080">rjb</span> <em>est eligere; sed ita vocantur</em> <em>juvenes, qui sunt in flore aetatis</em>) similiter: quoniam etiam vir cum uxore capientur, senex cum pleno dierum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3817,10 +3963,14 @@ He then mentions their <span style="color:#800000">*fields*</span> and their <sp
 
 <h2 class="scripture-anchor" id="jeremiah-6-13" data-ref="JEREMIAH 6:13" style="display:none">JEREMIAH 6:13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240613&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:13</span></p>
 
-<strong>13.</strong> For from the least of them even unto the greatest of them every one *is* given to covetousness; and from the prophet even unto the priest every one dealeth falsely. <strong>13.</strong> Quia a parvo eorum usque ad magnum eorum omnis (*vel,* quilibet) con cupiscit cupiditatem (*hoc est,* cupidus est lucri, *vel,* addictus avaritiae;) et a propheta usque ad sacerdotem quilibet operatur mendacium (*hoc est,* fraudulenter agit.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> For from the least of them even unto the greatest of them every one <em>is</em> given to covetousness; and from the prophet even unto the priest every one dealeth falsely.</td><td class="scripture-la"><strong>13.</strong> Quia a parvo eorum usque ad magnum eorum omnis (<em>vel,</em> quilibet) con cupiscit cupiditatem (<em>hoc est,</em> cupidus est lucri, <em>vel,</em> addictus avaritiae;) et a propheta usque ad sacerdotem quilibet operatur mendacium (<em>hoc est,</em> fraudulenter agit.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -3939,16 +4089,17 @@ We hence see why the Prophet, after having announced his message, mentions the s
 
 <h2 class="scripture-anchor" id="jeremiah-6-18-19" data-ref="JEREMIAH 6:18-19" style="display:none">JEREMIAH 6:18-19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240618&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:18-19</span></p>
 
-<strong>18.</strong> Therefore hear, ye nations, and know, O congregation, what *is* among them.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>18.</strong> Therefore hear, ye nations, and know, O congregation, what <em>is</em> among them.</td><td class="scripture-la"><strong>18.</strong> Propterea audite gentes, et cognosce coetus quid in ipsis futurum sit.</td></tr>
+<tr><td class="scripture-en"><strong>19.</strong> Hear, O earth: behold, I will bring evil upon this people, <em>even</em> the fruit of their thoughts, because they have not hearkened unto my words, nor to my law, but rejected it.</td><td class="scripture-la"><strong>19.</strong> Audi, terra, Ecce ego adduco malum (<em>hoc est,</em> cladem) super populum hunc, fructum cogitationum ipsorum, qui ad verba mea non fuerunt attenti, et legem meam spreverunt (<em>ad verbum,</em> et legem meam spreverunt in ipsa; <em>sed non est</em> <em>ambiguus sensus, quod scilicet vel</em> <em>abjecerint vel spreverint, vel pro nihilo</em> <em>duxerint; verbum hoc significat rejicere et</em> <em>spernere, significat etiam reprobare; jam</em> <em>semel hoc usus est Propheta et saepius</em> <em>utetur.</em>)</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**18.** Propterea audite gentes, et cognosce coetus quid in ipsis futurum sit. 19. Hear, O earth: behold, I will bring evil upon this people, *even* the fruit of their thoughts, because they have not hearkened unto my words, nor to my law, but rejected it.</p>
-
-<p style="text-align:right;" markdown="1">19. Audi, terra, Ecce ego adduco malum (*hoc est,* cladem) super populum hunc, fructum cogitationum ipsorum, qui ad verba mea non fuerunt attenti, et legem meam spreverunt (*ad verbum,* et legem meam spreverunt in ipsa; *sed non est ambiguus sensus, quod scilicet vel abjecerint vel spreverint, vel pro nihilo duxerint; verbum hoc significat rejicere et spernere, significat etiam reprobare; jam semel hoc usus est Propheta et saepius utetur.*)</p>
 
 <!-- PAGE 313 -->
 He turns now to address the nations, which had never heard anything of true religion. But the design of the apostrophe was, to make the Jews ashamed of their insensibility and deafness, for more attention and understanding were found among heathen nations. This was surely very great shame: the Jews had been plainly taught by the Law and by the Prophets, God had continued morning and evening to repeat the same things to them, that the nations, who had never heard the prophets and to whom the Law had not been given, should still be endued with more understanding and judgment than the Jews — this was very shameful and really monstrous. Thus the Prophet’s design was to expose their disgraceful conduct by addressing the nations, and saying, <span style="color:#800000">*Hear, ye nations*</span>.
@@ -4139,7 +4290,16 @@ Why was he thus set? <span style="color:#800000">*That thou mayest know*</span>,
 
 <h2 class="scripture-anchor" id="jeremiah-6-28" data-ref="JEREMIAH 6:28" style="display:none">JEREMIAH 6:28</h2>
 
-**28.** They *are* all grievous revolters, walking with slanders: *they are* brass and iron; they *are* all corrupters. 28. Omnes perversi perversorum ambulantes in obtrectatione (*dicemus postea de hac voce;*) aes (*aut*, chalybs, ut *alii vertunt*,) vel ferrum; omnes perditores (*vel*, corruptores) sunt.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240628&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:28</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>28.</strong> They <em>are</em> all grievous revolters, walking with slanders: <em>they are</em> brass and iron; they <em>are</em> all corrupters.</td><td class="scripture-la"><strong>28.</strong> Omnes perversi perversorum ambulantes in obtrectatione (<em>dicemus</em> <em>postea de hac voce;</em>) aes (<em>aut</em>, chalybs, ut <em>alii vertunt</em>,) vel ferrum; omnes perditores (<em>vel</em>, corruptores) sunt.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 325 -->
 
@@ -4192,7 +4352,16 @@ He then adds, <span style="color:#800000">*In vain has the melter melted, for ev
 
 <h2 class="scripture-anchor" id="jeremiah-6-30" data-ref="JEREMIAH 6:30" style="display:none">JEREMIAH 6:30</h2>
 
-**30.** Reprobate silver shall *men* call them, because the LORD hath rejected them. 30. Argentum reprobatum (contemptibile) vocarunt <span style="color:#800000">fA188</span> ipsos (*hoc est*, vocabunt:) quia sprevit (*vel*, reprobavit) ipsos Jehova.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240630&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">6:30</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>30.</strong> Reprobate silver shall <em>men</em> call them, because the LORD hath rejected them.</td><td class="scripture-la"><strong>30.</strong> Argentum reprobatum (contemptibile) vocarunt <span style="color:#800000">fA188</span> ipsos (<em>hoc</em> <em>est</em>, vocabunt:) quia sprevit (<em>vel</em>, reprobavit) ipsos Jehova.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 Jeremiah concludes his subject by saying, — that if the Jews had been cast a hundred times into the furnace, they would not be improved, as they would never become softened on account of their hopeless obstinacy. He uses the word silver, by way of concession; for they were not worthy of that name, and we have already seen that there was nothing soft or tender in them.
 
@@ -4285,10 +4454,14 @@ Then follows the latter part, <span style="color:#800000">*Then I will make you 
 
 <h2 class="scripture-anchor" id="jeremiah-7-8" data-ref="JEREMIAH 7:8" style="display:none">JEREMIAH 7:8</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240708&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">7:8</span></p>
 
-<strong>8.</strong> Behold, ye trust in lying words, that cannot profit. <strong>8.</strong> Ecce, vos fiduciam adjicitis ad verba mendacii (*vel,* fiduciam vobis ponitis super verbis mendacii,) quae profectu carent.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> Behold, ye trust in lying words, that cannot profit.</td><td class="scripture-la"><strong>8.</strong> Ecce, vos fiduciam adjicitis ad verba mendacii (<em>vel,</em> fiduciam vobis ponitis super verbis mendacii,) quae profectu carent.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -4418,10 +4591,14 @@ Hence also it appears how foolish is the boasting of the Papists; for whenever t
 
 <h2 class="scripture-anchor" id="jeremiah-7-16" data-ref="JEREMIAH 7:16" style="display:none">JEREMIAH 7:16</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240716&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">7:16</span></p>
 
-<strong>16.</strong> Therefore pray not thou for this people, neither lift up cry nor prayer for them, neither make intercession to me: for I will not hear thee. <strong>16.</strong> Et tu ne ores pro populo hoc, et ne eleves pro ipsis clamorem et precationem, et ne occurras (intercedas; *est enim translativum verbum, nam* <span style="color:#008080">[np</span> *significat obviam ire, sed accipitur pro intercedere,* ne *ergo* intercedas) apud me, quia non exaudiam to.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>16.</strong> Therefore pray not thou for this people, neither lift up cry nor prayer for them, neither make intercession to me: for I will not hear thee.</td><td class="scripture-la"><strong>16.</strong> Et tu ne ores pro populo hoc, et ne eleves pro ipsis clamorem et precationem, et ne occurras (intercedas; <em>est enim translativum</em> <em>verbum, nam</em> <span style="color:#008080">[np</span> <em>significat obviam ire, sed</em> <em>accipitur pro intercedere,</em> ne <em>ergo</em> intercedas) apud me, quia non exaudiam to.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -4501,18 +4678,19 @@ The meaning then is, — that God was so angry, that he purposed to destroy, not
 
 <h2 class="scripture-anchor" id="jeremiah-7-21-24" data-ref="JEREMIAH 7:21-24" style="display:none">JEREMIAH 7:21-24</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240721&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">7:21-24</span></p>
 
-<strong>21.</strong> Thus saith the LORD of hosts, the God of Israel; Put your burnt offerings unto your sacrifices, and eat flesh. <strong>21.</strong> Sic dicit Jehova exercituum, Deus Israel, Holocausta vestra addite super victimas vestras et comedite carnem. <strong>22.</strong> For I spake not unto your fathers, nor commanded them in the day that I brought them out of the land of Egypt, concerning burnt offerings or sacrifices:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> Thus saith the LORD of hosts, the God of Israel; Put your burnt offerings unto your sacrifices, and eat flesh.</td><td class="scripture-la"><strong>21.</strong> Sic dicit Jehova exercituum, Deus Israel, Holocausta vestra addite super victimas vestras et comedite carnem.</td></tr>
+<tr><td class="scripture-en"><strong>22.</strong> For I spake not unto your fathers, nor commanded them in the day that I brought them out of the land of Egypt, concerning burnt offerings or sacrifices:</td><td class="scripture-la"><strong>22.</strong> Quia non loquutus sum cum patribus vestris, et non praecepi illis quo die eduxi eos e terra Egypti super verbis (hoc est, rationibus, nam <span style="color:#008080">rbd</span> proprie significat rationem Latine; Hebraei enim ita passim usurpant hanc vocem, sicuti Latini rationem, super rationibus ergo) holocaustorum et victimae:</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> But this thing commanded I them, saying, Obey my voice, and I will be your God, and ye shall be my people: and walk ye in all the ways that I have commanded you, that it may be well unto you.</td><td class="scripture-la"><strong>23.</strong> Quin potius (sed <span style="color:#008080">µa yk</span> est adversativa particula, hoc est, hae duae voces ponuntur loco adversativae, sed) verbum hoc praecepi illis, dicendo, Audite vocem meam, et ero vobis in Deum, et vos eritis mihi in populum, et ambulabitis in omni via (hoc est, in tota via) quam mandavero vobis, ut bene sit vobis.</td></tr>
+<tr><td class="scripture-en"><strong>24.</strong> But they hearkened not, nor inclined their ear, but walked in the counsels and in the imagination of their evil heart, and went backward, and not forward.</td><td class="scripture-la"><strong>24.</strong> Et non audierunt, et non inclinarunt aurem suam, et ambulaverunt in perplexis consiliis (<em>proprie accipitur in malam partem</em>) et in pravitate (<em>vel,</em> duritia) cordis sui mali, et fuerunt retro, et non ad faciem.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**22.** Quia non loquutus sum cum patribus vestris, et non praecepi illis quo die eduxi eos e terra Egypti super verbis (hoc est, rationibus, nam <span style="color:#008080">rbd</span> proprie significat rationem Latine; Hebraei enim ita passim usurpant hanc vocem, sicuti Latini rationem, super rationibus ergo) holocaustorum et victimae: 23. But this thing commanded I them, saying, Obey my voice, and I will be your God, and ye shall be my people: and walk ye in all the ways that I have commanded you, that it may be well unto you.</p>
-
-<p style="margin-left:2em;" markdown="1">**23.** Quin potius (sed <span style="color:#008080">µa yk</span> est adversativa particula, hoc est, hae duae voces ponuntur loco adversativae, sed) verbum hoc praecepi illis, dicendo, Audite vocem meam, et ero vobis in Deum, et vos eritis mihi in populum, et ambulabitis in omni via (hoc est, in tota via) quam mandavero vobis, ut bene sit vobis. 24. But they hearkened not, nor inclined their ear, but walked in the counsels and in the imagination of their evil heart, and went backward, and not forward.</p>
-
-<p style="text-align:right;" markdown="1">24. Et non audierunt, et non inclinarunt aurem suam, et ambulaverunt in perplexis consiliis (*proprie accipitur in malam partem*) et in pravitate (*vel,* duritia) cordis sui mali, et fuerunt retro, et non ad faciem.</p>
 
 <!-- PAGE 358 -->
 The Prophet here taunts the Jews for being so sedulous in their attention to sacrifices, while they had no care for piety. Hence he says by way of ridicule, “Offer your sacrifices, and accumulate burnt-offerings and victims, and eat flesh.” The last clause proves that God regarded as nothing their sacrifices, and that nothing was acceptable to him, though the Jews spent much money and spared no labors. God then shews that all these things were nothing to him; <span style="color:#800000">*eat flesh*</span>, he says, which means, “Ye sacrifice to yourselves, not to me.” There is here a contrast implied; for when they did eat flesh, there was the legitimate service of God, provided sacrifices were duly offered; but God here excludes himself, as though he had said, “These things belong not at all to me; for when ye bring sacrifices, your object is to feast: eat, then, and stuff your stomachs; nothing of this belongs to me.” <span style="color:#800000">fA204</span>
@@ -4653,7 +4831,16 @@ He then subjoins, that <span style="color:#800000">*truth*</span>, or faith, had
 
 <h2 class="scripture-anchor" id="jeremiah-7-29" data-ref="JEREMIAH 7:29" style="display:none">JEREMIAH 7:29</h2>
 
-**29.** Cut off thine hair, O *Jerusalem*, and cast *it* away, and take up a lamentation on high places; for the LORD hath rejected and forsaken the generation of his wrath. 29. Tonde comam tuam et projice et attolle super excelsa lamentationem; quid reprobavit (*vel,* vilipendit; *sed verbum reprobandi magis placet hoc loco*) Jehova, et reliquit aetatem indignationis suae.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240729&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">7:29</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>29.</strong> Cut off thine hair, O <em>Jerusalem</em>, and cast <em>it</em> away, and take up a lamentation on high places; for the LORD hath rejected and forsaken the generation of his wrath.</td><td class="scripture-la"><strong>29.</strong> Tonde comam tuam et projice et attolle super excelsa lamentationem; quid reprobavit (<em>vel,</em> vilipendit; <em>sed</em> <em>verbum reprobandi magis placet hoc</em> <em>loco</em>) Jehova, et reliquit aetatem indignationis suae.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 Here again Jeremiah exhorts his own people to lament; and he uses the feminine gender, as though he called the people, the daughter of Sion, or the daughter of Jerusalem. He then, according to a common mode of speaking, calls the whole people a woman. <span style="color:#800000">fA211</span>
 
@@ -4824,10 +5011,14 @@ He afterwards adds, <span style="color:#800000">*They shall not be gathered, nor
 
 <h2 class="scripture-anchor" id="jeremiah-8-3" data-ref="JEREMIAH 8:3" style="display:none">JEREMIAH 8:3</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240803&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">8:3</span></p>
 
-<strong>3.</strong> And death shall be chosen rather than life by all the residue of them that remain of this evil family, which remain in all the places whither I have driven them, saith the LORD of hosts. <strong>3.</strong> Et eligetur (*ad verbum esset,* electa est) mors (*sed debet resolvi in futurum tempus*) prae vita ab omnibus reliquiis, quae residuae erunt ab hac prava natione (a natione hac mala) in omnibus locis ubi residui fuerint, ad quae expulero eos (ad quae illuc; *sed* <span style="color:#008080">µç</span>*, est supervacuum,)* dicit Jehova exercituum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>3.</strong> And death shall be chosen rather than life by all the residue of them that remain of this evil family, which remain in all the places whither I have driven them, saith the LORD of hosts.</td><td class="scripture-la"><strong>3.</strong> Et eligetur (<em>ad verbum esset,</em> electa est) mors (<em>sed debet resolvi in futurum</em> <em>tempus</em>) prae vita ab omnibus reliquiis, quae residuae erunt ab hac prava natione (a natione hac mala) in omnibus locis ubi residui fuerint, ad quae expulero eos (ad quae illuc; <em>sed</em> <span style="color:#008080">µç</span><em>, est supervacuum,)</em> dicit Jehova exercituum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -4873,7 +5064,16 @@ David says, in Psalm 32:2, that the man is blessed in whose spirit there is no g
 
 <h2 class="scripture-anchor" id="jeremiah-8-6" data-ref="JEREMIAH 8:6" style="display:none">JEREMIAH 8:6</h2>
 
-**6.** I hearkened and heard, *but* they spake not aright: no man repented him of his wickedness, saying, What have I done? every one turned to his course, as the horse rusheth into the battle. 6. Attendi et audivi, non loquentur recte; nemo est quem poeniteat (*ad verbum,* non vir poenitens super malo suo; *sed sensus clarior est,* nemo est quem poeniteat) malitiae suae, dicendo, Quid feci? omnis vertitur (*ad verbum* pro omnes vertuntur) ad cursos suos, sicut equus ruit (*ad verbum,* inundat; *sed metaphorica est locutio;* Sicut *ergo* equus praeceps ruit) in praelium.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240806&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">8:6</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> I hearkened and heard, <em>but</em> they spake not aright: no man repented him of his wickedness, saying, What have I done? every one turned to his course, as the horse rusheth into the battle.</td><td class="scripture-la"><strong>6.</strong> Attendi et audivi, non loquentur recte; nemo est quem poeniteat (<em>ad verbum,</em> non vir poenitens super malo suo; <em>sed sensus</em> <em>clarior est,</em> nemo est quem poeniteat) malitiae suae, dicendo, Quid feci? omnis vertitur (<em>ad verbum</em> pro omnes vertuntur) ad cursos suos, sicut equus ruit (<em>ad</em> <em>verbum,</em> inundat; <em>sed metaphorica est</em> <em>locutio;</em> Sicut <em>ergo</em> equus praeceps ruit) in praelium.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 392 -->
 
@@ -4917,7 +5117,16 @@ But some one might have objected and said, “No wonder if we perceive not God�
 
 <h2 class="scripture-anchor" id="jeremiah-8-8" data-ref="JEREMIAH 8:8" style="display:none">JEREMIAH 8:8</h2>
 
-**8.** How do ye say, We *are* wise, and the law of the LORD *is* with us? Lo, certainly in vain made he *it*; the pen of the scribes *is* in vain. 8. Quomodo dicetis (*pro* dicitis; *significat continuum actum*) sapientes nos (*hoc est,* nos sumus sapientes,) et lex Jehovae nobiscum est (*vel,* penes nos, *melius:)* certe ecce frustra aptavit stylum (*vel,* calamum) scriptor; frustra sunt seribae.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240808&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">8:8</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> How do ye say, We <em>are</em> wise, and the law of the LORD <em>is</em> with us? Lo, certainly in vain made he <em>it</em>; the pen of the scribes <em>is</em> in vain.</td><td class="scripture-la"><strong>8.</strong> Quomodo dicetis (<em>pro</em> dicitis; <em>significat</em> <em>continuum actum</em>) sapientes nos (<em>hoc est,</em> nos sumus sapientes,) et lex Jehovae nobiscum est (<em>vel,</em> penes nos, <em>melius:)</em> certe ecce frustra aptavit stylum (<em>vel,</em> calamum) scriptor; frustra sunt seribae.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 396 -->
 Interpreters think that the Prophet here directs his words to the priests, and the false prophets, and the other chiefs of the people, because they proudly arrogated to themselves the knowledge of the law: but what is said may be no less extended to the whole people; for, as we shall presently see, all of them, from the least to the greatest, no doubt boasted that they were sufficiently wise. I hence think that the Prophet here inveighs against the whole body of the people; for all, almost without exception, rejected his teaching, as we see also to be done at the present day; for who is there that can bear to be admonished and reproved? All say that they are wise enough: “Oh! do you think that I am a child?” or, as it is commonly said, “Do you think that I am a goose? I know how I am to live, and I am not without reason.” Thus the rudest and the most ignorant set up their own wisdom and sharpness of wit against God and his prophets. Such audacity and ferociousness prevailed no doubt in the time of Jeremiah. For when he sharply reproved them, they were ready with their answer, — “ Oh! thou treatest us as though we were barbarians, as though God’s law was unknown to us, as though we had not been taught from our childhood how we are to live: does not God dwell in the midst of us?” Since, then, the Jews did set up as it were this shield against the doctrine of the Prophet, he attacks them here with great vehemence, —
@@ -5003,10 +5212,14 @@ He no doubt condemns here the priests and the prophets. He spoke before generall
 
 <h2 class="scripture-anchor" id="jeremiah-8-12" data-ref="JEREMIAH 8:12" style="display:none">JEREMIAH 8:12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240812&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">8:12</span></p>
 
-<strong>12.</strong> Were they ashamed when they had committed abomination? nay, they were not at all ashamed, neither could they blush: therefore shall they fall among them that fall: in the time of their visitation they shall be cast down, saith the LORD. <strong>12.</strong> An pudor (*est enim interrogative hoc legendum, sicuti capite sexto diximus, subaudienda igitur est particula,* An; An *ergo* pudefacti sunt) quod abominationem patrarunt? etiam in pudore non pudifacti sunt, et erubescere non noverunt; propterea cadent inter cadentes; in tempore visitationis ipsorum impingent (*vel,* corruent,) dicit Jehova.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> Were they ashamed when they had committed abomination? nay, they were not at all ashamed, neither could they blush: therefore shall they fall among them that fall: in the time of their visitation they shall be cast down, saith the LORD.</td><td class="scripture-la"><strong>12.</strong> An pudor (<em>est enim interrogative</em> <em>hoc legendum, sicuti capite sexto</em> <em>diximus, subaudienda igitur est</em> <em>particula,</em> An; An <em>ergo</em> pudefacti sunt) quod abominationem patrarunt? etiam in pudore non pudifacti sunt, et erubescere non noverunt; propterea cadent inter cadentes; in tempore visitationis ipsorum impingent (<em>vel,</em> corruent,) dicit Jehova.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -5265,10 +5478,14 @@ The meaning is, that the destruction of the people would be so monstrous that it
 
 <h2 class="scripture-anchor" id="jeremiah-9-2" data-ref="JEREMIAH 9:2" style="display:none">JEREMIAH 9:2</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240902&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:2</span></p>
 
-<strong>2.</strong> Oh that I had in the wilderness a lodging place of wayfaring men, that I might leave my people, and go from them! for they *be* all adulterers, an assembly of treacherous men. <strong>2.</strong> Quis statuet me in deserto, in diversorio *(alii,* tugurium, *vertunt; sed nescio an reperiatur* <span style="color:#008080">ˆwlm</span> *in hoc sensu)* viatorum? et relinquam populum meum et discedam ab illis; quia omnes adulteri, conventus transgressorum *(vel,* perfidorum; *nam* <span style="color:#008080">µydgb</span> *sunt perfidi et apostatoe, ut alibi vidimus.)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>2.</strong> Oh that I had in the wilderness a lodging place of wayfaring men, that I might leave my people, and go from them! for they <em>be</em> all adulterers, an assembly of treacherous men.</td><td class="scripture-la"><strong>2.</strong> Quis statuet me in deserto, in diversorio <em>(alii,</em> tugurium, <em>vertunt; sed</em> <em>nescio an</em> <em>reperiatur</em> <span style="color:#008080">ˆwlm</span> <em>in hoc sensu)</em> viatorum? et relinquam populum meum et discedam ab illis; quia omnes adulteri, conventus transgressorum <em>(vel,</em> perfidorum; <em>nam</em> <span style="color:#008080">µydgb</span> <em>sunt perfidi et</em> <em>apostatoe, ut alibi vidimus.)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -5292,7 +5509,16 @@ And the reason is added, <span style="color:#800000">*For all are adulterers*</s
 
 <h2 class="scripture-anchor" id="jeremiah-9-3" data-ref="JEREMIAH 9:3" style="display:none">JEREMIAH 9:3</h2>
 
-**3.** And they bend their tongues *like* their bow *for* lies; but they are not valiant for the truth upon the earth; for they proceed from evil to evil, and they know not me, saith the Lord. 3. Et jaculati sunt lingua *(quidam vertunt,* Et jaculare fecerunt; *alii,* intenderunt linguas suas) arcum suum ad mendacia *(alii vertunt,* arcum mendacii; *sed male;*) et non ad veritatem roborati sunt *(aut,* invaluerunt) in terra; quia a malo ad malum egressi sunt, et me non cognoscunt, dicit Jehova.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240903&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:3</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>3.</strong> And they bend their tongues <em>like</em> their bow <em>for</em> lies; but they are not valiant for the truth upon the earth; for they proceed from evil to evil, and they know not me, saith the Lord.</td><td class="scripture-la"><strong>3.</strong> Et jaculati sunt lingua <em>(quidam vertunt,</em> Et jaculare fecerunt; <em>alii,</em> intenderunt linguas suas) arcum suum ad mendacia <em>(alii vertunt,</em> arcum mendacii; <em>sed male;</em>) et non ad veritatem roborati sunt <em>(aut,</em> invaluerunt) in terra; quia a malo ad malum egressi sunt, et me non cognoscunt, dicit Jehova.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 Jeremiah confirms what he had said of the near destruction of the people; for, as we have said, the Jews ridiculed threatenings while they thought themselves far from every danger. But the Prophet shews, from the nature of God himself, that they must necessarily perish in a short time; for since God is the judge of the world, and as they were continually advancing in impiety and wickedness, they could no longer be tolerated. This is the meaning.
 
@@ -5308,10 +5534,14 @@ An explanation follows, — that they <span style="color:#800000">*proceeded fro
 
 <h2 class="scripture-anchor" id="jeremiah-9-4" data-ref="JEREMIAH 9:4" style="display:none">JEREMIAH 9:4</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240904&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:4</span></p>
 
-<strong>4.</strong> Take ye heed every one of his neighbor, and trust ye not in any brother: for every brother will utterly supplant, and every neighbor will walk with slanders. <strong>4.</strong> Et vir a socio suo cavete *(hoc est,* caveat; *ad verbum,* custodiat se; caveat *igitur* sibi quisque a socio,) et super omni fratre *(ad verbum)* ne confidatis *(hoc est,* nemo confidat proprio fratre;) quia omnis frater supplantando supplantat, et omnis socius fraudulenter incedit.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> Take ye heed every one of his neighbor, and trust ye not in any brother: for every brother will utterly supplant, and every neighbor will walk with slanders.</td><td class="scripture-la"><strong>4.</strong> Et vir a socio suo cavete <em>(hoc est,</em> caveat; <em>ad verbum,</em> custodiat se; caveat <em>igitur</em> sibi quisque a socio,) et super omni fratre <em>(ad verbum)</em> ne confidatis <em>(hoc est,</em> nemo confidat proprio fratre;) quia omnis frater supplantando supplantat, et omnis socius fraudulenter incedit.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -5382,10 +5612,14 @@ He afterwards adds, <span style="color:#800000">*Through guile they refuse to kn
 
 <h2 class="scripture-anchor" id="jeremiah-9-7" data-ref="JEREMIAH 9:7" style="display:none">JEREMIAH 9:7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240907&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:7</span></p>
 
-<strong>7.</strong> Therefore thus saith the Lord of hosts, Behold, I will melt them, and try them: for how shall I do for the daughter of my people? <strong>7.</strong> Propterea sic dicit Jehova exercituum, Ecce ego examinabo eos *(vel,* conflabo; *ad verbum,* examinans, *vel,* conflans,) et probabo eos; nam quomodo agerem cum filia *(ad verbum,* a facie filiae) populi mei?
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>7.</strong> Therefore thus saith the Lord of hosts, Behold, I will melt them, and try them: for how shall I do for the daughter of my people?</td><td class="scripture-la"><strong>7.</strong> Propterea sic dicit Jehova exercituum, Ecce ego examinabo eos <em>(vel,</em> conflabo; <em>ad</em> <em>verbum,</em> examinans, <em>vel,</em> conflans,) et probabo eos; nam quomodo agerem cum filia <em>(ad verbum,</em> a facie filiae) populi mei?</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -5400,7 +5634,16 @@ But we hence learn that it is right that judgment should begin at the house of G
 
 <h2 class="scripture-anchor" id="jeremiah-9-8" data-ref="JEREMIAH 9:8" style="display:none">JEREMIAH 9:8</h2>
 
-**8.** Their tongue *is as* an arrow shot out; it speaketh deceit; *one* speaketh peacably to his neighbor with his mouth, but in heart he layeth his wait. 8. Sagitta tracta *(ut quidam vertunt; alii,* occidens) lingua eorum; mendacium loquitur; os ejus pacem ad proximum loquetur, et in medio sui *(hoc est,* intra viscera sua, intus) ponet insidias.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240908&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:8</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> Their tongue <em>is as</em> an arrow shot out; it speaketh deceit; <em>one</em> speaketh peacably to his neighbor with his mouth, but in heart he layeth his wait.</td><td class="scripture-la"><strong>8.</strong> Sagitta tracta <em>(ut quidam vertunt; alii,</em> occidens) lingua eorum; mendacium loquitur; os ejus pacem ad proximum loquetur, et in medio sui <em>(hoc est,</em> intra viscera sua, intus) ponet insidias.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 The Prophet again complains of the deceitfulness of their tongues; and he compares them to deadly, or drawn out arrows. Gold is said to be drawn out, when refined by repeated meltings; so also arrows, when sharpened, are more piercing. The Prophet then says, that their tongues were like deadly or sharpened arrows: how so? because they ever spoke guile, by either slandering or circumventing others. But the expression is general; and the Prophet no doubt meant to include all modes of deceiving.
 
@@ -5409,7 +5652,16 @@ For it afterwards follows, <span style="color:#800000">*With the mouth they spea
 
 <h2 class="scripture-anchor" id="jeremiah-9-9" data-ref="JEREMIAH 9:9" style="display:none">JEREMIAH 9:9</h2>
 
-**9.** Shall I not visit them for these *things?* saith the Lord: shall not my soul be avenged on such a nation as this? 9. An super hoc non visitabo eos, dicit Jehova? an in gente quae talis est (quae est sicut haec) non se ulciscetur anima mea?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;240909&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:9</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Shall I not visit them for these <em>things?</em> saith the Lord: shall not my soul be avenged on such a nation as this?</td><td class="scripture-la"><strong>9.</strong> An super hoc non visitabo eos, dicit Jehova? an in gente quae talis est (quae est sicut haec) non se ulciscetur anima mea?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 We have already met with this verse; it will therefore be enough briefly to refer to what it contains. God shews here, that except he denied himself he must necessarily punish the Jews. How so? He takes it as granted that he is the judge of the world: he had said that the Jews were not only become wicked in one thing, but were so given up to all kinds of wickedness, that they wearied themselves; what then was to be done? God would not have acted in a manner worthy of himself, nor preserved consistency, had he not punished such men; for he must have changed his nature, had he not hated such a perverse nation. But he speaks after the manner of men when he mentions vengeance; for we know that no passions belong to God, as it has been often stated: but as he hates wickedness, so he is said to execute vengeance, when he appears as a judge and chastises those by whom he has been provoked to wrath.
 
@@ -5514,20 +5766,18 @@ This passage, then, may be thus explained, — That when threatenings should app
 
 <h2 class="scripture-anchor" id="jeremiah-9-13-15" data-ref="JEREMIAH 9:13-15" style="display:none">JEREMIAH 9:13-15</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;240913&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">9:13-15</span></p>
 
-<strong>13.</strong> And the Lord saith, Because they have forsaken my law which I set before them, and have not obeyed my voice, neither walked therein;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> And the Lord saith, Because they have forsaken my law which I set before them, and have not obeyed my voice, neither walked therein;</td><td class="scripture-la"><strong>13.</strong> Et dixit Jehova, Quia dereliquerunt legem meam, quam posui coram ipsis (ad faciem ipsorum, ad verbum,) et non audierunt vocem meam, et non ambulaverunt in ea (hoc est, secundum ipsam;)</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> But have walked after the imagination of their own heart, and after Baalim, which their fathers taught them:</td><td class="scripture-la"><strong>14.</strong> Et ambulaverunt post cogitationes (vel, post contumaciam; nam utroque modo vertunt hoc nomen, post cogitationes ergo) cordis sui, et post Baalim, quos docuerunt patres ipsorum:</td></tr>
+<tr><td class="scripture-en"><strong>15.</strong> Therefore thus saith the Lord of hosts, the God of Israel; Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink.</td><td class="scripture-la"><strong>15.</strong> Propterea sic dicit Jehova exercituum, Deus Israel, Ecce ego cibans (cibabo) populum hunc ameritudine, et potabo aquis veneni (vel, venenatis; alii vertunt, aquis fellis; nam <span style="color:#008080">çar</span> <em>utrumque</em> <em>significat.)</em></td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**13.** Et dixit Jehova, Quia dereliquerunt legem meam, quam posui coram ipsis (ad faciem ipsorum, ad verbum,) et non audierunt vocem meam, et non ambulaverunt in ea (hoc est, secundum ipsam;) 14. But have walked after the imagination of their own heart, and after Baalim, which their fathers taught them:</p>
-
-<p style="text-align:right;" markdown="1">14. Et ambulaverunt post cogitationes (vel, post contumaciam; nam utroque modo vertunt hoc nomen, post cogitationes ergo) cordis sui, et post Baalim, quos docuerunt patres ipsorum:</p>
-
-<p style="margin-left:2em;" markdown="1">**15.** Therefore thus saith the Lord of hosts, the God of Israel; Behold, I will feed them, even this people, with wormwood, and give them water of gall to drink.</p>
-
-<p style="text-align:right;" markdown="1">15. Propterea sic dicit Jehova exercituum, Deus Israel, Ecce ego cibans (cibabo) populum hunc ameritudine, et potabo aquis veneni (vel, venenatis; alii vertunt, aquis fellis; nam <span style="color:#008080">çar</span> *utrumque significat.)*</p>
 
 <!-- PAGE 444 -->
 Jeremiah now confirms what I have stated, and more fully explains it, — that though no teacher or a disciple was found in the land, yet there was sufficient power in God’s word alone, and that his judgment depended not on the will or the perceptions of men. After having then complained that all were foolish, and that there were no prophets to reprove their security and indifference, he adds, <span style="color:#800000">*Thus saith Jehovah*</span>. Here he sets God in opposition to all men, to the king and his courtiers, as well as to the common people. Who then is a wise man? as though He looked around him; and there was no man who considered. he was then in suspense; and afterwards he said, “There is no prophet to rouse them from their usual stupor.” He remained still in suspense; and then he turned to God and said, “But Jehovah has spoken;” that is, “Be it, that they are like brute beasts, though they arrogate to themselves great wisdom; nevertheless God speaks, and we ought to be satisfied. We ought then to be silent, and to make no stir; though no one approves, though no one attends to God speaking, there is yet sufficient authority and power in his voice alone.” We now then more fully understand the Prophet’s design: He had said that all men were stupid, and that there was no prophet; and now, on the other hand, he shews that God was not silent nor asleep.
@@ -5889,16 +6139,17 @@ We now then perceive the design of the Prophet: but as these circumstances have 
 
 <h2 class="scripture-anchor" id="jeremiah-10-4-5" data-ref="JEREMIAH 10:4-5" style="display:none">JEREMIAH 10:4-5</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241004&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:4-5</span></p>
 
-<strong>4.</strong> They deck it with silver and with gold; the fasten it with nails and with the hammers, that it move not.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> They deck it with silver and with gold; the fasten it with nails and with the hammers, that it move not.</td><td class="scripture-la"><strong>4.</strong> Argento et auro pulchrificant <em>(hoc est,</em> exornant) illud; clavis et malleis fortificant <em>(hoc est,</em> bene defigunt;) et non movebitur <em>(hoc est,</em> ut non moveatur.)</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> They <em>are</em> upright as the palm-tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also <em>is it</em> in them to do good.</td><td class="scripture-la"><strong>5.</strong> Sicuti palma aequalis <em>(hoc est,</em> stat effigies illa aequalis tanquam palma, <em>id</em> <em>est,</em> assurgit in rectitudinem;) et non loquuntur; et tollendo tolluntur, quia non ambulabunt <em>(hoc est,</em> non possunt ambulare:) ne timeatis ab illis; quia non male faciunt, atque etiam bene facere non penes ipsos.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**4.** Argento et auro pulchrificant *(hoc est,* exornant) illud; clavis et malleis fortificant *(hoc est,* bene defigunt;) et non movebitur *(hoc est,* ut non moveatur.) 5. They *are* upright as the palm-tree, but speak not: they must needs be borne, because they cannot go. Be not afraid of them; for they cannot do evil, neither also *is it* in them to do good.</p>
-
-<p style="text-align:right;" markdown="1">5. Sicuti palma aequalis *(hoc est,* stat effigies illa aequalis tanquam palma, *id est,* assurgit in rectitudinem;) et non loquuntur; et tollendo tolluntur, quia non ambulabunt *(hoc est,* non possunt ambulare:) ne timeatis ab illis; quia non male faciunt, atque etiam bene facere non penes ipsos.</p>
 
 He goes on with the same subject, and borrows his words from the forty — fourth chapter of Isaiah (Isaiah 44); for the passage is wholly similar. Jeremiah, being later, was induced to take the words from his predecessor, that his own nation might be more impressed, on finding that the same thing was said by two Prophets, and that thus they had two witnesses.
 
@@ -5924,7 +6175,16 @@ hence I alone am God. (Isaiah 45:22; Isaiah 48:3, 5.) He says, that he doeth evi
 
 <h2 class="scripture-anchor" id="jeremiah-10-6" data-ref="JEREMIAH 10:6" style="display:none">JEREMIAH 10:6</h2>
 
-**6.** Forasmuch as *there is* none like unto thee, O Lord; thou art great, and thy name is great in might. 6. A non <span style="color:#800000">fB28</span> *(vel,* ab eo quod non, *hoc est,* ab ultimis temporibus non) sicut tu Jehova reperietur; magnus tu, et magnum nomen tuum in fortitudine.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241006&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:6</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> Forasmuch as <em>there is</em> none like unto thee, O Lord; thou art great, and thy name is great in might.</td><td class="scripture-la"><strong>6.</strong> A non <span style="color:#800000">fB28</span> <em>(vel,</em> ab eo quod non, <em>hoc</em> <em>est,</em> ab ultimis temporibus non) sicut tu Jehova reperietur; magnus tu, et magnum nomen tuum in fortitudine.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 As the truth respecting the gods of the heathens, that they are mere figments, would be useless and of no moment, were not the knowledge of the, true God added, the Prophet now introduces God himself. And there is another reason; for no one could know that these wooden and stony gods are of no account, were not the truth respecting the true God to shine forth. Whosoever does not understand that there is a God, and does not know who or what he is, can never be really influenced by this truth, that the gods of the heathens are demons, and that all their superstitions are sacrilegious.
 
@@ -5997,10 +6257,14 @@ Now we may from this passage draw a general truth, — that when men seek to rep
 
 <h2 class="scripture-anchor" id="jeremiah-10-9" data-ref="JEREMIAH 10:9" style="display:none">JEREMIAH 10:9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241009&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:9</span></p>
 
-<strong>9.</strong> Silver spread into plates is brought from Tarshish, and gold fromUphaz, the work of the workman, and of the hands of the founder: blue and purple *is* their clothing; they *are* all the work of cunning *men.* <strong>9.</strong> Argentum percussum *(vel,* diductum, *hoc est, malleo sic contusum, ut redactum sit in laminas; hoc enim significat verbum* <span style="color:#008080">[qr</span> *percutere, et ita contundere, ut res diducatur vel protrahatur:* argentum *ergo* laminatum, *ut ita loquar, vel,* malleo contusum) e Tharsis affertur, et aurum ex Ophas, opus artificis et manus conflatoris; hyacinthus et purpura, vestes eorum; opus sapientum omnes!
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Silver spread into plates is brought from Tarshish, and gold fromUphaz, the work of the workman, and of the hands of the founder: blue and purple <em>is</em> their clothing; they <em>are</em> all the work of cunning <em>men.</em></td><td class="scripture-la"><strong>9.</strong> Argentum percussum <em>(vel,</em> diductum, <em>hoc</em> <em>est, malleo sic contusum, ut redactum sit in</em> <em>laminas; hoc enim significat verbum</em> <span style="color:#008080">[qr</span> <em>percutere, et ita contundere, ut res</em> <em>diducatur vel protrahatur:</em> argentum <em>ergo</em> laminatum, <em>ut ita loquar, vel,</em> malleo contusum) e Tharsis affertur, et aurum ex Ophas, opus artificis et manus conflatoris; hyacinthus et purpura, vestes eorum; opus sapientum omnes!</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -6038,10 +6302,14 @@ And this will be more evident from the following verse, where the Prophet uses t
 
 <h2 class="scripture-anchor" id="jeremiah-10-11" data-ref="JEREMIAH 10:11" style="display:none">JEREMIAH 10:11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241011&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:11</span></p>
 
-<strong>11.</strong> Thus shall ye say unto them, The gods that have not made the heavens and the earth, *even* they shall perish from the earth, and from under these heavens. <strong>11.</strong> Sic (secundum hoc) dicetis illis *(inquit)* Dii *(prorsus diverso modo loquitur quam ante, et proximo etiam versu loquitur;* dii *ergo*) qui coelum et terram non fecerunt, pereant e terra et de sub coelis istis.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Thus shall ye say unto them, The gods that have not made the heavens and the earth, <em>even</em> they shall perish from the earth, and from under these heavens.</td><td class="scripture-la"><strong>11.</strong> Sic (secundum hoc) dicetis illis <em>(inquit)</em> Dii <em>(prorsus diverso modo</em> <em>loquitur quam ante, et proximo etiam</em> <em>versu loquitur;</em> dii <em>ergo</em>) qui coelum et terram non fecerunt, pereant e terra et de sub coelis istis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -6246,10 +6514,14 @@ The Prophet has <span style="color:#008080">ylj</span>, *cheli,* here; but there
 
 <h2 class="scripture-anchor" id="jeremiah-10-20" data-ref="JEREMIAH 10:20" style="display:none">JEREMIAH 10:20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241020&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:20</span></p>
 
-<strong>20.</strong> My tabernacle is spoiled, and all my cords are broken: my children are gone forth of me, and they *are* not: *there is* none to stretch forth my tent any more, and to set up my curtains. <strong>20.</strong> Tabernaculum meum vastatum est *(vel,* dirutum) et omnes funes mei rupti sunt; filii mei egressi sunt a me *(particula* <span style="color:#008080">yn</span> *tantundem valet ac* <span style="color:#008080">ynmm</span>,) et nulli sunt *(hoc est,* nulli restant amplius:) nemo qui extendat amplius tabernaculum meum, et erigat *(vel,* disponat) cortinas meas.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> My tabernacle is spoiled, and all my cords are broken: my children are gone forth of me, and they <em>are</em> not: <em>there is</em> none to stretch forth my tent any more, and to set up my curtains.</td><td class="scripture-la"><strong>20.</strong> Tabernaculum meum vastatum est <em>(vel,</em> dirutum) et omnes funes mei rupti sunt; filii mei egressi sunt a me <em>(particula</em> <span style="color:#008080">yn</span> <em>tantundem valet ac</em> <span style="color:#008080">ynmm</span>,) et nulli sunt <em>(hoc est,</em> nulli restant amplius:) nemo qui extendat amplius tabernaculum meum, et erigat <em>(vel,</em> disponat) cortinas meas.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -6266,10 +6538,14 @@ But he pursues, as we have said, the same metaphor. It follows —
 
 <h2 class="scripture-anchor" id="jeremiah-10-21" data-ref="JEREMIAH 10:21" style="display:none">JEREMIAH 10:21</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241021&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">10:21</span></p>
 
-<strong>21.</strong> For the pastors are become brutish, and have not sought the Lord: therefore they shall not prosper, and all their flocks shall be scattered. <strong>21.</strong> Quia infatuati sunt pastores, et Jehovam non inquisierunt; propterea non egerunt prospere *(alii,* non intellexerunt,) et omnis pascua eorum *(hoc est,* quicquid in pascuis eorum erat) fuit destructum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>21.</strong> For the pastors are become brutish, and have not sought the Lord: therefore they shall not prosper, and all their flocks shall be scattered.</td><td class="scripture-la"><strong>21.</strong> Quia infatuati sunt pastores, et Jehovam non inquisierunt; propterea non egerunt prospere <em>(alii,</em> non intellexerunt,) et omnis pascua eorum <em>(hoc est,</em> quicquid in pascuis eorum erat) fuit destructum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -6873,7 +7149,16 @@ We now see the design of the Prophet: but some take a different view, that God h
 
 <h2 class="scripture-anchor" id="jeremiah-11-19" data-ref="JEREMIAH 11:19" style="display:none">JEREMIAH 11:19</h2>
 
-**19.** But I *was* like a lamb *or* an ox *that* is brought to the slaughter; and I knew not that they had devised devices against me, *saying,* Let us destroy the tree with the fruit thereof, and let us cut him off from the land of the living, that his name may be no more remembered. 19. Ego autem quasi agnus, bos ductus ad immolandum (ad mactandum) et non cognovi quod contra me cogitarent cogitationes *(hoc est,* inirent consilia, *nempe)* corrumpamus ligno panera ejus *(ad verbum est, c*orrumpamus lignum in pane; *sed dicemus post de sensu verborum)* et excidamus eum e terra vivorum, et nomen ejus non memoretur amplius.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241119&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">11:19</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> But I <em>was</em> like a lamb <em>or</em> an ox <em>that</em> is brought to the slaughter; and I knew not that they had devised devices against me, <em>saying,</em> Let us destroy the tree with the fruit thereof, and let us cut him off from the land of the living, that his name may be no more remembered.</td><td class="scripture-la"><strong>19.</strong> Ego autem quasi agnus, bos ductus ad immolandum (ad mactandum) et non cognovi quod contra me cogitarent cogitationes <em>(hoc est,</em> inirent consilia, <em>nempe)</em> corrumpamus ligno panera ejus <em>(ad verbum est, c</em>orrumpamus lignum in pane; <em>sed dicemus post de sensu</em> <em>verborum)</em> et excidamus eum e terra vivorum, et nomen ejus non memoretur amplius.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 The Prophet adds here, as I think, that he did not retaliate private wrongs: for the Jews might, under this pretext, have rejected his doctrine, and have said, that he was moved by anger to treat them sharply and severely. And doubtless, whosoever allows his own reelings to prevail in the least degree, cannot teach in sincerity; for he who prepares himself for the prophetic office, ought to put off all the affections of the flesh, and to manifest a pure, and, so to speak, a limpid zeal, and also a calm mind, so that he may seek nothing, and have no object but the glory of God and the salvation of those to whom he is sent a teacher. Whosoever then is under the influence of private feelings cannot act otherwise than violently, so that he cannot either faithfully or profitably discharge the office of a prophet or a teacher.
 
@@ -6904,10 +7189,14 @@ It then follows, <span style="color:#800000">*Let us cut him off from the land o
 
 <h2 class="scripture-anchor" id="jeremiah-11-20" data-ref="JEREMIAH 11:20" style="display:none">JEREMIAH 11:20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241120&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">11:20</span></p>
 
-<strong>20.</strong> But, O Lord of hosts, that judgest righteously, that triest the reins and the heart, let me see thy vengeance on them; for unto thee have I revealed my cause. <strong>20.</strong> Et, Jehova exercituum, judicans justintam, *(ant,* judex justitiae) scrutans *(vel,* inquirens) renes et cor, videam ultionem tuam de ipsis; quia tibi revelavi causam meam, (litem meam, *ad verbum)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> But, O Lord of hosts, that judgest righteously, that triest the reins and the heart, let me see thy vengeance on them; for unto thee have I revealed my cause.</td><td class="scripture-la"><strong>20.</strong> Et, Jehova exercituum, judicans justintam, <em>(ant,</em> judex justitiae) scrutans <em>(vel,</em> inquirens) renes et cor, videam ultionem tuam de ipsis; quia tibi revelavi causam meam, (litem meam, <em>ad verbum)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7008,10 +7297,14 @@ Hence he says, <span style="color:#800000">*How long shall the way of the wicked
 
 <h2 class="scripture-anchor" id="jeremiah-12-2" data-ref="JEREMIAH 12:2" style="display:none">JEREMIAH 12:2</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241202&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:2</span></p>
 
-<strong>2.</strong> Thou hast planted them; yea, they have taken root: they grow; yea, they bring forth fruit: thou *art* near in their mouth,and far from their reins. <strong>2.</strong> Plantasti eos, etiam radieem egerunt; prodierunt, etiam fecerunt frueturn (produxerunt fructum:) prope es in ore ipsorum, et procul es a renibus ipsorum *(hoc est,* ab intimo affectu, *renes enim alibi dixinms accipi pro affectibus arcanis)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>2.</strong> Thou hast planted them; yea, they have taken root: they grow; yea, they bring forth fruit: thou <em>art</em> near in their mouth,and far from their reins.</td><td class="scripture-la"><strong>2.</strong> Plantasti eos, etiam radieem egerunt; prodierunt, etiam fecerunt frueturn (produxerunt fructum:) prope es in ore ipsorum, et procul es a renibus ipsorum <em>(hoc est,</em> ab intimo affectu, <em>renes enim</em> <em>alibi dixinms accipi pro affectibus</em> <em>arcanis)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7029,10 +7322,14 @@ As then the Prophet knew that the Jews were wont thus loquaciously and perversel
 
 <h2 class="scripture-anchor" id="jeremiah-12-3" data-ref="JEREMIAH 12:3" style="display:none">JEREMIAH 12:3</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241203&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:3</span></p>
 
-<strong>3.</strong> But thou, O Lord, knowest me: thou hast seen me, and tried mine heart toward thee: pull them out like sheep for the slaughter, and prepare them for the day of slaughter. <strong>3.</strong> Et tu, Jehova, cognoscis me (cognovisti me), videbis me (vides me), et probasti cor meum tecum *(hoc est,* probasti quale sit cor meum apud to, *vel,* coram to:) extrahe eos tanquam oves ad mactationem, et praepara eos ad diem occisionis.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>3.</strong> But thou, O Lord, knowest me: thou hast seen me, and tried mine heart toward thee: pull them out like sheep for the slaughter, and prepare them for the day of slaughter.</td><td class="scripture-la"><strong>3.</strong> Et tu, Jehova, cognoscis me (cognovisti me), videbis me (vides me), et probasti cor meum tecum <em>(hoc est,</em> probasti quale sit cor meum apud to, <em>vel,</em> coram to:) extrahe eos tanquam oves ad mactationem, et praepara eos ad diem occisionis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7051,10 +7348,14 @@ We may also learn from this passage, — that when the ungodly accumulate wealth
 
 <h2 class="scripture-anchor" id="jeremiah-12-4" data-ref="JEREMIAH 12:4" style="display:none">JEREMIAH 12:4</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241204&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:4</span></p>
 
-<strong>4.</strong> How long shall the land mourn, and the herbs of every field wither, for the wickedness of them that dwell therein? the beasts are consumed, and the birds; because they said, He shall not see our last end. <strong>4.</strong> Quousque lugebit terra.et herba omnis agri arescet prae malitia habitantium in ea? defecit bestiae *(hoc est,* consumptae sunt besiae) et avis *(hoe est,* aves, *est enallage numeri tam in verbo quam in nomine;*) quia dixerunt, Non videbit novissimum nostrum *(vel,* finem nostrum)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> How long shall the land mourn, and the herbs of every field wither, for the wickedness of them that dwell therein? the beasts are consumed, and the birds; because they said, He shall not see our last end.</td><td class="scripture-la"><strong>4.</strong> Quousque lugebit terra.et herba omnis agri arescet prae malitia habitantium in ea? defecit bestiae <em>(hoc</em> <em>est,</em> consumptae sunt besiae) et avis <em>(hoe est,</em> aves, <em>est enallage numeri tam</em> <em>in verbo quam in nomine;</em>) quia dixerunt, Non videbit novissimum nostrum <em>(vel,</em> finem nostrum)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7185,7 +7486,16 @@ Let us also hence learn, that whatever honor hypocrites at this day possess in t
 
 <h2 class="scripture-anchor" id="jeremiah-12-9" data-ref="JEREMIAH 12:9" style="display:none">JEREMIAH 12:9</h2>
 
-**9.** Mine heritage is unto me *as* a speckled bird; the birds round about *are* against her: come ye, assemble all the beasts of the field, come to devour. 9. An avis picta *(vel,* tineta, *aut,* colorata) hrereditas mea mihi? an avis in circuitu super earn? Venite, colligite vos *(alii transitive acdipiunt,* congregate omnes bestias, *sed subaudiendum est,* congregate vos) omnes bestiae agri *(hoc est,* onmes bestiae agrestes) venite ad devorandum ipsam.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241209&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:9</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Mine heritage is unto me <em>as</em> a speckled bird; the birds round about <em>are</em> against her: come ye, assemble all the beasts of the field, come to devour.</td><td class="scripture-la"><strong>9.</strong> An avis picta <em>(vel,</em> tineta, <em>aut,</em> colorata) hrereditas mea mihi? an avis in circuitu super earn? Venite, colligite vos <em>(alii</em> <em>transitive acdipiunt,</em> congregate omnes bestias, <em>sed subaudiendum est,</em> congregate vos) omnes bestiae agri <em>(hoc est,</em> onmes bestiae agrestes) venite ad devorandum ipsam.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 The beginning of this verse is variously explained, Some think that a kind of bird is here meant, which has various colors, one variegated, which excites all other birds against itself; but this is without meaning. Others are of the opinion, and the greater part too, that birds tinged with blood were against his heritage. They hence thus explain the words, “Is a bird, tinged,” that is; with blood, “my heritage,” that is, about my heritage; “is there a bird around it? They consider both clauses to be of the same meaning; and hence they think that the same thing is repeated in different words, that birds were flying against the Jews, like those which are drawn by the smell of carcases, and which come in great numbers, that each may have a part; and then, wild beasts follow them. But I approve of neither of these explanations; nor indeed have they even the appearance of being correct.
 
@@ -7201,10 +7511,14 @@ This place deserves special notice; for we hence learn how foolishly men deceive
 
 <h2 class="scripture-anchor" id="jeremiah-12-10" data-ref="JEREMIAH 12:10" style="display:none">JEREMIAH 12:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241210&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:10</span></p>
 
-<strong>10.</strong> Many pastors have destroyed my vineyard, they have trodden my portion under foot, they have made my pleasant portion a desolate wilderness. <strong>10.</strong> Pastores nmlti perdiderunt vitem mean.a, calcarunt *(aut,* vastarunt, *utrunque enim significat* <span style="color:#008080">wssb</span>*, sed hic verbum quadratum,* perdiderunt *ergo)* portionem mearn, dederunt portionem desiderii mei in desertum vastitatis.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Many pastors have destroyed my vineyard, they have trodden my portion under foot, they have made my pleasant portion a desolate wilderness.</td><td class="scripture-la"><strong>10.</strong> Pastores nmlti perdiderunt vitem mean.a, calcarunt <em>(aut,</em> vastarunt, <em>utrunque enim significat</em> <span style="color:#008080">wssb</span><em>, sed hic</em> <em>verbum quadratum,</em> perdiderunt <em>ergo)</em> portionem mearn, dederunt portionem desiderii mei in desertum vastitatis.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7242,10 +7556,14 @@ He afterwards adds, <span style="color:#800000">*No one lays on the heart*</span
 
 <h2 class="scripture-anchor" id="jeremiah-12-12" data-ref="JEREMIAH 12:12" style="display:none">JEREMIAH 12:12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241212&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">12:12</span></p>
 
-<strong>12.</strong> The spoilers are come upon all high places through the wilderness: for the sword of the Lord shall devour from the *one* end of the land even to the *other* end of the land: no flesh shall have peace. <strong>12.</strong> Super omnes oras *(vel, quomodo alii vertunt,* super omnia loca excelsa, <span style="color:#008080">µypç</span>, *uno verbo dicere licebit,* prominentias; *accipitur etiam pro rupibus; sed loquitur de finibus extremis; ergo* super fines extremos) in desertum venerunt perditores; quid gladius Jehovae voravit a fine terrae usque ad finem terrae; non est pax universae carni.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> The spoilers are come upon all high places through the wilderness: for the sword of the Lord shall devour from the <em>one</em> end of the land even to the <em>other</em> end of the land: no flesh shall have peace.</td><td class="scripture-la"><strong>12.</strong> Super omnes oras <em>(vel, quomodo alii</em> <em>vertunt,</em> super omnia loca excelsa, <span style="color:#008080">µypç</span>, <em>uno verbo dicere licebit,</em> prominentias; <em>accipitur etiam pro rupibus; sed loquitur</em> <em>de finibus extremis; ergo</em> super fines extremos) in desertum venerunt perditores; quid gladius Jehovae voravit a fine terrae usque ad finem terrae; non est pax universae carni.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -7534,7 +7852,18 @@ He at last adds, <span style="color:#800000">*They have not heard*</span>. Had G
 
 <h2 class="scripture-anchor" id="jeremiah-13-12-14" data-ref="JEREMIAH 13:12-14" style="display:none">JEREMIAH 13:12-14</h2>
 
-12 Therefore thou shalt speak unto them this word; Thus saith the Lord God of Israel, Every bottle shall be filled with wine: and they shall say unto thee, Do we not certainly know that every bottle shall be filled with wine? 12. Dices etiam illis (hoc est, annuntiabis) hunc sermonem, Sic dicit Jehova, Deus Israel, Omnis lagena (alii vertunt, utrem, sed hoc loco parum interest, omnis ergo lagena) implebitur vino: et dicent tibi, An non sciendo scimus (hoc est, An nesciendo non scimus) quod omnis lagena implebitur vino? 13. Then shalt thou say unto them, Thus saith the Lord, Behold, I will fill all the inhabitants of this land, even the kings that sit upon David’s throne, and the priests, and the prophets, and all the inhabitants of Jerusalem, with drunkenness. 13. Tunc dices illis, Sic dicit Jehova, Ecce ego implens (vel, impleo) omnes habitatores terrae hujus, et omnes reges qui sedent pro Davidae super solium ejus, et sacerdotes et prophetas, et omnes incolas Jerosolymae ebrietate. 14. And I will dash them one against another, even the fathers and the sons together, saith the Lord: I will not pity, nor spare, nor have mercy, but destroy them. 14. Et collidam eos (alii vertunt, dispergam; proprie significat violenter disjicere; hic apte reddetur collidere; collidam ergo) quenque ad fratrem suum et patres et filios simul, dicit Jehova; non parcam et non ero propitius, (idem significant, sunt synonyma) et non miserabor a perdendo (hoc est, quin perdam) ipsos.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241312&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">13:12-14</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>12.</strong> Therefore thou shalt speak unto them this word; Thus saith the Lord God of Israel, Every bottle shall be filled with wine: and they shall say unto thee, Do we not certainly know that every bottle shall be filled with wine?</td><td class="scripture-la"><strong>12.</strong> Dices etiam illis (hoc est, annuntiabis) hunc sermonem, Sic dicit Jehova, Deus Israel, Omnis lagena (alii vertunt, utrem, sed hoc loco parum interest, omnis ergo lagena) implebitur vino: et dicent tibi, An non sciendo scimus (hoc est, An nesciendo non scimus) quod omnis lagena implebitur vino?</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> Then shalt thou say unto them, Thus saith the Lord, Behold, I will fill all the inhabitants of this land, even the kings that sit upon David’s throne, and the priests, and the prophets, and all the inhabitants of Jerusalem, with drunkenness.</td><td class="scripture-la"><strong>13.</strong> Tunc dices illis, Sic dicit Jehova, Ecce ego implens (vel, impleo) omnes habitatores terrae hujus, et omnes reges qui sedent pro Davidae super solium ejus, et sacerdotes et prophetas, et omnes incolas Jerosolymae ebrietate.</td></tr>
+<tr><td class="scripture-en"><strong>14.</strong> And I will dash them one against another, even the fathers and the sons together, saith the Lord: I will not pity, nor spare, nor have mercy, but destroy them.</td><td class="scripture-la"><strong>14.</strong> Et collidam eos (alii vertunt, dispergam; proprie significat violenter disjicere; hic apte reddetur collidere; collidam ergo) quenque ad fratrem suum et patres et filios simul, dicit Jehova; non parcam et non ero propitius, (idem significant, sunt synonyma) et non miserabor a perdendo (hoc est, quin perdam) ipsos.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 617 -->
 
@@ -7618,7 +7947,16 @@ But the sum of the whole is this, that they could anticipate God’s judgment by
 
 <h2 class="scripture-anchor" id="jeremiah-13-17" data-ref="JEREMIAH 13:17" style="display:none">JEREMIAH 13:17</h2>
 
-17 But if ye will not hear it, my soul shall weep in secret places for *your* pride; and mine eye shall weep sore, and run down with tears, because the Lord’s flock is carried away captive. 17 Quod si non audieritis hoc, in areanis (hoc est, in secreto) lugebit anima mea a facie superbia (hoc est, propter superbiam) et lachrymando lachrymabitur, et descendet oculus meus in lachrymas (de hac locutione vidimut cap. 9; diffluet ergo oculus meus in lachrymae; ad verbum, et descendet oculus meus lachryma) quoniam abductus est (captus est) grex Jehovae.
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241317&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">13:17</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> But if ye will not hear it, my soul shall weep in secret places for <em>your</em> pride; and mine eye shall weep sore, and run down with tears, because the Lord’s flock is carried away captive.</td><td class="scripture-la"><strong>17.</strong> Quod si non audieritis hoc, in areanis (hoc est, in secreto) lugebit anima mea a facie superbia (hoc est, propter superbiam) et lachrymando lachrymabitur, et descendet oculus meus in lachrymas (de hac locutione vidimut cap. 9; diffluet ergo oculus meus in lachrymae; ad verbum, et descendet oculus meus lachryma) quoniam abductus est (captus est) grex Jehovae.</td></tr>
+</tbody>
+</table>
+
+</div>
 
 <!-- PAGE 626 -->
 
@@ -7633,7 +7971,16 @@ He then mentions the cause, <span style="color:#800000">*For taken captive is th
 
 <h2 class="scripture-anchor" id="jeremiah-13-18" data-ref="JEREMIAH 13:18" style="display:none">JEREMIAH 13:18</h2>
 
-18 Say unto the king and to the queen, Humble yourselves, sit down: for your principalities shall come down, *even* the crown of your glory. 18 Dic regi et dominae, humiliamini (descendite) sedete (hoc est, jacete) quia descendet a capitibus vestris corona decoris vestri (alii vertunt, sescendet altitudines vestrae, pro altitudo vestra; et appositive legunt quod sequitur, corona decoris vestri)
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241318&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">13:18</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>18.</strong> Say unto the king and to the queen, Humble yourselves, sit down: for your principalities shall come down, <em>even</em> the crown of your glory.</td><td class="scripture-la"><strong>18.</strong> Dic regi et dominae, humiliamini (descendite) sedete (hoc est, jacete) quia descendet a capitibus vestris corona decoris vestri (alii vertunt, sescendet altitudines vestrae, pro altitudo vestra; et appositive legunt quod sequitur, corona decoris vestri)</td></tr>
+</tbody>
+</table>
+
+</div>
 
 The Prophet is here bidden to address his discourse directly to King Jehoiakim and his mother; for the term lady is not to be taken for the queen, the wife of Jehoiakim, but for his mother, who was then his associate in the kingdom, and possessed great authority.  <span style="color:#800000">fC57</span> And there is no doubt but that God thus intended to rouse more fully the community in general; that is, by shewing that he would not spare, no, not the king nor the queen. But we may hence also learn what has already been observed, that the truth announced by the prophets is superior to all the greatness of the world. For it was said before to Jeremiah, “Reprove mountains and rebuke hills;” <span style="color:#800000">fC58</span> and still farther,
 
@@ -7727,7 +8074,16 @@ He afterwards says, <span style="color:#800000">*Shall not sorrows lay hold on t
 
 <h2 class="scripture-anchor" id="jeremiah-13-22" data-ref="JEREMIAH 13:22" style="display:none">JEREMIAH 13:22</h2>
 
-22 And if thou say in thine heart, Wherefore come these things upon me? For the greatness of thine iniquity are thy skirts discovered, *and* thy heels made bare. 22 Quod si dixeris in corde suc, cur (vel, ut quid) haec mala acciderunt mihi (occurrerunt mihi?) in multitudine (hoc est, propter multitudinem) iniquitatis tuae discoopertae sunt fimbriae tuae, et nudati calces tui (vel, plantae tuae nudatae sunt)
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241322&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">13:22</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>22.</strong> And if thou say in thine heart, Wherefore come these things upon me? For the greatness of thine iniquity are thy skirts discovered, <em>and</em> thy heels made bare.</td><td class="scripture-la"><strong>22.</strong> Quod si dixeris in corde suc, cur (vel, ut quid) haec mala acciderunt mihi (occurrerunt mihi?) in multitudine (hoc est, propter multitudinem) iniquitatis tuae discoopertae sunt fimbriae tuae, et nudati calces tui (vel, plantae tuae nudatae sunt)</td></tr>
+</tbody>
+</table>
+
+</div>
 
 THE Prophet again declares that God’s judgment would be just, which he had previously foretold; for hypocrites, we know, do not cease to quarrel with God, except they are often proved guilty; and it is always their object, where they cannot wholly excuse themselves, to extenuate in some measure their fault. The Prophet therefore here removes every pretense for evasion, and declares that they were wholly worthy of such a reward.
 
@@ -7738,7 +8094,16 @@ As to the simile, it is a form of speaking often used by the prophets, that is, 
 
 <h2 class="scripture-anchor" id="jeremiah-13-23" data-ref="JEREMIAH 13:23" style="display:none">JEREMIAH 13:23</h2>
 
-23 Can the Ethiopian change his skin, or the leopard his spots? *then* may ye also do good, that are accustomed to do evil. 23 An mutabit (sic proprie vertitur) Ethiopa pellem suam, et pardus maculas suas (aut, varietates, nam nomen hoc duplicatum deducitur a <span style="color:#008080">rbj</span>, quod significat congregare, significat etiam livorem, accipitur vero hic pro maculis) etiam tu poteris ad benefaciendum, doctus ad malum?
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;241323&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">13:23</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>23.</strong> Can the Ethiopian change his skin, or the leopard his spots? <em>then</em> may ye also do good, that are accustomed to do evil.</td><td class="scripture-la"><strong>23.</strong> An mutabit (sic proprie vertitur) Ethiopa pellem suam, et pardus maculas suas (aut, varietates, nam nomen hoc duplicatum deducitur a <span style="color:#008080">rbj</span>, quod significat congregare, significat etiam livorem, accipitur vero hic pro maculis) etiam tu poteris ad benefaciendum, doctus ad malum?</td></tr>
+</tbody>
+</table>
+
+</div>
 
 God declares in this verse, that the people were so hardened in their wickedness, that there was no hope of their repentance. This is the sum of what is said. But it was a very bitter reproof for the Prophet to say that his own nation were past hope — that they had so entirely given themselves up to their vices that they were no longer healable.
 
@@ -7892,16 +8257,17 @@ We hence see the reason for this word, *prohibitions,* by which the Prophet desi
 
 <h2 class="scripture-anchor" id="jeremiah-14-2-3" data-ref="JEREMIAH 14:2-3" style="display:none">JEREMIAH 14:2-3</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241402&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:2-3</span></p>
 
-<strong>2.</strong> Judah mourneth, and the gates thereof languish; they are black unto the ground; and the cry of Jerusalem is gone up.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>2.</strong> Judah mourneth, and the gates thereof languish; they are black unto the ground; and the cry of Jerusalem is gone up.</td><td class="scripture-la"><strong>2.</strong> Luxit Jehudab et portae ejus debilitatae sunt, (vel, dissipatae sunt;) obtenebrati sunt in terra (refernut quidam ad portas, sed malo ad homines referre;) et clamor Jerusalem ascendit.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> And their nobles have sent their little ones to the waters: they came to the pits, and found no water; they returned with their vessels empty; they were ashamed and confounded, and covered their heads.</td><td class="scripture-la"><strong>3.</strong> Et proceres coturn (hoc est, qui pollent dignitate) miserunt minores (hoc est, homines plebeios et mercenarios) ad aquas; venerunt ad cisternas, non invenerunt aquas; reversi sunt cum vasis inanibus (vel, reversa sunt vasa eorum vacua;) confusi sunt, et erubuerunt, et operuerunt caput suum.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**2.** Luxit Jehudab et portae ejus debilitatae sunt, (vel, dissipatae sunt;) obtenebrati sunt in terra (refernut quidam ad portas, sed malo ad homines referre;) et clamor Jerusalem ascendit. 3. And their nobles have sent their little ones to the waters: they came to the pits, and found no water; they returned with their vessels empty; they were ashamed and confounded, and covered their heads.</p>
-
-<p style="text-align:right;" markdown="1">3. Et proceres coturn (hoc est, qui pollent dignitate) miserunt minores (hoc est, homines plebeios et mercenarios) ad aquas; venerunt ad cisternas, non invenerunt aquas; reversi sunt cum vasis inanibus (vel, reversa sunt vasa eorum vacua;) confusi sunt, et erubuerunt, et operuerunt caput suum.</p>
 
 The Prophet intimates in these words, that so great would be the scarcity as to appear to be a manifest and remarkable evidence of God’s vengeance; for when God punishes us in a common way, we for the most part refer the event to some fortuitous circumstances, and the devil also ever retains our minds in the consideration of secondary causes. Hence the Prophet declares here that an event so unusual could not be ascribed to natural causes, as that the earth should become so sterile, but thai; it was the extraordinary judgment of God. This is the reason wily he employs so many figurative expressions. He might indeed have said, in one sentence, that there would be in the land a most grievous famine; but hardly one in a hundred would have been moved by words so simply expressed. Therefore the Prophet, in order to arouse their stupor, uses terms the most forcible.
 
@@ -7935,10 +8301,15 @@ So he says, <span style="color:#800000">*On account of the chapt ground, because
 
 <h2 class="scripture-anchor" id="jeremiah-14-5-6" data-ref="JEREMIAH 14:5-6" style="display:none">JEREMIAH 14:5-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241405&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:5-6</span></p>
 
-<strong>5.</strong> Yea, the hind also calved in the field, and forsook *it,* because there was no grass. <strong>5.</strong> Quin etiam cerva in agro peperit et deseruit *(nempe,* foetum suum,) quia non fuit herba. <strong>6.</strong> And the wild asses did stand in the high places, they snuffed up the wind like dragons; their eyes did fail, because *there was* no grass. <strong>6.</strong> Et onagri steterunt super excelsa *(diximus de hoc nomine,* super labia, *vel,* eminentias, *vel,* rupes,) traxerunt *(vel,* hauserunt) ventum sicut serpentes; defecerunt oculi eorum, quia non fuit herba *(utitur alio nomine, posuerat* <span style="color:#008080">açd</span> *prius, nunc ponit* <span style="color:#008080">bç[</span> *sed eodem sensu.)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>5.</strong> Yea, the hind also calved in the field, and forsook <em>it,</em> because there was no grass.</td><td class="scripture-la"><strong>5.</strong> Quin etiam cerva in agro peperit et deseruit <em>(nempe,</em> foetum suum,) quia non fuit herba.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> And the wild asses did stand in the high places, they snuffed up the wind like dragons; their eyes did fail, because <em>there</em> <em>was</em> no grass.</td><td class="scripture-la"><strong>6.</strong> Et onagri steterunt super excelsa <em>(diximus de hoc nomine,</em> super labia, <em>vel,</em> eminentias, <em>vel,</em> rupes,) traxerunt <em>(vel,</em> hauserunt) ventum sicut serpentes; defecerunt oculi eorum, quia non fuit herba <em>(utitur alio nomine, posuerat</em> <span style="color:#008080">açd</span> <em>prius, nunc ponit</em> <span style="color:#008080">bç[</span> <em>sed eodem sensu.)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8015,10 +8386,14 @@ After having said these things, he subjoins the contrast to which I have referre
 
 <h2 class="scripture-anchor" id="jeremiah-14-10" data-ref="JEREMIAH 14:10" style="display:none">JEREMIAH 14:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241410&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:10</span></p>
 
-<strong>10.</strong> Thus saith the Lord unto this people, Thus have they loved to wander, they have not refrained their feet; therefore the Lord doth not accept them: he will now remember their iniquity, and visit their sins. <strong>10.</strong> Sic dicit Jehovah.ad populum hunc *(vel, de* populo hoc; <span style="color:#008080">l</span> *utrunque significat,)* Sicut dilexerunt ad va gandum *(hoc est,* sicut amarunt vagari,) pedes suos non cohibuerunt, ideo Jehova non placuit sibi in illis; nunc recordabitur iniquitatum eorum, et visitabit peccata ipsorum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> Thus saith the Lord unto this people, Thus have they loved to wander, they have not refrained their feet; therefore the Lord doth not accept them: he will now remember their iniquity, and visit their sins.</td><td class="scripture-la"><strong>10.</strong> Sic dicit Jehovah.ad populum hunc <em>(vel, de</em> populo hoc; <span style="color:#008080">l</span> <em>utrunque</em> <em>significat,)</em> Sicut dilexerunt ad va gandum <em>(hoc est,</em> sicut amarunt vagari,) pedes suos non cohibuerunt, ideo Jehova non placuit sibi in illis; nunc recordabitur iniquitatum eorum, et visitabit peccata ipsorum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8041,16 +8416,17 @@ Now this passage, is worthy of being especially noticed, for unbelief is here pa
 
 <h2 class="scripture-anchor" id="jeremiah-14-11-12" data-ref="JEREMIAH 14:11-12" style="display:none">JEREMIAH 14:11-12</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241411&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:11-12</span></p>
 
-<strong>11.</strong> Then said the Lord unto me, Pray not for this people for *their* good.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> Then said the Lord unto me, Pray not for this people for <em>their</em> good.</td><td class="scripture-la"><strong>11.</strong> Et dixit mihi Jehovah, Ne ores in gratiam populi hujus in bonum, <em>(hoc est,</em> ut benefaciam.)</td></tr>
+<tr><td class="scripture-en"><strong>12.</strong> When they fast, I will not hear their cry; and when they offer burnt — offering and an oblation, I will not accept them: but I will consume them by the sword, and by the famine, and by the pestilence.</td><td class="scripture-la"><strong>12.</strong> Quum jejunaverint, ego non exaudiam ad clamorem eorum, et quum obtulerint sacrificium et oblationem, ego non habebo gratum <em>(idem est verbum,</em> in illis non placebit mihi, non placabor, non ero propitius;) quoniam in gladio, in fame, et peste ego consumam eos.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**11.** Et dixit mihi Jehovah, Ne ores in gratiam populi hujus in bonum, *(hoc est,* ut benefaciam.) 12. When they fast, I will not hear their cry; and when they offer burnt — offering and an oblation, I will not accept them: but I will consume them by the sword, and by the famine, and by the pestilence.</p>
-
-<p style="text-align:right;" markdown="1">12. Quum jejunaverint, ego non exaudiam ad clamorem eorum, et quum obtulerint sacrificium et oblationem, ego non habebo gratum *(idem est verbum,* in illis non placebit mihi, non placabor, non ero propitius;) quoniam in gladio, in fame, et peste ego consumam eos.</p>
 
 God first forbids the Prophet to pray for the people, as we have before seen, (Jeremiah 7:16; Jeremiah 11:14) But we must remember what I have said before, that this prohibition is to be understood as to their exile; for as God had already decreed that the people should be banished from the promised land, the Prophet was forbidden to pray, inasmuch as that decree was immutable. It is not, therefore, a general prohibition, as though the Prophet was not allowed to ask God’s forgiveness in behalf of the whole people, or at least in behalf of the godly who still remained. The Prophet might indeed pray in a certain way for the whole people, that is, that God, being satisfied with their temporal punishment, would at length spare the miserable with regard to eternal life: he might have also prayed for the remnant; for he knew that there was some seed remaining, though hidden; nay, he was himself one of the people, and he not only knew that some true servants of God were still remaining, but he had also some friends of his own, whose piety was sufficiently known to him. God, therefore, did not strictly exclude all his prayers, but every prayer with regard to the exile which was soon to be undergone by the people.
 
@@ -8168,10 +8544,14 @@ And he says, <span style="color:#800000">*They shall be cast out in the streets 
 
 <h2 class="scripture-anchor" id="jeremiah-14-17" data-ref="JEREMIAH 14:17" style="display:none">JEREMIAH 14:17</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241417&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:17</span></p>
 
-<strong>17.</strong> Therefore thou shalt say this word unto them, Let mine eyes run down with tears night and day, and let them not cease: for the virgin daughter of my people is broken with a great breach, with a very grievous blow. <strong>17.</strong> Dices igitur *( copula enim loco illativoe particuloe sumitur)* ad eos verbum hoc, *(hoc est,* annunciabis illis hoc verbum) Deducent oculi mei lachrymam *(vertunt alii,* descendent oculi mei in lachrymam; *Hebraicum nomen est singulare)* nocte et die, et non quiescent; quoniam contritione magna contrita est virgo, filia populi mei, plaga aegra *(vel,* acerba) valde.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> Therefore thou shalt say this word unto them, Let mine eyes run down with tears night and day, and let them not cease: for the virgin daughter of my people is broken with a great breach, with a very grievous blow.</td><td class="scripture-la"><strong>17.</strong> Dices igitur <em>( copula enim loco illativoe</em> <em>particuloe sumitur)</em> ad eos verbum hoc, <em>(hoc est,</em> annunciabis illis hoc verbum) Deducent oculi mei lachrymam <em>(vertunt</em> <em>alii,</em> descendent oculi mei in lachrymam; <em>Hebraicum nomen est singulare)</em> nocte et die, et non quiescent; quoniam contritione magna contrita est virgo, filia populi mei, plaga aegra <em>(vel,</em> acerba) valde.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8245,10 +8625,14 @@ that is, moderately, “lest thou bring me to nothing.” There the Prophet, as 
 
 <h2 class="scripture-anchor" id="jeremiah-14-20" data-ref="JEREMIAH 14:20" style="display:none">JEREMIAH 14:20</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241420&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">14:20</span></p>
 
-<strong>20.</strong> We acknowledge, O Lord, our wickedness, *and* the iniquity of our fathers; for we have sinned against thee. <strong>20.</strong> Cognoscimus, Jehova, scelus nostrum, et iniquitatem patrum nostrorum; quoniam scelerate egimus in te (<span style="color:#008080">wnafj</span>, *quanquam* <span style="color:#008080">[çr</span> *et* <span style="color:#008080">afj</span> *idem fere sunt, tamen simpliciter concludit, quod scelerate egerint adversus Deum.)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>20.</strong> We acknowledge, O Lord, our wickedness, <em>and</em> the iniquity of our fathers; for we have sinned against thee.</td><td class="scripture-la"><strong>20.</strong> Cognoscimus, Jehova, scelus nostrum, et iniquitatem patrum nostrorum; quoniam scelerate egimus in te (<span style="color:#008080">wnafj</span>, <em>quanquam</em> <span style="color:#008080">[çr</span> <em>et</em> <span style="color:#008080">afj</span> <em>idem fere sunt, tamen</em> <em>simpliciter concludit, quod scelerate egerint</em> <em>adversus Deum.)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8524,10 +8908,14 @@ God had set before their eyes a sad and dreadful spectacle; they ought then to h
 
 <h2 class="scripture-anchor" id="jeremiah-15-8" data-ref="JEREMIAH 15:8" style="display:none">JEREMIAH 15:8</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241508&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">15:8</span></p>
 
-<strong>8.</strong> Their widows are increased to me above the sand of the seas: I have brought upon them, against the mother of the young men, a spoiler at noon — day: I have caused *him* to fall upon it suddenly, and terrors upon the city. <strong>8.</strong> Multiplicatae sunt mihi viduae ejus supra arenam maris, (prae arena maris;) immisi illis (venire feci illis) super matrem juvenis *(id est,* super turmam, *vel,* multitudinem juvenum) vastatorem in meridie; et projeci (cadere feci, *ad verbum)* super ipsam repente tumultum et terrores, *(quanquam de his vocibus postea erit aliquid dicendum.)*
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>8.</strong> Their widows are increased to me above the sand of the seas: I have brought upon them, against the mother of the young men, a spoiler at noon — day: I have caused <em>him</em> to fall upon it suddenly, and terrors upon the city.</td><td class="scripture-la"><strong>8.</strong> Multiplicatae sunt mihi viduae ejus supra arenam maris, (prae arena maris;) immisi illis (venire feci illis) super matrem juvenis <em>(id est,</em> super turmam, <em>vel,</em> multitudinem juvenum) vastatorem in meridie; et projeci (cadere feci, <em>ad</em> <em>verbum)</em> super ipsam repente tumultum et terrores, <em>(quanquam de his vocibus</em> <em>postea erit aliquid dicendum.)</em></td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8546,10 +8934,14 @@ He afterwards adds, <span style="color:#800000">*And I have cast*</span>, or cau
 
 <h2 class="scripture-anchor" id="jeremiah-15-9" data-ref="JEREMIAH 15:9" style="display:none">JEREMIAH 15:9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241509&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">15:9</span></p>
 
-<strong>9.</strong> She that hath born seven languisheth: she hath given up the ghost; her sun is gone down while *it was* yet day; she hath been ashamed and confounded: and the residue of them will I deliver to the sword before their enemies, saith the Lord. <strong>9.</strong> Debilitata est quae peperit septem, et expiravit anima ejus *(alii vetrunt,* afflicta fuit, *sed* <span style="color:#008080">hpn</span> *significat sufflare; viderut autem hic metaphorice poni pro expirare:* expiravit *ergo* anima ejus;) ingressus est sol ejus *(hoc est,* occidit sol) in adhuc die *(id est,* cum adhuc esset dies;) confusa est et erubuit: et reliquias ipsorum gladio dabo (ad gladium exportam) coram inimicis ipsorum, dicit Jehova.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> She that hath born seven languisheth: she hath given up the ghost; her sun is gone down while <em>it was</em> yet day; she hath been ashamed and confounded: and the residue of them will I deliver to the sword before their enemies, saith the Lord.</td><td class="scripture-la"><strong>9.</strong> Debilitata est quae peperit septem, et expiravit anima ejus <em>(alii vetrunt,</em> afflicta fuit, <em>sed</em> <span style="color:#008080">hpn</span> <em>significat sufflare; viderut</em> <em>autem hic metaphorice poni pro expirare:</em> expiravit <em>ergo</em> anima ejus;) ingressus est sol ejus <em>(hoc est,</em> occidit sol) in adhuc die <em>(id est,</em> cum adhuc esset dies;) confusa est et erubuit: et reliquias ipsorum gladio dabo (ad gladium exportam) coram inimicis ipsorum, dicit Jehova.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -8652,10 +9044,14 @@ Prophet, in order to beat down this ferocity, says, that there would be greater 
 
 <h2 class="scripture-anchor" id="jeremiah-15-13" data-ref="JEREMIAH 15:13" style="display:none">JEREMIAH 15:13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241513&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">15:13</span></p>
 
-<strong>13.</strong> Thy substance and thy treasures will I give to the spoil without price, and that for all thy sins, even in all thy borders. <strong>13.</strong> Opes tuas et thesauros tuos in direptionem dabo, non in permutatione (hoc est, absque pretio,) et propter omne scelus tuum, et propter omnem finem tuum (vel, terminum tuum, in omnibus terminis tuis, ad verbum; sicuti etiam in omnibus sceleribus.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Thy substance and thy treasures will I give to the spoil without price, and that for all thy sins, even in all thy borders.</td><td class="scripture-la"><strong>13.</strong> Opes tuas et thesauros tuos in direptionem dabo, non in permutatione (hoc est, absque pretio,) et propter omne scelus tuum, et propter omnem finem tuum (vel, terminum tuum, in omnibus terminis tuis, ad verbum; sicuti etiam in omnibus sceleribus.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -9052,10 +9448,15 @@ However this may be, God intimates by this figurative language, that the Jews, w
 
 <h2 class="scripture-anchor" id="jeremiah-16-6-7" data-ref="JEREMIAH 16:6-7" style="display:none">JEREMIAH 16:6-7</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241606&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">16:6-7</span></p>
 
-<strong>6.</strong> Both the great and the small shall die in this land: they shall not be buried, neither shall men lament for them, nor cut themselves, nor make themselves bald for them: <strong>6.</strong> Et morientur magni et parvi in terra hac; non sepelient eos, et non plangent super eos, et non incidet se quisquam, et non fiet calvitium illis; <strong>7.</strong> Et non eomplodent *(vel,* extendent) illis *(quidam legentes* <span style="color:#008080">XXX</span> *pro* <span style="color:#008080">XXX</span> *vertunt,* non frangent panem; <span style="color:#008080">XXX</span> significat frangere, et interdum dividere, vel ostendere, vel dispergere: non dubium est quin Propheta, sicut alio loco vidimus intelligat complosionem manuum, vel contorsionem, ubi in vehementi luctu ita brachia huc et illuc projiciuntur, deinde comploduntur manus: hunc gestum hoc quoque loco exprimit cum dicit, Et non frangent, vel, non complodent manus) ad consolandum (hoc est, ad unumquenque consolandum) super mortuo, et non propinabunt illis calicem consolationum super patre suo et super matre sua. <strong>7.</strong> Neither shall men tear themselves for them in mourning, to comfort them for the dead; neither shall men give them the cup of consolation to drink for their father or for their mother.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>6.</strong> Both the great and the small shall die in this land: they shall not be buried, neither shall men lament for them, nor cut themselves, nor make themselves bald for them:</td><td class="scripture-la"><strong>6.</strong> Et morientur magni et parvi in terra hac; non sepelient eos, et non plangent super eos, et non incidet se quisquam, et non fiet calvitium illis;</td></tr>
+<tr><td class="scripture-en"><strong>7.</strong> Neither shall men tear themselves for them in mourning, to comfort them for the dead; neither shall men give them the cup of consolation to drink for their father or for their mother.</td><td class="scripture-la"><strong>7.</strong> Et non eomplodent <em>(vel,</em> extendent) illis <em>(quidam legentes</em> <span style="color:#008080">XXX</span> <em>pro</em> <span style="color:#008080">XXX</span> <em>vertunt,</em> non frangent panem; <span style="color:#008080">XXX</span> significat frangere, et interdum dividere, vel ostendere, vel dispergere: non dubium est quin Propheta, sicut alio loco vidimus intelligat complosionem manuum, vel contorsionem, ubi in vehementi luctu ita brachia huc et illuc projiciuntur, deinde comploduntur manus: hunc gestum hoc quoque loco exprimit cum dicit, Et non frangent, vel, non complodent manus) ad consolandum (hoc est, ad unumquenque consolandum) super mortuo, et non propinabunt illis calicem consolationum super patre suo et super matre sua.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -9243,10 +9644,14 @@ The two similitudes are exceedingly suitable; for the Prophet shews that the Cha
 
 <h2 class="scripture-anchor" id="jeremiah-16-17" data-ref="JEREMIAH 16:17" style="display:none">JEREMIAH 16:17</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241617&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">16:17</span></p>
 
-<strong>17.</strong> For mine eyes are upon all their ways: they are not hid from my face, neither is their iniquity hid from mine eyes. <strong>17.</strong> Quia oculi mei super omnes vias ipsorum; non absconditae sunt a facie mea, et non sunt occultae iniquitates e regione oculorum meorum, (coram oculis meis; ad verbum est, de coram oculis meis.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>17.</strong> For mine eyes are upon all their ways: they are not hid from my face, neither is their iniquity hid from mine eyes.</td><td class="scripture-la"><strong>17.</strong> Quia oculi mei super omnes vias ipsorum; non absconditae sunt a facie mea, et non sunt occultae iniquitates e regione oculorum meorum, (coram oculis meis; ad verbum est, de coram oculis meis.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -9412,10 +9817,14 @@ He afterwards adds, <span style="color:#800000">*And on the horns of your altars
 
 <h2 class="scripture-anchor" id="jeremiah-17-2" data-ref="JEREMIAH 17:2" style="display:none">JEREMIAH 17:2</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241702&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">17:2</span></p>
 
-<strong>2.</strong> Whilst their children remember their altars and their groves by the green trees upon the high hills. <strong>2.</strong> Secundum recordari filios ipsorum (*hoc est*, cum memores erunt filii ipsorum) altarium ipsorum et lucorum ipsorum super arborem frondosam, super colles excelsos.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>2.</strong> Whilst their children remember their altars and their groves by the green trees upon the high hills.</td><td class="scripture-la"><strong>2.</strong> Secundum recordari filios ipsorum (<em>hoc</em> <em>est</em>, cum memores erunt filii ipsorum) altarium ipsorum et lucorum ipsorum super arborem frondosam, super colles excelsos.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -9668,10 +10077,14 @@ We now then understand why the Prophet here extols the dignity to which God had 
 
 <h2 class="scripture-anchor" id="jeremiah-17-13" data-ref="JEREMIAH 17:13" style="display:none">JEREMIAH 17:13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241713&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">17:13</span></p>
 
-<strong>13.</strong> O Lord, the hope of Israel, all that forsake thee shall be ashamed, *and* they that depart from me shall be written in the earth, because they have forsaken the Lord, the fountain of living waters. <strong>13.</strong> Spes (*vel*, expectatio)lsrael Jehova, ,quicunque abs te discedunt (*vel*, qui te derelinquunt, <span style="color:#008080">˚wbz[</span>; *hoc verbo nuper fuerat usus de perdicibus loquens*) pudefient; qui deficiunt a me in terra scribentur; quia dereliquerunt (*idem est verbum*) fontem aquarum viventium Jehovam.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> O Lord, the hope of Israel, all that forsake thee shall be ashamed, <em>and</em> they that depart from me shall be written in the earth, because they have forsaken the Lord, the fountain of living waters.</td><td class="scripture-la"><strong>13.</strong> Spes (<em>vel</em>, expectatio)lsrael Jehova, ,quicunque abs te discedunt (<em>vel</em>, qui te derelinquunt, <span style="color:#008080">˚wbz[</span>; <em>hoc verbo nuper</em> <em>fuerat usus de perdicibus loquens</em>) pudefient; qui deficiunt a me in terra scribentur; quia dereliquerunt (<em>idem est</em> <em>verbum</em>) fontem aquarum viventium Jehovam.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -10404,14 +10817,18 @@ The Prophet indeed seems here to be the defender of his own cause: but there is 
 
 <h2 class="scripture-anchor" id="jeremiah-18-23" data-ref="JEREMIAH 18:23" style="display:none">JEREMIAH 18:23</h2>
 
-<div class="scripture-box" markdown="1">
+<p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that since thou exhortest us daily, and even</span> <span style="color:#000080">constantly to repent, by the doctrine of thy Gospel, and shewest</span> <span style="color:#000080">thyself to us reconcilable, — O grant, that we may not disregard so</span> <span style="color:#000080">incomparable a benefit, but with resigned minds devote ourselves</span> <span style="color:#000080">wholly to thee, and that we may not so far provoke thy wrath as</span> <span style="color:#000080">to be altogether reiected by thee, and to find at last that there is no</span> <span style="color:#000080">mercy for us; but may we anticipate extreme judgment, while the</span> <span style="color:#000080">time of thy good-will continues, and thus embrace the benefit of</span> <span style="color:#000080">reconciliation which thou offerest to us, so that being thankful to</span> <span style="color:#000080">thee and accepted in thine only-begotten Son, we may proceed in</span> <span style="color:#000080">the course of our vocation, until we shall at length enjoy that</span> <span style="color:#000080">eternal inheritance which thine only-begotten Son has obtained for</span> <span style="color:#000080">us by his own blood. — Amen.</span></p>
+
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241823&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">18:23</span></p>
 
-<strong>23.</strong> Yet, Lord, thou knowest all their counsel against me to slay me: forgive not their iniquity, neither blot out their sin from thy sight, but let them be overthrown before thee; deal thus with them in the time of thine anger. <strong>23.</strong> Et tu Jehovah nosti omnia consilia eorum super me in mortem; ne propitius sis (*vel*, placabilis) super iniquitate eorum, et peccatum eorum (*vel*, scelus eorum) a facie tua ne deleas (*quidam existimant* <span style="color:#008080">yjmt</span> *esse in kal, et* <span style="color:#008080">y</span> pont loco <span style="color:#008080">h</span>,) et sint impingentes coram facie tua, in die excandescentiae tuae fac cum ipsis. I shall not be able to explain this verse to-day. PRAYER
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>23.</strong> Yet, Lord, thou knowest all their counsel against me to slay me: forgive not their iniquity, neither blot out their sin from thy sight, but let them be overthrown before thee; deal thus with them in the time of thine anger. I shall not be able to explain this verse to-day.</td><td class="scripture-la"><strong>23.</strong> Et tu Jehovah nosti omnia consilia eorum super me in mortem; ne propitius sis (<em>vel</em>, placabilis) super iniquitate eorum, et peccatum eorum (<em>vel</em>, scelus eorum) a facie tua ne deleas (<em>quidam</em> <em>existimant</em> <span style="color:#008080">yjmt</span> <em>esse in kal, et</em> <span style="color:#008080">y</span> pont loco <span style="color:#008080">h</span>,) et sint impingentes coram facie tua, in die excandescentiae tuae fac cum ipsis. PRAYER</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that since thou exhortest us daily, and even</span> <span style="color:#000080">constantly to repent, by the doctrine of thy Gospel, and shewest</span> <span style="color:#000080">thyself to us reconcilable, — O grant, that we may not disregard so</span> <span style="color:#000080">incomparable a benefit, but with resigned minds devote ourselves</span> <span style="color:#000080">wholly to thee, and that we may not so far provoke thy wrath as</span> <span style="color:#000080">to be altogether reiected by thee, and to find at last that there is no</span> <span style="color:#000080">mercy for us; but may we anticipate extreme judgment, while the</span> <span style="color:#000080">time of thy good-will continues, and thus embrace the benefit of</span> <span style="color:#000080">reconciliation which thou offerest to us, so that being thankful to</span> <span style="color:#000080">thee and accepted in thine only-begotten Son, we may proceed in</span> <span style="color:#000080">the course of our vocation, until we shall at length enjoy that</span> <span style="color:#000080">eternal inheritance which thine only-begotten Son has obtained for</span> <span style="color:#000080">us by his own blood. — Amen.</span></p>
 
 <!-- PAGE 852 -->
 
@@ -10443,20 +10860,18 @@ that is, “O Lord, this only I ask, to be joined to thy people; for even when t
 
 <h2 class="scripture-anchor" id="jeremiah-19-1-3" data-ref="JEREMIAH 19:1-3" style="display:none">JEREMIAH 19:1-3</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241901&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">19:1-3</span></p>
 
-<strong>1.</strong> Thus saith the Lord, Go and get a potter’s earthen bottle, and *take* of the ancients of the people, and of the ancients of the priests;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Thus saith the Lord, Go and get a potter’s earthen bottle, and <em>take</em> of the ancients of the people, and of the ancients of the priests;</td><td class="scripture-la"><strong>1.</strong> Sic dicit Jehova, Vade et acquire (<em>alii</em> <em>vertunt</em>, posside; <em>et</em> <span style="color:#008080">hnq</span> <em>significat</em> <em>utrunque, sed hic non convenit verbum</em> <em>possidendi</em>; acquire tibi) lagenam figuli testaceam, et quidem cum senioribus populi, et cum senioribus sacerdotum:</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> And go forth unto the valley of the son of Hinnom, which <em>is</em> by the entry of the east gate, and proclaim there the words that I shall tell thee:</td><td class="scripture-la"><strong>2.</strong> Et egredere ad vallem filii Hinnom, quae est in introitu portae orientalis, (<em>alii vertunt</em>, fictilis,) et clama illic (<em>hoc</em> <em>est</em>, alta voce pronuntia)sermones quos loquutus fuero ad te;</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> And say, Hear ye the word of the Lord, O kings of Judah, and inhabitants of Jerusalem; Thus saith the Lord of hosts, the God of Israel, Behold, I will bring evil upon this place, the which whosoever heareth, his ears shall tingle.</td><td class="scripture-la"><strong>3.</strong> Et dices, Audite sermonem Jehovae, reges Jehudah et incolae Jerusalem, Sic dicit Jehova exercituum, Deus Israel, Ecce adduco malum super locum hunc, de quo quisque audierit, tinnient aures ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**1.** Sic dicit Jehova, Vade et acquire (*alii vertunt*, posside; *et* <span style="color:#008080">hnq</span> *significat utrunque, sed hic non convenit verbum possidendi*; acquire tibi) lagenam figuli testaceam, et quidem cum senioribus populi, et cum senioribus sacerdotum: 2. And go forth unto the valley of the son of Hinnom, which *is* by the entry of the east gate, and proclaim there the words that I shall tell thee:</p>
-
-<p style="text-align:right;" markdown="1">2. Et egredere ad vallem filii Hinnom, quae est in introitu portae orientalis, (*alii vertunt*, fictilis,) et clama illic (*hoc est*, alta voce pronuntia)sermones quos loquutus fuero ad te;</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** And say, Hear ye the word of the Lord, O kings of Judah, and inhabitants of Jerusalem; Thus saith the Lord of hosts, the God of Israel, Behold, I will bring evil upon this place, the which whosoever heareth, his ears shall tingle.</p>
-
-<p style="text-align:right;" markdown="1">3. Et dices, Audite sermonem Jehovae, reges Jehudah et incolae Jerusalem, Sic dicit Jehova exercituum, Deus Israel, Ecce adduco malum super locum hunc, de quo quisque audierit, tinnient aures ejus.</p>
 
 <!-- PAGE 856 -->
 We see that the Prophet was sent by God to shew the people that there was no firmness in that state of which hypocrites boasted; for God, who had favored the people of Israel with singular benefits, did no less retain them in his own possession than the potter. The Prophet had before shewn to the Jews that the potter formed his vessels as he pleased, and also, that when he had taken the clay and the vessel did not please him, he formed another. This prophecy has a similar import, yet it is different, as we shall presently see. The Prophet is here bidden to buy an earthen vessel of the potter, and at the meeting of the people to break it, that all might understand that they were like earthen vessels, and that being thus admonished of their fragility, they might no longer be proud, as though they possessed a firm and perpetual state of happiness.
@@ -10660,10 +11075,14 @@ Jeremiah summoned witnesses, that the confirmation of the prophecy might be more
 
 <h2 class="scripture-anchor" id="jeremiah-19-11" data-ref="JEREMIAH 19:11" style="display:none">JEREMIAH 19:11</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;241911&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">19:11</span></p>
 
-<strong>11.</strong> And shalt say unto them, Thus saith the Lord of hosts, Even so will I break this people, and this city, as *one* breaketh a potter’s vessel, that cannot be made whole again: and they shall bury *them* in Tophet, till *there be* no place to bury. <strong>11.</strong> Et dices ad eos, Sic dicit Jehova exercituum, Ita confringam populum hunc et urbem hanc, sicut quis confringit vas figuli, (*hoc est*, vas testaceum; *vel*, vas fragile, figulinum,) quod non poterit reparari amplius: et in Thopheth sepelientur; quia non erit locus ad sepeliendum (*ad verbum*, a non loco ad sepeliendum.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>11.</strong> And shalt say unto them, Thus saith the Lord of hosts, Even so will I break this people, and this city, as <em>one</em> breaketh a potter’s vessel, that cannot be made whole again: and they shall bury <em>them</em> in Tophet, till <em>there be</em> no place to bury.</td><td class="scripture-la"><strong>11.</strong> Et dices ad eos, Sic dicit Jehova exercituum, Ita confringam populum hunc et urbem hanc, sicut quis confringit vas figuli, (<em>hoc est</em>, vas testaceum; <em>vel</em>, vas fragile, figulinum,) quod non poterit reparari amplius: et in Thopheth sepelientur; quia non erit locus ad sepeliendum (<em>ad verbum</em>, a non loco ad sepeliendum.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -10997,10 +11416,14 @@ Let us also beware lest we withdraw ourselves from God; but even when many thing
 
 <h2 class="scripture-anchor" id="jeremiah-20-10" data-ref="JEREMIAH 20:10" style="display:none">JEREMIAH 20:10</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242010&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">20:10</span></p>
 
-<strong>10.</strong> For I heard the defaming of many, fear on every side. Report, *say they,* and we will report it. All my familiars watched for my halting, *saying,* Peradventure he will be enticed, and we shall prevail against him, and we shall take our revenge on him. <strong>10.</strong> Quia audivi contumeliam multorum, terrorem undique, Nuntiate et nuntiabimus: omnis vir (*id est,* omnes homines, homo pacis, *ad verbum,* <span style="color:#008080">çwna</span> omnes homines) pacis meae (*id est,* familiares mei*, qui debuerant colere mecum amicitiam)*, observant latus meum (*vel,* claudicationem, *metaphorice et melius,)* si forte erret, et praevaleamus ei, et sumamus ultionem nostram ex eo.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>10.</strong> For I heard the defaming of many, fear on every side. Report, <em>say they,</em> and we will report it. All my familiars watched for my halting, <em>saying,</em> Peradventure he will be enticed, and we shall prevail against him, and we shall take our revenge on him.</td><td class="scripture-la"><strong>10.</strong> Quia audivi contumeliam multorum, terrorem undique, Nuntiate et nuntiabimus: omnis vir (<em>id est,</em> omnes homines, homo pacis, <em>ad verbum,</em> <span style="color:#008080">çwna</span> omnes homines) pacis meae (<em>id est,</em> familiares mei<em>, qui debuerant colere</em> <em>mecum amicitiam)</em>, observant latus meum (<em>vel,</em> claudicationem, <em>metaphorice</em> <em>et melius,)</em> si forte erret, et praevaleamus ei, et sumamus ultionem nostram ex eo.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -11459,16 +11882,17 @@ But I have said already that it was easy for the common people to gather how God
 
 <h2 class="scripture-anchor" id="jeremiah-22-4-5" data-ref="JEREMIAH 22:4-5" style="display:none">JEREMIAH 22:4-5</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242204&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">22:4-5</span></p>
 
-<strong>4.</strong> For if ye do this thing indeed, then shall there enter in by the gates of this house kings sitting upon the throne of David, riding in chariots and on horses, he, and his servants, and his people.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>4.</strong> For if ye do this thing indeed, then shall there enter in by the gates of this house kings sitting upon the throne of David, riding in chariots and on horses, he, and his servants, and his people.</td><td class="scripture-la"><strong>4.</strong> Quid si faciendo feceritis <em>(alii</em> <em>vertunt,</em> quin potius faciendo faciatis) ser-monem hunc <em>(hoc est,</em> obediatis sermoni huic,) et ingrediemini per portas domus hujus, reges sedentes pro Davide <em>(vel,</em> Davidi) super solium ejus, insidentes currui et equis, ipse, rex, et servi ejus et populus ejus.</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> But if ye will not hear these words, I swear by myself, saith the Lord, that this house shall become a desolation.</td><td class="scripture-la"><strong>5.</strong> Quod si non obedieritis sermonibus istis, in me <em>(hoc est,</em> per me) juravi, dicit Jehova, quod in solitudinem <em>(aut,</em> vastitatem) erit domus haec.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="margin-left:2em;" markdown="1">**4.** Quid si faciendo feceritis *(alii vertunt,* quin potius faciendo faciatis) ser-monem hunc *(hoc est,* obediatis sermoni huic,) et ingrediemini per portas domus hujus, reges sedentes pro Davide *(vel,* Davidi) super solium ejus, insidentes currui et equis, ipse, rex, et servi ejus et populus ejus. 5. But if ye will not hear these words, I swear by myself, saith the Lord, that this house shall become a desolation.</p>
-
-<p style="text-align:right;" markdown="1">5. Quod si non obedieritis sermonibus istis, in me *(hoc est,* per me) juravi, dicit Jehova, quod in solitudinem *(aut,* vastitatem) erit domus haec.</p>
 
 <!-- PAGE 939 -->
 The Prophet expresses more clearly what I have already stated, that if the Jews from the heart repented, there was yet a place for mercy; for he promises them that God would be reconcilable, if they sought to be reconciled to him; he allures them to repentance by words of kindness. We may, indeed, read <span style="color:#008080">µayk</span>, *kiam,* as one word, and render it, “But rather;” but I follow others who give this version, <span style="color:#800000">*For if by doing ye will do this word, then ye shall enter*</span> in, etc.; and thus they turn the copulative into an adverb of time, which is often the case. <span style="color:#800000">fE34</span> Still the other meaning is not unsuitable, when the future verb, <span style="color:#008080">wç[t</span>, *toshu,* is taken in a hortative sense; for we know that the future tense in Hebrew is often to be understood as an imperative. As to the general meaning, there is not much difference; for what the Prophet designed to shew was this, that God would be reconciled to the Jews, if they were not wholly disobedient. “Only,” he says, “obey my word, and your safety shall be secured.” Not that impunity was to be expected, as I have said before, but, as they would have found, their reconciliation to God would not have been in vain, for their punishment would have been mitigated; in that case their exile would have been rendered more endurable, for God would have doubtless made their adversaries kind to them; in short, mercy would have been shewn to them in many ways. Moreover, the Prophet shews that he called them not in vain to repent; for he sets before them God’s favor in mitigating their punishment.
@@ -11618,10 +12042,14 @@ There is yet no doubt but that God shews here that a pious king would not be a p
 
 <h2 class="scripture-anchor" id="jeremiah-22-13" data-ref="JEREMIAH 22:13" style="display:none">JEREMIAH 22:13</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242213&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">22:13</span></p>
 
-<strong>13.</strong> Woe unto him that buildeth his by unrighteousness, and his chambers by wrong; *that* useth his neighbor’s service without wages, and giveth him not for his work. <strong>13.</strong> Ileus qui aedificat domum suam in non justitia, (*hoc est,* injuste,) et coenacula sua in non judicio (*hoc est,* sine rectitudine et aequitate;) proximum suum servire facit gratis, et opus ejus non reddit ei (*vel,* quod ille operatus fuerit non reddit ei; (vel, quod ille operatus fuerit non reddit ei; *quidam enim volunt esse verbum, alii nomen, sed idem manebit sensus*).
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>13.</strong> Woe unto him that buildeth his by unrighteousness, and his chambers by wrong; <em>that</em> useth his neighbor’s service without wages, and giveth him not for his work.</td><td class="scripture-la"><strong>13.</strong> Ileus qui aedificat domum suam in non justitia, (<em>hoc est,</em> injuste,) et coenacula sua in non judicio (<em>hoc est,</em> sine rectitudine et aequitate;) proximum suum servire facit gratis, et opus ejus non reddit ei (<em>vel,</em> quod ille operatus fuerit non reddit ei; (vel, quod ille operatus fuerit non reddit ei; <em>quidam</em> <em>enim volunt esse verbum, alii nomen, sed</em> <em>idem manebit sensus</em>).</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -11868,10 +12296,14 @@ He afterwards says, <span style="color:#800000">*Surely, thou shalt then be asha
 
 <h2 class="scripture-anchor" id="jeremiah-22-23" data-ref="JEREMIAH 22:23" style="display:none">JEREMIAH 22:23</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242223&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">22:23</span></p>
 
-<strong>23.</strong> O inhabitant of Lebanon, that makest thy nest in the cedars, how gracious shalt thou be when pangs come upon thee, the pain as of a woman in travail! <strong>23.</strong> Sedisti (hoc est, sedem tibi posuisti) in Libano, nidulata es in cedris, quomodo gratiosa fuisti (alii, vertunt, precata es) in veniendo tibi dolores, dolorem quasi parturientis (ad verbum, sed sensus est, quomodo gratiosa eris, ubi venerint tibi dolores, dolor quasi foeminae parturientis.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>23.</strong> O inhabitant of Lebanon, that makest thy nest in the cedars, how gracious shalt thou be when pangs come upon thee, the pain as of a woman in travail!</td><td class="scripture-la"><strong>23.</strong> Sedisti (hoc est, sedem tibi posuisti) in Libano, nidulata es in cedris, quomodo gratiosa fuisti (alii, vertunt, precata es) in veniendo tibi dolores, dolorem quasi parturientis (ad verbum, sed sensus est, quomodo gratiosa eris, ubi venerint tibi dolores, dolor quasi foeminae parturientis.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -11940,14 +12372,10 @@ The Prophet then enhanced the grievousness of his punishment by saying, <span st
 
 <h2 class="scripture-anchor" id="jeremiah-22-27" data-ref="JEREMIAH 22:27" style="display:none">JEREMIAH 22:27</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
+<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242227&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">22:27</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>27.</strong> But to the land whereunto they desire to return, thither shall they not return.</td><td class="scripture-la"><strong>27.</strong> Et in terram ad quam ipsi levant animum suum, ut revertantur illuc, non revertentur illuc.</td></tr>
-</tbody>
-</table>
+<strong>27.</strong> But to the land whereunto they desire to return, thither shall they not return. <strong>27.</strong> Et in terram ad quam ipsi levant animum suum, ut revertantur illuc, non revertentur illuc.
 
 </div>
 
@@ -12249,10 +12677,14 @@ He afterwards adds, <span style="color:#800000">*They shall dwell in their own l
 
 <h2 class="scripture-anchor" id="jeremiah-23-9" data-ref="JEREMIAH 23:9" style="display:none">JEREMIAH 23:9</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242309&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:9</span></p>
 
-<strong>9.</strong> Mine heart within me is broken because of the prophets; all my bones shake: I am like a drunken man, and like a man whom wine hath overcome, because of the Lord, and because of the words of his holiness. <strong>9.</strong> Propter prophetas *(alii,* ad prophetas, *et potest legi ita ad verbum)* contritum est *(vel,* confractum est) cor meum in medio mei; commota sunt *(vel,* concussa) omnia ossa mea *(proprie,* luxata sunt, *quia de ossibus agitur; quantum ad verbum spectat, significat agitari, et moveri; sed quoniam nunc loquitur de ossibus, sermo erit aptior,* luxata esse ossa;) fui tanquam vir ebrius super quem transiit vinum *(hoc est* tanquam vir obrutus vino) a facie Jehovae, et a facie sermonum sanctitatis ejus.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>9.</strong> Mine heart within me is broken because of the prophets; all my bones shake: I am like a drunken man, and like a man whom wine hath overcome, because of the Lord, and because of the words of his holiness.</td><td class="scripture-la"><strong>9.</strong> Propter prophetas <em>(alii,</em> ad prophetas, <em>et</em> <em>potest legi ita ad verbum)</em> contritum est <em>(vel,</em> confractum est) cor meum in medio mei; commota sunt <em>(vel,</em> concussa) omnia ossa mea <em>(proprie,</em> luxata sunt, <em>quia de ossibus agitur;</em> <em>quantum ad verbum spectat, significat agitari,</em> <em>et moveri; sed quoniam nunc loquitur de</em> <em>ossibus, sermo erit aptior,</em> luxata esse ossa;) fui tanquam vir ebrius super quem transiit vinum <em>(hoc est</em> tanquam vir obrutus vino) a facie Jehovae, et a facie sermonum sanctitatis ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -12386,10 +12818,14 @@ In the last place he adds, <span style="color:#800000">*They shall be to me all 
 
 <h2 class="scripture-anchor" id="jeremiah-23-15" data-ref="JEREMIAH 23:15" style="display:none">JEREMIAH 23:15</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242315&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:15</span></p>
 
-<strong>15.</strong> Therefore thus saith the Lord of hosts concerning the prophets, Behold, I will feed them with wormwood, and them drink the water of gall: for from the prophets of Jerusalem is profaneness gone forth into all the land. <strong>15.</strong> Propterea sic dicit Jehova exercituum super (*vel,* ad) prophetas istos, Ecce ego cibabo eos amaritudine (*aut,* veneno; alii vertunt, absynthio, <span style="color:#008080">hn[l</span>, sed nomen absynthii non videtur quadrare; ubicumque enim ponitur hoec vox, significat amaritudinem noxiam et virulentem et mortiferam,) et potabo eos aquis veneni (*alii vertunt,* fellis*; diximus alibide hac voce,* <span style="color:#008080">çar</span>,) quoniam a prophetis Jerusalem egressa est impietas in totam terram.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>15.</strong> Therefore thus saith the Lord of hosts concerning the prophets, Behold, I will feed them with wormwood, and them drink the water of gall: for from the prophets of Jerusalem is profaneness gone forth into all the land.</td><td class="scripture-la"><strong>15.</strong> Propterea sic dicit Jehova exercituum super (<em>vel,</em> ad) prophetas istos, Ecce ego cibabo eos amaritudine (<em>aut,</em> veneno; alii vertunt, absynthio, <span style="color:#008080">hn[l</span>, sed nomen absynthii non videtur quadrare; ubicumque enim ponitur hoec vox, significat amaritudinem noxiam et virulentem et mortiferam,) et potabo eos aquis veneni (<em>alii</em> <em>vertunt,</em> fellis<em>; diximus alibide hac voce,</em> <span style="color:#008080">çar</span>,) quoniam a prophetis Jerusalem egressa est impietas in totam terram.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -12459,10 +12895,14 @@ Similar to this was the perverse wickedness of the false teachers. For Jeremiah 
 
 <h2 class="scripture-anchor" id="jeremiah-23-19" data-ref="JEREMIAH 23:19" style="display:none">JEREMIAH 23:19</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242319&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:19</span></p>
 
-<strong>19.</strong> Behold, a whirlwind of the Lord is gone forth in fury, even a grievous whirlwind: it shall fall grievously upon the head of the wicked. <strong>19.</strong> Ecce turbo (*vel,* tempestas) Jehovae cum furore (*vel,* cum iracundia) egreditur, et turbo impendens super caput impiorum cadet (*vel,* turbo cadens cadet; *est participium* <span style="color:#008080">llwjtm</span>, *et postea est simplex verbum,* sed eadem est radix utriusque.)
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>19.</strong> Behold, a whirlwind of the Lord is gone forth in fury, even a grievous whirlwind: it shall fall grievously upon the head of the wicked.</td><td class="scripture-la"><strong>19.</strong> Ecce turbo (<em>vel,</em> tempestas) Jehovae cum furore (<em>vel,</em> cum iracundia) egreditur, et turbo impendens super caput impiorum cadet (<em>vel,</em> turbo cadens cadet; <em>est</em> <em>participium</em> <span style="color:#008080">llwjtm</span>, <em>et postea est</em> <em>simplex verbum,</em> sed eadem est radix utriusque.)</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -12553,10 +12993,14 @@ This subject deserves, indeed, to be much more diffusely treated; but as I am no
 
 <h2 class="scripture-anchor" id="jeremiah-23-22" data-ref="JEREMIAH 23:22" style="display:none">JEREMIAH 23:22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242322&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:22</span></p>
 
-<strong>22.</strong> But if they had stood in my counsel, and had caused my people to hear my words, then they should have turned them from their evil way, and from the evil of their doings. <strong>22.</strong> Quod si stetissent in concilio meo, certe (*copula enim ita resolvi debet*) udire fecissent verba mea populum meum (*hoc est,* docuissent populum meum sermones meos) et reduxissent eos a via sua mala, et a malitia studiorum ipsorum.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>22.</strong> But if they had stood in my counsel, and had caused my people to hear my words, then they should have turned them from their evil way, and from the evil of their doings.</td><td class="scripture-la"><strong>22.</strong> Quod si stetissent in concilio meo, certe (<em>copula enim ita resolvi debet</em>) udire fecissent verba mea populum meum (<em>hoc est,</em> docuissent populum meum sermones meos) et reduxissent eos a via sua mala, et a malitia studiorum ipsorum.</td></tr>
+</tbody>
+</table>
 
 </div>
 
@@ -12741,7 +13185,16 @@ We saw yesterday that though the false prophets corrupted the true doctrine, yet
 
 <h2 class="scripture-anchor" id="jeremiah-23-29" data-ref="JEREMIAH 23:29" style="display:none">JEREMIAH 23:29</h2>
 
-29. *Is* not my word like as a fire? saith the Lord; and like a hammer *that* breaketh the rock in pieces? 29. An non ut sit sermo meus quasi ignis (*hoc est,* an non sermo meus tanquam ignis) dicit Jehova? Et tanquam malleus conterens saxum (*vel,* rupem.)
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;242329&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:29</span></p>
+
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"></td><td class="scripture-la"><strong>29.</strong> An non ut sit sermo meus quasi ignis (<em>hoc est,</em> an non sermo meus tanquam ignis) dicit Jehova? Et tanquam malleus conterens saxum (<em>vel,</em> rupem.)</td></tr>
+</tbody>
+</table>
+
+</div>
 
 He confirms what he said of the chaff and the wheat, but in different words. It was a fit comparison when Jeremiah compared God’s word to wheat, and the figments of men to chaff. But as the Jews, through their ingratitude, rendered the word of God ineffectual, so it did not become to them a spiritual support, the Prophet says that it would become like <span style="color:#800000">*a fire*</span> and like a <span style="color:#800000">*hammer*</span>, <span style="color:#800000">fE108</span> as though he had said, that though the Jews were void of judgment, as they had become hardened in their wickedness, yet the word of God could not be rendered void, or at least its power could not be taken away; for as Paul says,
 
@@ -12833,10 +13286,14 @@ At the first view this was not deemed grievous to the Jews; for as I have said, 
 
 <h2 class="scripture-anchor" id="jeremiah-23-34" data-ref="JEREMIAH 23:34" style="display:none">JEREMIAH 23:34</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;242334&gt;</span><span class="book-name">Jeremiah</span> <span class="verse-range">23:34</span></p>
 
-<strong>34.</strong> And as for the prophet, and the priest, and the people, that shall say, The burden of the Lord, I will even punish that man and his house. <strong>34.</strong> Et propheta et sacerdos et populus qui dixerit, Onus Jehovae, visitabo super virum illum (hoc est, quicunque fuerit, sive propheta, sive sacerdos, sive homo quispiam vulgaris, visitabo super virum illum,) et super domum ejus.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>34.</strong> And as for the prophet, and the priest, and the people, that shall say, The burden of the Lord, I will even punish that man and his house.</td><td class="scripture-la"><strong>34.</strong> Et propheta et sacerdos et populus qui dixerit, Onus Jehovae, visitabo super virum illum (hoc est, quicunque fuerit, sive propheta, sive sacerdos, sive homo quispiam vulgaris, visitabo super virum illum,) et super domum ejus.</td></tr>
+</tbody>
+</table>
 
 </div>
 

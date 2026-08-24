@@ -26,12 +26,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 VOLS = [('jeremiah-1', 'calvin/jeremiah-1-en'), ('jeremiah-2', 'calvin/jeremiah-2-en')]
 
+# ⚠️ 匹配体内绝不能跨到下一个块。最初写成 `.*?\n</div>`，以为非贪婪会停在本框
+# 闭合处——实际单语框的闭合形式不同，它一路跨过好几个块才停（匹配 1:1-3 时吞掉
+# 36,531 字符、5 个 h2、9 个经文框），中间的注释就被连带替换掉了。而且净增删
+# 数字看不出来：那一版跑完显示净增 9k 行，照样把内容吞了。故用负向前瞻锁死边界。
+_NO_CROSS = r'(?:(?!<h2 class="scripture-anchor")(?!<div class="scripture-box").)*?'
 NEW_BLOCK = re.compile(
-    r'<h2 class="scripture-anchor"[^>]*data-ref="([^"]+)"[^>]*>.*?</h2>\s*\n+'
-    r'<div class="scripture-box scripture-box--bilingual"[^>]*>.*?\n</div>', re.S)
+    r'<h2 class="scripture-anchor"[^>]*data-ref="([^"]+)"[^>]*>' + _NO_CROSS + r'</h2>\s*\n+'
+    r'<div class="scripture-box scripture-box--bilingual"[^>]*>' + _NO_CROSS + r'\n</div>', re.S)
 OLD_BLOCK = re.compile(
-    r'<h2 class="scripture-anchor"[^>]*data-ref="([^"]+)"[^>]*>.*?</h2>\s*\n+'
-    r'<div class="scripture-box"[^>]*>.*?\n</div>', re.S)
+    r'<h2 class="scripture-anchor"[^>]*data-ref="([^"]+)"[^>]*>' + _NO_CROSS + r'</h2>\s*\n+'
+    r'<div class="scripture-box"[^>]*>' + _NO_CROSS + r'\n</div>', re.S)
 PARA = re.compile(r'<p style="(?:margin-left:2em;|text-align:right;)"[^>]*>.*?</p>|'
                   r'<p style="(?:margin-left:2em;|text-align:right;)"[^>]*>(?:(?!\n\n).)*', re.S)
 FN_REF = re.compile(r'\[\^(f[A-Za-z]?\d+[a-z]?)\]')
@@ -65,7 +70,7 @@ def main():
         new_blocks = {m.group(1): m.group(0) for m in NEW_BLOCK.finditer(merged)}
         print(f'== {raw_name}: 新双语块 {len(new_blocks)} 个')
 
-        n_file = n_repl = n_stray = n_fn = n_keep = 0
+        n_file = n_repl = n_stray = n_fn = n_keep = n_bad = 0
         for p in sorted((ROOT / en_dir).glob('*.md'),
                         key=lambda x: (not x.stem.isdigit(),
                                        int(x.stem) if x.stem.isdigit() else 0)):
@@ -99,11 +104,25 @@ def main():
                 t = t[:start] + new + t[cur:]
                 n_repl += 1
             if t != orig:
+                # 逐句抽查：替换前的注释句必须在替换后仍找得到，否则判为吞并、拒写。
+                # 这一步是必须的——净增删数字看不出吞并（第一版跨块吞了内容，
+                # 却仍显示净增 9k 行，就这样被提交上去了）。
+                flat = re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', t))
+                cand = [l for l in orig.split('\n')
+                        if len(l) > 150 and not l.startswith('<')
+                        and not re.match(r'\s*\*?\*?\d+\.', l)]
+                lost = [c for c in cand
+                        if re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', c))[40:120].strip()
+                        not in flat]
+                if lost:
+                    print(f'     !! {p.name}: {len(lost)}/{len(cand)} 段注释替换后找不到 → 拒写')
+                    n_bad += 1
+                    continue
                 n_file += 1
                 if not args.dry_run:
                     p.write_text(t, encoding='utf-8')
-        print(f'   {n_file} 文件，替换经文块 {n_repl}，吃掉已覆盖的散落段 {n_stray}，'
-              f'其中脚注可复位 {n_fn}，需人工确认 {n_keep}')
+        print(f'   写入 {n_file} 文件，替换经文块 {n_repl}，散落段 {n_stray}，'
+              f'脚注 {n_fn}/{n_keep}，因注释丢失拒写 {n_bad} 个')
 
 
 if __name__ == '__main__':

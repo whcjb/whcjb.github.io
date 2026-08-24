@@ -316,14 +316,20 @@ VOLUMES = {
     'isaiah-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-1/calvin_isaiah-1_structured.txt') },
     'isaiah-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-2/calvin_isaiah-2_structured.txt') },
     'jeremiah-1':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER1.pdf',
-                       # 拉丁列 x0=198（1cor 是 218），默认阈值 200 会把整列
-                       # 判成英文左栏、双语状态机激活不了 —— 经文散在框外。
-                       'latin_x_min': 190,
+                       # 拉丁列位置**逐页浮动**：162/166/170/174/180/184/188/
+                       # 198/202/210/218 都出现过（1cor 是稳定的 218）。任何固定
+                       # 阈值都两头不讨好：190 漏掉低位页；160 又会把注释里的缩进
+                       # 段吸进经文表格（实测净删 13,508 行，已回滚）。故用 'auto'
+                       # 逐页自适应，见 _page_latin_x_min()。
+                       'latin_x_min': 'auto',
                        'out': os.path.join(BASE, 'calvin_raw/jeremiah-1/calvin_jeremiah-1_structured.txt') },
     'jeremiah-2':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER2.pdf',
-                       # 拉丁列 x0=198（1cor 是 218），默认阈值 200 会把整列
-                       # 判成英文左栏、双语状态机激活不了 —— 经文散在框外。
-                       'latin_x_min': 190,
+                       # 拉丁列位置**逐页浮动**：162/166/170/174/180/184/188/
+                       # 198/202/210/218 都出现过（1cor 是稳定的 218）。任何固定
+                       # 阈值都两头不讨好：190 漏掉低位页；160 又会把注释里的缩进
+                       # 段吸进经文表格（实测净删 13,508 行，已回滚）。故用 'auto'
+                       # 逐页自适应，见 _page_latin_x_min()。
+                       'latin_x_min': 'auto',
                        'out': os.path.join(BASE, 'calvin_raw/jeremiah-2/calvin_jeremiah-2_structured.txt') },
     'psalms-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-1/calvin_psalms-1_structured.txt') },
     'psalms-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-2/calvin_psalms-2_structured.txt') },
@@ -3046,6 +3052,24 @@ def _render_spans_with_italic(spans):
 _LATIN_X_MIN_OVERRIDE = None   # 由 VOLUMES 的 latin_x_min 在 dispatch 时设置
 
 
+def _page_latin_x_min(page, default=200):
+    """逐页推断拉丁列起点（latin_x_min='auto' 时用）。
+
+    取本页 line x0 直方图里「x >= 150 且至少 4 行」的最小值——右栏成列必然有
+    若干行，而居中标题（x≈126-140）只有一两行，正文左栏在 26/40。找不到就退回
+    default，等于不启用双语（宁可漏，不可把注释吸进经文表格）。
+    """
+    import collections
+    hist = collections.Counter()
+    for b in page.get_text('dict')['blocks']:
+        if b['type'] != 0:
+            continue
+        for l in b['lines']:
+            hist[round(l['bbox'][0])] += 1
+    cands = [x for x, c in hist.items() if x >= 150 and c >= 4]
+    return min(cands) - 2 if cands else default
+
+
 def phil_reconstruct_page(page, page_num=None):
     page_w = page.rect.width
     page_cx = page_w / 2
@@ -3067,7 +3091,8 @@ def phil_reconstruct_page(page, page_num=None):
     # lines means mode quietly stays off; emits identical to old behavior.
     # 默认 200 是照 1cor（拉丁列 x0=218）定的；有的书拉丁列更靠左（耶利米书 198），
     # 必须由 VOLUMES 的 latin_x_min 覆盖，否则整列被判成英文、双语路径不激活。
-    LATIN_X_MIN = _LATIN_X_MIN_OVERRIDE or 200
+    LATIN_X_MIN = (_page_latin_x_min(page) if _LATIN_X_MIN_OVERRIDE == 'auto'
+                   else (_LATIN_X_MIN_OVERRIDE or 200))
     SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
     in_scripture_mode = False
     scripture_table_header = None
