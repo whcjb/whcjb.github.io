@@ -1449,6 +1449,14 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 3,
     raise RuntimeError(f'claude CLI failed after {max_retries} retries: {last_err}')
 
 
+def md_inline_to_html(s: str) -> str:
+    """<td> 里 kramdown 不解析 markdown，模型偶尔输出的 **x** / *x* 会显示成
+    字面星号（1cor 1/15 曾留下 3 处）。html_td_row / html_th 重组前转回标签。
+    注意 md_table_row 走的是 markdown 表格，那里 ** 是对的，不要套用。"""
+    s = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', s)
+    return re.sub(r'(?<![\*\w])\*([^*\n]+?)\*(?![\*\w])', r'<em>\1</em>', s)
+
+
 def translate_batch(texts: list) -> list:
     """
     一次 claude CLI 调用翻译多段文本。
@@ -1577,7 +1585,11 @@ def classify(line: str):
 
     # HTML table row with two td columns (with optional class attributes)
     m_tr = re.match(
-        r'^<tr>(<td[^>]*>)(.+?)</td>(<td[^>]*>)(.+?)</td></tr>\s*$',
+        # ⚠️ 两列都用 (.*?) 而非 (.+?)：拉丁列为空的行
+        # `<tr><td class="scripture-en">…</td><td class="scripture-la"></td></tr>`
+        # 曾因 (.+?) 要求至少一字符而整行漏判成 body，裸 HTML 被当正文送进模型，
+        # CLI 直接返回 is_error（jeremiah-1 ch1 卡在这里）。全库 32 处。
+        r'^<tr>(<td[^>]*>)(.*?)</td>(<td[^>]*>)(.*?)</td></tr>\s*$',
         line,
     )
     if m_tr:
@@ -1697,13 +1709,14 @@ def translate_file(src_path: Path, out_path: Path, resume: bool, dry_run: bool):
             out_lines.append(f'| {zh_left} | {right_lat} |')
         elif kind == 'html_td_row':
             left_open, left_body, right_open, right_body = data
-            zh_left = zh if zh else left_body
+            zh_left = md_inline_to_html(zh) if zh else left_body
             out_lines.append(
                 f'<tr>{left_open}{zh_left}</td>{right_open}{right_body}</td></tr>'
             )
         elif kind == 'html_th':
             prefix, text_en, suffix, original = data
-            out_lines.append(original.replace(text_en, zh, 1) if zh else original)
+            out_lines.append(original.replace(text_en, md_inline_to_html(zh), 1)
+                             if zh else original)
         else:
             out_lines.append(data if isinstance(data, str) else str(data))
 
