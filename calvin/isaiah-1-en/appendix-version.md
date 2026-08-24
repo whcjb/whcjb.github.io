@@ -1,0 +1,2464 @@
+---
+layout: calvin-en
+book_id: isaiah-1-en
+book_name: "以赛亚书注释 · 附录"
+title: "Calvin's Version of Isaiah"
+date: 2026-06-02 18:13
+---
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 1:1-31</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-1-1-31" data-ref="ISAIAH CHAPTER 1:1-31" style="display:none">ISAIAH CHAPTER 1:1-31</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">1:1-31</span></p>
+
+<strong>1.</strong> The vision of Isaiah the son of Amoz, which he saw concerning Judah and Jerusalem, in the days of Uzziah, Jotham, Ahaz, *and* Hezekiah, kings of Judah.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Hear, O heavens, and give ear, O earth: for the Lord hath spoken, I have nourished and brought up, children, and they have rebelled against me.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Audite caeli, et ausculta terra; quia sic Dominus loquitur, Filios educavi et sustuli, ipsi tamen scelerate egerunt in me, (*vel, rebellarunt contra me.*) 3. The ox knoweth his owner, and the ass his master's crib: *but* Israel doth not know, my people doth not consider.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Cognovit bos possessorem suum, et asinus praesepe dominorum suorum: Israel non cognovit, populus meus non intellexit. 4. Ah sinful nation, a people laden with iniquity, a seed of evil-doers, children that are corrupters! They have forsaken the Lord, they have provoked the Holy One of Israel unto anger, they are gone away backward.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** O gens scelesta, populus onustus iniquitate, semen malignorum, filii degeneres! Dereliquerunt Iehovam, spreverunt (*vel, provocarunt ad iram*) sanctum Israelis, alienati sunt retrorsum. 5. Why should ye be stricken any more? ye will revolt more and more. The whole head is sick, and the whole heart faint.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Quorsum adhuc vos percuterem? Adjicietis praevaricationem. Totum caput languori, et totum cor dolori. 6. From the sole of the foot even unto the head *there is* no soundness in it; but wounds, and bruises, and putrifying sores: they have not been closed, neither bound up, neither</p>
+
+<p style="text-align:right;" markdown="1">6. A planta pedis usque ad caput nulla in eo sanitas. Vulnus, tumor, et saniosa plaga. Nec sunt emplastro curatae, nec circumligatae, nec oleo delinitae.</p>
+
+<!-- PAGE 866 -->
+
+<p style="text-align:center" markdown="1">mollified with ointment. fuissemus, et similes Gomorrhae. 7. Your country *is* desolate, your cities are burnt with fire: your land, strangers devour it in your presence, and it is desolate, as overthrown by strangers.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Terra vestra in vastitatem: Urbes vestrae igni succensae: terram vestram alieni devorant in conspectu vestro, redacta est in solitudinem, juxta subversionem exterorum. 8. And the daughter of Zion is left as a cottage in a vineyard, as a lodge in a garden of cucumbers, as a besieged city.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Et residua manebit filia Zion, sicut tugurium in vinea, sicut diversorium in cucumerario, sicut civitas vastata. 9. Except the Lord of hosts had left unto us a very small remnant, we should have been as Sodom, and we should have been like unto Gomorrah.</p>
+
+<p style="text-align:right;" markdown="1">9. Nisi Dominus exercituum residuas nobis fecisset reliquias vel tantillas, quasi Sodoma</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Hear the word of the Lord, ye rulers of Sodom, give ear unto the law of our God, ye people of Gomorrah:</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Audite verbum Domini, principes Sodomae: auscultate Legem Dei nostri, populus Gomorrhae. 11. To what purpose is the multitude of your sacrifices unto me? saith the Lord: I am full of the burnt-offerings of rams, and the fat of fed beasts, and I delight not in the blood of bullocks, or of lambs, or of he-goats.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Quorsum mihi multitudo sacrificiorum vestrorum? Dicit Dominus. Plenus sum holocaustis arietum, et adipe saginatorum animalium: nec sanguinem boum, aut ovium, aut hircorum desidero. 12. When ye come to appear before me, who hath required this at your hand, to tread my courts?</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Quando venitis ut appareatis coram facie mea, quis hoc e manu vestra requisivit? Nempe conterere atria mea. 13. Bring no more oblations- incense is an abomination unto me; the newmoons and sabbaths, the calling of assemblies, I cannot away with; *it is* iniquity, even the solemn meeting;.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Ne pergatis adducere oblationem vanitatis. Incensum abominatio est mihi. Neomeniam, et sabbathum, et solennes indictiones non potero: vana res est, nec conventum. 14. Your new-moons and your 14. Neomenias vestras et solennia</p> <!-- PAGE 867 --> <p style="margin-left:2em;" markdown="1">appointed feasts my soul hateth: they are a trouble unto me; I am weary to bear *them*.</p>
+
+vestra odio habet anima mea: superfuerunt mihi loco oneris, fatigatus sum ferendo. 15. And when ye spread forth your hands, I will hide mine eyes from you; yea, when ye make many prayers, I will not hear: your hands are full of blood.
+
+<p style="margin-left:2em;" markdown="1">**15.** Cum expanderitis manus vestras, abscondam oculos meos a vobis. Etiamsi multiplicaveritis orationem, ego non exaudiam. Manus vestrae sanguine plenae sunt. 16. Wash you, make you clean; put away the evil of your doings from before mine eyes, cease to do evil;</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Lavate, mundemini, auferte malitiam studiorum vestrorum a conspectu oculorum meorum, desinite mala facere. 17. Learn to do well; seek judgment, relieve the oppressed: Judge the fatherless; plead for the widow.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Discite benefacere: quaerite judicium: restituite (*vel, dirigite*) oppressum: jus dicite pupillo: tuemini viduam. 18. Come now, and let us reason together, saith the Lord: Though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Venite, agedum, et disceptemus, dixit Dominus: si fuerint peccata vestra ut coccinum, quasi nix dealbabuntur: si rubicunda fuerint instar purpurae, quasi lana erunt. 19. If ye he willing and obedient, ye shall eat the good of the land:</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Si volueritis, et audieritis, bonum terrae comedetis. 20. But if ye refuse and rebel, ye shall be devoured with the sword: for the mouth of the Lord hath spoken *it*.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Quod si nolueritis, et rebelles fueritis, gladio consummemini: quoniam os Domini loquutum est. 21. How is the faithful city be come an harlot! it was full of judgment; righteousness lodged in it; but now murderers.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Quomodo facta est meretrix civitas fidelis? Plena judicio fuit: et aequitas pernoctavit (*vel, habitavit*) in ea; nunc autem homicidae. 22. Thy silver is become dross, thy wine mixed with water:</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Argentum tuum versum est in scoriam, et vinum tuum est aqua mixtum. 23. Thy princes *are* rebellious, and companions of thieves: every one</p>
+
+<p style="text-align:right;" markdown="1">23. Principes tui perversi, et socii furum: unusquisque diligit munus,</p> <!-- PAGE 868 --> <p style="margin-left:2em;" markdown="1">loveth gifts, and followeth after rewards: they judge not the fatherless, neither doth the cause of the widow come unto them.</p>
+
+<p style="text-align:right;" markdown="1">et inhiat mercedibus: causam pupilli non judicant, nec causa viduae pervenit ad eos.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Therefore saith the Lord, the Lord of hosts, the mighty One of Israel, Ah, I will ease me of mine adversaries, and avenge me of mine enemies:</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Propterea dicit Dominus, (*vel, Dominator,*) Iehovah exercituum, fortis Israel, Heu! Consolationem capiam super hostibus meis, vindicabor de inimicis meis. 25. And I will turn my hand upon thee, and purely purge away thy dross, and take away all thy tin:</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Convertam manum meam super te: purgabo ad liquidum scoriam tuam, et auferam omne stannum tuum. 26. And I will restore thy judges as at the first, and thy counsellors as at the beginning: afterward thou shalt be called, The city of righteousness, The faithful city.</p>
+
+<p style="text-align:right;" markdown="1">26. Et restituam judices tuos sicut a principio, et consiliarios tuos ut ab initio. Tum dicetur de te, Civitas justitiae, urbs fidelis.</p>
+
+<p style="margin-left:2em;" markdown="1">27 Zion shall be redeemed with judgment, and her converts with righteousness.</p>
+
+<p style="text-align:right;" markdown="1">27. Sion in judicio redimetur, et qui reducentur ad eam, in justitia.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** And the destruction of the transgressors and of the sinners shall be together, and they that forsake the Lord *shall be* consumed.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Contritio autem praevaricatorum et sceleratorum simul fiet; et qui a Domino defecerunt consumentur. 29. For they shall be ashamed of the oaks which ye have desired, and ye shall be confounded for the gardens that ye have chosen.</p>
+
+<p style="text-align:right;" markdown="1">29. Nempe pudifient ab arboribus quas concupivistis, et ignominia afficiemini a lucis quos elegistis.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** For ye shall be as an oak whose leaf fadeth, and as a garden that hath no water.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Eritis certe sicut arbor cujus folium marcessit, et sicut lucus non habens aquas. 31. And the strong shall be as tow, and the maker of it as a spark, and they shall both burn together, and none shall quench *them*.</p>
+
+<p style="text-align:right;" markdown="1">31. Eritque fortis vester (*alias, Deus*) sicut stuppa; et fictor ejus quasi scintilla; et comburentur ambo, nec erit qui extinguat.</p>
+
+<!-- PAGE 869 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 2:1-22</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-2-1-22" data-ref="ISAIAH CHAPTER 2:1-22" style="display:none">ISAIAH CHAPTER 2:1-22</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">2:1-22</span></p>
+
+<strong>1.</strong> The word that Isaiah the son of Amoz saw concerning Judah and Jerusalem.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Verbum quod vidit Isaias, filius Amos super Iuda et Ierusalem.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** And it shall come to pass in the last days, *that* the mountain of the Lord's house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it.</p>
+
+<p style="text-align:right;" markdown="1">2. Et accidet in novissimo dierum, ut statuatur mons domus Iehovae in verticem montium, et erigatur supra omnes colles; et fluent ad eum omnes gentes.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And many people shall go and say, Come ye, and let us go up to the mountain of the Lord, to the house of the God of Jacob, and he will teach us of his ways, and we will walk in his paths: for out of Zion shall go forth the law, and the word of the LORD from Jerusalem.</p>
+
+<p style="text-align:right;" markdown="1">3. Et venient populi multi, ac dicent, Venite, et ascendemus in montem Iehovae, in domum Dei Iacob. Et instituet nos in viis suis, et ambulabimus in semitis ejus. Quoniam e Zion exibit lex, et verbum Domini e Ierusalem.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And he shall judge among the nations, and shall rebuke many people; and they shall beat their swords into plowshares, and their spears into pruning-hooks: nation shall not lift up sword against nation, neither shall they learn war any more.</p>
+
+<p style="text-align:right;" markdown="1">4. Et judicabit inter gentes, arguetque populos multos: et concident gladios suos in ligones, et lanceas suas in falces: nec levabit gens in gentem gladium, nec consuescent ultra praelio.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** O house of Jacob, come ye, and let us walk in the light of the LORD.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Domus Iacob, venite, et ambulabimus in lumine Domini. 6. Therefore thou hast forsaken thy people the house of Jacob, because they be replenished from the east, and are soothsayers like the Philistines, and they please themselves in the children of strangers.</p>
+
+<p style="text-align:right;" markdown="1">6. Certe deseruisti populum tuum, domum Iacob: eo quod impleti sint Oriente, (*vel, antiquitate,*) et auguribus, ut Philistaei: atque in filiis alienis acquieverint.</p>
+
+<!-- PAGE 870 -->
+
+<p style="margin-left:2em;" markdown="1">**7.** Their land also is full of silver and gold, neither *is there any* end of their treasury their land is also full of horses, neither *is there any* end of their chariots:</p>
+
+<p style="text-align:right;" markdown="1">7. Impletur est terra ejus argento et auro; nec finis thesauris ejus. Equis quoque repleta est terra ejus, nec quadrigis ejus finis.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Their land also is full of idols; they worship the work of their own hands, that which their own fingers have made:</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Impleta est etiam terra ejus idolis: et coram opere manuum suorum se incurvarunt, coram eo quod fixerunt digiti ipsorum. 9. And the mean man boweth down, and the great man humbleth himself: therefore forgive them not.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Et inclinatus est homo, et humiliatus est vir: ideo, ne remittas, (*vel, non remittes.*) 10. Enter into the rock, and hide thee in the dust, for fear of the LORD, and for the glory of his majesty.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Ingredere in petram, abscondere in pulvere a conspectu pavoris Domini, et gloria magnificentiae ejus. 11. The lofty looks of man shall be humbled, and the haughtiness of men shall be bowed down; and the LORD alone shall be exalted in that day.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Sublimitas oculorum hominis humiliabitur, et incurvabitur altitudo hominum, et exaltabitur Iejova solus in die illa. 12. For the day of the LORD of hosts *shall be* upon every *one that is* proud and lofty, and upon every *one that* is lifted up, and he shall be brought low:</p>
+
+<p style="text-align:right;" markdown="1">12. Quoniam dies Iehovae exercituum super omnem superbum et excelsum, et super omne elevatum, et humile erit.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** And upon all the cedars of Lebanon, *that are* high and lifted up, and upon all the oaks of Bashan,</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Super omnes, inquam, cedros Libani sublimes et elevatos, super omnes quercus Basan, 14. And upon all the high mountains, and upon all the hills *that are* lifted up</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Et super omnes montes excelsos, et super omnes colles elevatos, 15. And upon every high tower, and upon every fenced walk</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Et super omnem turrim excelsam, et super omnem murum munitum, 16. And upon all the ships of Tarshish, and upon all pleasant pictures.</p>
+
+<p style="text-align:right;" markdown="1">16. Super omnes naves Tharsis, et super exquisitas picturas.</p>
+
+<!-- PAGE 871 -->
+
+<p style="margin-left:2em;" markdown="1">**17.** And the loftiness of moon shall be bowed down, and the haughtiness of men shall be made low; and the LORD alone shall be exalted in that day.</p>
+
+<p style="text-align:right;" markdown="1">17. Et incurvabitur celsitudo hominis, et humiliabitur altitudo hominum, et exaltabitur Iehova solus in die illa.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** And the idols he shall utterly abolish.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Idola autem in universum abolebit. 19. And they shall go into the holes of the rocks, and into the caves of the earth, for fear of the LORD, and for the glory of his majesty when he ariseth to shake terribly the earth.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Et ingredientur in cavernas petrarum, et in voragines terrae, a praesentia terroris Iehovae et gloria majestatis ejus: cum surrexerit ut concutiat terram. 20. In that day a man shall cast his idols of silver, and his idols of gold, which they made *each one* for himself to worship, to the moles and to the bats;</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** In die illa projiciet homo idola sua argentea, et idola sua aurea, quae fecerunt ei ad adorandum, in cavernam talparum et vespertilionum; 21. To go into the clefts of the rocks, and into the tops of the ragged rocks, for fear of the LORD, and for the glory of his majesty, when he ariseth to shake terribly the earth.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Et ingredientur in scissuras petrarum, et cacumina saxorum, a facie pavoris Iehovae et gloria majestatis ejus, cum surrexerit ut concutiat terram. 22. Cease ye from man, whose breath is in his nostrils; for wherein is he to be accounted of?</p>
+
+<p style="text-align:right;" markdown="1">22. Cessate igitur ab homine cujus in nare spiritus; qua enim in re (*vel, ad quid, vel, quanti*) ipse reputatur?</p>
+
+<!-- PAGE 872 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 3:1-26</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-3-1-26" data-ref="ISAIAH CHAPTER 3:1-26" style="display:none">ISAIAH CHAPTER 3:1-26</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">3:1-26</span></p>
+
+<strong>1.</strong> For, behold, the Lord, the Lord of hosts, doth take away from Jerusalem, and from Judah, the stay and the staff, the whole stay of bread and the whole stay of water,
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Quoniam ecce Dominator Iehova exercituum, Ierosolymae et Judae vigorem et vim adimet, omnem vigorem panis, omnem vigorem aquae, 2. The mighty man, and the man of war, the judge, and the prophet, and the prudent, and the ancient,</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Fortem, et virum bellicosum, judicem et prophetaml, et divinum et senem, 3. The captain of fifty, and the honorable man, and the counsellor, and the cunning artificer, and the eloquent orator.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Ducem quinquagenarium, et conspicuum, senatorem, eximium quemque inter artifices et disertum, (vei, intelligentem arcani sermonis.) 4. And I will give children *to be* their princes, and babes shall rule over them.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et constituam pueros illis principes, et parvuli dominabuntur eis. 5. And the people shall be oppressed, every one by another, and every one by his neighbor; the child shall behave himself proudly against the ancient, and the base against the honorable.</p>
+
+<p style="text-align:right;" markdown="1">5. Violenter aget populus qisque in alium, vir in proximum suum; insolescet adolescens contra senem, contemptus adversus honoratum.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** When a man shall take hold of his brother, of the house of his father, *saying*, “Thou hast clothing, be thou our ruler, and *let* this ruin *be* under thy hand:”</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Cum apprehenderit quisque fratrem suum e familia patris sui, Vestimentum, dicens, est tibi: Princeps noster eris; ruina haec in manu tua: 7. In that day shall he swear, saying, I will not be a healer; for in my house *is* neither bread nor clothing: make me not a ruler of the people.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Is jurabit in illa die, dicens, Neon ero curator; nam domi neal neque panis est,. neque vestimentum; itaque ne me principem populi constituatis. 8. For Jerusalem is ruined, and Judah is fallen; because their tongue and</p>
+
+<p style="text-align:right;" markdown="1">8. Certe corruit Ierusalem, et Iuda cecidit; quoniam lingua eorum et</p> <!-- PAGE 873 --> <p style="margin-left:2em;" markdown="1">their doings *are* against the Lord, to provoke the eyes of his glory.</p>
+
+studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. The show of their countenance doth witness against them; and they declare their sins as Sodom, they hide *it* not: Woe unto their soul! For they have rewarded evil unto themselves.
+
+<p style="margin-left:2em;" markdown="1">**9.** Probatio vultus eorum respondet in ipsis: (vel adversus iposos:) peccatum suum, sicut Sodoma, praedicaverunt, neque dissimularunt. Vae animae ipsorum, quia accersiverunt sibi malum. 10. Say ye to the righteous, that *it shall be* well *with him*; for they shall eat the fruit of their doings.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Dicite justo, bene erit, quia fructus manuum suarum comedent. 11. Woe unto the wicked! It *shall be* with him; for the reward of his hands shall be given him.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Vae impio, male erit; quoniam secundum opera manuum suarum rependetur ei. 12. *As for* my people, children are their oppressors, and women rule over them. O my people, they which lead thee cause *thee* to err, and destroy the way of thy paths.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Populi mei exactores sunt parvuli, et mulieres illi dominuntur. Popule mi, qui to gubernant seducunt, et viam semitarum tuarum depravant. 13. The Lord standeth up to plead, and standeth to judge the people.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Stat ad disceptandum Iehova et praesto est ad judicandos populos. 14. The Lord will enter into judgment with the ancients of his people, and the princes thereof: for ye have eaten up the vineyard; the spoil of the poor *is* in your houses.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Iehova in judicium veniet cum senibus populi sui, et cum principibus ejus; et vos perdidistis vineam estque rapina pauperis in domibus vestris. 15. What mean ye that ye beat my people to pieces, and grind the faces of the poor? saith the Lord God of hosts.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Quid vobis quod contunditis populum meum, et facies pauperum commolitis? dicit Dominus Iehova exercituum. 16. Moreover, the Lord saith, because the daughters of Zion are haughty, and walk with stretched forth necks, and wondering eyes, walking and mincing *as* they go, and</p>
+
+<p style="text-align:right;" markdown="1">16. Dicit quoque Iehova, Quoniam superbiunt filiae Sion, et porrecto collo incedunt, oculisque vacantibus, et ambulando plaudendoque ambulant,</p> <!-- PAGE 874 --> <p style="text-align:center" markdown="1">making a tinkling with their feet: tinnitumque pedibus suis excitant: 17. Therefore the Lord will smite with a scab the crown of the head of the daughters of Zion, and the Lord will discover their secret parts.</p>
+
+<p style="text-align:right;" markdown="1">17. Ideo decalvabit Dominus verticem filiarum Sion, et Dominus pudenda earum nudabit.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** In that day the Lord will take away the finery of their tinkling ornaments *about their feet*, and *their cauls*, and *their* round tires like the moon,</p>
+
+<p style="text-align:right;" markdown="1">18. In die illa auferet Dominus ornamentum crepitaculorum, et reticula, et lunailas,</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** The chains and the bracelets and the mufflers,</p>
+
+<p style="text-align:right;" markdown="1">19. Olfactoria, armillas, et mitras,</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** The bonnets, and the ornaments of the legs and the headbands, and the tablets, and the earrings,</p>
+
+<p style="text-align:right;" markdown="1">20. Tiaras, crurum ornatus, vittas, bullas, et inaures,</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** The rings and nose jewels, 21. Annulos et monilia nariun 22. The changeable suits of apparel and the mantles and the wimples and the crisping-pins,</p>
+
+<p style="text-align:right;" markdown="1">22. Mutatorias vestes, palliola, pepla, et acus,</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** The glasses and the fine linen and the hoods and the vails.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Specula, et sindones, calyptras et theristra. 24. And it shall come to pass, *that* instead of sweet smell there shall be stink; and instead of a girdle a rent; and instead of well-set hair baldness, and; instead of a stomacher a girding of sackcloth; *and* branding instead of beauty.</p>
+
+<p style="text-align:right;" markdown="1">24. Et erit pro suavi aromate putredo, et pro cinctura laceratio, et pro cincinnus calvitium; pro balteo cinctura sacci, adustio pro venustate.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Thy men shall fall by the sword, and thy mighty in the war.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Viri tui in gladio cadent, et robur tuum in bello. 26. And her gates shall lament and mourn; and she, *being* desolate, shall sit upon the ground.</p>
+
+<p style="text-align:right;" markdown="1">26. Morebunt ac lugebunt portae ejus; et ipsa desolata himi jacebit.</p>
+
+<!-- PAGE 875 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 4:1-6</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-4-1-6" data-ref="ISAIAH CHAPTER 4:1-6" style="display:none">ISAIAH CHAPTER 4:1-6</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">4:1-6</span></p>
+
+<strong>1.</strong> And in that day seven women shall take hold of one man saying, We will eat our own bread, and wear our own apparel; only let us be called by thy name, to take away our reproach.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Apprehendent itaque in die illa septenae mulieres viros singulos, dicentes, Pane nostro vescemur, vestimentis nostris induemur, tantum invocetur nomen tuum super nos, (*vel, censeamur tuo nomine,*) tollasque probrum nostrum. 2. In that day shall the branch of the Lord be beautiful and glorious, and the fruit of the earth *shall be* excellent and comely for them that are escaped of Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** In die illa erit germen Iehovae in pulchritudinem et gloriam; et fructus terrae in praestantiam et decorem; nempe in liberatis Israelis. 3. And it shall come to pass, *that he that is* left in Zion, and *he that* remaineth in Jerusalem, shall be called holy, *even* every one *that is* written among the living in Jerusalem:</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et eveniet ut qui reliquus fuerit in Sion, et residuus manserit in Ierusalem, sanctus vocetur, omnesque Ierosolymis inter vivos (*vel, ad vitam*,) asscripti erunt; 4. When the Lord shall have washed away the filth of the daughters of Zion, and shall have purged the blood of Jerusalem from the midst thereof, by the spirit of judgment, and by the spirit of burning.</p>
+
+<p style="text-align:right;" markdown="1">4. Cum scilicet Dominus eluerit sordes filiarum Sion, et sanguines Ierusalem expiaverit e medio ejus, et in Spiritu judicii, et in Spiritu incendii (*vel, ardoris.*)</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** And the Lord will create upon every dwelling-place of mount Zion, and upon her assemblies, a cloud and smoke by day, and the shining of a flaming fire by night: for upon all the glory *shall be* a defence.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Et craebit Iehova super totam habitationem montis Sion, et super omnem coetum ejus, nubem et obscuritatem interdia; noctu vero splendorem ignis flammantis; quia super omnem gloriam erit protectio. 6. And there shall be a tabernacle for a shadow in the day-time from the heat, and for a place of refuge, and for a covert from storm and from rain.</p>
+
+<p style="text-align:right;" markdown="1">6. Eritque obumbratio per diem in umbram ab aestu, in refugium et latibulum a nimbo et imbre.</p>
+
+<!-- PAGE 876 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 5:1-30</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-5-1-30" data-ref="ISAIAH CHAPTER 5:1-30" style="display:none">ISAIAH CHAPTER 5:1-30</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">5:1-30</span></p>
+
+<strong>1.</strong> Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a wine-press therein: and he looked that it should bring forth grapes, and it brought forth wild grapes.</p>
+
+<p style="text-align:right;" markdown="1">2. Eam sepiverat, et elapidaverat, et plantaverat, ut vineam electam; turrim aedificaverat in medio ejus, et torcular in ea construxerat. Itaque speravit ut produceret uvas, et producit labruscas.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And now, O inhabitants of Jerusalem, and men of Judah, judge, I pray you, betwixt me and my vineyard.</p>
+
+<p style="text-align:right;" markdown="1">3. Nunc igitur, habitator Ierusalem, et vir Iuda, judicate inter me et vineam meam.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** What could have been done more to my vineyard, that I have not done in it? Wherefore, when I looked that I should bring forth grapes, brought it forth wild grapes?</p>
+
+<p style="text-align:right;" markdown="1">4. Quid faciendum fuit amplius vineae meae, quod non fecerim ei? Quomodo expectavi ut proferret uvas, et tamen produxit labruscas?</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** And now go to; I will tell you what I will do to my vineyard: I will take away the hedge thereof, and it shall be eaten up; *and* break down the wall there, and it shall be trodden down:</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Et nunc ostendam, agendum, vobis, quid ego facturus sim vineae meae. Auferam sepem ejus, ut sit meae. Auferam sepem ejus, ut sit in depastionem: interrumpam maceriem ejus, ut sit in conculcationem. 6. And I will lay it waste: it shall not be pruned nor digged; but there shall come up briers and thorns: I will also command the clouds that they rain no rain upon it.</p>
+
+<p style="text-align:right;" markdown="1">6. Faciam ut sit deserta: non putabitur neque fodietur; et ascendet sentis et spina. Quinetiam nubibus praecipiam, ne super eam pluant.</p>
+
+<!-- PAGE 877 -->
+
+<p style="margin-left:2em;" markdown="1">**7.** For the vineyard of the Lord of hosts *is* the house of Israel, and the men of Judah his pleasant plant: and he looked for judgment, but behold oppression; for righteousness, but behold a cry.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Sane vinea Iehovae exercituum domus Israel est; et vir Iuda palmes ejus delectabilis. Inde expectavit judicium, et ecce oppressio; justitiam, et ecce clamor. 8. Woe unto them that join house to house, *that* lay field to field, till *there be* no place, that they may be placed alone in the midst of the earth!</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Vae qui conjungunt domum ad domum, agrum ad agrum copulant, donec non sit locus; ut collocemini scilicet vos soli in medio terrae. 9. In mine ears *said* the Lord of hosts, Of a truth many houses shall be desolate, *even* great nad fair, without inhabitant.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Hoc in auribus Iehovae exercituum, Si non domus multae in solitudinem redigantur, magnae et pulchrae absque habitatore. 10. Yea, ten acres of vineyard shall yield one bath, and the seed of an homer shall yield an ephah.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Quinetiam decem jugera vineae facient batum unum, et semen cori reddet ephi. 11. Woe unto them that rise up early in the morning, *that* they may follow strong drink; that continue until night, *till* wine inflame them!</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Vae qui mane surgunt ad sectandam ebrietatem, et qui tempus ad noctem extrahunt, dum vinum accendit eos. 12. And the harp and the viol, the tabret and pipe, and wine, are in their feasts: but they regard not the work of the Lord, neither consider the operation of his hands.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et est cythara, lyra, tympanum, tibia, et vinum, in conviviis eorum; opus autem Iehovae non respiciunt; nec opus manuum ejus considerant. 13. Therefore my people are gone into captivity, because *they have* no knowledge; and their honorable men *are* famished, and their multitude dried up with thirst.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Propterea in captivitatem abiit populus meus; quia non fuit praeditus scientia; et gloria ejus, viri famis, et multitudo ejus aruit siti. 14. Therefore hell hath enlarged herself, and opened her mouth without measure: and their glory, and their multitude, and their pomp, and he that rejoiceth, shall descend into it.</p>
+
+<p style="text-align:right;" markdown="1">14. Propterea dilatavit infernus animam suam, et os suum distendit absque modo descenditque gloria ejus; et multitudo ejus, et opulentia ejus, et qui laetatus est in ea.</p>
+
+<!-- PAGE 878 -->
+
+<p style="margin-left:2em;" markdown="1">**15.** And the mean man shall be brought down, and the mighty man shall be humbled, and the eyes of the lofty shall be humbled:</p>
+
+<p style="text-align:right;" markdown="1">15. Et incurvabitur homo, et humiliabitur vir; oculi inquam sublimium humiliabuntur.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** But the Lord of hosts shall be exalted in judgment, and God, *that is* holy, shall be sanctified in righteousness.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Exaltabitur autem Iehova exercituum in judicio, et Deus qui sanctus est sanctificabitur in justitia. 17. Then shall the lambs feed after their manner, and the waste places of the fat ones shall strangers eat.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Et pascentur agni secundum rationem suam; et desolata pinquium advenae comedent. 18. Woe unto them that draw iniquity with cords of vanity, and sin as it were with a cart-rope:</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Vae trahentibus iniquitatem in funibus vanitatis, et tanquam vinculis plaustri peccatum 19. That say, Let him make speed, *and* hasten his work, that we may see *it*: and let the counsel of the Holy One of Israel draw nigh and come, that we may know *it*!</p>
+
+<p style="text-align:right;" markdown="1">19. Qui dicunt, Acceleret, festinet opus ejus, et videamus; appropinquet ac veniat consilium Sancti Israel, ut sciamus.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Woe unto them that call evil good, and good evil; that put darkness for light, and light for darkness; that put bitter for sweet, and sweet for bitter!</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Vae qui dicunt malo bonum, et bono malum; qui faciunt lucem ex tenebris, et tenebras ex luce; qui vertunt amarum in dulce, et dulce in amarum. 21. Woe unto *them that are* wise in their own eyes, and prudent in their own sight!</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Vae sapientibus in oculis suis, et qui coram seipsis sunt prudentes. 22. Woe unto *them that are* mighty to drink wine, and men of strength to mingle strong drink;</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Vae qui fortes sunt ab libandum vinum, et viris fortibus ad miscendam potionem: 23. Which justify the wicked for reward, and take away the righteousness of the righteous from him!</p>
+
+<p style="text-align:right;" markdown="1">23. Qui justificant impium propter munus; justitiam autem justi tollunt ab eo.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Therefore as the fire devoureth the stubble, and the flame consumeth the chaff, *so* their root shall be as</p>
+
+<p style="text-align:right;" markdown="1">24. Propterea sicut devorat stipulam lingua ignis, et palea a flamma dissolvitur; sic radix eorum</p> <!-- PAGE 879 --> <p style="margin-left:2em;" markdown="1">rottenness, and their blossom shall go up as dust; because they have cast away the law of the Lord of hosts, and despised the word of the Holy One of Israel.</p>
+
+<p style="text-align:center" markdown="1">quasi putredo erit, et germen eorum quasi pulvis vanescet. Quoniam abjecerunt legem Iehovae exercituum, et eloquium Sancti Israel aversati sunt. 25. Therefore is the anger of the Lord kindled against his people, and he hath stretched forth his hand against them, and hath smitten them: and the hills did tremble, and their carcasses *were* torn in the midst of the streets. For all this his anger is not turned away, but his hand *is* stretched out still.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Idcirca exarsit furor Iehovae in populum suum; et extendens super eum; et contremuerunt montes, fuitque cadaver eorum mutilum projectum in medio viarum; et in omnibus istis non est aversus furor ejus; sed adhuc manus ejus est extenta. 26. And he will lift up an ensign to the nations from far, and will hiss unto them from the end of the earth: and, behold, they shall come with speed swiftly.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Et levabit signum ad gentes e longinquo; sibilabit Genti ab extremo terrae; et ecce velox et levis veniet. 27. None shall be weary nor stumble among them; none shall slumber nor sleep; neither shall the girdle of their loins be lossed, nor the latchet of their shoes be broken:</p>
+
+<p style="margin-left:2em;" markdown="1">**27.** Non erit lassus, neque impingens inter ipsos; nullus dormitabit neque dormiet; non solvetur ulli cingulum lumborum, neque rumpetur corrigia calceamentorum ejus. 28. Whose arrows *are* sharp, and all their bows bent, their horses’ hoofs shall be counted like flint, and their wheels like a whirlwind.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Sagittae ipsorum acutae erunt, et omnes arcus extenti. Ungulae equorum quasi silex; et rotae ipsorum quasi turbo reputabuntur. 29. Their roaring *shall be* like a lion, they shall roar like young lions; yea, they shall roar, and lay hold of the prey, and shall carry *it* away safe, and none shall deliver *it.*</p>
+
+<p style="text-align:right;" markdown="1">29. Rugitus ejus sicut leonis; fremet instar leunculorum. Frendet atque apprehendet praedam. Spolia corradet, et nemo eripiet.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** And in that day they shall roar against them like the roaring of the sea: and if *one* look unto the land, behold darkness *and* sorrow; and the light is darkened in the heavens thereof.</p>
+
+<p style="text-align:right;" markdown="1">30. Fremet super eum in die illo, quasi fremitus maris; tum aspiciet ad terram, et ecce tenebrae tribulationis; et lux obtenebrata erit in coelis.</p>
+
+<!-- PAGE 880 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 6:1-13</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-6-1-13" data-ref="ISAIAH CHAPTER 6:1-13" style="display:none">ISAIAH CHAPTER 6:1-13</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">6:1-13</span></p>
+
+<strong>1.</strong> In the year that king Uzziah died I saw also the Lord sitting upon a throne, high and lifted up, and his train filled the temple.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Anno mortis regis Usiae, vidi Dominum sedentem super solium excelsum et elevatum, cujus extrema replebant templum. 2. Above it stood the seraphims: each one had six wings; with twain he covered his face, and with twain he covered his feet, and with twain he did fly.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Et seraphim stabant super ipsum: erant singulis se alae; duabus operiebant faciem suam; duabus tegebant pedes suos; et duabus volabant. 3. And one cried unto another, and said, Holy, holy, holy *is* the Lord of hosts: the whole earth *is* full of his glory.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et clamabant alter alteri, dicentes, Sanctus, sanctus, sanctus, Iehova exercituum; plena est omnis terra gloriae ejus. 4. And the posts of the door moved at the voice of him that cried, and the house was filled with smoke.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et commota sunt superliminaria postium a voce clamantis; et domus impleta est fumo. 5. Then said I, Woe *is* me! For I am undone; because I *am* a man of unclean lips, and I dwell in the midst of a people of unclean lips: for mine eyes have seen the King, the Lord of hosts.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Tunc dixi, Vae mihi, quia excisus sum (*vel in silentium redactus*); cum homo sim pollutis labiis, et in medio populi habitem polluta labia habentis; et tamen regem Iehovam exercituum viderunt oculi mei. 6. Then flew one of the seraphims unto me, having a live coal in his hand, *which* he had taken with the tongs from off the alter:</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Volavit autem ad me unus ex seraphim; habens in manu sua carbonem ardentem, forcipe correptum ab altari. 7. And he laid *it* upon my mouth and said, Lo, this hath touched thy lips; and thine iniquity is taken away, and thy sin purged.</p>
+
+<p style="text-align:right;" markdown="1">7. Et applicans super os meum, dixit, Ecce, tetigit hoc labia tua, et expiabitur peccatum tuum.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Also I heard the voice of the Lord, saying, Whom shall I send, and who will go for us? Then said I, Here *am* I; send me.</p>
+
+<p style="text-align:right;" markdown="1">8. Postea audivi vocem Domini dicentis, Quem mittam? Et quis ibit nobis? Tum dixi, Ecce ego, mitte me.</p>
+
+<!-- PAGE 881 -->
+
+<p style="margin-left:2em;" markdown="1">**9.** And he said, Go, and tell this people, Hear ye indeed, but understand not; and see ye indeed, but perceive not.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Tum dixit, Vade, et dic populo isti; audiendo audite, et ne intelligatis; videndo videto, et nesciatis; 10. Make the heart of this people fat, and make their ears heavy, and shut their eyes; lest they see with their eyes, and hear with their ears, and understand with their heart, and convert, and be healed.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Obstina cor populi hujus, et aures ejus aggrava, et oculos ejus obline; ne forte videat oculis suis, et auribus suis audiat, et cor ejus intelligat, et ubi conversus fuerit, sit illi sanatio. 11. Then said I, Lord, how long? And he answered, Until the cities be wasted without inhabitant, and the houses without man, and the land be utterly desolate,</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Et dixi Usque quo, Domine? et ait, Dum fuerint vastatae civitates absque habitatore, et domus vacuatae fuerint hominibus, et terra redacta fuerit in solitudinem; 12. And the Lord have removed men far away, and *there be* a great forsaking in the midst of the land.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Donec procul amoverit Deus homines, sitque multa vastitas in medio terrae; 13. But yet in it *shall be* a tenth, and *it* shall return, and shall be eaten: as a teil-tree, and as an oak, whose substance *is* in them, when they cast*their leaves, so* the holy seed *shall be* the substance thereof.</p>
+
+<p style="text-align:right;" markdown="1">13. Donec in ea decima, et revertetur; et erit in excidium sicut tilia et quercus, quibus in projectione est subsistentia; ita in hac erit subsistentia, semen sanctum.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 7:1-25</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-7-1-25" data-ref="ISAIAH CHAPTER 7:1-25" style="display:none">ISAIAH CHAPTER 7:1-25</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">7:1-25</span></p>
+
+<strong>1.</strong> And it came to pass, in the days of Ahaz the son of Jotham, the son of Uzziah, king of Judah, *that* Rezin the king of Syria, and Pekah the son of Remaliah, king of Israel, went up toward Jerusalem to war against it, but could not prevail against it.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Accidit in diebus Achaz filii Iotham, filii Usiae regis Iuda, ut ascenderet Rezin rex Syriae, et Pecah filius Romeliae rex Israel, contra Ierusalem, ad oppugnandum eam; sed non potuit expugnare. 2. And it was told the house of 2. Nuntiatum est autem domni</p>
+
+<!-- PAGE 882 -->
+
+<p style="margin-left:2em;" markdown="1">David, saying, Syria is confederate with Ephraim: and his heart was moved, and the heart of his people, as the trees of the wood are moved with the wind.</p>
+
+<p style="text-align:right;" markdown="1">David, dicendo, Sociata est Syria cum Ephraim; et commotum est cor ejus, sicuti cum ligna sylvae moventur a vento.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Then said the Lord unto Isaiah, Go forth now to meet Ahaz, thou and Shear-jashub thy son, at the end of the conduit of the upper pool, in the highway of the fuller’s field;</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Tunc dixit Iehova ad Isaiam, Egredere in occursum Achaz, tu et Sear-jasub filius tuus ad finem aquaeductus piscinae superioris, ad viam agri fullonis. 4. And say unto him, Take heed, and be quiet; fear not, neither be fainthearted for the two tails of these smoking firebands, for the fierce anger of Rezin with Syria, and of the son of Remaliah.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et dices ad eum, Contine et quiesce; non formides, neque mollescat cor tuum propter duas caudas istorum titionum fumigantium, in furore irae Rezin, et Syri, et filii Romeliae. 5. Because Syria, Ephraim, and the son of Remaliah, have taken evil counsel against thee, saying,</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Eo quod consilium contra te iniit Syrus malignum cum Ephraim et filio Romeliae, dicendo: 6. Let us go up against Judah, and vex it, and let us make a breach therein for us, and set a king in the midst of it, *even* the son of Tabeal:</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Ascendamus contra Iudam, et excitemus eum, et aperiamus eum nobis; constituamusque in medio ejus Regem, filium Tabeal. 7. Thus saith the Lord God, It shall not stand, neither shall it come to pass.</p>
+
+<p style="text-align:right;" markdown="1">7. Sic dixit Dominus Iehova, Non consistet, et non erit.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** For the head of Syria *is* Damascus, and the head of Damascus *is* Rezin; and within threescore and five years shall Ephraim be broken, that it be not a people.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Quoniam caput Syriae, Damascus: et caput Damasci, Rezin. Et quidem adhuc sexaginta quinque anni, et frangetur Ephraim, ut non sit populus. 9. And the head of Ephraim *is* Samaria, and the head of Samaria *is* Remaliah’s son. If ye will not believe, surely ye shall not be established.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Interea caput Ephriam, Samaria; et caput Samariae, filius Romeliae. Si non creditis, profecto neque stabitis. 10. Moreover, the Lord spake again unto Ahaz, saying,</p>
+
+<p style="text-align:right;" markdown="1">10. Et adjecit Iehova loqui ad Achaz, dicendo;</p>
+
+<!-- PAGE 883 -->
+
+<p style="margin-left:2em;" markdown="1">**11.** Ask thee a sign of the Lord thy God; ask it either in the depth, or in the height above.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Pete tibi signum a Iehova Deo tuo, petendo in profundo, vel sursum in excelso. 12. But Ahaz said, I will not ask, neither will I tempt the Lord.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et ait Achaz, Non petam; et non tentabo Iehovam. 13. And he said, Hear ye now, O house of David; *Is it* a small thing for you to weary men, but will ye weary my God also?</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Et dixit, Audite nunc domus David; An parum est vobis, hominibus molestos esse, nisi Deo quoque meo sitis molesti? 14. Therefore the Lord himself shall give you a sign; behold a virgin shall conceive, and bear a son, and shall call his name Immanuel.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Propterea dabit vobis Dominus ipse signum: Ecce virgo concipiet, et pariet filium; et vocabit nomen ejus Immanuel. 15. Butter and honey shall he eat, that he may know to refuse the evil, and choose the good.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Butyrum et mel comedet, donec sciat reprobare malum, et eligere bonum. 16. For before the child shall know to refuse the evil, and choose the good, the land that thou abhorrest shall be forsaken of both her kings.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Et quidem antequam sciat puer rejicere malum et eligere bonum, relinquetur terra quam odisti, a duobus Regibus suis. 17. The Lord shall bring upon thee, and upon thy people, and upon thy father’s house, days that have not come, from the day that Ephraim departed from Judah; *even* the king of Assyria.</p>
+
+<p style="text-align:right;" markdown="1">17. Adducet Iehova super te, et super populum tuum, et super domum patris tui, dies qui non venerunt a die defectionis Ephraim a Iuda: nempe, Regem Assur.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** And it shall come to pass in that day, *that* the Lord shall hiss for the fly that *is* in the uttermost part of the rivers of Egypt, and for the bee that *is* in the land of Assyria.</p>
+
+<p style="text-align:right;" markdown="1">18. Erit in die illa: sibilabit Iehova muscae, quae est in extremitate fluminum AEgypti, et api quae est in terra Assur.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** And they shall come, and shall rest all of them in the desolate valleys, and in the holes of the rocks and upon all thorns, and upon all bushes.</p>
+
+<p style="text-align:right;" markdown="1">19. Venientque, et quiescent omnes in vallibus desertis, et in cavernis petrarum, et in omnibus spinetis, et in omnibus dumetis.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** In the same day shall the Lord 20. In die illa radet Dominus</p> <!-- PAGE 884 --> <p style="margin-left:2em;" markdown="1">shave with a razor that is hired, *namely*, by them beyond the river, by the king of Assyria, the head, and the hair of the feet: and it shall also consume the beard.</p>
+
+<p style="text-align:right;" markdown="1">novacula conducta, per hos qui trans fluvium sunt, per Regem Assur, caput et pilos pedum; quin et barbam tollet.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** And it shall come to pass in that day, *that* a man shall nourish a young cow and two sheep;</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Fietque in die illa, ut homo nutriat vaccam armenti et duas oves. 22. And it shall come to pass, for the abundance of milk *that* they shall give, that he shall eat butter: for butter and honey shall every one eat *that is* left in the land.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Et eveniet, ut propter copiam lactis quam proferent, comedet butyrum. Butyrum certe et mel comedet quisquis residuus fuerit in medio terrae. 23. And it shall come to pass in that day, *that* every place shall be, where there were a thousand vines at a thousand silverlings, it shall *ven* be for briers and thorns.</p>
+
+<p style="text-align:right;" markdown="1">23. Erit etiam in die illa, ut quocunque in loco fuerint mille vites, prostent mille argenteis propter spinas et vepres.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** With arrows and with bows shall *men* come thither; because all the land shall become briers and thorns.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Cum sagittis et arcu venient illuc; quoniam spinae et vepres erunt per universam terram. 25. And *on* all hills that shall be digged with the mattock, there shall not come thither the fear of briers and thorns: but it shall be for the sending forth of oxen, and for the treading of lesser cattle.</p>
+
+<p style="text-align:right;" markdown="1">25. Porro quod ad omnes montes qui sarculo fodiuntur, non veniet illuc timor spinarum et veprium; sed expositi erunt bobus, et conculcabuntur a pecoribus.</p>
+
+<!-- PAGE 885 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 8:1-22</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-8-1-22" data-ref="ISAIAH CHAPTER 8:1-22" style="display:none">ISAIAH CHAPTER 8:1-22</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">8:1-22</span></p>
+
+<strong>1.</strong> Moreover, the Lord said unto me, Take thee a great roll, and write in it with a man’s pen concerning Maharshalal-hash-baz.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Et dixit Iehova ad me: Sume tibi volumen grande, et scribi in eo stylo vulgari, (*vel, hominis*) Accelera ad diripiendum, festina ad praedam. 2. And I took unto me faithful witnesses to record, Uriah the priest, and Zechariah the son of Jeberechiah.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Et adhibui mihi testes fideles, Uriam sacerdotem, et Zachariam fillium Iebarachiae. 3. And I went unto the prophetess; and she conceived, and bare a son: then said the Lord to me, Call his name Mahar-shalal-hash-baz:</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et accessi ad prophetissam, quae concepit, et peperit filium. Dixitque mihi Iehova: Voca nomen ejus, Accelera ad diripiendum; festina ad praedam. 4. For before the child shall have knowledge to cry, My father, and my mother, the riches of Damascus, and the spoil of Samaria, shall be taken away before the king of Assyria.</p>
+
+<p style="text-align:right;" markdown="1">4. Sane antequam sciat puer clamare, Pater mi et mater mea, tolletur substantia Damasci, et spolia Samariae, coram Rege Assyriae</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** The Lord spake also unto me again, saying,</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Rursus loquutus est mecum Iehova, iterum dicens: 6. Forasmuch as this people refuseth the waters of Shiloah that go softly, and rejoice in Rezin and Remaliah’s son;</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Quandoquidem rejecit populus iste aquas Siloe, quae fluunt cum silentio, et gaudium fuit illi ad Rezin, et filium Romeliae. 7. Now therefore, behold, the Lord bringeth up upon them the waters of the river, strong and many, *even* the king of Assyria, and all his glory; and he shall come up over all his channels, and go over all his banks.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Ideo, ecce Dominus adducit super eos aquas fluvii, violentas et magnas: nempe Regem Assyriae et omne robur ejus; ascendetque super omnes rivos, et transibit super omnes ripas ejus. 8. And he shall pass through Judah; 8. Et trajiciens in Iudam inundabit,</p> <!-- PAGE 886 --> <p style="margin-left:2em;" markdown="1">he shalll overflow and go over; he shall reach *even* to the neck: and the stretching out of his wings shall fill the breadth of thy land, O Immanuel.</p>
+
+<p style="text-align:center" markdown="1">et transibit, pertinget usque ad collum. Et implebit extensio alarum ejus latitudinem terrae tuae, O Immanuel. 9. Associate yourselves, O ye people, and ye shall be broken in pieces; and give ear, all ye of far countries: gird yourselves, and ye shall be broken in pieces; gird yourselves, and ye shall be broken in pieces.</p>
+
+<p style="text-align:right;" markdown="1">9. Consociate vos populi, et confringemini; auribus percipite quot quot e longinqua terra estis. Accingite vos, et confringemini; accingite, inquam, vos, et confringemini.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Take counsel together, and it shall come to naught; speak the word, and it shall not stand: for God *is* with us.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Consoltate consilium, et dissolvetur; decernite decretum, et non stabit; quia nobiscum Deus. (*Hebraice, Immanuel.*) 11. For the Lord spake thus to me with a strong hand, and instructed me, that I should not walk in the way of this people, saying,</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Nam sic dixit mihi Iehova, tanquam apprehensione (*vel, roboratione*) manus; et erudivit me, ne irem per viam populi hujus, dicens:’ 12. Say ye not, A confederacy, to all *them to* whom this people shall say, A confederacy; neither fear ye their fear, nor be afraid.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Ne dicatis, Conspiratio, in quibuscunque populus iste dicit, Conspiratio, neque timorem eorum timueritis, aut formidaveritis. 13. Sanctify the Lord of hosts himself; and *let* him *be* your fear, and *let* him *be* your dread.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Iehovam exercituum ipsum sanctificate; et sit ipse timor vester; et idem sit pavor vester. 14. And he shall be for a sanctuary; but for a stone of stumbling, and for a rock of offence, to both the houses of Israel; for a gin and for a snare to the inhabitants of Jerusalem.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Tum ipse erit in sanctuarium; in lapidem offendiculi; et in petram ruinae, duabus domibus Israel; in laqueum, et tendiculum incolae Ierusalem. 15. And many among them shall stumble, and fall, and broken, and be snared, and be taken.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Et impingent multi inter eos; ideoque corruent, et conterentur, irretientur, et capientur. 16. Bind up the testimony, seal the 16. Liga contestationem; obsigna</p> <!-- PAGE 887 --> law among my disciples. legem inter discipulos meos. 17. And I will wait upon the Lord that hideth his face from the house of Jacob, and I will look for him.
+
+<p style="margin-left:2em;" markdown="1">**17.** Itaque expectabo Iehovam, qui abscondit faciem suam a domo Iacob, et praestolabor eum. 18. Behold, I and the children whom the Lord hath given me, *are* for signs and for wonders in Israel from the Lord of hosts, which dwelleth in mount Zion.</p>
+
+<p style="text-align:right;" markdown="1">18. Ecce ego et pueri, quos dedit mihi Iehova, in signa et prodigia in Israel; a Iehova exercituum, qui habitat in monte Sion.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** And when they shall say unto you, Seek unto them that have familiar spirits, and unto wizards that peep and that mutter: should not a people seek unto their God? For the living to the dead?</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Quod si dixerint vobis, Sciscitamini a pythonicis et divinis, qui mussitant et demurmurant; annon populus Deum suum consulet, a vivis ad mortuos? 20. To the law and to the testimony: if they speak not according to this word, *it is* because *there is* no light in them.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Ad legem et testimonium. Si non loquuti fuerint secundum verbum hoc, ideo nempe quod nihil est lucis. 21. And they shall pass through it hardly bestead and hungry: and it shall come to pass, that, when they shall be hungry, they shall fret themselves, and curse their king and their God, and look upward.</p>
+
+<p style="text-align:right;" markdown="1">21. Tum per hanc terram transibunt oppressi et famelici. Et accidet ut cum esurierint, irritentur, ac maledicant regi suo, Deo suo, attollentes sursum faciem.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** And they shall look unto the earth; and behold trouble and darkness, dimness of anguish; and *they shall be* driven to darkness.</p>
+
+<p style="text-align:right;" markdown="1">22. Et quum spectaverit ad terram, ecce tribulatio et tenebrae, caligo, angustia, et ad obscuritatem impulsus.</p>
+
+<!-- PAGE 888 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 9:1-21</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-9-1-21" data-ref="ISAIAH CHAPTER 9:1-21" style="display:none">ISAIAH CHAPTER 9:1-21</h2>
+
+**1.** Nevertheless, the dimness *shall* not *be* such as *was* in her vexation, when at the first he lightly afflicted the land of Zebulun, and the land of Naphtali, and afterward did more grievously afflict *her by* the way of the sea, beyond Jordan, in Galilee of the nations.
+
+<p style="text-align:right;" markdown="1">1. Non tamen obscuratio juxta angustiam quae ei accidit tempore quo primum leviter attigerunt terram Zabulon et terram Nephtalia: nec posterius, cum aggravarunt per viam maris ultra Iordanem, in Galilaea Gentium.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined.</p>
+
+<p style="text-align:right;" markdown="1">2. Populus ambulans in tenebris vidit lucem magnam. Qui habitabant in terra umbrae mortis, lux affulsit super eos.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Thou hast multiplied the nation, *and* not increased the joy: they joy before thee according to the joy in harvest, *and* as *men* rejoice when they divide the spoil.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Multiplicando gentem non auxisti laetitiam, laetati sunt coram te secundum laetitiam in messe, quemadmodum exultant dividendo spolia. 4. For thou hast broken the yoke of his burden, and the staff of his shoulder, the rod of his oppressor, as in the day of Midian.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Quoniam jugum ejus onerosum, et virgam humeri ejus, sceptrum exactoris ejus confregisti, sicut in die Madian. 5. For every battle of the warrior *is* with confused noise, and garments rolled in blood; but *this* shall be with burning *and* fuel of fire.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Quanquam omne proelium bellantis fit cum strepitu et volutatione vestis in sanguine; erit hoc in combustionem, cibum ignis. 6. For unto us a child is born, unto us a son is given; and the government shall be upon his shoulder: and his name shall be called Wonderful, Counsellor, The mighty God, The everlasting Father, the Prince of</p>
+
+<p style="text-align:right;" markdown="1">6. Quia puer natus est nobis; et constitutus est principatus super humerum ejus; et vocabitur nomen ejus, Admirabilis, Consiliarius, Deus fortis, Pater seculi, princeps pacis.</p>
+
+<!-- PAGE 889 -->
+
+<p style="margin-left:2em;" markdown="1">Peace. 7. Of the increase of *his* government and peace *there shall be* no end, upon the throne of David, and upon his kingdom, to order it, and to establish it with judgment and with justice from henceforth even for ever. The zeal of the Lord of hosts will perform this.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Multiplicationi principatus et paci non erit finis; super solium David, et super regnum ejus, ut disponat et stabiliat ipsum in judicio et justitia, ab hoc tempore usque in perpetuum. Zelus Iehovae exercituum hanc rem faciet. 8. The Lord sent a word into Jacob, and it hath lighted upon Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Verbum misit Dominus in Iacob, et cecidit in Israel. 9. And all the people shall know *even* Ephraim, and the inhabitants of Samaria, that say in the pride of stoutness of heart,</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Et sciet populus, omnes Ephraim, et incolae Samariae, qui dicunt in superbia et altitudine cordis, 10. The bricks are fallen down, but we will build with hewn stones; the sycamores are cut down, but we will change *them into* cedars.</p>
+
+<p style="text-align:right;" markdown="1">10. Lateres ceciderunt, et politis aedificabimus; sycomori succisae sunt, et cedros sufficiemus.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Therefore the Lord shall set up the adversaries of Rezin against him and join his enemies together;</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Atqui roborabit Iehova hostes Rezin contra ipsum; et inimicos ejus coedjuvabit. 12. The Syrians before, and the Philistines behind; and they shall devour Israel with open mouth. For all this anger is not turned away, but his hand *is* stretched out still.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Syria a fronte, et Philistaei a tergo; devorabuntque Israel toto ore. Nec in hoc toto aversus erit furor ejus, sed manus ejus adhuc extenta. 13. For the people turneth not unto him that smiteth them, neither do they seek the Lord of hosts:</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Atqui populus non est reversus ad percussorem suum; nec Iehovam exercituum quaesierunt. 14. Therefore the Lord will cut off from Israel head and tail, branch and rush, in one day.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Abscindet ergo Iehova ab Israele caput et audam, ramum et arundinem die uno. 15. The ancient and honorable, he *is* the head; and the prophet that teacheth lies, he *is* the tail.</p>
+
+<p style="text-align:right;" markdown="1">15. Senex et vulta suspiciendus, hic est caput: Propheta autem qui docet mendacium, hic est cauda.</p>
+
+<!-- PAGE 890 -->
+
+<p style="margin-left:2em;" markdown="1">**16.** For the leaders of this people cause *them* to err; and *they that are* led of them *are* destroyed.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Nam gubernatores populi hujus, sunt seductores; et qui reguntur in eo, perditi. 17. Therefore the Lord shall have no joy in their young men, neither shall have mercy on their fatherless and widows: for every one *is* an hypocrite and an evil-doer, and every mouth speaketh folly. For all this his anger is not turned away, but his hand *is* stretched out still.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Propterea super adolescentibus ejus non gaudebit Dominus; et pupillorum ejus et viduarum non miserebitur. Quoniam omnes sunt hypocritae et scelerati, et omne os loquitur nequitiam. In hoc toto non erit aversus furor ejus, sed adhuc manus ejus extenta. 18. For wickedness burneth as the fire: it shall devour the briars and thorns, and shall kindle in the thickets of the forest; and they shall mount up *like* the lifting up of smoke.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Quoniam succensa est velut ignis impietas; vepres et spinas devorabit. Postea exardebit in condensa sylvae; et elevabitur fumus ascendentis. 19. Through the wrath of the Lord of hosts is the land darkened, and the people shall be as the fuel of the fire: no man shall spare his brother.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Prae ira Iehovae exercituum obscurabitur terra, et fiet populus quasi cibus ignis. Nemo fratri suo parcet. 20. And he shall snatch on the right hand, and be hungry; and he shall eat on the left hand, and they shall not be satisfied: they shall eat every man the flesh of his own arm:</p>
+
+<p style="text-align:right;" markdown="1">20. Rapiet quisque ad dexteram, et esuriet; comedet ad sinistram, et non saturabitur: quisque carnem brachii sui devorabit;</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Manasseh, Ephraim; and Ephraim, Manasseh: *and* they together *shall be* against Judah. For all this his anger is not turned away, but his hand *is* stretched out still.</p>
+
+<p style="text-align:right;" markdown="1">21. Menasse Ephraim, et Ephraim Menasse; pariter ipsi contra Iudam. Nec in hoc toto aversuserit furor ejus; sed manus ejus adhuc extenta.</p>
+
+<!-- PAGE 891 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 10:1-34</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-10-1-34" data-ref="ISAIAH CHAPTER 10:1-34" style="display:none">ISAIAH CHAPTER 10:1-34</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">10:1-34</span></p>
+
+<strong>1.</strong> Woe unto them that decree unrighteous decrees, and that write grievousness *which* they have prescribed;
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** To turn aside the needy from judgment, and to take away the right from the poor of my people, that widows may be their prey, and *that* they may rob the fatherless!</p>
+
+<p style="text-align:right;" markdown="1">2. Ut arceant pauperes a judicio, et eripiant jus pauperibus populi mei, viduas spolient, et pupillos praedentur.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And what will ye do in the day of visitation, and in the desolation *which* shall come from far? To whom will ye flee for help? And where will ye leave your glory?</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et quid facietis in die visitationis? Et cum desolatio venerit e longinquo, ad quem confugietis auxilii causa, et ubi deponetis (*vel, munietis*) gloriam vestram? 4. Without me they shall bow down under the prisoners, and they shall fall under the slain. For all this his anger is not turned away, but his hand *is* stretched out still.</p>
+
+<p style="text-align:right;" markdown="1">4. Nisi (*vel, sine me*) corruent inter vinctos, et inter occisos cadent. In hoc toto non erit aversus furor ejus, et adhuc manus ejus extenta.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** O Assyrian, the rod of mine anger, and the staff in their hand is mine indignation.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** O Assur virga furoris mei, et baculus ipse in manu eorum ira mea. 6. I will send him against an hypocritical nation, and against the people of my wrath will I give him a charge, to take the spoil, and to take the prey, and to tread them down like the mire of the streets.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Ad gentem simulatricem mittam eum, et contra populum indignationis meae praecipiam ei, ut praedetur praedam; ut rapiat spolia, et ponat eum in conculcationem, quasi lutum platearum. 7. Howbeit he meaneth not so, neither doth his heart think so; but *it*</p>
+
+<p style="text-align:right;" markdown="1">7. Atqui ipse non sic arbitrabitur, nec cor ejus sic cogitabit; quia in</p>
+
+<!-- PAGE 892 -->
+
+<p style="margin-left:2em;" markdown="1">*is* in his heart to destroy and cut off nations not a few.</p>
+
+corde ejus erit ad extirpandum et succidendum gentes non paucas. 8. For he saith, *Are* not my princes altogether kings?
+
+<p style="margin-left:2em;" markdown="1">**8.** Dicet enim, Annon Principes mei pariter Reges? 9. *Is* not Calno as Carchemish? *Is* not Hamath as Arpad? *Is* not Samaria as Damascus?</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Annon, ut Carchemis, sic Calno? Annon Hamath, sicut Arphad? Annon Samaria ut Damascus? 10. As my hand hath found the kingdoms of the idols, and whose graven images did excel them of Jerusalem and of Samaria;</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Sicut invenit manus mea regnum idolorum, cum simulachra eorum sint prae Ierusalem et Samaria. 11. Shall I not, as I have done unto Samaria and her idols, so do to Jerusalem and her idols?</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Annon sicut feci Samariae et idolis ejus, ita faciam Ierusalem et idolis ejus? 12. Wherefore it shall come to pass, *that*, when the Lord hath performed his whole work upon mount Zion and on Jerusalem, I will punish the fruit of the stout heqart of the king of Assyria, and the glory of his high looks.</p>
+
+<p style="text-align:right;" markdown="1">12. Sed accidet, Cum perfecerit Dominus totum opus suum in monte Sion et Ierusalem, visitabo super fructum magnificentiae cordis regis Assur, et super gloriam altitudinis oculorum ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** For he saith, By the strength of my hand I have done *it*, and by my wisdom; for I am prudent: and I have removed the bounds of the people, and have robbed their treasures, and I have put down the inhbitants like a valiant *man*.</p>
+
+<p style="text-align:right;" markdown="1">13. Quia dixit: In fortitudine manus meae feci, et in sapientia mea; quia perspicax fui; et ideo abstuli terminos populorum, et recondita eorum diripui, et detraxi tanquam fortis sedentes.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** And my hand hath found, as a nest, the riches of the people: and as one gathereth eggs *that are* left, have I gathered all the earth; and there was none that moved the wing, or opened the mouth, or peeped.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Et invenit quasi nidum manus mea opes populorum; et ut colliguntur ova derelicta, sic ego universam terram collegi; nec fuit qui abigeret ala, et aperiret os, et sibilaret. 15. Shall the axe boast itself against him that heweth therewith? Or shall</p>
+
+<p style="text-align:right;" markdown="1">15. An gloriabitur securis adversus secantem ipsa? An magnificabitur</p> <!-- PAGE 893 --> <p style="margin-left:2em;" markdown="1">the saw magnify itself against him that shaketh it? As if the rod should shake *itself* against them that lift it up, *or* as if the staff should lift up *itself, as if it were* no wood.</p>
+
+<p style="text-align:right;" markdown="1">serra adversus eum qui ipsum agitat? Quasi elevatio virgae contra elevantem ipsam, quasi elevationes baculi, non ligni.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Therefore shall the Lord, the Lord of hosts, send among his fat ones leanness; and under his glory he shall kindle a burning like the burning of qa fire.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Propterea mittet Dominator Dominus exercituum in pingues ejus maciem, et subtus gloriam ejus succendet incendium, quasi incendium ignis. 17. And the light of Israel shall be for a fire, and his Holy One for a flame: and it shall burn and devour his thorns and his briers in one day;</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Et erit lux Israel in ignem, et Sanctus ejus in flammam; comburetque et devorabit vepres ejus et spinas die uno. 18. And shall consume the glory of his forest, and of his fruitful field, both soul and body: and they shall be as when a standard-bearer fainteth.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Gloriam sylvae ejus, et frugiferi campi ejus, ab anima usque ad carnem consumet; et erit quasi dilssolutio signiferi. 19. And the rest of the trees of his forest shall be few, that a child may write them.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Et reliquiae ligni sylvae ejus ad numerum erunt, ut puer eas numeret. 20. And it shall come to pass in that day, *that* the remnant of Israel and such as are escaped of the house of Jacob, shall no more again stay upon him that smote them; but shall stay upon the Lord, the Holy One of Israel, in truth.</p>
+
+<p style="text-align:right;" markdown="1">20. Erit in die illo. Non adjicient amplius reliquiae Israel, et superstites e domo Iacob inniti percussori suo; nam innitentur super Iehovam sanctum Israel, in veritate.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** The remnant shall return, *even* the remnant of Jacob, unto the mighty God.</p>
+
+<p style="text-align:right;" markdown="1">21. Reliquiae revertentur, reliquiae Iacob ad Deum fortem.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** For though thy people Israel be as the sand of the sea, *yet* a remnant of them shall return: the consumption decreed shall overflow with righteousness.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Nam si fuerit populus tuus Israel instar arenae maris, reliquiae ejus revertentur. Consumptio decreta inundans justitiam, (*vel, justitia.*) 23. For the Lord God of hosts shall 23. Quia consumptionem et</p> <!-- PAGE 894 --> <p style="margin-left:2em;" markdown="1">make a consumption, even determined, in themidst of all the land.</p>
+
+finitionem Dominus Iehova exercituum facit in medio totius terrae. 24. Therefore thus said the Lord God of hosts, O my people that dwellest in Zion, be not afraid of the Assyrian: he shall smite thee with a rod, and shall lift up his staff against thee, after the manner of Egypt.
+
+<p style="text-align:right;" markdown="1">24. Propterea sic dicit Iehova exercituum: Ne timeas, popule mi, incolae Sion, ab Assur. In virga percutiet te, et baculum suum levabit contra te in via AEgypti.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** For yet a very little while, and the indignation shall cease, and mine anger, in their destruction.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Sed adhuc paululum, et consumabitur (*vel, consumetur*) furor et indignatio mea, in abolitione eorum. 26. And the Lord of hosts shall stir up a scourge for him, according to the slaughter of Midian at the rock of Oreb: and *as* his rod *was* upon the sea, so shall he lift it up after the manner of Egypt.</p>
+
+<p style="text-align:right;" markdown="1">26. Et excitabit Iehova exercituum contra eum flagellum, secundum caedem Madian in rupe Oreb; et virga ejus super mare, levabitque eam in via AEgypti.</p>
+
+<p style="margin-left:2em;" markdown="1">**27.** And it shall come to pass in that day, *that* his burden shall be taken away from off thy shoulder, and his yoke from off thy neck, and the yoke shall be destroyed because of the annointing.</p>
+
+<p style="text-align:right;" markdown="1">27. Et accidet in die illa, ut auferatur onus ejus ab humero tuo, et jugum ejus a cervice tua; et dissipabitur jugum a facie unctionis.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** He is come to Aiath, he is passed to Migron; at Michmash he hath laid up his carriages:</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Venit in Aiath, transiit in Migron, in Michmas reponet vasa tua. 29. They are gone over the passage: they have taken up their lodging at Geba; Ramah is afraid; Gibeah of Saul is fled.</p>
+
+<p style="text-align:right;" markdown="1">29. Transierunt vadum, in Gaeba pernoctaverunt hospitio; territa est Rama; Gibaea Saulis fugit.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Lift up thy voice, O daughter of Gallim; cause it to be heard unto Laish, O poor Anathoth.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Hinni voce tua filia Gallim, fac audire Laisam paupercula Anathoth. 31. Madmenah is removed; the inhabitants of Gebim gather</p>
+
+<p style="text-align:right;" markdown="1">31. Mota est Madmena; incolae Gebim collegerunt se.</p>
+
+<!-- PAGE 895 -->
+
+<p style="margin-left:2em;" markdown="1">themselves to flee. 32. As yet shall he remain at Nob that ay: he shall shake his hand *against* the mount of the daughter of Zion, the hill of Jerusalem.</p>
+
+<p style="margin-left:2em;" markdown="1">**32.** Adhuc dies: cum in Nob interquiescet, agitabit manum suam versus montem filiae Sion, collem Ierusalem. 33. Behold, the Lord, the Lord of hosts, shall lop the bough with terror; and the high ones of stature *shall be* hewn down, and the haughty shall be humbled.</p>
+
+<p style="margin-left:2em;" markdown="1">**33.** Ecce, Dominus Iehova exercituum amputabit ramum cum terrore, (*vel, potenter,*) et procerae staturae excidentur, et sublimia humiliabunter. 34. And he shall cut down the thickets of the forests with iron and Lebanon shall fall by a mighty one.</p>
+
+<p style="text-align:right;" markdown="1">34. Et resecabit condensa sylvae ferro, et Libanus violenter cadet.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 11:1-16</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-11-1-16" data-ref="ISAIAH CHAPTER 11:1-16" style="display:none">ISAIAH CHAPTER 11:1-16</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">11:1-16</span></p>
+
+<strong>1.</strong> And there shall come forth a rod out of the stem of Jesse, and a Branch shall grow out of his roots:
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Sed prodibit virga ex trunco Isai; et surculus de radicibus ejus fructus edet. 2. And the Spirit of the Lord shall rest upon him, the spirit of wisdom and understanding, the spirit of counsel and might, the spirit of knowledge and of the fear of the Lord;</p>
+
+<p style="text-align:right;" markdown="1">2. Et requiescet super eum Spiritus Iehovae, spiritus sapientiae et intelligentiae, spiritus consilii et fortitudinis, spiritus scientiae et timoris Iehovae.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And shall make him of quick understanding in the fear of the Lord; and he shall not judge after the sight of his eyes, neither reprove after the hearing of his ears:</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et sagacem illum reddet in timore Iehovae; non secundum aspectum oculorum suorum judicabit, neque ex auditu aurium suarum arguet. 4. But with righteousness shall he judge the poor, and reprove with equity for the meek of the earth: and he shall smite the earth with the rod of his mouth, and with the breath of</p>
+
+<p style="text-align:right;" markdown="1">4. Nam judicabit in justitia pauperes, et in aequitate arguet mansuetis terrae; et percutiet terram virga oris sui, et spiritu labiorum suorum interficiet</p> <!-- PAGE 896 --> <p style="margin-left:2em;" markdown="1">his lips shall he slay the wicked. impium. 5. And righteousness shall be the girdle of his loins, and faithfulness the girdle of his reins.</p>
+
+<p style="text-align:right;" markdown="1">5. Et erit justitia balteus lumborum ejus, et fides balteus renum ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** The wolf also shall dwell with the lamb, and the leopard shall lie down with the kid; and the calf, and the young lion, and the fatling together; and a little child shall lead them.</p>
+
+<p style="text-align:right;" markdown="1">6. Habitabit lupus cum agno, et pardus cum hoedo accubabit; vitulus, et leo, et pecus pingue pariter; et puer parvus reget eos.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** And the cow and the bear shall feed; their young ones shall lie down together: and the lion shall eat straw like the ox.</p>
+
+<p style="text-align:right;" markdown="1">7. Vacca et ursus pascentur; simul accubabunt foetus eorum. Et leo, quasi bos, comedet paleas.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** And the suckling child shall play on the hole of the asp, and the weaned child shall put his hand on the cockatrice’ den.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Et oblectabitur infans super foramine aspidis; et super speluncam cerastis qui ablactatus est manum suam mittet. 9. They shall not hurt nor destroy in all my holy mountain: for the earth shall be full of the knowledge of the Lord, as the waters cover the sea.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Non nocebunt, neque injuriam inferent in toto monte sanctitatis meae; quoniam impleta erit terra scientia Iehovae, tanquam aquis mare operientibus. 10. And in the day there shall be a root of Jesse, which shall stand for an ensign of the people; to it shall the Gentiles seek: and his rest shall be glorious.</p>
+
+<p style="text-align:right;" markdown="1">10. Et erit in die illa, Radix Isai, quae stabit in signum populorum requiretur a Gentibus, et erit requies ejus gloria.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** And it shall come to pass in that day, *that* the Lord shall set his hand again the second time to recover the remnant of his people, which shall be left, from Assyria, and from Egypt, and from Pathros, and from Cush, and from Elam, and from Shinar, and from Hamath, and from the islands of the sea.</p>
+
+<p style="text-align:right;" markdown="1">11. Et erit in die illa, adjiciet Dominus rursus manum suum ad possidendas reliquias populi sui, quae residuae erunt ab Assur, et ab Aegypto, a Parthia, ab Arabia, ab Aethiopia, a Perside, a Chaldaea, ab Hamath, et ab insulis maris.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** And he shall set up an ensign for 12. Et levabit signum Gentibus,</p> <!-- PAGE 897 --> <p style="margin-left:2em;" markdown="1">the nations, and shall assemble the outcasts of Israel, and gather together the dispersed of Judah from the four corners of the earth.</p>
+
+<p style="text-align:right;" markdown="1">congregabitque ejectos Israel, et dispersiones Iuda congregabit a quatuor plagis terrae.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** The envy also of Ephraim shall depart, and the adversaries of Judah shall be cut off: Ephraim shall not envy aJudah, and Judah shall not vex Ephraim.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Et abscedet aemulatio Ephraim, et hostes Iuda excidentur. Ephraim non aemulabitur Iuda, nec Iuda anget Ephraim. 14. But they shall fly upon the shoulders of the Philistines toward the west; they shall spoil them of the east together: they shall lay their hand upon Edom and Moab; and the children of Ammon shall obey them.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Involabunt autem in humeros Philistinorum ad occidentem; diripient pariter filios orientis, Aedom et Moab missio manus eorum, et filii Ammon obedientia eorum. 15. And the Lord shall utterly destroy the tongue of the Egyptian sea; and with his mighty wind shall he shake his hand over the river, and shall smite it in the seven streams, and make *men* go over dry-shod.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Et in nihilum rediget Iehova linguam maris AEgypti; et eriget manum suam super fluvium in fortitudine venti sui; et percutiet illum in septem rivis, et faciet calcari cum calceamentis. 16. And there shall be an highway for the remnant of the people which shall be left, from Assyria; like as it was to Israel in the day that he came up out of the land of Egypt.</p>
+
+<p style="text-align:right;" markdown="1">16. Et erit semita reliquiis populi ejus, quae residuae erunt ab Assur, quemadmodum fuit Israel, in die qua ascendit e terra Aegypti.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 12:1-6</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-12-1-6" data-ref="ISAIAH CHAPTER 12:1-6" style="display:none">ISAIAH CHAPTER 12:1-6</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">12:1-6</span></p>
+
+<strong>1.</strong> And in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Behold, God *is* my salvation; I will 2. Ecce Deus salus mea: confidam,</p> <!-- PAGE 898 --> <p style="margin-left:2em;" markdown="1">trust, and not be afraid: for the Lord JEHOVAH *is* my strength and my song; he also is become my salvation.</p>
+
+<p style="text-align:center" markdown="1">et non pavebo. Quoniam fortitudo mea et canticum Deus Iehova; factusque est (vel *erit*) mihi in salutem. 3. Therefore with joy shall ye draw water out of the wells of salvation.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Haurietis aquas cum gaudio, de fontibus salvatoris (vel, *salutis*). 4. And in that day shall ye say, Praise the Lord, call him his name, declare his doings among the people, make mention that his name is exalted.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et dicetis in die illa: Canite Iehovae; invocate nomen ejus; celebrate in populis opera ejus; commemorate, quia nomen ejus exaltatum est. 5. Sing unto the Lord; for he hath done excellent things: this *is* known in all the earth.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Psallite Iehovae, quoniam magnifica gessit; et hoc vulgatum est per totam terram. 6. Cry out and shout, thou inhabitant of Zion: for great is the Holy One of Israel in the midst of thee.</p>
+
+<p style="text-align:right;" markdown="1">6. Jubila et canta habitatrix Sion; quia magnus in medio tui Sanctus Israel.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 13:1-22</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-13-1-22" data-ref="ISAIAH CHAPTER 13:1-22" style="display:none">ISAIAH CHAPTER 13:1-22</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">13:1-22</span></p>
+
+<strong>1.</strong> The burden of Babylon, which Isaiah the son of Amoz did see.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus Babylonis, quod vidit Isaias, filius Amoz. 2. Lift ye up a banner upon the high mountain, exalt the voice unto them, shake the hand, that they may go into the gates of the nobles.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Super montem excelsum levate signum; attollite vocem ad eos; agitate manum, ut ingrediantur portas munificorum. 3. I have commanded my sanctified ones, I have also called my mighty ones for mine anger, *even* them that rejoice in my highness.</p>
+
+<p style="text-align:right;" markdown="1">3. Ego praecepi sanctificatis meis; adeoque vocavi fortes meos ad iram meam, laetantes gloria mea.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** The noise of a multitude in the mountains, like as of a great people; a tumultuous noiise of the kingdoms of nations gathered together: the Lord of hosts mustereth the host of the</p>
+
+<p style="text-align:right;" markdown="1">4. Vox multitudinis in montibus instar populi multi. Vox sonitus regnorum, gentium congregatarum; Iehova exercituum recenset exercitum belli.</p>
+
+<!-- PAGE 899 -->
+
+<p style="margin-left:2em;" markdown="1">battle. 5. They come from a far country, from the end of heaven, *even* the Lord and the weapons of his indignation, to destroy the whole land.</p>
+
+<p style="text-align:right;" markdown="1">5. Venientes e terra longinqua, ab extremo coelorum, Iehova et vasa furoris ejus, ad vastandam universam terram.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Howl ye; for the day of the Lord is at hand; it shall come as a destruction from the Almighty.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Ululate; quoniam propinquus est dies Iehovae; quasi vastitas a robusto (*vel, a vastatore robusto*) veniet. 7. Therefore shall all hands be faint, and every man’s heart shall melt:</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Propterea omnes manus dissolventur, et omne cor hominis liquefiet. 8. And they shall be afraid: pangs and sorrows shall take hold of them; they shall be in pain as a woman that travaileth: they shall be amazed one at another; their faces *shall be as* flames.</p>
+
+<p style="text-align:right;" markdown="1">8. Et terrbuntur; angustiae et dolores apprehendent; instar parturientis dolebunt; quisque ad proximum suum obstupescet; facies flammarum, facies eorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Behold, the day of the Lord cometh, cruel both with wrath and fierce anger, to lay the land desolate: and he shall destroy the sinners thereof out of it.</p>
+
+<p style="text-align:right;" markdown="1">9. Ecce dies Iehovae veniet saevus; et indignatio, et aestus irae, ut redigat terram in solitudinem, et sceleratos ejus deleat ex ea.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** For the stars of heaven, and the constellations thereof, shall not give their light: the sun shall be darkened in his going forth, and the moon shall not cause her light to shine.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Itaque stellae coelorum et sidera non expandent lumen suum; obtenebratus erit Sol in egressu suo, et Luna non emittet fulgorem suum. 11. And I will punish the world for *their* evil, and the wicked for their iniquity; and I will cause the arrogancy of the proud to cease, and will lay low the haughtiness of the terrible.</p>
+
+<p style="text-align:right;" markdown="1">11. Et visitabo super orbem malitiam, et super impios iniquitatem eorum; et cessare faciam arrogantiam superborum, et altitudinem tyrannorum dejiciam.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** I will make a man more precious than fine gold; even a man than the</p>
+
+<p style="text-align:right;" markdown="1">12. Pretiosiorem reddam mortalem auro puro, et hominem massa auri</p> <!-- PAGE 900 --> <p style="margin-left:2em;" markdown="1">golden wedge of Ophir. ex Ophir. 13. Therefore I will shake the heavens, and the earth shall remove out of her places, in thewrath of the Lord of hosts, and in the day of his fierce anger.</p>
+
+<p style="text-align:right;" markdown="1">13. Propterea concutiam coelos, et movebitur terra loco suo, in indignatione Iehovae exercituum, et in die aestus irae ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** And it shall be as the chased roe, and as a sheep that no man taketh up: they shall every man turn to his own people, and flee every one into his own land.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Eritque quasi damula impulsa, et ovis quam nemo colligit; quisque ad populum suum respiciet, et quisque ad terram suam confugiet. 15. Every one that is found shall be thrust through; and every one that is joined *unto them* shall fall by the sword.</p>
+
+<p style="text-align:right;" markdown="1">15. Quisque deprehensus fuerit confodietur; et omnis aggregatus cadet in gladio.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Their children also shall be dashed to pieces before their eyes; their houses shall be spoiled, and their wives ravished.</p>
+
+<p style="text-align:right;" markdown="1">16. Parvuli eorum allidentur coram ipsis, diripientur domus ipsorum, et uxores eorum violabuntur.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Behold, I will stir up the Medes against them, which shall not regard silver; and *as for* gold, they shall not delight in it.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Ecce, ego contra vos suscito Medos, qui de argento non cogitabunt, nec aurum ipsum appetent. 18. *Their* bows also shall dash the young men to pieces; and they shall have no pity on the fruit of the womb; their eye shall not spare children.</p>
+
+<p style="text-align:right;" markdown="1">18. Et arcubus pueros allident, fructus ventris non miserebuntur, nec parcet filiis oculus eorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** And Babylon, the glory of kingdoms, the beauty of the Chaldees’ excellency, shall be as when God overthrew Sodom and Gomorrah.</p>
+
+<p style="text-align:right;" markdown="1">19. Et erit Babel, decor regnorum et ornamentum splendoris Chaldaeorum, instar subversionis Dei in Sodoma et Gomorrha.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** It shall never be inhabited, neither shall it be dwelt in from generation to generation: neither shall the Arabian pitch tent there; neither shall the</p>
+
+<p style="text-align:right;" markdown="1">20. Nunquam amplius sedebit, neque habitabit in generationem et generationem; neque figet illic tabernaculum Arabs, neque</p> <!-- PAGE 901 --> shepherds make their fold there: pastores illic accubare facient gregem. 21. But wild beasts of the desert shall lie there; and their houses shall be full of doleful creatures; and owls shall dwell there, and satyrs shall dance there.
+
+<p style="text-align:right;" markdown="1">21. Sed ibi cubabunt Ziim, et domus eorum implebunt Ohim; illic habitabunt filiae Struthionis, et illic Satyri saltabunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** And the wild beasts of the islands shall cry in their desolate houses, and dragons in *their* pleasant palaces; and her time *is* near to come, and her days shall not be prolonged.</p>
+
+<p style="text-align:right;" markdown="1">22. Et clamabunt Iim in magnificis aedibus eorum, et dracones in palatiis voluptuosis; ac tempus quidem ejus prope est, neque protrahentur dies ejus.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 14:1-32</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-14-1-32" data-ref="ISAIAH CHAPTER 14:1-32" style="display:none">ISAIAH CHAPTER 14:1-32</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">14:1-32</span></p>
+
+<strong>1.</strong> For the Lord will have mercy on Jacob, and will yet choose Israel, and set them in their own land: and the strangers shall be joined with them, and they shall cleave to the house of Jacob.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** And the people shall take them, and bring them to their place; and the house of Israel shall possess them in the land of the Lord for servants and handmaids: and they shall take them captives, whose captives they were; and they shall rule over their oppressors.</p>
+
+<p style="text-align:right;" markdown="1">2. Et assument eos populi, inducentque eos in locum suum, possidebitque eos domus Israel in terra Iehovae, in servos et ancillas; et capient eos quorum fuerant captivi, imperabuntque oppressoribus suis.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And it shall come to pass, in the day that the Lord shall give thee rest from thy sorrow, and from thy fear, and from the hard bondage wherein thou wast made to serve,</p>
+
+<p style="text-align:right;" markdown="1">3. Et erit in die quo tibi requiem dederit Iehova a labore tuo, et a tremore tuo, et a servitudine dura quae imposita fuerat tibi:</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** That thou shalt take up this proverb against the king of Babylon,</p>
+
+<p style="text-align:right;" markdown="1">4. Tunc sumes dictum hoc super Regem Babylonis, et dices:</p> <!-- PAGE 902 --> <p style="margin-left:2em;" markdown="1">and say, How hath the oppressor ceased! The golden city ceased!</p>
+
+Quomodo cessavit exactor? Cessavit cupida auri? 5. The Lord hath broken the staff of the wicked, *and* the scepter of the rulers.
+
+<p style="margin-left:2em;" markdown="1">**5.** Confregit Iehova baculum impiorum, sceptrum dominantium. 6. He who smote the people in wrath with a continual stroke, he that ruled the nations in anger is persecuted, *and* none hindereth.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Quod percutiebat populos in ira plaga perpetua; dominabatur in iracundia Gentibus; si quis persequutionem patiebatur, non prohibuit. 7. The whole earth is at rest, *and* is quiet: they break forth into singing.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Quievit, tranquilla est omnis terra, cecinerant laudem. 8. Yea, the fir-trees rejoice at thee, *and* the cedars of Lebanon, *saying*, Since thou art laid down, no feller is come up against us.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Etiam abietes laetatae sunt super te, cedri Libani; ex quo quievisti non ascendit succisor contra nos. 9. Hell from beneath is moved for thee to meet *thee* at thy coming: it stirreth up the dead for thee, *even* all the chief ones of the earth: it hath raised up from their thrones all the kings of the nations.</p>
+
+<p style="text-align:right;" markdown="1">9. Infernus subtus commotus est propter te, in occursum adventus tui excitavit tibi mortuos, et omnes duces terrae suscitavit de soliis suis, omnes Reges gentium.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** All they shall speak and say untothee, Art thou also become weak as we? Art thou become like unto us?</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Omnes loquentur, et dicent tibi: Tu quoque infirmitate affectus es sicut nos? et similis factus es nobis? 11. Thy pomp is brought down to the grave, *and* the noise of thy viols: the worm is spread under thee, and the worms cover thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Deposita est in sepulchrum magnificentia tua, et strepitus musicorum instrumentorum tuorum; subter te stratus est vermis, et operiunt te vermiculi. 12. How art thou fallen from heaven, O Lucifer, son of the morning! *How* art thou cut down to the ground, which didst weaken the nations!</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Quomodo cecidisti e coelo Lucifer fili Aurorae? Quomodo in terram detractus es, sortem projiciens super Gentes (*vel, debilitans gentes*)? 13. For thou hast said in thine heart, I 13. Atqui tu dicebas in corde tuo,</p> <!-- PAGE 903 --> <p style="margin-left:2em;" markdown="1">will ascend into heaven, I will exalt my throne above the stars of God: I will sit also upon the mount of the congregation, in the sides of the north:</p>
+
+<p style="text-align:right;" markdown="1">Ascendam in coelum: in supernis juxta sidera Dei collocabo solium meum, et sedebo in monte testimonii, in lateribus Aquilonis.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** I will ascend above the heights of the clouds; I will be like the most High.</p>
+
+<p style="text-align:right;" markdown="1">14. Ascendam super excelsa nubium, et ero similis Altissimo.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Yet thou shalt be brought down to hell, to the sides of the pit.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Tu vero in sepulchrum detractus es, ad latera foveae. 16. They that see thee shall narrowly look upon thee, *and* consider thee, *saying, Is* this the man that made the earth to tremble, that did shake kingdoms;</p>
+
+<p style="text-align:right;" markdown="1">16. Videntes te inclinabunt se, et attente intuebuntur. Anne hic est vir ille tremefaciens terram, concutiens regna?</p>
+
+<p style="margin-left:2em;" markdown="1">17. *That* made the world as a wilderness, and destroyed the cities thereof; *that* opened not the house of his prisoners?</p>
+
+<p style="text-align:right;" markdown="1">17. Posuit orbem quasi desertum, urbes ejus excidit, vinctis suis non aperuit domum.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** All the kings of the nations, *even* all of them, lie in glory, every one in his own house:</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Omnes Reges gentium, ipsi, inquam omnes jacent cum gloria; quisque domi suae. 19. But thou art cast out of thy grave like an abominable branch, *and as* the raiment of those that are slain, thrust through with a sword, that go down to the stones of the pit; as a carcass trodden under feet.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Tu autem projectus es e sepulchro tuo, tanquam surculus detestandus, tanquam vestes interfectorum, qui gladio caesi sunt, descendentes in foveam; ut cadaver proculcatum. 20. Thou shalt not be joined with them in burial, because thou hast destroyed thy land, *and* slain thy people: the seed of evil doers shall never be renowned.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Non conjunges te cum eis in sepultura; quoniam terram tuam vastasti, populum tuum occidisti, non memorabitur perpetuo semen impiorum. 21. Prepare slaughter for his children for the iniquity of their fathers; that they do not rise, nor possess the land, nor fill the face of the world</p>
+
+<p style="text-align:right;" markdown="1">21. Praeparate filiis ejus mactationem, in iniquitate patrum suorum; ne consurgant et possideant terram atque impleant</p> <!-- PAGE 904 --> with cities. superficiem orbis urbibus. 22. For I will rise up against them, saith the Lord of hosts, and cut off from Babylon the name, and remnan, and son, and nephew, saith the Lord.
+
+<p style="margin-left:2em;" markdown="1">**22.** Nam consurgam super eos dicit Iehova exercituum, et exterminabo e Babylone nomen et exterminabo e Babylone nomen et reliquias, filium et nepotem, dicit Iehova. 23. I will also make it a possession for the bittern, and pools of water and I will sweep it with the besom of destruction, saith the Lord of hosts.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Et ponam eam in possessionem erinacei, et in stagna aquarum, et scopabo eam scopa evacuans, dicit Iehova exercituum. 24. The Lord of hosts hath sworn, saying, Surely as I have thought, so shall it come to pass; and as I have purposed, *so* shall it stand;</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Juravit Iehova exercituum, dicendo: Si non quemadmodum cogitavi, sic factum est; et quemadmodum consultavi, ita stabit; 25. That I will break the Assyrian in my land, and upon my mountains tread him under foot: then shall his yoke depart from off them, and his burden depart from off their shoulders.</p>
+
+<p style="text-align:right;" markdown="1">25. Ut conteram Assur in terra mea, et in montibus meis conculcem eum; et recedat ab eis jugum illius, et onus illius ab humero ejus anferatur.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** This *is* the purpose *that is* purposed upon the whole earth; and this *is* the hand*that is* stretched out upon all the nations.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Hoc consilium quod consultatum est super totam terram; et haec manus extenta super omnes gentes. 27. For the Lord of hosts hath purposed, and who shall disannul *it?* And his hand *is* stretched out, and who shall turn it back?</p>
+
+<p style="text-align:right;" markdown="1">27. Quoniam Iehova exercituum decrevit, et quis dissolvet? Manus ejus extenta, et quis avertet eam?</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** In the year that king Ahaz died was this burden.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Anno quo mortuus est Rex Achaz, fuit hoc onus. 29. Rejoice not thou, whole Palestina, because the rod of him that smote thee is broken: for out of the serpent’s root shall come forth a cockatrice, and his fruit *shall be* a</p>
+
+<p style="text-align:right;" markdown="1">29. Ne laeteris universa tu Philistaea; quoniam confracta sit virga percutientis te. Nam de radice colubri nascetur regulus, et fructus ejus serpens ignitus.</p>
+
+<!-- PAGE 905 -->
+
+<p style="margin-left:2em;" markdown="1">fiery flying serpent. 30. And the first-born of the poor shall feed, and the needy shall lie down in safety; and I will kill thy root with famine, and he shall slay thy remnant.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Et pascentur primogeniti pauperum, et inopes secure accubabunt; et fame interire faciam radicem tuam, et reliquias tuas occidet. 31. Howl, O gate; cry, O city; thou, whole Palestina, *art* dissolved: for there shall come from the north a smoke, and none *shall be* alone in his appointed times.</p>
+
+<p style="margin-left:2em;" markdown="1">**31.** Ulula porta, clama civitas, liquefacta es Palestina, universa tu. Quoniam ab Aquilone venit fumus; nec quisquam solus praefixo ejus die. 32. What shall *one* then answer the messangers of the nation? That the Lord hath founded Zion, and the poor of his people shall trust in it.</p>
+
+<p style="text-align:right;" markdown="1">32. Qwuid autem respondebitur nuntiis gentis? Nempe quod Iehova fundavit Sion, et in ea fiduciam habebunt pauperes populi ejus.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 15:1-9</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-15-1-9" data-ref="ISAIAH CHAPTER 15:1-9" style="display:none">ISAIAH CHAPTER 15:1-9</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">15:1-9</span></p>
+
+<strong>1.</strong> The burden of Moab. Because in the night Ar of Moab is laid waste *and* brought to silence; because in the night Kir of Moab is laid waste, *and* brought to silence:
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus Moab. Quoniam in nocte vastata est Ar-Moab, in silentium redacta est; certe in nocte vastata est Kir-Moab, in silentium redacta. 2. He is gone up to Bajith, and to Dibon, the high places, to weep: Moab shall howl over Nebo, and over Medeba: on all their heads *shall be* baldness, *and* every beard cut off.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Ascendet in domum, et Dibon ad excelsa, ad fletum super Nebo, et super Medba Moab, ululabit. Super omne caput ejus calvitium, et omnis barba detonsa. 3. In their streets they shall gird themselves with sackcloth: on the tops of their houses, and in their streets, every one shall howl, weeping abundantly.</p>
+
+<p style="text-align:right;" markdown="1">3. In compitis ejus accincti erunt sacco; super tecta ejus et in vicis ejus omnis ululabit, descendet ad fletum.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And Heshbon shall cry, and 4. Vociferabitur Hosbon et Eleale;</p>
+
+<!-- PAGE 906 -->
+
+<p style="margin-left:2em;" markdown="1">Elealeh; their voice shall be heard *even* unto Jahaz: therefore the armed soldiers of Moab shall cry out; his life shall be grievous unto him.</p>
+
+<p style="text-align:center" markdown="1">usque ad Iahaz audietur vox eorum; propterea expediti Moab ululabunt; anima cujusque ululabit sibi. 5. My heart shall cry out for Moab; his fugitives *shall flee* unto Zoar, an heifer of three years old: for by the mounting up of Luhith with weeping shall they go it up; for in the way of Horonaim they shall raise up a cry of destruction.</p>
+
+<p style="text-align:right;" markdown="1">5. Cor meum propter Moab vociferabitur; fugitivi ejus ad Zoar, vitulam triennem per ascensum Luhith cum fletu ascendent: per viam Horonaim clamorem contritionis excitabunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** For the waters of Nimrim shall be desolate: for the hay is withered away, the grass faileth, there is no green thing.</p>
+
+<p style="text-align:right;" markdown="1">6. Aquae Nimrim exinanitae sunt; aruit gramen, defecit herba, olus non superfuit.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Therefore the abundance they have gotten, and that which they have laid up, shall they carry away to the brook of the willows.</p>
+
+<p style="text-align:right;" markdown="1">7. Itaque quod residuum quisque fecit, et opes suas deferent ad torrentem salicum, (*vel*, Arabes.)</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** For the cry is gone round about the borders of Moab; the howling thereof unto Eglaim, and the howling thereof unto Beer-elim.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Circuivit clamor terminos Moab, usque in Eglaim ulutatus ejus, et usque in Beer-Elim ululatus ejus. 9. For the waters of Dimon shall be full of blood: for I will bring more upon Dimon, lions upon him that escapeth of Moab, and upon the remnant of the land.</p>
+
+<p style="text-align:right;" markdown="1">9. Quia aquae Dimon implebuntur sanguine; quoniam ponam super Dimon additiones iis qui evaserint de Moab leones, et reliquiis terrae.</p>
+
+<!-- PAGE 907 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 16:1-4</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-16-1-14" data-ref="ISAIAH CHAPTER 16:1-14" style="display:none">ISAIAH CHAPTER 16:1-14</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">16:1-14</span></p>
+
+<strong>1.</strong> Send ye the lamb to the ruler of the land from Sela to the wilderness, unto the mount of the daughter of Zion.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Mittite agnum dominatori terrae de petra deserti ad montem filiae Sion. 2. For it shall be, *that* as a wandering bird cast out of the nest, *so* the daughters of Moab shall be at the fords of Arnon.</p>
+
+<p style="text-align:right;" markdown="1">2. Erit autem sicut avis emissa, recedens e nido: ita erunt filiae Moab ad transitus Arnon.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Take counsel, execute judgment; make thy shadow as the night in the midst of the noon-day; hide the outcasts; bewray not him that wandereth.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Cogite consilium, facite judicium; pone sicut noctem umbram tuam in medio meridici; absconde expulsos, profugum ne prodas. 4. Let mine outcasts dwell with thee, Moab; be thou a covert to them from the face of the spoiler: for the extortioner is at an end, the spoiler ceaseth, the oppressors are consumed out of the land.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Peregrinentur apud te ejecti mei. Moab, sis illis latibulum a facie vastatoris; quoniam cessavit emunctor, finitus est vastator, consumptus est conculcator e terra. 5. And in mercy shall the throne be established; and he shall sit upon it in truth in the tabernacle of David, judging, and seeking judgment, and hasting righteousness.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Et praeparabitur in misericordia solium, sedebitque super ipsum in firmitate, in tabernaculo David qui judicet, et quaerat judicium, et acceleret justitiam. 6. We have heard of the pride of Moab, (he *is* very proud,) *even* of his haughtiness, and his pride, and his wrath: *but* his lies *shall* not *be* so.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Audivimus superbiam Moab (superbus est valde) superbiam ejus, et arrogantiam ejus, et insolentiam (*vel, indignationem*) ejus. Sed non rata erunt mendacia ejus. 7. Therefore shall Moab howl for Moab, every one shall howl: for the foundations of Kir-hareseth shall ye mourn; surely *they are* stricken.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Propterea ululabit Moab ad Moab, totus ululabit, propter fundamenta Kir-hareseth; gemetis tantum percussi. 8. For the fields of Heshbon languish, 8. Quoniam vites Hesbon excisae</p>
+
+<!-- PAGE 908 -->
+
+<p style="margin-left:2em;" markdown="1">*and* the vine of Sibmah: the lords of the heathen have broken down the principal plants thereof; they are come *even* unto Jazer, they wandered *through* the wilderness: her branches are stretched out, they are gone over the sea:</p>
+
+<p style="text-align:center" markdown="1">sunt, vitis Sibma. Domini gentium conculcarunt eximias ejus propagines (*vel, palmites*) quae usque ad Iazer pervenerant; erraverant usque ad desertum, nobiles ejus plantae prostratae sunt, quae transibant mare. 9. Therefore I will bewail with the weeping of Jazer the vine of Sibmah: I will water thee with my tears, O Heshbon, and Elealeh; for the shouting for thy summer-fruits, and for thy harvest, is fallen.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Propterea flebo in fletu Iazer vitis Sibma; inebriabo te lachrymis meis Hesbon et Eleale; quoniam super collectionem tuam, et super messem tuam irruet (*vel, cadet*) canticum. 10. And gladness is taken away and joy out of the plentiful field; and in the vineyards there shall be no singing, neither shall there be shouting: the treaders shall tread out no wine in *their* presses; I have made *their vintage*-shouting to cease.</p>
+
+<p style="text-align:right;" markdown="1">10. Sublatum est gaudium et exultatio ab agro fertili; in vineis non exultabitur, nec jubilabitur. Vinum in torcularibus non calcabit calcator, canticum quiescere feci.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Wherefore my bowels shall sound like an harp for Moab, and mine inward parts for Kir-haresh.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Propterea viscera mea super Moab quasi cithara sonabunt, et interiora mea super Kir-hareseth. 12. And it shall come to pass, when it is seen that Moab is weary on the high place, that he shall come to his sanctuary to pray; but he shall not prevail.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et erit cum apparuerit fatigatum esse Moab super excelsa, tunc veniet ad sanctuarium precandi causa; nec proficiet. 13. This *is* the word that the Lord hath spoken concerning Moab since that time.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Hoc est verbum quod protulit Iehova super Moab ab hoc tempore. 14. But now the Lord hath spoken, saying, Within three years, as the years of an hireling, and the glory of Moab shall be contemned, with all that great multitude; and the remnant *shall be* very small *and* feeble.</p>
+
+<p style="text-align:right;" markdown="1">14. Nunc, inquam, locutus est Iehova, dicens, Tres anni, quasi anni mercenarii; et tunc in ignominiam vertetur gloria Moab, in tota multitudine ejus, quamvis multa; et reliquiae ejus paucae, exiguae, et invalidae.</p>
+
+<!-- PAGE 909 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 17:1-14</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-17" data-ref="ISAIAH CHAPTER 17" style="display:none">ISAIAH CHAPTER 17</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">17</span></p>
+
+<strong>1.</strong> The burden of Damascus. Behold, Damascus is taken away from being a city, and it shall be a ruinous heap.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus Damasci. Ecce Damascus ablata est, ne sit civitas; nam erit acervus ruinae. 2. The Cities of Aroer are forsaken; they shall be for flocks, which shall lie down, and none shall make them afraid.</p>
+
+<p style="text-align:right;" markdown="1">2. Derelictae sunt urbes Aroer, in caulus vertentur; accubabunt, nec erit qui exterreat.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** The fortess also shall cease from Ephraim, and the kingdom form Damascus, and the remnant of Syria: they shall be as the glory of the children of Israel, saith the Lord of hosts.</p>
+
+<p style="text-align:right;" markdown="1">3. Et cessabit praesidium ab Ephraim, et regnum a Damasco. Et reliquiae Syriae, quasi gloria filiorum Israel erunt, dicit Iehova exercituum.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And in that day it shall come to pass, that the glory of Jacob shall be made thin, and the fatness of his flesh shall wax lean.</p>
+
+<p style="text-align:right;" markdown="1">4. Et erit in die illa, attenuabitur gloria Iacob, et pinguedo carnis ejus macrescet.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** And it shall be, as when the harvest-man gathereth the corn, and reapeth the ears with his arm; and it shall be as he that gathereth ears in the valley of Rephaim.</p>
+
+<p style="text-align:right;" markdown="1">5. Et erit sicut qui colligit messem segitis, qui brachio suo spicasmetit; similiter ut quis colligit spicas in valle Rephaim.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Yet gleaning grapes shall be left in it, as the shaking of an olive tree, two or three berries in the top of the uppermost bough, four or five in the outmost fruitful branches therof, saith the Lord God of Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Et relinquetur in ea racematio, sicut excussio oleae, duae illic aut tres baccae restant in cacumine altioris rami, quatuor aut quinque in expansis ramis fructus ejus, dicit Iehovas Deus Israel. 7. At that day shall a man look to his Maker, and his eyes shall have respect to the Holy One of Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** In die illa respiciet homo ad factorem suum, et oculi ejus adsanctum Israelis intuebuntur. 8. And he shall not look to the alters, the work of his hands, neither shall</p>
+
+<p style="text-align:right;" markdown="1">8. Nec respiciet ad altaria opus manuum suarum, non aspiciet</p> <!-- PAGE 910 --> <p style="margin-left:2em;" markdown="1">respect that which his fingers have made, either the groves or the images.</p>
+
+<p style="text-align:center" markdown="1">quae fecerunt digiti ejus, nec lucos, nec simulachra. 9. In that day shall his strong cities be as a forsaken bough, and an uppermost branch, which they left because of the children of Israel: and there shall be desolation.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** In die illa erunt urbes fortitudinis ejus, quasi derelictio virgultiet frondis, quemadmodum reliquerunt coram filiis Israel; et eritdesolatio. 10. Because thou hast forgotten the God of thy salvation, and hast not been mindful of the Rock of thy strength, therefore shalt thou plant pleasant plants, and shalt set it with strange slips:</p>
+
+<p style="text-align:right;" markdown="1">10. Quoniam oblita es Dei salutis tuae, nec memor fuisti Dei fortitudinis; idcirco plantabis plantas amoenas, et palmitem alienum conseres.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** In the day shalt thou make thy plant to grow, and in the morning shalt thou make thy seed to flourish; but the harvest shall be a heap in the day of grief and of desperate sorrow</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Die plantationis tuae crescere facies eam, et mane germinare faciessemen tuum; sed recedet messis in die fruendi, et erit dolor desperatus. 12. Woe to the multitude of many people, which ,ale a noise like the noise of the seas; and to the rushing of nations, that make a rushing like the rushing of mighty waters!</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Hei multitudo populorum multorum; instar sonitus maris sonabunt, et strepitus nationum; instar strepitus aquarum ingentium tumultuabuntur. 13. The nations shall rush like the rushing of many waters: but God shall rebuke them, and they shall flee far off, and shall be chased as the chaff of the mountains before the wind; and like a rolling thing before the whilrwind.</p>
+
+<p style="text-align:right;" markdown="1">13. Strepent populi instar strepitus aquarum ingentium, et increpabit eum, et fugiet procul; fugabitur quasi stipula montium coram vento, et quasi globus coram turbine.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** And behold at evening-tide trouble; and before the morning he is not. This is the portion of them that spoil us, and the lot of them that rob us.</p>
+
+<p style="text-align:right;" markdown="1">14. Tempore vespertino ecce turbatio; antequam sit mane, nusquam erit. Haec est pars conculcantium nos, et sors eorum qui nos diripiunt.</p>
+
+<!-- PAGE 911 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 18:1-7</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-18" data-ref="ISAIAH CHAPTER 18" style="display:none">ISAIAH CHAPTER 18</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">18</span></p>
+
+<strong>1.</strong> Woe to the land shadowing with wings, which is beyond the rivers of Ethiopia:
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** That sendeth ambassadors by the sea, even in vessels of bulrushes upon the water, saying, Go, ye swift messengers, to a nation scattered and peeled, to a people terrible from their beginning hitherto; a nation meted out and trodden down, whose land the rivers have spoiled!</p>
+
+<p style="text-align:right;" markdown="1">2. Mittens per mare legatos, in vasis junceis super aquas. Ite nuntiiceleres ad gentem distractam et expilatam, ad populum formidabilem ab eoet deinceps, gentem undique conculcatam, cujus terram fluminadiripuerunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** All ye inhabitants of the world, and dwellers on the earth, see ye, when lifteth up an ensign on the mountains; and when he bloweth a trumpet, hear ye.</p>
+
+<p style="text-align:right;" markdown="1">3. Omnes habitatores orbis, et incolae terrae, cum signum sustulerit inmontibus, videbitis; cum tuba clanxerit, audietis.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** For so the Lord said unto me, I will take my rest, and I will consider in my dwelling-place like a clear heat upon herbs, and like a cloud of dew in the heat of harvest.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Porro sic mihi dixit Iehova, Quiescam, et videbo in tabernaculo meo,sicut calor siccans pluviam, et sicut nubes roscida in calore messis. 5. For afore the harvest, when the bud is pergect, and the sour grape is ripening in the flower, he shall both cut off the sprigs with pruninghooks, and take away and cut down the branches.</p>
+
+<p style="text-align:right;" markdown="1">5. Quia dum adfuerit messis, perfectum erit germen, et ex flore fructuserit maturescens; tum amputabit ipsos palmites falcibus, et propagines auferendo exscindet.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** They shall be left together unto the fowls of the mountains, and to the beasts of the earth: and the fowls shall summer upon them, and all the beast of the earth shall winter upon them.</p>
+
+<p style="text-align:right;" markdown="1">6. Derelinquentur pariter volatili montium et animalibus terrae. AEstivabit super illud volatile, et omnia animalia terrae hyemabunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** In that time shall the present be 7. Tempore illo adducetur Iehovae</p> <!-- PAGE 912 --> <p style="margin-left:2em;" markdown="1">brought unto the Lord of hosts of a people scattered and peeled, and from a people terrible from their beginning hitherto; a nation meted out and trodden under foot, whose land the rivers have spoiled, to the place of the name of the Lord of hosts, the mount Zion.</p>
+
+<p style="text-align:right;" markdown="1">exercituum munus, populus laceratuset expilatus, et de populo terribili, ex quo esse coepit et deinceps; gente undique conculcata, cujus terram flumina diripuerunt, ad locum nominis Iehovae exercituum, ad montem Sion.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 19:1-25</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-19" data-ref="ISAIAH CHAPTER 19" style="display:none">ISAIAH CHAPTER 19</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">19</span></p>
+
+<strong>1.</strong> The burden of Egypt. Behold, the Lord rideth upon a swift cloud, and shall come into Egypt: and the idols of Egypt shall be moved at his presence, and the heart of Egypt shall melt in the midst of it.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus Aegypti. Ecce Iehova equitat super nubem celerem, et veniet inAegyptum; et commovebuntur idola Aegypti a facie ejus, et cor Aegypti dissolvetur in medio ejus. 2. And I will set the Egyptians against the Egyptians: and they shall fight every one against his brother, and every one against his neighbor ; city against city, and kingdom against kingdom.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Et committam Aegyptios cum Aegyptiis, pugnabit quisque tunc contrafratrem suum; quisque, inquam, contra proximum suum; civitas contracivitatem, et regnum contra regnum. 3. And the spirit of Egypt shall fail in the midst thereof; and I will destroy the counsel thereof: and they shall seek to the idols, and to the charmers, and to them that have familiar spirits, and to the wizards.</p>
+
+<p style="text-align:right;" markdown="1">3. Et exinanietur spiritus Aegypti in medio ejus: et consilium ejusdestruam, etiamsi quaerant illod apud idola, apud magos, apud pythones,apud divinos.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And the Egyptians will I give over into the hand of a cruel lord; and a fierce king shall rule over them, saith the Lord, the Lord of hosts.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et tradam Aegyptios in manum domini saevi, et rex fortis dominabitureis, dicit Dominus Iehova exercituum. 5. And the waters shall fail from the sea, and the river shall be wasted and dried up.</p>
+
+<p style="text-align:right;" markdown="1">5. Tunc deficient aquae a mari, et fluvius exsiccabitur atque arescet.</p>
+
+<!-- PAGE 913 -->
+
+<p style="margin-left:2em;" markdown="1">**6.** And they shall turn the rivers far away; and the brooks of defense shall be emptied and dried up: the reeds and flags shall wither.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Elongabuntur flumina; exhaurientur et siccabuntur rivi munitionis, arundo et carectum succidentur. 7. The paper reeds by the brooks, by the mouth of the brooks, and every things sown by the brooks, shall wither, be driven away, and be no more.</p>
+
+<p style="text-align:right;" markdown="1">7. Herbae ad rivum et super os rivi, et omnis sementis rivi arescet, etpropelletur, ut non sit.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** The fishers also shall mourn, and all they that cast angle into the brooks shall lament, and they that spread nets upon the water shall languish.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Et moerebunt piscatores, et lugebunt omnes qui hamum projiciunt in rivum; qui expandunt rete super faciem aquarum debilitabuntur. 9. Moreover, they that work in fine flax, and they that weave net-works, shall be confounded.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Qui in lino optimo operantur erubescent, et qui texunt plagas foratas, (*vel, pellucidas*.) 10. And they shall be broken in the purposes thereof, all that make sluices and ponds for fish.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Erunt enum retia ejus dissipata; et omnes architecti retis (*vel, mercedis*) tristes erunt anima. 11. Surely the princes of Zoan are fools, the counsel of the wise counsellors of Paroaoh is become brutish: how say ye unto Paraoh, I am the son of the wise, the son of ancient kings?</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Certe stulti principes Zoan; prudentum consiliariorum Pharaonis consilium unfatuatum est. Quomodo dicitis Pharaoni, Filius sapientum ego, et filius regum antiquorum? 12. Where are they? Where are thy wise men? And let them tell thee now, and let them know what the Lord of hosts hath purposed upon Egypt.</p>
+
+<p style="text-align:right;" markdown="1">12. Ubi nunc prudentes tui? ut annuntient tibi, aut etiam sciant quid decreverit Iehova exercituum super Aegyptum.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** The princes of Zoan are become fools, the princes of Noph are deceived; they have also seduced Egypt, even they that are the stay of the tribes thereof.</p>
+
+<p style="text-align:right;" markdown="1">13. Infatuati sunt principes Zoan, decepti sunt principes Noph,seduxerunt Aegyptum angulus tribuum ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** The Lord hath mingled a perverse 14. Iehova miscuit in medio ejus</p> <!-- PAGE 914 --> <p style="margin-left:2em;" markdown="1">spirit in the midst thereof; and they have caused Egypt to err in every work thereof, as a drunken man staggereth in his vomit.</p>
+
+<p style="text-align:center" markdown="1">spiritum perversitatis; et seduxerunt Aegyptum in omni opere ejus, quemadmodum circumagitur ebrius in vomito suo. 15. Neither shall there be any work for Egypt, which the head or tail, branch or rush, may do.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Nec erit Aegypto opus quod faciat caput vel cauda, ramus aut juncus. 16. In that day shall Egypt be like unto women; and it shall be afraid and fear, because of the shaking of the hand of the Lord of hosts, which he shaketh over it.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** In die illa erit Aegyptus instar mulierum; horrebit enim et pavebit a facie agitationis manus Iehovae exercituum, quam agitabit ipse supeream. 17. And the land of Judah shall be a terror unto Egypt; every one that maketh mention thereof shall be afraid in himself, because of the counsel of the Lord of hosts, which he hath determined against it.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Et erit terra Iuda Aegyptiis in tremorem. Omnis qui recordatusfuerit illius pavebit super ipsam, propter consilium Iehovae exercituum,quod devrevit super eam. 18. In that day shall five cities in the land of Egypt speak the language of Canaan, and swear to the Lord of hosts: one shall be called, The city of destruction.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** In die illa erunt quinque civitates in terra Aegypti loquenteslabio Canaan, et jurantes per Iehovam exercituum. Civitas desolationisuna vocabitur. 19. In that day shall there be an altar to the Lord in the midst of the land of Egypt, and a pillar at the border thereof to the Lord.</p>
+
+<p style="text-align:right;" markdown="1">19. In die illa erit altare Iehovae in medio terrae Aegypti, statuaitem juxta terminum ejus Iehovae.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** And it shall be for a sign and for a witness unto the Lord of hosts in the land of Egypt: for they shall cry unto the Lord because of the oppressors, and he shall send them a savior, and a great one, and he shall deliver them.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Eritque in signum et in testem Iehovae exercituum, in terra Aegypti; quia clamabunt ad Iehovam propter oppressores, et mittet eis servatorem et principem, ut liberet eos. 21. And the Lord shall be known to Egypt, and the Egyptians shall know the Lord in that day, and shall do sacrifice and oblations; yea, they shall</p>
+
+<p style="text-align:right;" markdown="1">21. Et cognoscetur Iehova ab Aegyptiis, cognoscent, inquam, AegyptiiIehovam in illa die; et facient sacrificium et oblationem,</p> <!-- PAGE 915 --> <p style="margin-left:2em;" markdown="1">vow a vow unto the Lord, and perform it.</p>
+
+vovebuntquevota Iehova et reddent. 22. And the Lord shall smite Egypt; he shall smite and heal it: and they shall return even to the Lord, and he shall be entreated of them, and shall heal them.
+
+<p style="margin-left:2em;" markdown="1">**22.** Itaque percutiet Iehova Aegyptum, percutiens et sanans;convertentur enim ad Iehovam, et exorabitur ab eis, et sanabit eos. 23. In that day shall there be a highway out of Egypt to Assyria, and the Assyrian shall come into Egypt, and the Egyptian into Assyria; and the Egyptians shall serve with the Assyrians.</p>
+
+<p style="text-align:right;" markdown="1">23. In die illa erit via de Aegypto in Assyriam; commeabunt Assyrii inAegyptum, et Aegyptii in Assyriam; et colent Aegyptii Assyrios(*vel, cum Assyriis*)</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** In that day shall Israel be the third with Egypt and with Assyria, even a blessing in the midst of the land:</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** In die illa erit Israel tertia cum Aegypto, et Assyria benedictioin medio terrae. 25. Whom the Lord of hosts shall bless, saying, Blessed be Egypt my people, and Assyria the work of my hands, and Israel mine inheritance.</p>
+
+<p style="text-align:right;" markdown="1">25. Quia benedicet illi Iehova exercituum, dicens: Benedictus populusmeus Aegyptius, et opus manus meae Assyrius, et haereditas mea Israel.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 20:1-6</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-20" data-ref="ISAIAH CHAPTER 20" style="display:none">ISAIAH CHAPTER 20</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">20</span></p>
+
+<strong>1.</strong> In the year that Tartan came unto Ashdod, (when Sargon the king of Assyria sent him,) and fought against Ashdod, and took it;
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Anno quo venit Thartan in Asdod, cum misisset eum Sargon rexAssyriae, oppugnassetque Asdod, et cepisset. 2. At the same time spake the Lord by Isaiah the son Amoz, saying, Go and loose the sackcloth from off thy loins, and put off thy shoe from thy foot. And he did so, walking naked and barefoot.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Tempore illo, inquam, locutus est Iehova iu manu Isaiae filii Amoz, dicendo: Vade et solve saccum de lumbis tuis, et calciamentum tuum exrahe de pede tuo; fecitque sic, ambulans nudus et discalceatus. 3. And the Lord said, Like as my 3. Et dixit Iehova: Sicut ambulavit</p> <!-- PAGE 916 --> <p style="margin-left:2em;" markdown="1">servant Isaiah hath walked naked and barefoot three years for a sign and wonder upon Egypt and upon Ethiopia;</p>
+
+<p style="text-align:center" markdown="1">servus meus Isaias nudus etdiscalceatus tribus annis, signum et portentum super Aegypto etEthiopia; 4. So shall the king of Assyria lead away the Egyptians prisoners, and the Ethiopians captives, young and old, naked and barefoot, even their buttocks uncovered, to the shame of Egypt.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Ita abducet rex Assur captivitatem Aegypti, et transmigrationemAethiopiae juvenum et senum, nudam et discalceatam, et discoopertosnatibus in ignominiam Aegypti. 5. And they shall be afraid and ashamed of Ethiopia their expectation, and of Egypt their glory.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Et timebunt, et pudefient ab Aethiopia respectu suo, et ab Aegyptogloriatione (*vel, pulchritudine*) sua. 6. And the inhabitant of this isle shall say in that day, Behold, such is our expectation, whither we flee for help to be delivered from the king of Assyria: and how shall we escape?</p>
+
+<p style="text-align:right;" markdown="1">6. Dicetque incola insulae hujus in die illa; Ecce, quomodo habeatrespectus noster, quo confugimus auxilii causa, ut liberemur a facieregis Assur; et quomodo effugiemus nos?</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 21:1-17</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-21" data-ref="ISAIAH CHAPTER 21" style="display:none">ISAIAH CHAPTER 21</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">21</span></p>
+
+<strong>1.</strong> The burden of the desert of the sea. As whirlwinds in the south pass through; so it cometh from the desert, from a terrible land.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus deserti maris, Sicut tempestates in australi regione, transiturae a deserto, veniet a terra horribili. 2. A grievous vision is declared unto me: The treacherous dealer dealeth treacherously, and the spoiler spoileth. Go up, O Elam; besiege, O Media: all the sighing thereof have I made to cease.</p>
+
+<p style="text-align:right;" markdown="1">2. Visio dura indicata est mihi: transgressor transgressori, etvastator vastatori. Ascende, Persa; obside Mede; omnem gemitum ejuscessare feci.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Therefore are my loins filled with pain: pangs have taken hold upon me,</p>
+
+<p style="text-align:right;" markdown="1">3. Propterea impleti sunt lumbi mei dolore; angustiae corripuerunt</p> <!-- PAGE 917 --> <p style="margin-left:2em;" markdown="1">as the pangs of a woman that travaileth: I was bowed down at the hearing of it; I was dismayed at the seeing of it.</p>
+
+<p style="text-align:right;" markdown="1">me,sicut angustiae parturientis; incurvatus sum audiendo, et videndoobstupui.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** My heart panted, fearfulness affrighted me: the night of my pleasure hath he turned into fear unto me.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Concussum est cor meum; horror perterruit me; noctem deliciarummearum posuit mihi in horrorem. 5. Prepare the table, watch ion the watch-tower, eat, drink: arise, ye princes, and anoint the shield.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Adorna mensam, speculare in specula, comede, bibe; surgite,Principes, et ungite clypeum. 6. For thus hath the Lord said unto me, Go, set a watchman, let him declare what he seeth.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Quoniam sic dixit ad me Dominus: Vade, constitue vigilem, quiannuntiet quod viderit. 7. And he saw a chariot with a couple of horsemen, a chariot of asses, and a chariot of camels; and he hearkened diligently with much heed.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Et vidit currum paris equitum, currum asini, et currum cameli;deinde attentius speculatus est, multum, inquam, speculatus est. 8. And he cried, A lion: My lord, I stand continually upon the watchtower in the day-time, and I am set in my ward whole nights;</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Tum clamavit, Leo. In specula mea, Domine mi, jugiter sto interdiu,et totis noctibus in custodia mea locatus sum. 9. And, behold, here cometh a chariot of men, with a couple of horsemen. And he answered and said, Babylon is fallen, is fallen; and all the graven images of her gods he hath broken unto the ground.</p>
+
+<p style="text-align:right;" markdown="1">9. Et ecce, hic venit currus hominis, par equitum. Et loquutus est, acdixit, Cecidit, cecidit Babel, et omnia sculptilia deorum ejus contrivitad terram.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** O my thrashing, and the corn of my floor: that which I have heard of the Lord of hosts, the God of Israel, have I declared unto you.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Tritura mea, et filius areae meae. Quae audivi a Iehovaexercituum Deo Israel, nuntiavi vobis. 11. The burden of Dumah. He calleth to me out of Seir, Watchman, what of the night? Watchman, what of the</p>
+
+<p style="text-align:right;" markdown="1">11. Onus Duma. Clamat ad me ex Seir: Custos, quid de nocte? Custos,quid de nocte?</p>
+
+<!-- PAGE 918 -->
+
+<p style="margin-left:2em;" markdown="1">night? 12. The watchman said, The morning cometh, and also the night: if ye will enquire, enquire ye; return, come.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Dixit custos: Venit mane, postea nox. Si interrogavarisinterrogate. Revertimini, venite. 13. The burden upon Arabie. In the forest in Atabia shall ye lodge, O ye travelling companies of Dedanim.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Onus in Arabia. In nemore in Arabia pernoctabitis, in viisDedanim. 14. The in habitants of the land of Tema brought water to him that was thirsty, they prevented with their bread him that fled.</p>
+
+<p style="text-align:right;" markdown="1">14. In occursum ferte aquas sitienti, icolae terrae Tema, pane suosuccurrite profugo.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** For they fled from the swords, from the drawn sword, and from the bent bow, and from the grievousness of war.</p>
+
+<p style="text-align:right;" markdown="1">15. Quia a facie gladiorum fugiunt, a facie gladii extenti, a faciearcus intenti, a facie gravitatis belli.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Fore thus hath the Lord said unto me, Within a year, according to the years of an hireling, and all the glory of Kedar shall fail:</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Nam sic dixit mihi Dominus: Adhuc annus, secundum annosmercenarii, tum deficiet omnis gloria Cedar; 17. And the residue of the number of archers, the mighty men of the children of Kedar, shall be diminished: for the Lord God of Israel hath spoken it.</p>
+
+<p style="text-align:right;" markdown="1">17. Et residuum arcus, quod numerabitur fortium filiorum Cedar,imminuetur; quoniam Iehova Deus Israel loquutus est.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 22:1-25</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-22" data-ref="ISAIAH CHAPTER 22" style="display:none">ISAIAH CHAPTER 22</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">22</span></p>
+
+<strong>1.</strong> The burden of the valley of vision. What aileth thee now, that thou art wholly gone up to the house-tops?
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus vallis visionis. Quid tibi hic, (*vel, nunc?*) quia tu universa conscendisti super tecta? 2. Thou that art full of stirs, a tumultuous city, a joyous city: thy slain men are not slain with the sword, nor dead in battle.</p>
+
+<p style="text-align:right;" markdown="1">2. Strepituum plena, urbs turbulenta, civitas exultans; interfecti tui non interfecti gladio, et nn mortui in praelio.</p>
+
+<!-- PAGE 919 -->
+
+<p style="margin-left:2em;" markdown="1">**3.** All thy rulers are fled together, they are bound by the archers: all that are found in thee are bound together, which have fled from far.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Cuncti principes tui profugerunt parita ab arcu; vincti sunt. Omnes, inquam, in te reperti vincti sunt pariter, qui a longinquo fugerunt. 4. There said I, Look away from me; I will weep bitterly, labor not to comfort me, because of the spoiling of the daughter of my people.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Propterea dixi, Desistite a me; amarus ero in fletu meo, ne contendatis me consolari super vastatione filiae populi mei. 5. For it is a day of trouble, and of treading down, and of perplexity by the Lord God of hosts in the valley of vision, breaking down the walls and of crying to the mountains.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Quoniam dies perturbationis, et conculcationis, et anxietatis DominoIehovae exercituum in valle visionis, diruenti urbem, et clamor admontem. 6. And Elam bare the quiver with chariots of men and horsemen, and Kir uncovered the shield.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Atqui Elam portans pharetram in curru hominis, equitum, inquam, et Ceir nudans clypeum. 7. And it shall come to pass, that thy choicest valleys shall be full of chariots, and the horsemen shall set themselves in array at the gate.</p>
+
+<p style="text-align:right;" markdown="1">7. Et fuit ut electio vallium tuarum repleta sit curribus, et equites instruendo instruerent ad portam.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** And he discovered the covering of Judah, and thou dist look in that day to the armor of the house of the forest.</p>
+
+<p style="text-align:right;" markdown="1">8. Et transtulit operimentum Iuda; et respexisti in die illa adarmaturam domus saltus.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Ye have seen also the breaches of the city of David, that they are many; and ye gathered together the waters of the lower pool:</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Et interruptiones civitatis David vidistis, quae multae erant; etcollegistis aquas piscinae inferioris. 10. And ye have numbered the houses of Jerusalem, and the houses have ye broken down to fortify the wall.</p>
+
+<p style="text-align:right;" markdown="1">10. Et domos Ierusalem numerastis; et domos diruistis ad muniendummurum.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Ye made also a ditch between the two walls for the water of the old pool: but ye have not looked unto the maker thereof, neither had respect</p>
+
+<p style="text-align:right;" markdown="1">11. Fossam quoque fecistis inter muros, aquis piscinae veteris, et nonrespexistis ad fictorum ejus, et opificem ejus ab antiquo (*vel*</p> <!-- PAGE 920 --> unto him that fashioned it long ago. *eminus*) non vidistis. 12. And in that day did the Lord God of hosts call to weeping, and to mourning, and to baldness, and to girding with sackcloth:
+
+<p style="margin-left:2em;" markdown="1">**12.** Porro vocavit Dominus Iehova exercituum in die isto ad fletum etlamentum, ad calvitium et cincturam sacci. 13. And behold joy and gladness, slaying oxen and killing sheep, eating flesh and drinking wine: let us eat and drink, for tomorrow we shall die.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Et ecce gaudium et laetitia, occidere bovem, mactare ovem, ederecarnes, et bibere vinum, comedere, inquam, et bibere; quia crasmoriemur. 14. And it was revealed in mine ears by the Lord of hosts, Surely this iniquity shall not be purged from you till ye die, saith the Lord God of hosts.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Id revelatum est in auribus Iehovae exercituum, Si remitteturvobis haec iniquitas, donec moriamini, dicit Dominus Iehova exercituum. 15. Thus saith the Lord God of hosts, Go, get thee unto this treasurer, even into Shebna, which is over the house, and say,</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Sic dicit Dominus Iehova exercituum, Vade, ingredere ad fautoremistum, ad Sabna praefectum domus. 16. What hast thou here, and whom hast thou here, that thou hast hewed thee out a sepulchre here, as he that heweth him out a sepulchre on high, and that graveth an hbitation for himself in a rock?</p>
+
+<p style="text-align:right;" markdown="1">16. Quid tibi hic? et quis tibi hic? quod tibi hic exciderissepulchrum, sicut qui in excelso excidit sepulchrum suum, aut qui inrupe sculpit habitaculum sibi.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Behold, the Lord will carry thee away with a mighty captivity, and will surely cover thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Ecce Iehova traducet te traductione insigni, et operiendo operiette.longinquam manibus; ibi morieris; et ibi currus gloriae tuae ignominiadomus domini tui. 18. He will surely violently turn and toss thee like a ball into a large country: there shalt thou die, and there the chariots of thy glory shall be the shame of thy lord's house.</p>
+
+<p style="text-align:right;" markdown="1">18. Convolvendo volvet te convolutione, quasi globam in terram</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** And I will drive thee from thy station, and from thy state shall he</p>
+
+<p style="text-align:right;" markdown="1">19. Et propulsabo te de statione tua, et de sede tuo te expellet.</p>
+
+<!-- PAGE 921 -->
+
+<p style="margin-left:2em;" markdown="1">pull thee down. 20. And it shall come to pass in that day, that I will call my servant Eliakim, the son of Hilkiah;</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Et erit in die illa: vocabo servum meum Eliakim, filium Helciae. 21. And I will clothe him with thy robe, and strengthen him with thy girdle, and I will commit thy government into his hand; and he shall be a father to the inhabitants of Jerusalem, and to the house of Judah.</p>
+
+<p style="text-align:right;" markdown="1">21. Et induam eum vestibus tuis, et balteo tuo roborabo eum; etpotestatem tuam tradam in manum ejus, et erit pater incolae Ierusalem etdomi Iuda.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** And the key of the house of David will I lay upon his shoulder: so he shall open, and none shall shut; and he shall shut, and none shall open.</p>
+
+<p style="text-align:right;" markdown="1">22. Et ponem clavem domus David super humerum ejus; aperiet, et nemoclaudet; claudet, et nemo aperiet.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** And I will fasten him as a nail in a sure place; and he shall be for a glorious throne to his father's house.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Et figam eum veluti clavum in loco fideli; eritque in soliumgloriae domui patris sui. 24. And they shall hang upon him all the glory of his father's house, the offspring and the issue, all vessels of small quantity, from the vessels of cups, even to all the vessels of flagons.</p>
+
+<p style="text-align:right;" markdown="1">24. Et suspendent ab eo omnem gloriam domus patris sui, nepotes etpronepotes, omnia vasa minora, a vasis craterarum ad cuncta vasamelodiarum.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** In that day, saith the Lord of hosts, shall the nail that is fastened in the sure place be removed, and be cut down, .and fall; and the burden that was upon it shall be cut off: for the Lord hath spoken it.</p>
+
+<p style="text-align:right;" markdown="1">25. In die illa, dicit Iehova exercituum, recedet clavus fixus in locofideli, frangetur et cadet, et dissipabitur onus quod fuit super ipsum; quia Iehova loquutus est.</p>
+
+<!-- PAGE 922 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 23:1-18</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-23" data-ref="ISAIAH CHAPTER 23" style="display:none">ISAIAH CHAPTER 23</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">23</span></p>
+
+<strong>1.</strong> The burden of Tyre. Howl, ye ships of Tarshish; for it is laid waste, so that there is no house, no entering in: from the land of Chitim it is revealed to them.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Onus Tyri. Ululate, naves Tharsis; quia devastatio facta est, utnon sit domus, non sit commeatus e terra Cittim. Revelatum est hoc eis. 2. Be still, ye inhabitatnts of the isle; thou whom the merchants of Zidon, that pass over the sea, have replenished.</p>
+
+<p style="text-align:right;" markdown="1">2. Tacete incolae insularum: negotiator Sidonis, trajicentes mare, quite replebant.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And by great waters the seed of Sihor, the harvest of the river, is her revenue; and she is a mart of nations.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** In aquis multis semen Nili, messis fluminis fruges ejus; et fuitemporium gentium. 4. Be thou ashamed, O Zidon; for the sea hath spoken, even the strength of the sea, saying, I travail not, nor bring forth children, nether do I nourish up young men, nor bring up virgins.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Erubesce, Sidon; quia dixit mare, fortitudo maris, dicens, Nonparturivi, neque peperi, neque educavi adolescentes, neque extulivirgines. 5. As at the report concerning Egypt, so shall they be sorely pained at the report of Tyre.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Simul atque rumor pervenerit ad Aegyptios, dolebunt secundum rumoremTyri. 6. Pass ye over to Tarshish; howl, ye inhabitants of the isle.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Transite in Tharsis; ululate, habitatores insularum. 7. Is this your joyous city, whose antiquity is of ancient days? Her own feet shall carry her afar off to sojourn.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** An haec vobis exultans? a diebus antiquis vetustas ejus. Ducenteam pedes ejus, ut peregrinetur in terram longinquam. 8. Who hath teken this counsel against Tyre, the crowning city, whose merchants are princes, whose traffickers are the honorable of the earth?</p>
+
+<p style="text-align:right;" markdown="1">8. Quis cosultavit hoc super Tyrum coronantam? cujus negotiatores suntPrincipes, cujus institores nobiles terrae?</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** The Lord of hosts hath purposed it, to stain the pride of all glory, and to bring into contempt all the</p>
+
+<p style="text-align:right;" markdown="1">9. Iehova exercituum ita decrevit ad profanandam superbiam omniummagnificorum, ut</p> <!-- PAGE 923 --> <p style="text-align:center" markdown="1">honorable of the earth. vilipendat omnes gloriosos terrae. 10. Pass through thy land as a river, O daughter of Tarshish: there is nor more strength.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Transi instar fluminis e terra tua ad filiam Tharsis, quia nonamplius cingulum. 11. He stretched out his hand over the sea; he shook the kingdoms: the Lord hath given a commandment against the merchant-city, to destroy the strongholds thereof.</p>
+
+<p style="text-align:right;" markdown="1">11. Manum suam posuit super mare, concussit regna. Iehova mandavitsuper Canaan ut enervet robur ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** And he said, Thou shalt no more rejoice, O thou oppressed virgin, daughter of Zidon: arise, pass over to Chittim; there also halt thou have no rest.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et ait, Non adjicies ultra ut exultes, ubi oppressa fueris, virgofilia Sidon. Surge, ut transeas in Cittim. Atqui etiam illic non erittibi requies. 13. Behold the land of the Chaldeans: this people was not, till the Assyrian founded it for them that dwell in the wilderness: they set up the towers thereof, they raised up the palaces thereof; and he brought it to ruin.</p>
+
+<p style="text-align:right;" markdown="1">13. Ecce terra Chaldaeorum, hic non fuit populus, Assur fundavit eamdeserti incolis; erexerunt arces ejus; excitarunt palatia ejus; redegiteam in vastitatem.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Howl, ye ships of Tarshish: for your strength is laid waste.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Ululate, naves Tharsis; quia vastata est fortitudo vestra. 15. And it shall come to pass in that day, that Tyre shall be forgotten seventy years, according to the days of one king: after the end of seventy years shall Tyre sing as an harlot.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Accidet in die illa, ut sit in oblivione Tyrus septuaginta annis,secundum dies regis unius; a fine septuaginta annorum, erit Tyro quasicanticum meretricis. 16. Take an harp, go about the city, thou harlot that hast been forgotten; make sweet melody, sing many songs, that thou mayest be remembered.</p>
+
+<p style="text-align:right;" markdown="1">16. Sume citharam, circui urbem, meretrix oblivioni tradita, suavemfac melodiam, multiplica carmen, ut in memoriam revoceris.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** And it shall come to pass, after the end of seventy years, that the Lord will visit Tyre, and she shall turn to her hire, and shall commit fornication with all the kingdoms of</p>
+
+<p style="text-align:right;" markdown="1">17. Erit ergo a fine septuaginta annorum, ut visitet Iehova Tyrum; ettunc redibit ad mercedem suam, fornicabiturque cum omnibus regnis terraequae sunt super</p> <!-- PAGE 924 --> <p style="margin-left:2em;" markdown="1">the world upon the face of the earth. terram. 18. And her merchandise and her hire shall be holiness to the Lord: it shall not be treasured nor laid up; for her merchandise shall be for them that dwell before the Lord, to eat sufficiently, and for durable clothing.</p>
+
+<p style="text-align:right;" markdown="1">18. Sed (tandem) erit negotiatio ejus et merces ejus sancta Iehovae;non reponetur neque recondetur; sed negotiatio ejus (addicta) erit iisqui habitabant coram Iehovae, ut comedant ad satietatem, et habeantdensum operimentum.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 24:1-23</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-24" data-ref="ISAIAH CHAPTER 24" style="display:none">ISAIAH CHAPTER 24</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">24</span></p>
+
+<strong>1.</strong> Behold, the Lord maketh the earth empty, and maketh it waste, and turneth it upside down, and scattereth abroad the inhabitants thereof.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** And it shall be, as with the people, so with the priest; as with the servant, so with his master; as with the maid, so with her mistress; as with the buyer, so with the seller; as with the lender, so with the borrower; as with the taker of usury, so with the giver of usury to him.</p>
+
+<p style="text-align:right;" markdown="1">2. Et erit ut populus, ita sacerdos; ut servus, ita domina ejus; utancilla, ita domina ejus; ut emptor, ita venditor; ut mutuo dans, itaqui mutuo accipit; ut foenerator, ita qui accipit foenori, (*vel, ut creditor, ita debitor*.)</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** The land shall be utterly emptied, and utterly spoiled: for the Lord hath spoken this word.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Evacuando evacuabitur terra, et direptione diripietur; quoniamIehova pronunciavit hoc verbum. 4. The earth mourneth and fadeth away; the world languisheth and fadeth away; the haughty people of the earth do languish.</p>
+
+<p style="text-align:right;" markdown="1">4. Luxit cecidit terra; elanguit, cecidit orbis; elanguerunt qui erantsublimis populus terrae.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** The earth also is defiled under the inhabitants thereof; because they have transgressed the laws, changed</p>
+
+<p style="text-align:right;" markdown="1">5. Et terra fallax fuit sub incolis suis; quoniam transgressi suntleges, mutarunt statutum,</p> <!-- PAGE 925 --> <p style="margin-left:2em;" markdown="1">the ordinance, broken he everlasting covenant.</p>
+
+<p style="text-align:right;" markdown="1">dissolverunt foedus seculi.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** There for hath the curse devoured the earth, and they that dwell therein are desolate: therefore the inhabitants of the earth are burned, and few men left.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Itaque maledictio cosumpsit terram, et desolati sunt incolae ejus;ideo combusti sunt, inquam, incolae terrae; et pauci residui sunt factihomines. 7. The new wine mourneth, the vine languisheth, all the merry hearted do sigh.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Periit vinum, elanguit vitis, gemuerunt omnes qui laeto erant corde. 8. The mirth of tabrets ceaseth, the noise of them that rejoice endeth, the joy of the harp ceaseth.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Cessavit gaudium tympanorum, desiit strepitus exultantium, quievit laetitia citharae. 9. They shall not drink wine with a song; strong drink shall be bitter to them that drink it.</p>
+
+<p style="text-align:right;" markdown="1">9. Cum cantico non bibent vinum; amara erit sicera bibentibus eam.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** The city of confusion is broken down; every house is shut up, that no man may come in.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Contrita est civitas vanitatis; clausa est omnis domus, ne quisingrediatur. 11. There is a crying for wine in the streets; all joy is darkened, the mirth of the land is gone.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Clamor est super vino in plateis; obscuratum est omne gaudium;migravit laetitia terrae. 12. In the city is left desolation, and the gate is smitten with destruction.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Residua est in urbe vastitas, est vastatione percussa est porta. 13. When thus it shall be in the midst of the land among the people, there shall be as the shaking of an olive tree, and as the gleaning-grapes when the vintage is done.</p>
+
+<p style="text-align:right;" markdown="1">13. Quia sic erit in medio terrae, in medio populorum, quasi decussioolivae, et quasi racemi, cum peracta est vindemia.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** They shall lift up their voice, they shall sing for the majesty of the Lord, they shall cry aloud from the sea</p>
+
+<p style="text-align:right;" markdown="1">14. Hi levabunt vocem suam; jubilabunt in altitudine Iehovae, vociferabuntur a mari.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Wherefore glorify ye the Lord in the fires, even the name of the Lord God of Israel in the isles of the sea.</p>
+
+<p style="text-align:right;" markdown="1">15. Propterea in vallibus glorificate Iehovam, in insulis maris nomenIehovae Dei Israel.</p>
+
+<!-- PAGE 926 -->
+
+<p style="margin-left:2em;" markdown="1">**16.** From the uttermost part of the earth have we heard songs, even glory to the righteous. But I said, My leanness, my leanness, woe unto me! The treacherous dealers have dealt treacherously; yea, the treacherous dealers have dealt very treacherously.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Ab extremo terrae laudes audivimus gloriam (*vel*,*gratulationem*) justo, et dixi, Macies mihi, macies mihi, vae mihi.Praevaricatores praevaricati sunt; praevaricatione, inquam,praevaricatores praevaricati sunt. 17. Fear, and the pit, and the snare, are upon thee, O inhabitant of the earth.</p>
+
+<p style="text-align:right;" markdown="1">17. Pavor, et fovea, et laqueus super te, O icola terrae.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** And it shall come to pass, that he who fleeth from the noise of the fear shall fall into the pit; he that cometh up out of the midst of the pit shall be taken in the snare: for the windows from on high are open, and the foundations of the earth do shake.</p>
+
+<p style="text-align:right;" markdown="1">18. Et accidet ut qui effugerit a voce pavoris, incidat in foveam; et qui ascenderit e medio foveae capiatur laqueo. Quoniam fenestrae deexcelso apertae sunt; et commota sunt fundamenta terrae.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** The earth is utterly broken down, the earth is clean dissolved, the earth is moved exceedingly.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Contritione contrita est terra; dissolutione dissoluta est terra; commotione commota est terra. 20. The earth shall reel to and fro like a drunkard, and shall be removed like a cottage; and the transgression thereof shall be heavy upon it; and it shall fall, and not rise again.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Agitatione agitata est terra, sicut ebrius; et transferetur sicuttabernaculum; et gravis erit super eam iniquitas ejus, et corruet, nequeadjiciet ut resurgat. 21. And it shall come to pass on that day, that the Lord shall punish the host of the high ones that are on high, and the kings of the earth upon the earth.</p>
+
+<p style="text-align:right;" markdown="1">21. Et erit in die illa, visitabit Iehova super exercitum excelsum in excelso, et super reges terrae super terram.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** And they shall be gathered together, as prisoners are gathered in the pit, and shall be shut up in the prison, and after many days shall they be visited.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Et congregabuntur congregatione instar vinctorum in carcere, etclaudentur in ergastulo; deinde post multos dies visitabuntur. 23. Then the moon shall be 23. Erubescet luna, et pudefiet sol;</p> <!-- PAGE 927 --> <p style="margin-left:2em;" markdown="1">confounded, and the sun ashamed, when the Lord of hosts shall reign in mount Zion, and in Jerusalem, and before his ancients gloriously.</p>
+
+<p style="text-align:right;" markdown="1">cum regnaverit Iehova exercituumin monte Sion, et in Ierusalem; et coram senibus suis gloria.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 25:1-12</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-25" data-ref="ISAIAH CHAPTER 25" style="display:none">ISAIAH CHAPTER 25</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">25</span></p>
+
+<strong>1.</strong> O Lord, thou art my God; I will exalt thee, I will praise thy name: for thou hast done wonderful things; thy counsels of old are faithfulness and truth.
+
+</div>
+
+<p style="margin-left:2em;" markdown="1">**1.** Iehova Deus meus es tu; exaltabo te: celebrabor nomin tuum; quiafecisti rem mirificam; consilia iam olim decreta veritatem firmam. 2. For thou hast made of a city an heap; of a defenced city a ruin: a palace of strangers to be no city; it shall never be built.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Quia posuisti ex urbe acervum; urbem munitam in ruinam; palatiumextraneorum, ut non sit civitas, nec unquam aedificetur. 3. Therefore shall the strong people glorify thee, the city of the terrible nations shall fear thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Propterea glorificabit te populus fortis; civitas gentium robustarum timebit te. 4. For thou hast been a strength to the poor, a strength to the needy in his distress, a refuge from the storm, a shadow from the heat, when the blast of the terrible ones is as a storm against the wall.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Nam fuisti fortitudo pauperi; fortitudo, inquam, egeno inafflictione ejus; refugium ab inundatione, umbra ab aestu, quia spiritusfortium (*aut, violentorum*) quasi turbo (*vel, inundatio*) contramurum. 5. Thou shalt bring down the noise of strangers, as the heat in a dry place; even the heat with the shadow of a cloud: the branch of the terrible ones shall be brought low.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Sicut aestum in arido, strepitum alienorum humiliabis, aestum in umbra nubis; clamorem (*vel, cantum, vel, excisionem*) fortium humiliabit. 6. And in this mountain shall the Lord of hosts make unto all people a feast of fat things, a feast of wines on the lees: of fat things full of marrow, of wines on the lees well refined.</p>
+
+<p style="text-align:right;" markdown="1">6. Et faciet Iehova exercituum cunctis populis in monte isto conviviumpinguium, convivium defecatorum; pinguium, inquam, medullatorum;defecatorum</p> <!-- PAGE 928 --> liquidorum. 7. And he will destroy in this mountain the face of the covering cast over all people, and the veil that is spread over all nations.
+
+<p style="margin-left:2em;" markdown="1">**7.** Et destruct in monte isto faciem involucri quo involuti sunt populiomnes, et operimentum quad expansum est super omnes gentes. 8. He will swallow up death in victory; and the Lord God will wipe away tears from off all faces; and the rebuke of his people shall he take away from off all the earth: for the Lord hath spoken it</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Destruxit mortem in aeternum. Et absterget Dominus Iehova lachrymama cunctis faciebus, et opprobrium populi sui auferet ab universa terra;quia Iehova locutus est. 9. And it shall be said in that day, Lo, this is our God; we have waited for him, and he will save us: this is the Lord; we have waited for him, we will be glad and rejoice in his salvation.</p>
+
+<p style="text-align:right;" markdown="1">9. Et dicetur in die illa: Ecce Deus noster iste; expectavimus eum, etsalvabit nos. Iste Iehova; expectavimus eum, exultabimus, et laetabimurin salute ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** For in this mountain shall the hand of the Lord rest, and Moab shall be trodden down under him, even as straw is trodden down for the dunghill.</p>
+
+<p style="text-align:right;" markdown="1">10. Nam quiescet manus Iehovae in monte isto; et triturabitur Moabsubter eum, sicut trituratur palea in sterquilinio.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** There is a crying for wine in the streets; all joy is darkened, the mirth of the land is gone.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Et extendet manum suam sub medio ejus, sicut extendit natator adnatandum; et humiliabit superbiam ejus, cum brachiis manuum suarum. 12. And the fortress of the high fort of thy walls shall he bring down, lay low, and bring to the ground, even to the dust.</p>
+
+<p style="text-align:right;" markdown="1">12. Et munitionem sublimitatis murorum tuorum sternet, humiliabit,dejiciet in terram, ad pulverem.</p>
+
+<!-- PAGE 929 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 26:1-21</span></p>
+
+<h2 class="scripture-anchor" id="isaiah-chapter-26" data-ref="ISAIAH CHAPTER 26" style="display:none">ISAIAH CHAPTER 26</h2>
+
+<div class="scripture-box" markdown="1">
+<p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">26</span></p>
+
+<strong>1.</strong> In that day shall this song be sung in the land of Judah; We have a strong city: salvation will God appoint for walls and bulwarks.
+
+</div>
+
+<p style="text-align:right;" markdown="1">1. In die illa cantabitur canticum in terra Iuda: Urbs fortitudinisnobis; salutem posuit muros et vallum.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Open ye the gates, that the righteous nation which keepeth the truth may enter in.</p>
+
+<p style="text-align:right;" markdown="1">2. Aperite portas, et ingredietur gens justa, custodiens veritates.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Thou wilt keep him in perfect peace, whose mind is stayed on thee; because he trusteth in thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Cogitatio fixa: custodies pacem, pacem; quoniam in te confisum est. 4. Trust ye in the Lord for ever: for in the Lord Jehovah is everlasting strength.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Sperate in Iehova in perpetuum; quia in Iah Iehova fortitudoseculorum. 5. For he bringeth down them that dwell on high: the lofty city, he layeth it low: he layeth it low, even to the ground; he bringeth it even to the dust.</p>
+
+<p style="text-align:right;" markdown="1">5. Nam incurvabit incolas sublimitatis, civitatem exaltatam humiliabit;humiliabit, inquam, eam ad terram, deducet ad pulverem.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** The foot shall tread it down, even the feet of the poor, and the steps of the needy.</p>
+
+<p style="text-align:right;" markdown="1">6. Calcabit eam pes; pedes pauperis, gressus inopum.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** The way of the just is uprightness: thou, most upright, dost weigh the path of the just.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Semita justi rectitudines; rectam viam justi aequabis, (*vel, tu, qui rectus es, viam justi aequabis.*) 8. Yea, in the way of thy judgments, O Lord, have we waited for thee; the desire of our soul is to thy name, and to the remembrance of thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Etiam in via judiciorum tuorum, Iehova, speravimus in te, ad nomen tuum, et memoriam tui desiderium animae. 9. With my soul have I desired thee in the night; yea, with my spirit within me will I seek thee early: for when thy judgments are in the earth, the inhabitants of the world will learn righteousness.</p>
+
+<p style="text-align:right;" markdown="1">9. Anima mea desideravit te per noctem; quin et spiritu meo intra me temane (*vel, sedulo*) quaeram; nam ex quo fuerint judicia tua in terra,justitiam discent incolae terrae.</p>
+
+<!-- PAGE 930 -->
+
+<p style="margin-left:2em;" markdown="1">**10.** Let favor be shewed to the wicked, yet will he not learn righteousness: in the land of uprightness will he deal unjustly, and will no behold the majesty of the Lord.</p>
+
+<p style="text-align:right;" markdown="1">10. Impius gratiam obtinebit, nec discet justitiam; in terra rectorum operum perverse aget, nec videbit magnificentiam Iehovae.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Lord, when thy hand is lifted up, they will not see: but they shall see and be ashamed for their envy at the people; yea, the fire of thine enemies shall devour them.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Iehova, utcunque exaltata fuerit manus tua, non videbunt; videbuntet pudefient aemulatione populi; quin et ignis hostium tuorum vorabiteos. 12. Lord, thou wilt ordain peace for us: for thou also hast wrought all our works in us.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Iehova, ordinabis nobis pacem; nam et omnia opera nostra operatus es nobis. 13. O Lord our God, other lords besides thee have had dominion over us; but by thee only will we make mention of thy name.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Iehova Deus noster, subjugaverunt nos domini praeter te; tantum in te recordabimur nominis tui. 14. They are dead, they shall not live; they are deceased, they shall not rise: therefore hast thou visited and destroyed them, and made all their memory to perish.</p>
+
+<p style="text-align:right;" markdown="1">14. Mortui non vivent; occisi non resurgent; propterea visitasti, etexterminasti eos; et perdidisti omnem memoriam eorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Thou hast increased the nation, O Lord, thou hast increased the nation: thou art glorified: thou hadst removed it far unto all the ends of the earth.</p>
+
+<p style="text-align:right;" markdown="1">15. Addidisti genti, Iehova; addidisti genti; glorificatus es;dilatasti omnes fines terrae.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Lord, in trouble have they visited thee; they poured out a prayer when thy chastening was upon them.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Iehova, in tribulatione visitaverunt te, effuderunt precationem,dum castigatio tua super eos 17. Like as a woman with child, that draweth near the time of her delivery, is in pain, and crieth out in her pangs; so have we been in thy sight, O Lord</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Sicut praegnans, quae ad partum propinquat, dolet, clamat indoloribus suis; sic nos fuimus a facie tua, Iehova. 18. We have been with child, we have been in pain, we have as it were</p>
+
+<p style="text-align:right;" markdown="1">18. Parturivimus, doluimus, ac si peperissemus ventum, salus non</p> <!-- PAGE 931 --> <p style="margin-left:2em;" markdown="1">brought forth wind; we have not wrought any deliverance in the earth, neither have the inhabitants of the world fallen.</p>
+
+<p style="text-align:right;" markdown="1">estfacta terrae, et non ceciderunt incolae orbis.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Thy dead ,men shall live, together with my dead body shall they arise. Awake and sing, ye that dwell in dust: for thy dew is as the dew of herbs, and the earth shall cast out the dead.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Vivent mortui tui, cadaver meum resurgent. Evigilate, et cantate,incolae pulveris. Quoniam ros herbarum ros tuus; et terra mortuosejiciet, (*vel, terram Gigantum prosternes; vel, terra Gigantescadere faciet.*) 20. Come, my people, enter thou into thy chambers, and shut thy doors about thee: hide thyself as it were for a little moment, until the indignation be overpast.</p>
+
+<p style="text-align:right;" markdown="1">20. Veni, popule mi, intra in cubicula tua; claude ostia post te:lateas paululum ad momentum, donec transeat indignatio.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** For, behold, the Lord cometh out of his place to punish the inhabitants of the earth for their iniquity: the earth also shall disclose her blood, and shall no more cover her slain.</p>
+
+<p style="text-align:right;" markdown="1">21. Nam ecce Iehova egreditur e loco suo, ut visitet iniquitatemhabitatoris terrae contra eum. Et discooperiet terra sanguines suos, etnon teget amplius super occisis suis.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 27:1-13</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 27:1-13</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** In that day the Lord, with his sore, and great, and strong sword, shall punish leviathan the piercing serpent, even leviathan that crooked serpent; and he shall slay the dragon that is in the sea.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** In die illa visitbit lehova gladio suo duro, et magno et forti, super Leviathan serpentem penetrem, et super Leviathan serpentem flexuosum, et occidet draconem qui est in mari. 2. In that day sing ye unto her, A vineyard of red wine.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** In die illa vinae ruboris canite. 3. I the Lord do keep it; I will water it every moment: lest any</p>
+
+<p style="text-align:right;" markdown="1">3. Ego Iehova custodio cam, singulis momentis irragabo eam;</p> <!-- PAGE 932 --> <p style="margin-left:2em;" markdown="1">hurt it, I will keep it night and day.</p>
+
+<p style="text-align:center" markdown="1">ne visitet eam (hostis) noctu et interdiu custodiam ipsam. 4. Fury is not with me: who would set the briers and thorns against me in battle? I would go through them, I would burn them together.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Furor non est mihi. Quis me committat cum vepre et spina (aut, veprem spinoe)? Gradier hostiliter per eam. Incendam penitus. 5. Or let him take hold of my strength, that he may make peace with me; and he shall make peace with me.</p>
+
+<p style="text-align:right;" markdown="1">5. An apprehendet robur meum, ut faciat mecum pacem, mecum, inquam, pacem faciat?</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** He shall cause them that come of Jacob to take root: Israel shall blossom and bud, and fill the face of the world with fruit.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** In posterum radices mittet Iacob; pullulabit et florebit Israel, et implebuntur facies orbis fructu. 7. Hath he smitten him, as he smote those that smote him? Or is he slain according to the slaughter of them that are slain by him?</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** An juxta plagam percutientis eum percussit eum? An juxta caedem Cedentium eum casesus est. 8. In measure, when it shooteth forth, thou wilt debate with it: he stayeth his rough wind in the day of the east wind.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** In mensura in emissione ejus disceptabis cum ea, etiam cum flaverit vento suo violento in die Euri. 9. By this therefore shall the iniquity of Jacob be purged; and this is all the fruit to take away his sin; when he maketh all the stones of the alter as chalk-stones that are beaten in sunder, the groves and images shall not stand up.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Itaque hoc modo expiabitur iniquitas Iacob; et his omnis fructos, ablatio peccati ejus; cum posuerit cuntos lapides altaris sicut lapides calcis confractos, ut non resurgant luci et imagines. 10. Yet the defenced city shall be desolate, and the habitations forsaken, and left like a wilderness: there shall the calf feed, and there shall he lie down, and consume the branches thereof.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Civitas tamen munita erit solitaria; locus habitatus erit desertus, ac derelictus quasi solitudo. Ibi pascetur vitulus, et ibi accubabit et absumet summitates ejus. 11. When the boughs thereof are 11. Dum arescet messis ejus,</p> <!-- PAGE 933 --> <p style="margin-left:2em;" markdown="1">withered, they shall be broken off: the women come, and set them on fire: for it is a people of no understanding: therefore he that made them will not have mercy on them, and he formed them will show them no favor.</p>
+
+<p style="text-align:right;" markdown="1">franget (vel, secabunt) eam, mulieres venientes accendent eam; quia non est populus intelligens; propterea non miserebitur ejus factor ejus, et fictor ejus non erit illi propitius.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** And it shall come to pass in that day, that the Lord shall beat off from the channel of the river unto the stream of Egypt, and ye shall be gathered on e by one, O ye children of Israel.</p>
+
+<p style="text-align:right;" markdown="1">12. Accidet tamen in die illa, ut excutiat Iehova ab alveo fluminis ad fluvium Aegypti; et vos congregabimini unus ad unum, filii Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** And it shall come to pass in that day, that the great trumpet shall be blown, and they shall come which were ready to perish in the land of Assyria, and the outcasts in the land of Egypt, and shall worship te Lord in the holy mount at Jerusalem.</p>
+
+<p style="text-align:right;" markdown="1">13. Accidet etiam die illa, ut clangatur tuba magna; et venient qui perierant in terra Assur, et qui dissipati erant in terra Aegypti; et adorabunt Iehovam in monte santco, in Ierusalem.</p>
+
+<!-- PAGE 934 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 28:1-29</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 28:1-29</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Woe to the crown of pride, to the drunkards of Ephraim, whose glorious beauty is a fading flower, which are on the head of the fat valleys of them that are overcome with wine.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Vae coronae superbiae temulentorum Ephraim; quia decor gloriae ejus erit flos deciduus, quae est super caput vallis pinguium, oppresorum a vino. 2. Behold, the Lord hath a mighty and strong one, which as a tempest of hail and a destroying storm, as a flood of mighty waters overflowing, shall cast down to the earth with the hand.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Ecce durus et fortis Domino, sicut inundatio grandinis, turbo subvertens; sicut impetus aquarum vehementium inundantium, dejiciens in manu ad terram. 3. The crown of pride, the drunkards of Ephraim, shall be trodden under feet:</p>
+
+<p style="text-align:right;" markdown="1">3. Pedibus conculabitur corona superbiae temultorum Ephraim.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And the glorious beauty, which is on the head of the fat valley, shall be a fading flower, and as the hasty fruit before the summer; which when he that looketh upon it seeth, while it is yet in his hand he eateth it up.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et erit flos deciduus decor gloriae ejus, quae est super caput vallis pinguium, quasi fructus praecox ante aestivos, quem qui viderit, aspiciens eum dum adhuc in manu est, devorat. 5. In that day shall the Lord of hosts be for a crown of glory, and a diadem of beauty, unto the residue of his people.</p>
+
+<p style="text-align:right;" markdown="1">5. In illa die Iehova exercituum in corona gloriae, et didema decoris reliquiis populi sui,</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** And for spirit of judgement to him that sitteth in judgement, and for strength to them that turn the battle to the gate.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Et in spiritum judicii sedenti super tribunal, et in fortitudinem propulsantibus proelium ad portam. 7. But they also have erred throught strong drink are out of the way: the priest and the prophet have erred through strong</p>
+
+<p style="text-align:right;" markdown="1">7. At isti quoque prae vino errarunt, prae sicera hallucinati sunt. Sacerdos et propheta errarunt prae sicera, absorpti</p> <!-- PAGE 935 --> <p style="margin-left:2em;" markdown="1">drink, they are swallowed up of wine, they are iut of the way through strong drink; they err in vision, they stumble in judgment.</p>
+
+<p style="text-align:right;" markdown="1">sunt a vino; hallucinati sunt prae sicera, errarunt in visione, impegerunt in judicio.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** For all tables are full of vomit and filthiness, so that there is no place clean.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Quoniam omnes mensae plenae sunt vomitu stercoreo, ut locus non vacet. 9. Whom shall he teach knowledge? And whom shall he make to understand doctrine? Them that are weaned from the milk, and drawn from the breasts.</p>
+
+<p style="text-align:right;" markdown="1">9. Quem docebit scientiam, et quem intelliegere faciet doctrinam? Abductos a lacte, abstractos ab uberibus?</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** For precept must be upon precept, precept upon precept; line upon line, line upon line; here a little and there a little.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Quoniam praeceptum ad praeceptum, praeceptum ad praeceptum; instructio ad instructionem, instructio ad instructionem; paululum ibi, paululum ibi. 11. For with stammering lips, and another tongue, will he speak to this people.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Quoniam balbis labiis et lingua exotica loquetur ad populum istum. 12. To whom he said, This is the rest wherewith ye may cause the weary to rest; and this is the refreshing: yet they would not hear.</p>
+
+<p style="text-align:right;" markdown="1">12. Quoniam illis dixit, Haec est requies; requiescere facite lassum, et hoc refrigerium; et noluerunt audire.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** But the word of the Lord was unto them precept; line upon line, line upon line, here a little, and there a little; that they might go and fall backward, and be broken, and snared, and taken.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Erit igitur illis verbum Iehovae regula ad regulam, regula ad regulam; instructio ad instructonem, instructio ad instructionem; paululum ibi, paululum ibi; propterea ibunt, et corruent retrosum, conterentur, irretientur et capientur. 14. Wherefore hear the word of the Lord, ye scornful men, that</p>
+
+<p style="text-align:right;" markdown="1">14. Propterea audite verbum Iehovae, viri illusores, qui</p> <!-- PAGE 936 --> <p style="margin-left:2em;" markdown="1">ruke his people which is in Jerusalem.</p>
+
+dominamini populo huic, qui est in Ierusalem. 15. Because ye have said, We have made a covenant with death, and with hell are we at agreement; when overflowing scourge shall pass through, it shall not come unto us: for we have made lies our refuge, and under falsehood have we hid ourselves.
+
+<p style="margin-left:2em;" markdown="1">**15.** Quia dixitis, Percussimus foedus cum morte, et cum inferno fecimus pactum; flagellum inundans cum transierit, non veniet ad nos; quia posuimus mendacium refugium nostrum, et sub vanitate sumus absconditi. 16. Therefore thus saith the Lord God, Behold, I lay in Zion for a foundation a stone, a tried stone, a precious corner-stone, a sure foundation: he that believeth shall not make haste.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Quare sic dicit Donminus Iehova: Ecce ego ponam in Sion lapidem, lapidem probationis, angulum pretiosum, fundamentum solidum. Qui credit non festinabit. 17. Judgement also will I lay to the line, and righteouseness to the plummet; and the hail shall sweep away the refuge of lies, and the waters shall overflowing scourge shall pass through, then ye shall be trodden down by it.</p>
+
+<p style="text-align:right;" markdown="1">17. Et ponam judicium ad regulam, et justitiam ad mensuram (vel, trutinam.) Everret grando fiduciam mendacii, et latibulum aquae inundabunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** And your covenant with death shall be disannukked, and your agreement with hell shall not stand; when the overflowing scourge shall pass through, then ye shall be trodden down by it.</p>
+
+<p style="text-align:right;" markdown="1">18. Et abolebitur pactum cum morte; visio vestra cum inferno non stabit, flagellum inundans cum transierit, tunc eritis ei in conculcationem.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** From the time that it goeth forth it shall take you: for morning by morning shall it pass over, by day and by night; and it shall be a vexation only to understand the report.</p>
+
+<p style="text-align:right;" markdown="1">19. Ex quo transierit, rapiet vos utique mane quotidie, transibit interdiu et noctu. Et erit ut terror (vel commotio) duntaxat intelligere faciat auditum.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** For the bed is shorter than that a man can stretch himself on it;</p>
+
+<p style="text-align:right;" markdown="1">20. Quoniam contractus est lectus, ut non sufficiat; angusta</p> <!-- PAGE 937 --> <p style="margin-left:2em;" markdown="1">and the covering narrower that that he can wrap himself in it.</p>
+
+<p style="text-align:right;" markdown="1">erit stangula colligendo.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** For the Lord shall rise up as in mount Perazim, he shall be wroth as in the valley of Gibeon, that he may do his work, his strange work; and bring to pass his act, his strange act.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Quoniam sicut in monte Perazim stabit Iehova, et sicut in valle Gibeon, irascetur (vel, tumultuabiltur) ad faciendum opus suum, alienum opus suum; ad desingandum facinus suum, alienum facinus suum. 22. Now therefore be ye not mockers, lest your hands be made strong; for I have heardd from the Lord God of hosts a consumption, even determined upon the whole earth.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Nunc itaque ne sitis illusores; ne forte constringantur vincula vestra. Quoniam consumptionenm et finitionem audivi a Domino Iehova exercituum super universam terram. 23. Give ye ear, and hear my voice; hearken, and hear my speech.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Auscultate, et audite vocem meam; advertite et audite sermonem meum. 24. Doth the plowman plow all day to sow? Doth he open and break the clods of his ground.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** An quotidie arat arator, ut seminet? Aperit et confringit glebas agri sui? 25. When he hath made plain the face thereof, doth he not cast abroad the fitches, and scatter the cummin, and cast in the principal wheat, and the appointed barley, and the rye, in there place?</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Annon cum aequaverit faciem ejus, tunc sparget viciam, seret cyminum, et ponet triticum in mensura, hordeum demensum, et speltam suo modo. 26. For his God doth instruct him to discretion, and doth teach him.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Docet eum rectitudinem Deus suus, et instituit eum. 27. For the fitches are not thrashed with a thrashinginstrument, neither is a cart-wheel turned about upon the cummin; but the fitches are beaten out with a staff, and the cummin with a rod.</p>
+
+<p style="text-align:right;" markdown="1">27. Certe non triturabitur vicia tabula dentata, nec rota plaustri super cyminum, circumferetur; quia baculo excutitur vicia, et cyminum virga.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Bread-corn is bruised; because 28. Triticum licet trituretur, non</p> <!-- PAGE 938 --> <p style="margin-left:2em;" markdown="1">he will not ever be thrashing it, nor break it with the wheel of his cart, nor bruise it with his horsemen.</p>
+
+<p style="text-align:center" markdown="1">in perpetuum, triturat ipsum, nec rotam plaustri sui perpetua strepere facit, ne dentibus suis conterat ipsum. 29. This also cometh forth from the Lord of hosts, which is wonderful in counsel, and excellent in working.</p>
+
+<p style="text-align:right;" markdown="1">29. Etiam hoc ab Iehova exercituum egressum est, qui mirificuis est, consilio et magnificus opere.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 29:1-24</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 29:1-24</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Woe to Ariel, to Arie, the city where David dwelt. Add ye year to year; let them kill sacrifices.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Heus Ariel, Ariel urbs quam incoluit David. Addite annum ad annum, quibus jugulentur agni. 2. Yet I will distress Ariel, and there shall be heaviness and sorrow: and it shall be unto ,e as Ariel.</p>
+
+<p style="text-align:right;" markdown="1">2. Atqui in angustum redigam Ariel, et erit moeror et tristitia, eritque mihi tanquam Ariel.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** And I will camp against thee round about, and will lay siege against thee with a mount, and I will raise forts against thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Et castrametabor adversum te in circuitu, et oppugnabo te in statione, et erigam contra te aggeres. 4. And thou shalt be brought down, and shalt speak out of the ground, and they speech shall be low out of the dust, and thy voice shall be, as of one that hath a familiar spirit, out of the ground, and thy speech shall whisper out of the dust.</p>
+
+<p style="text-align:right;" markdown="1">4. Tum humiliaberis, e terra loqueris, et e pulvere exibit eloquium tuum, et erit quasi Pythonis e terra vox tua, et e pulvere elequium tuum mussitabit.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Moreover, the multitude of thy strangers shall be like small dust, and the multitude of the terrible ones shall be as chaff that passeth away; yea it shall be at an instant</p>
+
+<p style="text-align:right;" markdown="1">5. Et erit quasi pulvisculus sonitus extraneorum tuorum, et quasi stipula transiens multitudo fortium, et erit ad momentum repente.</p>
+
+<!-- PAGE 939 -->
+
+<p style="margin-left:2em;" markdown="1">suddenly. 6. Thou shalt be visited of the Lord of hosts with thunder, and with earthquake, and great noise, with storm and tempest, and the flame of devouring fire.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Ab Iehova exercituum visitaberis, in tonitru, et tumultu, et fragore magno, in turbine, et tempestate, et flamma ignis vorantis. 7. And the multitude of all the nations that fight against Ariel, even all that fight against her and her munition, and that distress her, shall be as a dream of a nightvision.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Et erit quasi somnium visionis nocturnae multitudo omnium gentium pugnantium adversus Ariel; omnis, inquam, pugnantis, et munitones erigentis in eam, et constringentium eam. 8. It shall even be as when an hungry man dreameth, and, behold, he eateth; but he awaketh, and his soul is empty; or as when a thirsty man dreameth, and, behold, he drinketh; but he awaketh, and, behold, he is faint, and his soul hath appetite; so shall the multitude of all the nations be that fight against mount Zion.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Fiet ergo quemadmodum famelicus somniat, et ecce comedit; cum autem evigilat, inanis est anima ejus; et quemadodum sitiens somniat, et ecce bibit; cum autem evigilat, lassus est, et anima ejus appetens; sic erit multitudo omnium gentium pugnantium adversus montem Sion. 9. Stay yourselves, and wonder; cry ye out, and cry: they are drunken, but not with wine; they stagger, but not with strong drink.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Immoremini, et admiremini. Exaecati sunt et exaecant; ebrii sunt, et non vino; concussi sunt, et non sicera. 10. For the Lord hath poured out upon you the spirit of deep sleep, and hath closed your eyes: the prophets and your rulers, the seers hath he covered.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Quia obtexit super vos Iehovae spiritu soporis, obstruxit oculos vestros: Prophetas vertros et praecipuos Videntes caligine obduxit. 11. And the vision of all is become unto you as the words of a book that is sealed, which men deliver to one that is learned, saying, Read this, I pray thee, and he saith, I</p>
+
+<p style="text-align:right;" markdown="1">11. Itaque facta est vobis omnis visio quasi verba libri obsignati; quem si tradant scienti literas, ac dicant, Lege, quaeso, in eo; tum dicet, Non possum, quia</p> <!-- PAGE 940 --> cannot; for it is sealed. est obsignatus. 12. And the book is delivered to him that is not learned, saying, Read this, I pray thee: and he saith, I am not learned.
+
+<p style="margin-left:2em;" markdown="1">**12.** Quod si detur ei liber qui non didicit literas, ac dicatur, Lege, quaeso, in eo; tum dicet, Nescio literas. 13. Wherefore the Lord said, Forasmuch as this people draw near me with their mouth, and with their lips do honour me, but have removed their heart far from me, and their fear toward me is taught by the precept of men:</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Ergo dicit Dominus: propterea quod appropinuat populus iste ore suo, et labiis suis honorat me, ac cor suum longe a me removit, et fuit timor eorum erga me praecepto hominum doctus; 14. Therefore, behold, I will proceed to do a marvellous work among this people, even a marvellous work and a wonder; for the wisdom of their wise men shall perish, and the understanding of their prudent men shall be hid.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Propterea ecce adjicio ut faciam rem mirandam in populo hoc, miraculum, inquam, et portentum; nam peribit sapienta sapinetum ejus, et prudentia prudentum ejus evanescet. 15.Woe unto them that seek deep to hide their counsel from the Lord, and their works are in the dark, and they say, Who seeth us? And who knoweth us.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Vae latitantibus ab Iehova, ut abscondant consiliu,; nam sunt in tenebris opera eorum, ac dicunt, Quis videt nos? et, Quis scit nos? 16. Surely your turning of things upside down shall be esteemed as the potter’s clay: for shall the work say of him that made it, He made me not? Or shall the thing framed say of him that framed it, He had no understanding?</p>
+
+<p style="text-align:right;" markdown="1">16. Vestra concersio an sicut lutum figuli reputatur? Nempe, dicit opus de auctore suo, Non fecit me: et figmentum de fictore suo, Non intellexit?</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Is it not yet a very little while, and Lebanon shall be turned into a fruitful field, and the fruitful field shall be esteemed as a forest.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Nonne adhue paululum, paululum, et redigetur Libanus in Carmelum, et Carmelus in sylvam reputabitur. 18. And in that day shall the deaf hear the words of the book, and</p>
+
+<p style="text-align:right;" markdown="1">18. Et audient in die illa surdi verba libri, et de caligine et</p> <!-- PAGE 941 --> <p style="margin-left:2em;" markdown="1">the eyes of the blind shall see out of obscurity, and out of darkness.</p>
+
+tenebris oculi caecorum videbunt. 19. The meek also shall increase their joy in the Lord, and the poor among men shall rejoice in the Holy One of Israel.
+
+<p style="margin-left:2em;" markdown="1">**19.** Tune repentent humiles in Iehova Laetitam, et pauperes hominum exultabunt in Sancto Israelis. 20. For the terrible one is brought to nought, and the scorner is consumed, and all that watch for iniquity are cut off:</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Quoniam in nihilum redactus est violentus, contemptus est derisor; perierunt qui mane festunabant ad iniquitatem. 21. That make a man an offender for a word, and kay a snare for him that reproveth in the gate, and turn aside the just for a thing of nought.</p>
+
+<p style="text-align:right;" markdown="1">21. Facientes hominem peccare in verbo, qui arguentum in porta illaquearunt qui mane festinabant ad iniquitatem.</p>
+
+<p style="margin-left:2em;" markdown="1">22.Therefor thus saith the Lord, who redeemed Abraham, concerning the house of Jacob, Jacob shall not now be ashamed, neither shall his face now wax pale.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Propterea sic dicit Iehova ad domun Iacob, qui redemit Abraham: Non confundetur nunc Iacob, neque pallescet nunc Iacob, neque pallescet nunc facies ejus. 23. But when he seeth his children, the work of mine hands, in the midst of him, they shall sanctify my name, and sanctify the Holy One of Jacob, and shall fear the God of Israel.</p>
+
+<p style="text-align:right;" markdown="1">23. Nam ubi viderit natos suos, opus manuum mearum, in medio sui, sanctificabunt nomen meum, sanctificanbunt Sanctum Iacob, Deum Israel timebunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** They also that erred in spirit shall come to understanding, and they that murmured shall learn doctrine.</p>
+
+<p style="text-align:right;" markdown="1">24. Tum errantes spiritu discent intelligentiam; et murmuratores discent doctrinam.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 30:1-33</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 30:1-33</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Woe to the rebellious children, 1. Vae filiis contumacibus, (vel,</p> <!-- PAGE 942 --> <p style="margin-left:2em;" markdown="1">saith the Lord, that take counsel, but not of me; and that cover with a covering, but not of my spirit, that they may add sin to sin.</p>
+
+<p style="text-align:center" markdown="1">perversis) dicit Iehova, ut capiant consilium, et non ex me; ut operiant arcanum. (vel, fundant fusionem,) et non ex spiritu meo; ut peccatum addant peccato. 2. That walk to go down into Egyst, and have not asked at my mouth; to strengthen themselves in the strength of Pharoah , and to trust in the shadow of Egypt.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Proficiscuntur ut descendant in Aegyptum, et os meum non interrogaverunt, roboratnes se robore Pharaonis, et sperantes in umbra Aegypti. 3. Therefore shall the strength of Pharoah be your shame, and the trust in the shadow of Egypt.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Erit autem vobis fortitudo Pharaonis in pudorem, et fiducia in umbra Aegypti in ignomiam. 4. For his princes were at Zoan, and his ambaassadors came to Hanes.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Fuerunt enim principes ejus in Zoan et legati ejus in Hanes venerunt. 5. They were all ashamed of a people that could not profit them, nor be an help nor profit, but a shame, and also a reproach.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Omnes pudefient in populo qui eis non proderit, neque auxilio erit in pudorem, atque etiam in opprobrium. 6. The burden of the beasts of the south: into the land of trouble and anguish, from whence come the young and old lion, the viper and fiery flying serpent, they will carry their riches upon the shoulders of young asses, and their treasures upon the bunches of camels, to a people that shall not profit them.</p>
+
+<p style="text-align:right;" markdown="1">6. Onus jumentorum Austri. In terra afflictionis et angustiae, leo, et leo major ab illis, vipera et prester volans, dum portabunt super humerum pullorum divitias suas, et super gibbos camelorum thesauros suos ad populum qui non proderit.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** For the Egyptians shall help in vain, and to no purpose: therefore have I cried concerning this, Their strength is to sit still.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Certe Aegyptii vanitas, et frustra auxiliabuntur. Propterea clamavi ad illam: Robur illorum quiescere. 8. Now go, write it before them in 8. Nunc vade, et scribe hanc</p> <!-- PAGE 943 --> <p style="margin-left:2em;" markdown="1">a table, and note it in a book, that it may be for the time to come for ever and ever;</p>
+
+<p style="text-align:center" markdown="1">visionem in tabula coram ipsis, et in libro insculpe eam; ut sit in diem novissimum, in perpetuum usque in secula. 9. That this is a rebellious people, lying children, children that will not hear the law of the Lord:</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Quod populud hic rebellis sit, filii mendaces, filii qui recusant audire legem Iohivae. 10. Which say to the seers, See not; and to the prophets, Prophesy not unto us rught things, speak unto us smotth things, prophesy deceits:</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Qui dicunt videntibus, ne videatis, et prospicientibus, ne prospiciatis nobis recta; loquimini nobis blanditias, videte errores. 11. Get you out of the wat, turn aside out of the path, cause the Holy One of Israel to cease from before us.</p>
+
+<p style="text-align:right;" markdown="1">11. Recedite a via, declinate a semita; facite ut a facie nostra facessat Sanctus Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Wherefore thus saith the Holy One of Israel, Because ye despise this word, and trust in oppression and perverseness, and stay thereon:</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Propterea sic dicit Sanctus Israel: quia respuistis verbum hoc, et confisi estis in violentia et pravitate, et innix estis in eam; 13. Therefore this iniquity shall be to you as a breach ready to fall, swelling out in a high wall whose breaking cometh suddenly at an instant.</p>
+
+<p style="text-align:right;" markdown="1">13. Ideo erit vobis iniquitas haec quasi ruptura caadens, tumor in alto muro, cujus repente et subito venit fractura.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** And he shall break it as the breaking of the potter’s vessel that in broken pieces: he shall not spare: so that there shall not be found in the bursting of it a sherd to take fire from the hearth, or to take water withal out of the pit.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Et contritio ejus quasi contritio vasis figulorum, quod absue misericordia comminuitur; nec in ejus fractura invenitur testa adignem e foco ferendum, vel aquam e puteo hauriendum. 15. For thus saith the Lord God, the Holy One of Israel, In returning and rest shall ye be saves; in quietness and in</p>
+
+<p style="text-align:right;" markdown="1">15. Quoniam sic dixit Dominus Iehova Sanctus Israel: In requie et quite salvi eritis; in tranquillitate et fiducia erit</p> <!-- PAGE 944 --> <p style="margin-left:2em;" markdown="1">confidence shall be your strength; and ye would not.</p>
+
+<p style="text-align:right;" markdown="1">fortitudo vestra, sed noluistis.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** But ye said, No: for we will flee upon horses; therefore shall ye flee: and, We will ride upon the swift; therefore shall they that pursue you be swift.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Et dixistis, Non sed equis effugiemus; proptera fugietis; super celerem conscendemus; proptera celeriores erunt qui vos persequentur. 17. One thousand shall flee at the rebuke of one; at the rebuke of five shall ye flee: till ye be left as a beacon upon the top of a mountain, and as an ensign on an hilll.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Mille unus a facie increpationes unius a facie increpationis quinque fugietis, donesc relicti fueritis sicut malus navis in vertice montis, et sicut vexillum in colle. 18. And therefore will the Lord wait, that he may be gracious unto you; and therefore will he be exalted, that he may have mercy upon you: for the Lord is a God of judgement: blessed are all they that wait for him.</p>
+
+<p style="text-align:right;" markdown="1">18. Propterea expectabit vos Iehova, ut misereatur vestri; et propterea exaltibur, ut propitius sit vobis; quia Deus judicii Iehova. Beati omnes qui expectant eum.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** For the people shall dwell in Zion at Jerusalem; thou shalt weep no more: hel will be very gracious unto thee at the voice of thy cry; when he shall hear it, he will answer thee.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Certe populus in Sion habiitat in Ierusalem; flendo non flebis; miserendo miserebitur tui; ad vocem clamoris tui, simulac audierit, respondebit tibi. 20. And though the Lord give you the bread of adversity, and the water of affliction, yet shall not thy teachers be removed into a corner any more, but thine eyes shall see thy teachers:</p>
+
+<p style="text-align:right;" markdown="1">20. Ubi dederit vobis Dominus panem angoris et aquam afflictionis, non arcebitur pluvia tua et oculi tui videbunt pluviam tuam.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** And thine ears shall hear a word behind thee, saying, This is the way, walk ye in it, when ye turn to the right hand, and when ye turn to the left.</p>
+
+<p style="text-align:right;" markdown="1">21. Tum aures tuae audient verbum a tergo tuo dicendo: Haec via, ambulate in ea, sive ad dextram sive ad sinistram eatis.</p>
+
+<!-- PAGE 945 -->
+
+<p style="margin-left:2em;" markdown="1">**22.** Ye shall defile also the covering of thy graven images of silver, and the images of gold: thou shalt cast them away as a menstruous cloth; thou shalt say unto it, Get thee hence.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Tum profanabitis tectorium sculptilium argent tui, et operimentum conflatilis auri tui, separabisque ea tanquam pannum mentruo infectum, dices qui illi: Egredere (vel Apage) 23. Then shall he give the rain of thy seed, that thou shalt sow the ground withal; and bread of the increase of the earth, and it shall be fat and plenteous: in that day shall thy cattle feed in large pastures.</p>
+
+<p style="text-align:right;" markdown="1">23. Tum dabit pluviam semini tuo, cum seminaveris terram, et panem provertus terrae; et erit uber et pinguis, et pascentur pecora tua in die illo in amplis pascuis.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** The oxen likewise, and the young asses that ear to the ground shall eat clean provender, which hath been winnowed with the shovel and with the fan.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** Boves etiam tui, et pulli asinorum colentes terram, pabulum purum comedent, quod in pala ventilatum erit et in vanno. 25. And there shal be upon every high mountain, and upon every high hill, rivers and streams of waters in the day of the great slaughter, when the the towers fall.</p>
+
+<p style="text-align:right;" markdown="1">25. Et accidet, ut super omnem montem excelsum, et super omnem collem elevatum, sint rivi, rivi aquarum in die caedis magnae cum turres corruerint.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Moreover, the light of the moon shall be as the light of the sun, and the light of the sun shall be seven-fold, as the light of seven days in the breach of his people, and healeth the stoke of their wound.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Et erit lux lunae sicut lux solis, et lux solis septuplo major, quasi lux septem dierum, in die qui alligaverit Iehova fracturam populi sui, et perfossionem plagae ejus quasi ignis devorans. 27. Behold, the name of the Lord cometh from far, burning with his anger, and the burden thereof is heavy: his lips are full of indignation, and his tongue as a</p>
+
+<p style="text-align:right;" markdown="1">27. Ecce nomen Iehovae venit e loco remoto; ardens facies ejus, et grave onus; labia ejus plena, sunt indifnationes; et linhua ejus quasi ignis devorans.</p>
+
+<!-- PAGE 946 -->
+
+<p style="margin-left:2em;" markdown="1">devouring fire: 28. And his breath, as an overflowing stream, shall reach to the midst of the neck, to sift the nations wit the sieve of vanity: and there shall be a bridle in the jaws of the people, causing them to err.</p>
+
+<p style="text-align:right;" markdown="1">28. Et spiritus ejus quasi torrens inundans, usque ad collum dividet; ad ventilandas gentes in cribro inutili, et fraenum errare faciens in maxillis populorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**29.** Ye shall have a song, as in the night, when a holy solemnity is kept: and gladness of heart, as when one goeth with a pipe to come into the mighty One of Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**29.** Canticum erit vobis, quemadmodum in nocte dum celebratur dies festus, et laetitia cordis quasi ejus qui ad tibiam incedit, ut veniat ad montem Iehovae, ad Fortem Israelis. 30. And the Lord shall cause his glorious voice to be heard, and shall show the lighting down of his arm, with the indignation of his anger, and with the flame of a devouring fire, with scattering, and the tempest, and hailstones.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Et audiri faciet Iehova potentiam vocis suae, et descensionem brachii sui videri faciet, cum furore vultus et flamma ignis vorantis, disipatione inundatione, et lapide grandinis. 31. For through the voice of the Lord shall the Assurian be beaten down, which smote with a rod.</p>
+
+<p style="margin-left:2em;" markdown="1">**31.** Sane a voce Iehovae conteretur Assur, qui virga percussit. 32. And in every place where the grounded staff shall pass, which the Lord shall lay upon him, it shall be with tabrets and harps: and in battles of shaking will he fight with it.</p>
+
+<p style="text-align:right;" markdown="1">32. Et erit in omni transitu baculus fundatus, quam infliget Iehova super eum cum tympanis, et citharis, et praeliis elevationis pugnabit contra eam.</p>
+
+<p style="margin-left:2em;" markdown="1">**33.** For Tophet is ordained of old; yea, for the king is prepared: he heath made it deep and large; the pile thereof is fire and much wood; the breath of the Lord, like a stream of brimstone, doth kindle it.</p>
+
+<p style="text-align:right;" markdown="1">33. Quoniam ordinata est ab hesterno Tophet: etiam Regi praeparata est: quam in profundum posuit et dilatavit. Pyra ejus ignis, et ligna multa; flatus Iehovae quasi torrens sulphuris succendit eam.</p>
+
+<!-- PAGE 947 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 31:1-9</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 31:1-9</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Woe to them that go down to Egypt for help, and stay on horses, and trust in chariots, because they are many; and in horsemen, because they are very strong: but they look not to the Holy One of Israel, neither seek the Lord.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Vae descendentibus in Aegyptum ad auxilium, et qui equis innituntur; et qui curribus confidnt, quia multi sunt; et equitibus, quia praevalidi; et non respexerunt ad Sanctum Israel, nec Iehovam inquisierunt. 2. Yet he is also is wise, and will bring evil, and will not call back his words: but will arise against the house of evil-doers, and against the help of them that work iniquity.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Atqui ipse quoque sapiens est. Itaque adducet malum, nec verba sua faciet irrita; insurgent, inquam, contra domum malignorum, et contra domum malignorum, et contra auxilium opificum vanitatis. 3. Now the Egyptians are men, and not God; and their horses flesh, and not spirit. When the Lord shall stretch out his handm both he that helpeth shall fall, and he that is holpen shall fall down, and tey shall fail together.</p>
+
+<p style="text-align:right;" markdown="1">3. Et certe Aegyptius homo est, non Deus; et equi eorum caro, et non spiritus. Itaque simulac extenderit Iehova manum suam, ruet auxiliator, et cadet adjutus, omnesque simul deficient.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** For thus hath the Lord spoken unto me, Like as the lion and the young lion roaring on his prey, when a multitude of shepherds is called forth against him, he will not be afraid of their voicce, nor abase himself for the noise of them; so shall the Lord of hosts come down to fifght for mount Zion, and for the hill thereof.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Quoniam sic dixit Iehova ad me: Ut leo rugit et catulus leonis ad praedam suam, contra quem so convocetur coetus pastorum, a clamore eorum non commovebitur, neque ob eorum tumultum humiliabitur; sic descendet Iehova exercituum ad praeliandum pro monte Sion, et pro colle ejus. 5. As birds flying, so will the Lord of hosts defend Jerusalem;</p>
+
+<p style="text-align:right;" markdown="1">5. Sicut aves quae volant, ita proteget Iehova exercituu,</p> <!-- PAGE 948 --> <p style="margin-left:2em;" markdown="1">defending also he will deliver it; and passing over he will preserve it.</p>
+
+<p style="text-align:right;" markdown="1">Ierusalem; protegens liberait, transiliens servabit.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Turn ye unto him from whom the children of Israel have deeply revolted.</p>
+
+<p style="text-align:right;" markdown="1">6. Revertimini ut profundam fecistis defectionem, filii Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** For in that day, every man shall cast away his idols of silver, and his idols of gold, which your own hands have made unto you for a sin.</p>
+
+<p style="text-align:right;" markdown="1">7. Quoniam in die illa abjicit, homo idola argenti sui, et idola auri sui, quae fecerunt vobis manus vestrae peccatum.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Then shall the Assyrians fall with the sword, not of a mighty man; and the sword, not of a mighty man, shall devour him; but he shall flee from the sword, and his young men shall be discomfited.</p>
+
+<p style="text-align:right;" markdown="1">8. Tum cadet Assur per gladium, non viri; et gladius non hominis devorabit eum; et fuga sibi consulet a facie gladii, et juvens ejus in liquefactionem erunt.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** And he shall pass over to his strong hold for fear, and his princes shall be afraid of the ensign, saith the Lord, whose fire is in Zion, and his furnace in Jerusalem.</p>
+
+<p style="text-align:right;" markdown="1">9. In arcem suam prae formidine transibit, et pavebunt Principes ejus a vexillo, dicit Iehova, cui ignis est (vel, qui ignis illis est) in Sion, et cui fornax in Ierusalem.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 32:1-20</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 32:1-20</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Behold, a king shall reign in righteousness, and princes shall rule in judgement.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Ecce in justitia regnabit rex, et principes in judicio praecrunt. 2. And a man shall be as an hidingplace from the wind, and a covert from the tempest;</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Et erit ille vir velut latibulum a vento, receptus ab imbre, rivi aquarum in teraa arida, umbra magnae rupis in terra laboriosa. 3. And the eyes of them that see sall not be dim; and the ears of</p>
+
+<p style="text-align:right;" markdown="1">3. Tunc non oblinentur oculi videntium, et aures audientium</p> <!-- PAGE 949 --> them that hear shall hearken. auscultabunt. 4. The heart also of the rash shall understand knowledge, and the tongue ofthe stammerers shall be ready to speak plainly.
+
+<p style="margin-left:2em;" markdown="1">**4.** Et cor stultorum intentum erit ad scietiam, et lingua balborum expedita erit ad loquendum diserte. 5. The vile person shall be no more called liberal, nor the churl said to be bountiful.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Non vocabitur amplius sordidus liberalis, neque parcus dicetur largus. 6. For the vile person will speak villany, and his heart will work iniquity, to practice hypocrisy, and to utter error against the Lord, to make empty the soul of the hungry; and he will casue the drink of the thirsty to fail.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Quoniam sordidus loquetur sordes, et cor ejus machinibitur iniquitatem, ad designandam pravitatem, ut proferat subsannationem contra Iehovam, exinaniat animam famelicam, et potum sitienti subtrahat. 7. The instruments also of the churl are evil: he deviseth wicked devices to destroy the poor with lying words, even when the needy speaketh right.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Avari arma sunt mala (vel, mensurae sunt maloe) ipse pravitates excogitat, ut circumveniat simplices verbis mendacibus, et loquatur contra pauperem in judicio. 8. But the liberal deviseth liberal things; and by liberal things shall he stand.</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** At liberalis liberalia agitabit, et liberaliter agendo progredietur. 9. Rise up, ye women that are at ease; hear my voice, ye careless daughters; give ear unto my speech.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Mulieres quitae, surgite; audite vocem meam, filiae confidentes; auscultate sermonem meum. 10. Many days and years shall ye be troubled, ye careless women: for the vintage shall fail, the gathering shall come.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Dies super annum expavescetis, confidentes; quia defieciet vindemia, et collectio non veniet. 11. Tremble, ye women that are at ease; be troubled, ye careless ones, strip you and make you bare, and gird sackcloth upon your loins.</p>
+
+<p style="text-align:right;" markdown="1">11. Contremiscite, quietae; trepidate, confidentes; spoliate, nudate, accingite lumbos.</p>
+
+<!-- PAGE 950 -->
+
+<p style="margin-left:2em;" markdown="1">**12.** They shall lament for the teats, for the pleasant fields, for the fruitful vine.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Super ubera plangetes, super agros desideratis, super vitem frugiferam. 13. Upon the land of my people shall come up thorns and briars; yea, upon all the houses of joy in the joyous city.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Super terram populi mei ascendet spina et vepris; etima super omnes domos laetitae in urbe exultationis. 14. Because the palaces shall be forsaken; the multitude of the city shall be left; the forts and towers shall be for dens for ever, a joy of wild asses, a pasture of flocks;</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Quoniam palatium desertum, strepitus urbis relictus, turris et propugnaculum redigentur in speluncas in perpetuum redigentur in speluncas in perpetuum, ubi gaudeant ongari, et pascantur greges. 15. Until the Spirit be poured upon us from on high, and the wilderness be a fruitful field, and the fruitful field be counted for a forest.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Donec super nos effundatur Spiritus ex alto, et ponatur desertum in agrum cultum, et ager cultus instar sylvae reputetur. 16. Then judgement shall dwell in the wilderness, and righteousness remain in the fruitful field.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Et habitat in deserto judicium, et justitia in agro culto sedebit. 17. And the work of righteousness shall be peace; and the effect of righteousness, quietness and assurance for ever.</p>
+
+<p style="text-align:right;" markdown="1">17. Et erit opus justitae pax; effectus, inquam, justitae, securitas et quies in perpetuum.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** And my people shall dwell in a peaceable habitation, and in sure dwellings, and in quiet resting places.</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Et sedebit populus meus in tabernaculo paci, et in mansioibus securis, et in refrigeriis quieis. 19. When it shall hail, coming down on the forest: and the city shall be low in a low place.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Et grando in sylvan descensu divertet, et in loco humili considet civitas. 20. Blessed are ye that sow beside all waters, that send forth thither the feet of the ox and the ass.</p>
+
+<p style="text-align:right;" markdown="1">20. Beati vos qui seritis super omnes aquas, qui immittis pedem bovis et asini.</p>
+
+<!-- PAGE 951 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 33:1-24</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">ISAIAH 33:1-24</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Woe to thee that spoilest, and thou *wast* not spoiled; and dealest treacherously, and they dealt not treacherously with thee! when thou shalt cease to spoil, thou shalt be spoiled; and when thou shalt make an end to deal treacherously, they shall deal treacherously with thee.</p>
+
+<p style="text-align:right;" markdown="1">1. Vae qui spolias, nec fuisti spoliatus; qui inique agis, nec inique actum in to fuit! Ubi desieris spoilare, spoliaberis; ubi tinem inique agendi feceris, inique in to agetur.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** O Lord, be gracious unto us; we have waited for thee: be thou their arm every morning, our salvation also in the time of trouble.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Iehova, miserere nostri; in to speravimus; esto, qui fuisti brachium eorum in matutinis, etiam salus nostra in tempore tribulationis. 3. At the noise of the tumult the people fled; at the lifting up of thyself the nations were scattered.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** A voce tumultus fugerunt pcpuli; ab exaltatione tua dissipatae sunt gentes. 4. And your spoil shall be gathered *like* the gathering of the caterpillar: as the running to and fro of locusts shall he run upon them.</p>
+
+<p style="text-align:right;" markdown="1">4. Et colligetur praeda vestra collectione bruchorum; secundum discursum locustarum pergens illuc.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** The Lord is exalted; for he dwelleth on high: he hath filled Zion with judgment and righteousness.</p>
+
+<p style="text-align:right;" markdown="1">5. Exaltatus est Iehova, qui habitat in excelsis. Implevit Sion judicio et justitia.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** And wisdom and knowledge shall be the stability of the times, *and* strength of salvation: the fear of the Lord is his treasure.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Et erit stabilitas temporum tuorum fortitudo, salutes, sapientia, et scientia; timor Jehovae ipse thesaurus ejus. 7. Behold, their valiant ones shall cry without; the ambassadors of peace shall weep bitterly.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Ecce nuncii eorum vociferabuntur foris; legati pacis amare flebunt. 8. The highways lie waste, the 8. Desolatae sunt viae, cessavit</p> <!-- PAGE 952 --> <p style="margin-left:2em;" markdown="1">wayfaring man ceaseth; he hath broken the covenant, he hath despised the cities, he regardeth no man.</p>
+
+<p style="text-align:right;" markdown="1">viator; irritum fecit foedus, sprevit civitates, nihil reputavit hominem.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** The earth mourneth *and* languisheth; Lebanon is ashamed *and* hewn down; Sharon is like a wilderness; and Bashan and Carmel shake off *their fruits.*</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Luxit, emarcuit terra; pudefactus est Libanus et succisus; facta est Saron instar deserti; excussus est Basan et Carmelus. 10. Now will I rise, saith the Lord; now will I be exalted; now will I lift up myself.</p>
+
+<p style="text-align:right;" markdown="1">10. Nunc surgam, dicit Jehova; nunc exaltabor, nunc extollar.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Ye shall conceive chaff; ye shall bring forth stubble: your breath, *as* fire, shall devour you.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Concipietis quisquilias, parietis stipulas; spiritus vestri ignis devorabit vos. 12. And the people shall be *as* the burnings of lime: *as* thorns cut up shall they be burned in the fire.</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et erunt populi combustiones calcis, *(vel, calx combusta,)* tanquam spinae abscissae igni exurentur. 13. Hear, ye *that are* far off, what I have done; and, ye *that are* near, acknowledge my might.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Andite, qui longe abestis, quid fecerim; cognoscite, vicini, potentiam meam. 14. The sinners in Zion are afraid; fearfulness hath surprised the hypocrites: who among us shall dwell with the devouring fire? who among us shall dwell with everlasting burnings?</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Expaverunt in Sion impii; terror apprehendit hypocritas *(vel, sceleratos.)* Quis ex nobis *(vel, pro nobis)* habitabit cam igne devorante? Quis ex nobis habitabit cum ardoribus aeternis? 15. He that walketh righteously, and speaketh uprightly; he that despiseth the gain of oppressions, that shaketh his hands from holding of bribes, that stoppeth his ears from hearing of blood, and shutteth his eyes from seeing evil;</p>
+
+<p style="text-align:right;" markdown="1">15. Ambulans injustitiis, loquens recta, aspernars lucrum ex vi et calumnia, excutiens manus suas a susceptione muneris; obturans aurem suam, ne audiat sanguines; comprimens oculos suos, ne videat malum.</p>
+
+<!-- PAGE 953 -->
+
+<p style="margin-left:2em;" markdown="1">**16.** He shall dwell on high; his place of defense *shall be* the munitions of rocks; bread shall be given him, his waters *shall be* sure.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Hic in excelsis habitabit; propugnacula petrarum asylum ejus; huic panis dabitur, et aquae ejus certae (erunt.) 17. Thine eyes shall see the King in his beauty; they shall behold the land that is very far off.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Regem in decore suo videbunt oculi tui; videbunt terram procul remotam. 18. Thine heart shall meditate terror. Where *is* the scribe? where *is* the receiver? where *is* he that counted the towers?</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Cor tuum meditabitur terrorem. Ubi scriba? Ubi appensor? Ubi qui annotat domos insigniores? 19. Thou shalt not see a fierce people, a people of a deeper speech than thou canst perceive; of a stammering tongue, *that thou canst* not understand.</p>
+
+<p style="text-align:right;" markdown="1">19. Popalum trucem non videbis, populum abstrusi labii, ut non intelligas; linguae balbae, ut non capins.</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Look upon Zion, the city of our solemnities: thine eyes shall see Jerusalem a quiet habitation, a tabernacle *that* shall not be taken down; not one of the stakes thereof shall ever be removed, neither shall any of the cords thereof be broken:</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Aspice Sionem civitatem solennitatum *(vel, conventuum)* nostrarum; oculi tui videbunt Ierusalem, habitaculum tranquillum, tentorium quod non transferetur; cujus paxilli non amovebuntur in seculum, et cujus funes cuncti non rumpentur. 21. But there the glorious Lord *will be* unto us a place of broad rivers *and* streams; wherein shall go no galley with oars, neither shall gallant ship pass thereby.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Adeo *(vel, quia si)* illic fortis nobis Iehova locus fluminum, rivorum spatiis amplorum, per quem non transibit navis remigum, et per quem navis magnifica non pertransibit. 22. For the Lord *is* our judge, the Lord *is* our lawgiver, the Lord *is* our king; he will save us.</p>
+
+<p style="margin-left:2em;" markdown="1">**22.** Quia Iehova judex noster, Iehova legislator noster, Iehova rex noster; idem servabit nos. 23. Thy tacklings are loosed; they could not well strengthen their</p>
+
+<p style="text-align:right;" markdown="1">23. Laxati sunt funes tui, ut non solidaverint malum suum, neque</p> <!-- PAGE 954 --> <p style="margin-left:2em;" markdown="1">mast; they could not spread the sail: then is the prey of a great spoil divided; the lame take the prey.</p>
+
+<p style="text-align:right;" markdown="1">expanderint velum; tunc divisa est praeda spolii multi, claudi quoque dirlpuerunt praedam.</p>
+
+<p style="margin-left:2em;" markdown="1">**24.** And the inhabitant shall not say, I am sick: the people that dwell therein *shall be* forgiven *their* iniquity.</p>
+
+<p style="text-align:right;" markdown="1">24. Nec dicet habitator, AEgrotus sum; populus habitans in ea solutus est ab iniquitate.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 34:1-27</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">Isaiah 34:1-17</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Come near, ye nations, to hear; and hearken, ye people: let the earth hear, and all that is therein; the world, and all things that come forth of it.</p>
+
+<p style="text-align:right;" markdown="1">1. Accedite gentes ad audiendum, et populi attendite. Audiat terra, et plenitudo ejus; orbis, et cuncta germina ejus.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** For the indignation of the Lord *is* upon all nations, and *his* fury upon all their armies: he hath utterly destroyed them, he hath delivered them to the slaughter.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Quia indignatio est Iehovae super omnes gentes, et furor super omnem exercitum earum; vastavit eas, tradidit eas in mactationem. 3. Their slain also shall be east out, and their stink shall come up out of their carcases, and the mountains shall be melted with their blood.</p>
+
+<p style="text-align:right;" markdown="1">3. Interfecti earum abjicientur, et e cadaveribus eorum ascendet foetor earum, ac liquefient montes prae sanguine eorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** And all the host of heaven shall be dissolved, and the heavens shall be rolled together as a scroll: and all their host shall fall down, as the leaf falleth off from the vine, and as a falling fig from the figtree.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Et tabescent omnes exercitus coelorum, et complicabuntur ut liber. Coeli et onmes exercitus eorum defluent, sicut defiuit folium e vite, et sicut defiuit ex ficu. 5. For my sword shall be bathed in heaven: behold, it shall come down upon Idumea, and upon the people of my curse, to judgment.</p>
+
+<p style="text-align:right;" markdown="1">5. Quoniam inebriatus est in coelis gladius meus. Ecce, super AEdom descendet, super populum, inquam, anathematis</p> <!-- PAGE 955 --> met in judicium. 6. The sword of the Lord is filled with blood; it is made fat with fatness, *and* with the blood of lambs and goats, with the fat of the kidneys of rams: for the Lord hath a sacrifice in Bozrah, and a great slaughter in the land of Idumea.
+
+<p style="text-align:right;" markdown="1">6. Gladius Iehoae impletus eat sanguine, impinguatus est ab adipe; sanguine, inquam, agnorum et hircorum, adipe renum arietum. Quoniam victima Iehova in Bozra, et mactatio magna in terra AEdom.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** And the unicorns shall come down with them, and the bullocks with the bulls; and their l.and shall be soaked with blood, and their dust made fat with fatness.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Et descendent unicornes cum eis, et juvenci cum tauris; et inebriabitur terra eorum sanguine, et pulvis adipe impinguabitur. 8. For *it is* the day of the Lord’s vengeance, *and* the year of recompences for the controversy of Zion.</p>
+
+<p style="text-align:right;" markdown="1">8. Quoniam dies ultionis Iehovae, annus retributionum in causam Sion.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** And the streams thereof shall be turned into pitch, and the dust thereof into brimstone, and the land thereof shall become burning pitch.</p>
+
+<p style="text-align:right;" markdown="1">9. Et convertentur flumina ejus in picem, et pulvis ejus in sulphur; eritque terra ejus in picem ardentern.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** It shall not be quenched night nor day; the smoke thereof shall go up for ever: from generation to generation it shall lie waste; none shall pass through it for ever and ever:</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** Noctu et die non extinguetur, perpetuo ascendet fumus ejus; a generatione in generationem devastabitur, perpetuis aeternitatibus nemo transibit per cam. 11. But the cormorant and the bittern shall possess it; the owl also and the raven shall dwell in,, it: and he shall stretch out upon it the line of confusion, and the stones of emptiness.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Itaque accipient eam in possessionem pelicanus et ulula; noctua et corvus habitabunt in ea; extendetque super earn funiculum inanitatis et lapides perpendiculares vantratis. 12. They shall call the nobles 12. Nobiles ejus sine regno</p> <!-- PAGE 956 --> <p style="margin-left:2em;" markdown="1">thereof to the kingdom, but none *shall be* there, and all her princes shall be nothing.</p>
+
+<p style="text-align:right;" markdown="1">vacabunt, et cuncti principes ejus erunt nihilum.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** And thorns shall come up in her palaces, nettles and brambles in the fortresses thereof; and it shall be an habitation of dragons, *and a* court for owls.</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Proferet in palatiis ejus spinas, et urticam, et carduum in arcibus ejus; eritque habitaculum draconum, et mansio pullis struthionis. 14. The wild beasts of the desert shall also meet with the wild beasts of the island, and the satyr shall cry to his fellow; the screech owl also shall rest there, and find for herself a place of rest.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Et occurrent bestiae sylvestres satyris, et stryx ad socium suum vociferabur;etiam Lamina ibi per noctabit, invenietque sibi mansionem quietam. 15. There shall the great owl make her nest, and lay, and hatch, and gather under her shadow: there shall the vultures also be gathered, every one with her mate.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Ulula faciet ibi nidum, et incubabit, et excludet, et congregabit in umbra ejus; quinetiam vultures ibi congregabuntur, unaquaeque cum socia sua. 16. Seek ye out of the book of the Lord, and read; no one of these shall fail, none shall want her mate: for my mouth it hath commanded, and his spirit it hath gathered them.</p>
+
+<p style="margin-left:2em;" markdown="1">**16.** Sciscitamini ex libro Iehovae, et legite. Nunquid unum ex illis substractum; nullum sociae suae deerit; quoniam os ejus praecepit, et spiritus ejus congregavit eas. 17. And he hath cast the lot for them, and his hand hath divided it unto them by line: they shall possess it for ever, from generation to generation shall they dwell therein.</p>
+
+<p style="text-align:right;" markdown="1">17. Et ipse projecit eis sortem, etmarius ejus divisit illis in perpetuum, quasi per funiculum. Ideo haereditabunt eam, in generationem et genereationem illic habitabnnt.</p>
+
+<!-- PAGE 957 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 35:1-10</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">Isaiah 35:1-10</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** The wilderness and the solitary place shall be glad for them; and the desert shall rejoice, and blossom as the rose.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Laetabuntur solitudo et desertum; exultabit locus squalidus, et florebit quasi lilium. 2. It shall blossom abundantly, and rejoice even with joy and singing: the glory of Lebanon shall be given unto it, the execellency of Carmel and Sharon; they shall see the glory of the Lord, *and* the excellency of our God.</p>
+
+<p style="text-align:right;" markdown="1">2. Florens florebit, et exultabit adhuc *(vel, etiam)* exultatione, at. que jubilabit; gloria Libant dabitur ei, decor Carmel et Saron. Ipsi videbunt gloriam Iehovae, majestatem Dei nostri.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Strengthen ye the weak hands, and confirm the feeble knees.</p>
+
+<p style="margin-left:2em;" markdown="1">**3.** Confortate manus remissas, genua labantia roborate. 4. Say to them *that are* of a fearful heart, Be strong, fear not: behold, your God will come *with* vengeance, even God *with* a recompence; he will come and save you.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Dicite eis qui trepidi sunt corde: confortemini, ne timeatis. Ecce Deus vester cum ultione veniet; cum retributione Deus *(vel, Dei)* ipse veniet, et salvabit nos. 5. Then the eyes of the blind shall be opened, and the ears of the deaf shall be unstopped:</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Tunc aperientur oculi caecorum, et antes surdorum aperientur. 6. Then shall the lame man leap as an hart, and the tongue of the dumb sing: for in the wilderness shall waters break *out,* and streams in the desert.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Tunc saliet instar cervi claudus, clare personabit lingua muti; quoniam effodientur in deserto aquae, et flumina in solitudine. 7. And the parched ground shall become a pool, and the thirsty land springs of water: in the habitation of dragons, where each lay, *shall be* grass, with reeds and rushes.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Vertetur locus aridus in stagnum, et regio siticulosa in scaturigines aquarum; in habitaculo draconum, cubili, inquam, ejus locus erit arundini et junco. 8. And an highway shall be there, 8. Et erit illic semita et via, et</p> <!-- PAGE 958 --> <p style="margin-left:2em;" markdown="1">and a way, and it shall be called, The way of holiness; the unclean shall not pass over it; but it *shall be* for those: the wayfaring men, though fools, shall not err *therein.*</p>
+
+<p style="text-align:right;" markdown="1">via suncta vocabitur. Per cam non transibit immundus; et erit illis ambulans in via, ut stulti non errent.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** No lion shall be there, nor any ravenous beast shall go up thereon, it shall not be found there; but the redeemed shall walk *there.*</p>
+
+<p style="text-align:right;" markdown="1">9. Non erit illic leo, nec fera bestia ascendet per eam, neque ibi invenietur, ut redempti ambulent.</p>
+
+<p style="margin-left:2em;" markdown="1">**10.** And the ransomed of the Lord shall return, and come to Zion with songs, and everlasting joy upon their heads: they shall obtain joy and gladness, and sorrow and sighing shall flee away.</p>
+
+<p style="text-align:right;" markdown="1">10. Itaque redempti Jehovae redibunt, et venient in Sion cum exultatione; et gaudium perpetuum erit super caput eorum; et apprehendent gaudium et laetitiam, fugientque tristitia et gemitus.</p>
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 36:1-22</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">Isaiah 36:1-22</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Now it came to pass in the fourteenth year of king Hezekiah, *that* Sennacherib king of Assyria came up against all the defenced cities of Judah, and took them.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Accidit anno decimo quarto regis Ezechiae, ut ascenderet Sennacherib rex Assur contra omnes urbes Iuda munitas, et caperet eas. 2. And the king of Assyria sent Rabshakeh from Lachish to Jerusalem, unto king Hezekiah, with a great army: and he stood by the conduit of the upper pool, in the highway of the fuller’s field.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Tum misit rex Assur Rapsacen e Lachis Ierosolymam ad regem Ezechiam cum manu valida, qui stetit in aquae ductu piscinae superioris, in via agri fullonis. 3. Then came forth unto him Eliakim, Hilkiah’s son, which *was* over the house, and Shebna the scribe, and Joab, Asaph’s son, the recorder.</p>
+
+<p style="text-align:right;" markdown="1">3. Et egressus est ad eum Eliacim filius Helchiae praefectus domus, et Sobna cancellarius, et Ioach filius Asaph secretarius.</p>
+
+<!-- PAGE 959 -->
+
+<p style="margin-left:2em;" markdown="1">**4.** And Rabshakeh said unto them, Say ye now to Hezekiah, Thus saith the great king, the king of Assyria, What confidence *is* this wherein thou trustest?</p>
+
+<p style="text-align:right;" markdown="1">4. Et dixit illis Rapsaces: Dicite agedum Ezechiae, Sic dicit rex magnus, rex Assur, Quae fiducia haec qua confisus es?</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** I say, *sayest thou,* (but *they are but* vain words,) *I have* counsel and strength for war: now, on whom dost thou trust, that thou rebellest against me?</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Dixi: (tantum verbum labiorum:) Consilium et fortitudo ad bellum. Nunc super quo confisus es, quod rebellasti adversum me? 6. Lo, thou trustest in the staff of ‘this broken reed, on Egypt, whereon if a man lean, it will go into his hand, and pierce it: so *is* Pharaoh king of Egypt to all that trust in him.</p>
+
+<p style="margin-left:2em;" markdown="1">**6.** Ecce confiusus es super baculo isto arundineo confracto, super AEgypto; eui si quis innititur, penetrabit in manum ejus, et perforabit eam. Talis est Pharao rex AEgypti erga omnes qui fiduciam habent in eo. 7. But if thou say to me, We trust in the Lord our God: *is it* not he whose high places and whose altars Hezekiah hath taken away, and said to Judah and to Jerusalem, Ye shall worship before this altar?</p>
+
+<p style="text-align:right;" markdown="1">7. Quod si dixeris mihi, In Iehova Deo nostro confidimus; annon hic est enjus abstulit Ezechias excelsa et altaria, dixitque ad Iuda et Ierusalem, coram altari hoc adorabitis?</p>
+
+<p style="margin-left:2em;" markdown="1">**8.** Now therefore give pledges, I pray thee, to my master the king of Assyria, and I will give thee two thousand horses, if thou be able on thy part to set riders upon them.</p>
+
+<p style="text-align:right;" markdown="1">8. Nunc age, da obsidem domino meo regi Assur. Dabo tibi duo millia equorum; an tibi erunt equites quos illis imponas?</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** How then wilt thou turn away the face of one captain of the least of my master’s servants, and put thy trust on Egypt for chariots and for horsemen?</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Et quomodo aspernaris faciem ducis unius e servis domini mei minoribus, et fiduciam tibi statuis in AEgypto ob currus et equites? 10. And am I now come up without the Lord against this land</p>
+
+<p style="text-align:right;" markdown="1">10. Et nunc an absque Iehova ascendi ad terrain hanc, ut</p> <!-- PAGE 960 --> <p style="margin-left:2em;" markdown="1">to destroy it? The Lord said unto me, Go up against this land, and destroy it</p>
+
+<p style="text-align:center" markdown="1">perdam eam? Iehova mihi dixit: ascende in terram hanc, ut perdas eam. 11. Then said Eliakim, and Shebna, and Joah, unto Rabshakeh, Speak, I pray thee, unto thy servants in the Syrian language; for we understand *it:* and speak not to us in the Jews’ language, in the ears of the people that *are* on the wall.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Et dixit Eliacim, et Sobna, et Ioach, ad Rapsacem: loquere quaeso ad servos tuos Syriace, quoniam nos intelligimus, et non loquaris nobiscum Iudaice, audiente populo qui est super murum. 12. But Rabshakeh said, Hath my master sent me to thy master and to thee to speak these words? *hath he* not *sent me* to the men that sit upon the wall, that they may eat their own dung, and drink their own piss with you?</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Et dixit Rapsace: Nunquid ad dominum tuum et ad to misit me dominus meus, ut loquar verba ista? Annon ad viros sedentes super murum, ut comedant stercora sua et bibunt lotium suum vobiseum? 13. Then Rabshakeh stood, and cried with a loud voice in the Jews’ language, and said, Hear ye the words of the great king, the king of Assyria.</p>
+
+<p style="text-align:right;" markdown="1">13. Stetit ergo Rapsace, et cla— mavit voce magna Iudaice, ac dixit: Audite verba regis magni, regis Assur.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Thus saith the king, Let not Hezekiah deceive you; for he shall not be able to deliver you.</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** Sic dicit rex: Ne vobis imponat Ezechias, quia non poterit vos liberare. 15. Neither let Hezekiah make you trust in the Lord, saying, The Lord will surely deliver us: this city shall not be delivered, into the hand of the king of Assyria.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Neque vos confidere faciat Iehovae Ezechias, dicens, Liberando liberabit nos Iehova; non tradetur haec urbs in manum regis Assur. 16. Hearken not to *Hezekiah;* for thus saith the king of Assyria, Make *an agreement* with me by a present, and come out to me: and eat ye every one of his vine, and every one of his fig. tree, and drink ye every one the waters of his</p>
+
+<p style="text-align:right;" markdown="1">16. Ne audieritis Ezechiam; quoniam sic dicit rex Assur: Facite mecum benedictionem, et egredimini; et comedant singuli e ficu sua, et bibant singuli aquas putei sui.</p>
+
+<!-- PAGE 961 -->
+
+<p style="margin-left:2em;" markdown="1">own cistern; 17. Until I come and take you away to a land like your own land, a land of corn and wine, a land of bread and vineyards.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Donec veniam et assumam vos in terrain similem terre vestrae, terrain frumenti et vini, terrain panis et vinearum. 18. *Beware* lest Hezekiah persuade you, saying, The Lord will deliver us. Hath any of ‘the gods of the nations delivered his land out of the hand of the king of Assyria?</p>
+
+<p style="text-align:right;" markdown="1">18. Ne forte decipiat vos Ezechias, dicens, Iehova eripiet nos. An eripuerunt dii Gentium quisque terram suam e mann regis *Assur?*</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Where *are* the gods of Hamath and Arphad? where *are* the gods of Sepharvaim? and have they delivered Samaria out of my hand?</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Ubi est Deus Amath et Arpad? ubi Dens Sepharvaiim? An liberaverunt Samariam e manu mea? 20. Who *are they* among all the gods of these lands, that have delivered their land out of my hand, that the Lord should deliver Jerusalem out of my hand?</p>
+
+<p style="margin-left:2em;" markdown="1">**20.** Quis est in omnibus diis istarum terrarum qui liberaverit terram suam e manu mea; ut eruat Iehova Ierusalem e mann mea? 21. But they held their peace, and answered him not a word: for the kings commandment was, saying, Answer him not.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Tacuerunt, nec responderunt ei verbum; quoniam praeceptum hoc regis erat, qui dixerat: Ne respondeatis illi. 22. Then came Eliakim the son of Hilkiah, that *was* over the household, and Shebna the scribe, and Joah the son of Asaph, the recorder, to Hezekiah with *their* clothes rent, and told him the words of Rabshakeh.</p>
+
+<p style="text-align:right;" markdown="1">22. Venit antem Eliacim praefectus palatii, et Sobna cancellarius, et Ioach, filius Asaph, secretarius, ad Ezechiam scissis vestibus, et nuntiaverunt illi verba Rapsace.</p>
+
+<!-- PAGE 962 -->
+
+<p style="text-align:center" markdown="1"><span style="color:#000080">GO TO COMMENTARY 37:1-38</span></p>
+
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">Isaiah 37:1-38</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** And it came to pass, when king Hezekiah heard *it,* that he rent his clothes, and covered himself with sackcloth, and went into the house of the Lord.</p>
+
+<p style="margin-left:2em;" markdown="1">**1.** Factum est autem ut, hoc audito, rex Ezechias scinderet vestimenta sua, et sacco opertus veniret in domum Iehovae. 2. And he sent Eliakim, who *was* over the household, and Shebna the scribe, and the elders of the priests, covered with sackcloth, unto Isaiah the prophet, the son of Amoz.</p>
+
+<p style="margin-left:2em;" markdown="1">**2.** Simul misit Eliacim praefectum palatii; et Sobnam cancellarium, et seniores sacerdotes, saccis opertos, ad Isaiam filium Amoz, prophetam. 3. And they said unto him, Thus saith Hezekiah, This day *is* a day of trouble, and of rebuke, and of blasphemy: for the children are come to the birth, and *there is* not strength to bring forth.</p>
+
+<p style="text-align:right;" markdown="1">3. Qui dixerunt illi: Sic dicit Ezechias: Dies angustiae et increpationis et blasphemiae dies hic, quia filii venerunt ad partum, neque est vis pariendi.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** It may be the LORD thy God will hear the words of Rabshakeh, whom the king of Assyria his master hath sent to reproach the living God, and will reprove the words which the Lord thy God hath heard: wherefore lift up *thy* prayer for the remnant *that is* left.</p>
+
+<p style="margin-left:2em;" markdown="1">**4.** Si forte audiet Iehova Deus tuus verba Rapsacae, quem misit rex Assur dominns ejus, ad maledicendum Deo viventi, et arguendum ver. bis, quae audivit Iehova Deus tuus. Tu ergo levabis orationem pro reitquiis quae adhuc extant. 5. So the servants of king Hezekiah came to Isaiah.</p>
+
+<p style="margin-left:2em;" markdown="1">**5.** Venerunt servi regis Ezechiae ad Isaiam. 6. And Isaiah said unto them, Thus shall ye say unto your master, Thus saith the LORD, Be not afraid of the words that thou hast heard, wherewith the servants of the king of Assyria have blasphemed me.</p>
+
+<p style="text-align:right;" markdown="1">6. Et dixit illis Isaias: Sic dicetis domino vestro: Sic dicit Iehova, Ne timeas a verbis quae audiisti quae mihi exprobrarunt servi regis Asstir.</p>
+
+<!-- PAGE 963 -->
+
+<p style="margin-left:2em;" markdown="1">**7.** Behold, I will send a blast upon him, and he shall hear a rumor, and return to his own land; and I will cause him to fall by the sword in his own land.</p>
+
+<p style="margin-left:2em;" markdown="1">**7.** Ecce apponam illi ventum; audiet enim rumorem, et revertetur in terrain suam; et faciam ut cadat gladio in terra sua. 8. So Rabshakeh returned, and found the king of Assyria warring against Libnah: for he had heard that he was departed from Lachish.</p>
+
+<p style="text-align:right;" markdown="1">8. Reversus autem Rapsaces invenit regem Assur oppugnantem Lobnam. Audivit enim profectum a Lachis.</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** And he heard say concerning Tirhakah king of Ethiopia, He is come forth to make war with thee: and when he heard *it,* he sent messengers to Hezekiah, saying,</p>
+
+<p style="margin-left:2em;" markdown="1">**9.** Audiens autem a Thirhaka rege AEthiopiae, egressus est, ut pugnet contra to; ex quo audivit, misit nuntios ad Ezechiam, dicens: 10. Thus shall ye speak to Hezekiah king of Judah, saying, Let not thy God in whom thou trustest deceive thee, saying, Jerusalem shall not be given into the hand of the king of Assyria.</p>
+
+<p style="text-align:right;" markdown="1">10. Sic dicetis Ezechiae regi Iuda: Non to decipiat Deus tuus, in quo tu confidis, dicens: Non tradetur Ierusalem in manum regis Assur.</p>
+
+<p style="margin-left:2em;" markdown="1">**11.** Behold, thou hast heard what the kings of Assyria have done to all lands, by destroying them utterly, and shalt thou be delivered?</p>
+
+<p style="text-align:right;" markdown="1">11. Ecce tu audiisti quae fecerunt reges Assur universis terris, quomodo vastaverunt eas; et tu liberaberis?</p>
+
+<p style="margin-left:2em;" markdown="1">**12.** Have the gods of the nations delivered them which my fathers have destroyed, *as* Gozan, and Haran, and Rezeph, and the children of Eden which *were* in Telassar?</p>
+
+<p style="text-align:right;" markdown="1">12. An liberaverunt dii gentium, quos perdiderunt patres mei, Gozam, et Harum, Rezeph, et filios Edom, qui fuerunt in Bithlassar?</p>
+
+<p style="margin-left:2em;" markdown="1">**13.** Where’s the king of Hamath, and the king of Arphad, and the king of the city of Sepharvaim, Hena, and Ivah?</p>
+
+<p style="text-align:right;" markdown="1">13. Ubi rex Amath, rex Arpad, rex civitatis Sepharvaiim, Hena et Ira?</p>
+
+<p style="margin-left:2em;" markdown="1">**14.** And Hezekiah received the 14. Accepit Ezechias literas e</p> <!-- PAGE 964 --> <p style="margin-left:2em;" markdown="1">letter from the hand of the messengers, and read it: and Hezekiah went up unto the house of the Lord, and spread it before the Lord.</p>
+
+<p style="text-align:right;" markdown="1">manu nuntiorum, et legit eas, et ascendit in domurn Iehovae, et expandit eas coram Iehova.</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** And Hezekiah prayed unto the Lord, saying,</p>
+
+<p style="margin-left:2em;" markdown="1">**15.** Tum oravit Ezechias ad Deum, dicens: 16. O Lord of hosts, God of Israel, that dwellest *between* the cherubims, thou *art* the God, *even* thou alone, of all the kingdoms of the earth; thou hast made heaven and earth.</p>
+
+<p style="text-align:right;" markdown="1">16. Iehova exercituum, Deus Israel, qui habitas inter cherubin: tu ipse Deus solus super omnia regna terrae; tu fecisti ccelos et terrain.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Incline thine ear, O Lord, and hear; open thine eyes, O Lord, and see; and hear all the words of Sennacherib, which hath sent to reproach the living God.</p>
+
+<p style="margin-left:2em;" markdown="1">**17.** Inclina Iehova aurem tuam, et audi; aperi Iehova oculos tuos et vide; et audi cuneta verba Sennacherib, qui misit ad exprobrandum Deo vivo. 18. Of a truth, Lord, the kings of Assyria have laid waste all the nations, and their countries,</p>
+
+<p style="margin-left:2em;" markdown="1">**18.** Sane Iehova, perdiderunt reges Assur cunctas terras terrain, inquam, eorum, 19. And have cast their gods into the fire: for they *were* no gods, but the work of men’s hands, wood and stone; therefore they have destroyed them.</p>
+
+<p style="margin-left:2em;" markdown="1">**19.** Posueruntque deos earum in ignem, quoniam non sunt dii, sed opus manuno hominis, lignum, et lapis; ideo perdiderunt cos. 20. Now therefore, O Lord our God, save us from his hand, that all the kingdoms of the earth may know that thou *art* the Lord, *even* thou only.</p>
+
+<p style="text-align:right;" markdown="1">20. Et nunc Iehova Dens noster, serra nos e mann ejus; ut cognoscant omnia regna terrae quod tu Iehova es solus.</p>
+
+<p style="margin-left:2em;" markdown="1">**21.** Then Isaiah the son of Amoz sent unto Hezekiah, saying, Thus saith the Lord God of Israel, Whereas thou hast prayed to me against Sennacherib king of Assyria:</p>
+
+<p style="text-align:right;" markdown="1">21. Tunc misit Isaias filius Amoz ad Ezechiam, dicens: Sic dicit Iehova Deus Israel; Quoniam me precatus es de Sennacherib rege Assur;</p>
+
+<!-- PAGE 965 -->
+
+<p style="margin-left:2em;" markdown="1">**22.** This *is* the word which the Lord hath spoken concerning him, The virgin, the daughter of Zion, hath despised thee, *and* laughed thee to scorn; the daughter of Jerusalem hath shaken her head at thee.</p>
+
+<p style="text-align:right;" markdown="1">22. Hoc est verbum quod loquutus est Iehova de eo: Sprevit to, subsannavit to, virgo filia Sion; movit post to caput filia Ierusaleto.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Whom hast thou reproached and blasphemed; and against whom hast thou exalted *thy* voice, and lifted up thine eyes on high? *even* against the Holy One of Israel.</p>
+
+<p style="margin-left:2em;" markdown="1">**23.** Quem probris affecisti? et quem contumeliose aggressus es? Super quem exaltasti vocem tuam, et in sublime extulisti oculos tuos? nempe, super sanctum Israelis. 24. By thy servants hast thou reproached the Lord, and hast said, By the multitude of my chariots am I come up to the height of the mountains, to the sides of Lebanon; and I will cut down the tall cedars thereof, *and* the choice fir-trees thereof: and I will enter into the height of his border, *and* the forest of his Carmel.</p>
+
+<p style="text-align:right;" markdown="1">24. In manu servorum tuorum exprobrasti Domino ac dixisti: Ego in multitudine curruum meorum ascendam in excelsa montium, ad latera Libani, succidam summa cedrorum ejus, electas ejus abietes; tum veniam ad summum extremitatis, sed sylvam ejus campestrem, *(vel, planitiei ejus.)*</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** I have digged, and drunk water; and with the sole of my feet have I dried up all the rivers of the besieged places.</p>
+
+<p style="margin-left:2em;" markdown="1">**25.** Fodiam, et bibam aquas; exsiccabo planta pedum meorum cunctos lacus obsidionis. 26. Hast thou not heard long ago, *how I* have done it; *and* of ancient times, that I have formed it? now have I brought it to pass, that thou shouldest be to lay waste defenced cities *into* ruinous heaps.</p>
+
+<p style="margin-left:2em;" markdown="1">**26.** Annon audiisti quod a longinquo tempore fecerim eam; a diebus antiquis formaverim ipsam? Nunc vero adducerem earn, ut sit in desolationem, in acervos ruinarum, quemadmodum urbes munitas. 27. Therefore their inhabitants *were* of small power, they were</p>
+
+<p style="text-align:right;" markdown="1">27. Nam incolae earurn manu fuerunt mutilati, territi et</p> <!-- PAGE 966 --> <p style="margin-left:2em;" markdown="1">dismayed and confounded: they were *as* the grass of the field, and *as* the green herb; *as* the grass on the housetops, and *as corn* blasted before it be grown up.</p>
+
+<p style="text-align:right;" markdown="1">confusi sunt; facti sunt tanquam gramen agri, olus viride, herba tectorum, quae ante maturitatem exarescit.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** But I know thy abode, and thy going out, and thy coming in, and thy rage against me.</p>
+
+<p style="margin-left:2em;" markdown="1">**28.** Sessionem tuam, exitum tuum, et introitum tuam novi, et iracundiam tuam contra me. 29. Because thy rage against me, and thy tumult, is come up into mine ears; therefore will I put my hook in thy nose, and my bridle in thy lips, and I will turn thee back by the way by which thou camest.</p>
+
+<p style="margin-left:2em;" markdown="1">**29.** Quoniam iratus es contra me; ideo tumultus tuns ascendit in auras mens. Itaque ponam hamum *(vel, circulum)* meum in narem tuam, et framum meum in labia tua; et reducam to per viam ubi venisti. 30. And this *shall be* a sign unto thee, Ye shall eat *this* year such as groweth of itself; and the second year that which springeth of the same; and in the third year sow ye, and reap, and plant vineyards, and eat the fruit thereof.</p>
+
+<p style="margin-left:2em;" markdown="1">**30.** Hoc autem erit tibi signum: Comedes hoc anno quae sponte nascuntur, secundo etiam sponte provenientia, in tertio vero anno seminabiris et metetis, et plantabitis vineas, et comedetis fructum earurn. 31. And the remnant that is escaped of the house of Judah shall again take root downward, and bear fruit upward:</p>
+
+<p style="margin-left:2em;" markdown="1">**31.** Et adjiciet quod servatum erit e domo Iuda, quodque residuum erit, radicem jacere deorsum, et fructum proferre seorsum. 32. For out of Jerusalem shall go forth a remnant, and they that escape out of mount Zion: the zeal of the Lord of hosts shall do this.</p>
+
+<p style="margin-left:2em;" markdown="1">**32.** Nam e Ierusalem egredientur reliquiae, et quod serratum erit e monte Zion. Zelus Iehovae exercituum hoc faciet. 33. Therefore thus saith the Lord concerning the king of Assyria, He shall not come into this city, nor shoot an arrow there, nor come before it with shields, nor cast a bank against it.</p>
+
+<p style="text-align:right;" markdown="1">33. Propterea sic dicit Iehova de rage Assur: non ingredietur urbem hanc, neque projiciet illuc sagittam, et non occupabit eam clypeo munitus, neque fundet contra earn ballstam.</p>
+
+<!-- PAGE 967 -->
+
+<p style="margin-left:2em;" markdown="1">**34.** By the way that he came, by the same shall he return, and shall not come into this city, saith the Lord.</p>
+
+<p style="text-align:right;" markdown="1">34. Per viam qua venit revertetur, neque ingredietur urbem hanc dicit Iehova.</p>
+
+<p style="margin-left:2em;" markdown="1">**35.** For I will defend this city to save it, for mine own sake, and for my servant David’s sake.</p>
+
+<p style="margin-left:2em;" markdown="1">**35.** Et protector ero super hanc urbem, ut servem eam, propter me et propter David servum meum. 36. Then the angel of the Lord went forth, and smote in the camp of the Assyrians an hundred and fourscore and five thousand: and when they arose early in the morning, behold, they *were* all dead corpses.</p>
+
+<p style="text-align:right;" markdown="1">36. Et egressus angelus Iehovae percussit in castris Assyriorum centum octaginta quinque millia; et cum mane surrectum esset, ecce omnes cadavera mortuorum.</p>
+
+<p style="margin-left:2em;" markdown="1">**37.** So Sennacherib king of Assyria departed, and went and returned, and dwelt at Nineveh.</p>
+
+<p style="margin-left:2em;" markdown="1">**37.** Tum profectus abiit, et reversus est Sennacherib rex Assur, et habitavit in Nineve. 38. And it came to pass, as he was worshipping in the house of Nisroch his god, that Adrammelech and Sharezer his sons smote him with the sword; and they escaped into the land of Armenia: and Esarhaddon his son reigned in his stead.</p>
+
+<p style="text-align:right;" markdown="1">38. Et accidit quum adoraret in templo Nisroch deum suum *(vel, dei sui,)* Adrammelech et Sarrezer filii ejus percusscrunt eum gladio, fugeruntque in terram Armeniae, et regnavit Essaradon filius ejus pro eo.</p>
+
+<!-- PAGE 968 -->
