@@ -85,27 +85,23 @@ body:has(.bridges-stage) footer{display:none}
    ⚠️ 动画期间关 backdrop-filter：三层毛玻璃跟着 transform 每帧重算会掉帧。
    ⚠️ transform 会成为后代 sticky 的包含块，落定后必须清掉，否则经文置顶失灵。 */
 @keyframes bridges-drop{
-  /* 先慢后快：前 72% 的时间只挪 40vh（在高处缓缓悬着），
-     剩下 28%（约 0.5s）落完 60vh ≈ 120vh/s，保持原来那一下的下落速度。
-     段内的 timing-function 写在关键帧上，所以 animation 那行用 linear 兜底。*/
-  0%   {transform:translateY(-100vh); opacity:0;
-        animation-timing-function:cubic-bezier(.35,.02,.68,.3)}   /* 缓起，几乎悬停 */
-  72%  {transform:translateY(-60vh);  opacity:.45;
-        animation-timing-function:cubic-bezier(.32,.55,.34,1)}    /* 加速落下，末尾收住 */
-  100% {transform:translateY(0);      opacity:1}
+  /* 全程匀速慢降，不再分段加速。速率取原来前段的手感：40vh / 1.3s ≈ 31vh/s，
+     走完 100vh 就是 3.2s。opacity 跟着一起线性推进。
+     试过「前慢后快」，后段 120vh/s 显得砸下来，所以整段拉平。*/
+  from {transform:translateY(-100vh); opacity:0}
+  to   {transform:translateY(0);      opacity:1}
 }
 @keyframes bridges-fade{
   from {opacity:0}
   to   {opacity:1}
 }
 .bridges-glass-page{
-  animation:bridges-drop 1.8s linear both;
+  animation:bridges-drop 3.2s linear both;
   will-change:transform, opacity;
 }
-/* 章标题、上下导航、发布时间：等文字块结束悬停、开始加速下落时淡入，
-   两件事同时发生，节奏才是一体的（延迟随总时长 1.4s→1.8s 一起后移）。*/
+/* 章标题、上下导航、发布时间：文字块降到一半时淡入（延迟随总时长按 50% 走）*/
 .bridges-hero, .bridges-chrome{
-  animation:bridges-fade .55s ease 1s both;
+  animation:bridges-fade .55s ease 1.6s both;
 }
 .bridges-stage.bridges-drop-done .bridges-glass-page{
   animation:none; transform:none; opacity:1; will-change:auto;
@@ -258,7 +254,7 @@ body:has(.bridges-stage) footer{display:none}
   if (!stage || !card) return;
   var done = function(){ stage.classList.add('bridges-drop-done'); };
   card.addEventListener('animationend', done, {once:true});
-  setTimeout(done, 2100);          // 兜底(>动画 1.8s)：动画被跳过/不支持时也要还原
+  setTimeout(done, 3500);          // 兜底(>动画 3.2s)：动画被跳过/不支持时也要还原
 })();
 
 // 两个互不干扰的开关：
