@@ -39,21 +39,31 @@ case "$BOOK" in
 esac
 mkdir -p $RAW_DIR $(dirname $RAW_DIR)/zh_cache
 
-# 串行锁：并发调用（如即时批次与定时批次重叠）时排队，避免 git index / push 竞争
-LOCK=/tmp/translate_serial.lock
-while ! mkdir "$LOCK" 2>/dev/null; do
-    echo "$(date '+%H:%M:%S') 另一翻译任务持锁，等待中..."
-    sleep 30
-done
-trap 'rmdir "$LOCK" 2>/dev/null' EXIT
+# 串行锁：并发调用（如即时批次与定时批次重叠）时排队，避免 git index / push 竞争。
+#
+# 原来是 `while ! mkdir "$LOCK"; do sleep 30; done`，只保证互斥、不保证顺序：
+# 锁一空是谁的 sleep 恰好先醒谁拿走，排最久的可能永远抢不上。真发生过两次——
+# jeremiah-1 排 33 小时、daniel 排 10 小时 42 分，都是一章没跑成。
+# 现在换成 scripts/fifo_lock.py 的取号排队，先到先得，排队者崩溃会被自动清号。
+TICKET=$(python3 "$(dirname "$0")/fifo_lock.py" take "$BOOK" $$)
+trap 'rm -f "$TICKET"' EXIT INT TERM
+python3 "$(dirname "$0")/fifo_lock.py" wait "$TICKET"
 
 for CH in "$@"; do
     echo "=== $(date '+%H:%M:%S') 开始 $BOOK ch${CH} ==="
     [ -f "$RAW_DIR/${CH}.md" ] && chmod 644 "$RAW_DIR/${CH}.md" 2>/dev/null || true
-    # 撞会话额度等失败时不要拖垮整批：本章跳过, 缓存已存进度, 下次 --resume 续
-    if ! python3 -u scripts/translate_filibi.py --book $BOOK --chapter $CH --resume \
-            > /tmp/${BOOK}_ch${CH}_translate.log 2>&1; then
-        echo "!!! $(date '+%H:%M:%S') $BOOK ch${CH} 翻译失败, 跳过 publish, 继续下一章"
+    # 普通失败跳过本章继续；缓存已存进度, 下次 --resume 续。
+    # 退出码 42 是撞会话额度, 后面每章都会撞同一堵墙, 直接中止整批不再空烧。
+    python3 -u scripts/translate_filibi.py --book $BOOK --chapter $CH --resume \
+            > /tmp/${BOOK}_ch${CH}_translate.log 2>&1
+    RC=$?
+    if [ $RC -eq 42 ]; then
+        echo "!!! $(date '+%H:%M:%S') $BOOK ch${CH} 撞会话额度, 中止整批"
+        tail -3 /tmp/${BOOK}_ch${CH}_translate.log
+        exit 42
+    fi
+    if [ $RC -ne 0 ]; then
+        echo "!!! $(date '+%H:%M:%S') $BOOK ch${CH} 翻译失败(rc=$RC), 跳过 publish, 继续下一章"
         tail -5 /tmp/${BOOK}_ch${CH}_translate.log
         continue
     fi

@@ -29,14 +29,21 @@ ROOT = Path(__file__).resolve().parent.parent
 # 100+ 次调用，一章要 20 分钟；设 3 后墙钟时间降到三分之一。
 BATCH = 3
 
-# 并发路数。实测（jeremiah-1 ch7，链条同时占着 API）：
-#   串行 BATCH=3  5.7s/段   ← 基线
-#   串行 BATCH=8  7.0s/段   ← 反而更慢，瓶颈是输出 token 生成速度，不是调用
-#                              次数，攒批只是把等待挪进单次调用里
-#   3 路并发      2.4s/段   ← 2.4×，27/27 全成功，未触发限流
-# 提速只能靠并发。git commit/push 仍由 translate_serial.sh 串行做，这里并发的
-# 只是 CLI 调用；每段写各自的缓存文件，互不干扰。
-PARALLEL = int(os.environ.get('TRANSLATE_PARALLEL', '3'))
+# 并发路数，默认 1（串行）。
+#
+# 实测并发确实快（jeremiah-1 ch7：串行 5.7s/段，3 路并发 2.4s/段，2.4×），
+# 但**总 token 量不变，只是把消耗压进更短的时间窗口**，会更快撞上会话额度。
+# 撞上之后每次调用都返回
+#     is_error / stop_reason=stop_sequence
+#     result="You've hit your session limit · resets ..."
+# 而重试逻辑会照常退避重来——jeremiah-2 ch50 就这样空转 3.5 小时，
+# 112 次成功调用之外多烧了 87 次撞墙重试、$2.93，最后整章还是失败。
+# 所以额度紧张时并发是负收益：不省 token，只把额度提前打光再空转。
+# 需要时用 TRANSLATE_PARALLEL=3 显式开启，默认保持串行。
+#
+# 顺带记下另一个被证伪的想法：攒大批不提速。BATCH=8 是 7.0s/段，比
+# BATCH=3 的 5.7s/段还慢——瓶颈是输出 token 的生成速度，不是调用次数。
+PARALLEL = int(os.environ.get('TRANSLATE_PARALLEL', '1'))
 
 # 所有加尔文书卷共用的追加规则(在 main 里 append 到各书 system 之后)
 SCRIPTURE_RULE = (
@@ -1459,6 +1466,16 @@ def md5key(text: str) -> str:
 # 等）继续 `tf.CLI_TRIM_FLAGS` 引用。
 
 
+class SessionLimitError(RuntimeError):
+    """会话额度用尽。区别于普通失败：重试没有意义，应立刻停手。"""
+
+
+# CLI 撞额度时的回话形如：
+#   is_error / stop_reason='stop_sequence'
+#   result="You've hit your session limit · resets 10:20pm (Asia/Shanghai)"
+SESSION_LIMIT_RE = re.compile(r'session limit|usage limit|rate limit', re.I)
+
+
 def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
                 label: str = '') -> str:
     """调用 claude CLI；遇到失败重试 max_retries 次（退避 5/15/45/90/180s）。
@@ -1486,6 +1503,12 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
             continue
         except RuntimeError as e:
             last_err = str(e)
+            # 会话额度用尽时重试毫无意义：额度不会因为多等 180 秒就回来，
+            # 每次重试还照样计费。jeremiah-2 ch50 就是这样在 112 次成功调用
+            # 之外空烧了 87 次撞墙重试、$2.93，跑满 3.5 小时最后整章还是失败。
+            # 认出这个错就立刻放弃，把已翻的段留在缓存里，等额度恢复再续。
+            if SESSION_LIMIT_RE.search(last_err):
+                raise SessionLimitError(last_err)
             continue
         if out:
             return out
@@ -1830,4 +1853,11 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except SessionLimitError as e:
+        # 退出码 42 = 撞会话额度。translate_serial.sh 见到它会中止整个批次，
+        # 因为后面每一章都会撞同一堵墙，继续跑只是接着烧额度。
+        print(f'\n!! 会话额度用尽，停止翻译：{e}', flush=True)
+        print('   已翻段落都在 zh_cache 里，额度恢复后 --resume 直接续。', flush=True)
+        sys.exit(42)
