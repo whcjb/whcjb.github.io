@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: obadiah-en
 book_name: "Calvin on Obadiah"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-08-25 15:26
 next_section: 1
 next_label: "Chapter 1"
 ---

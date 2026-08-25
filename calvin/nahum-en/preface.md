@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: nahum-en
 book_name: "Calvin on Nahum"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-08-25 15:26
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -70,5 +70,7 @@ They say that Ninus was its founder, but this is proved to be a mistake by the t
 
 
 [^f2]: The distance is supposed by chronologers to have been about 150 years.—*Ed.*
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 

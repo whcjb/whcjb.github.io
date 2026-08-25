@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: malachi-en
 book_name: "Calvin on Malachi"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-08-25 15:26
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -56,5 +56,7 @@ He shows at the same time that God would remember his gratuitous covenant, which
 <!-- PAGE 5 -->
 
 [^f1]: “It is probable that he was contemporary with Nehemiah. Compare Malachi 2:11 with Nehemiah 13:23-27; and Malachi 3:8, with Nehemiah 13:10.”—*Newcome*. He must then be several years after ZECHARIAH, who began his Prophecy in the second year of Darius Hystaspes, about sixteen years after the first return from captivity, and NEHEMIAH returned from Persia in the twentieth year of Artaxerxes, about ninety years after the first return, and about seventy-four year after ZECHARIAH began to prophesy.— *Ed.*
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 

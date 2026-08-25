@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: haggai-en
 book_name: "Calvin on Haggai"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-08-25 15:26
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -52,5 +52,7 @@ This is the sum of the whole. I now come to the words.
 
 
 [^f2]: “We know nothing of the parentage of Haggai. He was probably born in Babylon during the captivity. He was sent particularly to encourage the Jews to proceed with the building of the temple, which had been interrupted for about *fourteen* years.” — *Adam Clarke.*
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 

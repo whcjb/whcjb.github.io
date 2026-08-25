@@ -284,6 +284,7 @@ VOLUMES = {
         # Ages <NNNNNN> markers; 3 chapters (OT minor prophet).
         'format': 'ages_phil',
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_ZEPH.pdf',
+        'latin_x_min': 'auto',
         'out':  os.path.join(BASE, 'calvin_raw/zephaniah/calvin_zephaniah_structured.txt'),
     },
     # ── Batch 2026-06-02: Ages PDFs from sabda.org. Same format as Zephaniah. ──
@@ -300,22 +301,32 @@ VOLUMES = {
     'genesis':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_GENE.pdf', 'out': os.path.join(BASE, 'calvin_raw/genesis/calvin_genesis_structured.txt') },
     'joshua':          { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JOSH.pdf', 'out': os.path.join(BASE, 'calvin_raw/joshua/calvin_joshua_structured.txt') },
     'lamentations':    { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_LAMN.pdf',
-        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/lamentations/calvin_lamentations_structured.txt') },
+        'latin_x_min': 'auto-min', 'out': os.path.join(BASE, 'calvin_raw/lamentations/calvin_lamentations_structured.txt') },
     'ezekiel':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_EZEK.pdf',
-        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/ezekiel/calvin_ezekiel_structured.txt') },
+        'latin_x_min': 'auto-min', 'out': os.path.join(BASE, 'calvin_raw/ezekiel/calvin_ezekiel_structured.txt') },
     'daniel':          { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_DANL.pdf',
-        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/daniel/calvin_daniel_structured.txt') },
+        'latin_x_min': 'auto-min', 'out': os.path.join(BASE, 'calvin_raw/daniel/calvin_daniel_structured.txt') },
     'hosea':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HOSE.pdf', 'out': os.path.join(BASE, 'calvin_raw/hosea/calvin_hosea_structured.txt') },
-    'joel':            { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JOEL.pdf', 'out': os.path.join(BASE, 'calvin_raw/joel/calvin_joel_structured.txt') },
-    'amos':            { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_AMOS.pdf', 'out': os.path.join(BASE, 'calvin_raw/amos/calvin_amos_structured.txt') },
-    'obadiah':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_OBDH.pdf', 'out': os.path.join(BASE, 'calvin_raw/obadiah/calvin_obadiah_structured.txt') },
-    'jonah':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JONH.pdf', 'out': os.path.join(BASE, 'calvin_raw/jonah/calvin_jonah_structured.txt') },
-    'micah':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_MICA.pdf', 'out': os.path.join(BASE, 'calvin_raw/micah/calvin_micah_structured.txt') },
-    'nahum':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_NAHM.pdf', 'out': os.path.join(BASE, 'calvin_raw/nahum/calvin_nahum_structured.txt') },
-    'habakkuk':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HABK.pdf', 'out': os.path.join(BASE, 'calvin_raw/habakkuk/calvin_habakkuk_structured.txt') },
-    'haggai':          { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAGG.pdf', 'out': os.path.join(BASE, 'calvin_raw/haggai/calvin_haggai_structured.txt') },
-    'zechariah':       { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ZECH.pdf', 'out': os.path.join(BASE, 'calvin_raw/zechariah/calvin_zechariah_structured.txt') },
-    'malachi':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_MALC.pdf', 'out': os.path.join(BASE, 'calvin_raw/malachi/calvin_malachi_structured.txt') },
+    'joel':            { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JOEL.pdf',
+        'latin_x_min': 'auto-min', 'out': os.path.join(BASE, 'calvin_raw/joel/calvin_joel_structured.txt') },
+    'amos':            { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_AMOS.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/amos/calvin_amos_structured.txt') },
+    'obadiah':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_OBDH.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/obadiah/calvin_obadiah_structured.txt') },
+    'jonah':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JONH.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/jonah/calvin_jonah_structured.txt') },
+    'micah':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_MICA.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/micah/calvin_micah_structured.txt') },
+    'nahum':           { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_NAHM.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/nahum/calvin_nahum_structured.txt') },
+    'habakkuk':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HABK.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/habakkuk/calvin_habakkuk_structured.txt') },
+    'haggai':          { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_HAGG.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/haggai/calvin_haggai_structured.txt') },
+    'zechariah':       { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ZECH.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/zechariah/calvin_zechariah_structured.txt') },
+    'malachi':         { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_MALC.pdf',
+        'latin_x_min': 'auto', 'out': os.path.join(BASE, 'calvin_raw/malachi/calvin_malachi_structured.txt') },
     'isaiah-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-1/calvin_isaiah-1_structured.txt') },
     'isaiah-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_ISA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/isaiah-2/calvin_isaiah-2_structured.txt') },
     'jeremiah-1':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER1.pdf',
@@ -324,7 +335,7 @@ VOLUMES = {
                        # 阈值都两头不讨好：190 漏掉低位页；160 又会把注释里的缩进
                        # 段吸进经文表格（实测净删 13,508 行，已回滚）。故用 'auto'
                        # 逐页自适应，见 _page_latin_x_min()。
-                       'latin_x_min': 'auto',
+                       'latin_x_min': 'auto-min',
                        'out': os.path.join(BASE, 'calvin_raw/jeremiah-1/calvin_jeremiah-1_structured.txt') },
     'jeremiah-2':      { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_JER2.pdf',
                        # 拉丁列位置**逐页浮动**：162/166/170/174/180/184/188/
@@ -332,7 +343,7 @@ VOLUMES = {
                        # 阈值都两头不讨好：190 漏掉低位页；160 又会把注释里的缩进
                        # 段吸进经文表格（实测净删 13,508 行，已回滚）。故用 'auto'
                        # 逐页自适应，见 _page_latin_x_min()。
-                       'latin_x_min': 'auto',
+                       'latin_x_min': 'auto-min',
                        'out': os.path.join(BASE, 'calvin_raw/jeremiah-2/calvin_jeremiah-2_structured.txt') },
     'psalms-1':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA1.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-1/calvin_psalms-1_structured.txt') },
     'psalms-2':        { 'format': 'ages_phil', 'pdf': '/Users/yanpeifa/Documents/论文/calvin/CAL_PSA2.pdf', 'out': os.path.join(BASE, 'calvin_raw/psalms-2/calvin_psalms-2_structured.txt') },
@@ -3053,14 +3064,56 @@ def _render_spans_with_italic(spans):
 
 
 _LATIN_X_MIN_OVERRIDE = None   # 由 VOLUMES 的 latin_x_min 在 dispatch 时设置
+_LATIN_X_MIN_FIXED = None      # latin_x_min='auto' 时，全卷共用的阈值
 
 
-def _page_latin_x_min(page, default=200):
-    """逐页推断拉丁列起点（latin_x_min='auto' 时用）。
+def _doc_latin_x_min(doc, sample=150, default=200):
+    """扫全卷定一个拉丁列起点，所有页共用（latin_x_min='auto'）。
 
-    取本页 line x0 直方图里「x >= 150 且至少 4 行」的最小值——右栏成列必然有
-    若干行，而居中标题（x≈126-140）只有一两行，正文左栏在 26/40。找不到就退回
-    default，等于不启用双语（宁可漏，不可把注释吸进经文表格）。
+    为什么不逐页判：版式是全卷一致的，逐页判反而会被单页的噪声带偏。
+    malachi 全卷直方图是 [(144,10), (170,13), (218,97)]——218 才是拉丁列；
+    但某一页若只有脚注的悬挂缩进、恰好没有拉丁列，那页的「主列」就成了
+    144/170 本身，于是脚注后续行被当拉丁列切走（f2 定义从 503 字符截成
+    150 字符）。小先知书里这样被截断的脚注有 13 条。
+
+    全卷统计后主列频次远高于噪声，稳得多。取到主列再往左扩 12pt 收同簇
+    （拉丁列首行与续行有几 pt 缩进差）。
+    """
+    import collections
+    hist = collections.Counter()
+    step = max(1, doc.page_count // sample)
+    for pno in range(0, doc.page_count, step):
+        for b in doc[pno].get_text('dict')['blocks']:
+            if b['type'] != 0:
+                continue
+            for l in b['lines']:
+                x = round(l['bbox'][0])
+                if x >= 150:
+                    hist[x] += 1
+    if not hist:
+        return default
+    main = max(hist, key=lambda x: hist[x])
+    return min(x for x in hist if abs(x - main) <= 12) - 2
+
+
+def _page_latin_x_min(page, default=200, mode='auto'):
+    """逐页推断拉丁列起点（latin_x_min='auto' / 'auto-min' 时用）。
+
+    mode='auto-min'（旧算法）：取「x >= 150 且至少 4 行」的最小值。
+    mode='auto'（默认）：先找频次最高的那一簇，再取该簇的左边界。
+
+    为什么要改：最小值会被脚注和引文的悬挂缩进带偏。malachi 的直方图是
+    [(144,10), (170,13), (218,97)]——218 出现 97 次才是真拉丁列，144/170
+    是缩进噪声，而最小值偏偏挑中它们，于是脚注的后续行被当成拉丁列切走：
+    f2 定义从 503 字符截成 150 字符，后半段（Welsh 对译、整节重译）凭空消失。
+    小先知书里这样被截断的脚注共 13 条。
+
+    按频次找主列则不会：真正的右栏每页都有几十行，噪声只有十几行。取到主列
+    后再往左扩 12pt 收拢同簇（拉丁列首行与续行本身有几 pt 的缩进差）。
+
+    ⚠️ 已经用旧算法提取并验证过 0 丢失的卷（jeremiah-1/2、lamentations、
+    ezekiel、daniel、joel）写的是 'auto-min'，别改成 'auto'——它们的中译已
+    发布或在跑，换算法会让经文段 md5 变化、缓存整片失效。
     """
     import collections
     hist = collections.Counter()
@@ -3070,7 +3123,12 @@ def _page_latin_x_min(page, default=200):
         for l in b['lines']:
             hist[round(l['bbox'][0])] += 1
     cands = [x for x, c in hist.items() if x >= 150 and c >= 4]
-    return min(cands) - 2 if cands else default
+    if not cands:
+        return default        # 找不到右栏就不启用双语：宁可漏，不可把注释吸进表格
+    if mode == 'auto-min':
+        return min(cands) - 2
+    main = max(cands, key=lambda x: hist[x])          # 频次最高的一列 = 拉丁列
+    return min(x for x in cands if abs(x - main) <= 12) - 2
 
 
 def phil_reconstruct_page(page, page_num=None):
@@ -3094,8 +3152,12 @@ def phil_reconstruct_page(page, page_num=None):
     # lines means mode quietly stays off; emits identical to old behavior.
     # 默认 200 是照 1cor（拉丁列 x0=218）定的；有的书拉丁列更靠左（耶利米书 198），
     # 必须由 VOLUMES 的 latin_x_min 覆盖，否则整列被判成英文、双语路径不激活。
-    LATIN_X_MIN = (_page_latin_x_min(page) if _LATIN_X_MIN_OVERRIDE == 'auto'
-                   else (_LATIN_X_MIN_OVERRIDE or 200))
+    if _LATIN_X_MIN_OVERRIDE == 'auto':
+        LATIN_X_MIN = _LATIN_X_MIN_FIXED or 200      # 全卷一个值，见 _doc_latin_x_min
+    elif _LATIN_X_MIN_OVERRIDE == 'auto-min':
+        LATIN_X_MIN = _page_latin_x_min(page, mode='auto-min')   # 旧算法，逐页
+    else:
+        LATIN_X_MIN = _LATIN_X_MIN_OVERRIDE or 200
     SCRIPTURE_BLOCK_WIDTH_MAX = 290  # narrow-half-page blocks ≤ this
     in_scripture_mode = False
     scripture_table_header = None
@@ -3467,10 +3529,16 @@ def extract_ages_phil(cfg):
     global _LATIN_X_MIN_OVERRIDE
     # 双语列分界按书校准：默认 200 照 1cor（拉丁列 x0=218）定，耶利米书是 198，
     # 不覆盖就会把整列判成英文左栏，双语状态机激活不了（经文散落框外）。
+    global _LATIN_X_MIN_FIXED
     _LATIN_X_MIN_OVERRIDE = cfg.get('latin_x_min')
     doc   = fitz.open(cfg['pdf'])
     total = len(doc)
-    print(f"Processing {total} pages... (LATIN_X_MIN={_LATIN_X_MIN_OVERRIDE or 200})")
+    _LATIN_X_MIN_FIXED = (_doc_latin_x_min(doc)
+                          if _LATIN_X_MIN_OVERRIDE == 'auto' else None)
+    shown = (_LATIN_X_MIN_FIXED if _LATIN_X_MIN_OVERRIDE == 'auto'
+             else (_LATIN_X_MIN_OVERRIDE or 200))
+    print(f"Processing {total} pages... (LATIN_X_MIN={shown}"
+          f"{' 全卷统计' if _LATIN_X_MIN_OVERRIDE == 'auto' else ''})")
 
     all_output = []
     for page_num in range(total):

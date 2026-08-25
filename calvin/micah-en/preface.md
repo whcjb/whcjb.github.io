@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: micah-en
 book_name: "Calvin on Micah"
 title: "Preface"
-date: 2026-06-02 18:13
+date: 2026-08-25 15:26
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -49,5 +49,7 @@ But I will now come to his words: for the contents of this Book suggest what is 
 
 
 [^f2]: “This Book,” says *Henderson,* “may be divided into two parts; the first consisting of chapters 1-5; and the second, the two remaining chapters, which are more general and didactic in their character.”
+
+<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
 
 
