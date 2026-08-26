@@ -30,6 +30,15 @@ case "$BOOK" in
     jeremiah-1) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-1/zh_chapters; PUB_DIR=calvin/jeremiah-1 ;;
     jeremiah-2) PUBLISH=scripts/publish_jeremiah_zh.py; RAW_DIR=calvin_raw/jeremiah-2/zh_chapters; PUB_DIR=calvin/jeremiah-2 ;;
     malachi)  PUBLISH=scripts/publish_malachi_zh.py;  RAW_DIR=calvin_raw/malachi/zh_chapters;  PUB_DIR=calvin/malachi ;;
+    amos)     PUBLISH=scripts/publish_amos_zh.py; RAW_DIR=calvin_raw/amos/zh_chapters; PUB_DIR=calvin/amos ;;
+    obadiah)  PUBLISH=scripts/publish_obadiah_zh.py; RAW_DIR=calvin_raw/obadiah/zh_chapters; PUB_DIR=calvin/obadiah ;;
+    jonah)    PUBLISH=scripts/publish_jonah_zh.py; RAW_DIR=calvin_raw/jonah/zh_chapters; PUB_DIR=calvin/jonah ;;
+    micah)    PUBLISH=scripts/publish_micah_zh.py; RAW_DIR=calvin_raw/micah/zh_chapters; PUB_DIR=calvin/micah ;;
+    nahum)    PUBLISH=scripts/publish_nahum_zh.py; RAW_DIR=calvin_raw/nahum/zh_chapters; PUB_DIR=calvin/nahum ;;
+    habakkuk) PUBLISH=scripts/publish_habakkuk_zh.py; RAW_DIR=calvin_raw/habakkuk/zh_chapters; PUB_DIR=calvin/habakkuk ;;
+    zephaniah)PUBLISH=scripts/publish_zephaniah_zh.py; RAW_DIR=calvin_raw/zephaniah/zh_chapters; PUB_DIR=calvin/zephaniah ;;
+    haggai)   PUBLISH=scripts/publish_haggai_zh.py; RAW_DIR=calvin_raw/haggai/zh_chapters; PUB_DIR=calvin/haggai ;;
+    zechariah)PUBLISH=scripts/publish_zechariah_zh.py; RAW_DIR=calvin_raw/zechariah/zh_chapters; PUB_DIR=calvin/zechariah ;;
     joel)     PUBLISH=scripts/publish_joel_zh.py;     RAW_DIR=calvin_raw/joel/zh_chapters;     PUB_DIR=calvin/joel ;;
     lamentations) PUBLISH=scripts/publish_lamentations_zh.py; RAW_DIR=calvin_raw/lamentations/zh_chapters; PUB_DIR=calvin/lamentations ;;
     daniel)   PUBLISH=scripts/publish_daniel_zh.py;   RAW_DIR=calvin_raw/daniel/zh_chapters;   PUB_DIR=calvin/daniel ;;
