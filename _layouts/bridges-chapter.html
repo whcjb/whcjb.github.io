@@ -123,6 +123,25 @@ body:has(.bridges-stage) footer{display:none}
 .bridges-stage:not(.bridges-drop-done) .bridges-scripture{
   backdrop-filter:none; -webkit-backdrop-filter:none;
 }
+/* ── 顶部导航：改成点击背景切换，不再跟着滚动自己滑下来 ──────────────
+   全站默认行为在 js/hux-blog.js：向上滚加 .is-visible（translate3d(0,100%,0)
+   把 navbar 推下来）、向下滚移除。在这种整屏背景图的版式里，navbar 会在滚动
+   中反复自己冒出来盖住正文，很扰。
+
+   这里用 !important 把位置钉死，让 .is-fixed/.is-visible 失效，改由
+   .bridges-nav-open 控制——JS 那套滚动监听照旧跑，只是不再影响显示。
+   仅限 >1170px：hux 的滚动逻辑本身就只在这个宽度以上启用，移动端保持原样。 */
+@media (min-width: 1171px) {
+  .navbar-custom {
+    position: fixed !important;
+    top: -61px !important;
+    transform: none !important;
+    transition: transform .32s cubic-bezier(.22,.61,.36,1) !important;
+  }
+  .navbar-custom.bridges-nav-open {
+    transform: translate3d(0,100%,0) !important;
+  }
+}
 @media (prefers-reduced-motion: reduce){
   .bridges-glass-page, .bridges-hero, .bridges-chrome{animation:none}
 }
@@ -261,6 +280,31 @@ body:has(.bridges-stage) footer{display:none}
 <script>
 // 入场动画结束后清掉 clip-path/transform：它们会成为后代 sticky/fixed 的
 // 包含块，留着经文就没法置顶了。
+// 点击文字块以外的区域（背景图那片）切换顶部导航。
+// 文字块内部、以及任何链接/按钮/表单控件都放行，免得点经文引用或上下章
+// 导航时顺带把导航栏弹出来。
+(function initBridgesNavToggle(){
+  if (window.matchMedia('(max-width: 1170px)').matches) return;   // 移动端保持原生行为
+  var nav = document.querySelector('.navbar-custom');
+  if (!nav) return;
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (t.closest && (t.closest('.bridges-glass-page') ||
+                      t.closest('.navbar-custom') ||
+                      t.closest('#scripture-popup') ||
+                      t.closest('a, button, input, select, textarea, label'))) return;
+    nav.classList.toggle('bridges-nav-open');
+  });
+  // 滚动时收起：导航浮在正文上，滚起来还挂着会挡字
+  var last = window.pageYOffset;
+  window.addEventListener('scroll', function(){
+    if (Math.abs(window.pageYOffset - last) > 40) {
+      nav.classList.remove('bridges-nav-open');
+      last = window.pageYOffset;
+    }
+  }, {passive: true});
+})();
+
 (function initBridgesIntro(){
   var stage = document.querySelector('.bridges-stage');
   var card  = stage && stage.querySelector('.bridges-glass-page');
