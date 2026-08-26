@@ -364,11 +364,10 @@ body:has(.bridges-stage) footer{display:none}
   --sp-border: rgba(255,255,255,.42);
 }
 #scripture-popup.sp-crystal {
-  /* 出票口色条：3px 实色棕，与正文标题同色。
-     曾一路压到 1px 半透明，结果整个出票口消失、弹层成了一块没设计的圆角矩形。
-     当初看着「错开」的真凶是白矩形标题栏和 inner 的 inset 白线，不是色条本身，
-     那两个修掉之后，色条做实反而更整。 */
-  border-top: 6px solid #6B4E2E;
+  /* 出票口：3px，与加尔文一致（组件默认就是 3px，加尔文用的默认参数）。
+     颜色取箴言主题棕 #6B4E2E，并做半透明——整屏背景图的版式里，
+     实色硬条太抢眼。 */
+  border-top: 3px solid rgba(107,78,46,.55);
   border-radius: 14px;
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
@@ -377,7 +376,9 @@ body:has(.bridges-stage) footer{display:none}
      overflow:hidden 把直角裁成圆的，看不出问题；但动画结束 470ms 后 JS 会
      把 overflow 改成 visible 好让阴影显影，直角当场露到圆角外面，右上角就
      多出一个方块——用户框出来的正是这里。 */
-  border-radius: 8px 8px 14px 14px;
+  /* 顶部半径 = 外壳 14px − 色条 3px = 11px，贴合外壳 border 内边缘。
+     色条厚度一改这里就得跟着改，否则放开 overflow 后顶角会露台阶。 */
+  border-radius: 11px 11px 14px 14px;
   padding: 10px 16px 13px;
   /* ⚠️ 不要 inset 顶部高光：它会在深色色条正下方画一条白线，
      把色条和主体劈成两截，看着就是「错位」（用户打回过两次）。
