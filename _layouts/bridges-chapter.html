@@ -320,19 +320,20 @@ body:has(.bridges-stage) footer{display:none}
   --sp-border: rgba(255,255,255,.42);
 }
 #scripture-popup.sp-crystal {
-  /* 出票口色条：2px 细边即可，3px 在浅色玻璃上显得像一道断层 */
-  border-top: 2px solid rgba(107,78,46,.8);
+  /* 出票口色条压到 1px：它只是滑出动画的裁剪边，越细越不抢戏。
+     2px 以上会在浅色玻璃顶上显出一道明显的横断。 */
+  border-top: 1px solid rgba(107,78,46,.55);
   border-radius: 12px;
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
-  /* inner 顶部不留圆角，才能与外壳色条严丝合缝地接上；
-     内边距上侧收窄，色条与标题之间不再空出一条 */
   border-radius: 0 0 12px 12px;
   padding: 10px 16px 13px;
-  /* 阴影调暖：默认的冷灰落在暖色底图上会发脏 */
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.45),
-    0 12px 34px rgba(74,54,30,.22);
+  /* ⚠️ 不要 inset 顶部高光：它会在深色色条正下方画一条白线，
+     把色条和主体劈成两截，看着就是「错位」（用户打回过两次）。
+     左右边框也去掉——它们与顶部色条不同色，在两端接头处露出 1px 台阶。
+     整块玻璃只靠底色 + 外阴影成形，不描边。 */
+  border: none;
+  box-shadow: 0 12px 34px rgba(74,54,30,.22);
 }
 /* ⚠️ 关键：标题栏默认自带 background + 又叠一层 backdrop-filter，
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
