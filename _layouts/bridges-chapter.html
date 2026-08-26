@@ -320,9 +320,11 @@ body:has(.bridges-stage) footer{display:none}
   --sp-border: rgba(255,255,255,.42);
 }
 #scripture-popup.sp-crystal {
-  /* 出票口色条压到 1px：它只是滑出动画的裁剪边，越细越不抢戏。
-     2px 以上会在浅色玻璃顶上显出一道明显的横断。 */
-  border-top: 1px solid rgba(107,78,46,.55);
+  /* 出票口色条：3px 实色棕，与正文标题同色。
+     曾一路压到 1px 半透明，结果整个出票口消失、弹层成了一块没设计的圆角矩形。
+     当初看着「错开」的真凶是白矩形标题栏和 inner 的 inset 白线，不是色条本身，
+     那两个修掉之后，色条做实反而更整。 */
+  border-top: 3px solid #6B4E2E;
   border-radius: 12px;
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
@@ -333,7 +335,9 @@ body:has(.bridges-stage) footer{display:none}
      左右边框也去掉——它们与顶部色条不同色，在两端接头处露出 1px 台阶。
      整块玻璃只靠底色 + 外阴影成形，不描边。 */
   border: none;
-  box-shadow: 0 12px 34px rgba(74,54,30,.22);
+  /* 底色比之前实一点：色条是实色的，主体太透会显得头重脚轻 */
+  background: rgba(249,245,236,.66);
+  box-shadow: 0 12px 34px rgba(74,54,30,.24);
 }
 /* ⚠️ 关键：标题栏默认自带 background + 又叠一层 backdrop-filter，
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
