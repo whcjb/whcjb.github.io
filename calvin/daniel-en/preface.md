@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: daniel-en
 book_name: "Calvin on Daniel"
 title: "Preface"
-date: 2026-08-24 18:05
+date: 2026-08-26 11:08
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -609,7 +609,10 @@ I now come to the words themselves, I wished, as I said, just to catch a foretas
 [^f54]: See Introductory.
 
 
-[^f55]: See his “Prodromus Danielicus,” Lovanii, 1711. <span style="color:#800000">FT56</span> See the Appendix where the opinions of various writers are collected.
+[^f55]: See his “Prodromus Danielicus,” Lovanii, 1711.
+
+
+[^f56]: See the Appendix where the opinions of various writers are collected.
 
 
 [^f57]: See the Sixfold Commentary, Edit. 1610.

@@ -5783,15 +5783,7 @@ The same verb is used at the beginning of the verse, *Take,* or bring *with you 
 
 <h2 class="scripture-anchor" id="chapter-8" data-ref="CHAPTER 8" style="display:none">CHAPTER 8</h2>
 
-<span style="color:#800000">FT31 “</span>The cornet at thy mouth, be *it* like the eagle over the house of Jehovah.” — *Horsley*. It is in a note added, — “Let the sound of the cornet in thy mouth be shrill and terrible, as the ominous scream of the eagle hovering over the roof of the temple.” But the literal rendering of the words with admit more naturally another sense. I translate it thus: —
-
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“To thy mouth the trumpet,*</span> <span style="color:#000080">*Like the eagle over the house of Jehovah.”*</span></p>
-
-That is, seize the trumpet ass quickly as the eagle flies. He thereby denotes that judgment was to come without delay; or the distich may be thus rendered, —
-
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“To thy mouth the trumpet, like an eagle,*</span> <span style="color:#000080">*Against the house of Jehovah.”*</span></p>
-
-That is, “Apply the trumpet quickly, imitate the quickness of the eagle, and use it to proclaim war against the house of Jehovah.” — *Ed.*
+[^f31]: “The cornet at thy mouth, be *it* like the eagle over the house of Jehovah.” — *Horsley*. It is in a note added, — “Let the sound of the cornet in thy mouth be shrill and terrible, as the ominous scream of the eagle hovering over the roof of the temple.” But the literal rendering of the words with admit more naturally another sense. I translate it thus: — <span style="color:#000080">*“To thy mouth the trumpet,*</span> <span style="color:#000080">*Like the eagle over the house of Jehovah.”*</span> That is, seize the trumpet ass quickly as the eagle flies. He thereby denotes that judgment was to come without delay; or the distich may be thus rendered, — <span style="color:#000080">*“To thy mouth the trumpet, like an eagle,*</span> <span style="color:#000080">*Against the house of Jehovah.”*</span> That is, “Apply the trumpet quickly, imitate the quickness of the eagle, and use it to proclaim war against the house of Jehovah.” — *Ed.*
 
 [^f32]: The construction of this versed is anomalous, there being a mixture of numbers, not uncommon in this book. The original is the following: —
 
@@ -5833,7 +5825,9 @@ Fruitfulness of progeny was included in Jacob’s blessing on Joseph, the father
 
 <!-- PAGE 528 -->
 
-[^f39]: Both *Horsley* and *Newcome* render ‘tyrus,’ ‘a rock,’ and are countenanced by Aquila, Symmachus, and Theodotion; and the Septuagint give not the word ‘Tyrus.’ But there is a difficulty in this case to fix any meaning to the words rendered in our version, ‘as I saw;’ and all here have failed to give any satisfaction. Hence the rendering of our translators, and of Calvin, seems on the whole to be the best. And as to the idea of a tree put under cover, it comports well with the passage: only to suppose ‘tree’ understood seems not necessary: for the word rendered ‘planted’ is in my view a noun, and means a plant. The verse may be thus translated: — <span style="color:#000080">*‘Ephraim*</span> <span style="color:#000080">is</span><span style="color:#000080">*, according to what I have seen at Tyrus,*</span> <span style="color:#000080">*A plant in the house:*</span> <span style="color:#000080">*Yet Ephraim*</span> <span style="color:#000080">is</span> <span style="color:#000080">*to bring forth*</span> <span style="color:#000080">*to the slayer his children.’ —*</span><span style="color:#000080">Ed.</span> <span style="color:#800000">FT40</span> Jeremiah 22:24. There is a mistake here. The text is, ‘Coniah the son of Jehoiakim.’—*Ed.*
+[^f39]: Both *Horsley* and *Newcome* render ‘tyrus,’ ‘a rock,’ and are countenanced by Aquila, Symmachus, and Theodotion; and the Septuagint give not the word ‘Tyrus.’ But there is a difficulty in this case to fix any meaning to the words rendered in our version, ‘as I saw;’ and all here have failed to give any satisfaction. Hence the rendering of our translators, and of Calvin, seems on the whole to be the best. And as to the idea of a tree put under cover, it comports well with the passage: only to suppose ‘tree’ understood seems not necessary: for the word rendered ‘planted’ is in my view a noun, and means a plant. The verse may be thus translated: — <span style="color:#000080">*‘Ephraim*</span> <span style="color:#000080">is</span><span style="color:#000080">*, according to what I have seen at Tyrus,*</span> <span style="color:#000080">*A plant in the house:*</span> <span style="color:#000080">*Yet Ephraim*</span> <span style="color:#000080">is</span> <span style="color:#000080">*to bring forth*</span> <span style="color:#000080">*to the slayer his children.’ —*</span><span style="color:#000080">Ed.</span>
+
+[^f40]: Jeremiah 22:24. There is a mistake here. The text is, ‘Coniah the son of Jehoiakim.’—*Ed.*
 
 <h2 class="scripture-anchor" id="chapter-10" data-ref="CHAPTER 10" style="display:none">CHAPTER 10</h2>
 

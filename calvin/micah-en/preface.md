@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: micah-en
 book_name: "Calvin on Micah"
 title: "Preface"
-date: 2026-08-25 15:26
+date: 2026-08-26 11:07
 next_section: 1
 next_label: "Chapter 1"
 ---

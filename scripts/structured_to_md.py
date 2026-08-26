@@ -757,7 +757,13 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # often colors the <NNNNNN> Ages code separately so it ends up
             # wrapped in <sty c="800000" i="0">...</sty>).
             line_for_sec = re.sub(r'</?sty(?:\s[^>]*)?>', '', line)
-            sec_m = SCRIPTURE_SECTION_RE.match(line_for_sec.replace('[FOOTNOTE]', '').strip())
+            _sec_src = line_for_sec.replace('[FOOTNOTE]', '').strip()
+            # 单独成行的脚注码会被 SCRIPTURE_SECTION_RE 误判成经文引用：
+            # 正则里 [A-Z][A-Za-z]* 吃掉 "Ft"、\d+ 吃掉 "68"，于是 zechariah 的
+            #   [FOOTNOTE] <sty c="800000">Ft68</sty>
+            # 被当成书卷名加章节，脚注定义整条丢失，正文的 [^f68] 成孤儿。
+            sec_m = (None if re.match(r'^[Ff][Tt]\d+[A-Za-z]?\.?$', _sec_src)
+                     else SCRIPTURE_SECTION_RE.match(_sec_src))
             if sec_m:
                 # Flush any pending scripture box, then prep next-scripture ref.
                 flush_scripture()
@@ -782,6 +788,22 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 content_for_fn = re.sub(
                     r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*</sty>\s*',
                     r'\1 ', content)
+                # 脚注码单独占一行、正文在后续行的情形（zechariah 的
+                #   [FOOTNOTE] <sty c="800000">Ft68</sty>
+                #   [VERSE]    And withdraw the shoulder,—Newcome.
+                #   [CENTERED] He adds, "The line occurs in Nehemiah 9:29…
+                # ）。FN_DEF_RE 要求「码 + 空格 + 正文」同行，这里匹配不上，
+                # 定义就丢了，正文里的 [^f68] 成孤儿。先开一个空定义，
+                # 让既有的 pending_fn_idx 续行机制把后面几行接进来。
+                bare_m = re.match(r'^\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*$', content_for_fn)
+                if bare_m:
+                    label = normalize_fn_label(bare_m.group(1))
+                    out.append('')
+                    out.append(f'[^{label}]:')
+                    out.append('')
+                    pending_fn_idx = len(out) - 2
+                    i += 1
+                    continue
                 fn_m = FN_DEF_RE.match(content_for_fn)
                 # Reject only when fn body starts with an Ages bible-ref marker
                 # `<NNNNNN>` (that's an inline cross-ref disguised as fn).
@@ -951,6 +973,23 @@ def convert(structured_path: Path, out_path: Path) -> None:
             i += 1
             continue
         elif tag == 'CENTERED':
+            # ⚠️ 顺序要紧：先判断本行是不是**新的**脚注定义，再判续行。
+            # 反过来的话，[CENTERED] <sty c="800000">FT6</sty> The following…
+            # 会被上一条脚注的 pending 续行逻辑整行吞掉（nahum 的 f6 就这样
+            # 没了，内容还混进了 f5）。BODY 分支本来就是先判新定义的。
+            cen_strip = re.sub(
+                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*([^<]*)</sty>\s*',
+                r'\1 \2', content)
+            cen_fn = FN_DEF_RE.match(cen_strip)
+            if cen_fn and not re.match(r'^<\d{6,7}>', cen_fn.group(2)):
+                label = normalize_fn_label(cen_fn.group(1))
+                fn_body = apply_verse_styling(format_inline(cen_fn.group(2)), red=False)
+                out.append('')
+                out.append(f'[^{label}]: {fn_body}')
+                out.append('')
+                pending_fn_idx = len(out) - 2
+                i += 1
+                continue
             # Back-section fn continuation: append to pending [^fN]: line
             if pending_fn_idx is not None:
                 cleaned = format_inline(content)
@@ -990,11 +1029,28 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # Some PDFs (Romans) have back-section fn defs tagged [BODY] instead
             # of [FOOTNOTE]. Detect `<sty>ftN</sty> body...` pattern at start →
             # treat as fn def (same logic as FOOTNOTE branch).
+            # sty 里除了脚注码还可能粘着别的字符，例如 hosea 的
+            #   <sty c="800000">FT31 “</sty>The cornet at thy mouth…
+            # 引号被一起染色包进来了。原正则要求 sty 内只有码，于是整条脚注
+            # 定义没被认出来，正文里的 [^f31] 成了孤儿引用。这里放宽为
+            # 「码之后允许有尾随字符」，并把尾随字符还回正文。
+            # sty 里除了脚注码还可能粘着别的东西：hosea 是引号（FT31 “），
+            # 也可能是 AGES 经文码（FT40 <242224>）。`[^<]*` 撞上 `<` 就断，
+            # 所以显式允许穿插 <NNNNNN>。
             body_strip_ftN = re.sub(
-                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*</sty>\s*',
-                r'\1 ', content)
+                r'^\s*<sty\s[^>]*>\s*([Ff][Tt]\d+[A-Za-z]?)\.?\s*'
+                r'((?:[^<]|<\d{6,7}>)*)</sty>\s*',
+                r'\1 \2', content)
+            body_has_explicit_code = bool(
+                re.match(r'^\s*<sty\s[^>]*>\s*[Ff][Tt]\d+', content))
             body_fn_m = FN_DEF_RE.match(body_strip_ftN)
-            body_fn_is_ages_ref = bool(body_fn_m and re.match(r'^<\d{6,7}>', body_fn_m.group(2)))
+            # 「正文以 AGES 码开头 → 当作伪装成脚注的行内交叉引用」这条 guard
+            # 只适用于没有明确 FTn 码的行。hosea 的
+            #   <sty>FT40 <242224></sty>Jeremiah 22:24. There is a mistake here…
+            # 有码却被它否掉，f40 定义整条丢失。
+            body_fn_is_ages_ref = bool(
+                body_fn_m and not body_has_explicit_code
+                and re.match(r'^<\d{6,7}>', body_fn_m.group(2)))
             if body_fn_m and not body_fn_is_ages_ref:
                 label = normalize_fn_label(body_fn_m.group(1))
                 fn_body = format_inline(body_fn_m.group(2))

@@ -2,7 +2,7 @@
 layout: calvin-en
 book_id: daniel-en
 book_name: "Calvin on Daniel"
-title: "Appendix — A Connected Translation of Daniel"
+title: "Appendix — Calvin's Version of Daniel"
 date: 2026-06-02 18:13
 prev_section: 12
 prev_label: "Chapter 12"
@@ -826,3 +826,5 @@ prev_label: "Chapter 12"
 <sup>13</sup> And do thou go until the end, and rest; And thou shalt stand in thy lot at the end of the days.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">END OF CONNECTED TRANSLATION OF DANIEL</span></p>
+
+<!-- PAGE 928 -->

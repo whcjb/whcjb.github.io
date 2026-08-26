@@ -3,7 +3,7 @@ layout: calvin-en
 book_id: ezekiel-en
 book_name: "Calvin on Ezekiel"
 title: "Preface"
-date: 2026-08-24 18:06
+date: 2026-08-26 11:08
 next_section: 1
 next_label: "Chapter 1"
 ---

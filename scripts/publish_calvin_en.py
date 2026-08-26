@@ -271,7 +271,12 @@ def find_footnotes_section_start(lines: list[str]) -> int:
 
 
 FN_DEF_RE = re.compile(r'^\[\^(f\d+[A-Za-z]?)\]:\s*(.*)$', re.DOTALL)
-FN_REF_RE = re.compile(r'\[\^(f\d+[A-Za-z]?)\](?!:)')
+# 引用形如 [^f3]。原本写成 (?!:) 来排除定义 `[^f3]: 正文`，但那会误伤
+# 正文里「引用后面正好跟英文冒号」的写法，例如 amos 1:
+#   *I will not convert it* [^f3]: but I take this actively that God…
+# 这条引用因此不算数，f3 的定义就没被搬进该章，正文成了孤儿引用。
+# 定义只可能出现在行首，所以判定挪到 render_section 里按行首剔除。
+FN_REF_RE = re.compile(r'\[\^(f\d+[A-Za-z]?)\]')
 
 
 def collect_all_definitions(lines: list[str]) -> dict[str, list[str]]:
@@ -307,7 +312,8 @@ def collect_all_definitions(lines: list[str]) -> dict[str, list[str]]:
 
 def render_section(body_lines: list[str], all_defs: dict[str, list[str]]) -> str:
     """Stitch section body + referenced fn defs in body-ref order."""
-    body_text = ''.join(body_lines)
+    # 先摘掉行首的定义行，剩下的 [^fN] 才都是真引用（见 FN_REF_RE 的注释）
+    body_text = ''.join(l for l in body_lines if not FN_DEF_RE.match(l))
     refs_in_order: list[str] = []
     seen = set()
     for m in FN_REF_RE.finditer(body_text):

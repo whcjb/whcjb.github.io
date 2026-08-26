@@ -9476,7 +9476,9 @@ Lectures, Expository and Practical, on the Book of the Prophet Daniel. By the Re
 
 [^f54]: See Introductory.
 
-[^f55]: See his “Prodromus Danielicus,” Lovanii, 1711. <span style="color:#800000">FT56</span> See the Appendix where the opinions of various writers are collected.
+[^f55]: See his “Prodromus Danielicus,” Lovanii, 1711.
+
+[^f56]: See the Appendix where the opinions of various writers are collected.
 
 [^f57]: See the Sixfold Commentary, Edit. 1610.
 
