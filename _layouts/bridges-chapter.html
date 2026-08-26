@@ -360,7 +360,7 @@ body:has(.bridges-stage) footer{display:none}
 {%- endcomment -%}
 <style>
 #scripture-popup {
-  --sp-bg: rgba(247,242,232,.55);
+  --sp-bg: rgba(247,242,232,.34);
   --sp-border: rgba(255,255,255,.42);
 }
 #scripture-popup.sp-crystal {
@@ -385,8 +385,9 @@ body:has(.bridges-stage) footer{display:none}
      左右边框也去掉——它们与顶部色条不同色，在两端接头处露出 1px 台阶。
      整块玻璃只靠底色 + 外阴影成形，不描边。 */
   border: none;
-  /* 底色比之前实一点：色条是实色的，主体太透会显得头重脚轻 */
-  background: rgba(249,245,236,.66);
+  /* 底色只留 .34：整屏背景图的版式里，.66 看着就是块白板。
+     可读性交给下面的 blur(22px) 兜。 */
+  background: rgba(249,245,236,.34);
   box-shadow: 0 12px 34px rgba(74,54,30,.24);
 
   /* ⚠️ 卡顿的根源：backdrop-filter 跟着 transform 每帧重算，18px 模糊尤其重
@@ -402,8 +403,10 @@ body:has(.bridges-stage) footer{display:none}
     -webkit-backdrop-filter .16s linear .3s;
 }
 #scripture-popup.sp-crystal.sp-open #scripture-popup-inner {
-  backdrop-filter: blur(14px) saturate(1.12);
-  -webkit-backdrop-filter: blur(14px) saturate(1.12);
+  /* 底色透到 .34 后靠更强的模糊撑可读性：字底下是风景图，
+     光靠 34% 的膜压不住，blur 拉到 22px 才不至于花。 */
+  backdrop-filter: blur(22px) saturate(1.15);
+  -webkit-backdrop-filter: blur(22px) saturate(1.15);
 }
 /* ⚠️ 关键：标题栏默认自带 background + 又叠一层 backdrop-filter，
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
