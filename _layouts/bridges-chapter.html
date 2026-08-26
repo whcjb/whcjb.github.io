@@ -324,8 +324,8 @@ body:has(.bridges-stage) footer{display:none}
      曾一路压到 1px 半透明，结果整个出票口消失、弹层成了一块没设计的圆角矩形。
      当初看着「错开」的真凶是白矩形标题栏和 inner 的 inset 白线，不是色条本身，
      那两个修掉之后，色条做实反而更整。 */
-  border-top: 3px solid #6B4E2E;
-  border-radius: 12px;
+  border-top: 6px solid #6B4E2E;
+  border-radius: 14px;
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
   /* ⚠️ 顶部必须有圆角，且半径 = 外壳 12px − 色条 3px = 9px。
@@ -333,7 +333,7 @@ body:has(.bridges-stage) footer{display:none}
      overflow:hidden 把直角裁成圆的，看不出问题；但动画结束 470ms 后 JS 会
      把 overflow 改成 visible 好让阴影显影，直角当场露到圆角外面，右上角就
      多出一个方块——用户框出来的正是这里。 */
-  border-radius: 9px 9px 12px 12px;
+  border-radius: 8px 8px 14px 14px;
   padding: 10px 16px 13px;
   /* ⚠️ 不要 inset 顶部高光：它会在深色色条正下方画一条白线，
      把色条和主体劈成两截，看着就是「错位」（用户打回过两次）。
@@ -343,6 +343,22 @@ body:has(.bridges-stage) footer{display:none}
   /* 底色比之前实一点：色条是实色的，主体太透会显得头重脚轻 */
   background: rgba(249,245,236,.66);
   box-shadow: 0 12px 34px rgba(74,54,30,.24);
+
+  /* ⚠️ 卡顿的根源：backdrop-filter 跟着 transform 每帧重算，18px 模糊尤其重
+     （箴言入场动画踩过同一个坑）。这里让模糊在滑动期间为 0，滑完再淡入：
+     transform 用 .3s 走完，backdrop-filter 延迟 .3s 后再用 .16s 淡上，
+     两者不重叠，滑动全程只有一个合成层在平移。 */
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  will-change: transform;
+  transition:
+    transform .3s cubic-bezier(.22,.61,.36,1),
+    backdrop-filter .16s linear .3s,
+    -webkit-backdrop-filter .16s linear .3s;
+}
+#scripture-popup.sp-crystal.sp-open #scripture-popup-inner {
+  backdrop-filter: blur(14px) saturate(1.12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.12);
 }
 /* ⚠️ 关键：标题栏默认自带 background + 又叠一层 backdrop-filter，
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
