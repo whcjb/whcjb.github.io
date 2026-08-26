@@ -320,11 +320,15 @@ body:has(.bridges-stage) footer{display:none}
   --sp-border: rgba(255,255,255,.42);
 }
 #scripture-popup.sp-crystal {
-  border-top-color: rgba(107,78,46,.85);   /* 出票口色条：正文同色，压薄一点 */
+  /* 出票口色条：2px 细边即可，3px 在浅色玻璃上显得像一道断层 */
+  border-top: 2px solid rgba(107,78,46,.8);
   border-radius: 12px;
 }
-.sp-crystal #scripture-popup-inner {
+#scripture-popup.sp-crystal #scripture-popup-inner {
+  /* inner 顶部不留圆角，才能与外壳色条严丝合缝地接上；
+     内边距上侧收窄，色条与标题之间不再空出一条 */
   border-radius: 0 0 12px 12px;
+  padding: 10px 16px 13px;
   /* 阴影调暖：默认的冷灰落在暖色底图上会发脏 */
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,.45),
@@ -334,20 +338,23 @@ body:has(.bridges-stage) footer{display:none}
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
    这里让它彻底透明、不再单独模糊，整个弹层才是一块均匀的玻璃。
    箴言的弹层内容一般就一两节，不会滚动，所以 sticky 底色可以不要。 */
-.sp-crystal .sp-header {
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  margin: 0 0 6px;
-  padding: 0 22px 0 0;
-  border-radius: 0;
-  position: static;
+/* ⚠️ 特异度必须压过组件自带的 `.sp-crystal .sp-header`（同为 0,2,0）。
+   本 <style> 排在 include 之前，同分时后写的赢——上一版就是这么被覆盖掉的，
+   标题栏的白矩形一直还在。加上 #scripture-popup 提到 1,2,0 就与顺序无关了。 */
+#scripture-popup.sp-crystal .sp-header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  margin: 0 0 6px !important;
+  padding: 0 22px 0 0 !important;
+  border-radius: 0 !important;
+  position: static !important;
   color: #5C4327;
   font-size: 13.5px;
   letter-spacing: .06em;
 }
-.sp-crystal .sp-verse { color: #3A2E1E; }
-.sp-crystal #scripture-popup-close { color: #8A6A3B; opacity: .7; }
-.sp-crystal #scripture-popup-close:hover { color: #5C4327; opacity: 1; }
+#scripture-popup.sp-crystal .sp-verse { color: #3A2E1E; }
+#scripture-popup.sp-crystal #scripture-popup-close { color: #8A6A3B; opacity: .7; }
+#scripture-popup.sp-crystal #scripture-popup-close:hover { color: #5C4327; opacity: 1; }
 </style>
 {% include scripture-popup.html container_selector=".bridges-content" accent="#6B4E2E" vnum="#8A6A3B" slide="down" crystal=true %}
