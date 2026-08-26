@@ -385,28 +385,30 @@ body:has(.bridges-stage) footer{display:none}
      左右边框也去掉——它们与顶部色条不同色，在两端接头处露出 1px 台阶。
      整块玻璃只靠底色 + 外阴影成形，不描边。 */
   border: none;
-  /* 底色只留 .34：整屏背景图的版式里，.66 看着就是块白板。
-     可读性交给下面的 blur(22px) 兜。 */
-  background: rgba(249,245,236,.34);
-  box-shadow: 0 12px 34px rgba(74,54,30,.24);
 
-  /* ⚠️ 卡顿的根源：backdrop-filter 跟着 transform 每帧重算，18px 模糊尤其重
-     （箴言入场动画踩过同一个坑）。这里让模糊在滑动期间为 0，滑完再淡入：
-     transform 用 .3s 走完，backdrop-filter 延迟 .3s 后再用 .16s 淡上，
-     两者不重叠，滑动全程只有一个合成层在平移。 */
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  /* ── 直接铺风景图，而不是靠 backdrop-filter 去糊「文字块玻璃 + 正文」 ──
+     backdrop-filter 模糊的是元素背后**渲染出来的一切**，中间那层
+     .bridges-glass-page 玻璃和它上面的正文都躲不掉，两层玻璃一叠就发浑。
+     这里换个路子：弹层自己铺同一张背景图，用 background-attachment: fixed
+     让它按视口绘制——与 .bridges-bg（position:fixed + cover + center）
+     像素级对齐，于是弹层看着就像在风景图上开了个洞，底下的正文完全不透进来。
+     三层从上到下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。
+     顺带把 backdrop-filter 整个去掉，滑动时不用每帧重算模糊，也就不卡了。 */
+  background-color: transparent;
+  background-image:
+      linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
+      linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
+      url('{{ site.baseurl }}/img/{{ bg }}');
+  background-attachment: fixed, fixed, fixed;
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  box-shadow: 0 12px 34px rgba(74,54,30,.30);
+
+  /* 不再用 backdrop-filter，滑动时没有逐帧模糊，动画自然就顺了 */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   will-change: transform;
-  transition:
-    transform .3s cubic-bezier(.22,.61,.36,1),
-    backdrop-filter .16s linear .3s,
-    -webkit-backdrop-filter .16s linear .3s;
-}
-#scripture-popup.sp-crystal.sp-open #scripture-popup-inner {
-  /* 底色透到 .34 后靠更强的模糊撑可读性：字底下是风景图，
-     光靠 34% 的膜压不住，blur 拉到 22px 才不至于花。 */
-  backdrop-filter: blur(22px) saturate(1.15);
-  -webkit-backdrop-filter: blur(22px) saturate(1.15);
+  transition: transform .3s cubic-bezier(.22,.61,.36,1);
 }
 /* ⚠️ 关键：标题栏默认自带 background + 又叠一层 backdrop-filter，
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
