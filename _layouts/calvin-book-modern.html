@@ -22,6 +22,33 @@ layout: default
       {% include calvin_intros/{{ page.book_id }}.html %}
       {% endif %}
 
+      {%- comment -%}
+        经文索引入口（pdf-pipeline Step 7）。新约那些书的按钮写在各自的
+        calvin_intros/<book>.html 里；旧约卷没有 intro 文件，所以这里按
+        「verse-index 页是否存在」自动判断——加一本书就不用再改名单，
+        也不会给还没建索引的书显示死链。
+      {%- endcomment -%}
+      {% assign vi_path = "calvin/" | append: page.book_id | append: "/verse-index/index.html" %}
+      {% assign vi_page = site.pages | where: "path", vi_path | first %}
+      {% if vi_page and page.book_id != "acts" %}
+      <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/verse-index/" class="calvin-verse-index-link">
+        📖 经文索引 <span>按章逐节检索 Calvin 注释</span>
+      </a>
+      <style>
+      .calvin-verse-index-link {
+        display: inline-flex; align-items: baseline; gap: 8px;
+        padding: 8px 14px; margin-bottom: 24px;
+        background: #fff3e0; border: 1px solid #ffb74d; border-radius: 4px;
+        color: #e65100; font-size: 14px; text-decoration: none !important;
+        transition: background 0.15s;
+      }
+      .calvin-verse-index-link:hover {
+        background: #ffe0b2; border-color: #f57c00; color: #bf360c;
+      }
+      .calvin-verse-index-link span { font-size: 12px; color: #8a4a1a; opacity: 0.8; }
+      </style>
+      {% endif %}
+
       {% if page.has_preface %}
       <div style="margin-bottom: 16px;">
         <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/preface/" class="preface-link">序言 &rarr;</a>

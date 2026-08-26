@@ -33,6 +33,55 @@ def clean_body(b):
     return b
 
 
+
+def relocate_anchors_in_body(body):
+    """把 scripture-anchor 的 id 从经文块**前面**挪到经文块**后面**。
+
+    Step 7（07-verse-index.md §1）的硬要求：id 若留在 <h2 class="scripture-anchor">
+    上，verse-index 胶囊点下去会落在经文块之前——用户视野里全是经文、看不到注释，
+    skill 写明「算作没做对」。所以 id 移到经文块闭合之后的 commentary-anchor：
+
+        <h2 class="scripture-anchor" data-ref="...">…</h2>
+        <div class="scripture-box">…</div>
+        <div class="commentary-anchor" id="BOOK-CH-V"></div>   ← 跳转目标
+
+    特例：h2 后面没有 scripture-box（注释紧贴 h2）时，anchor 紧跟 h2。
+
+    不写死书名前缀——jeremiah-1 这类 book_id 自带数字，`jeremiah-1-1-3`
+    拆不清是「卷一 1:3」还是「jeremiah 1-1-3」。
+    """
+    h2_re = re.compile(r'^(<h2 class="scripture-anchor")\s+id="([^"]+)"(.*?)>(.*)$')
+    lines = body.split('\n')
+    out, i = [], 0
+    while i < len(lines):
+        m = h2_re.match(lines[i])
+        if not m:
+            out.append(lines[i]); i += 1; continue
+        pre, aid, post_attrs, tail = m.groups()
+        out_h2 = f'{pre}{post_attrs}>{tail}'
+        anchor = f'<div class="commentary-anchor" id="{aid}"></div>'
+        j = i + 1
+        while j < len(lines) and lines[j].strip() == '':
+            j += 1
+        if j < len(lines) and lines[j].lstrip().startswith('<div class="scripture-box"'):
+            k, depth = j + 1, 1
+            while k < len(lines) and depth > 0:
+                depth += lines[k].count('<div') - lines[k].count('</div>')
+                if depth == 0:
+                    break
+                k += 1
+            if k >= len(lines):
+                out.append(lines[i]); i += 1; continue
+            out.append(out_h2)
+            out.extend(lines[i + 1:k + 1])
+            out.append(anchor)
+            i = k + 1
+        else:
+            out.append(out_h2)
+            out.append(anchor)
+            i += 1
+    return '\n'.join(out)
+
 def chapter_date(n):
     p = OUT_DIR / f'{n}.md'
     if p.exists():
@@ -54,6 +103,7 @@ def main():
         raw = (SRC_DIR / f'{n}.md').read_text(encoding='utf-8')
         m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
         body = clean_body(m.group(1).strip('\n') if m else raw)
+        body = relocate_anchors_in_body(body)
         fm = ['---', 'layout: calvin-en', f'book_id: {BOOK_ID}',
               f'book_name: {BOOK_NAME}', f'chapter: {n}',
               f'total_chapters: {TOTAL}', f'title: "哈该书 {n}"',
