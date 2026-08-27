@@ -97,17 +97,32 @@ def main():
     nums = sorted(int(p.stem) for p in SRC_DIR.glob('*.md')
                   if p.stem.isdigit()) if SRC_DIR.exists() else []
     translated = set(nums)
-    for n in nums:
+    # 前言与章节分开收：preface 不是数字，上面的 isdigit 过滤会漏掉它
+    has_preface = (SRC_DIR / 'preface.md').exists()
+    for n in (['preface'] if has_preface else []) + nums:
         if want and n not in want:
             continue
         raw = (SRC_DIR / f'{n}.md').read_text(encoding='utf-8')
         m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
         body = clean_body(m.group(1).strip('\n') if m else raw)
         body = relocate_anchors_in_body(body)
+        if n == 'preface':
+            fm = ['---', 'layout: calvin-en', f'book_id: {BOOK_ID}',
+                  f'book_name: {BOOK_NAME}', f'total_chapters: {TOTAL}',
+                  'title: "前言"', f'date: {chapter_date(n)}']
+            if 1 in translated:
+                fm += ['next_section: 1', 'next_label: "撒迦利亚书 1"']
+            fm += ['---', '']
+            (OUT_DIR / 'preface.md').write_text(
+                '\n'.join(fm) + '\n' + body + '\n', encoding='utf-8')
+            print(f'  published {BOOK_ID}/preface.md  前言')
+            continue
         fm = ['---', 'layout: calvin-en', f'book_id: {BOOK_ID}',
               f'book_name: {BOOK_NAME}', f'chapter: {n}',
               f'total_chapters: {TOTAL}', f'title: "撒迦利亚书 {n}"',
               f'date: {chapter_date(n)}']
+        if n == 1 and has_preface:
+            fm += ['prev_section: preface', 'prev_label: "前言"']
         if n > 1 and (n - 1) in translated:
             fm += [f'prev_section: {n-1}', f'prev_label: "撒迦利亚书 {n-1}"']
         if n < TOTAL and (n + 1) in translated:
@@ -120,7 +135,7 @@ def main():
         (OUT_DIR / 'index.html').write_text(
             '---\nlayout: calvin-book-modern\n'
             f'book_id: {BOOK_ID}\nbook_name: {BOOK_NAME}\n'
-            f'chapters: {TOTAL}\nhas_preface: false\n---\n', encoding='utf-8')
+            f'chapters: {TOTAL}\nhas_preface: {str(has_preface).lower()}\n---\n', encoding='utf-8')
         print(f'  {BOOK_ID} index.html 已写；已译章: {nums}')
     else:
         print(f'  {BOOK_ID} 暂无译章, 跳过 index')
