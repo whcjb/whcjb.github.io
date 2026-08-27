@@ -307,16 +307,35 @@ body:has(.bridges-stage) footer{display:none}
       (bx - r.left) + 'px ' + (by - r.top) + 'px';
   }
 
-  // 弹层 absolute 定位、随页面滚动，而 .bridges-bg 是 fixed 不动，
-  // 所以滚动与缩放都要重算，否则洞里的景会跟着框跑。
   var ticking = false;
   function schedule(){
     if (ticking) return;
     ticking = true;
-    requestAnimationFrame(function(){ ticking = false; align(); });
+    requestAnimationFrame(function(){ ticking = false; toViewportCoord(); align(); });
   }
-  window.addEventListener('scroll', schedule, {passive: true});
   window.addEventListener('resize', schedule);
+
+  // ── 弹层改 fixed，与背景层进入同一参考系 ─────────────────────────────
+  // 背景抖动的根源：.bridges-bg 是 position:fixed（相对视口，滚动时由合成器
+  // 直接处理、零延迟），而弹层默认 absolute（随文档滚动）。两者参考系不同，
+  // 想让弹层里的图跟外面对齐就得每帧修正 background-position——JS 再快也慢
+  // 一帧，于是看着像两层背景在互相追。
+  //
+  // 把弹层也钉成 fixed，两者就都相对视口：滚动时谁都不动，背景算一次就永远
+  // 对齐，零抖动，弹层也不用被迫关掉。
+  //
+  // 代价是组件写 top 时用的是文档坐标（rect.bottom + pageYOffset），fixed 下
+  // 要换成视口坐标，所以下面盯着 style 把它减回去。
+  var myTop = null;
+  function toViewportCoord(){
+    var popup = document.getElementById('scripture-popup');
+    if (!popup || popup.style.display === 'none') return;
+    var cur = popup.style.top;
+    if (!cur || cur === myTop) return;        // 自己刚写的，别再减一次
+    var vp = parseFloat(cur) - window.pageYOffset;
+    myTop = vp + 'px';
+    popup.style.top = myTop;
+  }
 
   // 弹层由组件 JS 动态创建、靠改 style.display / class 显隐，组件没暴露回调，
   // 只能观察 DOM：等它出现后挂属性监听，一显示就对齐。
@@ -415,6 +434,8 @@ body:has(.bridges-stage) footer{display:none}
   --sp-bg: rgba(247,242,232,.34);
   --sp-border: rgba(255,255,255,.42);
 }
+/* 与 .bridges-bg 同为 fixed，两层背景才不会在滚动时互相追（见 JS 注释） */
+#scripture-popup { position: fixed !important; }
 #scripture-popup.sp-crystal {
   /* 出票口：3px，与加尔文一致（组件默认就是 3px，加尔文用的默认参数）。
      颜色取箴言主题棕 #6B4E2E，并做半透明。 */

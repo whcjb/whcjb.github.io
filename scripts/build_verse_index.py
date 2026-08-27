@@ -172,6 +172,12 @@ def main():
             print(f'  {book}: 没有 commentary-anchor，先跑 publish（需含 relocate_anchors_in_body）')
             continue
         anchors = collect(book)
+        if not sum(len(v) for v in anchors.values()):
+            # 一个单节锚点都没有（如 obadiah：14 个锚点全是范围级）。
+            # 空索引页没有意义，也别留个死链在书首页上——不生成就不会有按钮，
+            # layout 是按「索引页是否存在」决定显不显示入口的。
+            print(f'  – {book}: 没有单节锚点（锚点都是范围级），跳过')
+            continue
         out = src / 'verse-index' / 'index.html'
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(build_html(book, BOOKS[book], anchors), encoding='utf-8')
