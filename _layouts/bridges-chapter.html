@@ -377,37 +377,23 @@ body:has(.bridges-stage) footer{display:none}
      外壳没有 transform，且 popup 是直接 appendChild 到 document.body 的，
      祖先链上也没有，所以挂这里 fixed 才真正生效。
      三层由上而下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。 */
-  /* ── 与页面共用同一个背景，靠 fixed 伪元素 + overflow 裁剪 ────────────
-     抖动的根源是参考系不一致：.bridges-bg 是 position:fixed（相对视口，滚动
-     时合成器直接处理），弹层却随文档滚动。之前试过在弹层上铺 background 再用
-     JS 每帧修正 position，永远慢一帧，看着就是两层背景互相追。
+  /* ⚠️ 别用 position:fixed 的伪元素铺背景——fixed 元素的包含块是视口，
+     **不受祖先 overflow:hidden 裁剪**，结果它铺满整个屏幕、把全站内容盖住
+     （踩过，页面只剩一个经文框）。要裁只能靠 clip-path/contain，可那些又会
+     成为包含块、把 fixed 拽回相对自身，等于白做。
 
-     现在让伪元素自己 position:fixed + inset:0 铺满整个视口，与 .bridges-bg
-     完全重合、同一参考系；外壳 overflow:hidden 把它裁成弹层的形状——于是弹层
-     照常随页面滚动，"洞"在移动而洞里的景纹丝不动，天然零抖动，且不需要 JS。
-     移动端也稳：fixed **定位**支持良好，不像 background-attachment: fixed。
-
-     ⚠️ overflow 必须 !important：组件的 JS 会在动画结束 470ms 后把它改成
-     visible（为了让阴影显影），一旦放开，铺满视口的伪元素就会盖住整个屏幕。
-     阴影改由外壳自己承担——box-shadow 画在边框之外，不受自身 overflow 影响。
-     ⚠️ 伪元素只能挂在外壳：inner 带 transform（滑出动画），
-     任何 transform 祖先都会让后代的 fixed 退化为相对该元素。 */
-  overflow: hidden !important;
-  box-shadow: 0 12px 34px rgba(74,54,30,.30);
-}
-#scripture-popup.sp-crystal::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
+     所以桌面仍用 background-attachment: fixed：浏览器自己按视口绘制，与
+     .bridges-bg 同参考系，滚动时由合成器处理，零抖动也零 JS。
+     iOS 不支持它，触屏设备走下面的 backdrop-filter 分支。 */
   background-image:
       linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
       linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
       url('{{ site.baseurl }}/img/{{ bg }}');
+  background-attachment: fixed, fixed, fixed;
   background-size: cover, cover, cover;
   background-position: center, center, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
+  box-shadow: 0 12px 34px rgba(74,54,30,.30);
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
   /* ⚠️ 顶部必须有圆角，且半径 = 外壳 12px − 色条 3px = 9px。
@@ -449,6 +435,21 @@ body:has(.bridges-stage) footer{display:none}
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
    这里让它彻底透明、不再单独模糊，整个弹层才是一块均匀的玻璃。
    箴言的弹层内容一般就一两节，不会滚动，所以 sticky 底色可以不要。 */
+/* ── 触屏设备 fallback ────────────────────────────────────────────
+   iOS Safari 不支持 background-attachment: fixed，多层 `fixed, fixed, fixed`
+   还会让整条 background 声明失效，弹层于是没有背景、露出底下玻璃成白框。
+   这里整块换掉：不铺图，改用 backdrop-filter。做不到桌面那种「开洞」，
+   但是透明的、不抖、也不白。全部 !important，免得被上面的多层背景盖回去。 */
+@media (hover: none) {
+  #scripture-popup.sp-crystal {
+    background-image: none !important;
+    background-color: rgba(249,245,236,.30) !important;
+  }
+  #scripture-popup.sp-crystal #scripture-popup-inner {
+    backdrop-filter: blur(20px) saturate(1.12) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  }
+}
 /* ⚠️ 特异度必须压过组件自带的 `.sp-crystal .sp-header`（同为 0,2,0）。
    本 <style> 排在 include 之前，同分时后写的赢——上一版就是这么被覆盖掉的，
    标题栏的白矩形一直还在。加上 #scripture-popup 提到 1,2,0 就与顺序无关了。 */
