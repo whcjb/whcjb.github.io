@@ -425,6 +425,25 @@ body:has(.bridges-stage) footer{display:none}
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
    这里让它彻底透明、不再单独模糊，整个弹层才是一块均匀的玻璃。
    箴言的弹层内容一般就一两节，不会滚动，所以 sticky 底色可以不要。 */
+/* ── 移动端 fallback ──────────────────────────────────────────────
+   background-attachment: fixed 在 iOS Safari 上从来就不支持（会被当成
+   scroll），多层 `fixed, fixed, fixed` 更容易让整条 background 声明直接失效；
+   一失效外壳就没背景，而 inner 又被我们设成了 transparent，弹层于是露出
+   底下那层玻璃，看着就是白框——手机上看到的正是这个。
+
+   触屏设备退回 backdrop-filter：它模糊的是「文字块玻璃 + 正文」，做不到
+   桌面那种开洞效果，但至少是透明的，不是白板。
+   用 (hover: none) 判定而不是宽度：iPad 横屏也够宽，照样不支持 fixed。 */
+@media (hover: none), (max-width: 900px) {
+  #scripture-popup.sp-crystal {
+    background-image: none;
+    background-color: rgba(249,245,236,.30);
+  }
+  #scripture-popup.sp-crystal #scripture-popup-inner {
+    backdrop-filter: blur(20px) saturate(1.12);
+    -webkit-backdrop-filter: blur(20px) saturate(1.12);
+  }
+}
 /* ⚠️ 特异度必须压过组件自带的 `.sp-crystal .sp-header`（同为 0,2,0）。
    本 <style> 排在 include 之前，同分时后写的赢——上一版就是这么被覆盖掉的，
    标题栏的白矩形一直还在。加上 #scripture-popup 提到 1,2,0 就与顺序无关了。 */
