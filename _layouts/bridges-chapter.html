@@ -365,10 +365,26 @@ body:has(.bridges-stage) footer{display:none}
 }
 #scripture-popup.sp-crystal {
   /* 出票口：3px，与加尔文一致（组件默认就是 3px，加尔文用的默认参数）。
-     颜色取箴言主题棕 #6B4E2E，并做半透明——整屏背景图的版式里，
-     实色硬条太抢眼。 */
+     颜色取箴言主题棕 #6B4E2E，并做半透明。 */
   border-top: 3px solid rgba(107,78,46,.34);
   border-radius: 14px;
+
+  /* ── 背景必须挂在**外壳**上，不能挂在 inner 上 ────────────────────
+     background-attachment: fixed 的本意是按视口绘制，于是弹层落在页面哪个
+     位置，就透出背景图的哪一块，像开了扇窗。但只要元素自身带 transform 或
+     will-change，按规范 fixed 背景就改为相对**元素自身**——inner 正好两样
+     都有（滑出动画），结果整幅图被 cover 进框里，每个弹层长得一模一样。
+     外壳没有 transform，且 popup 是直接 appendChild 到 document.body 的，
+     祖先链上也没有，所以挂这里 fixed 才真正生效。
+     三层由上而下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。 */
+  background-image:
+      linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
+      linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
+      url('{{ site.baseurl }}/img/{{ bg }}');
+  background-attachment: fixed, fixed, fixed;
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
+  box-shadow: 0 12px 34px rgba(74,54,30,.30);
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
   /* ⚠️ 顶部必须有圆角，且半径 = 外壳 12px − 色条 3px = 9px。
@@ -394,15 +410,10 @@ body:has(.bridges-stage) footer{display:none}
      像素级对齐，于是弹层看着就像在风景图上开了个洞，底下的正文完全不透进来。
      三层从上到下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。
      顺带把 backdrop-filter 整个去掉，滑动时不用每帧重算模糊，也就不卡了。 */
-  background-color: transparent;
-  background-image:
-      linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
-      linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
-      url('{{ site.baseurl }}/img/{{ bg }}');
-  background-attachment: fixed, fixed, fixed;
-  background-size: cover, cover, cover;
-  background-position: center, center, center;
-  box-shadow: 0 12px 34px rgba(74,54,30,.30);
+  /* inner 只负责滑出动画与承载文字，背景全部交给外壳（见上），
+     否则它自身的 transform 会把 fixed 背景拽成相对自己。 */
+  background: transparent;
+  box-shadow: none;
 
   /* 不再用 backdrop-filter，滑动时没有逐帧模糊，动画自然就顺了 */
   backdrop-filter: none;
