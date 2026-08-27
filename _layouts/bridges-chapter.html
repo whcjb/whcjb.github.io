@@ -280,6 +280,54 @@ body:has(.bridges-stage) footer{display:none}
 <script>
 // 入场动画结束后清掉 clip-path/transform：它们会成为后代 sticky/fixed 的
 // 包含块，留着经文就没法置顶了。
+// ── 触屏端弹层「开洞」：视口大小的背景层 + transform 跟随 ──────────────
+// 桌面用 background-attachment: fixed 由浏览器按视口绘制，零 JS；iOS 不支持，
+// 只能自己造一层。定位一律走 transform（合成器属性，不触发重绘）——早先用
+// background-position 每帧改，重绘跟不上滚动，就是用户看到的两层背景互相追。
+(function initBridgesPopupCutoutTouch(){
+  if (!window.matchMedia('(hover: none)').matches) return;   // 桌面走 CSS 那条路
+
+  function layerOf(popup){
+    var l = popup.querySelector('.sp-bg-layer');
+    if (!l) {
+      l = document.createElement('div');
+      l.className = 'sp-bg-layer';
+      popup.insertBefore(l, popup.firstChild);
+    }
+    return l;
+  }
+
+  function sync(){
+    var popup = document.getElementById('scripture-popup');
+    if (!popup || popup.style.display === 'none') return;
+    var r = popup.getBoundingClientRect();
+    // 背景层左上角挪到「视口原点」，露出的就是弹层底下那块景
+    layerOf(popup).style.transform =
+      'translate3d(' + (-r.left) + 'px,' + (-r.top) + 'px,0)';
+  }
+
+  var ticking = false;
+  function schedule(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ ticking = false; sync(); });
+  }
+  window.addEventListener('scroll', schedule, {passive: true});
+  window.addEventListener('resize', schedule);
+
+  // 弹层是组件动态创建、靠改 style/class 显隐且没暴露回调，只能观察 DOM
+  var attached = false;
+  var timer = setInterval(function(){
+    var popup = document.getElementById('scripture-popup');
+    if (!popup || attached) return;
+    attached = true;
+    clearInterval(timer);
+    new MutationObserver(schedule).observe(popup,
+      {attributes: true, attributeFilter: ['style', 'class']});
+    schedule();
+  }, 300);
+})();
+
 // 点击文字块以外的区域（背景图那片）切换顶部导航。
 // 文字块内部、以及任何链接/按钮/表单控件都放行，免得点经文引用或上下章
 // 导航时顺带把导航栏弹出来。
@@ -435,19 +483,41 @@ body:has(.bridges-stage) footer{display:none}
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
    这里让它彻底透明、不再单独模糊，整个弹层才是一块均匀的玻璃。
    箴言的弹层内容一般就一两节，不会滚动，所以 sticky 底色可以不要。 */
-/* ── 触屏设备 fallback ────────────────────────────────────────────
-   iOS Safari 不支持 background-attachment: fixed，多层 `fixed, fixed, fixed`
-   还会让整条 background 声明失效，弹层于是没有背景、露出底下玻璃成白框。
-   这里整块换掉：不铺图，改用 backdrop-filter。做不到桌面那种「开洞」，
-   但是透明的、不抖、也不白。全部 !important，免得被上面的多层背景盖回去。 */
+/* ── 触屏设备：自己造一层「视口大小的背景」来实现开洞 ──────────────────
+   iOS Safari 不支持 background-attachment: fixed（多层值还会让整条 background
+   声明失效、弹层变白框），所以桌面那条路在移动端走不通。
+
+   这里塞一个和视口等大的子层 .sp-bg-layer，铺上同一张图（cover + center，
+   与 .bridges-bg 的规则一致），再由 JS 把它挪到「弹层左上角对应的视口坐标」，
+   露出来的就正好是弹层位置底下的那块景。
+
+   两个要点：
+   - 用 absolute 而不是 fixed：absolute 会正常被外壳的 overflow:hidden 裁成
+     弹层形状；fixed 的包含块是视口、根本不受祖先 overflow 裁剪，会铺满全屏
+     把页面盖住（踩过）。
+   - 用 transform 而不是 background-position 去定位：transform 是合成器属性，
+     更新不触发重绘；之前用 background-position 每帧改，重绘跟不上滚动，
+     看着就是两层背景互相追。 */
 @media (hover: none) {
   #scripture-popup.sp-crystal {
     background-image: none !important;
-    background-color: rgba(249,245,236,.30) !important;
+    background-color: transparent !important;
+    overflow: hidden !important;      /* 裁住背景层；组件 JS 会改成 visible */
   }
-  #scripture-popup.sp-crystal #scripture-popup-inner {
-    backdrop-filter: blur(20px) saturate(1.12) !important;
-    -webkit-backdrop-filter: blur(20px) saturate(1.12) !important;
+  #scripture-popup.sp-crystal .sp-bg-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
+        linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
+        url('{{ site.baseurl }}/img/{{ bg }}');
+    background-size: cover, cover, cover;
+    background-position: center, center, center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    will-change: transform;
   }
 }
 /* ⚠️ 特异度必须压过组件自带的 `.sp-crystal .sp-header`（同为 0,2,0）。
