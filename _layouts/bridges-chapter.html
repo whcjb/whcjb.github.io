@@ -280,6 +280,58 @@ body:has(.bridges-stage) footer{display:none}
 <script>
 // 入场动画结束后清掉 clip-path/transform：它们会成为后代 sticky/fixed 的
 // 包含块，留着经文就没法置顶了。
+// ── 弹层「开洞」：把外壳背景对齐视口，等效 background-attachment: fixed
+// 但不依赖它。iOS Safari 不支持 fixed 背景，多层 fixed 值还会让整条
+// background 声明失效（手机上弹层因此成了白框）。这里按 .bridges-bg 的
+// cover + center 规则手算，桌面与移动端同一条路径。
+// 三层由上而下：米色膜（纯色铺满）→ veil 渐变（按视口尺寸）→ 风景图（按
+// cover 尺寸）。后两层都要减去弹层在视口中的偏移，才能与页面背景对齐。
+(function initBridgesPopupCutout(){
+  var BG = "{{ site.baseurl }}/img/{{ bg }}";
+  var nat = null, probe = new Image();
+  probe.onload = function(){ nat = {w: probe.naturalWidth, h: probe.naturalHeight}; align(); };
+  probe.src = BG;
+
+  function align(){
+    var popup = document.getElementById('scripture-popup');
+    if (!popup || !nat || popup.style.display === 'none') return;
+    var vw = window.innerWidth, vh = window.innerHeight;
+    var scale = Math.max(vw / nat.w, vh / nat.h);   // = background-size: cover
+    var bw = nat.w * scale, bh = nat.h * scale;
+    var bx = (vw - bw) / 2, by = (vh - bh) / 2;     // = background-position: center
+    var r = popup.getBoundingClientRect();          // 外壳无 transform，rect 可靠
+    popup.style.backgroundSize =
+      '100% 100%, ' + vw + 'px ' + vh + 'px, ' + bw + 'px ' + bh + 'px';
+    popup.style.backgroundPosition =
+      '0 0, ' + (-r.left) + 'px ' + (-r.top) + 'px, ' +
+      (bx - r.left) + 'px ' + (by - r.top) + 'px';
+  }
+
+  // 弹层 absolute 定位、随页面滚动，而 .bridges-bg 是 fixed 不动，
+  // 所以滚动与缩放都要重算，否则洞里的景会跟着框跑。
+  var ticking = false;
+  function schedule(){
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function(){ ticking = false; align(); });
+  }
+  window.addEventListener('scroll', schedule, {passive: true});
+  window.addEventListener('resize', schedule);
+
+  // 弹层由组件 JS 动态创建、靠改 style.display / class 显隐，组件没暴露回调，
+  // 只能观察 DOM：等它出现后挂属性监听，一显示就对齐。
+  var attached = false;
+  var timer = setInterval(function(){
+    var popup = document.getElementById('scripture-popup');
+    if (!popup || attached) return;
+    attached = true;
+    clearInterval(timer);
+    new MutationObserver(schedule).observe(popup,
+      {attributes: true, attributeFilter: ['style', 'class']});
+    schedule();
+  }, 300);
+})();
+
 // 点击文字块以外的区域（背景图那片）切换顶部导航。
 // 文字块内部、以及任何链接/按钮/表单控件都放行，免得点经文引用或上下章
 // 导航时顺带把导航栏弹出来。
@@ -381,9 +433,13 @@ body:has(.bridges-stage) footer{display:none}
       linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
       linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
       url('{{ site.baseurl }}/img/{{ bg }}');
-  background-attachment: fixed, fixed, fixed;
-  background-size: cover, cover, cover;
-  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  /* size/position 交给下面的 JS（initBridgesPopupCutout）按视口实时算。
+     不用 background-attachment: fixed——iOS Safari 根本不支持它，多层
+     `fixed, fixed, fixed` 还会让整条 background 声明失效，手机上就成白框。
+     JS 手算不依赖任何浏览器特性，桌面与移动端同一条路径。 */
+  background-size: 100% 100%, cover, cover;
+  background-position: 0 0, center, center;
   box-shadow: 0 12px 34px rgba(74,54,30,.30);
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
@@ -405,9 +461,11 @@ body:has(.bridges-stage) footer{display:none}
   /* ── 直接铺风景图，而不是靠 backdrop-filter 去糊「文字块玻璃 + 正文」 ──
      backdrop-filter 模糊的是元素背后**渲染出来的一切**，中间那层
      .bridges-glass-page 玻璃和它上面的正文都躲不掉，两层玻璃一叠就发浑。
-     这里换个路子：弹层自己铺同一张背景图，用 background-attachment: fixed
-     让它按视口绘制——与 .bridges-bg（position:fixed + cover + center）
+     这里换个路子：弹层自己铺同一张背景图，由 JS（initBridgesPopupCutout）
+     按视口算 size/position——与 .bridges-bg（position:fixed + cover + center）
      像素级对齐，于是弹层看着就像在风景图上开了个洞，底下的正文完全不透进来。
+     早先用 background-attachment: fixed 做过，桌面可以，但 iOS Safari 不支持，
+     手机上整条 background 声明失效、弹层成白框，所以改成 JS 手算。
      三层从上到下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。
      顺带把 backdrop-filter 整个去掉，滑动时不用每帧重算模糊，也就不卡了。 */
   /* inner 只负责滑出动画与承载文字，背景全部交给外壳（见上），
@@ -425,25 +483,6 @@ body:has(.bridges-stage) footer{display:none}
    磨砂上再磨砂，那块就比周围亮一截，看着像贴了个白矩形（用户打回过）。
    这里让它彻底透明、不再单独模糊，整个弹层才是一块均匀的玻璃。
    箴言的弹层内容一般就一两节，不会滚动，所以 sticky 底色可以不要。 */
-/* ── 移动端 fallback ──────────────────────────────────────────────
-   background-attachment: fixed 在 iOS Safari 上从来就不支持（会被当成
-   scroll），多层 `fixed, fixed, fixed` 更容易让整条 background 声明直接失效；
-   一失效外壳就没背景，而 inner 又被我们设成了 transparent，弹层于是露出
-   底下那层玻璃，看着就是白框——手机上看到的正是这个。
-
-   触屏设备退回 backdrop-filter：它模糊的是「文字块玻璃 + 正文」，做不到
-   桌面那种开洞效果，但至少是透明的，不是白板。
-   用 (hover: none) 判定而不是宽度：iPad 横屏也够宽，照样不支持 fixed。 */
-@media (hover: none), (max-width: 900px) {
-  #scripture-popup.sp-crystal {
-    background-image: none;
-    background-color: rgba(249,245,236,.30);
-  }
-  #scripture-popup.sp-crystal #scripture-popup-inner {
-    backdrop-filter: blur(20px) saturate(1.12);
-    -webkit-backdrop-filter: blur(20px) saturate(1.12);
-  }
-}
 /* ⚠️ 特异度必须压过组件自带的 `.sp-crystal .sp-header`（同为 0,2,0）。
    本 <style> 排在 include 之前，同分时后写的赢——上一版就是这么被覆盖掉的，
    标题栏的白矩形一直还在。加上 #scripture-popup 提到 1,2,0 就与顺序无关了。 */
