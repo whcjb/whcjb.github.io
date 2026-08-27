@@ -33,6 +33,8 @@ def clean_body(b):
 
 OUT.mkdir(parents=True, exist_ok=True)
 present = sorted(int(p.stem) for p in SRC.glob('*.md') if p.stem.isdigit())
+# preface 不是数字，上面的 isdigit 过滤会漏掉它，单独判
+has_preface = (SRC / 'preface.md').exists()
 now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
 def chapter_date(n):
@@ -44,6 +46,17 @@ def chapter_date(n):
             return m.group(1).strip()
     return now
 
+if has_preface:
+    _raw = (SRC / 'preface.md').read_text(encoding='utf-8')
+    _body = clean_body(re.match(r'^---\n.*?\n---\n(.*)$', _raw, re.DOTALL).group(1).strip('\n'))
+    _fm = ['---', 'layout: calvin-en', f'book_id: {BOOK_ID}', f'book_name: {BOOK_NAME}',
+           'title: "前言"', f'date: {chapter_date("preface")}']
+    if present:
+        _fm += [f'next_section: {present[0]}', f'next_label: "第{cn_ch(present[0])}章"']
+    _fm += ['---', '']
+    (OUT / 'preface.md').write_text('\n'.join(_fm) + '\n' + _body + '\n', encoding='utf-8')
+    print('  published joshua/preface.md  前言')
+
 for n in present:
     raw = (SRC / f'{n}.md').read_text(encoding='utf-8')
     body = clean_body(re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL).group(1).strip('\n'))
@@ -53,6 +66,8 @@ for n in present:
     nexts = [c for c in present if c > n]
     if prevs:
         fm += [f'prev_section: {prevs[-1]}', f'prev_label: "第{cn_ch(prevs[-1])}章"']
+    elif has_preface:
+        fm += ['prev_section: preface', 'prev_label: "前言"']
     if nexts:
         fm += [f'next_section: {nexts[0]}', f'next_label: "第{cn_ch(nexts[0])}章"']
     fm += ['---', '']
@@ -62,5 +77,5 @@ for n in present:
 (OUT / 'index.html').write_text(
     f'---\nlayout: calvin-book-modern\nbook_id: {BOOK_ID}\n'
     f'book_name: {BOOK_NAME}\nchapters: {present[-1] if present else 0}\n'
-    f'has_preface: false\n---\n', encoding='utf-8')
+    f'has_preface: {str(has_preface).lower()}\n---\n', encoding='utf-8')
 print(f'  index.html chapters={present[-1] if present else 0}, 已发布={present}')

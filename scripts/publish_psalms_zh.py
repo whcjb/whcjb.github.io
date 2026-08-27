@@ -125,16 +125,32 @@ def main():
         nums = sorted(int(p.stem) for p in src_dir.glob('*.md')
                       if p.stem.isdigit()) if src_dir.exists() else []
         translated = set(nums)
-        for n in nums:
+        has_preface = (src_dir / 'preface.md').exists()   # preface 非数字，isdigit 会漏
+        for n in (['preface'] if has_preface else []) + nums:
             if want and n not in want:
                 continue
             raw = (src_dir / f'{n}.md').read_text(encoding='utf-8')
             m = re.match(r'^---\n.*?\n---\n(.*)$', raw, re.DOTALL)
             body = clean_body(m.group(1).strip('\n') if m else raw, zh_defs)
+            if n == 'preface':
+                if lo != 1:      # 前言只挂卷一；卷二那份只是指回卷一
+                    continue
+                fm = ['---', 'layout: calvin-en', f'book_id: {book_id}',
+                      f'book_name: {book_name}', 'total_chapters: 150',
+                      'title: "前言"', f'date: {chapter_date(out_dir, n)}']
+                if lo in translated:
+                    fm += [f'next_section: {lo}', f'next_label: "诗篇 {lo}"']
+                fm += ['---', '']
+                (out_dir / 'preface.md').write_text(
+                    '\n'.join(fm) + '\n' + body + '\n', encoding='utf-8')
+                print(f'  published {book_id}/preface.md  前言')
+                continue
             fm = ['---', 'layout: calvin-en', f'book_id: {book_id}',
                   f'book_name: {book_name}', f'chapter: {n}',
                   'total_chapters: 150', f'title: "诗篇 {n}"',
                   f'date: {chapter_date(out_dir, n)}']
+            if n == lo and has_preface:
+                fm += ['prev_section: preface', 'prev_label: "前言"']
             # prev/next 只在**已译**篇之间连；否则会链到未发布篇 → 404
             if n > lo and (n - 1) in translated:
                 fm += [f'prev_section: {n-1}', f'prev_label: "诗篇 {n-1}"']
@@ -150,7 +166,7 @@ def main():
             (out_dir / 'index.html').write_text(
                 '---\nlayout: calvin-book-modern\n'
                 f'book_id: {book_id}\nbook_name: {book_name}\n'
-                f'chapters: {idx_chapters}\nhas_preface: false\n---\n', encoding='utf-8')
+                f'chapters: {idx_chapters}\nhas_preface: {str(has_preface).lower()}\n---\n', encoding='utf-8')
             print(f'  {book_id} index.html 已写；该卷已译篇: {nums}')
         else:
             print(f'  {book_id} 暂无译章, 跳过 index(主页显示为 pending)')
