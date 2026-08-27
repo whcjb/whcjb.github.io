@@ -280,77 +280,6 @@ body:has(.bridges-stage) footer{display:none}
 <script>
 // 入场动画结束后清掉 clip-path/transform：它们会成为后代 sticky/fixed 的
 // 包含块，留着经文就没法置顶了。
-// ── 弹层「开洞」：把外壳背景对齐视口，等效 background-attachment: fixed
-// 但不依赖它。iOS Safari 不支持 fixed 背景，多层 fixed 值还会让整条
-// background 声明失效（手机上弹层因此成了白框）。这里按 .bridges-bg 的
-// cover + center 规则手算，桌面与移动端同一条路径。
-// 三层由上而下：米色膜（纯色铺满）→ veil 渐变（按视口尺寸）→ 风景图（按
-// cover 尺寸）。后两层都要减去弹层在视口中的偏移，才能与页面背景对齐。
-(function initBridgesPopupCutout(){
-  var BG = "{{ site.baseurl }}/img/{{ bg }}";
-  var nat = null, probe = new Image();
-  probe.onload = function(){ nat = {w: probe.naturalWidth, h: probe.naturalHeight}; align(); };
-  probe.src = BG;
-
-  function align(){
-    var popup = document.getElementById('scripture-popup');
-    if (!popup || !nat || popup.style.display === 'none') return;
-    var vw = window.innerWidth, vh = window.innerHeight;
-    var scale = Math.max(vw / nat.w, vh / nat.h);   // = background-size: cover
-    var bw = nat.w * scale, bh = nat.h * scale;
-    var bx = (vw - bw) / 2, by = (vh - bh) / 2;     // = background-position: center
-    var r = popup.getBoundingClientRect();          // 外壳无 transform，rect 可靠
-    popup.style.backgroundSize =
-      '100% 100%, ' + vw + 'px ' + vh + 'px, ' + bw + 'px ' + bh + 'px';
-    popup.style.backgroundPosition =
-      '0 0, ' + (-r.left) + 'px ' + (-r.top) + 'px, ' +
-      (bx - r.left) + 'px ' + (by - r.top) + 'px';
-  }
-
-  var ticking = false;
-  function schedule(){
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function(){ ticking = false; toViewportCoord(); align(); });
-  }
-  window.addEventListener('resize', schedule);
-
-  // ── 弹层改 fixed，与背景层进入同一参考系 ─────────────────────────────
-  // 背景抖动的根源：.bridges-bg 是 position:fixed（相对视口，滚动时由合成器
-  // 直接处理、零延迟），而弹层默认 absolute（随文档滚动）。两者参考系不同，
-  // 想让弹层里的图跟外面对齐就得每帧修正 background-position——JS 再快也慢
-  // 一帧，于是看着像两层背景在互相追。
-  //
-  // 把弹层也钉成 fixed，两者就都相对视口：滚动时谁都不动，背景算一次就永远
-  // 对齐，零抖动，弹层也不用被迫关掉。
-  //
-  // 代价是组件写 top 时用的是文档坐标（rect.bottom + pageYOffset），fixed 下
-  // 要换成视口坐标，所以下面盯着 style 把它减回去。
-  var myTop = null;
-  function toViewportCoord(){
-    var popup = document.getElementById('scripture-popup');
-    if (!popup || popup.style.display === 'none') return;
-    var cur = popup.style.top;
-    if (!cur || cur === myTop) return;        // 自己刚写的，别再减一次
-    var vp = parseFloat(cur) - window.pageYOffset;
-    myTop = vp + 'px';
-    popup.style.top = myTop;
-  }
-
-  // 弹层由组件 JS 动态创建、靠改 style.display / class 显隐，组件没暴露回调，
-  // 只能观察 DOM：等它出现后挂属性监听，一显示就对齐。
-  var attached = false;
-  var timer = setInterval(function(){
-    var popup = document.getElementById('scripture-popup');
-    if (!popup || attached) return;
-    attached = true;
-    clearInterval(timer);
-    new MutationObserver(schedule).observe(popup,
-      {attributes: true, attributeFilter: ['style', 'class']});
-    schedule();
-  }, 300);
-})();
-
 // 点击文字块以外的区域（背景图那片）切换顶部导航。
 // 文字块内部、以及任何链接/按钮/表单控件都放行，免得点经文引用或上下章
 // 导航时顺带把导航栏弹出来。
@@ -434,8 +363,6 @@ body:has(.bridges-stage) footer{display:none}
   --sp-bg: rgba(247,242,232,.34);
   --sp-border: rgba(255,255,255,.42);
 }
-/* 与 .bridges-bg 同为 fixed，两层背景才不会在滚动时互相追（见 JS 注释） */
-#scripture-popup { position: fixed !important; }
 #scripture-popup.sp-crystal {
   /* 出票口：3px，与加尔文一致（组件默认就是 3px，加尔文用的默认参数）。
      颜色取箴言主题棕 #6B4E2E，并做半透明。 */
@@ -450,18 +377,37 @@ body:has(.bridges-stage) footer{display:none}
      外壳没有 transform，且 popup 是直接 appendChild 到 document.body 的，
      祖先链上也没有，所以挂这里 fixed 才真正生效。
      三层由上而下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。 */
+  /* ── 与页面共用同一个背景，靠 fixed 伪元素 + overflow 裁剪 ────────────
+     抖动的根源是参考系不一致：.bridges-bg 是 position:fixed（相对视口，滚动
+     时合成器直接处理），弹层却随文档滚动。之前试过在弹层上铺 background 再用
+     JS 每帧修正 position，永远慢一帧，看着就是两层背景互相追。
+
+     现在让伪元素自己 position:fixed + inset:0 铺满整个视口，与 .bridges-bg
+     完全重合、同一参考系；外壳 overflow:hidden 把它裁成弹层的形状——于是弹层
+     照常随页面滚动，"洞"在移动而洞里的景纹丝不动，天然零抖动，且不需要 JS。
+     移动端也稳：fixed **定位**支持良好，不像 background-attachment: fixed。
+
+     ⚠️ overflow 必须 !important：组件的 JS 会在动画结束 470ms 后把它改成
+     visible（为了让阴影显影），一旦放开，铺满视口的伪元素就会盖住整个屏幕。
+     阴影改由外壳自己承担——box-shadow 画在边框之外，不受自身 overflow 影响。
+     ⚠️ 伪元素只能挂在外壳：inner 带 transform（滑出动画），
+     任何 transform 祖先都会让后代的 fixed 退化为相对该元素。 */
+  overflow: hidden !important;
+  box-shadow: 0 12px 34px rgba(74,54,30,.30);
+}
+#scripture-popup.sp-crystal::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
   background-image:
       linear-gradient(rgba(249,245,236,.42), rgba(249,245,236,.42)),
       linear-gradient(165deg, rgba(58,42,26,.44) 0%, rgba(58,42,26,.22) 38%, rgba(40,30,20,.54) 100%),
       url('{{ site.baseurl }}/img/{{ bg }}');
+  background-size: cover, cover, cover;
+  background-position: center, center, center;
   background-repeat: no-repeat, no-repeat, no-repeat;
-  /* size/position 交给下面的 JS（initBridgesPopupCutout）按视口实时算。
-     不用 background-attachment: fixed——iOS Safari 根本不支持它，多层
-     `fixed, fixed, fixed` 还会让整条 background 声明失效，手机上就成白框。
-     JS 手算不依赖任何浏览器特性，桌面与移动端同一条路径。 */
-  background-size: 100% 100%, cover, cover;
-  background-position: 0 0, center, center;
-  box-shadow: 0 12px 34px rgba(74,54,30,.30);
 }
 #scripture-popup.sp-crystal #scripture-popup-inner {
   /* ⚠️ 顶部必须有圆角，且半径 = 外壳 12px − 色条 3px = 9px。
@@ -479,16 +425,15 @@ body:has(.bridges-stage) footer{display:none}
      整块玻璃只靠底色 + 外阴影成形，不描边。 */
   border: none;
 
-  /* ── 直接铺风景图，而不是靠 backdrop-filter 去糊「文字块玻璃 + 正文」 ──
-     backdrop-filter 模糊的是元素背后**渲染出来的一切**，中间那层
-     .bridges-glass-page 玻璃和它上面的正文都躲不掉，两层玻璃一叠就发浑。
-     这里换个路子：弹层自己铺同一张背景图，由 JS（initBridgesPopupCutout）
-     按视口算 size/position——与 .bridges-bg（position:fixed + cover + center）
-     像素级对齐，于是弹层看着就像在风景图上开了个洞，底下的正文完全不透进来。
-     早先用 background-attachment: fixed 做过，桌面可以，但 iOS Safari 不支持，
-     手机上整条 background 声明失效、弹层成白框，所以改成 JS 手算。
-     三层从上到下：米色膜 → 与 .bridges-bg-veil 相同的渐变 → 风景图。
-     顺带把 backdrop-filter 整个去掉，滑动时不用每帧重算模糊，也就不卡了。 */
+  /* 背景不在这里——挂在外壳的 ::before 上（见上）。inner 带 transform，
+     任何 transform 祖先都会让后代 fixed 退化为相对自身，背景就跟页面对不齐了。
+     也不用 backdrop-filter：它模糊的是元素背后渲染出来的一切，中间那层
+     .bridges-glass-page 玻璃和上面的正文都躲不掉，两层玻璃一叠就发浑；
+     去掉之后滑动时也不必每帧重算模糊。
+     走到这一步试错的顺序：backdrop-filter（发浑）→ inner 铺图 +
+     background-attachment: fixed（桌面可以，iOS 不支持、手机成白框）→
+     JS 每帧算 background-position（永远慢一帧，两层背景互相追）→
+     现在的 fixed 伪元素（同参考系，零抖动、零 JS）。 */
   /* inner 只负责滑出动画与承载文字，背景全部交给外壳（见上），
      否则它自身的 transform 会把 fixed 背景拽成相对自己。 */
   background: transparent;
