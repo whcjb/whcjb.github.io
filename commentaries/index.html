@@ -92,27 +92,26 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
      中位 (--n − 1)/2 让奇数张时中间那张恰好留在原地、偶数张时上下各半格。
      同时整体浮起：阴影加深、微微放大，像从纸面上抬起来。 */
   .cx-cell:hover .cx-item {
-    transform: translateY(calc((var(--i) - (var(--n) - 1) / 2) * (100% + 6px)))
+    transform: translateY(calc((var(--i) - (var(--n) - 1) / 2) * (100% + 10px)))
                scale(1.03);
     filter: none;
     z-index: calc(60 + var(--i));
-    /* 一圈浅色细边 + 外扩暗影：展开的卡片会压在邻卡上面，两边都是深色块，
-       没有这道边就糊成一片分不出边界 */
-    box-shadow: 0 0 0 1px rgba(255,255,255,.55),
-                0 10px 26px rgba(30,35,40,.38),
-                0 2px 6px rgba(30,35,40,.22);
+    /* 展开的卡片压在邻卡上面，两边都是深色块，靠三层把边界划出来：
+       2px 实白描边 → 与下面的深色卡直接分开；
+       再套一圈半透明白 → 白边外缘不至于生硬；
+       大范围暗影 → 托出「浮在上层」的纵深。
+       试过把周围格子整体压暗，太重了，画面发闷，改用这种局部办法。 */
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 3px rgba(255,255,255,.45),
+                0 14px 30px rgba(30,35,40,.38),
+                0 3px 8px rgba(30,35,40,.24);
   }
-
-  /* 悬浮某一摞时，把其余格子压暗，让展开的这摞跳出来。
-     用 :has() 精确匹配「网格里确有格子被悬停」——若写成 .cx-grid:hover，
-     鼠标划过格子之间的空隙也会触发，画面会闪。
-     :has() 不支持的老浏览器就只是不变暗，不影响使用。 */
-  .cx-grid:has(.cx-cell:hover) .cx-cell:not(:hover) {
-    filter: brightness(.42) saturate(.75);
+  .cx-item:hover {
+    filter: brightness(1.13) !important; z-index: 99 !important;
+    box-shadow: 0 0 0 2px #fff,
+                0 0 0 4px rgba(255,255,255,.7),
+                0 18px 36px rgba(30,35,40,.42) !important;
   }
-  .cx-cell { transition: filter .22s ease; }
-  .cx-item:hover { filter: brightness(1.13) !important; z-index: 99 !important;
-                   box-shadow: 0 14px 32px rgba(30,35,40,.40) !important; }
   /* 作者名静止时藏起来——那时卡面上是卷名 */
   .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
   .cx-cell:hover .cx-item > span { opacity: 1; }
