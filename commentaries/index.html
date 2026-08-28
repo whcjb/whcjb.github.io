@@ -1,0 +1,139 @@
+---
+layout: default
+title: 历代解经
+description: 历代改革宗注释家的圣经注释汇编——加尔文、约翰·欧文、马太·亨利、查理·毕列志，按书卷检索。
+---
+
+{%- comment -%}
+  「历代解经」总目：按书卷聚合各注释家的入口。
+  数据来自 _data/commentaries.yml，由 scripts/build_commentaries_index.py
+  扫描 calvin/ owen/ mhenry/ bridges/ 生成——新增注释家或书卷时重跑脚本即可，
+  本页不用改。
+
+  这里只做入口聚合，各注释家原有的书卷页一律不动、直接超链接过去。
+{%- endcomment -%}
+
+<style>
+  .cx-wrap { font-family: Georgia, "Times New Roman", serif; color: #2c2c2c; }
+  .cx-hero { margin: 34px 0 10px; }
+  .cx-hero h1 {
+    font-size: 27px; letter-spacing: .06em; color: #1a1a1a;
+    border-bottom: 2px solid #0085a1; padding-bottom: 10px; margin: 0 0 12px;
+  }
+  .cx-lead { color: #777; font-size: 14px; line-height: 1.75; margin: 0 0 22px; }
+
+  /* 注释家一览 */
+  .cx-authors { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; }
+  .cx-author {
+    flex: 1 1 190px; border: 1px solid #ece8d8; border-radius: 8px;
+    padding: 11px 14px; background: #fcfbf7;
+  }
+  .cx-author-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
+  .cx-author-meta { font-size: 12px; color: #999; line-height: 1.6; }
+
+  /* 书卷表 */
+  .cx-sec { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: #0085a1;
+            letter-spacing: .1em; }
+  .cx-list { border-top: 1px solid #ece8d8; margin-bottom: 32px; }
+  .cx-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 9px 0; border-bottom: 1px solid #f2efe4;
+  }
+  .cx-book {
+    flex: 0 0 118px; font-size: 15px; color: #333; font-weight: 600;
+  }
+  .cx-links { flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cx-pill {
+    display: inline-flex; align-items: center; height: 26px; padding: 0 11px;
+    border-radius: 13px; font-size: 12.5px; font-weight: 600;
+    text-decoration: none !important; border: 1px solid; transition: all .12s ease;
+  }
+  .cx-pill:hover { color: #fff !important; }
+  /* 各家沿用自己书页里的主题色，扫一眼就能认出 */
+  .cx-calvin  { color:#800000; border-color:#e0c4c4; background:#faf3f3; }
+  .cx-calvin:hover  { background:#800000; border-color:#800000; }
+  .cx-owen    { color:#1f5a4b; border-color:#c2dbd3; background:#f2f8f6; }
+  .cx-owen:hover    { background:#1f5a4b; border-color:#1f5a4b; }
+  .cx-mhenry  { color:#1a4f7a; border-color:#c3d7e6; background:#f2f7fb; }
+  .cx-mhenry:hover  { background:#1a4f7a; border-color:#1a4f7a; }
+  .cx-bridges { color:#6B4E2E; border-color:#ddcdb4; background:#faf6ef; }
+  .cx-bridges:hover { background:#6B4E2E; border-color:#6B4E2E; }
+
+  @media (max-width: 640px) {
+    .cx-hero h1 { font-size: 22px; }
+    .cx-row { align-items: flex-start; flex-direction: column; gap: 6px; padding: 10px 0; }
+    .cx-book { flex: none; font-size: 15px; }
+    .cx-pill { height: 24px; font-size: 12px; padding: 0 9px; }
+  }
+</style>
+
+<div class="container cx-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="cx-hero">
+        <h1>历代解经</h1>
+        <p class="cx-lead">
+          历代改革宗注释家的圣经注释，按书卷汇整。同一卷书若有多位注释家，
+          并列于该卷之后，可对照参看。
+        </p>
+      </div>
+
+      <div class="cx-authors">
+        {%- for a in site.data.commentaries.authors -%}
+        {%- if a.books > 0 -%}
+        <div class="cx-author">
+          <div class="cx-author-name">{{ a.name }}</div>
+          <div class="cx-author-meta">{{ a.en }} · {{ a.years }}<br>共 {{ a.books }} 卷</div>
+        </div>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- assign author_map = site.data.commentaries.authors -%}
+
+      {%- comment -%}
+        Liquid 的 for 不接受管道表达式（for x in "a,b" | split: ","），
+        会静默产出空循环——这一版就因此只渲染出了「合参」那组。必须先 assign。
+      {%- endcomment -%}
+      {%- assign groups = "ot,nt" | split: "," -%}
+      {%- for group in groups -%}
+      {%- assign rows = site.data.commentaries.books | where: "testament", group -%}
+      {%- if rows.size > 0 -%}
+      <div class="cx-sec">{% if group == "ot" %}旧　约{% else %}新　约{% endif %}</div>
+      <div class="cx-list">
+        {%- for b in rows -%}
+        <div class="cx-row">
+          <div class="cx-book">{{ b.name }}</div>
+          <div class="cx-links">
+            {%- for l in b.links -%}
+            {%- assign au = author_map | where: "id", l.author | first -%}
+            <a class="cx-pill cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
+               title="{{ au.name }}《{{ b.name }}注释》">{{ au.name }}</a>
+            {%- endfor -%}
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+      {%- endfor -%}
+
+      {%- if site.data.commentaries.harmony.size > 0 -%}
+      <div class="cx-sec">合　参</div>
+      <div class="cx-list">
+        {%- for h in site.data.commentaries.harmony -%}
+        {%- assign au = author_map | where: "id", h.author | first -%}
+        <div class="cx-row">
+          <div class="cx-book" style="flex:0 0 190px;">{{ h.name }}</div>
+          <div class="cx-links">
+            <a class="cx-pill cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
+               title="{{ au.name }}《{{ h.name }}》">{{ au.name }}</a>
+          </div>
+        </div>
+        {%- endfor -%}
+      </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</div>
