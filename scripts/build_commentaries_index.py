@@ -24,11 +24,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # 注释家：生卒年皆为确凿史实，勿凭印象改
+# short 是卡片色块里的简称：一卷若有三位注释家，每格只剩 50 余像素，
+# 全名放不下会被截断
 AUTHORS = OrderedDict([
-    ('calvin',  dict(name='约翰·加尔文',   en='John Calvin',     years='1509–1564', dir='calvin')),
-    ('owen',    dict(name='约翰·欧文',     en='John Owen',       years='1616–1683', dir='owen')),
-    ('mhenry',  dict(name='马太·亨利',     en='Matthew Henry',   years='1662–1714', dir='mhenry')),
-    ('bridges', dict(name='查理·毕列志',   en='Charles Bridges', years='1794–1869', dir='bridges')),
+    ('calvin',  dict(name='约翰·加尔文', short='加尔文',  en='John Calvin',     years='1509–1564', dir='calvin')),
+    ('owen',    dict(name='约翰·欧文',   short='欧文',    en='John Owen',       years='1616–1683', dir='owen')),
+    ('mhenry',  dict(name='马太·亨利',   short='亨利',    en='Matthew Henry',   years='1662–1714', dir='mhenry')),
+    ('bridges', dict(name='查理·毕列志', short='毕列志',  en='Charles Bridges', years='1794–1869', dir='bridges')),
 ])
 
 # 和合本 66 卷：(目录 id, 中文名, 新旧约)
@@ -124,6 +126,7 @@ def main():
         n = len(by_author[aid])
         lines += [f'  - id: {aid}',
                   f'    name: {yaml_escape(a["name"])}',
+                  f'    short: {yaml_escape(a["short"])}',
                   f'    en: {yaml_escape(a["en"])}',
                   f'    years: {yaml_escape(a["years"])}',
                   f'    books: {n}']

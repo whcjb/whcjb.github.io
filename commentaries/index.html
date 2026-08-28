@@ -5,111 +5,120 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
 ---
 
 {%- comment -%}
-  「历代解经」总目：按书卷聚合各注释家的入口。
+  「历代解经」总目：一卷书一个卡片，卡片下半是按注释家数量等分的色块，
+  每块填该注释家的主题色、写其名，点击进入他自己那套书页。
+
   数据来自 _data/commentaries.yml，由 scripts/build_commentaries_index.py
   扫描 calvin/ owen/ mhenry/ bridges/ 生成——新增注释家或书卷时重跑脚本即可，
-  本页不用改。
+  本页不用改。各家原有的书卷页一律不动，这里只做入口聚合。
 
-  这里只做入口聚合，各注释家原有的书卷页一律不动、直接超链接过去。
+  ⚠️ Liquid 的 for 不接受管道表达式（for x in "a,b" | split: ","），会静默
+  产出空循环，必须先 assign（踩过）。
 {%- endcomment -%}
 
 <style>
-  .cx-wrap { font-family: Georgia, "Times New Roman", serif; color: #2c2c2c; }
-  .cx-hero { margin: 34px 0 10px; }
+  .cx-wrap { font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; color: #2c2c2c; }
+  .cx-hero { margin: 34px 0 8px; }
   .cx-hero h1 {
-    font-size: 27px; letter-spacing: .06em; color: #1a1a1a;
+    font-size: 27px; letter-spacing: .08em; color: #1a1a1a;
     border-bottom: 2px solid #0085a1; padding-bottom: 10px; margin: 0 0 12px;
   }
-  .cx-lead { color: #777; font-size: 14px; line-height: 1.75; margin: 0 0 22px; }
+  .cx-lead { color: #888; font-size: 13.5px; line-height: 1.75; margin: 0 0 24px; }
 
-  /* 注释家一览 */
-  .cx-authors { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; }
-  .cx-author {
-    flex: 1 1 190px; border: 1px solid #ece8d8; border-radius: 8px;
-    padding: 11px 14px; background: #fcfbf7;
+  /* 注释家一览：与卡片色块同色，作图例用 */
+  .cx-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
+  .cx-legend-item {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: 12.5px; color: #666; padding: 5px 11px 5px 7px;
+    border: 1px solid #ece8d8; border-radius: 4px; background: #fcfbf7;
   }
-  .cx-author-name { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
-  .cx-author-meta { font-size: 12px; color: #999; line-height: 1.6; }
+  .cx-swatch { width: 13px; height: 13px; border-radius: 2px; flex: 0 0 13px; }
 
-  /* 书卷表 */
-  .cx-sec { margin: 0 0 10px; font-size: 15px; font-weight: 700; color: #0085a1;
-            letter-spacing: .1em; }
-  .cx-list { border-top: 1px solid #ece8d8; margin-bottom: 32px; }
-  .cx-row {
-    display: flex; align-items: center; gap: 14px;
-    padding: 9px 0; border-bottom: 1px solid #f2efe4;
+  .cx-sec {
+    margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #0085a1;
+    letter-spacing: .18em;
   }
-  .cx-book {
-    flex: 0 0 118px; font-size: 15px; color: #333; font-weight: 600;
+  .cx-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 10px; margin-bottom: 34px;
   }
-  .cx-links { flex: 1 1 auto; display: flex; flex-wrap: wrap; gap: 6px; }
-  .cx-pill {
-    display: inline-flex; align-items: center; height: 26px; padding: 0 11px;
-    border-radius: 13px; font-size: 12.5px; font-weight: 600;
-    text-decoration: none !important; border: 1px solid; transition: all .12s ease;
+
+  /* 一卷 = 一个卡片：上半书名，下半按注释家数量等分 */
+  .cx-card {
+    border: 1px solid #e8e3d5; border-radius: 4px; overflow: hidden;
+    background: #fff; display: flex; flex-direction: column;
+    transition: box-shadow .15s ease, transform .15s ease;
   }
-  .cx-pill:hover { color: #fff !important; }
-  /* 各家沿用自己书页里的主题色，扫一眼就能认出 */
-  .cx-calvin  { color:#800000; border-color:#e0c4c4; background:#faf3f3; }
-  .cx-calvin:hover  { background:#800000; border-color:#800000; }
-  .cx-owen    { color:#1f5a4b; border-color:#c2dbd3; background:#f2f8f6; }
-  .cx-owen:hover    { background:#1f5a4b; border-color:#1f5a4b; }
-  .cx-mhenry  { color:#1a4f7a; border-color:#c3d7e6; background:#f2f7fb; }
-  .cx-mhenry:hover  { background:#1a4f7a; border-color:#1a4f7a; }
-  .cx-bridges { color:#6B4E2E; border-color:#ddcdb4; background:#faf6ef; }
-  .cx-bridges:hover { background:#6B4E2E; border-color:#6B4E2E; }
+  .cx-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.10); transform: translateY(-1px); }
+  .cx-name {
+    padding: 10px 12px 8px; font-size: 15px; letter-spacing: .04em;
+    color: #333; line-height: 1.25;
+  }
+  .cx-bar { display: flex; height: 34px; margin-top: auto; }
+  .cx-seg {
+    flex: 1 1 0; min-width: 0;              /* 等分；min-width:0 才不会被文字撑歪 */
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11.5px; letter-spacing: .02em; color: #fff !important;
+    text-decoration: none !important; white-space: nowrap; overflow: hidden;
+    transition: filter .15s ease;
+  }
+  .cx-seg:hover { filter: brightness(1.18); }
+  .cx-seg + .cx-seg { border-left: 1px solid rgba(255,255,255,.35); }
+
+  /* 各家沿用自己书页里的主题色 */
+  .cx-calvin  { background: #800000; }
+  .cx-owen    { background: #1f5a4b; }
+  .cx-mhenry  { background: #1a4f7a; }
+  .cx-bridges { background: #6B4E2E; }
 
   @media (max-width: 640px) {
     .cx-hero h1 { font-size: 22px; }
-    .cx-row { align-items: flex-start; flex-direction: column; gap: 6px; padding: 10px 0; }
-    .cx-book { flex: none; font-size: 15px; }
-    .cx-pill { height: 24px; font-size: 12px; padding: 0 9px; }
+    .cx-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
+    .cx-name { font-size: 14px; padding: 9px 10px 7px; }
+    .cx-bar { height: 31px; }
+    .cx-seg { font-size: 11px; }
   }
 </style>
 
 <div class="container cx-wrap" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
       <div class="cx-hero">
         <h1>历代解经</h1>
         <p class="cx-lead">
-          历代改革宗注释家的圣经注释，按书卷汇整。同一卷书若有多位注释家，
-          并列于该卷之后，可对照参看。
+          历代改革宗注释家的圣经注释，按书卷汇整。一卷书若有多位注释家，
+          卡片下方即分作数格，各据其色，可对照参看。
         </p>
-      </div>
-
-      <div class="cx-authors">
-        {%- for a in site.data.commentaries.authors -%}
-        {%- if a.books > 0 -%}
-        <div class="cx-author">
-          <div class="cx-author-name">{{ a.name }}</div>
-          <div class="cx-author-meta">{{ a.en }} · {{ a.years }}<br>共 {{ a.books }} 卷</div>
-        </div>
-        {%- endif -%}
-        {%- endfor -%}
       </div>
 
       {%- assign author_map = site.data.commentaries.authors -%}
 
-      {%- comment -%}
-        Liquid 的 for 不接受管道表达式（for x in "a,b" | split: ","），
-        会静默产出空循环——这一版就因此只渲染出了「合参」那组。必须先 assign。
-      {%- endcomment -%}
+      <div class="cx-legend">
+        {%- for a in author_map -%}
+        {%- if a.books > 0 -%}
+        <span class="cx-legend-item">
+          <span class="cx-swatch cx-{{ a.id }}"></span>{{ a.name }} · {{ a.years }} · {{ a.books }} 卷
+        </span>
+        {%- endif -%}
+        {%- endfor -%}
+      </div>
+
       {%- assign groups = "ot,nt" | split: "," -%}
       {%- for group in groups -%}
       {%- assign rows = site.data.commentaries.books | where: "testament", group -%}
       {%- if rows.size > 0 -%}
       <div class="cx-sec">{% if group == "ot" %}旧　约{% else %}新　约{% endif %}</div>
-      <div class="cx-list">
+      <div class="cx-grid">
         {%- for b in rows -%}
-        <div class="cx-row">
-          <div class="cx-book">{{ b.name }}</div>
-          <div class="cx-links">
+        <div class="cx-card">
+          <div class="cx-name">{{ b.name }}</div>
+          <div class="cx-bar">
             {%- for l in b.links -%}
             {%- assign au = author_map | where: "id", l.author | first -%}
-            <a class="cx-pill cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
-               title="{{ au.name }}《{{ b.name }}注释》">{{ au.name }}</a>
+            <a class="cx-seg cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
+               title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
             {%- endfor -%}
           </div>
         </div>
@@ -120,14 +129,14 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
 
       {%- if site.data.commentaries.harmony.size > 0 -%}
       <div class="cx-sec">合　参</div>
-      <div class="cx-list">
+      <div class="cx-grid">
         {%- for h in site.data.commentaries.harmony -%}
         {%- assign au = author_map | where: "id", h.author | first -%}
-        <div class="cx-row">
-          <div class="cx-book" style="flex:0 0 190px;">{{ h.name }}</div>
-          <div class="cx-links">
-            <a class="cx-pill cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
-               title="{{ au.name }}《{{ h.name }}》">{{ au.name }}</a>
+        <div class="cx-card">
+          <div class="cx-name">{{ h.name }}</div>
+          <div class="cx-bar">
+            <a class="cx-seg cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
+               title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
           </div>
         </div>
         {%- endfor -%}

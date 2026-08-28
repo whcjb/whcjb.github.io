@@ -4,21 +4,25 @@
 authors:
   - id: calvin
     name: "约翰·加尔文"
+    short: "加尔文"
     en: "John Calvin"
     years: "1509–1564"
     books: 41
   - id: owen
     name: "约翰·欧文"
+    short: "欧文"
     en: "John Owen"
     years: "1616–1683"
     books: 1
   - id: mhenry
     name: "马太·亨利"
+    short: "亨利"
     en: "Matthew Henry"
     years: "1662–1714"
     books: 66
   - id: bridges
     name: "查理·毕列志"
+    short: "毕列志"
     en: "Charles Bridges"
     years: "1794–1869"
     books: 1
