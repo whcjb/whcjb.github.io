@@ -69,7 +69,7 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   .cx-cell { position: relative; z-index: 1; }
   .cx-cell:hover { z-index: 100; }              /* 展开时压住相邻格子 */
   .cx-stack {
-    position: relative; height: 74px;
+    position: relative; height: 96px;
     margin-top: 14px;                           /* 给向左上错开的那几张留位 */
     perspective: 900px;                         /* 视点：越小透视越夸张 */
     perspective-origin: 50% 40%;
@@ -105,25 +105,31 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     transform: translate3d(0, calc((var(--i) - (var(--n) - 1) / 2) * (100% + 9px)), 26px);
     z-index: 99; box-shadow: 0 14px 30px rgba(30,35,40,.36);
   }
-  /* 作者名静止时藏起来——那时卡面上是卷名 */
-  .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
-  .cx-cell:hover .cx-item > span { opacity: 1; }
-
-  /* 卷名叠在最前那张卡片上（照加尔文主页：中文名 + 一行英文），
-     鼠标移上去淡出，让位给各张卡片上的注释家名。
-     最前那张就在 top:0/left:0，所以这里直接 inset:0 即可对齐。 */
-  .cx-title {
-    position: absolute; inset: 0; z-index: 25; pointer-events: none;
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.4);
-    transition: opacity .22s ease;
+  /* 卡面文字固定不变：上为卷名（中文 + 英文），下为**注释书名**（中英）。
+     不再随悬浮切换——展开时文字相对卡片不动，只是整张卡片挪位置。
+     静止时只露最前那张，看到的就是「卷名 + 那一本注释」。
+     注释书名由 build_commentaries_index.py 统一生成（各家现成的 book_name
+     格式不一致，不能直接取）。 */
+  .cx-item {
+    flex-direction: column; gap: 0;
+    padding: 9px 10px; text-align: center;
   }
-  .cx-title-cn { font-size: 15px; font-weight: 600; letter-spacing: .06em; line-height: 1.25; }
-  .cx-title-en {
+  .cx-bk    { font-size: 14.5px; font-weight: 600; letter-spacing: .05em; line-height: 1.2; }
+  .cx-bk-en {
     font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
-    font-size: 11px; opacity: .82; margin-top: 3px; letter-spacing: .02em;
+    font-size: 10.5px; opacity: .8; margin-top: 2px; letter-spacing: .02em;
   }
-  .cx-cell:hover .cx-title { opacity: 0; }
+  .cx-au {
+    font-size: 12px; letter-spacing: .08em; margin-top: 7px;
+    padding-top: 6px; border-top: 1px solid rgba(255,255,255,.34);
+    width: 74%;
+  }
+  .cx-au-en {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 9.5px; opacity: .72; margin-top: 1px; letter-spacing: 0;
+    /* 「John Calvin on 1 Thessalonians」这类会超宽，允许缩起来而不是撑破卡片 */
+    max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
 
   /* ⚠️ 用**首页资源卡片**那套渐变，不是各书页内部的 accent。
      首页：加尔文蓝、马太亨利金棕、欧文墨绿、毕列志棕；
@@ -137,7 +143,7 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     .cx-hero h1 { font-size: 22px; }
     .cx-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px 10px; }
     .cx-name { font-size: 14px; }
-    .cx-stack { height: 66px; }
+    .cx-stack { height: 88px; }
     .cx-item { font-size: 12px; letter-spacing: .06em; }
   }
   /* 触屏没有 hover，直接摊开——否则被压在下面的几张点不到 */
@@ -147,7 +153,7 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     .cx-stack { height: auto; padding-top: 34px; margin-top: 0; }
     .cx-item {
       position: relative; top: auto; left: auto;
-      height: 46px; margin-bottom: 5px;
+      height: 88px; margin-bottom: 6px;
       transform: none; filter: none;
     }
     .cx-item > span { opacity: 1; }
@@ -196,12 +202,13 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
             {%- assign au = author_map | where: "id", l.author | first -%}
             <a class="cx-item cx-{{ l.author }}" style="--i:{{ forloop.index0 }}"
                href="{{ site.baseurl }}{{ l.path }}"
-               title="{{ au.name }}《{{ b.name }}注释》"><span>{{ au.short | default: au.name }}</span></a>
+               title="{{ au.name }}《{{ b.name }}注释》">
+              <span class="cx-bk">{{ b.name }}</span>
+              <span class="cx-bk-en">{{ b.en }}</span>
+              <span class="cx-au">{{ l.title_cn }}</span>
+              <span class="cx-au-en">{{ l.title_en }}</span>
+            </a>
             {%- endfor -%}
-            <div class="cx-title">
-              <span class="cx-title-cn">{{ b.name }}</span>
-              <span class="cx-title-en">{{ b.en }}</span>
-            </div>
           </div>
         </div>
         {%- endfor -%}
@@ -217,11 +224,11 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
         <div class="cx-cell">
           <div class="cx-stack" style="--n:1">
             <a class="cx-item cx-{{ h.author }}" style="--i:0"
-               href="{{ site.baseurl }}{{ h.path }}"
-               title="{{ au.name }}《{{ h.name }}》"><span>{{ au.short | default: au.name }}</span></a>
-            <div class="cx-title">
-              <span class="cx-title-cn" style="font-size:12.5px; padding:0 6px; text-align:center;">{{ h.name }}</span>
-            </div>
+               href="{{ site.baseurl }}{{ h.path }}" title="{{ au.name }}《{{ h.name }}》">
+              <span class="cx-bk" style="font-size:12.5px;">{{ h.name }}</span>
+              <span class="cx-au">{{ l.title_cn }}</span>
+              <span class="cx-au-en">{{ l.title_en }}</span>
+            </a>
           </div>
         </div>
         {%- endfor -%}

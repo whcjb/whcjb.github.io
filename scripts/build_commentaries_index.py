@@ -144,7 +144,15 @@ def main():
                   f'    testament: {testament}',
                   '    links:']
         for aid, path in entries:
-            lines.append(f'      - {{author: {aid}, path: {yaml_escape(path)}}}')
+            # 注释书的书名，中英各一。各家现成的 book_name 格式不统一
+            #（加尔文中文作「希伯来书·加尔文注释」、马太亨利只写「希伯来书」、
+            # 欧文页面根本没有这个字段），所以这里按统一规则生成：
+            #   中文 = 简称 + 注释      英文 = 作者英文名 on 书卷英文名
+            # 英文这条与加尔文英文页的 book_name（"Calvin on Hebrews"）一致。
+            t_cn = AUTHORS[aid]['short'] + '注释'
+            t_en = AUTHORS[aid]['en'] + ' on ' + en
+            lines.append(f'      - {{author: {aid}, path: {yaml_escape(path)}, '
+                         f'title_cn: {yaml_escape(t_cn)}, title_en: {yaml_escape(t_en)}}}')
     lines += ['', 'harmony:']
     for aid, dirname, cn in HARMONY:
         d = ROOT / AUTHORS[aid]['dir'] / dirname
@@ -154,6 +162,7 @@ def main():
         path = '/' + AUTHORS[aid]['dir'] + '/' + dirname + '/'
         lines += [f'  - name: {yaml_escape(cn)}',
                   f'    author: {aid}',
+                  f'    title_cn: {yaml_escape(AUTHORS[aid]["short"] + "注释")}',
                   f'    path: {yaml_escape(path)}']
 
     out = ROOT / '_data' / 'commentaries.yml'
