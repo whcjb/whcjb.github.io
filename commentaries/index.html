@@ -87,13 +87,19 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     transition: transform .3s cubic-bezier(.2,.75,.3,1),
                 filter .25s ease, box-shadow .25s ease;
   }
+  /* 展开：以这摞卡片的原位置为中心**上下对称**散开，不是第一张不动、
+     其余往下掉。偏移量 = (第几张 − 中位) × (一张高 + 间距)，
+     中位 (--n − 1)/2 让奇数张时中间那张恰好留在原地、偶数张时上下各半格。
+     同时整体浮起：阴影加深、微微放大，像从纸面上抬起来。 */
   .cx-cell:hover .cx-item {
-    transform: translateY(calc(var(--i) * (100% + 5px)));
+    transform: translateY(calc((var(--i) - (var(--n) - 1) / 2) * (100% + 6px)))
+               scale(1.03);
     filter: none;
     z-index: calc(60 + var(--i));
-    box-shadow: 0 5px 16px rgba(30,35,40,.30);
+    box-shadow: 0 10px 26px rgba(30,35,40,.34), 0 2px 6px rgba(30,35,40,.20);
   }
-  .cx-item:hover { filter: brightness(1.12) !important; z-index: 99 !important; }
+  .cx-item:hover { filter: brightness(1.13) !important; z-index: 99 !important;
+                   box-shadow: 0 14px 32px rgba(30,35,40,.40) !important; }
   /* 作者名静止时藏起来——那时卡面上是卷名 */
   .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
   .cx-cell:hover .cx-item > span { opacity: 1; }
