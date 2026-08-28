@@ -61,40 +61,58 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   .cx-cell:hover .cx-title { opacity: 0; }
 
   /* ── 一摞卡片 ────────────────────────────────────────────────
-     每张卡片绝对定位，靠 --i（第几张）与 --n（共几张）算位置：
-     静止时向右错开、略微转角并上抬，堆出厚度；
-     hover 时角度归零、按 --n 等分横排，就地摊开供点选。
-     位置用 left/width 而不是 transform 的百分比——transform 的百分比按元素
-     自身宽度算，而展开前后宽度是变的，会算歪。 */
-  .cx-stack { position: relative; height: 74px; --gap: 5px; }
+     静止：像一叠纸从右下往左上错开——最前那张（--i:0）在原位、最亮，
+     往后每张向左上平移并压暗一档，堆出纵深。不转角度，纯平移。
+     悬浮：**保持原尺寸**纵向排开成一列（不缩小），并抬高 z-index 压住
+     周围格子，所以 .cx-grid 上不能有 overflow:hidden。
+     纵向位移用 translateY 的百分比是安全的——它按元素自身高度算，而这里
+     高度始终不变（宽度才是会变的那个，所以别拿百分比去算横向）。 */
+  .cx-cell { position: relative; z-index: 1; }
+  .cx-cell:hover { z-index: 100; }              /* 展开时压住相邻格子 */
+  .cx-stack {
+    position: relative; height: 74px;
+    margin-top: 14px;                           /* 给向左上错开的那几张留位 */
+  }
   .cx-item {
-    position: absolute; top: 0;
-    width: calc(100% - (var(--n) - 1) * var(--gap));
-    height: 100%;
-    left: calc(var(--i) * var(--gap));
-    transform: translateY(calc(var(--i) * -3px)) rotate(calc(var(--i) * -1.1deg));
-    transform-origin: 50% 120%;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    transform: translate(calc(var(--i) * -6px), calc(var(--i) * -6px));
     z-index: calc(20 - var(--i));
+    filter: brightness(calc(1 - var(--i) * 0.13));   /* 越靠后越暗 */
     border-radius: 4px;
     display: flex; align-items: center; justify-content: center;
     color: #fff !important; text-decoration: none !important;
     font-size: 13px; letter-spacing: .1em; white-space: nowrap; overflow: hidden;
-    box-shadow: 0 2px 5px rgba(30,35,40,.22), inset 0 1px 0 rgba(255,255,255,.16);
-    transition: left .3s cubic-bezier(.2,.75,.3,1),
-                width .3s cubic-bezier(.2,.75,.3,1),
-                transform .3s cubic-bezier(.2,.75,.3,1),
-                box-shadow .25s ease;
+    box-shadow: 0 2px 6px rgba(30,35,40,.28);
+    transition: transform .3s cubic-bezier(.2,.75,.3,1),
+                filter .25s ease, box-shadow .25s ease;
   }
   .cx-cell:hover .cx-item {
-    width: calc((100% - (var(--n) - 1) * 4px) / var(--n));
-    left: calc(var(--i) * (100% + 4px) / var(--n));
-    transform: translateY(0) rotate(0deg);
-    box-shadow: 0 4px 12px rgba(30,35,40,.26), inset 0 1px 0 rgba(255,255,255,.16);
+    transform: translateY(calc(var(--i) * (100% + 5px)));
+    filter: none;
+    z-index: calc(60 + var(--i));
+    box-shadow: 0 5px 16px rgba(30,35,40,.30);
   }
-  .cx-item:hover { filter: brightness(1.12); z-index: 30; }
+  .cx-item:hover { filter: brightness(1.12) !important; z-index: 99 !important; }
   /* 作者名静止时藏起来——那时卡面上是卷名 */
   .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
   .cx-cell:hover .cx-item > span { opacity: 1; }
+
+  /* 卷名叠在最前那张卡片上（照加尔文主页：中文名 + 一行英文），
+     鼠标移上去淡出，让位给各张卡片上的注释家名。
+     最前那张就在 top:0/left:0，所以这里直接 inset:0 即可对齐。 */
+  .cx-title {
+    position: absolute; inset: 0; z-index: 25; pointer-events: none;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.4);
+    transition: opacity .22s ease;
+  }
+  .cx-title-cn { font-size: 15px; font-weight: 600; letter-spacing: .06em; line-height: 1.25; }
+  .cx-title-en {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 11px; opacity: .82; margin-top: 3px; letter-spacing: .02em;
+  }
+  .cx-cell:hover .cx-title { opacity: 0; }
 
   /* ⚠️ 用**首页资源卡片**那套渐变，不是各书页内部的 accent。
      首页：加尔文蓝、马太亨利金棕、欧文墨绿、毕列志棕；
@@ -113,21 +131,20 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   }
   /* 触屏没有 hover，直接摊开——否则被压在下面的几张点不到 */
   @media (hover: none) {
+    /* 触屏没有 hover：直接纵向排开并常显作者名，否则压在下面的点不到。
+       卷名移到卡片上方作标题。 */
+    .cx-stack { height: auto; padding-top: 34px; margin-top: 0; }
     .cx-item {
-      width: calc((100% - (var(--n) - 1) * 4px) / var(--n));
-      left: calc(var(--i) * (100% + 4px) / var(--n));
-      transform: none;
+      position: relative; top: auto; left: auto;
+      height: 46px; margin-bottom: 5px;
+      transform: none; filter: none;
     }
-    /* 触屏两者不能靠 hover 切换，索性都显示：卷名移到卡片上方 */
-    .cx-stack { height: auto; padding-top: 40px; }
+    .cx-item > span { opacity: 1; }
     .cx-title {
-      position: static; width: auto; height: auto; color: #2b2b2b;
-      text-shadow: none; align-items: flex-start; margin-bottom: 7px;
-      position: absolute; top: 0; left: 2px;
+      position: absolute; top: 0; left: 2px; right: auto; bottom: auto;
+      align-items: flex-start; color: #2b2b2b; text-shadow: none;
     }
     .cx-title-en { opacity: .55; }
-    .cx-item { top: 40px; height: 66px; }
-    .cx-item > span { opacity: 1; }
   }
 </style>
 
