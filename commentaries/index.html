@@ -60,57 +60,50 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   }
   .cx-cell:hover .cx-title { opacity: 0; }
 
-  /* ── 一摞卡片 ────────────────────────────────────────────────
-     静止：像一叠纸从右下往左上错开——最前那张（--i:0）在原位、最亮，
-     往后每张向左上平移并压暗一档，堆出纵深。不转角度，纯平移。
-     悬浮：**保持原尺寸**纵向排开成一列（不缩小），并抬高 z-index 压住
-     周围格子，所以 .cx-grid 上不能有 overflow:hidden。
-     纵向位移用 translateY 的百分比是安全的——它按元素自身高度算，而这里
-     高度始终不变（宽度才是会变的那个，所以别拿百分比去算横向）。 */
+  /* ── 一摞卡片：真 3D 景深 ──────────────────────────────────────
+     此前是「平移 + 压暗」的 2D 模拟，层次全靠描边硬划，很丑。改成真正的
+     三维：容器给 perspective，卡片各自 translateZ 拉开 Z 轴距离——后层由
+     透视自然缩小，再叠 blur 与降 opacity 模拟镜头景深，这才是层次感的来源。
+     展开时把所有卡片拉回 translateZ(0)、恢复清晰，于是「前清后虚 → 全部
+     清晰」本身就把展开这件事讲明白了，不必再靠白边去划界。 */
   .cx-cell { position: relative; z-index: 1; }
   .cx-cell:hover { z-index: 100; }              /* 展开时压住相邻格子 */
   .cx-stack {
     position: relative; height: 74px;
     margin-top: 14px;                           /* 给向左上错开的那几张留位 */
+    perspective: 900px;                         /* 视点：越小透视越夸张 */
+    perspective-origin: 50% 40%;
   }
   .cx-item {
     position: absolute; top: 0; left: 0;
     width: 100%; height: 100%;
-    transform: translate(calc(var(--i) * -6px), calc(var(--i) * -6px));
+    transform: translate3d(calc(var(--i) * -7px), calc(var(--i) * -7px),
+                           calc(var(--i) * -34px));
     z-index: calc(20 - var(--i));
-    filter: brightness(calc(1 - var(--i) * 0.13));   /* 越靠后越暗 */
+    /* 越靠后越虚、越淡——镜头景深 */
+    filter: blur(calc(var(--i) * 0.7px)) brightness(calc(1 - var(--i) * 0.06));
+    opacity: calc(1 - var(--i) * 0.1);
     border-radius: 4px;
     display: flex; align-items: center; justify-content: center;
     color: #fff !important; text-decoration: none !important;
     font-size: 13px; letter-spacing: .1em; white-space: nowrap; overflow: hidden;
-    box-shadow: 0 2px 6px rgba(30,35,40,.28);
-    transition: transform .3s cubic-bezier(.2,.75,.3,1),
-                filter .25s ease, box-shadow .25s ease;
+    box-shadow: 0 3px 10px rgba(30,35,40,.26);
+    transition: transform .34s cubic-bezier(.22,.72,.28,1),
+                filter .3s ease, opacity .3s ease, box-shadow .3s ease;
   }
-  /* 展开：以这摞卡片的原位置为中心**上下对称**散开，不是第一张不动、
-     其余往下掉。偏移量 = (第几张 − 中位) × (一张高 + 间距)，
-     中位 (--n − 1)/2 让奇数张时中间那张恰好留在原地、偶数张时上下各半格。
-     同时整体浮起：阴影加深、微微放大，像从纸面上抬起来。 */
+  /* 展开：拉回同一 Z 平面、恢复清晰，以原位置为中心上下对称散开 */
   .cx-cell:hover .cx-item {
-    transform: translateY(calc((var(--i) - (var(--n) - 1) / 2) * (100% + 10px)))
-               scale(1.03);
+    transform: translate3d(0, calc((var(--i) - (var(--n) - 1) / 2) * (100% + 9px)), 0);
     filter: none;
+    opacity: 1;
     z-index: calc(60 + var(--i));
-    /* 展开的卡片压在邻卡上面，两边都是深色块，靠三层把边界划出来：
-       2px 实白描边 → 与下面的深色卡直接分开；
-       再套一圈半透明白 → 白边外缘不至于生硬；
-       大范围暗影 → 托出「浮在上层」的纵深。
-       试过把周围格子整体压暗，太重了，画面发闷，改用这种局部办法。 */
-    box-shadow: 0 0 0 2px #fff,
-                0 0 0 3px rgba(255,255,255,.45),
-                0 14px 30px rgba(30,35,40,.38),
-                0 3px 8px rgba(30,35,40,.24);
+    box-shadow: 0 8px 22px rgba(30,35,40,.30);
   }
+  /* 指到某一张：它再往前一点，其余退后并稍稍虚化——同样用景深表达焦点 */
+  .cx-stack:hover .cx-item:not(:hover) { filter: brightness(.9); }
   .cx-item:hover {
-    filter: brightness(1.13) !important; z-index: 99 !important;
-    box-shadow: 0 0 0 2px #fff,
-                0 0 0 4px rgba(255,255,255,.7),
-                0 18px 36px rgba(30,35,40,.42) !important;
+    transform: translate3d(0, calc((var(--i) - (var(--n) - 1) / 2) * (100% + 9px)), 26px);
+    z-index: 99; box-shadow: 0 14px 30px rgba(30,35,40,.36);
   }
   /* 作者名静止时藏起来——那时卡面上是卷名 */
   .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
