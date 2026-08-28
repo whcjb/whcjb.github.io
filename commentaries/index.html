@@ -5,8 +5,8 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
 ---
 
 {%- comment -%}
-  「历代解经」总目：一卷书一个卡片，卡片下半是按注释家数量等分的色块，
-  每块填该注释家的主题色、写其名，点击进入他自己那套书页。
+  「历代解经」总目：一卷书一叠卡片，每张卡片是一位注释家。默认斜错堆叠成
+  一摞（有厚度），鼠标移上去平铺展开供选择，移开复原。
 
   数据来自 _data/commentaries.yml，由 scripts/build_commentaries_index.py
   扫描 calvin/ owen/ mhenry/ bridges/ 生成——新增注释家或书卷时重跑脚本即可，
@@ -25,7 +25,6 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   }
   .cx-lead { color: #888; font-size: 13.5px; line-height: 1.75; margin: 0 0 24px; }
 
-  /* 注释家一览：与卡片色块同色，作图例用 */
   .cx-legend { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 30px; }
   .cx-legend-item {
     display: inline-flex; align-items: center; gap: 7px;
@@ -35,46 +34,51 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   .cx-swatch { width: 14px; height: 14px; border-radius: 3px; flex: 0 0 14px; }
 
   .cx-sec {
-    margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #0085a1;
+    margin: 0 0 14px; font-size: 14px; font-weight: 700; color: #0085a1;
     letter-spacing: .18em;
   }
   .cx-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
-    gap: 11px; margin-bottom: 36px;
-  }
-
-  /* 一卷 = 一个矩形，按注释家等分填色，书名以横条压在顶部。
-     尺寸、圆角、字体沿用加尔文主页 .calvin-book-btn 的形制（3px 圆角、
-     思源宋体、min-height 82px），但那边默认白底描边、hover 才填充；
-     这里因为要「每格各据其色」，改为直接填充。 */
-  .cx-card {
-    position: relative; display: flex;
-    height: 84px; border-radius: 3px; overflow: hidden;
-    box-shadow: 0 1px 3px rgba(45,74,58,.10);
-    transition: box-shadow .18s ease, transform .18s ease;
-  }
-  .cx-card:hover {
-    box-shadow: 0 6px 16px rgba(45,74,58,.22); transform: translateY(-2px);
+    grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
+    gap: 16px 14px; margin-bottom: 38px;
   }
   .cx-name {
-    position: absolute; top: 0; left: 0; right: 0; height: 31px;
-    display: flex; align-items: center; padding: 0 12px;
-    background: rgba(24,28,26,.34);
-    color: #fff; font-size: 15px; font-weight: 600; letter-spacing: .05em;
-    text-shadow: 0 1px 2px rgba(0,0,0,.28);
-    pointer-events: none; z-index: 2;
+    font-size: 15px; font-weight: 600; letter-spacing: .05em;
+    color: #2b2b2b; margin: 0 0 7px 2px; line-height: 1.3;
   }
-  .cx-seg {
-    flex: 1 1 0; min-width: 0;          /* 等分；缺 min-width 长名字会撑歪 */
-    display: flex; align-items: flex-end; justify-content: center;
-    padding-bottom: 11px;
-    font-size: 12.5px; letter-spacing: .08em; color: #fff !important;
-    text-decoration: none !important; white-space: nowrap; overflow: hidden;
-    transition: filter .15s ease;
+
+  /* ── 一摞卡片 ────────────────────────────────────────────────
+     每张卡片绝对定位，靠 --i（第几张）与 --n（共几张）算位置：
+     静止时向右错开、略微转角并上抬，堆出厚度；
+     hover 时角度归零、按 --n 等分横排，就地摊开供点选。
+     位置用 left/width 而不是 transform 的百分比——transform 的百分比按元素
+     自身宽度算，而展开前后宽度是变的，会算歪。 */
+  .cx-stack { position: relative; height: 74px; --gap: 5px; }
+  .cx-item {
+    position: absolute; top: 0;
+    width: calc(100% - (var(--n) - 1) * var(--gap));
+    height: 100%;
+    left: calc(var(--i) * var(--gap));
+    transform: translateY(calc(var(--i) * -3px)) rotate(calc(var(--i) * -1.1deg));
+    transform-origin: 50% 120%;
+    z-index: calc(20 - var(--i));
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff !important; text-decoration: none !important;
+    font-size: 13px; letter-spacing: .1em; white-space: nowrap; overflow: hidden;
+    box-shadow: 0 2px 5px rgba(30,35,40,.22), inset 0 1px 0 rgba(255,255,255,.16);
+    transition: left .3s cubic-bezier(.2,.75,.3,1),
+                width .3s cubic-bezier(.2,.75,.3,1),
+                transform .3s cubic-bezier(.2,.75,.3,1),
+                box-shadow .25s ease;
   }
-  .cx-seg:hover { filter: brightness(1.12); }
-  .cx-seg + .cx-seg { box-shadow: inset 1px 0 0 rgba(255,255,255,.3); }
+  .cx-cell:hover .cx-item {
+    width: calc((100% - (var(--n) - 1) * 4px) / var(--n));
+    left: calc(var(--i) * (100% + 4px) / var(--n));
+    transform: translateY(0) rotate(0deg);
+    box-shadow: 0 4px 12px rgba(30,35,40,.26), inset 0 1px 0 rgba(255,255,255,.16);
+  }
+  .cx-item:hover { filter: brightness(1.12); z-index: 30; }
 
   /* ⚠️ 用**首页资源卡片**那套渐变，不是各书页内部的 accent。
      首页：加尔文蓝、马太亨利金棕、欧文墨绿、毕列志棕；
@@ -86,10 +90,18 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
 
   @media (max-width: 640px) {
     .cx-hero h1 { font-size: 22px; }
-    .cx-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 9px; }
-    .cx-card { height: 76px; }
-    .cx-name { font-size: 14px; height: 29px; padding: 0 10px; }
-    .cx-seg { font-size: 11.5px; padding-bottom: 9px; }
+    .cx-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px 10px; }
+    .cx-name { font-size: 14px; }
+    .cx-stack { height: 66px; }
+    .cx-item { font-size: 12px; letter-spacing: .06em; }
+  }
+  /* 触屏没有 hover，直接摊开——否则被压在下面的几张点不到 */
+  @media (hover: none) {
+    .cx-item {
+      width: calc((100% - (var(--n) - 1) * 4px) / var(--n));
+      left: calc(var(--i) * (100% + 4px) / var(--n));
+      transform: none;
+    }
   }
 </style>
 
@@ -101,7 +113,7 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
         <h1>历代解经</h1>
         <p class="cx-lead">
           历代改革宗注释家的圣经注释，按书卷汇整。一卷书若有多位注释家，
-          卡片下方即分作数格，各据其色，可对照参看。
+          卡片叠作一摞，鼠标移上去即展开，各据其色，可对照参看。
         </p>
       </div>
 
@@ -124,13 +136,16 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
       <div class="cx-sec">{% if group == "ot" %}旧　约{% else %}新　约{% endif %}</div>
       <div class="cx-grid">
         {%- for b in rows -%}
-        <div class="cx-card">
+        <div class="cx-cell">
           <div class="cx-name">{{ b.name }}</div>
-          {%- for l in b.links -%}
-          {%- assign au = author_map | where: "id", l.author | first -%}
-          <a class="cx-seg cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
-             title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
-          {%- endfor -%}
+          <div class="cx-stack" style="--n:{{ b.links.size }}">
+            {%- for l in b.links -%}
+            {%- assign au = author_map | where: "id", l.author | first -%}
+            <a class="cx-item cx-{{ l.author }}" style="--i:{{ forloop.index0 }}"
+               href="{{ site.baseurl }}{{ l.path }}"
+               title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
+            {%- endfor -%}
+          </div>
         </div>
         {%- endfor -%}
       </div>
@@ -142,10 +157,13 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
       <div class="cx-grid">
         {%- for h in site.data.commentaries.harmony -%}
         {%- assign au = author_map | where: "id", h.author | first -%}
-        <div class="cx-card">
-          <div class="cx-name" style="font-size:13px;">{{ h.name }}</div>
-          <a class="cx-seg cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
-             title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
+        <div class="cx-cell">
+          <div class="cx-name" style="font-size:13.5px;">{{ h.name }}</div>
+          <div class="cx-stack" style="--n:1">
+            <a class="cx-item cx-{{ h.author }}" style="--i:0"
+               href="{{ site.baseurl }}{{ h.path }}"
+               title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
+          </div>
         </div>
         {%- endfor -%}
       </div>
