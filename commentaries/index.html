@@ -32,7 +32,7 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     font-size: 12.5px; color: #666; padding: 5px 11px 5px 7px;
     border: 1px solid #ece8d8; border-radius: 4px; background: #fcfbf7;
   }
-  .cx-swatch { width: 13px; height: 13px; border-radius: 2px; flex: 0 0 13px; }
+  .cx-swatch { width: 14px; height: 14px; border-radius: 3px; flex: 0 0 14px; }
 
   .cx-sec {
     margin: 0 0 12px; font-size: 14px; font-weight: 700; color: #0085a1;
@@ -40,44 +40,56 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
   }
   .cx-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
-    gap: 10px; margin-bottom: 34px;
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+    gap: 11px; margin-bottom: 36px;
   }
 
-  /* 一卷 = 一个卡片：上半书名，下半按注释家数量等分 */
+  /* 一卷 = 一个矩形，按注释家等分填色，书名以横条压在顶部。
+     尺寸、圆角、字体沿用加尔文主页 .calvin-book-btn 的形制（3px 圆角、
+     思源宋体、min-height 82px），但那边默认白底描边、hover 才填充；
+     这里因为要「每格各据其色」，改为直接填充。 */
   .cx-card {
-    border: 1px solid #e8e3d5; border-radius: 4px; overflow: hidden;
-    background: #fff; display: flex; flex-direction: column;
-    transition: box-shadow .15s ease, transform .15s ease;
+    position: relative; display: flex;
+    height: 84px; border-radius: 3px; overflow: hidden;
+    box-shadow: 0 1px 3px rgba(45,74,58,.10);
+    transition: box-shadow .18s ease, transform .18s ease;
   }
-  .cx-card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.10); transform: translateY(-1px); }
+  .cx-card:hover {
+    box-shadow: 0 6px 16px rgba(45,74,58,.22); transform: translateY(-2px);
+  }
   .cx-name {
-    padding: 10px 12px 8px; font-size: 15px; letter-spacing: .04em;
-    color: #333; line-height: 1.25;
+    position: absolute; top: 0; left: 0; right: 0; height: 31px;
+    display: flex; align-items: center; padding: 0 12px;
+    background: rgba(24,28,26,.34);
+    color: #fff; font-size: 15px; font-weight: 600; letter-spacing: .05em;
+    text-shadow: 0 1px 2px rgba(0,0,0,.28);
+    pointer-events: none; z-index: 2;
   }
-  .cx-bar { display: flex; height: 34px; margin-top: auto; }
   .cx-seg {
-    flex: 1 1 0; min-width: 0;              /* 等分；min-width:0 才不会被文字撑歪 */
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11.5px; letter-spacing: .02em; color: #fff !important;
+    flex: 1 1 0; min-width: 0;          /* 等分；缺 min-width 长名字会撑歪 */
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-bottom: 11px;
+    font-size: 12.5px; letter-spacing: .08em; color: #fff !important;
     text-decoration: none !important; white-space: nowrap; overflow: hidden;
     transition: filter .15s ease;
   }
-  .cx-seg:hover { filter: brightness(1.18); }
-  .cx-seg + .cx-seg { border-left: 1px solid rgba(255,255,255,.35); }
+  .cx-seg:hover { filter: brightness(1.12); }
+  .cx-seg + .cx-seg { box-shadow: inset 1px 0 0 rgba(255,255,255,.3); }
 
-  /* 各家沿用自己书页里的主题色 */
-  .cx-calvin  { background: #800000; }
-  .cx-owen    { background: #1f5a4b; }
-  .cx-mhenry  { background: #1a4f7a; }
-  .cx-bridges { background: #6B4E2E; }
+  /* ⚠️ 用**首页资源卡片**那套渐变，不是各书页内部的 accent。
+     首页：加尔文蓝、马太亨利金棕、欧文墨绿、毕列志棕；
+     书页内部另有一套（加尔文酒红、马太亨利蓝），照搬会张冠李戴。 */
+  .cx-calvin  { background: linear-gradient(135deg,#1a5276,#2e86c1); }
+  .cx-mhenry  { background: linear-gradient(135deg,#7B5E3A,#C9922A); }
+  .cx-owen    { background: linear-gradient(135deg,#14382f,#1f5a4b); }
+  .cx-bridges { background: linear-gradient(135deg,#5B3A29,#96613F); }
 
   @media (max-width: 640px) {
     .cx-hero h1 { font-size: 22px; }
-    .cx-grid { grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 8px; }
-    .cx-name { font-size: 14px; padding: 9px 10px 7px; }
-    .cx-bar { height: 31px; }
-    .cx-seg { font-size: 11px; }
+    .cx-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 9px; }
+    .cx-card { height: 76px; }
+    .cx-name { font-size: 14px; height: 29px; padding: 0 10px; }
+    .cx-seg { font-size: 11.5px; padding-bottom: 9px; }
   }
 </style>
 
@@ -114,13 +126,11 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
         {%- for b in rows -%}
         <div class="cx-card">
           <div class="cx-name">{{ b.name }}</div>
-          <div class="cx-bar">
-            {%- for l in b.links -%}
-            {%- assign au = author_map | where: "id", l.author | first -%}
-            <a class="cx-seg cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
-               title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
-            {%- endfor -%}
-          </div>
+          {%- for l in b.links -%}
+          {%- assign au = author_map | where: "id", l.author | first -%}
+          <a class="cx-seg cx-{{ l.author }}" href="{{ site.baseurl }}{{ l.path }}"
+             title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
+          {%- endfor -%}
         </div>
         {%- endfor -%}
       </div>
@@ -133,11 +143,9 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
         {%- for h in site.data.commentaries.harmony -%}
         {%- assign au = author_map | where: "id", h.author | first -%}
         <div class="cx-card">
-          <div class="cx-name">{{ h.name }}</div>
-          <div class="cx-bar">
-            <a class="cx-seg cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
-               title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
-          </div>
+          <div class="cx-name" style="font-size:13px;">{{ h.name }}</div>
+          <a class="cx-seg cx-{{ h.author }}" href="{{ site.baseurl }}{{ h.path }}"
+             title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
         </div>
         {%- endfor -%}
       </div>
