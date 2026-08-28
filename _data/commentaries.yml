@@ -30,327 +30,385 @@ authors:
 books:
   - id: genesis
     name: "创世记"
+    en: "Genesis"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/genesis/"}
       - {author: mhenry, path: "/mhenry/genesis/"}
   - id: exodus
     name: "出埃及记"
+    en: "Exodus"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/exodus/"}
   - id: leviticus
     name: "利未记"
+    en: "Leviticus"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/leviticus/"}
   - id: numbers
     name: "民数记"
+    en: "Numbers"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/numbers/"}
   - id: deuteronomy
     name: "申命记"
+    en: "Deuteronomy"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/deuteronomy/"}
   - id: joshua
     name: "约书亚记"
+    en: "Joshua"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/joshua/"}
       - {author: mhenry, path: "/mhenry/joshua/"}
   - id: judges
     name: "士师记"
+    en: "Judges"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/judges/"}
   - id: ruth
     name: "路得记"
+    en: "Ruth"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/ruth/"}
   - id: 1samuel
     name: "撒母耳记上"
+    en: "1 Samuel"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/1samuel/"}
   - id: 2samuel
     name: "撒母耳记下"
+    en: "2 Samuel"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/2samuel/"}
   - id: 1kings
     name: "列王纪上"
+    en: "1 Kings"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/1kings/"}
   - id: 2kings
     name: "列王纪下"
+    en: "2 Kings"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/2kings/"}
   - id: 1chronicles
     name: "历代志上"
+    en: "1 Chronicles"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/1chronicles/"}
   - id: 2chronicles
     name: "历代志下"
+    en: "2 Chronicles"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/2chronicles/"}
   - id: ezra
     name: "以斯拉记"
+    en: "Ezra"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/ezra/"}
   - id: nehemiah
     name: "尼希米记"
+    en: "Nehemiah"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/nehemiah/"}
   - id: esther
     name: "以斯帖记"
+    en: "Esther"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/esther/"}
   - id: job
     name: "约伯记"
+    en: "Job"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/job/"}
   - id: psalms
     name: "诗篇"
+    en: "Psalms"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/psalms-1/"}
       - {author: mhenry, path: "/mhenry/psalms/"}
   - id: proverbs
     name: "箴言"
+    en: "Proverbs"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/proverbs/"}
       - {author: bridges, path: "/bridges/proverbs/"}
   - id: ecclesiastes
     name: "传道书"
+    en: "Ecclesiastes"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/ecclesiastes/"}
   - id: songofsolomon
     name: "雅歌"
+    en: "Song of Solomon"
     testament: ot
     links:
       - {author: mhenry, path: "/mhenry/songofsolomon/"}
   - id: isaiah
     name: "以赛亚书"
+    en: "Isaiah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/isaiah-1/"}
       - {author: mhenry, path: "/mhenry/isaiah/"}
   - id: jeremiah
     name: "耶利米书"
+    en: "Jeremiah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/jeremiah-1/"}
       - {author: mhenry, path: "/mhenry/jeremiah/"}
   - id: lamentations
     name: "耶利米哀歌"
+    en: "Lamentations"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/lamentations/"}
       - {author: mhenry, path: "/mhenry/lamentations/"}
   - id: ezekiel
     name: "以西结书"
+    en: "Ezekiel"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/ezekiel/"}
       - {author: mhenry, path: "/mhenry/ezekiel/"}
   - id: daniel
     name: "但以理书"
+    en: "Daniel"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/daniel/"}
       - {author: mhenry, path: "/mhenry/daniel/"}
   - id: hosea
     name: "何西阿书"
+    en: "Hosea"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/hosea/"}
       - {author: mhenry, path: "/mhenry/hosea/"}
   - id: joel
     name: "约珥书"
+    en: "Joel"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/joel/"}
       - {author: mhenry, path: "/mhenry/joel/"}
   - id: amos
     name: "阿摩司书"
+    en: "Amos"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/amos/"}
       - {author: mhenry, path: "/mhenry/amos/"}
   - id: obadiah
     name: "俄巴底亚书"
+    en: "Obadiah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/obadiah/"}
       - {author: mhenry, path: "/mhenry/obadiah/"}
   - id: jonah
     name: "约拿书"
+    en: "Jonah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/jonah/"}
       - {author: mhenry, path: "/mhenry/jonah/"}
   - id: micah
     name: "弥迦书"
+    en: "Micah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/micah/"}
       - {author: mhenry, path: "/mhenry/micah/"}
   - id: nahum
     name: "那鸿书"
+    en: "Nahum"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/nahum/"}
       - {author: mhenry, path: "/mhenry/nahum/"}
   - id: habakkuk
     name: "哈巴谷书"
+    en: "Habakkuk"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/habakkuk/"}
       - {author: mhenry, path: "/mhenry/habakkuk/"}
   - id: zephaniah
     name: "西番雅书"
+    en: "Zephaniah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/zephaniah/"}
       - {author: mhenry, path: "/mhenry/zephaniah/"}
   - id: haggai
     name: "哈该书"
+    en: "Haggai"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/haggai/"}
       - {author: mhenry, path: "/mhenry/haggai/"}
   - id: zechariah
     name: "撒迦利亚书"
+    en: "Zechariah"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/zechariah/"}
       - {author: mhenry, path: "/mhenry/zechariah/"}
   - id: malachi
     name: "玛拉基书"
+    en: "Malachi"
     testament: ot
     links:
       - {author: calvin, path: "/calvin/malachi/"}
       - {author: mhenry, path: "/mhenry/malachi/"}
   - id: matthew
     name: "马太福音"
+    en: "Matthew"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/matthew/"}
   - id: mark
     name: "马可福音"
+    en: "Mark"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/mark/"}
   - id: luke
     name: "路加福音"
+    en: "Luke"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/luke/"}
   - id: john
     name: "约翰福音"
+    en: "John"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/john/"}
       - {author: mhenry, path: "/mhenry/john/"}
   - id: acts
     name: "使徒行传"
+    en: "Acts"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/acts/"}
       - {author: mhenry, path: "/mhenry/acts/"}
   - id: romans
     name: "罗马书"
+    en: "Romans"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/romans/"}
       - {author: mhenry, path: "/mhenry/romans/"}
   - id: 1corinthians
     name: "哥林多前书"
+    en: "1 Corinthians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/1corinthians/"}
       - {author: mhenry, path: "/mhenry/1corinthians/"}
   - id: 2corinthians
     name: "哥林多后书"
+    en: "2 Corinthians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/2corinthians/"}
       - {author: mhenry, path: "/mhenry/2corinthians/"}
   - id: galatians
     name: "加拉太书"
+    en: "Galatians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/galatians/"}
       - {author: mhenry, path: "/mhenry/galatians/"}
   - id: ephesians
     name: "以弗所书"
+    en: "Ephesians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/ephesians/"}
       - {author: mhenry, path: "/mhenry/ephesians/"}
   - id: philippians
     name: "腓立比书"
+    en: "Philippians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/philippians/"}
       - {author: mhenry, path: "/mhenry/philippians/"}
   - id: colossians
     name: "歌罗西书"
+    en: "Colossians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/colossians/"}
       - {author: mhenry, path: "/mhenry/colossians/"}
   - id: 1thessalonians
     name: "帖撒罗尼迦前书"
+    en: "1 Thessalonians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/1thessalonians/"}
       - {author: mhenry, path: "/mhenry/1thessalonians/"}
   - id: 2thessalonians
     name: "帖撒罗尼迦后书"
+    en: "2 Thessalonians"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/2thessalonians/"}
       - {author: mhenry, path: "/mhenry/2thessalonians/"}
   - id: 1timothy
     name: "提摩太前书"
+    en: "1 Timothy"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/1timothy/"}
       - {author: mhenry, path: "/mhenry/1timothy/"}
   - id: 2timothy
     name: "提摩太后书"
+    en: "2 Timothy"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/2timothy/"}
       - {author: mhenry, path: "/mhenry/2timothy/"}
   - id: titus
     name: "提多书"
+    en: "Titus"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/titus/"}
       - {author: mhenry, path: "/mhenry/titus/"}
   - id: philemon
     name: "腓利门书"
+    en: "Philemon"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/philemon/"}
       - {author: mhenry, path: "/mhenry/philemon/"}
   - id: hebrews
     name: "希伯来书"
+    en: "Hebrews"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/hebrews/"}
@@ -358,46 +416,54 @@ books:
       - {author: mhenry, path: "/mhenry/hebrews/"}
   - id: james
     name: "雅各书"
+    en: "James"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/james/"}
       - {author: mhenry, path: "/mhenry/james/"}
   - id: 1peter
     name: "彼得前书"
+    en: "1 Peter"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/1peter/"}
       - {author: mhenry, path: "/mhenry/1peter/"}
   - id: 2peter
     name: "彼得后书"
+    en: "2 Peter"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/2peter/"}
       - {author: mhenry, path: "/mhenry/2peter/"}
   - id: 1john
     name: "约翰一书"
+    en: "1 John"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/1john/"}
       - {author: mhenry, path: "/mhenry/1john/"}
   - id: 2john
     name: "约翰二书"
+    en: "2 John"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/2john/"}
   - id: 3john
     name: "约翰三书"
+    en: "3 John"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/3john/"}
   - id: jude
     name: "犹大书"
+    en: "Jude"
     testament: nt
     links:
       - {author: calvin, path: "/calvin/jude/"}
       - {author: mhenry, path: "/mhenry/jude/"}
   - id: revelation
     name: "启示录"
+    en: "Revelation"
     testament: nt
     links:
       - {author: mhenry, path: "/mhenry/revelation/"}

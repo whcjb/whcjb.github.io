@@ -42,10 +42,23 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     grid-template-columns: repeat(auto-fill, minmax(178px, 1fr));
     gap: 16px 14px; margin-bottom: 38px;
   }
-  .cx-name {
-    font-size: 15px; font-weight: 600; letter-spacing: .05em;
-    color: #2b2b2b; margin: 0 0 7px 2px; line-height: 1.3;
+  /* 卷名叠在最上层卡片上（照加尔文主页：中文名 + 一行英文），
+     鼠标移上去时淡出，让位给各张卡片上的注释家名。
+     宽度与第一张卡片（--i:0）对齐，所以要减掉堆叠留出的边。 */
+  .cx-title {
+    position: absolute; top: 0; left: 0;
+    width: calc(100% - (var(--n) - 1) * var(--gap));
+    height: 100%; z-index: 25; pointer-events: none;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.4);
+    transition: opacity .22s ease;
   }
+  .cx-title-cn { font-size: 15px; font-weight: 600; letter-spacing: .06em; line-height: 1.25; }
+  .cx-title-en {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 11px; opacity: .82; margin-top: 3px; letter-spacing: .02em;
+  }
+  .cx-cell:hover .cx-title { opacity: 0; }
 
   /* ── 一摞卡片 ────────────────────────────────────────────────
      每张卡片绝对定位，靠 --i（第几张）与 --n（共几张）算位置：
@@ -79,6 +92,9 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
     box-shadow: 0 4px 12px rgba(30,35,40,.26), inset 0 1px 0 rgba(255,255,255,.16);
   }
   .cx-item:hover { filter: brightness(1.12); z-index: 30; }
+  /* 作者名静止时藏起来——那时卡面上是卷名 */
+  .cx-item > span { opacity: 0; transition: opacity .2s ease .06s; }
+  .cx-cell:hover .cx-item > span { opacity: 1; }
 
   /* ⚠️ 用**首页资源卡片**那套渐变，不是各书页内部的 accent。
      首页：加尔文蓝、马太亨利金棕、欧文墨绿、毕列志棕；
@@ -102,6 +118,16 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
       left: calc(var(--i) * (100% + 4px) / var(--n));
       transform: none;
     }
+    /* 触屏两者不能靠 hover 切换，索性都显示：卷名移到卡片上方 */
+    .cx-stack { height: auto; padding-top: 40px; }
+    .cx-title {
+      position: static; width: auto; height: auto; color: #2b2b2b;
+      text-shadow: none; align-items: flex-start; margin-bottom: 7px;
+      position: absolute; top: 0; left: 2px;
+    }
+    .cx-title-en { opacity: .55; }
+    .cx-item { top: 40px; height: 66px; }
+    .cx-item > span { opacity: 1; }
   }
 </style>
 
@@ -137,14 +163,17 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
       <div class="cx-grid">
         {%- for b in rows -%}
         <div class="cx-cell">
-          <div class="cx-name">{{ b.name }}</div>
           <div class="cx-stack" style="--n:{{ b.links.size }}">
             {%- for l in b.links -%}
             {%- assign au = author_map | where: "id", l.author | first -%}
             <a class="cx-item cx-{{ l.author }}" style="--i:{{ forloop.index0 }}"
                href="{{ site.baseurl }}{{ l.path }}"
-               title="{{ au.name }}《{{ b.name }}注释》">{{ au.short | default: au.name }}</a>
+               title="{{ au.name }}《{{ b.name }}注释》"><span>{{ au.short | default: au.name }}</span></a>
             {%- endfor -%}
+            <div class="cx-title">
+              <span class="cx-title-cn">{{ b.name }}</span>
+              <span class="cx-title-en">{{ b.en }}</span>
+            </div>
           </div>
         </div>
         {%- endfor -%}
@@ -158,11 +187,13 @@ description: 历代改革宗注释家的圣经注释汇编——加尔文、约�
         {%- for h in site.data.commentaries.harmony -%}
         {%- assign au = author_map | where: "id", h.author | first -%}
         <div class="cx-cell">
-          <div class="cx-name" style="font-size:13.5px;">{{ h.name }}</div>
           <div class="cx-stack" style="--n:1">
             <a class="cx-item cx-{{ h.author }}" style="--i:0"
                href="{{ site.baseurl }}{{ h.path }}"
-               title="{{ au.name }}《{{ h.name }}》">{{ au.short | default: au.name }}</a>
+               title="{{ au.name }}《{{ h.name }}》"><span>{{ au.short | default: au.name }}</span></a>
+            <div class="cx-title">
+              <span class="cx-title-cn" style="font-size:12.5px; padding:0 6px; text-align:center;">{{ h.name }}</span>
+            </div>
           </div>
         </div>
         {%- endfor -%}

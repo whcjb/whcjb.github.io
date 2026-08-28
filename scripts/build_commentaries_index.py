@@ -33,31 +33,32 @@ AUTHORS = OrderedDict([
     ('bridges', dict(name='查理·毕列志', short='毕列志',  en='Charles Bridges', years='1794–1869', dir='bridges')),
 ])
 
-# 和合本 66 卷：(目录 id, 中文名, 新旧约)
+# 和合本 66 卷：(目录 id, 中文名, 新旧约, 英文名)
+# 英文名显示在卡片上（照加尔文主页的做法：中文名下缀一行英文）
 BOOKS = [
-    ('genesis','创世记','ot'), ('exodus','出埃及记','ot'), ('leviticus','利未记','ot'),
-    ('numbers','民数记','ot'), ('deuteronomy','申命记','ot'), ('joshua','约书亚记','ot'),
-    ('judges','士师记','ot'), ('ruth','路得记','ot'), ('1samuel','撒母耳记上','ot'),
-    ('2samuel','撒母耳记下','ot'), ('1kings','列王纪上','ot'), ('2kings','列王纪下','ot'),
-    ('1chronicles','历代志上','ot'), ('2chronicles','历代志下','ot'), ('ezra','以斯拉记','ot'),
-    ('nehemiah','尼希米记','ot'), ('esther','以斯帖记','ot'), ('job','约伯记','ot'),
-    ('psalms','诗篇','ot'), ('proverbs','箴言','ot'), ('ecclesiastes','传道书','ot'),
-    ('songofsolomon','雅歌','ot'), ('isaiah','以赛亚书','ot'), ('jeremiah','耶利米书','ot'),
-    ('lamentations','耶利米哀歌','ot'), ('ezekiel','以西结书','ot'), ('daniel','但以理书','ot'),
-    ('hosea','何西阿书','ot'), ('joel','约珥书','ot'), ('amos','阿摩司书','ot'),
-    ('obadiah','俄巴底亚书','ot'), ('jonah','约拿书','ot'), ('micah','弥迦书','ot'),
-    ('nahum','那鸿书','ot'), ('habakkuk','哈巴谷书','ot'), ('zephaniah','西番雅书','ot'),
-    ('haggai','哈该书','ot'), ('zechariah','撒迦利亚书','ot'), ('malachi','玛拉基书','ot'),
-    ('matthew','马太福音','nt'), ('mark','马可福音','nt'), ('luke','路加福音','nt'),
-    ('john','约翰福音','nt'), ('acts','使徒行传','nt'), ('romans','罗马书','nt'),
-    ('1corinthians','哥林多前书','nt'), ('2corinthians','哥林多后书','nt'),
-    ('galatians','加拉太书','nt'), ('ephesians','以弗所书','nt'), ('philippians','腓立比书','nt'),
-    ('colossians','歌罗西书','nt'), ('1thessalonians','帖撒罗尼迦前书','nt'),
-    ('2thessalonians','帖撒罗尼迦后书','nt'), ('1timothy','提摩太前书','nt'),
-    ('2timothy','提摩太后书','nt'), ('titus','提多书','nt'), ('philemon','腓利门书','nt'),
-    ('hebrews','希伯来书','nt'), ('james','雅各书','nt'), ('1peter','彼得前书','nt'),
-    ('2peter','彼得后书','nt'), ('1john','约翰一书','nt'), ('2john','约翰二书','nt'),
-    ('3john','约翰三书','nt'), ('jude','犹大书','nt'), ('revelation','启示录','nt'),
+    ('genesis','创世记','ot','Genesis'), ('exodus','出埃及记','ot','Exodus'), ('leviticus','利未记','ot','Leviticus'),
+    ('numbers','民数记','ot','Numbers'), ('deuteronomy','申命记','ot','Deuteronomy'), ('joshua','约书亚记','ot','Joshua'),
+    ('judges','士师记','ot','Judges'), ('ruth','路得记','ot','Ruth'), ('1samuel','撒母耳记上','ot','1 Samuel'),
+    ('2samuel','撒母耳记下','ot','2 Samuel'), ('1kings','列王纪上','ot','1 Kings'), ('2kings','列王纪下','ot','2 Kings'),
+    ('1chronicles','历代志上','ot','1 Chronicles'), ('2chronicles','历代志下','ot','2 Chronicles'), ('ezra','以斯拉记','ot','Ezra'),
+    ('nehemiah','尼希米记','ot','Nehemiah'), ('esther','以斯帖记','ot','Esther'), ('job','约伯记','ot','Job'),
+    ('psalms','诗篇','ot','Psalms'), ('proverbs','箴言','ot','Proverbs'), ('ecclesiastes','传道书','ot','Ecclesiastes'),
+    ('songofsolomon','雅歌','ot','Song of Solomon'), ('isaiah','以赛亚书','ot','Isaiah'), ('jeremiah','耶利米书','ot','Jeremiah'),
+    ('lamentations','耶利米哀歌','ot','Lamentations'), ('ezekiel','以西结书','ot','Ezekiel'), ('daniel','但以理书','ot','Daniel'),
+    ('hosea','何西阿书','ot','Hosea'), ('joel','约珥书','ot','Joel'), ('amos','阿摩司书','ot','Amos'),
+    ('obadiah','俄巴底亚书','ot','Obadiah'), ('jonah','约拿书','ot','Jonah'), ('micah','弥迦书','ot','Micah'),
+    ('nahum','那鸿书','ot','Nahum'), ('habakkuk','哈巴谷书','ot','Habakkuk'), ('zephaniah','西番雅书','ot','Zephaniah'),
+    ('haggai','哈该书','ot','Haggai'), ('zechariah','撒迦利亚书','ot','Zechariah'), ('malachi','玛拉基书','ot','Malachi'),
+    ('matthew','马太福音','nt','Matthew'), ('mark','马可福音','nt','Mark'), ('luke','路加福音','nt','Luke'),
+    ('john','约翰福音','nt','John'), ('acts','使徒行传','nt','Acts'), ('romans','罗马书','nt','Romans'),
+    ('1corinthians','哥林多前书','nt','1 Corinthians'), ('2corinthians','哥林多后书','nt','2 Corinthians'),
+    ('galatians','加拉太书','nt','Galatians'), ('ephesians','以弗所书','nt','Ephesians'), ('philippians','腓立比书','nt','Philippians'),
+    ('colossians','歌罗西书','nt','Colossians'), ('1thessalonians','帖撒罗尼迦前书','nt','1 Thessalonians'),
+    ('2thessalonians','帖撒罗尼迦后书','nt','2 Thessalonians'), ('1timothy','提摩太前书','nt','1 Timothy'),
+    ('2timothy','提摩太后书','nt','2 Timothy'), ('titus','提多书','nt','Titus'), ('philemon','腓利门书','nt','Philemon'),
+    ('hebrews','希伯来书','nt','Hebrews'), ('james','雅各书','nt','James'), ('1peter','彼得前书','nt','1 Peter'),
+    ('2peter','彼得后书','nt','2 Peter'), ('1john','约翰一书','nt','1 John'), ('2john','约翰二书','nt','2 John'),
+    ('3john','约翰三书','nt','3 John'), ('jude','犹大书','nt','Jude'), ('revelation','启示录','nt','Revelation'),
 ]
 
 # 合参：不对应单一书卷，单列一组
@@ -132,13 +133,14 @@ def main():
                   f'    books: {n}']
     lines += ['', 'books:']
     total_links = 0
-    for bid, cn, testament in BOOKS:
+    for bid, cn, testament, en in BOOKS:
         entries = [(aid, by_author[aid][bid]) for aid in AUTHORS if bid in by_author[aid]]
         if not entries:
             continue
         total_links += len(entries)
         lines += [f'  - id: {bid}',
                   f'    name: {yaml_escape(cn)}',
+                  f'    en: {yaml_escape(en)}',
                   f'    testament: {testament}',
                   '    links:']
         for aid, path in entries:
@@ -156,7 +158,7 @@ def main():
 
     out = ROOT / '_data' / 'commentaries.yml'
     out.write_text('\n'.join(lines) + '\n', encoding='utf-8')
-    covered = sum(1 for bid, _, _ in BOOKS if any(bid in by_author[a] for a in AUTHORS))
+    covered = sum(1 for bid, _, _, _ in BOOKS if any(bid in by_author[a] for a in AUTHORS))
     print(f'✓ {out.relative_to(ROOT)}')
     for aid in AUTHORS:
         print(f'    {AUTHORS[aid]["name"]:<12} {len(by_author[aid]):>2} 卷')
