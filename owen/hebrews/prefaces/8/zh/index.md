@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 8 · 致读者序"
-date: 2026-07-17 10:44
+date: 2026-08-28 18:08
 prev_url: "/owen/hebrews/prefaces/7/zh/"
 prev_label: "导论 7"
 en_url: "/owen/hebrews/prefaces/8/"

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 17 · 第三篇总论,证明拿撒勒人耶稣即是那独一真实、且为应许所指的弥赛亚"
-date: 2026-07-17 10:44
+date: 2026-08-29 09:56
 prev_url: "/owen/hebrews/exercitations/16/zh/"
 prev_label: "导论 16"
 next_url: "/owen/hebrews/exercitations/18/zh/"

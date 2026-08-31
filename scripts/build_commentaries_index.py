@@ -54,7 +54,38 @@ AUTHORS = OrderedDict([
     ('bridges', dict(name='查理·毕列志', short='毕列志',  en='Charles Bridges', years='1794–1869', dir='bridges',
                      work_cn='箴言书注释',
                      work_en='An Exposition of the Book of Proverbs')),
+    # 贺智：1857 与 1859 各自成册，不是合订本，所以 work_* 只作「本页收录」
+    # 那一栏的集合名，逐卷书名走下面的 BOOK_TITLES。
+    ('hodge',   dict(name='查尔斯·贺智', short='贺智',    en='Charles Hodge',   years='1797–1878', dir='hodge',
+                     work_cn='哥林多前后书注释',
+                     work_en='')),
 ])
+
+# ── 主题色 ─────────────────────────────────────────────────────
+# **按注释家一色**：同一位注释家的所有书卷共用（用户 2026-08-31 指定）。
+# 曾按卷分色（贺智前书靛蓝 / 后书酒红），已撤回——一人一色才看得出「这是谁
+# 的注释」，逐卷分色会把作者这层信息打散。
+# 选色按 CIELAB 量过，两两之间与既有色的 ΔE 都够大：
+#   欧文绿 #1f5a4b · 毕列志棕 #96613F · 贺智靛蓝 #1f3a5f
+#   贺智靛蓝 vs 欧文绿 ΔE 39.7，vs 毕列志棕 59.4，vs 加尔文蓝 33.2。
+# 每项是 (深, 浅) 两端，页面按 135° 渐变，与首页资源卡片一致。
+AUTHOR_COLORS = {
+    'owen':    ('#14382f', '#1f5a4b'),
+    'bridges': ('#5B3A29', '#96613F'),
+    'hodge':   ('#152840', '#2b5080'),
+}
+
+# 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
+BOOK_TITLES = {
+    ('hodge', '1corinthians'): ('哥林多前书注释',
+                                'An Exposition of the First Epistle to the Corinthians'),
+    ('hodge', '2corinthians'): ('哥林多后书注释',
+                                'An Exposition of the Second Epistle to the Corinthians'),
+}
+
+
+def theme_color(aid: str) -> tuple:
+    return AUTHOR_COLORS.get(aid) or ('#2d4a3a', '#3f6a54')
 # 和合本 66 卷：(目录 id, 中文名, 新旧约, 英文名)
 # 英文名显示在卡片上（照加尔文主页的做法：中文名下缀一行英文）
 BOOKS = [
@@ -268,11 +299,15 @@ def main():
             elif aid == 'mhenry':
                 t_cn = AUTHORS[aid]['work_cn'] + '·' + cn
                 t_en = AUTHORS[aid]['work_en']
+            elif (aid, bid) in BOOK_TITLES:
+                t_cn, t_en = BOOK_TITLES[(aid, bid)]
             else:
                 t_cn, t_en = AUTHORS[aid]['work_cn'], AUTHORS[aid]['work_en']
             note_f = f', note: {yaml_escape(note)}' if note else ''
+            c0, c1 = theme_color(aid)
             lines.append(f'      - {{author: {aid}, path: {yaml_escape(path)}, '
                          f'title_cn: {yaml_escape(t_cn)}, title_en: {yaml_escape(t_en)}'
+                         f', c0: {yaml_escape(c0)}, c1: {yaml_escape(c1)}'
                          f'{note_f}}}')
     lines += ['', 'harmony:']
     for aid, dirname, cn in HARMONY:

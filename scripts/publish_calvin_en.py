@@ -87,11 +87,36 @@ def normalize_back_footnotes(lines: list[str]) -> list[str]:
     return out
 
 
-_CHAPTER_MD_RE = re.compile(r'^# (?:CHAPTER|PSALM) (\d+)(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$')
+# 章号既有阿拉伯也有罗马：AGES 各卷不统一，贺智《哥林多前后书》全书是
+# CHAPTER I. / II / III.（罗马），加尔文各卷是 CHAPTER 1。两种都收，交给
+# _chapter_num 归一成 int。只放开数字部分，CHAPTER/PSALM 关键字不动，
+# 免得把正文里的罗马数字（如 "Vol. 1: ch. 12"）误判成章首。
+_ROMAN_RE = r'[IVXLCDM]+'
+_CH_NUM = r'(\d+|' + _ROMAN_RE + r')'
+
+_ROMAN_VAL = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+
+
+def _chapter_num(tok: str) -> int:
+    """'12' → 12；'XII' → 12。非法罗马数字返回 0（调用方据此跳过）。"""
+    tok = tok.strip().upper()
+    if tok.isdigit():
+        return int(tok)
+    total = prev = 0
+    for ch in reversed(tok):
+        v = _ROMAN_VAL.get(ch)
+        if v is None:
+            return 0
+        total += -v if v < prev else v
+        prev = max(prev, v)
+    return total
+
+
+_CHAPTER_MD_RE = re.compile(r'^# (?:CHAPTER|PSALM) ' + _CH_NUM + r'(?:\s+\[\^f\d+[A-Za-z]?\])?\s*$')
 _CHAPTER_HTML_H1_RE = re.compile(
     r'^<p\s+class="title-block-h1"[^>]*>'        # title-block-h1
     r'(?:<span[^>]*>)?\s*'
-    r'(?:CHAPTER|PSALM)\s+(\d+)\.?\s*'
+    r'(?:CHAPTER|PSALM)\s+' + _CH_NUM + r'\.?\s*'
     r'(?:</span>\s*)?'
     r'</p>\s*$',
     re.IGNORECASE,
@@ -104,7 +129,7 @@ _CHAPTER_HTML_H1_RE = re.compile(
 _CHAPTER_HTML_H2_RE = re.compile(
     r'^<p\s+class="title-block-h2"[^>]*>'
     r'(?:<span[^>]*>)?\s*'
-    r'(?:CHAPTER|PSALM)\s+(\d+)\.?\s*'
+    r'(?:CHAPTER|PSALM)\s+' + _CH_NUM + r'\.?\s*'
     r'(?:</span>\s*)?'
     r'</p>\s*$',
     re.IGNORECASE,
@@ -148,7 +173,10 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     for i, line in enumerate(lines):
         m = _CHAPTER_MD_RE.match(line) or _CHAPTER_HTML_H1_RE.match(line)
         if m:
-            ch = m.group(1)
+            n = _chapter_num(m.group(1))
+            if not n:            # 罗马数字解析失败 → 不是章首，跳过
+                continue
+            ch = str(n)
             if ch not in starts:
                 starts[ch] = i
             if h1_first_line is None:
@@ -159,7 +187,10 @@ def find_chapter_starts(lines: list[str]) -> dict[str, int]:
     for i, line in enumerate(lines[:h2_limit]):
         m = _CHAPTER_HTML_H2_RE.match(line)
         if m:
-            ch = m.group(1)
+            n = _chapter_num(m.group(1))
+            if not n:
+                continue
+            ch = str(n)
             if ch not in starts:
                 starts[ch] = i
     # Single-chapter book detection: no chapter headings found →
@@ -403,6 +434,10 @@ def main():
     ap.add_argument('--src', help='Override source MD path (default: calvin_raw/<book>/calvin_<book>.md)')
     ap.add_argument('--out', help='Override output dir (default: calvin/<book>-en)')
     ap.add_argument('--book-id', help='Override book_id (default: <book>-en)')
+    # 每本书独立样式：owen/ bridges/ 各有自己的 layout，贺智同理，不共用
+    # calvin-en，否则改加尔文的样式会连带动到贺智。
+    ap.add_argument('--layout', default='calvin-en', help='章节页 layout（默认 calvin-en）')
+    ap.add_argument('--book-layout', default='calvin-en-book', help='书首页 layout（默认 calvin-en-book）')
     args = ap.parse_args()
 
     book_key = args.book
@@ -476,7 +511,7 @@ def main():
         prev_s, prev_l, next_s, next_l = nav[key]
 
         fm = '---\n'
-        fm += 'layout: calvin-en\n'
+        fm += f'layout: {args.layout}\n'
         fm += f'book_id: {book_id}\n'
         fm += f'book_name: "{book_name}"\n'
         fm += f'title: "{labels[key]}"\n'
@@ -495,7 +530,7 @@ def main():
     index_path = out_dir / 'index.html'
     index_path.write_text(
         f'---\n'
-        f'layout: calvin-en-book\n'
+        f'layout: {args.book_layout}\n'
         f'book_id: {book_id}\n'
         f'book_name: "{book_name}"\n'
         f'chapters: {len(chapter_keys)}\n'

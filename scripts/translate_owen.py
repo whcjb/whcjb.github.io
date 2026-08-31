@@ -237,13 +237,30 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     except ValueError:
         pass
     nav_block = ('\n'.join(nav) + '\n') if nav else ''
+    # 时间戳：已有中文页则沿用它自己的 date（重跑发布不改动历史时间，
+    # 否则每次修个错别字全站时间都会跳）；新建才取当前时间。
+    zh_existing = src.parent / 'zh' / 'index.md'
+    zh_date = None
+    if zh_existing.exists():
+        m = re.search(r'^date:\s*(.+)$', zh_existing.read_text(encoding='utf-8'), re.M)
+        if m:
+            zh_date = m.group(1).strip()
+    if not zh_date:
+        from datetime import datetime
+        zh_date = datetime.now().strftime('%Y-%m-%d %H:%M')
     # 中文页独立 front matter(prev/next 指相邻中文页; 加回英文链接)
     fm_zh = ('---\n'
              'layout: owen-chapter\n'
              f'book_id: {fmval("book_id") or "hebrews/exercitations"}\n'
              f'book_name: "{fmval("book_name") or "约翰欧文导论"}"\n'
              f'title: "导论 {seqn} · {zh_h1[:40]}"\n'
-             f'date: {fmval("date")}\n'
+             # 中文页的 date 必须是**本次翻译完成的真实时间**，不能抄英文页。
+             # 原先写 fmval("date")，于是全部中文页都顶着英文页的发布时间
+             # （卷首八篇一律 2026-07-17 10:44），与实际翻译时间毫无关系，
+             # 首页「最新内容」的排序也就全乱。
+             # 已发布页面重跑时沿用它自己的 date（见上面 zh_existing），
+             # 否则改个错别字重跑，全站中文页时间都会跳。
+             f'date: {zh_date}\n'
              + nav_block
              + f'en_url: "{en_dir}"\n'
              '---\n')

@@ -69,11 +69,16 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
     gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
     max-width: 720px; margin: 30px auto 0;
   }
+  /* 「本页收录」两格加左侧色标，与下面书卷格子的填充色呼应 */
   .cx-who {
     background: #fdfbf6; padding: 15px 17px;
     text-decoration: none !important; display: block;
+    border-left: 3px solid transparent;
     transition: background .16s ease;
   }
+  .cx-who-owen    { border-left-color: #1f5a4b; }
+  .cx-who-bridges { border-left-color: #96613F; }
+  .cx-who-hodge   { border-left-color: #2b5080; }   /* 贺智两卷分色，收录栏取前书的靛蓝 */
   .cx-who:hover { background: #f4efe2; }
   .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
   .cx-who-meta {
@@ -126,19 +131,31 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
     font-size: 11px; margin-top: 4px; letter-spacing: .05em; opacity: .6;
     font-family: 'Georgia', serif;
   }
-  /* 有别家注释：白底墨绿描边，悬停翻墨绿实心（同加尔文主页 --has-content） */
+  /* 有别家注释：整格填该注释家的主题色。
+     色值照搬首页资源卡片（index.html 的 .res-card-owen / .res-card-bridges），
+     不另调——那是各家在站内既定的身份色，两处对不上会显得是两套东西。
+     悬停时压深一档并抬起 1px，与加尔文主页那套交互一致。 */
   .cx-book-btn--has {
-    background: #fff; border: 1px solid var(--cx-primary);
-    color: var(--cx-primary) !important;
-    box-shadow: 0 1px 2px rgba(45,74,58,.06);
+    color: #fff !important;
+    border: 1px solid transparent;
+    box-shadow: 0 1px 3px rgba(45,74,58,.14);
   }
   .cx-book-btn--has:hover {
-    background: var(--cx-primary); color: #f5efd9 !important;
-    transform: translateY(-1px); box-shadow: 0 4px 10px rgba(45,74,58,.18);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(45,74,58,.26);
     text-decoration: none !important;
   }
-  .cx-book-btn--has:hover .cx-book-meta { opacity: .85; }
-  .cx-book-meta-au { opacity: .85; font-family: inherit; letter-spacing: .04em; }
+  .cx-book-btn--has .cx-book-name-en { opacity: .72; }
+  .cx-book-btn--has .cx-book-meta { opacity: .78; }
+  .cx-book-btn--has:hover .cx-book-meta { opacity: .95; }
+  .cx-book-meta-au { font-family: inherit; letter-spacing: .04em; }
+  /* 主题色不再按注释家写死 CSS 类，改由数据给出（_data/commentaries.yml 的
+     c0/c1，见 build_commentaries_index.py 的 AUTHOR_COLORS / BOOK_COLORS）。
+     原因：贺智一人两卷各配一色，按注释家一色的模型表达不了；改成数据驱动后，
+     以后加卷只改生成器一处，本页不用动。
+     hover 用 brightness 压深，省掉为每个色再写一份深色值。 */
+  .cx-book-btn--has { background: linear-gradient(135deg, var(--c0), var(--c1)); }
+  .cx-book-btn--has:hover { filter: brightness(.82); }
   /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
   .cx-book-btn--none {
     background: transparent; border: 1px dashed var(--cx-pending-border);
@@ -175,7 +192,7 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
       <div class="cx-roster">
         {%- for a in author_map -%}
         {%- unless a.id == "calvin" or a.id == "mhenry" -%}
-        <div class="cx-who">
+        <div class="cx-who cx-who-{{ a.id }}">
           <div class="cx-who-name">{{ a.name }}</div>
           <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
           <div class="cx-who-work">
@@ -204,7 +221,9 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
           {%- if b.links.size > 0 -%}
           {%- assign l = b.links | first -%}
           {%- assign au = author_map | where: "id", l.author | first -%}
-          <a href="{{ site.baseurl }}{{ l.path }}" class="cx-book-btn cx-book-btn--has"
+          <a href="{{ site.baseurl }}{{ l.path }}"
+             class="cx-book-btn cx-book-btn--has"
+             style="--c0: {{ l.c0 }}; --c1: {{ l.c1 }};"
              title="{{ l.title_cn }}{% if l.title_en != '' %} · {{ l.title_en }}{% endif %}">
             <span class="cx-book-name">{{ b.name }}</span>
             <span class="cx-book-name-en">{{ b.en }}</span>

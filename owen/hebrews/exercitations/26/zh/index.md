@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 26 · 论基督祭司职任的根源"
-date: 2026-07-17 10:44
+date: 2026-08-30 02:26
 prev_url: "/owen/hebrews/exercitations/25/zh/"
 prev_label: "导论 25"
 next_url: "/owen/hebrews/exercitations/27/zh/"

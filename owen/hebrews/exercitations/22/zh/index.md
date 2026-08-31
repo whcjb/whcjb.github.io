@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 22 · 论会幕与约柜"
-date: 2026-07-17 10:44
+date: 2026-08-29 18:51
 prev_url: "/owen/hebrews/exercitations/21/zh/"
 prev_label: "导论 21"
 next_url: "/owen/hebrews/exercitations/23/zh/"

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 3 · 希伯来书写作的时间[与缘由]"
-date: 2026-07-17 10:44
+date: 2026-08-28 18:39
 next_url: "/owen/hebrews/exercitations/4/zh/"
 next_label: "导论 4"
 en_url: "/owen/hebrews/exercitations/3/"

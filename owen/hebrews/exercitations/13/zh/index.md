@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 13 · 证明弥赛亚已然降临的其他证据"
-date: 2026-07-17 10:44
+date: 2026-08-29 04:19
 prev_url: "/owen/hebrews/exercitations/12/zh/"
 prev_label: "导论 12"
 next_url: "/owen/hebrews/exercitations/14/zh/"

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 38 · 论犹太人的安息日"
-date: 2026-07-17 10:44
+date: 2026-08-31 03:55
 prev_url: "/owen/hebrews/exercitations/37/zh/"
 prev_label: "导论 37"
 next_url: "/owen/hebrews/exercitations/39/zh/"

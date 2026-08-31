@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 28 · 圣父与圣子之间的圣约交涉"
-date: 2026-07-17 10:44
+date: 2026-08-30 08:36
 prev_url: "/owen/hebrews/exercitations/27/zh/"
 prev_label: "导论 27"
 next_url: "/owen/hebrews/exercitations/29/zh/"

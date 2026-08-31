@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 6 · 致基督徒读者"
-date: 2026-07-17 10:44
+date: 2026-08-28 18:15
 prev_url: "/owen/hebrews/prefaces/5/zh/"
 prev_label: "导论 5"
 next_url: "/owen/hebrews/prefaces/7/zh/"

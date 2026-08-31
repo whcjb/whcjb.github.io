@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 1 · 总序（编者)"
-date: 2026-07-17 10:44
+date: 2026-08-28 17:45
 next_url: "/owen/hebrews/prefaces/2/zh/"
 next_label: "导论 2"
 en_url: "/owen/hebrews/prefaces/1/"

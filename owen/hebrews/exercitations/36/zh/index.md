@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 36 · 论安息日之起源"
-date: 2026-07-17 10:44
+date: 2026-08-30 22:15
 prev_url: "/owen/hebrews/exercitations/35/zh/"
 prev_label: "导论 35"
 next_url: "/owen/hebrews/exercitations/37/zh/"

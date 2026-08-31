@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 29 · 在罪与恩典的前提之下,基督祭司职任的必要性"
-date: 2026-07-17 10:44
+date: 2026-08-30 08:58
 prev_url: "/owen/hebrews/exercitations/28/zh/"
 prev_label: "导论 28"
 next_url: "/owen/hebrews/exercitations/30/zh/"

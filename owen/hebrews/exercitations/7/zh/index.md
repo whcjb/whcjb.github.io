@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 7 · 论犹太人对旧约的分类"
-date: 2026-07-17 10:44
+date: 2026-08-28 19:11
 prev_url: "/owen/hebrews/exercitations/6/zh/"
 prev_label: "导论 6"
 next_url: "/owen/hebrews/exercitations/8/zh/"

@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 18 · 答犹太人对基督教之驳难"
-date: 2026-07-17 10:44
+date: 2026-08-29 12:10
 prev_url: "/owen/hebrews/exercitations/17/zh/"
 prev_label: "导论 17"
 next_url: "/owen/hebrews/exercitations/19/zh/"

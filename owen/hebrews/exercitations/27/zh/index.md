@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 27 · 基督祭司职分在神旨意中的根源"
-date: 2026-07-17 10:44
+date: 2026-08-30 06:56
 prev_url: "/owen/hebrews/exercitations/26/zh/"
 prev_label: "导论 26"
 next_url: "/owen/hebrews/exercitations/28/zh/"

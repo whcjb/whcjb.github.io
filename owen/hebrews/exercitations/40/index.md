@@ -6,6 +6,7 @@ title: "导论 40 · The practical observance of the Lord's Day"
 date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/exercitations/39/"
 prev_label: "导论 39"
+zh_url: "/owen/hebrews/exercitations/40/zh/"
 ---
 <div class="owen-exer-eyebrow">安息日与主日专论（Day of Sacred Rest） · Exercitation VI</div>
 

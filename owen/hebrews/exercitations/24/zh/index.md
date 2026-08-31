@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 24 · 旧约律法之下的献祭"
-date: 2026-07-17 10:44
+date: 2026-08-29 22:11
 prev_url: "/owen/hebrews/exercitations/23/zh/"
 prev_label: "导论 23"
 next_url: "/owen/hebrews/exercitations/25/zh/"

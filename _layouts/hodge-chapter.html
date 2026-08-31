@@ -1,0 +1,94 @@
+---
+layout: default
+---
+{%- comment -%}
+  贺智《哥林多前后书注释》章节页。
+
+  ⚠️ 不复用 calvin-en：每本书独立样式，共用会让改加尔文样式时连带动到这里。
+  字段与 publish_calvin_en.py 写出的 front matter 一致
+  （book_id / book_name / title / prev_section / next_section / *_label）。
+
+  配色取普林斯顿旧派的调子：深靛蓝 #1f3a5f 主色 + 暖米底，与欧文的绿、
+  毕列志的棕区分开；希腊文 #0000d4、经文引语 #800000 是 AGES 原色，不改。
+{%- endcomment -%}
+
+{%- comment -%}
+  贺智全部书卷共用一个主题色（按注释家一色，用户 2026-08-31 指定；曾按卷
+  分色，已撤回）。取值与 _data/commentaries.yml 的 c0/c1 一致，见
+  build_commentaries_index.py 的 AUTHOR_COLORS —— 改色两处要一起改，
+  否则「历代解经」页与书卷页会对不上。
+{%- endcomment -%}
+{%- assign hodge_ink = '#1f3a5f' -%}
+{%- assign hodge_ink_dark = '#16293f' -%}
+{%- assign hodge_rule = '#cfd8e4' -%}
+
+<div class="container hodge-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="hodge-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      </div>
+
+      <h1 class="hodge-title">{{ page.title }}</h1>
+
+      <div class="hodge-nav">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="hodge-content">
+        {{ content }}
+      </div>
+
+      <div class="hodge-nav hodge-nav-foot">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .hodge-wrap { --hodge-ink: {{ hodge_ink }}; --hodge-ink-dark: {{ hodge_ink_dark }};
+                --hodge-rule: {{ hodge_rule }}; }
+  body:has(.hodge-wrap) { background: #fbfaf7; }
+  .hodge-wrap {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2c2c2c; line-height: 1.85; font-size: 16.5px;
+  }
+  .hodge-chrome a, .hodge-nav a {
+    color: var(--hodge-ink); text-decoration: none; font-size: 13.5px; letter-spacing: .02em;
+  }
+  .hodge-chrome a:hover, .hodge-nav a:hover { text-decoration: underline; }
+  .hodge-title {
+    font-size: 26px; color: var(--hodge-ink); font-weight: 600; letter-spacing: .04em;
+    border-bottom: 2px solid var(--hodge-ink); padding-bottom: 9px; margin: 0 0 6px;
+  }
+  .hodge-nav { display: flex; justify-content: space-between; margin: 14px 0 30px; }
+  .hodge-nav-foot { margin: 46px 0 10px; padding-top: 16px; border-top: 1px solid var(--hodge-rule); }
+  .hodge-content p { margin: 0 0 1.05em; text-align: justify; }
+  .hodge-content h2 {
+    font-size: 18px; color: var(--hodge-ink-dark); font-weight: 600;
+    letter-spacing: .05em; margin: 34px 0 14px;
+  }
+  /* 章题解：AGES 里紧跟章标题的那段小字概述 */
+  .hodge-content .title-block-h2 { color: var(--hodge-ink) !important; }
+  /* 脚注区 */
+  .hodge-content .footnotes {
+    margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--hodge-rule);
+    font-size: 13.5px; line-height: 1.7; color: #55504a;
+  }
+  .hodge-content .footnotes a { color: var(--hodge-ink); }
+  .hodge-content sup a { color: var(--hodge-ink); text-decoration: none; }
+  /* Gate 9：脚注 ref 要留出导航栏的高度，否则从脚注点 ↩ 跳回来时，
+     目标行正好被固定导航条盖住，用户会报「点击脚注无法跳转」。
+     与 calvin-en.html 同一规则（audit-gates Gate 9 / anti-pattern M22）。 */
+  .hodge-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+  .hodge-content .footnotes li { scroll-margin-top: 80px; }
+  @media (max-width: 768px) {
+    .hodge-wrap { font-size: 15.5px; line-height: 1.8; }
+    .hodge-title { font-size: 21px; }
+  }
+</style>

@@ -527,6 +527,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
     out: list[str] = []
     current_page = 0
     in_table = False
+    in_footnote_section = False   # 文末 FOOTNOTES 区（见下面的转换）
     table_left: list[str] = []
     table_right: list[str] = []
     table_header: str | None = None
@@ -658,6 +659,38 @@ def convert(structured_path: Path, out_path: Path) -> None:
             continue
 
         tag, content = tm.group(1), tm.group(2).strip()
+
+        # ── 文末集中脚注区 ──────────────────────────────────────────
+        # 有的 AGES 卷（贺智哥林多前后书）把脚注全部收在书末一个 FOOTNOTES
+        # 标题之下，逐条写成 `N. 正文`。不转的话它们会渲染成 `**1.** …` 的
+        # 普通段落，与正文里的 [^fN] 对不上，脚注跳转全失效。
+        # 进入条件严格限定为「居中标题恰好是 FOOTNOTES」，之后每个以 `N. `
+        # 起头的 BODY 转成 `[^fN]: 正文`，续行并入上一条。
+        if tag in ('CENTERED_H2', 'CENTERED_H1') and content.strip().upper() == 'FOOTNOTES':
+            in_footnote_section = True
+            i += 1
+            continue
+        if in_footnote_section and tag == 'BODY':
+            # format_inline 只做行内清理与希腊转换，<sty> 仍是原样；必须再过
+            # apply_verse_styling 才会变成 HTML span（漏这一步脚注里会露出
+            # 裸的 `<sty c="0000d4" i="0">`）。red=False：脚注不是经文引语。
+            _fmt = lambda x: apply_verse_styling(format_inline(x), red=False)
+            # 编号可能单独成行：脚注区是悬挂缩进，按段首缩进拆段时会把
+            # `1.` 与正文切开（后书就只有这一条，切开后 def 直接归零）。
+            # 所以 `\s+(.*)` 放宽成 `\s*(.*)`，正文为空时由下面的续行逻辑补上。
+            fm = re.match(r'^(\d+)\.\s*(.*)$', content, re.S)
+            if fm:
+                out.append('')
+                body = _fmt(fm.group(2)) if fm.group(2).strip() else ''
+                out.append(f'[^f{fm.group(1)}]:' + (' ' + body if body else ''))
+            elif content.strip():
+                # 续行并进上一条定义
+                if out and out[-1].startswith('[^f'):
+                    out[-1] = out[-1].rstrip() + ' ' + _fmt(content)
+                else:
+                    out.append(_fmt(content))
+            i += 1
+            continue
 
         # Strip the leading "page-number" BODY item (e.g. "[BODY] 47" at top of page 47)
         if tag == 'BODY' and content.strip().isdigit() and int(content.strip()) == current_page:

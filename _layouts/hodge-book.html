@@ -1,0 +1,86 @@
+---
+layout: default
+---
+{%- comment -%}
+  贺智某一卷的首页：章节目录。字段来自 publish_calvin_en.py 写的
+  book_id / book_name / chapters / has_preface。样式与 hodge-chapter 同源。
+{%- endcomment -%}
+
+{%- comment -%}
+  贺智全部书卷共用一个主题色（按注释家一色，用户 2026-08-31 指定；曾按卷
+  分色，已撤回）。取值与 _data/commentaries.yml 的 c0/c1 一致，见
+  build_commentaries_index.py 的 AUTHOR_COLORS —— 改色两处要一起改，
+  否则「历代解经」页与书卷页会对不上。
+{%- endcomment -%}
+{%- assign hodge_ink = '#1f3a5f' -%}
+{%- assign hodge_ink_dark = '#16293f' -%}
+{%- assign hodge_rule = '#cfd8e4' -%}
+
+<div class="container hodge-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="hodge-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/hodge/">&larr; 查尔斯·贺智</a>
+      </div>
+
+      <h1 class="hodge-title">{{ page.book_name }}</h1>
+      <div class="hodge-sub">Charles Hodge · 1797–1878 · Princeton</div>
+
+      {% if page.has_preface %}
+      <a class="hodge-tile hodge-tile-wide" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/preface/">
+        <span>Introduction</span>导论
+      </a>
+      {% endif %}
+
+      <div class="hodge-grid">
+        {% for n in (1..page.chapters) %}
+        <a class="hodge-tile" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ n }}/">
+          <span>Chapter</span>{{ n }}
+        </a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .hodge-wrap { --hodge-ink: {{ hodge_ink }}; --hodge-rule: {{ hodge_rule }}; }
+  body:has(.hodge-wrap) { background: #fbfaf7; }
+  .hodge-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }
+  .hodge-chrome a { color: var(--hodge-ink); text-decoration: none; font-size: 13.5px; }
+  .hodge-chrome a:hover { text-decoration: underline; }
+  .hodge-title {
+    font-size: 27px; color: var(--hodge-ink); font-weight: 600; letter-spacing: .03em;
+    border-bottom: 2px solid var(--hodge-ink); padding-bottom: 9px; margin: 0 0 8px;
+  }
+  .hodge-sub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
+  .hodge-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    gap: 10px; margin-bottom: 40px;
+  }
+  .hodge-tile {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 68px; border: 1px solid var(--hodge-rule); border-radius: 4px;
+    background: #fff; color: var(--hodge-ink) !important; font-size: 21px;
+    text-decoration: none !important; line-height: 1;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .hodge-tile span {
+    font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase;
+    opacity: .6; margin-bottom: 4px;
+  }
+  .hodge-tile:hover {
+    background: var(--hodge-ink); border-color: var(--hodge-ink);
+    color: #f4f1e8 !important; transform: translateY(-1px);
+  }
+  .hodge-tile-wide {
+    height: 58px; margin-bottom: 18px; font-size: 16px; letter-spacing: .08em;
+    background: #f5f2ea;
+  }
+  @media (max-width: 640px) {
+    .hodge-grid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+    .hodge-tile { height: 58px; font-size: 18px; }
+  }
+</style>

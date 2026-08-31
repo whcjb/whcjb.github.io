@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 20 · 律法及其诫命"
-date: 2026-07-17 10:44
+date: 2026-08-29 16:55
 prev_url: "/owen/hebrews/exercitations/19/zh/"
 prev_label: "导论 19"
 next_url: "/owen/hebrews/exercitations/21/zh/"

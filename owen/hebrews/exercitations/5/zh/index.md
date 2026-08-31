@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 5 · 使徒从旧约所引的诸般见证"
-date: 2026-07-17 10:44
+date: 2026-08-28 18:56
 prev_url: "/owen/hebrews/exercitations/4/zh/"
 prev_label: "导论 4"
 next_url: "/owen/hebrews/exercitations/6/zh/"

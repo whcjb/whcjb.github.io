@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 9 · 弥赛亚应许之辩正"
-date: 2026-07-17 10:44
+date: 2026-08-28 20:55
 prev_url: "/owen/hebrews/exercitations/8/zh/"
 prev_label: "导论 8"
 next_url: "/owen/hebrews/exercitations/10/zh/"

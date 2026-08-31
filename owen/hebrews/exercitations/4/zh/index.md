@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 4 · 希伯来书原初所用的写作语言"
-date: 2026-07-17 10:44
+date: 2026-08-28 18:53
 prev_url: "/owen/hebrews/exercitations/3/zh/"
 prev_label: "导论 3"
 next_url: "/owen/hebrews/exercitations/5/zh/"

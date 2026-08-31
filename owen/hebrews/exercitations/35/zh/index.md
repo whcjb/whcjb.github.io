@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 35 · 关乎圣安息日之诸般争议——指导守此日之诸原则——论此日之名称"
-date: 2026-07-17 10:44
+date: 2026-08-30 17:45
 prev_url: "/owen/hebrews/exercitations/34/zh/"
 prev_label: "导论 34"
 next_url: "/owen/hebrews/exercitations/36/zh/"

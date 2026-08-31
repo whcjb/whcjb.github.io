@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 14 · 但以理预言的辩护"
-date: 2026-07-17 10:44
+date: 2026-08-29 04:42
 prev_url: "/owen/hebrews/exercitations/13/zh/"
 prev_label: "导论 13"
 next_url: "/owen/hebrews/exercitations/15/zh/"

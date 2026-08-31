@@ -208,6 +208,39 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/calvin/CAL_JOHN.pdf',
         'out':  os.path.join(BASE, 'calvin_raw/john/calvin_john_structured.txt'),
     },
+    # ── 贺智《哥林多前后书注释》（Charles Hodge, 1857/1859）────────────────
+    # 不是加尔文，但同为 AGES Digital Library 封装，格式一致，故并入本表。
+    # 诊断 2026-08-31（skill 01-diagnose）：
+    #   页面 410×626，与 CAL_JOHN 完全相同；x0 单峰 ≈30 → **单列纯英文**，
+    #   不是 1cor/2cor 那种英文-拉丁双列，所以不能用 ages_corinth。
+    #   AGES 经节锚点 <NNNNNN> 数量为 0（Version 2.0 早期封装没有），
+    #   分章靠绿色 #006411、size 20 的 "CHAPTER II" 行。
+    #   希腊文在 Koine-Medium 字体、蓝色 #0000d4，用的正是 AGES 转写码
+    #   （aJgia>zw→ἁγιάζω、gnw~siv→γνῶσις、v=词尾 sigma），走 ages_greek_to_unicode。
+    #   经文引语：红色 #800000 斜体（skill §5 那套），斜体字符数与红色字符数
+    #   几乎相等（21565 vs 21566），可作交叉验证。
+    #   脚注集中在文末（1cor p398 起 "FOOTNOTES"），正文内是 size 9 上标数字。
+    #   段落：同一 PyMuPDF block 内常含多段，靠首行缩进分（正文 x26 / 段首 x44）
+    #   → para_indent=12。
+    # ⚠️ audit Gate 6（超长段 >1500 字符）在这本书上不可能清零，别再试图靠
+    #   切分把它压下去：渲染 p84 核对过，整页就是一个连续段落，既无缩进也无
+    #   额外行距，贺智原文如此（19 世纪注释的跨页长段）。曾加过一条按行距
+    #   切段的 para_gap，实测 block 内行距完全均匀、一次都不触发，已删。
+    # 复用 ages_phil，理由同 john：单列 Ages 的最近匹配。
+    'hodge-1cor': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': True,
+        'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_1cor_ages.pdf',
+        'out':  os.path.join(BASE, 'hodge_raw/1cor/hodge_1cor_structured.txt'),
+    },
+    'hodge-2cor': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': True,
+        'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_2cor_ages.pdf',
+        'out':  os.path.join(BASE, 'hodge_raw/2cor/hodge_2cor_structured.txt'),
+    },
     'acts': {
         # Ages Digital Library single-column English (Beveridge/Fetherstone tr).
         # Diagnosed 2026-06-08: 410×626 page, 886 pages, x0 peak 30 (body);
@@ -3032,6 +3065,23 @@ def phil_dominant_class(line_spans):
     return 'BODY', ms
 
 
+# 行内上标脚注标记：AGES 有的卷把脚注号做成正文行内的小字号数字（贺智
+# 哥林多前后书：正文 size 12，标记 size 9），既不带 Ft/F# 前缀，也不是独立
+# 成行，所以既有的「整行 size<=8 判 FOOTNOTE」抓不到，取出来就成了普通数字，
+# 与经文节号、年份、卷数混在一起再也分不开。
+# 由 VOLUMES 的 `inline_sup_footnotes: True` 打开，默认关——john/acts 等已
+# 发布卷的版式不同，全局改会把它们正文里的数字误标成脚注。
+_INLINE_SUP_FOOTNOTES = False
+_SUP_MAX_SIZE = 9.5      # 标记字号上限（贺智实测 9.0，正文 12.0）
+
+# 段首缩进阈值（相对正文左边距的像素数）。0 = 关闭按缩进拆段。
+# 由 VOLUMES 的 `para_indent` 打开；必须从 PDF 实测，不硬编码
+# （skill 02a §6：贺智正文行 x26、段首行 x44 → 阈值取 12）。
+_PARA_INDENT = 0
+_para_body_left = 0.0
+
+
+
 def _render_spans_with_italic(spans):
     """Render a line of spans, wrapping styled runs with `<sty c="..." i="0|1">…</sty>`.
 
@@ -3043,9 +3093,22 @@ def _render_spans_with_italic(spans):
     """
     parts = []
     open_style = None  # tuple (color_int, is_italic), or None
+    # 本行的主字号：上标要相对正文判断，不能写死绝对值（各卷正文字号不同）
+    body_size = max((sp.get('size', 0) for sp in spans if sp.get('text', '').strip()),
+                    default=12.0)
     for s in spans:
         text = s['text']
         if not text:
+            continue
+        if (_INLINE_SUP_FOOTNOTES and text.strip().isdigit()
+                and s.get('size', 99) <= _SUP_MAX_SIZE and body_size >= 11):
+            # 上标脚注号 → 直接落成 [^fN]，与文末 FOOTNOTES 区的编号对应。
+            # 前面若刚有空格要吃掉，免得出现 "know any thing [^f3] among"。
+            if parts and parts[-1].endswith(' '):
+                parts[-1] = parts[-1][:-1]
+            if open_style is not None:
+                parts.append('</sty>'); open_style = None
+            parts.append(f'[^f{text.strip()}]')
             continue
         is_italic = bool(s['flags'] & 2)
         color = s.get('color', 0)
@@ -3134,6 +3197,14 @@ def _page_latin_x_min(page, default=200, mode='auto'):
 
 def phil_reconstruct_page(page, page_num=None):
     page_w = page.rect.width
+    # 本页正文左边距 = 出现次数最多的行 x0（正文行远多于缩进行与标题行）
+    global _para_body_left
+    if _PARA_INDENT:
+        from collections import Counter as _C
+        _xc = _C(round(l['bbox'][0])
+                 for b in page.get_text('dict')['blocks'] if b['type'] == 0
+                 for l in b.get('lines', []))
+        _para_body_left = float(_xc.most_common(1)[0][0]) if _xc else 0.0
     page_cx = page_w / 2
     blocks      = [b for b in page.get_text('dict')['blocks'] if b['type'] == 0]
     blocks.sort(key=lambda b: b['bbox'][1])
@@ -3408,6 +3479,7 @@ def phil_reconstruct_page(page, page_num=None):
                 break
 
         block_lines_output = []
+        _prev_y0 = None
         for line_idx, line in enumerate(block['lines']):
             non_empty = [s for s in line['spans'] if s['text'].strip()]
             if not non_empty:
@@ -3493,13 +3565,30 @@ def phil_reconstruct_page(page, page_num=None):
                     line_class = 'CENTERED_H1'
                 elif line_class == 'H2':
                     line_class = 'CENTERED_H2'
-            block_lines_output.append((line_class, full_text))
+            # 记下本行的缩进（供拆段用）与行距（暂未使用，留作诊断）
+            _gap = 0.0 if _prev_y0 is None else round(line['bbox'][1] - _prev_y0, 1)
+            _prev_y0 = line['bbox'][1]
+            block_lines_output.append((line_class, full_text,
+                                       round(line['bbox'][0] - _para_body_left, 1), _gap))
 
         if not block_lines_output:
             continue
 
-        cur_cls, cur_texts = block_lines_output[0]
-        for cls, txt in block_lines_output[1:]:
+        cur_cls, cur_texts = block_lines_output[0][0], block_lines_output[0][1]
+        for cls, txt, ind, gap in block_lines_output[1:]:
+            # 段首缩进 → 强制断段。AGES 同一个 PyMuPDF block 里常含多个段落，
+            # 段与段之间没有空行，只有首行缩进（贺智：正文 x26、段首 x44）。
+            # 不切的话整页会并成一段——贺智 2cor/5 曾并出 13,299 字符的巨段，
+            # 触发 audit Gate 6。按卷开关：john/acts 的 block 恰好一段一个，
+            # 开了反而会被行内的偶发缩进误切。
+            if (_PARA_INDENT and ind >= _PARA_INDENT
+                    and cls == cur_cls == 'BODY'):
+                texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
+                merged = ' '.join(t.strip() for t in texts if t.strip())
+                if merged.strip():
+                    output_lines.append(f'[{cur_cls}] {merged}')
+                cur_cls, cur_texts = cls, txt
+                continue
             if cls == cur_cls:
                 prev = cur_texts[-1] if isinstance(cur_texts, list) else cur_texts
                 if (prev if isinstance(prev, str) else '').rstrip().endswith('-'):
@@ -3532,6 +3621,10 @@ def extract_ages_phil(cfg):
     # 不覆盖就会把整列判成英文左栏，双语状态机激活不了（经文散落框外）。
     global _LATIN_X_MIN_FIXED
     _LATIN_X_MIN_OVERRIDE = cfg.get('latin_x_min')
+    global _INLINE_SUP_FOOTNOTES
+    _INLINE_SUP_FOOTNOTES = bool(cfg.get('inline_sup_footnotes'))
+    global _PARA_INDENT
+    _PARA_INDENT = cfg.get('para_indent', 0)
     doc   = fitz.open(cfg['pdf'])
     total = len(doc)
     _LATIN_X_MIN_FIXED = (_doc_latin_x_min(doc)

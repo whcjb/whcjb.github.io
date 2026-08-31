@@ -3,7 +3,7 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 31 · 基督祭司职任的性质"
-date: 2026-07-17 10:44
+date: 2026-08-30 09:20
 prev_url: "/owen/hebrews/exercitations/30/zh/"
 prev_label: "导论 30"
 next_url: "/owen/hebrews/exercitations/32/zh/"

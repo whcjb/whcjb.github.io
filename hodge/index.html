@@ -1,0 +1,90 @@
+---
+layout: default
+title: 查尔斯·贺智 圣经注释
+description: 查尔斯·贺智（Charles Hodge, 1797–1878）普林斯顿神学院系统神学教授，《哥林多前书注释》《哥林多后书注释》英文全文在线阅读。
+---
+{%- comment -%}
+  贺智注释总目。自成一家，与 owen/ bridges/ 同级，不并入 calvin/。
+  样式与 hodge-book / hodge-chapter 同源（深靛蓝 #1f3a5f）。
+{%- endcomment -%}
+
+<div class="container hodge-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="hodge-hero">
+        <h1>查尔斯·贺智</h1>
+        <div class="hodge-hero-en">Charles Hodge · 1797&ndash;1878</div>
+        <div class="hodge-hero-rule"><i></i></div>
+        <p class="hodge-intro">
+          普林斯顿神学院系统神学教授（1851&ndash;1878 年任院长），十九世纪旧派加尔文主义最重要的代表。
+          其圣经注释逐节释义、教义严谨，是改革宗传统中与加尔文并读的经典。
+          本站现收其哥林多前后书注释英文全文。
+        </p>
+      </div>
+
+      <div class="hodge-books">
+        <a class="hodge-book" href="{{ site.baseurl }}/hodge/1corinthians/">
+          <span class="hodge-book-cn">哥林多前书注释</span>
+          <span class="hodge-book-en">An Exposition of the First Epistle to the Corinthians</span>
+          <span class="hodge-book-meta">1857 &middot; 16 章</span>
+        </a>
+        <a class="hodge-book" href="{{ site.baseurl }}/hodge/2corinthians/">
+          <span class="hodge-book-cn">哥林多后书注释</span>
+          <span class="hodge-book-en">An Exposition of the Second Epistle to the Corinthians</span>
+          <span class="hodge-book-meta">1859 &middot; 13 章</span>
+        </a>
+      </div>
+
+      <p class="hodge-note">
+        底本为 AGES Digital Library 电子版（Version 2.0, 1996&ndash;1997）。原书已进入公有领域。
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  :root { --hodge-ink: #1f3a5f; --hodge-rule: #cfd8e4; --hodge-gold: #b08d57; }
+  body:has(.hodge-wrap) { background: #fbfaf7; }
+  .hodge-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }
+  .hodge-hero { text-align: center; margin: 34px 0 12px; }
+  .hodge-hero h1 {
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 30px; letter-spacing: .26em; text-indent: .26em;
+    color: var(--hodge-ink); font-weight: 600; margin: 0 0 10px;
+  }
+  .hodge-hero-en { font-style: italic; font-size: 13px; color: #8a8275; letter-spacing: .05em; }
+  .hodge-hero-rule { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 16px 0 0; }
+  .hodge-hero-rule::before, .hodge-hero-rule::after { content: ''; height: 1px; width: 62px; background: var(--hodge-rule); }
+  .hodge-hero-rule i { width: 4px; height: 4px; background: var(--hodge-gold); transform: rotate(45deg); display: block; }
+  .hodge-intro {
+    max-width: 620px; margin: 24px auto 0; font-size: 14px; line-height: 1.95; color: #6d6a63;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+  .hodge-books { display: grid; gap: 12px; margin: 38px 0 26px; }
+  .hodge-book {
+    display: block; padding: 20px 22px; background: #fff;
+    border: 1px solid var(--hodge-rule); border-left: 3px solid var(--hodge-ink);
+    border-radius: 3px; text-decoration: none !important;
+    transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
+  }
+  .hodge-book:hover {
+    background: linear-gradient(135deg, #152840, #2b5080);
+    transform: translateY(-1px); box-shadow: 0 5px 14px rgba(45,45,45,.24);
+  }
+  .hodge-book-cn {
+    color: var(--hodge-ink);
+    display: block; font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 18px; letter-spacing: .05em;
+  }
+  .hodge-book-en { display: block; font-style: italic; font-size: 12.5px; color: #8a8275; margin-top: 4px; }
+  .hodge-book-meta { display: block; font-size: 11.5px; color: #a89e8c; margin-top: 7px; letter-spacing: .06em; }
+  .hodge-book:hover .hodge-book-cn { color: #f4f1e8; }
+  .hodge-book:hover .hodge-book-en { color: rgba(244,241,232,.72); }
+  .hodge-book:hover .hodge-book-meta { color: rgba(244,241,232,.6); }
+  .hodge-note {
+    font-size: 12px; color: #a89e8c; text-align: center; margin-top: 34px;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+</style>
