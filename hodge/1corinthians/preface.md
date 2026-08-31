@@ -3,7 +3,7 @@ layout: hodge-chapter
 book_id: 1corinthians
 book_name: "Hodge on 1 Corinthians"
 title: "Preface"
-date: 2026-08-31 17:06
+date: 2026-08-31 17:34
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -126,11 +126,7 @@ Their party spirit. “One said I am of Paul, another I am of Apollos; another I
 **3.** The intimate relations which subsisted between Paul and Apollos, as indicated in these epistles, authorizes the inference that it was not on doctrinal grounds that the followers of the latter differed from those of the former. It is probable that those who objected to Paul that he did not preach with the “wisdom of words,” were those attracted by the eloquence of Apollos.
 
 <!-- PAGE 9 -->
-**4.** It is scarcely less certain that those who said, “We are of Peter,” were the Judaizers, as Peter was specially the apostle of the circumcision. There is no evidence, however, from this epistle, that the leaders of this party had attempted to introduce into Corinth the observance of the Jewish law. But they were determined opponents of the Apostle Paul. They had come to Corinth with letters of commendation (2 Corinthians 2:1). They were Hebrews (2 Corinthians 11:22); they professed to be ministers of Christ (ch. 11:23); they were false apostles (ch. 11:13); the ministers of Satan, handling the word of God deceitfully. These men, as is evident from the defense which the apostle makes of his divine commission (1 Corinthians 9:1-3, 2
-
-Corinthians 12:11, 12), called in question his apostleship, probably on the ground that he was not of the original twelve. On this ground, also, to give themselves the greater authority they claimed to be disciples of
-
-Peter, who was the first of the apostles. They also accused Paul of inconstancy and insincerity (2 Corinthians 1:17-24). In short, they stirred up against him all the elements of discord which they could find in a congregation composed of such incongruous materials.
+**4.** It is scarcely less certain that those who said, “We are of Peter,” were the Judaizers, as Peter was specially the apostle of the circumcision. There is no evidence, however, from this epistle, that the leaders of this party had attempted to introduce into Corinth the observance of the Jewish law. But they were determined opponents of the Apostle Paul. They had come to Corinth with letters of commendation (2 Corinthians 2:1). They were Hebrews (2 Corinthians 11:22); they professed to be ministers of Christ (ch. 11:23); they were false apostles (ch. 11:13); the ministers of Satan, handling the word of God deceitfully. These men, as is evident from the defense which the apostle makes of his divine commission (1 Corinthians 9:1-3, 2 Corinthians 12:11, 12), called in question his apostleship, probably on the ground that he was not of the original twelve. On this ground, also, to give themselves the greater authority they claimed to be disciples of Peter, who was the first of the apostles. They also accused Paul of inconstancy and insincerity (2 Corinthians 1:17-24). In short, they stirred up against him all the elements of discord which they could find in a congregation composed of such incongruous materials.
 
 **5.** With regard to those who said, We are of Christ, only two things are certain. First, that they were as much to blame as the other parties. It was in no Christian spirit that they set up their claim to be of Christ.
 

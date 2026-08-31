@@ -341,8 +341,16 @@ def bold_leading_verse_num(text: str) -> str:
     Kramdown parses paragraph-leading `N. ` as ordered list item; bolding
     prevents that and matches the Calvin verse-number convention.
     Also accepts an immediately-following `<` (HTML span opening a verse phrase).
+
+    节号有三种形态，缺一种就会漏加粗、并且失去防 kramdown 误判有序列表的保护：
+      单节   `1. `
+      合并   `19, 20. ` / `8,9. `   （贺智 1cor/2cor 共 44 处）
+      范围   `1-11. ` / `29–31. `
+    加尔文各卷只出现单节形态，所以这个洞一直没暴露（用户 2026-08-31 在
+    1cor/3 的「19, 20.」上看出字体不一致）。
     """
-    return re.sub(r'^(\d+)\. (?=[A-Z<])', r'**\1.** ', text)
+    return re.sub(r'^(\d+(?:\s*[,，]\s*\d+|\s*[-–—]\s*\d+)*)\. (?=[A-Z<])',
+                  r'**\1.** ', text)
 
 
 # ── Main converter ───────────────────────────────────────────────────────

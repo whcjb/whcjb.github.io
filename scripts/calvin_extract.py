@@ -3603,7 +3603,16 @@ def phil_reconstruct_page(page, page_num=None):
             # 不切的话整页会并成一段——贺智 2cor/5 曾并出 13,299 字符的巨段，
             # 触发 audit Gate 6。按卷开关：john/acts 的 block 恰好一段一个，
             # 开了反而会被行内的偶发缩进误切。
-            if (_PARA_INDENT and ind >= _PARA_INDENT
+            # 缩进只是「可能是新段」的信号，还要求上一段**已经结句**。
+            # 反例：`3. God had ordained the gospel to be the great means of
+            # salvation, vs.` / `21-25.` —— 后半行在 PDF 里也落在 x44 段首位，
+            # 但它是上一句的续行，硬拆会把「vs. 21-25.」劈成两段。
+            # 缩写结尾（vs. / v. / ch. / cf. / comp.）不算结句。
+            _prev = cur_texts[-1] if isinstance(cur_texts, list) else cur_texts
+            _prev = re.sub(r'</?sty(?:\s[^>]*)?>', '', _prev or '').rstrip()
+            _ended = (cor_is_sentence_end(_prev)
+                      and not re.search(r'\b(?:vs|v|ch|cf|comp|ver|chap)\.$', _prev, re.I))
+            if (_PARA_INDENT and ind >= _PARA_INDENT and _ended
                     and cls == cur_cls == 'BODY'):
                 texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
                 merged = ' '.join(t.strip() for t in texts if t.strip())
