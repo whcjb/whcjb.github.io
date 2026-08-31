@@ -69,6 +69,10 @@ layout: default
   .hodge-nav { display: flex; justify-content: space-between; margin: 14px 0 30px; }
   .hodge-nav-foot { margin: 46px 0 10px; padding-top: 16px; border-top: 1px solid var(--hodge-rule); }
   .hodge-content p { margin: 0 0 1.05em; text-align: justify; }
+  /* 列举项编号：主题色、不加粗，与经文号（加粗黑字）区分开。
+     PDF 里这两类字形完全相同，是网页上为了可读性刻意加的分辨度
+     （用户 2026-08-31 指定）。 */
+  .hodge-content .enum-num { color: var(--hodge-ink); font-weight: 600; }
   .hodge-content h2 {
     font-size: 18px; color: var(--hodge-ink-dark); font-weight: 600;
     letter-spacing: .05em; margin: 34px 0 14px;

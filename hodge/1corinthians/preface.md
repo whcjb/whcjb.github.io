@@ -3,7 +3,7 @@ layout: hodge-chapter
 book_id: 1corinthians
 book_name: "Hodge on 1 Corinthians"
 title: "Preface"
-date: 2026-08-31 17:34
+date: 2026-08-31 17:58
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -29,15 +29,15 @@ next_label: "Chapter 1"
 
 <p style="margin-left:2em;" markdown="1"><span style="color:#006411">Introduction</span></p>
 
-<p style="margin-left:4em;" markdown="1">**1.** Corinth.</p>
+<p style="margin-left:4em;" markdown="1"><span class="enum-num">1.</span> Corinth.</p>
 
-<p style="margin-left:4em;" markdown="1">**2.** Paul’s Labors In Corinth.</p>
+<p style="margin-left:4em;" markdown="1"><span class="enum-num">2.</span> Paul’s Labors In Corinth.</p>
 
-<p style="margin-left:4em;" markdown="1">**3.** State Of The Church In Corinth.</p>
+<p style="margin-left:4em;" markdown="1"><span class="enum-num">3.</span> State Of The Church In Corinth.</p>
 
-<p style="margin-left:4em;" markdown="1">**4.** Date. — Contents Of The Epistle.</p>
+<p style="margin-left:4em;" markdown="1"><span class="enum-num">4.</span> Date. — Contents Of The Epistle.</p>
 
-<p style="margin-left:4em;" markdown="1">**5.** Importance Of This Epistle.</p>
+<p style="margin-left:4em;" markdown="1"><span class="enum-num">5.</span> Importance Of This Epistle.</p>
 
 <p style="margin-left:2em;" markdown="1"><span style="color:#006411">The Commentary</span></p>
 
@@ -117,18 +117,16 @@ Justus, one who worshipped God, and whose house joined hard to the synagogue. An
 <!-- PAGE 8 -->
 The state of the church in Corinth may be partially inferred from the character and circumstances of the people, but with certainty only from the contents of this and the following epistles. As remarked above, the population of the city was more than ordinarily heterogeneous. The descendants of the colonists sent by Julius Caesar, the Greeks who were attracted to the principal city of their own country, Jews and strangers from all parts of the Roman Empire, were here congregated. The predominant character of the people was doubtless Grecian. The majority of the converts to Christianity were probably Greeks, as distinguished from Jews. (See ch. 12:1.) In all ages the Greeks were distinguished by their fondness for speculation, their vanity and love of pleasure, and their party spirit. A church composed of people of these characteristics, with a large infusion of Jewish converts, educated in the midst of refined heathenism, surrounded by all the incentives to indulgence, taught to consider pleasure, if not the chief good, yet in any form a good, plied on every hand by philosophers and false teachers, might be expected to exhibit the very characteristics which in this epistle are brought so clearly into view.
 
-Their party spirit. “One said I am of Paul, another I am of Apollos; another I of Cephas, another I of Christ.” Much ingenuity and learning have been expended in determining the nature of these party divisions. What may be considered as more or less satisfactorily determined is, —
+Their party spirit. “One said I am of Paul, another I am of Apollos; another I of Cephas, another I of Christ.” Much ingenuity and learning have been expended in determining the nature of these party divisions. What may be considered as more or less satisfactorily determined is, — <span class="enum-num">1.</span> That there were factions in the church of Corinth which called themselves by the names above mentioned, and therefore that the names themselves give a clue to the character of the parties. The idea that the names of Paul, Apollos, and Cephas, are used figuratively, when other teachers were really intended, is so unnatural, and has so little to sustain it, that it is now almost universally repudiated.
 
-**1.** That there were factions in the church of Corinth which called themselves by the names above mentioned, and therefore that the names themselves give a clue to the character of the parties. The idea that the names of Paul, Apollos, and Cephas, are used figuratively, when other teachers were really intended, is so unnatural, and has so little to sustain it, that it is now almost universally repudiated.
+<span class="enum-num">2.</span> There can be little doubt that those who called themselves by the name of Paul, or made themselves his partisans, were in the main the Gentile converts, — men brought up free from the bondage of the Mosaic law, and free from the influence of Jewish ideas and usages. They were disposed to press to extremes the liberty of the gospel, to regard as indifferent things in themselves sinful, and to treat without respect the scruples of the weak.
 
-**2.** There can be little doubt that those who called themselves by the name of Paul, or made themselves his partisans, were in the main the Gentile converts, — men brought up free from the bondage of the Mosaic law, and free from the influence of Jewish ideas and usages. They were disposed to press to extremes the liberty of the gospel, to regard as indifferent things in themselves sinful, and to treat without respect the scruples of the weak.
-
-**3.** The intimate relations which subsisted between Paul and Apollos, as indicated in these epistles, authorizes the inference that it was not on doctrinal grounds that the followers of the latter differed from those of the former. It is probable that those who objected to Paul that he did not preach with the “wisdom of words,” were those attracted by the eloquence of Apollos.
+<span class="enum-num">3.</span> The intimate relations which subsisted between Paul and Apollos, as indicated in these epistles, authorizes the inference that it was not on doctrinal grounds that the followers of the latter differed from those of the former. It is probable that those who objected to Paul that he did not preach with the “wisdom of words,” were those attracted by the eloquence of Apollos.
 
 <!-- PAGE 9 -->
-**4.** It is scarcely less certain that those who said, “We are of Peter,” were the Judaizers, as Peter was specially the apostle of the circumcision. There is no evidence, however, from this epistle, that the leaders of this party had attempted to introduce into Corinth the observance of the Jewish law. But they were determined opponents of the Apostle Paul. They had come to Corinth with letters of commendation (2 Corinthians 2:1). They were Hebrews (2 Corinthians 11:22); they professed to be ministers of Christ (ch. 11:23); they were false apostles (ch. 11:13); the ministers of Satan, handling the word of God deceitfully. These men, as is evident from the defense which the apostle makes of his divine commission (1 Corinthians 9:1-3, 2 Corinthians 12:11, 12), called in question his apostleship, probably on the ground that he was not of the original twelve. On this ground, also, to give themselves the greater authority they claimed to be disciples of Peter, who was the first of the apostles. They also accused Paul of inconstancy and insincerity (2 Corinthians 1:17-24). In short, they stirred up against him all the elements of discord which they could find in a congregation composed of such incongruous materials.
+<span class="enum-num">4.</span> It is scarcely less certain that those who said, “We are of Peter,” were the Judaizers, as Peter was specially the apostle of the circumcision. There is no evidence, however, from this epistle, that the leaders of this party had attempted to introduce into Corinth the observance of the Jewish law. But they were determined opponents of the Apostle Paul. They had come to Corinth with letters of commendation (2 Corinthians 2:1). They were Hebrews (2 Corinthians 11:22); they professed to be ministers of Christ (ch. 11:23); they were false apostles (ch. 11:13); the ministers of Satan, handling the word of God deceitfully. These men, as is evident from the defense which the apostle makes of his divine commission (1 Corinthians 9:1-3, 2 Corinthians 12:11, 12), called in question his apostleship, probably on the ground that he was not of the original twelve. On this ground, also, to give themselves the greater authority they claimed to be disciples of Peter, who was the first of the apostles. They also accused Paul of inconstancy and insincerity (2 Corinthians 1:17-24). In short, they stirred up against him all the elements of discord which they could find in a congregation composed of such incongruous materials.
 
-**5.** With regard to those who said, We are of Christ, only two things are certain. First, that they were as much to blame as the other parties. It was in no Christian spirit that they set up their claim to be of Christ.
+<span class="enum-num">5.</span> With regard to those who said, We are of Christ, only two things are certain. First, that they were as much to blame as the other parties. It was in no Christian spirit that they set up their claim to be of Christ.
 
 And secondly, that they assumed to have some relation to Christ, which they denied to others. Whether it was because they had seen and heard him, or because they claimed connection with “James, the brother of the Lord,” or because they were the only genuine Christians, inasmuch as through some other channel than the apostles, they had derived, as they pretended, their knowledge of the gospel, is a matter of conjecture. Billroth and Baur regard this class as identical with the followers of Peter, who claimed to be of Christ, because Paul was no apostle, and therefore his disciples were not “of Christ.” According to this view there were only two, instead of four, parties in Corinth — the followers of Paul and Apollos belonging in one class. This, however, does violence to the plain meaning of the passage in 1 Corinthians 1:12. These neutrals were probably the worst class in the congregation, as is commonly the case with those who claim to be Christians to the exclusion of all others.
 

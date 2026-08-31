@@ -335,22 +335,38 @@ def apply_verse_styling(body: str, red: bool = False) -> str:
     return body
 
 
+# 行首编号的两种身份，必须分辨开（用户 2026-08-31）：
+#   经文号   `22. ` 后接红色经文引语  → **加粗**（保持不动）
+#   列举项   `1. `  后接普通正文      → 主题色，不加粗
+# 判据用「后面是不是红色经文 span」，不靠数字本身——贺智 PDF 里这两类字形
+# 完全相同（size 12、非粗体、同 x0、同色），版面上唯一的区别就是后接什么。
+# 实测 1cor+2cor：经文号 604 个、列举项 190 个。
+#
+# 两类都必须打断 kramdown 的有序列表识别（段首 `1. Foo` 会被解析成 <ol>）：
+# 加粗天然打断；列举项包进 <span class="enum-num"> 也打断，颜色由各书 layout
+# 定（贺智 hodge-chapter 用 --hodge-ink）。
+BOLD_VERSE_NUM = True                    # 加尔文各卷：一律加粗（其 PDF 本就粗体）
+SPLIT_VERSE_VS_ITEM = False              # 贺智：按后接内容分流，--split-verse-num 打开
+_RED_OPEN = '<span style="color:#800000"'
+
+
 def bold_leading_verse_num(text: str) -> str:
-    """Convert leading `N. Capital` to `**N.** Capital` (skill §6).
-
-    Kramdown parses paragraph-leading `N. ` as ordered list item; bolding
-    prevents that and matches the Calvin verse-number convention.
-    Also accepts an immediately-following `<` (HTML span opening a verse phrase).
-
-    节号有三种形态，缺一种就会漏加粗、并且失去防 kramdown 误判有序列表的保护：
-      单节   `1. `
-      合并   `19, 20. ` / `8,9. `   （贺智 1cor/2cor 共 44 处）
-      范围   `1-11. ` / `29–31. `
-    加尔文各卷只出现单节形态，所以这个洞一直没暴露（用户 2026-08-31 在
-    1cor/3 的「19, 20.」上看出字体不一致）。
-    """
-    return re.sub(r'^(\d+(?:\s*[,，]\s*\d+|\s*[-–—]\s*\d+)*)\. (?=[A-Z<])',
-                  r'**\1.** ', text)
+    """见上方注释。"""
+    # 后面允许小写起首：贺智有跨页断句造成的 `4. is because the church…`，
+    # 只认大写会漏掉，行首 `4. ` 逃过处理直接被 kramdown 变成 <ol>。
+    # 分隔符还包括「纯空格」（贺智 1cor 有 `32 33.` 这种漏了逗号的），
+    # 后接字符还包括左括号（`2. (For he saith…`）。这三种形态各只有一两处，
+    # 但漏掉就会被 kramdown 变成 <ol>。
+    pat = (r'^(\d+(?:\s*[,，]\s*\d+|\s*[-–—]\s*\d+|\s+\d+)*)\. '
+           r'(?=[A-Za-z(<])')
+    m = re.match(pat, text)
+    if not m:
+        return text
+    if SPLIT_VERSE_VS_ITEM and not text[m.end():].startswith(_RED_OPEN):
+        return re.sub(pat, r'<span class="enum-num">\1.</span> ', text, count=1)
+    if SPLIT_VERSE_VS_ITEM or BOLD_VERSE_NUM:
+        return re.sub(pat, r'**\1.** ', text, count=1)
+    return re.sub(pat, r'\1\\. ', text, count=1)
 
 
 # ── Main converter ───────────────────────────────────────────────────────
@@ -1254,11 +1270,18 @@ def convert(structured_path: Path, out_path: Path) -> None:
 
 
 def main() -> int:
-    if len(sys.argv) < 3:
-        print('usage: structured_to_md.py <input.txt> <output.md>', file=sys.stderr)
+    global BOLD_VERSE_NUM
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    if '--no-bold-verse-num' in sys.argv:
+        BOLD_VERSE_NUM = False
+    if '--split-verse-num' in sys.argv:
+        globals()['SPLIT_VERSE_VS_ITEM'] = True
+    if len(args) < 2:
+        print('usage: structured_to_md.py <input.txt> <output.md> '
+              '[--no-bold-verse-num] [--split-verse-num]', file=sys.stderr)
         return 1
-    inp = Path(sys.argv[1])
-    out = Path(sys.argv[2])
+    inp = Path(args[0])
+    out = Path(args[1])
     convert(inp, out)
     sz = out.stat().st_size
     n_lines = sum(1 for _ in out.open(encoding='utf-8'))
