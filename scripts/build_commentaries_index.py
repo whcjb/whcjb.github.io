@@ -26,13 +26,28 @@ ROOT = Path(__file__).resolve().parent.parent
 # 注释家：生卒年皆为确凿史实，勿凭印象改
 # short 是卡片色块里的简称：一卷若有三位注释家，每格只剩 50 余像素，
 # 全名放不下会被截断
+# work_cn 用站内既有的称呼（各家自己首页的 title）；
+# work_en 用**该著作的真实书名**，不是站内导航文案：
+#   毕列志   An Exposition of the Book of Proverbs（1846）
+#   马太亨利 An Exposition of the Old and New Testaments（1708–1710）
+#   约翰欧文 An Exposition of the Epistle to the Hebrews
+#   加尔文   各卷独立，站内英文页用的是 AGES 版书名 "Calvin on <卷>"，
+#            那是本站所据版本的实际书名，故按卷生成（work_en 留空表示按卷取）
+# 曾误用首页资源卡片的副标题（"Charles Bridges · Proverbs"）——那是导航
+# 文案不是书名，被用户指出。
 AUTHORS = OrderedDict([
-    ('calvin',  dict(name='约翰·加尔文', short='加尔文',  en='John Calvin',     years='1509–1564', dir='calvin')),
-    ('owen',    dict(name='约翰·欧文',   short='欧文',    en='John Owen',       years='1616–1683', dir='owen')),
-    ('mhenry',  dict(name='马太·亨利',   short='亨利',    en='Matthew Henry',   years='1662–1714', dir='mhenry')),
-    ('bridges', dict(name='查理·毕列志', short='毕列志',  en='Charles Bridges', years='1794–1869', dir='bridges')),
+    ('calvin',  dict(name='约翰·加尔文', short='加尔文',  en='John Calvin',     years='1509–1564', dir='calvin',
+                     work_cn='加尔文圣经注释',        work_en='')),
+    ('owen',    dict(name='约翰·欧文',   short='欧文',    en='John Owen',       years='1616–1683', dir='owen',
+                     work_cn='约翰欧文·希伯来书注释',
+                     work_en='An Exposition of the Epistle to the Hebrews')),
+    ('mhenry',  dict(name='马太·亨利',   short='亨利',    en='Matthew Henry',   years='1662–1714', dir='mhenry',
+                     work_cn='马太亨利圣经注释',
+                     work_en='An Exposition of the Old and New Testaments')),
+    ('bridges', dict(name='查理·毕列志', short='毕列志',  en='Charles Bridges', years='1794–1869', dir='bridges',
+                     work_cn='箴言书注释',
+                     work_en='An Exposition of the Book of Proverbs')),
 ])
-
 # 和合本 66 卷：(目录 id, 中文名, 新旧约, 英文名)
 # 英文名显示在卡片上（照加尔文主页的做法：中文名下缀一行英文）
 BOOKS = [
@@ -61,16 +76,72 @@ BOOKS = [
     ('3john','约翰三书','nt','3 John'), ('jude','犹大书','nt','Jude'), ('revelation','启示录','nt','Revelation'),
 ]
 
-# 合参：不对应单一书卷，单列一组
-HARMONY = [
-    ('calvin', 'harmony-1', '共观福音合参（卷一）'),
-    ('calvin', 'harmony-2', '共观福音合参（卷二）'),
-    ('calvin', 'harmony-3', '共观福音合参（卷三）'),
-    ('calvin', 'harmony-law-1', '摩西五经合参（卷一）'),
-    ('calvin', 'harmony-law-2', '摩西五经合参（卷二）'),
-    ('calvin', 'harmony-law-3', '摩西五经合参（卷三）'),
-    ('calvin', 'harmony-law-4', '摩西五经合参（卷四）'),
-]
+# 加尔文有两套合参，都不按单卷成书，所以相关书卷名下的加尔文入口一律指向
+# 各自的合参索引页，由那里再进具体章节：
+#   共观福音合参 → 马太／马可／路加
+#   摩西五经合参 → 出／利／民／申（创世记他另有单独注释，不在此列）
+# 英文书名照各自 AGES 版实际所题：共观那套带 Calvin，五经那套不带。
+# ── 分卷 ────────────────────────────────────────────────────
+# 加尔文有几部书拆成多册。以前只链到卷一、标一句「（全二卷）」，等于把卷二
+# 藏了起来——用户要求逐卷罗列并写明各卷多少章。
+#
+# 下面每一项 = (目录, 中文卷名, 英文卷名, 首章, 末章)。
+# 中文名取各册 index.html 的 book_name，英文名取对应 *-en 的 book_name
+# （AGES 版实际书名，如 "Calvin on Psalms (Vol. 1)"），章号范围由目录下的
+# N.md 实际编号统计，全部是查出来的，不要凭印象填。
+#
+# 注意两类分卷的章号含义不同：
+#   诗篇/以赛亚/耶利米 —— N.md 就是该卷书的篇/章号，所以卷二从 79 / 38 / 24 起；
+# 合参（共观福音、摩西五经合参）**不在此表**：它们的册是按合参体例编的，
+# 与被注释书卷不对应，入口一律落在合参索引页，由那页按经文检索。
+VOLUMES = {
+    'psalms': [('psalms-1',  '诗篇注释（卷一）', 'Calvin on Psalms (Vol. 1)',  1,  78),
+               ('psalms-2',  '诗篇注释（卷二）', 'Calvin on Psalms (Vol. 2)', 79, 150)],
+    'isaiah': [('isaiah-1',  '以赛亚书注释（卷一）', 'Calvin on Isaiah (Vol. 1)',  1, 37),
+               ('isaiah-2',  '以赛亚书注释（卷二）', 'Calvin on Isaiah (Vol. 2)', 38, 66)],
+    'jeremiah': [('jeremiah-1', '耶利米书注释（卷一）', 'Calvin on Jeremiah (Vol. 1)',  1, 23),
+                 ('jeremiah-2', '耶利米书注释（卷二）', 'Calvin on Jeremiah (Vol. 2)', 24, 52)],
+}
+
+# ── 书脊布面色 ──────────────────────────────
+# 12 色按 CIELAB 均匀排布：色相 30° 均分一圈，彩度锁在 C<=19（再高就艳，丢掉
+# 旧书布面的沉着），明度在 L*26 / L*38 之间交替——同一明度下 30° 的色相差只
+# 有约 dE 11，靠明度错开才拉得到最小 dE 15.5。
+# 上一组是凭感觉挑的，「靛灰 #3a4a5a」与「石板灰 #2f3b46」dE 仅 7.2、「藏青」
+# 与「紫灰」9.7——低于 12 肉眼认不出是两个色。用户反映这几个色「没看到在哪」，
+# 其实都在，只是糊成了一片蓝灰。
+CLOTH = ['#59323a', '#775047', '#503923', '#605a3b', '#344226', '#3d614d',
+         '#0c4541', '#28616c', '#144258', '#4b5978', '#443854', '#705065']
+#         酒红      栗褐      深褐      橄榄      苔绿      墨绿
+#         深青      靛青      藏青      石板蓝    紫灰      梅紫
+
+# 上色次序是离线退火搜出来的，不是按公式取模。取模公式必然带周期，排到墙上
+# 就是看得见的花纹：i*4 出过「酒红 苔绿 藏青」三色循环三遍；i*5 虽能出满 12 色，
+# 但恰好排成 12 列时正下方撞色。退火的优化目标是：12 色全用上、相邻及近距离
+# 不同色、8 至 20 列的任何视口宽度下正下方尽量不撞、且不出现重复的二连三连
+# 片段（重复片段比单点撞色更显眼）。长度按两架的书卷数定，不够时按长度取模。
+CLOTH_ORDER = {
+    'ot': [10, 4, 1, 11, 8, 4, 2, 10, 1, 9, 5, 8, 7, 2, 6, 9, 0, 5, 7, 3, 6, 11, 7, 0, 10, 6, 3, 11, 0, 1, 4, 10, 3, 8, 1, 2, 9, 4, 5],
+    'nt': [3, 1, 10, 7, 6, 9, 0, 3, 8, 10, 11, 9, 5, 0, 4, 8, 2, 11, 6, 5, 4, 3, 2, 10, 1, 6, 7],
+}
+
+# 合参覆盖的书卷 → (入口路径, 中文书名, 英文书名)
+# 中文名取站内既有写法，勿另造：
+#   calvin/harmony-index/index.html      title: 共观福音注释
+#   calvin/harmony-law-index/index.html  title: 摩西五经合参
+# 分册页也印证：harmony-1 = 「共观福音（卷一）」，harmony-law-1 = 「摩西五经合参（卷一）」
+HARMONY_MAP = {
+    'matthew':     ('/calvin/harmony-index/',     '共观福音注释', 'Calvin on the Harmony of the Evangelists'),
+    'mark':        ('/calvin/harmony-index/',     '共观福音注释', 'Calvin on the Harmony of the Evangelists'),
+    'luke':        ('/calvin/harmony-index/',     '共观福音注释', 'Calvin on the Harmony of the Evangelists'),
+    'exodus':      ('/calvin/harmony-law-index/', '摩西五经合参', 'Harmony of the Law'),
+    'leviticus':   ('/calvin/harmony-law-index/', '摩西五经合参', 'Harmony of the Law'),
+    'numbers':     ('/calvin/harmony-law-index/', '摩西五经合参', 'Harmony of the Law'),
+    'deuteronomy': ('/calvin/harmony-law-index/', '摩西五经合参', 'Harmony of the Law'),
+}
+
+# 合参组已无内容——两套合参都并进了对应书卷
+HARMONY = []
 
 SKIP = re.compile(r'-en$|-index$')
 
@@ -92,7 +163,7 @@ def has_content(d: Path) -> bool:
 
 
 def scan(author_id: str) -> dict:
-    """返回 {book_id: 该注释家该卷的入口路径}。分卷聚合到第一册。"""
+    """返回 {book_id: (入口路径, 册数)}。分卷聚合到第一册，册数用来标「全二卷」。"""
     base = ROOT / AUTHORS[author_id]['dir']
     if not base.is_dir():
         return {}
@@ -108,9 +179,13 @@ def scan(author_id: str) -> dict:
             book, vol = d.name, 0
         if book.startswith('harmony'):
             continue
-        if book not in found or vol < found[book][0]:
-            found[book] = (vol, f'/{AUTHORS[author_id]["dir"]}/{d.name}/')
-    return {k: v[1] for k, v in found.items()}
+        prev = found.get(book)
+        n = (prev[2] if prev else 0) + 1
+        if prev is None or vol < prev[0]:
+            found[book] = (vol, f'/{AUTHORS[author_id]["dir"]}/{d.name}/', n)
+        else:
+            found[book] = (prev[0], prev[1], n)
+    return {k: (v[1], v[2]) for k, v in found.items()}
 
 
 def yaml_escape(s: str) -> str:
@@ -130,29 +205,77 @@ def main():
                   f'    short: {yaml_escape(a["short"])}',
                   f'    en: {yaml_escape(a["en"])}',
                   f'    years: {yaml_escape(a["years"])}',
+                  # 原书名要输出到 yml：扉页那块「本页收录」按各家真实书名列一次，
+                  # 索引行里就只出现注释家的名字，不必把同一个书名重复 116 遍。
+                  f'    work_cn: {yaml_escape(a["work_cn"])}',
+                  f'    work_en: {yaml_escape(a["work_en"])}',
                   f'    books: {n}']
     lines += ['', 'books:']
     total_links = 0
+    seen = {'ot': 0, 'nt': 0}   # 各架已排了几本，用来取布面色
     for bid, cn, testament, en in BOOKS:
-        entries = [(aid, by_author[aid][bid]) for aid in AUTHORS if bid in by_author[aid]]
+        entries = [(aid, by_author[aid][bid][0], by_author[aid][bid][1])
+                   for aid in AUTHORS if bid in by_author[aid]]
+        # 合参覆盖的书卷：加尔文没有分卷注释，补一条指向对应的合参索引页。
+        # 放在最前，与其他卷「加尔文在先」的次序一致。
+        if bid in HARMONY_MAP:
+            entries.insert(0, ('calvin', HARMONY_MAP[bid][0], 1))
+        # 分卷逐册罗列：把加尔文那一条展开成 N 条，各带章数。
+        # 以前只链到卷一、标一句「（全二卷）」，等于把卷二藏起来了。
+        expanded = []
+        for _aid, _path, _n in entries:
+            if _aid != 'calvin':
+                expanded.append((_aid, _path, None, None, None))
+            elif bid in VOLUMES:
+                unit = '篇' if bid == 'psalms' else '章'
+                for d, vcn, ven, lo, hi in VOLUMES[bid]:
+                    expanded.append((_aid, f'/calvin/{d}/', vcn, ven,
+                                     f'第 {lo}–{hi} {unit} · 共 {hi - lo + 1} {unit}'))
+            elif bid in HARMONY_MAP:
+                # 合参**不逐册罗列**：太可路／出利民申的入口一律落在合参索引页，
+                # 由那一页按经文检索。合参各册是按合参体例编的，册与被注释书卷
+                # 不对应（卷一未必就是马太前十章），列出来反而添乱。
+                expanded.append((_aid, _path, HARMONY_MAP[bid][1], HARMONY_MAP[bid][2], None))
+            else:
+                expanded.append((_aid, _path, None, None, None))
+        entries = expanded
         if not entries:
             continue
         total_links += len(entries)
+        order = CLOTH_ORDER[testament]
+        cloth = CLOTH[order[seen[testament] % len(order)]]
+        seen[testament] += 1
         lines += [f'  - id: {bid}',
                   f'    name: {yaml_escape(cn)}',
                   f'    en: {yaml_escape(en)}',
                   f'    testament: {testament}',
+                  f'    cloth: {yaml_escape(cloth)}',
                   '    links:']
-        for aid, path in entries:
-            # 注释书的书名，中英各一。各家现成的 book_name 格式不统一
-            #（加尔文中文作「希伯来书·加尔文注释」、马太亨利只写「希伯来书」、
-            # 欧文页面根本没有这个字段），所以这里按统一规则生成：
-            #   中文 = 简称 + 注释      英文 = 作者英文名 on 书卷英文名
-            # 英文这条与加尔文英文页的 book_name（"Calvin on Hebrews"）一致。
-            t_cn = AUTHORS[aid]['short'] + '注释'
-            t_en = AUTHORS[aid]['en'] + ' on ' + en
+        for aid, path, ov_cn, ov_en, note in entries:
+            # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名
+            # （「加尔文圣经注释」），于是马可福音那一条中文写总名、英文写
+            # Calvin on the Harmony of the Evangelists，两边对不上，且 41 卷
+            # 中文完全相同，等于没有信息——被用户指出。
+            #
+            # 各家著作形态不同，命名方式因此也不同，不要强行统一：
+            #   加尔文   逐卷独立成书 → 用该卷书名「创世记注释」；合参覆盖的
+            #            四卷（太可路／出利民申）用合参书名，与英文一致
+            #   马太亨利 全本圣经一部通注 → 「马太亨利圣经注释·马可福音」，
+            #            点明是总注中的哪一卷，英文仍是那部书的真实书名
+            #   欧文/毕列志 本就只注一卷，站内标题已经具体，照用
+            if ov_cn:                    # 分卷／合参各册，书名已在 VOLUMES 里查定
+                t_cn, t_en = ov_cn, ov_en
+            elif aid == 'calvin':
+                t_cn, t_en = cn + '注释', 'Calvin on ' + en
+            elif aid == 'mhenry':
+                t_cn = AUTHORS[aid]['work_cn'] + '·' + cn
+                t_en = AUTHORS[aid]['work_en']
+            else:
+                t_cn, t_en = AUTHORS[aid]['work_cn'], AUTHORS[aid]['work_en']
+            note_f = f', note: {yaml_escape(note)}' if note else ''
             lines.append(f'      - {{author: {aid}, path: {yaml_escape(path)}, '
-                         f'title_cn: {yaml_escape(t_cn)}, title_en: {yaml_escape(t_en)}}}')
+                         f'title_cn: {yaml_escape(t_cn)}, title_en: {yaml_escape(t_en)}'
+                         f'{note_f}}}')
     lines += ['', 'harmony:']
     for aid, dirname, cn in HARMONY:
         d = ROOT / AUTHORS[aid]['dir'] / dirname
@@ -162,7 +285,7 @@ def main():
         path = '/' + AUTHORS[aid]['dir'] + '/' + dirname + '/'
         lines += [f'  - name: {yaml_escape(cn)}',
                   f'    author: {aid}',
-                  f'    title_cn: {yaml_escape(AUTHORS[aid]["short"] + "注释")}',
+                  f'    title_cn: {yaml_escape(AUTHORS[aid]["work_cn"])}',
                   f'    path: {yaml_escape(path)}']
 
     out = ROOT / '_data' / 'commentaries.yml'
