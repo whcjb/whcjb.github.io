@@ -15,8 +15,12 @@
 - [ ] 前后章导航 label 已查（每章一行 `(N, "FIRST_HEADER", "Chapter N — Title")`）
 - [ ] **发布后立刻跑 Gate T**（见 [refs/audit-gates.md](refs/audit-gates.md#gate-t)）：
       `python3 scripts/qa_ages_typography.py <源PDF> <发布目录>`
-      **必须通过才算发布完成。** 这是全流程唯一一条验证「产物忠于 PDF」的检查；
-      其余所有 Gate 只验产物内部自洽，样式被管道吃掉时它们全部报 0。
+      **必须通过才算发布完成。**
+- [ ] **发布后立刻跑 Gate X**（正文字符流比对）：
+      `python3 scripts/qa_ages_text.py <源PDF> <发布目录> --skip-tail N`
+      正文相似度须 ≥ 0.995，剩余差异段逐条归因。
+      Gate T 与 Gate X 是全流程仅有的两条「产物忠于 PDF」检查；其余所有
+      Gate 只验产物内部自洽，内容被吃掉时它们全部报 0。
 
 ---
 

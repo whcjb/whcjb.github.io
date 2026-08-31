@@ -7,6 +7,7 @@
 ## 起手 checklist
 
 - [ ] **★ Gate T 字形普查通过**（`scripts/qa_ages_typography.py <pdf> <目录>`）
+- [ ] **★ Gate X 正文比对通过**（`scripts/qa_ages_text.py <pdf> <目录>`，相似度 ≥0.995）
       —— 单列出来是因为它和下面那条性质不同：下面是「产物内部自洽」，
       这条是「产物忠于 PDF」。贺智那次照 skill 走完、所有 Gate 全 0，
       仍丢了粗体、居中标题、目录层级三样，就是因为没有这一条。

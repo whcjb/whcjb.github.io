@@ -264,6 +264,41 @@ python3 scripts/qa_ages_typography.py <源PDF> <发布目录>
 **报错时的判断顺序**：先问「是不是口径问题」，再问「是不是管道吃了样式」。
 上面三条是口径；真缺陷长这样——产物侧接近 0，或缺口成整数倍。
 
+## Gate X：正文字符流比对（产物 vs PDF）★ 与 Gate T 同等重要
+
+```bash
+python3 scripts/qa_ages_text.py <源PDF> <发布目录> [--skip-tail N]
+```
+
+Gate T 只比**字形特征的数量**，证明不了正文一个字都没丢；本 Gate 比正文本身。
+两侧归一到纯文字流后**按词** diff（百万字符按字符跑 SequenceMatcher 要几十
+分钟，按词是秒级；定位到差异段再看字符也够用）。
+
+归一规则（两侧都做，务求可比）：
+- PDF 侧：AGES 希腊转写码 → Unicode（与产物同一函数）、空格大写折叠
+  （`B o o k s` → `Books`）、去页码行、`--skip-tail` 去掉 AGES 卷尾广告页。
+- 产物侧：剥 HTML → 再剥脚注标记（**顺序不能反**，脚注引用常包在 `<sup>`
+  里，反了会剩 `[^]` 残骸）、去 markdown 标题号与强调标记。
+- 脚注**单独成流**：AGES 把脚注全收在书末 FOOTNOTES 之后，产物按章分散，
+  混在一起比会刷出大片假差异。
+- 脚注引用还原成裸数字（PDF 里就是上标数字 `Nero. 1`，产物里是 `[^f1]`）。
+
+**已知坑**：切分脚注区只能认书末那个 FOOTNOTES 标题——卷首的超链接目录里
+也有一行「Footnotes」，不设页数下限（`i > page_count * 0.75`）会从第 5 页
+就切开，把整本正文都算进脚注流。
+
+**验收线**：正文相似度 ≥ 0.995，且剩余差异段逐条能归因（表示差异 vs 真缺陷）。
+贺智实测：前书 0.99808、后书 0.99823，剩余 4 段全是脚本自身的表示差异。
+
+**这道 Gate 当场查出两处真缺陷**，而所有既有 Gate 都报 0：
+1. 脚注引用双层套嵌 31 处（`Nero.[^[^f1]]`，链接失效）——提取器吐 `[^f3]`
+   后，`format_inline` 的裸引用规则又在其内部命中一次。Gate 5 的 ref/def
+   配对用宽松正则，认不出套嵌。
+2. 希腊转换吃掉 `<sty>` 标记 131 处——`convert_ages_greek` 保护 `<sty>` 的
+   stash 正则写死 `c="…" i="…"`，不认后加的 `b="0"`，于是 `laid<sty c=…>`
+   被当希腊文转成 `λαιδστψ c="800000" i="1" b="0">`。尤其隐蔽：`sty` 自己也
+   被转成 `στψ`，grep `sty c=` 都搜不到。
+
 ## 整合脚本：一次跑完所有 gate
 
 ```bash
@@ -296,7 +331,8 @@ echo "9. <p> no md attr: $(grep -E '^<p [^>]*>' $F | grep -v 'markdown=' | grep 
 > 而本脚本是**逐文件**检查。commit 前两个都要跑：
 > ```bash
 > bash scripts/audit-md.sh <每个 md>                       # 内部自洽
-> python3 scripts/qa_ages_typography.py <pdf> <发布目录>   # 忠于 PDF
+> python3 scripts/qa_ages_typography.py <pdf> <发布目录>   # 忠于 PDF·字形
+> python3 scripts/qa_ages_text.py       <pdf> <发布目录>   # 忠于 PDF·正文
 > ```
 （check 9 非 0 = 有 `<p>` 漏 `markdown="1"`，用 Gate 5b 的 grep 定位；其余 Gate 5c/5d/5f/9
 按需单独跑。）

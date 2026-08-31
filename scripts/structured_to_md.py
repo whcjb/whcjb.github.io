@@ -119,7 +119,12 @@ def convert_ages_greek(text: str) -> str:
     def _stash_open(m):
         sty_opens.append(m.group(0))
         return f'\x00S{len(sty_opens)-1:04d}\x00'
-    text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]">', _stash_open, text)
+    # ⚠️ b="0|1" 是后加的粗体位，这里必须一并认；不然新格式的 <sty> 藏不住，
+    # 会被下面的希腊转写正则当成待转文本吃掉（`<` 被当作抑扬符），
+    # 产物里出现 `λαιδστψ c="800000" i="1" b="0">` 这种乱码。
+    # 加粗那次就是这样悄悄坏掉的——所有既有 Gate 都没报，是「产物 vs PDF
+    # 正文比对」(qa_ages_text.py) 查出来的。
+    text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]"(?: b="[01]")?>', _stash_open, text)
     text = text.replace('</sty>', '\x00E\x00')
     # Hide KJV-supplied [word] brackets — Ages uses `[his]` / `[he saith]` for
     # KJV translator-inserted words. Inside `[...]` the trailing `]` looks like
@@ -237,8 +242,13 @@ def format_inline(text: str) -> str:
     # OCR sometimes flips case for Symbol-font glyphs). Preceded by any
     # non-letter (space / punct / italic-close `*` / span-close `</span>` etc.)
     # to avoid English words containing "fN".
+    # ⚠️ 前面不能已经是 `[^`：提取器现在会直接吐 `[^f3]`（行内上标脚注，
+    # 见 calvin_extract 的 inline_sup_footnotes），这条裸引用规则会在它内部
+    # 再命中一次，套成 `[^[^f3]]`，脚注链接直接失效。
+    # Gate 5 的 ref/def 配对用的是宽松正则，认不出这种双层套嵌；
+    # 是「产物 vs PDF 正文比对」（qa_ages_text.py）才把它揪出来的。
     text = re.sub(
-        r'(?<![A-Za-z])[Ff](\d{1,4}[A-Z]?)\b',
+        r'(?<!\[\^)(?<![A-Za-z])[Ff](\d{1,4}[A-Z]?)\b',
         lambda m: f'[^f{m.group(1)}]', text)
     # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)

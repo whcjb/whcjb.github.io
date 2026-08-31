@@ -3,7 +3,7 @@ layout: hodge-chapter
 book_id: 2corinthians
 book_name: "Hodge on 2 Corinthians"
 title: "Preface"
-date: 2026-08-31 16:17
+date: 2026-08-31 17:06
 next_section: 1
 next_label: "Chapter 1"
 ---

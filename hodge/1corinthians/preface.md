@@ -3,7 +3,7 @@ layout: hodge-chapter
 book_id: 1corinthians
 book_name: "Hodge on 1 Corinthians"
 title: "Preface"
-date: 2026-08-31 16:17
+date: 2026-08-31 17:06
 next_section: 1
 next_label: "Chapter 1"
 ---
@@ -101,7 +101,7 @@ The Grecian Peloponnesus is connected with the continent by an isthmus from four
 
 <!-- PAGE 5 -->
 
-Christians of this city. Erastus, Phoebe, and Sosthenes are Greek names; but Gaius, Quintus, Fortunatus, Crispus, Justus, Achaicus, are of Roman origin. This colony, however, was little more than the nucleus of the new city. Merchants flocked thither from all parts of Greece; Jews also were attracted by the facilities of commerce; wealth, art, literature, and luxury revived. The Isthmian games were again celebrated under the presidency of the city. It was made the capital of Achaia, which as a Roman province, included the greater part of Greece. Under the fostering care of Augustus, Corinth regained much of its ancient splendor, and during the century which had nearly elapsed since its restoration, before it was visited by the Apostle Paul, it had reached a pre-eminence which made it the glory of Greece. It was at this time under the rule of the Proconsul Gallio, the brother of Seneca, — a man distinguished for integrity and mildness. His brother says of him: <span style="color:#800000">*Nemo enim mortalium uni tam dulcis est*</span>, <span style="color:#800000">*quam hic omnibus.*</span> His refusal to entertain the frivolous charges brought by the Jews against Paul (Acts 18:14-16), is in keeping with the character given of him by his contemporaries. He was one of the victims of the cruelty of Nero.[^[^f1]]
+Christians of this city. Erastus, Phoebe, and Sosthenes are Greek names; but Gaius, Quintus, Fortunatus, Crispus, Justus, Achaicus, are of Roman origin. This colony, however, was little more than the nucleus of the new city. Merchants flocked thither from all parts of Greece; Jews also were attracted by the facilities of commerce; wealth, art, literature, and luxury revived. The Isthmian games were again celebrated under the presidency of the city. It was made the capital of Achaia, which as a Roman province, included the greater part of Greece. Under the fostering care of Augustus, Corinth regained much of its ancient splendor, and during the century which had nearly elapsed since its restoration, before it was visited by the Apostle Paul, it had reached a pre-eminence which made it the glory of Greece. It was at this time under the rule of the Proconsul Gallio, the brother of Seneca, — a man distinguished for integrity and mildness. His brother says of him: <span style="color:#800000">*Nemo enim mortalium uni tam dulcis est*</span>, <span style="color:#800000">*quam hic omnibus.*</span> His refusal to entertain the frivolous charges brought by the Jews against Paul (Acts 18:14-16), is in keeping with the character given of him by his contemporaries. He was one of the victims of the cruelty of Nero.[^f1]
 
 <p style="text-align:center" markdown="1"><span style="color:#0000d4">**2. PAUL’S LABORS IN CORINTH.**</span></p>
 
