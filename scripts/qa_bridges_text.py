@@ -64,10 +64,11 @@ def main():
     # 属有意规范化，比对前先归一化，否则 56 处噪声盖住真差异。
     # PDF 文字层里有字体映射错误（⛿=住、✀=佐，见 extract 的 GLYPH_FIX），产物
     # 已修正，比对时对 PDF 侧应用同一张表，否则 217 处「差异」全是这个噪声。
-    from extract_bridges_proverbs import GLYPH_FIX
+    # 用 fix_glyphs 而不是直接遍历 GLYPH_FIX：修正表后来多了一张按上下文
+    # 替换的 GLYPH_FIX_CTX（绿→练，但「灯红酒绿」要保留），只查前一张会漏。
+    from extract_bridges_proverbs import fix_glyphs
     def norm(s):
-        for bad, good in GLYPH_FIX.items():
-            s = s.replace(bad, good)
+        s = fix_glyphs(s)
         return (s.replace('：', ':').replace('－', '-')
                  .replace('—', '-').replace('–', '-'))
     a, b = norm(pdf_stream()), norm(md_stream())
