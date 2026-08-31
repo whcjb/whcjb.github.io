@@ -3,9 +3,11 @@ layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
 title: "导论 39 · 论主日"
-date: 2026-07-17 10:44
+date: 2026-08-31 06:14
 prev_url: "/owen/hebrews/exercitations/38/zh/"
 prev_label: "导论 38"
+next_url: "/owen/hebrews/exercitations/40/zh/"
+next_label: "导论 40"
 en_url: "/owen/hebrews/exercitations/39/"
 ---
 <div class="owen-exer-eyebrow">安息日与主日专论（Day of Sacred Rest） · Exercitation V</div>

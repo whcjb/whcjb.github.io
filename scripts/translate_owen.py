@@ -267,7 +267,14 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     zh_page = fm_zh + zh_body
 
     # 1) 中文 raw(翻译产物, chmod 444 保留)
-    raw_dir = ROOT / 'owen_raw/hebrews/zh_exercitations'
+    # ⚠️ raw 必须按「章 / 导论 / 卷首」分目录：三类的编号各自从 1 起，
+    # 全写进 zh_exercitations/{N}.md 会互相覆盖。实测第 1、2 章的 raw 已经
+    # 把导论 1、2 的 raw 覆盖掉了（front matter 里 book_id 变成了 hebrews），
+    # 卷首 1–8 更早就覆盖过导论 1–8。发布出去的中文页没事，丢的是 raw 备份。
+    _sect = Path(page_path).parent.parent.name      # exercitations / prefaces / hebrews
+    _sub = {'exercitations': 'zh_exercitations',
+            'prefaces': 'zh_prefaces'}.get(_sect, 'zh_chapters')
+    raw_dir = ROOT / 'owen_raw/hebrews' / _sub
     raw_dir.mkdir(parents=True, exist_ok=True)
     raw_out = raw_dir / f'{seqn}.md'
     if raw_out.exists():
