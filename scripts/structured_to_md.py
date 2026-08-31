@@ -249,7 +249,9 @@ def format_inline(text: str) -> str:
     return text
 
 
-_STY_RE = re.compile(r'<sty c="([0-9a-fA-F]{6})" i="([01])">(.*?)</sty>', re.DOTALL)
+# b="0|1" 是后加的粗体位；写成可选，旧的结构化文件（无 b）照样能解析。
+_STY_RE = re.compile(
+    r'<sty c="([0-9a-fA-F]{6})" i="([01])"(?: b="([01])")?>(.*?)</sty>', re.DOTALL)
 
 
 def apply_verse_styling(body: str, red: bool = False) -> str:
@@ -269,7 +271,7 @@ def apply_verse_styling(body: str, red: bool = False) -> str:
     the wrap (otherwise kramdown sees `*X *Y* Z*` as closed italic touching
     letters with no word boundary).
     """
-    def _wrap(color_hex: str, italic: bool, inner: str) -> str:
+    def _wrap(color_hex: str, italic: bool, inner: str, bold: bool = False) -> str:
         if not inner.strip():
             return inner
         m = re.match(r'^(\s*)(.+?)(\s*)$', inner, re.DOTALL)
@@ -289,17 +291,29 @@ def apply_verse_styling(body: str, red: bool = False) -> str:
         ages_m = re.fullmatch(r'<([0-9A-Za-z][0-9A-Za-z ]*)>', core)
         if color_hex_lower == '800000' and not italic and ages_m:
             return f'{lead}<span class="ages-code">&lt;{ages_m.group(1)}&gt;</span>{trail}'
-        if is_black and not italic:
+        # 黑色且既非斜体又非粗体 → 无需任何包裹
+        if is_black and not italic and not bold:
             return lead + core + trail
-        if is_black and italic:
-            if len(core) < 2:
+        # 粗体用 markdown `**`，与斜体可叠加（`***X***`）。放在最内层，
+        # 外面再套颜色 span，kramdown 才会解析（span 内需 markdown="1"，
+        # 由段落级的 <p markdown="1"> 提供）。
+        def _bi(t: str) -> str:
+            if italic:
+                t = f'*{t}*'
+            if bold:
+                t = f'**{t}**'
+            return t
+        if is_black and (italic or bold):
+            if len(core) < 2 and not bold:
                 return lead + core + trail
-            return f'{lead}*{core}*{trail}'
+            return f'{lead}{_bi(core)}{trail}'
+        if is_black:
+            return lead + core + trail
         # Non-black color → emit explicit span
-        rendered = f'*{core}*' if italic else core
-        return f'{lead}<span style="color:#{color_hex_lower}">{rendered}</span>{trail}'
+        return (f'{lead}<span style="color:#{color_hex_lower}">'
+                f'{_bi(core)}</span>{trail}')
     def _repl(m):
-        return _wrap(m.group(1), m.group(2) == '1', m.group(3))
+        return _wrap(m.group(1), m.group(2) == '1', m.group(4), m.group(3) == '1')
     body = _STY_RE.sub(_repl, body)
     if True:
         # Merge consecutive red-italic spans separated only by whitespace
@@ -666,7 +680,11 @@ def convert(structured_path: Path, out_path: Path) -> None:
         # 普通段落，与正文里的 [^fN] 对不上，脚注跳转全失效。
         # 进入条件严格限定为「居中标题恰好是 FOOTNOTES」，之后每个以 `N. `
         # 起头的 BODY 转成 `[^fN]: 正文`，续行并入上一条。
-        if tag in ('CENTERED_H2', 'CENTERED_H1') and content.strip().upper() == 'FOOTNOTES':
+        # 比较前必须剥掉 <sty> 包裹：标题在 PDF 里是粗体，加粗进管道后
+        # content 变成 `<sty c="…" b="1">FOOTNOTES</sty>`，精确等值会失配，
+        # 整个脚注区就退回普通段落、def 归零（改粗体那次踩过）。
+        _bare = re.sub(r'</?sty(?:\s[^>]*)?>', '', content).strip().upper()
+        if tag in ('CENTERED_H2', 'CENTERED_H1') and _bare == 'FOOTNOTES':
             in_footnote_section = True
             i += 1
             continue
@@ -952,7 +970,7 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 out.append('')
                 out.append(f'<p class="{size_class}" style="text-align:center; font-size:{font_size}; font-weight:{font_weight}; margin:18px 0 12px;" markdown="1">{cleaned}</p>')
                 out.append('')
-        elif tag == 'INDENT':
+        elif tag.startswith('INDENT'):
             # PDF outline subitem (indented from body), e.g. "1. A proof of its
             # necessity ..." at x=44 (body is x=26). Clear pending fn merge.
             pending_fn_idx = None
@@ -979,7 +997,16 @@ def convert(structured_path: Path, out_path: Path) -> None:
             body = bold_leading_verse_num(body)
             # markdown="1" so kramdown still expands *italic* / [^fN] / **bold** inside
             out.append('')
-            out.append(f'<p style="margin-left:2em;" markdown="1">{body}</p>')
+            # 缩进层级：提取层按块左边距给出 INDENT / INDENT2 / INDENT3…
+            # 每级 2em。此前无论几级都写死 2em，贺智目录的两级层级
+            # （Introduction 一级、条目二级）被压平（用户 2026-08-31 指出）。
+            # 提取层的层级号来自块左边距的绝对值（贺智目录一级 x≈74、
+            # 二级 x≈110 → INDENT2 / INDENT3），直接乘 2em 会过深；
+            # 用 max(1, lvl-1) 归一：INDENT/INDENT2 → 2em，INDENT3 → 4em，
+            # 既还原两级层级，也不改其他书卷单级 INDENT 的既有 2em。
+            _lvl = int(tag[6:]) if len(tag) > 6 and tag[6:].isdigit() else 1
+            _em = 2 * max(1, _lvl - 1)
+            out.append(f'<p style="margin-left:{_em}em;" markdown="1">{body}</p>')
             out.append('')
             i += 1
             continue

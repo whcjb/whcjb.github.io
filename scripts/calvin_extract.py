@@ -3092,7 +3092,7 @@ def _render_spans_with_italic(spans):
     span, #008080 → Hebrew teal, #0000d4 → title blue, etc.
     """
     parts = []
-    open_style = None  # tuple (color_int, is_italic), or None
+    open_style = None  # tuple (color_int, is_italic, is_bold), or None
     # 本行的主字号：上标要相对正文判断，不能写死绝对值（各卷正文字号不同）
     body_size = max((sp.get('size', 0) for sp in spans if sp.get('text', '').strip()),
                     default=12.0)
@@ -3111,15 +3111,22 @@ def _render_spans_with_italic(spans):
             parts.append(f'[^f{text.strip()}]')
             continue
         is_italic = bool(s['flags'] & 2)
+        # 粗体：PyMuPDF flags bit 4 (=16)，字体名兜底（有的 PDF 只在字体名里
+        # 带 Bold 而不置 flag）。此前整条管道只抓「颜色 + 斜体」，黑色粗体被
+        # 当成普通正文吐出，贺智 1cor 那些 **First,** / **Secondly,** 段首
+        # 提示词全部丢了加粗——用户 2026-08-31 指出。
+        is_bold = bool(s['flags'] & 16) or 'Bold' in s.get('font', '')
         color = s.get('color', 0)
-        # Plain black non-italic → no style wrap needed
-        style = (color, is_italic) if (color != 0 or is_italic) else None
+        # Plain black non-italic non-bold → no style wrap needed
+        style = ((color, is_italic, is_bold)
+                 if (color != 0 or is_italic or is_bold) else None)
         if style != open_style:
             if open_style is not None:
                 parts.append('</sty>')
             if style is not None:
                 color_hex = f'{style[0]:06x}'
-                parts.append(f'<sty c="{color_hex}" i="{1 if style[1] else 0}">')
+                parts.append(f'<sty c="{color_hex}" i="{1 if style[1] else 0}"'
+                             f' b="{1 if style[2] else 0}">')
             open_style = style
         parts.append(text)
     if open_style is not None:
@@ -3442,6 +3449,17 @@ def phil_reconstruct_page(page, page_num=None):
         # PDF outline can have lm/rm symmetric (e.g. lm=44 rm=45) but is
         # semantically a left-indented list, not centered.
         starts_with_list_item = bool(re.match(r'^\s*[IVX]+\.\s|^\s*\d+\.\s', block_text_preview))
+        # 但「编号 + 全大写短标题」是居中小节标题，不是列表项。
+        # 贺智 1cor 导论的「4. DATE. — CONTENTS OF THE EPISTLE.」在 PDF 里
+        # 左距 74 / 右距 72 明明居中，却因为以 "4. " 开头被这条守卫否掉，
+        # 落成 [INDENT] 偏左（用户 2026-08-31 指出）。
+        # 判据取「去掉编号后仍以大写字母为主 + 短」，正文里的编号列表项
+        # （"1. The method of the whole is so disposed…" 句式、长）不会命中。
+        _no_num = re.sub(r'^\s*(?:[IVX]+|\d+)\.\s*', '', block_text_preview)
+        _letters = [c for c in _no_num if c.isalpha()]
+        if (starts_with_list_item and len(block_text_preview) < 80 and _letters
+                and sum(c.isupper() for c in _letters) / len(_letters) > 0.8):
+            starts_with_list_item = False
         # Check if ALL spans in this block are italic (flags & 2). If so AND
         # lm > 30, this is a citation/quote paragraph, not a centered title.
         is_all_italic = False
@@ -3547,7 +3565,11 @@ def phil_reconstruct_page(page, page_num=None):
                 and (is_outline_item or is_narrow_indented or is_all_italic)
             )
             if is_indented_subitem:
-                line_class = 'INDENT'
+                # 记录缩进层级：块左边距每 30px 一级（贺智目录 Introduction
+                # x≈52 是一级、条目 x≈116 是二级）。此前一律输出 [INDENT]，
+                # 下游统一给 margin-left:2em，两级层级被压平成一级。
+                _lvl = max(1, min(4, int((block_lm - 26) // 30) + 1))
+                line_class = 'INDENT' if _lvl <= 1 else f'INDENT{_lvl}'
             # Centered block: override BODY → CENTERED (do not override FOOTNOTE/VERSE).
             # Also demote H1/H2 → CENTERED_H1/CENTERED_H2 when centered AND NOT
             # a chapter heading ("CHAPTER N"). Chapter headings keep H1 so the
