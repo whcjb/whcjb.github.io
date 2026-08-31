@@ -13,6 +13,10 @@
 - [ ] `_layouts/calvin-en.html` 和 `_layouts/calvin-en-book.html` 已存在
 - [ ] section header → chapter 边界映射已确认（章节起始 section title 列表）
 - [ ] 前后章导航 label 已查（每章一行 `(N, "FIRST_HEADER", "Chapter N — Title")`）
+- [ ] **发布后立刻跑 Gate T**（见 [refs/audit-gates.md](refs/audit-gates.md#gate-t)）：
+      `python3 scripts/qa_ages_typography.py <源PDF> <发布目录>`
+      **必须通过才算发布完成。** 这是全流程唯一一条验证「产物忠于 PDF」的检查；
+      其余所有 Gate 只验产物内部自洽，样式被管道吃掉时它们全部报 0。
 
 ---
 

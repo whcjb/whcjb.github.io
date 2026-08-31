@@ -6,6 +6,10 @@
 
 ## 起手 checklist
 
+- [ ] **★ Gate T 字形普查通过**（`scripts/qa_ages_typography.py <pdf> <目录>`）
+      —— 单列出来是因为它和下面那条性质不同：下面是「产物内部自洽」，
+      这条是「产物忠于 PDF」。贺智那次照 skill 走完、所有 Gate 全 0，
+      仍丢了粗体、居中标题、目录层级三样，就是因为没有这一条。
 - [ ] 所有章节 md 通过 [refs/audit-gates.md](refs/audit-gates.md) 全 gate
 - [ ] raw zh 已 chmod 444
 - [ ] `_data/calvin_books.yml` 已 +/- 该书条目

@@ -291,6 +291,13 @@ echo "9. <p> no md attr: $(grep -E '^<p [^>]*>' $F | grep -v 'markdown=' | grep 
 ```
 
 保存为 `scripts/audit-md.sh`，每次 commit 前跑：`bash scripts/audit-md.sh calvin/BOOK/N.md`。
+
+> ⚠️ **Gate T 不在这个整合脚本里**，也不可能在——它是**逐卷**比对（需要源 PDF），
+> 而本脚本是**逐文件**检查。commit 前两个都要跑：
+> ```bash
+> bash scripts/audit-md.sh <每个 md>                       # 内部自洽
+> python3 scripts/qa_ages_typography.py <pdf> <发布目录>   # 忠于 PDF
+> ```
 （check 9 非 0 = 有 `<p>` 漏 `markdown="1"`，用 Gate 5b 的 grep 定位；其余 Gate 5c/5d/5f/9
 按需单独跑。）
 

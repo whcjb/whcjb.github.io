@@ -13,6 +13,11 @@
 - [ ] **已有 volume entry**：在 `VOLUMES` 里找 `format` 字段值
 - [ ] **明确目标产物**：raw txt？ 完整发布到 calvin/BOOK-en/？ 仅 preface？仅特定 chapter？
 - [ ] **明确踩坑信号**：搜 [anti-patterns.md](refs/anti-patterns.md) 中与 PDF 类型相关的项
+- [ ] **字形基线已记录**：跑一次
+      `python3 scripts/qa_ages_typography.py <pdf> <任意已有md>`，
+      把 PDF 侧的 bold / italic / red / greek / centered 数字抄进本步骤笔记。
+      **这是后面 Gate T 的比对基准**——诊断时不记，发布后就没有「本该有多少」
+      这个参照，样式被管道吃掉也无从发现。
 
 ---
 
