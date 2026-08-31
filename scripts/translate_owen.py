@@ -91,7 +91,13 @@ def review_one(en, draft, resume):
 _APOSTLES = ['保罗','彼得','约翰','雅各','马太','马可','路加','安得烈','腓力','多马',
              '巴拿巴','提摩太','提多','司提反','西门','犹大']
 _NAME_FIX = {'奥利根': '俄利根', '奥利金': '俄利根', '奥古斯汀': '奥古斯丁',
-             '耶罗米': '耶柔米', '克里索斯托': '屈梭多模'}
+             '耶罗米': '耶柔米', '克里索斯托': '屈梭多模',
+             # 「著」(作品) 被写成「着」(助词)。导论1 一段里就出了两处
+             # (杂着卷一、最伟大着作)。只列这些固定词，避免误伤「为着/藉着/
+             # 随着/接着」这类正当用法。
+             '着作': '著作', '杂着': '杂著', '论着': '论著', '专着': '专著',
+             '名着': '名著', '巨着': '巨著', '原着': '原著', '编着': '编著',
+             '显着': '显著', '译着': '译著'}
 def cleanup_terms(t):
     """确定性术语清理(免费, 不调模型): 改革宗/和合本不加「圣」于使徒名; 标准译名归一。"""
     for n in _APOSTLES:
@@ -110,14 +116,26 @@ def normalize_punct(t):
     for i, c in enumerate(t):
         p = t[i-1] if i > 0 else ''
         n = t[i+1] if i+1 < len(t) else ''
-        if c == ',' and (cjk(p) or cjk(n)): out.append('，'); continue
-        if c == ';' and (cjk(p) or cjk(n)):
+        # 判「是否处在中文语境」时要跳过引号：序7 出过
+        #   …神里的奥秘","为要藉着教会…
+        # 两段经文引文之间的逗号，左右紧邻的都是引号而非汉字，旧规则看不见它。
+        def near(k, step):
+            j = k
+            while 0 <= j < len(t) and t[j] in _PUNCT_SKIP: j += step
+            return cjk(t[j]) if 0 <= j < len(t) else False
+        ctx = near(i - 1, -1) or near(i + 1, 1)
+        if c == ',' and ctx: out.append('，'); continue
+        if c == ';' and ctx:
             # 保护 HTML 实体结尾的分号(&quot; &#x27; &amp; 等), 勿全角化
             if re.search(r'&([a-zA-Z]+|#[0-9]+|#x[0-9a-fA-F]+)$', t[max(0, i-9):i]):
                 out.append(c); continue
             out.append('；'); continue
-        if c == ':' and (cjk(p) or cjk(n)) and not (p.isdigit() and n.isdigit()):
+        if c == ':' and ctx and not (p.isdigit() and n.isdigit()):
             out.append('：'); continue
+        # ! ? 原先漏掉了，导论1 出过「我该去世了!&quot;」——半角叹号夹在中文里。
+        # 句末常紧跟 &quot; 或右引号，所以前一个字符要跳过引号类再判中文。
+        if c in '!?' and ctx:
+            out.append('！' if c == '!' else '？'); continue
         out.append(c)
     t = ''.join(out)
     def paren(m):
@@ -271,6 +289,8 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
 
 PLAN_GUIDE = (
     "\n\n【翻译要求·遵此约定但按上下文取舍】\n"
+    "★优先级(冲突时一律按此让步): ①意思正确 ②中文读者读得懂 ③文风沉稳。"
+    "为求典雅而让读者读不懂, 是错译不是好译; 宁可用平实的说法, 也不用现代人分辨不出的古词。\n"
     "文风: 文白相济、庄重, 长句照译不走味; 忌真现代/口语词(力度/能量/搞/到位), "
     "但勿为文雅改动本已正确的词(瘸腿勿改跛足, 撩动/扶持保留)。\n"
     "忠实清晰: 不增不删不臆测; 清晰优先勿过压到歧义; designed/ordained→本当、ought→当, "
@@ -285,6 +305,9 @@ PLAN_GUIDE = (
     "sanctification成圣、repentance悔改。表外词: 经文→和合本、神学→改革宗惯用、拿不准括注英文。\n"
     "勿增译(最高频): 希腊/拉丁引文只留原文+必要简短括注, 勿擅加重复整句中译。\n"
     "勿幻觉: 不加原文没有的概念(holy penmen≠圣灵默示)。勿漏: 保留所有[^N]与原文标点。\n"
+    "古语词须现代可辨: 文白相济不等于用现代读者分不出的古词。反例 page/leaf→「一页/一叶」, "
+    "英文是「页/张(正反两面)」之别, 中文「页」「叶」同音近义, 读者只看见同义反复; "
+    "leaf 译「一张纸」。该词的语义区别若在中文里落不到实处, 就换清晰说法, 勿为存古牺牲达意。\n"
     "专名: 教派/异端/学派/人物用学界通用译名(诺洼天派/亚流派/俄利根、保罗非圣保罗), "
     "**首次出现括注原文**(如 诺洼天派(Novatians)、亚流派(Arians)), 后续不再重复括注。"
 )
@@ -324,4 +347,13 @@ def main():
     translate_page(args.page, args.resume, args.publish, args.review, args.limit)
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except tf.SessionLimitError as e:
+        # 退出码 42 = 撞会话额度，与 translate_filibi 一致。
+        # 早先这里没有捕获，撞墙时是 traceback + rc=1，批处理脚本分不出
+        # 「额度用尽（等一等就能继续）」和「真故障（要人看）」——看守脚本
+        # 就无从判断该不该自动续跑。
+        print(f'\n!! 会话额度用尽，停止翻译：{e}', flush=True)
+        print('   已翻段落都在 zh_cache 里，额度恢复后 --resume 直接续。', flush=True)
+        sys.exit(42)
