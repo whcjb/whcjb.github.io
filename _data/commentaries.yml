@@ -40,516 +40,399 @@ books:
     name: "创世记"
     en: "Genesis"
     testament: ot
-    cloth: "#443854"
+    chapters: 50
     links:
-      - {author: calvin, path: "/calvin/genesis/", title_cn: "创世记注释", title_en: "Calvin on Genesis"}
-      - {author: mhenry, path: "/mhenry/genesis/", title_cn: "马太亨利圣经注释·创世记", title_en: "An Exposition of the Old and New Testaments"}
   - id: exodus
     name: "出埃及记"
     en: "Exodus"
     testament: ot
-    cloth: "#344226"
+    chapters: 40
     links:
-      - {author: calvin, path: "/calvin/harmony-law-index/", title_cn: "摩西五经合参", title_en: "Harmony of the Law"}
-      - {author: mhenry, path: "/mhenry/exodus/", title_cn: "马太亨利圣经注释·出埃及记", title_en: "An Exposition of the Old and New Testaments"}
   - id: leviticus
     name: "利未记"
     en: "Leviticus"
     testament: ot
-    cloth: "#775047"
+    chapters: 27
     links:
-      - {author: calvin, path: "/calvin/harmony-law-index/", title_cn: "摩西五经合参", title_en: "Harmony of the Law"}
-      - {author: mhenry, path: "/mhenry/leviticus/", title_cn: "马太亨利圣经注释·利未记", title_en: "An Exposition of the Old and New Testaments"}
   - id: numbers
     name: "民数记"
     en: "Numbers"
     testament: ot
-    cloth: "#705065"
+    chapters: 36
     links:
-      - {author: calvin, path: "/calvin/harmony-law-index/", title_cn: "摩西五经合参", title_en: "Harmony of the Law"}
-      - {author: mhenry, path: "/mhenry/numbers/", title_cn: "马太亨利圣经注释·民数记", title_en: "An Exposition of the Old and New Testaments"}
   - id: deuteronomy
     name: "申命记"
     en: "Deuteronomy"
     testament: ot
-    cloth: "#144258"
+    chapters: 34
     links:
-      - {author: calvin, path: "/calvin/harmony-law-index/", title_cn: "摩西五经合参", title_en: "Harmony of the Law"}
-      - {author: mhenry, path: "/mhenry/deuteronomy/", title_cn: "马太亨利圣经注释·申命记", title_en: "An Exposition of the Old and New Testaments"}
   - id: joshua
     name: "约书亚记"
     en: "Joshua"
     testament: ot
-    cloth: "#344226"
+    chapters: 24
     links:
-      - {author: calvin, path: "/calvin/joshua/", title_cn: "约书亚记注释", title_en: "Calvin on Joshua"}
-      - {author: mhenry, path: "/mhenry/joshua/", title_cn: "马太亨利圣经注释·约书亚记", title_en: "An Exposition of the Old and New Testaments"}
   - id: judges
     name: "士师记"
     en: "Judges"
     testament: ot
-    cloth: "#503923"
+    chapters: 21
     links:
-      - {author: mhenry, path: "/mhenry/judges/", title_cn: "马太亨利圣经注释·士师记", title_en: "An Exposition of the Old and New Testaments"}
   - id: ruth
     name: "路得记"
     en: "Ruth"
     testament: ot
-    cloth: "#443854"
+    chapters: 4
     links:
-      - {author: mhenry, path: "/mhenry/ruth/", title_cn: "马太亨利圣经注释·路得记", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1samuel
     name: "撒母耳记上"
     en: "1 Samuel"
     testament: ot
-    cloth: "#775047"
+    chapters: 31
     links:
-      - {author: mhenry, path: "/mhenry/1samuel/", title_cn: "马太亨利圣经注释·撒母耳记上", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2samuel
     name: "撒母耳记下"
     en: "2 Samuel"
     testament: ot
-    cloth: "#4b5978"
+    chapters: 24
     links:
-      - {author: mhenry, path: "/mhenry/2samuel/", title_cn: "马太亨利圣经注释·撒母耳记下", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1kings
     name: "列王纪上"
     en: "1 Kings"
     testament: ot
-    cloth: "#3d614d"
+    chapters: 22
     links:
-      - {author: mhenry, path: "/mhenry/1kings/", title_cn: "马太亨利圣经注释·列王纪上", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2kings
     name: "列王纪下"
     en: "2 Kings"
     testament: ot
-    cloth: "#144258"
+    chapters: 25
     links:
-      - {author: mhenry, path: "/mhenry/2kings/", title_cn: "马太亨利圣经注释·列王纪下", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1chronicles
     name: "历代志上"
     en: "1 Chronicles"
     testament: ot
-    cloth: "#28616c"
+    chapters: 29
     links:
-      - {author: mhenry, path: "/mhenry/1chronicles/", title_cn: "马太亨利圣经注释·历代志上", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2chronicles
     name: "历代志下"
     en: "2 Chronicles"
     testament: ot
-    cloth: "#503923"
+    chapters: 36
     links:
-      - {author: mhenry, path: "/mhenry/2chronicles/", title_cn: "马太亨利圣经注释·历代志下", title_en: "An Exposition of the Old and New Testaments"}
   - id: ezra
     name: "以斯拉记"
     en: "Ezra"
     testament: ot
-    cloth: "#0c4541"
+    chapters: 10
     links:
-      - {author: mhenry, path: "/mhenry/ezra/", title_cn: "马太亨利圣经注释·以斯拉记", title_en: "An Exposition of the Old and New Testaments"}
   - id: nehemiah
     name: "尼希米记"
     en: "Nehemiah"
     testament: ot
-    cloth: "#4b5978"
+    chapters: 13
     links:
-      - {author: mhenry, path: "/mhenry/nehemiah/", title_cn: "马太亨利圣经注释·尼希米记", title_en: "An Exposition of the Old and New Testaments"}
   - id: esther
     name: "以斯帖记"
     en: "Esther"
     testament: ot
-    cloth: "#59323a"
+    chapters: 10
     links:
-      - {author: mhenry, path: "/mhenry/esther/", title_cn: "马太亨利圣经注释·以斯帖记", title_en: "An Exposition of the Old and New Testaments"}
   - id: job
     name: "约伯记"
     en: "Job"
     testament: ot
-    cloth: "#3d614d"
+    chapters: 42
     links:
-      - {author: mhenry, path: "/mhenry/job/", title_cn: "马太亨利圣经注释·约伯记", title_en: "An Exposition of the Old and New Testaments"}
   - id: psalms
     name: "诗篇"
     en: "Psalms"
     testament: ot
-    cloth: "#28616c"
+    chapters: 150
     links:
-      - {author: calvin, path: "/calvin/psalms-1/", title_cn: "诗篇注释（卷一）", title_en: "Calvin on Psalms (Vol. 1)", note: "第 1–78 篇 · 共 78 篇"}
-      - {author: calvin, path: "/calvin/psalms-2/", title_cn: "诗篇注释（卷二）", title_en: "Calvin on Psalms (Vol. 2)", note: "第 79–150 篇 · 共 72 篇"}
-      - {author: mhenry, path: "/mhenry/psalms/", title_cn: "马太亨利圣经注释·诗篇", title_en: "An Exposition of the Old and New Testaments"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
     testament: ot
-    cloth: "#605a3b"
+    chapters: 31
     links:
-      - {author: mhenry, path: "/mhenry/proverbs/", title_cn: "马太亨利圣经注释·箴言", title_en: "An Exposition of the Old and New Testaments"}
       - {author: bridges, path: "/bridges/proverbs/", title_cn: "箴言书注释", title_en: "An Exposition of the Book of Proverbs"}
   - id: ecclesiastes
     name: "传道书"
     en: "Ecclesiastes"
     testament: ot
-    cloth: "#0c4541"
+    chapters: 12
     links:
-      - {author: mhenry, path: "/mhenry/ecclesiastes/", title_cn: "马太亨利圣经注释·传道书", title_en: "An Exposition of the Old and New Testaments"}
   - id: songofsolomon
     name: "雅歌"
     en: "Song of Solomon"
     testament: ot
-    cloth: "#705065"
+    chapters: 8
     links:
-      - {author: mhenry, path: "/mhenry/songofsolomon/", title_cn: "马太亨利圣经注释·雅歌", title_en: "An Exposition of the Old and New Testaments"}
   - id: isaiah
     name: "以赛亚书"
     en: "Isaiah"
     testament: ot
-    cloth: "#28616c"
+    chapters: 66
     links:
-      - {author: calvin, path: "/calvin/isaiah-1/", title_cn: "以赛亚书注释（卷一）", title_en: "Calvin on Isaiah (Vol. 1)", note: "第 1–37 章 · 共 37 章"}
-      - {author: calvin, path: "/calvin/isaiah-2/", title_cn: "以赛亚书注释（卷二）", title_en: "Calvin on Isaiah (Vol. 2)", note: "第 38–66 章 · 共 29 章"}
-      - {author: mhenry, path: "/mhenry/isaiah/", title_cn: "马太亨利圣经注释·以赛亚书", title_en: "An Exposition of the Old and New Testaments"}
   - id: jeremiah
     name: "耶利米书"
     en: "Jeremiah"
     testament: ot
-    cloth: "#59323a"
+    chapters: 52
     links:
-      - {author: calvin, path: "/calvin/jeremiah-1/", title_cn: "耶利米书注释（卷一）", title_en: "Calvin on Jeremiah (Vol. 1)", note: "第 1–23 章 · 共 23 章"}
-      - {author: calvin, path: "/calvin/jeremiah-2/", title_cn: "耶利米书注释（卷二）", title_en: "Calvin on Jeremiah (Vol. 2)", note: "第 24–52 章 · 共 29 章"}
-      - {author: mhenry, path: "/mhenry/jeremiah/", title_cn: "马太亨利圣经注释·耶利米书", title_en: "An Exposition of the Old and New Testaments"}
   - id: lamentations
     name: "耶利米哀歌"
     en: "Lamentations"
     testament: ot
-    cloth: "#443854"
+    chapters: 5
     links:
-      - {author: calvin, path: "/calvin/lamentations/", title_cn: "耶利米哀歌注释", title_en: "Calvin on Lamentations"}
-      - {author: mhenry, path: "/mhenry/lamentations/", title_cn: "马太亨利圣经注释·耶利米哀歌", title_en: "An Exposition of the Old and New Testaments"}
   - id: ezekiel
     name: "以西结书"
     en: "Ezekiel"
     testament: ot
-    cloth: "#0c4541"
+    chapters: 48
     links:
-      - {author: calvin, path: "/calvin/ezekiel/", title_cn: "以西结书注释", title_en: "Calvin on Ezekiel"}
-      - {author: mhenry, path: "/mhenry/ezekiel/", title_cn: "马太亨利圣经注释·以西结书", title_en: "An Exposition of the Old and New Testaments"}
   - id: daniel
     name: "但以理书"
     en: "Daniel"
     testament: ot
-    cloth: "#605a3b"
+    chapters: 12
     links:
-      - {author: calvin, path: "/calvin/daniel/", title_cn: "但以理书注释", title_en: "Calvin on Daniel"}
-      - {author: mhenry, path: "/mhenry/daniel/", title_cn: "马太亨利圣经注释·但以理书", title_en: "An Exposition of the Old and New Testaments"}
   - id: hosea
     name: "何西阿书"
     en: "Hosea"
     testament: ot
-    cloth: "#705065"
+    chapters: 14
     links:
-      - {author: calvin, path: "/calvin/hosea/", title_cn: "何西阿书注释", title_en: "Calvin on Hosea"}
-      - {author: mhenry, path: "/mhenry/hosea/", title_cn: "马太亨利圣经注释·何西阿书", title_en: "An Exposition of the Old and New Testaments"}
   - id: joel
     name: "约珥书"
     en: "Joel"
     testament: ot
-    cloth: "#59323a"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/joel/", title_cn: "约珥书注释", title_en: "Calvin on Joel"}
-      - {author: mhenry, path: "/mhenry/joel/", title_cn: "马太亨利圣经注释·约珥书", title_en: "An Exposition of the Old and New Testaments"}
   - id: amos
     name: "阿摩司书"
     en: "Amos"
     testament: ot
-    cloth: "#775047"
+    chapters: 9
     links:
-      - {author: calvin, path: "/calvin/amos/", title_cn: "阿摩司书注释", title_en: "Calvin on Amos"}
-      - {author: mhenry, path: "/mhenry/amos/", title_cn: "马太亨利圣经注释·阿摩司书", title_en: "An Exposition of the Old and New Testaments"}
   - id: obadiah
     name: "俄巴底亚书"
     en: "Obadiah"
     testament: ot
-    cloth: "#344226"
+    chapters: 1
     links:
-      - {author: calvin, path: "/calvin/obadiah/", title_cn: "俄巴底亚书注释", title_en: "Calvin on Obadiah"}
-      - {author: mhenry, path: "/mhenry/obadiah/", title_cn: "马太亨利圣经注释·俄巴底亚书", title_en: "An Exposition of the Old and New Testaments"}
   - id: jonah
     name: "约拿书"
     en: "Jonah"
     testament: ot
-    cloth: "#443854"
+    chapters: 4
     links:
-      - {author: calvin, path: "/calvin/jonah/", title_cn: "约拿书注释", title_en: "Calvin on Jonah"}
-      - {author: mhenry, path: "/mhenry/jonah/", title_cn: "马太亨利圣经注释·约拿书", title_en: "An Exposition of the Old and New Testaments"}
   - id: micah
     name: "弥迦书"
     en: "Micah"
     testament: ot
-    cloth: "#605a3b"
+    chapters: 7
     links:
-      - {author: calvin, path: "/calvin/micah/", title_cn: "弥迦书注释", title_en: "Calvin on Micah"}
-      - {author: mhenry, path: "/mhenry/micah/", title_cn: "马太亨利圣经注释·弥迦书", title_en: "An Exposition of the Old and New Testaments"}
   - id: nahum
     name: "那鸿书"
     en: "Nahum"
     testament: ot
-    cloth: "#144258"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/nahum/", title_cn: "那鸿书注释", title_en: "Calvin on Nahum"}
-      - {author: mhenry, path: "/mhenry/nahum/", title_cn: "马太亨利圣经注释·那鸿书", title_en: "An Exposition of the Old and New Testaments"}
   - id: habakkuk
     name: "哈巴谷书"
     en: "Habakkuk"
     testament: ot
-    cloth: "#775047"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/habakkuk/", title_cn: "哈巴谷书注释", title_en: "Calvin on Habakkuk"}
-      - {author: mhenry, path: "/mhenry/habakkuk/", title_cn: "马太亨利圣经注释·哈巴谷书", title_en: "An Exposition of the Old and New Testaments"}
   - id: zephaniah
     name: "西番雅书"
     en: "Zephaniah"
     testament: ot
-    cloth: "#503923"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/zephaniah/", title_cn: "西番雅书注释", title_en: "Calvin on Zephaniah"}
-      - {author: mhenry, path: "/mhenry/zephaniah/", title_cn: "马太亨利圣经注释·西番雅书", title_en: "An Exposition of the Old and New Testaments"}
   - id: haggai
     name: "哈该书"
     en: "Haggai"
     testament: ot
-    cloth: "#4b5978"
+    chapters: 2
     links:
-      - {author: calvin, path: "/calvin/haggai/", title_cn: "哈该书注释", title_en: "Calvin on Haggai"}
-      - {author: mhenry, path: "/mhenry/haggai/", title_cn: "马太亨利圣经注释·哈该书", title_en: "An Exposition of the Old and New Testaments"}
   - id: zechariah
     name: "撒迦利亚书"
     en: "Zechariah"
     testament: ot
-    cloth: "#344226"
+    chapters: 14
     links:
-      - {author: calvin, path: "/calvin/zechariah/", title_cn: "撒迦利亚书注释", title_en: "Calvin on Zechariah"}
-      - {author: mhenry, path: "/mhenry/zechariah/", title_cn: "马太亨利圣经注释·撒迦利亚书", title_en: "An Exposition of the Old and New Testaments"}
   - id: malachi
     name: "玛拉基书"
     en: "Malachi"
     testament: ot
-    cloth: "#3d614d"
+    chapters: 4
     links:
-      - {author: calvin, path: "/calvin/malachi/", title_cn: "玛拉基书注释", title_en: "Calvin on Malachi"}
-      - {author: mhenry, path: "/mhenry/malachi/", title_cn: "马太亨利圣经注释·玛拉基书", title_en: "An Exposition of the Old and New Testaments"}
   - id: matthew
     name: "马太福音"
     en: "Matthew"
     testament: nt
-    cloth: "#605a3b"
+    chapters: 28
     links:
-      - {author: calvin, path: "/calvin/harmony-index/", title_cn: "共观福音注释", title_en: "Calvin on the Harmony of the Evangelists"}
-      - {author: mhenry, path: "/mhenry/matthew/", title_cn: "马太亨利圣经注释·马太福音", title_en: "An Exposition of the Old and New Testaments"}
   - id: mark
     name: "马可福音"
     en: "Mark"
     testament: nt
-    cloth: "#775047"
+    chapters: 16
     links:
-      - {author: calvin, path: "/calvin/harmony-index/", title_cn: "共观福音注释", title_en: "Calvin on the Harmony of the Evangelists"}
-      - {author: mhenry, path: "/mhenry/mark/", title_cn: "马太亨利圣经注释·马可福音", title_en: "An Exposition of the Old and New Testaments"}
   - id: luke
     name: "路加福音"
     en: "Luke"
     testament: nt
-    cloth: "#443854"
+    chapters: 24
     links:
-      - {author: calvin, path: "/calvin/harmony-index/", title_cn: "共观福音注释", title_en: "Calvin on the Harmony of the Evangelists"}
-      - {author: mhenry, path: "/mhenry/luke/", title_cn: "马太亨利圣经注释·路加福音", title_en: "An Exposition of the Old and New Testaments"}
   - id: john
     name: "约翰福音"
     en: "John"
     testament: nt
-    cloth: "#28616c"
+    chapters: 21
     links:
-      - {author: calvin, path: "/calvin/john/", title_cn: "约翰福音注释", title_en: "Calvin on John"}
-      - {author: mhenry, path: "/mhenry/john/", title_cn: "马太亨利圣经注释·约翰福音", title_en: "An Exposition of the Old and New Testaments"}
   - id: acts
     name: "使徒行传"
     en: "Acts"
     testament: nt
-    cloth: "#0c4541"
+    chapters: 28
     links:
-      - {author: calvin, path: "/calvin/acts/", title_cn: "使徒行传注释", title_en: "Calvin on Acts"}
-      - {author: mhenry, path: "/mhenry/acts/", title_cn: "马太亨利圣经注释·使徒行传", title_en: "An Exposition of the Old and New Testaments"}
   - id: romans
     name: "罗马书"
     en: "Romans"
     testament: nt
-    cloth: "#4b5978"
+    chapters: 16
     links:
-      - {author: calvin, path: "/calvin/romans/", title_cn: "罗马书注释", title_en: "Calvin on Romans"}
-      - {author: mhenry, path: "/mhenry/romans/", title_cn: "马太亨利圣经注释·罗马书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"
     testament: nt
-    cloth: "#59323a"
+    chapters: 16
     links:
-      - {author: calvin, path: "/calvin/1corinthians/", title_cn: "哥林多前书注释", title_en: "Calvin on 1 Corinthians"}
-      - {author: mhenry, path: "/mhenry/1corinthians/", title_cn: "马太亨利圣经注释·哥林多前书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2corinthians
     name: "哥林多后书"
     en: "2 Corinthians"
     testament: nt
-    cloth: "#605a3b"
+    chapters: 13
     links:
-      - {author: calvin, path: "/calvin/2corinthians/", title_cn: "哥林多后书注释", title_en: "Calvin on 2 Corinthians"}
-      - {author: mhenry, path: "/mhenry/2corinthians/", title_cn: "马太亨利圣经注释·哥林多后书", title_en: "An Exposition of the Old and New Testaments"}
   - id: galatians
     name: "加拉太书"
     en: "Galatians"
     testament: nt
-    cloth: "#144258"
+    chapters: 6
     links:
-      - {author: calvin, path: "/calvin/galatians/", title_cn: "加拉太书注释", title_en: "Calvin on Galatians"}
-      - {author: mhenry, path: "/mhenry/galatians/", title_cn: "马太亨利圣经注释·加拉太书", title_en: "An Exposition of the Old and New Testaments"}
   - id: ephesians
     name: "以弗所书"
     en: "Ephesians"
     testament: nt
-    cloth: "#443854"
+    chapters: 6
     links:
-      - {author: calvin, path: "/calvin/ephesians/", title_cn: "以弗所书注释", title_en: "Calvin on Ephesians"}
-      - {author: mhenry, path: "/mhenry/ephesians/", title_cn: "马太亨利圣经注释·以弗所书", title_en: "An Exposition of the Old and New Testaments"}
   - id: philippians
     name: "腓立比书"
     en: "Philippians"
     testament: nt
-    cloth: "#705065"
+    chapters: 4
     links:
-      - {author: calvin, path: "/calvin/philippians/", title_cn: "腓立比书注释", title_en: "Calvin on Philippians"}
-      - {author: mhenry, path: "/mhenry/philippians/", title_cn: "马太亨利圣经注释·腓立比书", title_en: "An Exposition of the Old and New Testaments"}
   - id: colossians
     name: "歌罗西书"
     en: "Colossians"
     testament: nt
-    cloth: "#4b5978"
+    chapters: 4
     links:
-      - {author: calvin, path: "/calvin/colossians/", title_cn: "歌罗西书注释", title_en: "Calvin on Colossians"}
-      - {author: mhenry, path: "/mhenry/colossians/", title_cn: "马太亨利圣经注释·歌罗西书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1thessalonians
     name: "帖撒罗尼迦前书"
     en: "1 Thessalonians"
     testament: nt
-    cloth: "#3d614d"
+    chapters: 5
     links:
-      - {author: calvin, path: "/calvin/1thessalonians/", title_cn: "帖撒罗尼迦前书注释", title_en: "Calvin on 1 Thessalonians"}
-      - {author: mhenry, path: "/mhenry/1thessalonians/", title_cn: "马太亨利圣经注释·帖撒罗尼迦前书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2thessalonians
     name: "帖撒罗尼迦后书"
     en: "2 Thessalonians"
     testament: nt
-    cloth: "#59323a"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/2thessalonians/", title_cn: "帖撒罗尼迦后书注释", title_en: "Calvin on 2 Thessalonians"}
-      - {author: mhenry, path: "/mhenry/2thessalonians/", title_cn: "马太亨利圣经注释·帖撒罗尼迦后书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1timothy
     name: "提摩太前书"
     en: "1 Timothy"
     testament: nt
-    cloth: "#344226"
+    chapters: 6
     links:
-      - {author: calvin, path: "/calvin/1timothy/", title_cn: "提摩太前书注释", title_en: "Calvin on 1 Timothy"}
-      - {author: mhenry, path: "/mhenry/1timothy/", title_cn: "马太亨利圣经注释·提摩太前书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2timothy
     name: "提摩太后书"
     en: "2 Timothy"
     testament: nt
-    cloth: "#144258"
+    chapters: 4
     links:
-      - {author: calvin, path: "/calvin/2timothy/", title_cn: "提摩太后书注释", title_en: "Calvin on 2 Timothy"}
-      - {author: mhenry, path: "/mhenry/2timothy/", title_cn: "马太亨利圣经注释·提摩太后书", title_en: "An Exposition of the Old and New Testaments"}
   - id: titus
     name: "提多书"
     en: "Titus"
     testament: nt
-    cloth: "#503923"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/titus/", title_cn: "提多书注释", title_en: "Calvin on Titus"}
-      - {author: mhenry, path: "/mhenry/titus/", title_cn: "马太亨利圣经注释·提多书", title_en: "An Exposition of the Old and New Testaments"}
   - id: philemon
     name: "腓利门书"
     en: "Philemon"
     testament: nt
-    cloth: "#705065"
+    chapters: 1
     links:
-      - {author: calvin, path: "/calvin/philemon/", title_cn: "腓利门书注释", title_en: "Calvin on Philemon"}
-      - {author: mhenry, path: "/mhenry/philemon/", title_cn: "马太亨利圣经注释·腓利门书", title_en: "An Exposition of the Old and New Testaments"}
   - id: hebrews
     name: "希伯来书"
     en: "Hebrews"
     testament: nt
-    cloth: "#0c4541"
+    chapters: 13
     links:
-      - {author: calvin, path: "/calvin/hebrews/", title_cn: "希伯来书注释", title_en: "Calvin on Hebrews"}
       - {author: owen, path: "/owen/hebrews/", title_cn: "约翰欧文·希伯来书注释", title_en: "An Exposition of the Epistle to the Hebrews"}
-      - {author: mhenry, path: "/mhenry/hebrews/", title_cn: "马太亨利圣经注释·希伯来书", title_en: "An Exposition of the Old and New Testaments"}
   - id: james
     name: "雅各书"
     en: "James"
     testament: nt
-    cloth: "#3d614d"
+    chapters: 5
     links:
-      - {author: calvin, path: "/calvin/james/", title_cn: "雅各书注释", title_en: "Calvin on James"}
-      - {author: mhenry, path: "/mhenry/james/", title_cn: "马太亨利圣经注释·雅各书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1peter
     name: "彼得前书"
     en: "1 Peter"
     testament: nt
-    cloth: "#344226"
+    chapters: 5
     links:
-      - {author: calvin, path: "/calvin/1peter/", title_cn: "彼得前书注释", title_en: "Calvin on 1 Peter"}
-      - {author: mhenry, path: "/mhenry/1peter/", title_cn: "马太亨利圣经注释·彼得前书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2peter
     name: "彼得后书"
     en: "2 Peter"
     testament: nt
-    cloth: "#605a3b"
+    chapters: 3
     links:
-      - {author: calvin, path: "/calvin/2peter/", title_cn: "彼得后书注释", title_en: "Calvin on 2 Peter"}
-      - {author: mhenry, path: "/mhenry/2peter/", title_cn: "马太亨利圣经注释·彼得后书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 1john
     name: "约翰一书"
     en: "1 John"
     testament: nt
-    cloth: "#503923"
+    chapters: 5
     links:
-      - {author: calvin, path: "/calvin/1john/", title_cn: "约翰一书注释", title_en: "Calvin on 1 John"}
-      - {author: mhenry, path: "/mhenry/1john/", title_cn: "马太亨利圣经注释·约翰一书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 2john
     name: "约翰二书"
     en: "2 John"
     testament: nt
-    cloth: "#443854"
+    chapters: 1
     links:
-      - {author: mhenry, path: "/mhenry/2john/", title_cn: "马太亨利圣经注释·约翰二书", title_en: "An Exposition of the Old and New Testaments"}
   - id: 3john
     name: "约翰三书"
     en: "3 John"
     testament: nt
-    cloth: "#775047"
+    chapters: 1
     links:
-      - {author: mhenry, path: "/mhenry/3john/", title_cn: "马太亨利圣经注释·约翰三书", title_en: "An Exposition of the Old and New Testaments"}
   - id: jude
     name: "犹大书"
     en: "Jude"
     testament: nt
-    cloth: "#0c4541"
+    chapters: 1
     links:
-      - {author: calvin, path: "/calvin/jude/", title_cn: "犹大书注释", title_en: "Calvin on Jude"}
-      - {author: mhenry, path: "/mhenry/jude/", title_cn: "马太亨利圣经注释·犹大书", title_en: "An Exposition of the Old and New Testaments"}
   - id: revelation
     name: "启示录"
     en: "Revelation"
     testament: nt
-    cloth: "#28616c"
+    chapters: 22
     links:
-      - {author: mhenry, path: "/mhenry/revelation/", title_cn: "马太亨利圣经注释·启示录", title_en: "An Exposition of the Old and New Testaments"}
 
 harmony:

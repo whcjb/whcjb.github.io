@@ -35,6 +35,13 @@ ROOT = Path(__file__).resolve().parent.parent
 #            那是本站所据版本的实际书名，故按卷生成（work_en 留空表示按卷取）
 # 曾误用首页资源卡片的副标题（"Charles Bridges · Proverbs"）——那是导航
 # 文案不是书名，被用户指出。
+# 「历代解经」只收录**加尔文与马太亨利之外**的注释家。那两位各有自己的书卷
+# 主页（/calvin/ 与 /mhenry/），在这里再列一遍等于把 100 多个重复入口铺满
+# 整版，真正新增的信息（还有谁注过这卷）反而被淹掉。
+# 目前符合的只有两条：毕列志·箴言、欧文·希伯来书。其余书卷在版面上画成虚线
+# 框——那是「尚无别家注释」，不是「无人注过」。
+EXCLUDED_AUTHORS = {'calvin', 'mhenry'}
+
 AUTHORS = OrderedDict([
     ('calvin',  dict(name='约翰·加尔文', short='加尔文',  en='John Calvin',     years='1509–1564', dir='calvin',
                      work_cn='加尔文圣经注释',        work_en='')),
@@ -103,33 +110,10 @@ VOLUMES = {
                  ('jeremiah-2', '耶利米书注释（卷二）', 'Calvin on Jeremiah (Vol. 2)', 24, 52)],
 }
 
-# ── 书脊布面色 ──────────────────────────────
-# 12 色按 CIELAB 均匀排布：色相 30° 均分一圈，彩度锁在 C<=19（再高就艳，丢掉
-# 旧书布面的沉着），明度在 L*26 / L*38 之间交替——同一明度下 30° 的色相差只
-# 有约 dE 11，靠明度错开才拉得到最小 dE 15.5。
-# 上一组是凭感觉挑的，「靛灰 #3a4a5a」与「石板灰 #2f3b46」dE 仅 7.2、「藏青」
-# 与「紫灰」9.7——低于 12 肉眼认不出是两个色。用户反映这几个色「没看到在哪」，
-# 其实都在，只是糊成了一片蓝灰。
-CLOTH = ['#59323a', '#775047', '#503923', '#605a3b', '#344226', '#3d614d',
-         '#0c4541', '#28616c', '#144258', '#4b5978', '#443854', '#705065']
-#         酒红      栗褐      深褐      橄榄      苔绿      墨绿
-#         深青      靛青      藏青      石板蓝    紫灰      梅紫
-
-# 上色次序是离线退火搜出来的，不是按公式取模。取模公式必然带周期，排到墙上
-# 就是看得见的花纹：i*4 出过「酒红 苔绿 藏青」三色循环三遍；i*5 虽能出满 12 色，
-# 但恰好排成 12 列时正下方撞色。退火的优化目标是：12 色全用上、相邻及近距离
-# 不同色、8 至 20 列的任何视口宽度下正下方尽量不撞、且不出现重复的二连三连
-# 片段（重复片段比单点撞色更显眼）。长度按两架的书卷数定，不够时按长度取模。
-CLOTH_ORDER = {
-    'ot': [10, 4, 1, 11, 8, 4, 2, 10, 1, 9, 5, 8, 7, 2, 6, 9, 0, 5, 7, 3, 6, 11, 7, 0, 10, 6, 3, 11, 0, 1, 4, 10, 3, 8, 1, 2, 9, 4, 5],
-    'nt': [3, 1, 10, 7, 6, 9, 0, 3, 8, 10, 11, 9, 5, 0, 4, 8, 2, 11, 6, 5, 4, 3, 2, 10, 1, 6, 7],
-}
-
 # 合参覆盖的书卷 → (入口路径, 中文书名, 英文书名)
 # 中文名取站内既有写法，勿另造：
 #   calvin/harmony-index/index.html      title: 共观福音注释
 #   calvin/harmony-law-index/index.html  title: 摩西五经合参
-# 分册页也印证：harmony-1 = 「共观福音（卷一）」，harmony-law-1 = 「摩西五经合参（卷一）」
 HARMONY_MAP = {
     'matthew':     ('/calvin/harmony-index/',     '共观福音注释', 'Calvin on the Harmony of the Evangelists'),
     'mark':        ('/calvin/harmony-index/',     '共观福音注释', 'Calvin on the Harmony of the Evangelists'),
@@ -144,6 +128,23 @@ HARMONY_MAP = {
 HARMONY = []
 
 SKIP = re.compile(r'-en$|-index$')
+
+# 各卷章数：读 mhenry/<book>/index.html 的 front matter。
+# 曾用 _data/calvin_books.yml，但那份表只覆盖加尔文注过的卷，且分卷写成
+# isaiah-1/2、合参写成 harmony-law-N，66 卷里有 28 卷取不到（箴言就是其一）。
+# 马太亨利 66 卷齐全、id 与本表一一对应，是站内唯一现成的全表。
+def _load_chapters():
+    out = {}
+    base = ROOT / 'mhenry'
+    if not base.is_dir():
+        return out
+    for idx in base.glob('*/index.html'):
+        m = re.search(r'^chapters:\s*(\d+)', idx.read_text(encoding='utf-8'), re.M)
+        if m:
+            out[idx.parent.name] = int(m.group(1))
+    return out
+
+CHAPTERS = _load_chapters()
 
 
 def has_content(d: Path) -> bool:
@@ -212,13 +213,13 @@ def main():
                   f'    books: {n}']
     lines += ['', 'books:']
     total_links = 0
-    seen = {'ot': 0, 'nt': 0}   # 各架已排了几本，用来取布面色
     for bid, cn, testament, en in BOOKS:
         entries = [(aid, by_author[aid][bid][0], by_author[aid][bid][1])
-                   for aid in AUTHORS if bid in by_author[aid]]
+                   for aid in AUTHORS
+                   if bid in by_author[aid] and aid not in EXCLUDED_AUTHORS]
         # 合参覆盖的书卷：加尔文没有分卷注释，补一条指向对应的合参索引页。
         # 放在最前，与其他卷「加尔文在先」的次序一致。
-        if bid in HARMONY_MAP:
+        if bid in HARMONY_MAP and 'calvin' not in EXCLUDED_AUTHORS:
             entries.insert(0, ('calvin', HARMONY_MAP[bid][0], 1))
         # 分卷逐册罗列：把加尔文那一条展开成 N 条，各带章数。
         # 以前只链到卷一、标一句「（全二卷）」，等于把卷二藏起来了。
@@ -239,17 +240,14 @@ def main():
             else:
                 expanded.append((_aid, _path, None, None, None))
         entries = expanded
-        if not entries:
-            continue
+        # 不再 `if not entries: continue`——66 卷全部输出，没有条目的在版面上
+        # 画成虚线框。少输出的话页面就得自己再拼一份书卷全表，两处容易不同步。
         total_links += len(entries)
-        order = CLOTH_ORDER[testament]
-        cloth = CLOTH[order[seen[testament] % len(order)]]
-        seen[testament] += 1
         lines += [f'  - id: {bid}',
                   f'    name: {yaml_escape(cn)}',
                   f'    en: {yaml_escape(en)}',
                   f'    testament: {testament}',
-                  f'    cloth: {yaml_escape(cloth)}',
+                  f'    chapters: {CHAPTERS.get(bid, 0)}',
                   '    links:']
         for aid, path, ov_cn, ov_en, note in entries:
             # 中英书名都**按卷**生成，一一对应。曾经中文一律输出各家的总书名

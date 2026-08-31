@@ -1,389 +1,228 @@
 ---
 layout: default
 title: 历代解经
-description: 历代改革宗注释家的圣经注释汇编——加尔文、约翰·欧文、马太·亨利、查理·毕列志，按书卷检索。
+description: 加尔文与马太亨利之外的历代改革宗注释——查理·毕列志《箴言书注释》、约翰·欧文《希伯来书注释》，按书卷检索。
 ---
 
 {%- comment -%}
-  「历代解经」总目：一架书。66 卷各作一根书脊立在架上，点一根，它从架上
-  抽出半寸，架下展开这卷有哪几家注释（完整中英书名，即链接）。
+  「历代解经」总目：按书卷排的按钮网格，版式与尺寸一律照 /calvin/ 主页
+  （.calvin-book-grid minmax(140px,1fr) / gap 10px / .calvin-book-btn
+  min-height 82px），只是类名换成 cx- 前缀，免得改这里波及加尔文那一页。
 
-  为什么走到这一步——前面几版都失败在同一个地方：
-    · 饱和色卡片墙 / 立体堆叠 / 侧面透视：控制台或图表的语言，不是书的语言；
-    · 圆点、方块、底边色带：本质都是「拿色块当标签」，而首页那套品牌色是给
-      大色块用的，落到米白纸面上怎么降饱和都像贴纸；
-    · 点线目录列表：排版是对的，但屏幕上只剩一串文字，没有「物」。
-  书脊解决的正是这一条：颜色成了装帧材料（布面本来就有颜色），不再承担
-  「谁是谁」的编码义务，于是配色方案这个问题自己消失了。身份由架下的清单
-  用文字讲清楚。
-
-  实现要点：
-    · 架板是容器上的 repeating-linear-gradient，所以 grid-auto-rows 必须与
-      --row 严格相等，否则线会跟书脊错开；
-    · 详情面板放在 shelf **之外**（不作为 grid item）。做成 grid item 会撑破
-      固定行高，架板的重复渐变立刻错位——试过；被选中的书脊抽出来，靠这个
-      动作建立它与面板的关联；
-    · 布面色 7 种、书脊高 4 档，都按序号取模错开。用 7 是因为一行的列数
-      （窄屏 8 至宽屏 18）都不是 7 的倍数，正下方那本不会撞色。
+  收录范围：**加尔文与马太亨利之外**的注释家。那两位各有自己的书卷主页，
+  在这里再列一遍等于把上百个重复入口铺满整版，真正新增的信息反而被淹掉。
+  目前只有两条——毕列志《箴言书注释》、欧文《希伯来书注释》。
+  其余书卷画成虚线框，表示「尚无别家注释」，不可点。
 
   数据来自 _data/commentaries.yml，由 scripts/build_commentaries_index.py
-  扫描 calvin/ owen/ mhenry/ bridges/ 生成——新增注释家或书卷时重跑脚本即可。
-  各家原有的书卷页一律不动，这里只做入口聚合。
+  生成（EXCLUDED_AUTHORS 控制排除谁）。新增注释家重跑脚本即可，本页不用改。
 
   ⚠️ Liquid 的 for 不接受管道表达式（for x in "a,b" | split: ","），会静默
   产出空循环，必须先 assign（踩过）。
 {%- endcomment -%}
 
-{%- assign author_map = site.data.commentaries.authors -%}
-
 <style>
-  body:has(.cx-wrap) { background: #faf7f0; }
+  /* 色板与加尔文主页同源，值照抄，改这里不影响那一页 */
   .cx-wrap {
+    --cx-bg: #faf7f0;
+    --cx-ink: #3a342c;
+    --cx-ink-light: #8a8275;
+    --cx-primary: #2d4a3a;
+    --cx-gold: #c9a96e;
+    --cx-rule: #d4c5a8;
+    --cx-pending-border: #d8cdb8;
+    --cx-pending-text: #a89e8c;
     font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
-    color: #2c2c2c;
+    color: var(--cx-ink);
   }
+  body:has(.cx-wrap) { background-color: #faf7f0; }
 
-  /* ── 扉页 ───────────────────────────────────────────────── */
-  .cx-hero { text-align: center; margin: 40px 0 30px; }
+  /* ── 页首 ────────────────────────────────────────── */
+  .cx-hero { text-align: center; padding: 46px 0 6px; }
   .cx-hero h1 {
-    font-size: 30px; letter-spacing: .34em; color: #2d4a3a;
-    margin: 0 0 10px; font-weight: 600; text-indent: .34em;
+    font-size: 30px; letter-spacing: .3em; color: var(--cx-primary);
+    margin: 0 0 10px; font-weight: 600; text-indent: .3em;
   }
   .cx-hero-en {
     font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
-    font-size: 13px; color: #a2977f; letter-spacing: .06em;
+    font-size: 13px; color: var(--cx-ink-light); letter-spacing: .06em;
   }
-  .cx-rule { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 16px 0 0; }
-  .cx-rule::before, .cx-rule::after { content: ''; height: 1px; width: 74px; background: #d6cdb6; }
-  .cx-rule i { width: 4px; height: 4px; background: #c3b795; transform: rotate(45deg); display: block; }
-
-  /* ── 本页收录：四位注释家各印一次真实原书名 ───────────────── */
-  .cx-roster { margin: 26px 0 40px; }
-  .cx-roster-hd {
-    font-size: 11.5px; letter-spacing: .3em; color: #a2977f;
-    text-align: center; margin-bottom: 16px; text-indent: .3em;
-  }
-  /* 1px 的 gap 配同色底 = 细分隔线，不必给每格单独描边 */
-  .cx-roster-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(246px, 1fr));
-    gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
-  }
-  .cx-who { background: #fdfbf6; padding: 14px 16px; }
-  .cx-who-name { font-size: 14.5px; color: #2d4a3a; font-weight: 600; letter-spacing: .04em; }
-  .cx-who-meta {
-    font-family: 'Georgia', 'Times New Roman', serif; font-size: 11px;
-    color: #a2977f; margin-top: 2px;
-  }
-  .cx-who-work { font-size: 12.5px; color: #6d6455; margin-top: 8px; line-height: 1.5; }
-  .cx-who-work em {
-    display: block; font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 10.5px; color: #b0a68d; margin-top: 1px; }
-  .cx-who-n { font-family: 'Georgia', serif; font-size: 11px; color: #b0a68d; margin-top: 6px; }
-
-  /* ── 分卷标题 ──────────────────────────────────────────── */
-  .cx-sec { display: flex; align-items: center; gap: 14px; margin: 0 0 16px; }
-  .cx-sec span {
-    font-size: 13px; letter-spacing: .26em; color: #2d4a3a;
-    font-weight: 600; text-indent: .26em; white-space: nowrap;
-  }
-  .cx-sec::after { content: ''; flex: 1 1 auto; height: 1px; background: #e0d8c2; }
-
-  /* ── 书架 ───────────────────────────────────────────────
-     架板是容器背景上的重复渐变：每 --row 高度画一道 3px 的板。
-     ⚠️ grid-auto-rows 必须与 --row 完全一致，差 1px 书脊就浮在板外。 */
-  .cx-shelf {
-    --row: 186px;
-    display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
-    grid-auto-rows: var(--row); column-gap: 5px;
-    margin: 0 0 34px;
-    background-image: repeating-linear-gradient(
-      to bottom,
-      transparent 0, transparent calc(var(--row) - 3px),
-      #d9cfb5 calc(var(--row) - 3px), #d9cfb5 var(--row));
-  }
-  .cx-spine {
-    align-self: end; position: relative; height: var(--sh, 150px);
+  .cx-hero-rule {
     display: flex; align-items: center; justify-content: center;
-    gap: 5px; overflow: hidden;
-    cursor: pointer; border-radius: 1px 1px 0 0;
-    /* 布面色打底，上面叠一层横向明暗——书脊是圆的，光从左上来 */
-    background-image: linear-gradient(90deg,
-      rgba(0,0,0,.30) 0%, rgba(255,255,255,.10) 26%,
-      rgba(255,255,255,.03) 62%, rgba(0,0,0,.28) 100%);
-    box-shadow: 0 2px 3px rgba(60,48,30,.22);
-    transition: transform .22s cubic-bezier(.32,.72,.35,1), box-shadow .22s ease;
+    gap: 9px; margin: 18px 0 0;
   }
-  /* 烫金细线：装帧上下各一道，是布面精装书脊最认得出的特征 */
-  .cx-spine::before, .cx-spine::after {
-    content: ''; position: absolute; left: 5px; right: 5px; height: 1px;
-    background: rgba(216,187,122,.52);
+  .cx-hero-rule::before, .cx-hero-rule::after {
+    content: ''; height: 1px; width: 60px; background: var(--cx-rule);
   }
-  .cx-spine::before { top: 13px; }
-  .cx-spine::after  { bottom: 13px; }
-  .cx-spine b {
-    writing-mode: vertical-rl; font-weight: 500;
-    font-size: 13px; letter-spacing: .14em; line-height: 1;
-    color: #e9dfc2; text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  .cx-hero-rule i {
+    width: 4px; height: 4px; background: var(--cx-gold);
+    transform: rotate(45deg); display: block;
   }
-  /* 英文书名：竖排在中文**左侧**，两行并排——书脊上中外文并列就是这个排法。
-     拉丁字母在 vertical-rl 里按默认的 text-orientation: mixed 自动侧转 90°，
-     不必显式写 sideways（那个值老浏览器还不认）。颜色取烫金的淡调。
-     DOM 里 em 写在 b 前面，所以并排时它自然落在左边。 */
-  .cx-spine em {
-    writing-mode: vertical-rl; font-style: normal;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-size: 8px; letter-spacing: .07em; line-height: 1;
-    color: rgba(222,196,138,.78); text-shadow: 0 1px 1px rgba(0,0,0,.35);
+  .cx-intro {
+    max-width: 640px; margin: 26px auto 0; text-align: center;
+    font-size: 13.5px; line-height: 1.9; color: var(--cx-ink-light);
   }
-  .cx-spine:hover { transform: translateY(-9px); box-shadow: 0 9px 14px rgba(60,48,30,.26); }
-  /* 选中的那本抽出更多，并把烫金点亮——面板在架下，靠这个动作认人 */
-  .cx-spine.on { transform: translateY(-16px); box-shadow: 0 14px 20px rgba(60,48,30,.30); }
-  .cx-spine.on::before, .cx-spine.on::after { background: rgba(233,207,143,.92); }
-  .cx-spine.on b { color: #fbf4de; }
 
-  .sh0 { --sh: 144px; } .sh1 { --sh: 154px; } .sh2 { --sh: 164px; } .sh3 { --sh: 174px; }
-
-  /* ── 架下的详情面板：做成这卷书的扉页 ─────────────────────
-     必须在 .cx-shelf 之外：做成 grid item 会撑破固定行高，架板渐变立刻错位。
-     早先是「左书名右作者」的列表行，太像后台表格；扉页的排法——居中、大字
-     题名、菱形饰线、题名块之间以细线断开——才配得上书架那一层。
-     顶边取被抽出那本的布面色（JS 写 --cloth），面板因此与那根书脊连着。 */
-  .cx-shelf-wrap { position: relative; }
-  /* 贴着被点那根书脊展开，不是落在架子下方——架子有三四行，落在下方等于
-     要滚下去再选，视线离开了那本书。JS 按书脊的 offsetLeft/offsetTop 定位，
-     右边放不下就翻到左侧。 */
-  .cx-panel {
-    position: absolute; z-index: 40; width: 322px; max-width: calc(100% - 6px);
-    background: #fdfbf5;
-    border: 1px solid #ddd3b8; border-top: 3px solid var(--cloth, #33503f);
-    box-shadow: 0 14px 34px rgba(60,48,30,.22);
-    opacity: 0; transform: translateY(5px);
-    transition: opacity .2s ease, transform .2s ease;
+  /* ── 本页收录 ─────────────────────────────────────── */
+  .cx-roster {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+    gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
+    max-width: 720px; margin: 30px auto 0;
   }
-  .cx-panel.show { opacity: 1; transform: translateY(0); }
-  .cx-spine.on { z-index: 30; }
-
-  .cx-pn-hd { text-align: center; padding: 26px 24px 0; }
-  .cx-pn-hd b {
-    display: block; font-size: 23px; color: #2d4a3a;
-    font-weight: 600; letter-spacing: .16em; text-indent: .16em;
-  }
-  .cx-pn-hd i {
-    display: block; margin-top: 5px;
-    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
-    font-size: 12.5px; color: #a2977f; letter-spacing: .05em;
-  }
-  /* 与页首那道饰线同款，只是收窄——同一页里的装饰要用同一个词汇 */
-  .cx-rule-sm { margin-top: 14px; gap: 7px; }
-  .cx-rule-sm::before, .cx-rule-sm::after { width: 42px; }
-
-  .cx-pn-body { padding: 6px 24px 26px; }
-  .cx-pn-item {
-    display: block; text-align: center; padding: 20px 8px 19px;
-    text-decoration: none !important; border-top: 1px solid #ece5d2;
+  .cx-who {
+    background: #fdfbf6; padding: 15px 17px;
+    text-decoration: none !important; display: block;
     transition: background .16s ease;
   }
-  .cx-pn-item:first-child { border-top: none; }
-  .cx-pn-item:hover { background: #f6f2e6; }
-  .cx-pn-t {
-    display: inline-block; font-size: 16px; color: #2d4a3a; line-height: 1.45;
-    letter-spacing: .04em; padding-bottom: 3px;
-    border-bottom: 1px solid transparent; transition: border-color .16s ease;
+  .cx-who:hover { background: #f4efe2; }
+  .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
+  .cx-who-meta {
+    font-family: 'Georgia', 'Times New Roman', serif; font-size: 11px;
+    color: var(--cx-ink-light); margin-top: 2px;
   }
-  .cx-pn-item:hover .cx-pn-t { border-bottom-color: #c2a86a; }
-  .cx-pn-e {
-    display: block; margin-top: 5px;
-    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
-    font-size: 12px; color: #a2977f; line-height: 1.5;
-  }
-  /* 分卷的章数：卷一到卷几、各多少章。夹在英文书名与注释家之间，
-     用暖金而非灰色——它是这一条独有的信息，跟每条都有的注释家不同级 */
-  .cx-pn-note {
-    display: inline-block; margin-top: 7px; padding: 2px 10px;
-    font-size: 11.5px; color: #8a7444; letter-spacing: .06em;
-    background: #f4efdf; border: 1px solid #e6dcc0; border-radius: 2px;
-  }
-  .cx-pn-au {
-    display: block; margin-top: 9px; font-size: 11.5px; color: #9a907c;
-    letter-spacing: .12em; text-indent: .12em;
-  }
-  .cx-pn-au em {
-    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
-    letter-spacing: .03em;
+  .cx-who-work { font-size: 12.5px; color: #6d6455; margin-top: 9px; line-height: 1.5; }
+  .cx-who-work em {
+    display: block; font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 11px; color: #b0a68d; margin-top: 1px;
   }
 
-  @media (max-width: 640px) {
-    .cx-hero { margin: 30px 0 24px; }
-    .cx-hero h1 { font-size: 23px; letter-spacing: .26em; text-indent: .26em; }
-    .cx-rule::before, .cx-rule::after { width: 52px; }
-    .cx-shelf {
-      --row: 158px;
-      grid-template-columns: repeat(auto-fill, minmax(38px, 1fr)); column-gap: 4px;
-    }
-    .sh0 { --sh: 120px; } .sh1 { --sh: 128px; } .sh2 { --sh: 136px; } .sh3 { --sh: 144px; }
-    .cx-spine b { font-size: 11.5px; letter-spacing: .1em; }
-    .cx-spine em { font-size: 7px; letter-spacing: .05em; }
-    .cx-spine { gap: 4px; }
-    .cx-spine::before { top: 10px; } .cx-spine::after { bottom: 10px; }
-    .cx-panel { width: 100%; max-width: none; }
-    .cx-pn-hd { padding: 22px 16px 0; }
-    .cx-pn-hd b { font-size: 20px; letter-spacing: .12em; text-indent: .12em; }
-    .cx-rule-sm::before, .cx-rule-sm::after { width: 32px; }
-    .cx-pn-body { padding: 4px 16px 22px; }
-    .cx-pn-item { padding: 17px 4px 16px; }
-    .cx-pn-t { font-size: 15px; }
+  /* ── 分卷标题 ─────────────────────────────────────── */
+  .cx-section { margin-top: 46px; }
+  .cx-section-title {
+    display: flex; align-items: baseline; gap: 12px;
+    border-bottom: 1px solid var(--cx-rule); padding-bottom: 9px; margin: 0 0 18px;
+  }
+  .cx-section-zh {
+    font-size: 17px; font-weight: 600; color: var(--cx-primary); letter-spacing: .16em;
+  }
+  .cx-section-en {
+    font-family: 'Georgia', serif; font-style: italic;
+    font-size: 12px; color: var(--cx-ink-light);
+  }
+  .cx-section-count {
+    margin-left: auto; font-family: 'Georgia', serif;
+    font-size: 12px; color: var(--cx-ink-light);
+  }
+
+  /* ── 书卷按钮网格：尺寸与 /calvin/ 主页一致 ──────────── */
+  .cx-book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 10px;
+  }
+  .cx-book-btn {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 12px 14px; min-height: 82px; border-radius: 3px;
+    text-decoration: none !important;
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease;
+    font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif;
+  }
+  .cx-book-name { font-size: 15px; line-height: 1.3; letter-spacing: .02em; }
+  .cx-book-name-en {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 11px; line-height: 1.25; margin-top: 3px; opacity: .7; letter-spacing: .02em;
+  }
+  .cx-book-meta {
+    font-size: 11px; margin-top: 4px; letter-spacing: .05em; opacity: .6;
+    font-family: 'Georgia', serif;
+  }
+  /* 有别家注释：白底墨绿描边，悬停翻墨绿实心（同加尔文主页 --has-content） */
+  .cx-book-btn--has {
+    background: #fff; border: 1px solid var(--cx-primary);
+    color: var(--cx-primary) !important;
+    box-shadow: 0 1px 2px rgba(45,74,58,.06);
+  }
+  .cx-book-btn--has:hover {
+    background: var(--cx-primary); color: #f5efd9 !important;
+    transform: translateY(-1px); box-shadow: 0 4px 10px rgba(45,74,58,.18);
+    text-decoration: none !important;
+  }
+  .cx-book-btn--has:hover .cx-book-meta { opacity: .85; }
+  .cx-book-meta-au { opacity: .85; font-family: inherit; letter-spacing: .04em; }
+  /* 尚无别家注释：虚线描边，不可点（同加尔文主页 --pending） */
+  .cx-book-btn--none {
+    background: transparent; border: 1px dashed var(--cx-pending-border);
+    color: var(--cx-pending-text) !important; cursor: default;
+  }
+  .cx-book-btn--none .cx-book-meta { opacity: .7; }
+
+  @media (max-width: 768px) {
+    .cx-hero { padding: 34px 0 4px; }
+    .cx-hero h1 { font-size: 23px; letter-spacing: .22em; text-indent: .22em; }
+    .cx-hero-rule::before, .cx-hero-rule::after { width: 44px; }
+    .cx-book-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; }
+    .cx-book-btn { min-height: 74px; padding: 10px 11px; }
+    .cx-book-name { font-size: 14px; }
   }
 </style>
 
-<div class="container cx-wrap" style="padding-top: 70px;">
+<div class="container cx-wrap" style="padding-top: 40px;">
   <div class="row">
-    <div class="col-lg-9 col-lg-offset-1 col-md-11 col-md-offset-1">
+    <div class="col-lg-10 col-lg-offset-1 col-md-12">
 
       <div class="cx-hero">
         <h1>历代解经</h1>
         <div class="cx-hero-en">Commentaries Through the Ages</div>
-        <div class="cx-rule"><i></i></div>
+        <div class="cx-hero-rule"><i></i></div>
+        <p class="cx-intro">
+          加尔文与马太亨利之外的历代改革宗注释，按书卷汇整。
+          那两位各有专属版面（<a href="{{ site.baseurl }}/calvin/">加尔文圣经注释</a>、<a href="{{ site.baseurl }}/mhenry/">马太亨利圣经注释</a>），
+          此处不再重列。虚线书卷表示尚无别家注释。
+        </p>
       </div>
 
+      {%- assign author_map = site.data.commentaries.authors -%}
       <div class="cx-roster">
-        <div class="cx-roster-hd">本 页 收 录</div>
-        <div class="cx-roster-grid">
-          {%- for a in author_map -%}
-          {%- if a.books > 0 -%}
-          <div class="cx-who">
-            <div class="cx-who-name">{{ a.name }}</div>
-            <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
-            <div class="cx-who-work">
-              《{{ a.work_cn }}》
-              {%- if a.work_en != "" %}<em>{{ a.work_en }}</em>{% endif -%}
-            </div>
-            <div class="cx-who-n">{{ a.books }} 卷</div>
+        {%- for a in author_map -%}
+        {%- unless a.id == "calvin" or a.id == "mhenry" -%}
+        <div class="cx-who">
+          <div class="cx-who-name">{{ a.name }}</div>
+          <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
+          <div class="cx-who-work">
+            《{{ a.work_cn }}》
+            {%- if a.work_en != "" %}<em>{{ a.work_en }}</em>{% endif -%}
           </div>
-          {%- endif -%}
-          {%- endfor -%}
         </div>
+        {%- endunless -%}
+        {%- endfor -%}
       </div>
 
       {%- assign groups = "ot,nt" | split: "," -%}
       {%- for group in groups -%}
       {%- assign rows = site.data.commentaries.books | where: "testament", group -%}
       {%- if rows.size > 0 -%}
-      <div class="cx-sec"><span>{% if group == "ot" %}旧　约{% else %}新　约{% endif %}</span></div>
-      <div class="cx-shelf-wrap">
-      <div class="cx-shelf">
-        {%- for b in rows -%}
-        {%- assign hi = forloop.index0 | times: 5 | modulo: 4 -%}
-        {%- comment -%} 布面色由 scripts/build_commentaries_index.py 排定并写进
-          _data/commentaries.yml（退火搜出的次序，见那边的注释），这里只管取用；
-          别在模板里改回取模公式，取模必然带周期、排到墙上是看得见的花纹。
-        {%- endcomment -%}
-        <div class="cx-spine sh{{ hi }}" style="background-color: {{ b.cloth }}"
-             title="{{ b.name }} {{ b.en }}" tabindex="0" role="button">
-          <em>{{ b.en }}</em><b>{{ b.name }}</b>
-          <template>
-            <div class="cx-pn-hd">
-              <b>{{ b.name }}</b><i>{{ b.en }}</i>
-              <div class="cx-rule cx-rule-sm"><i></i></div>
-            </div>
-            <div class="cx-pn-body">
-              {%- for l in b.links -%}
-              {%- assign au = author_map | where: "id", l.author | first -%}
-              <a class="cx-pn-item" href="{{ site.baseurl }}{{ l.path }}">
-                <span class="cx-pn-t">{{ l.title_cn }}</span>
-                {%- if l.title_en != "" %}<span class="cx-pn-e">{{ l.title_en }}</span>{% endif -%}
-                {%- if l.note %}<span class="cx-pn-note">{{ l.note }}</span>{% endif -%}
-                <span class="cx-pn-au">{{ au.name }} <em>{{ au.en }} · {{ au.years }}</em></span>
-              </a>
-              {%- endfor -%}
-            </div>
-          </template>
+      {%- assign n_has = 0 -%}
+      {%- for b in rows -%}{%- if b.links.size > 0 -%}{%- assign n_has = n_has | plus: 1 -%}{%- endif -%}{%- endfor -%}
+      <section class="cx-section">
+        <h3 class="cx-section-title">
+          <span class="cx-section-zh">{% if group == "ot" %}旧　约{% else %}新　约{% endif %}</span>
+          <span class="cx-section-en">{% if group == "ot" %}Old Testament{% else %}New Testament{% endif %}</span>
+          <span class="cx-section-count">{{ n_has }} / {{ rows.size }}</span>
+        </h3>
+        <div class="cx-book-grid">
+          {%- for b in rows -%}
+          {%- if b.links.size > 0 -%}
+          {%- assign l = b.links | first -%}
+          {%- assign au = author_map | where: "id", l.author | first -%}
+          <a href="{{ site.baseurl }}{{ l.path }}" class="cx-book-btn cx-book-btn--has"
+             title="{{ l.title_cn }}{% if l.title_en != '' %} · {{ l.title_en }}{% endif %}">
+            <span class="cx-book-name">{{ b.name }}</span>
+            <span class="cx-book-name-en">{{ b.en }}</span>
+            <span class="cx-book-meta cx-book-meta-au">{{ au.name }}</span>
+          </a>
+          {%- else -%}
+          <span class="cx-book-btn cx-book-btn--none">
+            <span class="cx-book-name">{{ b.name }}</span>
+            <span class="cx-book-name-en">{{ b.en }}</span>
+            <span class="cx-book-meta">{{ b.chapters }} 章</span>
+          </span>
+          {%- endif -%}
+          {%- endfor -%}
         </div>
-        {%- endfor -%}
-      </div>
-      <div class="cx-panel" hidden></div>
-      </div>
+      </section>
       {%- endif -%}
       {%- endfor -%}
 
     </div>
   </div>
 </div>
-
-<script>
-// 点书脊 → 它从架上抽出，面板**贴着这根书脊**展开；再点收起。
-// 面板刻意不做成 grid item：会撑破固定行高，架板的重复渐变立刻跟书脊错开。
-// 也刻意不落在架子下方：架子有三四行，落下方等于要滚下去再选，视线离开了那本书。
-(function initShelf(){
-  var wraps = Array.prototype.slice.call(document.querySelectorAll('.cx-shelf-wrap'));
-  if (!wraps.length) return;
-  var GAP = 12, narrow = window.matchMedia('(max-width: 640px)');
-
-  function closeAll(except){
-    wraps.forEach(function(w){
-      if (w === except) return;
-      w.querySelectorAll('.cx-spine.on').forEach(function(s){ s.classList.remove('on'); });
-      var p = w.querySelector('.cx-panel');
-      p.classList.remove('show'); p.hidden = true;
-    });
-  }
-
-  wraps.forEach(function(wrap){
-    var shelf = wrap.querySelector('.cx-shelf');
-    var panel = wrap.querySelector('.cx-panel');
-    var cur = null;
-
-    function place(spine){
-      var W = wrap.clientWidth;
-      if (narrow.matches) {
-        // 窄屏书脊只有 38px，左右都塞不下——改落在这一行架板的正下方，
-        // 仍在同一屏内，不用滚动
-        var row = Math.round(spine.offsetTop + spine.offsetHeight);
-        panel.style.left = '0px';
-        panel.style.top = (row + 6) + 'px';
-        return;
-      }
-      var pw = panel.offsetWidth;
-      var left = spine.offsetLeft + spine.offsetWidth + GAP;
-      if (left + pw > W) left = spine.offsetLeft - pw - GAP;   // 右边放不下就翻到左侧
-      panel.style.left = Math.max(0, Math.min(left, W - pw)) + 'px';
-      // 与书脊顶端齐平；抽出 16px 后书脊上移，面板跟着上移同样距离才对得齐
-      panel.style.top = Math.max(0, spine.offsetTop - 16) + 'px';
-    }
-
-    function open(spine){
-      var wasOn = spine.classList.contains('on');
-      shelf.querySelectorAll('.cx-spine.on').forEach(function(s){ s.classList.remove('on'); });
-      if (wasOn) { cur = null; panel.classList.remove('show'); panel.hidden = true; return; }
-      closeAll(wrap);
-      spine.classList.add('on');
-      cur = spine;
-      // 面板顶边取这本的布面色，与抽出来的那根书脊接上
-      panel.style.setProperty('--cloth', spine.style.backgroundColor);
-      panel.innerHTML = spine.querySelector('template').innerHTML;
-      panel.hidden = false;
-      place(spine);
-      // 先落地一帧再加 .show，否则 hidden→显示的同一帧里过渡不会跑
-      requestAnimationFrame(function(){ panel.classList.add('show'); });
-    }
-
-    shelf.addEventListener('click', function(e){
-      var spine = e.target.closest('.cx-spine');
-      if (spine) open(spine);
-    });
-    shelf.addEventListener('keydown', function(e){
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      var spine = e.target.closest('.cx-spine');
-      if (spine) { e.preventDefault(); open(spine); }
-    });
-    // 视口变化会改变每行列数，书脊全部换位，面板必须重新落点
-    window.addEventListener('resize', function(){ if (cur) place(cur); });
-  });
-
-  document.addEventListener('click', function(e){
-    if (!e.target.closest('.cx-shelf') && !e.target.closest('.cx-panel')) closeAll(null);
-  });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeAll(null);
-  });
-})();
-</script>
