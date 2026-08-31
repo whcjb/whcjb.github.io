@@ -8,6 +8,7 @@ prev_url: "/owen/hebrews/prefaces/5/"
 prev_label: "序二"
 next_url: "/owen/hebrews/prefaces/7/"
 next_label: "序四"
+zh_url: "/owen/hebrews/prefaces/6/zh/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 序三</div>
 

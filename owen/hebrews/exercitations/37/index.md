@@ -8,6 +8,7 @@ prev_url: "/owen/hebrews/exercitations/36/"
 prev_label: "导论 36"
 next_url: "/owen/hebrews/exercitations/38/"
 next_label: "导论 38"
+zh_url: "/owen/hebrews/exercitations/37/zh/"
 ---
 <div class="owen-exer-eyebrow">安息日与主日专论（Day of Sacred Rest） · Exercitation III</div>
 

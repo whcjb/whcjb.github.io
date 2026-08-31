@@ -6,6 +6,7 @@ title: "序五 · The Preface To The Reader"
 date: 2026-07-17 10:44
 prev_url: "/owen/hebrews/prefaces/7/"
 prev_label: "序四"
+zh_url: "/owen/hebrews/prefaces/8/zh/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 序五</div>
 

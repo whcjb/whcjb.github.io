@@ -6,6 +6,7 @@ title: "编者总序 · General Preface (by the Editor)"
 date: 2026-07-17 10:44
 next_url: "/owen/hebrews/prefaces/2/"
 next_label: "序言说明"
+zh_url: "/owen/hebrews/prefaces/1/zh/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 编者总序</div>
 

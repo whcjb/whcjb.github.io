@@ -8,6 +8,7 @@ prev_url: "/owen/hebrews/exercitations/29/"
 prev_label: "导论 29"
 next_url: "/owen/hebrews/exercitations/31/"
 next_label: "导论 31"
+zh_url: "/owen/hebrews/exercitations/30/zh/"
 ---
 <div class="owen-exer-eyebrow">约翰欧文希伯来书导论（Exercitations） · Exercitation XXX</div>
 
