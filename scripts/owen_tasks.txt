@@ -38,3 +38,13 @@ owen/hebrews/exercitations/40/index.md
 owen/hebrews/1/index.md
 owen/hebrews/2/index.md
 owen/hebrews/3/index.md
+owen/hebrews/4/index.md
+owen/hebrews/5/index.md
+owen/hebrews/6/index.md
+owen/hebrews/7/index.md
+owen/hebrews/8/index.md
+owen/hebrews/9/index.md
+owen/hebrews/10/index.md
+owen/hebrews/11/index.md
+owen/hebrews/12/index.md
+owen/hebrews/13/index.md

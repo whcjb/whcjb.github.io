@@ -20,24 +20,52 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div class="hodge-chrome" style="margin: 18px 0 22px;">
+      <div class="hodge-chrome hodge-bar" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/hodge/">&larr; 查尔斯·贺智</a>
+        {%- comment -%}
+          中英切换。中文版按「该章的 zh 页是否已生成」判断——翻译是逐章推进的，
+          没译到的章不给链接，免得点进 404。
+        {%- endcomment -%}
+        {%- assign zh_idx = site.pages | where_exp: "p", "p.path contains 'hodge/' " -%}
+        {% if page.zh %}<a class="hodge-lang" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/">English &rarr;</a>
+        {% else %}<a class="hodge-lang" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="hodge-title">{{ page.book_name }}</h1>
       <div class="hodge-sub">Charles Hodge · 1797–1878 · Princeton</div>
 
+      {%- assign zh_seg = '' -%}{% if page.zh %}{% assign zh_seg = 'zh/' %}{% endif %}
+      {%- comment -%} 已生成的中文页清单，用来决定中文版里哪些章可点 {%- endcomment -%}
+      {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains 'hodge/'" | map: "path" | join: "," -%}
+
       {% if page.has_preface %}
-      <a class="hodge-tile hodge-tile-wide" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/preface/">
-        <span>Introduction</span>导论
+      {%- assign kp = 'hodge/' | append: page.book_id | append: '/zh/preface.md' -%}
+      {%- assign pre_zh = false -%}
+      {%- if zh_pages contains kp %}{% assign pre_zh = true %}{% endif -%}
+      {% if page.zh != true or pre_zh %}
+      <a class="hodge-tile hodge-tile-wide" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ zh_seg }}preface/">
+        <span>{% if page.zh %}导论{% else %}Introduction{% endif %}</span>{% if page.zh %}Introduction{% else %}导论{% endif %}
       </a>
+      {% endif %}
       {% endif %}
 
       <div class="hodge-grid">
         {% for n in (1..page.chapters) %}
-        <a class="hodge-tile" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ n }}/">
+        {%- comment -%}
+          ⚠️ Liquid 没有 `contains X == false` 这种写法（会被解析成别的东西，
+          实测算出「可点 10 / 虚线 7」这种与实际不符的数）。必须先 assign
+          成布尔量，再用 if/else。
+        {%- endcomment -%}
+        {%- assign k = 'hodge/' | append: page.book_id | append: '/zh/' | append: n | append: '.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {% if page.zh and has_zh == false %}
+        <span class="hodge-tile hodge-tile-pending" title="尚未翻译"><span>Chapter</span>{{ n }}</span>
+        {% else %}
+        <a class="hodge-tile" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ zh_seg }}{{ n }}/">
           <span>Chapter</span>{{ n }}
         </a>
+        {% endif %}
         {% endfor %}
       </div>
 
@@ -74,6 +102,17 @@ layout: default
   .hodge-tile:hover {
     background: var(--hodge-ink); border-color: var(--hodge-ink);
     color: #f4f1e8 !important; transform: translateY(-1px);
+  }
+  .hodge-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hodge-lang {
+    border: 1px solid var(--hodge-rule); border-radius: 3px;
+    padding: 3px 11px; font-size: 12.5px; background: #fff; text-decoration: none !important;
+    color: var(--hodge-ink);
+  }
+  .hodge-lang:hover { background: var(--hodge-ink); color: #f4f1e8 !important; }
+  /* 尚未翻译的章：虚线、不可点 */
+  .hodge-tile-pending {
+    border-style: dashed; color: #a8b2bd !important; cursor: default; background: transparent;
   }
   .hodge-tile-wide {
     height: 58px; margin-bottom: 18px; font-size: 16px; letter-spacing: .08em;

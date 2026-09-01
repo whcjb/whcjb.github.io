@@ -26,15 +26,21 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div class="hodge-chrome" style="margin: 18px 0 22px;">
-        <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      <div class="hodge-chrome hodge-bar" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%}
+          语言切换。英文页由 translate_hodge.py 回填 zh_url，中文页自带 en_url；
+          没有对应译文的章就不显示，避免死链。
+        {%- endcomment -%}
+        {% if page.zh_url %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        {% if page.en_url %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
       </div>
 
       <h1 class="hodge-title">{{ page.title }}</h1>
 
       <div class="hodge-nav">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
       <div class="hodge-content">
@@ -42,8 +48,8 @@ layout: default
       </div>
 
       <div class="hodge-nav hodge-nav-foot">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
     </div>
@@ -66,6 +72,12 @@ layout: default
     font-size: 26px; color: var(--hodge-ink); font-weight: 600; letter-spacing: .04em;
     border-bottom: 2px solid var(--hodge-ink); padding-bottom: 9px; margin: 0 0 6px;
   }
+  .hodge-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .hodge-lang {
+    border: 1px solid var(--hodge-rule); border-radius: 3px;
+    padding: 3px 11px; font-size: 12.5px; background: #fff;
+  }
+  .hodge-lang:hover { background: var(--hodge-ink); color: #f4f1e8 !important; text-decoration: none !important; }
   .hodge-nav { display: flex; justify-content: space-between; margin: 14px 0 30px; }
   .hodge-nav-foot { margin: 46px 0 10px; padding-top: 16px; border-top: 1px solid var(--hodge-rule); }
   .hodge-content p { margin: 0 0 1.05em; text-align: justify; }
