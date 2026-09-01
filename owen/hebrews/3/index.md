@@ -9,6 +9,7 @@ prev_url: "/owen/hebrews/2/"
 prev_label: "第二章"
 next_url: "/owen/hebrews/4/"
 next_label: "第四章"
+zh_url: "/owen/hebrews/3/zh/"
 ---
 # 希伯来书 第三章
 

@@ -6,6 +6,8 @@ title: "导论 2 · 希伯来书 第二章"
 date: 2026-08-31 17:55
 prev_url: "/owen/hebrews/1/zh/"
 prev_label: "导论 1"
+next_url: "/owen/hebrews/3/zh/"
+next_label: "导论 3"
 en_url: "/owen/hebrews/2/"
 ---
 # 希伯来书 第二章
