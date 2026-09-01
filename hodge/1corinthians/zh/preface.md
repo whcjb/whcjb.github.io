@@ -3,7 +3,7 @@ layout: hodge-chapter
 book_id: 1corinthians
 book_name: "贺智《哥林多前书注释》"
 title: "导论"
-date: 2026-09-01 12:00
+date: 2026-09-01 16:43
 next_section: 1
 next_label: "第 1 章"
 en_url: "/hodge/1corinthians/preface/"

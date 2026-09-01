@@ -4,7 +4,7 @@ book_id: 1corinthians
 book_name: "Hodge on 1 Corinthians"
 title: "Preface"
 zh_url: "/hodge/1corinthians/zh/preface/"
-date: 2026-08-31 17:58
+date: 2026-09-01 16:40
 next_section: 1
 next_label: "Chapter 1"
 ---

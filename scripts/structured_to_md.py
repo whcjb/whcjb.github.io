@@ -30,7 +30,11 @@ from pathlib import Path
 #   j = smooth breathing (psilon), J = rough breathing (dasia)
 #   > = acute,  < = grave, ~ = circumflex
 #   | = iota subscript,  + = diaeresis,  ] = treat like > (Ages variant)
-_GCOMB = {'j': '̓', 'J': '̔', '>': '́', '<': '̀', '~': '͂', '|': 'ͅ', '+': '̈', ']': '́'}
+# `[` = 粗气符 + 锐音（AGES 把 ἁ + ́ 合成一个标记）。原表漏了它，
+# o[ti / i[na / a[giov / e[wv 转出来只剩 οτι / ινα，气符和重音全丢
+# （用户 2026-09-01 指出）。J 是单纯的粗气符，两者不同。
+_GCOMB = {'j': '̓', 'J': '̔', '>': '́', '<': '̀', '~': '͂', '|': 'ͅ', '+': '̈',
+          ']': '́', '[': '̔́'}
 _GBASE = {
     'a': 'α', 'b': 'β', 'g': 'γ', 'd': 'δ', 'e': 'ε', 'z': 'ζ', 'h': 'η', 'q': 'θ',
     'i': 'ι', 'k': 'κ', 'l': 'λ', 'm': 'μ', 'n': 'ν', 'x': 'ξ', 'o': 'ο', 'p': 'π',
@@ -59,10 +63,15 @@ def _ages_token(tok: str) -> str:
         comb = pend
         pend = ''
         if ch in _GVOWELS:
-            # Breathing marks: j (smooth), J (rough), { (rough alt)
-            if i < n and tok[i] in 'jJ{':
-                mark = 'J' if tok[i] in 'J{' else 'j'
-                comb += _GCOMB[mark]; i += 1
+            # Breathing marks: j (smooth), J (rough), { (rough alt),
+            # [ (rough + acute，AGES 合成一个标记：o[ti → ὅτι、a[giov → ἅγιος)
+            if i < n and tok[i] in 'jJ{[':
+                mark = tok[i]
+                if mark == '[':
+                    comb += _GCOMB['[']
+                else:
+                    comb += _GCOMB['J' if mark in 'J{' else 'j']
+                i += 1
             # Diaeresis: +
             if i < n and tok[i] == '+':
                 comb += _GCOMB['+']; i += 1
@@ -110,7 +119,31 @@ _AGES_ELISION = {
 }
 
 
+_GREEK_SPAN_RE = re.compile(
+    r'(<sty c="[0-9a-fA-F]{6}" i="[01]"(?: b="[01]")? g="1">)(.*?)(</sty>)', re.DOTALL)
+
+
+def _force_greek_spans(text: str) -> str:
+    """对提取层标了 g="1"（Koine 字体）的 span **无条件**做 AGES→Unicode。
+
+    这些 span 里必定是希腊文，不需要「含 > < ~ 才转」那套启发式——正是那套
+    启发式让 eij / eijv / o[ti / i[na / ouj / oujk / ejp / a[giov 等只带 j 或 [
+    的词全部漏转（贺智一书 200 余处，用户 2026-09-01 在 eij 上看出来）。
+    """
+    def _one(m):
+        inner = m.group(2)
+        out = []
+        for tok in re.split(r'(\s+)', inner):
+            if not tok.strip():
+                out.append(tok); continue
+            c = _ages_token(tok.replace('\\|', '|'))
+            out.append(c if any('Ͱ' <= x <= 'Ͽ' or 'ἀ' <= x <= '῿' for x in c) else tok)
+        return m.group(1) + ''.join(out) + m.group(3)
+    return _GREEK_SPAN_RE.sub(_one, text)
+
+
 def convert_ages_greek(text: str) -> str:
+    text = _force_greek_spans(text)
     # Hide <sty>/</sty> markers from the Greek regex (the `<` would otherwise
     # be consumed by the Greek-accent alternative as if it were a combining mark).
     # Replace each <sty c="..." i="..."> with a fixed-length placeholder to keep
@@ -124,7 +157,8 @@ def convert_ages_greek(text: str) -> str:
     # 产物里出现 `λαιδστψ c="800000" i="1" b="0">` 这种乱码。
     # 加粗那次就是这样悄悄坏掉的——所有既有 Gate 都没报，是「产物 vs PDF
     # 正文比对」(qa_ages_text.py) 查出来的。
-    text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]"(?: b="[01]")?>', _stash_open, text)
+    text = re.sub(r'<sty c="[0-9a-fA-F]{6}" i="[01]"(?: b="[01]")?(?: g="1")?>',
+                  _stash_open, text)
     text = text.replace('</sty>', '\x00E\x00')
     # Hide KJV-supplied [word] brackets — Ages uses `[his]` / `[he saith]` for
     # KJV translator-inserted words. Inside `[...]` the trailing `]` looks like
@@ -261,7 +295,8 @@ def format_inline(text: str) -> str:
 
 # b="0|1" 是后加的粗体位；写成可选，旧的结构化文件（无 b）照样能解析。
 _STY_RE = re.compile(
-    r'<sty c="([0-9a-fA-F]{6})" i="([01])"(?: b="([01])")?>(.*?)</sty>', re.DOTALL)
+    r'<sty c="([0-9a-fA-F]{6})" i="([01])"(?: b="([01])")?(?: g="1")?>(.*?)</sty>',
+    re.DOTALL)
 
 
 def apply_verse_styling(body: str, red: bool = False) -> str:

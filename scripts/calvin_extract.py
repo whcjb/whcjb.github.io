@@ -3116,17 +3116,24 @@ def _render_spans_with_italic(spans):
         # 当成普通正文吐出，贺智 1cor 那些 **First,** / **Secondly,** 段首
         # 提示词全部丢了加粗——用户 2026-08-31 指出。
         is_bold = bool(s['flags'] & 16) or 'Bold' in s.get('font', '')
+        # 希腊文字体（AGES 用 Koine-*）：标出来，下游据此**无条件**转 Unicode。
+        # 靠正则猜「这词是不是希腊转写码」永远补不完：主正则要求含
+        # `> < ~ { } + ]` 之一才触发，而 eij/eijv/o[ti/i[na/ouj/oujk/ejp/a[giov
+        # 只有 j 或 [，全部漏转（贺智一书就漏了 200 余处）；把 j 或 [ 加进触发集
+        # 又会把 John/just/[his] 之类误转。字体是确定信息，比猜可靠。
+        is_greek = s.get('font', '').startswith(('Koine', 'Greek'))
         color = s.get('color', 0)
-        # Plain black non-italic non-bold → no style wrap needed
-        style = ((color, is_italic, is_bold)
-                 if (color != 0 or is_italic or is_bold) else None)
+        # Plain black non-italic non-bold non-greek → no style wrap needed
+        style = ((color, is_italic, is_bold, is_greek)
+                 if (color != 0 or is_italic or is_bold or is_greek) else None)
         if style != open_style:
             if open_style is not None:
                 parts.append('</sty>')
             if style is not None:
                 color_hex = f'{style[0]:06x}'
                 parts.append(f'<sty c="{color_hex}" i="{1 if style[1] else 0}"'
-                             f' b="{1 if style[2] else 0}">')
+                             f' b="{1 if style[2] else 0}"'
+                             + (' g="1"' if style[3] else '') + '>')
             open_style = style
         parts.append(text)
     if open_style is not None:
