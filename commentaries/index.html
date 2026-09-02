@@ -67,8 +67,10 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
   .cx-roster {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
     gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
-    max-width: 720px; margin: 30px auto 0;
+    max-width: 720px; margin: 0 auto;
   }
+  /* 挪到页尾后与最后一个书卷分组拉开距离 */
+  .cx-roster-title { margin-top: 52px; }
   /* 「本页收录」两格加左侧色标，与下面书卷格子的填充色呼应 */
   .cx-who {
     background: #fdfbf6; padding: 15px 17px;
@@ -189,21 +191,6 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
       </div>
 
       {%- assign author_map = site.data.commentaries.authors -%}
-      <div class="cx-roster">
-        {%- for a in author_map -%}
-        {%- unless a.id == "calvin" or a.id == "mhenry" -%}
-        <div class="cx-who cx-who-{{ a.id }}">
-          <div class="cx-who-name">{{ a.name }}</div>
-          <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
-          <div class="cx-who-work">
-            《{{ a.work_cn }}》
-            {%- if a.work_en != "" %}<em>{{ a.work_en }}</em>{% endif -%}
-          </div>
-        </div>
-        {%- endunless -%}
-        {%- endfor -%}
-      </div>
-
       {%- assign groups = "ot,nt" | split: "," -%}
       {%- for group in groups -%}
       {%- assign rows = site.data.commentaries.books | where: "testament", group -%}
@@ -241,6 +228,25 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
       </section>
       {%- endif -%}
       {%- endfor -%}
+
+      <h3 class="cx-section-title cx-roster-title">
+        <span class="cx-section-zh">本页收录</span>
+        <span class="cx-section-en">Commentators on This Page</span>
+      </h3>
+      <div class="cx-roster">
+        {%- for a in author_map -%}
+        {%- unless a.id == "calvin" or a.id == "mhenry" -%}
+        <div class="cx-who cx-who-{{ a.id }}">
+          <div class="cx-who-name">{{ a.name }}</div>
+          <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
+          <div class="cx-who-work">
+            《{{ a.work_cn }}》
+            {%- if a.work_en != "" %}<em>{{ a.work_en }}</em>{% endif -%}
+          </div>
+        </div>
+        {%- endunless -%}
+        {%- endfor -%}
+      </div>
 
     </div>
   </div>
