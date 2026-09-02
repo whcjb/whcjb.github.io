@@ -35,6 +35,18 @@ layout: default
       <div class="hodge-sub">Charles Hodge · 1797–1878 · Princeton</div>
 
       {%- assign zh_seg = '' -%}{% if page.zh %}{% assign zh_seg = 'zh/' %}{% endif %}
+
+      {%- comment -%}
+        经文索引入口。索引页由 scripts/build_hodge_verse_index.py 生成，
+        中英各一份；页面不存在时（还没跑过生成器）不显示按钮，免得死链。
+      {%- endcomment -%}
+      {%- assign vi_path = 'hodge/' | append: page.book_id | append: '/' | append: zh_seg | append: 'verse-index/index.html' -%}
+      {%- assign vi_all = site.pages | map: "path" | join: "," -%}
+      {% if vi_all contains vi_path %}
+      <a class="hodge-verse-index-link" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{{ zh_seg }}verse-index/">
+        📖 {% if page.zh %}经文索引 <span>按章逐节检索贺智注释</span>{% else %}Verse Index <span>jump to any verse&rsquo;s comment</span>{% endif %}
+      </a>
+      {% endif %}
       {%- comment -%} 已生成的中文页清单，用来决定中文版里哪些章可点 {%- endcomment -%}
       {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains 'hodge/'" | map: "path" | join: "," -%}
 
@@ -74,6 +86,16 @@ layout: default
 </div>
 
 <style>
+  .hodge-verse-index-link {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    padding: 8px 14px; margin: 0 0 22px;
+    background: #f7f3ea; border: 1px solid #d8c9a4; border-radius: 4px;
+    color: #8a6d3b; font-size: 14px; text-decoration: none !important;
+    font-family: 'Georgia', serif;
+  }
+  .hodge-verse-index-link:hover { background: #f0e9d8; border-color: #b99a5e; color: #6f5529; }
+  .hodge-verse-index-link span { font-size: 12px; color: #8a6d3b; opacity: .85; }
+
   .hodge-wrap { --hodge-ink: {{ hodge_ink }}; --hodge-rule: {{ hodge_rule }}; }
   body:has(.hodge-wrap) { background: #fbfaf7; }
   .hodge-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }

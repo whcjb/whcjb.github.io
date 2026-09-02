@@ -45,6 +45,24 @@ for root, dirs, files in os.walk(os.path.join(REPO, 'mhenry')):
             'date': fm['date'],
         })
 
+# Hodge chapters —— 只收中译（hodge/<book>/zh/），英文版整批同一时间戳，
+# 进时间线只会把当天其它内容挤掉。
+HODGE_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书'}
+for book, cn in HODGE_CN.items():
+    zh_dir = os.path.join(REPO, 'hodge', book, 'zh')
+    if not os.path.isdir(zh_dir): continue
+    for f in sorted(os.listdir(zh_dir)):
+        if not f.endswith('.md'): continue
+        fm = parse_fm(open(os.path.join(zh_dir, f)).read())
+        if not fm.get('date'): continue
+        items.append({
+            'type': 'hodge',
+            'title': f"贺智《{cn}注释》{fm.get('title', f[:-3])}",
+            'subtitle': '查尔斯·贺智',
+            'url': f"/hodge/{book}/zh/{f[:-3]}/",
+            'date': fm['date'],
+        })
+
 # Blog posts
 for f in os.listdir(os.path.join(REPO, '_posts')):
     if not f.endswith('.md'): continue

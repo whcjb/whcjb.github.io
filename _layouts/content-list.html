@@ -36,6 +36,7 @@ layout: default
     white-space: nowrap;
 }
 .badge-calvin  { background: #e8f4f8; color: #0085a1; }
+.badge-hodge   { background: #f0eee6; color: #8a6d3b; }
 .badge-mhenry  { background: #fef3e2; color: #C9922A; }
 .badge-reading { background: #eef6ee; color: #2e7d32; }
 .badge-post    { background: #f3e8f8; color: #7b3fa0; }
@@ -72,6 +73,8 @@ layout: default
     <span class="hc-badge badge-calvin">加尔文</span>
     {% elsif item.type == 'mhenry' %}
     <span class="hc-badge badge-mhenry">亨利</span>
+    {% elsif item.type == 'hodge' %}
+    <span class="hc-badge badge-hodge">贺智</span>
     {% elsif item.type == 'reading' %}
     <span class="hc-badge badge-reading">阅读</span>
     {% else %}

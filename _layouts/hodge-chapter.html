@@ -43,9 +43,26 @@ layout: default
         {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
+      {%- comment -%}
+        章顶节号导航。胶囊由 JS 扫正文里的 .commentary-anchor 生成
+        （锚点由 scripts/add_hodge_verse_anchors.py 注入）；无锚点的页
+        （导论等）整条隐藏。
+      {%- endcomment -%}
+      <div id="verse-nav" style="display:none;">
+        <div id="verse-nav-toggle" onclick="toggleHodgeVerseNav()">
+          <span id="verse-nav-label"></span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;"></div>
+      </div>
+
       <div class="hodge-content">
         {{ content }}
       </div>
+
+      {% if page.date %}
+      <div class="hodge-pubdate">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
 
       <div class="hodge-nav hodge-nav-foot">
         {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
@@ -57,6 +74,39 @@ layout: default
 </div>
 
 <style>
+  .hodge-pubdate { margin-top:32px; font-size:12px; color:#aaa; text-align:right; }
+
+  /* ── 节号导航（贺智专用配色：暖金 + 米底，不沿用 calvin 的绿）── */
+  #verse-nav { margin: 0 0 22px; position: relative; z-index: 2; }
+  #verse-nav-toggle {
+    display: flex; align-items: center; gap: 8px; width: fit-content;
+    padding: 7px 14px; cursor: pointer; user-select: none;
+    background: #f7f3ea; border: 1px solid #d8c9a4; border-radius: 4px;
+    font-family: 'Georgia', serif; font-size: 13px; color: var(--hodge-ink);
+  }
+  #verse-nav-toggle:hover { background: #f0e9d8; }
+  #verse-nav-arrow { font-size: 10px; transition: transform .2s; }
+  #verse-nav-arrow.open { transform: rotate(180deg); }
+  #verse-nav-pills {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 12px 14px;
+    background: #fdfbf6; border: 1px solid #e4d9bf; border-radius: 4px;
+  }
+  .verse-pill {
+    display: inline-block; padding: 3px 9px; border-radius: 12px;
+    background: #f3ecdc; border: 1px solid #d8c9a4; color: var(--hodge-ink);
+    font-family: 'Georgia', serif; font-size: 13px; text-decoration: none;
+    transition: background .15s;
+  }
+  .verse-pill:hover { background: var(--hodge-ink); border-color: var(--hodge-ink); color: #fff; text-decoration: none; }
+  .verse-pill--active { background: var(--hodge-ink-dark); border-color: var(--hodge-ink-dark); color: #fff; font-weight: bold; }
+
+  /* 锚点占 0 高度，scroll-margin 让跳转落点避开固定 navbar */
+  .hodge-content .commentary-anchor {
+    display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+    overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+  }
+  /* 注释头可点（跳章顶导航条），但光标保持文本 I 型，不变手型 */
+  .hodge-content strong.verse-head { cursor: text; }
   .hodge-wrap { --hodge-ink: {{ hodge_ink }}; --hodge-ink-dark: {{ hodge_ink_dark }};
                 --hodge-rule: {{ hodge_rule }}; }
   body:has(.hodge-wrap) { background: #fbfaf7; }
@@ -108,3 +158,80 @@ layout: default
     .hodge-title { font-size: 21px; }
   }
 </style>
+
+<script>
+// ── 节号导航 ──────────────────────────────────────
+// 锚点 <div class="commentary-anchor" id="<book>-<ch>-<v>"> 由
+// scripts/add_hodge_verse_anchors.py 预先注入正文。这里只负责：
+//   1. 按锚点生成章顶胶囊（带 -2/-3 后缀的重复节不出胶囊）
+//   2. 点注释头 → 滚回章顶导航条并高亮该节（与 calvin 一致：不弹经文框）
+(function() {
+  var content = document.querySelector('.hodge-content');
+  if (!content) return;
+  var anchors = content.querySelectorAll('.commentary-anchor');
+  if (!anchors.length) return;
+
+  var pillsBox = document.getElementById('verse-nav-pills');
+  var entries = [];
+  anchors.forEach(function(a) {
+    var m = a.id.match(/^(.+)-(\d+)-(\d+)$/);   // 尾部再带 -2/-3 的不匹配 → 不出胶囊
+    if (!m) return;
+    entries.push({id: a.id, v: m[3]});
+  });
+  if (!entries.length) return;
+
+  entries.forEach(function(e) {
+    var link = document.createElement('a');
+    link.href = '#' + e.id;
+    link.className = 'verse-pill';
+    link.textContent = e.v;
+    link.addEventListener('click', function() { setTimeout(closeHodgeVerseNav, 200); });
+    pillsBox.appendChild(link);
+  });
+
+  var isZh = document.documentElement.lang === 'zh' || {{ page.zh | default: false }};
+  var label = document.getElementById('verse-nav-label');
+  var span = entries.length > 1
+    ? entries[0].v + '\u2013' + entries[entries.length - 1].v
+    : entries[0].v;
+  label.textContent = isZh ? ('\u7ecf\u6587\u5bfc\u822a  ' + span) : ('Jump to verse  ' + span);
+  document.getElementById('verse-nav').style.display = 'block';
+
+  // 注释头 → 章顶导航条
+  var byVerse = {};
+  entries.forEach(function(e) { if (!byVerse[e.v]) byVerse[e.v] = e.id; });
+  content.querySelectorAll('p > strong:first-child').forEach(function(s) {
+    var mm = s.textContent.trim().match(/^\s*(\d{1,3})/);
+    if (!mm || !byVerse[mm[1]]) return;
+    s.classList.add('verse-head');
+    s.dataset.anchor = byVerse[mm[1]];
+    s.addEventListener('click', function() {
+      var nav = document.getElementById('verse-nav');
+      var pills = document.getElementById('verse-nav-pills');
+      var arrow = document.getElementById('verse-nav-arrow');
+      if (pills && pills.style.display === 'none') {
+        pills.style.display = 'flex';
+        if (arrow) arrow.classList.add('open');
+      }
+      var want = '#' + this.dataset.anchor;
+      pills && pills.querySelectorAll('.verse-pill').forEach(function(pill) {
+        pill.classList.toggle('verse-pill--active', pill.getAttribute('href') === want);
+      });
+      if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
+      else window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+})();
+
+function toggleHodgeVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  var open = pills.style.display !== 'none';
+  pills.style.display = open ? 'none' : 'flex';
+  arrow.classList.toggle('open', !open);
+}
+function closeHodgeVerseNav() {
+  document.getElementById('verse-nav-pills').style.display = 'none';
+  document.getElementById('verse-nav-arrow').classList.remove('open');
+}
+</script>

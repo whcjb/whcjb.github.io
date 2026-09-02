@@ -71,6 +71,9 @@ def translatable(line: str) -> bool:
         return False
     if re.fullmatch(r'-{3,}|<p[^>]*>|</p>', s):
         return False
+    # verse-index 锚点（add_hodge_verse_anchors.py 注入）是纯结构，送翻会被改写
+    if re.fullmatch(r'<div class="commentary-anchor" id="[^"]+"></div>', s):
+        return False
     # 纯希腊文/纯符号行不送翻
     if not re.search(r'[A-Za-z]{3}', s):
         return False

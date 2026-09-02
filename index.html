@@ -97,6 +97,7 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
 .badge-calvin  { background: #e8f4f8; color: #0085a1; }
 .badge-mhenry  { background: #fef3e2; color: #C9922A; }
 .badge-reading { background: #eef6ee; color: #2e7d32; }
+.badge-hodge   { background: #f0eee6; color: #8a6d3b; }
 .badge-post    { background: #f3e8f8; color: #7b3fa0; }
 
 .hc-body { flex: 1; min-width: 0; }
@@ -176,13 +177,17 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
     {% assign calvin_pages  = site.pages | where: "layout", "calvin-chapter"  | where_exp: "p", "p.date" %}
     {% assign mhenry_pages  = site.pages | where: "layout", "mhenry-chapter"  | where_exp: "p", "p.date" %}
     {% assign reading_pages = site.pages | where: "layout", "reading-chapter" | where_exp: "p", "p.date" %}
-    {% assign all_chapters = calvin_pages | concat: mhenry_pages | concat: reading_pages | sort: "date" | reverse %}
+    {% assign hodge_all = site.pages | where: "layout", "hodge-chapter" | where: "zh", true | where_exp: "p", "p.date" | sort: "date" | reverse %}
+    {% assign hodge_pages = hodge_all | slice: 0, 3 %}
+    {% assign all_chapters = calvin_pages | concat: mhenry_pages | concat: reading_pages | concat: hodge_pages | sort: "date" | reverse %}
     {% for item in all_chapters limit: 12 %}
     <a class="home-card" href="{{ site.baseurl }}{{ item.url }}">
         {% if item.layout == 'calvin-chapter' %}
         <span class="hc-badge badge-calvin">加尔文</span>
         {% elsif item.layout == 'mhenry-chapter' %}
         <span class="hc-badge badge-mhenry">亨利</span>
+        {% elsif item.layout == 'hodge-chapter' %}
+        <span class="hc-badge badge-hodge">贺智</span>
         {% else %}
         <span class="hc-badge badge-reading">阅读</span>
         {% endif %}
@@ -193,6 +198,9 @@ description: "義人要發旺如棕樹，生長如黎巴嫩的香柏樹。他們
             {% elsif item.layout == 'calvin-chapter' %}
             <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
             <div class="hc-sub">加尔文圣经注释</div>
+            {% elsif item.layout == 'hodge-chapter' %}
+            <div class="hc-title">{{ item.book_name }} {{ item.title }}</div>
+            <div class="hc-sub">查尔斯·贺智</div>
             {% else %}
             <div class="hc-title">{{ item.book_name }} 第{{ item.chapter }}章</div>
             <div class="hc-sub">马太亨利圣经注释</div>
