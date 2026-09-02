@@ -28,9 +28,10 @@ ROOT = Path(__file__).resolve().parent.parent
 
 BOOK_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书'}
 
-SYSTEM = (
+# {book_cn} 由 build_system() 按当前书卷填入（前书/后书用词不同，不能写死）。
+SYSTEM_TMPL = (
     "你是改革宗神学文献的专业译者，正在翻译查尔斯·贺智（Charles Hodge, "
-    "1797-1878，普林斯顿神学院）的《哥林多前书注释》。只输出译文，不要任何说明。\n"
+    "1797-1878，普林斯顿神学院）的《{book_cn}注释》。只输出译文，不要任何说明。\n"
     "\n"
     "★优先级（冲突时一律按此让步）：①意思正确 ②中文读者读得懂 ③文风沉稳。"
     "为求典雅而让读者读不懂，是错译不是好译；宁可用平实说法，也不用现代人"
@@ -38,7 +39,7 @@ SYSTEM = (
     "文风：庄重的现代书面语，可略带文言色彩，但以清楚达意为先。忌口语词"
     "（力度/搞/到位/的话）。贺智行文是逐节释义加教义论证，长句多，可按中文"
     "语序拆分重组，但不得增删义。\n"
-    "术语：经文、书卷名、人名一律照和合本（哥林多前书/使徒/称义/成圣/预表/"
+    "术语：经文、书卷名、人名一律照和合本（{book_cn}/使徒/称义/成圣/预表/"
     "中保/恩典/信心/良心/圣礼）。神学术语按改革宗惯用译法。\n"
     "\n"
     "【必须原样保留、不得翻译或改写的部分】\n"
@@ -47,10 +48,15 @@ SYSTEM = (
     "2. markdown 标记：**加粗**、*斜体*、行首的 <span class=\"enum-num\">N.</span>。\n"
     "3. 脚注标记 [^f12]、页界注释 <!-- PAGE 51 -->。\n"
     "4. 希腊文、希伯来文原文原样保留，不音译不意译；其后若有英文释义则译出。\n"
-    "5. 圣经引用的书卷章节号（1 Corinthians 3:5 → 哥林多前书 3:5）。\n"
+    "5. 圣经引用的书卷章节号（1 Corinthians 3:5 → 哥林多前书 3:5，"
+    "2 Corinthians 3:5 → 哥林多后书 3:5）。\n"
     "\n"
     "红色 span 里是英文钦定本经文，按和合本语感译成庄重的经文体，仍留在原 span 内。"
 )
+
+
+def build_system(book: str) -> str:
+    return SYSTEM_TMPL.replace('{book_cn}', BOOK_CN.get(book, book))
 
 
 def split_page(text: str):
@@ -154,7 +160,7 @@ def main():
     ap.add_argument('--publish', action='store_true')
     a = ap.parse_args()
 
-    tf.SYSTEM = SYSTEM
+    tf.SYSTEM = build_system(a.book)
     tf.CACHE_DIR = ROOT / 'hodge_raw' / 'zh_cache'
     tf.BATCH = 1
 
