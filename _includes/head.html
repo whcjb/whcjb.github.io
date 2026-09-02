@@ -55,6 +55,32 @@
         {%- capture seo_title -%}箴言书注释 - 查理·毕列志{%- endcapture -%}
         {%- capture seo_description -%}查理·毕列志(Charles Bridges)《箴言书注释》中文全文在线阅读，共{{ page.chapters }}章、571 个解经单元。英文原著 An Exposition of the Book of Proverbs (1850)，改革宗翻译社简体中文版，逐章免费阅读。{%- endcapture -%}
         {%- capture seo_keywords -%}毕列志箴言注释, 箴言书注释, Charles Bridges, An Exposition of the Book of Proverbs, 箴言解经, 改革宗圣经注释, 改革宗翻译社, {{ site.keyword }}{%- endcapture -%}
+    {%- elsif page.layout == 'hodge-chapter' -%}
+        {%- comment -%} 贺智：中英同层同 layout，只能靠 page.zh 分流；book_name 已含
+            「贺智《…》」/「Hodge on …」前缀，别再重复拼作者名。 {%- endcomment -%}
+        {%- if page.zh -%}
+            {%- assign _hbook = page.book_name | replace: '贺智', '' -%}
+            {%- assign _hbare = _hbook | replace: '《', '' | replace: '》', '' -%}
+            {%- capture seo_title -%}{{ page.title }} - {{ page.book_name }}{%- endcapture -%}
+            {%- capture seo_description -%}查尔斯·贺智（Charles Hodge, 1797–1878）{{ _hbook }}{{ page.title }} - 普林斯顿旧派加尔文主义逐节释义，改革宗经典注释中文全文在线阅读。{%- endcapture -%}
+            {%- capture seo_keywords -%}贺智{{ _hbare }}, 查尔斯·贺智, Charles Hodge {{ page.book_id }} commentary, 贺智圣经注释中文, 改革宗圣经注释, {{ site.keyword }}{%- endcapture -%}
+        {%- else -%}
+            {%- capture seo_title -%}{{ page.book_name }} · {{ page.title }}{%- endcapture -%}
+            {%- capture seo_description -%}{{ page.book_name }}, {{ page.title }}. Charles Hodge's (1797–1878) verse-by-verse commentary, full text online. Princeton Old School Reformed exegesis.{%- endcapture -%}
+            {%- capture seo_keywords -%}{{ page.book_name }}, Charles Hodge {{ page.book_id }} commentary, Charles Hodge commentary, Princeton theology, Reformed Bible commentary{%- endcapture -%}
+        {%- endif -%}
+    {%- elsif page.layout == 'hodge-book' -%}
+        {%- if page.zh -%}
+            {%- assign _hbook = page.book_name | replace: '贺智', '' -%}
+            {%- assign _hbare = _hbook | replace: '《', '' | replace: '》', '' -%}
+            {%- capture seo_title -%}{{ page.book_name }}{%- endcapture -%}
+            {%- capture seo_description -%}查尔斯·贺智（Charles Hodge, 1797–1878）{{ _hbook }}中文全文在线阅读，共{{ page.chapters }}章。普林斯顿神学院系统神学教授的逐节释义，改革宗经典注释免费阅读。{%- endcapture -%}
+            {%- capture seo_keywords -%}贺智{{ _hbare }}, 查尔斯·贺智, Charles Hodge {{ page.book_id }} commentary, 贺智圣经注释中文, 改革宗圣经注释, {{ site.keyword }}{%- endcapture -%}
+        {%- else -%}
+            {%- capture seo_title -%}{{ page.book_name }}{%- endcapture -%}
+            {%- capture seo_description -%}{{ page.book_name }}: full text of Charles Hodge's (1797–1878) verse-by-verse commentary in English, {{ page.chapters }} chapters. Princeton Old School Reformed exegesis online.{%- endcapture -%}
+            {%- capture seo_keywords -%}{{ page.book_name }}, Charles Hodge {{ page.book_id }} commentary, Charles Hodge commentary, Princeton theology, Reformed Bible commentary{%- endcapture -%}
+        {%- endif -%}
     {%- elsif page.title -%}
         {%- assign seo_title = page.title -%}
         {%- if page.subtitle -%}
