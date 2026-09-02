@@ -67,10 +67,8 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
   .cx-roster {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
     gap: 1px; background: #e7e0cc; border: 1px solid #e7e0cc;
-    max-width: 720px; margin: 0 auto;
+    max-width: 720px; margin: 24px auto 0;
   }
-  /* 挪到页尾后与最后一个书卷分组拉开距离 */
-  .cx-roster-title { margin-top: 52px; }
   /* 「本页收录」两格加左侧色标，与下面书卷格子的填充色呼应 */
   .cx-who {
     background: #fdfbf6; padding: 15px 17px;
@@ -99,6 +97,10 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
     display: flex; align-items: baseline; gap: 12px;
     border-bottom: 1px solid var(--cx-rule); padding-bottom: 9px; margin: 0 0 18px;
   }
+  /* 页尾「本页收录」：与最后一排书卷格子拉开距离。必须写在
+     .cx-section-title 之后——那条 `margin: 0 0 18px` 是简写，
+     放前面会被它把 margin-top 重置回 0（本次踩过）。 */
+  .cx-roster-title { margin-top: 76px; }
   .cx-section-zh {
     font-size: 17px; font-weight: 600; color: var(--cx-primary); letter-spacing: .16em;
   }
