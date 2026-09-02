@@ -321,14 +321,14 @@ books:
     testament: nt
     chapters: 16
     links:
-      - {author: hodge, path: "/hodge/1corinthians/", title_cn: "哥林多前书注释", title_en: "An Exposition of the First Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/1corinthians/zh/", title_cn: "哥林多前书注释", title_en: "An Exposition of the First Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
   - id: 2corinthians
     name: "哥林多后书"
     en: "2 Corinthians"
     testament: nt
     chapters: 13
     links:
-      - {author: hodge, path: "/hodge/2corinthians/", title_cn: "哥林多后书注释", title_en: "An Exposition of the Second Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/2corinthians/zh/", title_cn: "哥林多后书注释", title_en: "An Exposition of the Second Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
   - id: galatians
     name: "加拉太书"
     en: "Galatians"

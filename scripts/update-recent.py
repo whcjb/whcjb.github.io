@@ -17,17 +17,36 @@ def parse_fm(content):
 
 items = []
 
-# Calvin chapters
+def page_url(path):
+    """按文件路径推 Jekyll URL —— 比拿 front matter 里的 book_id/chapter 拼靠谱：
+    正式章节的 layout 是 calvin-en，其中 921 个根本没有 chapter 字段
+    （导论、psalms-1/preface、2timothy、1john-en、jeremiah-2-en 等）。
+    旧写法直接 fm['chapter'] KeyError，整个脚本跑不完。"""
+    return '/' + os.path.relpath(path, REPO)[:-3].rstrip('/') + '/'
+
+
+def chapter_title(fm, path, suffix):
+    """有 chapter 用「书名 第N章」，没有就退回 title（导论页等）。"""
+    name = fm.get('book_name') or fm.get('title') or os.path.basename(path)[:-3]
+    if fm.get('chapter'):
+        return f"{name} 第{fm['chapter']}章"
+    if fm.get('title') and fm.get('book_name'):
+        return f"{name} {fm['title']}"
+    return name
+
+
+# Calvin chapters（calvin-chapter 导论页 + calvin-en 正式章节）
 for root, dirs, files in os.walk(os.path.join(REPO, 'calvin')):
     for f in sorted(files):
         if not f.endswith('.md'): continue
-        fm = parse_fm(open(os.path.join(root, f)).read())
+        path = os.path.join(root, f)
+        fm = parse_fm(open(path).read())
         if not fm.get('date'): continue
         items.append({
             'type': 'calvin',
-            'title': f"{fm['book_name']} 第{fm['chapter']}章",
+            'title': chapter_title(fm, path, '加尔文'),
             'subtitle': '加尔文圣经注释',
-            'url': f"/calvin/{fm['book_id']}/{fm['chapter']}/",
+            'url': page_url(path),
             'date': fm['date'],
         })
 
@@ -35,13 +54,14 @@ for root, dirs, files in os.walk(os.path.join(REPO, 'calvin')):
 for root, dirs, files in os.walk(os.path.join(REPO, 'mhenry')):
     for f in sorted(files):
         if not f.endswith('.md'): continue
-        fm = parse_fm(open(os.path.join(root, f)).read())
+        path = os.path.join(root, f)
+        fm = parse_fm(open(path).read())
         if not fm.get('date'): continue
         items.append({
             'type': 'mhenry',
-            'title': f"{fm['book_name']} 第{fm['chapter']}章",
+            'title': chapter_title(fm, path, '亨利'),
             'subtitle': '马太亨利圣经注释',
-            'url': f"/mhenry/{fm['book_id']}/{fm['chapter']}/",
+            'url': page_url(path),
             'date': fm['date'],
         })
 
@@ -59,7 +79,7 @@ for book, cn in HODGE_CN.items():
             'type': 'hodge',
             'title': f"贺智《{cn}注释》{fm.get('title', f[:-3])}",
             'subtitle': '查尔斯·贺智',
-            'url': f"/hodge/{book}/zh/{f[:-3]}/",
+            'url': f"/hodge/{book}/zh/{f[:-3]}/",  # 目录固定，直接拼
             'date': fm['date'],
         })
 

@@ -194,6 +194,19 @@ def has_content(d: Path) -> bool:
                for p in d.iterdir())
 
 
+def entry_path(author_id: str, dirname: str) -> str:
+    """书卷入口路径。**有书卷级中文版就指中文**——历代解经是中文读者的入口，
+    落在英文页上等于让人先自己找一次「中文版」按钮（用户 2026-09-02 指定）。
+    中文页顶部本来就有「English →」，回英文一步可达。
+
+    只认书卷级 `<book>/zh/index.html`。欧文是章级 `<ch>/zh/`（整卷没有中文
+    索引页），这里不会误指过去。"""
+    d = AUTHORS[author_id]['dir']
+    if (ROOT / d / dirname / 'zh' / 'index.html').exists():
+        return f'/{d}/{dirname}/zh/'
+    return f'/{d}/{dirname}/'
+
+
 def scan(author_id: str) -> dict:
     """返回 {book_id: (入口路径, 册数)}。分卷聚合到第一册，册数用来标「全二卷」。"""
     base = ROOT / AUTHORS[author_id]['dir']
@@ -214,7 +227,7 @@ def scan(author_id: str) -> dict:
         prev = found.get(book)
         n = (prev[2] if prev else 0) + 1
         if prev is None or vol < prev[0]:
-            found[book] = (vol, f'/{AUTHORS[author_id]["dir"]}/{d.name}/', n)
+            found[book] = (vol, entry_path(author_id, d.name), n)
         else:
             found[book] = (prev[0], prev[1], n)
     return {k: (v[1], v[2]) for k, v in found.items()}
