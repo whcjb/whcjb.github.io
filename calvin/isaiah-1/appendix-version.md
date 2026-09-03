@@ -10,14 +10,16 @@ date: 2026-08-21 03:23
 
 <h2 class="scripture-anchor" id="isaiah-chapter-1-1-31" data-ref="ISAIAH CHAPTER 1:1-31" style="display:none">以赛亚书 第一章 1:1-31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">1:1-31</span></p>
 
-<strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</td><td class="scripture-la"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.（亚摩斯的儿子以赛亚的异象，是他在犹大诸王乌西雅、约坦、亚哈斯、希西家的日子，论到犹大和耶路撒冷所见的。）</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.（亚摩斯的儿子以赛亚的异象，是他在犹大诸王乌西雅、约坦、亚哈斯、希西家的日子，论到犹大和耶路撒冷所见的。）</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 天哪，要听！地啊，侧耳而听！因为耶和华说：我养育儿女，将他们养大，他们竟悖逆我。</p>
 
@@ -288,14 +290,16 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-5-1-30" data-ref="ISAIAH CHAPTER 5:1-30" style="display:none">以赛亚书 第五章 5:1-30</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">5:1-30</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。</td><td class="scripture-la"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.（来吧，我要为我所亲爱的歌唱，唱我所爱者论他葡萄园的歌。我所亲爱的有一葡萄园，在油之子的山角上。）</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.（来吧，我要为我所亲爱的歌唱，唱我所爱者论他葡萄园的歌。我所亲爱的有一葡萄园，在油之子的山角上。）</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 他刨挖园子，捡去石头，栽种上等的葡萄树，在园中盖了一座楼，又凿出压酒池；意思是要结好葡萄，反倒结了野葡萄。</p>
 
@@ -644,14 +648,16 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-10-1-34" data-ref="ISAIAH CHAPTER 10:1-34" style="display:none">以赛亚书 第十章 10:1-34</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">10:1-34</span></p>
 
-<strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，</td><td class="scripture-la"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,（祸哉，那些设立不义之律例的，和那些记录不公之判词的，）</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,（祸哉，那些设立不义之律例的，和那些记录不公之判词的，）</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 为要屈枉穷乏人，夺去我民中困苦人的理，以寡妇当作掳物，以孤儿当作掠物。</p>
 
@@ -816,14 +822,16 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-12-1-6" data-ref="ISAIAH CHAPTER 12:1-6" style="display:none">以赛亚书 第十二章 1-6节</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">12:1-6</span></p>
 
-<strong>1.</strong> 到那日，你必说：耶和华啊，我要称谢你！因为你虽然向我发怒，你的怒气却已转消；你又安慰了我。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 到那日，你必说：耶和华啊，我要称谢你！因为你虽然向我发怒，你的怒气却已转消；你又安慰了我。</td><td class="scripture-la"><strong>1.</strong> Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 看哪！神*是*我的拯救；我要 2. Ecce Deus salus mea: confidam,</p> <!-- PAGE 898 --> <p style="margin-left:2em;" markdown="1">倚靠他，并不惧怕。因为主耶和华*是*我的力量，是我的诗歌，他也成了我的拯救。</p>
 
@@ -922,14 +930,16 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-14-1-32" data-ref="ISAIAH CHAPTER 14:1-32" style="display:none">以赛亚书 第十四章 14:1-32</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">14:1-32</span></p>
 
-<strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。</td><td class="scripture-la"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.（耶和华现在要怜恤雅各，必再拣选以色列，使他们在本地安居；寄居的必与他们联合，我说，他们必与雅各家结连。）</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.（耶和华现在要怜恤雅各，必再拣选以色列，使他们在本地安居；寄居的必与他们联合，我说，他们必与雅各家结连。）</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 外邦人必将他们带回本土；以色列家必在耶和华的地上得外邦人为仆婢，也要掳掠先前掳掠他们的，辖管先前欺压他们的。</p>
 
@@ -1170,14 +1180,16 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-18" data-ref="ISAIAH CHAPTER 18" style="display:none">以赛亚书第十八章</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">18</span></p>
 
-<strong>1.</strong> 唉！古实河外展翅嗡嗡之地，
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 唉！古实河外展翅嗡嗡之地，</td><td class="scripture-la"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.（唉！以翼遮蔽之地，在古实诸河之外。）</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Heus terra inumbrans alis, quae est trans flumina Aethiopiae.（唉！以翼遮蔽之地，在古实诸河之外。）</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 差遣使者在水面上，坐蒲草船过海。先知说：你们快行的使者，要到高大光滑的民那里去。自从开国以来，那民极其可畏，是分地界践踏人的；他们的地有江河分开。</p>
 
@@ -1512,14 +1524,16 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-24" data-ref="ISAIAH CHAPTER 24" style="display:none">以赛亚书 第二十四章</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">24</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 看哪，耶和华使地空虚，变为荒凉；他将地面翻倒，将居民四散。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 看哪，耶和华使地空虚，变为荒凉；他将地面翻倒，将居民四散。</td><td class="scripture-la"><strong>1.</strong> Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 那时，百姓怎样，祭司也怎样；仆人怎样，主人也怎样；婢女怎样，主母也怎样；买物的怎样，卖物的也怎样；放债的怎样，借债的也怎样；取利的怎样，出利的也怎样。</p>
 
@@ -1636,14 +1650,16 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-26" data-ref="ISAIAH CHAPTER 26" style="display:none">以赛亚书 第二十六章</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">26</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 当那日，在犹大地人必唱这歌说：我们有坚固的城。耶和华要将救恩定为城墙，为外郭。
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 当那日，在犹大地人必唱这歌说：我们有坚固的城。耶和华要将救恩定为城墙，为外郭。</td><td class="scripture-la"><strong>1.</strong> In die illa cantabitur canticum in terra Iuda: Urbs fortitudinis nobis; salutem posuit muros et vallum.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. In die illa cantabitur canticum in terra Iuda: Urbs fortitudinis nobis; salutem posuit muros et vallum.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 敞开城门，使守信的义民得以进入。</p>
 

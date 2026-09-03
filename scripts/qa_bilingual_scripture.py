@@ -74,9 +74,19 @@ def audit_file(path):
         if in_box(m.start()):
             continue
         inner = TAG.sub('', m.group(1)).strip()
-        if not re.match(r'^\d+\s', inner):          # 不以节号起首 → 不是经文
+        # 节号后可以带点：`11. Die quo stabas…`。原先写 `^\d+\s` 要求紧跟
+        # 空白，于是带点的一律漏报——俄巴底亚 v.11-14/19-20 六处就这么漏的，
+        # 我据此误报过一次「0 处」（2026-09-03）。
+        if not re.match(r'^\d{1,3}\.?\s', inner):     # 不以节号起首 → 不是经文
             continue
         if latin_ratio(inner) < 0.35:                # 汉字为主 → 不是拉丁经文
+            continue
+        # ⚠️ 必须紧邻 box / anchor 才算缺陷。加尔文以赛亚书的体例是：章首一个
+        # box 给整章经文，之后**每节的拉丁引句紧接该节注释**散在正文里——那是
+        # 原书体例，不是漏出框外。不加这条限制，以赛亚两卷会虚报近千处
+        # （我据此报过 1167 的错数字，2026-09-03）。
+        head = text[max(0, m.start() - 300):m.start()]
+        if not re.search(r'scripture-box|scripture-anchor', head):
             continue
         stray.append(inner[:70])
 

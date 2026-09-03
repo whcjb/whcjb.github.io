@@ -10,14 +10,16 @@ date: 2026-06-02 18:13
 
 <h2 class="scripture-anchor" id="isaiah-chapter-1-1-31" data-ref="ISAIAH CHAPTER 1:1-31" style="display:none">ISAIAH CHAPTER 1:1-31</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">1:1-31</span></p>
 
-<strong>1.</strong> The vision of Isaiah the son of Amoz, which he saw concerning Judah and Jerusalem, in the days of Uzziah, Jotham, Ahaz, *and* Hezekiah, kings of Judah.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> The vision of Isaiah the son of Amoz, which he saw concerning Judah and Jerusalem, in the days of Uzziah, Jotham, Ahaz, *and* Hezekiah, kings of Judah.</td><td class="scripture-la"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** Hear, O heavens, and give ear, O earth: for the Lord hath spoken, I have nourished and brought up, children, and they have rebelled against me.</p>
 
@@ -103,14 +105,16 @@ vestra odio habet anima mea: superfuerunt mihi loco oneris, fatigatus sum ferend
 
 <h2 class="scripture-anchor" id="isaiah-chapter-2-1-22" data-ref="ISAIAH CHAPTER 2:1-22" style="display:none">ISAIAH CHAPTER 2:1-22</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">2:1-22</span></p>
 
-<strong>1.</strong> The word that Isaiah the son of Amoz saw concerning Judah and Jerusalem.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> The word that Isaiah the son of Amoz saw concerning Judah and Jerusalem.</td><td class="scripture-la"><strong>1.</strong> Verbum quod vidit Isaias, filius Amos super Iuda et Ierusalem.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Verbum quod vidit Isaias, filius Amos super Iuda et Ierusalem.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** And it shall come to pass in the last days, *that* the mountain of the Lord's house shall be established in the top of the mountains, and shall be exalted above the hills; and all nations shall flow unto it.</p>
 
@@ -288,14 +292,16 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. The show of their
 
 <h2 class="scripture-anchor" id="isaiah-chapter-5-1-30" data-ref="ISAIAH CHAPTER 5:1-30" style="display:none">ISAIAH CHAPTER 5:1-30</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">5:1-30</span></p>
 
-<strong>1.</strong> Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Now will I sing to my wellbeloved a song of my beloved touching his vineyard. My wellbeloved hath a vineyard in a very fruitful hill:</td><td class="scripture-la"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** And he fenced it, and gathered out the stones thereof, and planted it with the choicest vine, and built a tower in the midst of it, and also made a wine-press therein: and he looked that it should bring forth grapes, and it brought forth wild grapes.</p>
 
@@ -644,14 +650,16 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. The show of their
 
 <h2 class="scripture-anchor" id="isaiah-chapter-10-1-34" data-ref="ISAIAH CHAPTER 10:1-34" style="display:none">ISAIAH CHAPTER 10:1-34</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">10:1-34</span></p>
 
-<strong>1.</strong> Woe unto them that decree unrighteous decrees, and that write grievousness *which* they have prescribed;
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Woe unto them that decree unrighteous decrees, and that write grievousness *which* they have prescribed;</td><td class="scripture-la"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** To turn aside the needy from judgment, and to take away the right from the poor of my people, that widows may be their prey, and *that* they may rob the fatherless!</p>
 
@@ -816,14 +824,16 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae. 24. Therefore
 
 <h2 class="scripture-anchor" id="isaiah-chapter-12-1-6" data-ref="ISAIAH CHAPTER 12:1-6" style="display:none">ISAIAH CHAPTER 12:1-6</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">12:1-6</span></p>
 
-<strong>1.</strong> And in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> And in that day thou shalt say, O Lord, I will praise thee: though thou wast angry with me, thine anger is turned away, and thou comfortedst me.</td><td class="scripture-la"><strong>1.</strong> Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** Behold, God *is* my salvation; I will 2. Ecce Deus salus mea: confidam,</p> <!-- PAGE 898 --> <p style="margin-left:2em;" markdown="1">trust, and not be afraid: for the Lord JEHOVAH *is* my strength and my song; he also is become my salvation.</p>
 
@@ -922,14 +932,16 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae. 24. Therefore
 
 <h2 class="scripture-anchor" id="isaiah-chapter-14-1-32" data-ref="ISAIAH CHAPTER 14:1-32" style="display:none">ISAIAH CHAPTER 14:1-32</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">14:1-32</span></p>
 
-<strong>1.</strong> For the Lord will have mercy on Jacob, and will yet choose Israel, and set them in their own land: and the strangers shall be joined with them, and they shall cleave to the house of Jacob.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> For the Lord will have mercy on Jacob, and will yet choose Israel, and set them in their own land: and the strangers shall be joined with them, and they shall cleave to the house of Jacob.</td><td class="scripture-la"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** And the people shall take them, and bring them to their place; and the house of Israel shall possess them in the land of the Lord for servants and handmaids: and they shall take them captives, whose captives they were; and they shall rule over their oppressors.</p>
 
@@ -1170,14 +1182,16 @@ Quomodo cessavit exactor? Cessavit cupida auri? 5. The Lord hath broken the staf
 
 <h2 class="scripture-anchor" id="isaiah-chapter-18" data-ref="ISAIAH CHAPTER 18" style="display:none">ISAIAH CHAPTER 18</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">18</span></p>
 
-<strong>1.</strong> Woe to the land shadowing with wings, which is beyond the rivers of Ethiopia:
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Woe to the land shadowing with wings, which is beyond the rivers of Ethiopia:</td><td class="scripture-la"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** That sendeth ambassadors by the sea, even in vessels of bulrushes upon the water, saying, Go, ye swift messengers, to a nation scattered and peeled, to a people terrible from their beginning hitherto; a nation meted out and trodden down, whose land the rivers have spoiled!</p>
 
@@ -1512,14 +1526,16 @@ vovebuntquevota Iehova et reddent. 22. And the Lord shall smite Egypt; he shall 
 
 <h2 class="scripture-anchor" id="isaiah-chapter-24" data-ref="ISAIAH CHAPTER 24" style="display:none">ISAIAH CHAPTER 24</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">24</span></p>
 
-<strong>1.</strong> Behold, the Lord maketh the earth empty, and maketh it waste, and turneth it upside down, and scattereth abroad the inhabitants thereof.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> Behold, the Lord maketh the earth empty, and maketh it waste, and turneth it upside down, and scattereth abroad the inhabitants thereof.</td><td class="scripture-la"><strong>1.</strong> Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** And it shall be, as with the people, so with the priest; as with the servant, so with his master; as with the maid, so with her mistress; as with the buyer, so with the seller; as with the lender, so with the borrower; as with the taker of usury, so with the giver of usury to him.</p>
 
@@ -1636,14 +1652,16 @@ vovebuntquevota Iehova et reddent. 22. And the Lord shall smite Egypt; he shall 
 
 <h2 class="scripture-anchor" id="isaiah-chapter-26" data-ref="ISAIAH CHAPTER 26" style="display:none">ISAIAH CHAPTER 26</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">Isaiah Chapter</span> <span class="verse-range">26</span></p>
 
-<strong>1.</strong> In that day shall this song be sung in the land of Judah; We have a strong city: salvation will God appoint for walls and bulwarks.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> In that day shall this song be sung in the land of Judah; We have a strong city: salvation will God appoint for walls and bulwarks.</td><td class="scripture-la"><strong>1.</strong> In die illa cantabitur canticum in terra Iuda: Urbs fortitudinisnobis; salutem posuit muros et vallum.</td></tr>
+</tbody>
+</table>
 
 </div>
-
-<p style="text-align:right;" markdown="1">1. In die illa cantabitur canticum in terra Iuda: Urbs fortitudinisnobis; salutem posuit muros et vallum.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** Open ye the gates, that the righteous nation which keepeth the truth may enter in.</p>
 
