@@ -6,7 +6,7 @@ title: 约翰欧文·希伯来书注释
   <div style="text-align:center; margin-bottom:8px;">
     <h1 style="font-family:Georgia,'Songti SC',serif; color:#1f4a3f; font-size:30px; letter-spacing:.04em;">希伯来书</h1>
     <div style="color:#1f5a4b; font-size:14px; letter-spacing:.12em; margin-top:6px;">约翰·欧文注释 · An Exposition of the Epistle to the Hebrews</div>
-    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">英文版（中文翻译进行中）</div>
+    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">中英双语 · 有中译的直接进中文版，页内可切回英文原文</div>
   </div>
   {%- comment -%}
     已发布中译的页面清单。中文页出在 <英文页>/zh/index.md（见 owen-pipeline 05），
@@ -21,17 +21,17 @@ title: 约翰欧文·希伯来书注释
     <a href="{{ site.baseurl }}/owen/hebrews/exercitations/" class="owen-listlink">全部列表 &rarr;</a></div>
 
   <div class="owen-legend">
-    <span><i class="lg-zh"></i>已有中译</span>
-    <span><i class="lg-en"></i>仅英文</span>
+    <span><i class="lg-zh"></i>中文版</span>
+    <span><i class="lg-en"></i>仅英文（中译进行中）</span>
   </div>
 
   <div class="owen-sub">卷首 Front Matter · 8 篇（编者总序 · Owen 献词 · 5 篇原序）</div>
   <div class="owen-grid">
     {% for n in (1..8) %}
     {%- assign zk = "owen/hebrews/prefaces/" | append: n | append: "/zh/index.md" -%}
-    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/"
+    <a href="{{ site.baseurl }}/owen/hebrews/prefaces/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
        class="owen-tile owen-tile-exer owen-tile-pref{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
-       title="{% if zh_paths contains zk %}已有中译{% else %}仅英文{% endif %}"><span>Pref</span>{{ n }}</a>
+       title="{% if zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Pref</span>{{ n }}</a>
     {% endfor %}
   </div>
 
@@ -39,9 +39,9 @@ title: 约翰欧文·希伯来书注释
   <div class="owen-grid">
     {% for n in (1..34) %}
     {%- assign zk = "owen/hebrews/exercitations/" | append: n | append: "/zh/index.md" -%}
-    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/"
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
        class="owen-tile owen-tile-exer{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
-       title="{% if zh_paths contains zk %}已有中译{% else %}仅英文{% endif %}"><span>Exer</span>{{ n }}</a>
+       title="{% if zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Exer</span>{{ n }}</a>
     {% endfor %}
   </div>
 
@@ -49,9 +49,9 @@ title: 约翰欧文·希伯来书注释
   <div class="owen-grid">
     {% for n in (35..40) %}
     {%- assign zk = "owen/hebrews/exercitations/" | append: n | append: "/zh/index.md" -%}
-    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/"
+    <a href="{{ site.baseurl }}/owen/hebrews/exercitations/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
        class="owen-tile owen-tile-exer{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
-       title="{% if zh_paths contains zk %}已有中译{% else %}仅英文{% endif %}"><span>Exer</span>{{ n }}</a>
+       title="{% if zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Exer</span>{{ n }}</a>
     {% endfor %}
   </div>
 
@@ -60,9 +60,9 @@ title: 约翰欧文·希伯来书注释
   <div class="owen-grid">
     {% for n in (1..13) %}
     {%- assign zk = "owen/hebrews/" | append: n | append: "/zh/index.md" -%}
-    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/"
+    <a href="{{ site.baseurl }}/owen/hebrews/{{ n }}/{% if zh_paths contains zk %}zh/{% endif %}"
        class="owen-tile owen-tile-ch{% if zh_paths contains zk %} owen-tile-zh{% endif %}"
-       title="{% if zh_paths contains zk %}已有中译{% else %}仅英文{% endif %}"><span>Ch</span>{{ n }}</a>
+       title="{% if zh_paths contains zk %}中文版{% else %}仅英文（中译进行中）{% endif %}"><span>Ch</span>{{ n }}</a>
     {% endfor %}
   </div>
   <p style="text-align:center; color:#8a8a82; font-size:13px; line-height:1.8; max-width:600px; margin:34px auto 0;">

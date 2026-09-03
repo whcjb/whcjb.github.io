@@ -3,69 +3,73 @@ layout: default
 title: 约翰欧文·希伯来书导论与卷首
 ---
 
+{%- comment -%}已发布中译的页面清单，用法同 owen/hebrews/index.html：
+   有中译的条目直接链到 /zh/，英文原文由页内「English ↔」按钮进{%- endcomment -%}
+{%- assign zh_pages = site.pages | where_exp: "p", "p.path contains '/zh/index.md'" -%}
+{%- assign zh_paths = zh_pages | map: "path" | join: "," -%}
 <div class="container" style="padding-top:80px; max-width:820px;">
   <div style="text-align:center; margin-bottom:10px;">
     <div style="margin-bottom:14px; font-size:13px;"><a href="{{ site.baseurl }}/owen/hebrews/" style="color:#1f5a4b;">&larr; 希伯来书</a></div>
     <h1 style="font-family:Georgia,'Songti SC',serif; color:#1f4a3f; font-size:28px; letter-spacing:.03em;">导论 · Exercitations</h1>
     <div style="color:#1f5a4b; font-size:14px; letter-spacing:.10em; margin-top:6px;">约翰·欧文《希伯来书注释》Vol 1–2</div>
-    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">英文版（中文翻译进行中）</div>
+    <div style="color:#9a9a92; font-size:12px; margin-top:6px;">中文版 · 页内可切回英文原文</div>
   </div>
   <h2 class="exer-series">卷首 · Front Matter &amp; Prefaces</h2>
 <ol class="exer-list">
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/1/"><span class="exn">1</span><span class="ext"><b>编者总序</b>General Preface (by the Editor)</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/2/"><span class="exn">2</span><span class="ext"><b>序言说明</b>Note in Regard to the Prefaces</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/3/"><span class="exn">3</span><span class="ext"><b>献词</b>Epistle Dedicatory — To Sir William Morrice</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/4/"><span class="exn">4</span><span class="ext"><b>序一</b>To The Christian Reader</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/5/"><span class="exn">5</span><span class="ext"><b>序二</b>The Preface</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/6/"><span class="exn">6</span><span class="ext"><b>序三</b>To The Christian Reader</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/7/"><span class="exn">7</span><span class="ext"><b>序四</b>The Preface To The Reader</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/8/"><span class="exn">8</span><span class="ext"><b>序五</b>The Preface To The Reader</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/1/{% if zh_paths contains 'owen/hebrews/prefaces/1/zh/index.md' %}zh/{% endif %}"><span class="exn">1</span><span class="ext"><b>编者总序</b>General Preface (by the Editor)</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/2/{% if zh_paths contains 'owen/hebrews/prefaces/2/zh/index.md' %}zh/{% endif %}"><span class="exn">2</span><span class="ext"><b>序言说明</b>Note in Regard to the Prefaces</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/3/{% if zh_paths contains 'owen/hebrews/prefaces/3/zh/index.md' %}zh/{% endif %}"><span class="exn">3</span><span class="ext"><b>献词</b>Epistle Dedicatory — To Sir William Morrice</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/4/{% if zh_paths contains 'owen/hebrews/prefaces/4/zh/index.md' %}zh/{% endif %}"><span class="exn">4</span><span class="ext"><b>序一</b>To The Christian Reader</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/5/{% if zh_paths contains 'owen/hebrews/prefaces/5/zh/index.md' %}zh/{% endif %}"><span class="exn">5</span><span class="ext"><b>序二</b>The Preface</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/6/{% if zh_paths contains 'owen/hebrews/prefaces/6/zh/index.md' %}zh/{% endif %}"><span class="exn">6</span><span class="ext"><b>序三</b>To The Christian Reader</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/7/{% if zh_paths contains 'owen/hebrews/prefaces/7/zh/index.md' %}zh/{% endif %}"><span class="exn">7</span><span class="ext"><b>序四</b>The Preface To The Reader</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/prefaces/8/{% if zh_paths contains 'owen/hebrews/prefaces/8/zh/index.md' %}zh/{% endif %}"><span class="exn">8</span><span class="ext"><b>序五</b>The Preface To The Reader</span></a></li>
 </ol>
 <h2 class="exer-series">约翰欧文希伯来书导论（Exercitations）</h2>
 <ol class="exer-list">
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/1/"><span class="exn">1</span><span class="ext"><b>Exercitation I</b>The canonical authority of the Epistle to the Hebrews</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/2/"><span class="exn">2</span><span class="ext"><b>Exercitation II</b>Of the penman of the Epistle to the Hebrews</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/3/"><span class="exn">3</span><span class="ext"><b>Exercitation III</b>The time [and occasion] of the writing of the Epistle to the Hebrews</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/4/"><span class="exn">4</span><span class="ext"><b>Exercitation IV</b>The language wherein the Epistle to the Hebrews was originally written</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/5/"><span class="exn">5</span><span class="ext"><b>Exercitation V</b>Testimonies cited by the apostle out of the Old Testament</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/6/"><span class="exn">6</span><span class="ext"><b>Exercitation VI</b>Oneness of the church</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/7/"><span class="exn">7</span><span class="ext"><b>Exercitation VII</b>Of the Judaical distribution of the Old Testament</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/8/"><span class="exn">8</span><span class="ext"><b>Exercitation VIII</b>The first dissertation concerning the Messiah, proving him to be promised of old</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/9/"><span class="exn">9</span><span class="ext"><b>Exercitation IX</b>Promises of the Messiah vindicated</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/10/"><span class="exn">10</span><span class="ext"><b>Exercitation X</b>Appearances of the Son of God under the old testament</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/11/"><span class="exn">11</span><span class="ext"><b>Exercitation XI</b>Faith of the ancient church of the Jews concerning the Messiah</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/12/"><span class="exn">12</span><span class="ext"><b>Exercitation XII</b>[Second dissertation]—The promised Messiah long since come</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/13/"><span class="exn">13</span><span class="ext"><b>Exercitation XIII</b>Other testimonies proving the Messiah to be come</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/14/"><span class="exn">14</span><span class="ext"><b>Exercitation XIV</b>Daniel&#x27;s prophecy vindicated</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/15/"><span class="exn">15</span><span class="ext"><b>Exercitation XV</b>Computation of Daniel&#x27;s weeks</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/16/"><span class="exn">16</span><span class="ext"><b>Exercitation XVI</b>Jewish traditions about the coming of the Messiah</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/17/"><span class="exn">17</span><span class="ext"><b>Exercitation XVII</b>The third general dissertation, proving Jesus of Nazareth to be the only true and promised Messiah</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/18/"><span class="exn">18</span><span class="ext"><b>Exercitation XVIII</b>Jews&#x27; objections against Christian religion answered</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/19/"><span class="exn">19</span><span class="ext"><b>Exercitation XIX</b>State and ordinances of the church before the giving of the law</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/20/"><span class="exn">20</span><span class="ext"><b>Exercitation XX</b>The law and precepts thereof</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/21/"><span class="exn">21</span><span class="ext"><b>Exercitation XXI</b>The sanction of the law in promises and threatenings</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/22/"><span class="exn">22</span><span class="ext"><b>Exercitation XXII</b>Of the tabernacle and ark</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/23/"><span class="exn">23</span><span class="ext"><b>Exercitation XXIII</b>Of the office of the priesthood</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/24/"><span class="exn">24</span><span class="ext"><b>Exercitation XXIV</b>Sacrifices of the old law</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/25/"><span class="exn">25</span><span class="ext"><b>Exercitation XXV</b>The office of priesthood</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/26/"><span class="exn">26</span><span class="ext"><b>Exercitation XXVI</b>Of the origin of the priesthood of Christ</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/27/"><span class="exn">27</span><span class="ext"><b>Exercitation XXVII</b>The original of the priesthood of Christ in the counsel of God</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/28/"><span class="exn">28</span><span class="ext"><b>Exercitation XXVIII</b>Federal transactions between the Father and the Son</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/29/"><span class="exn">29</span><span class="ext"><b>Exercitation XXIX</b>The necessity of the priesthood of Christ on the supposition of sin and grace</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/30/"><span class="exn">30</span><span class="ext"><b>Exercitation XXX</b>The necessity of the priesthood of Christ on the supposition of sin and grace</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/31/"><span class="exn">31</span><span class="ext"><b>Exercitation XXXI</b>The nature of the priesthood of Christ</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/32/"><span class="exn">32</span><span class="ext"><b>Exercitation XXXII</b>The nature of the priesthood of Christ</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/33/"><span class="exn">33</span><span class="ext"><b>Exercitation XXXIII</b>Of the acts of the priesthood of Christ, their object, with the time and place of its exercise</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/34/"><span class="exn">34</span><span class="ext"><b>Exercitation XXXIV</b>Prefigurations of the priesthood and sacrifice of Christ</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/1/{% if zh_paths contains 'owen/hebrews/exercitations/1/zh/index.md' %}zh/{% endif %}"><span class="exn">1</span><span class="ext"><b>希伯来书的正典权威</b><i class="exlabel">Exercitation I</i>The canonical authority of the Epistle to the Hebrews</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/2/{% if zh_paths contains 'owen/hebrews/exercitations/2/zh/index.md' %}zh/{% endif %}"><span class="exn">2</span><span class="ext"><b>论希伯来书的执笔者</b><i class="exlabel">Exercitation II</i>Of the penman of the Epistle to the Hebrews</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/3/{% if zh_paths contains 'owen/hebrews/exercitations/3/zh/index.md' %}zh/{% endif %}"><span class="exn">3</span><span class="ext"><b>希伯来书写作的时间[与缘由]</b><i class="exlabel">Exercitation III</i>The time [and occasion] of the writing of the Epistle to the Hebrews</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/4/{% if zh_paths contains 'owen/hebrews/exercitations/4/zh/index.md' %}zh/{% endif %}"><span class="exn">4</span><span class="ext"><b>希伯来书原初所用的写作语言</b><i class="exlabel">Exercitation IV</i>The language wherein the Epistle to the Hebrews was originally written</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/5/{% if zh_paths contains 'owen/hebrews/exercitations/5/zh/index.md' %}zh/{% endif %}"><span class="exn">5</span><span class="ext"><b>使徒从旧约所引的诸般见证</b><i class="exlabel">Exercitation V</i>Testimonies cited by the apostle out of the Old Testament</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/6/{% if zh_paths contains 'owen/hebrews/exercitations/6/zh/index.md' %}zh/{% endif %}"><span class="exn">6</span><span class="ext"><b>教会的合一</b><i class="exlabel">Exercitation VI</i>Oneness of the church</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/7/{% if zh_paths contains 'owen/hebrews/exercitations/7/zh/index.md' %}zh/{% endif %}"><span class="exn">7</span><span class="ext"><b>论犹太人对旧约的分类</b><i class="exlabel">Exercitation VII</i>Of the Judaical distribution of the Old Testament</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/8/{% if zh_paths contains 'owen/hebrews/exercitations/8/zh/index.md' %}zh/{% endif %}"><span class="exn">8</span><span class="ext"><b>第一篇专论:论弥赛亚,证明他自古已被应许</b><i class="exlabel">Exercitation VIII</i>The first dissertation concerning the Messiah, proving him to be promised of old</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/9/{% if zh_paths contains 'owen/hebrews/exercitations/9/zh/index.md' %}zh/{% endif %}"><span class="exn">9</span><span class="ext"><b>弥赛亚应许之辩正</b><i class="exlabel">Exercitation IX</i>Promises of the Messiah vindicated</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/10/{% if zh_paths contains 'owen/hebrews/exercitations/10/zh/index.md' %}zh/{% endif %}"><span class="exn">10</span><span class="ext"><b>神子在旧约之下的显现</b><i class="exlabel">Exercitation X</i>Appearances of the Son of God under the old testament</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/11/{% if zh_paths contains 'owen/hebrews/exercitations/11/zh/index.md' %}zh/{% endif %}"><span class="exn">11</span><span class="ext"><b>古时犹太教会论弥赛亚的信仰</b><i class="exlabel">Exercitation XI</i>Faith of the ancient church of the Jews concerning the Messiah</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/12/{% if zh_paths contains 'owen/hebrews/exercitations/12/zh/index.md' %}zh/{% endif %}"><span class="exn">12</span><span class="ext"><b>【第二篇专论】——所应许的弥赛亚早已降临</b><i class="exlabel">Exercitation XII</i>[Second dissertation]—The promised Messiah long since come</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/13/{% if zh_paths contains 'owen/hebrews/exercitations/13/zh/index.md' %}zh/{% endif %}"><span class="exn">13</span><span class="ext"><b>证明弥赛亚已然降临的其他证据</b><i class="exlabel">Exercitation XIII</i>Other testimonies proving the Messiah to be come</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/14/{% if zh_paths contains 'owen/hebrews/exercitations/14/zh/index.md' %}zh/{% endif %}"><span class="exn">14</span><span class="ext"><b>但以理预言的辩护</b><i class="exlabel">Exercitation XIV</i>Daniel&#x27;s prophecy vindicated</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/15/{% if zh_paths contains 'owen/hebrews/exercitations/15/zh/index.md' %}zh/{% endif %}"><span class="exn">15</span><span class="ext"><b>但以理七十个七的推算</b><i class="exlabel">Exercitation XV</i>Computation of Daniel&#x27;s weeks</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/16/{% if zh_paths contains 'owen/hebrews/exercitations/16/zh/index.md' %}zh/{% endif %}"><span class="exn">16</span><span class="ext"><b>犹太人论弥赛亚降临的传统</b><i class="exlabel">Exercitation XVI</i>Jewish traditions about the coming of the Messiah</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/17/{% if zh_paths contains 'owen/hebrews/exercitations/17/zh/index.md' %}zh/{% endif %}"><span class="exn">17</span><span class="ext"><b>第三篇总论,证明拿撒勒人耶稣即是那独一真实、且为应许所指的弥赛亚</b><i class="exlabel">Exercitation XVII</i>The third general dissertation, proving Jesus of Nazareth to be the only true and promised Messiah</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/18/{% if zh_paths contains 'owen/hebrews/exercitations/18/zh/index.md' %}zh/{% endif %}"><span class="exn">18</span><span class="ext"><b>答犹太人对基督教之驳难</b><i class="exlabel">Exercitation XVIII</i>Jews&#x27; objections against Christian religion answered</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/19/{% if zh_paths contains 'owen/hebrews/exercitations/19/zh/index.md' %}zh/{% endif %}"><span class="exn">19</span><span class="ext"><b>律法颁布以前教会的状况与礼仪</b><i class="exlabel">Exercitation XIX</i>State and ordinances of the church before the giving of the law</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/20/{% if zh_paths contains 'owen/hebrews/exercitations/20/zh/index.md' %}zh/{% endif %}"><span class="exn">20</span><span class="ext"><b>律法及其诫命</b><i class="exlabel">Exercitation XX</i>The law and precepts thereof</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/21/{% if zh_paths contains 'owen/hebrews/exercitations/21/zh/index.md' %}zh/{% endif %}"><span class="exn">21</span><span class="ext"><b>律法在应许与刑威中的制裁</b><i class="exlabel">Exercitation XXI</i>The sanction of the law in promises and threatenings</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/22/{% if zh_paths contains 'owen/hebrews/exercitations/22/zh/index.md' %}zh/{% endif %}"><span class="exn">22</span><span class="ext"><b>论会幕与约柜</b><i class="exlabel">Exercitation XXII</i>Of the tabernacle and ark</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/23/{% if zh_paths contains 'owen/hebrews/exercitations/23/zh/index.md' %}zh/{% endif %}"><span class="exn">23</span><span class="ext"><b>论祭司的职任</b><i class="exlabel">Exercitation XXIII</i>Of the office of the priesthood</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/24/{% if zh_paths contains 'owen/hebrews/exercitations/24/zh/index.md' %}zh/{% endif %}"><span class="exn">24</span><span class="ext"><b>旧约律法之下的献祭</b><i class="exlabel">Exercitation XXIV</i>Sacrifices of the old law</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/25/{% if zh_paths contains 'owen/hebrews/exercitations/25/zh/index.md' %}zh/{% endif %}"><span class="exn">25</span><span class="ext"><b>祭司的职任</b><i class="exlabel">Exercitation XXV</i>The office of priesthood</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/26/{% if zh_paths contains 'owen/hebrews/exercitations/26/zh/index.md' %}zh/{% endif %}"><span class="exn">26</span><span class="ext"><b>论基督祭司职任的根源</b><i class="exlabel">Exercitation XXVI</i>Of the origin of the priesthood of Christ</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/27/{% if zh_paths contains 'owen/hebrews/exercitations/27/zh/index.md' %}zh/{% endif %}"><span class="exn">27</span><span class="ext"><b>基督祭司职分在神旨意中的根源</b><i class="exlabel">Exercitation XXVII</i>The original of the priesthood of Christ in the counsel of God</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/28/{% if zh_paths contains 'owen/hebrews/exercitations/28/zh/index.md' %}zh/{% endif %}"><span class="exn">28</span><span class="ext"><b>圣父与圣子之间的圣约交涉</b><i class="exlabel">Exercitation XXVIII</i>Federal transactions between the Father and the Son</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/29/{% if zh_paths contains 'owen/hebrews/exercitations/29/zh/index.md' %}zh/{% endif %}"><span class="exn">29</span><span class="ext"><b>在罪与恩典的前提之下,基督祭司职任的必要性</b><i class="exlabel">Exercitation XXIX</i>The necessity of the priesthood of Christ on the supposition of sin and grace</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/30/{% if zh_paths contains 'owen/hebrews/exercitations/30/zh/index.md' %}zh/{% endif %}"><span class="exn">30</span><span class="ext"><b>在罪与恩典的前提之下,基督祭司职任的必要性</b><i class="exlabel">Exercitation XXX</i>The necessity of the priesthood of Christ on the supposition of sin and grace</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/31/{% if zh_paths contains 'owen/hebrews/exercitations/31/zh/index.md' %}zh/{% endif %}"><span class="exn">31</span><span class="ext"><b>基督祭司职任的性质</b><i class="exlabel">Exercitation XXXI</i>The nature of the priesthood of Christ</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/32/{% if zh_paths contains 'owen/hebrews/exercitations/32/zh/index.md' %}zh/{% endif %}"><span class="exn">32</span><span class="ext"><b>基督祭司职任的性质</b><i class="exlabel">Exercitation XXXII</i>The nature of the priesthood of Christ</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/33/{% if zh_paths contains 'owen/hebrews/exercitations/33/zh/index.md' %}zh/{% endif %}"><span class="exn">33</span><span class="ext"><b>论基督祭司职任的诸般作为、其对象,以及施行的时间与处所</b><i class="exlabel">Exercitation XXXIII</i>Of the acts of the priesthood of Christ, their object, with the time and place of its exercise</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/34/{% if zh_paths contains 'owen/hebrews/exercitations/34/zh/index.md' %}zh/{% endif %}"><span class="exn">34</span><span class="ext"><b>基督祭司职分与献祭的预表</b><i class="exlabel">Exercitation XXXIV</i>Prefigurations of the priesthood and sacrifice of Christ</span></a></li>
 </ol>
 <h2 class="exer-series">安息日与主日专论（Day of Sacred Rest）</h2>
 <ol class="exer-list">
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/35/"><span class="exn">35</span><span class="ext"><b>Exercitation I</b>Differences concerning a day of sacred rest—Principles directing to the observance of it—The name of the day considered</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/36/"><span class="exn">36</span><span class="ext"><b>Exercitation II</b>Of the original of the Sabbath</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/37/"><span class="exn">37</span><span class="ext"><b>Exercitation III</b>Of the causes of the Sabbath</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/38/"><span class="exn">38</span><span class="ext"><b>Exercitation IV</b>Of the Judaical Sabbath</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/39/"><span class="exn">39</span><span class="ext"><b>Exercitation V</b>Of the Lord&#x27;s Day</span></a></li>
-<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/40/"><span class="exn">40</span><span class="ext"><b>Exercitation VI</b>The practical observance of the Lord&#x27;s Day</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/35/{% if zh_paths contains 'owen/hebrews/exercitations/35/zh/index.md' %}zh/{% endif %}"><span class="exn">35</span><span class="ext"><b>关乎圣安息日之诸般争议——指导守此日之诸原则——论此日之名称</b><i class="exlabel">Exercitation I</i>Differences concerning a day of sacred rest—Principles directing to the observance of it—The name of the day considered</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/36/{% if zh_paths contains 'owen/hebrews/exercitations/36/zh/index.md' %}zh/{% endif %}"><span class="exn">36</span><span class="ext"><b>论安息日之起源</b><i class="exlabel">Exercitation II</i>Of the original of the Sabbath</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/37/{% if zh_paths contains 'owen/hebrews/exercitations/37/zh/index.md' %}zh/{% endif %}"><span class="exn">37</span><span class="ext"><b>论安息日的诸般缘由</b><i class="exlabel">Exercitation III</i>Of the causes of the Sabbath</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/38/{% if zh_paths contains 'owen/hebrews/exercitations/38/zh/index.md' %}zh/{% endif %}"><span class="exn">38</span><span class="ext"><b>论犹太人的安息日</b><i class="exlabel">Exercitation IV</i>Of the Judaical Sabbath</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/39/{% if zh_paths contains 'owen/hebrews/exercitations/39/zh/index.md' %}zh/{% endif %}"><span class="exn">39</span><span class="ext"><b>论主日</b><i class="exlabel">Exercitation V</i>Of the Lord&#x27;s Day</span></a></li>
+<li><a href="{{ site.baseurl }}/owen/hebrews/exercitations/40/{% if zh_paths contains 'owen/hebrews/exercitations/40/zh/index.md' %}zh/{% endif %}"><span class="exn">40</span><span class="ext"><b>守主日的实际操练</b><i class="exlabel">Exercitation VI</i>The practical observance of the Lord&#x27;s Day</span></a></li>
 </ol>
 
 </div>
@@ -76,8 +80,12 @@ title: 约翰欧文·希伯来书导论与卷首
 .exer-list a{display:flex;align-items:baseline;gap:12px;padding:11px 14px;border:1px solid #e2ebe5;
   border-radius:8px;background:#fbfaf6;text-decoration:none;color:#2a2a26;transition:all .15s}
 .exer-list a:hover{background:#1f5a4b;border-color:#1f5a4b}
-.exer-list a:hover .exn,.exer-list a:hover .ext,.exer-list a:hover b{color:#fff}
+.exer-list a:hover .exn,.exer-list a:hover .ext,.exer-list a:hover b,.exer-list a:hover .exlabel{color:#fff}
 .exn{flex:0 0 auto;width:26px;text-align:right;font-family:Georgia,serif;color:#7aa896;font-size:14px}
-.ext{font-size:14px;line-height:1.5;color:#3a3a34}
-.ext b{display:block;color:#1f5a4b;font-size:12.5px;font-weight:bold;letter-spacing:.02em;margin-bottom:1px}
+/* 中译标题为主，英文原题(.exlabel 编号 + 描述正文)退为副行 */
+.ext{font-size:12.5px;line-height:1.5;color:#7a7a72}
+.ext b{display:block;font-family:'Songti SC',Georgia,serif;color:#1f4a3f;font-size:15px;
+  font-weight:bold;letter-spacing:.02em;margin-bottom:2px}
+.exlabel{display:block;font-family:Georgia,serif;font-style:normal;font-size:10.5px;
+  letter-spacing:.10em;text-transform:uppercase;color:#9aa8a1;margin-bottom:1px}
 </style>
