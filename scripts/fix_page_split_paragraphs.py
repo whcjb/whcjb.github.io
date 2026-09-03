@@ -36,6 +36,8 @@ TAG = re.compile('<[^>]+>')
 # 句末标点：中英都要收。原先只有 ASCII 一套，于是中文页里正常以「。」
 # 收尾的段落一律被当成「没结句」，只靠下面的续段守卫兜着，很脆。
 END_PUNCT = re.compile(r'[.!?»”"’。！？；」』】）]\s*$')
+# 句中引语：逗号/顿号/分号/冒号 紧接右引号收尾
+MID_QUOTE = re.compile(r'[,，、;；:：]\s*[»”"’]\s*$')
 
 
 def find_splits(lines):
@@ -45,7 +47,11 @@ def find_splits(lines):
         s = TAG.sub('', l).strip()
         if not s or s.startswith(('[^', '<!--', '#')) or len(s) < 30:
             continue
-        if END_PUNCT.search(s) or s.endswith(']'):
+        # 引号内逗号不算句末：英式/美式标点把逗号收在引号里，于是
+        # `“The name of God,” or “of Christ,”` 这种**句中**引语以 `”` 收尾，
+        # 被 END_PUNCT 当成结句放过（1corinthians/6.md 那处跨页断句就这么漏的，
+        # 2026-09-03；这已是本 Gate 的第三个洞，前两个见上面注释）。
+        if (END_PUNCT.search(s) and not MID_QUOTE.search(s)) or s.endswith(']'):
             continue
         k, page = i + 1, False
         while k < len(lines):

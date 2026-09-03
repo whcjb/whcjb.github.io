@@ -100,18 +100,14 @@ title: 约翰欧文·希伯来书注释
 
 /* ── 已发布中译 vs 仅英文 ─────────────────────────────────
    区分不能借用虚线/实线——那两个已经用来分「卷首」与「导论」了。
-   改用「填色 + 右上角中字标」：已译的方块有底色、边框加重、字色转深；
-   未译的把边框与字色一起调淡，退成背景。判定见上面的 zh_paths。 */
+   改用「填色」区分：已译的方块有底色、边框加重、字色转深；未译的把边框与
+   字色一起调淡，退成背景。判定见上面的 zh_paths。
+   （原先还在右上角挂一个小圆「中」字角标，2026-09-03 用户要求去掉——格子
+   本来就已经先进中文页，角标是冗余信息，48 个圆点反而吵。） */
 .owen-tile{position:relative}
 .owen-tile-zh{background:#e6f0ea;border-color:#1f5a4b;color:#164036;font-weight:600}
 .owen-tile-zh span{opacity:.78}
-.owen-tile-zh::after{
-  content:'中';position:absolute;top:-6px;right:-6px;
-  width:16px;height:16px;border-radius:50%;
-  background:#1f5a4b;color:#fff;font-size:9px;line-height:16px;text-align:center;
-  font-family:'Songti SC',serif;font-weight:400;letter-spacing:0}
 .owen-tile-zh:hover{background:#1f5a4b;color:#fff}
-.owen-tile-zh:hover::after{background:#c9a961;color:#1f3d2c}
 /* 未译：不是禁用态，仍可点（英文版本来就能读），只是退一步 */
 .owen-tile-exer:not(.owen-tile-zh),
 .owen-tile-ch:not(.owen-tile-zh){border-color:#b6cfc3;color:#6e9285}
