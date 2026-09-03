@@ -2,10 +2,11 @@
 layout: owen-chapter
 book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
-title: "导论 1 · 希伯来书 第一章"
+chapter: 1
+title: "第一章"
 date: 2026-08-31 14:42
 next_url: "/owen/hebrews/2/zh/"
-next_label: "导论 2"
+next_label: "第二章"
 en_url: "/owen/hebrews/1/"
 ---
 # 希伯来书 第一章

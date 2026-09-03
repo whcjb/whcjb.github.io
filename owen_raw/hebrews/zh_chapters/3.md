@@ -2,12 +2,13 @@
 layout: owen-chapter
 book_id: hebrews
 book_name: "希伯来书·约翰欧文注释"
-title: "导论 3 · 希伯来书 第三章"
+chapter: 3
+title: "第三章"
 date: 2026-08-31 19:14
 prev_url: "/owen/hebrews/2/zh/"
-prev_label: "导论 2"
+prev_label: "第二章"
 next_url: "/owen/hebrews/4/zh/"
-next_label: "导论 4"
+next_label: "第四章"
 en_url: "/owen/hebrews/3/"
 ---
 # 希伯来书 第三章

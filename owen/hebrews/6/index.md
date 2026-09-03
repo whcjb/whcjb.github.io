@@ -9,6 +9,7 @@ prev_url: "/owen/hebrews/5/"
 prev_label: "第五章"
 next_url: "/owen/hebrews/7/"
 next_label: "第七章"
+zh_url: "/owen/hebrews/6/zh/"
 ---
 # 希伯来书 第六章
 

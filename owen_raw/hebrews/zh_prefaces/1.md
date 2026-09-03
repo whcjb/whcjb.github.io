@@ -2,10 +2,10 @@
 layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
-title: "导论 1 · 总序（编者)"
+title: "总序（编者)"
 date: 2026-08-28 17:45
 next_url: "/owen/hebrews/prefaces/2/zh/"
-next_label: "导论 2"
+next_label: "序言说明 · Note in Regard to the Prefaces"
 en_url: "/owen/hebrews/prefaces/1/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 编者总序</div>

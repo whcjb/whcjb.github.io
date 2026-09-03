@@ -2,12 +2,12 @@
 layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
-title: "导论 2 · 关于诸序言的说明"
+title: "关于诸序言的说明"
 date: 2026-08-28 17:47
 prev_url: "/owen/hebrews/prefaces/1/zh/"
-prev_label: "导论 1"
+prev_label: "编者总序 · General Preface (by the Editor)"
 next_url: "/owen/hebrews/prefaces/3/zh/"
-next_label: "导论 3"
+next_label: "献词 · Epistle Dedicatory — To Sir William Morr"
 en_url: "/owen/hebrews/prefaces/2/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 序言说明</div>

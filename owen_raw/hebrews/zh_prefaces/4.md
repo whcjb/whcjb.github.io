@@ -2,12 +2,12 @@
 layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
-title: "导论 4 · 致基督徒读者"
+title: "致基督徒读者"
 date: 2026-08-28 18:12
 prev_url: "/owen/hebrews/prefaces/3/zh/"
-prev_label: "导论 3"
+prev_label: "献词 · Epistle Dedicatory — To Sir William Morr"
 next_url: "/owen/hebrews/prefaces/5/zh/"
-next_label: "导论 5"
+next_label: "序二 · The Preface"
 en_url: "/owen/hebrews/prefaces/4/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 序一</div>

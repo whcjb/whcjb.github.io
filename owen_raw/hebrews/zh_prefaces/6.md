@@ -2,12 +2,12 @@
 layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
-title: "导论 6 · 致基督徒读者"
+title: "致基督徒读者"
 date: 2026-08-28 18:15
 prev_url: "/owen/hebrews/prefaces/5/zh/"
-prev_label: "导论 5"
+prev_label: "序二 · The Preface"
 next_url: "/owen/hebrews/prefaces/7/zh/"
-next_label: "导论 7"
+next_label: "序四 · The Preface To The Reader"
 en_url: "/owen/hebrews/prefaces/6/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 序三</div>

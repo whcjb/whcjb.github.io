@@ -2,12 +2,12 @@
 layout: owen-chapter
 book_id: hebrews/exercitations
 book_name: "约翰欧文希伯来书导论"
-title: "导论 3 · 献词——致威廉·莫里斯爵士"
+title: "献词——致威廉·莫里斯爵士"
 date: 2026-08-28 17:51
 prev_url: "/owen/hebrews/prefaces/2/zh/"
-prev_label: "导论 2"
+prev_label: "序言说明 · Note in Regard to the Prefaces"
 next_url: "/owen/hebrews/prefaces/4/zh/"
-next_label: "导论 4"
+next_label: "序一 · To The Christian Reader"
 en_url: "/owen/hebrews/prefaces/3/"
 ---
 <div class="owen-exer-eyebrow">卷首 Front Matter · 献词</div>

@@ -224,16 +224,39 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     zh_url = en_dir + 'zh/'
     zh_h1 = next((l[2:].strip() for l in lines if l.startswith('# ')), fmval('title'))
 
+    # 段类型：exercitations(导论) / prefaces(卷首) / hebrews(正文章节)
+    _sect = Path(page_path).parent.parent.name
+
     # 章导航: 链到相邻中文页(仅当已翻译存在)
     exdir = src.parent.parent                       # .../exercitations
     base = en_dir.rstrip('/').rsplit('/', 1)[0] + '/'   # /owen/hebrews/exercitations/
     nav = []
+
+    def neighbor_label(n, fallback_key):
+        """相邻页标签**取自英文页自己的 front matter**，只把 URL 换成 /zh/。
+
+        原先三处硬写 f'导论 {n}'，把正文章节和卷首也标成了导论：
+        ch5 中文页 prev_label 写「导论 4」（英文页是「第四章」），
+        卷首 1 的 next_label 写「导论 2」（英文页是「序言说明」）。
+        导论那 40 篇英文页本来就写「导论 N」，所以改用英文页取值后
+        它们的输出完全不变，只有章和卷首被纠正。"""
+        q = exdir / f'{n}/index.md'
+        if q.exists():
+            m = re.search(rf'^{fallback_key}:\s*"?(.+?)"?\s*$',
+                          q.read_text(encoding='utf-8'), re.M)
+            if m:
+                return m.group(1).strip()
+        # 英文邻页没有 title 就退回本页记的 prev/next_label
+        return fmval(fallback_key) or f'{n}'
+
     try:
         ni = int(seqn)
         if (exdir / f'{ni-1}/zh/index.md').exists():
-            nav += [f'prev_url: "{base}{ni-1}/zh/"', f'prev_label: "导论 {ni-1}"']
+            nav += [f'prev_url: "{base}{ni-1}/zh/"',
+                    f'prev_label: "{neighbor_label(ni-1, "title")}"']
         if (exdir / f'{ni+1}/zh/index.md').exists():
-            nav += [f'next_url: "{base}{ni+1}/zh/"', f'next_label: "导论 {ni+1}"']
+            nav += [f'next_url: "{base}{ni+1}/zh/"',
+                    f'next_label: "{neighbor_label(ni+1, "title")}"']
     except ValueError:
         pass
     nav_block = ('\n'.join(nav) + '\n') if nav else ''
@@ -248,12 +271,25 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     if not zh_date:
         from datetime import datetime
         zh_date = datetime.now().strftime('%Y-%m-%d %H:%M')
+    if _sect == 'exercitations':
+        zh_title = f'导论 {seqn} · {zh_h1[:40]}'
+    elif _sect == 'prefaces':
+        zh_title = zh_h1[:40]
+    else:                                    # 正文章节
+        zh_title = fmval('title') or zh_h1[:40]
+    # 英文页有 chapter 就带过来，中英两版字段对齐
+    _chap = fmval('chapter')
+    chap_line = f'chapter: {_chap}\n' if _chap else ''
+
     # 中文页独立 front matter(prev/next 指相邻中文页; 加回英文链接)
     fm_zh = ('---\n'
              'layout: owen-chapter\n'
              f'book_id: {fmval("book_id") or "hebrews/exercitations"}\n'
              f'book_name: "{fmval("book_name") or "约翰欧文导论"}"\n'
-             f'title: "导论 {seqn} · {zh_h1[:40]}"\n'
+             + chap_line
+             # 标题按段类型分：导论保留「导论 N · 译出标题」（40 篇已按此发布）；
+             # 卷首各有专名，不该冠编号；正文章节直接沿用英文页的「第五章」。
+             + f'title: "{zh_title}"\n'
              # 中文页的 date 必须是**本次翻译完成的真实时间**，不能抄英文页。
              # 原先写 fmval("date")，于是全部中文页都顶着英文页的发布时间
              # （卷首八篇一律 2026-07-17 10:44），与实际翻译时间毫无关系，
@@ -271,7 +307,6 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
     # 全写进 zh_exercitations/{N}.md 会互相覆盖。实测第 1、2 章的 raw 已经
     # 把导论 1、2 的 raw 覆盖掉了（front matter 里 book_id 变成了 hebrews），
     # 卷首 1–8 更早就覆盖过导论 1–8。发布出去的中文页没事，丢的是 raw 备份。
-    _sect = Path(page_path).parent.parent.name      # exercitations / prefaces / hebrews
     _sub = {'exercitations': 'zh_exercitations',
             'prefaces': 'zh_prefaces'}.get(_sect, 'zh_chapters')
     raw_dir = ROOT / 'owen_raw/hebrews' / _sub
