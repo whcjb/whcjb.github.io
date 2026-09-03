@@ -429,6 +429,68 @@ class="reversefootnote">↩</a>` 跳转成功但 landing 位置被 navbar 遮挡
 | 居中段落里出现字面 `[^f7]` / `*italic*` 而不是渲染为 sup / em | `<p>` 块漏 `markdown="1"` → kramdown 不处理块内 markdown（`<p>` 不从外层 div 继承 markdown 属性）| structured_to_md 现有 3 处 `<p>` emit（行 ~923 缩进段 / ~945 右对齐 / ~1038 navy 居中）**都已带** `markdown="1"`——新增任何 `<p>` emit 含正文片段必须照带。历史文件（旧版生成器产出）用 audit-gates Gate 5b 的 grep 定位后**纯追加**补属性，勿重生成。2cor preface / 1timothy-5 均踩过，全库 1012 行已修（be1e3b96）|
 | scripture-box 截断 (ref 写 `N:1-16` 但表格只 v.1-8，v.9-16 漏在 box 外作 prose `<p>` 散段) | Ages PDF 同一 ref-range 里前半页是 column-paired 双语表格、后半页改成 prose 单列布局（如 1cor 11:1-16 v.9-16）；extractor 看到列布局变化就 flush 当前 table，余下当 body 段落 emit | 检测：scripture-ref `verse-range="A:B-C"` 与 box 内 `<tr>` 行数比对，`<tr>` 行数 < (C-B+1) 必须 0 命中；命中后人工把 v.B'-C 用 CUV (zh) / 原文 (en) + Latin 补成 `<tr>` 加进表格，并删 box 外散段。calvin/1corinthians-en/ 和 calvin/1corinthians/ 两边同步改防 re-publish 还原 |
 
+
+---
+
+## 11.5 ⛔ 当前阻塞：重跑提取会丢经文（2026-09-03 实测）
+
+**在动任何一卷的双语经文块之前先读这一节。**
+
+`extract_ages_phil` 的 scripture-mode **已经退化**：用当前代码重跑提取，
+`[SCRIPTURE_ROW]` 会大量消失，而且**不是「没配对」而是「内容不见了」**。
+
+实测（haggai，CAL_HAGG.pdf）：
+
+```
+旧 raw 198,410 字符 / 新 raw 196,884 字符   丢失 1,145 词
+丢的全是 [SCRIPTURE_ROW]：1:1 / 1:2 / 1:3 / 1:4 / 1:9 / 1:12 / 1:15 / 2:1…
+```
+
+把 PDF 第 3 页单独喂进 `phil_reconstruct_page`，输出是：
+
+```
+[H1] CHAPTER 1
+[H2] <370101>HAGGAI 1:1
+[BODY] THE Prophet mentions here the year…      ← 经文整段没了
+```
+
+而该页的块结构是清清楚楚的两列：
+
+```
+blk1: x0=40  x1=262 w=222 9行 全左  '<370101>HAGGAI 1:1' + 8 行英文经文
+blk2: x0=218 x1=370 w=152 8行 全右  '1. Anno secundo Darii regis,' …
+blk3: x0=26  x1=386 w=361        注释正文（全宽 → 应触发 flush）
+```
+
+LATIN_X_MIN 自动校准出 204，218 ≥ 204，列分界是对的；块宽 152/222 都 < 290
+（`SCRIPTURE_BLOCK_WIDTH_MAX`），`is_narrow_block` 该为真；全宽注释块该触发
+`flush_scripture_buffer()`。**但 flush 什么也没吐出来** —— 缺陷在
+scripture-mode 的状态流转里，尚未定位到具体一行。
+
+### 后果与纪律
+
+- **不要用「重跑提取 + 重新发布」去修双语经文块**。已发布的 raw 是**退化之前**
+  的代码产出的，比现在的产物**更完整**。重跑等于用坏代码覆盖好数据。
+  实测被这样毁过的量级：jeremiah-1 少 14.5 万字符、daniel 少 9.4 万字符
+  （都已 `git checkout` 回滚）。
+- 修复顺序只能是：**先修 extractor 的 scripture-mode 退化 → 用一卷验证
+  「新 raw ⊇ 旧 raw」（词多重集不得有丢失）→ 才可以逐卷重跑**。
+- 在那之前，产物层的局部修补（`scripts/bilingual_stacked.py`）是唯一安全手段，
+  且**每个文件必须过字符多重集校验，不一致就跳过不动**。
+
+### 一并记下：产物层修补的两条铁律
+
+1. **字符多重集守恒 ≠ 修对了**。列分错时字符是完全守恒的。
+   2026-09-03 一次全站重建跑出 4,221 段（改到了原本正确的新约各卷），
+   零丢失校验全过 —— 但没有任何人工核对过左右列分派是否正确，已全部回滚。
+   **产物层重建必须限定在审计报出问题的文件上，不得全站扫。**
+2. **审计判据本身要先证伪**。同一个审计脚本我改了四版，前三版的数字都是错的：
+   拿 `<tr>` 行数比节数（加尔文常两三节并一行）→ 误报；
+   散段判据要求节号后紧跟空白 → 漏掉 `11. Die quo` 带点的；
+   `latin_ratio` 在英文卷上无法区分（英文本身就是拉丁字母）；
+   `cs.get(k,'')` 对**根本不存在**的单元格也算「空」→ 合参三列表虚报 2,726 处。
+   **报数之前先找一个已知正确的书卷当对照，验判据。**
+
 ---
 
 ## 12. scripture-box 视觉样式必须按 PDF 还原
