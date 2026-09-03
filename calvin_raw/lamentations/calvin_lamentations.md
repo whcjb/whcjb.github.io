@@ -9,15 +9,15 @@
 
 <p style="text-align:right;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PRELECTIONS OF JOHN CALVIN</span></p>
 
-<p style="text-align:center" markdown="1">ON</p>
+<p style="text-align:center" markdown="1">**ON**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE LAMENTATIONS OF</span> <span style="color:#0000d4">JEREMIAH</span></p>
 
@@ -163,7 +163,7 @@ He first says that her enemies <span style="color:#800000">*had become the head*
 <!-- PAGE 13 -->
 He then says, that <span style="color:#800000">*enemies were the head*</span>, that is, ruled over them. And the opposite of that is to be understood, even that they had become the tail, that is, were under the feet as it were of their enemies. And he says that her enemies had <span style="color:#800000">*acted successfully*</span>, even <span style="color:#800000">*because Jehovah had afflicted her*</span>. He here laments after the common practice, as ungodly men are wont to do; but he mixes instruction with his mourning, and shews that God, in a state of things so turbulent and confused, appeared as a righteous judge. He then recalled them to the consideration of God’s hand, when he said that her enemies had acted successfully, because God had <span style="color:#800000">*afflicted her*</span>. Jerome renders the words, “because Jehovah hath spoken.” He derives the verb from <span style="color:#008080">hgh</span>, *ege*, which means to speak or to meditate. But this is an evident mistake, as we shall find another presently in this very chapter. There is no doubt but that the Prophet intimates that the cause of all evils was, that God had afflicted her, even on account of the greatness of her impieties, or of her sins. He now then begins to shew that there is no reason why the Jews should be swallowed up with grief and despair, if only they considered whence their evils proceeded. He thus begins to call their attention to God’s judgment. This indeed of itself would not have been sufficient; but he afterwards points out a fruitful source of consolation. But we shall see these things mentioned in their due order.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as the deformity of thy Church at this</span> <span style="color:#000080">day is sufficient to dishearten us all, we may learn to look to thine</span> <span style="color:#000080">hand, and know that the reward of our sins is rendered to us, and</span> <span style="color:#000080">that we may not doubt but that thou wilt be our physician to heal</span> <span style="color:#000080">our wound, provided we flee to thy mercy; and do thou so retain</span> <span style="color:#000080">us in the assurance of thy goodness and paternal care, that we may</span> <span style="color:#000080">not hesitate, even in extreme evils, to call on thee in the name of</span> <span style="color:#000080">thine only-begotten Son, until we shall find by experience that</span> <span style="color:#000080">never in vain are the prayers of those, who, relying on thy</span> <span style="color:#000080">promises, patiently look for a remedy from thee alone, even in</span> <span style="color:#000080">extreme evils, and also in death itself. — Amen.</span></p>
 
@@ -250,18 +250,18 @@ It then appears to me probable that taunts were cast by enemies against the Jews
 
 Here the Prophet expresses more clearly and strongly what he had briefly referred to, even that all the evil which the Jews suffered proceeded from God’s vengeance, and that they were worthy of such a punishment, because they had not lightly offended, but had heaped up for themselves a dreadful judgment, since they had in all manner of ways abandoned themselves to impiety. This is the substance of what is said. We hence learn that the Prophet did not compose this song to lament the calamity of his own country as heathens were wont to do. An example of a heathen lamentation we have in Virgil: —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“Come is the great day and the unavoidable time*</span> <span style="color:#000080">*Of Dardania: we Trojans have been; Ilium has been,*</span> <span style="color:#000080">*And the great glory of the Teuerians: cruel Jupiter has to Argos*</span> <span style="color:#000080">*Transferred all things: the Danai rule in the burnt city.”*</span> [^f8]</p>
+<span style="color:#000080">***“Come is the great day and the unavoidable time***</span> <span style="color:#000080">***Of Dardania: we Trojans have been; Ilium has been,***</span> <span style="color:#000080">***And the great glory of the Teuerians: cruel Jupiter has to Argos***</span> <span style="color:#000080">***Transferred all things: the Danai rule in the burnt city.”***</span> [^f8]
 
 He also repeats the same sentiment in other words: —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“O country! O Ilium, the house of the gods! and the famous for war,*</span> <span style="color:#000080">*The camp of the Dardanidans! cruel Jupiter has to Argos*</span> <span style="color:#000080">*Transferred all things.”*</span> [^f9]</p>
+<span style="color:#000080">***“O country! O Ilium, the house of the gods! and the famous for war,***</span> <span style="color:#000080">***The camp of the Dardanidans! cruel Jupiter has to Argos***</span> <span style="color:#000080">***Transferred all things.”***</span> [^f9]
 
 <!-- PAGE 20 -->
 He thus mourns the destruction of Troy; but he complains of the cruelty of God, and calls Him cruel Jupiter, because he was himself enraged, and yet the speaker was Pantheus the priest of Apollo. We hence see how the unbelieving, when they lament their own calamities, vomit forth blasphemies against. God, for they are exasperated by sorrow. Very different is the complaint of the Prophet from that of the ungodly; for when he deplores the miseries of his people, he at the same time adds that God is a righteous avenger. He does not then accuse God of cruelty or of too much rigor, but reminds the people to humble themselves before God and to confess that they justly deserved all their evils.
 
 The unbelieving do indeed sometimes mingle some words, by which they seem to give glory to God; but they are evanescent, for they soon return to their perverseness. They are sometimes moderate, “If thou art turned by any entreaties.” In that case they expostulate with God:, as though he were deaf to the prayers of his servants. At length they break out into open blasphemies, —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“After it seemed good to the gods to subvert the affairs of Asia*</span> <span style="color:#000080">*And the undeserved nation of Priam.”*</span> [^f10] <span style="color:#000080">*—*</span></p>
+<span style="color:#000080">***“After it seemed good to the gods to subvert the affairs of Asia***</span> <span style="color:#000080">***And the undeserved nation of Priam.”***</span> [^f10] <span style="color:#000080">***—***</span>
 
 They regarded the nation which had been cut off unworthy of such a punishment; they called it an undeserved nation. Now, then, we perceive what is the difference between the unbelieving and the children of God. For it is common to all to mourn in adversities; but the end of the mourning of the unbelieving is perverseness, which at length breaks out into rage, when they feel their evils, and they do not in the meantime humble themselves before God. But the faithful do not harden themselves in their mourning, but reflect on themselves and examine their own life, and of their own accord prostrate themselves before God, and willingly submit to the sentence of condemnation, and confess that God is just.
 
@@ -328,7 +328,7 @@ The Prophet again deplores the profanation of all sacred things; and this compla
 
 Then this indignity was increased, *because* Jerusalem <span style="color:#800000">*saw the heathens entering into her sanctuary*</span>; for the pronoun is in the feminine gender. But the sanctuary of Jerusalem was God’s Temple for, though properly speaking, it was alone God’s sanctuary, it was yet at the same time the sanctuary of the people, because God had not caused the Temple to be built for his own benefit, but rather for the benefit of his people. What God, then, had consecrated for himself is rightly called the sanctuary of the people. He still increases the indignity, because God <span style="color:#800000">*had forbidden the heathens to enter the sanctuary*</span>; but they had violently rushed in there. They did not, however, enter for the sake of worshipping God, for it was his command to keep them from the holy assembly; but they had by force entered for the purpose of violating the Temple, and also of abolishing the whole worship of God, and of exposing religion to all kinds of mockery. [^f14]
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as at this day we see thy Church</span> <span style="color:#000080">miserably afflicted, we may direct our eyes so as to see our own</span> <span style="color:#000080">sins, and so humble ourselves before thy throne, that we may yet</span> <span style="color:#000080">cease not to, entertain hope, and in the midst of death wait for life;</span> <span style="color:#000080">and may this confidence open our mouth, that we may</span> <span style="color:#000080">courageously persevere in calling on thy name, through Christ our</span> <span style="color:#000080">Lord. — Amen.</span></p>
 
@@ -520,7 +520,7 @@ She says, first, that God was *just*, or righteous, [^f22] <span style="color:#8
 <!-- PAGE 37 -->
 The greatness of her sorrow is again deplored; and what follows is addressed to all nations, <span style="color:#800000">*Hear, I pray, all ye people; see my sorrow*</span>. And what was the reason for this great sorrow? <span style="color:#800000">*because*</span>, she says, <span style="color:#800000">*my virgins and my young men have been driven into captivity*</span>. This might seem a light thing; for a previous account has been given of other calamities, which were far more severe; and exile in itself is but a moderate punishment. But we must bear in mind what we have before stated, that the Jews dwelt in that land, as though they had been placed there by the hand of God, that Jerusalem was to be a perpetual rest, which had been granted them from above; in short, that it was as it were a pledge of the eternal inheritance. When, therefore, they were driven into captivity, it was the same as though God had cast them down from heaven, and banished them from his kingdom. For the Jews would not have been deprived of that land, had not God rejected them and shewed his alienation from them. It was then the same as repudiation. It is therefore no wonder that Jerusalem so much lamented because her sons and her daughters were driven into exile.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou hast hitherto dealt so mercifully</span> <span style="color:#000080">with us, we may anticipate thy dreadful judgment; and that if thou</span> <span style="color:#000080">shouldest more severely chastise us, we may not yet fail, but that</span> <span style="color:#000080">being humbled under thy mighty hand, we may flee to thy mercy</span> <span style="color:#000080">and cherish this hope in our hearts, that thou wilt be a Father to us,</span> <span style="color:#000080">and not hesitate to call continually on thee, until, being freed from</span> <span style="color:#000080">all evils, we shall at length be gathered into thy celestial kingdom,</span> <span style="color:#000080">which thine only-begotten Son has procured for us by his own</span> <span style="color:#000080">blood. — Amen.</span></p>
 
@@ -678,7 +678,7 @@ He pursues the same subject, but in other words. He first says, that God <span s
 
 This profanation of the kingdom, and of the princes, corresponds with the former verse, where he said that God had not remembered his footstool for we know that the kingdom was sacerdotal and consecrated to God. When, therefore, it was polluted, it follows that God in a manner exposed his name to reproach, because the mouth of all the ungodly was thus opened, so that they insolently poured forth their slanders. That God, then, spared not the kingdom nor the Temple, it hence followed that his wrath against the Jews was dreadful. Now, as he is a righteous judge, it follows, that such was the greatness of the sins of the Jews, that they sustained the blame for this extreme sacrilege; for it was through their sins that God’s name was exposed to reproach both as to the Temple and the kingdom.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou settest before us at this day</span> <span style="color:#000080">those ancient examples by which we perceive with what heavy</span> <span style="color:#000080">punishments thou didst chastise those whom thou hadst adopted,</span></p>
 
@@ -846,7 +846,7 @@ He again relates in other words what he had said, that the walls of Jerusalem ha
 
 He then says that God had <span style="color:#800000">*destroyed and broken her bars*</span>; for no doubt the gates had firm and strong bars. He then says that neither the gates nor the bars were found sufficient, when God stretched forth his hand to the Chaldeans, to lead them into the city. He afterwards adds, that both the king and the princes had been driven into exile; for when he says, *among the nations*, or to the nations, he intimates that there was no more a king, for he and the royal seed and the princes were gone into banishment. The rest I defer until tomorrow.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that since so many tokens of thy wrath</span> <span style="color:#000080">meet us at this day, we may without delay return to thee, and so</span> <span style="color:#000080">submit to thee in true repentance, as to strive at the same time to</span> <span style="color:#000080">be reconciled to thee; and as a Mediator has been given to us to lead</span> <span style="color:#000080">us to thee, — O grant that we may by a true faith seek him, and</span> <span style="color:#000080">follow wherever he may call us, that having been purified from all</span> <span style="color:#000080">pollution’s, we may be glorified by thee our Father, and may so</span> <span style="color:#000080">call on thee, that we may find thy grace present in all our evils.</span> <span style="color:#000080">Amen. —</span></p>
 
@@ -996,7 +996,7 @@ While, then, the false prophets promised impunity to the people, they were flatt
 
 <!-- PAGE 72 -->
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that though thou chastisest us as we</span> <span style="color:#000080">deserve, we may yet never have the light of truth extinguished</span> <span style="color:#000080">among us, but may ever see, even in darkness, at least some sparks,</span> <span style="color:#000080">which may enable us to behold thy paternal goodness and mercy,</span> <span style="color:#000080">so that we may especially be humbled under thy mighty hand, and</span> <span style="color:#000080">that being really prostrate through a deep feeling of repentance, we</span> <span style="color:#000080">may raise our hopes to heaven, and never doubt but that thou wilt</span> <span style="color:#000080">at length be reconciled to us when we seek thee in thine only-</span> <span style="color:#000080">begotten Son. — Amen.</span></p>
 
@@ -1170,7 +1170,7 @@ And this mode of praying was very common, as we find it said in the Psalms,
 
 And a similar passage we have before observed in our Prophet. (Jeremiah 10:25.) The sum of what is said is, that there was a just reason why God should turn to mercy, and be thus reconciled to his people, because he had not to do with aliens, but with his own family, whom he had been pleased to adopt. But the rest I shall defer until tomorrow.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thy Church at this day is oppressed</span> <span style="color:#000080">with many evils, we may learn to raise up not only our eyes and</span> <span style="color:#000080">our hands to thee, but also our hearts, and that we may so fix our</span> <span style="color:#000080">attention on thee as to look for salvation from thee alone; and that</span> <span style="color:#000080">though despair may overwhelm us on earth, yet the hope of thy</span> <span style="color:#000080">goodness may ever shine on us from heaven, and that, relying on</span> <span style="color:#000080">the Mediator whom thou hast given us, we may not hesitate to cry</span> <span style="color:#000080">continually to thee, until we really find by experience that our</span> <span style="color:#000080">prayers have not been ill vain, when thou, pitying thy Church, hast</span> <span style="color:#000080">extended thy hand, and given us cause to rejoice, and hast turned</span> <span style="color:#000080">our mourning into joy, through Christ our Lord. — Amen.</span></p>
 
@@ -1268,12 +1268,7 @@ He confirms here the last verse, for lie shews the cause or the manner of his af
 
 <h2 class="scripture-anchor" id="lamentations-3-3" data-ref="Lamentations 3:3" style="display:none">Lamentations 3:3</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250303&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:3</span></p>
-
-<strong>3.</strong> Surely against me is he turned; he turneth his hand against me the day. <strong>3.</strong> Utique contra me vertetur, eonvertet marrum suam quotidie (vel, toro die, qtuanquam in duobus verbis videtur futurtum tempus debere resolvi in all prceteritutn, vel saltem Propheta actum continuum, designat, ut soepe fieri solet.)
-
-</div>
+**3.** Surely against me is he turned; he turneth his hand against me the day. **3.** Utique contra me vertetur, eonvertet marrum suam quotidie (vel, toro die, qtuanquam in duobus verbis videtur futurtum tempus debere resolvi in all prceteritutn, vel saltem Propheta actum continuum, designat, ut soepe fieri solet.)
 
 <!-- PAGE 90 -->
 
@@ -1281,12 +1276,7 @@ Now he says that <span style="color:#800000">*God was an adversary to him*</span
 
 <h2 class="scripture-anchor" id="lamentations-3-4" data-ref="Lamentations 3:4" style="display:none">Lamentations 3:4</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250304&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:4</span></p>
-
-<strong>4.</strong> My flesh and my skin hath he made old; he hath broken my bones. <strong>4.</strong> Senio confecit earnera meam (senescere fecit, *ad verbum*) et pelletn meam (*vel*, cutem;) confregit ossa mea.
-
-</div>
+**4.** My flesh and my skin hath he made old; he hath broken my bones. **4.** Senio confecit earnera meam (senescere fecit, *ad verbum*) et pelletn meam (*vel*, cutem;) confregit ossa mea.
 
 These, as it evidently appears, are metaphorical words. Illness often makes people to look old, for from pain proceeds leanness: thus the skin is contracted, and the wrinkles of old age appear even in youths. As, then, sorrows exhaust moisture and strength, hence he is said to grow old who pines away in mourning. This is what the Prophet now means. <span style="color:#800000">*God*</span>, he says<span style="color:#800000">*, has made my flesh and my skin, to grow old*</span>, that is, he hath worn me out, within and without, so that I am almost wasted away.
 
@@ -1353,12 +1343,7 @@ It then follows, <span style="color:#800000">*He hath made heavy my fetter.*</sp
 
 <h2 class="scripture-anchor" id="lamentations-3-8" data-ref="Lamentations 3:8" style="display:none">Lamentations 3:8</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250308&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:8</span></p>
-
-<strong>8.</strong> Also when I cry and shout, he shutteth out my prayer. <strong>8.</strong> Etiam si clamem et vociferer, clausit precationem meam (*vel* precatioi meae.)
-
-</div>
+**8.** Also when I cry and shout, he shutteth out my prayer. **8.** Etiam si clamem et vociferer, clausit precationem meam (*vel* precatioi meae.)
 
 <!-- PAGE 93 -->
 
@@ -1410,7 +1395,7 @@ And to the same purpose he adds, that. God had perverted his ways, that is, that
 <!-- PAGE 95 -->
 But these words are added, <span style="color:#800000">*with a squared stone*</span>. The verb <span style="color:#008080">zzg</span> *gizaz*, means to cut; hence the word <span style="color:#008080">tyzg</span>, *gizit*, signifies a polished stone, or one trimmed by the hammer. And we know that such stones are more durable and firmer than other stones. For when unpolished stones are used, the building is not so strong as when the stones are squared, as they fit together better. Then the Prophet intimates that the enclosures were such that he could by no means break through them, as they could not be broken. he, in short, means that he was so oppressed by God’s hand, that whatever he purposed God immediately reversed it. We now, then, perceive what he means by saying, that all his ways were subverted or overturned by God. [^f54] This is not to be understood generally, for it is God who directs our ways. But he is said to pervert our ways, when he disconcerts our counsels, when all our purposes and efforts are rendered void; in a word, when God as it were meets us as an adversary, and impedes our course; it is then that he is said to pervert our ways. But this ought not to be understood as though God blinded men unjustly, or as though he led them astray. The Prophet only means that he could find no success in all his counsels, in all his efforts and doings, because he had God opposed to him. here I stop.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou didst in former times so</span> <span style="color:#000080">severely chastise thy people, we may in the present day patiently</span> <span style="color:#000080">submit to all thy scourges, and in a humble and meek spirit suffer</span> <span style="color:#000080">ourselves to be chastised as we deserve; and that we may not, in</span> <span style="color:#000080">the meantime, cease to call on thee, and that however slowly thou</span> <span style="color:#000080">mayest seem to hear our prayers, we may yet persevere</span> <span style="color:#000080">continually to the end, until at length we shall really find that</span> <span style="color:#000080">salvation is not in vain promised to all those who in sincerity of</span> <span style="color:#000080">heart call on thee, through Christ our Lord. — Amen.</span></p>
 
@@ -1437,12 +1422,7 @@ Though, then, it does not seem that it was said in due honor, that God did <span
 
 <h2 class="scripture-anchor" id="lamentations-3-11" data-ref="Lamentations 3:11" style="display:none">Lamentations 3:11</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250311&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:11</span></p>
-
-<strong>11.</strong> He hath turned aside my ways, and pulled me in pieces: he hath made me desolate. <strong>11.</strong> Vias meas pervertit et scidit me (*vel,* dissipavit, *vel*, laceravit,) posuit me vastatam (*vel*, quasi vastitatem.)
-
-</div>
+**11.** He hath turned aside my ways, and pulled me in pieces: he hath made me desolate. **11.** Vias meas pervertit et scidit me (*vel,* dissipavit, *vel*, laceravit,) posuit me vastatam (*vel*, quasi vastitatem.)
 
 <!-- PAGE 97 -->
 In this verse also the Prophet shews how grievously the faithful are disturbed when they feel that God is adverse to them. But he uses the same figure as yesterday, though the word <span style="color:#008080">rrws</span>, *surer,* is different: what he used yesterday was <span style="color:#008080">hw[</span>, *oue*, but in the same sense.
@@ -1453,12 +1433,7 @@ He afterwards adds, <span style="color:#800000">*He hath torn me*</span> or brok
 
 <h2 class="scripture-anchor" id="lamentations-3-12" data-ref="Lamentations 3:12" style="display:none">Lamentations 3:12</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250312&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:12</span></p>
-
-<strong>12.</strong> He hath bent, his bow, and set me as a mark for the arrow. <strong>12.</strong> Extendit (*vel,* intendit) arcum suum, et statuit me quasi signum sagittae.
-
-</div>
+**12.** He hath bent, his bow, and set me as a mark for the arrow. **12.** Extendit (*vel,* intendit) arcum suum, et statuit me quasi signum sagittae.
 
 Here the Prophet introduces another metaphor, that God had shot him with arrows, as he was made a mark to them. Jeremiah has elsewhere often used the word <span style="color:#008080">artm</span>, *methera*, for a prison; but here it means a mark at which arrows are leveled, and such is its meaning in Job 16:12, where there is a similar complaint made. The meaning is, that the people, in whose name Jeremiah speaks, had been like marks, because God had directed against them all his arrows. It is, indeed, a fearful thing when God aims at us, that he may discharge his darts and arrows in order to hit and wound us. But as God had so grievously afflicted his people, that he seemed to have poured forth all his vengeance, the Prophet justly complains that the people had been like marks for arrows.
 
@@ -1481,12 +1456,7 @@ He goes on with the same metaphor; he said in the last verse that God had levele
 
 <h2 class="scripture-anchor" id="lamentations-3-14" data-ref="Lamentations 3:14" style="display:none">Lamentations 3:14</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250314&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:14</span></p>
-
-<strong>14.</strong> I was a derision to all my people, *and* their song all the day. <strong>14.</strong> Fui risus (*vel*, ludibrium) toti populo meo, pulsatio (*vel*, canticum, *quod pulsatur ab organo et instrumento musico*) quotidie (*vel*, toto die.)
-
-</div>
+**14.** I was a derision to all my people, *and* their song all the day. **14.** Fui risus (*vel*, ludibrium) toti populo meo, pulsatio (*vel*, canticum, *quod pulsatur ab organo et instrumento musico*) quotidie (*vel*, toto die.)
 
 The Prophet again complains of the reproaches to which God had exposed the Jews. We have said that of all evils the most grievous is reproach, and experience teaches us that sorrow is greatly embittered when scoffs and taunts are added to it; for he who silently bears the most grievous sorrows, becomes broken in heart when he finds himself contumeliously treated. This, then, is the reason why the Prophet again amplifies the miseries of the people, because they were exposed to the scoffs of all men. But it may seem a strange thing that the Jews were derided by their own people. This is the reason why some think that the Prophet complains of his own private evils, and that he does not represent the whole people or the public condition of the Church. But it may also be said in reply, that the Prophet does not mean that the people were derided by themselves, which could not be; but it is the same as though he had said, that their state was so disgraceful, that while they looked on one another, they had a reason for taunting, if this their condition was allowed to continue.
 
@@ -1516,12 +1486,7 @@ We hence also gather that the faithful were not free from sorrow in their evils,
 
 <h2 class="scripture-anchor" id="lamentations-3-16" data-ref="Lamentations 3:16" style="display:none">Lamentations 3:16</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250316&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:16</span></p>
-
-<strong>16.</strong> He hath also broken my teeth with gravel stones, he hath covered me with ashes. <strong>16.</strong> Confregit (*vel*, contrivit) lapillo dentes meos, involvit me (foedavit me, *alii autem*, versavit) hi pulvere.
-
-</div>
+**16.** He hath also broken my teeth with gravel stones, he hath covered me with ashes. **16.** Confregit (*vel*, contrivit) lapillo dentes meos, involvit me (foedavit me, *alii autem*, versavit) hi pulvere.
 
 Many renderings are given of these words’ there is, however, no overstatement here; for, as it has been often said, the grief of the people under such a mass of evils could not be sufficiently expressed. The Prophet, no doubt, extended here his hand to the weak, who would have otherwise lain down as dead; for under such evils the ruin of the whole nation, the fall of the city, and the destruction of the temple, it could not be but such thoughts as these must have occurred. Now, as to any one unacquainted with such a trial, he would soon succumb, had no remedy been presented to him. The Prophet then dictates for all the godly such complaints as they might, so to speak, pour forth confidently and freely into the bosom of God.
 
@@ -1654,7 +1619,7 @@ The first clause may be explained in two ways: The view commonly taken is, that 
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"></td><td class="scripture-la"><strong>23.</strong> Novae ad singula mane; magna veritas tua.</td></tr>
+<tr><td class="scripture-en"><strong>23.</strong> <em>They are</em> new every morning: great is thy faithfulness.</td><td class="scripture-la"><strong>23.</strong> Novae ad singula mane; magna veritas tua.</td></tr>
 </tbody>
 </table>
 
@@ -1664,7 +1629,7 @@ This verse confirms what I have said, that the same truth is here repeated by th
 
 <!-- PAGE 107 -->
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as there are none of us who have not</span> <span style="color:#000080">continually to contend with many temptations, and as such is our</span> <span style="color:#000080">infirmity, that we are ready to succumb under them, except thou</span> <span style="color:#000080">helpest us, — O grant, that we may be sustained by thine</span> <span style="color:#000080">invincible power, and that also, when thou wouldest humble us, we</span> <span style="color:#000080">may loathe ourselves on account of our sins, and thus</span> <span style="color:#000080">perseveringly contend, until, having gained the victory, we shall</span> <span style="color:#000080">give thee the glory for thy perpetual aid in Christ Jesus our Lord.</span> <span style="color:#000080">— Amen.</span></p>
 
@@ -1701,7 +1666,7 @@ This then is the doctrine which the Prophet now handles, when he says, that thos
 
 It remains for us to make an application of this doctrine. That we may not then fail in adversities, let us bear in mind this truth, that all our thoughts will ever wander and go astray, until we are fully persuaded that God alone is sufficient for us, so that lie may become alone our heritage. For all who are not satisfied with God alone, are immediately seized with impatience, whenever famine oppresses them, or sword threatens them, or any other grievous calamity. And for this reason Paul also says,
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">“If God be for us, who can be against us? I am persuaded that</span> <span style="color:#000080">neither famine, nor nakedness, nor sword, nor death, nor life, can</span> <span style="color:#000080">separate me from the love of God, which is in Christ.”</span> <span style="color:#000080">(</span><span style="color:#000080">Romans 8:31, 35-39.)</span></p>
+<span style="color:#000080">“If God be for us, who can be against us? I am persuaded that</span> <span style="color:#000080">neither famine, nor nakedness, nor sword, nor death, nor life, can</span> <span style="color:#000080">separate me from the love of God, which is in Christ.”</span>  <span style="color:#000080">(</span><span style="color:#000080">Romans 8:31, 35-39.)</span>
 
 <!-- PAGE 110 -->
 Then Paul lays hold of the paternal favor of God as a ground of solid confidence; for the words in Christ sufficiently show that those are mistaken interpreters who take this love passively, as though he had said, that the faithful would never cease to love God, though he exercised them with many afflictions. But Paul meant that the faithful ought so to fix their minds on God alone, that whatever might happen, they would not yet cease to glory in him. Why? because God is their life in death, their light in darkness, their rest in war and tumult, their abundance in penury and want. It is in the same sense our Prophet now says, when lie intimates that none hope in God but those who build on his paternal favor alone, so that they seek nothing else but to have him propitious to them. It afterwards follows, —
@@ -1851,7 +1816,7 @@ It is then for this reason that the Prophet shews that the patience of the godly
 
 It is certain that there will be no patience, except there be hope, as it has already appeared. As, then, patience cherishes hope, so hope is the foundation of patience; and hence consolation is, according to Paul, connected with patience. (Romans 15:4.) And this is the doctrine which the Prophet now handles, — that the faithful bear the yoke with meek and calm minds, because they believe that God will at length be propitious to them: hence also arises patience; for the faithful are persuaded that all adversities are temporary, and that there will be a happy end, because God will at length be reconciled to them, though he gives them new evidences of his wrath. [^f67] The rest to-morrow.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as it is expedient for us to be daily</span> <span style="color:#000080">chastised by thy hand, we may willingly submit to thee, and not</span> <span style="color:#000080">doubt but that thou wilt be faithful, and not prove us with too</span> <span style="color:#000080">much rigor, but that thou wilt consider our weakness, so that we</span> <span style="color:#000080">may thus calmly bear all thy chastisements, until we shall at length</span> <span style="color:#000080">enjoy that perfect blessedness, which is now hid to us under hope,</span> <span style="color:#000080">and as it were sealed, until Christ thy Son shall reveal it at his</span> <span style="color:#000080">coming. — Amen.</span></p>
 
@@ -2006,7 +1971,7 @@ Some explain the verb <span style="color:#008080">ˆnwaty</span>, *itaunen,* by 
 
 We now, then, perceive why the Prophet joins this sentence, <span style="color:#800000">*Why does a living man weary himself*</span>? [^f71] <span style="color:#800000">*and a man in his sins?*</span> for as long as men thus remain in their own dregs, they will never acknowledge God as the judge of the world, and thus they always go astray through their own perverse imaginations. If, then, we wish to dissipate all the mists which prevent us from seeing God’s providence, (that is, by the eyes of faith,) let every one be his own witness and the judge of his own life, and carefully examine himself; it will then immediately occur to us, that God is not without reason angry with us, and that we are afflicted with so many adversities, because our sins will come forth before us. We here see the cause of that madness which makes men to exclude God’s providence from human affairs, even because they look not on themselves, but torment themselves without any benefit and become wearied in their sins, and do not raise up their eyes to God. The rest, connected with our subject, I must defer till to-morrow.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as we are at this day tossed here and</span> <span style="color:#000080">there by so many troubles, and almost all things in the world are in</span> <span style="color:#000080">confusion, so that wherever we turn our eyes, nothing but thick</span> <span style="color:#000080">darkness meets us, — O grant that we may learn to surmount all</span> <span style="color:#000080">obstacles, and to raise our eyes by faith above the world, so that</span> <span style="color:#000080">we may acknowledge that governed by thy wonderful counsel is</span> <span style="color:#000080">everything that seems to us to happen by chance, in order that we</span> <span style="color:#000080">may seek thee, and know that help will be ready for us through thy</span> <span style="color:#000080">mercy whenever we humbly seek the pardon of our sins, through</span> <span style="color:#000080">Christ Jesus our Lord. — Amen.</span></p>
 
@@ -2016,12 +1981,7 @@ We now, then, perceive why the Prophet joins this sentence, <span style="color:#
 
 <h2 class="scripture-anchor" id="lamentations-3-40" data-ref="Lamentations 3:40" style="display:none">Lamentations 3:40</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250340&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:40</span></p>
-
-<strong>40.</strong> Let us search and try our ways, and turn against the Lord. <strong>40.</strong> Percontemur (scrutemur) vias nostras, et inquiramus, et convertamur ad Jehovam.
-
-</div>
+**40.** Let us search and try our ways, and turn against the Lord. **40.** Percontemur (scrutemur) vias nostras, et inquiramus, et convertamur ad Jehovam.
 
 The Prophet now shews more clearly what the reproof meant which we shortly explained yesterday: he said that men act absurdly while they weary themselves in their sins; he now adds that they would do rightly if they inquired into their own life, and faithfully examined themselves.
 
@@ -2122,7 +2082,7 @@ He then says, <span style="color:#800000">*Thou hast pursued us and killed us, a
 
 The Prophet confirms the same thing, but the words are different. He again repeats the word to cover; but, that the metaphor might be clearer and more fully explained, he says, *with a cloud.* He simply intimates, that a cloud interposed, that God might more unrestrainedly punish the Jews, as they had deserved. Isaiah speaks somewhat otherwise, but for the same purpose:
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">“The hand of God,” he says, “is not shortened, nor are his ears</span> <span style="color:#000080">more deaf; but your sins have interposed a distance between you</span> <span style="color:#000080">and God.” (</span><span style="color:#000080">Isaiah 59:1, 2.)</span></p>
+<span style="color:#000080">“The hand of God,” he says, “is not shortened, nor are his ears</span> <span style="color:#000080">more deaf; but your sins have interposed a distance between you</span> <span style="color:#000080">and God.” (</span><span style="color:#000080">Isaiah 59:1, 2.)</span>
 
 There is no doubt but that Isaiah meant the same thing as our Prophet, even that God’s nature never changes; and, therefore, that when he seems to rage against his people, the cause ought to be ascribed to their sins, because God ever remains like himself. We know what is said in the Psalms,
 
@@ -2253,7 +2213,7 @@ He had said, that his eye flowed down, and then, that it was like a fountain, fr
 
 The latter part is explained in two ways: sonic render thus, “Because of all the daughters of my city.” But though this meaning is generally taken, I yet prefer the opinion of those who render the words thus, “More than all the daughters of my city :” for <span style="color:#008080">ˆm</span>, men, denotes a comparison, as it is also a causative. He says, then, that he was given to grief more than all the young women. As the female sex, as it is well known, are more tender and softer than men, the Prophet amplifies his lamentation by this comparison, that in weeping he exceeded all the young women of the city, so that he had almost forgotten his manhood. Had he said, the daughters of the people, it might be explained as before, as referring either to the cities, or to the whole people, that is, the whole community. But when he mentions <span style="color:#800000">*all the daughters of his city*</span>, I cannot otherwise take the passage but as setting forth a comparison, that is, that he could not moderate his grief, but was so seized with it as women are, and also young girls, whose hearts, as it has been already said, are still more tender. [^f78] The rest to-morrow.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou hast hitherto spared us, we may</span> <span style="color:#000080">not grow torpid in our vices, and that since thou hast already begun</span> <span style="color:#000080">to deal more severely with thy Church, we may be awakened by</span></p>
 
@@ -2267,12 +2227,7 @@ The latter part is explained in two ways: sonic render thus, “Because of all t
 
 <h2 class="scripture-anchor" id="lamentations-3-52" data-ref="Lamentations 3:52" style="display:none">Lamentations 3:52</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250352&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:52</span></p>
-
-<strong>52.</strong> Mine enemies chased me sore, like a bird, without cause. <strong>52.</strong> Venando venati sunt tanquam passerem (*vel*, avem) inimici mei sine causa.
-
-</div>
+**52.** Mine enemies chased me sore, like a bird, without cause. **52.** Venando venati sunt tanquam passerem (*vel*, avem) inimici mei sine causa.
 
 We shall see to the end of the chapter the various complaints, by which the Prophet deplored the miseries of his own nation, that he might at length obtain the mercy of God. He takes here the comparison of a bird or a sparrow. He says that the Chaldeans had been like fowlers, and the Jews like sparrows: and we know that there is neither prudence nor courage in birds. He, then, means that the Jews had been destitute of all help, having been exposed as a prey to their enemies, who were like fowlers.
 
@@ -2284,12 +2239,7 @@ It follows, —
 
 <h2 class="scripture-anchor" id="lamentations-3-53" data-ref="Lamentations 3:53" style="display:none">Lamentations 3:53</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250353&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:53</span></p>
-
-<strong>53.</strong> They have cut off my life in the dungeon, and cast a stone upon me. <strong>53.</strong> Succiderunt (*vel potius*, constrinxerunt) in puteo vitam meam, et projecerunt lapidem super me.
-
-</div>
+**53.** They have cut off my life in the dungeon, and cast a stone upon me. **53.** Succiderunt (*vel potius*, constrinxerunt) in puteo vitam meam, et projecerunt lapidem super me.
 
 <!-- PAGE 143 -->
 He now employs other comparisons. Some improperly confine this to Jeremiah himself, as though he explained here before God the wrongs done to himself: but there is no doubt but that he undertakes the cause of the whole people; and his object was to encourage by his own example the faithful to lament their state so that they might obtain pardon from God.
@@ -2298,12 +2248,7 @@ He then compares himself to a man half-dead, cast into a pit, and there left for
 
 <h2 class="scripture-anchor" id="lamentations-3-54" data-ref="Lamentations 3:54" style="display:none">Lamentations 3:54</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250354&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:54</span></p>
-
-<strong>54.</strong> Waters flowed over mine head; then I said I am cut off. <strong>54.</strong> Inundaverunt (*ad verbum*, *alii,* ascenderunt) aquae super caput meum; dixi, succisus sum.
-
-</div>
+**54.** Waters flowed over mine head; then I said I am cut off. **54.** Inundaverunt (*ad verbum*, *alii,* ascenderunt) aquae super caput meum; dixi, succisus sum.
 
 He now adds a third comparison, — that he had been overwhelmed, as it were, with a flood of evils. This similitude occurs often in Scripture, especially in the Psalms; for when David wished to set forth his despair, lie said that he was sunk in deep waters. (Psalm 69:15, 16.) So also in this place the Prophet complains, that waters had flowed over his head, so that he thought himself lost. Though, indeed, this was the saying of a man in a hopeless state, it is yet evident from the context that the Prophet was firm in the hope of God’s mercy. But he speaks according to the judgment of the flesh; and we know that the faithful are as it were divided; for as they have not put off the flesh, they must necessarily be acquainted with adversities, be stormed by fear and feel anxieties; in short, when death hangs over them, they must in a manner be exposed to fear. In the meantime, faith in their hearts obtains the victory, so that they do not succumb under terrors, or cares, or anxieties.
 
@@ -2390,12 +2335,7 @@ He adds, Thou hast redeemed my life. It is the way of God’s pleading when he d
 
 <h2 class="scripture-anchor" id="lamentations-3-59" data-ref="Lamentations 3:59" style="display:none">Lamentations 3:59</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250359&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:59</span></p>
-
-<strong>59.</strong> O Lord, thou hast seen my wrong; judge thou my cause. <strong>59.</strong> Vidisti, Jehova, oppressionem (subversionem, *alii vertunt*, iniquitatem) meam; judica judicium meum.
-
-</div>
+**59.** O Lord, thou hast seen my wrong; judge thou my cause. **59.** Vidisti, Jehova, oppressionem (subversionem, *alii vertunt*, iniquitatem) meam; judica judicium meum.
 
 <!-- PAGE 148 -->
 The word <span style="color:#008080">yttw[</span>, *outti*, is rendered by some “iniquity,” but in an ironical sense, as though the Prophet had said, “Thou, God, knowest whether I have offended.” But the word is to be taken passively; the verb <span style="color:#008080">tw[</span>, *out,* means, to subvert, as we have elsewhere seen, even in this chapter. Then, by <span style="color:#800000">*his subversion*</span>, he means oppression, even when his adversaries unworthily trod him under their feet. And hence he asks God at the same time to <span style="color:#800000">*judge his judgment*</span>, that is, to undertake his cause, and to appear as his defender, as he had formerly done; for he saw his subversion, that is, he saw that he was unjustly cast down and laid prostrate by the wicked. It follows, —
@@ -2436,12 +2376,7 @@ We see that this is a repetition, but for vengeances he now mentions <span style
 
 <h2 class="scripture-anchor" id="lamentations-3-62" data-ref="Lamentations 3:62" style="display:none">Lamentations 3:62</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250362&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:62</span></p>
-
-<strong>62.</strong> The lips of those that rose up against me, and their device against me all the day. <strong>62.</strong> Labia (vel sermones, *aut*, linguas) insurgebtium contra me, et sermones eorum contra me tota die (*vel*, quotidie.)
-
-</div>
+**62.** The lips of those that rose up against me, and their device against me all the day. **62.** Labia (vel sermones, *aut*, linguas) insurgebtium contra me, et sermones eorum contra me tota die (*vel*, quotidie.)
 
 Instead of thoughts, he now mentions *lips,* or words. The verb <span style="color:#008080">hgh</span>, *ege* means to meditate, when no voice is uttered; but as the noun is connected here with lips, there is no doubt but that the Prophet refers to words, rather than to hidden meditations. [^f82] He then says, that such were the conspiracies, that they did not conceal what they had in their hearts, but publicly avowed their wicked purposes. Now this insolence must have moved God to aid his people, so unjustly oppressed.
 
@@ -2449,12 +2384,7 @@ He adds, <span style="color:#800000">*every day*</span>, or daily. This circumst
 
 <h2 class="scripture-anchor" id="lamentations-3-63" data-ref="Lamentations 3:63" style="display:none">Lamentations 3:63</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250363&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:63</span></p>
-
-<strong>63.</strong> Behold their sitting down, and their rising up, I am their music. <strong>63.</strong> Sessionem eorum et surrectionem eorum aspice; ego canticum eorum (*vel*, pulsatio, *ut alii vertunt*.
-
-</div>
+**63.** Behold their sitting down, and their rising up, I am their music. **63.** Sessionem eorum et surrectionem eorum aspice; ego canticum eorum (*vel*, pulsatio, *ut alii vertunt*.
 
 <!-- PAGE 150 -->
 
@@ -2488,12 +2418,7 @@ Were any one to object, and say, that another rule is prescribed to us, even to 
 
 <h2 class="scripture-anchor" id="lamentations-3-65" data-ref="Lamentations 3:65" style="display:none">Lamentations 3:65</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250365&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">3:65</span></p>
-
-<strong>65.</strong> Give them sorrow of heart, thy curse unto them. <strong>65.</strong> Des illis impedimentum cordis (*alii*, obstinationem,) maledictionem tuam illis (*vel* maledictio tua illis.)
-
-</div>
+**65.** Give them sorrow of heart, thy curse unto them. **65.** Des illis impedimentum cordis (*alii*, obstinationem,) maledictionem tuam illis (*vel* maledictio tua illis.)
 
 He expresses what the vengeance was to be, even that God would give them up to a reprobate mind; for by <span style="color:#008080">blAtngm</span>, *meganet-leb,* he no doubt meant the blindness of the heart, and at the same time included stupidity, as though he had said, “O Lord, so oppress them with evils, that they may become stupified.” For it is an extremity of evil, when we are so overpowered as not to be as it were ourselves, and when our evils do not drive us to prayer. [^f83]
 
@@ -2524,7 +2449,7 @@ He first asks God to <span style="color:#800000">*persecute them in wrath*</span
 
 By God’s sanctuary is often meant heaven. For this reason, then, the Prophet asked here that the ungodly should be destroyed from under the *heaven of Jehovah,* that is, that their destruction might testify that he sits in heaven, and is the judge of the world, and that things are not in such a confusion, but that the ungodly must at length render an account before the celestial judge, whom they have yet long neglected. This is the end of the chapter.
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as at this day ungodly men and wholly</span> <span style="color:#000080">reprobate so arrogantly rise up against thy Church, we may learn</span> <span style="color:#000080">to flee to thee, and to hide ourselves under the shadow of thy</span> <span style="color:#000080">wings, and fully to hope for thy salvation; and that however</span></p>
 
@@ -2707,7 +2632,7 @@ The beginning of the verse is without any difficulty; for the Prophet. says that
 <!-- PAGE 165 -->
 And he expresses himself more clearly by saying that <span style="color:#800000">*they pined away, having been pierced through by the fruits of the earth*</span>. There is here some obscurity, but <span style="color:#800000">*by the fruits of the earth*</span>, we are no doubt to understand all kinds of food. Some consider that “defect,” or failure, is to be understood. But the Prophet speaks much more emphatically, even that all the productions of the earth took vengeance on this wicked people, by refusing the usual supply. The earth is the servant of God’s bounty and kindness; for it is the same as though he with his hand extended food to us, when the earth opens its bowels; so also the productions of the earth are evidences of God’s paternal love towards us. Now, when the fruits of the earth withdraw themselves from us, they are as it were the weapons to execute God’s vengeance. So, then, the Prophet means that the Jews had been <span style="color:#800000">*pierced through by the fruits of the earth, and thus had pined away*</span>; as though he had said, that they had not been pierced by the sword, but had been wounded by famine, for the productions of the earth became, as it were, swords, while yet they sustain, as we have said, the life of men. [^f93]
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant. Almighty God, that as thou shewest by thy Prophet that,</span> <span style="color:#000080">after having long borne with thine ancient people, thy wrath at</span> <span style="color:#000080">length did so far burn as to render final judgment above all others</span> <span style="color:#000080">remarkable, — O grant that we may not at this day, by our</span> <span style="color:#000080">obstinacy or by our sloth, provoke thy wrath, but be attentive to</span> <span style="color:#000080">thy threatenings, yea, and obey thy paternal invitations, and so</span> <span style="color:#000080">willingly devote ourselves to thy service, that as thou hast hitherto</span> <span style="color:#000080">favored us with thy blessings, so thou mayest perpetuate them,</span> <span style="color:#000080">until we shall at length enjoy the fullness of all good things in thy</span> <span style="color:#000080">celestial kingdom, through Christ our Lord. — Amen.</span></p>
 
@@ -2892,7 +2817,7 @@ Now the words, to look out and looking out, are not unsuitable, for they refer t
 
 He says that they were a <span style="color:#800000">*nation which could not save*</span>; and there is no doubt but that the Prophet here puts them in mind of the many warnings which had not been received by the Jews, for God had tried to call them back from that ruinous confidence, but without any success; for we know how much the Prophets labored in this respect, but they were never believed until at length experience proved how vain was the help of Egypt, as God had testified by his servants.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as we are beset on every side with so</span> <span style="color:#000080">many allurements, and as Satan ceases not to draw us here and</span> <span style="color:#000080">there by vain flatteries, — O grant that we may recumb on thee</span> <span style="color:#000080">alone, even on thy power, and, in short, on thy word, nor doubt</span> <span style="color:#000080">but thou wilt be our deliverer, whatever may happen, and that we</span> <span style="color:#000080">may always so seek thee in our straits, and so acquiesce in the</span> <span style="color:#000080">faithfulness of thy promises, that we may calmly sustain all the</span> <span style="color:#000080">assaults of afflictions, until thou at length gatherest us into that</span> <span style="color:#000080">blessed rest which is prepared for us in heaven by Christ our Lord.</span> <span style="color:#000080">— Amen.</span></p>
 
@@ -3041,7 +2966,7 @@ We, in short, see that the reason is explained why the Prophet, in the last vers
 <!-- PAGE 188 -->
 But the Prophet means not here, that God would not afterwards banish and scatter the Jews as they deserved. There is then no inconsistency, that the Jews afterwards became fugitives and wanderers through the whole world, and that yet the enemy would not again draw them into captivity, for he speaks here only of the Chaldeans: and this was said, because Jeremiah wished to compare the Jews with the Idumeans, and to shew, that though the Idumeans insolently exulted over them, yet their own calamity was nigh, which would wholly overwhelm them, as the case had previously been with the Jews. There is no time now to begin with the prayer of Jeremiah: I must therefore defer it till the next Lecture.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou seest that at this day the</span> <span style="color:#000080">mouths not only of our enemies, but of thine also, are open to</span> <span style="color:#000080">speak evil, — O grant, that no occasion may be given them,</span> <span style="color:#000080">especially as their slanders are cast on thy holy name; but restrain</span> <span style="color:#000080">thou their insolence, and so spare us, that though we deserve to be</span> <span style="color:#000080">chastised, thou mayest yet have regard for thine own glory, and</span> <span style="color:#000080">thus gather us under Christ our head, and restore thy scattered</span> <span style="color:#000080">Church, until we shall at length be all gathered into that celestial</span> <span style="color:#000080">kingdom, which thine only-begotten Son our Lord has procured for</span> <span style="color:#000080">us by his own blood. — Amen.</span></p>
 
@@ -3088,7 +3013,7 @@ A catalogue of many calamities is now given by the Prophet, and as I have remind
 
 In the second clause he repeats the same thing; but he shews that the Jews had not only been robbed of their fields, but had been cast out of their houses, a more grievous and disgraceful thing. For it sometimes happens, that when one loses his farm, his fields, and vineyards, his house remains to him untouched; but the Prophet here amplifies the misery of his own nation, that they were not only deprived of their fields and possessions, but that they were also ejected from their own houses, and others had possession of them. For it is a sight deemed affecting even among heathens, when one unworthy of any honor succeeds in the place of another eminent in wealth and dignity. Well known are these words, —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*O house of Aucus! How ruled by an unequal master!*</span> [^f101]</p>
+<span style="color:#000080">***O house of Aucus! How ruled by an unequal master!***</span> [^f101]
 
 As Tarquinius had succeeded and taken possession of the kingdom, the heathen poet upbraidingly said that the house of Ancus had passed over to those who were at first exiles and fugitives, but afterwards became proud and cruel tyrants. So also in this place Jeremiah says that aliens dwelt in the houses of the people. It follows, —
 
@@ -3133,12 +3058,7 @@ But were any one disposed to take the words more simply, the complaint would not
 
 <h2 class="scripture-anchor" id="lamentations-5-5" data-ref="Lamentations 5:5" style="display:none">Lamentations 5:5</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250505&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:5</span></p>
-
-<strong>5.</strong> Our necks are under persecution: we labor, and have no rest <strong>5.</strong> Super colla nostra (*vel*, cervicibus nostris) persecutionem passi sumus; laboravimus non requies nobis.
-
-</div>
+**5.** Our necks are under persecution: we labor, and have no rest **5.** Super colla nostra (*vel*, cervicibus nostris) persecutionem passi sumus; laboravimus non requies nobis.
 
 <!-- PAGE 193 -->
 Here he says that the people were oppressed with a grievous bondage. It is, indeed, a metaphorical expression when he says, that people suffered persecution on their necks. Enemies may sometimes be troublesome to us, either before our face, or behind our backs, or by our sides; but when they so domineer as to ride on our necks, in this kind of insult. there is extreme degradation. Hence the Prophet here complains of the servile and even disgraceful oppression of the people when he says, that the Jews <span style="color:#800000">*suffered persecution on their necks.*</span>
@@ -3194,11 +3114,11 @@ The Prophet seems here to contend with God, and to utter that blasphemy mentione
 
 Thus they intimated that they were unjustly and cruelly treated, because they suffered the punishment of others, when they themselves were innocent. So the Prophet seems to quarrel with God when he says that the <span style="color:#800000">*fathers who sinned were no more*</span>; but as we shall presently see, the Prophet confesses also the sins of those who were yet alive. As, then, an ingenuous confession is made by the Prophet, he no doubt abstained here from that blasphemy which is so severely reproved by Ezekiel. Jeremiah had nothing farther from his purpose than to free the people from all blame, as though God had dealt cruelly with them, according to what is said by a heathen poet, —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“For the sins of the fathers thou undeservedly sufferest, O Roman!”*</span> [^f104]</p>
+<span style="color:#000080">***“For the sins of the fathers thou undeservedly sufferest, O Roman!”***</span> [^f104]
 
 Another says, —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*“Enough already by our blood*</span> <span style="color:#000080">*Have we suffered for the perjuries of Laomedonian Troy.”*</span> [^f105]</p>
+<span style="color:#000080">***“Enough already by our blood***</span> <span style="color:#000080">***Have we suffered for the perjuries of Laomedonian Troy.”***</span> [^f105]
 
 They mean that the people of their age were wholly innocent, and seek in Asia and beyond the sea the cause of evils, as though they never had a sin at Rome. But the meaning of Jeremiah was not this, but he simply intended to say that the people who had been long rebellious against God were already dead, and that it was therefore a suitable time for God to regard the miseries of their posterity. The faithful, then, do not allege here their own innocency before God, as though they were blameless; but only mention that their fathers underwent a just punishment, for that whole generation had perished. Daniel speaks more fully when he says,
 
@@ -3221,12 +3141,7 @@ God then continued his vengeance to their posterity. But yet there is no doubt b
 
 <h2 class="scripture-anchor" id="lamentations-5-8" data-ref="Lamentations 5:8" style="display:none">Lamentations 5:8</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250508&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:8</span></p>
-
-<strong>8.</strong> Servants have ruled over us: there is none that doth deliver us out of their hand. <strong>8.</strong> Servi dominati sunt nobis; eripiens nemo ex manibus ipsorum (*hoc est*, nemo est qui nos eripiat e manibus ipsorum.)
-
-</div>
+**8.** Servants have ruled over us: there is none that doth deliver us out of their hand. **8.** Servi dominati sunt nobis; eripiens nemo ex manibus ipsorum (*hoc est*, nemo est qui nos eripiat e manibus ipsorum.)
 
 <!-- PAGE 197 -->
 Another circumstance aggravated the calamity of the people, that they came under the power of servants, which is more degrading than when the rich and the eminent in wealth and power make us their servants. For it is no shame to serve a king, or at, least a man who possesses some eminence; for that servitude which is not apparently degrading is deemed tolerable. But when we become the servants of servants, it is a most afflicting degradation, and most grievously wounds our minds.
@@ -3257,12 +3172,7 @@ It may also be, that the Prophet meant, that they were fugitives, and thus went 
 
 <h2 class="scripture-anchor" id="lamentations-5-10" data-ref="Lamentations 5:10" style="display:none">Lamentations 5:10</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250510&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:10</span></p>
-
-<strong>10.</strong> Our skin was black like an oven, because of the terrible famine. <strong>10.</strong> Pelles nostrae quasi clibanus nigredinem contraxerunt ob exustiones famis.
-
-</div>
+**10.** Our skin was black like an oven, because of the terrible famine. **10.** Pelles nostrae quasi clibanus nigredinem contraxerunt ob exustiones famis.
 
 Some read, “for tremors;” literally, “from the face of tremors.” Jerome renders it, “tempests :” but the word “burnings” is the most suitable; for he says that their skins were darkened, and he compares them to an oven. This metaphor often occurs in Scripture,
 
@@ -3322,7 +3232,7 @@ He adds, that <span style="color:#800000">*the faces of the aged were not honore
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>13.</strong> They took the young men to grind, and the children fell under the wood. I cannot proceed farther now. PRAYER</td><td class="scripture-la"><strong>13.</strong> Adolescentes ad molam sumpserunt, et pueri in ligno ceciderunt (<em>vel</em>, impegerunt)</td></tr>
+<tr><td class="scripture-en"><strong>13.</strong> They took the young men to grind, and the children fell under the wood. I cannot proceed farther now. <strong>PRAYER</strong></td><td class="scripture-la"><strong>13.</strong> Adolescentes ad molam sumpserunt, et pueri in ligno ceciderunt (<em>vel</em>, impegerunt)</td></tr>
 </tbody>
 </table>
 
@@ -3395,12 +3305,7 @@ We hence conclude, that when he said yesterday that the fathers who had sinned w
 
 <h2 class="scripture-anchor" id="lamentations-5-17" data-ref="Lamentations 5:17" style="display:none">Lamentations 5:17</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250517&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:17</span></p>
-
-<strong>17.</strong> For this our heart is faint; for those things our eyes are dim. <strong>17.</strong> Propterea debile est cor nostrum; super hoc (*id est*, propter hane causem) obtenebrati sunt oculi nostri.
-
-</div>
+**17.** For this our heart is faint; for those things our eyes are dim. **17.** Propterea debile est cor nostrum; super hoc (*id est*, propter hane causem) obtenebrati sunt oculi nostri.
 
 He connects sorrow here with the acknowledgment of sin, that the people under the pressure and agony of sorrow might apply their minds so as to consider their own sins. At the same time the Prophet, no doubt, includes here all that we have already observed, as though he had said that the people were not without reason wearied with sorrow, for they had ample and manifold reasons for their grief.
 
@@ -3458,12 +3363,7 @@ This, also, he expresses more clearly, when he says, that God’s throne remains
 
 <h2 class="scripture-anchor" id="lamentations-5-20" data-ref="Lamentations 5:20" style="display:none">Lamentations 5:20</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250520&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:20</span></p>
-
-<strong>20.</strong> Wherefore dost thou forget us for ever, and forsake us so long time? <strong>20.</strong> Ut quid in perpetuum oblivisceris nostri, deseres nos in protractionem (*vel*, longitudinem) dierum?
-
-</div>
+**20.** Wherefore dost thou forget us for ever, and forsake us so long time? **20.** Ut quid in perpetuum oblivisceris nostri, deseres nos in protractionem (*vel*, longitudinem) dierum?
 
 He seems, indeed, here to expostulate with God; but the faithful, even when they patiently bear their evils, and submit to God’s scourges, do yet familiarly deposit their complaints in his bosom, and thus unburden themselves. We see that David prayed, and no doubt by the real impulse of the Spirit, and at the same time expostulated,
 
@@ -3481,12 +3381,7 @@ We yet see that he judged according to the evils then endured; and doubtless he 
 
 <h2 class="scripture-anchor" id="lamentations-5-21" data-ref="Lamentations 5:21" style="display:none">Lamentations 5:21</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;250521&gt;</span><span class="book-name">Lamentations</span> <span class="verse-range">5:21</span></p>
-
-<strong>21.</strong> Turn thou us unto tee, O Lord, and we shall be turned; renew our days as of old. <strong>21.</strong> Converte nos, Jehova ad te et convertimur: innova (*vel*, instaura) dies nostros sicuti olim (*vel*, ab initio.)
-
-</div>
+**21.** Turn thou us unto tee, O Lord, and we shall be turned; renew our days as of old. **21.** Converte nos, Jehova ad te et convertimur: innova (*vel*, instaura) dies nostros sicuti olim (*vel*, ab initio.)
 
 The Prophet shews, in this verse, that the remedy is in God’s hand whenever he is pleased to succor his people. He, then, exalts here the power of God, as though he had said, that God is not without power, but that he can, whenever he pleases, help his people. This is not, indeed, a sufficient ground for confidence, yet it is the beginning of hope; for whence is it that despair weakens us, so that we cannot call on God? because we think that it is all over with us; and whence is this? because we impiously confine the power of God; nay, we in a manner, through our unbelief, repel his power, which would otherwise be exerted in our behalf. As, then, we thus close the door against God, when we extenuate his power, and think that our evils will prevail; it is, therefore, as I have said, the beginning of hope to believe that all the issues of death are in God’s hand, and that were we a hundred times swallowed up, yet he, by stretching forth his hand to us, can become the author of salvation to us at any moment.
 
@@ -3530,7 +3425,7 @@ But it cannot be that God will reject his people, and be so angry with them, as 
 
 As it has so seemed good to the brethren, I will begin tomorrow the explanation of Ezekiel.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou didst formerly execute</span> <span style="color:#000080">judgments so severe on thy people, — O grant, that these</span> <span style="color:#000080">chastisements may at this day teach us to fear thy name, and also</span> <span style="color:#000080">keep us in watchfulness and humility, and that we may so strive to</span> <span style="color:#000080">pursue the course of our calling, that we may find that thou art</span> <span style="color:#000080">always our leader, that thy hand is stretched forth to us, that thy</span> <span style="color:#000080">aid is ever ready for us, until, being at length gathered into thy</span> <span style="color:#000080">celestial kingdom, we shall enjoy that eternal life, which thine only-</span> <span style="color:#000080">begotten Son has obtained for us by his own blood. — Amen.</span></p>
 
@@ -3538,7 +3433,7 @@ As it has so seemed good to the brethren, I will begin tomorrow the explanation 
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PRAISE TO GOD.</span></p>
 
-<p style="text-align:center" markdown="1">A TRANSLATION OF</p>
+<p style="text-align:center" markdown="1">**A TRANSLATION OF**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CALVIN’S VERSION OF</span></p>
 
@@ -3890,423 +3785,387 @@ As it has so seemed good to the brethren, I will begin tomorrow the explanation 
 
 <!-- PAGE 227 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">FOOTNOTES</span></p>
-
-<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
-
-[^f1]: The word is not repeated in the early Versions, nor by *Blayney* and *Henderson*. The word <span style="color:#008080">hkya</span>, means properly, “Whence thus?” and it may be rendered, “How is this?” and the passage would be more emphatic, — <span style="color:#000080">1. How is this? alone sits the city, that was full of people!</span> <span style="color:#000080">Like a widow is she that was great among nations!</span> <span style="color:#000080">A princess among provinces is under tribute!</span>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2. Weeping she weeps in the night, and her tear on her cheek!</span> <span style="color:#000080">None to her a comforter of all her lovers!</span> <span style="color:#000080">All her friends have deceived her, they are become her enemies!</span></p>
-
+<span style="color:#006411">CHAPTER 1</span>
+ <span style="color:#800000">FT1</span> The word is not repeated in the early Versions, nor by *Blayney* and *Henderson*. The word <span style="color:#008080">hkya</span>, means properly, “Whence thus?” and it may be rendered, “How is this?” and the passage would be more emphatic, — <span style="color:#000080">**1.**</span> <span style="color:#000080">How is this? alone sits the city, that was full of people!</span> <span style="color:#000080">Like a widow is she that was great among nations!</span> <span style="color:#000080">A princess among provinces is under tribute!</span>
+<span style="color:#000080">**2.**</span> <span style="color:#000080">Weeping she weeps in the night, and her tear on her cheek!</span> <span style="color:#000080">None to her a comforter of all her lovers!</span> <span style="color:#000080">All her friends have deceived her, they are become her enemies!</span>
 These were the various things which created astonishment in the Prophet. — *Ed*.
-
-[^f2]: *Blayney* and *Horsley* agree in this view; but *Gataker*, *Henry*, and *Henderson* take the previous view, that is, that Judah went to exile on account of the oppression they practiced, and the multiplied servitude they exacted, especially the servitude or slavery to which servants were subjected, as recorded in Jeremiah 34. What confirms this view is the word “Judah,” which, as it implies the greater part, could not be applied to the comparatively few who voluntarily migrated. <span style="color:#000080">3. Removed is Judah for oppression and for much servitude;</span> <span style="color:#000080">She dwells among nations without finding rest;</span> <span style="color:#000080">All her pursuers seized her in the straits.</span> The *Targum* paraphrases “oppression” by mentioning orphans and widows, and “servitude,” by referring to what servants were subjected to, as related in Jeremiah 34. These were sins for which the Jews had often been threatened with banishment. “Pursuers” rather than “persecutors;” and to be “seized in (or, between) the straits,” is, as Lowth says, a metaphor taken from hunters, who drive the game to narrow places, from which there is no escape. *Houbiqant* proposes to connect “oppression and servitude” with the following words, and not with the preceding, — Removed is Judah; for oppression and for much servitude, She dwells among the nations without finding rest. — *Ed*.
+ <span style="color:#800000">FT2</span> *Blayney* and *Horsley* agree in this view; but *Gataker*, *Henry*, and *Henderson* take the previous view, that is, that Judah went to exile on account of the oppression they practiced, and the multiplied servitude they exacted, especially the servitude or slavery to which servants were subjected, as recorded in Jeremiah 34. What confirms this view is the word “Judah,” which, as it implies the greater part, could not be applied to the comparatively few who voluntarily migrated. <span style="color:#000080">**3.**</span> <span style="color:#000080">Removed is Judah for oppression and for much servitude;</span> <span style="color:#000080">She dwells among nations without finding rest;</span> <span style="color:#000080">All her pursuers seized her in the straits.</span>
+The *Targum* paraphrases “oppression” by mentioning orphans and widows, and “servitude,” by referring to what servants were subjected to, as related in Jeremiah 34. These were sins for which the Jews had often been threatened with banishment. “Pursuers” rather than “persecutors;” and to be “seized in (or, between) the straits,” is, as Lowth says, a metaphor taken from hunters, who drive the game to narrow places, from which there is no escape.
 
 <!-- PAGE 228 -->
 
-[^f3]: Participles are used throughout this verse, which express the present state of things, — The ways of Sion are mourning, for none are coming to the feasts; All her gates are made desolate, her priests are sighing; Her virgins are afflicted, and she, bitterness is to her. — *Ed*.
-
-[^f4]: 
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">5. Become have her oppressors the head,</span> <span style="color:#000080">Her enemies have prospered;</span> <span style="color:#000080">For Jehovah has afflicted her</span> <span style="color:#000080">For the number of her transgressions;</span> <span style="color:#000080">Her children are gone into captivity</span> <span style="color:#000080">Before the face of the oppressor.</span></p>
-
+*Houbiqant* proposes to connect “oppression and servitude” with the following words, and not with the preceding, — Removed is Judah; for oppression and for much servitude, She dwells among the nations without finding rest. — *Ed*.
+ <span style="color:#800000">FT3</span> Participles are used throughout this verse, which express the present state of things, —
+The ways of Sion are mourning, for none are coming to the feasts; All her gates are made desolate, her priests are sighing; Her virgins are afflicted, and she, bitterness is to her. — *Ed*.
+ <span style="color:#800000">FT4</span>
+<span style="color:#000080">**5.**</span> <span style="color:#000080">Become have her oppressors the head,</span> <span style="color:#000080">Her enemies have prospered;</span> <span style="color:#000080">For Jehovah has afflicted her</span> <span style="color:#000080">For the number of her transgressions;</span> <span style="color:#000080">Her children are gone into captivity</span> <span style="color:#000080">Before the face of the oppressor.</span>
 The word <span style="color:#008080">rx</span> is not an” adversary,” but an oppressor, one who straitens and oppresses another. — *Ed.*
-
-[^f5]: The idea here is somewhat different: the princes are compared to harts reduced and enfeebled by famine, so that they were driven by their enemies like a herd of tame cattle. — *Ed*.
-
-[^f6]: The versions and the *Targ*. are evidently wrong here, and are not consistent with one another. There is no meaning except <span style="color:#008080">b</span> be considered as understood before <span style="color:#008080">ymy</span>, “days.” The only difference among critics is about the meaning of <span style="color:#008080">dwrm</span>. There is no different reading. It is rendered “rejections — <span style="color:#0000d4">ἀπωσμῶν</span> ,” by the *Sept*., “prevarication” by the *Vulg*., and “punishment” by the *Syr*. *Parkhurst* and *Blayney* derive it from <span style="color:#008080">dry</span>, to come down, to descend. It means the descending or abasement’s to which Jerusalem had been subjected, and has the same meaning in Lamentations 3:19. “In the days of her affliction and of her abasement’s.” — *Ed*.
-
-[^f7]: There are in this verse four lines, while there are only three in all the rest; but there is no ground for supposing an interpolation, as some have thought; for it is found in every Hebrew copy and in the versions, and the *Targum*. As to the last word, it is rendered by the *Sept*., “habitation,” or according to the Alexandrian copy, “emigration;” by the *Vulg*. “sabbaths;” and by the *Syr*. “sorrow.” The word is nowhere found to signify the Sabbath. It is either from <span style="color:#008080">hbç</span>, to lead captive, as *Parkhurst* thinks, and means captivity, emigration; or from <span style="color:#008080">tbç</span>, to cease, to come to an end, according to *Blayney* and *Henderson*, and may be rendered “discontinuance,” *i.e*., as a nation or a state, or “ruin.” But the former meaning agreeing with the *Sept*. is to be preferred, — <span style="color:#000080">When fall did her people, and she had no helper,</span> <span style="color:#000080">See her did oppressors, they laughed at her captivity. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
+ <span style="color:#800000">FT5</span> The idea here is somewhat different: the princes are compared to harts reduced and enfeebled by famine, so that they were driven by their enemies like a herd of tame cattle. — *Ed*.
+ <span style="color:#800000">FT6</span> The versions and the *Targ*. are evidently wrong here, and are not consistent with one another. There is no meaning except <span style="color:#008080">b</span> be considered as understood before <span style="color:#008080">ymy</span>, “days.” The only difference among critics is about the meaning of <span style="color:#008080">dwrm</span>. There is no different reading. It is rendered “rejections — <span style="color:#0000d4">ἀπωσμῶν</span> ,” by the *Sept*., “prevarication” by the *Vulg*., and “punishment” by the *Syr*. *Parkhurst* and *Blayney* derive it from <span style="color:#008080">dry</span>, to come down, to descend. It means the descending or abasement’s to which Jerusalem had been subjected, and has the same meaning in Lamentations 3:19. “In the days of her affliction and of her abasement’s.” — *Ed*.
 <!-- PAGE 229 -->
+ <span style="color:#800000">FT7</span> There are in this verse four lines, while there are only three in all the rest; but there is no ground for supposing an interpolation, as some have thought; for it is found in every Hebrew copy and in the versions, and the *Targum*. As to the last word, it is rendered by the *Sept*., “habitation,” or according to the Alexandrian copy, “emigration;” by the *Vulg*. “sabbaths;” and by the *Syr*. “sorrow.” The word is nowhere found to signify the Sabbath. It is either from <span style="color:#008080">hbç</span>, to lead captive, as *Parkhurst* thinks, and means captivity, emigration; or from <span style="color:#008080">tbç</span>, to cease, to come to an end, according to *Blayney* and *Henderson*, and may be rendered “discontinuance,” *i.e*., as a nation or a state, or “ruin.” But the former meaning agreeing with the *Sept*. is to be preferred, — <span style="color:#000080">When fall did her people, and she had no helper,</span> <span style="color:#000080">See her did oppressors, they laughed at her captivity. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT8</span>
 
-[^f8]: <span style="color:#000080">*“Venit summa dies et ineluctabile tempus*</span> <span style="color:#000080">*Dardaniae: fuimus Troes; fuit Ilium et ingens*</span> <span style="color:#000080">*Gloria Teucrorum: ferus omnia Jupiter Argos*</span> <span style="color:#000080">*Transtulit: incensa Danai dominantur in urbe.”*</span> <span style="color:#000080">Virg. AEn. 2.</span>
+<span style="color:#000080">***“Venit summa dies et ineluctabile tempus***</span> <span style="color:#000080">***Dardaniae: fuimus Troes; fuit Ilium et ingens***</span> <span style="color:#000080">***Gloria Teucrorum: ferus omnia Jupiter Argos***</span> <span style="color:#000080">***Transtulit: incensa Danai dominantur in urbe.”***</span> <span style="color:#000080">**Virg. AEn. 2.**</span>
 
-[^f9]: <span style="color:#000080">*“O patria! O divum domus Ilium! Et inclyta bello*</span> <span style="color:#000080">*Moenia Dardanidum! Ferus omnia Jupiter Argos*</span> <span style="color:#000080">*Transtulit.” —*</span> <span style="color:#000080">AEn 2.</span>
+ <span style="color:#800000">FT9</span>
 
-[^f10]: <span style="color:#000080">*“Postquam res Asiae, Priamique everterre gentem*</span> <span style="color:#000080">*Immeritam visum Superis.” —*</span> <span style="color:#000080">Virg. AEn. 3.</span>
+<span style="color:#000080">***“O patria! O divum domus Ilium! Et inclyta bello***</span> <span style="color:#000080">***Moenia Dardanidum! Ferus omnia Jupiter Argos***</span> <span style="color:#000080">***Transtulit.” —***</span> <span style="color:#000080">**AEn 2.**</span>
 
-[^f11]: “Fluctuation,” by the *Sept*.; “instable,” by the *Vulg*.: “vagrant,” or wandering, by the *Targ*.; and “horror”, by the *Syr*. The verb means to remove; and the reference here is evidently to banishment, and not to uncleanness, as some take it, because the noun is sometimes so taken, persons being removed from society on account of uncleanness. — *Ed*.
+ <span style="color:#800000">FT10</span>
 
-[^f12]: “To turn back” or backward, is a phrase which some regard as expressive of shame, as those who feel shame recede from the public view and hide themselves. — *Ed.*
+<span style="color:#000080">***“Postquam res Asiae, Priamique everterre gentem***</span> <span style="color:#000080">***Immeritam visum Superis.” —***</span> <span style="color:#000080">**Virg. AEn. 3.**</span>
 
-[^f13]: “She carries the marks of her sins in the greatness of her punishment,” is Lowth’s remark, which seems to favor this view. — *Ed*.
+ <span style="color:#800000">FT11</span> “Fluctuation,” by the *Sept*.; “instable,” by the *Vulg*.: “vagrant,” or wandering, by the *Targ*.; and “horror”, by the *Syr*. The verb means to remove; and the reference here is evidently to banishment, and not to uncleanness, as some take it, because the noun is sometimes so taken, persons being removed from society on account of uncleanness. — *Ed*.
+ <span style="color:#800000">FT12</span> “To turn back” or backward, is a phrase which some regard as expressive of shame, as those who feel shame recede from the public view and hide themselves. — *Ed.*
+ <span style="color:#800000">FT13</span> “She carries the marks of her sins in the greatness of her punishment,” is Lowth’s remark, which seems to favor this view. — *Ed*.
 
 <!-- PAGE 230 -->
 
-[^f14]: The verse may be thus rendered, — <span style="color:#000080">His hand has the oppressor expanded over all her desirable things;</span> <span style="color:#000080">Indeed she saw it: nations entered her sanctuary;</span> <span style="color:#000080">Though thou hast commanded this, “They shall not come to thine</span> <span style="color:#000080">assembly.”</span> “The desirable things” were sacred things, and might be so rendered. To expand the hand over them was to seize them, to take possession of them. — *Ed*.
-
-[^f15]: That is, she was treated as vile or worthless: “dishonored” is the S*ept*. — *Ed*.
-
-[^f16]: It is evidently taken as <span style="color:#008080">wl</span> by the *Sept*., the *Vulg*., and the *Targ*.; but as a negative by the *Syr*., and the sentence is taken as a question: and this gives the best meaning. — *Ed*.
-
-[^f17]: All the versions agree in rendering <span style="color:#008080">dqçn</span> in the sense of watching; and when they agree, there is a strong presumption that they are right. And all agree as to <span style="color:#008080">l[</span> being a preposition, and not a noun, “yoke,” except the *Vulg.*, which hardly gives any meaning. The Rabbins have invented a new meaning for the verb, which it has in no other place, and some have followed them. It is rendered impersonally by the *Sept*., “there has been watching,” but by the *Vulg*., “he hath watched.” To “watch over transgressions,” is similar to “watch upon (or over) the evil,” in Daniel 9:14; it is to watch over them in order to punish them. The whole verse I render thus, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">14. He hath watched over my transgressions, by his hand they are</span> <span style="color:#000080">twined; His yoke is upon my neck, he hath made to fail my</span> <span style="color:#000080">strength; Yea, given me hath the Lord into the hands of</span> <span style="color:#000080">*the*</span> <span style="color:#000080">*oppressor*</span><span style="color:#000080">, I cannot stand.</span></p>
-
+ <span style="color:#800000">FT14</span> The verse may be thus rendered, —
+<span style="color:#000080">His hand has the oppressor expanded over all her desirable things;</span> <span style="color:#000080">Indeed she saw it: nations entered her sanctuary;</span> <span style="color:#000080">Though thou hast commanded this, “They shall not come to thine</span> <span style="color:#000080">assembly.”</span>
+“The desirable things” were sacred things, and might be so rendered. To expand the hand over them was to seize them, to take possession of them. — *Ed*.
+ <span style="color:#800000">FT15</span> That is, she was treated as vile or worthless: “dishonored” is the S*ept*. — *Ed*.
+ <span style="color:#800000">FT16</span> It is evidently taken as <span style="color:#008080">wl</span> by the *Sept*., the *Vulg*., and the *Targ*.; but as a negative by the *Syr*., and the sentence is taken as a question: and this gives the best meaning. — *Ed*.
+ <span style="color:#800000">FT17</span> All the versions agree in rendering <span style="color:#008080">dqçn</span> in the sense of watching; and when they agree, there is a strong presumption that they are right. And all agree as to <span style="color:#008080">l[</span> being a preposition, and not a noun, “yoke,” except the *Vulg.*, which hardly gives any meaning. The Rabbins have invented a new meaning for the verb, which it has in no other place, and some have followed them. It is rendered impersonally by the *Sept*., “there has been watching,” but by the *Vulg*., “he hath watched.” To “watch over transgressions,” is similar to “watch upon (or over) the evil,” in Daniel 9:14; it is to watch over them in order to punish them.
+The whole verse I render thus, —
+<span style="color:#000080">**14.**</span> <span style="color:#000080">He hath watched over my transgressions, by his hand they are</span> <span style="color:#000080">twined; His yoke is upon my neck, he hath made to fail my</span> <span style="color:#000080">strength; Yea, given me hath the Lord into the hands of</span> <span style="color:#000080">*the*</span> <span style="color:#000080">*oppressor*</span><span style="color:#000080">, I cannot stand.</span>
 The word “hands” is in a construct form, which shews that there is a word left out. “I cannot stand,” *i.e.*, against the oppressor; I cannot resist. The future is used in the sense of the present; literally it is, “I shall not be able to stand,” or resist. So it is exactly in Welsh; it is the future, but understood as expressing what is present.
 
 <!-- PAGE 231 -->
 
 In the first line, “his hand” is connected in all the versions with “twined,” or wreathed together. — *Ed*.
-
-[^f18]: If the word be rendered “assembly,” or congregation, the meaning is, the assembly of the Chaldeans, and an allusion, as *Gataker* says, is made to the calling of the people to their feasts. It is rendered “time” by the *Sept*. and the *Vulg.*, but “assembly” by the *Syr*. To call against or upon one a fixed time, is no suitable expression. Our version is no doubt right; and with it agree *Blayney* and *Henderson*. — *Ed*.
-
-[^f19]: The words are as follows, — <span style="color:#000080">The winepress has the Lord trodden as to the virgin,</span> <span style="color:#000080">the daughter of Judah.</span> The <span style="color:#008080">l</span> sometimes means “as to,” or, with respect to. “The daughter of Judah” is in apposition with “virgin.” — *Ed*.
-
-[^f20]: Though the *Sept*. and *Vulg.* do not repeat the “eye,” yet the *Targ*. has “my two eyes,” and the *Syr*., “mine eyes.” The repetition is in most copies, and it is very emphatical. See a similar instance in Jeremiah 4:9.
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">16. For these things I weep: mine eye! mine eye! it brings down</span> <span style="color:#000080">water; For far from me is a comforter, a restorer of my life;</span> <span style="color:#000080">Become desolate are my sons, for the enemy has prevailed. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f21]: The same word, <span style="color:#008080">hdn</span> occurs in Lamentations 1:8, only there is a <span style="color:#008080">y</span> in it; and the phrase in its form is similar. The Versions, except the, *Syr*., and also the *Targ*., give to it there the idea of wandering, but here of uncleanness. There seems to be no reason for this change; and the end of the next verse favors the idea of wandering: Jerusalem had become a wanderer, or a fugitive, among her oppressors, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">17. Expanded hath Sion her hands, no comforter is to her;</span> <span style="color:#000080">Commanded has Jehovah as to Jacob,</span> <span style="color:#000080">*Let*</span> <span style="color:#000080">those around him</span> <span style="color:#000080">*be*</span> <span style="color:#000080">his</span> <span style="color:#000080">oppressors; Become has Jerusalem a wanderer among them.</span></p>
+ <span style="color:#800000">FT18</span> If the word be rendered “assembly,” or congregation, the meaning is, the assembly of the Chaldeans, and an allusion, as *Gataker* says, is made to the calling of the people to their feasts. It is rendered “time” by the *Sept*. and the *Vulg.*, but “assembly” by the *Syr*. To call against or upon one a fixed time, is no suitable expression. Our version is no doubt right; and with it agree *Blayney* and *Henderson*. — *Ed*.
+ <span style="color:#800000">FT19</span> The words are as follows, —
+<span style="color:#000080">The winepress has the Lord trodden as to the virgin,</span> <span style="color:#000080">the daughter of Judah.</span>
+The <span style="color:#008080">l</span> sometimes means “as to,” or, with respect to. “The daughter of Judah” is in apposition with “virgin.” — *Ed*.
+ <span style="color:#800000">FT20</span> Though the *Sept*. and *Vulg.* do not repeat the “eye,” yet the *Targ*. has “my two eyes,” and the *Syr*., “mine eyes.” The repetition is in most copies, and it is very emphatical. See a similar instance in Jeremiah 4:9.
+<span style="color:#000080">**16.**</span> <span style="color:#000080">For these things I weep: mine eye! mine eye! it brings down</span> <span style="color:#000080">water; For far from me is a comforter, a restorer of my life;</span> <span style="color:#000080">Become desolate are my sons, for the enemy has prevailed. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT21</span> The same word, <span style="color:#008080">hdn</span> occurs in Lamentations 1:8, only there is a <span style="color:#008080">y</span> in it; and the phrase in its form is similar. The Versions, except the, *Syr*., and also the *Targ*., give to it there the idea of wandering, but here of uncleanness. There seems to be no reason for this change; and the end of the next verse favors the idea of wandering: Jerusalem had become a wanderer, or a fugitive, among her oppressors, —
+<span style="color:#000080">**17.**</span> <span style="color:#000080">Expanded hath Sion her hands, no comforter is to her;</span> <span style="color:#000080">Commanded has Jehovah as to Jacob,</span> <span style="color:#000080">*Let*</span> <span style="color:#000080">those around him</span> <span style="color:#000080">*be*</span> <span style="color:#000080">his</span> <span style="color:#000080">oppressors; Become has Jerusalem a wanderer among them.</span>
 
 <!-- PAGE 232 -->
 
 The word <span style="color:#008080">dn</span> is a fugitive, a wanderer, and as Jerusalem is feminine, <span style="color:#008080">h</span> is added, a feminine termination. “Jerusalem” here, as in Lamentations 1:8, means its citizens. — *Ed*.
-
-[^f22]: “Righteous he, Jehovah:” the pronoun is used instead of the verb *is*, — a common thing in Hebrew. — *Ed*.
-
-[^f23]: Troubled,” or disquieted, is the rendering of all the versions, and also of the *Targ*. As it is a reduplicate, the verb means greatly troubled or greatly disturbed, or violently agitated. — *Ed*.
-
-[^f24]: The rendering of the *Sept*. is, — <span style="color:#000080">Abroad the sword has bereaved me, as death at home.</span> To the same purpose is the S*yr*. and *Arab*. Having before referred to death by famine, he now adds the devastation of the sword. — *Ed*.
-
-[^f25]: Our version is wrong in rendering this clause in the future tense. The reference is not to the day of vengeance to the Babylonians, but to the day of vengeance which God had brought on his own people. The versions, except the *Syr*., give the verb in the past tense. There are here two instances of <span style="color:#008080">yk</span> being carried on to the next clause, — <span style="color:#000080">21. Heard have they that I sigh,</span> <span style="color:#000080">*that*</span> <span style="color:#000080">I have no comforter:</span> <span style="color:#000080">All mine enemies have heard of my evil; they have rejoiced</span> <span style="color:#000080">That thou hast done it, that thou hast brought the day thou hast</span> <span style="color:#000080">announced; But they shall be like myself. —</span> <span style="color:#000080">*Ed*</span>
-
-<h2 class="scripture-anchor" id="chapter-2" data-ref="CHAPTER 2" style="display:none">CHAPTER 2</h2>
-
-[^f26]: The verb here is in the future tense, and the clause might be thus rendered, — <span style="color:#000080">Why should the Lord in his wrath becloud</span> <span style="color:#000080">the daughter of Sion?</span> And if <span style="color:#008080">hbçy</span>, in Lamentations 1:1, be in the future tense, as it may be, that clause may be rendered in the same way, — <span style="color:#000080">Why should sit alone the city</span> <span style="color:#000080">*that was*</span> <span style="color:#000080">full of people?</span> Then follows here, as in the former instance, a description of what had happened to Sion, — <span style="color:#000080">He hath cast from heaven to earth the glory of Israel,</span> <span style="color:#000080">And not remembered his footstool in the day of his wrath.</span> At the same time, the clauses may both be rendered as proposed in a note on Lamentations 1:1, and the tenses of the verbs be preserved. The verb here is clearly in the future tense, and the verb in the former instance may be so; and the future in Hebrew is often to be taken as the present, as the case is in Welsh. How this! in his wrath becloud does the Lord the daughter of Sion! — *Ed*.
+ <span style="color:#800000">FT22</span> “Righteous he, Jehovah:” the pronoun is used instead of the verb *is*, — a common thing in Hebrew. — *Ed*.
+ <span style="color:#800000">FT23</span> Troubled,” or disquieted, is the rendering of all the versions, and also of the *Targ*. As it is a reduplicate, the verb means greatly troubled or greatly disturbed, or violently agitated. — *Ed*.
+ <span style="color:#800000">FT24</span> The rendering of the *Sept*. is, —
+<span style="color:#000080">Abroad the sword has bereaved me, as death at home.</span>
+To the same purpose is the S*yr*. and *Arab*. Having before referred to death by famine, he now adds the devastation of the sword. — *Ed*.
+ <span style="color:#800000">FT25</span> Our version is wrong in rendering this clause in the future tense. The reference is not to the day of vengeance to the Babylonians, but to the day of vengeance which God had brought on his own people. The versions, except the *Syr*., give the verb in the past tense.
+There are here two instances of <span style="color:#008080">yk</span> being carried on to the next clause, — <span style="color:#000080">**21.**</span> <span style="color:#000080">Heard have they that I sigh,</span> <span style="color:#000080">*that*</span> <span style="color:#000080">I have no comforter:</span> <span style="color:#000080">All mine enemies have heard of my evil; they have rejoiced</span> <span style="color:#000080">That thou hast done it, that thou hast brought the day thou hast</span> <span style="color:#000080">announced; But they shall be like myself. —</span> <span style="color:#000080">*Ed*</span>
+<span style="color:#006411">CHAPTER 2</span>
+ <span style="color:#800000">FT26</span> The verb here is in the future tense, and the clause might be thus rendered, —
+<span style="color:#000080">Why should the Lord in his wrath becloud</span> <span style="color:#000080">the daughter of Sion?</span>
+And if <span style="color:#008080">hbçy</span>, in Lamentations 1:1, be in the future tense, as it may be, that clause may be rendered in the same way, —
+<span style="color:#000080">Why should sit alone the city</span> <span style="color:#000080">*that was*</span> <span style="color:#000080">full of people?</span>
 
 <!-- PAGE 233 -->
 
-[^f27]: *Gataker, Henry, Blayney*, and *Henderson*, consider “the right hand” as that of Israel — that God drew back or restrained the right hand of Israel, so that he had no power to face his enemies. But *Scott* agrees with *Calvin*; and favorable to the same view are the early versions, except the *Syr*., for they render the pronoun, “his own — suam:” the *Targ*. also takes the same view. Had the word been “hand,” it might have been applied to Israel; but it is “the right hand,” which commonly means protection, or rather God’s power, as put forth to defend his people and to resist enemies. This is farther confirmed by what is said in the following verse, that God “stood with his right hand as an adversary.” See Psalm 74:11 — *Ed*.
-
-[^f28]: The last clause may be literally rendered thus, — <span style="color:#000080">And he burned in Jacob as fire,</span> <span style="color:#000080">the flame devoured around. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f29]: The word <span style="color:#008080">wkç</span> is rendered by the versions in the sense of <span style="color:#008080">wks</span>, “his tabernacle;” but by so doing they make it the same in effect with <span style="color:#008080">wd[wm</span>, “his place of meeting,” in the following clause. The verb <span style="color:#008080">smj</span> never means what *Calvin* says, to migrate or to remove, but to cast off, or to throw down, that is, with force or violence. Then <span style="color:#008080">rç</span>, a fence or enclosure, is what suits the verb, —
+Then follows here, as in the former instance, a description of what had happened to Sion, —
+<span style="color:#000080">He hath cast from heaven to earth the glory of Israel,</span> <span style="color:#000080">And not remembered his footstool in the day of his wrath.</span>
+At the same time, the clauses may both be rendered as proposed in a note on Lamentations 1:1, and the tenses of the verbs be preserved. The verb here is clearly in the future tense, and the verb in the former instance may be so; and the future in Hebrew is often to be taken as the present, as the case is in Welsh.
+How this! in his wrath becloud does the Lord the daughter of Sion! — *Ed*.
+ <span style="color:#800000">FT27</span> *Gataker, Henry, Blayney*, and *Henderson*, consider “the right hand” as that of Israel — that God drew back or restrained the right hand of Israel, so that he had no power to face his enemies. But *Scott* agrees with *Calvin*; and favorable to the same view are the early versions, except the *Syr*., for they render the pronoun, “his own — suam:” the *Targ*. also takes the same view. Had the word been “hand,” it might have been applied to Israel; but it is “the right hand,” which commonly means protection, or rather God’s power, as put forth to defend his people and to resist enemies. This is farther confirmed by what is said in the following verse, that God “stood with his right hand as an adversary.” See Psalm 74:11 — *Ed*.
+ <span style="color:#800000">FT28</span> The last clause may be literally rendered thus, —
+<span style="color:#000080">And he burned in Jacob as fire,</span> <span style="color:#000080">the flame devoured around. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT29</span> The word <span style="color:#008080">wkç</span> is rendered by the versions in the sense of <span style="color:#008080">wks</span>, “his tabernacle;” but by so doing they make it the same in effect with <span style="color:#008080">wd[wm</span>, “his place of meeting,” in the following clause. The verb <span style="color:#008080">smj</span> never means what *Calvin* says, to migrate or to remove, but to cast off, or to throw down, that is, with force or violence. Then <span style="color:#008080">rç</span>, a fence or enclosure, is what suits the verb, —
 
 <!-- PAGE 234 -->
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">6. And he has thrown down as that of a garden his enclosure,</span> <span style="color:#000080">He has destroyed his assembling-place; Forgotten hath Jehovah in</span> <span style="color:#000080">Sion the assembly and the Sabbath; And has cast off, in the</span> <span style="color:#000080">foaming of his wrath, the king and the priest.</span></p>
-
+<span style="color:#000080">**6.**</span> <span style="color:#000080">And he has thrown down as that of a garden his enclosure,</span> <span style="color:#000080">He has destroyed his assembling-place; Forgotten hath Jehovah in</span> <span style="color:#000080">Sion the assembly and the Sabbath; And has cast off, in the</span> <span style="color:#000080">foaming of his wrath, the king and the priest.</span>
 The “enclosure,” or fence, refers to the courts which surrounded the Temple; hence the place where the people assembled was destroyed. God had regarded it no more than the fence of a common garden. There is “fence” understood after <span style="color:#008080">k</span>, no uncommon thing in Hebrew. — *Ed.*
-
-[^f30]: Our version, “cast off,” gives the real meaning of the verb. — *Ed*.
-
-[^f31]: The verb is often used in this secondary sense, to purpose or resolve or determine, as the result of thinking. The *Vulg*. and the *Targ*. very improperly retain its primary meaning, but the *Syr*. gives that of resolving or determining. — *Ed*.
-
-[^f32]: It was the line of destruction as mentioned in Isaiah 34:11, designed to point out what was to be destroyed. — *Ed*.
-
-[^f33]: The verbs <span style="color:#008080">lba</span>, to mourn, and <span style="color:#008080">lsa</span>, to be faint, to fail, when applied to inanimate things, mean to be desolate and to decay. This clause then ought to be thus rendered, — <span style="color:#000080">So that he has made desolate the rampart and the wall,</span> <span style="color:#000080">They are become wholly decayed together.</span> The connection shows that the where must be rendered, “so that;” and as the last verb has the last letter doubled, the word “wholly” ought to be introduced. — *Ed*.
-
-[^f34]: “No law.” *Gataker* understood this to refer to the fact, that the law written on the tables of stone, deposited in the temple, was lost, having been destroyed by the Chaldeans. Others say, “no law” was observed respecting God’s worship, the temple having been destroyed. The law, moral, ceremonial and judicial, was given to Israel, and formed the condition on which they were to inherit the land. When banished, because they kept not the law, they had in exile as it were no law; the covenant respecting the land, dependent on the law, was during the exile made void or suspended. — *Ed*.
-
-[^f35]: The verse may be thus rendered, —
+ <span style="color:#800000">FT30</span> Our version, “cast off,” gives the real meaning of the verb. — *Ed*.
+ <span style="color:#800000">FT31</span> The verb is often used in this secondary sense, to purpose or resolve or determine, as the result of thinking. The *Vulg*. and the *Targ*. very improperly retain its primary meaning, but the *Syr*. gives that of resolving or determining. — *Ed*.
+ <span style="color:#800000">FT32</span> It was the line of destruction as mentioned in Isaiah 34:11, designed to point out what was to be destroyed. — *Ed*.
+ <span style="color:#800000">FT33</span> The verbs <span style="color:#008080">lba</span>, to mourn, and <span style="color:#008080">lsa</span>, to be faint, to fail, when applied to inanimate things, mean to be desolate and to decay. This clause then ought to be thus rendered, —
+<span style="color:#000080">So that he has made desolate the rampart and the wall,</span> <span style="color:#000080">They are become wholly decayed together.</span>
+The connection shows that the where must be rendered, “so that;” and as the last verb has the last letter doubled, the word “wholly” ought to be introduced. — *Ed*.
+ <span style="color:#800000">FT34</span> “No law.” *Gataker* understood this to refer to the fact, that the law written on the tables of stone, deposited in the temple, was lost, having been destroyed by the Chaldeans. Others say, “no law” was observed respecting God’s worship, the temple having been destroyed. The law, moral, ceremonial and judicial, was given to Israel, and formed the condition on which they were to inherit the land. When banished, because they kept not the law, they had in exile as it were no law; the covenant respecting the land, dependent on the law, was during the exile made void or suspended. — *Ed*.
+ <span style="color:#800000">FT35</span> The verse may be thus rendered, —
 
 <!-- PAGE 235 -->
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">10. They sit on the ground, they are silent, the elders of the</span> <span style="color:#000080">daughter of Sion; They have cast dust on their head, they have</span> <span style="color:#000080">girded on sackcloth; They have bent to the ground their head, the</span> <span style="color:#000080">daughters of Jerusalem. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f36]: The verbs here are all in the past tense, and the versions so render them. Our version is wrong, as well as that of *Blayney* and *Henderson,* in rendering them in the present tense; for the Prophet is describing how he felt when he witnessed the destruction of Jerusalem, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">11. Consume with tears did my eyes, agitated were my bowels,</span> <span style="color:#000080">Poured out on the ground was my liver, for the breach of the</span> <span style="color:#000080">daughter of my people, When faint did the child and the suckling in</span> <span style="color:#000080">the streets of the city. —</span> <span style="color:#000080">*Ed.*</span></p>
-
-[^f37]: That young children and infants are spoken of, is evident from the end of the verse; the one died in the streets, and the other in the mother’s bosom. The question, “Where is corn,” &c., is to be understood of the children, young boys and girls. — *Ed*.
-
-[^f38]: To correspond with the former verse, the versions render this, “They said to their mothers.” The verb is, indeed, in the future tense, and it might be rendered, “To their mothers would they say;” for the Hebrew future may be thus rendered, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">12. To their mothers would they say,” Where is corn and wine?”</span> <span style="color:#000080">When they fainted as one wounded in the streets of the city,</span> <span style="color:#000080">When they poured out their life into the bosom of their mothers.</span> <span style="color:#000080">—</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f39]: The simpler rendering would be, “What shall I testify (or declare) to thee?” So the *Sept*: or, “What shall I call thee to witness?” — *Ed*.
-
-[^f40]: So it means when applied to eatables, but folly or absurdity when applied to words. It comes from <span style="color:#008080">lpn</span>, to fall, in the sense of decaying or degenerating. It is what is neither wise nor true. Hence it is rendered “foolishness” by the *Sept*.; “foolish” by the *Vulg*.; and “without substance” by the *Targ*. — <span style="color:#000080">Thy prophets, they have seen vanity and folly.</span> What they had seen were both “vain,” useless, and “foolish,” absurd. — *Ed*.
+<span style="color:#000080">**10.**</span> <span style="color:#000080">They sit on the ground, they are silent, the elders of the</span> <span style="color:#000080">daughter of Sion; They have cast dust on their head, they have</span> <span style="color:#000080">girded on sackcloth; They have bent to the ground their head, the</span> <span style="color:#000080">daughters of Jerusalem. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT36</span> The verbs here are all in the past tense, and the versions so render them. Our version is wrong, as well as that of *Blayney* and *Henderson,* in rendering them in the present tense; for the Prophet is describing how he felt when he witnessed the destruction of Jerusalem, —
+<span style="color:#000080">**11.**</span> <span style="color:#000080">Consume with tears did my eyes, agitated were my bowels,</span> <span style="color:#000080">Poured out on the ground was my liver, for the breach of the</span> <span style="color:#000080">daughter of my people, When faint did the child and the suckling in</span> <span style="color:#000080">the streets of the city. —</span> <span style="color:#000080">*Ed.*</span>
+ <span style="color:#800000">FT37</span> That young children and infants are spoken of, is evident from the end of the verse; the one died in the streets, and the other in the mother’s bosom. The question, “Where is corn,” &c., is to be understood of the children, young boys and girls. — *Ed*.
+ <span style="color:#800000">FT38</span> To correspond with the former verse, the versions render this, “They said to their mothers.” The verb is, indeed, in the future tense, and it might be rendered, “To their mothers would they say;” for the Hebrew future may be thus rendered, —
+<span style="color:#000080">**12.**</span> <span style="color:#000080">To their mothers would they say,” Where is corn and wine?”</span> <span style="color:#000080">When they fainted as one wounded in the streets of the city,</span> <span style="color:#000080">When they poured out their life into the bosom of their mothers.</span> <span style="color:#000080">—</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT39</span> The simpler rendering would be, “What shall I testify (or declare) to thee?” So the *Sept*: or, “What shall I call thee to witness?” — *Ed*.
+ <span style="color:#800000">FT40</span> So it means when applied to eatables, but folly or absurdity when applied to words. It comes from <span style="color:#008080">lpn</span>, to fall, in the sense of decaying or degenerating. It is what is neither wise nor true. Hence it is rendered “foolishness” by the *Sept*.; “foolish” by the *Vulg*.; and “without substance” by the *Targ*. —
+<span style="color:#000080">Thy prophets, they have seen vanity and folly.</span>
 
 <!-- PAGE 236 -->
 
-[^f41]: The verb rendered “turn back,” means also to turn away or aside, and this is the meaning given it here by the *Syr.*, and most suitable to the passage, — <span style="color:#000080">And they discovered not thine iniquity,</span> <span style="color:#000080">to turn aside thy captivity.</span> That is, as the *Syr.* Expresses it, to avert it. — *Ed.*
-
-[^f42]: There seems to be a mistake in this word of a <span style="color:#008080">d</span> for an <span style="color:#008080">r</span>, two letters very similar; for the., *Targ.,* the , *Syr.*, and the *Arab*., must have so read the word, as they render it in the sense of what is deceptive, fallacious, or imaginary. It is in the last rendered “phantasms.” The word occurs in Jeremiah 22:14, and is applied to chambers through which air or wind passed freely. It may be rendered here winds or airy things. Such was the character of their prophecies. This is far more suitable to the passage than expulsions or rejections, as given by the *Sept*. and *Vulg*. — *Ed*.
-
-[^f43]: Jeremiah relates what had taken place, the verbs being in the past tense. Our version is not correct in rendering the verbs in the present tense. The old versions follow the Hebrew. — *Ed*.
-
-[^f44]: The words may be rendered, “the joy of the whole land,” *i.e.*, the land of Israel; which was strictly true. — *Ed*.
-
-[^f45]: This verse begins with <span style="color:#008080">p</span>, and the next with <span style="color:#008080">[</span>; thus the alphabetical order is deranged. The same thing occurs in the two next chapters, though in the first chapter the usual order of the letters is preserved. Many conjectures have been made on the subject, but no satisfactory reason has been assigned. The *Targ*. and the early versions, except the *Syr*., follow in the three places the present text; only the *Sept*., very strangely, prefix the letters in their alphabetical order, and yet give the verses as they now are. When, added to this, we find the meaning favors the present arrangement, we cannot but conclude that it was the original one, though the reason why Jeremiah changed, as to these two letters, even in three instances, the alphabetical order, cannot now be discovered. — *Ed*.
-
-[^f46]: Literally it is, — <span style="color:#000080">And he hath made to rejoice over thee the enemy,</span> <span style="color:#000080">He hath exalted the horn of thine oppressors. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+What they had seen were both “vain,” useless, and “foolish,” absurd. — *Ed*.
+ <span style="color:#800000">FT41</span> The verb rendered “turn back,” means also to turn away or aside, and this is the meaning given it here by the *Syr.*, and most suitable to the passage, —
+<span style="color:#000080">And they discovered not thine iniquity,</span> <span style="color:#000080">to turn aside thy captivity.</span>
+That is, as the *Syr.* Expresses it, to avert it. — *Ed.*
+ <span style="color:#800000">FT42</span> There seems to be a mistake in this word of a <span style="color:#008080">d</span> for an <span style="color:#008080">r</span>, two letters very similar; for the., *Targ.,* the , *Syr.*, and the *Arab*., must have so read the word, as they render it in the sense of what is deceptive, fallacious, or imaginary. It is in the last rendered “phantasms.” The word occurs in Jeremiah 22:14, and is applied to chambers through which air or wind passed freely. It may be rendered here winds or airy things. Such was the character of their prophecies. This is far more suitable to the passage than expulsions or rejections, as given by the *Sept*. and *Vulg*. — *Ed*.
+ <span style="color:#800000">FT43</span> Jeremiah relates what had taken place, the verbs being in the past tense. Our version is not correct in rendering the verbs in the present tense. The old versions follow the Hebrew. — *Ed*.
+ <span style="color:#800000">FT44</span> The words may be rendered, “the joy of the whole land,” *i.e.*, the land of Israel; which was strictly true. — *Ed*.
+ <span style="color:#800000">FT45</span> This verse begins with <span style="color:#008080">p</span>, and the next with <span style="color:#008080">[</span>; thus the alphabetical order is deranged. The same thing occurs in the two next chapters, though in the first chapter the usual order of the letters is preserved. Many conjectures have been made on the subject, but no satisfactory reason has been assigned. The *Targ*. and the early versions, except the *Syr*., follow in the three places the present text; only the *Sept*., very strangely, prefix the letters in their alphabetical order, and yet give the verses as they now are. When, added to this, we find the meaning favors the present arrangement, we cannot but conclude that it was the original one, though the reason why Jeremiah changed, as to these two letters, even in three instances, the alphabetical order, cannot now be discovered. — *Ed*.
+ <span style="color:#800000">FT46</span> Literally it is, —
 
 <!-- PAGE 237 -->
 
-[^f47]: The meaning suggested by the *Vulgate* is the most appropriate. The words may be rendered thus, — <span style="color:#000080">Cried has their heart to the Lord,</span> <span style="color:#000080">“O the wall of the daughter of Sion !” —</span> <span style="color:#000080">Bring down like a torrent the tear, day and night;</span> <span style="color:#000080">Give no rest to thyself.</span> <span style="color:#000080">Let not cease the daughter of thine eye.</span> Their exclamation was, “O the wall,” etc. Then follow the words of Jeremiah to the end of the chapter; but the daughter of Sion, not the wall, is exhorted to weep and repent. “The daughter of the eye,” may be the tear, as suggested by *Blayney* and approved by *Horsley*; and it would be more suitable here. — *Ed*.
-
-[^f48]: The simpler meaning, as stated by *Gataker*, is, “Rise” from thy bed; for she is exhorted to cry in the night. — *Ed*.
-
-[^f49]: Rather, “who fainted through famine;” for he refers to what had taken place. — *Ed*.
-
-[^f50]: *Educationum*. Our version is nearly the *Vulg.* It is paraphrased by the *Sept*., “who suck the breasts;” and the *Targ*. is, “who are clad in silks.” *Blayney* rightly says, that <span style="color:#008080">jpf</span> is the open palm of the hand; and he gives this as the literal rendering of the words, “children of palms;” that is, children of sufficient age to be carried about. His version of this line is, “Little ones dandled on the hands.” *Horsley* approves of this meaning. The previous word, <span style="color:#008080">µydp</span>, has been a difficulty. to most, the final *mem* being masculine. “Fruit,” in the sense of offspring, is applied to men as well as to women. We may take the final *mem* in <span style="color:#008080">µyçn</span>, as a pronoun, “their wives;” the same are meant as in Lamentations 2:18, “their voice,” *i.e.*, the citizens of Jerusalem. Thus the construction will be quite grammatical. <span style="color:#000080">Should their own wives eat their offspring,</span> <span style="color:#000080">Infants dandled on the hands!</span> <span style="color:#000080">Should they be killed in the sanctuary of the Lord,</span> <span style="color:#000080">The priest and the prophet!</span> It is the language of humble expostulation. — *Ed*.
+<span style="color:#000080">And he hath made to rejoice over thee the enemy,</span> <span style="color:#000080">He hath exalted the horn of thine oppressors. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT47</span> The meaning suggested by the *Vulgate* is the most appropriate. The words may be rendered thus, —
+<span style="color:#000080">Cried has their heart to the Lord,</span> <span style="color:#000080">“O the wall of the daughter of Sion !” —</span> <span style="color:#000080">Bring down like a torrent the tear, day and night;</span> <span style="color:#000080">Give no rest to thyself.</span> <span style="color:#000080">Let not cease the daughter of thine eye.</span>
+Their exclamation was, “O the wall,” etc. Then follow the words of Jeremiah to the end of the chapter; but the daughter of Sion, not the wall, is exhorted to weep and repent. “The daughter of the eye,” may be the tear, as suggested by *Blayney* and approved by *Horsley*; and it would be more suitable here. — *Ed*.
+ <span style="color:#800000">FT48</span> The simpler meaning, as stated by *Gataker*, is, “Rise” from thy bed; for she is exhorted to cry in the night. — *Ed*.
+ <span style="color:#800000">FT49</span> Rather, “who fainted through famine;” for he refers to what had taken place. — *Ed*.
+ <span style="color:#800000">FT50</span> *Educationum*. Our version is nearly the *Vulg.* It is paraphrased by the *Sept*., “who suck the breasts;” and the *Targ*. is, “who are clad in silks.” *Blayney* rightly says, that <span style="color:#008080">jpf</span> is the open palm of the hand; and he gives this as the literal rendering of the words, “children of palms;” that is, children of sufficient age to be carried about. His version of this line is, “Little ones dandled on the hands.” *Horsley* approves of this meaning.
+The previous word, <span style="color:#008080">µydp</span>, has been a difficulty. to most, the final *mem* being masculine. “Fruit,” in the sense of offspring, is applied to men as well as to women. We may take the final *mem* in <span style="color:#008080">µyçn</span>, as a pronoun, “their wives;” the same are meant as in Lamentations 2:18, “their voice,” *i.e.*, the citizens of Jerusalem. Thus the construction will be quite grammatical.
+<span style="color:#000080">Should their own wives eat their offspring,</span> <span style="color:#000080">Infants dandled on the hands!</span> <span style="color:#000080">Should they be killed in the sanctuary of the Lord,</span> <span style="color:#000080">The priest and the prophet!</span>
 
 <!-- PAGE 238 -->
 
-<h2 class="scripture-anchor" id="chapter-3" data-ref="CHAPTER 3" style="display:none">CHAPTER 3</h2>
-
-[^f51]: The verb for calling or summoning is in the future tense, and must, be so, to preserve the alphabetical character of the elegy, but it is rendered as in the past tense by all the versions, but the reason why does not appear. The future in Hebrew is often to be rendered as a subjunctive, potential, or optative: so here, — <span style="color:#000080">Shouldest thou summon, as on a festival day,</span> <span style="color:#000080">My terrors all around! —</span> <span style="color:#000080">And there was not, in the day of Jehovah’s wrath,</span> <span style="color:#000080">A fugitive or a survivor;</span> <span style="color:#000080">Whom I dandled and brought up,</span> <span style="color:#000080">My enemy has consumed them.</span> The first two lines are a kind of expostulation: “My terrors” mean my terrifiers, according to the *Vulg.*, the abstract for the concrete. — *Ed*.
-
-[^f52]: The verses in this chapter are needlessly multiplied. It would have been better had each verse contained a letter, for the length of this chapter is the same with the two foregoing; the only difference is, that the lines, or alternate lines, begin with the same letter three times, as follows, — <span style="color:#008080">a</span> <span style="color:#000080">I am the man who hath seen affliction,</span> <span style="color:#000080">Through the rod of his indignation;</span> <span style="color:#008080">a</span> <span style="color:#000080">Me hath he led and caused to walk</span> <span style="color:#000080">In darkness, and not in light;</span> <span style="color:#008080">a</span> <span style="color:#000080">Surely against me he turns,</span> <span style="color:#000080">Upset me does his hand all the day.</span> The three next lines, or alternate lines, begin with <span style="color:#008080">b</span>, and so on to the end of the alphabet — *Ed*.
-
-[^f53]: The *Sept*., the *Targ*., and the *Arab*. render this “my head;” but the *Vulg*. and the *Syr*., “gall.” It occurs again in Lamentations 2:19, and is rendered “gall” by the *Targ*. and all the versions. He was “surrounded with gall,” with what was bitter to him, and “with faintness,” with what made him to faint. Hence, in the next verse, he represents himself as being like the dead. — *Ed.*
-
+It is the language of humble expostulation. — *Ed*.
+<span style="color:#006411">CHAPTER 3</span>
+ <span style="color:#800000">FT51</span> The verb for calling or summoning is in the future tense, and must, be so, to preserve the alphabetical character of the elegy, but it is rendered as in the past tense by all the versions, but the reason why does not appear. The future in Hebrew is often to be rendered as a subjunctive, potential, or optative: so here, —
+<span style="color:#000080">Shouldest thou summon, as on a festival day,</span> <span style="color:#000080">My terrors all around! —</span> <span style="color:#000080">And there was not, in the day of Jehovah’s wrath,</span> <span style="color:#000080">A fugitive or a survivor;</span> <span style="color:#000080">Whom I dandled and brought up,</span> <span style="color:#000080">My enemy has consumed them.</span>
+The first two lines are a kind of expostulation: “My terrors” mean my terrifiers, according to the *Vulg.*, the abstract for the concrete. — *Ed*.
+ <span style="color:#800000">FT52</span> The verses in this chapter are needlessly multiplied. It would have been better had each verse contained a letter, for the length of this chapter is the same with the two foregoing; the only difference is, that the lines, or alternate lines, begin with the same letter three times, as follows, — <span style="color:#008080">a</span> <span style="color:#000080">I am the man who hath seen affliction,</span> <span style="color:#000080">Through the rod of his indignation;</span> <span style="color:#008080">a</span> <span style="color:#000080">Me hath he led and caused to walk</span> <span style="color:#000080">In darkness, and not in light;</span> <span style="color:#008080">a</span> <span style="color:#000080">Surely against me he turns,</span> <span style="color:#000080">Upset me does his hand all the day.</span>
+The three next lines, or alternate lines, begin with <span style="color:#008080">b</span>, and so on to the end of the alphabet — *Ed*.
 <!-- PAGE 239 -->
-
-[^f54]: “Subverted” is the *Vulg*., “obstructed” the *Sept*., and “rendered oblique” the *Syr*. The meaning is, “turned aside.” he had built as it were a wall of hewn stones across his way, and thus he turned aside his goings or his paths, so that he was constrained to take some other course. — *Ed.*
-
-[^f55]: The word, having the last letter doubled, means to turn aside again and again, “He has often turned aside my ways.” — *Ed.*
-
-[^f56]: The word means grit or gravel, rendered “pebble” by the Sept., and “stones” by the Syr. and the Targ. It is rendered “gravel” in Proverbs 20:17. The verb only occurs here and in Psalm 119.; and to wear out, is its most suitable meaning, — <span style="color:#000080">And he hath worn out with grit my teeth. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f57]: The verb rendered “covered,” is found only here, and is translated “fed” by the *Sept*. and *Vulg*.; “tumbled” or laid low, by the Targ.; and “besprinkled,” by the *Syr*. As he had said, that his food had been as it were grit, he could not have said that he was fed with ashes. Therefore the *arg*. or the *Syr*. is the most suitable, that God had laid him low in ashes, *Tr* that he had besprinkled or covered him with ashes. — *Ed*
-
-[^f58]: The word “strength” is rendered “victory” by the Sept., “end” by the *Vulg*, “splendor by the Syr., and valor by the Targ. means superiority, excellency, rather than strength, — <span style="color:#000080">And I said, Perished hath my excellency,</span> <span style="color:#000080">And my expectation from Jehovah.</span> Whatever he had that was excellent had perished; and perished also had every good he expected from Jehovah. The meaning is not, that these things perished from Jehovah, but that his excellency and his expectation from Jehovah had perished. — *Ed*.
-
-[^f59]: The verb “remember” is rendered as an imperative by the *Targ*., the *Vulg.,* and the *Syr.;* and it is so rendered by *Henderson*. — *Ed*.
-
-[^f60]: The pronoun “this” is by most referred to what the next verse contains; but as a clause intervenes, this can hardly be the meaning. The Lamentations 3:19, 20, and 21, I render thus,
+ <span style="color:#800000">FT53</span> The *Sept*., the *Targ*., and the *Arab*. render this “my head;” but the *Vulg*. and the *Syr*., “gall.” It occurs again in Lamentations 2:19, and is rendered “gall” by the *Targ*. and all the versions. He was “surrounded with gall,” with what was bitter to him, and “with faintness,” with what made him to faint. Hence, in the next verse, he represents himself as being like the dead. — *Ed.*
+ <span style="color:#800000">FT54</span> “Subverted” is the *Vulg*., “obstructed” the *Sept*., and “rendered oblique” the *Syr*. The meaning is, “turned aside.” he had built as it were a wall of hewn stones across his way, and thus he turned aside his goings or his paths, so that he was constrained to take some other course. — *Ed.*
+ <span style="color:#800000">FT55</span> The word, having the last letter doubled, means to turn aside again and again, “He has often turned aside my ways.” — *Ed.*
+ <span style="color:#800000">FT56</span> The word means grit or gravel, rendered “pebble” by the Sept., and “stones” by the Syr. and the Targ. It is rendered “gravel” in Proverbs 20:17. The verb only occurs here and in Psalm 119.;
+and to wear out, is its most suitable meaning, —
+<span style="color:#000080">And he hath worn out with grit my teeth. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT57</span> The verb rendered “covered,” is found only here, and is translated “fed” by the *Sept*. and *Vulg*.; “tumbled” or laid low, by the Targ.; and “besprinkled,” by the *Syr*. As he had said, that his food had been as it were grit, he could not have said that he was fed with ashes. Therefore the *arg*. or the *Syr*. is the most suitable, that God had laid him low in ashes, *Tr* that he had besprinkled or covered him with ashes. — *Ed*
+ <span style="color:#800000">FT58</span> The word “strength” is rendered “victory” by the Sept., “end” by the *Vulg*, “splendor by the Syr., and valor by the Targ. means superiority, excellency, rather than strength, —
+<span style="color:#000080">And I said, Perished hath my excellency,</span> <span style="color:#000080">And my expectation from Jehovah.</span>
+Whatever he had that was excellent had perished; and perished also had every good he expected from Jehovah. The meaning is not, that these things perished from Jehovah, but that his excellency and his expectation from Jehovah had perished. — *Ed*.
+ <span style="color:#800000">FT59</span> The verb “remember” is rendered as an imperative by the *Targ*., the *Vulg.,* and the *Syr.;* and it is so rendered by *Henderson*. — *Ed*.
+ <span style="color:#800000">FT60</span> The pronoun “this” is by most referred to what the next verse contains; but as a clause intervenes, this can hardly be the meaning. The Lamentations 3:19, 20, and 21, I render thus,
 
 <!-- PAGE 240 -->
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">19. Remember my affliction and my abasement,</span> <span style="color:#000080">The wormwood and the gall.</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">20. Remembering thou wilt remember them,</span> <span style="color:#000080">For bowed down within me is my soul:</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">21. This I recall to my mind;</span> <span style="color:#000080">Therefore will I hope.</span></p>
-
+<span style="color:#000080">**19.**</span> <span style="color:#000080">Remember my affliction and my abasement,</span> <span style="color:#000080">The wormwood and the gall.</span>
+<span style="color:#000080">**20.**</span> <span style="color:#000080">Remembering thou wilt remember them,</span> <span style="color:#000080">For bowed down within me is my soul:</span>
+<span style="color:#000080">**21.**</span> <span style="color:#000080">This I recall to my mind;</span> <span style="color:#000080">Therefore will I hope.</span>
 He prays, then he expresses his confidence that God would hear his prayer; and “this” refers to the assurance he felt that God would remember his afflicted state, and on this ground he entertained hope. In the next verse he states what confirmed this hope: — *Ed*.
-
-[^f61]: So the Targ. and all the versions, except the Vulg; they read <span style="color:#008080">wmt</span>. “The mercies of Jehovah” is the nominative case absolute, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">22. The mercies of Jehovah, verily they have no end,</span> <span style="color:#000080">For his compassion’s never fail.</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">23. Renewed (are they) in the morning;</span> <span style="color:#000080">Great is thy faithfulness.</span></p>
-
+ <span style="color:#800000">FT61</span> So the Targ. and all the versions, except the Vulg; they read <span style="color:#008080">wmt</span>. “The mercies of Jehovah” is the nominative case absolute, —
+<span style="color:#000080">**22.**</span> <span style="color:#000080">The mercies of Jehovah, verily they have no end,</span> <span style="color:#000080">For his compassion’s never fail.</span>
+<span style="color:#000080">**23.**</span> <span style="color:#000080">Renewed (are they) in the morning;</span> <span style="color:#000080">Great is thy faithfulness.</span>
 “Renewed” refers to “mercies,” i.e., blessings, the fruit of mercy; and God’s mercies have no end, because his compassion’s ever continue. “In the morning,” that is, after a night of affliction. If the rendering be made literal, “in the mornings,” the meaning is the same; they follow the previous nights of trouble. Blessings, being as it were suspended or withheld during the night, are again renewed in the morning. — *Ed*.
-
-[^f62]: There is more authority for the word for “wait” being in the singular than in the plural, as it is given in the *Syr. — Ed*.
-
-[^f63]: It may be thus rendered, — <span style="color:#000080">Good</span> <span style="color:#000080">*it is*</span> <span style="color:#000080">when he hopes and waits quietly</span> <span style="color:#000080">For the salvation of Jehovah.</span> The <span style="color:#008080">w</span> may often be rendered when. This verse, the preceding, and following, begin with “good,” which renders the passage very striking, —
+ <span style="color:#800000">FT62</span> There is more authority for the word for “wait” being in the singular than in the plural, as it is given in the *Syr. — Ed*.
+ <span style="color:#800000">FT63</span> It may be thus rendered, —
+<span style="color:#000080">Good</span> <span style="color:#000080">*it is*</span> <span style="color:#000080">when he hopes and waits quietly</span> <span style="color:#000080">For the salvation of Jehovah.</span>
+The <span style="color:#008080">w</span> may often be rendered when. This verse, the preceding, and following, begin with “good,” which renders the passage very striking, —
 
 <!-- PAGE 241 -->
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">25. Good is Jehovah to him who waits for him,</span> <span style="color:#000080">To the soul who seeks him:</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">26. Good it is when he hopes and waits quietly</span> <span style="color:#000080">For the salvation of Jehovah:</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">27. Good it is for man</span> <span style="color:#000080">That he bears the yoke in his youth. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f64]: It is so found in the *Syr*.; but it comes to the same thing, if the verb be taken passively. in *Niphal*, — “Because it (the yoke mentioned before) has been laid on him.” *Blayney’s* version is, “When it is laid on him.” — *Ed*.
-
-[^f65]: To lay the mouth in the dust, is a token of entire submission. Agreeably with this, the following words may be considered as spoken by the individual, — <span style="color:#000080">He will lay in the dust his mouth (and say) —</span> <span style="color:#000080">“It may be there is hope.”</span> It is better to render the verbs here as they are, in the future tense, as all the versions do; for he describes what is usually the character of the godly under severe trials. — *Ed.*
-
-[^f66]: That is, he will suffer himself to be filled with reproaches; he will submit to all reproaches. — *Ed*.
-
-[^f67]: This verse is connected with Lamentations 3:25: “Good is Jehovah to him who waits for him;” and the reason is given here, “For not reject perpetually (or, for ever)will the Lord.” “For,” as assigning a reason, is here repeated three times, in this verse and in the two following verses; and they seem all to be reasons given for the truth contained in Lamentations 3:25,
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">31. For not reject perpetually</span> <span style="color:#000080">Will the Lord:</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">32. For though he afflicts, yet he will shew compassion</span> <span style="color:#000080">According to the multitude of his mercies:</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">33. For he does not depress from his heart,</span> <span style="color:#000080">Nor afflict the children of men.</span></p>
+<span style="color:#000080">**25.**</span> <span style="color:#000080">Good is Jehovah to him who waits for him,</span> <span style="color:#000080">To the soul who seeks him:</span>
+<span style="color:#000080">**26.**</span> <span style="color:#000080">Good it is when he hopes and waits quietly</span> <span style="color:#000080">For the salvation of Jehovah:</span>
+<span style="color:#000080">**27.**</span> <span style="color:#000080">Good it is for man</span> <span style="color:#000080">That he bears the yoke in his youth. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT64</span> It is so found in the *Syr*.; but it comes to the same thing, if the verb be taken passively. in *Niphal*, — “Because it (the yoke mentioned before) has been laid on him.” *Blayney’s* version is, “When it is laid on him.” — *Ed*.
+ <span style="color:#800000">FT65</span> To lay the mouth in the dust, is a token of entire submission. Agreeably with this, the following words may be considered as spoken by the individual, —
+<span style="color:#000080">He will lay in the dust his mouth (and say) —</span> <span style="color:#000080">“It may be there is hope.”</span>
+It is better to render the verbs here as they are, in the future tense, as all the versions do; for he describes what is usually the character of the godly under severe trials. — *Ed.*
+ <span style="color:#800000">FT66</span> That is, he will suffer himself to be filled with reproaches; he will submit to all reproaches. — *Ed*.
+ <span style="color:#800000">FT67</span> This verse is connected with Lamentations 3:25: “Good is Jehovah to him who waits for him;” and the reason is given here, “For not reject perpetually (or, for ever)will the Lord.” “For,” as assigning a reason, is here repeated three times, in this verse and in the two following verses; and they seem all to be reasons given for the truth contained in Lamentations 3:25,
+<span style="color:#000080">**31.**</span> <span style="color:#000080">For not reject perpetually</span> <span style="color:#000080">Will the Lord:</span>
+<span style="color:#000080">**32.**</span> <span style="color:#000080">For though he afflicts, yet he will shew compassion</span> <span style="color:#000080">According to the multitude of his mercies:</span>
+<span style="color:#000080">**33.**</span> <span style="color:#000080">For he does not depress from his heart,</span> <span style="color:#000080">Nor afflict the children of men.</span>
 
 <!-- PAGE 242 -->
 
 All these particulars explain and elucidate the truth, that God is good. “From his heart,” does not mean “willingly,” but at his will, that is, arbitrarily, without reason, but when constrained by man’s wickedness. — *Ed*.
-
-[^f68]: The order is here reverted. It is a common thing in Scripture to state first the chief thing, the chief good or evil. Here the greatest evil is mentioned first, the tearing under foot of such as were already bound, or imprisoned; then the sparing of the guilty; and thirdly, the withholding of justice to the righteous. To turn aside or divert judgment, is not to punish the guilty; and to wrong a person in his cause, is to deny his right. By “the bound,” or “prisoners of the earth,” or land, *Blayney* understands persons imprisoned for debt, who were obliged to work as slaves until they satisfied their creditors. See Matthew 18:30-34. Cruelty to such is referred to in Isaiah 58:3. — *Ed*.
-
-[^f69]: The *Targ*. and the versions differ as to the import of this clause. The verb *to see*, has been taken to mean three things, — to know, to approve, and to regard or to notice. The *Vulgate* takes the first, our version the second, and *Calvin* the third. The context seems to favor the last meaning especially the following verses. There is a difficulty as to the antecedent to the pronoun “his, before “feet.” It seems to refer to “man” in the last verse; for the words are, “the sons (or children) of man,” not of “men.” The verb <span style="color:#008080">har</span>, when followed by <span style="color:#008080">l</span>, means to look on, at, or simply to see. Psalm 64:5. Then the literal rendering of the passage would be as follows, — <span style="color:#000080">On the tearing under his feet</span> <span style="color:#000080">Of all the bound of the land,</span> <span style="color:#000080">On the diverting of a man’s judgment,</span> <span style="color:#000080">In the presence of the most High,</span> <span style="color:#000080">On the wronging of a person in his cause</span> <span style="color:#000080">The Lord doth not look.</span> Or if the “on” be dropped, the last line may be, The Lord doth not see. This is manifestly the saying of unbelieving men, or of those weak in faith, as proved by the next verse, when rightly rendered. — *Ed.*
+ <span style="color:#800000">FT68</span> The order is here reverted. It is a common thing in Scripture to state first the chief thing, the chief good or evil. Here the greatest evil is mentioned first, the tearing under foot of such as were already bound, or imprisoned; then the sparing of the guilty; and thirdly, the withholding of justice to the righteous. To turn aside or divert judgment, is not to punish the guilty; and to wrong a person in his cause, is to deny his right. By “the bound,” or “prisoners of the earth,” or land, *Blayney* understands persons imprisoned for debt, who were obliged to work as slaves until they satisfied their creditors. See Matthew 18:30-34. Cruelty to such is referred to in Isaiah 58:3. — *Ed*.
+ <span style="color:#800000">FT69</span> The *Targ*. and the versions differ as to the import of this clause. The verb *to see*, has been taken to mean three things, — to know, to approve, and to regard or to notice. The *Vulgate* takes the first, our version the second, and *Calvin* the third. The context seems to favor the last meaning especially the following verses.
+There is a difficulty as to the antecedent to the pronoun “his, before “feet.” It seems to refer to “man” in the last verse; for the words are, “the sons (or children) of man,” not of “men.” The verb <span style="color:#008080">har</span>, when followed by <span style="color:#008080">l</span>, means to look on, at, or simply to see. Psalm 64:5. Then the literal rendering of the passage would be as follows, —
+<span style="color:#000080">On the tearing under his feet</span> <span style="color:#000080">Of all the bound of the land,</span> <span style="color:#000080">On the diverting of a man’s judgment,</span> <span style="color:#000080">In the presence of the most High,</span> <span style="color:#000080">On the wronging of a person in his cause</span> <span style="color:#000080">The Lord doth not look.</span>
+Or if the “on” be dropped, the last line may be, The Lord doth not see.
+This is manifestly the saying of unbelieving men, or of those weak in faith, as proved by the next verse, when rightly rendered. — *Ed.*
 
 <!-- PAGE 243 -->
 
-[^f70]: ‘The construction of these two verses is variously given. The verb rendered, “It was, or, “It came to pass,” if in the third person, is feminine, while it is usually and probably always masculine, when it has this meaning. It may be taken to be here in the second person. The literal rendering of the verse then would be, — <span style="color:#000080">Who-he-saying (i.e., Who is he who says,) That thou art Lord,</span> <span style="color:#000080">ordering not, (i.e., who dost not order, or command.)</span> Then the following verse contains a continuation of what the objector said, — <span style="color:#000080">From the mouth of the Highest</span> <span style="color:#000080">Cometh not the evil and the good.</span> The answer of the Prophet is in Lamentations 3:39, in which he intimates that God orders evil as a punishment for sin. The objector’s declaration, that God as a Lord or Sovereign does not command or order events, and for this reason, because both evil and good cannot come from him, is a proof that *not to see* in Lamentations 3:36, is not to :regard or notice the affairs of men. — *Ed.*
-
-[^f71]: “Murmur” is the Sept. and the Vulg. The word only occurs here and in Numbers 11:1; and “complain” is the most suitable rendering in both places, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">39. Why complain should man,</span> <span style="color:#000080">Any man alive, for his sin?</span></p>
-
-<p style="text-align:center" markdown="1">That is, on account of suffering for his sin. Thus God is justified in ordaining or commanding evil as well as good, that is, the evil of punishment. — *Ed*.</p>
-
-[^f72]: The words literally rendered are very expressive, — <span style="color:#000080">Let us uncover our ways, and search.</span> The cover was first to be stripped off, and then was a search to be made as to the character of their ways. — *Ed.*
+ <span style="color:#800000">FT70</span> ‘The construction of these two verses is variously given. The verb rendered, “It was, or, “It came to pass,” if in the third person, is feminine, while it is usually and probably always masculine, when it has this meaning. It may be taken to be here in the second person. The literal rendering of the verse then would be, —
+<span style="color:#000080">Who-he-saying (i.e., Who is he who says,) That thou art Lord,</span> <span style="color:#000080">ordering not, (i.e., who dost not order, or command.)</span>
+Then the following verse contains a continuation of what the objector said, —
+<span style="color:#000080">From the mouth of the Highest</span> <span style="color:#000080">Cometh not the evil and the good.</span>
+The answer of the Prophet is in Lamentations 3:39, in which he intimates that God orders evil as a punishment for sin.
+The objector’s declaration, that God as a Lord or Sovereign does not command or order events, and for this reason, because both evil and good cannot come from him, is a proof that *not to see* in Lamentations 3:36, is not to :regard or notice the affairs of men.
+— *Ed.*
+ <span style="color:#800000">FT71</span> “Murmur” is the Sept. and the Vulg. The word only occurs here and in Numbers 11:1; and “complain” is the most suitable rendering in both places, —
+<span style="color:#000080">**39.**</span> <span style="color:#000080">Why complain should man,</span> <span style="color:#000080">Any man alive, for his sin?</span>
+That is, on account of suffering for his sin. Thus God is justified in ordaining or commanding evil as well as good, that is, the evil of punishment. — *Ed*.
+ <span style="color:#800000">FT72</span> The words literally rendered are very expressive, —
+<span style="color:#000080">Let us uncover our ways, and search.</span>
+The cover was first to be stripped off, and then was a search to be made as to the character of their ways. — *Ed.*
 
 <!-- PAGE 244 -->
 
-[^f73]: To give the proper emphasis to the pronoun, the version ought to be as follows, — <span style="color:#000080">We, transgressed have we rebelled. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f74]: To “cover” is the idea given to the verb by the *Sept*., the *Vulg*, the *Syr*., and the *Targ*.; but *Blayney* and some others take it in the sense of fencing in, enclosing, in allusion to the practice of hunters; and the next verb, which means to pursue, to chase, favors this meaning, — <span style="color:#000080">Thou hast in wrath enclosed and chased us,</span> <span style="color:#000080">Thou hast slain and not spared.</span>
-
-<p style="margin-left:2em;" markdown="1">Then the same verb begins the next verse, —</p>
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">Thou hast enclosed thyself in a cloud,</span> <span style="color:#000080">That prayer might not pass through. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f75]: There are circumstances, no doubt, according to God’s word, under which God does not hear prayer: and (his seems to have been an instance of this kind . — *Ed*.
-
-[^f76]: Let the verb have a causative sense, to cause to descend, to bring down, and there will be no difficulty in the clause; so the Sept. and the *Vulg*., — <span style="color:#000080">Streams of water does mine eyes bring down</span> <span style="color:#000080">For the breach of the daughter of my people, —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f77]: The connection of this verse with the preceding will be more evident from the following version, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">49. Mine eye hath poured down, and it will not cease,</span> <span style="color:#000080">With any intermissions,</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">50. Until Jehovah look down</span> <span style="color:#000080">And see from heaven.</span></p>
-
+ <span style="color:#800000">FT73</span> To give the proper emphasis to the pronoun, the version ought to be as follows, —
+<span style="color:#000080">We, transgressed have we rebelled. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT74</span> To “cover” is the idea given to the verb by the *Sept*., the *Vulg*, the *Syr*., and the *Targ*.; but *Blayney* and some others take it in the sense of fencing in, enclosing, in allusion to the practice of hunters; and the next verb, which means to pursue, to chase, favors this meaning, —
+<span style="color:#000080">Thou hast in wrath enclosed and chased us,</span> <span style="color:#000080">Thou hast slain and not spared.</span>
+Then the same verb begins the next verse, —
+<span style="color:#000080">Thou hast enclosed thyself in a cloud,</span> <span style="color:#000080">That prayer might not pass through. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT75</span> There are circumstances, no doubt, according to God’s word, under which God does not hear prayer: and (his seems to have been an instance of this kind . — *Ed*.
+ <span style="color:#800000">FT76</span> Let the verb have a causative sense, to cause to descend, to bring down, and there will be no difficulty in the clause; so the Sept. and the *Vulg*., —
+<span style="color:#000080">Streams of water does mine eyes bring down</span> <span style="color:#000080">For the breach of the daughter of my people, —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT77</span> The connection of this verse with the preceding will be more evident from the following version, —
+<span style="color:#000080">**49.**</span> <span style="color:#000080">Mine eye hath poured down, and it will not cease,</span> <span style="color:#000080">With any intermissions,</span>
+<span style="color:#000080">**50.**</span> <span style="color:#000080">Until Jehovah look down</span> <span style="color:#000080">And see from heaven.</span>
 To “see” here, as in Lamentations 3:36, means to regard, so as to interfere in the affairs of men. “with any,” etc., literally, “With no,” etc. But the English language not admit of the two negatives, though the Welsh will. — *Ed*.
 
 <!-- PAGE 245 -->
 
-[^f78]: The versions and the *Targ*. give the first meaning, “because of the daughters of my city;” and the last words, “of my city,” seem to favor it; for had women as a sex been intended, they would not have been thus designated. — *Ed*.
-
-[^f79]: The words literally are, — <span style="color:#000080">Hunting hunted me like a bird</span> <span style="color:#000080">have mine enemies without a cause. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f80]: Materially correct, no doubt, is this explanation. We may give this version, — <span style="color:#000080">My voice hast thou heard, deafen not thy ear</span> <span style="color:#000080">To my sighing, to my cry.</span> The verb <span style="color:#008080">µl[</span> means to veil, and hence to hide. To veil the eye is, not to look at what is set before it; and to veil the ear is, to render it deaf to what is said. The Prophet says that God had heard his voice, for he had prayed; but he further asks God not to turn a deaf ear to his sighing, or sobbing, as given by the *Vulg*, and to his cry. — *Ed*.
-
-[^f81]: There is no necessity, as some have supposed, of making <span style="color:#008080">yl</span> in the former verse, and <span style="color:#008080">yl[</span> in this verse, the same. The difference is occasioned by the verbs “thou hast seen,” and, “thou hast heard.” God had seen the thoughts or purposes effected “against” him; and he had heard the purposes formed “concerning” him. He refers first to the purposes carried into effect, and then, as it is common in the prophets, he refers to the purposes previously formed respecting him. — *Ed*.
-
-[^f82]: The best word is muttering, — <span style="color:#000080">The lips of my adversaries,</span> <span style="color:#000080">And their muttering concerning me all the day.</span> It isn’t here, as in the previous verse, “concerning me,” not “against me.” — *Ed*.
-
-[^f83]: The word meant “covering, as rendered by the *Sept*.; the Syr. Has “sorrow,” and the Vulg. “shield,” which has no meaning. What is no doubt meant is hardness or blindness — <span style="color:#000080">Give them blindness of heart:</span> <span style="color:#000080">Thy curse be to them. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT78</span> The versions and the *Targ*. give the first meaning, “because of the daughters of my city;” and the last words, “of my city,” seem to favor it; for had women as a sex been intended, they would not have been thus designated. — *Ed*.
+ <span style="color:#800000">FT79</span> The words literally are, —
+<span style="color:#000080">Hunting hunted me like a bird</span> <span style="color:#000080">have mine enemies without a cause. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT80</span> Materially correct, no doubt, is this explanation. We may give this version, —
+<span style="color:#000080">My voice hast thou heard, deafen not thy ear</span> <span style="color:#000080">To my sighing, to my cry.</span>
+The verb <span style="color:#008080">µl[</span> means to veil, and hence to hide. To veil the eye is, not to look at what is set before it; and to veil the ear is, to render it deaf to what is said. The Prophet says that God had heard his voice, for he had prayed; but he further asks God not to turn a deaf ear to his sighing, or sobbing, as given by the *Vulg*, and to his cry. — *Ed*.
+ <span style="color:#800000">FT81</span> There is no necessity, as some have supposed, of making <span style="color:#008080">yl</span> in the former verse, and <span style="color:#008080">yl[</span> in this verse, the same. The difference is occasioned by the verbs “thou hast seen,” and, “thou hast heard.” God had seen the thoughts or purposes effected “against” him; and he had heard the purposes formed “concerning” him. He refers first to the purposes carried into effect, and then, as it is common in the prophets, he refers to the purposes previously formed respecting him. — *Ed*.
+ <span style="color:#800000">FT82</span> The best word is muttering, —
+<span style="color:#000080">The lips of my adversaries,</span> <span style="color:#000080">And their muttering concerning me all the day.</span>
+It isn’t here, as in the previous verse, “concerning me,” not “against me.” — *Ed*.
+ <span style="color:#800000">FT83</span> The word meant “covering, as rendered by the *Sept*.; the Syr. Has “sorrow,” and the Vulg. “shield,” which has no meaning. What is no doubt meant is hardness or blindness —
+<span style="color:#000080">Give them blindness of heart:</span> <span style="color:#000080">Thy curse be to them. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
 
 <!-- PAGE 246 -->
 
-<h2 class="scripture-anchor" id="chapter-4" data-ref="CHAPTER 4" style="display:none">CHAPTER 4</h2>
-
-[^f84]: Here, as in the two first chapters, the verses only begin alphabetically, but instead of having three or six lines, they have only two or four. — *Ed.*
-
-[^f85]: . This chapter, like the two first chapters, begins with the word <span style="color:#008080">hkya</span>, “How this!” and the verbs are in the future tense, used for the present. — <span style="color:#000080">How</span> <span style="color:#000080">*is*</span> <span style="color:#000080">this! tarnished is gold,</span> <span style="color:#000080">Changed is fine gold, the best:</span> <span style="color:#000080">Cast forth are the sacred stones</span> <span style="color:#000080">At the head of every street. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f86]: The value, and not the appearance, is evidently meant: the “sons of Sion” were “precious,” as here expressly stated. In this respect they had been of the same estimate with gold; but now they were as worthless as potter’s vessels: they were so esteemed and treated, — <span style="color:#000080">The sons of Sion</span> <span style="color:#000080">*were*</span> <span style="color:#000080">precious,</span> <span style="color:#000080">Of worth equal to pure gold;</span> <span style="color:#000080">How is this! they have been deemed as earthen vessels,</span> <span style="color:#000080">The work of the hands of the potter. —</span> <span style="color:#000080">*Ed.*</span>
-
-[^f87]: The reference here is to the conduct of mothers, called here “the daughter of my people,” as it appears evident from the following verse, — <span style="color:#000080">Even dragons have drawn out the breast,</span> <span style="color:#000080">They have suckled their young ones:</span> <span style="color:#000080">The daughter of my people</span> <span style="color:#000080">*has been*</span> <span style="color:#000080">for cruelty</span> <span style="color:#000080">Like the ostriches in the desert.</span> It is said that the ostrich lays her eggs and forsakes them. See Job 39:15. The verb, to be, is understood, as the case often is, but it must ever be in the same tense as the verb or verbs connected with the sentence. — *Ed*.
-
-[^f88]: The verbs here are in the past tense, and not in the present, as in our version, — <span style="color:#000080">Cleave did the tongue of the suckling</span> <span style="color:#000080">To his palate through thirst;</span> <span style="color:#000080">Children asked bread,</span> <span style="color:#000080">A breaker, none</span> <span style="color:#000080">*was*</span> <span style="color:#000080">to them. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+<span style="color:#006411">CHAPTER 4</span>
+ <span style="color:#800000">FT84</span> Here, as in the two first chapters, the verses only begin alphabetically, but instead of having three or six lines, they have only two or four. — *Ed.*
+ <span style="color:#800000">FT85</span>. This chapter, like the two first chapters, begins with the word <span style="color:#008080">hkya</span>, “How this!” and the verbs are in the future tense, used for the present. —
+<span style="color:#000080">How</span> <span style="color:#000080">*is*</span> <span style="color:#000080">this! tarnished is gold,</span> <span style="color:#000080">Changed is fine gold, the best:</span> <span style="color:#000080">Cast forth are the sacred stones</span> <span style="color:#000080">At the head of every street. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT86</span> The value, and not the appearance, is evidently meant: the “sons of Sion” were “precious,” as here expressly stated. In this respect they had been of the same estimate with gold; but now they were as worthless as potter’s vessels: they were so esteemed and treated, —
+<span style="color:#000080">The sons of Sion</span> <span style="color:#000080">*were*</span> <span style="color:#000080">precious,</span> <span style="color:#000080">Of worth equal to pure gold;</span> <span style="color:#000080">How is this! they have been deemed as earthen vessels,</span> <span style="color:#000080">The work of the hands of the potter. —</span> <span style="color:#000080">*Ed.*</span>
+ <span style="color:#800000">FT87</span> The reference here is to the conduct of mothers, called here “the daughter of my people,” as it appears evident from the following verse, —
+<span style="color:#000080">Even dragons have drawn out the breast,</span> <span style="color:#000080">They have suckled their young ones:</span> <span style="color:#000080">The daughter of my people</span> <span style="color:#000080">*has been*</span> <span style="color:#000080">for cruelty</span> <span style="color:#000080">Like the ostriches in the desert.</span>
+It is said that the ostrich lays her eggs and forsakes them. See Job 39:15. The verb, to be, is understood, as the case often is, but it must ever be in the same tense as the verb or verbs connected with the sentence. — *Ed*.
+ <span style="color:#800000">FT88</span> The verbs here are in the past tense, and not in the present, as in our version, —
 
 <!-- PAGE 247 -->
 
-[^f89]: The dunghills were collections of cow-dung and other things heaped together for fuel instead of wood. They had been brought up “on scarlet,” *i.e.,* on scarlet couches, they were now glad to lie down anywhere, even on dunghills, and hence they are said to have embraced them, as though they had a love for them, — <span style="color:#000080">They who had fed on delicacies</span> <span style="color:#000080">Perished in the streets;</span> <span style="color:#000080">They who had been brought up on scarlet</span> <span style="color:#000080">Embraced the dunghills. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
-
-[^f90]: The early versions and the *Targ*. render the words “iniquity,” and “sin;” but modern critics agree with *Calvin.* Penalty and punishment might be suitably adopted. — *Ed*.
-
-[^f91]: The clause might be rendered, — <span style="color:#000080">And not wearied against (or, over) her were hands.</span> This is substantially the *Sept.* and the *Syr. Grotius* says that the meaning is, that Sodom was destroyed not by human means, that is, not by a siege, as Jerusalem had been. — *Ed*.
-
-[^f92]: As to these two verses there is much disagreement in the early versions and the *Targ.;* that of the *Sept.* comes nearest to the original. They may be thus rendered, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">7. Clearer were her Nazarites than snow,</span> <span style="color:#000080">They were whiter than milk;</span> <span style="color:#000080">Ruddier were they in body than rubies,</span> <span style="color:#000080">Sapphire was their polish (or smoothness:)</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">8. Darker than the dusk became their appearance,</span> <span style="color:#000080">They were not known in the streets:</span> <span style="color:#000080">Cleave did their skin to their bones,</span> <span style="color:#000080">Dried up, it became like a stick.</span></p>
+<span style="color:#000080">Cleave did the tongue of the suckling</span> <span style="color:#000080">To his palate through thirst;</span> <span style="color:#000080">Children asked bread,</span> <span style="color:#000080">A breaker, none</span> <span style="color:#000080">*was*</span> <span style="color:#000080">to them. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT89</span> The dunghills were collections of cow-dung and other things heaped together for fuel instead of wood. They had been brought up “on scarlet,” *i.e.,* on scarlet couches, they were now glad to lie down anywhere, even on dunghills, and hence they are said to have embraced them, as though they had a love for them, —
+<span style="color:#000080">They who had fed on delicacies</span> <span style="color:#000080">Perished in the streets;</span> <span style="color:#000080">They who had been brought up on scarlet</span> <span style="color:#000080">Embraced the dunghills. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT90</span> The early versions and the *Targ*. render the words “iniquity,” and “sin;” but modern critics agree with *Calvin.* Penalty and punishment might be suitably adopted. — *Ed*.
+ <span style="color:#800000">FT91</span> The clause might be rendered, —
+<span style="color:#000080">And not wearied against (or, over) her were hands.</span>
+This is substantially the *Sept.* and the *Syr. Grotius* says that the meaning is, that Sodom was destroyed not by human means, that is, not by a siege, as Jerusalem had been. — *Ed*.
+ <span style="color:#800000">FT92</span> As to these two verses there is much disagreement in the early versions and the *Targ.;* that of the *Sept.* comes nearest to the original. They may be thus rendered, —
+<span style="color:#000080">**7.**</span> <span style="color:#000080">Clearer were her Nazarites than snow,</span> <span style="color:#000080">They were whiter than milk;</span> <span style="color:#000080">Ruddier were they in body than rubies,</span> <span style="color:#000080">Sapphire was their polish (or smoothness:)</span>
+<span style="color:#000080">**8.**</span> <span style="color:#000080">Darker than the dusk became their appearance,</span> <span style="color:#000080">They were not known in the streets:</span> <span style="color:#000080">Cleave did their skin to their bones,</span> <span style="color:#000080">Dried up, it became like a stick.</span>
 
 <!-- PAGE 248 -->
 
 “Rubies,” rendered “pearls,” by *Bochart;* “load stones,” or magnets, by *Parkhurst;* “red corals,” by *Gesenius.* They were no doubt precious stones of reddish appearance. The “sapphire” is mentioned for its smoothness, as it appears from the contrast at the end of the eighth verse, where it is said that their skin had become like a dried “stick,” whose rind is shriveled. *“Dusk”* is rendered *“soot”* by the *Sept.,* and “coals” by the *Vulg.* and the *Syr.* <span style="color:#008080">rwjç</span> is the dusk, or the dawn: but the river Nile is also thus called on account of its muddy and dusky waters. See Jeremiah 2:18. This being the case, may it not be so taken here.; The character of the passage favors this, “snow,” “milk,” etc. Then the line would be, —
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">Darker than Sihor (or, the Nile) became their appearance. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f93]: *Houbigant* and *Blayney* have given the following version of this clause, which has been approved by *Horsley,* — <span style="color:#000080">For those (the former) departed, having been cut off</span> <span style="color:#000080">Before the fruits of the field.</span> That is, they bad been cut off before the fruits of the field failed, which occasioned the famine. This rendering is more satisfactory than our version or that of *Calvin.* — *Ed.*
-
-[^f94]: This clause has been variously explained. The whole passage from Lamentations 4:12-16 inclusive, ought to be considered. The taking of Jerusalem is said to have been incredible, even to heathens. Then the Prophet, in Lamentations 4:13, tells the cause — “ the sins of the prophets and the iniquities of the priests;” and in Lamentations 4:14, 15, and 16, he describes their shame and their punishment at the siege, when the people found out by experience that they had be deceived by them, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">13. For the sins of her prophets,</span> <span style="color:#000080">*For*</span> <span style="color:#000080">the iniquities of her priests,</span> <span style="color:#000080">Who had shed in the midst of her</span> <span style="color:#000080">The blood of the righteous, —</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">14. They wandered frantic in the streets,</span> <span style="color:#000080">They were (or, had been) polluted with blood:</span></p>
+<span style="color:#000080">Darker than Sihor (or, the Nile) became their appearance. —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT93</span> *Houbigant* and *Blayney* have given the following version of this clause, which has been approved by *Horsley,* —
+<span style="color:#000080">For those (the former) departed, having been cut off</span> <span style="color:#000080">Before the fruits of the field.</span>
+That is, they bad been cut off before the fruits of the field failed, which occasioned the famine. This rendering is more satisfactory than our version or that of *Calvin.* — *Ed.*
+ <span style="color:#800000">FT94</span> This clause has been variously explained. The whole passage from Lamentations 4:12-16 inclusive, ought to be considered. The taking of Jerusalem is said to have been incredible, even to heathens. Then the Prophet, in Lamentations 4:13, tells the cause — “ the sins of the prophets and the iniquities of the priests;” and in Lamentations 4:14, 15, and 16**,** he describes their shame and their punishment at the siege, when the people found out by experience that they had be deceived by them, —
+<span style="color:#000080">**13.**</span> <span style="color:#000080">For the sins of her prophets,</span> <span style="color:#000080">*For*</span> <span style="color:#000080">the iniquities of her priests,</span> <span style="color:#000080">Who had shed in the midst of her</span> <span style="color:#000080">The blood of the righteous, —</span>
+<span style="color:#000080">**14.**</span> <span style="color:#000080">They wandered frantic in the streets,</span> <span style="color:#000080">They were (or, had been) polluted with blood:</span>
 
 <!-- PAGE 249 -->
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">Inasmuch as they could not</span> <span style="color:#000080">But touch their garments,</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">15. “Depart ye, uncleanness,” they cried to them,</span> <span style="color:#000080">“Depart, depart, touch not:”</span> <span style="color:#000080">When they fled, yea, became fugitives,</span> <span style="color:#000080">They said among the heathens,</span> <span style="color:#000080">“They shall no more dwell</span> <span style="color:#000080">*there*</span><span style="color:#000080">”;</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">16. The face of Jehovah, their portion,</span> <span style="color:#000080">Shall no more look on them;</span> <span style="color:#000080">The face of their priests they regard not,</span> <span style="color:#000080">To their elders they shew no favor.”</span></p>
-
+<span style="color:#000080">Inasmuch as they could not</span> <span style="color:#000080">But touch their garments,</span>
+<span style="color:#000080">**15.**</span> <span style="color:#000080">“Depart ye, uncleanness,” they cried to them,</span> <span style="color:#000080">“Depart, depart, touch not:”</span> <span style="color:#000080">When they fled, yea, became fugitives,</span> <span style="color:#000080">They said among the heathens,</span> <span style="color:#000080">“They shall no more dwell</span> <span style="color:#000080">*there*</span><span style="color:#000080">”;</span>
+<span style="color:#000080">**16.**</span> <span style="color:#000080">The face of Jehovah, their portion,</span> <span style="color:#000080">Shall no more look on them;</span> <span style="color:#000080">The face of their priests they regard not,</span> <span style="color:#000080">To their elders they shew no favor.”</span>
 The last five lines contain what the heathens said, when they observed that the prophets and the priests were pronounced unclean by the people, and were ordered to depart. They had shed blood, and were thus polluted, or in their frenzy they touched the slain and became thus polluted. Their retribution was just, and rendered to them by their own people, whom they had led astray: for instead of attending to the true prophets, they killed them, and flattered the people with falsehoods, and encouraged them in their idolatry and vices; and thus brought on the ruin of a city deemed impregnable. — *Ed.*
-
-[^f95]: The true reading is no doubt <span style="color:#008080">wnyd[</span>; and *Blayney* thinks that there is a <span style="color:#008080">w</span> wanting before the next verb, as it is in other in other instances; 1 Kings 1:14, 22; Job 1:16, 17, 18. It is supplied in the *Sept., Syr.,* and *Vulg.* <span style="color:#000080">Yet we</span> <span style="color:#000080">*were,*</span> <span style="color:#000080">and fail did our eyes</span> <span style="color:#000080">As to our assistance;</span> <span style="color:#000080">In vain by looking out did we look out</span> <span style="color:#000080">To a nation that could not save.</span> The *Syr*. connect “in vain,” more properly, with the third line. — *Ed*.
-
-[^f96]: He describes throughout what had taken place. Our version is not right in giving the verbs in the present tense. “For” is better than “surely” before “come.” <span style="color:#000080">They hunted our footsteps,</span> <span style="color:#000080">That we could not walk in our streets:</span> <span style="color:#000080">Near was our end; fulfilled were our days,</span> <span style="color:#000080">For come had our end.</span> Then he describes what happened when the city was taken. — *Ed*.
+ <span style="color:#800000">FT95</span> The true reading is no doubt <span style="color:#008080">wnyd[</span>; and *Blayney* thinks that there is a <span style="color:#008080">w</span> wanting before the next verb, as it is in other in other instances; 1 Kings 1:14, 22; Job 1:16, 17, 18. It is supplied in the
+*Sept., Syr.,* and *Vulg.*
+<span style="color:#000080">Yet we</span> <span style="color:#000080">*were,*</span> <span style="color:#000080">and fail did our eyes</span> <span style="color:#000080">As to our assistance;</span> <span style="color:#000080">In vain by looking out did we look out</span> <span style="color:#000080">To a nation that could not save.</span>
+The *Syr*. connect “in vain,” more properly, with the third line. — *Ed*.
+ <span style="color:#800000">FT96</span> He describes throughout what had taken place. Our version is not right in giving the verbs in the present tense. “For” is better than “surely” before “come.”
+<span style="color:#000080">They hunted our footsteps,</span> <span style="color:#000080">That we could not walk in our streets:</span>
 
 <!-- PAGE 250 -->
 
-[^f97]: A kingdom cannot exist without a king. Hence the king may be said to be the breath or the life of the body politic. — *Ed*.
-
-[^f98]: The last clause ought to be thus rendered, — <span style="color:#000080">Under whose shadow, we said,</span> <span style="color:#000080">We shall live among the nations.</span> The *Syr*. in some measure imitates the original, but neither the *Sept.* nor the *Vulg.* The <span style="color:#008080">rça</span> is not governed by “we said.” It can be rendered literally in Welsh. — *Ed*.
-
-[^f99]: This is the sense that is commonly taken: *Gataker, Lowth, Scott,* and *Blayney,* regard the expression as ironical. — *Ed*.
-
-[^f100]: The word “iniquity” is used in this verse in two senses. This we discover by the two verbs which are used. To complete “iniquity” can here mean no other thing than to complete the punishment due to it; and that punishment was exile, as the following words shew. But to “visit” iniquity clearly means to punish it. — <span style="color:#000080">Completed has been thine iniquity, daughter of Sion;</span> <span style="color:#000080">He will not again remove thee:</span> <span style="color:#000080">He has visited thine iniquity, daughter of Edom;</span> <span style="color:#000080">Having been removed for thy sins,</span> <span style="color:#000080">*or*</span><span style="color:#000080">, — He has removed</span> <span style="color:#000080">*thee*</span> <span style="color:#000080">for thy sins.</span> Though all the early versions and the *Targ*. agree in rendering the last verb in the sense of discovering or uncovering, yet the other meaning, which it often has, and even in the second line of this verse, is more suitable to this place. Removal or migration had been the punishment of the Jews: the same was to be the punishment of Edom. In this sense is the word rendered by *Blayney* and *Henderson.* The past time in the latter clause is evidently used for the future, according to the usual manner of the Prophets, “He will visit,” etc., “he will remove, *etc.* — *Ed.*
+<span style="color:#000080">Near was our end; fulfilled were our days,</span> <span style="color:#000080">For come had our end.</span>
+Then he describes what happened when the city was taken. — *Ed*.
+ <span style="color:#800000">FT97</span> A kingdom cannot exist without a king. Hence the king may be said to be the breath or the life of the body politic. — *Ed*.
+ <span style="color:#800000">FT98</span> The last clause ought to be thus rendered, —
+<span style="color:#000080">Under whose shadow, we said,</span> <span style="color:#000080">We shall live among the nations.</span>
+The *Syr*. in some measure imitates the original, but neither the *Sept.* nor the *Vulg.* The <span style="color:#008080">rça</span> is not governed by “we said.” It can be rendered literally in Welsh. — *Ed*.
+ <span style="color:#800000">FT99</span> This is the sense that is commonly taken: *Gataker, Lowth, Scott,* and *Blayney,* regard the expression as ironical. — *Ed*.
+ <span style="color:#800000">FT100</span> The word “iniquity” is used in this verse in two senses. This we discover by the two verbs which are used. To complete “iniquity” can here mean no other thing than to complete the punishment due to it; and that punishment was exile, as the following words shew. But to “visit” iniquity clearly means to punish it. —
+<span style="color:#000080">Completed has been thine iniquity, daughter of Sion;</span> <span style="color:#000080">He will not again remove thee:</span> <span style="color:#000080">He has visited thine iniquity, daughter of Edom;</span> <span style="color:#000080">Having been removed for thy sins,</span> <span style="color:#000080">*or*</span><span style="color:#000080">, — He has removed</span> <span style="color:#000080">*thee*</span> <span style="color:#000080">for thy sins.</span>
+Though all the early versions and the *Targ*. agree in rendering the last verb in the sense of discovering or uncovering, yet the other meaning, which it often has, and even in the second line of this verse, is more suitable to this place. Removal or migration had been the punishment of the Jews: the same was to be the punishment of Edom. In this sense is the word rendered by *Blayney* and *Henderson.* The past time in the latter clause is evidently used for the future, according to the usual manner of the Prophets, “He will visit,” etc., “he will remove, *etc.* — *Ed.*
 
 <!-- PAGE 251 -->
 
-<h2 class="scripture-anchor" id="chapter-5" data-ref="CHAPTER 5" style="display:none">CHAPTER 5</h2>
+<span style="color:#006411">CHAPTER 5</span>
+ <span style="color:#800000">FT101</span> O domus Anci! Quam dispari domino dominaris!
+ <span style="color:#800000">FT102</span> To express this meaning, which is probably the true one, the words ought to be thus rendered, —
+<span style="color:#000080">**4.**</span> <span style="color:#000080">Our own water, for money have we drunk</span> <span style="color:#000080">*it;*</span> <span style="color:#000080">Our own wood, for a price it comes</span> <span style="color:#000080">*to us.*</span>
+*Grotius* says that in the land of Canaan the forests were free to all to get wood from. When in exile the Jews had to buy wood. — *Ed*.
+ <span style="color:#800000">FT103</span> Not one of the versions or the Targ*.,* though they all differ, gives a satisfactory rendering of this clause. Some take, “on our neck we have been pursued,” as meaning, We have been closely pursued. So *Gataker.* Others, as *Lowth* and *Henderson,* regarding <span style="color:#008080">l[</span> a noun, signifying a yoke, give a construction of this kind, “With the yoke on our neck we have been pursued” or persecuted, according to the words of Moses in Deuteronomy 28:48. The former seems the best, —
+<span style="color:#000080">On our neck (closely) have we been pursued,</span> <span style="color:#000080">We labored and had no rest.</span>
+Then comes in what they did when thus pursued by their enemies, —
+<span style="color:#000080">To Egypt gave we the hand,</span> <span style="color:#000080">To Assyria, to be satisfied with bread.</span>
+To give the hand, in this case, was to put it forth as suppliants to ask help. This seems to refer to a, time previous to their exile. — *Ed*.
+ <span style="color:#800000">FT104</span> Horace, *Od*. 6:1, —
 
-[^f101]: O domus Anci! Quam dispari domino dominaris!
+<span style="color:#000080">***“Delicta majorum immeritus lues, Romane.”***</span>
 
-[^f102]: To express this meaning, which is probably the true one, the words ought to be thus rendered, —
+ <span style="color:#800000">FT105</span> Virgil, *Georg.,* lib. 1, —
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">4. Our own water, for money have we drunk</span> <span style="color:#000080">*it;*</span> <span style="color:#000080">Our own wood, for a price it comes</span> <span style="color:#000080">*to us.*</span></p>
+<span style="color:#000080">***“Satis jampridem sanguine nostro***</span> <span style="color:#000080">***Laomedonteae luimus perjuria Troiae.”***</span>
 
-<p style="text-align:center" markdown="1">*Grotius* says that in the land of Canaan the forests were free to all to get wood from. When in exile the Jews had to buy wood. — *Ed*.</p>
-
-[^f103]: Not one of the versions or the Targ*.,* though they all differ, gives a satisfactory rendering of this clause. Some take, “on our neck we have been pursued,” as meaning, We have been closely pursued. So *Gataker.* Others, as *Lowth* and *Henderson,* regarding <span style="color:#008080">l[</span> a noun, signifying a yoke, give a construction of this kind, “With the yoke on our neck we have been pursued” or persecuted, according to the words of Moses in Deuteronomy 28:48. The former seems the best, — <span style="color:#000080">On our neck (closely) have we been pursued,</span> <span style="color:#000080">We labored and had no rest.</span> Then comes in what they did when thus pursued by their enemies, — <span style="color:#000080">To Egypt gave we the hand,</span> <span style="color:#000080">To Assyria, to be satisfied with bread.</span> To give the hand, in this case, was to put it forth as suppliants to ask help. This seems to refer to a, time previous to their exile. — *Ed*.
-
-[^f104]: Horace, *Od*. 6:1, — <span style="color:#000080">*“Delicta majorum immeritus lues, Romane.”*</span>
-
-[^f105]: Virgil, *Georg.,* lib. 1, — <span style="color:#000080">*“Satis jampridem sanguine nostro*</span> <span style="color:#000080">*Laomedonteae luimus perjuria Troiae.”*</span>
-
-[^f106]: The words may be thus rendered, — <span style="color:#000080">Our fathers, they sinned and are not;</span> <span style="color:#000080">We, their iniquities have we borne.</span> To bear iniquities, is here evidently to bear their penalty. So when Christ is said to bear our sins, the same thing is meant. — *Ed*.
+ <span style="color:#800000">FT106</span> The words may be thus rendered, —
+<span style="color:#000080">Our fathers, they sinned and are not;</span> <span style="color:#000080">We, their iniquities have we borne.</span>
 
 <!-- PAGE 252 -->
 
-[^f107]: See Nehemiah 5:15. — *Ed*.
-
-[^f108]: The versions and the *Targ.* render the word, “sword;” and so do *Gataker, Blayney,* and *Henderson.* And by “the sword of the desert” are to be understood freebooters who carried swords and made incursions from desert places. <span style="color:#000080">At the risk of our life we got our bread,</span> <span style="color:#000080">On account of the sword of the desert</span><span style="color:#000080">*.*</span> <span style="color:#000080">—</span> <span style="color:#000080">*Ed.*</span>
-
-[^f109]: The word <span style="color:#008080">twp[lz</span>, occurs in Psalm 11:6, and in the singular number in Psalm 119: 53. The versions and the Targ. render it differently in the three places, for it is not found anywhere else. In <span class="ages-code">&lt;19B953&gt;</span>Psalm 119:53, it is rendered “horror” in our version, and this meaning suits the passage in Psalm 11:6, and also this passage, — <span style="color:#000080">Our skins, like an oven they became black,</span> <span style="color:#000080">Because of the horrors of famine (or, horrible famine.)</span> The word for “skins” is in the plural number according to several copies, and the verb requires it to be so. — *Ed*.
-
-[^f110]: There is here a delicate word for a disgraceful act. The words literally are, — <span style="color:#000080">Women in Sion they humbled (or, were humbled,)</span> <span style="color:#000080">And virgins in the cities of Judah.</span> It is humbled by the *Sept*. and *Vulg.* “And” before “virgins” is supplied by the *Vulg.* and *Syr.* — *Ed.*
-
-[^f111]: The most obvious meaning of the words is, that princes were hung or suspended by the hand, and not by the neck. Such a punishment is not recorded as having *been* then practiced; but it may have been a barbarity resorted to by the Chaldeans. This seems to be the meaning conveyed by the versions and the *Targ.,* — <span style="color:#000080">Princes were by their hand hung up,</span> <span style="color:#000080">The persons of the aged were not honored. —</span> <span style="color:#000080">*Ed.*</span>
+To bear iniquities, is here evidently to bear their penalty. So when Christ is said to bear our sins, the same thing is meant. — *Ed*.
+ <span style="color:#800000">FT107</span> See Nehemiah 5:15. — *Ed*.
+ <span style="color:#800000">FT108</span> The versions and the *Targ.* render the word, “sword;” and so do *Gataker, Blayney,* and *Henderson.* And by “the sword of the desert” are to be understood freebooters who carried swords and made incursions from desert places.
+<span style="color:#000080">At the risk of our life we got our bread,</span> <span style="color:#000080">On account of the sword of the desert</span><span style="color:#000080">*.*</span> <span style="color:#000080">—</span> <span style="color:#000080">*Ed.*</span>
+ <span style="color:#800000">FT109</span> The word <span style="color:#008080">twp[lz</span>, occurs in Psalm 11:6, and in the singular number in Psalm 119: 53. The versions and the Targ. render it differently in the three places, for it is not found anywhere else. In <span class="ages-code">&lt;19B953&gt;</span>Psalm 119:53, it is rendered “horror” in our version, and this meaning suits the passage in Psalm 11:6, and also this passage, —
+<span style="color:#000080">Our skins, like an oven they became black,</span> <span style="color:#000080">Because of the horrors of famine (or, horrible famine.)</span>
+The word for “skins” is in the plural number according to several copies, and the verb requires it to be so. — *Ed*.
+ <span style="color:#800000">FT110</span> There is here a delicate word for a disgraceful act. The words literally are, —
+<span style="color:#000080">Women in Sion they humbled (or, were humbled,)</span> <span style="color:#000080">And virgins in the cities of Judah.</span>
+It is humbled by the *Sept*. and *Vulg.* “And” before “virgins” is supplied by the *Vulg.* and *Syr.* — *Ed.*
+ <span style="color:#800000">FT111</span> The most obvious meaning of the words is, that princes were hung or suspended by the hand, and not by the neck. Such a punishment is not recorded as having *been* then practiced; but it may have been a barbarity resorted to by the Chaldeans. This seems to be the meaning conveyed by the versions and the *Targ.,* —
+<span style="color:#000080">Princes were by their hand hung up,</span> <span style="color:#000080">The persons of the aged were not honored. —</span> <span style="color:#000080">*Ed.*</span>
 
 <!-- PAGE 253 -->
 
-[^f112]: The words ought rather to be thus rendered, — <span style="color:#000080">Turned into mourning was our piping.</span> The word does not mean dancing, but playing on some fistular instrument. — *Ed.*
-
-[^f113]: The words are, — <span style="color:#000080">Fallen has the crown of our head.</span> Then the “woe” in the next line is only declarative, — Woe *is* now to us, because we have sinned. The particle “now” is omitted in our version. — *Ed*.
-
-[^f114]: Some connect this verse with the foregoing, as a special reason why their eyes were darkened, —
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">17. For this become faint did our heart;</span> <span style="color:#000080">For these things darkened were our eyes,</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">18.</span> <span style="color:#000080">*Yea,*</span> <span style="color:#000080">for mount Sion, which is desolate;</span> <span style="color:#000080">Foxes have walked through it.</span></p>
-
+ <span style="color:#800000">FT112</span> The words ought rather to be thus rendered, —
+<span style="color:#000080">Turned into mourning was our piping.</span>
+The word does not mean dancing, but playing on some fistular instrument. — *Ed.*
+ <span style="color:#800000">FT113</span> The words are, —
+<span style="color:#000080">Fallen has the crown of our head.</span>
+Then the “woe” in the next line is only declarative, — Woe *is* now to us, because we have sinned.
+The particle “now” is omitted in our version. — *Ed*.
+ <span style="color:#800000">FT114</span> Some connect this verse with the foregoing, as a special reason why their eyes were darkened, —
+<span style="color:#000080">**17.**</span> <span style="color:#000080">For this become faint did our heart;</span> <span style="color:#000080">For these things darkened were our eyes,</span>
+<span style="color:#000080">**18.**</span> <span style="color:#000080">*Yea,*</span> <span style="color:#000080">for mount Sion, which is desolate;</span> <span style="color:#000080">Foxes have walked through it.</span>
 “This” was the “woe” which sin had brought; and “these things” were the various things which he had previously stated, but the desolation of mount Sion was the chief cause of sorrow.
-
 Others take this verse by itself, as it is done by the *Sept.,* where <span style="color:#008080">l[</span> is rendered *“on,”* and <span style="color:#008080">ç</span> for <span style="color:#008080">rça</span>, is translated *“because,”* —
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">On mount Sion, because it has become desolate,</span> <span style="color:#000080">Foxes have walked in (or through) it.</span></p>
-
-<p style="text-align:center" markdown="1">If <span style="color:#008080">l[</span> be rendered concerning, or, as to, or, with regard to, the best construction would be the following, —</p>
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">As to mount Sion, which has become desolate,</span> <span style="color:#000080">Foxes have walked in it (or, traversed it.) —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span></p>
-
-[^f115]: The words literally are, — <span style="color:#000080">Thou Jehovah for ever sittest,</span> <span style="color:#000080">Thy throne</span> <span style="color:#000080">*is*</span> <span style="color:#000080">from generation to generation.</span> Sitting is the posture of a judge, and the reference here is to Jehovah, not as to his essence or existence, but as to his judicial office. — *Ed*.
+<span style="color:#000080">On mount Sion, because it has become desolate,</span> <span style="color:#000080">Foxes have walked in (or through) it.</span>
+If <span style="color:#008080">l[</span> be rendered concerning, or, as to, or, with regard to, the best construction would be the following, —
+<span style="color:#000080">As to mount Sion, which has become desolate,</span> <span style="color:#000080">Foxes have walked in it (or, traversed it.) —</span> <span style="color:#000080">*Ed*</span><span style="color:#000080">.</span>
+ <span style="color:#800000">FT115</span> The words literally are, —
+<span style="color:#000080">Thou Jehovah for ever sittest,</span> <span style="color:#000080">Thy throne</span> <span style="color:#000080">*is*</span> <span style="color:#000080">from generation to generation.</span>
 
 <!-- PAGE 254 -->
 
-[^f116]: <span style="color:#000080">Why shouldest thou to the end forget us —</span> <span style="color:#000080">Forsake us for the length of our days?</span> “To the end,” or perpetually, and “the length of our days,” are the same. The length of days, as it appears from Psalm 23:6, means the extent of the present life; the phrase is there used as synonymous with all the days of one’s life. Might not the Prophet here refer to the life of those then living? As to restoration after seventy years, he could have had no doubt. He seems to have pleaded for the restoration of the generation then living. — *Ed*.
+Sitting is the posture of a judge, and the reference here is to Jehovah, not as to his essence or existence, but as to his judicial office. — *Ed*.
+ <span style="color:#800000">FT116</span>
+<span style="color:#000080">Why shouldest thou to the end forget us —</span> <span style="color:#000080">Forsake us for the length of our days?</span>
+“To the end,” or perpetually, and “the length of our days,” are the same. The length of days, as it appears from Psalm 23:6, means the extent of the present life; the phrase is there used as synonymous with all the days of one’s life. Might not the Prophet here refer to the life of those then living? As to restoration after seventy years, he could have had no doubt. He seems to have pleaded for the restoration of the generation then living. — *Ed*.
+ <span style="color:#800000">FT117</span> The meaning of this sentence is,” says *Grotius,* “Restore us to thy favor, that we may be restored to our ancient state.” This being evidently the meaning, the rendering ought to be this, —
+<span style="color:#000080">Restore us, O Jehovah, to thyself, that we may be restored.</span>
+And as *Calvin,* as well as *Grotius,* says, the following line is a confirmation, —
 
-[^f117]: The meaning of this sentence is,” says *Grotius,* “Restore us to thy favor, that we may be restored to our ancient state.” This being evidently the meaning, the rendering ought to be this, — <span style="color:#000080">Restore us, O Jehovah, to thyself, that we may be restored.</span> And as *Calvin,* as well as *Grotius,* says, the following line is a confirmation, — <span style="color:#000080">*Renew our days as of old. —*</span> <span style="color:#000080">Ed</span><span style="color:#000080">*.*</span>
+<span style="color:#000080">***Renew our days as of old. —***</span> <span style="color:#000080">**Ed**</span><span style="color:#000080">***.***</span>
 
-[^f118]: The particles, <span style="color:#008080">µa yk</span>, seem to have the meaning of “except,” as in Genesis 32:26, “except thou bless me.” But the exposition is too refined. The usual meaning of the particles is, *but in truth, for surely, when indeed.* See 1 Samuel 21:5; Proverbs 23:18; Exodus 22:23. They are rendered here, “for,” by the *Sept., Syr.,* and *Arab;* “but,” by the *Vulg*., and “although,” by the *Targ.* The version of *Blayney* and *Henderson* is, “For surely.” The Prophet assigns a reason for his petition in the preceding verse; as though he had said, “I ask for restoration to thy favor and to our land, because thou hast clearly manifested thy rejection of us, and thy displeasure towards us.” For surely rejecting thou hast rejected us, Thou hast been wroth with us exceedingly,
-
-<p style="margin-left:2em;" markdown="1">or, more literally,</p>
-
-<p style="text-align:center" markdown="1"><span style="color:#000080">Thou hast foamed against us exceedingly.</span></p>
+ <span style="color:#800000">FT118</span> The particles, <span style="color:#008080">µa yk</span>, seem to have the meaning of “except,” as in Genesis 32:26, “except thou bless me.” But the exposition is too refined. The usual meaning of the particles is, *but in truth, for surely, when indeed.* See 1 Samuel 21:5; Proverbs 23:18; Exodus 22:23. They are rendered here, “for,” by the *Sept., Syr.,* and *Arab;* “but,” by the *Vulg*., and “although,” by the *Targ.* The version of *Blayney* and *Henderson* is, “For surely.” The Prophet assigns a reason for his petition in the preceding verse; as though he had said, “I ask for restoration to thy favor and to our land, because thou hast clearly manifested thy rejection of us, and thy displeasure towards us.” For surely rejecting thou hast rejected us, Thou hast been wroth with us exceedingly, or, more literally,
+<span style="color:#000080">Thou hast foamed against us exceedingly.</span>
 
 <!-- PAGE 255 -->
 
 The first line here corresponds with the latter part of the previous verse, “Restore us to our land, and renew the ancient days,” — “ Thou hast wholly rejected us.” He speaks of things as they were then. Then the last line in this verse bears a relation to the first part of the preceding verse, “Restore us to thy favor,” — “ Thou hast been exceedingly displeased with us.” Thus, for displeasure he asked favor, and for repudiation, a restoration. — *Ed*.
-

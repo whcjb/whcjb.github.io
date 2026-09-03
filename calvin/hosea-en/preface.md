@@ -17,11 +17,11 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE PROPHET HOSEA
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="margin-left:6em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
@@ -56,7 +56,7 @@ It has been thought advisable to adopt our common version as the text, and to pu
 
 In making quotations from Scripture, the Author seems to have followed no version, but to have made one of his own; and they are often given paraphrastically, the meaning rather than the words being regarded. The same is often done also with respect to the passages explained, the words being frequently varied. In these instances the Author has been strictly followed throughout in this Translation, and his quotations, and the text when paraphrased, are marked by a single inverted comma.
 
-The Hebrew words which occur in the Lectures are not accompanied with the points, and it has not been deemed necessary to acid them. The words are given in corresponding English characters, with the insertion of such vowels only as are necessary to enunciate them, and these vowels, to distinguish them from the Hebrew vowels, are put in Roman characters. The Hebrew vowels are uniformly given the same, and not with that almost endless variety of sounds to which the points have reduced them. The <span style="color:#008080">ו</span> *vau,* is always represented by u, except when in sonic instances it is followed by a vowel, and then by v. The Hebrews have four vowels corresponding with a, e, u, i, and o, in English.
+The Hebrew words which occur in the Lectures are not accompanied with the points, and it has not been deemed necessary to acid them. The words are given in corresponding English characters, with the insertion of such vowels only as are necessary to enunciate them, and these vowels, to distinguish them from the Hebrew vowels, are put in Roman characters. The Hebrew vowels are uniformly given the same, and not with that almost endless variety of sounds to which the points have reduced them. The <span style="color:#008080">w</span> *vau,* is always represented by u, except when in sonic instances it is followed by a vowel, and then by v. The Hebrews have four vowels corresponding with a, e, u, i, and o, in English.
 
 <!-- PAGE 6 -->
 This work is calculated to be of material help to those engaged in translations. Our Missionaries may derive from it no small assistance, as it gives as literal a version of the Hebrew as can well be made, and contains much valuable criticism, and develops, in a very lucid and satisfactory manner, the drift and meaning of many difficult passages. There is no existing Commentary in which the text is so minutely examined, and so clearly explained. There are also many of the most approved expositions given by others referred to and stated; and the Translator has added, on interesting and difficult passages, what has been suggested by learned critics since the time of the Author.
@@ -71,21 +71,21 @@ It may be useful to subjoin here an account of the time in WHICH THE TWELVE MINO
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">BEFORE THE BABYLONIAN CAPTIVITY</span></p>
 
-<p style="text-align:center" markdown="1">BEFORE CHRIST</p>
+<p style="text-align:center" markdown="1">**BEFORE CHRIST**</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">I.</span> <span style="color:#800000">Jonah</span>,… 856-784. <span style="color:#000080">II.</span> <span style="color:#800000">Amos</span>,… 810-785. <span style="color:#000080">III.</span> <span style="color:#800000">Hosea</span>,… 810-725. 1. <span style="color:#800000">Isaiah</span>,.… 810-698. <span style="color:#000080">IV.</span> <span style="color:#800000">Joel</span>,… 810-660. <span style="color:#000080">V.</span> <span style="color:#800000">Micah</span>,… 758-699. <span style="color:#000080">VI.</span> <span style="color:#800000">Nahum</span>,… 720-698. <span style="color:#000080">VII.</span> <span style="color:#800000">Zephaniah</span>,… 640-609.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**I.* *Jonah**</span>,… 856-784. <span style="color:#000080">**II.* *Amos**</span>,… 810-785. <span style="color:#000080">**III.* *Hosea**</span>,… 810-725. **1**. <span style="color:#800000">**Isaiah**</span>,.… 810-698. <span style="color:#000080">**IV.* *Joel**</span>,… 810-660. <span style="color:#000080">**V.* *Micah**</span>,… 758-699. <span style="color:#000080">**VI.* *Nahum**</span>,… 720-698. <span style="color:#000080">**VII.* *Zephaniah**</span>,… 640-609.</p>
 
-<p style="text-align:center" markdown="1">IMMEDIATELY PREVIOUS TO AND DURING THE CAPTIVITY</p>
+<p style="text-align:center" markdown="1">**IMMEDIATELY PREVIOUS TO AND DURING THE CAPTIVITY**</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** <span style="color:#800000">Jeremiah</span>,… 628-586. <span style="color:#000080">VIII.</span> <span style="color:#800000">Habakkuk</span>,… 612-598. 3. <span style="color:#800000">Daniel</span>,… 606-534. <span style="color:#000080">IX.</span> <span style="color:#800000">Obadiah</span>,… 588-583. 4. <span style="color:#800000">Ezekiel</span>,… 595-536.</p>
+<p style="margin-left:2em;" markdown="1">**2.** <span style="color:#800000">**Jeremiah**</span>,… 628-586. <span style="color:#000080">**VIII.* *Habakkuk**</span>,… 612-598. **3.** <span style="color:#800000">**Daniel**</span>,… 606-534. <span style="color:#000080">**IX.* *Obadiah**</span>,… 588-583. **4.** <span style="color:#800000">**Ezekiel**</span>,… 595-536.</p>
 
-<p style="text-align:center" markdown="1">AFTER THE CAPTIVITY</p>
+<p style="text-align:center" markdown="1">**AFTER THE CAPTIVITY**</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">X.</span> <span style="color:#800000">Haggai</span>,… 520-518. <span style="color:#000080">XI.</span> <span style="color:#800000">Zechariah</span>,… 520-518. <span style="color:#000080">XII.</span> <span style="color:#800000">Malachi</span>,… 436-420.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**X.* *Haggai**</span>,… 520-518. <span style="color:#000080">**XI.* *Zechariah**</span>,… 520-518. <span style="color:#000080">**XII.* *Malachi**</span>,… 436-420.</p>
 
 In the last Volume, the fourth, will be given the two Indices appended to the original work.
 
-<p style="margin-left:2em;" markdown="1">*J.O. THRUSSINGTON, September 1, 1816.*</p>
+<p style="margin-left:2em;" markdown="1">***J.O.*** ***THRUSSINGTON, September 1, 1816.***</p>
 
 <!-- PAGE 8 -->
 
@@ -97,14 +97,14 @@ The Translation, though it be as brief and concise as the idiom of the English l
 
 The arrangement of this Work, now made with some degree of certainty, is as follows:
 
-<p style="text-align:center" markdown="1">The <span style="color:#800000">First</span> Volume is to contain HOSEA; The <span style="color:#800000">Second</span> Volume, JOEL, AMOS, and OBADIAH; The <span style="color:#800000">Third</span> Volume, JONAH, MICAH, and NAHUM; The <span style="color:#800000">Fourth</span> Volume, HABAKKUK, ZEPHANIAH, and HAGGAI; and The <span style="color:#800000">Fifth</span> Volume, ZECHARIAH and MALACHI</p>
+<p style="text-align:center" markdown="1">The <span style="color:#800000">**First**</span> Volume is to contain **HOSEA**; The <span style="color:#800000">**Second**</span> Volume, **JOEL**, **AMOS**, and **OBADIAH**; The <span style="color:#800000">**Third**</span> Volume, **JONAH**, **MICAH**, and **NAHUM**; The <span style="color:#800000">**Fourth**</span> Volume, **HABAKKUK**, **ZEPHANIAH**, and **HAGGAI**; and The <span style="color:#800000">**Fifth**</span> Volume, **ZECHARIAH** and **MALACHI**</p>
 
 On this account, the Volumes cannot be all of equal size, some being considerably above, and some below, the average extent of the present Series of CALVIN’S WORKS, being 500 pages on the average. To avoid such inequality, it would have been needful to divide some of the Books — a thing by no means desirable in any case, and which has been studiously shunned in all the other Commentaries.
 
 <!-- PAGE 9 -->
 In addition to what was originally contemplated, there will be given at the end of each Book a continuous LITERAL TRANSLATION OF CALVIN’S LATIN VERSION, as modified by his Commentary; and the Editor is requested to state that a similar plan is to be observed in all the other Prophetical Books of the Old Testament.
 
-<p style="margin-left:2em;" markdown="1">*EDITOR. THRUSSINGTON, September 1846.*</p>
+<p style="margin-left:2em;" markdown="1">***EDITOR.*** ***THRUSSINGTON, September 1846.***</p>
 
 <!-- PAGE 10 -->
 
@@ -114,7 +114,7 @@ In addition to what was originally contemplated, there will be given at the end 
 
 <p style="text-align:center" markdown="1">*To The Most Serene And Most Mighty*</p>
 
-<p style="text-align:center" markdown="1">KING GUSTAVUS, <span style="color:#800000">[^f1Ά</span></p>
+<p style="text-align:center" markdown="1">**KING GUSTAVUS,** <span style="color:#800000">**[^f1Ά**</span></p>
 
 <p style="text-align:center" markdown="1">*The King Of The Goths And Vandals.*</p>
 
@@ -140,7 +140,7 @@ At the same time, the principal thing with me is this, that he hath consecrated 
 
 May God, O most serene king! keep your Majesty long in prosperity, and continue to enrich you with all kinds of blessings. May He guide you by his Spirit, until, having finished your course, and migrating from earth to the celestial kingdom, you may leave alive behind you the most serene king Heric, your successor, and his most illustrious brothers, John Magnus and Charles: and may the same grace of God, after your death, appear eminent in them, as well as fraternal and unanimous concord.
 
-<p style="margin-left:2em;" markdown="1">*Geneva, January 26, 1559.*</p>
+<p style="margin-left:2em;" markdown="1">***Geneva, January 26, 1559.***</p>
 
 <!-- PAGE 14 -->
 
@@ -155,7 +155,7 @@ Let, then, these explanations on Hosea go forth, which it is not in my power to 
 
 But it would have been incredible to me, had I not clearly seen, when the day after they read the whole to me, that what they had written differed nothing from my discourse. It would have perhaps been better had more liberty been taken to cut off redundancies, to bring the arrangement into better order, and to use, in some instances, more distinct or graceful language: but I do not interpose my judgment; this only I wish to witness with my own hand, That they have taken down what they have heard from my lips with so much fidelity, that I perceive no change. Farewell, Christian reader, whoever thou be, who desirest with me to make progress in celestial truth.
 
-<p style="margin-left:2em;" markdown="1">*GENEVA, February 13, 1557.*</p>
+<p style="margin-left:2em;" markdown="1">***GENEVA, February 13, 1557.***</p>
 
 <!-- PAGE 16 -->
 
@@ -185,7 +185,7 @@ But that we may at length make an end, it remains, Christian Readers, that we re
 
 If we shall understand that these COMMENTARIES will be acceptable to you, though the work is the fruit of anothers labor, we shall yet engage, God favoring us, to do the same as to the remaining Prophets. When he shall undertake to lecture on them, it is our purpose to follow him with no less diligence, and take down what remains to the end. In the meantime, enjoy these. Farewell.
 
-<p style="margin-left:2em;" markdown="1">*Geneva, February 14, 1557.*</p>
+<p style="margin-left:2em;" markdown="1">***Geneva, February 14, 1557.***</p>
 
 <!-- PAGE 21 -->
 
@@ -202,11 +202,11 @@ Thus it happened that these Lectures came forth to the light; and what great ben
 
 But that I may now say nothing of his many Commentaries, he has so surpassed himself in these Lectures, that one can hardly persuade himself that a style so elegant, and so per-feet in all its parts, could have flowed extemporaneously, for he explains the weightiest sentiments in suitable words, clearly handles obscure things, clothes them with various ornaments, and so proceeds in his teaching, that the language he uses, spontaneously poured forth, seems to have been long and much labored. But of all these things I prefer that a judgment should be formed by a perusal, rather than that I should longer detain readers by a lengthened discussion of particulars. Then farewell all ye who hope for some benefit from these Lectures.
 
-<p style="margin-left:2em;" markdown="1">*Geneva, February 1, 1559.*</p>
+<p style="margin-left:2em;" markdown="1">***Geneva, February 1, 1559.***</p>
 
 <!-- PAGE 23 -->
 
-<p style="text-align:center" markdown="1">THE COMMENTARIES OF</p>
+<p style="text-align:center" markdown="1">**THE COMMENTARIES OF**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">JOHN CALVIN</span></p>
 
@@ -214,7 +214,7 @@ But that I may now say nothing of his many Commentaries, he has so surpassed him
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">HOSEA</span></p>
 
-<p style="text-align:center" markdown="1">THE PRAYER WHICH JOHN CALVIN WAS WONT TO USE AT THE BEGINNING OF HIS LECTURES:</p>
+<p style="text-align:center" markdown="1">**THE PRAYER WHICH JOHN CALVIN WAS WONT TO USE AT** **THE BEGINNING OF HIS LECTURES:**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">May the Lord grant, that we may engage in contemplating the</span> <span style="color:#000080">mysteries of his heavenly wisdom with really increasing devotion,</span> <span style="color:#000080">to his glory and to our edification. Amen.</span></p>
 
@@ -222,7 +222,11 @@ But that I may now say nothing of his many Commentaries, he has so surpassed him
 
 I HAVE undertaken to expound The Twelve Minor Prophets. They have been long ago joined together, and their writings have been reduced to one volume; and for this reason, lest by being extant singly in our hands, they should, as it often happens, disappear in course of time on account of their brevity.
 
-Then the Twelve Minor Prophets form but one volume. The first of them is HOSEA, who was specifically destined for the kingdom of Israel: MICAH and ISAIAH prophesied at the same time among the Jews. But it ought to be noticed, that this Prophet was a teacher in the kingdom of Israel, as Isaiah and Micah were in the kingdom of Judah. The Lord doubtless intended to employ him in that part; for had he prophesied among the Jews, he would not have complimented them; since the state of things was then very corrupt, not only in Judea, but also at Jerusalem, though the palace and sanctuary of God were there. We see how sharply and severely Isaiah and Micah reproved the people; and the style of our Prophet would have been the same had the Lord employed his service among the Jews: <!-- PAGE 24 --> but he followed his own call. He knew what the Lord had intrusted to him; he faithfully discharged his own office. The same was the case with the Prophet Amos: for the Prophet Amos sharply inveighs against the Israelites, and seems to spare the Jews; and he taught at the same time with Hosea.
+Then the Twelve Minor Prophets form but one volume. The first of them is HOSEA, who was specifically destined for the kingdom of Israel: MICAH and ISAIAH prophesied at the same time among the Jews. But it ought to be noticed, that this Prophet was a teacher in the kingdom of Israel, as Isaiah and Micah were in the kingdom of Judah. The Lord doubtless intended to employ him in that part; for had he prophesied among the Jews, he would not have complimented them; since the state of things was then very corrupt, not only in Judea, but also at Jerusalem, though the palace and sanctuary of God were there. We see how sharply and severely Isaiah and Micah reproved the people; and the style of our Prophet would have been the same had the Lord employed his service among the Jews:
+
+<!-- PAGE 24 -->
+
+but he followed his own call. He knew what the Lord had intrusted to him; he faithfully discharged his own office. The same was the case with the Prophet Amos: for the Prophet Amos sharply inveighs against the Israelites, and seems to spare the Jews; and he taught at the same time with Hosea.
 
 We see, then, in what respect these four differ: ISAIAH and MICAH address their reproofs to the kingdom of Judah; and HOSEA and AMOS only assail the kingdom of Israel, and seem to spare the Jews. Each of them undertook what God had committed to his charge; and so each confined himself within the limits of his own call and office. For if we, who are called to instruct the Church, close our eyes to the sins which prevail in it, and neglect those whom the Lord has appointed to be taught by us, we confound all order; since they who are appointed to other places must attend to those to whom they have been sent by the Lord’s call.
 

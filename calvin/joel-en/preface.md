@@ -17,11 +17,11 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE PROPHET JOEL
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="margin-left:6em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
@@ -29,7 +29,7 @@ next_label: "Chapter 1"
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">OF JOHN CALVIN</span></p>
 
-<p style="text-align:center" markdown="1">ON THE</p>
+<p style="text-align:center" markdown="1">**ON THE**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">PROPHET JOEL</span></p>
 
@@ -80,7 +80,7 @@ Scripture or any other writing. The best expositor in this respect is no doubt t
 
 It is well known that these LECTURES were delivered extempore, and were taken down by some of those who heard them; and we have them now as thus taken down, and afterwards corrected by CALVIN. This circumstance accounts for the occasional defect of order and for occasional repetitions. But these drawbacks seem to have been more than compensated by the freshness and vigor, the life and animation which these spontaneous effusion of his mind exhibit. In none of his other writings, as it appears to the Editor, has CALVIN shone forth with so much lustre as an able, clear, plain, and animated an Expounder, as in these LECTURES. There is a flow and energy to be found in them not equaled in those productions which he composed in private, and finished with more careful attention to order and style. When the mind is well stored and the memory retentive, as was the case in no ordinary degree with CALVIN, a public auditory has usually the effect of calling into action all the powers of the mind; and, as frequently in the present instance, the consequence is, that the finest and the most striking thoughts are elicited, and are expressed in a language the most energetic, calculated to produce the deepest impressions.
 
-<p style="margin-left:2em;" markdown="1">*J.O. Thrussington November, 1846.*</p>
+<p style="margin-left:2em;" markdown="1">***J.O.*** ***Thrussington November, 1846.***</p>
 
 <!-- PAGE 8 -->
 

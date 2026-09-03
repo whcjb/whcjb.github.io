@@ -9,15 +9,15 @@
 
 <p style="text-align:right;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CALVIN’S PREFACE</span></p>
 
-<p style="text-align:center" markdown="1">TO</p>
+<p style="text-align:center" markdown="1">**TO**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">OBADIAH</span></p>
 
@@ -45,12 +45,17 @@ Now our Prophet shows at the end that God would become the avenger of this cruel
 
 <h2 class="scripture-anchor" id="obadiah-1" data-ref="OBADIAH 1" style="display:none">OBADIAH 1</h2>
 
-<div class="scripture-box" markdown="1">
+<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="ages-code">&lt;310101&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">1</span></p>
 
-<strong>1.</strong> The vision of Obadiah. Thus saith the Lord GOD concerning Edom  [^f3]; We have heard a rumor from the LORD, and an ambassador is sent among the heathen, Arise ye, and let us rise up against her in battle.
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> <strong>1.</strong> The vision of Obadiah. Thus saith the Lord GOD concerning Edom  <sup id="fnref:f3"><a href="#fn:f3" class="footnote">f3</a></sup>; We have heard a rumor from the LORD, and an ambassador is sent among the heathen, Arise ye, and let us rise up against her in battle.</td><td class="scripture-la"><strong>1.</strong> <strong>1.</strong> Visio Obadiae. Sic Dominus Jehova contra Edom, Rumorem audivimus a Jehova, et legatus ad gentes missus est, Surgite et surgamus contra eam ad proelium.</td></tr>
+</tbody>
+</table>
 
-<strong>1.</strong> Visio Obadiae. Sic Dominus Jehova contra Edom, Rumorem audivimus a Jehova, et legatus ad gentes missus est, Surgite et surgamus contra eam ad proelium.
+[^f3]
+{:.scripture-fnref-stub}
 
 </div>
 
@@ -70,17 +75,18 @@ Assyrians, from being friends, became of a sudden enemies, that a war was all in
 
 <h2 class="scripture-anchor" id="obadiah-2-4" data-ref="OBADIAH 2-4" style="display:none">OBADIAH 2-4</h2>
 
-<p style="margin-left:2em;" markdown="1">2 Behold, I have made thee small among the heathen: thou art greatly despised.</p>
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<p class="scripture-ref"><span class="ages-code">&lt;310102&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">2-4</span></p>
 
-<p style="text-align:right;" markdown="1">2 Ecce parvum posui te inter gentes, contemptus tu valde.</p>
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>2.</strong> <strong>2</strong> Behold, I have made thee small among the heathen: thou art greatly despised.</td><td class="scripture-la"><strong>2.</strong> <strong>2</strong> Ecce parvum posui te inter gentes, contemptus tu valde.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> <strong>3</strong> The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?</td><td class="scripture-la"><strong>3.</strong> <strong>3</strong> Superbia cordis tui decepit te, qui habitas in scissuras petrae (vel, rupis;) excelsa habitatio ejus, dicens in corde suo, Quis detrahet me in terram?</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> <strong>4</strong> Though thou exalt thyself as the eagle, and though thou set thy nest among the stars, thence will I bring thee down, saith the LORD.</td><td class="scripture-la"><strong>4.</strong> <strong>4</strong> Si exaltaveris quasi aquila, etsi inter nubes posueris nidum suum, inde ego detraham te, dicit Jehova.</td></tr>
+</tbody>
+</table>
 
-<p style="margin-left:2em;" markdown="1">3 The pride of thine heart hath deceived thee, thou that dwellest in the clefts of the rock, whose habitation is high; that saith in his heart, Who shall bring me down to the ground?</p>
-
-<p style="text-align:right;" markdown="1">3 Superbia cordis tui decepit te, qui habitas in scissuras petrae (vel, rupis;) excelsa habitatio ejus, dicens in corde suo, Quis detrahet me in terram?</p>
-
-<p style="margin-left:2em;" markdown="1">4 Though thou exalt thyself as the eagle, and though thou set thy nest among the stars, thence will I bring thee down, saith the LORD.</p>
-
-<p style="text-align:right;" markdown="1">4 Si exaltaveris quasi aquila, etsi inter nubes posueris nidum suum, inde ego detraham te, dicit Jehova.</p>
+</div>
 
 <!-- PAGE 7 -->
 Jeremiah uses nearly the same words; but the sense of the expression is ambiguous, when he says, ‘Lo, little have I set thee.’ To me it appears probable, that the Prophet reproves the Idumeans, because they became arrogant, as it were, against the will of God, and in opposition to it, when, at the same time, they were confined to the narrow passes of mountains. It is said elsewhere, (Malachi 1:2,) ‘Jacob and Esau, were they not brethren?’ “But I have given to you the inheritance promised to your father Abraham; I have transferred the Idumeans to mount Seir.” Now it is less bearable, if any one be elated with pride, when his condition is not so honorable. I therefore think that the Idumeans are here condemned because they vaunted so much, and arrogated to themselves more than what was right, when they yet were contemptible, when their condition was mean and obscure, for they dwelt on mount Seir. But others think that the punishment, which was impending over them, is here denounced, <span style="color:#800000">*Lo, little have I made thee among the nations,*</span> and Jeremiah says, *‘and contemptible among men’;* he omits the two words, thou and exceedingly; he says only, *‘and contemptible among men’.* But as to the substance, there is hardly any difference. If then we understand that that nation was proud without reason, the sense is evident, that is, that they, like the giants, carried on war against God, that they vaunted themselves, though confined to the narrow passes of mountains. Though I leave to others their own free opinion, I am yet inclined to the former view, while the latter has been adopted nearly by the consent of all; and that is, that God was resolved forcibly to constrain to order those ferocious men, who, for no reason, and even in opposition to nature, are become insolent. But if a different interpretation be more approved, we may say, that the Prophet begins with a threatening, and then subjoins a reason why God determined to diminish and even to destroy them: for though they dwelt on mountains, it was yet a fertile region; and further, they had gathered in course of long time much wealth, when they attained security, when no enemy disturbed them. This then is the reasoning, <span style="color:#800000">*Lo, I have made thee small and contemptible in the mountain,*</span> — and why? <span style="color:#800000">*because the pride of thy heart has deceived thee*</span>; and Jeremiah adds, terror [^f5], although some render <span style="color:#008080">˚txlpt</span> *taphlatastae*, image; but this seems not appropriate. Jeremiah then, I doubt not, mentions terror in the first place; for it almost ever happens, that the proud strike others with fear: such then were the Idumeans.
@@ -94,7 +100,7 @@ And yet there was not wanting a reason why the Idumeans were thus insolent, as t
 
 And hence it follows, <span style="color:#800000">*The height is his habitation, that is, he dwells in lofty places; and hence he says in his heart, Who shall draw me down to the ground?*</span> He afterwards subjoins what I have already stated, — that though their region was exceedingly well fortified, yet the Idumeans were greatly deceived, and indulged themselves in vain delusions, “If thou shouldest raise up thy seat, he says, <span style="color:#800000">*like the eagle*</span>*”,* — literally, ‘If thou shouldest rise as the eagle,’ *— “and if thou shouldest among the clouds*  [^f8] set and nest, I will thence draw thee down, saith Jehovah”. We now see that the Prophet did not without reason deride the confidence with which the Idumeans were inflated, by setting up their fortresses in opposition to God: for it is the greatest madness for men to rely on their own power and to despise God himself. At the same time he could, as it were, easily dissipate by one blast every idea of defense or of power that is in us; but this subject will be more fully handled by us tomorrow.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as thou seest us to be on every side at</span> <span style="color:#000080">this day beset by so many enemies, even by those who constantly</span></p>
 
@@ -110,14 +116,9 @@ We observed in our yesterday’s Lecture, that it nothing avails the ungodly, wh
 
 <h2 class="scripture-anchor" id="obadiah-5" data-ref="OBADIAH  5" style="display:none">OBADIAH  5</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310105&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">5</span></p>
+<p style="margin-left:2em;" markdown="1">**5.** If thieves came to thee, if robbers by night, (how art thou cut off!) would they not have stolen till they had enough? if the grapegatherers came to thee, would they not leave some grapes?</p>
 
-<strong>5.</strong> If thieves came to thee, if robbers by night, (how art thou cut off!) would they not have stolen till they had enough? if the grapegatherers came to thee, would they not leave some grapes?
-
-<strong>5.</strong> An fures venerunt ad te? An praedones nocturni? Quomodo in silentium redactus es? (vel, quomodo consumptus es?) annon furati essent sufficientiam suam? An vindemiatores ad te venerunt? Annon reliquissent racemos?
-
-</div>
+<p style="text-align:right;" markdown="1">**5.** An fures venerunt ad te? An praedones nocturni? Quomodo in silentium redactus es? (vel, quomodo consumptus es?) annon furati essent sufficientiam suam? An vindemiatores ad te venerunt? Annon reliquissent racemos?</p>
 
 The Prophet shows in this verse that the calamity with which God was resolved to afflict the Idumeans would not be slight, for nothing would be left among them; and he amplifies what he says by a comparison. When one is plundered of his property by thieves, he grieves, that what he had acquired by much labor through life, has been in one moment taken from him: and when any one has spent labor and expense in cultivating his vineyard, and another takes away its fruit, he complains of his great misfortune, that he had lost his property and big labor in the cultivation of his vineyard, while another devours its fruit. But the Prophet intimates that God would not be content with such kind of punishment as to the Idumeans.
 
@@ -133,14 +134,9 @@ But some regard the verb <span style="color:#008080">htymdn</span> *nudamite* as
 
 <h2 class="scripture-anchor" id="obadiah-6" data-ref="OBADIAH 6" style="display:none">OBADIAH 6</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310106&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">6</span></p>
+<p style="margin-left:2em;" markdown="1">**6.** How are the things of Esau searched out! how are his hidden things sought up!</p>
 
-<strong>6.</strong> How are the things of Esau searched out! how are his hidden things sought up!
-
-<strong>6.</strong> Quomodo quaesita sunt Esau, pervestigata abscondita ejus?
-
-</div>
+<p style="text-align:right;" markdown="1">**6.** Quomodo quaesita sunt Esau, pervestigata abscondita ejus?</p>
 
 He confirms the former sentence, — that the Idumeans in vain trusted that their riches would be safe, because they had hidden and deep recesses. Even when a country is plundered by enemies, the conquerors dare not to come to places of danger; when there are narrow passes, they avoid them, for they think that there is there some evil design. Hence conquerors, fearing hidden places, plunder only those which are open, and always consider well whether their advance is safe: but Idumea, as we have said, had hidden recesses, for its rocks were almost inaccessible, and there were many conveniences there for hiding and concealing its riches. But the Prophet says, that all this would be useless: and that he might more effectually rouse them, he speaks with astonishment, as of something incredible. <span style="color:#800000">*How have been sought*</span> the things of <span style="color:#800000">*Esau*</span>, and thoroughly searched his hidden places! Who could have thought this? for they might have concealed their treasures in rocks and caverns, and thence repelled their enemies. But in vain would be all their attempts: how could this possibly be? Here then he awakens the minds of men, that they might acknowledge the judgment of God; and at the same time he laughs to scorn the vain confidence with which the Idumeans were inflated; and besides, he strengthens the minds of the godly, that they might not doubt but that God would perform what he declares, for he can indeed penetrate even to the lowest deep.
 
@@ -152,18 +148,13 @@ We hence learn, that as men in vain seek hiding places for themselves that they 
 
 <h2 class="scripture-anchor" id="obadiah-7-8" data-ref="OBADIAH 7-8" style="display:none">OBADIAH 7-8</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310107&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">7-8</span></p>
+<p style="margin-left:2em;" markdown="1">**7.** All the men of thy confederacy have brought thee even to the border: the men that were at peace with thee have deceived thee, and prevailed against thee; they that eat thy bread have laid a wound under thee: there is none understanding in him.</p>
 
-<strong>7.</strong> All the men of thy confederacy have brought thee even to the border: the men that were at peace with thee have deceived thee, and prevailed against thee; they that eat thy bread have laid a wound under thee: there is none understanding in him.
+<p style="text-align:right;" markdown="1">**7.** Usque ad terminum expulerunt te omnes viri foederis tui; deceperunt te, praevaluerunt tibi, viri pacifici tui (viri pacis tuae;) viri panis tui posuerunt vulnus sub te: nulla est intelligentia in eo.</p>
 
-<strong>7.</strong> Usque ad terminum expulerunt te omnes viri foederis tui; deceperunt te, praevaluerunt tibi, viri pacifici tui (viri pacis tuae;) viri panis tui posuerunt vulnus sub te: nulla est intelligentia in eo.
+<p style="margin-left:2em;" markdown="1">**8.** Shall I not in that day, saith the LORD, even destroy the wise men out of Edom, and understanding out of the mount of Esau?</p>
 
-<strong>8.</strong> Shall I not in that day, saith the LORD, even destroy the wise men out of Edom, and understanding out of the mount of Esau?
-
-<strong>8.</strong> Annon in die illa, dicit Jehova, perdam sapientes ex Edom? Et intelligentiam e monte Esau? (hoc est, e monte Seir.)
-
-</div>
+<p style="text-align:right;" markdown="1">**8.** Annon in die illa, dicit Jehova, perdam sapientes ex Edom? Et intelligentiam e monte Esau? (hoc est, e monte Seir.)</p>
 
 <!-- PAGE 14 -->
 Here the Prophet expresses the manner in which God would punish the Idumeans: trusting in their confederacies, they despised God, as we have already had to observe. The Prophet now shows that it is in the power of God to change the minds of men, so that they who were their friends being suddenly inflamed with rage, would go forth to destroy the Idumeans. Seeing then that they regarded the Assyrians not only as a shield to them, but also as a defense against God himself, the Prophet here declares that when it would be God’s purpose to punish them, there would be no need to send to a distance for agents or instruments to execute his vengeance; for he would arm the Assyrians themselves and the Chaldeans, inasmuch as he could turn the hearts of men as he pleased. We now see the Prophet’s meaning; for he here takes away and shakes off the vain confidence of the Idumeans, that they might not harden themselves for being fortified by confederacies and for having powerful friends, for the Lord would turn friends into enemies. <span style="color:#800000">*To thy border*</span>, he says, <span style="color:#800000">*have they driven thee*</span>. <span style="color:#008080">jlç</span> *shilach* is properly to send forth or to throw away; some render it, they have followed; as though the Prophet here spoke of the neighboring nations, and according to their view the meaning is, “However much thy neighbors may love thee, yet nothing will they show of this love, except that they will follow thee with feigned tears, when thine enemies shall lead thee away captive.” But this is a strained exposition, and corresponds not with the context. The Prophet then describes here, I doubt not, the change, such as would take place, that the Idumeans might know, that they trusted in vain in their power and defenses. <span style="color:#800000">*The men of thy covenant*</span>, he says, <span style="color:#800000">*have driven thee away*</span>; as though he said, “See what thou gainest in anxiously seeking the friendship of those who will yet be thy enemies; hadst thou remained quiet in thy clefts, it would have been much better for thee: but now thou runnest to Assyria and Chaldea, and this will be the cause of thy ruin. Hence the men of thy covenant shall banish thee to the border: but if thou hadst had no friendship nor commerce with them, thou mightest have lived safely in thy recesses, no one would have driven thee out: just, then, has been the reward of thy ambition, for having thus resorted to the Assyrians and Chaldeans.”
@@ -201,9 +192,9 @@ When he says, <span style="color:#800000">*from mount Esau*</span>, he means mou
 
 <h2 class="scripture-anchor" id="obadiah-9" data-ref="OBADIAH 9" style="display:none">OBADIAH 9</h2>
 
-<p style="margin-left:2em;" markdown="1">9 And thy mighty men, O Teman, shall be dismayed, to the end that every one of the mount of Esau may be cut off by slaughter.</p>
+<p style="margin-left:2em;" markdown="1">**9** And thy mighty men, O Teman, shall be dismayed, to the end that every one of the mount of Esau may be cut off by slaughter.</p>
 
-<p style="text-align:right;" markdown="1">9 Et deficient (vel, frangentur) fortes tui, Theman, ut excidatur vir e monte Esau prae occisione (vel, quia excidetur; <span style="color:#008080">ˆ[ml</span> enim postest duobis modis exponi.)</p>
+<p style="text-align:right;" markdown="1">**9** Et deficient (vel, frangentur) fortes tui, Theman, ut excidatur vir e monte Esau prae occisione (vel, quia excidetur; <span style="color:#008080">ˆ[ml</span> enim postest duobis modis exponi.)</p>
 
 The Prophet, after having spoken of one kind of God’s vengeance, adds another, — that he would break whatever there was of strength in Idumea: and thus he shows that the courage and strength of men, no less than their understanding, are in the hand of God. As then God dissipates and destroys, whenever it pleases him, whatever wisdom there may be in men, so also he enervates and breaks down their hearts: in a word, he deprives them of all strength, so that they fail and come to nothing of themselves. Were they who are proud of their strength and counsels rightly to consider this, they would at length learn to submit themselves in true humility to God. But this truth is what the world cannot be made to believe: yet God shows to us here, as in a picture, that however men may flourish for a time, they would immediately vanish, were not he to sustain them, and to support his gifts in them, and keep them entire; and, especially, that empty smoke is everything, that seems to be understanding and strength in men; for the Lord can easily take away both, whensoever it may please him.
 
@@ -215,16 +206,11 @@ We ought therefore carefully to observe what he says here, <span style="color:#8
 
 <h2 class="scripture-anchor" id="obadiah-10-11" data-ref="OBADIAH 10-11" style="display:none">OBADIAH 10-11</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310110&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">10-11</span></p>
+**10.** For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.
 
-<strong>10.</strong> For thy violence against thy brother Jacob shame shall cover thee, and thou shalt be cut off for ever.
+<p style="margin-left:2em;" markdown="1">**10.** Propter oppressionem fratris tui Jacob, operiet te opprobrium, et excideris in perpetuum. **11.** In the day that thou stoodest on the other side, in the day that the strangers carried away captive his forces, and foreigners entered into his gates, and cast lots upon Jerusalem, even thou wast as one of them.</p>
 
-</div>
-
-<p style="margin-left:2em;" markdown="1">**10.** Propter oppressionem fratris tui Jacob, operiet te opprobrium, et excideris in perpetuum. 11. In the day that thou stoodest on the other side, in the day that the strangers carried away captive his forces, and foreigners entered into his gates, and cast lots upon Jerusalem, even thou wast as one of them.</p>
-
-<p style="text-align:right;" markdown="1">11. Die quo stabas ex opposito, die quo alieni auferebant substantiam ejus, et extranei ingressi sunt portas ejus, et super Jerusalem miserunt sortem, etiam tu quasi unus ex illis.</p>
+<p style="text-align:right;" markdown="1">**11.** Die quo stabas ex opposito, die quo alieni auferebant substantiam ejus, et extranei ingressi sunt portas ejus, et super Jerusalem miserunt sortem, etiam tu quasi unus ex illis.</p>
 
 <!-- PAGE 20 -->
 The Prophet here sets forth the reason why God would deal so severely and dreadfully with the Idumeans. Had he simply prophesied of their destruction, it would have been an important matter; for the Jews might have thereby known that their ruin was not chance, but the scourge of God; they might have known that they themselves were with others chastised by God, and this would have been a useful instruction to them: but what brought them the chief consolation was to hear, that they were so dear to God that he would undertake the defense of their wrongs and avenge them, that he would have a regard for their safety. Hence, when they heard that God, because he loved them, would punish the Idumeans, it was doubtless an invaluable comfort to them in their calamities. To this subject the Prophet now comes.
@@ -238,7 +224,7 @@ As then, he says, thou hast been so violent against thy brother, <span style="co
 
 We now perceive what the Prophet meant by saying, <span style="color:#800000">*In the day in which thou didst stand on the opposite side*</span>: it is then as it were, an explanation of the former sentence, lest the Idumeans should make a false excuse by objecting that they had not been violent against their brethren. It was indeed the worst oppression, when they stood over against them; though they were not armed they yet took pleasure in a spectacle so mournful; besides they not only were idle spectators of the calamity of their brethren but were also as it were a part Of their enemies. “Hast thou then not been as one of them?” I shall not proceed farther now.
 
-<p style="text-align:center" markdown="1">PRAYER</p>
+<p style="text-align:center" markdown="1">**PRAYER**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant Almighty God, that as thou hast once received us under thy</span> <span style="color:#000080">protection, and hast promised that our salvation would be so much</span> <span style="color:#000080">cared for by thee, that whatever Satan and the whole world may</span> <span style="color:#000080">contrive, thou wilt yet keep us safe and secure, — O grant, that</span> <span style="color:#000080">being endued with perseverance, we may remain within our</span> <span style="color:#000080">borders, and be not carried away here and there either by craft or</span> <span style="color:#000080">by wicked counsels; but be thou pleased to keep us in genuine</span> <span style="color:#000080">integrity, that being protected by thy help, we may, by experience,</span> <span style="color:#000080">find that true which thou declarest in thy word, that they who call</span> <span style="color:#000080">on thee in truth shall ever know thee to be propitious to them: and</span></p>
 
@@ -252,22 +238,17 @@ We now perceive what the Prophet meant by saying, <span style="color:#800000">*I
 
 <h2 class="scripture-anchor" id="obadiah-12-14" data-ref="OBADIAH 12-14" style="display:none">OBADIAH 12-14</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310112&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">12-14</span></p>
+**12.** But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Judah in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress.
 
-<strong>12.</strong> But thou shouldest not have looked on the day of thy brother in the day that he became a stranger; neither shouldest thou have rejoiced over the children of Judah in the day of their destruction; neither shouldest thou have spoken proudly in the day of distress.
-
-</div>
-
-<p style="text-align:right;" markdown="1">12. Et non aspicias in die fratris tui, in die alientationis ejus, et ne gaudeas super filiis Jehudah die exitii corum, et ne magnifices os tuum in die afflictionis (hoc est, ne magnifice loquaris.)</p>
+<p style="text-align:right;" markdown="1">**12.** Et non aspicias in die fratris tui, in die alientationis ejus, et ne gaudeas super filiis Jehudah die exitii corum, et ne magnifices os tuum in die afflictionis (hoc est, ne magnifice loquaris.)</p>
 
 <p style="margin-left:2em;" markdown="1">**13.** Thou shouldest not have entered into the gate of my people in the day of their calamity; yea, thou shouldest not have looked on their affliction in the day of their calamity, nor have laid hands on their substance in the day of their calamity;</p>
 
-<p style="text-align:right;" markdown="1">13. Ne intres in portam populi mei die exitii eorum, ne aspicias etiam tu in afflictione ejus, (in malo ejus,) in die exitii ejus, et ne extendas (manum subaudiendum est) in substantiam ejus in die exitii ejus;</p>
+<p style="text-align:right;" markdown="1">**13.** Ne intres in portam populi mei die exitii eorum, ne aspicias etiam tu in afflictione ejus, (in malo ejus,) in die exitii ejus, et ne extendas (manum subaudiendum est) in substantiam ejus in die exitii ejus;</p>
 
 <p style="margin-left:2em;" markdown="1">**14.** Neither shouldest thou have stood in the crossway, to cut off those of his that did escape; neither shouldest thou have delivered up those of his that did remain in the day of distress.</p>
 
-<p style="text-align:right;" markdown="1">14. Et ne stes super exitum (vel, lacerationem, confractionem,) ad perdendum eos qui evaserint, et ne tradas (vel, concludas) residuos ejus in dic afflictionis.</p>
+<p style="text-align:right;" markdown="1">**14.** Et ne stes super exitum (vel, lacerationem, confractionem,) ad perdendum eos qui evaserint, et ne tradas (vel, concludas) residuos ejus in dic afflictionis.</p>
 
 The Prophet enumerates here the kinds of cruelty which the Idumeans exercised towards the Church of God, the children of Abraham, their own kindred. But he speaks by way of prohibition; it is then a personification, by which the Prophet introduces God as the speaker, as though he taught and admonished them on the duties of human kindness. Engraven, indeed, on their hearts ought all these to have been, on account of which he now reproaches them; for by forgetting humanity they had departed from everything right which nature requires. God indeed did not commence by instructing or teaching the Idumeans what were their duties; but the
 
@@ -295,14 +276,9 @@ We now understand the Prophet’s meaning; — that the Idumeans could not compl
 
 <h2 class="scripture-anchor" id="obadiah-15" data-ref="OBADIAH 15" style="display:none">OBADIAH 15</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310115&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">15</span></p>
+<p style="margin-left:2em;" markdown="1">**15.** For the day of the LORD is near upon all the heathen: as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head.</p>
 
-<strong>15.</strong> For the day of the LORD is near upon all the heathen: as thou hast done, it shall be done unto thee: thy reward shall return upon thine own head.
-
-<strong>15.</strong> Quia propinquus dies Jehovae super omnes gentes; sicut fecisti fiet tibi; merces tua revertetur in caput tuum.
-
-</div>
+<p style="text-align:right;" markdown="1">**15.** Quia propinquus dies Jehovae super omnes gentes; sicut fecisti fiet tibi; merces tua revertetur in caput tuum.</p>
 
 By saying that <span style="color:#800000">*the day of Jehovah was nigh upon all nations*</span>, the Prophet may be regarded as reasoning from the greater to the less: “If God will not spare other nations, how canst thou escape his hand?” In a like manner does Jeremiah speak in chapter 49, (Jeremiah 49:12) he addresses the Idumeans in these words, ‘Behold, they shall drink of the cup, who have not been by judgment condemned to drink; and shalt thou not taste? by drinking thou shalt drink to the very dregs. He shows then that the Idumeans deserved a double vengeance; for if indeed they were compared with the Assyrians and Chaldeans, the fault of the latter would appear small: the Chaldeans might pretend some causes for the war, they were aliens, they were, in short, professed enemies; but the Idumeans were neighbors and kindred. The same thing might be also said of other nations. But the words may be explained in a simpler manner; and that is, that God would not only take vengeance on one or two nations, but on all. “See,” he says, “a change will take place not only in one corner, but in the whole world. The Lord will thus show that he is the judge of the whole earth. Hence it follows, that the Idumeans also must render an account, for God has resolved to execute judgment on all nations; no one whatever shall be passed by.”
 
@@ -320,14 +296,9 @@ This sentence is worthy of being noticed: for when God leaves the innocent to th
 
 <h2 class="scripture-anchor" id="obadiah-16" data-ref="OBADIAH 16" style="display:none">OBADIAH 16</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310116&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">16</span></p>
+<p style="margin-left:2em;" markdown="1">**16.** For as ye have drunk upon my holy mountain, so shall all the heathen drink continually, yea, they shall drink, and they shall swallow down, and they shall be as though they had not been.</p>
 
-<strong>16.</strong> For as ye have drunk upon my holy mountain, so shall all the heathen drink continually, yea, they shall drink, and they shall swallow down, and they shall be as though they had not been.
-
-<strong>16.</strong> Quia sicuti bibistis super montem sanctum meum, bibent omnes gentes jugiter, bibent (inquam) et sorbebunt; et erunt quasi non sint.
-
-</div>
+<p style="text-align:right;" markdown="1">**16.** Quia sicuti bibistis super montem sanctum meum, bibent omnes gentes jugiter, bibent (inquam) et sorbebunt; et erunt quasi non sint.</p>
 
 Here Obadiah proceeds farther and says, that God would revenge the wrongs done to his Church. The declaration in the last verse was general, “Behold, on all the nations the day of Jehovah is nigh; as then thou hast done, God will repay thee:” but now he shows that this would be, because God purposed to defend his own servants, (*clientes* — clients;)and as they had been cruelly treated, he would become the avenger of their wrongs; As then <span style="color:#800000">*ye have drunk on my holy mountain*</span>, etc. The Prophet, I have no doubt, taking a part for the whole, included in the word drink their triumphs and rejoicings. As then ye have rejoiced on my holy mountain, so also all the nations shall *drink* and continue their excess; <span style="color:#800000">*they shall drink up*</span>, so that ye shall utterly perish. But the Prophet appears to me evidently to add here a proof of their avariciousness. He had shortly before accused the Idumeans of having taken away a part of the spoil, together with the foreign nations, when the miserable Jews were plundered. So also, he says now, <span style="color:#800000">*Ye have drunk*</span>, in token of triumph and rejoicing.
 
@@ -336,14 +307,9 @@ Here Obadiah proceeds farther and says, that God would revenge the wrongs done t
 
 <h2 class="scripture-anchor" id="obadiah-17" data-ref="OBADIAH 17" style="display:none">OBADIAH 17</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310117&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">17</span></p>
+<p style="margin-left:2em;" markdown="1">**17.** But upon mount Zion shall be deliverance, and there shall be holiness; and the house of Jacob shall possess their possessions.</p>
 
-<strong>17.</strong> But upon mount Zion shall be deliverance, and there shall be holiness; and the house of Jacob shall possess their possessions.
-
-<strong>17.</strong> Et in monte Sion erit evasio, et erit sanctitas (nempe mons ipse;) et possidebit domus Jacob possessiones suas (alii vertunt, eos a quibus possidebantur.
-
-</div>
+<p style="text-align:right;" markdown="1">**17.** Et in monte Sion erit evasio, et erit sanctitas (nempe mons ipse;) et possidebit domus Jacob possessiones suas (alii vertunt, eos a quibus possidebantur.</p>
 
 Here the Prophet promises deliverance to the Jews; for other consolations would have been of no great moment, had they, who then were perishing, no hope of being some time restored to safety. The Jews might indeed have objected, and said, “What is it to us, though the Lord may avenge our wrongs? Should the Idumeans be destroyed for our sake, what profit will that be to us? We are in the meantime destroyed and have no hope of deliverance.” The Prophet here meets this objection, and says, <span style="color:#800000">*In mount Zion shall be escape*</span>. Though then the Idumeans had attempted to intercept all outlets, as it has been before mentioned, yet God promises here that there would be an escape in mount Zion: he says not, from mount Zion, but in the very mountain. What does this mean? even that God would restore those who might seem then to be lost. Then Obadiah clearly promises that there would be a restoration of the Church.
 
@@ -359,14 +325,9 @@ He says that mount Zion would *be holiness* or holy, by which he means that God 
 
 <h2 class="scripture-anchor" id="obadiah-18" data-ref="OBADIAH 18" style="display:none">OBADIAH 18</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310118&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">18</span></p>
+<p style="margin-left:2em;" markdown="1">**18.** And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for the LORD hath spoken it.</p>
 
-<strong>18.</strong> And the house of Jacob shall be a fire, and the house of Joseph a flame, and the house of Esau for stubble, and they shall kindle in them, and devour them; and there shall not be any remaining of the house of Esau; for the LORD hath spoken it.
-
-<strong>18.</strong> Et erit domus Jacob ignis, et domus Joseph in flammam (flamma, ut respondeat,) et domus Esau erit palea; et ardebunt in ipsis et consument (vorabunt) eos; et non erit quidquam residuum domui Esau, quia Jehova loquutus est.
-
-</div>
+<p style="text-align:right;" markdown="1">**18.** Et erit domus Jacob ignis, et domus Joseph in flammam (flamma, ut respondeat,) et domus Esau erit palea; et ardebunt in ipsis et consument (vorabunt) eos; et non erit quidquam residuum domui Esau, quia Jehova loquutus est.</p>
 
 Here again the Prophet meets a doubt, which might come into the mind of each of them; for the Idumeans were flourishing, and their condition was independent, when the Israelites as well as the Jews were led into exile, and Jerusalem with its temple was destroyed. They might under such circumstances despair; but the Prophet shows, that though for a time the house of Jacob seemed to be dead, yet a fire would be kindled, which would consume the Idumeans, though they were then proud of their power and their wealth, and also of the prosperous issue of the victory over the Jews, for they had been enriched, and well as the Assyrians, by the overthrow of their brethren. A similar mode of speaking Isaiah also adopts; though he directs his discourse, not to the Idumeans, but to others, yet his manner of speaking is the same when he says, that God, the light of Israel, would be a fire and a flame to consume the wicked, (Isaiah 29:6 .)
 
@@ -375,18 +336,13 @@ But this was fulfilled, when the Lord avenged the cruelty of Edom, though the Je
 
 <h2 class="scripture-anchor" id="obadiah-19-20" data-ref="OBADIAH 19-20" style="display:none">OBADIAH 19-20</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310119&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">19-20</span></p>
+**19.** And they of the south shall possess the mount of Esau; and they of the plain the Philistines: and they shall possess the fields of Ephraim, and the fields of Samaria: and Benjamin shall possess Gilead
 
-<strong>19.</strong> And they of the south shall possess the mount of Esau; and they of the plain the Philistines: and they shall possess the fields of Ephraim, and the fields of Samaria: and Benjamin shall possess Gilead
-
-</div>
-
-<p style="text-align:right;" markdown="1">19..Et possidebunt meridiem montis Esau, et planietiem Philistim, et possidebunt agros Ephraim et agros Samariae; et Benjamin possidebit Gilead.</p>
+<p style="text-align:right;" markdown="1">**19.**.Et possidebunt meridiem montis Esau, et planietiem Philistim, et possidebunt agros Ephraim et agros Samariae; et Benjamin possidebit Gilead.</p>
 
 <p style="margin-left:2em;" markdown="1">**20.** And the captivity of this host of the children of Israel shall possess that of the Canaanites, even unto Zarephath; and the captivity of Jerusalem, which is in Sepharad, shall possess the cities of the south.</p>
 
-<p style="text-align:right;" markdown="1">20. Et migratio exercitus hujus filiorum Israel, quod Chananaeorum fuit usque ad Zerphath (vel, qui sunt in Chananaeis,) et migratio Jerusalem, quod in Sepharad, possidebunt (in quam) urbes Australes (vel, meridionales.)  [^f10]</p>
+<p style="text-align:right;" markdown="1">**20.** Et migratio exercitus hujus filiorum Israel, quod Chananaeorum fuit usque ad Zerphath (vel, qui sunt in Chananaeis,) et migratio Jerusalem, quod in Sepharad, possidebunt (in quam) urbes Australes (vel, meridionales.)  [^f10]</p>
 
 <!-- PAGE 34 -->
 The Prophet proceeds with the same subject, — that God would not only gather the remnants of his people from the Babylonian exile, but would restore the exiles, that they might rule far and wide, and that their condition might be better than it was before: for the Prophet, as I think, directs the attention to the first blessing of God, which had been deposited in the hand of Abraham. God had promised to the posterity of Abraham the whole land from Euphrates to the sea. Now this land had never been possessed by the children of Abraham. This happened, as it is well known, through their sloth and ingratitude. David in his time enlarged the borders; but yet he only made those tributaries whom God had commanded to be destroyed. So this blessing had never been fulfilled, because the people put a hindrance in the way. The Prophet now, speaking of the restoration of the Church, tells the people, who would return from exile, that they were to occupy the country which had been promised to their fathers as though he said, “There will come to you a full and complete inheritance.”
@@ -400,14 +356,9 @@ He afterwards adds, <span style="color:#800000">*And the migrations of this host
 
 <h2 class="scripture-anchor" id="obadiah-21" data-ref="OBADIAH 21" style="display:none">OBADIAH 21</h2>
 
-<div class="scripture-box" markdown="1">
-<p class="scripture-ref"><span class="ages-code">&lt;310121&gt;</span><span class="book-name">Obadiah</span> <span class="verse-range">21</span></p>
+<p style="margin-left:2em;" markdown="1">**21.** And saviors shall come up on mount Zion to judge the mount of Esau; and the kingdom shall be the LORD’S.</p>
 
-<strong>21.</strong> And saviors shall come up on mount Zion to judge the mount of Esau; and the kingdom shall be the LORD’S.
-
-<strong>21.</strong> Et ascendent servatores in montem Sion, ad judicandum montem Esau; et erit Jehovae regnum.
-
-</div>
+<p style="text-align:right;" markdown="1">**21.** Et ascendent servatores in montem Sion, ad judicandum montem Esau; et erit Jehovae regnum.</p>
 
 Here the Prophet says, that there are in God’s hand ministers, the labor of whom he employs to preserve his own people. He alludes here, I have no doubt, to the history of the judges. We indeed know that the people of Israel were often so distressed, that their deliverance was almost incredible; and that yet they were also delivered in such a way as to have made it evident that the hand of God had appeared from heaven. Since this then was well known to the Jews, the Prophet here reminds them that God had still in his hand redeemers, whenever it might please him to gather his people. God then shall send *preservers,* even as he did send them formerly to your fathers. They had indeed found true by experience what the Prophet says here, not only once, but more than ten times. This then ought to have served much to confirm this prophecy.
 
@@ -421,7 +372,7 @@ Now he adds, Jehovah’s shall be the kingdom. But as it is certain, that it was
 
 <!-- PAGE 37 -->
 
-<p style="text-align:center" markdown="1">PRAYER.</p>
+<p style="text-align:center" markdown="1">**PRAYER.**</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">Grant, Almighty God, that as we are so scattered in our pilgrimage in this</span> <span style="color:#000080">world, that even a dreadful spectacle is presented to our eyes, when we</span> <span style="color:#000080">see thy Church so miserably rent asunder, O grant, that being endued</span> <span style="color:#000080">with the real power of thy Spirit, and gathered into one, we may so</span> <span style="color:#000080">cultivate brotherly kindness among ourselves, that each may strive to</span> <span style="color:#000080">help another, and at the same time keep our eyes fixed on Christ Jesus;</span> <span style="color:#000080">and though hard contests may await us, may we yet be under his care</span> <span style="color:#000080">and protection, and so exercise patience, that having finished our warfare,</span> <span style="color:#000080">we may at last enjoy that blessed rest, which thou hast promised to us,</span> <span style="color:#000080">and which is laid up for us in heaven, and which has also been purchased</span> <span style="color:#000080">for us by the blood of Christ thy Son, one Lord. Amen.</span></p>
 
@@ -429,7 +380,7 @@ Now he adds, Jehovah’s shall be the kingdom. But as it is certain, that it was
 
 <!-- PAGE 38 -->
 
-<p style="text-align:center" markdown="1">A TRANSLATION</p>
+<p style="text-align:center" markdown="1">**A TRANSLATION**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">OF CALVIN’S VERSION</span></p>
 
@@ -485,33 +436,40 @@ Now he adds, Jehovah’s shall be the kingdom. But as it is certain, that it was
 
 <!-- PAGE 41 -->
 
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">FOOTNOTES</span></p>
-
 <span style="color:#800000">ft1a</span> *Newcome* supposes that he prophesied between the taking of Jerusalem in 587 before Christ and the destruction of Idumea, a few years later, by Nebuchadnezzar. Usher, as quoted by Newcome, places the destruction of Jerusalem in 588 B.C.; and the siege of Tyre by the Babylonians three years later, that is, in 585; and it was during this siege, which lasted thirteen years, that the *Idumeans*, as well as the Sidonians, the Moabites, and the Ammonites, were subdued by the Babylonian power: so that the threatenings contained in this prophecy were soon executed. — *Ed.* <span style="color:#800000">ft2a</span> Expositors are divided in their opinions as to the priority of the two Prophets, and consequently as to whom of the two was the copyist. As the time cannot be ascertained, our only mode of ascertaining this, are the passages themselves as given by each. It is said that Jeremiah has not presented them in so perfect a form as Obadiah, and that in the latter they appear as the naturally connected parts of his subject, and accordant in style and character with the rest of the prophecy. But the matter is of no great importance, and to discuss it can bring no benefit. — *Ed.*
-
-[^f1]:  *Newcome* supposes that he prophesied between the taking of Jerusalem in 587 before Christ and the destruction of Idumea, a few years later, by Nebuchadnezzar.  Usher, as quoted by Newcome, places the destruction of Jerusalem in 588 B.C., and the siege of Tyre by the Babylonians three years later, that is in 585; and it was during this siege, which lasted thirteen years, that the *Idumeans,* as well as the Sidonians, the Moabites, and the Ammonites, were subdued by the Babylonian power: so that the threatenings contained in this prophecy were soon executed.—*Ed.*
-
-[^f2]:  Expositors are divided in their opinions as to the priority of the two Prophets, and consequently as to whom of the two was the copyist. As the time cannot be ascertained, our only mode of ascertaining this, are the passages themselves as given by each.  It is said that Jeremiah has not presented them in so perfect a form as Obadiah, and that in the latter they appear as the naturally connected parts of his subject, and accordant in style and character with the rest of the prophecy. But the matter is of no great importance, and to discuss it can bring no benefit.—*Ed.*
-
+<span style="color:#800000">FT1</span> *Newcome* supposes that he prophesied between the taking of Jerusalem in 587 before Christ and the destruction of Idumea, a few years later, by Nebuchadnezzar.  Usher, as quoted by Newcome, places the destruction of Jerusalem in 588 B.C., and the siege of Tyre by the Babylonians three years later, that is in 585; and it was during this siege, which lasted thirteen years, that the *Idumeans,* as well as the Sidonians, the Moabites, and the Ammonites, were subdued by the Babylonian power: so that the threatenings contained in this prophecy were soon executed.—*Ed.*
 <!-- PAGE 42 -->
+<span style="color:#800000">FT2</span> Expositors are divided in their opinions as to the priority of the two Prophets, and consequently as to whom of the two was the copyist. As the time cannot be ascertained, our only mode of ascertaining this, are the passages themselves as given by each.  It is said that Jeremiah has not presented them in so perfect a form as Obadiah, and that in the latter they appear as the naturally connected parts of his subject, and accordant in style and character with the rest of the prophecy.  But the matter is of no great importance, and to discuss it can bring no benefit.—*Ed.*
+<span style="color:#800000">FT3</span> The Septuagint renders the words, “*to* Edom” — <span style="color:#0000d4">Ταδε λεγει κυριος</span> <span style="color:#0000d4">ὁ Θεὸς τη Ιδουμαία</span> —“Thus saith the Lord God to Idumea;” which is an exact rendering of the original, for it is, <span style="color:#008080">µwdal</span> —“to Edom.”  It was a message from God *to* that people.  May we not hence conclude that this prophecy was *sent to* them by Obadiah?  They are often personally addressed: and this seems to favor such a supposition.  It is indeed true that <span style="color:#008080">l</span> prefixed to a word after the verb, to say or to speak, is often rendered, *of,* or, *concerning;* but it is also rendered by, *to,* meaning that the address is made *to* the person.—*Ed.*
+<span style="color:#800000">FT4</span> Or the two lines may thus be rendered,—
 
-[^f3]:  The Septuagint renders the words, “*to* Edom” — <span style="color:#0000d4">Tade legei kuriov</span> <span style="color:#0000d4">ὁ Θεὸς th Ιδουμαία</span> —“Thus saith the Lord God to Idumea;” which is an exact rendering of the original, for it is, <span style="color:#008080">µwdal</span> —“to Edom.”  It was a message from God *to* that people.  May we not hence conclude that this prophecy was *sent to* them by Obadiah?  They are often personally addressed: and this seems to favor such a supposition.  It is indeed true that <span style="color:#008080">l</span> prefixed to a word after the verb, to say or to speak, is often rendered, *of,* or, *concerning;* but it is also rendered by, *to,* meaning that the address is made *to* the person.—*Ed.*
+<span style="color:#000080">***A rumor have we heard from Jehovah,***</span> <span style="color:#000080">***And a messenger to the nations hath he sent.***</span>
 
-[^f4]:  Or the two lines may thus be rendered,— <span style="color:#000080">*A rumor have we heard from Jehovah,*</span> <span style="color:#000080">*And a messenger to the nations hath he sent.*</span> The verb, to send, is here active; and so it is rendered in the Septuagint. It is indeed passive in the corresponding passage in Jeremiah; but there are several other instances of variety in the expressions used by the two Prophets, though there be in sense a material agreement.—*Ed.*
+The verb, to send, is here active; and so it is rendered in the Septuagint. It is indeed passive in the corresponding passage in Jeremiah; but there are several other instances of variety in the expressions used by the two Prophets, though there be in sense a material agreement.—*Ed.*
+<span style="color:#800000">FT5</span> *Blayney*, for very satisfactory reasons, transfers this word to the preceding verse, and then the passage will be almost literally the same with this of Obadiah.  The 15th, and the beginning of the 16th in Jeremiah 49 may be thus rendered,—
 
-[^f5]:  *Blayney*, for very satisfactory reasons, transfers this word to the preceding verse, and then the passage will be almost literally the same with this of Obadiah.  The 15th, and the beginning of the 16th in Jeremiah 49 may be thus rendered,— <span style="color:#000080">*15. For, behold, small have I made thee among the nations,*</span> <span style="color:#000080">*Contemptible among the men of thy terror,*</span> <span style="color:#000080">*(that is, such as thou didst fear.)*</span> <span style="color:#000080">*16.Deceived thee has the pride of thy heart; etc.—*</span><span style="color:#000080">Ed.</span>
+<span style="color:#000080">***15. For, behold, small have I made thee among the nations,***</span> <span style="color:#000080">***Contemptible among the men of thy terror,***</span> <span style="color:#000080">***(that is, such as thou didst fear.)***</span>
 
-[^f6]:  It is evidently of the past, and not of the future, that this verse speaks. The corresponding passage in Jeremiah is, in our version, rendered in the future tense, but *Blayney* renders it, as it is, in the past tense.  Our version here adopts the past tense in the first line, “I have made,” etc., and the present in the second, “Thou *art,*” etc., contrary to the rule, that when the auxiliary verb is not expressed in the original, the tense of the verbs expressed is to be observed.  The two lines should therefore be thus translated, — <span style="color:#000080">*Behold, small have I made thee among the nations;*</span> <span style="color:#000080">*Despised*</span> <span style="color:#000080">wert</span> <span style="color:#000080">*thou exceedingly.*</span> The reference is, no doubt, as Calvin says, to the poor inheritance assigned to the Edomites, and to the low station they occupied among other nations; and hence their pride and insolence appeared more evident and unreasonable.—*Ed.*
+<span style="color:#000080">***16.Deceived thee has the pride of thy heart; etc.—***</span><span style="color:#000080">**Ed.**</span>
+
+<span style="color:#800000">FT6</span> It is evidently of the past, and not of the future, that this verse speaks. The corresponding passage in Jeremiah is, in our version, rendered in the future tense, but *Blayney* renders it, as it is, in the past tense.  Our version here adopts the past tense in the first line, “I have made,” etc., and the present in the second, “Thou *art,*” etc., contrary to the rule, that when the auxiliary verb is not expressed in the original, the tense of the verbs expressed is to be observed.  The two lines should therefore be thus translated, —
 
 <!-- PAGE 43 -->
 
-[^f7]:  *Blayney* renders the same words in Jeremiah 49:16, “the encirclings of the rock:” but Parkhurst renders them “the cracks, or fissures of the rock.”—*Ed.*
+<span style="color:#000080">***Behold, small have I made thee among the nations;***</span> <span style="color:#000080">***Despised***</span> <span style="color:#000080">**wert**</span> <span style="color:#000080">***thou exceedingly.***</span>
 
-[^f8]:  Literally it is, “among the stars,” <span style="color:#008080">µybkwk ˆyb</span>.—*Ed.*
+The reference is, no doubt, as Calvin says, to the poor inheritance assigned to the Edomites, and to the low station they occupied among other nations; and hence their pride and insolence appeared more evident and unreasonable.—*Ed.*
+<span style="color:#800000">FT7</span> *Blayney* renders the same words in Jeremiah 49:16, “the encirclings of the rock:” but Parkhurst renders them “the cracks, or fissures of the rock.”—*Ed.*
+<span style="color:#800000">FT8</span> Literally it is, “among the stars,” <span style="color:#008080">µybkwk ˆyb</span>.—*Ed.*
+<span style="color:#800000">FT9</span> This word has been by some critics removed to the beginning of the next verse, but as it appears for no sufficient reasons, while indeed there is nothing in the context that requires such a change.—*Ed.*
+<span style="color:#800000">FT10</span> The rendering of the first of these two verses is materially different from our version.  There are difficulties here which are considerable. Our version in the first part follows Septuagint; and others have followed the same, such as *Newcome* and *Henderson*,  though *Junius* and *Tremulius* and *Dathius* have rendered it materially the same with Calvin, and certainly more in consistency with the Hebrew text.  The following may be considered as a literal version of the whole verse:—
 
-[^f9]:  This word has been by some critics removed to the beginning of the next verse, but as it appears for no sufficient reasons, while indeed there is nothing in the context that requires such a change.—*Ed.*
+<span style="color:#000080">***19. And they shall inherit the south, the mount of Esau,***</span> <span style="color:#000080">***And the plain,***</span> <span style="color:#000080">**even**</span> <span style="color:#000080">***that of the Philistines,***</span> <span style="color:#000080">***And they shall inherit the field of Ephraim and the field of Samaria,***</span> <span style="color:#000080">***And of Benjamin, even Gilead.***</span>
 
-[^f10]:  The rendering of the first of these two verses is materially different from our version.  There are difficulties here which are considerable. Our version in the first part follows Septuagint; and others have followed the same, such as *Newcome* and *Henderson*,  though *Junius* and *Tremulius* and *Dathius* have rendered it materially the same with Calvin, and certainly more in consistency with the Hebrew text.  The following may be considered as a literal version of the whole verse:— <span style="color:#000080">*19. And they shall inherit the south, the mount of Esau,*</span> <span style="color:#000080">*And the plain,*</span> <span style="color:#000080">even</span> <span style="color:#000080">*that of the Philistines,*</span> <span style="color:#000080">*And they shall inherit the field of Ephraim and the field of Samaria,*</span> <span style="color:#000080">*And of Benjamin, even Gilead.*</span> The word “to possess” does not convey the meaning of <span style="color:#008080">çry</span>, which means to inherit, or to possess by inheritance, as Junius and Tremelius render it—*haereditario jure possidebunt—*“They shall possess by an hereditary right.” And this exactly corresponds with Calvin’s explanation. Though our version follows the Septuagint in the two first lines, it yet departs from it the two last. But the 20th verse is the most difficult. “Captivity” is more properly “migration” or transmigration, as Calvin renders it. Then follow the words, <span style="color:#008080">larçy ykbl hzjAljh</span>, literally, in my view, “the beginning, this, to the children of Israel.” So the Septuagint takes the word <span style="color:#008080">ljh</span>, as meaning “beginning,” and not “host:” it wants the <span style="color:#008080">w</span> except in three copies, and it always has this, when it means a host. I propose the following translation:— <span style="color:#000080">*And the migration, which commenced with the children of Israel,*</span> <span style="color:#000080">*Shall inherit what the Canaanites had as far as Sarephath;*</span> <span style="color:#000080">*And the migration from Jerusalem, which are in Saphrad,*</span> <span style="color:#000080">*The cities of the south.*</span> The latter verse is a fuller explanation of the former; and, as is the case commonly in Hebrew, when two things previously mentioned are referred to, the order is reversed, the last particular is mentioned first, so it is here. The verb “inherit” is in the last clause in Hebrew; but the idiom of our language requires it to be in the first.—*Ed.*
-
+The word “to possess” does not convey the meaning of <span style="color:#008080">çry</span>, which means to inherit, or to possess by inheritance, as Junius and Tremelius render it—*haereditario jure possidebunt—*“They shall possess by an hereditary right.”  And this exactly corresponds with Calvin’s explanation.  Though our version follows the Septuagint in the two first lines, it yet departs from it the two last.
 <!-- PAGE 44 -->
+But the 20th verse is the most difficult. “Captivity” is more properly “migration” or transmigration, as Calvin renders it. Then follow the words, <span style="color:#008080">larçy ykbl hzjAljh</span>, literally, in my view, “the beginning, this, to the children of Israel.” So the Septuagint takes the word <span style="color:#008080">ljh</span>, as meaning “beginning,” and not “host:” it wants the <span style="color:#008080">w</span> except in three copies, and it always has this, when it means a host. I propose the following translation:—
 
+<span style="color:#000080">***And the migration, which commenced with the children of Israel,***</span> <span style="color:#000080">***Shall inherit what the Canaanites had as far as Sarephath;***</span> <span style="color:#000080">***And the migration from Jerusalem, which are in Saphrad,***</span> <span style="color:#000080">***The cities of the south.***</span>
+
+The latter verse is a fuller explanation of the former; and, as is the case commonly in Hebrew, when two things previously mentioned are referred to, the order is reversed, the last particular is mentioned first, so it is here.  The verb “inherit” is in the last clause in Hebrew; but the idiom of our language requires it to be in the first.—*Ed.*

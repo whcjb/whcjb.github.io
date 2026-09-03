@@ -17,17 +17,17 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE PROPHET DANIEL
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="margin-left:6em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">COMMENTARIES</span></p>
 
-<p style="text-align:center" markdown="1">ON</p>
+<p style="text-align:center" markdown="1">**ON**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE PROPHET DANIEL</span></p>
 
@@ -109,7 +109,10 @@ The order of the VISIONS suggests the propriety of treating, first, THE ANCIENT 
 
 The earliest memorials of Assyria have not been preserved in the records of literature, but by durable engravings on marble and granite. Within the last fifty years the PYRAMIDS of EGYPT have been compelled to open their lips of stone to speak for God’s Word, and the ROSETTA table suggested to YOUNG and CHAMPOLLION an alphabet by which they read on sarcophagus and entablature the history of the earliest dynasties of the Nile. What LEPSIUS and BUNSEN have done for Thebes and Memphis, Dendera and Edfou, LAYARD and RAWLINSON are now accomplishing for the long lost NINEVEH, the majestic BABYLON, and the elegant PERSEPOLIS. It has lately been revealed to astonished Europe, that a buried city lies, in all its pristine grandeur, beneath that huge mound which frowns over Mosul on the banks of the Tigris. KHORSABAD and KOYUNJIK, NIMROUD, and BEHISTUN, are now giving up their black obelisks, their colossal bulls, and their eagle-headed warriors, to become “signs and wonders” to our curious generation. In this general sketch we must avoid details, however interesting we can only allude to the first Assyrian monuments discovered by M. BOTTA, in 1843, [^f23] as containing a line of Cuneiform Inscriptions amid winged kings and their warlike chariots. They are deposited in the Louvre, and form the most ancient of its esteemed collections. The elegant volumes of LAYARD, and the more tangible proof of his untiring labors, now deposited in the British Museum, have thrown new light upon the prophetic portion of the Elder Covenant. Two-coned Conquerors, winged Chiefs, carrying either the gazelle or the goat, sacred trees, and their kneeling worshippers —
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*The life-like statue and the breathing bust,*</span> <span style="color:#000080">*The column rescued from defiling dust —*</span></p> <!-- PAGE 19 --> <!-- PAGE 20 --> <!-- PAGE 21 --> enable us to guess at the exploits of a long line of kings before the age of Saul or Priam. The name of SARDANAPALUS is now rescued from traditional disgrace, and ennobled in the midst; of a hardy race of ancestors and successors. Our progress in interpreting these arrow-headed mysteries, enables us to assign the date 1267 B.C. for the founding of NINEVEH as a settled point in Asiatic chronology. The earliest historical document in the world is that on the north-west palace of NIMROUD built by ASSAR-ADANPAL. He informs us of the existence, and celebrates the exploits of TEMENBAR the first, the founder of HALEH, at a time when the Hebrews were just entering the promised land, and the Argives were colonizing the virgin valleys of Hellas! The familiar names of SHALMANESER, SENNACHERIB, and ESARHADDON, are found incised upon the enduring masonry; and it is now possible to ascertain who founded the MESPILA of Xenophon, who constructed the towers in the south-west palace of NIMROUD and who stamped his annals on the clay cylinders in the British Museum. [^f24] The NIMROUD obelisk becomes a precious relic, since it enables us to ascertain, for the first time, the events of those nine centuries, during which NINEVEH existed from its rise to its overthrow. We are mainly concerned with the manner in which it confirms the truthfulness of the Prophets of the Hebrews, and with the unanswerable arguments which it supplies against the subtleties of German Neology. The credibility of one Prophet is intimately bound up with that of another. Whatever confirms either ISAIAH or EZEKIEL, throws its reflected light upon Daniel and HOSEA. The god NISROCH, in whose temple Sennacherib was slain, (2 Kings 19:37, and Isaiah 37:38,) is, repeatedly mentioned on the obelisk as the chief deity of the Assyrians. The “SARGON king of Assyria” (Isaiah 20:1) is most probably the monarch who founded the city excavated by M. BOTTA; and the occurrence of the name “YEHUDA,” in the 33rd number of the British Museum series, leads Interpreters to consider the passage as alluding to the conquest of SAMARIA. The very paintings so graphically described by EZEKIEL, (Ezekiel 23:14, 15,) have reappeared upon the walls of these palaces. They are, perhaps, the very identical objects which this Prophet beheld, for he dwelt at no great distance from them on the banks of the Khabur, and wrote the passage about thirteen years after the destruction of the Assyrian Empire. The prophecy bears the date B.C. 593, and “the latest Assyrian sculpture on the site of Nineveh must be as early as B.C. 634.” [^f25] We would gladly linger over these proofs of the truthfulness of the ancient Prophets; but further details must be inserted in those DISSERTATIONS which accompany the text, and we close this rapid sketch of these Assyrian remains in the touching words of their enterprising Discoverer. “I used,” says Mr. LAYARD, “to contemplate for hours these mysterious emblems, and to muse over their intent and history. What more noble forms could have ushered the people into the temple of their gods? What more sublime images could have been borrowed from nature, by men who sought, unaided by the light of Revealed Religion, to embody their conception of the wisdom, power, and ubiquity of a Supreme Being? They could find no better type of intellect and knowledge, than the head of a man; of strength, than rite body of the lion; of ubiquity, than the wings of the bird. The winged-human-headed lions were not idle creations;, the offspring of mere fancy; their meaning was written upon them. They had awed and instructed races which had flourished 3000 years ago. Through the portals which they guarded, kings, priests, and warriors had borne sacrifices to their altars, long before the wisdom of the East had penetrated to Greece, and had furnished its mythology with symbols long recognized by the Assyrian votaries. They may have been buried, and their existence may have been unknown, before the foundation of the Eternal City. For twenty-five centuries they had been hidden from the eye of man, and they now stood forth once more in their ancient majesty. But how changed was the scene around them! The luxury and civilization of a mighty nation had given place to the wretchedness and ignorance of a few half-barbarous tribes; the wealth of temples, and the riches of great cities had been succeeded by ruins and shapeless heaps of earth. Above the spacious hall in which they stood, the plough had passed and the corn now waved. Egypt had monuments no less ancient and no less wonderful, but they have stood forth for ages, to testify her early power and renown, while those before me had but now appeared to bear witness in the words of the Prophet, that once The Assyrian was a cedar in Lebanon, with fair branches, and with a shadowing shroud of a high stature; and his top was among the thick boughs . His height was exalted above all the trees of the field, and his boughs were multiplied, and his branches became long, because of the multitude of the waters which he shot forth. All the fowls of heaven made nests in his boughs, and under his branches did all the beasts of the field bring forth their young, and under his shadow dwelt all great nations; for now is ‘Nineveh a desolation, and dry like a wilderness, and flocks lie down in the midst of her; all the beasts of the nations, both the cormorant and the bittern lodge in the upper lintels of it; their voice sings in the windows, and desolation is in the thresholds.’” [^f26]
+<!-- PAGE 19 -->
+<!-- PAGE 20 -->
+<!-- PAGE 21 -->
+<span style="color:#000080">***The life-like statue and the breathing bust,***</span> <span style="color:#000080">***The column rescued from defiling dust —***</span> enable us to guess at the exploits of a long line of kings before the age of Saul or Priam. The name of SARDANAPALUS is now rescued from traditional disgrace, and ennobled in the midst; of a hardy race of ancestors and successors. Our progress in interpreting these arrow-headed mysteries, enables us to assign the date 1267 B.C. for the founding of NINEVEH as a settled point in Asiatic chronology. The earliest historical document in the world is that on the north-west palace of NIMROUD built by ASSAR-ADANPAL. He informs us of the existence, and celebrates the exploits of TEMENBAR the first, the founder of HALEH, at a time when the Hebrews were just entering the promised land, and the Argives were colonizing the virgin valleys of Hellas! The familiar names of SHALMANESER, SENNACHERIB, and ESARHADDON, are found incised upon the enduring masonry; and it is now possible to ascertain who founded the MESPILA of Xenophon, who constructed the towers in the south-west palace of NIMROUD and who stamped his annals on the clay cylinders in the British Museum. [^f24] The NIMROUD obelisk becomes a precious relic, since it enables us to ascertain, for the first time, the events of those nine centuries, during which NINEVEH existed from its rise to its overthrow. We are mainly concerned with the manner in which it confirms the truthfulness of the Prophets of the Hebrews, and with the unanswerable arguments which it supplies against the subtleties of German Neology. The credibility of one Prophet is intimately bound up with that of another. Whatever confirms either ISAIAH or EZEKIEL, throws its reflected light upon Daniel and HOSEA. The god NISROCH, in whose temple Sennacherib was slain, (2 Kings 19:37, and Isaiah 37:38,) is, repeatedly mentioned on the obelisk as the chief deity of the Assyrians. The “SARGON king of Assyria” (Isaiah 20:1) is most probably the monarch who founded the city excavated by M. BOTTA; and the occurrence of the name “YEHUDA,” in the 33rd number of the British Museum series, leads Interpreters to consider the passage as alluding to the conquest of SAMARIA. The very paintings so graphically described by EZEKIEL, (Ezekiel 23:14, 15,) have reappeared upon the walls of these palaces. They are, perhaps, the very identical objects which this Prophet beheld, for he dwelt at no great distance from them on the banks of the Khabur, and wrote the passage about thirteen years after the destruction of the Assyrian Empire. The prophecy bears the date B.C. 593, and “the latest Assyrian sculpture on the site of Nineveh must be as early as B.C. 634.” [^f25] We would gladly linger over these proofs of the truthfulness of the ancient Prophets; but further details must be inserted in those DISSERTATIONS which accompany the text, and we close this rapid sketch of these Assyrian remains in the touching words of their enterprising Discoverer. “I used,” says Mr. LAYARD, “to contemplate for hours these mysterious emblems, and to muse over their intent and history. What more noble forms could have ushered the people into the temple of their gods? What more sublime images could have been borrowed from nature, by men who sought, unaided by the light of Revealed Religion, to embody their conception of the wisdom, power, and ubiquity of a Supreme Being? They could find no better type of intellect and knowledge, than the head of a man; of strength, than rite body of the lion; of ubiquity, than the wings of the bird. The winged-human-headed lions were not idle creations;, the offspring of mere fancy; their meaning was written upon them. They had awed and instructed races which had flourished 3000 years ago. Through the portals which they guarded, kings, priests, and warriors had borne sacrifices to their altars, long before the wisdom of the East had penetrated to Greece, and had furnished its mythology with symbols long recognized by the Assyrian votaries. They may have been buried, and their existence may have been unknown, before the foundation of the Eternal City. For twenty-five centuries they had been hidden from the eye of man, and they now stood forth once more in their ancient majesty. But how changed was the scene around them! The luxury and civilization of a mighty nation had given place to the wretchedness and ignorance of a few half-barbarous tribes; the wealth of temples, and the riches of great cities had been succeeded by ruins and shapeless heaps of earth. Above the spacious hall in which they stood, the plough had passed and the corn now waved. Egypt had monuments no less ancient and no less wonderful, but they have stood forth for ages, to testify her early power and renown, while those before me had but now appeared to bear witness in the words of the Prophet, that once The Assyrian was a cedar in Lebanon, with fair branches, and with a shadowing shroud of a high stature; and his top was among the thick boughs . His height was exalted above all the trees of the field, and his boughs were multiplied, and his branches became long, because of the multitude of the waters which he shot forth. All the fowls of heaven made nests in his boughs, and under his branches did all the beasts of the field bring forth their young, and under his shadow dwelt all great nations; for now is ‘Nineveh a desolation, and dry like a wilderness, and flocks lie down in the midst of her; all the beasts of the nations, both the cormorant and the bittern lodge in the upper lintels of it; their voice sings in the windows, and desolation is in the thresholds.’” [^f26]
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">ANCIENT BABYLONIAN REMAINS</span></p>
 
@@ -117,9 +120,7 @@ As we travel onwards in time, and southward in place, our attention is attracted
 
 After centuries of extensive empire, NINEVEH yielded to a younger rival. The army of Sennacherib had been annihilated by the angel of the Lord; ESARHADDON, his son, had planted his heathen colonizes in the fertile plains of Samaria. NEBUCHADONOSOR had won the battle of Rhagau; PHRAORTES had been slain, and his son, CYAXARES in alliance with NABOPALASSAR, had taken NINEVEH, and destroyed for ever its place in the history of Asia. Palaces of black basalt, bas-reliefs, and hawk-headed heroes, covered with legends of unbounded triumphs, no longer rose at the bidding of the servants of Bar, and the worshippers of Assarac, Beltis, and Rimmon. No more
 
-<p style="text-align:center; color:#000080; margin:14px 2em;" markdown="1"><span style="color:#000080">*Her obelisks of buried chrysolite*</span></p>
-
-proclaimed her far-famed majesty; for her new masters transferred the scat of their empire to the banks of the Euphrates. The renowned son of NABOPALASSAR now commences the era of Babylonian greatness. This enterprising chieftain is no creation of poetic fancy. HERODOTUS and BEROSUS have recorded his exploits, and we have now the testimony of recent discovery to confirm the assertions of Daniel, and to throw fresh light upon his narrative.
+<span style="color:#000080">***Her obelisks of buried chrysolite***</span> proclaimed her far-famed majesty; for her new masters transferred the scat of their empire to the banks of the Euphrates. The renowned son of NABOPALASSAR now commences the era of Babylonian greatness. This enterprising chieftain is no creation of poetic fancy. HERODOTUS and BEROSUS have recorded his exploits, and we have now the testimony of recent discovery to confirm the assertions of Daniel, and to throw fresh light upon his narrative.
 
 <!-- PAGE 22 -->
 “The earliest Babylonian record that we have,” says Major RAWLINSON, “is, I think, the inscription engraved on a triumphal tablet at Holwan, near the foot of Mount Zagros; it is chiefly religious, but it seems also to record the victories of a certain king named Temnin against the mountaineers. Unfortunately it is in a very mutilated state, and parts of it alone are legible. I discovered this tablet on the occasion of my last visit to Behistun, and with the help of a telescope, for there are no possible means of ascending the rock, succeeded in taking a copy of such portions of the writing as are legible . I am not able at present to attempt a classification of the kings of Babylon, such as they are known from the various relics that we possess of them nor, indeed, can I say with certainty, whether the kings recorded, with the exception of NEBUCHADNEZZAR and his father, may be anterior or posterior to the era of NABONASSAR. The Babylonians certainly borrowed their alphabet from the Assyrians, and it requires no great trouble or ingenuity at the present day to form a comparative table of the characters.” [^f27] “I have examined,” says this enterprising traveler, “hundreds of the Hymar bricks, (near Babylon,)and have found them always to bear the name of NEBUCHADNEZZAR.” Borsippa was a city in the neighborhood of Babylon, and there is monumental” evidence of its being the capital of Shinar, as early almost as the earliest Assyrian epoch.” Temenbar, the Obelisk king, conquered it in the ninth year of his reign. the bricks upon the spot are exclusively stamped with the name of Nebuchadnezzar, being at this moment tangible proofs of the reality of the words “Is not this the great Babylon that I have built?” The rebuilding of the city, and the construction and dedication of the great temple is noticed “in the standard inscription of Nebuchadnezzar, of which the India house slab furnishes us with the best and most perfect copy.” This valuable monument gives a detail of all the temples which he built throughout the various cities of his extensive provinces, it names the particular deities to whom the shrines were dedicated, and mentions other particulars, which our present ignorance of the language enables us. but partially to comprehend. The vast; mound of El Kasr contains the remains of a magnificent palace, supposed to be that of NEBUCHADNEZZAR; but as these recent excavations are more to our present purpose, it is unnecessary to refer at length to this majestic ruin. [^f28]
@@ -210,7 +211,11 @@ The Commentary of Grotius is also worthy of comparison with that of CALVIN. He i
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">MALDONATUS.</span></p>
 
-The Commentary of MALDONATUS, the Jesuit, demands more extended notice, as he lived about the times of our author, and calls him *Patriarcha Hereticorum,* and looks upon the subject from exactly the opposite point of view. His exposition of JEREMIAH, BARUCH, EZEKIEL, and DANIEL, was published at Moguntiae, (Mentz,) 1611. In his *procemium* he sketches the life of DANIEL, and defends his Book against PORPHYRY, the Manichaeans, and the Anabaptists. He quotes the mention made of DANIEL by EZEKIEL, and lays it down as a rule, that our ignorance of the author of a book does not impeach its Canonical Authority; and in the spirit of his Religious Society, lays special stress upon the judgment and decision of “*the* Church.” He next argues in favor of the Apocryphal Books attributed to this Prophet, and then prefers the authority of his Church to the testimony of JEROME. He defends the canonicity of the stories of Susannah and the Idol Bel, and comments on them in two additional chapters, and places “The Song of the Three Children” between Daniel 23:3-4, translating from Theodotion’s version. There is nothing worthy of special notice in his remarks on the first six chapters; <!-- PAGE 36 --> but the next six treat of the reign’s of Christ. and of Antichrist. In accordance with this view, he decides upon the Fourth Beast of tale seventh chapter as the Roman Empire, after rejecting the opinion of ABENEZRA in favor of the Turks, and that of PORPHYRY, who thought it to be the successors of ALEXANDER. Respecting the “Little Horn,” his wrath is stirred up, for” the heretical Lutherans and Calvinists, and other monstrous sects,” had dared to pronounce it to be the Roman Pontiff. “But this interpretation even their master, Calvin, has shewn to be absurd.” [^f48] He combats the notion that by one term all the Roman Pontiffs are intended; and then triumphantly asks, Where are the “Three” whom this single one was to pluck up? He further inquires, Whether all were past in his own day, or all future? He determines that it is all yet to be fulfilled, and thus becomes an adherent to the cause of the Futurists. As neither the Ten Horns nor the Eleventh have yet come into existence, it is natural to conclude the Eleventh to be that Antichrist whom JEROME represents not as a Demon, but a man in whom “a whole Satan shall corporally dwell.” He shall reign, he thinks, three years and a half — a distinct and fixed period — objecting to what he calls “figurt; Calvini,” viz., that an uncertain period is intended by so clear an expression. The, various opinions of his predecessors on Daniel 11:36, move rather his derision than his wrath. Their notions about CONSTANTINE, and MAHOMET, and the ROMAN PONTIFFS, do not need his serious refutation. Almost all Catholics, he adds, both ancient and modern, refer it to the Antichrist. He also accuses the greater part of “the New Heretics” of stating the Michael of the 12th chapter to be, Messiah himself; and treats the “days” of the close of this chapter as partly fulfilled under the Jewish and partly under the Christian dispensations. His inconsistency in this interpretation is more apparent than in the preceding ones; while his work on the whole is worthy of perusal, as he quotes with judgment the opinions of learned Jews and of the earlier Commentators of the Christian Church.
+The Commentary of MALDONATUS, the Jesuit, demands more extended notice, as he lived about the times of our author, and calls him *Patriarcha Hereticorum,* and looks upon the subject from exactly the opposite point of view. His exposition of JEREMIAH, BARUCH, EZEKIEL, and DANIEL, was published at Moguntiae, (Mentz,) 1611. In his *procemium* he sketches the life of DANIEL, and defends his Book against PORPHYRY, the Manichaeans, and the Anabaptists. He quotes the mention made of DANIEL by EZEKIEL, and lays it down as a rule, that our ignorance of the author of a book does not impeach its Canonical Authority; and in the spirit of his Religious Society, lays special stress upon the judgment and decision of “*the* Church.” He next argues in favor of the Apocryphal Books attributed to this Prophet, and then prefers the authority of his Church to the testimony of JEROME. He defends the canonicity of the stories of Susannah and the Idol Bel, and comments on them in two additional chapters, and places “The Song of the Three Children” between Daniel 23:3-4, translating from Theodotion’s version. There is nothing worthy of special notice in his remarks on the first six chapters;
+
+<!-- PAGE 36 -->
+
+but the next six treat of the reign’s of Christ. and of Antichrist. In accordance with this view, he decides upon the Fourth Beast of tale seventh chapter as the Roman Empire, after rejecting the opinion of ABENEZRA in favor of the Turks, and that of PORPHYRY, who thought it to be the successors of ALEXANDER. Respecting the “Little Horn,” his wrath is stirred up, for” the heretical Lutherans and Calvinists, and other monstrous sects,” had dared to pronounce it to be the Roman Pontiff. “But this interpretation even their master, Calvin, has shewn to be absurd.” [^f48] He combats the notion that by one term all the Roman Pontiffs are intended; and then triumphantly asks, Where are the “Three” whom this single one was to pluck up? He further inquires, Whether all were past in his own day, or all future? He determines that it is all yet to be fulfilled, and thus becomes an adherent to the cause of the Futurists. As neither the Ten Horns nor the Eleventh have yet come into existence, it is natural to conclude the Eleventh to be that Antichrist whom JEROME represents not as a Demon, but a man in whom “a whole Satan shall corporally dwell.” He shall reign, he thinks, three years and a half — a distinct and fixed period — objecting to what he calls “figurt; Calvini,” viz., that an uncertain period is intended by so clear an expression. The, various opinions of his predecessors on Daniel 11:36, move rather his derision than his wrath. Their notions about CONSTANTINE, and MAHOMET, and the ROMAN PONTIFFS, do not need his serious refutation. Almost all Catholics, he adds, both ancient and modern, refer it to the Antichrist. He also accuses the greater part of “the New Heretics” of stating the Michael of the 12th chapter to be, Messiah himself; and treats the “days” of the close of this chapter as partly fulfilled under the Jewish and partly under the Christian dispensations. His inconsistency in this interpretation is more apparent than in the preceding ones; while his work on the whole is worthy of perusal, as he quotes with judgment the opinions of learned Jews and of the earlier Commentators of the Christian Church.
 
 <!-- PAGE 37 -->
 <!-- PAGE 38 -->
@@ -237,7 +242,7 @@ It must not be forgotten that portions of this Book, like that of Ezra, are writ
 
 <!-- PAGE 41 -->
 
-<p style="text-align:center" markdown="1">THE RELIGIOUS, SOCIAL, AND POLITICAL VALUE OF CALVIN’S</p>
+<p style="text-align:center" markdown="1">**THE RELIGIOUS, SOCIAL,** **AND POLITICAL VALUE OF CALVIN**’**S**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">METHOD OF EXPOSITION.</span></p>
 
@@ -282,40 +287,40 @@ The CONTENTS of these Volumes are as follow —
 
 The first VOLUME contains a translation of Calvin’s elaborate Address to All the Faithful in France; and also of his PREFACE, to his LECTURES. Their translation is continued to the end of the Sixth Chapter, which closes the Historical portion. of the Book. DISSERTATIONS explanatory of the subjectmatter of the Commentary close the Volume, containing various historical, critical, and exegetical remarks, illustrating the Sacred Text as expounded by our Reformer. The chief of them are as follow, viz.
 
-<span style="color:#800000">CHAPTER 1</span><span style="color:#000080">.</span> The Date of JEHOIAKIM’S Reign. NEBUCHADNEZZAR — one King or two? His Ancestors and Successors The CHALDEANS. The Three Children. CORESH — was he Cyrus the Great?
+<span style="color:#800000">**CHAPTER 1**</span><span style="color:#000080">**.**</span> The Date of JEHOIAKIM’S Reign. NEBUCHADNEZZAR — one King or two? His Ancestors and Successors The CHALDEANS. The Three Children. CORESH — was he Cyrus the Great?
 
-<span style="color:#800000">CHAPTER 2</span> The Dream. The Image. The Stone cut without hands.
+<span style="color:#800000">**CHAPTER 2**</span> The Dream. The Image. The Stone cut without hands.
 
-<span style="color:#800000">CHAPTER 3</span> The Statue at DURA. The Magistrates. The Musical Instruments. The SON of GOD.
+<span style="color:#800000">**CHAPTER 3**</span> The Statue at DURA. The Magistrates. The Musical Instruments. The SON of GOD.
 
 <!-- PAGE 49 -->
 
-<span style="color:#800000">CHAPTER 4</span> The Watcher. The Madness. The Edict of Praise.
+<span style="color:#800000">**CHAPTER 4**</span> The Watcher. The Madness. The Edict of Praise.
 
-<span style="color:#800000">CHAPTER 5</span> BELSHAZZAR and the feast. The Queen. The Handwriting. The MEDES AND PERSIANS. DERIUS the Mede. The Capture of Babylon.
+<span style="color:#800000">**CHAPTER 5**</span> BELSHAZZAR and the feast. The Queen. The Handwriting. The MEDES AND PERSIANS. DERIUS the Mede. The Capture of Babylon.
 
-<span style="color:#800000">CHAPTER 6</span> The Three Presidents. The King’s Decease. The Prolongation of DANIEL’S Life. The SECOND VOLUME proceeds with the Translation of the remaining Chapters, which are the peculiarly Prophetic portion of the Book; and the interest which every sound Exposition of these Prophecies has always excited throughout the Theological world, will render the following ADDENDA acceptable to the reader.
+<span style="color:#800000">**CHAPTER 6**</span> The Three Presidents. The King’s Decease. The Prolongation of DANIEL’S Life. The SECOND VOLUME proceeds with the Translation of the remaining Chapters, which are the peculiarly Prophetic portion of the Book; and the interest which every sound Exposition of these Prophecies has always excited throughout the Theological world, will render the following ADDENDA acceptable to the reader.
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">1.</span> DISSERTATIONS EXPLANATORY OF THE LAST SIX CHAPTERS OF DANIEL, fully elucidating all important questions.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**1.**</span> DISSERTATIONS EXPLANATORY OF THE LAST SIX CHAPTERS OF DANIEL, fully elucidating all important questions.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">2.</span> A CONNECTED TRANSLATION or Calvin’s VERSION, illustrated by the peculiar words and phrases of his Commentary.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**2.**</span> A CONNECTED TRANSLATION or Calvin’s VERSION, illustrated by the peculiar words and phrases of his Commentary.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">3.</span> SUMMARY OF THE HISTORICAL AND PROPHETIC PORTIONS OF THE BOOK, according to Calvin’s view of their contents.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**3.**</span> SUMMARY OF THE HISTORICAL AND PROPHETIC PORTIONS OF THE BOOK, according to Calvin’s view of their contents.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">4.</span> A NOTICE OF SOME ANCIENT CODEXES AND VERSIONS.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**4.**</span> A NOTICE OF SOME ANCIENT CODEXES AND VERSIONS.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">5.</span> A LIST OF THE MOST VALUABLE ANCIENT AND MODERN BRITISH AND FOREIGN Expositions OF DANIEL, with concise Epitomes of the contents of the most important.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**5.**</span> A LIST OF THE MOST VALUABLE ANCIENT AND MODERN BRITISH AND FOREIGN Expositions OF DANIEL, with concise Epitomes of the contents of the most important.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">6.</span> AN INDEX OF THE SCRIPTURAL PASSAGES QUOTED IN THE LECTURES.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**6.**</span> AN INDEX OF THE SCRIPTURAL PASSAGES QUOTED IN THE LECTURES.</p>
 
-<p style="margin-left:2em;" markdown="1"><span style="color:#000080">7.</span> A copious INDEX OF THE CHIEF WORDS AND SUBJECTS treated in these Volumes.</p>
+<p style="margin-left:2em;" markdown="1"><span style="color:#000080">**7.**</span> A copious INDEX OF THE CHIEF WORDS AND SUBJECTS treated in these Volumes.</p>
 
 <!-- PAGE 50 -->
 Before concluding these Prefatory Observations, THE EDITOR would briefly refer to the fundamental rules of THE CALVIN TRANSLATION SOCIETY, which very wisely exclude all expressions of private opinion. He hopes that no remarks in this PREFACE will be deemed inconsistent with so judicious a regulation. The clear illustration and the comprehensive defense of our Venerable Reformer seem to demand the candid statement of some views which are adverse to the popular current; but this necessity need not induce him to step beyond the limits of his province. It has been his desire conscientiously to vindicate his Author’s Interpretations wherever he is able to do so, and as fearlessly to point out wherever Calvin is allowed to be in error; but in both cases, the EDITOR has scrupulously avoided taking any one-sided view of a great argument. He has attempted to exercise the utmost impartiality in quoting from a great variety of Standard Works which contain the most opposite conclusions; and yet, in accordance with the first principles of these Translations, he has at the same time carefully abstained from pressing any sentiments of his own on rite attention of the intelligent reader.
 
-<p style="margin-left:2em;" markdown="1">*T. M. Sheriff-Hutton Vicarag, May 1852.*</p>
+<p style="margin-left:2em;" markdown="1">***T. M.*** ***Sheriff-Hutton Vicarag,*** ***May 1852.***</p>
 
-<p style="text-align:center" markdown="1">THE PRINTER WISHES HEALTH FROM THE LOR D</p>
+<p style="text-align:center" markdown="1">**THE PRINTER WISHES HEALTH FROM THE LOR D**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">TO THE PIOUS READER.</span></p>
 
@@ -330,7 +335,7 @@ GENEVA, *August 27th,* 1561, A.D.
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN</span></p>
 
-TO ALL THE PIOUS WORSHIPPERS OF GOD WHO DESIRE THE KINGDOM OFCHRIST TO BE RIGHTLY CONSTITUTED IN FRANCE.
+**TO ALL THE PIOUS WORSHIPPERS OF GOD WHO DESIRE THE** **KINGDOM OFCHRIST TO BE RIGHTLY** **CONSTITUTED IN FRANCE.**
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">HEALTH</span></p>
 
@@ -394,13 +399,13 @@ Since, then, it is not lawful for me to desert the station to which God has appo
 
 May the LORD govern you by His Spirit, may He defend my most beloved brethren by His own protection, against all the plots of their enemies, and sustain them by his invisible power.
 
-<p style="margin-left:2em;" markdown="1">*JOHN CALVIN. GENEVA, August 19, 1561*</p>
+<p style="margin-left:2em;" markdown="1">***JOHN CALVIN.*** ***GENEVA, August 19, 1561***</p>
 
 <!-- PAGE 64 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">THE PRAYER</span></p>
 
-<p style="text-align:center" markdown="1">WHICH JOHN CALVIN WAS ACCUSTOMED TO USE AT THE C0MMENCEMENT OF HIS LECTURES.</p>
+<p style="text-align:center" markdown="1">**WHICH JOHN CALVIN WAS ACCUSTOMED TO USE AT THE** **C0MMENCEMENT OF HIS LECTURES.**</p>
 
 GRANT unto us, O LORD, to be occupied in the mysteries of thy Heavenly wisdom, with true progress in piety, to thy glory and our own edification. — AMEN.
 
@@ -410,13 +415,13 @@ This prayer is not inserted in the Geneva edition of 1617, but is found in that 
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">COMMENTARIES</span></p>
 
-<p style="text-align:center" markdown="1">ON</p>
+<p style="text-align:center" markdown="1">**ON**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE PROPHET DANIEL.</span></p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">JOHN CALVIN’S PREFACE</span></p>
 
-<p style="text-align:center" markdown="1">TO HIS LECTURES ON DANIEL.</p>
+<p style="text-align:center" markdown="1">**TO HIS LECTURES ON DANIEL.**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">LECTURE FIRST.</span></p>
 
@@ -524,106 +529,13 @@ I now come to the words themselves, I wished, as I said, just to catch a foretas
 [^f27]: Com. on Cuneif. Inscrip., p. 76.
 
 
-[^f28]: See a description of the Kasr in Kitto’s Bib. Cye., art. Babylon.
-
-
-[^f29]: Major Rawlinson in Journ. Royal Geog. Sec., volume 9.
-
-
-[^f30]: Kenrick’s Ancient Egypt under the Pharaohs, volume 1:page 44.
-
-
-[^f31]: Major Rawlinson’s “Commentary,” &e. p. 47.
-
-
-[^f32]: Vintication of the Def., chapter 1:§ 3.
-
-
-[^f33]: Warburtonian Lectures. Sermon II.
-
-
-[^f34]: Antiq., Book 10:chapter 10:4.
-
-
-[^f35]: Mor. Nevoch. p. 2:chapter 45.
-
-
-[^f36]: See the Bava-bathra and the Megilla c. 2:Prideaux Connex., p. 1, 65, § 2. Kennicott’s Dis. *Gem,* p. 14, and Disser. Prelim. to Wintle’s Translation, p. 10 etc.
-
-
-[^f37]: See his “*Discources addressed to Mixed Congregations.*” Edit. 2d.
-
-
-[^f38]: Forster’s “One *Primaeval Language,*” p. 33, where Lord Lindsay’s letters are quoted.
-
-
-[^f39]: Details are given at length in the interesting work quoted above. Professor Beer in his “Century of Sinaitic Inscriptions” utterly failed to unravel them. *Leipsic,* 1840
-
-
-[^f40]: Before Professor Beer’s attempt to explain them, Montfaucon had drawn the attention of the literary world to their value. See his *Coll. Nov. Patr.,* t. 2: p. 206, where the narrative of Cosmas, the Indian traveler, is found in the original Greek.
-
-
-[^f41]: The Duke of Manchester.
-
-
-[^f42]: The Revelation T. R. Birks.
-
-
-[^f43]: Bunsen’s Egypt’s Place in Universal History, volume 1.
-
-
-[^f44]: A list of the chief “*Futurist*” writers and of their sentiments will be found in Birks’ “First Elements of Sacred Prophecy,” where the YearDay theory is ably advocated, and much useful information condensed.
+[^f28]: See a description of the Kasr in Kitto’s Bib. Cye., art. Babylon.  <span style="color:#800000">FT29</span> Major Rawlinson in Journ. Royal Geog. Sec., volume 9.  <span style="color:#800000">FT30</span> Kenrick’s Ancient Egypt under the Pharaohs, volume 1:page 44.  <span style="color:#800000">FT31</span> Major Rawlinson’s “Commentary,” &e. p. 47.  <span style="color:#800000">FT32</span> Vintication of the Def., chapter 1:§ 3.  <span style="color:#800000">FT33</span> Warburtonian Lectures. Sermon II.  <span style="color:#800000">FT34</span> Antiq., Book 10:chapter 10:4.  <span style="color:#800000">FT35</span> Mor. Nevoch. p. 2:chapter 45.  <span style="color:#800000">FT36</span> See the Bava-bathra and the Megilla c. 2:Prideaux Connex., p. 1, 65, § 2. Kennicott’s Dis. *Gem,* p. 14, and Disser. Prelim. to Wintle’s Translation, p. 10 etc.  <span style="color:#800000">FT37</span> See his “*Discources addressed to Mixed Congregations.*” Edit. 2d.  <span style="color:#800000">FT38</span> Forster’s “One *Primaeval Language,*” p. 33, where Lord Lindsay’s letters are quoted.  <span style="color:#800000">FT39</span> Details are given at length in the interesting work quoted above. Professor Beer in his “Century of Sinaitic Inscriptions” utterly failed to unravel them. *Leipsic,* 1840  <span style="color:#800000">FT40</span> Before Professor Beer’s attempt to explain them, Montfaucon had drawn the attention of the literary world to their value. See his *Coll. Nov. Patr.,* t. 2: p. 206, where the narrative of Cosmas, the Indian traveler, is found in the original Greek.  <span style="color:#800000">FT41</span> The Duke of Manchester.  <span style="color:#800000">FT42</span> The Revelation T. R. Birks.  <span style="color:#800000">FT43</span> Bunsen’s Egypt’s Place in Universal History, volume 1.  <span style="color:#800000">FT44</span> A list of the chief “*Futurist*” writers and of their sentiments will be found in Birks’ “First Elements of Sacred Prophecy,” where the YearDay theory is ably advocated, and much useful information condensed.
 
 
 [^f45]: P. 109. New York, 1844.
 
 
-[^f46]: Hints on the Interpretation of Prophecy, 1842; and Folsom’s Daniel. Boston, 1842.
-
-
-[^f47]: Hierophant, May 1843, New York.
-
-
-[^f48]: Comment., p. 673, Daniel 7:8.
-
-
-[^f49]: See Herm. Venem. Dis. ad Vat. Daniel Emblem., Dis. 5:§ 3-12, pp. 347-364, 4to. Leovard, 1745, as quoted at length in Todd’s Discourses on Antichrist, pp. 504-515.
-
-
-[^f50]: Seeleys, London, 1851.
-
-
-[^f52]: Ibid., p2
-
-
-[^f54]: See Introductory.
-
-
-[^f55]: See his “Prodromus Danielicus,” Lovanii, 1711.
-
-
-[^f56]: See the Appendix where the opinions of various writers are collected.
-
-
-[^f57]: See the Sixfold Commentary, Edit. 1610.
-
-
-[^f58]: *Atuthentic des Daniel,* p. 310 — on the other side, see *Theologische Studien,* 1830, et *seq.;* as quoted in Kitto’s Biblic. Cyc., Art. Chald. Lang.
-
-
-[^f59]: Birks, *ibid.* chapter 21:Though the views of this writer, expressed from chapter 12 to 20 are diametrically opposed to those of Calvin, yet the remarks of chapter 21 are so *excellent,* that we shall avail ourselves of a few appropriate sentences.
-
-
-[^f60]: See his four Sermons on this passage.
-
-
-[^f61]: Calvin on Ezekiel, volume 1.
-
-
-[^f62]: This is the address of Bartholomew Vincent in his edition, A.D. *1571,* which has the Hebrew and Latin text printed together. It has been repeated in the edition at Geneva, 1591, with the omission of the clause “*ante biennium Joanne Crispino;*” since, like the former, it contains the Hebrew and Chaldee text opposite the Latin, with a running Hebrew title. In the collected edition of Calvin’s works, Amsterdam, volume v., a Dedication to theft Volume occurs, dated 10mo Cal. Aug. 1568, which, although preceding Daniel, has no reference to his Prophecies, and is consequently omitted in this our work. It concerns the disputes of that period respecting the Lord’s Supper, and certain heretical perversions of the truth then current. The Address of the Printer to the Reader prefixed to the same volume, refers to Jeremiah, Laminations, Twelve Miner Prophets, and Daniel generally; but; as it contains nothing suitable to our purpose, it is of course omitted.
-
-
-[^f63]: The Cardinals and Bishops.
+[^f46]: Hints on the Interpretation of Prophecy, 1842; and Folsom’s Daniel. Boston, 1842.  <span style="color:#800000">FT47</span> Hierophant, May 1843, New York.  <span style="color:#800000">FT48</span> Comment., p. 673, Daniel 7:8.  <span style="color:#800000">FT49</span> See Herm. Venem. Dis. ad Vat. Daniel Emblem., Dis. 5:§ 3-12, pp. 347-364, 4to. Leovard, 1745, as quoted at length in Todd’s Discourses on Antichrist, pp. 504-515.  <span style="color:#800000">FT50</span> Seeleys, London, 1851.  <span style="color:#800000">FT52</span> Ibid., p2  <span style="color:#800000">FT54</span> See Introductory.  <span style="color:#800000">FT55</span> See his “Prodromus Danielicus,” Lovanii, 1711.  <span style="color:#800000">FT56</span> See the Appendix where the opinions of various writers are collected.  <span style="color:#800000">FT57</span> See the Sixfold Commentary, Edit. 1610.  <span style="color:#800000">FT58</span> *Atuthentic des Daniel,* p. 310 — on the other side, see *Theologische Studien,* 1830, et *seq.;* as quoted in Kitto’s Biblic. Cyc., Art. Chald. Lang.  <span style="color:#800000">FT59</span> Birks, *ibid.* chapter 21:Though the views of this writer, expressed from chapter 12 to 20 are diametrically opposed to those of Calvin, yet the remarks of chapter 21 are so *excellent,* that we shall avail ourselves of a few appropriate sentences.  <span style="color:#800000">FT60</span> See his four Sermons on this passage.  <span style="color:#800000">FT61</span> Calvin on Ezekiel, volume 1.  <span style="color:#800000">FT62</span> This is the address of Bartholomew Vincent in his edition, A.D. *1571,* which has the Hebrew and Latin text printed together. It has been repeated in the edition at Geneva, 1591, with the omission of the clause “*ante biennium Joanne Crispino;*” since, like the former, it contains the Hebrew and Chaldee text opposite the Latin, with a running Hebrew title. In the collected edition of Calvin’s works, Amsterdam, volume v., a Dedication to theft Volume occurs, dated 10mo Cal. Aug. 1568, which, although preceding Daniel, has no reference to his Prophecies, and is consequently omitted in this our work. It concerns the disputes of that period respecting the Lord’s Supper, and certain heretical perversions of the truth then current. The Address of the Printer to the Reader prefixed to the same volume, refers to Jeremiah, Laminations, Twelve Miner Prophets, and Daniel generally; but; as it contains nothing suitable to our purpose, it is of course omitted.  <span style="color:#800000">FT63</span> The Cardinals and Bishops.
 
 
 [^f64]: The Romish priesthood.
@@ -635,8 +547,6 @@ I now come to the words themselves, I wished, as I said, just to catch a foretas
 [^f66]: The Sorbonne was a Popish seminary
 
 
-[^f67]: Latine, “malam, *bene positum:*” the French translation takes the phrase as a proverbs” *comme dit le proverb, un mal qui est bien en repos.*” Anglice, “well-poised.”
-
-<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
+[^f67]: Latine, “malam, *bene positum:*” the French translation takes the phrase as a proverbs” *comme dit le proverb, un mal qui est bien en repos.*” Anglice, “well-poised.” <span style="color:#006411">CHAPTER 1</span>
 
 

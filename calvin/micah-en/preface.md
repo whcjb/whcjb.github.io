@@ -17,11 +17,11 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE PROPHET MICAH
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="margin-left:6em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
@@ -45,11 +45,9 @@ But I will now come to his words: for the contents of this Book suggest what is 
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">LECTURE EIGHTY-FIRST</span></p>
 
-[^f1]: The confusion of the name has been through the Septuagint, in which *Michaiah,* the son of Imlah, about a hundred years before, is rendered <span style="color:#0000d4">Micaiav</span>, as well as this Prophet. The son of Imlah in Hebrew is <span style="color:#008080">מיכיה</span>, while our Prophet is <span style="color:#008080">מיכה</span>.—*Ed.*
+[^f1]: The confusion of the name has been through the Septuagint, in which *Michaiah,* the son of Imlah, about a hundred years before, is rendered <span style="color:#0000d4">Μιχαιας</span>, as well as this Prophet. The son of Imlah in Hebrew is <span style="color:#008080">hykym</span>, while our Prophet is <span style="color:#008080">hkym</span>.—*Ed.*
 
 
-[^f2]: “This Book,” says *Henderson,* “may be divided into two parts; the first consisting of chapters 1-5; and the second, the two remaining chapters, which are more general and didactic in their character.”
-
-<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
+[^f2]: “This Book,” says *Henderson,* “may be divided into two parts; the first consisting of chapters 1-5; and the second, the two remaining chapters, which are more general and didactic in their character.” <span style="color:#006411">CHAPTER 1</span>
 
 

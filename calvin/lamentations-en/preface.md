@@ -19,15 +19,15 @@ next_label: "Chapter 1"
 
 <p style="text-align:right;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PRELECTIONS OF JOHN CALVIN</span></p>
 
-<p style="text-align:center" markdown="1">ON</p>
+<p style="text-align:center" markdown="1">**ON**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE LAMENTATIONS OF</span> <span style="color:#0000d4">JEREMIAH</span></p>
 
@@ -45,7 +45,7 @@ We now in a measure understand for what purpose this Book was written by Jeremia
 <!-- PAGE 4 -->
 He indeed bewails, as I have said, the extreme calamity of his people; but he mingles with his lamentations the doctrine of repentance and faith’ For, on the one hand, he shews that the people suffered a just punishment for the many iniquities, of which they could not have been healed; and then, on the other hand, he gives them some intimations of God’s mercy, that in death itself the Jews might seek life, nay, that in the lowest depths they might know that God would be propitious to them. He at length by his own example stimulates them to pray; but prayer is founded on faith. It then follows, that Jeremiah, when the people had become wholly alienated from the worship of God, yet spent his labor in collecting together the remnant. Though, then, the whole Church was not only in the greatest disorder, but also reduced as it were almost to nothing, yet Jeremiah constructed some sort of building out of the ruins. This is the substance of this Book.
 
-The Greek Translators call this Book <span style="color:#0000d4">Θρήνους</span>, Lamentations, and very properly, as also the Hebrews call it <span style="color:#008080">קינוה</span>, *kinut*; though the common name or title is <span style="color:#008080">אכה</span>, *aike*, from the first word in it. But when they wish to express what the Book contains, they call it <span style="color:#008080">קינות</span>, *kinut*, Lamentations.
+The Greek Translators call this Book <span style="color:#0000d4">Θρήνους</span>, Lamentations, and very properly, as also the Hebrews call it <span style="color:#008080">hwnyq</span>, *kinut*; though the common name or title is <span style="color:#008080">hka</span>, *aike*, from the first word in it. But when they wish to express what the Book contains, they call it <span style="color:#008080">twnyq</span>, *kinut*, Lamentations.
 
 Let us now proceed to the words; for what I have now briefly touched upon, can be more fully explained as we go on.
 

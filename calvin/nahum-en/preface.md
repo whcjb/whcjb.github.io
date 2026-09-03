@@ -17,11 +17,11 @@ next_label: "Chapter 1"
 
 # COMMENTARY ON THE PROPHET NAHUM
 
-<p style="margin-left:2em;" markdown="1">*by John Calvin*</p>
+<p style="margin-left:6em;" markdown="1">*by John Calvin*</p>
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">BooksForTheAges</span> </p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
 
-<p style="text-align:center" markdown="1">AGES Software • Albany, OR  USA Version 1.0 © 1998</p>
+<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 1.0 © 1998**</p>
 
 <!-- PAGE 2 -->
 
@@ -35,11 +35,11 @@ next_label: "Chapter 1"
 
 <!-- PAGE 3 -->
 
-<p style="text-align:center" markdown="1">THE COMMENTARIES</p>
+<p style="text-align:center" markdown="1">**THE COMMENTARIES**</p>
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">OF JOHN CALVIN</span></p>
 
-<p style="text-align:center" markdown="1">ON</p>
+<p style="text-align:center" markdown="1">**ON**</p>
 
 <p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#0000d4">THE PROPHET NAHUM</span></p>
 
@@ -71,6 +71,5 @@ They say that Ninus was its founder, but this is proved to be a mistake by the t
 
 [^f2]: The distance is supposed by chronologers to have been about 150 years.—*Ed.*
 
-<h2 class="scripture-anchor" id="chapter-1" data-ref="CHAPTER 1" style="display:none">CHAPTER 1</h2>
-
+<span style="color:#006411">CHAPTER 1</span>
 
