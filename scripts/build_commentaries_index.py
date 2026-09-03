@@ -57,7 +57,7 @@ AUTHORS = OrderedDict([
     # 贺智：1857 与 1859 各自成册，不是合订本，所以 work_* 只作「本页收录」
     # 那一栏的集合名，逐卷书名走下面的 BOOK_TITLES。
     ('hodge',   dict(name='查尔斯·贺智', short='贺智',    en='Charles Hodge',   years='1797–1878', dir='hodge',
-                     work_cn='哥林多前后书注释',
+                     work_cn='罗马书、哥林多前后书注释',
                      work_en='')),
 ])
 
@@ -77,6 +77,8 @@ AUTHOR_COLORS = {
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
 BOOK_TITLES = {
+    ('hodge', 'romans'):       ('罗马书注释',
+                                'Commentary on the Epistle to the Romans'),
     ('hodge', '1corinthians'): ('哥林多前书注释',
                                 'An Exposition of the First Epistle to the Corinthians'),
     ('hodge', '2corinthians'): ('哥林多后书注释',

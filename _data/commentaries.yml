@@ -39,9 +39,9 @@ authors:
     short: "贺智"
     en: "Charles Hodge"
     years: "1797–1878"
-    work_cn: "哥林多前后书注释"
+    work_cn: "罗马书、哥林多前后书注释"
     work_en: ""
-    books: 2
+    books: 3
 
 books:
   - id: genesis
@@ -315,6 +315,7 @@ books:
     testament: nt
     chapters: 16
     links:
+      - {author: hodge, path: "/hodge/romans/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"

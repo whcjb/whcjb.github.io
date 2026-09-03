@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOKS = ['1corinthians', '2corinthians']
+BOOKS = ['1corinthians', '2corinthians', 'romans']
 
 ANCHOR_RE = re.compile(r'^<div class="commentary-anchor" id="[^"]+"></div>\n', re.M)
 
@@ -39,10 +39,22 @@ HEAD_RE = re.compile(
 )
 
 
+# 罗马书的节号头不是加粗数字，而是小型大写的 `VERSE 1.` / `VERSES 6, 7.` /
+# `VERSES 12-21.`（AGES 排版把 V 与 ERSE 分成两个 span，collapse_spaced_caps
+# 合并后就是这个形态）。全书 377 个头：VERSE N. 333 / VERSES N, N. 24 /
+# VERSES N-N. 17 / VERSES N-N, AND N-N. 1 / VERSES N, N, N. 1 / VERSE: N. 1，
+# 另有 2 个无号的裸 `VERSE.`（无从定位，跳过）。
+HEAD_VERSE_RE = re.compile(
+    r'^VERSES?\s*[:.]?\s*'
+    r'(\d{1,3}(?:\s*(?:[,，、]|[-–]|\s+AND\s+)\s*\d{1,3})*)'
+    r'\s*[.。]?\s*(?=[\s<])'
+)
+
+
 def parse_verses(spec: str):
     """'6, 7' → [6,7]；'3-5' → [3,4,5]；'32 33' → [32,33]。"""
     verses = []
-    for part in re.split(r'[,，、]|\s+(?=\d)', spec):
+    for part in re.split(r'[,，、]|\s+AND\s+|\s+(?=\d)', spec):
         part = part.strip()
         if not part:
             continue
@@ -71,7 +83,7 @@ def process(path: Path, book: str, ch: str, write: bool):
     out, seen = [], {}
     n_anchor = 0
     for line in text.split('\n'):
-        m = HEAD_RE.match(line)
+        m = HEAD_RE.match(line) or HEAD_VERSE_RE.match(line)
         if m:
             for v in parse_verses(m.group(1)):
                 seen[v] = seen.get(v, 0) + 1

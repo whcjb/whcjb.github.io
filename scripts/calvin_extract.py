@@ -231,6 +231,8 @@ VOLUMES = {
         'format': 'ages_phil',
         'inline_sup_footnotes': True,
         'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'skip_pages': {0, 1, 2},   # 封面 / HYPERTEXT TOC / 书名页
+        'stop_page': 402,          # 之后是 AGES 出版广告
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_1cor_ages.pdf',
         'out':  os.path.join(BASE, 'hodge_raw/1cor/hodge_1cor_structured.txt'),
     },
@@ -238,8 +240,28 @@ VOLUMES = {
         'format': 'ages_phil',
         'inline_sup_footnotes': True,
         'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'skip_pages': {0, 1, 2},   # 封面 / HYPERTEXT TOC / 书名页
+        'stop_page': 331,          # 之后是 AGES 出版广告
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_2cor_ages.pdf',
         'out':  os.path.join(BASE, 'hodge_raw/2cor/hodge_2cor_structured.txt'),
+    },
+    # 罗马书 (2026-09-03 诊断，见 hodge_raw/romans/DIAGNOSIS.md)
+    # 与 1cor/2cor 同为 ages_phil 单列，但结构差异要注意：
+    #   · 无拉丁文列、无 scripture-box——经文不单独成块，是嵌在注释里的红斜体引语
+    #   · 每章五段式：CONTENTS / ROMANS N:M-K. / ANALYSIS / COMMENTARY /
+    #     DOCTRINE / REMARKS（32 节）。标签蓝 #0000d4 粗体，节头绿 #006411 sz16，
+    #     CHAPTER/PREFACE/INTRODUCTION 绿 #006411 sz20
+    #   · ⚠️ 蓝 #0000d4 同时是**希腊文**(Koine-Medium)的颜色，判标签必须排除 Koine 字体
+    #   · 文末脚注区标题是 NOTES 不是 FOOTNOTES（p704）
+    #   · 希腊文 4314 词，是 1cor 的 5 倍，Gate X 必须过
+    'hodge-romans': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': True,
+        'para_indent': 12,   # 正文 x26 / 段首 x44，与 1cor/2cor 同，实测
+        'skip_pages': {0, 1, 2},   # 封面 / HYPERTEXT TOC / 书名页
+        'stop_page': 718,          # p718-719 是 AGES 出版广告
+        'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_romans_ages.pdf',
+        'out':  os.path.join(BASE, 'hodge_raw/romans/hodge_romans_structured.txt'),
     },
     'acts': {
         # Ages Digital Library single-column English (Beveridge/Fetherstone tr).
@@ -3619,8 +3641,18 @@ def phil_reconstruct_page(page, page_num=None):
             _prev = re.sub(r'</?sty(?:\s[^>]*)?>', '', _prev or '').rstrip()
             _ended = (cor_is_sentence_end(_prev)
                       and not re.search(r'\b(?:vs|v|ch|cf|comp|ver|chap)\.$', _prev, re.I))
-            if (_PARA_INDENT and ind >= _PARA_INDENT and _ended
-                    and cls == cur_cls == 'BODY'):
+            # 小型大写节号头（贺智罗马书 `VERSE 20, 21.` / `VERSES 6, 7.`）
+            # 必定起新段，但 PDF 里它们**一律 x=26 无首行缩进**（全书 404 处
+            # 无一例外），靠块间距分段。落到同一个 block 里时缩进条件不成立，
+            # 27 处就被并进上一段中间——内容不丢（Gate X 净缺 0 词），但节号
+            # 不在行首，verse-anchor 抓不到，胶囊少了 27 节（罗马书 4:20,21
+            # 案，2026-09-03）。这是字形信号（size-12 `V` + size-9 `ERSE`
+            # 小型大写）而非内容猜测，符合 principles §0.3；且不要求上一段
+            # 已结句——节号头前一句偶有跨页未结的情形。
+            _verse_head = (_PARA_INDENT
+                           and re.match(r'^VERSES?\s*[:.]?\s*\d', txt or ''))
+            if (_PARA_INDENT and cls == cur_cls == 'BODY'
+                    and (_verse_head or (ind >= _PARA_INDENT and _ended))):
                 texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
                 merged = ' '.join(t.strip() for t in texts if t.strip())
                 if merged.strip():
@@ -3672,8 +3704,26 @@ def extract_ages_phil(cfg):
     print(f"Processing {total} pages... (LATIN_X_MIN={shown}"
           f"{' 全卷统计' if _LATIN_X_MIN_OVERRIDE == 'auto' else ''})")
 
+    # AGES 的封面/书名页与卷尾出版广告不是注释内容，必须裁掉。
+    # 本函数原来一律处理全部页面，于是三本贺智都把「PUBLISHERS NOTES /
+    # CONTACTING AGES SOFTWARE / WHY IS THE DIGITAL LIBRARY COPYRIGHTED?」
+    # 发布进了末章、把封面发布进了 preface（2026-09-03 由罗马书 Gate T 的
+    # bold +25% 查出，1cor/2cor 同病）。默认仍不裁，只有配了才裁，
+    # 既有加尔文各卷产物不受影响。
+    skip_pages = cfg.get('skip_pages') or set()
+    if isinstance(skip_pages, int):
+        skip_pages = set(range(skip_pages))
+    stop_page = cfg.get('stop_page')
+    if skip_pages or stop_page is not None:
+        print(f"  裁页: 跳过 {sorted(skip_pages)}"
+              f"{f'，停在 p{stop_page}(0-based，不含)' if stop_page is not None else ''}")
+
     all_output = []
     for page_num in range(total):
+        if page_num in skip_pages:
+            continue
+        if stop_page is not None and page_num >= stop_page:
+            break
         all_output.append(f'\n--- PAGE {page_num + 1} ---\n')
         all_output.extend(phil_reconstruct_page(doc[page_num], page_num=page_num))
 

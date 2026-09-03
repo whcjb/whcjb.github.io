@@ -25,6 +25,9 @@ import sys
 import unicodedata
 from pathlib import Path
 
+# 文末集中脚注区的标题文字（可由 CLI --fn-section-title 追加）
+FN_SECTION_TITLES = {'FOOTNOTES'}
+
 # ── Ages Greek transliteration → Unicode ─────────────────────────────────
 # Diacritic combining marks (must follow base letter):
 #   j = smooth breathing (psilon), J = rough breathing (dasia)
@@ -392,8 +395,11 @@ def bold_leading_verse_num(text: str) -> str:
     # 分隔符还包括「纯空格」（贺智 1cor 有 `32 33.` 这种漏了逗号的），
     # 后接字符还包括左括号（`2. (For he saith…`）。这三种形态各只有一两处，
     # 但漏掉就会被 kramdown 变成 <ol>。
+    # 罗马书又添三种起首：markdown 斜体星号（`1. *The object to which…*`）、
+    # 弯双引号（`5. “How can they preach…`）、弯单引号（`3. ‘After Isaac…`）。
+    # 4 处，同样会漏成 <ol>（2026-09-03 §16 验收查出）。
     pat = (r'^(\d+(?:\s*[,，]\s*\d+|\s*[-–—]\s*\d+|\s+\d+)*)\. '
-           r'(?=[A-Za-z(<])')
+           r'(?=[A-Za-z(<*“”‘’"])')
     m = re.match(pat, text)
     if not m:
         return text
@@ -752,12 +758,23 @@ def convert(structured_path: Path, out_path: Path) -> None:
         # 比较前必须剥掉 <sty> 包裹：标题在 PDF 里是粗体，加粗进管道后
         # content 变成 `<sty c="…" b="1">FOOTNOTES</sty>`，精确等值会失配，
         # 整个脚注区就退回普通段落、def 归零（改粗体那次踩过）。
+        # 标题文字按卷而异：贺智哥林多前后书是 FOOTNOTES，罗马书是 NOTES
+        # （p704）。默认只认 FOOTNOTES，别的卷用 --fn-section-title 显式指定，
+        # 不放宽默认判定——NOTES 是个太常见的词，放进默认集会误吞正文小节。
         _bare = re.sub(r'</?sty(?:\s[^>]*)?>', '', content).strip().upper()
-        if tag in ('CENTERED_H2', 'CENTERED_H1') and _bare == 'FOOTNOTES':
+        if tag in ('CENTERED_H2', 'CENTERED_H1') and _bare in FN_SECTION_TITLES:
             in_footnote_section = True
             i += 1
             continue
-        if in_footnote_section and tag == 'BODY':
+        # 脚注区里不止 BODY：悬挂缩进的拉丁诗行、居中的希腊引句、跨行的
+        # 长引文会被打上 INDENT*/CENTERED/RIGHT/H2。只认 BODY 的话，这些行
+        # 落不进 [^fN]: 定义，而是当普通段落 emit 到末章正文里——罗马书
+        # NOTES 区 10 行（678 词）就这样漂到 16.md 里，Gate X 脚注流
+        # 相似度 0.916、正文流反而多出 2258 字符（2026-09-03 查出）。
+        # 脚注标题之后到文末的一切都属于脚注区，按内容续行处理。
+        if in_footnote_section and tag in (
+                'BODY', 'INDENT', 'INDENT2', 'INDENT3', 'INDENT4',
+                'CENTERED', 'CENTERED_H1', 'CENTERED_H2', 'RIGHT', 'H1', 'H2'):
             # format_inline 只做行内清理与希腊转换，<sty> 仍是原样；必须再过
             # apply_verse_styling 才会变成 HTML span（漏这一步脚注里会露出
             # 裸的 `<sty c="0000d4" i="0">`）。red=False：脚注不是经文引语。
@@ -771,9 +788,17 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 body = _fmt(fm.group(2)) if fm.group(2).strip() else ''
                 out.append(f'[^f{fm.group(1)}]:' + (' ' + body if body else ''))
             elif content.strip():
-                # 续行并进上一条定义
-                if out and out[-1].startswith('[^f'):
-                    out[-1] = out[-1].rstrip() + ' ' + _fmt(content)
+                # 续行并进上一条定义。不能只看 out[-1]：脚注条目跨页时
+                # `<!-- PAGE N -->` 会插在定义与续行之间，out[-1] 成了页界
+                # 注释，续行就被当普通段落 emit 到末章正文里（罗马书 6 条
+                # 长脚注、566 词，2026-09-03 由 Gate X 脚注流查出）。
+                # 向后跳过空行与页界注释，找最近的那条定义。
+                k = len(out) - 1
+                while k >= 0 and (not out[k].strip()
+                                  or out[k].lstrip().startswith('<!--')):
+                    k -= 1
+                if k >= 0 and out[k].startswith('[^f'):
+                    out[k] = out[k].rstrip() + ' ' + _fmt(content)
                 else:
                     out.append(_fmt(content))
             i += 1
@@ -1311,9 +1336,13 @@ def main() -> int:
         BOLD_VERSE_NUM = False
     if '--split-verse-num' in sys.argv:
         globals()['SPLIT_VERSE_VS_ITEM'] = True
+    for a in sys.argv[1:]:
+        if a.startswith('--fn-section-title='):
+            FN_SECTION_TITLES.add(a.split('=', 1)[1].strip().upper())
     if len(args) < 2:
         print('usage: structured_to_md.py <input.txt> <output.md> '
-              '[--no-bold-verse-num] [--split-verse-num]', file=sys.stderr)
+              '[--no-bold-verse-num] [--split-verse-num] '
+              '[--fn-section-title=NOTES]', file=sys.stderr)
         return 1
     inp = Path(args[0])
     out = Path(args[1])

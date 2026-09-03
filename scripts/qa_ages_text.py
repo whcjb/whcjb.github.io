@@ -22,6 +22,9 @@ import os
 import re
 import sys
 
+# 文末集中脚注区的标题文字（--fn-section-title 追加）
+FN_TITLES = {'FOOTNOTES'}
+
 import fitz
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -61,7 +64,10 @@ def pdf_stream(pdf: str, skip_head: int, skip_tail: int) -> tuple:
                 # 只认书末那个 FOOTNOTES 标题：卷首的超链接目录里也有一行
                 # 「Footnotes」，不设页数下限会从第 5 页就切开，把整本正文
                 # 都算进脚注流（实测踩过）。
-                if t.strip().upper() == 'FOOTNOTES' and i > doc.page_count * 0.75:
+                # 标题按卷而异：贺智哥林多前后书是 FOOTNOTES，罗马书是 NOTES。
+                # 只认书末那个（i > 0.75），卷首超链接目录里的同名行不算。
+                if (t.strip().upper() in FN_TITLES
+                        and i > doc.page_count * 0.75):
                     in_notes = True
                     continue
                 (notes if in_notes else out).append(t)
@@ -105,8 +111,11 @@ def main():
     ap.add_argument('out')
     ap.add_argument('--skip-head', type=int, default=0)
     ap.add_argument('--skip-tail', type=int, default=0)
+    ap.add_argument('--fn-section-title', action='append', default=[],
+                    help='文末脚注区标题（罗马书是 NOTES），可多次给')
     ap.add_argument('--show', type=int, default=12)
     a = ap.parse_args()
+    FN_TITLES.update(t.strip().upper() for t in a.fn_section_title)
 
     A, An = pdf_stream(a.pdf, a.skip_head, a.skip_tail)
     B, Bn = md_stream(a.out)
