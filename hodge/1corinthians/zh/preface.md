@@ -11,88 +11,6 @@ zh: true
 ---
 
 
-<!-- PAGE 1 -->
-
-## 世代数字图书馆（THE AGES DIGITAL LIBRARY）
-
-# 注释
-
-# 哥林多前书注释
-
-<p style="text-align:right;" markdown="1">*查尔斯·贺智 著*</p>
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#000080">**BooksForTheAges**</span> </p>
-
-<p style="text-align:center" markdown="1">**AGES Software • Albany, OR  USA** **Version 2.0 © 1996, 1997**</p>
-
-<!-- PAGE 2 -->
-
-<p style="margin-left:2em;" markdown="1">超文本目录</p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#006411">导论</span></p>
-
-<p style="margin-left:4em;" markdown="1"><span class="enum-num">1.</span> 哥林多。</p>
-
-<p style="margin-left:4em;" markdown="1"><span class="enum-num">2.</span> 保罗在哥林多的工作。</p>
-
-<p style="margin-left:4em;" markdown="1"><span class="enum-num">3.</span> 哥林多教会的光景</p>
-
-<p style="margin-left:4em;" markdown="1"><span class="enum-num">4.</span> 写作年代。——本书信的内容。</p>
-
-<p style="margin-left:4em;" markdown="1"><span class="enum-num">5.</span> 本书信之重要性</p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#006411">注释</span></p>
-
-<p style="margin-left:4em;" markdown="1">第一章</p>
-
-<p style="margin-left:4em;" markdown="1">第二章</p>
-
-<p style="margin-left:4em;" markdown="1">第三章</p>
-
-<p style="margin-left:4em;" markdown="1">第四章</p>
-
-<p style="margin-left:4em;" markdown="1">第五章</p>
-
-<p style="margin-left:4em;" markdown="1">第六章</p>
-
-<p style="margin-left:4em;" markdown="1">第七章</p>
-
-<p style="margin-left:4em;" markdown="1">第八章</p>
-
-<p style="margin-left:4em;" markdown="1">第九章</p>
-
-<p style="margin-left:4em;" markdown="1">第十章</p>
-
-<p style="margin-left:4em;" markdown="1">第十一章</p>
-
-<p style="margin-left:4em;" markdown="1">第十二章</p>
-
-<p style="margin-left:4em;" markdown="1">第十三章</p>
-
-<p style="margin-left:4em;" markdown="1">第十四章</p>
-
-<p style="margin-left:4em;" markdown="1">第十五章</p>
-
-<p style="margin-left:4em;" markdown="1">第十六章</p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#006411">脚注</span></p>
-
-<p style="margin-left:2em;" markdown="1"><span style="color:#006411">出版者按语</span></p>
-
-<!-- PAGE 3 -->
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">**注释**</span></p>
-
-<p class="title-block-h1" style="text-align:center; font-size:22px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">哥林多前书</span></p>
-
-<p style="text-align:center" markdown="1">著者</p>
-
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">**查尔斯·贺智**</p>
-
-<p style="text-align:center" markdown="1">（无日期）</p>
-
-<p style="text-align:center" markdown="1">**SAGE** Software 俄勒冈州奥尔巴尼 © 1996</p>
-
 <!-- PAGE 4 -->
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">导论</span></p>
@@ -210,5 +128,3 @@ zh: true
 <!-- PAGE 20 -->
 
 [^f1]: 德国学者著有若干专论，专门描述哥林多城的概况与历史：威尔兴（Wilchen）之《Rerum Corinthiarum specimen ad illustrationem utriusque Epistolae Paulinae》，1747年；巴尔特（Barth）之《Corinthiorum Commercia et Mercaturae particula》，柏林，1814年。科尼比尔与豪森合著之《保罗的生平与书信》中有一章论及此题，甚为可观，见第一卷第十二章。又可参看韦纳（Winer）之《Real Wörterbuch》，以及阿诺德（Arnold）之《保罗达哥林多人书》。
-
-
