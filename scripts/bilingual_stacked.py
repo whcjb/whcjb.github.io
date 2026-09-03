@@ -389,10 +389,25 @@ def rebuild_sections(text):
                     side = lat
                 else:
                     side = tgt
+                other = lat if side is pri else pri
                 if tn not in side:
                     side[tn] = tb
-                elif tn not in (lat if side is pri else pri):
-                    (lat if side is pri else pri)[tn] = tb
+                    captured |= _words_of(tb)
+                elif tn not in other:
+                    other[tn] = tb
+                    captured |= _words_of(tb)
+                else:
+                    # 两侧都已有该节 → 这是同一节的另一份译法
+                    # （jeremiah-1/4.md：box 里 v12 中文作「这些地方/为我/
+                    # 发出判语」，框外带括注那份作「那些地方/向我/宣告审判」）。
+                    # 保留 box 那份，此份作冗余**报给调用方**——原先是静默
+                    # 丢弃，闸门看到「丢 37 字符」就把整个文件跳过了。
+                    w = _words_of(tb)
+                    if w and len(w & captured) / len(w) >= 0.70:
+                        dropped_here.append(tb)
+                    else:
+                        side[tn] = side[tn].rstrip() + ' ' + tb
+                        captured |= w
             j += 1
         if not (pri and lat):
             i += 1; continue
