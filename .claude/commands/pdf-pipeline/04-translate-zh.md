@@ -109,6 +109,13 @@ translate_filibi.py BOOKS dict 中每个 book 都定义了 system prompt。必�
 - 「保留所有 Markdown 标记不变：`**bold**` `*italic*`」
 - 「保留所有 HTML 标签不变：`<p style="...">` `<strong>` `<div>` 等」
 - 「拉丁文/法文/希腊文/希伯来文保留原文，括号附中文译音/译义」
+  ⚠️ **仅限正文里的行内外文词**（`fides（信心）`）。**整段拉丁经文不得加括注**——
+  它是双语经文块的并列列，中文就在左列，右列再塞一遍中译是重复，且与
+  结构正确的书卷（hosea 等 52 卷拉丁列全无汉字）不一致。
+  2026-09-03 用户指出：「左侧已经有中文了，拉丁文里面又加个中文有啥用」。
+  已发生的（isaiah-1 10 处 / obadiah 8 处）在 publish 后剥掉；
+  规则同时写在 scripts/translate_filibi.py 的 prompt 里。
+  验收：`<td class="scripture-la">` 内不得出现汉字。
 - 「圣经书卷/人名用和合本标准译名（一长表）」
 - 「章节引用格式：路加福音 1:1，马太福音 2:23（书卷名 章:节）」
 - 「加尔文术语保留学术性：righteousness→义，justification→称义，...」

@@ -15,7 +15,7 @@ date: 2026-08-21 03:23
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</td><td class="scripture-la"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.（亚摩斯的儿子以赛亚的异象，是他在犹大诸王乌西雅、约坦、亚哈斯、希西家的日子，论到犹大和耶路撒冷所见的。）</td></tr>
+<tr><td class="scripture-en"><strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</td><td class="scripture-la"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</td></tr>
 </tbody>
 </table>
 
@@ -295,7 +295,7 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。</td><td class="scripture-la"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.（来吧，我要为我所亲爱的歌唱，唱我所爱者论他葡萄园的歌。我所亲爱的有一葡萄园，在油之子的山角上。）</td></tr>
+<tr><td class="scripture-en"><strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。</td><td class="scripture-la"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</td></tr>
 </tbody>
 </table>
 
@@ -653,7 +653,7 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，</td><td class="scripture-la"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,（祸哉，那些设立不义之律例的，和那些记录不公之判词的，）</td></tr>
+<tr><td class="scripture-en"><strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，</td><td class="scripture-la"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</td></tr>
 </tbody>
 </table>
 
@@ -935,7 +935,7 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。</td><td class="scripture-la"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.（耶和华现在要怜恤雅各，必再拣选以色列，使他们在本地安居；寄居的必与他们联合，我说，他们必与雅各家结连。）</td></tr>
+<tr><td class="scripture-en"><strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。</td><td class="scripture-la"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</td></tr>
 </tbody>
 </table>
 
@@ -1185,7 +1185,7 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <table class="scripture-bilingual">
 <tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 唉！古实河外展翅嗡嗡之地，</td><td class="scripture-la"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.（唉！以翼遮蔽之地，在古实诸河之外。）</td></tr>
+<tr><td class="scripture-en"><strong>1.</strong> 唉！古实河外展翅嗡嗡之地，</td><td class="scripture-la"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</td></tr>
 </tbody>
 </table>
 

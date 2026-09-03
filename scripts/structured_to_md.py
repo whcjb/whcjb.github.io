@@ -609,9 +609,68 @@ def _build_ref_banner(ages_code, book_verse: str) -> str:
     return f'<p class="scripture-ref">{book_verse}</p>'
 
 
+# 纵向叠放的双语经文：`[INDENT] N 英文` 与 `[RIGHT]/[CENTERED] N 拉丁`
+# 上下相邻（不是 1cor 那种左右两列）。extractor 的双列状态机认不出这种版式，
+# 于是整章经文落成散段——俄巴底亚书全章、何西阿书 12 章都是（2026-09-03
+# 用户发现）。这里在 convert 之前做一道窄口径预处理，把它们配对成
+# [SCRIPTURE_ROW]，交给既有的双语 table 渲染路径。
+#
+# 为什么在这里而不是改 extractor：raw 里两边的文字都在，配对是纯本地变换、
+# 零内容丢失风险。改 extractor 那条路试过——scripture-mode 一激活，
+# 双语 flush 反而把拉丁整段丢了（Ecce parvum 0 命中），已回滚。
+#
+# 口径刻意收窄，避免波及其余 50 多卷：必须紧跟一个经文 ref 行
+# （`<NNNNNN>BOOK …`），且随后的项里**同时**有 INDENT 侧与 RIGHT/CENTERED 侧、
+# 节号能对上，才改写；否则原样放过。
+_SCRIPT_REF_RE = re.compile(r'<\d{6,7}>')
+_VERSE_LEAD_RE = re.compile(r'^\s*(\d{1,3})\.?\s+(?=\S)')
+_EN_TAGS = ('INDENT', 'INDENT2', 'INDENT3', 'INDENT4')
+_LA_TAGS = ('RIGHT', 'CENTERED')
+
+
+def _pair_stacked_bilingual(lines: list[str]) -> list[str]:
+    out, i, n = [], 0, len(lines)
+    while i < n:
+        line = lines[i]
+        m = TAG_RE.match(line)
+        # 找 ref 行：任意标记，内容里带 <NNNNNN> 且以书名+节号收尾
+        if not (m and _SCRIPT_REF_RE.search(m.group(2))):
+            out.append(line); i += 1; continue
+        out.append(line)
+        j = i + 1
+        en, la, consumed = {}, {}, []
+        while j < n:
+            if not lines[j].strip():
+                consumed.append(j); j += 1; continue
+            mj = TAG_RE.match(lines[j])
+            if not mj or mj.group(1) not in (_EN_TAGS + _LA_TAGS):
+                break
+            body = re.sub(r'</?sty(?:\s[^>]*)?>', '', mj.group(2))
+            vm = _VERSE_LEAD_RE.match(body)
+            if not vm:
+                break
+            num = vm.group(1)
+            side = en if mj.group(1) in _EN_TAGS else la
+            if num in side:                     # 同侧同节重复 → 不动，交回原路径
+                break
+            side[num] = mj.group(2)[vm.end():].strip() if False else \
+                re.sub(_VERSE_LEAD_RE, '', mj.group(2), count=1).strip()
+            consumed.append(j); j += 1
+        # 只有两侧都有、且至少一个节号对得上，才改写
+        common = set(en) & set(la)
+        if en and la and common:
+            for num in sorted(set(en) | set(la), key=int):
+                out.append(f'[SCRIPTURE_ROW] {num}|||EN|||{en.get(num, "").strip()}'
+                           f'|||LA|||{la.get(num, "").strip()}')
+            i = j
+        else:
+            i += 1
+    return out
+
+
 def convert(structured_path: Path, out_path: Path) -> None:
     text = structured_path.read_text(encoding='utf-8')
-    lines = text.split('\n')
+    lines = _pair_stacked_bilingual(text.split('\n'))
 
     out: list[str] = []
     current_page = 0
