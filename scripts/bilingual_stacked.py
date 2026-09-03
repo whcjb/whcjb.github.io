@@ -121,7 +121,7 @@ def pair_markdown(text, en_text=None, book_cn=None):
                    + '\n</tbody>\n</table>\n\n</div>')
         fixed += 1
         i = j
-    return '\n\n'.join(out), fixed
+    return '\n\n'.join(out), fixed, dropped
 
 
 # ── 形态二：单列 box + box 外的拉丁散段 ────────────────────────────
@@ -310,11 +310,22 @@ def _unbox(text):
     return BOX_RE.sub(rep, text)
 
 
+def _words_of(x):
+    return set(re.findall(r'[A-Za-z]{3,}|[一-鿿]', re.sub(r'<[^>]+>', ' ', x)))
+
+
 def rebuild_sections(text):
-    """形态无关地重建双语 box。→ (新文本, 重建的段数)"""
+    """形态无关地重建双语 box。→ (新文本, 重建的段数, 有意丢弃的冗余项)
+
+    第三个返回值是**去冗**丢掉的项：同一节同侧已经有内容、且新项的词
+    ≥70% 已被本段捕获时，判为冗余副本丢弃。jeremiah-1/4.md 就是这种：
+    box 里已有 v11 的干净拉丁，框外另有一份「v11 拉丁 + 中译括注 +
+    v12 中文尾巴」——三部分的内容都已被别处捕获，整块冗余。
+    调用方把这部分从零丢失校验里扣除，否则会因为「丢了 492 字符」而白白跳过。
+    """
     text = _unbox(text)
     blocks = text.split('\n\n')
-    out, i, fixed = [], 0, 0
+    out, i, fixed, dropped = [], 0, 0, []
     while i < len(blocks):
         b = blocks[i]
         if not (SEC_START_RE.search(b) or '<p class="scripture-ref">' in b):
@@ -326,6 +337,7 @@ def rebuild_sections(text):
         if rm:
             ref_html = rm.group(0)      # 先只记下，不动 out[ref_slot]
         pri, lat, stubs, j = {}, {}, [], i + 1
+        captured = set(); dropped_here = []
         while j < len(blocks):
             seg = blocks[j].strip()
             if not seg:
@@ -351,6 +363,15 @@ def rebuild_sections(text):
             tgt = lat if (is_la or num in pri) else pri
             if num not in tgt:
                 tgt[num] = body
+                captured |= _words_of(body)
+            else:
+                # 该节该侧已有内容：新项若 ≥70% 的词已被本段捕获 → 冗余副本
+                w = _words_of(body)
+                if w and len(w & captured) / len(w) >= 0.70:
+                    dropped_here.append(body)
+                else:
+                    tgt[num] = tgt[num].rstrip() + ' ' + body
+                    captured |= w
             # 尾巴（块内跟着的下一节）**按语种分流**，不能一律塞 pri：
             #   harmony-law-1/9.md：拉丁 v40 的项尾接着 v41 的**拉丁**，
             #   而 pri['41'] 已被中文占用 → `trail[0] not in pri` 为假 →
@@ -359,6 +380,7 @@ def rebuild_sections(text):
             # 中文页按汉字占比判得准；英文页两边都是拉丁字母，归父项同侧。
             if trail:
                 tn, tb = trail
+                captured |= _words_of(tb)
                 han = len(re.findall(r'[一-鿿]', tb))
                 lat_n = len(re.findall(r'[A-Za-z]', tb))
                 if han and han >= lat_n:
@@ -388,6 +410,7 @@ def rebuild_sections(text):
                    + '<table class="scripture-bilingual">\n<tbody>\n'
                    + '\n'.join(rows) + '\n</tbody>\n</table>\n\n</div>')
         out.extend(stubs)
+        dropped.extend(dropped_here)
         fixed += 1
         i = j
-    return '\n\n'.join(out), fixed
+    return '\n\n'.join(out), fixed, dropped
