@@ -84,8 +84,16 @@ def page_of(doc, code, verse, ref_text=None):
 
 
 def blocks_for_verse(page, verse):
-    """→ [该页以该节号起首的块文本]"""
+    """→ [该页与该节号相关的候选文本]
+
+    两级：
+      ① 以该节号**起首**的块（最干净）；
+      ② 块**内部**含该节号的，就地切出「该节号 → 下一个节号 / 块尾」这一段。
+         缺侧常与 H2 或相邻节合在同一块里（jeremiah 的英文经文就与
+         `<241106>JEREMIAH 11:6-8` 同块），只认①会取不到。
+    """
     res = []
+    inner = []
     for b in page.get_text('dict')['blocks']:
         if b['type']:
             continue
@@ -94,7 +102,16 @@ def blocks_for_verse(page, verse):
         txt = re.sub(r'\s+', ' ', txt).strip()
         if re.match(rf'^{verse}\s*[.,)]?\s+\S', txt):
             res.append(re.sub(rf'^{verse}\s*[.,)]?\s*', '', txt))
-    return res
+            continue
+        m = re.search(rf'(?:(?<=\s)|^){verse}\s*[.,)]\s+(\S.*)$', txt)
+        if m:
+            seg = m.group(1)
+            nxt = re.search(r'(?:(?<=\s))(\d{1,3})\s*[.,)]\s+\S', seg)
+            if nxt:
+                seg = seg[:nxt.start()].strip()
+            if len(seg) > 20:
+                inner.append(seg)
+    return res + inner
 
 
 def main():
@@ -128,6 +145,14 @@ def main():
                 print(f'  ✗ {os.path.relpath(md, ROOT)} v{verse} {side}: PDF 页定位失败'
                       f'（code={code}）')
                 continue
+            # ⚠️ 中文页的 scripture-en 装的是**中文**，PDF 里只有英/拉，
+            # 取不到——填英文进去就是错。中文页只允许补 la（拉丁）。
+            if side == 'en' and not md.endswith('-en/' + os.path.basename(md)) \
+                    and '-en/' not in md:
+                n_no += 1
+                print(f'  ✗ {os.path.relpath(md, ROOT)} v{verse} en: '
+                      f'中文页的正文列是中文，PDF 无从回填（须走翻译）')
+                continue
             cands = blocks_for_verse(doc[pi], verse)
             if not cands:
                 n_no += 1
@@ -137,6 +162,23 @@ def main():
 
             def sim(x):
                 return difflib.SequenceMatcher(None, x[:120], oth[:120]).ratio()
+
+            # ⚠️ 语种判别：只按「与已有列不相似」挑，会把**英文**填进拉丁列
+            # （jeremiah-1/19.md v4 la 的候选是 `Because they have forsaken
+            # me…`，实测）。用停用词计分把语种钉死。
+            EN_W = re.compile(r'\b(the|and|of|that|have|they|unto|shall|with|'
+                              r'which|their|been|from)\b', re.I)
+            LA_W = re.compile(r'\b(est|sunt|quia|quod|ad|et|non|ejus|eorum|'
+                              r'autem|enim|vel|hoc|illud|Jehova|Dominus|in)\b', re.I)
+            def lang_ok(x):
+                e = len(EN_W.findall(x)); l = len(LA_W.findall(x))
+                return (l > e) if side == 'la' else (e > l)
+            cands = [c for c in cands if lang_ok(c)]
+            if not cands:
+                n_no += 1
+                print(f'  ✗ {os.path.relpath(md, ROOT)} v{verse} {side}: '
+                      f'候选语种不符（要 {"拉丁" if side=="la" else "英文"}），放弃')
+                continue
 
             cands.sort(key=sim)
             # 只有一块时：它若与已有列**不像**，那它就是缺的那侧。
