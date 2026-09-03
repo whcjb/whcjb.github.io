@@ -20,11 +20,6 @@ title: 约翰欧文·希伯来书注释
   <div class="owen-sec-hd">卷首 · 导论 Front Matter &amp; Exercitations
     <a href="{{ site.baseurl }}/owen/hebrews/exercitations/" class="owen-listlink">全部列表 &rarr;</a></div>
 
-  <div class="owen-legend">
-    <span><i class="lg-zh"></i>中文版</span>
-    <span><i class="lg-en"></i>仅英文（中译进行中）</span>
-  </div>
-
   <div class="owen-sub">卷首 Front Matter · 8 篇（编者总序 · Owen 献词 · 5 篇原序）</div>
   <div class="owen-grid">
     {% for n in (1..8) %}
@@ -98,28 +93,17 @@ title: 约翰欧文·希伯来书注释
 .owen-tile-exer:hover{background:#1f5a4b;color:#fff}
 .owen-tile-pref{border-style:dashed}
 
-/* ── 已发布中译 vs 仅英文 ─────────────────────────────────
-   区分不能借用虚线/实线——那两个已经用来分「卷首」与「导论」了。
-   改用「填色」区分：已译的方块有底色、边框加重、字色转深；未译的把边框与
-   字色一起调淡，退成背景。判定见上面的 zh_paths。
-   （原先还在右上角挂一个小圆「中」字角标，2026-09-03 用户要求去掉——格子
-   本来就已经先进中文页，角标是冗余信息，48 个圆点反而吵。） */
+/* ── 格子配色：全部统一 ───────────────────────────────────
+   曾经按「已译 / 仅英文」分两套色（已译填墨绿底 #e6f0ea + 深边框，未译调淡），
+   还在右上角挂过小圆「中」字角标。2026-09-03 用户都要求去掉：角标 48 个圆点
+   太吵，两套色「太难看」，指定统一用未译那一套的浅色。
+   所以这里只留一套：浅纸底 + 淡边框 + 中绿字。已译/未译不再有视觉差别，
+   状态信息保留在每个格子的 title 提示里（zh_paths 判定照旧，仍决定链接
+   落中文页还是英文页），图例随之删掉——两个色块长得一样的图例是错的。 */
 .owen-tile{position:relative}
-.owen-tile-zh{background:#e6f0ea;border-color:#1f5a4b;color:#164036;font-weight:600}
-.owen-tile-zh span{opacity:.78}
-.owen-tile-zh:hover{background:#1f5a4b;color:#fff}
-/* 未译：不是禁用态，仍可点（英文版本来就能读），只是退一步 */
-.owen-tile-exer:not(.owen-tile-zh),
-.owen-tile-ch:not(.owen-tile-zh){border-color:#b6cfc3;color:#6e9285}
-.owen-tile-ch:not(.owen-tile-zh){background:#fdfcf9;box-shadow:none}
-
-/* 图例 */
-.owen-legend{display:flex;justify-content:center;gap:20px;align-items:center;
-  margin:2px 0 16px;font-size:11.5px;color:#8a8a82;letter-spacing:.04em}
-.owen-legend i{display:inline-block;width:13px;height:13px;border-radius:3px;
-  vertical-align:-2px;margin-right:6px}
-.owen-legend .lg-zh{background:#e6f0ea;border:1.5px solid #1f5a4b}
-.owen-legend .lg-en{background:transparent;border:1.5px solid #b6cfc3}
+.owen-tile-exer,
+.owen-tile-ch{border-color:#b6cfc3;color:#6e9285}
+.owen-tile-ch{background:#fdfcf9;box-shadow:none}
 @media(max-width:600px){
   .owen-tile-ch{width:58px;height:58px;font-size:18px}
   .owen-tile-intro{width:42px;height:42px;font-size:14px}
