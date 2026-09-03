@@ -6,11 +6,9 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      {% assign owen_other = page.en_url | default: page.zh_url %}
       <div class="owen-chrome" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
         <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
         <span style="display:flex; gap:8px;">
-        {% if owen_other %}<button type="button" class="owen-lang owen-cmp-btn" id="owenCmpBtn">⇋ 中英对照</button>{% endif %}
         {% if page.zh_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 ↔</a>{% endif %}
         {% if page.en_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.en_url }}">English ↔</a>{% endif %}
         </span>
@@ -40,29 +38,6 @@ layout: default
   </div>
 </div>
 
-{% if owen_other %}
-<!-- 中英对照分屏: 左=当前内容, 右=另一语言 iframe -->
-<div class="owen-cmp-stage" id="owenCmpStage"
-     data-other="{{ site.baseurl }}{{ owen_other }}"
-     data-self-label="{% if page.en_url %}中文{% else %}English{% endif %}"
-     data-other-label="{% if page.en_url %}English{% else %}中文{% endif %}">
-  <div class="owen-cmp-bar">
-    <div class="owen-cmp-tg">
-      <button type="button" class="owen-cmp-t owen-cmp-t-active" data-pane="self">{% if page.en_url %}中文{% else %}English{% endif %}</button>
-      <button type="button" class="owen-cmp-t" data-pane="other">{% if page.en_url %}English{% else %}中文{% endif %}</button>
-    </div>
-    <button type="button" class="owen-cmp-close" id="owenCmpClose">关闭对照 &times;</button>
-  </div>
-  <div class="owen-cmp-cols">
-    <div class="owen-cmp-col owen-cmp-self">
-      <iframe class="owen-cmp-frame" id="owenCmpSelfFrame" title="本页"></iframe>
-    </div>
-    <div class="owen-cmp-col owen-cmp-other">
-      <iframe class="owen-cmp-frame" id="owenCmpFrame" title="对照"></iframe>
-    </div>
-  </div>
-</div>
-{% endif %}
 
 <style>
 /* 约翰欧文注释 —— 忠实版: 干净散文, 严格照 PDF, 不加结构 */
@@ -123,31 +98,6 @@ layout: default
 .owen-content .owen-secnum{font-weight:bold;font-size:16px;color:#1f5a4b;
   text-decoration:none !important;cursor:default;margin-right:6px;white-space:nowrap}
 .owen-content .owen-secnum:hover{text-decoration:none;color:#14382f}
-/* 中英对照分屏 */
-.owen-cmp-btn{cursor:pointer;background:#1f5a4b;color:#fff !important;border:1px solid #1f5a4b}
-.owen-cmp-btn:hover{background:#14382f}
-.owen-cmp-stage{display:none;position:fixed;inset:0;z-index:1200;background:#fbfaf6;flex-direction:column}
-.owen-cmp-stage.open{display:flex}
-.owen-cmp-bar{flex:0 0 auto;display:flex;justify-content:space-between;align-items:center;
-  padding:8px 14px;border-bottom:1px solid #dfe6e0;background:#f2f7f4}
-.owen-cmp-tg{display:none}
-.owen-cmp-t{border:1px solid #cfe0d6;background:#fff;color:#1f5a4b;padding:5px 14px;font-size:13px;cursor:pointer}
-.owen-cmp-t:first-child{border-radius:6px 0 0 6px}
-.owen-cmp-t:last-child{border-radius:0 6px 6px 0;border-left:none}
-.owen-cmp-t-active{background:#1f5a4b;color:#fff}
-.owen-cmp-close{border:none;background:none;color:#1f5a4b;font-size:14px;cursor:pointer}
-.owen-cmp-cols{flex:1 1 auto;display:flex;min-height:0}
-.owen-cmp-col{flex:1 1 50%;min-height:0;padding:0}
-.owen-cmp-self{border-right:1px solid #dfe6e0}
-.owen-cmp-frame{width:100%;height:100%;border:none;display:block}
-@media(max-width:820px){
-  .owen-cmp-tg{display:inline-flex}
-  /* 两栏叠放, 只切 opacity(不 display:none), 保留各 iframe 滚动位置 */
-  .owen-cmp-cols{position:relative}
-  .owen-cmp-col{position:absolute;inset:0;flex-basis:auto;opacity:0;pointer-events:none;border-right:none}
-  .owen-cmp-stage.show-self .owen-cmp-self{opacity:1;pointer-events:auto;z-index:1}
-  .owen-cmp-stage.show-other .owen-cmp-other{opacity:1;pointer-events:auto;z-index:1}
-}
 </style>
 <script>
 // 纯破折号段(———) → 雅致花饰分隔符(中英页通用)
@@ -184,48 +134,6 @@ layout: default
     p.insertBefore(document.createTextNode(' '),p.firstChild);
     p.insertBefore(a,p.firstChild);
   });
-})();
-(function(){
-  var stage=document.getElementById('owenCmpStage'),
-      btn=document.getElementById('owenCmpBtn');
-  if(!stage||!btn) return;
-  var frame=document.getElementById('owenCmpFrame'),
-      selfFrame=document.getElementById('owenCmpSelfFrame'),
-      closeBtn=document.getElementById('owenCmpClose'),
-      loaded=false;
-  function open(){
-    if(!loaded){                                   // 左右都用 iframe(独立文档, 各自跳转/弹窗正常)
-      selfFrame.src=location.pathname;
-      frame.src=stage.getAttribute('data-other');
-      loaded=true;
-    }
-    stage.classList.add('open','show-self');stage.classList.remove('show-other');
-    document.body.style.overflow='hidden';
-  }
-  function close(){stage.classList.remove('open');document.body.style.overflow='';}
-  btn.addEventListener('click',open);
-  closeBtn.addEventListener('click',close);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&stage.classList.contains('open'))close();});
-  // 手机端二选一
-  stage.querySelectorAll('.owen-cmp-t').forEach(function(t){
-    t.addEventListener('click',function(){
-      var pane=t.getAttribute('data-pane');
-      stage.classList.toggle('show-other',pane==='other');
-      stage.classList.toggle('show-self',pane!=='other');
-      stage.querySelectorAll('.owen-cmp-t').forEach(function(b){b.classList.toggle('owen-cmp-t-active',b===t);});
-    });
-  });
-  // 两个 iframe 载入后都隐藏页面 chrome(导航/页脚/对照按钮), 只留正文
-  function hideChrome(f){
-    try{
-      var d=f.contentDocument;if(!d)return;
-      var s=d.createElement('style');
-      s.textContent='.navbar,footer,.owen-chrome{display:none!important}.container{padding-top:14px!important}';
-      d.head.appendChild(s);
-    }catch(e){}
-  }
-  frame.addEventListener('load',function(){hideChrome(frame);});
-  selfFrame.addEventListener('load',function(){hideChrome(selfFrame);});
 })();
 </script>
 
