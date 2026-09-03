@@ -11,6 +11,7 @@
 - [ ] raw txt 已通过 [audit-gates.md](refs/audit-gates.md) Gate 1（**** / <<<END / split italic 都 = 0）
 - [ ] `calvin_raw/BOOK/publish.py` 已存在或基于现有模板创建
 - [ ] `_layouts/calvin-en.html` 和 `_layouts/calvin-en-book.html` 已存在
+- [ ] **章节 layout 已 include `scripture-popup.html`，且 accent/vnum 用本书主题色**（见 §3b；漏了没有任何 Gate 会报）
 - [ ] section header → chapter 边界映射已确认（章节起始 section title 列表）
 - [ ] 前后章导航 label 已查（每章一行 `(N, "FIRST_HEADER", "Chapter N — Title")`）
 - [ ] **发布后立刻跑 Gate T**（见 [refs/audit-gates.md](refs/audit-gates.md#gate-t)）：
@@ -85,6 +86,83 @@ body → split_rich_by_verse → join_orphan_verse_numbers
 | 含 `[^N]` 脚注引用 | 必须用 `_fnref_to_html` 转 `<sup>`（kramdown 不解析 HTML 块内 markdown）+ 加 `_fn_stub` 让 kramdown 仍生成 `<li id="fn:N">` |
 
 ---
+
+## 3b. 经文引用弹层必须接上，且用本书主题色
+
+⚠️ 与 §3 的 scripture-box **是两回事**：scripture-box 是正文里那个引用框，
+本节说的是 `_includes/scripture-popup.html` —— 它把正文文本里的经文引用
+（「罗马书 8:15」「（49:7）」）在**运行时**包成可点的 `.scripture-ref`，
+点击弹出和合本经文卡片。新书卷的章节 layout **必须 include 它**，否则全书
+的经文引用都点不动。
+
+### 3b.1 反例（2026-09-03 查出）
+
+贺智三本书 2026-08-31 上线时，`_layouts/hodge-chapter.html` **根本没有
+include 这个模块**，1cor / 2cor / romans 的经文引用一个都点不出卡片。
+**所有 Gate 都不会报**——Gate T/X 比的是正文内容与字形，audit-md 比的是
+markdown 标记，没有一条检查 layout 有没有接上这个模块。做新书卷时把它
+连同 Gate 9（`scroll-margin-top`）一起当成 layout 装配的固定动作。
+
+### 3b.2 颜色必须是本书主题色
+
+include 的默认色是 `accent #800000` / `vnum #000080` —— 那是**加尔文的**
+酒红，落到别人家的书上就是把加尔文的颜色贴上去。两种注入方式，按「一书
+一色」还是「按圣经卷分色」选：
+
+**A. include 参数**（一本书一个色：owen / bridges / hodge）
+
+```liquid
+{% include scripture-popup.html container_selector=".hodge-content"
+   accent="#1f3a5f" vnum="#2b5080" slide="down" %}
+```
+
+**B. CSS 变量注入**（同一 layout 服务多个主题：mhenry 按 66 卷各自配色）
+
+```css
+.mhenry-wrap { --sp-accent: {{ mh_theme.accent }}; --sp-vnum: {{ mh_theme.vnum }};
+               --sp-bg: {{ mh_theme.bg }};       --sp-border: {{ mh_theme.border }}; }
+```
+
+模块内部一律写成 `var(--sp-accent, {{ sp_accent }})`，所以 B 的注入会盖掉
+A 的参数；两者可并存，参数当兜底。
+
+`container_selector` 要对上 layout 里正文容器的真实 class
+（`.owen-content` / `.hodge-content` / `#mhenry-col` / `.bridges-content`），
+写错了不报错，只是一条都不 linkify。
+
+### 3b.3 坑：include 参数不接受 Liquid 插值
+
+Jekyll 3 的 include 参数值只能是**字面量**。写成 `accent="{{ hodge_ink }}"`
+会抛 `Liquid Exception: Invalid syntax for include tag`，**整站构建失败**。
+所以色值与 layout 顶部 `{%- assign xxx_ink -%}` 是两处同值，改主题色要一起
+改，在 include 上方注释里写明这一点。
+（同理，`{% comment %}` 块里也别出现裸的双花括号，会刷 Liquid Warning。）
+
+### 3b.4 验收
+
+`.scripture-ref` 是 JS 运行时生成的，**grep 静态 HTML 数不出来**（能数到的
+那 1 处是模块自己的 JS 字面量）。查主题色有没有落下去：
+
+```bash
+python3 -c "
+import re; h=open('_site/<book>/<ch>/index.html',encoding='utf-8').read()
+print('accent', set(re.findall(r'var\(--sp-accent,\s*([^)]+)\)', h)))
+print('注入  ', set(re.findall(r'--sp-accent:\s*([^;]+);', h)))"
+```
+
+现状（五家都已接上、都不是默认酒红以外的错色）：
+
+| 书 | accent | vnum | 方式 |
+|---|---|---|---|
+| calvin | `#800000` 酒红 | `#000080` | 默认即主题色 |
+| mhenry | 按卷（如 `#3B6391`） | 按卷 | B 变量注入 |
+| owen | `#1f5a4b` 墨绿 | `#2e6f57` | A 参数 |
+| bridges | `#6B4E2E` 棕 | — | A 参数 + crystal |
+| hodge | `#1f3a5f` 靛蓝 | `#2b5080` | A 参数 |
+
+另见 [05-publish-zh.md](05-publish-zh.md) §1b：linkifier 的 skip 列表必须含
+`verse-anchor`，否则注释头「罗马书 8:6」会被误 linkify、点注释头误弹卡片。
+
 
 ## 4. front matter 模板
 

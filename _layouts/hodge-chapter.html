@@ -235,3 +235,16 @@ function closeHodgeVerseNav() {
   document.getElementById('verse-nav-arrow').classList.remove('open');
 }
 </script>
+
+{%- comment -%}
+  经文引用弹层：正文里的经文引用渲染成可点的 inline span，点击弹和合本经文框。
+  **颜色必须走本书主题色**，不能用 include 的默认（那是加尔文酒红 #800000）——
+  贺智是深靛蓝一系，落个酒红弹层等于把别人家的颜色贴到这本书上。
+  accent = hodge_ink #1f3a5f（与 .verse-pill / .enum-num / 脚注链接同一支），
+  vnum 取 AUTHOR_COLORS 的浅端 #2b5080，与 hodge-book 卡片渐变的浅端一致。
+  ⚠️ 色值必须写**字面量**：Jekyll 3 的 include 参数不接受 Liquid 插值，
+  把 accent 写成变量引用会 Liquid Exception
+  「Invalid syntax for include tag」整站构建失败。所以这里与上面第 21 行的
+  hodge_ink 是两处同值，改主题色要一起改。
+{%- endcomment -%}
+{% include scripture-popup.html container_selector=".hodge-content" accent="#1f3a5f" vnum="#2b5080" slide="down" %}
