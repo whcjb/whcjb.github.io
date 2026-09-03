@@ -339,10 +339,16 @@ def translate_page(page_path, resume, publish, review=False, limit=0):
             if prev_zh.exists():
                 pt = prev_zh.read_text(encoding='utf-8')
                 if 'next_url:' not in pt:
-                    add = f'next_url: "{base}{seqn}/zh/"\nnext_label: "导论 {seqn}"\n'
+                    # ⚠️ 标签必须走 neighbor_label（取英文页 title），不能硬写
+                    # f'导论 {seqn}'。上一轮只修了本页自己的 nav，**漏了这条
+                    # 回填路径**，于是 ch7/ch8 的 next_label 又写成
+                    # 「导论 8 / 导论 9」（英文页明明是「第八章 / 第九章」），
+                    # 2026-09-04 用户看出来第二次。
+                    _lbl = neighbor_label(int(seqn), 'title')
+                    add = f'next_url: "{base}{seqn}/zh/"\nnext_label: "{_lbl}"\n'
                     pt = re.sub(r'\nen_url:', '\n' + add + 'en_url:', pt, count=1)
                     prev_zh.write_text(pt, encoding='utf-8')
-                    print(f'✓ 回填上一篇 next → 导论{int(seqn)-1}/zh', flush=True)
+                    print(f'✓ 回填上一篇 next → {_lbl}', flush=True)
         except ValueError:
             pass
 

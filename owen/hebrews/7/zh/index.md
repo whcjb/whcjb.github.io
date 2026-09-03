@@ -8,7 +8,7 @@ date: 2026-09-03 17:02
 prev_url: "/owen/hebrews/6/zh/"
 prev_label: "第六章"
 next_url: "/owen/hebrews/8/zh/"
-next_label: "导论 8"
+next_label: "第八章"
 en_url: "/owen/hebrews/7/"
 ---
 # 希伯来书 第七章
