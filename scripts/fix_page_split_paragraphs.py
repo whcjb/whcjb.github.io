@@ -33,7 +33,9 @@ import re
 import sys
 
 TAG = re.compile('<[^>]+>')
-END_PUNCT = re.compile(r'[.!?»”"’]\s*$')
+# 句末标点：中英都要收。原先只有 ASCII 一套，于是中文页里正常以「。」
+# 收尾的段落一律被当成「没结句」，只靠下面的续段守卫兜着，很脆。
+END_PUNCT = re.compile(r'[.!?»”"’。！？；」』】）]\s*$')
 
 
 def find_splits(lines):
@@ -56,7 +58,19 @@ def find_splits(lines):
         if not page or k >= len(lines):
             continue
         nxt = TAG.sub('', lines[k]).strip()
-        if nxt and (nxt[0].islower() or nxt[0] in '（(’”'):
+        if not nxt:
+            continue
+        # 续段守卫。原先只认「小写起首」，于是续段是**专有名词**时漏检：
+        # hodge/1corinthians/preface.md 那句 `…went into a certain man's
+        # house, named` / `Justus, one who worshipped God…` 被截成两段，
+        # 而 Gate 5g 报 0（2026-09-03 用户看出来的）。补第二条规则：
+        # 上一段末字是字母或逗号顿号一类**明确的句中字符**（连缩写点都没有），
+        # 那它必然是被截断的，不管续段首字大小写。
+        # 仍排除续段本身是标题/居中块/脚注定义/列表项的情形——那些是真的新段。
+        looks_cont = nxt[0].islower() or nxt[0] in '（(’”'
+        mid_sentence = bool(re.search(r'[A-Za-z0-9一-鿿,，、;；:：]$', s))
+        nxt_is_new_block = bool(re.match(r'^(#|\*\*|\[\^|[-*+]\s|\d+\.\s)', nxt))
+        if (looks_cont or mid_sentence) and not nxt_is_new_block:
             out.append((i, k))
     return out
 
