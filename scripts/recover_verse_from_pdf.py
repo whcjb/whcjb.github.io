@@ -100,13 +100,16 @@ def blocks_for_verse(page, verse):
         txt = ' '.join(''.join(s['text'] for s in l['spans']).strip()
                        for l in b.get('lines', []))
         txt = re.sub(r'\s+', ' ', txt).strip()
-        if re.match(rf'^{verse}\s*[.,)]?\s+\S', txt):
+        # 节号后**可以没有空格**：`4.Propterea quod reliquerunt me…`
+        # （jeremiah PDF p861 实测）。原先要求 `\s+`，整节取不到。
+        if re.match(rf'^{verse}\s*[.,)]\s*\S', txt) or \
+                re.match(rf'^{verse}\s+\S', txt):
             res.append(re.sub(rf'^{verse}\s*[.,)]?\s*', '', txt))
             continue
-        m = re.search(rf'(?:(?<=\s)|^){verse}\s*[.,)]\s+(\S.*)$', txt)
+        m = re.search(rf'(?:(?<=\s)|^){verse}\s*[.,)]\s*(\S.*)$', txt)
         if m:
             seg = m.group(1)
-            nxt = re.search(r'(?:(?<=\s))(\d{1,3})\s*[.,)]\s+\S', seg)
+            nxt = re.search(r'(?:(?<=\s))(\d{1,3})\s*[.,)]\s*\S', seg)
             if nxt:
                 seg = seg[:nxt.start()].strip()
             if len(seg) > 20:
