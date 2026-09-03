@@ -93,17 +93,21 @@ title: 约翰欧文·希伯来书注释
 .owen-tile-exer:hover{background:#1f5a4b;color:#fff}
 .owen-tile-pref{border-style:dashed}
 
-/* ── 格子配色：全部统一 ───────────────────────────────────
-   曾经按「已译 / 仅英文」分两套色（已译填墨绿底 #e6f0ea + 深边框，未译调淡），
-   还在右上角挂过小圆「中」字角标。2026-09-03 用户都要求去掉：角标 48 个圆点
-   太吵，两套色「太难看」，指定统一用未译那一套的浅色。
-   所以这里只留一套：浅纸底 + 淡边框 + 中绿字。已译/未译不再有视觉差别，
-   状态信息保留在每个格子的 title 提示里（zh_paths 判定照旧，仍决定链接
-   落中文页还是英文页），图例随之删掉——两个色块长得一样的图例是错的。 */
+/* ── 格子配色：已译清晰 / 未译朦胧 ─────────────────────────
+   2026-09-03 三次调整后的终态，三条要求叠起来看才成立：
+     ① 去掉右上角小圆「中」字角标——48 个圆点太吵
+     ② 已译不要填墨绿底 #e6f0ea + 深边框 + 加粗——「太难看」，和旁边打架
+     ③ 已译不要跟着一起朦胧——要「清晰些」
+   所以：**已译用基础色**（上面 .owen-tile-ch 那套：浅纸底 #fbfaf6、
+   边框 #cfe0d6、墨绿字 #1f5a4b、带微阴影），不额外加任何装饰；
+   **只有未译**往下压一档（边框与字色调淡、去阴影），退成背景。
+   区分靠「清晰 vs 朦胧」，不靠填色，是三条要求的交集。
+   图例已删——差别是明度而非色块，画两个方块说明不了。状态另在 title 提示里。 */
 .owen-tile{position:relative}
-.owen-tile-exer,
-.owen-tile-ch{border-color:#b6cfc3;color:#6e9285}
-.owen-tile-ch{background:#fdfcf9;box-shadow:none}
+/* 未译：不是禁用态，仍可点（英文版本来就能读），只是退一步 */
+.owen-tile-exer:not(.owen-tile-zh),
+.owen-tile-ch:not(.owen-tile-zh){border-color:#b6cfc3;color:#6e9285}
+.owen-tile-ch:not(.owen-tile-zh){background:#fdfcf9;box-shadow:none}
 @media(max-width:600px){
   .owen-tile-ch{width:58px;height:58px;font-size:18px}
   .owen-tile-intro{width:42px;height:42px;font-size:14px}
