@@ -10,16 +10,11 @@ date: 2026-08-21 03:23
 
 <h2 class="scripture-anchor" id="isaiah-chapter-1-1-31" data-ref="ISAIAH CHAPTER 1:1-31" style="display:none">以赛亚书 第一章 1:1-31</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">1:1-31</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</td><td class="scripture-la"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 当乌西雅、约坦、亚哈斯、希西家作犹大王的时候，亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Visio Isaiae filii Amoz, quam vidit super Iudam et Ierusalem in diebus Usiae, Iotham, Achaz, Ezechiae, regum Iuda.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 天哪，要听！地啊，侧耳而听！因为耶和华说：我养育儿女，将他们养大，他们竟悖逆我。</p>
 
@@ -105,12 +100,9 @@ vestra odio habet anima mea: superfuerunt mihi loco oneris, fatigatus sum ferend
 
 <h2 class="scripture-anchor" id="isaiah-chapter-2-1-22" data-ref="ISAIAH CHAPTER 2:1-22" style="display:none">以赛亚书 第二章 2:1-22</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">2:1-22</span></p>
 
-**1.** 亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 亚摩斯的儿子以赛亚得默示，论到犹大和耶路撒冷。</p>
 
 <p style="text-align:right;" markdown="1">1. Verbum quod vidit Isaias, filius Amos super Iuda et Ierusalem.（亚摩斯的儿子以赛亚所见论犹大和耶路撒冷的话语。）</p>
 
@@ -184,12 +176,9 @@ vestra odio habet anima mea: superfuerunt mihi loco oneris, fatigatus sum ferend
 
 <h2 class="scripture-anchor" id="isaiah-chapter-3-1-26" data-ref="ISAIAH CHAPTER 3:1-26" style="display:none">以赛亚书 第三章 3:1-26</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">3:1-26</span></p>
 
-<strong>1.</strong> 因为万军之耶和华，主，从耶路撒冷和犹大，除掉众人所倚靠的，所仗赖的，就是所倚靠的粮，所仗赖的水；
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 因为万军之耶和华，主，从耶路撒冷和犹大，除掉众人所倚靠的，所仗赖的，就是所倚靠的粮，所仗赖的水；</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Quoniam ecce Dominator Iehova exercituum, Ierosolymae et Judae vigorem et vim adimet, omnem vigorem panis, omnem vigorem aquae（因为看哪，主万军之耶和华必从耶路撒冷和犹大除去力量与能力，一切粮食的力量，一切水的力量），2. 除掉勇士和战士，审判官和先知，占卜的和长老，</p>
 
@@ -263,12 +252,9 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-4-1-6" data-ref="ISAIAH CHAPTER 4:1-6" style="display:none">以赛亚书 第四章 4:1-6</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">4:1-6</span></p>
 
-<strong>1.</strong> 在那日，七个女人必拉住一个男人，说：我们吃自己的食物，穿自己的衣服，但求你许我们归你名下；求你除掉我们的羞耻。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 在那日，七个女人必拉住一个男人，说：我们吃自己的食物，穿自己的衣服，但求你许我们归你名下；求你除掉我们的羞耻。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Apprehendent itaque in die illa septenae mulieres viros singulos, dicentes, Pane nostro vescemur, vestimentis nostris induemur, tantum invocetur nomen tuum super nos, (*vel, censeamur tuo nomine,*) tollasque probrum nostrum.（在那日，七个女人必各自拉住一个男人，说：我们必吃自己的饼，穿自己的衣服，只求你的名称在我们身上，*或作，使我们得算在你的名下，*并除掉我们的羞辱。）2. 到那日，耶和华发生的苗必华美尊荣，地的出产必为以色列逃脱的人显为荣华茂盛。</p>
 
@@ -290,16 +276,11 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-5-1-30" data-ref="ISAIAH CHAPTER 5:1-30" style="display:none">以赛亚书 第五章 5:1-30</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">5:1-30</span> <span class="book-name">章</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。</td><td class="scripture-la"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 我要为我所亲爱的唱歌，是我所爱者的歌，论他葡萄园的事。我所亲爱的有葡萄园在肥美的山冈上。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Cantabo, agedum, pro dilecto meo, canticum dilecti mei ad vineam suam. Vinea fuit dilecto meo in cornu filio olei.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 他刨挖园子，捡去石头，栽种上等的葡萄树，在园中盖了一座楼，又凿出压酒池；意思是要结好葡萄，反倒结了野葡萄。</p>
 
@@ -391,12 +372,9 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-6-1-13" data-ref="ISAIAH CHAPTER 6:1-13" style="display:none">以赛亚书 第六章 6:1-13</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">6:1-13</span></p>
 
-<strong>1.</strong> 当乌西雅王崩的那年，我见主坐在高高的宝座上。他的衣裳垂下，遮满圣殿。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 当乌西雅王崩的那年，我见主坐在高高的宝座上。他的衣裳垂下，遮满圣殿。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Anno mortis regis Usiae, vidi Dominum sedentem super solium excelsum et elevatum, cujus extrema replebant templum.（乌西雅王驾崩之年，我见主坐在高而升起的宝座上，其衣裾遮满圣殿。） 2. 其上有撒拉弗侍立，各有六个翅膀：用两个翅膀遮脸，两个翅膀遮脚，两个翅膀飞翔。</p>
 
@@ -434,12 +412,9 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-7-1-25" data-ref="ISAIAH CHAPTER 7:1-25" style="display:none">以赛亚书 第七章 7:1-25</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">7:1-25</span></p>
 
-<strong>1.</strong> 乌西雅的孙子约坦的儿子犹大王亚哈斯在位的时候，亚兰王利汛和利玛利的儿子以色列王比加上来攻打耶路撒冷，却不能攻取。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 乌西雅的孙子约坦的儿子犹大王亚哈斯在位的时候，亚兰王利汛和利玛利的儿子以色列王比加上来攻打耶路撒冷，却不能攻取。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Accidit in diebus Achaz filii Iotham, filii Usiae regis Iuda, ut ascenderet Rezin rex Syriae, et Pecah filius Romeliae rex Israel, contra Ierusalem, ad oppugnandum eam; sed non potuit expugnare.（拉丁译文：乌西雅的孙子约坦的儿子犹大王亚哈斯的日子，亚兰王利汛和利玛利的儿子以色列王比加上来攻打耶路撒冷，却不能攻取。）2. 有人告诉大卫家说 2. Nuntiatum est autem domni</p>
 
@@ -519,12 +494,9 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-8-1-22" data-ref="ISAIAH CHAPTER 8:1-22" style="display:none">以赛亚书 第八章 8:1-22</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">8:1-22</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 耶和华对我说：「你取一个大牌，拿人所用的笔（原文是人的笔），写上『玛黑珥·沙拉勒·哈施·巴斯』。」
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 耶和华对我说：「你取一个大牌，拿人所用的笔（原文是人的笔），写上『玛黑珥·沙拉勒·哈施·巴斯』。」</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Et dixit Iehova ad me: Sume tibi volumen grande, et scribi in eo stylo vulgari, (*vel, hominis*) Accelera ad diripiendum, festina ad praedam.（耶和华对我说：你取一个大卷，用通俗的笔法〔或作：人的笔〕写在其上：速速掳掠，快快夺取。）2. 我要用可靠的见证人，祭司乌利亚和耶比利家的儿子撒迦利亚记录这事。</p>
 
@@ -582,23 +554,19 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-9-1-21" data-ref="ISAIAH CHAPTER 9:1-21" style="display:none">以赛亚书 第九章 9:1-21</h2>
 
-**1.** 但那受过痛苦的必不再见幽暗。从前神使西布伦地和拿弗他利地被藐视，末后却使这沿海的路、约但河外、外邦人的加利利地得着荣耀。
+<div class="scripture-box scripture-box--bilingual" markdown="1">
+<table class="scripture-bilingual">
+<tbody>
+<tr><td class="scripture-en"><strong>1.</strong> 但那受过痛苦的必不再见幽暗。从前神使西布伦地和拿弗他利地被藐视，末后却使这沿海的路、约但河外、外邦人的加利利地得着荣耀。</td><td class="scripture-la"><strong>1.</strong> Non tamen obscuratio juxta angustiam quae ei accidit tempore quo primum leviter attigerunt terram Zabulon et terram Nephtalia: nec posterius, cum aggravarunt per viam maris ultra Iordanem, in Galilaea Gentium.</td></tr>
+<tr><td class="scripture-en"><strong>2.</strong> 在黑暗中行走的百姓看见了大光；住在死荫之地的人有光照耀他们。</td><td class="scripture-la"><strong>2.</strong> Populus ambulans in tenebris vidit lucem magnam. Qui habitabant in terra umbrae mortis, lux affulsit super eos.</td></tr>
+<tr><td class="scripture-en"><strong>3.</strong> 你使这国的人数增多，加增他们的喜乐；他们在你面前欢喜，好像收割的欢喜，像人分掳物那样的快乐。</td><td class="scripture-la"><strong>3.</strong> Multiplicando gentem non auxisti laetitiam, laetati sunt coram te secundum laetitiam in messe, quemadmodum exultant dividendo spolia.</td></tr>
+<tr><td class="scripture-en"><strong>4.</strong> 因为你已经折断他们所负的重轭和肩头上的杖，并欺压他们人的棍，好像在米甸的日子一样。</td><td class="scripture-la"><strong>4.</strong> Quoniam jugum ejus onerosum, et virgam humeri ejus, sceptrum exactoris ejus confregisti, sicut in die Madian.</td></tr>
+<tr><td class="scripture-en"><strong>5.</strong> 战士在乱杀之间所穿戴的战衣，并那滚在血中的衣服，都必作为可烧的，当作火柴。</td><td class="scripture-la"><strong>5.</strong> Quanquam omne proelium bellantis fit cum strepitu et volutatione vestis in sanguine; erit hoc in combustionem, cibum ignis.</td></tr>
+<tr><td class="scripture-en"><strong>6.</strong> 因有一婴孩为我们而生；有一子赐给我们。政权必担在他的肩头上；他名称为奇妙策士、全能的神、永在的父、和平的</td><td class="scripture-la"><strong>6.</strong> Quia puer natus est nobis; et constitutus est principatus super humerum ejus; et vocabitur nomen ejus, Admirabilis, Consiliarius, Deus fortis, Pater seculi, princeps pacis.</td></tr>
+</tbody>
+</table>
 
-<p style="text-align:right;" markdown="1">1. Non tamen obscuratio juxta angustiam quae ei accidit tempore quo primum leviter attigerunt terram Zabulon et terram Nephtalia: nec posterius, cum aggravarunt per viam maris ultra Iordanem, in Galilaea Gentium.（然而那幽暗不至如她所遭遇的困苦一般，就是他们起初轻轻触及西布伦地和拿弗他利地之时，也不如后来他们加重其祸患、经沿海之路、约但河外、外邦人的加利利之时。）</p>
-
-<p style="margin-left:2em;" markdown="1">**2.** 在黑暗中行走的百姓看见了大光；住在死荫之地的人有光照耀他们。</p>
-
-<p style="text-align:right;" markdown="1">2. Populus ambulans in tenebris vidit lucem magnam. Qui habitabant in terra umbrae mortis, lux affulsit super eos.（行在黑暗中的百姓看见大光。住在死荫之地的人，有光照耀他们。）</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** 你使这国的人数增多，加增他们的喜乐；他们在你面前欢喜，好像收割的欢喜，像人分掳物那样的快乐。</p>
-
-<p style="margin-left:2em;" markdown="1">**3.** Multiplicando gentem non auxisti laetitiam, laetati sunt coram te secundum laetitiam in messe, quemadmodum exultant dividendo spolia.（你使这国的人数增多，却未曾加增他们的喜乐；他们在你面前欢喜，好像收割时的欢喜，又像人分掠物时的欢腾。）4. 因为你已经折断他们所负的重轭和肩头上的杖，并欺压他们人的棍，好像在米甸的日子一样。</p>
-
-<p style="margin-left:2em;" markdown="1">**4.** Quoniam jugum ejus onerosum, et virgam humeri ejus, sceptrum exactoris ejus confregisti, sicut in die Madian.（因为你已经折断他所负的重轭、他肩头上的杖，和欺压他者的权杖，好像在米甸的日子一样。）5. 战士在乱杀之间所穿戴的战衣，并那滚在血中的衣服，都必作为可烧的，当作火柴。</p>
-
-<p style="margin-left:2em;" markdown="1">**5.** Quanquam omne proelium bellantis fit cum strepitu et volutatione vestis in sanguine; erit hoc in combustionem, cibum ignis.（虽然战士的每一场战争都伴着喧嚷，衣服滚在血中；但这必被焚烧，成为火的食物。）6. 因有一婴孩为我们而生；有一子赐给我们。政权必担在他的肩头上；他名称为奇妙策士、全能的神、永在的父、和平的</p>
-
-<p style="text-align:right;" markdown="1">6. Quia puer natus est nobis; et constitutus est principatus super humerum ejus; et vocabitur nomen ejus, Admirabilis, Consiliarius, Deus fortis, Pater seculi, princeps pacis.（因有一婴孩为我们而生，政权必担在他的肩头上，他的名称为奇妙、策士、全能的神、永在的父、和平的君。）</p>
+</div>
 
 <!-- PAGE 889 -->
 
@@ -648,16 +616,11 @@ studia contra Iehovam, ad exacerbandos oculos gloriae ejus. 9. 他们的面色�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-10-1-34" data-ref="ISAIAH CHAPTER 10:1-34" style="display:none">以赛亚书 第十章 10:1-34</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">10:1-34</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，</td><td class="scripture-la"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 祸哉！那些设立不义之律例的和记录奸诈之判语的，</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Vae decernentibus decreta iniqua, et qui dictantes dictant injuriam,</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 为要屈枉穷乏人，夺去我民中困苦人的理，以寡妇当作掳物，以孤儿当作掠物。</p>
 
@@ -765,12 +728,9 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-11-1-16" data-ref="ISAIAH CHAPTER 11:1-16" style="display:none">以赛亚书 第十一章 11:1-16</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">11:1-16</span></p>
 
-<strong>1.</strong> 从耶西的本必发一条，从他根生的枝子必结果实。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 从耶西的本必发一条，从他根生的枝子必结果实。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Sed prodibit virga ex trunco Isai; et surculus de radicibus ejus fructus edet. 2. 耶和华的灵必住在他身上，就是使他有智慧和聪明的灵，谋略和能力的灵，知识和敬畏耶和华的灵；</p>
 
@@ -822,16 +782,11 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-12-1-6" data-ref="ISAIAH CHAPTER 12:1-6" style="display:none">以赛亚书 第十二章 1-6节</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">12:1-6</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 到那日，你必说：耶和华啊，我要称谢你！因为你虽然向我发怒，你的怒气却已转消；你又安慰了我。</td><td class="scripture-la"><strong>1.</strong> Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 到那日，你必说：耶和华啊，我要称谢你！因为你虽然向我发怒，你的怒气却已转消；你又安慰了我。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Et dices in die illo: Cantabo tibi Iehova, Tametsi iratus es mihi, aversus est furor tuus, et consolatus es me.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 看哪！神*是*我的拯救；我要 2. Ecce Deus salus mea: confidam,</p> <!-- PAGE 898 --> <p style="margin-left:2em;" markdown="1">倚靠他，并不惧怕。因为主耶和华*是*我的力量，是我的诗歌，他也成了我的拯救。</p>
 
@@ -849,12 +804,9 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-13-1-22" data-ref="ISAIAH CHAPTER 13:1-22" style="display:none">以赛亚书 第13章 1-22节</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">13:1-22</span></p>
 
-<strong>1.</strong> 亚摩斯的儿子以赛亚得默示，论巴比伦。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 亚摩斯的儿子以赛亚得默示，论巴比伦。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus Babylonis, quod vidit Isaias, filius Amoz.（论巴比伦的重担，亚摩斯的儿子以赛亚所见的。） 2. 你们要在高山竖立大旗，向他们扬声，挥手招他们，使他们进入贵胄的门。</p>
 
@@ -930,16 +882,11 @@ finitionem Dominus Iehova exercituum facit in medio totius terrae.（万军之�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-14-1-32" data-ref="ISAIAH CHAPTER 14:1-32" style="display:none">以赛亚书 第十四章 14:1-32</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">14:1-32</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。</td><td class="scripture-la"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 耶和华要怜恤雅各，必再拣选以色列，将他们安置在本地。寄居的必与他们联合，紧贴雅各家。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Jam miserebitur Iehova Iacob, et eliget adhuc Israelem, et faciet eos quiescere super terram suam; adjungeturque illis advena; sociabuntur, inquam, domui Iacob.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 外邦人必将他们带回本土；以色列家必在耶和华的地上得外邦人为仆婢，也要掳掠先前掳掠他们的，辖管先前欺压他们的。</p>
 
@@ -1033,12 +980,9 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-15-1-9" data-ref="ISAIAH CHAPTER 15:1-9" style="display:none">以赛亚书 第十五章 15:1-9</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">15:1-9</span></p>
 
-<strong>1.</strong> 论摩押的默示。一夜之间，摩押的亚珥变为荒废，归于寂静；一夜之间，摩押的基珥变为荒废，归于寂静。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论摩押的默示。一夜之间，摩押的亚珥变为荒废，归于寂静；一夜之间，摩押的基珥变为荒废，归于寂静。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus Moab. Quoniam in nocte vastata est Ar-Moab, in silentium redacta est; certe in nocte vastata est Kir-Moab, in silentium redacta.（论摩押的默示。因为在夜间摩押的亚珥被毁灭，归于寂静；诚然在夜间摩押的基珥被毁灭，归于寂静。）2. 他上到巴益和底本的高处哭泣；摩押人必为尼波和米底巴哀号；各人头上光秃，胡须剃净。</p>
 
@@ -1076,12 +1020,9 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-16-1-14" data-ref="ISAIAH CHAPTER 16:1-14" style="display:none">以赛亚书 第十六章 16:1-14</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">16:1-14</span></p>
 
-**1.** 你们当将羊羔奉给那地掌权的，从西拉往旷野，送到锡安女子的山。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 你们当将羊羔奉给那地掌权的，从西拉往旷野，送到锡安女子的山。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Mittite agnum dominatori terrae de petra deserti ad montem filiae Sion.（拉丁文：你们当从旷野的磐石差送羊羔给那地的掌权者，直到锡安女子的山。） 2. 摩押的居民（原文是女子）在亚嫩渡口，必像游飞的鸟，如拆窝的雏。</p>
 
@@ -1125,12 +1066,9 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-17" data-ref="ISAIAH CHAPTER 17" style="display:none">以赛亚书 第十七章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">十七</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 论大马士革的默示。看哪，大马士革已被废弃，不再为城，必变作乱堆。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论大马士革的默示。看哪，大马士革已被废弃，不再为城，必变作乱堆。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus Damasci. Ecce Damascus ablata est, ne sit civitas; nam erit acervus ruinae.（论大马士革的默示。看哪，大马士革被除去，不再为城，因它必成为乱堆。） 2. 亚罗珥的城邑已被撇弃，必成为牧羊之处；羊在那里躺卧，无人惊吓。</p>
 
@@ -1180,16 +1118,11 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-18" data-ref="ISAIAH CHAPTER 18" style="display:none">以赛亚书第十八章</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">18</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 唉！古实河外展翅嗡嗡之地，</td><td class="scripture-la"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 唉！古实河外展翅嗡嗡之地，</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Heus terra inumbrans alis, quae est trans flumina Aethiopiae.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 差遣使者在水面上，坐蒲草船过海。先知说：你们快行的使者，要到高大光滑的民那里去。自从开国以来，那民极其可畏，是分地界践踏人的；他们的地有江河分开。</p>
 
@@ -1217,12 +1150,9 @@ Quomodo cessavit exactor? Cessavit cupida auri?（勒索者何竟止息？贪爱
 
 <h2 class="scripture-anchor" id="isaiah-chapter-19" data-ref="ISAIAH CHAPTER 19" style="display:none">以赛亚书 第十九章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">19</span> <span class="book-name">章</span></p>
 
-**1.** 论埃及的默示。看哪，耶和华乘驾快云，临到埃及。埃及的偶像在他面前战兢，埃及人的心在里面消化。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论埃及的默示。看哪，耶和华乘驾快云，临到埃及。埃及的偶像在他面前战兢，埃及人的心在里面消化。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus Aegypti. Ecce Iehova equitat super nubem celerem, et veniet inAegyptum; et commovebuntur idola Aegypti a facie ejus, et cor Aegypti dissolvetur in medio ejus. 2. 我必激动埃及人攻击埃及人—弟兄攻击弟兄，邻舍攻击邻舍；这城攻击那城，这国攻击那国。</p>
 
@@ -1296,12 +1226,9 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-20" data-ref="ISAIAH CHAPTER 20" style="display:none">以赛亚书 第二十章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">二十</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 亚述王撒珥根打发他珥探到亚实突的那年，他攻打亚实突，将城攻取。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 亚述王撒珥根打发他珥探到亚实突的那年，他攻打亚实突，将城攻取。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Anno quo venit Thartan in Asdod, cum misisset eum Sargon rexAssyriae, oppugnassetque Asdod, et cepisset.（他珥探到亚实突之年，亚述王撒珥根打发他前来，攻打亚实突，并将其攻取。） 2. 那时，耶和华晓谕亚摩斯的儿子以赛亚说：「你去解掉你腰间的麻布，脱下你脚上的鞋。」以赛亚就这样赤身露体，光着脚行走。</p>
 
@@ -1319,12 +1246,9 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-21" data-ref="ISAIAH CHAPTER 21" style="display:none">以赛亚书 第21章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书</span> <span class="verse-range">第二十一章</span></p>
 
-<strong>1.</strong> 论海旁旷野的默示。有仇敌从旷野，从可怕之地而来，好像旋风从南方刮来。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论海旁旷野的默示。有仇敌从旷野，从可怕之地而来，好像旋风从南方刮来。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus deserti maris, Sicut tempestates in australi regione, transiturae a deserto, veniet a terra horribili.（海旁旷野的重担：如同南方之地将从旷野掠过的暴风，它必从可怕之地而来。） 2. 令人凄惨的异象已显给我。抢夺的抢夺，毁灭的毁灭。以拦哪，你要上去！玛代啊，你要围困！主说：我使一切叹息止住。</p>
 
@@ -1380,12 +1304,9 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-22" data-ref="ISAIAH CHAPTER 22" style="display:none">以赛亚书 第二十二章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">22</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 论异象谷的默示。有什么事使你这满城的人都上房顶呢？
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论异象谷的默示。有什么事使你这满城的人都上房顶呢？</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus vallis visionis. Quid tibi hic, (*vel, nunc?*) quia tu universa conscendisti super tecta?（论异象谷的默示。有什么事使你这满城的人都上房顶呢？）2. 你这满处呼喊、大有喧哗的城，欢乐的邑啊，你中间被杀的并不是被刀杀，也不是因打仗死亡。</p>
 
@@ -1467,12 +1388,9 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-23" data-ref="ISAIAH CHAPTER 23" style="display:none">以赛亚书 第二十三章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">23</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 论推罗的默示。他施的船只都要哀号；因为推罗变为荒场，甚至没有房屋，没有可进之路：这消息是从基提地得来的。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 论推罗的默示。他施的船只都要哀号；因为推罗变为荒场，甚至没有房屋，没有可进之路：这消息是从基提地得来的。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Onus Tyri. Ululate, naves Tharsis; quia devastatio facta est, utnon sit domus, non sit commeatus e terra Cittim. Revelatum est hoc eis. 2. 沿海的居民，就是素来靠航海西顿的商家得丰盛的，你们当静默无言。</p>
 
@@ -1524,16 +1442,11 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-24" data-ref="ISAIAH CHAPTER 24" style="display:none">以赛亚书 第二十四章</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">24</span> <span class="book-name">章</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 看哪，耶和华使地空虚，变为荒凉；他将地面翻倒，将居民四散。</td><td class="scripture-la"><strong>1.</strong> Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 看哪，耶和华使地空虚，变为荒凉；他将地面翻倒，将居民四散。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> Ecce Iehova evacuat terram, denudat eam, evertit faciem ejus, etincolas ejus dissipat.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 那时，百姓怎样，祭司也怎样；仆人怎样，主人也怎样；婢女怎样，主母也怎样；买物的怎样，卖物的也怎样；放债的怎样，借债的也怎样；取利的怎样，出利的也怎样。</p>
 
@@ -1609,12 +1522,9 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-25" data-ref="ISAIAH CHAPTER 25" style="display:none">以赛亚书 第二十五章</h2>
 
-<div class="scripture-box" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">25</span> <span class="book-name">章</span></p>
 
-<strong>1.</strong> 耶和华啊，你是我的神；我要尊崇你，我要称赞你的名。因为你以忠信诚实行过奇妙的事，成就你古时所定的。
-
-</div>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 耶和华啊，你是我的神；我要尊崇你，我要称赞你的名。因为你以忠信诚实行过奇妙的事，成就你古时所定的。</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** Iehova Deus meus es tu; exaltabo te: celebrabor nomin tuum; quiafecisti rem mirificam; consilia iam olim decreta veritatem firmam.（耶和华啊，你是我的神；我要尊崇你，我要称赞你的名。因为你行过奇妙的事，古时所定的旨意乃是确实的信实。） 2. 你使城变为乱堆，使坚固城变为荒场，使外邦人宫殿的城不再为城，永远不再建造。</p>
 
@@ -1650,16 +1560,11 @@ vovebuntquevota Iehova et reddent. 22. 耶和华必击打埃及，又击打又�
 
 <h2 class="scripture-anchor" id="isaiah-chapter-26" data-ref="ISAIAH CHAPTER 26" style="display:none">以赛亚书 第二十六章</h2>
 
-<div class="scripture-box scripture-box--bilingual" markdown="1">
 <p class="scripture-ref"><span class="book-name">以赛亚书 第</span> <span class="verse-range">26</span> <span class="book-name">章</span></p>
 
-<table class="scripture-bilingual">
-<tbody>
-<tr><td class="scripture-en"><strong>1.</strong> 当那日，在犹大地人必唱这歌说：我们有坚固的城。耶和华要将救恩定为城墙，为外郭。</td><td class="scripture-la"><strong>1.</strong> In die illa cantabitur canticum in terra Iuda: Urbs fortitudinis nobis; salutem posuit muros et vallum.</td></tr>
-</tbody>
-</table>
+<p style="margin-left:2em;" markdown="1"><strong>1.</strong> 当那日，在犹大地人必唱这歌说：我们有坚固的城。耶和华要将救恩定为城墙，为外郭。</p>
 
-</div>
+<p style="text-align:right;" markdown="1"><strong>1.</strong> In die illa cantabitur canticum in terra Iuda: Urbs fortitudinis nobis; salutem posuit muros et vallum.</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 敞开城门，使守信的义民得以进入。</p>
 

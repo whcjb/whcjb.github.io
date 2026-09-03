@@ -136,8 +136,12 @@ def pair_markdown(text, en_text=None, book_cn=None):
 # （俄巴底亚 v.12-14：box 里只有 v12，v13/v14 还在框外），
 # 得能往已有表里追加行。原先 `(?![^>]*bilingual)` 把它们排除了。
 BOX_RE = re.compile(r'<div class="scripture-box[^"]*"[^>]*>(.*?)</div>', re.S)
+# 节号在 box 内有两种写法：HTML `<strong>5.</strong>` 与 markdown `**5.**`。
+# 原先只认前者，于是「中文 + 拉丁都用 `**5.**`」的单列 box 整块被丢掉
+# （俄巴底亚 box#2，325 字符，靠字符多重集校验抓到）。
 INNER_VERSE_RE = re.compile(
-    r'<strong>\s*(\d{1,3})\s*\.?\s*</strong>\s*(.*?)(?=(?:<strong>\s*\d{1,3})|\Z)', re.S)
+    r'(?:<strong>|\*\*)\s*(\d{1,3})\s*\.?\s*(?:</strong>|\*\*)\s*'
+    r'(.*?)(?=(?:<strong>|\*\*)\s*\d{1,3}\s*\.?\s*(?:</strong>|\*\*)|\Z)', re.S)
 
 
 def pair_box_with_stray_latin(text):
@@ -276,10 +280,23 @@ def _unbox(text):
                         continue
                     items.append(f'<p style="{style}" markdown="1">{v}</p>')
         else:
+            seen = set()
             for n, t in INNER_VERSE_RE.findall(inner):
-                items.append(f'<p style="margin-left:2em;" markdown="1">'
-                             f'<strong>{n}.</strong> {t.strip()}</p>')
-        return ((ref.group(0) + '\n\n') if ref else '') + '\n\n'.join(items)
+                t = t.strip()
+                if not t:
+                    continue
+                # 同一节号第二次出现 = 拉丁（单列 box 里中文与拉丁都写 `**N.**`）
+                style = 'text-align:right;' if n in seen else 'margin-left:2em;'
+                seen.add(n)
+                items.append(f'<p style="{style}" markdown="1">'
+                             f'<strong>{n}.</strong> {t}</p>')
+        # 保留 kramdown 脚注占位（02a §8）：它在 box 内但不是经文项，
+        # 不显式保留就会被整块吞掉（zechariah/1.md 的 `[^f2][^f3]
+        # {:.scripture-fnref-stub}`，33 字符，靠字符多重集抓到）。
+        stub = re.search(r'(?:\[\^[^\]]+\]\s*)+\n?\{:\.scripture-fnref-stub\}', inner)
+        tailparts = ([stub.group(0)] if stub else [])
+        return ((ref.group(0) + '\n\n') if ref else '') + \
+            '\n\n'.join(items + tailparts)
 
     return BOX_RE.sub(rep, text)
 
@@ -294,12 +311,12 @@ def rebuild_sections(text):
         if not (SEC_START_RE.search(b) or '<p class="scripture-ref">' in b):
             out.append(b); i += 1; continue
         out.append(b)
+        ref_slot = len(out) - 1          # 记住位置，**重建成功后**才摘 ref
         ref_html = None
         rm = re.search(r'<p class="scripture-ref">.*?</p>', b, re.S)
         if rm:
-            ref_html = rm.group(0)
-            out[-1] = b.replace(ref_html, '').strip()
-        pri, lat, j = {}, {}, i + 1
+            ref_html = rm.group(0)      # 先只记下，不动 out[ref_slot]
+        pri, lat, stubs, j = {}, {}, [], i + 1
         while j < len(blocks):
             seg = blocks[j].strip()
             if not seg:
@@ -309,6 +326,8 @@ def rebuild_sections(text):
             rm2 = re.search(r'<p class="scripture-ref">.*?</p>', seg, re.S)
             if rm2 and not ref_html:
                 ref_html = rm2.group(0); j += 1; continue
+            if re.search(r'\{:\.scripture-fnref-stub\}', seg):
+                stubs.append(seg); j += 1; continue
             m = ANY_VERSE_RE.match(seg)
             if not m or '<h2' in seg or seg.startswith('##'):
                 break
@@ -328,6 +347,9 @@ def rebuild_sections(text):
             j += 1
         if not (pri and lat):
             i += 1; continue
+        # 到这里才确定要重建：把 ref 从原块里摘掉，挪进新 box
+        if ref_html:
+            out[ref_slot] = out[ref_slot].replace(ref_html, '').strip()
         rows = []
         for n in sorted(set(pri) | set(lat), key=int):
             e = f'<strong>{n}.</strong> ' + pri[n] if pri.get(n) else ''
@@ -338,6 +360,7 @@ def rebuild_sections(text):
                    + ((ref_html + '\n\n') if ref_html else '')
                    + '<table class="scripture-bilingual">\n<tbody>\n'
                    + '\n'.join(rows) + '\n</tbody>\n</table>\n\n</div>')
+        out.extend(stubs)
         fixed += 1
         i = j
     return '\n\n'.join(out), fixed
