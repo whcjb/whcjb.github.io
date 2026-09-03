@@ -3283,7 +3283,19 @@ def phil_reconstruct_page(page, page_num=None):
         if not text.strip():
             return []
         # 在每个段首 verse-num 处切分；`.` 可选; 后跟 letter/quote/[ 都算
-        parts = re.split(r'(?:^|(?<=\s))(\d+)\.?\s+(?=[A-Za-z(“"\'\[])', text.strip())
+        # ⚠️ 节号可能被 <sty> 包住：`<sty c="000000" i="0" b="1">1.</sty> In the
+        # second year…`。这是「粗体进管道」那次改动（02a §13）的副作用——以前
+        # 黑色粗体节号吐成纯文本 `1. In the…`，改后被 sty 包裹，于是数字前是 `>`、
+        # 点后是 `</sty>`，原正则的「行首或空格后」+「点后接空白」两个锚点**全部
+        # 失效**，_split_verses 返回空，flush 吐 0 行，**8+8 行经文被静默清空**。
+        # 所有节号为粗体的书卷双语配对就此全断（haggai 实测：重跑提取丢 1145 词，
+        # 全是经文行）。2026-09-03 由 haggai 第 3 页逐块 trace 定位。
+        # 修法：允许节号被 <sty …> 包裹（整段一并吃掉，不让标记漏进经文），
+        # 前视也允许 `>`（前一个 token 是标记结尾）与 `<`（本节首词带标记）。
+        parts = re.split(
+            r'(?:^|(?<=\s)|(?<=>))(?:<sty[^>]*>)?\s*(\d+)\s*\.?\s*(?:</sty>)?'
+            r'\s+(?=[A-Za-z(“"\'\[<])',
+            text.strip())
         # parts: ['', '1', 'Paul, called...', '2', 'Unto the church...', '3', 'Grace ...']
         result = []
         i = 1
