@@ -351,8 +351,26 @@ def rebuild_sections(text):
             tgt = lat if (is_la or num in pri) else pri
             if num not in tgt:
                 tgt[num] = body
-            if trail and trail[0] not in pri:
-                pri[trail[0]] = trail[1]
+            # 尾巴（块内跟着的下一节）**按语种分流**，不能一律塞 pri：
+            #   harmony-law-1/9.md：拉丁 v40 的项尾接着 v41 的**拉丁**，
+            #   而 pri['41'] 已被中文占用 → `trail[0] not in pri` 为假 →
+            #   `41 Factumque est a fine triginta et…` 被静默丢弃（29 字符）。
+            #   obadiah/1.md 反过来：正文侧的项里是 v10 拉丁 + v11 **中文**。
+            # 中文页按汉字占比判得准；英文页两边都是拉丁字母，归父项同侧。
+            if trail:
+                tn, tb = trail
+                han = len(re.findall(r'[一-鿿]', tb))
+                lat_n = len(re.findall(r'[A-Za-z]', tb))
+                if han and han >= lat_n:
+                    side = pri
+                elif lat_n and lat_n > han:
+                    side = lat
+                else:
+                    side = tgt
+                if tn not in side:
+                    side[tn] = tb
+                elif tn not in (lat if side is pri else pri):
+                    (lat if side is pri else pri)[tn] = tb
             j += 1
         if not (pri and lat):
             i += 1; continue
