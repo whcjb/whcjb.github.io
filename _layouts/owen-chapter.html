@@ -10,7 +10,11 @@ layout: default
         <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
         <span style="display:flex; gap:8px;">
         {% if page.zh_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 ↔</a>{% endif %}
-        {% if page.en_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.en_url }}">English ↔</a>{% endif %}
+        {%- comment -%}
+          中文页不再给「English ↔」入口（用户 2026-09-04 指定，与贺智一致）：
+          英文版已由章顶对照抽屉的「对比英文版注释」提供，两个入口重复。
+          英文页的「中文版 ↔」保留；书卷目录页的入口也保留（那层没有抽屉）。
+        {%- endcomment -%}
         </span>
       </div>
 
