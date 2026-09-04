@@ -26,7 +26,7 @@ layout: default
   <div class="row">
     <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div class="hodge-chrome hodge-bar" style="margin: 18px 0 22px;">
+      <div class="hodge-chrome hodge-bar cmp-nav" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
         {%- comment -%}
           语言切换。英文页由 translate_hodge.py 回填 zh_url，中文页自带 en_url；
@@ -38,7 +38,7 @@ layout: default
 
       <h1 class="hodge-title">{{ page.title }}</h1>
 
-      <div class="hodge-nav">
+      <div class="hodge-nav cmp-nav">
         {% if page.prev_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
         {% if page.next_section %}<a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>

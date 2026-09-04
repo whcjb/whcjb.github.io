@@ -51,11 +51,14 @@
   {%- endif -%}
 {%- endfor -%}
 
-        <!-- 顶部空白 = 隐形触控区（无悬浮效果）：点击后从其下边线滑出对照卡片 -->
-        <div class="cmp-hotwrap">
-          <div class="cmp-hotspot" id="cmpHotspot" role="button" tabindex="0"
-               aria-haspopup="true" aria-expanded="false" title="对照其他注释"></div>
-        </div>
+      <!-- 顶部空白 = 隐形触控区（无悬浮效果）：点击后从其下边线滑出对照卡片。
+           原实现里它挂在 .cmp-topbar 内；组件化后直挂 #cmpCol（同样 position:relative），
+           CSS 的 top 已按 topbar 的 margin-top 补偿，落位与原来一致。
+           ⚠️ 这里**不能**再有一个 </div> —— 原来那个是闭合宿主 topbar 的，
+           组件不闭合宿主的任何标签，否则会提前关掉 #cmpCol（见 .cmp-stage 塌成窄条）。 -->
+      <div class="cmp-hotwrap">
+        <div class="cmp-hotspot" id="cmpHotspot" role="button" tabindex="0"
+             aria-haspopup="true" aria-expanded="false" title="对照其他注释"></div>
       </div>
       <!-- 对照卡片：直挂 #cmpCol（高 z-index，永在最上层可点），JS 定位到热区下边线，缓慢滑出 -->
       <div class="cmp-drawer" id="cmpDrawer">

@@ -6,7 +6,7 @@ layout: default
   <div class="row">
     <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div class="owen-chrome" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+      <div class="owen-chrome cmp-nav" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
         <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
         <span style="display:flex; gap:8px;">
         {% if page.zh_url %}<a class="owen-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 ↔</a>{% endif %}
@@ -14,7 +14,7 @@ layout: default
         </span>
       </div>
 
-      <div class="owen-chrome" style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
+      <div class="owen-chrome cmp-nav" style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
         {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
         {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>

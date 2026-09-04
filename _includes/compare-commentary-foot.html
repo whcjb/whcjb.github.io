@@ -20,11 +20,16 @@
 #cmpCol{position:relative}
 .cmp-topbar{display:flex;align-items:center;gap:16px;margin:16px 0;min-height:26px;
   position:relative;z-index:1}
-.cmp-topbar > a{flex:0 0 auto}
+/* 热区现在是 topbar 的兄弟节点，topbar 有 z-index 会挡住它 —— 让 topbar
+   的空白处点击穿透到热区，链接本身仍可点（与 .cmp-nav 同一套办法） */
+.cmp-topbar{pointer-events:none}
+.cmp-topbar > a{flex:0 0 auto;pointer-events:auto}
 /* 隐形热区：覆盖顶部右侧一大片空白（返回行~经节导航一带），静止无边框无底色。
    绝对定位在 topbar 内，向下延伸覆盖上下章行；用 z-index+pointer-events 分层，
    让链接仍可点、空白处点击穿透到热区。 */
-.cmp-hotwrap{position:absolute;top:-6px;left:29%;right:15%;height:160px;z-index:0}
+/* top:10px = 原来挂在 topbar 里时的 (topbar margin-top 16px − 6px)，
+   组件化后改挂 #cmpCol，用绝对值补回同一落点 */
+.cmp-hotwrap{position:absolute;top:10px;left:29%;right:15%;height:160px;z-index:0}
 /* 隐形触控区：无悬浮效果、无提示，纯点击 */
 .cmp-hotspot{position:absolute;inset:0;cursor:pointer;pointer-events:auto}
 /* 顶部交互元素浮在热区之上，空白处点击穿透 */
