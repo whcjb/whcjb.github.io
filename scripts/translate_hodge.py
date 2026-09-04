@@ -26,7 +26,10 @@ import translate_filibi as tf                     # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 
-BOOK_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书'}
+BOOK_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书',
+           'romans': '罗马书'}
+BOOK_EN = {'1corinthians': '1 Corinthians', '2corinthians': '2 Corinthians',
+           'romans': 'Romans'}
 
 # {book_cn} 由 build_system() 按当前书卷填入（前书/后书用词不同，不能写死）。
 SYSTEM_TMPL = (
@@ -48,15 +51,16 @@ SYSTEM_TMPL = (
     "2. markdown 标记：**加粗**、*斜体*、行首的 <span class=\"enum-num\">N.</span>。\n"
     "3. 脚注标记 [^f12]、页界注释 <!-- PAGE 51 -->。\n"
     "4. 希腊文、希伯来文原文原样保留，不音译不意译；其后若有英文释义则译出。\n"
-    "5. 圣经引用的书卷章节号（1 Corinthians 3:5 → 哥林多前书 3:5，"
-    "2 Corinthians 3:5 → 哥林多后书 3:5）。\n"
+    "5. 圣经引用的书卷章节号要译（{book_en} 3:5 → {book_cn} 3:5），"
+    "章节数字本身不动。\n"
     "\n"
     "红色 span 里是英文钦定本经文，按和合本语感译成庄重的经文体，仍留在原 span 内。"
 )
 
 
 def build_system(book: str) -> str:
-    return SYSTEM_TMPL.replace('{book_cn}', BOOK_CN.get(book, book))
+    return (SYSTEM_TMPL.replace('{book_cn}', BOOK_CN.get(book, book))
+                       .replace('{book_en}', BOOK_EN.get(book, book)))
 
 
 def split_page(text: str):
