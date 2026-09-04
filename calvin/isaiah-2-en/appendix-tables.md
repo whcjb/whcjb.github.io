@@ -84,7 +84,11 @@ date: 2026-06-02 18:13
 
 <p style="margin-left:2em;" markdown="1">**5.** Tunc ait Isais Ezechiae: Audi verbum Iehovae exercituum. 6. Behold, the days come, that all that is in thine house and that</p>
 
-<p style="text-align:right;" markdown="1">6. Ecce dies veniunt, ut tollatur in Babylonem quicquid est</p> <!-- PAGE 790 --> <p style="margin-left:2em;" markdown="1">which thy fathers have laid up in store until this day, shall be carried to Babylon: nothing shall be left, saitht he Lord.</p>
+<p style="text-align:right;" markdown="1">6. Ecce dies veniunt, ut tollatur in Babylonem quicquid est</p>
+
+<!-- PAGE 790 -->
+
+<p style="margin-left:2em;" markdown="1">which thy fathers have laid up in store until this day, shall be carried to Babylon: nothing shall be left, saitht he Lord.</p>
 
 <p style="text-align:center" markdown="1">domituae, et quicquid recondiderunt patres tui ad hunc usque diem; nec residuum quicquam manebit, dicit Iehova. 7. And of thy sons that shall issue from thee, which thou shalt beget, shall they take away; and they shall be eunichs in the palace of the king of Babylon</p>
 
@@ -134,7 +138,11 @@ date: 2026-06-02 18:13
 
 <p style="margin-left:2em;" markdown="1">**12.** Who hath measured the waters in the hollow of his hand, and</p>
 
-<p style="text-align:right;" markdown="1">12. Quis mensus est pugillo suo aquas, et coelos palma mensus</p> <!-- PAGE 792 --> <p style="margin-left:2em;" markdown="1">meted out heaven with the span, and comprehended the dust of the earth in a measure, and weighed the mountains in scales, and the hills in a balance?</p>
+<p style="text-align:right;" markdown="1">12. Quis mensus est pugillo suo aquas, et coelos palma mensus</p>
+
+<!-- PAGE 792 -->
+
+<p style="margin-left:2em;" markdown="1">meted out heaven with the span, and comprehended the dust of the earth in a measure, and weighed the mountains in scales, and the hills in a balance?</p>
 
 <p style="text-align:right;" markdown="1">est, et comprehendit tribus digitis pulverem terrae, et appendit montes in statera, et colles in trutina?</p>
 
@@ -182,7 +190,11 @@ date: 2026-06-02 18:13
 
 <p style="margin-left:2em;" markdown="1">**26.** Lift up your eyes on high, and behold who hath created these *things,* that bringeth out their host by number: he calleth them all by names, by the greatness of his</p>
 
-<p style="text-align:right;" markdown="1">26. Tollite in sublime oculos vestros, et aspicite quis creaverit ea producens ad numerum exercitum eorum; omnibus nominatim acclamabit;</p> <!-- PAGE 794 --> <p style="margin-left:2em;" markdown="1">might, for that *he is* strong in power; not one faileth.</p>
+<p style="text-align:right;" markdown="1">26. Tollite in sublime oculos vestros, et aspicite quis creaverit ea producens ad numerum exercitum eorum; omnibus nominatim acclamabit;</p>
+
+<!-- PAGE 794 -->
+
+<p style="margin-left:2em;" markdown="1">might, for that *he is* strong in power; not one faileth.</p>
 
 <p style="text-align:center" markdown="1">a magnitudine virium et robore fortitudinis nullum deficiet *(vel, deerit).* 27. Why sayest thou, O Jacob, and speakest, O Israel, My way is hid from the Lord, and my judgment is passed over from my God?</p>
 
@@ -312,7 +324,11 @@ date: 2026-06-02 18:13
 
 <p style="margin-left:2em;" markdown="1">**6.** Ego Iehova vocavi to in justitia, et tenebo to manu tua; custodiam to, et ponam in foedus populi, in lucem Gentium; 7. To open the blind eyes, to bring out the prisoners from the prison, *and* them that sit in darkness out</p>
 
-<p style="text-align:right;" markdown="1">7. Ut aperias oculos caecorum, ut educas ex ergastulo vinctos, et e domo carceris sedentes in</p> <!-- PAGE 800 --> <p style="margin-left:2em;" markdown="1">of the prison-house. tenebris. 8. I am the Lord; that *is my* name: and my glory will I not give to another, neither my praise to graven images.</p>
+<p style="text-align:right;" markdown="1">7. Ut aperias oculos caecorum, ut educas ex ergastulo vinctos, et e domo carceris sedentes in</p>
+
+<!-- PAGE 800 -->
+
+<p style="margin-left:2em;" markdown="1">of the prison-house. tenebris. 8. I am the Lord; that *is my* name: and my glory will I not give to another, neither my praise to graven images.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** Ego Iehova; hoc nomen meum; et gloriam meam alteri non dabo, nec laudem meam sculptilibus. 9. Behold, the former things are come to pass, and new things do I declare: before they spring forth I tell you of them.</p>
 
@@ -334,7 +350,11 @@ date: 2026-06-02 18:13
 
 <p style="margin-left:2em;" markdown="1">15.I will make waste mountains and hills, and dry up all their herbs; and I will make the rivers</p>
 
-<p style="text-align:right;" markdown="1">15. In solitudinem redigam montes et coiles; omnem herbam eorum exsiccabo;</p> <!-- PAGE 801 --> <p style="margin-left:2em;" markdown="1">islands, and I will dry up the pools.</p>
+<p style="text-align:right;" markdown="1">15. In solitudinem redigam montes et coiles; omnem herbam eorum exsiccabo;</p>
+
+<!-- PAGE 801 -->
+
+<p style="margin-left:2em;" markdown="1">islands, and I will dry up the pools.</p>
 
 ponam flumina in insulas, et stagna exsiccabo. 16. And I will bring the blind by a way *that* they knew not; I will lead them in paths *that* they have not known: I will make darkness light before them, and crooked things straight. These things will I do unto them, and not forsake them.
 
@@ -476,7 +496,11 @@ ponam flumina in insulas, et stagna exsiccabo. 16. And I will bring the blind by
 
 <p style="margin-left:2em;" markdown="1">**6.** Sic dicit Iehova, rex Israel, et redemptor ejus, Iehova exercituum: Ego primus, et idem novissimus, et praeter me non est Deus. 7. And who, as I, shall call, and shall declare it, and set it in order for me, since I appointed the</p>
 
-<p style="text-align:right;" markdown="1">7. Et quis sicut ego vocabit, annunciabit hoc, et ordinabit hoc mihi, ex quo constitui</p> <!-- PAGE 807 --> <p style="margin-left:2em;" markdown="1">ancient people? and the things that are coming, and shall come, let them shew unto them.</p>
+<p style="text-align:right;" markdown="1">7. Et quis sicut ego vocabit, annunciabit hoc, et ordinabit hoc mihi, ex quo constitui</p>
+
+<!-- PAGE 807 -->
+
+<p style="margin-left:2em;" markdown="1">ancient people? and the things that are coming, and shall come, let them shew unto them.</p>
 
 populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear ye not, neither be afraid: have not I told thee from that time, and have declared *it?* ye *are* even my witnesses. Is there a God besides me? yea, *there is* no God; I know not *any.*
 
@@ -492,7 +516,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="margin-left:2em;" markdown="1">**12.** The smith with the tongs both worketh in the coals, and fashioneth it with hammers, and worketh it with the strength of his arms: yea, he is hungry, and his strength faileth; he drinketh no water, and is faint.</p>
 
-<p style="text-align:right;" markdown="1">13. Faber lignarius extendit regulam, illud delineat filo tincto, aptat planulis, circino figurat; facit illud secundum formam viri, secundum effigiem</p> <!-- PAGE 808 --> <p style="margin-left:2em;" markdown="1">figure of a man, according to the beauty of a man; that it may remain in the house.</p>
+<p style="text-align:right;" markdown="1">13. Faber lignarius extendit regulam, illud delineat filo tincto, aptat planulis, circino figurat; facit illud secundum formam viri, secundum effigiem</p>
+
+<!-- PAGE 808 -->
+
+<p style="margin-left:2em;" markdown="1">figure of a man, according to the beauty of a man; that it may remain in the house.</p>
 
 <p style="text-align:right;" markdown="1">hominis, ut sedeat in domo.</p>
 
@@ -514,7 +542,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="margin-left:2em;" markdown="1">**19.** And none considereth in his heart, neither *is there* knowledge nor understanding to say, I have</p>
 
-<p style="text-align:right;" markdown="1">19. Non redit ad cor suum, non est sensus, nec intelligentia, ut dicat, Partem ejus combussi</p> <!-- PAGE 809 --> <p style="margin-left:2em;" markdown="1">burnt part of it in the fire; yea, also I have baked bread upon the coals thereof; I have roasted flesh, and eaten *it:* and shall I make the residue thereof an abomination? shall I fall down to the stock of a tree?</p>
+<p style="text-align:right;" markdown="1">19. Non redit ad cor suum, non est sensus, nec intelligentia, ut dicat, Partem ejus combussi</p>
+
+<!-- PAGE 809 -->
+
+<p style="margin-left:2em;" markdown="1">burnt part of it in the fire; yea, also I have baked bread upon the coals thereof; I have roasted flesh, and eaten *it:* and shall I make the residue thereof an abomination? shall I fall down to the stock of a tree?</p>
 
 <p style="text-align:right;" markdown="1">igni; etiam super prunas ejus coxi panem; assavi carnem, et comedi; residuum ejus in abominationem vertam: coram trunco ligni incurvabo me?</p>
 
@@ -534,7 +566,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="text-align:right;" markdown="1">24. Sic dicit Iehova redemptor tuns, et factor tuus ex utero. Ego Iehova faciens omnia, extendens coelos solus, expandens terrain inca virtute ( *vel, a meipso. )*</p>
 
-<p style="margin-left:2em;" markdown="1">**25.** That frustrateth the tokens of 25. Dissipans signa</p> <!-- PAGE 810 --> <p style="margin-left:2em;" markdown="1">the liars, and maketh diviners mad; that turneth wise *men* backward, and maketh their knowledge foolish;</p>
+<p style="margin-left:2em;" markdown="1">**25.** That frustrateth the tokens of 25. Dissipans signa</p>
+
+<!-- PAGE 810 -->
+
+<p style="margin-left:2em;" markdown="1">the liars, and maketh diviners mad; that turneth wise *men* backward, and maketh their knowledge foolish;</p>
 
 <p style="text-align:right;" markdown="1">divinatorum, ariolos dementans, convertens sapientes retrorsum, et scientiam corum infatuans.</p>
 
@@ -556,7 +592,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="margin-left:2em;" markdown="1">**1.** Sic dicit Iehova Meschiae suo Cyro, eujus apprehendi dexteram ad subigendas coram eo gentes; itaque lumbos regum dissolvam, ad aperienda coram eo ostia; ideo portae non claudentur. 2. I will go before thee, and make the crooked places straight: I will break in pieces the gates of brass, and cut in sunder the bars of iron:</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** Ego to praecedam, et tortuosa dirigam, ostia aenea confringam, et vectes ferreos comminuam. 3. And I will give thee the 3. Et dabo tibi thesauros</p> <!-- PAGE 811 --> <p style="margin-left:2em;" markdown="1">treasures of darkness, and hidden riches of secret places, that thou mayest know that I the Lord, which call *thee* by thy name, *am* the God of Israel.</p>
+<p style="margin-left:2em;" markdown="1">**2.** Ego to praecedam, et tortuosa dirigam, ostia aenea confringam, et vectes ferreos comminuam. 3. And I will give thee the 3. Et dabo tibi thesauros</p>
+
+<!-- PAGE 811 -->
+
+<p style="margin-left:2em;" markdown="1">treasures of darkness, and hidden riches of secret places, that thou mayest know that I the Lord, which call *thee* by thy name, *am* the God of Israel.</p>
 
 <p style="text-align:right;" markdown="1">tenebrarum, et arcana latebrarum; ut scias quod ego sire Iehova, vocans to nomine tuo, nempe, Deus Israel.</p>
 
@@ -602,7 +642,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="margin-left:2em;" markdown="1">**16.** They shall be ashamed, and also confounded, all of them: they</p>
 
-<p style="text-align:right;" markdown="1">16. Pudore afficientur, atque etiam erubescent omnes ipsi;</p> <!-- PAGE 813 --> <p style="margin-left:2em;" markdown="1">shall go to confusion together *that are* makers of idols.</p>
+<p style="text-align:right;" markdown="1">16. Pudore afficientur, atque etiam erubescent omnes ipsi;</p>
+
+<!-- PAGE 813 -->
+
+<p style="margin-left:2em;" markdown="1">shall go to confusion together *that are* makers of idols.</p>
 
 <p style="text-align:center" markdown="1">simul cum pudore abibunt omnes fabricatores sculptilium. 17. *But* Israel shall be saved in the Lord with an everlasting salvation: ye shall not be ashamed nor confounded world without end.</p>
 
@@ -668,7 +712,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="text-align:right;" markdown="1">11. Vocans ab Oriente avem *(vel, cogitationem,)* e terra longinqua virum consilii mei. Loquutus sum, ideo adducam hoc; cogitavi, idem faciam.</p>
 
-<p style="margin-left:2em;" markdown="1">**12.** Hearken unto me, ye stout12. Audite me praefracti corde,</p> <!-- PAGE 816 --> <p style="margin-left:2em;" markdown="1">hearted, that *are* far from righteousness:</p>
+<p style="margin-left:2em;" markdown="1">**12.** Hearken unto me, ye stout12. Audite me praefracti corde,</p>
+
+<!-- PAGE 816 -->
+
+<p style="margin-left:2em;" markdown="1">hearted, that *are* far from righteousness:</p>
 
 <p style="text-align:right;" markdown="1">qui procul estis a justitia.</p>
 
@@ -692,7 +740,11 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient. 8. Fear
 
 <p style="margin-left:2em;" markdown="1">**5.** Sede quieta, ingredere in tenebras, filia Chaldmorum; quoniam non fiet amplius ut to vocent dominam regnorum. 6. I was wroth with my people; I have polluted mine inheritance, and given them into thine hand: thou didst shew them no mercy;</p>
 
-<p style="text-align:right;" markdown="1">6. Iratus fui in populum meum, profanavi haerditatem meam, et tradidi cos in manum tuam; non praestitisti Illis misericordias;</p> <!-- PAGE 817 --> <p style="margin-left:2em;" markdown="1">upon the ancient hast thou very heavily laid thy yoke.</p>
+<p style="text-align:right;" markdown="1">6. Iratus fui in populum meum, profanavi haerditatem meam, et tradidi cos in manum tuam; non praestitisti Illis misericordias;</p>
+
+<!-- PAGE 817 -->
+
+<p style="margin-left:2em;" markdown="1">upon the ancient hast thou very heavily laid thy yoke.</p>
 
 super senem aggravasti jugum tuum valde. 7. And thou saidst, I shall be a lady for ever: *so* that thou didst not lay these *things* to thy heart, neither didst remember the latter end of it.
 
@@ -712,7 +764,11 @@ super senem aggravasti jugum tuum valde. 7. And thou saidst, I shall be a lady f
 
 <p style="text-align:right;" markdown="1">11. Itaque venient super to malum, cujus diluculum ignoras; cadet super to contritio, quam non poteris avertere. Veniet repentevastatio super to, quam nescis.</p>
 
-<p style="margin-left:2em;" markdown="1">**12.** Stand now with thine 12. Sta nunc inter divinationes</p> <!-- PAGE 818 --> <p style="margin-left:2em;" markdown="1">enchantments, and with the multitude of thy sorceries, wherein thou hast labored from thy youth; if so be thou shalt be able to profit, if so be thou mayest prevail.</p>
+<p style="margin-left:2em;" markdown="1">**12.** Stand now with thine 12. Sta nunc inter divinationes</p>
+
+<!-- PAGE 818 -->
+
+<p style="margin-left:2em;" markdown="1">enchantments, and with the multitude of thy sorceries, wherein thou hast labored from thy youth; if so be thou shalt be able to profit, if so be thou mayest prevail.</p>
 
 <p style="text-align:right;" markdown="1">tuas, et in multitudine augurum tuorum, in quibus fatigasti to a pueritia tua; si forte possis proficere, si forte robores to.</p>
 
@@ -824,7 +880,11 @@ super senem aggravasti jugum tuum valde. 7. And thou saidst, I shall be a lady f
 
 <p style="margin-left:2em;" markdown="1">**4.** Ego autem dixi, Frustra laboravi; inaniter et vane fortitudinem meam consumpsi. At judicium meum coram Iehova, et opus meum coram Deo meo. 5. And now, saith the Lord that formed me from the wonlb *to be* his servant, to bring Jacob again to him, Though Israel be not gathered, yet shall I be glorious in the eyes of the Lord, and my God shall be my strength.</p>
 
-<p style="margin-left:2em;" markdown="1">**5.** Et nunc dicit Iehova, qui formavit me ab utero in servum sibi, ut reducam ad se Iacob. Atque ut Israel non colligatur, tamen gloriosus ero in oculis Iehovae, et Deus meus erit fortitudo mea. 6. And he said, It is a light thing 6. Et ait, Leve est ut tu mihi sis</p> <!-- PAGE 823 --> <p style="margin-left:2em;" markdown="1">that thou shouldest be my servant, to raise up the tribes of Jacob, and to restore the preserved of Israel; I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.</p>
+<p style="margin-left:2em;" markdown="1">**5.** Et nunc dicit Iehova, qui formavit me ab utero in servum sibi, ut reducam ad se Iacob. Atque ut Israel non colligatur, tamen gloriosus ero in oculis Iehovae, et Deus meus erit fortitudo mea. 6. And he said, It is a light thing 6. Et ait, Leve est ut tu mihi sis</p>
+
+<!-- PAGE 823 -->
+
+<p style="margin-left:2em;" markdown="1">that thou shouldest be my servant, to raise up the tribes of Jacob, and to restore the preserved of Israel; I will also give thee for a light to the Gentiles, that thou mayest be my salvation unto the end of the earth.</p>
 
 <p style="text-align:right;" markdown="1">servus ad suscitandas tribus Iacob, et desolationes Israel ut restituas. Itaque constitui to in lucem Gentium, ut sis salus mea ad extremum terrae.</p>
 
@@ -842,7 +902,11 @@ super senem aggravasti jugum tuum valde. 7. And thou saidst, I shall be a lady f
 
 <p style="text-align:right;" markdown="1">10. Non esurient, neque sitient; non percutiet eos aestus et sol; quia miserator eorum diriget eos, et super scaturigines aquarum ducet eos.</p>
 
-<p style="margin-left:2em;" markdown="1">**11.** And I will make all my 11. Et ponam omnes montes</p> <!-- PAGE 824 --> <p style="margin-left:2em;" markdown="1">mountains a way, and my highways shall be exalted.</p>
+<p style="margin-left:2em;" markdown="1">**11.** And I will make all my 11. Et ponam omnes montes</p>
+
+<!-- PAGE 824 -->
+
+<p style="margin-left:2em;" markdown="1">mountains a way, and my highways shall be exalted.</p>
 
 meos in viare, et semitae meae elevabuntur. 12. Behold, these shall come from far; and, lo, these from the north and from the west; and these from the land of Sinim.
 
@@ -862,7 +926,11 @@ meos in viare, et semitae meae elevabuntur. 12. Behold, these shall come from fa
 
 <p style="margin-left:2em;" markdown="1">**18.** Leva per circuitum oculos tuos, et vide. Omnes congregati sunt. venerunt tibi. Vivo ego, dicit Iehova, quod omnibus quasi ornamento vestieris, et circumligaberis illis tanquam sponsa. 19. For thy waste and thy desolate places, and the land of thy destruction, shall even now be</p>
 
-<p style="text-align:right;" markdown="1">19. Quoniam desolationes tuis, et vastitates tuae, et terra tua deserta, nunc tamen angusta erit</p> <!-- PAGE 825 --> <p style="margin-left:2em;" markdown="1">too narrow by reason of the inhabitants, and they that swallowed thee up shall be far away.</p>
+<p style="text-align:right;" markdown="1">19. Quoniam desolationes tuis, et vastitates tuae, et terra tua deserta, nunc tamen angusta erit</p>
+
+<!-- PAGE 825 -->
+
+<p style="margin-left:2em;" markdown="1">too narrow by reason of the inhabitants, and they that swallowed thee up shall be far away.</p>
 
 <p style="text-align:right;" markdown="1">ob multitudinem habitantium; et procul abscedent consumptores tui.</p>
 
@@ -906,7 +974,11 @@ meos in viare, et semitae meae elevabuntur. 12. Behold, these shall come from fa
 
 <p style="margin-left:2em;" markdown="1">**2.** Wherefore, when I came, *was there* no man? when I called, *was there* none to answer? Is my hand shortened at all, that it cannot redeem? or have I no power to deliver? behold, at my rebuke I dry up the sea; I make the rivers a wilderness: their fish stinketh,</p>
 
-<p style="text-align:right;" markdown="1">2. Cur veni, et nemo (occurrit?) vocavi, et nemo respondit? An abbreviando abbreviavit se manus mea, ut non redimat? Annon in me virtus ad liberandum? Ecce increpatione mea exsicco mare; pono flumina in desertum, ut putrescant</p> <!-- PAGE 827 --> <p style="margin-left:2em;" markdown="1">because *there is* no water, and dieth for thirst.</p>
+<p style="text-align:right;" markdown="1">2. Cur veni, et nemo (occurrit?) vocavi, et nemo respondit? An abbreviando abbreviavit se manus mea, ut non redimat? Annon in me virtus ad liberandum? Ecce increpatione mea exsicco mare; pono flumina in desertum, ut putrescant</p>
+
+<!-- PAGE 827 -->
+
+<p style="margin-left:2em;" markdown="1">because *there is* no water, and dieth for thirst.</p>
 
 pisces eorum prae defectu aquae, et moriantur siti. 3. I clothe the heavens with blackness, and I make sackcloth their covering.
 
@@ -928,7 +1000,11 @@ pisces eorum prae defectu aquae, et moriantur siti. 3. I clothe the heavens with
 
 <p style="margin-left:2em;" markdown="1">**9.** Ecce, Dominns Iehova auxiliabitur mihi, quis est qui me condemnet? Ecce omnes quasi vestimeritran veterascent; tinea comedet eos. 10. Who *is* among you that feareth the Lord, that obeyeth the voice of</p>
 
-<p style="text-align:right;" markdown="1">10. Quis in vobis est timens Iehovam? Audiat vocem servi</p> <!-- PAGE 828 --> <p style="margin-left:2em;" markdown="1">his servant, that walketh in darkness, and hath no light? let him trust in the name of the Lord, and stay upon his God.</p>
+<p style="text-align:right;" markdown="1">10. Quis in vobis est timens Iehovam? Audiat vocem servi</p>
+
+<!-- PAGE 828 -->
+
+<p style="margin-left:2em;" markdown="1">his servant, that walketh in darkness, and hath no light? let him trust in the name of the Lord, and stay upon his God.</p>
 
 <p style="text-align:center" markdown="1">ejus. Qui ambulavit in tenebris, et qui caruit luce, confidat in nomine Iehovae, et innitatur Deo suo. 11. Behold, all ye that kindle a fire, that compass *yourselves* about with sparks: walk in the light of your fire, and in the sparks *that ye* have kindled. This shall ye have of mine hand; ye shall lie down in sorrow.</p>
 
@@ -948,7 +1024,11 @@ pisces eorum prae defectu aquae, et moriantur siti. 3. I clothe the heavens with
 
 <p style="margin-left:2em;" markdown="1">**3.** Utique consolabitur Iehova Sion, consolabitur omnes vastitates ejus, ponetque desertum ejus quasi ocum deliciarum, et solitudinem ejus quasi hortum Iehovae. Laetitia et gaudium invenientur in ea; confessio et vox cantici. 4. Hearken unto me, my people; and give ear unto me, O my</p>
 
-<p style="text-align:right;" markdown="1">4. Attendite ad me, popule mi; et plebs men audite me;</p> <!-- PAGE 829 --> <p style="margin-left:2em;" markdown="1">nation: for a law shall proceed from me, and I will make my judgment to rest for a light of the people.</p>
+<p style="text-align:right;" markdown="1">4. Attendite ad me, popule mi; et plebs men audite me;</p>
+
+<!-- PAGE 829 -->
+
+<p style="margin-left:2em;" markdown="1">nation: for a law shall proceed from me, and I will make my judgment to rest for a light of the people.</p>
 
 <p style="text-align:right;" markdown="1">quoniam Lex a me egredietur, et judietum meum in lucem populorum patifaciam.</p>
 
@@ -1004,7 +1084,11 @@ pisces eorum prae defectu aquae, et moriantur siti. 3. I clothe the heavens with
 
 <p style="margin-left:2em;" markdown="1">**22.** Thus saith thy Lord the Lord, and thy God *that* pleadeth the cause of his people, Behold, I have taken out of thine hand the cup of trembling, *even* the dregs of the</p>
 
-<p style="text-align:right;" markdown="1">22. Sic dicit Dominus tuus, Iehova, et Deus tuus, vindex populi sui: Ecce abstuli e mae tua calicem angustiae *(vel, trepidationis );* faecem calicis</p> <!-- PAGE 832 --> <p style="margin-left:2em;" markdown="1">cup of my fury; thou shalt no more drink it again:</p>
+<p style="text-align:right;" markdown="1">22. Sic dicit Dominus tuus, Iehova, et Deus tuus, vindex populi sui: Ecce abstuli e mae tua calicem angustiae *(vel, trepidationis );* faecem calicis</p>
+
+<!-- PAGE 832 -->
+
+<p style="margin-left:2em;" markdown="1">cup of my fury; thou shalt no more drink it again:</p>
 
 furoris mei. Non fiet ut bibas amplius. 23. But I will put it into the hand of them that afflict thee; which have said to thy soul, Bow down, that we may go over: and thou hast laid thy body as the ground, and as the street, to them that went over.
 
@@ -1024,7 +1108,11 @@ furoris mei. Non fiet ut bibas amplius. 23. But I will put it into the hand of t
 
 <p style="margin-left:2em;" markdown="1">**4.** Quia sic dicit Dominus Iehova: In AEgyptum olim descenderat populus meus ut peregrinaretur illic; verum Assur absque causa oppressit eum. 5. Et nunc, Quid mihi hic, dicit Iehova, ut ablatus sit populus meus gratis, et qui in eum</p>
 
-<p style="text-align:right;" markdown="1">5. Now therefore, what have I here, saith the Lord, that my people is taken away for</p> <!-- PAGE 833 --> <p style="margin-left:2em;" markdown="1">dominantur faciant eum ululare, dicit Iehova, et jugiter tota die nomen meum contumeliae expositum sit?</p>
+<p style="text-align:right;" markdown="1">5. Now therefore, what have I here, saith the Lord, that my people is taken away for</p>
+
+<!-- PAGE 833 -->
+
+<p style="margin-left:2em;" markdown="1">dominantur faciant eum ululare, dicit Iehova, et jugiter tota die nomen meum contumeliae expositum sit?</p>
 
 <p style="text-align:center" markdown="1">nought? They that rule over them make them to howl, saith the Lord; and my name continually every day *is* blasphemed. 6. Propterea sciet populus meus nomen meum; propterea in die illa, quod ego idem qui loquor; ecee, adero.</p>
 
@@ -1082,7 +1170,11 @@ furoris mei. Non fiet ut bibas amplius. 23. But I will put it into the hand of t
 
 <p style="margin-left:2em;" markdown="1">**7.** Mulctatus est, et afflictus, (*vel, oppressus*,) nec aperuit os suum. Quasi pecus ad mactationem ducetur, et tanquam ovis coram tonsoribbus suis obmutescet, nec aperiet os suum. 8. E carcere et judicio sublatus est, et generationem ejus quis enarrabit? Quoniam succisus est e terra viventium; propter transgressionem populi mei plaga illi.</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken. 9. And he made his grave with the 9. Et exposuit impiis</p> <!-- PAGE 836 --> <p style="margin-left:2em;" markdown="1">wicked, and with the rich in his death; because he had done no violence, neither *was any* deceit in his mouth.</p>
+<p style="margin-left:2em;" markdown="1">**8.** He was taken from prison and from judgment: and who shall declare his generation? for he was cut off out of the land of the living: for the transgression of my people was he stricken. 9. And he made his grave with the 9. Et exposuit impiis</p>
+
+<!-- PAGE 836 -->
+
+<p style="margin-left:2em;" markdown="1">wicked, and with the rich in his death; because he had done no violence, neither *was any* deceit in his mouth.</p>
 
 sepulchrum ejus, et diviti mortem ejus; quamvis iniquitatem non fecerit, nec fecerit dolos in ore ejus revelatum est? 10. Voluit tamen Iehova conterere eum, infirmitati subjicere. Cum posuerit in sacrificium animam suam, videbit semen, prorogabit dies, et voluntas Iehovae in manu ejus prosperabitur.
 
@@ -1120,7 +1212,11 @@ sepulchrum ejus, et diviti mortem ejus; quamvis iniquitatem non fecerit, nec fec
 
 <p style="margin-left:2em;" markdown="1">**7.** For a small moment have I forsaken thee; but with great mercies will I gather thee. 8. In a little wrath I hid my face from thee for a moment; but with everlasting kindness will I have</p>
 
-<p style="text-align:right;" markdown="1">8. In momento irae abscondi faciem meam paulisper a to; at clementia sempiterna misertus</p> <!-- PAGE 838 --> <p style="margin-left:2em;" markdown="1">mercy on thee, saith the Lord thy Redeemer.</p>
+<p style="text-align:right;" markdown="1">8. In momento irae abscondi faciem meam paulisper a to; at clementia sempiterna misertus</p>
+
+<!-- PAGE 838 -->
+
+<p style="margin-left:2em;" markdown="1">mercy on thee, saith the Lord thy Redeemer.</p>
 
 sum tui, dicit redemptor tuus Iehova. 9. For this is as the waters of Noah unto me: for as I have sworn that the waters of Noah should no more go over the earth; so have I sworn that I would not be wroth with thee, nor rebuke thee.
 
@@ -1180,7 +1276,11 @@ sum tui, dicit redemptor tuus Iehova. 9. For this is as the waters of Noah unto 
 
 <p style="margin-left:2em;" markdown="1">**9.** Nam quanto excelsiores sunt coeli terra, tantum superant viae meae vias vestras, et cogitationes meae cogitationes vestras. 10. Certe, quemadmodum descendit pluvia et nix e coelis, neque illuc revertitur, sed irrigat terram, et eam facit concipere et germinare, ut det semen seminanti et panem comedenti;</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater; 11. Sic erit verbum meum quod 11. So shall my word be that</p> <!-- PAGE 841 --> <p style="margin-left:2em;" markdown="1">egredietur ex ore meo; non redibit ad me vacuum, donec faciat quod volo, et successum afterat, quo misi ipsum.</p>
+<p style="margin-left:2em;" markdown="1">**10.** For as the rain cometh down, and the snow from heaven, and returneth not thither, but watereth the earth, and maketh it bring forth and bud, that it may give seed to the sower, and bread to the eater; 11. Sic erit verbum meum quod 11. So shall my word be that</p>
+
+<!-- PAGE 841 -->
+
+<p style="margin-left:2em;" markdown="1">egredietur ex ore meo; non redibit ad me vacuum, donec faciat quod volo, et successum afterat, quo misi ipsum.</p>
 
 <p style="text-align:center" markdown="1">goeth forth out of my mouth: it shall not return unto me void; but it shall accomplish that which I please, and it shall prosper *in the thing* whereto I sent it. 12. For ye shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap *their* hands.</p>
 
@@ -1198,7 +1298,11 @@ sum tui, dicit redemptor tuus Iehova. 9. For this is as the waters of Noah unto 
 
 <p style="margin-left:2em;" markdown="1">**2.** Blessed *is* the man *that* doeth this, and the son of man *that* layeth hold on it; that keepeth the sabbath from polluting it, and keepeth his hand from doing any evil. 3. Et ne dicat filius alienus aggregatus ad Iehovam, dicendo, Separando separavit me Iehova a</p>
 
-<p style="text-align:right;" markdown="1">3. Neither let the son of the stranger, that hath joined himself to the Lord, speak,</p> <!-- PAGE 842 --> <p style="margin-left:2em;" markdown="1">populo suo; et ne dicat eunuchus, Ego sum lignum aridum.</p>
+<p style="text-align:right;" markdown="1">3. Neither let the son of the stranger, that hath joined himself to the Lord, speak,</p>
+
+<!-- PAGE 842 -->
+
+<p style="margin-left:2em;" markdown="1">populo suo; et ne dicat eunuchus, Ego sum lignum aridum.</p>
 
 saying, The Lord hath utterly separated me from his people: neither let the eunuch say, Behold, I *am* a dry tree. 4. For thus saith the Lord unto the eunuchs that keep my sabbaths, and choose the things that please me, and take hold of my covenant;
 
@@ -1210,7 +1314,11 @@ saying, The Lord hath utterly separated me from his people: neither let the eunu
 
 <p style="margin-left:2em;" markdown="1">**7.** Hos adducam in montes sanctitatis meae; et laetificabo eos in domo orationis meae. Holocausta eorum et sacrificia grata erunt in altari meo; quoniam domus mea Domus orationis vocabitur cunctis populis. 8. Dicit Dominus Iehova, qui congregat expulsos Israel: Adhuc congregabo super eum congregatos ejus.</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** The Lord God, which gathereth the outcasts of Israel, saith, Yet will I gather *others* to him, besides those that are gathered unto him. 9. All ye beasts of the field, come 9. Omnes bestiae agri, venitead</p> <!-- PAGE 843 --> <p style="margin-left:2em;" markdown="1">to devour; *yea,* all ye beasts in the forest.</p>
+<p style="margin-left:2em;" markdown="1">**8.** The Lord God, which gathereth the outcasts of Israel, saith, Yet will I gather *others* to him, besides those that are gathered unto him. 9. All ye beasts of the field, come 9. Omnes bestiae agri, venitead</p>
+
+<!-- PAGE 843 -->
+
+<p style="margin-left:2em;" markdown="1">to devour; *yea,* all ye beasts in the forest.</p>
 
 devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all ignorant, they *are* all dumb dogs, they cannot bark; sleeping, lying down, loving to slumber.
 
@@ -1266,7 +1374,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**15.** Quoniam sic dixit excelsus et sublimis, habitans in perpetuitate, cui nomen Sanctus: Excelsum et sanctum incolo, et cum afflicto et qui humilis est spiritu, ut vivificem spiritum humilium, ut vivificem cot afflictorum. 16. For I will not contend for ever, neither will I be always wroth: for the spirit should fail before me, and the souls *which* I have made.</p>
 
-<p style="margin-left:2em;" markdown="1">**16.** Quia non in perpetuum litigabo, neque semper irascar. Nam spiritus a facie mea induetur (*vel latebit, aut deficiet*;) et flatus ego feci. 17. For the iniquity of his 17. Propter iniquitatem</p> <!-- PAGE 846 --> <p style="margin-left:2em;" markdown="1">covetousness was I wroth, and smote him: I hid me, and was wroth, and he went on frowardly in the way of his heart.</p>
+<p style="margin-left:2em;" markdown="1">**16.** Quia non in perpetuum litigabo, neque semper irascar. Nam spiritus a facie mea induetur (*vel latebit, aut deficiet*;) et flatus ego feci. 17. For the iniquity of his 17. Propter iniquitatem</p>
+
+<!-- PAGE 846 -->
+
+<p style="margin-left:2em;" markdown="1">covetousness was I wroth, and smote him: I hid me, and was wroth, and he went on frowardly in the way of his heart.</p>
 
 <p style="text-align:center" markdown="1">cupiditatis ejus iratus fui, et percussi eum; abscondi me, et irascar; ipse autem aversus abiit in via cordis sui. 18. I have seen his ways, and will heal him; I will lead him also, and restore comforts unto him, and to his mourners.</p>
 
@@ -1304,7 +1416,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">7. *Is it* not to deal thy bread to the hungry, and that thou bring the poor that are cast out to thy house? when thou seest the naked, that thou cover him; and that thou hide not thyself from thine own flesh? 8. Then shall thy light break forth as the morning, and thine health shall spring forth speedily; and</p>
 
-<p style="text-align:right;" markdown="1">8. Tunc proferetur ut aurora lux tua; et sanitas tua protinus germinabit; justitia anteibit</p> <!-- PAGE 848 --> <p style="margin-left:2em;" markdown="1">thy righteousness shall go before thee: the glory of the Lord shall be thy rearward.</p>
+<p style="text-align:right;" markdown="1">8. Tunc proferetur ut aurora lux tua; et sanitas tua protinus germinabit; justitia anteibit</p>
+
+<!-- PAGE 848 -->
+
+<p style="margin-left:2em;" markdown="1">thy righteousness shall go before thee: the glory of the Lord shall be thy rearward.</p>
 
 <p style="text-align:right;" markdown="1">faciem tuam, et gloria Iehovae colliget to.</p>
 
@@ -1320,7 +1436,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**13.** If thou turn away thy foot from the sabbath, *from* doing thy pleasure on my holy day; and call the sabbath a delight, the holy of the Lord, honorable; and shalt honor him, not doing thine own ways, nor finding thine own pleasure, nor speaking *thine own*</p>
 
-<p style="text-align:right;" markdown="1">13. Si averteris a sabbato pedem tuum, nec facies voluntatem tuam, in die sancto meo, et vocaveris sabbatum delicias ad consecrandum Iehovae, eo quod sit honorabile, et honorem illi tribueris, ut non exequaris vias tuas, nec inveniatur voluntas</p> <!-- PAGE 849 --> <p style="text-align:center" markdown="1">words: tua, nec loquutus faeris verbum; 14. Then shalt thou delight thyself in the Lord; and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of the Lord hath spoken *it.*</p>
+<p style="text-align:right;" markdown="1">13. Si averteris a sabbato pedem tuum, nec facies voluntatem tuam, in die sancto meo, et vocaveris sabbatum delicias ad consecrandum Iehovae, eo quod sit honorabile, et honorem illi tribueris, ut non exequaris vias tuas, nec inveniatur voluntas</p>
+
+<!-- PAGE 849 -->
+
+<p style="text-align:center" markdown="1">words: tua, nec loquutus faeris verbum; 14. Then shalt thou delight thyself in the Lord; and I will cause thee to ride upon the high places of the earth, and feed thee with the heritage of Jacob thy father: for the mouth of the Lord hath spoken *it.*</p>
 
 <p style="text-align:right;" markdown="1">14. Tunc delectaberis in Iehova, et equitare to faciam super excelsa terrae, et pascam to haereditatis Iacob patris tui; quia os Iehovae loquutum est.</p>
 
@@ -1394,7 +1514,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**1.** Surge, splendida esto; quia venit splendor tuus, et gloria Iehovae super to orta est. 2. For, behold, the darkness shall cover the earth, and gross darkness</p>
 
-<p style="text-align:right;" markdown="1">2. Quia ecce tenebrae operient terrain, et caligo populos; super</p> <!-- PAGE 853 --> <p style="margin-left:2em;" markdown="1">the people: but the Lord shall arise upon thee, and his glory shall be seen upon thee.</p>
+<p style="text-align:right;" markdown="1">2. Quia ecce tenebrae operient terrain, et caligo populos; super</p>
+
+<!-- PAGE 853 -->
+
+<p style="margin-left:2em;" markdown="1">the people: but the Lord shall arise upon thee, and his glory shall be seen upon thee.</p>
 
 <p style="text-align:right;" markdown="1">to autem orietur Iehova, et gloria ejus super to videbitur.</p>
 
@@ -1410,7 +1534,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**7.** Omnes oyes Cedar congregabuntur tibi; arietes Nabaioth ministrabunt tibi; ascendent ad beneplacitum altaris mei; et domum gloriae meae glorificabo. 8. Qui sunt isti qui instar nubis volant, et quasi columbae ad fenestras suas?</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** Who *are* these *that* fly as a cloud, and as the doves to their windows? 9. Me certe insulae expectabunt, et 9. Surely the isles shall wait for</p> <!-- PAGE 854 --> <p style="margin-left:2em;" markdown="1">naves Tharsis, ut filios tuos abducant a longe; argentum eorum et aurum cum ipsis, nomini Iehovae Dei tui, et sancto Israel; quia glorificavit to.</p>
+<p style="margin-left:2em;" markdown="1">**8.** Who *are* these *that* fly as a cloud, and as the doves to their windows? 9. Me certe insulae expectabunt, et 9. Surely the isles shall wait for</p>
+
+<!-- PAGE 854 -->
+
+<p style="margin-left:2em;" markdown="1">naves Tharsis, ut filios tuos abducant a longe; argentum eorum et aurum cum ipsis, nomini Iehovae Dei tui, et sancto Israel; quia glorificavit to.</p>
 
 <p style="text-align:center" markdown="1">me, and the ships of Tarshish first, to bring thy sons from far, their silver and their gold with them, unto the name of the Lord thy God, and to the Holy One of Israel, because he hath glorified thee. 10. And the sons of strangers shall build up thy walls, and their kings shall minister unto thee; for in my wrath I smote thee, but in my favor have I had mercy on thee.</p>
 
@@ -1438,7 +1566,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**19.** The sun shall be no more thy light by day; neither for brightness shall the moon give light unto thee: but the Lord shall be unto thee an everlasting light, and thy God thy glory. 20. Non occidet amplius sol tuus, nec luna tua occultabitur; quoniam Iehova erit tibi in lucem perpetuam, et finientur dies luctus tui.</p>
 
-<p style="margin-left:2em;" markdown="1">**20.** Thy sun shall no more go down; neither shall thy moon withdraw itself: for the Lord shall be thine everlasting light, and the days of thy mourning shall be ended. 21. Populus quoque tuus omnes 21. Thy people also *shall be* all</p> <!-- PAGE 856 --> <p style="margin-left:2em;" markdown="1">justi, perpetuo haereditabunt terram, germen plantationis ejus, opus manuum mearum, ut glorificer.</p>
+<p style="margin-left:2em;" markdown="1">**20.** Thy sun shall no more go down; neither shall thy moon withdraw itself: for the Lord shall be thine everlasting light, and the days of thy mourning shall be ended. 21. Populus quoque tuus omnes 21. Thy people also *shall be* all</p>
+
+<!-- PAGE 856 -->
+
+<p style="margin-left:2em;" markdown="1">justi, perpetuo haereditabunt terram, germen plantationis ejus, opus manuum mearum, ut glorificer.</p>
 
 <p style="text-align:center" markdown="1">righteous: they shall inherit the land for ever, the branch of my planting, the work of my hands, that I may be glorified. 22. A little one shall become a thousand, and a small one a strong nation: I the Lord will hasten it in his time.</p>
 
@@ -1456,7 +1588,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**3.** To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness; that they might be called Trees of righteousness, The planting of the Lord, that he might be glorified. 4. And they shall build the old wastes, they shall raise up the</p>
 
-<p style="text-align:right;" markdown="1">4. Et aedificabunt deserta seculi, priscas solitudines erigent; et</p> <!-- PAGE 857 --> <p style="margin-left:2em;" markdown="1">former desolations, and they shall repair the waste cities, the desolations of many generations.</p>
+<p style="text-align:right;" markdown="1">4. Et aedificabunt deserta seculi, priscas solitudines erigent; et</p>
+
+<!-- PAGE 857 -->
+
+<p style="margin-left:2em;" markdown="1">former desolations, and they shall repair the waste cities, the desolations of many generations.</p>
 
 <p style="text-align:right;" markdown="1">instaurabunt urbes vastitatis, solitudines multarum aetatum.</p>
 
@@ -1474,7 +1610,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**9.** Et cognoscetur in Gentibus semen eorum, et germina eorum in medio populorum. Omnes qui viderint eos cognoscent eos quod semen sint benedictum Iehovae.. 10. Gaudens gaudebo in Iehova; exultabit anima mea in Deo meo; quoniam induit me vestibus salutis, indumento justitiae circumdedit me: quasi sponsum</p>
 
-<p style="text-align:right;" markdown="1">10. I will greatly rejoice in the Lord, my soul shall be joyful in my God; for he hath clothed me with the garments of salvation, he hath covered me with the</p> <!-- PAGE 858 --> <p style="margin-left:2em;" markdown="1">ornavit me, et quasi sponsam ornatam monilibus suis.</p>
+<p style="text-align:right;" markdown="1">10. I will greatly rejoice in the Lord, my soul shall be joyful in my God; for he hath clothed me with the garments of salvation, he hath covered me with the</p>
+
+<!-- PAGE 858 -->
+
+<p style="margin-left:2em;" markdown="1">ornavit me, et quasi sponsam ornatam monilibus suis.</p>
 
 <p style="text-align:center" markdown="1">robe of righteousness, as a bridegroom decketh *himself* with ornaments, and as a bride adorneth *herself* with her jewels. 11. For as the earth bringeth forth her bud, and as the garden causeth the things that are sown in it to spring forth; so the Lord God will cause righteousness, and praise to spring forth before all the nations.</p>
 
@@ -1508,7 +1648,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**10.** Transite, transite per portas; repurgate viam populo; complanate, complanate iter; sternite lapidibus, levate signum ad populos. 11. Behold, the Lord hath proclaimed unto the end of the</p>
 
-<p style="text-align:right;" markdown="1">11. Ecce Iehova publicavit usque ad extremum terrae; dicite</p> <!-- PAGE 860 --> <p style="margin-left:2em;" markdown="1">world, Say ye to the daughter of Zion, Behold, thy salvation cometh; behold, his reward is with him, and his work before him.</p>
+<p style="text-align:right;" markdown="1">11. Ecce Iehova publicavit usque ad extremum terrae; dicite</p>
+
+<!-- PAGE 860 -->
+
+<p style="margin-left:2em;" markdown="1">world, Say ye to the daughter of Zion, Behold, thy salvation cometh; behold, his reward is with him, and his work before him.</p>
 
 <p style="text-align:right;" markdown="1">filiae Sion, Ecce servator tuus venit, Ecce merces ejus cum eo, et effectus ejus coram ipso.</p>
 
@@ -1530,7 +1674,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**4.** Quia dies ultionis in corde meo, et annus redemptorum meorum venit. 5. And I looked, and there was none to help; and I wondered that there was none to uphold:</p>
 
-<p style="text-align:right;" markdown="1">5. Itaque aspexi, nec erat auxiliator; et admiratus sum, nec erat qui fulciret; itaque salutem</p> <!-- PAGE 861 --> <p style="margin-left:2em;" markdown="1">therefore mine own arm brought salvation unto me; and my fury, it upheld me.</p>
+<p style="text-align:right;" markdown="1">5. Itaque aspexi, nec erat auxiliator; et admiratus sum, nec erat qui fulciret; itaque salutem</p>
+
+<!-- PAGE 861 -->
+
+<p style="margin-left:2em;" markdown="1">therefore mine own arm brought salvation unto me; and my fury, it upheld me.</p>
 
 <p style="text-align:right;" markdown="1">mihi fecit brachium meum, et ira mea fulsit me.</p>
 
@@ -1548,7 +1696,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**10.** Verum illi rebelles fuerunt, et irritaverunt Spiritum Sanctum ejus. Ideo conversus illis in hostem pugnavit ipse contra eos. 11. Et recordatus est dierum priscorum, quibus Moses fuit cum populo ejus. Ubi est qui ascendere</p>
 
-<p style="text-align:right;" markdown="1">11. Then he remembered the days of old, Moses and his people, saying, Where is he that</p> <!-- PAGE 862 --> <p style="margin-left:2em;" markdown="1">fecit eos e mari, cure pastore gregis sui? Ubi est qui posuit in medio ejus Spiritum suum Sanctum?</p>
+<p style="text-align:right;" markdown="1">11. Then he remembered the days of old, Moses and his people, saying, Where is he that</p>
+
+<!-- PAGE 862 -->
+
+<p style="margin-left:2em;" markdown="1">fecit eos e mari, cure pastore gregis sui? Ubi est qui posuit in medio ejus Spiritum suum Sanctum?</p>
 
 <p style="text-align:center" markdown="1">brought them up out of the sea with the shepherd of his flock? where is he that put his Holy Spirit within him? 12. Qui duxit ad dexteram Mosis brachio magnificentiae suae, qui divisit aquas coram ipsis, ad comparandum sibi nomen perpetuum?</p>
 
@@ -1562,7 +1714,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**16.** Doubtless thou art our Father, though Abraham be ignorant of us, and Israel acknowledge us not: thou, O Lord, art our Father, our Redeemer; thy name is from everlasting. 17. O Lord, why hast thou made us to err from thy ways, and hardened our heart from thy fear? Return for thy servants’ sake, the</p>
 
-<p style="text-align:right;" markdown="1">17. Quare fecisti nos errare, Iehova, a viis tuis? Recedere fecisti cor nostrum a timore tuo? Convertere propter servos</p> <!-- PAGE 863 --> <p style="text-align:center" markdown="1">tribes of thine inheritance. tuos, ad tribus haereditatis tuae. 18. Ad exiguum tempus possederunt populus sanctitatis tuae; adversarii nostri conculcarunt sanctuarium tuum.</p>
+<p style="text-align:right;" markdown="1">17. Quare fecisti nos errare, Iehova, a viis tuis? Recedere fecisti cor nostrum a timore tuo? Convertere propter servos</p>
+
+<!-- PAGE 863 -->
+
+<p style="text-align:center" markdown="1">tribes of thine inheritance. tuos, ad tribus haereditatis tuae. 18. Ad exiguum tempus possederunt populus sanctitatis tuae; adversarii nostri conculcarunt sanctuarium tuum.</p>
 
 <p style="margin-left:2em;" markdown="1">**18.** The people of thy holiness have possessed it but a little while: our adversaries have trodden down thy sanctuary. 19. Fuimus a seculo, quibus tu non dominatus es, super quos non est invocatum nomen tuum.</p>
 
@@ -1582,7 +1738,11 @@ devorandum, omnes bestiae sylvestres. 10. His watchmen *are* blind: they are all
 
 <p style="margin-left:2em;" markdown="1">**3.** When thou didst terrible things which we looked not for, thou camest down, the mountains flowed down at thy presence. 4. A seculo non audirerunt, neque auribus perceperunt; oculus non vidit Deum praeter to, qui faciat (vel, Dens quae facit) expectanti se.</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** For since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O God, besides thee, what he hath prepared for him that waiteth for him. 5. Occurristi laetanti et facienti 5. Thou meetest him that</p> <!-- PAGE 864 --> <p style="margin-left:2em;" markdown="1">justitiam. In viis tuis recordabantur tui.; ecce tu iratus es, et nos peecavimus; in ipsis seculum, et salvabimur (vel, saluti sumus).</p>
+<p style="margin-left:2em;" markdown="1">**4.** For since the beginning of the world men have not heard, nor perceived by the ear, neither hath the eye seen, O God, besides thee, what he hath prepared for him that waiteth for him. 5. Occurristi laetanti et facienti 5. Thou meetest him that</p>
+
+<!-- PAGE 864 -->
+
+<p style="margin-left:2em;" markdown="1">justitiam. In viis tuis recordabantur tui.; ecce tu iratus es, et nos peecavimus; in ipsis seculum, et salvabimur (vel, saluti sumus).</p>
 
 rejoiceth and worketh righteousness; those that remember thee in thy ways: behold, thou art wroth; for we have sinned: in those is continuance, and we shall be saved. 6. But we are all as an unclean thing, and all our righteousnesses are as filthy rags; and we all do fade as a leaf; and our iniquities, like the wind, have taken us away.
 
@@ -1596,7 +1756,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**10.** Urbes sanctitatis tuae fuerunt desertum; Sion desertum fuit, Ierusalem solitudo. 11. Doritos sanctuarii nostri, et gloriae nostrae, in qua to celebrarunt patres nostri, fuit in</p>
 
-<p style="text-align:right;" markdown="1">11. Our holy and our beautiful house, where our fathers praised thee, is burnt up with</p> <!-- PAGE 865 --> <p style="margin-left:2em;" markdown="1">combustionem ignis; et omnia nostra desiderabilia in vastationem.</p>
+<p style="text-align:right;" markdown="1">11. Our holy and our beautiful house, where our fathers praised thee, is burnt up with</p>
+
+<!-- PAGE 865 -->
+
+<p style="margin-left:2em;" markdown="1">combustionem ignis; et omnia nostra desiderabilia in vastationem.</p>
 
 <p style="text-align:right;" markdown="1">fire: and all our pleasant things are laid waste.</p>
 
@@ -1640,7 +1804,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**11.** At vos desertores Iehovae, qui obliviseimini montes sanctitatis meae; qui paratis exereitui mensam, et impletis numero libamen.</p>
 
-<p style="text-align:right;" markdown="1">11. But ye are they that forsake the Lord, that forget my holy mountain, that prepare a table for that troop, and that furnish the drink-offering unto that</p> <!-- PAGE 867 --> <p style="margin-left:2em;" markdown="1">number. 12. Itaque numerabo vos ad gladium, et omnes in caedem corruetis; eo quod vocavi, nec respondistis; loquutus sum, nec audivistis; fecistisque malum in oculis meis; et in quibus voluptatem non cepi, elegistis.</p>
+<p style="text-align:right;" markdown="1">11. But ye are they that forsake the Lord, that forget my holy mountain, that prepare a table for that troop, and that furnish the drink-offering unto that</p>
+
+<!-- PAGE 867 -->
+
+<p style="margin-left:2em;" markdown="1">number. 12. Itaque numerabo vos ad gladium, et omnes in caedem corruetis; eo quod vocavi, nec respondistis; loquutus sum, nec audivistis; fecistisque malum in oculis meis; et in quibus voluptatem non cepi, elegistis.</p>
 
 <p style="margin-left:2em;" markdown="1">**12.** Therefore will I number you to the sword, and ye shall all bow down to the slaughter: because when I called, ye did not answer; when I spake, ye did not hear; but did evil before mine eyes, and did choose that wherein I delighted not. 13. Propterea sic dicit Dominus Iehova, Ecce servi mei comedent, et vos esurietis. Ecce servi mei bibent, et vos sitietis. Ecce servi mei laetabuntur, et vos erubeseetis.</p>
 
@@ -1652,7 +1820,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**16.** That he who blesseth himself in the earth, shall bless himself in the God of truth; and he that sweareth in the earth, shall swear by the God of truth; because the former troubles are forgotten, and because they are hid from mine eyes. 17. For, behold, I create new heavens, and a new earth: and the</p>
 
-<p style="text-align:right;" markdown="1">17. Quia ecce ego creabo eralos novos, et terrain novato; prior</p> <!-- PAGE 868 --> <p style="text-align:center" markdown="1">um non erit memoria, neque in cor ascendent. 18. But be ye glad and rejoice for ever in that which I create: for, behold, I create Jerusalem a rejoicing, and her people a joy.</p>
+<p style="text-align:right;" markdown="1">17. Quia ecce ego creabo eralos novos, et terrain novato; prior</p>
+
+<!-- PAGE 868 -->
+
+<p style="text-align:center" markdown="1">um non erit memoria, neque in cor ascendent. 18. But be ye glad and rejoice for ever in that which I create: for, behold, I create Jerusalem a rejoicing, and her people a joy.</p>
 
 <p style="margin-left:2em;" markdown="1">**18.** Sed gaudete et exultate in perpetuum iis quae ego creo. Nam ecce ego creo Ierusalem exultationem, et populum ejus gaudium. 19. And I will rejoice in Jerusalem, and joy in my people; and the voice of weeping shall be no more heard in her, nor the voice of crying.</p>
 
@@ -1666,7 +1838,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**22.** They shall not build, and another inhabit; they shall not plant, and another eat: for as the days of a tree are the days of my people, and mine elect shall long enjoy the work of their hands. 23. Non laborabunt frustra, nec parient in terrore; quoniam semen benedictorum Iehovae erunt et soboles eorum cure ipsis.</p>
 
-<p style="margin-left:2em;" markdown="1">**23.** They shall not labor in vain, nor bring forth for trouble: for they are the seed of the blessed of the Lord, and their offspring with them. 24. And it shall come to pass, that 24. Et erit, antequam clament</p> <!-- PAGE 869 --> <p style="margin-left:2em;" markdown="1">before they call, I will answer; and while they are yet speaking, I will hear.</p>
+<p style="margin-left:2em;" markdown="1">**23.** They shall not labor in vain, nor bring forth for trouble: for they are the seed of the blessed of the Lord, and their offspring with them. 24. And it shall come to pass, that 24. Et erit, antequam clament</p>
+
+<!-- PAGE 869 -->
+
+<p style="margin-left:2em;" markdown="1">before they call, I will answer; and while they are yet speaking, I will hear.</p>
 
 <p style="text-align:right;" markdown="1">ego exaudiam; adhuc illis loquentibus ego audiam.</p>
 
@@ -1698,7 +1874,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**8.** Who hath heard such a thing? who hath seen such things? Shall the earth be made to bring forth in one day? or shall a nation be born at once? for as soon as Zion travailed:, she brought forth her children. 9. An ego foetus emitto, et non pariam? dicit Iehova. An ego parere facio, et cohibebor? dicit Deus tuns.</p>
 
-<p style="text-align:right;" markdown="1">9. Shall I bring to the birth, and not cause to bring forth? saith the Lord: shall I cause to bring forth, and shut the womb? saith</p> <!-- PAGE 871 --> <p style="margin-left:2em;" markdown="1">thy God. 10. Laetamini cum Ierusalem, et exultate in ea, omnes qui diligitis eam; gaudete cum ea gaudio, omnes qui lugetis super eam.</p>
+<p style="text-align:right;" markdown="1">9. Shall I bring to the birth, and not cause to bring forth? saith the Lord: shall I cause to bring forth, and shut the womb? saith</p>
+
+<!-- PAGE 871 -->
+
+<p style="margin-left:2em;" markdown="1">thy God. 10. Laetamini cum Ierusalem, et exultate in ea, omnes qui diligitis eam; gaudete cum ea gaudio, omnes qui lugetis super eam.</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** Rejoice ye with Jerusalem, and be glad with her, all ye that love her: rejoice for joy with her, all ye that mourn for her; 11. That ye may suck, and be satisfied with the breasts of her consolations; that ye may milk out, and be delighted with the abundance of her glory.</p>
 
@@ -1728,7 +1908,11 @@ rejoiceth and worketh righteousness; those that remember thee in thy ways: behol
 
 <p style="margin-left:2em;" markdown="1">**20.** Et adducent omnes fratres vestros ex omnibus gentibus oblationem Iehovae in equis et quadrigis, in vehiculis, et mulis, et celeribus animalibus, ad montem sanctum meum Ierusalem, dicit Iehova; quemadmodum adferunt filii Israel in vase mundo in domum Iehovae. 21. Adeoque assurmam ex illis aliquos in sacerdotes et Levitas, dicit Iehova.</p>
 
-<p style="margin-left:2em;" markdown="1">**21.** And I will also take of them for priests, and for Levites, saith the Lord. 22. For as the new heavens, and 22. Nam sicut coeli novi, et</p> <!-- PAGE 873 --> <p style="margin-left:2em;" markdown="1">the new earth, which I will make, shall remain before me, saith the Lord, so shall your seed and your name remain.</p>
+<p style="margin-left:2em;" markdown="1">**21.** And I will also take of them for priests, and for Levites, saith the Lord. 22. For as the new heavens, and 22. Nam sicut coeli novi, et</p>
+
+<!-- PAGE 873 -->
+
+<p style="margin-left:2em;" markdown="1">the new earth, which I will make, shall remain before me, saith the Lord, so shall your seed and your name remain.</p>
 
 <p style="text-align:center" markdown="1">terra nova, quae ego facio, stant coram me, dicit Iehova; ira stabunt semen vestrum et nomen vestrum. 23. And it shall come to pass, that from one new-moon to another, and from one sabbath to another, shall all flesh come to worship before me, saith the Lord.</p>
 

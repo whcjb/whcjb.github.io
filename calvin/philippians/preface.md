@@ -136,6 +136,7 @@ next_label: "第一章"
 
 
 <p style="text-align:center">你们当为耶路撒冷求平安；爱你的人必然兴旺。</p>
+
 <p style="text-align:center">诗篇 121:6。</p>
 
 

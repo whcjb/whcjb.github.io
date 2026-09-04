@@ -8,56 +8,9 @@ date: 2026-08-21 03:23
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">译者序</span></p>
 
-
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">序言</span></p>
 
-
-
-
-
-<!-- PAGE 969 -->
-
-
-
-
-
-<!-- PAGE 970 -->
-
-
-
-
-
-<!-- PAGE 971 -->
-
-
-
-
-
-
-
-
-
-<!-- PAGE 972 -->
-
-
-
-
-<!-- PAGE 973 -->
-
-
-
-
-
-
-<!-- PAGE 974 -->
-
-
-
-
-
-
-
-<!-- PAGE 975 -->
+<!-- PAGE 969 --> <!-- PAGE 970 --> <!-- PAGE 971 --> <!-- PAGE 972 --> <!-- PAGE 973 --> <!-- PAGE 974 --> <!-- PAGE 975 -->
 
 <p style="margin-left:2em;" markdown="1">*被风吹的叶子必追赶他们；他们要逃避，像人逃避刀剑；无人追赶，他们却要跌倒*。—— 编者注</p>
 

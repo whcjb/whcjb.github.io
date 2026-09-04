@@ -8,78 +8,9 @@ date: 2026-06-02 18:13
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">TRANSLATOR’S PREFACE</span></p>
 
-
-
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">PREFACE</span></p>
 
-
-
-
-
-
-
-<!-- PAGE 969 -->
-
-
-
-
-
-
-
-
-<!-- PAGE 970 -->
-
-
-
-
-
-
-
-
-<!-- PAGE 971 -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- PAGE 972 -->
-
-
-
-
-
-
-<!-- PAGE 973 -->
-
-
-
-
-
-
-
-
-
-<!-- PAGE 974 -->
-
-
-
-
-
-
-
-
-
-
-
-<!-- PAGE 975 -->
+<!-- PAGE 969 --> <!-- PAGE 970 --> <!-- PAGE 971 --> <!-- PAGE 972 --> <!-- PAGE 973 --> <!-- PAGE 974 --> <!-- PAGE 975 -->
 
 <p style="margin-left:2em;" markdown="1">*shaken leaf shall chase them; and they shall flee as fleeing from a sword; and they shall fall when none pursueth*. — Ed.</p>
 
