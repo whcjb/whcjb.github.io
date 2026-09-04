@@ -31,7 +31,11 @@ exclude:
   - README.md
   - CLAUDE.md
   # Pipeline raw / 中间产物：git 里保留，但不必进 _site（无 URL 引用）
+  # hodge_raw / owen_raw 先前漏排除，raw 被当公开页面发布了
+  # （_site 里各 31 / 57 个 index.html，2026-09-04 查出）
   - calvin_raw
+  - hodge_raw
+  - owen_raw
   - ocr_output
   - logs
   - scripts
