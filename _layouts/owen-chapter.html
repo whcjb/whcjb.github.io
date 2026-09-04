@@ -4,7 +4,7 @@ layout: default
 
 <div class="container" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="owen-chrome" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
         <a href="{{ site.baseurl }}/owen/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
@@ -19,11 +19,9 @@ layout: default
         {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
-      {% include compare-commentary.html self="owen" content=".owen-content" accent="#1f5a4b" %}
-
-      <div class="owen-content" data-book="{{ page.book_id }}">
+      {% include compare-commentary-head.html self="owen" content_class="owen-content" self_label="欧文" %}
         {{ content }}
-      </div>
+      {% include compare-commentary-foot.html %}
 
       {% if page.date %}
       <div class="owen-chrome" style="margin-top:32px; font-size:12px; color:#9a9a92; text-align:right;">

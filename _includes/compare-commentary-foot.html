@@ -1,0 +1,218 @@
+{% comment %}
+  对比注释（下半）—— 见 compare-commentary-head.html 的说明。
+  这里收尾正文列、给出右侧对照栏，并带上原实现的全部 CSS 与 JS。
+{% endcomment %}
+        </div>
+        <aside class="cmp-henry" id="cmpHenry" aria-hidden="true">
+          <div class="cmp-henry-inner">
+            <div class="cmp-henry-head">
+              <span class="cmp-henry-lbl" id="cmpLbl">马太亨利注释</span>
+              <button type="button" class="cmp-close" id="cmpClose">关闭对比 &times;</button>
+            </div>
+            <iframe class="cmp-henry-frame" id="cmpFrame" title="对照注释"></iframe>
+            <div class="cmp-henry-msg" id="cmpMsg" hidden>本章暂无对照注释。</div>
+          </div>
+        </aside>
+      </div>
+
+<style>
+/* ══ 对比马太亨利注释：隐形热区 + 就地弹层 + 右侧 iframe 两栏 ══ */
+#cmpCol{position:relative}
+.cmp-topbar{display:flex;align-items:center;gap:16px;margin:16px 0;min-height:26px;
+  position:relative;z-index:1}
+.cmp-topbar > a{flex:0 0 auto}
+/* 隐形热区：覆盖顶部右侧一大片空白（返回行~经节导航一带），静止无边框无底色。
+   绝对定位在 topbar 内，向下延伸覆盖上下章行；用 z-index+pointer-events 分层，
+   让链接仍可点、空白处点击穿透到热区。 */
+.cmp-hotwrap{position:absolute;top:-6px;left:29%;right:15%;height:160px;z-index:0}
+/* 隐形触控区：无悬浮效果、无提示，纯点击 */
+.cmp-hotspot{position:absolute;inset:0;cursor:pointer;pointer-events:auto}
+/* 顶部交互元素浮在热区之上，空白处点击穿透 */
+.cmp-nav{position:relative;z-index:2;pointer-events:none}
+.cmp-nav a{pointer-events:auto}
+#verse-nav{position:relative;z-index:2}
+/* 对照卡片抽屉：从热区下边线像出票一样缓慢滑出。
+   drawer 裁剪(overflow) + card 从上方 translateY(-102%) 滑下 = 出票效果。JS 定位。 */
+.cmp-drawer{position:absolute;z-index:50;overflow:hidden;max-height:0;pointer-events:none;
+  transition:max-height .46s cubic-bezier(.22,.61,.36,1)}
+.cmp-drawer.open{max-height:480px;pointer-events:auto}
+/* 卡片配色：白 + 酒红 + 蓝（加尔文主题），不掺其他颜色 */
+.cmp-card{background:#fff;border:1px solid #e4dede;border-radius:12px;border-top:2px solid #800000;
+  box-shadow:0 16px 38px rgba(60,20,20,.16),0 3px 8px rgba(0,0,0,.06);padding:7px;
+  transform:translateY(-102%);transition:transform .46s cubic-bezier(.22,.61,.36,1)}
+.cmp-drawer.open .cmp-card{transform:translateY(0)}
+.cmp-card-title{font-size:11px;letter-spacing:.16em;color:#8f5b5e;padding:7px 12px 5px}
+.cmp-opt{width:100%;text-align:left;background:none;border:none;color:#333;cursor:pointer;
+  font-size:14.5px;padding:11px 13px;border-radius:9px;display:flex;align-items:center;gap:11px;
+  font-family:inherit;transition:background .14s,color .14s}
+.cmp-opt:hover{background:#eef0f6;color:#000080}
+.cmp-opt .cmp-ic{flex:0 0 auto;display:block}
+
+/* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半。
+   position/z-index 让正文浮在热区之上，热区只捕获正文以上的空白区点击 */
+.cmp-stage{display:flex;align-items:flex-start;gap:0;position:relative;z-index:1}
+.cmp-calvin{min-width:0;flex:1 1 100%;transition:flex-basis .32s ease,padding .32s ease}
+.cmp-henry{flex:0 0 0;max-width:0;overflow:hidden;opacity:0;
+  transition:flex-basis .32s ease,max-width .32s ease,opacity .28s ease .04s}
+/* split：全屏固定覆盖层，铺满整屏宽；左右各半屏、各自独立滚动（滑一边不动另一边）。 */
+.cmp-stage.split{position:fixed;inset:0;z-index:60;background:#fff;
+  display:flex;align-items:stretch;gap:0;padding:0}
+.cmp-stage.split .cmp-calvin{flex:1 1 50%;min-width:0;height:100%;overflow-y:auto;
+  -webkit-overflow-scrolling:touch;padding:24px 30px}
+.cmp-stage.split .cmp-henry{flex:1 1 50%;min-width:0;max-width:none;opacity:1;height:100%}
+.cmp-henry-inner{height:100%;display:flex;flex-direction:column;border-left:1px solid #e5e5e5}
+.cmp-henry-head{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
+  padding:11px 18px;border-bottom:1px solid #eee;background:#fafafa}
+.cmp-henry-lbl{font-size:13px;letter-spacing:.1em;font-weight:700;color:#8a6a1e}
+.cmp-close{background:none;border:1px solid #e0e0e0;color:#777;border-radius:6px;
+  padding:5px 13px;font-size:13px;cursor:pointer;font-family:inherit}
+.cmp-close:hover{color:#333;border-color:#b0b0b0}
+.cmp-henry-frame{flex:1 1 auto;width:100%;border:0;background:#fff;min-height:0}
+.cmp-henry-msg{color:#aaa;text-align:center;padding:60px 0;font-size:14px}
+/* 手机端顶部切换条：默认隐藏，仅窄屏 split 时显示 */
+.cmp-toggle{display:none}
+.cmp-tg-group{display:inline-flex;border:1px solid #d4d4d4;border-radius:8px;overflow:hidden}
+.cmp-tg{background:#fff;border:none;padding:8px 20px;font-size:14px;color:#555;
+  cursor:pointer;font-family:inherit}
+.cmp-tg+.cmp-tg{border-left:1px solid #d4d4d4}
+.cmp-tg.cmp-tg-active{background:#0085a1;color:#fff;font-weight:700}
+.cmp-tg[data-target="henry"].cmp-tg-active{background:#C9922A}
+.cmp-tg-close{background:none;border:none;color:#999;font-size:14px;cursor:pointer;font-family:inherit}
+@media(max-width:820px){
+  /* 窄屏：全屏覆盖，纵向 [切换条 + 单栏]，整屏二选一，各栏内部滚动 */
+  .cmp-stage.split{flex-direction:column}
+  .cmp-stage.split .cmp-toggle{display:flex;flex:0 0 auto;justify-content:space-between;
+    align-items:center;background:#fff;padding:10px 16px;border-bottom:1px solid #eee}
+  .cmp-stage.split .cmp-calvin,.cmp-stage.split .cmp-henry{flex:1 1 auto;min-height:0;
+    height:auto;max-width:none;opacity:1;padding:16px}
+  .cmp-stage.split.show-calvin .cmp-henry{display:none}
+  .cmp-stage.split.show-henry .cmp-calvin{display:none}
+  .cmp-henry-inner{border-left:none}
+  .cmp-henry-head{display:none}
+}
+@media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-drawer,.cmp-card{transition:none}}
+</style>
+
+<script>
+// ── 对比马太亨利注释：隐形热区 → 就地弹层 → 右侧 iframe 两栏 ──
+(function(){
+  var hotspot=document.getElementById('cmpHotspot');
+  if(!hotspot) return;
+  var drawer=document.getElementById('cmpDrawer'),
+      col=document.getElementById('cmpCol'),
+      stage=document.getElementById('cmpStage'),
+      henry=document.getElementById('cmpHenry'),
+      frame=document.getElementById('cmpFrame'),
+      msg=document.getElementById('cmpMsg'),
+      lbl=document.getElementById('cmpLbl'),
+      tgHenry=document.getElementById('cmpTgHenry'),
+      closeBtn=document.getElementById('cmpClose'),
+      origColClass=col.className;
+
+  // 对照源表：**由卡片按钮的 data-* 读出**，不再写死。
+  // 按钮由 _data/compare_sources.yml 生成（见 compare-commentary-head.html），
+  // 新增注释家不必改这里，也不必改任何 layout。
+  var SRC={};
+  drawer.querySelectorAll('.cmp-opt').forEach(function(b){
+    SRC[b.getAttribute('data-source')]={
+      url:  b.getAttribute('data-url'),
+      label:b.getAttribute('data-label'),
+      tg:   b.getAttribute('data-tg'),
+      msg:  b.getAttribute('data-msg')};
+  });
+  var loadedUrl=null;
+
+  // 卡片定位到热区「下边线」：左边/宽度对齐热区，顶边贴热区底边，从这条线滑出
+  function placeDrawer(){
+    var c=col.getBoundingClientRect(), h=hotspot.getBoundingClientRect();
+    drawer.style.left=(h.left-c.left)+'px';
+    drawer.style.top=(h.bottom-c.top)+'px';
+    drawer.style.width=Math.max(h.width,220)+'px';
+  }
+  function openDrawer(){placeDrawer();drawer.classList.add('open');hotspot.setAttribute('aria-expanded','true');}
+  function closeDrawer(){drawer.classList.remove('open');hotspot.setAttribute('aria-expanded','false');}
+
+  hotspot.addEventListener('click',function(e){e.stopPropagation();
+    if(drawer.classList.contains('open')){closeDrawer();return;} openDrawer();});
+  hotspot.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();e.stopPropagation();openDrawer();}});
+  drawer.addEventListener('click',function(e){e.stopPropagation();});
+  document.addEventListener('click',closeDrawer);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeDrawer();if(stage.classList.contains('split'))closeCompare();}});
+
+  // 卡片选项路由（可扩展：新增注释源在 HTML 加 .cmp-opt[data-source]，此处加分支）
+  drawer.querySelectorAll('.cmp-opt').forEach(function(opt){
+    opt.addEventListener('click',function(e){e.stopPropagation();
+      var src=opt.getAttribute('data-source');
+      if(SRC[src]) openCompare(src);
+      closeDrawer();
+    });
+  });
+
+  // iframe 载入后：隐藏 mhenry 页 chrome；注释折叠交给 mhenry 自带 JS（与原页一致）；
+  // 并按内容自动撑高 iframe —— 不内部滚动，让加尔文/马太亨利整页一起滚动（无独立窗口容器）
+  frame.addEventListener('load',function(){
+    try{
+      var d=frame.contentDocument; if(!d){return;}
+      var isHenry=d.querySelector('#mhenry-col'),
+          isCalvin=d.querySelector('.calvin-en-content');
+      if(!isHenry && !isCalvin){frame.style.display='none';msg.hidden=false;return;}
+      frame.style.display='';msg.hidden=true;
+      var s=d.createElement('style');
+      // 隐藏被嵌页 chrome：导航/页脚/TTS，加尔文英文版另隐对比热区与章导航（避免嵌套对比）
+      s.textContent=
+        '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer,'+
+        '#cmpHotspot,.cmp-hotspot,.cmp-drawer,.cmp-nav,#verse-nav{display:none!important}'+
+        '.container{padding-top:14px!important}';
+      d.head.appendChild(s);
+    }catch(err){/* 跨域兜底：保持 iframe 原样 */}
+  });
+
+  // 手机端切换条：整屏二选一
+  var toggle=document.getElementById('cmpToggle'),
+      tgBtns=toggle?toggle.querySelectorAll('.cmp-tg'):[],
+      tgClose=document.getElementById('cmpToggleClose');
+  function setPane(target){
+    stage.classList.toggle('show-henry',target==='henry');
+    stage.classList.toggle('show-calvin',target!=='henry');
+    tgBtns.forEach(function(b){b.classList.toggle('cmp-tg-active',b.getAttribute('data-target')===target);});
+  }
+  // 手机端切走加尔文时其列被 display:none 会丢失内部 scrollTop；
+  // 离开加尔文时记住列的 scrollTop，切回时还原（桌面两栏并存不切换，无此问题）。
+  var calvinCol=document.querySelector('.cmp-calvin'), calvinTop=0,
+      mqMobile=window.matchMedia('(max-width:820px)');
+  tgBtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      var target=b.getAttribute('data-target');
+      if(mqMobile.matches && target==='henry' && stage.classList.contains('show-calvin')){
+        calvinTop=calvinCol?calvinCol.scrollTop:0;
+      }
+      setPane(target);
+      if(mqMobile.matches && target==='calvin' && calvinCol){
+        requestAnimationFrame(function(){calvinCol.scrollTop=calvinTop;});
+      }
+    });
+  });
+
+  function openCompare(source){
+    var cfg=SRC[source]||SRC['mhenry'];
+    if(lbl) lbl.textContent=cfg.label;
+    if(msg) msg.textContent=cfg.msg;
+    if(tgHenry) tgHenry.textContent=cfg.tg;
+    frame.title=cfg.label;
+    if(loadedUrl!==cfg.url){frame.style.display='';msg.hidden=true;frame.src=cfg.url;loadedUrl=cfg.url;}
+    stage.classList.add('split');            // 全屏固定覆盖层，铺满屏宽
+    setPane('calvin');                       // 手机端默认先显示加尔文
+    henry.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';   // 锁背景滚动
+    closeDrawer();
+  }
+  function closeCompare(){
+    stage.classList.remove('split','show-calvin','show-henry');
+    henry.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
+  closeBtn.addEventListener('click',closeCompare);
+  if(tgClose) tgClose.addEventListener('click',closeCompare);
+})();
+</script>

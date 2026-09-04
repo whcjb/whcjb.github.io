@@ -34,14 +34,10 @@ layout: default
         </div>
       </div>
 
-      {%- comment -%} 中英共用本 layout：英文页的 self 必须是 calvin-en，
-           否则「加尔文注释（英文）」会出现在英文页自己的对照选项里 {%- endcomment -%}
       {% assign cc_self = "calvin" %}{% if page.book_id contains "-en" %}{% assign cc_self = "calvin-en" %}{% endif %}
-      {% include compare-commentary.html self=cc_self content=".calvin-en-content" accent="#800000" %}
-
-      <div class="calvin-en-content" data-book="{{ page.book_id }}">
-        {{ content }}
-      </div>
+      {% include compare-commentary-head.html self=cc_self content_class="calvin-en-content" self_label="加尔文" %}
+          {{ content }}
+      {% include compare-commentary-foot.html %}
 
       {% if page.date %}
       <div style="margin-top:32px; font-size:12px; color:#aaa; text-align:right;">
@@ -687,81 +683,6 @@ a.commentary-anchor {
   scroll-margin-top: 80px;
 }
 
-/* ══ 对比马太亨利注释：隐形热区 + 就地弹层 + 右侧 iframe 两栏 ══ */
-#cmpCol{position:relative}
-.cmp-topbar{display:flex;align-items:center;gap:16px;margin:16px 0;min-height:26px;
-  position:relative;z-index:1}
-.cmp-topbar > a{flex:0 0 auto}
-/* 隐形热区：覆盖顶部右侧一大片空白（返回行~经节导航一带），静止无边框无底色。
-   绝对定位在 topbar 内，向下延伸覆盖上下章行；用 z-index+pointer-events 分层，
-   让链接仍可点、空白处点击穿透到热区。 */
-.cmp-hotwrap{position:absolute;top:-6px;left:29%;right:15%;height:160px;z-index:0}
-/* 隐形触控区：无悬浮效果、无提示，纯点击 */
-.cmp-hotspot{position:absolute;inset:0;cursor:pointer;pointer-events:auto}
-/* 顶部交互元素浮在热区之上，空白处点击穿透 */
-.cmp-nav{position:relative;z-index:2;pointer-events:none}
-.cmp-nav a{pointer-events:auto}
-#verse-nav{position:relative;z-index:2}
-/* 对照卡片抽屉：从热区下边线像出票一样缓慢滑出。
-   drawer 裁剪(overflow) + card 从上方 translateY(-102%) 滑下 = 出票效果。JS 定位。 */
-.cmp-drawer{position:absolute;z-index:50;overflow:hidden;max-height:0;pointer-events:none;
-  transition:max-height .46s cubic-bezier(.22,.61,.36,1)}
-.cmp-drawer.open{max-height:480px;pointer-events:auto}
-/* 卡片配色：白 + 酒红 + 蓝（加尔文主题），不掺其他颜色 */
-.cmp-card{background:#fff;border:1px solid #e4dede;border-radius:12px;border-top:2px solid #800000;
-  box-shadow:0 16px 38px rgba(60,20,20,.16),0 3px 8px rgba(0,0,0,.06);padding:7px;
-  transform:translateY(-102%);transition:transform .46s cubic-bezier(.22,.61,.36,1)}
-.cmp-drawer.open .cmp-card{transform:translateY(0)}
-.cmp-card-title{font-size:11px;letter-spacing:.16em;color:#8f5b5e;padding:7px 12px 5px}
-.cmp-opt{width:100%;text-align:left;background:none;border:none;color:#333;cursor:pointer;
-  font-size:14.5px;padding:11px 13px;border-radius:9px;display:flex;align-items:center;gap:11px;
-  font-family:inherit;transition:background .14s,color .14s}
-.cmp-opt:hover{background:#eef0f6;color:#000080}
-.cmp-opt .cmp-ic{flex:0 0 auto;display:block}
-
-/* 两栏舞台：默认单栏（henry 宽 0、不可见）；split 时各半。
-   position/z-index 让正文浮在热区之上，热区只捕获正文以上的空白区点击 */
-.cmp-stage{display:flex;align-items:flex-start;gap:0;position:relative;z-index:1}
-.cmp-calvin{min-width:0;flex:1 1 100%;transition:flex-basis .32s ease,padding .32s ease}
-.cmp-henry{flex:0 0 0;max-width:0;overflow:hidden;opacity:0;
-  transition:flex-basis .32s ease,max-width .32s ease,opacity .28s ease .04s}
-/* split：全屏固定覆盖层，铺满整屏宽；左右各半屏、各自独立滚动（滑一边不动另一边）。 */
-.cmp-stage.split{position:fixed;inset:0;z-index:60;background:#fff;
-  display:flex;align-items:stretch;gap:0;padding:0}
-.cmp-stage.split .cmp-calvin{flex:1 1 50%;min-width:0;height:100%;overflow-y:auto;
-  -webkit-overflow-scrolling:touch;padding:24px 30px}
-.cmp-stage.split .cmp-henry{flex:1 1 50%;min-width:0;max-width:none;opacity:1;height:100%}
-.cmp-henry-inner{height:100%;display:flex;flex-direction:column;border-left:1px solid #e5e5e5}
-.cmp-henry-head{flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;
-  padding:11px 18px;border-bottom:1px solid #eee;background:#fafafa}
-.cmp-henry-lbl{font-size:13px;letter-spacing:.1em;font-weight:700;color:#8a6a1e}
-.cmp-close{background:none;border:1px solid #e0e0e0;color:#777;border-radius:6px;
-  padding:5px 13px;font-size:13px;cursor:pointer;font-family:inherit}
-.cmp-close:hover{color:#333;border-color:#b0b0b0}
-.cmp-henry-frame{flex:1 1 auto;width:100%;border:0;background:#fff;min-height:0}
-.cmp-henry-msg{color:#aaa;text-align:center;padding:60px 0;font-size:14px}
-/* 手机端顶部切换条：默认隐藏，仅窄屏 split 时显示 */
-.cmp-toggle{display:none}
-.cmp-tg-group{display:inline-flex;border:1px solid #d4d4d4;border-radius:8px;overflow:hidden}
-.cmp-tg{background:#fff;border:none;padding:8px 20px;font-size:14px;color:#555;
-  cursor:pointer;font-family:inherit}
-.cmp-tg+.cmp-tg{border-left:1px solid #d4d4d4}
-.cmp-tg.cmp-tg-active{background:#0085a1;color:#fff;font-weight:700}
-.cmp-tg[data-target="henry"].cmp-tg-active{background:#C9922A}
-.cmp-tg-close{background:none;border:none;color:#999;font-size:14px;cursor:pointer;font-family:inherit}
-@media(max-width:820px){
-  /* 窄屏：全屏覆盖，纵向 [切换条 + 单栏]，整屏二选一，各栏内部滚动 */
-  .cmp-stage.split{flex-direction:column}
-  .cmp-stage.split .cmp-toggle{display:flex;flex:0 0 auto;justify-content:space-between;
-    align-items:center;background:#fff;padding:10px 16px;border-bottom:1px solid #eee}
-  .cmp-stage.split .cmp-calvin,.cmp-stage.split .cmp-henry{flex:1 1 auto;min-height:0;
-    height:auto;max-width:none;opacity:1;padding:16px}
-  .cmp-stage.split.show-calvin .cmp-henry{display:none}
-  .cmp-stage.split.show-henry .cmp-calvin{display:none}
-  .cmp-henry-inner{border-left:none}
-  .cmp-henry-head{display:none}
-}
-@media (prefers-reduced-motion:reduce){.cmp-calvin,.cmp-henry,.cmp-drawer,.cmp-card{transition:none}}
 </style>
 
 <script>

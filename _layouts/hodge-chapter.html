@@ -24,7 +24,7 @@ layout: default
 
 <div class="container hodge-wrap" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="hodge-chrome hodge-bar" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
@@ -56,11 +56,9 @@ layout: default
         <div id="verse-nav-pills" style="display:none;"></div>
       </div>
 
-      {% include compare-commentary.html self="hodge" content=".hodge-content" accent="#1f3a5f" %}
-
-      <div class="hodge-content">
+      {% include compare-commentary-head.html self="hodge" content_class="hodge-content" self_label="贺智" %}
         {{ content }}
-      </div>
+      {% include compare-commentary-foot.html %}
 
       {% if page.date %}
       <div class="hodge-pubdate">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
