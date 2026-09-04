@@ -18,19 +18,29 @@ layout: default
       </h2>
 
       {% assign nt_intro_ids = "1corinthians,1john,1peter,1thessalonians,1timothy,2corinthians,2peter,2thessalonians,2timothy,acts,colossians,ephesians,galatians,hebrews,james,john,jude,philemon,philippians,romans,titus" | split: "," %}
-      {% if nt_intro_ids contains page.book_id %}
-      {% include calvin_intros/{{ page.book_id }}.html %}
-      {% endif %}
+      {%- comment -%}
+        先 capture 再输出：下面的经文索引入口要靠「这份 intro 里有没有
+        自带按钮」来决定自己是否渲染，否则两个按钮并排（2corinthians 等
+        7 卷都自带按钮，实测重复）。
+      {%- endcomment -%}
+      {% capture calvin_intro_html %}{% if nt_intro_ids contains page.book_id %}{% include calvin_intros/{{ page.book_id }}.html %}{% endif %}{% endcapture %}
+      {{ calvin_intro_html }}
 
       {%- comment -%}
-        经文索引入口（pdf-pipeline Step 7）。新约那些书的按钮写在各自的
-        calvin_intros/<book>.html 里；旧约卷没有 intro 文件，所以这里按
-        「verse-index 页是否存在」自动判断——加一本书就不用再改名单，
-        也不会给还没建索引的书显示死链。
+        经文索引入口（pdf-pipeline Step 7）。新约有 7 卷把按钮写在各自的
+        calvin_intros/<book>.html 里（各自带一套样式，按「每本书独立样式」
+        的规矩保留），其余卷没有 intro 文件，所以这里按「verse-index 页
+        是否存在」自动判断——加一本书就不用再改名单，也不会给还没建索引
+        的书显示死链。
+
+        ⚠️ intro 自带按钮的卷必须跳过，否则两个按钮并排。判据是 intro
+        的渲染结果里有没有 `verse-index-link`，不再维护书名白名单
+        （原先只硬编码排除了 acts，另外 6 卷全在重复）。
       {%- endcomment -%}
       {% assign vi_path = "calvin/" | append: page.book_id | append: "/verse-index/index.html" %}
       {% assign vi_page = site.pages | where: "path", vi_path | first %}
-      {% if vi_page and page.book_id != "acts" %}
+      {% unless calvin_intro_html contains "verse-index-link" %}
+      {% if vi_page %}
       <a href="{{ site.baseurl }}/calvin/{{ page.book_id }}/verse-index/" class="calvin-verse-index-link">
         📖 经文索引 <span>按章逐节检索 Calvin 注释</span>
       </a>
@@ -48,6 +58,7 @@ layout: default
       .calvin-verse-index-link span { font-size: 12px; color: #8a4a1a; opacity: 0.8; }
       </style>
       {% endif %}
+      {% endunless %}
 
       {% if page.has_preface %}
       <div style="margin-bottom: 16px;">
