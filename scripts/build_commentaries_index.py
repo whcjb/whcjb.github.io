@@ -178,7 +178,7 @@ def build_compare_sources() -> str:
             book = m.group(1) if m else core
             for lang, tpl, rng in _lang_variants(aid, d, name):
                 key = aid + ('-en' if lang == 'en' else '')
-                label = COMPARE_LABEL.get(aid, aid) + ('（英文）' if lang == 'en' else '')
+                label = COMPARE_LABEL.get(aid, aid) + ('（英文版）' if lang == 'en' else '')
                 e = {'key': key, 'author': aid, 'lang': lang, 'label': label,
                      'url_tpl': tpl, 'accent': COMPARE_ACCENT.get(aid, '#555')}
                 if rng:

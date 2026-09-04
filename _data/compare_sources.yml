@@ -7,47 +7,47 @@
 sources:
   1corinthians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1corinthians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/1corinthians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1corinthians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1corinthians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 16}
-    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文）", url_tpl: "/hodge/1corinthians/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 16}
+    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文版）", url_tpl: "/hodge/1corinthians/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 16}
     - {key: hodge, author: hodge, lang: zh, label: "贺智注释", url_tpl: "/hodge/1corinthians/zh/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 16}
   1john:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1john/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/1john-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1john-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1john/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/1john-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/1john-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
   1peter:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1peter/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1peter/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
   1thessalonians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1thessalonians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/1thessalonians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1thessalonians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1thessalonians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/1thessalonians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/1thessalonians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
   1timothy:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/1timothy/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/1timothy-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/1timothy-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/1timothy/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/1timothy-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/1timothy-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
   2corinthians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/2corinthians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/2corinthians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/2corinthians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/2corinthians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 13}
-    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文）", url_tpl: "/hodge/2corinthians/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 13}
+    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文版）", url_tpl: "/hodge/2corinthians/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 13}
     - {key: hodge, author: hodge, lang: zh, label: "贺智注释", url_tpl: "/hodge/2corinthians/zh/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 13}
   2peter:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/2peter/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/2peter/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
   2thessalonians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/2thessalonians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/2thessalonians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/2thessalonians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/2thessalonians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/2thessalonians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/2thessalonians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
   2timothy:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/2timothy/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/2timothy-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/2timothy-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/2timothy/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/2timothy-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/2timothy-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
   acts:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/acts/__CH__/", accent: "#800000", ch_from: 1, ch_to: 28}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/acts/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 28}
@@ -56,25 +56,25 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/amos/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 9}
   colossians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/colossians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/colossians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/colossians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/colossians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/colossians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/colossians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
   daniel:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/daniel/__CH__/", accent: "#800000", ch_from: 1, ch_to: 12}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/daniel/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 12}
   ephesians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/ephesians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/ephesians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/ephesians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/ephesians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/ephesians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/ephesians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
   ezekiel:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/ezekiel/__CH__/", accent: "#800000", ch_from: 1, ch_to: 20}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/ezekiel/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 48}
   galatians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/galatians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/galatians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/galatians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/galatians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/galatians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/galatians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
   genesis:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/genesis/__CH__/", accent: "#800000", ch_from: 1, ch_to: 50}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/genesis/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 50}
@@ -86,8 +86,8 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/haggai/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 2}
   hebrews:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/hebrews/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/hebrews-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
-    - {key: owen-en, author: owen, lang: en, label: "约翰欧文注释（英文）", url_tpl: "/owen/hebrews/__CH__/", accent: "#1f5a4b", ch_from: 1, ch_to: 13}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/hebrews-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 13}
+    - {key: owen-en, author: owen, lang: en, label: "约翰欧文注释（英文版）", url_tpl: "/owen/hebrews/__CH__/", accent: "#1f5a4b", ch_from: 1, ch_to: 13}
     - {key: owen, author: owen, lang: zh, label: "约翰欧文注释", url_tpl: "/owen/hebrews/__CH__/zh/", accent: "#1f5a4b", ch_from: 1, ch_to: 10}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/hebrews/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 13}
   hosea:
@@ -95,20 +95,20 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/hosea/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 14}
   isaiah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/isaiah-1/__CH__/", accent: "#800000", ch_from: 1, ch_to: 37}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/isaiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 37}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/isaiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 37}
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/isaiah-2/__CH__/", accent: "#800000", ch_from: 38, ch_to: 66}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/isaiah-2-en/__CH__/", accent: "#800000", ch_from: 38, ch_to: 66}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/isaiah-2-en/__CH__/", accent: "#800000", ch_from: 38, ch_to: 66}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/isaiah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 66}
   james:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/james/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/james-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/james-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/james/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/james-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/james-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
   jeremiah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jeremiah-1/__CH__/", accent: "#800000", ch_from: 1, ch_to: 23}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/jeremiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 24}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/jeremiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 24}
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jeremiah-2/__CH__/", accent: "#800000", ch_from: 24, ch_to: 52}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/jeremiah-2-en/__CH__/", accent: "#800000", ch_from: 24, ch_to: 52}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/jeremiah-2-en/__CH__/", accent: "#800000", ch_from: 24, ch_to: 52}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/jeremiah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 52}
   joel:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/joel/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
@@ -124,9 +124,9 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/joshua/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 24}
   jude:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jude/__CH__/", accent: "#800000", ch_from: 1, ch_to: 1}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/jude-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 1}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/jude-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 1}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/jude/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/jude-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/jude-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
   lamentations:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/lamentations/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/lamentations/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
@@ -147,28 +147,28 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/philemon/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 1}
   philippians:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/philippians/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/philippians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/philippians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/philippians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/philippians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/philippians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
   proverbs:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/proverbs/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 31}
     - {key: bridges, author: bridges, lang: zh, label: "毕列志注释", url_tpl: "/bridges/proverbs/__CH__/", accent: "#96613F", ch_from: 1, ch_to: 31}
   psalms:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/psalms-1/__CH__/", accent: "#800000", ch_from: 1, ch_to: 78}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/psalms-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 78}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/psalms-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 78}
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/psalms-2/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/psalms/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 150}
   romans:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/romans/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/romans-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/romans-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/romans/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 16}
-    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文）", url_tpl: "/hodge/romans/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 16}
+    - {key: hodge-en, author: hodge, lang: en, label: "贺智注释（英文版）", url_tpl: "/hodge/romans/__CH__/", accent: "#1f3a5f", ch_from: 1, ch_to: 16}
   titus:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/titus/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
-    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文）", url_tpl: "/calvin/titus-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
+    - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/titus-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 3}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/titus/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
-    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文）", url_tpl: "/mhenry/titus-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
+    - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/titus-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 3}
   zechariah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/zechariah/__CH__/", accent: "#800000", ch_from: 1, ch_to: 14}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/zechariah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 14}
