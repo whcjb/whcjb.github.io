@@ -33,7 +33,12 @@ layout: default
           没有对应译文的章就不显示，避免死链。
         {%- endcomment -%}
         {% if page.zh_url %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
-        {% if page.en_url %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {%- comment -%}
+          中文页不再给「English →」入口（用户 2026-09-04 指定）：英文版已由
+          章顶对照抽屉的「对比英文版注释」提供，两个入口重复。
+          英文页的「中文版 →」保留。书卷目录页的中英切换也保留
+          （那里没有对照抽屉，去掉英文版就没入口了）。
+        {%- endcomment -%}
       </div>
 
       <h1 class="hodge-title">{{ page.title }}</h1>
