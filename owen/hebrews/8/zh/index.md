@@ -327,7 +327,7 @@ en_url: "/owen/hebrews/8/"
 
 <details class="owen-vg"><summary><span class="owen-vg-ref">Ver. 5</span><span class="owen-vg-prev">Who serve [in sacred worship] unto the example and shadow of heavenly …</span></summary>
 <div class="owen-vg-body">
-<p class="owen-ver">第5节——他们[在圣所的敬拜中]所事奉的，乃是天上things之样式与影儿，正如摩西将要造帐幕的时候，蒙神警诫他说："你要谨慎，一切都要照着在山上指示你的样式去造。"
+<p class="owen-ver">第5节——他们[在圣所的敬拜中]所事奉的，乃是天上things之样式与影儿，正如摩西将要造帐幕的时候，蒙神警诫他说："你要谨慎，一切都要照着在山上指示你的样式去造。"</p>
 
 Ver. 5.—第5节——那些[在神圣敬拜中]事奉的人，所供奉的是天上之事的样式与影儿，正如摩西将要造帐幕之时，蒙神警诫说："你要谨慎，凡物都当照着在山上指示你的样式去造。"</p>
 
