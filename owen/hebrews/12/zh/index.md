@@ -7,6 +7,8 @@ title: "第十二章"
 date: 2026-09-04 19:23
 prev_url: "/owen/hebrews/11/zh/"
 prev_label: "第十一章"
+next_url: "/owen/hebrews/13/zh/"
+next_label: "第十三章"
 en_url: "/owen/hebrews/12/"
 ---
 # 希伯来书 第十二章

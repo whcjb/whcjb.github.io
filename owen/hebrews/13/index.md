@@ -7,6 +7,7 @@ title: "第十三章"
 date: 2026-07-15 16:32
 prev_url: "/owen/hebrews/12/"
 prev_label: "第十二章"
+zh_url: "/owen/hebrews/13/zh/"
 ---
 # 希伯来书 第十三章
 
