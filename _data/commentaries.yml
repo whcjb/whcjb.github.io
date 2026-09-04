@@ -315,7 +315,7 @@ books:
     testament: nt
     chapters: 16
     links:
-      - {author: hodge, path: "/hodge/romans/", url_tpl: "/hodge/romans/__CH__/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/romans/zh/", url_tpl: "/hodge/romans/zh/__CH__/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"
