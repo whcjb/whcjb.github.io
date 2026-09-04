@@ -3,6 +3,7 @@ layout: hodge-chapter
 book_id: romans
 book_name: "Hodge on Romans"
 title: "Preface"
+zh_url: "/hodge/romans/zh/preface/"
 date: 2026-09-03 10:51
 next_section: 1
 next_label: "Chapter 1"
