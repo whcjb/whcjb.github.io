@@ -19,6 +19,8 @@ layout: default
         {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
+      {% include compare-commentary.html self="owen" content=".owen-content" accent="#1f5a4b" %}
+
       <div class="owen-content" data-book="{{ page.book_id }}">
         {{ content }}
       </div>

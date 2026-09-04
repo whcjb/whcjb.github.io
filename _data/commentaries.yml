@@ -164,7 +164,7 @@ books:
     testament: ot
     chapters: 31
     links:
-      - {author: bridges, path: "/bridges/proverbs/", title_cn: "箴言书注释", title_en: "An Exposition of the Book of Proverbs", c0: "#5B3A29", c1: "#96613F"}
+      - {author: bridges, path: "/bridges/proverbs/", url_tpl: "/bridges/proverbs/__CH__/", title_cn: "箴言书注释", title_en: "An Exposition of the Book of Proverbs", c0: "#5B3A29", c1: "#96613F"}
   - id: ecclesiastes
     name: "传道书"
     en: "Ecclesiastes"
@@ -315,21 +315,21 @@ books:
     testament: nt
     chapters: 16
     links:
-      - {author: hodge, path: "/hodge/romans/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/romans/", url_tpl: "/hodge/romans/__CH__/", title_cn: "罗马书注释", title_en: "Commentary on the Epistle to the Romans", c0: "#152840", c1: "#2b5080"}
   - id: 1corinthians
     name: "哥林多前书"
     en: "1 Corinthians"
     testament: nt
     chapters: 16
     links:
-      - {author: hodge, path: "/hodge/1corinthians/zh/", title_cn: "哥林多前书注释", title_en: "An Exposition of the First Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/1corinthians/zh/", url_tpl: "/hodge/1corinthians/zh/__CH__/", title_cn: "哥林多前书注释", title_en: "An Exposition of the First Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
   - id: 2corinthians
     name: "哥林多后书"
     en: "2 Corinthians"
     testament: nt
     chapters: 13
     links:
-      - {author: hodge, path: "/hodge/2corinthians/zh/", title_cn: "哥林多后书注释", title_en: "An Exposition of the Second Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/2corinthians/zh/", url_tpl: "/hodge/2corinthians/zh/__CH__/", title_cn: "哥林多后书注释", title_en: "An Exposition of the Second Epistle to the Corinthians", c0: "#152840", c1: "#2b5080"}
   - id: galatians
     name: "加拉太书"
     en: "Galatians"
@@ -396,7 +396,7 @@ books:
     testament: nt
     chapters: 13
     links:
-      - {author: owen, path: "/owen/hebrews/", title_cn: "约翰欧文·希伯来书注释", title_en: "An Exposition of the Epistle to the Hebrews", c0: "#14382f", c1: "#1f5a4b"}
+      - {author: owen, path: "/owen/hebrews/", url_tpl: "/owen/hebrews/__CH__/zh/", title_cn: "约翰欧文·希伯来书注释", title_en: "An Exposition of the Epistle to the Hebrews", c0: "#14382f", c1: "#1f5a4b"}
   - id: james
     name: "雅各书"
     en: "James"

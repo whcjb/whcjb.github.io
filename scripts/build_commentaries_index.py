@@ -86,6 +86,88 @@ BOOK_TITLES = {
 }
 
 
+
+# ── 对比注释数据源（供 _includes/compare-commentary.html 用）──────────
+# 「点击章顶空白 → 弹出对照其他注释」这个功能原先是每个 layout 各写一份
+# （calvin-en 的隐形热区版、calvin-chapter 与 mhenry-chapter 的按钮版），
+# 新增一位注释家就得再抄一遍。现改为：这里按**实际发布的目录**扫出所有
+# 可对照的源，写进 _data/compare_sources.yml，layout 只需 include 一次。
+#
+# 为什么不用 books[].links：那份只收 5 个入口（加尔文与马太亨利覆盖全 66 卷、
+# 被 EXCLUDED_AUTHORS 排除在「历代解经」版面之外），对比功能恰恰最需要它们。
+#
+# 分卷书（jeremiah-1 / jeremiah-2、psalms-1 / psalms-2）按**章号区间**分别
+# 记一条，区间由目录里实际的 <N>.md 推出——否则第 30 章会去找 jeremiah-1。
+COMPARE_ACCENT = {
+    'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
+    'bridges': '#96613F', 'hodge': '#1f3a5f',
+}
+COMPARE_LABEL = {
+    'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
+    'bridges': '毕列志注释', 'hodge': '贺智注释',
+}
+
+
+def _chapter_range(d: Path):
+    """目录里 <N>.md / <N>/ 的章号区间。取不到返回 None。"""
+    ns = []
+    for p in d.iterdir():
+        m = re.fullmatch(r'(\d{1,3})(?:\.md)?', p.name)
+        if m:
+            ns.append(int(m.group(1)))
+    return (min(ns), max(ns)) if ns else None
+
+
+def build_compare_sources() -> str:
+    """→ _data/compare_sources.yml 的内容。"""
+    from collections import defaultdict
+    out = defaultdict(list)
+    for aid, meta in AUTHORS.items():
+        base = ROOT / meta['dir']
+        if not base.is_dir():
+            continue
+        for d in sorted(base.iterdir()):
+            if not d.is_dir() or d.name.endswith('-index') or not has_content(d):
+                continue
+            name = d.name
+            is_en = name.endswith('-en')
+            core = name[:-3] if is_en else name
+            if core.startswith('harmony'):
+                continue
+            m = re.match(r'^(.+)-(\d+)$', core)
+            book = m.group(1) if m else core
+            rng = _chapter_range(d)
+            # 章级 zh（欧文）→ /owen/hebrews/{ch}/zh/
+            # 占位符用 __CH__ 而非 {ch}：Liquid 的 replace: 参数里出现 `}`
+            # 会与 `}}` 终止符冲突，整站构建报 Liquid syntax error（实测）
+            tpl = (f'/{meta["dir"]}/{name}/__CH__/zh/'
+                   if (d / '1' / 'zh').is_dir() else f'/{meta["dir"]}/{name}/__CH__/')
+            key = aid + ('-en' if is_en else '')
+            label = COMPARE_LABEL.get(aid, aid) + ('（英文）' if is_en else '')
+            e = {'key': key, 'author': aid, 'label': label, 'url_tpl': tpl,
+                 'accent': COMPARE_ACCENT.get(aid, '#555')}
+            if rng:
+                e['ch_from'], e['ch_to'] = rng
+            out[book].append(e)
+    lines = ['# 由 scripts/build_commentaries_index.py 生成，勿手改。',
+             '# 对比注释的可选源：书卷 → 各注释家的章节 URL 模板（__CH__ 为章号占位）。',
+             '# 新增注释家：改脚本里的 AUTHORS / COMPARE_LABEL / COMPARE_ACCENT 后重跑，',
+             '# 所有 layout 的对比功能会自动带上它——不必改任何 layout。',
+             '', 'sources:']
+    for book in sorted(out):
+        srcs = out[book]
+        if len(srcs) < 2:          # 只有自己一家，没有可对照的
+            continue
+        lines.append(f'  {book}:')
+        for e in srcs:
+            rng = (f", ch_from: {e['ch_from']}, ch_to: {e['ch_to']}"
+                   if 'ch_from' in e else '')
+            lines.append(f'    - {{key: {e["key"]}, author: {e["author"]}, '
+                         f'label: {yaml_escape(e["label"])}, '
+                         f'url_tpl: {yaml_escape(e["url_tpl"])}, '
+                         f'accent: {yaml_escape(e["accent"])}{rng}}}')
+    return '\n'.join(lines) + '\n'
+
 def theme_color(aid: str) -> tuple:
     return AUTHOR_COLORS.get(aid) or ('#2d4a3a', '#3f6a54')
 # 和合本 66 卷：(目录 id, 中文名, 新旧约, 英文名)
@@ -209,6 +291,22 @@ def entry_path(author_id: str, dirname: str) -> str:
     return f'/{d}/{dirname}/'
 
 
+def chapter_url_tpl(author_id: str, dirname: str, path: str) -> str:
+    """章节 URL 模板，`__CH__` 为章号占位。供 _includes/compare-commentary.html 用。
+
+    三家的形态不一样，不能简单拼 path + 章号：
+      calvin / hodge / mhenry  书卷级 zh → `/calvin/romans/{ch}/`
+      owen                     **章级** zh → `/owen/hebrews/{ch}/zh/`
+                               （整卷没有中文索引页，zh 在章号之后）
+    判据：存在 `<book>/1/zh/` 就是章级 zh。
+    """
+    d = AUTHORS[author_id]['dir']
+    book = ROOT / d / dirname
+    if (book / '1' / 'zh').is_dir():
+        return f'/{d}/{dirname}/__CH__/zh/'
+    return path.rstrip('/') + '/__CH__/'
+
+
 def scan(author_id: str) -> dict:
     """返回 {book_id: (入口路径, 册数)}。分卷聚合到第一册，册数用来标「全二卷」。"""
     base = ROOT / AUTHORS[author_id]['dir']
@@ -320,7 +418,10 @@ def main():
                 t_cn, t_en = AUTHORS[aid]['work_cn'], AUTHORS[aid]['work_en']
             note_f = f', note: {yaml_escape(note)}' if note else ''
             c0, c1 = theme_color(aid)
+            _dir = path.strip('/').split('/')[1] if path.count('/') > 2 else bid
+            tpl = chapter_url_tpl(aid, _dir, path)
             lines.append(f'      - {{author: {aid}, path: {yaml_escape(path)}, '
+                         f'url_tpl: {yaml_escape(tpl)}, '
                          f'title_cn: {yaml_escape(t_cn)}, title_en: {yaml_escape(t_en)}'
                          f', c0: {yaml_escape(c0)}, c1: {yaml_escape(c1)}'
                          f'{note_f}}}')
@@ -338,6 +439,14 @@ def main():
 
     out = ROOT / '_data' / 'commentaries.yml'
     out.write_text('\n'.join(lines) + '\n', encoding='utf-8')
+
+    # 对比注释数据源（见 build_compare_sources 上方说明）
+    cs = ROOT / '_data' / 'compare_sources.yml'
+    cs_text = build_compare_sources()
+    cs.write_text(cs_text, encoding='utf-8')
+    print(f'✓ {cs.relative_to(ROOT)}  '
+          f'（{cs_text.count(chr(10) + "  ") - cs_text.count(chr(10) + "    ")} 卷可对照，'
+          f'{cs_text.count(chr(10) + "    - ")} 个源）')
     covered = sum(1 for bid, _, _, _ in BOOKS if any(bid in by_author[a] for a in AUTHORS))
     print(f'✓ {out.relative_to(ROOT)}')
     for aid in AUTHORS:
