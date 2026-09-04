@@ -9,6 +9,7 @@ prev_url: "/owen/hebrews/10/"
 prev_label: "第十章"
 next_url: "/owen/hebrews/12/"
 next_label: "第十二章"
+zh_url: "/owen/hebrews/11/zh/"
 ---
 # 希伯来书 第十一章
 

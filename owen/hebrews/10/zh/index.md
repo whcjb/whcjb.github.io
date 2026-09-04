@@ -7,6 +7,8 @@ title: "第十章"
 date: 2026-09-04 12:30
 prev_url: "/owen/hebrews/9/zh/"
 prev_label: "第九章"
+next_url: "/owen/hebrews/11/zh/"
+next_label: "第十一章"
 en_url: "/owen/hebrews/10/"
 ---
 # 希伯来书 第十章
