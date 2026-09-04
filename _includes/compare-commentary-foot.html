@@ -159,15 +159,19 @@
   frame.addEventListener('load',function(){
     try{
       var d=frame.contentDocument; if(!d){return;}
-      var isHenry=d.querySelector('#mhenry-col'),
-          isCalvin=d.querySelector('.calvin-en-content');
-      if(!isHenry && !isCalvin){frame.style.display='none';msg.hidden=false;return;}
+      // 「这页有没有注释正文」——认组件自己注入的 .cmp-calvin（凡是接了本组件的
+      // 作者页都有），外加马太亨利的 #mhenry-col（它没接组件）。
+      // ⚠️ 原来写死 .calvin-en-content / #mhenry-col 两种，欧文(.owen-content)
+      // 与贺智(.hodge-content) 一律落进「本章暂无」分支——新增作者别再往这里加类名。
+      var hasBody=d.querySelector('.cmp-calvin, #mhenry-col');
+      if(!hasBody){frame.style.display='none';msg.hidden=false;return;}
       frame.style.display='';msg.hidden=true;
       var s=d.createElement('style');
       // 隐藏被嵌页 chrome：导航/页脚/TTS，加尔文英文版另隐对比热区与章导航（避免嵌套对比）
       s.textContent=
         '.intro-header,.navbar,.mh-nav-bar,.tts-bar,footer,'+
-        '#cmpHotspot,.cmp-hotspot,.cmp-drawer,.cmp-nav,#verse-nav{display:none!important}'+
+        '#cmpHotspot,.cmp-hotspot,.cmp-drawer,.cmp-nav,.cmp-toggle,'+
+        '.hodge-chrome,.owen-chrome,#verse-nav{display:none!important}'+
         '.container{padding-top:14px!important}';
       d.head.appendChild(s);
     }catch(err){/* 跨域兜底：保持 iframe 原样 */}
