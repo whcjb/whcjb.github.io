@@ -56,7 +56,8 @@ layout: default
         <div id="verse-nav-pills" style="display:none;"></div>
       </div>
 
-      {% include compare-commentary-head.html self="hodge" content_class="hodge-content" self_label="贺智" %}
+      {% assign cc_self = "hodge-en" %}{% if page.zh %}{% assign cc_self = "hodge" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="hodge-content" self_label="贺智" %}
         {{ content }}
       {% include compare-commentary-foot.html %}
 

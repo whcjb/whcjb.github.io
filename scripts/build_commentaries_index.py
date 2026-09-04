@@ -118,8 +118,49 @@ def _chapter_range(d: Path):
     return (min(ns), max(ns)) if ns else None
 
 
+# 各家的「原生语种」：加尔文 / 马太亨利 / 毕列志的主目录是中译，
+# 欧文与贺智的主目录是英文原著（中译在子路径里）。
+PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
+                'owen': 'en', 'hodge': 'en'}
+
+
+def _lang_variants(aid, d: Path, name: str):
+    """一个书卷目录 → [(lang, url_tpl, (lo, hi) | None)]
+
+    中译放哪儿三家各不相同，必须逐一识别，不能只认一种：
+      calvin/mhenry  主目录即中译，英文另开 `<book>-en/`
+      hodge          `/hodge/1corinthians/zh/<ch>/`      ← 书卷级 zh
+      owen           `/owen/hebrews/<ch>/zh/`            ← 章级 zh
+    只认章级那一种时，贺智中译整批取不到，中文页会去对比英文原著。
+
+    占位符用 __CH__ 而非 {ch}：Liquid 的 replace: 参数里出现 `}` 会与 `}}`
+    终止符冲突，整站构建报 Liquid syntax error（实测）。
+    """
+    dirn = AUTHORS[aid]['dir']
+    if name.endswith('-en'):
+        return [('en', f'/{dirn}/{name}/__CH__/', _chapter_range(d))]
+    out = [(PRIMARY_LANG.get(aid, 'zh'), f'/{dirn}/{name}/__CH__/',
+            _chapter_range(d))]
+    if out[0][0] != 'zh':
+        if (d / 'zh').is_dir():                       # 书卷级（贺智）
+            out.append(('zh', f'/{dirn}/{name}/zh/__CH__/',
+                        _chapter_range(d / 'zh')))
+        else:                                          # 章级（欧文）
+            ns = [int(x.name) for x in d.iterdir()
+                  if x.name.isdigit() and (x / 'zh').is_dir()]
+            if ns:
+                out.append(('zh', f'/{dirn}/{name}/__CH__/zh/',
+                            (min(ns), max(ns))))
+    return out
+
+
 def build_compare_sources() -> str:
-    """→ _data/compare_sources.yml 的内容。"""
+    """→ _data/compare_sources.yml 的内容。
+
+    每条带 `lang`：**对照必须同语种**（用户 2026-09-04 指定）——中文页只列
+    中译，英文页只列英文原著。跨语种要看同一注释的另一语种，走页面自己的
+    「English → / 中文版 →」切换，不进这个对照抽屉。
+    """
     from collections import defaultdict
     out = defaultdict(list)
     for aid, meta in AUTHORS.items():
@@ -130,39 +171,39 @@ def build_compare_sources() -> str:
             if not d.is_dir() or d.name.endswith('-index') or not has_content(d):
                 continue
             name = d.name
-            is_en = name.endswith('-en')
-            core = name[:-3] if is_en else name
+            core = name[:-3] if name.endswith('-en') else name
             if core.startswith('harmony'):
                 continue
             m = re.match(r'^(.+)-(\d+)$', core)
             book = m.group(1) if m else core
-            rng = _chapter_range(d)
-            # 章级 zh（欧文）→ /owen/hebrews/{ch}/zh/
-            # 占位符用 __CH__ 而非 {ch}：Liquid 的 replace: 参数里出现 `}`
-            # 会与 `}}` 终止符冲突，整站构建报 Liquid syntax error（实测）
-            tpl = (f'/{meta["dir"]}/{name}/__CH__/zh/'
-                   if (d / '1' / 'zh').is_dir() else f'/{meta["dir"]}/{name}/__CH__/')
-            key = aid + ('-en' if is_en else '')
-            label = COMPARE_LABEL.get(aid, aid) + ('（英文）' if is_en else '')
-            e = {'key': key, 'author': aid, 'label': label, 'url_tpl': tpl,
-                 'accent': COMPARE_ACCENT.get(aid, '#555')}
-            if rng:
-                e['ch_from'], e['ch_to'] = rng
-            out[book].append(e)
+            for lang, tpl, rng in _lang_variants(aid, d, name):
+                key = aid + ('-en' if lang == 'en' else '')
+                label = COMPARE_LABEL.get(aid, aid) + ('（英文）' if lang == 'en' else '')
+                e = {'key': key, 'author': aid, 'lang': lang, 'label': label,
+                     'url_tpl': tpl, 'accent': COMPARE_ACCENT.get(aid, '#555')}
+                if rng:
+                    e['ch_from'], e['ch_to'] = rng
+                out[book].append(e)
     lines = ['# 由 scripts/build_commentaries_index.py 生成，勿手改。',
              '# 对比注释的可选源：书卷 → 各注释家的章节 URL 模板（__CH__ 为章号占位）。',
-             '# 新增注释家：改脚本里的 AUTHORS / COMPARE_LABEL / COMPARE_ACCENT 后重跑，',
-             '# 所有 layout 的对比功能会自动带上它——不必改任何 layout。',
+             '# lang 决定它出现在中文页还是英文页——对照只在同语种之间进行。',
+             '# 新增注释家：改脚本里的 AUTHORS / COMPARE_LABEL / COMPARE_ACCENT',
+             '# 与 PRIMARY_LANG 后重跑，所有 layout 的对比功能会自动带上它。',
              '', 'sources:']
     for book in sorted(out):
         srcs = out[book]
-        if len(srcs) < 2:          # 只有自己一家，没有可对照的
+        # 「有几家可对照」按语种各算各的：某卷只有一家中译时，中文页不该
+        # 因为英文侧凑够两家就冒出一个空抽屉。
+        keep = [e for e in srcs
+                if sum(1 for x in srcs if x['lang'] == e['lang']) >= 2]
+        if not keep:
             continue
         lines.append(f'  {book}:')
-        for e in srcs:
+        for e in keep:
             rng = (f", ch_from: {e['ch_from']}, ch_to: {e['ch_to']}"
                    if 'ch_from' in e else '')
             lines.append(f'    - {{key: {e["key"]}, author: {e["author"]}, '
+                         f'lang: {e["lang"]}, '
                          f'label: {yaml_escape(e["label"])}, '
                          f'url_tpl: {yaml_escape(e["url_tpl"])}, '
                          f'accent: {yaml_escape(e["accent"])}{rng}}}')

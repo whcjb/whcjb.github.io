@@ -39,9 +39,22 @@
   {%- assign cc_ch = _last -%}
 {%- endunless -%}
 
+{%- comment -%}
+  对照只在**同语种**之间进行（用户 2026-09-04 指定）：中文页只列中译，
+  英文页只列英文原著。跨语种看同一注释的另一语种，走页面自己的
+  「English → / 中文版 →」切换，不进这个抽屉。
+  语种由 self 推出：`xxx-en` → en，否则 zh。
+{%- endcomment -%}
+{%- assign cc_lang = 'zh' -%}
+{%- assign cc_author = include.self -%}
+{%- if include.self contains '-en' -%}
+  {%- assign cc_lang = 'en' -%}
+  {%- assign cc_author = include.self | replace: '-en', '' -%}
+{%- endif -%}
+
 {%- assign cc_list = '' | split: '' -%}
 {%- for s in site.data.compare_sources.sources[cc_book] -%}
-  {%- if s.key != include.self -%}
+  {%- if s.author != cc_author and s.lang == cc_lang -%}
     {%- assign ok = true -%}
     {%- if cc_ch and s.ch_from and s.ch_to -%}
       {%- assign _n = cc_ch | times: 1 -%}

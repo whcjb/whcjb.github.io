@@ -19,7 +19,8 @@ layout: default
         {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
-      {% include compare-commentary-head.html self="owen" content_class="owen-content" self_label="欧文" %}
+      {% assign cc_self = "owen-en" %}{% if page.url contains "/zh/" %}{% assign cc_self = "owen" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="owen-content" self_label="欧文" %}
         {{ content }}
       {% include compare-commentary-foot.html %}
 
