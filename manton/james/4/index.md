@@ -6,6 +6,7 @@ author: Thomas Manton
 chapter: 4
 title: Chapter IV
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/4/zh/"
 prev_url: /manton/james/3/
 prev_label: Chapter III
 next_url: /manton/james/5/
