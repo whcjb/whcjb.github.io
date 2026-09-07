@@ -188,7 +188,7 @@ def translate_block(b: str, resume: bool, label: str) -> str:
     return translate_one(b, resume, label)
 
 
-def run_section(name: str, resume: bool, dry: bool) -> None:
+def run_section(name: str, resume: bool, dry: bool, publish: bool = True) -> None:
     src = RAW / f'{name}.md'
     if not src.exists():
         sys.exit(f'找不到 {src}')
@@ -220,6 +220,41 @@ def run_section(name: str, resume: bool, dry: bool) -> None:
     dst.write_text('\n\n'.join(out) + '\n', encoding='utf-8')
     os.chmod(dst, 0o444)          # 强保留
     print(f'✓ 写入 {dst}（{dst.stat().st_size:,} bytes，已 chmod 444）', flush=True)
+    if publish:
+        autopublish(name)
+
+
+def autopublish(name: str) -> None:
+    """一节译完立刻发布 + commit + push。
+
+    别攒到最后：整本 1950 段要跑 20 小时以上，中途撞额度 / 断电 / 被 kill
+    都可能发生，攒着不发等于把已译好的成果一直悬在未发布状态。
+    发布失败只告警不中断——翻译进度在缓存里，发布随时可以补跑。
+    """
+    import subprocess
+    try:
+        r = subprocess.run(
+            [sys.executable, 'scripts/publish_manton_james_zh.py', '--section', name],
+            cwd=ROOT, capture_output=True, text=True, timeout=180)
+        print(r.stdout.rstrip(), flush=True)
+        if r.returncode != 0:
+            print(f'    [autopublish] 发布失败 {r.stderr[:200]}', flush=True)
+            return
+        subprocess.run(['git', 'add', 'manton/james', 'manton_raw/james/zh_chapters'],
+                       cwd=ROOT, check=False, timeout=60)
+        msg = f'feat(manton): 雅各书中译 {name}（自动发布）'
+        c = subprocess.run(['git', 'commit', '-q', '-m', msg],
+                           cwd=ROOT, capture_output=True, text=True, timeout=120)
+        if c.returncode == 0:
+            p = subprocess.run(['git', 'push', '-q', 'origin', 'master'],
+                               cwd=ROOT, capture_output=True, text=True, timeout=300)
+            print(f'    [autopublish] {name} 已提交'
+                  + ('并推送' if p.returncode == 0 else f'，推送失败 {p.stderr[:120]}'),
+                  flush=True)
+        else:
+            print(f'    [autopublish] 无改动可提交（{c.stdout.strip()[:80]}）', flush=True)
+    except Exception as e:                                   # noqa: BLE001
+        print(f'    [autopublish] 异常，已跳过：{e}', flush=True)
 
 
 def _payload(b: str) -> str:
@@ -237,6 +272,8 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true', help='命中缓存则不重调模型')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--no-publish', action='store_true',
+                    help='只译不发布（默认每译完一节就发布+commit+push）')
     a = ap.parse_args()
 
     tf.CACHE_DIR = CACHE
@@ -246,7 +283,8 @@ def main():
     targets = [a.section] if a.section else SECTIONS
     for name in targets:
         try:
-            run_section(name, a.resume, a.dry_run)
+            run_section(name, a.resume, a.dry_run,
+                        publish=not (a.no_publish or a.dry_run))
         except tf.SessionLimitError as e:
             # 额度用尽时重试毫无意义，还照样计费。逐段缓存已落盘，
             # 额度恢复后 --resume 从缓存续跑即可。退出码 42 = 整批中止信号。

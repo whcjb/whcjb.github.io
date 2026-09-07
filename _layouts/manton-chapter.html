@@ -18,8 +18,16 @@ layout: default
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-      <div class="manton-chrome" style="margin: 16px 0 20px; font-size:13px;">
+      <div class="manton-chrome" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
         <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        <span>
+          {%- comment -%}
+            中英切换：英文页有 zh_url 时给「中文版」，中文页给回英文原著。
+            两侧锚点 id 同源（james-<ch>-<v>），切过去仍落在同一节。
+          {%- endcomment -%}
+          {% if page.zh %}<a class="manton-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &harr;</a>
+          {% elsif page.zh_url %}<a class="manton-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &harr;</a>{% endif %}
+        </span>
       </div>
 
       <div class="manton-chrome" style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
@@ -94,6 +102,11 @@ layout: default
   font-family:Georgia,serif;font-size:13px;text-decoration:none;transition:background .15s}
 .verse-pill:hover{background:#5b2f4a;border-color:#5b2f4a;color:#fff;text-decoration:none}
 .verse-pill--active{background:#4a2540;border-color:#4a2540;color:#fff;font-weight:bold}
+
+/* 中英切换 pill */
+.manton-lang{display:inline-block;padding:3px 12px;border:1px solid #5b2f4a;border-radius:14px;
+  color:#5b2f4a !important;font-size:12px;text-decoration:none;white-space:nowrap}
+.manton-lang:hover{background:#5b2f4a;color:#fff !important}
 
 /* 释经单元头可点：点它滚回章顶导航条（下面 JS 挂的事件） */
 .manton-content p.manton-ver{cursor:pointer}
