@@ -4,7 +4,7 @@ book_id: james
 book_name: 曼顿《雅各书注释》
 author: 托马斯·曼顿
 title: 全书序论
-date: "2026-09-07 11:32"
+date: "2026-09-07 11:33"
 zh: true
 en_url: /manton/james/preface/
 prev_url: /manton/james/advertisement/zh/
