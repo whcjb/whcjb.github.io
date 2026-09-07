@@ -141,8 +141,18 @@ def restore_quotes(text):
 
 # ── 行内元素 → markdown ───────────────────────────────────────
 
-# 斜体哨兵：Unicode 私用区，正文绝不会出现，故不会误伤真实文本
+# 哨兵：Unicode 私用区，正文绝不会出现，故不会误伤真实文本。
+# 斜体与页码标记都得用哨兵扛过 inline_to_md 末尾那道「剥掉所有剩余标签」
+# 的兜底正则 —— `<[^>]+>` 连 HTML 注释一起吃（`<!-- PAGE 16 -->` 整个匹配），
+# 直接写 <!-- PAGE N --> 会全军覆没（踩过：全书 page_marks=0）。
 ITAL_OPEN, ITAL_CLOSE = '', ''
+PAGE_OPEN, PAGE_CLOSE = '', ''
+
+# 页码锚 <span class="pb" id="iv-Page_16"/>。
+# 尾部 `(?:_\d+)?` 不可省：同一页内出现第二次分页时 CCEL 写成
+# `Page_282_1`（全卷 3 处：献辞 1、第三章 2）。写死 `Page_(\d+)"`
+# 要求数字后紧跟引号，这 3 个会被静默丢掉。
+PB_RE = re.compile(r'<span class="pb"[^>]*id="[^"]*Page_(\d+)(?:_\d+)?"[^>]*/?>')
 
 SCRIPREF_RE = re.compile(
     r'<a class="scripRef"[^>]*href="[^"]*?/(?:asv|kjv)\.([^"#]+?)\.html(?:#([^"]*))?"[^>]*>(.*?)</a>',
@@ -175,8 +185,10 @@ def inline_to_md(chunk, sink, fn_seen):
                    _fnref, chunk, flags=re.S)
 
     # 页码锚：<span class="pb" id="xx-Page_179"/>
-    chunk = re.sub(r'<span class="pb"[^>]*id="[^"]*Page_(\d+)"[^>]*/?>',
-                   r'\n\n<!-- PAGE \1 -->\n\n', chunk)
+    # 用哨兵而非直接写注释：见 PAGE_OPEN 处说明。
+    # 段**内**的页码是行内标记，不能拆段 —— 原书一段横跨两页时正文是连续的，
+    # 拆成两段就是人造的跨页断句（Gate 5g / anti-pattern M3b 正是这个病）。
+    chunk = PB_RE.sub(PAGE_OPEN + r'\1' + PAGE_CLOSE, chunk)
 
     chunk = collect_scriprefs(chunk, sink)
 
@@ -192,6 +204,7 @@ def inline_to_md(chunk, sink, fn_seen):
     # 哨兵还原（必须在 unescape 之后：unescape 不会动这两个私用码位，
     # 但还原出的 < > 若先出现，会被上面的兜底正则误伤）
     chunk = chunk.replace(ITAL_OPEN, '<em>').replace(ITAL_CLOSE, '</em>')
+    chunk = re.sub(PAGE_OPEN + r'(\d+)' + PAGE_CLOSE, r'<!-- PAGE \1 -->', chunk)
     chunk = re.sub(r'[ \t\r\n]+', ' ', chunk)
     return chunk.strip()
 
@@ -264,7 +277,14 @@ def convert_file(path, sink, fn_defs, fn_seen, is_chapter=False):
     out = []
     seen_verse = False
 
+    last_end = 0
     for m in BLOCK_RE.finditer(body):
+        # 段与段**之间**也有页码锚（ch1 有 15 个、ch2 有 11 个）。BLOCK_RE
+        # 只迭代块本身，块间空隙从不经手，不在这里捞就整批丢失。
+        for pm in PB_RE.finditer(body[last_end:m.start()]):
+            out.append(('page', pm.group(1)))
+        last_end = m.end()
+
         tag, attrs, inner = m.group(1), m.group(2), m.group(3)
         cm = re.search(r'class="([^"]*)"', attrs)
         cls = cm.group(1) if cm else ''
@@ -333,6 +353,8 @@ def render(blocks, title):
         elif kind == 'verse':
             lines.append(f'<!--VERSE {b[1]}-->')
             lines.append(b[2])
+        elif kind == 'page':
+            lines.append(f'<!-- PAGE {b[1]} -->')
         elif kind == 'verse-center':
             lines.append(f'<!--VERSE {b[1]} center-->')
             lines.append(b[2])
