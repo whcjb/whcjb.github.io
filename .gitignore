@@ -42,3 +42,7 @@ calvin_raw/*-scan/ocr/
 # 本仓库不跟踪任何 pdf/epub 源文件；重新获取见
 # scripts/extract_manton_james.py 顶部 docstring 的下载地址。
 manton_raw/james/source/
+
+# 曼顿雅各书翻译运行日志（缓存与译稿入库，日志不入库）
+logs/manton_james_zh.log
+manton_raw/james/zh_translate_issues.log
