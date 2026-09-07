@@ -26,6 +26,96 @@
 
 ---
 
+## X1. 兜底「剥掉所有剩余标签」的正则把自己产出的标记也吃了
+
+**适用**：底本是 HTML / EPUB（CCEL 电子书、ThML 导出）而非 PDF 的提取器。
+
+**Trigger**：自产标记在输出里**一个都不剩**——`grep -c '<em>' OUT` = 0、
+`grep -c '<!-- PAGE' OUT` = 0，但源里明明有。数量为 0 而不是「少几个」是这条的指纹。
+
+**根因**：HTML 提取器结尾几乎都有一道兜底 `re.sub(r'<[^>]+>', '', chunk)` 清除残留标签。
+它**不区分**残留的源标签和你自己刚生成的标记：
+
+- `<em>` / `</em>` 命中 `<[^>]+>` → 斜体全灭
+- `<!-- PAGE 16 -->` 整体命中 `<[^>]+>`（`<` 到第一个 `>`）→ 页码标记全灭
+
+曼顿雅各书两样都踩了：斜体全丢（连带经节头识别不出，锚点 108→1），
+页码标记全书 477 个一个不剩。
+
+**Fix**：自产标记一律先用 Unicode 私用区哨兵占位，**等兜底正则跑完再还原**：
+
+```python
+ITAL_OPEN, ITAL_CLOSE = '', ''
+PAGE_OPEN, PAGE_CLOSE = '', ''
+
+def _ital(inner):
+    return f'{ITAL_OPEN}{inner}{ITAL_CLOSE}'          # 不是 '<em>'
+
+chunk = re.sub(r'<[^>]+>', '', chunk)                  # 兜底剥标签
+chunk = html.unescape(chunk)
+chunk = chunk.replace(ITAL_OPEN, '<em>').replace(ITAL_CLOSE, '</em>')
+chunk = re.sub(PAGE_OPEN + r'(\d+)' + PAGE_CLOSE, r'<!-- PAGE \1 -->', chunk)
+```
+
+私用区字符正文绝不会出现，不会误伤真实文本。
+
+**通用法则**：**任何在兜底清洗之前生成的标记都必须能扛过那道清洗**。
+写完提取器先跑一次「自产标记存活检查」（[audit-gates.md](audit-gates.md) Gate 10），
+数量为 0 就是这条。
+
+---
+
+## X2. HTML 源的斜体不要转 markdown `*…*`，直接出 `<em>`
+
+**适用**：同 X1——源里斜体是显式 `<i>` / `<em>` 标签。
+
+**Trigger**：正文出现字面星号；`grep -o '\*' OUT | wc -l` > 0 且不是脚注标记。
+渲染后 `<em>` 开在了错误位置（如 `smoke.* Crassa negligentia dolus est<em>,`）。
+
+**根因**：kramdown 只在开标记**前面是空白或行首**时才认 `*` 是 emphasis。
+底本里斜体大量紧贴前一个词：
+
+```html
+steam and smoke.<i> Crassa negligentia dolus est</i>,
+```
+
+转成 `smoke.*Crassa…*` 后开标记前是句点 → kramdown 不当强调 → 星号原样打到页面上，
+**而且后续配对连锁错位**（曼顿 ch1 该段 12 个星号全配错）。
+
+**Fix**：源本身是 HTML、斜体是显式标签、没有歧义时，直接出 `<em>…</em>`。
+行内 HTML 被 kramdown 原样透传，不受相邻字符影响，
+[principles §0.4 / §0.5](principles.md) 那两类星号病随之消失。
+
+⚠️ 出 `<em>` 之后，**所有依赖「斜体长什么样」的下游正则都要跟着改**——见 X5。
+
+**反向适用**：PDF 源没有显式斜体标签、靠 flag 位判断的，仍走 `*…*` + §0.4/§0.5，
+本条不适用。
+
+---
+
+## X5. 下游正则写死了上游的「表示形式」，一改表示就静默失效
+
+**Trigger**：改了某个中间表示（`*…*` → `<em>`、`<!-- PAGE -->` → 哨兵）之后，
+某个**计数**断崖式下跌但程序不报错。曼顿：斜体改 `<em>` 后经节头
+lookahead 仍写着 `(?=\*|<i>)`，锚点从 108 掉到 1，全程无异常。
+
+**根因**：结构识别正则（经节头、注释头、章标题）常把上游表示写死在 pattern 里。
+上游一改，pattern 匹配不到，**返回 0 条而不是抛错**——静默失效最难发现。
+
+**Fix**：
+1. 改任何中间表示，**立刻全仓 grep 该表示的字面量**，逐个确认下游：
+   ```bash
+   grep -n '<i>\|\\\*' scripts/extract_<book>.py     # 谁还在假设旧表示
+   ```
+2. 结构识别的产出必须有**期望值断言**，不能只看「跑通了」：
+   经节锚点数应等于该书卷的实际节数（雅各书 27+26+18+17+20=108），
+   对不上就是识别漏了，见 [audit-gates.md](audit-gates.md) Gate 11。
+
+**通用法则**：`0 条结果` 与 `报错` 在提取器里等价严重，但只有后者会叫你。
+凡是「扫出 N 条」的步骤都要把 N 与独立已知量对账。
+
+---
+
 ## C. 输出含 `<<<END` / `<<<END1>>>` 标记
 
 **Trigger**：`grep -c '<<<END' OUTPUT > 0`
@@ -152,6 +242,73 @@ for grp in groups:
 **根因**：没跑 `ccel_fix_hyphenation`。
 
 **Fix**：emit 末尾追加 `text = ccel_fix_hyphenation(text)`。
+
+---
+
+## X3. `<i>` 首尾空白被 `.strip()` 删掉 → 两个词粘成一个
+
+**适用**：HTML / EPUB 源提取器（同 X1）。
+
+**Trigger**：正文出现 `manis` `suohabuit` `amongyou` `Veteremferendo` 这类
+「两个词粘在一起」的怪词。**grep 不出来**——你不知道该 grep 什么。
+只有拿底本逐词比对才会浮出来（[audit-gates.md](audit-gates.md) Gate 12）。
+
+**根因**：包装斜体时顺手 `inner.strip()`：
+
+```python
+def _ital(inner):
+    txt = inner.strip()          # ← 边界空白是有意义的，删了就粘字
+    return f'<em>{txt}</em>'
+```
+
+底本 `<i>Every man </i>` 的尾空格被删，后面紧跟内容 → `manis`。
+曼顿全书 1986 个 `<i>`，尾随空白 9 处、前导 32 处。
+
+**Fix**：首尾空白**移到标签外**，不是删掉：
+
+```python
+m = re.match(r'(?s)^(\s*)(.*?)(\s*)$', inner)
+lead, txt, trail = m.group(1), m.group(2), m.group(3)
+if not txt:
+    return ' ' if (lead or trail) else ''
+return f'{lead}{ITAL_OPEN}{txt}{ITAL_CLOSE}{trail}'
+```
+
+**通用法则**：任何对**行内片段**做的 `.strip()` 都要先问「这个空白是版式噪声还是词间隔」。
+块级文本 strip 安全，行内片段 strip 几乎总是错的。
+
+---
+
+## X4. 页码锚 / 脚注标签紧贴下一个词（底本自己就没空白）
+
+**Trigger**：渲染出「them,¹⁷⁰that」「Jeremiah,³²⁴and」——脚注号与下一个词之间没有空格。
+
+**根因**：底本 `</sup>` 直接贴 `<span class="pb"/>` 再直接贴下一个词，中间一个空白都没有
+（CCEL 自家网页同样粘着，不是你转换掉的）。HTML 注释与 `<sup>` 都不产生空白，
+落到页面上就连成一个词。
+
+**Fix**：只在「脚注标签 (+可选页码标记) + 字母」这一种排列下补空格：
+
+```python
+FN_GLUE_RE = re.compile(r'(\[\^f\d+\])(<!-- PAGE \d+ -->)?([A-Za-z])')
+text = FN_GLUE_RE.sub(lambda m: m.group(1) + (m.group(2) or '') + ' ' + m.group(3), text)
+```
+
+脚注标签后面直接跟**字母**在正常英文里不可能出现 → 判定无歧义。
+后面跟**标点**的（`law[^f144]—adultery`）**不要动**，那是原文正常写法。
+
+**审计**：页码标记两侧都紧贴非空白的位置要**逐条人工判读**，不能一律补空格——
+数字+标点（`10.` `17,` `10;`）与破折号边界（`answer—This`）都是正常写法。
+曼顿 19 处里只有 12 处是真缺陷。
+
+```bash
+python3 - <<'PY'
+import re,glob
+for f in sorted(glob.glob('<raw_dir>/*.md')):
+    for m in re.finditer(r'(\S{0,20})<!-- PAGE (\d+) -->(\S{0,20})', open(f).read()):
+        if m.group(1) and m.group(3): print(f, m.group(2), repr(m.group(1)), '|', repr(m.group(3)))
+PY
+```
 
 ---
 

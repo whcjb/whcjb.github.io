@@ -229,6 +229,74 @@ PER_VERSE_RE = re.compile(r'<div class="commentary-anchor" id="acts-(\d+)-(\d+)"
 
 ---
 
+## 4b. 章顶节号导航（chapter-top verse-nav）—— 每本书都要有
+
+⚠️ 这与前面的 verse-index **是两个东西**：verse-index 是独立的
+`/<book>/verse-index/` 索引页；本节说的是**每个章节页顶部**那条可展开的
+节号导航条，以及「点注释头 → 滚回该导航条」的行为。两者都要有。
+
+**这条以前只写在 [05-publish-zh.md](05-publish-zh.md) §1b，且挂在
+【合参书专属】标题底下**——结果做纯英文书（只跑 01→02→03→07、
+不跑 04/05）时整条被跳过：曼顿雅各书上线时章顶没有导航、注释头点不动，
+是用户发现的。**它与语种、与是否合参都无关，是章节 layout 的固定部件。**
+
+### 4b.1 三件套
+
+1. **章顶导航条**（默认收起）：`#verse-nav` / `#verse-nav-toggle` /
+   `#verse-nav-pills`，胶囊由 JS 扫正文 `.commentary-anchor` 生成；
+   没有锚点的页（导论、序言、献辞）**整条自动隐藏**。
+2. **点注释头 → 滚回章顶导航条**，展开胶囊、`verse-pill--active` 高亮当前节。
+   **禁止**弹出经文卡片（用户底线，见 §0）。
+3. **注释头加 `verse-anchor` 类**——该类在 `_includes/scripture-popup.html`
+   的 skip 列表里。不加，linkifier 会把注释头文本当经文引用包成可点 span，
+   点注释头误弹和合本卡片，与跳转行为直接冲突。
+
+参考实现：`_layouts/hodge-chapter.html`（英文）、`_layouts/calvin-en.html`、
+`_layouts/manton-chapter.html`。配色**必须用本书主题色**，
+不要沿用别人家的（同 [03-publish-en.md](03-publish-en.md) §3b.2）。
+
+### 4b.2 注释头 → 锚点：优先用 DOM 相邻，不要解析文本
+
+hodge / calvin 靠 `p > strong:first-child` 的文字里抓节号，那是因为它们的
+注释头形如 `**罗马书 8:6。**`。**换一本书这个假设就不成立**：
+
+- 曼顿雅各 1:1 的题辞在原书是**居中排**的，根本没有 `Ver. N.` 前缀；
+- 范围头 `Ver. 2-4` 还得再判该高亮哪一节。
+
+publish 阶段既然保证了「锚点紧跟在注释头之后」，就直接取后继兄弟里第一个
+`.commentary-anchor` 的 id，两类都自然覆盖：
+
+```javascript
+content.querySelectorAll('p.<book>-ver').forEach(function (head) {
+  var el = head.nextElementSibling, aid = null;
+  while (el && !aid) {
+    if (el.classList && el.classList.contains('commentary-anchor')) aid = el.id;
+    else if (el.tagName === 'P') break;        // 已进入注释正文，停
+    el = el.nextElementSibling;
+  }
+  if (!aid) return;
+  head.classList.add('verse-anchor');          // 让 linkifier 跳过
+  head.dataset.anchor = aid;
+  /* click → 展开 pills + 高亮 + nav.scrollIntoView */
+});
+```
+
+### 4b.3 验收
+
+```bash
+# 每个正文章节页都要有导航条；前置页（序/导论）不应有
+grep -L 'id="verse-nav"' _site/<book>/*/index.html
+
+# 注释头全部挂到了锚点（heads-with-anchor 应等于 heads）
+# heads < anchors 属正常：范围单元一个头带多个锚点
+```
+
+⚠️ 审计 grep 时注意**别把 layout 里 JS 注释中的标记字面量数进去**——
+注释里写了 `<div class="commentary-anchor" id="...">` 会让锚点数虚高一个
+（踩过；改成不写完整标签字面量即可）。
+
+---
+
 ## 5. 入口按钮放书卷首页（不放全局导航）
 
 verse-index 页面不进 `_data/calvin_books.yml`（不挤书卷列表），

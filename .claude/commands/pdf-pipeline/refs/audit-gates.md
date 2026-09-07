@@ -79,11 +79,23 @@ echo "fn refs:  $ref   fn defs: $def"   # 必须 ref == def
 事后修英文还得把受影响章节全部 `--resume` 重跑一遍。
 
 ```bash
+# 前置：先确认页码标记真的存在，否则本 gate 是空过（见下）
+grep -c '<!-- PAGE' calvin/<book>-en/*.md | grep ':0$'   # 必须无输出
 # 单卷
 python3 scripts/fix_page_split_paragraphs.py --dry-run calvin/<book>-en   # 必须"发现 0 处"
 # 全库普查
 python3 scripts/fix_page_split_paragraphs.py --dry-run
 ```
+
+⚠️ **「发现 0 处」有两种含义，必须先分清**：本 gate 是**扫 `<!-- PAGE N -->` 找被它
+截断的句子**。如果提取器压根没产出页码标记（[anti-pattern X1](anti-patterns.md#x1)
+就会导致全书 0 个），扫描无从命中，照样报「发现 0 处」——**这是空过，不是通过**。
+曼顿雅各书踩过：X1 使全书 477 个标记全灭，Gate 5g 报 0，我据此宣布「跨页断句已清」，
+实际是这条检查根本没有输入。
+
+所以跑本 gate **之前**必须先过 [Gate 10](#gate-10自产标记存活检查) 与
+[Gate 13](#gate-13结构计数与底本逐项对账)：确认标记数与底本 pb 数逐节相等。
+标记齐全时报 0 才是真结论。
 
 - 非 0 = [anti-pattern M3b](anti-patterns.md#m3b)
 - Fix 后脚本会列出待 `--resume` 重跑中译的章节清单。判断哪些要重跑，须用
@@ -232,6 +244,108 @@ grep -A2 'sup\[id\^="fnref:"\]' _layouts/calvin-en.html
 
 - 应出现 `scroll-margin-top: 80px`
 - 缺 = [anti-pattern M22](anti-patterns.md#m22)，用户会报告 "点击脚注无法跳转"
+
+---
+
+## Gate 10：自产标记存活检查
+
+**HTML / EPUB 源提取器必跑**，且必须在 Gate 5g 之前。
+
+提取器在兜底清洗之前生成的每一种标记，都要确认它**真的活到了输出**。
+数量为 **0** 是这条的指纹——不是「少几个」，是一个不剩
+（[anti-pattern X1](anti-patterns.md#x1)：`re.sub(r'<[^>]+>','')` 把 `<em>` 和
+`<!-- PAGE N -->` 一起吃了）。
+
+```bash
+RAW=<raw_dir>            # 如 manton_raw/james
+for f in $RAW/*.md; do
+  printf "%-28s em=%s page=%s fn=%s\n" "$(basename $f)" \
+    "$(grep -o '<em>' $f | wc -l | tr -d ' ')" \
+    "$(grep -o '<!-- PAGE' $f | wc -l | tr -d ' ')" \
+    "$(grep -oE '\[\^f[0-9]+\]' $f | wc -l | tr -d ' ')"
+done
+```
+
+任何一列在**源里有、输出里为 0** → 立刻按 X1 改哨兵方案重做。
+还要确认哨兵自己没漏回输出：`grep -c $'[-]' $RAW/*.md` 必须全 0。
+
+---
+
+## Gate 11：结构识别产出与独立已知量对账
+
+「扫出 N 条」的步骤都要把 N 与**书本身的已知量**对账，不能只看「跑通了」。
+提取器结构识别失败时返回 **0 条而不是报错**，静默失效最难发现
+（[anti-pattern X5](anti-patterns.md#x5)：改了斜体表示，经节头 lookahead 没跟着改，
+锚点 108→1，全程无异常）。
+
+```bash
+# 经节锚点数必须等于该书卷实际节数
+for ch in 1 2 3 4 5; do
+  echo "ch$ch: $(grep -o "id=\"<book>-$ch-[0-9]*\"" <out>/$ch/index.md | sort -u | wc -l)"
+done
+# 雅各书应为 27/26/18/17/20，合计 108
+```
+
+对不上 = 识别漏了节，**不要**用「可能作者没注这节」搪塞过去——
+先去底本确认该节头长什么样（曼顿 `Ver. 27.—` 夹破折号、`Ver. 21.` 段首有孤立逗号，
+两处都是正则没覆盖，不是作者没写）。
+
+---
+
+## Gate 12：底本逐词比对（**中译开跑前必过**）
+
+前面所有 gate 查的都是**计数与标记**，查不出**正文本身**被改坏。
+计数全对、正文粘连的情况真实发生过（[anti-pattern X3](anti-patterns.md#x3)）。
+
+拿底本的**另一种独立渲染**做逐词比对——CCEL 同时提供 txt / pdf / epub，
+用你没当输入的那一种当裁判：
+
+```python
+import re, unicodedata
+from collections import Counter
+
+def norm(s):
+    s = re.sub(r'<!--.*?-->', ' ', s, flags=re.S)     # 标记不参与比对，但要留空格
+    s = re.sub(r'<[^>]+>', '', s)
+    s = re.sub(r'\[\^f\d+\]:?', '', s)
+    s = unicodedata.normalize('NFKC', s)
+    s = re.sub(r'[`‘’\'"“”,;:.!?()\[\]—–\-#]', ' ', s)   # 两侧引号转换不同，全抹平
+    s = re.sub(r'[Ͱ-Ͽἀ-῿̀-ͯ]', ' ', s)                # 见下：希腊文不可比
+    return re.sub(r'\s+', ' ', s).strip().split()
+
+only_mine = Counter(norm(mine)) - Counter(norm(theirs))
+# 逐条判读 only_mine：粘连词（两个词并成一个）就是 X3
+```
+
+**判读要点**：
+- `norm` 里 `<!--.*?-->` 必须换成**空格**不是空串，否则比对脚本自己制造粘连词，
+  白查一轮（踩过）。
+- **希腊文/希伯来文两侧不可比**：CCEL 的 txt 导出把希腊文转写成拉丁
+  （全文 0 个希腊字符，δοῦλος → doulos），EPUB 保留 Unicode 原文。
+  整体排除，否则满屏假差异。这同时是**优先用 EPUB 而非 txt/PDF 的实证**。
+- 差异**全部落在「我方更忠实」一侧**（连字 Œ、希腊分隔号、希伯来词）才算通过。
+  曼顿终值：291,070 词中我方独有 13 词次，全部属此类。
+
+---
+
+## Gate 13：结构计数与底本逐项对账
+
+逐节确认「输出的正文块数 = 底本段落数」「页码标记数 = 底本 pb 数」。
+这条能挡住整段丢失 / 重复 / 合并，也是 [Gate 5g](#gate-5g跨页断句一句被--page-n--截成两段)
+不空过的前提。
+
+```python
+# 源 <p> 数 vs 输出正文块数（扣掉脚注定义/标记/标题块）
+# 源 pb 数 vs 输出 <!-- PAGE --> 数，且 Counter 相等（不只总数相等）
+```
+
+**页码 id 的坑**：同一页内第二次分页 CCEL 写作 `Page_282_1`，
+正则写死 `Page_(\d+)"` 要求数字后紧跟引号 → 这类被静默丢弃。
+必须写成 `Page_(\d+)(?:_\d+)?"`（曼顿全卷 3 处）。
+
+**审计脚本自己也可能是错的**：曼顿这里 audit 报「源 55 / 输出 53」，
+逐 id 比对却完全一致——差异出在**审计正则**（漏了后缀式 id），不在管线。
+审计与管线不一致时，**两边都要查**，不要默认管线有罪。
 
 ---
 

@@ -152,8 +152,21 @@ print('注入  ', set(re.findall(r'--sp-accent:\s*([^;]+);', h)))"
 | bridges | `#6B4E2E` 棕 | — | A 参数 + crystal |
 | hodge | `#1f3a5f` 靛蓝 | `#2b5080` | A 参数 |
 
-另见 [05-publish-zh.md](05-publish-zh.md) §1b：linkifier 的 skip 列表必须含
-`verse-anchor`，否则注释头「罗马书 8:6」会被误 linkify、点注释头误弹卡片。
+### 3b.5 章顶 verse-nav 是 layout 的**必装部件**，不是可选项
+
+装 scripture-popup 的同时必须装**章顶节号导航条** + 「点注释头 → 滚回导航条」，
+并给注释头加 `verse-anchor` 类（该类在 linkifier 的 skip 列表里，
+不加则点注释头会误弹和合本卡片，与跳转行为冲突）。
+
+完整做法见 [07-verse-index.md §4b](07-verse-index.md)。
+
+⚠️ **这条以前只写在 [05-publish-zh.md](05-publish-zh.md) §1b、且挂在
+【合参书专属】标题下**，纯英文书只跑 01→02→03→07 不跑 05，整条会被漏掉——
+曼顿雅各书上线时章顶没导航、注释头点不动，是用户发现的。
+它与语种、与是否合参都无关，**每本书都要装**。
+把它与 Gate 9（`scroll-margin-top`）、scripture-popup 主题色一起当成
+layout 装配的三件固定动作。
+
 
 
 ## 4. front matter 模板
