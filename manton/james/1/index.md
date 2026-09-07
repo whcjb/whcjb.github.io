@@ -6,6 +6,7 @@ author: Thomas Manton
 chapter: 1
 title: Chapter I
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/1/zh/"
 prev_url: /manton/james/preface/
 prev_label: Preface
 next_url: /manton/james/2/
