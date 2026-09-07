@@ -6,6 +6,7 @@ author: Thomas Manton
 section: advertisement
 title: An Advertisement to the Reader
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/advertisement/zh/"
 prev_url: /manton/james/dedicatory/
 prev_label: Dedicatory
 next_url: /manton/james/preface/

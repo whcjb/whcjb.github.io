@@ -6,6 +6,7 @@ author: Thomas Manton
 section: dedicatory
 title: The Epistle Dedicatory
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/dedicatory/zh/"
 next_url: /manton/james/advertisement/
 next_label: Advertisement
 ---

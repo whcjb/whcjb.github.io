@@ -6,6 +6,7 @@ author: Thomas Manton
 section: preface
 title: A Preface to the Whole Epistle
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/preface/zh/"
 prev_url: /manton/james/advertisement/
 prev_label: Advertisement
 next_url: /manton/james/1/
