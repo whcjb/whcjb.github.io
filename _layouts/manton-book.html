@@ -1,0 +1,116 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  曼顿《雅各书注释》目录页。章节列表在这里生成（publish 脚本只写 front
+  matter），改章数只需改 front matter 的 chapters。
+  主题色说明见 _layouts/manton-chapter.html 顶部注释。
+{%- endcomment -%}
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="manton-content manton-book">
+
+        <div class="mt-hero">
+          <p class="mt-eyebrow">历代解经</p>
+          <h1>A Practical Commentary on the Epistle of James</h1>
+          <p class="mt-byline">Thomas Manton &middot; 1620–1677</p>
+          <div class="mt-rule"><i></i></div>
+        </div>
+
+        <p class="mt-blurb">
+          曼顿是威斯敏斯特会议的三位书记之一，1658 年受命为《威斯敏斯特信条》
+          第二版作序。这部雅各书注释 1657 年成书，底本是他在伦敦近郊
+          Stoke&#8209;Newington 每周所讲的系列讲章，逐节讲解，按清教徒
+          「立教义 — 陈理由 — 落应用」的平实讲道法展开。全书重心在
+          雅各书 2:14&ndash;26 —— 「人称义是因着行为」与保罗「唯独因信称义」
+          如何并立，是改革宗回应罗马天主教这一诘难的经典长篇论述。
+        </p>
+
+        {% if page.has_preface %}
+        <div class="mt-front">
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/dedicatory/">The Epistle Dedicatory</a>
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/advertisement/">An Advertisement to the Reader</a>
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/preface/">A Preface to the Whole Epistle</a>
+        </div>
+        {% endif %}
+
+        {%- assign romans = "I,II,III,IV,V" | split: "," -%}
+        <ul class="mt-ch-list">
+          {% for i in (1..page.chapters) %}
+          <li><a href="{{ site.baseurl }}/manton/{{ page.book_id }}/{{ i }}/">
+            <b>Chapter {{ romans[forloop.index0] }}</b>
+            <span>James {{ i }}</span>
+          </a></li>
+          {% endfor %}
+        </ul>
+
+        <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/verse-index/" class="mt-verse-index-link">
+          📖 经文索引 <span>按章逐节检索曼顿注释</span>
+        </a>
+
+        <p class="mt-colophon">
+          底本：Nichol 版《曼顿全集》第四卷（1870&ndash;75），据
+          <a href="https://www.ccel.org/ccel/m/manton/manton04/">CCEL</a>
+          电子转写本。原书与该转写本均已进入公有领域。
+          转写本把原书的单引号压成了 <code>`</code> 与 <code>,</code>，
+          能确证的已还原为成对引号；证据不足的只还原开引号，
+          不靠猜测补全 —— 故正文中可见少量未闭合的引号，那是底本的限制，
+          不是本站的排版遗漏。
+        </p>
+
+        {{ content }}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.manton-content{font-family:Georgia,"Times New Roman","Songti SC",STSong,serif;
+  font-size:16px;line-height:1.9;color:#2a2a26}
+.manton-content a{color:#5b2f4a}
+.manton-content a:hover{color:#3c1c30}
+
+.mt-hero{text-align:center;padding:20px 0 2px}
+.mt-eyebrow{font-size:12px;letter-spacing:.3em;color:#a2929c;margin:0 0 14px;
+  text-indent:.3em}
+.mt-hero h1{font-size:26px;font-weight:600;line-height:1.45;color:#4a2540;
+  margin:0 0 10px;letter-spacing:.01em}
+.mt-byline{font-style:italic;font-size:13.5px;color:#8a7a83;margin:0}
+.mt-rule{display:flex;align-items:center;justify-content:center;gap:9px;margin:20px 0 0}
+.mt-rule::before,.mt-rule::after{content:'';height:1px;width:64px;background:#e0cfd8}
+.mt-rule i{width:4px;height:4px;background:#8a4a6d;transform:rotate(45deg);display:block}
+
+.mt-blurb{margin:26px 0 30px;text-align:justify;color:#4a4248;font-size:15.5px}
+
+.mt-front{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
+.mt-front a{flex:1 1 210px;padding:10px 14px;border:1px solid #e4dae0;border-radius:8px;
+  background:#fcfafb;font-size:14px;text-decoration:none;text-align:center}
+.mt-front a:hover{background:#5b2f4a;color:#fff !important;border-color:#5b2f4a}
+
+.mt-ch-list{list-style:none;padding:0;margin:0 0 28px;display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.mt-ch-list li{margin:0}
+.mt-ch-list a{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-height:82px;padding:10px;border:1px solid #e0cfd8;border-radius:8px;
+  background:linear-gradient(135deg,#5b2f4a,#8a4a6d);color:#fff !important;
+  text-decoration:none;transition:transform .15s,box-shadow .15s}
+.mt-ch-list a:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(91,47,74,.28)}
+.mt-ch-list a b{font-size:15px;font-weight:600;letter-spacing:.02em}
+.mt-ch-list a span{font-size:12.5px;opacity:.82;margin-top:3px}
+
+.mt-verse-index-link{display:inline-flex;align-items:baseline;gap:8px;padding:8px 14px;
+  margin-bottom:24px;background:#fff3e0;border:1px solid #ffb74d;border-radius:4px;
+  color:#e65100 !important;font-size:14px;text-decoration:none !important}
+.mt-verse-index-link:hover{background:#ffe0b2;border-color:#f57c00;color:#bf360c !important}
+.mt-verse-index-link span{font-size:12px;color:#8a4a1a;opacity:.8}
+
+.mt-colophon{margin:30px 0 0;padding-top:14px;border-top:1px solid #e4dae0;
+  font-size:12.5px;line-height:1.75;color:#8a7a83;text-align:justify}
+.mt-colophon code{background:#f6eef2;color:#5b2f4a;padding:0 4px;border-radius:3px;
+  font-size:12px}
+</style>

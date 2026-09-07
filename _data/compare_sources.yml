@@ -104,6 +104,7 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/james-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/james/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
     - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/james-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 5}
+    - {key: manton-en, author: manton, lang: en, label: "曼顿注释（英文版）", url_tpl: "/manton/james/__CH__/", accent: "#5b2f4a", ch_from: 1, ch_to: 5}
   jeremiah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/jeremiah-1/__CH__/", accent: "#800000", ch_from: 1, ch_to: 23}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/jeremiah-1-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 24}

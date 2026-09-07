@@ -42,6 +42,14 @@ authors:
     work_cn: "罗马书、哥林多前后书注释"
     work_en: ""
     books: 3
+  - id: manton
+    name: "托马斯·曼顿"
+    short: "曼顿"
+    en: "Thomas Manton"
+    years: "1620–1677"
+    work_cn: "雅各书注释"
+    work_en: "A Practical Commentary on the Epistle of James"
+    books: 1
 
 books:
   - id: genesis
@@ -403,6 +411,7 @@ books:
     testament: nt
     chapters: 5
     links:
+      - {author: manton, path: "/manton/james/", url_tpl: "/manton/james/__CH__/", title_cn: "雅各书注释", title_en: "A Practical Commentary, or an Exposition with Notes on the Epistle of James", c0: "#4a2540", c1: "#5b2f4a"}
   - id: 1peter
     name: "彼得前书"
     en: "1 Peter"

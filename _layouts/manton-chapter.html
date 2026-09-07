@@ -1,0 +1,104 @@
+---
+layout: default
+---
+
+{%- comment -%}
+  托马斯·曼顿《雅各书注释》章节页。
+
+  主题色：桑葚紫 #5b2f4a（浅端 #8a4a6d）。按「一位注释家一色」的既有约定选，
+  与现有四家两两之间 CIELAB ΔE 都够大（vs 贺智靛蓝 27.3 / 毕列志棕 41.7 /
+  欧文绿 49.2 / 加尔文酒红 51.8）—— 靛蓝是最近的一个，仍明显可分。
+
+  ⚠️ 下面 scripture-popup 的 accent/vnum 是**字面量**：Jekyll 3 的 include
+  参数不接受 Liquid 插值，写成 accent="{{ ... }}" 会整站构建失败。
+  所以色值在这个文件里出现两处（CSS 与 include），改主题色要一起改。
+{%- endcomment -%}
+
+<div class="container" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="manton-chrome" style="margin: 16px 0 20px; font-size:13px;">
+        <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+      </div>
+
+      <div class="manton-chrome" style="display:flex; justify-content:space-between; margin-bottom:28px; font-size:13px;">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="manton-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="manton-chrome" style="margin-top:32px; font-size:12px; color:#9a938f; text-align:right;">
+        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="manton-chrome" style="display:flex; justify-content:space-between; margin-top:44px; padding-top:16px; border-top:1px solid #e4dae0; font-size:13px;">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+/* 曼顿雅各书注释 —— 讲章体散文，忠实照 Nichol 版排布，不额外加结构 */
+.manton-content{font-family:Georgia,"Times New Roman","Songti SC",STSong,serif;
+  font-size:16px;line-height:1.9;color:#2a2a26}
+.manton-content h1{font-size:22px;font-weight:bold;text-align:center;letter-spacing:.04em;
+  margin:8px 0 26px;color:#4a2540}
+.manton-content h2{font-size:17px;font-weight:bold;color:#4a2540;margin:26px 0 12px}
+.manton-content h4{font-size:14px;font-weight:normal;text-align:center;letter-spacing:.14em;
+  text-transform:uppercase;color:#8a7a83;margin:-16px 0 22px}
+.manton-content p{margin:0 0 15px;text-align:justify}
+.manton-content a{color:#5b2f4a}
+.manton-content a:hover{color:#3c1c30}
+
+/* 释经单元头：`Ver. 2. *经文*`。原书在此另起一个解经单元，
+   给色 + 加顶距把单元边界显出来；斜体本来就是原书的 */
+.manton-content p.manton-ver{color:#5b2f4a;margin-top:30px;font-size:16.5px}
+/* 雅 1:1 题辞在原书是居中排的，照原书 */
+.manton-content p.manton-ver--center{text-align:center;margin-top:8px}
+
+/* verse-index 跳转靶点：必须避开固定导航条，否则跳过去被盖住 */
+.manton-content .commentary-anchor{display:block;height:0;line-height:0;margin:0;padding:0;
+  overflow:hidden;visibility:hidden;scroll-margin-top:80px}
+
+/* 脚注 */
+.manton-content sup[id^="fnref:"]{scroll-margin-top:80px}
+.manton-content .footnotes{margin-top:40px;padding-top:14px;border-top:1px solid #e4dae0;
+  font-size:14px;color:#5a5258;line-height:1.75}
+.manton-content .footnotes ol{list-style:none;padding-left:0}
+.manton-content .footnotes li{margin-bottom:8px;scroll-margin-top:80px}
+.manton-content .fn-backref-num{display:inline-block;min-width:2.2em;margin-right:6px;
+  color:#8a4a6d;font-weight:bold;text-decoration:none}
+.manton-content .fn-backref-num:hover{color:#5b2f4a}
+</style>
+
+<script>
+// 脚注编号：kramdown 会把 <a> 文字换成它自己的顺序计数（1./2./3.），
+// 而原书用的是全卷连续编号（24、25 …）。id 里存的才是原始 label，
+// 运行时把显示文字改回去；不动 id/href，保留 kramdown 的跳转链路。
+// raw 里的 `f` 前缀只是为了避开 kramdown 的纯数字标签，不参与显示。
+(function(){
+  document.querySelectorAll('.manton-content sup[id^="fnref:"] > a.footnote').forEach(function(a){
+    a.textContent = a.parentElement.id.replace(/^fnref:f?/, '');
+  });
+  document.querySelectorAll('.manton-content .footnotes ol li[id]').forEach(function(li){
+    var label = li.id.replace(/^fn:f?/, '');
+    var a = document.createElement('a');
+    a.href = '#fnref:f' + label;
+    a.className = 'fn-backref-num';
+    a.textContent = label;
+    a.title = '返回引用位置';
+    li.insertBefore(a, li.firstChild);
+  });
+})();
+</script>
+
+{% include scripture-popup.html container_selector=".manton-content" accent="#5b2f4a" vnum="#8a4a6d" slide="down" %}

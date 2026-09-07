@@ -37,3 +37,8 @@ _site
 # OCR per-page intermediates (large, resumable; only commit the assembled
 # calvin_<book>_zh.md)
 calvin_raw/*-scan/ocr/
+
+# 曼顿雅各书：CCEL 下载的底本（pdf/txt/epub + epub 解包目录）不入库。
+# 本仓库不跟踪任何 pdf/epub 源文件；重新获取见
+# scripts/extract_manton_james.py 顶部 docstring 的下载地址。
+manton_raw/james/source/

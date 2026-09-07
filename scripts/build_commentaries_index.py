@@ -59,6 +59,11 @@ AUTHORS = OrderedDict([
     ('hodge',   dict(name='查尔斯·贺智', short='贺智',    en='Charles Hodge',   years='1797–1878', dir='hodge',
                      work_cn='罗马书、哥林多前后书注释',
                      work_en='')),
+    # 曼顿：威斯敏斯特会议三书记之一。雅各书注释 1657 年成书，
+    # 站内所据为 Nichol 版《曼顿全集》第四卷（1870–75）的 CCEL 转写本。
+    ('manton',  dict(name='托马斯·曼顿', short='曼顿',    en='Thomas Manton',   years='1620–1677', dir='manton',
+                     work_cn='雅各书注释',
+                     work_en='A Practical Commentary on the Epistle of James')),
 ])
 
 # ── 主题色 ─────────────────────────────────────────────────────
@@ -73,6 +78,10 @@ AUTHOR_COLORS = {
     'owen':    ('#14382f', '#1f5a4b'),
     'bridges': ('#5B3A29', '#96613F'),
     'hodge':   ('#152840', '#2b5080'),
+    # 曼顿桑葚紫：与既有四色的 ΔE 依次为 贺智靛蓝 27.3 / 毕列志棕 41.7 /
+    # 欧文绿 49.2 / 加尔文酒红 51.8，最近的靛蓝仍明显可分。
+    # 同批算过的 #4a2d52(19.4) / #3f2b56(16.6) / #2f4858(15.6) 都离靛蓝太近，弃用。
+    'manton':  ('#4a2540', '#5b2f4a'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -83,6 +92,9 @@ BOOK_TITLES = {
                                 'An Exposition of the First Epistle to the Corinthians'),
     ('hodge', '2corinthians'): ('哥林多后书注释',
                                 'An Exposition of the Second Epistle to the Corinthians'),
+    ('manton', 'james'):       ('雅各书注释',
+                                'A Practical Commentary, or an Exposition with Notes '
+                                'on the Epistle of James'),
 }
 
 
@@ -100,11 +112,11 @@ BOOK_TITLES = {
 # 记一条，区间由目录里实际的 <N>.md 推出——否则第 30 章会去找 jeremiah-1。
 COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
-    'bridges': '#96613F', 'hodge': '#1f3a5f',
+    'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
-    'bridges': '毕列志注释', 'hodge': '贺智注释',
+    'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
 }
 
 
@@ -121,7 +133,7 @@ def _chapter_range(d: Path):
 # 各家的「原生语种」：加尔文 / 马太亨利 / 毕列志的主目录是中译，
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
-                'owen': 'en', 'hodge': 'en'}
+                'owen': 'en', 'hodge': 'en', 'manton': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
