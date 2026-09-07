@@ -222,13 +222,17 @@ def _ital(inner):
     行内 HTML 被 kramdown 原样透传，不受相邻字符影响。
     §0.4 / §0.5 那两类星号病因此在本书不会出现。
     """
-    txt = inner.strip()
+    # 首尾空白必须**移到标签外**，不能 strip 掉：原文 `<i>Every man </i>` 之后
+    # 若紧跟别的内容，删掉那个尾空格就把两词粘成 "manis"。全书 9 处尾随、
+    # 32 处前导空白（踩过：manis / suohabuit / amongyou / Veteremferendo …）。
+    m = re.match(r'(?s)^(\s*)(.*?)(\s*)$', inner)
+    lead, txt, trail = m.group(1), m.group(2), m.group(3)
     if not txt:
-        return ''
+        return ' ' if (lead or trail) else ''
     # 用哨兵占位，等 inline_to_md 末尾那道「剥掉所有剩余标签」的兜底
     # 正则跑完之后再还原成 <em>。直接写 <em> 会被那道正则一起剥掉
     # （踩过：斜体全丢，连带 VERSE 头一节都认不出来）。
-    return f'{ITAL_OPEN}{txt}{ITAL_CLOSE}'
+    return f'{lead}{ITAL_OPEN}{txt}{ITAL_CLOSE}{trail}'
 
 
 def normalize_emphasis(text):
@@ -243,6 +247,23 @@ def normalize_emphasis(text):
     # 空斜体 / 紧邻斜体
     text = text.replace('**', '')
     return text
+
+
+FN_GLUE_RE = re.compile(r'(\[\^f\d+\])(<!-- PAGE \d+ -->)?([A-Za-z])')
+
+
+def fix_footnote_glue(text):
+    """脚注标签与下一个词之间补空格。
+
+    底本里 `</sup>` 直接贴着 `<span class="pb"/>` 再直接贴着下一个词，
+    中间一个空白都没有（CCEL 自家网页同样粘着）。落到页面上就是
+    「them,¹⁷⁰that」「Jeremiah,³²⁴and」这类连字。全书 5 处。
+
+    只在「脚注标签 (+可选页码标记) + 字母」这一种排列下补空格 ——
+    脚注标签后面直接跟字母在正常英文里不可能出现，故判定无歧义；
+    后面跟标点（`law[^f144]—adultery`）不动，那是原文的正常写法。
+    """
+    return FN_GLUE_RE.sub(lambda m: m.group(1) + (m.group(2) or '') + ' ' + m.group(3), text)
 
 
 def dehyphenate(text):
@@ -382,6 +403,7 @@ def main():
         # 再断字合并，最后 emphasis 归一化。
         text, n_open, n_close = restore_quotes(text)
         text = dehyphenate(text)
+        text = fix_footnote_glue(text)
         text = normalize_emphasis(text)
 
         # 脚注定义追加在正文末（kramdown 需要 def 与 ref 同文件）

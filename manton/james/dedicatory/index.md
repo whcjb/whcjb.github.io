@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 section: dedicatory
 title: The Epistle Dedicatory
-date: "2026-09-07 10:18"
+date: "2026-09-07 10:30"
 next_url: /manton/james/advertisement/
 next_label: Advertisement
 ---
