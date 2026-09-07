@@ -3485,6 +3485,19 @@ def phil_reconstruct_page(page, page_num=None):
         # Do NOT reject on trailing `,` — title-page dedication lines like
         # "BARON OF DENBIGH, MAISTER OF THE HORSE..." end in comma and ARE centered.
         ends_with_continuation = bool(re.search(r'\(\s*$', block_text_preview))
+        # 长块 + 小写起首 = 正文续段，绝不是居中标题。
+        # 贺智罗马书 ANALYSIS 段在 PDF 里两侧都内缩（lm 43.5 / rm 37.5，
+        # |差| = 6 < 8），几何上完全符合「居中」，于是跨页续段
+        # `its labor, ver. 5. …` 被判成居中标题，网页上单独居中一段。
+        # 几何信号必须配内容信号校验（principles §0.3）：标题不会以小写起首，
+        # 也不会是一二百字的连贯散文。短块（< 80 字符）不动——`by` 这类
+        # 确实居中的碎片仍按原样，已发布卷不受影响。
+        # 判据取「小写起首 + 至少 6 个词」：本语料里的居中标题一律全大写，
+        # 绝不会小写起首；而 `by` 这类真居中的短碎片只有 1 个词，不受影响。
+        # 曾按字符数 ≥80 卡，漏掉三条 76–79 字符的续段。
+        starts_lowercase_prose = bool(
+            re.match(r'^[a-z]', block_text_preview)
+            and len(block_text_preview.split()) >= 6)
         # Also reject when block starts with a numbered list item `N.` — those
         # are PDF outline subitems (indented from body), not centered titles.
         # PDF outline can have lm/rm symmetric (e.g. lm=44 rm=45) but is
@@ -3521,6 +3534,7 @@ def phil_reconstruct_page(page, page_num=None):
             is_centered_block_geom
             and not ends_with_continuation
             and not starts_with_list_item
+            and not starts_lowercase_prose
             and not is_all_italic
         )
 
@@ -3571,6 +3585,21 @@ def phil_reconstruct_page(page, page_num=None):
                 if re.match(r'^[Ff]t?\d+$|^<\d+>$', non_empty[0]['text'].strip()):
                     line_class = 'FOOTNOTE'
             stripped = full_text.strip()
+            # ⚠️ 大字号 ≠ 标题：贺智罗马书每个 ANALYSIS 段的**首行**是 16pt
+            # （正文 12pt），纯排版手法。按字号判 H2 会把半句话切成标题，
+            # 后半句另起一段（罗马书 34 处，形如
+            #   ## THIS section consists of two parts. The first from vers. 1 to 7 inclusive, is
+            #   a salutatory address; the second, …）。
+            # 判据：标题短、不满幅；这些放大首行左起正文左边距、右抵右边距。
+            # 满幅（≥ 本页正文测度 的 60%）就按正文处理，与下一行自然合段。
+            # ⚠️ 只降级「顶着正文左边距起、又满幅」的行。居中的宽标题
+            #（ORIGIN AND CONDITION OF THE CHURCH AT ROME. 等 3 条）同样是
+            # 16pt 且宽度过半，只按宽度判会把它们一起打成正文。
+            if (line_class == 'H2' and not is_centered_block
+                    and line['bbox'][0] <= _para_body_left + 6):
+                _lw = line['bbox'][2] - line['bbox'][0]
+                if _lw > (page_w - 2 * _para_body_left) * 0.6:
+                    line_class = 'BODY'
             if ms >= 16 and any(kw in stripped for kw in ('PHILIPPIANS','COLOSSIANS','THESSALONIANS')):
                 if re.search(r'\d+:\d+', stripped):
                     line_class = 'VERSE'
