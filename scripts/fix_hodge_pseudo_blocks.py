@@ -81,7 +81,13 @@ def fix_text(s):
     def h2(m):
         nonlocal n_h2
         head, pages, body = m.group(1).strip(), m.group(2), m.group(3)
-        if re.search(r'[.!?:]\s*$', re.sub(r'<[^>]+>', '', head)):
+        _plain = re.sub(r'<[^>]+>', '', head).strip()
+        # 真标题：以句末标点收尾**且**不是小写起首。
+        # 只看句末标点会漏掉 `## clause, δόξαν — ζητοῦσι, is then in
+        # apposition with the preceding:` —— 冒号收尾，却是小写起首的续句
+        # （romans/2.md 实测）。本语料的标题一律大写起首。
+        if (re.search(r'[.!?:]\s*$', _plain)
+                and not re.match(r'^[a-z]', _plain)):
             return m.group(0)            # 真标题，不动
         n_h2 += 1
         marks = ''.join(l + '\n' for l in PAGE_RE.findall(pages))

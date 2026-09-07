@@ -3595,6 +3595,11 @@ def phil_reconstruct_page(page, page_num=None):
             # ⚠️ 只降级「顶着正文左边距起、又满幅」的行。居中的宽标题
             #（ORIGIN AND CONDITION OF THE CHURCH AT ROME. 等 3 条）同样是
             # 16pt 且宽度过半，只按宽度判会把它们一起打成正文。
+            # 小写起首的大字号行必定是续句，不受几何条件约束
+            #（`clause, δόξαν — ζητοῦσι, is then in apposition…` 实测）。
+            if (line_class == 'H2'
+                    and re.match(r'^[a-z]', re.sub(r'</?sty[^>]*>', '', stripped))):
+                line_class = 'BODY'
             if (line_class == 'H2' and not is_centered_block
                     and line['bbox'][0] <= _para_body_left + 6):
                 _lw = line['bbox'][2] - line['bbox'][0]
