@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 section: preface
 title: A Preface to the Whole Epistle
-date: "2026-09-07 09:44"
+date: "2026-09-07 09:59"
 prev_url: /manton/james/advertisement/
 prev_label: Advertisement
 next_url: /manton/james/1/

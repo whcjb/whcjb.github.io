@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 section: dedicatory
 title: The Epistle Dedicatory
-date: "2026-09-07 09:44"
+date: "2026-09-07 09:59"
 next_url: /manton/james/advertisement/
 next_label: Advertisement
 ---
@@ -14,9 +14,7 @@ next_label: Advertisement
 
 ## THE EPISTLE DEDICATORY.
 
-<p class="manton-ver manton-ver--center" markdown="1">To the Honourable Colonel Alexander Popham, a Member of Parliament.</p>
-
-<div class="commentary-anchor" id="james-0-1"></div>
+<p style="text-align:center" markdown="1">To the Honourable Colonel Alexander Popham, a Member of Parliament.</p>
 
 SIR, Dedications, though often abused to a vain flattery, are of ancient use, and may be of great profit. The custom is the less to be disparaged, because we find it hallowed by the practice of one of the penmen of the Holy Scriptures, St Luke, in his Gospel and the Acts, Luke i. 3, Acts i. 3, both which he inscribeth to Theophilus, a person not only eminent in religion, but dignified with birth and place;[^f1] which hath been imitated by the holy men of God in all ages; their aim in such inscriptions being, partly to signify their thankfulness for favours received in this public and spiritual way of return; partly to oblige persons eminent by the respects of the church, and by the honour of their name, to commend their labours to public acceptance; partly by an innocent guile to bring them under a greater obligation in the profession and practice of the truths of religion. It is usual in scripture to ascribe a testimony, producible at the day of judgment, to the more notable circumstances and accidents of human life; as to the rust of hoarded money, James v. 3; to the solemn publications of the gospel, the dust of the apostles, feet, Matt. x. And so, I remember, in the primitive times, when grown persons were baptized, they were wont to leave a stole and white garment in the vestry of the church for a testimony and witness. Wherefore, when one Elpidophorus had revolted from the faith, the deacon of the church came and told him, ‘O Elpidophorus, I will keep this stole as a monument against thee to all eternity.’ And truly books, being public monuments, are much of this nature, a testimony likely to be produced in the day of judgment, not only against the author, but the persons to whom they are inscribed, in case, on either side, there be any defection in judgment or manners from the truths therein professed; for they being consigned to their respect and patronage, they are drawn into a fellowship of the obligation.
 

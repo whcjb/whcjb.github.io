@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 chapter: 4
 title: Chapter IV
-date: "2026-09-07 09:44"
+date: "2026-09-07 09:59"
 prev_url: /manton/james/3/
 prev_label: Chapter III
 next_url: /manton/james/5/

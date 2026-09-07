@@ -27,6 +27,19 @@ layout: default
         {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
+      {%- comment -%}
+        章顶节号导航。胶囊由下面的 JS 扫正文里的 .commentary-anchor 生成
+        （锚点由 scripts/publish_manton_james.py 插在每个释经单元的经文头
+        之后）；前置三篇（献辞 / 致读者 / 序论）没有锚点，整条自动隐藏。
+      {%- endcomment -%}
+      <div id="verse-nav" style="display:none;">
+        <div id="verse-nav-toggle" onclick="toggleMantonVerseNav()">
+          <span id="verse-nav-label"></span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;"></div>
+      </div>
+
       <div class="manton-content">
         {{ content }}
       </div>
@@ -65,6 +78,26 @@ layout: default
 /* 雅 1:1 题辞在原书是居中排的，照原书 */
 .manton-content p.manton-ver--center{text-align:center;margin-top:8px}
 
+/* ── 章顶节号导航（桑葚紫，不沿用贺智暖金 / 加尔文绿）── */
+#verse-nav{margin:0 0 22px;position:relative;z-index:2}
+#verse-nav-toggle{display:flex;align-items:center;gap:8px;width:fit-content;
+  padding:7px 14px;cursor:pointer;user-select:none;
+  background:#f9f4f6;border:1px solid #e0cfd8;border-radius:4px;
+  font-family:Georgia,serif;font-size:13px;color:#5b2f4a}
+#verse-nav-toggle:hover{background:#f3e8ee}
+#verse-nav-arrow{font-size:10px;transition:transform .2s}
+#verse-nav-arrow.open{transform:rotate(180deg)}
+#verse-nav-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding:12px 14px;
+  background:#fdfafb;border:1px solid #ebdde4;border-radius:4px}
+.verse-pill{display:inline-block;padding:3px 9px;border-radius:12px;
+  background:#f6eef2;border:1px solid #e0cfd8;color:#5b2f4a;
+  font-family:Georgia,serif;font-size:13px;text-decoration:none;transition:background .15s}
+.verse-pill:hover{background:#5b2f4a;border-color:#5b2f4a;color:#fff;text-decoration:none}
+.verse-pill--active{background:#4a2540;border-color:#4a2540;color:#fff;font-weight:bold}
+
+/* 释经单元头可点：点它滚回章顶导航条（下面 JS 挂的事件） */
+.manton-content p.manton-ver{cursor:pointer}
+
 /* verse-index 跳转靶点：必须避开固定导航条，否则跳过去被盖住 */
 .manton-content .commentary-anchor{display:block;height:0;line-height:0;margin:0;padding:0;
   overflow:hidden;visibility:hidden;scroll-margin-top:80px}
@@ -99,6 +132,87 @@ layout: default
     li.insertBefore(a, li.firstChild);
   });
 })();
+
+// 章顶节号导航 + 「点释经单元头 → 滚回章顶导航条」。
+// commentary-anchor 空 div（id 形如 james-1-2）由 publish 脚本插在每个
+// 单元的经文头之后，这里只负责生成胶囊与绑定点击。
+// 注：此处刻意不写出锚点的完整标签字面量 —— 审计用的
+// grep 'class="commentary-anchor"' 会把注释也数进去，造成锚点数虚高。
+(function () {
+  var content = document.querySelector('.manton-content');
+  if (!content) return;
+  var anchors = content.querySelectorAll('.commentary-anchor');
+  if (!anchors.length) return;          // 前置三篇无锚点 → 整条导航不显示
+
+  var pillsBox = document.getElementById('verse-nav-pills');
+  var entries = [];
+  anchors.forEach(function (a) {
+    var m = a.id.match(/^(.+)-(\d+)-(\d+)$/);
+    if (m) entries.push({ id: a.id, v: m[3] });
+  });
+  if (!entries.length) return;
+
+  entries.forEach(function (e) {
+    var link = document.createElement('a');
+    link.href = '#' + e.id;
+    link.className = 'verse-pill';
+    link.textContent = e.v;
+    link.addEventListener('click', function () { setTimeout(closeMantonVerseNav, 200); });
+    pillsBox.appendChild(link);
+  });
+
+  var label = document.getElementById('verse-nav-label');
+  label.textContent = 'Jump to verse  ' + (entries.length > 1
+    ? entries[0].v + '–' + entries[entries.length - 1].v
+    : entries[0].v);
+  document.getElementById('verse-nav').style.display = 'block';
+
+  // 单元头 → 它自己的锚点：**按 DOM 相邻取**，不解析 `Ver. N.` 文本。
+  // 文本解析在这本书上会漏两类：雅 1:1 的题辞是居中排的、根本没有
+  // `Ver.` 前缀；范围头 `Ver. 2-4` 还得再判该高亮哪一节。
+  // publish 保证锚点紧跟在头之后，取后继兄弟里第一个 commentary-anchor
+  // 即为该单元首节，两类都自然覆盖。
+  content.querySelectorAll('p.manton-ver').forEach(function (head) {
+    var el = head.nextElementSibling, aid = null;
+    while (el && !aid) {
+      if (el.classList && el.classList.contains('commentary-anchor')) aid = el.id;
+      else if (el.tagName === 'P') break;      // 已进入释经正文，停
+      el = el.nextElementSibling;
+    }
+    if (!aid) return;
+    // verse-anchor 在 scripture-popup 的 skip 列表里：单元头是跳转锚点，
+    // 不是经文引用，linkify 了点它会误弹经文卡片、与本跳转冲突。
+    head.classList.add('verse-anchor');
+    head.dataset.anchor = aid;
+    head.addEventListener('click', function () {
+      var nav = document.getElementById('verse-nav');
+      var pills = document.getElementById('verse-nav-pills');
+      var arrow = document.getElementById('verse-nav-arrow');
+      if (pills && pills.style.display === 'none') {
+        pills.style.display = 'flex';
+        if (arrow) arrow.classList.add('open');
+      }
+      var want = '#' + this.dataset.anchor;
+      pills && pills.querySelectorAll('.verse-pill').forEach(function (pill) {
+        pill.classList.toggle('verse-pill--active', pill.getAttribute('href') === want);
+      });
+      if (nav) nav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+})();
+
+function toggleMantonVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  var open = pills.style.display !== 'none';
+  pills.style.display = open ? 'none' : 'flex';
+  arrow.classList.toggle('open', !open);
+}
+function closeMantonVerseNav() {
+  document.getElementById('verse-nav-pills').style.display = 'none';
+  document.getElementById('verse-nav-arrow').classList.remove('open');
+}
 </script>
 
 {% include scripture-popup.html container_selector=".manton-content" accent="#5b2f4a" vnum="#8a4a6d" slide="down" %}

@@ -254,7 +254,7 @@ VERSE_HEAD_RE = re.compile(
 BLOCK_RE = re.compile(r'<(h1|h2|h4|p|div)\b([^>]*)>(.*?)</\1>', re.S)
 
 
-def convert_file(path, sink, fn_defs, fn_seen):
+def convert_file(path, sink, fn_defs, fn_seen, is_chapter=False):
     raw = path.read_text(encoding='utf-8')
     # 去掉最外层 <div class="book-content"> 包裹本身。留着它，非贪婪的
     # BLOCK_RE 会把它匹配到第一个 </div>（某条 mnote 的收尾），整章正文
@@ -299,10 +299,15 @@ def convert_file(path, sink, fn_defs, fn_seen):
             if vm:
                 seen_verse = True
                 out.append(('verse', vm.group(1).strip(), text))
-            elif 'center' in cls and not seen_verse:
+            elif 'center' in cls and not seen_verse and is_chapter:
                 # 第 1 章开篇的书信题辞（雅 1:1）在原书里是居中排的，
                 # 没有 `Ver. 1.` 前缀 —— 但它就是第 1 节的释经单元头。
                 # 不认它，全书唯独 1:1 没有锚点。居中版式照原书保留。
+                #
+                # ⚠️ 必须限定 is_chapter：前置三篇里也有居中段，献辞开头
+                # 那行受献人「To the Honourable Colonel Alexander Popham…」
+                # 同样是首个 p.center，不加限定会被当成经节头，凭空造出
+                # 一个 james-0-1 锚点、还把受献人行套上经文头样式（踩过）。
                 seen_verse = True
                 out.append(('verse-center', '1', text))
             elif 'center' in cls:
@@ -347,7 +352,8 @@ def main():
 
     for fname, out_name, title in SECTIONS:
         sink, fn_defs, fn_seen = [], {}, set()
-        blocks = convert_file(SRC / fname, sink, fn_defs, fn_seen)
+        blocks = convert_file(SRC / fname, sink, fn_defs, fn_seen,
+                              is_chapter=out_name.isdigit())
         text = render(blocks, title)
 
         # 出口归一化：顺序固定 —— 先还原引号（要看得到 `,` 原样），

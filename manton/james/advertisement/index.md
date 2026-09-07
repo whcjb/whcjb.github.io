@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 section: advertisement
 title: An Advertisement to the Reader
-date: "2026-09-07 09:44"
+date: "2026-09-07 09:59"
 prev_url: /manton/james/dedicatory/
 prev_label: Dedicatory
 next_url: /manton/james/preface/

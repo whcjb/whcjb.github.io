@@ -5,7 +5,7 @@ book_name: Manton on the Epistle of James
 author: Thomas Manton
 chapter: 3
 title: Chapter III
-date: "2026-09-07 09:44"
+date: "2026-09-07 09:59"
 prev_url: /manton/james/2/
 prev_label: Chapter II
 next_url: /manton/james/4/
