@@ -6,6 +6,7 @@ author: Thomas Manton
 chapter: 3
 title: Chapter III
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/3/zh/"
 prev_url: /manton/james/2/
 prev_label: Chapter II
 next_url: /manton/james/4/
