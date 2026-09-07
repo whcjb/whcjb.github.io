@@ -102,9 +102,9 @@ In order to establish his doctrine respecting justification, he first proves tha
 
 In arguing against the Gentiles, Paul assumes the principle that God will punish sin, chap. 1:18, and then proves that they are justly chargeable both with impiety and immorality, because though they possessed a competent knowledge of God, they did not worship him, but turned unto idols, and gave themselves up to all kinds of iniquity, chap. 1:19-32.
 
-He commences his argument with the Jews by expanding the general principle of the divine justice, and especially insisting on God’s impartiality by showing that he will judge all men, Jews and Gentiles, according to their works, and according to the light they severally enjoyed, chap. 2:1-16. He shows that the Jews, when tried by these rules, are as
+He commences his argument with the Jews by expanding the general principle of the divine justice, and especially insisting on God’s impartiality by showing that he will judge all men, Jews and Gentiles, according to their works, and according to the light they severally enjoyed, chap. 2:1-16. He shows that the Jews, when tried by these rules, are as justly and certainly exposed to condemnation as the Gentiles, chap. 2:17-29.
 
-<!-- PAGE 17 --> justly and certainly exposed to condemnation as the Gentiles, chap. 2:17-29.
+<!-- PAGE 17 -->
 
 The peculiar privileges of the Jews afford no ground of hope that they will escape being judged on the same principles with other men, and when thus judged, they are found to be guilty before God. All men, therefore, are, as the Scriptures abundantly teach, under condemnation, and consequently cannot be justified by their own works, chap. 3:1-20.
 
