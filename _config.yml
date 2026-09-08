@@ -33,8 +33,12 @@ exclude:
   # Pipeline raw / 中间产物：git 里保留，但不必进 _site（无 URL 引用）
   # hodge_raw / owen_raw 先前漏排除，raw 被当公开页面发布了
   # （_site 里各 31 / 57 个 index.html，2026-09-04 查出）
+  # 新增注释家时**必须同步加一行**，否则 raw 目录里的 md 会被当公开页面发布
+  - bridges_raw
   - calvin_raw
+  - davenant_raw
   - hodge_raw
+  - manton_raw
   - owen_raw
   - ocr_output
   - logs
