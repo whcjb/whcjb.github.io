@@ -44,6 +44,15 @@ BOOKS = {
         'pdf': '/Users/yanpeifa/Documents/论文/calvin/加尔文--约翰福音注释.pdf',
         'raw': 'calvin_raw/john-scan/ocr',
     },
+    # 以弗所书用的是**扫描件 M0372**（当年 OCR 的来源，128 页），
+    # 不是那本带干净文本层的 49_…任以撒译.pdf。
+    # 机械比对（audit_ocr_vs_pdf.py）已跑过那本，只找出 6 处——
+    # 但那种方法**结构上发现不了漏字**（少一字句子照样通顺、两侧字流都"合法"），
+    # 而漏字恰是 Qwen 的主要错法（罗马书/歌罗西书实测如此）。所以这一卷仍要走判读。
+    'ephesians': {
+        'pdf': '/Users/yanpeifa/Documents/论文/calvin/M0372 以弗所书注释 加尔文.pdf',
+        'raw': 'calvin_raw/ephesians-scan/ocr',
+    },
 }
 
 SYSTEM = (
@@ -95,9 +104,21 @@ def ask(png, text, label=''):
 
 
 def clean_raw(p: Path) -> str:
-    t = p.read_text(encoding='utf-8')
-    t = re.sub(r'^#.*$', '', t, flags=re.M)      # 去 raw 里的 markdown 标题
-    return t.strip()
+    """只脱掉 raw 的 markdown `#` 标记，**一行内容都不删**。
+
+    原先这里是 re.sub(r'^#.*$', '', ...)，把 `#` 开头的行整行删掉，本意是去页眉。
+    代价是把挂在标题下的正文一起删了，而删的只是**送给模型的提示词**，
+    raw 和已发布正文里内容都在，于是判读凭空报出一批「整段缺失／标题缺」：
+
+      约翰福音  raw 每个注释段是 `## 耶稣的母亲在那里。娶亲的人很有可能……`
+                一整段一行 → 121 段正文被删 → 99 条假阳性（涉及 69 页）
+      以弗所书  raw 的注释小标是 `## 兒女要聽從父母（1）` 这类短行 → 4 条小标
+                加 5 条章题被删 → 9 条假阳性
+
+    页眉不必靠删行来压制：SYSTEM 提示词第 3 条已明令「页眉页码」和
+    「OCR 文本里的 markdown 标记」一律不报。保留内容严格优于删除内容。
+    """
+    return re.sub(r'^#+\s*', '', p.read_text(encoding='utf-8'), flags=re.M).strip()
 
 
 def main():

@@ -40,8 +40,38 @@ BOOKS = {
                    'report': 'logs/adjudicate_romans.md', 'max_page': 323},
     'colossians': {'pub': 'calvin/colossians', 'raw': 'calvin_raw/colossians-scan/ocr',
                    'report': 'logs/adjudicate_colossians.md', 'max_page': None},
+    'ephesians':  {'pub': 'calvin/ephesians', 'raw': 'calvin_raw/ephesians-scan/ocr',
+                   'report': 'logs/adjudicate_ephesians.md', 'max_page': None},
+    'john':       {'pub': 'calvin/john', 'raw': 'calvin_raw/john-scan/ocr',
+                   'report': 'logs/adjudicate_john.md', 'max_page': None},
 }
-FIND_RE = re.compile(r'影像=「(.*?)」\s*文本=「(.*?)」(?:\s*上下文=「(.*?)」)?')
+# 值里会嵌套「」（如 影像=「越是以「教」」 文本=「越是「教」」）。
+# 单纯非贪婪会停在里层的 」 上，把 txt 截成「越是「教」——照这个去 replace
+# 会往正文里塞进一个多余的 」。所以用前瞻把收尾的 」 锚在下一个标记之前。
+# 「文本上下文=」是模型偶尔写错的标记名，一并认。
+FIND_RE = re.compile(
+    r'影像=「(.*?)」(?=\s*文本=)\s*文本=「(.*?)」'
+    r'(?=\s*(?:文本上下文=|上下文=|[（(]|$))')
+
+# ── 判读的两类系统性假阳性（约翰福音实测 661 条里占 278 条）────────────────
+# 1) 带圈节号：影像上是 ㉑㉒…㊿ 这类两位数圈码，模型认不出 20 以上的字形，
+#    读成 ①③⑤ 之类。**文本侧才是对的**，照报回填等于把正确节号改错。
+# 2) 他/祂：出版体例把指称基督的第三人称统一作「祂」，影像底本作「他」。
+#    这是编辑规范差异，不是 OCR 错误。
+CIRCLED = ''.join(chr(c) for lo, hi in
+                  ((0x2460, 0x24FF), (0x2776, 0x2793),
+                   (0x3251, 0x325F), (0x32B1, 0x32BF))
+                  for c in range(lo, hi + 1))
+_NUMERIC_NOISE = str.maketrans('', '', CIRCLED + '0123456789０-９（）()［］[]{}、，。 \t　·-—')
+
+
+def is_false_positive(img, txt):
+    """→ (是否跳过, 类别)"""
+    if img.translate(_NUMERIC_NOISE) == '' and txt.translate(_NUMERIC_NOISE) == '':
+        return True, '跳过·假阳性/圈号节号'
+    if img.replace('祂', '他').replace('衪', '他') == txt.replace('祂', '他').replace('衪', '他'):
+        return True, '跳过·假阳性/他祂体例'
+    return False, ''
 
 
 def cjk_index(text):
@@ -116,8 +146,11 @@ def main():
     applied, held = [], []
 
     for pg, img, txt in recs:
-        if '?' in img or not img.strip() or not txt.strip():
+        if '?' in img or '\ufffd' in img or not img.strip() or not txt.strip():
             stat['跳过·存疑/无锚点'] += 1; continue
+        fp, why = is_false_positive(img, txt)
+        if fp:
+            stat[why] += 1; continue
         f = pagemap.get(pg)
         if not f:
             stat['跳过·该页无章映射'] += 1; continue
