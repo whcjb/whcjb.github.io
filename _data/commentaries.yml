@@ -411,7 +411,7 @@ books:
     testament: nt
     chapters: 5
     links:
-      - {author: manton, path: "/manton/james/", url_tpl: "/manton/james/__CH__/", title_cn: "雅各书注释", title_en: "A Practical Commentary, or an Exposition with Notes on the Epistle of James", c0: "#4a2540", c1: "#5b2f4a"}
+      - {author: manton, path: "/manton/james/zh/", url_tpl: "/manton/james/__CH__/zh/", title_cn: "雅各书注释", title_en: "A Practical Commentary, or an Exposition with Notes on the Epistle of James", c0: "#4a2540", c1: "#5b2f4a"}
   - id: 1peter
     name: "彼得前书"
     en: "1 Peter"

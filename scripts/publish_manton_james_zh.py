@@ -124,7 +124,40 @@ def main():
             print(f'  ✓ {r[0]:14s} {r[1]:8,d} chars  anchors={r[2]}')
     if not done:
         print('  （尚无可发布的中文 raw）')
+        return done
+    write_zh_book_index(now)
     return done
+
+
+def write_zh_book_index(now: str) -> None:
+    """书卷级中文索引 manton/james/zh/index.html。
+
+    **这一页决定「历代解经」点进来落在哪一版**：
+    build_commentaries_index.py 的 book_entry_url 只认书卷级
+    `<book>/zh/index.html`，没有它就落回英文页，读者还得自己再点一次
+    「中文版」。欧文就是章级 zh 而无此页，入口才一直指着英文。
+
+    chapters 按**实际已发布**的中文章数算，不写死 5 —— 边译边发的过程中
+    写死会链到尚未翻译的章，直接 404。
+    """
+    n = 0
+    for ch in range(1, 6):
+        if (OUT / str(ch) / 'zh' / 'index.md').exists():
+            n = ch
+        else:
+            break
+    has_pre = all((OUT / s / 'zh' / 'index.md').exists()
+                  for s in ('dedicatory', 'advertisement', 'preface'))
+    d = OUT / 'zh'
+    d.mkdir(parents=True, exist_ok=True)
+    (d / 'index.html').write_text(
+        front_matter(layout='manton-book', book_id=BOOK_ID, book_name=BOOK_NAME,
+                     author=AUTHOR, title='曼顿·雅各书注释', chapters=n,
+                     has_preface='true' if has_pre else None,
+                     zh='true', date=now),
+        encoding='utf-8')
+    print(f'  ✓ 中文书卷索引 /manton/james/zh/（{n} 章'
+          + ('，含前置三篇' if has_pre else '') + '）')
 
 
 if __name__ == '__main__':

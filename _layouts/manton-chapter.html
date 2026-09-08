@@ -16,7 +16,7 @@ layout: default
 
 <div class="container" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="manton-chrome" style="margin: 16px 0 20px; font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
         <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
@@ -48,9 +48,17 @@ layout: default
         <div id="verse-nav-pills" style="display:none;"></div>
       </div>
 
-      <div class="manton-content">
+      {%- comment -%}
+        对比注释抽屉：点章顶空白热区 → 滑出可对照的其他注释 → 右侧分屏。
+        self 用来把「本注释自己」从选项里排掉，中英两版 key 不同。
+        数据来自 _data/compare_sources.yml，由 build_commentaries_index.py 扫
+        实际发布目录生成；**对照只在同语种之间**（中文页只列中译，英文页只列
+        英文原著），跨语种走本页顶部的「中文版 ↔ / English ↔」切换。
+      {%- endcomment -%}
+      {% assign cc_self = "manton-en" %}{% if page.zh %}{% assign cc_self = "manton" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="manton-content" self_label="曼顿" %}
         {{ content }}
-      </div>
+      {% include compare-commentary-foot.html %}
 
       {% if page.date %}
       <div class="manton-chrome" style="margin-top:32px; font-size:12px; color:#9a938f; text-align:right;">

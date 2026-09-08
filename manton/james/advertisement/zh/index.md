@@ -4,7 +4,7 @@ book_id: james
 book_name: 曼顿《雅各书注释》
 author: 托马斯·曼顿
 title: 谨告读者
-date: "2026-09-07 11:33"
+date: "2026-09-08 09:46"
 zh: true
 en_url: /manton/james/advertisement/
 prev_url: /manton/james/dedicatory/zh/

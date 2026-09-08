@@ -16,10 +16,24 @@ layout: default
 
         <div class="mt-hero">
           <p class="mt-eyebrow">历代解经</p>
+          {% if page.zh %}
+          <h1>雅各书注释</h1>
+          <p class="mt-byline">托马斯·曼顿（Thomas Manton）&middot; 1620–1677</p>
+          {% else %}
           <h1>A Practical Commentary on the Epistle of James</h1>
           <p class="mt-byline">Thomas Manton &middot; 1620–1677</p>
+          {% endif %}
           <div class="mt-rule"><i></i></div>
         </div>
+
+        {%- comment -%}
+          中英入口互链。历代解经页面默认落到中文版（book_entry_url 只认
+          书卷级 <book>/zh/index.html，所以这一页必须存在），英文原著从这里一步可达。
+        {%- endcomment -%}
+        <p style="text-align:center; margin:-6px 0 22px;">
+          {% if page.zh %}<a class="mt-lang" href="{{ site.baseurl }}/manton/{{ page.book_id }}/">English &harr;</a>
+          {% else %}<a class="mt-lang" href="{{ site.baseurl }}/manton/{{ page.book_id }}/zh/">中文版 &harr;</a>{% endif %}
+        </p>
 
         <p class="mt-blurb">
           曼顿是威斯敏斯特会议的三位书记之一，1658 年受命为《威斯敏斯特信条》
@@ -31,19 +45,27 @@ layout: default
         </p>
 
         {% if page.has_preface %}
+        {%- assign zseg = "" -%}{% if page.zh %}{% assign zseg = "zh/" %}{% endif %}
         <div class="mt-front">
+          {% if page.zh %}
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/dedicatory/zh/">献辞</a>
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/advertisement/zh/">谨告读者</a>
+          <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/preface/zh/">全书序论</a>
+          {% else %}
           <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/dedicatory/">The Epistle Dedicatory</a>
           <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/advertisement/">An Advertisement to the Reader</a>
           <a href="{{ site.baseurl }}/manton/{{ page.book_id }}/preface/">A Preface to the Whole Epistle</a>
+          {% endif %}
         </div>
         {% endif %}
 
         {%- assign romans = "I,II,III,IV,V" | split: "," -%}
+        {%- assign cn_num = "一,二,三,四,五" | split: "," -%}
         <ul class="mt-ch-list">
           {% for i in (1..page.chapters) %}
-          <li><a href="{{ site.baseurl }}/manton/{{ page.book_id }}/{{ i }}/">
-            <b>Chapter {{ romans[forloop.index0] }}</b>
-            <span>James {{ i }}</span>
+          <li><a href="{{ site.baseurl }}/manton/{{ page.book_id }}/{{ i }}/{{ zseg }}">
+            {% if page.zh %}<b>第{{ cn_num[forloop.index0] }}章</b><span>雅各书 {{ i }}</span>
+            {% else %}<b>Chapter {{ romans[forloop.index0] }}</b><span>James {{ i }}</span>{% endif %}
           </a></li>
           {% endfor %}
         </ul>
@@ -86,6 +108,9 @@ layout: default
 .mt-rule i{width:4px;height:4px;background:#8a4a6d;transform:rotate(45deg);display:block}
 
 .mt-blurb{margin:26px 0 30px;text-align:justify;color:#4a4248;font-size:15.5px}
+.mt-lang{display:inline-block;padding:3px 12px;border:1px solid #5b2f4a;border-radius:14px;
+  color:#5b2f4a !important;font-size:12px;text-decoration:none !important;white-space:nowrap}
+.mt-lang:hover{background:#5b2f4a;color:#fff !important}
 
 .mt-front{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px}
 .mt-front a{flex:1 1 210px;padding:10px 14px;border:1px solid #e4dae0;border-radius:8px;

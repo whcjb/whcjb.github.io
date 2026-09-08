@@ -4,7 +4,7 @@ book_id: james
 book_name: 曼顿《雅各书注释》
 author: 托马斯·曼顿
 title: 第三章
-date: "2026-09-07 18:27"
+date: "2026-09-08 09:46"
 zh: true
 en_url: /manton/james/3/
 chapter: 3

@@ -4,7 +4,7 @@ book_id: james
 book_name: 曼顿《雅各书注释》
 author: 托马斯·曼顿
 title: 第五章
-date: "2026-09-08 09:05"
+date: "2026-09-08 09:46"
 zh: true
 en_url: /manton/james/5/
 chapter: 5

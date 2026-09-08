@@ -154,7 +154,12 @@ def _lang_variants(aid, d: Path, name: str):
     out = [(PRIMARY_LANG.get(aid, 'zh'), f'/{dirn}/{name}/__CH__/',
             _chapter_range(d))]
     if out[0][0] != 'zh':
-        if (d / 'zh').is_dir():                       # 书卷级（贺智）
+        # 书卷级（贺智）判据必须是「zh/ 里**真的有章节**」，不能只看目录在不在：
+        # 章级布局的书也可能有个 <book>/zh/ 目录，里面只放一张书卷级中文索引页
+        # （曼顿就是这样，为了让「历代解经」入口落到中文版）。只看目录存在
+        # 就会把它误判成书卷级，生成 /manton/james/zh/1/ 这种不存在的地址，
+        # 对比抽屉点过去直接 404（踩过）。
+        if (d / 'zh').is_dir() and _chapter_range(d / 'zh'):   # 书卷级（贺智）
             out.append(('zh', f'/{dirn}/{name}/zh/__CH__/',
                         _chapter_range(d / 'zh')))
         else:                                          # 章级（欧文）
