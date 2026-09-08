@@ -6,6 +6,7 @@ author: Thomas Manton
 chapter: 5
 title: Chapter V
 date: "2026-09-07 10:30"
+zh_url: "/manton/james/5/zh/"
 prev_url: /manton/james/4/
 prev_label: Chapter IV
 ---
