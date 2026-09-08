@@ -46,3 +46,7 @@ manton_raw/james/source/
 # 曼顿雅各书翻译运行日志（缓存与译稿入库，日志不入库）
 logs/manton_james_zh.log
 manton_raw/james/zh_translate_issues.log
+
+# OCR 判读运行日志与明细（可重跑，不入库）
+logs/adj_*.log
+logs/adjudicate_*.md
