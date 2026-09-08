@@ -50,6 +50,14 @@ authors:
     work_cn: "雅各书注释"
     work_en: "A Practical Commentary on the Epistle of James"
     books: 1
+  - id: davenant
+    name: "约翰·达文南特"
+    short: "达文南特"
+    en: "John Davenant"
+    years: "1572–1641"
+    work_cn: "歌罗西书注释"
+    work_en: "An Exposition of the Epistle of St. Paul to the Colossians"
+    books: 1
 
 books:
   - id: genesis
@@ -362,6 +370,7 @@ books:
     testament: nt
     chapters: 4
     links:
+      - {author: davenant, path: "/davenant/colossians/", url_tpl: "/davenant/colossians/__CH__/", title_cn: "歌罗西书注释", title_en: "An Exposition of the Epistle of St. Paul to the Colossians", c0: "#3f5122", c1: "#556b2f"}
   - id: 1thessalonians
     name: "帖撒罗尼迦前书"
     en: "1 Thessalonians"

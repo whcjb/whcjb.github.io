@@ -1,0 +1,81 @@
+---
+layout: default
+---
+{%- comment -%}
+  达文南特《歌罗西书注释》书卷目录页。配色与 davenant-chapter.html 同源
+  （橄榄绿 #556b2f，选色依据见该文件注释）。每本书独立样式，不复用别家。
+{%- endcomment -%}
+
+<div class="container davenant-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="dv-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
+        {% if page.zh %}<a class="dv-lang" href="{{ site.baseurl }}/davenant/colossians/">中文版 &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <h1 class="dv-title">{{ page.book_name }}</h1>
+      <div class="dv-sub">John Davenant · 1572–1641 · Bishop of Salisbury</div>
+
+      <div class="dv-blurb">
+        <p>达文南特（John Davenant）是索尔兹伯里主教、1618–19 年多特会议的英国代表之一。
+        本书原为他在剑桥的拉丁文讲授稿，<em>Expositio epistolae D. Pauli ad Colossenses</em>，
+        1627 年于剑桥初版；历来被视为改革宗传统中歌罗西书最厚重的一部注释。</p>
+        <p>本站所据为 <strong>Josiah Allport 的英译本</strong>（London: Hamilton, Adams &amp; Co.,
+        1831，两卷），这也是英语改革宗引用达文南特时的标准本。底本取自
+        Internet Archive 的普林斯顿神学院藏本扫描件，经 OCR 与结构化处理。</p>
+        <p class="dv-caveat">底本为 1831 年铅印扫描件，其 OCR 文本层不含字体信息，
+        故原书用斜体标示的经文引语与拉丁词句<strong>无法还原为斜体</strong>，一律以平文呈现；
+        被注释的词句（原书斜体并以 <code>]</code> 收尾）可由结构复原，作
+        <span class="dv-lemma">如此样式</span>。译者 Allport 自己所加的注，
+        与达文南特正文一并列于章末脚注，末尾缀原书页码。</p>
+      </div>
+
+      <div class="dv-ch-grid">
+        {% for i in (1..page.chapters) %}
+        <a class="dv-ch" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ i }}/">
+          <span class="dv-ch-n">CHAP. {% case i %}{% when 1 %}I{% when 2 %}II{% when 3 %}III{% when 4 %}IV{% else %}{{ i }}{% endcase %}</span>
+          <span class="dv-ch-cn">歌罗西书 第 {{ i }} 章</span>
+        </a>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.davenant-wrap {
+  --dv-ink: #556b2f;
+  --dv-ink-dark: #3f5122;
+  --dv-rule: #d7ddc8;
+  --dv-paper: #fbfaf4;
+}
+.dv-chrome { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; }
+.dv-chrome a { color: var(--dv-ink); }
+.dv-lang { border: 1px solid var(--dv-rule); border-radius: 4px; padding: 4px 10px; }
+.dv-lang:hover { background: var(--dv-ink); color: var(--dv-paper) !important;
+  text-decoration: none !important; }
+.dv-title { font-family: Georgia, "Times New Roman", serif; font-size: 32px;
+  font-weight: bold; color: var(--dv-ink-dark); margin: 0 0 6px; }
+.dv-sub { font-size: 13px; letter-spacing: .06em; color: #8a8a7c;
+  padding-bottom: 12px; border-bottom: 2px solid var(--dv-ink); }
+.dv-blurb { font-family: Georgia, "Songti SC", STSong, serif; font-size: 15px;
+  line-height: 1.9; color: #3b3b34; margin: 22px 0 30px; }
+.dv-blurb p { margin: 0 0 12px; text-align: justify; }
+.dv-blurb .dv-caveat { font-size: 13.5px; color: #6a6a5c; background: #f4f6ec;
+  border-left: 3px solid var(--dv-rule); padding: 10px 14px; }
+.dv-lemma { font-weight: bold; font-style: italic; color: var(--dv-ink-dark); }
+.dv-ch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px; margin-bottom: 40px; }
+.dv-ch { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px;
+  background: var(--dv-paper); border: 1px solid var(--dv-rule); border-radius: 6px;
+  text-decoration: none !important; transition: background .15s, border-color .15s; }
+.dv-ch:hover { background: #f1f4e6; border-color: var(--dv-ink); }
+.dv-ch-n { font-family: Georgia, serif; font-size: 17px; font-weight: bold;
+  letter-spacing: .08em; color: var(--dv-ink-dark); }
+.dv-ch-cn { font-size: 13px; color: #7a7a6c; }
+</style>

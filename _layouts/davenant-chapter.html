@@ -1,0 +1,164 @@
+---
+layout: default
+---
+{%- comment -%}
+  达文南特《歌罗西书注释》章节页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩），共用会让改一处
+  连带动到别人。
+
+  配色取橄榄绿 #556b2f —— 与既有六色的 CIELAB ΔE 最小 29.0（最近的是
+  欧文绿 #1f5a4b）。同批算过的 #12525c(16.6) / #2f6b6b(12.2) / #3d5a3d(11.9)
+  都离欧文绿太近，弃用。深浅两端 #3f5122 / #556b2f，与首页资源卡一致按
+  135° 渐变。
+
+  本卷版式与其他各卷的不同之处（底本是 1831 年铅印扫描件，见
+  davenant_raw/colossians/DIAGNOSIS.md §3）：
+  - **没有红色斜体经文引语**。OCR 层不含任何字形信息，斜体不可恢复；
+    按内容猜斜体属于「拿内容猜字形」，不做。
+  - 被注释的词句（lemma）靠结构恢复（原书一律以 `]` 收尾），
+    渲染为 `.dv-lemma`，是本卷唯一的字形还原。
+  - 脚注符是每页重置的 `*` / `†` / `‡`，非全书连号；定义末尾缀原书页码。
+{%- endcomment -%}
+
+<div class="container davenant-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="dv-chrome cmp-nav" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+      </div>
+
+      <h1 class="dv-title">{{ page.title }}</h1>
+
+      <div class="dv-nav cmp-nav">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        章顶节号导航：胶囊由 JS 扫正文里的 .dv-anchor 生成
+        （锚点由 publish_davenant_en.py 按节组标题注入）。
+      {%- endcomment -%}
+      <div id="verse-nav" style="display:none;">
+        <div id="verse-nav-toggle" onclick="toggleDavenantVerseNav()">
+          <span id="verse-nav-label"></span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;"></div>
+      </div>
+
+      {% assign cc_self = "davenant-en" %}{% if page.zh %}{% assign cc_self = "davenant" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="dv-content" self_label="达文南特" %}
+        {{ content }}
+      {% include compare-commentary-foot.html %}
+
+      {% if page.date %}
+      <div class="dv-chrome" style="margin-top:32px; font-size:12px; color:#9a9a92; text-align:right;">
+        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="dv-nav cmp-nav" style="margin-top:44px; padding-top:16px; border-top:1px solid var(--dv-rule);">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.davenant-wrap {
+  --dv-ink: #556b2f;
+  --dv-ink-dark: #3f5122;
+  --dv-rule: #d7ddc8;
+  --dv-paper: #fbfaf4;
+}
+.dv-chrome, .dv-nav { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; gap: 10px; flex-wrap: wrap; }
+.dv-chrome a, .dv-nav a { color: var(--dv-ink); }
+.dv-chrome a:hover, .dv-nav a:hover { color: var(--dv-ink-dark); }
+.dv-lang { border: 1px solid var(--dv-rule); border-radius: 4px; padding: 4px 10px; }
+.dv-lang:hover { background: var(--dv-ink); color: var(--dv-paper) !important;
+  text-decoration: none !important; }
+.dv-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: bold; color: var(--dv-ink-dark); margin: 0 0 6px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--dv-ink); }
+.dv-nav { margin: 14px 0 26px; }
+
+/* ── 正文 ───────────────────────────────────────────────────────── */
+.dv-content { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 16.5px; line-height: 1.85; color: #2b2b26; }
+.dv-content h1 { font-size: 21px; font-weight: bold; text-align: center;
+  letter-spacing: .1em; color: var(--dv-ink-dark); margin: 10px 0 26px; }
+.dv-content h2 { font-size: 16px; font-weight: bold; color: var(--dv-ink);
+  letter-spacing: .04em; margin: 30px 0 12px; text-align: center; }
+.dv-content p { margin: 0 0 15px; text-align: justify; }
+.dv-content a { color: var(--dv-ink); }
+
+/* 被注释的词句：原书斜体 + `]`，本卷唯一的字形还原 */
+.dv-lemma { font-weight: bold; font-style: italic; color: var(--dv-ink-dark); }
+
+/* 经文块：浅橄榄底 + 左侧粗线，不用红色斜体（底本字形不可恢复） */
+.dv-scripture { background: #f4f6ec; border-left: 3px solid var(--dv-ink);
+  border-radius: 0 4px 4px 0; padding: 12px 16px 4px; margin: 18px 0 20px; }
+.dv-scripture p { margin: 0 0 10px; text-align: left; }
+.dv-scripture-ref { font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--dv-ink-dark); font-weight: bold; }
+
+/* 节号锚点：跳转时避开 fixed navbar */
+.dv-anchor { position: relative; top: -80px; display: block; height: 0; }
+
+/* ── 脚注 ───────────────────────────────────────────────────────── */
+.dv-content .footnotes { margin-top: 36px; padding-top: 14px;
+  border-top: 1px solid var(--dv-rule); font-size: 13.5px; color: #55554c; }
+.dv-content .footnotes ol { padding-left: 1.4em; }
+.dv-content .footnotes li { margin-bottom: 8px; }
+.dv-fn-page { color: #9a9a8c; font-size: 11.5px; }
+.dv-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+
+/* ── 章顶节号导航 ────────────────────────────────────────────────── */
+#verse-nav { margin-bottom: 24px; }
+#verse-nav-toggle { display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 8px 14px; background: #f1f4e6; border: 1px solid var(--dv-rule);
+  border-radius: 4px; color: var(--dv-ink-dark); font-size: 14px; cursor: pointer; }
+#verse-nav-toggle:hover { background: #e7ecd6; }
+#verse-nav-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+#verse-nav-pills a { display: inline-block; padding: 3px 9px; font-size: 13px;
+  border: 1px solid var(--dv-rule); border-radius: 3px; color: var(--dv-ink); }
+#verse-nav-pills a:hover { background: var(--dv-ink); color: var(--dv-paper) !important;
+  text-decoration: none !important; }
+</style>
+
+<script>
+function toggleDavenantVerseNav() {
+  var p = document.getElementById('verse-nav-pills');
+  var a = document.getElementById('verse-nav-arrow');
+  var open = p.style.display !== 'none';
+  p.style.display = open ? 'none' : 'flex';
+  a.innerHTML = open ? '&#9660;' : '&#9650;';
+}
+(function () {
+  var anchors = document.querySelectorAll('.dv-content .dv-anchor');
+  if (!anchors.length) return;
+  var nav = document.getElementById('verse-nav');
+  var pills = document.getElementById('verse-nav-pills');
+  var first = null, last = null;
+  anchors.forEach(function (a) {
+    var m = /^colossians-\d+-(\d+)$/.exec(a.id);
+    if (!m) return;
+    if (first === null) first = m[1];
+    last = m[1];
+    var link = document.createElement('a');
+    link.href = '#' + a.id;
+    link.textContent = m[1];
+    pills.appendChild(link);
+  });
+  if (first === null) return;
+  document.getElementById('verse-nav-label').textContent =
+    'Verses ' + first + '–' + last;
+  nav.style.display = '';
+})();
+</script>

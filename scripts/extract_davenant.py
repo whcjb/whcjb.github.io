@@ -217,7 +217,7 @@ def dehyph(a, b):
 def build_paragraphs(vol, lo, hi, fn_max, indent_min):
     """→ ([(kind, text)], footnotes, stats)  kind ∈ {para}"""
     paras, fns, stats = [], [], collections.Counter()
-    cur = ''
+    cur, cur_pages = '', set()          # 段落跨了哪几页——脚注配对要按页对齐
     for rec in load(vol):
         p = rec['page']
         if not (lo <= p <= hi):
@@ -243,16 +243,17 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             if not txt:
                 continue
             if l['x0'] - x0 > indent_min and cur:
-                paras.append(cur)
-                cur = txt
+                paras.append((cur, sorted(cur_pages)))
+                cur, cur_pages = txt, {p}
             elif cur:
                 cur = dehyph(cur, txt)
+                cur_pages.add(p)
             else:
-                cur = txt
+                cur, cur_pages = txt, {p}
         stats['pages'] += 1
         stats['lines'] += n0
     if cur:
-        paras.append(cur)
+        paras.append((cur, sorted(cur_pages)))
     return paras, fns, stats
 
 
@@ -327,26 +328,42 @@ def main():
         seen_chap, cur_chap, pend = False, None, None
         i = 0
         while i < len(paras):
-            para = paras[i]
+            para, ppages = paras[i]
             i += 1
+            # 段落的页码跨度：脚注按页配对要用（publish_davenant_en.py）
+            pg = (f'<!--p{ppages[0]}-->' if len(ppages) == 1
+                  else f'<!--p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
             # 前一条标记（章首或节组）声明了要吃经文 → 先做 KJV 对齐
             if pend is not None:
-                nums, look = pend, [para]
-                while len(look) < 4 and i < len(paras) and \
-                        not (CHAP_RE.match(paras[i]) or SECTION_RE.match(paras[i])):
-                    look.append(paras[i]); i += 1
-                cand = ' '.join(look)
-                scr, rest, r = split_scripture(cand, cur_chap, nums, kjv)
+                # 经文常被悬挂缩进切成好几段（歌 1:1-2 就是 5 段），
+                # 所以往后**按相似度贪心增长**，取相似度最高的那个长度。
+                # 曾把上限写死 4 段，第 5 段（含 `Father and the Lord Jesus
+                # Christ`）被排除，经文尾巴被切进正文（实测）。
+                nums = pend
+                pool = [para]
+                j = i
+                while len(pool) < 10 and j < len(paras) and \
+                        not (CHAP_RE.match(paras[j][0])
+                             or SECTION_RE.match(paras[j][0])):
+                    pool.append(paras[j][0]); j += 1
+                best = None
+                for k in range(1, len(pool) + 1):
+                    c = ' '.join(pool[:k])
+                    sc, rs, rr = split_scripture(c, cur_chap, nums, kjv)
+                    if best is None or rr > best[3] + 1e-9:
+                        best = (c, sc, rs, rr, k)
+                cand, scr, rest, r, take = best
+                i += take - 1
                 if r >= 0.55:
-                    out.append(f'[SCRIPTURE] {cur_chap}:{",".join(map(str, nums))}'
-                               f'|{r}| {scr}')
+                    out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
+                               f'{",".join(map(str, nums))}|{r}| {scr}')
                     total['scr'] += 1
                     total['scr_sim'] += r
                     if rest:
-                        out.append(f'[BODY] {rest}')
+                        out.append(f'[BODY] {pg}{rest}')
                 else:                     # 对不上就原样留正文，不硬切
                     total['scr_fail'] += 1
-                    out.append(f'[BODY] {cand}')
+                    out.append(f'[BODY] {pg}{cand}')
                 pend = None
                 continue
             m = CHAP_RE.match(para)
@@ -365,43 +382,43 @@ def main():
                 # 退回队列交给 SECTION 分支，不要当成章首的 1,2 节
                 if rest and SECTION_RE.match(rest):
                     pend = None
-                    paras.insert(i, rest)
+                    paras.insert(i, (rest, ppages))
                 else:
                     pend = [1, 2] if cur_chap else None
                     if rest:
-                        paras.insert(i, rest)
+                        paras.insert(i, (rest, ppages))
                 continue
             m = SECTION_RE.match(para)
             if m:
                 nums = parse_nums(m.group(1))
-                out.append(f'[SECTION] {m.group(0).strip()}')
+                out.append(f'[SECTION] {pg}{m.group(0).strip()}')
                 total['sec'] += 1
                 rest = clean(para[m.end():])
                 if rest:
                     scr, more, r = split_scripture(rest, cur_chap, nums, kjv)
                     if r >= 0.55:
-                        out.append(f'[SCRIPTURE] {cur_chap}:'
+                        out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
                                    f'{",".join(map(str, nums))}|{r}| {scr}')
                         total['scr'] += 1; total['scr_sim'] += r
                         if more:
-                            out.append(f'[BODY] {more}')
+                            out.append(f'[BODY] {pg}{more}')
                     else:
-                        pend = nums          # 经文在后续段落里
-                        out.append(f'[BODY] {rest}') if False else None
-                        i -= 0
-                        paras[i:i] = [rest]  # 退回，交给 pend 分支处理
+                        # 对不上说明经文在后续段落里：把本段退回队列，
+                        # 交给 pend 分支连着后面几段一起做 KJV 对齐
+                        pend = nums
+                        paras.insert(i, (rest, ppages))
                 else:
                     pend = nums
                 continue
             m = LEMMA_RE.match(para)
             if m and 0 < len(m.group(1).split()) <= 20:
-                out.append(f'[LEMMA] {m.group(1).strip()}')
+                out.append(f'[LEMMA] {pg}{m.group(1).strip()}')
                 total['lemma'] += 1
                 rest = clean(para[m.end():])
                 if rest:
                     out.append(f'[BODY] {rest}')
                 continue
-            out.append(f'[BODY] {para}')
+            out.append(f'[BODY] {pg}{para}')
 
         for p, fn in fns:
             x0 = page_body_x0(fn)
