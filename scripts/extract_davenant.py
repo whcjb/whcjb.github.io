@@ -45,17 +45,47 @@ RAW = ROOT / 'davenant_raw' / 'colossians'
 
 # 注释正文页范围（0-based 扫描页号，含两端）。DIAGNOSIS.md §2：
 # vol1 前 86 页是 Allport 的达文南特传；vol2 p320 起是另一部著作《论基督之死》。
-RANGES = {1: (86, 631), 2: (14, 318)}
+# ⚠️ vol2 尾页是 317：318 是《论基督之死》的半标题页（"A DISSERTATION /
+# ON THE / DEATH OF CHRIST"），写 318 会把它拼到 4 章末尾（实测 4.md 末段
+# 出现 "FINIS. A DISSERTATION DEATH OF CHRIST,"）。
+RANGES = {1: (86, 631), 2: (14, 317)}
 
+# 页眉：`Ver. 2.  EPISTLE TO THE COLOSSIANS.  35` / `214  AN EXPOSITION
+# OF ST. PAUL'S  Chap. iv.`
+# ⚠️ 不要去卡左边的 `Ver. N.`——OCR 把它读成 Vers / Verne / Ven / Ver. M.
+# 各种花样，写死了会漏（实测 419 个页眉漏掉 77 个，整行页眉被拼进正文中间）。
+# 页眉中间那句全大写的书名反而稳，且只在页眉出现（正文写的是 this Epistle），
+# 又只拿页首前几行来试，不会误伤正文。
 HEAD_RES = [
-    re.compile(r'^\s*[VY][ce][rn]?[.,]?\s*[\dixvl.,\s\'’]{0,12}\s*'
-               r'[EKR]?P[Ii1l]STLE\s+T[Oo0]\s+THE\s+C[Oo0][Ll]', re.I),
-    re.compile(r'^\s*\d*\s*[Aa][Nn]\s+EXP[Oo0][Ss5][IiL1l]T[IiL1l][Oo0][Nn]\s+[Oo0]F\s+ST',
+    re.compile(r'[EKR]?P[Ii1l!|][SB5][TI1l][Ll][EF]\s+T[Oo0]\s+TH[EFRK]\s+C[Oo0][Ll]',
+               re.I),
+    re.compile(r'[Aa][Nn]\s+EXP[Oo0][Ss5][IiL1l]T[IiL1l][Oo0][Nn]\s+[Oo0]F\s+ST',
                re.I),
 ]
 # 签名/页码等版面碎片：极短、或全大写卷次标记
 JUNK_RE = re.compile(r'^\s*(?:[A-Z]\s?\d?|\d{1,4}|VOL[.,]?\s*[IVX0-9]+\.?\s*[A-Z]?\s?\d?'
                      r'|[a-z]\s?\d)\s*$')
+# 页脚的书帖签名。JUNK_RE 认不全（`VOL. I. Mm` 的 Mm 是两个字母、
+# `Vel. 1. NR` 的 VOL 被读成 Vel），漏掉的会当正文拼进段落中间（实测 14 处）。
+# 两种形态，只对**页面末两行**试（有的页把 `VOL. I.` 和签名排成两行）：
+#   a) 卷次标记打头：`VOL. I. Zz` / `vol. 1. F` / `VOLL, 11, DAS` / `VOL. II, Q2?`
+#      —— OCR 把 VOL 读成 VOLL/VOL,/NOL，签名读成 pd/oc/rf/n1 各种，所以
+#      卷次标记之后一律放行到 5 个字符
+#   b) 光秃秃的签名：`B 2` / `F f 2` / `Zz` / `x 2` / `GN`
+# 正文末行都带标点、且不以 VOL 起首（`Cor. viii. 9.` / `tive details.` /
+# `Amen."`），不会命中。
+def is_foot(t):
+    t = t.strip()
+    if len(t) > 20:
+        return False
+    if re.match(r'^[VvNn][Oo0Ee][LlIi1|,.]{1,2}[.,]?(\s|$)', t):
+        return not re.search(r'[a-z]{3,}', t[3:])   # 卷次标记之后不许再有实词
+    return bool(re.match(r'^[A-Za-z\[\]|]{1,2}\s?[A-Za-z]?\s?\d?$', t))
+
+
+# 扫描斑点被读成孤立一行（`-` / `|` / `]` / `¢`）。它挡在页眉前面时，
+# 剥页眉的循环会以为已经剥完（实测 8 个页眉因此整行拼进正文）。
+SPECK_RE = re.compile(r'^\s*[^\w\s]{1,3}\s*$|^\s*\w\s*$')
 # 节号既有阿拉伯数字（`Verses 3, 4.`）也有罗马数字（`Vers. I.`，vol2 p223）
 SECTION_RE = re.compile(r'^\s*Vers?e?s?\.?\s*'
                         r'((?:\d+|[IVXLivxl]{1,6})(?:\s*[,&]\s*(?:\d+|[IVXLivxl]{1,6}))*)'
@@ -79,7 +109,12 @@ def parse_nums(s):
 # `CHAP. IV.—Vers. I.`：章标题与节号常挤在同一行，中间可能是破折号
 # （vol2 p223 实测；只允许 `.`/`,` 时这一章整个漏掉）。
 CHAP_RE = re.compile(r'^\s*CHAP[.,;]?\s*([IVX]{1,4})\s*[.,;：—–-]*\s*')
-LEMMA_RE = re.compile(r'^([^\]\n]{1,140}?)\s*\.?\s*\]\s*')
+# 被注释词句的收尾方括号，OCR 常把 `]` 读成 `|` 或 `)`（实测 47 处 lemma
+# 因此漏检，占全书 357 条的 13%）。放开这两种变体，用三道守卫挡假阳：
+#   · 前缀里不许有 `(`——`explains (as I have said) the cause` 这类插入语
+#   · 括号后必须是空格 + 大写/引号——`in ) good works` 这种排版斑点排除
+#   · 前缀长度 ≤140 字符、≤20 词（调用处）
+LEMMA_RE = re.compile(r'^([^\]\)\|\n]{1,140}?)\s*[.,]?\s*[\]\)\|]\s+(?=[A-Z“"(])')
 # 段首缩进阈值由 calibrate() 按卷算（两卷像素尺度不同），此处仅作兜底
 
 
@@ -134,6 +169,26 @@ def page_body_x0(lines):
     return c.most_common(1)[0][0]
 
 
+def para_starts(lines, x0, indent_min):
+    """→ 每行是否段首。基线取**最近几行续行**的中位数，不是整页众数。
+
+    扫描件是歪的：vol1 p130 实测 x0 从页顶 80 漂到页尾 112（+32px），
+    比缩进阈值 24 还大，整页众数一挡，页尾的续行全被判成段首——那一页
+    末四行被切成四个独立段落，连字符还留在行尾（`is not re-` / `vealed in
+    the word,`）。全书这样被切碎的段落 188 处。
+    局部基线跟着倾斜一起漂，判的是「相对左邻行凸出一个 em」，与整页倾斜无关。
+    """
+    recent = collections.deque(maxlen=5)
+    out = []
+    for l in lines:
+        base = statistics.median(recent) if len(recent) >= 3 else x0
+        start = l['x0'] - base > indent_min
+        out.append(start)
+        if not start:                     # 只有续行进基线，段首行本就凸出
+            recent.append(l['x0'])
+    return out
+
+
 FN_MARK = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+(?=[A-Z(“"\d])')
 
 
@@ -184,7 +239,33 @@ def split_page(lines, fn_max):
         best = i + 1
         break
     if best is None:
-        # 兜底：有些页注区上方**没有**额外空隙（vol1 p95/p99 实测，
+        # 兜底一：跨页的长注，续页顶上没有脚注符可认（Allport 的传记体长注
+        # 常连着三四页）。实测 29 页因此把注文拼进正文。没有脚注符时改用
+        # 更硬的几何门槛：上方空隙 ≥1.5 倍行距、注区行距 <0.88 倍、且注区
+        # 落在页面后 45%——单靠这三条同时成立，正文内部不会出现。
+        for i, g in enumerate(gaps):
+            if i < len(gaps) // 4:          # 与主规则同一条下限：注区最高到 31%
+                continue
+            if g < lead * 1.5:
+                continue
+            zone = L[i + 1:]
+            zg = [zone[k + 1]['y0'] - zone[k]['y0'] for k in range(len(zone) - 1)]
+            if len(zone) >= 2 and zg and statistics.median(zg) < lead * 0.88:
+                best = i + 1
+                break
+    if best is None:
+        # 兜底一·b：只有一两行的短注（`* Egregias rationes—conclusives !`）。
+        # 一行的注没有「区内行距」可比，只能靠上方那道空隙 + 字号：
+        # vol1 p130 实测空隙 121px（正文行距 54）、字号 38（谷底 40.5）。
+        for i in range(len(gaps) - 1, len(gaps) * 55 // 100 - 1, -1):
+            if gaps[i] < lead * 1.7:
+                continue
+            zone = L[i + 1:]
+            if len(zone) <= 2 and all(x['size'] < fn_max for x in zone):
+                best = i + 1
+            break
+    if best is None:
+        # 兜底二：有些页注区上方**没有**额外空隙（vol1 p95/p99 实测，
         # 该行上方空隙 50/47 vs 正文行距 53.5/53）。此时只认「脚注符起首
         # + 其后到页尾行距确实偏小」，位置限定在页面后 55% 以内。
         for i in range(len(L) * 45 // 100, len(L)):
@@ -224,13 +305,20 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             continue
         lines = sorted(rec['lines'], key=lambda r: r['y0'])
         n0 = len(lines)
-        for _ in range(2):                    # 剥页眉（页码有时单独一行在前）
+        for _ in range(3):                    # 剥页眉（页码/扫描斑点有时单独成行在前）
             if lines and any(r.search(lines[0]['text']) for r in HEAD_RES):
                 lines.pop(0)
                 stats['head'] += 1
                 continue
-            if lines and JUNK_RE.match(lines[0]['text']):
+            if lines and (JUNK_RE.match(lines[0]['text'])
+                          or SPECK_RE.match(lines[0]['text'])):
                 lines.pop(0)
+                continue
+            break
+        for _ in range(2):                    # 剥页脚签名
+            if lines and is_foot(lines[-1]['text']):
+                lines.pop()
+                stats['foot'] += 1
                 continue
             break
         body, fn = split_page(lines, fn_max)
@@ -238,11 +326,12 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             stats['fn_pages'] += 1
             fns.append((p, fn))
         x0 = page_body_x0(body)
-        for l in body:
+        starts = para_starts(body, x0, indent_min)
+        for l, is_start in zip(body, starts):
             txt = clean(l['text'])
             if not txt:
                 continue
-            if l['x0'] - x0 > indent_min and cur:
+            if is_start and cur:
                 paras.append((cur, sorted(cur_pages)))
                 cur, cur_pages = txt, {p}
             elif cur:
@@ -331,8 +420,11 @@ def main():
             para, ppages = paras[i]
             i += 1
             # 段落的页码跨度：脚注按页配对要用（publish_davenant_en.py）
-            pg = (f'<!--p{ppages[0]}-->' if len(ppages) == 1
-                  else f'<!--p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
+            # ⚠️ 必须带卷号。两卷的扫描页号区间重叠（vol1 86-631、
+            # vol2 14-317），发布脚本按页号配脚注，只写 pN 会让 3/4 章去抢
+            # 1/2 章的注（实测 144 条注落在共用桶里，6 条实际配串了卷）。
+            pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
+                  else f'<!--v{vol}p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
             # 前一条标记（章首或节组）声明了要吃经文 → 先做 KJV 对齐
             if pend is not None:
                 # 经文常被悬挂缩进切成好几段（歌 1:1-2 就是 5 段），
@@ -346,9 +438,18 @@ def main():
                         not (CHAP_RE.match(paras[j][0])
                              or SECTION_RE.match(paras[j][0])):
                     pool.append(paras[j][0]); j += 1
+                # ⚠️ 段间用 dehyph 接，不能 ' '.join。经文是悬挂缩进，
+                # 每一行都被判成段首，行末连字没走过 dehyph——直接拼就留下
+                # `spiri- tual` / `be- ginning` 这种断词（实测 19 个经文块）。
+                def _join(segs):
+                    out = ''
+                    for seg in segs:
+                        out = dehyph(out, seg) if out else seg
+                    return out
+
                 best = None
                 for k in range(1, len(pool) + 1):
-                    c = ' '.join(pool[:k])
+                    c = _join(pool[:k])
                     sc, rs, rr = split_scripture(c, cur_chap, nums, kjv)
                     if best is None or rr > best[3] + 1e-9:
                         best = (c, sc, rs, rr, k)
@@ -394,24 +495,18 @@ def main():
                 out.append(f'[SECTION] {pg}{m.group(0).strip()}')
                 total['sec'] += 1
                 rest = clean(para[m.end():])
+                # ⚠️ 这里**不能**就着本段单独切经文。经文本身常被悬挂缩进
+                # 拆成好几段，只拿第一段去对齐，相似度 0.60 也过了 0.55 的
+                # 门槛，经文就只剩头一行——歌 3:25「But he that doeth wrong,
+                # shall receive for the」到此为止，剩下三行掉进正文当独立段
+                # （实测 86 个经文块里 11 个这样被腰斩）。一律退回队列交给
+                # pend 分支，那里会按相似度贪心增长段数。
+                pend = nums
                 if rest:
-                    scr, more, r = split_scripture(rest, cur_chap, nums, kjv)
-                    if r >= 0.55:
-                        out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
-                                   f'{",".join(map(str, nums))}|{r}| {scr}')
-                        total['scr'] += 1; total['scr_sim'] += r
-                        if more:
-                            out.append(f'[BODY] {pg}{more}')
-                    else:
-                        # 对不上说明经文在后续段落里：把本段退回队列，
-                        # 交给 pend 分支连着后面几段一起做 KJV 对齐
-                        pend = nums
-                        paras.insert(i, (rest, ppages))
-                else:
-                    pend = nums
+                    paras.insert(i, (rest, ppages))
                 continue
             m = LEMMA_RE.match(para)
-            if m and 0 < len(m.group(1).split()) <= 20:
+            if m and 0 < len(m.group(1).split()) <= 20 and '(' not in m.group(1):
                 out.append(f'[LEMMA] {pg}{m.group(1).strip()}')
                 total['lemma'] += 1
                 rest = clean(para[m.end():])
@@ -423,17 +518,17 @@ def main():
         for p, fn in fns:
             x0 = page_body_x0(fn)
             cur = ''
-            for l in fn:
+            for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
                 t = clean(l['text'])
-                if l['x0'] - x0 > indent_min and cur:
-                    out.append(f'[FN] <!--p{p}--> {cur}')
+                if is_start and cur:
+                    out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
                     cur = t
                 elif cur:
                     cur = dehyph(cur, t)
                 else:
                     cur = t
             if cur:
-                out.append(f'[FN] <!--p{p}--> {cur}')
+                out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
 
     dst = RAW / ('davenant_colossians_structured.txt' if not a.pages
                  else 'sample_structured.txt')

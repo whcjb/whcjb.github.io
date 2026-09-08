@@ -98,6 +98,10 @@ layout: default
 .dv-content p { margin: 0 0 15px; text-align: justify; }
 .dv-content a { color: var(--dv-ink); }
 
+/* 段首编号：原书是普通段落起首的编号，不是悬挂列表。包成 span 只为
+   挡住 kramdown 的 ol/li 转换（不转会重排号），呈现上仍是段落一部分。 */
+.dv-enum { font-weight: bold; color: var(--dv-ink); }
+
 /* 被注释的词句：原书斜体 + `]`，本卷唯一的字形还原 */
 .dv-lemma { font-weight: bold; font-style: italic; color: var(--dv-ink-dark); }
 

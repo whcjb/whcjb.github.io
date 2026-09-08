@@ -23,7 +23,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
 sys.path.insert(0, str(ROOT / 'scripts'))
-from extract_davenant import HEAD_RES, JUNK_RE, RANGES, clean, dehyph, norm_map  # noqa
+from extract_davenant import (HEAD_RES, JUNK_RE, SPECK_RE, RANGES, clean,  # noqa
+                              dehyph, is_foot, norm_map)
 
 
 def words(t):
@@ -44,13 +45,19 @@ def expected():
             if not (lo <= int(n) <= hi):
                 continue
             lines = [l for l in body.split('\n') if l.strip()]
-            # 剥页眉（同 build_paragraphs：前两行）
-            for _ in range(2):
+            # 剥页眉 / 页脚签名——必须与 build_paragraphs 完全同步，
+            # 否则 Gate W 报的差全是版面碎片，真丢字反而被淹掉。
+            for _ in range(3):
                 if lines and any(r.search(lines[0]) for r in HEAD_RES):
                     lines.pop(0)
                     continue
-                if lines and JUNK_RE.match(lines[0]):
+                if lines and (JUNK_RE.match(lines[0]) or SPECK_RE.match(lines[0])):
                     lines.pop(0)
+                    continue
+                break
+            for _ in range(2):
+                if lines and is_foot(lines[-1]):
+                    lines.pop()
                     continue
                 break
             lines = [clean(l) for l in lines if not JUNK_RE.match(l)]
@@ -75,7 +82,8 @@ def main():
 
     kjv = json.loads((RAW / 'kjv_colossians.json').read_text(encoding='utf-8'))
     low = []
-    for m in re.finditer(r'^\[SCRIPTURE\] (\d+):([\d,]+)\|([\d.]+)\| (.*)$',
+    for m in re.finditer(r'^\[SCRIPTURE\] (?:<!--[^>]*-->)?(\d+):([\d,]+)'
+                         r'\|([\d.]+)\| (.*)$',
                          (RAW / 'davenant_colossians_structured.txt')
                          .read_text(encoding='utf-8'), re.M):
         ch, nums, r, txt = m.group(1), m.group(2), float(m.group(3)), m.group(4)

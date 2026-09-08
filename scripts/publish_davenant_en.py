@@ -30,6 +30,10 @@ OUT = ROOT / 'davenant' / 'colossians'
 BOOK_ID = 'colossians'
 BOOK_NAME = 'Davenant on Colossians'
 ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV'}
+# 扫描页号 → 书上印的页码（两卷各有固定偏移，抽样 vol1 p120→35 / p200→115 /
+# p422→337、vol2 p14→5 / p150→141 / p223→214 全对得上）。脚注标签给读者看的
+# 得是书上的页码，扫描序号对读者没意义。
+PRINTED = {1: -85, 2: -9}
 
 FN_MARK_START = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+')
 # 正文里的脚注引用：`Jerome,*` / `laudibus.+` / 孤立的 ` * `
@@ -44,19 +48,22 @@ def parse():
         if not m:
             continue
         tag, rest = m.group(1), m.group(2)
-        pm = re.match(r'<!--p(\d+)(?:-(\d+))?-->', rest)
+        # `<!--v1p93-->` / `<!--v1p93-94-->`：卷号 + 扫描页号。页号两卷重叠，
+        # 脚注按页配对必须连卷号一起当 key，否则 3/4 章会抢 1/2 章的注。
+        pm = re.match(r'<!--v(\d+)p(\d+)(?:-(\d+))?-->', rest)
         pages = []
         if pm:
-            a = int(pm.group(1))
-            b = int(pm.group(2)) if pm.group(2) else a
-            pages = list(range(a, b + 1))
+            v = int(pm.group(1))
+            a = int(pm.group(2))
+            b = int(pm.group(3)) if pm.group(3) else a
+            pages = [(v, n) for n in range(a, b + 1)]
             rest = rest[pm.end():]
         items.append({'tag': tag, 'text': rest, 'pages': pages})
     return items
 
 
 def collect_notes(items):
-    """→ {page: [note_text, …]}，多段的注合并为一条。"""
+    """→ {(vol, page): [note_text, …]}，多段的注合并为一条。"""
     notes, cur, cur_p = {}, None, None
     for it in items:
         if it['tag'] != 'FN':
@@ -78,6 +85,25 @@ def md_escape(t):
     return t.replace('*', '\\*')
 
 
+ROMAN_N = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
+           'viii': 8, 'ix': 9, 'x': 10, 'xi': 11, 'xii': 12, 'xiii': 13,
+           'xiv': 14, 'xv': 15, 'xvi': 16, 'xvii': 17, 'xviii': 18, 'xix': 19,
+           'xx': 20, 'xxi': 21, 'xxii': 22, 'xxiii': 23, 'xxiv': 24,
+           'xxv': 25, 'xxvi': 26, 'xxvii': 27, 'xxviii': 28, 'xxix': 29}
+
+
+def enum_lead(t):
+    """段首编号包成 span，防止 kramdown 变成有序列表。
+
+    达文南特论证里大量段落以 `1.` / `2.` 起首（`1. The congratulatory
+    proposition; …`），原书排的是**普通段落**，不是悬挂列表。不处理的话
+    kramdown 生成 ol/li（实测正文里 453 个 ol、989 个 li），既改了版式，
+    还会重排号——单独以 `3.` 起首的段落会被渲染成 `1.`。
+    """
+    return re.sub(r'^(\d{1,3})\.\s+(?=[A-Za-z(“"\'])',
+                  r'<span class="dv-enum">\1.</span> ', t)
+
+
 def verse_nums(t):
     """经文块里的节号转成 HTML 粗体。
 
@@ -95,6 +121,7 @@ def main():
     notes = collect_notes(items)
     used = {p: 0 for p in notes}
     fn_seq = 0
+    seen_anchors = {}
     chapters, cur = [], None
 
     for it in items:
@@ -105,7 +132,7 @@ def main():
         if it['tag'] == 'H1':
             m = re.search(r'CHAP\.\s*([IVX]+)', it['text'])
             n = {v: k for k, v in ROMAN.items()}.get(m.group(1)) if m else None
-            cur = {'n': n, 'blocks': [], 'fns': []}
+            cur = {'n': n, 'blocks': [], 'fns': [], 'last': {}}
             chapters.append(cur)
             continue
         if cur is None:
@@ -127,9 +154,21 @@ def main():
             txt = REF_RE.sub(sub, txt)
 
         if it['tag'] == 'SECTION':
-            nums = re.findall(r'\d+|[IVXLivxl]+', txt)
+            # ⚠️ 节号要从 `Verses` 之后取。直接 findall(r'\d+|[IVXLivxl]+')
+            # 会先吃到 "Verses" 的首字母 V（它也是合法罗马数字），
+            # 结果 88 个锚点 id 全变成 colossians-N-V（实测）。
+            after = re.sub(r'^\s*Vers?e?s?\.?\s*', '', txt)
+            nums = re.findall(r'\d+|[IVXLivxl]+', after)
+            if nums and not nums[0].isdigit():
+                nums[0] = str(ROMAN_N.get(nums[0].lower(), nums[0]))
             anchor = f'colossians-{cur["n"]}-{nums[0]}' if nums and cur['n'] else ''
             if anchor:
+                # 同一节被分两段释经时会重号（实测 88 个锚点里 2 处重复）。
+                # id 重复既是非法 HTML，也会让跳转落到第一处。照贺智的做法
+                # 缀 -2/-3。
+                seen_anchors[anchor] = seen_anchors.get(anchor, 0) + 1
+                if seen_anchors[anchor] > 1:
+                    anchor = f'{anchor}-{seen_anchors[anchor]}'
                 cur['blocks'].append(
                     f'<div class="dv-anchor" id="{anchor}"></div>')
             cur['blocks'].append(f'## {txt}')
@@ -151,12 +190,33 @@ def main():
                 cur['blocks'][-1] = (f'<span class="dv-lemma">{prev[1]}.]</span> '
                                      + md_escape(txt))
             else:
-                cur['blocks'].append(md_escape(txt))
+                cur['blocks'].append(enum_lead(md_escape(txt)))
+        if it['tag'] in ('BODY', 'LEMMA'):
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
 
     # 收尾：孤立的 LEMMA（后面没跟正文）
     for ch in chapters:
         ch['blocks'] = [(f'<span class="dv-lemma">{b[1]}.]</span>'
                          if isinstance(b, tuple) else b) for b in ch['blocks']]
+
+    # 收尾：没配上行内引用的注。原来这些注**整条丢掉**（kramdown 只渲染被
+    # 引用到的定义），实测 207 条注只出了 174 条。丢掉的多半是正文里那个符号
+    # 被 OCR 吃了或粘进了词里（`Thomasf`）。改成挂在该页最后一段的段尾：
+    # 位置退到「本页」这个粒度，比整条丢掉诚实。
+    for ch in chapters:
+        for (v, pg), q in sorted(notes.items()):
+            k = used.get((v, pg), 0)
+            if k >= len(q) or (v, pg) not in ch['last']:
+                continue
+            idx = ch['last'][(v, pg)]
+            if not isinstance(ch['blocks'][idx], str):
+                continue
+            for text in q[k:]:
+                fn_seq += 1
+                ch['fns'].append((fn_seq, text, (v, pg)))
+                ch['blocks'][idx] += f'[^dv{fn_seq}]'
+                used[(v, pg)] = used.get((v, pg), 0) + 1
 
     OUT.mkdir(parents=True, exist_ok=True)
     import subprocess
@@ -179,9 +239,10 @@ def main():
         body += [b for blk in ch['blocks'] for b in (blk, '')]
         if ch['fns']:
             body += ['', '---', '']
-            for seq, text, p in ch['fns']:
+            for seq, text, (v, pg) in ch['fns']:
                 body.append(f'[^dv{seq}]: {md_escape(text)}  <span '
-                            f'class="dv-fn-page">p.{p}</span>')
+                            f'class="dv-fn-page">Vol. {ROMAN[v]}. p. '
+                            f'{pg + PRINTED[v]}</span>')
                 body.append('')
         (OUT / f'{n}.md').write_text('\n'.join(fm) + '\n\n' + '\n'.join(body) + '\n',
                                      encoding='utf-8')
