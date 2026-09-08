@@ -50,3 +50,7 @@ manton_raw/james/zh_translate_issues.log
 # OCR 判读运行日志与明细（可重跑，不入库）
 logs/adj_*.log
 logs/adjudicate_*.md
+
+# 达文南特扫描件底本（39M + 37M，可从 archive.org 重新下载，不入库）
+davenant_raw/colossians/*.pdf
+davenant_raw/colossians/diag/
