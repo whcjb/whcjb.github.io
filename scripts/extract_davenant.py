@@ -40,6 +40,9 @@ import statistics
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import davenant_witness as W                       # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
 
@@ -81,6 +84,96 @@ def is_foot(t):
     if re.match(r'^[VvNn][Oo0Ee][LlIi1|,.]{1,2}[.,]?(\s|$)', t):
         return not re.search(r'[a-z]{3,}', t[3:])   # 卷次标记之后不许再有实词
     return bool(re.match(r'^[A-Za-z\[\]|]{1,2}\s?[A-Za-z]?\s?\d?$', t))
+
+
+# ── 段首结构标签 ────────────────────────────────────────────────────────
+# 论文与注释里成对出现的 `OBJECTION 8.` / `REPLY 8.` / `ARGUMENT 4.` /
+# `THESIS 4.` 原书排小型大写，OCR 认出二十几种写法：OsjEcTioN、Ossection、
+# Oxssection、Onj;EcTION、Opsecrion、Repty、Repry、Rerrv、RreprrLv、
+# AncuMENT、Arcument、Tuesis…… 这些是全书最显眼的错字，它们等同于小标题。
+#
+# 归一按**相似度 + 上下文**：必须落在段首、后面紧跟一个数字加句读
+# （`OsjEcTioN 8.`），且与词表中某项的相似度 ≥0.58。上下文这一条是关键守卫，
+# 没有它 `Observe,`（正文里 10 处）这类词也会被拖进来。
+#
+# ⚠️ 词表里**不放 TESTIMONY**：原书自己写的就是缩写 `Test. 1.`，
+# 放进去会把 17 处正确的缩写改成 TESTIMONY。
+LABELS = ('OBJECTION', 'REPLY', 'ARGUMENT', 'THESIS')
+# 原书自己就用的缩写，一律不动（都核过扫描原页）：`Test. 1.`（Testimony，
+# 17 处）、`Argum. 4.`（罗马正体，不是小型大写，vol1 p367 核过）、
+# `Cap. 10, &c.` 等。不列进来的话 TEST→THESIS、ARGUM→ARGUMENT 会全改错。
+LABEL_KEEP = {'TEST', 'ARGUM', 'CAP', 'CHAP', 'PART', 'VER', 'VERS', 'SECT',
+              'OBS', 'NOTE', 'ART', 'LIB', 'QU', 'QUEST'}
+# 相似度够不着、但按上下文能确认的几条（第三章是 OBJECTION n / REPLY n
+# 严格交替，这三条都紧跟在对应的 OBJECTION 之后）
+# `OSNJRCRIN` 与 OBJECTION 的相似度只有 0.22，任何阈值都够不着，按上下文
+# 记名单：它排在 REPLY 16 之后、REPLY 17 之前，正文写的是「The last
+# objection is derived from…」。
+LABEL_ALIAS = {'REERVY': 'REPLY', 'RREPRV': 'REPLY', 'RERRV': 'REPLY',
+               'OSNJRCRIN': 'OBJECTION'}
+LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z;,.'’]{2,13})\.?(\s+\d{1,2}\s*[.,])")
+
+
+def fix_label(t):
+    """→ (文本, 改了什么)。段首结构标签归一到原书的小型大写形态。"""
+    m = LABEL_RE.match(t)
+    if not m:
+        return t, None
+    key = re.sub(r'[^A-Za-z]', '', m.group(1)).upper()
+    if not key or key in LABEL_KEEP:
+        return t, None
+    best = LABEL_ALIAS.get(key)
+    if best is None:
+        best = max(LABELS,
+                   key=lambda L: difflib.SequenceMatcher(None, key, L).ratio())
+        r = difflib.SequenceMatcher(None, key, best).ratio()
+        # 相似度够不着时，再给一条「首字母相同 + 长度相近 + 本身不是英文词」
+        # 的通道：`Osnjrcri0N 17.` 这种烂到 0.44 的，靠这三条仍能认回 OBJECTION。
+        # 「不是英文词」是关键守卫——正文里 `Observe, 3.` 与 OBJECTION 的
+        # 相似度也有 0.5，没有这条会被一起改掉。
+        if r < 0.58 and not (r >= 0.45 and key[:1] == best[:1]
+                             and abs(len(key) - len(best)) <= 3
+                             and key.lower() not in DICT_WORDS):
+            return t, None
+    if m.group(1) == best:
+        return t, None
+    # key == best 也要改：第二证人常把 `OsjEcTioN` 校成 `Objection`，
+    # 拼写对了但大小写不是原书的小型大写，同一章里会一半 OBJECTION、
+    # 一半 Objection。一律归到全大写。
+    return best + m.group(2) + t[m.end():], (m.group(1), best)
+
+
+# ── 页脚书帖签名 ────────────────────────────────────────────────────────
+# 每 8 页一条 `VOL. I. B` / `VOL. II. 2 N`，OCR 读得千奇百怪：`WEE. 17. Ge`、
+# `Mem. 11. Z`、`V Oils, hls 2N`、`HE» 11. c`、`Vigili lus P`、`WOH Vrs 2L`。
+# 按字形写规则追不上（is_foot 与 FOOT_EXTRA_RE 加起来仍漏 7 条，混在正文里
+# 把句子劈成两半——`the fountain itself WEE. 17. Ge lies hid in Christ`）。
+#
+# 改按**版面比例**认：签名行「字少、却横跨很宽」——`VOL. II.` 顶在左边、
+# 签名字母排在中间，中间是一大片空白。实测每字符宽度：
+#     签名行   47–161 px/字（101 条全在 45 以上）
+#     正常末行 16–37 px/字（`* Vide page 22.` 16、`THE END.` 37）
+# 45 这道坎两边留着一倍余量。再加两条守卫挡真正的正文：
+#   · 不含 ≥7 个字母的词（`cal England. :` 这样的正文末行会被挡掉）
+#   · 不含任何系统词典里的实词（≥4 字母）
+DICT_WORDS = set()
+_dw = Path('/usr/share/dict/words')
+if _dw.exists():
+    DICT_WORDS = {w.strip().lower() for w in _dw.read_text(errors='ignore').split()
+                  if len(w.strip()) >= 4}
+
+
+def is_signature(l):
+    """→ 该行是否页脚书帖签名。只对**每页最后一行**试。"""
+    t = l['text'].strip()
+    if not t or len(t) > 26:
+        return False
+    if (l['x1'] - l['x0']) / len(t) < 45:
+        return False
+    toks = re.findall(r'[A-Za-z]+', t)
+    if any(len(w) >= 7 for w in toks):
+        return False
+    return not any(w.lower() in DICT_WORDS for w in toks if len(w) >= 4)
 
 
 # 扫描斑点被读成孤立一行（`-` / `|` / `]` / `¢`）。它挡在页眉前面时，
@@ -283,8 +376,21 @@ def split_page(lines, fn_max):
     return body, fns
 
 
+# 斜体的 `l` 被 tesseract 读成 `/`（`on/y` / `himse/f` / `Last/y` / `A/though`）。
+# 这是本书 italic 字体上的系统性误读，两卷共 53 处。敢一律改回 `l` 的依据：
+# `/` 在本书里**从不合法地出现在词中间**——全部 53 处逐条看过，替换后
+# 42 条直接过系统词典，验不过的 8 条也都是对的，只是词典没收
+# （fulfil / neglecting / self-existence / tehillim「诗篇」的希伯来音译…），
+# 唯一一条 `wappni/a` 是被读花的希腊词，改不改都是乱码。
+# ⚠️ 只管「后面跟小写」的：`of the/Deputies` 那处是漏了空格，不是 `l`，不动。
+# 行末那一种要单列：跨页断词时行尾是 `A/-`（`Al-` + 下页 `though`），
+# `/` 后面跟的是连字符不是小写字母，只写前一条会漏掉（实测 p496 的 `A/though`）。
+OCR_SLASH_L = re.compile(r'(?<=[A-Za-z])/(?=[a-z]|-\s*$)')
+
+
 def clean(t):
-    """行内噪声：左边距的孤立标点（扫描斑点被读成 `.` / `-`）。"""
+    """行内噪声：左边距的孤立标点（扫描斑点被读成 `.` / `-`），以及 `/`→`l`。"""
+    t = OCR_SLASH_L.sub('l', t)
     return re.sub(r'^\s*[.\-—·,]\s+(?=[a-zA-Z])', '', t).strip()
 
 
@@ -316,7 +422,7 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
                 continue
             break
         for _ in range(2):                    # 剥页脚签名
-            if lines and is_foot(lines[-1]['text']):
+            if lines and (is_foot(lines[-1]['text']) or is_signature(lines[-1])):
                 lines.pop()
                 stats['foot'] += 1
                 continue
@@ -328,7 +434,11 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         x0 = page_body_x0(body)
         starts = para_starts(body, x0, indent_min)
         for l, is_start in zip(body, starts):
-            txt = clean(l['text'])
+            # 第二证人：拿 PDF 自带的 IA OCR 层校我们这一遍（见
+            # scripts/davenant_witness.py）。两遍都是 tesseract，但版本、
+            # 预处理、切页都不同，错处基本不重叠。只在「我方非词、对方是词、
+            # 形近且不变短」时采信，孤立的 `|` `/` 另按斑点规则处理。
+            txt = clean(W.fix_line(vol, p, l['text'])[0])
             if not txt:
                 continue
             if is_start and cur:
@@ -511,15 +621,15 @@ def main():
                 total['lemma'] += 1
                 rest = clean(para[m.end():])
                 if rest:
-                    out.append(f'[BODY] {rest}')
+                    out.append(f'[BODY] {fix_label(rest)[0]}')
                 continue
-            out.append(f'[BODY] {pg}{para}')
+            out.append(f'[BODY] {pg}{fix_label(para)[0]}')
 
         for p, fn in fns:
             x0 = page_body_x0(fn)
             cur = ''
             for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
-                t = clean(l['text'])
+                t = clean(W.fix_line(vol, p, l['text'])[0])
                 if is_start and cur:
                     out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
                     cur = t

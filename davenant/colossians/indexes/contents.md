@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:54
+date: 2026-09-09 17:53
 subtitle: "on the extent of the death of Christ"
 prev_url: "/davenant/colossians/indexes/questions/"
 prev_label: "Index of Questions"

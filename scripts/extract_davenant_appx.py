@@ -45,6 +45,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import extract_davenant as E          # noqa: E402  几何判据整套复用
+import davenant_witness as W          # noqa: E402  第二证人（IA OCR 层）
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
@@ -336,7 +337,7 @@ def run_piece(pc, pages, out, stats):
         if cur:
             pg = (f'<!--v{VOL}p{min(cur_pages)}-->' if len(cur_pages) == 1
                   else f'<!--v{VOL}p{min(cur_pages)}-{max(cur_pages)}-->')
-            out.append(f'[BODY] {pg}{cur}')
+            out.append(f'[BODY] {pg}{E.fix_label(cur)[0]}')
             stats['para'] += 1
         cur, cur_pages = '', set()
 
@@ -349,6 +350,7 @@ def run_piece(pc, pages, out, stats):
         for _ in range(2):
             t_last = lines[-1]['text'].strip()
             if lines and (E.is_foot(t_last) or FOOT_EXTRA_RE.match(t_last)
+                          or E.is_signature(lines[-1])
                           or (len(t_last) <= 18 and SIGNATURE_RE.match(t_last))):
                 lines.pop(); stats['foot'] += 1
                 continue
@@ -362,7 +364,7 @@ def run_piece(pc, pages, out, stats):
         indent = page_indent(body)
         roles = shape(body)
         for l, is_start, role in zip(body, para_starts(body, indent), roles):
-            t = E.clean(l['text'])
+            t = E.clean(W.fix_line(VOL, p, l['text'])[0])
             if not t:
                 continue
             if role in ('verse', 'cite') and not pend_title:
@@ -417,7 +419,7 @@ def run_piece(pc, pages, out, stats):
         indent = page_indent(fn)
         cur_fn = ''
         for l, is_start in zip(fn, para_starts(fn, indent)):
-            t = E.clean(l['text'])
+            t = E.clean(W.fix_line(VOL, p, l['text'])[0])
             if not t:
                 continue
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
