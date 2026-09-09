@@ -42,6 +42,57 @@ layout: default
         {% endfor %}
       </div>
 
+      {%- comment -%}
+        附卷。1831 年英译本卷二里，歌罗西书注释正文只占到书页 308，其后还有
+        《论基督之死》（书页 313–558）、《论法国教会之争》（561–569）与六种
+        索引。这几块此前一直没上线，2026-09 补齐。
+
+        清单走 _data 而不是写死在这里：两份 yml 由 publish_davenant_appx.py /
+        publish_davenant_index.py 各自生成，别的 davenant 书卷没有对应条目时
+        整段自然不渲染。也不放进 index.html 的 front matter——那个文件由
+        publish_davenant_en.py 写，两个脚本抢同一份 front matter，谁后跑谁把
+        对方的抹掉。
+      {%- endcomment -%}
+      {% assign appx = site.data.davenant_appendix[page.book_id] %}
+      {% assign idxs = site.data.davenant_indexes[page.book_id] %}
+      {% if appx or idxs %}
+      <div class="dv-appx">
+        <h2 class="dv-appx-head">附卷 <span>Appendix</span></h2>
+        <p class="dv-appx-intro">以下几篇原刊于英译本第二卷歌罗西书注释正文之后，
+          与注释同属一书，主题各自独立。</p>
+
+        {% for grp in appx %}
+        <div class="dv-appx-grp">
+          <h3>{{ grp.cn }} <span>{{ grp.title }}</span></h3>
+          <p class="dv-appx-note">{{ grp.note }}</p>
+          <div class="dv-appx-list">
+            {% for it in grp.items %}
+            <a href="{{ site.baseurl }}{{ it.url }}">
+              <span class="dv-appx-cn">{{ it.cn }}</span>
+              <span class="dv-appx-en">{{ it.label }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+
+        {% for grp in idxs %}
+        <div class="dv-appx-grp">
+          <h3>{{ grp.cn }} <span>{{ grp.title }}</span></h3>
+          <p class="dv-appx-note">{{ grp.note }}</p>
+          <div class="dv-appx-list">
+            {% for it in grp.items %}
+            <a href="{{ site.baseurl }}{{ it.url }}">
+              <span class="dv-appx-cn">{{ it.cn }}</span>
+              <span class="dv-appx-en">{{ it.label }}</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
     </div>
   </div>
 </div>
@@ -78,4 +129,31 @@ layout: default
 .dv-ch-n { font-family: Georgia, serif; font-size: 17px; font-weight: bold;
   letter-spacing: .08em; color: var(--dv-ink-dark); }
 .dv-ch-cn { font-size: 13px; color: #7a7a6c; }
+
+/* ── 附卷 ───────────────────────────────────────────────────────── */
+.dv-appx { margin: 6px 0 48px; }
+.dv-appx-head { font-family: Georgia, serif; font-size: 20px; font-weight: bold;
+  color: var(--dv-ink-dark); margin: 0 0 8px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--dv-ink); }
+.dv-appx-head span { font-size: 12px; font-weight: normal; letter-spacing: .16em;
+  text-transform: uppercase; color: #9a9a8c; margin-left: 8px; }
+.dv-appx-intro { font-family: Georgia, "Songti SC", STSong, serif; font-size: 14px;
+  line-height: 1.85; color: #6a6a5c; margin: 0 0 24px; }
+.dv-appx-grp { margin-bottom: 26px; }
+.dv-appx-grp h3 { font-family: Georgia, "Songti SC", STSong, serif; font-size: 16px;
+  font-weight: bold; color: var(--dv-ink-dark); margin: 0 0 5px; }
+.dv-appx-grp h3 span { font-size: 12.5px; font-weight: normal; font-style: italic;
+  color: #8a8a7c; margin-left: 8px; }
+.dv-appx-note { font-family: Georgia, "Songti SC", STSong, serif; font-size: 13px;
+  line-height: 1.8; color: #7a7a6c; margin: 0 0 12px; }
+.dv-appx-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; }
+.dv-appx-list a { display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 13px; background: var(--dv-paper); border: 1px solid var(--dv-rule);
+  border-radius: 5px; text-decoration: none !important;
+  transition: background .15s, border-color .15s; }
+.dv-appx-list a:hover { background: #f1f4e6; border-color: var(--dv-ink); }
+.dv-appx-cn { font-size: 13.5px; color: #3b3b34; }
+.dv-appx-en { font-family: Georgia, serif; font-size: 11.5px; letter-spacing: .04em;
+  color: #8a8a7c; }
 </style>

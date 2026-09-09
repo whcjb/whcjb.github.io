@@ -1,0 +1,139 @@
+---
+layout: default
+---
+{%- comment -%}
+  达文南特卷二后半的附卷页：《论基督之死》七章 + 致读者、论法国教会之争、
+  以及原书的六种索引。
+
+  ⚠️ 不复用 davenant-chapter.html。那个 layout 里有两样东西只对注释正文成立：
+  章顶的节号胶囊导航（扫 .dv-anchor 里的 colossians-N-M）与跨注释家对读条
+  （compare-commentary，按歌罗西书某章某节取别家）。附卷不是逐节注释，
+  没有节号可挂，硬套过去只会挂出一条空导航和一条对不上的对读条。
+
+  配色 / 字体 / 脚注样式与 davenant-chapter.html 同源（橄榄绿 #556b2f，
+  选色依据见该文件注释）。两份各自成套，改一处不牵连另一处。
+
+  front matter:
+    up_url / up_label      顶部回链（一律回书卷目录页）
+    prev_url / prev_label  上一篇（可缺）
+    next_url / next_label  下一篇（可缺）
+    kicker                 标题上方的小字（如「论基督之死」）
+    subtitle               标题下方的原书副题
+    dense                  索引页用：改窄行距 + 等宽数字，见 .dv-dense
+{%- endcomment -%}
+
+<div class="container davenant-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="dv-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}{{ page.up_url }}">&larr; {{ page.up_label }}</a>
+        <span></span>
+      </div>
+
+      {% if page.kicker %}<div class="dv-kicker">{{ page.kicker }}</div>{% endif %}
+      <h1 class="dv-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<div class="dv-subtitle">{{ page.subtitle }}</div>{% endif %}
+
+      <div class="dv-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="dv-content{% if page.dense %} dv-dense{% endif %}">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="dv-chrome" style="margin-top:32px; font-size:12px; color:#9a9a92; text-align:right;">
+        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="dv-nav" style="margin-top:44px; padding-top:16px; border-top:1px solid var(--dv-rule);">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.davenant-wrap {
+  --dv-ink: #556b2f;
+  --dv-ink-dark: #3f5122;
+  --dv-rule: #d7ddc8;
+  --dv-paper: #fbfaf4;
+}
+.dv-chrome, .dv-nav { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; gap: 10px; flex-wrap: wrap; }
+.dv-chrome a, .dv-nav a { color: var(--dv-ink); }
+.dv-chrome a:hover, .dv-nav a:hover { color: var(--dv-ink-dark); }
+.dv-kicker { font-family: Georgia, serif; font-size: 12px; letter-spacing: .16em;
+  text-transform: uppercase; color: #8a8a7c; margin-bottom: 6px; }
+.dv-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: bold; color: var(--dv-ink-dark); margin: 0 0 6px; }
+.dv-subtitle { font-family: Georgia, serif; font-size: 14.5px; color: #6a6a5c;
+  line-height: 1.65; padding-bottom: 12px; border-bottom: 2px solid var(--dv-ink); }
+.dv-title:last-child, .dv-title + .dv-nav { border-bottom: 0; }
+.dv-nav { margin: 14px 0 26px; }
+
+/* ── 正文 ───────────────────────────────────────────────────────── */
+.dv-content { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 16.5px; line-height: 1.85; color: #2b2b26; }
+.dv-content h2 { font-size: 16px; font-weight: bold; color: var(--dv-ink);
+  letter-spacing: .04em; margin: 30px 0 12px; text-align: center; }
+.dv-content p { margin: 0 0 15px; text-align: justify; }
+.dv-content a { color: var(--dv-ink); }
+
+/* 超长页的渲染内存：与 davenant-chapter.html 同因同治。论文单章最长
+   （第七章书页 512–558）虽不及注释 ch1，仍是几万字一页，屏外段落跳过
+   排版与绘制。contain-intrinsic-size 用 `auto <长度>`，来回滚动不跳。 */
+.dv-content > p, .dv-content > .footnotes {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+}
+
+/* 段首编号：原书是普通段落起首的编号，不是悬挂列表。包成 span 只为挡住
+   kramdown 的 ol/li 转换（不转会重排号）。 */
+.dv-enum { font-weight: bold; color: var(--dv-ink); }
+
+{%- comment -%}
+  原书把 Prosper 等人的韵文另起短行排，本站**不另设引诗样式**：底本 OCR
+  层没有字形信息，判「哪几段是诗」只能看内容（行短、是拉丁文），按
+  principles §0.3 属于拿内容猜版式。韵文照常按段落出，每行一段。
+{%- endcomment -%}
+/* 卷末的 END OF THE DISSERTATION. / FINIS. */
+.dv-end { text-align: center; letter-spacing: .18em; font-size: 12.5px;
+  color: #8a8a7c; margin: 34px 0 8px; }
+
+/* ── 索引页 ─────────────────────────────────────────────────────── */
+/* 原书索引是双栏密排，页码指向 1831 年印本。网页改单栏悬挂缩进：分栏是
+   纸面排版的产物，照搬到窄屏只会碎掉；条目与页码的对应关系才是内容。 */
+.dv-dense { font-size: 15px; line-height: 1.6; }
+.dv-dense p { margin: 0 0 3px; text-align: left;
+  font-variant-numeric: tabular-nums; }
+.dv-dense .dv-idx, .dv-dense .dv-idx-2 { padding-left: 1.7em; text-indent: -1.7em; }
+.dv-dense .dv-idx-2 { margin-left: 1.7em; }        /* 子条目再缩一级 */
+.dv-dense .dv-idx-letter { margin: 22px 0 8px; font-weight: bold;
+  font-size: 17px; color: var(--dv-ink-dark); letter-spacing: .12em;
+  border-bottom: 1px solid var(--dv-rule); }
+.dv-dense .dv-idx-caption { font-size: 12px; letter-spacing: .08em;
+  text-transform: uppercase; color: #9a9a8c; margin: 14px 0 6px; }
+.dv-dense .dv-idx-note { font-style: italic; color: #6a6a5c; margin: 0 0 14px; }
+.dv-dense .dv-idx-lead { font-size: 13px; color: #6a6a5c; background: #f4f6ec;
+  border-left: 3px solid var(--dv-rule); padding: 9px 13px; margin: 0 0 20px; }
+.dv-dense h2 { text-align: left; margin: 26px 0 10px; }
+/* 传略索引原书是个小表：姓名 … │ 卷一页码 ┃ 卷二页码。竖线右边那一栏
+   单独排到行尾，不然「435 到底是卷一还是卷二」就丢了。 */
+.dv-idx-b { float: right; margin-left: 12px; color: var(--dv-ink-dark); }
+
+/* ── 脚注 ───────────────────────────────────────────────────────── */
+.dv-content .footnotes { margin-top: 36px; padding-top: 14px;
+  border-top: 1px solid var(--dv-rule); font-size: 13.5px; color: #55554c; }
+.dv-content .footnotes ol { padding-left: 1.4em; }
+.dv-content .footnotes li { margin-bottom: 8px; }
+.dv-fn-page { color: #9a9a8c; font-size: 11.5px; }
+.dv-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+</style>
