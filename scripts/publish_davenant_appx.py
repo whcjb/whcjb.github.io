@@ -152,7 +152,9 @@ def build_units(items):
             cur['sub'] = it['text'].rstrip('*+ ')
             continue
         cur['pages'].update(it['pages'])
-        if it['tag'] == 'H3':
+        if it['tag'] in ('VERSE', 'CITE'):
+            cur['blocks'].append((it['tag'], it['text']))
+        elif it['tag'] == 'H3':
             cur['blocks'].append(('H3', it['text']))
         elif it['tag'] == 'END':
             cur['blocks'].append(('END', it['text']))
@@ -206,8 +208,29 @@ def attach_notes(units, notes):
 
 def render(u):
     out = []
-    for kind, txt in u['blocks']:
-        if kind == 'H3':
+    blocks = u['blocks']
+    i = 0
+    while i < len(blocks):
+        kind, txt = blocks[i]
+        if kind == 'VERSE':
+            # 连着的引诗行是一块，原书缩进居中另排；出处行（Cap. 10, &c.）
+            # 紧随其后、右对齐，一并收进同一块里
+            j = i
+            lines = []
+            while j < len(blocks) and blocks[j][0] == 'VERSE':
+                lines.append(md_escape(blocks[j][1])); j += 1
+            cite = ''
+            if j < len(blocks) and blocks[j][0] == 'CITE':
+                cite = f'\n<p class="dv-cite">{md_escape(blocks[j][1])}</p>'
+                j += 1
+            body = '\n'.join(f'<p>{x}</p>' for x in lines)
+            out.append(f'<div class="dv-verse">\n{body}\n</div>{cite}')
+            i = j
+            continue
+        i += 1
+        if kind == 'CITE':
+            out.append(f'<p class="dv-cite">{md_escape(txt)}</p>')
+        elif kind == 'H3':
             out.append(f'## {txt}')
         elif kind == 'END':
             out.append(f'<p class="dv-end">{txt}</p>')

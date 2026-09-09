@@ -266,6 +266,51 @@ def para_starts(lines, indent_min):
     return out
 
 
+def shape(body):
+    """→ 每行的版式角色 list，取值 '' / 'verse' / 'cite'。**全靠几何**。
+
+    原书用缩进区分三种东西，OCR 层没有字形信息但**坐标是准的**：
+
+        正文        x0 = 左边界，段首多缩一个 em（相对宽度约 0.04）
+        引诗        x0 比左边界多缩 0.08–0.13 个版心宽，且右边参差不齐
+        出处行      x0 落在版心右半（0.5 以上），如 `Cap. 10, &c.` / `Cap. 13.`
+
+    不做这一步的代价是实打实的错，不只是难看：出处行 `Cap. 10, &c.` 单独一行
+    右对齐，按正文合并规则会被接到**下一段的开头**，读者看到的是
+    `Cap. 10, &c. Yet the same Prosper says…`（实测 p338/p339 两处）。
+
+    引诗按**行组**判而不是逐行判：法国之争里三条 PART 的引录也是整块缩进的，
+    但那是散文——它右边是齐的（右余 ≈ 0.01），引诗右边参差（0.08–0.77）。
+    一行一行看会把引录的末行（短行）也当成诗；成组看，组内多数行参差才算诗。
+    """
+    if len(body) < 6:
+        return [''] * len(body)
+    left = statistics.median([l['x0'] for l in body])
+    right = statistics.median([l['x1'] for l in body])
+    w = right - left
+    if w <= 0:
+        return [''] * len(body)
+    rel = [(l['x0'] - left) / w for l in body]
+    rag = [(right - l['x1']) / w for l in body]
+    out = ['cite' if rel[i] > 0.5 else '' for i in range(len(body))]
+    ind = [0.08 < rel[i] <= 0.5 and not is_caps(body[i]['text'])
+           for i in range(len(body))]
+    i = 0
+    while i < len(body):
+        if not ind[i]:
+            i += 1
+            continue
+        j = i
+        while j < len(body) and ind[j]:
+            j += 1
+        run = range(i, j)
+        if j - i >= 2 and sum(rag[k] >= 0.05 for k in run) >= (j - i) * 0.6:
+            for k in run:
+                out[k] = 'verse'
+        i = j
+    return out
+
+
 def page_indent(lines):
     """本页的段首缩进阈值 = 该页字号中位数 × 0.55。见模块 docstring §3。"""
     if not lines:
@@ -315,9 +360,15 @@ def run_piece(pc, pages, out, stats):
             fns.append((p, fn))
             stats['fn_pages'] += 1
         indent = page_indent(body)
-        for l, is_start in zip(body, para_starts(body, indent)):
+        roles = shape(body)
+        for l, is_start, role in zip(body, para_starts(body, indent), roles):
             t = E.clean(l['text'])
             if not t:
+                continue
+            if role in ('verse', 'cite') and not pend_title:
+                flush()
+                out.append(f'[{role.upper()}] <!--v{VOL}p{p}-->{t}')
+                stats[role] += 1
                 continue
             m = CHAP_RE.match(t)
             if m and l['x0'] > 350:
@@ -402,7 +453,8 @@ def main():
                  else 'appendix_sample.txt')
     dst.write_text('\n'.join(out) + '\n', encoding='utf-8')
     print(f'[ok] → {dst.name}  {dst.stat().st_size:,} 字节  {len(out)} 行')
-    print(f'  章 {stats["chap"]} · 段落 {stats["para"]} · 脚注 {stats["fn"]}'
+    print(f'  章 {stats["chap"]} · 段落 {stats["para"]} · 引诗 {stats["verse"]}'
+          f' · 出处行 {stats["cite"]} · 脚注 {stats["fn"]}'
           f'（{stats["fn_pages"]} 页）· 剥页眉 {stats["head"]} · '
           f'剥页脚 {stats["foot"]} · 共 {stats["pages"]} 页')
     return 0

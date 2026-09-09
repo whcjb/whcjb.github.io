@@ -90,7 +90,7 @@ layout: default
 /* 超长页的渲染内存：与 davenant-chapter.html 同因同治。论文单章最长
    （第七章书页 512–558）虽不及注释 ch1，仍是几万字一页，屏外段落跳过
    排版与绘制。contain-intrinsic-size 用 `auto <长度>`，来回滚动不跳。 */
-.dv-content > p, .dv-content > .footnotes {
+.dv-content > p, .dv-content > .dv-verse, .dv-content > .footnotes {
   content-visibility: auto;
   contain-intrinsic-size: auto 360px;
 }
@@ -99,11 +99,18 @@ layout: default
    kramdown 的 ol/li 转换（不转会重排号）。 */
 .dv-enum { font-weight: bold; color: var(--dv-ink); }
 
-{%- comment -%}
-  原书把 Prosper 等人的韵文另起短行排，本站**不另设引诗样式**：底本 OCR
-  层没有字形信息，判「哪几段是诗」只能看内容（行短、是拉丁文），按
-  principles §0.3 属于拿内容猜版式。韵文照常按段落出，每行一段。
-{%- endcomment -%}
+/* 引诗：原书把 Prosper 的英译韵文与拉丁原诗另起短行缩排。判据是**几何**
+   不是内容——这几行的 x0 比版心左界多缩 0.08–0.13 个版心宽，且右边参差
+   （正文是齐的），坐标在 OCR 层里是准的，与「拿内容猜版式」无关。
+   不做这一步时它们是三四个独立段落，段间还带整段的行距，读着散。 */
+.dv-verse { margin: 14px 0 6px; padding-left: 8%; }
+.dv-verse p { margin: 0 0 2px; text-align: left; font-size: 15.5px;
+  color: #3b3b34; }
+/* 出处行：`Cap. 10, &c.` / `Cap. 13.` 单独一行排在版心右侧。不单独成块的话
+   会被并到下一段开头，读者看到的是 `Cap. 10, &c. Yet the same Prosper says…` */
+.dv-cite { text-align: right; font-size: 14px; color: #6a6a5c;
+  margin: 0 0 16px !important; }
+
 /* 卷末的 END OF THE DISSERTATION. / FINIS. */
 .dv-end { text-align: center; letter-spacing: .18em; font-size: 12.5px;
   color: #8a8a7c; margin: 34px 0 8px; }
