@@ -66,6 +66,24 @@ layout: default
 .owen-content .owen-vg-prev{font-weight:normal;color:#8a8a82;font-size:13.5px;font-style:italic}
 .owen-content .owen-vg-body{padding:14px 18px 2px}
 .owen-content .owen-vg-body p.owen-ver{margin-top:0}
+/* ── 展开折叠块时的渲染内存 ──────────────────────────────────────────────
+   本卷已经默认折叠（181 组全部不带 open），折叠态是 display:none，
+   不排版不绘制，所以**初始加载本来就不重**。开销全在展开那一刻：
+   ch4 的 Ver. 15–19 一组就是 85.1 万字符 / 896 段，390px 窄屏下
+   约 564,000 CSS px（1,447 屏）——比 davenant/colossians/1 那个在手机上
+   报 1.1GB 的页面还大。181 组里展开后超 10 万 px 的有 8 组，
+   最重的四组都在 ch4 与 ch1/ch8。
+
+   content-visibility:auto 让展开后仍在屏外的段落跳过排版与绘制。
+   与 fetch 懒加载相比，正文仍留在 HTML 里 —— 抓取索引、页内查找、
+   深链接都不受影响。
+   contain-intrinsic-size 用 `auto <长度>`：首次渲染后记住真实尺寸，
+   来回滚动不跳；600px ≈ 平均段 920 字符 ÷ 每行 47 字符 × 行高 30.4px。
+   ⚠️ 估值按 .owen-content 的 16px/1.9 算的，改字号行高要一并复算。 */
+.owen-content .owen-vg-body>p{
+  content-visibility:auto;
+  contain-intrinsic-size:auto 600px;
+}
 /* 语言切换 pill */
 .owen-lang{display:inline-block;padding:3px 12px;border:1px solid #1f5a4b;border-radius:14px;
   color:#1f5a4b !important;font-size:12px;text-decoration:none;white-space:nowrap}
