@@ -77,6 +77,8 @@ BOOKS = {
                    'report': 'logs/adjudicate_romans.md', 'max_page': 323},
     'colossians': {'pub': 'calvin/colossians', 'raw': 'calvin_raw/colossians-scan/ocr',
                    'report': 'logs/adjudicate_colossians.md', 'max_page': None},
+    # 歌罗西书底本同样是纯扫描（PDF 无文本层），第二证人走 verify_ocr_fixes.py
+    # 的 tesseract 重扫，不是 PDF 文本层。
     'ephesians':  {'pub': 'calvin/ephesians', 'raw': 'calvin_raw/ephesians-scan/ocr',
                    'report': 'logs/adjudicate_ephesians.md', 'max_page': None},
     # 约翰福音的底本 PDF 自带一层文本——它自己也是 OCR，但和 calvin_raw 下那份
