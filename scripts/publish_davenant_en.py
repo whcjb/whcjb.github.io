@@ -35,6 +35,9 @@ ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV'}
 # 得是书上的页码，扫描序号对读者没意义。
 PRINTED = {1: -85, 2: -9}
 
+# 跨页续注是否并回上一条。见 collect_notes 的说明——开之前先看那段。
+MERGE_CROSS_PAGE = False
+
 FN_MARK_START = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+')
 # 正文里的脚注引用：`Jerome,*` / `laudibus.+` / 孤立的 ` * `
 REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)')
@@ -63,26 +66,75 @@ def parse():
 
 
 def collect_notes(items):
-    """→ {(vol, page): [note_text, …]}，多段的注合并为一条。"""
-    notes, cur, cur_p = {}, None, None
+    """→ {(vol, page): [note_text, …]}，多段的注合并为一条。
+
+    ⚠️ 一条注**跨页**时也要合。Allport 的传记体长注常连着两三页，续页的注区
+    顶上没有脚注符。原来只在同一页内合并，续页一律另起一条：全书 277 条注里
+    有 60 条其实是上一条的下半截，读者看到的是一条从半句话开始、单独编号的注
+    （`[^dv121]: tle; for Gregory was remarkable for his earnestness…`），
+    而正文里那个符号指向的是被砍掉一半的上半条。
+    判据：本条不以脚注符起首，且页号正好是上一条的下一页（同卷）——这正是
+    「注区溢到下一页」的物理形态。跨页处用连字规则接，断词不留空格。
+
+    ⚠️ **默认关**（MERGE_CROSS_PAGE = False），要和中译一起开。合并会让脚注
+    总数从 277 掉到 240，正文里的 `[^dvN]` 全部重排号；而中译的缓存是按
+    「送模型的那段英文原文」做 md5 的，段落里带着这些编号，重排一次
+    **431 段**直接缓存落空要重译（实测 ch1 261 段 / ch2 77 / ch3 86 / ch4 7），
+    已发布的中文页脚注编号也会与英文页对不上。歌罗西书注释的中译正在进行中
+    （1–3 章已发布、第 4 章未译），这一刀要等中译重跑那一轮再一起下。
+    附卷（publish_davenant_appx.py）没有这个包袱，那边默认就是合并的。
+    """
+    if not MERGE_CROSS_PAGE:
+        notes, cur, cur_p = {}, None, None
+        for it in items:
+            if it['tag'] != 'FN':
+                continue
+            p = it['pages'][0] if it['pages'] else cur_p
+            if FN_MARK_START.match(it['text']) or cur is None or p != cur_p:
+                if cur is not None:
+                    notes.setdefault(cur_p, []).append(cur)
+                cur, cur_p = it['text'], p
+            else:
+                cur += ' ' + it['text']
+        if cur is not None:
+            notes.setdefault(cur_p, []).append(cur)
+        return notes
+
+    notes, cur, cur_p, cur_last = {}, None, None, None
     for it in items:
         if it['tag'] != 'FN':
             continue
         p = it['pages'][0] if it['pages'] else cur_p
-        if FN_MARK_START.match(it['text']) or cur is None or p != cur_p:
+        marked = bool(FN_MARK_START.match(it['text']))
+        nxt_page = (cur_last[0], cur_last[1] + 1) if cur_last else None
+        same_note = cur is not None and (p == cur_p
+                                         or (not marked and p == nxt_page))
+        if marked or not same_note:
             if cur is not None:
                 notes.setdefault(cur_p, []).append(cur)
-            cur, cur_p = it['text'], p
+            cur, cur_p, cur_last = it['text'], p, p
         else:
-            cur += ' ' + it['text']
+            cur = (cur[:-1] + it['text'] if cur.endswith('-')
+                   and it['text'][:1].islower() else cur + ' ' + it['text'])
+            cur_last = p
     if cur is not None:
         notes.setdefault(cur_p, []).append(cur)
     return notes
 
 
 def md_escape(t):
-    """OCR 文本里的 `*` 会被 kramdown 当强调符——凡不是脚注引用的都转义。"""
-    return t.replace('*', '\\*')
+    """OCR 文本里在 kramdown 有语义的字符，凡不是真语法的都转义。
+
+    `*`  —— 会被当强调符。
+    `|`  —— 会被当**表格**分隔符。这是扫描件里最阴的一个：`|` 是扫描斑点与
+             断笔的常见误读（`should | bring into contempt`），落在段落中间时
+             kramdown 把整段拆成表格单元格，`|` 本身消失、前后段落被吸进同一张
+             表，连带该段的脚注引用也不再解析（实测歌罗西书注释四章共生成 89 张
+             假表，dissertation 另有 45 张；`[^da21]` / `[^da43]` 两条注因此
+             以字面量印在正文里）。
+             转义而不是删掉：按既定规矩，底本的版面碎片一律保留原样。
+    """
+    return t.replace('*', '\\*').replace('|', '\\|')
 
 
 ROMAN_N = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
@@ -99,8 +151,13 @@ def enum_lead(t):
     proposition; …`），原书排的是**普通段落**，不是悬挂列表。不处理的话
     kramdown 生成 ol/li（实测正文里 453 个 ol、989 个 li），既改了版式，
     还会重排号——单独以 `3.` 起首的段落会被渲染成 `1.`。
+
+    ⚠️ 编号后面**不限定是拉丁字母**。原先只认 `[A-Za-z(“"']`，两处漏网：
+    OCR 把标点留在编号后（`2. , Because God…`），以及中译里编号后面跟的是
+    汉字（`2. 出自提摩太前书 1:5…`）——中文三章各有二十来段因此变成 ol/li，
+    编号还被 kramdown 重排。改成「后面只要不是空白、不是数字」即可。
     """
-    return re.sub(r'^(\d{1,3})\.\s+(?=[A-Za-z(“"\'])',
+    return re.sub(r'^(\d{1,3})\.\s+(?=[^\s\d])',
                   r'<span class="dv-enum">\1.</span> ', t)
 
 
@@ -222,18 +279,34 @@ def main():
     import subprocess
     now = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True,
                          text=True).stdout.strip()
+
+    def keep(n, key):
+        """已有文件里该 front matter 项的原值，没有就 None。
+
+        `date` 按站内规矩「已有文件的时间不要修改」，重跑不该把它刷成当下；
+        `zh_url` 是中译发布时另加的，本脚本不知道它，重跑一次就没了。
+        """
+        f = OUT / f'{n}.md'
+        if not f.exists():
+            return None
+        m = re.search(rf'^{key}: (.*)$', f.read_text(encoding='utf-8'), re.M)
+        return m.group(1) if m else None
     n_ch = len(chapters)
     for k, ch in enumerate(chapters):
         n = ch['n'] or (k + 1)
         fm = ['---', 'layout: davenant-chapter', 'book_id: colossians',
               f'book_name: "{BOOK_NAME}"', f'chapter: {n}',
-              f'title: "Chapter {ROMAN.get(n, n)}"', f'date: {now}']
+              f'title: "Chapter {ROMAN.get(n, n)}"',
+              f'date: {keep(n, "date") or now}']
         if k:
             fm += [f'prev_section: {chapters[k-1]["n"] or k}',
                    f'prev_label: "Chapter {ROMAN.get(chapters[k-1]["n"], k)}"']
         if k + 1 < n_ch:
             fm += [f'next_section: {chapters[k+1]["n"] or k+2}',
                    f'next_label: "Chapter {ROMAN.get(chapters[k+1]["n"], k+2)}"']
+        zh = keep(n, 'zh_url')
+        if zh:
+            fm.append(f'zh_url: {zh}')
         fm.append('---')
         body = [f'# CHAPTER {ROMAN.get(n, n)}', '']
         body += [b for blk in ch['blocks'] for b in (blk, '')]

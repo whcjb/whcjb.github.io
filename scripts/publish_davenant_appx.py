@@ -50,8 +50,18 @@ REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)')
 
 
 def md_escape(t):
-    """OCR 文本里的 `*` 会被 kramdown 当强调符——凡不是脚注引用的都转义。"""
-    return t.replace('*', '\\*')
+    """OCR 文本里在 kramdown 有语义的字符，凡不是真语法的都转义。
+
+    `*`  —— 会被当强调符。
+    `|`  —— 会被当**表格**分隔符。这是扫描件里最阴的一个：`|` 是扫描斑点与
+             断笔的常见误读（`should | bring into contempt`），落在段落中间时
+             kramdown 把整段拆成表格单元格，`|` 本身消失、前后段落被吸进同一张
+             表，连带该段的脚注引用也不再解析（实测歌罗西书注释四章共生成 89 张
+             假表，dissertation 另有 45 张；`[^da21]` / `[^da43]` 两条注因此
+             以字面量印在正文里）。
+             转义而不是删掉：按既定规矩，底本的版面碎片一律保留原样。
+    """
+    return t.replace('*', '\\*').replace('|', '\\|')
 
 
 def enum_lead(t):
@@ -60,8 +70,10 @@ def enum_lead(t):
     论文里大量段落以 `1.` / `2.` 起首（三条命题、各条答辩），原书排的是
     普通段落，不是悬挂列表。不处理的话 kramdown 生成 ol/li，既改了版式，
     还会重排号——单独以 `3.` 起首的段落会被渲染成 `1.`。
+    编号后面不限定是拉丁字母：OCR 会把标点留在编号后（`2. , Because…`），
+    中译里跟的又是汉字，写死 `[A-Za-z…]` 两种都漏。
     """
-    return re.sub(r'^(\d{1,3})\.\s+(?=[A-Za-z(“"\'])',
+    return re.sub(r'^(\d{1,3})\.\s+(?=[^\s\d])',
                   r'<span class="dv-enum">\1.</span> ', t)
 
 
@@ -84,18 +96,31 @@ def parse():
 
 
 def collect_notes(items):
-    """→ {page: [note_text, …]}，多段的注合并为一条。"""
-    notes, cur, cur_p = {}, None, None
+    """→ {page: [note_text, …]}，多段的注合并为一条。
+
+    ⚠️ 一条注**跨页**时也要合。Allport 的传记体长注常连着两三页，续页的注区
+    顶上没有脚注符。原来只在同一页内合并，续页一律另起一条，于是读者看到的是
+    一条从半句话开始、单独编号的注（`[^da64]: by the minister of that city was
+    appointed to teach…`），而正文里那个 `†` 指向的是被砍掉一半的上半条。
+    判据：本条不以脚注符起首，且页号正好是上一条的下一页——这正是「注区溢到
+    下一页」的物理形态。跨页处用 dehyph 接，`Bergeron` 这种断词不会留下空格。
+    """
+    notes, cur, cur_p, cur_last = {}, None, None, None
     for it in items:
         if it['tag'] != 'FN':
             continue
         p = it['pages'][0] if it['pages'] else cur_p
-        if FN_MARK_START.match(it['text']) or cur is None or p != cur_p:
+        marked = bool(FN_MARK_START.match(it['text']))
+        same_note = cur is not None and (
+            p == cur_p or (not marked and p == cur_last + 1))
+        if marked or not same_note:
             if cur is not None:
                 notes.setdefault(cur_p, []).append(cur)
-            cur, cur_p = it['text'], p
+            cur, cur_p, cur_last = it['text'], p, p
         else:
-            cur += ' ' + it['text']
+            cur = (cur[:-1] + it['text'] if cur.endswith('-')
+                   and it['text'][:1].islower() else cur + ' ' + it['text'])
+            cur_last = p
     if cur is not None:
         notes.setdefault(cur_p, []).append(cur)
     return notes

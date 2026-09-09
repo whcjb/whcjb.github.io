@@ -82,6 +82,12 @@ _ROMAN = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7}
 ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII'}
 # 页脚书帖签名的补充式样。E.is_foot 认不出 `Mem. 11. Z`（`VOL. II. Z` 被
 # OCR 读成 Mem/11），漏掉的会当正文单独成段（实测 p348 末尾）。
+# 页脚书帖签名的第二种式样：`V Oils, hls 2N` 是 `VOL. II. 2 N` 被 OCR 读花，
+# `is_foot` 与 FOOT_EXTRA_RE 都认不出（首字母只有一个 V，中间还夹了逗号）。
+# 收得很紧——必须以「数字 + 单个大写字母」收尾——全库只命中这一条与索引里的
+# `VOL. 11. 2 Q`；`Verse 17.` / `verse.` 这类不会误伤（实测三份 raw 全扫过）。
+SIGNATURE_RE = re.compile(
+    r'^[VvNn]\W{0,2}[Oo0Ee]\w{0,3}\W{0,3}\w{0,4}\W{0,3}\s*\d\s?[A-Z]$')
 FOOT_EXTRA_RE = re.compile(r'^[A-Za-z]{2,4}[.,]?\s*[Il1V]{1,3}[.,]?\s*[A-Za-z]{1,3}\s?\d?$')
 # 章标题（CHAP. N 下面那一两行全大写小字）与卷末的 `END OF THE DISSERTATION.`
 END_RE = re.compile(r'^\s*(END OF THE DISSERTATION|FINIS)[.,]?\s*$', re.I)
@@ -153,6 +159,7 @@ def split_page(L):
        取候选切点以上那一段则两种页面都对：它天然就是「正文的行距/字号」。
     3. 多一条字号守卫（注区字号 < 正文区的 0.9 倍）。行距与字号互不相干，
        一起卡不会误伤。
+
     """
     if len(L) < 8:
         return L, []
@@ -172,15 +179,32 @@ def split_page(L):
     def ok_zone(head, zone, gap, need_mark):
         if len(zone) < 2 or len(head) < 4:
             return False
-        if need_mark and not any(E.FN_MARK.match(x['text']) for x in zone[:3]):
+        # 脚注符前面常粘着一个扫描斑点（`: * GnEVINCHOVIUS`），放两个字符的余量
+        marked = any(E.FN_MARK.match(x['text'])
+                     or re.match(r'^\W{1,2}\s*[*+†‡]\s', x['text'])
+                     for x in zone[:3])
+        if need_mark and not marked:
             return False
         lead, hs = head_stats(head)
         if gap < lead * 1.5:
             return False
+        # 空隙**过大**同样不是脚注。没有脚注符时全部证据只有几何，就得要求
+        # 几何落在常态区间里：全书 50 个注区的分隔空隙都在 1.5–2.4 倍行距之间，
+        # 唯独法国之争 p572 是 4.72 倍——那里根本不是注，是版面从大字正文切到
+        # 小字引文（`THE JUDGMENT OF BISHOP DAVENANT`，达文南特原件的引录）。
+        # 光看「空隙大 + 字号小」两条，这一整页引文都被吞进了一条脚注（实测）。
+        if not marked and gap > lead * 3:
+            return False
         zg = [zone[k + 1]['y0'] - zone[k]['y0'] for k in range(len(zone) - 1)]
         if not zg or statistics.median(zg) >= lead * 0.92:
             return False
-        return statistics.median([x['size'] for x in zone]) < hs * 0.9
+        # 字号守卫。有脚注符时 0.9 就够——符本身已经是铁证；**没有符**时全部
+        # 证据只剩几何，收紧到 0.85：全书 17 个无符注区（跨页续注）的字号比都
+        # ≤0.800，而法国之争 p572 那处版面换字号是 0.873——那里根本不是注，是
+        # 大字引言切到小字排的达文南特原件引录（`THE JUDGMENT OF BISHOP
+        # DAVENANT`，而且这一小字一路排到 p578）。0.9 会把整页引文吞成一条脚注。
+        ratio = 0.9 if marked else 0.85
+        return statistics.median([x['size'] for x in zone]) < hs * ratio
 
     best = None
     for need_mark in (True, False):
@@ -278,8 +302,9 @@ def run_piece(pc, pages, out, stats):
         lines, nh = strip_head(lines, p in chap_starts)
         stats['head'] += nh
         for _ in range(2):
-            if lines and (E.is_foot(lines[-1]['text'])
-                          or FOOT_EXTRA_RE.match(lines[-1]['text'].strip())):
+            t_last = lines[-1]['text'].strip()
+            if lines and (E.is_foot(t_last) or FOOT_EXTRA_RE.match(t_last)
+                          or (len(t_last) <= 18 and SIGNATURE_RE.match(t_last))):
                 lines.pop(); stats['foot'] += 1
                 continue
             break

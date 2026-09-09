@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:03
+date: 2026-09-09 15:54
 subtitle: "of Fathers, Heresiarchs, Schoolmen, &c., appended by the Translator"
 prev_url: "/davenant/colossians/indexes/contents/"
 prev_label: "Contents of the Dissertation"
@@ -14,7 +14,7 @@ next_label: "Index of Subjects and Works in the Notes"
 ---
 
 <p class="dv-idx-lead">传略索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。右侧一列是卷二的页码，左侧行内的数字是卷一的。</p>
-<p class="dv-idx-note">Those names printed in Italics occur only in the Dissertation on the Death of Christ.</p>
+<p class="dv-idx-note">Q3" Those names printed in Italics occur only in the Dissertation on the Death of Christ.</p>
 <p class="dv-idx-caption">A. Vol. I.</p>
 <p class="dv-idx">Abelard …<span class="dv-idx-b">435</span></p>
 <p class="dv-idx">Abbot, Robert (Bishop of Salisbury) …<span class="dv-idx-b">453</span></p>
@@ -37,12 +37,13 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Arnold 900 900<span class="dv-idx-b">448</span></p>
 <p class="dv-idx">Athanasius …<span class="dv-idx-b">409</span></p>
 <p class="dv-idx">Athenagoras … 510</p>
-<p class="dv-idx">Augustine ... EL Lp n.<span class="dv-idx-b">45</span></p>
+<p class="dv-idx">Augustine ... EL Lp<span class="dv-idx-b">45</span></p>
+<p class="dv-idx-letter">B</p>
+<p class="dv-idx">|</p>
 <p class="dv-idx">Bartoli oc "T" …<span class="dv-idx-b">83</span></p>
 <p class="dv-idx">Basil … 185</p>
 <p class="dv-idx">Baslides … 257</p>
-<p class="dv-idx">Bede " 73, 236</p>
-<p class="dv-idx">Bellarmin ... Doc 9</p>
+<p class="dv-idx">Bede " 73, 236 Bellarmin ... Doc 9</p>
 <p class="dv-idx-caption">Vol. I.</p>
 <p class="dv-idx">Bernard ... 32, 116</p>
 <p class="dv-idx">Boethius … 200</p>
@@ -67,7 +68,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Cologne, proceedings … 53 Divines of 547</p>
 <p class="dv-idx">Councits referred … Áncyra … Calcedon... 282, 546 Carthage … Eliberis ... Doo Gangra … Leyden … Mentz …<span class="dv-idx-b">253 185 232 183 335 334</span></p>
 <p class="dv-idx-caption">Vol. LL</p>
-<p class="dv-idx">Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur … Valence... p00<span class="dv-idx-b">445 185 132 Note 186 | 323</span></p>
+<p class="dv-idx">Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …<span class="dv-idx-b">445 185 132 Note 186</span></p>
+<p class="dv-idx">Valence... p00<span class="dv-idx-b">| 323</span></p>
 <p class="dv-idx">Cusa … 16</p>
 <p class="dv-idx">Cyprian... 14, 25, 547</p>
 <p class="dv-idx">Cyril … 168</p>
@@ -89,7 +91,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Fathers (on the use of) 61, 249</p>
 <p class="dv-idx">Faustus … 404<span class="dv-idx-b">325</span></p>
 <p class="dv-idx">Flodoard M. …<span class="dv-idx-b">333</span></p>
-<p class="dv-idx">Fulgentius ... T … G. …</p>
+<p class="dv-idx">Fulgentius ... T …</p>
+<p class="dv-idx-letter">G</p>
 <p class="dv-idx">Gelasius (quoted)... 420</p>
 <p class="dv-idx">Gerson DOC Doc 90</p>
 <p class="dv-idx">Godeschalcus Doc …<span class="dv-idx-b">334</span></p>
@@ -101,14 +104,13 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx-letter">H</p>
 <p class="dv-idx">Hales m oo Hil</p>
 <p class="dv-idx">Herman, Abp. of Cologne 53</p>
-<p class="dv-idx">Hilary … 742</p>
-<p class="dv-idx">Horsley, Bp. (quoted)<span class="dv-idx-b">22</span></p>
+<p class="dv-idx">Hilary … 742 Horsley, Bp. (quoted)<span class="dv-idx-b">22</span></p>
 <p class="dv-idx-caption">Vol. I.</p>
 <p class="dv-idx">Hospinian ... . +» 540</p>
 <p class="dv-idx">Hostiensis (Henry deSusa) 15</p>
 <p class="dv-idx">Huber üco …<span class="dv-idx-b">458</span></p>
 <p class="dv-idx">Hugo … 195</p>
-<p class="dv-idx-letter">IL</p>
+<p class="dv-idx-letter">I</p>
 <p class="dv-idx">Illyricus Flacius T 2t</p>
 <p class="dv-idx">Trenzeus … 256</p>
 <p class="dv-idx">Isidore … 20</p>
@@ -127,6 +129,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Lucidus …<span class="dv-idx-b">6</span></p>
 <p class="dv-idx">Lyranus, Nicholas de Lyra … 198</p>
 <p class="dv-idx-letter">M</p>
+<p class="dv-idx">M.</p>
 <p class="dv-idx">Malderus — ... O00<span class="dv-idx-b">531</span></p>
 <p class="dv-idx">Manichzus … 192</p>
 <p class="dv-idx">Marcion …</p>
@@ -141,9 +144,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Musculus (Wolfgang) 214</p>
 <p class="dv-idx-letter">N</p>
 <p class="dv-idx">Nazianzen, Gregory... 128<span class="dv-idx-b">|</span></p>
-<p class="dv-idx">Nicephorus ... 200 3 oO.</p>
-<p class="dv-idx">CEcumenius... 2 …</p>
-<p class="dv-idx">|| Origen …<span class="dv-idx-b">18</span></p>
+<p class="dv-idx">Nicephorus ... 200 3</p>
+<p class="dv-idx">oO. CEcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
 <p class="dv-idx-caption">P. Vol. I.</p>
 <p class="dv-idx">Pareus …<span class="dv-idx-b">355</span></p>
 <p class="dv-idx">Parisiensis (William Bp. of Auverne) … 21</p>
@@ -169,7 +171,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Rhemish Annotators... 276</p>
 <p class="dv-idx">Rhenanus, Beatus …<span class="dv-idx-b">134</span></p>
 <p class="dv-idx">Ribera 000 p00 44</p>
-<p class="dv-idx">Rupert … 336 S. …<span class="dv-idx-b">|</span></p>
+<p class="dv-idx">Rupert … 336<span class="dv-idx-b">|</span></p>
+<p class="dv-idx-letter">S</p>
 <p class="dv-idx">Sabellius … 178<span class="dv-idx-b">|</span></p>
 <p class="dv-idx">Samosatenians … 413<span class="dv-idx-b">|</span></p>
 <p class="dv-idx">Scapula … 75<span class="dv-idx-b">|</span></p>
@@ -181,6 +184,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Stapleton …<span class="dv-idx-b">302</span></p>
 <p class="dv-idx">Staphilus … 994</p>
 <p class="dv-idx">Suares C00 …<span class="dv-idx-b">529</span></p>
+<p class="dv-idx-letter">T</p>
 <p class="dv-idx">Tatians … 481</p>
 <p class="dv-idx">Tertullian (quoted) … 74</p>
 <p class="dv-idx">Tertullian’s life Sc Un</p>
@@ -188,7 +192,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">T'heophylact …<span class="dv-idx-b">178</span></p>
 <p class="dv-idx">Thomson, Richard...<span class="dv-idx-b">448</span></p>
 <p class="dv-idx">Tilenus ond BOG<span class="dv-idx-b">448</span></p>
-<p class="dv-idx">Tremellius … 30 Vv.</p>
+<p class="dv-idx">Tremellius … 30</p>
+<p class="dv-idx-letter">V</p>
 <p class="dv-idx">Valentinians … 258</p>
 <p class="dv-idx">Vasques …<span class="dv-idx-b">| 546</span></p>
 <p class="dv-idx">Vincentius Lirinensis …<span class="dv-idx-b">320</span></p>

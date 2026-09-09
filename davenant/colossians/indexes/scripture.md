@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:03
+date: 2026-09-09 15:54
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -14,10 +14,7 @@ next_label: "Errata"
 ---
 
 <p class="dv-idx-lead">经文索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
-<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- ,</p>
-<p class="dv-idx">ture, not noted in the Original Index, are yet illustrated by the connexion in which they</p>
-<p class="dv-idx">stand in the work, it would prove useful to give them a place here. Also, io this Index are</p>
-<p class="dv-idx">included a few texts discussed in the Diseertation on the Death of Christ.]</p>
+<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, io this Index are included a few texts discussed in the Diseertation on the Death of Christ.]</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
 <p class="dv-idx">Gen. l. 1, 7n the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
 <p class="dv-idx-2">I. 27, So God created man in his own image II. 88</p>
@@ -31,7 +28,6 @@ next_label: "Errata"
 <p class="dv-idx-2">XXII. 2i, It shall be a statute for ever, &amp;c. I. 484</p>
 <p class="dv-idx">1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113</p>
 <p class="dv-idx">1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
-<p class="dv-idx-caption">VOL. 11. 2 Q</p>
 <p class="dv-idx-caption">VOL, PAGE.</p>
 <p class="dv-idx">2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279</p>
 <p class="dv-idx">Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55</p>

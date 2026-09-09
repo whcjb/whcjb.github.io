@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:03
+date: 2026-09-09 15:54
 subtitle: "incidentally and briefly determined in the work"
 prev_url: "/davenant/colossians/indexes/general/"
 prev_label: "General Index"
@@ -14,6 +14,7 @@ next_label: "Contents of the Dissertation"
 ---
 
 <p class="dv-idx-lead">问题索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
+<p class="dv-idx-caption">PAGE,</p>
 <p class="dv-idx">WueTuER the Pope of Rome hath apostolical dignitv and autho-</p>
 <p class="dv-idx">Whether the faithful can certainly conclude that they are in favour with God, and that their sins are remitted them through Christ in whom they have helieved 006 poc occ orc 37—53</p>
 <p class="dv-idx">Whether Christ is the adequate object of faith as it justifies ... 61—64</p>

@@ -78,7 +78,14 @@ def parse():
 
 def render(sec):
     out = []
+    rows = []
     for tag, text in sec['rows']:
+        # 连着几行的译者说明是同一段（经文索引那条占四行），拼成一段再出
+        if tag == 'NOTE' and rows and rows[-1][0] == 'NOTE':
+            rows[-1] = ('NOTE', rows[-1][1] + ' ' + text)
+        else:
+            rows.append((tag, text))
+    for tag, text in rows:
         if tag == 'LETTER':
             out.append(f'<p class="dv-idx-letter">{esc(text)}</p>')
         elif tag == 'SUBHEAD':

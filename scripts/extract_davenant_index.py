@@ -78,6 +78,12 @@ CAPTION_RE = re.compile(
 SUBHEAD_RE = re.compile(r'^\s*IN\s+(?:THE\s+EXPOSITION|VOL)', re.I)
 # 译者说明：原书用方括号或 ☞ 引出，说明这份索引是 Allport 增补的
 NOTE_RE = re.compile(r'^\s*[\[(]|^\s*\S{0,3}\s*Those names printed', re.I)
+# 页脚书帖签名的第二种式样：`V Oils, hls 2N` 是 `VOL. II. 2 N` 被 OCR 读花，
+# `is_foot` 与 FOOT_EXTRA_RE 都认不出（首字母只有一个 V，中间还夹了逗号）。
+# 收得很紧——必须以「数字 + 单个大写字母」收尾——全库只命中这一条与索引里的
+# `VOL. 11. 2 Q`；`Verse 17.` / `verse.` 这类不会误伤（实测三份 raw 全扫过）。
+SIGNATURE_RE = re.compile(
+    r'^[VvNn]\W{0,2}[Oo0Ee]\w{0,3}\W{0,3}\w{0,4}\W{0,3}\s*\d\s?[A-Z]$')
 HEAD_RES = [
     re.compile(r'GENERAL\s+[Il1]NDEX', re.I),
     re.compile(r'[Il1]NDEX\s+(?:TO|OF)\s+(?:B[Il1]OGRAPH|QUEST[Il1]ONS|'
@@ -255,19 +261,52 @@ def classify(pc, pages):
         letter   字母分隔
         entry    条目行（只有这一类进第二趟的 x0 聚类）
     """
-    rows, dropped = [], 0
+    rows, dropped, open_note = [], 0, False
     for p, col, g in page_groups(pc, pages):
-        g, nh = strip_head(list(g))
+        g = list(g)
+        # 双栏块的页眉与整幅标题都在 H 带里，栏内（L/R）一行都不用剥。
+        # 原来对每一组都跑 strip_head，它那条「顺手丢掉版面碎片」的规则把
+        # 栏首单个大写的字母分隔当碎片吃了（p582 的 `C`），额度也数不准，
+        # 反过来把总索引的第一条 `Abel, Christ the head of…` 当标题丢掉。
+        if col == 'H':
+            g, _ = strip_head(g)
+            for l in g:
+                t = E.clean(l['text'])
+                if t and NOTE_RE.match(t):
+                    rows.append((p, col, l, t, 'note'))   # 译者说明留下
+            continue
+        if not pc['cols']:
+            g, nh = strip_head(g)
+        base = min((l['x0'] for l in g), default=0)
+        span = max((l['x1'] for l in g), default=0) - base
         for l in g:
             t = E.clean(l['text'])
-            if not t or E.JUNK_RE.match(t) or E.SPECK_RE.match(t):
+            if not t:
                 continue
-            if dropped < pc['head']:
+            # ⚠️ 居中的短行先认字母分隔，再走垃圾过滤。JUNK_RE 里
+            # `[A-Z]\s?\d?` 与 `\d{1,4}` 两条正好把单个大写的分隔行
+            # （`C`）和被读成数字的分隔行（`T` → `186`）当版面碎片丢掉，
+            # 总索引因此少了 C、T 两段（实测）。
+            centred = bool(span) and (l['x0'] - base) / span > 0.30
+            if not (centred and len(t) <= 6):
+                if E.JUNK_RE.match(t) or E.SPECK_RE.match(t):
+                    continue
+                if len(t) <= 18 and SIGNATURE_RE.match(t):   # 页脚书帖签名
+                    continue
+            # ⚠️ 整幅标题只在**该块的第一页**上丢。原来只数「已丢几行」，
+            # 而 strip_head 会先替你剥掉一部分标题行（`GENERAL INDEX` 命中
+            # 页眉正则），计数没数够，剩下的额度就落到后面几页的正文头上
+            # ——第 582 页的字母分隔 `C` 因此被当标题丢掉了（实测）。
+            if not pc['cols'] and p == pc['lo'] and dropped < pc['head']:
                 dropped += 1
                 rows.append((p, col, l, t, 'head'))
                 continue
-            if NOTE_RE.match(t):
+            if NOTE_RE.match(t) or open_note:
                 kind = 'note'
+                # 译者说明是整段方括号，跨好几行（经文索引那条占四行）。
+                # 只认起首那一行的话，后三行会当成索引条目排进去，读者看到的
+                # 第一条是半句话（`ture, not noted in the Original Index…`）。
+                open_note = not re.search(r'[\]）)]\s*$', t)
                 # 原书用一只印刷用的「☞」引出译者说明，OCR 读成 `Q3"` / `(G5`
                 t = re.sub(r'^[^A-Za-z(\[]*[A-Za-z0-9]{0,3}["\']?\s+(?=[A-Z(\[])',
                            '', t)
@@ -275,7 +314,13 @@ def classify(pc, pages):
                 kind = 'subhead'
             elif CAPTION_RE.match(t):
                 kind = 'caption'
-            elif LETTER_RE.match(t):
+            elif LETTER_RE.match(t) or (centred and len(t) <= 6):
+                # 字母分隔在原书排在栏中央。只认字形（`^[A-Z]{1,3}\.?$`）会漏掉
+                # 一大半——OCR 把 `N` 读成 `IN`、`V` 读成 `IE`、`T` 读成 `186`、
+                # `Y` 读成 `We`、`P`/`S` 读成小写（实测 26 个分隔只认出 19 个，
+                # 漏掉的 5 个当条目印出来，其中 `s.` 是个近乎空的条目）。
+                # 居中是版面性质，不吃 OCR 认错字的影响：全块只有分隔行的
+                # 居中度 >0.30，条目与回行都在 0.00–0.25。
                 kind = 'letter'
             else:
                 kind = 'entry'
@@ -283,6 +328,42 @@ def classify(pc, pages):
                     t = strip_leaders(t)
             rows.append((p, col, l, t, kind))
     return rows
+
+
+def pick_letters(rows):
+    """→ 该保留为字母分隔的行号集合。
+
+    候选是版面上居中的短行，字母取**紧随其后那条条目的首字母**（索引按字母排，
+    这是从数据里读出来的，不是照抄 OCR——`N` 被读成 `IN`、`V` 读成 `IE`、
+    `T` 读成 `186`、`Y` 读成 `We`，照字形 26 个只认得出 19 个）。
+
+    再取「字母严格递增」的**最长子序列**，其余降回条目。为什么不逐个比
+    「必须大于上一个」：只要有一个候选的字母推错并且偏大，它后面的全会被顶掉
+    ——传略索引实测就是这样，18 个分隔只剩 BCVW 四个。最长递增子序列容得下
+    个别错值，不会让一个错的带塌一片。
+    """
+    cand = []
+    for i, (p, col, l, t, kind) in enumerate(rows):
+        if kind != 'letter':
+            continue
+        # ⚠️ 取**第一条**，不要取前三条的众数：众数会被紧跟其后的次级条目
+        # 带偏（总索引 E 段的后三条首字母是 E/I/I，众数给出 I，直接错一格）。
+        nxt = next((x[3][:1].upper() for x in rows[i + 1:i + 8]
+                    if x[4] == 'entry' and x[3][:1].isalpha()), '')
+        if nxt:
+            cand.append((i, nxt))
+    # 最长严格递增子序列（候选不多，O(n²) 足够）
+    best = [1] * len(cand)
+    prev = [-1] * len(cand)
+    for j in range(len(cand)):
+        for k in range(j):
+            if cand[k][1] < cand[j][1] and best[k] + 1 > best[j]:
+                best[j], prev[j] = best[k] + 1, k
+    keep, j = {}, (best.index(max(best)) if cand else -1)
+    while j >= 0:
+        keep[cand[j][0]] = cand[j][1]
+        j = prev[j]
+    return keep
 
 
 def main():
@@ -335,20 +416,27 @@ def main():
                 stats['entry'] += 1
             cur, cur_p, cur_v2 = '', None, []
 
+        letters = pick_letters(rows)
         prev_key = None
-        for p, col, l, t, kind in rows:
+        for ri, (p, col, l, t, kind) in enumerate(rows):
             if kind == 'head':
                 stats['head'] += 1
                 continue
             if (p, col) != prev_key:
                 flush()          # 条目不跨页/跨栏续行，页眉两边的条目不能粘
                 prev_key = (p, col)
-            if kind in ('note', 'subhead', 'caption', 'letter'):
+            if kind == 'letter':
+                if ri in letters:
+                    flush()
+                    out.append(f'[LETTER] {letters[ri]}')
+                    stats['letter'] += 1
+                    continue
+                kind = 'entry'           # 落选 → 当条目走下去，内容不丢
+            if kind in ('note', 'subhead', 'caption'):
                 flush()
                 tag = {'note': 'NOTE', 'subhead': 'SUBHEAD',
-                       'caption': 'CAPTION', 'letter': 'LETTER'}[kind]
-                out.append(f'[{tag}] '
-                           + (t.strip('.,;: ') if kind == 'letter' else t))
+                       'caption': 'CAPTION'}[kind]
+                out.append(f'[{tag}] {t}')
                 stats[kind] += 1
                 continue
             if cuts is None:

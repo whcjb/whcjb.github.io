@@ -1,5 +1,6 @@
 [SEC] index-general|General Index|of Subjects in the Exposition
-[E] <!--v2p580-->  and happiness, 471.
+[E] <!--v2p580-->Ape, Christ the head of, I. 212.
+[E] <!--v2p580-->Abraham’s bosom, a celestial place and happiness, 471.
 [E] <!--v2p580-->Abstinence, see Fastings, see Meats.
 [E] <!--v2p580-->Abstinence of Paula, 541; should be moderated, 543.
 [E] <!--v2p580-->Acceptance of persons, none with God, II. 90, 211; should not be among men, 212.
@@ -40,6 +41,7 @@
 [E] <!--v2p581-->Bodily is put for personally, because the body is taken for the whole person, I. 415.
 [E] <!--v2p581-->Brethren, all Christians are, on four accounts, I. 26; and that in Christ, 27; false ones most pernicious, lI. 275.
 [E] <!--v2p581-->Brothels, not to be suffered in a Christian State, II. 44; condemned by the Fathers, 45; evils of the toleration of them, 46; yet upheld by the Papacy, ibid. and Note.
+[LETTER] C
 [E] <!--v2p582-->Carthusian Monkery, not a state of perfection, I. 326.
 [E] <!--v2p582-->Ceremonies, may be instituted by the Church, and with what cautions, I. 401, 402; 522; are not to be multiplied, 402; 467; 529; whether the observance or the neglect is in itself of any or no consequence, LI. 91; Ceremonies of the Jews, I. 478, 472. Chris. tian liberty in regard to all, 480 ; the legal ones were acknowledgments of human guilt, 461; shadowed forth the grace of Christ, 489; and the very substance in Christ, 492; abrogated by Christ, and why, 404; in what manner, 465, 466; for what time, and how far they might be observed after the passion of Christ, 405.
 [E] <!--v2p582-->Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfils the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.
@@ -363,7 +365,7 @@
 [E] <!--v2p590-->Mystery, what it signifies, I. 300 ; taken for the sum of Evangelical doctrine, 356 ; for the calling of the Gentiles, 300, 502.
 [E] <!--v2p590-->Mysteries to be believed, not discussed, 303, 304.
 [CAPTION] VOL. 1i. 2r
-[LETTER] IN
+[LETTER] N
 [E] <!--v2p590-->  Name of Christ, what it is to do any thing in the, II. 146. Name, the origin not so much to be regarded as the use, I. 35 without the reality avails nothing, I. 10, 23; 100; 443; II. 274. Nations, nodistinction of with God, II. 90. Nature, our's good at the creation, I. 250; corrupt, incapable of spiritual things, 146; is not disposed for grace, 453; II. 60; is alienated from God, I. 249 ; at enmity with God, and God an enemy to it, 250, 251. Natural corruption, pervades all the faculties of the soul, 452, 453: ! man thereby dead as to spiritual . perceptions, 450; explained by parts, 451, 452; all prone to every evil on account of it, Il. 65. .
 [E] <!--v2p590-->Negations in comparisons, their peculiar use, II. 203.
 [E] <!--v2p590-->Neighbour, who is our's, and how the object of our love, I. 72.
@@ -381,7 +383,8 @@
 [E] <!--v2p590-->Opportunity to be embraced, I. 305 ; 1I. 257, 258.
 [E] <!--v2p590-->Order, what it is, 295, 296; va. rious significations of, I. 374,375 ; encomiums of it, 375; all things done of God by order, IT. 56. ought to exist among the Minis-
 [E] <!--v2p591-->  ters of the Church, I. 296; 375, 376.
-[E] <!--v2p591-->Ornaments, what are a woman’s best, II. 157. p.
+[E] <!--v2p591-->Ornaments, what are a woman’s best, II. 157.
+[LETTER] P
 [E] <!--v2p591-->Pappula, instanced by Papists to justify opposition to parental authority, II. 183.
 [E] <!--v2p591-->T'arents, duty of obedience to them, 169; the extent of it, 171; is well-pleasing to God, 173; restricts children from entering monasteries against their parents' consent, 175—177. obedience to them must yield to obedience to God, 178, 179.
 [E] <!--v2p591-->Parerts, conduct of towards their children, 190—193 ; the evils of treating children harshly, 194.
@@ -440,7 +443,7 @@
 [E] <!--v2p592-->Revilers of the Ministry warned, I. 104.
 [E] <!--v2p592-->Righteous we are so by tlie imputation of Christ's righteousness, I. 424.
 [E] <!--v2p592-->Righteousness of God in punishing, II. 55, 56. 7
-[E] <!--v2p593-->  s.
+[LETTER] S
 [E] <!--v2p593-->Sabbath, why instituted and what it signifies, I. 491, 492.
 [E] <!--v2p593-->Sacraments without Christ are of no avail, 436, 437; are tenders of grace, but only to Believers, 24 ; 447, 448; in themselves there is no grace, nor in the opus operatum, 436, 446; nevertheless the external signs not to be despised, 437.
 [E] <!--v2p593-->Saints, their infirmities illustrated by various similitudes, 133; derive help from God, 134; their works are not perfectly good, 145 —149; perform no works of supererogation, 279; are not to be worshipped, 487.
@@ -482,6 +485,7 @@
 [E] <!--v2p594-->Sufferings of others claim our sympathy, 17. 108; 286. of believers, see Afflictions. of Christ, satisfactory, &c. see Passion. of the Cross, the best means adapted for our redemption, 1. 242; 474.
 [E] <!--v2p594-->Superiors to be oheyed in things indifferent, II. 171.
 [E] <!--v2p594-->Superstitious observances, 1. 400.
+[LETTER] T
 [E] <!--v2p594-->Tabernacles, feast of, why instituted and what it signified, I. 491, 492.
 [E] <!--v2p594-->Temples are due to God alone, 507; are dedicated by Papists to the worship of angels and saints, ibid.
 [E] <!--v2p594-->Testament Old, is the New undera veil; the New is the Old revealed, I. 493.
@@ -505,7 +509,7 @@
 [E] <!--v2p594-->Understanding, our's naturally dark, I. 252; in matters of faith alto. gether blind, 304; 452; how enlightened, 120.
 [E] <!--v2p594-->Union, personal, in Christ what, I.
 [E] <!--v2p594-->' 415; does not establish the ubiquity of his body, 419, 421, mystical, is effected by faith and the Spirit, 426 ; importance of it, II. 23.
-[LETTER] IE
+[LETTER] V
 [E] <!--v2p594-->Vices are contagious, II. 257; the chains of the devil, I. 474 ; should be abandoned by the Christian, II. 63; with promptitude, 64 ; and in toto, 65; and spiritually, 64.
 [E] <!--v2p595-->Vigils public, what they were formerly, and on what occasion instituted, IJ. 231; their abuse, 233; have very properly ceased, 232, and Note. private, laudable, 232, 233. See Watchfulness.
 [E] <!--v2p595-->Virtue, what, 1I. 101; its likeness toa garment, ibid.; and the reverse, 102.
@@ -531,11 +535,13 @@
 [E] <!--v2p595-->Works of the Law, do not justify, I. 99. of the renewed, although imperfect, acceptable to God, and wherefore, 128; of the unrenewed not so, 60; are evil, 253, 254. of supererogation do not exist, 278, 279. of one creature cannot be imputed to another as meritorious, nor as satisfactory for sin, 279, 280.
 [E] <!--v2p595-->Worship, what, I. 502 ; to be given to God alone, 503 ; prescribed by God himself, 527, 528. what to be avoided in it, 532.
 [E] <!--v2p595-->Worthiness, twofold, I. 123.
-[E] <!--v2p595-->Wrath, what itis, Il. 66. of God, what. See Anger. We
+[E] <!--v2p595-->Wrath, what itis, Il. 66. of God, what. See Anger.
+[LETTER] Y
 [E] <!--v2p595-->Youth, should live in obedience to parents. See Children.
 [LETTER] Z
 [E] <!--v2p595-->Zeal, whence the term is derived, II. 293. to be united with discretion, I. 369.
 [SEC] index-questions|Index of Questions|incidentally and briefly determined in the work
+[CAPTION] PAGE,
 [E] <!--v2p596-->WueTuER the Pope of Rome hath apostolical dignitv and autho-
 [E] <!--v2p596-->Whether the faithful can certainly conclude that they are in favour with God, and that their sins are remitted them through Christ in whom they have helieved 006 poc occ orc 37—53
 [E] <!--v2p596-->Whether Christ is the adequate object of faith as it justifies ... 61—64
@@ -626,7 +632,7 @@
 [E] <!--v2p598-->  formed Gallican Church we ese eee - 561
 [E] <!--v2p598-->RrPLx of Bisuope DAVENANT ee - ae see 563
 [SEC] index-biographical|Index to the Biographical Sketches|of Fathers, Heresiarchs, Schoolmen, &c., appended by the Translator
-[NOTE] Those names printed in Italics occur only in the Dissertation on the Death of Christ.
+[NOTE] Q3" Those names printed in Italics occur only in the Dissertation on the Death of Christ.
 [CAPTION] A. Vol. I.
 [E] <!--v2p599-->Abelard …¦435
 [E] <!--v2p599-->Abbot, Robert (Bishop of Salisbury) …¦453
@@ -649,12 +655,13 @@
 [E] <!--v2p599-->Arnold 900 900¦448
 [E] <!--v2p599-->Athanasius …¦409
 [E] <!--v2p599-->Athenagoras … 510
-[E] <!--v2p599-->Augustine ... EL Lp n.¦45
+[E] <!--v2p599-->Augustine ... EL Lp¦45
+[LETTER] B
+[E] <!--v2p599-->|
 [E] <!--v2p599-->Bartoli oc "T" …¦83
 [E] <!--v2p599-->Basil … 185
 [E] <!--v2p599-->Baslides … 257
-[E] <!--v2p599-->Bede " 73, 236
-[E] <!--v2p599-->Bellarmin ... Doc 9
+[E] <!--v2p599-->Bede " 73, 236 Bellarmin ... Doc 9
 [CAPTION] Vol. I.
 [E] <!--v2p599-->Bernard ... 32, 116
 [E] <!--v2p599-->Boethius … 200
@@ -679,7 +686,8 @@
 [E] <!--v2p599-->Cologne, proceedings … 53 Divines of 547
 [E] <!--v2p599-->Councits referred … Áncyra … Calcedon... 282, 546 Carthage … Eliberis ... Doo Gangra … Leyden … Mentz …¦253 185 232 183 335 334
 [CAPTION] Vol. LL
-[E] <!--v2p600-->Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur … Valence... p00¦445 185 132 Note 186 | 323
+[E] <!--v2p600-->Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …¦445 185 132 Note 186
+[E] <!--v2p600-->Valence... p00¦| 323
 [E] <!--v2p600-->Cusa … 16
 [E] <!--v2p600-->Cyprian... 14, 25, 547
 [E] <!--v2p600-->Cyril … 168
@@ -701,7 +709,8 @@
 [E] <!--v2p600-->Fathers (on the use of) 61, 249
 [E] <!--v2p600-->Faustus … 404¦325
 [E] <!--v2p600-->Flodoard M. …¦333
-[E] <!--v2p600-->Fulgentius ... T … G. …
+[E] <!--v2p600-->Fulgentius ... T …
+[LETTER] G
 [E] <!--v2p600-->Gelasius (quoted)... 420
 [E] <!--v2p600-->Gerson DOC Doc 90
 [E] <!--v2p600-->Godeschalcus Doc …¦334
@@ -713,14 +722,13 @@
 [LETTER] H
 [E] <!--v2p600-->Hales m oo Hil
 [E] <!--v2p600-->Herman, Abp. of Cologne 53
-[E] <!--v2p600-->Hilary … 742
-[E] <!--v2p600-->Horsley, Bp. (quoted)¦22
+[E] <!--v2p600-->Hilary … 742 Horsley, Bp. (quoted)¦22
 [CAPTION] Vol. I.
 [E] <!--v2p600-->Hospinian ... . +» 540
 [E] <!--v2p600-->Hostiensis (Henry deSusa) 15
 [E] <!--v2p600-->Huber üco …¦458
 [E] <!--v2p600-->Hugo … 195
-[LETTER] IL
+[LETTER] I
 [E] <!--v2p600-->Illyricus Flacius T 2t
 [E] <!--v2p600-->Trenzeus … 256
 [E] <!--v2p600-->Isidore … 20
@@ -739,6 +747,7 @@
 [E] <!--v2p600-->Lucidus …¦6
 [E] <!--v2p600-->Lyranus, Nicholas de Lyra … 198
 [LETTER] M
+[E] <!--v2p600-->M.
 [E] <!--v2p600-->Malderus — ... O00¦531
 [E] <!--v2p600-->Manichzus … 192
 [E] <!--v2p600-->Marcion …
@@ -753,9 +762,8 @@
 [E] <!--v2p600-->Musculus (Wolfgang) 214
 [LETTER] N
 [E] <!--v2p600-->Nazianzen, Gregory... 128¦|
-[E] <!--v2p600-->Nicephorus ... 200 3 oO.
-[E] <!--v2p600-->CEcumenius... 2 …
-[E] <!--v2p600-->|| Origen …¦18
+[E] <!--v2p600-->Nicephorus ... 200 3
+[E] <!--v2p600-->oO. CEcumenius... 2 … || Origen …¦18
 [CAPTION] P. Vol. I.
 [E] <!--v2p601-->Pareus …¦355
 [E] <!--v2p601-->Parisiensis (William Bp. of Auverne) … 21
@@ -781,7 +789,8 @@
 [E] <!--v2p601-->Rhemish Annotators... 276
 [E] <!--v2p601-->Rhenanus, Beatus …¦134
 [E] <!--v2p601-->Ribera 000 p00 44
-[E] <!--v2p601-->Rupert … 336 S. …¦|
+[E] <!--v2p601-->Rupert … 336¦|
+[LETTER] S
 [E] <!--v2p601-->Sabellius … 178¦|
 [E] <!--v2p601-->Samosatenians … 413¦|
 [E] <!--v2p601-->Scapula … 75¦|
@@ -793,6 +802,7 @@
 [E] <!--v2p601-->Stapleton …¦302
 [E] <!--v2p601-->Staphilus … 994
 [E] <!--v2p601-->Suares C00 …¦529
+[LETTER] T
 [E] <!--v2p601-->Tatians … 481
 [E] <!--v2p601-->Tertullian (quoted) … 74
 [E] <!--v2p601-->Tertullian’s life Sc Un
@@ -800,7 +810,8 @@
 [E] <!--v2p601-->T'heophylact …¦178
 [E] <!--v2p601-->Thomson, Richard...¦448
 [E] <!--v2p601-->Tilenus ond BOG¦448
-[E] <!--v2p601-->Tremellius … 30 Vv.
+[E] <!--v2p601-->Tremellius … 30
+[LETTER] V
 [E] <!--v2p601-->Valentinians … 258
 [E] <!--v2p601-->Vasques …¦| 546
 [E] <!--v2p601-->Vincentius Lirinensis …¦320
@@ -811,7 +822,7 @@
 [E] <!--v2p601-->William, of Auverne, Bp. of Paris Doc 21
 [E] <!--v2p601-->William, Bp. of Auxerre 68
 [SEC] index-notes|Index of Subjects and Works|incidentally glanced at in the Notes
-[E] <!--v2p602-->  tury, I. 200
+[E] <!--v2p602-->Arians, persecutors in the 5th Century, I. 200
 [E] <!--v2p602-->Arundel’s Visit to the Seven Churches, Introduction, p. lxxii.
 [E] <!--v2p602-->Augustine vindicated from Popish distortions, Vol. II. 45, 49; from the malevolence of others, I. 7 ; 72.
 [E] <!--v2p602-->* Authentic details of the Wal. denses," a work not sufficiently known, I. 140.
@@ -838,7 +849,7 @@
 [E] <!--v2p602-->Fletcher, Itev. J. on Popery, I. 18.
 [E] <!--v2p602-->Fulke’s Rhemish Testament commended, I. 276.
 [E] <!--v2p602-->Garbett, Rev. J. on Infallibility, I.
-[LETTER] TY
+[LETTER] G
 [E] <!--v2p602-->Gauntlet, anecdote by him, I. 23.
 [E] <!--v2p602-->Gospel, introduced into England before Pope Gregory sent St. Austin, I. 92; 548. effects of in promoting Christian love, I. 74; in changing the hearts of men, 96, 98.
 [E] <!--v2p602-->Gregory the Great, opinions respecting his character, I. 13.
@@ -861,17 +872,19 @@
 [E] <!--v2p603-->Liberalism of the present age, an error of a former day carried into wider operation, II. 242.
 [E] <!--v2p603-->Marsh's Edition of Douglas's Criterion recommended, I. 61; 178.
 [E] <!--v2p603-->Mendham's ** Literary Policy of the Church of Rome" noticed and recommended, 1. 76.
-[E] <!--v2p603-->Modern departure fromChristianity, T. 28.
+[E] <!--v2p603-->Modern departure fromChristianity,
+[LETTER] M
 [E] <!--v2p603-->Mosheim cited on the character of Melancthon, 1. 193; on early
 [E] <!--v2p603-->schisms, I. 202; 253.
 [E] <!--v2p603-->Nicene Creed, history, and defence of, I, 177.
-[E] <!--v2p603-->Ordinary, meaning of the term, 1. 10.
-[E] <!--v2p603-->Papists, withhold the Scriptures, II. 132. do make ‘images for Divine worship, I. 182.
-[E] <!--v2p603-->Peter, disproved to have been Bishop of Rome, II. 285.
-[E] <!--v2p603-->Phelan’s Catholic doctrine of Tradition, II. 184.
-[E] <!--v2p603-->Pope, not the successor of St. Peter, 1I. 273.
-[E] <!--v2p603-->Pope Clement 1V. anecdote of, I. 34.
-[E] <!--v2p603-->Pope Pius IV. maintained idolatry, I. 183.
+[E] <!--v2p603-->Ordinary, meaning of the term, 1.
+[LETTER] P
+[E] <!--v2p603-->Papists, withhold the Scriptures, II. 132. do make ‘images for Divine wor-
+[E] <!--v2p603-->ship, I. 182. Peter, disproved to have been
+[E] <!--v2p603-->Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradi-
+[E] <!--v2p603-->tion, II. 184. Pope, not the successor of St. Peter,
+[E] <!--v2p603-->1I. 273.
+[E] <!--v2p603-->Pope Clement 1V. anecdote of, I. 34. Pope Pius IV. maintained idolatry, I. 183.
 [E] <!--v2p603-->Prayer of Thomas Aquinas before study, I. 34. of St. Chrysostom, in use in the Greek Church, 112.
 [E] <!--v2p603-->Protestantism, vindicated, I. 183.
 [E] <!--v2p603-->Reformer, what is requisite for one, I. 91.
@@ -900,9 +913,9 @@
 [E] <!--v2p603-->Worship, as defined by the Romish Church, I. 503.
 [SEC] index-scripture|Index of Passages of Scripture|explained by the way
 [NOTE] (The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- ,
-[E] <!--v2p604-->ture, not noted in the Original Index, are yet illustrated by the connexion in which they
-[E] <!--v2p604-->stand in the work, it would prove useful to give them a place here. Also, io this Index are
-[E] <!--v2p604-->included a few texts discussed in the Diseertation on the Death of Christ.]
+[NOTE] ture, not noted in the Original Index, are yet illustrated by the connexion in which they
+[NOTE] stand in the work, it would prove useful to give them a place here. Also, io this Index are
+[NOTE] included a few texts discussed in the Diseertation on the Death of Christ.]
 [CAPTION] VOL. PAGE.
 [E] <!--v2p604-->Gen. l. 1, 7n the beginning God created the heaven and the earth = ...... -- oe I. 198
 [E] <!--v2p604-->  I. 27, So God created man in his own image II. 88
@@ -916,7 +929,6 @@
 [E] <!--v2p604-->  XXII. 2i, It shall be a statute for ever, &c. I. 484
 [E] <!--v2p604-->1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113
 [E] <!--v2p604-->1 Kings XI. 3, Women turned away his heart ,. II. 40
-[CAPTION] VOL. 11. 2 Q
 [CAPTION] VOL, PAGE.
 [E] <!--v2p605-->2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279
 [E] <!--v2p605-->Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55

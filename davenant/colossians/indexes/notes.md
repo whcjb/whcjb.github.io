@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:03
+date: 2026-09-09 15:54
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
@@ -14,7 +14,7 @@ next_label: "Index of Passages of Scripture"
 ---
 
 <p class="dv-idx-lead">注中人事索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
-<p class="dv-idx-2">tury, I. 200</p>
+<p class="dv-idx">Arians, persecutors in the 5th Century, I. 200</p>
 <p class="dv-idx">Arundel’s Visit to the Seven Churches, Introduction, p. lxxii.</p>
 <p class="dv-idx">Augustine vindicated from Popish distortions, Vol. II. 45, 49; from the malevolence of others, I. 7 ; 72.</p>
 <p class="dv-idx">* Authentic details of the Wal. denses," a work not sufficiently known, I. 140.</p>
@@ -41,7 +41,7 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Fletcher, Itev. J. on Popery, I. 18.</p>
 <p class="dv-idx">Fulke’s Rhemish Testament commended, I. 276.</p>
 <p class="dv-idx">Garbett, Rev. J. on Infallibility, I.</p>
-<p class="dv-idx-letter">TY</p>
+<p class="dv-idx-letter">G</p>
 <p class="dv-idx">Gauntlet, anecdote by him, I. 23.</p>
 <p class="dv-idx">Gospel, introduced into England before Pope Gregory sent St. Austin, I. 92; 548. effects of in promoting Christian love, I. 74; in changing the hearts of men, 96, 98.</p>
 <p class="dv-idx">Gregory the Great, opinions respecting his character, I. 13.</p>
@@ -64,17 +64,19 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Liberalism of the present age, an error of a former day carried into wider operation, II. 242.</p>
 <p class="dv-idx">Marsh's Edition of Douglas's Criterion recommended, I. 61; 178.</p>
 <p class="dv-idx">Mendham's ** Literary Policy of the Church of Rome" noticed and recommended, 1. 76.</p>
-<p class="dv-idx">Modern departure fromChristianity, T. 28.</p>
+<p class="dv-idx">Modern departure fromChristianity,</p>
+<p class="dv-idx-letter">M</p>
 <p class="dv-idx">Mosheim cited on the character of Melancthon, 1. 193; on early</p>
 <p class="dv-idx">schisms, I. 202; 253.</p>
 <p class="dv-idx">Nicene Creed, history, and defence of, I, 177.</p>
-<p class="dv-idx">Ordinary, meaning of the term, 1. 10.</p>
-<p class="dv-idx">Papists, withhold the Scriptures, II. 132. do make ‘images for Divine worship, I. 182.</p>
-<p class="dv-idx">Peter, disproved to have been Bishop of Rome, II. 285.</p>
-<p class="dv-idx">Phelan’s Catholic doctrine of Tradition, II. 184.</p>
-<p class="dv-idx">Pope, not the successor of St. Peter, 1I. 273.</p>
-<p class="dv-idx">Pope Clement 1V. anecdote of, I. 34.</p>
-<p class="dv-idx">Pope Pius IV. maintained idolatry, I. 183.</p>
+<p class="dv-idx">Ordinary, meaning of the term, 1.</p>
+<p class="dv-idx-letter">P</p>
+<p class="dv-idx">Papists, withhold the Scriptures, II. 132. do make ‘images for Divine wor-</p>
+<p class="dv-idx">ship, I. 182. Peter, disproved to have been</p>
+<p class="dv-idx">Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradi-</p>
+<p class="dv-idx">tion, II. 184. Pope, not the successor of St. Peter,</p>
+<p class="dv-idx">1I. 273.</p>
+<p class="dv-idx">Pope Clement 1V. anecdote of, I. 34. Pope Pius IV. maintained idolatry, I. 183.</p>
 <p class="dv-idx">Prayer of Thomas Aquinas before study, I. 34. of St. Chrysostom, in use in the Greek Church, 112.</p>
 <p class="dv-idx">Protestantism, vindicated, I. 183.</p>
 <p class="dv-idx">Reformer, what is requisite for one, I. 91.</p>

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 15:03
+date: 2026-09-09 15:54
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -14,7 +14,8 @@ next_label: "Index of Questions"
 ---
 
 <p class="dv-idx-lead">总索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
-<p class="dv-idx-2">and happiness, 471.</p>
+<p class="dv-idx">Ape, Christ the head of, I. 212.</p>
+<p class="dv-idx">Abraham’s bosom, a celestial place and happiness, 471.</p>
 <p class="dv-idx">Abstinence, see Fastings, see Meats.</p>
 <p class="dv-idx">Abstinence of Paula, 541; should be moderated, 543.</p>
 <p class="dv-idx">Acceptance of persons, none with God, II. 90, 211; should not be among men, 212.</p>
@@ -55,6 +56,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Bodily is put for personally, because the body is taken for the whole person, I. 415.</p>
 <p class="dv-idx">Brethren, all Christians are, on four accounts, I. 26; and that in Christ, 27; false ones most pernicious, lI. 275.</p>
 <p class="dv-idx">Brothels, not to be suffered in a Christian State, II. 44; condemned by the Fathers, 45; evils of the toleration of them, 46; yet upheld by the Papacy, ibid. and Note.</p>
+<p class="dv-idx-letter">C</p>
 <p class="dv-idx">Carthusian Monkery, not a state of perfection, I. 326.</p>
 <p class="dv-idx">Ceremonies, may be instituted by the Church, and with what cautions, I. 401, 402; 522; are not to be multiplied, 402; 467; 529; whether the observance or the neglect is in itself of any or no consequence, LI. 91; Ceremonies of the Jews, I. 478, 472. Chris. tian liberty in regard to all, 480 ; the legal ones were acknowledgments of human guilt, 461; shadowed forth the grace of Christ, 489; and the very substance in Christ, 492; abrogated by Christ, and why, 404; in what manner, 465, 466; for what time, and how far they might be observed after the passion of Christ, 405.</p>
 <p class="dv-idx">Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfils the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.</p>
@@ -378,7 +380,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Mystery, what it signifies, I. 300 ; taken for the sum of Evangelical doctrine, 356 ; for the calling of the Gentiles, 300, 502.</p>
 <p class="dv-idx">Mysteries to be believed, not discussed, 303, 304.</p>
 <p class="dv-idx-caption">VOL. 1i. 2r</p>
-<p class="dv-idx-letter">IN</p>
+<p class="dv-idx-letter">N</p>
 <p class="dv-idx-2">Name of Christ, what it is to do any thing in the, II. 146. Name, the origin not so much to be regarded as the use, I. 35 without the reality avails nothing, I. 10, 23; 100; 443; II. 274. Nations, nodistinction of with God, II. 90. Nature, our's good at the creation, I. 250; corrupt, incapable of spiritual things, 146; is not disposed for grace, 453; II. 60; is alienated from God, I. 249 ; at enmity with God, and God an enemy to it, 250, 251. Natural corruption, pervades all the faculties of the soul, 452, 453: ! man thereby dead as to spiritual . perceptions, 450; explained by parts, 451, 452; all prone to every evil on account of it, Il. 65. .</p>
 <p class="dv-idx">Negations in comparisons, their peculiar use, II. 203.</p>
 <p class="dv-idx">Neighbour, who is our's, and how the object of our love, I. 72.</p>
@@ -396,7 +398,8 @@ next_label: "Index of Questions"
 <p class="dv-idx">Opportunity to be embraced, I. 305 ; 1I. 257, 258.</p>
 <p class="dv-idx">Order, what it is, 295, 296; va. rious significations of, I. 374,375 ; encomiums of it, 375; all things done of God by order, IT. 56. ought to exist among the Minis-</p>
 <p class="dv-idx-2">ters of the Church, I. 296; 375, 376.</p>
-<p class="dv-idx">Ornaments, what are a woman’s best, II. 157. p.</p>
+<p class="dv-idx">Ornaments, what are a woman’s best, II. 157.</p>
+<p class="dv-idx-letter">P</p>
 <p class="dv-idx">Pappula, instanced by Papists to justify opposition to parental authority, II. 183.</p>
 <p class="dv-idx">T'arents, duty of obedience to them, 169; the extent of it, 171; is well-pleasing to God, 173; restricts children from entering monasteries against their parents' consent, 175—177. obedience to them must yield to obedience to God, 178, 179.</p>
 <p class="dv-idx">Parerts, conduct of towards their children, 190—193 ; the evils of treating children harshly, 194.</p>
@@ -455,7 +458,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Revilers of the Ministry warned, I. 104.</p>
 <p class="dv-idx">Righteous we are so by tlie imputation of Christ's righteousness, I. 424.</p>
 <p class="dv-idx">Righteousness of God in punishing, II. 55, 56. 7</p>
-<p class="dv-idx-2">s.</p>
+<p class="dv-idx-letter">S</p>
 <p class="dv-idx">Sabbath, why instituted and what it signifies, I. 491, 492.</p>
 <p class="dv-idx">Sacraments without Christ are of no avail, 436, 437; are tenders of grace, but only to Believers, 24 ; 447, 448; in themselves there is no grace, nor in the opus operatum, 436, 446; nevertheless the external signs not to be despised, 437.</p>
 <p class="dv-idx">Saints, their infirmities illustrated by various similitudes, 133; derive help from God, 134; their works are not perfectly good, 145 —149; perform no works of supererogation, 279; are not to be worshipped, 487.</p>
@@ -497,6 +500,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Sufferings of others claim our sympathy, 17. 108; 286. of believers, see Afflictions. of Christ, satisfactory, &amp;c. see Passion. of the Cross, the best means adapted for our redemption, 1. 242; 474.</p>
 <p class="dv-idx">Superiors to be oheyed in things indifferent, II. 171.</p>
 <p class="dv-idx">Superstitious observances, 1. 400.</p>
+<p class="dv-idx-letter">T</p>
 <p class="dv-idx">Tabernacles, feast of, why instituted and what it signified, I. 491, 492.</p>
 <p class="dv-idx">Temples are due to God alone, 507; are dedicated by Papists to the worship of angels and saints, ibid.</p>
 <p class="dv-idx">Testament Old, is the New undera veil; the New is the Old revealed, I. 493.</p>
@@ -520,7 +524,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Understanding, our's naturally dark, I. 252; in matters of faith alto. gether blind, 304; 452; how enlightened, 120.</p>
 <p class="dv-idx">Union, personal, in Christ what, I.</p>
 <p class="dv-idx">' 415; does not establish the ubiquity of his body, 419, 421, mystical, is effected by faith and the Spirit, 426 ; importance of it, II. 23.</p>
-<p class="dv-idx-letter">IE</p>
+<p class="dv-idx-letter">V</p>
 <p class="dv-idx">Vices are contagious, II. 257; the chains of the devil, I. 474 ; should be abandoned by the Christian, II. 63; with promptitude, 64 ; and in toto, 65; and spiritually, 64.</p>
 <p class="dv-idx">Vigils public, what they were formerly, and on what occasion instituted, IJ. 231; their abuse, 233; have very properly ceased, 232, and Note. private, laudable, 232, 233. See Watchfulness.</p>
 <p class="dv-idx">Virtue, what, 1I. 101; its likeness toa garment, ibid.; and the reverse, 102.</p>
@@ -546,7 +550,8 @@ next_label: "Index of Questions"
 <p class="dv-idx">Works of the Law, do not justify, I. 99. of the renewed, although imperfect, acceptable to God, and wherefore, 128; of the unrenewed not so, 60; are evil, 253, 254. of supererogation do not exist, 278, 279. of one creature cannot be imputed to another as meritorious, nor as satisfactory for sin, 279, 280.</p>
 <p class="dv-idx">Worship, what, I. 502 ; to be given to God alone, 503 ; prescribed by God himself, 527, 528. what to be avoided in it, 532.</p>
 <p class="dv-idx">Worthiness, twofold, I. 123.</p>
-<p class="dv-idx">Wrath, what itis, Il. 66. of God, what. See Anger. We</p>
+<p class="dv-idx">Wrath, what itis, Il. 66. of God, what. See Anger.</p>
+<p class="dv-idx-letter">Y</p>
 <p class="dv-idx">Youth, should live in obedience to parents. See Children.</p>
 <p class="dv-idx-letter">Z</p>
 <p class="dv-idx">Zeal, whence the term is derived, II. 293. to be united with discretion, I. 369.</p>
