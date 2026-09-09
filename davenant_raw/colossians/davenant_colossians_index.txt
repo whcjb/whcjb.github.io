@@ -158,7 +158,7 @@
 [E] <!--v2p584-->Elect, they alone truly believe, I. 146; 307,
 [E] <!--v2p584-->Election, temporal and eternal, lI. 98; of which it is that the consideration influences to holiness, 99.
 [E] <!--v2p584-->Eloquence of the Scriptures, I. 336. not to be affected by ministers, 105. of heretics deceitful and ensnaring, 368, 370.
-[E] <!--v2p584-->Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid. |
+[E] <!--v2p584-->Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid.
 [E] <!--v2p584-->Enemies, we are such to God by nature, 250, 251.
 [E] <!--v2p584-->who are those of a Christian, 134; 470 ; Christ overcame them, 474; who are the enemies of the cross of Christ, 476.
 [E] <!--v2p584-->Enemies, our's, are to be loved, I. 14; we must forgive them, and do them good, 75, 76.
@@ -200,7 +200,7 @@
 [E] <!--v2p586-->God, the author and end of all things, I. 199; the preserver of all things, 203—208 ; acts to a specialend, 199; to be loved for himself alone, 70; not to be worshipped through any image, 182. is the Father of Christ, I. 56. Vide Father. how he is invisible, 180; unknown, 181; an object of dread out of Christ, 179; omnipresent, II. 201 ; in a threefold manner, I. 415.
 [E] <!--v2p586-->  how he is said to be angry, II. 54; is not a respecter of persons, 91; 211; his righteousness in punishing, 56; in how many ways heis blasphemed, 69.
 [E] <!--v2p586-->God, his efficiency by his Ministers, I. 8; his philanthropy shewn in appointing them, 9; prevents us, 89; is the fountain of all grace, as he is our Father, 32—34; communicates grace by his Son, 355 the first author of reconciliation, 235; the author of our quickening, 455, 456 ; the author of salvation by fore-ordaining it, and by effectually calling to it, 145, 146.
-[E] <!--v2p586-->God alone ought and could save us, 154. hated by sinners, and in what manner, 250. | .
+[E] <!--v2p586-->God alone ought and could save us, 154. hated by sinners, and in what manner, 250. .
 [E] <!--v2p586-->Grace, and peace, the Apostolic salutation, I. 29; why joined, ibid. ; why grace is put first, 31; the practice of St. Paul in reference to this, II. 308.
 [E] <!--v2p586-->Grace, denotes three things, I. 29; II. 308; all derived from God, I. 301; as our Father, 32, 34; through his Son, in a threefold manner, 351. efficacious, the property of the elect alone, 146—148 ; 367; sending it onlv not found to move the will, 453 ; necessity of it on account of corrupt nature, 147, 453; fulness of grace, what, 230; our duty to grow in it daily, 116; II. 49.
 [E] <!--v2p586-->Gratitude, duty of, I. 128. See Thanksgiving.
@@ -260,7 +260,7 @@
 [E] <!--v2p588-->Law, works of do not justify, see Works.
 [E] <!--v2p588-->Laws, ecclesiastical, do not bind the conscience of themselves, 369; 480; 526; neither do human laws, IT. 198.
 [CAPTION] VOL. Il. 2
-[E] <!--v2p588-->Lent, the forty davs of, badly observed hy the Papists, I. 481. |
+[E] <!--v2p588-->Lent, the forty davs of, badly observed hy the Papists, I. 481.
 [E] <!--v2p588-->Liberality, should be exercised, II. 105,
 [E] <!--v2p588-->Liberty, Christian, in regard to ceremonies, I. 480.
 [E] <!--v2p588-->Life of grace and of glory, not bodily or carnal, the true life, II. 20; of grace, the pupillage for glory, ibid. natural, tends to death; spiritual, to eternal blessedness, ibid.
@@ -352,7 +352,7 @@
 [E] <!--v2p589-->joice in the spiritual welfare of
 [E] <!--v2p589-->their flock, I. 54; 340; should
 [E] <!--v2p589-->warn their people against sedu-
-[E] <!--v2p589-->cers, 389. |
+[E] <!--v2p589-->cers, 389.
 [E] <!--v2p589-->how they absolve from sins, I.
 [E] <!--v2p589-->286 ; ought to be animated to en- :
 [E] <!--v2p590-->  dure the cross, 1. 270; 292; 329; Il. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.
@@ -497,7 +497,7 @@
 [E] <!--v2p594-->Tongue must be restrained and regulated, 1I. 260.
 [E] <!--v2p594-->Traditions are not necessary, I. 265; 322; 346, 347; how far to be observed in external things, and how far not, 401, 402.
 [E] <!--v2p594-->Traditions human, are not parts of Divine worship, 534, 544; have the appearance of wisdom, and how, 530; to be rejected. See Scriptures as the rule of faith.
-[E] <!--v2p594-->Trinity, defined, I. 178; the works | of ad extra indivisible, 5, 35, 55 ; 136, 145, 153; 209; 235—239; 414.
+[E] <!--v2p594-->Trinity, defined, I. 178; the works of ad extra indivisible, 5, 35, 55 ; 136, 145, 153; 209; 235—239; 414.
 [E] <!--v2p594-->Triumph, description of Christ's over the demons, I. 468; upon the cross, 474.
 [E] <!--v2p594-->Tychicus, first bishop of Chalcedon, IL. 266.
 [LETTER] U
@@ -657,19 +657,18 @@
 [E] <!--v2p599-->Athenagoras … 510
 [E] <!--v2p599-->Augustine ... EL Lp¦45
 [LETTER] B
-[E] <!--v2p599-->|
-[E] <!--v2p599-->Bartoli oc "T" …¦83
+[E] <!--v2p599-->Bartoli oc "T"¦83
 [E] <!--v2p599-->Basil … 185
 [E] <!--v2p599-->Baslides … 257
-[E] <!--v2p599-->Bede " 73, 236 Bellarmin ... Doc 9
+[E] <!--v2p599-->Bede " 73, 236
+[E] <!--v2p599-->Bellarmin ... Doc 9
 [CAPTION] Vol. I.
 [E] <!--v2p599-->Bernard ... 32, 116
 [E] <!--v2p599-->Boethius … 200
 [E] <!--v2p599-->Borreus …¦366
 [E] <!--v2p599-->Bower … 214
 [E] <!--v2p599-->Budzeus … 497
-[E] <!--v2p599-->Bullinger — ... T¦337
-[E] <!--v2p599-->| Bradwardine …
+[E] <!--v2p599-->Bullinger — ... T Bradwardine …¦337
 [LETTER] C
 [E] <!--v2p599-->Cajetan ... Se 12
 [E] <!--v2p599-->Calvin … 143
@@ -686,7 +685,7 @@
 [E] <!--v2p599-->Cologne, proceedings … 53 Divines of 547
 [E] <!--v2p599-->Councits referred … Áncyra … Calcedon... 282, 546 Carthage … Eliberis ... Doo Gangra … Leyden … Mentz …¦253 185 232 183 335 334
 [CAPTION] Vol. LL
-[E] <!--v2p600-->Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …¦445 185 132 Note 186
+[E] <!--v2p600-->Councits continued. Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …¦445 185 132 Note 186
 [E] <!--v2p600-->Valence... p00¦| 323
 [E] <!--v2p600-->Cusa … 16
 [E] <!--v2p600-->Cyprian... 14, 25, 547
@@ -713,7 +712,7 @@
 [LETTER] G
 [E] <!--v2p600-->Gelasius (quoted)... 420
 [E] <!--v2p600-->Gerson DOC Doc 90
-[E] <!--v2p600-->Godeschalcus Doc …¦334
+[E] <!--v2p600-->Godeschalcus Doc¦334
 [E] <!--v2p600-->Grabbon ... |o .eO … 926
 [E] <!--v2p600-->Gratian … 285¦44
 [E] <!--v2p600-->Gregory, the Great … 12
@@ -747,7 +746,6 @@
 [E] <!--v2p600-->Lucidus …¦6
 [E] <!--v2p600-->Lyranus, Nicholas de Lyra … 198
 [LETTER] M
-[E] <!--v2p600-->M.
 [E] <!--v2p600-->Malderus — ... O00¦531
 [E] <!--v2p600-->Manichzus … 192
 [E] <!--v2p600-->Marcion …
@@ -763,7 +761,8 @@
 [LETTER] N
 [E] <!--v2p600-->Nazianzen, Gregory... 128¦|
 [E] <!--v2p600-->Nicephorus ... 200 3
-[E] <!--v2p600-->oO. CEcumenius... 2 … || Origen …¦18
+[E] <!--v2p600-->oO.
+[E] <!--v2p600-->CEcumenius... 2 … || Origen …¦18
 [CAPTION] P. Vol. I.
 [E] <!--v2p601-->Pareus …¦355
 [E] <!--v2p601-->Parisiensis (William Bp. of Auverne) … 21
@@ -777,7 +776,7 @@
 [E] <!--v2p601-->Peripatetics … 190
 [E] <!--v2p601-->Philo, Judzeus Bes¦217
 [E] <!--v2p601-->Phocylides …¦212
-[E] <!--v2p601-->Picus, Mirandola, Gia- … vonni Pica 4 304
+[E] <!--v2p601-->Picus, Mirandola, Giavonni Pica 4 304
 [E] <!--v2p601-->Piscator …¦414
 [E] <!--v2p601-->Pius VIIth. (Pope) …¦132
 [E] <!--v2p601-->Prierias, Sylvester … 284
@@ -1026,7 +1025,7 @@
 [E] <!--v2p609-->Hebrews 1. 3, Upholding all things by the word of his power p0000c Tae I. 205, 246 6, Let all the angels of God worship him 196, 428 14, Are they not all ministering spirits, &e. 431
 [E] <!--v2p609-->  X. 4, A body hast thou prepared me =. ee 256
 [E] <!--v2p609-->1 Pet.1.9, That ye may receive the end of your faith, &c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN
-[E] <!--v2p609-->  III. 14, The answer of a good conscience to- | 224,443 wards God CET eos. = § dH. 17,100
+[E] <!--v2p609-->  III. 14, The answer of a good conscience to- 224,443 wards God CET eos. = § dH. 17,100
 [E] <!--v2p609-->  V. 2, 3, Feed the flock of God which is among you, not as being lords, &c. Rr 293
 [E] <!--v2p609-->1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08
 [E] <!--v2p609-->Rev. XXII. 13, 7 am the first and the last eee 186 THE END.

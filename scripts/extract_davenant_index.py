@@ -128,6 +128,25 @@ def strip_leaders(t):
     return ' '.join(head + ['…'] + toks[i:])
 
 
+# 孤立的 `|` `/`：栏间竖线与扫描斑点。本书里这两个字符从不合法出现。
+# 出现在**行首**时危害不止是难看——它把该行的 x0 顶大了一格，悬挂缩进判据
+# 会把这一行当成回行并进上一条，两个条目就粘成一条
+# （`…of all things is Christ, ibid. | Enemies, we are such to God…`）。
+SPECK_TOK = re.compile(r'(?:(?<=\s)|^)[|/](?=\s|$)')
+
+
+def strip_specks(l):
+    """→ (清掉斑点的文本, 修正后的 x0)。行首的斑点要把 x0 按比例扣回去。"""
+    t = l['text']
+    clean_t = re.sub(r'\s{2,}', ' ', SPECK_TOK.sub('', t)).strip()
+    x0 = l['x0']
+    if clean_t != t.strip() and t.lstrip()[:1] in '|/':
+        cut = len(t) - len(clean_t)
+        if len(t) > cut > 0:
+            x0 += int((l['x1'] - l['x0']) * cut / len(t))
+    return clean_t, x0
+
+
 def load(path):
     return {json.loads(l)['page']: json.loads(l)['lines']
             for l in Path(path).open(encoding='utf-8')}
@@ -280,7 +299,9 @@ def classify(pc, pages):
         base = min((l['x0'] for l in g), default=0)
         span = max((l['x1'] for l in g), default=0) - base
         for l in g:
-            t = E.clean(l['text'])
+            t, x0 = strip_specks(l)
+            l = dict(l, x0=x0)
+            t = E.clean(t)
             if not t:
                 continue
             # ⚠️ 居中的短行先认字母分隔，再走垃圾过滤。JUNK_RE 里

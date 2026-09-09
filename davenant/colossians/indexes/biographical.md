@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 17:53
+date: 2026-09-09 18:44
 subtitle: "of Fathers, Heresiarchs, Schoolmen, &c., appended by the Translator"
 prev_url: "/davenant/colossians/indexes/contents/"
 prev_label: "Contents of the Dissertation"
@@ -39,19 +39,18 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Athenagoras … 510</p>
 <p class="dv-idx">Augustine ... EL Lp<span class="dv-idx-b">45</span></p>
 <p class="dv-idx-letter">B</p>
-<p class="dv-idx">|</p>
-<p class="dv-idx">Bartoli oc "T" …<span class="dv-idx-b">83</span></p>
+<p class="dv-idx">Bartoli oc "T"<span class="dv-idx-b">83</span></p>
 <p class="dv-idx">Basil … 185</p>
 <p class="dv-idx">Baslides … 257</p>
-<p class="dv-idx">Bede " 73, 236 Bellarmin ... Doc 9</p>
+<p class="dv-idx">Bede " 73, 236</p>
+<p class="dv-idx">Bellarmin ... Doc 9</p>
 <p class="dv-idx-caption">Vol. I.</p>
 <p class="dv-idx">Bernard ... 32, 116</p>
 <p class="dv-idx">Boethius … 200</p>
 <p class="dv-idx">Borreus …<span class="dv-idx-b">366</span></p>
 <p class="dv-idx">Bower … 214</p>
 <p class="dv-idx">Budzeus … 497</p>
-<p class="dv-idx">Bullinger — ... T<span class="dv-idx-b">337</span></p>
-<p class="dv-idx">| Bradwardine …</p>
+<p class="dv-idx">Bullinger — ... T Bradwardine …<span class="dv-idx-b">337</span></p>
 <p class="dv-idx-letter">C</p>
 <p class="dv-idx">Cajetan ... Se 12</p>
 <p class="dv-idx">Calvin … 143</p>
@@ -68,7 +67,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Cologne, proceedings … 53 Divines of 547</p>
 <p class="dv-idx">Councits referred … Áncyra … Calcedon... 282, 546 Carthage … Eliberis ... Doo Gangra … Leyden … Mentz …<span class="dv-idx-b">253 185 232 183 335 334</span></p>
 <p class="dv-idx-caption">Vol. LL</p>
-<p class="dv-idx">Councits continued. … Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …<span class="dv-idx-b">445 185 132 Note 186</span></p>
+<p class="dv-idx">Councits continued. Nice cited … 14,177 Orange … Toledo … Trent Vol. 1.1 248 Text 'lTribur …<span class="dv-idx-b">445 185 132 Note 186</span></p>
 <p class="dv-idx">Valence... p00<span class="dv-idx-b">| 323</span></p>
 <p class="dv-idx">Cusa … 16</p>
 <p class="dv-idx">Cyprian... 14, 25, 547</p>
@@ -95,7 +94,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx-letter">G</p>
 <p class="dv-idx">Gelasius (quoted)... 420</p>
 <p class="dv-idx">Gerson DOC Doc 90</p>
-<p class="dv-idx">Godeschalcus Doc …<span class="dv-idx-b">334</span></p>
+<p class="dv-idx">Godeschalcus Doc<span class="dv-idx-b">334</span></p>
 <p class="dv-idx">Grabbon ... |o .eO … 926</p>
 <p class="dv-idx">Gratian … 285<span class="dv-idx-b">44</span></p>
 <p class="dv-idx">Gregory, the Great … 12</p>
@@ -129,7 +128,6 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Lucidus …<span class="dv-idx-b">6</span></p>
 <p class="dv-idx">Lyranus, Nicholas de Lyra … 198</p>
 <p class="dv-idx-letter">M</p>
-<p class="dv-idx">M.</p>
 <p class="dv-idx">Malderus — ... O00<span class="dv-idx-b">531</span></p>
 <p class="dv-idx">Manichzus … 192</p>
 <p class="dv-idx">Marcion …</p>
@@ -145,7 +143,8 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx-letter">N</p>
 <p class="dv-idx">Nazianzen, Gregory... 128<span class="dv-idx-b">|</span></p>
 <p class="dv-idx">Nicephorus ... 200 3</p>
-<p class="dv-idx">oO. CEcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
+<p class="dv-idx">oO.</p>
+<p class="dv-idx">CEcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
 <p class="dv-idx-caption">P. Vol. I.</p>
 <p class="dv-idx">Pareus …<span class="dv-idx-b">355</span></p>
 <p class="dv-idx">Parisiensis (William Bp. of Auverne) … 21</p>
@@ -159,7 +158,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Peripatetics … 190</p>
 <p class="dv-idx">Philo, Judzeus Bes<span class="dv-idx-b">217</span></p>
 <p class="dv-idx">Phocylides …<span class="dv-idx-b">212</span></p>
-<p class="dv-idx">Picus, Mirandola, Gia- … vonni Pica 4 304</p>
+<p class="dv-idx">Picus, Mirandola, Giavonni Pica 4 304</p>
 <p class="dv-idx">Piscator …<span class="dv-idx-b">414</span></p>
 <p class="dv-idx">Pius VIIth. (Pope) …<span class="dv-idx-b">132</span></p>
 <p class="dv-idx">Prierias, Sylvester … 284</p>

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 17:53
+date: 2026-09-09 18:44
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -173,7 +173,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Elect, they alone truly believe, I. 146; 307,</p>
 <p class="dv-idx">Election, temporal and eternal, lI. 98; of which it is that the consideration influences to holiness, 99.</p>
 <p class="dv-idx">Eloquence of the Scriptures, I. 336. not to be affected by ministers, 105. of heretics deceitful and ensnaring, 368, 370.</p>
-<p class="dv-idx">Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid. |</p>
+<p class="dv-idx">Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid.</p>
 <p class="dv-idx">Enemies, we are such to God by nature, 250, 251.</p>
 <p class="dv-idx">who are those of a Christian, 134; 470 ; Christ overcame them, 474; who are the enemies of the cross of Christ, 476.</p>
 <p class="dv-idx">Enemies, our's, are to be loved, I. 14; we must forgive them, and do them good, 75, 76.</p>
@@ -215,7 +215,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">God, the author and end of all things, I. 199; the preserver of all things, 203—208 ; acts to a specialend, 199; to be loved for himself alone, 70; not to be worshipped through any image, 182. is the Father of Christ, I. 56. Vide Father. how he is invisible, 180; unknown, 181; an object of dread out of Christ, 179; omnipresent, II. 201 ; in a threefold manner, I. 415.</p>
 <p class="dv-idx-2">how he is said to be angry, II. 54; is not a respecter of persons, 91; 211; his righteousness in punishing, 56; in how many ways heis blasphemed, 69.</p>
 <p class="dv-idx">God, his efficiency by his Ministers, I. 8; his philanthropy shewn in appointing them, 9; prevents us, 89; is the fountain of all grace, as he is our Father, 32—34; communicates grace by his Son, 355 the first author of reconciliation, 235; the author of our quickening, 455, 456 ; the author of salvation by fore-ordaining it, and by effectually calling to it, 145, 146.</p>
-<p class="dv-idx">God alone ought and could save us, 154. hated by sinners, and in what manner, 250. | .</p>
+<p class="dv-idx">God alone ought and could save us, 154. hated by sinners, and in what manner, 250. .</p>
 <p class="dv-idx">Grace, and peace, the Apostolic salutation, I. 29; why joined, ibid. ; why grace is put first, 31; the practice of St. Paul in reference to this, II. 308.</p>
 <p class="dv-idx">Grace, denotes three things, I. 29; II. 308; all derived from God, I. 301; as our Father, 32, 34; through his Son, in a threefold manner, 351. efficacious, the property of the elect alone, 146—148 ; 367; sending it onlv not found to move the will, 453 ; necessity of it on account of corrupt nature, 147, 453; fulness of grace, what, 230; our duty to grow in it daily, 116; II. 49.</p>
 <p class="dv-idx">Gratitude, duty of, I. 128. See Thanksgiving.</p>
@@ -275,7 +275,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Law, works of do not justify, see Works.</p>
 <p class="dv-idx">Laws, ecclesiastical, do not bind the conscience of themselves, 369; 480; 526; neither do human laws, IT. 198.</p>
 <p class="dv-idx-caption">VOL. Il. 2</p>
-<p class="dv-idx">Lent, the forty davs of, badly observed hy the Papists, I. 481. |</p>
+<p class="dv-idx">Lent, the forty davs of, badly observed hy the Papists, I. 481.</p>
 <p class="dv-idx">Liberality, should be exercised, II. 105,</p>
 <p class="dv-idx">Liberty, Christian, in regard to ceremonies, I. 480.</p>
 <p class="dv-idx">Life of grace and of glory, not bodily or carnal, the true life, II. 20; of grace, the pupillage for glory, ibid. natural, tends to death; spiritual, to eternal blessedness, ibid.</p>
@@ -367,7 +367,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">joice in the spiritual welfare of</p>
 <p class="dv-idx">their flock, I. 54; 340; should</p>
 <p class="dv-idx">warn their people against sedu-</p>
-<p class="dv-idx">cers, 389. |</p>
+<p class="dv-idx">cers, 389.</p>
 <p class="dv-idx">how they absolve from sins, I.</p>
 <p class="dv-idx">286 ; ought to be animated to en- :</p>
 <p class="dv-idx-2">dure the cross, 1. 270; 292; 329; Il. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.</p>
@@ -512,7 +512,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Tongue must be restrained and regulated, 1I. 260.</p>
 <p class="dv-idx">Traditions are not necessary, I. 265; 322; 346, 347; how far to be observed in external things, and how far not, 401, 402.</p>
 <p class="dv-idx">Traditions human, are not parts of Divine worship, 534, 544; have the appearance of wisdom, and how, 530; to be rejected. See Scriptures as the rule of faith.</p>
-<p class="dv-idx">Trinity, defined, I. 178; the works | of ad extra indivisible, 5, 35, 55 ; 136, 145, 153; 209; 235—239; 414.</p>
+<p class="dv-idx">Trinity, defined, I. 178; the works of ad extra indivisible, 5, 35, 55 ; 136, 145, 153; 209; 235—239; 414.</p>
 <p class="dv-idx">Triumph, description of Christ's over the demons, I. 468; upon the cross, 474.</p>
 <p class="dv-idx">Tychicus, first bishop of Chalcedon, IL. 266.</p>
 <p class="dv-idx-letter">U</p>

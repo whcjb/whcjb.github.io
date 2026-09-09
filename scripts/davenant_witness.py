@@ -51,8 +51,53 @@ if _dw.exists():
     DICT = {w.strip().lower() for w in _dw.read_text(errors='ignore').split()}
 
 _docs, _cache = {}, {}
+_BIGRAM, _UNI = None, None
+
+
+def corpus():
+    """→ (二元词频, 一元词频)，取自本书自己已提取的正文。
+
+    两边**都是英文词**时（`ail` vs `all`、`be` vs `he`、`but` vs `hut`），
+    谁对谁错没有先验——实测这类分歧 854 处，两个方向都大量存在。词典帮不上忙，
+    但书自己的行文帮得上：`in all` 在全书出现几十次，`in ail` 一次也没有。
+    用本书语料的二元词频当裁判，是拿同一部书的语言习惯判同一部书的错字，
+    不引入外部假设。语料里当然也混着错字，但错字是稀疏的，压不过正确形式。
+    """
+    global _BIGRAM, _UNI
+    if _BIGRAM is None:
+        _BIGRAM, _UNI = collections.Counter(), collections.Counter()
+        for name in ('davenant_colossians_structured.txt',
+                     'davenant_colossians_appendix.txt'):
+            f = RAW / name
+            if not f.exists():
+                continue
+            txt = re.sub(r'<[^>]+>|\[[A-Z0-9_]+\]', ' ',
+                         f.read_text(encoding='utf-8'))
+            for line in txt.splitlines():
+                ws = [_norm(w) for w in line.split()]
+                ws = [w for w in ws if w]
+                _UNI.update(ws)
+                _BIGRAM.update(zip(ws, ws[1:]))
+    return _BIGRAM, _UNI
+
+
+def judge(prev, nxt, mine, other):
+    """→ 采信对方吗。看 (前词,候选) 与 (候选,后词) 两个二元组的词频差。
+
+    要求赢家至少 4 倍于输家、且自己出现 ≥5 次；否则维持原样（不猜）。
+    """
+    bg, uni = corpus()
+    a, b = _norm(mine), _norm(other)
+    sa = bg[(prev, a)] + bg[(a, nxt)]
+    sb = bg[(prev, b)] + bg[(b, nxt)]
+    if sb >= 5 and sb >= sa * 4:
+        return True
+    return False
 # 孤立的 | 或 /（两侧是空白或行首行尾）
 SPECK = re.compile(r'^[|/]$')
+# 圣经书卷缩写里带卷次的那几种，`1 Tim.` / `2 Cor.` 的卷次常被读成 `|`
+BIBLE_BOOK = re.compile(
+    r'^(Tim|Cor|Thess|Pet|John|Kings|Sam|Chron|Macc|Esdr)[.,]', re.I)
 
 
 def ia_lines(vol, page):
@@ -78,8 +123,11 @@ def _isword(w):
 def fix_line(vol, page, text):
     """→ (改后的文本, [(原, 新, 理由), …])。判不了就原样返回。"""
     toks = text.split()
-    if not any(SPECK.match(t) or not _isword(t) for t in toks):
+    if len(toks) < 2:
         return text, []
+    # ⚠️ 这里**不能**因为「每个词都在词典里」就早退。词频裁判要处理的正是
+    # 「两边都是词」的情形——`Does not free-will one cause effect in ail?`
+    # 整行八个词全在词典里，早退一挡，`ail` → `all` 永远轮不到判（实测）。
     cands = ia_lines(vol, page)
     if not cands:
         return text, []
@@ -88,7 +136,13 @@ def fix_line(vol, page, text):
         None, key, re.sub(r'[^a-z ]', '', c.lower())).ratio())
     if difflib.SequenceMatcher(None, key, re.sub(
             r'[^a-z ]', '', best.lower())).ratio() < 0.55:
-        return text, []
+        # 对不上行（多半是两边都读花的希腊文音译）时，别的都不动，
+        # 但孤立的 `|` `/` 照删——这两个字符在本书里从不合法出现，
+        # 不需要第二证人也能断定是扫描斑点。
+        if not any(SPECK.match(t) for t in toks):
+            return text, []
+        keep = [t for t in toks if not SPECK.match(t)]
+        return ' '.join(keep), [(t, '', '斑点') for t in toks if SPECK.match(t)]
 
     theirs = best.split()
     sm = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
@@ -110,14 +164,37 @@ def fix_line(vol, page, text):
                 other = seg[off] if off < len(seg) else None
             break
         if SPECK.match(w):
-            if other in (None, '~') or SPECK.match(other or ''):
-                out[i] = None
-                log.append((w, '', '斑点'))
-            elif len(other) <= 4:
+            nxt = toks[i + 1] if i + 1 < len(toks) else ''
+            if isinstance(other, str) and other != '~' and len(other) <= 4 \
+                    and not SPECK.match(other):
                 out[i] = other
                 log.append((w, other, '第二证人'))
+            elif BIBLE_BOOK.match(nxt):
+                # 对方那边对不齐（多半整行是希腊文音译，两边都读花了），
+                # 但后面紧跟着圣经书卷缩写时，这个 `|` 只能是数字 1
+                # （`| Tim. ii.` = 1 Tim. ii.），删掉就把卷次吃了。
+                out[i] = '1'
+                log.append((w, '1', '书卷序数'))
+            else:
+                # 其余一律当斑点删：`|` `/` 在本书里从不合法出现，
+                # 这一条不需要第二证人也能断定。
+                out[i] = None
+                log.append((w, '', '斑点'))
             continue
         if other in (None, '~') or not isinstance(other, str):
+            continue
+        if _isword(w) and _isword(other):
+            # 两边都是词：交给本书语料的二元词频裁判（见 judge）
+            a, b = _norm(w), _norm(other)
+            # 同样不许变短：`Fora`(For a) 被判成 `For` 就把 "a" 吃掉了
+            if (len(b) >= len(a) and abs(len(a) - len(b)) <= 1
+                    and sum(1 for x in difflib.ndiff(a, b) if x[0] != ' ') <= 2
+                    and not re.search(r'[\d^\\~`]', other)
+                    and judge(_norm(toks[i - 1]) if i else '',
+                              _norm(toks[i + 1]) if i + 1 < len(toks) else '',
+                              w, other)):
+                out[i] = other
+                log.append((w, other, '词频裁判'))
             continue
         if _isword(w) or not _isword(other):
             continue
