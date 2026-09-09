@@ -96,6 +96,28 @@ layout: default
 .dv-content h2 { font-size: 16px; font-weight: bold; color: var(--dv-ink);
   letter-spacing: .04em; margin: 30px 0 12px; text-align: center; }
 .dv-content p { margin: 0 0 15px; text-align: justify; }
+
+/* ── 超长页的渲染内存 ─────────────────────────────────────────────────────
+   本卷一章就是一页：ch1 可见正文 75.8 万字符、1,388 段，390px 窄屏下页高
+   约 53 万 CSS px（1,359 屏）。浏览器要为整页维持排版树、行盒与绘制记录，
+   手机上实测报到 1.1GB —— 与下载量无关（整页含子资源才 1MB），是
+   530,000px × 360px 这个尺度的必然结果。
+
+   content-visibility:auto 让屏外的段落/经文块跳过排版与绘制，只保留盒子占位。
+   contain-intrinsic-size 用 `auto <长度>` 形式：首次渲染后浏览器记住该元素的
+   真实尺寸，来回滚动不会跳；`auto` 缺席时才退回后面那个估值
+   （360px ≈ 平均段 546 字符 ÷ 每行 45 字符 × 行高 30.5px）。
+
+   放在段落级而不是整章级：单段估高的偏差不会累积成大幅滚动跳动。
+   锚点跳转（verse-nav 的 #colossians-1-N）不受影响 —— 片段导航与页内查找
+   属于规范里的「对用户相关」，浏览器会强制渲染目标子树。
+   ⚠️ 只加这一条，不要顺手改 .dv-content 的字号/行高：估值是按 16.5px/1.85 算的。 */
+.dv-content > p,
+.dv-content > .dv-scripture,
+.dv-content > .footnotes {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 360px;
+}
 .dv-content a { color: var(--dv-ink); }
 
 /* 段首编号：原书是普通段落起首的编号，不是悬挂列表。包成 span 只为
