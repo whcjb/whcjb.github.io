@@ -26,6 +26,42 @@ CJK = re.compile(r'[一-鿿]')
 PDF = '/Users/yanpeifa/Documents/论文/calvin/加尔文--约翰福音注释.pdf'
 
 
+def page_words_ocr(page, dpi=300, lang='chi_sim'):
+    """扫描版（PDF 无文本层）用 tesseract 现场取坐标 → (CJK 流, [每字矩形])
+
+    罗马书那本底本是纯扫描，`get_text()` 返回空，PDF 文本层这条路走不通。
+    tesseract 的 TSV 输出带 word 级 bbox，按同样的办法摊到每个字上即可。
+    """
+    import csv
+    import subprocess
+    import tempfile
+    pm = page.get_pixmap(dpi=dpi)
+    sx = 72.0 / dpi                      # 像素 → PDF 坐标
+    with tempfile.TemporaryDirectory() as td:
+        img = f'{td}/p.png'
+        pm.save(img)
+        out = subprocess.run(['tesseract', img, 'stdout', '-l', lang,
+                              '--psm', '6', 'tsv'],
+                             capture_output=True, text=True).stdout
+    stream, rects = [], []
+    for row in csv.DictReader(out.splitlines(), delimiter='\t',
+                              quoting=csv.QUOTE_NONE):
+        try:
+            x0, y0 = float(row['left']), float(row['top'])
+            w, h = float(row['width']), float(row['height'])
+        except (TypeError, ValueError, KeyError):
+            continue
+        chars = CJK.findall(row.get('text') or '')
+        if not chars:
+            continue
+        step = w / len(chars)
+        for k, c in enumerate(chars):
+            stream.append(c)
+            rects.append(fitz.Rect((x0 + k * step) * sx, y0 * sx,
+                                   (x0 + (k + 1) * step) * sx, (y0 + h) * sx))
+    return ''.join(stream), rects
+
+
 def page_words(page):
     """→ (CJK 流, [每个字对应的 word 矩形])"""
     stream, rects = [], []
@@ -55,9 +91,9 @@ def locate(stream, probe):
     return min(b.a for b in blocks), max(b.a + b.size for b in blocks)
 
 
-def crop(doc, pg, probe, dpi=300, lines=2):
+def crop(doc, pg, probe, dpi=300, lines=2, ocr=False):
     page = doc[pg - 1]
-    stream, rects = page_words(page)
+    stream, rects = page_words_ocr(page) if ocr else page_words(page)
     hit = locate(stream, probe)
     if not hit:
         return None

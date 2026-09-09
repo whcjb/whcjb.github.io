@@ -114,6 +114,9 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--held', help='只处理这个 tsv 里列出的条目（默认 logs/held3_<book>.tsv）')
+    ap.add_argument('--all', action='store_true',
+                    help='处理判读报告里的全部条目（罗马书那种「前几轮机制不可信、'
+                         '整卷回滚重做」的场合用）')
     a = ap.parse_args()
     if not (a.apply or a.dry_run):
         sys.exit('要 --apply 或 --dry-run')
@@ -122,13 +125,16 @@ def main():
     pubtexts = {f: f.read_text(encoding='utf-8')
                 for f in sorted((ROOT / cfg['pub']).glob('*.md'))}
     recs = parse_report(ROOT / cfg['report'])
-    heldfile = Path(a.held) if a.held else ROOT / f'logs/held3_{a.book}.tsv'
-    keys = set()
-    for ln in heldfile.read_text(encoding='utf-8').splitlines():
-        c = ln.split('\t')
-        if len(c) >= 4:
-            keys.add((int(c[0]), c[2], c[3]))
-    recs = [r for r in recs if (r[0], r[2], r[1]) in keys]
+    if a.all:
+        heldfile = Path('(全部条目)')
+    else:
+        heldfile = Path(a.held) if a.held else ROOT / f'logs/held3_{a.book}.tsv'
+        keys = set()
+        for ln in heldfile.read_text(encoding='utf-8').splitlines():
+            c = ln.split('\t')
+            if len(c) >= 4:
+                keys.add((int(c[0]), c[2], c[3]))
+        recs = [r for r in recs if (r[0], r[2], r[1]) in keys]
     pagemap = map_pages(cfg, pubtexts)
     rawdir = ROOT / cfg['raw']
     witness = PdfWitness(cfg['verify_pdf']) if cfg.get('verify_pdf') else None
