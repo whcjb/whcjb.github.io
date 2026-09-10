@@ -194,6 +194,9 @@ PSALMS_PRE = [
     (r'though there he hut a handful', 'though there be but a handful'),
     # ff 连字读成 fi，中间还落了个引号：ofi"ering
     (r'ofi"ering', 'offering'),
+    # 撇号是误读的 f/r，不是空格；排在 split_apostrophe_gap 之前拦下
+    (r"\boft'er\b", 'offer'),
+    (r"\bnan'owly\b", 'narrowly'),
     (r'\bthi\)igs\b', 'things'),
     (r'the Psalms op David', 'the Psalms of David'),
     # 最后一条漏网页眉：这一处没带页码，且被并进了正文段落中间
@@ -398,9 +401,27 @@ def split_apostrophe_gap(text, lex):
     """
     def repl(m):
         a, b = m.group(1), m.group(2)
-        if is_word(a, lex) and is_word(b, lex) and not is_word(a + "'" + b, lex):
-            return f'{a} {b}'
-        return m.group(0)
+        if not (is_word(a, lex) and is_word(b, lex)):
+            return m.group(0)
+        whole = a + "'" + b
+        if is_word(whole, lex):
+            return m.group(0)
+        # 撇号也可能是**字形误读**而不是空格：诗篇那份 1864 扫描件里
+        # `r` 常被读成 `i'`，于是 fi'om=from、wi'iters=writers、gi'eat=great、
+        # sufi'ering=suffering。这些串的两半碰巧也都在韦氏词表里
+        # （fi / om / gi / eat 全是词），只靠「两半都是词」会把它们拆成
+        # `fi om`、`gi eat`，比原来坏得多——诗篇 48 处里 43 处是这一类。
+        # 字形规则表能给出解，就说明是误读，不是空格。
+        if candidates(whole.lower(), lex):
+            return m.group(0)
+        # 撇号直接删掉就成词的，同样是误读而不是空格：`off'ering` = offering
+        if is_word(a + b, lex):
+            return m.group(0)
+        # 两半都得是实词：`o'er` `Lowth's` 这类留给上面的 is_word(whole) 挡，
+        # 剩下的短残片（`ni'aa`）在这里挡掉。
+        if len(a) < 3 or len(b) < 2:
+            return m.group(0)
+        return f'{a} {b}'
     return APOSTROPHE_GAP.sub(repl, text)
 
 
