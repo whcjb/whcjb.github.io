@@ -457,6 +457,8 @@ HANDS_OFF = {
     # MANUAL_TEXT 就再也匹配不上——自检报的那四条失效就是这么来的）
     'egy', "irutes'm", 'andtve', 'godvml',
     'anji',      # "the inside of anji hing" = anything，见 MANUAL_TEXT
+    # 影像上这两处印的就是希伯来文，不是拉丁字母读崩
+    'iyoyl', 'yij',
     # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
     'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
     'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
@@ -534,6 +536,16 @@ MANUAL_TEXT = [
     ('the Egj-ptians', 'the Egyptians'),
     ('and com];>are Isa', 'and compare Isa'),
     ('*inside* of anji-hing', '*inside* of anything'),
+    # ↓ 逐处渲染 1864 扫描件影像判定（scripts/crop_alexander_page.py）
+    ('English, difi"er only', 'English, differ only'),      # "differ only in a single letter"
+    ("*Shall serve ' iie,*", '*Shall serve me,*'),          # "Shall serve me, be employed by me"
+    ('/ *urill not set before', '*I will not set before'),  # Ps. 101:3
+    ('*Thoiiwilt arise', '*Thou wilt arise'),               # Ps. 102:14(13)
+    ('*prceterita prophetica,*', '*pr\u00e6terita prophetica,*'),  # 原书是 æ 合字
+    ('*Stones unddust* are here', '*Stones* and *dust* are here'),
+    ('speaks in-everently of him', 'speaks irreverently of him'),
+    ('he icill puff at them', 'he will puff at them'),
+    ('the verdant fi-uitfol tree', 'the verdant fruitful tree'),
     # 证人只读出半截，照抄会吞掉后一个词
     ('*Irutes\'m* general', '*brutes* in general'),
     ('horses, andtve in the name', 'horses, and we in the name'),
