@@ -40,8 +40,10 @@ VOLUMES = {
                preface_name='later-preface', intro_name='later-introduction'),
 }
 
-# 节号：全书统一是 `V. 1.`（诗篇是裸数字 `1.`，这是两本书最大的版式差别）
-VERSE_START = re.compile(r'^\s*V+\s*\.\s*\d{1,3}')
+# 节号：全书统一是 `V. 1.`（诗篇是裸数字 `1.`，这是两本书最大的版式差别）。
+# 允许节号前有一个 OCR 噪点标点（`. V. 5.`）——merge 靠这个判「这一段是新节，
+# 不是上一段的续行」，认漏了会把整节并进上一段。
+VERSE_START = re.compile(r'^\s*[.,;]?\s*V+\s*\.\s*\d{1,3}')
 
 # 页眉字形归一：OCR 把 O 读成 0、C 读成 K/G 是常事。数字先剥掉（页码不参与
 # 比对），剩下的字母再做字形归一。
