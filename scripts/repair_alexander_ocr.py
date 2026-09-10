@@ -112,6 +112,38 @@ PSALMS_MANUAL = {
     'ivinning': 'winning',  # 后面紧跟着自证的注解 "(i. e. when he wins)"
     'ivhoso': 'whoso',      # 证人作 whoso；钦定本 Ps. 50:23 "Whoso offereth praise"
     'ivays': 'ways',        # "*His ways are firm*"，Ps. 10:5
+
+    # ↓ 两份 OCR 在**同一处**都读崩了，拿一份崩的改另一份崩的没有意义
+    #   （PDF 的文本层也是同一份 ABBYY OCR，同样不算第三方）。
+    #   这一批是渲染 1864 扫描件的**页面影像**逐处看出来的，
+    #   scripts/crop_alexander_page.py 按书页页码 + 页眉标定的偏移裁图。
+    'icine': 'wine',              # "their corn and their wine abounded" (Ps. 4)
+    'luisely': 'wisely',          # "acting wisely towards the poor" (Ps. 41)
+    'hecatise': 'because',        # "I do not depart, because thou guidest me" (119)
+    'hreaketh': 'breaketh',       # "My soul breaketh with longing" (119)
+    'hestouments': 'bestowments', # "all his bestowments upon me" (116)
+    'yerh': 'verb',               # "The twofold use of the verb find" (116)
+    'histoiy': 'history',         # "found also in the history, Gen. l. 7" (105)
+    'forgeffulness': 'forgetfulness',   # "the land of forgetfulness" (88)
+    "u'onders": 'wonders',        # "the words of thy wonders" (145)
+    'icarnesf': 'warnest',        # "Happy the man whom thou warnest, Jah" (94)
+    'shadoio': 'shadow',          # "the mountains (with) its shadow" (80)
+    'huiterings': 'butterings',   # "Smooth are the butterings of his mouth" (55)
+    'oreh': 'Oreb',               # "like Oreb and like Zeeb" (83)
+    'natiom': 'nations',          # "Hear this, all the nations" (49)
+    'throun': 'Thrown',           # "Thrown down among the rocks" (141)
+    'afihiction': 'affliction',   # "bound in affliction and iron" (107)
+    'sufterings': 'sufferings',   # "relieve the sufferings of his creatures" (114)
+    "sufl'erings": 'sufferings',  # 同上一类，ff 连字读成 fl（107）
+    # 拉丁文与专名，词典查不到，判词闸只能当噪点否掉，也靠影像定
+    'tnajestaticus': 'majestaticus',   # "pluralis majestaticus" (11)
+    'salvvcmfac': 'salvum fac',        # "Domine salvum fac regem" (20)，本是两个词
+    'contriium': 'contritum',          # "the Latin contritum" (51)
+    'personce': 'person\u00e6',         # "enallage personæ" (52)，原书是 æ 合字
+    'trofundis': 'Profundis',          # "De Profundis, Miserere…" (57)
+    'sohnnitates': 'solennitates',     # "Jer. solennitates" (74)
+    'idumsea': 'Idum\u00e6a',           # "Idumæa and Arabia Petræa" (75)，同为 æ
+    'petraea': 'Petr\u00e6a',           # 同上一句，原书亦是 æ 合字
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"

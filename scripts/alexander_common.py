@@ -185,6 +185,9 @@ def check_page_sequence(pmap):
 
 # ── 分段 ─────────────────────────────────────────────────────
 
+LOWER_END = set('abcdefghijklmnopqrstuvwxyz,')
+
+
 def merge(chunk, verse_start):
     """[(page, par)] → [[page, text]]；无 startIndent 的段是上一段的跨页续行。
 
@@ -198,6 +201,18 @@ def merge(chunk, verse_start):
         if not t:
             continue
         new = 'startIndent' in par['attrs'] or bool(verse_start.match(bare(t)))
+        # ABBYY 偶尔给跨页续段也标上 startIndent（页顶那一行的左边距被页眉
+        # 顶歪），于是一句话被劈成两段，读者看到句子中间空一行。
+        # **上一段以小写字母或逗号收尾就说明句子没说完**——句子总以句号收尾，
+        # 半句话后面不会另起一段。这里不看下一段首字母是大是小：续行常常正好
+        # 接一个专名（`…decoration, and` ⏎ `Hendewerk to the military…`）。
+        # 内容信号压过几何信号（以赛亚书 76 处）。节号段不受影响。
+        # 以数字开头的段永远不是句子中段的续行——节号写法不止一种
+        # （`3 (2).` 和 `3 (2.)` 都有，后者句点在括号里，verse_start 认不出），
+        # 只挡 verse_start 会漏。诗篇 84 就是这么被并掉一整节的。
+        if new and paras and not verse_start.match(bare(t)) and not bare(t)[:1].isdigit():
+            if bare(paras[-1][1]).rstrip()[-1:] in LOWER_END:
+                new = False
         if new or not paras:
             paras.append([page, t])
         else:

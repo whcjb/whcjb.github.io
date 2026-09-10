@@ -75,6 +75,14 @@ def is_runhead(b):
             return True
     if re.fullmatch(r'ISAIAHCHAP(TER)?[IVXLC]{1,8}', letters):
         return True
+    # `ISATAH, CHAP. VITI. 145` —— 书名与章号双双读崩（I→T 两处）。
+    # 全书就这一条漏网，但它卡在段落中间，不认出来会把一句话劈成两段。
+    # 判法：去掉数字后拆成「书名部分 + 章号部分」，书名与 ISAIAHCHAP 相似度
+    # ≥0.8，章号部分只由罗马字母（外加常被误读成 I 的 T）组成。
+    m = re.fullmatch(r'(.{8,12}?)([IVXLCT]{2,8})', re.sub(r'\d', '', letters))
+    if m and re.search(r'\d', b) and \
+            SequenceMatcher(None, m.group(1), 'ISAIAHCHAP').ratio() >= 0.8:
+        return True
     if re.fullmatch(r'CHAPTER[IVXLC]{1,8}', letters) and re.search(r'\d', b):
         return True
     return False
