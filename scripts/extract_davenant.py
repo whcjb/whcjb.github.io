@@ -111,7 +111,9 @@ LABEL_KEEP = {'TEST', 'ARGUM', 'CAP', 'CHAP', 'PART', 'VER', 'VERS', 'SECT',
 # objection is derived from…」。
 LABEL_ALIAS = {'REERVY': 'REPLY', 'RREPRV': 'REPLY', 'RERRV': 'REPLY',
                'OSNJRCRIN': 'OBJECTION'}
-LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z;,.'’]{2,13})\.?(\s+\d{1,2}\s*[.,])")
+# 词里要容数字：OCR 会把字母读成数字（`Osnjrcri0N 17.` 里的 `0` 其实是 `O`），
+# 字符类不放数字的话这一条连 LABEL_RE 都匹配不上，别名表再全也用不到。
+LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z0-9;,.'’]{2,13})\.?(\s+\d{1,2}\s*[.,])")
 
 
 def fix_label(t):
@@ -371,6 +373,20 @@ def split_page(lines, fn_max):
                 break
     if best is None:
         return [x for x in L if not JUNK_RE.match(x['text'])], []
+    # 注区上提：整页几乎全是注的页面（长注跨了三四页），上面那道
+    # 「注区起点不得高于页面 1/4」的守卫会把切点压得太低，切点以上还留着
+    # 带脚注符、且字号与注区一样小的行——它们本来就是注，却混在正文里
+    # （vol2 p86 的 `\* This refers to the use of Hellebore…` 与
+    # `+ Cassian, to whom…`，页面上成了两段莫名其妙的正文）。
+    # 条件卡得很紧：必须带脚注符、且字号不高于注区中位数的 1.05 倍。
+    # 全书只命中 2 页（vol1 p181 / vol2 p86），不会动到正常版面。
+    zone = L[best:]
+    if zone:
+        fs = statistics.median([x['size'] for x in zone])
+        for i, x in enumerate(L[:best]):
+            if FN_MARK.match(x['text']) and x['size'] <= fs * 1.05:
+                best = i
+                break
     fns = [x for x in L[best:] if not JUNK_RE.match(x['text'])]
     body = [x for x in L[:best] if not JUNK_RE.match(x['text'])]
     return body, fns
@@ -388,10 +404,36 @@ def split_page(lines, fn_max):
 OCR_SLASH_L = re.compile(r'(?<=[A-Za-z])/(?=[a-z]|-\s*$)')
 
 
+# 左引号 `“` 被读成 `**`（全书 278 处，每一处后面都跟着收引号 `”` 或 `"`：
+# `\*\* Townsend's Accusations,”` / `\*\* We," exclaims Justin Martyr`）。
+# `**` 在本书里没有别的用处——脚注符是 `*` `†` `‡`（vol1 p88 裁图核过），
+# 不存在 `**` 当第二个脚注符的排法。
+OCR_OPEN_QUOTE = re.compile(r'\*\*')
+# `«` 就杂得多：多数落在被读花的希腊文音译里（`«0 diov`、`Ev «no disce`），
+# 还有断词处的斑点（`tem- « pet`）。只收「脚注符或句读之后、其后是大写字母」
+# 这一种形状——那是引号无疑（`\* « Sapientia carnis."`、`Author. *« Some`）。
+OCR_GUILLEMET = re.compile(r'(?<=[*,.;:] )«\s*(?=[A-Z])|(?<=\*)\s?«\s*(?=[A-Z])')
+
+
+# 行首孤立的 `+` 后面跟小写字母 = 扫描斑点，不是脚注符——脚注符后面一定是
+# 大写字母或引号（`+ The well-known letter`）。斑点那种夹在断词中间
+# （`…and ap-` / `+ proves the things…`），并进段落就成了 `ap- + proves`。
+OCR_PLUS_SPECK = re.compile(r'^\s*\+\s+(?=[a-z])')
+# 行**尾**孤立的 `+` 是右页边的斑点（`…so that the one knows and ap- +`）。
+# 脚注符只出现在行首，行尾不可能是它；并段时它会卡进断词中间（`ap- + proves`）。
+OCR_PLUS_TAIL = re.compile(r'\s\+\s*$')
+
+
 def clean(t):
-    """行内噪声：左边距的孤立标点（扫描斑点被读成 `.` / `-`），以及 `/`→`l`。"""
+    """行内噪声：孤立标点、`/`→`l`、`**`→`“`、行首斑点 `+`。"""
+    t = OCR_PLUS_SPECK.sub('', t)
+    t = OCR_PLUS_TAIL.sub('', t)
     t = OCR_SLASH_L.sub('l', t)
-    return re.sub(r'^\s*[.\-—·,]\s+(?=[a-zA-Z])', '', t).strip()
+    t = OCR_OPEN_QUOTE.sub('\u201c', t)
+    t = OCR_GUILLEMET.sub('\u201c', t)
+    # 左边距的孤立标点。后面跟脚注符时也要剥——`; + The well-known letter`
+    # 里那个 `;` 是斑点，不剥掉 FN_MARK 就认不出这是新的一条注。
+    return re.sub(r'^\s*[.\-—·,;:]\s+(?=[a-zA-Z*+†‡])', '', t).strip()
 
 
 def dehyph(a, b):
@@ -630,7 +672,11 @@ def main():
             cur = ''
             for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
                 t = clean(W.fix_line(vol, p, l['text'])[0])
-                if is_start and cur:
+                # 脚注符本身就是分条的界标，不能只看缩进：同页两条短注常常
+                # 首行缩进一模一样（vol1 p151 两条都是 x0=214），只看缩进会把
+                # 第二条当续行并进第一条，页面上就出现 `\* That is, indefinite…
+                # + That is, formed…` 两条注挤成一条（实测 7 处）。
+                if (is_start or FN_MARK.match(t)) and cur:
                     out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
                     cur = t
                 elif cur:

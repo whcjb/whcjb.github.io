@@ -144,6 +144,28 @@ def md_escape(t):
     return t.replace('*', '\\*').replace('|', '\\|')
 
 
+# 原书每页脚注符按 `*` → `†` → `‡` 排（vol1 p88 三条注，裁图逐个核过）。
+# `†` `‡` 不在 OCR 的常用字表里，一律被读成 `+` / `t` / `f` / `J` / `I`，
+# 页面上就印成 `+ The characters referred to…`，读者看着莫名其妙。
+# 按「该页第几条**带符号**的注」回填正确的字形——不能按注的序号排：
+# 跨页续注不带符号，它排在前面会把序号顶掉（实测 15 页第一条是续注，
+# 真正的第一条 `*` 排到了第二位）。
+# ⚠️ 读成 `*` 的一律不动：`*` 本来就是合法的第一个符号，改它等于拿位置猜字形。
+FN_SYMBOLS = ('*', '†', '‡', '§')
+FN_DAGGER = re.compile(r'^(\s*)([+tfJI])(\s)')
+
+
+def fix_fn_symbol(text, ordinal):
+    """→ (文本, 是否带符号)。ordinal = 该页此前已有几条带符号的注。"""
+    if re.match(r'^\s*\*\s', text):
+        return text, True
+    m = FN_DAGGER.match(text)
+    if not m:
+        return text, False
+    sym = FN_SYMBOLS[min(ordinal, len(FN_SYMBOLS) - 1)]
+    return m.group(1) + sym + m.group(3) + text[m.end():], True
+
+
 ROMAN_N = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
            'viii': 8, 'ix': 9, 'x': 10, 'xi': 11, 'xii': 12, 'xiii': 13,
            'xiv': 14, 'xv': 15, 'xvi': 16, 'xvii': 17, 'xviii': 18, 'xix': 19,
@@ -319,8 +341,15 @@ def main():
         body += [b for blk in ch['blocks'] for b in (blk, '')]
         if ch['fns']:
             body += ['', '---', '']
+            sym_seen = {}                 # (卷,页) → 该页已出现几条带符号的注
             for seq, text, (v, pg) in ch['fns']:
-                body.append(f'[^dv{seq}]: {md_escape(text)}  <span '
+                # ⚠️ 先改符号再转义：md_escape 会把块首的 `+` 转成 `\+`，
+                # 之后 FN_DAGGER 就认不出来了（实测 30 条一条没改到）。
+                fixed, has_sym = fix_fn_symbol(text, sym_seen.get((v, pg), 0))
+                esc = md_escape(fixed)
+                if has_sym:
+                    sym_seen[(v, pg)] = sym_seen.get((v, pg), 0) + 1
+                body.append(f'[^dv{seq}]: {esc}  <span '
                             f'class="dv-fn-page">Vol. {ROMAN[v]}. p. '
                             f'{pg + PRINTED[v]}</span>')
                 body.append('')

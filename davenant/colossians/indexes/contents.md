@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 18:44
+date: 2026-09-10 09:53
 subtitle: "on the extent of the death of Christ"
 prev_url: "/davenant/colossians/indexes/questions/"
 prev_label: "Index of Questions"
@@ -15,7 +15,7 @@ next_label: "Index to the Biographical Sketches"
 
 <p class="dv-idx-lead">《论基督之死》目次 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
 <p class="dv-idx-caption">CHAP. PAGE.</p>
-<p class="dv-idx">I. On the Origin of the Controversy cc ** coc 317</p>
+<p class="dv-idx">I. On the Origin of the Controversy cc “ coc 317</p>
 <p class="dv-idx">II. On the death of Christ as the universal cause of salvation, applicable to all mankind .. occ toe occ 340</p>
 <p class="dv-idx-2">Testimonies for the doctrine derived from the Scriptures .. 343</p>
 <p class="dv-idx-2">Arguments founded in the Scriptures ... ees - 352</p>

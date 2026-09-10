@@ -71,6 +71,28 @@ def md_escape(t):
     return t.replace('*', '\\*').replace('|', '\\|')
 
 
+# 原书每页脚注符按 `*` → `†` → `‡` 排（vol1 p88 三条注，裁图逐个核过）。
+# `†` `‡` 不在 OCR 的常用字表里，一律被读成 `+` / `t` / `f` / `J` / `I`，
+# 页面上就印成 `+ The characters referred to…`，读者看着莫名其妙。
+# 按「该页第几条**带符号**的注」回填正确的字形——不能按注的序号排：
+# 跨页续注不带符号，它排在前面会把序号顶掉（实测 15 页第一条是续注，
+# 真正的第一条 `*` 排到了第二位）。
+# ⚠️ 读成 `*` 的一律不动：`*` 本来就是合法的第一个符号，改它等于拿位置猜字形。
+FN_SYMBOLS = ('*', '†', '‡', '§')
+FN_DAGGER = re.compile(r'^(\s*)([+tfJI])(\s)')
+
+
+def fix_fn_symbol(text, ordinal):
+    """→ (文本, 是否带符号)。ordinal = 该页此前已有几条带符号的注。"""
+    if re.match(r'^\s*\*\s', text):
+        return text, True
+    m = FN_DAGGER.match(text)
+    if not m:
+        return text, False
+    sym = FN_SYMBOLS[min(ordinal, len(FN_SYMBOLS) - 1)]
+    return m.group(1) + sym + m.group(3) + text[m.end():], True
+
+
 def enum_lead(t):
     """段首编号包成 span，防止 kramdown 变成有序列表。
 
@@ -245,8 +267,14 @@ def render(u):
             out.append(enum_lead(md_escape(txt)))
     if u['fns']:
         out += ['', '---', '']
+        sym_seen = {}                     # 页 → 该页已出现几条带符号的注
         for seq, text, p in u['fns']:
-            out.append(f'[^da{seq}]: {md_escape(text)}  '
+            # 先改符号再转义，见 publish_davenant_en.py 同处说明
+            fixed, has_sym = fix_fn_symbol(text, sym_seen.get(p, 0))
+            esc = md_escape(fixed)
+            if has_sym:
+                sym_seen[p] = sym_seen.get(p, 0) + 1
+            out.append(f'[^da{seq}]: {esc}  '
                        f'<span class="dv-fn-page">Vol. II. p. {p + PRINTED}</span>')
     return out
 

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-09 18:44
+date: 2026-09-10 09:53
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
@@ -63,7 +63,7 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Lambeth articles, II. 136.</p>
 <p class="dv-idx">Liberalism of the present age, an error of a former day carried into wider operation, II. 242.</p>
 <p class="dv-idx">Marsh's Edition of Douglas's Criterion recommended, I. 61; 178.</p>
-<p class="dv-idx">Mendham's ** Literary Policy of the Church of Rome" noticed and recommended, 1. 76.</p>
+<p class="dv-idx">Mendham's “ Literary Policy of the Church of Rome" noticed and recommended, 1. 76.</p>
 <p class="dv-idx">Modern departure fromChristianity,</p>
 <p class="dv-idx-letter">M</p>
 <p class="dv-idx">Mosheim cited on the character of Melancthon, 1. 193; on early</p>
