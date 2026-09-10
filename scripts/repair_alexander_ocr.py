@@ -154,6 +154,10 @@ PSALMS_MANUAL = {
     'pretection': 'protection',   # "a place of honour but of protection"
     'appucationof': 'application of',   # 粘连，证人在这一处读崩，按上下文定
     'difibrent': 'different',           # 证人在这一处也读崩了，按上下文定
+    'amd': 'and',                       # 证人这一处读成 aTid，也是残串
+    'wiejced': 'wicked',                # "the face of the wicked"，证人读成 tricked
+    # 罗马数字：l 被读成 k；证人给的 Ixix/Ixxi 首字母又是大写 I，两头都不能直接用
+    'kix': 'lxix', 'kxi': 'lxxi', 'kvi': 'lxvi',
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
@@ -221,6 +225,18 @@ ISAIAH_PRE = [
     (r"\bone's\.self\b", "one's self"),
     (r'\bnot yet J\.ave called\b', 'not yet have called'),
     (r'\bcontrary to u\.sa\^e\b', 'contrary to usage'),
+    # 德文变音符：页面上印的是 ü，OCR 一律读成 ii。翻过书页影像核实
+    # （书页 405 的 Rosenmüller 清清楚楚带两点），还原属于「复现原文」，
+    # 不是改写。只收反复出现、能确认的几个人名与常用词。
+    (r'\bRosenmiiller\b', 'Rosenmüller'),
+    (r'\bFiirst\b', 'Fürst'),
+    (r'\bRiickert\b', 'Rückert'),
+    (r'\biiber\b', 'über'),
+    (r'\bStiitze\b', 'Stütze'),
+    (r'\bgefliigelter\b', 'geflügelter'),
+    # 人名拼错，证人与页面一致
+    (r'\bVilringa\b', 'Vitringa'),
+    (r'\bShalmeneser\b', 'Shalmaneser'),
     (r"\bunit\}'", 'unity'),
 ]
 

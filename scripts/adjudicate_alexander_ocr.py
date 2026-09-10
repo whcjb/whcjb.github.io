@@ -76,7 +76,7 @@ MAX_HITS = 8
 MAX_DIST_RATIO = 1 / 3
 
 # 序列相似度下限，见 verdict 里字形闸那一段。
-SIM_FLOOR = 0.6
+SIM_FLOOR = 0.55
 
 # 一个词被劈成两个 token 时，中间可能夹着的东西：一两个非字母数字的字符
 # ——空格、残留的行末连字符，或 OCR 读出来的噪点（`af&rmation`、`hj^othesis`、
@@ -85,7 +85,7 @@ SPLIT_SEP = re.compile(r'^[^0-9A-Za-z]{1,2}$')
 
 # 拼词的相似度下限。比一般的 0.6 高：拼接本身已经是很强的假设，
 # 再放宽就会把两个不相干的词硬凑在一起。
-JOIN_SIM = 0.8
+JOIN_SIM = 0.75
 
 # 正字法闸。1864 是伦敦排的英式本，1850 是费城排的美式本，两版在
 # -ise/-ize、waggon/wagon 这些地方**本来就不一样**。照证人改等于把底本的
@@ -456,6 +456,7 @@ HANDS_OFF = {
     # 交给 MANUAL_TEXT 整句改（不挡住这里，token 修复会先把串改掉，
     # MANUAL_TEXT 就再也匹配不上——自检报的那四条失效就是这么来的）
     'egy', "irutes'm", 'andtve', 'godvml',
+    'anji',      # "the inside of anji hing" = anything，见 MANUAL_TEXT
     # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
     'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
     'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
@@ -532,6 +533,7 @@ MANUAL_TEXT = [
     ('smiter of) Egy2)t, i. e.*', 'smiter of) Egypt, i. e.*'),
     ('the Egj-ptians', 'the Egyptians'),
     ('and com];>are Isa', 'and compare Isa'),
+    ('*inside* of anji-hing', '*inside* of anything'),
     # 证人只读出半截，照抄会吞掉后一个词
     ('*Irutes\'m* general', '*brutes* in general'),
     ('horses, andtve in the name', 'horses, and we in the name'),
@@ -546,7 +548,7 @@ MANUAL_TEXT = [
     ('day, -ndth its attendant', 'day, with its attendant'),   # -ndth 即 with
     ('shall not fear, -until he look', 'shall not fear, until he look'),
     ('the last clause -is, *to keep', 'the last clause is, *to keep'),
-    ('are the foUowi-ng: " When the -vileness', 'are the following: " When the vileness'),
+    ('When the -vileness (or vilest)', 'When the vileness (or vilest)'),
     ('and despised of the -people.*', 'and despised of the people.*'),
     ('now rejoices. As -he believed', 'now rejoices. As he believed'),
     ('always have occasion -so to do', 'always have occasion so to do'),

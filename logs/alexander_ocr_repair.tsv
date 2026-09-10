@@ -570,7 +570,7 @@ chapter	from	to	kind
 109	Je		tooshort
 109	Jbr		unresolved
 109	ivtaxoirriv		unresolved
-109	amd		unresolved
+109	amd	and	manual
 109	Ixxxv	lxxxv	roman
 109	gvilt		unresolved
 109	affiicted	afflicted	rule
@@ -591,7 +591,7 @@ chapter	from	to	kind
 109	tliem	them	rule
 109	deUverance	deliverance	rule
 109	psahn	psalm	rule
-109	kxi		unresolved
+109	kxi	lxxi	manual
 109	rohe	robe	rule
 109	toith	with	wform
 109	ol		tooshort
@@ -928,7 +928,7 @@ chapter	from	to	kind
 119	tvord	word	wform
 119	laio		unresolved
 119	tmto		unresolved
-119	amd		unresolved
+119	amd	and	manual
 119	afi'orded	afforded	rule
 119	beUever	believer	rule
 119	ep		tooshort
@@ -1888,7 +1888,7 @@ chapter	from	to	kind
 17	loilt	wilt	wform
 17	IDhi		unresolved
 17	hcence	licence	rule
-17	wieJced		unresolved
+17	wieJced	wicked	manual
 17	Unemies		unresolved
 17	Ufe	life	rule
 17	presentdanger		unresolved
@@ -2014,7 +2014,7 @@ chapter	from	to	kind
 18	unll	will	rule
 18	insp'ection		unresolved
 18	ny		tooshort
-18	kvi		unresolved
+18	kvi	lxvi	manual
 18	Ixxxi	lxxxi	roman
 18	modem	modern	realword
 18	EngHsh	English	rule
@@ -2380,7 +2380,7 @@ chapter	from	to	kind
 27	fii'st	first	rule
 27	Mij		unresolved
 27	tuill	will	manual
-27	kix		unresolved
+27	kix	lxix	manual
 27	Ixxxviii	lxxxviii	roman
 27	mahgnant	malignant	rule
 27	spirare		unresolved
@@ -5388,7 +5388,7 @@ chapter	from	to	kind
 97	xcri		unresolved
 97	Ixiv	lxiv	roman
 97	lastlsa		unresolved
-97	kvi		unresolved
+97	kvi	lxvi	manual
 97	oj		tooshort
 97	Idoh		unresolved
 97	xhi	xlii	rule
