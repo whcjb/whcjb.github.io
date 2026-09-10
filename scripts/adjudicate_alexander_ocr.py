@@ -383,6 +383,29 @@ MANUAL_TEXT = [
     ('*theji* they shall remain', '*then* they shall remain'),
     # "Lips of *rejoicings*" 被读成 "rejoicinr s"，尾巴上的 s 单独成了 token
     ('rejoicinr s', 'rejoicings'),
+
+    # 游离的连字符。token 正则在连字符处断开，两截又各自是真词，
+    # 判读器根本看不见它们；可这一横印在页面上就是个错。
+    # 逐处到证人正文里核过，17 处**全都没有**这一横：
+    #   "does not make the day, with its attendant toils, perpetual"
+    #   "he shall not fear, until he look upon his foes"  …
+    # 另两处是行末断词的连字符没去掉（following / construction）。
+    ('day, -ndth its attendant', 'day, with its attendant'),   # -ndth 即 with
+    ('shall not fear, -until he look', 'shall not fear, until he look'),
+    ('the last clause -is, *to keep', 'the last clause is, *to keep'),
+    ('are the foUowi-ng: " When the -vileness', 'are the following: " When the vileness'),
+    ('and despised of the -people.*', 'and despised of the people.*'),
+    ('now rejoices. As -he believed', 'now rejoices. As he believed'),
+    ('always have occasion -so to do', 'always have occasion so to do'),
+    ('depravity to the -wicked (one)', 'depravity to the wicked (one)'),
+    ('one of poetical -composition, as Virgil', 'one of poetical composition, as Virgil'),
+    ('usually that of the -writer.', 'usually that of the writer.'),
+    ('*food to the -people, to the wild', '*food to the people, to the wild'),
+    ('xxxiv. 7, 8) -to denote the act', 'xxxiv. 7, 8) to denote the act'),
+    ('*(when he writeth -up the people)*', '*(when he writeth up the people)*'),
+    ('a heart of -wisdom," with allusion', 'a heart of wisdom," with allusion'),
+    ('is the centre of the -psalm, and', 'is the centre of the psalm, and'),
+    ('admits of this constr-uction:', 'admits of this construction:'),
 ]
 
 # 著者序末尾那段 NOTE TO THE READER 和罗马数字换算表，是 Kregel 1991 年
