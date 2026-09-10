@@ -53,7 +53,10 @@ SRC = ROOT / 'alexander/psalms'
 WITNESS = [ROOT / f'alexander_raw/psalms/src/pages{v}.pkl' for v in ('01', '02', '03')]
 LOG = ROOT / 'logs/alexander_adjudicate.tsv'
 
-TOKEN = re.compile(r"[A-Za-z][A-Za-z'’]*")
+# 字母类必须带上拉丁补充区。正文里有 æ 合字（personæ / Idumæa / Petræa /
+# præterita，都是原书的写法），`[A-Za-z]` 会把 `Idumæa` 切成 `Idum` + `a`，
+# 前半当残串去「补全」，越补越坏。
+TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’]*")
 
 # 标签正则**不能**写成 `<[^>]+>`。正文里有 OCR 读出来的孤立 `<`（希伯来活字
 # 残渣，诗篇 29 处），宽松写法会从那个 `<` 一路吃到几百词之后的下一个 `>`，
@@ -64,6 +67,9 @@ TAG = re.compile(r'<!--.*?-->|</?[A-Za-z][^<>]*>')
 # 锚的长度。3 个词在 35 万词的语料里已经足够罕见，短到 2 个就会撞上
 # "of the" 这种到处都是的组合，读出来的是别处的字。
 ANCHOR = 3
+
+# 另一侧确认的宽度（词数），见 look_up。
+CONFIRM_WIDTH = 1
 
 # 锚在目标词前后各多远的范围里滑动找。给到 6 是因为这本书的错常常连着两三个，
 # 太窄了照样落在坏词上。
@@ -173,8 +179,13 @@ def look_up(toks, i, idx, wlow, worig):
     """
     n = len(toks)
     low = [t.lower() for t in toks]
-    nxt = low[i + 1] if i + 1 < n else None
-    prv = low[i - 1] if i > 0 else None
+    # 确认宽度：默认只校验相邻一个词。--confirm3 把两侧确认都拉到三个词，
+    # 用来复核「锚撞车读出隔壁的真词」——书里常见句式（"the gratuitous …
+    # that"）四个词的上下文根本不够独特，另一条线上就这么把 assertion
+    # 改成了 assumption。这个模式只用来比对，不作为默认。
+    k = CONFIRM_WIDTH
+    nxt = tuple(low[i + 1:i + 1 + k]) if i + 1 + k <= n else None
+    prv = tuple(low[max(0, i - k):i]) if i >= k else None
 
     def probe(order, confirm_at, confirm_word):
         """按给定顺序试锚，第一个给出唯一读数的就采用。
@@ -196,8 +207,11 @@ def look_up(toks, i, idx, wlow, worig):
                 if not (0 <= j < len(wlow)):
                     continue
                 if confirm_word is not None:
-                    k = j + confirm_at
-                    if not (0 <= k < len(wlow)) or wlow[k] != confirm_word:
+                    lo = j + confirm_at if confirm_at > 0 else j - len(confirm_word)
+                    hi = lo + len(confirm_word)
+                    if not (0 <= lo and hi <= len(wlow)):
+                        continue
+                    if tuple(wlow[lo:hi]) != confirm_word:
                         continue
                 cand.add(worig[j])
             if len(cand) == 1:
@@ -361,12 +375,18 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram, nxt_raw=''):
                                                   reading.lower()).ratio() >= JOIN_SIM):
             return 'joinnext', reading
 
-    # 词头粘连：证人读数是 OCR 串的**后缀**，前面那截是个虚词。
-    for head in GLUE_HEAD:
-        if (tok.lower().startswith(head) and tok.lower().endswith(reading.lower())
-                and len(tok) == len(head) + len(reading)
-                and (head, reading.lower()) in wbigram):
-            return 'split', tok[:len(head)] + ' ' + reading
+    # 词头粘连：证人读数是 OCR 串的**后缀**，前面那截是另一个词。
+    # 不再限定虚词表——`waterbrooks` 的前半是 water，虚词表里没有，
+    # 于是整串被换成 brooks，把 water 吞了。改成「前半是真词就算」，
+    # 再按证人正文里的写法定拼空格还是连字符。
+    if tok.lower().endswith(reading.lower()) and len(tok) > len(reading) + 1:
+        head = tok[:-len(reading)]
+        if len(head) >= 2 and is_word(head, lex):
+            sep = hyphen_or_space(head, reading, wtext)
+            if sep == '-':
+                return 'hyphen', head + '-' + reading
+            if (head.lower(), reading.lower()) in wbigram:
+                return 'split', head + ' ' + reading
 
     # 字形闸：两版之间的改写读数长得完全不像，挡在这里。
     # 但「长得像」不能只用编辑距离量：连字被读成单个字形时，一个 U 顶掉
@@ -388,6 +408,12 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram, nxt_raw=''):
     if not (is_word(reading, lex) or wvocab[reading.lower()] >= 3
             or glyph_reachable(tok, reading)):
         return 'badwitness', reading
+    # 缩水守卫：读数比 OCR 串短三个字母以上，多半是把一个词吞掉了
+    # （`waterbrooks` → brooks），而不是这个词自己读崩。上面的拆分规则
+    # 认不出来的，一律留在账上不动。
+    if len(tok) - len(reading) >= 3:
+        return 'shrink', reading
+
     # 语料自证闸：短读数还要求本书别处**正确地**用过。
     # 位置证据再强也架不住证人自己那一处读崩：`di nne majesty`（divine 被
     # 拆成两半）证人读成 `ine`，位置对得严丝合缝，可 `ine` 在本书里从来
@@ -546,6 +572,15 @@ MANUAL_TEXT = [
     ('speaks in-everently of him', 'speaks irreverently of him'),
     ('he icill puff at them', 'he will puff at them'),
     ('the verdant fi-uitfol tree', 'the verdant fruitful tree'),
+    ('but to nourish or sus tain life', 'but to nourish or sustain life'),
+    # ↓ 缩水守卫拦下的粘连：证人读数只是前半个词，照抄会吞掉后一个
+    ('to wipe oflFby shewing', 'to wipe off by shewing'),
+    ('but foreignirom the context', 'but foreign from the context'),
+    ("heat one's selfmih.* anger", "heat one's *self with* anger"),
+    ('lest thoustnke ayainst the stone', 'lest thou strike against the stone'),
+    ('with the lastlsa. xl.', 'with the last Isa. xl.'),
+    # 影像：Ps. 36 "The mention of the *foot* suggests the ideas of spurning"
+    ('The mention of theybo^ suggests', 'The mention of the *foot* suggests'),
     # 证人只读出半截，照抄会吞掉后一个词
     ('*Irutes\'m* general', '*brutes* in general'),
     ('horses, andtve in the name', 'horses, and we in the name'),
@@ -599,7 +634,7 @@ CLEAN_L = set(' \t\n([{"\'*\u201c\u2018\u2014\u2013')
 CLEAN_R = set(' \t\n)]}.,;:!?"\'*\u201d\u2019\u2014\u2013')
 
 
-WORDISH = re.compile(r"[A-Za-z][A-Za-z'\u2019]*")
+WORDISH = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'\u2019]*")
 
 
 def _hyphen_ok(text, pos, lex, back):
@@ -670,6 +705,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--only', help='只跑某几篇，逗号分隔')
+    ap.add_argument('--confirm3', action='store_true',
+                    help='两侧确认各拉到三个词，用来复核锚撞车（不落盘）')
     args = ap.parse_args()
 
     # 判词典的补充词表加载不到会**静默降级**：is_word 把一大批本来正确的
@@ -679,6 +716,8 @@ def main():
         sys.exit(f'补充词表缺失：{alexander_lexicon.EXTRA}\n'
                  '判词闸会失准，判读结果不可用。先确认 alexander_lexicon.EXTRA 的路径。')
 
+    if args.confirm3:
+        globals()['CONFIRM_WIDTH'] = 3
     lex = build()
     bvocab = book_vocab(lex)
     worig, wtext = load_witness()
