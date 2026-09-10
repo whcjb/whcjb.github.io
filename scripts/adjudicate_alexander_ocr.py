@@ -65,6 +65,13 @@ TAG = re.compile(r'<!--.*?-->|</?[A-Za-z][^<>]*>')
 # "of the" 这种到处都是的组合，读出来的是别处的字。
 ANCHOR = 3
 
+# 锚在目标词前后各多远的范围里滑动找。给到 6 是因为这本书的错常常连着两三个，
+# 太窄了照样落在坏词上。
+WINDOW = 6
+
+# 锚命中超过这个数就当它太常见，读不准（"of the same" 在 35 万词里几十处）。
+MAX_HITS = 8
+
 # 证人读数与 OCR 串的最大编辑距离占比。超过这个就当成两版之间的改写，不采信。
 MAX_DIST_RATIO = 1 / 3
 
@@ -144,41 +151,63 @@ def edit_distance(a, b):
 def look_up(toks, i, idx, wlow, worig):
     """读出证人在 toks[i] 这个位置上印的词。
 
-    三种锚各试一遍，先左后右：左锚三词命中后要求右邻也对上，右锚反之。
-    这一条是防「锚碰巧撞上别处」——单边对上很容易，两边同时对上极难。
-    命中多处而读数不一致的，一律作废：宁可不判，不可判错。
+    锚不能固定取「前三个词」：这本书的错是成片的，锚里往往恰好也有一个词
+    读崩了，一崩整个锚就失配——`nowitness` 那一大栏多半是这么来的，并不是
+    证人真的没有这段话。改成在目标词**前后各六词**的窗口里滑动，凡是连续
+    三个词能在证人语料里命中的都算一个锚，再按各自的位移反推目标词的位置。
+
+    一个锚命中多处而读数不一致的作废；多个锚给出不同读数的也作废。
+    宁可不判，不可判错——判错是静默的，不判只是留在账上。
     """
-    def probe(anchor_words, offset, check_at, check_word):
-        key = tuple(anchor_words)
-        out = []
-        for p in idx.get(key, ()):
-            j = p + offset
-            if not (0 <= j < len(wlow)):
+    n = len(toks)
+    low = [t.lower() for t in toks]
+    nxt = low[i + 1] if i + 1 < n else None
+    prv = low[i - 1] if i > 0 else None
+
+    def probe(order, confirm_at, confirm_word):
+        """按给定顺序试锚，第一个给出唯一读数的就采用。
+
+        confirm_* 是**另一侧的确认**：锚定位之后，证人在相邻位置上印的词
+        也得对得上。少了这一道，锚偶然撞到语料别处就会读出隔壁的词
+        （`Bpeak` 读成 represented、`Kighteousness` 读成 Jehovah 都是这样）。
+        """
+        for start in order:
+            if start < 0 or start + ANCHOR > n or start <= i < start + ANCHOR:
                 continue
-            k = p + check_at
-            if check_word is not None:
-                if not (0 <= k < len(wlow)) or wlow[k] != check_word:
+            hits = idx.get(tuple(low[start:start + ANCHOR]))
+            if not hits or len(hits) > MAX_HITS:
+                continue
+            delta = i - start
+            cand = set()
+            for p in hits:
+                j = p + delta
+                if not (0 <= j < len(wlow)):
                     continue
-            out.append(worig[j])
-        return out
-
-    left = [t.lower() for t in toks[max(0, i - ANCHOR):i]]
-    right = [t.lower() for t in toks[i + 1:i + 1 + ANCHOR]]
-
-    readings = []
-    if len(left) == ANCHOR:
-        nxt = right[0] if right else None
-        readings = probe(left, ANCHOR, ANCHOR + 1, nxt)
-    if not readings and len(right) == ANCHOR:
-        prv = left[-1] if left else None
-        readings = probe(right, -1, -2, prv)
-    if not readings and len(left) == ANCHOR:
-        readings = probe(left, ANCHOR, 0, None)
-
-    uniq = {r.lower() for r in readings}
-    if len(uniq) != 1:
+                if confirm_word is not None:
+                    k = j + confirm_at
+                    if not (0 <= k < len(wlow)) or wlow[k] != confirm_word:
+                        continue
+                cand.add(worig[j])
+            if len(cand) == 1:
+                return cand.pop()
         return None
-    return readings[0]
+
+    # 锚**由近及远**试：锚离目标越远，中间夹进一处增删的概率越大，位移一错
+    # 就读出隔壁的词。但只认「紧挨着的三个词」又太脆——这本书的错成片出现，
+    # 锚里往往也有坏词。所以滑动，且分三级：
+    near_l = range(i - ANCHOR, i - ANCHOR - WINDOW - 1, -1)
+    near_r = range(i + 1, i + 1 + WINDOW)
+    #   一、左锚 + 右邻确认（两侧都对上，最可靠）
+    r = probe(near_l, 1, nxt)
+    if r is not None:
+        return r
+    #   二、右锚 + 左邻确认
+    r = probe(near_r, -1, prv)
+    if r is not None:
+        return r
+    #   三、左锚、不做确认。粘连处（SeeExod = See + Exod）证人比我们多一个
+    #       token，右邻永远对不上，只有这一级能判出来；也最容易误判，垫底。
+    return probe(near_l, 0, None)
 
 
 def glyph_reachable(tok, reading, depth=2):
@@ -223,14 +252,21 @@ def hyphen_or_space(a, b, wtext):
 
 def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
     """证人读数 → 判决。"""
+    # 手工表排在最前面：它们本来就是**证人也判不了**才手工核定的，
+    # 排在「证人没读数」后面等于永远轮不到（Itsis / upbefore / Ezekel 都这么丢过）。
+    if tok.lower() in HANDS_OFF:
+        return 'handsoff', reading or ''
+    if tok.lower() in MANUAL:
+        return 'manual', MANUAL[tok.lower()]
     if reading is None:
         return 'nowitness', ''
     if reading.lower() == tok.lower():
         return 'confirm', reading
-    if tok.lower() in HANDS_OFF:
-        return 'handsoff', reading
-    if tok.lower() in MANUAL:
-        return 'manual', MANUAL[tok.lower()]
+    # 读数不能是单个字母（a / I / O 三个真词除外）。把一个 token 缩成一个
+    # 字母几乎不可能是对的，多半是证人在希伯来活字那一片自己读崩了
+    # ——`Sb`（希伯来残渣）就这么被改成了 `b`。
+    if len(reading) == 1 and reading.lower() not in ('a', 'i', 'o'):
+        return 'badwitness', reading
     # 正字法闸：只是英式／美式拼法之差，不是错
     if canon(tok) == canon(reading):
         return 'variant', reading
@@ -281,6 +317,13 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
                     and not (tail in PREP and nxt in PREP)
                     and (reading.lower(), tail) in wbigram):
                 return 'split', reading + ' ' + tok[-len(tail):]
+
+    # 词头粘连：证人读数是 OCR 串的**后缀**，前面那截是个虚词。
+    for head in GLUE_HEAD:
+        if (tok.lower().startswith(head) and tok.lower().endswith(reading.lower())
+                and len(tok) == len(head) + len(reading)
+                and (head, reading.lower()) in wbigram):
+            return 'split', tok[:len(head)] + ' ' + reading
 
     # 字形闸：两版之间的改写读数长得完全不像，挡在这里。
     # 但「长得像」不能只用编辑距离量：连字被读成单个字形时，一个 U 顶掉
@@ -354,6 +397,15 @@ HANDS_OFF = {
     'nne',       # "the di nne majesty" —— divine 被拆成两半，证人读成 ine
     'ig',        # "Ezekiel x. IG" —— 是节号 16，不是词
     'idn',       # "derived from IDn, love" —— 希伯来文音译，证人读成 ion
+    'tojhee',    # "to thee"，t 读成 j 又粘上了 to；证人只读出 thee，照抄会吞掉 to
+    'shalll',    # "shall I, must I go" 挤成了 `shalll,mmt I go`，见 MANUAL_TEXT
+    'mmt',       # 同上
+    'kj',        # 希伯来文的祈使小品词，两份 OCR 各读各的
+    # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
+    'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
+    'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
+    'il',        # "because D il nations had now begun"
+    'iif',       # "that iif and i are treated" —— 讨论希伯来字母
     'je',        # "his prayer shall Je Jbr sin" —— 该是 be，证人也读成了 he
 }
 
@@ -372,6 +424,11 @@ GLUE_TAIL = ['of', 'in', 'to', 'is', 'as', 'be', 'on', 'at', 'it', 'he',
 # 拆出来的虚词后面**又是**一个介词，说明拆错了：`Salein of Gen. xiv` 的
 # 真值是 `Salem of`，硬拆成 `Salem in` 会读出 "Salem in of Gen. xiv"。
 PREP = {'of', 'in', 'to', 'for', 'with', 'on', 'at', 'as', 'by', 'from'}
+
+# 粘连也会发生在**词头**：`Andbrought` = And + brought，`uponMahalath` =
+# upon + Mahalath。只换成证人读数会把前一个词吞掉，和词尾那种一样。
+GLUE_HEAD = ['and', 'upon', 'of', 'in', 'to', 'the', 'from', 'with', 'on',
+             'for', 'as', 'is', 'be', 'that', 'not', 'but', 'see', 'compare']
 
 # token 判读够不着的那一类，全部对着 1850 三卷本逐字核过：
 #   · **真词错**——`fall`/`Done`/`and` 本身是英文词，判词闸根本不会把它们
@@ -400,6 +457,20 @@ MANUAL_TEXT = [
     ('*theji* they shall remain', '*then* they shall remain'),
     # "Lips of *rejoicings*" 被读成 "rejoicinr s"，尾巴上的 s 单独成了 token
     ('rejoicinr s', 'rejoicings'),
+    # 证人作 "he himself, and not a delegated"；我们这边 himself 被劈成
+    # `hi` + `iiself` 两个 token，只改后半截会剩个孤立的 hi
+    ('he hi iiself', 'he himself'),
+    # 词被连字符甩掉最后一两个字母，token 判读只能看见前半截
+    ('denotes failui-e to discharge', 'denotes failure to discharge'),
+    ('mere ordinai-y men', 'mere ordinary men'),
+    # 证人作 "shall I, must I go"（Ps. 43:2）；I 被吞、must 读成 mmt，
+    # 挤成了一个 `shalll,mmt`
+    ('*shalll,mmt I go', '*shall I, must I go'),
+    # 词被杂散符号劈开，token 判读只看得见半截，只能整句改
+    ('*Lips of rejoicinr^s*', '*Lips of rejoicings*'),
+    ('seems to confii-m the', 'seems to confirm the'),
+    ('though 6}Tionymous, is not', 'though 6}synonymous, is not'),
+    ('more emphaticallyy^sf', 'more emphatically^sf'),
 
     # 游离的连字符。token 正则在连字符处断开，两截又各自是真词，
     # 判读器根本看不见它们；可这一横印在页面上就是个错。
@@ -442,6 +513,61 @@ def book_vocab(lex):
             if is_word(w, lex):
                 vocab[w.lower()] += 1
     return vocab
+
+
+# token 两侧算「干净边界」的字符。左右不对称：`(` 只能在左，`)` 只能在右。
+CLEAN_L = set(' \t\n([{"\'*\u201c\u2018\u2014\u2013')
+CLEAN_R = set(' \t\n)]}.,;:!?"\'*\u201d\u2019\u2014\u2013')
+
+
+WORDISH = re.compile(r"[A-Za-z][A-Za-z'\u2019]*")
+
+
+def _hyphen_ok(text, pos, lex, back):
+    """连字符两侧：另一半是真词就算正常复合词，否则是被劈开的半截。
+
+    `short-Uved` 的 `short` 是真词 → 这是 short-lived 断在行末，后半截该修；
+    `gi-atitude` 的 `gi` 不是词 → 整个串是 gratitude 被杂散连字符劈开，别碰。
+    """
+    if back:
+        m = None
+        for m in WORDISH.finditer(text[max(0, pos - 30):pos]):
+            pass
+        other = m.group(0) if m and m.end() == pos - max(0, pos - 30) else ''
+    else:
+        m = WORDISH.match(text, pos)
+        other = m.group(0) if m else ''
+    # 另一半必须至少两个字母：`failui-e` 的 `e`、`ordinai-y` 的 `y` 是被
+    # 连字符甩出来的单个字母，不是复合词的一半。放它们过去，前半截就会被
+    # 修成 failure / ordinary，留下 `failure-e` 这种更坏的结果。
+    return len(other) >= 2 and is_word(other, lex)
+
+
+def clean_bounded(text, a, b, lex):
+    """这个 token 是不是一个**完整的词**，而不是被杂散标点劈开的半截。
+
+    `gi-atitude` 会被 token 正则切成 `gi` 和 `atitude`，后半截拿去判读就成了
+    `gratitude`，落盘写出 `gi-gratitude`——比原来更坏。`^octrine`、`2)rospered`、
+    `hi)iiself`、`v/hich`、`ma,nifestation` 全是这么来的。
+    左边紧挨着 `-` `)` `/` `,` `^` 这类字符（而不是空格或开引号）就说明
+    它只是半个词，不判。
+    """
+    # 只有**符号的另一侧还是字母或数字**才算碎片——那说明一个词被这个符号
+    # 劈成了两半（`gi-atitude` `ma,nifestation` `2)rospered`）。若符号外面是
+    # 空格，那只是词旁边落了个杂散符号（` &ee` ` ^octrine` `this^ `），
+    # 词本身是完整的，照修不误。
+    def joined(k, step):
+        j = k + step
+        return 0 <= j < len(text) and (text[j].isalnum() or text[j] == "'")
+
+    ok_l = a == 0 or text[a - 1] in CLEAN_L or not joined(a - 1, -1)
+    ok_r = b >= len(text) or text[b] in CLEAN_R or not joined(b, 1)
+    # 连字符另说：两侧都是真词就是正常复合词，该修
+    if not ok_l and text[a - 1] == '-':
+        ok_l = _hyphen_ok(text, a - 1, lex, True)
+    if not ok_r and text[b] == '-':
+        ok_r = _hyphen_ok(text, b + 1, lex, False)
+    return ok_l and ok_r
 
 
 def chapter_tokens(text):
@@ -504,6 +630,11 @@ def main():
         edits = []
         for i, (w, a, b) in enumerate(toks):
             if is_word(w, lex):
+                continue
+            if not clean_bounded(text, a, b, lex):
+                stat['fragment'] += 1
+                rows.append((path.stem, w, '', 'fragment',
+                             ' '.join(words[max(0, i - 4):i + 5])))
                 continue
             reading = look_up(words, i, idx, wlow, worig)
             nxt = words[i + 1].lower() if i + 1 < len(words) else ''

@@ -338,7 +338,7 @@ chapter	from	to	kind
 105	ofiices	offices	rule
 105	ofiice	office	rule
 105	Abimelech		unresolved
-105	xH		tooshort
+105	xH	xli	manual
 105	soldjor		unresolved
 105	applied'to		unresolved
 105	rb		tooshort
@@ -346,7 +346,7 @@ chapter	from	to	kind
 105	mascuUne	masculine	rule
 105	pord		unresolved
 105	Iviii	lviii	roman
-105	xH		tooshort
+105	xH	xli	manual
 105	phasure		unresolved
 105	chiffs		unresolved
 105	appHcation	application	rule
@@ -595,7 +595,7 @@ chapter	from	to	kind
 109	rohe	robe	rule
 109	toith	with	wform
 109	ol		tooshort
-109	pretection		unresolved
+109	pretection	protection	manual
 11	refage		unresolved
 11	boti		unresolved
 11	I'he	The	manual
@@ -682,7 +682,7 @@ chapter	from	to	kind
 111	Ixxviii	lxxviii	roman
 111	oa		tooshort
 111	aflEinns		unresolved
-111	Halleujah		unresolved
+111	Halleujah	Hallelujah	manual
 112	efiects	effects	rule
 112	bt		tooshort
 112	heroes		unresolved
@@ -783,7 +783,7 @@ chapter	from	to	kind
 116	Hhi		unresolved
 116	Ki		tooshort
 116	Ixxix	lxxix	roman
-116	xU		tooshort
+116	xU	xli	manual
 116	circimilocution		unresolved
 116	Ixxii	lxxii	roman
 116	Ixxxvi	lxxxvi	roman
@@ -1037,7 +1037,7 @@ chapter	from	to	kind
 119	falfilment		unresolved
 119	Ixi	lxi	roman
 119	ahoays		unresolved
-119	xU		tooshort
+119	xU	xli	manual
 119	deUghting	delighting	rule
 119	beasta		unresolved
 119	efiect	effect	rule
@@ -1603,7 +1603,7 @@ chapter	from	to	kind
 142	cxHii	cxliii	rule
 142	EngUsh	English	rule
 142	Uterally	literally	rule
-142	xU		tooshort
+142	xU	xli	manual
 142	Ixii	lxii	roman
 142	Ixxi	lxxi	roman
 142	Ixxiii	lxxiii	roman
@@ -2180,7 +2180,7 @@ chapter	from	to	kind
 22	Ivii	lvii	roman
 22	savedst		unresolved
 22	trere		unresolved
-22	xH		tooshort
+22	xH	xli	manual
 22	disgi		unresolved
 22	aceful		unresolved
 22	tne		unresolved
@@ -2552,7 +2552,7 @@ chapter	from	to	kind
 32	aie	are	rule
 32	sdid		unresolved
 32	confes		unresolved
-32	aud		unresolved
+32	aud	and	manual
 32	TDTl		unresolved
 32	Iv	lv	roman
 32	Ihou		unresolved
@@ -2936,7 +2936,7 @@ chapter	from	to	kind
 39	oi		tooshort
 39	Iiri		unresolved
 39	men'seek		unresolved
-39	xU		tooshort
+39	xU	xli	manual
 39	feeUng	feeling	rule
 39	inay		unresolved
 39	hterally	literally	rule
@@ -3468,7 +3468,7 @@ chapter	from	to	kind
 50	TIiou		unresolved
 50	toilt	wilt	wform
 50	refen		unresolved
-50	aud		unresolved
+50	aud	and	manual
 50	ivhoso	whoso	manual
 50	fiom		unresolved
 51	Bathsheba		unresolved
@@ -4196,7 +4196,7 @@ chapter	from	to	kind
 69	apphed	applied	rule
 69	tvhom	whom	wform
 69	Ixvi	lxvi	roman
-69	xh		tooshort
+69	xh	xli	manual
 69	Ivi	lvi	roman
 69	boiTowed		unresolved
 69	sufi'ering	suffering	rule
@@ -4306,7 +4306,7 @@ chapter	from	to	kind
 72	hloom	bloom	rule
 72	hlossom	blossom	rule
 72	hless	bless	rule
-72	aud		unresolved
+72	aud	and	manual
 72	ef		tooshort
 72	potiori		unresolved
 72	ienominatio		unresolved
@@ -4581,7 +4581,7 @@ chapter	from	to	kind
 78	Egj'ptian		unresolved
 78	Philo		unresolved
 78	modem	modern	realword
-78	yZames		unresolved
+78	yZames	flames	manual
 78	Ixxvi	lxxvi	roman
 78	Iviii	lviii	roman
 78	Uves	lives	rule
@@ -5049,7 +5049,7 @@ chapter	from	to	kind
 89	toaves	waves	wform
 89	Ixv	lxv	roman
 89	swelHng	swelling	rule
-89	appUcationof		unresolved
+89	appUcationof	application of	manual
 89	Rahah	Rahab	manual
 89	Ixxii	lxxii	roman
 89	Rahah	Rahab	manual
@@ -5310,7 +5310,7 @@ chapter	from	to	kind
 94	hx		tooshort
 94	Ixxiii	lxxiii	roman
 94	EngHsh	English	rule
-94	xH		tooshort
+94	xH	xli	manual
 94	naankind		unresolved
 94	olFenders		unresolved
 94	icarnesf	warnest	manual

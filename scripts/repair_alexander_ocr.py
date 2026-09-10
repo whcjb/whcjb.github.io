@@ -144,6 +144,15 @@ PSALMS_MANUAL = {
     'sohnnitates': 'solennitates',     # "Jer. solennitates" (74)
     'idumsea': 'Idum\u00e6a',           # "Idumæa and Arabia Petræa" (75)，同为 æ
     'petraea': 'Petr\u00e6a',           # 同上一句，原书亦是 æ 合字
+    # 证人在这里读成 fames，是错的；影像上印的是 flames
+    # "The word translated *flames* occurs above in Ps. lxxvi. 4 (3)" (78)
+    'yzames': 'flames',
+    'halleujah': 'Hallelujah',    # "corresponding to the *Hallelujah* at the beginning"
+    'xu': 'xli',                  # "Ps. xx. 3 (2), xli. 4 (3), xciv."——罗马数字里 li 读成 U
+    'xh': 'xli',                  # "Ps. ii. 10, xiv. 2, xli. 2 (1)"——同上，li 读成 H
+    'aud': 'and',                 # 全书仅一处，"…to Jehovah, and thou didst take away"
+    'pretection': 'protection',   # "a place of honour but of protection"
+    'appucationof': 'application of',   # 粘连，证人在这一处读崩，按上下文定
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
