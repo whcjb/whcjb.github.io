@@ -46,6 +46,16 @@ BOOKS = {
             r'|\d+-+第[一二三四五六七八九十]+章'
             r'|第[一二三四五六七八九十]+章[\s.．…]*)\s*$'),
     },
+    # 加拉太书：底本 PDF 自带文本层（150 页，与 raw OCR 页数 1:1），但它
+    # **本身也是 OCR**（`教义件的阐沭`、`毋宁说插入了-----个劝告`），
+    # 所以和约翰福音那本一样**没有裁判效力**——它只用来「出候选」：
+    # 两侧不一致的地方拿去裁扫描图人眼定夺（零 API 成本）。
+    'galatians': {
+        'pdf': '/Users/yanpeifa/Documents/论文/calvin/加拉太书注释-加尔文.pdf',
+        'pub': 'calvin/galatians',
+        # 页眉/页脚：独占一行的「第N章」与纯页码
+        'header': re.compile(r'^(?:第[一二三四五六七八九十]+章[\s.．…]*|\d{1,3})\s*$'),
+    },
     'john': {
         'pdf': '/Users/yanpeifa/Documents/论文/calvin/加尔文--约翰福音注释.pdf',
         'pub': 'calvin/john',
