@@ -53,6 +53,14 @@ BOOKS = {
         'pdf': '/Users/yanpeifa/Documents/论文/calvin/M0372 以弗所书注释 加尔文.pdf',
         'raw': 'calvin_raw/ephesians-scan/ocr',
     },
+    # 加拉太书这本 PDF 也自带文本层（150 页，与 raw 1:1），
+    # `audit_ocr_vs_pdf.py --book galatians` 已经零成本跑过一轮，出 305 处候选。
+    # 但那条路**结构上查不出漏字**（少一字两侧字流都合法），而漏字正是 Qwen 的
+    # 主要错法，所以这一卷仍要判读。
+    'galatians': {
+        'pdf': '/Users/yanpeifa/Documents/论文/calvin/加拉太书注释-加尔文.pdf',
+        'raw': 'calvin_raw/galatians-scan/ocr',
+    },
 }
 
 SYSTEM = (

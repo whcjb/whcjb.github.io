@@ -81,6 +81,10 @@ BOOKS = {
     # 的 tesseract 重扫，不是 PDF 文本层。
     'ephesians':  {'pub': 'calvin/ephesians', 'raw': 'calvin_raw/ephesians-scan/ocr',
                    'report': 'logs/adjudicate_ephesians.md', 'max_page': None},
+    # 加拉太书底本也是纯扫描（PDF 自带的那层文本本身是 OCR，无裁判效力），
+    # 第二证人走 verify_ocr_fixes.py 的 tesseract 重扫。
+    'galatians':  {'pub': 'calvin/galatians', 'raw': 'calvin_raw/galatians-scan/ocr',
+                   'report': 'logs/adjudicate_galatians.md', 'max_page': None},
     # 约翰福音的底本 PDF 自带一层文本——它自己也是 OCR，但和 calvin_raw 下那份
     # 是**两次独立的 OCR**（抽页比对相似度 0.88–0.98，不是同一份），所以可以当
     # 第二个证人：判读说影像是 A、我们的 raw 是 B，而 PDF 文本层也读作 B，
