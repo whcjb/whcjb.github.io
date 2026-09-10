@@ -409,6 +409,11 @@ OCR_SLASH_L = re.compile(r'(?<=[A-Za-z])/(?=[a-z]|-\s*$)')
 # `**` 在本书里没有别的用处——脚注符是 `*` `†` `‡`（vol1 p88 裁图核过），
 # 不存在 `**` 当第二个脚注符的排法。
 OCR_OPEN_QUOTE = re.compile(r'\*\*')
+# 单独成词的 `à` / `á` / `â` 是冠词 a 上落了个扫描点（全书 16 处，逐条看过
+# 上下文：`à common practice` / `à created quality` / 拉丁 `à fortiori`、
+# `à causa exemplari`，无一例外）。重音字母出现在词**中间**的是希腊文与拉丁文
+# 的音译，一概不动。
+OCR_ACCENT_A = re.compile(r'(?<![A-Za-zÀ-ÿ])[àáâ](?![A-Za-zÀ-ÿ])')
 # `«` 就杂得多：多数落在被读花的希腊文音译里（`«0 diov`、`Ev «no disce`），
 # 还有断词处的斑点（`tem- « pet`）。只收「脚注符或句读之后、其后是大写字母」
 # 这一种形状——那是引号无疑（`\* « Sapientia carnis."`、`Author. *« Some`）。
@@ -430,6 +435,7 @@ def clean(t):
     t = OCR_PLUS_TAIL.sub('', t)
     t = OCR_SLASH_L.sub('l', t)
     t = OCR_OPEN_QUOTE.sub('\u201c', t)
+    t = OCR_ACCENT_A.sub('a', t)
     t = OCR_GUILLEMET.sub('\u201c', t)
     # 左边距的孤立标点。后面跟脚注符时也要剥——`; + The well-known letter`
     # 里那个 `;` 是斑点，不剥掉 FN_MARK 就认不出这是新的一条注。
