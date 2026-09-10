@@ -75,6 +75,12 @@ MAX_HITS = 8
 # 证人读数与 OCR 串的最大编辑距离占比。超过这个就当成两版之间的改写，不采信。
 MAX_DIST_RATIO = 1 / 3
 
+# 序列相似度下限，见 verdict 里字形闸那一段。
+SIM_FLOOR = 0.6
+
+# 一个词被劈成两个 token 时，中间可能夹着的东西。
+SPLIT_SEP = {' ', '-', '- ', '-\n', '\n', ' -', ' - '}
+
 # 正字法闸。1864 是伦敦排的英式本，1850 是费城排的美式本，两版在
 # -ise/-ize、waggon/wagon 这些地方**本来就不一样**。照证人改等于把底本的
 # 拼写换成另一版的拼写，属于篡改（feedback_pdf_verify_before_change）。
@@ -250,7 +256,7 @@ def hyphen_or_space(a, b, wtext):
     return '-' if h > s else ' '
 
 
-def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
+def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram, nxt_raw=''):
     """证人读数 → 判决。"""
     # 手工表排在最前面：它们本来就是**证人也判不了**才手工核定的，
     # 排在「证人没读数」后面等于永远轮不到（Itsis / upbefore / Ezekel 都这么丢过）。
@@ -318,6 +324,23 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
                     and (reading.lower(), tail) in wbigram):
                 return 'split', reading + ' ' + tok[-len(tail):]
 
+    # 一个词被空格劈成了两个 token：`Egy t` = Egypt、`com are` = compare、
+    # `confes Bion` = confession、`clauf e` = clause。只换前半截会留下一截
+    # 孤立的残字（`Egypt t`），必须把两个 token 一起换掉。
+    # 只往「证人拼成一个词」的方向合并，且那个词必须是真词或本书别处
+    # 正确用过——否则会反过来把我们**本来正确的两个词**按证人自己的连写
+    # 错误并掉（`salvum fac` 差点被并成 salvumfac）。
+    if (nxt_raw and len(reading) > len(tok)
+            and (is_word(reading, lex) or bvocab[reading.lower()] >= 1)):
+        joined = (tok + nxt_raw).lower()
+        # 证人正文里若印着带连字符的写法，那就是书里**本来就有的复合词**
+        # （co-extensive / co-relative），不是被行末断词劈开的，不能并。
+        hyphenated = re.search(rf'\b{re.escape(tok)}-\s*{re.escape(nxt_raw)}\b',
+                               wtext, re.I)
+        if not hyphenated and (edit_distance(joined, reading.lower()) <= 1
+                               or glyph_reachable(tok + nxt_raw, reading)):
+            return 'joinnext', reading
+
     # 词头粘连：证人读数是 OCR 串的**后缀**，前面那截是个虚词。
     for head in GLUE_HEAD:
         if (tok.lower().startswith(head) and tok.lower().endswith(reading.lower())
@@ -330,8 +353,15 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
     # li／ll 两个字母，`faUs → falls` 的编辑距离是 2、占串长的一半，
     # 照距离算要被当成改写否掉——而它恰恰是这本扫描件最典型的错。
     # 字形规则走得通，本身就证明了「同一个词被读崩」，比距离硬。
+    # 「长得像」有三种量法，任一成立即可：编辑距离占比、字形规则可达、
+    # 序列相似度。前两种都偏严——连字被读成单个字形时一个 U 顶掉两个字母，
+    # 距离占比立刻超标；而规则表也穷举不完 `Imows→knows`、`lilie→like`、
+    # `xmder→under`、`knoio→know` 这些多字母同时崩掉的读法。
+    # 实测相似度在 0.6 处分得很干净：≥0.6 的几乎全对，≤0.4 的几乎全是
+    # 锚落错位置读出的隔壁词。0.5 那一档鱼龙混杂，宁可漏判不误判。
     if (edit_distance(tok.lower(), reading.lower()) > max(1, len(tok) * MAX_DIST_RATIO)
-            and not glyph_reachable(tok, reading)):
+            and not glyph_reachable(tok, reading)
+            and SequenceMatcher(None, tok.lower(), reading.lower()).ratio() < SIM_FLOOR):
         return 'divergent', reading
     # 判词闸：真词，或证人语料里反复出现的专名 / 音译，
     # 或者字形上「我们这串是它读崩的产物」——见 glyph_reachable
@@ -401,6 +431,11 @@ HANDS_OFF = {
     'shalll',    # "shall I, must I go" 挤成了 `shalll,mmt I go`，见 MANUAL_TEXT
     'mmt',       # 同上
     'kj',        # 希伯来文的祈使小品词，两份 OCR 各读各的
+    'haman',     # Esther vii. 10 的哈曼，我们是对的；证人读成 Hainan
+    # 下面四个证人只读出半截，token 级替换会吞掉后一个词，
+    # 交给 MANUAL_TEXT 整句改（不挡住这里，token 修复会先把串改掉，
+    # MANUAL_TEXT 就再也匹配不上——自检报的那四条失效就是这么来的）
+    'egy', "irutes'm", 'andtve', 'godvml',
     # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
     'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
     'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
@@ -419,7 +454,9 @@ BRITISH_TAIL = [('ization', 'isation'), ('izations', 'isations'),
 # 粘连词尾只认这些虚词。放开成「任何真词」会把 expositicai 这类**本来就
 # 该整体替换**的串误判成粘连，硬拆出一个不存在的词。
 GLUE_TAIL = ['of', 'in', 'to', 'is', 'as', 'be', 'on', 'at', 'it', 'he',
-             'we', 'or', 'and', 'the', 'for', 'that', 'not', 'but', 'with']
+             'we', 'or', 'and', 'the', 'for', 'that', 'not', 'but', 'with',
+             'them', 'him', 'her', 'us', 'me', 'my', 'thee', 'thou', 'thy',
+             'will', 'shall', 'are', 'was', 'his']
 
 # 拆出来的虚词后面**又是**一个介词，说明拆错了：`Salein of Gen. xiv` 的
 # 真值是 `Salem of`，硬拆成 `Salem in` 会读出 "Salem in of Gen. xiv"。
@@ -471,6 +508,14 @@ MANUAL_TEXT = [
     ('seems to confii-m the', 'seems to confirm the'),
     ('though 6}Tionymous, is not', 'though 6}synonymous, is not'),
     ('more emphaticallyy^sf', 'more emphatically^sf'),
+    # 词被 OCR 噪点劈开，中间夹的不是空格也不是连字符，joinnext 够不着
+    ('smiter of) Egy2)t, i. e.*', 'smiter of) Egypt, i. e.*'),
+    ('the Egj-ptians', 'the Egyptians'),
+    ('and com];>are Isa', 'and compare Isa'),
+    # 证人只读出半截，照抄会吞掉后一个词
+    ('*Irutes\'m* general', '*brutes* in general'),
+    ('horses, andtve in the name', 'horses, and we in the name'),
+    ('*GodvMl send his mercy', '*God will send his mercy'),
 
     # 游离的连字符。token 正则在连字符处断开，两截又各自是真词，
     # 判读器根本看不见它们；可这一横印在页面上就是个错。
@@ -638,7 +683,16 @@ def main():
                 continue
             reading = look_up(words, i, idx, wlow, worig)
             nxt = words[i + 1].lower() if i + 1 < len(words) else ''
-            kind, r = verdict(w, reading, lex, wvocab, bvocab, wtext, nxt, wbigram)
+            # 被劈开的同一个词，中间只可能隔一个空格或一个残留的行末连字符
+            # （`confes- Bion` = confession，`conti-ast` = contrast）。
+            nxt_raw = ''
+            if i + 1 < len(toks) and text[b:toks[i + 1][1]] in SPLIT_SEP:
+                nxt_raw = toks[i + 1][0]
+            kind, r = verdict(w, reading, lex, wvocab, bvocab, wtext, nxt,
+                              wbigram, nxt_raw)
+            if kind == 'joinnext':
+                b = toks[i + 1][2]          # 替换范围延伸到下一个 token 末尾
+                w = text[a:b]
             # 改完和左右邻居撞成叠词，多半是把节号 / 缩写当成了词
             if kind == 'fix':
                 nb = [t[0].lower() for t in toks[max(0, i - 1):i + 2] if t[0] != w]
@@ -647,7 +701,7 @@ def main():
             stat[kind] += 1
             ctx = ' '.join(words[max(0, i - 4):i + 5])
             rows.append((path.stem, w, r, kind, ctx))
-            if kind in ('fix', 'split', 'splitq', 'hyphen', 'manual'):
+            if kind in ('fix', 'split', 'splitq', 'hyphen', 'manual', 'joinnext'):
                 edits.append((a, b, restore_case(w, r), w))
         if args.apply and (edits or any(a in text for a, _ in MANUAL_TEXT)
                             or (path.stem == 'preface' and PREFACE_CUT in text)):

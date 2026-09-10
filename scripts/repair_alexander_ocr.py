@@ -153,6 +153,7 @@ PSALMS_MANUAL = {
     'aud': 'and',                 # 全书仅一处，"…to Jehovah, and thou didst take away"
     'pretection': 'protection',   # "a place of honour but of protection"
     'appucationof': 'application of',   # 粘连，证人在这一处读崩，按上下文定
+    'difibrent': 'different',           # 证人在这一处也读崩了，按上下文定
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
@@ -212,6 +213,14 @@ ISAIAH_PRE = [
     # 词尾字母被读成括号：`genera]`(general) `unit}'`(unity)。
     # token 正则切不出这种串，只能在文本层改。
     (r'\bgenera\]', 'general'),
+    # 词中间冒出一个句点，把词劈成两截（`A.nd` = And）。判读器只看得见后半截
+    # 那个 token，改完会拼成 `A.and` 这种更糟的东西，所以必须在它之前修掉。
+    (r'\bA\.nd\b', 'And'),
+    (r'\bA\.nnahme\b', 'Annahme'),
+    (r'\bof a\.child born\b', 'of a child born'),
+    (r"\bone's\.self\b", "one's self"),
+    (r'\bnot yet J\.ave called\b', 'not yet have called'),
+    (r'\bcontrary to u\.sa\^e\b', 'contrary to usage'),
     (r"\bunit\}'", 'unity'),
 ]
 
