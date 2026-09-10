@@ -162,6 +162,7 @@ sources:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/psalms-2/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/psalms/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 150}
+    - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", url_tpl: "/alexander/psalms/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
   romans:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/romans/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/romans-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 16}

@@ -69,6 +69,12 @@ AUTHORS = OrderedDict([
                       years='1572–1641', dir='davenant',
                       work_cn='歌罗西书注释',
                       work_en='An Exposition of the Epistle of St. Paul to the Colossians')),
+    # 亚历山大：老普林斯顿语文学一系，1850 年三卷本初版，
+    # 本站据 1864 年 Scribner 单卷修订版的扫描件
+    ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
+                       years='1809–1860', dir='alexander',
+                       work_cn='诗篇注释',
+                       work_en='The Psalms Translated and Explained')),
 ])
 
 # ── 主题色 ─────────────────────────────────────────────────────
@@ -91,6 +97,10 @@ AUTHOR_COLORS = {
     # 同批算过的 #12525c(16.6) / #2f6b6b(12.2) / #3d5a3d(11.9) 都离欧文绿
     # 太近，弃用。
     'davenant': ('#3f5122', '#556b2f'),
+    # 亚历山大石榴石：与既有七色的 ΔE 最小 26.9（毕列志棕 27 / 曼顿梅 28），
+    # 那两支一偏黄一偏紫，与这支正红分得开。同批算过的 #3f3a7a 离贺智靛蓝
+    # 只有 23，弃用。
+    'alexander': ('#5f2323', '#7d2f2f'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -122,12 +132,12 @@ BOOK_TITLES = {
 COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
-    'davenant': '#556b2f',
+    'davenant': '#556b2f', 'alexander': '#7d2f2f',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
-    'davenant': '达文南特注释',
+    'davenant': '达文南特注释', 'alexander': '亚历山大注释',
 }
 
 
@@ -144,7 +154,8 @@ def _chapter_range(d: Path):
 # 各家的「原生语种」：加尔文 / 马太亨利 / 毕列志的主目录是中译，
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
-                'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en'}
+                'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
+                'alexander': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

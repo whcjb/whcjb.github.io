@@ -54,3 +54,12 @@ logs/adjudicate_*.md
 # 达文南特扫描件底本（39M + 37M，可从 archive.org 重新下载，不入库）
 davenant_raw/colossians/*.pdf
 davenant_raw/colossians/diag/
+
+# 亚历山大《诗篇注释》的 IA 原始件（ABBYY XML/gz、PDF、pickle 缓存）。
+# 合计 1GB 量级，且全部可从 Internet Archive 重新取得
+# （item id 见 alexander_raw/psalms/PROVENANCE.md）。
+# 抽取产物 en_chapters/ 与 chapters_raw/ 是文本，照常入库。
+alexander_raw/psalms/src/
+# extract 之后、repair 之前的快照，纯本地便利：调修复规则时回到干净起点用。
+# 重跑 extract_alexander_psalms.py 即可再生（约 30 秒），不必进库。
+alexander_raw/psalms/en_chapters.bak/

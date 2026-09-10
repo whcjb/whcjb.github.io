@@ -1,0 +1,164 @@
+---
+layout: default
+---
+{%- comment -%}
+  亚历山大《诗篇注释》章节页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩）。
+
+  配色取石榴石 #7d2f2f —— 与既有七色的 CIELAB ΔE 最小 26.9（最近的是毕列志
+  棕 #6b4e2e 27、曼顿梅 #5b2f4a 28，两者都偏紫/偏黄，与这支偏红的实际观感
+  分得开）。同批算过的 #3f3a7a 离贺智靛蓝只有 23，弃用。
+  深浅两端 #5f2323 / #7d2f2f，按 135° 渐变，与首页资源卡一致。
+
+  本卷版式与其他各卷的不同之处（底本见 alexander_raw/psalms/PROVENANCE.md）：
+  - **没有独立经文块**。Alexander 的体例是把自己对希伯来文的译文用**斜体**
+    嵌在解说里，逐句夹译夹注，原书并不把经文另起一段。所以正文只有段落，
+    斜体就是经文——不得自作主张替他把斜体抽出来做成 .scripture 框
+    （principles §0.0 反向约束）。
+  - **没有脚注**。全书注释即正文，原书无脚注区。
+  - 节号形如 `7 (6).`：前者是希伯来文本节号，括号内是英文圣经节号
+    （诗篇的题注在希伯来文里算第 1 节，英译不算，于是差一节）。
+    锚点一律取**英文节号**，与站内其他注释和中文和合本对得上。
+{%- endcomment -%}
+
+<div class="container alexander-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="ax-chrome cmp-nav" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh_url %}<a class="ax-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+      </div>
+
+      <h1 class="ax-title">{{ page.title }}</h1>
+
+      <div class="ax-nav cmp-nav">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        章顶节号导航：胶囊由 JS 扫正文里的 .ax-anchor 生成
+        （锚点由 publish_alexander_en.py 按节号段落注入）。
+      {%- endcomment -%}
+      <div id="verse-nav" style="display:none;">
+        <div id="verse-nav-toggle" onclick="toggleAlexanderVerseNav()">
+          <span id="verse-nav-label"></span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;"></div>
+      </div>
+
+      {%- comment -%}
+        self 必须与 _data/compare_sources.yml 里的 key 一致（英文版是
+        `alexander-en`），否则本页自己会出现在对照选项里。将来出中译时，
+        照 davenant 的写法按 page.zh 切换成 `alexander`。
+      {%- endcomment -%}
+      {% include compare-commentary-head.html self="alexander-en" content_class="ax-content" self_label="亚历山大" %}
+        {{ content }}
+      {% include compare-commentary-foot.html %}
+
+      {% if page.date %}
+      <div class="ax-chrome" style="margin-top:32px; font-size:12px; color:#9a9a92; text-align:right;">
+        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+      </div>
+      {% endif %}
+
+      <div class="ax-nav cmp-nav" style="margin-top:44px; padding-top:16px; border-top:1px solid var(--ax-rule);">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.alexander-wrap {
+  --ax-ink: #7d2f2f;
+  --ax-ink-dark: #5f2323;
+  --ax-rule: #e2d2cc;
+  --ax-paper: #fdfaf7;
+}
+.ax-chrome, .ax-nav { font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; gap: 10px; flex-wrap: wrap; }
+.ax-chrome a, .ax-nav a { color: var(--ax-ink); }
+.ax-chrome a:hover, .ax-nav a:hover { color: var(--ax-ink-dark); }
+.ax-lang { border: 1px solid var(--ax-rule); border-radius: 4px; padding: 4px 10px; }
+.ax-lang:hover { background: var(--ax-ink); color: var(--ax-paper) !important;
+  text-decoration: none !important; }
+.ax-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: bold; color: var(--ax-ink-dark); margin: 0 0 6px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--ax-ink); }
+.ax-nav { margin: 14px 0 26px; }
+
+/* ── 正文 ───────────────────────────────────────────────────────── */
+.ax-content { font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 16.5px; line-height: 1.85; color: #2b2726; }
+.ax-content h1 { font-size: 21px; font-weight: bold; text-align: center;
+  letter-spacing: .1em; color: var(--ax-ink-dark); margin: 10px 0 26px; }
+.ax-content p { margin: 0 0 15px; text-align: justify; }
+.ax-content a { color: var(--ax-ink); }
+
+/* 诗篇 119 一篇 176 节、正文近 5 万字符，与达文南特整章一页同一量级的问题。
+   屏外段落跳过排版与绘制；`auto` 让浏览器记住量过的真实高度，来回滚不跳。
+   估值 300px 按 16.5px/1.85、平均段 ~460 字符算——改字号/行高要一起改。 */
+.ax-content > p { content-visibility: auto; contain-intrinsic-size: auto 300px; }
+
+/* 节号：原书是段首编号，不是悬挂列表。包成 span 一是挡住 kramdown 的
+   ol/li 转换（会重排号），二是给节号本身一个可点的落点。
+   `7 (6).` 里括号内的英文节号用浅一档的颜色，避免与主节号抢眼。 */
+.ax-vnum { font-weight: bold; color: var(--ax-ink); margin-right: 2px; }
+.ax-vnum .ax-veng { font-weight: normal; color: #a8736b; }
+
+/* 斜体即 Alexander 自己的译文——本卷区分「经文」与「解说」的唯一手段，
+   所以给它比默认斜体更明确的墨色，不加框、不加底（原书就是纯斜体）。 */
+.ax-content em { font-style: italic; color: #4a2c28; }
+
+/* 节号锚点：跳转时避开 fixed navbar */
+.ax-anchor { position: relative; top: -80px; display: block; height: 0; }
+
+/* ── 章顶节号导航 ────────────────────────────────────────────────── */
+#verse-nav { margin-bottom: 24px; }
+#verse-nav-toggle { display: inline-flex; align-items: baseline; gap: 8px;
+  padding: 8px 14px; background: #f9efec; border: 1px solid var(--ax-rule);
+  border-radius: 4px; color: var(--ax-ink-dark); font-size: 14px; cursor: pointer; }
+#verse-nav-toggle:hover { background: #f2e2dd; }
+#verse-nav-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+#verse-nav-pills a { display: inline-block; padding: 3px 9px; font-size: 13px;
+  border: 1px solid var(--ax-rule); border-radius: 3px; color: var(--ax-ink); }
+#verse-nav-pills a:hover { background: var(--ax-ink); color: var(--ax-paper) !important;
+  text-decoration: none !important; }
+</style>
+
+<script>
+function toggleAlexanderVerseNav() {
+  var p = document.getElementById('verse-nav-pills');
+  var a = document.getElementById('verse-nav-arrow');
+  var open = p.style.display !== 'none';
+  p.style.display = open ? 'none' : 'flex';
+  a.innerHTML = open ? '&#9660;' : '&#9650;';
+}
+(function () {
+  var anchors = document.querySelectorAll('.ax-content .ax-anchor');
+  if (!anchors.length) return;
+  var nav = document.getElementById('verse-nav');
+  var pills = document.getElementById('verse-nav-pills');
+  var first = null, last = null;
+  anchors.forEach(function (a) {
+    var m = /^psalms-\d+-(\d+)$/.exec(a.id);
+    if (!m) return;
+    if (first === null) first = m[1];
+    last = m[1];
+    var link = document.createElement('a');
+    link.href = '#' + a.id;
+    link.textContent = m[1];
+    pills.appendChild(link);
+  });
+  if (first === null) return;
+  document.getElementById('verse-nav-label').textContent =
+    'Verses ' + first + '–' + last;
+  nav.style.display = '';
+})();
+</script>

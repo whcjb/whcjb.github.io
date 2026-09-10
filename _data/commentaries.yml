@@ -58,6 +58,14 @@ authors:
     work_cn: "歌罗西书注释"
     work_en: "An Exposition of the Epistle of St. Paul to the Colossians"
     books: 1
+  - id: alexander
+    name: "约瑟·亚历山大"
+    short: "亚历山大"
+    en: "Joseph Addison Alexander"
+    years: "1809–1860"
+    work_cn: "诗篇注释"
+    work_en: "The Psalms Translated and Explained"
+    books: 1
 
 books:
   - id: genesis
@@ -174,6 +182,7 @@ books:
     testament: ot
     chapters: 150
     links:
+      - {author: alexander, path: "/alexander/psalms/", url_tpl: "/alexander/psalms/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"
@@ -370,7 +379,7 @@ books:
     testament: nt
     chapters: 4
     links:
-      - {author: davenant, path: "/davenant/colossians/", url_tpl: "/davenant/colossians/__CH__/", title_cn: "歌罗西书注释", title_en: "An Exposition of the Epistle of St. Paul to the Colossians", c0: "#3f5122", c1: "#556b2f"}
+      - {author: davenant, path: "/davenant/colossians/", url_tpl: "/davenant/colossians/__CH__/zh/", title_cn: "歌罗西书注释", title_en: "An Exposition of the Epistle of St. Paul to the Colossians", c0: "#3f5122", c1: "#556b2f"}
   - id: 1thessalonians
     name: "帖撒罗尼迦前书"
     en: "1 Thessalonians"

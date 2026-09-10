@@ -1,0 +1,80 @@
+# web2（韦氏 1913 词表）缺的词：19 世纪拼法、圣经专名、缩写、拉丁/希伯来术语。
+# 收进来只表示「这是真词，别动它」，不表示推荐用法。
+# —— 功能词与不规则形（web2 只收词头，没有屈折形）——
+a an the is was were be been being am are has have had do does did done
+he she it his her him its they them their we us our you your i my me
+of to in on at by for with from as and or but not no nor that this these those
+which who whom whose what when where why how all any some more most much many
+other another same own shall will would should could may might must can cannot
+let thus yet also if unless though although because since while into upon out
+up down over under before after between among against about through during
+without within whereas hence therefore there than then so such such-like
+held began feet proud sat stood spake saith hast dost doth thou thee thy thine
+ye unto wherefore whereby whereof whereunto whereupon hitherto
+# —— 19 世纪 / 英式拼法 ——
+shew shews shewn shewing connexion reflexion inflexion recognise realise
+practise fulfil fulfilment enrol instalment recompence licence defence offence
+pretence favour honour colour neighbour behaviour endeavour saviour vapour
+labour splendour sceptre centre metre theatre worshipper preterite preterites
+fulness wilful skilful shrivelled travelled marvellous
+# —— 圣经专名 / 地名 / 人名 ——
+Jehovah Jah Elohim Adonai Shaddai Zion Sion Jerusalem Judah Israel Ephraim
+Manasseh Benjamin Zebulun Naphtali Gilead Bashan Lebanon Carmel Hermon Sinai
+Horeb Edom Moab Ammon Philistia Assyria Babylon Chaldea Egypt Ethiopia Cush
+Sheba Tarshish Ophir Midian Amalek Canaan Jordan Kidron Siloam Gihon Bethel
+Shiloh Gibeon Hebron Beersheba Nineveh Damascus Samaria Galilee Palestine
+David Solomon Saul Jonathan Absalom Doeg Ahithophel Nathan Asaph Korah Heman
+Ethan Jeduthun Moses Aaron Miriam Joshua Samuel Elijah Elisha Hezekiah Josiah
+Jehoshaphat Uzziah Jotham Ahaz Manasseh Zerubbabel Nehemiah Ezra Daniel
+Melchizedek Abraham Isaac Jacob Esau Joseph Levi Aaronic Levitical Davidic
+Messiah Messianic Christ Jesus Immanuel Sennacherib Nebuchadnezzar Cyrus
+# —— 诗篇题注术语（音译）——
+Maschil Michtam Miktam Shiggaion Selah Higgaion Sheminith Gittith Muthlabben
+Aijeleth Shahar Shoshannim Jonathelemrechokim Mahalath Leannoth Alamoth Neginoth
+Nehiloth Jeduthun Altaschith Hallelujah Hallel Alleluia
+# —— 学界人名（Alexander 常引）——
+Hengstenberg Gesenius Ewald Hupfeld Delitzsch Tholuck Rosenmueller Rosenmuller
+Umbreit Olshausen Stier Calvin Luther Junius Tremellius Cocceius Venema
+Michaelis Dathe Vitringa Bochart Buxtorf Schultens Kimchi Aben Ezra Rashi
+Jarchi Maurer Koster Clauss Vaihinger Tholuck Bengel Hitzig Knapp
+# —— 缩写与常见引用形式 ——
+Ps Isa Jer Ezek Hos Obad Jon Mic Nah Hab Zeph Hag Zech Mal Gen Exod Lev Num
+Deut Josh Judg Ruth Sam Kings Chron Ezra Neh Esth Prov Eccles Cant Lam Dan
+Matt Mark Luke John Acts Rom Cor Gal Eph Phil Col Thess Tim Tit Philem Heb Jas
+Pet Jude Rev Vulg Sept LXX Chald Syr Arab Targ ver vs viz cf comp ibid
+# —— 拉丁 / 技术词 ——
+paragogic paragoge apocope aphaeresis anacoluthon asyndeton hendiadys
+epexegetical exegetical hermeneutical hapax legomenon vav waw yod aleph beth
+gimel daleth heth teth kaph lamed mem nun samech ayin pe tsade koph resh shin
+tau sheva dagesh mappiq maqqeph athnach silluk zakeph tiphcha rebia pashta
+segol segolate construct absolute preterite futurum praeterit imperfect
+# —— 不规则动词 / 常见屈折形（web2 只有词头，这些一个都没有）——
+heard said made went gone came become became known knew grown grew shown
+thrown drawn drew taken took given gave written wrote spoken spoke broken
+broke chosen chose driven drove fallen fell forgotten forgot hidden hid
+ridden rode risen rose seen saw shaken shook stolen stole sworn swore torn
+tore worn wore woven wove bound found ground wound bred fed led read said
+sold told sought bought brought caught taught fought thought sat stood
+understood withstood held beheld kept slept swept wept crept felt dealt
+meant left lost sent spent built lent bent burnt learnt dreamt knelt
+women men children feet teeth mice geese oxen brethren
+being having doing saying seeing going coming becoming beginning running
+sitting standing putting getting letting setting cutting
+# —— 英式派生 & 古体动词形 ——
+favourite favourites favourable favourably unfavourable unfavourably
+honourable honourably dishonour dishonoured colourless neighbouring
+labourer labourers endeavouring behaviour vapours favouring favoured
+cometh goeth doth doeth hath saith knoweth maketh giveth taketh
+loveth hateth seeketh keepeth speaketh liveth dwelleth reigneth
+canst wilt shalt wouldst couldst shouldst mayest mightest didst hadst
+wast wert art thyself himself herself itself ourselves yourselves themselves
+whosoever whatsoever whensoever wheresoever howsoever
+# —— 正文里出现的其余专名 / 术语（都核对过，不是 OCR 错）——
+Hosea Babylonia Euphrates Ephrathah Meribah Massah Succoth Sihon Zoan Zalmon
+Gath Aram Sauline Rahab Robinson Bozrah Kedar Meshech Tabor Sharon Achor
+Shechem Tirzah Salem Ariel Rephaim Baca Hermonites Mizar Jeshurun Sheol Hades
+Keri Kethib Chethib Masora Masoretic Masorites Vulgate Peshito Chaldee
+synonyme synonymes organised authorised unauthorised characterised vigour
+rigour sceptical scepticism analogue analogues dialogue prologue
+# 圣经卷名的另一套缩写（正文里与 John/Job 同现，别被改成对方）
+Joh Jno Mat Mar Luk Act Gal Col Tit Phm Jam Pet Jud Apoc

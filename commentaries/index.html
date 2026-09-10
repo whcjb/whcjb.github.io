@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 历代解经
-description: 加尔文与马太亨利之外的历代改革宗注释——查理·毕列志《箴言书注释》、约翰·欧文《希伯来书注释》，按书卷检索。
+description: 加尔文与马太亨利之外的历代改革宗注释——欧文《希伯来书注释》、毕列志《箴言书注释》、贺智《罗马书·哥林多前后书注释》、曼顿《雅各书注释》、达文南特《歌罗西书注释》、亚历山大《诗篇注释》，按书卷检索。
 ---
 
 {%- comment -%}
@@ -11,7 +11,8 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
 
   收录范围：**加尔文与马太亨利之外**的注释家。那两位各有自己的书卷主页，
   在这里再列一遍等于把上百个重复入口铺满整版，真正新增的信息反而被淹掉。
-  目前只有两条——毕列志《箴言书注释》、欧文《希伯来书注释》。
+  收录名单由 _data/commentaries.yml 驱动，本页不硬编码；只有 .cx-who-<id>
+  的左侧色标需要在下面的 CSS 里各加一行。
   其余书卷画成虚线框，表示「尚无别家注释」，不可点。
 
   数据来自 _data/commentaries.yml，由 scripts/build_commentaries_index.py
@@ -79,6 +80,9 @@ description: 加尔文与马太亨利之外的历代改革宗注释——查理�
   .cx-who-owen    { border-left-color: #1f5a4b; }
   .cx-who-bridges { border-left-color: #96613F; }
   .cx-who-hodge   { border-left-color: #2b5080; }   /* 贺智两卷分色，收录栏取前书的靛蓝 */
+  .cx-who-manton  { border-left-color: #5b2f4a; }
+  .cx-who-davenant{ border-left-color: #556b2f; }
+  .cx-who-alexander { border-left-color: #7d2f2f; }
   .cx-who:hover { background: #f4efe2; }
   .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
   .cx-who-meta {
