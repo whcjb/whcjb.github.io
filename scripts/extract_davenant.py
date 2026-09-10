@@ -181,10 +181,18 @@ def is_signature(l):
 # 扫描斑点被读成孤立一行（`-` / `|` / `]` / `¢`）。它挡在页眉前面时，
 # 剥页眉的循环会以为已经剥完（实测 8 个页眉因此整行拼进正文）。
 SPECK_RE = re.compile(r'^\s*[^\w\s]{1,3}\s*$|^\s*\w\s*$')
-# 节号既有阿拉伯数字（`Verses 3, 4.`）也有罗马数字（`Vers. I.`，vol2 p223）
+# 节号既有阿拉伯数字（`Verses 3, 4.`）也有罗马数字（`Vers. I.`，vol2 p223；
+# 那是原书的排法，不是 OCR 错，600 dpi 对照过 p223，别去"改正"成 1）。
+# ⚠️ 数字里混进字形近似的字母：`17` 被读成 `I7`（vol1 p562）。只写
+# `\d+|[IVXLivxl]{1,6}` 时，`Verses 16, I7.` 只能吃到 `16,`，标题落成
+# `Verses 16,`，`I7.` 掉进经文块开头。混合式必须**含至少一个数字**才认，
+# 否则 `Verses is,` 这类正文也会被当节号标题。
+_NUMTOK = r'(?:[Il0OS\]\[|]*\d[\dIl0OS\]\[|]*|[IVXLivxl]{1,6})'
+# 标题尾巴的 `&c.`（`Vers. 2, &c.`，vol2 p233）要一起吃掉：不吃的话它成了
+# 经文池的第一段，另一个 `&c.` 又落成孤立正文段（实测两处都错）。
 SECTION_RE = re.compile(r'^\s*Vers?e?s?\.?\s*'
-                        r'((?:\d+|[IVXLivxl]{1,6})(?:\s*[,&]\s*(?:\d+|[IVXLivxl]{1,6}))*)'
-                        r'\s*[.,;]')
+                        r'(' + _NUMTOK + r'(?:\s*[,&]\s*' + _NUMTOK + r')*)'
+                        r'\s*[.,;](?:\s*&\s*c\.)?')
 _ROMAN = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
           'viii': 8, 'ix': 9, 'x': 10, 'xi': 11, 'xii': 12, 'xiii': 13,
           'xiv': 14, 'xv': 15, 'xvi': 16, 'xvii': 17, 'xviii': 18,
@@ -193,14 +201,55 @@ _ROMAN = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
           'xxix': 29}
 
 
+# 数字位上的字形回填：`I`/`l` 是 1，`O` 是 0，`S` 是 5。只在**已经确定是
+# 数字串**（含至少一个阿拉伯数字）时才用，纯字母串仍按罗马数字解。
+# 本书这套字体的 `1` 是「平顶衬线 + 竖杆 + 底座」，OCR 除了读成 `l` / `I`，
+# 还常读成 `]`（`Verse ]7.` = Verse 17.、`Verse 2].` = Verse 21.，vol1 p574
+# 与 p606，600 dpi 核过）。少了 `]` 这一路，那两节的标题和经文块整个丢掉，
+# 落成两段普通正文。
+_DIGIT_FIX = str.maketrans({'I': '1', 'l': '1', ']': '1', '[': '1', '|': '1',
+                            'O': '0', 'o': '0', 'S': '5'})
+
+
 def parse_nums(s):
     out = []
-    for tok in re.findall(r'\d+|[IVXLivxl]{1,6}', s):
-        if tok.isdigit():
-            out.append(int(tok))
+    for tok in re.findall(_NUMTOK, s):
+        if any(c.isdigit() for c in tok):
+            out.append(int(tok.translate(_DIGIT_FIX)))
         elif tok.lower() in _ROMAN:
             out.append(_ROMAN[tok.lower()])
     return out
+
+
+def render_section(raw, nums):
+    """把标题里的号码区按 nums 改写，**只动需要动的那个 token**。
+
+    不做归一：原书这几个词自己就不统一（`Ver.` / `Verse` / `Verses` /
+    `Vers.` / `Vers` 都有，p255 那个 `Vers 4.` 确实没有点），标点也照留
+    （`Vers. 2, &c.` 的逗号）。尤其是罗马数字的节号——vol2 p223 原书印的
+    就是 `CHAP. IV.—Vers. I.`，600 dpi 看过，写成 `Vers. 1.` 反倒是改错。
+    只有两种情形才落笔：数字位混进了字母（`I7`→`17`），以及节号被 OCR
+    读错、由 KJV 重扫救回（`Vers. 18.`→`Vers. 13.`）。
+    """
+    m = SECTION_RE.match(raw)
+    if not m or not nums:
+        return raw.strip()
+    toks = list(re.finditer(_NUMTOK, m.group(1)))
+    if len(toks) != len(nums):
+        return raw.strip()
+    base = m.start(1)
+    out, pos = [], 0
+    for t, v in zip(toks, nums):
+        keep = t.group(0) if (not any(c.isdigit() for c in t.group(0))
+                              and _ROMAN.get(t.group(0).lower()) == v) \
+            else str(v)
+        out.append(raw[pos:base + t.start()])
+        out.append(keep)
+        pos = base + t.end()
+    out.append(raw[pos:])
+    return ''.join(out).strip()
+
+
 # `CHAP. IV.—Vers. I.`：章标题与节号常挤在同一行，中间可能是破折号
 # （vol2 p223 实测；只允许 `.`/`,` 时这一章整个漏掉）。
 CHAP_RE = re.compile(r'^\s*CHAP[.,;]?\s*([IVX]{1,4})\s*[.,;：—–-]*\s*')
@@ -439,7 +488,7 @@ OCR_PLUS_TAIL = re.compile(r'\s\+\s*$')
 #     于是 `l. Itis` 与对方的 `1. It is` 变成 2→3 的替换，粘连词配不上
 #     （`Itis` 明明在采信表里却没被拆，实测）。
 # 所以这一步必须排在 fix_line 之前。
-ENUM_L = re.compile(r'^l\.(\s+)(?=[A-Z])')
+ENUM_L = re.compile(r'^[l\]\[|I]\.(\s+)(?=[A-Z])')
 ENUM_COMMA = re.compile(r'^(\d{1,2}),(\s+)(?=[A-Z])')
 
 
@@ -625,17 +674,65 @@ def main():
                         out = dehyph(out, seg) if out else seg
                     return out
 
-                best = None
-                for k in range(1, len(pool) + 1):
-                    c = _join(pool[:k])
-                    sc, rs, rr = split_scripture(c, cur_chap, nums, kjv)
-                    if best is None or rr > best[3] + 1e-9:
-                        best = (c, sc, rs, rr, k)
+                def _best_for(vs):
+                    b = None
+                    for k in range(1, len(pool) + 1):
+                        c = _join(pool[:k])
+                        sc, rs, rr = split_scripture(c, cur_chap, vs, kjv)
+                        if b is None or rr > b[3] + 1e-9:
+                            b = (c, sc, rs, rr, k)
+                    return b
+
+                best, used, partial_ok = _best_for(nums), nums, False
+                # 对不上时先别急着退回正文。全书 90 个节组里对不上的 3 个，
+                # 拿 600 dpi 原页看过，是**两种不同的**毛病：
+                #   · 节号被 OCR 读错：vol2 p119 原书 `Vers. 13.` 读成 18、
+                #     p132 原书 `Verse 15.` 读成 16 → 按全章逐节重扫救回，
+                #     命中 ≥0.9 才认，标题里的号码连带改正
+                #   · 原书只引了半节：vol1 p339 `Verse 22.` 底下只印
+                #     "Now hath he reconciled … through death."（0.458）
+                #     → 本节仍是全章最像的，按半引接受，不许改号
+                if best[3] < 0.55 and cur_chap:
+                    alt = [(_best_for([v]), [v]) for v in range(1, 30)
+                           if f'{cur_chap}:{v}' in kjv and [v] != nums]
+                    hi = [x for x in alt if x[0][3] >= 0.9]
+                    if hi:
+                        b2, vs = max(hi, key=lambda x: x[0][3])
+                        print(f'  [节号回填] {cur_chap}:{nums} → {vs} '
+                              f'（相似度 {b2[3]}）', flush=True)
+                        best, used = b2, vs
+                        total['sec_fix'] += 1
+                        for t in range(len(out) - 1, -1, -1):
+                            if out[t].startswith('[SECTION] '):
+                                mm = re.match(r'(\[SECTION\] (?:<!--[^>]*-->)?)(.*)$',
+                                              out[t], re.S)
+                                out[t] = mm.group(1) + render_section(mm.group(2), vs)
+                                break
+                    elif best[3] >= 0.40 and best[3] >= max(
+                            (x[0][3] for x in alt), default=0):
+                        print(f'  [半引接受] {cur_chap}:{nums} '
+                              f'（相似度 {best[3]}）', flush=True)
+                        total['scr_partial'] += 1
+                        partial_ok = True
                 cand, scr, rest, r, take = best
                 i += take - 1
-                if r >= 0.55:
+                if r >= 0.55 or partial_ok:
+                    # 引文尾巴的 `&c.` 跟着经文走。它跟 KJV 对不上，贪心增长
+                    # 到它这一段相似度只会掉，于是被留在外面成了孤零零一段
+                    # `&c.`（vol2 p233 实测，页面上就印着 "…with thanksgiving,
+                    # &c."）。经文收尾后紧跟的独立 `&c.` 段直接并回去。
+                    # 引文尾巴的 `&c.` 跟着经文走。KJV 里没有这两个字，
+                    # split_scripture 的切点落在它前面，于是它被当成正文
+                    # 甩出来，页面上多一段孤零零的 `&c.`（vol2 p233 实测，
+                    # 原书印的是 "…with thanksgiving, &c."）。
+                    if rest and re.fullmatch(r'&\s*c\.?', rest.strip()):
+                        scr, rest = scr.rstrip() + ' ' + rest.strip(), ''
+                    elif not rest and i < len(paras) and \
+                            re.fullmatch(r'&\s*c\.?', paras[i][0].strip()):
+                        scr = scr.rstrip() + ' ' + paras[i][0].strip()
+                        i += 1
                     out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
-                               f'{",".join(map(str, nums))}|{r}| {scr}')
+                               f'{",".join(map(str, used))}|{r}| {scr}')
                     total['scr'] += 1
                     total['scr_sim'] += r
                     if rest:
@@ -670,7 +767,7 @@ def main():
             m = SECTION_RE.match(para)
             if m:
                 nums = parse_nums(m.group(1))
-                out.append(f'[SECTION] {pg}{m.group(0).strip()}')
+                out.append(f'[SECTION] {pg}{render_section(m.group(0), nums)}')
                 total['sec'] += 1
                 rest = clean(para[m.end():])
                 # ⚠️ 这里**不能**就着本段单独切经文。经文本身常被悬挂缩进

@@ -26,6 +26,7 @@
     python3 -u scripts/translate_davenant.py --chapter 1 --limit 6 --dry-run
 """
 import argparse
+import collections
 import json
 import re
 import sys
@@ -123,6 +124,40 @@ def split_page(text):
 
 
 STRUCT_ONLY = re.compile(r'^(?:</?div[^>]*>|---|\s*)$')
+# `<div class="dv-anchor" id="colossians-1-6"></div>` 整块只有标签没有文字，
+# 却含 `div` / `class` 这些字母串，落进了「有 3 个以上字母 → 送翻」那条，
+# 88 个锚点全被送去模型走了一遍（白花钱，还偶有被改坏 id 的风险）。
+TAGS_ONLY = re.compile(r'^(?:<[^>]+>|\s)+$')
+# 节号标题（`## Ver. 2.` / `## Vers. 8, 9, 10, 11.` / `## Vers. 2, &c.`）。
+# 交给模型翻是错的做法：实测第三章 `Verses 12, 13.` 译成「第18节」、
+# 第一章从 `Verse 27.` 起整段序号错位一格。号码是确定性信息，本地生成。
+H2_RE = re.compile(r'^##\s*Vers?e?s?\.?\s*'
+                   r'((?:\d+|[IVXLivxl]{1,6})(?:\s*[,&]\s*(?:\d+|[IVXLivxl]{1,6}))*)'
+                   r'\s*[.,;]?(\s*&\s*c\.)?\s*$')
+_ROMAN_N = {'i': 1, 'ii': 2, 'iii': 3, 'iv': 4, 'v': 5, 'vi': 6, 'vii': 7,
+            'viii': 8, 'ix': 9, 'x': 10, 'xi': 11, 'xii': 12, 'xiii': 13,
+            'xiv': 14, 'xv': 15, 'xvi': 16, 'xvii': 17, 'xviii': 18,
+            'xix': 19, 'xx': 20, 'xxi': 21, 'xxii': 22, 'xxiii': 23,
+            'xxiv': 24, 'xxv': 25, 'xxvi': 26, 'xxvii': 27, 'xxviii': 28,
+            'xxix': 29}
+
+
+def h2_zh(s):
+    """`## Vers. 8, 9, 10, 11.` → `## 第 8、9、10、11 节`；对不上就返回 None。"""
+    m = H2_RE.match(s.strip())
+    if not m:
+        return None
+    nums = []
+    for tok in re.findall(r'\d+|[IVXLivxl]{1,6}', m.group(1)):
+        if tok.isdigit():
+            nums.append(int(tok))
+        elif tok.lower() in _ROMAN_N:
+            nums.append(_ROMAN_N[tok.lower()])
+        else:
+            return None
+    if not nums:
+        return None
+    return f'## 第 {"、".join(map(str, nums))} 节' + ('以下' if m.group(2) else '')
 # 经文块的实际排版（publish_davenant_en.py 产出）：
 #     <div class="dv-scripture" markdown="1">
 #     <p class="dv-scripture-ref">Colossians 1:1,2</p>
@@ -153,6 +188,12 @@ def blocks_of(body: str):
             out.append(('refdiv', b, pending_ref)); continue
         if s.startswith('# '):
             out.append(('h1', b)); pending_ref = None; continue
+        if s.startswith('## '):
+            zh = h2_zh(s)
+            out.append(('h2', b, zh) if zh else ('body', b))
+            continue
+        if TAGS_ONLY.match(s):
+            out.append(('pass', b)); continue
         if s.startswith('<p class="dv-scripture-ref">'):
             pending_ref = re.sub(r'<[^>]+>', '', s).strip()
             out.append(('refdiv', b, pending_ref)); continue
@@ -214,6 +255,77 @@ def translate_batch(texts):
     return res
 
 
+# ── 译后校验闸 ────────────────────────────────────────────────────────────────
+# 模型偶有三种确定性可查的走样，落盘前逐块核，对不上的单独重译：
+#   · 脚注标记被吞或被改号（第一章实测少 9 个 ref、10 条 def）
+#   · HTML 标签数量对不上（dv-lemma 被凭空多加，实测三章共多 21 个）
+#   · 整块没翻（返回原文）/ 混进别的语种（西里尔字母，实测 3 处）
+CYRILLIC_RE = re.compile(r'[\u0400-\u04ff]')
+
+
+def _fnrefs(t):
+    return sorted(re.findall(r'\[\^(dv\d+)\]', t))
+
+
+def _tags(t):
+    c = collections.Counter()
+    for m in re.finditer(r'<(/?)(\w+)([^>]*)>', t):
+        cls = re.search(r'class="([^"]+)"', m.group(3))
+        c[('/' if m.group(1) else '') + m.group(2)
+          + (':' + cls.group(1) if cls else '')] += 1
+    return c
+
+
+def check_block(en, zh):
+    """→ 出错原因，没问题返回 ''。"""
+    if not zh or len(zh.strip()) < 2:
+        return '空'
+    if '<<<' in zh:
+        return '残留编号标记'
+    if CYRILLIC_RE.search(zh):
+        return '混入西里尔字母 ' + ' '.join(CYRILLIC_RE.pattern and
+                                        re.findall(r'[\u0400-\u04ff]+', zh))
+    a, b = _fnrefs(en), _fnrefs(zh)
+    if a != b:
+        return f'脚注标记 {a} → {b}'
+    ta, tb = _tags(en), _tags(zh)
+    if ta != tb:
+        d = {k: (ta.get(k, 0), tb.get(k, 0)) for k in set(ta) | set(tb)
+             if ta.get(k, 0) != tb.get(k, 0)}
+        return f'标签 {d}'
+    return ''
+
+
+def revise(texts, zh_list, rounds=2):
+    """对不上的块单独重译（不吃缓存），仍不合格就照原样留下并报出来。"""
+    bad = [i for i, (t, z) in enumerate(zip(texts, zh_list)) if check_block(t, z)]
+    for rd in range(rounds):
+        if not bad:
+            break
+        print(f'  [校验] 第 {rd + 1} 轮：{len(bad)} 块要重译', flush=True)
+        still = []
+        for i in bad:
+            why = check_block(texts[i], zh_list[i])
+            hint = ('\n\n【上一版译文有这个问题，请改正后重译，'
+                    f'其余不要改动：{why}】')
+            try:
+                z = tf.call_claude(texts[i] + hint, timeout=300).strip()
+            except Exception:                                   # noqa: BLE001
+                still.append(i); continue
+            z = re.sub(r'<<<[^>]*>>>', '', z).strip()
+            if not check_block(texts[i], z):
+                zh_list[i] = z
+                (CACHE / f'{tf.md5key(texts[i])}.txt').write_text(
+                    z, encoding='utf-8')
+            else:
+                still.append(i)
+        bad = still
+    for i in bad:
+        print(f'  ✗ 块 {i} 仍不合格：{check_block(texts[i], zh_list[i])}',
+              flush=True)
+    return zh_list, bad
+
+
 # ── 主流程 ────────────────────────────────────────────────────────────────────
 
 def fmval(fm, key):
@@ -239,12 +351,17 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
         return
 
     zh_list = tf.cached_translate(texts, resume)
+    zh_list, bad = revise(texts, zh_list)
+    if bad:
+        print(f'  ⚠ ch{n} 有 {len(bad)} 块两轮重译后仍不合格', flush=True)
     zh = {i: z for i, z in zip(send, zh_list)}
 
     out = []
     for i, it in enumerate(items):
         kind = it[0]
-        if kind == 'h1':
+        if kind == 'h2':
+            out.append(it[2])
+        elif kind == 'h1':
             m = re.match(r'#\s*CHAPTER\s+([IVX]+)', it[1].strip())
             out.append(f'# {ROMAN_ZH.get(m.group(1), CH_ZH.get(n, ""))}' if m else it[1])
         elif kind == 'refdiv':
