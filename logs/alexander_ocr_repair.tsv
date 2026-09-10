@@ -21,6 +21,7 @@ chapter	from	to	kind
 10	jy		tooshort
 10	afilicted	afflicted	rule
 10	appUed	applied	rule
+10	ivinning	winning	manual
 10	Gx		tooshort
 10	ivicked	wicked	wform
 10	icays		unresolved
@@ -204,7 +205,7 @@ chapter	from	to	kind
 103	ornamentum		unresolved
 103	JehovaJi	Jehovah	rule
 103	Bicnifies		unresolved
-103	ivays	ways	wform
+103	ivays	ways	manual
 103	Mosetf		unresolved
 103	excejrtion		unresolved
 103	deaUng	dealing	rule
@@ -1981,7 +1982,7 @@ chapter	from	to	kind
 18	reUef	relief	rule
 18	aheady	already	manual
 18	ivill	will	wform
-18	ivays	ways	wform
+18	ivays	ways	manual
 18	apostatised		unresolved
 18	Itsis		unresolved
 18	siffht		unresolved
@@ -3468,7 +3469,7 @@ chapter	from	to	kind
 50	toilt	wilt	wform
 50	refen		unresolved
 50	aud		unresolved
-50	ivhoso		unresolved
+50	ivhoso	whoso	manual
 50	fiom		unresolved
 51	Bathsheba		unresolved
 51	Ufe	life	rule

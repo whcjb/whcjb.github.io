@@ -107,6 +107,11 @@ PSALMS_MANUAL = {
     'thom': 'them',        # "The *and* between them"，规则作 thorn
     'bome': 'some',        # "as some interpreters suppose"，规则作 Borne
     'nore': 'more',        # "gladness more than"，规则作 wore
+    # w 形翻案那条要求 w 拼法在书里出现 ≥5 次且是 iv 拼法的 3 倍，
+    # 这三个够不着。各自的旁证：
+    'ivinning': 'winning',  # 后面紧跟着自证的注解 "(i. e. when he wins)"
+    'ivhoso': 'whoso',      # 证人作 whoso；钦定本 Ps. 50:23 "Whoso offereth praise"
+    'ivays': 'ways',        # "*His ways are firm*"，Ps. 10:5
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
@@ -137,6 +142,9 @@ PSALMS_PRE = [
     # 同一个 obhgation，ch20 是 oblation（两种祭物），ch40 是 obligation
     # （incumbent obligation），只能按上下文分开
     (r'two species of obhgation', 'two species of oblation'),
+    # 空格位置上落了个 `^`。全书 642 个 `^` 几乎都是希伯来活字读崩的残渣，
+    # 不能一概换成空格，只改这一处两侧都成词的。
+    (r'by taking, as\^the central', 'by taking, as the central'),
     (r'though there he hut a handful', 'though there be but a handful'),
     # ff 连字读成 fi，中间还落了个引号：ofi"ering
     (r'ofi"ering', 'offering'),
@@ -160,6 +168,10 @@ ISAIAH_PRE = [
     # 只改**独立成词**的斜杠，不动 and/or 之间的分隔符或分数。
     (r'(?<=[\s*(])/(?=[\s,.;:)])', 'I'),
     (r'\b(on|in|above|below)Ps\.', r'\1 Ps.'),
+    # 词尾字母被读成括号：`genera]`(general) `unit}'`(unity)。
+    # token 正则切不出这种串，只能在文本层改。
+    (r'\bgenera\]', 'general'),
+    (r"\bunit\}'", 'unity'),
 ]
 
 BOOKS = {
