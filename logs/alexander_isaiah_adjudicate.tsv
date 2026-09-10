@@ -1739,7 +1739,6 @@ chapter	ours	witness	votes	polled	verdict
 19	quoad	quoad	4	4	confirm
 19	angulo	angulo	4	4	confirm
 19	Rosenmüller	rosenmiiller	2	3	realword?
-19	wise'men	wise	4	4	reject
 19	Memphis	Memphis	4	4	confirm
 19	Tanis	Tanis	3	4	confirm
 19	Gallia	Gallia	4	4	confirm
@@ -2637,8 +2636,6 @@ chapter	ours	witness	votes	polled	verdict
 28	Athenis	Athenis	4	4	confirm
 28	vocant	vo	3	3	reject
 28	verdirbt	verdirbt	4	4	confirm
-28	Ti'sa	lisa	2	4	reject
-28	denies'that	of	3	4	reject
 28	iin	in	3	4	reject
 28	nsist	incorrect	2	4	reject
 28	ab	bab	2	3	realword?
@@ -2811,7 +2808,7 @@ chapter	ours	witness	votes	polled	verdict
 3	Hk	Hk	4	4	confirm
 3	vovia	but	2	4	reject
 3	Hn	Hn	3	4	confirm
-3	clarum	clarum	4	4	confirm
+3	clarum	clarum	3	4	confirm
 3	ordinaryrank	ordinary	4	4	reject
 3	ducem	ducem	4	4	confirm
 3	militem	militem	3	4	confirm
@@ -3602,7 +3599,6 @@ chapter	ours	witness	votes	polled	verdict
 35	cubili	cubili	4	4	confirm
 35	cujusque	cujusque	4	4	confirm
 35	fis	grotius	2	4	reject
-35	emperors'and	emperors	4	4	reject
 35	pn	pn	2	4	confirm
 35	Kb	xb	2	4	reject
 35	nbibo	nbibo	4	4	confirm
@@ -4371,7 +4367,6 @@ chapter	ours	witness	votes	polled	verdict
 42	pluralis	mere	2	3	reject
 42	thett	the	2	2	reject
 42	feeep	keep	4	5	reject
-42	identical'with	identical	4	5	reject
 42	covenantpeople	a	3	5	reject
 42	Bundesvolk	covenant	3	5	reject
 42	Mittelsvolk	Mittelsvolk	5	5	confirm
@@ -4404,12 +4399,10 @@ chapter	ours	witness	votes	polled	verdict
 42	desolabo	desolaho	2	5	reject
 42	rt	attempts	4	5	reject
 42	DCIU	c	2	5	reject
-42	Pixd	latter	2	4	reject
-42	to'pant	verb	2	3	reject
+42	des	destroy	4	5	reject
 42	Wj	which	3	5	reject
 42	lakes'	lakes	3	3	realword?
 42	Rosenmüller	rosenmiiller	3	5	realword?
-42	the'last	this	5	5	reject
 42	videndo	videndo	3	4	confirm
 42	intuemini	intuemini	2	4	confirm
 42	intuemini	intuemini	3	5	confirm
@@ -4703,7 +4696,6 @@ chapter	ours	witness	votes	polled	verdict
 46	Diodorus	Diodorus	5	5	confirm
 46	downfal	downfal	5	5	confirm
 46	jn	jn	3	5	confirm
-46	these'relations	old	4	5	reject
 46	Florus	Florus	5	5	confirm
 46	reddened	reddened'	5	5	realword?
 46	confundamini	confundamini	5	5	confirm
@@ -4878,7 +4870,6 @@ chapter	ours	witness	votes	polled	verdict
 48	xib	xib	2	5	confirm
 48	wenn	wenn	4	5	confirm
 48	du	du	4	5	confirm
-48	if'it	if	5	5	reject
 48	animum	animum	3	5	confirm
 48	advertisses	advertisses	4	5	confirm
 48	aures	aures	2	5	confirm
@@ -5040,7 +5031,6 @@ chapter	ours	witness	votes	polled	verdict
 5	Bedruckung	Bedruckung	3	4	confirm
 5	Milde	Milde	4	4	confirm
 5	Unbilde	Unbilde	2	3	confirm
-5	after'property	after	4	4	reject
 5	itable	itable	4	4	confirm
 5	Woo	woe	3	4	realword?
 5	hi'n	in	3	4	reject
@@ -5458,7 +5448,6 @@ chapter	ours	witness	votes	polled	verdict
 53	Martini	Martini	5	5	confirm
 53	sciens	sciens	2	5	confirm
 53	Martini	Martini	4	5	confirm
-53	of'no	of	4	5	reject
 53	demeanour	demeanour	5	5	confirm
 53	Martini	Martini	5	5	confirm
 53	xb	xb	3	5	confirm
@@ -5560,7 +5549,6 @@ chapter	ours	witness	votes	polled	verdict
 53	Martini	Martini	4	5	confirm
 53	nn	nn	4	5	confirm
 53	plcasefi	pleased	4	5	reject
-53	ii'fi	clause	2	5	reject
 53	L	i	4	5	realword?
 53	rxsn	with	4	5	reject
 53	sinoffering	or	4	5	reject
@@ -6177,7 +6165,6 @@ chapter	ours	witness	votes	polled	verdict
 6	ftot	not	4	4	reject
 60	pre	pre	5	5	confirm
 60	shah	shall	4	5	realword?
-60	is'contrasted	is	4	5	reject
 60	Newman	Newman	5	5	confirm
 60	England	England	5	5	confirm
 60	rnt	n	2	5	reject
@@ -6200,7 +6187,6 @@ chapter	ours	witness	votes	polled	verdict
 60	nsn	nxn	2	5	reject
 60	Rosenmüller	rosenmiiller	4	5	realword?
 60	lastige	lastige	2	5	confirm
-60	it'as	it	5	5	reject
 60	TX	x	2	5	reject
 60	TX	ts	3	5	reject
 60	pESi	irn	2	5	reject
@@ -6358,7 +6344,6 @@ chapter	ours	witness	votes	polled	verdict
 62	bsii	a	2	5	reject
 62	tbt	thee	5	5	reject
 62	vth's	lectures	5	5	reject
-62	lation'of	lation	5	5	reject
 62	plaralis	pluralis	4	5	reject
 62	majestaticus	majestaticus	5	5	confirm
 62	bsa	and	4	5	reject
@@ -6468,7 +6453,6 @@ chapter	ours	witness	votes	polled	verdict
 63	fcbisa	tbi	2	5	reject
 63	Rosenmüller	rosenmiiller	3	5	realword?
 63	fc	x	3	5	reject
-64	His'favour	his	5	5	reject
 64	Rosenmüller	rosenmiiller	2	5	realword?
 64	aquae	aquae	4	5	confirm
 64	effervescunt	effervescunt	3	5	confirm
@@ -6615,7 +6599,6 @@ chapter	ours	witness	votes	polled	verdict
 65	bleibc	bleibe	5	5	reject
 65	orif	or	5	5	reject
 65	pp	pp	5	5	confirm
-66	of'the	of	5	5	reject
 66	cnmal	carnal	5	5	reject
 66	he	be	5	5	realword?
 66	re	are	3	4	realword?
@@ -6718,7 +6701,6 @@ chapter	ours	witness	votes	polled	verdict
 66	Clarkson	Clarkson	5	5	confirm
 66	England	England	5	5	confirm
 66	halfforgotten	half	5	5	reject
-66	who'still	who	5	5	reject
 66	assemble'	assemble	3	3	realword?
 66	nss	nx	2	5	reject
 66	rixa	nxa	3	5	reject
@@ -6758,7 +6740,6 @@ chapter	ours	witness	votes	polled	verdict
 66	whimsy	whimsy	5	5	confirm
 66	partaken	partaken	5	5	confirm
 66	dieth	dieth	4	5	confirm
-7	measure'of	that	4	4	reject
 7	Elath	Elath	4	4	confirm
 7	ib	ib	4	4	confirm
 7	Remaliah	Remaliah	4	4	confirm
@@ -6882,7 +6863,6 @@ chapter	ours	witness	votes	polled	verdict
 7	dbs	dbs	2	4	confirm
 7	Immanucl	lmmanuel	2	4	reject
 7	rovro	tion	4	4	reject
-7	the'time	the	4	4	reject
 7	Shearjashub	Shearjashub	4	4	confirm
 7	Shearjashub	Shearjashub	4	4	confirm
 7	ashub	or	4	4	reject
@@ -6900,7 +6880,6 @@ chapter	ours	witness	votes	polled	verdict
 7	deserta	deserta	4	4	confirm
 7	erit	erit	4	4	confirm
 7	he	the	4	4	realword?
-7	saw'to	to	4	4	reject
 7	Rosenmüller	rosenmiiller	2	4	realword?
 7	renewea	stantially	4	4	reject
 7	anotherchild	another	4	4	reject
@@ -6935,7 +6914,6 @@ chapter	ours	witness	votes	polled	verdict
 7	blosses	blosses	4	4	confirm
 7	Drohwort	droh	4	4	reject
 7	Tiglath	Tiglath	4	4	confirm
-7	Hezekiah'rebelled	hezekiah	2	4	reject
 7	teta	term	4	4	reject
 7	etc	etc'	4	4	realword?
 7	rer	rer	4	4	confirm
@@ -6984,7 +6962,6 @@ chapter	ours	witness	votes	polled	verdict
 8	propera	pro	4	4	reject
 8	festinavit	festinavit	4	4	confirm
 8	shalalhash	shalal	4	4	reject
-8	the'inscription	gate	4	4	reject
 8	ph	it	2	4	reject
 8	deth	it	2	4	reject
 8	Jeberechiah	Jeberechiah	2	4	confirm
@@ -7071,7 +7048,6 @@ chapter	ours	witness	votes	polled	verdict
 8	ITHSE	connects	2	4	reject
 8	or	for	3	4	realword?
 8	Tiberias	Tiberias	4	4	confirm
-8	from'being	from	4	4	reject
 8	vasrt	and	2	4	reject
 8	ft	n	2	4	reject
 8	alleviata	alleviata	2	4	confirm
@@ -7116,6 +7092,7 @@ chapter	ours	witness	votes	polled	verdict
 9	tni	verse	4	4	reject
 9	praedatio	text	4	4	reject
 9	Hoheisel	Hoheisel	4	4	confirm
+9	xb	the	2	3	reject
 9	armour	armour	4	4	confirm
 9	Bto	or	2	4	reject
 9	solet	solet	4	4	confirm
@@ -7542,7 +7519,6 @@ later-introduction	pre	pre	5	5	confirm
 later-introduction	meantime	meantime	5	5	confirm
 later-introduction	priori	priori	5	5	confirm
 later-introduction	pre	pre	3	5	confirm
-later-introduction	varied'and	varied	5	5	reject
 later-introduction	Meantime	Meantime	5	5	confirm
 later-introduction	totidem	toiidem	2	5	reject
 later-introduction	verbis	verbis	5	5	confirm
@@ -7583,11 +7559,9 @@ later-introduction	Zephaniah	Zephaniah	5	5	confirm
 later-introduction	Habakkuk	Habakkuk	5	5	confirm
 later-introduction	Haggai	Haggai	5	5	confirm
 later-introduction	Sirach	Sirach	5	5	confirm
-later-introduction	system'of	system	5	5	reject
 later-introduction	unbiassed	unbiassed	5	5	confirm
 later-introduction	Antiochus	Antiochus	5	5	confirm
 later-introduction	Epiphanes	Epiphanes	5	5	confirm
-later-introduction	without'giving	without	5	5	reject
 later-introduction	Hasmonean	Hasmonean	4	5	confirm
 later-introduction	meantime	meantime	5	5	confirm
 later-introduction	Christo	Christo	5	5	confirm

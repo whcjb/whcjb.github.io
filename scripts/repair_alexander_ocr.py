@@ -385,6 +385,25 @@ def rejoin_split_words(text, lex, vocab):
     return SPLIT_WORD.sub(repl, text)
 
 
+# `explanations'of` —— 词间的空格被读成撇号。两半都是词才动，
+# 免得碰到 `Lowth's`、希伯来残渣 `ni'aa` 这类。
+APOSTROPHE_GAP = re.compile(r"\b([A-Za-z]{2,})'([a-z]{2,})\b")
+
+
+def split_apostrophe_gap(text, lex):
+    """撇号被当成空格用：`explained'by` → `explained by`。
+
+    不修的话下游更糟：判读器只认得出前半那个 token，证人给出 `explained`，
+    照办就把后面的 `by` 整个吞掉（以赛亚书 4 处、诗篇同类 6 处）。
+    """
+    def repl(m):
+        a, b = m.group(1), m.group(2)
+        if is_word(a, lex) and is_word(b, lex) and not is_word(a + "'" + b, lex):
+            return f'{a} {b}'
+        return m.group(0)
+    return APOSTROPHE_GAP.sub(repl, text)
+
+
 def join_across_star(text, lex):
     """`com* posed` / `cir* umjacent`：星号噪点顺带把一个词劈成两半。
 
@@ -501,6 +520,7 @@ def main(book='psalms'):
 
         for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
+        text = split_apostrophe_gap(text, lex)
         text = rejoin_split_words(text, lex, vocab)
         text = join_across_star(text, lex)
         # 注释行（<!-- PAGE n -->）不参与

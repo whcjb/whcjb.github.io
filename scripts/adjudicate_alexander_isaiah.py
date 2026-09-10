@@ -278,6 +278,13 @@ def main(apply_it):
                 # 不在此列——那是整词误读，不是断片。
                 if len(tok) < 3 and len(tok) != len(reading):
                     ok = False
+                # 缩水守卫：证人读数比我们这串短三个字母以上，多半是它只读出
+                # 了半个词（`waterbrooks` 只读到 `brooks`），照办等于吞词。
+                # 距离闸按**读数长度**算阈值，短读数的阈值也小，挡得住大部分，
+                # 但挡不住 `explanations'of`→`explanations` 这种（另一个会话
+                # 在诗篇上抓到 6 处）。这一条专防它。
+                if len(tok) - len(reading) >= 3:
+                    ok = False
                 if ok:
                     fixes[i] = (tok, restore_case(tok, reading))
                     rows.append((stem, tok, reading, votes, total, 'fix'))
