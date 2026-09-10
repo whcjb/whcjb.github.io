@@ -608,7 +608,14 @@ def consensus(w, other, other3):
     if len(cands) != 2 or _norm2(cands[0]) != _norm2(cands[1]):
         return None
     got = cands[0]
-    if _norm2(got) == _norm2(w) or _bookword(w) and not re.search(r'\d', w):
+    if _norm2(got) == _norm2(w):
+        return None
+    # 我方是不是词**不作为**否决理由：两个独立的 OCR 都读成另一个词时，
+    # outlier 是我们。歌 3:8 的 `out of your south` 就是这样——`south` 是
+    # 正经英文词，词典判据一挡就永远修不成 `mouth`（三个证人都读 mouth）。
+    # 换成「我方这个形在本书里常见（>2 次）才不动」，19 世纪拼法
+    # （shews / connexion / amongst）不会被碰：证人读到的也是它们本身。
+    if _uni()[_norm(w)] > 2:
         return None
     if not (_bookword(got) or re.fullmatch(r'[\d.,;:]+', got)):
         return None

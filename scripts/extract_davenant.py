@@ -627,6 +627,68 @@ def split_scripture(cand, chap, nums, kjv):
     return scr, rest, round(ratio, 3)
 
 
+def kjv_repair(scr, chap, nums, kjv, vol, pages):
+    """经文块拿 KJV 再校一遍。→ (改后的经文, [(原, 新), …])
+
+    本书的经文引的就是 KJV，所以在**经文块之内**，KJV 是一个独立于三遍 OCR
+    的证人。逐词对齐后按两条采信：
+
+      · 我方这个词不是词（`fot` / `chidren` / `salutcth` / `covelousness`）
+        → 直接用 KJV 的
+      · 我方是正经英文词，但三遍 OCR 的页面里**一次都没出现过**它，而 KJV
+        那个词出现了 → 也用 KJV 的。歌 3:8 的 `out of your south` 就是这样：
+        `south` 是词，词典判据一挡就永远修不成 `mouth`，可三个证人读的都是
+        mouth，页面上根本没有 south。
+
+    反过来，`amongst` / `unblamable` / `acknowledgment` / `unto` 这些与 KJV
+    不同的读法**不动**——那是 1831 年译本自己的拼法，证人们读到的也是它们，
+    照 KJV 改就是篡改底本。
+    """
+    exp = ' '.join(kjv.get(f'{chap}:{v}', '') for v in nums).strip()
+    if not exp:
+        return scr, []
+    mine, theirs = scr.split(), exp.split()
+    a = [W._norm(x) for x in mine]
+    b = [W._norm(x) for x in theirs]
+    seen = None
+    fixes = []
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, a, b).get_opcodes():
+        if tag != 'replace' or (i2 - i1) > 2 or (j2 - j1) != 1:
+            continue
+        cand = re.sub(r'[^A-Za-z]', '', theirs[j1])
+        got = ''.join(a[i1:i2])
+        if not cand or not got or got == W._norm(cand):
+            continue
+        lim = 6 if i2 - i1 > 1 else 4     # 并词（断词没接上）放宽一档
+        if sum(1 for _ in difflib.ndiff(got, cand.lower()) if _[0] != ' ') > lim:
+            continue                      # 编辑距离超了不认
+        # 判词性只认词典与屈折形，**不看本书频次**：`ts` 是 OCR 常见的错字
+        # 形状（全书 36 次），按频次判它就成了"词"，歌 3:25 的 `ts` 永远修不成
+        # `is`。经文块里有 KJV 当参照，用严一点的词表反而更稳。
+        if any(W._norm(x) in W.DICT or W._norm(x) in W.inflected()
+               for x in mine[i1:i2]):
+            if seen is None:
+                # ⚠️ 证人那边的行也是断词的。`perfect` 在三遍 OCR 里都排成
+                # `per-` + `fect` 两行，不先接回去就查不到，`per- Sect` 这处
+                # 永远修不成（实测）。按提取器同一套 dehyph 接。
+                seen = set()
+                for pg in pages:
+                    for fn in (W.ia_lines, W.w3_lines, W.grc_lines):
+                        joined = ''
+                        for l in (fn(vol, pg) or []):
+                            joined = dehyph(joined, l) if joined else l
+                        seen |= {W._norm(t) for t in joined.split()}
+            if got in seen or W._norm(cand) not in seen:
+                continue                  # 版本拼法之别，不是 OCR 错
+        head = re.match(r'^\W*', mine[i1]).group(0)
+        tail = re.search(r'\W*$', mine[i2 - 1]).group(0)
+        new = head + (cand.capitalize() if mine[i1][:1].isupper() else cand) + tail
+        fixes.append((' '.join(mine[i1:i2]), new))
+        mine[i1:i2] = [new]
+        a[i1:i2] = [W._norm(new)]
+    return ' '.join(mine), fixes
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--vol', type=int, choices=(1, 2))
@@ -722,6 +784,11 @@ def main():
                 cand, scr, rest, r, take = best
                 i += take - 1
                 if r >= 0.55 or partial_ok:
+                    scr, kfix = kjv_repair(scr, cur_chap, used, kjv, vol, ppages)
+                    for o, n in kfix:
+                        print(f'  [KJV 校经] {cur_chap}:{used} {o!r} → {n!r}',
+                              flush=True)
+                        total['kjv_fix'] += 1
                     # 引文尾巴的 `&c.` 跟着经文走。它跟 KJV 对不上，贪心增长
                     # 到它这一段相似度只会掉，于是被留在外面成了孤零零一段
                     # `&c.`（vol2 p233 实测，页面上就印着 "…with thanksgiving,
