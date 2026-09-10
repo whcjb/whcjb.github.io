@@ -4872,7 +4872,6 @@ chapter	ours	witness	votes	polled	verdict
 48	xib	xib	2	5	confirm
 48	wenn	wenn	4	5	confirm
 48	du	du	4	5	confirm
-48	if'it	if	5	5	reject
 48	animum	animum	3	5	confirm
 48	advertisses	advertisses	4	5	confirm
 48	aures	aures	2	5	confirm
@@ -5451,7 +5450,6 @@ chapter	ours	witness	votes	polled	verdict
 53	Martini	Martini	5	5	confirm
 53	sciens	sciens	2	5	confirm
 53	Martini	Martini	4	5	confirm
-53	of'no	of	4	5	reject
 53	demeanour	demeanour	5	5	confirm
 53	Martini	Martini	5	5	confirm
 53	xb	xb	3	5	confirm
@@ -5681,7 +5679,6 @@ chapter	ours	witness	votes	polled	verdict
 54	spu	n	2	5	reject
 54	wn	i	2	5	reject
 54	jus	jus	5	5	confirm
-54	of'Jehovah's	of	5	5	reject
 55	recognis	recognis	4	5	confirm
 55	wohlan	wohlan	3	5	confirm
 55	heu	heu	5	5	confirm
@@ -6170,7 +6167,6 @@ chapter	ours	witness	votes	polled	verdict
 6	ftot	not	4	4	reject
 60	pre	pre	5	5	confirm
 60	shah	shall	4	5	realword?
-60	is'contrasted	is	4	5	reject
 60	Newman	Newman	5	5	confirm
 60	England	England	5	5	confirm
 60	rnt	n	2	5	reject
@@ -6193,7 +6189,6 @@ chapter	ours	witness	votes	polled	verdict
 60	nsn	nxn	2	5	reject
 60	Rosenmüller	rosenmiiller	4	5	realword?
 60	lastige	lastige	2	5	confirm
-60	it'as	it	5	5	reject
 60	TX	x	2	5	reject
 60	TX	ts	3	5	reject
 60	pESi	irn	2	5	reject
@@ -6606,7 +6601,6 @@ chapter	ours	witness	votes	polled	verdict
 65	bleibc	bleibe	5	5	reject
 65	orif	or	5	5	reject
 65	pp	pp	5	5	confirm
-66	of'the	of	5	5	reject
 66	cnmal	carnal	5	5	reject
 66	he	be	5	5	realword?
 66	re	are	3	4	realword?

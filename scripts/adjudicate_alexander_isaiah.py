@@ -271,6 +271,24 @@ def main(apply_it):
                                          and is_word(reading, lex)):
                 close = False
             if not ours_is_word:
+                # —— 撇号当空格，repair 阶段不敢拆的那一批 ——
+                # repair 里只能靠「两半都是词」判断，为了不碰希伯来残渣
+                # （`ni'aa`）只好用长度兜底，`of'the` 这类真空格因此被挡下。
+                # 这里有**位置证据**：证人在同一位置读出的就是前半截。
+                # `of'the` 的证人读数是 `of`，`ni'aa` 的证人读数不会是 `ni`，
+                # 所以残渣自动落不进来，不必用长度换安全。
+                # （做法来自诗篇线的 splitq。）
+                if tok.lower().startswith(reading):
+                    rest = tok[len(reading):]
+                    core = rest.lstrip("'’")
+                    if (rest[:1] in ("'", "’") and len(reading) >= 2
+                            and len(core) >= 2 and is_word(reading, lex)
+                            and is_word(core, lex)):
+                        fixed = restore_case(tok, reading) + ' ' + core
+                        fixes[i] = (tok, fixed)
+                        rows.append((stem, tok, fixed, votes, total, 'splitq'))
+                        stat['撇号拆词'] += 1
+                        continue
                 # 我们这串不是词：证人读数得是词（或字形上从我们这串走得到）
                 ok = (is_word(reading, lex) or glyph_reachable(tok, reading)) and close
                 # 两字母的残串多半是**被标点劈开的半个词**（`A.nd` 里的 `nd`）。
