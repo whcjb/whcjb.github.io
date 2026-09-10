@@ -78,8 +78,14 @@ MAX_DIST_RATIO = 1 / 3
 # 序列相似度下限，见 verdict 里字形闸那一段。
 SIM_FLOOR = 0.6
 
-# 一个词被劈成两个 token 时，中间可能夹着的东西。
-SPLIT_SEP = {' ', '-', '- ', '-\n', '\n', ' -', ' - '}
+# 一个词被劈成两个 token 时，中间可能夹着的东西：一两个非字母数字的字符
+# ——空格、残留的行末连字符，或 OCR 读出来的噪点（`af&rmation`、`hj^othesis`、
+# `endu/reth`、`prept)sition`、`ac.ually`）。
+SPLIT_SEP = re.compile(r'^[^0-9A-Za-z]{1,2}$')
+
+# 拼词的相似度下限。比一般的 0.6 高：拼接本身已经是很强的假设，
+# 再放宽就会把两个不相干的词硬凑在一起。
+JOIN_SIM = 0.8
 
 # 正字法闸。1864 是伦敦排的英式本，1850 是费城排的美式本，两版在
 # -ise/-ize、waggon/wagon 这些地方**本来就不一样**。照证人改等于把底本的
@@ -330,7 +336,19 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram, nxt_raw=''):
     # 只往「证人拼成一个词」的方向合并，且那个词必须是真词或本书别处
     # 正确用过——否则会反过来把我们**本来正确的两个词**按证人自己的连写
     # 错误并掉（`salvum fac` 差点被并成 salvumfac）。
-    if (nxt_raw and len(reading) > len(tok)
+    # 四道约束，缺一条就会把「前一个词的碎片」和后一个词硬凑在一起
+    # （`eady` + `manifested` → manifested，把 eady 吞掉；正确做法是让
+    # 前面那个 `alr` 去和 `eady` 拼成 already，那条路本来就走得通）：
+    #   两截都要 ≥2 个字母      —— 挡住 `Mai. i`（Mal. i. 是书卷缩写，不是断词）
+    #   读数不能等于其中一截    —— 等于就说明另一截被吞了
+    #   拼起来的长度要和读数相当 —— 差 2 个字母以内
+    if (nxt_raw and len(reading) > len(tok) and len(tok) >= 2 and len(nxt_raw) >= 2
+            and reading.lower() not in (tok.lower(), nxt_raw.lower())
+            and abs(len(tok) + len(nxt_raw) - len(reading)) <= 2
+            # 拼起来必须比单独这一截**更接近**读数。否则本来只是这个词自己
+            # 掉了个字母（`rospered` → prospered），硬拼上后一个就把它吞了。
+            and edit_distance((tok + nxt_raw).lower(), reading.lower())
+                < edit_distance(tok.lower(), reading.lower())
             and (is_word(reading, lex) or bvocab[reading.lower()] >= 1)):
         joined = (tok + nxt_raw).lower()
         # 证人正文里若印着带连字符的写法，那就是书里**本来就有的复合词**
@@ -338,7 +356,9 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram, nxt_raw=''):
         hyphenated = re.search(rf'\b{re.escape(tok)}-\s*{re.escape(nxt_raw)}\b',
                                wtext, re.I)
         if not hyphenated and (edit_distance(joined, reading.lower()) <= 1
-                               or glyph_reachable(tok + nxt_raw, reading)):
+                               or glyph_reachable(tok + nxt_raw, reading)
+                               or SequenceMatcher(None, joined,
+                                                  reading.lower()).ratio() >= JOIN_SIM):
             return 'joinnext', reading
 
     # 词头粘连：证人读数是 OCR 串的**后缀**，前面那截是个虚词。
@@ -676,20 +696,19 @@ def main():
         for i, (w, a, b) in enumerate(toks):
             if is_word(w, lex):
                 continue
-            if not clean_bounded(text, a, b, lex):
-                stat['fragment'] += 1
-                rows.append((path.stem, w, '', 'fragment',
-                             ' '.join(words[max(0, i - 4):i + 5])))
-                continue
             reading = look_up(words, i, idx, wlow, worig)
             nxt = words[i + 1].lower() if i + 1 < len(words) else ''
             # 被劈开的同一个词，中间只可能隔一个空格或一个残留的行末连字符
             # （`confes- Bion` = confession，`conti-ast` = contrast）。
             nxt_raw = ''
-            if i + 1 < len(toks) and text[b:toks[i + 1][1]] in SPLIT_SEP:
+            if i + 1 < len(toks) and SPLIT_SEP.match(text[b:toks[i + 1][1]] or ' '):
                 nxt_raw = toks[i + 1][0]
             kind, r = verdict(w, reading, lex, wvocab, bvocab, wtext, nxt,
                               wbigram, nxt_raw)
+            # 碎片判定放在判决**之后**：被杂散符号劈开的半截，只要能跟
+            # 邻居拼回一个整词（joinnext），那就不是碎片而是可修的错。
+            if kind != 'joinnext' and not clean_bounded(text, a, b, lex):
+                kind, r = 'fragment', ''
             if kind == 'joinnext':
                 b = toks[i + 1][2]          # 替换范围延伸到下一个 token 末尾
                 w = text[a:b]
