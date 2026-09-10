@@ -53,7 +53,10 @@ WITNESSES = {
 SECTION_VOL = {'preface': 'v1', 'introduction': 'v1',
                'later-preface': 'v2', 'later-introduction': 'v2'}
 
-TOKEN = re.compile(r"[A-Za-z][A-Za-z'’]*")
+# token 里要认带变音符的字母。只认 ASCII 的话，`Rosenmüller` 会被切成
+# `Rosenm` + `ller` 两截，前半截当成残串「补全」，拼出 `Rosenmümuller`——
+# 判读器反复跑到收敛，每一轮都再糟一点（踩过）。
+TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’]*")
 MIN_VOTES = 2           # 至少两份证人给出同一读数
 FRONT = re.compile(r'^---.*?^---\n', re.S | re.M)
 # 标签必须**长得像标签**（`<` 后面紧跟字母或 `/`），不能写成 `<[^>]+>`：
@@ -78,11 +81,37 @@ def load_witnesses():
     return out
 
 
-def poll(toks, i, witnesses):
+def look_up_strict(toks, i, idx, wlow, worig):
+    """两侧各三词都对上才算命中。
+
+    `look_up` 只校验右侧**一个**词，四词上下文对常见句式并不够：
+    第 34 章的 `by the gratuitous ⟨assertion⟩ that` 就撞上了书里别处的
+    `by the gratuitous assumption that`，四份证人「一致」给出 assumption，
+    照办就把原文的 assertion 改错了（翻页面影像才发现）。
+    真词那一路本来就是在改**看起来没毛病的词**，锚必须更硬。
+    """
+    left = [t.lower() for t in toks[max(0, i - ANCHOR):i]]
+    right = [t.lower() for t in toks[i + 1:i + 1 + ANCHOR]]
+    if len(left) < ANCHOR or len(right) < ANCHOR:
+        return None
+    readings = []
+    for p in idx.get(tuple(left), ()):
+        j = p + ANCHOR
+        if j >= len(wlow):
+            continue
+        if wlow[j + 1:j + 1 + ANCHOR] != right:
+            continue
+        readings.append(worig[j])
+    uniq = {r.lower() for r in readings}
+    return readings[0] if len(uniq) == 1 else None
+
+
+def poll(toks, i, witnesses, strict=False):
     """各证人在 toks[i] 这个位置上分别印的是什么 → (多数读数, 票数, 参与数)"""
     votes = Counter()
+    probe = look_up_strict if strict else look_up
     for _, idx, low, orig in witnesses:
-        r = look_up(toks, i, idx, low, orig)
+        r = probe(toks, i, idx, low, orig)
         if r:
             votes[r.lower()] += 1
     if not votes:
@@ -151,14 +180,32 @@ MANUAL_TEXT = [
      'the deportation of their people by Tiglath-pileser'),
     ("comparing them to swarm's of noxious", 'comparing them to swarms of noxious'),
     ('he was a renegade or apostate Jew', 'he was a renegado or apostate Jew'),
-    ('the gratuitous assertion that', 'the gratuitous assumption that'),
     ('not more unreason able than', 'not more unreasonable than'),
     ('by its render ing the suffix', 'by its rendering the suffix'),
+    ('the analogy of others like ifc.', 'the analogy of others like it.'),
     ('fumantes pulvere compos', 'fumantes pulvere campos'),
     # 底本这一处**整词漏印**（翻页处，OCR 连字都没读出来），四份证人一致
     # 作 cited。判读器是逐 token 比对，看不见「少了一个词」，只能人工补。
     ('the only case which has been to establish',
      'the only case which has been cited to establish'),                    # Virgil, Aen. 那句是 campos
+]
+
+
+# 正则版的人工核定。放在**判读之后**，不放进 repair：一旦正文里出现 ü，
+# 判读器的 token 正则（只认 ASCII 字母）就会把 `Rosenmüller` 切成
+# `Rosenm` + `ller`，前半截被当成残串「补全」，拼出 `Rosenmümuller`（踩过）。
+MANUAL_RE = [
+    # 德文变音符：页面上印的是 ü，OCR 读成 ii/ti/ij/rnt 等等。翻过书页影像
+    # 核实（书页 405 的 Rosenmüller 清清楚楚带两点），还原属于复现原文。
+    (re.compile(r'\bRosen[a-zA-ZüöäÜÖÄ]{1,8}ll?er\b'), 'Rosenmüller'),
+    (re.compile(r'\bFiirst\b'), 'Fürst'),
+    (re.compile(r'\bR[iu]ckert\b'), 'Rückert'),
+    (re.compile(r'\biiber\b'), 'über'),
+    (re.compile(r'\bStiitze\b'), 'Stütze'),
+    (re.compile(r'\bgefliigelter\b'), 'geflügelter'),
+    # 人名拼错，证人与页面一致
+    (re.compile(r'\bVilringa\b'), 'Vitringa'),
+    (re.compile(r'\bShalmeneser\b'), 'Shalmaneser'),
 ]
 
 
@@ -168,6 +215,9 @@ def apply_manual(raw):
         if a in raw:
             n += raw.count(a)
             raw = raw.replace(a, b)
+    for pat, rep in MANUAL_RE:
+        raw, k = pat.subn(rep, raw)
+        n += k
     return raw, n
 
 
@@ -201,7 +251,7 @@ def main(apply_it):
         fixes = {}
         for i, tok in enumerate(toks):
             ours_is_word = is_word(tok, lex)
-            reading, votes, total = poll(toks, i, wit[vol])
+            reading, votes, total = poll(toks, i, wit[vol], strict=ours_is_word)
             if not reading or votes < MIN_VOTES:
                 stat['无证据' if not ours_is_word else 'ok'] += 1
                 continue
@@ -223,6 +273,11 @@ def main(apply_it):
             if not ours_is_word:
                 # 我们这串不是词：证人读数得是词（或字形上从我们这串走得到）
                 ok = (is_word(reading, lex) or glyph_reachable(tok, reading)) and close
+                # 两字母的残串多半是**被标点劈开的半个词**（`A.nd` 里的 `nd`）。
+                # 照证人补全会拼成 `A.and` 这种更糟的东西。等长的（`ol`→`of`）
+                # 不在此列——那是整词误读，不是断片。
+                if len(tok) < 3 and len(tok) != len(reading):
+                    ok = False
                 if ok:
                     fixes[i] = (tok, restore_case(tok, reading))
                     rows.append((stem, tok, reading, votes, total, 'fix'))

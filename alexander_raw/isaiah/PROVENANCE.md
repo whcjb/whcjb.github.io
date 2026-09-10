@@ -126,9 +126,12 @@ propheciesisaiah0{1,2}alexuoft_abbyy.gz
 位置锚读出证人在同一位置印的是什么，至少两份一致才采信。落案：
 
 ```
-非词改正 483 · 真词改正 116 · 人工核定 34 · 已核实原样 4653
-证据不足 1153 · 无证据 4647 · 真词分歧待看 610
+非词改正 540 · 真词改正 105 · 人工核定 40 · 已核实原样 5003
+证据不足 2209 · 无证据 3146 · 真词分歧待看 405
 ```
+
+（真词那一路换严锚之后数字有升有降：证据不足变多是因为门槛提高，
+真词分歧待看变少是因为页眉清干净后锚更容易对上。）
 
 **真词改正**是这一轮最要紧的收获：`lime`→`time`、`lake`→`take`、
 `bouse`→`house`、`Jiffy`→`fifty`、`Icings`→`kings`、`faying`→`saying`、
@@ -150,6 +153,32 @@ propheciesisaiah0{1,2}alexuoft_abbyy.gz
 同一轮还发现 ABBYY 会给跨页续段误加 startIndent，把一句话劈成两段
 （以赛亚书 76 处、诗篇 11 处）。已在 `alexander_common.merge` 里用内容信号
 压过几何信号：上一段以小写字母或逗号收尾就是没说完，不另起段。
+
+## 影像逐页排查
+
+多证人也救不了两类：几份证人在同一处都读崩的，以及**证人自己也印着页眉**
+的地方。这两类只能翻页面影像。`scripts/crop_alexander_isaiah.py` 按书页
+渲染 PDF；**优先用 `--find "一句话"`**——正文里的 `<!-- PAGE n -->` 标的是
+段落起始页，长段跨两三页，按它翻常翻错；`--find` 直接拿那句话去 PDF 文本层
+搜（文本层与 en_chapters 同出一份 ABBYY OCR，同一串字一模一样）。
+
+翻影像翻出来的，都不是自动化能发现的：
+
+| 现象 | 页面上是 | 我们原来是 |
+|---|---|---|
+| 页码掉进正文 | `…explanation of` ⏎ `406` ⏎ `the phrase…` | `…explanation of 406 the phrase…` |
+| 页码把断词撑开 | `circum-` ⏎ `26` ⏎ `locution` | `circum- 26 locution` |
+| 页眉混进段落 | `…can` ⏎ `8 CHAPTER XL.` ⏎ `be fully…` | `…can g CHAPTERXL. be fully…` |
+| 德文变音符 | `Rosenmüller` | `Rosenmiiller` |
+| 断词漏连字符 | `Ven-ice` / `wea-pons` | `Ven ice` / `wea pons` |
+
+**还翻出一处自动判读改错的**：第 34 章「the gratuitous **assertion** that」，
+四份证人一致给出 assumption，照办就把原文改错了。原因是锚撞车——书里别处
+有「by the gratuitous assumption that」，`look_up` 只校验右侧一个词，四词
+上下文对常见句式不够。真词那一路因此改用两侧各三词的严锚
+（`look_up_strict`），改动数从 116 降到 105，那一处也自动放过了。
+
+**教训：多证人一致也可能是错的。** 动真词之前，能翻影像就翻。
 
 ## 复现顺序
 

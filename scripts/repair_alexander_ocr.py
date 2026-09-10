@@ -225,18 +225,6 @@ ISAIAH_PRE = [
     (r"\bone's\.self\b", "one's self"),
     (r'\bnot yet J\.ave called\b', 'not yet have called'),
     (r'\bcontrary to u\.sa\^e\b', 'contrary to usage'),
-    # 德文变音符：页面上印的是 ü，OCR 一律读成 ii。翻过书页影像核实
-    # （书页 405 的 Rosenmüller 清清楚楚带两点），还原属于「复现原文」，
-    # 不是改写。只收反复出现、能确认的几个人名与常用词。
-    (r'\bRosenmiiller\b', 'Rosenmüller'),
-    (r'\bFiirst\b', 'Fürst'),
-    (r'\bRiickert\b', 'Rückert'),
-    (r'\biiber\b', 'über'),
-    (r'\bStiitze\b', 'Stütze'),
-    (r'\bgefliigelter\b', 'geflügelter'),
-    # 人名拼错，证人与页面一致
-    (r'\bVilringa\b', 'Vitringa'),
-    (r'\bShalmeneser\b', 'Shalmaneser'),
     (r"\bunit\}'", 'unity'),
 ]
 
@@ -356,6 +344,9 @@ def corpus_vocab(lex, src):
 # 后半用**前瞻**而不是捕获：正则替换是不重叠扫描的，若把后半也吃掉，
 # `the con struction` 会先配成 (the, con)（两边都是词，不动）然后从
 # `struction` 之后接着扫，`con struction` 这一对**永远轮不到**（踩过）。
+# 拼起来「是个词」但明显不该拼的（拉丁/德文本来就分写）
+NEVER_JOIN = {'paulopost', 'christiest'}
+
 SPLIT_WORD = re.compile(r'\b([A-Za-z]{2,})[ ](?=([a-z]{2,})\b)')
 
 
@@ -368,13 +359,28 @@ def rejoin_split_words(text, lex, vocab):
     """
     def repl(m):
         a, b = m.group(1), m.group(2)
-        if is_word(a, lex) and is_word(b, lex):
-            return m.group(0)
         j = a + b
-        # 拼出来的词还必须**在本书别处正确出现过**：只靠词典会把
-        # `to co-operate` 拼成 `toco`（toco 恰好也在韦氏词表里）。
-        if is_word(j, lex) and vocab.get(j.lower(), 0) >= 1:
+        if is_word(a, lex) and is_word(b, lex):
+            # 两半都是词，本来一律不动（`to be`、19 世纪分写的 `any thing`）。
+            # 但韦氏词表收了大量僻词（`wea`、`writ`、`cere`），断词的前半正好
+            # 撞上一个，整词就永远拼不回来（`wea pons` = weapons）。
+            # 放行的条件是**语料自己说话**：前半在全书里几乎不独立出现
+            # （≤2 次，那两次多半就是断词本身），而整词出现 5 次以上。
+            if (is_word(j, lex) and j.lower() not in NEVER_JOIN and len(a) >= 3
+                    and vocab.get(a.lower(), 0) <= 2
+                    and vocab.get(j.lower(), 0) >= 5):
+                return a
+            return m.group(0)
+        if not is_word(j, lex) or j.lower() in NEVER_JOIN:
+            return m.group(0)
+        # 「在本书别处正确出现过」是最硬的证据，先看它。
+        if vocab.get(j.lower(), 0) >= 1:
             return a          # 只吃掉空格，后半留在原处等下一轮配对
+        # 全书只此一处的词（`weapons`、`Venice`、`recompenses`）没有旁证，
+        # 但断词是明摆着的：左半不是词、两半都不短。放行这一档，
+        # 挡掉 `SS is`、`tr ampler`、`nao to` 这类两三字母的外文/希伯来残片。
+        if not is_word(a, lex) and len(a) >= 3 and len(b) >= 3:
+            return a
         return m.group(0)
     return SPLIT_WORD.sub(repl, text)
 

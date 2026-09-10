@@ -17,6 +17,7 @@
 """
 import pickle
 import re
+import subprocess
 import sys
 from difflib import SequenceMatcher
 from pathlib import Path
@@ -48,25 +49,40 @@ VERSE_START = re.compile(r'^\s*[.,;]?\s*V+\s*\.\s*\d{1,3}')
 # 页眉字形归一：OCR 把 O 读成 0、C 读成 K/G 是常事。数字先剥掉（页码不参与
 # 比对），剩下的字母再做字形归一。
 _HEAD_OCR = str.maketrans({'K': 'C', 'G': 'C', 'Q': 'O'})
+# 数字里长得像字母的先换回来再剥非字母：`0 H A P T E R L V 1 I.` 这种
+# 逐字母拆开的页眉，`0`是 C、`1`是 I，不换就拼不出 CHAPTER。
+_DIGIT_AS_LETTER = str.maketrans({'0': 'O', '1': 'I'})
 _KEYWORDS = ('INTRODUCTION', 'PREFACE', 'COMMENTARY')
 
 
-def is_runhead(b):
+def _head_letters(b):
+    return re.sub(r'[^A-Za-z]', '', b.translate(_DIGIT_AS_LETTER)).upper() \
+        .translate(_HEAD_OCR)
+
+
+# 页眉里书名与 CHAPTER 的各种读法。罗马数字里放行 T——`I` 被读成 `T` 极常见
+# （`XLVT`=XLVI、`LTI`=LII、`XLtX`=XLIX）；`CHAPTER` 会被切成 `CH AFTER`。
+_RUN_V1 = re.compile(r'IS[AIJT]{1,2}AH?CHAP(TER)?[IVXLCT]{1,9}')
+_RUN_V2 = re.compile(r'[CO]H?A[FP]TER[IVXLCT]{1,9}')
+
+
+def is_runhead(b, need_page=False):
     """页眉/页脚判据。
 
-    三类，判法各不相同：
-      `xxn INTRODUCTION.` / `I N T R O D U 0 T I O N.`
-          字母被逐个拆开、页码是罗马数字且常读崩，所以只看**关键词在不在**，
-          再限一个长度上限防止误伤正文短句。
-      `2 ISAIAH, CHAP. I.` / `ISAIAH, CHAP. I.`（卷一）
-          带书名 `ISAIAH`，正文里的章题从不这么写，**不要求页码**——
-          OCR 经常把页码整个吞掉，要求页码会让这类页眉漏进正文。
-      `2 CHAPTER XL.` / `CHAPTERXL. 3`（卷二）
-          与章题只差一个页码，**必须要求页码**，否则把章题一起删了。
+    `need_page=True` 时，`CHAPTER XL` 这种**不带页码**的一律不算页眉——
+    定位章题时要用这一档，否则会把章题本身当页眉跳过去，一章都找不到。
+    切正文时用宽松档：切片里本来就不该再有章题（章题按序号排除在切片之外），
+    所以宁可多删，也不能让页眉混进正文——`CHAPTERXL.` 这类丢了页码的页眉
+    因为不被识别，被当成续行**并进了段落中间**（卷二 52 处）。
     """
     if not b or len(b) > 46:
         return False
-    letters = re.sub(r'[^A-Za-z]', '', b).upper().translate(_HEAD_OCR)
+    # 页码单独成段/成行（`26`）。本书的节号一律写作 `V. N.`，正文里不会有
+    # 光秃秃一个数字的段落，所以这条不会误伤。不剔的话它会掉进跨页断词
+    # 中间——`circum-` ⏎ `26` ⏎ `locution` 拼成 `circum- 26 locution`。
+    if re.fullmatch(r'\d{1,3}', b.strip()):
+        return True
+    letters = _head_letters(b)
     for kw in _KEYWORDS:
         if kw in letters and len(letters) <= len(kw) + 8:
             return True
@@ -75,19 +91,27 @@ def is_runhead(b):
         if abs(len(letters) - len(kw)) <= 2 and \
                 SequenceMatcher(None, letters, kw).ratio() >= 0.85:
             return True
-    if re.fullmatch(r'ISAIAHCHAP(TER)?[IVXLC]{1,8}', letters):
-        return True
-    # `ISATAH, CHAP. VITI. 145` —— 书名与章号双双读崩（I→T 两处）。
-    # 全书就这一条漏网，但它卡在段落中间，不认出来会把一句话劈成两段。
-    # 判法：去掉数字后拆成「书名部分 + 章号部分」，书名与 ISAIAHCHAP 相似度
-    # ≥0.8，章号部分只由罗马字母（外加常被误读成 I 的 T）组成。
-    m = re.fullmatch(r'(.{8,12}?)([IVXLCT]{2,8})', re.sub(r'\d', '', letters))
-    if m and re.search(r'\d', b) and \
+    has_digit = bool(re.search(r'\d', b))
+    # 页码常被读成字母（`8`→`g`、`110`→`HO`、`114`→`H4`、`404`→`4Q4`），
+    # 于是页眉串前后各挂着一小截垃圾。剥掉最多三个字符再比。
+    cores = {letters}
+    for k in (1, 2, 3):
+        cores.add(letters[k:])
+        cores.add(letters[:-k] if k < len(letters) else '')
+    if any(_RUN_V1.fullmatch(c) for c in cores if c):
+        return True                      # 带书名，正文里的章题从不这么写
+    if any(_RUN_V2.fullmatch(c) for c in cores if c):
+        return has_digit or not need_page
+    # 书名与章号双双读崩（`ISATAH, CHAP. VITI. 145`）：按相似度兜底
+    m = re.fullmatch(r'(.{8,12}?)([IVXLCT]{1,8})', re.sub(r'\d', '', letters))
+    if m and has_digit and \
             SequenceMatcher(None, m.group(1), 'ISAIAHCHAP').ratio() >= 0.8:
         return True
-    if re.fullmatch(r'CHAPTER[IVXLC]{1,8}', letters) and re.search(r'\d', b):
-        return True
     return False
+
+
+def is_runhead_strict(b):
+    return is_runhead(b, need_page=True)
 
 
 # 合并章题：`CHAPTERS II, III, IV.` / `CHAPTERS XIII, XIV.` / `CHAPTERS XV, XVI.`
@@ -162,7 +186,7 @@ def main():
             total += n
 
         # ── 章题定位 ────────────────────────────────────────
-        heads = find_roman_heads(pages, body_lo, lo, hi, runhead=is_runhead)
+        heads = find_roman_heads(pages, body_lo, lo, hi, runhead=is_runhead_strict)
         missing = [n for n in range(lo, hi + 1) if n not in heads]
         if missing:
             raise SystemExit(f'{vol} 章题缺失: {missing}')

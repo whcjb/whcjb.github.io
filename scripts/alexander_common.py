@@ -188,7 +188,7 @@ def check_page_sequence(pmap):
 LOWER_END = set('abcdefghijklmnopqrstuvwxyz,')
 
 
-def merge(chunk, verse_start):
+def merge(chunk, verse_start, pmap=None):
     """[(page, par)] → [[page, text]]；无 startIndent 的段是上一段的跨页续行。
 
     ABBYY 的 par 属性已经把版面判读做完了，直接用它的结论比重新按几何推断
@@ -200,6 +200,11 @@ def merge(chunk, verse_start):
         t = par['text'].strip()
         if not t:
             continue
+        # 页码没被 ABBYY 单独切成一段，而是粘在了续行的开头
+        # （`circum-` ⏎ `26 locution used…`）。并段时它就掉进句子中间了。
+        # 判据很硬：这个数字必须**正好等于本页的书页页码**。
+        if pmap and pmap.get(page) is not None:
+            t = re.sub(r'^\s*%d\s+(?=[a-z(])' % pmap[page], '', t)
         new = 'startIndent' in par['attrs'] or bool(verse_start.match(bare(t)))
         # ABBYY 偶尔给跨页续段也标上 startIndent（页顶那一行的左边距被页眉
         # 顶歪），于是一句话被劈成两段，读者看到句子中间空一行。
@@ -248,7 +253,7 @@ def slice_pars(by_index, pg0, pi0, pg1, pi1, runhead):
 def write_chapter(path, header, chunk, verse_start, pmap=None,
                   compounds=frozenset()):
     """一章 → 一个 md 文件，返回段落数。"""
-    paras = merge(chunk, verse_start)
+    paras = merge(chunk, verse_start, pmap)
     lines = [header, '']
     cur = None
     for page, t in paras:

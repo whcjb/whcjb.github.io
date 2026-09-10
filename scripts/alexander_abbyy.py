@@ -43,7 +43,7 @@ def _line_text(line):
     return ''.join(out)
 
 
-def _join_lines(lines):
+def _join_lines(lines, drop_line=None):
     """行拼段：行尾连字符按「下一行首字母小写」判断是否为断词。
 
     「Anglo-Saxon」这类真连字符后面接大写，保留；「compres-sion」接小写，
@@ -53,10 +53,21 @@ def _join_lines(lines):
     本来就带连字符的复合词也会断在连字符上，删与不删要看全书别处怎么写，
     那是 cleanup 阶段的事（alexander_common.resolve_hyphens）。
     """
+    lines = list(lines)
+    multiline = len(lines) > 1
     buf = ''
     for raw in lines:
         t = raw.strip()
         if not t:
+            continue
+        # 页眉有时不是独立的 par，而是**夹在一段里的一行**（页顶那一行被
+        # ABBYY 归进了跨页的同一段）。段级过滤看不见它，只能在这里按行剔。
+        # 剔在拼行之前，跨页断词才接得上（`correspond-` + 页眉行 + `ing to`）。
+        #
+        # ⚠️ 只对**多行段**生效。章题本身就是个单行段（`CHAPTER I.`），
+        # 同一套判据会把它一并剔掉，39 章一个都找不到（踩过）。
+        if multiline and drop_line is not None \
+                and drop_line(t.replace(IT_ON, '').replace(IT_OFF, '')):
             continue
         if not buf:
             buf = t
@@ -71,7 +82,7 @@ def _join_lines(lines):
     return buf
 
 
-def parse_pages(xml_path):
+def parse_pages(xml_path, drop_line=None):
     """流式解析整卷 → [{'index': 1-based, 'pars': [par, ...]}, ...]
 
     par = {'text': str, 'nlines': int, 'attrs': dict, 'block_top': int}
@@ -93,7 +104,7 @@ def parse_pages(xml_path):
                 if not lines:
                     continue
                 pars.append({
-                    'text': _join_lines(_line_text(l) for l in lines),
+                    'text': _join_lines((_line_text(l) for l in lines), drop_line),
                     'nlines': len(lines),
                     'attrs': dict(par.attrib),
                     'block_top': btop,

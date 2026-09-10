@@ -117,3 +117,5 @@ DeDieu Dieu Cappellus Glassius Storr Winer Nordheimer Havernick
 # —— 拉丁短语常见词 ——
 ejus eius unum una unus praeter propter scilicet nempe idem ibidem passim
 sensu stricto latiore verbum verba nomen nomine forma formae genus generis
+# —— 德文变音符还原后的形态（页面上本就是 ü，OCR 读成 ii）——
+Rosenmüller Fürst Rückert über Stütze geflügelter Möller Döderlein Hävernick
