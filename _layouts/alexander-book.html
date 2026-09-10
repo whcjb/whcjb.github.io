@@ -22,6 +22,27 @@ layout: default
       <h1 class="ax-title">{{ page.book_name }}</h1>
       <div class="ax-sub">Joseph Addison Alexander · 1809–1860 · Princeton Theological Seminary</div>
 
+      <div class="ax-extra">
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/preface/">
+          <span class="ax-extra-cn">著者序</span>
+          <span class="ax-extra-en">Preface</span>
+        </a>
+      </div>
+
+
+      {% assign groups = "1,41,卷一|42,72,卷二|73,89,卷三|90,106,卷四|107,150,卷五" | split: "|" %}
+      {% for g in groups %}
+        {% assign gp = g | split: "," %}
+        {% assign lo = gp[0] | times: 1 %}
+        {% assign hi = gp[1] | times: 1 %}
+        <h2 class="ax-grp">{{ gp[2] }} <span>Psalms {{ lo }}–{{ hi }}</span></h2>
+        <div class="ax-ch-grid">
+          {% for i in (lo..hi) %}
+          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ i }}/">{{ i }}</a>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
       <div class="ax-blurb">
         <p>约瑟·亚历山大（Joseph Addison Alexander）是普林斯顿神学院首任教授
         阿奇博尔德·亚历山大的第三子，1826 年以第一名毕业于新泽西学院，
@@ -40,25 +61,6 @@ layout: default
         索引一律取<strong>英文节号</strong>。全书<strong>尚无中译</strong>。</p>
       </div>
 
-      {% assign groups = "1,41,卷一|42,72,卷二|73,89,卷三|90,106,卷四|107,150,卷五" | split: "|" %}
-      {% for g in groups %}
-        {% assign gp = g | split: "," %}
-        {% assign lo = gp[0] | times: 1 %}
-        {% assign hi = gp[1] | times: 1 %}
-        <h2 class="ax-grp">{{ gp[2] }} <span>Psalms {{ lo }}–{{ hi }}</span></h2>
-        <div class="ax-ch-grid">
-          {% for i in (lo..hi) %}
-          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ i }}/">{{ i }}</a>
-          {% endfor %}
-        </div>
-      {% endfor %}
-
-      <div class="ax-extra">
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/preface/">
-          <span class="ax-extra-cn">著者序</span>
-          <span class="ax-extra-en">Preface</span>
-        </a>
-      </div>
 
     </div>
   </div>
@@ -78,7 +80,8 @@ layout: default
   padding-bottom: 10px; border-bottom: 2px solid var(--ax-ink); }
 .ax-sub { font-family: Georgia, serif; font-style: italic; font-size: 13px;
   color: #9a8a86; margin-bottom: 22px; }
-.ax-blurb { font-size: 15px; line-height: 1.95; color: #3d3532; margin-bottom: 30px; }
+.ax-blurb { font-size: 15px; line-height: 1.95; color: #3d3532;
+  margin: 40px 0 30px; padding-top: 26px; border-top: 1px solid var(--ax-rule); }
 .ax-blurb p { margin: 0 0 12px; }
 .ax-caveat { font-size: 13.5px; color: #6d605c; background: #faf3f1;
   border-left: 3px solid var(--ax-rule); padding: 12px 15px; }
@@ -96,7 +99,7 @@ layout: default
   border-radius: 3px; text-decoration: none !important; }
 .ax-ch:hover { background: var(--ax-ink); color: #fff !important; border-color: var(--ax-ink); }
 
-.ax-extra { margin-top: 32px; }
+.ax-extra { margin: 0 0 30px; }
 .ax-extra a { display: inline-flex; align-items: baseline; gap: 10px;
   padding: 10px 16px; border: 1px solid var(--ax-rule); border-radius: 3px;
   text-decoration: none !important; }
