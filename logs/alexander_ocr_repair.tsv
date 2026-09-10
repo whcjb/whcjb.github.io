@@ -252,7 +252,7 @@ chapter	from	to	kind
 104	difierent	different	rule
 104	satisfactary		unresolved
 104	vriter's	writer's	rule
-104	yerh		unresolved
+104	yerh	verb	manual
 104	Ixxxix	lxxxix	roman
 104	Ixxviii	lxxviii	roman
 104	Ixxxix	lxxxix	roman
@@ -350,7 +350,7 @@ chapter	from	to	kind
 105	phasure		unresolved
 105	chiffs		unresolved
 105	appHcation	application	rule
-105	histoiy		unresolved
+105	histoiy	history	manual
 105	Ixxviii	lxxviii	roman
 105	ia		tooshort
 105	Gr3n		unresolved
@@ -473,7 +473,7 @@ chapter	from	to	kind
 107	sucli	such	rule
 107	eiTor		unresolved
 107	darknees		unresolved
-107	afiHiction		unresolved
+107	afiHiction	affliction	manual
 107	erers		unresolved
 107	Ixviii	lxviii	roman
 107	afiliction	affliction	rule
@@ -481,7 +481,7 @@ chapter	from	to	kind
 107	Uteral	literal	rule
 107	afiiiction	affliction	rule
 107	xhx	xlix	rule
-107	sufl'erings		unresolved
+107	sufl'erings	sufferings	manual
 107	Enghsh	English	rule
 107	efiect	effect	rule
 107	ior		unresolved
@@ -616,7 +616,7 @@ chapter	from	to	kind
 11	aflfection	affection	rule
 11	noims	nouns	rule
 11	pluralis		unresolved
-11	tnajestaticus		unresolved
+11	tnajestaticus	majestaticus	manual
 11	foxmd		unresolved
 11	Iviii	lviii	roman
 11	Uv		tooshort
@@ -724,7 +724,7 @@ chapter	from	to	kind
 113	Ixviii	lxviii	roman
 113	ia		tooshort
 113	Hannah		unresolved
-114	sufterings		unresolved
+114	sufterings	sufferings	manual
 114	efiect	effect	rule
 114	Egj'pt		unresolved
 114	improbabiUty	improbability	rule
@@ -778,7 +778,7 @@ chapter	from	to	kind
 116	Ixxviii	lxxviii	roman
 116	Hve	live	rule
 116	sufierings	sufferings	rule
-116	yerh		unresolved
+116	yerh	verb	manual
 116	Uiik		unresolved
 116	Hhi		unresolved
 116	Ki		tooshort
@@ -797,7 +797,7 @@ chapter	from	to	kind
 116	Ivi	lvi	roman
 116	Uterally	literally	rule
 116	Ixii	lxii	roman
-116	hestouments		unresolved
+116	hestouments	bestowments	manual
 116	Uterally	literally	rule
 116	mmsn		unresolved
 116	lyfOYd		unresolved
@@ -886,7 +886,7 @@ chapter	from	to	kind
 119	Ufe	life	rule
 119	toill	will	wform
 119	concealment	concealment	rule
-119	hreaketh		unresolved
+119	hreaketh	breaketh	manual
 119	Kebuked		unresolved
 119	difierent	different	rule
 119	DJl		unresolved
@@ -1023,7 +1023,7 @@ chapter	from	to	kind
 119	D''2pt		unresolved
 119	modem	modern	realword
 119	xoord	word	wform
-119	hecatise		unresolved
+119	hecatise	because	manual
 119	divme		unresolved
 119	ehibitions		unresolved
 119	HD		tooshort
@@ -1568,7 +1568,7 @@ chapter	from	to	kind
 141	Enghsh	English	rule
 141	foreignirom		unresolved
 141	Ukened	likened	rule
-141	Throun		unresolved
+141	Throun	Thrown	manual
 141	doivn	down	rule
 141	ypl		unresolved
 141	oi		tooshort
@@ -1671,7 +1671,7 @@ chapter	from	to	kind
 145	Ixxi	lxxi	roman
 145	Ixiii	lxiii	roman
 145	ipj		unresolved
-145	u'onders		unresolved
+145	u'onders	wonders	manual
 145	uill	will	rule
 145	corupted		unresolved
 145	Ixii	lxii	roman
@@ -2142,7 +2142,7 @@ chapter	from	to	kind
 20	ofierings	offerings	rule
 20	owrselves		unresolved
 20	Yulgate		unresolved
-20	salvvcmfac		unresolved
+20	salvvcmfac	salvum fac	manual
 20	regem		unresolved
 20	jjviii		unresolved
 20	psahn	psalm	rule
@@ -3002,7 +3002,7 @@ chapter	from	to	kind
 4	snch		unresolved
 4	yiven		unresolved
 4	nore	more	manual
-4	icine		unresolved
+4	icine	wine	manual
 4	Terbial		unresolved
 4	Ahne		unresolved
 4	vnlt	wilt	rule
@@ -3053,7 +3053,7 @@ chapter	from	to	kind
 40	Ixix	lxix	roman
 40	ine		unresolved
 41	succour		unresolved
-41	luisely		unresolved
+41	luisely	wisely	manual
 41	Tlie	The	rule
 41	EngUsh	English	rule
 41	imkindness	unkindness	rule
@@ -3347,7 +3347,7 @@ chapter	from	to	kind
 48	Ht		tooshort
 49	iinus		unresolved
 49	earUer	earlier	rule
-49	natiom		unresolved
+49	natiom	nations	manual
 49	com		unresolved
 49	Ixxxix	lxxxix	roman
 49	Ixii	lxii	roman
@@ -3512,7 +3512,7 @@ chapter	from	to	kind
 51	burntoffering		unresolved
 51	oi		tooshort
 51	ofierings	offerings	rule
-51	contriium		unresolved
+51	contriium	contritum	manual
 51	ofiered	offered	rule
 51	deUverance	deliverance	rule
 51	JeriLsalem		unresolved
@@ -3542,7 +3542,7 @@ chapter	from	to	kind
 52	tongice		unresolved
 52	c6mmonly	commonly	rule
 52	Ixiv	lxiv	roman
-52	personce		unresolved
+52	personce	personæ	manual
 52	ivealth	wealth	wform
 52	Mis		unresolved
 52	ti'usted	trusted	rule
@@ -3616,7 +3616,7 @@ chapter	from	to	kind
 55	feai		unresolved
 55	Psahnists	Psalmists	rule
 55	alUes	allies	rule
-55	huiterings		unresolved
+55	huiterings	butterings	manual
 55	supphed	supplied	rule
 55	tlie	the	rule
 55	Pd		tooshort
@@ -3682,7 +3682,7 @@ chapter	from	to	kind
 56	thanksgiviny		unresolved
 56	ivalk	walk	wform
 57	tashheth		unresolved
-57	Trofundis		unresolved
+57	Trofundis	Profundis	manual
 57	Exsultemus		unresolved
 57	Nobis		unresolved
 57	Deum		unresolved
@@ -3717,7 +3717,7 @@ chapter	from	to	kind
 58	mesimng		unresolved
 58	quahfying	qualifying	rule
 58	oi		tooshort
-58	Yerh		unresolved
+58	Yerh	verb	manual
 58	sofis		unresolved
 58	iyiiquities		unresolved
 58	iveigh	weigh	rule
@@ -4408,7 +4408,7 @@ chapter	from	to	kind
 74	vvdth		unresolved
 74	ograg		unresolved
 74	festos		unresolved
-74	sohnnitates		unresolved
+74	sohnnitates	solennitates	manual
 74	sjTiagogues		unresolved
 74	loe	we	wform
 74	pecuUar	peculiar	rule
@@ -4472,8 +4472,8 @@ chapter	from	to	kind
 75	DHn		unresolved
 75	Q		tooshort
 75	appUcable	applicable	rule
-75	Idumsea		unresolved
-75	Petraea		unresolved
+75	Idumsea	Idumæa	manual
+75	Petraea	Petræa	manual
 75	acinaW		unresolved
 75	oj		tooshort
 75	intei		unresolved
@@ -4705,7 +4705,7 @@ chapter	from	to	kind
 80	Ivii	lvii	roman
 80	Ixii	lxii	roman
 80	vjere		unresolved
-80	shadoio		unresolved
+80	shadoio	shadow	manual
 80	amphfication	amplification	rule
 80	overran		unresolved
 80	Kadesh		unresolved
@@ -4815,7 +4815,7 @@ chapter	from	to	kind
 83	Endor		unresolved
 83	Endor		unresolved
 83	modem	modern	realword
-83	Oreh		unresolved
+83	Oreh	Oreb	manual
 83	Zeeb		unresolved
 83	Zebah		unresolved
 83	Zalmunnah		unresolved
@@ -4999,7 +4999,7 @@ chapter	from	to	kind
 88	iconders		unresolved
 88	Ixxvii	lxxvii	roman
 88	Abaddon		unresolved
-88	forgeffulness		unresolved
+88	forgeffulness	forgetfulness	manual
 88	Ivi	lvi	roman
 88	Ivii	lvii	roman
 88	Ix	lx	roman
@@ -5313,7 +5313,7 @@ chapter	from	to	kind
 94	xH		tooshort
 94	naankind		unresolved
 94	olFenders		unresolved
-94	icarnesf		unresolved
+94	icarnesf	warnest	manual
 94	ti'ust	trust	rule
 94	ith		unresolved
 94	Ixiii	lxiii	roman

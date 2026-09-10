@@ -55,6 +55,12 @@ LOG = ROOT / 'logs/alexander_adjudicate.tsv'
 
 TOKEN = re.compile(r"[A-Za-z][A-Za-z'’]*")
 
+# 标签正则**不能**写成 `<[^>]+>`。正文里有 OCR 读出来的孤立 `<`（希伯来活字
+# 残渣，诗篇 29 处），宽松写法会从那个 `<` 一路吃到几百词之后的下一个 `>`，
+# 中间整段正文被当成标签跳过——判读器对它视而不见，而且毫无症状。
+# 实测这一条曾让 2615 个 token 静默漏判。要求 `<` 后面紧跟字母且不再含尖括号。
+TAG = re.compile(r'<!--.*?-->|</?[A-Za-z][^<>]*>')
+
 # 锚的长度。3 个词在 35 万词的语料里已经足够罕见，短到 2 个就会撞上
 # "of the" 这种到处都是的组合，读出来的是别处的字。
 ANCHOR = 3
@@ -347,6 +353,7 @@ HANDS_OFF = {
     'ht',        # "the pronoun Ht, this is our God"
     'nne',       # "the di nne majesty" —— divine 被拆成两半，证人读成 ine
     'ig',        # "Ezekiel x. IG" —— 是节号 16，不是词
+    'idn',       # "derived from IDn, love" —— 希伯来文音译，证人读成 ion
     'je',        # "his prayer shall Je Jbr sin" —— 该是 be，证人也读成了 he
 }
 
@@ -430,7 +437,7 @@ def book_vocab(lex):
     vocab = Counter()
     for path in sorted(SRC.glob('*.md')):
         text = re.sub(r'---\n.*?\n---\n', '', path.read_text(encoding='utf-8'), count=1, flags=re.S)
-        text = re.sub(r'<!--.*?-->|<[^>]+>', '', text)
+        text = TAG.sub('', text)
         for w in TOKEN.findall(text):
             if is_word(w, lex):
                 vocab[w.lower()] += 1
@@ -443,7 +450,7 @@ def chapter_tokens(text):
     fm = re.match(r'---\n.*?\n---\n', text, re.S)      # front matter 不是正文
     if fm:
         spans.append(fm.span())
-    for m in re.finditer(r'<!--.*?-->|<[^>]+>', text):
+    for m in TAG.finditer(text):
         spans.append(m.span())
     def masked(pos):
         return any(a <= pos < b for a, b in spans)
@@ -510,10 +517,15 @@ def main():
             ctx = ' '.join(words[max(0, i - 4):i + 5])
             rows.append((path.stem, w, r, kind, ctx))
             if kind in ('fix', 'split', 'splitq', 'hyphen', 'manual'):
-                edits.append((a, b, restore_case(w, r)))
+                edits.append((a, b, restore_case(w, r), w))
         if args.apply and (edits or any(a in text for a, _ in MANUAL_TEXT)
                             or (path.stem == 'preface' and PREFACE_CUT in text)):
-            for a, b, new in reversed(edits):
+            for a, b, new, was in reversed(edits):
+                # 偏移核对：落盘时这一段必须仍是判读时看到的那个 token。
+                # 错位是**静默**的，不核对根本发现不了（另一条线上就因为
+                # 判读与落盘用了两份切分，把 prosperity 换成了隔壁拉丁引文里的词）。
+                if text[a:b] != was:
+                    sys.exit(f'{path.name} 偏移错位：位置 {a} 应为 {was!r}，实为 {text[a:b]!r}')
                 text = text[:a] + new + text[b:]
             for a, b in MANUAL_TEXT:
                 if a in text:
