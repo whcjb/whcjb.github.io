@@ -10,7 +10,9 @@
                （`Carchemish → some`、`Ctesiphon → which`）——
                那是锚落错了地方，不是证人读崩。证人这条路在这些位置
                已经走到头，翻影像也只是重新认一遍我们已经认得的字
-  待判         剩下的才是真要人判的
+  待判         剩下的才是真要人判的，再按证人还有没有用分成三档：
+               证人还有话说 / 证人对不上（锚撞车）/ 压根没证据
+               后两档只能翻影像
 
 先前把「证人对不上」算进待判，分母虚高。这个区分是诗篇线那边先提的
 （他们 435 条 divergent 里 211 条属于此类），本脚本按同一口径算以赛亚书。
@@ -99,26 +101,32 @@ def main():
                     kind = '已核实原样'
                 elif not actionable(w, by_len):
                     kind = '外文/残渣'
-                elif v and v['witness'] and \
-                        SequenceMatcher(None, w.lower(),
-                                        v['witness'].lower()).ratio() < SIM_FLOOR:
-                    kind = '证人对不上'
+                elif not v or not v['witness']:
+                    kind = '待判·无证据'
+                elif SequenceMatcher(None, w.lower(),
+                                     v['witness'].lower()).ratio() < SIM_FLOOR:
+                    kind = '待判·证人对不上'
                 else:
-                    kind = '待判'
+                    kind = '待判·证人还有话说'
                 counts[kind] += 1
-                if kind == '待判':
+                if kind.startswith('待判'):
                     rows.append((path.stem, w, v['witness'] if v else '',
-                                 v['verdict'] if v else '无证据'))
+                                 v['verdict'] if v else '无证据', kind))
 
     OUT.parent.mkdir(exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as f:
-        f.write('chapter\ttoken\twitness\tverdict\n')
+        f.write('chapter\ttoken\twitness\tverdict\tbucket\n')
         for r in rows:
             f.write('\t'.join(r) + '\n')
     total = sum(counts.values())
-    for k in ('已核实原样', '外文/残渣', '证人对不上', '待判'):
-        print(f'  {k:<10} {counts[k]:>6}')
-    print(f'  {"合计":<10} {total:>6}')
+    order = ('已核实原样', '外文/残渣', '待判·证人还有话说',
+             '待判·证人对不上', '待判·无证据')
+    for k in order:
+        print(f'  {k:<18} {counts[k]:>6}')
+    print(f'  {"合计":<18} {total:>6}')
+    pend = sum(counts[k] for k in order if k.startswith('待判'))
+    print(f'  → 真正待判 {pend}（其中只能翻影像的 '
+          f'{counts["待判·证人对不上"] + counts["待判·无证据"]}）')
     print(f'待判清单 → {OUT}')
 
 
