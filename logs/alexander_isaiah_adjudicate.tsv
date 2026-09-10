@@ -2636,6 +2636,7 @@ chapter	ours	witness	votes	polled	verdict
 28	Athenis	Athenis	4	4	confirm
 28	vocant	vo	3	3	reject
 28	verdirbt	verdirbt	4	4	confirm
+28	Ti'sa	lisa	2	4	reject
 28	iin	in	3	4	reject
 28	nsist	incorrect	2	4	reject
 28	ab	bab	2	3	realword?
@@ -2808,7 +2809,7 @@ chapter	ours	witness	votes	polled	verdict
 3	Hk	Hk	4	4	confirm
 3	vovia	but	2	4	reject
 3	Hn	Hn	3	4	confirm
-3	clarum	clarum	3	4	confirm
+3	clarum	clarum	4	4	confirm
 3	ordinaryrank	ordinary	4	4	reject
 3	ducem	ducem	4	4	confirm
 3	militem	militem	3	4	confirm
@@ -4399,7 +4400,8 @@ chapter	ours	witness	votes	polled	verdict
 42	desolabo	desolaho	2	5	reject
 42	rt	attempts	4	5	reject
 42	DCIU	c	2	5	reject
-42	des	destroy	4	5	reject
+42	Pixd	latter	2	4	reject
+42	to'pant	verb	2	3	reject
 42	Wj	which	3	5	reject
 42	lakes'	lakes	3	3	realword?
 42	Rosenmüller	rosenmiiller	3	5	realword?
@@ -4870,6 +4872,7 @@ chapter	ours	witness	votes	polled	verdict
 48	xib	xib	2	5	confirm
 48	wenn	wenn	4	5	confirm
 48	du	du	4	5	confirm
+48	if'it	if	5	5	reject
 48	animum	animum	3	5	confirm
 48	advertisses	advertisses	4	5	confirm
 48	aures	aures	2	5	confirm
@@ -5448,6 +5451,7 @@ chapter	ours	witness	votes	polled	verdict
 53	Martini	Martini	5	5	confirm
 53	sciens	sciens	2	5	confirm
 53	Martini	Martini	4	5	confirm
+53	of'no	of	4	5	reject
 53	demeanour	demeanour	5	5	confirm
 53	Martini	Martini	5	5	confirm
 53	xb	xb	3	5	confirm
@@ -5549,6 +5553,7 @@ chapter	ours	witness	votes	polled	verdict
 53	Martini	Martini	4	5	confirm
 53	nn	nn	4	5	confirm
 53	plcasefi	pleased	4	5	reject
+53	ii'fi	clause	2	5	reject
 53	L	i	4	5	realword?
 53	rxsn	with	4	5	reject
 53	sinoffering	or	4	5	reject
@@ -6165,6 +6170,7 @@ chapter	ours	witness	votes	polled	verdict
 6	ftot	not	4	4	reject
 60	pre	pre	5	5	confirm
 60	shah	shall	4	5	realword?
+60	is'contrasted	is	4	5	reject
 60	Newman	Newman	5	5	confirm
 60	England	England	5	5	confirm
 60	rnt	n	2	5	reject
@@ -6187,6 +6193,7 @@ chapter	ours	witness	votes	polled	verdict
 60	nsn	nxn	2	5	reject
 60	Rosenmüller	rosenmiiller	4	5	realword?
 60	lastige	lastige	2	5	confirm
+60	it'as	it	5	5	reject
 60	TX	x	2	5	reject
 60	TX	ts	3	5	reject
 60	pESi	irn	2	5	reject
@@ -6599,6 +6606,7 @@ chapter	ours	witness	votes	polled	verdict
 65	bleibc	bleibe	5	5	reject
 65	orif	or	5	5	reject
 65	pp	pp	5	5	confirm
+66	of'the	of	5	5	reject
 66	cnmal	carnal	5	5	reject
 66	he	be	5	5	realword?
 66	re	are	3	4	realword?
