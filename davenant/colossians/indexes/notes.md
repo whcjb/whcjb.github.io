@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-10 09:53
+date: 2026-09-11 00:54
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
@@ -55,10 +55,10 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Images and pictures, condemned by the Council of Eliberis, II. 232.</p>
 <p class="dv-idx">Index Expurgatorius, its Jealousy about Apostolic Succession, II. 273.</p>
 <p class="dv-idx">Indulgences, meaning attached to the term by the antient Scholastics, I. 39. absurdity of the system of, 291.</p>
-<p class="dv-idx">Infallibiliuy, works in refutation of, if, 185</p>
+<p class="dv-idx">Infallibility, works in refutation of, if, 185</p>
 <p class="dv-idx">Inform, antient use of the term, Il. 126.</p>
 <p class="dv-idx">Jesuits, their rise, importance, numbers, and intrigues, I. 535 —537.</p>
-<p class="dv-idx">Justification, obseure notions of prior to the time of Luther, I. 7; evidenced, 10, 52, 67, 96, 118.</p>
+<p class="dv-idx">Justification, obscure notions of prior to the time of Luther, I. 7; evidenced, 10, 52, 67, 96, 118.</p>
 <p class="dv-idx">Kaye's (Bp.) Ecclesiastical History, I. 172, 191; 472.</p>
 <p class="dv-idx">Lambeth articles, II. 136.</p>
 <p class="dv-idx">Liberalism of the present age, an error of a former day carried into wider operation, II. 242.</p>
@@ -84,7 +84,7 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Rome, its abominations, I. 75; II. 44, 46.</p>
 <p class="dv-idx">Schisms, opposed, T. 376.</p>
 <p class="dv-idx">School Divinity, crabbedness of, I. 181.</p>
-<p class="dv-idx">Scott's Continuation of Milner's Caurch History, I. 52, 67, 91.</p>
+<p class="dv-idx">Scott's Continuation of Milner's Church History, I. 52, 67, 91.</p>
 <p class="dv-idx">Scriptures, decree of the Council cf Trent respecting their use, II. 132; of Pope Leo XII. and Pope Pius VII. ibid.</p>
 <p class="dv-idx">Slave, Scriptural meaning of the term, II. 205.</p>
 <p class="dv-idx">Slavery, modern enormity of, II. 94; 219.</p>

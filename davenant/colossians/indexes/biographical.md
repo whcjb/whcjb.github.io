@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-10 09:53
+date: 2026-09-11 00:54
 subtitle: "of Fathers, Heresiarchs, Schoolmen, &c., appended by the Translator"
 prev_url: "/davenant/colossians/indexes/contents/"
 prev_label: "Contents of the Dissertation"
@@ -110,7 +110,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Huber üco …<span class="dv-idx-b">458</span></p>
 <p class="dv-idx">Hugo … 195</p>
 <p class="dv-idx-letter">I</p>
-<p class="dv-idx">Illyricus Flacius T 2t</p>
+<p class="dv-idx">Illyricus Flacius T …</p>
 <p class="dv-idx">Trenzeus … 256</p>
 <p class="dv-idx">Isidore … 20</p>
 <p class="dv-idx-letter">J</p>

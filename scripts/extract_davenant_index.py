@@ -35,6 +35,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import davenant_witness as W                       # noqa: E402
 import extract_davenant as E                       # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -301,7 +302,13 @@ def classify(pc, pages):
         for l in g:
             t, x0 = strip_specks(l)
             l = dict(l, x0=x0)
-            t = E.clean(t)
+            # 索引这一路原先完全没走证人校勘，`1s`→is、`5e`→be、`7n`→in
+            # 这些错一处没修。上一版只挂了 digit_repair，结果把经文索引的
+            # 节号 `XXII. 2i,`（原书 21）按「换出来是罗马数字就采信」改成了
+            # `ii`——索引里数字与罗马数字混排，那条字形规则在这里正好是反的。
+            # 现在走完整的 fix_line：证人一致优先于字形规则，`2i` 有两个
+            # 证人都读作 `21`，不必再猜。对不上行时 fix_line 原样返回。
+            t = E.clean(W.fix_line(2, p, t, strict=True)[0])
             if not t:
                 continue
             # ⚠️ 居中的短行先认字母分隔，再走垃圾过滤。JUNK_RE 里

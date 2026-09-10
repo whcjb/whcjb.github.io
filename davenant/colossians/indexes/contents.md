@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-10 09:53
+date: 2026-09-11 00:54
 subtitle: "on the extent of the death of Christ"
 prev_url: "/davenant/colossians/indexes/questions/"
 prev_label: "Index of Questions"
@@ -38,6 +38,6 @@ next_label: "Index to the Biographical Sketches"
 <p class="dv-idx-2">Protestant Authorities ooc occ oc oc 547</p>
 <p class="dv-idx-2">Conclusion ... cos oc Doc ooc -— 556</p>
 <p class="dv-idx-2">TRACT ON THE GALLICAN CONTROVERSY.</p>
-<p class="dv-idx">APPEAL of the Frencn DivinEs on the Controversy in the Re-</p>
+<p class="dv-idx">APPEAL of the French DivinEs on the Controversy in the Re-</p>
 <p class="dv-idx-2">formed Gallican Church we ese eee - 561</p>
-<p class="dv-idx">RrPLx of Bisuope DAVENANT ee - ae see 563</p>
+<p class="dv-idx">Reply of Bishop DAVENANT ee - ae see 563</p>

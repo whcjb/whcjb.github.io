@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-10 09:53
+date: 2026-09-11 00:54
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -14,9 +14,9 @@ next_label: "Errata"
 ---
 
 <p class="dv-idx-lead">经文索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
-<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, io this Index are included a few texts discussed in the Diseertation on the Death of Christ.]</p>
+<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, in this Index are included a few texts discussed in the Diseertation on the Death of Christ.]</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
-<p class="dv-idx">Gen. l. 1, 7n the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
+<p class="dv-idx">Gen. l. 1, in the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
 <p class="dv-idx-2">I. 27, So God created man in his own image II. 88</p>
 <p class="dv-idx-2">II. 2, God rested from all his works IE LL 205 24, Therefore shall a man leave his father and his mother and shall cleave unto his wife T" esoece II. 172</p>
 <p class="dv-idx-2">Ill. 15, It shall bruise thy head, and thou - I. 159 bruise his heel « eL &amp;Il. 523</p>
@@ -47,7 +47,7 @@ next_label: "Errata"
 <p class="dv-idx-2">LIX. 2, Your iniquities have separated between you and your God T I. 250,451</p>
 <p class="dv-idx">Jer. IX. 25, Behold, the days come that I will punish all them that are circumcised with the uncircumcised ud ecce 452</p>
 <p class="dv-idx-2">XXXIII. 8, 7 will cleanse them from all their sins, and pardon all their iniquities 458</p>
-<p class="dv-idx">Ezek. XXXIII. 2, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live ünencc II. 432</p>
+<p class="dv-idx">Ezek. XXXIII. 2, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live οι II. 432</p>
 <p class="dv-idx">Lament. V. 2, Zurn thou us, and we shall be turned I. 453</p>
 <p class="dv-idx-caption">VOL. PAGE,</p>
 <p class="dv-idx">Hosea I. 2, Go take unto thee a wife of whoredoms, . &amp;c. eroe occooc E 42</p>
@@ -60,7 +60,7 @@ next_label: "Errata"
 <p class="dv-idx-2">XIII. 4, The righteous shall shine forth as the sun d cue Tes 26</p>
 <p class="dv-idx-2">XV. 17, Do ye not yet understand, that whatsoever entereth in at the mouth, goeth into the belly, &amp;c. TIT TS 525</p>
 <p class="dv-idx-2">XVI. 19, Whatsoever thou shalt loose on earth, Shall be loosed in heaven TEE 286</p>
-<p class="dv-idx-2">XXII. 14, Many arecalled but few chosen .... 218</p>
+<p class="dv-idx-2">XXII. 14, Many are called but few chosen .... 218</p>
 <p class="dv-idx-2">XXIV. 45, Who then is that faithful and wise steward, &amp;c. "gm » 106</p>
 <p class="dv-idx-2">XXVI. 52, All they that take the sword shall perish with the sword - IL. 118</p>
 <p class="dv-idx">Luke I, 28, Mary full of grace "T T d 2:89</p>
@@ -83,7 +83,7 @@ next_label: "Errata"
 <p class="dv-idx-2">XV. 10, Why tempt ye God to put a yoke upon the disciples which neither we nor our fathers were able to bear . ae I. 402 20, They should abstain from pollutions of idols, and from fornication, and from things strangled, &amp;c. T IT. 41</p>
 <p class="dv-idx-2">AVII. 28, In him we live, and move, and have our being T T P" 205</p>
 <p class="dv-idx">Rom. I. 10, That which may be known of God is manifest in them, &amp;c. xx 393</p>
-<p class="dv-idx-2">V.8, God commendeth his love toward us, &amp;c. 236, 242 19, By the obedience of one shall many 5e made righteous Eoo: IT, 341 20, The law entered that sin might abound l. 385</p>
+<p class="dv-idx-2">V.8, God commendeth his love toward us, &amp;c. 236, 242 19, By the obedience of one shall many be made righteous Eoo: IT, 341 20, The law entered that sin might abound l. 385</p>
 <p class="dv-idx-2">VI. 12, Let not sin reign in your mortal body, &amp;c. JT I IT. 32</p>
 <p class="dv-idx-2">VII. 19, The good that I would I do not, &amp;c. I. 126,953</p>
 <p class="dv-idx-2">VIII. 24, We are saved by hope ettet bil 25, If we hope for that we see not, then do we with patience wait for it — .... 78 37, In all these things we are more than conquerors cece eens 135</p>
@@ -107,7 +107,7 @@ next_label: "Errata"
 <p class="dv-idx">Ephes. I. 4, 5, He hath chosen us in him er 211 the foundation of the world — .. $ &amp; If. 458,517 17, That the Father of glory may give unto you the Spirit of wisdom and revelation in the knowledge of him bon i. 87</p>
 <p class="dv-idx-2">Ii. 2, Wherein in time past ye walked according to the prince of this world "C i. 156 5, By grace are ye saved T" DO</p>
 <p class="dv-idx-2">IV. 1, I pray that ye walk worthy of the vocation, &amp;c. Dodoo --—. 123 7, To every one of you is given grace according to the measure of the gift of Christ 116 29, That it may minister grace unto the hearers : m ts iig 142</p>
-<p class="dv-idx-2">V. 25, Husbands lave your wives, as Christ also loved the Church, and gave himself for it ae er 159</p>
+<p class="dv-idx-2">V. 25, Husbands love your wives, as Christ also loved the Church, and gave himself for it ae er 159</p>
 <p class="dv-idx">Phil. I. 27, Let your conversation be as it becometh the Gospel of Christ — . T I. 123</p>
 <p class="dv-idx-2">II. 7, 8, He humbled himself and became obedient unto death, &amp;c. T II. 341 12, Work out your salvation with fear and trembling ae NN. I. 45</p>
 <p class="dv-idx-2">III. 18, Many walk of whom I have told you often and tell you now even weeping, that they are the enemies of the cross of Christ eae TT 476 2], Who shall change our vile body, &amp;c. If. 22</p>

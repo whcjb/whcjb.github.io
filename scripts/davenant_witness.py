@@ -173,7 +173,7 @@ def apos_repair(tok, other, oseg):
 # 换法按字形出，不是随便试 26 个字母：`1s` 若允许全字母替换，`as`/`is`/`us`
 # 在本书里都常见，唯一性判据当场失效。
 DIGIT_GLYPH = {'0': 'oO', '1': 'ilt', '2': 'iz', '3': 'e', '4': 'a',
-               '5': 's', '6': 'b', '7': 'ti', '8': 'b', '9': 'gq'}
+               '5': 'sb', '6': 'b', '7': 'ti', '8': 'b', '9': 'gq'}
 DIGIT_IN_WORD = re.compile(r'^([a-z]{0,4})([0-9])([a-z]{1,4})([.,;:!?]?)$')
 
 
@@ -290,6 +290,186 @@ def page_tokens(vol, page):
     return _ptoks[key]
 
 
+# ── 第三证人：600 dpi + 中值滤波 + --psm 4 重扫（scripts/ocr_davenant_w3.py）─
+# 前两份都是 tesseract 出的，重叠的那部分错两两相校无解——`have xot seen my
+# face, Kc.` 就是标本：我们读 `xot` / `Kc.`，IA 读 `iiot` / `&,c.`。
+# 换一套预处理与参数再读一遍，重叠面才断得开。
+_w3 = {}
+_w3tok = {}
+
+
+def w3_lines(vol, page):
+    if vol not in _w3:
+        f = RAW / f'vol{vol}_w3.jsonl'
+        _w3[vol] = {}
+        if f.exists():
+            for ln in f.open(encoding='utf-8'):
+                r = json.loads(ln)
+                _w3[vol][r['page']] = [re.sub(r'\s+', ' ', x).strip()
+                                       for x in r['text'].splitlines() if x.strip()]
+    return _w3[vol].get(page, [])
+
+
+def w3_tokens(vol, page):
+    key = (vol, page)
+    if key not in _w3tok:
+        _w3tok[key] = ' '.join(w3_lines(vol, page)).split()
+    return _w3tok[key]
+
+
+def _match(cands, toks, pt):
+    """best_match 的公用体：先按行找最像的，退不到就在整页 token 串里截。"""
+    if not cands:
+        return None
+    key = ' '.join(_norm(w) for w in toks)
+    best = max(cands, key=lambda c: difflib.SequenceMatcher(
+        None, key, ' '.join(_norm(w) for w in c.split())).ratio())
+    r = difflib.SequenceMatcher(None, key, ' '.join(
+        _norm(w) for w in best.split())).ratio()
+    if r >= 0.55:
+        return best.split()
+    sm = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
+                                 [_norm(w) for w in pt], autojunk=False)
+    blocks = [b for b in sm.get_matching_blocks() if b.size]
+    if not blocks or sum(b.size for b in blocks) < len(toks) * 0.6:
+        return None
+    lo = max(0, blocks[0].b - blocks[0].a)
+    hi = min(len(pt), blocks[-1].b + blocks[-1].size + (len(toks) - blocks[-1].a))
+    return pt[lo:hi]
+
+
+def best_match3(vol, page, toks):
+    return _match(w3_lines(vol, page), toks, w3_tokens(vol, page))
+
+
+# ── 希腊文那一路（scripts/ocr_davenant_grc.py）────────────────────────────────
+# 原书的希腊活字，主 OCR 用 eng+lat 读出来是拉丁乱码
+# （`Tw wpoceuxn wpooxaprspeire` = Τῇ προσευχῇ προσκαρτερεῖτε），
+# IA 那层同样是英文模型，两个证人一起花，三方相校救不了。
+# 单跑一遍 `grc+eng` 取希腊字母那部分；英文照旧用主 OCR 的结果——
+# grc 进主 OCR 会把小型大写页眉 `Ver. 3.` 读成 `Ρεν, 8.`（实测）。
+GREEK_RE = re.compile(r'[\u0370-\u03ff\u1f00-\u1fff]')
+_grc = {}
+_grctok = {}
+
+
+def grc_lines(vol, page):
+    if vol not in _grc:
+        f = RAW / f'vol{vol}_grc.jsonl'
+        _grc[vol] = {}
+        if f.exists():
+            for ln in f.open(encoding='utf-8'):
+                r = json.loads(ln)
+                _grc[vol][r['page']] = [re.sub(r'\s+', ' ', x).strip()
+                                        for x in r['text'].splitlines() if x.strip()]
+    return _grc[vol].get(page, [])
+
+
+def grc_tokens(vol, page):
+    key = (vol, page)
+    if key not in _grctok:
+        _grctok[key] = ' '.join(grc_lines(vol, page)).split()
+    return _grctok[key]
+
+
+def best_match_grc(vol, page, toks):
+    return _match(grc_lines(vol, page), toks, grc_tokens(vol, page))
+
+
+def _greekish(s):
+    """希腊字母占到一半以上的 token 才算希腊词——grc 模型读英文时也会
+    零星吐出一两个希腊字母，只判「含希腊字母」会把英文词一起换掉。"""
+    letters = [c for c in s if c.isalpha()]
+    return bool(letters) and sum(1 for c in letters if GREEK_RE.match(c)) >= \
+        max(2, len(letters) * 0.5)
+
+
+def grc_pass(toks, greek):
+    """整段替换希腊文。→ (新 token 串, [(原, 新, 理由)])
+
+    两条路，都不去猜块内的一一对应：
+
+    · **块内两边 token 数相同**：一对一是可靠的，只换其中确实是希腊词的那些
+      （`'Tw wpoceuxn wpooxaprspeire.]` 对面是 `Tu apocevxn τπροσκαρτερεῖτε)`，
+      只有第三个是希腊词，就只换第三个）
+    · **token 数不同**：整块一起换，且要求对方**每一个**都是希腊词。逐词凑
+      会错位——实测 `uel meds ToUs` 被凑成 `πρὸς τούς αλλους` 的错位版。
+
+    ⚠️ 这一趟必须排在英文那几条规则**之后**。grc 模型读英文页时也会吐希腊
+    字母：`xot`（原词 not）对面读出来是 `κοΐ`，先跑希腊文就把一个英文错字
+    变成了希腊词（实测）。放在后面，`xot` 已经被三方词频裁判改回 `not`，
+    是本书的词，这里就不会再碰它。
+    """
+    if not greek:
+        return toks, []
+    ops = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
+                                  [_norm(w) for w in greek]).get_opcodes()
+    out, log = [], []
+    for tag, a1, a2, b1, b2 in ops:
+        mine, theirs = toks[a1:a2], greek[b1:b2]
+        if tag != 'replace' or not mine or not theirs:
+            out.extend(mine)
+            continue
+        if len(mine) == len(theirs):
+            for w, g in zip(mine, theirs):
+                if (not _bookword(w) and _letters(w) >= 2 and _greekish(g)
+                        and max(_letters(w), _letters(g)) >= 4):
+                    got = _keep_punct(w, w, g)
+                    out.append(got)
+                    log.append((w, got, '希腊文'))
+                else:
+                    out.append(w)
+            continue
+        if all(_letters(w) >= 2 and not _bookword(w) for w in mine) \
+                and any(_letters(w) >= 3 for w in mine) \
+                and all(_greekish(x) for x in theirs):
+            got = _keep_punct(mine[0], mine[-1], *theirs)
+            if got:
+                out.append(got)
+                log.append((' '.join(mine), got, '希腊文'))
+                continue
+        out.extend(mine)
+    return out, log
+
+
+def _keep_punct(first, last, *greek):
+    """标点以**我方**为准，且只留结构性的那几个。
+
+    `»páros` 的 `»` 是读花的字形不是标点；lemma 的收尾 `]` 被 grc 读成
+    `)`，照抄过去 LEMMA_RE 就认不出这一条被注释的词句（实测）。
+    """
+    # 只留希腊字母、附加符号与词内的省字符。grc 那一遍偶尔把括号读进词里
+    # （`πιϑανολογια.)]Ὶ`），只剥两端剥不掉词当中的那几个，落到产物里就成了
+    # `ev πιϑανολογια.)]Ὶ.]`，LEMMA_RE 前缀里含 `]` 直接认不出，整条 lemma
+    # 塌成正文（实测 1 条）。希腊词里本来就不该有拉丁字母和括号。
+    core = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff\u0300-\u036f\s'
+                  r'\u2019\u1fbd\u1ffe\'`]', '', ' '.join(greek))
+    core = re.sub(r'\s+', ' ', core).strip()
+    if not core:
+        return ''
+    # 标点按**黑名单**筛，不用白名单：白名单一收紧就把 lemma 的收尾
+    # `|`（`]` 的 OCR 变体）和脚注符 `*` 一起丢了，那一条 lemma 整个塌成
+    # 正文（实测 3 条）。真正要去掉的只有读花的字形那几个。
+    junk = '\u00bb\u00ab\u00a2\u00a7~^\\`'
+    head = ''.join(c for c in re.match(r'^\W*', first, re.U).group(0)
+                   if c not in junk)
+    tail = ''.join(c for c in re.search(r'\W*$', last, re.U).group(0)
+                   if c not in junk)
+    return head + core + tail
+
+
+def _letters(s):
+    return sum(1 for c in s if c.isalpha())
+
+
+def _greekish(s):
+    """希腊字母占到一半以上的 token 才算希腊词——grc 模型读英文时也会
+    零星吐出一两个希腊字母，只判「含希腊字母」会把英文词一起换掉。"""
+    letters = [c for c in s if c.isalpha()]
+    return bool(letters) and sum(1 for c in letters if GREEK_RE.match(c)) >= \
+        max(2, len(letters) * 0.5)
+
+
 def best_match(vol, page, toks):
     """→ 与我方这一行对齐的对方 token 串。
 
@@ -378,8 +558,272 @@ def _split_props(vol, page, text):
     return [(toks[i], two) for i, two in _pairs(toks, theirs, sm.get_opcodes())]
 
 
-def fix_line(vol, page, text):
-    """→ (改后的文本, [(原, 新, 理由), …])。判不了就原样返回。"""
+def _at(ops, theirs, i):
+    """→ (对方在第 i 位的 token, 我这一个 token 对上的对方整段)。"""
+    for tag, a1, a2, b1, b2 in ops:
+        if not (a1 <= i < a2):
+            continue
+        if tag == 'equal':
+            return theirs[b1 + (i - a1)], None
+        if tag == 'delete':
+            return None, None
+        if tag == 'replace':
+            seg, off = theirs[b1:b2], i - a1
+            return (seg[off] if off < len(seg) else None,
+                    list(seg) if a2 - a1 == 1 else None)
+        break
+    return '~', None
+
+
+def _norm2(s):
+    """归一但**保留数字**。索引与引经处的 token 本来就是数字与字母混排
+    （`2i` 该是 `21`），按 _norm 归一后只剩一个 `i`，任何形近判据都失效。"""
+    return re.sub(r'[^a-z0-9]', '', s.lower())
+
+
+def _plausible(w, cand, digits=False):
+    """两个 token 之间的形近守卫，几条证人规则共用。"""
+    f = _norm2 if digits else _norm
+    a, b = f(w), f(cand)
+    if len(a) < 2 or len(b) < 2 or len(b) < len(a) * 0.85:
+        return False                      # 变短 = 我方粘词、对方只对上半截
+    if not digits and re.search(r'[\d^\\~`]', cand):
+        return False                      # 对方自己就是乱码
+    d = sum(1 for _ in difflib.ndiff(a, b) if _[0] != ' ')
+    if len(a) <= 3 and len(b) <= 3:
+        return d <= 2                     # 短 token 用编辑距离，比率没意义
+    if difflib.SequenceMatcher(None, a, b).ratio() < 0.55:
+        return False
+    return d <= 4
+
+
+def consensus(w, other, other3):
+    """两个证人读到一处、且与我方不同 → 采信。排在确定性规则**之前**。
+
+    `XXII. 2i,`（经文索引，原书 21）就是被顺序坑的：digit_repair 先手，
+    按「换出来是罗马数字就采信」把 `2i` 改成了 `ii`；而第三证人与 grc 那
+    两遍都明明白白读作 `21`。有证人说话时，不该让字形规则去猜。
+    """
+    cands = [c for c in (other, other3) if isinstance(c, str) and c != '~']
+    if len(cands) != 2 or _norm2(cands[0]) != _norm2(cands[1]):
+        return None
+    got = cands[0]
+    if _norm2(got) == _norm2(w) or _bookword(w) and not re.search(r'\d', w):
+        return None
+    if not (_bookword(got) or re.fullmatch(r'[\d.,;:]+', got)):
+        return None
+    if not _plausible(w, got, digits=True):
+        return None
+    tail = re.search(r'[.,;:!?]*$', w).group(0)
+    if tail and not re.search(r'[.,;:!?]$', got):
+        got += tail
+    return got
+
+
+# `&c.` 是本书最常见的缩写（正文里 243 处），`&` 这个字形 OCR 读得五花八门：
+# `Kc.` `Sc.` `Xc.` `NC.`。它归一成字母只剩一个 `c`，长度守卫与词典判据
+# 全都够不着，得单列一条。判据是证人：对方读出 `&c.` 的形状就采信。
+ETC_MINE = re.compile(r'^[A-Za-z&][ce][.,]?$')
+ETC_THEIRS = re.compile(r'^&\W?[ce][.,]?$')
+
+
+def etc_repair(w, other, other3):
+    if not ETC_MINE.match(w) or w.startswith('&'):
+        return None
+    if any(isinstance(c, str) and ETC_THEIRS.match(c) for c in (other, other3)):
+        return '&c' + (w[-1] if w[-1] in '.,' else '.')
+    return None
+
+
+_INFL = None
+
+
+def inflected():
+    """DICT 的屈折形补集：系统词典（web2）是词头表，`winds` / `fills` /
+    `lists` / `terrors` / `pays` / `paved` / `Tithes` / `fishes` 一个都不收。
+
+    不补这一层，词频裁判会把这些**本来就对**的词"改正"掉——实测 56 处里
+    有 13 处是这么错的：`winds and storms`→minds、`he fills up`→wills、
+    `entered the lists`→lusts、`terrors of death`→errors、`paved the way`→saved、
+    `Tithes of new broken-up lands`→Titles。它们在本书里都只出现一两次，
+    「生僻」那道闸拦不住，只能靠词形本身认出来。
+    """
+    global _INFL
+    if _INFL is None:
+        _INFL = set()
+        for w in DICT:
+            if len(w) < 3:
+                continue
+            _INFL |= {w + 's', w + 'es', w + 'ed', w + 'd', w + 'ing',
+                      w + 'er', w + 'est'}
+            if w.endswith('y'):
+                _INFL |= {w[:-1] + 'ies', w[:-1] + 'ied'}
+            if w.endswith('e'):
+                _INFL |= {w[:-1] + 'ing', w + 'd'}
+    return _INFL
+
+
+# 圣经书卷缩写：本书引经处处都是 `Mich. iv. 3` `Kom. vi. 12` 这种写法。
+# 它们不在词典也不在语料常用词里，词频裁判会拿它们当错字改——实测把
+# `Mich.`（弥迦书）改成了 `Much.`。这是 memory 里 `Joh → Job` 那一条的
+# 同类，列表挡住，不靠上下文猜。
+BIBLE_ABBR = {
+    'gen', 'exod', 'exo', 'lev', 'num', 'deut', 'josh', 'judg', 'ruth',
+    'sam', 'kings', 'chron', 'ezra', 'neh', 'esth', 'job', 'ps', 'psal',
+    'psalm', 'prov', 'eccl', 'eccles', 'cant', 'isa', 'jer', 'lam', 'ezek',
+    'dan', 'hos', 'joel', 'amos', 'obad', 'jon', 'mic', 'mich', 'nah',
+    'hab', 'zeph', 'hag', 'zech', 'zach', 'mal', 'matt', 'mat', 'mark',
+    'luke', 'luk', 'john', 'joh', 'acts', 'rom', 'cor', 'gal', 'ephes',
+    'eph', 'phil', 'philip', 'col', 'coloss', 'thess', 'tim', 'tit',
+    'philem', 'heb', 'jam', 'jac', 'pet', 'jude', 'rev', 'apoc',
+    'wisd', 'ecclus', 'macc', 'tob', 'judith', 'baruch', 'esdr',
+}
+
+
+def _wordish(w):
+    """比 _bookword 再宽一档：加上词典词的屈折形。只给词频裁判当门槛用。"""
+    b = _norm(w)
+    return _bookword(w) or (len(b) >= 3 and b in inflected())
+
+
+def _inflection(a, b):
+    """两个词形只差在**末尾**（`frees`/`freed`、`attains`/`attain`）时判 True。
+
+    这不是 OCR 错，是单复数与时态的差别——词典缺屈折形，`attains` 查不到、
+    被当成"不是词"，词频裁判就把它改成 `attain`。实测这一路一口气把
+    frees→freed、overcomes→overcome、Scholastics→Scholastic、Saviour's→Saviour
+    等三十来处改坏。OCR 的错是**字形替换**，位置随机；末位单独一处不同的，
+    宁可不动。
+    """
+    if a == b:
+        return True
+    if abs(len(a) - len(b)) > 1:
+        return False
+    if len(a) == len(b):
+        return a[:-1] == b[:-1]           # 只差最后一个字母
+    lo, hi = (a, b) if len(a) < len(b) else (b, a)
+    return hi[:-1] == lo                  # 末尾多/少一个字母
+
+
+def trio_repair(w, prev, nxt, other, other3, edge=False):
+    """两份新旧证人都读花时的第三条路。
+
+    · **两个证人读到一处**（我方不是词、他俩是同一个词）：直接采信。
+      `tlie`→the、`stauds`→stands、`sius.`→sins. 都是这么来的。
+    · **三方各异**（`xot` / `iiot` / `iot`）：把三种读法各挪一个字母，
+      凑出本书的常见词做候选，再交给二元词频裁判——`have not seen` 在
+      本书里几十次，`have got/hot/lot seen` 一次也没有。裁判要求赢家
+      至少 4 倍于输家，判不出就不动。
+    """
+    # ⚠️ 门槛必须是 _bookword 而不是 _isword。系统词典（web2）是词头表，
+    # 复数与屈折形几乎都不收——`words` / `has` / `Apostles` / `sins` 查不到，
+    # 一律被判成「不是词」，于是词频裁判把它们改成了 works / was / Apostle /
+    # sons（实测这一条一口气改了 3425 处，全书最常见的词全被改坏）。
+    # 再加一道「本书生僻（≤2 次）」：真错字是稀疏的，常用词轮不到这条规则。
+    # 断词的半截（`princi-` / `ples`）天生不是词、天生生僻，两道门槛都拦不住，
+    # 词频裁判就把 `hea-`→`sea-`、`ples`→`plea`、`rity`→`city` 一路改了下去
+    # （实测 251 处里过半是这个）。断词由后面的 dehyph 拼回，这里不碰：
+    # 尾半截看 `-` 结尾，头半截看是不是**行首**那一个。
+    # ⚠️ 行尾**不能**一并排除——用户圈出来的 `have xot` 里，`xot` 正好是
+    # 行末最后一个 token，一刀切就把这个标本本身漏掉了。
+    bg, uni = corpus()
+    if edge or w.endswith('-'):
+        return None
+    # 通篇乱码的 token（多半是希腊文被 eng 模型读花：`9é£ao9e,`）不进这条。
+    # 归一化会把非字母全丢掉，剩下的三两个字母跟任何短词都"形近"，
+    # 于是 `9é£ao9e,` 被判成 `are,`（实测）。字母占比不到七成就不碰。
+    if len(_norm(w)) < 0.7 * len(w.strip('.,;:!?()[]"\u2018\u2019\u201c\u201d')):
+        return None
+    if _wordish(w) or not re.search(r'[A-Za-z]', w) or uni[_norm(w)] > 2:
+        return None
+    if w.endswith('.') and _norm(w) in BIBLE_ABBR:
+        return None
+    # 带撇号或连字符的 token 不进这条：`ome's` / `PAUI's` 的正解是 `one's`
+    # / `PAUL'S`，`haud-writing` 的正解是 `hand-writing`，而候选池是按
+    # 纯字母生成的，凑出来的只能是 `ones` / `Pauls` / `handwriting`——
+    # 把一个错换成另一个错。撇号那一路另有 apos_repair。
+    if "'" in w or '\u2019' in w or '-' in w.strip('-'):
+        return None
+    cands = [c for c in (other, other3) if isinstance(c, str) and c != '~']
+    if len(cands) == 2 and _norm(cands[0]) == _norm(cands[1]) \
+            and _bookword(cands[0]) and _norm(cands[0]) != _norm(w) \
+            and _plausible(w, cands[0]):
+        # 尾标点以**我方**为准：对方那一遍常把行末的冒号句号漏掉，
+        # 照抄过来就把 `augels:` 改成了 `angels`，标点没了（实测）
+        tail = re.search(r'[.,;:!?]*$', w).group(0)
+        got = cands[0]
+        if tail and not re.search(r'[.,;:!?]$', got):
+            got += tail
+        return got, '两证人一致'
+    pool = set()
+    for src in [w] + cands:
+        b = _norm(src)
+        if not 2 <= len(b) <= 14:
+            continue
+        for k in range(len(b)):
+            for ch in 'abcdefghijklmnopqrstuvwxyz':
+                pool.add(b[:k] + ch + b[k + 1:])          # 换一个字母
+            pool.add(b[:k] + b[k + 1:])                   # 删一个字母
+    # 词典缺屈折形，只认 DICT 会把 `Scriptnres.` 这种复数错字堵死；
+    # 放一条「本书里出现 ≥20 次」的通道补上，屈折翻转另有 _inflection 拦。
+    pool = {c for c in pool
+            if (c in DICT or c in inflected() or uni[c] >= 20) and uni[c] >= 8
+            and _plausible(w, c) and not _inflection(_norm(w), c)}
+    pool.discard(_norm(w))
+    if not pool:
+        return None
+    scored = sorted(((bg[(prev, c)] + bg[(c, nxt)], c) for c in pool),
+                    reverse=True)
+    if len(scored) == 1 or (scored[0][0] >= 8
+                            and scored[0][0] >= max(4 * scored[1][0], 8)):
+        best = scored[0]
+        if best[0] >= 8:
+            # 大小写与尾标点照原样带回
+            head = re.match(r'^\W*', w).group(0)
+            tail = re.search(r'\W*$', w).group(0)
+            cand = best[1].capitalize() if w[:1].isupper() else best[1]
+            return head + cand + tail, '三方各异·词频裁判'
+    return None
+
+
+# 确定性规则（字形回填，不依赖行对齐）与证人规则（依赖行对齐）在索引里
+# 风险完全不同：前者只在词内部换字形，后者会因为对齐滑到隔壁条目而整词换掉。
+DETERMINISTIC = {'词内数字', '数字位字形', '撇号', '&c.', '希腊文'}
+
+
+def _strict_ok(old, new, why=''):
+    """索引那一路的收窄闸：只放行「同一个词内部的字形错」。
+
+    索引的版面对不上行——两栏、点线引导、条目短——证人的行对齐会滑到
+    **隔壁条目**上去，于是整词被换掉：`Abelard …435` 被换成 `Bernard …435`、
+    页码 `304`→`354`、`66, 67`→`67, 67`（实测）。正文里这种滑动会被上下文
+    兜住，索引里没有上下文可兜。所以这里只认三条都成立的改动：
+    首字母不变、长度差 ≤1、且不是纯数字的 token。
+    """
+    if why in DETERMINISTIC:
+        # 字形回填照放（`1s`→is、`7n`→in），只有一条例外：换出来是**纯罗马
+        # 数字**的不要。索引里数字与罗马数字混排，`XXII. 2i,`（原书 21）
+        # 会被按「换出来是罗马数字就采信」改成 `ii`（实测）。
+        return not re.fullmatch(r'[ivxlcdm]+', _norm2(new))
+    if ' ' in new:
+        # 拆词照放（`in usein`→`in use in`、`asa`→`as a`、`toa`→`to a`），
+        # 但**罗马数字不拆**——`XXVIII.` 被拆成 `XXV III.`（实测），一拆就废。
+        if re.fullmatch(r'[ivxlcdm]+', _norm2(old)):
+            return False
+        return all(_bookword(x) or x.strip('.,;:') in ('a', 'I')
+                   for x in new.split())
+    a, b = _norm2(old), _norm2(new)
+    if not a or not b or a[0] != b[0] or abs(len(a) - len(b)) > 1:
+        return False
+    # 纯数字之间不许互改（页码 `304`→`354`、`66`→`67` 都是行对齐滑到隔壁
+    # 条目上去的）；但 `2i`→`21` 这种「字母位上本该是数字」要放行。
+    return not (a.isdigit() and b.isdigit())
+
+
+def fix_line(vol, page, text, strict=False):
+    """→ (改后的文本, [(原, 新, 理由), …])。判不了就原样返回。
+
+    strict=True 时只放行同词内部的字形错，见 _strict_ok（索引专用）。"""
     toks = text.split()
     if len(toks) < 2:
         return text, []
@@ -391,44 +835,52 @@ def fix_line(vol, page, text):
         # 对不上行（多半是两边都读花的希腊文音译）时，别的都不动，
         # 但孤立的 `|` `/` 照删——这两个字符在本书里从不合法出现，
         # 不需要第二证人也能断定是扫描斑点。
-        if not any(SPECK.match(t) for t in toks):
-            return text, []
-        keep = [t for t in toks if not SPECK.match(t)]
-        return ' '.join(keep), [(t, '', '斑点') for t in toks if SPECK.match(t)]
+        # ⚠️ 对不上行**不等于**什么都不能做。digit_repair / numeral_repair
+        # 这几条不依赖对方，靠的是字形表加本书语料；早退一挡，`1s` `5e` `1i`
+        # 这些在对不上的行里一处也修不成（索引那一路整段整段对不上，实测
+        # 残留十来处）。只把依赖对方的那几条跳过。
+        out, log = [], []
+        for w in toks:
+            f = digit_repair(w) or numeral_repair(vol, page, w, None)
+            if f and (not strict or _strict_ok(w, f, '词内数字')):
+                out.append(f)
+                log.append((w, f, '词内数字'))
+            elif SPECK.match(w):
+                log.append((w, '', '斑点'))
+            else:
+                out.append(w)
+        toks, glog = grc_pass(out, best_match_grc(vol, page, out))
+        log += glog
+        return (' '.join(toks), log) if log else (text, [])
 
     sm = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
                                  [_norm(w) for w in theirs])
     ops = sm.get_opcodes()
     pair2 = dict(_pairs(toks, theirs, ops))
+    third = best_match3(vol, page, toks)
+    ops3 = difflib.SequenceMatcher(
+        None, [_norm(w) for w in toks],
+        [_norm(w) for w in third]).get_opcodes() if third else None
     out, log = list(toks), []
     for i, w in enumerate(toks):
-        # 对方在这一位是什么
-        other, oseg = '~', None           # '~' = 对方那里空着
-        for tag, a1, a2, b1, b2 in ops:
-            if not (a1 <= i < a2):
-                continue
-            if tag == 'equal':
-                other = theirs[b1 + (i - a1)]
-            elif tag == 'delete':
-                other = None
-            elif tag == 'replace':
-                seg, off = theirs[b1:b2], i - a1
-                other = seg[off] if off < len(seg) else None
-                # 我这一个 token 对上对方一整段时，整段也留下来：
-                # `righ'eousness` 对面是 `right` + `eousness` 两个 token，
-                # 只看 seg[0] 什么也判不出，拼起来才看得见那个 `t`
-                if a2 - a1 == 1:
-                    oseg = list(seg)
-            break
+        other, oseg = _at(ops, theirs, i)
+        other3 = _at(ops3, third, i)[0] if ops3 else None
         # 我方把两个词读粘了：对方那边把它排成**两个** token，直接采信。
         # 这是证据不是猜——`asa memorial` 对面是 `as a memorial`。
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
-        fix = (apos_repair(w, other, oseg) or digit_repair(w)
-               or numeral_repair(vol, page, w, other))
-        if fix:
-            out[i] = fix
-            log.append((w, fix, '撇号'))
+        for _why, _fix in (('两证人一致', consensus(w, other, other3)),
+                           ('撇号', apos_repair(w, other, oseg)),
+                           ('词内数字', digit_repair(w)),
+                           ('数字位字形', numeral_repair(vol, page, w, other)),
+                           ('&c.', etc_repair(w, other, other3))):
+            if _fix:
+                out[i] = _fix
+                log.append((w, _fix, _why))
+                break
+        else:
+            _fix = None
+        if _fix:
             continue
         if not SPECK.match(w) and i in pair2 and w in splits():
             out[i] = pair2[i]
@@ -481,6 +933,13 @@ def fix_line(vol, page, text):
                 log.append((w, other, '词频裁判'))
             continue
         if _isword(w) or not _isword(other):
+            trio = trio_repair(w, _norm(toks[i - 1]) if i else '',
+                               _norm(toks[i + 1]) if i + 1 < len(toks) else '',
+                               other, other3,
+                               edge=(i == 0))
+            if trio:
+                out[i], why = trio
+                log.append((w, out[i], why))
             continue
         a, b = _norm(w), _norm(other)
         if len(a) < 3 or len(b) < len(a) * 0.85:
@@ -493,9 +952,32 @@ def fix_line(vol, page, text):
             continue                      # 编辑距离 >2
         out[i] = other
         log.append((w, other, '第二证人'))
+    if strict:
+        log2 = []
+        for i, (o, n) in enumerate(zip(toks, out)):
+            if n is None or n == o:
+                continue
+            why = next((w for oo, nn, w in log if oo == o and nn == n), '')
+            if _strict_ok(o, n, why):
+                log2.append((o, n, why))
+                continue
+            # 被证人规则挡下来的，再给确定性规则一次机会：同一处改动常常
+            # 两条规则都能给出（`1s`→is 既是「两证人一致」也是「词内数字」），
+            # 证人那一路在索引里不可靠，字形那一路可靠。
+            alt = digit_repair(o) or numeral_repair(vol, page, o, None)
+            if alt and _strict_ok(o, alt, '词内数字'):
+                out[i] = alt
+                log2.append((o, alt, '词内数字'))
+            else:
+                out[i] = o
+        log = log2
+    out, glog = grc_pass([x for x in out if x is not None],
+                         best_match_grc(vol, page, [x for x in out
+                                                    if x is not None]))
+    log += glog
     if not log:
         return text, []
-    return ' '.join(x for x in out if x is not None), log
+    return ' '.join(out), log
 
 
 SPLIT_TABLE = RAW / 'split_votes.json'
