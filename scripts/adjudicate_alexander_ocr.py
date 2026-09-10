@@ -40,6 +40,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import alexander_lexicon
 from alexander_lexicon import build, is_word
 from repair_alexander_ocr import _apply_once as glyph_step
 
@@ -449,6 +450,13 @@ def main():
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--only', help='只跑某几篇，逗号分隔')
     args = ap.parse_args()
+
+    # 判词典的补充词表加载不到会**静默降级**：is_word 把一大批本来正确的
+    # 19 世纪拼法与专名当成可疑 token，判读器于是凭空多出几百条「修复」。
+    # 这种失败没有任何症状，只有对着日志逐条看才发现，必须让它直接停下。
+    if not alexander_lexicon.EXTRA.exists():
+        sys.exit(f'补充词表缺失：{alexander_lexicon.EXTRA}\n'
+                 '判词闸会失准，判读结果不可用。先确认 alexander_lexicon.EXTRA 的路径。')
 
     lex = build()
     bvocab = book_vocab(lex)
