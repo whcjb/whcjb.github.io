@@ -429,6 +429,25 @@ OCR_PLUS_SPECK = re.compile(r'^\s*\+\s+(?=[a-z])')
 OCR_PLUS_TAIL = re.compile(r'\s\+\s*$')
 
 
+# 段首编号的两种误读：数字 1 被读成小写 l（90 处），编号后的句点被读成
+# 逗号（38 处）。两者都核过扫描原页（vol1 p434 的 `1.` 与 `2.`，600 dpi
+# 放大看得很清楚：`1` 带衬线底座与旗，`2` 后面那点坐在基线上是句点不是逗号）。
+# 危害不止是难看：
+#   · 编号不成 `\d+\.` 的样子，enum_lead 认不出来，整段就没有 .dv-enum 样式，
+#     同一组编号里第 1、2 条与第 3 条长得不一样；
+#   · `l.` 会把第二证人的对齐顶歪——`1.` 归一后是空串，`l.` 归一后是 `l`，
+#     于是 `l. Itis` 与对方的 `1. It is` 变成 2→3 的替换，粘连词配不上
+#     （`Itis` 明明在采信表里却没被拆，实测）。
+# 所以这一步必须排在 fix_line 之前。
+ENUM_L = re.compile(r'^l\.(\s+)(?=[A-Z])')
+ENUM_COMMA = re.compile(r'^(\d{1,2}),(\s+)(?=[A-Z])')
+
+
+def fix_enum_head(t):
+    t = ENUM_L.sub(r'1.\1', t)
+    return ENUM_COMMA.sub(r'\1.\2', t)
+
+
 def clean(t):
     """行内噪声：孤立标点、`/`→`l`、`**`→`“`、行首斑点 `+`。"""
     t = OCR_PLUS_SPECK.sub('', t)
@@ -486,7 +505,8 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             # scripts/davenant_witness.py）。两遍都是 tesseract，但版本、
             # 预处理、切页都不同，错处基本不重叠。只在「我方非词、对方是词、
             # 形近且不变短」时采信，孤立的 `|` `/` 另按斑点规则处理。
-            txt = clean(W.fix_line(vol, p, l['text'])[0])
+            raw = fix_enum_head(l['text']) if is_start else l['text']
+            txt = clean(W.fix_line(vol, p, raw)[0])
             if not txt:
                 continue
             if is_start and cur:

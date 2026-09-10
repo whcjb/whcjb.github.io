@@ -364,7 +364,8 @@ def run_piece(pc, pages, out, stats):
         indent = page_indent(body)
         roles = shape(body)
         for l, is_start, role in zip(body, para_starts(body, indent), roles):
-            t = E.clean(W.fix_line(VOL, p, l['text'])[0])
+            raw = E.fix_enum_head(l['text']) if is_start else l['text']
+            t = E.clean(W.fix_line(VOL, p, raw)[0])
             if not t:
                 continue
             if role in ('verse', 'cite') and not pend_title:
@@ -419,7 +420,8 @@ def run_piece(pc, pages, out, stats):
         indent = page_indent(fn)
         cur_fn = ''
         for l, is_start in zip(fn, para_starts(fn, indent)):
-            t = E.clean(W.fix_line(VOL, p, l['text'])[0])
+            raw = E.fix_enum_head(l['text']) if is_start else l['text']
+            t = E.clean(W.fix_line(VOL, p, raw)[0])
             if not t:
                 continue
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
