@@ -139,7 +139,11 @@ layout: default
 /* ── 脚注 ───────────────────────────────────────────────────────── */
 .dv-content .footnotes { margin-top: 36px; padding-top: 14px;
   border-top: 1px solid var(--dv-rule); font-size: 13.5px; color: #55554c; }
-.dv-content .footnotes ol { padding-left: 1.4em; }
+/* 序号要留够位置。`.footnotes` 上有 content-visibility:auto，它带 paint
+   containment——`<li>` 的序号排在 ol 内容盒之外的话会被**直接裁掉**，
+   页面上就是 `68.` 只剩半个 `8`（用户实测）。1.4em ≈ 19px 只够一位数，
+   本卷第一章有 173 条注，三位数的 `173.` 要 29px。留到 3em。 */
+.dv-content .footnotes ol { padding-left: 3em; }
 .dv-content .footnotes li { margin-bottom: 8px; }
 .dv-fn-page { color: #9a9a8c; font-size: 11.5px; }
 .dv-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
