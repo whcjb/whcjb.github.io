@@ -9,9 +9,14 @@ import re
 from pathlib import Path
 
 WEB2 = ['/usr/share/dict/web2', '/usr/share/dict/web2a', '/usr/share/dict/words']
-EXTRA = Path(__file__).resolve().parent.parent / 'alexander_raw/psalms/lexicon_extra.txt'
+# 各书共用一张补充词表：判词典只回答「这是不是真词」，与书无关。
+EXTRA = Path(__file__).resolve().parent.parent / 'alexander_raw/lexicon_extra.txt'
 
-ROMAN = re.compile(r'^[ivxlcdm]+$', re.I)
+# 必须是**合法的**罗马数字，不能只是「全由 ivxlcdm 组成」。
+# 后者会把 ivill / ivas / mill 这类词也判成罗马数字放行，
+# `ivill`（其实是 will）因此永远修不掉——判词典自己先把它当成合法词了。
+ROMAN = re.compile(
+    r'^m{0,4}(cm|cd|d?c{0,3})(xc|xl|l?x{0,3})(ix|iv|v?i{0,3})$', re.I)
 
 
 def _inflect(w):
@@ -61,7 +66,7 @@ def is_word(tok, lex):
     t = tok.strip("'’.,;:!?()[]").lower()
     if not t:
         return True
-    if ROMAN.match(t):
+    if len(t) <= 8 and ROMAN.fullmatch(t):
         return True
     if t in lex:
         return True

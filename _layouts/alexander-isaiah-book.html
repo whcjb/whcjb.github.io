@@ -1,0 +1,131 @@
+---
+layout: default
+---
+{%- comment -%}
+  亚历山大《以赛亚书注释》书卷目录页。
+
+  ⚠️ 不与 alexander-book.html（诗篇那页）共用：两本书的前置件、分组方式、
+  版本说明都不一样，共用会让改一处连带动到另一本（每本书独立样式）。
+  配色仍取同一支石榴石 #7d2f2f——那是**注释家的身份色**，一人一色，
+  与「每本书独立样式」不冲突。
+
+  分组按**原书的两卷**：1–39 出自 1846 年的 The Earlier Prophecies，
+  40–66 出自 1847 年的 The Later Prophecies。这不是为了排版方便切的，
+  两卷各有自己的序与导论，后一卷的导论专门处理后二十七章的真伪之争。
+
+  前置件排在章号网格之前——与诗篇那页 2026-09-10 的调整保持一致。
+{%- endcomment -%}
+
+<div class="container alexander-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="ax-chrome" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
+        <span></span>
+      </div>
+
+      <h1 class="ax-title">{{ page.book_name }}</h1>
+      <div class="ax-sub">Joseph Addison Alexander · 1809–1860 · Princeton Theological Seminary</div>
+
+      <div class="ax-extra ax-extra-grid">
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/preface/">
+          <span class="ax-extra-cn">卷一·著者序</span>
+          <span class="ax-extra-en">Preface</span>
+        </a>
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/introduction/">
+          <span class="ax-extra-cn">卷一·导论</span>
+          <span class="ax-extra-en">Introduction</span>
+        </a>
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/later-preface/">
+          <span class="ax-extra-cn">卷二·著者序</span>
+          <span class="ax-extra-en">Preface</span>
+        </a>
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/later-introduction/">
+          <span class="ax-extra-cn">卷二·导论</span>
+          <span class="ax-extra-en">Introduction</span>
+        </a>
+      </div>
+
+      {% assign groups = "1,39,前部|40,66,后部" | split: "|" %}
+      {% for g in groups %}
+        {% assign gp = g | split: "," %}
+        {% assign lo = gp[0] | times: 1 %}
+        {% assign hi = gp[1] | times: 1 %}
+        <h2 class="ax-grp">{{ gp[2] }}
+          <span>Isaiah {{ lo }}–{{ hi }} ·
+            {% if lo == 1 %}The Earlier Prophecies, 1846{% else %}The Later Prophecies, 1847{% endif %}</span>
+        </h2>
+        <div class="ax-ch-grid">
+          {% for i in (lo..hi) %}
+          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ i }}/">{{ i }}</a>
+          {% endfor %}
+        </div>
+      {% endfor %}
+
+      <div class="ax-blurb">
+        <p>约瑟·亚历山大（Joseph Addison Alexander）是普林斯顿神学院首任教授
+        阿奇博尔德·亚历山大的第三子，1834 年入神学院任查尔斯·贺智的助手，
+        1840 年接任贺智的东方与圣经文学讲席。这部以赛亚书注释是他的成名作，
+        分两卷出版：<em>The Earlier Prophecies of Isaiah</em>（1846，第 1–39 章）与
+        <em>The Later Prophecies of Isaiah</em>（1847，第 40–66 章），
+        纽约与伦敦 Wiley and Putnam 印行。</p>
+        <p>体例是逐章先给一段分析性的解题，交代全章的结构与分段，
+        再逐节给出自己对希伯来文的译文并随即辨析语法、词义与平行经文——
+        <em>正文中的斜体即他自己的译文</em>，原书不另设经文框。
+        他征引的对话者以当时的德国批判学界为主（Gesenius、Hitzig、Ewald、
+        Knobel、Hendewerk、Rosenmüller 等），逐条列出各家读法再作裁断，
+        这也是本书篇幅的主要来源。卷二的导论专门处理第 40–66 章的
+        <em>genuineness</em>（真伪）之争。</p>
+        <p class="ax-caveat">本站所据为多伦多 Knox College（Caven Library）藏本的
+        Internet Archive 扫描件，经 ABBYY OCR 与结构化处理；斜体依 OCR 的字形
+        信息还原。节号形如 <span class="ax-vnum">V. 7.</span>，与英文圣经的编号一致。
+        原书在第 2–4 章、13–14 章、15–16 章前另有合并的解题，本站把它们放在
+        该组第一章的开头。全书<strong>尚无中译</strong>。</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.alexander-wrap {
+  --ax-ink: #7d2f2f;
+  --ax-ink-dark: #5f2323;
+  --ax-rule: #e2d2cc;
+  --ax-paper: #fdfaf7;
+}
+.ax-chrome { font-size: 13px; display: flex; justify-content: space-between; }
+.ax-chrome a { color: var(--ax-ink); }
+.ax-title { font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: bold; color: var(--ax-ink-dark); margin: 0 0 6px;
+  padding-bottom: 10px; border-bottom: 2px solid var(--ax-ink); }
+.ax-sub { font-family: Georgia, serif; font-style: italic; font-size: 13px;
+  color: #9a8a86; margin-bottom: 22px; }
+.ax-blurb { font-size: 15px; line-height: 1.95; color: #3d3532; margin: 32px 0 0; }
+.ax-blurb p { margin: 0 0 12px; }
+.ax-caveat { font-size: 13.5px; color: #6d605c; background: #faf3f1;
+  border-left: 3px solid var(--ax-rule); padding: 12px 15px; }
+.ax-vnum { font-weight: bold; color: var(--ax-ink); }
+
+.ax-grp { font-family: Georgia, serif; font-size: 16px; color: var(--ax-ink-dark);
+  margin: 26px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--ax-rule); }
+.ax-grp span { font-style: italic; font-size: 13px; color: #a8938e; margin-left: 8px; }
+.ax-ch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr));
+  gap: 7px; }
+.ax-ch { display: flex; align-items: center; justify-content: center;
+  min-height: 40px; font-family: Georgia, serif; font-size: 15px;
+  color: var(--ax-ink); background: #fdfaf7; border: 1px solid var(--ax-rule);
+  border-radius: 3px; text-decoration: none !important; }
+.ax-ch:hover { background: var(--ax-ink); color: #fff !important; border-color: var(--ax-ink); }
+
+/* 四件前置件排成网格：竖着堆四行会把章号网格挤到首屏之外 */
+.ax-extra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 8px; margin-bottom: 6px; }
+.ax-extra-grid a { display: flex; align-items: baseline; gap: 8px;
+  padding: 10px 14px; border: 1px solid var(--ax-rule); border-radius: 3px;
+  text-decoration: none !important; }
+.ax-extra-grid a:hover { background: #faf3f1; }
+.ax-extra-cn { color: var(--ax-ink-dark); font-size: 14.5px; }
+.ax-extra-en { color: #a8938e; font-family: Georgia, serif; font-style: italic; font-size: 12.5px; }
+</style>

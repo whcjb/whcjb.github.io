@@ -24,8 +24,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from alexander_lexicon import build, is_word
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / 'alexander_raw/psalms/en_chapters'
-LOG = ROOT / 'logs/alexander_ocr_repair.tsv'
 
 LIT_STAR = ''      # extract 留下的「字面星号待判」哨兵
 
@@ -43,12 +41,16 @@ RULES = [
     ('xv', 'w'), ('xo', 'w'), ('lo', 'w'), ('to', 'w'),
     # r 被读成 i 加撇
     ("i'", 'r'), ('fir', 'fr'), ('fi\"', 'ff'),
+    # 字母被读成数字：19 世纪铅字的 n/e/o/l 常被读成 7i / 6 / 0 / 1
+    ('7i', 'n'), ('7z', 'n'), ('7l', 'n'), ('7', 'n'), ('2i', 'u'),
+    ('6', 'e'), ('6', 'o'), ('0', 'o'), ('1', 'l'), ('1', 'i'), ('5', 's'),
+    ('8', 'b'), ('9', 'g'), ('4', 'a'),
     # 字面星号：多半是 `r`（fi*om→from、ai*e→are、figui*e→figure），
     # 也可能纯属噪点。两种都试，落不进词典就不动。
     ('i' + LIT_STAR, 'r'), (LIT_STAR, 'r'), (LIT_STAR, ''), (LIT_STAR, 'c'),
     # wi / wn / un 整组串位
     ('vn', 'wi'), ('un', 'wi'), ('vm', 'wn'), ('im', 'un'), ('nn', 'rm'),
-    ('h', 'b'), ('ji', 'h'), ('vp', 'up'),
+    ('h', 'b'), ('ji', 'h'), ('vp', 'up'), ('j', 'f'),
 ]
 
 # 只在词首生效的规则。词首的 w 常被整个读成一个 u/v/n（"will" → "uill"），
@@ -56,7 +58,7 @@ RULES = [
 HEAD_RULES = [('u', 'w'), ('v', 'w'), ('n', 'w'), ('U', 'W')]
 
 # 规则抓不到的真词错误。每条都对着 1850 三卷本核过。
-REAL_WORD_FIX = {
+PSALMS_REAL_WORD = {
     'modem': 'modern',
     'bom': 'born',
     'tum': 'turn',
@@ -70,7 +72,7 @@ REAL_WORD_FIX = {
 
 # 语料自证闸（见 corpus_vocab）会连带否掉一批**确实正确**的低频修复——
 # 目标词全书只出现这一次，自然没有旁证。逐条看过上下文确认后放行。
-MANUAL_FIX = {
+PSALMS_MANUAL = {
     'hmbs': 'limbs', 'htigious': 'litigious', 'anghcan': 'Anglican',
     'accompuces': 'accomplices', 'accompushes': 'accomplishes',
     'ampufies': 'amplifies', 'bubbhng': 'bubbling', 'demohshed': 'demolished',
@@ -97,10 +99,17 @@ MANUAL_FIX = {
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
     'tjion': 'Thou',     # "Thou wilt not hear"
+    # 一个 token 里叠了两三处误识，字形规则一步两步都够不着，逐条核过：
+    'iviiiys': 'wings', 'ivllh': 'with', 'iviih': 'with', 'theji': 'then',
+    'ivalhing': 'walking', 'ftdl': 'full', 'woas': 'works',
+    'certaiuty': 'certainty', 'certaiu': 'certain', 'miessential': 'unessential',
+    'distinguised': 'distinguished', 'expositicai': 'exposition', 'tbe': 'the',
+    'recuitence': 'recurrence', 'kabbins': 'Rabbins', 'pxirpose': 'purpose',
+    'fibrst': 'first',
 }
 
 # token 正则切不开的错：词中混进数字、或两词被粘在一起
-PRE_FIX = [
+PSALMS_PRE = [
     (r'\bs7nokes\b', 'smokes'),
     (r'\bthatver\b', 'that ver'),
     (r'\b(on|in|above|below)Ps\.', r'\1 Ps.'),
@@ -109,14 +118,45 @@ PRE_FIX = [
     (r"\^'", 'y'),
     (r"v,'hom", 'whom'),   # "to set whom for princes"（Isa. liii. 10 引文）
     (r'\bThon wilt\b', 'Thou wilt'),
+    (r'\bthi\)igs\b', 'things'),
+    (r'the Psalms op David', 'the Psalms of David'),
     # 最后一条漏网页眉：这一处没带页码，且被并进了正文段落中间
     (r'my\* no \*Psalm 22:15,16 heart', 'my* no *heart'),
 ]
 
+# ── 以赛亚书 ────────────────────────────────────────────────
+# 每一条都对着扫描页或第二证人核过，不核不加。
+ISAIAH_MANUAL = {}
+ISAIAH_REAL_WORD = {
+    'modem': 'modern', 'bom': 'born', 'tum': 'turn', 'moming': 'morning',
+}
+ISAIAH_PRE = [
+    # 卷一第 1 章开头的小型大写被整块读崩（书页 1，全书唯一一处章首误识）。
+    # 走 PRE_FIX 而不是 MANUAL：串里有 `£`，token 正则切不出完整的词。
+    (r'THE fteJ£n of this chapter', 'THE design of this chapter'),
+    # 斜体大写 I 被读成斜杠：`V. 3. / Jehovah (am) keeping her`。
+    # 只改**独立成词**的斜杠，不动 and/or 之间的分隔符或分数。
+    (r'(?<=[\s*(])/(?=[\s,.;:)])', 'I'),
+    (r'\b(on|in|above|below)Ps\.', r'\1 Ps.'),
+]
+
+BOOKS = {
+    'psalms': dict(src=ROOT / 'alexander_raw/psalms/en_chapters',
+                   log=ROOT / 'logs/alexander_ocr_repair.tsv',
+                   manual=PSALMS_MANUAL, real=PSALMS_REAL_WORD, pre=PSALMS_PRE),
+    'isaiah': dict(src=ROOT / 'alexander_raw/isaiah/en_chapters',
+                   log=ROOT / 'logs/alexander_isaiah_ocr_repair.tsv',
+                   manual=ISAIAH_MANUAL, real=ISAIAH_REAL_WORD, pre=ISAIAH_PRE),
+}
+
 # 私用区哨兵必须靠拼接进正则：写在 r"..." 里 `\ue002` 不会被解释成那个字符，
 # 而是反斜杠+u+e+0+0+2 六个字面字符，字符类里根本不含哨兵，token 会在哨兵处断开
 # ——`fi<哨兵>om` 被切成 `fi` 和 `om`，所有针对哨兵的规则全部落空（踩过）。
-TOKEN = re.compile('[A-Za-z' + LIT_STAR + '][A-Za-z' + LIT_STAR + "'’]*")
+# 词内允许数字：`Upo7z`(Upon) `judgme7it`(judgment) `th6`(the) 这类把字母读成
+# 数字的错，不把数字纳入 token 就永远切不出完整的词，规则一条也用不上。
+# 必须以字母开头（`1846`、`23` 这类纯数字不是词），但**可以以数字结尾**
+# ——`th6` 就是 `the`，不许结尾带数字的话只切出 `th`，规则一条也用不上。
+TOKEN = re.compile('[A-Za-z' + LIT_STAR + "][A-Za-z0-9" + LIT_STAR + "'’]*")
 
 
 def _apply_once(w):
@@ -157,6 +197,23 @@ def candidates(w, lex, depth=2):
     return good
 
 
+# 韦氏词表收了、但在这本书里绝不可能是真词的两字母残片：
+# `aU`(all) `iU`(ill) 这类被判成词就再也修不掉。
+NOT_WORDS = {'au', 'ai', 'oi', 'iu', 'ia', 'ae', 'ea', 'oe', 'ui'}
+
+
+W_PREFIXES = ('iv', 'tv', 'vn', 'ui', 'vv', 'xo', 'lo', 'to')
+
+
+def _w_misread(low, vocab):
+    for pre in W_PREFIXES:
+        if low.startswith(pre) and len(low) > len(pre):
+            alt = 'w' + low[len(pre):]
+            if vocab.get(alt, 0) >= 5 and vocab.get(alt, 0) > vocab.get(low, 0) * 3:
+                return alt
+    return None
+
+
 def restore_case(src, dst):
     """只在首字母**没被规则动过**时才还原大写。
 
@@ -171,7 +228,7 @@ def restore_case(src, dst):
     return dst
 
 
-def corpus_vocab(lex):
+def corpus_vocab(lex, src):
     """全书里**本来就正确**的词表。修复候选必须在这张表里出现过。
 
     这是最后一道闸：规则 + 词典能把 `hang` 改成 `liang`、`lieth` 改成 `heth`
@@ -179,12 +236,40 @@ def corpus_vocab(lex):
     出现过，而 `literally`/`applied`/`with` 出现过几十次。「候选必须是本书
     确实用过的词」把这类换错一网打尽。"""
     vocab = Counter()
-    for path in sorted(SRC.glob('*.md')):
+    for path in sorted(src.glob('*.md')):
         text = re.sub(r'<!--.*?-->', '', path.read_text(encoding='utf-8'))
         for w in TOKEN.findall(text):
             if is_word(w, lex):
                 vocab[w.lower()] += 1
     return vocab
+
+
+# 断词处的连字符 OCR 时有时无：`incon-` 有，`charac`（接下一行 `ter`）没有。
+# 有连字符的在抽取阶段就接好了，没有的只能靠词典在这里补。
+# 后半用**前瞻**而不是捕获：正则替换是不重叠扫描的，若把后半也吃掉，
+# `the con struction` 会先配成 (the, con)（两边都是词，不动）然后从
+# `struction` 之后接着扫，`con struction` 这一对**永远轮不到**（踩过）。
+SPLIT_WORD = re.compile(r'\b([A-Za-z]{2,})[ ](?=([a-z]{2,})\b)')
+
+
+def rejoin_split_words(text, lex, vocab):
+    """把行末断词漏掉连字符造成的 `charac ter` 拼回 `character`。
+
+    只在**至少一半不是词**时才拼：两半都是词的（`to be`、`may be`、
+    19 世纪本来就分写的 `any thing`）一律不动——那里没有任何证据说明
+    原书是一个词，拼起来就是篡改。
+    """
+    def repl(m):
+        a, b = m.group(1), m.group(2)
+        if is_word(a, lex) and is_word(b, lex):
+            return m.group(0)
+        j = a + b
+        # 拼出来的词还必须**在本书别处正确出现过**：只靠词典会把
+        # `to co-operate` 拼成 `toco`（toco 恰好也在韦氏词表里）。
+        if is_word(j, lex) and vocab.get(j.lower(), 0) >= 1:
+            return a          # 只吃掉空格，后半留在原处等下一轮配对
+        return m.group(0)
+    return SPLIT_WORD.sub(repl, text)
 
 
 def join_across_star(text, lex):
@@ -229,25 +314,28 @@ def settle_stars(text, lex):
     return text.replace(LIT_STAR, r'\*')
 
 
-def main():
+def main(book='psalms'):
+    cfg = BOOKS[book]
+    src, logfile = cfg['src'], cfg['log']
+    manual_fix, real_word_fix, pre_fix = cfg['manual'], cfg['real'], cfg['pre']
     lex = build()
-    vocab = corpus_vocab(lex)
+    vocab = corpus_vocab(lex, src)
     log = []
     stat = Counter()
-    for path in sorted(SRC.glob('*.md')):
+    for path in sorted(src.glob('*.md')):
         text = path.read_text(encoding='utf-8')
 
         def repl(m):
             w = m.group(0)
             low = w.lower()
-            if low in MANUAL_FIX:
+            if low in manual_fix:
                 stat['manual'] += 1
-                log.append((path.stem, w, MANUAL_FIX[low], 'manual'))
-                return restore_case(w, MANUAL_FIX[low])
-            if low in REAL_WORD_FIX:
+                log.append((path.stem, w, manual_fix[low], 'manual'))
+                return restore_case(w, manual_fix[low])
+            if low in real_word_fix:
                 stat['realword'] += 1
-                log.append((path.stem, w, REAL_WORD_FIX[low], 'realword'))
-                return restore_case(w, REAL_WORD_FIX[low])
+                log.append((path.stem, w, real_word_fix[low], 'realword'))
+                return restore_case(w, real_word_fix[low])
             # 罗马数字里的 l 被读成 I：Ixxviii → lxxviii。
             # 这一条必须**排在 is_word 之前**：is_word 把任何由 ivxlcdm 组成
             # 的串都当罗马数字放行，而 I 恰好也在这个集合里（大小写不敏感），
@@ -256,6 +344,21 @@ def main():
                 stat['roman'] += 1
                 log.append((path.stem, w, 'l' + w[1:], 'roman'))
                 return 'l' + w[1:]
+            # 词首的 w 被拆成 iv/tv/vn/ui/vv/to/lo/xo 之后，**碰巧还是个
+            # 词典词**（ivas 由 iva+s 派生、ivill 曾被当罗马数字），判词典
+            # 拦不住。这里用语料证据翻案：w 形在本书出现 5 次以上、且是该
+            # 拼法的三倍以上，才改。
+            if low in NOT_WORDS:
+                cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= 20]
+                if len(set(cands)) == 1:
+                    stat['rule'] += 1
+                    log.append((path.stem, w, cands[0], 'rule'))
+                    return restore_case(w, cands[0])
+            alt = _w_misread(low, vocab)
+            if alt:
+                stat['wform'] += 1
+                log.append((path.stem, w, alt, 'wform'))
+                return restore_case(w, alt)
             if is_word(w, lex):
                 return w
             if len(low) < 3:          # oi / co / ia 这类两字母残片，规则一碰就错
@@ -266,7 +369,9 @@ def main():
             # （thg→thig、oui→ow、Joh→Job）。对它们把语料自证的门槛从
             # 「出现过」抬到「出现过 20 次以上」，只放行 like/life/lips
             # 这类全书高频词。
-            floor = 20 if len(low) == 3 else 1
+            # 四字母以下证据太薄：coun→colin、unum→unurn、har→bar 都是
+            # 这么来的。语料门槛从「出现过」抬到「出现过 20 次以上」。
+            floor = 20 if len(low) <= 4 else 1
             cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= floor]
             if len(set(cands)) == 1:
                 fixed = restore_case(w, cands[0])
@@ -281,8 +386,9 @@ def main():
             log.append((path.stem, w, '', 'unresolved'))
             return w
 
-        for pat, rep in PRE_FIX:
+        for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
+        text = rejoin_split_words(text, lex, vocab)
         text = join_across_star(text, lex)
         # 注释行（<!-- PAGE n -->）不参与
         parts = re.split(r'(<!--.*?-->)', text)
@@ -290,19 +396,19 @@ def main():
         text = ''.join(parts)
         # 规则跑完再过一遍：字形规则自己会**造出**新的真词错误
         # （'Uve' → 'lire'），只有在它后面才拦得住。
-        for pat, rep in PRE_FIX:
+        for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
         text = settle_stars(text, lex)
         path.write_text(text, encoding='utf-8')
 
-    LOG.parent.mkdir(exist_ok=True)
-    with open(LOG, 'w', encoding='utf-8') as f:
+    logfile.parent.mkdir(exist_ok=True)
+    with open(logfile, 'w', encoding='utf-8') as f:
         f.write('chapter\tfrom\tto\tkind\n')
         for row in log:
             f.write('\t'.join(row) + '\n')
     print('修复统计:', dict(stat))
-    print('日志:', LOG)
+    print('日志:', logfile)
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1] if len(sys.argv) > 1 else 'psalms')

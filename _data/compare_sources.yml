@@ -100,6 +100,7 @@ sources:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/isaiah-2/__CH__/", accent: "#800000", ch_from: 38, ch_to: 66}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/isaiah-2-en/__CH__/", accent: "#800000", ch_from: 38, ch_to: 66}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/isaiah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 66}
+    - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", url_tpl: "/alexander/isaiah/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 66}
   james:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/james/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/james-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 5}

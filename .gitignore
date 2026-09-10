@@ -60,6 +60,8 @@ davenant_raw/colossians/diag/
 # （item id 见 alexander_raw/psalms/PROVENANCE.md）。
 # 抽取产物 en_chapters/ 与 chapters_raw/ 是文本，照常入库。
 alexander_raw/psalms/src/
+alexander_raw/isaiah/src/
 # extract 之后、repair 之前的快照，纯本地便利：调修复规则时回到干净起点用。
 # 重跑 extract_alexander_psalms.py 即可再生（约 30 秒），不必进库。
 alexander_raw/psalms/en_chapters.bak/
+alexander_raw/isaiah/en_chapters.bak/

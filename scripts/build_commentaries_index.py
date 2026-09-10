@@ -71,10 +71,12 @@ AUTHORS = OrderedDict([
                       work_en='An Exposition of the Epistle of St. Paul to the Colossians')),
     # 亚历山大：老普林斯顿语文学一系，1850 年三卷本初版，
     # 本站据 1864 年 Scribner 单卷修订版的扫描件
+    # 亚历山大：两部书名不同，work_* 只作「本页收录」那一栏的集合名，
+    # 逐卷书名走 BOOK_TITLES
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
-                       work_cn='诗篇注释',
-                       work_en='The Psalms Translated and Explained')),
+                       work_cn='诗篇、以赛亚书注释',
+                       work_en='')),
 ])
 
 # ── 主题色 ─────────────────────────────────────────────────────
@@ -111,6 +113,10 @@ BOOK_TITLES = {
                                 'An Exposition of the First Epistle to the Corinthians'),
     ('hodge', '2corinthians'): ('哥林多后书注释',
                                 'An Exposition of the Second Epistle to the Corinthians'),
+    ('alexander', 'psalms'):   ('诗篇注释',
+                                'The Psalms Translated and Explained'),
+    ('alexander', 'isaiah'):   ('以赛亚书注释',
+                                'The Earlier and Later Prophecies of Isaiah'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),

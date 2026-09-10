@@ -22,6 +22,11 @@ NS = '{http://www.abbyy.com/FineReader_xml/FineReader6-schema-v1.xml}'
 
 # 斜体哨兵：用私用区字符，正文绝不会出现，避免与真正的 * 打架
 IT_ON, IT_OFF = '', ''
+# 行末断词的接缝标记。这里**不能直接把连字符删掉**：真的复合词
+# （well-watered、burnt-offering、twenty-second）也会正好断在连字符上，
+# 删了就再也分不出「断词」与「复合词」。留个标记，等 cleanup 阶段拿全书
+# 的复合词表来定夺（另一个会话在诗篇里查出 8 处被拼成 wellwatered）。
+HYPH = '\ue003'
 
 
 def _line_text(line):
@@ -42,7 +47,11 @@ def _join_lines(lines):
     """行拼段：行尾连字符按「下一行首字母小写」判断是否为断词。
 
     「Anglo-Saxon」这类真连字符后面接大写，保留；「compres-sion」接小写，
-    合并并去掉连字符。19 世纪排印里断词处一律小写续接，这条足够。
+    合并。19 世纪排印里断词处一律小写续接，这条足够。
+
+    接小写的那一支**不直接删连字符**，改插 HYPH 标记：well-watered 这类
+    本来就带连字符的复合词也会断在连字符上，删与不删要看全书别处怎么写，
+    那是 cleanup 阶段的事（alexander_common.resolve_hyphens）。
     """
     buf = ''
     for raw in lines:
@@ -56,7 +65,7 @@ def _join_lines(lines):
         tail = buf.rstrip(IT_OFF)
         nxt = t.lstrip(IT_ON)
         if tail.endswith('-') and nxt[:1].islower():
-            buf = tail[:-1] + (IT_OFF if buf.endswith(IT_OFF) else '') + t
+            buf = tail[:-1] + HYPH + (IT_OFF if buf.endswith(IT_OFF) else '') + t
         else:
             buf = buf + ' ' + t
     return buf

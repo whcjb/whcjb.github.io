@@ -147,7 +147,7 @@ function toggleAlexanderVerseNav() {
   var pills = document.getElementById('verse-nav-pills');
   var first = null, last = null;
   anchors.forEach(function (a) {
-    var m = /^psalms-\d+-(\d+)$/.exec(a.id);
+    var m = /^[a-z]+-\d+-(\d+)$/.exec(a.id);
     if (!m) return;
     if (first === null) first = m[1];
     last = m[1];

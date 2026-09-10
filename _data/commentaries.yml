@@ -63,9 +63,9 @@ authors:
     short: "亚历山大"
     en: "Joseph Addison Alexander"
     years: "1809–1860"
-    work_cn: "诗篇注释"
-    work_en: "The Psalms Translated and Explained"
-    books: 1
+    work_cn: "诗篇、以赛亚书注释"
+    work_en: ""
+    books: 2
 
 books:
   - id: genesis
@@ -208,6 +208,7 @@ books:
     testament: ot
     chapters: 66
     links:
+      - {author: alexander, path: "/alexander/isaiah/", url_tpl: "/alexander/isaiah/__CH__/", title_cn: "以赛亚书注释", title_en: "The Earlier and Later Prophecies of Isaiah", c0: "#5f2323", c1: "#7d2f2f"}
   - id: jeremiah
     name: "耶利米书"
     en: "Jeremiah"

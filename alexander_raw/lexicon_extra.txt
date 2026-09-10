@@ -78,3 +78,42 @@ synonyme synonymes organised authorised unauthorised characterised vigour
 rigour sceptical scepticism analogue analogues dialogue prologue
 # 圣经卷名的另一套缩写（正文里与 John/Job 同现，别被改成对方）
 Joh Jno Mat Mar Luk Act Gal Col Tit Phm Jam Pet Jud Apoc
+# ══ 以赛亚书注释新增 ══════════════════════════════════════════
+# —— 缩写：不加进来，`in ch. 5` 会被当成断词合并成 `inch`（148 处）——
+ch chs vs vss vers ver cf viz supra infra ibid ap al et qui und est vide
+Isai Chr Ez Mich Vitr Calv Cocc Gr Matth Ew Hg Jud Cant Eccl Sept Targ
+# —— Alexander 反复征引的注释家与译本（19 世纪德国批判学界为主）——
+Knobel Hendewerk Hitzig Gesenius Ewald Umbreit Maurer Rosenmueller Rosenmuller
+Eichhorn Koppe Doederlein Paulus Bertholdt Augusti Jahn Movers Havernick
+Haevernick Kleinert Beckhaus Moller Hengstenberg Drechsler Delitzsch Caspari
+Stier Nagelsbach Ruckert Schegg Seinecke Luzzatto Vitringa Cocceius Grotius
+Clericus Houbigant Lowth Barnes Henderson Noyes Alexander Forerius Vatablus
+Junius Tremellius Piscator Castalio Munster Pagninus Malvenda Sanctius
+Abarbenel Abenezra Kimchi Jarchi Saadias Saadia Aquila Symmachus Theodotion
+Onkelos Peshito Peschito Herodotus Josephus Eusebius Jerome Theodoret
+Vatable Dathe Doederlein Michaelis Schmidius DeWette DeDieu Bochart Buxtorf
+Hupfeld Olshausen Tholuck Keil Kuenen Cheyne Wette
+# —— 以赛亚书里的专名 ——
+Shebna Rabshakeh Rezin Shalmaneser Sennacherib Merodach Baladan Tartan
+Rabsaris Eliakim Hilkiah Shear Jashub Maher Shalal Hash Baz Ariel Dumah
+Kir Elam Aram Hamath Arpad Sepharvaim Hena Ivah Cush Seba Sinim Bozrah
+Kedar Nebaioth Dedan Tema Sela Moab Ar Kirharesh Heshbon Sibmah Jazer
+Elealeh Zoar Luhith Horonaim Nimrim Eglaim Beer Elim Dibon Medeba Nebo
+Aroer Jahaz Zoan Noph Pathros Migdol Tahpanhes Chittim Tyre Sidon Tarshish
+Gomorrah Hiphil Hophal Niphal Piel Pual Hithpael Kal Qal
+# —— 通用缺项 ——
+etc etcetera watchmen workmen horsemen bowmen craftsmen countrymen husbandmen
+# —— 地名 / 族名 ——
+Syria Syrian Syrians Arabia Arabian Arabians Judea Judah Judean Asia Africa
+Europe Germany Persia Persian Persians Media Median Medes Phenicia Phenician
+Ethiopian Egyptian Egyptians Assyrian Assyrians Babylonian Babylonians
+Chaldean Chaldeans Zechariah Moriah Pekah Pekahiah Menahem Hoshea Jotham
+Uzziah Amoz Shiloah Gihon Ophel Millo Hinnom Tophet Idumea Philistine
+Philistines Samaritan Samaritans Galilean Nazareth Bethlehem
+# —— 注释家（补） ——
+Gataker Nordheimer Doderlein Montanus Gesen Ros Cler Vitring Hitz Knob
+Hend Rosenmiiller Rosenmüller Umbreit Ewald Lowth Kimchi Targum Symmachus
+DeDieu Dieu Cappellus Glassius Storr Winer Nordheimer Havernick
+# —— 拉丁短语常见词 ——
+ejus eius unum una unus praeter propter scilicet nempe idem ibidem passim
+sensu stricto latiore verbum verba nomen nomine forma formae genus generis

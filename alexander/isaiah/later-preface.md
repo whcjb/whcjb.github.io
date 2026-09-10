@@ -1,0 +1,25 @@
+---
+layout: alexander-chapter
+book_id: isaiah
+book_name: "Alexander on Isaiah"
+title: "Preface (Vol. II)"
+date: 2026-09-10 14:34
+prev_section: 39
+prev_label: "Isaiah 39"
+next_section: later-introduction
+next_label: "Introduction (Vol. II)"
+---
+
+<!-- later-preface | v2 扫描页 9-10 -->
+
+<!-- PAGE 9 -->
+THIS volume is a sequel to the one which appeared about a year ago, under the title of the Earlier Prophecies, the two together forming a continuous Commentary on Isaiah. While the same plan has been here retained without alteration, I have aimed at greater uniformity of execution, as well as a more critical selection of materials. The reasons for a separate investigation of these later chapters have been stated in the introduction to the other volume. In addition to the authors there enumerated, I have carefully compared the English version and remarks of Noyes (second edition, Boston, 1843) and *die Cyro-jesaianischen Weissagungen* of Beck (Leipzig, 1844); the first of which, though elegant and scholarlike, is too closely modelled on Gesenius to afford much new matter, and the other is remarkable chiefly for the boldness of its ultra-rationalistic doctrines, and the juvenile flippancy with which they are expressed. Of both these works occasional citations will be met with in the present volume.
+
+In the exposition of the last seven chapters, too polemical an attitude, perhaps, has been assumed with respect to a distinguished living writer, Dr. Henderson, to whose abilities and learning I have elsewhere endeavoured to do justice. The prominence here given to his book has arisen from his happening to be not only the best but the sole representative of certain views among the professed expounders of Isaiah. As to the question in dispute, the ground which I have taken and endeavoured to maintain is the negative position, that the truth of these " exceeding great and precious promises " is not suspended on the future restoration of the Jews to Palestine, without denying such a restoration to be possible or promised elsewhere.
+
+<!-- PAGE 10 -->
+In this, as well as in the other volume, I may possibly have pushed the rule of rigorous translation to an extreme; but if so, it is an extreme from which recession is much easier and safer than recovery from that of laxity and vagueness. By the course thus taken, I am not without hope that some light may be thrown upon the darker parts of Hebrew Grammar, and especially the doctrine of the tenses, which can never be completely solved except by a laborious induction of particulars.
+
+While I deem it proper to observe that I have read only two sheets of this volume during its progress through the press, I am happy to add that it has passed through the hands of Mr. W. W. Turner, to whom so many other works in this department are indebted for the accuracy of their execution.
+
+I have still kept steadily in view, as my immediate readers, to whose wants the work must be adapted, clergymen and students of theology, considered as the actual or future teachers of the Church. Through them I may perhaps indulge the hope of doing something to promote correct opinions, and a taste for exegetical pursuits, as means of intellectual and spiritual culture, even though this should prove to be my last as well as first contribution to the stores of sacred learning, *Princeton, March* 20, 1847.
