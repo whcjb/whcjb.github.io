@@ -276,8 +276,13 @@ def verdict(tok, reading, lex, wvocab, bvocab, wtext, nxt, wbigram):
                     and (reading.lower(), tail) in wbigram):
                 return 'split', reading + ' ' + tok[-len(tail):]
 
-    # 字形闸：两版之间的改写读数长得完全不像，挡在这里
-    if edit_distance(tok.lower(), reading.lower()) > max(1, len(tok) * MAX_DIST_RATIO):
+    # 字形闸：两版之间的改写读数长得完全不像，挡在这里。
+    # 但「长得像」不能只用编辑距离量：连字被读成单个字形时，一个 U 顶掉
+    # li／ll 两个字母，`faUs → falls` 的编辑距离是 2、占串长的一半，
+    # 照距离算要被当成改写否掉——而它恰恰是这本扫描件最典型的错。
+    # 字形规则走得通，本身就证明了「同一个词被读崩」，比距离硬。
+    if (edit_distance(tok.lower(), reading.lower()) > max(1, len(tok) * MAX_DIST_RATIO)
+            and not glyph_reachable(tok, reading)):
         return 'divergent', reading
     # 判词闸：真词，或证人语料里反复出现的专名 / 音译，
     # 或者字形上「我们这串是它读崩的产物」——见 glyph_reachable
@@ -323,6 +328,10 @@ MANUAL = {
     'upbefore': 'up before',       # "let me cheer up, before I go hence"
     'ezekel': 'Ezekiel',           # "only here and in Ezekiel xl."
     'contemporarycomposition': 'contemporary composition',
+    # Ps. 105:29 "He turned their waters to blood and killed their fish"。
+    # 两版在同一处都读崩了（1864 作 Uood，1850 作 Mood），位置判读于是
+    # 拿一份崩的去改另一份崩的。blood 在本书别处出现 43 次，钦定本亦同。
+    'uood': 'blood',
 }
 
 HANDS_OFF = {
@@ -477,6 +486,10 @@ def main():
 
     stat = Counter()
     rows = []
+    # MANUAL_TEXT 是按整句匹配的，上游一改（重新 extract、repair 换规则），
+    # 匹配不上就**静默不生效**——跟判词典缺失同一类无症状失败。
+    # 记下每条命中过几次，一条都没命中的最后报出来。
+    hit = Counter()
     for path in files:
         text = path.read_text(encoding='utf-8')
         toks = chapter_tokens(text)
@@ -503,7 +516,9 @@ def main():
             for a, b, new in reversed(edits):
                 text = text[:a] + new + text[b:]
             for a, b in MANUAL_TEXT:
-                text = text.replace(a, b)
+                if a in text:
+                    hit[a] += text.count(a)
+                    text = text.replace(a, b)
             if path.stem == 'preface' and PREFACE_CUT in text:
                 text = text[:text.index(PREFACE_CUT)].rstrip() + '\n' 
             path.write_text(text, encoding='utf-8')
@@ -513,6 +528,22 @@ def main():
         f.write('chapter\tfrom\twitness\tverdict\tcontext\n')
         for r in rows:
             f.write('\t'.join(r) + '\n')
+    # 「没命中」有两种：本来就已经修好了（幂等重跑的常态），和上游文本
+    # 变了导致规则失效（真故障）。靠**修复后的形态在不在**来区分：
+    # 两种形态都找不到，才是真的失效了。
+    stale = []
+    for a, b in MANUAL_TEXT:
+        if hit[a]:
+            continue
+        if not any(b in f.read_text(encoding='utf-8') for f in files):
+            stale.append(a)
+    if stale:
+        print(f'!! MANUAL_TEXT 有 {len(stale)} 条失效了（原文与修复后的形态都找不到）:')
+        for a in stale:
+            print('   ', repr(a))
+    else:
+        print(f'MANUAL_TEXT {len(MANUAL_TEXT)} 条：命中 {sum(1 for a, _ in MANUAL_TEXT if hit[a])}，'
+              f'其余已是修复后的形态')
     print('判决:', dict(stat))
     print('日志:', LOG)
 

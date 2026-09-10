@@ -88,13 +88,25 @@ PSALMS_MANUAL = {
     'simphfied': 'simplified', 'supercihous': 'supercilious',
     'totauty': 'totality', 'unukeness': 'unlikeness',
     # 词首 w 整个被读丢，语料自证也救不回来的几例
-    'uarued': 'warned', 'vath': 'with', 'vrith': 'with', 'tuill': 'will',
+    # 证人（1850）在同一处作 learned，且这是斜体译文——Ps. 2:10 的
+    # 「你们要受管教」，紧接着才是 be admonished。"be warned, be admonished"
+    # 语义重复，"be learned, be admonished" 才是管教与警戒两面。
+    'uarued': 'learned', 'vath': 'with', 'vrith': 'with', 'tuill': 'will',
     'tuatchers': 'watchers', 'knouest': 'knowest', 'suul': 'soul',
     'unkss': 'unless', 'humue': 'humble', "i'he": 'The', 'suftered': 'suffered',
     'oji': 'on',         # "literally *on thee, on (account of) thee*"
     'devoui': 'devour', 'soid': 'soul', 'aheady': 'already', 'grod': 'God',
     'wtiter': 'writer', 'tjie': 'The', 'rahah': 'Rahab', 'afibrded': 'afforded',
     'fonn': 'form', 'noim': 'noun',
+    # ↓ 第二证人复核 repair 全量改动时抓出来的：字形规则把这些残串改成了
+    #   **另一个真词**，判词闸和后面的判读器于是全都看不见了。放进这张表
+    #   （它排在规则之前）从源头掐掉。每条都对着 1850 三卷本按位置核过。
+    'ojf': 'of',           # "garments of holiness"（Lev. xvi. 4），规则作 off
+    'uood': 'blood',       # Ps. 105:29 "turned their waters to blood"，规则作 wood
+    'turong': 'wrong',     # "do not practise wrong"，规则作 throng
+    'thom': 'them',        # "The *and* between them"，规则作 thorn
+    'bome': 'some',        # "as some interpreters suppose"，规则作 Borne
+    'nore': 'more',        # "gladness more than"，规则作 wore
     # 'Ji' 被读成 'l'/'h' 之后仍是英文词，规则挡不住，逐个核过上下文：
     'jire': 'fire',      # "as wax is melted before fire"
     'jiock': 'flock',    # "The sheep (or flock) of thy pasture"
@@ -118,6 +130,16 @@ PSALMS_PRE = [
     (r"\^'", 'y'),
     (r"v,'hom", 'whom'),   # "to set whom for princes"（Isa. liii. 10 引文）
     (r'\bThon wilt\b', 'Thou wilt'),
+    # `Jie` 在两处的真值不同（一处 the、一处 be），只能带上下文改
+    (r'represents Jie king', 'represents the king'),
+    # `be` 被读成 `he`，改完仍是真词，规则与判词闸都拦不住，只能带上下文改
+    (r'\*To he wise\*', '*To be wise*'),
+    # 同一个 obhgation，ch20 是 oblation（两种祭物），ch40 是 obligation
+    # （incumbent obligation），只能按上下文分开
+    (r'two species of obhgation', 'two species of oblation'),
+    (r'though there he hut a handful', 'though there be but a handful'),
+    # ff 连字读成 fi，中间还落了个引号：ofi"ering
+    (r'ofi"ering', 'offering'),
     (r'\bthi\)igs\b', 'things'),
     (r'the Psalms op David', 'the Psalms of David'),
     # 最后一条漏网页眉：这一处没带页码，且被并进了正文段落中间
@@ -141,12 +163,19 @@ ISAIAH_PRE = [
 ]
 
 BOOKS = {
+    # short_len：多短的 token 才需要把语料门槛从「出现过」抬到 20 次。
+    # 诗篇必须是 3。抬到 4 会连带杀掉四字母的 li→U/h 整类——faUs/waUs/
+    # sohd/ahke/Uved/Uves/cxhi/rohe，正是这本扫描件最大的一类错，而它们的
+    # 目标词在书里只出现 4–11 次，过不了 20 的门槛。反过来，要挡的
+    # coun→colin、unum→linum 词频本来就是 0，「出现过」这一条已经够了。
     'psalms': dict(src=ROOT / 'alexander_raw/psalms/en_chapters',
                    log=ROOT / 'logs/alexander_ocr_repair.tsv',
-                   manual=PSALMS_MANUAL, real=PSALMS_REAL_WORD, pre=PSALMS_PRE),
+                   manual=PSALMS_MANUAL, real=PSALMS_REAL_WORD, pre=PSALMS_PRE,
+                   short_len=3),
     'isaiah': dict(src=ROOT / 'alexander_raw/isaiah/en_chapters',
                    log=ROOT / 'logs/alexander_isaiah_ocr_repair.tsv',
-                   manual=ISAIAH_MANUAL, real=ISAIAH_REAL_WORD, pre=ISAIAH_PRE),
+                   manual=ISAIAH_MANUAL, real=ISAIAH_REAL_WORD, pre=ISAIAH_PRE,
+                   short_len=4),
 }
 
 # 私用区哨兵必须靠拼接进正则：写在 r"..." 里 `\ue002` 不会被解释成那个字符，
@@ -371,7 +400,7 @@ def main(book='psalms'):
             # 这类全书高频词。
             # 四字母以下证据太薄：coun→colin、unum→unurn、har→bar 都是
             # 这么来的。语料门槛从「出现过」抬到「出现过 20 次以上」。
-            floor = 20 if len(low) <= 4 else 1
+            floor = 20 if len(low) <= cfg.get('short_len', 3) else 1
             cands = [c for c in candidates(low, lex) if vocab.get(c, 0) >= floor]
             if len(set(cands)) == 1:
                 fixed = restore_case(w, cands[0])
