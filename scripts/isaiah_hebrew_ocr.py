@@ -50,9 +50,12 @@ PDF = {'v1': Path.home() / 'Documents/论文/alexander/propheciesisaiah01alexuof
 XML = {'v1': SRC / 'v1.xml', 'v2': SRC / 'v2.xml'}
 BODY = {'v1': (79, 730), 'v2': (47, 547)}
 
-# 希伯来活字被按拉丁字母读出来时，ABBYY 常常吐出这几个非字母符号
-# （`n^t`、`^fiV^a`、`dwrj^ft`），它们是残渣的**正信号**，不是噪声。
-JUNK = re.compile(r'[\^><|~]')
+# 希伯来活字被按拉丁字母读出来时，ABBYY 常常在串里吐出非字母符号
+# （`n^t`、`dwrj^ft`、`aa&evsia`、`oivon).y%`），它们是残渣的**正信号**。
+# 一开始只列了 `^><|~` 五个，于是 `(aa&evsia`（其实是 ἀσϑένεια，grc 置信度 90）
+# 因为那个 `&` 不在表里，连候选都算不上。凡是剥掉首尾标点后**里面**还留着
+# 非字母数字字符的，一律算。
+JUNK = re.compile(r'[^0-9A-Za-z]')
 HEBREW = re.compile(r'[֐-׿]')
 GREEK = re.compile(r'[Ͱ-Ͽἀ-῿]')
 # 裁图时往外放一点，免得切掉字母的笔画

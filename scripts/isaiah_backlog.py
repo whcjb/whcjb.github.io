@@ -32,12 +32,16 @@ PUB = ROOT / 'alexander/isaiah'
 HEB = [ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
        ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv']
 RESCAN = ROOT / 'alexander_raw/isaiah/english_rescan.tsv'
+PROBE = ROOT / 'logs/alexander_isaiah_residue_probe.tsv'
 LOG = ROOT / 'logs/alexander_isaiah_adjudicate.tsv'
 OUT = ROOT / 'logs/alexander_isaiah_backlog.tsv'
 
 TOKEN = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ][A-Za-zÀ-ÖØ-öø-ÿ'’]*")
 FRONT = re.compile(r'^---.*?^---\n', re.S | re.M)
-SEGMENT = re.compile(r'(<!--.*?-->|</?[A-Za-z][^<>]*>)', re.S)
+# HTML 实体也要当成「不是正文词」切掉：publish 把野生 `<` 转义成 `&lt;`
+# 之后，token 正则会把里头的 `lt` 当成一个词，凭空多出一批非词
+SEGMENT = re.compile(r'(<!--.*?-->|</?[A-Za-z][^<>]*>|&(?:lt|gt|amp|quot|nbsp);)',
+                     re.S)
 VOWEL = re.compile(r'[aeiouyAEIOUY]')
 SIM_FLOOR = 0.3          # 低于这个相似度＝锚撞车，不是读崩
 
@@ -108,6 +112,16 @@ def rescanned():
             for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
                 for w in (r.get('garbage') or '').split():
                     out[w.strip(".,;:!?()[]'\"")] = 'heb'
+    if PROBE.exists():
+        # 三模型逐串取证的结果。**只看读出了几个外文字母，不看置信度**——
+        # 判「这块活字是不是希伯来/希腊文」，字母数才是证据；读得准不准是
+        # 另一回事（`rvirn` 读成 יהוה 只有 54 分，可上下文正是「耶和华如此
+        # 说」，字对得死死的）。
+        with open(PROBE, encoding='utf-8') as f:
+            for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
+                if int(r['heb_n'] or 0) >= 3 or int(r['grc_n'] or 0) >= 3:
+                    for w in re.findall(r"[A-Za-z][A-Za-z'’]*", r['garbage']):
+                        out.setdefault(w, 'probe')
     if RESCAN.exists():
         with open(RESCAN, encoding='utf-8') as f:
             for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
@@ -151,7 +165,7 @@ def main():
     for path in sorted(PUB.glob('*.md')):
         raw = FRONT.sub('', path.read_text(encoding='utf-8'))
         for seg in SEGMENT.split(raw):
-            if seg.startswith('<'):
+            if seg.startswith(('<', '&')):
                 continue
             for w in TOKEN.findall(seg):
                 if is_word(w, lex):
@@ -160,10 +174,14 @@ def main():
                 v = recs[0] if recs else None
                 if v and v['verdict'] == 'confirm':
                     kind = '已核实原样'
+                elif w in rescan:
+                    # 重扫证据排在形态判据**前面**。形态判据是猜，重扫是证；
+                    # 让猜的那条先划走，账面上就看不出哪些是真查过的。
+                    # （诗篇线踩过同一个坑：判完的结论又被形态判定覆盖，
+                    #   「查过、是对的」被错记成「还没查」。）
+                    kind = '已重扫·外文'
                 elif not actionable(w, by_len, good_bigrams):
                     kind = '外文/残渣'
-                elif w in rescan:
-                    kind = '已重扫·外文'
                 elif not v or not v['witness']:
                     kind = '待判·无证据'
                 elif SequenceMatcher(None, w.lower(),

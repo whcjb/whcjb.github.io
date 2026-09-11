@@ -88,6 +88,33 @@ def render_verse(m, book_id, chapter, num):
     return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if m.group('lead') else '')
 
 
+# 本流水线只产 `<span …>` 与 `<!-- … -->` 两种标记，别的都不是我们写的
+OURS = re.compile(r'</?span\b[^<>]*>|<!--')
+
+
+def escape_stray_lt(line):
+    """把不是我们写的 `<` 转义掉。
+
+    OCR 把希伯来/希腊活字读崩的残渣里常带尖括号（`<B`、`<TT(>`、`<X^>`），
+    kramdown 会把它们当 HTML 标签解析，**整段正文被当成标签属性吞掉**：
+    第 14 章有一处 `<B, supposing the verb…(p7t>`，页面上那 180 个字符
+    直接不见了。全书 19 处，`span` 之外的标签一个都不是我们写的。
+    """
+    out, i = [], 0
+    while True:
+        j = line.find('<', i)
+        if j < 0:
+            return ''.join(out) + line[i:]
+        out.append(line[i:j])
+        m = OURS.match(line, j)
+        if m:
+            out.append(m.group())
+            i = m.end()
+        else:
+            out.append('&lt;')
+            i = j + 1
+
+
 def transform(body, book_id, chapter, verse_re):
     out, n_anchor = [], 0
     for line in body.split('\n'):
@@ -98,10 +125,12 @@ def transform(body, book_id, chapter, verse_re):
         if m:
             src = m.group('g2') or m.group('g1')
             num = FIRST_NUM.search(src).group(0)
-            out.append(render_verse(m, book_id, chapter, num) + line[m.end():])
+            out.append(render_verse(m, book_id, chapter, num)
+                       + escape_stray_lt(line[m.end():]))
             n_anchor += 1
         else:
             # kramdown 会把 `* ` 开头的行当无序列表。正文不该有，防一手。
+            line = escape_stray_lt(line)
             out.append('\\' + line if line.startswith('* ') else line)
     return '\n'.join(out), n_anchor
 

@@ -65,17 +65,24 @@ def normalize_italics(t):
       1. 空白落在标记内侧 —— `«the man! »` → `«the man!» `
       2. 同一句斜体被切成相邻两段 —— `«How completely» «happy»` → `«How completely happy»`
       3. 空段 `«»`
+
+    **三条必须一起迭代到不动点，不能各跑一遍。** 合并会造出新的内侧空白：
+    `«1»« »mutual` 里第二段是个「斜体空格」，第 1 条把它挪成 `«1» «»mutual`，
+    第 2 条合并成 `«1 »mutual`——IT_OFF 内侧又贴上了空白，而第 1 条已经跑完了。
+    落到页面上就是 `*1 *mutual`，kramdown 不认这种强调，于是那个星号一路开着，
+    直到远处另一个星号才闭合：以赛亚书出过 1728 字连成一段斜体的，全书 236 段，
+    诗篇 21 段。
     """
-    # 1. 边界空白外移
-    t = re.sub(IT_ON + r'(\s+)', r'\1' + IT_ON, t)
-    t = re.sub(r'(\s+)' + IT_OFF, IT_OFF + r'\1', t)
-    # 2. 相邻斜体段合并（中间只有空白）
     prev = None
     while prev != t:
         prev = t
+        # 1. 边界空白外移
+        t = re.sub(IT_ON + r'(\s+)', r'\1' + IT_ON, t)
+        t = re.sub(r'(\s+)' + IT_OFF, IT_OFF + r'\1', t)
+        # 2. 相邻斜体段合并（中间只有空白）
         t = re.sub(IT_OFF + r'(\s*)' + IT_ON, r'\1', t)
-    # 3. 空段
-    t = re.sub(IT_ON + r'\s*' + IT_OFF, '', t)
+        # 3. 空段
+        t = re.sub(IT_ON + r'\s*' + IT_OFF, '', t)
     # 收尾标点：ABBYY 常把结束引号/逗号漏在斜体外，无从判断，保持原状
     return t.replace(IT_ON, '*').replace(IT_OFF, '*')
 

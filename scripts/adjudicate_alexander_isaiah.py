@@ -63,7 +63,10 @@ FRONT = re.compile(r'^---.*?^---\n', re.S | re.M)
 # 正文里有 OCR 读出来的孤立 `<`（希伯来活字残渣），宽松的写法会从那个 `<`
 # 一路吃到几百词之后的某个 `>`，把整段正文当标签吞掉——诗篇没这个问题，
 # 以赛亚书第 19 章一处就吞了 572 个 token。
-SEGMENT = re.compile(r'(<!--.*?-->|</?[A-Za-z][^<>]*>)', re.S)
+# HTML 实体也要当成「不是正文词」切掉：publish 把野生 `<` 转义成 `&lt;`
+# 之后，token 正则会把里头的 `lt` 当成一个词，凭空多出一批非词
+SEGMENT = re.compile(r'(<!--.*?-->|</?[A-Za-z][^<>]*>|&(?:lt|gt|amp|quot|nbsp);)',
+                     re.S)
 
 
 def load_witnesses():
@@ -132,7 +135,7 @@ def segments(raw):
     """
     m = FRONT.match(raw)
     rest = raw[m.end():] if m else raw
-    return [(not p.startswith('<'), p) for p in SEGMENT.split(rest) if p]
+    return [(not p.startswith(('<', '&')), p) for p in SEGMENT.split(rest) if p]
 
 
 def body_tokens(raw):

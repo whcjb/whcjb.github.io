@@ -51,6 +51,25 @@ def half_of_broken_word(flat, g, garb, lex):
     return bool(prv and is_word(prv.group(1) + garb, lex))
 
 
+def keep_italics(slice_, reading):
+    """替换时把原文那一段自带的斜体星号留住。
+
+    落盘是按**归一化后**的下标定位的，归一化把 `*` 抹掉了，所以被替换掉的
+    那一段里如果夹着斜体标记，换上去的读数就把星号一并吃了——kramdown 那边
+    星号成了单数，半截星号原样印在页面上。实测落希伯来这一步单独制造了
+    5 篇不配对（38 / 45 / 48 / 7 / 9）。
+
+    段首段尾的星号照原样接回去；星号落在**中间**说明这段横跨斜体边界，
+    接不回去，宁可不换。
+    """
+    if '*' not in slice_:
+        return reading
+    if slice_.strip('*').count('*'):
+        return None
+    return ('*' if slice_.startswith('*') else '') + reading \
+        + ('*' if slice_.endswith('*') else '')
+
+
 def find_whole(flat, needle):
     """整词定位。**不能用裸 find**——`unintel` 会匹配进 `unintelligible` 里面。
 
@@ -150,6 +169,9 @@ def main(apply_it):
                 continue
             text = chapters[name]
             for a, b, rep in sorted(es, reverse=True):     # 从后往前，下标不失效
+                rep = keep_italics(text[a:b], rep)
+                if rep is None:
+                    continue
                 text = text[:a] + rep + text[b:]
             (RAW / f'{name}.md').write_text(text, encoding='utf-8')
 
