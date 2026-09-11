@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 14:12
+date: 2026-09-11 16:44
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -47,7 +47,7 @@ next_label: "Errata"
 <p class="dv-idx-2">LIX. 2, Your iniquities have separated between you and your God T I. 250,451</p>
 <p class="dv-idx">Jer. IX. 25, Behold, the days come that I will punish all them that are circumcised with the uncircumcised ud ecce 452</p>
 <p class="dv-idx-2">XXXIII. 8, 7 will cleanse them from all their sins, and pardon all their iniquities 458</p>
-<p class="dv-idx">Ezek. XXXIII. 2, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live οι II. 432</p>
+<p class="dv-idx">Ezek. XXXIII. 2, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live ünencc II. 432</p>
 <p class="dv-idx">Lament. V. 2, Zurn thou us, and we shall be turned I. 453</p>
 <p class="dv-idx-caption">VOL. PAGE,</p>
 <p class="dv-idx">Hosea I. 2, Go take unto thee a wife of whoredoms, . &amp;c. eroe occooc E 42</p>

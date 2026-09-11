@@ -11,7 +11,13 @@
 `Ρεν, 8.`（见 ocr_davenant.py 抬头）。所以单跑一遍、只取希腊字母那部分，
 英文照旧用主 OCR 的结果。
 
-输出 davenant_raw/colossians/vol{1,2}_grc.jsonl，每行一页 {page, text}。
+两遍都要跑：`--variant` 换一套预处理与切分（Otsu 二值 + psm 4，不做中值滤波）
+另出一份。希腊读数**必须两遍一致才采信**——单遍的抽查结果是 13 条里 4 条错
+（`ἀντε` 原书是 `ἀυτȣ`、`ἀγώνας` 原书是 `ἀγωνα`、`Ραμ` 整个是凭空的）。
+印错的希腊文比留着拉丁乱码更坏：乱码一眼看得出是没读出来，错字看着像真的。
+
+输出 davenant_raw/colossians/vol{1,2}_grc.jsonl（主）
+     davenant_raw/colossians/vol{1,2}_grc2.jsonl（佐证）
 
 用法:
     python3 scripts/ocr_davenant_grc.py --vol 2 --pages 233-233   # 试跑
@@ -39,17 +45,19 @@ RANGES = {1: (86, 631), 2: (14, 620)}
 
 
 def ocr_page(args):
-    pdf, idx = args
+    pdf, idx, variant = args
     doc = fitz.open(pdf)
     pix = doc[idx].get_pixmap(dpi=600, colorspace=fitz.csGRAY)
     doc.close()
     img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width)
-    img = cv2.medianBlur(img, 3)
+    img = (cv2.threshold(img, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+           if variant else cv2.medianBlur(img, 3))
     with tempfile.TemporaryDirectory() as td:
         png = os.path.join(td, 'p.png')
         cv2.imwrite(png, img)
         out = os.path.join(td, 'o')
-        r = subprocess.run(['tesseract', png, out, '-l', 'grc+eng', '--psm', '6'],
+        r = subprocess.run(['tesseract', png, out, '-l', 'grc+eng',
+                            '--psm', '4' if variant else '6'],
                            capture_output=True)
         if r.returncode != 0:
             return idx, ''
@@ -60,7 +68,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--vol', type=int, choices=(1, 2))
     ap.add_argument('--pages')
-    ap.add_argument('--workers', type=int, default=8)
+    ap.add_argument('--workers', type=int, default=6)
+    ap.add_argument('--variant', action='store_true',
+                    help='换一套预处理与切分，出佐证那一份 vol{N}_grc2.jsonl')
     a = ap.parse_args()
     for vol in ([a.vol] if a.vol else (1, 2)):
         lo, hi = RANGES[vol]
@@ -69,12 +79,12 @@ def main():
         pdf = str(RAW / PDFS[vol])
         idxs = list(range(lo, hi + 1))
         tag = '_sample' if a.pages else ''
-        out = RAW / f'vol{vol}_grc{tag}.jsonl'
+        out = RAW / f'vol{vol}_grc{"2" if a.variant else ""}{tag}.jsonl'
         print(f'▶ vol{vol}  {len(idxs)} 页 → {out.name}', flush=True)
         res = {}
         with ProcessPoolExecutor(max_workers=a.workers) as ex:
             for k, (idx, txt) in enumerate(
-                    ex.map(ocr_page, [(pdf, i) for i in idxs]), 1):
+                    ex.map(ocr_page, [(pdf, i, a.variant) for i in idxs]), 1):
                 res[idx] = txt
                 if k % 25 == 0:
                     print(f'  {k}/{len(idxs)}', flush=True)

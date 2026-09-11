@@ -392,18 +392,40 @@ def best_match3(vol, page, toks):
 GREEK_RE = re.compile(r'[\u0370-\u03ff\u1f00-\u1fff]')
 _grc = {}
 _grctok = {}
+_grc2 = {}
 
 
-def grc_lines(vol, page):
-    if vol not in _grc:
-        f = RAW / f'vol{vol}_grc.jsonl'
-        _grc[vol] = {}
+def _load_grc(store, suffix, vol):
+    if vol not in store:
+        f = RAW / f'vol{vol}_grc{suffix}.jsonl'
+        store[vol] = {}
         if f.exists():
             for ln in f.open(encoding='utf-8'):
                 r = json.loads(ln)
-                _grc[vol][r['page']] = [re.sub(r'\s+', ' ', x).strip()
-                                        for x in r['text'].splitlines() if x.strip()]
-    return _grc[vol].get(page, [])
+                store[vol][r['page']] = [re.sub(r'\s+', ' ', x).strip()
+                                         for x in r['text'].splitlines() if x.strip()]
+    return store[vol]
+
+
+def grc_lines(vol, page):
+    return _load_grc(_grc, '', vol).get(page, [])
+
+
+def grc_confirm(vol, page):
+    """→ 佐证那一遍（另一套预处理与切分）在该页读出的希腊词集合。
+
+    单遍的希腊读数不可靠：抽查 13 条，4 条与原书不符——`ἀντε` 原书是
+    `ἀυτȣ`、`ἀγώνας` 原书是 `ἀγωνα`、`Ραμ` 那一行压根没有希腊文。印错的
+    希腊文比留着拉丁乱码更坏：乱码一眼看得出是没读出来，错字看着像真的。
+    所以改成**两遍一致才采信**，不一致的退回原样。
+    """
+    out = set()
+    for l in _load_grc(_grc2, '2', vol).get(page, []):
+        for w in l.split():
+            core = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff]', '', w)
+            if len(core) >= 2:
+                out.add(core)
+    return out
 
 
 def grc_tokens(vol, page):
@@ -425,7 +447,7 @@ def _greekish(s):
         max(2, len(letters) * 0.5)
 
 
-def grc_pass(toks, greek):
+def grc_pass(toks, greek, confirm=None):
     """整段替换希腊文。→ (新 token 串, [(原, 新, 理由)])
 
     两条路，都不去猜块内的一一对应：
@@ -443,6 +465,15 @@ def grc_pass(toks, greek):
     """
     if not greek:
         return toks, []
+    ok = confirm if confirm is not None else set()
+
+    def backed(g):
+        """这个希腊读数在佐证那一遍里有没有出现（允许 ≥0.8 的形近）。"""
+        core = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff]', '', g)
+        if len(core) < 2:
+            return False
+        return core in ok or any(
+            difflib.SequenceMatcher(None, core, c).ratio() >= 0.8 for c in ok)
     ops = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
                                   [_norm(w) for w in greek]).get_opcodes()
     out, log = [], []
@@ -454,7 +485,7 @@ def grc_pass(toks, greek):
         if len(mine) == len(theirs):
             for w, g in zip(mine, theirs):
                 if (not _bookword(w) and _letters(w) >= 2 and _greekish(g)
-                        and max(_letters(w), _letters(g)) >= 4):
+                        and max(_letters(w), _letters(g)) >= 4 and backed(g)):
                     got = _keep_punct(w, w, g)
                     out.append(got)
                     log.append((w, got, '希腊文'))
@@ -463,7 +494,7 @@ def grc_pass(toks, greek):
             continue
         if all(_letters(w) >= 2 and not _bookword(w) for w in mine) \
                 and any(_letters(w) >= 3 for w in mine) \
-                and all(_greekish(x) for x in theirs):
+                and all(_greekish(x) and backed(x) for x in theirs):
             got = _keep_punct(mine[0], mine[-1], *theirs)
             if got:
                 out.append(got)
@@ -1099,9 +1130,9 @@ def fix_line(vol, page, text, strict=False):
             else:
                 out[i] = o
         log = log2
-    out, glog = grc_pass([x for x in out if x is not None],
-                         best_match_grc(vol, page, [x for x in out
-                                                    if x is not None]))
+    kept = [x for x in out if x is not None]
+    out, glog = grc_pass(kept, best_match_grc(vol, page, kept),
+                         grc_confirm(vol, page))
     log += glog
     if not log:
         return text, []
