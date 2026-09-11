@@ -179,9 +179,34 @@ def apos_repair(tok, other, oseg):
 # 上的字母，这一条修的是字母位上的数字，两边都得管。
 # 换法按字形出，不是随便试 26 个字母：`1s` 若允许全字母替换，`as`/`is`/`us`
 # 在本书里都常见，唯一性判据当场失效。
-DIGIT_GLYPH = {'0': 'oO', '1': 'ilt', '2': 'iz', '3': 'e', '4': 'a',
+DIGIT_GLYPH = {'0': 'oO', '1': 'ilt', '2': 'iz', '3': 'e', '4': 'at',
                '5': 'sb', '6': 'b', '7': 'ti', '8': 'b', '9': 'gq'}
 DIGIT_IN_WORD = re.compile(r'^([a-z]{0,4})([0-9])([a-z]{1,4})([.,;:!?]?)$')
+
+
+# `1` 被读成 `l` 的三种残形。段首那一种提取器已有 ENUM_L 管，但编号不总在
+# 段首——`Observe l. The time…`、`…may be deduced. l. That…`、`John i. l.`
+# 都在句中（全书 22 处）。另有两种：`T` 被读成 `'l'`（`'l'o` / `'l'he`，3 处），
+# 以及夹在两个词之间的孤立 `l`（扫描斑点，5 处：`he teaches l us`）。
+ELL_ENUM = re.compile(r'^\]?l\.$')
+ELL_T = re.compile(r"^'l'(?=[A-Za-z])")
+
+
+def ell_repair(w, prev, nxt, other, other3):
+    """→ 改后的 token / '' （删掉）/ None（不动）。"""
+    if ELL_T.match(w):
+        return 'T' + w[3:]                # `'l'o` → `To`，这个形状不会是别的
+    ws = [c for c in (other, other3) if isinstance(c, str)]
+    if ELL_ENUM.match(w) and nxt[:1].isupper():
+        # 编号位：要有证人读作 `1.` 才改，不靠上下文猜
+        if any(re.fullmatch(r'\]?1\.', c) for c in ws):
+            return '1.'
+        return None
+    if w == 'l' and prev and nxt and _wordish(prev) and _wordish(nxt):
+        # 夹在两个词之间的孤立 `l`：两个证人那里都没有它，就是扫描斑点
+        if ws and not any(_norm(c) == 'l' or c in ('1', 'l') for c in ws):
+            return ''
+    return None
 
 
 def digit_repair(tok):
@@ -189,6 +214,10 @@ def digit_repair(tok):
     且**只有一种换法**能换出常见词。三条同时成立才动手。"""
     m = DIGIT_IN_WORD.match(tok)
     if not m:
+        return None
+    # 序数与版本格式是原文就该有的：`3d`（第三）、`4to`（四开）、`8vo`（八开）、
+    # `2dly`、`9th`。不列出来，`3d` 会被换成 `ed`（实测）。
+    if re.fullmatch(r'\d+(?:st|nd|rd|d|th|to|vo|mo|dly|ly)\.?', tok):
         return None
     a, d, b, punct = m.groups()
     # 这里**不能**照 subst_repair 那样先卡「原词生僻」：_uni 的键是去掉
@@ -198,11 +227,16 @@ def digit_repair(tok):
     # 候选还得是**干净的词**：词典词或罗马数字。只看本书频次不行——语料里
     # 混着同类错字（`ts` / `lt` 这些形状自己就出现十几次），`1s` 的候选里
     # `is` 和 `ts` 双双过线，唯一性判据当场失效，一个也改不成。
-    out = {a + c + b for c in DIGIT_GLYPH.get(d, '')
-           if _uni()[_norm(a + c + b)] >= 8
-           and (_norm(a + c + b) in DICT
-                or re.fullmatch(r'[ivxlcm]+', _norm(a + c + b)))}
-    return out.pop() + punct if len(out) == 1 else None
+    # ⚠️ 唯一性要按**归一化词形**算，不是按字符串算。`0` 的换法表里 o 和 O
+    # 都在，`0f` 于是生出 `of` 与 `Of` 两个"不同"候选，唯一性判据当场失效，
+    # 这个词一直没被修（实测）。
+    out = {}
+    for c in DIGIT_GLYPH.get(d, ''):
+        cand = a + c + b
+        n = _norm(cand)
+        if _uni()[n] >= 8 and (n in DICT or re.fullmatch(r'[ivxlcm]+', n)):
+            out.setdefault(n, cand)
+    return list(out.values())[0] + punct if len(out) == 1 else None
 
 
 # ── 数字位上的 `l` ────────────────────────────────────────────────────────────
@@ -959,18 +993,22 @@ def fix_line(vol, page, text, strict=False):
         # 这是证据不是猜——`asa memorial` 对面是 `as a memorial`。
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
-        for _why, _fix in (('两证人一致', consensus(w, other, other3)),
+        for _why, _fix in (('l→1', ell_repair(
+                               w, toks[i - 1] if i else '',
+                               toks[i + 1] if i + 1 < len(toks) else '',
+                               other, other3)),
+                           ('两证人一致', consensus(w, other, other3)),
                            ('撇号', apos_repair(w, other, oseg)),
                            ('词内数字', digit_repair(w)),
                            ('数字位字形', numeral_repair(vol, page, w, other)),
                            ('&c.', etc_repair(w, other, other3))):
-            if _fix:
-                out[i] = _fix
+            if _fix is not None and _fix != w:
+                out[i] = _fix or None     # '' = 删掉这个 token（斑点）
                 log.append((w, _fix, _why))
                 break
         else:
             _fix = None
-        if _fix:
+        if _fix is not None and _fix != w:
             continue
         if not SPECK.match(w) and i in pair2 and w in splits():
             out[i] = pair2[i]
