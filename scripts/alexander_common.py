@@ -185,7 +185,9 @@ def check_page_sequence(pmap):
 
 # ── 分段 ─────────────────────────────────────────────────────
 
-LOWER_END = set('abcdefghijklmnopqrstuvwxyz,')
+# 段尾出现这些字符 = 句子没说完。连字符尤其硬——以 `-` 收尾的段落必然是
+# 断词断在了段落边界上（`…of the sen-` ⏎ `tence follows…`），本书 15 处。
+LOWER_END = set('abcdefghijklmnopqrstuvwxyz,-')
 
 
 def merge(chunk, verse_start, pmap=None):

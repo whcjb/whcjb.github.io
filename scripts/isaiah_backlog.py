@@ -53,15 +53,31 @@ def dist_le(a, b, k):
     return prev[-1] <= k
 
 
-def actionable(w, by_len):
+SHAPE_BAD = re.compile(r'[^aeiouy\'-]{4}', re.I)
+
+
+def actionable(w, by_len, good_bigrams):
     """值得翻影像判的，只有「长得像英文却差一两个字母」的串。
 
-    先前按「有没有元音」区分残渣，太粗——`ia` `xal` `TOV` `rov` 全有元音，
-    却是希腊文与希伯来文的音译残渣，翻影像也只能确认「页面上印的就是外文」。
-    真正可判的判据是：ASCII、长度 ≥5、且与本书某个高频正确词的编辑距离 ≤2。
+    三代判据，前两代都太松：
+      一代「有没有元音」——`ia` `xal` `TOV` `rov` 全有元音，却都是希腊文音译。
+      二代「与某个高频正确词编辑距离 ≤2」——`nasna` 离 `nation` 也只差两步，
+        希伯来音译一大半都能挂上某个英文词。
+    三代加**字形**判据：词中不出现大写、不出现四连辅音、二元组合理性 ≥0.9
+    （二元组表用本书自己的正确小写词统计，出现 ≥50 次的才算常见）。
+    挡掉的是 `JtEsn` `mninx` `stB'n` `rviss` 这一类——它们在页面上本来就是
+    希伯来活字，翻影像也变不出拉丁字母，列进待判只会虚增分母。
     """
     low = w.lower()
     if len(low) < 5 or not low.isascii():
+        return False
+    if re.search(r'[A-Z]', w[1:]) or "'" in w[1:-1]:
+        return False
+    if not re.search(r'[aeiouy]', low) or SHAPE_BAD.search(low):
+        return False
+    l = '^' + low + '$'
+    bs = [l[i:i + 2] for i in range(len(l) - 1)]
+    if sum(b in good_bigrams for b in bs) / len(bs) < 0.9:
         return False
     return any(dist_le(low, c, 2)
                for L in range(len(low) - 2, len(low) + 3)
@@ -84,6 +100,16 @@ def main():
     for w, c in vocab.items():
         if c >= 5 and len(w) >= 4:
             by_len.setdefault(len(w), []).append(w)
+    # 二元组表只用本书的正确**小写**词统计，专名与外文不参与，
+    # 否则希伯来音译里的怪组合会被当成常见的
+    bigrams = Counter()
+    for path in sorted(PUB.glob('*.md')):
+        for w in TOKEN.findall(FRONT.sub('', path.read_text(encoding='utf-8'))):
+            if is_word(w, lex) and w.isalpha() and w.islower():
+                l = '^' + w + '$'
+                for i in range(len(l) - 1):
+                    bigrams[l[i:i + 2]] += 1
+    good_bigrams = {b for b, c in bigrams.items() if c >= 50}
 
     counts = Counter()
     rows = []
@@ -99,7 +125,7 @@ def main():
                 v = recs[0] if recs else None
                 if v and v['verdict'] == 'confirm':
                     kind = '已核实原样'
-                elif not actionable(w, by_len):
+                elif not actionable(w, by_len, good_bigrams):
                     kind = '外文/残渣'
                 elif not v or not v['witness']:
                     kind = '待判·无证据'

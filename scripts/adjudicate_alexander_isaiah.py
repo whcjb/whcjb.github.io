@@ -209,9 +209,31 @@ MANUAL_RE = [
 ]
 
 
+def load_manual_file():
+    """逐条核过的人工改正，放在数据文件里而不是脚本里。
+
+    条目会长到几十上百条，塞在脚本里既难读也难 review；而且它是**数据**
+    （每条都带依据），不是逻辑。左列必须带足上下文，保证全书唯一。
+    """
+    path = ROOT / 'alexander_raw/isaiah/manual_fixes.tsv'
+    out = []
+    if not path.exists():
+        return out
+    for line in path.read_text(encoding='utf-8').splitlines():
+        if not line.strip() or line.startswith('#'):
+            continue
+        parts = line.split('\t')
+        if len(parts) >= 2 and parts[0] != 'before':
+            out.append((parts[0], parts[1]))
+    return out
+
+
+MANUAL_FILE = load_manual_file()
+
+
 def apply_manual(raw):
     n = 0
-    for a, b in MANUAL_TEXT:
+    for a, b in MANUAL_TEXT + MANUAL_FILE:
         if a in raw:
             n += raw.count(a)
             raw = raw.replace(a, b)

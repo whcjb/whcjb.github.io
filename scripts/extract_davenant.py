@@ -699,187 +699,211 @@ def main():
     plan = ([(a.vol, *(int(x) for x in a.pages.split('-')))] if a.pages
             else [(v, *RANGES[v]) for v in ([a.vol] if a.vol else (1, 2))])
 
-    out, total = [], collections.Counter()
-    for vol, lo, hi in plan:
-        pages = [r for r in load(vol) if RANGES[vol][0] <= r['page'] <= RANGES[vol][1]]
-        fn_max, indent_min = calibrate(pages)
-        paras, fns, st = build_paragraphs(vol, lo, hi, fn_max, indent_min)
-        total.update(st)
-        print(f'  vol{vol}: 页 {lo}-{hi}  脚注字号上限 {fn_max} 缩进阈值 {indent_min}  '
-              f'段落 {len(paras)}  含脚注页 {st["fn_pages"]}  剥页眉 {st["head"]}')
+    # ── 迭代到不动点 ──────────────────────────────────────────────
+    # 词频裁判读的语料（corpus）就是这个脚本自己的产物：跑一遍语料变一次，
+    # 下一遍的判断就可能翻过来。实测两次重跑之间来回摆——`epinion→opinion`
+    # 这一轮落上、下一轮又没落，`in` 反被判成 `im`。所以这里自己迭代：
+    # 重建 → 落盘 → 清掉语料缓存 → 再建，直到产物不再变（最多 4 遍）。
+    # 不这么做，产物就不是确定的，同一份输入两次跑出两个结果。
 
-        seen_chap, cur_chap, pend = False, None, None
-        i = 0
-        while i < len(paras):
-            para, ppages = paras[i]
-            i += 1
-            # 段落的页码跨度：脚注按页配对要用（publish_davenant_en.py）
-            # ⚠️ 必须带卷号。两卷的扫描页号区间重叠（vol1 86-631、
-            # vol2 14-317），发布脚本按页号配脚注，只写 pN 会让 3/4 章去抢
-            # 1/2 章的注（实测 144 条注落在共用桶里，6 条实际配串了卷）。
-            pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
-                  else f'<!--v{vol}p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
-            # 前一条标记（章首或节组）声明了要吃经文 → 先做 KJV 对齐
-            if pend is not None:
-                # 经文常被悬挂缩进切成好几段（歌 1:1-2 就是 5 段），
-                # 所以往后**按相似度贪心增长**，取相似度最高的那个长度。
-                # 曾把上限写死 4 段，第 5 段（含 `Father and the Lord Jesus
-                # Christ`）被排除，经文尾巴被切进正文（实测）。
-                nums = pend
-                pool = [para]
-                j = i
-                while len(pool) < 10 and j < len(paras) and \
-                        not (CHAP_RE.match(paras[j][0])
-                             or SECTION_RE.match(paras[j][0])):
-                    pool.append(paras[j][0]); j += 1
-                # ⚠️ 段间用 dehyph 接，不能 ' '.join。经文是悬挂缩进，
-                # 每一行都被判成段首，行末连字没走过 dehyph——直接拼就留下
-                # `spiri- tual` / `be- ginning` 这种断词（实测 19 个经文块）。
-                def _join(segs):
-                    out = ''
-                    for seg in segs:
-                        out = dehyph(out, seg) if out else seg
-                    return out
+    def build():
+        out, total = [], collections.Counter()
+        for vol, lo, hi in plan:
+            pages = [r for r in load(vol) if RANGES[vol][0] <= r['page'] <= RANGES[vol][1]]
+            fn_max, indent_min = calibrate(pages)
+            paras, fns, st = build_paragraphs(vol, lo, hi, fn_max, indent_min)
+            total.update(st)
+            print(f'  vol{vol}: 页 {lo}-{hi}  脚注字号上限 {fn_max} 缩进阈值 {indent_min}  '
+                  f'段落 {len(paras)}  含脚注页 {st["fn_pages"]}  剥页眉 {st["head"]}')
 
-                def _best_for(vs):
-                    b = None
-                    for k in range(1, len(pool) + 1):
-                        c = _join(pool[:k])
-                        sc, rs, rr = split_scripture(c, cur_chap, vs, kjv)
-                        if b is None or rr > b[3] + 1e-9:
-                            b = (c, sc, rs, rr, k)
-                    return b
+            seen_chap, cur_chap, pend = False, None, None
+            i = 0
+            while i < len(paras):
+                para, ppages = paras[i]
+                i += 1
+                # 段落的页码跨度：脚注按页配对要用（publish_davenant_en.py）
+                # ⚠️ 必须带卷号。两卷的扫描页号区间重叠（vol1 86-631、
+                # vol2 14-317），发布脚本按页号配脚注，只写 pN 会让 3/4 章去抢
+                # 1/2 章的注（实测 144 条注落在共用桶里，6 条实际配串了卷）。
+                pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
+                      else f'<!--v{vol}p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
+                # 前一条标记（章首或节组）声明了要吃经文 → 先做 KJV 对齐
+                if pend is not None:
+                    # 经文常被悬挂缩进切成好几段（歌 1:1-2 就是 5 段），
+                    # 所以往后**按相似度贪心增长**，取相似度最高的那个长度。
+                    # 曾把上限写死 4 段，第 5 段（含 `Father and the Lord Jesus
+                    # Christ`）被排除，经文尾巴被切进正文（实测）。
+                    nums = pend
+                    pool = [para]
+                    j = i
+                    while len(pool) < 10 and j < len(paras) and \
+                            not (CHAP_RE.match(paras[j][0])
+                                 or SECTION_RE.match(paras[j][0])):
+                        pool.append(paras[j][0]); j += 1
+                    # ⚠️ 段间用 dehyph 接，不能 ' '.join。经文是悬挂缩进，
+                    # 每一行都被判成段首，行末连字没走过 dehyph——直接拼就留下
+                    # `spiri- tual` / `be- ginning` 这种断词（实测 19 个经文块）。
+                    def _join(segs):
+                        out = ''
+                        for seg in segs:
+                            out = dehyph(out, seg) if out else seg
+                        return out
 
-                best, used, partial_ok = _best_for(nums), nums, False
-                # 对不上时先别急着退回正文。全书 90 个节组里对不上的 3 个，
-                # 拿 600 dpi 原页看过，是**两种不同的**毛病：
-                #   · 节号被 OCR 读错：vol2 p119 原书 `Vers. 13.` 读成 18、
-                #     p132 原书 `Verse 15.` 读成 16 → 按全章逐节重扫救回，
-                #     命中 ≥0.9 才认，标题里的号码连带改正
-                #   · 原书只引了半节：vol1 p339 `Verse 22.` 底下只印
-                #     "Now hath he reconciled … through death."（0.458）
-                #     → 本节仍是全章最像的，按半引接受，不许改号
-                if best[3] < 0.55 and cur_chap:
-                    alt = [(_best_for([v]), [v]) for v in range(1, 30)
-                           if f'{cur_chap}:{v}' in kjv and [v] != nums]
-                    hi = [x for x in alt if x[0][3] >= 0.9]
-                    if hi:
-                        b2, vs = max(hi, key=lambda x: x[0][3])
-                        print(f'  [节号回填] {cur_chap}:{nums} → {vs} '
-                              f'（相似度 {b2[3]}）', flush=True)
-                        best, used = b2, vs
-                        total['sec_fix'] += 1
-                        for t in range(len(out) - 1, -1, -1):
-                            if out[t].startswith('[SECTION] '):
-                                mm = re.match(r'(\[SECTION\] (?:<!--[^>]*-->)?)(.*)$',
-                                              out[t], re.S)
-                                out[t] = mm.group(1) + render_section(mm.group(2), vs)
-                                break
-                    elif best[3] >= 0.40 and best[3] >= max(
-                            (x[0][3] for x in alt), default=0):
-                        print(f'  [半引接受] {cur_chap}:{nums} '
-                              f'（相似度 {best[3]}）', flush=True)
-                        total['scr_partial'] += 1
-                        partial_ok = True
-                cand, scr, rest, r, take = best
-                i += take - 1
-                if r >= 0.55 or partial_ok:
-                    scr, kfix = kjv_repair(scr, cur_chap, used, kjv, vol, ppages)
-                    for o, n in kfix:
-                        print(f'  [KJV 校经] {cur_chap}:{used} {o!r} → {n!r}',
-                              flush=True)
-                        total['kjv_fix'] += 1
-                    # 引文尾巴的 `&c.` 跟着经文走。它跟 KJV 对不上，贪心增长
-                    # 到它这一段相似度只会掉，于是被留在外面成了孤零零一段
-                    # `&c.`（vol2 p233 实测，页面上就印着 "…with thanksgiving,
-                    # &c."）。经文收尾后紧跟的独立 `&c.` 段直接并回去。
-                    # 引文尾巴的 `&c.` 跟着经文走。KJV 里没有这两个字，
-                    # split_scripture 的切点落在它前面，于是它被当成正文
-                    # 甩出来，页面上多一段孤零零的 `&c.`（vol2 p233 实测，
-                    # 原书印的是 "…with thanksgiving, &c."）。
-                    if rest and re.fullmatch(r'&\s*c\.?', rest.strip()):
-                        scr, rest = scr.rstrip() + ' ' + rest.strip(), ''
-                    elif not rest and i < len(paras) and \
-                            re.fullmatch(r'&\s*c\.?', paras[i][0].strip()):
-                        scr = scr.rstrip() + ' ' + paras[i][0].strip()
-                        i += 1
-                    out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
-                               f'{",".join(map(str, used))}|{r}| {scr}')
-                    total['scr'] += 1
-                    total['scr_sim'] += r
-                    if rest:
-                        out.append(f'[BODY] {pg}{rest}')
-                else:                     # 对不上就原样留正文，不硬切
-                    total['scr_fail'] += 1
-                    out.append(f'[BODY] {pg}{cand}')
-                pend = None
-                continue
-            m = CHAP_RE.match(para)
-            if not seen_chap and not m and re.match(
-                    r'^(AN EXPOSITION|OF THE|EPISTLE OF ST|COLOSSIANS\.?)\s*$', para):
-                out.append(f'[TITLE] {para}')       # 卷首书名块，发布时不进正文
-                continue
-            if m:
-                seen_chap = True
-                cur_chap = {'I': 1, 'II': 2, 'III': 3, 'IV': 4}.get(m.group(1))
-                out.append(f'[H1] CHAP. {m.group(1)}')
-                total['chap'] += 1
-                # 章首直接接经文，没有 `Verses 1, 2.` 标题
-                rest = clean(para[m.end():])
-                # 同段后面若紧跟节号标题（`CHAP. IV.—Vers. I.`），
-                # 退回队列交给 SECTION 分支，不要当成章首的 1,2 节
-                if rest and SECTION_RE.match(rest):
+                    def _best_for(vs):
+                        b = None
+                        for k in range(1, len(pool) + 1):
+                            c = _join(pool[:k])
+                            sc, rs, rr = split_scripture(c, cur_chap, vs, kjv)
+                            if b is None or rr > b[3] + 1e-9:
+                                b = (c, sc, rs, rr, k)
+                        return b
+
+                    best, used, partial_ok = _best_for(nums), nums, False
+                    # 对不上时先别急着退回正文。全书 90 个节组里对不上的 3 个，
+                    # 拿 600 dpi 原页看过，是**两种不同的**毛病：
+                    #   · 节号被 OCR 读错：vol2 p119 原书 `Vers. 13.` 读成 18、
+                    #     p132 原书 `Verse 15.` 读成 16 → 按全章逐节重扫救回，
+                    #     命中 ≥0.9 才认，标题里的号码连带改正
+                    #   · 原书只引了半节：vol1 p339 `Verse 22.` 底下只印
+                    #     "Now hath he reconciled … through death."（0.458）
+                    #     → 本节仍是全章最像的，按半引接受，不许改号
+                    if best[3] < 0.55 and cur_chap:
+                        alt = [(_best_for([v]), [v]) for v in range(1, 30)
+                               if f'{cur_chap}:{v}' in kjv and [v] != nums]
+                        hi = [x for x in alt if x[0][3] >= 0.9]
+                        if hi:
+                            b2, vs = max(hi, key=lambda x: x[0][3])
+                            print(f'  [节号回填] {cur_chap}:{nums} → {vs} '
+                                  f'（相似度 {b2[3]}）', flush=True)
+                            best, used = b2, vs
+                            total['sec_fix'] += 1
+                            for t in range(len(out) - 1, -1, -1):
+                                if out[t].startswith('[SECTION] '):
+                                    mm = re.match(r'(\[SECTION\] (?:<!--[^>]*-->)?)(.*)$',
+                                                  out[t], re.S)
+                                    out[t] = mm.group(1) + render_section(mm.group(2), vs)
+                                    break
+                        elif best[3] >= 0.40 and best[3] >= max(
+                                (x[0][3] for x in alt), default=0):
+                            print(f'  [半引接受] {cur_chap}:{nums} '
+                                  f'（相似度 {best[3]}）', flush=True)
+                            total['scr_partial'] += 1
+                            partial_ok = True
+                    cand, scr, rest, r, take = best
+                    i += take - 1
+                    if r >= 0.55 or partial_ok:
+                        scr, kfix = kjv_repair(scr, cur_chap, used, kjv, vol, ppages)
+                        for o, n in kfix:
+                            print(f'  [KJV 校经] {cur_chap}:{used} {o!r} → {n!r}',
+                                  flush=True)
+                            total['kjv_fix'] += 1
+                        # 引文尾巴的 `&c.` 跟着经文走。它跟 KJV 对不上，贪心增长
+                        # 到它这一段相似度只会掉，于是被留在外面成了孤零零一段
+                        # `&c.`（vol2 p233 实测，页面上就印着 "…with thanksgiving,
+                        # &c."）。经文收尾后紧跟的独立 `&c.` 段直接并回去。
+                        # 引文尾巴的 `&c.` 跟着经文走。KJV 里没有这两个字，
+                        # split_scripture 的切点落在它前面，于是它被当成正文
+                        # 甩出来，页面上多一段孤零零的 `&c.`（vol2 p233 实测，
+                        # 原书印的是 "…with thanksgiving, &c."）。
+                        if rest and re.fullmatch(r'&\s*c\.?', rest.strip()):
+                            scr, rest = scr.rstrip() + ' ' + rest.strip(), ''
+                        elif not rest and i < len(paras) and \
+                                re.fullmatch(r'&\s*c\.?', paras[i][0].strip()):
+                            scr = scr.rstrip() + ' ' + paras[i][0].strip()
+                            i += 1
+                        out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
+                                   f'{",".join(map(str, used))}|{r}| {scr}')
+                        total['scr'] += 1
+                        total['scr_sim'] += r
+                        if rest:
+                            out.append(f'[BODY] {pg}{rest}')
+                    else:                     # 对不上就原样留正文，不硬切
+                        total['scr_fail'] += 1
+                        out.append(f'[BODY] {pg}{cand}')
                     pend = None
-                    paras.insert(i, (rest, ppages))
-                else:
-                    pend = [1, 2] if cur_chap else None
+                    continue
+                m = CHAP_RE.match(para)
+                if not seen_chap and not m and re.match(
+                        r'^(AN EXPOSITION|OF THE|EPISTLE OF ST|COLOSSIANS\.?)\s*$', para):
+                    out.append(f'[TITLE] {para}')       # 卷首书名块，发布时不进正文
+                    continue
+                if m:
+                    seen_chap = True
+                    cur_chap = {'I': 1, 'II': 2, 'III': 3, 'IV': 4}.get(m.group(1))
+                    out.append(f'[H1] CHAP. {m.group(1)}')
+                    total['chap'] += 1
+                    # 章首直接接经文，没有 `Verses 1, 2.` 标题
+                    rest = clean(para[m.end():])
+                    # 同段后面若紧跟节号标题（`CHAP. IV.—Vers. I.`），
+                    # 退回队列交给 SECTION 分支，不要当成章首的 1,2 节
+                    if rest and SECTION_RE.match(rest):
+                        pend = None
+                        paras.insert(i, (rest, ppages))
+                    else:
+                        pend = [1, 2] if cur_chap else None
+                        if rest:
+                            paras.insert(i, (rest, ppages))
+                    continue
+                m = SECTION_RE.match(para)
+                if m:
+                    nums = parse_nums(m.group(1))
+                    out.append(f'[SECTION] {pg}{render_section(m.group(0), nums)}')
+                    total['sec'] += 1
+                    rest = clean(para[m.end():])
+                    # ⚠️ 这里**不能**就着本段单独切经文。经文本身常被悬挂缩进
+                    # 拆成好几段，只拿第一段去对齐，相似度 0.60 也过了 0.55 的
+                    # 门槛，经文就只剩头一行——歌 3:25「But he that doeth wrong,
+                    # shall receive for the」到此为止，剩下三行掉进正文当独立段
+                    # （实测 86 个经文块里 11 个这样被腰斩）。一律退回队列交给
+                    # pend 分支，那里会按相似度贪心增长段数。
+                    pend = nums
                     if rest:
                         paras.insert(i, (rest, ppages))
-                continue
-            m = SECTION_RE.match(para)
-            if m:
-                nums = parse_nums(m.group(1))
-                out.append(f'[SECTION] {pg}{render_section(m.group(0), nums)}')
-                total['sec'] += 1
-                rest = clean(para[m.end():])
-                # ⚠️ 这里**不能**就着本段单独切经文。经文本身常被悬挂缩进
-                # 拆成好几段，只拿第一段去对齐，相似度 0.60 也过了 0.55 的
-                # 门槛，经文就只剩头一行——歌 3:25「But he that doeth wrong,
-                # shall receive for the」到此为止，剩下三行掉进正文当独立段
-                # （实测 86 个经文块里 11 个这样被腰斩）。一律退回队列交给
-                # pend 分支，那里会按相似度贪心增长段数。
-                pend = nums
-                if rest:
-                    paras.insert(i, (rest, ppages))
-                continue
-            m = LEMMA_RE.match(para)
-            if m and 0 < len(m.group(1).split()) <= 20 and '(' not in m.group(1):
-                out.append(f'[LEMMA] {pg}{m.group(1).strip()}')
-                total['lemma'] += 1
-                rest = clean(para[m.end():])
-                if rest:
-                    out.append(f'[BODY] {fix_label(rest)[0]}')
-                continue
-            out.append(f'[BODY] {pg}{fix_label(para)[0]}')
+                    continue
+                m = LEMMA_RE.match(para)
+                if m and 0 < len(m.group(1).split()) <= 20 and '(' not in m.group(1):
+                    out.append(f'[LEMMA] {pg}{m.group(1).strip()}')
+                    total['lemma'] += 1
+                    rest = clean(para[m.end():])
+                    if rest:
+                        out.append(f'[BODY] {fix_label(rest)[0]}')
+                    continue
+                out.append(f'[BODY] {pg}{fix_label(para)[0]}')
 
-        for p, fn in fns:
-            x0 = page_body_x0(fn)
-            cur = ''
-            for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
-                t = clean(W.fix_line(vol, p, l['text'])[0])
-                # 脚注符本身就是分条的界标，不能只看缩进：同页两条短注常常
-                # 首行缩进一模一样（vol1 p151 两条都是 x0=214），只看缩进会把
-                # 第二条当续行并进第一条，页面上就出现 `\* That is, indefinite…
-                # + That is, formed…` 两条注挤成一条（实测 7 处）。
-                if (is_start or FN_MARK.match(t)) and cur:
+            for p, fn in fns:
+                x0 = page_body_x0(fn)
+                cur = ''
+                for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
+                    t = clean(W.fix_line(vol, p, l['text'])[0])
+                    # 脚注符本身就是分条的界标，不能只看缩进：同页两条短注常常
+                    # 首行缩进一模一样（vol1 p151 两条都是 x0=214），只看缩进会把
+                    # 第二条当续行并进第一条，页面上就出现 `\* That is, indefinite…
+                    # + That is, formed…` 两条注挤成一条（实测 7 处）。
+                    if (is_start or FN_MARK.match(t)) and cur:
+                        out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
+                        cur = t
+                    elif cur:
+                        cur = dehyph(cur, t)
+                    else:
+                        cur = t
+                if cur:
                     out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
-                    cur = t
-                elif cur:
-                    cur = dehyph(cur, t)
-                else:
-                    cur = t
-            if cur:
-                out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
+
+        return out, total
+
+    prev = None
+    for _round in range(4):
+        out, total = build()
+        joined = "\n".join(out)
+        if joined == prev:
+            break
+        prev = joined
+        dst0 = RAW / ('davenant_colossians_structured.txt' if not a.pages
+                      else 'sample_structured.txt')
+        dst0.write_text(joined + '\n', encoding='utf-8')
+        W.reset_corpus()
+    else:
+        print('  ⚠ 四遍仍未收敛，取最后一遍', flush=True)
 
     dst = RAW / ('davenant_colossians_structured.txt' if not a.pages
                  else 'sample_structured.txt')

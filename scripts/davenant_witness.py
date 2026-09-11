@@ -82,6 +82,13 @@ def corpus():
     return _BIGRAM, _UNI
 
 
+def reset_corpus():
+    """清掉语料缓存。提取器迭代到不动点时每一遍都要重新读自己的新产物。"""
+    global _BIGRAM, _UNI, _INFL
+    _BIGRAM = _UNI = None
+    _INFL = None
+
+
 def _uni():
     return corpus()[1]
 
@@ -546,16 +553,23 @@ def _pairs(toks, theirs, ops):
 
 
 def _split_props(vol, page, text):
-    """→ [(我方词形, "词1 词2")]，供 build_split_table 统计用。"""
+    """→ [(我方词形, "词1 词2")]，供 build_split_table 统计用。
+
+    两个证人都问：第三证人（600 dpi 重扫）与 IA 那一层的断词位置不同，
+    只问一个会漏（`whichis` / `faithfulin` / `atall` / `givethanks`
+    在 IA 那边也粘着，第三证人才排成两个 token）。
+    """
     toks = text.split()
     if len(toks) < 2:
         return []
-    theirs = best_match(vol, page, toks)
-    if theirs is None:
-        return []
-    sm = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
-                                 [_norm(w) for w in theirs])
-    return [(toks[i], two) for i, two in _pairs(toks, theirs, sm.get_opcodes())]
+    out = []
+    for cand in (best_match(vol, page, toks), best_match3(vol, page, toks)):
+        if cand is None:
+            continue
+        sm = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
+                                     [_norm(w) for w in cand])
+        out += [(toks[i], two) for i, two in _pairs(toks, cand, sm.get_opcodes())]
+    return out
 
 
 def _at(ops, theirs, i):
@@ -658,6 +672,26 @@ def inflected():
     global _INFL
     if _INFL is None:
         _INFL = set()
+        # 不规则动词形词典一个都不收，而它们正是这条规则最容易改坏的
+        # （memory 里 `heard → beard` 那一条同类）：`overcame` 被改成
+        # overcome、`bore`/`smote`/`clave` 一类同理。
+        _INFL |= set("""
+            was were been am is are being had has having did does done
+            said made went gone came overcame became begun began sang sung
+            sat stood spoke spoken broke broken chose chosen drove driven
+            ate eaten fell fallen forgot forgotten froze frozen gave given
+            grew grown knew known rose risen ran run saw seen shook shaken
+            sank sunk stole stolen swore sworn took taken threw thrown
+            wore worn wrote written bore borne bound bought brought built
+            burnt caught clave cleft crept dealt dug dwelt fed felt fought
+            found fled flung got held hung hurt kept knelt laid led left
+            lent lost meant met paid put read rent said sent shed shone
+            shot slept slid slung smote spent spun spread sprang sprung
+            stood stuck stung struck strove striven sought sold sown swept
+            swum swung taught told thought thrust trod trodden understood
+            upheld wept won wound wrought slain slew lain lay bidden bade
+            begotten begat forsook forsaken hewn shorn smitten stricken
+            """.split())
         for w in DICT:
             if len(w) < 3:
                 continue
@@ -687,10 +721,32 @@ BIBLE_ABBR = {
 }
 
 
+# 拉丁虚词：本书引拉丁成段成句，这些词在英文词典里一个都没有、在本书语料里
+# 又未必过得了 8 次的门槛，正好落进词频裁判的射程——`propter`（引 Vulgate）
+# 就被判成了 proper。与其把整行判成引文（门槛一松就误伤同行的真错字），
+# 不如把这张表列出来：它是死数据，不是启发式。
+LATIN_STOP = set("""
+    propter quia quod enim autem ergo sed etiam tamen ideo nisi sicut unde
+    inter apud ante post super sine cum per pro sub ad ex non nec vel aut
+    atque itaque igitur quidem quoque tantum semper numquam nunquam ubi
+    quando qui quae cuius cui quem quam quo qua quibus hoc haec hic hunc
+    huius illa ille illud illum ipse ipsa ipsum idem eadem idest scilicet
+    videlicet nempe utique ita sic tam quam magis minus valde omnis omnes
+    omnia nihil nemo aliquis alius alia aliud multi multa pauci totus
+    solus solum tantummodo verum vero nam namque siquidem quatenus
+    prout secundum iuxta juxta erga contra circa infra intra ultra citra
+    est sunt esse fuit fuerunt erat erant sit sint fieri factum
+    dei deo deum domini domino dominum christi christo christum
+    homo homines hominis hominum anima animae corpus corporis
+    fides fidei gratia gratiae peccatum peccati lex legis
+""".split())
+
+
 def _wordish(w):
-    """比 _bookword 再宽一档：加上词典词的屈折形。只给词频裁判当门槛用。"""
+    """比 _bookword 再宽一档：加上词典词的屈折形与拉丁虚词。只给词频裁判用。"""
     b = _norm(w)
-    return _bookword(w) or (len(b) >= 3 and b in inflected())
+    return (_bookword(w) or b in LATIN_STOP
+            or (len(b) >= 3 and b in inflected()))
 
 
 def _inflection(a, b):
@@ -712,6 +768,19 @@ def _inflection(a, b):
     return hi[:-1] == lo                  # 末尾多/少一个字母
 
 
+def foreign_line(toks):
+    """这一行是不是拉丁/希腊引文。
+
+    本书引拉丁成段成句（`which is propter retributionem, and ad-`），
+    拉丁词在英文词典里一个都查不到、在本书语料里也稀疏，正好落进词频裁判的
+    射程，`propter` 就被改成了 proper（实测）。判据：同一行里另有 ≥2 个
+    ≥4 字母的非英文词，就当引文行，整行不做裁判。
+    """
+    n = sum(1 for t in toks
+            if len(_norm(t)) >= 4 and not _wordish(t) and not _uni()[_norm(t)] >= 8)
+    return n >= 3
+
+
 def trio_repair(w, prev, nxt, other, other3, edge=False):
     """两份新旧证人都读花时的第三条路。
 
@@ -727,6 +796,11 @@ def trio_repair(w, prev, nxt, other, other3, edge=False):
     # 一律被判成「不是词」，于是词频裁判把它们改成了 works / was / Apostle /
     # sons（实测这一条一口气改了 3425 处，全书最常见的词全被改坏）。
     # 再加一道「本书生僻（≤2 次）」：真错字是稀疏的，常用词轮不到这条规则。
+    # 前一个 token 是孤零零一个字母时，这一个多半是**被切开的词的后半**
+    # （`with the y ke of bondage` 里的 `ke` 是 yoke 的后半），裁判会把它
+    # 判成 `be`，越改越错。
+    if len(prev) == 1:
+        return None
     # 断词的半截（`princi-` / `ples`）天生不是词、天生生僻，两道门槛都拦不住，
     # 词频裁判就把 `hea-`→`sea-`、`ples`→`plea`、`rity`→`city` 一路改了下去
     # （实测 251 处里过半是这个）。断词由后面的 dehyph 拼回，这里不碰：
@@ -741,7 +815,16 @@ def trio_repair(w, prev, nxt, other, other3, edge=False):
     # 于是 `9é£ao9e,` 被判成 `are,`（实测）。字母占比不到七成就不碰。
     if len(_norm(w)) < 0.7 * len(w.strip('.,;:!?()[]"\u2018\u2019\u201c\u201d')):
         return None
-    if _wordish(w) or not re.search(r'[A-Za-z]', w) or uni[_norm(w)] > 2:
+    # 门槛压到 2 太紧：`zn`（in）这类错字形状全书出现 4 次，永远修不成。
+    # 但抬到 7 又太松，实测放进来 `propter`→proper（拉丁词）、`Jas.`→Was.、
+    # `Chr.`→Cor.、`(Hor.`→(for. 四处错改。取 4，并把缩写另立一条挡住。
+    if _wordish(w) or not re.search(r'[A-Za-z]', w) or uni[_norm(w)] > 4:
+        return None
+    # 缩写不碰：`Jas.`（雅各书）、`Chr.`（历代志）、`Hor.`（贺拉斯）、
+    # `Hom.`（讲道篇）都是「大写开头 + ≤4 字母 + 句点」，词典里没有、本书里
+    # 又稀疏，正好落进这条规则的射程。有证人背书的那几条（`Kom.`→Rom.）
+    # 走的是「两证人一致」，不受这里影响。
+    if re.fullmatch(r'[A-Z][A-Za-z]{0,3}\.', w.strip('([\u201c\u2018\'"')):
         return None
     if w.endswith('.') and _norm(w) in BIBLE_ABBR:
         return None
@@ -943,7 +1026,7 @@ def fix_line(vol, page, text, strict=False):
             trio = trio_repair(w, _norm(toks[i - 1]) if i else '',
                                _norm(toks[i + 1]) if i + 1 < len(toks) else '',
                                other, other3,
-                               edge=(i == 0))
+                               edge=(i == 0 or foreign_line(toks)))
             if trio:
                 out[i], why = trio
                 log.append((w, out[i], why))
