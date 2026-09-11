@@ -22,6 +22,7 @@ ABBYY 是按拉丁字母跑的，这些活字被读成一串拉丁乱码（`(^<J
 """
 import argparse
 import gzip
+import re
 import shutil
 import sys
 import tempfile
@@ -32,8 +33,8 @@ from pathlib import Path
 import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from alexander_lexicon import build
-from isaiah_hebrew_ocr import NS, crop, judge, line_tokens, looks_residue
+from alexander_lexicon import build, is_word
+from isaiah_hebrew_ocr import NS, JUNK, crop, judge, line_tokens
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander_raw/psalms/src'
@@ -49,6 +50,64 @@ BODY = (14, 577)
 OFFSET = -2
 
 
+def residue_set():
+    """已发布正文里判词典不认的 token —— 重扫只针对这些。
+
+    以赛亚那边是从 XML 现推候选（判据放宽、靠双引擎兜底），诗篇不必：
+    这本书的残渣早就逐个判完并落了账，直接拿那份清单当白名单，
+    既不会把 `sun's`（撇号让它落进「带垃圾字符」那一档）这类正常英文词
+    误裁，也把要跑的 tesseract 次数压下来一个量级。
+    """
+    lex = build()
+    tag = re.compile(r'<!--.*?-->|</?[A-Za-z][^<>]*>|&(?:lt|gt|amp|quot|nbsp);')
+    out = set()
+    for f in (ROOT / 'alexander/psalms').glob('*.md'):
+        t = tag.sub(' ', re.sub(r'^---.*?^---', '', f.read_text(encoding='utf-8'),
+                                flags=re.S | re.M))
+        for w in re.findall(r"\S+", t):
+            core = w.strip('.,;:!?()[]\'"*—–')
+            # 至少两个字母：纯数字是节号（`12`）、数字夹字母是页码残渣，
+            # 它们判词典也不认，但不是活字残渣，裁了只会读出垃圾
+            if (len(core) >= 2 and core.isascii()
+                    and len(re.sub(r'[^A-Za-z]', '', core)) >= 2
+                    and not is_word(core, lex)):
+                out.add(core)
+    return out
+
+
+ROMAN = re.compile(r'^[ivxlcdmIVXLCDM]+$')
+# 正文里到处都是的缩写，剥掉标点后仍带着点，会落进「有垃圾字符」那一档
+ABBREV = {'i.e', 'e.g', 'i.e.', 'e.g.', 'cf', 'viz', 'ver', 'comp'}
+
+
+def is_head_line(toks):
+    """页眉行：`416  Psalm 101:6 - 8`。整行跳过，别去裁它。"""
+    txt = ' '.join(t for t, _ in toks)
+    return bool(re.match(r'^\s*\d{0,3}\s*Psalm\s*\d', txt)) or \
+        bool(re.search(r'Psalm\s*\d+[:\d\s,.-]*$', txt.strip())) and len(toks) <= 6
+
+
+def is_target(tok, residue):
+    """这个 XML token 该不该裁图重扫。"""
+    core = tok.strip('.,;:!?()[]\'"')
+    if len(core) < 2 or not core.isascii():
+        return False
+    letters = re.sub(r'[^A-Za-z]', '', core)
+    # 罗马数字（xxi. lxviii.）与常见缩写（i.e. e.g.）都带点，会被当成
+    # 「夹了垃圾字符」，但它们是正常正文
+    if ROMAN.match(letters) or core.lower().rstrip('.') in ABBREV:
+        return False
+    # 只认两类：已在残渣清单里的，和串里夹着非字母数字字符的
+    # （后者是希伯来活字被按拉丁字母读出来时的正信号，且判词典根本切不开）
+    if core in residue:
+        return True
+    # 撇号不算垃圾字符：`sun's` `David's` 这类所有格与缩写遍地都是，
+    # 把它们当活字残渣裁图，双引擎对比也未必每次都兜得住
+    if re.search(r"[^0-9A-Za-z'\u2019]", core):
+        return len(re.sub(r'[^A-Za-z]', '', core)) >= 2
+    return False
+
+
 def unpack_xml():
     """XML 是 gz 的，iterparse 要个真文件；解到临时目录，跑完删。"""
     tmp = Path(tempfile.mkdtemp()) / 'abbyy1864.xml'
@@ -58,7 +117,8 @@ def unpack_xml():
 
 
 def main(page_range=None, junk_only=False):
-    lex = build()
+    residue = residue_set()
+    print(f'残渣清单 {len(residue)} 个 token', flush=True)
     xml = unpack_xml()
     doc = fitz.open(PDF)
     rows = []
@@ -84,9 +144,11 @@ def main(page_range=None, junk_only=False):
             jobs = []
             for line in el.iter(NS + 'line'):
                 toks = line_tokens(line)
+                if is_head_line(toks):
+                    continue
                 run = []
                 for txt, box in toks + [(None, None)]:
-                    if (txt is not None and looks_residue(txt, lex, junk_only)
+                    if (txt is not None and is_target(txt, residue)
                             and len(run) < 4):
                         run.append((txt, box))
                         continue

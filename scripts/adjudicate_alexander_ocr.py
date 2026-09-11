@@ -52,6 +52,11 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
 WITNESS = [ROOT / f'alexander_raw/psalms/src/pages{v}.pkl' for v in ('01', '02', '03')]
 LOG = ROOT / 'logs/alexander_adjudicate.tsv'
+# 希伯来／希腊活字重扫的落盘规则（psalms_hebrew_ocr.py → _filter → _apply 生成）。
+# 放在这里一起应用，是为了让「重跑 extract→repair→publish」之后一条命令就能
+# 把所有产物层的修正都恢复回去——重扫结果和判读结果是同一类东西：
+# 都只存在于已发布正文里，publish 一跑就没。
+HEBREW_RULES = ROOT / 'alexander_raw/psalms/hebrew_ocr_rules.tsv'
 
 # 字母类必须带上拉丁补充区。正文里有 æ 合字（personæ / Idumæa / Petræa /
 # præterita，都是原书的写法），`[A-Za-z]` 会把 `Idumæa` 切成 `Idum` + `a`，
@@ -765,6 +770,20 @@ MANUAL_TEXT = [
 PREFACE_CUT = 'NOTE TO THE READER'
 
 
+def hebrew_rules():
+    """重扫落盘规则 → [(old, new)]。文件不在就返回空，不报错。"""
+    if not HEBREW_RULES.exists():
+        return []
+    out = []
+    for i, line in enumerate(HEBREW_RULES.read_text(encoding='utf-8').splitlines()):
+        if i == 0 or not line.strip():
+            continue
+        f = line.split('\t')
+        if len(f) >= 2:
+            out.append((f[0], f[1]))
+    return out
+
+
 def book_vocab(lex):
     """1864 本书里**本来就正确**的词表 —— 语料自证闸的依据。"""
     vocab = Counter()
@@ -883,6 +902,8 @@ def main():
         keep = set(args.only.split(','))
         files = [f for f in files if f.stem in keep]
 
+    heb_rules = hebrew_rules()
+    heb_hit = 0
     stat = Counter()
     rows = []
     # MANUAL_TEXT 是按整句匹配的，上游一改（重新 extract、repair 换规则），
@@ -939,6 +960,16 @@ def main():
                 if a in text:
                     hit[a] += text.count(a)
                     text = text.replace(a, b)
+            # 重扫落盘：正文里的 `<` 已被 publish 转成 `&lt;`，而规则的 old 串
+            # 来自 XML，那里还是 `<`。**要转义的是规则串，不是正文**——
+            # 把正文整体还原再转回去，会把我们自己写的 `<span …>` 标签一起
+            # 转义掉，节号锚点全毁（踩过）。
+            for a, b in heb_rules:
+                a = a.replace('<', '&lt;').replace('>', '&gt;')
+                b = b.replace('<', '&lt;').replace('>', '&gt;')
+                if a in text:
+                    text = text.replace(a, b)
+                    heb_hit += 1
             if path.stem == 'preface' and PREFACE_CUT in text:
                 text = text[:text.index(PREFACE_CUT)].rstrip() + '\n' 
             path.write_text(text, encoding='utf-8')
@@ -964,6 +995,8 @@ def main():
     else:
         print(f'MANUAL_TEXT {len(MANUAL_TEXT)} 条：命中 {sum(1 for a, _ in MANUAL_TEXT if hit[a])}，'
               f'其余已是修复后的形态')
+    if args.apply and heb_rules:
+        print(f'希伯来／希腊重扫：{len(heb_rules)} 条规则，落盘 {heb_hit} 处')
     print('判决:', dict(stat))
     print('日志:', LOG)
 
