@@ -353,6 +353,25 @@ NEVER_JOIN = {'paulopost', 'christiest'}
 SPLIT_WORD = re.compile(r'\b([A-Za-z]{2,})[ ](?=([a-z]{2,})\b)')
 
 
+def space_after_punct(text, lex):
+    """`the.plan` / `usage,and` —— 标点后面的空格被 OCR 吞掉。
+
+    判词典对它是瞎的：切出来的 token 是 `the` 和 `plan`，两个都是好词，
+    多证人也一样（它们逐词比对，两边读到的同样是这两个词）。全书 30 处，
+    序言第二段那句 `a feature of the.plan` 就在正文第一屏。
+
+    判据收得很紧：两侧**都是小写、都不短于三个字母、都是词典词**。
+    这样 `ch.5`（有数字）、`i.e.`（太短）、`vol.ii`（罗马数字）都进不来，
+    而英文散文里 `词.词` 全都写成带空格的两个词，没有例外。
+    """
+    def repl(m):
+        a, sep, b = m.group(1), m.group(2), m.group(3)
+        if is_word(a, lex) and is_word(b, lex):
+            return f'{a}{sep} {b}'
+        return m.group(0)
+    return re.sub(r'\b([a-z]{3,})([.,])([a-z]{3,})\b', repl, text)
+
+
 def rejoin_split_words(text, lex, vocab):
     """把行末断词漏掉连字符造成的 `charac ter` 拼回 `character`。
 
@@ -542,6 +561,7 @@ def main(book='psalms'):
         for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
         text = split_apostrophe_gap(text, lex)
+        text = space_after_punct(text, lex)
         text = rejoin_split_words(text, lex, vocab)
         text = join_across_star(text, lex)
         # 注释行（<!-- PAGE n -->）不参与

@@ -676,7 +676,62 @@ def _plausible(w, cand, digits=False):
     return d <= 4
 
 
-def consensus(w, other, other3):
+# ── 斜体（原书用它排拉丁词句与圣经引语）──────────────────────────────────────
+# 倾角是 scripts/ocr_davenant_slant.py 量出来的，渲染参数与主 OCR 一致，
+# 所以行文本与 vol{N}_lines.jsonl 一一对应，按行文本查得到每个词的倾角。
+_slant = {}
+ITALIC_MIN = 9.0
+
+
+def _slant_page(vol, page):
+    if vol not in _slant:
+        f = RAW / f'vol{vol}_slant.jsonl'
+        _slant[vol] = {}
+        if f.exists():
+            for ln in f.open(encoding='utf-8'):
+                r = json.loads(ln)
+                _slant[vol][r['page']] = {
+                    re.sub(r'[^a-z0-9]', '', l['text'].lower()): l['words']
+                    for l in r['lines']}
+    return _slant[vol].get(page, {})
+
+
+def italic_flags(vol, page, line):
+    """→ [bool, …]，与 line.split() 一一对应；查不到返回 []。
+
+    ⚠️ 行文本不能按精确 key 去查。量倾角那一遍在 OCR 前多做了一步中值滤波，
+    读出来的字与 vol{N}_lines.jsonl 常有出入（同一行这边 `prsediti`、那边
+    `praediti`），精确匹配一行也对不上。改成模糊找行、再按词形对齐贴。
+    """
+    page_map = _slant_page(vol, page)
+    if not page_map:
+        return []
+    key = re.sub(r'[^a-z0-9]', '', line.lower())
+    if key in page_map:
+        ws = page_map[key]
+    else:
+        hit = difflib.get_close_matches(key, list(page_map), 1, 0.85)
+        if not hit:
+            return []
+        ws = page_map[hit[0]]
+    flags = [(w[1] is not None and w[1] >= ITALIC_MIN) for w in ws]
+    mine = line.split()
+    n = lambda t: re.sub(r'[^a-z0-9]', '', t.lower())           # noqa: E731
+    sm = difflib.SequenceMatcher(None, [n(t) for t in mine],
+                                 [n(w[0]) for w in ws])
+    out = [False] * len(mine)
+    for tag, a1, a2, b1, b2 in sm.get_opcodes():
+        if tag == 'equal':
+            for k in range(a2 - a1):
+                out[a1 + k] = flags[b1 + k]
+        elif tag == 'replace':
+            seg = flags[b1:b2]
+            for k in range(a1, a2):
+                out[k] = bool(seg) and all(seg)
+    return out
+
+
+def consensus(w, other, other3, latin=False):
     """两个证人读到一处、且与我方不同 → 采信。排在确定性规则**之前**。
 
     `XXII. 2i,`（经文索引，原书 21）就是被顺序坑的：digit_repair 先手，
@@ -696,7 +751,23 @@ def consensus(w, other, other3):
     # （shews / connexion / amongst）不会被碰：证人读到的也是它们本身。
     if _uni()[_norm(w)] > 2:
         return None
-    if not (_bookword(got) or re.fullmatch(r'[\d.,;:]+', got)):
+    # 候选得是「本书认得的词」——**除非这里是拉丁文**。拉丁词在英文词典和
+    # 本书词频里都查不到，这道闸一挂，两个证人明明都读对了也落不了地
+    # （`prsediti` → praediti，两个证人一致，却因为 praediti 不是"本书的词"
+    # 被挡住）。
+    # ⚠️ 判「是不是拉丁」不能用斜体：原书的拉丁**整段引文排的是正体**
+    # （vol2 p468 逐词量过，倾角 -1 ~ -4），只有行内夹用的拉丁词才斜。
+    # 改看整行——同一行里另有若干个非英文词，就是拉丁行。
+    if not (_bookword(got) or re.fullmatch(r'[\d.,;:]+', got)
+            or (latin and len(_norm(got)) >= 3
+                # 拉丁那一路放行的候选必须是**干净的词形**：纯字母加一个尾标点。
+                # 不卡这条，证人自己读花的残形也会被抄进来——实测
+                # `virgiuibus,` → `virg^inibus,`、`water-brooks,` → `waler-brooks,`。
+                and re.fullmatch(r'[A-Za-z]+[.,;:!?]?', got)
+                # 带撇号连字符的不走这条：`tise'f` 的正解是 `itself` 不是
+                # `itsef`，那是 apos_repair 的活
+                and "'" not in w and '\u2019' not in w
+                and '-' not in w.strip('-'))):
         return None
     if not _plausible(w, got, digits=True):
         return None
@@ -760,8 +831,11 @@ def inflected():
         for w in DICT:
             if len(w) < 3:
                 continue
+            # `-eth` / `-est` 是本书通篇的动词形（visiteth / doeth / knowest），
+            # 词典一个不收，不补进来它们会被当成"不是词"送去裁判
+            # （`visiteth` 差点被两个读花的证人改成 `visiieth`）。
             _INFL |= {w + 's', w + 'es', w + 'ed', w + 'd', w + 'ing',
-                      w + 'er', w + 'est'}
+                      w + 'er', w + 'est', w + 'eth', w + 'th', w + 'edst'}
             if w.endswith('y'):
                 _INFL |= {w[:-1] + 'ies', w[:-1] + 'ied'}
             if w.endswith('e'):
@@ -1012,6 +1086,11 @@ def fix_line(vol, page, text, strict=False):
                                  [_norm(w) for w in theirs])
     ops = sm.get_opcodes()
     pair2 = dict(_pairs(toks, theirs, ops))
+    # ⚠️ 斜体**不能**当"这里是拉丁文"的判据。原书用斜体主要标圣经引语
+    # （那是英文），拉丁整段引文反而排正体（vol2 p468 逐词量过，倾角 -1~-4）。
+    # 拿斜体放行，`visiteth` 这种引语里的词就会被两个读花的证人改成
+    # `visiieth`（实测）。只看整行是不是拉丁。
+    is_latin = foreign_line(toks)
     third = best_match3(vol, page, toks)
     ops3 = difflib.SequenceMatcher(
         None, [_norm(w) for w in toks],
@@ -1028,7 +1107,9 @@ def fix_line(vol, page, text, strict=False):
                                w, toks[i - 1] if i else '',
                                toks[i + 1] if i + 1 < len(toks) else '',
                                other, other3)),
-                           ('两证人一致', consensus(w, other, other3)),
+                           ('两证人一致', consensus(
+                               w, other, other3,
+                               latin=is_latin)),
                            ('撇号', apos_repair(w, other, oseg)),
                            ('词内数字', digit_repair(w)),
                            ('数字位字形', numeral_repair(vol, page, w, other)),

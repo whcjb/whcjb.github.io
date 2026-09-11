@@ -31,6 +31,8 @@ LOG = ROOT / 'logs/alexander_isaiah_hebrew_applied.tsv'
 # ῥύσασϑε ἀδικούμενον）；65–75 那一档明显在硬凑（`xb` 读成 כא，其实是 לא），
 # 留在数据文件里但不落盘。
 MIN_CONF = 80
+# 有别处高置信度读数背书时的下限
+SELF_CONF = 70
 
 
 def half_of_broken_word(flat, g, garb, lex):
@@ -114,10 +116,25 @@ def main(apply_it):
     lex = build()
     # 必须 QUOTE_NONE：乱码串里有 `"`（`"tt`、`"ttss`），默认的 csv 引号规则
     # 会把它当成字段起始引号，整行的列就错位了——608 行只解析出 306 行。
-    rows = [r for path in TSV if path.exists()
-            for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t',
-                                    quoting=csv.QUOTE_NONE)
-            if r.get('conf', '').isdigit() and r.get('reading')]
+    raw = [r for path in TSV if path.exists()
+           for r in csv.DictReader(open(path, encoding='utf-8'), delimiter='\t',
+                                   quoting=csv.QUOTE_NONE)
+           if r.get('conf', '').isdigit() and r.get('reading')]
+    # **两遍扫描会撞车。** 主跑与 --junk 那一遍的候选判据有重叠，同一处
+    # 会各出一行；照单全落就是同一个位置改两次，第二次拿改完的文本再改一遍，
+    # 于是 `(from πρόφημι)` 变成 `(from πρόφημι)))`（导论正文第一行）。
+    rows, seen = [], set()
+    for r in raw:
+        key = (r['vol'], r['scan_page'], r['before'], r['garbage'])
+        if key in seen:
+            continue
+        seen.add(key)
+        rows.append(r)
+    # 语料自证：同一个读数在别处被高置信度接受过，这里 70 分也认。
+    # `προφητῆς` 在导论里出现四次，置信度 77 / 82 / 88 各一次——同一个词，
+    # 同一套活字，凭什么只认高的那两次。这是修拉丁误读时的第三道闸
+    # （字形规则 → 判词典 → 全书自证）搬到这边来。
+    strong = {r['reading'] for r in rows if int(r['conf']) >= MIN_CONF}
     chapters = {p.stem: p.read_text(encoding='utf-8') for p in RAW.glob('*.md')}
     keys = {k: norm(v) for k, v in chapters.items()}
 
@@ -125,7 +142,8 @@ def main(apply_it):
                      'halfword': 0}
     edits = {k: [] for k in chapters}
     for r in rows:
-        if int(r['conf']) < MIN_CONF:
+        if int(r['conf']) < MIN_CONF and not (int(r['conf']) >= SELF_CONF
+                                              and r['reading'] in strong):
             stat['lowconf'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'lowconf'))
             continue

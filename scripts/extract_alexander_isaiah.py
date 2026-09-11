@@ -19,11 +19,15 @@ import pickle
 import re
 import subprocess
 import sys
+from collections import Counter
 from difflib import SequenceMatcher
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from alexander_common import (HYPH, IT_OFF, IT_ON, bare, check_page_sequence,
+from alexander_abbyy import parse_pages
+from alexander_lexicon import build, is_word
+from alexander_common import (BREAK, HYPH, IT_OFF, IT_ON, bare,
+                              check_page_sequence,
                               collect_compounds, find_roman_heads,
                               printed_page_numbers, slice_pars, write_chapter)
 
@@ -178,10 +182,90 @@ def all_compounds():
     return out
 
 
+# 逐字母分隔排印的标题：`P R E F A C E.`、`C H A P T E R  I.`。OCR 读崩之后
+# 更认不出来——序言那处 `R` 被读成 `11`，成了 `P 11 E F A C E.`，活活印在
+# 页面第一行。这类行的特征是**词全是单字母**，与正文没有任何重叠。
+SPACED_HEAD = re.compile(r'^(?:[A-Za-z0-9]{1,2}[ .]+){3,}[A-Za-z0-9]{0,2}[.,]?$')
+
+
+def is_spaced_head(b):
+    core = b.strip()
+    if not core or len(core) > 40:
+        return False
+    parts = core.rstrip('.').split()
+    return len(parts) >= 4 and all(len(x.strip('.,')) <= 2 for x in parts)
+
+
+def ensure_pages():
+    """XML → pages_vN.pkl，解析器一改就重来。
+
+    这一步原先是手跑一次就完了，pickle 当成了静态输入。结果是
+    `alexander_abbyy.py` 加了行接缝哨兵之后，提取器读到的还是旧 pickle，
+    「行末断词接回 0 个词」——脚本改了、产物没动，最容易误判成规则没生效。
+    """
+    stamp = max(Path(__file__).with_name('alexander_abbyy.py').stat().st_mtime,
+                Path(__file__).stat().st_mtime)
+    for cfg in VOLUMES.values():
+        pkl = SRC / cfg['pkl']
+        xml = SRC / cfg['pkl'].replace('pages_', '').replace('.pkl', '.xml')
+        if pkl.exists() and pkl.stat().st_mtime > stamp:
+            continue
+        print(f'重解析 {xml.name} → {pkl.name}')
+        pickle.dump(parse_pages(xml, drop_line=is_runhead),
+                    open(pkl, 'wb'), protocol=4)
+
+
+def line_break_joins():
+    """行末被吞掉连字符的断词，按**全书证据**定哪些该接回去。
+
+    ABBYY 有时把行末连字符整个吞掉，两截之间只剩一个空格。两截常常各自
+    都是真词（`con` + `duct`、`writ` + `ten`），判词典与多证人都看不见——
+    证人逐词比对，两边读到的同样是那两个词。序言开头 `ac quirements`
+    就是这么留下来的，全书 285 处。
+
+    只在行接缝上判，句中真正的两个词不受影响。接不接看两条证据：
+
+      · 拼起来是词，而两截里**有一截不是词**（`quirements`、`chantable`）
+        —— 那这两截本来就不该分开，无条件接
+      · 拼起来是词，且这个词在全书**行内**出现过，而「两截连写成两个词」
+        在行内**一次都没出现过** —— 原书就没有把它们分开写的习惯
+        （挡掉 `in deed` / `for ever` / `any one` 这种十九世纪本来就分写的）
+    """
+    lex = build()
+    pairs, inline_words, inline_pairs = set(), Counter(), set()
+    for cfg in VOLUMES.values():
+        for pg in pickle.load(open(SRC / cfg['pkl'], 'rb')):
+            for par in pg['pars']:
+                t = par['text'].replace(IT_ON, '').replace(IT_OFF, '')
+                for m in re.finditer(r"([A-Za-z][A-Za-z'’]*)" + BREAK
+                                     + r"([a-z][A-Za-z'’]*)", t):
+                    pairs.add((m.group(1), m.group(2)))
+                # 行内证据：接缝两侧的词不算，HYPH 接起来的也不算
+                for seg in t.split(BREAK):
+                    words = re.findall(r"[A-Za-z][A-Za-z'’]*", seg.replace(HYPH, ''))
+                    for w in words:
+                        inline_words[w.lower()] += 1
+                    for a, b in zip(words, words[1:]):
+                        inline_pairs.add((a.lower(), b.lower()))
+    joins = set()
+    for a, b in pairs:
+        j = (a + b).lower()
+        if not is_word(a + b, lex):
+            continue
+        if not (is_word(a, lex) and is_word(b, lex)):
+            joins.add(j)
+        elif inline_words[j] and (a.lower(), b.lower()) not in inline_pairs:
+            joins.add(j)
+    return joins
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     total = 0
+    ensure_pages()
     compounds = all_compounds()
+    joins = line_break_joins()
+    print(f'行末断词接回 {len(joins)} 个词')
 
     for vol, cfg in VOLUMES.items():
         pages = pickle.load(open(SRC / cfg['pkl'], 'rb'))
@@ -204,12 +288,14 @@ def main():
                 if not pg:
                     continue
                 for par in pg['pars']:
-                    if par['nlines'] == 1 and is_runhead(bare(par['text']).strip()):
+                    b = bare(par['text']).strip()
+                    if par['nlines'] == 1 and (is_runhead(b) or is_spaced_head(b)):
                         continue
                     chunk.append((idx, par))
             n = write_chapter(OUT / f'{name}.md',
                               f'<!-- {name} | {vol} 扫描页 {p0}-{p1} -->',
-                              chunk, VERSE_START, compounds=compounds)
+                              chunk, VERSE_START, compounds=compounds,
+                              joins=joins)
             print(f'{vol} {label}({name}): {n} 段')
             total += n
 
@@ -236,7 +322,7 @@ def main():
                 OUT / f'{num}.md',
                 f'<!-- isaiah {num} | 书页 {pmap.get(pg0)}-{pmap.get(pg1)} '
                 f'| {vol} 扫描页 {pg0}-{pg1} -->',
-                chunk, VERSE_START, pmap, compounds)
+                chunk, VERSE_START, pmap, compounds, joins)
             total += n
         print(f'{vol} 第 {lo}-{hi} 章：{len(order)} 章')
 

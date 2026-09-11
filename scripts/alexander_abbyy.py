@@ -27,6 +27,11 @@ IT_ON, IT_OFF = '', ''
 # 删了就再也分不出「断词」与「复合词」。留个标记，等 cleanup 阶段拿全书
 # 的复合词表来定夺（另一个会话在诗篇里查出 8 处被拼成 wellwatered）。
 HYPH = '\ue003'
+# 行与行之间的接缝。ABBYY 有时把行末的连字符整个吞掉（`ac-` + `quirements`
+# 读成 `ac` + `quirements`），拼成段落之后与句中的正常空格再也分不开。
+# 留个哨兵，让 cleanup 阶段知道「这个空格原本是行末」——断词只可能发生在
+# 这里，判据限定在接缝上就不会误伤句中真正的两个词（`in deed`、`for ever`）。
+BREAK = '\ue004'
 
 
 def _line_text(line):
@@ -78,7 +83,7 @@ def _join_lines(lines, drop_line=None):
         if tail.endswith('-') and nxt[:1].islower():
             buf = tail[:-1] + HYPH + (IT_OFF if buf.endswith(IT_OFF) else '') + t
         else:
-            buf = buf + ' ' + t
+            buf = buf + BREAK + t
     return buf
 
 

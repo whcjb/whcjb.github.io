@@ -27,6 +27,7 @@ Internet Archive 上有多家馆藏各自扫的独立副本。它们的 OCR 错�
 """
 import argparse
 import re
+from difflib import SequenceMatcher
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -289,6 +290,21 @@ def main(apply_it):
             # —— 读数不同 ——
             dist = edit_distance(tok.lower(), reading)
             close = dist <= max(1, round(len(reading) * MAX_DIST_RATIO))
+            # 距离闸按**读数长度**算阈值，四五个字母的词只容一处差错，
+            # 而 OCR 把同一个词读崩两三处是常事：`Jcing`→king、`maJce`→make、
+            # `loolc`→look、`foreifilier`→foreteller（导论正文第一屏）。
+            # 这些证人是**全票一致**的，拦下来纯属可惜。
+            #
+            # 放行另给一条路，条件比距离闸更硬：证人读数是词典词、不短于四个
+            # 字母、与我们这串长度相差不超过二、且相似度 ≥0.65。三条一起，
+            # 锚撞车那类（`regna`→the、`Fliigels`→isaiah）一个也进不来——
+            # 它们相似度低得多。
+            if not close and not ours_is_word and len(reading) >= 4 \
+                    and abs(len(tok) - len(reading)) <= 2 \
+                    and is_word(reading, lex) \
+                    and SequenceMatcher(None, tok.lower(),
+                                        reading).ratio() >= 0.65:
+                close = True
             # 目标掉到一两个字母的，一律不信：那是希伯来活字残渣
             # （`bx`→`b`、`ic`→`c`），证人那边也是残渣，只是残得不一样。
             # 等长的两字母词（`ol`→`of`、`le`→`be`、`yc`→`ye`）另当别论。

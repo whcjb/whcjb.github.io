@@ -122,13 +122,11 @@ def rescanned():
                 if int(r['heb_n'] or 0) >= 3 or int(r['grc_n'] or 0) >= 3:
                     for w in re.findall(r"[A-Za-z][A-Za-z'’]*", r['garbage']):
                         out.setdefault(w, 'probe')
-    if RESCAN.exists():
-        with open(RESCAN, encoding='utf-8') as f:
-            for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
-                g = (r.get('garbage') or '').strip(".,;:!?()[]'\"")
-                reading = (r.get('reading') or '').strip(".,;:!?()[]'\"")
-                if g and reading and not is_word(reading, lex):
-                    out.setdefault(g, 'eng')
+    # 曾经还有一条：`eng` 重扫读回来仍是非词 → 判成外文。**这条撤掉了。**
+    # 它把 `foreifilier`（其实是 foreteller，就在导论正文第一屏）从待判里
+    # 摘了出去——裁图小、活字糊，`eng` 读不出来的原因多得很，读不出来
+    # 根本不能证明页面上印的不是拉丁字母。只有「另一套字母被读出来了」
+    # 才是证据，所以只留 heb/grc 那两条。
     return out
 
 

@@ -48,7 +48,11 @@ OUT_JUNK = ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv'
 PDF = {'v1': Path.home() / 'Documents/论文/alexander/propheciesisaiah01alexuoft.pdf',
        'v2': Path.home() / 'Documents/论文/alexander/propheciesisaiah02alexuoft.pdf'}
 XML = {'v1': SRC / 'v1.xml', 'v2': SRC / 'v2.xml'}
-BODY = {'v1': (79, 730), 'v2': (47, 547)}
+# **从序言起，不是从正文起。** 原先只扫 (79,730)/(47,547)，把序言与导论
+# 整整一百多页排除在外——而那正是希腊文最密的地方（导论通篇在讲
+# προφήτης / προφητεύω 的词义）。页面上 `fiQotpqrijs`、`nQoyrjTrjg`
+# 这些串一次都没被重扫过。
+BODY = {'v1': (9, 730), 'v2': (9, 547)}
 
 # 希伯来活字被按拉丁字母读出来时，ABBYY 常常在串里吐出非字母符号
 # （`n^t`、`dwrj^ft`、`aa&evsia`、`oivon).y%`），它们是残渣的**正信号**。
@@ -56,6 +60,10 @@ BODY = {'v1': (79, 730), 'v2': (47, 547)}
 # 因为那个 `&` 不在表里，连候选都算不上。凡是剥掉首尾标点后**里面**还留着
 # 非字母数字字符的，一律算。
 JUNK = re.compile(r'[^0-9A-Za-z]')
+# 只由罗马数字字母组成的串：`xxiv-xxxv)`、`xxxvn`、`xxm`。导论里全是这种
+# 卷章页码引用，判词典不认（`xxxvn` 是 `xxxvii` 读错），一放宽就全成了候选，
+# 而 heb/grc 模型面对一串 x 和 v 必然硬凑出东西来（`(צזצצצ-]טאצצ`）。
+ROMANISH = re.compile(r'^[ivxlcdmnu]{2,}$', re.I)
 HEBREW = re.compile(r'[֐-׿]')
 GREEK = re.compile(r'[Ͱ-Ͽἀ-῿]')
 # 裁图时往外放一点，免得切掉字母的笔画
@@ -78,6 +86,8 @@ def looks_residue(tok, lex, junk_only=False):
     """
     core = tok.strip(".,;:!?()[]'\"")
     if len(core) < 2 or not core.isascii():
+        return False
+    if ROMANISH.match(re.sub(r'[^A-Za-z]', '', core) or 'x'):
         return False
     if JUNK.search(core):
         # 垃圾字符本身就说明这块活字 ABBYY 没读懂；只要还剩两个字母就值得一裁
@@ -158,13 +168,34 @@ def main(page_range=None, junk_only=False):
             page = doc[idx - 1]
             sx, sy = page.rect.width / pw, page.rect.height / ph
             jobs = []
+            prev_hyphen = False
             for line in el.iter(NS + 'line'):
                 toks = line_tokens(line)
+                # 行末断词的两个半截都要跳过：`uni-` ⏎ `form`、`pecu-` ⏎ `liar`。
+                # 它们判词典不认（`uni`、`pecu`），放宽之后正好落进候选，
+                # 而希伯来模型对着四个拉丁字母照样会硬凑（`uni` → `ותט`，
+                # 置信度 90）。半截词不是活字残渣，一个都不该送去重读。
+                line_hyphen = bool(toks) and toks[-1][0].rstrip('\'"').endswith('-')
+                skip = set()
+                if line_hyphen:
+                    skip.add(len(toks) - 1)
+                if prev_hyphen and toks:
+                    skip.add(0)
+                prev_hyphen = line_hyphen
                 run = []
                 for k, (txt, box) in enumerate(toks + [(None, None)]):
                     # 一段最多并四个词：判据放宽之后，连着几个专名会被并成
                     # 一大段，裁图跨度太大反而读不准
-                    if (txt is not None and looks_residue(txt, lex, junk_only)
+                    # 纯符号的 token（`^`、`»`）不单独成候选，但夹在残渣中间
+                    # 时要并进去——`thgLjipmp' ^ ^OT^` 这一整片是一句读崩的
+                    # 英文（`in the name of God`），被中间那个 `^` 切开就谁也
+                    # 认不出来了
+                    if (txt is not None and run and not any(c.isalnum()
+                                                            for c in txt)):
+                        run.append((txt, box))
+                        continue
+                    if (txt is not None and k not in skip
+                            and looks_residue(txt, lex, junk_only)
                             and len(run) < 4):
                         run.append((txt, box))
                         continue
@@ -178,7 +209,8 @@ def main(page_range=None, junk_only=False):
             # 判据放宽之后候选涨到上万，串行跑要几个钟头。
             if jobs:
                 with ThreadPoolExecutor(8) as pool:
-                    rows.extend(r for r in pool.map(judge, jobs) if r)
+                    rows.extend(r for r in pool.map(lambda j: judge(j, lex), jobs)
+                                if r)
             n_page += 1
             if n_page % 25 == 0:
                 print(f'{vol} 扫描页 {idx}：累计读出 {len(rows)} 段', flush=True)
@@ -216,9 +248,35 @@ def crop(run, toks, page, sx, sy, vol, scan_page):
                 after=clean(' '.join(t for t, _ in toks[j + 1:j + 3])))
 
 
-def judge(job):
+def judge(job, lex=None):
+    """一块裁图 → (读数, 用哪套字母)，或 None。
+
+    **三条路按这个顺序走，顺序本身是踩出来的。**
+
+    一、`eng` 读出一串全是词典词、且与 ABBYY 那串明显不同 —— 这块是**读崩的
+        英文**。导论里 `in the name of God` 被读成 `thgLjipmp' ^ ^OT^`，
+        heb/grc 对它只能给出 47 / 29 分的垃圾。这条要是排在后面，就会被
+        「两套模型都没读出外文 → 放弃」挡死，永远轮不到。
+    二、heb / grc 读出成串希伯来/希腊字母且够自信 —— 这块是外文活字。
+    三、两台引擎对比守卫：`eng` 也很自信、读出的正是 ABBYY 那串字母 ——
+        页面上印的本来就是拉丁字母（专名、德文、拉丁文），不能换。
+    """
     png, garbage = job['png'], job['garbage']
+    row = lambda script, reading, conf: (
+        job['vol'], job['scan_page'], job['before'], garbage, job['after'],
+        script, re.sub(r'[\t\r\n]+', ' ', reading).strip(), round(conf))
+
+    eng, ce = ocr(png, 'eng')
+    a = re.sub(r'[^A-Za-z]', '', eng).lower()
+    b = re.sub(r'[^A-Za-z]', '', garbage).lower()
+    words = [w.strip(".,;:!?()[]'\"") for w in eng.split()]
+    if (ce >= 85 and len(words) >= 2 and all(words) and a != b
+            and all(is_word(w, lex) for w in words)):
+        Path(png).unlink(missing_ok=True)
+        return row('eng', eng, ce)
+
     (heb, ch_), (grc, cg) = ocr(png, 'heb'), ocr(png, 'grc')
+    Path(png).unlink(missing_ok=True)
     nh, ng = len(HEBREW.findall(heb)), len(GREEK.findall(grc))
     # 置信度门槛 65：低于这个的多半是模型在硬凑
     if nh >= 2 and ch_ >= 65 and (ch_ >= cg or ng < 2):
@@ -226,20 +284,10 @@ def judge(job):
     elif ng >= 2 and cg >= 65:
         script, reading, conf = 'grc', grc, cg
     else:
-        Path(png).unlink(missing_ok=True)
         return None
-    # 两台引擎对比：拉丁活字上 `eng` 读得又准又稳，希伯来活字上它只会吐垃圾。
-    # 所以 `eng` 也很自信、且读出的正是 ABBYY 那串字母时，说明页面上印的
-    # 本来就是拉丁字母（专名、德文、拉丁文），不能拿希伯来读数去换。
-    eng, ce = ocr(png, 'eng')
-    Path(png).unlink(missing_ok=True)
-    a = re.sub(r'[^A-Za-z]', '', eng).lower()
-    b = re.sub(r'[^A-Za-z]', '', garbage).lower()
     if ce >= 80 and a and SequenceMatcher(None, a, b).ratio() >= 0.6:
         return None
-    clean = lambda x: re.sub(r'[\t\r\n]+', ' ', x).strip()
-    return (job['vol'], job['scan_page'], job['before'], garbage, job['after'],
-            script, clean(reading), round(conf))
+    return row(script, reading, conf)
 
 
 if __name__ == '__main__':

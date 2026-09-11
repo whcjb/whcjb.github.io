@@ -12,7 +12,7 @@
 """
 import re
 
-from alexander_abbyy import HYPH, IT_ON, IT_OFF
+from alexander_abbyy import BREAK, HYPH, IT_ON, IT_OFF
 
 # 字面星号（OCR 自带、非斜体标记）的待判哨兵，由 repair 阶段裁决
 LIT_STAR = '\ue002'
@@ -40,6 +40,33 @@ def collect_compounds(pages):
                     continue
                 out.add(m.group(1) + '-' + m.group(2))
     return out
+
+
+def resolve_breaks(t, joins=frozenset()):
+    """行接缝哨兵 → 接起来，或还原成空格。
+
+    ABBYY 有时把行末连字符整个吞掉，断词两截之间只剩一个普通空格：
+    序言里 `ac-quirements` 成了 `ac quirements`，`writ-ten` 成了 `writ ten`。
+    两截常常各自都是真词（`con` + `duct`），判词典这道闸看不见，多证人也
+    看不见——它们逐词比对，两边都读到同样的两个词。全书 285 处。
+
+    `joins` 是调用方按**全书证据**定下来的该接的词表（见以赛亚书提取器的
+    `line_break_joins`）。不传就一律还原成空格，与加这个哨兵之前的行为一致。
+    """
+    def repl(m):
+        a, seam, b = m.group(1), m.group(2) + m.group(3), m.group(4)
+        if (a + b).lower() not in joins:
+            return m.group(0).replace(BREAK, ' ')
+        # `«am»⏎«buscades»` 是同一个斜体词被行末切开的：接起来之后中间那对
+        # 「闭合 + 重新开启」要去掉，留着就成了两段紧挨的斜体。只在**正好是
+        # 这一对**时去，别的组合原样留着，免得把标记数弄成奇数。
+        return a + b + ('' if seam == IT_OFF + IT_ON else seam)
+    # 哨兵可能夹在接缝两侧（ABBYY 按行切斜体段），必须放进正则一起吃掉，
+    # 否则 `«am»⏎«buscades` 这种断词一个也接不上
+    sent = '[' + IT_ON + IT_OFF + ']*'
+    t = re.sub(r"([A-Za-z][A-Za-z'’]*)(" + sent + r')' + BREAK + '(' + sent
+               + r")([a-z][A-Za-z'’]*)", repl, t)
+    return t.replace(BREAK, ' ')
 
 
 def resolve_hyphens(t, compounds):
@@ -115,7 +142,8 @@ def fix_ocr_brackets(t):
     return re.sub(r'[\[{](?=[^\[\]{}()]*\))', '(', t)
 
 
-def cleanup(t, compounds=frozenset()):
+def cleanup(t, compounds=frozenset(), joins=frozenset()):
+    t = resolve_breaks(t, joins)
     t = resolve_hyphens(t, compounds)
     t = fix_literal_asterisks(t)
     t = normalize_italics(t)
@@ -209,6 +237,10 @@ def merge(chunk, verse_start, pmap=None):
         t = par['text'].strip()
         if not t:
             continue
+        # 整段一个字母都没有——页面上一点墨迹被 ABBYY 当成了一段
+        # （第 10 章章首多出来一行孤零零的 `^`）。这类段落没有内容可保。
+        if not re.search(r'[A-Za-z]', bare(t)):
+            continue
         # 页码没被 ABBYY 单独切成一段，而是粘在了续行的开头
         # （`circum-` ⏎ `26 locution used…`）。并段时它就掉进句子中间了。
         # 判据很硬：这个数字必须**正好等于本页的书页页码**。
@@ -260,7 +292,7 @@ def slice_pars(by_index, pg0, pi0, pg1, pi1, runhead):
 
 
 def write_chapter(path, header, chunk, verse_start, pmap=None,
-                  compounds=frozenset()):
+                  compounds=frozenset(), joins=frozenset()):
     """一章 → 一个 md 文件，返回段落数。"""
     paras = merge(chunk, verse_start, pmap)
     lines = [header, '']
@@ -270,7 +302,7 @@ def write_chapter(path, header, chunk, verse_start, pmap=None,
             shown = (pmap or {}).get(page) or page
             lines.append(f'<!-- PAGE {shown} -->')
             cur = page
-        txt = cleanup(t, compounds)
+        txt = cleanup(t, compounds, joins)
         if txt:
             lines.append(txt)
             lines.append('')
