@@ -721,7 +721,7 @@ MANUAL_TEXT = [
     # ↓ 缩水守卫拦下的粘连：证人读数只是前半个词，照抄会吞掉后一个
     ('to wipe oflFby shewing', 'to wipe off by shewing'),
     ('but foreignirom the context', 'but foreign from the context'),
-    ("heat one's selfmih.* anger", "heat one's *self with* anger"),
+    ("*heat one's selfmih.* anger", "*heat one's self with* anger"),
     ('lest thoustnke ayainst the stone', 'lest thou strike against the stone'),
     ('with the lastlsa. xl.', 'with the last Isa. xl.'),
     # 影像：Ps. 36 "The mention of the *foot* suggests the ideas of spurning"
