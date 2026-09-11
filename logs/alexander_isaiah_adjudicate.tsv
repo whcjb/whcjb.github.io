@@ -3683,7 +3683,6 @@ chapter	ours	witness	votes	polled	verdict
 37	Cilicia	Cilicia	4	4	confirm
 37	Nisroch	Nisroch	4	4	confirm
 37	Ararat	Ararat	4	4	confirm
-37	selfdefence	self	4	4	reject
 37	Nisroch	Nisroch	3	4	confirm
 37	Ardumusanus	Ardumusanus	3	4	confirm
 37	Abydenus	Abydenus	4	4	confirm
@@ -4027,7 +4026,6 @@ chapter	ours	witness	votes	polled	verdict
 40	quaerit	quaerit	4	5	confirm
 40	quomodo	quomodo	5	5	confirm
 40	r	t	2	4	realword?
-40	figtree	fig	4	5	reject
 40	foundations'	foundations	4	4	realword-fix
 40	ns	n	2	5	reject
 40	yu	yru	2	5	reject
@@ -4644,7 +4642,6 @@ chapter	ours	witness	votes	polled	verdict
 48	onlysafe	only	5	5	reject
 48	slanders	standers	4	4	realword?
 48	pre	pre	5	5	confirm
-48	fivesixths	five	5	5	reject
 48	downfal	downfal	5	5	confirm
 48	Flebrew	hebrew	5	5	fix
 48	repented	repeated	5	5	realword-fix
@@ -6101,7 +6098,6 @@ chapter	ours	witness	votes	polled	verdict
 60	wail	wait	5	5	realword?
 60	sn	i	2	5	reject
 60	Spain	Spain	5	5	confirm
-60	twentyfive	four	5	5	reject
 60	b	h	3	5	realword?
 60	Tartessus	Tartessus	4	5	confirm
 60	Baetis	Baetis	4	5	confirm
@@ -6627,7 +6623,6 @@ chapter	ours	witness	votes	polled	verdict
 7	pre	pre	4	4	confirm
 7	Steudel	Steudel	4	4	confirm
 7	Syrian'	syrian	4	4	realword?
-7	Tiglathpileser	tiglath	4	4	reject
 7	Va	jarchi	2	4	reject
 7	fiffit	sent	4	4	reject
 7	frft	to	4	4	reject
@@ -7180,7 +7175,6 @@ introduction	Arnaziah	amaziah	3	4	fix
 introduction	stateme'nt	statement	4	4	fix
 introduction	overthrown	overthrown	4	4	confirm
 introduction	Nabonassar	Nabonassar	4	4	confirm
-introduction	twentyeight	twenty	4	4	reject
 introduction	Jehoiada	Jehoiada	4	4	confirm
 introduction	Joash	Joash	4	4	confirm
 introduction	cb	ch	4	4	fix
@@ -7199,7 +7193,6 @@ introduction	eventu	eventu	4	4	confirm
 introduction	Gramberg	gram	4	4	reject
 introduction	Cambyses	Cambyses	4	4	confirm
 introduction	Vatke	Vatke	4	4	confirm
-introduction	selfevident	self	4	4	reject
 introduction	pra	practical	4	4	reject
 introduction	ctical	extreme	4	4	reject
 introduction	candour	candour	4	4	confirm

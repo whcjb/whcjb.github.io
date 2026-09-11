@@ -20,6 +20,8 @@ raw 里的 `[FN]` 一律排在各自那一块的末尾（提取时是按页扫�
 
 用法: python3 scripts/publish_davenant_appx.py
 """
+import difflib
+import json
 import re
 import subprocess
 import sys
@@ -47,6 +49,91 @@ CN = {                                   # 目录与导航上的中文题名
 
 FN_MARK_START = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+')
 REF_RE = re.compile(r'(?<=[\w.,;:)\'"”’])(\*|\+)|(?<=\s)(\*|\+)(?=\s)')
+
+
+# ── 斜体 ────────────────────────────────────────────────────────────────────
+# 原书的斜体承担三种实义：被注释的词句、圣经引语、拉丁词句（DIAGNOSIS §3）。
+# 两个文本源都给不出字体信息，所以另跑一遍量笔画倾角，见
+# scripts/ocr_davenant_slant.py。全书 45 万词的倾角直方图是清楚的双峰：
+# 正体 -6°~+3°（峰在 -2°），斜体 +11°~+21°（峰在 +15°），中间 4°~10° 是空谷。
+#
+# ⚠️ 这一步必须放在**发布**这一侧，不能塞进提取器。试过在行文本上打标记
+# 再一路带下去：标记落在行首，`SECTION_RE` / `LEMMA_RE` 立刻认不出
+# （节组 92→85、lemma 328→203），`dehyph` 的「后一行首字母小写才接」也被
+# 标记挡掉，跨行断词全断在那里（`ano</em>- <em>ther`）。结构化产物一个字
+# 都不动，斜体只在最后贴上去。
+IT0, IT1 = '\ue000', '\ue001'
+ITALIC_MIN = 9.0
+_slant = {}
+
+
+def slant_words(vol, page):
+    """→ [(词, 倾角), …]，该页按 OCR 顺序的全部词。"""
+    if vol not in _slant:
+        f = RAW / f'vol{vol}_slant.jsonl'
+        _slant[vol] = {}
+        if f.exists():
+            for ln in f.open(encoding='utf-8'):
+                r = json.loads(ln)
+                _slant[vol][r['page']] = [w for l in r['lines']
+                                          for w in l['words']]
+    return _slant[vol].get(page, [])
+
+
+def _nrm(t):
+    return re.sub(r'[^a-z0-9]', '', t.lower())
+
+
+def mark_italics(txt, pages):
+    """把 txt 里原书排斜体的词圈上私用码。对不上就原样返回。
+
+    倾角是按页面上的词量的，而 txt 已经过校勘（拆词、换字、接断词），
+    所以按归一化词形对齐再贴，不按下标硬配。
+    """
+    # 附卷这一路的 pages 是**纯页号**（整卷都在卷二），不是 (卷, 页) 对
+    stream = [w for pg in pages
+              for w in slant_words(*(pg if isinstance(pg, tuple) else (2, pg)))]
+    if not stream:
+        return txt
+    mine = txt.split()
+    sm = difflib.SequenceMatcher(None, [_nrm(t) for t in mine],
+                                 [_nrm(w[0]) for w in stream], autojunk=False)
+    flags = [w[1] is not None and w[1] >= ITALIC_MIN for w in stream]
+    mark = [False] * len(mine)
+    hit = 0
+    for tag, a1, a2, b1, b2 in sm.get_opcodes():
+        if tag == 'equal':
+            hit += a2 - a1
+            for k in range(a2 - a1):
+                mark[a1 + k] = flags[b1 + k]
+        elif tag == 'replace':
+            seg = flags[b1:b2]
+            for k in range(a1, a2):
+                mark[k] = bool(seg) and all(seg)   # 拆词/并词处要整段都斜才算
+    if hit < len(mine) * 0.5:
+        return txt                        # 对齐太差，宁可不标
+    out, i = [], 0
+    while i < len(mine):
+        if not mark[i]:
+            out.append(mine[i]); i += 1; continue
+        j = i
+        while j < len(mine) and mark[j]:
+            j += 1
+        run = mine[i:j]
+        run[0] = IT0 + run[0]
+        run[-1] = run[-1] + IT1
+        out += run
+        i = j
+    return ' '.join(out)
+
+
+def italics(t):
+    """私用码 → <em>。放在 md_escape 之后：escape 只动 markdown 元字符，
+    碰不到私用码；反过来先换成 <em> 就会被 escape 掉。"""
+    t = re.sub(IT0 + r'\s*' + IT1, '', t)
+    if t.count(IT0) != t.count(IT1):
+        return t.replace(IT0, '').replace(IT1, '')   # 落单的丢掉，不留半个标签
+    return t.replace(IT0, '<em>').replace(IT1, '</em>')
 
 
 def md_escape(t):
@@ -213,7 +300,7 @@ def attach_notes(units, notes):
                         return f'[^da{seq}]'
                 return m.group(0)              # 该页注已用尽 → 原样留符号
 
-            txt = REF_RE.sub(sub, it['text'])
+            txt = REF_RE.sub(sub, mark_italics(it['text'], it['pages']))
             u['blocks'][i] = ('P', txt)
             for p in it['pages']:
                 u['last'][p] = i
@@ -247,10 +334,10 @@ def render(u):
             j = i
             lines = []
             while j < len(blocks) and blocks[j][0] == 'VERSE':
-                lines.append(md_escape(blocks[j][1])); j += 1
+                lines.append(italics(md_escape(blocks[j][1]))); j += 1
             cite = ''
             if j < len(blocks) and blocks[j][0] == 'CITE':
-                cite = f'\n<p class="dv-cite">{md_escape(blocks[j][1])}</p>'
+                cite = f'\n<p class="dv-cite">{italics(md_escape(blocks[j][1]))}</p>'
                 j += 1
             body = '\n'.join(f'<p>{x}</p>' for x in lines)
             out.append(f'<div class="dv-verse">\n{body}\n</div>{cite}')
@@ -258,13 +345,13 @@ def render(u):
             continue
         i += 1
         if kind == 'CITE':
-            out.append(f'<p class="dv-cite">{md_escape(txt)}</p>')
+            out.append(f'<p class="dv-cite">{italics(md_escape(txt))}</p>')
         elif kind == 'H3':
             out.append(f'## {txt}')
         elif kind == 'END':
             out.append(f'<p class="dv-end">{txt}</p>')
         else:
-            out.append(enum_lead(md_escape(txt)))
+            out.append(enum_lead(italics(md_escape(txt))))
     if u['fns']:
         out += ['', '---', '']
         sym_seen = {}                     # 页 → 该页已出现几条带符号的注

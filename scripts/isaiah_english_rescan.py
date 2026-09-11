@@ -118,12 +118,26 @@ def scan():
                 with ThreadPoolExecutor(8) as pool:
                     rows.extend(r for r in pool.map(judge, jobs) if r)
         doc.close()
+    # **累加，不能覆盖。** 每轮只扫当时还待判的那批串，扫完落盘、待判名单
+    # 就短一截；下一轮重扫的结果若把上一轮的覆盖掉，backlog 那边「这串已经
+    # 重扫过、是外文」的证据就跟着没了，分母会凭空涨回去（实测 152 → 221）。
+    old = []
+    if OUT.exists():
+        with open(OUT, encoding='utf-8') as f:
+            old = [tuple(r.values()) for r in csv.DictReader(
+                f, delimiter='\t', quoting=csv.QUOTE_NONE)]
+    seen, merged = set(), []
+    for r in [tuple(str(x) for x in row) for row in rows] + old:
+        k = (r[0], r[1], r[3])
+        if k not in seen:
+            seen.add(k)
+            merged.append(r)
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as f:
         f.write('vol\tscan_page\tbefore\tgarbage\tafter\treading\tconf\n')
-        for r in rows:
-            f.write('\t'.join(str(x) for x in r) + '\n')
-    print(f'重扫读出 {len(rows)} 条 → {OUT}')
+        for r in merged:
+            f.write('\t'.join(r) + '\n')
+    print(f'重扫读出 {len(rows)} 条，累计 {len(merged)} 条 → {OUT}')
 
 
 def norm(text):

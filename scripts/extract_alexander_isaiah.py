@@ -23,9 +23,9 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from alexander_common import (bare, check_page_sequence, collect_compounds,
-                              find_roman_heads, printed_page_numbers,
-                              slice_pars, write_chapter)
+from alexander_common import (HYPH, IT_OFF, IT_ON, bare, check_page_sequence,
+                              collect_compounds, find_roman_heads,
+                              printed_page_numbers, slice_pars, write_chapter)
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander_raw/isaiah/src'
@@ -150,14 +150,42 @@ def apply_combined_heads(pages, heads):
     return moved
 
 
+CAP_COMPOUND = re.compile(r'(?<![A-Za-z])([A-Z][a-z]{1,})-([a-z]{2,})(?![A-Za-z])')
+
+
+def all_compounds():
+    """两卷合起来的连字符复合词表，**跨卷共用**，而且认大写开头的。
+
+    原先每卷各收各的，凭据只在本卷里找：`fig-tree` 行内写法在第 36 章
+    （卷一），断在行末的那处却在第 40 章（卷二），于是被拼成 `figtree`。
+    同类共 24 个——`dwelling-place`、`drink-offering`、`standard-bearer`、
+    `self-evident`、`twenty-five`……
+
+    另一半是大小写：共用的 COMPOUND 两边都要求小写，专名一个也收不到，
+    `Shear-jashub` `Tiglath-pileser` `Kir-hares` 因此被拼死。这里补一条
+    大写开头的，比对时统一转小写。
+    """
+    out = set()
+    for cfg in VOLUMES.values():
+        pages = pickle.load(open(SRC / cfg['pkl'], 'rb'))
+        out |= collect_compounds(pages)
+        for pg in pages:
+            for par in pg['pars']:
+                t = par['text'].replace(IT_ON, '').replace(IT_OFF, '')
+                for m in CAP_COMPOUND.finditer(t):
+                    if HYPH not in m.group(0):
+                        out.add(m.group(0).lower())
+    return out
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     total = 0
+    compounds = all_compounds()
 
     for vol, cfg in VOLUMES.items():
         pages = pickle.load(open(SRC / cfg['pkl'], 'rb'))
         by_index = {p['index']: p for p in pages}
-        compounds = collect_compounds(pages)
         lo, hi = cfg['chapters']
         body_lo, body_hi = cfg['body']
 
