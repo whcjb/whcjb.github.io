@@ -140,6 +140,26 @@ def scan():
     print(f'重扫读出 {len(rows)} 条，累计 {len(merged)} 条 → {OUT}')
 
 
+def find_whole(flat, needle):
+    """整词定位。**不能用裸 find**——`unintel` 会匹配进 `unintelligible` 里面。
+
+    第 62 章踩过：`unintel-ligible` 断在行末，ABBYY 把前半截当成独立一个词，
+    重扫把它读成希伯来文落了盘，正文就成了 `in some degree מותט ligible`。
+    这串本来就在行尾，锚里 `after` 是空的，于是 `before + garbage` 作为
+    **前缀**正好落在整词中间，裸 find 一路匹配过去，谁也拦不住。
+    """
+    out, start = [], 0
+    while True:
+        p = flat.find(needle, start)
+        if p < 0:
+            return out
+        if ((p == 0 or not flat[p - 1].isalnum())
+                and (p + len(needle) >= len(flat)
+                     or not flat[p + len(needle)].isalnum())):
+            out.append(p)
+        start = p + 1
+
+
 def norm(text):
     out, idx, prev_space = [], [], True
     for i, ch in enumerate(text):
@@ -212,19 +232,16 @@ def apply_it():
                                                       'notfound': 0,
                                                       'ambiguous': 0}
     for r in rows:
-        anchor, _ = norm(f"{r['before']} {r['garbage']} {r['after']}")
-        garb, _ = norm(r['garbage'])
+        # 末尾要 strip：norm 把标点换成空格，`after` 是 "The Vulgate," 时
+        # 锚就以空格收尾，整词判定于是去看**下一个词的首字母**，永远是字母，
+        # 于是全都判不过（实测 404 条锚失效）
+        anchor = norm(f"{r['before']} {r['garbage']} {r['after']}")[0].strip()
+        garb = norm(r['garbage'])[0].strip()
         if not garb or not anchor:
             continue
         hits = []
         for name, (flat, _) in keys.items():
-            start = 0
-            while True:
-                p = flat.find(anchor, start)
-                if p < 0:
-                    break
-                hits.append((name, p))
-                start = p + 1
+            hits += [(name, q) for q in find_whole(flat, anchor)]
         if not hits:
             stat['notfound'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'notfound'))
@@ -235,8 +252,9 @@ def apply_it():
             continue
         name, p = hits[0]
         flat, idx = keys[name]
-        g = flat.find(garb, p)
-        if g < 0 or g > p + len(anchor):
+        g = next((q for q in find_whole(flat, garb)
+                  if p <= q <= p + len(anchor)), -1)
+        if g < 0:
             stat['notfound'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'notfound'))
             continue

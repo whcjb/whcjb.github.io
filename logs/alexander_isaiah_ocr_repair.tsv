@@ -48,7 +48,6 @@ chapter	from	to	kind
 1	Eng		unresolved
 1	ni5		unresolved
 1	thn		unresolved
-1	sicut		unresolved
 1	vastitate		unresolved
 1	hostili		unresolved
 1	a'pt		unresolved
@@ -209,7 +208,6 @@ chapter	from	to	kind
 1	Res		unresolved
 1	butm		unresolved
 1	Kiobel		unresolved
-1	instantane		unresolved
 1	jbn		unresolved
 1	theTme		unresolved
 1	versa		unresolved
@@ -279,7 +277,6 @@ chapter	from	to	kind
 10	ille		unresolved
 10	ipse		unresolved
 10	CTO		unresolved
-10	eorum		unresolved
 10	DT		tooshort
 10	pov		unresolved
 10	degradation	degradation	rule
@@ -343,6 +340,7 @@ chapter	from	to	kind
 10	Gotzen		unresolved
 10	eo		tooshort
 10	requirebat		unresolved
+10	TTQMOV		unresolved
 10	substituitur		unresolved
 10	requirit		unresolved
 10	veritas		unresolved
@@ -372,9 +370,7 @@ chapter	from	to	kind
 10	fcwi'rob		unresolved
 10	nrnrmw		unresolved
 10	instructissima		unresolved
-10	eorum		unresolved
 10	fixa		unresolved
-10	eorum		unresolved
 10	veritatis		unresolved
 10	H1		tooshort
 10	irvnin		unresolved
@@ -382,7 +378,6 @@ chapter	from	to	kind
 10	SS		tooshort
 10	xsv		unresolved
 10	SKS		unresolved
-10	sicut		unresolved
 10	colliguntur		unresolved
 10	reciperem		unresolved
 10	auferrem		unresolved
@@ -453,6 +448,7 @@ chapter	from	to	kind
 10	London		unresolved
 10	Polyglott		unresolved
 10	ri		tooshort
+10	bt		tooshort
 10	biO'Q		unresolved
 10	p1		tooshort
 10	Jarchj		unresolved
@@ -723,6 +719,7 @@ chapter	from	to	kind
 11	Reinhart		unresolved
 11	odour		unresolved
 11	odour		unresolved
+11	mninx		unresolved
 11	nn		tooshort
 11	rumours		unresolved
 11	jThe		unresolved
@@ -900,7 +897,6 @@ chapter	from	to	kind
 13	Zagrian		unresolved
 13	bij		unresolved
 13	iKa'n		unresolved
-13	ol		tooshort
 13	aQjowig		unresolved
 13	ingrediantur		unresolved
 13	veniant		unresolved
@@ -910,7 +906,6 @@ chapter	from	to	kind
 13	veniant		unresolved
 13	evaginati		unresolved
 13	voluntariorum		unresolved
-13	meine		unresolved
 13	Freywillige		unresolved
 13	sich		unresolved
 13	vor		unresolved
@@ -1091,6 +1086,7 @@ chapter	from	to	kind
 13	JM3		unresolved
 13	JEschylus		unresolved
 13	nso		unresolved
+13	nao		unresolved
 13	Nxraa		unresolved
 13	MSD3		unresolved
 13	np		tooshort
@@ -1370,6 +1366,7 @@ chapter	from	to	kind
 14	W'E		unresolved
 14	im		tooshort
 14	Berge		unresolved
+14	ss		tooshort
 14	SE35		unresolved
 14	morabimur		unresolved
 14	evidentia		unresolved
@@ -1510,7 +1507,6 @@ chapter	from	to	kind
 14	ecclesiae		unresolved
 14	suspicio		unresolved
 14	igitur		unresolved
-14	prophetiam		unresolved
 14	hanc		unresolved
 14	loqui		unresolved
 14	hisce		unresolved
@@ -1538,7 +1534,7 @@ chapter	from	to	kind
 14	aMcpvl		unresolved
 14	oi		tooshort
 14	paid		unresolved
-14	Jehorarn		unresolved
+14	Jehorarn	Jehoram	rule
 14	Ilulatarivy		unresolved
 14	Hierozoicon		unresolved
 14	Alterthumskunde		unresolved
@@ -2015,7 +2011,6 @@ chapter	from	to	kind
 17	rem		unresolved
 17	volubilem		unresolved
 17	im		tooshort
-17	sicut		unresolved
 17	tempestate		unresolved
 17	gegen		unresolved
 17	zu		tooshort
@@ -2342,7 +2337,6 @@ chapter	from	to	kind
 19	TT'		unresolved
 19	Swe		unresolved
 19	thepatriarchal		unresolved
-19	sition		unresolved
 19	rrni		unresolved
 19	tvzz		unresolved
 19	FPiii		unresolved
@@ -2427,7 +2421,6 @@ chapter	from	to	kind
 2	Eng		unresolved
 2	Hendew		unresolved
 2	tj		tooshort
-2	sicut		unresolved
 2	olim		unresolved
 2	Hn		tooshort
 2	oriente		unresolved
@@ -2492,6 +2485,7 @@ chapter	from	to	kind
 2	Oecolampadius		unresolved
 2	Musculus		unresolved
 2	nhoiov		unresolved
+2	alaGaris		unresolved
 2	im		tooshort
 2	Meer		unresolved
 2	oceani		unresolved
@@ -2625,7 +2619,6 @@ chapter	from	to	kind
 20	latfi		unresolved
 20	Mb		tooshort
 20	gefangene		unresolved
-20	Egypten		unresolved
 20	vertrieoene		unresolved
 20	Mohrenland		unresolved
 20	gtl		unresolved
@@ -2793,6 +2786,7 @@ chapter	from	to	kind
 22	ivhom	whom	wform
 22	ihee		unresolved
 22	fta9		unresolved
+22	fias		unresolved
 22	Spx		unresolved
 22	IM		tooshort
 22	IM		tooshort
@@ -2848,12 +2842,10 @@ chapter	from	to	kind
 23	ignoremus		unresolved
 23	etiam		unresolved
 23	hanc		unresolved
-23	prophetiam		unresolved
 23	quibusdam		unresolved
 23	veterum		unresolved
 23	allegorice		unresolved
 23	interpretabimur		unresolved
-23	Scriptura		unresolved
 23	indicet		unresolved
 23	debere		unresolved
 23	nos		unresolved
@@ -2863,14 +2855,12 @@ chapter	from	to	kind
 23	etiamsi		unresolved
 23	res		unresolved
 23	diversae		unresolved
-23	Scriptura		unresolved
 23	explicatae		unresolved
 23	similitudinem		unresolved
 23	conformitatem		unresolved
 23	aliquam		unresolved
 23	habeant		unresolved
 23	possumus		unresolved
-23	tamen		unresolved
 23	asserere		unresolved
 23	hoc		unresolved
 23	illius		unresolved
@@ -2887,6 +2877,7 @@ chapter	from	to	kind
 23	aHn		unresolved
 23	unpoetical		unresolved
 23	Tnttj		unresolved
+23	Ts		tooshort
 23	zerstort		unresolved
 23	harbour		unresolved
 23	Macedonia		unresolved
@@ -2928,7 +2919,6 @@ chapter	from	to	kind
 23	gleichwie		unresolved
 23	erschrak		unresolved
 23	von		unresolved
-23	Egypten		unresolved
 23	h'drete		unresolved
 23	erschrecken		unresolved
 23	wenn		unresolved
@@ -2941,7 +2931,6 @@ chapter	from	to	kind
 23	dolebunt		unresolved
 23	niesa		unresolved
 23	Batavia		unresolved
-23	Curtius		unresolved
 23	Carthage		unresolved
 23	Tni		unresolved
 23	npk		unresolved
@@ -2963,6 +2952,7 @@ chapter	from	to	kind
 23	Zidon		unresolved
 23	Zidon		unresolved
 23	nbina		unresolved
+23	ns		tooshort
 23	jVS		unresolved
 23	fd		tooshort
 23	Zidon		unresolved
@@ -3112,6 +3102,7 @@ chapter	from	to	kind
 25	Zornhauch		unresolved
 25	Schnauben		unresolved
 25	Macpherson's		unresolved
+25	nasn		unresolved
 25	osn		unresolved
 25	nss		unresolved
 25	Bauer		unresolved
@@ -3159,7 +3150,6 @@ chapter	from	to	kind
 26	xxvn		unresolved
 26	Heil		unresolved
 26	geben		unresolved
-26	Mauern		unresolved
 26	mici		unresolved
 26	Vn		tooshort
 26	QiTei		unresolved
@@ -3224,10 +3214,8 @@ chapter	from	to	kind
 26	nos		unresolved
 26	affaires		unresolved
 26	hoc		unresolved
-26	testimonio		unresolved
 26	usi		unresolved
 26	evertendum		unresolved
-26	liberum		unresolved
 26	arbitrium		unresolved
 26	Prophetae		unresolved
 26	mentern		unresolved
@@ -3394,7 +3382,6 @@ chapter	from	to	kind
 27	Sancto		unresolved
 27	sibi		unresolved
 27	vir		unresolved
-27	sapiens		unresolved
 27	imputari		unresolved
 27	nollet		unresolved
 27	children	children	rule
@@ -3466,7 +3453,6 @@ chapter	from	to	kind
 28	flcus		unresolved
 28	habet		unresolved
 28	Athenis		unresolved
-28	vocant		unresolved
 28	verdirbt		unresolved
 28	ns		tooshort
 28	iin		unresolved
@@ -3605,7 +3591,6 @@ chapter	from	to	kind
 28	VTTO		unresolved
 28	vipiarov		unresolved
 28	fxtiafjit9tp't		unresolved
-28	ferro		unresolved
 28	terram		unresolved
 28	instituit		unresolved
 28	jFor		unresolved
@@ -3615,7 +3600,6 @@ chapter	from	to	kind
 28	IB		tooshort
 28	uns		unresolved
 28	h3		tooshort
-29	ise		unresolved
 29	bx		tooshort
 29	heroes		unresolved
 29	ol		tooshort
@@ -3634,7 +3618,6 @@ chapter	from	to	kind
 29	Bn		tooshort
 29	ft		tooshort
 29	levibus		unresolved
-29	ventis		unresolved
 29	volucrique		unresolved
 29	simillima		unresolved
 29	somno		unresolved
@@ -3779,7 +3762,6 @@ chapter	from	to	kind
 3	Kn		tooshort
 3	Gro		unresolved
 3			tooshort
-3	ratione		unresolved
 3	aetatis		unresolved
 3	sed		unresolved
 3	imprudentiae		unresolved
@@ -3800,7 +3782,6 @@ chapter	from	to	kind
 3	spretus		unresolved
 3	erat		unresolved
 3	cs		tooshort
-3	domesticum		unresolved
 3	patris		unresolved
 3	cognatum		unresolved
 3	Hendew		unresolved
@@ -3874,6 +3855,7 @@ chapter	from	to	kind
 3	nK		unresolved
 3	sn		tooshort
 3	loc		unresolved
+3	TOS		unresolved
 3	BS		tooshort
 3	Piaab		unresolved
 3	ducunt		unresolved
@@ -4086,6 +4068,7 @@ chapter	from	to	kind
 30	ni3		unresolved
 30	gibbum		unresolved
 30	cameli		unresolved
+30	bs		tooshort
 30	DS		tooshort
 30	srn		unresolved
 30	superbia		unresolved
@@ -4184,7 +4167,6 @@ chapter	from	to	kind
 30	modice		unresolved
 30	cibaberis		unresolved
 30	itt		unresolved
-30	doctorem		unresolved
 30	tuum		unresolved
 30	thce		unresolved
 30	ivhen	when	wform
@@ -4238,7 +4220,6 @@ chapter	from	to	kind
 30	erschallet		unresolved
 30	echoes		unresolved
 30	i'Bfi		unresolved
-30	ardens		unresolved
 30	r		tooshort
 30	DUJ		unresolved
 30			tooshort
@@ -4272,6 +4253,7 @@ chapter	from	to	kind
 30	fS5		unresolved
 30	nrn		unresolved
 30	erschrecken		unresolved
+30			tooshort
 30	ns		tooshort
 30	excidit		unresolved
 30	schlug		unresolved
@@ -4407,6 +4389,8 @@ chapter	from	to	kind
 33	salutaris		unresolved
 33	cfejos		unresolved
 33	lQa		unresolved
+33	ofjiai		unresolved
+33	avToig		unresolved
 33	oqi		unresolved
 33	foopai		unresolved
 33	videntes		unresolved
@@ -4512,7 +4496,6 @@ chapter	from	to	kind
 34	contraxit		unresolved
 34	coelum		unresolved
 34	i3		tooshort
-34	sicut		unresolved
 34	coelorum		unresolved
 34	nbss		unresolved
 34	o		tooshort
@@ -4708,7 +4691,6 @@ chapter	from	to	kind
 35	bluhen		unresolved
 35	ja		tooshort
 35	bluhen		unresolved
-35	germinans		unresolved
 35	germinabit		unresolved
 35	Eno		unresolved
 35	aderunt		unresolved
@@ -4761,7 +4743,6 @@ chapter	from	to	kind
 35	Sandmeer		unresolved
 35	Sandschimmer		unresolved
 35	vapoury		unresolved
-35	Curtius		unresolved
 35	aestivi		unresolved
 35	accendit		unresolved
 35	Camporum		unresolved
@@ -4947,7 +4928,6 @@ chapter	from	to	kind
 37	apponam		unresolved
 37	illi		unresolved
 37	ventum		unresolved
-37	embassador		unresolved
 37	E1		tooshort
 37	eventu		unresolved
 37	Lachish		unresolved
@@ -5017,6 +4997,7 @@ chapter	from	to	kind
 37	ygvnsg		unresolved
 37	shechinah		unresolved
 37	ipse		unresolved
+37			tooshort
 37	s		tooshort
 37			tooshort
 37	iy		tooshort
@@ -5278,8 +5259,6 @@ chapter	from	to	kind
 39	PSS		unresolved
 39	niK		unresolved
 39	aQWfidv		unresolved
-39	cellam		unresolved
-39	aromatum		unresolved
 39	oj		tooshort
 39	Abulwalid		unresolved
 39	P35		unresolved
@@ -5320,7 +5299,6 @@ chapter	from	to	kind
 39	aliud		unresolved
 39	seculum		unresolved
 39	maneret		unresolved
-39	tamen		unresolved
 39	praesentem		unresolved
 39	gratiam		unresolved
 39	amplecti		unresolved
@@ -5328,7 +5306,6 @@ chapter	from	to	kind
 39	certe		unresolved
 39	nostro		unresolved
 39	potissimum		unresolved
-39	seculo		unresolved
 39	servire		unresolved
 39	debemus		unresolved
 39	ejusque		unresolved
@@ -5336,8 +5313,6 @@ chapter	from	to	kind
 39	habenda		unresolved
 39	negligendum		unresolved
 39	sed		unresolved
-39	praesens		unresolved
-39	instat		unresolved
 39	offidum		unresolved
 39	requirit		unresolved
 39	TIVQI		unresolved
@@ -5549,7 +5524,6 @@ chapter	from	to	kind
 40			tooshort
 40	im		tooshort
 40	pendens		unresolved
-40	staterae		unresolved
 40	pntf		unresolved
 40	pntJ		unresolved
 40	p1		tooshort
@@ -5596,7 +5570,6 @@ chapter	from	to	kind
 40	ttasnn		unresolved
 40	amsuchan		unresolved
 40	artifcx		unresolved
-40	sapiens		unresolved
 40	quaerit		unresolved
 40	quomodo		unresolved
 40	rsn		unresolved
@@ -5774,7 +5747,6 @@ chapter	from	to	kind
 42	Stte		unresolved
 42	co		tooshort
 42	aie		unresolved
-42	Knecht		unresolved
 42	Gottes		unresolved
 42	Hamburg		unresolved
 42	njrp		unresolved
@@ -6667,6 +6639,7 @@ chapter	from	to	kind
 49	h3		tooshort
 49	stj		unresolved
 49	sfca		unresolved
+49	Tis		unresolved
 49	nst		unresolved
 49	nimis		unresolved
 49	rH		tooshort
@@ -7014,7 +6987,6 @@ chapter	from	to	kind
 50	ein		unresolved
 50	Gewand		unresolved
 50	verzehrt		unresolved
-50	transi		unresolved
 50	wallceth		unresolved
 50	whoso		unresolved
 50	walltcth		unresolved
@@ -7060,7 +7032,6 @@ chapter	from	to	kind
 51	ofch		unresolved
 51	eine		unresolved
 51	Lehre		unresolved
-51	meine		unresolved
 51	Lehre		unresolved
 51	EBTSE		unresolved
 51	rnin		unresolved
@@ -7082,8 +7053,6 @@ chapter	from	to	kind
 51	quemadmodumprobus		unresolved
 51	J3		tooshort
 51	einem		unresolved
-51	sicut		unresolved
-51	sicut		unresolved
 51	Riickert		unresolved
 51	wie		unresolved
 51	Gussetius		unresolved
@@ -7130,7 +7099,6 @@ chapter	from	to	kind
 52	auf		unresolved
 52	auf		unresolved
 52	T3		tooshort
-52	Macht		unresolved
 52	prisongarments		unresolved
 52	tpoi1'		unresolved
 52	KBB		unresolved
@@ -7223,7 +7191,6 @@ chapter	from	to	kind
 52	Tydeus		unresolved
 52	Statms		unresolved
 52	exscitare		unresolved
-52	humeros		unresolved
 52	nudamquc		unresolved
 52	lacessere		unresolved
 52	pugnam		unresolved
@@ -7259,7 +7226,6 @@ chapter	from	to	kind
 52	historico		unresolved
 52	prophetlcal		unresolved
 52	sizr		unresolved
-52	intelliget		unresolved
 52	Procopius		unresolved
 52	jpursued		unresolved
 52	morft		unresolved
@@ -7310,7 +7276,6 @@ chapter	from	to	kind
 53	nuttus		unresolved
 53	decor		unresolved
 53	nulla		unresolved
-53	magnificentia		unresolved
 53	fidt		unresolved
 53	disreo		unresolved
 53	ard		unresolved
@@ -7426,7 +7391,6 @@ chapter	from	to	kind
 53	oi		tooshort
 53	atofia		unresolved
 53	quando		unresolved
-53	tonsus		unresolved
 53	Christus		unresolved
 53	sros		unresolved
 53	takejuuKay		unresolved
@@ -7512,11 +7476,11 @@ chapter	from	to	kind
 53	wkich		unresolved
 53	Martini		unresolved
 53	felicissimc		unresolved
-53	executus		unresolved
 53	Jehofah		unresolved
 53	itinere		unresolved
 53	eo		tooshort
 53	laboravit		unresolved
+53	ia		tooshort
 53	aia		unresolved
 53	insna		unresolved
 53	rtx		unresolved
@@ -7538,7 +7502,6 @@ chapter	from	to	kind
 53	Martini's		unresolved
 53	pis		unresolved
 53	iniquitates		unresolved
-53	eorum		unresolved
 53	ipse		unresolved
 53	portabit		unresolved
 53	illi		unresolved
@@ -7626,7 +7589,6 @@ chapter	from	to	kind
 54	Herbe		unresolved
 54	als		unresolved
 54	der		unresolved
-54	Groll		unresolved
 54	voll		unresolved
 54	js		tooshort
 54	forbiddino		unresolved
@@ -7823,7 +7785,6 @@ chapter	from	to	kind
 56	nbs		unresolved
 56	commendabilis		unresolved
 56	hac		unresolved
-56	aetate		unresolved
 56	ecclesiae		unresolved
 56	rnasoretic	masoretic	rule
 56	fiYn		unresolved
@@ -8087,6 +8048,7 @@ chapter	from	to	kind
 58	Ilitzig		unresolved
 58	pTr		unresolved
 58	cinp		unresolved
+58	raits		unresolved
 58	tv		tooshort
 58	OQ		tooshort
 58	iornn		unresolved
@@ -8161,7 +8123,6 @@ chapter	from	to	kind
 59	Bauer		unresolved
 59	Ferdinand		unresolved
 59	L7		tooshort
-59	gemitus		unresolved
 59	ivith	with	wform
 59	quodque		unresolved
 59	ipsum		unresolved
@@ -8177,6 +8138,7 @@ chapter	from	to	kind
 59	selteii		unresolved
 59	desole		unresolved
 59	B		tooshort
+59	ft		tooshort
 59	ft		tooshort
 59	doin		unresolved
 59	amonothemselves		unresolved
@@ -8270,6 +8232,7 @@ chapter	from	to	kind
 6	voce		unresolved
 6	clamante		unresolved
 6	tacui		unresolved
+6			tooshort
 6	Tflaii		unresolved
 6	fleiv	flew	rule
 6	tips1		unresolved
@@ -8297,7 +8260,6 @@ chapter	from	to	kind
 6	personarum		unresolved
 6	diversitatem		unresolved
 6			tooshort
-6	tamen		unresolved
 6	intelligetis		unresolved
 6	tt		tooshort
 6	KnovTe		unresolved
@@ -8333,7 +8295,6 @@ chapter	from	to	kind
 6	theidibyes		unresolved
 6	Absque		unresolved
 6	hoc		unresolved
-6	testimonio		unresolved
 6	manet		unresolved
 6	eadem		unresolved
 6	quaestio		unresolved
@@ -8450,7 +8411,6 @@ chapter	from	to	kind
 60	vitanda		unresolved
 60	utique		unresolved
 60	applicationibus		unresolved
-60	mysticis		unresolved
 60	AMoyevij		unresolved
 60	nostrae		unresolved
 60	rationeshic		unresolved
@@ -8609,7 +8569,6 @@ chapter	from	to	kind
 62	Azubah		unresolved
 62	Shemamah		unresolved
 62	Hephzibah		unresolved
-62	ligible		unresolved
 62	Azubah		unresolved
 62	Hephzibah		unresolved
 62	bsii		unresolved
@@ -8667,10 +8626,10 @@ chapter	from	to	kind
 63	bss		unresolved
 63	postulante		unresolved
 63	parallelismo		unresolved
-63	diess		unresolved
 63	verlangt		unresolved
 63	der		unresolved
 63	Parallelismus		unresolved
+63	Tipur		unresolved
 63	J56		unresolved
 63	Melek		unresolved
 63	omni		unresolved
@@ -8846,6 +8805,7 @@ chapter	from	to	kind
 65	3		tooshort
 65	ausser		unresolved
 65	Boaz		unresolved
+65	bs		tooshort
 65	bs		tooshort
 65	nr		tooshort
 65	zuersi		unresolved
@@ -9044,8 +9004,6 @@ chapter	from	to	kind
 66	Zorncsgluth		unresolved
 66	ttjrt		unresolved
 66	ttitt		unresolved
-66	explai		unresolved
-66	ns		tooshort
 66	rvisan		unresolved
 66	bN		tooshort
 66	nisaa		unresolved
@@ -9128,6 +9086,8 @@ chapter	from	to	kind
 66	carcases		unresolved
 66	p'sn'		unresolved
 66	nso		unresolved
+66	elg		unresolved
+66	oQaatv		unresolved
 66	Targurn	Targum	rule
 66	erunt		unresolved
 66	satietatem		unresolved
@@ -9321,6 +9281,8 @@ chapter	from	to	kind
 7	foreseen		unresolved
 7	vvill	will	wform
 7	Rosenrmiller		unresolved
+7	rt		tooshort
+7	srai		unresolved
 7	Hagar		unresolved
 7	ve		tooshort
 7	xcde'da		unresolved
@@ -9359,7 +9321,6 @@ chapter	from	to	kind
 7	Mai		unresolved
 7	izna		unresolved
 7	as'f		unresolved
-7	Jehoram		unresolved
 7	Joash		unresolved
 7	blosses		unresolved
 7	Drohwort		unresolved
@@ -9394,7 +9355,6 @@ chapter	from	to	kind
 7	rn		tooshort
 7	tEJ		unresolved
 7	Peshitb		unresolved
-7	Ephrem		unresolved
 7	Syrus		unresolved
 7			tooshort
 7	JH		tooshort
@@ -9437,7 +9397,6 @@ chapter	from	to	kind
 7	Kiaft		unresolved
 7	FX		tooshort
 8	Makershalal		unresolved
-8	propera		unresolved
 8	festinavit		unresolved
 8	ifitt		unresolved
 8	shalalhash		unresolved
@@ -9713,7 +9672,6 @@ chapter	from	to	kind
 9	Domini		unresolved
 9	exercituum		unresolved
 9	hoc		unresolved
-9	ardens		unresolved
 9	Dei		unresolved
 9	erga		unresolved
 9	pios		unresolved
@@ -9776,8 +9734,6 @@ chapter	from	to	kind
 9	tumulum		unresolved
 9	coadunabit		unresolved
 9	conglomeravit		unresolved
-9	ve		tooshort
-9	rs		tooshort
 9	eosque		unresolved
 9	hostibus		unresolved
 9	cornmiscebit		unresolved
@@ -9864,7 +9820,6 @@ chapter	from	to	kind
 9	jov		unresolved
 9	Qa		tooshort
 9	iovog		unresolved
-9	avvov		unresolved
 9	EpKraim		unresolved
 9	rancour		unresolved
 9	Ephraimum		unresolved
@@ -10064,7 +10019,7 @@ introduction	enamoured		unresolved
 introduction	undertaken		unresolved
 introduction	Alexandria		unresolved
 introduction	Uzziel		unresolved
-introduction	Ephrern		unresolved
+introduction	Ephrern	Ephrem	rule
 introduction	Syrus		unresolved
 introduction	Alexandria		unresolved
 introduction	London		unresolved
@@ -10154,7 +10109,6 @@ introduction	xxvm		unresolved
 introduction	xxxm		unresolved
 introduction	xxvn		unresolved
 introduction	terra		unresolved
-introduction	firma		unresolved
 introduction	xn		tooshort
 introduction	xxin		unresolved
 introduction	xxvu		unresolved
@@ -10235,7 +10189,6 @@ later-introduction	Hasmonean		unresolved
 later-introduction	meantime		unresolved
 later-introduction	Christo		unresolved
 later-introduction	Corpore		unresolved
-later-introduction	Scriptura		unresolved
 later-introduction	saepius		unresolved
 later-introduction	mentionem		unresolved
 later-introduction	fieri		unresolved

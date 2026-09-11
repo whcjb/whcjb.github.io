@@ -496,7 +496,10 @@ HANDS_OFF = {
     'kesheth', 'prophetica', 'yehallelujah',
     # 1864 印本自身的排印错，忠实保留
     'darknees',       # "Dwelling in darknees and death-shade"，影像上就是 darknees
-    'notwitstandi',   # "Notwitstanding all these favours"，影像上就是少个 h
+    'notwitstandi', 'notwitstanding',   # 影像上就是少个 h，1864 印本自身的排印错
+    # 收尾一批：影像确认为底本原样
+    'hioil', "ti'ql", "sxa'n", 'avrmv', 'iieows', 'olxov', 'mivri',
+    'strengthenedst', 'jonath', 'bonum', 'sisera', 'ephrathi',
     # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
     'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
     'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
@@ -574,7 +577,31 @@ MANUAL_TEXT = [
     ('the Egj-ptians', 'the Egyptians'),
     ('and com];>are Isa', 'and compare Isa'),
     ('*inside* of anji-hing', '*inside* of anything'),
-    ('may be seen. *A according to thy word,*',
+    # ── 影像判读收尾（2026-09-11）──
+    ('pavticle', 'particle'),
+    ('Thoii', 'Thou'),
+    ('suff"erers', 'sufferers'),
+    ('s 23eople.* S', 's 23people.* S'),
+    ('j.rinces', 'princes'),
+    ('Bervative', 'conservative'),
+    ('Ej)hrathi', 'Ephrathi'),
+    ('Psakn', 'pleasures'),
+    ('oifruit', 'of fruit'),
+    ('literally^asserf', 'passed'),
+    ('soTia', 'sons'),
+    ('men ofhlood and', 'men of blood and'),
+    ('men ofhlood, de', 'men of blood, de'),
+    ('hythy', 'by thy'),
+    ('Jeduihun', 'Jeduthun'),
+    ("vi'iih", 'with'),
+    ('orfor', 'or for'),
+    ("a'vocative", 'a vocative'),
+    ('ofthis', 'of this'),
+    ("Levit'^s", 'Levites'),
+    ('Hermonin', 'Hermon in'),
+    ('oirock', 'of rock'),
+    ('comparePs', 'compare Ps.'),
+    ('may be seen. *A ccording to thy word,*',
      'may be seen. *According to thy word,*'),
 
     # ── 影像判读第二批（2026-09-11）───────────────────────────────
@@ -878,7 +905,10 @@ def main():
                               wbigram, nxt_raw)
             # 碎片判定放在判决**之后**：被杂散符号劈开的半截，只要能跟
             # 邻居拼回一个整词（joinnext），那就不是碎片而是可修的错。
-            if kind != 'joinnext' and not clean_bounded(text, a, b, lex):
+            # 已经有结论的（手工核定 / 影像确认原样）不再被碎片判定覆盖，
+            # 否则账目上会把「查过、是对的」错记成「还没查」。
+            if (kind not in ('joinnext', 'handsoff', 'manual')
+                    and not clean_bounded(text, a, b, lex)):
                 kind, r = 'fragment', ''
             if kind == 'joinnext':
                 b = toks[i + 1][2]          # 替换范围延伸到下一个 token 末尾

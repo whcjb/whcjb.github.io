@@ -146,3 +146,14 @@ Petraea Parthia Luitha Ayall Ramoth Rabbah Christologie gayety
 consummatum regionem aperite prosperis callidi capere Romanus excisus
 esset deridet postea praematura fletu historiam possint extremae neque
 comparatione Providentiae Divinae misera
+
+# 亚历山大以赛亚书里引的拉丁文（Vulgate、加尔文、维特林加、老普林尼、维吉尔）
+lictores prophetiam liberum mentem vocant vocante ferro ventis domesticum
+doctorem sicut germinans cellam aromatum tamen seculo seculi praesens instat
+staterae sapiens scriptura intelliget magnificentia tonsus executus aetate
+gemitus testimonio mysticis eorum propera zelus ardens humeros ratione firma
+viri
+# 德文（路德、Ewald、Knobel、Umbreit、Hitzig 的译文）
+gehet Egypten Mauern Knecht meine Macht Groll diess trostet
+# 专名与十九世纪拼法
+Jehoram Ephrem Curtius Statius Clericus embassador

@@ -18,7 +18,7 @@ bs	על	92	applied
 (auf	(αυῇ Ἶ	78	lowconf
 oiiD	טלם	67	lowconf
 msfcJ	טביה	89	applied
-ous	פטס	80	applied
+ous	פטס	80	halfword
 "jbn	חסן	75	lowconf
 ibsfe	פעלו	86	applied
 fitn	חזה	92	applied
@@ -28,7 +28,7 @@ dTp	קדם	92	applied
 apjfjjtf.	ἀρχῆς	95	applied
 mp	קדם	90	applied
 nhoiov	πλοίον	91	notfound
-laGaris.	λάσσης	89	applied
+laGaris.	λάσσης	89	notfound
 "jtfdwv	χηδῶν	89	applied
 nlotwv xdMovg.	πλοίων κάλλους	96	applied
 loiv,	ἰοιυ	89	applied
@@ -179,7 +179,7 @@ cnb	לחם	70	lowconf
 isn	רעו	89	applied
 (jov	(τοῦ	96	applied
 avrov)	αὐτοῦ)	94	applied
-avvov).	αὐτοῦ)	95	ambiguous
+avvov).	αὐτοῦ)	95	applied
 nx	את	96	applied
 Ppn	חקק	89	applied
 ygdcpovGi.	γράφουσι	93	applied
@@ -194,7 +194,7 @@ pfyaloi fiuaifaTs, flaadsie jWtAeW,	μέγαλοι βασιλεῖς, βασιλ
 KIQXTJGIOV,	Κιρχήσιον	90	applied
 (rov eidottov),	(τοῦ εἰδώλου)	95	applied
 eo	σο	88	notfound
-TTQMOV	πρέπον	90	applied
+TTQMOV	πρέπον	90	notfound
 xbn,	הלא	76	lowconf
 Idov,	ἰδού	96	applied
 (XSIQQTTODJTOIS, sidotioii),	(χειροποιήτοις, εἰδώλοις)	95	applied
@@ -218,7 +218,7 @@ bbb	נסס	81	applied
 bbtt	מסס	93	applied
 oob	נסס	89	applied
 ano qiloybs	ἀπὸ φλογὸς	96	applied
-ance.	ΔΏΟΘ	86	applied
+ance.	ΔΏΟΘ	86	halfword
 Gvry)	σύνῃ)	79	lowconf
 nxifis	נחרצה	79	lowconf
 nst	זעם	81	applied
@@ -268,7 +268,7 @@ dro	כתם	90	applied
 "Ppix	“ΠΡῚΝ	84	applied
 OJJS)	סעס	80	applied
 ndiAuwtov ofiov	πάμμικτον ὕχλον	81	applied
-nao	ספה	96	applied
+nao	ספה	96	halfword
 Mijdoi, xal ndvreg oi	Μῆδοι, καὶ πάντες οἱ	83	applied
 tyw vfias olda Gayug,	ἐγὼ ὑμᾶς οἶδα σαφῶς	96	applied
 ovrs	οὐυτὲ	75	lowconf
@@ -280,7 +280,7 @@ ovdsv	οὐδὲν	96	applied
 fy	ἦν	96	applied
 ei	εἰ	97	applied
 bnx	אהל	91	applied
-tion	מסוז	81	applied
+tion	מסוז	81	halfword
 (axrjvirai lyaTQixoi	(σκηνίται ληστρικοί	92	applied
 xcu	και	78	lowconf
 ims	ערבר	65	lowconf
@@ -306,7 +306,7 @@ bs	על	78	lowconf
 bs mbn	חלש על	96	applied
 (eV OQSI	(ἐν ὄρει	85	applied
 Inl	ἐπὶ	96	applied
-ss?	עב	92	applied
+ss?	עב	92	halfword
 lia	בור	93	applied
 nrs	פתח	81	applied
 dbis	עולם	90	applied
@@ -388,7 +388,7 @@ frps,	כנף	77	lowconf
 "px	ΤῈ	83	applied
 ns,	עם	72	lowconf
 gint, BxiGTolag fiiftlivag,	σἰηΐ, ἐπιστολὰς βιβλίνας	74	lowconf
-IB	מן	91	applied
+IB	מן	91	halfword
 (misn ms)	( כרת הכורת)	84	applied
 tnn	התז	89	applied
 oi	Οἱ	85	applied
@@ -413,7 +413,7 @@ Dinn	החרם	86	applied
 (pisn),	(הצדק)	85	applied
 tifies oiGedex	{1 ῆ65 ἀσεδὲκ	71	lowconf
 onn	הרס	94	applied
-suppo	ΒΌΡΡΟ:	86	applied
+suppo	ΒΌΡΡΟ:	86	halfword
 FPiii	וה"ה	79	lowconf
 srn	חל	82	applied
 rx	את	94	applied
@@ -434,7 +434,7 @@ vp	קיר	96	applied
 bbx	אכל	89	applied
 fto	נגלה	90	applied
 ssa	בא	94	applied
-fias	עסה	85	applied
+fias	עסה	85	notfound
 nVjVj	טלטלה	84	applied
 nbaVo	טלטלת	90	applied
 tps	צנס	74	lowconf
@@ -446,7 +446,7 @@ pm	חזק	91	applied
 msss	צפצות	89	applied
 nrssand	4 צפצת	85	applied
 maax	אגנות	87	applied
-Ts	צר	97	applied
+Ts	צר	97	halfword
 nnb	סחר	92	applied
 ihtti	שחר	95	applied
 inttS	שחר	97	applied
@@ -456,7 +456,7 @@ nxan	רעצה	90	applied
 fiistsa	מעזנרה	82	applied
 Zidon;	Ζάοι ;	69	lowconf
 rs	בת	86	applied
-ns	בת	86	applied
+ns	בת	86	halfword
 mn xb csn HT,	זה העם לא היה	86	applied
 diixb	לציים	91	applied
 frr	זה	96	applied
@@ -498,7 +498,7 @@ svfisa	בצגרה	85	applied
 fisn	מעוז	66	lowconf
 tnt	זרם	92	applied
 mellius:	: 611105 רת	70	lowconf
-nasn	רענה	83	applied
+nasn	רענה	83	notfound
 laia	טמר	75	lowconf
 raib	לוש	80	applied
 ftdvaros	ϑάνατος	88	applied
@@ -583,7 +583,7 @@ IPD,	סתר	68	lowconf
 rmr	שורה	96	applied
 mrri niiiis,	שורה ושערה	72	lowconf
 cnb	לחם	90	applied
-prom	גמסיוק	83	applied
+prom	גמסיוק	83	halfword
 ol	οἱ	77	lowconf
 cntri	חזים	93	applied
 IDG	ספר	92	applied
@@ -600,7 +600,7 @@ npisi rm	צרה וצוקה	92	applied
 "px	ארץ	92	applied
 niTsra	בהמות	88	applied
 nfcm	דבשת	90	applied
-bs	על	94	applied
+bs	על	94	halfword
 DS	ὩΣ	76	lowconf
 raaj	שבת	70	lowconf
 rrte	לוח	96	applied
@@ -642,7 +642,7 @@ trirstt	מעשת	67	lowconf
 pptts	שקק	78	lowconf
 rrn	היה	78	lowconf
 nsnx	אראה	92	applied
-fjiai avToig,	μαι αὐτοῖς	87	applied
+fjiai avToig,	μαι αὐτοῖς	87	notfound
 sb	לם	80	applied
 investiga	וט תו	69	lowconf
 bpiu	טקל	92	applied
@@ -784,7 +784,7 @@ IM	נכד	72	lowconf
 osx	אפס	95	applied
 lloyiadqaav),	ἐλογίσϑησαν)	83	applied
 "jn	מן	90	applied
-IB	בין	82	applied
+IB	בין	82	halfword
 (noiv)	(ποιο)	74	lowconf
 bx	Ἐς	71	lowconf
 tthn	חרש	80	applied
@@ -877,7 +877,7 @@ Jiia,	בזה	79	lowconf
 SIHSB	ΠῚ 5	81	applied
 IB	מן	82	applied
 supposi	ΒΌΡΡΟΒΙ	70	lowconf
-Tis	עוד	88	applied
+Tis	עוד	88	halfword
 (noiqcrdv	(ποίησόν	77	lowconf
 toaov)	τόπον)	82	applied
 ibr	ΤΟΥ	68	lowconf
@@ -893,7 +893,7 @@ LiJ	ἘΞ	66	lowconf
 rw	עגת	76	lowconf
 (TOV yiwvai	(τοῦ γιῶναι	78	lowconf
 jjvixu dzidnsiv loyov).	ἡνίκα δεῖ εἰπεῖν λόγον)	89	applied
-tion,	תסוז	85	applied
+tion,	תסוז	85	halfword
 (anexdvcdftwoi;,	(ἀπεκδυσάμενος	86	applied
 iitix	אשר	83	applied
 dicMQiTixov,	διαχρίτικον;	84	applied
@@ -933,11 +933,11 @@ avofysi	ἀγοίγει	84	applied
 ixs	עצר	83	applied
 PK sel	1 את	93	applied
 PX	את	77	lowconf
-fol	[οἱ	96	applied
+fol	[οἱ	96	halfword
 "nntea	במותיו	81	applied
 nx	את	95	applied
 miaa,	במותיו	67	lowconf
-(ia	בו)	85	applied
+(ia	בו)	85	halfword
 aia	כוב	78	lowconf
 (xkijQovofiqaei	(κληρονομήσει	87	applied
 nx	את	97	applied
@@ -986,7 +986,7 @@ isnp	קדוש	90	applied
 pTr,	שבת	79	lowconf
 cinp,	קדוש	73	lowconf
 jnp	קרא	96	applied
-(raits?)	(לשבת)	87	applied
+(raits?)	(לשבת)	87	notfound
 (wpb)	(לקדוט)	87	applied
 rvina	כמות	85	applied
 bxa	גאל	86	applied
@@ -997,7 +997,7 @@ Houhigant, JIMES	נשגגה ,1100018001	67	lowconf
 repe	ΓΟΡΘ	77	lowconf
 nws	ענתה	86	applied
 ft	כן	68	lowconf
-ft	לו	84	applied
+ft	לו	84	halfword
 bs	על	96	applied
 ori	וזס	75	lowconf
 "tt	צר	96	applied
@@ -1020,7 +1020,7 @@ WBO	מטען	74	lowconf
 tjjsbn	חלקם	80	applied
 ftbw	עולה	90	applied
 rvpqttov ieQarevopevw	γύμφιον ἱερατευόμενον	68	lowconf
-unintel	1 מותט	82	applied
+unintel	1 מותט	82	halfword
 bss	בפל	88	applied
 bx;,	אל	67	lowconf
 nrs	צצה	84	applied
@@ -1029,7 +1029,7 @@ Tbattx	אגאלתי	77	lowconf
 mbnn	תהלות	75	lowconf
 aio	טוב	91	applied
 rnsn	המה	95	applied
-Tipur	רשקרו	87	applied
+Tipur	רשקרו	87	halfword
 ft	כן	86	applied
 iix,	צור	81	applied
 ft	כו	87	applied
@@ -1053,7 +1053,7 @@ ianp	קדש	92	applied
 (aoQQet	(πόῤῥω	67	lowconf
 Ipov)	ἐμοῦ)	95	applied
 inisnp	קדשתו	92	applied
-bs	על	93	applied
+bs	על	93	halfword
 naiflsn	ראשנה	91	applied
 aftxi	ואתם	78	lowconf
 fiiou	ἡλίου	84	applied
@@ -1092,7 +1092,7 @@ tion	מסוז	87	ambiguous
 Ixabovv.	ἐχαλοῦν	86	applied
 rinsa	מנחה	92	applied
 rmao	מנחה	82	applied
-elg oQaatv;	εἰς ὅρασιν;	80	applied
+elg oQaatv;	εἰς ὅρασιν;	80	notfound
 Jian	ראה	96	applied
 tion	מסגז	85	ambiguous
 (paftcoi/>,	(μώλωψ	96	applied
@@ -1105,9 +1105,9 @@ n*>a*n	הלמים	86	applied
 (tfp^-iStt	אפריקא)	89	applied
 ^isrft,	לחפר	76	lowconf
 Iff^vowtt	ἰσχύοντα	97	applied
-^'sa	פפיר	80	applied
+^'sa	פפיר	80	halfword
 k^na.Uitu-9	ἐμπαίκται	90	applied
-^TOS	גמול	91	applied
+^TOS	גמול	91	halfword
 (t^'Mia)	(ψέλλια)	89	applied
 nie^s	צנִיפות	83	applied
 ^na	פתי	66	lowconf
@@ -1127,7 +1127,7 @@ s<b,	לא	88	applied
 bq^vrag	ὁρῶντας	95	applied
 m^Va	מלכות	75	lowconf
 X^EI	רמלא	96	applied
-rt^srai)	τέξεται)	89	applied
+rt^srai)	τέξεται)	89	notfound
 nj<	את	97	applied
 ri^p	קצה	93	applied
 "f^n	במלך	90	applied
@@ -1163,7 +1163,7 @@ b^sm	לתגדל	87	applied
 d^na.	כהרים	67	lowconf
 (^itf).	(אור)	90	applied
 iVa^o	כרמלו	91	applied
-bt>2	נסס	85	applied
+bt>2	נסס	85	notfound
 r^n,	היה	78	lowconf
 ep^a	מסס	84	applied
 ^QX	אפר	74	lowconf
@@ -1177,7 +1177,7 @@ n^a	ב"ת	88	applied
 a^naa'	גבח"ם	68	lowconf
 T^nx	אדיר	84	applied
 n^n	רוח	79	lowconf
-mninx^a	ביראתיהוה	90	applied
+mninx^a	ביראתיהוה	90	notfound
 bi^a-w,	ארמילוס	87	applied
 STI^ISE	מאגרה	82	applied
 ^n'tf.	אפר	75	lowconf
@@ -1246,7 +1246,7 @@ n^nn	הבמה	89	applied
 ^xia	טאר	78	lowconf
 T^ap	קציר	91	applied
 s>an	תסע	72	lowconf
-Di">	רום	91	applied
+Di">	רום	91	halfword
 h,is<ia	טאון	78	lowconf
 (n^itt)).	(שדים)	83	applied
 ^sba	צלצל	78	lowconf
