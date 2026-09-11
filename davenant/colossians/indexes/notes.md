@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 00:54
+date: 2026-09-11 09:16
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"

@@ -29,6 +29,9 @@ from alexander_lexicon import build, is_word
 
 ROOT = Path(__file__).resolve().parent.parent
 PUB = ROOT / 'alexander/isaiah'
+HEB = [ROOT / 'alexander_raw/isaiah/hebrew_ocr.tsv',
+       ROOT / 'alexander_raw/isaiah/hebrew_ocr_junk.tsv']
+RESCAN = ROOT / 'alexander_raw/isaiah/english_rescan.tsv'
 LOG = ROOT / 'logs/alexander_isaiah_adjudicate.tsv'
 OUT = ROOT / 'logs/alexander_isaiah_backlog.tsv'
 
@@ -84,8 +87,40 @@ def actionable(w, by_len, good_bigrams):
                for c in by_len.get(L, ()))
 
 
+def rescanned():
+    """重扫过的串 → 它是外文还是英文。**这是证据，不是猜测。**
+
+    前三代 `actionable` 都是靠字形猜「这串像不像英文」，猜错了就把希伯来
+    活字算进待判，分母虚高。现在这些串已经被 tesseract 拿同一份 PDF 原图
+    重认过一遍了：
+
+      · heb/grc 模型读出了成串希伯来/希腊字母 → 页面上印的本来就是外文
+      · eng 模型重认，读出来还是个非词        → 不是拉丁活字读错，同上
+
+    两条都够硬，可以把它们从待判里摘出去，标明「已重扫·外文」。
+    """
+    lex = build()
+    out = {}
+    for path in HEB:
+        if not path.exists():
+            continue
+        with open(path, encoding='utf-8') as f:
+            for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
+                for w in (r.get('garbage') or '').split():
+                    out[w.strip(".,;:!?()[]'\"")] = 'heb'
+    if RESCAN.exists():
+        with open(RESCAN, encoding='utf-8') as f:
+            for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
+                g = (r.get('garbage') or '').strip(".,;:!?()[]'\"")
+                reading = (r.get('reading') or '').strip(".,;:!?()[]'\"")
+                if g and reading and not is_word(reading, lex):
+                    out.setdefault(g, 'eng')
+    return out
+
+
 def main():
     lex = build()
+    rescan = rescanned()
     verdict = {}
     for r in csv.DictReader(open(LOG, encoding='utf-8'), delimiter='\t'):
         verdict.setdefault((r['chapter'], r['ours']), []).append(r)
@@ -127,6 +162,8 @@ def main():
                     kind = '已核实原样'
                 elif not actionable(w, by_len, good_bigrams):
                     kind = '外文/残渣'
+                elif w in rescan:
+                    kind = '已重扫·外文'
                 elif not v or not v['witness']:
                     kind = '待判·无证据'
                 elif SequenceMatcher(None, w.lower(),
@@ -145,7 +182,7 @@ def main():
         for r in rows:
             f.write('\t'.join(r) + '\n')
     total = sum(counts.values())
-    order = ('已核实原样', '外文/残渣', '待判·证人还有话说',
+    order = ('已核实原样', '外文/残渣', '已重扫·外文', '待判·证人还有话说',
              '待判·证人对不上', '待判·无证据')
     for k in order:
         print(f'  {k:<18} {counts[k]:>6}')

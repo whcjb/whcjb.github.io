@@ -1,0 +1,56 @@
+▶ vol1  648 页  workers=6  → vol1_ocr.txt
+  25/648
+  50/648
+  75/648
+  100/648
+  125/648
+  150/648
+  175/648
+  200/648
+  225/648
+  250/648
+  275/648
+  300/648
+  325/648
+  350/648
+  375/648
+  400/648
+  425/648
+  450/648
+  475/648
+  500/648
+  525/648
+  550/648
+  575/648
+  600/648
+  625/648
+✓ 写出 /Users/yanpeifa/Documents/whcjb.github.io/davenant_raw/colossians/vol1_ocr.txt  1,423,835 字节
+✓ 写出 /Users/yanpeifa/Documents/whcjb.github.io/davenant_raw/colossians/vol1_lines.jsonl  3,248,371 字节  24969 行
+▶ vol2  622 页  workers=6  → vol2_ocr.txt
+  25/622
+  50/622
+  75/622
+  100/622
+  125/622
+  150/622
+  175/622
+  200/622
+  225/622
+  250/622
+  275/622
+  300/622
+  325/622
+  350/622
+  375/622
+  400/622
+  425/622
+  450/622
+  475/622
+  500/622
+  525/622
+  550/622
+  575/622
+  600/622
+✓ 写出 /Users/yanpeifa/Documents/whcjb.github.io/davenant_raw/colossians/vol2_ocr.txt  1,364,922 字节
+✓ 写出 /Users/yanpeifa/Documents/whcjb.github.io/davenant_raw/colossians/vol2_lines.jsonl  3,157,245 字节  24436 行
+════════ 两卷 hOCR 全部完成 2026-09-08 15:39:09 ════════

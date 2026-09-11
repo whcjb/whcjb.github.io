@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 00:54
+date: 2026-09-11 09:16
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -14,7 +14,7 @@ next_label: "Errata"
 ---
 
 <p class="dv-idx-lead">经文索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
-<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, in this Index are included a few texts discussed in the Diseertation on the Death of Christ.]</p>
+<p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, in this Index are included a few texts discussed in the Dissertation on the Death of Christ.]</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
 <p class="dv-idx">Gen. l. 1, in the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
 <p class="dv-idx-2">I. 27, So God created man in his own image II. 88</p>

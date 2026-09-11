@@ -1,0 +1,82 @@
+1corinthians/6: 59 个可译单元
+    [tok] #1 入 1,512（新缓存 838 / 读缓存 672） 出 567 = 2,079 | 累计 2,079 tok $0.024
+  已翻 1/1 段
+  缓存命中 59 / 59
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/1corinthians/zh/6.md
+
+──────── claude CLI 用量汇总 ────────
+  调用      1 次
+  输入      1,512（未缓存 2 / 新建缓存 838 / 读缓存 672）
+  输出      567
+  合计      2,079 tok
+  均次      2,079 tok
+  费用      $0.0244
+  用时      0m15s
+────────────────────────────────────
+2corinthians/3: 54 个可译单元
+    [tok] #1 入 1,702（新缓存 1,700 / 读缓存 0） 出 872 = 2,574 | 累计 2,574 tok $0.040
+  已翻 1/3 段
+    [tok] #2 入 2,453（新缓存 1,779 / 读缓存 672） 出 1,539 = 3,992 | 累计 6,566 tok $0.099
+  已翻 2/3 段
+    [tok] #3 入 1,286（新缓存 612 / 读缓存 672） 出 366 = 1,652 | 累计 8,218 tok $0.116
+  已翻 3/3 段
+  缓存命中 54 / 54
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/3.md
+2corinthians/4: 50 个可译单元
+    [tok] #4 入 2,762（新缓存 2,088 / 读缓存 672） 出 1,924 = 4,686 | 累计 12,904 tok $0.188
+  已翻 1/3 段
+    [tok] #5 入 2,428（新缓存 1,754 / 读缓存 672） 出 1,593 = 4,021 | 累计 16,925 tok $0.248
+  已翻 2/3 段
+    [tok] #6 入 2,440（新缓存 1,766 / 读缓存 672） 出 1,622 = 4,062 | 累计 20,987 tok $0.309
+  已翻 3/3 段
+  缓存命中 50 / 50
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/4.md
+2corinthians/5: 68 个可译单元
+    [tok] #7 入 3,248（新缓存 2,574 / 读缓存 672） 出 2,367 = 5,615 | 累计 26,602 tok $0.397
+  已翻 1/1 段
+  缓存命中 68 / 68
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/5.md
+2corinthians/8: 57 个可译单元
+    [tok] #8 入 1,609（新缓存 935 / 读缓存 672） 出 702 = 2,311 | 累计 28,913 tok $0.426
+  已翻 1/2 段
+    [tok] #9 入 1,813（新缓存 1,139 / 读缓存 672） 出 902 = 2,715 | 累计 31,628 tok $0.462
+  已翻 2/2 段
+  缓存命中 57 / 57
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/8.md
+2corinthians/9: 36 个可译单元
+    [tok] #10 入 2,800（新缓存 2,126 / 读缓存 672） 出 2,082 = 4,882 | 累计 36,510 tok $0.538
+  已翻 1/1 段
+  缓存命中 36 / 36
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/9.md
+2corinthians/10: 46 个可译单元
+    [tok] #11 入 2,330（新缓存 1,656 / 读缓存 672） 出 1,477 = 3,807 | 累计 40,317 tok $0.594
+  已翻 1/1 段
+  缓存命中 46 / 46
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/10.md
+2corinthians/11: 77 个可译单元
+    [tok] #12 入 2,085（新缓存 1,411 / 读缓存 672） 出 1,509 = 3,594 | 累计 43,911 tok $0.648
+  已翻 1/1 段
+  缓存命中 77 / 77
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/11.md
+2corinthians/12: 43 个可译单元
+    [tok] #13 入 2,835（新缓存 2,161 / 读缓存 672） 出 1,888 = 4,723 | 累计 48,634 tok $0.720
+  已翻 1/2 段
+    [tok] #14 入 3,342（新缓存 2,668 / 读缓存 672） 出 2,435 = 5,777 | 累计 54,411 tok $0.811
+  已翻 2/2 段
+  缓存命中 43 / 43
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/12.md
+2corinthians/13: 35 个可译单元
+    [tok] #15 入 2,967（新缓存 2,293 / 读缓存 672） 出 2,089 = 5,056 | 累计 59,467 tok $0.889
+  已翻 1/1 段
+  缓存命中 35 / 35
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/hodge/2corinthians/zh/13.md
+
+──────── claude CLI 用量汇总 ────────
+  调用      15 次
+  输入      36,100（未缓存 30 / 新建缓存 26,662 / 读缓存 9,408）
+  输出      23,367
+  合计      59,467 tok
+  均次      3,964 tok
+  费用      $0.8887
+  用时      8m31s
+────────────────────────────────────

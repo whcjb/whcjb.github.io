@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 00:54
+date: 2026-09-11 09:16
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -30,7 +30,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Altars, should be erected to God alone, I. 507; are erected by Papists to angels and saints, ibid.</p>
 <p class="dv-idx">Ambrose, a passage of his vindicated from falsifiers, I1. 298.</p>
 <p class="dv-idx">Amen, whence derived, and what it signifies, 308. .</p>
-<p class="dv-idx">Angels, when created, I. 197; how sons of God, ibid. ; could not create the world, 191; their orders and distinctions, according to the Schoolmen, 194, 195; these orders are not curiously to be enquired into, 196; in what sense reconciled to God by Christ, 244 —246; could not reconcile us to God, 239. are reconciled to us by Christ, 244; the ministry of, in keeping the elect and promoting their salvation, 431 ; are not to he adored, 428 ; are not mediators, 429 ; do notimpart grace, ibid.; are not to beinvoked asintercessors, ibid. ; are not as mediators for Christ, 429; how they may be worshipped, 502; ought not to be worshipped religiously, or with the worship of doulia or latria, 504— 506; are worshipped by Papists with the latter worship, 504, 505; the worship of them the doctrine of the Platonists, 498 ; worshippers of them do not acknowledge Christ for the head of the Church, 511; vows are not to be paid to them, 506 ; doubtful whether they hear prayers, 427; are but our fellow-servants, 428.</p>
+<p class="dv-idx">Angels, when created, I. 197; how sons of God, ibid. ; could not create the world, 191; their orders and distinctions, according to the Schoolmen, 194, 195; these orders are not curiously to be enquired into, 196; in what sense reconciled to God by Christ, 244 —246; could not reconcile us to God, 239. are reconciled to us by Christ, 244; the ministry of, in keeping the elect and promoting their salvation, 431 ; are not to he adored, 428 ; are not mediators, 429 ; do not impart grace, ibid.; are not to beinvoked asintercessors, ibid. ; are not as mediators for Christ, 429; how they may be worshipped, 502; ought not to be worshipped religiously, or with the worship of doulia or latria, 504— 506; are worshipped by Papists with the latter worship, 504, 505; the worship of them the doctrine of the Platonists, 498 ; worshippers of them do not acknowledge Christ for the head of the Church, 511; vows are not to be paid to them, 506 ; doubtful whether they hear prayers, 427; are but our fellow-servants, 428.</p>
 <p class="dv-idx">Anger, what it is, and how it differs from wrath, IT. 65; why it is to be avoided, 66, 67; what is law-</p>
 <p class="dv-idx-2">ful, and what evil, 68; in what sense attributed to God, 54; is in God twofold, paternal and hostile, 58; follows sinners, 55.</p>
 <p class="dv-idx">Apologues, are neither lies materially, nor formally, II. 79.</p>
@@ -390,7 +390,7 @@ next_label: "Index of Questions"
 <p class="dv-idx-letter">O</p>
 <p class="dv-idx">Obedience, see Subjection. blind, not good, I. 122; 534, 535.</p>
 <p class="dv-idx">Obedience of wives towards their husbands, II. 151; of children towards their parents, 168; of servants towards their masters, 196.</p>
-<p class="dv-idx">Obscenity in language tobe avoided,</p>
+<p class="dv-idx">Obscenity in language to be avoided,</p>
 <p class="dv-idx">: 43.</p>
 <p class="dv-idx">Omniscience, does not appertain to the human nature of Christ, I. 363—309.</p>
 <p class="dv-idx">Onesimus, a deacon, Il. 273.</p>

@@ -1,0 +1,36 @@
+# 逐条核过的人工改正。判读器在最后一步按**字面串**替换，所以左列必须带足
+# 上下文，保证全书唯一。空行与 # 开头的行忽略。
+# 依据写在第三列：img=翻过页面影像；ctx=按上下文可定；wit=证人一致且形状吻合。
+before	after	why
+the divine pro tection	the divine protection	ctx
+the apodosis of the sen tence	the apodosis of the sentence	ctx
+most inter preters explain	most interpreters explain	ctx
+sum ciently implied	sufficiently implied	ctx
+as fio urative	as figurative	ctx
+esj ecially of Cyrus	especially of Cyrus	ctx
+was idp latny itself	was idolatry itself	ctx
+substantially renewea by Ewald	substantially renewed by Ewald	ctx
+with greai zest	with great zest	ctx
+who is willino to commit	who is willing to commit	ctx
+The Targuin strangely understands	The Targum strangely understands	ctx
+whom his mother comfortelh	whom his mother comforteth	ctx
+And wohes shall howl	And wolves shall howl	img
+p Furst with still less	p Fürst with still less	ctx
+fur unseyen Ceschmack anstossig	für unseren Geschmack anstössig	ctx
+orpledges of a promise	or pledges of a promise	ctx
+# —— 第二轮：逐条核过的英文与拉丁错字 ——
+the sense oflooking down	the sense of looking down	ctx
+it or he is orshall be	it or he is or shall be	ctx
+explain the p rophecy	explain the prophecy	ctx
+Arabia Petrsea	Arabia Petraea	ctx
+must be figuraatively understood	must be figuratively understood	ctx
+patibulo crudeltm judicem	patibulo crudelem judicem	ctx
+naivete Iongum esset	naivete longum esset	ctx
+antitnesis is rendered	antithesis is rendered	ctx
+Ewald more n aturally	Ewald more naturally	ctx
+the first Knobej substitutes	the first Knobel substitutes	ctx
+idols shall ut terly pass	idols shall utterly pass	ctx
+but tothe measure mentioned	but to the measure mentioned	ctx
+next phrase is desio ned	next phrase is designed	ctx
+as a plaralis inhumanus	as a pluralis inhumanus	ctx
+the plaralis majestaticus	the pluralis majestaticus	ctx

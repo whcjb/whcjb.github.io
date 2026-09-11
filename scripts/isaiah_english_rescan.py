@@ -59,24 +59,24 @@ def pending():
     return out
 
 
-def judge(job, lex):
+def judge(job):
+    """**不设闸**，读到什么记什么。
+
+    扫一遍要跑十几分钟，闸门却要反复调；把判断挪到落盘那一步，一份扫描
+    结果就能试很多组阈值，不必为了改个数字重扫一遍。
+    """
     png, garbage = job['png'], job['garbage']
     # psm 8 = 单个词，psm 7 = 单行；裁图跨度不定，两个都试取更自信的
     best = max((ocr(png, 'eng', psm) for psm in ('8', '7')), key=lambda x: x[1])
     Path(png).unlink(missing_ok=True)
     reading, conf = best[0].strip(' .,:;'), best[1]
-    if conf < MIN_CONF or not reading or reading == garbage:
-        return None
-    if not is_word(reading.strip(".,;:!?()[]'\""), lex):
-        return None
-    if SequenceMatcher(None, reading.lower(), garbage.lower()).ratio() < MIN_SIM:
+    if not reading or reading == garbage:
         return None
     return (job['vol'], job['scan_page'], job['before'], garbage, job['after'],
             reading, round(conf))
 
 
 def scan():
-    lex = build()
     want = pending()
     print(f'待判串 {len(want)} 个')
     rows = []
@@ -116,8 +116,7 @@ def scan():
             el.clear()
             if jobs:
                 with ThreadPoolExecutor(8) as pool:
-                    rows.extend(r for r in pool.map(lambda j: judge(j, lex), jobs)
-                                if r)
+                    rows.extend(r for r in pool.map(judge, jobs) if r)
         doc.close()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with open(OUT, 'w', encoding='utf-8') as f:
@@ -141,11 +140,58 @@ def norm(text):
     return ''.join(out), idx
 
 
+def witness_readings():
+    """判读日志里每个串对应的证人读数 → {串: {读数}}"""
+    out = {}
+    path = ROOT / 'logs/alexander_isaiah_adjudicate.tsv'
+    if not path.exists():
+        return out
+    with open(path, encoding='utf-8') as f:
+        for r in csv.DictReader(f, delimiter='\t', quoting=csv.QUOTE_NONE):
+            w = (r.get('witness') or '').strip().lower()
+            if w:
+                out.setdefault((r.get('ours') or '').strip(), set()).add(w)
+    return out
+
+
+def accept(r, lex, wit):
+    """这条重扫读数收不收。两条并行的路，各有各的证据：
+
+    一、**读数是词典里的词**。重扫也会读崩，但读崩的结果通常还是非词；
+        读出来是个词，而且与原串还像（相似度 ≥0.5），基本就是原串读错了。
+        这条要 ≥80 的置信度。
+
+    二、**读数与 IA 证人给的一模一样**。这时是两个来源各自独立认出同一串
+        字母——一个认的是本 PDF 原图，一个认的是别家扫描件——比词典那条
+        路证据还硬，所以词典不认（拉丁文、德文、专名）也收，置信度放到 70。
+    """
+    reading, garbage, conf = r['reading'], r['garbage'], int(r['conf'])
+    # 只差标点的不算改。重扫经常把词尾的逗号句点吞掉（`Bauer, → Bauer`），
+    # 那是「这个词本来就没读错」的佐证，落下去反倒把标点删了。
+    # 空格要留着比：`oflooking → of looking` 只差一个空格，那正是要改的东西
+    letters = lambda x: ' '.join(
+        re.sub(r'[^0-9A-Za-zÀ-ÖØ-öø-ÿ ]', '', x).lower().split())
+    if letters(reading) == letters(garbage):
+        return False
+    if SequenceMatcher(None, reading.lower(), garbage.lower()).ratio() < MIN_SIM:
+        return False
+    core = lambda x: x.strip(".,;:!?()[]'\"")
+    if core(reading).lower() in wit.get(core(garbage), ()) and conf >= 70:
+        return True
+    # 读数可能是两个词——`oflooking → of looking` 这类粘连，重扫会拆开。
+    # 每一截都得是词，不能有一截是残串。
+    parts = [core(w) for w in reading.split()]
+    return (conf >= MIN_CONF and all(parts)
+            and all(is_word(w, lex) for w in parts))
+
+
 def apply_it():
     """按前后文锚唯一定位后落回。定位不唯一就不落——同一串在不同地方
     未必来自同一个词，这一点与希伯来那条线同理。"""
-    rows = list(csv.DictReader(open(OUT, encoding='utf-8'), delimiter='\t',
-                               quoting=csv.QUOTE_NONE))
+    lex, wit = build(), witness_readings()
+    rows = [r for r in csv.DictReader(open(OUT, encoding='utf-8'), delimiter='\t',
+                                      quoting=csv.QUOTE_NONE)
+            if accept(r, lex, wit)]
     chapters = {p.stem: p.read_text(encoding='utf-8') for p in PUB.glob('*.md')}
     keys = {k: norm(v) for k, v in chapters.items()}
     edits, log, stat = {k: [] for k in chapters}, [], {'applied': 0,
@@ -180,7 +226,16 @@ def apply_it():
             stat['notfound'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'notfound'))
             continue
-        edits[name].append((idx[g], idx[g + len(garb) - 1] + 1, r['reading']))
+        # 重扫常把词尾标点吞掉（`Statms, → Statius`）。原串带着的首尾标点
+        # 要还回去，不然落一次盘就少一个逗号。
+        rep = r['reading']
+        lead = re.match(r'^[^0-9A-Za-zÀ-ÖØ-öø-ÿ]*', r['garbage']).group()
+        tail = re.search(r'[^0-9A-Za-zÀ-ÖØ-öø-ÿ]*$', r['garbage']).group()
+        if lead and not rep.startswith(lead):
+            rep = lead + rep
+        if tail and not rep.endswith(tail):
+            rep = rep + tail
+        edits[name].append((idx[g], idx[g + len(garb) - 1] + 1, rep))
         stat['applied'] += 1
         log.append((r['garbage'], r['reading'], r['conf'], 'applied'))
     for name, es in edits.items():

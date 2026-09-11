@@ -119,3 +119,30 @@ ejus eius unum una unus praeter propter scilicet nempe idem ibidem passim
 sensu stricto latiore verbum verba nomen nomine forma formae genus generis
 # —— 德文变音符还原后的形态（页面上本就是 ü，OCR 读成 ii）——
 Rosenmüller Fürst Rückert über Stütze geflügelter Möller Döderlein Hävernick
+# ══ 以赛亚书 · 影像/上下文核过的外文与专名（不是错字，别再判）══
+# 拉丁（Alexander 大量引 Vulgate 与拉丁注释家）
+omnes omnis unus una unum pecus medicus faciet ferum superbi direptio violenta
+mortales foeno necessario numerare eventum constitutae personae philologico
+rupes atque veniet vertere volumen universus aratra segetes arationis
+subvenite oppresso loca aprica statuas subdiales praeter propter quia quae
+quibus ejus eius sensu stricto latiore verbis verbum nomine forma formae
+genus generis idem ibidem passim scilicet nempe vide supra infra confer
+# 德文（Gesenius / Hitzig / Ewald / Knobel 原文照引）
+gehen wurde waren wandelt hemmen taumelt Tautologie Geschmack anstossig
+unseren zornig sondern welkt weiden nicht schon immer wieder ihre seine
+Erde rastet ruht bricht Schiffe gefluegelter Annahme Lehrgebaeude
+# 圣经专名（本卷特有）
+Arnon Uzzah Calneh Melech Nergal Masorah Hensler Libnah Leontopolis
+Sibmah Jazer Kirheres Zoar Luhith Horonaim Nimrim Eglaim Dimon Dibon
+Medeba Heshbon Elealeh Beer Tema Dedan Kedar Nebaioth Sela Bozrah
+Carchemish Ctesiphon Seleucia Berosus Xenophon Diodorus Herodotus Strabo
+Tiglath Pileser Sargon Sennacherib Esarhaddon Merodach Baladan Rabshakeh
+Rabsaris Tartan Shebna Eliakim Hilkiah Rezin Pekah Hoshea Menahem
+# —— 以赛亚书第二轮：核过的外文与专名 ——
+müsset musset Schwerdt verzehren muhet zieht erscheint herabblicken
+crudelem judicem patibulo suspensus videatur naivete longum omnia ire
+pluralis inhumanus majestaticus antithesis counterfeits figuratively
+Petraea Parthia Luitha Ayall Ramoth Rabbah Christologie gayety
+consummatum regionem aperite prosperis callidi capere Romanus excisus
+esset deridet postea praematura fletu historiam possint extremae neque
+comparatione Providentiae Divinae misera

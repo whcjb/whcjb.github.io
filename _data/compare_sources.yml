@@ -60,6 +60,7 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/colossians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
     - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/colossians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
     - {key: davenant-en, author: davenant, lang: en, label: "达文南特注释（英文版）", url_tpl: "/davenant/colossians/__CH__/", accent: "#556b2f", ch_from: 1, ch_to: 4}
+    - {key: davenant, author: davenant, lang: zh, label: "达文南特注释", url_tpl: "/davenant/colossians/__CH__/zh/", accent: "#556b2f", ch_from: 1, ch_to: 3}
   daniel:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/daniel/__CH__/", accent: "#800000", ch_from: 1, ch_to: 12}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/daniel/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 12}

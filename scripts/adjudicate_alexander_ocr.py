@@ -485,6 +485,18 @@ HANDS_OFF = {
     'anji',      # "the inside of anji hing" = anything，见 MANUAL_TEXT
     # 影像上这两处印的就是希伯来文，不是拉丁字母读崩
     'iyoyl', 'yij',
+    # ── 影像判定为「底本原样，不是错」的（2026-09-11）──
+    # 希伯来／希腊活字，页面上印的就是这些字母
+    'linjj', 'trfql', 'hioll', 'xvgioi', 'lijip', "sxa'n", 'avrmv', 'dijrt',
+    'dibyd', 'loiqm', 'yirit', 'mivri', 'olxov', 'axarg', 'nntio', 'teitqs',
+    'sorup', 'iinus', 'iopraise', 'lafic', 'terbial', 'soita', 'soiuj',
+    'asserf', 'ijiou', 'vfiih',
+    # 拉丁文与专名，我们这边是对的，证人读崩了
+    'facto', 'animo', 'semel', 'regem', 'jonath', 'zobah', 'jeduthun',
+    'kesheth', 'prophetica', 'yehallelujah',
+    # 1864 印本自身的排印错，忠实保留
+    'darknees',       # "Dwelling in darknees and death-shade"，影像上就是 darknees
+    'notwitstandi',   # "Notwitstanding all these favours"，影像上就是少个 h
     # 以下都在希伯来活字的位置上，两份 OCR 各崩各的，证人读数同样无意义
     'xy',        # "derived from in and Xy" / "see and ear i Xy and INly'"
     'tl',        # "repetition of the verb Tl" —— 证人作 TV / ifih
@@ -562,6 +574,8 @@ MANUAL_TEXT = [
     ('the Egj-ptians', 'the Egyptians'),
     ('and com];>are Isa', 'and compare Isa'),
     ('*inside* of anji-hing', '*inside* of anything'),
+    ('may be seen. *A according to thy word,*',
+     'may be seen. *According to thy word,*'),
 
     # ── 影像判读第二批（2026-09-11）───────────────────────────────
     # divergent/badwitness/nowitness 里「像英文词」的 156 处，逐个渲染
@@ -639,7 +653,6 @@ MANUAL_TEXT = [
     ('suferei-s', 'sufferers'),
     ('free-mll-qfferings', 'free-will-offerings'),
     ('prept)sition', 'preposition'),
-    (' *A ccording to ', ' *A according to '),
     ('difi"erent', 'different'),
     ('sufi"erings', 'sufferings'),
     ('figui-e', 'figure'),
@@ -664,7 +677,6 @@ MANUAL_TEXT = [
     ('sufi"erers', 'sufferers'),
     ('de§criptive', 'descriptive'),
     ('n-illous', 'willows'),
-    (' *A ccording to ', ' *A According to '),
     ('IViine', 'Thine'),
     ('AercZ', 'herd'),
     ('The word ti-anslated', 'The word translated'),
