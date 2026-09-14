@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 12:24
+date: 2026-09-14 14:25
 subtitle: "incidentally and briefly determined in the work"
 prev_url: "/davenant/colossians/indexes/general/"
 prev_label: "General Index"
@@ -15,8 +15,7 @@ next_label: "Contents of the Dissertation"
 
 <p class="dv-idx-lead">问题索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
 <p class="dv-idx-caption">PAGE,</p>
-<p class="dv-idx">Whether the Pope of Rome hath apostolical dignitv and autho-</p>
-<p class="dv-idx">Whether the faithful can certainly conclude that they are in favour with God, and that their sins are remitted them through Christ in whom they have helieved 006 poc occ orc 37—53</p>
+<p class="dv-idx">Whether the Pope of Rome hath apostolical dignitv and autho- Whether the faithful can certainly conclude that they are in favour with God, and that their sins are remitted them through Christ in whom they have helieved 006 poc occ orc 37—53</p>
 <p class="dv-idx">Whether Christ is the adequate object of faith as it justifies ... 61—64</p>
 <p class="dv-idx">Whether our love is God himself oon 000 000 65, 66</p>
 <p class="dv-idx">Whether there can be true faith without love on ET * jbid.</p>
@@ -65,8 +64,7 @@ next_label: "Contents of the Dissertation"
 <p class="dv-idx">Whether all sin be evil ... occ co Soc Doc 68</p>
 <p class="dv-idx">Whether any lie be lawful ses = see 76—78</p>
 <p class="dv-idx">Whether equivocation bealie ... Oc c Doc 79—82</p>
-<p class="dv-idx">Whether it is lawful for a Christian to revenge any injury done to</p>
-<p class="dv-idx">Whether it is lawful to repel an injury by a duel ... .. — 116—118</p>
+<p class="dv-idx">Whether it is lawful for a Christian to revenge any injury done to Whether it is lawful to repel an injury by a duel ... .. — 116—118</p>
 <p class="dv-idx">Whether charity fulfils the law ... Doc Occ we 3121, 122</p>
 <p class="dv-idx">Whether the Scriptures are to be read in common by the laity — 132—138</p>
 <p class="dv-idx">Whether a Christian is bound in every action whatever expressly to implore the help of Christ — ... t T wee 148</p>

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 12:24
+date: 2026-09-14 14:25
 prev_url: "/davenant/colossians/indexes/scripture/"
 prev_label: "Index of Passages of Scripture"
 ---
@@ -17,6 +17,5 @@ prev_label: "Index of Passages of Scripture"
 <p class="dv-idx">Page 325, Note, line 2, for Levins, read Lerins. :</p>
 <h2>IN VOL. I.</h2>
 <p class="dv-idx">In the Life, page xi. line 12, in some copies, the comma should be after major ; and for honore, read ponere.</p>
-<p class="dv-idx">Page 123, line 4 of the middle section, the reader will be so good as insert, after vocation—-1 Thess. II. 12, Worthy of God ;—and in the following quotation to read—worthy of the Gospel. Also, on</p>
-<p class="dv-idx">Page 170, dele last line of the Note, and read—to which Garner added a fifth Volume in 1684.</p>
+<p class="dv-idx">Page 123, line 4 of the middle section, the reader will be so good as insert, after vocation—-1 Thess. II. 12, Worthy of God ;—and in the following quotation to read—worthy of the Gospel. Also, on Page 170, dele last line of the Note, and read—to which Garner added a fifth Volume in 1684.</p>
 <p class="dv-idx">Page 547, for “ those Editions" \wice, read—this Edition.</p>

@@ -159,7 +159,12 @@ def gate_d_e(items):
         if not body:
             continue
         n += 1
-        if not re.search(r'\d', body):
+        # 「无页码」要扣掉两类本来就没有阿拉伯页码的：交叉引用
+        # （`Abstinence, see Fastings.` / `…ibid.`）与罗马数字页码
+        # （`Introduction, p. lxxii.`）。不扣的话报出来的数字里九成是噪声。
+        if not re.search(r'\d', body) \
+                and not re.search(r'\b(see|ibid)\b', body, re.I) \
+                and not re.search(r'\bp\.\s*[ivxlc]+\.', body, re.I):
             no_page += 1
         if re.match(r'^[a-z]|^[,;:)\]]|^\d+[,;.]', body):
             orphan += 1
@@ -168,7 +173,7 @@ def gate_d_e(items):
     print(f'  Gate D 该并没并：{n} 条里 {orphan} 条以小写/标点/页码起头')
     for e in ex:
         print(f'    {e}')
-    print(f'  Gate E 条目带页码：不含数字的 {no_page} / {n}')
+    print(f'  Gate E 条目带页码：既无页码又非交叉引用的 {no_page} / {n}')
 
 
 def gate_f(items):

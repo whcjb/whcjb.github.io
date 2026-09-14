@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 12:24
+date: 2026-09-14 14:25
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -23,8 +23,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Adoption, what, II. 207.</p>
 <p class="dv-idx">Adverbs, peculiar effect of, 246.</p>
 <p class="dv-idx">Adultery, how it differs from fornication and rape, II. 38.</p>
-<p class="dv-idx">Affections and desires, naturally rebellious, I. 252, 452; what it is to set them on things above, II. To</p>
-<p class="dv-idx">Afilictions, to be endured by Christians with a cheerful mind, I. 270; ours are the afflictions of Christ, 271; honourable to suffer them for Christ, 274 ; the greatest consolation, ibid. Our afflictions are not satisfactory for others, but tend to edification, 275 ; on what accounts afflictions are borne by saints, 290; future glory a consolation against the afflictions of the godly, II. 29.</p>
+<p class="dv-idx">Affections and desires, naturally rebellious, I. 252, 452; what it is to set them on things above, II. To Afilictions, to be endured by Christians with a cheerful mind, I. 270; ours are the afflictions of Christ, 271; honourable to suffer them for Christ, 274 ; the greatest consolation, ibid. Our afflictions are not satisfactory for others, but tend to edification, 275 ; on what accounts afflictions are borne by saints, 290; future glory a consolation against the afflictions of the godly, II. 29.</p>
 <p class="dv-idx">Afflictions of Paul, I. 328, 329. the afflicted ought to be remembered on four accounts, II. 307.</p>
 <p class="dv-idx">Almsdeeds, to be exercised, 104.</p>
 <p class="dv-idx">Altars, should be erected to God alone, I. 507; are erected by Papists to angels and saints, ibid.</p>
@@ -66,9 +65,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Christ, that he might be the Mediator, ought to be God-man, I. 163, 164; it behoved him to be</p>
 <p class="dv-idx">God that he might teach salvation, 409, 410; and that he might be the author of salvation, 410, 411; in what manner he is one person, 415-420; vet not every where as man, 421; II.13; is the Lord of all things, even as man, I. 35; the cause of the creatures, 187; the Creator of the world, 188; the end of all things, 203; the first-born of every creature, and in what sense, 184, 185; the first-born from the dead, and in what sense, 222 223; he first rose, 223; the author of our resurrection, 224, 225 ; hath a fulness of grace, 229; and why, 231; he alone hath it, 251; is the channel of grace by the ef- © ficacy of operation, the benefit of intercession, and the merit of his passion, 35; he infuses grace, as man, instrumentally, 212; ‘all grace is from him, 514; he is the way to God; he alone could and ought to reconcile us, 239; how he hath redeemed us, 166, 167 ; how he is the Mediator of angels, 244—246 ; how he is the head of angels, 427.</p>
 <p class="dv-idx">Christ, the sympathy of in our afflictions, 272; our support in trials,</p>
-<p class="dv-idx">II. 15; what knowledge was in</p>
-<p class="dv-idx">Christ, I. 362; He alone is the head of the Church, I. 17, 18; 126; and that as to both natures, 210, 211; even of the antient church, 211, 212; in what respects he is called the head of the</p>
-<p class="dv-idx">Church, 212, 518—516 ; of what</p>
+<p class="dv-idx">II. 15; what knowledge was in Christ, I. 362; He alone is the head of the Church, I. 17, 18; 126; and that as to both natures, 210, 211; even of the antient church, 211, 212; in what respects he is called the head of the Church, 212, 518—516 ; of what</p>
 <p class="dv-idx">Church he is the head, 218. is the only meritorious intercessor,</p>
 <p class="dv-idx">II. 238, 239.</p>
 <p class="dv-idx">Christ is the object of faith, I. 62; the principal and special object, ibid.; and the adequate object of faith, because he justifies, 61—63 ; he dwells in us by faith, 316.</p>
@@ -84,8 +81,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Circumcision, internal what it is,</p>
 <p class="dv-idx-2">I. 448 ; the Christian excels the Jewish in three things, 434; its author, and the instrument of it, 438 ; ought to be total, 439. Jewish what it signified, 460; chief among their ceremonies, 433.</p>
 <p class="dv-idx">Circumcision, put for the Jews themselves, I. 451.</p>
-<p class="dv-idx">Citizenship, a bond of love, II.</p>
-<p class="dv-idx">. 988.</p>
+<p class="dv-idx">Citizenship, a bond of love, II. . 988.</p>
 <p class="dv-idx">Colosse, where situated, see Preface, lxxi; overturned by an earthquake, II. 293.</p>
 <p class="dv-idx">Comfort, what it comprises, I. 345, 346.</p>
 <p class="dv-idx">Commendation, conduces to perseverance, I. 374.</p>
@@ -191,8 +187,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Idolatry, or the worship of God by an idol, unlawful, I. 182; the suspicion of severely punished by the antient Church, II. 252, 253; conduct of those allured to it afterwards, ibid.</p>
 <p class="dv-idx">Idols not to be overthrown by private authority, II. 253.</p>
 <p class="dv-idx">Ignorance of Christ the cause of errors, I. 143.</p>
-<p class="dv-idx">Image, what required to constitute its nature, I. 173 ; how Christ as God is the image of the Father, 174, 175; how so as man, 179; vhy the</p>
-<p class="dv-idx-2">Spirit is not so called, 176 ; image of God one thing in Christ, and another in us, II. 87; in what the image of God in man consists, 88.</p>
+<p class="dv-idx">Image, what required to constitute its nature, I. 173 ; how Christ as God is the image of the Father, 174, 175; how so as man, 179; vhy the Spirit is not so called, 176 ; image of God one thing in Christ, and another in us, II. 87; in what the image of God in man consists, 88.</p>
 <p class="dv-idx">Images, made by the Papists for worship, I. 182.</p>
 <p class="dv-idx">Impurity encourages to sin, IT. 54.</p>
 <p class="dv-idx">In (the preposition) often taken for by in the Scriptures, I. 188.</p>
@@ -296,8 +291,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Parents, conduct of towards their children, 190—193 ; the evils of treating children harshly, 194.</p>
 <p class="dv-idx">Passion of Christ was perfect, 273, 274; was satisfactory as well for all punishment as guilt, 278.</p>
 <p class="dv-idx">Passover, why instituted, and what it signifies, I. 491.</p>
-<p class="dv-idx">Patience, what, 1. 137 ; how it may be determined as genuine, 140; differs from fortitude, 137; how from long-suffering, ibid. ; 11.108. manifold need of it, I. 138; manifold advantages, 140; motives to it, II. 108; especially neces-</p>
-<p class="dv-idx">‘ sary to ministers, I. 331, 332.</p>
+<p class="dv-idx">Patience, what, 1. 137 ; how it may be determined as genuine, 140; differs from fortitude, 137; how from long-suffering, ibid. ; 11.108. manifold need of it, I. 138; manifold advantages, 140; motives to it, II. 108; especially neces- ‘ sary to ministers, I. 331, 332.</p>
 <p class="dv-idx">Patience of Christ, IT. 115.</p>
 <p class="dv-idx">Paul, whence so named, different opinions about, I. 2; his character, life, and commendations from several authors, 2, 3; had all things requisite for the Apostleship, 4; was the Apostle of the Gentiles, 296, 297; why he so often speaks of his Apostleship, 4; his labours, 327, 328; conflicts, 338; why he associates Timothy with himself, 6.</p>
 <p class="dv-idx">Paula, her abstinence, I. 540.</p>
@@ -341,8 +335,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Renewed, their sins hateful to God, but not themselves, 126,127.</p>
 <p class="dv-idx">Reputation to be guarded and preserved, Í. 102.</p>
 <p class="dv-idx">Resurrection, Christ the first fruits of it, 224; the threefold author of our's, 225, 226; the Father raised Christ, and yet he raised himself, 448.</p>
-<p class="dv-idx">Resurrection spiritual as well as bodily, 224, 225; Christ arose from the dead and quickens us from sin by the same Almighty power, 446, 447 ; II. 10. of Christ to be exhibited in our life, 445; II. 7.</p>
-<p class="dv-idx">' our's is twofold, and both effected by Christ, II. 10; our spiritual resurrection ought to be a copy of Christ's bodily resurrection, 11; is wrought in us by virtue of the ] resurrection of Christ, 10. the confidence of Christians, 29.</p>
+<p class="dv-idx">Resurrection spiritual as well as bodily, 224, 225; Christ arose from the dead and quickens us from sin by the same Almighty power, 446, 447 ; II. 10. of Christ to be exhibited in our life, 445; II. 7. ' our's is twofold, and both effected by Christ, II. 10; our spiritual resurrection ought to be a copy of Christ's bodily resurrection, 11; is wrought in us by virtue of the ] resurrection of Christ, 10. the confidence of Christians, 29.</p>
 <p class="dv-idx">Revenge, how far it is lawful and disallowed to a Christian, II. 113, 14. by duel is not lawful, 116, 117.</p>
 <p class="dv-idx">Revilers of the Ministry warned, I. 104.</p>
 <p class="dv-idx">Righteous we are so by tlie imputation of Christ's righteousness, I. 424.</p>
@@ -356,8 +349,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Salutation what it is, and its forms, II. 277; how necessary, 278; in what sense forbidden, 279; of Paul, 306; of the Hebrews, I. 29; of the Apostles, 30.</p>
 <p class="dv-idx">Sanctification, what, I. 20, 21 ; 456; twofold, 258 ; threefold, 259, 260; all from Christ, see Holiness.</p>
 <p class="dv-idx">Sanctification accompanies justification, I. 457. is effected by degrees in this life, II. 102.</p>
-<p class="dv-idx">Satisfaction for our sins made by</p>
-<p class="dv-idx">Christ alone, I. 287; 459 ; to that the Papists themselves resort when consulting their consciences, 347; none made by us either in doing or suffering, 457.</p>
+<p class="dv-idx">Satisfaction for our sins made by Christ alone, I. 287; 459 ; to that the Papists themselves resort when consulting their consciences, 347; none made by us either in doing or suffering, 457.</p>
 <p class="dv-idx">Schoolmen, obtrude their vagaries for articles of faith, I. 305; 357, 358.</p>
 <p class="dv-idx">Scriptures, are believed on their own authority among the faithful, I. 6; are not confirmed by the authority of the Church, 355, 500; are the sole rule of faith, 267; 493; 499—501; II. 246; are perspicuous, 1. 306 ; eloquent, 336 ; are the word of Christ in a twofold manner, II. 130, 131; their efficacy in changing men's manners, J. 96; are to be read diligently, 266, 353 ; by the Laity, 122; 266; Il. 132; 263; objections to the practice answered, 1I. 136; how used in the primitive Church, 300 ; are like a pharmacopeeia, in which nothing is insignificant or useless, 265 ; insieme y compared by Hermanus to the fables of sop, I. 355.</p>
 <p class="dv-idx">Scythians thought to have been the worst of barbarians, T1. 92.</p>
@@ -410,8 +402,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Uncleanness, what meant by it, II. 46.</p>
 <p class="dv-idx">Understanding, necessity of in order to decide in questions of moment, I. 120, 121.</p>
 <p class="dv-idx">Understanding, our's naturally dark, I. 252; in matters of faith alto. gether blind, 304; 452; how enlightened, 120.</p>
-<p class="dv-idx">Union, personal, in Christ what, I.</p>
-<p class="dv-idx">' 415; does not establish the ubiquity of his body, 419, 421, mystical, is effected by faith and the Spirit, 426 ; importance of it, II. 23.</p>
+<p class="dv-idx">Union, personal, in Christ what, I. ' 415; does not establish the ubiquity of his body, 419, 421, mystical, is effected by faith and the Spirit, 426 ; importance of it, II. 23.</p>
 <p class="dv-idx-letter">V</p>
 <p class="dv-idx">Vices are contagious, II. 257; the chains of the devil, I. 474 ; should be abandoned by the Christian, II. 63; with promptitude, 64 ; and in toto, 65; and spiritually, 64.</p>
 <p class="dv-idx">Vigils public, what they were formerly, and on what occasion instituted, II. 231; their abuse, 233; have very properly ceased, 232, and Note. private, laudable, 232, 233. See Watchfulness.</p>

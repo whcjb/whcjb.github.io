@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 12:24
+date: 2026-09-14 14:25
 subtitle: "on the extent of the death of Christ"
 prev_url: "/davenant/colossians/indexes/questions/"
 prev_label: "Index of Questions"
@@ -25,11 +25,7 @@ next_label: "Index to the Biographical Sketches"
 <p class="dv-idx-2">2. That through the merit of the death of Christ a new Covenant was entered into between God and the human race 404</p>
 <p class="dv-idx-2">3. On the Divine ordination depending on the aforesaid Covenant ose vee ees T one see 406</p>
 <p class="dv-idx">V. The Confirmation of the doctrine, and objections answered 407</p>
-<p class="dv-idx">VI. The last Proposition stated and confirmed : That the death of Christ being granted to be applied to all</p>
-<p class="dv-idx-2">men on condition of faith, it is consistent with the goodness and</p>
-<p class="dv-idx-2">justice of God to supply or deny, either to nations or to indivi-</p>
-<p class="dv-idx-2">duals, the means of application, and that according to the good</p>
-<p class="dv-idx-2">pleasure of his own will - ote tee coc 273</p>
+<p class="dv-idx">VI. The last Proposition stated and confirmed : That the death of Christ being granted to be applied to all men on condition of faith, it is consistent with the goodness and justice of God to supply or deny, either to nations or to individuals, the means of application, and that according to the good pleasure of his own will - ote tee coc 273</p>
 <p class="dv-idx">VII. On the death of Christ as it regards the predestinated alone — 513</p>
 <p class="dv-idx-2">Testimonies of Scripture considered — ... -— Occ 517</p>
 <p class="dv-idx-2">Arguments derived from the Scriptures ... - one 525</p>
@@ -38,6 +34,5 @@ next_label: "Index to the Biographical Sketches"
 <p class="dv-idx-2">Protestant Authorities ooc occ oc oc 547</p>
 <p class="dv-idx-2">Conclusion ... cos oc Doc ooc -— 556</p>
 <p class="dv-idx-2">TRACT ON THE GALLICAN CONTROVERSY.</p>
-<p class="dv-idx">APPEAL of the French DivinEs on the Controversy in the Re-</p>
-<p class="dv-idx-2">formed Gallican Church we ese eee - 561</p>
+<p class="dv-idx">APPEAL of the French DivinEs on the Controversy in the Reformed Gallican Church we ese eee - 561</p>
 <p class="dv-idx">Reply of Bishop DAVENANT ee - ae see 563</p>

@@ -466,9 +466,26 @@ def main():
             # 但带**点线引导**的几块（传略、经文、问题）条目本来就不以句点
             # 收尾，整块被并成几条——传略 164→24、经文 118→7。判据一旦依赖
             # 「句点」，就把版式不同的几块一起赔进去了，不值。
-            cont = (pc['id'] not in ('contents-dissertation', 'errata')
-                    and bool(cur)
-                    and bool(re.match(r'^[a-z0-9,;:)\]]', t.strip())))
+            # 目次与 ERRATA 只排除**数字起头**那一条（它们的 `1. That he
+            # died…` 与 `261, before § 3, read—` 是真条目）；小写起头的续行
+            # 照样要并，否则 `VI. The last Proposition…` 后面那三行接不上。
+            # 行首可能挂着读花的标点（`' 415;` / `. 988.`），先剥掉再看首字符，
+            # 否则数字起头那条判据被挡在外面。
+            lead = t.strip().lstrip('\'\u2019.,`\u201c\u201d ')[:1]
+            special = pc['id'] in ('contents-dissertation', 'errata')
+            # 条目不可能停在介词或冠词上（`Satisfaction for our sins made by`），
+            # 这种收尾只能是被切断了，下一行无论大小写都要接上。
+            dangling = bool(re.search(
+                r'\b(by|of|the|a|an|and|to|in|for|with|from|or|on|as|at|'
+                r'that|which|is|are|was|were|not|his|her|their|its)\s*$',
+                cur.rstrip(), re.I))
+            cont = bool(cur) and (
+                bool(re.match(r'^[a-z,;:)\]]', lead))
+                or (not special and bool(re.match(r'^[0-9]', lead)))
+                or dangling
+                # 上一行以连字收尾 → 一定是断词，不管下一行首字母大小写
+                # （`…apostolical dignitv and autho-` + `rity…`）
+                or cur.rstrip().endswith('-'))
             if (p, col) != prev_key:
                 # 条目**可以**跨页跨栏续行。原书长条目从左栏底接到右栏顶
                 # （p582 的 `CunisT, that he might be the Me-` / `diator,

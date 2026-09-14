@@ -38,6 +38,7 @@ import json
 import difflib
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 import fitz
@@ -473,6 +474,67 @@ def best_match_grc(vol, page, toks):
     return _match(grc_lines(vol, page), toks, grc_tokens(vol, page))
 
 
+# ── 希腊词表 ────────────────────────────────────────────────────────────────
+# 从 tesseract 自带的 `grc.traineddata` 里抽出来的（combine_tessdata -u +
+# dawg2wordlist），9.7 万条归一化词形，存 davenant_raw/colossians/grc_words.txt。
+#
+# 为什么需要它：两遍 grc 读的是**同一张扫描图、同一个模型**，对同一个字错成
+# 同一种写法时"互证"并不独立——`ἀντῆς`（原书 ἀυτῆς）两遍读得一模一样，
+# 门槛再紧也拦不住。词表是第一个真正独立于这张图的判据。
+#
+# ⚠️ 词表**不能当过滤器**：它是合成语料建的，`ἀπέβλεπεν` `πειϑαρχία`
+# `ἀδαμαντίνοις` 这些正确的词它也没有（正文 190 个希腊词里查不到 50 个）。
+# 只用它做**修复判据**：按字形混淆表换一个字母，唯一一种换法能换进词表才认。
+GRC_WORDS = RAW / 'grc_words.txt'
+_grcwords = None
+# 变体字形：原书用 ϑ 而非 θ，词表用标准形
+_GRC_VAR = str.maketrans({'ϑ': 'θ', 'ϐ': 'β', 'ϕ': 'φ', 'ϖ': 'π',
+                          'ϰ': 'κ', 'ϱ': 'ρ', 'ς': 'σ'})
+# 独立成字的呼吸符与重音（不是组合符，NFD 拆不掉）
+_GRC_SPACING = set('\u1fbd\u1fbf\u1fc0\u1fc1\u1fcd\u1fce\u1fcf\u1fdd\u1fde'
+                   '\u1fdf\u1fed\u1fee\u1fef\u1ffd\u1ffe\u0374\u0375')
+# 两条**有实据**的混淆：`ξ/ζ`（Ασπάξεται→Ἀσπάζεται）与 `ν/υ`（ἀντῆς→ἀυτῆς）。
+# 试过再加 ε/ο，立刻把 `ἀπέβλεπεν` 改成 `ἀπέβλεπον`——两个都是合法词形，
+# 词表只是恰好少收一个；也试过"删掉多余的首字母"，把 `ἀφειδία`（无所吝惜）
+# 删成了 `φειδία`（吝惜），意思正好相反。
+_GRC_CONF = (('ξ', 'ζ'), ('ν', 'υ'))
+
+
+def _grc_key(s):
+    s = ''.join(c for c in s if c not in _GRC_SPACING)
+    s = unicodedata.normalize('NFD', s)
+    s = ''.join(c for c in s if not unicodedata.combining(c))
+    return s.translate(_GRC_VAR).lower()
+
+
+def grc_words():
+    global _grcwords
+    if _grcwords is None:
+        _grcwords = (set(GRC_WORDS.read_text(encoding='utf-8').split())
+                     if GRC_WORDS.exists() else set())
+    return _grcwords
+
+
+def grc_lexfix(g):
+    """→ 按词表校正后的希腊词，或 None（词表里本来就有，或判不出唯一解）。"""
+    ws = grc_words()
+    c = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff]', '', g)
+    if not ws or len(c) < 3 or _grc_key(c) in ws:
+        return None
+    out = set()
+    for a, b in _GRC_CONF:
+        for i, ch in enumerate(c):
+            if _grc_key(ch) == a:
+                cand = c[:i] + (b.upper() if ch.isupper() else b) + c[i + 1:]
+                if _grc_key(cand) in ws:
+                    out.add(cand)
+    # 多出来的首字母：只认「连着两个大写」这一种（`ἸΠλουσίως`），
+    # 别的情形删首字母太危险（见上面 ἀφειδία 的教训）
+    if len(c) > 3 and c[0].isupper() and c[1].isupper() and _grc_key(c[1:]) in ws:
+        out.add(c[1:])
+    return out.pop() if len(out) == 1 else None
+
+
 def _greekish(s):
     """希腊字母占到一半以上的 token 才算希腊词——grc 模型读英文时也会
     零星吐出一两个希腊字母，只判「含希腊字母」会把英文词一起换掉。"""
@@ -554,6 +616,8 @@ def _keep_punct(first, last, *greek):
     # 塌成正文（实测 1 条）。希腊词里本来就不该有拉丁字母和括号。
     core = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff\u0300-\u036f\s'
                   r'\u2019\u1fbd\u1ffe\'`]', '', ' '.join(greek))
+    # 两遍互证过了，再让词表校一道（互证抓不到两遍同错的那一类）
+    core = ' '.join(grc_lexfix(w) or w for w in core.split())
     core = re.sub(r'\s+', ' ', core).strip()
     if not core:
         return ''

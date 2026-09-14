@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 12:24
+date: 2026-09-14 14:25
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -98,8 +98,7 @@ next_label: "Errata"
 <p class="dv-idx-2">Vi. 17, Come out from among them, and be ye separate OE ex II. 252</p>
 <p class="dv-idx-2">Xill. 5, Know ye not that Christ is in you Note, I. 38</p>
 <p class="dv-idx">Cal. I. 10, If I pleased men I should not be the servant of God £-- = "hee 125</p>
-<p class="dv-idx-2">I. 7, The Gospel of the uncircumcision was com-. mitted unto ME, &amp;c. ae 297 -</p>
-<p class="dv-idx-2">IV. 8, Ye did service unto them which are no gods e oo S608 504</p>
+<p class="dv-idx-2">I. 7, The Gospel of the uncircumcision was com-. mitted unto ME, &amp;c. ae 297 - IV. 8, Ye did service unto them which are no gods e oo S608 504</p>
 <p class="dv-idx">Ephes. I. 4, 5, He hath chosen us in him er 211 the foundation of the world — .. $ &amp; If. 458,517 17, That the Father of glory may give unto you the Spirit of wisdom and revelation in the knowledge of him bon i. 87</p>
 <p class="dv-idx-2">Ii. 2, Wherein in time past ye walked according to the prince of this world "C i. 156 5, By grace are ye saved T" DO</p>
 <p class="dv-idx-2">IV. 1, I pray that ye walk worthy of the vocation, &amp;c. Dodoo --—. 123 7, To every one of you is given grace according to the measure of the gift of Christ 116 29, That it may minister grace unto the hearers : m ts iig 142</p>
