@@ -13,6 +13,8 @@
 import collections
 import difflib
 import re
+
+GREEK = re.compile(r'[\u0370-\u03ff\u1f00-\u1fff]')
 import subprocess
 import sys
 from pathlib import Path
@@ -62,6 +64,11 @@ def main():
             was, now = a[i1:i2], b[j1:j2]
             if len(was) > 3 or len(now) > 3:
                 continue                  # 大段重排不在这条判据的射程
+            # 希腊文退回拉丁乱码是**有意**的（两遍互证不过就不采信），
+            # 不是回退。`_norm` 把希腊字母全剥成空串，不排除的话这一批
+            # 会被判成「真词变非词」，把真信号淹掉（实测一次退回报 29 处）。
+            if any(GREEK.search(x) for x in was):
+                continue
             if all(real(x) for x in was) and not all(real(x) for x in now):
                 bad += 1
                 print(f'  {Path(f).name:18} {" ".join(was)!r} → {" ".join(now)!r}')

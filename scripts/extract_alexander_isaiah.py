@@ -87,14 +87,26 @@ def is_runhead(b, need_page=False):
     if re.fullmatch(r'\d{1,3}', b.strip()):
         return True
     letters = _head_letters(b)
+    # 前置件（序与导论）的页码是**小写罗马数字**，`_head_letters` 只剥非字母，
+    # 罗马数字全是字母，原样粘在书眉前头，把长度撑爆——`xxxii I N T R O D U 0
+    # T I O N.` 归一成 `XXXIIINTRODUOTION`（17 位），子串匹配因为 C 被读成 O
+    # 而落空，相似度闸又因为差 5 位够不着，整段书眉于是当成续行并进了导论
+    # 正文中间（书页 xxxii）。首尾的罗马数字串逐位剥开，每一截都当候选。
+    cands = {letters}
+    m = re.match(r'[IVXLC]{2,}', letters)     # 至少两位才当页码
+    if m:
+        cands |= {letters[k:] for k in range(1, m.end() + 1)}
     for kw in _KEYWORDS:
-        if kw in letters and len(letters) <= len(kw) + 8:
-            return True
-        # `P 11 E F A C E.` —— 字母被逐个拆开时 OCR 还会漏字母（这里漏了 R），
-        # 子串匹配就不够了，用相似度兜底。
-        if abs(len(letters) - len(kw)) <= 2 and \
-                SequenceMatcher(None, letters, kw).ratio() >= 0.85:
-            return True
+        for c in cands:
+            if not c:
+                continue
+            if kw in c and len(c) <= len(kw) + 8:
+                return True
+            # `P 11 E F A C E.` —— 字母被逐个拆开时 OCR 还会漏字母（这里漏了 R），
+            # 子串匹配就不够了，用相似度兜底。
+            if abs(len(c) - len(kw)) <= 2 and \
+                    SequenceMatcher(None, c, kw).ratio() >= 0.85:
+                return True
     has_digit = bool(re.search(r'\d', b))
     # 页码常被读成字母（`8`→`g`、`110`→`HO`、`114`→`H4`、`404`→`4Q4`），
     # 于是页眉串前后各挂着一小截垃圾。剥掉最多三个字符再比。

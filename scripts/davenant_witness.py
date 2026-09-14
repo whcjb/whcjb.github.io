@@ -502,12 +502,16 @@ def grc_pass(toks, greek, confirm=None):
     ok = confirm if confirm is not None else set()
 
     def backed(g):
-        """这个希腊读数在佐证那一遍里有没有出现（允许 ≥0.8 的形近）。"""
+        """这个希腊读数在佐证那一遍里**一模一样**地出现过吗。
+
+        原先允许 ≥0.8 的形近，抽样 18 条核图发现错的正集中在这一档：
+        `ἀντῆς`（原书 ἀυτῆς，ν/υ 之误）与佐证的 `ἀυτῆς` 形近 0.9 就过了。
+        全书 161 个片段里 140 个是两遍**逐字相同**的，只有 21 个靠形近，
+        把这 21 个退回拉丁乱码换来那一档误读全部消失——乱码一眼看得出是
+        没读出来，错的希腊字看着像真的，读者无从分辨。
+        """
         core = re.sub(r'[^\u0370-\u03ff\u1f00-\u1fff]', '', g)
-        if len(core) < 2:
-            return False
-        return core in ok or any(
-            difflib.SequenceMatcher(None, core, c).ratio() >= 0.8 for c in ok)
+        return len(core) >= 2 and core in ok
     ops = difflib.SequenceMatcher(None, [_norm(w) for w in toks],
                                   [_norm(w) for w in greek]).get_opcodes()
     out, log = [], []
