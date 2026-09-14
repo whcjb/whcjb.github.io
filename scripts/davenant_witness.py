@@ -227,6 +227,26 @@ def manual_repair(vol, page, w):
     return None
 
 
+# 夹在两个小写词之间的孤立标点：`be ye . reconciled to God`、
+# `which we readily ] confess`。英文排版里不会有这种东西，是扫描斑点。
+# 既有的斑点规则只认 `|` 和 `/`，这两个字符本书里从不合法出现；`.` 与 `]`
+# 别处是合法的，所以要靠**位置**判：前后都是 ≥2 个字母的小写词。
+# 正文四章加附卷实测 109 处，逐条看过没有一处是真标点。
+STRAY_PUNCT = {'.', ']', '[', ',', ';', '*'}
+
+
+def stray_repair(w, prev, nxt, other, other3):
+    """→ '' （删掉）或 None。"""
+    if w not in STRAY_PUNCT:
+        return None
+    if not (re.fullmatch(r'[a-z]{2,}[,;:]?', prev) and re.fullmatch(r'[a-z]{2,}', nxt)):
+        return None
+    # 证人那边同一位也有同样的孤立标点时不动——那可能真是原书排的
+    if any(isinstance(c, str) and c.strip() == w for c in (other, other3)):
+        return None
+    return ''
+
+
 def ell_repair(w, prev, nxt, other, other3):
     """→ 改后的 token / '' （删掉）/ None（不动）。"""
     if ELL_T.match(w):
@@ -1242,6 +1262,10 @@ def fix_line(vol, page, text, strict=False):
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
         for _why, _fix in (('人工核定', manual_repair(vol, page, w)),
+                           ('孤立标点', stray_repair(
+                               w, toks[i - 1] if i else '',
+                               toks[i + 1] if i + 1 < len(toks) else '',
+                               other, other3)),
                            ('l→1', ell_repair(
                                w, toks[i - 1] if i else '',
                                toks[i + 1] if i + 1 < len(toks) else '',
@@ -1261,9 +1285,14 @@ def fix_line(vol, page, text, strict=False):
             _fix = None
         if _fix is not None and _fix != w:
             continue
-        if not SPECK.match(w) and i in pair2 and w in splits():
-            out[i] = pair2[i]
-            log.append((w, pair2[i], '对方拆作两词'))
+        if not SPECK.match(w) and w in splits():
+            # ⚠️ 不要求「对方在**这一处**也拆开」。采信表本身就是全书投票
+            # 的结果（≥2 次出现且 ≥60% 的出处对方都拆），逐处再查一遍对齐，
+            # 等于把同一条证据要求两次——某一行对不齐，这一处就修不成
+            # （`notrenewed,` 明明在表里，正文里还留着，实测）。
+            # 对齐拿得到时仍优先用对齐给出的拆法，它带着原样的大小写与标点。
+            out[i] = pair2[i] if i in pair2 else splits()[w]
+            log.append((w, out[i], '对方拆作两词'))
             continue
         if SPECK.match(w):
             nxt = toks[i + 1] if i + 1 < len(toks) else ''

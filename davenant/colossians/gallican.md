@@ -3,7 +3,7 @@ layout: davenant-appendix
 title: "The Gallican Controversy"
 up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
-date: 2026-09-14 14:25
+date: 2026-09-14 17:28
 subtitle: "ON THE CONTROVERSY AMONG THE FRENCH DIVINES OF THE REFORMED CHURCH CONCERNING THE GRACIOUS AND SAVING WILL OF GOD TOWARDS SINFUL MEN."
 prev_url: "/davenant/colossians/dissertation/7/"
 prev_label: "Chapter VII"
@@ -47,7 +47,7 @@ What is added in the last place, concerning the general intention of God, by whi
 
 <em>their hearts, that they are not saved.</em>
 
-It is true, that the corruption and hardness of the human heart is the real and positive cause which drives the wicked from salvation, and thrusts them into perdition. itis moreover certain, that God neither will nor can work in those to whom he deigns to grant the means of grace, a contempt or abuse of these means. For as the sun cannot cause darkness, or cold in the air; so God. cannot cause malice and wickedness in the human heart. This, however great it is in repelling the means of grace, is wholly to be imputed to man alone; in no <em>way</em> to God. But it ought to be added, in the last place, that there is no hardness in the human will so obstinate, that God cannot soften it if he will, and which he will not at length soften in all the elect, by that special mercy of which the Apostle speaks, <em>He hath mercy on whom he will,</em> &c.
+It is true, that the corruption and hardness of the human heart is the real and positive cause which drives the wicked from salvation, and thrusts them into perdition. it is moreover certain, that God neither will nor can work in those to whom he deigns to grant the means of grace, a contempt or abuse of these means. For as the sun cannot cause darkness, or cold in the air; so God. cannot cause malice and wickedness in the human heart. This, however great it is in repelling the means of grace, is wholly to be imputed to man alone; in no <em>way</em> to God. But it ought to be added, in the last place, that there is no hardness in the human will so obstinate, that God cannot soften it if he will, and which he will not at length soften in all the elect, by that special mercy of which the Apostle speaks, <em>He hath mercy on whom he will,</em> &c.
 
 I think, therefore, that the opinion of Cameron was here badly expressed.
 

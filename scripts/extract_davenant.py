@@ -550,6 +550,20 @@ def dehyph(a, b):
     return a + ' ' + b
 
 
+# 夹在两个小写词之间的孤立标点是扫描斑点（`be ye . reconciled to God`、
+# `which we readily ] confess`）。davenant_witness.stray_repair 已在**行内**
+# 处理，但斑点常落在**行尾**——拼成段落之后才看得见（行内 40 处，段落层 109
+# 处）。所以这里再扫一遍。逐条看过 97 处，没有一处是原书的真标点：英文排版
+# 里不会出现「小写词 + 空格 + 孤立句点 + 空格 + 小写词」。
+# 前一个字符也可能是脚注符（`Durandus* . also writes`）——那时词尾不是字母，
+# 只认 `[a-z]` 会把这一处漏掉。
+STRAY_MID = re.compile(r'(?<=[a-z,;*\u2020\u2021]) [.\]\[] (?=[a-z])')
+
+
+def drop_stray(t):
+    return STRAY_MID.sub(' ', t)
+
+
 def build_paragraphs(vol, lo, hi, fn_max, indent_min):
     """→ ([(kind, text)], footnotes, stats)  kind ∈ {para}"""
     paras, fns, stats = [], [], collections.Counter()
@@ -608,6 +622,7 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         stats['lines'] += n0
     if cur:
         paras.append((cur, sorted(cur_pages)))
+    paras = [(drop_stray(t), pg) for t, pg in paras]
     return paras, fns, stats
 
 
@@ -913,16 +928,20 @@ def main():
                     # 第二条当续行并进第一条，页面上就出现 `\* That is, indefinite…
                     # + That is, formed…` 两条注挤成一条（实测 7 处）。
                     if (is_start or FN_MARK.match(t)) and cur:
-                        out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
+                        out.append(f'[FN] <!--v{vol}p{p}--> {drop_stray(cur)}')
                         cur = t
                     elif cur:
                         cur = dehyph(cur, t)
                     else:
                         cur = t
                 if cur:
-                    out.append(f'[FN] <!--v{vol}p{p}--> {cur}')
+                    out.append(f'[FN] <!--v{vol}p{p}--> {drop_stray(cur)}')
 
-        return out, total
+        # 落盘前统一再清一遍孤立标点。段落那一层已经清过，但经文块、节号
+        # 余段等几条路径是在 build_paragraphs 之外拼出来的，绕过了那一道
+        # （`philosophy and vain . deceit` 就漏在经文块里）。这里是所有
+        # 落盘路径的必经之处。
+        return [drop_stray(x) for x in out], total
 
     prev = None
     for _round in range(4):

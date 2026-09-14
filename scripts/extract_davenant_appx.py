@@ -337,7 +337,7 @@ def run_piece(pc, pages, out, stats):
         if cur:
             pg = (f'<!--v{VOL}p{min(cur_pages)}-->' if len(cur_pages) == 1
                   else f'<!--v{VOL}p{min(cur_pages)}-{max(cur_pages)}-->')
-            out.append(f'[BODY] {pg}{E.fix_label(cur)[0]}')
+            out.append(f'[BODY] {pg}{E.drop_stray(E.fix_label(cur)[0])}')
             stats['para'] += 1
         cur, cur_pages = '', set()
 
@@ -373,7 +373,7 @@ def run_piece(pc, pages, out, stats):
         roles = shape(body)
         for l, is_start, role in zip(body, para_starts(body, indent), roles):
             raw = E.fix_enum_head(l['text']) if is_start else l['text']
-            t = E.clean(W.fix_line(VOL, p, raw)[0])
+            t = E.drop_stray(E.clean(W.fix_line(VOL, p, raw)[0]))
             if not t:
                 continue
             if role in ('verse', 'cite') and not pend_title:
@@ -433,7 +433,7 @@ def run_piece(pc, pages, out, stats):
             if not t:
                 continue
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
-                out.append(f'[FN] <!--v{VOL}p{p}--> {cur_fn}')
+                out.append(f'[FN] <!--v{VOL}p{p}--> {E.drop_stray(cur_fn)}')
                 stats['fn'] += 1
                 cur_fn = t
             elif cur_fn:
@@ -441,7 +441,7 @@ def run_piece(pc, pages, out, stats):
             else:
                 cur_fn = t
         if cur_fn:
-            out.append(f'[FN] <!--v{VOL}p{p}--> {cur_fn}')
+            out.append(f'[FN] <!--v{VOL}p{p}--> {E.drop_stray(cur_fn)}')
             stats['fn'] += 1
 
 

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 14:25
+date: 2026-09-14 17:28
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -50,7 +50,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Blessedness, future, in what it consists, II. 25, 26; is solid happiness to be possessed by every servant of God, I. 1515 is alwaysto be contemplated and sought after, I]. 6; its contemplation a comfort under all trials, 23, 29; wherein it resembles a reward, and wherein not, 206.</p>
 <p class="dv-idx">Body, taken for the mass of sins, I. 438; our body an object of love, and wherefore, 73; what care is to be taken of it, and what not, 544.</p>
 <p class="dv-idx">Body of Christ was real, not imaginary, 257; in which he himself truly suffered, and not Simon the Cyrenian, ibid.</p>
-<p class="dv-idx">Bodies, every one hath in himself three; a natural body, the body of the old Adam, and the body of the new, Il. 35; ofthese the body of sin is peculiarly our's, ibid.</p>
+<p class="dv-idx">Bodies, every one hath in himself three; a natural body, the body of the old Adam, and the body of the new, Il. 35; of these the body of sin is peculiarly our's, ibid.</p>
 <p class="dv-idx">Bodily is put for personally, because the body is taken for the whole person, I. 415.</p>
 <p class="dv-idx">Brethren, all Christians are, on four accounts, I. 26; and that in Christ, 27; false ones most pernicious, lI. 275.</p>
 <p class="dv-idx">Brothels, not to be suffered in a Christian State, II. 44; condemned by the Fathers, 45; evils of the toleration of them, 46; yet upheld by the Papacy, ibid. and Note.</p>
@@ -77,7 +77,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Christian, his enemies, I. 133; 469. his life ought not to be a scandal to the Gospel, II. 251; his conversation is in heaven, II. 6, 7.</p>
 <p class="dv-idx">Christians, ought to teach, and admonish, and restrain one another, JI. 138, 139; are called saints in Christ, and why, I. 20, 22 ; faithful in Christ, 24 ; brethren in ] Christ, and why, 26. are brethren among themselves, ibid.; II. 270, 297, 348; therefore live in concord, I. 26; and united, 348, 349.</p>
 <p class="dv-idx">Church, whence it is called, I. 217; of what Church Christ is the head, 218; hypocrites are not members of the Church, 219—221, 515; the Church is as the family of God, 294, 295 ; receives all things from Christ, 514; increase of the Church, what, 516; how the whole is united to Christ, and the members of it with one another, 518—515.</p>
-<p class="dv-idx">Church hath the power of ordaining externalrites, I. 401. may consist of manifold divisions, 218; each particular one may fall, 12, 20 ; II. 293. a domestic family may be a Church, II. 299.</p>
+<p class="dv-idx">Church hath the power of ordaining external rites, I. 401. may consist of manifold divisions, 218; each particular one may fall, 12, 20 ; II. 293. a domestic family may be a Church, II. 299.</p>
 <p class="dv-idx">Circumcision, internal what it is,</p>
 <p class="dv-idx-2">I. 448 ; the Christian excels the Jewish in three things, 434; its author, and the instrument of it, 438 ; ought to be total, 439. Jewish what it signified, 460; chief among their ceremonies, 433.</p>
 <p class="dv-idx">Circumcision, put for the Jews themselves, I. 451.</p>
@@ -428,7 +428,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Works of the Law, do not justify, I. 99. of the renewed, although imperfect, acceptable to God, and wherefore, 128; of the unrenewed not so, 60; are evil, 253, 254. of supererogation do not exist, 278, 279. of one creature cannot be imputed to another as meritorious, nor as satisfactory for sin, 279, 280.</p>
 <p class="dv-idx">Worship, what, I. 502 ; to be given to God alone, 503 ; prescribed by God himself, 527, 528. what to be avoided in it, 532.</p>
 <p class="dv-idx">Worthiness, twofold, I. 123.</p>
-<p class="dv-idx">Wrath, what itis, Il. 66. of God, what. See Anger.</p>
+<p class="dv-idx">Wrath, what it is, Il. 66. of God, what. See Anger.</p>
 <p class="dv-idx-letter">Y</p>
 <p class="dv-idx">Youth, should live in obedience to parents. See Children.</p>
 <p class="dv-idx-letter">Z</p>
