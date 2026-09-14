@@ -45,6 +45,12 @@ RAW = ROOT / 'alexander_raw' / 'psalms'
 OUT_DIR = RAW / 'zh_chapters'
 CACHE = RAW / 'zh_cache'
 BAD_LOG = RAW / 'zh_translate_issues.log'
+# 每篇**实际译完**的时刻。发布页面的 date 取这里，不取发布那一刻——
+# 一次发布把 6 篇的时间戳写成同一分钟，等于没有信息（用户 2026-09-14 指出）。
+# 为什么不直接用 zh_chapters/<sec>.md 的 mtime：改提示词、补括注都会重出文件，
+# mtime 跟着变；连 zh_cache 的 mtime 也靠不住（一次 `sed -i` 就全抹平了）。
+# 所以单独落一份，**只在真正调过模型的那次写入**，之后重出一律沿用。
+META = RAW / 'zh_meta.json'
 
 SYSTEM = (
     "你是一位精通希伯来文与改革宗解经传统的中文译者，正在翻译约瑟·亚历山大"
@@ -74,14 +80,23 @@ SYSTEM = (
     "the Lord→主，Messiah→弥赛亚，David→大卫，Zion→锡安，"
     "Psalmist→诗人，Septuagint→七十士译本，Vulgate→武加大译本，"
     "Masoretic→马所拉\n"
-    "8a. **近现代学者、释经家、译本编者的姓名，每篇首次出现时要括注英文原名**："
+    "8a. **凡音译出来的专名，每篇首次出现时都要括注原词**——包括两类：\n"
+    "  (一) 近现代学者、释经家、译本编者的姓名："
     "亨斯滕伯格（Hengstenberg）、德维特（De Wette）、埃瓦尔德（Ewald）、"
     "格塞尼乌斯（Gesenius）、胡普费尔德（Hupfeld）、德里慈（Delitzsch）、"
     "罗森米勒（Rosenmüller）、奥尔斯豪森（Olshausen）、维特林加（Vitringa）、"
-    "金希（Kimchi）、亚本·以斯拉（Aben Ezra）。音译只是一串陌生的字，"
-    "中文读者对不上人，必须给出原名。同一篇里第二次以后就不再重复括注。\n"
-    "8b. 圣经人名地名，以及中文早有定译、读者一望即知的大名"
-    "（路德、加尔文、奥古斯丁、耶柔米、屈梭多模），**不**括注英文\n"
+    "金希（Kimchi）、亚本·以斯拉（Aben Ezra）。\n"
+    "  (二) 诗篇题注里的希伯来文术语与乐调名——和合本把它们**意译**了"
+    "（Neginoth 作「用丝弦的乐器」、Nehiloth 作「用吹的乐器」），"
+    "中文里根本没有这些音译，读者无从查起，所以音译后必须给原词："
+    "尼吉纳（Neginoth）、尼希罗（Nehiloth）、玛斯基拉（Maschil）、"
+    "米斯托（Michtam）、迦特（Gittith）、亚拉末（Alamoth）、"
+    "希加约（Higgaion）、施迦庸（Shiggaion）。\n"
+    "  音译只是一串陌生的字，读者对不上是谁、是什么，必须给出原词。"
+    "同一篇里第二次以后就不再重复括注。\n"
+    "8b. 下面这些**不**括注：圣经人名地名（大卫、亚萨、可拉、耶杜顿）；"
+    "和合本已有音译的（细拉 Selah）；中文早有定译、读者一望即知的大名"
+    "（路德、加尔文、奥古斯丁、耶柔米、屈梭多模）\n"
     "9. 罗马数字章号一律转成阿拉伯数字，格式为「书卷名 章:节」："
     "Psalm xxvi. 4, 5 → 诗篇 26:4, 5；Isa. xvii. 13 → 以赛亚书 17:13；"
     "Mat. iii. 12 → 马太福音 3:12。`ver. 1` → 「第 1 节」\n"
@@ -122,7 +137,7 @@ VNUM_PREFIX = re.compile(
 # 近现代学者／释经家姓名：每篇首次出现要括注英文原名。
 # 音译只是一串陌生的字，中文读者对不上人——用户 2026-09-14 指出（「亨斯腾伯格」
 # 通篇没给原名）。SYSTEM 里已经立了规矩，这张表是**兜底闸**：模型漏注时由
-# annotate_scholars() 按英文源补上，不必为此重跑翻译。
+# annotate_terms() 按英文源补上，不必为此重跑翻译。
 # 表里没有的名字仍由 SYSTEM 的 8a 条管，加进来只是为了能机器复核。
 # 路德／加尔文／奥古斯丁这类中文早有定译的大名故意不进表（见 SYSTEM 8b）。
 #
@@ -135,7 +150,10 @@ VNUM_PREFIX = re.compile(
 # 「改革宗神学名词清单」只管术语不管人名）；大陆的权威依据是新华社译名室
 # 《世界人名翻译大辞典》，但手头没有电子版，逐条核不了，所以没照它改。
 # 中文维基连 Hengstenberg 的条目都没有——这个人在中文里本就没有通行译法。
-SCHOLARS = {
+# 要括注原词的音译专名。值 = 已知的中文写法（能自动补），None = 只检测不自动补
+# （不知道模型会译成什么字，猜着补等于在正文里乱改——宁可告警让人过一眼）。
+ANNOTATE = {
+    # 近现代学者／释经家
     'Hengstenberg': '亨斯滕伯格',
     'De Wette': '德维特',
     'Ewald': '埃瓦尔德',
@@ -147,28 +165,48 @@ SCHOLARS = {
     'Vitringa': '维特林加',
     'Kimchi': '金希',
     'Aben Ezra': '亚本·以斯拉',
+    # 诗篇题注里的希伯来文术语与乐调名。和合本把它们**意译**了
+    # （Neginoth 作「用丝弦的乐器」、Nehiloth 作「用吹的乐器」），中文里
+    # 没有这些音译，读者看「尼希罗」三个字无从查起——用户 2026-09-14 指出。
+    # Selah 不进表：和合本已有「细拉」，读者认得。
+    # Jeduthun／Asaph／Korah 同理，和合本有「耶杜顿／亚萨／可拉」。
+    'Neginoth': '尼吉纳',
+    'Nehiloth': '尼希罗',
+    'Maschil': None,
+    'Michtam': None,
+    'Gittith': None,
+    'Alamoth': None,
+    'Higgaion': None,
+    'Shiggaion': None,
+    'Sheminith': None,
+    'Muth-labben': None,
+    'Shoshannim': None,
+    'Mahalath': None,
 }
 
 
-def annotate_scholars(zh: str, en: str):
-    """每篇首次出现的学者姓名后补「（原名）」。返回 (正文, 对不上的名字)。
+def annotate_terms(zh: str, en: str):
+    """每篇首次出现的音译专名后补「（原词）」。返回 (正文, 未落实的词)。
 
-    幂等：只在第一次出现处补，且那里已经是「（」就不动。
-    中文用的音译若与表里的不一致（模型自己另译了一个），这里补不上，
-    会记进返回的 missing，由调用方告警——宁可漏注，也不要在正文里乱改人名。
+    三步：原词已在译文里出现过 → 不动（模型自己注了，或整词照搬）；
+    表里给了中文写法且找得到 → 在首次出现处插入；
+    其余 → 记进 missing 告警，**不猜、不改正文**。
+    幂等：插入点后已经是「（」就跳过，重跑不会叠括号。
     """
     missing = []
-    for en_name, zh_name in SCHOLARS.items():
-        if not re.search(r'\b' + re.escape(en_name) + r'\b', en):
+    for term, zh_form in ANNOTATE.items():
+        if not re.search(r'\b' + re.escape(term) + r'\b', en, re.I):
             continue
-        i = zh.find(zh_name)
-        if i < 0:
-            missing.append(en_name)
+        if re.search(re.escape(term), zh, re.I):      # 译文里已经有原词
             continue
-        j = i + len(zh_name)
-        if zh[j:j + 1] == '（':          # 已经注过
+        if not zh_form or zh_form not in zh:
+            missing.append(term)
             continue
-        zh = zh[:j] + f'（{en_name}）' + zh[j:]
+        i = zh.find(zh_form)
+        j = i + len(zh_form)
+        if zh[j:j + 1] == '（':
+            continue
+        zh = zh[:j] + f'（{term}）' + zh[j:]
     return zh, missing
 
 
@@ -242,6 +280,31 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
     return out
 
 
+def load_meta() -> dict:
+    import json
+    if META.exists():
+        return json.loads(META.read_text(encoding='utf-8'))
+    return {}
+
+
+def stamp_meta(sec: str, called: bool) -> None:
+    """记下这一篇译完的时刻。`called=False`（全走缓存）时不覆盖已有值。"""
+    import json
+    meta = load_meta()
+    if sec in meta and not called:
+        return
+    now = subprocess_now()
+    meta[sec] = now
+    META.write_text(json.dumps(meta, ensure_ascii=False, indent=1,
+                               sort_keys=True) + '\n', encoding='utf-8')
+
+
+def subprocess_now() -> str:
+    import subprocess
+    return subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True,
+                          text=True, check=True).stdout.strip()
+
+
 def body_of(sec: str) -> str:
     """已发布英文页 → 去掉 front matter 的正文。"""
     t = (SRC / f'{sec}.md').read_text(encoding='utf-8')
@@ -306,6 +369,9 @@ def run_section(name: str, resume: bool, dry: bool, publish: bool = True) -> Non
     if dst.exists():                      # 翻译产物受 chmod 444 保护，重跑前解锁
         os.chmod(dst, 0o644)
 
+    cached_keys = {tf.md5key('ALEX_PSA::' + _split_prefix(u)[1]) for u in todo}
+    before = sum(1 for k in cached_keys if (CACHE / f'{k}.txt').exists())
+
     out, n = [], 0
     for kind, payload in units:
         if kind == 'keep':
@@ -316,12 +382,14 @@ def run_section(name: str, resume: bool, dry: bool, publish: bool = True) -> Non
         if n % 10 == 0:
             print(f'  [{name}] {n}/{len(todo)} 段', flush=True)
 
-    body, missing = annotate_scholars('\n\n'.join(out), body_of(name))
+    body, missing = annotate_terms('\n\n'.join(out), body_of(name))
     if missing:
-        print(f'    [names] {name}: 英文源里有 {missing}，译文里找不到对应音译，'
-              f'未补原名——译名可能与 SCHOLARS 表不一致，请人工过一眼', flush=True)
+        print(f'    [names] {name}: 英文源里有 {missing}，译文里既没有原词、'
+              f'表里也没有已知中文写法，未自动补——请人工过一眼', flush=True)
     dst.write_text(body + '\n', encoding='utf-8')
     os.chmod(dst, 0o444)                  # 强保留
+    # 这一趟真调过模型（缓存命中数变多，或本来就没全命中）才更新时间戳
+    stamp_meta(name, called=before < len(cached_keys) or not resume)
     print(f'✓ 写入 {dst}（{dst.stat().st_size:,} bytes，已 chmod 444）', flush=True)
     if publish:
         autopublish()

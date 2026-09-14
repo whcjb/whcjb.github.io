@@ -70,3 +70,5 @@ Push to `master` branch → GitHub Pages auto-builds and deploys. No CI needed.
 
 - **date 字段必须精确到分钟**：所有 reading 章节（`reading/*/` 下的 `.md` 文件）和 calvin 章节的 front matter `date` 字段格式固定为 `YYYY-MM-DD HH:MM`，不得只写日期。生成或修改这类文件时无需用户提醒，直接写入分钟级别时间戳。
 - **date 字段必须使用真实时间**：新建文件时，`date` 字段必须使用当前的真实时间（通过 `date '+%Y-%m-%d %H:%M'` 获取），不得使用虚假或固定的时间戳。已有文件的时间不要修改。
+- **date 是「这一章译完/做完的时刻」，不是「发布脚本跑起来的时刻」**：批量发布脚本若直接用 `date` 取当前时间，一次发布 N 章会写出 N 个一模一样的时间戳，等于没有信息。发布脚本必须从翻译侧记录的时间取值——翻译脚本每译完一章就把时刻落进 `<book>_raw/<book>/zh_meta.json`（`{章名: "YYYY-MM-DD HH:MM"}`），发布时按章查表。不要依赖文件 mtime：重出产物、`sed -i` 批量替换都会把它抹平。
+- **新书卷的 layout 必须接上经文引用弹层**：`{% include scripture-popup.html container_selector=".<书>-content" accent="#xxx" vnum="#xxx" slide="down" %}`，只给中文页（该模块认的是中文书卷名，英文页挂了也匹配不上）。calvin / mhenry / hodge / owen / manton / bridges 都已接，新开一本书时容易漏。

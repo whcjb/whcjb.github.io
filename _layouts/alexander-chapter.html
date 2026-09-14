@@ -147,6 +147,16 @@ layout: default
   text-decoration: none !important; }
 </style>
 
+{%- comment -%}
+  经文引用弹层：点正文里的「诗篇 26:4, 5」弹出和合本经文。
+  **只给中文版**——这个共用模块认的是中文书卷名（见 _includes 里的 bookPat），
+  英文版正文写的是 `Psalm xxvi. 4, 5` 这类罗马数字引用，一个也匹配不上，
+  挂上去只是白白多一份 JS。
+  颜色按本卷的石榴石走；accent/vnum 必须写**字面量**，Jekyll 3 的 include
+  参数不接受变量（manton 那边踩过）。
+{%- endcomment -%}
+{% if page.zh %}{% include scripture-popup.html container_selector=".ax-content" accent="#7d2f2f" vnum="#a8736b" slide="down" %}{% endif %}
+
 <script>
 function toggleAlexanderVerseNav() {
   var p = document.getElementById('verse-nav-pills');

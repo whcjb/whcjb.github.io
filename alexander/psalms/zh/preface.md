@@ -3,7 +3,7 @@ layout: alexander-chapter
 book_id: psalms
 book_name: "亚历山大《诗篇注释》"
 title: "著者序"
-date: 2026-09-14 09:41
+date: 2026-09-14 09:25
 next_section: 1
 next_label: "诗篇 第 1 篇"
 en_url: "/alexander/psalms/preface/"

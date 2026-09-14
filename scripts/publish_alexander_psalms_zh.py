@@ -11,11 +11,15 @@
 上下篇导航**只在已翻译的篇之间串**：翻译逐篇推进，把导航指到还没译的篇
 等于送读者去 404。每次重跑本脚本会按当前已译清单重新串一遍。
 
-已发布文件的 date 一律沿用原值，只有新建的才写当前真实时间（CLAUDE.md）。
+页面 date 取 `zh_meta.json` 里**该篇实际译完的时刻**，不是发布这一刻——
+一次发布把六篇的时间戳写成同一分钟，等于没有信息（用户 2026-09-14 指出）。
+取不到才退回已发布文件的原值，再取不到才用当前时间（CLAUDE.md：已有文件的
+时间不要修改）。
 
 顺带回填英文页的 `zh_url`，好让英文页右上角出现「中文版 →」。
 publish_alexander_en.py 重跑时也会按 zh 目录的存在与否自己补上，两边幂等。
 """
+import json
 import re
 import subprocess
 import sys
@@ -23,6 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'alexander_raw/psalms/zh_chapters'
+META = ROOT / 'alexander_raw/psalms/zh_meta.json'
 OUT = ROOT / 'alexander/psalms/zh'
 EN = ROOT / 'alexander/psalms'
 
@@ -70,6 +75,7 @@ def main(only=None):
 
     now = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True,
                          text=True, check=True).stdout.strip()
+    meta = json.loads(META.read_text(encoding='utf-8')) if META.exists() else {}
     OUT.mkdir(parents=True, exist_ok=True)
 
     written = kept = filled = 0
@@ -78,7 +84,8 @@ def main(only=None):
             continue
         body = (RAW / f'{sec}.md').read_text(encoding='utf-8').strip()
         path = OUT / f'{sec}.md'
-        date = existing_date(path)
+        # 译完时刻优先；没记到才沿用已发布的原值
+        date = meta.get(sec) or existing_date(path)
         kept += date is not None
         fm = ['---', 'layout: alexander-chapter', 'book_id: psalms',
               f'book_name: "{BOOK_NAME_ZH}"']
@@ -105,7 +112,7 @@ def main(only=None):
         'zh: true\n'
         '---\n', encoding='utf-8')
 
-    print(f'发布中文 {written} 篇（已译共 {len(names)}），沿用原 date {kept} 篇，'
+    print(f'发布中文 {written} 篇（已译共 {len(names)}），date 取自译完时刻 {kept} 篇，'
           f'回填英文页 zh_url {filled} 处 → {OUT}')
 
 
