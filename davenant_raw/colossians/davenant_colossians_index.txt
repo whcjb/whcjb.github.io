@@ -42,7 +42,7 @@
 [LETTER] C
 [E] <!--v2p582-->Carthusian Monkery, not a state of perfection, I. 326.
 [E] <!--v2p582-->Ceremonies, may be instituted by the Church, and with what cautions, I. 401, 402; 522; are not to be multiplied, 402; 467; 529; whether the observance or the neglect is in itself of any or no consequence, LI. 91; Ceremonies of the Jews, I. 478, 472. Chris. tian liberty in regard to all, 480 ; the legal ones were acknowledgments of human guilt, 461; shadowed forth the grace of Christ, 489; and the very substance in Christ, 492; abrogated by Christ, and why, 404; in what manner, 465, 466; for what time, and how far they might be observed after the passion of Christ, 405.
-[E] <!--v2p582-->Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfils the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.
+[E] <!--v2p582-->Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfil the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.
 [E] <!--v2p582-->Charity, among neighbours, especially in loving the saints, I. 74, though unknown, 102; lI. 297; towards strangers and enemies, I. 109: devils and the lost not objects of it, 77; the rule of in judging, viz. presuming any thing to be good till the contrary appears, I. 22; the rule in acting, viz. what ye would not should be done to you, do not you to another, how to be understood, 1I. 43.
 [E] <!--v2p582-->Chastisement of the body by acts of mortification, examples of it, I. 539; errors of those who sin in this respect, 541; how far these exercises may and ought to be employed, 542, 543.
 [E] <!--v2p582-->Chastisements, not inflicted upon the faithful by God as satisfactions for sin, 288.
@@ -344,7 +344,7 @@
 [E] <!--v2p593-->Serve, to serve God more easy than to serve man, II. 221.
 [E] <!--v2p593-->Service, eye, what, II. 199.
 [E] <!--v2p593-->Simon the Cyrenian did not suffer in the place of Christ, I. 257.
-[E] <!--v2p593-->Sin, all to be avoided, I. I30, 134; 438; 459; II. 64; whence its first motions spring. and what they are. TI. 48, 49 ; what it is to live in it, II. 19, 20; 60, 62. is a pleasant poison, I. 454; is dee ud II. 257; provokes God to inflict punishment, IT. 54—56; its enormity manifested by the magnitude of the ransom, I. 163; 456; the body of sin, what, 438; members of it what, Il. 34, 35; how it is dead in the renewed, II. 10.
+[E] <!--v2p593-->Sin, all to be avoided, I. I30, 134; 438; 459; II. 64; whence its first motions spring and what they are. TI. 48, 49 ; what it is to live in it, II. 19, 20; 60, 62. is a pleasant poison, I. 454; is dee ud II. 257; provokes God to inflict punishment, IT. 54—56; its enormity manifested by the magnitude of the ransom, I. 163; 456; the body of sin, what, 438; members of it what, Il. 34, 35; how it is dead in the renewed, II. 10.
 [E] <!--v2p593-->Sin, original is not the mere privation or destitution of original righteousness, I. 452, 453; II. 37; how it infects the whole man, ibid.
 [E] <!--v2p593-->Sins are the chains of the devil, I. 474; different kinds of, 11. 49, 51.
 [E] <!--v2p593-->Sinners are alienated from and enemies to God, I. 249, 250; are dead, 450; are homicides, 454.
@@ -470,7 +470,7 @@
 [E] <!--v2p597-->Whether any lie be lawful ses = see 76—78
 [E] <!--v2p597-->Whether equivocation bealie ... Oc c Doc 79—82
 [E] <!--v2p597-->Whether it is lawful for a Christian to revenge any injury done to Whether it is lawful to repel an injury by a duel ... .. — 116—118
-[E] <!--v2p597-->Whether charity fulfils the law ... Doc Occ we 3121, 122
+[E] <!--v2p597-->Whether charity fulfil the law ... Doc Occ we 3121, 122
 [E] <!--v2p597-->Whether the Scriptures are to be read in common by the laity — 132—138
 [E] <!--v2p597-->Whether a Christian is bound in every action whatever expressly to implore the help of Christ — ... t T wee 148
 [E] <!--v2p597-->Whether it is lawful for a husband to chastize his wife by stripes and blows ee ess eee so LLLI ese 167
@@ -804,7 +804,7 @@
 [E] <!--v2p605-->  CXIX. 12, 7 have inclined my heart to perform thy statutes even unto the end woes 83
 [E] <!--v2p605-->Prov. XX. 9, Who can say I have made my heart clean, I am pure from my sin? oo. JM 41
 [E] <!--v2p605-->  XXII. 24, Make no friendship with an angry man see Soce II. 67
-[E] <!--v2p605-->  XXVIII. 14, Happy is the man that feareth always TP dO oo I" 45
+[E] <!--v2p605-->  XXVIII. 14, Happy is the man that feareth always To dO oo I" 45
 [E] <!--v2p605-->Eccl. IX. 1, No man knoweth whether he is worthy of love or hatred, but all things are held doubtful as to the future Rito cnn . 42
 [E] <!--v2p605-->Isa. XLII. 6, I the Lord have called thee, and have given thee for a covenant of the people, for a light of the Gentiles scc. — OBS
 [E] <!--v2p605-->  LIIT. 10, If he shall lay down his soul for sin, 444 &c. 9909 LLL & II. 593
@@ -883,7 +883,7 @@
 [E] <!--v2p609-->Hebrews 1. 3, Upholding all things by the word of his power p0000c Tae I. 205, 246 6, Let all the angels of God worship him 196, 428 14, Are they not all ministering spirits, &e. 431
 [E] <!--v2p609-->  X. 4, A body hast thou prepared me =. ee 256 1 Pet.1.9, That ye may receive the end of your faith, &c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN
 [E] <!--v2p609-->  III. 14, The answer of a good conscience to- 224,443 wards God CET eos. = § dH. 17,100
-[E] <!--v2p609-->  V. 2, 3, Feed the flock of God which is among you, not as being lords, &c. Rr 293 1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08
+[E] <!--v2p609-->  V. 2, 3, Feed the flock of God which is among you, not as being lords, &c. Rr 293 1 John IV. 7, Love is of God To "m 119 8, God is love aono «e+. I. 65,08
 [E] <!--v2p609-->Rev. XXII. 13, 7 am the first and the last eee 186 THE END.
 [SEC] errata|Errata|
 [E] <!--v2p610-->Page 42, § 3, line 4, for 11, read 2.

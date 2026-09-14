@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 17:28
+date: 2026-09-14 19:05
 subtitle: "incidentally and briefly determined in the work"
 prev_url: "/davenant/colossians/indexes/general/"
 prev_label: "General Index"
@@ -65,7 +65,7 @@ next_label: "Contents of the Dissertation"
 <p class="dv-idx">Whether any lie be lawful ses = see 76—78</p>
 <p class="dv-idx">Whether equivocation bealie ... Oc c Doc 79—82</p>
 <p class="dv-idx">Whether it is lawful for a Christian to revenge any injury done to Whether it is lawful to repel an injury by a duel ... .. — 116—118</p>
-<p class="dv-idx">Whether charity fulfils the law ... Doc Occ we 3121, 122</p>
+<p class="dv-idx">Whether charity fulfil the law ... Doc Occ we 3121, 122</p>
 <p class="dv-idx">Whether the Scriptures are to be read in common by the laity — 132—138</p>
 <p class="dv-idx">Whether a Christian is bound in every action whatever expressly to implore the help of Christ — ... t T wee 148</p>
 <p class="dv-idx">Whether it is lawful for a husband to chastize his wife by stripes and blows ee ess eee so LLLI ese 167</p>

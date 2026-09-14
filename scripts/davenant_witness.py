@@ -235,6 +235,107 @@ def manual_repair(vol, page, w):
 STRAY_PUNCT = {'.', ']', '[', ',', ';', '*'}
 
 
+# ── 引文里的几种粘连与字形 ──────────────────────────────────────────────────
+# 逐段读正文读出来的，模式普查一个也没覆盖到：
+#   Ps. Ixxii.      罗马数字里的 `l` 被读成大写 `I`（13 处）
+#   Actsii.         书卷缩写与罗马数字粘在一起（8 处）
+#   art.8.          缩写与数字粘在一起（7 处）
+#   Ishall          `I` 与后一个词粘在一起（3 处）
+#   Thomasf         词尾粘着脚注符（`†` 被读成 `f`）
+ROMAN_I = re.compile(r'^I([xvi]{2,})([.,;:]?)$')
+BOOK_GLUE = re.compile(
+    r'^(Acts|Matth|Matt|Rom|Cor|Gal|Ephes|Eph|Phil|Col|Thess|Tim|Tit|Heb|Pet|'
+    r'Rev|John|Joh|Luke|Mark|Psal|Isa|Jer|Ezek|Dan|Exod|Deut|Gen|Prov|Eccl)'
+    r'([ivxlcd]{1,7})\.?\s?(\d{0,3})([.,;:]?)$')
+# 写全的书卷名不带缩写点（原书印 `Acts ii.` / `John i. 17`），缩写才带
+BOOK_WHOLE = {'Acts', 'John', 'Luke', 'Mark'}
+# 各卷章数。判「这个罗马数字是不是合理的章号」——`Galli`（拉丁词「高卢人」）
+# 会被读成 `Gal` + `li`，而 li 是 51，加拉太书只有 6 章，拆开就错了。
+# ⚠️ 不能用「这个词在本书语料里有没有」来判：语料就是这个脚本自己的产物，
+# 上一遍把 `Galli` 拆掉之后，语料里就再也没有它，判据自我强化（实测）。
+BOOK_CHAPTERS = {
+    'Acts': 28, 'Matth': 28, 'Matt': 28, 'Rom': 16, 'Cor': 16, 'Gal': 6,
+    'Ephes': 6, 'Eph': 6, 'Phil': 4, 'Col': 4, 'Thess': 5, 'Tim': 6,
+    'Tit': 3, 'Heb': 13, 'Pet': 5, 'Rev': 22, 'John': 21, 'Joh': 21,
+    'Luke': 24, 'Mark': 16, 'Psal': 150, 'Isa': 66, 'Jer': 52, 'Ezek': 48,
+    'Dan': 12, 'Exod': 40, 'Deut': 34, 'Gen': 50, 'Prov': 31, 'Eccl': 12,
+}
+_ROMAN_V = {'i': 1, 'v': 5, 'x': 10, 'l': 50, 'c': 100, 'd': 500, 'm': 1000}
+
+
+def roman_val(s):
+    t, prev = 0, 0
+    for ch in reversed(s.lower()):
+        v = _ROMAN_V.get(ch, 0)
+        t += -v if v < prev else v
+        prev = max(prev, v)
+    return t
+ABBR_NUM = re.compile(
+    r'^(art|cap|lib|quest|dist|sect|tom|par|Hom|Epis|Serm|Moral|pag|vol)'
+    r'\.(\d{1,3}[.,;:]?)$')
+I_GLUE = re.compile(r'^I(shall|am|have|will|think|say|know|answer|confess|add|'
+                    r'grant|deny|reply|omit)([.,;:]?)$')
+FN_GLUE = re.compile(r'^([A-Z][a-z]{2,})([f+])$')
+
+
+# 词尾多出来的一个句点：`who had. received an immediate call`、
+# `I am absolved. from sins`、`fill you with all joy. and peace`。
+# 靠模式判不行——同样的形状里混着大量合法缩写（`Quest. disp. de grat. art. 1.`
+# `2 vols. printed at Paris`），列表再全也堵不住。改用**证人**：
+# 两遍 OCR 在同一位都没有这个点，它就是斑点。
+DOT_ABBR = {'viz', 'etc', 'ibid', 'cap', 'lib', 'art', 'tom', 'par', 'sect',
+            'dist', 'quest', 'vol', 'vols', 'pag', 'ver', 'vers', 'edit',
+            'hom', 'epist', 'serm', 'tract', 'confess', 'disp', 'dial', 'loc',
+            'init', 'prop', 'def', 'seq', 'fol', 'num', 'col', 'obs', 'arg',
+            'resp', 'concl', 'schol', 'cont', 'lect', 'orat', 'comm', 'expos',
+            'praef', 'proleg', 'grat', 'contempl', 'mor', 'civ', 'trin',
+            'doctr', 'christ', 'gen', 'spir', 'virt', 'sent', 'qu', 'sup'}
+
+
+def dot_repair(w, nxt, other, other3):
+    """→ 去掉多余句点的词，或 None。"""
+    if not w.endswith('.') or len(w) < 4:
+        return None
+    stem = w[:-1]
+    n = _norm(stem)
+    if not n or n in DOT_ABBR or n in BIBLE_ABBR or re.fullmatch(r'[ivxlcdm]+', n):
+        return None
+    if not (attested(stem) and re.match(r'^[a-z]{3,}', nxt) and attested(nxt)):
+        return None
+    # 证人那边同一位带着点，就说明原书真有这个点
+    for c in (other, other3):
+        if isinstance(c, str) and c.rstrip(',;:').endswith('.'):
+            return None
+    return stem
+
+
+def glue_repair(w):
+    """→ 拆开/改正后的串，或 None。这几条都是**确定性**的字形与粘连，
+    不依赖证人：形状本身不会有第二种解释。"""
+    m = ROMAN_I.match(w)
+    if m and _uni()['l' + m.group(1)] + _uni()[m.group(1)] >= 0:
+        return 'l' + m.group(1) + m.group(2)      # Ixxii. → lxxii.
+    m = BOOK_GLUE.match(w)
+    if m and (len(m.group(2)) > 1 or m.group(2) in 'ivx') \
+            and 0 < roman_val(m.group(2)) <= BOOK_CHAPTERS.get(m.group(1), 0):
+        # ⚠️ 单字母的罗马数字只认 i/v/x。`Gall.`（拉丁词）会被读成
+        # `Gal` + `l`，而 `l` 是 50——加拉太书没有第 50 章，拆开就错了。
+        dot = '' if m.group(1) in BOOK_WHOLE else '.'
+        num = f' {m.group(3)}' if m.group(3) else ''
+        # Actsii. → Acts ii. ／ Johni.17. → John i. 17.
+        return f'{m.group(1)}{dot} {m.group(2)}.{num}{m.group(4)}'
+    m = ABBR_NUM.match(w)
+    if m:
+        return f'{m.group(1)}. {m.group(2)}'      # art.8. → art. 8.
+    m = I_GLUE.match(w)
+    if m:
+        return f'I {m.group(1)}{m.group(2)}'      # Ishall → I shall
+    m = FN_GLUE.match(w)
+    if m and attested(m.group(1)) and not attested(w):
+        return m.group(1) + '†'                   # Thomasf → Thomas†
+    return None
+
+
 def stray_repair(w, prev, nxt, other, other3):
     """→ '' （删掉）或 None。"""
     if w not in STRAY_PUNCT:
@@ -856,6 +957,18 @@ def italic_flags(vol, page, line):
 SUFFIXES = ('eth', 'est', 'edst', 'ing', 'ed', 'es', 's', 'er', 'th', 'd')
 
 
+def truncation(w, cand):
+    """候选是我方的**严格前缀**且只短一两个字母 → 这是删字母，不是修字形。
+
+    实测两处回退都是这个形状：`he favours and blesses` 被削成 `favour`
+    （第三人称单数被当成多余的 s），拉丁书名 `De sacram. baptismi` 被削成
+    `baptism`（拉丁属格被当成英文词）。反方向（我方是候选的前缀，如
+    `ful` → `full`）是补字母，那是要放行的。
+    """
+    a, b = _norm(w), _norm(cand)
+    return bool(b) and a != b and a.startswith(b) and len(a) - len(b) <= 2
+
+
 def attested(w):
     """这个词在本书里**站得住**吗。
 
@@ -922,7 +1035,7 @@ def consensus(w, other, other3, latin=False):
                 and "'" not in w and '\u2019' not in w
                 and '-' not in w.strip('-'))):
         return None
-    if not _plausible(w, got, digits=True):
+    if not _plausible(w, got, digits=True) or truncation(w, got):
         return None
     tail = re.search(r'[.,;:!?]*$', w).group(0)
     if tail and not re.search(r'[.,;:!?]$', got):
@@ -1148,9 +1261,15 @@ def trio_repair(w, prev, nxt, other, other3, edge=False):
             pool.add(b[:k] + b[k + 1:])                   # 删一个字母
     # 词典缺屈折形，只认 DICT 会把 `Scriptnres.` 这种复数错字堵死；
     # 放一条「本书里出现 ≥20 次」的通道补上，屈折翻转另有 _inflection 拦。
+    # ⚠️ 屈折差异那道守卫只该在**两边都是真词**时生效。`ful`（full 掉了
+    # 一个 l）与 `full` 看着正是「词 + 末尾一个字母」，守卫一挡就永远修不成，
+    # 可 `ful` 根本不是词。加一句「我方是真词才算屈折」。
+    mine_real = attested(w)
     pool = {c for c in pool
             if (c in DICT or c in inflected() or uni[c] >= 20) and uni[c] >= 8
-            and _plausible(w, c) and not _inflection(_norm(w), c)}
+            and _plausible(w, c)
+            and not (mine_real and _inflection(_norm(w), c))
+            and not truncation(w, c)}
     pool.discard(_norm(w))
     if not pool:
         return None
@@ -1262,6 +1381,10 @@ def fix_line(vol, page, text, strict=False):
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
         for _why, _fix in (('人工核定', manual_repair(vol, page, w)),
+                           ('引文粘连', glue_repair(w)),
+                           ('多余句点', dot_repair(
+                               w, toks[i + 1] if i + 1 < len(toks) else '',
+                               other, other3)),
                            ('孤立标点', stray_repair(
                                w, toks[i - 1] if i else '',
                                toks[i + 1] if i + 1 < len(toks) else '',

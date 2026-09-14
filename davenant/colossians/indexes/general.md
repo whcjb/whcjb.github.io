@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 17:28
+date: 2026-09-14 19:05
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -57,7 +57,7 @@ next_label: "Index of Questions"
 <p class="dv-idx-letter">C</p>
 <p class="dv-idx">Carthusian Monkery, not a state of perfection, I. 326.</p>
 <p class="dv-idx">Ceremonies, may be instituted by the Church, and with what cautions, I. 401, 402; 522; are not to be multiplied, 402; 467; 529; whether the observance or the neglect is in itself of any or no consequence, LI. 91; Ceremonies of the Jews, I. 478, 472. Chris. tian liberty in regard to all, 480 ; the legal ones were acknowledgments of human guilt, 461; shadowed forth the grace of Christ, 489; and the very substance in Christ, 492; abrogated by Christ, and why, 404; in what manner, 465, 466; for what time, and how far they might be observed after the passion of Christ, 405.</p>
-<p class="dv-idx">Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfils the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.</p>
+<p class="dv-idx">Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfil the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.</p>
 <p class="dv-idx">Charity, among neighbours, especially in loving the saints, I. 74, though unknown, 102; lI. 297; towards strangers and enemies, I. 109: devils and the lost not objects of it, 77; the rule of in judging, viz. presuming any thing to be good till the contrary appears, I. 22; the rule in acting, viz. what ye would not should be done to you, do not you to another, how to be understood, 1I. 43.</p>
 <p class="dv-idx">Chastisement of the body by acts of mortification, examples of it, I. 539; errors of those who sin in this respect, 541; how far these exercises may and ought to be employed, 542, 543.</p>
 <p class="dv-idx">Chastisements, not inflicted upon the faithful by God as satisfactions for sin, 288.</p>
@@ -359,7 +359,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Serve, to serve God more easy than to serve man, II. 221.</p>
 <p class="dv-idx">Service, eye, what, II. 199.</p>
 <p class="dv-idx">Simon the Cyrenian did not suffer in the place of Christ, I. 257.</p>
-<p class="dv-idx">Sin, all to be avoided, I. I30, 134; 438; 459; II. 64; whence its first motions spring. and what they are. TI. 48, 49 ; what it is to live in it, II. 19, 20; 60, 62. is a pleasant poison, I. 454; is dee ud II. 257; provokes God to inflict punishment, IT. 54—56; its enormity manifested by the magnitude of the ransom, I. 163; 456; the body of sin, what, 438; members of it what, Il. 34, 35; how it is dead in the renewed, II. 10.</p>
+<p class="dv-idx">Sin, all to be avoided, I. I30, 134; 438; 459; II. 64; whence its first motions spring and what they are. TI. 48, 49 ; what it is to live in it, II. 19, 20; 60, 62. is a pleasant poison, I. 454; is dee ud II. 257; provokes God to inflict punishment, IT. 54—56; its enormity manifested by the magnitude of the ransom, I. 163; 456; the body of sin, what, 438; members of it what, Il. 34, 35; how it is dead in the renewed, II. 10.</p>
 <p class="dv-idx">Sin, original is not the mere privation or destitution of original righteousness, I. 452, 453; II. 37; how it infects the whole man, ibid.</p>
 <p class="dv-idx">Sins are the chains of the devil, I. 474; different kinds of, 11. 49, 51.</p>
 <p class="dv-idx">Sinners are alienated from and enemies to God, I. 249, 250; are dead, 450; are homicides, 454.</p>

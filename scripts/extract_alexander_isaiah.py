@@ -87,6 +87,16 @@ def is_runhead(b, need_page=False):
     if re.fullmatch(r'\d{1,3}', b.strip()):
         return True
     letters = _head_letters(b)
+    # 前置件的页码是罗马数字，ABBYY 常把它切成**单独一块**（`\IV` = xlv，
+    # 反斜杠是 x 的误读）。光秃秃一个罗马数字的小块在这本书里只可能是页码：
+    # 章题写作 `CHAPTER XLV`，节号写作 `V. 1.`，都带别的字。
+    # 必须**不含数字**且至少两个字母：`V. 1.` 是节号（带数字），`I` 太短，
+    # 都不能当页码剔掉——剔了整节正文就没了。
+    if (len(b.strip()) <= 8 and len(letters) >= 2 and not re.search(r'\d', b)
+            and re.fullmatch(
+                r'(?=[IVXLCDM])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})',
+                letters)):
+        return True
     # 前置件（序与导论）的页码是**小写罗马数字**，`_head_letters` 只剥非字母，
     # 罗马数字全是字母，原样粘在书眉前头，把长度撑爆——`xxxii I N T R O D U 0
     # T I O N.` 归一成 `XXXIIINTRODUOTION`（17 位），子串匹配因为 C 被读成 O
@@ -104,8 +114,14 @@ def is_runhead(b, need_page=False):
                 return True
             # `P 11 E F A C E.` —— 字母被逐个拆开时 OCR 还会漏字母（这里漏了 R），
             # 子串匹配就不够了，用相似度兜底。
-            if abs(len(c) - len(kw)) <= 2 and \
-                    SequenceMatcher(None, c, kw).ratio() >= 0.85:
+            #
+            # 块里**一个小写字母都没有**时把闸放到 0.70：这种块只可能是书眉，
+            # 正文再短也带小写。`\IV I N T R O 1)11 C T I ON.` 就卡在这上头——
+            # `D` 被读成 `1)`，归一成 `INTROIIICTION`，0.85 差一点点够不着，
+            # 整条书眉并进了卷二导论正文中间（书页 xlv）。
+            floor = 0.70 if not any(ch.islower() for ch in b) else 0.85
+            if abs(len(c) - len(kw)) <= 3 and \
+                    SequenceMatcher(None, c, kw).ratio() >= floor:
                 return True
     has_digit = bool(re.search(r'\d', b))
     # 页码常被读成字母（`8`→`g`、`110`→`HO`、`114`→`H4`、`404`→`4Q4`），

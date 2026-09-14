@@ -557,10 +557,22 @@ def dehyph(a, b):
 # 里不会出现「小写词 + 空格 + 孤立句点 + 空格 + 小写词」。
 # 前一个字符也可能是脚注符（`Durandus* . also writes`）——那时词尾不是字母，
 # 只认 `[a-z]` 会把这一处漏掉。
-STRAY_MID = re.compile(r'(?<=[a-z,;*\u2020\u2021]) [.\]\[] (?=[a-z])')
+# `,` 也算：`the knowledge of the things to be believed, and of , those to be
+# done`（9 处）。但 `;` 与 `:` **不算**——原书排的就是「空格 + 分号」
+# （19 世纪英式行文，全书 1736 处分号、334 处冒号都是这个样子），
+# 把它们当斑点会把整本书的标点删光。
+STRAY_MID = re.compile(r'(?<=[a-z,;*\u2020\u2021]) [.\]\[,] (?=[a-z])')
+
+
+# 断词中间夹了斑点：`personally un- . known` / `per- . son`。连字与续行之间
+# 多一个孤立句点，dehyph 已经把两半接起来了，斑点留在中缝（实测 26 处）。
+# 中缝里的斑点不只是句点：`doc-: trine` `princi-, palities` `de- , lightful`
+# `rea- ] son` 都有（全书 27 处），连字与续行之间夹什么标点的都有。
+HYPHEN_STRAY = re.compile(r'([a-z])-\s*[.,;:\]\[]\s*([a-z])')
 
 
 def drop_stray(t):
+    t = HYPHEN_STRAY.sub(r'\1\2', t)
     return STRAY_MID.sub(' ', t)
 
 

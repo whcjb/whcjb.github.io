@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 17:28
+date: 2026-09-14 19:05
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -38,7 +38,7 @@ next_label: "Errata"
 <p class="dv-idx-2">CXIX. 12, 7 have inclined my heart to perform thy statutes even unto the end woes 83</p>
 <p class="dv-idx">Prov. XX. 9, Who can say I have made my heart clean, I am pure from my sin? oo. JM 41</p>
 <p class="dv-idx-2">XXII. 24, Make no friendship with an angry man see Soce II. 67</p>
-<p class="dv-idx-2">XXVIII. 14, Happy is the man that feareth always TP dO oo I" 45</p>
+<p class="dv-idx-2">XXVIII. 14, Happy is the man that feareth always To dO oo I" 45</p>
 <p class="dv-idx">Eccl. IX. 1, No man knoweth whether he is worthy of love or hatred, but all things are held doubtful as to the future Rito cnn . 42</p>
 <p class="dv-idx">Isa. XLII. 6, I the Lord have called thee, and have given thee for a covenant of the people, for a light of the Gentiles scc. — OBS</p>
 <p class="dv-idx-2">LIIT. 10, If he shall lay down his soul for sin, 444 &amp;c. 9909 LLL &amp; II. 593</p>
@@ -117,5 +117,5 @@ next_label: "Errata"
 <p class="dv-idx">Hebrews 1. 3, Upholding all things by the word of his power p0000c Tae I. 205, 246 6, Let all the angels of God worship him 196, 428 14, Are they not all ministering spirits, &amp;e. 431</p>
 <p class="dv-idx-2">X. 4, A body hast thou prepared me =. ee 256 1 Pet.1.9, That ye may receive the end of your faith, &amp;c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN</p>
 <p class="dv-idx-2">III. 14, The answer of a good conscience to- 224,443 wards God CET eos. = § dH. 17,100</p>
-<p class="dv-idx-2">V. 2, 3, Feed the flock of God which is among you, not as being lords, &amp;c. Rr 293 1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08</p>
+<p class="dv-idx-2">V. 2, 3, Feed the flock of God which is among you, not as being lords, &amp;c. Rr 293 1 John IV. 7, Love is of God To "m 119 8, God is love aono «e+. I. 65,08</p>
 <p class="dv-idx">Rev. XXII. 13, 7 am the first and the last eee 186 THE END.</p>

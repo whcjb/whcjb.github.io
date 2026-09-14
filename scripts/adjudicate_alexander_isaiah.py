@@ -203,14 +203,43 @@ MANUAL_RE = [
     # 核实（书页 405 的 Rosenmüller 清清楚楚带两点），还原属于复现原文。
     (re.compile(r'\bRosen[a-zA-ZüöäÜÖÄ]{1,8}ll?er\b'), 'Rosenmüller'),
     (re.compile(r'\bFiirst\b'), 'Fürst'),
-    (re.compile(r'\bR[iu]ckert\b'), 'Rückert'),
+    (re.compile(r'\bR[iu]{1,2}ckert\b'), 'Rückert'),   # Riickert 也是同一个人
     (re.compile(r'\biiber\b'), 'über'),
     (re.compile(r'\bStiitze\b'), 'Stütze'),
     (re.compile(r'\bgefliigelter\b'), 'geflügelter'),
     # 人名拼错，证人与页面一致
     (re.compile(r'\bVilringa\b'), 'Vitringa'),
     (re.compile(r'\bShalmeneser\b'), 'Shalmaneser'),
+    # 这两个也是变音符：页面上 Hävernick（书页 21）与 Königsberg（书页 65）
+    # 都清清楚楚带两点，全书各 13 / 1 处，逐条列不如一条正则。
+    (re.compile(r'\bHavernick\b'), 'Hävernick'),
+    (re.compile(r'\bKonigsberg\b'), 'Königsberg'),
 ]
+
+
+# 章号罗马数字的**尾字母**被读错：ii→n、iii→m、ii→u。小型大写里 `ii` 的
+# 两根竖笔连在一起就成了 `n`，`iii` 成了 `m`。`ch. vin—xu` 印的是
+# `ch. viii—xii`（导论书页 73 的 `ch. xxxviii, xxxix` 影像上一清二楚）。
+# 三种错法都只出现在词尾，还原后再验一次罗马数字合法性，验不过的一律不动
+# ——`ch. il: 1` 那种其实是阿拉伯数字 `11` 被读成 `il`，另案处理。
+_ROMAN_OK = re.compile(r'^(?=[ivxlcdm])m*(c[md]|d?c{0,3})(x[cl]|l?x{0,3})(i[xv]|v?i{0,3})$')
+_ROMAN_REF = re.compile(r'\b(?:ch|chs|chap|chaps)\.\s*'
+                       r'[ivxlcdmnu]{1,9}(?:\s*[-—–,]\s*[ivxlcdmnu]{1,9})*')
+_ROMAN_TAIL = {'n': 'ii', 'm': 'iii', 'u': 'ii'}
+
+
+def fix_roman_refs(raw):
+    def one(word):
+        if _ROMAN_OK.match(word):
+            return word
+        fixed = word[:-1] + _ROMAN_TAIL.get(word[-1], word[-1])
+        return fixed if _ROMAN_OK.match(fixed) else word
+
+    def span(m):
+        return re.sub(r'[ivxlcdmnu]{1,9}', lambda w: one(w.group(0)), m.group(0))
+
+    out, n = _ROMAN_REF.subn(span, raw)
+    return out, sum(1 for a, b in zip(raw.split(), out.split()) if a != b)
 
 
 def load_manual_file():
@@ -244,7 +273,8 @@ def apply_manual(raw):
     for pat, rep in MANUAL_RE:
         raw, k = pat.subn(rep, raw)
         n += k
-    return raw, n
+    raw, k = fix_roman_refs(raw)
+    return raw, n + k
 
 
 def base_vocab():

@@ -1,9 +1,12 @@
 chapter	token	witness	verdict	bucket
+1	rniis	them	reject	待判·证人对不上
 10	iftsa		无证据	待判·无证据
 11	ixisn		无证据	待判·无证据
+11	rviin		无证据	待判·无证据
 13	Intro	htro	reject	待判·证人还有话说
 13	Christol	riah	reject	待判·证人还有话说
 16	laran		无证据	待判·无证据
+17	fiiis		无证据	待判·无证据
 17	Evaioi		无证据	待判·无证据
 17	itisa		无证据	待判·无证据
 17	nnfea	among	reject	待判·证人对不上
@@ -20,6 +23,7 @@ chapter	token	witness	verdict	bucket
 29	somno		无证据	待判·无证据
 3	patris	ticum	reject	待判·证人还有话说
 3	refisal	words	reject	待判·证人还有话说
+30	afiiua		无证据	待判·无证据
 33	abana		无证据	待判·无证据
 33	rdictum		无证据	待判·无证据
 33	doctus		无证据	待判·无证据
@@ -47,6 +51,7 @@ chapter	token	witness	verdict	bucket
 44	faber		无证据	待判·无证据
 45	dumbis		无证据	待判·无证据
 45	itfsa		无证据	待判·无证据
+46	fiiia	t'	reject	待判·证人对不上
 47	iriterpunction		无证据	待判·无证据
 47	trustedst	trustedsl	reject	待判·证人还有话说
 48	Iknew	ikneio	reject	待判·证人还有话说
@@ -75,8 +80,13 @@ chapter	token	witness	verdict	bucket
 63	rtson		无证据	待判·无证据
 63	tabtea		无证据	待判·无证据
 64	itini		无证据	待判·无证据
+64	susii		无证据	待判·无证据
 7	veavie		无证据	待判·无证据
 9	innaia		无证据	待判·无证据
 9	principem		无证据	待判·无证据
 9	tumulum		无证据	待判·无证据
+introduction	Micaiah		无证据	待判·无证据
 introduction	Onias	oni	reject	待判·证人还有话说
+introduction	callida		无证据	待判·无证据
+introduction	junctura		无证据	待判·无证据
+introduction	apostolum		无证据	待判·无证据
