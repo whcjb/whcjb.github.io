@@ -100,6 +100,13 @@ SYSTEM = (
     "9. 罗马数字章号一律转成阿拉伯数字，格式为「书卷名 章:节」："
     "Psalm xxvi. 4, 5 → 诗篇 26:4, 5；Isa. xvii. 13 → 以赛亚书 17:13；"
     "Mat. iii. 12 → 马太福音 3:12。`ver. 1` → 「第 1 节」\n"
+    "9a. `*The Lord,* Jehovah,` 是全书最常见的一个组合：斜体的 The Lord 是他"
+    "自己对四字神名的译法，其后不带斜体的 Jehovah 是他给出的原文名。"
+    "译作「*主，*耶和华，」——**不要对调**成「*耶和华，*即主」，"
+    "那会把他刻意区分的「译文」与「原名」颠倒过来\n"
+    "9b. **不得把任何英文词原样留在中文句子里**。唯一的例外是作者正在讨论"
+    "那个英文词本身（如 *rage*、*ashes*），此时保留原词并用 *斜体* 标出、"
+    "随后括注中文义\n"
     "10. 语文学术语务必精确、互不撞词：\n"
     "   parallelism→平行体　paraphrase→意译　version→译本　rendering→译法\n"
     "   preterite/past tense→过去时　future→将来时　participle→分词\n"
@@ -227,11 +234,39 @@ def structural_diff(en: str, zh: str) -> str:
         problems.append(f'HTML 注释不符 {en_c} → {zh_c}')
     if '<span' in zh and '<span' not in en:
         problems.append('译文里凭空多出 <span>（节号锚点不该进模型）')
+    stray = stray_english(zh)
+    if stray:
+        problems.append('漏译的英文词 ' + '、'.join(sorted(set(stray))[:5]))
     if CHATTY_RE.search(zh):
         problems.append('模型在对话而非翻译')
     if re.search(r'[A-Za-z]', en) and not re.search(r'[一-鿿]', zh) and len(en) > 40:
         problems.append('译文无汉字')
     return '；'.join(problems)
+
+
+# 译文里**漏译的整词**：模型偶尔把一个英文词原样留在中文句子里
+# （「推向了 past」「所表白之 confidence 的根据」）。structural_diff 只查星号、
+# 锚点、注释，单个词溜得过去——用户 2026-09-14 查出 3 处。
+# 判据必须排除两类**正当**的英文：
+#   1. 斜体内的：Alexander 在讨论这个英文词本身（*ashes、means,* / *rage*）；
+#   2. 紧跟括注的：`尼希罗（Nehiloth）` 这种原词对照。
+# 剩下的「光溜溜落在中文句子里的英文常用词」才是漏译。
+STRAY_EN = re.compile(r'(?<![（(A-Za-z])[A-Za-z][A-Za-z\'’-]{2,}(?![*）)A-Za-z])')
+
+
+def stray_english(zh: str):
+    """返回译文里疑似漏译的英文词。空列表表示干净。"""
+    out = []
+    for m in STRAY_EN.finditer(zh):
+        s, e = m.start(), m.end()
+        # 落在一对 * 之间的不算（Alexander 在讨论这个词本身）
+        if zh.count('*', 0, s) % 2 == 1:
+            continue
+        # 两侧都是英文/标点的（整句英文引文）不算
+        if re.search(r'[A-Za-z]\s*$', zh[:s]) or re.match(r'\s*[A-Za-z]', zh[e:]):
+            continue
+        out.append(m.group(0))
+    return out
 
 
 def translate_one(text: str, resume: bool, label: str = '') -> str:
@@ -262,6 +297,8 @@ def translate_one(text: str, resume: bool, label: str = '') -> str:
         fix = (f"上一版译文有结构问题：{diff}。\n"
                "重译下面这段。**必须逐一保留**原文中的 `*` 斜体标记"
                "（开合各一个，数量与位置都要对上）与 <!-- --> 注释；"
+               "**不得把任何英文词原样留在中文句子里**——除非那个词正是"
+               "作者在讨论的对象（此时用 *斜体* 标出并括注中文义）。"
                "只输出译文。\n\n")
         out2 = re.sub(r'<<<[^>]*>>>', '',
                       tf.call_claude(fix + text, timeout=600,
