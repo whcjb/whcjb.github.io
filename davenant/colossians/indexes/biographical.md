@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 16:44
+date: 2026-09-14 09:44
 subtitle: "of Fathers, Heresiarchs, Schoolmen, &c., appended by the Translator"
 prev_url: "/davenant/colossians/indexes/contents/"
 prev_label: "Contents of the Dissertation"
@@ -142,8 +142,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Musculus (Wolfgang) 214</p>
 <p class="dv-idx-letter">N</p>
 <p class="dv-idx">Nazianzen, Gregory... 128<span class="dv-idx-b">|</span></p>
-<p class="dv-idx">Nicephorus ... 200 3</p>
-<p class="dv-idx">oO.</p>
+<p class="dv-idx">Nicephorus ... 200 3 oO.</p>
 <p class="dv-idx">CEcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
 <p class="dv-idx-caption">P. Vol. I.</p>
 <p class="dv-idx">Pareus …<span class="dv-idx-b">355</span></p>

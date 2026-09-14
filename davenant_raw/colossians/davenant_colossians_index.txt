@@ -16,8 +16,7 @@
 [E] <!--v2p580-->Ambrose, a passage of his vindicated from falsifiers, I1. 298.
 [E] <!--v2p580-->Amen, whence derived, and what it signifies, 308. .
 [E] <!--v2p580-->Angels, when created, I. 197; how sons of God, ibid. ; could not create the world, 191; their orders and distinctions, according to the Schoolmen, 194, 195; these orders are not curiously to be enquired into, 196; in what sense reconciled to God by Christ, 244 —246; could not reconcile us to God, 239. are reconciled to us by Christ, 244; the ministry of, in keeping the elect and promoting their salvation, 431 ; are not to he adored, 428 ; are not mediators, 429 ; do not impart grace, ibid.; are not to beinvoked asintercessors, ibid. ; are not as mediators for Christ, 429; how they may be worshipped, 502; ought not to be worshipped religiously, or with the worship of doulia or latria, 504— 506; are worshipped by Papists with the latter worship, 504, 505; the worship of them the doctrine of the Platonists, 498 ; worshippers of them do not acknowledge Christ for the head of the Church, 511; vows are not to be paid to them, 506 ; doubtful whether they hear prayers, 427; are but our fellow-servants, 428.
-[E] <!--v2p580-->Anger, what it is, and how it differs from wrath, IT. 65; why it is to be avoided, 66, 67; what is law-
-[E] <!--v2p581-->  ful, and what evil, 68; in what sense attributed to God, 54; is in God twofold, paternal and hostile, 58; follows sinners, 55.
+[E] <!--v2p580-->Anger, what it is, and how it differs from wrath, IT. 65; why it is to be avoided, 66, 67; what is lawful, and what evil, 68; in what sense attributed to God, 54; is in God twofold, paternal and hostile, 58; follows sinners, 55.
 [E] <!--v2p581-->Apologues, are neither lies materially, nor formally, II. 79.
 [E] <!--v2p581-->Apostles, etymology of the term, I. 3; appointed by the whole Trinity, 5; are God’s ambassadors to mankind, 6; which of them preached the Gospel to particular nations, 91; sent generally to the whole world, but some destined for certain provinces for the advantage of the Church, 297.
 [E] <!--v2p581-->Apostleship, three things required in it, 3, 4; Paul truly partook of it, 2,3; the Pope of Rome not so, and hath not apostolic authority, 9—19.
@@ -49,65 +48,22 @@
 [E] <!--v2p582-->Chastisement of the body by acts of mortification, examples of it, I. 539; errors of those who sin in this respect, 541; how far these exercises may and ought to be employed, 542, 543.
 [E] <!--v2p582-->Chastisements, not inflicted upon the faithful by God as satisfactions for sin, 288.
 [E] <!--v2p582-->Children, what ought to be the obedience of to parents, II. 169— 172; such obedience yields to piety towards God, 179—183; are not to be brought up effeminately, nor treated harshly, 190—192; are as parts of their parents, 193, 194; evils of severity towards them, 194, 195.
-[E] <!--v2p582-->Christ, that he might be the Me-
-[E] <!--v2p582-->diator, ought to be God-man, I.
-[E] <!--v2p582-->163, 164; it behoved him to be
-[E] <!--v2p582-->God that he might teach salva-
-[E] <!--v2p582-->tion, 409, 410; and that he might
-[E] <!--v2p582-->be the author of salvation, 410,
-[E] <!--v2p582-->411; in what manner he is one
-[E] <!--v2p582-->person, 415-420; vet not every
-[E] <!--v2p582-->where as man, 421; II.13; is
-[E] <!--v2p582-->the Lord of all things, even as
-[E] <!--v2p582-->man, I. 35; the cause of the
-[E] <!--v2p582-->creatures, 187; the Creator of
-[E] <!--v2p582-->the world, 188; the end of all
-[E] <!--v2p582-->things, 203; the first-born of
-[E] <!--v2p582-->every creature, and in what sense,
-[E] <!--v2p582-->184, 185; the first-born from the
-[E] <!--v2p582-->dead, and in what sense, 222
-[E] <!--v2p582-->223; he first rose, 223; the au-
-[E] <!--v2p582-->thor of our resurrection, 224, 225 ;
-[E] <!--v2p582-->hath a fulness of grace, 229; and
-[E] <!--v2p582-->why, 231; he alone hath it, 251;
-[E] <!--v2p582-->is the channel of grace by the ef- ©
-[E] <!--v2p582-->ficacy of operation, the benefit of
-[E] <!--v2p582-->intercession, and the merit of his
-[E] <!--v2p582-->passion, 35; he infuses grace, as
-[E] <!--v2p582-->man, instrumentally, 212; ‘all
-[E] <!--v2p582-->grace is from him, 514; he is the
-[E] <!--v2p582-->way to God; he alone could and
-[E] <!--v2p582-->ought to reconcile us, 239; how
-[E] <!--v2p582-->he hath redeemed us, 166, 167 ;
-[E] <!--v2p582-->how he is the Mediator of angels,
-[E] <!--v2p582-->244—246 ; how he is the head of
-[E] <!--v2p582-->angels, 427.
-[E] <!--v2p582-->Christ, the sympathy of in our af-
-[E] <!--v2p582-->flictions, 272; our support in trials,
+[E] <!--v2p582-->Christ, that he might be the Mediator, ought to be God-man, I. 163, 164; it behoved him to be
+[E] <!--v2p582-->God that he might teach salvation, 409, 410; and that he might be the author of salvation, 410, 411; in what manner he is one person, 415-420; vet not every where as man, 421; II.13; is the Lord of all things, even as man, I. 35; the cause of the creatures, 187; the Creator of the world, 188; the end of all things, 203; the first-born of every creature, and in what sense, 184, 185; the first-born from the dead, and in what sense, 222 223; he first rose, 223; the author of our resurrection, 224, 225 ; hath a fulness of grace, 229; and why, 231; he alone hath it, 251; is the channel of grace by the ef- © ficacy of operation, the benefit of intercession, and the merit of his passion, 35; he infuses grace, as man, instrumentally, 212; ‘all grace is from him, 514; he is the way to God; he alone could and ought to reconcile us, 239; how he hath redeemed us, 166, 167 ; how he is the Mediator of angels, 244—246 ; how he is the head of angels, 427.
+[E] <!--v2p582-->Christ, the sympathy of in our afflictions, 272; our support in trials,
 [E] <!--v2p582-->II. 15; what knowledge was in
-[E] <!--v2p582-->Christ, I. 362; He alone is the
-[E] <!--v2p582-->head of the Church, I. 17, 18;
-[E] <!--v2p582-->126; and that as to both natures,
-[E] <!--v2p582-->210, 211; even of the antient
-[E] <!--v2p582-->church, 211, 212; in what re-
-[E] <!--v2p582-->spects he is called the head of the
+[E] <!--v2p582-->Christ, I. 362; He alone is the head of the Church, I. 17, 18; 126; and that as to both natures, 210, 211; even of the antient church, 211, 212; in what respects he is called the head of the
 [E] <!--v2p582-->Church, 212, 518—516 ; of what
-[E] <!--v2p582-->Church he is the head, 218.
-[E] <!--v2p582-->is the only meritorious intercessor,
+[E] <!--v2p582-->Church he is the head, 218. is the only meritorious intercessor,
 [E] <!--v2p582-->II. 238, 239.
-[E] <!--v2p582-->Christ is the object of faith, I. 62;
-[E] <!--v2p582-->the principal and special object,
-[E] <!--v2p582-->ibid.; and the adequate object of
-[E] <!--v2p582-->faith, because he justifies, 61—63 ;
-[E] <!--v2p582-->he dwells in us by faith, 316.
+[E] <!--v2p582-->Christ is the object of faith, I. 62; the principal and special object, ibid.; and the adequate object of faith, because he justifies, 61—63 ; he dwells in us by faith, 316.
 [E] <!--v2p582-->Christ, is the image of the Father as God, both as God and as man, )73; the exemplar or model of the creatures, 188. is as a tabernacle, 410—412; the conqueror of the devil on the cross, 473—479. how he sits at the right hand of God, as God, 1I. 12, 14 ; and as man, 12, 13.
 [E] <!--v2p583-->Christ must be served faithfully, I. 36; 11.148. his appearing and manifestation threefold, II. 25 ; coming to judgment will be soon and sudden, 28 ; our life, and how, See Life.
 [E] <!--v2p583-->Christ, put for the Church of Christ, I. 272.
 [E] <!--v2p583-->Christian, as to the name is nothing, I. 23, 443, 445; serving any other than God is guilty of sacrilege, 23; living in sin is a walking monster, 443.
 [E] <!--v2p583-->Christian, the true, ought always to advance, 116, 380, 381; IL. $, 86; is like a fruitful tree, I. 127; in what respects, 129. is dead to sin, the world, and the flesh, II. 16; in what manner, ibid.; he grows in faith daily, and how, I. 350, 351; does all things in the name of Christ, II. 146. is in Christ through faith and the Spirit, I. 316; ought to imitate Christ. II. 10, 115.
 [E] <!--v2p583-->Christian, his enemies, I. 133; 469. his life ought not to be a scandal to the Gospel, II. 251; his conversation is in heaven, II. 6, 7.
-[E] <!--v2p583-->Christians, ought to teach, and admonish, and restrain one another, JI. 138, 139; are called saints in Christ, and why, I. 20, 22 ; faithful in Christ, 24 ; brethren in
-[E] <!--v2p583-->] Christ, and why, 26. are brethren among themselves, ibid.; II. 270, 297, 348; therefore live in concord, I. 26; and united, 348, 349.
+[E] <!--v2p583-->Christians, ought to teach, and admonish, and restrain one another, JI. 138, 139; are called saints in Christ, and why, I. 20, 22 ; faithful in Christ, 24 ; brethren in ] Christ, and why, 26. are brethren among themselves, ibid.; II. 270, 297, 348; therefore live in concord, I. 26; and united, 348, 349.
 [E] <!--v2p583-->Church, whence it is called, I. 217; of what Church Christ is the head, 218; hypocrites are not members of the Church, 219—221, 515; the Church is as the family of God, 294, 295 ; receives all things from Christ, 514; increase of the Church, what, 516; how the whole is united to Christ, and the members of it with one another, 518—515.
 [E] <!--v2p583-->Church hath the power of ordaining externalrites, I. 401. may consist of manifold divisions, 218; each particular one may fall, 12, 20 ; II. 293. a domestic family may be a Church, II. 299.
 [E] <!--v2p583-->Circumcision, internal what it is,
@@ -159,8 +115,7 @@
 [E] <!--v2p584-->Election, temporal and eternal, lI. 98; of which it is that the consideration influences to holiness, 99.
 [E] <!--v2p584-->Eloquence of the Scriptures, I. 336. not to be affected by ministers, 105. of heretics deceitful and ensnaring, 368, 370.
 [E] <!--v2p584-->Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid.
-[E] <!--v2p584-->Enemies, we are such to God by nature, 250, 251.
-[E] <!--v2p584-->who are those of a Christian, 134; 470 ; Christ overcame them, 474; who are the enemies of the cross of Christ, 476.
+[E] <!--v2p584-->Enemies, we are such to God by nature, 250, 251. who are those of a Christian, 134; 470 ; Christ overcame them, 474; who are the enemies of the cross of Christ, 476.
 [E] <!--v2p584-->Enemies, our's, are to be loved, I. 14; we must forgive them, and do them good, 75, 76.
 [E] <!--v2p584-->Envy makes another's good our own punishment, 58.
 [E] <!--v2p584-->Epaphras, his commendations, 102— 106.
@@ -174,8 +129,7 @@
 [LETTER] F
 [E] <!--v2p585-->Faith, twofold ; the one unformed, historical, and general; the other formed, justifying, and particular, I. 66; in what justifying faith differs from that which does not justify, 62, 67—69.
 [E] <!--v2p585-->Faith, the object of it in general, whatever is delivered in theScriptures, 61; specially and principally Jesus Christ under the character of a Mediator, 62; the same faith reposed in Christ before his incarnation and since, 164; 212; 471, 472; 492. imparted by God alone, I. 85,86 ; 307; II. 242, 243; it is the gift of God, I. 447; when infused at once shews the thing believed, and the reason of believing, 353; in what manner the word preached is the instrument of producing faith, 85; is the foundation and the root of religion, 59; what is done without faith is not good, 60.
-[E] <!--v2p585-->Faith justifies as to its truth, not as
-[E] <!--v2p585-->  to its degree, 53; it alone justifies, 261 ; justifying faith is stable, is not lost, 262 ; the stability of faith twofold; stedfast and firm, 382; both required, 383 ; stedfast faith what, 376.
+[E] <!--v2p585-->Faith justifies as to its truth, not as to its degree, 53; it alone justifies, 261 ; justifying faith is stable, is not lost, 262 ; the stability of faith twofold; stedfast and firm, 382; both required, 383 ; stedfast faith what, 376.
 [E] <!--v2p585-->Faith does not exclude all doubt, but overcomes it, 51; the full assurance of faith what, and whence it comes, 351; true faith exists not without love, 67, 68; yet is not formed from love, 69; a blind faith is not pleasing to God, 352; is not sufficient for the people, 122. of the popish Collier, 354, and Note.
 [E] <!--v2p585-->Family, the head of, ought to instruct his household in Religion, Il. 299.
 [E] <!--v2p585-->Fastings, what were in use in the primitive Church, I. 543 ; exam. ples of fasting, 539 ; in what manner we should fast, 542544; how far human laws concerning fasting bind us, 482, 483; a twofold error in the fastings of the Papists, 481.
@@ -189,16 +143,14 @@
 [E] <!--v2p586-->Figurative or parabolic expressions not lies, II. 79.
 [E] <!--v2p586-->Flesh, put for original corruption, I. 436.
 [E] <!--v2p586-->Forgiveness of injuries, yields advantage to the person forgiving, TI. 112. of sins, how the phrase is to be understood, l. 49; what the act includes, 457; is the property of God alone, 458.
-[E] <!--v2p586-->Fornication, what it is, and how it differs from adultery, &c. II. 38.
-[E] <!--v2p586-->not regarded as a crime among the heathen, ibid.; yet disapproved of by some of the wiser, 42; the heinousness of the sin demonstrated, 39, 40; not to be tolerated in a Christian State, 45; opposed to charity in many respects, 43; favoured by the Papists, 44 ; wherefore reckoned among things indifferent by the Apostle, 41.
+[E] <!--v2p586-->Fornication, what it is, and how it differs from adultery, &c. II. 38. not regarded as a crime among the heathen, ibid.; yet disapproved of by some of the wiser, 42; the heinousness of the sin demonstrated, 39, 40; not to be tolerated in a Christian State, 45; opposed to charity in many respects, 43; favoured by the Papists, 44 ; wherefore reckoned among things indifferent by the Apostle, 41.
 [E] <!--v2p586-->Fortitude, Christian, in what it consists, I. 132; whence derived, 134; our need of it, ibid.; true, from God alone, 136; how it differs from patience, 137.
 [E] <!--v2p586-->Free-will does not fit or dispose us for grace, I. 90; 149; 453. Vide Merits.
 [E] <!--v2p586-->Friends, who are such, 250, 251.
 [LETTER] G
 [E] <!--v2p586-->Glory future, the twofold array of soul and body, II. 25, 26; the hope of, a consolation in all adversities, 29.
 [E] <!--v2p586-->Glory of Christ, ought to be the end of all our actions, II. 146, 147. vain-glory to be avoided by Ministers, I. 103.
-[E] <!--v2p586-->God, the author and end of all things, I. 199; the preserver of all things, 203—208 ; acts to a special end, 199; to be loved for himself alone, 70; not to be worshipped through any image, 182. is the Father of Christ, I. 56. Vide Father. how he is invisible, 180; unknown, 181; an object of dread out of Christ, 179; omnipresent, II. 201 ; in a threefold manner, I. 415.
-[E] <!--v2p586-->  how he is said to be angry, II. 54; is not a respecter of persons, 91; 211; his righteousness in punishing, 56; in how many ways he is blasphemed, 69.
+[E] <!--v2p586-->God, the author and end of all things, I. 199; the preserver of all things, 203—208 ; acts to a special end, 199; to be loved for himself alone, 70; not to be worshipped through any image, 182. is the Father of Christ, I. 56. Vide Father. how he is invisible, 180; unknown, 181; an object of dread out of Christ, 179; omnipresent, II. 201 ; in a threefold manner, I. 415. how he is said to be angry, II. 54; is not a respecter of persons, 91; 211; his righteousness in punishing, 56; in how many ways he is blasphemed, 69.
 [E] <!--v2p586-->God, his efficiency by his Ministers, I. 8; his philanthropy shewn in appointing them, 9; prevents us, 89; is the fountain of all grace, as he is our Father, 32—34; communicates grace by his Son, 355 the first author of reconciliation, 235; the author of our quickening, 455, 456 ; the author of salvation by fore-ordaining it, and by effectually calling to it, 145, 146.
 [E] <!--v2p586-->God alone ought and could save us, 154. hated by sinners, and in what manner, 250. .
 [E] <!--v2p586-->Grace, and peace, the Apostolic salutation, I. 29; why joined, ibid. ; why grace is put first, 31; the practice of St. Paul in reference to this, II. 308.
@@ -206,8 +158,7 @@
 [E] <!--v2p586-->Gratitude, duty of, I. 128. See Thanksgiving.
 [LETTER] H
 [E] <!--v2p586-->Hand, the right, of God, what it means, and what to sit there, II. 12—14.
-[E] <!--v2p586-->Hand-writing of Ordinances, what, ‘I, 461—463 ; how made void and
-[E] <!--v2p586-->abrogated, 465, 466.
+[E] <!--v2p586-->Hand-writing of Ordinances, what, ‘I, 461—463 ; how made void and abrogated, 465, 466.
 [E] <!--v2p586-->Hatred, mutual between God and sinners, I. 250; perfect, in what it consists, and how evinced, I. 46, 77.
 [E] <!--v2p586-->Head, what required to constitute headship, I. 215, 216; 511—513. of the Church, Vide Cunisr.
 [E] <!--v2p586-->Hearers should have general doctrines applied to them, I. 248; 319, 320.
@@ -293,68 +244,12 @@
 [E] <!--v2p589-->Merits of no man extend beyond his own person, I. 280 ; none of congruity before grace, 90; 149; 259; nor of condignity after grace, 124; 149; 279.
 [E] <!--v2p589-->Might, spiritual, in what exercised and what it effects, I. 152—134.
 [E] <!--v2p589-->Mind, See Understanding.
-[E] <!--v2p589-->Ministers ought to await a call, I. 29; their call twofold, ibid. ; yea, threefold, 268; order ought toexist
-[E] <!--v2p589-->among them as among unequals,
-[E] <!--v2p589-->296; to be attached to certain
-[E] <!--v2p589-->places and people, 298 ; when ab-
-[E] <!--v2p589-->sent from their flock, more solici-
-[E] <!--v2p589-->tous about it, 344 ; ought never
-[E] <!--v2p589-->to be wholly absent, 373.
-[E] <!--v2p589-->all their sufficiency from Christ
-[E] <!--v2p589-->and his Spirit, 330; II. 239—241;
-[E] <!--v2p589-->their efficacy for the salvation of
-[E] <!--v2p589-->mankind, I. 8; are not to be
-[E] <!--v2p589-->slothful, 7, 8; 298; 341; are as
-[E] <!--v2p589-->centinels, 389; what considera-
-[E] <!--v2p589-->tions excite them to diligence, 104,
-[E] <!--v2p589-->105; II. 305 ; in what their fide-
-[E] <!--v2p589-->lity consists, I. 105; 1I. 248 ; in
-[E] <!--v2p589-->what their duty in preaching con-
-[E] <!--v2p589-->sists, I. 318 ; ought to teach both
-[E] <!--v2p589-->the Law and the Gospel, but in
-[E] <!--v2p589-->different ways, 319, 320; in the
-[E] <!--v2p589-->discharge of their duty must act
-[E] <!--v2p589-->impartially towards all, 321; to
-[E] <!--v2p589-->defend the Gospel and their fel-
-[E] <!--v2p589-->low-ministers, 340; should re-
-[E] <!--v2p589-->prove the vices of all, II. 247;
-[E] <!--v2p589-->not accommodate their statements
-[E] <!--v2p589-->to the errors of their hearers,
-[E] <!--v2p589-->ibid. ; ought not to affect elo-
-[E] <!--v2p589-->quence, l. 105; should apply ge-
-[E] <!--v2p589-->neral doctrines, 248 ; preach the
-[E] <!--v2p589-->word freely and boldly, II. 246;
-[E] <!--v2p589-->constantly and diligently, 247;
-[E] <!--v2p589-->sincerely and faithfully, adding
-[E] <!--v2p589-->nothing to it, nor withholding any
-[E] <!--v2p589-->thing, 248, 249; fitly and suit-
-[E] <!--v2p589-->ably to their hearers, 250.
-[E] <!--v2p589-->Ministers, their dignity, I. 104;
-[E] <!--v2p589-->293; II. 271; 288; ought not to
-[E] <!--v2p589-->decry or depreciate one another,
-[E] <!--v2p589-->I. 101; II. 272; should endea.
-[E] <!--v2p589-->vour to maintain a good repute,
-[E] <!--v2p589-->I. 101, 102 ; ought to be humble,
-[E] <!--v2p589-->103; must not be immodest or
-[E] <!--v2p589-->vulgar, II. 74; are not lords of
-[E] <!--v2p589-->our faith, f. 268; but ministers
-[E] <!--v2p589-->only, 293; should not only preach
-[E] <!--v2p589-->to, but also pray for their people,
-[E] <!--v2p589-->I.31; 113; 289; constantly and
-[E] <!--v2p589-->earnestly, 113, 114; II. 290;
-[E] <!--v2p589-->ought to enquire into the life and
-[E] <!--v2p589-->manners of every one committed
-[E] <!--v2p589-->to their care, II. 268; particularly
-[E] <!--v2p589-->to esteem the more pious, 275.
-[E] <!--v2p589-->Ministers, what things afford them
-[E] <!--v2p589-->joy, I. 373 ; should especially re-
-[E] <!--v2p589-->joice in the spiritual welfare of
-[E] <!--v2p589-->their flock, I. 54; 340; should
-[E] <!--v2p589-->warn their people against sedu-
-[E] <!--v2p589-->cers, 389.
-[E] <!--v2p589-->how they absolve from sins, I.
-[E] <!--v2p589-->286 ; ought to be animated to en- :
-[E] <!--v2p590-->  dure the cross, 1. 270; 292; 329; Il. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.
+[E] <!--v2p589-->Ministers ought to await a call, I. 29; their call twofold, ibid. ; yea, threefold, 268; order ought toexist among them as among unequals, 296; to be attached to certain places and people, 298 ; when absent from their flock, more solicitous about it, 344 ; ought never to be wholly absent, 373. all their sufficiency from Christ and his Spirit, 330; II. 239—241; their efficacy for the salvation of mankind, I. 8; are not to be slothful, 7, 8; 298; 341; are as centinels, 389; what considerations excite them to diligence, 104, 105; II. 305 ; in what their fidelity consists, I. 105; 1I. 248 ; in what their duty in preaching consists, I. 318 ; ought to teach both the Law and the Gospel, but in different ways, 319, 320; in the discharge of their duty must act impartially towards all, 321; to defend the Gospel and their fellow-ministers, 340; should reprove the vices of all, II. 247; not accommodate their statements to the errors of their hearers, ibid. ; ought not to affect eloquence, l. 105; should apply general doctrines, 248 ; preach the word freely and boldly, II. 246; constantly and diligently, 247; sincerely and faithfully, adding nothing to it, nor withholding any thing, 248, 249; fitly and suitably to their hearers, 250.
+[E] <!--v2p589-->Ministers, their dignity, I. 104; 293; II. 271; 288; ought not to decry or depreciate one another,
+[E] <!--v2p589-->I. 101; II. 272; should endea. vour to maintain a good repute,
+[E] <!--v2p589-->I. 101, 102 ; ought to be humble, 103; must not be immodest or vulgar, II. 74; are not lords of our faith, f. 268; but ministers only, 293; should not only preach to, but also pray for their people,
+[E] <!--v2p589-->I.31; 113; 289; constantly and earnestly, 113, 114; II. 290; ought to enquire into the life and manners of every one committed to their care, II. 268; particularly to esteem the more pious, 275.
+[E] <!--v2p589-->Ministers, what things afford them joy, I. 373 ; should especially rejoice in the spiritual welfare of their flock, I. 54; 340; should warn their people against seducers, 389. how they absolve from sins, I. 286 ; ought to be animated to en- : dure the cross, 1. 270; 292; 329; Il. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.
 [E] <!--v2p590-->Monachism is not a state of perfection, I. 326 ; II. 92.
 [E] <!--v2p590-->Monasteries, ought not to be entered by children against the consent of their parents, II. 174— 186.
 [E] <!--v2p590-->_ Monks, the Carthusian, abstain from meat, I. 481. of Palestine, their austerities, 539.
@@ -375,13 +270,11 @@
 [LETTER] O
 [E] <!--v2p590-->Obedience, see Subjection. blind, not good, I. 122; 534, 535.
 [E] <!--v2p590-->Obedience of wives towards their husbands, II. 151; of children towards their parents, 168; of servants towards their masters, 196.
-[E] <!--v2p590-->Obscenity in language to be avoided,
-[E] <!--v2p590-->: 43.
+[E] <!--v2p590-->Obscenity in language to be avoided, : 43.
 [E] <!--v2p590-->Omniscience, does not appertain to the human nature of Christ, I. 363—309.
 [E] <!--v2p590-->Onesimus, a deacon, Il. 273.
 [E] <!--v2p590-->Opportunity to be embraced, I. 305 ; 1I. 257, 258.
-[E] <!--v2p590-->Order, what it is, 295, 296; va. rious significations of, I. 374,375 ; encomiums of it, 375; all things done of God by order, IT. 56. ought to exist among the Minis-
-[E] <!--v2p591-->  ters of the Church, I. 296; 375, 376.
+[E] <!--v2p590-->Order, what it is, 295, 296; va. rious significations of, I. 374,375 ; encomiums of it, 375; all things done of God by order, IT. 56. ought to exist among the Ministers of the Church, I. 296; 375, 376.
 [E] <!--v2p591-->Ornaments, what are a woman’s best, II. 157.
 [LETTER] P
 [E] <!--v2p591-->Pappula, instanced by Papists to justify opposition to parental authority, II. 183.
@@ -409,8 +302,7 @@
 [E] <!--v2p591-->Poor to be relieved, II. 103, 104.
 [E] <!--v2p591-->Prayer the parts of, I. 114; how they differ, ibid. ; manner of, 113; lI. 228; 290; conditions, 224,226, 227; how we must pray always, I. 58, 113; II. 227; why, 230; must be with watchfulness, bodily and mental, 231—235; with thanksgiving, I. 57, 58; 11. 235; why, ibid., 236.
 [E] <!--v2p591-->Prayer, should be mutual, 238; ministers should pray for their people, I. 31; 58; II.280; the peo. ple for their ministers, IT. 237.
-[E] <!--v2p591-->Prayer for others the best mark of love, especially in ministers, I. 340, 341; 1I. 289. the weapon of the priest, I1. 290. must be made in a known tongue, and with the understanding, 228, 229; mode of among the Egyp-
-[E] <!--v2p592-->  tian monks, 225; should be offered to God alone, and why, I. 505—507; he alone is to be entreated for grace, 33.
+[E] <!--v2p591-->Prayer for others the best mark of love, especially in ministers, I. 340, 341; 1I. 289. the weapon of the priest, I1. 290. must be made in a known tongue, and with the understanding, 228, 229; mode of among the Egyptian monks, 225; should be offered to God alone, and why, I. 505—507; he alone is to be entreated for grace, 33.
 [E] <!--v2p592-->Prayer, vho they are that can confidently pray to God, 36; success of in the Scriptures. II. 226.
 [E] <!--v2p592-->Preaching the word, how it is the instrument of producing faith, I. 86; the Gospel was preached through the whole world, and how, 91—93; how ministers ought to preach, II. 246—250.
 [E] <!--v2p592-->Presence of God, threefold, I. 415.
@@ -436,8 +328,7 @@
 [E] <!--v2p592-->Reputation to be guarded and preserved, Í. 102.
 [E] <!--v2p592-->Resurrection, Christ the first fruits of it, 224; the threefold author of our's, 225, 226; the Father raised Christ, and yet he raised himself, 448.
 [E] <!--v2p592-->Resurrection spiritual as well as bodily, 224, 225; Christ arose from the dead and quickens us from sin by the same Almighty power, 446, 447 ; II. 10. of Christ to be exhibited in our life, 445; II. 7.
-[E] <!--v2p592-->' our's is twofold, and both effected by Christ, II. 10; our spiritual resurrection ought to be a copy of Christ's bodily resurrection, 11; is wrought in us by virtue of the
-[E] <!--v2p592-->] resurrection of Christ, 10. the confidence of Christians, 29.
+[E] <!--v2p592-->' our's is twofold, and both effected by Christ, II. 10; our spiritual resurrection ought to be a copy of Christ's bodily resurrection, 11; is wrought in us by virtue of the ] resurrection of Christ, 10. the confidence of Christians, 29.
 [E] <!--v2p592-->Revenge, how far it is lawful and disallowed to a Christian, II. 113, 14. by duel is not lawful, 116, 117.
 [E] <!--v2p592-->Revilers of the Ministry warned, I. 104.
 [E] <!--v2p592-->Righteous we are so by tlie imputation of Christ's righteousness, I. 424.
@@ -454,8 +345,7 @@
 [E] <!--v2p593-->Satisfaction for our sins made by
 [E] <!--v2p593-->Christ alone, I. 287; 459 ; to that the Papists themselves resort when consulting their consciences, 347; none made by us either in doing or suffering, 457.
 [E] <!--v2p593-->Schoolmen, obtrude their vagaries for articles of faith, I. 305; 357, 358.
-[E] <!--v2p593-->Scriptures, are believed on their own authority among the faithful, I. 6; are not confirmed by the authority of the Church, 355, 500; are the sole rule of faith, 267; 493; 499—501; II. 246; are perspicuous, 1. 306 ; eloquent, 336 ; are the word of Christ in a twofold manner, II. 130, 131; their efficacy in changing men's manners, J. 96; are to be read diligently, 266, 353 ; by the Laity, 122; 266; Il. 132; 263; objections to the practice answered, 1I. 136; how used in the primitive Church, 300 ; are like a pharmacopeeia, in which nothing is insignificant or useless, 265 ; insieme y
-[E] <!--v2p593-->  compared by Hermanus to the fables of sop, I. 355.
+[E] <!--v2p593-->Scriptures, are believed on their own authority among the faithful, I. 6; are not confirmed by the authority of the Church, 355, 500; are the sole rule of faith, 267; 493; 499—501; II. 246; are perspicuous, 1. 306 ; eloquent, 336 ; are the word of Christ in a twofold manner, II. 130, 131; their efficacy in changing men's manners, J. 96; are to be read diligently, 266, 353 ; by the Laity, 122; 266; Il. 132; 263; objections to the practice answered, 1I. 136; how used in the primitive Church, 300 ; are like a pharmacopeeia, in which nothing is insignificant or useless, 265 ; insieme y compared by Hermanus to the fables of sop, I. 355.
 [E] <!--v2p593-->Scythians thought to have been the worst of barbarians, T1. 92.
 [E] <!--v2p593-->Seducers beguile men in two ways, I. 368, 369.
 [E] <!--v2p593-->Servant of fortune is not a distinction of nature, II. 217, 218. deceitful and contumacious towards his earthly master, will be punished by the Supreme Lord, 210.
@@ -524,8 +414,7 @@
 [E] <!--v2p595-->Will of man, naturally depraved, I. 252; 452.
 [E] <!--v2p595-->Will-worship, its origin and parts, I. 130; condemned, ibid.
 [E] <!--v2p595-->Wife, what to be regarded in choosing one, II. 163. in what her subjection consists, 152, 153; reasons for yielding it, 155 ; impediments toit, 156, 157. duties of towards her household, 154.
-[E] <!--v2p595-->Wisdom, what it signifies, l. 118, 120 ; 530, 531 ; how it differs from understanding, 119; from knowledge, 360 ; whence derived, 121;
-[E] <!--v2p595-->  regards both things to be believed and to be done, 361; to be exercised in discourse, IT. 262. its importance to Ministers, L. 106, 120; 296.
+[E] <!--v2p595-->Wisdom, what it signifies, l. 118, 120 ; 530, 531 ; how it differs from understanding, 119; from knowledge, 360 ; whence derived, 121; regards both things to be believed and to be done, 361; to be exercised in discourse, IT. 262. its importance to Ministers, L. 106, 120; 296.
 [E] <!--v2p595-->Women ought not to be vain, nor studious of ornaments, II. 156, 157; should content themselves at home, 154.
 [E] <!--v2p595-->Word of God. See Scriptures. of the truth of the Gospel, what, 1.86, 87; how the instrument of producing faith and hope, 85.
 [E] <!--v2p595-->Words, our's, should be regulated, II. 144, 145, and that religiously, 260.
@@ -759,8 +648,7 @@
 [E] <!--v2p600-->Musculus (Wolfgang) 214
 [LETTER] N
 [E] <!--v2p600-->Nazianzen, Gregory... 128¦|
-[E] <!--v2p600-->Nicephorus ... 200 3
-[E] <!--v2p600-->oO.
+[E] <!--v2p600-->Nicephorus ... 200 3 oO.
 [E] <!--v2p600-->CEcumenius... 2 … || Origen …¦18
 [CAPTION] P. Vol. I.
 [E] <!--v2p601-->Pareus …¦355
@@ -872,16 +760,12 @@
 [E] <!--v2p603-->Mendham's “ Literary Policy of the Church of Rome" noticed and recommended, 1. 76.
 [E] <!--v2p603-->Modern departure fromChristianity,
 [LETTER] M
-[E] <!--v2p603-->Mosheim cited on the character of Melancthon, 1. 193; on early
-[E] <!--v2p603-->schisms, I. 202; 253.
+[E] <!--v2p603-->Mosheim cited on the character of Melancthon, 1. 193; on early schisms, I. 202; 253.
 [E] <!--v2p603-->Nicene Creed, history, and defence of, I, 177.
 [E] <!--v2p603-->Ordinary, meaning of the term, 1.
 [LETTER] P
-[E] <!--v2p603-->Papists, withhold the Scriptures, II. 132. do make ‘images for Divine wor-
-[E] <!--v2p603-->ship, I. 182. Peter, disproved to have been
-[E] <!--v2p603-->Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradi-
-[E] <!--v2p603-->tion, II. 184. Pope, not the successor of St. Peter,
-[E] <!--v2p603-->1I. 273.
+[E] <!--v2p603-->Papists, withhold the Scriptures, II. 132. do make ‘images for Divine worship, I. 182. Peter, disproved to have been
+[E] <!--v2p603-->Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradition, II. 184. Pope, not the successor of St. Peter, 1I. 273.
 [E] <!--v2p603-->Pope Clement 1V. anecdote of, I. 34. Pope Pius IV. maintained idolatry, I. 183.
 [E] <!--v2p603-->Prayer of Thomas Aquinas before study, I. 34. of St. Chrysostom, in use in the Greek Church, 112.
 [E] <!--v2p603-->Protestantism, vindicated, I. 183.
@@ -924,9 +808,7 @@
 [E] <!--v2p604-->Exod. XII. 14, Ye shall keep it a feast unto the Lord for ever I Dm 484
 [E] <!--v2p604-->XXXI. 16, 17, It is a perpetual covenant, a sign between me and the children of Israel Jor ever T" ABER E
 [E] <!--v2p604-->Levit. XIX. 17, Thou shalt in any wise rebuke thy neighbour and not suffer sin upon him II. 139
-[E] <!--v2p604-->  XXII. 2i, It shall be a statute for ever, &c. I. 484
-[E] <!--v2p604-->1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113
-[E] <!--v2p604-->1 Kings XI. 3, Women turned away his heart ,. II. 40
+[E] <!--v2p604-->  XXII. 2i, It shall be a statute for ever, &c. I. 484 1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40
 [CAPTION] VOL, PAGE.
 [E] <!--v2p605-->2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279
 [E] <!--v2p605-->Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55
@@ -987,16 +869,14 @@
 [E] <!--v2p607-->  VII. 19, The good that I would I do not, &c. I. 126,953
 [E] <!--v2p607-->  VIII. 24, We are saved by hope ettet bil 25, If we hope for that we see not, then do we with patience wait for it — .... 78 37, In all these things we are more than conquerors cece eens 135
 [E] <!--v2p607-->  XII. 5, We being many are one body in Christ, &c. 515 10, Be kindly affectioned one towards another, &c. - eco. » s 26
-[E] <!--v2p607-->  XV.2, Every one of us should please his neighbour eto T 125
-[E] <!--v2p607-->1 Cor. I. 26, Ye see your calling, brethren, &c. II. 93
+[E] <!--v2p607-->  XV.2, Every one of us should please his neighbour eto T 125 1 Cor. I. 26, Ye see your calling, brethren, &c. II. 93
 [E] <!--v2p607-->  II. 19, We have received the Spirit that we may know the things, &c. T Note, I. 38 14, The natural man receiveth not the things of the Spirit, &c. eee 452
 [E] <!--v2p607-->  IV. 8, Ye are full, ye are rich, ye have reigned as kings without us, &c. ete 385
 [E] <!--v2p607-->  V. 3, Being absent in the body, I am present with you in spirit .. TT 109
 [E] <!--v2p607-->  XII. 21, The head cannot say to the feet, Ye have no need of me T T 17
 [CAPTION] VOL. PAGE.
 [E] <!--v2p608-->1 Cor. XIII. 7, Charity hopeth all things TT I: 76 12, We see now through a glass darkly 181
-[E] <!--v2p608-->  XV. 20, Christ is risen—the first fruits, &c. 226
-[E] <!--v2p608-->2 Cor. II. 10, For what I myself forgive, if I have forgiven any thing, for your sakes forgave I it, &c. T T" 286
+[E] <!--v2p608-->  XV. 20, Christ is risen—the first fruits, &c. 226 2 Cor. II. 10, For what I myself forgive, if I have forgiven any thing, for your sakes forgave I it, &c. T T" 286
 [E] <!--v2p608-->  V. 18, 19, God was in Christ reconciling the world unto himself, &c. — H. 347 20, Now then we are ambassadors for Christ — 1. 9
 [E] <!--v2p608-->  Vi. 17, Come out from among them, and be ye separate OE ex II. 252
 [E] <!--v2p608-->  Xill. 5, Know ye not that Christ is in you Note, I. 38
@@ -1011,22 +891,17 @@
 [E] <!--v2p608-->  II. 7, 8, He humbled himself and became obedient unto death, &c. T II. 341 12, Work out your salvation with fear and trembling ae NN. I. 45
 [E] <!--v2p608-->  III. 18, Many walk of whom I have told you often and tell you now even weeping, that they are the enemies of the cross of Christ eae TT 476 2], Who shall change our vile body, &c. If. 22
 [CAPTION] VOL. PAGE.
-[E] <!--v2p609-->Phil. IV. 3, I can do all things through Christ who strengtheneth me boc Jee I. 330
-[E] <!--v2p609-->1 Thess. II. 12, We charged you that ye would walk worthy of God Steric 2 123
+[E] <!--v2p609-->Phil. IV. 3, I can do all things through Christ who strengtheneth me boc Jee I. 330 1 Thess. II. 12, We charged you that ye would walk worthy of God Steric 2 123
 [E] <!--v2p609-->  IV. 3, 4, This is the will of God, even your ' Sanctification — ...... TT 117
-[E] <!--v2p609-->  V. 12, We beseech you, brethren, to know them which labour among you eet 107, 342 17, Pray without ceasing +.» . «eee II. ae
-[E] <!--v2p609-->2 Thess. III. 6, Withdraw yourselves from every brother that walketh disorderly noo I. 374
-[E] <!--v2p609-->1 Tim. I. 12,13, I thank God who hath enabled me, &c. onosoc soe I. 62
+[E] <!--v2p609-->  V. 12, We beseech you, brethren, to know them which labour among you eet 107, 342 17, Pray without ceasing +.» . «eee II. ae 2 Thess. III. 6, Withdraw yourselves from every brother that walketh disorderly noo I. 374 1 Tim. I. 12,13, I thank God who hath enabled me, &c. onosoc soe I. 62
 [E] <!--v2p609-->  II. 4, God will have all men to be saved, &c. I. 324
 [E] <!--v2p609-->  III. 16, God was manifest in the flesh — .... 149.
 [E] <!--v2p609-->  IV. 12, Let no man despise thy youth Abn - 8
 [E] <!--v2p609-->Titus II. 11, The grace of God which bringeth salvation, &c. T T 93 14, He gave himself that he might purify us, &c. oou CE II. 520
 [E] <!--v2p609-->Hebrews 1. 3, Upholding all things by the word of his power p0000c Tae I. 205, 246 6, Let all the angels of God worship him 196, 428 14, Are they not all ministering spirits, &e. 431
-[E] <!--v2p609-->  X. 4, A body hast thou prepared me =. ee 256
-[E] <!--v2p609-->1 Pet.1.9, That ye may receive the end of your faith, &c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN
+[E] <!--v2p609-->  X. 4, A body hast thou prepared me =. ee 256 1 Pet.1.9, That ye may receive the end of your faith, &c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN
 [E] <!--v2p609-->  III. 14, The answer of a good conscience to- 224,443 wards God CET eos. = § dH. 17,100
-[E] <!--v2p609-->  V. 2, 3, Feed the flock of God which is among you, not as being lords, &c. Rr 293
-[E] <!--v2p609-->1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08
+[E] <!--v2p609-->  V. 2, 3, Feed the flock of God which is among you, not as being lords, &c. Rr 293 1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08
 [E] <!--v2p609-->Rev. XXII. 13, 7 am the first and the last eee 186 THE END.
 [SEC] errata|Errata|
 [E] <!--v2p610-->Page 42, § 3, line 4, for 11, read 2.

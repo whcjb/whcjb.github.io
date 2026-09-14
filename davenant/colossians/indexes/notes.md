@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 16:44
+date: 2026-09-14 09:44
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
@@ -66,16 +66,12 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Mendham's “ Literary Policy of the Church of Rome" noticed and recommended, 1. 76.</p>
 <p class="dv-idx">Modern departure fromChristianity,</p>
 <p class="dv-idx-letter">M</p>
-<p class="dv-idx">Mosheim cited on the character of Melancthon, 1. 193; on early</p>
-<p class="dv-idx">schisms, I. 202; 253.</p>
+<p class="dv-idx">Mosheim cited on the character of Melancthon, 1. 193; on early schisms, I. 202; 253.</p>
 <p class="dv-idx">Nicene Creed, history, and defence of, I, 177.</p>
 <p class="dv-idx">Ordinary, meaning of the term, 1.</p>
 <p class="dv-idx-letter">P</p>
-<p class="dv-idx">Papists, withhold the Scriptures, II. 132. do make ‘images for Divine wor-</p>
-<p class="dv-idx">ship, I. 182. Peter, disproved to have been</p>
-<p class="dv-idx">Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradi-</p>
-<p class="dv-idx">tion, II. 184. Pope, not the successor of St. Peter,</p>
-<p class="dv-idx">1I. 273.</p>
+<p class="dv-idx">Papists, withhold the Scriptures, II. 132. do make ‘images for Divine worship, I. 182. Peter, disproved to have been</p>
+<p class="dv-idx">Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradition, II. 184. Pope, not the successor of St. Peter, 1I. 273.</p>
 <p class="dv-idx">Pope Clement 1V. anecdote of, I. 34. Pope Pius IV. maintained idolatry, I. 183.</p>
 <p class="dv-idx">Prayer of Thomas Aquinas before study, I. 34. of St. Chrysostom, in use in the Greek Church, 112.</p>
 <p class="dv-idx">Protestantism, vindicated, I. 183.</p>

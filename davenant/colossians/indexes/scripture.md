@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-11 16:44
+date: 2026-09-14 09:44
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -25,9 +25,7 @@ next_label: "Errata"
 <p class="dv-idx">Exod. XII. 14, Ye shall keep it a feast unto the Lord for ever I Dm 484</p>
 <p class="dv-idx">XXXI. 16, 17, It is a perpetual covenant, a sign between me and the children of Israel Jor ever T" ABER E</p>
 <p class="dv-idx">Levit. XIX. 17, Thou shalt in any wise rebuke thy neighbour and not suffer sin upon him II. 139</p>
-<p class="dv-idx-2">XXII. 2i, It shall be a statute for ever, &amp;c. I. 484</p>
-<p class="dv-idx">1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113</p>
-<p class="dv-idx">1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
+<p class="dv-idx-2">XXII. 2i, It shall be a statute for ever, &amp;c. I. 484 1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
 <p class="dv-idx-caption">VOL, PAGE.</p>
 <p class="dv-idx">2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279</p>
 <p class="dv-idx">Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55</p>
@@ -88,16 +86,14 @@ next_label: "Errata"
 <p class="dv-idx-2">VII. 19, The good that I would I do not, &amp;c. I. 126,953</p>
 <p class="dv-idx-2">VIII. 24, We are saved by hope ettet bil 25, If we hope for that we see not, then do we with patience wait for it — .... 78 37, In all these things we are more than conquerors cece eens 135</p>
 <p class="dv-idx-2">XII. 5, We being many are one body in Christ, &amp;c. 515 10, Be kindly affectioned one towards another, &amp;c. - eco. » s 26</p>
-<p class="dv-idx-2">XV.2, Every one of us should please his neighbour eto T 125</p>
-<p class="dv-idx">1 Cor. I. 26, Ye see your calling, brethren, &amp;c. II. 93</p>
+<p class="dv-idx-2">XV.2, Every one of us should please his neighbour eto T 125 1 Cor. I. 26, Ye see your calling, brethren, &amp;c. II. 93</p>
 <p class="dv-idx-2">II. 19, We have received the Spirit that we may know the things, &amp;c. T Note, I. 38 14, The natural man receiveth not the things of the Spirit, &amp;c. eee 452</p>
 <p class="dv-idx-2">IV. 8, Ye are full, ye are rich, ye have reigned as kings without us, &amp;c. ete 385</p>
 <p class="dv-idx-2">V. 3, Being absent in the body, I am present with you in spirit .. TT 109</p>
 <p class="dv-idx-2">XII. 21, The head cannot say to the feet, Ye have no need of me T T 17</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
 <p class="dv-idx">1 Cor. XIII. 7, Charity hopeth all things TT I: 76 12, We see now through a glass darkly 181</p>
-<p class="dv-idx-2">XV. 20, Christ is risen—the first fruits, &amp;c. 226</p>
-<p class="dv-idx">2 Cor. II. 10, For what I myself forgive, if I have forgiven any thing, for your sakes forgave I it, &amp;c. T T" 286</p>
+<p class="dv-idx-2">XV. 20, Christ is risen—the first fruits, &amp;c. 226 2 Cor. II. 10, For what I myself forgive, if I have forgiven any thing, for your sakes forgave I it, &amp;c. T T" 286</p>
 <p class="dv-idx-2">V. 18, 19, God was in Christ reconciling the world unto himself, &amp;c. — H. 347 20, Now then we are ambassadors for Christ — 1. 9</p>
 <p class="dv-idx-2">Vi. 17, Come out from among them, and be ye separate OE ex II. 252</p>
 <p class="dv-idx-2">Xill. 5, Know ye not that Christ is in you Note, I. 38</p>
@@ -112,20 +108,15 @@ next_label: "Errata"
 <p class="dv-idx-2">II. 7, 8, He humbled himself and became obedient unto death, &amp;c. T II. 341 12, Work out your salvation with fear and trembling ae NN. I. 45</p>
 <p class="dv-idx-2">III. 18, Many walk of whom I have told you often and tell you now even weeping, that they are the enemies of the cross of Christ eae TT 476 2], Who shall change our vile body, &amp;c. If. 22</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
-<p class="dv-idx">Phil. IV. 3, I can do all things through Christ who strengtheneth me boc Jee I. 330</p>
-<p class="dv-idx">1 Thess. II. 12, We charged you that ye would walk worthy of God Steric 2 123</p>
+<p class="dv-idx">Phil. IV. 3, I can do all things through Christ who strengtheneth me boc Jee I. 330 1 Thess. II. 12, We charged you that ye would walk worthy of God Steric 2 123</p>
 <p class="dv-idx-2">IV. 3, 4, This is the will of God, even your ' Sanctification — ...... TT 117</p>
-<p class="dv-idx-2">V. 12, We beseech you, brethren, to know them which labour among you eet 107, 342 17, Pray without ceasing +.» . «eee II. ae</p>
-<p class="dv-idx">2 Thess. III. 6, Withdraw yourselves from every brother that walketh disorderly noo I. 374</p>
-<p class="dv-idx">1 Tim. I. 12,13, I thank God who hath enabled me, &amp;c. onosoc soe I. 62</p>
+<p class="dv-idx-2">V. 12, We beseech you, brethren, to know them which labour among you eet 107, 342 17, Pray without ceasing +.» . «eee II. ae 2 Thess. III. 6, Withdraw yourselves from every brother that walketh disorderly noo I. 374 1 Tim. I. 12,13, I thank God who hath enabled me, &amp;c. onosoc soe I. 62</p>
 <p class="dv-idx-2">II. 4, God will have all men to be saved, &amp;c. I. 324</p>
 <p class="dv-idx-2">III. 16, God was manifest in the flesh — .... 149.</p>
 <p class="dv-idx-2">IV. 12, Let no man despise thy youth Abn - 8</p>
 <p class="dv-idx">Titus II. 11, The grace of God which bringeth salvation, &amp;c. T T 93 14, He gave himself that he might purify us, &amp;c. oou CE II. 520</p>
 <p class="dv-idx">Hebrews 1. 3, Upholding all things by the word of his power p0000c Tae I. 205, 246 6, Let all the angels of God worship him 196, 428 14, Are they not all ministering spirits, &amp;e. 431</p>
-<p class="dv-idx-2">X. 4, A body hast thou prepared me =. ee 256</p>
-<p class="dv-idx">1 Pet.1.9, That ye may receive the end of your faith, &amp;c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN</p>
+<p class="dv-idx-2">X. 4, A body hast thou prepared me =. ee 256 1 Pet.1.9, That ye may receive the end of your faith, &amp;c. oo0cODE "n 84 18, Ye were redeemed not with corruptible things "— T" EN</p>
 <p class="dv-idx-2">III. 14, The answer of a good conscience to- 224,443 wards God CET eos. = § dH. 17,100</p>
-<p class="dv-idx-2">V. 2, 3, Feed the flock of God which is among you, not as being lords, &amp;c. Rr 293</p>
-<p class="dv-idx">1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08</p>
+<p class="dv-idx-2">V. 2, 3, Feed the flock of God which is among you, not as being lords, &amp;c. Rr 293 1 John IV. 7, Love is of God TP "m 119 8, God is love aono «e+. I. 65,08</p>
 <p class="dv-idx">Rev. XXII. 13, 7 am the first and the last eee 186 THE END.</p>

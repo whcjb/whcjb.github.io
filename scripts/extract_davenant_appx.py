@@ -357,6 +357,14 @@ def run_piece(pc, pages, out, stats):
             break
         if not lines:
             continue
+        # 行首斑点会把 x0 往左拽，段首缩进判据跟着失灵：p461 的
+        # `. ARGUMENT 2.` 行首多一个点，x0 从 305 变成 240，比上一行还靠左，
+        # 于是被判成续行、整条 ARGUMENT 并进了上一段（编号连续性闸抓到的）。
+        # 与正文那一侧同一套处理，见 E.unspeck。
+        for l in lines:
+            t2, x2 = E.unspeck(l)
+            if t2 != l['text']:
+                l['text'], l['x0'] = t2, x2
         body, fn = split_page(lines)
         if fn:
             fns.append((p, fn))

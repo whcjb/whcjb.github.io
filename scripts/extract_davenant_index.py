@@ -445,13 +445,39 @@ def main():
             cur, cur_p, cur_v2 = '', None, []
 
         letters = pick_letters(rows)
-        prev_key = None
+        prev_key, cont = None, False
         for ri, (p, col, l, t, kind) in enumerate(rows):
             if kind == 'head':
                 stats['head'] += 1
                 continue
+            # 文本判据要下放到**栏内每一行**，不只用在栏首。几何判据在
+            # 「整栏都是同一条长条目的续行」时彻底失效——那一栏没有更浅的
+            # 行可以当条目基线，hanging_starts 把每一行都判成条目起头
+            # （p582 右栏整栏 26 行都是 CHRIST 那一条的续行，全被切成 26 条）。
+            # 原书的条目词头一律大写（都是主题词与人名），所以以小写、标点
+            # 或页码起头的行只能是续行。
+            # 目次与 ERRATA 除外：它们的编号小节（`1. That he died…`）与
+            # `261, before § 3, read—` 是**真条目**，不是续行。
+            # 只留一条文本判据：以小写／标点／页码起头 → 一定是续行。
+            # 试过再加一条「上一行没以句点收尾也算续行」，在总索引上确实能
+            # 把 `God that he might teach salva-` 这种大写词起头的续行也接上，
+            # 但带**点线引导**的几块（传略、经文、问题）条目本来就不以句点
+            # 收尾，整块被并成几条——传略 164→24、经文 118→7。判据一旦依赖
+            # 「句点」，就把版式不同的几块一起赔进去了，不值。
+            cont = (pc['id'] not in ('contents-dissertation', 'errata')
+                    and bool(cur)
+                    and bool(re.match(r'^[a-z0-9,;:)\]]', t.strip())))
             if (p, col) != prev_key:
-                flush()          # 条目不跨页/跨栏续行，页眉两边的条目不能粘
+                # 条目**可以**跨页跨栏续行。原书长条目从左栏底接到右栏顶
+                # （p582 的 `CunisT, that he might be the Me-` / `diator,
+                # ought to be God-man`），而接续的那几行在版面上是**顶格**的，
+                # x0 与条目行一样——几何上分不出来，一刀切"不跨栏"就把长条目
+                # 切成了碎片（实测总索引 515 条里 109 条以小写/数字/标点起头）。
+                # 靠文本判：上一行以连字收尾，或新栏第一行以小写/数字/标点
+                # 起头，就是续行；否则照旧断开（页眉两边的条目仍然不会粘）。
+                cont = cont or (bool(cur) and cur.rstrip().endswith('-'))
+                if not cont:
+                    flush()
                 prev_key = (p, col)
             if kind == 'letter':
                 if ri in letters:
@@ -473,7 +499,10 @@ def main():
                 lv = 0 if starts[(p, col)].get(i) else 1
             else:
                 lv = sum(1 for c in cuts if l['x0'] - base[(p, col)] > c)
-            if lv >= deepest and cur:
+            # ⚠️ 跨栏续行不能在这里 `continue` 掉：下面的 seen[(p,col)] 是
+            # 每栏的行号计数，跳过一次，整栏后面的层级全歪一格（实测「该并
+            # 没并」从 109 涨到 171）。改成照常记账，只是强制走合并那一支。
+            if (cont and cur) or (lv >= deepest and cur):
                 cur = E.dehyph(cur, t)
                 if l.get('vol2'):
                     cur_v2.append(l['vol2'])

@@ -113,7 +113,14 @@ LABEL_ALIAS = {'REERVY': 'REPLY', 'RREPRV': 'REPLY', 'RERRV': 'REPLY',
                'OSNJRCRIN': 'OBJECTION'}
 # 词里要容数字：OCR 会把字母读成数字（`Osnjrcri0N 17.` 里的 `0` 其实是 `O`），
 # 字符类不放数字的话这一条连 LABEL_RE 都匹配不上，别名表再全也用不到。
-LABEL_RE = re.compile(r"^([A-Za-z][A-Za-z0-9;,.'’]{2,13})\.?(\s+\d{1,2}\s*[.,])")
+# 编号位同样要容字形变体与序数后缀：原书的 `ARGUMENT 1st.` 被读成
+# `ARGUMENT lst.`、`OBJECTION 11.` 被读成 `OpsectTion 1].`，编号里带了
+# `l` / `]`，只认纯数字这两条 lemma 连 LABEL_RE 都匹配不上，标签归一与
+# 后面的编号连续性检查全落空（实测 ARGUMENT 少一条、OBJECTION 少一条）。
+# 行首也容三两个非字母：`. ARGUMENT 2.` 那个点是扫描斑点。
+LABEL_RE = re.compile(
+    r"^[^A-Za-z]{0,3}([A-Za-z][A-Za-z0-9;,.'’]{2,13})\.?"
+    r"(\s+[\dlI\]\[|]{1,3}(?:st|nd|rd|th)?\s*[.,])")
 
 
 def fix_label(t):
@@ -137,12 +144,15 @@ def fix_label(t):
                              and abs(len(key) - len(best)) <= 3
                              and key.lower() not in DICT_WORDS):
             return t, None
-    if m.group(1) == best:
-        return t, None
+    # ⚠️ 不能在「标签词已经对了」时就早退：编号位可能还是花的
+    # （`ARGUMENT lst.` 的 `lst` 是 `1st`），行首也可能挂着扫描斑点
+    # （`. ARGUMENT 2.`）。一律重排一遍，真没变才返回 None。
     # key == best 也要改：第二证人常把 `OsjEcTioN` 校成 `Objection`，
     # 拼写对了但大小写不是原书的小型大写，同一章里会一半 OBJECTION、
     # 一半 Objection。一律归到全大写。
-    return best + m.group(2) + t[m.end():], (m.group(1), best)
+    num = m.group(2).translate(_DIGIT_FIX)
+    out = best + num + t[m.end():]
+    return (out, (m.group(1), best)) if out != t else (t, None)
 
 
 # ── 页脚书帖签名 ────────────────────────────────────────────────────────
@@ -316,6 +326,24 @@ def page_body_x0(lines):
         return 0
     c = collections.Counter(round(l['x0'] / 5) * 5 for l in lines)
     return c.most_common(1)[0][0]
+
+
+# 行首的孤立斑点会把 x0 往左拽，段首缩进判据跟着失灵：vol2 p461 的
+# `. ARGUMENT 2.` 行首多一个点，x0 从 305 变成 240，比上一行还靠左，
+# 于是被判成续行、整条 ARGUMENT 并进了上一段（编号连续性闸抓到的）。
+# 斑点只认这几个在本书里从不合法出现在行首的字符。
+HEAD_SPECK = re.compile(r"^\s*[.,;:'\u2019\u201c\u201d|/*+~^`\-]{1,2}\s+(?=[A-Za-z])")
+
+
+def unspeck(l):
+    """→ (去掉行首斑点的文本, 修正后的 x0)。按字符数比例把 x0 推回去。"""
+    t = l['text']
+    m = HEAD_SPECK.match(t)
+    if not m:
+        return t, l['x0']
+    cut = m.end()
+    x0 = l['x0'] + int((l['x1'] - l['x0']) * cut / max(len(t), 1))
+    return t[cut:], x0
 
 
 def para_starts(lines, x0, indent_min):
@@ -548,6 +576,11 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
                 stats['foot'] += 1
                 continue
             break
+        # 行首斑点先剥掉并把 x0 推回去，否则段首判据整行失灵（见 unspeck）
+        for l in lines:
+            t2, x2 = unspeck(l)
+            if t2 != l['text']:
+                l['text'], l['x0'] = t2, x2
         body, fn = split_page(lines, fn_max)
         if fn:
             stats['fn_pages'] += 1

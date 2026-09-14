@@ -90,30 +90,43 @@ def gate_a(name, got, vol, lo, hi):
 
 
 def gate_b(items):
-    seq = collections.defaultdict(list)
+    """编号是**按章**重新起头的（每章各有自己的 ARGUMENT 1..N），所以要
+    按章切开看。只报「同一章内不是 1,2,3… 连着走」的。"""
+    runs, cur = collections.defaultdict(list), None
     for tag, txt in items:
-        body = strip_pg(txt)[0]
-        m = re.match(r'(OBJECTION|REPLY|ARGUMENT|ANSWER)\s+(\d{1,3})\b', body)
-        if m:
-            seq[m.group(1)].append(int(m.group(2)))
+        body, pg, _ = strip_pg(txt)
+        # 序数后缀要一起吃掉：原书写 `ARGUMENT 1st.`，`\b` 卡在 `1` 后面
+        # 匹配不上，这一条就漏出去，编号看着像是从 2 起头的。
+        m = re.match(r'(OBJECTION|REPLY|ARGUMENT|ANSWER)\s+(\d{1,3})'
+                     r'(?:st|nd|rd|th)?[.,\s]', body)
+        if not m:
+            continue
+        n = int(m.group(2))
+        key = m.group(1)
+        if not runs[key] or n != runs[key][-1][-1] + 1:
+            runs[key].append([n])             # 起新的一串
+        else:
+            runs[key][-1].append(n)
     print('  Gate B 编号连续：')
-    for k, v in sorted(seq.items()):
-        runs, cur = [], [v[0]]
-        for a, b in zip(v, v[1:]):
-            (cur.append(b) if b == a + 1 else (runs.append(cur), cur.clear(),
-                                               cur.append(b)))
-        runs.append(cur)
-        gaps = [f'{r[0]}–{r[-1]}' for r in runs if r]
-        flag = '' if len(runs) == 1 else f'   <<< 断成 {len(runs)} 段：{gaps}'
-        print(f'    {k:10} 共 {len(v):3} 条  1–{max(v)}{flag}')
+    for k, rs in sorted(runs.items()):
+        broken = [r for r in rs if r[0] != 1]
+        total = sum(len(r) for r in rs)
+        flag = ''
+        if broken:
+            flag = f'   <<< {len(broken)} 串不是从 1 起：' + \
+                   ', '.join(f'{r[0]}–{r[-1]}' for r in broken[:4])
+        print(f'    {k:10} 共 {total:3} 条，分 {len(rs)} 章{flag}')
 
 
 def gate_c(items):
+    """页序单调。脚注排在各自页的末尾、按页归章，天然不与正文同序，排除。"""
     bad = 0
     last, cur = 0, None
     for tag, txt in items:
         if tag == 'SEC':
             last, cur = 0, txt.split('|')[0]
+            continue
+        if tag in ('FN', 'END', 'CITE'):
             continue
         _, a, b = strip_pg(txt)
         if a is None:
@@ -122,49 +135,105 @@ def gate_c(items):
             bad += 1
             if bad <= 5:
                 print(f'    页码倒退 {cur}: {last} → {a}')
-        last = max(last, b or a)
+        last = b or a
     print(f'  Gate C 页序单调：倒退 {bad} 处')
 
 
 def gate_d_e(items):
-    letter, bad_first, no_page, n = None, [], 0, 0
+    """Gate D 改判「该并没并」，不判「首字母对不对」。
+
+    索引是悬挂缩进：条目顶格、回行缩进。回行被误判成新条目时，它多半以
+    小写字母、标点或页码起头——`II. 15; what knowledge was in`、
+    `ful, and what evil, 68`。按首字母比对分区字母是没用的：同一字母段里
+    本来就有大量合法的回行，实测 964 条里报 295 条，全是噪声。
+    """
+    n = orphan = no_page = 0
+    ex, blk = [], None
     for tag, txt in items:
-        body = strip_pg(txt)[0].strip()
-        if tag == 'LETTER':
-            letter = body.strip('. ')[:1].upper()
+        if tag == 'SEC':
+            blk = txt.split('|')[0]
             continue
-        if tag != 'E':
+        if tag != 'E' or blk in ('contents-dissertation', 'errata'):
+            continue                      # 目次的编号小节与勘误条目本就这样起头
+        body = strip_pg(txt)[0].strip()
+        if not body:
             continue
         n += 1
         if not re.search(r'\d', body):
             no_page += 1
-        if letter and body[:1].isupper() and body[:1] != letter \
-                and not body[:1].isdigit():
-            bad_first.append((letter, body[:38]))
-    print(f'  Gate D 字母分区：条目 {n}，首字母与分区不符 {len(bad_first)}')
-    for l, b in bad_first[:6]:
-        print(f'    [{l}] {b}')
-    print(f'  Gate E 条目带页码：不含数字的条目 {no_page} / {n}')
+        if re.match(r'^[a-z]|^[,;:)\]]|^\d+[,;.]', body):
+            orphan += 1
+            if len(ex) < 6:
+                ex.append(body[:52])
+    print(f'  Gate D 该并没并：{n} 条里 {orphan} 条以小写/标点/页码起头')
+    for e in ex:
+        print(f'    {e}')
+    print(f'  Gate E 条目带页码：不含数字的 {no_page} / {n}')
 
 
 def gate_f(items):
-    titles = [strip_pg(t)[0] for g, t in items if g == 'E']
-    appx = (RAW / 'davenant_colossians_appendix.txt').read_text(encoding='utf-8')
-    heads = re.findall(r'^\[SEC\] [^|]*\|([^|]*)', appx, re.M)
-    heads += re.findall(r'^\[BODY\] (?:<!--[^>]*-->)?(CHAP[^.]*\..{0,60})',
-                        appx, re.M)
-    miss = []
-    for t in titles:
-        key = re.sub(r'[^a-z ]', ' ', t.lower())
-        key = ' '.join(key.split()[:6])
-        if not key:
+    """目录列的章题，要在**已发布的附卷页**的 subtitle 里找得到。
+
+    目录与正文是两处独立 OCR 出来的同一批标题，互为证人：对不上就说明
+    至少有一边读坏了，或者某一章根本没抽出来。
+    """
+    subs = []
+    for f in sorted((ROOT / 'davenant' / 'colossians' / 'dissertation').glob('*.md')):
+        m = re.search(r'^subtitle:\s*"(.*)"$', f.read_text(encoding='utf-8'), re.M)
+        if m:
+            subs.append(m.group(1).lower())
+    miss, titles_ch = [], []
+    for g, t in items:
+        if g != 'E':
             continue
-        if not any(difflib.SequenceMatcher(None, key, h.lower()).ratio() > 0.5
-                   for h in heads):
-            miss.append(t[:60])
-    print(f'  Gate F 目录对章：{len(titles)} 条，附卷里找不到对应章题 {len(miss)}')
-    for m in miss[:8]:
-        print(f'    {m}')
+        body = strip_pg(t)[0]
+        # 目录行是 `IV. 章题 …… 页码`，把序号、引点、页码剥掉
+        key = re.sub(r'^\s*[IVXLivxl\d]{1,5}[.,]?\s*', '', body)
+        key = re.sub(r'[.\s]{3,}.*$|\s+\d+\s*\.?\s*$', '', key)
+        key = ' '.join(re.sub(r'[^a-z ]', ' ', key.lower()).split())
+        if len(key.split()) < 3 or not re.match(r'^\s*[IVXL]{1,5}[.,]', body):
+            continue                      # 只看章级（罗马数字起头）那几条
+        titles_ch.append(body)
+        if not any(difflib.SequenceMatcher(None, key, sub).ratio() > 0.55
+                   for sub in subs):
+            miss.append(body[:58])
+    # 目次与章头是原书自己写的两套说法（目次 `V. The Confirmation of the
+    # doctrine, and objections answered`，章头 `ANSWERS TO OBJECTIONS`），
+    # 对不上不等于出错。这道闸只报**数目**与配不上的清单，供人看，不判死。
+    print(f'  Gate F 目录对章：已发布章题 {len(subs)} 个，'
+          f'目次章级条目 {len(titles_ch)} 条，字面配不上 {len(miss)} 条（供核，非判错）')
+
+
+def gate_g():
+    """渲染层校验（old-book-ocr skill §3.4）。正文对不等于页面对。
+
+    斜体是从像素上量出来贴回去的，最容易出的错是「跑飞」——归一化没到
+    不动点，`<em>` 从一处一路开到页尾。四项都很便宜：
+      · `<em>` 开闭配平
+      · `<em>` 内容首尾不带空白（带空白＝边界贴错了位置）
+      · 锚点 id 不重复（重复则页内跳转跳错地方）
+      · 锚点总数（每轮比对，数字必须稳定）
+    """
+    pages = sorted((ROOT / 'davenant' / 'colossians').rglob('*.md'))
+    bad_em = bad_ws = dup = anchors = 0
+    for f in pages:
+        t = f.read_text(encoding='utf-8')
+        if t.count('<em>') != t.count('</em>'):
+            bad_em += 1
+            print(f'    <em> 不配平: {f.name}')
+        for m in re.finditer(r'<em>(.*?)</em>', t, re.S):
+            if m.group(1) != m.group(1).strip():
+                bad_ws += 1
+                if bad_ws <= 5:
+                    print(f'    <em> 边界带空白: {f.name} {m.group(1)[:40]!r}')
+        ids = re.findall(r'id="([^"]+)"', t)
+        anchors += len(ids)
+        for k, n in collections.Counter(ids).items():
+            if n > 1:
+                dup += 1
+                print(f'    锚点 id 重复: {f.name} {k} ×{n}')
+    print(f'  Gate G 渲染层：页面 {len(pages)}，锚点 {anchors}，'
+          f'<em> 不配平 {bad_em}，边界带空白 {bad_ws}，重复 id {dup}')
 
 
 def main():
@@ -186,6 +255,9 @@ def main():
            max(p['hi'] for p in X.PIECES))
     gate_c(idx)
     gate_d_e(idx)
+    print()
+    gate_g()
+
     cont = []
     keep = False
     for g, t in idx:
