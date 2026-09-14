@@ -115,7 +115,6 @@ chapter	ours	witness	votes	polled	verdict
 1	urbs	urbs	3	4	confirm
 1	civitas	civitas	4	4	confirm
 1	Nor'dh	nordh	3	4	reject
-1	iveaJccned	weakened	4	4	reject
 1	scelus	scelus	3	4	confirm
 1	estjugulare	est	4	4	reject
 1	Falernum	jugular	2	4	reject
@@ -187,7 +186,6 @@ chapter	ours	witness	votes	polled	verdict
 10	sns	s	2	4	reject
 10	TW	i	2	4	reject
 10	nn	makes	2	4	reject
-10	or	for	4	4	realword?
 10	instrurmint	instru	4	4	reject
 10	Asshur	Asshur	4	4	confirm
 10	Assur	Assur	4	4	confirm
@@ -552,13 +550,12 @@ chapter	ours	witness	votes	polled	verdict
 11	intepretations	intepretations	4	4	confirm
 11	munita	munita	4	4	confirm
 11	SPSS	with	3	4	reject
-12	or	for	2	2	realword?
 12	sttjy	for	3	4	reject
 12	xb	xb	3	4	confirm
 12	JTW	of	2	4	reject
 12	rn	of	3	4	reject
 12	rrjiTi	knobel	4	4	reject
-12	Jcnoivn	known	4	4	reject
+12	contended	con	4	4	reject
 12	nrm	in	4	4	reject
 12	hs	late	4	4	reject
 13	facto	facto	4	4	confirm
@@ -1368,7 +1365,6 @@ chapter	ours	witness	votes	polled	verdict
 18	I'aa	to	2	4	reject
 18	ncun	ncun	3	4	confirm
 18	knives	knives	4	4	confirm
-18	or	for	3	4	realword?
 18	rnnj	ft	2	4	reject
 18	darinnen	darinnen	4	4	confirm
 18	nisten	nisten	4	4	confirm
@@ -2969,8 +2965,8 @@ chapter	ours	witness	votes	polled	verdict
 34	Petra	Petra	4	4	confirm
 34	Burckhardt	Burckhardt	4	4	confirm
 34	Tafyle	Tafyle	4	4	confirm
-34	Jcatta	katta	3	4	reject
-34	Jcatta	katta	3	4	reject
+34	katta	katta	3	4	confirm
+34	katta	katta	3	4	confirm
 34	quisquis	quisquis	4	4	confirm
 34	conabitur	conabitur	4	4	confirm
 34	Burckhardt	Burckhardt	4	4	confirm
@@ -3242,7 +3238,6 @@ chapter	ours	witness	votes	polled	verdict
 37	Micaiah	Micaiah	4	4	confirm
 37	oveidifffjiov	tuagint	4	4	reject
 37	Verwerfung	Verwerfung	4	4	confirm
-37	RabghaJceh	rab	3	4	reject
 37	iwin	n	3	4	reject
 37	cpn	cpn	3	4	confirm
 37	mnn	main	2	4	reject
@@ -3454,8 +3449,6 @@ chapter	ours	witness	votes	polled	verdict
 39	rna	s	2	4	reject
 39	armour	armour	4	4	confirm
 39	ipV	ir	3	4	reject
-39	Hezc	heze	4	4	reject
-39	Jciah	Jciah	2	4	confirm
 39	Ahijah	Ahijah	4	4	confirm
 39	oh	ch	3	4	realword?
 39	Zedekiah	Zedekiah	4	4	confirm
@@ -3495,8 +3488,6 @@ chapter	ours	witness	votes	polled	verdict
 39	yala	yala	2	4	confirm
 39	TIVQI	fii	2	4	reject
 39	mortui	mortui	4	4	confirm
-39	spo	spo	4	4	confirm
-39	Jcen	ken	4	4	reject
 39	n	o	2	2	realword?
 39	Icall	i	4	4	reject
 4	ftW	b	3	4	reject

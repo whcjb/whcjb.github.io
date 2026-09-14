@@ -216,6 +216,9 @@ MANUAL_RE = [
     (re.compile(r'\bKonigsberg\b'), 'Königsberg'),
     # 人名 Augusti 的结尾 i 被读成感叹号，全书 9 处
     (re.compile(r'\bAugust!(?=[\s,)])'), 'Augusti'),
+    # 字母 k 被扫成 Jc（`HezeJciah`、`spo-Jcen`、`Jcnoivn`）。全书 9 处，
+    # 没有一处是真的 Jc——这本书里 J 后面从不接 c。
+    (re.compile(r'\bJc(?=[a-z])|(?<=[A-Za-z-])Jc'), 'k'),
     # 逗号被扫成两个：全书 20 处，没有一处是原文就有的。后面紧跟字母
     # （或紧跟一个**开**斜体星号再跟字母）时，被吞掉的那个空格要补回来
     # ——`Rosenmüller,,Hengstenberg`、`asseveration,,*certainly,*`；
@@ -261,18 +264,27 @@ _SPLIT_STOP = {'um', 'us', 'ae', 'que', 've', 're', 'll', 'st', 'th', 'ed', 'es'
 # 右括号——这样 `Ps. 111: 1.`、`ch. 1-39`、`v. 1 was conditional` 这些真的
 # 数字都进不来；`Tft'1`、`1315\*1`、`^E"1` 这些希伯来残串也进不来（它们的
 # 1 前面没有空格）。再排掉 `the 1`（第 60 章那处说的是希伯来字母 vav）。
-_ONE_AUX = (r'will|shall|have|had|am|was|do|did|know|bring|see|said|say|think|'
-            r'would|could|may|might|must|should|can|first')
+_ONE_AUX = (r'(?:(?:will|shall|have|had|am|was|do|did|know|bring|see|said|say|'
+            r'think|would|could|may|might|must|should|can|first|trust|go|hate|'
+            r'love)\b|\((?:am|is|was)\))')
 # 圣经卷名缩写要列全，漏一个就把书卷号 `1` 当成问号改掉：`1 Ch. 21: 9`、
 # `1 Mace. 4: 23`（Macc 被扫成 Mace）都踩过。
 _ONE_BOOK = (r'(?:Sam|Kings|Kin|Chron|Chr|Ch|Cor|Thess|Thes|Tim|Pet|Peter|John|'
              r'Macc|Mace|Mac|Esdras|Esdr|K)\b')
-_ONE_I = re.compile(r'(?<=[a-z,;’\'*)])(?<!\bthe)\s1(?=\s+(?:' + _ONE_AUX + r')\b)')
-_ONE_Q = re.compile(r'(?<=[a-z,;’\'*)])\s1(?=\*|\s*\(|\s+(?!' + _ONE_BOOK + r')([A-Z][a-z]*))')
+_ONE_I = re.compile(r'(?<=[a-z,;’\'*)])(?<!\bthe)\s1(?=\s+' + _ONE_AUX + r')')
+# 斜体或括号紧贴着的 `1` 也是 I：`*(1 trust),*`、`*1 was not rebellious,*`。
+# 要求再往前是空白，`1315\*1 may` 这种希伯来残串（`*` 前面是 `\`）才进不来。
+_ONE_I2 = re.compile(r'(\s[(*]{1,2})1(?=\s+' + _ONE_AUX + r')')
+# 后面跟左括号的**不能**当问号：`for 1 (am) thy God` 里那个 1 是 I。
+# 之前为了 `Who created these 1 (who is)` 加过这一支，结果把第 41 章改坏了，
+# 那一处改回人工核定。
+_ONE_Q = re.compile(r'(?<=[a-z,;’\'*)])\s1(?=\*|\s+(?!' + _ONE_BOOK + r')([A-Z][a-z]*))')
 
 
 def fix_ocr_one(raw, lex=None):
     out, a = _ONE_I.subn(' I', raw)
+    out, a2 = _ONE_I2.subn(r'\g<1>I', out)
+    a += a2
 
     def q(m):
         # 后面那个大写词必须是**词典里的词**。`Behold, 1 Imcw them` 里的
