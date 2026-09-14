@@ -336,7 +336,6 @@ chapter	ours	witness	votes	polled	verdict
 10	Brentius	Brentius	4	4	confirm
 10	Hagg	Hagg	4	4	confirm
 10	pergat	pergat	4	4	confirm
-10	August	augusti	4	4	realword?
 10	fortfahren	fortfahren	4	4	confirm
 10	aufhoren	aufhoren	4	4	confirm
 10	hd	and	4	4	reject
@@ -601,7 +600,6 @@ chapter	ours	witness	votes	polled	verdict
 13	Lehrg	Lehrg	3	4	confirm
 13	w	c	2	4	realword?
 13	Rosenmüller	rosenmuller	3	4	realword?
-13	August	augusti	2	2	realword?
 13	exulters	exulters	4	4	confirm
 13	exulters	exulters	4	4	confirm
 13	Croesus	Croesus	4	4	confirm
@@ -1471,7 +1469,6 @@ chapter	ours	witness	votes	polled	verdict
 19	fortasse	sint	4	4	reject
 19	patebit	magis	4	4	reject
 19	nunc	nunc	4	4	confirm
-19	August	augusti	3	3	realword?
 19	aut	aut	4	4	confirm
 19	etiam	etiam	3	4	confirm
 19	sciant	sciant	4	4	confirm
@@ -2072,8 +2069,8 @@ chapter	ours	witness	votes	polled	verdict
 25	sp	a	3	4	reject
 25	fisn	tisn	2	4	reject
 25	Zornhauch	Zornhauch	4	4	confirm
-25	Schnauben	Schnauben	4	4	confirm
-25	tnt	wall	2	4	reject
+25	Schnauben	ing	4	4	reject
+25	tnt	bit	2	4	reject
 25	Macpherson's	Macpherson's	4	4	confirm
 25	Bauer	Bauer	4	4	confirm
 25	fciriBtt	psn	2	4	reject
@@ -2976,7 +2973,6 @@ chapter	ours	witness	votes	polled	verdict
 34	Jcatta	katta	3	4	reject
 34	quisquis	quisquis	4	4	confirm
 34	conabitur	conabitur	4	4	confirm
-34	August	augusti	3	4	realword?
 34	Burckhardt	Burckhardt	4	4	confirm
 34	perpendiculuni	perpendiculum	4	4	reject
 34	Rosenmüller's	rosenmuller's	2	3	realword?
@@ -3076,9 +3072,8 @@ chapter	ours	witness	votes	polled	verdict
 35	auf	auf	4	4	confirm
 35	ganz	ganz	4	4	confirm
 35	sprosset	sprosset	4	4	confirm
-35	August	augusti	4	4	realword?
 35	bluhen	bluhen	3	4	confirm
-35	ja	ja	3	3	confirm
+35	ja	ja	4	4	confirm
 35	Eno	babylonians	4	4	reject
 35	aderunt	aderunt	4	4	confirm
 35	Kennicott	Kennicott	2	4	confirm
@@ -3554,9 +3549,8 @@ chapter	ours	witness	votes	polled	verdict
 4	Ungewitter	Ungewitter	4	4	confirm
 40	sp	sentence	5	5	reject
 40	fcific	application	4	5	reject
-40	th	the	3	3	realword?
-40	popuh	popuh	3	5	confirm
-40	ht	let	3	5	reject
+40	popule	popuh	3	5	reject
+40	meus	mens	3	5	fix
 40	cxa	cn	2	5	reject
 40	dicet	dicet	2	5	confirm
 40	Rosenmüller	rosenmiiller	3	5	realword?
@@ -3565,14 +3559,12 @@ chapter	ours	witness	votes	polled	verdict
 40	prophetica	prophetica	4	5	confirm
 40	poavroe	oavzog	2	5	reject
 40	let	jet	4	5	realword?
-40	be	he	5	5	realword?
 40	rrrn	n	4	5	reject
 40	reveletur	reveletur	3	5	confirm
 40	be	he	2	3	realword?
 40	Ob	Ob	4	5	confirm
 40	vox	vox	5	5	confirm
 40	dicentis	dicentis	5	5	confirm
-40	August	augusti	3	3	realword?
 40	sn	the	4	5	reject
 40	rriru	itin	2	5	reject
 40	esthetic	asthetic	2	4	reject
@@ -3967,7 +3959,6 @@ chapter	ours	witness	votes	polled	verdict
 44	Libanum	Libanum	5	5	confirm
 44	homines	homines	5	5	confirm
 44	fuerunt	fuerunt	3	5	confirm
-44	supplenda	supplenda	3	5	confirm
 44	constructioncs	constructiones	2	5	reject
 44	quam	quam	3	5	confirm
 44	suo	suo	5	5	confirm
@@ -4084,7 +4075,6 @@ chapter	ours	witness	votes	polled	verdict
 45	general	genera	4	5	realword?
 45	WFI	inn	2	5	reject
 45	fleeing	fleeing	5	5	confirm
-45	itl	it	4	5	reject
 45	ZDJ	za	2	5	reject
 45	Rosenmüller	rosenmiiller	2	2	realword?
 45	ip	j	3	5	reject
@@ -4230,7 +4220,6 @@ chapter	ours	witness	votes	polled	verdict
 48	Gousset	Gousset	5	5	confirm
 48	vaticinium	vaticinium	5	5	confirm
 48	Jsb	x	2	5	reject
-48	Imcw	knew	4	5	reject
 48	Iknew	ikneio	2	5	reject
 48	riaapi	ti	2	5	reject
 48	quando	quando	4	5	confirm
@@ -4725,7 +4714,6 @@ chapter	ours	witness	votes	polled	verdict
 52	Procopius	Procopius	5	5	confirm
 52	pp	pp	4	5	confirm
 52	Comm	Comm	5	5	confirm
-52	August	augusti	5	5	realword?
 52	Bahrdt	Bahrdt	5	5	confirm
 52	Staudlin	Staudlin	5	5	confirm
 52	Akiba	Akiba	5	5	confirm
@@ -4982,7 +4970,6 @@ chapter	ours	witness	votes	polled	verdict
 54	Einleitung	Einleitung	5	5	confirm
 54	pp	pp	5	5	confirm
 54	Eia	hos	3	5	reject
-54	mt	into	2	4	reject
 54	Tp	Tp	2	5	confirm
 54	regimine	regimine	5	5	confirm
 54	armourer	armourer	5	5	confirm
@@ -5718,7 +5705,6 @@ chapter	ours	witness	votes	polled	verdict
 64	Epiphanes	Epiphanes	4	5	confirm
 64	pre	pre	5	5	confirm
 65	I	v	3	3	realword?
-65	asked	ashed	2	3	realword?
 65	qv	i	2	5	reject
 65	Moshe	Moshe	4	5	confirm
 65	Haccohen	Haccohen	5	5	confirm

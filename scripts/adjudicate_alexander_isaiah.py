@@ -214,6 +214,8 @@ MANUAL_RE = [
     # 都清清楚楚带两点，全书各 13 / 1 处，逐条列不如一条正则。
     (re.compile(r'\bHavernick\b'), 'Hävernick'),
     (re.compile(r'\bKonigsberg\b'), 'Königsberg'),
+    # 人名 Augusti 的结尾 i 被读成感叹号，全书 9 处
+    (re.compile(r'\bAugust!(?=[\s,)])'), 'Augusti'),
     # 逗号被扫成两个：全书 20 处，没有一处是原文就有的。后面紧跟字母
     # （或紧跟一个**开**斜体星号再跟字母）时，被吞掉的那个空格要补回来
     # ——`Rosenmüller,,Hengstenberg`、`asseveration,,*certainly,*`；
@@ -240,8 +242,48 @@ _ROMAN_TAIL = {'n': 'ii', 'm': 'iii', 'u': 'ii'}
 # 坏活字）、`ovy.ov`（希腊文）、`portae.juvat`（拉丁诗）都留给人判。
 # `um` 这类既是词又是拉丁词尾的，拆了会把 `propheticum` 拆成两半，列进停用词。
 _SPLIT = re.compile(r'\b([a-z]{2,})([.]|- )([a-z]{2,})\b')
+_DEG = re.compile(r'\b([A-Za-z]+)°([A-Za-z]+)\b')
+_DEG_LONE = re.compile(r'(?<=\s)°\s')
+# 行末断词把后缀甩出去（`snort ing`、`comprehensive ness`）**没有**做成规则：
+# 这份词表对 词+后缀 太宽松，`beingless` 也认，`being less insensible` 会被
+# 拼成 `beingless`；想用「后缀本身不是词」兜底又不行，`ing`/`less` 在表里都是词。
+# 这类只能逐条人工核，条目在 manual_fixes.tsv。
 _SPLIT_STOP = {'um', 'us', 'ae', 'que', 've', 're', 'll', 'st', 'th', 'ed', 'es',
                'e', 'g', 'i', 'q', 'v', 's', 'd', 'p'}
+
+
+# 问号与大写 I 都被扫成了阿拉伯数字 1。这本书里问句极多（Alexander 的译文
+# 满篇反问），`?` 的钩子淡一点就读成 1；行首的 `I` 同理。两者靠**后面跟什么**
+# 分：跟助动词的是 I（`1 will avenge`），跟斜体收尾星号或新句首大写的是 ?
+# （`why continue to revolt 1*`）。
+#
+# 前面也要设闸：`1` 必须**前接空格**，且空格前是小写字母／逗号／分号／星号／
+# 右括号——这样 `Ps. 111: 1.`、`ch. 1-39`、`v. 1 was conditional` 这些真的
+# 数字都进不来；`Tft'1`、`1315\*1`、`^E"1` 这些希伯来残串也进不来（它们的
+# 1 前面没有空格）。再排掉 `the 1`（第 60 章那处说的是希伯来字母 vav）。
+_ONE_AUX = (r'will|shall|have|had|am|was|do|did|know|bring|see|said|say|think|'
+            r'would|could|may|might|must|should|can|first')
+# 圣经卷名缩写要列全，漏一个就把书卷号 `1` 当成问号改掉：`1 Ch. 21: 9`、
+# `1 Mace. 4: 23`（Macc 被扫成 Mace）都踩过。
+_ONE_BOOK = (r'(?:Sam|Kings|Kin|Chron|Chr|Ch|Cor|Thess|Thes|Tim|Pet|Peter|John|'
+             r'Macc|Mace|Mac|Esdras|Esdr|K)\b')
+_ONE_I = re.compile(r'(?<=[a-z,;’\'*)])(?<!\bthe)\s1(?=\s+(?:' + _ONE_AUX + r')\b)')
+_ONE_Q = re.compile(r'(?<=[a-z,;’\'*)])\s1(?=\*|\s*\(|\s+(?!' + _ONE_BOOK + r')([A-Z][a-z]*))')
+
+
+def fix_ocr_one(raw, lex=None):
+    out, a = _ONE_I.subn(' I', raw)
+
+    def q(m):
+        # 后面那个大写词必须是**词典里的词**。`Behold, 1 Imcw them` 里的
+        # `Imcw` 是 `knew` 读崩的，那个 1 是 `I` 不是 `?`；判不动就不动。
+        w = m.group(1)
+        if w and lex is not None and not is_word(w.lower(), lex):
+            return m.group(0)
+        return '?'
+
+    out, b = _ONE_Q.subn(q, out)
+    return out, a + b
 
 
 def fix_split_words(raw, lex, compounds=frozenset()):
@@ -260,6 +302,24 @@ def fix_split_words(raw, lex, compounds=frozenset()):
         return m.group(0)
 
     out, _ = _SPLIT.subn(one, raw)
+
+    # `°` 是空格或字母 o 被扫成的度数号：`dispelled°by`、`in°the`、`n°t`。
+    # 先按上面那两条判（拼起来是词 / 拆开都是词），都不成立再试「它其实是 o」。
+    def deg(m):
+        a, c = m.group(1), m.group(2)
+        if is_word(a + c, lex):
+            return a + c
+        # 「它其实是 o」要排在拆分**前面**：`n°t` 拆成 `n t` 两个单字母
+        # 也能过词典闸（a / i 之外的单字母在这份词表里也算词），拼成 `not` 才对。
+        if is_word(a + 'o' + c, lex):
+            return a + 'o' + c
+        if len(a) >= 2 and len(c) >= 2 and is_word(a, lex) and is_word(c, lex):
+            return a + ' ' + c
+        return m.group(0)
+
+    out = _DEG.sub(deg, out)
+    out = _DEG_LONE.sub('', out)
+
     return out, sum(1 for x, y in zip(raw.split(), out.split()) if x != y)
 
 
@@ -316,7 +376,8 @@ def apply_manual(raw):
         n += k
     raw, k = fix_roman_refs(raw)
     raw, k2 = fix_split_words(raw, LEX, COMPOUNDS)
-    return raw, n + k + k2
+    raw, k3 = fix_ocr_one(raw, LEX)
+    return raw, n + k + k2 + k3
 
 
 def base_vocab():

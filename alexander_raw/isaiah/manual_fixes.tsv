@@ -361,3 +361,55 @@ silent *respecting him., \.* e. no longer utter	silent *respecting him,* i. e. n
 *Shall not prosper, \.* e. shall not take effect	*Shall not prosper,* i. e. shall not take effect	img
 by his right hand and l)\j his arm of strength	by his right hand and by his arm of strength	img
 and my thought, \.* e. care.	and my thought,* i. e. care.	img
+
+# —— 第 40 章通读 + 新一批检测器扫全书，逐条核过的 37 处 ——
+# 行末断词把后缀甩出去这一类**不做成规则**：这份词表对 词+后缀 太宽松，
+# `beingless` 也认，`being less insensible` 会被拼成 `beingless`。
+# 问号粘到前一个词尾上成了 l（`any morel why` / `declared itl` / `with mel`），
+# 也只能逐条判——机器分不清 `morel`（真词）与 `more?`。
+translating the word snort ing	translating the word snorting	img
+a reason both for expect ing ultimate	a reason both for expecting ultimate	img
+to the laborious braid ing of the hair	to the laborious braiding of the hair	img
+the other on parch ment or the like	the other on parchment or the like	img
+the tongue of stammer ers shall hasten	the tongue of stammerers shall hasten	img
+under the depress ing recollection	under the depressing recollection	img
+the strength and comprehensive ness of its	the strength and comprehensiveness of its	img
+upon any sett ed principle	upon any settled principle	img
+there is no one free ing from my hand	there is no one freeing from my hand	img
+with characteristic cool ness	with characteristic coolness	img
+term for valves, fold ing-doors	term for valves, folding-doors	img
+degradation of their own ers	degradation of their owners	img
+as if his voice were still ring ing in the Prophet	as if his voice were still ringing in the Prophet	img
+*drawing out,* protract ing, the primary idea	*drawing out,* protracting, the primary idea	img
+representation of the helpless ness of Zion	representation of the helplessness of Zion	img
+adaptation or expressive ness in these unusual	adaptation or expressiveness in these unusual	img
+not merely the head ing 6r title of the writing	not merely the heading or title of the writing	img
+*will ye be smitten any morel why continue to revolt	*will ye be smitten any more? why continue to revolt	img
+since then declared itl Have not	since then declared it? Have not	img
+who was with mel\* Some refer	who was with me?* Some refer	img
+*who (is* or *was) with mel* implying strong negation	*who (is* or *was) with me?* implying strong negation	img
+(whence the adjective JM.M-I). and explain the clause	(whence the adjective JM.M-I), and explain the clause	img
+verb (rrrn). though not incompatible	verb (rrrn), though not incompatible	img
+(or the one justifying me). strictly a forensic term	(or the one justifying me). הַצְדִּיק is strictly a forensic term	img
+*Comfort ye. comfort ye my people	*Comfort ye, comfort ye my people	img
+or to th« people themselves	or to the people themselves	img
+in the vocative *(popuh mens).*	in the vocative *(popule meus).*	img
+or in the passive voice, *ht her be comforted.*	or in the passive voice, *let her be comforted.*	img
+(Seech. 24: 16. 26:3.29: 1.38: 11,17,19.)	(See ch. 24: 16. 26: 3. 29: 1. 38: 11, 17, 19.)	img
+This is the c: people " here meant	This is the " people " here meant	img
+natti in ch. 6L: 7	natti in ch. 61: 7	img
+either in reference 10 obliquity of course	either in reference to obliquity of course	img
+describing what be actually hears	describing what he actually hears	img
+*A. voice saying, Cry!	*A voice saying, Cry!	img
+*Hark! one sai/s, Cry.*	*Hark! one says, Cry.*	img
+August! supplies *the herald says,*	Augusti supplies *the herald says,*	img
+the grass withereth &z,c.;	the grass withereth &c.;	img
+# 这两处规则判不动：`Imcw` 是 knew 读崩的，机器认不出那个 1 是 I 不是 ?
+*Lest thou shouldest say, Behold, 1 Imcw them.*	*Lest thou shouldest say, Behold, I knew them.*	img
+In the former case, the sense is. *Who created these	In the former case, the sense is, *Who created these	img
+# popule meus：判读器按证人多数把 meus 改成 mens（u/n 不分，全体证人都这么读），
+# 人工核定排在它后面，所以这条要按**判读改完之后**的串写，否则两边来回推、收敛不了。
+in the vocative *(popule mens).*	in the vocative *(popule meus).*	img
+the summary conclusion of °the whole preceding controversy	the summary conclusion of the whole preceding controversy	img
+Hitzig throws these words (^Ffi'SB c^) mt° a parenthesis—c which is not from me,'	Hitzig throws these words (^Ffi'SB c^) into a parenthesis—' which is not from me,'	img
+*(as for the °wicked\*they are each tossed about	*(as for the wicked* they are each tossed about	img
