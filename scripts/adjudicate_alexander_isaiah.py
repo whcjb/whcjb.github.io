@@ -214,6 +214,12 @@ MANUAL_RE = [
     # 都清清楚楚带两点，全书各 13 / 1 处，逐条列不如一条正则。
     (re.compile(r'\bHavernick\b'), 'Hävernick'),
     (re.compile(r'\bKonigsberg\b'), 'Königsberg'),
+    # 逗号被扫成两个：全书 20 处，没有一处是原文就有的。后面紧跟字母
+    # （或紧跟一个**开**斜体星号再跟字母）时，被吞掉的那个空格要补回来
+    # ——`Rosenmüller,,Hengstenberg`、`asseveration,,*certainly,*`；
+    # 紧跟**收**斜体星号的不能补，补了 kramdown 就认不出斜体了（`*they,,*`）。
+    (re.compile(r',,+(?=\*?[A-Za-z])'), ', '),
+    (re.compile(r',,+'), ','),
 ]
 
 
@@ -322,7 +328,24 @@ def base_vocab():
     return c
 
 
-def main(apply_it):
+def main(apply_it, rounds=6):
+    """判读落在**已发布产物**上，而且一遍收不干净。
+
+    `apply_fixes` 按 token 序号落回，人工核定与几条规则又会改变 token 流，
+    所以上一轮改完之后，这一轮才轮得到的位置还有一批（实测第二轮还能落 295
+    处）。跑到某一轮一个文件都没写才算收敛——以前靠人记着「重跑 publish 后
+    补跑 --apply 到收敛」，漏跑一次就留一堆没改的。
+    """
+    for i in range(rounds if apply_it else 1):
+        n = _pass(apply_it)
+        if not apply_it or n == 0:
+            break
+        print(f'  第 {i + 1} 轮写了 {n} 篇')
+    else:
+        print(f'  警告：跑满 {rounds} 轮还在变，可能有两条规则在互相推')
+
+
+def _pass(apply_it):
     lex = build()
     wit = load_witnesses()
     bvocab = base_vocab()
@@ -330,6 +353,7 @@ def main(apply_it):
         print(f'{vol} 证人 {len(wit[vol])} 份')
 
     rows = []
+    written = 0
     stat = Counter()
     for path in sorted(SRC.glob('*.md')):
         stem = path.stem
@@ -443,6 +467,7 @@ def main(apply_it):
             stat['人工核定'] += nm
             if new != raw:
                 path.write_text(new, encoding='utf-8')
+                written += 1
 
     LOG.parent.mkdir(exist_ok=True)
     with open(LOG, 'w', encoding='utf-8') as f:
@@ -453,6 +478,7 @@ def main(apply_it):
     print('日志:', LOG)
     if not apply_it:
         print('（这是报告模式，没有落盘。要落盘加 --apply）')
+    return written
 
 
 def apply_fixes(raw, fixes):

@@ -1,5 +1,6 @@
 chapter	token	witness	verdict	bucket
 1	rniis	them	reject	待判·证人对不上
+10	duriter		无证据	待判·无证据
 10	iftsa		无证据	待判·无证据
 11	ixisn		无证据	待判·无证据
 11	rviin		无证据	待判·无证据
@@ -36,12 +37,10 @@ chapter	token	witness	verdict	bucket
 37	hausi	cibus	reject	待判·证人还有话说
 38	rraia		无证据	待判·无证据
 39	requirit	trum	reject	待判·证人还有话说
-40	prophetica	but	reject	待判·证人对不上
 40	esthetic	asthetic	reject	待判·证人还有话说
 40	inyov		无证据	待判·无证据
 40	citlos	aitxog	reject	待判·证人还有话说
 40	horen	nicht	reject	待判·证人对不上
-40	prophetica	but	reject	待判·证人对不上
 40	Furst		无证据	待判·无证据
 41	ssiti		无证据	待判·无证据
 42	majestalicus		无证据	待判·无证据
@@ -83,10 +82,5 @@ chapter	token	witness	verdict	bucket
 64	susii		无证据	待判·无证据
 7	veavie		无证据	待判·无证据
 9	innaia		无证据	待判·无证据
-9	principem		无证据	待判·无证据
 9	tumulum		无证据	待判·无证据
-introduction	Micaiah		无证据	待判·无证据
 introduction	Onias	oni	reject	待判·证人还有话说
-introduction	callida		无证据	待判·无证据
-introduction	junctura		无证据	待判·无证据
-introduction	apostolum		无证据	待判·无证据

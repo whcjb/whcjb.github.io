@@ -25,6 +25,7 @@
 import argparse
 import csv
 import re
+import unicodedata
 import subprocess
 import sys
 import tempfile
@@ -179,6 +180,17 @@ def find_whole(flat, needle):
         start = p + 1
 
 
+def trim_reading(reading):
+    """读数两端剪到字母为止（与 isaiah_apply_hebrew 同一条口径）。"""
+    keep = lambda ch: ch.isalnum() or unicodedata.combining(ch)
+    i, j = 0, len(reading)
+    while i < j and not keep(reading[i]):
+        i += 1
+    while j > i and not keep(reading[j - 1]):
+        j -= 1
+    return reading[i:j]
+
+
 def norm(text):
     out, idx, prev_space = [], [], True
     for i, ch in enumerate(text):
@@ -277,15 +289,14 @@ def apply_it():
             stat['notfound'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'notfound'))
             continue
-        # 重扫常把词尾标点吞掉（`Statms, → Statius`）。原串带着的首尾标点
-        # 要还回去，不然落一次盘就少一个逗号。
-        rep = r['reading']
-        lead = re.match(r'^[^0-9A-Za-zÀ-ÖØ-öø-ÿ]*', r['garbage']).group()
-        tail = re.search(r'[^0-9A-Za-zÀ-ÖØ-öø-ÿ]*$', r['garbage']).group()
-        if lead and not rep.startswith(lead):
-            rep = lead + rep
-        if tail and not rep.endswith(tail):
-            rep = rep + tail
+        # 读数两端的标点要**剪掉**，不是还回去。落盘的区间是按字母定界的
+        # （`garb` 两端 strip 过，首尾必定落在字母上），原串带着的首尾标点
+        # 本来就留在正文里没被换走。早先这里反过来写成「把首尾标点还回去」，
+        # 落一次盘就多一个逗号——`Immanuel,` 成了 `Immanuel,,`，全书 4 篇
+        # 被判读器刚清干净的双逗号又冒出来（重扫排在判读**之后**，覆盖得悄无声息）。
+        rep = trim_reading(r['reading'])
+        if not rep:
+            continue
         edits[name].append((idx[g], idx[g + len(garb) - 1] + 1, rep))
         stat['applied'] += 1
         log.append((r['garbage'], r['reading'], r['conf'], 'applied'))

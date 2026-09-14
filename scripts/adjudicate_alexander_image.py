@@ -49,6 +49,7 @@ WITNESS_LOG = ROOT / 'logs/alexander_adjudicate.tsv'
 SUSPECTS = ROOT / 'logs/alexander_image_suspects.json'
 READINGS = ROOT / 'logs/alexander_image_readings.tsv'      # 第一遍
 READINGS2 = ROOT / 'logs/alexander_image_readings2.tsv'    # 第二遍（互证）
+READINGS_NP = ROOT / 'logs/alexander_image_readings_np.tsv'  # 第一遍判不出的，改问下一页
 APPLIED = ROOT / 'logs/alexander_image_applied.tsv'
 PENDING = ROOT / 'logs/alexander_image_pending.tsv'
 
@@ -318,6 +319,11 @@ def apply_gates(dry=True):
         return d
 
     r1, r2 = read_tsv(READINGS), read_tsv(READINGS2)
+    rnp = read_tsv(READINGS_NP)
+    # 第一遍写 `?` 的（段落跨页，字在下一页上），用改问下一页的读数顶上
+    for k, v in rnp.items():
+        if r1.get(k) == '?' and v and v != '?':
+            r1[k] = v
     items = load()
     ok, pending = [], []
     for it in items:
@@ -455,8 +461,8 @@ def main():
                 pages.append(int(part))
     else:
         ap.error('要 --pages 或 --all')
-    run(pages, READINGS2 if a.pass2 else READINGS, a.dpi,
-        retry_next_page=a.next_page)
+    out = READINGS_NP if a.next_page else (READINGS2 if a.pass2 else READINGS)
+    run(pages, out, a.dpi, retry_next_page=a.next_page)
 
 
 if __name__ == '__main__':

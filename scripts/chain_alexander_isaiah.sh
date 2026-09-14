@@ -13,7 +13,8 @@
 #                    认的是同一份 PDF 原图、坐标来自 ABBYY charParams，
 #                    不像九份 IA 证人那样会锚撞车。必须排在 backlog 之后：
 #                    它要读 backlog 出的待判清单才知道扫哪些
-#   8 backlog        重扫落盘后再算一次账
+#   8 adjudicate     重扫改过的地方补判一遍（重扫排在判读之后，它写的东西没人判过）
+#   9 backlog        重扫落盘后再算一次账
 #
 # 中间任何一步改了脚本，都要从那一步往后重跑——en_chapters 与 alexander/isaiah
 # 都是 in-place 改写，跳步会把上一轮的结果当成输入叠加。
@@ -30,4 +31,9 @@ python3 scripts/adjudicate_alexander_isaiah.py --apply
 python3 scripts/isaiah_backlog.py
 python3 scripts/isaiah_english_rescan.py
 python3 scripts/isaiah_english_rescan.py --apply
+# 9 adjudicate      重扫是**在判读之后**改已发布正文的，它改过的地方没人再判
+#                   过一遍。踩过：重扫把读数两端的标点「还回去」，把判读器刚
+#                   清掉的双逗号又写了回来，而且悄无声息。凡是写产物的步骤
+#                   后面都要补一遍判读。
+python3 scripts/adjudicate_alexander_isaiah.py --apply
 python3 scripts/isaiah_backlog.py
