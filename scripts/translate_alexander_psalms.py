@@ -75,7 +75,7 @@ SYSTEM = (
     "Psalmist→诗人，Septuagint→七十士译本，Vulgate→武加大译本，"
     "Masoretic→马所拉\n"
     "8a. **近现代学者、释经家、译本编者的姓名，每篇首次出现时要括注英文原名**："
-    "亨斯腾伯格（Hengstenberg）、德维特（De Wette）、埃瓦尔德（Ewald）、"
+    "亨斯滕伯格（Hengstenberg）、德维特（De Wette）、埃瓦尔德（Ewald）、"
     "格塞尼乌斯（Gesenius）、胡普费尔德（Hupfeld）、德里慈（Delitzsch）、"
     "罗森米勒（Rosenmüller）、奥尔斯豪森（Olshausen）、维特林加（Vitringa）、"
     "金希（Kimchi）、亚本·以斯拉（Aben Ezra）。音译只是一串陌生的字，"
@@ -125,8 +125,18 @@ VNUM_PREFIX = re.compile(
 # annotate_scholars() 按英文源补上，不必为此重跑翻译。
 # 表里没有的名字仍由 SYSTEM 的 8a 条管，加进来只是为了能机器复核。
 # 路德／加尔文／奥古斯丁这类中文早有定译的大名故意不进表（见 SYSTEM 8b）。
+#
+# **这张表只管亚历山大这条线**（用户 2026-09-14 定）：站内别的书早先各译各的，
+# 同一个 Hengstenberg 有 6 种写法（亨斯滕伯格 44／亨斯登伯 34／亨斯滕贝格 25／
+# 亨斯登伯格 22／亨斯坦贝格 2），Gesenius 有 3 种，calvin/genesis 一本里就并存
+# 4 种。**不要顺手去扫全站改齐**——那是上百处已发布正文的改动，用户明确说先不动。
+# 表里取的是站内最通行的那一种，好让新译的书与主流对得上。
+# 查证过：改革宗圈子没有公开的译名规范（麦种、橡树都无公开体例；信望爱的
+# 「改革宗神学名词清单」只管术语不管人名）；大陆的权威依据是新华社译名室
+# 《世界人名翻译大辞典》，但手头没有电子版，逐条核不了，所以没照它改。
+# 中文维基连 Hengstenberg 的条目都没有——这个人在中文里本就没有通行译法。
 SCHOLARS = {
-    'Hengstenberg': '亨斯腾伯格',
+    'Hengstenberg': '亨斯滕伯格',
     'De Wette': '德维特',
     'Ewald': '埃瓦尔德',
     'Gesenius': '格塞尼乌斯',
