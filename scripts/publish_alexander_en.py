@@ -179,6 +179,10 @@ def main(book='psalms'):
         if k + 1 < len(names):
             fm += [f'next_section: {names[k + 1]}',
                    f'next_label: "{labels[names[k + 1]]}"']
+        # 中译是逐篇推进的：这一篇的中文页已经发出来了，英文页就带上 zh_url，
+        # 好让右上角出现「中文版 →」。重跑本脚本不会把它冲掉。
+        if (out / 'zh' / f'{sec}.md').exists():
+            fm.append(f'zh_url: "/alexander/{book}/zh/{sec}/"')
         fm.append('---')
         # 正文里不再重复一个 h1：layout 顶部已经用 page.title 打了标题，
         # 两处都写「Psalm 1」是同一串字连着出现两遍。

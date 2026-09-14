@@ -10,24 +10,37 @@ layout: default
   不是后人为方便加的分页。平铺 150 个格子既难找又抹掉了这层结构。
 {%- endcomment -%}
 
-<div class="container alexander-wrap" style="padding-top: 70px;">
+<div class="container alexander-wrap{% if page.zh %} ax-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="ax-chrome" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a>
-        <span></span>
+        {%- comment -%}
+          中英切换。中译逐篇推进，没译到的篇在中文版里是虚格不给链接
+          （清单取 site.pages，见下面的 zh_pages），免得点进 404。
+        {%- endcomment -%}
+        {% if page.zh %}<a class="ax-lang" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/">English &rarr;</a>
+        {% else %}<a class="ax-lang" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="ax-title">{{ page.book_name }}</h1>
       <div class="ax-sub">Joseph Addison Alexander · 1809–1860 · Princeton Theological Seminary</div>
 
+      {%- assign zh_seg = '' -%}{% if page.zh %}{% assign zh_seg = 'zh/' %}{% endif %}
+      {%- comment -%} 已生成的中文页清单，用来决定中文版里哪些篇可点 {%- endcomment -%}
+      {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains 'alexander/'" | map: "path" | join: "," -%}
+      {%- assign kp = 'alexander/' | append: page.book_id | append: '/zh/preface.md' -%}
+      {%- assign pre_zh = false -%}
+      {%- if zh_pages contains kp %}{% assign pre_zh = true %}{% endif -%}
+      {% if page.zh != true or pre_zh %}
       <div class="ax-extra">
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/preface/">
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ zh_seg }}preface/">
           <span class="ax-extra-cn">著者序</span>
           <span class="ax-extra-en">Preface</span>
         </a>
       </div>
+      {% endif %}
 
 
       {% assign groups = "1,41,卷一|42,72,卷二|73,89,卷三|90,106,卷四|107,150,卷五" | split: "|" %}
@@ -38,7 +51,18 @@ layout: default
         <h2 class="ax-grp">{{ gp[2] }} <span>Psalms {{ lo }}–{{ hi }}</span></h2>
         <div class="ax-ch-grid">
           {% for i in (lo..hi) %}
-          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ i }}/">{{ i }}</a>
+          {%- comment -%}
+            ⚠️ Liquid 没有 `contains X == false` 的写法，必须先 assign 成布尔量
+            再 if/else（贺智目录页踩过，算出的可点数与实际对不上）。
+          {%- endcomment -%}
+          {%- assign k = 'alexander/' | append: page.book_id | append: '/zh/' | append: i | append: '.md' -%}
+          {%- assign has_zh = false -%}
+          {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+          {% if page.zh and has_zh == false %}
+          <span class="ax-ch ax-ch-pending" title="尚未翻译">{{ i }}</span>
+          {% else %}
+          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ zh_seg }}{{ i }}/">{{ i }}</a>
+          {% endif %}
           {% endfor %}
         </div>
       {% endfor %}
@@ -58,7 +82,9 @@ layout: default
         信息还原。节号形如 <span class="ax-vnum">7 <span class="ax-veng">(6).</span></span>
         者，前一个是希伯来文本节号，括号内是英文圣经的节号——诗篇的题注在
         希伯来文里计为第一节，英译不计，两者因此常差一节。本站的锚点与经文
-        索引一律取<strong>英文节号</strong>。全书<strong>尚无中译</strong>。</p>
+        索引一律取<strong>英文节号</strong>。{% if page.zh %}中译由本站逐篇推进，
+        灰格是<strong>尚未译到</strong>的篇。{% else %}中译由本站逐篇推进，见
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/zh/">中文版</a>。{% endif %}</p>
       </div>
 
 
@@ -98,6 +124,12 @@ layout: default
   color: var(--ax-ink); background: #fdfaf7; border: 1px solid var(--ax-rule);
   border-radius: 3px; text-decoration: none !important; }
 .ax-ch:hover { background: var(--ax-ink); color: #fff !important; border-color: var(--ax-ink); }
+.ax-ch-pending { color: #c9b8b3; border-style: dashed; background: transparent; cursor: default; }
+.ax-lang { border: 1px solid var(--ax-rule); border-radius: 4px; padding: 4px 10px;
+  color: var(--ax-ink); }
+.ax-lang:hover { background: var(--ax-ink); color: var(--ax-paper) !important;
+  text-decoration: none !important; }
+.ax-zh .ax-title, .ax-zh .ax-grp { font-family: "Songti SC", STSong, Georgia, serif; }
 
 .ax-extra { margin: 0 0 30px; }
 .ax-extra a { display: inline-flex; align-items: baseline; gap: 10px;

@@ -182,7 +182,7 @@ books:
     testament: ot
     chapters: 150
     links:
-      - {author: alexander, path: "/alexander/psalms/", url_tpl: "/alexander/psalms/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: alexander, path: "/alexander/psalms/zh/", url_tpl: "/alexander/psalms/zh/__CH__/", title_cn: "诗篇注释", title_en: "The Psalms Translated and Explained", c0: "#5f2323", c1: "#7d2f2f"}
   - id: proverbs
     name: "箴言"
     en: "Proverbs"

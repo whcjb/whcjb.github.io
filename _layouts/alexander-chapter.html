@@ -22,20 +22,25 @@ layout: default
     锚点一律取**英文节号**，与站内其他注释和中文和合本对得上。
 {%- endcomment -%}
 
-<div class="container alexander-wrap" style="padding-top: 70px;">
+<div class="container alexander-wrap{% if page.zh %} ax-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="ax-chrome cmp-nav" style="margin: 18px 0 22px;">
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
-        {% if page.zh_url %}<a class="ax-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%}
+          语言切换。英文页由 publish_alexander_psalms_zh.py 回填 zh_url，
+          中文页自带 en_url；没有对应版本的就不出这个按钮，免得点进 404。
+        {%- endcomment -%}
+        {% if page.zh %}{% if page.en_url %}<a class="ax-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="ax-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
       </div>
 
       <h1 class="ax-title">{{ page.title }}</h1>
 
       <div class="ax-nav cmp-nav">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
       {%- comment -%}
@@ -55,19 +60,20 @@ layout: default
         `alexander-en`），否则本页自己会出现在对照选项里。将来出中译时，
         照 davenant 的写法按 page.zh 切换成 `alexander`。
       {%- endcomment -%}
-      {% include compare-commentary-head.html self="alexander-en" content_class="ax-content" self_label="亚历山大" %}
+      {% assign cc_self = "alexander-en" %}{% if page.zh %}{% assign cc_self = "alexander" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="ax-content" self_label="亚历山大" %}
         {{ content }}
       {% include compare-commentary-foot.html %}
 
       {% if page.date %}
       <div class="ax-chrome" style="margin-top:32px; font-size:12px; color:#9a9a92; text-align:right;">
-        Published {{ page.date | date: "%Y-%m-%d %H:%M" }}
+        {% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}
       </div>
       {% endif %}
 
       <div class="ax-nav cmp-nav" style="margin-top:44px; padding-top:16px; border-top:1px solid var(--ax-rule);">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
       </div>
 
     </div>
@@ -116,6 +122,15 @@ layout: default
    所以给它比默认斜体更明确的墨色，不加框、不加底（原书就是纯斜体）。 */
 .ax-content em { font-style: italic; color: #4a2c28; }
 
+/* 中文版：正文换中文衬线，其余（配色、节号、斜体语义）与英文版同一套。
+   斜体在中文里辨识度低，所以除了倾斜再压一档墨色并加字距，
+   好让「哪句是他的译文」仍一眼可辨——这是本卷唯一区分经文与解说的手段。 */
+.ax-zh .ax-content { font-family: "Songti SC", STSong, "Noto Serif CJK SC",
+  "Source Han Serif SC", Georgia, serif; font-size: 17px; line-height: 1.95; }
+.ax-zh .ax-content em { font-style: normal; color: #6b2f2a;
+  letter-spacing: .04em; }
+.ax-zh .ax-title { font-family: "Songti SC", STSong, Georgia, serif; }
+
 /* 节号锚点：跳转时避开 fixed navbar */
 .ax-anchor { position: relative; top: -80px; display: block; height: 0; }
 
@@ -157,8 +172,9 @@ function toggleAlexanderVerseNav() {
     pills.appendChild(link);
   });
   if (first === null) return;
+  var isZh = {% if page.zh %}true{% else %}false{% endif %};
   document.getElementById('verse-nav-label').textContent =
-    'Verses ' + first + '–' + last;
+    isZh ? ('第 ' + first + '–' + last + ' 节') : ('Verses ' + first + '–' + last);
   nav.style.display = '';
 })();
 </script>

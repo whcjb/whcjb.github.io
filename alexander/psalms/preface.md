@@ -6,6 +6,7 @@ title: "Preface"
 date: 2026-09-10 14:14
 next_section: 1
 next_label: "Psalm 1"
+zh_url: "/alexander/psalms/zh/preface/"
 ---
 
 <!-- preface | 扫描页 14-21 -->
