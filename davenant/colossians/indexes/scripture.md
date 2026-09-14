@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 09:44
+date: 2026-09-14 11:33
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -25,7 +25,7 @@ next_label: "Errata"
 <p class="dv-idx">Exod. XII. 14, Ye shall keep it a feast unto the Lord for ever I Dm 484</p>
 <p class="dv-idx">XXXI. 16, 17, It is a perpetual covenant, a sign between me and the children of Israel Jor ever T" ABER E</p>
 <p class="dv-idx">Levit. XIX. 17, Thou shalt in any wise rebuke thy neighbour and not suffer sin upon him II. 139</p>
-<p class="dv-idx-2">XXII. 2i, It shall be a statute for ever, &amp;c. I. 484 1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
+<p class="dv-idx-2">XXII. 21, It shall be a statute for ever, &amp;c. I. 484 1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
 <p class="dv-idx-caption">VOL, PAGE.</p>
 <p class="dv-idx">2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279</p>
 <p class="dv-idx">Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55</p>

@@ -192,6 +192,40 @@ ELL_ENUM = re.compile(r'^\]?l\.$')
 ELL_T = re.compile(r"^'l'(?=[A-Za-z])")
 
 
+# ── 人工核定表 ──────────────────────────────────────────────────────────────
+# 三层证据都判不动、拿 600 dpi 原页逐条看出来的那几处。键带**卷与页号**，
+# 是位置定位不是全局替换——`old-book-ocr` skill 的 trap 三：按串全局替换会
+# 把别处正确的词一起改坏（`lliou→Thou` 把 `rebellious` 改成 `rebeThous`）。
+# 这一条排在判决链**最前**（trap 四：手工表排在「无证据」之后就永远轮不到）。
+MANUAL = RAW / 'manual_votes.json'
+_manual = None
+
+
+def manual_votes():
+    global _manual
+    if _manual is None:
+        _manual = ({k: v for k, v in
+                    json.loads(MANUAL.read_text(encoding='utf-8')).items()
+                    if not k.startswith('_')} if MANUAL.exists() else {})
+    return _manual
+
+
+def manual_repair(vol, page, w):
+    """整词优先；不中时剥掉尾标点再试一次，命中就把标点带回去。
+    表里写的是词本身（`mints'ered`），正文里常常挂着逗号（`mints'ered,`）。"""
+    tbl = manual_votes()
+    hit = tbl.get(f'{vol}|{page}|{w}')
+    if hit is not None:
+        return hit
+    core = w.rstrip('.,;:!?')
+    tail = w[len(core):]
+    if tail and core:
+        hit = tbl.get(f'{vol}|{page}|{core}')
+        if hit is not None:
+            return hit + tail
+    return None
+
+
 def ell_repair(w, prev, nxt, other, other3):
     """→ 改后的 token / '' （删掉）/ None（不动）。"""
     if ELL_T.match(w):
@@ -731,6 +765,32 @@ def italic_flags(vol, page, line):
     return out
 
 
+SUFFIXES = ('eth', 'est', 'edst', 'ing', 'ed', 'es', 's', 'er', 'th', 'd')
+
+
+def attested(w):
+    """这个词在本书里**站得住**吗。
+
+    `_wordish` 分不开 `visiteth`（古体动词形，真词）和 `uppointed`
+    （`appointed` 被读花的残形）——两个都只在屈折形表里、书中各出现一次。
+    分得开的是**词干**：`visit` 全书几十次，`uppoint` 一次也没有。
+    """
+    n = _norm(w)
+    if n in DICT or _uni()[n] >= 8:
+        return True
+    if n not in inflected():
+        return False
+    for suf in SUFFIXES:
+        if n.endswith(suf) and len(n) - len(suf) >= 3:
+            stem = n[:-len(suf)]
+            # 门槛只要「书里有」就够，不必常见：`visit` 全书 6 次、
+            # `uppoint` 一次也没有，这两个词干在词典里都查得到，分得开它们的
+            # 只有本书语料。压到 8 会把 `visiteth` 一起挡在外面。
+            if _uni()[stem] >= 2 or _uni()[stem + 'e'] >= 2:
+                return True
+    return False
+
+
 def consensus(w, other, other3, latin=False):
     """两个证人读到一处、且与我方不同 → 采信。排在确定性规则**之前**。
 
@@ -758,6 +818,11 @@ def consensus(w, other, other3, latin=False):
     # ⚠️ 判「是不是拉丁」不能用斜体：原书的拉丁**整段引文排的是正体**
     # （vol2 p468 逐词量过，倾角 -1 ~ -4），只有行内夹用的拉丁词才斜。
     # 改看整行——同一行里另有若干个非英文词，就是拉丁行。
+    # 拉丁那一路是「放宽候选」，所以必须先护住**我方本来就是词**的情形：
+    # consensus 只卡了「本书里常见（>2 次）」，`visiteth` 这种古体动词形在
+    # 本书里也只出现一两次，两个读花的证人一致就能把它改成 `visiieth`（实测）。
+    if latin and attested(w):
+        return None
     if not (_bookword(got) or re.fullmatch(r'[\d.,;:]+', got)
             or (latin and len(_norm(got)) >= 3
                 # 拉丁那一路放行的候选必须是**干净的词形**：纯字母加一个尾标点。
@@ -1086,10 +1151,15 @@ def fix_line(vol, page, text, strict=False):
                                  [_norm(w) for w in theirs])
     ops = sm.get_opcodes()
     pair2 = dict(_pairs(toks, theirs, ops))
-    # ⚠️ 斜体**不能**当"这里是拉丁文"的判据。原书用斜体主要标圣经引语
-    # （那是英文），拉丁整段引文反而排正体（vol2 p468 逐词量过，倾角 -1~-4）。
-    # 拿斜体放行，`visiteth` 这种引语里的词就会被两个读花的证人改成
-    # `visiieth`（实测）。只看整行是不是拉丁。
+    # 「这里是不是拉丁」有两个判据，各管一段：
+    #   · 整行是拉丁行（同行另有 ≥3 个非英文词）——管**整段拉丁引文**。
+    #     那种引文原书排的是**正体**（vol2 p468 逐词量过，倾角 -1~-4），
+    #     斜体在那里帮不上忙。
+    # 试过再加一条「斜体也算拉丁」去管行内夹用的拉丁词（`in solidum`），
+    # **两次都翻车，已彻底撤掉**：原书用斜体主要标**圣经引语**，那是英文。
+    # 第一次伤的是 `visiteth`→`visiieth`，补了 `-eth` 词表；第二次照样伤
+    # `loaded`→`louded`、`whose`→`whase`——护住我方词形只解决一半，
+    # 读花的候选还是会被放进来。这条只换来十来处改动，不值。
     is_latin = foreign_line(toks)
     third = best_match3(vol, page, toks)
     ops3 = difflib.SequenceMatcher(
@@ -1103,7 +1173,8 @@ def fix_line(vol, page, text, strict=False):
         # 这是证据不是猜——`asa memorial` 对面是 `as a memorial`。
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
-        for _why, _fix in (('l→1', ell_repair(
+        for _why, _fix in (('人工核定', manual_repair(vol, page, w)),
+                           ('l→1', ell_repair(
                                w, toks[i - 1] if i else '',
                                toks[i + 1] if i + 1 < len(toks) else '',
                                other, other3)),

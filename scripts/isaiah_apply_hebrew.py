@@ -16,6 +16,7 @@ import argparse
 import csv
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -61,15 +62,40 @@ def keep_italics(slice_, reading):
     星号成了单数，半截星号原样印在页面上。实测落希伯来这一步单独制造了
     5 篇不配对（38 / 45 / 48 / 7 / 9）。
 
-    段首段尾的星号照原样接回去；星号落在**中间**说明这段横跨斜体边界，
-    接不回去，宁可不换。
+    段首段尾的星号照原样接回去。星号落在**中间**时看配对：成对的说明这段
+    把整个斜体区间整个包住了，连星号一起扔掉，全书的星号配对不受影响——
+    导论第一行 `thgLjipmp' *^* ^OT` 就是这样，ABBYY 给残码 `^` 单独加了斜体，
+    整段本来就要换成 `the name of God`，那对星号没有留着的理由。落单的那个
+    才说明这段横跨斜体边界，接不回去，宁可不换。
     """
     if '*' not in slice_:
         return reading
-    if slice_.strip('*').count('*'):
+    if slice_.strip('*').count('*') % 2:
         return None
     return ('*' if slice_.startswith('*') else '') + reading \
         + ('*' if slice_.endswith('*') else '')
+
+
+def trim_reading(reading):
+    """读数两端的标点一律剪掉。
+
+    落盘的区间是**按字母定界**的：`norm` 只收字母数字，`a` 与 `b-1` 必定落在
+    字母上，区间外的标点原样留在正文里。所以读数两端只要带标点，必是
+    tesseract 顺手把区间外的字符也读了进来，落上去就是标点翻倍——
+    `(from TIQO^^I)` 的读数是 `πρόφημι)`，那个 `)` 正文里本来就有，
+    落完成了 `(from πρόφημι))`；`nQoyrjTrjg,` 的读数带 `;`，落完是
+    `προφητῆς;,`。
+
+    只剪「既不是字母数字、也不是组合记号」的那些，希伯来点号与希腊附加符
+    都是组合记号，不会被误伤。
+    """
+    keep = lambda ch: ch.isalnum() or unicodedata.combining(ch)
+    i, j = 0, len(reading)
+    while i < j and not keep(reading[i]):
+        i += 1
+    while j > i and not keep(reading[j - 1]):
+        j -= 1
+    return reading[i:j]
 
 
 def find_whole(flat, needle):
@@ -129,6 +155,9 @@ def main(apply_it):
         if key in seen:
             continue
         seen.add(key)
+        r['reading'] = trim_reading(r['reading'])
+        if not r['reading']:
+            continue
         rows.append(r)
     # 语料自证：同一个读数在别处被高置信度接受过，这里 70 分也认。
     # `προφητῆς` 在导论里出现四次，置信度 77 / 82 / 88 各一次——同一个词，
@@ -139,7 +168,7 @@ def main(apply_it):
     keys = {k: norm(v) for k, v in chapters.items()}
 
     log, stat = [], {'applied': 0, 'lowconf': 0, 'notfound': 0, 'ambiguous': 0,
-                     'halfword': 0}
+                     'halfword': 0, 'italic': 0}
     edits = {k: [] for k in chapters}
     for r in rows:
         if int(r['conf']) < MIN_CONF and not (int(r['conf']) >= SELF_CONF
@@ -177,7 +206,16 @@ def main(apply_it):
             stat['halfword'] += 1
             log.append((r['garbage'], r['reading'], r['conf'], 'halfword'))
             continue
-        edits[name].append((idx[g], idx[g + len(garb) - 1] + 1, r['reading']))
+        a, b = idx[g], idx[g + len(garb) - 1] + 1
+        # 斜体否决要在这里就算数。原先放在落盘那一步，被否掉的照样记成
+        # applied，日志里查不到——`thgLjipmp\' *^* ^OT` 明明没换，
+        # 日志一行都没有，白白多查一轮。
+        rep = keep_italics(chapters[name][a:b], r['reading'])
+        if rep is None:
+            stat['italic'] += 1
+            log.append((r['garbage'], r['reading'], r['conf'], 'italic'))
+            continue
+        edits[name].append((a, b, rep))
         stat['applied'] += 1
         log.append((r['garbage'], r['reading'], r['conf'], 'applied'))
 
@@ -187,9 +225,6 @@ def main(apply_it):
                 continue
             text = chapters[name]
             for a, b, rep in sorted(es, reverse=True):     # 从后往前，下标不失效
-                rep = keep_italics(text[a:b], rep)
-                if rep is None:
-                    continue
                 text = text[:a] + rep + text[b:]
             (RAW / f'{name}.md').write_text(text, encoding='utf-8')
 

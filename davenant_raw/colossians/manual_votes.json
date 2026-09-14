@@ -1,0 +1,10 @@
+{
+  "_": "逐条对着 600 dpi 扫描原页核过的人工判定。键是 卷|扫描页号|我方词形，",
+  "__": "值是原书的读法。位置定位，不做全局字符串替换（old-book-ocr trap 三）。",
+  "1|151|Schoo'man": "Schoolman",
+  "1|502|bodily'in": "bodily in",
+  "1|598|mints'ered": "ministered",
+  "2|523|VP'alchii": "Walchii",
+  "2|601|their'Theology": "their Theology",
+  "2|604|2i,": "21,"
+}

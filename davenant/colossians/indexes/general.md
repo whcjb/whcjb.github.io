@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 09:44
+date: 2026-09-14 11:33
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -273,7 +273,6 @@ next_label: "Index of Questions"
 <p class="dv-idx">Multitude tends to confirm the minds of believers, I. 94, 95. not a mark of the Church, 516, 517.</p>
 <p class="dv-idx">Mystery, what it signifies, I. 300 ; taken for the sum of Evangelical doctrine, 356 ; for the calling of the Gentiles, 300, 502.</p>
 <p class="dv-idx">Mysteries to be believed, not discussed, 303, 304.</p>
-<p class="dv-idx-caption">VOL. 1i. 2r</p>
 <p class="dv-idx-letter">N</p>
 <p class="dv-idx-2">Name of Christ, what it is to do any thing in the, II. 146. Name, the origin not so much to be regarded as the use, I. 35 without the reality avails nothing, I. 10, 23; 100; 443; II. 274. Nations, no distinction of with God, II. 90. Nature, our's good at the creation, I. 250; corrupt, incapable of spiritual things, 146; is not disposed for grace, 453; II. 60; is alienated from God, I. 249 ; at enmity with God, and God an enemy to it, 250, 251. Natural corruption, pervades all the faculties of the soul, 452, 453: ! man thereby dead as to spiritual . perceptions, 450; explained by parts, 451, 452; all prone to every evil on account of it, Il. 65. .</p>
 <p class="dv-idx">Negations in comparisons, their peculiar use, II. 203.</p>

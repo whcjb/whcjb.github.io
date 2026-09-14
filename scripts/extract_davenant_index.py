@@ -83,8 +83,10 @@ NOTE_RE = re.compile(r'^\s*[\[(]|^\s*\S{0,3}\s*Those names printed', re.I)
 # `is_foot` 与 FOOT_EXTRA_RE 都认不出（首字母只有一个 V，中间还夹了逗号）。
 # 收得很紧——必须以「数字 + 单个大写字母」收尾——全库只命中这一条与索引里的
 # `VOL. 11. 2 Q`；`Verse 17.` / `verse.` 这类不会误伤（实测三份 raw 全扫过）。
+# 收尾那个字母**不能只认大写**：`VOL. II. 2 R` 被读成 `VOL. 1i. 2r`，
+# 小写的 `r` 让整行漏了过去，签名当成索引条目留在了页面上（实测 1 处）。
 SIGNATURE_RE = re.compile(
-    r'^[VvNn]\W{0,2}[Oo0Ee]\w{0,3}\W{0,3}\w{0,4}\W{0,3}\s*\d\s?[A-Z]$')
+    r'^[VvNn]\W{0,2}[Oo0Ee]\w{0,3}\W{0,3}\w{0,4}\W{0,3}\s*\d\s?[A-Za-z]$')
 HEAD_RES = [
     re.compile(r'GENERAL\s+[Il1]NDEX', re.I),
     re.compile(r'[Il1]NDEX\s+(?:TO|OF)\s+(?:B[Il1]OGRAPH|QUEST[Il1]ONS|'
