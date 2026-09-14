@@ -72,8 +72,16 @@ SYSTEM = (
     "如 חֶסֶד（慈爱）；整句拉丁引文保留原文，括注中文大意\n"
     "8. 圣经书卷名、人名、地名一律用和合本标准译名：Jehovah→耶和华，"
     "the Lord→主，Messiah→弥赛亚，David→大卫，Zion→锡安，"
-    "Psalmist→诗人，Hengstenberg→亨斯腾伯格，Septuagint→七十士译本，"
-    "Vulgate→武加大译本，Masoretic→马所拉\n"
+    "Psalmist→诗人，Septuagint→七十士译本，Vulgate→武加大译本，"
+    "Masoretic→马所拉\n"
+    "8a. **近现代学者、释经家、译本编者的姓名，每篇首次出现时要括注英文原名**："
+    "亨斯腾伯格（Hengstenberg）、德维特（De Wette）、埃瓦尔德（Ewald）、"
+    "格塞尼乌斯（Gesenius）、胡普费尔德（Hupfeld）、德里慈（Delitzsch）、"
+    "罗森米勒（Rosenmüller）、奥尔斯豪森（Olshausen）、维特林加（Vitringa）、"
+    "金希（Kimchi）、亚本·以斯拉（Aben Ezra）。音译只是一串陌生的字，"
+    "中文读者对不上人，必须给出原名。同一篇里第二次以后就不再重复括注。\n"
+    "8b. 圣经人名地名，以及中文早有定译、读者一望即知的大名"
+    "（路德、加尔文、奥古斯丁、耶柔米、屈梭多模），**不**括注英文\n"
     "9. 罗马数字章号一律转成阿拉伯数字，格式为「书卷名 章:节」："
     "Psalm xxvi. 4, 5 → 诗篇 26:4, 5；Isa. xvii. 13 → 以赛亚书 17:13；"
     "Mat. iii. 12 → 马太福音 3:12。`ver. 1` → 「第 1 节」\n"
@@ -110,6 +118,49 @@ VNUM_PREFIX = re.compile(
     r'^(<span class="ax-anchor" id="[^"]*"></span>'
     r'<span class="ax-vnum">(?:[^<]|<span class="ax-veng">[^<]*</span>)*</span>)'
     r'( \*)?')
+
+# 近现代学者／释经家姓名：每篇首次出现要括注英文原名。
+# 音译只是一串陌生的字，中文读者对不上人——用户 2026-09-14 指出（「亨斯腾伯格」
+# 通篇没给原名）。SYSTEM 里已经立了规矩，这张表是**兜底闸**：模型漏注时由
+# annotate_scholars() 按英文源补上，不必为此重跑翻译。
+# 表里没有的名字仍由 SYSTEM 的 8a 条管，加进来只是为了能机器复核。
+# 路德／加尔文／奥古斯丁这类中文早有定译的大名故意不进表（见 SYSTEM 8b）。
+SCHOLARS = {
+    'Hengstenberg': '亨斯腾伯格',
+    'De Wette': '德维特',
+    'Ewald': '埃瓦尔德',
+    'Gesenius': '格塞尼乌斯',
+    'Hupfeld': '胡普费尔德',
+    'Delitzsch': '德里慈',
+    'Rosenmüller': '罗森米勒',
+    'Olshausen': '奥尔斯豪森',
+    'Vitringa': '维特林加',
+    'Kimchi': '金希',
+    'Aben Ezra': '亚本·以斯拉',
+}
+
+
+def annotate_scholars(zh: str, en: str):
+    """每篇首次出现的学者姓名后补「（原名）」。返回 (正文, 对不上的名字)。
+
+    幂等：只在第一次出现处补，且那里已经是「（」就不动。
+    中文用的音译若与表里的不一致（模型自己另译了一个），这里补不上，
+    会记进返回的 missing，由调用方告警——宁可漏注，也不要在正文里乱改人名。
+    """
+    missing = []
+    for en_name, zh_name in SCHOLARS.items():
+        if not re.search(r'\b' + re.escape(en_name) + r'\b', en):
+            continue
+        i = zh.find(zh_name)
+        if i < 0:
+            missing.append(en_name)
+            continue
+        j = i + len(zh_name)
+        if zh[j:j + 1] == '（':          # 已经注过
+            continue
+        zh = zh[:j] + f'（{en_name}）' + zh[j:]
+    return zh, missing
+
 
 # 模型没在翻译、而是在跟你说话的迹象。命中即判失败重试。
 CHATTY_RE = re.compile(
@@ -255,7 +306,11 @@ def run_section(name: str, resume: bool, dry: bool, publish: bool = True) -> Non
         if n % 10 == 0:
             print(f'  [{name}] {n}/{len(todo)} 段', flush=True)
 
-    dst.write_text('\n\n'.join(out) + '\n', encoding='utf-8')
+    body, missing = annotate_scholars('\n\n'.join(out), body_of(name))
+    if missing:
+        print(f'    [names] {name}: 英文源里有 {missing}，译文里找不到对应音译，'
+              f'未补原名——译名可能与 SCHOLARS 表不一致，请人工过一眼', flush=True)
+    dst.write_text(body + '\n', encoding='utf-8')
     os.chmod(dst, 0o444)                  # 强保留
     print(f'✓ 写入 {dst}（{dst.stat().st_size:,} bytes，已 chmod 444）', flush=True)
     if publish:
