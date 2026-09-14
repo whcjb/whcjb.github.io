@@ -3,7 +3,7 @@ layout: davenant-appendix
 title: "The Gallican Controversy"
 up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
-date: 2026-09-14 19:05
+date: 2026-09-14 19:23
 subtitle: "ON THE CONTROVERSY AMONG THE FRENCH DIVINES OF THE REFORMED CHURCH CONCERNING THE GRACIOUS AND SAVING WILL OF GOD TOWARDS SINFUL MEN."
 prev_url: "/davenant/colossians/dissertation/7/"
 prev_label: "Chapter VII"
@@ -53,7 +53,7 @@ I think, therefore, that the opinion of Cameron was here badly expressed.
 
 fI know that the opinion of the English Divines given at the Synod of Dort, neither establishes universal grace, nor acknowledges that apt and sufficient means of salvation are granted to all men individually upon whom the Gospel hath not shone.
 
-£Lastly. I think that no Divine of the Reformed Church of sound judgment, will deny a general intention or appointment concerning the salvation of all men individually by the death of Christ, on this condition—If they should believe. For this intention or appointment of God is general, and is plainly revealed in the Holy Scriptures, although the absolute and not to be frustrated intention of God, concerning the gift of faith and eter- , nal life to some persons, is special, and is limited to the elect alone.
+£Lastly. I think that no Divine of the Reformed Church of sound judgment, will deny a general intention or appointment concerning the salvation of all men individually by the death of Christ, on this condition—If they should believe. For this intention or appointment of God is general, and is plainly revealed in the Holy Scriptures, although the absolute and not to be frustrated intention of God, concerning the gift of faith and eternal life to some persons, is special, and is limited to the elect alone.
 
 So I have maintained, and do maintain.
 

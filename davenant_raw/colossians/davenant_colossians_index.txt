@@ -42,7 +42,7 @@
 [LETTER] C
 [E] <!--v2p582-->Carthusian Monkery, not a state of perfection, I. 326.
 [E] <!--v2p582-->Ceremonies, may be instituted by the Church, and with what cautions, I. 401, 402; 522; are not to be multiplied, 402; 467; 529; whether the observance or the neglect is in itself of any or no consequence, LI. 91; Ceremonies of the Jews, I. 478, 472. Chris. tian liberty in regard to all, 480 ; the legal ones were acknowledgments of human guilt, 461; shadowed forth the grace of Christ, 489; and the very substance in Christ, 492; abrogated by Christ, and why, 404; in what manner, 465, 466; for what time, and how far they might be observed after the passion of Christ, 405.
-[E] <!--v2p582-->Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfil the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.
+[E] <!--v2p582-->Charity, what it is, Il. 118; preeminent among the graces, ibid. ; how it fulfils the law, 121; participates with others in all things, I. 57; 3725 how it differs from a vicious affection, II. 119 ; is like a garment, 120.
 [E] <!--v2p582-->Charity, among neighbours, especially in loving the saints, I. 74, though unknown, 102; lI. 297; towards strangers and enemies, I. 109: devils and the lost not objects of it, 77; the rule of in judging, viz. presuming any thing to be good till the contrary appears, I. 22; the rule in acting, viz. what ye would not should be done to you, do not you to another, how to be understood, 1I. 43.
 [E] <!--v2p582-->Chastisement of the body by acts of mortification, examples of it, I. 539; errors of those who sin in this respect, 541; how far these exercises may and ought to be employed, 542, 543.
 [E] <!--v2p582-->Chastisements, not inflicted upon the faithful by God as satisfactions for sin, 288.
@@ -470,7 +470,7 @@
 [E] <!--v2p597-->Whether any lie be lawful ses = see 76—78
 [E] <!--v2p597-->Whether equivocation bealie ... Oc c Doc 79—82
 [E] <!--v2p597-->Whether it is lawful for a Christian to revenge any injury done to Whether it is lawful to repel an injury by a duel ... .. — 116—118
-[E] <!--v2p597-->Whether charity fulfil the law ... Doc Occ we 3121, 122
+[E] <!--v2p597-->Whether charity fulfils the law ... Doc Occ we 3121, 122
 [E] <!--v2p597-->Whether the Scriptures are to be read in common by the laity — 132—138
 [E] <!--v2p597-->Whether a Christian is bound in every action whatever expressly to implore the help of Christ — ... t T wee 148
 [E] <!--v2p597-->Whether it is lawful for a husband to chastize his wife by stripes and blows ee ess eee so LLLI ese 167

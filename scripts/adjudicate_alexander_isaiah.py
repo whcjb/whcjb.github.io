@@ -227,6 +227,35 @@ _ROMAN_REF = re.compile(r'\b(?:ch|chs|chap|chaps)\.\s*'
                        r'[ivxlcdmnu]{1,9}(?:\s*[-—–,]\s*[ivxlcdmnu]{1,9})*')
 _ROMAN_TAIL = {'n': 'ii', 'm': 'iii', 'u': 'ii'}
 
+# 词里多出一个句点或连字符：`of.their`、`on- the`、`usa.ge`、`lie- down`。
+# 这是**空格被读成标点**（或反过来），全书各二三十处。判据用词典，两条路：
+# 拼起来是词就拼（usage / except / destroying / zeal），拆开两边都是词就拆成
+# 空格（of their / lie down）；两条都不成立就不动——`entkr.ftet`（德文 ä 是个
+# 坏活字）、`ovy.ov`（希腊文）、`portae.juvat`（拉丁诗）都留给人判。
+# `um` 这类既是词又是拉丁词尾的，拆了会把 `propheticum` 拆成两半，列进停用词。
+_SPLIT = re.compile(r'\b([a-z]{2,})([.]|- )([a-z]{2,})\b')
+_SPLIT_STOP = {'um', 'us', 'ae', 'que', 've', 're', 'll', 'st', 'th', 'ed', 'es',
+               'e', 'g', 'i', 'q', 'v', 's', 'd', 'p'}
+
+
+def fix_split_words(raw, lex, compounds=frozenset()):
+    def one(m):
+        a, sep, c = m.group(1), m.group(2), m.group(3)
+        if a in _SPLIT_STOP or c in _SPLIT_STOP:
+            return m.group(0)
+        # 全书别处以连字符复合词出现过的，连字符是真的，只是多了个空格
+        # （`well-sustained`、`blood-thirsty`）。这是第三道闸：语料自证。
+        if sep == '- ' and f'{a}-{c}' in compounds:
+            return f'{a}-{c}'
+        if is_word(a + c, lex):
+            return a + c
+        if is_word(a, lex) and is_word(c, lex):
+            return a + ' ' + c
+        return m.group(0)
+
+    out, _ = _SPLIT.subn(one, raw)
+    return out, sum(1 for x, y in zip(raw.split(), out.split()) if x != y)
+
 
 def fix_roman_refs(raw):
     def one(word):
@@ -262,6 +291,12 @@ def load_manual_file():
 
 
 MANUAL_FILE = load_manual_file()
+LEX = build()          # fix_split_words 的词典闸要用
+# 全书出现过的连字符复合词（不带空格的那种），给 fix_split_words 当自证语料
+COMPOUNDS = frozenset(
+    m.group(0).lower()
+    for path in SRC.glob('*.md')
+    for m in re.finditer(r'\b[a-z]{2,}-[a-z]{2,}\b', path.read_text(encoding='utf-8')))
 
 
 def apply_manual(raw):
@@ -274,7 +309,8 @@ def apply_manual(raw):
         raw, k = pat.subn(rep, raw)
         n += k
     raw, k = fix_roman_refs(raw)
-    return raw, n + k
+    raw, k2 = fix_split_words(raw, LEX, COMPOUNDS)
+    return raw, n + k + k2
 
 
 def base_vocab():
