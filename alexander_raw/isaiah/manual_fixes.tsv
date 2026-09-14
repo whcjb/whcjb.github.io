@@ -99,3 +99,66 @@ Kimchi explains isahs as an allusion	Kimchi explains מֵרֹאשׁ as an allusi
 before rvito?, a combination	before עֲשׂוֹת, a combination	img
 (leoa yQ dp (.tat a, yQayai ayiai)	(ἱερὰ γράμματα, γραφαὶ ἅγιαι)	img
 si per res literarn legamus	si per res literam legamus	ctx
+
+# —— 导论（书页 ix–xlviii）的希腊／希伯来活字：逐条翻页面影像核过 ——
+# 这一片是重扫闸放不过去的残留。tesseract 给的读数要么置信度不够
+# （προφήτης 只有 77），要么把重音读错（μᾶντις 其实印的是 μάντις、
+# προφητῆς 其实是 προφήτης），要么整串没被当成外文活字（`thgLjipmp' ^ ^OT^`
+# 印的是英文 in the name of God）。机器判不动的，只能拿影像定。
+# 页面：15(πρό/πρόφημι/προφήτης) 16(נָבִיא·נָבָא) 21(μάντις) 24–25(כְּתוּבִים·נְבִיאִים·חֹזֶה)
+#       26(以赛亚/亚摩斯诸名) 37(ἅπαξ λεγόμενα) 44–45(πρῶτον ψεῦδος) 54(Æschylus)
+# 书页 15 末尾那个孤零零的 A 是印张标记（signature），不是正文，一并去掉。
+The Greek *προφητῆς* (from	The Greek *προφήτης* (from	img
+in the name of God^ in which sense	in the name of God, in which sense	img
+as the *noo* in *fiQocprj^i* and *προφητῆς,*	as the *πρό* in *πρόφημι* and *προφήτης,*	img
+the primary sense of *προ* would seem	the primary sense of *πρό* would seem	img
+(Compare *προεστῶς, προϊστάμεε^ vos, antistes	(Compare *προεστῶς, προϊστάμενος, antistes	img
+that the *JTQO* in *TIQO^w* and A its derivatives	that the *πρό* in *πρόφημι* and its derivatives	img
+The etymology of ^aa, and the cognate	The etymology of נָבִיא, and the cognate	img
+the noun x^3 is clear from Exodus	the noun נָבִיא is clear from Exodus	img
+Thesaurus, s. v. aDj.)	Thesaurus, s. v. נָבָא.)	img
+which gives ara the sense	which gives נָבִיא the sense	img
+*^μᾶντις* and *μανία* or *paivofiai.*	*μάντις* and *μανία* or *μαίνομαι.*	img
+Prophets, and Scriptures (crai: 3, *ayio- YQctya),*	Prophets, and Scriptures (כְּתוּבִים, *ἁγιόγραφα),*	img
+ancient tradition, by dwss or official prophets	ancient tradition, by נְבִיאִים or official prophets	img
+the name K">33 to the official or professional prophet, and offish (seer)	the name נָבִיא to the official or professional prophet, and of חֹזֶה (seer)	img
+promiscuous use of *προφητῆς* in the New Testament	promiscuous use of *προφήτης* in the New Testament	img
+The application of the name d^ns, *ayioyQa^a,*	The application of the name כְּתוּבִים, *ἁγιόγραφα,*	img
+The abbreviated form (rpupzj1;) is never applied	The abbreviated form (יְשַׁעְיָה) is never applied	img
+the Greek *'Haaia?,* used both	the Greek *Ἡσαΐας,* used both	img
+his father Amoz (•pEij), which several	his father Amoz (אָמוֹץ), which several	img
+the prophet Amos (D^), though they differ	the prophet Amos (עָמוֹס), though they differ	img
+writes both names alike (Wjuofe), may be	writes both names alike (Ἀμώς), may be	img
+misspelling the name Amos (tri^x).	misspelling the name Amos (אָמוֹס).	img
+the names Amoz (ftex) and Amaziah (sin^sa«),	the names Amoz (אָמוֹץ) and Amaziah (אֲמַצְיָהוּ),	img
+part *ἅπαξ^, teyopeva,* things	part *ἅπαξ λεγόμενα,* things	img
+really the *TTQWXOV \jje~dos* of the whole school	really the *πρῶτον ψεῦδος* of the whole school	img
+apply their *TTQMTOV ipEvdo?* as a test	apply their *πρῶτον ψεῦδος* as a test	img
+the Eumenides of ^Fschylus.	the Eumenides of Æschylus.	img
+
+# —— 序与后导论里三处被扫描污点吃掉的字符，翻影像核过 ——
+economize^the labours	economize the labours	img
+the word of God be^an to be precious	the word of God began to be precious	img
+may at best be dubious^ how many inconclusive	may at best be dubious, how many inconclusive	img
+
+# —— 底本 ABBYY 自带的重复右括号：影像上都是单括号 ——
+(Sept. *ὑψηλῷ τραχήλῳ)) j* so that	(Sept. *ὑψηλῷ τραχήλῳ),* so that	img
+the agency of demons (שדים)).	the agency of demons (שדים).	img
+the rhythm loo harsh	the rhythm too harsh	img
+
+# —— 序言末尾的勘误表：逐字翻页面影像，再拿被勘误的那一页本身互证 ——
+# 这一段是全书最难判的：字号最小、又全是带点的希伯来活字，重扫与证人都无解。
+# 底本原生分辨率 500dpi，放大到头也就刚够分辨 dagesh 与 holam，所以只落
+# 「读得出、且能在被勘误的那一页上对上」的那几条：
+#   p.110 l.29  Hendewerk 把「六十五年」读成「劫掠者」→ שִׁשִּׁים / שֹׁשִׁים
+#   p.198 l.15  אוֹר（光）/ אוּר（火）——差在 vav 的点是在上面还是在里面
+#   p.224 l.21  该页正文说的是 any fatted beast → מְרִיא
+#   p.469 l.9   该页正文 it shall be blown on the trumpet → 赛 27:13 יִתָּקַע
+#   p.513 l.12  该页正文 the whole phrase ... waterfall → 赛 30:13 פֶּרֶץ נֹפֵל
+# 还没落的：p.224 与 p.408 的两个**误植形**，以及 p.408 的正确形。误植形本身
+# 不是任何一个词，页面上又对不到第二处，点法拿不准，宁可留着 ABBYY 的残串。
+for ששים read D^itf.	for שִׁשִּׁים read שֹׁשִׁים.	img
+for m» read ^».	for אוֹר read אוּר.	img
+for Ktfn1? read K^tt.	for Ktfn1? read מְרִיא.	img
+1. 9, read ygn\—P.	1. 9, read יִתָּקַע.—P.	img
+1. 12, read iftb f?S.	1. 12, read פֶּרֶץ נֹפֵל.	img
