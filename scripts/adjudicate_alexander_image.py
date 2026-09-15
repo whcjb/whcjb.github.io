@@ -50,6 +50,7 @@ SUSPECTS = ROOT / 'logs/alexander_image_suspects.json'
 READINGS = ROOT / 'logs/alexander_image_readings.tsv'      # 第一遍
 READINGS2 = ROOT / 'logs/alexander_image_readings2.tsv'    # 第二遍（互证）
 READINGS_NP = ROOT / 'logs/alexander_image_readings_np.tsv'  # 第一遍判不出的，改问下一页
+READINGS3 = ROOT / 'logs/alexander_image_readings3.tsv'    # 第三遍（换分辨率，破两遍分歧）
 APPLIED = ROOT / 'logs/alexander_image_applied.tsv'
 PENDING = ROOT / 'logs/alexander_image_pending.tsv'
 
@@ -234,7 +235,7 @@ def parse(res, items):
     return out
 
 
-def run(pages, out_path, dpi=220, retry_next_page=False):
+def run(pages, out_path, dpi=220, retry_next_page=False, pending_only=False):
     items = load()
     if retry_next_page:
         # 第一遍写 `?` 的，多半是**段落跨页**：`<!-- PAGE n -->` 标的是段首那页，
@@ -248,6 +249,15 @@ def run(pages, out_path, dpi=220, retry_next_page=False):
         items = [dict(it, page=(it['page'] or 0) + 1) for it in items
                  if first.get((it['sec'], it['tok'], it['ctx'][:40])) == '?']
         print(f'第一遍未判读 {len(items)} 处，改问下一页')
+    if pending_only:
+        keys = set()
+        if PENDING.exists():
+            for line in PENDING.open(encoding='utf-8'):
+                f = line.rstrip('\n').split('\t')
+                if len(f) >= 6 and not f[0].startswith('#') and f[0] != '篇':
+                    keys.add((f[0], f[1]))
+        items = [it for it in items if (it['sec'], it['tok']) in keys]
+        print(f'只重判前两遍不一致的 {len(items)} 处')
     bypage = defaultdict(list)
     for it in items:
         if it['page']:
@@ -298,8 +308,19 @@ def run(pages, out_path, dpi=220, retry_next_page=False):
 
 # ── 过闸落盘 ──────────────────────────────────────────────────────────────
 
+# 希伯来元音点与重音符（U+0591–U+05C7，保留 U+05BE maqaf 连字号）。
+# 两遍影像判读在**辅音**上几乎总是一致，分歧全在点上（אֶמּוֹט vs אֱמוֹט）——
+# 220dpi 扫描件上那些点本来就认不准。本卷既定体例也是不带点的辅音形式
+# （全书 129 个希伯来词里 127 个无点）。所以：按辅音比对，按无点形式落盘。
+HEB_POINTS = re.compile(r'[\u0591-\u05bd\u05bf-\u05c7]')
+
+
+def unpoint(s):
+    return HEB_POINTS.sub('', s or '')
+
+
 def norm(s):
-    return re.sub(r'[^0-9a-zA-Zα-ωΑ-Ωἀ-ῼ֐-׿]', '', s or '').lower()
+    return re.sub(r'[^0-9a-zA-Zα-ωΑ-Ωἀ-ῼ֐-׿]', '', unpoint(s) or '').lower()
 
 
 def apply_gates(dry=True):
@@ -320,6 +341,7 @@ def apply_gates(dry=True):
 
     r1, r2 = read_tsv(READINGS), read_tsv(READINGS2)
     rnp = read_tsv(READINGS_NP)
+    r3 = read_tsv(READINGS3)
     # 第一遍写 `?` 的（段落跨页，字在下一页上），用改问下一页的读数顶上
     for k, v in rnp.items():
         if r1.get(k) == '?' and v and v != '?':
@@ -347,10 +369,14 @@ def apply_gates(dry=True):
         # 互证闸
         wit = it.get('wit') or ''
         second = r2.get(k, '')
+        img_out = unpoint(img) if HEB.search(img) else img
         if wit and norm(wit) == norm(img):
-            ok.append((it, img, 'witness'))
+            ok.append((it, img_out, 'witness'))
         elif second and second != '?' and norm(second) == norm(img):
-            ok.append((it, img, 'pass2'))
+            ok.append((it, img_out, 'pass2'))
+        elif (r3.get(k) and r3[k] != '?' and norm(r3[k]) == norm(img)):
+            # 第三遍换了分辨率重读，与第一遍一致 → 仍是**两次独立影像**互证
+            ok.append((it, img_out, 'pass3'))
         else:
             pending.append((it, img, second, '互证闸：证人/二遍不一致'))
     print(f'过闸 {len(ok)} 处，待人工复核 {len(pending)} 处')
@@ -360,6 +386,17 @@ def apply_gates(dry=True):
         return ok, pending
 
     ok = _fix_hebrew_order(ok)
+    # 已经落过盘的不再改（幂等）：原串早就被替换掉了，再跑只会记一堆 SKIP，
+    # 还可能把别处同形的串误改。
+    done_before = set()
+    if APPLIED.exists():
+        for line in APPLIED.open(encoding='utf-8'):
+            f = line.rstrip('\n').split('\t')
+            if len(f) >= 4 and not f[3].startswith('SKIP'):
+                done_before.add((f[0], f[1]))
+    ok = [(it, img, src) for it, img, src in ok
+          if (it['sec'], it['tok']) not in done_before]
+    print(f'其中 {len(done_before)} 处此前已落盘，本轮待落 {len(ok)} 处')
     from collections import defaultdict as dd
     per = dd(list)
     for it, img, src in ok:
@@ -372,12 +409,25 @@ def apply_gates(dry=True):
             for it, img, src in lst:
                 # 用上下文定位，避免同名 token 改错位置
                 ctx = it['ctx']
-                head = ctx.split(it['tok'])[0][-25:]
-                old = head + it['tok']
-                if t.count(old) != 1:
+                before, _, after = ctx.partition(it['tok'])
+                # 逐步加长上下文，直到定位唯一。只用 head 定位时，`^n`、`o20`
+                # 这种两三个字符的残串在同一篇里能撞上好几处（54 处因此跳过）。
+                hit = None
+                for hn, tn in ((25, 0), (40, 0), (40, 15), (55, 30)):
+                    head, tail = before[-hn:], after[:tn]
+                    old = head + it['tok'] + tail
+                    if t.count(old) == 1:
+                        hit = (old, head + img + tail)
+                        break
+                if not hit:
+                    # 上下文快照是**修复前**取的：同一轮里邻近的坏字先被改掉，
+                    # 快照的前文就再也对不上了（54 处是这么跳过的）。
+                    # 退一步，按相似度在本篇里给 tok 的各处出现打分择位。
+                    hit = _locate_by_similarity(t, it, img)
+                if not hit:
                     fh.write(f'{sec}\t{it["tok"]}\t{img}\tSKIP-定位不唯一\n')
                     continue
-                t = t.replace(old, head + img, 1)
+                t = t.replace(hit[0], hit[1], 1)
                 fh.write(f'{sec}\t{it["tok"]}\t{img}\t{src}\n')
                 n += 1
             p.write_text(t, encoding='utf-8')
@@ -391,6 +441,36 @@ def apply_gates(dry=True):
 
 
 HEB = re.compile(r'[\u0590-\u05ff]')
+
+
+
+def _locate_by_similarity(text, it, img):
+    """在正文里为 it['tok'] 择位：取与快照上下文最像的那一处。
+
+    只有「最像的一处」明显胜过第二名（相似度高 0.15 以上）才动手；
+    否则宁可不改——改错位置比不改更糟（feedback_ocr_adjudication_backfill）。
+    """
+    from difflib import SequenceMatcher
+    tok = it['tok']
+    ctx = it['ctx']
+    spots = []
+    i = text.find(tok)
+    while i >= 0:
+        window = text[max(0, i - 55):i + len(tok) + 55]
+        spots.append((SequenceMatcher(None, ctx, window).ratio(), i))
+        i = text.find(tok, i + 1)
+    if not spots:
+        return None
+    spots.sort(reverse=True)
+    if len(spots) > 1 and spots[0][0] - spots[1][0] < 0.15:
+        return None
+    if spots[0][0] < 0.5:
+        return None
+    i = spots[0][1]
+    old = text[max(0, i - 20):i + len(tok)]
+    if text.count(old) != 1:
+        return None
+    return old, old[:-len(tok)] + img
 
 
 def _fix_hebrew_order(ok):
@@ -433,6 +513,8 @@ def main():
     ap.add_argument('--pages', help='如 23,32,56 或 100-120')
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--pass2', action='store_true', help='跑第二遍（互证用）')
+    ap.add_argument('--pass3', action='store_true',
+                    help='第三遍：换分辨率重判，只跑前两遍不一致的')
     ap.add_argument('--next-page', action='store_true',
                     help='只重跑第一遍判成 ? 的，改问下一页（段落跨页）')
     ap.add_argument('--apply', action='store_true')
@@ -461,8 +543,10 @@ def main():
                 pages.append(int(part))
     else:
         ap.error('要 --pages 或 --all')
-    out = READINGS_NP if a.next_page else (READINGS2 if a.pass2 else READINGS)
-    run(pages, out, a.dpi, retry_next_page=a.next_page)
+    out = (READINGS_NP if a.next_page else
+           READINGS3 if a.pass3 else
+           READINGS2 if a.pass2 else READINGS)
+    run(pages, out, a.dpi, retry_next_page=a.next_page, pending_only=a.pass3)
 
 
 if __name__ == '__main__':
