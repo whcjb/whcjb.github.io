@@ -415,6 +415,36 @@ def split_page(lines, fn_max):
             continue                      # 区内行距不小 → 不是脚注
         best = i + 1
         break
+
+    # 空隙判据够不着的那一档：注区**首行是上一页脚注的接续**，行首没有
+    # 脚注符（守卫二不过），而那道空隙又恰好差一点点没到 1.5 倍
+    # （p99 实测 79 px vs 门槛 79.5）。这两条一失效，整条编者长注就整段
+    # 落进正文，还被一行一段地拆开——全书 15 页、478 行（p99 的尼西亚会议
+    # 引文是最长的一条）。
+    #
+    # 补的是**页内**字号落差。文件开头说过字号做全局阈值不可靠（逐行噪声
+    # 大、两卷尺度还不同），但同一页内「正文中位数 vs 注区中位数」是可靠的
+    # ——两卷都是 44→34 / 54→43 这种量级。仍旧要两个信号同时成立：
+    # 字号落到 0.85 以下，**且**注区行距明显比正文紧。
+    # ── 已知漏判：15 页、478 行编者长注落进了正文 ──────────────────────
+    # 症状：整条注被判成 [BODY]，而且**一行一段**（p99 的尼西亚会议引文
+    # 最长，18 行），读者看到的是句子从中间断开、换行连字符也没接上。
+    # 全书实测 15 页：v1 p81/103/160/172/214/255/256/260/263/343/440/506/621，
+    # v2 p329/468。
+    #
+    # 成因是两道守卫**同时**失效：注区首行是上一页脚注的接续，行首没有
+    # 脚注符（守卫二不过）；那道空隙又恰好差一点点没到 1.5 倍（p99 实测
+    # 79 px vs 门槛 79.5）。
+    #
+    # 试过三版补救判据，都**撤掉了**，原因记在这里免得再走一遍：
+    #   · 页内最大字号落差（相对比较）→ 新判出 169 页，真正漏判的只有 15 页。
+    #     正文页上那个「最大落差点」不过是逐行噪声，随便落在哪里都能配上
+    #     一段行距偏紧的尾巴。
+    #   · 再叠一道「空隙 ≥ 1.25 倍」→ 只降到 165 页，空隙根本不是判别点。
+    #   · 改用 calibrate 的 fn_max 当绝对界 → 管线内外口径不一致
+    #     （管线里 vol2 是 51.5，单独调用算出 168.5），压不住假阳性。
+    # 把正文判成脚注是**静默**的结构性损坏，比留着这 478 行难看得多，
+    # 所以宁可不判。真要修，得先把 fn_max 的口径统一，再拿这 15 页当基准集。
     if best is None:
         # 兜底一：跨页的长注，续页顶上没有脚注符可认（Allport 的传记体长注
         # 常连着三四页）。实测 29 页因此把注文拼进正文。没有脚注符时改用
@@ -571,8 +601,73 @@ STRAY_MID = re.compile(r'(?<=[a-z,;*\u2020\u2021]) [.\]\[,] (?=[a-z])')
 HYPHEN_STRAY = re.compile(r'([a-z])-\s*[.,;:\]\[]\s*([a-z])')
 
 
+# 断词的后一半跑到了下一个 token 上，中缝只剩一个空格（`ef- fect`）。
+# 连字符后面**紧跟空格**这个形状本身就是换行断词的痕迹——原书排的复合词
+# （`well-known`）连字符后不带空格。再卡一道「接起来必须是词」。
+HYPHEN_SPLIT = re.compile(r'\b([a-z]{2,})-\s+([a-z]{2,})\b')
+
+# 书眉。左页 `250 AN EXPOSITION OF ST. PAUL'S — Chap. iv.`、
+# 右页 `EPISTLE TO THE COLOSSIANS. 293`。绝大多数在行层就被剥掉了，
+# 漏网的是 `ST.` 被读成 `$T` `8T` `5T` `8ST` 那些——版面在段落中缝断页，
+# 书眉就嵌进了句子里（实测 19 处）。剥掉正好把句子接回去。
+HEADER_L = re.compile(
+    r'\s*\d{1,3}\s+AN\s+EXPOSITION\s+[A-Z]{2}\s+[\$0-9A-Z]{0,2}T\.?\s*'
+    r"PAUL['\u2019]?[Ss]?\s*(?:[—–-]\s*)?(?:<em>)?\s*Chap\.?\s*(?:</em>)?"
+    r'\s*[ivwxl]+\.?\s*')
+HEADER_L2 = re.compile(
+    r"\s*\d{1,3}\s+AN\s+EXPOSITION\s+[A-Z]{2}\s+[\$0-9A-Z]{0,2}T\.?\s*"
+    r"PAUL['\u2019]?[Ss]?\s*(?:[—–-]\s*)?")
+HEADER_R = re.compile(
+    r'\s*EPISTLE\s+TO\s+T[HI][EI]\s+COLOSSIANS\.?\s*\d{1,3}\s*',
+    re.IGNORECASE)
+# 印张标记（`VOL. II. U 2` 读成 `Vise Iie u 2`）
+SIGNATURE = re.compile(r'\s*Vise\s+Iie\s+u\s+2\s*')
+
+
+def strip_header(t):
+    for rx in (HEADER_L, HEADER_L2, HEADER_R, SIGNATURE):
+        t = rx.sub(' ', t)
+    return t
+
+
+def _rejoin(m):
+    from davenant_witness import attested
+    return m.group(1) + m.group(2) if attested(m.group(1) + m.group(2)) \
+        else m.group(0)
+
+
+# 换行的连字符被读成了句点：`Chris. tian` `them. selves` `de. serving`。
+# 与 HYPHEN_SPLIT 是同一件事，只是断的那一笔读成了别的字符。
+DOT_SPLIT = re.compile(r'\b([A-Za-z]{2,})\. ([a-z]{2,})\b')
+# 后半是这些的时候，前半是**人名/书名缩写**，不是断词——
+# `says August. in Ps. cxviii.` 是「奥古斯丁，在诗篇……」，
+# 合成 `Augustin Ps.` 就把引文出处吃掉了（实测）。
+DOT_SPLIT_CITE = {'in', 'ad', 'de', 'contr', 'cont', 'adv', 'advers', 'lib',
+                  'cap', 'ep', 'epist', 'serm', 'hom', 'tom', 'tract', 'qu',
+                  'quest', 'art', 'sup', 'super', 'on', 'upon', 'apud', 'ex'}
+
+
+def _dotjoin(m):
+    from davenant_witness import attested, corpus, DOT_ABBR, BIBLE_ABBR
+    a, b = m.group(1), m.group(2)
+    if a.lower() in DOT_ABBR or a.lower() in BIBLE_ABBR or b in DOT_SPLIT_CITE:
+        return m.group(0)
+    j = a + b
+    if not attested(j):
+        return m.group(0)
+    # 两半各自都是词、拼起来在本书里又一次都没出现过 → 多半是两句话，别接
+    # （`VI. and` `IV. in` `may. be` 全靠这一条挡住）
+    _, uni = corpus()
+    if attested(a) and attested(b) and uni[j.lower()] == 0:
+        return m.group(0)
+    return j
+
+
 def drop_stray(t):
     t = HYPHEN_STRAY.sub(r'\1\2', t)
+    t = HYPHEN_SPLIT.sub(_rejoin, t)
+    t = DOT_SPLIT.sub(_dotjoin, t)
+    t = strip_header(t)
     return STRAY_MID.sub(' ', t)
 
 

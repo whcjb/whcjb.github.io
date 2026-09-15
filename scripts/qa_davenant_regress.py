@@ -50,6 +50,7 @@ def real(w):
 def main():
     base = sys.argv[1] if len(sys.argv) > 1 else 'HEAD'
     bad = 0
+    w2w = []
     for f in FILES:
         old = subprocess.run(['git', 'show', f'{base}:{f}'],
                              capture_output=True, text=True).stdout
@@ -72,7 +73,19 @@ def main():
             if all(real(x) for x in was) and not all(real(x) for x in now):
                 bad += 1
                 print(f'  {Path(f).name:18} {" ".join(was)!r} → {" ".join(now)!r}')
+            elif all(real(x) for x in was) and all(real(x) for x in now):
+                # 「词 → 另一个词」。这一档**判不出对错**，但它是静默改错
+                # 唯一会留下的痕迹：规则的职责是把非词修成词，把一个好端端
+                # 的词换成另一个词，只可能来自人工核定表，或者来自一条越界的
+                # 规则。`bad`→`had` 21 处就是这么漏过 §3.1 的——两边都是词。
+                # 所以单列出来逐条看，而不是让它静悄悄过去。
+                w2w.append((Path(f).name, ' '.join(was), ' '.join(now)))
     print(f'逐词回退：{bad} 处（基准 {base}）')
+    if w2w:
+        print(f'\n词→词改动 {len(w2w)} 处（判不出对错，须逐条核是不是人工核定的）：')
+        seen = collections.Counter((o, n) for _, o, n in w2w)
+        for (o, n), c in seen.most_common():
+            print(f'  {c:3}  {o!r} → {n!r}')
     return 1 if bad else 0
 
 

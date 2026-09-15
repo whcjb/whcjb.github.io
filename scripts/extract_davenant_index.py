@@ -102,7 +102,67 @@ HEAD_RES = [
 # 其余几块的条目是句子（`Whether our love is God himself …`），同样的规则
 # 会把 was / man / one 这类小写实词当成引点吃掉，一律不动。
 LEADER_TOK = re.compile(r"^[a-z.,;:_|\"'\-—–=~*()]{1,4}$")
-LEADER_KEEP = {'de', 'of', 'le', 'la', 'du', 'van', 'von', 'di', 'da', 'el'}
+LEADER_KEEP = {'de', 'of', 'le', 'la', 'du', 'van', 'von', 'di', 'da', 'el',
+               'Bp', 'Abp', 'Dr', 'Rev', 'Mr', 'St', 'Vol', 'No', 'Note',
+               'ibid', 'seq', 'et', 'al', 'Jr', 'Sr'}
+# 大写与数字型的引点残渣。原来的字符类只认小写，`Doc` `Occ` `O00` `900`
+# 这些整串漏在外面，读者看到的就是 `Protestant Authorities ooc occ oc oc 547`。
+#
+# 分两档，是因为有一档会吃掉真信息：`Schisms, opposed, T. 376` 里的 `T.`
+# 不是引点，是**卷号 I.**（注中索引的格式是「条目, 卷. 页」）。
+#   · 硬档：这些串在英文里没有第二种解释，单独一个也敢收
+#   · 软档：单个时可能是卷号或缩写，只有跟硬档的串连在一起才收
+LEADER_HARD = {'occ', 'ooc', 'coc', 'oc', 'oo', 'cc', 'Doc', 'DOC', 'Occ',
+               'OCC', 'eee', 'ees', 'ese', 'ose', 'vee', 'oon', 'poc', 'orc',
+               'onc', 'cnc', 'ccc', 'aoc', 'boc', 'anc', 'sec', 'eve', 'coo',
+               'cos', 'con', 'uu', 'O00', 'O09', 'p00', '0c', '00', 'oO',
+               '900', '906', 'Soc', 'soc', 'doc'}
+LEADER_SOFT = {'T', 'E', 'M', 'A', 'Se', 'Sc', 'Un', 'Bo', 'So', 'Foo',
+               'Bes', 'Po', 'Pe', 'ue', 'ox', 'we', 'ae', 'm', 'c', 'e',
+               'EL', 'Ss', '0'}
+
+
+def _leaderish(w):
+    core = w.strip('.,;:')
+    if core in LEADER_KEEP:
+        return None
+    if core in LEADER_HARD or re.fullmatch(r'0+', core):
+        return 'hard'
+    if core in LEADER_SOFT:
+        return 'soft'
+    if LEADER_TOK.match(w) and core not in LEADER_KEEP:
+        return 'hard'
+    return None
+
+
+# 卷号被读花。全书只有两卷，所以garbled 的形状只可能是 I 或 II；
+# **笔画数**在读花之后仍旧保得住（`1I` `IT` `Il` 都是两个字形，
+# `T` `l` `1` 都是一个），按笔画数还原，不去猜字母本身。
+VOL_II = {'1I', 'I1', 'Il', 'lI', 'IT', 'TI', 'LI', 'IL', 'll', 'ii', 'II',
+          'if', 'iI', 'Ii', '11', 'l1', '1l', 'T1', '1T', 'Ll', 'lL', 'JI'}
+# ⚠️ 单字形（`T.` `l.` `1.`）**不还原**。它和引点残渣长得一模一样，
+# 而传略索引里根本没有行内卷号——`CEcumenius T 154` 那个 `T` 是引点，
+# 改成 `I.` 就是凭空造了一个卷号。两字形的没有这个问题：引点不会读成
+# `1I` `IT` 这种形状。留下的单字形残渣是看得见的，造出来的卷号不是。
+VOL_I = frozenset()
+
+
+def fix_vol(t):
+    toks = t.split()
+    out, n = [], 0
+    for k, w in enumerate(toks):
+        core = w.rstrip('.,;:')
+        # 卷号后面原书排的是句点。读花时常常连标点一起花成逗号
+        # （`of, if, 185`），一律还原成句点。
+        tail = '.'
+        nxt = toks[k + 1] if k + 1 < len(toks) else ''
+        if k and nxt[:1].isdigit() and core != 'I' and core != 'II':
+            if core in VOL_II:
+                out.append('II' + tail); n += 1; continue
+            if core in VOL_I:
+                out.append('I' + tail); n += 1; continue
+        out.append(w)
+    return ' '.join(out)
 
 
 def strip_leaders(t):
@@ -112,17 +172,24 @@ def strip_leaders(t):
     William Bp. of Auxerre 68` 里的 `of` 后面跟着大写的 Auxerre，串就断了，
     不会被吃。`Alphonsus de Castro` 同理。
     """
+    # ⚠️ 卷号还原必须排在剥引点**之前**。`works in refutation of, if, 185`
+    # 里的 `if,` 是卷号 II，但它全是小写字母、长度 ≤4，正好落在引点的字符类
+    # 里，先剥就被当噪声吃掉了（实测）。先还原成 `II.`，引点规则自然不再碰它。
+    t = fix_vol(t)
     toks = t.split()
     i = len(toks)
     # 末位是页码就从它前面往回收；`000` 这种全零的不是页码，是引点被读成了零
     if i and re.match(r'^\d', toks[-1]) and not re.fullmatch(r'0+', toks[-1]):
         i -= 1
-    j = i
-    while j > 1 and (LEADER_TOK.match(toks[j - 1])
-                     and toks[j - 1].strip('.,;:') not in LEADER_KEEP
-                     or re.fullmatch(r'0+', toks[j - 1])):
+    j, kinds = i, []
+    while j > 1:
+        k = _leaderish(toks[j - 1])
+        if k is None:
+            break
+        kinds.append(k)
         j -= 1
-    if j == i:
+    # 整串都是软档（单个 `T.` 那种）时不收——它多半是卷号，不是引点
+    if j == i or 'hard' not in kinds:
         return t
     # 第一串引点常被 OCR 粘在名字尾巴上（`Ambrose...` / `Aquinas...`）
     head = toks[:j]
@@ -354,6 +421,10 @@ def classify(pc, pages):
                 kind = 'letter'
             else:
                 kind = 'entry'
+                # ⚠️ 卷号还原要对**所有**条目跑。原先它挂在 strip_leaders 里，
+                # 而那个只在「有点线的索引」分支调用——总索引与注中索引恰好
+                # 没有点线，于是 48 处 `1I. 118` `IT. 291` 一个也没还原（实测）。
+                t = fix_vol(t)
                 if pc.get('leaders'):
                     t = strip_leaders(t)
             rows.append((p, col, l, t, kind))

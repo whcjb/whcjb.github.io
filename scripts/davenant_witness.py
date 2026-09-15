@@ -232,7 +232,7 @@ def manual_repair(vol, page, w):
 # 既有的斑点规则只认 `|` 和 `/`，这两个字符本书里从不合法出现；`.` 与 `]`
 # 别处是合法的，所以要靠**位置**判：前后都是 ≥2 个字母的小写词。
 # 正文四章加附卷实测 109 处，逐条看过没有一处是真标点。
-STRAY_PUNCT = {'.', ']', '[', ',', ';', '*'}
+STRAY_PUNCT = {'.', ']', '[', ',', ';', '*', ':', '!', ')', '°', '·', '‘', '’'}
 
 
 # ── 引文里的几种粘连与字形 ──────────────────────────────────────────────────
@@ -275,7 +275,9 @@ ABBR_NUM = re.compile(
     r'\.(\d{1,3}[.,;:]?)$')
 I_GLUE = re.compile(r'^I(shall|am|have|will|think|say|know|answer|confess|add|'
                     r'grant|deny|reply|omit)([.,;:]?)$')
-FN_GLUE = re.compile(r'^([A-Z][a-z]{2,})([f+])$')
+# ⚠️ 这里**不能**收 `t`。`Galat.` `Rhet.` 会被拆成词 + 脚注符
+# （`Gala†.` `Rhe†.`，实测 8 处）——太多拉丁缩写正好以 t 结尾。
+FN_GLUE = re.compile(r'^([A-Z][a-z]{2,})([f+])([.,;:]?)$')
 
 
 # 词尾多出来的一个句点：`who had. received an immediate call`、
@@ -332,8 +334,410 @@ def glue_repair(w):
         return f'I {m.group(1)}{m.group(2)}'      # Ishall → I shall
     m = FN_GLUE.match(w)
     if m and attested(m.group(1)) and not attested(w):
-        return m.group(1) + '†'                   # Thomasf → Thomas†
+        return m.group(1) + '†' + (m.group(3) or '')   # Thomasf → Thomas†
+    core, tail = re.fullmatch(r'(.*?)([.,;:]*)$', w).groups()
+    if core in TO_BAD:
+        return TO_BAD[core] + tail                # £o → to
+    m = SLASH_LL.match(w)
+    if m:
+        # `//` 在本书里从不合法出现，不必再问「原串是不是词」——
+        # `_norm` 会把斜杠剥干净，`attested('A//')` 反而返回 True。
+        cand = m.group(1) + 'll' + m.group(2)
+        if attested(cand):
+            return cand + m.group(3)              # A// → All
     return None
+
+
+
+# ── 第四章逐段读出来的几类 ────────────────────────────────────────────────
+# 都是扫描式普查够不着的：要么形状本身是合法字符（`"` `:` `.`），要么
+# 只有放回句子里才看得出不对（`Lam` `Jf` `ill.`）。
+
+# `I` 的字形族。原书的大写 I 是一根竖线带上下衬线，读花之后落在这几个形状上。
+I_GLYPH = {'l', '|', ']', '[', '1', '4', 'J', 'L', '/', 'Y', 'i'}
+# 跟在 `I` 后面的词——只认这一张闭合表。开放判据（「后面是动词就算」）
+# 会把 `Rev. iii. 1, For as Tertullian` 里的 `1` 也改掉。
+I_VERB = {'am', 'have', 'had', 'has', 'was', 'were', 'do', 'did', 'shall',
+          'should', 'will', 'would', 'may', 'might', 'must', 'can', 'could',
+          'know', 'knew', 'think', 'thought', 'say', 'said', 'speak', 'spake',
+          'wait', 'hear', 'heard', 'see', 'saw', 'looked', 'look', 'found',
+          'find', 'add', 'confess', 'answer', 'believe', 'wish', 'wished',
+          'command', 'commanded', 'bear', 'declare', 'preach', 'magnify',
+          'subjoin', 'premise', 'conceive', 'perceive', 'recollect',
+          # 第四章与附卷逐段读出来的续补。这张表是**唯一**的定位判据
+          # （`1` 究竟是数字还是 `I`，全看后面跟的是不什么），宁可漏判
+          # 也不要放开成「后面是动词就算」——`Rev. iii. 1, For as …`
+          # 里的 `1` 后面跟的也是词。
+          'omit', 'proceed', 'pass', 'come', 'go', 'take', 'give', 'grant',
+          'deny', 'affirm', 'assert', 'reply', 'ask', 'judge', 'conclude',
+          'infer', 'deduce', 'suppose', 'hold', 'mean', 'intend', 'desire',
+          'fear', 'doubt', 'remember', 'understand', 'allow', 'admit',
+          'acknowledge', 'produce', 'adduce', 'cite', 'mention', 'observe',
+          'remark', 'shew', 'show', 'prove', 'contend', 'maintain', 'object',
+          'urge', 'begin', 'return', 'leave', 'dwell', 'treat', 'explain',
+          'expound', 'render', 'call', 'name', 'reckon', 'esteem', 'account',
+          'deem', 'hope', 'trust', 'pray', 'beseech', 'entreat', 'exhort',
+          'advise', 'warn', 'admonish', 'teach', 'read', 'write', 'feel',
+          'seek', 'look', 'consider', 'examine', 'enquire', 'inquire',
+          'weigh', 'compare', 'distinguish', 'divide', 'annex', 'repeat',
+          'apply', 'refer', 'ascribe', 'attribute', 'impute', 'assign',
+          'allege', 'plead', 'own', 'concede', 'yield', 'oppose', 'refuse',
+          'reject', 'decline', 'cease', 'continue', 'persist', 'wonder',
+          'grieve', 'rejoice', 'confide', 'suspect', 'presume', 'venture'}
+# `1` 前面是这些的时候是**页码/章节号**，不是 `I`
+I_REF_PREV = re.compile(r'(?:^|\.)(?:p|pp|cap|lib|tom|vol|art|ver|vers|qu|'
+                        r'quest|sect|epist|hom|serm|orat|num|col|fol)\.$')
+
+
+def iglyph_repair(w, prev, nxt, other, other3):
+    """孤立的 `I` 被读成 `l ] [ 1 4 J L |` → 还原。"""
+    if w not in I_GLYPH:
+        return None
+    if _norm(nxt).rstrip(',;:.') not in I_VERB:
+        return None
+    # 前一个 token 指向页码/卷章号的，这个位置是数字不是 `I`
+    if I_REF_PREV.search(prev) or re.fullmatch(r'[ivxlcdm]+[.,]', _norm(prev)):
+        return None
+    # 证人那边读出别的字母（不在字形族里、也不是 I），就是我读错了位置
+    for c in (other, other3):
+        if isinstance(c, str) and c.strip():
+            t = c.strip().rstrip(',;:.')
+            if t and t != 'I' and t not in I_GLYPH:
+                return None
+    return 'I'
+
+
+# `] Cor.` `] Epis.` `Lib. ].` —— 数字 1 被读成方括号
+ONE_REF = re.compile(r'^[\]\[|/]$')
+ONE_REF_NXT = re.compile(r'^(Cor|Epis|Epist|Thess|Tim|Pet|John|Joh|Kings|'
+                         r'Sam|Chron|Macc)\.?$')
+
+
+def one_repair(w, prev, nxt):
+    """书卷序号位上的 `]` → `1`（`] Cor.` → `1 Cor.`）。"""
+    if not ONE_REF.match(w) or not ONE_REF_NXT.match(_norm(nxt).rstrip(',;:')):
+        return None
+    return '1'
+
+
+# `Jf` `Jt` `?f` `[t` —— 句首的 If / It。这四个形状都不是词，没有第二种解释。
+# 只收**不可能有第二种解释**的形状。`lt` `lf` `1t` 曾经在表里，撤掉了：
+# 希腊文音译的乱码里这几个串成片出现，改成 If/It 会把乱码改成看着像真的。
+IFIT = {'Jf': 'If', '?f': 'If', 'Jt': 'It', '[t': 'It', '[f': 'If',
+        'Jl': 'It', 'Js': 'Is', '?s': 'is', '[s': 'is', 'Jn': 'In',
+        '/f': 'If', '/t': 'It', '|f': 'If', '|t': 'It', '!f': 'If'}
+
+
+APOS_HEAD = re.compile(r"^([A-Z])['\u2019]([a-z]{2,})([.,;:]?)$")
+
+
+def apos_head_repair(w):
+    """`T'he` → `The`：首字母与词身之间混进一个撇号。"""
+    m = APOS_HEAD.match(w)
+    # ⚠️ 不能再加「原串不是词」那道：`_norm` 会把撇号剥掉，
+    # `attested("T'he")` 归一成 `the` 返回 True，这条一处也判不成。
+    # 形状本身已经够硬——`X'yz` 里没有合法英文词（`O'er` 拼回 `Oer`
+    # 不是词，自动挡住；`D'Arcy` 词身大写，正则不收）。
+    # 诗体缩写走 POETIC 白名单：`O'er` 拼回 `Oer` 在系统词典里居然也认，
+    # 不列白名单就会被改掉（实测）。
+    if w.lower().rstrip('.,;:') in POETIC:
+        return None
+    if m and attested(m.group(1) + m.group(2)):
+        return m.group(1) + m.group(2) + m.group(3)
+    return None
+
+
+def ifit_repair(w, nxt):
+    core, tail = re.fullmatch(r'(.*?)([.,;:!?]*)$', w).groups()
+    # ⚠️ 门槛既不能用 attested，也不能用语料计数。系统词典里 `jf` `jt`
+    # 这种两字母串居然都收着；而 `_norm` 会把标点剥光，`?f` 归一成 `f`，
+    # 语料计数查的其实是别的词（实测两条都判不出来）。这张表本身就是判据：
+    # 收的都是英文里不存在的形状，再卡一道「后面跟小写词」定位句首。
+    if core in IFIT and re.match(r'^[a-z]', nxt):
+        return IFIT[core] + tail
+    return None
+
+
+# 前导双引号。原书用**斜体**标引语，正文里根本不排双引号；正文中所有
+# `"X` 的 X 都是大写 T 开头的词（`"The` `"Therefore` `"Tertullian` …），
+# 说明这是同一个字形被读花，不是真的引号。逐条量过：82 处，无一例外。
+LEAD_Q = re.compile(r'^"([A-Z][a-z]{1,}[.,;:]?)$')
+
+
+def quote_repair(w):
+    if w == '"Tis':
+        return "'Tis"                      # 这个是真的缩写 `'Tis`
+    m = LEAD_Q.match(w)
+    if m and attested(m.group(1).rstrip('.,;:')):
+        return m.group(1)
+    return None
+
+
+# 功能词后面多一个句点，后面还接着小写词——这种位置原书不可能有句点。
+# 内容词（`human.` `mark.`）不走这条，仍旧要证人，见 dot_repair。
+FN_DOT = {'of', 'that', 'may', 'a', 'in', 'to', 'and', 'for', 'with', 'from',
+          'be', 'is', 'was', 'were', 'the', 'his', 'her', 'their', 'its',
+          'since', 'which', 'not', 'as', 'by', 'at', 'it', 'he', 'she',
+          'they', 'we', 'you', 'this', 'these', 'those', 'but', 'or', 'if',
+          'when', 'than', 'then', 'so', 'all', 'any', 'no', 'upon', 'into'}
+
+
+def fndot_repair(w, prev, nxt):
+    # ⚠️ 判据必须看**原串**。`_norm` 会把数字剥掉，`_norm('4to')` = `to`，
+    # 于是版式缩写 `in 4to. at Paris` 的那个合法缩写点被当成多余的删掉了
+    # （实测 2 处）。同理大写也不能归一，`V. A. in his …` 里的 `A.` 是
+    # 人名缩写，不是冠词。
+    if not w.endswith('.') or w[:-1] not in FN_DOT:
+        return None
+    if not re.match(r'^[a-z]{2,}', nxt):
+        return None
+    # 前一个 token 是人名缩写（`V.` `R.`），这一个多半也是
+    if re.fullmatch(r'[A-Z]\.', prev):
+        return None
+    # 后面跟罗马数字或数字 = 这是编号（`No. vi. Sect. 14`），点是合法的
+    if re.fullmatch(r'[ivxlcdm]+\.?[,;:]?', nxt) or nxt[:1].isdigit():
+        return None
+    # `…of it. i. e. …` 里那个点是真的——后面跟的是 i.e./e.g.，不是句子续写
+    if re.fullmatch(r'[ie]\.', nxt) or re.fullmatch(r'[a-z]\.', nxt):
+        return None
+    return w[:-1]
+
+
+# 引文位上的罗马数字。`ill.` `in.` `i1.` `iw.` 本身可能是词（ill / in），
+# 所以**必须**两边都卡死：前面是引书缩写，后面是数字。
+ROMAN_BAD = {'i1': 'ii', 'il1': 'iii', 'ill': 'iii', 'in': 'iii', 'iw': 'iv',
+             'ti': 'ii',
+             'iu': 'iv', 'll': 'ii', 'lll': 'iii', 'ii1': 'iii', 'vii1': 'viii',
+             'xi1': 'xii', 'i11': 'iii'}
+ROMAN_PREV = re.compile(r'^(?:[1-3] )?[A-Z][a-z]{1,6}\.?$')
+
+
+def romanref_repair(w, prev, nxt):
+    core, tail = re.fullmatch(r'(.*?)([.,;:]*)$', w).groups()
+    if core.lower() not in ROMAN_BAD or not tail:
+        return None
+    # ⚠️ 用原串查数字，别用 _norm——它会把数字一并剥掉（`_norm('5,')` = ''）
+    if not re.match(r'^\d', nxt):
+        return None
+    pn = _norm(prev).rstrip(',;:')
+    if not (pn in BIBLE_ABBR or pn in DOT_ABBR or pn in ('chap', 'chapter')):
+        return None
+    return ROMAN_BAD[core.lower()] + tail
+
+
+# `A//` `a//` —— 两根竖线读成了 ll
+SLASH_LL = re.compile(r'^([A-Za-z]*)//([A-Za-z]*)([.,;:]?)$')
+# `£o` `(o` —— 小写 t 被读成别的
+TO_BAD = {'£o': 'to', '(o': 'to', '£0': 'to', '£ο': 'to'}
+
+
+
+# ── 短功能词被读花 ────────────────────────────────────────────────────────
+# `ts`→is  `tt`→it  `tn`→in  `tu`→in  `bv`→by  `aud`→and  `iu`→in  `alt`→all
+# `mot`→not  `ure`→are  `ef`→if  `Ir`→It。这些串短、出现密，读花之后仍是
+# 一小串字母，判词典多半还认它（系统词典里 `ts` `tt` `aud` 全都收着），
+# 所以门槛不能是「在不在词典里」，只能是「本书里出现过几次」。
+FW_TARGET = {
+    'is', 'it', 'in', 'if', 'of', 'to', 'as', 'at', 'be', 'he', 'we', 'by',
+    'do', 'on', 'or', 'an', 'my', 'me', 'so', 'no', 'us', 'up', 'am',
+    'and', 'the', 'all', 'not', 'was', 'for', 'but', 'his', 'her', 'its',
+    'are', 'out', 'our', 'had', 'has', 'him', 'who', 'you', 'one', 'may',
+    'that', 'this', 'with', 'from', 'they', 'them', 'then', 'than', 'when',
+    'were', 'have', 'will', 'said', 'been', 'into', 'upon', 'also', 'same',
+}
+# 字形混淆对。只收在本书实测见过的，不做泛化。
+FW_CONF = {frozenset(p) for p in (
+    'it', 'il', 'ij', 'nu', 'nm', 'vy', 'vr', 'ec', 'eo', 'ao', 'au', 'sf',
+    'lt', 'li', 'ce', 'oc', 'hb', 'ft', 'rv', 'mn', 'wv', 'gq', 'rt', 'sb',
+)}
+
+
+def _fw_edits(a, b):
+    """→ 替换次数，或 None（长度不等 / 有非字形混淆的替换）。"""
+    if len(a) != len(b):
+        return None
+    n = 0
+    for x, y in zip(a, b):
+        if x == y:
+            continue
+        if frozenset((x, y)) not in FW_CONF:
+            return None
+        n += 1
+    return n
+
+
+# 短拉丁/希腊虚词。LATIN_STOP 收的是实词，`ut` `et` `de` `si` 这些两字母的
+# 都不在里面，而它们恰好落在字形混淆的射程内（`ut`→at、`de`→do），必须单列。
+FW_KEEP = {'ut', 'et', 'de', 'ne', 'si', 'ac', 'ab', 'ex', 'eo', 'ea', 'id',
+           'ii', 'iii', 'iv', 'vi', 'vii', 'ix', 'xi', 'xii', 'te', 'se',
+           'tu', 'os', 'ob', 'per', 'pro', 'sub', 'sui', 'suo', 'sua',
+           'qui', 'qua', 'quo', 'cum', 'tam', 'nec', 'vel', 'sic', 'hic',
+           'hec', 'hac', 'hoc', 'huc', 'nam', 'iam', 'tan', 'kai', 'ton',
+           'tou', 'men', 'gar', 'oun', 'ver', 'vol', 'cap', 'lib',
+           # 卷号被读花的形状。这条规则排在索引的 fix_vol 之前，不排除的话
+           # 索引里的 `Il. 118`（卷二第 118 页）会先被改成 `It. 118`（实测 3 处）。
+           'il', 'li', 'it', 'i1', '1i', 'll', 'ii', 'ti', 'lt', 'tl',
+           # 书目与引文缩写。`ib.`（ibidem）被判成读花的 `is.` 过一次，
+           # 原始 OCR 本来读对了，是这条规则改坏的。
+           'ib', 'ibid', 'id', 'op', 'loc', 'cit', 'seq', 'sq', 'fol', 'col',
+           'no', 'nos', 'pp', 'vv', 'cf', 'viz', 'sc', 'qu', 'art', 'num',
+           'ed', 'tom', 'par', 'sect', 'obs', 'arg', 'ep', 'sup', 'inf'}
+# 系统词典里收着、但在英文里并不存在的串。「本来就是词」那道守卫问的是
+# 词典，而词典对这几个是错的——不单列的话 `aud`→`and` 一处也修不成（实测
+# 产物里还剩 8 处）。列表只收「确认不是英文词、也不是拉丁虚词」的。
+FW_NOTWORD = {'aud', 'iu', 'bv', 'tn', 'ts', 'tt', 'ure', 'ail', 'hy'}
+FW_RATIO = 20        # 目标词至少要比这个错形常见 20 倍
+
+
+def fw_repair(w, other, other3, latin=False, edge=False, sent=False):
+    if latin:
+        return None                      # 拉丁文行整行不碰，见 foreign_line
+    # ⚠️ 行首不碰。原书断词跨行，后半截会单独成为这一行的第一个 token：
+    # `mem-` / `ber,` 两行，`ber,` 孤立地看确实像读花的 `her,`，改完 dehyph
+    # 一接就成了 `memher`（实测 12 处：memher / Mediafor / rememher）。
+    # 同理词尾带连字符的也不碰，那是断词的前半截。
+    if edge or w.endswith('-'):
+        return None
+    core, tail = re.fullmatch(r'(.*?)([.,;:!?]*)$', w).groups()
+    if not core.isalpha() or not 2 <= len(core) <= 4:
+        return None
+    # ⚠️ 全大写不碰。把这条规则在全书上试跑一遍，211 种候选里有一大块是
+    # `NS`→us、`IM`→in、`SOR`→for、`AIL`→all 这样的——它们不是读花的功能词，
+    # 而是小型大写标题、书眉与引点噪声的碎片。把标题里的 `NS` 改成 `us`
+    # 是纯粹的破坏。（这条是「先把规则想改的全列出来看一遍」才发现的，
+    # 单看抽样改不出来。）
+    if core.isupper():
+        return None
+    # `!` 在本书里是扫描斑点不是标点。`al!` 会被判成 `at!`，两边都不对。
+    if '!' in tail:
+        return None
+    low = core.lower()
+    # 圣经书卷缩写与引书缩写：`Hab.`（哈巴谷书）差点被改成 `Has.`
+    if low in BIBLE_ABBR or low in DOT_ABBR:
+        return None
+    # ⚠️ 本来就是英文词的一律不碰。少这一条，`bad` 被改成 `had` 21 处——
+    # 而「本书里 bad 出现 0 次」这个判据是假的：语料就是被改坏的产物，
+    # 改完一遍 bad 就真的一次都不剩了，判据自我强化（老坑，见文件头）。
+    if attested(core) and len(core) >= 3 and core.lower() not in FW_NOTWORD:
+        return None
+    if low in FW_TARGET or low in FW_KEEP or low in LATIN_STOP:
+        return None
+    cands = [(t, _fw_edits(low, t)) for t in FW_TARGET]
+    cands = [(t, n) for t, n in cands if n]
+    if not cands:
+        return None
+    # ⚠️ 唯一性要在**最少替换数**这一档上看，不是笼统地「只有一个候选」。
+    # `ts` 改一个字母得 `is`、改两个得 `if`，笼统数就是两个候选，
+    # 于是最干净的那条反而判不出来（实测 `ts` `tt` 全漏）。
+    best = min(n for _, n in cands)
+    cands = [(t, n) for t, n in cands if n == best]
+    if len(cands) != 1:
+        return None                      # 同一档上有两种改法就不改
+    tgt, n = cands[0]
+    # 元音换元音是最容易两解的一档（`ef` 既像 `if` 也像 `of`，字形上分不出）。
+    # 这一档必须有证人当场读出目标才动手。
+    if any(a != b and a in 'aeiou' and b in 'aeiou'
+           for a, b in zip(low, tgt)):
+        if tgt not in [c.strip().rstrip(',;:.').lower()
+                       for c in (other, other3) if isinstance(c, str)]:
+            return None
+    # ⚠️ 门槛不能是「本书里出现 ≤2 次」。语料就是这个脚本自己的产物，
+    # 一个高频错形（`ts` 35 次）看上去一点也不生僻，判据自我否定。
+    # 改成比值：错形要比目标词罕见至少 20 倍。实测 `ts`:`is` = 226 倍、
+    # `aud`:`and` = 1384 倍，而真拉丁词 `de`:`do` 只有 1.3 倍，自动挡住。
+    if _uni()[low] * FW_RATIO > _uni()[tgt]:
+        return None
+    ws = [c.strip().rstrip(',;:.').lower() for c in (other, other3)
+          if isinstance(c, str) and c.strip()]
+    # 证人读出别的**词**，说明我认错了位置
+    if any(c != tgt and c != low and attested(c) for c in ws):
+        return None
+    # 改两个字母的，必须有证人当场读出目标；只改一个字母的，
+    # 靠「唯一解 + 本书生僻」就够——两条判据本身已经很硬。
+    if n >= 2 and tgt not in ws:
+        return None
+    # ⚠️ 不能一律沿用原词的大小写。`dedicating it Lo the magistrates` 里的
+    # `Lo` 是读花的小写 `to`，那个大写 L **本身就是错的一部分**；照抄就出
+    # `dedicating it To the magistrates`（实测）。只有真在句首才大写。
+    out = tgt.capitalize() if (core[0].isupper() and sent) else tgt
+    return out + tail
+
+
+
+# ── 词内单字母字形回填 ────────────────────────────────────────────────────
+# `servaut`→servant  `passious`→passions  `submitied`→submitted
+# `indieates`→indicates  `transgresstons`→transgressions  `aflinity`→affinity
+# subst_repair 只把标点换成字母（`Pau/`→Paul），管不到这一类；
+# trio_repair 走的是二元裁判，这些词的上下文对不上时就轮不到它判。
+#
+# ⚠️ 这条规则是 3425 处误改的老家。当年放开的版本把 `words`→`works`、
+# `has`→`was`、`sins`→`sons` 全改了一遍，因为系统词典缺复数形。所以守卫
+# 一条都不能少，且判据一律用**本书语料**而不是词典：
+#   ① 原词在本书里 ≤2 次（生僻）  ② 换出来的 ≥5 次（本书常用）
+#   ③ 同一档替换数上只有一个候选  ④ 不是屈折差异  ⑤ 不是截短
+#   ⑥ 证人那边没读出**别的词**   ⑦ 词长 ≥6（短词交给 fw_repair，
+#      那条另有比值门槛；6 字母以下的一字之差歧义太大）
+LETTER_CONF = {frozenset(p) for p in (
+    'it', 'il', 'ij', 'nu', 'ec', 'ce', 'oc', 'eo', 'ao', 'au', 'sf', 'lt',
+    'li', 'hb', 'ft', 'rv', 'vy', 'wv', 'gq', 'rt', 'sb', 'fl', 'mn', 'ae',
+)}
+LETTER_MIN = 6
+LETTER_TGT = 5
+
+
+def letter_repair(w, other, other3, edge=False):
+    # 行首与断词前半截不碰，理由同 fw_repair
+    if edge or w.endswith('-'):
+        return None
+    core, tail = re.fullmatch(r'(.*?)([.,;:!?]*)$', w).groups()
+    if not core.isalpha() or len(core) < LETTER_MIN:
+        return None
+    low = core.lower()
+    _, uni = corpus()
+    if attested(core) or uni[low] > 2:
+        return None
+    best, cands = None, []
+    for i, ch in enumerate(low):
+        for a, b in ((x, y) for pr in LETTER_CONF for x, y in
+                     (tuple(pr), tuple(pr)[::-1]) if len(pr) == 2):
+            if ch != a:
+                continue
+            cand = low[:i] + b + low[i + 1:]
+            if uni[cand] >= LETTER_TGT and attested(cand):
+                cands.append(cand)
+    cands = sorted(set(cands))
+    if len(cands) != 1:
+        return None                       # 无解或两解，一律不动
+    tgt = cands[0]
+    if _inflection(low, tgt) or truncation(low, tgt):
+        return None
+    # ⚠️ 我方词形**形态上说得通**（词干在词典里）就不动。
+    # web2 只收词元，`withdrew` `interred` `bidden` `qualifies` `dented`
+    # `proscribed` 查过去全是 False，于是这些真词被当成读花的残形列进了
+    # 候选（实测 7 种）。反向还原词干能认出它们。
+    #
+    # 这一条**只挂在这里**，不进全局 attested：`uppoint` 与 `loud` 也都在
+    # web2 里（生僻词），放进 attested 会把 `uppointed`（appointed 的残形）
+    # 和 `louded`（loaded 的残形）一起判成真词——那是文件里记着的两个反例。
+    # 在这里只损失「少修几个」，在那里会损失「判据本身」。
+    if any(st in DICT for st in _stems(low)):
+        return None
+    for c in (other, other3):
+        if not (isinstance(c, str) and c.strip()):
+            continue
+        t = _norm(c)
+        # ⚠️ 证人**同读**就不动。这一条比「词典里有没有」硬得多：
+        # attested('withdrew') 居然是 False（词典缺不规则变位），
+        # interred / bidden / proscribed / qualifies / dented 也一样，
+        # 于是这些**真词**都被列进了候选（`withdrew`→`withdraw`、
+        # `bidden`→`hidden`）。两遍独立 OCR 在同一位读出同一个串，
+        # 说明原书就是这么印的，词典说什么都不算。
+        if t == low:
+            return None
+        if t and t != tgt and attested(t):    # 证人读出别的词 = 我认错了位置
+            return None
+    out = ''.join(b.upper() if a.isupper() else b for a, b in zip(core, tgt))
+    return out + tail
 
 
 def stray_repair(w, prev, nxt, other, other3):
@@ -969,6 +1373,53 @@ def truncation(w, cand):
     return bool(b) and a != b and a.startswith(b) and len(a) - len(b) <= 2
 
 
+# 不规则过去式/过去分词。web2 只收词元，这些形一个都查不到。
+IRREG = {
+    'withdrew': 'withdraw', 'withdrawn': 'withdraw', 'bidden': 'bid',
+    'bade': 'bid', 'forbade': 'forbid', 'forbidden': 'forbid',
+    'drew': 'draw', 'drawn': 'draw', 'knew': 'know', 'known': 'know',
+    'grew': 'grow', 'grown': 'grow', 'threw': 'throw', 'thrown': 'throw',
+    'blew': 'blow', 'blown': 'blow', 'slew': 'slay', 'slain': 'slay',
+    'smote': 'smite', 'smitten': 'smite', 'chose': 'choose',
+    'chosen': 'choose', 'spoke': 'speak', 'spoken': 'speak',
+    'broke': 'break', 'broken': 'break', 'wrote': 'write',
+    'written': 'write', 'driven': 'drive', 'drove': 'drive',
+    'risen': 'rise', 'rose': 'rise', 'fell': 'fall', 'fallen': 'fall',
+    'held': 'hold', 'begot': 'beget', 'begotten': 'beget',
+    'forsook': 'forsake', 'forsaken': 'forsake', 'shaken': 'shake',
+    'taken': 'take', 'given': 'give', 'gave': 'give', 'sought': 'seek',
+    'brought': 'bring', 'bought': 'buy', 'taught': 'teach',
+    'caught': 'catch', 'wrought': 'work', 'trodden': 'tread',
+    'stricken': 'strike', 'struck': 'strike', 'sworn': 'swear',
+    'torn': 'tear', 'worn': 'wear', 'borne': 'bear', 'born': 'bear',
+}
+
+
+def _stems(n):
+    """→ 这个串可能的词干们。
+
+    web2 只收**词元**，屈折形一个也没有：`withdrew` `interred` `bidden`
+    `qualifies` `dented` 查过去全是 False。SUFFIXES 那一路只会直接砍尾巴，
+    砍不出「辅音重复」（inter→interred）与「y→ies」（qualify→qualifies）
+    这两种，于是这些**真词**被 letter_repair 当成读花的残形，
+    列进了候选（`withdrew`→`withdraw`、`bidden`→`hidden`，实测 7 种）。
+    """
+    out = set()
+    if n in IRREG:
+        out.add(IRREG[n])
+    for suf in ('s', 'es', 'ed', 'ing', 'en', 'er', 'est', 'ly', 'ness'):
+        if not n.endswith(suf) or len(n) - len(suf) < 3:
+            continue
+        b = n[:-len(suf)]
+        out.add(b)
+        out.add(b + 'e')                     # 去 e 后再加的：believe→believed
+        if len(b) > 2 and b[-1] == b[-2]:
+            out.add(b[:-1])                  # 辅音重复：inter→interred
+        if b.endswith('i'):
+            out.add(b[:-1] + 'y')            # y→ies/ied：qualify→qualifies
+    return out
+
+
 def attested(w):
     """这个词在本书里**站得住**吗。
 
@@ -1380,8 +1831,23 @@ def fix_line(vol, page, text, strict=False):
         # 这是证据不是猜——`asa memorial` 对面是 `as a memorial`。
         # 不靠「能拆成两个词典词」那种判据：`becometh` / `sumus` / `Johnson`
         # 一样能拆，实测 287 种候选里过半是这种误判。
+        _prev = toks[i - 1] if i else ''
+        _nxt = toks[i + 1] if i + 1 < len(toks) else ''
         for _why, _fix in (('人工核定', manual_repair(vol, page, w)),
                            ('引文粘连', glue_repair(w)),
+                           ('前导引号', quote_repair(w)),
+                           ('If/It', ifit_repair(w, _nxt)),
+                           ('首字母撇号', apos_head_repair(w)),
+                           ('大写 I 字形', iglyph_repair(
+                               w, _prev, _nxt, other, other3)),
+                           ('书卷序数', one_repair(w, _prev, _nxt)),
+                           ('罗马数字', romanref_repair(w, _prev, _nxt)),
+                           ('功能词后多点', fndot_repair(w, _prev, _nxt)),
+                           ('短功能词', fw_repair(
+                               w, other, other3, latin=is_latin, edge=(i == 0),
+                               sent=bool(_prev) and _prev[-1] in '.!?:;')),
+                           ('词内字形', None if is_latin else
+                            letter_repair(w, other, other3, edge=(i == 0))),
                            ('多余句点', dot_repair(
                                w, toks[i + 1] if i + 1 < len(toks) else '',
                                other, other3)),
@@ -1408,6 +1874,18 @@ def fix_line(vol, page, text, strict=False):
             _fix = None
         if _fix is not None and _fix != w:
             continue
+        # 证人在**这一处**把它拆成两个词，而我方这个串根本不是词——
+        # `Heisan` `Itisnot` `Hehada` 这类只出现一次的粘连进不了全书投票表
+        # （表要求 ≥2 次），只能靠逐位对齐。三条同时成立才动手：我方不是词、
+        # 拆出来每个都是词、拼回去与原串逐字相同（防止把对方的错位读数搬过来）。
+        if i in pair2 and not SPECK.match(w) and w not in splits() \
+                and w.isalpha() and len(w) >= 5 and not attested(w):
+            parts = pair2[i].split()
+            if len(parts) >= 2 and all(attested(x.strip('.,;:')) for x in parts) \
+                    and _norm(''.join(parts)) == _norm(w):
+                out[i] = pair2[i]
+                log.append((w, pair2[i], '对方拆作两词'))
+                continue
         if not SPECK.match(w) and w in splits():
             # ⚠️ 不要求「对方在**这一处**也拆开」。采信表本身就是全书投票
             # 的结果（≥2 次出现且 ≥60% 的出处对方都拆），逐处再查一遍对齐，
@@ -1489,7 +1967,10 @@ def fix_line(vol, page, text, strict=False):
             if n is None or n == o:
                 continue
             why = next((w for oo, nn, w in log if oo == o and nn == n), '')
-            if _strict_ok(o, n, why):
+            # 人工核定表是**按位置**逐条核过的（键里带着卷号与扫描页号），
+            # 收窄闸要防的是「证人行对齐滑到隔壁条目」，与它无关；不放行的话
+            # `jbid.`→`ibid.`、`helieved`→`believed` 这种首字母变了的全被挡掉。
+            if why == '人工核定' or _strict_ok(o, n, why):
                 log2.append((o, n, why))
                 continue
             # 被证人规则挡下来的，再给确定性规则一次机会：同一处改动常常
