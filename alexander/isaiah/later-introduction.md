@@ -8,6 +8,7 @@ prev_section: later-preface
 prev_label: "Preface (Vol. II)"
 next_section: 40
 next_label: "Isaiah 40"
+zh_url: "/alexander/isaiah/zh/later-introduction/"
 ---
 
 <!-- later-introduction | v2 扫描页 11-46 -->

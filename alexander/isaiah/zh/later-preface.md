@@ -6,6 +6,8 @@ title: "卷二 著者序"
 date: 2026-09-15 16:39
 prev_section: introduction
 prev_label: "卷一 导论"
+next_section: later-introduction
+next_label: "卷二 导论"
 en_url: "/alexander/isaiah/later-preface/"
 zh: true
 ---
