@@ -6,6 +6,7 @@ title: "Preface (Vol. I)"
 date: 2026-09-10 14:34
 next_section: introduction
 next_label: "Introduction (Vol. I)"
+zh_url: "/alexander/isaiah/zh/preface/"
 ---
 
 <!-- preface | v1 扫描页 9-14 -->

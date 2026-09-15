@@ -8,6 +8,7 @@ prev_section: 39
 prev_label: "Isaiah 39"
 next_section: later-introduction
 next_label: "Introduction (Vol. II)"
+zh_url: "/alexander/isaiah/zh/later-preface/"
 ---
 
 <!-- later-preface | v2 扫描页 9-10 -->
