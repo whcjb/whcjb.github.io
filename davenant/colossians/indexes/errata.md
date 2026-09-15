@@ -5,14 +5,14 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-15 14:54
+date: 2026-09-15 17:02
 prev_url: "/davenant/colossians/indexes/scripture/"
 prev_label: "Index of Passages of Scripture"
 ---
 
 <p class="dv-idx-lead">勘误 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
 <p class="dv-idx">Page 42, § 3, line 4, for 11, read 2.</p>
-<p class="dv-idx-2">261, before 8 3, read—But says the Apostle, Let your speech always, &amp;c.</p>
+<p class="dv-idx">261, before 8 3, read—But says the Apostle, Let your speech always, &amp;c.</p>
 <p class="dv-idx">Pp. 269 and 271, in the head line read— Vers. 7, 8.</p>
 <p class="dv-idx">Page 325, Note, line 2, for Levins, read Lerins. :</p>
 <h2>IN VOL. I.</h2>

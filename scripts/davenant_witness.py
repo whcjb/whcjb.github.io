@@ -218,13 +218,67 @@ def manual_repair(vol, page, w):
     hit = tbl.get(f'{vol}|{page}|{w}')
     if hit is not None:
         return hit
-    core = w.rstrip('.,;:!?')
+    # ⚠️ 尾巴不只有标点。`Forus]`（lemma 的右括号）、`Lllyricus,+`（脚注符）
+    # 这两种形态都让票匹配不上，票记着 `Forus` 却一处也没落（实测）。
+    core = w.rstrip('.,;:!?]+*†‡)"\u2019')
     tail = w[len(core):]
     if tail and core:
         hit = tbl.get(f'{vol}|{page}|{core}')
         if hit is not None:
             return hit + tail
     return None
+
+
+# `in]` `for]`：数字 1 粘在前一个词尾巴上，后面跟着书卷缩写
+GLUED_ONE = re.compile(r'^([A-Za-z]{1,4})[\]|/]$')
+
+
+def para_fix(vol, pages, text):
+    """段落级再跑一遍**需要跨行上下文**的确定性规则。
+
+    行级的 fix_line 看不到下一行：`…to know and to preach, ]` 这一行到此
+    为止，`Cor. ii. 2.` 在下一行，于是 one_repair 拿不到 nxt，`]`→`1` 判不出来
+    （实测 `] Cor.` `] Thess.` 等 7 处里有 3 处是这样）。同理 `of.` 落在行末时
+    fndot_repair 也看不到后面那个小写词。
+    段落拼好之后这些上下文才齐全，所以在这里补跑一遍。
+    只跑**不依赖证人**的那几条——证人是按行对齐的，段落级没有对应关系。
+    """
+    toks = text.split()
+    out, changed = list(toks), False
+    for i, w in enumerate(toks):
+        prev = toks[i - 1] if i else ''
+        nxt = toks[i + 1] if i + 1 < len(toks) else ''
+        f = (one_repair(w, prev, nxt) or romanref_repair(w, prev, nxt)
+             or fndot_repair(w, prev, nxt))
+        if f is None:
+            m = GLUED_ONE.match(w)
+            if m and ONE_REF_NXT.match(_norm(nxt).rstrip(',;:')):
+                f = m.group(1) + ' 1'     # `in]` → `in 1`
+        if f is not None and f != w:
+            out[i], changed = f, True
+    return ' '.join(out) if changed else text
+
+
+def manual_para(vol, pages, text):
+    """段落级应用人工核定表。
+
+    有一档词**只在 dehyph 之后才存在**：原书断词跨行，`distin-` 与
+    `euished` 分处两行，`distineuished` 这个形态在任何一条原始 OCR 行里
+    都找不到，行级的 manual_repair 根本没机会被问到（实测 10 条票因此空转）。
+    段落拼好之后再过一遍，按段落覆盖的页号逐一查表。
+    """
+    tbl = manual_votes()
+    if not tbl:
+        return text
+    out = []
+    for w in text.split():
+        got = None
+        for pg in pages:
+            got = manual_repair(vol, pg, w)
+            if got is not None:
+                break
+        out.append(w if got is None else got)
+    return ' '.join(out)
 
 
 # 夹在两个小写词之间的孤立标点：`be ye . reconciled to God`、
@@ -409,8 +463,10 @@ def iglyph_repair(w, prev, nxt, other, other3):
 
 # `] Cor.` `] Epis.` `Lib. ].` —— 数字 1 被读成方括号
 ONE_REF = re.compile(r'^[\]\[|/]$')
-ONE_REF_NXT = re.compile(r'^(Cor|Epis|Epist|Thess|Tim|Pet|John|Joh|Kings|'
-                         r'Sam|Chron|Macc)\.?$')
+# ⚠️ 大小写不敏感。判据里用的是 _norm(nxt)，而它会转小写——正则写成
+# `^(Cor|Epis|…)` 的话一处也匹配不上（实测 7 处 `] Cor.` 全留着）。
+ONE_REF_NXT = re.compile(r'^(cor|epis|epist|thess|tim|pet|john|joh|kings|'
+                         r'sam|chron|macc)\.?$', re.I)
 
 
 def one_repair(w, prev, nxt):
@@ -1792,11 +1848,29 @@ def fix_line(vol, page, text, strict=False):
         # 这些在对不上的行里一处也修不成（索引那一路整段整段对不上，实测
         # 残留十来处）。只把依赖对方的那几条跳过。
         out, log = [], []
-        for w in toks:
-            f = digit_repair(w) or numeral_repair(vol, page, w, None)
-            if f and (not strict or _strict_ok(w, f, '词内数字')):
-                out.append(f)
-                log.append((w, f, '词内数字'))
+        for i, w in enumerate(toks):
+            prev = toks[i - 1] if i else ''
+            nxt = toks[i + 1] if i + 1 < len(toks) else ''
+            # ⚠️ 对不上行时，**不依赖证人**的规则照跑。原先这里只有
+            # digit/numeral 两条，于是 `] Cor. ii. 2.`、`of. sound reflection`
+            # 这些在对不上的行里一处也修不成（实测 7 + 18 处）。
+            # 这几条的判据全在词形与上下文里，与证人无关。
+            # ⚠️ 这里**不能**挂 quote_repair 与 ifit_repair。对不上行按定义
+            # 多半是两边都读花的希腊文音译，那里遍地是 `"Yo` `"Beta` `"Ow`
+            # 这种形状——前导引号其实是粗气符，剥掉就把希腊文改成了看着像
+            # 英文的东西（实测 9 处）。只留判据里带**英文词表或引书格式**、
+            # 在希腊文音译里不可能命中的那几条。
+            f = (manual_repair(vol, page, w) or glue_repair(w)
+                 or apos_head_repair(w) or one_repair(w, prev, nxt)
+                 or romanref_repair(w, prev, nxt) or fndot_repair(w, prev, nxt))
+            why = '对不上行·确定性'
+            if f is None:
+                f = digit_repair(w) or numeral_repair(vol, page, w, None)
+                why = '词内数字'
+            if f is not None and f != w and (not strict or _strict_ok(w, f, why)):
+                if f:
+                    out.append(f)
+                log.append((w, f, why))
             elif SPECK.match(w):
                 log.append((w, '', '斑点'))
             else:
@@ -1951,6 +2025,13 @@ def fix_line(vol, page, text, strict=False):
                 log.append((w, out[i], why))
             continue
         a, b = _norm(w), _norm(other)
+        # ⚠️ 我方是**引书缩写**时不让证人覆盖。这些缩写在词典里查不到
+        # （`hom` `serm` `contempl` `deut` 都不是英文词），于是这条分支
+        # 判成「我方非词、对方是词」，拿 IA 那边的 `Horn.`（号角）盖掉了
+        # 我方正确的 `Hom.`（讲道集）——实测 10 处，而且**原始 OCR 本来
+        # 是对的**，是这条规则把它改错的。同型的还有 serm./Deut./contempl.
+        if a in DOT_ABBR or a in BIBLE_ABBR:
+            continue
         if len(a) < 3 or len(b) < len(a) * 0.85:
             continue                      # 变短 = 我方粘词、对方只对上半截
         if re.search(r'[\d^\\~`]', other):

@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-15 14:54
+date: 2026-09-15 17:02
 subtitle: "incidentally glanced at in the Notes"
 prev_url: "/davenant/colossians/indexes/biographical/"
 prev_label: "Index to the Biographical Sketches"
@@ -55,8 +55,8 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Images and pictures, condemned by the Council of Eliberis, II. 232.</p>
 <p class="dv-idx">Index Expurgatorius, its Jealousy about Apostolic Succession, II. 273.</p>
 <p class="dv-idx">Indulgences, meaning attached to the term by the antient Scholastics, I. 39. absurdity of the system of, 291.</p>
-<p class="dv-idx">Infallibility, works in refutation of, if, 185</p>
-<p class="dv-idx">Inform, antient use of the term, Il. 126.</p>
+<p class="dv-idx">Infallibility, works in refutation of, II. 185</p>
+<p class="dv-idx">Inform, antient use of the term, II. 126.</p>
 <p class="dv-idx">Jesuits, their rise, importance, numbers, and intrigues, I. 535 —537.</p>
 <p class="dv-idx">Justification, obscure notions of prior to the time of Luther, I. 7; evidenced, 10, 52, 67, 96, 118.</p>
 <p class="dv-idx">Kaye's (Bp.) Ecclesiastical History, I. 172, 191; 472.</p>
@@ -71,7 +71,7 @@ next_label: "Index of Passages of Scripture"
 <p class="dv-idx">Ordinary, meaning of the term, 1.</p>
 <p class="dv-idx-letter">P</p>
 <p class="dv-idx">Papists, withhold the Scriptures, II. 132. do make ‘images for Divine worship, I. 182. Peter, disproved to have been</p>
-<p class="dv-idx">Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradition, II. 184. Pope, not the successor of St. Peter, 1I. 273.</p>
+<p class="dv-idx">Bishop of Rome, II. 285. Phelan’s Catholic doctrine of Tradition, II. 184. Pope, not the successor of St. Peter, II. 273.</p>
 <p class="dv-idx">Pope Clement 1V. anecdote of, I. 34. Pope Pius IV. maintained idolatry, I. 183.</p>
 <p class="dv-idx">Prayer of Thomas Aquinas before study, I. 34. of St. Chrysostom, in use in the Greek Church, 112.</p>
 <p class="dv-idx">Protestantism, vindicated, I. 183.</p>

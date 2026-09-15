@@ -513,7 +513,11 @@ def main():
             if cur:
                 # `¦` 之后是原书竖线右边那一栏（卷二页码），发布时另排一列
                 v2 = ' '.join(cur_v2).strip()
-                out.append(f'[E] <!--v2p{cur_p}-->{cur}' + (f'¦{v2}' if v2 else ''))
+                # ⚠️ 卷号还原要在**条目拼好之后**再跑一遍。条目常跨行，
+                # `…329; Il.` 到行末为止，`245` 在下一行——行级那一遍
+                # 看不到后面的数字，判据（后接页码）不成立（实测剩 13 处）。
+                out.append(f'[E] <!--v2p{cur_p}-->{fix_vol(cur)}'
+                           + (f'¦{fix_vol(v2)}' if v2 else ''))
                 stats['entry'] += 1
             cur, cur_p, cur_v2 = '', None, []
 

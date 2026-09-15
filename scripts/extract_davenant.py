@@ -729,7 +729,10 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         stats['lines'] += n0
     if cur:
         paras.append((cur, sorted(cur_pages)))
-    paras = [(drop_stray(t), pg) for t, pg in paras]
+    # 段落级再过一遍人工核定表：跨行断词的词（`distin-` + `euished`）
+    # 只有在 dehyph 之后才成形，行级那一道看不到它。
+    paras = [(W.para_fix(vol, pg, W.manual_para(vol, pg, drop_stray(t))), pg)
+             for t, pg in paras]
     return paras, fns, stats
 
 

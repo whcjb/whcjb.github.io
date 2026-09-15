@@ -337,7 +337,11 @@ def run_piece(pc, pages, out, stats):
         if cur:
             pg = (f'<!--v{VOL}p{min(cur_pages)}-->' if len(cur_pages) == 1
                   else f'<!--v{VOL}p{min(cur_pages)}-{max(cur_pages)}-->')
-            out.append(f'[BODY] {pg}{E.drop_stray(E.fix_label(cur)[0])}')
+            # 段落级再过一遍人工核定表：跨行断词的词只有 dehyph 之后才成形
+            out.append(f'[BODY] {pg}' + W.para_fix(
+                VOL, sorted(cur_pages),
+                W.manual_para(VOL, sorted(cur_pages),
+                              E.drop_stray(E.fix_label(cur)[0]))))
             stats['para'] += 1
         cur, cur_pages = '', set()
 
@@ -433,7 +437,8 @@ def run_piece(pc, pages, out, stats):
             if not t:
                 continue
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
-                out.append(f'[FN] <!--v{VOL}p{p}--> {E.drop_stray(cur_fn)}')
+                out.append(f'[FN] <!--v{VOL}p{p}--> '
+                           + W.manual_para(VOL, [p], E.drop_stray(cur_fn)))
                 stats['fn'] += 1
                 cur_fn = t
             elif cur_fn:
@@ -441,7 +446,8 @@ def run_piece(pc, pages, out, stats):
             else:
                 cur_fn = t
         if cur_fn:
-            out.append(f'[FN] <!--v{VOL}p{p}--> {E.drop_stray(cur_fn)}')
+            out.append(f'[FN] <!--v{VOL}p{p}--> '
+                       + W.manual_para(VOL, [p], E.drop_stray(cur_fn)))
             stats['fn'] += 1
 
 

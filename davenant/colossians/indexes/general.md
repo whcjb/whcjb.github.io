@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-15 14:54
+date: 2026-09-15 17:02
 subtitle: "of Subjects in the Exposition"
 prev_url: "/davenant/colossians/gallican/"
 prev_label: "The Gallican Controversy"
@@ -42,7 +42,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Avarice, what it is, II. 50; the greatness of the sin of, 51, 53.</p>
 <p class="dv-idx-letter">B</p>
 <p class="dv-idx">Baptism, the rite of, what it signifies, I. 441; is efficacious through faith, 22, 445; faith required prior to its administration in adults, afterwards in infants, 448; infants are to be baptized, 449 ; how we are buried thereby, 441; in baptism we rise again sacramentally and really, FI. 10; its mystery should be duly held and ever retained in the memory, I. 437; II. 19.</p>
-<p class="dv-idx">Baptized persons called saints, and wherefore, I. 20; II. 99; were formerly arrayed in white robes, I. 21; spiritual graces infused into them, ibid.; they are especially consecrated to God, 22 ; 1I. 99.</p>
+<p class="dv-idx">Baptized persons called saints, and wherefore, I. 20; II. 99; were formerly arrayed in white robes, I. 21; spiritual graces infused into them, ibid.; they are especially consecrated to God, 22 ; II. 99.</p>
 <p class="dv-idx">Barnabas, who he was, II. 282.</p>
 <p class="dv-idx">Beguile, what it signifies, I. 368; 496.</p>
 <p class="dv-idx">Believer, is sure that he hath faith, I. 37; and that by the certainty of faith, 43; is sure of grace and the remission of his sins, 37 ; some of the Papists confess this, 52; does not doubt as a believer, 49 ; a true one is like to a man awake, an apparent one to a dreamer, 48 ; how he may fall from grace and how not, II. 57; has always an habitual intention of pleasing God, I. 226; and therefore his person is acceptable to God notwithstanding his failures, ibid. ; ought to be fruitful, 127.</p>
@@ -75,11 +75,11 @@ next_label: "Index of Questions"
 <p class="dv-idx">Christian, as to the name is nothing, I. 23, 443, 445; serving any other than God is guilty of sacrilege, 23; living in sin is a walking monster, 443.</p>
 <p class="dv-idx">Christian, the true, ought always to advance, 116, 380, 381; IL. $, 86; is like a fruitful tree, I. 127; in what respects, 129. is dead to sin, the world, and the flesh, II. 16; in what manner, ibid.; he grows in faith daily, and how, I. 350, 351; does all things in the name of Christ, II. 146. is in Christ through faith and the Spirit, I. 316; ought to imitate Christ. II. 10, 115.</p>
 <p class="dv-idx">Christian, his enemies, I. 133; 469. his life ought not to be a scandal to the Gospel, II. 251; his conversation is in heaven, II. 6, 7.</p>
-<p class="dv-idx">Christians, ought to teach, and admonish, and restrain one another, JI. 138, 139; are called saints in Christ, and why, I. 20, 22 ; faithful in Christ, 24 ; brethren in ] Christ, and why, 26. are brethren among themselves, ibid.; II. 270, 297, 348; therefore live in concord, I. 26; and united, 348, 349.</p>
+<p class="dv-idx">Christians, ought to teach, and admonish, and restrain one another, II. 138, 139; are called saints in Christ, and why, I. 20, 22 ; faithful in Christ, 24 ; brethren in ] Christ, and why, 26. are brethren among themselves, ibid.; II. 270, 297, 348; therefore live in concord, I. 26; and united, 348, 349.</p>
 <p class="dv-idx">Church, whence it is called, I. 217; of what Church Christ is the head, 218; hypocrites are not members of the Church, 219—221, 515; the Church is as the family of God, 294, 295 ; receives all things from Christ, 514; increase of the Church, what, 516; how the whole is united to Christ, and the members of it with one another, 518—515.</p>
 <p class="dv-idx">Church hath the power of ordaining external rites, I. 401. may consist of manifold divisions, 218; each particular one may fall, 12, 20 ; II. 293. a domestic family may be a Church, II. 299.</p>
 <p class="dv-idx">Circumcision, internal what it is,</p>
-<p class="dv-idx-2">I. 448 ; the Christian excels the Jewish in three things, 434; its author, and the instrument of it, 438 ; ought to be total, 439. Jewish what it signified, 460; chief among their ceremonies, 433.</p>
+<p class="dv-idx">I. 448 ; the Christian excels the Jewish in three things, 434; its author, and the instrument of it, 438 ; ought to be total, 439. Jewish what it signified, 460; chief among their ceremonies, 433.</p>
 <p class="dv-idx">Circumcision, put for the Jews themselves, I. 451.</p>
 <p class="dv-idx">Citizenship, a bond of love, II. . 988.</p>
 <p class="dv-idx">Colosse, where situated, see Preface, lxxi; overturned by an earthquake, II. 293.</p>
@@ -118,12 +118,12 @@ next_label: "Index of Questions"
 <p class="dv-idx">Doubt concerning the remission of sins may exist in believers, but not as believers, I. 50.</p>
 <p class="dv-idx">Duelling, unlawfulness of, II. 116, 117.</p>
 <p class="dv-idx-letter">E</p>
-<p class="dv-idx">Earthly things, what are so called, IT. 8; are perishing, 9; are vain, ibid.; are contrary to heavenly . things and opposed to ourtruehap- . piness, ibid. ; are not to be sought after, 8, 9 ; and that on two accounts, 9. ‘</p>
+<p class="dv-idx">Earthly things, what are so called, II. 8; are perishing, 9; are vain, ibid.; are contrary to heavenly . things and opposed to ourtruehap- . piness, ibid. ; are not to be sought after, 8, 9 ; and that on two accounts, 9. ‘</p>
 <p class="dv-idx">Education of children, ought neither to be too severe, nor too lenient, II. 190, 191.</p>
 <p class="dv-idx">Effeminacy what, II. 47; to be mortified and banished, 48.</p>
 <p class="dv-idx">Effectual calling of the elect, I. 146, 147.</p>
 <p class="dv-idx">Elect, they alone truly believe, I. 146; 307,</p>
-<p class="dv-idx">Election, temporal and eternal, lI. 98; of which it is that the consideration influences to holiness, 99.</p>
+<p class="dv-idx">Election, temporal and eternal, II. 98; of which it is that the consideration influences to holiness, 99.</p>
 <p class="dv-idx">Eloquence of the Scriptures, I. 336. not to be affected by ministers, 105. of heretics deceitful and ensnaring, 368, 370.</p>
 <p class="dv-idx">Endthe, determines the moral action, I. 125; 201. how God acts from love to a final one, 199. of all things is Christ, ibid.</p>
 <p class="dv-idx">Enemies, we are such to God by nature, 250, 251. who are those of a Christian, 134; 470 ; Christ overcame them, 474; who are the enemies of the cross of Christ, 476.</p>
@@ -135,14 +135,14 @@ next_label: "Index of Questions"
 <p class="dv-idx">Essence of being attributed to things, although they have not the essence of existence, 490.</p>
 <p class="dv-idx">Eternity of the world disproved, 1. 190. has a twofold meaning, 484.</p>
 <p class="dv-idx">Evil-speaking, what, II. 69; heinousness of the sin, 70, 71. those given to it not to be listened to, 72. consolations of the godly under it, 72, 73.</p>
-<p class="dv-idx">Example of sympathy in Mezentius, I. 273; of insensibility in Licinius, 8; of abstinence in Paula, 540; of the Monks of Palestine, 539 ; of the austerity of the Flagellantes, 540; of the martyrs tempted to Idolatry, II. 253; of prayer in the Egyptian Monks, II. 225; in Old Testament saints, 226 ; of watchfulness, 233. for Christians is the life of Christ, IT. 114—116.</p>
+<p class="dv-idx">Example of sympathy in Mezentius, I. 273; of insensibility in Licinius, 8; of abstinence in Paula, 540; of the Monks of Palestine, 539 ; of the austerity of the Flagellantes, 540; of the martyrs tempted to Idolatry, II. 253; of prayer in the Egyptian Monks, II. 225; in Old Testament saints, 226 ; of watchfulness, 233. for Christians is the life of Christ, II. 114—116.</p>
 <p class="dv-idx">Exordium of a discourse, its parts, I. 334; regarded by St. Paul, 339.</p>
 <p class="dv-idx-letter">F</p>
 <p class="dv-idx">Faith, twofold ; the one unformed, historical, and general; the other formed, justifying, and particular, I. 66; in what justifying faith differs from that which does not justify, 62, 67—69.</p>
 <p class="dv-idx">Faith, the object of it in general, whatever is delivered in theScriptures, 61; specially and principally Jesus Christ under the character of a Mediator, 62; the same faith reposed in Christ before his incarnation and since, 164; 212; 471, 472; 492. imparted by God alone, I. 85,86 ; 307; II. 242, 243; it is the gift of God, I. 447; when infused at once shews the thing believed, and the reason of believing, 353; in what manner the word preached is the instrument of producing faith, 85; is the foundation and the root of religion, 59; what is done without faith is not good, 60.</p>
 <p class="dv-idx">Faith justifies as to its truth, not as to its degree, 53; it alone justifies, 261 ; justifying faith is stable, is not lost, 262 ; the stability of faith twofold; stedfast and firm, 382; both required, 383 ; stedfast faith what, 376.</p>
 <p class="dv-idx">Faith does not exclude all doubt, but overcomes it, 51; the full assurance of faith what, and whence it comes, 351; true faith exists not without love, 67, 68; yet is not formed from love, 69; a blind faith is not pleasing to God, 352; is not sufficient for the people, 122. of the popish Collier, 354, and Note.</p>
-<p class="dv-idx">Family, the head of, ought to instruct his household in Religion, Il. 299.</p>
+<p class="dv-idx">Family, the head of, ought to instruct his household in Religion, II. 299.</p>
 <p class="dv-idx">Fastings, what were in use in the primitive Church, I. 543 ; exam. ples of fasting, 539 ; in what manner we should fast, 542544; how far human laws concerning fasting bind us, 482, 483; a twofold error in the fastings of the Papists, 481.</p>
 <p class="dv-idx">Father, his being named does not exclude the other persons in the sacred Trinity, I. 55 ; God is the Father of Christ, as man, 56; the FATHER of Christ is God, both as God, and as man, ibid. ; the Father is not before the Son as God, 186; the Father is specially invisible, 180, 182 ; is the primary author of our reconciliation, 235; why we are said to be reconciled to the Father, 237, 238.</p>
 <p class="dv-idx">Father, the very name bespeaks kindness, II. 193. how the authority of should be exercised, 190—195.</p>
@@ -153,7 +153,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Festivals to be observed by Christians, and how, 485, 486. cautions in the observance of them, 486.</p>
 <p class="dv-idx">Figurative or parabolic expressions not lies, II. 79.</p>
 <p class="dv-idx">Flesh, put for original corruption, I. 436.</p>
-<p class="dv-idx">Forgiveness of injuries, yields advantage to the person forgiving, TI. 112. of sins, how the phrase is to be understood, l. 49; what the act includes, 457; is the property of God alone, 458.</p>
+<p class="dv-idx">Forgiveness of injuries, yields advantage to the person forgiving, II. 112. of sins, how the phrase is to be understood, l. 49; what the act includes, 457; is the property of God alone, 458.</p>
 <p class="dv-idx">Fornication, what it is, and how it differs from adultery, &amp;c. II. 38. not regarded as a crime among the heathen, ibid.; yet disapproved of by some of the wiser, 42; the heinousness of the sin demonstrated, 39, 40; not to be tolerated in a Christian State, 45; opposed to charity in many respects, 43; favoured by the Papists, 44 ; wherefore reckoned among things indifferent by the Apostle, 41.</p>
 <p class="dv-idx">Fortitude, Christian, in what it consists, I. 132; whence derived, 134; our need of it, ibid.; true, from God alone, 136; how it differs from patience, 137.</p>
 <p class="dv-idx">Free-will does not fit or dispose us for grace, I. 90; 149; 453. Vide Merits.</p>
@@ -233,7 +233,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Love of God towards us, gratuitous, 33; prevents us, 89; is the first cause of our reconciliation, 235. of benevolence towards the elect is internal and perpetual, the love</p>
 <p class="dv-idx">* of friendship not so, II. 58; 98— 100.</p>
 <p class="dv-idx">Love of a husband towards his wife, in what it consists, II. 159. of oneself, why not commanded, and wherefore censured, I. 71.</p>
-<p class="dv-idx">Luke the Evangelist, who and what, IT. 295.</p>
+<p class="dv-idx">Luke the Evangelist, who and what, II. 295.</p>
 <p class="dv-idx">Lust, impure, II. 47; the motion of to be repressed, 48.</p>
 <p class="dv-idx">Lying, what, II. 75; instances of, 79—82.</p>
 <p class="dv-idx-letter">M</p>
@@ -249,7 +249,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Meats, no distinction of to Christians, I. 480, 481; 521—523; what there was formerly among the Jews, 478 ; what was signified by those forbidden, 490.</p>
 <p class="dv-idx">Mediator, ought to be God-man, I. 163 ; the alone Mediator, as well of Redemption as of meritorious intercession is Christ, ibid.</p>
 <p class="dv-idx">Meekness, the duties of and motives to, II. 107, 108.</p>
-<p class="dv-idx">Members of the old man, what, IT. 34, 35.</p>
+<p class="dv-idx">Members of the old man, what, II. 34, 35.</p>
 <p class="dv-idx">Mercy to be shewn on the calamities of others, 103.</p>
 <p class="dv-idx">Merits of no man extend beyond his own person, I. 280 ; none of congruity before grace, 90; 149; 259; nor of condignity after grace, 124; 149; 279.</p>
 <p class="dv-idx">Might, spiritual, in what exercised and what it effects, I. 152—154.</p>
@@ -259,7 +259,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">I. 101; II. 272; should endea. vour to maintain a good repute,</p>
 <p class="dv-idx">I. 101, 102 ; ought to be humble, 103; must not be immodest or vulgar, II. 74; are not lords of our faith, f. 268; but ministers only, 293; should not only preach to, but also pray for their people,</p>
 <p class="dv-idx">I.31; 113; 289; constantly and earnestly, 113, 114; II. 290; ought to enquire into the life and manners of every one committed to their care, II. 268; particularly to esteem the more pious, 275.</p>
-<p class="dv-idx">Ministers, what things afford them joy, I. 373 ; should especially rejoice in the spiritual welfare of their flock, I. 54; 340; should warn their people against seducers, 389. how they absolve from sins, I. 286 ; ought to be animated to en- : dure the cross, 1. 270; 292; 329; Il. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.</p>
+<p class="dv-idx">Ministers, what things afford them joy, I. 373 ; should especially rejoice in the spiritual welfare of their flock, I. 54; 340; should warn their people against seducers, 389. how they absolve from sins, I. 286 ; ought to be animated to en- : dure the cross, 1. 270; 292; 329; II. 245 ; and to exhort others to constancy under it, II. 269. on what accounts they may declare their labours, I. 338, 339; should be prayed for by the people, I. 238; that they may be useful, 242; competent and diligent, II. 244. Ministers' doctrines not to be received without examination, I. 388 ; 538. Mode of acting sometimes of more importance than the action, II. 246.</p>
 <p class="dv-idx">Monachism is not a state of perfection, I. 326 ; II. 92.</p>
 <p class="dv-idx">Monasteries, ought not to be entered by children against the consent of their parents, II. 174— 186.</p>
 <p class="dv-idx">_ Monks, the Carthusian, abstain from meat, I. 481. of Palestine, their austerities, 539.</p>
@@ -269,7 +269,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Mystery, what it signifies, I. 300 ; taken for the sum of Evangelical doctrine, 356 ; for the calling of the Gentiles, 300, 502.</p>
 <p class="dv-idx">Mysteries to be believed, not discussed, 303, 304.</p>
 <p class="dv-idx-letter">N</p>
-<p class="dv-idx-2">Name of Christ, what it is to do any thing in the, II. 146. Name, the origin not so much to be regarded as the use, I. 35 without the reality avails nothing, I. 10, 23; 100; 443; II. 274. Nations, no distinction of with God, II. 90. Nature, our's good at the creation, I. 250; corrupt, incapable of spiritual things, 146; is not disposed for grace, 453; II. 60; is alienated from God, I. 249 ; at enmity with God, and God an enemy to it, 250, 251. Natural corruption, pervades all the faculties of the soul, 452, 453: ! man thereby dead as to spiritual . perceptions, 450; explained by parts, 451, 452; all prone to every evil on account of it, Il. 65. .</p>
+<p class="dv-idx">Name of Christ, what it is to do any thing in the, II. 146. Name, the origin not so much to be regarded as the use, I. 35 without the reality avails nothing, I. 10, 23; 100; 443; II. 274. Nations, no distinction of with God, II. 90. Nature, our's good at the creation, I. 250; corrupt, incapable of spiritual things, 146; is not disposed for grace, 453; II. 60; is alienated from God, I. 249 ; at enmity with God, and God an enemy to it, 250, 251. Natural corruption, pervades all the faculties of the soul, 452, 453: ! man thereby dead as to spiritual . perceptions, 450; explained by parts, 451, 452; all prone to every evil on account of it, II. 65. .</p>
 <p class="dv-idx">Negations in comparisons, their peculiar use, II. 203.</p>
 <p class="dv-idx">Neighbour, who is our's, and how the object of our love, I. 72.</p>
 <p class="dv-idx">New-Moon, the festival of among the Jews, what it signified, I. 492.</p>
@@ -282,7 +282,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Obscenity in language to be avoided, : 43.</p>
 <p class="dv-idx">Omniscience, does not appertain to the human nature of Christ, I. 363—309.</p>
 <p class="dv-idx">Onesimus, a deacon, II. 273.</p>
-<p class="dv-idx">Opportunity to be embraced, I. 305 ; 1I. 257, 258.</p>
+<p class="dv-idx">Opportunity to be embraced, I. 305 ; II. 257, 258.</p>
 <p class="dv-idx">Order, what it is, 295, 296; va. rious significations of, I. 374,375 ; encomiums of it, 375; all things done of God by order, II. 56. ought to exist among the Ministers of the Church, I. 296; 375, 376.</p>
 <p class="dv-idx">Ornaments, what are a woman’s best, II. 157.</p>
 <p class="dv-idx-letter">P</p>
@@ -299,7 +299,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Peace and grace, why joined together, I. 29; peace the effect of grace, ibid.</p>
 <p class="dv-idx">Paedobaptism, I. 448, 449.</p>
 <p class="dv-idx">Pelagianism, history of, II. 183.</p>
-<p class="dv-idx">Penitence, our’s the work of God, 1l. 62. external exercises of, see Mortification.</p>
+<p class="dv-idx">Penitence, our’s the work of God, II. 62. external exercises of, see Mortification.</p>
 <p class="dv-idx">Pentecost, why instituted, and what it signified, I. 491.</p>
 <p class="dv-idx">People ought to pray for their ministers, see Ministers.</p>
 <p class="dv-idx">Perfection or fulness of grace what, I. 230; how manifold, 232; imparted for the way, and for the inheritance, 115; 325; II. 290— 292 ; of parts and degrees, 1. 325, 326; absolute not to be attained in this life, I. 147; II. 291 ; does not arise from good works, I. 149; is not attached to a state of Monachism, 326 ; II. 187, 188.</p>
@@ -308,7 +308,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Person, what, I. 417; of Christ one, 414 et seqq. ; in what sense he is said to be united to the Father, ibid. the naming of either in the sacred Trinity does not exclude the rest, 55, 209.</p>
 <p class="dv-idx">Philosophy, true what, 390; is necessary to a Divine, 391; its use in theology manifold, 395—398 ; and even to commend it, 399 ; is not contrary, but inferior, to Religion, 393; its abuses manifold, 394; not to be consulted in matters of faith, 391; 509; false the parent of all heresies, 305 ; 395.</p>
 <p class="dv-idx">Poor to be relieved, II. 103, 104.</p>
-<p class="dv-idx">Prayer the parts of, I. 114; how they differ, ibid. ; manner of, 113; lI. 228; 290; conditions, 224,226, 227; how we must pray always, I. 58, 113; II. 227; why, 230; must be with watchfulness, bodily and mental, 231—235; with thanksgiving, I. 57, 58; II. 235; why, ibid., 236.</p>
+<p class="dv-idx">Prayer the parts of, I. 114; how they differ, ibid. ; manner of, 113; II. 228; 290; conditions, 224,226, 227; how we must pray always, I. 58, 113; II. 227; why, 230; must be with watchfulness, bodily and mental, 231—235; with thanksgiving, I. 57, 58; II. 235; why, ibid., 236.</p>
 <p class="dv-idx">Prayer, should be mutual, 238; ministers should pray for their people, I. 31; 58; II.280; the peo. ple for their ministers, II. 237.</p>
 <p class="dv-idx">Prayer for others the best mark of love, especially in ministers, I. 340, 341; II. 289. the weapon of the priest, II. 290. must be made in a known tongue, and with the understanding, 228, 229; mode of among the Egyptian monks, 225; should be offered to God alone, and why, I. 505—507; he alone is to be entreated for grace, 33.</p>
 <p class="dv-idx">Prayer, vho they are that can confidently pray to God, 36; success of in the Scriptures. II. 226.</p>
@@ -351,7 +351,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Sanctification accompanies justification, I. 457. is effected by degrees in this life, II. 102.</p>
 <p class="dv-idx">Satisfaction for our sins made by Christ alone, I. 287; 459 ; to that the Papists themselves resort when consulting their consciences, 347; none made by us either in doing or suffering, 457.</p>
 <p class="dv-idx">Schoolmen, obtrude their vagaries for articles of faith, I. 305; 357, 358.</p>
-<p class="dv-idx">Scriptures, are believed on their own authority among the faithful, I. 6; are not confirmed by the authority of the Church, 355, 500; are the sole rule of faith, 267; 493; 499—501; II. 246; are perspicuous, 1. 306 ; eloquent, 336 ; are the word of Christ in a twofold manner, II. 130, 131; their efficacy in changing men's manners, J. 96; are to be read diligently, 266, 353 ; by the Laity, 122; 266; II. 132; 263; objections to the practice answered, 1I. 136; how used in the primitive Church, 300 ; are like a pharmacopeeia, in which nothing is insignificant or useless, 265 ; insieme y compared by Hermanus to the fables of sop, I. 355.</p>
+<p class="dv-idx">Scriptures, are believed on their own authority among the faithful, I. 6; are not confirmed by the authority of the Church, 355, 500; are the sole rule of faith, 267; 493; 499—501; II. 246; are perspicuous, 1. 306 ; eloquent, 336 ; are the word of Christ in a twofold manner, II. 130, 131; their efficacy in changing men's manners, J. 96; are to be read diligently, 266, 353 ; by the Laity, 122; 266; II. 132; 263; objections to the practice answered, II. 136; how used in the primitive Church, 300 ; are like a pharmacopeeia, in which nothing is insignificant or useless, 265 ; insieme y compared by Hermanus to the fables of sop, I. 355.</p>
 <p class="dv-idx">Scythians thought to have been the worst of barbarians, II. 92.</p>
 <p class="dv-idx">Seducers beguile men in two ways, I. 368, 369.</p>
 <p class="dv-idx">Servant of fortune is not a distinction of nature, II. 217, 218. deceitful and contumacious towards his earthly master, will be punished by the Supreme Lord, 210.</p>
@@ -394,9 +394,9 @@ next_label: "Index of Questions"
 <p class="dv-idx">Traditions human, are not parts of Divine worship, 534, 544; have the appearance of wisdom, and how, 530; to be rejected. See Scriptures as the rule of faith.</p>
 <p class="dv-idx">Trinity, defined, I. 178; the works of ad extra indivisible, 5, 35, 55 ; 136, 145, 153; 209; 235—239; 414.</p>
 <p class="dv-idx">Triumph, description of Christ's over the demons, I. 468; upon the cross, 474.</p>
-<p class="dv-idx">Tychicus, first bishop of Chalcedon, IL. 266.</p>
+<p class="dv-idx">Tychicus, first bishop of Chalcedon, II. 266.</p>
 <p class="dv-idx-letter">U</p>
-<p class="dv-idx">Ubiquity does not attach to the human nature of Christ. I. 421 ; 1I. 13.</p>
+<p class="dv-idx">Ubiquity does not attach to the human nature of Christ. I. 421 ; II. 13.</p>
 <p class="dv-idx">Unbelievers, none of their works are good, I. 60.</p>
 <p class="dv-idx">Uncircumcision, various significa. tions of, I. 451, 452.</p>
 <p class="dv-idx">Uncleanness, what meant by it, II. 46.</p>
