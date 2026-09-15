@@ -6,8 +6,8 @@ title: "卷一 导论"
 date: 2026-09-15 17:26
 prev_section: preface
 prev_label: "卷一 著者序"
-next_section: later-preface
-next_label: "卷二 著者序"
+next_section: 1
+next_label: "以赛亚书 第 1 章"
 en_url: "/alexander/isaiah/introduction/"
 zh: true
 ---
