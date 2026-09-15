@@ -1,0 +1,19 @@
+[preface] 共 8 块，其中需翻译 7 段，已缓存 0，待调用 7
+    [tok] preface#1 #1 入 3,325（新缓存 870 / 读缓存 2,453） 出 606 = 3,931 | 累计 3,931 tok $0.027
+    [tok] preface#2 #2 入 3,258（新缓存 803 / 读缓存 2,453） 出 540 = 3,798 | 累计 7,729 tok $0.051
+    [tok] preface#3 #3 入 3,483（新缓存 1,028 / 读缓存 2,453） 出 790 = 4,273 | 累计 12,002 tok $0.084
+    [tok] preface#4 #4 入 3,151（新缓存 696 / 读缓存 2,453） 出 479 = 3,630 | 累计 15,632 tok $0.105
+    [tok] preface#5 #5 入 3,308（新缓存 853 / 读缓存 2,453） 出 583 = 3,891 | 累计 19,523 tok $0.131
+    [tok] preface#6 #6 入 3,317（新缓存 862 / 读缓存 2,453） 出 691 = 4,008 | 累计 23,531 tok $0.160
+    [tok] preface#7 #7 入 3,427（新缓存 972 / 读缓存 2,453） 出 1,342 = 4,769 | 累计 28,300 tok $0.206
+    [retry-struct] preface#7: 斜体 * 数量不符 13 → 12
+    [tok] preface#7·retry #8 入 3,509（新缓存 1,054 / 读缓存 2,453） 出 1,269 = 4,778 | 累计 33,078 tok $0.251
+✓ 写入 /Users/yanpeifa/Documents/whcjb.github.io/alexander_raw/isaiah/zh_chapters/preface.md（11,555 bytes，已 chmod 444）
+发布中文 2 篇（已译共 2），date 取自译完时刻 2 篇，回填英文页 zh_url 2 处 → /Users/yanpeifa/Documents/whcjb.github.io/alexander/isaiah/zh
+    [autopublish] 已提交并推送
+[introduction] 共 113 块，其中需翻译 112 段，已缓存 0，待调用 112
+    [tok] introduction#1 #9 入 2,919（新缓存 464 / 读缓存 2,453） 出 663 = 3,582 | 累计 36,660 tok $0.275
+    [tok] introduction#2 #10 入 3,024（新缓存 569 / 读缓存 2,453） 出 438 = 3,462 | 累计 40,122 tok $0.294
+    [retry-struct] introduction#2: 斜体 * 数量不符 10 → 12
+    [tok] introduction#2·retry #11 入 3,106（新缓存 651 / 读缓存 2,453） 出 512 = 3,618 | 累计 43,740 tok $0.316
+    [tok] introduction#3 #12 入 3,158（新缓存 703 / 读缓存 2,453） 出 1,005 = 4,163 | 累计 47,903 tok $0.351
