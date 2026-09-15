@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 19:24
+date: 2026-09-15 14:54
 subtitle: "explained by the way"
 prev_url: "/davenant/colossians/indexes/notes/"
 prev_label: "Index of Subjects and Works in the Notes"
@@ -16,26 +16,26 @@ next_label: "Errata"
 <p class="dv-idx-lead">经文索引 · 原书页码指 <strong>1831 年 Allport 英译本</strong>的印本页码，不是本站的章节编号。</p>
 <p class="dv-idx-note">(The Translator has greatly amplified this Index, conceiving, that as many texts of Scrip- , ture, not noted in the Original Index, are yet illustrated by the connexion in which they stand in the work, it would prove useful to give them a place here. Also, in this Index are included a few texts discussed in the Dissertation on the Death of Christ.]</p>
 <p class="dv-idx-caption">VOL. PAGE.</p>
-<p class="dv-idx">Gen. l. 1, in the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
+<p class="dv-idx">Gen. I. 1, in the beginning God created the heaven and the earth = ...... -- oe I. 198</p>
 <p class="dv-idx-2">I. 27, So God created man in his own image II. 88</p>
 <p class="dv-idx-2">II. 2, God rested from all his works IE LL 205 24, Therefore shall a man leave his father and his mother and shall cleave unto his wife T" esoece II. 172</p>
 <p class="dv-idx-2">Ill. 15, It shall bruise thy head, and thou - I. 159 bruise his heel « eL &amp;Il. 523</p>
 <p class="dv-idx-2">IV. 5. Cain was very wroth and his countenance fell UC COE c II. 66</p>
 <p class="dv-idx">XXXIX. 10, He hearkened not unto her to be with her dm... eSB oc 48</p>
 <p class="dv-idx">Exod. XII. 14, Ye shall keep it a feast unto the Lord for ever I Dm 484</p>
-<p class="dv-idx">XXXI. 16, 17, It is a perpetual covenant, a sign between me and the children of Israel Jor ever T" ABER E</p>
+<p class="dv-idx">XXXI. 16, 17, It is a perpetual covenant, a sign between me and the children of Israel for ever T" ABER E</p>
 <p class="dv-idx">Levit. XIX. 17, Thou shalt in any wise rebuke thy neighbour and not suffer sin upon him II. 139</p>
-<p class="dv-idx-2">XXII. 21, It shall be a statute for ever, &amp;c. I. 484 1 Saml. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
+<p class="dv-idx-2">XXII. 21, It shall be a statute for ever, &amp;c. I. 484 1 Sam. XII. 23, Be it far from me to sin against the Lord in ceasing to pray for you .. ib. 113 1 Kings XI. 3, Women turned away his heart ,. II. 40</p>
 <p class="dv-idx-caption">VOL, PAGE.</p>
 <p class="dv-idx">2 Kings IV. 29, If thou meet any man by the way salute him not, and if any salute thee, answer him not again AD I. 279</p>
 <p class="dv-idx">Job XXI. 3, Is not destruction to the wicked, and a strange punishment to the workers of iniquity? LENA eevee 55</p>
-<p class="dv-idx">Psal. I. 3, He shall be like a tree planted by the rivers of water, and that bringeth forth his Sruit in due season oec I. 127</p>
+<p class="dv-idx">Psal. I. 3, He shall be like a tree planted by the rivers of water, and that bringeth forth his fruit in due season oec I. 127</p>
 <p class="dv-idx-2">VIII. 6, Thou hast made him to have dominion, &amp;c. NES oun AME 184,199</p>
 <p class="dv-idx-2">XLIV. 6, In Thy name will we tread under our enemies ecc n II. 146</p>
 <p class="dv-idx-2">XLIX. 8, No man can deliver his brother, nor give to God a ransom "T I. 280</p>
 <p class="dv-idx-2">LXXXVI. 2, Preserve my soul for I am holy 27</p>
-<p class="dv-idx-2">CXVI. 12, 13, What shall I render unto the Lord, &amp;c. as I. 55, Il. 235</p>
-<p class="dv-idx-2">CXIX. 12, 7 have inclined my heart to perform thy statutes even unto the end woes 83</p>
+<p class="dv-idx-2">CXVI. 12, 13, What shall I render unto the Lord, &amp;c. as I. 55, II. 235</p>
+<p class="dv-idx-2">CXIX. 12, I have inclined my heart to perform thy statutes even unto the end woes 83</p>
 <p class="dv-idx">Prov. XX. 9, Who can say I have made my heart clean, I am pure from my sin? oo. JM 41</p>
 <p class="dv-idx-2">XXII. 24, Make no friendship with an angry man see Soce II. 67</p>
 <p class="dv-idx-2">XXVIII. 14, Happy is the man that feareth always To dO oo I" 45</p>
@@ -44,23 +44,23 @@ next_label: "Errata"
 <p class="dv-idx-2">LIIT. 10, If he shall lay down his soul for sin, 444 &amp;c. 9909 LLL &amp; II. 593</p>
 <p class="dv-idx-2">LIX. 2, Your iniquities have separated between you and your God T I. 250,451</p>
 <p class="dv-idx">Jer. IX. 25, Behold, the days come that I will punish all them that are circumcised with the uncircumcised ud ecce 452</p>
-<p class="dv-idx-2">XXXIII. 8, 7 will cleanse them from all their sins, and pardon all their iniquities 458</p>
+<p class="dv-idx-2">XXXIII. 8, I will cleanse them from all their sins, and pardon all their iniquities 458</p>
 <p class="dv-idx">Ezek. XXXIII. 2, I have no pleasure in the death of the wicked, but that the wicked turn from his way and live ünencc II. 432</p>
-<p class="dv-idx">Lament. V. 2, Zurn thou us, and we shall be turned I. 453</p>
+<p class="dv-idx">Lament. V. 2, Turn thou us, and we shall be turned I. 453</p>
 <p class="dv-idx-caption">VOL. PAGE,</p>
 <p class="dv-idx">Hosea I. 2, Go take unto thee a wife of whoredoms, . &amp;c. eroe occooc E 42</p>
 <p class="dv-idx">Joel II. 12, Turn unto me with all your heart lis 44</p>
-<p class="dv-idx-2">II. 14, Who knows if God will return and re- “pent 540.005 TE T$:</p>
+<p class="dv-idx-2">II. 14, Who knows if God will return and repent 540.005 TE T$:</p>
 <p class="dv-idx">Micah V. 2, His goings forth have been from of old,</p>
 <p class="dv-idx">Eccles. V. 5, 6, Concerning propitiation be not without fear to add sin, &amp;c. Sec cut 42</p>
 <p class="dv-idx">Matt. III. 8, Bring forth fruits worthy of repentance 124</p>
-<p class="dv-idx-2">V. 39, Whosoever shall smite thee on thy right cheek, turn to him the other also Il. 113</p>
+<p class="dv-idx-2">V. 39, Whosoever shall smite thee on thy right cheek, turn to him the other also II. 113</p>
 <p class="dv-idx-2">XIII. 4, The righteous shall shine forth as the sun d cue Tes 26</p>
 <p class="dv-idx-2">XV. 17, Do ye not yet understand, that whatsoever entereth in at the mouth, goeth into the belly, &amp;c. TIT TS 525</p>
 <p class="dv-idx-2">XVI. 19, Whatsoever thou shalt loose on earth, Shall be loosed in heaven TEE 286</p>
 <p class="dv-idx-2">XXII. 14, Many are called but few chosen .... 218</p>
 <p class="dv-idx-2">XXIV. 45, Who then is that faithful and wise steward, &amp;c. "gm » 106</p>
-<p class="dv-idx-2">XXVI. 52, All they that take the sword shall perish with the sword - IL. 118</p>
+<p class="dv-idx-2">XXVI. 52, All they that take the sword shall perish with the sword - II. 118</p>
 <p class="dv-idx">Luke I, 28, Mary full of grace "T T d 2:89</p>
 <p class="dv-idx-2">X. 11, Salute no man by the way EIL 279</p>
 <p class="dv-idx-2">XII. 19, Thou hast much goods laid up for many years, take thine ease, &amp;c. DOOG 50</p>
@@ -78,11 +78,11 @@ next_label: "Errata"
 <p class="dv-idx">Acts V. 41, They departed from the presence of the council rejoicing that they were counted worthy, &amp;c. T" S. 1.141,271</p>
 <p class="dv-idx-2">VII. 22, Repent therefore, if perhaps the thought of thy heart may be forgiven thee -— PER 44</p>
 <p class="dv-idx-2">XIII. 38, 39, Through Christ is preached aa 63 Sorgiveness, &amp;c. T» &amp; II. 346</p>
-<p class="dv-idx-2">XV. 10, Why tempt ye God to put a yoke upon the disciples which neither we nor our fathers were able to bear . ae I. 402 20, They should abstain from pollutions of idols, and from fornication, and from things strangled, &amp;c. T IT. 41</p>
+<p class="dv-idx-2">XV. 10, Why tempt ye God to put a yoke upon the disciples which neither we nor our fathers were able to bear . ae I. 402 20, They should abstain from pollutions of idols, and from fornication, and from things strangled, &amp;c. T II. 41</p>
 <p class="dv-idx-2">AVII. 28, In him we live, and move, and have our being T T P" 205</p>
 <p class="dv-idx">Rom. I. 10, That which may be known of God is manifest in them, &amp;c. xx 393</p>
-<p class="dv-idx-2">V.8, God commendeth his love toward us, &amp;c. 236, 242 19, By the obedience of one shall many be made righteous Eoo: IT, 341 20, The law entered that sin might abound l. 385</p>
-<p class="dv-idx-2">VI. 12, Let not sin reign in your mortal body, &amp;c. JT I IT. 32</p>
+<p class="dv-idx-2">V.8, God commendeth his love toward us, &amp;c. 236, 242 19, By the obedience of one shall many be made righteous Eoo: II. 341 20, The law entered that sin might abound l. 385</p>
+<p class="dv-idx-2">VI. 12, Let not sin reign in your mortal body, &amp;c. JT I II. 32</p>
 <p class="dv-idx-2">VII. 19, The good that I would I do not, &amp;c. I. 126,953</p>
 <p class="dv-idx-2">VIII. 24, We are saved by hope ettet bil 25, If we hope for that we see not, then do we with patience wait for it — .... 78 37, In all these things we are more than conquerors cece eens 135</p>
 <p class="dv-idx-2">XII. 5, We being many are one body in Christ, &amp;c. 515 10, Be kindly affectioned one towards another, &amp;c. - eco. » s 26</p>

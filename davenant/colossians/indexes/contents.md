@@ -5,7 +5,7 @@ up_url: "/davenant/colossians/"
 up_label: "Davenant on Colossians"
 kicker: "Indexes to the Original Edition"
 dense: true
-date: 2026-09-14 19:24
+date: 2026-09-15 14:54
 subtitle: "on the extent of the death of Christ"
 prev_url: "/davenant/colossians/indexes/questions/"
 prev_label: "Index of Questions"
@@ -19,7 +19,7 @@ next_label: "Index to the Biographical Sketches"
 <p class="dv-idx">II. On the death of Christ as the universal cause of salvation, applicable to all mankind .. occ toe occ 340</p>
 <p class="dv-idx-2">Testimonies for the doctrine derived from the Scriptures .. 343</p>
 <p class="dv-idx-2">Arguments founded in the Scriptures ... ees - 352</p>
-<p class="dv-idx">YII. Answers to Objections c occ uu onc 366</p>
+<p class="dv-idx">YII. Answers to Objections c occ uu one 366</p>
 <p class="dv-idx">IV. ‘The second Proposition stated, explained, and confirmed: in what sense Christ is said to have died for all ... e. ,401</p>
 <p class="dv-idx-2">1. That he died for all sufficiently occ coc occ 402 .</p>
 <p class="dv-idx-2">2. That through the merit of the death of Christ a new Covenant was entered into between God and the human race 404</p>

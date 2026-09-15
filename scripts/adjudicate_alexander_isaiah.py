@@ -219,6 +219,25 @@ MANUAL_RE = [
     # 字母 k 被扫成 Jc（`HezeJciah`、`spo-Jcen`、`Jcnoivn`）。全书 9 处，
     # 没有一处是真的 Jc——这本书里 J 后面从不接 c。
     (re.compile(r'\bJc(?=[a-z])|(?<=[A-Za-z-])Jc'), 'k'),
+    # 玛拉基书的缩写 Mal. 被读成 Mai.（l 与 i 不分），全书 13 处，
+    # 都是 `Mai. N: N` 的引证格式，没有一处是德文的「五月」。
+    (re.compile(r'\bMai\.(?=\s*\d)'), 'Mal.'),
+    # 节号 § 前后被扫出一对尖括号，publish 转义之后成了 `&lt;§>`。全书 47 处，
+    # 都是 Gesenius / Nordheimer / Ewald 的语法书章节号。
+    (re.compile(r'&lt;[$§]>?(?=\s*\d)|&lt;§>'), '§'),
+    # **开引号被扫成 c / f / <**。这本书的开引号是个倒逗号，淡一点就读成这三样。
+    # 三个条件一起才认：本身独立成词（两边都不是字母数字）、后面跟空格加字母、
+    # 前面是空白或破折号/左括号/星号。`&c.`、`§ 77. 1. c.` 后面跟的是句点，进不来；
+    # 希伯来残串里的 `c^`、`f>` 紧贴着非空白，也进不来。
+    # 四处例外单独排掉：`the final ם`（页面上是希伯来字母）、`infinitive of חמץ`、
+    # 换页处多出来的那个 f、以及第 61 章那个其实是大写 I 的。
+    # 左边也必须是空白或破折号/左括号：开引号从不紧跟在字母后面。少了这一条，
+    # `hs&lt;`、`את&lt;`、`-אמר&lt;` 这些希伯来残串里的 `<` 也会被当成引号换掉。
+    (re.compile(r'(?<=[\s(—\-])&lt;(?= [A-Za-z])'), "'"),
+    (re.compile(r'(?<=[\s—\-(*])(?!&)[cf](?=\s+(?!has been variously|EH |which a prefixed|'
+                r'will give their hire)[A-Za-z])'), "'"),
+    # Umbreit 的缩写 Um. 被读成 Urn.（m 被拆成 r+n），全书 5 处
+    (re.compile(r'\bUrn\.'), 'Um.'),
     # 逗号被扫成两个：全书 20 处，没有一处是原文就有的。后面紧跟字母
     # （或紧跟一个**开**斜体星号再跟字母）时，被吞掉的那个空格要补回来
     # ——`Rosenmüller,,Hengstenberg`、`asseveration,,*certainly,*`；
@@ -279,6 +298,27 @@ _ONE_I2 = re.compile(r'(\s[(*]{1,2})1(?=\s+' + _ONE_AUX + r')')
 # 之前为了 `Who created these 1 (who is)` 加过这一支，结果把第 41 章改坏了，
 # 那一处改回人工核定。
 _ONE_Q = re.compile(r'(?<=[a-z,;’\'*)])\s1(?=\*|\s+(?!' + _ONE_BOOK + r')([A-Z][a-z]*))')
+
+
+# 字母 k 还会被读成 `Ic`（`Icings`、`Icnee`、`Icnowest`、`Iclingen`）。
+# 与 `Jc` 不同的是 `Ic` 有真的用法——`(Icall it good)` 其实是 `I call`，
+# 所以要加一道词典闸：换成 k 之后得是个词，才认。
+_IC = re.compile(r'\bIc(?=[a-z])|(?<=[A-Za-z-])Ic(?=[a-z])')
+_IC_WORD = re.compile(r'[A-Za-z]+')
+
+
+def fix_ic(raw, lex):
+    def one(m):
+        lo = raw.rfind(' ', 0, m.start()) + 1
+        hi = m.end()
+        while hi < len(raw) and raw[hi].isalpha():
+            hi += 1
+        tok = raw[lo:hi]
+        fixed = tok.replace('Ic', 'k', 1)
+        return 'k' if is_word(fixed.strip("*,.;:'()"), lex) else m.group(0)
+
+    out, _ = _IC.subn(one, raw)
+    return out, sum(1 for x, y in zip(raw.split(), out.split()) if x != y)
 
 
 def fix_ocr_one(raw, lex=None):
@@ -389,7 +429,8 @@ def apply_manual(raw):
     raw, k = fix_roman_refs(raw)
     raw, k2 = fix_split_words(raw, LEX, COMPOUNDS)
     raw, k3 = fix_ocr_one(raw, LEX)
-    return raw, n + k + k2 + k3
+    raw, k4 = fix_ic(raw, LEX)
+    return raw, n + k + k2 + k3 + k4
 
 
 def base_vocab():
