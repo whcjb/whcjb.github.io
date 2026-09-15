@@ -4,8 +4,8 @@ book_id: isaiah
 book_name: "亚历山大《以赛亚书注释》"
 title: "卷一 著者序"
 date: 2026-09-15 16:48
-next_section: later-preface
-next_label: "卷二 著者序"
+next_section: introduction
+next_label: "卷一 导论"
 en_url: "/alexander/isaiah/preface/"
 zh: true
 ---

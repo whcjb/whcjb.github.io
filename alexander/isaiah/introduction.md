@@ -8,6 +8,7 @@ prev_section: preface
 prev_label: "Preface (Vol. I)"
 next_section: 1
 next_label: "Isaiah 1"
+zh_url: "/alexander/isaiah/zh/introduction/"
 ---
 
 <!-- introduction | v1 扫描页 15-77 -->
