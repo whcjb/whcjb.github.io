@@ -30,7 +30,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CJK = re.compile(r'[一-鿿]')
-VERSE_LINE = re.compile(r'^\s*(?:<p[^>]*>)?\s*(?:\*\*|<strong>)(\d+)[.．]')
+# 节号有三种写法：`**11.**`、`<strong>11.</strong>`、以及右对齐拉丁文行里常见的
+# 裸 `11.`。少认最后一种，约珥书 2:11 那条重复括注就漏掉了。
+VERSE_LINE = re.compile(r'^\s*(?:<p[^>]*>)?\s*(?:\*\*|<strong>)?(\d+)[.．]')
 # 括注：整段中文，括号里不再嵌括号
 PAREN = re.compile(r'（([^（）]{6,})）')
 # 校注开头的常见说法——这类括注是对拉丁文用词的说明，不是整节重译，必须留着

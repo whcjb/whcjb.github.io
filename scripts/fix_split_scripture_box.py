@@ -169,7 +169,10 @@ VERSE_MARK = re.compile(r'(?<![\dA-Za-z])(\d{1,3})\s*[.．](?=\s|\*|$)')
 COMMENTARY_HEAD = re.compile(
     r'^(?:\*\*|<strong>)?\d{1,3}[.．]?(?:\*\*|</strong>)?\s*'
     r'(?:<span style="color:#800000"|\*<span|<em|\*[^*])')
-BLOCK_STOP = ('<h', '<div', '</div', '<!--', '---', '[^', '{:', '|')
+# `<table` 必须在列表里：律法合参那几章框后面紧跟的是另一种版式的
+# `<table class="scripture-table calvin-parallel">`，不加的话会把表格的开
+# 标签当成一块经文收进框里。
+BLOCK_STOP = ('<h', '<div', '</div', '<table', '<!--', '---', '[^', '{:', '|')
 MAX_PULL = 3        # 一个框最多往回收几块，防跑飞
 
 
