@@ -757,7 +757,7 @@ date: 2026-06-02 18:13
 
 <sup>22</sup> Are there any among the vanities of the Gentiles, Who can cause it to rain? And can they give rain from heaven? Art not thou thyself, Jehovah, our God? And we have looked to thee, For thou hast done all these things.
 
-<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CHAPTER 15</span> [^f1]</p>
+<p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">CHAPTER 15</span> <span style="color:#800000">f1</span></p>
 
 <sup>1</sup> Then Jehovah said to me: Though Moses and Samuel stood before me, My soul would not be towards this people; Send *them* from my presence, and let them depart.
 
