@@ -99,11 +99,11 @@ next_label: "第一章"
 
 <p style="margin-left:2em;" markdown="1">**2.** 地是空虚混沌，渊面黑暗，神的灵运行在水面上。3. 神说，要有光，就有了光。3. 神说，要有光，就有了光。4. 神看光是好的，神就把光暗分开了。</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** Viditque Deus lucem quod bona esset et divisit Deus lucem a tenebris.（神看光是好的，就把光暗分开了。）5. Vocavitque Deus lucem Diem et tenebras vocavit Noctem: fuitque vespera et fuit mane dies unus（神称光为昼，称暗为夜。有晚上，有早晨，这是头一日。）</p>
+<p style="margin-left:2em;" markdown="1">**4.** Viditque Deus lucem quod bona esset et divisit Deus lucem a tenebris.5. Vocavitque Deus lucem Diem et tenebras vocavit Noctem: fuitque vespera et fuit mane dies unus（神称光为昼，称暗为夜。有晚上，有早晨，这是头一日。）</p>
 
 <p style="margin-left:2em;" markdown="1">**5.** Et vocavit Deus lucem Diem, et tenebras vocavit Noctem. Fuitque vespera, et fuit mane dies primus 6. Dixit quoque Deus, Sit expansio, etc.（神称光为昼，称暗为夜。有晚上，有早晨，这是头一日。6. 神说，诸水之间要有穹苍，等等。）</p>
 
-<p style="text-align:right;" markdown="1">6. Et dixit Deus, Sit extensio, etc.（神说，要有穹苍，等等。）</p>
+<p style="text-align:right;" markdown="1">6. Et dixit Deus, Sit extensio, etc.</p>
 
 <!-- PAGE 11 -->
 

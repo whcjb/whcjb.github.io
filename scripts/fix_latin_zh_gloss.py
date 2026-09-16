@@ -41,7 +41,7 @@ SUB_NOTE = re.compile(r'[〔\[［][^〕\]］]*[〕\]］]')
 # 出现这些字样的括注是对拉丁文用词的说明，不是整节重译，必须留着
 META = re.compile(r'或作|或译|译作|可译|直译|字面|本义|字义|意即|原文|按字|希伯来|拉丁文|法文|英文|'
                   r'另有人|有些人|有人译|别人译|此译|亦作|即指|注：|参见|字母|拘泥|容后|见下文|'
-                  r'当解作|解作|疏解|语助词|连接词|当读作|当译作|此句当|不定式|集合名词')
+                  r'当解作|解作|疏解|语助词|连接词|当读作|当译作|此句当|不定式|集合名词|此处作|推测')
 # 括注与「附近那节中文」的字面相似度下限。整节重译即便用词与和合本差得远
 # （俄巴底亚书 5 只有 0.23），也比「校注」「配错了节」高；实测 0.13 以下全是
 # 配错节或校注，取 0.18 作闸。
@@ -61,7 +61,9 @@ def _cjk(s: str) -> str:
 
 def _zh_verse_text(lines, i, verse: str) -> str:
     """前后 WINDOW 行里，找「**N.** + 汉字」那一节的中文正文。"""
-    pat = re.compile(r'(?:(?:\*\*|<strong>)|(?<=[\s>）)]))' + re.escape(verse)
+    # 节号前面常是中文句末标点（「…你所当说的话。13. 摩西说…」），字符类里
+    # 漏了 `。` 就会判成「附近没有这一节的中文」，括注也就删不掉
+    pat = re.compile(r'(?:(?:\*\*|<strong>)|(?<=[\s>）)。！？；：、」』”]))' + re.escape(verse)
                      + r'[.．](?:\*\*|</strong>)?\s*'
                      r'(?:<[^>]+>\s*)*([一-鿿][^\n]{0,200})')
     for j in range(max(0, i - WINDOW), min(len(lines), i + WINDOW + 1)):
@@ -89,7 +91,7 @@ def fix_file(path: Path, apply: bool):
             # 一行里可能塞着好几节（`**3.** 拉丁（中文）4. 拉丁（中文）`），
             # 括注归属于它前面最近的那个节号，不是整行开头那个
             before_all = _plain(line[:pm.start()])
-            nums = re.findall(r'(?:^|[\s>）)])(\d{1,3})[.．]', before_all)
+            nums = re.findall(r'(?:^|[\s>）)。！？；：、」』”])(\d{1,3})[.．]', before_all)
             verse = nums[-1] if nums else m.group(1)
             inner = pm.group(1)
             if len(CJK.findall(inner)) < 6:
@@ -98,7 +100,7 @@ def fix_file(path: Path, apply: bool):
             core = SUB_NOTE.sub('', _plain(inner))
             # 门槛 10 字：短节的整节重译只有十来个字（「我说这话岂是照着人的意思吗？」），
             # 卡在 20 会漏掉一批；真正兜底的是后面与同节中文的相似度。
-            if len(CJK.findall(core)) < 10 or META.search(core):
+            if len(CJK.findall(core)) < 8 or META.search(core):
                 continue      # 「或作/译作/字面/原文」这类是校注，不是整节重译，留着
             # 括注里夹着希伯来文/希腊文，或方括号小注占了近一半篇幅的，不是单纯
             # 的重译，而是带着一整套考据（约珥书 1:10 那条里有 יבש/בוש 的辨析）。
@@ -108,9 +110,12 @@ def fix_file(path: Path, apply: bool):
             if SCRIPT_SPAN.search(SUB_NOTE.sub('', inner)):
                 continue
             # 括注之前、回溯到上一个节号为止的那一段，必须是拉丁文经文
-            cut = max(before_all.rfind(f'{verse}.'), 0)
+            # 一行里可能有好几个括注，前面那些括注里的中文会把「括注前面是不是
+            # 拉丁文」这条判歪（阿摩司书 1:5、何西阿书 10:12 都是一行三四个）。
+            # 只看「上一个右括号之后」到本括注之间那一段。
+            cut = max(before_all.rfind(f'{verse}.'), before_all.rfind('）') + 1, 0)
             seg = before_all[cut:]
-            if len(re.findall(r'[A-Za-z]', seg)) < 30 or len(CJK.findall(seg)) > 2:
+            if len(re.findall(r'[A-Za-z]', seg)) < 20 or len(CJK.findall(seg)) > 2:
                 continue
             zh = _zh_verse_text(lines, i, verse)
             if not zh:
@@ -185,7 +190,7 @@ def apply_special(apply: bool) -> int:
 # 这一节的译文，直接跟它比。
 ROW = re.compile(r'(<tr><td class="scripture-en">)(.*?)(</td><td class="scripture-la">)(.*?)(</td></tr>)',
                  re.S)
-CELL_MIN_CJK = 10        # 有同行译文可比，阈值可以比段落那边（20）低
+CELL_MIN_CJK = 8         # 有同行译文可比，阈值可以比段落那边（20）低
 
 
 def _move_paren_to_left(m):
@@ -263,6 +268,38 @@ def fix_cells(path: Path, apply: bool):
     return len(hits)
 
 
+# 拉丁文跨了行、本行开头没有节号的那两处——放宽「行首必须有节号」会把残句和
+# 配错节的也带进来（以赛亚书 66、撒迦利亚书 6 实测 0.2 的假阳性），所以这两条
+# 逐条核过后按字面删。
+LINE_SPECIAL = [
+    ('harmony-law-1', '8', '（摩西啊，平平安安地去吧。）'),
+    ('harmony-law-1', '8', '（在田间。凡在田间不收进家的人和牲畜，冰雹必降在他们身上，他们就必死。）'),
+]
+
+
+def apply_line_special(apply: bool) -> int:
+    n = 0
+    for book, chapter, frag in LINE_SPECIAL:
+        for path in (ROOT / f'calvin/{book}/{chapter}.md',
+                     ROOT / f'calvin_raw/{book}/zh_chapters/{chapter}.md'):
+            if not path.exists():
+                continue
+            text = path.read_text(encoding='utf-8')
+            if frag not in text:
+                continue
+            print(f'  {path}: 删逐条核过的括注「{frag[1:14]}…」')
+            n += 1
+            if apply:
+                mode = path.stat().st_mode & 0o777
+                if not mode & 0o200:
+                    path.chmod(0o644)
+                    path.write_text(text.replace(frag, ''), encoding='utf-8')
+                    path.chmod(mode)
+                else:
+                    path.write_text(text.replace(frag, ''), encoding='utf-8')
+    return n
+
+
 def main() -> int:
     apply = '--apply' in sys.argv
     targets = [p for p in sorted(list(ROOT.glob('calvin/*/*.md'))
@@ -270,6 +307,7 @@ def main() -> int:
                if not p.parent.name.endswith('-en')]
     total = sum(fix_file(p, apply) for p in targets)
     total += sum(fix_cells(p, apply) for p in targets)
+    total += apply_line_special(apply)
     total += apply_special(apply)
     print(f'[{"applied" if apply else "dry-run"}] {total} 处')
     return 0

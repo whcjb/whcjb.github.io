@@ -26,6 +26,9 @@ REF = re.compile(r'class="verse-range">([^<]+)<')
 VNUM = re.compile(r'(?<![\dA-Za-z])(\d{1,3})\s*[.．](?=\s|\*|$)')
 PAGE = re.compile(r'^<!-- PAGE \d+ -->$')
 PAGE_LEAD = re.compile(r'^(?:<!-- PAGE \d+ -->\s*\n)+')
+# 注释锚点是个空 div，夹在框与后半截经文之间（使徒行传 17:23 那处）。它不渲染，
+# 跳过去继续收，但别把它收进框里——留在原地。
+ANCHOR_ONLY = re.compile(r'^<div class="commentary-anchor"[^>]*></div>$')
 STOP = ('<h', '<div', '</div', '<table', '[^', '{:', '|', '---')
 COMMENTARY = re.compile(r'^(?:<p[^>]*>)?\s*(?:\*\*|<strong>)\d{1,3}[.．](?:\*\*|</strong>)?\s*'
                         r'<span style="color:#800000">\s*\*')
@@ -93,12 +96,26 @@ def fix_file(path: Path, apply: bool):
                     take.append(blk)
                     end = e
                     continue
+                if ANCHOR_ONLY.match(blk):
+                    continue          # 跳过，不收进框
                 # 页界注释常与下一段挤在同一块里（中间没有空行），判断前先剥掉，
                 # 否则「注释段」这条认不出来，会把注释整段收进经文框
                 body_only = PAGE_LEAD.sub('', blk)
                 if body_only.startswith(STOP) or COMMENTARY.match(body_only):
                     break
                 got = set(VNUM.findall(plain(body_only)))
+                # 框里最后一句没写完、这一块又不带节号 → 是被切开的后半句
+                # （哥林多前书 14:12 的「使你们丰盛有余…」就是这样）。只允许
+                # 出现在第一块，避免把后面的注释也带进来。
+                # 「第一块」要跳过页界注释——框后常常先是 `<!-- PAGE 370 -->`，
+                # 拿它当第一块的话这条规则永远不会触发（哥林多前书 14:12 踩过）
+                if not got and not [b for b in take if not PAGE.match(b)]:
+                    tail_txt = re.sub(r'(?:</[a-zA-Z][^>]*>)+$', '',
+                                      plain(m.group(0)).rstrip()).rstrip()
+                    if tail_txt and tail_txt[-1] not in '.?!。！？」』”)':
+                        take.append(blk)
+                        end = e
+                        continue
                 # 「含有还缺的节号」这条太紧：第 6 节的拉丁文自成一块、块里只有
                 # 「6.」，而 6 已经随上一块（第 5 节拉丁文末尾带着第 6 节中文）
                 # 补齐了，于是在这里就停住，后面第 7-11 节全丢在框外（约珥书 2
