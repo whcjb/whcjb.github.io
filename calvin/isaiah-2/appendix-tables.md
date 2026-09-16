@@ -20,11 +20,11 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**3.** Ac dixit: Obsecro, Iehova, recordare nunc quod ambulaverim coram to in veritate, in corde perfecto, et recte fecerim in oculis tuis. Flevitque Ezechias fletu magno. 4. 耶和华的话临到以赛亚说：</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** Tunc factum fuit verbum Iehovae ad Isaiam, dicendo:（那时，耶和华的话临到以赛亚说：）5. 「你去告诉希西家说，耶和华你祖大卫的　神如此说：我听见了你的祷告，看见了你的眼泪。我必加增你十五年的寿数；</p>
+<p style="margin-left:2em;" markdown="1">**4.** Tunc factum fuit verbum Iehovae ad Isaiam, dicendo:5. 「你去告诉希西家说，耶和华你祖大卫的　神如此说：我听见了你的祷告，看见了你的眼泪。我必加增你十五年的寿数；</p>
 
 <p style="margin-left:2em;" markdown="1">**5.** Vade, et dic Ezechiae: Sic dicit Iehova Deus David patris tui: Audivi orationem tuam, et vidi lachrymas tuas: Ecce ego adjicio ad dies tuos annos quindecim.（你去告诉希西家说，耶和华你祖大卫的神如此说：我听见了你的祷告，看见了你的眼泪，看哪，我必加增你十五年的寿数。）6. 并且我要救你和这城脱离亚述王的手，也要保护这城。</p>
 
-<p style="margin-left:2em;" markdown="1">**6.** Et eruam to de manu regis Assur, atque urbem hane; et protector ero huic urbi.（我要救你和这城脱离亚述王的手，也要保护这城。）7. 我耶和华必成就我所说的，我先给你一个兆头，</p>
+<p style="margin-left:2em;" markdown="1">**6.** Et eruam to de manu regis Assur, atque urbem hane; et protector ero huic urbi.7. 我耶和华必成就我所说的，我先给你一个兆头，</p>
 
 <p style="text-align:right;" markdown="1">7. Erit autem hoc tibi signum ab Iehova, quod Iehova hanc rem facturus sit, de qua loquutus est:</p>
 
@@ -34,7 +34,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**8.** Ecce ego reduco umbram graduum, quibus descendit in horologio Achaz per solem decem gradibus; et reversus est sol decem gradibus in horologio, quibus jam descenderat. 9. 犹大王希西家患病痊愈，就作诗说：</p>
 
-<p style="margin-left:2em;" markdown="1">**9.** Scriptum Ezechiae regis Iuda, cum aegrotasset, ac convaluisset a morbo Suo（犹大王希西家患病痊愈之后所写的诗）。10. 我说，正在我中年（原文作年日中断）之时，必进入阴间的门；我余剩的年岁不得享受。</p>
+<p style="margin-left:2em;" markdown="1">**9.** Scriptum Ezechiae regis Iuda, cum aegrotasset, ac convaluisset a morbo Suo。10. 我说，正在我中年（原文作年日中断）之时，必进入阴间的门；我余剩的年岁不得享受。</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** Ego dixi in successione dierum meorum, vadam ad portas sepulchri; privatus sum residuo annorum meorum（我说，在我年日相继之际，我必往阴间的门去；我余剩的年岁被夺去了）。11. 我说，我必不得见耶和华，就是在活人之地不得见耶和华；我与世上的居民不再见面。</p>
 
@@ -42,7 +42,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**12.** Habitatio mea discessit, et convoluta est a me, quasi tabernaculum pastoris; succidi quasi textor vitam meam; ab elevatione *(vel macie ant morbo)* succidet me; a die usque ad noctem conficies me.（我的住处离去，如牧人的帐棚从我卷起；我像织布的卷起我的生命；他必从高处〔或：因衰弱或疾病〕将我剪除；从早到晚，你要使我灭亡。）13. 我使自己安静直到早晨；他像狮子折断我一切的骨头，从早到晚，他要使我灭亡。</p>
 
-<p style="margin-left:2em;" markdown="1">**13.** Supputabam ad auroram; sicut leo, its contrivit ossa mea; ab aurora ad noctem conficies me.（我数算直到黎明；他像狮子折断了我的骨头；从黎明到夜晚，你要使我灭亡。）14. 我像燕子呢喃，像鸽子哀鸣；我因仰观，眼睛困倦。耶和华啊，我受欺压，求你为我作保。</p>
+<p style="margin-left:2em;" markdown="1">**13.** Supputabam ad auroram; sicut leo, its contrivit ossa mea; ab aurora ad noctem conficies me.14. 我像燕子呢喃，像鸽子哀鸣；我因仰观，眼睛困倦。耶和华啊，我受欺压，求你为我作保。</p>
 
 <p style="margin-left:2em;" markdown="1">**14.** Sicut grus aut hitundo garriebam, gemeban, quasi columba. Elevabantur ocnli mei in sublime, Domine, vim fecit mihi, recrea me.（我像鹤或燕子呢喃，像鸽子哀鸣。我的眼目向高处仰望；主啊，我受了欺压，求你使我苏醒。）15. 我可说什么呢？他应许我的，他已成就了。我因心里的苦楚，在一生的年日必悄悄而行。</p>
 
@@ -52,15 +52,15 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**17.** Ecce in pace amaritudo mihi amara, et tibi placuit animam meam (eruere) a fovea; *(vel, amasti animam meam a fovea interitus;)* quia projecisti post tergum omnia peccata mea. 18. 原来，阴间不能称谢你，死亡不能颂扬你；下坑的人不能盼望你的诚实。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Quoniam non infernus confitebitur tibi neque mors laudabit to; nec expectabunt qui in foveam descendunt veritatem tuam.（因为阴间不能称谢你，死亡不能颂扬你；下坑的人不能盼望你的信实。）19. 只有活人，活人必能称赞你，像我今日称赞你一样。为父的，要使儿女知道你的诚实。</p>
+<p style="margin-left:2em;" markdown="1">**18.** Quoniam non infernus confitebitur tibi neque mors laudabit to; nec expectabunt qui in foveam descendunt veritatem tuam.19. 只有活人，活人必能称赞你，像我今日称赞你一样。为父的，要使儿女知道你的诚实。</p>
 
 <p style="margin-left:2em;" markdown="1">**19.** Vivens, vivens, ipse confitebitur tibi; sicur ego hodie. Pater filiis notam faciet veritatem tuam.（活人，活人，他必称谢你，像我今日一样。为父的必使儿女知道你的诚实。）20. 耶和华肯救我，所以，我们要一生一世在耶和华殿中用丝弦的乐器唱我的诗歌。</p>
 
-<p style="margin-left:2em;" markdown="1">**20.** Iehova ad me servandum; et cantica nostra cantabimus omnibus diebus vitae nostrae in domo Iehovae.（耶和华肯救我；我们必一生一世在耶和华殿中歌唱我们的诗歌。）21. 以赛亚说：「当取一块无花果饼来，贴在疮上，王必痊愈。」</p>
+<p style="margin-left:2em;" markdown="1">**20.** Iehova ad me servandum; et cantica nostra cantabimus omnibus diebus vitae nostrae in domo Iehovae.21. 以赛亚说：「当取一块无花果饼来，贴在疮上，王必痊愈。」</p>
 
 <p style="margin-left:2em;" markdown="1">**21.** Dixit autem Isaias, Accipient massam ficuum, et adhibebunt ulceri, et vivet.（以赛亚说：当取一块无花果饼来，贴在疮上，王必痊愈。）22. 希西家也曾说：我能上耶和华的殿，有什么兆头呢？</p>
 
-<p style="text-align:right;" markdown="1">22. Dixerat enim *(vel, autem)* Ezechias, Quod signum, quod ascensurus sim in domum Iehovae?（希西家曾说：我能上耶和华的殿，有什么兆头呢？）</p>
+<p style="text-align:right;" markdown="1">22. Dixerat enim *(vel, autem)* Ezechias, Quod signum, quod ascensurus sim in domum Iehovae?</p>
 
 <!-- PAGE 789 -->
 
@@ -82,7 +82,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**4.** Tunc dixit: Quid viderunt domi tuae? Et dixit Ezechias: Cuncta quae domi meae sunt viderunt; nec res ulla est, quam non illis ostenderim in thesauris meis. 5. 以赛亚对希西家说：「你要听万军之耶和华的话：</p>
 
-<p style="margin-left:2em;" markdown="1">**5.** Tunc ait Isaias Ezechiae: Audi verbum Iehovae exercituum.（那时以赛亚对希西家说：你要听万军之耶和华的话。） 6. 日子必到，凡你家里所有的，并</p>
+<p style="margin-left:2em;" markdown="1">**5.** Tunc ait Isaias Ezechiae: Audi verbum Iehovae exercituum. 6. 日子必到，凡你家里所有的，并</p>
 
 <p style="text-align:right;" markdown="1">6. Ecce dies veniunt, ut tollatur in Babylonem quicquid est</p>
 
@@ -104,11 +104,11 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**1.** 你们的神说：你们要安慰，安慰我的百姓。</p>
 
-<p style="margin-left:2em;" markdown="1">**1.** Consolamini, consolamini populum meum, dicit Deus rester.（你们要安慰，安慰我的百姓，你们的神说。） 2. 要对耶路撒冷说安慰的话，又向她宣告说，她争战的日子已满了，她的罪孽赦免了；她为自己的一切罪，从耶和华手中加倍受罚。</p>
+<p style="margin-left:2em;" markdown="1">**1.** Consolamini, consolamini populum meum, dicit Deus rester. 2. 要对耶路撒冷说安慰的话，又向她宣告说，她争战的日子已满了，她的罪孽赦免了；她为自己的一切罪，从耶和华手中加倍受罚。</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** Loquimini secundum cor Ierusalem, et clamate ad eam, quod impleta sit militia ejus, quod remissa sit iniquitas *(vel, miseria)* ejus, quoniam accepit e manu Iehovae duplicia in onmibus peccatis suis.（要照耶路撒冷的心说话，向她呼喊，说她的争战已经满足，她的罪孽*（或作：苦难）*已蒙赦免，因她为一切的罪，从耶和华手中加倍受罚。）3. 有人声喊着说：在旷野预备耶和华的路，在沙漠地修平我们神的道。</p>
 
-<p style="text-align:right;" markdown="1">3. Vox clamans in deserto: Parate viam Iehovae; Dirigite in solitudine semitam Deo nostro.（在旷野有人声喊着说：预备耶和华的路；在荒漠中为我们的神修直他的路径。）</p>
+<p style="text-align:right;" markdown="1">3. Vox clamans in deserto: Parate viam Iehovae; Dirigite in solitudine semitam Deo nostro.</p>
 
 <p style="margin-left:2em;" markdown="1">**4.** 一切山洼都要填满，大小山冈都要削平；高低不平之地要成为平坦，崎岖</p>
 
@@ -126,15 +126,15 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**8.** 草必枯干，花必凋残，惟有我们神的话，必永远立定。</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** Arescit herba, emarcet flos. At sermo Dei nostri stabit in aeternum.（草枯干，花凋残；惟我们神的话必永远长存。）9. 报好信息给锡安的啊，你要登高山；报好信息给耶路撒冷的啊，你要极力扬声。扬声不要惧怕，对犹大的城邑说：看哪，你们的神！</p>
+<p style="margin-left:2em;" markdown="1">**8.** Arescit herba, emarcet flos. At sermo Dei nostri stabit in aeternum.9. 报好信息给锡安的啊，你要登高山；报好信息给耶路撒冷的啊，你要极力扬声。扬声不要惧怕，对犹大的城邑说：看哪，你们的神！</p>
 
-<p style="text-align:right;" markdown="1">9. Ascende in montem excelsum, annuntiatrix Sion; attolle fortiter vocem tuam, annuntiatrix Ierusalem. Attolle, ne timeas. Die civitatibus Iuda: Ecce Deus vester.（报信息的锡安啊，你要登上高山；报信息的耶路撒冷啊，你要极力扬声。扬声吧，不要惧怕。要对犹大的城邑说：看哪，你们的神！）</p>
+<p style="text-align:right;" markdown="1">9. Ascende in montem excelsum, annuntiatrix Sion; attolle fortiter vocem tuam, annuntiatrix Ierusalem. Attolle, ne timeas. Die civitatibus Iuda: Ecce Deus vester.</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** 主耶和华必像大能者临到；他的膀臂必为他掌权。看哪，他的赏赐在他那里；他的报应在他面前。</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** Ecce Dominus Iehova in robore veniet; et brachium ejus sibi potens. Ecce merces ejus cure co, et opus ejus coram ipsius facie. 11. 他必像牧人牧养自己的羊群，用膀臂聚集羊羔抱在怀中，慢慢引导那乳养小羊的。</p>
 
-<p style="text-align:right;" markdown="1">11. Sicuti pastor gregem suam pascet, brachio suo colliget agnos, sinu suo portabit, foetus suaviter ducet.（他必如牧人牧养自己的羊群，用膀臂聚集羊羔，抱在怀中，慢慢引导那乳养小羊的。）</p>
+<p style="text-align:right;" markdown="1">11. Sicuti pastor gregem suam pascet, brachio suo colliget agnos, sinu suo portabit, foetus suaviter ducet.</p>
 
 <p style="margin-left:2em;" markdown="1">**12.** 谁曾用手心量诸水，</p>
 
@@ -150,7 +150,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**13.** Quis erudivit Spiritum Iehovae, aut consilio eum instruxit, et eum docuit? 14. 他与谁商议，谁教导他，将公平的路指示他，将知识教训他，将通达的道指教他呢？</p>
 
-<p style="text-align:right;" markdown="1">14. A quo petlit consilium, ut eum moneret? et docuit eum semitam judicii, erudivit scientia, et viam prudentiae ostendit ei?（他曾向谁求问谋略，要人劝告他呢？谁将公平的路教导他，以知识教训他，将通达的道指示他呢？）</p>
+<p style="text-align:right;" markdown="1">14. A quo petlit consilium, ut eum moneret? et docuit eum semitam judicii, erudivit scientia, et viam prudentiae ostendit ei?</p>
 
 <p style="margin-left:2em;" markdown="1">**15.** 看哪，万民都像水桶的一滴，又算如天平上的微尘；他举起众海岛，好像极微之物。</p>
 
@@ -162,7 +162,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**17.** Omnes gentes quasi nihilum sunt corameo, et praeipso reputantur minus quam nihil, et quod non est.（万民在他面前好像虚无，被他看为不及虚无，乃为虚空。）18. 你们究竟将谁比神呢？用什么形像与神比较呢？</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Cui igitur similem fecistis Deum, aut quam similitudinem ordinabitis ei?（你们究竟将谁比神呢？用什么形像与神比较呢？）19. 偶像是匠人铸造，银匠用金包裹，为它铸造银链。</p>
+<p style="margin-left:2em;" markdown="1">**18.** Cui igitur similem fecistis Deum, aut quam similitudinem ordinabitis ei?19. 偶像是匠人铸造，银匠用金包裹，为它铸造银链。</p>
 
 <p style="text-align:right;" markdown="1">19. 匠人铸造雕像，银匠为它包上金子，又为它熔铸银链。</p>
 
@@ -176,7 +176,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**21.** An nescitis? An non audistis? An non vobis annuntiatum est ab initio? An non edocti estis a fundamentis terrae? 22. 神坐在地球大圈之上，地上的居民好像蝗虫。他铺张穹苍如幔子，展开诸天如可住的帐棚。</p>
 
-<p style="text-align:right;" markdown="1">22. Is sedet super gyrum terrae, cujus habitatores sunt velut locustae, extendit coelum ut cortinam; expandit, inquam, quasi tentorium, ut inhabitetur.（他坐在地的大圈之上，地上的居民好像蝗虫；他铺张诸天如幔子；我说，他展开诸天如帐棚，使人可以居住。）</p>
+<p style="text-align:right;" markdown="1">22. Is sedet super gyrum terrae, cujus habitatores sunt velut locustae, extendit coelum ut cortinam; expandit, inquam, quasi tentorium, ut inhabitetur.</p>
 
 <p style="margin-left:2em;" markdown="1">**23.** 他使君王归于虚无，使地上的审判官成为虚空。</p>
 
@@ -186,7 +186,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**25.** 你们究竟将谁比我，叫他与我相等呢？这是圣者说的。</p>
 
-<p style="text-align:right;" markdown="1">25. Et cut assimilabitis me, ut similis sim? dicit Sanctus.（你们要将我比谁，叫我与他相似呢？圣者说。）</p>
+<p style="text-align:right;" markdown="1">25. Et cut assimilabitis me, ut similis sim? dicit Sanctus.</p>
 
 <p style="margin-left:2em;" markdown="1">**26.** 你们向上举目，看谁创造这万象，按数目领出，他一一称其名，凭他的</p>
 
@@ -198,7 +198,7 @@ date: 2026-08-22 11:25
 
 <p style="text-align:center" markdown="1">a magnitudine virium et robore fortitudinis nullum deficiet *(vel, deerit).*（因其权能之大与力量之强，无一缺少〔或作：无一短缺〕） 27. 雅各啊，你为何说，以色列啊，你为何言，我的道路向耶和华隐藏，我的冤屈神并不查问？</p>
 
-<p style="text-align:right;" markdown="1">27. Quare dices, Iacob, et loqueris Israel? Abscondita est via mea ab Iehova, et a Deo meo judicium meum transit.（雅各啊，你为何说，以色列啊，你为何言？我的道路向耶和华隐藏，我的冤屈已从我神那里越过）</p>
+<p style="text-align:right;" markdown="1">27. Quare dices, Iacob, et loqueris Israel? Abscondita est via mea ab Iehova, et a Deo meo judicium meum transit.</p>
 
 <p style="margin-left:2em;" markdown="1">**28.** 你岂不曾知道吗？你岂不曾听见吗？永在的　神耶和华，创造地极的主，并不疲乏，也不困倦；他的智慧无法测度。</p>
 
@@ -224,15 +224,15 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**2.** Quis excitavit ab oriente justitiam, vocavit eum ad pedem suum, dedit coram co gentes, et reges subjugavit; dedit quasi pulverem gladio ejus, et quasi stipulam propulsam arcui ejus? 3. 他追赶他们，走他所未走的道，坦然前行。</p>
 
-<p style="margin-left:2em;" markdown="1">**3.** Persequutus est cos; evasit in pace, semita qua non ingressus est pes ejus.（他追赶他们，平安脱身，行在他脚未曾走过的路上。） 4. 谁行作这事，从起初宣召历代呢？就是我耶和华，我是首先的，也与末后的同在。</p>
+<p style="margin-left:2em;" markdown="1">**3.** Persequutus est cos; evasit in pace, semita qua non ingressus est pes ejus. 4. 谁行作这事，从起初宣召历代呢？就是我耶和华，我是首先的，也与末后的同在。</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** Quis designavit, et fecit, vocans nationes ab initio? Ego Iehova prius, et cum novissimis ego idem.（谁行作成就这事，从起初宣召历代呢？就是我耶和华！我是首先的，也与末后的同在。）5. 海岛看见就都害怕；地极也都战兢，就近前来。</p>
+<p style="margin-left:2em;" markdown="1">**4.** Quis designavit, et fecit, vocans nationes ab initio? Ego Iehova prius, et cum novissimis ego idem.5. 海岛看见就都害怕；地极也都战兢，就近前来。</p>
 
 <p style="margin-left:2em;" markdown="1">**5.** Viderunt insulae et timuerunt; extremi fines terrae expaverunt, accesserunt, et venerunt.（海岛看见就都害怕；地极也都战兢，就近前来。）6. 他们各人帮助邻舍，各人对弟兄说：壮胆吧！</p>
 
-<p style="margin-left:2em;" markdown="1">**6.** Quisque proximo suo opem tulit, et fratri suo dixit, Sis strenuus.（他们各人帮助邻舍，各人对弟兄说：壮胆吧！）7. 木匠勉励银匠，用锤打光的勉励打砧的，论焊工说，焊得好；又用钉子钉稳，免得偶像动摇。</p>
+<p style="margin-left:2em;" markdown="1">**6.** Quisque proximo suo opem tulit, et fratri suo dixit, Sis strenuus.7. 木匠勉励银匠，用锤打光的勉励打砧的，论焊工说，焊得好；又用钉子钉稳，免得偶像动摇。</p>
 
-<p style="text-align:right;" markdown="1">7. Confortavit faber conflatorem, malleo percutiens tundentem vicissim, et dixit, Bonum hoc ad plumbaturam; firmavitque clavis, ut non moveretur.（木匠勉励银匠，用锤打的轮流敲击那锤炼的人，又说，这焊接甚好；且用钉子钉牢，使它不动摇。）</p>
+<p style="text-align:right;" markdown="1">7. Confortavit faber conflatorem, malleo percutiens tundentem vicissim, et dixit, Bonum hoc ad plumbaturam; firmavitque clavis, ut non moveretur.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** 惟你以色列，我的仆人，我所拣选的雅各，我朋友亚伯拉罕的后裔。</p>
 
@@ -246,7 +246,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**10.** Ne timeas, quoniam ego tecum sum; non terrearis, quoniam ego Deus tuus sum, qui to corroboro, adhuc *(vel, utique)* opem tibi feram, adhuc to sustentabo dextera justitiae meae.（你不要害怕，因为我与你同在；不要惊惶，因为我是你的神，是坚固你的；我还要*（或作：必定）*帮助你，还要用我公义的右手扶持你。）11. 凡向你发怒的必都抱愧蒙羞；与你相争的必如无有，并要灭亡。</p>
 
-<p style="margin-left:2em;" markdown="1">**11.** Ecce pudefient et erubescent omnes qui te provocant; erunt quasi in nihilum, et peribunt qui tecum litigant.（看哪，凡向你发怒的必都抱愧蒙羞；与你争竞的必如归于无有，并要灭亡。）12. 你要寻找他们，却寻不见；与你争竞的必如无有。与你争战的必被灭尽。</p>
+<p style="margin-left:2em;" markdown="1">**11.** Ecce pudefient et erubescent omnes qui te provocant; erunt quasi in nihilum, et peribunt qui tecum litigant.12. 你要寻找他们，却寻不见；与你争竞的必如无有。与你争战的必被灭尽。</p>
 
 <p style="text-align:right;" markdown="1">12. Quaeres eos, nec invenies; qui contendunt tecum erunt quasi nihilum, et qui tecum belligerantur, quasi consumptio.（你要寻找他们，却寻不见；与你争竞的必如无有，与你争战的必如被灭尽。）</p>
 
@@ -268,7 +268,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**17.** Egeni et pauperes quaerent aquas, quae non apparent; lingua eorum siti exarebit. Ego Iehova exaudiam cos; ego Deus Israelis non descram eos.（困苦贫穷之人寻水，水却不见；他们的舌头因干渴而枯焦。我耶和华必应允他们；我以色列的神必不离弃他们。）18. 我要在净光的高处开江河，在谷中开泉源；我要使沙漠变为水池，使干地变为涌泉。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Aperiam in editis cacuminibus flumina, et fontes in media planitie; desertum ponam in stagna aquarum, et terram vastam in scaturigines aquarum.（我要在高耸的山顶开江河，在平原之中开泉源；我要使旷野变为水池，使荒地变为涌泉。）19. 我要在旷野种上香柏树、皂荚树、番石榴树，和野橄榄树；我在沙漠要把松树、杉树，并黄杨树一同栽植。</p>
+<p style="margin-left:2em;" markdown="1">**18.** Aperiam in editis cacuminibus flumina, et fontes in media planitie; desertum ponam in stagna aquarum, et terram vastam in scaturigines aquarum.19. 我要在旷野种上香柏树、皂荚树、番石榴树，和野橄榄树；我在沙漠要把松树、杉树，并黄杨树一同栽植。</p>
 
 <p style="text-align:right;" markdown="1">19. Dabo in deserto cedrum, spinum, myrtum, et pinum; ponam in solitudine abietem, ulmum, et popu-lure sired.（我要在旷野赐下香柏树、皂荚树、番石榴树和松树；我要在荒漠中栽上杉树、榆树和黄杨树。）</p>
 
@@ -312,9 +312,9 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**1.** Ecce servus meus, innitar illi, *(vel, suffulciam ipsum )* electus meus, in quo sibi placuit anima mea. Posui Spiritum meum super eum; judicium Gentibus proferet.（看哪，我的仆人，我要倚靠他，*或作，我要扶持他*，我所拣选的，我心所喜悦的。我已将我的灵赐给他，他必将公理传给外邦。）2. 他不喧嚷，不扬声，也不使街上听见他的声音。</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** Non clamabit, neque attollet, neque audire faciet in plateis vocem suam.（他不喧嚷，不扬声，也不使街上听见他的声音。）3. 压伤的芦苇，他不折断；将残的灯火，他不吹灭。他凭真实将公理传开。</p>
+<p style="margin-left:2em;" markdown="1">**2.** Non clamabit, neque attollet, neque audire faciet in plateis vocem suam.3. 压伤的芦苇，他不折断；将残的灯火，他不吹灭。他凭真实将公理传开。</p>
 
-<p style="margin-left:2em;" markdown="1">**3.** Arundinem quassatam non perfringet, nec linum fumans extinguet; in veritate proferet judicium.（压伤的芦苇，他不折断；将残的灯火，他不吹灭；他凭真实将公理传开。）4. 他不灰心，也不丧胆，直到他在地上设立公理；海岛都等候他的训诲。</p>
+<p style="margin-left:2em;" markdown="1">**3.** Arundinem quassatam non perfringet, nec linum fumans extinguet; in veritate proferet judicium.4. 他不灰心，也不丧胆，直到他在地上设立公理；海岛都等候他的训诲。</p>
 
 <p style="margin-left:2em;" markdown="1">**4.** Non deficiet, neque frangetur, donec ponat in terra judicium; et legem ejus insulae expectabunt. 5. 创造诸天，铺张穹苍，将地和地上所出的一并铺开，赐气息给地上的众人，又赐生气给地上行动之物的神耶和华，他如此说：</p>
 
@@ -332,7 +332,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">**8.** Ego Iehova; hoc nomen meum; et gloriam meam alteri non dabo, nec laudem meam sculptilibus. 9. 看哪，先前的事已经成就，现在我将新事说明，这事未发以先，我就说给你们听。</p>
 
-<p style="text-align:right;" markdown="1">9. Priora ecce venerunt, et nova ego annuntio; antequam oriantur nota faciam vobis.（看哪，先前的事已经成就，我要宣告新事；在它们发生以前，我要指示你们。）</p>
+<p style="text-align:right;" markdown="1">9. Priora ecce venerunt, et nova ego annuntio; antequam oriantur nota faciam vobis.</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** 航海的和海中所有的，海岛和其上的居民，都当向耶和华唱新歌，从地极赞美他。</p>
 
@@ -350,7 +350,7 @@ date: 2026-08-22 11:25
 
 <p style="margin-left:2em;" markdown="1">15. 我要使大山小冈变为荒场，使其上的草木都枯干；我要使江河</p>
 
-<p style="text-align:right;" markdown="1">15. In solitudinem redigam montes et colles; omnem herbam eorum exsiccabo;（我要使大山小冈变为荒场，使其上的草都枯干；）</p>
+<p style="text-align:right;" markdown="1">15. In solitudinem redigam montes et colles; omnem herbam eorum exsiccabo;</p>
 
 <!-- PAGE 801 -->
 
@@ -358,13 +358,13 @@ date: 2026-08-22 11:25
 
 ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，使水池干涸。）16. 我要引瞎子行不认识的道，领他们走不知道的路；在他们面前使黑暗变为光明，使弯曲变为平直。这些事我都要行，并不离弃他们。
 
-<p style="margin-left:2em;" markdown="1">**16.** Et ducam caecos per viam quam nesciebant; per semitas quas non noverant faciam eos ingredi; ponamque tenebras eorum eis in lucem, et obliqua in planum. Haec *(vel, Haec verba, vel, Has res)* faciam eis, et non derelinquam eos.（我要引瞎子行他们所不认识的道，使他们走他们所不知道的路；我要使他们的黑暗变为光明，使弯曲变为平直。这些事〔或作：这些话，或作：这些事情〕我要为他们行，并不离弃他们。）17. 倚靠雕刻的偶像，对铸造的偶像说：你是我们的神；这等人要退后，全然蒙羞。</p>
+<p style="margin-left:2em;" markdown="1">**16.** Et ducam caecos per viam quam nesciebant; per semitas quas non noverant faciam eos ingredi; ponamque tenebras eorum eis in lucem, et obliqua in planum. Haec *(vel, Haec verba, vel, Has res)* faciam eis, et non derelinquam eos.17. 倚靠雕刻的偶像，对铸造的偶像说：你是我们的神；这等人要退后，全然蒙羞。</p>
 
 <p style="text-align:right;" markdown="1">17. Agentur retrorsum, pudefient pudore qui confidunt sculptili, et fusili dicunt, Vos dii nostri.（他们必退后，倚靠雕刻的偶像、对铸造的偶像说「你们是我们的神」的人，必大大蒙羞。）</p>
 
 <p style="margin-left:2em;" markdown="1">**18.** 你们这耳聋的，听吧！你们这眼瞎的，看吧！使你们能看见。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** O surdi, audite, et caeci, intenti estote ad videndum.（耳聋的啊，你们要听；眼瞎的啊，你们要留心观看。） 19. 谁比我的仆人眼瞎呢？谁比我差遣的使者耳聋呢？谁瞎眼像那与我和好的？谁瞎眼像耶和华的仆人呢？</p>
+<p style="margin-left:2em;" markdown="1">**18.** O surdi, audite, et caeci, intenti estote ad videndum. 19. 谁比我的仆人眼瞎呢？谁比我差遣的使者耳聋呢？谁瞎眼像那与我和好的？谁瞎眼像耶和华的仆人呢？</p>
 
 <p style="margin-left:2em;" markdown="1">**19.** Quis caecus nisi servus meus? Quis surdus sicut nuntius meus quem mitto? Quis caecus sicut perfectus, et caecus nt servus Iehovae? 20. 谁瞎眼像我的仆人？谁耳聋像我差遣的使者？谁瞎眼像那与我和好的？谁瞎眼像耶和华的仆人？</p>
 
@@ -404,7 +404,7 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**4.** Quia pretiosus fuisti in oculis meis, honoratus es, et ego dilexi to. Tradam hominem in vicem tuam, et populos in vicem animae tuae. 5. 不要害怕，因我与你同在；我必领你的后裔从东方来，又从西方招聚你。</p>
 
-<p style="margin-left:2em;" markdown="1">**5.** Ne timeas, quia ego tecum. Ab Oriente adducam semen tuum, et ab Occidente colligam to.（不要害怕，因我与你同在；我必领你的后裔从东方来，又从西方招聚你。）6. 我要对北方说：交出来！对南方说：不要拘留！将我的众子从远方带来，将我的众女从地极领回；</p>
+<p style="margin-left:2em;" markdown="1">**5.** Ne timeas, quia ego tecum. Ab Oriente adducam semen tuum, et ab Occidente colligam to.6. 我要对北方说：交出来！对南方说：不要拘留！将我的众子从远方带来，将我的众女从地极领回；</p>
 
 <p style="margin-left:2em;" markdown="1">**6.** Dicam Aquiloni, Da, et Austro, Ne prohibeas. Adducito filios meos e longinquo, et filias meas ab extremo terrae.（我要对北方说：交出来！对南方说：不要拘留！将我的众子从远方带来，将我的众女从地极领回。）7. *就是*凡称为我名下的人，是我为自己的荣耀创造的，是我所做成，所造作的。</p>
 
@@ -412,9 +412,9 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**8.** 你要将有眼而瞎、有耳而聋的民都带出来。</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** Ut educam populum caecum, cui oculi; et surdos, quibus aures.（使我领出有眼而瞎的民，和有耳而聋的人。）9. 任凭万国聚集，任凭众民会合。其中谁能将此声明，并将先前的事说给我们听呢？他们可以带出见证来，自显为是；或者他们听见便说：这是真的。</p>
+<p style="margin-left:2em;" markdown="1">**8.** Ut educam populum caecum, cui oculi; et surdos, quibus aures.9. 任凭万国聚集，任凭众民会合。其中谁能将此声明，并将先前的事说给我们听呢？他们可以带出见证来，自显为是；或者他们听见便说：这是真的。</p>
 
-<p style="text-align:right;" markdown="1">9. Omnes gentes congregentur simul, et colligantur populi. Quis est in eis qui istud annuntiet: ac priora nos audire faciat? Proferant testes suos, justi pronuntientur; sed audiant, et dicent, Verum est.（愿万国一同聚集，愿众民会合。他们中间谁能宣告此事，并使我们听见先前的事呢？让他们带出自己的见证人来，好被判为义；但愿他们听见，就说：这是真的。）</p>
+<p style="text-align:right;" markdown="1">9. Omnes gentes congregentur simul, et colligantur populi. Quis est in eis qui istud annuntiet: ac priora nos audire faciat? Proferant testes suos, justi pronuntientur; sed audiant, et dicent, Verum est.</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** 耶和华说：你们是我的见证，我所拣选的仆人。既是这样，便可以知道，且信服我，又明白我就是耶和华。在我以前没有真神，在我以后也必没有。</p>
 
@@ -434,7 +434,7 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**14.** Sic dicit Iehova redemptor rester, Sanctus Israelis: Propter vos misi in Babylonem, et descendere feci. Omnes ipsi fugitivi; et Chaldaeorum clamor in navibus.（耶和华－你们的救赎主、以色列的圣者如此说：因你们的缘故，我已打发人到巴比伦去，使他们下来。他们尽都成为逃民；迦勒底人的呼号声在船上。）15. 我是耶和华－你们的圣者，是创造以色列的，是你们的君王。</p>
 
-<p style="margin-left:2em;" markdown="1">**15.** Ego Iehova, Sanctus rester, creator israel, Rex rester.（我是耶和华－你们的圣者，是创造以色列的，是你们的君王。）16. 耶和华在沧海中开道，在大水中开路，</p>
+<p style="margin-left:2em;" markdown="1">**15.** Ego Iehova, Sanctus rester, creator israel, Rex rester.16. 耶和华在沧海中开道，在大水中开路，</p>
 
 <p style="margin-left:2em;" markdown="1">**16.** Sic dicit Iehova, qui dat in mari viam, et in aquis violentis semitam.（拉丁文：耶和华如此说，他在海中开道，在猛烈的水中开路。）17. 使车辆、马匹、军兵、勇士都出来，一同躺下，不再起来；他们灭绝，好像熄灭的灯火。</p>
 
@@ -442,9 +442,9 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**18.** 你们不要记念从前的事，也不要思想古时的事。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Ne recordemini priorum, et antiqua ne memoretis.（不要记念从前的事，也不要思想古时的事。）19. 看哪，我要做一件新事；如今要发现，你们岂不知道吗？我必在旷野开道路，在沙漠开江河。</p>
+<p style="margin-left:2em;" markdown="1">**18.** Ne recordemini priorum, et antiqua ne memoretis.19. 看哪，我要做一件新事；如今要发现，你们岂不知道吗？我必在旷野开道路，在沙漠开江河。</p>
 
-<p style="text-align:right;" markdown="1">19. Ecce ego facio rem novam; jam orietur; an non eam cognoscetis? Hac vice *(vel, utique)* ponam in deserto viam; flumina in solitudine.（看哪，我要行一件新事；如今就要发生；你们岂不知道吗？这一次〔或作：诚然〕我必在旷野设立道路，在荒漠开江河。）</p>
+<p style="text-align:right;" markdown="1">19. Ecce ego facio rem novam; jam orietur; an non eam cognoscetis? Hac vice *(vel, utique)* ponam in deserto viam; flumina in solitudine.</p>
 
 <!-- PAGE 805 -->
 
@@ -454,7 +454,7 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**21.** Populum hunc creavi mihi; laudem meam narrabit.（这百姓是我为自己所造的，他必述说我的美德。）22. 雅各家啊，你并没有求告我；以色列啊，你倒厌烦我。</p>
 
-<p style="text-align:right;" markdown="1">22. Et non me invocasti, Iacob; quin fatigatus es in me, Israel.（雅各啊，你并没有求告我；以色列啊，你倒厌烦我。）</p>
+<p style="text-align:right;" markdown="1">22. Et non me invocasti, Iacob; quin fatigatus es in me, Israel.</p>
 
 <p style="margin-left:2em;" markdown="1">**23.** 你没有将你的羊带来给我作燔祭，也没有用祭物尊敬我；我没有因供物使你服劳，也没有因乳香使你厌烦。</p>
 
@@ -462,13 +462,13 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**24.** Non emisti mihi pecunia calamum, nec adipe victimarum tuarum inebriasti me; sed me servire fecisti in peccatis tuis, et me laborare fecisti in iniquitatibus tuis.（你没有用银子为我买菖蒲，也没有用你祭牲的脂油使我饱足；倒使我在你的罪中服劳，使我因你的罪孽劳苦。）25. 惟有我为自己的缘故涂抹你的过犯；我也不记念你的罪恶。</p>
 
-<p style="margin-left:2em;" markdown="1">**25.** Ego, ego sum qui deleo iniquitates tuas propter me; ideo peccatorum tuorum non recordabor.（惟有我为自己的缘故涂抹你的过犯，我也不记念你的罪恶。） 26. 你要提醒我，你我可以一同辩论；你可以将你的理陈明，自显为义。</p>
+<p style="margin-left:2em;" markdown="1">**25.** Ego, ego sum qui deleo iniquitates tuas propter me; ideo peccatorum tuorum non recordabor. 26. 你要提醒我，你我可以一同辩论；你可以将你的理陈明，自显为义。</p>
 
-<p style="margin-left:2em;" markdown="1">**26.** Reduc mihi in memoriam; judicemur simul; narra tu, ut justificeris.（你要提醒我，你我可以一同受审；你可以陈述，好使你得称为义。） 27. 你的始祖犯罪，你的师傅违背我。</p>
+<p style="margin-left:2em;" markdown="1">**26.** Reduc mihi in memoriam; judicemur simul; narra tu, ut justificeris. 27. 你的始祖犯罪，你的师傅违背我。</p>
 
-<p style="margin-left:2em;" markdown="1">**27.** Pater tuus primus peceavit, et doctores tui in me praevaricati sunt.（你的始祖犯了罪，你的教师们干犯了我。） 28. 所以，我要辱没圣所的首领，使雅各成为咒诅，使以色列成为辱骂。</p>
+<p style="margin-left:2em;" markdown="1">**27.** Pater tuus primus peceavit, et doctores tui in me praevaricati sunt. 28. 所以，我要辱没圣所的首领，使雅各成为咒诅，使以色列成为辱骂。</p>
 
-<p style="text-align:right;" markdown="1">28. Ideo poiluam Principes sanctuarii, et ponam in execrationem Iacob, et Israel in opprobrium.（因此我要褻污圣所的君王，使雅各成为咒诅，使以色列成为羞辱。）</p>
+<p style="text-align:right;" markdown="1">28. Ideo poiluam Principes sanctuarii, et ponam in execrationem Iacob, et Israel in opprobrium.</p>
 
 <!-- PAGE 806 -->
 
@@ -490,7 +490,7 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 <p style="margin-left:2em;" markdown="1">**4.** Et germinabunt quasi inter herbam, quasi salices juxta rivos aquarum.（他们要发生像草中的柳树，像溪水旁的柳树。）5. 这个要说：我属耶和华；那个要以雅各的名自称；又一个要亲手写上：我是属耶和华的，并自称为以色列。</p>
 
-<p style="text-align:right;" markdown="1">5. Hic dicet, Ego sum Iehovae; et ille vocabitur nomine Iacob; altus scribet manu sua, Iehovae (sum), et nomine Israel cognominabitur.（这个要说：我属耶和华；那个要以雅各的名为名；另一个要亲手写上：我是属耶和华的，并要以以色列的名自称。）</p>
+<p style="text-align:right;" markdown="1">5. Hic dicet, Ego sum Iehovae; et ille vocabitur nomine Iacob; altus scribet manu sua, Iehovae (sum), et nomine Israel cognominabitur.</p>
 
 <p style="margin-left:2em;" markdown="1">**6.** 耶和华—以色列的君，以色列的救赎主—万军之耶和华如此说：我是首先的，我是末后的；除我以外再没有真神。</p>
 
@@ -504,13 +504,13 @@ ponam flumina in insulas, et stagna exsiccabo.（我要使江河变为洲岛，�
 
 populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（……古时的民？……）8. 你们不要恐惧，也不要害怕。我岂不是从上古就说明指示*你们*吗？并且你们*是*我的见证！除我以外，岂有真神吗？诚然*没有*真神；我不知道*一个*。
 
-<p style="margin-left:2em;" markdown="1">**8.** Ne timeatis et ne terreamini. An non ex tune audire to feci, et annuntiavi? Itaque vos testes mei, quod non sit Deus praeter me, et non sit fortis quem ignorem.（你们不要恐惧，也不要害怕。我岂不是从上古就说明指示你们吗？并且你们是我的见证！除我以外，岂有真神吗？诚然没有磐石，我不知道一个！）9. 制造雕刻偶像的尽都虚空；他们所喜悦的都无益处；他们的见证无所看见，无所知晓，他们便觉羞愧。</p>
+<p style="margin-left:2em;" markdown="1">**8.** Ne timeatis et ne terreamini. An non ex tune audire to feci, et annuntiavi? Itaque vos testes mei, quod non sit Deus praeter me, et non sit fortis quem ignorem.9. 制造雕刻偶像的尽都虚空；他们所喜悦的都无益处；他们的见证无所看见，无所知晓，他们便觉羞愧。</p>
 
 <p style="margin-left:2em;" markdown="1">**9.** Fictores sculptilis omnes vanitas; et desiderabilia eorum nihil prosunt; et testes eorum ipsi, quod non vident, nec cognoscunt; ideoque confundentur.（制造雕刻偶像的尽都虚空；他们所喜悦的都无益处；他们的见证无所看见，无所知晓，他们便觉羞愧。）10. 谁制造神像，铸造无益的偶像？</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Quis formator Dei? et quis sculptilis confiator, quod nullam ad rem usui est?（谁制造神像？谁铸造那毫无用处的雕刻偶像？）11. 看哪，他的同伴都必羞愧。工匠也不过是人，任他们聚会，任他们站立，都必惧怕，一同羞愧。</p>
+<p style="margin-left:2em;" markdown="1">**10.** Quis formator Dei? et quis sculptilis confiator, quod nullam ad rem usui est?11. 看哪，他的同伴都必羞愧。工匠也不过是人，任他们聚会，任他们站立，都必惧怕，一同羞愧。</p>
 
-<p style="text-align:right;" markdown="1">11. Ecce omnes socii ejus pudefient, et artifices ipsi sunt ex hominibus. Ut conveniant omnes, ac stent, pavebunt, et pudefient simul.（看哪，凡与它结伴的都必蒙羞，制造者本是凡人。任凭他们聚集，一同站立，也必惊惧，一同蒙羞。）</p>
+<p style="text-align:right;" markdown="1">11. Ecce omnes socii ejus pudefient, et artifices ipsi sunt ex hominibus. Ut conveniant omnes, ac stent, pavebunt, et pudefient simul.</p>
 
 <p style="margin-left:2em;" markdown="1">**12.** Faber ferrarius limam *(aut forcipem)* sumet; operabitur in prunis, malleis formabit illud; operabitur in eo, brachio virtutis suae; etiam famelicus, ut deficiant vires; non bibat aquam, ut fatiscat.13. 木匠拉线，用笔划出样子，用刨子刨成形状，用圆尺划了模样，仿照</p>
 
@@ -554,7 +554,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**20.** Pascit cinerem, cor seductum inclinat eum, ut non liberet animam suam, neque dicat, Annon mendacium in dextera mea? 21. 雅各，以色列啊，你是我的仆人，要记念这些事。以色列啊，你是我的仆人，我造就你必不忘记你。</p>
 
-<p style="text-align:right;" markdown="1">21. Memor esto horum, Iacob, et Israel, quia servus meus es; formavi te; servus meus es; Israel, ne obliviscaris mei.（雅各啊，以色列啊，你要记念这些事，因为你是我的仆人；我造就了你；你是我的仆人；以色列啊，你必不被我忘记。）</p>
+<p style="text-align:right;" markdown="1">21. Memor esto horum, Iacob, et Israel, quia servus meus es; formavi te; servus meus es; Israel, ne obliviscaris mei.</p>
 
 <p style="margin-left:2em;" markdown="1">**22.** 我涂抹了你的过犯，像厚云消散；我涂抹了你的罪恶，如薄云灭没。你当归向我，因我救赎了你。</p>
 
@@ -580,9 +580,9 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**27.** 对深渊说：你干了吧！我也要使你的江河干涸。</p>
 
-<p style="margin-left:2em;" markdown="1">**27.** Dicens profundo, Exsiccare, et flumina tua arefaeiam.（对深渊说，你干了吧，我也要使你的江河干涸。） 28. 论古列说：他是我的牧人，必成就我所喜悦的，必下令建造耶路撒冷，发命立稳圣殿的根基。</p>
+<p style="margin-left:2em;" markdown="1">**27.** Dicens profundo, Exsiccare, et flumina tua arefaeiam. 28. 论古列说：他是我的牧人，必成就我所喜悦的，必下令建造耶路撒冷，发命立稳圣殿的根基。</p>
 
-<p style="text-align:right;" markdown="1">28. Dicens Cyro, Pastor meus; et omnem voluntatem meam perficiet; dicendo etiam Ierosolymae, Aedificaberis; et templo, Fundaberis.（论古列说，他是我的牧人；他必成就我所喜悦的一切；又论耶路撒冷说，你必被建造；论殿说，你的根基必被立定。）</p>
+<p style="text-align:right;" markdown="1">28. Dicens Cyro, Pastor meus; et omnem voluntatem meam perficiet; dicendo etiam Ierosolymae, Aedificaberis; et templo, Fundaberis.</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">前往 注释 45:1-25</span></p>
 
@@ -592,7 +592,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**1.** Sic dicit Iehova Meschiae suo Cyro, eujus apprehendi dexteram ad subigendas coram eo gentes; itaque lumbos regum dissolvam, ad aperienda coram eo ostia; ideo portae non claudentur. 2. 我必在你前面行，修平崎岖之地；我必打破铜门，砍断铁闩。</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** Ego to praecedam, et tortuosa dirigam, ostia aenea confringam, et vectes ferreos comminuam.（我必在你前面行，将弯曲之处修直，打破铜门，砍断铁闩。） 3. 我要将 3. Et dabo tibi thesauros</p>
+<p style="margin-left:2em;" markdown="1">**2.** Ego to praecedam, et tortuosa dirigam, ostia aenea confringam, et vectes ferreos comminuam. 3. 我要将 3. Et dabo tibi thesauros</p>
 
 <!-- PAGE 811 -->
 
@@ -604,7 +604,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**4.** Propter servum meum Iacob, et Israel electum meum, vocabo, inquam, to nomine tuo; cognominabo to, quamvis non noveris me. 5. 我是耶和华，在我以外并没有别神；除了我以外再没有神。你虽不认识我，我必给你束腰。</p>
 
-<p style="margin-left:2em;" markdown="1">**5.** Ego Iehova, et nullus praeter me; non est praeter me Deus; accinxi to, utcunque non noveris me.（我是耶和华，在我以外并无别神；我虽未曾被你认识，却已给你束腰。）6. 好使人从日出之地，从西方，都知道除我以外没有别神。我是耶和华，在我以外并没有别神。</p>
+<p style="margin-left:2em;" markdown="1">**5.** Ego Iehova, et nullus praeter me; non est praeter me Deus; accinxi to, utcunque non noveris me.6. 好使人从日出之地，从西方，都知道除我以外没有别神。我是耶和华，在我以外并没有别神。</p>
 
 <p style="text-align:right;" markdown="1">6. Propterea scient ab ortu solis, et ab occasu, quod non sit printer me. Ego Iehova, et nemo praeter me.（因此，从日出之地到日落之处，人都必知道除我以外并无别神。我是耶和华，在我以外并无别神。）</p>
 
@@ -638,7 +638,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**15.** 救主以色列的　神啊，你实在是自隐的　神。</p>
 
-<p style="text-align:right;" markdown="1">15. Vere tu Deus abscondens te, Deus Israel servator.（你实在是自隐的神，以色列的神，救主。）</p>
+<p style="text-align:right;" markdown="1">15. Vere tu Deus abscondens te, Deus Israel servator.</p>
 
 <p style="margin-left:2em;" markdown="1">**16.** 凡制造偶像的都必抱愧蒙羞，都要一同归于惭愧。</p>
 
@@ -652,7 +652,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="text-align:center" markdown="1">17. Israel servatus est in Iehova salute aeterna; non afficiemini pudore, neque erubescetis usque in secula. 18. 创造诸天的耶和华，制造成全大地的　神，他创造坚定大地，并非使地荒凉，是要给人居住。他如此说：我是耶和华，再没有别神。</p>
 
-<p style="text-align:right;" markdown="1">18. Quia sic dicit Iehova creans coelos, ipse Deus fictor terrae, qui fecit eam, paravit earn; non inanem creavit, ad inhabitandum formavit earn; ego Iehova, et nullus praeter me.（因为创造诸天的耶和华如此说，他是造地的神，是造作、坚定大地的；他创造大地并非使地荒凉，他造成大地是要给人居住；我是耶和华，除我以外再没有别神。）</p>
+<p style="text-align:right;" markdown="1">18. Quia sic dicit Iehova creans coelos, ipse Deus fictor terrae, qui fecit eam, paravit earn; non inanem creavit, ad inhabitandum formavit earn; ego Iehova, et nullus praeter me.</p>
 
 <p style="margin-left:2em;" markdown="1">**19.** 我没有在隐密黑暗之地说话；我没有对雅各的后裔说：你们寻求我是徒然的。我耶和华所讲的是公义，所说的是正直。</p>
 
@@ -686,7 +686,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**1.** 彼勒屈身，尼波弯腰；偶像驮在兽上，驮在畜上。他们所抬的如今成了重驮，使牲畜疲乏。</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** Incurvata sunt, depressa sunt pariter, (et) non potuerunt se subtrahere oneri; et anima eorum in captivitatem abiit.（都一同弯腰屈身，不能保全重驮，自己倒被掳去。） 3. 雅各家，以色列家一切余剩的要听我言：你们自从生下，就蒙我保抱，自从出胎，便蒙我怀搋。</p>
+<p style="margin-left:2em;" markdown="1">**2.** Incurvata sunt, depressa sunt pariter, (et) non potuerunt se subtrahere oneri; et anima eorum in captivitatem abiit. 3. 雅各家，以色列家一切余剩的要听我言：你们自从生下，就蒙我保抱，自从出胎，便蒙我怀搋。</p>
 
 <p style="text-align:right;" markdown="1">3. Audite me, domus Iacob, omnes reliquiae domus Israel, qui gestamini ab utero, qui portamini a vulva.</p>
 
@@ -700,17 +700,17 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**5.** Cui similem me facitis, et aequatis, et comparatis me, ut similis sim?（你们将谁与我相比，与我同等，将我与谁比较，使我们相似呢？）6. 那从囊中抓金子，用天平平银子的人，雇银匠制造神像，他们又俯伏，又叩拜。</p>
 
-<p style="margin-left:2em;" markdown="1">**6.** Promentes aurum ex sacculis, argentum in statera ponderantes, conducent aurifabrum, ut ex eo faciant Deum, cui se incurvent, et quem adorent.（他们从囊袋中取出金子，用天平称银子，雇金匠用它造一位神，向它屈身，并且敬拜它。）7. 他们将神像抬起，扛在肩上，安置在定处，它就站立，不离本位；人呼求它，它不能答应，也不能救人脱离患难。</p>
+<p style="margin-left:2em;" markdown="1">**6.** Promentes aurum ex sacculis, argentum in statera ponderantes, conducent aurifabrum, ut ex eo faciant Deum, cui se incurvent, et quem adorent.7. 他们将神像抬起，扛在肩上，安置在定处，它就站立，不离本位；人呼求它，它不能答应，也不能救人脱离患难。</p>
 
 <p style="margin-left:2em;" markdown="1">**7.** Portabunt super humerum, deferent, ponent in loco suo; illic stabit, loco suo non movebitur. Adhaec, si quis clamet ad eum, non respondebit, neque ex tribulatione ejus liberabit eum.（他们要扛在肩上，抬着走，安放在它的地方；它就立在那里，不离本位。此外，若有人向它呼求，它必不应声，也不能救他脱离患难。）8. 你们当想念这事，自己作大丈夫。悖逆的人哪，要心里思想。</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** Recordamini hoc, et erubescite *(vel, roboramini;)* redite, praevaricatores ad cor.（你们要记念这事，并要自愧*（或作，要自勉；）*你们这些悖逆的人哪，要心里追想。） 9. 你们要追念上古的事。因为我是神，并无别神；我是神，再没有能比我的。</p>
 
-<p style="margin-left:2em;" markdown="1">**9.** Recordamini priora a seculo; quia ego Deus, et nullus praeterea Deus, et nihil mihi simile.（你们要追念上古的事；因为我是神，此外并无别神，也没有能与我相比的。） 10. 我从起初指明末后的事，从古时言明未成的事，说：我的筹算必立定，凡我所喜悦的，我必成就。</p>
+<p style="margin-left:2em;" markdown="1">**9.** Recordamini priora a seculo; quia ego Deus, et nullus praeterea Deus, et nihil mihi simile. 10. 我从起初指明末后的事，从古时言明未成的事，说：我的筹算必立定，凡我所喜悦的，我必成就。</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Nuntians ab initio novissimum, et a vetustate quae nondum facta erant; dicens, Consilium meum stabit, et quicquid voluero faciam.（从起初宣告末后的事，从古时宣告尚未成就的事；说，我的筹算必立定，凡我所愿的，我必成就。） 11. 我召鸷鸟从东方来，召那成就我筹算的人从远方来。我已说出，也必成就；我已谋定，也必做成。</p>
+<p style="margin-left:2em;" markdown="1">**10.** Nuntians ab initio novissimum, et a vetustate quae nondum facta erant; dicens, Consilium meum stabit, et quicquid voluero faciam. 11. 我召鸷鸟从东方来，召那成就我筹算的人从远方来。我已说出，也必成就；我已谋定，也必做成。</p>
 
-<p style="text-align:right;" markdown="1">11. Vocans ab Oriente avem *(vel, cogitationem,)* e terra longinqua virum consilii mei. Loquutus sum, ideo adducam hoc; cogitavi, idem faciam.（我召鸷鸟从东方来，召那成就我筹算的人从远方来。我已说出，也必成就；我已谋定，也必作成。）</p>
+<p style="text-align:right;" markdown="1">11. Vocans ab Oriente avem *(vel, cogitationem,)* e terra longinqua virum consilii mei. Loquutus sum, ideo adducam hoc; cogitavi, idem faciam.</p>
 
 <p style="margin-left:2em;" markdown="1">**12.** 你们这些心中顽梗12. Audite me praefracti corde,</p>
 
@@ -732,13 +732,13 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 <p style="margin-left:2em;" markdown="1">**1.** Descende, et sede in pulvere, virgo filia Babel. Sede super terram; non est solium filiae Chaldae-orum; quoniam non fiet amplius ut to vocent teneram et delicatam. 2. 要用磨磨面，揭去帕子，脱去长衣，露腿过河。</p>
 
-<p style="margin-left:2em;" markdown="1">**2.** Tolle molas, et mole farinam, dissolve cincinnos tuos, denuda pedes, discooperi crura, ut transeas flumina.（取磨磨面，解开发辫，露脚脱裙，渡过江河。）3. 你的下体必被露出，你的丑陋必被看见。我要报仇，决不留情，也不像人一样宽待你。</p>
+<p style="margin-left:2em;" markdown="1">**2.** Tolle molas, et mole farinam, dissolve cincinnos tuos, denuda pedes, discooperi crura, ut transeas flumina.3. 你的下体必被露出，你的丑陋必被看见。我要报仇，决不留情，也不像人一样宽待你。</p>
 
-<p style="margin-left:2em;" markdown="1">**3.** Retegetur turpitudo tua, et videbitur probrum tuum; ultionem sumam, et non occurram homini *(vel, homo.)*（你的下体必被露出，你的丑陋必被看见；我要报仇，我必不迎见人〔或作：我不像人〕。）4. 我们救赎主的名是万军之耶和华以色列的圣者。</p>
+<p style="margin-left:2em;" markdown="1">**3.** Retegetur turpitudo tua, et videbitur probrum tuum; ultionem sumam, et non occurram homini *(vel, homo.)*4. 我们救赎主的名是万军之耶和华以色列的圣者。</p>
 
 <p style="margin-left:2em;" markdown="1">**4.** Redemptor noster, Iehova exercituum nomen ejus, sanctus Israelis.（我们的救赎主，他的名是万军之耶和华，以色列的圣者。）5. 迦勒底的闺女啊，你要默然静坐，进入暗中，因为你不再称为列国的主母。</p>
 
-<p style="margin-left:2em;" markdown="1">**5.** Sede quieta, ingredere in tenebras, filia Chaldmorum; quoniam non fiet amplius ut to vocent dominam regnorum.（迦勒底的闺女啊，你要默然静坐，进入黑暗中，因为你不再称为列国的主母。）6. 我向我的百姓发怒，使我的产业被亵渎，将他们交在你手中；你毫不怜悯他们，</p>
+<p style="margin-left:2em;" markdown="1">**5.** Sede quieta, ingredere in tenebras, filia Chaldmorum; quoniam non fiet amplius ut to vocent dominam regnorum.6. 我向我的百姓发怒，使我的产业被亵渎，将他们交在你手中；你毫不怜悯他们，</p>
 
 <p style="text-align:right;" markdown="1">6. Iratus fui in populum meum, profanavi haerditatem meam, et tradidi cos in manum tuam; non praestitisti Illis misericordias;（我向我的百姓发怒，使我的产业被亵渎，将他们交在你手中；你毫不怜悯他们，）</p>
 
@@ -748,7 +748,7 @@ populum seculi? Et quae pendent, et quae ventura sunt, illis annuncient.（…�
 
 super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人身上。）7. 你自己说：我必永为主母，所以你不将这事放在心上，也不思想这事的结局。
 
-<p style="text-align:right;" markdown="1">7. Et dixisti, Ero in aeternum domina. Hactenus non applicuisti huc animum, neque recordata es finis ejus.（7. 你曾说：我必永为主母。直到如今，你未曾将这事放在心上，也未曾思想这事的结局。）</p>
+<p style="text-align:right;" markdown="1">7. Et dixisti, Ero in aeternum domina. Hactenus non applicuisti huc animum, neque recordata es finis ejus.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** 你这专好宴乐、安然居住的，现在当听此言。你心中说：惟有我，除我以外再没有别的。我必不致寡居，也不遭丧子之事。</p>
 
@@ -802,7 +802,7 @@ super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人�
 
 <p style="margin-left:2em;" markdown="1">**4.** Quia cognovi qubd durus sis, et nervus ferreus cervix tua, et frons tuae aenea. 5. 所以我从古时将这事给你说明，在未成以先指示你，免得你说：这些事是我的偶像所行的，是我雕刻的偶像和我铸造的偶像所命定的。</p>
 
-<p style="text-align:right;" markdown="1">5. Annuntiavi tibi jam olim; antequam venirent indicavi tibi, ne forte diceres, Idolum meum fecit haec, sculptile meum et conflatile meum praecepit ea.（我早已告诉你；在事情未成之先指示你，免得你说，这是我的偶像所行的，是我雕刻的偶像和铸造的偶像所命定的。）</p>
+<p style="text-align:right;" markdown="1">5. Annuntiavi tibi jam olim; antequam venirent indicavi tibi, ne forte diceres, Idolum meum fecit haec, sculptile meum et conflatile meum praecepit ea.</p>
 
 <p style="margin-left:2em;" markdown="1">**6.** 你已经听见，现在要看见这一切；你不说明吗？从今以后，我将新事，就是你所不知道的隐密事指示你。</p>
 
@@ -822,7 +822,7 @@ super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人�
 
 <p style="margin-left:2em;" markdown="1">**9.** Propter nomen meum differam furorera meum, et in laudera meam moderabor mihi erga to, ut to non succidam.（拉丁文：我为我的名暂且忍怒，为我的颂赞向你容忍，不将你剪除。）10. 我熬炼你，却不像熬炼银子；你在苦难的炉中，我拣选你。</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Ecce examinavi to, et non instar argenti; elegi to in fornace afflictionis.（看哪，我熬炼你，却不像熬炼银子；我在苦难的炉中拣选你。）11. 我为自己的缘故必行这事，我焉能使我的名被亵渎？我必不将我的荣耀归给假神。</p>
+<p style="margin-left:2em;" markdown="1">**10.** Ecce examinavi to, et non instar argenti; elegi to in fornace afflictionis.11. 我为自己的缘故必行这事，我焉能使我的名被亵渎？我必不将我的荣耀归给假神。</p>
 
 <p style="text-align:right;" markdown="1">11. Propter me, propter me faciam; nam quomodo profanabitur nomen meum? Et gloriam meam alteri non dabo.（为我自己的缘故，为我自己的缘故，我必行这事；我的名岂可被亵渎？我也必不将我的荣耀归给别人。）</p>
 
@@ -852,7 +852,7 @@ super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人�
 
 <p style="margin-left:2em;" markdown="1">**19.** Fuisset ut arena semen tuum, et filii uteri ut lapilli ejus. Non succideretur, neque aboleretur nomen ejus a conspectu meo. 20. 你们要从巴比伦出来，从迦勒底人中逃脱，以欢呼的声音传扬说：耶和华救赎了他的仆人雅各！你们要将这事宣扬出来，传到地极。</p>
 
-<p style="margin-left:2em;" markdown="1">**20.** Exite e Babel, fugite a Chaldaeis. Voce exultationis annuntiate hoc, divulgate, efferte usque ad extremum terrae. Dicite, Redemit Iehova servum suum Iacob.（你们从巴比伦出来，逃离迦勒底人。要以欢呼的声音宣告这事，广传出去，直传到地极。要说：耶和华救赎了他的仆人雅各。） 21. 耶和华引导他们经过沙漠，他们并不干渴；他为他们使水从磐石而流，分裂磐石，水就涌出。</p>
+<p style="margin-left:2em;" markdown="1">**20.** Exite e Babel, fugite a Chaldaeis. Voce exultationis annuntiate hoc, divulgate, efferte usque ad extremum terrae. Dicite, Redemit Iehova servum suum Iacob. 21. 耶和华引导他们经过沙漠，他们并不干渴；他为他们使水从磐石而流，分裂磐石，水就涌出。</p>
 
 <p style="text-align:right;" markdown="1">21. Itaque non sitierunt eum per solitudines duxit eos; aquam fecit illis fluere e petra, scidit petram, et fluxerunt aquae.</p>
 
@@ -874,7 +874,7 @@ super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人�
 
 <p style="margin-left:2em;" markdown="1">**2.** Et posuit os meum quasi gladium acutum; in umbra manus suae protexit me, et posuit me in sagittam tersam, in pharetra sua abscondit me. 3. 对我说：你*是*我的仆人以色列；我必因你得荣耀。</p>
 
-<p style="text-align:right;" markdown="1">3. Et dixit mihi, Servus meus es, Israel, in to gloriabor.（他对我说，你是我的仆人以色列，我必因你得荣耀。）</p>
+<p style="text-align:right;" markdown="1">3. Et dixit mihi, Servus meus es, Israel, in to gloriabor.</p>
 
 <p style="margin-left:2em;" markdown="1">**4.** 我却说，我劳碌是徒然，我尽力是虚无虚空。然而我当得的理必在耶和华那里，我的赏赐必在我神那里。</p>
 
@@ -910,17 +910,17 @@ super senem aggravasti jugum tuum valde.（把你的轭极重地加在老年人�
 
 meos in viare, et semitae meae elevabuntur.（我必使我的众山成为道路，我的路径必被升高。） 12. 看哪，这些从远方来；这些从北方、从西方来；这些从秦国来。
 
-<p style="margin-left:2em;" markdown="1">**12.** Ecee, isti e longinquo venient; et ecee, isti ab Aquilone, et a mari; et isti e terra Sinis, *(vel, Sinim. )*（看哪，这些人必从远方而来；看哪，这些从北方、从海边而来；这些从秦国之地而来。） 13. 诸天哪，应当欢呼！大地啊，应当快乐！众山哪，应当发声歌唱！因为耶和华已经安慰他的百姓，也要怜恤他困苦之民。</p>
+<p style="margin-left:2em;" markdown="1">**12.** Ecee, isti e longinquo venient; et ecee, isti ab Aquilone, et a mari; et isti e terra Sinis, *(vel, Sinim. )* 13. 诸天哪，应当欢呼！大地啊，应当快乐！众山哪，应当发声歌唱！因为耶和华已经安慰他的百姓，也要怜恤他困苦之民。</p>
 
-<p style="margin-left:2em;" markdown="1">**13.** Laudate, coeli; et exulta, terra; et erumpite, montes, in laudera; quia consolatus est Iehova populum suum, et pauperum suorum miserebitur.（诸天哪，应当歌唱；大地啊，应当欢呼；众山哪，应当发声赞美；因为耶和华已经安慰他的百姓，也要怜恤他困苦之民。）14. 锡安说：耶和华离弃我；主忘记我。</p>
+<p style="margin-left:2em;" markdown="1">**13.** Laudate, coeli; et exulta, terra; et erumpite, montes, in laudera; quia consolatus est Iehova populum suum, et pauperum suorum miserebitur.14. 锡安说：耶和华离弃我；主忘记我。</p>
 
 <p style="margin-left:2em;" markdown="1">**14.** Atqui dixit Sion, Dereliquit me Iehova, et Dominus meus oblitus est mei.（锡安却说，耶和华离弃了我，我的主忘记了我。）15. 妇人焉能忘记她吃奶的婴孩，不怜恤她所生的儿子？即或有忘记的，我*却*不忘记你。</p>
 
-<p style="margin-left:2em;" markdown="1">**15.** An obliviscetur mulier foetus sui, ut non misereatur filii uteri sui? Etiam si istae oblitae fuerint, ego tamen non obliviscar tui.（妇人岂能忘记自己所怀的胎，以致不怜恤她腹中的儿子呢？纵然这些妇人忘记了，我却不忘记你。）16. 看哪，我将你铭刻在我掌上；你的墙垣*常*在我眼前。</p>
+<p style="margin-left:2em;" markdown="1">**15.** An obliviscetur mulier foetus sui, ut non misereatur filii uteri sui? Etiam si istae oblitae fuerint, ego tamen non obliviscar tui.16. 看哪，我将你铭刻在我掌上；你的墙垣*常*在我眼前。</p>
 
 <p style="margin-left:2em;" markdown="1">**16.** Ecce, super palmas sculpsi te; muri tui coram me sunt semper.（看哪，我将你刻在我掌上；你的墙垣常在我眼前。）17. 你的儿女必急速归回；毁坏你的，使你荒废的，必都离你出去。</p>
 
-<p style="text-align:right;" markdown="1">17. Festinant structores tui; destructores tui et vastatores tui procul abs te discedent.（建造你的人急速前来；毁坏你的和使你荒废的必远离你而去。）</p>
+<p style="text-align:right;" markdown="1">17. Festinant structores tui; destructores tui et vastatores tui procul abs te discedent.</p>
 
 <p style="margin-left:2em;" markdown="1">**18.** 你举目向四方观看；他们都聚集来到你这里。耶和华说：我指着我的永生起誓，你必以他们为妆饰佩戴，以他们为华带束腰，像新妇一样。</p>
 
@@ -982,7 +982,7 @@ meos in viare, et semitae meae elevabuntur.（我必使我的众山成为道路�
 
 pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而腐臭，因干渴而死。）3. 我使诸天以黑暗为衣服，以麻布为遮盖。
 
-<p style="margin-left:2em;" markdown="1">**3.** Induo coelos caligine, et quasi saccum pono operimentum eorum.（我使天昏暗，用麻布作天的遮盖。）4. 主耶和华赐我受教者的舌头，使我知道怎样用言语扶助疲乏的人。主每早晨提醒，提醒我的耳朵，使我能听，像受教者一样。</p>
+<p style="margin-left:2em;" markdown="1">**3.** Induo coelos caligine, et quasi saccum pono operimentum eorum.4. 主耶和华赐我受教者的舌头，使我知道怎样用言语扶助疲乏的人。主每早晨提醒，提醒我的耳朵，使我能听，像受教者一样。</p>
 
 <p style="text-align:right;" markdown="1">4. Dominus Iehova aperuit mihi linguam eruditorum, ut sciam lasso verbum in tempore. Excitabit mane, mane excitabit mihi aurem, ut audiam, sicut docti.</p>
 
@@ -992,7 +992,7 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 <p style="margin-left:2em;" markdown="1">**6.** Corpus meum exposui percutientibus, et genas meas vellentibus; faciem meam non abscondi ab ignominia et sputo.（人打我的背，我任他打；人拔我腮颊的胡须，我任他拔；人吐我，我并不掩面。）7. 主耶和华必帮助我，所以我不抱愧。我硬着脸面好像坚石；我也知道我必不至蒙羞。</p>
 
-<p style="margin-left:2em;" markdown="1">**7.** Nam Dominus Iehova auxiliabitur mihi; propterea non sum pudefactus; ideo posui faciem meam quasi silicem, et scio quod non confundar.（主耶和华必帮助我，所以我不抱愧。我硬着脸面好像坚石；我也知道我必不至蒙羞。）8. 称我为义的与我相近；谁与我争论，可以与我一同站立；谁与我作对，可以就近我来。</p>
+<p style="margin-left:2em;" markdown="1">**7.** Nam Dominus Iehova auxiliabitur mihi; propterea non sum pudefactus; ideo posui faciem meam quasi silicem, et scio quod non confundar.8. 称我为义的与我相近；谁与我争论，可以与我一同站立；谁与我作对，可以就近我来。</p>
 
 <p style="text-align:right;" markdown="1">8. Prope est qui me justificat, quis contendet mecum? Stemus simul: quis adversarius causae meae? Accedat ad me.（称我为义者近了，谁与我争论呢？我们可以一同站立；谁是与我作对的呢？可以就近我来。）</p>
 
@@ -1036,7 +1036,7 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 <p style="margin-left:2em;" markdown="1">**5.** Prope est justitia mea; egressa eat salus mea; et brachia mea populos judicabunt. Me insulae expectabunt, et in brachium meum sperabunt. 6. 你们要向天举目，观看下地；因为天必像烟云消散，地必如衣服渐渐旧了；其上的居民也要如此死亡。惟有我的救恩永远长存，我的公义也不废掉。</p>
 
-<p style="text-align:right;" markdown="1">6. Levate in coelum oculos vestros, et aspicite in terram deorsum; quoniam coeli ut fumus peribunt; et terra ut vestis veterascet; et incolae ejus in eundem modum interibunt. Atque salus mea in aeternum manebit, et justitia mea non interibit.（你们要向天举目，观看下地；因为天必如烟消灭，地必如衣服渐旧，其上的居民也必照样灭亡。惟有我的救恩永远长存，我的公义也不灭没。）</p>
+<p style="text-align:right;" markdown="1">6. Levate in coelum oculos vestros, et aspicite in terram deorsum; quoniam coeli ut fumus peribunt; et terra ut vestis veterascet; et incolae ejus in eundem modum interibunt. Atque salus mea in aeternum manebit, et justitia mea non interibit.</p>
 
 <p style="margin-left:2em;" markdown="1">**7.** 知道公义、心存我律法的百姓，你们当听我言！不要怕人的辱骂，也不要因人的毁谤惊惶。</p>
 
@@ -1050,7 +1050,7 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 <p style="margin-left:2em;" markdown="1">**10.** Annon tu illud es, quod exsiccavit mare, aquam voraginis magnae; quod vertit profundum maris in viare, ad transitum redemptotum? 11. 耶和华救赎的民必归回，歌唱来到锡安；永乐*必*归到他们的头上。他们必得着欢喜快乐；*而*忧愁叹息尽都逃避。</p>
 
-<p style="margin-left:2em;" markdown="1">**11.** Ergo redempti ad Iehovam revertentur; venient in Sion cum cantico, eritque gaudium perpetuum super caput eorum. Laetitiam et gaudium obtinebunt, fugientque dolor et gemitus.（所以耶和华救赎的民必归回，歌唱来到锡安，永乐必归到他们的头上。他们必得着欢喜快乐，忧愁叹息尽都逃避。）12. 惟有我，是安慰你们的。你是谁，竟怕那必死的人，怕那要变如草的人子，</p>
+<p style="margin-left:2em;" markdown="1">**11.** Ergo redempti ad Iehovam revertentur; venient in Sion cum cantico, eritque gaudium perpetuum super caput eorum. Laetitiam et gaudium obtinebunt, fugientque dolor et gemitus.12. 惟有我，是安慰你们的。你是谁，竟怕那必死的人，怕那要变如草的人子，</p>
 
 <p style="text-align:right;" markdown="1">12. Ego, ego sum, qui vos consolor. Quaenam es, ut timeas ab homine qui morietur? a filio hominis, qui foenum reputabitur?（惟有我，我是安慰你们的。你是谁，竟惧怕那必死的人？惧怕那被算为草的人子？）</p>
 
@@ -1060,7 +1060,7 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 <p style="margin-left:2em;" markdown="1">**14.** 被掳去的快得释放，必不死而下坑；他的食物也不致缺乏。</p>
 
-<p style="text-align:right;" markdown="1">14. Festinat exul ut solvatur, ut non moriatur in specu, nec deficiat eum panis suus.（被掳的急速得释放，免得死在坑中，也不致缺粮。）</p>
+<p style="text-align:right;" markdown="1">14. Festinat exul ut solvatur, ut non moriatur in specu, nec deficiat eum panis suus.</p>
 
 <p style="margin-left:2em;" markdown="1">**15.** 我是耶和华你的神——搅动大海，使海中的波浪匉訇的——万军之耶和华是</p>
 
@@ -1072,9 +1072,9 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 <p style="margin-left:2em;" markdown="1">**17.** Expergiscere, expergiscere, surge, Ierusalem, quae bibisti e manu Iehovae calicem furoris ejus; faeces calicis angustiae *(vel, trepidationis)* bibisti exprimens.（醒来，醒来，起来罢，耶路撒冷啊，你曾从耶和华手中喝了他忿怒的杯；你已把那苦难*（或：战兢）*之杯的渣滓挤尽喝了。） 18. 她所生育的诸子中，没有一个引导她的；她所养大的诸子中，没有一个扶她手的。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Non est qui regat eam ex omnibus illis quos genuit; non est qui apprehendat manum ejus ex omnibus illis quos educavit.（在她所生的众子中，无人引导她；在她所养育的众子中，无人扶持她的手。） 19. 荒凉、毁灭、饥荒、刀兵，这几样临到你，谁为你举哀？我用何法安慰你呢？</p>
+<p style="margin-left:2em;" markdown="1">**18.** Non est qui regat eam ex omnibus illis quos genuit; non est qui apprehendat manum ejus ex omnibus illis quos educavit. 19. 荒凉、毁灭、饥荒、刀兵，这几样临到你，谁为你举哀？我用何法安慰你呢？</p>
 
-<p style="text-align:right;" markdown="1">19. Duo haec acciderunt tibi. Quis condolebit tibi? Vastitas et contritio, et fames, et gladius. Quis consolabitur to?（这两件事临到你身上，谁为你举哀呢？荒凉、毁灭、饥荒、刀兵，我何以安慰你呢？）</p>
+<p style="text-align:right;" markdown="1">19. Duo haec acciderunt tibi. Quis condolebit tibi? Vastitas et contritio, et fames, et gladius. Quis consolabitur to?</p>
 
 <p style="margin-left:2em;" markdown="1">**20.** 你的众子发昏，在各市口上躺卧，好像黄羊在网罗之中，都满了耶和华的忿怒、你　神的斥责。</p>
 
@@ -1092,7 +1092,7 @@ pisces eorum prae defectu aquae, et moriantur siti.（其中的鱼因缺水而�
 
 furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。）23. 我必将这杯递在苦待你的人手中；他们曾对你说：你屈身，由我们践踏过去吧！你便以背为地，好像街市，任人经过。
 
-<p style="text-align:right;" markdown="1">23. Et tradam eum in manus oppressorum tuorum, qui dixerunt animae ’tuae, Incurvate, et transibimus. Et posuisti quasi terram corpus tuum, et quasi viam transeuntibus.（我必将这杯交在苦待你之人的手中，他们曾对你的心说：你屈身，我们要过去。你便以你的身体为地，为过路人的道路。）</p>
+<p style="text-align:right;" markdown="1">23. Et tradam eum in manus oppressorum tuorum, qui dixerunt animae ’tuae, Incurvate, et transibimus. Et posuisti quasi terram corpus tuum, et quasi viam transeuntibus.</p>
 
 <p style="text-align:center" markdown="1"><span style="color:#000080">前往 注释 52:1-15</span></p>
 
@@ -1106,7 +1106,7 @@ furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。�
 
 <p style="margin-left:2em;" markdown="1">**3.** Quia sic dicit Iehova: Gratis venditi estis; ideo sine pecunia redimemini.（因耶和华如此说：你们是无价被卖的，所以也必无银被赎。）4. 主耶和华如此说：当初我的百姓下到埃及，在那里寄居，又有亚述人无故欺压他们。</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** Quia sic dicit Dominus Iehova: In AEgyptum olim descenderat populus meus ut peregrinaretur illic; verum Assur absque causa oppressit eum.（因主耶和华如此说：当初我的百姓下到埃及，在那里寄居；亚述人却无故欺压他们。）5. 耶和华说：我的百姓既是无价被掳去，我在这里还有什么可作的呢？</p>
+<p style="margin-left:2em;" markdown="1">**4.** Quia sic dicit Dominus Iehova: In AEgyptum olim descenderat populus meus ut peregrinaretur illic; verum Assur absque causa oppressit eum.5. 耶和华说：我的百姓既是无价被掳去，我在这里还有什么可作的呢？</p>
 
 <p style="text-align:right;" markdown="1">5. 耶和华说：我的百姓既是无价被掳去，如今我在这里做什么呢？</p>
 
@@ -1118,7 +1118,7 @@ furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。�
 
 <p style="margin-left:2em;" markdown="1">**6.** 所以，我的百姓必知道我的名；到那日他们必知道说这话的就是我。看哪，是我！ 7. 那报佳音，传平安，报好信，传救恩的，对锡安说：你的神作王了！这人的脚登山何等佳美！</p>
 
-<p style="text-align:right;" markdown="1">7. Quam speciosi super montes pedes annuntiantis, publicantis salutere, dicentis Sioni, Regnat Deus tuus.（那报佳音、传平安、对锡安说「你的神作王了」的人，他的脚登山何等佳美。）</p>
+<p style="text-align:right;" markdown="1">7. Quam speciosi super montes pedes annuntiantis, publicantis salutere, dicentis Sioni, Regnat Deus tuus.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** 看哪，你守望之人扬起声来，一同歌唱，因为他们亲眼看见耶和华归回锡安。</p>
 
@@ -1138,9 +1138,9 @@ furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。�
 
 <p style="margin-left:2em;" markdown="1">**12.** Quoniam non in festinatione exibitis, neque in fuga erit iter vobis; quandoquidem praecedet vos Iehova, et congregabit vos Deus Israel.（因为你们出去必不至急忙，也不至奔逃；因为耶和华必在你们前头行，以色列的神必聚集你们。）13. 我的仆人行事必有智慧，必被高举上升，且成为至高。</p>
 
-<p style="margin-left:2em;" markdown="1">**13.** Ecce prosperum successum habebit servus mens; exaltabitur, elevabitur, et valde sublimis erit.（看哪，我的仆人行事必亨通；他必被高举上升，且成为至高。）14. 许多人因你惊奇；他的面貌比别人憔悴，他的形容比世人枯槁；</p>
+<p style="margin-left:2em;" markdown="1">**13.** Ecce prosperum successum habebit servus mens; exaltabitur, elevabitur, et valde sublimis erit.14. 许多人因你惊奇；他的面貌比别人憔悴，他的形容比世人枯槁；</p>
 
-<p style="margin-left:2em;" markdown="1">**14.** Quemadmodum obstupuerunt super to multi, adeo deformata fuit ab hominibus species ejus, et forran ejus a filiis hominum:（许多人怎样因你惊奇——他的面貌被人毁损，他的形容比世人枯槁——）15. Sic asperget gentes multas; super eum reges claudent os suum; quia quod non fuerat ipsis narratum videbunt; et qued non audierant intelligent.（他也必照样洗净许多国民；君王要向他闭口；因为未曾传与他们的，他们必看见；未曾听见的，他们要明白。）</p>
+<p style="margin-left:2em;" markdown="1">**14.** Quemadmodum obstupuerunt super to multi, adeo deformata fuit ab hominibus species ejus, et forran ejus a filiis hominum:（许多人怎样因你惊奇——他的面貌被人毁损，他的形容比世人枯槁——）15. Sic asperget gentes multas; super eum reges claudent os suum; quia quod non fuerat ipsis narratum videbunt; et qued non audierant intelligent.</p>
 
 <p style="text-align:right;" markdown="1">15. 这样，他必洗净许多国民；君王要向他闭口。因所未曾传与他们的，他们必看见；未曾听见的，他们要明白。</p>
 
@@ -1148,7 +1148,7 @@ furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。�
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">以赛亚书 53:1-12</p>
 
-<p style="margin-left:2em;" markdown="1">**1.** Quis credet auditui nostro? et brachium Iehovae cui (*ad verbum, super quem*)（我们所传的有谁信呢？耶和华的膀臂向谁〔按字义作：在谁之上〕）</p>
+<p style="margin-left:2em;" markdown="1">**1.** Quis credet auditui nostro? et brachium Iehovae cui (*ad verbum, super quem*)</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** 我们所传的有谁信呢？耶和华的膀臂向谁显露呢？2. Ascendet tamen sicut virgultum coram eo, et sicut radix e terra deserta. Non forma ei, neque decor. Videbimus eum; et non aspectus, ut desideremus eum.（然而他必在耶和华面前生长如嫩芽，像根出于干地。他无佳形，也无美容。我们看见他，也无美貌使我们羡慕他。）</p>
 
@@ -1168,7 +1168,7 @@ furoris mei. Non fiet ut bibas amplius.（我烈怒的……你必不再喝。�
 
 <p style="margin-left:2em;" markdown="1">**6.** Omnes nos tanquam oves erravimus, quisque in viam suam declinavit. Et Iehova traduxit in eum nostras omniurn iniquitatcs.（我们都如羊走迷，各人偏行己路；耶和华使我们众人的罪孽都归在他身上。）7. 他被欺压，在受苦的时候却不开口；他像羊羔被牵到宰杀之地，又像羊在剪毛的人手下无声，他也是这样不开口。</p>
 
-<p style="margin-left:2em;" markdown="1">**7.** Mulctatus est, et afflictus, (*vel, oppressus*,) nec aperuit os suum. Quasi pecus ad mactationem ducetur, et tanquam ovis coram tonsoribbus suis obmutescet, nec aperiet os suum.（他被刑罚，受苦〔*或作，被欺压*〕，却不开口。他必像羊羔被牵到宰杀之地，又像羊在剪毛的人面前无声，他也不开口。）8. E carcere et judicio sublatus est, et generationem ejus quis enarrabit? Quoniam succisus est e terra viventium; propter transgressionem populi mei plaga illi.</p>
+<p style="margin-left:2em;" markdown="1">**7.** Mulctatus est, et afflictus, (*vel, oppressus*,) nec aperuit os suum. Quasi pecus ad mactationem ducetur, et tanquam ovis coram tonsoribbus suis obmutescet, nec aperiet os suum.8. E carcere et judicio sublatus est, et generationem ejus quis enarrabit? Quoniam succisus est e terra viventium; propter transgressionem populi mei plaga illi.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** 因受欺压和审判，他被夺去，至于他同世的人，谁想他受鞭打、从活人之地被剪除，是因我百姓的罪过呢？9. 他虽然未行强暴，口中也没有诡诈，人还使他与 9. Et exposuit impiis</p>
 
@@ -1208,7 +1208,7 @@ sepulchrum ejus, et diviti mortem ejus; quamvis iniquitatem non fecerit, nec fec
 
 <p style="margin-left:2em;" markdown="1">**5.** Quid maritus tuus, fictor tuus, cui nomen Iehova exercituum; et redemptor tuus Sanctus Israel, Deus universae terrae vocabitur.6. 因为耶和华召你，如召被离弃、心中忧伤的妻，就是幼年所娶被弃的妻。这是你神所说的。</p>
 
-<p style="margin-left:2em;" markdown="1">**6.** Quoniam sicut mulierem relictam et destitutam spiritu vocavit te Iehova; et uxorem adolescentiae, quae repudiata fueras, dicit Deus tuus.（因为耶和华召你，如召被离弃、心中忧伤的妇人，就是幼年所娶被弃的妻。这是你神所说的。）7. Ad exiguum momentum reliqui te, et in misericordiis magnis colligam te.（我离弃你不过片时，却要施大恩将你收回。）</p>
+<p style="margin-left:2em;" markdown="1">**6.** Quoniam sicut mulierem relictam et destitutam spiritu vocavit te Iehova; et uxorem adolescentiae, quae repudiata fueras, dicit Deus tuus.（因为耶和华召你，如召被离弃、心中忧伤的妇人，就是幼年所娶被弃的妻。这是你神所说的。）7. Ad exiguum momentum reliqui te, et in misericordiis magnis colligam te.</p>
 
 <p style="margin-left:2em;" markdown="1">**7.** 我离弃你虽只片时，却要施大恩将你收回。8. 我的怒气涨溢，顷刻之间向你掩面，却要以永远的慈爱</p>
 
@@ -1338,7 +1338,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**2.** Veniet pax, quiescent in cubilibus suis, quisquis ambulat coram eo.（平安必来临，凡行在他面前的，必在自己的床上安歇。）3. 你们这些巫婆的儿子，奸夫和妓女的种子，都要前来！</p>
 
-<p style="margin-left:2em;" markdown="1">**3.** Et vos accedite huc, filii veneficae, semen adulteri et meretricis.（你们这些巫婆的儿子，奸夫和妓女的种子，都要前来！）4. 你们向谁戏笑？向谁张</p>
+<p style="margin-left:2em;" markdown="1">**3.** Et vos accedite huc, filii veneficae, semen adulteri et meretricis.4. 你们向谁戏笑？向谁张</p>
 
 <p style="text-align:right;" markdown="1">4. Super quem oblectati estis? Super quo aperuistis os?</p>
 
@@ -1374,7 +1374,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**15.** Quoniam sic dixit excelsus et sublimis, habitans in perpetuitate, cui nomen Sanctus: Excelsum et sanctum incolo, et cum afflicto et qui humilis est spiritu, ut vivificem spiritum humilium, ut vivificem cor afflictorum. 16. 我必不永远相争，也不长久发怒，恐怕我所造的人与灵性都必衰败。</p>
 
-<p style="margin-left:2em;" markdown="1">**16.** Quia non in perpetuum litigabo, neque semper irascar. Nam spiritus a facie mea induetur (*vel latebit, aut deficiet*;) et flatus ego feci.（因为我必不永远相争，也不长久发怒。因为灵在我面前必被包裹〔或：隐藏，或：衰败〕；气息也是我所造的。） 17. 因他贪心的罪孽 17. Propter iniquitatem</p>
+<p style="margin-left:2em;" markdown="1">**16.** Quia non in perpetuum litigabo, neque semper irascar. Nam spiritus a facie mea induetur (*vel latebit, aut deficiet*;) et flatus ego feci. 17. 因他贪心的罪孽 17. Propter iniquitatem</p>
 
 <!-- PAGE 846 -->
 
@@ -1382,7 +1382,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="text-align:center" markdown="1">cupiditatis ejus iratus fui, et percussi eum; abscondi me, et irascar; ipse autem aversus abiit in via cordis sui.（因他贪欲的罪孽，我就发怒击打他；我掩面，且要发怒；他却背道而行，随自己的心意去了。） 18. 我看见他的行为，我要医治他，引导他，使他和那些与他同哀伤的人再得安慰。</p>
 
-<p style="text-align:right;" markdown="1">18. Vias ejus vidi, et sanabo eum, et ducam eum, reddens ei consolationes et lugentibus ejus.（他所行的道我看见了，我却要医治他，引导他，使他仍得安慰，又为他随行的人施行安慰。）</p>
+<p style="text-align:right;" markdown="1">18. Vias ejus vidi, et sanabo eum, et ducam eum, reddens ei consolationes et lugentibus ejus.</p>
 
 <p style="margin-left:2em;" markdown="1">**19.** Creo fructum labiorum. Pax, pax, longinquis et propinquis, dicit Iehova, et sano eum.</p>
 
@@ -1428,11 +1428,11 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**9.** Tunc invocabis, et Iehova exaudiet; clamabis, et dicet, Ecce adsum; si abstuleris e medio tui onus, et emissionem digiti, et sermonem vanitatis, (*vel, inutilem*.)10. 你若将你的心与饥饿的人分享，使困苦的人得满足；你的光就必在黑暗中发现，你的幽暗必变如正午：</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Si effuderis famelico animam tuam, et animam afflictam satiaveris, orietur in tenebris lux tua, et caligo tua erit sicut meridies.（你若为饥饿的人倾倒你的心，使困苦的人得满足，你的光必在黑暗中升起，你的幽暗必如正午。）11. 耶和华也必时常引导你，在干旱之地使你心满意足，骨头强壮；你必像浇灌的园子，又像水流不绝的泉源。</p>
+<p style="margin-left:2em;" markdown="1">**10.** Si effuderis famelico animam tuam, et animam afflictam satiaveris, orietur in tenebris lux tua, et caligo tua erit sicut meridies.11. 耶和华也必时常引导你，在干旱之地使你心满意足，骨头强壮；你必像浇灌的园子，又像水流不绝的泉源。</p>
 
 <p style="margin-left:2em;" markdown="1">**11.** Et deducet te Iehova semper, et saturabit in siccitatibus animam tuam, et ossa tua saginabit. Et eris quasi hortus irriguus, et scaturigo aquarum, cujus aquae non deficiunt.（耶和华必时常引导你，在干旱之地使你心满意足，滋润你的骨头。你必像浇灌的园子，又像水泉，其水不绝。）12. 那些出于你的人必修造久已荒废之处；你要建立起累代的根基。你必称为补破口的，和重修路径与人居住的。</p>
 
-<p style="text-align:right;" markdown="1">12. Et erunt ex te qui instaurent deserta seculi; fundamenta generationis et generationis excitabis. Et vocaberis rupturae reparator, director semitarum ad inhabitandum.（那些出于你的人必修造久已荒废之处；你要建立起累代的根基。你必称为补破口的，和重修路径与人居住的。）</p>
+<p style="text-align:right;" markdown="1">12. Et erunt ex te qui instaurent deserta seculi; fundamenta generationis et generationis excitabis. Et vocaberis rupturae reparator, director semitarum ad inhabitandum.</p>
 
 <p style="margin-left:2em;" markdown="1">**13.** 你若在安息日掉转（原文作"转回"）你的脚步，在我圣日不以操作为喜乐，称安息日为可喜乐的，称耶和华的圣日为可尊重的；而且尊敬这日，不办自己的私事，不随自己的私意，不说自己的</p>
 
@@ -1486,7 +1486,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**12.** Quoniam multiplicatae sunt iniquitates nostrae coram te, et peccata nostra testata sunt contra nos, (*vel, respondent nobis*.) Quoniam iniquitates nostrae nobiscum sunt, et peccata nostra cognoscimus. 13. 就是悖逆、不认识耶和华，转去不跟从我们的　神，说欺压和叛逆的话，心怀谬妄，口出虚言。</p>
 
-<p style="margin-left:2em;" markdown="1">**13.** Inique egimus, et mentiti sumus Iehovae, et abducti sumus a tergo Dei nostri, loquentes calumniam et defectionem; concipientes et proferentes ex corde verba mendacii.（我们行了不义，向耶和华说谎，转去不跟从我们的神，说欺压和叛逆的话，心怀谬妄，从心中发出虚谎的言语。）14. 公平转而退后，公义站在远处；诚实在街上仆倒，正直也不得进入。</p>
+<p style="margin-left:2em;" markdown="1">**13.** Inique egimus, et mentiti sumus Iehovae, et abducti sumus a tergo Dei nostri, loquentes calumniam et defectionem; concipientes et proferentes ex corde verba mendacii.14. 公平转而退后，公义站在远处；诚实在街上仆倒，正直也不得进入。</p>
 
 <p style="margin-left:2em;" markdown="1">**14.** Et actum est retrorsum judicium; et justitia procul stetit. Quoniam corruit in platea veritas, et aequitas non potuit prodire.（公平转而退后，公义站在远处；因为诚实在街上仆倒，正直不得进入。）15. Defecit, inquam, veritas: et qui recessit a malo praedae fuit expositus. Et vidit Iehova, ac displicuit oculis ejus, quod non esset judicium.</p>
 
@@ -1606,9 +1606,9 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**7.** Pro pudore vestro erit duplex praemium, et pro ignominia exultabunt de portione eorum; quia in terra eorum duplicia possidebunt, et gaudium perpetuum illis erit. 8. 因为我—耶和华喜爱公平，恨恶抢夺作为燔祭；我要凭诚实引导他们的工作，并要与他们立永约。</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** Quia ego Iehova diligens judicium, odio habens rapinam in holocausto, et constituam opus eorum in veritate, et foedus perpetuum feriam eum ipsis.（因为我耶和华喜爱公平，恨恶燔祭中的抢夺；我要凭诚实施行他们的工作，又要与他们立永约。） 9. 他们的后裔必在列国中被人认识，他们的子孙在众民中也是如此。凡看见他们的必认他们是耶和华赐福的后裔。</p>
+<p style="margin-left:2em;" markdown="1">**8.** Quia ego Iehova diligens judicium, odio habens rapinam in holocausto, et constituam opus eorum in veritate, et foedus perpetuum feriam eum ipsis. 9. 他们的后裔必在列国中被人认识，他们的子孙在众民中也是如此。凡看见他们的必认他们是耶和华赐福的后裔。</p>
 
-<p style="margin-left:2em;" markdown="1">**9.** Et cognoscetur in Gentibus semen eorum, et germina eorum in medio populorum. Omnes qui viderint eos cognoscent eos quod semen sint benedictum Iehovae.（他们的后裔必在列国中被人认识，他们的子孙在众民中也是如此。凡看见他们的必认他们是耶和华赐福的后裔。） 10. Gaudens gaudebo in Iehova; exultabit anima mea in Deo meo; quoniam induit me vestibus salutis, indumento justitiae circumdedit me: quasi sponsum</p>
+<p style="margin-left:2em;" markdown="1">**9.** Et cognoscetur in Gentibus semen eorum, et germina eorum in medio populorum. Omnes qui viderint eos cognoscent eos quod semen sint benedictum Iehovae. 10. Gaudens gaudebo in Iehova; exultabit anima mea in Deo meo; quoniam induit me vestibus salutis, indumento justitiae circumdedit me: quasi sponsum</p>
 
 <p style="text-align:right;" markdown="1">10. 我因耶和华大大欢喜，我的心靠神快乐；因他以拯救为衣给我穿上，以公义为袍给我披上，</p>
 
@@ -1640,13 +1640,13 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**6.** Super muros tuos, Ierusalem, ordinavi custodes, qui tota die et tota nocte jugiter non tacebunt. Qui memores estis (vel, memoriam celebrabitis) Iehovae, ne silentium sit vobis. 7. 也不要使他歇息，直等他建立耶路撒冷，使耶路撒冷在地上成为可赞美的。</p>
 
-<p style="margin-left:2em;" markdown="1">**7.** Et ne detis silentlum illi donec reparet, et donec ponat Ierusalem laudem in terra.（也不要使他歇息，直等他建立耶路撒冷，使耶路撒冷在地上成为可赞美的。）8. Juravit Iehova per dexteram suam, et per brachium roboris sui: Si dedero frumentum tuum amplius cibum inimicis tuis, et si biberint filii alienigenae vinum tuum pro quo laborasti.</p>
+<p style="margin-left:2em;" markdown="1">**7.** Et ne detis silentlum illi donec reparet, et donec ponat Ierusalem laudem in terra.8. Juravit Iehova per dexteram suam, et per brachium roboris sui: Si dedero frumentum tuum amplius cibum inimicis tuis, et si biberint filii alienigenae vinum tuum pro quo laborasti.</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** 耶和华指着自己的右手和大能的膀臂起誓说：我必不再将你的五谷给你仇敌作食物，外邦人也不再喝你劳碌得来的新酒。9. 惟有那收割的要吃，并赞美耶和华；那聚敛的要在我圣所的院内喝。</p>
 
 <p style="margin-left:2em;" markdown="1">**9.** Nam qui congregaverunt illud comedent, et laudabunt Iehovam; et collectores ejus bibent vinum in atriis meis sanctis.（惟有那收割的要吃，并赞美耶和华；那聚敛的要在我圣所的院内喝酒。）10. 你们要修筑修筑大道，将石头除去，为万民竖立大旗。</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Transite, transite per portas; repurgate viam populo; complanate, complanate iter; sternite lapidibus, levate signum ad populos.（你们经过，经过城门；为百姓修整道路；修平，修平大路；用石头铺平，向万民竖立大旗。）11. 看哪，耶和华曾宣告到地</p>
+<p style="margin-left:2em;" markdown="1">**10.** Transite, transite per portas; repurgate viam populo; complanate, complanate iter; sternite lapidibus, levate signum ad populos.11. 看哪，耶和华曾宣告到地</p>
 
 <p style="text-align:right;" markdown="1">11. Ecce Iehova publicavit usque ad extremum terrae; dicite（看哪，耶和华宣告直到地极；你们要对）</p>
 
@@ -1672,7 +1672,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**3.** Torcular pressi solus; neque ex populis quisquam fuit mecum. Calcabo enim cos in ira mea, et conculcabo cos in furore meo; et spargetur sanguis eorum super vestes mens, et omnia indumenta mea inquinabo.（我独自踹酒醡；众民中无一人与我同在。我发怒将他们踹下，发烈怒将他们践踏；他们的血溅在我衣服上，并且污染了我一切的衣裳。）4. 因为报仇之日在我心中，救赎我民之年已经来到。</p>
 
-<p style="margin-left:2em;" markdown="1">**4.** Quia dies ultionis in corde meo, et annus redemptorum meorum venit.（因为报仇之日在我心中，救赎我民之年已经来到。）5. 我仰望，见无人帮助；我诧异，没有人扶持。</p>
+<p style="margin-left:2em;" markdown="1">**4.** Quia dies ultionis in corde meo, et annus redemptorum meorum venit.5. 我仰望，见无人帮助；我诧异，没有人扶持。</p>
 
 <p style="text-align:right;" markdown="1">5. Itaque aspexi, nec erat auxiliator; et admiratus sum, nec erat qui fulciret; itaque salutem</p>
 
@@ -1690,11 +1690,11 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**7.** Misericordias Iehovae memoria repetam; laudes Iehovae tanquam super omnibus quae contulit nobis Iehova, et multitudine beneficentiae erga domum Israel, quam contulit illis secundum misericordias suas, et secundum multitudinem miserationum suarum. 8. 他说：他们诚然是我的百姓，不行虚假的子民；这样，他就作了他们的救主。</p>
 
-<p style="margin-left:2em;" markdown="1">**8.** Nam dixit, Certe populus meus sunt, filii qui non mentiuntur; itaque factus est illis servator.（因他说：他们诚然是我的百姓，不说谎的儿女；这样，他就作了他们的救主。）9. 他们在一切苦难中，他也同受苦难；并且他面前的使者救他们；他因慈爱和怜恤救赎他们；在古时的日子常保抱他们，怀搭他们。</p>
+<p style="margin-left:2em;" markdown="1">**8.** Nam dixit, Certe populus meus sunt, filii qui non mentiuntur; itaque factus est illis servator.9. 他们在一切苦难中，他也同受苦难；并且他面前的使者救他们；他因慈爱和怜恤救赎他们；在古时的日子常保抱他们，怀搭他们。</p>
 
 <p style="margin-left:2em;" markdown="1">**9.** In omni angustia eorum illi fuit (vel, Non fuit); et Angelus faciei ejus servavit eos; in dilectione sua et clementia sua ipse redemit eos; portavit eos et extulit, omnibus diebus seculi.（他们在一切苦难中，他也同在〔或作：并非同在〕；他面前的使者救他们；他因慈爱和怜恤救赎他们；在古时一切的日子保抱他们，扶持他们。）10. 他们竟悖逆，使主的圣灵忧伤。他就转作他们的仇敌，自己攻击他们。</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Verum illi rebelles fuerunt, et irritaverunt Spiritum Sanctum ejus. Ideo conversus illis in hostem pugnavit ipse contra eos.（他们竟悖逆，使他的圣灵忧伤。因此他转作他们的仇敌，自己攻击他们。）11. Et recordatus est dierum priscorum, quibus Moses fuit cum populo ejus. Ubi est qui ascendere（他百姓想起古时摩西与他百姓同在的日子，说：将他们领上来的在哪里呢……）</p>
+<p style="margin-left:2em;" markdown="1">**10.** Verum illi rebelles fuerunt, et irritaverunt Spiritum Sanctum ejus. Ideo conversus illis in hostem pugnavit ipse contra eos.11. Et recordatus est dierum priscorum, quibus Moses fuit cum populo ejus. Ubi est qui ascendere</p>
 
 <p style="text-align:right;" markdown="1">11. 那时，他们（原文是他）想起古时的日子—摩西和他百姓，说，那</p>
 
@@ -1728,7 +1728,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1">以赛亚书 64:1-12</p>
 
-<p style="margin-left:2em;" markdown="1">**1.** O si (vel, Si forte) disrumpas coelos; descendas, et a facie tua montes diffluant!（唯愿你裂天而降，愿山在你面前震动流泻！）</p>
+<p style="margin-left:2em;" markdown="1">**1.** O si (vel, Si forte) disrumpas coelos; descendas, et a facie tua montes diffluant!</p>
 
 <p style="margin-left:2em;" markdown="1">**1.** 愿你裂天而降，愿山在你面前震动，2. 好像火烧干柴，又像火将水烧开，使你敌人知道你的名，使列国在你面前发颤！</p>
 
@@ -1748,13 +1748,13 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**6.** Et fuimus quasi immundus nos omnes, et tanquam vestimentum inquinatum omnes justitiae nostrae. Et decidimus instar folii onmes nos; et iniquitates nostrae, quasi ventus, abstulerunt nos.（我们众人都像不洁之物，我们一切的义都像污秽的衣服。我们众人都如叶子凋落；我们的罪孽如风将我们吹去。）7. 并且无人求告你的名，无人奋力抓住你。原来你掩面不顾我们，使我们因罪孽消化。</p>
 
-<p style="margin-left:2em;" markdown="1">**7.** Non est qui invocet nomen tuum, nee qui se excitet ut to apprehendat; quia abscondisti faciem tuam a nobis, et tabescere nos fecisti in manu iniquitatis nostrum.（无人求告你的名，也无人奋起抓住你；因为你向我们掩面，使我们消化在我们罪孽的手中。）8. 耶和华啊，现在你仍是我们的父！我们是泥，你是窑匠；我们都是你手的工作。</p>
+<p style="margin-left:2em;" markdown="1">**7.** Non est qui invocet nomen tuum, nee qui se excitet ut to apprehendat; quia abscondisti faciem tuam a nobis, et tabescere nos fecisti in manu iniquitatis nostrum.8. 耶和华啊，现在你仍是我们的父！我们是泥，你是窑匠；我们都是你手的工作。</p>
 
 <p style="margin-left:2em;" markdown="1">**8.** Et nune, Iehova, tu es pater noster; nos lutum, et tu figulus noster; opus, inquam, manuum tuarum sumus omnes.（耶和华啊，现在你仍是我们的父！我们是泥，你是窑匠；我们都是你手的工作。）9. 耶和华啊，求你不要大发震怒，也不要永远记念罪孽。求你垂顾我们，我们都是你的百姓。</p>
 
-<p style="margin-left:2em;" markdown="1">**9.** Ne irascaris, Iehova, ultra modum; ne in seculum memineris iniquitatis. Ecce respice, quaeso; nos omnes populus tuus sumus.（耶和华啊，求你不要大发震怒，也不要永远记念罪孽。求你垂顾我们，我们都是你的百姓。）10. 你的圣邑变为旷野，锡安变为旷野，耶路撒冷成为荒场。</p>
+<p style="margin-left:2em;" markdown="1">**9.** Ne irascaris, Iehova, ultra modum; ne in seculum memineris iniquitatis. Ecce respice, quaeso; nos omnes populus tuus sumus.10. 你的圣邑变为旷野，锡安变为旷野，耶路撒冷成为荒场。</p>
 
-<p style="margin-left:2em;" markdown="1">**10.** Urbes sanctitatis tuae fuerunt desertum; Sion desertum fuit, Ierusalem solitudo.（你的圣邑变为旷野，锡安变为旷野，耶路撒冷成为荒场。）11. Doritos sanctuarii nostri, et gloriae nostrae, in qua to celebrarunt patres nostri, fuit in（我们圣洁华美的殿，就是我们列祖赞美你的所在，被……）</p>
+<p style="margin-left:2em;" markdown="1">**10.** Urbes sanctitatis tuae fuerunt desertum; Sion desertum fuit, Ierusalem solitudo.（你的圣邑变为旷野，锡安变为旷野，耶路撒冷成为荒场。）11. Doritos sanctuarii nostri, et gloriae nostrae, in qua to celebrarunt patres nostri, fuit in</p>
 
 <p style="text-align:right;" markdown="1">11. 我们圣洁华美的殿——就是我们列祖赞美你的所在——被火</p>
 
@@ -1796,7 +1796,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**8.** 耶和华如此说：葡萄中寻得新酒，人就说：不要毁坏，因为福在其中。我因我仆人的缘故也必照样而行，不将他们全然毁灭。 9. 我必从雅各中领出后裔，从犹大中领出承受我众山的。我的选民必承受，我的仆人要在那里居住。先前的事不再被记念，也不再追想。</p>
 
-<p style="text-align:right;" markdown="1">9. Et educam ex Iacob semen, et ex Iuda haeredem montium meorum; et haereditate obtinebunt eam electi mei, et servi mei illic habitabunt.（我必从雅各中领出后裔，从犹大中领出承受我众山的；我的选民必得它为业，我的仆人要住在那里。）</p>
+<p style="text-align:right;" markdown="1">9. Et educam ex Iacob semen, et ex Iuda haeredem montium meorum; et haereditate obtinebunt eam electi mei, et servi mei illic habitabunt.</p>
 
 <p style="margin-left:2em;" markdown="1">**10.** 沙仑平原必成为羊群的圈；亚割谷必成为牛群躺卧之处，都为寻求我的民所得。</p>
 
@@ -1814,19 +1814,19 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**13.** 所以，主耶和华如此说：我的仆人必得吃，你们却饥饿；我的仆人必得喝，你们却干渴；我的仆人必欢喜，你们却蒙羞。 14. 我的仆人因心中高兴欢呼，你们却因心中忧愁哀哭，又因心里忧伤哀号。</p>
 
-<p style="margin-left:2em;" markdown="1">**14.** Ecce servi mei jubilabunt prae hilaritate cordis, et vos clamabitis prae dolore cordis, et prae angustia spiritus ululabitis.（看哪，我的仆人因心中高兴欢呼，你们却因心中忧愁哀哭，又因心里忧伤哀号。） 15. 你们必留下自己的名，为我选民指着赌咒。主耶和华必杀你们，另起别名称呼他的仆人。</p>
+<p style="margin-left:2em;" markdown="1">**14.** Ecce servi mei jubilabunt prae hilaritate cordis, et vos clamabitis prae dolore cordis, et prae angustia spiritus ululabitis. 15. 你们必留下自己的名，为我选民指着赌咒。主耶和华必杀你们，另起别名称呼他的仆人。</p>
 
-<p style="margin-left:2em;" markdown="1">**15.** Et relinquetis nomen vestrum in execrationem electis meis; interficiet te Dominus Iehova, et servos suos vocabit nomine alio.（你们必留下自己的名，为我选民指着赌咒；主耶和华必杀你们，另起别名称呼他的仆人。） 16. Qui benedixerit sibi in terra, benedicet se in Deo veraci; et qui juraverit in terra, jurabit in Deo veraci; quia oblivioni traditae sunt afflictiones priores, et absconditae ab oculis meis.</p>
+<p style="margin-left:2em;" markdown="1">**15.** Et relinquetis nomen vestrum in execrationem electis meis; interficiet te Dominus Iehova, et servos suos vocabit nomine alio. 16. Qui benedixerit sibi in terra, benedicet se in Deo veraci; et qui juraverit in terra, jurabit in Deo veraci; quia oblivioni traditae sunt afflictiones priores, et absconditae ab oculis meis.</p>
 
 <p style="margin-left:2em;" markdown="1">**16.** 这样，在地上为自己求福的，必凭真实的神求福；在地上起誓的，必指着真实的神起誓。因为从前的患难已经忘记，也从我眼前隐藏了。 17. 看哪！我造新天新地；那</p>
 
-<p style="text-align:right;" markdown="1">17. Quia ecce ego creabo cælos novos, et terram novam; priorum non erit memoria, neque in cor ascendent.（因为看哪，我要创造新天新地；从前的事不再被记念，也不再涌上心头。）</p>
+<p style="text-align:right;" markdown="1">17. Quia ecce ego creabo cælos novos, et terram novam; priorum non erit memoria, neque in cor ascendent.</p>
 
 <!-- PAGE 868 -->
 
 <p style="text-align:center" markdown="1">18. 你们当因我所造的永远欢喜快乐；因我造耶路撒冷为人所喜，造其中的居民为人所乐。</p>
 
-<p style="margin-left:2em;" markdown="1">**18.** Sed gaudete et exultate in perpetuum iis quæ ego creo. Nam ecce ego creo Ierusalem exultationem, et populum ejus gaudium.（惟你们当因我所创造的永远欢喜快乐。因为看哪，我造耶路撒冷为快乐，造其中的居民为喜乐。）19. 我必因耶路撒冷欢喜，因我的百姓快乐；其中必不再听见哭泣的声音和哀号的声音。</p>
+<p style="margin-left:2em;" markdown="1">**18.** Sed gaudete et exultate in perpetuum iis quæ ego creo. Nam ecce ego creo Ierusalem exultationem, et populum ejus gaudium.19. 我必因耶路撒冷欢喜，因我的百姓快乐；其中必不再听见哭泣的声音和哀号的声音。</p>
 
 <p style="text-align:right;" markdown="1">19. Et exultabo in Ierusalem, et gaudebo in populo meo; nec audietur in ea amplius vox fletus et vox clamoris.（我必因耶路撒冷欢喜，因我的百姓快乐；其中必不再听见哭泣的声音和哀号的声音。）</p>
 
@@ -1868,7 +1868,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="text-align:right;" markdown="1">6. Vox tumultus ex urbe, vox e templo; vox Iehovae reddentis mercedem hostibus suis.（有喧哗的声音出自城中，有声音出于殿中；是耶和华向仇敌施行报应的声音。）</p>
 
-<p style="margin-left:2em;" markdown="1">**7.** Antequam parturiret, peperit; antequam veniret illi dolor, enixa est masculum.（锡安未曾劬劳就生产，未觉疼痛就生出男孩。）</p>
+<p style="margin-left:2em;" markdown="1">**7.** Antequam parturiret, peperit; antequam veniret illi dolor, enixa est masculum.</p>
 
 <p style="margin-left:2em;" markdown="1">**7.** 锡安未曾劬劳就生产，未觉疼痛就生出男孩。8. Quis audivit huic simile? Quis simile huic vidit? An parietur terra die uno? An nascetur gens vice una? Quoniam simul doluit ad partum, simul peperit Sion illlos suos.（谁曾听见这样的事？谁曾看见这样的事？国岂能一日而生？民岂能一时而产？因为锡安一劬劳便生下她的儿女。）</p>
 
@@ -1888,11 +1888,11 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**12.** Quoniam sic dicit Iehova, Ecce ego derivo super earn, quasi fluvium, pacem; et quasi torrentera inundantem gloriam Gentium. Sugetis itaque, super latus portabimini, et super genua delectabimini. 13. 母亲怎样安慰儿子，我就照样安慰你们；你们也必因耶路撒冷得安慰。</p>
 
-<p style="margin-left:2em;" markdown="1">**13.** Sicuti virum quem consolatur mater sua, ita ego consolabor vos, et super Ierusalem erit vobis consolatio.（如同母亲安慰她的儿子，我也照样安慰你们；你们必在耶路撒冷得安慰。） 14. 你们看见，就心中快乐，你们的骨头必得滋润像嫩草一样；而且耶和华的手向他仆人所行的必被人知道，他也要向仇敌发恼恨。</p>
+<p style="margin-left:2em;" markdown="1">**13.** Sicuti virum quem consolatur mater sua, ita ego consolabor vos, et super Ierusalem erit vobis consolatio. 14. 你们看见，就心中快乐，你们的骨头必得滋润像嫩草一样；而且耶和华的手向他仆人所行的必被人知道，他也要向仇敌发恼恨。</p>
 
-<p style="margin-left:2em;" markdown="1">**14.** Et videbitis, et hetabitur cot vestrum, et ossa vestra quasi herba florebunt; et cognoscetur manus Iehovae erga servos suos, et indignabitur hostibus suis.（你们必看见，你们的心必欢乐，你们的骨头必如嫩草发旺；耶和华的手向他仆人必被认识，他也必向他的仇敌发怒。） 15. 看哪，耶和华必在火中降临，他的车辇像旋风，以烈怒施行报应，以火焰施行责罚。</p>
+<p style="margin-left:2em;" markdown="1">**14.** Et videbitis, et hetabitur cot vestrum, et ossa vestra quasi herba florebunt; et cognoscetur manus Iehovae erga servos suos, et indignabitur hostibus suis. 15. 看哪，耶和华必在火中降临，他的车辇像旋风，以烈怒施行报应，以火焰施行责罚。</p>
 
-<p style="margin-left:2em;" markdown="1">**15.** Quoniam ecce Iehova in igne veniet, et quasi turbo quadrigae ejus, ut reddat in furore iram suam, et increpationem suam in flamma ignis.（看哪，耶和华必在火中降临，他的车辇像旋风，以烈怒施行报应，以火焰施行责罚。）16. 因为耶和华在一切有血气的人身上，必以火与刀施行审判；被耶和华所杀的必多。</p>
+<p style="margin-left:2em;" markdown="1">**15.** Quoniam ecce Iehova in igne veniet, et quasi turbo quadrigae ejus, ut reddat in furore iram suam, et increpationem suam in flamma ignis.16. 因为耶和华在一切有血气的人身上，必以火与刀施行审判；被耶和华所杀的必多。</p>
 
 <p style="text-align:right;" markdown="1">16. Quoniam in igne lehova judicabit, et in gladio suo omnem carnem; et multi erunt interfecti Iehovae.（因为耶和华在一切有血气的人身上，必以火与刀施行审判；被耶和华所杀的必多。）</p>
 
@@ -1904,7 +1904,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="margin-left:2em;" markdown="1">**18.** Nam ego opera eorum et cogitationes eorum. Quia venit tempus ut congregem omnes gentes et linguas; et venient, et videbunt gloriam meam.（因为我知道他们的行为和他们的意念。时候将到，我必聚集万民万族；他们必来，看见我的荣耀。）19. 我要显神迹在他们中间。逃脱的，我要差到列国去，就是到他施、普勒、拉弓的路德和土巴、雅完，并素来没有听见我名声，没有看见我荣耀辽远的海岛；他们必将我的荣耀传扬在列国中。</p>
 
-<p style="margin-left:2em;" markdown="1">**19.** Et ponam in illis signum, et mittam quosdam ex illis servatos ad gentes Tharsis, Pul, et Lud, qui trahunt arcu, Thubal et Javan, insulas remotas; quae non audierunt nomen meum, et non viderunt gloriam meam; et annuntiabunt gloriam meam in Gentibus.（我要在他们中间显神迹，并要从他们中间差遣那些得存活的到列国去，就是到他施、普勒、拉弓的路德和土巴、雅完，以及辽远的海岛，那些素来没有听见我名声、没有看见我荣耀的；他们必将我的荣耀传扬在列国中。）20. 他们必将你们的弟兄从列国中送回，使他们或骑马，或坐车，坐轿，骑骡子，骑独峰驼，到我的圣山耶路撒冷，作为供物献给耶和华，好像以色列人用洁净的器皿盛供物奉到耶和华的殿中；这是耶和华说的。</p>
+<p style="margin-left:2em;" markdown="1">**19.** Et ponam in illis signum, et mittam quosdam ex illis servatos ad gentes Tharsis, Pul, et Lud, qui trahunt arcu, Thubal et Javan, insulas remotas; quae non audierunt nomen meum, et non viderunt gloriam meam; et annuntiabunt gloriam meam in Gentibus.20. 他们必将你们的弟兄从列国中送回，使他们或骑马，或坐车，坐轿，骑骡子，骑独峰驼，到我的圣山耶路撒冷，作为供物献给耶和华，好像以色列人用洁净的器皿盛供物奉到耶和华的殿中；这是耶和华说的。</p>
 
 <p style="margin-left:2em;" markdown="1">**20.** Et adducent omnes fratres vestros ex omnibus gentibus oblationem Iehovae in equis et quadrigis, in vehiculis, et mulis, et celeribus animalibus, ad montem sanctum meum Ierusalem, dicit Iehova; quemadmodum adferunt filii Israel in vase mundo in domum Iehovae.（他们必将你们的众弟兄从万国中献给耶和华为供物，骑马、坐车、坐轿、骑骡子、骑独峰驼，到我的圣山耶路撒冷，这是耶和华说的。好像以色列人用洁净的器皿盛供物奉到耶和华的殿中。）21. Adeoque assurmam ex illis aliquos in sacerdotes et Levitas, dicit Iehova.</p>
 
@@ -1916,7 +1916,7 @@ devorandum, omnes bestiae sylvestres. 10. 他看守的人是瞎眼的，都没�
 
 <p style="text-align:center" markdown="1">terra nova, quae ego facio, stant coram me, dicit Iehova; ira stabunt semen vestrum et nomen vestrum.（我所要造的新天新地，怎样在我面前长存，这是耶和华说的；你们的后裔和你们的名字也必照样长存。）23. 每逢月朔、安息日，一切血气之辈必来在我面前下拜。这是耶和华说的。</p>
 
-<p style="margin-left:2em;" markdown="1">**23.** Et accidet, ut e mense in mensem ejus, et ex Sabbatho in Sabbathum ejus, veniat omnis caro, ut adoret coram me, dicit Jehova.（每逢月朔、安息日，凡有血气的必来在我面前下拜，这是耶和华说的。）24. 他们必出去观看那些违背我人的尸首；因为他们的虫是不死的，他们的火是不灭的；凡有血气的都必憎恶他们。</p>
+<p style="margin-left:2em;" markdown="1">**23.** Et accidet, ut e mense in mensem ejus, et ex Sabbatho in Sabbathum ejus, veniat omnis caro, ut adoret coram me, dicit Jehova.24. 他们必出去观看那些违背我人的尸首；因为他们的虫是不死的，他们的火是不灭的；凡有血气的都必憎恶他们。</p>
 
 <p style="text-align:right;" markdown="1">24. Et egredientur, et videbunt cadavera hominum qui praevaricati sunt in me; quia vermis eorum non morietur, et ignis eorum non extinguetur, et erunt nausea omni carni.（他们必出去，看见那些干犯我之人的尸首；因为他们的虫是不死的，他们的火是不灭的；凡有血气的都必以他们为可憎恶的。）</p>
 
