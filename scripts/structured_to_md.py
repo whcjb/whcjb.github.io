@@ -172,6 +172,14 @@ def convert_ages_greek(text: str) -> str:
         kjv_brackets.append(m.group(0))
         return f'\x00K{len(kjv_brackets)-1:04d}\x00'
     text = re.sub(r'\[[A-Za-z][A-Za-z\s]{0,30}\]', _stash_kjv, text)
+    # 脚注引用也要藏：`[^f305a]` 结尾的 `a]`/`A]` 在 AGES 编码里正是「带重音的
+    # 元音」，会被下面的希腊转写吃成 `[^f305Ά`，页面上露出这么一串红色字面量
+    # （全库 218 处，1cor 第 7-9 章最密）。
+    fn_refs = []
+    def _stash_fn(m):
+        fn_refs.append(m.group(0))
+        return f'\x00F{len(fn_refs)-1:04d}\x00'
+    text = re.sub(r'\[\^[A-Za-z]{0,3}\d+[A-Za-z]?\]', _stash_fn, text)
     def _repl(m):
         if m.group(1):
             return m.group(1)
@@ -212,6 +220,7 @@ def convert_ages_greek(text: str) -> str:
     def _restore_kjv(m):
         return kjv_brackets[int(m.group(1))]
     text = re.sub(r'\x00K(\d{4})\x00', _restore_kjv, text)
+    text = re.sub(r'\x00F(\d{4})\x00', lambda m: fn_refs[int(m.group(1))], text)
     return text
 
 
@@ -253,7 +262,10 @@ INLINE_REF_RE = re.compile(r'<\d{6,7}>')
 
 # ── Footnote definition detection ────────────────────────────────────────
 # 允许 fn label 后面跟可选 dot（Ages 2cor 前半部分的 ftNN. 风格 def 用了这种格式）
-FN_DEF_RE = re.compile(r'^\s*([fF][tT]?\d+)\.?\s+(.*)$', re.DOTALL)
+# 尾字母不能漏：AGES 用 `Ft305A` 表示另一条独立脚注（与 Ft305 并存，正文里
+# 也有各自的引用）。写死成 `\d+` 的话这一行认不出是定义，会被当成上一条定义
+# 的续行吞掉——1cor 的 Ft305A…Ft322A 全被塞进了 [^f404] 里。
+FN_DEF_RE = re.compile(r'^\s*([fF][tT]?\d+[A-Za-z]?)\.?\s+(.*)$', re.DOTALL)
 
 
 def normalize_fn_label(label: str) -> str:
@@ -284,9 +296,11 @@ def format_inline(text: str) -> str:
     # 再命中一次，套成 `[^[^f3]]`，脚注链接直接失效。
     # Gate 5 的 ref/def 配对用的是宽松正则，认不出这种双层套嵌；
     # 是「产物 vs PDF 正文比对」（qa_ages_text.py）才把它揪出来的。
+    # 尾字母转小写：定义那边走 normalize_fn_label 会被 lower()，引用若保留
+    # 大写 `[^f305A]`，kramdown 配不上 `[^f305a]:`，正文里就露出字面引用。
     text = re.sub(
-        r'(?<!\[\^)(?<![A-Za-z])[Ff](\d{1,4}[A-Z]?)\b',
-        lambda m: f'[^f{m.group(1)}]', text)
+        r'(?<!\[\^)(?<![A-Za-z])[Ff](\d{1,4})([A-Za-z]?)\b',
+        lambda m: f'[^f{m.group(1)}{m.group(2).lower()}]', text)
     # Pipe-escape for Kramdown table safety (but not inside HTML <verse> tags)
     text = re.sub(r'(?<!\\)\|', r'\\|', text)
     # Greek transliteration → Unicode
@@ -841,8 +855,20 @@ def convert(structured_path: Path, out_path: Path) -> None:
             # 编号可能单独成行：脚注区是悬挂缩进，按段首缩进拆段时会把
             # `1.` 与正文切开（后书就只有这一条，切开后 def 直接归零）。
             # 所以 `\s+(.*)` 放宽成 `\s*(.*)`，正文为空时由下面的续行逻辑补上。
+            # 文末脚注区的条目多数写成 `404. 正文`，但 AGES 的字母后缀条目
+            # （Ft305A）写成带色的码 + 正文，落不进 `^\d+\.` 这条规则，会被
+            # 当成上一条的续行整条吞掉——1cor 的 Ft305A…Ft322A 共 90 余条就是
+            # 这样并进了 [^f404]，正文里 90 个引用全成孤儿。
+            code_m = re.match(
+                r'^\s*(?:<sty\s[^>]*>)?\s*([Ff][Tt]?\d+[A-Za-z])\s*(?:</sty>)?\s*(.*)$',
+                content, re.S)
             fm = re.match(r'^(\d+)\.\s*(.*)$', content, re.S)
-            if fm:
+            if code_m and not fm:
+                out.append('')
+                body = _fmt(code_m.group(2)) if code_m.group(2).strip() else ''
+                label = normalize_fn_label(code_m.group(1))
+                out.append(f'[^{label}]:' + (' ' + body if body else ''))
+            elif fm:
                 out.append('')
                 body = _fmt(fm.group(2)) if fm.group(2).strip() else ''
                 out.append(f'[^f{fm.group(1)}]:' + (' ' + body if body else ''))
