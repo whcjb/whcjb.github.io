@@ -6,6 +6,8 @@ title: "卷二 导论"
 date: 2026-09-15 17:51
 prev_section: later-preface
 prev_label: "卷二 著者序"
+next_section: 40
+next_label: "以赛亚书 第 40 章"
 en_url: "/alexander/isaiah/later-introduction/"
 zh: true
 ---
