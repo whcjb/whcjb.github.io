@@ -211,6 +211,34 @@ def parse():
     return items
 
 
+def _join_seam(cur, nxt):
+    """跨页接缝处把上下两半接起来。
+
+    两种断法：
+      · 换行连字符 —— `Berge-` + `ron` → `Bergeron`（原来就有）
+      · 换行连字符被 OCR 读成**句点** —— `highly de.` + `serving the attention`
+        → `deserving`。这一档原先漏在外面：extract 那边的 DOT_SPLIT 是在**同
+        一段文本内**找 `xx. yyy`，而跨页的两半在抽取产物里是两条 [FN] 行，
+        要到这里合并时才挨到一起，正则那时早跑完了。
+    与 DOT_SPLIT 用同一套守卫：拼出来得是本书语料/词典里认得的词；两半各自
+    都是词、而拼起来在本书里一次都没出现过的不接（那多半是两句话）。
+    全书接缝上符合「前半 xx.、后半小写起」的只有 1 处，就是上面那个
+    `de. serving`（v2p329-330），拼出来 `deserving` 在本书出现 7 次。
+    """
+    if cur.endswith('-') and nxt[:1].islower():
+        return cur[:-1] + nxt
+    a = cur.split()[-1] if cur.split() else ''
+    m = re.match(r'^([a-z]{2,})', nxt)
+    if m and re.fullmatch(r'[A-Za-z]{2,}\.', a):
+        from davenant_witness import attested, corpus
+        j = a[:-1] + m.group(1)
+        _, uni = corpus()
+        if attested(j) and not (attested(a[:-1]) and attested(m.group(1))
+                                and uni[j.lower()] == 0):
+            return cur[:-1] + nxt
+    return cur + ' ' + nxt
+
+
 def collect_notes(items):
     """→ {page: [note_text, …]}，多段的注合并为一条。
 
@@ -234,8 +262,7 @@ def collect_notes(items):
                 notes.setdefault(cur_p, []).append(cur)
             cur, cur_p, cur_last = it['text'], p, p
         else:
-            cur = (cur[:-1] + it['text'] if cur.endswith('-')
-                   and it['text'][:1].islower() else cur + ' ' + it['text'])
+            cur = _join_seam(cur, it['text'])
             cur_last = p
     if cur is not None:
         notes.setdefault(cur_p, []).append(cur)
@@ -398,12 +425,27 @@ def main():
                          text=True).stdout.strip()
     (OUT / 'dissertation').mkdir(parents=True, exist_ok=True)
 
+    def keep_date(rel):
+        """已有页面的 `date` 原样留住。
+
+        站内规矩是「已有文件的时间不要修改」，而这两个脚本原先每跑一次就把
+        front matter 的 date 刷成当下——于是**连跑两次 publish 也做不到零
+        差异**，每一轮重建都要手工回滚十几个只改了时间戳的文件。正文那边
+        （publish_davenant_en.py 的 keep()）早就是这么做的，附卷与索引漏了。
+        """
+        f = OUT / rel
+        if not f.exists():
+            return None
+        m = re.search(r'^date: (.*)$', f.read_text(encoding='utf-8'), re.M)
+        return m.group(1) if m else None
+
+
     for i, k in enumerate(chain):
         u = by_key[k]
         title = label_of(k)
         fm = ['---', 'layout: davenant-appendix', f'title: "{title}"',
               f'up_url: "{BOOK_URL}"', f'up_label: "{BOOK_LABEL}"',
-              f'date: {now}']
+              f'date: {keep_date(path_of(k)) or now}']
         if k.startswith('diss') or k == 'preface':
             fm.append(f'kicker: "{DISS_KICKER}"')
         # 序那一页的原书标题就是 TO THE KIND READER，与页面标题重复，不再印一遍

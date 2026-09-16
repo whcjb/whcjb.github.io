@@ -113,6 +113,21 @@ def main():
                          text=True).stdout.strip()
     OUT.mkdir(parents=True, exist_ok=True)
 
+    def keep_date(rel):
+        """已有页面的 `date` 原样留住。
+
+        站内规矩是「已有文件的时间不要修改」，而这两个脚本原先每跑一次就把
+        front matter 的 date 刷成当下——于是**连跑两次 publish 也做不到零
+        差异**，每一轮重建都要手工回滚十几个只改了时间戳的文件。正文那边
+        （publish_davenant_en.py 的 keep()）早就是这么做的，附卷与索引漏了。
+        """
+        f = OUT / rel
+        if not f.exists():
+            return None
+        m = re.search(r'^date: (.*)$', f.read_text(encoding='utf-8'), re.M)
+        return m.group(1) if m else None
+
+
     def url(k):
         return f'{BOOK_URL}indexes/{PAGES[k][0]}/'
 
@@ -122,7 +137,7 @@ def main():
         fm = ['---', 'layout: davenant-appendix', f'title: "{title}"',
               f'up_url: "{BOOK_URL}"', f'up_label: "{BOOK_LABEL}"',
               'kicker: "Indexes to the Original Edition"', 'dense: true',
-              f'date: {now}']
+              f'date: {keep_date(f"{slug}.md") or now}']
         if sec['sub']:
             fm.append(f'subtitle: "{sec["sub"]}"')
         if i:

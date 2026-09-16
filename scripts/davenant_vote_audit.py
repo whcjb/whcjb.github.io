@@ -17,10 +17,12 @@ import davenant_witness as W
 W.corpus()
 seen = collections.defaultdict(set)
 orig = W.manual_repair
-def spy(vol, page, w):
+def spy(vol, page, w, nxt=None):
     s = seen[(vol, page)]
     s.add(w); s.add(w.rstrip('.,;:!?'))
-    return orig(vol, page, w)
+    if nxt:                       # 带后词限定的票（`change.>taking`）也要记
+        s.add(f'{w}>{nxt}'); s.add(f"{w.rstrip('.,;:!?')}>{nxt}")
+    return orig(vol, page, w, nxt)
 W.manual_repair = spy
 for vol in (1, 2):
     for ln in (pathlib.Path('davenant_raw/colossians')/f'vol{vol}_lines.jsonl').open(encoding='utf-8'):

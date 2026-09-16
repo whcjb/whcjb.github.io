@@ -211,21 +211,34 @@ def manual_votes():
     return _manual
 
 
-def manual_repair(vol, page, w):
+def manual_repair(vol, page, w, nxt=None):
     """整词优先；不中时剥掉尾标点再试一次，命中就把标点带回去。
-    表里写的是词本身（`mints'ered`），正文里常常挂着逗号（`mints'ered,`）。"""
+    表里写的是词本身（`mints'ered`），正文里常常挂着逗号（`mints'ered,`）。
+
+    ⚠️ 「卷+页+词形」在**同一页出现两次**时不够用。v2p473-475 那一段里
+    `change.` 出现两次：一处是句号（`that he should change. A passage…`，
+    原书如此），另一处该是逗号（`any change, taking place in God`）。只按页
+    投票会把对的那处一起改坏。所以键允许再带一个**后词限定**：
+
+        "2|475|change.>taking"   → 只改后面紧跟着 `taking` 的那一处
+
+    带限定的键先查，查不到再退回不带限定的整词键。"""
     tbl = manual_votes()
-    hit = tbl.get(f'{vol}|{page}|{w}')
-    if hit is not None:
-        return hit
+    keys = ([f'{vol}|{page}|{w}>{nxt}'] if nxt else []) + [f'{vol}|{page}|{w}']
+    for key in keys:
+        hit = tbl.get(key)
+        if hit is not None:
+            return hit
     # ⚠️ 尾巴不只有标点。`Forus]`（lemma 的右括号）、`Lllyricus,+`（脚注符）
     # 这两种形态都让票匹配不上，票记着 `Forus` 却一处也没落（实测）。
     core = w.rstrip('.,;:!?]+*†‡)"\u2019')
     tail = w[len(core):]
     if tail and core:
-        hit = tbl.get(f'{vol}|{page}|{core}')
-        if hit is not None:
-            return hit + tail
+        keys = ([f'{vol}|{page}|{core}>{nxt}'] if nxt else []) + [f'{vol}|{page}|{core}']
+        for key in keys:
+            hit = tbl.get(key)
+            if hit is not None:
+                return hit + tail
     return None
 
 
@@ -270,11 +283,13 @@ def manual_para(vol, pages, text):
     tbl = manual_votes()
     if not tbl:
         return text
+    toks = text.split()
     out = []
-    for w in text.split():
+    for i, w in enumerate(toks):
+        nxt = toks[i + 1] if i + 1 < len(toks) else ''
         got = None
         for pg in pages:
-            got = manual_repair(vol, pg, w)
+            got = manual_repair(vol, pg, w, nxt)
             if got is not None:
                 break
         out.append(w if got is None else got)
@@ -1860,7 +1875,7 @@ def fix_line(vol, page, text, strict=False):
             # 这种形状——前导引号其实是粗气符，剥掉就把希腊文改成了看着像
             # 英文的东西（实测 9 处）。只留判据里带**英文词表或引书格式**、
             # 在希腊文音译里不可能命中的那几条。
-            f = (manual_repair(vol, page, w) or glue_repair(w)
+            f = (manual_repair(vol, page, w, nxt) or glue_repair(w)
                  or apos_head_repair(w) or one_repair(w, prev, nxt)
                  or romanref_repair(w, prev, nxt) or fndot_repair(w, prev, nxt))
             why = '对不上行·确定性'
@@ -1907,7 +1922,7 @@ def fix_line(vol, page, text, strict=False):
         # 一样能拆，实测 287 种候选里过半是这种误判。
         _prev = toks[i - 1] if i else ''
         _nxt = toks[i + 1] if i + 1 < len(toks) else ''
-        for _why, _fix in (('人工核定', manual_repair(vol, page, w)),
+        for _why, _fix in (('人工核定', manual_repair(vol, page, w, _nxt)),
                            ('引文粘连', glue_repair(w)),
                            ('前导引号', quote_repair(w)),
                            ('If/It', ifit_repair(w, _nxt)),

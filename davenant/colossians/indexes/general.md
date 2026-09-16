@@ -46,7 +46,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Barnabas, who he was, II. 282.</p>
 <p class="dv-idx">Beguile, what it signifies, I. 368; 496.</p>
 <p class="dv-idx">Believer, is sure that he hath faith, I. 37; and that by the certainty of faith, 43; is sure of grace and the remission of his sins, 37 ; some of the Papists confess this, 52; does not doubt as a believer, 49 ; a true one is like to a man awake, an apparent one to a dreamer, 48 ; how he may fall from grace and how not, II. 57; has always an habitual intention of pleasing God, I. 226; and therefore his person is acceptable to God notwithstanding his failures, ibid. ; ought to be fruitful, 127.</p>
-<p class="dv-idx">Blasphemy, whence the word is derived, and what it signifies, II. 69; God blasphemed in athree- fold manner; men in a twofold way, ibid. ; the great evil of either, 70, 71.</p>
+<p class="dv-idx">Blasphemy, whence the word is derived, and what it signifies, II. 69; God blasphemed in a three- fold manner; men in a twofold way, ibid. ; the great evil of either, 70, 71.</p>
 <p class="dv-idx">Blessedness, future, in what it consists, II. 25, 26; is solid happiness to be possessed by every servant of God, I. 151; is always to be contemplated and sought after, I]. 6; its contemplation a comfort under all trials, 23, 29; wherein it resembles a reward, and wherein not, 206.</p>
 <p class="dv-idx">Body, taken for the mass of sins, I. 438; our body an object of love, and wherefore, 73; what care is to be taken of it, and what not, 544.</p>
 <p class="dv-idx">Body of Christ was real, not imaginary, 257; in which he himself truly suffered, and not Simon the Cyrenian, ibid.</p>
