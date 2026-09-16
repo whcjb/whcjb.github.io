@@ -67,9 +67,14 @@ _BOX_RE = re.compile(
     re.DOTALL,
 )
 
+# 单元格内必须自闭：`.*?` 跨过 </td> 会把整行吃穿。中译 raw 里节号有两种写法
+# ——`<strong>7.</strong>` 与 markdown 的 `**7.**`——碰上后者时，旧正则在左格里
+# 找不到 <strong>，就一路扫到右格的 <strong>7.</strong>，再往后吞掉下一行，
+# 结果左右两列错开一节（1cor/2cor/2peter/james 共 15 行）。
 _TR_RE = re.compile(
-    r'<tr><td class="scripture-en">.*?<strong>(\d+)\.</strong>.*?</td>'
-    r'(<td class="scripture-la">.*?</td>)</tr>',
+    r'<tr><td class="scripture-en">(?:(?!</td>).)*?'
+    r'(?:<strong>|\*\*)(\d+)\.(?:</strong>|\*\*)(?:(?!</td>).)*</td>'
+    r'(<td class="scripture-la">(?:(?!</td>).)*</td>)</tr>',
     re.DOTALL,
 )
 
