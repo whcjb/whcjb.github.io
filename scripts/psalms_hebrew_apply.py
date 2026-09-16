@@ -38,7 +38,7 @@ def reent(t):
     return t.replace('<', '&lt;').replace('>', '&gt;')
 
 
-def main(apply=False):
+def main(apply=False, rebuild_rules=False):
     rows = list(csv.DictReader(open(TSV, encoding='utf-8'), delimiter='\t',
                                quoting=csv.QUOTE_NONE))
     files = {f: f.read_text(encoding='utf-8') for f in sorted(SRC.glob('*.md'))}
@@ -74,28 +74,40 @@ def main(apply=False):
         for r in miss[:8]:
             print(f"    {r['garbage'][:30]!r} → {r['reading'][:18]!r}")
 
-    OUT.write_text('old\tnew\tscript\tconf\n' + ''.join(
-        f'{o}\t{n}\t{r["script"]}\t{r["conf"]}\n' for o, n, r in rules),
-        encoding='utf-8')
-    print(f'规则 → {OUT}')
+    # 规则表默认**不重写**。它是按「正文里还找得到这串乱码」筛出来的，
+    # 而这批规则自己就是把乱码改掉的那批——落过一次盘之后再筛一遍，
+    # 表就塌成空的，下一轮 adjudicate（它也读这张表）就什么都不修了。
+    # 整条链每次都从 publish 重写正文，那时乱码都还在，表该是满的。
+    # 只有 accepted.tsv 变了才需要 --rebuild-rules 重出。
+    if rebuild_rules:
+        OUT.write_text('old\tnew\tscript\tconf\n' + ''.join(
+            f'{o}\t{n}\t{r["script"]}\t{r["conf"]}\n' for o, n, r in rules),
+            encoding='utf-8')
+        print(f'规则 → {OUT}')
 
     if not apply:
         return
     hit = 0
     for f, t in files.items():
-        p = unent(t)
+        # 要转义的是**规则串**，不是正文。把正文整体 unent 再 reent 会把
+        # 我们自己写的 `<span class="ax-anchor">` 一并转义成 `&lt;span…`，
+        # 整篇的节号锚点全毁——诗篇 119 就是这么被冲掉过一次（踩过）。
         changed = False
         for o, n, _ in rules:
-            if o in p:
-                p = p.replace(o, n)
+            o, n = reent(o), reent(n)
+            if o in t:
+                t = t.replace(o, n)
                 changed = True
                 hit += 1
         if changed:
-            f.write_text(reent(p), encoding='utf-8')
+            f.write_text(t, encoding='utf-8')
     print(f'落盘 {hit} 处')
 
 
 if __name__ == '__main__':
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true')
-    main(ap.parse_args().apply)
+    ap.add_argument('--rebuild-rules', action='store_true',
+                    help='重出 hebrew_ocr_rules.tsv（只有 accepted.tsv 变了才需要）')
+    a = ap.parse_args()
+    main(a.apply, a.rebuild_rules)

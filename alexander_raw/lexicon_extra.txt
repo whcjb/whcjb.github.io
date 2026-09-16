@@ -159,3 +159,44 @@ gehet Egypten Mauern Knecht meine Macht Groll diess trostet
 Jehoram Ephrem Curtius Statius Clericus embassador
 obscuritas
 literam
+
+# ── 2026-09-16 诗篇复扫残留里挑出来的正经词 ────────────────────────────
+# 来路：全书扫完一轮之后账上还剩 1483 处「非词」，其中纯拉丁字母的 277 串
+# 逐个看过上下文——绝大多数是判词典收不到的专名、拉丁引文、19 世纪拼法，
+# 本来就没错。收进来是为了让残留数字反映真实残留，不是放宽修复的口子。
+# 真正的错字没有收进来，已按影像/第二证人逐条改掉（见 manual_fixes.tsv）。
+# 圣经与古典专名
+Adhonai Ahab Abimelech Abishai Abiram Abaddon Achish Achilles Ahimelech
+Alleghanies Antilibanus Anti-libanus Antiochus Aramean Armenia Baalim Bagster
+Barak Bathsheba Berachah Chaboras Dathan Demosthenes Endor Engedi Ephrathi
+Epiphanes Ezrahite Ezrahites Gebal Gerar Gitti Habakkuk Hagarenes Haggai Haman
+Hannah Hasmonean Herod Hophni Horace Issachar Jabbok Jabin Jahaziel Jedidiah
+Jedithun Jericho Joab Joash Jonath-elem-rehokim Kadesh Kirjath-jearim Korhites
+London Mahanaim Menelaus Meroe Mohammed Naharaim Oreb Ovid Peor Perea Petra
+Philo Phinehas Shilo Sirion Sisera Switzerland Tanis Tekoa Thebes Ulai
+Vaticanus Virgil Zacharias Zalmunnah Zebah Zebaoth Zebulon Zeeb Zerah Ziph
+Ziphites Zobah
+# 诗篇标题里的希伯来术语与音译
+Al-tashheth al-tashheth Al-muth-labben almuth labben Kesheth Michtab
+magor missabib neginath mizmor arbeh yelek hasil yehallelujah
+# 拉丁／希腊／法文引文
+animo denominatio potiori integritas jus hoc oves boves odit vitae scelerisque
+salvum fac regem spirare anhelare scelus talionis acutus acuo classicus
+contritum retractatio dimidiabunt profundis exsultemus nobis deum evocat
+auroram amore expectante operatum bonum festos solennitates lacrymarum semel
+prophetica desiderium ornamentum audiendo auscultando ambulent mortalitas
+juventus laudatus laudandus palpo immaculati dormitavit lusus verborum
+venientes venient statim viruerit priusquam evellatur quousque psallite canite
+toujours aimable redacteur
+# 19 世纪拼法与 web2 收不到的屈折形
+co-extensive paid contend heroes forgiven forgave foresaw foreseen forsook
+apostatised apostatising fleeing clamour succour succours kinsmen withholden
+partaken befallen overtaken undertaken withdrew repaid repinings rumour armour
+moveable immoveable neighbourhood odours harboured harbouring parlour
+colourable falsity askings sojournings classify individualised actuated
+realisation monopolise symbolise symbolising disorganised disorganising
+stigmatising fertilising paralyse pulverised spiritualising characterise
+eternised lieth whoso savedst receivedst consentedst strengthenedst spokesmen
+spectres counsellors upgoings ploughers prosperers undwelling bondsmen
+dishonesty overran propelling waggon-road meatoffering deathshade butterings
+hyperbolical

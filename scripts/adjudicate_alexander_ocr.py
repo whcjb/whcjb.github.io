@@ -546,6 +546,9 @@ GLUE_HEAD = ['and', 'upon', 'of', 'in', 'to', 'the', 'from', 'with', 'on',
 #   · **一词被读成两个 token**——得两个一起换。
 # 写成整句而不是单词，是因为这些词在别处都是对的，只有这一处错。
 MANUAL_TEXT = [
+    # 2026-09-16 删掉三条失效的（Gitti / Al-muth-labben / Thoiiwilt）：
+    # 上游 repair 的规则变过之后，它们的 old 串在 en_chapters 里已经不存在，
+    # 这三处现在由 alexander_raw/psalms/manual_fixes.tsv 按篇锚定修。
 
     # ── 诗篇 1-10：按 1864 扫描件**页面影像**逐条判读（2026-09-14）──────
     # 第二证人判读在这批上给不出结论（divergent/fragment/badwitness），
@@ -591,14 +594,10 @@ MANUAL_TEXT = [
      '*And on his own crown'),
     ('*(u-hat is man that)*',
      '*(what is man that)*'),
-    ('the feminine of *Gitti*',
-     'the feminine of *Gitti,*'),
     ("to be made- 'Upon this title is",
      'to be made upon this title is'),
     ("trust in God's-power",
      "trust in God's power"),
-    ('*To the Chief Musician^ labben.*',
-     '*To the Chief Musician, Al-muth-labben.*'),
     ("one of Da^dd's enemies",
      "one of David's enemies"),
     ('appellative denoting/ooZ,',
@@ -820,7 +819,6 @@ MANUAL_TEXT = [
     ('English, difi"er only', 'English, differ only'),      # "differ only in a single letter"
     ("*Shall serve ' iie,*", '*Shall serve me,*'),          # "Shall serve me, be employed by me"
     ('/ *urill not set before', '*I will not set before'),  # Ps. 101:3
-    ('*Thoiiwilt arise', '*Thou wilt arise'),               # Ps. 102:14(13)
     ('*prceterita prophetica,*', '*pr\u00e6terita prophetica,*'),  # 原书是 æ 合字
     ('*Stones unddust* are here', '*Stones* and *dust* are here'),
     ('speaks in-everently of him', 'speaks irreverently of him'),

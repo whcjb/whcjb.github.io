@@ -323,7 +323,7 @@ def norm(s):
     return re.sub(r'[^0-9a-zA-Zα-ωΑ-Ωἀ-ῼ֐-׿]', '', unpoint(s) or '').lower()
 
 
-def apply_gates(dry=True):
+def apply_gates(dry=True, replay=False):
     vocab = L.build()
     corpus = Counter()
     for p in SRC.glob('*.md'):
@@ -369,7 +369,11 @@ def apply_gates(dry=True):
         # 互证闸
         wit = it.get('wit') or ''
         second = r2.get(k, '')
-        img_out = unpoint(img) if HEB.search(img) else img
+        # 落盘用**读数原样**，不去元音点：1864 印面上的希伯来文是带点的，
+        # 去点会把 שָׁלֵם / שִׁלֵּם 这种只靠点区分的词抹成同一个。
+        # unpoint 只在 norm() 里用——那是**比对**两遍读数是否一致，
+        # 一遍抄了点一遍没抄不该算分歧。
+        img_out = img
         if wit and norm(wit) == norm(img):
             ok.append((it, img_out, 'witness'))
         elif second and second != '?' and norm(second) == norm(img):
@@ -388,8 +392,10 @@ def apply_gates(dry=True):
     ok = _fix_hebrew_order(ok)
     # 已经落过盘的不再改（幂等）：原串早就被替换掉了，再跑只会记一堆 SKIP，
     # 还可能把别处同形的串误改。
+    # --replay 例外：整条链是从 publish 重写正文开始的（chain_alexander_psalms.sh），
+    # 那时正文已经回到未修复的形态，这份账反而会把该落的全挡掉。
     done_before = set()
-    if APPLIED.exists():
+    if APPLIED.exists() and not replay:
         for line in APPLIED.open(encoding='utf-8'):
             f = line.rstrip('\n').split('\t')
             if len(f) >= 4 and not f[3].startswith('SKIP'):
@@ -402,7 +408,9 @@ def apply_gates(dry=True):
     for it, img, src in ok:
         per[it['sec']].append((it, img, src))
     n = 0
-    with APPLIED.open('a', encoding='utf-8') as fh:
+    # 重跑时另写一份日志，免得把同一批判读一遍遍追加进账本
+    log_path = APPLIED.with_name(APPLIED.stem + '_replay.tsv') if replay else APPLIED
+    with log_path.open('w' if replay else 'a', encoding='utf-8') as fh:
         for sec, lst in per.items():
             p = SRC / f'{sec}.md'
             t = p.read_text(encoding='utf-8')
@@ -435,7 +443,7 @@ def apply_gates(dry=True):
         fh.write('# 影像判读未过闸，需人工复核\n篇\tOCR串\t影像读数\t二遍\t原因\t上下文\n')
         for it, img, second, why in pending:
             fh.write(f'{it["sec"]}\t{it["tok"]}\t{img}\t{second}\t{why}\t{it["ctx"]}\n')
-    print(f'已落盘 {n} 处 → {APPLIED}；待复核清单 → {PENDING}')
+    print(f'已落盘 {n} 处 → {log_path}；待复核清单 → {PENDING}')
     return ok, pending
 
 
@@ -518,6 +526,8 @@ def main():
     ap.add_argument('--next-page', action='store_true',
                     help='只重跑第一遍判成 ? 的，改问下一页（段落跨页）')
     ap.add_argument('--apply', action='store_true')
+    ap.add_argument('--replay', action='store_true',
+                    help='整条链重跑：无视「已落过盘」的账，按读数重新落一遍')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--dpi', type=int, default=220)
     a = ap.parse_args()
@@ -526,7 +536,7 @@ def main():
         build()
         return
     if a.apply:
-        apply_gates(dry=a.dry_run)
+        apply_gates(dry=a.dry_run, replay=a.replay)
         return
     items = load()
     allpages = sorted({(i['page'] or 0) + (1 if a.next_page else 0)
