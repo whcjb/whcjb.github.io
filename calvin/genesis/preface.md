@@ -94,7 +94,7 @@ next_label: "第一章"
 
 里奥·犹达译本 加尔文译本 1. In principo creavit Deus coelum et terram（起初，神创造天地）
 
-<p style="margin-left:2em;" markdown="1">**1.** In principio creavit Deus coelum et terram（起初，神创造天地。）2. Terra autem erat desolata et inanis tenebraeque erant in superficie voraginis: et Spiritus Dei agitabat sese in superficie aquarum（地是空虚混沌，深渊的表面黑暗；神的灵运行在水面上。）</p>
+<p style="margin-left:2em;" markdown="1">**1.** In principio creavit Deus coelum et terram（起初，神创造天地。）2. Terra autem erat desolata et inanis tenebraeque erant in superficie voraginis: et Spiritus Dei agitabat sese in superficie aquarum</p>
 
 <p style="margin-left:2em;" markdown="1">**2.** 地是空虚混沌，渊面黑暗，神的灵运行在水面上。3. 神说，要有光，就有了光。3. 神说，要有光，就有了光。4. 神看光是好的，神就把光暗分开了。</p>
 
