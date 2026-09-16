@@ -65,3 +65,7 @@ alexander_raw/isaiah/src/
 # 重跑 extract_alexander_psalms.py 即可再生（约 30 秒），不必进库。
 alexander_raw/psalms/en_chapters.bak/
 alexander_raw/isaiah/en_chapters.bak/
+
+# 诗篇残留判读的裁图（19M，70 张）。跑 psalms_residue_crop.py --build 即可再生，
+# 判读结果本身在 logs/alexander_psalms_residue_round{1,2}.tsv 里，那才是要入库的。
+logs/residue_crops/

@@ -53,18 +53,19 @@ def main(apply=False):
             bad.append((ch, '', '篇不存在'))
             continue
         text = path.read_text(encoding='utf-8')
-        spots = []
+        changed = False
+        # **按表中顺序逐条落**，每条看到的是前面几条改完之后的正文。
+        # 一次性取好位置再一起拼接是行不通的：后加的条目往往就是冲着
+        # 前一条的结果去的（`one\` 先改成 `one)`，下一条才轮到那个 `{`），
+        # 拿改之前的正文去找，永远找不到。
         for old, new, src in lst:
             n = text.count(old)
             if n == 1:
-                i = text.index(old)
-                spots.append((i, old, new))
+                text = text.replace(old, new, 1)
+                changed = True
                 stat['hit'] += 1
-                continue
-            # 找不到 old：先看是不是已经是修复后的形态（幂等重跑的常态）。
-            # 两种形态都找不到，或者 old 命中多处，才是真故障——上游文本
-            # 变了，这条规则再落盘就会改错位置。
-            if n == 0 and text.count(new) >= 1:
+            elif n == 0 and text.count(new) >= 1:
+                # 幂等重跑的常态：这一处已经是修复后的形态
                 stat['已是修复后形态'] += 1
             elif n == 0:
                 stat['失效'] += 1
@@ -72,20 +73,7 @@ def main(apply=False):
             else:
                 stat['不唯一'] += 1
                 bad.append((ch, old, f'在本篇里出现 {n} 次，不敢动'))
-        # 上下文锚是彼此独立取的，可能互相搭界；搭界就只落先出现的那条，
-        # 另一条留给下一轮（正文变了它会自己报失效）。
-        spots.sort()
-        keep, end = [], -1
-        for i, old, new in spots:
-            if i < end:
-                stat['重叠跳过'] += 1
-                bad.append((ch, old, '与前一条锚重叠'))
-                continue
-            keep.append((i, old, new))
-            end = i + len(old)
-        for i, old, new in reversed(keep):
-            text = text[:i] + new + text[i + len(old):]
-        if apply and keep:
+        if apply and changed:
             path.write_text(text, encoding='utf-8')
     print(f'manual_fixes {sum(len(v) for v in rules.values())} 条：' +
           '，'.join(f'{k} {v}' for k, v in stat.items()))
