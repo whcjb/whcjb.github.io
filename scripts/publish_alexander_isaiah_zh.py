@@ -119,7 +119,10 @@ def main(only=None):
 
     (OUT / 'index.html').write_text(
         '---\n'
-        'layout: alexander-book\n'
+        # 与英文目录页同一个 layout：深浅两色的格子本身已经分好中英，
+        # /zh/ 与 /alexander/isaiah/ 渲染出来是同一张页。中文章节页的
+        # 「← 书名」指向 /zh/，所以这张索引仍要生成。
+        'layout: alexander-isaiah-book\n'
         'book_id: isaiah\n'
         f'book_name: "{BOOK_NAME_ZH}"\n'
         'chapters: 66\n'

@@ -14,6 +14,11 @@ layout: default
   两卷各有自己的序与导论，后一卷的导论专门处理后二十七章的真伪之争。
 
   前置件排在章号网格之前——与诗篇那页 2026-09-10 的调整保持一致。
+
+  **深浅两色**（用户 2026-09-15 定）：已有中译的格子用深色，点进去是中文页；
+  只有英文的用浅色，**照样可点**，点进去是英文页。不做成「浅色＝不可点的虚格」
+  ——诗篇那页是那么做的，但这本书的英文版本身就是成品，拦着不让点没有道理。
+  中文页右上角有「English →」按钮回到英文页，所以深色格子不必再给英文入口。
 {%- endcomment -%}
 
 <div class="container alexander-wrap" style="padding-top: 70px;">
@@ -28,23 +33,51 @@ layout: default
       <h1 class="ax-title">{{ page.book_name }}</h1>
       <div class="ax-sub">Joseph Addison Alexander · 1809–1860 · Princeton Theological Seminary</div>
 
+      {%- comment -%}
+        已生成的中文页清单。⚠️ Liquid 没有 `contains X == false`，
+        必须先 assign 成布尔量再 if/else（诗篇目录页踩过）。
+      {%- endcomment -%}
+      {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains 'alexander/'" | map: "path" | join: "," -%}
+      {%- assign zh_root = 'alexander/' | append: page.book_id | append: '/zh/' -%}
+
       <div class="ax-extra ax-extra-grid">
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/preface/">
+        {%- assign k = zh_root | append: 'preface.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
+           href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}preface/">
           <span class="ax-extra-cn">卷一·著者序</span>
           <span class="ax-extra-en">Preface</span>
         </a>
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/introduction/">
+        {%- assign k = zh_root | append: 'introduction.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
+           href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}introduction/">
           <span class="ax-extra-cn">卷一·导论</span>
           <span class="ax-extra-en">Introduction</span>
         </a>
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/later-preface/">
+        {%- assign k = zh_root | append: 'later-preface.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
+           href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}later-preface/">
           <span class="ax-extra-cn">卷二·著者序</span>
           <span class="ax-extra-en">Preface</span>
         </a>
-        <a href="{{ site.baseurl }}/alexander/{{ page.book_id }}/later-introduction/">
+        {%- assign k = zh_root | append: 'later-introduction.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        <a class="ax-extra-item{% unless has_zh %} ax-en-only{% endunless %}"
+           href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}later-introduction/">
           <span class="ax-extra-cn">卷二·导论</span>
           <span class="ax-extra-en">Introduction</span>
         </a>
+      </div>
+
+      <div class="ax-legend">
+        <span><i class="ax-dot"></i>深色＝已有中译，点进中文页</span>
+        <span><i class="ax-dot ax-dot-en"></i>浅色＝英文原著，点进英文页</span>
       </div>
 
       {% assign groups = "1,39,前部|40,66,后部" | split: "|" %}
@@ -58,7 +91,12 @@ layout: default
         </h2>
         <div class="ax-ch-grid">
           {% for i in (lo..hi) %}
-          <a class="ax-ch" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{{ i }}/">{{ i }}</a>
+          {%- assign k = zh_root | append: i | append: '.md' -%}
+          {%- assign has_zh = false -%}
+          {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+          <a class="ax-ch{% unless has_zh %} ax-en-only{% endunless %}"
+             href="{{ site.baseurl }}/alexander/{{ page.book_id }}/{% if has_zh %}zh/{% endif %}{{ i }}/"
+             title="{% if has_zh %}中译{% else %}英文原著（中译未到）{% endif %}">{{ i }}</a>
           {% endfor %}
         </div>
       {% endfor %}
@@ -129,4 +167,19 @@ layout: default
 .ax-extra-grid a:hover { background: #faf3f1; }
 .ax-extra-cn { color: var(--ax-ink-dark); font-size: 14.5px; }
 .ax-extra-en { color: #a8938e; font-family: Georgia, serif; font-style: italic; font-size: 12.5px; }
+
+/* 只有英文的格子：压到浅色，但仍是链接——hover 时补回对比度，
+   让读者看得出它照样能点。深浅只表示「有没有中译」，不表示「能不能点」。 */
+.ax-en-only { color: #b9a9a5 !important; background: #fcfbfa; border-color: #efe6e3; }
+.ax-en-only .ax-extra-cn { color: #b9a9a5; }
+.ax-en-only .ax-extra-en { color: #cbbfbb; }
+.ax-ch.ax-en-only:hover { background: #ded0cc; color: #5f2323 !important; border-color: #d6c4bf; }
+.ax-extra-grid a.ax-en-only:hover { background: #faf7f6; }
+.ax-extra-grid a.ax-en-only:hover .ax-extra-cn { color: var(--ax-ink-dark); }
+
+.ax-legend { display: flex; gap: 18px; flex-wrap: wrap; font-size: 12.5px;
+  color: #8d7b77; margin: 4px 0 18px; }
+.ax-legend i { display: inline-block; width: 9px; height: 9px; border-radius: 2px;
+  margin-right: 6px; background: var(--ax-ink); vertical-align: middle; }
+.ax-legend i.ax-dot-en { background: #ded0cc; }
 </style>

@@ -474,9 +474,12 @@ def autopublish() -> None:
         if r.returncode != 0:
             print(f'    [autopublish] 发布失败 {r.stderr[:200]}', flush=True)
             return
+        # zh_meta.json 也必须进来：页面 date 是从它按篇查出来的，
+        # 它没入库就等于「这一篇是什么时候译完的」只活在本地工作区。
         subprocess.run(['git', 'add', 'alexander/isaiah',
                         'alexander_raw/isaiah/zh_chapters',
-                        'alexander_raw/isaiah/zh_cache'],
+                        'alexander_raw/isaiah/zh_cache',
+                        'alexander_raw/isaiah/zh_meta.json'],
                        cwd=ROOT, check=False, timeout=60)
         c = subprocess.run(['git', 'commit', '-q', '-m',
                             'feat(alexander/isaiah): 以赛亚书注释中译（自动发布）'],
