@@ -540,6 +540,13 @@ def main():
     )
     print(f'  → index.html')
 
+    # Step 8: 经文框被 PDF 行组切断的，把框外那半截收回框内。判据是框头
+    # banner 写的节号范围 vs 框里实际有的节号，幂等；每次发布都跑一遍，
+    # 否则重发一次就把修好的页面打回原形。
+    subprocess.run([sys.executable,
+                    str(ROOT / 'scripts/fix_split_scripture_box.py'),
+                    '--apply', '--sweep', str(out_dir)], check=True)
+
 
 if __name__ == '__main__':
     main()

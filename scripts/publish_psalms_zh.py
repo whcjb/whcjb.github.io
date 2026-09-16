@@ -189,6 +189,12 @@ def main():
                             '--apply', '--book', book_id,
                             '--en', str(en_dir), '--zh', str(out_dir)],
                            check=True)
+            # 另一种断法：框里少了 banner 上写的后几节（整段掉在框外）。
+            # 这种自带判据，按覆盖扫即可，中英一起。
+            subprocess.run([sys.executable,
+                            str(ROOT / 'scripts/fix_split_scripture_box.py'),
+                            '--apply', '--sweep', str(out_dir), str(en_dir)],
+                           check=True)
 
 
 if __name__ == '__main__':

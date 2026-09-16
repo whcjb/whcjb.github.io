@@ -19,6 +19,7 @@ publish_2timothy_zh.py — 将 2timothy 已翻译的中文章节发布到 calvin
 import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 SRC_DIR = Path('calvin_raw/2timothy/zh_chapters')
@@ -327,6 +328,12 @@ def main():
     print(f'  写入 {idx}', flush=True)
 
     print(f'\n✓ 发布完成 → {OUT_DIR}/ (chapters={total})')
+
+    # 经文框被 PDF 行组切断的，把框外那半截收回框内（判据：框头 banner 的
+    # 节号范围 vs 框里实际有的节号，幂等）。不在这儿跑的话，重新发布一次
+    # 就把修好的页面打回原形。
+    subprocess.run([sys.executable, 'scripts/fix_split_scripture_box.py',
+                    '--apply', '--sweep', str(OUT_DIR)], check=True)
 
 
 if __name__ == '__main__':
