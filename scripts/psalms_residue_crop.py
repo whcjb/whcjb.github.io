@@ -47,8 +47,20 @@ PDF = Path.home() / 'Documents/论文/alexander/psalms_1864_kregel.pdf'
 OFFSET = 3
 PRINTED = ROOT / 'alexander_raw/psalms/printed_as_is.txt'
 FIXES = ROOT / 'alexander_raw/psalms/manual_fixes.tsv'
-META = ROOT / 'logs/alexander_psalms_residue_crop.json'
-CROPS = ROOT / 'logs/residue_crops'
+# 两套活儿共用这套裁图 + 两遍判读的机器，只是待判清单来路不同：
+#   residue  复扫剩下的非词串（psalms_residue_witness 判不动的那批）
+#   quotes   段内引号配对不上的地方（psalms_quote_marks 判不动的那批）
+SETS = {
+    'residue': dict(meta=ROOT / 'logs/alexander_psalms_residue_crop.json',
+                    crops=ROOT / 'logs/residue_crops',
+                    log=lambda n: ROOT / f'logs/alexander_psalms_residue_round{n}.tsv'),
+    'quotes': dict(meta=ROOT / 'logs/alexander_psalms_quote_crop.json',
+                   crops=ROOT / 'logs/quote_crops',
+                   log=lambda n: ROOT / f'logs/alexander_psalms_quote_round{n}.tsv'),
+}
+SET = SETS['residue']
+META = SET['meta']
+CROPS = SET['crops']
 PAGE_RE = re.compile(r'<!-- PAGE (\d+) -->')
 
 SYSTEM = (
@@ -59,7 +71,8 @@ SYSTEM = (
     'Rules:\n'
     '1. Output exactly one line:  reading=<what is printed>\n'
     '2. Reproduce the punctuation EXACTLY — commas, periods, quotation marks, '
-    'dashes and hyphens are the whole point of this check.\n'
+    'dashes and hyphens are the whole point of this check. If a quotation mark '
+    'is NOT printed at that spot, do not supply one; if one IS printed, keep it.\n'
     '3. If the OCR string is in fact correct as printed, output  reading=OK\n'
     '4. If you cannot make it out or cannot find the spot, output  reading=?\n'
     '   Never guess, never infer from context.\n'
@@ -68,15 +81,33 @@ SYSTEM = (
 )
 
 
+WHICH = 'residue'
+
+
+def use_set(name):
+    global SET, META, CROPS, WHICH
+    WHICH, SET = name, SETS[name]
+    META, CROPS = SET['meta'], SET['crops']
+
+
 # ── 1 裁图 ────────────────────────────────────────────────────────────────
-def build():
+def build(which='residue'):
     import fitz
-    vocab = L.build()
-    asis = set()
-    if PRINTED.exists():
-        for line in PRINTED.open(encoding='utf-8'):
-            asis.update(line.split('#')[0].split())
-    items = read_spans(vocab, asis)
+    if which == 'quotes':
+        import psalms_quote_marks as Q
+        items = []
+        for it in Q.scan():
+            span = Q.span_of(it['raw'], it['toks'], it['tok'], it['at'])
+            a = min(it['toks'][it['tok']][1], it['at'])
+            items.append(dict(sec=it['sec'], raw=it['raw'], span=span,
+                              a=a, b=a + len(span)))
+    else:
+        vocab = L.build()
+        asis = set()
+        if PRINTED.exists():
+            for line in PRINTED.open(encoding='utf-8'):
+                asis.update(line.split('#')[0].split())
+        items = read_spans(vocab, asis)
     doc = fitz.open(PDF)
     CROPS.mkdir(parents=True, exist_ok=True)
     meta, miss = [], 0
@@ -158,7 +189,7 @@ def ask(png, it):
 
 def run(rnd):
     meta = json.loads(META.read_text(encoding='utf-8'))
-    out = ROOT / f'logs/alexander_psalms_residue_round{rnd}.tsv'
+    out = SET['log'](rnd)
     done = {l.split('\t')[0] for l in out.open(encoding='utf-8')} if out.exists() else set()
     total, fails = 0.0, 0
     with out.open('a', encoding='utf-8') as fh:
@@ -185,7 +216,7 @@ def run(rnd):
 
 # ── 3 落盘 ────────────────────────────────────────────────────────────────
 def load_round(rnd):
-    p = ROOT / f'logs/alexander_psalms_residue_round{rnd}.tsv'
+    p = SET['log'](rnd)
     d = {}
     if p.exists():
         for line in p.open(encoding='utf-8'):
@@ -205,6 +236,11 @@ def normalise(read, it):
     """
     if not read or read == 'OK':
         return read
+    # 影印本的排印习惯要归一，否则「照抄读数」会把我们已经统一掉的东西
+    # 又带回来：弯引号 “ ” 我们全书用直引号；`deserted ? ”` 这种标点前的
+    # 空格（19 世纪法式间距）抽取时就已经去掉了。
+    read = read.replace('\u201c', '"').replace('\u201d', '"')
+    read = re.sub(r'\s+([,.;:!?])', r'\1', read)
     if it['nxt'] in ',.;:!?)':
         read = read.rstrip(TAIL)
     if read[:1] in ('—', '–', '-', '(') and read[0] in it['prev']:
@@ -233,7 +269,13 @@ def apply_gates(apply=False):
         if read == 'OK' or read == it['span']:
             stat['印面如此'] += 1
             continue
-        if letters(read) != letters(it['span']):
+        # 引号那一套只管引号：读数与原串引号个数一样（只差空白）的不动，
+        # 免得把 `"their` 改成 `" their` 这种纯排印差异带进来
+        if WHICH == 'quotes' and read.count('"') == it['span'].count('"'):
+            stat['印面如此'] += 1
+            continue
+        gate = (lambda s: re.sub(r'[\s"\u201c\u201d]', '', s)) if WHICH == 'quotes' else letters
+        if gate(read) != gate(it['span']):
             stat['不是标点级'] += 1
             hold.append((it, a, b, '读数动到了字母，不采信'))
             continue
@@ -271,9 +313,11 @@ def main():
     ap.add_argument('--round', type=int, choices=(1, 2))
     ap.add_argument('--apply', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--set', choices=('residue', 'quotes'), default='residue')
     a = ap.parse_args()
+    use_set(a.set)
     if a.build:
-        build()
+        build(a.set)
     elif a.round:
         run(a.round)
     elif a.apply or a.dry_run:

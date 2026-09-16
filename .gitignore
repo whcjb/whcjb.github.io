@@ -69,3 +69,4 @@ alexander_raw/isaiah/en_chapters.bak/
 # 诗篇残留判读的裁图（19M，70 张）。跑 psalms_residue_crop.py --build 即可再生，
 # 判读结果本身在 logs/alexander_psalms_residue_round{1,2}.tsv 里，那才是要入库的。
 logs/residue_crops/
+logs/quote_crops/

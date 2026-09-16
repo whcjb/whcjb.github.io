@@ -73,17 +73,32 @@ SYSTEM = (
 )
 
 TOK = re.compile(r"[A-Za-z][A-Za-z'’\-]*")
+ROMAN = re.compile(r'^[ivxlcdm]+$', re.I)
 PAGE_RE = re.compile(r'<!-- PAGE (\d+) -->')
 
 
 # ── 待判清单 ──────────────────────────────────────────────────────────────
 
 def _legit_compound(w, vocab):
-    """连字复合词，两半都是真词 → 正经词（dwelling-place / burnt-offering）。"""
+    """连字复合词，两半都是真词 → 正经词（dwelling-place / burnt-offering）。
+
+    **单个字母的那一半不算真词**。判词典把 a/e/i/o/u 之流都收成词，于是
+    `u-ill`(will)、`G-od`(God)、`M-an`(Man)、`u-ay`(way)、`with-a`(with a)
+    这一整类「行末连字断在第一个字母后面」的错全被当成正经复合词放行了，
+    全书 400 个连字串里混着它们，一个也没报出来（2026-09-16 实读诗 131
+    时才撞见）。纯数字的半截不管——`ver. 1-11`、`xlvii. 8-10` 是节号范围。
+    """
     if '-' not in w:
         return False
     parts = [p for p in w.split('-') if p]
-    return len(parts) > 1 and all(L.is_word(p, vocab) or p.istitle() for p in parts)
+    if len(parts) < 2:
+        return False
+    # `Ps. xci.-c.`（诗篇 91–100）要放行，`I-on`、`M-an` 不能——I 和 M 恰好
+    # 也是罗马数字。判据是**整串都得是罗马数字**，只看单字母那一半不够。
+    all_roman = all(ROMAN.match(p.strip('.')) for p in parts)
+    if not all_roman and any(p.isalpha() and len(p) == 1 for p in parts):
+        return False
+    return all(L.is_word(p, vocab) or p.istitle() or p.isdigit() for p in parts)
 
 
 def _mask_markup(raw: str) -> str:

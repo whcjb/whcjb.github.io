@@ -84,7 +84,8 @@ def render_verse(m, book_id, chapter, num):
         inner += f' <span class="ax-veng">({g2}){g3}</span>'
     else:
         inner += g3
-    anchor = f'<span class="ax-anchor" id="{book_id}-{chapter}-{num}"></span>'
+    anchor = ('' if num is None else
+              f'<span class="ax-anchor" id="{book_id}-{chapter}-{num}"></span>')
     return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if m.group('lead') else '')
 
 
@@ -116,6 +117,15 @@ def escape_stray_lt(line):
 
 
 def transform(body, book_id, chapter, verse_re):
+    # 希伯来文的题注在希伯来编号里算第 1 节，英译不算。锚点一律取英文节号，
+    # 于是题注（只有 `1.`、没有括号里的英文号）与真正的第 1 节（`2 (1).`）
+    # 会拿到同一个 id，全书六十来篇如此：HTML 里出现重复 id，章顶 verse-nav
+    # 点「1」落到题注上，真正的第 1 节反而够不着。
+    # 判据：这一篇里只要有任何一节带括号英文号，说明两套编号是错开的，
+    # 那么开头那个光杆 `1.` 就是题注 —— 它不发锚点，只保留节号的样子。
+    dual = any(verse_re.match(l) and verse_re.match(l).group('g2')
+               for l in body.split('\n') if l.strip())
+    title_done = not dual
     out, n_anchor = [], 0
     for line in body.split('\n'):
         if not line.strip() or line.startswith('<!--'):
@@ -125,6 +135,13 @@ def transform(body, book_id, chapter, verse_re):
         if m:
             src = m.group('g2') or m.group('g1')
             num = FIRST_NUM.search(src).group(0)
+            # 题注可能占两段（诗 52、54、60 的希伯来文题注是两节），
+            # 所以「第一个带括号英文号的段」之前的光杆节号全算题注
+            if not title_done and not m.group('g2'):
+                out.append(render_verse(m, book_id, chapter, None)
+                           + escape_stray_lt(line[m.end():]))
+                continue
+            title_done = True
             out.append(render_verse(m, book_id, chapter, num)
                        + escape_stray_lt(line[m.end():]))
             n_anchor += 1
