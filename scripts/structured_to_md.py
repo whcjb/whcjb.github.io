@@ -1331,6 +1331,32 @@ def convert(structured_path: Path, out_path: Path) -> None:
                 if anchor_count >= 1 and starts_with_verse and not has_leading_italic:
                     body = apply_verse_styling(body, red=False)
                     scripture_lines.append(body)
+                    # 经文引段常被 PyMuPDF 按行组切成两块（PDF 里经文框跨了
+                    # 两个 block），第二块以小写字母续接上一句。只收第一块
+                    # 就会让经文后半截掉在框外变成普通段落——诗篇 69:1-5 的
+                    # 「of the water overfloweth me. 3. …」就这样漏在框下面
+                    # （psalms-1/-2 共 18 处）。所以：上一块句子没结束、下一
+                    # 块又是以续接形态开头的 BODY，就并进同一个框里。
+                    while i + 1 < len(lines):
+                        nxt_m = TAG_RE.match(lines[i + 1])
+                        if not nxt_m or nxt_m.group(1) != 'BODY':
+                            break
+                        nxt_content = nxt_m.group(2).strip()
+                        nxt_plain = re.sub(r'</?sty(?:\s[^>]*)?>', '', nxt_content).strip()
+                        prev_plain = re.sub(r'</?sty(?:\s[^>]*)?>', '',
+                                            scripture_lines[-1]).strip()
+                        if _is_sentence_end(prev_plain):
+                            break
+                        # 续接形态：小写开头 / 标点开头；注释段一律以 `N.` +
+                        # 斜体经文短语开头，不会命中。
+                        if not re.match(r'^[a-z,;:)\]]', nxt_plain):
+                            break
+                        # 同一句被切开 → 接回上一行（而不是当成新的一段，
+                        # flush_scripture 会把多个元素排成多段）
+                        scripture_lines[-1] = (
+                            scripture_lines[-1].rstrip() + ' '
+                            + apply_verse_styling(format_inline(nxt_content), red=False).lstrip())
+                        i += 1
                     flush_scripture()
                     i += 1
                     continue

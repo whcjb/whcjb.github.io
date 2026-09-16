@@ -10,7 +10,7 @@
 用法: python3 scripts/publish_psalms_zh.py            # 发布所有已翻译
       python3 scripts/publish_psalms_zh.py 1 3        # 只发布指定篇号
 """
-import json, re, sys, datetime
+import json, re, sys, datetime, subprocess
 from pathlib import Path
 
 ROOT = Path('/Users/yanpeifa/Documents/whcjb.github.io')
@@ -53,6 +53,15 @@ def restore_footnotes(b, zh_defs):
     避免误伤 phil/heb/john 等书的 [^fN] 引用。
     """
     used = []
+
+    # 同一条脚注既有真引用又有红色死标记的，别转成两个引用：ch17/18/72-75 的
+    # raw 里是 `[^fc247]<span style="color:#800000">fc247</span>`（锚点脚本插了
+    # 引用，翻译时带过来的死标记还在原地），照转会渲染成挤在一起的两个上标
+    # `fc247fc247`，底部也多一条重复定义。先把成对的死标记删掉。
+    b = re.sub(r'(\[\^(f[a-e]\d+[A-Za-z]?)\])\s*'
+               r'<span style="color:#800000">\s*\2\s*</span>', r'\1', b)
+    b = re.sub(r'<span style="color:#800000">\s*(f[a-e]\d+[A-Za-z]?)\s*</span>\s*'
+               r'(\[\^\1\])', r'\2', b)
 
     def repl(m):
         code = m.group(1)
@@ -170,6 +179,16 @@ def main():
             print(f'  {book_id} index.html 已写；该卷已译篇: {nums}')
         else:
             print(f'  {book_id} 暂无译章, 跳过 index(主页显示为 pending)')
+        # 经文框被 PDF 行组切成两截的那些章：框外那半截接回框里。raw 里是坏的
+        # （zh_chapters 只读，也不该为版式动翻译产物），所以每次发布都要补一遍，
+        # 否则重发一次就把修好的页面又打回原形。
+        en_dir = ROOT / f'calvin/{book_id}-en'
+        if nums and en_dir.exists():
+            subprocess.run([sys.executable,
+                            str(ROOT / 'scripts/fix_split_scripture_box.py'),
+                            '--apply', '--book', book_id,
+                            '--en', str(en_dir), '--zh', str(out_dir)],
+                           check=True)
 
 
 if __name__ == '__main__':
