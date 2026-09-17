@@ -5,7 +5,7 @@
 4	7more	more than the time,	pass2
 5	c/we	give ear	pass2
 5	2G	26	pass2
-5	be/ore	before	pass2
+5	be/ore	before	SKIP-定位不唯一
 6	xx^	xxxi.	pass2
 8	ver^e	verse	pass3
 8	fi:om	from	pass2
@@ -61,9 +61,9 @@
 18	T\	חָסִיד	pass2
 18	DrT	חָסִיד	pass2
 18	hnng	bring down.	pass2
-18	The/or	The for,	pass2
-18	/or	for	pass2
-18	The/or	The for	pass2
+18	The/or	The for,	SKIP-定位不唯一
+18	/or	for	SKIP-定位不唯一
+18	The/or	The for	SKIP-定位不唯一
 18	31aking	Making	pass2
 18	3My	My	pass2
 18	w«	was	pass2
@@ -80,7 +80,7 @@
 19	d'C	&c.	pass2
 20	^^T^i	אַזְכָּרָה	pass2
 20	73li	נִדְגֹּל	pass2
-20	translated/row	translated from	pass2
+20	translated/row	translated from	SKIP-定位不唯一
 21	^viii	xviii	pass2
 21	yinrf	find	witness
 21	iky	thy	witness
@@ -101,7 +101,7 @@
 22	y^^D^	(אֲסַפְּרָה)	pass2
 23	futm-e	future	pass2
 23	merelyybr	merely *for*	pass2
-23	be/ore	before	pass2
+23	be/ore	before	SKIP-定位不唯一
 23	literally/aiienec^	literally *fattened*	pass2
 24	C^y	עַל	pass2
 24	2%e	The	pass2
@@ -125,7 +125,7 @@
 27	Iioill	I will	pass2
 27	Mij	My	witness
 27	^catchers	watchers	pass2
-27	/or	for	pass2
+27	/or	for	SKIP-定位不唯一
 27	yoXl	יַאֲמֵץ	pass3
 29	7NI	אֵל	pass2
 29	xmll	will	witness
@@ -133,14 +133,14 @@
 29	oiJy	only	witness
 29	7l2Dn	הַמַּבּוּל	pass2
 29	gi-ound	ground	pass2
-30	Wc«	rejoice	pass2
+30	Wc«	rejoice	SKIP-定位不唯一
 30	Ms	his	witness
 30	th^	the	pass2
 31	rdii	xxiii.	witness
 31	xms	was	witness
 31	^^&lt	מְאֹד	pass2
 32	fij-st	first	pass2
-32	mean/or	mean *for*	pass2
+32	mean/or	mean *for*	SKIP-定位不唯一
 32	u^wn	upon	pass2
 32	y?''^b^^&lt	אַשְׂכִּילְךָ	pass2
 32	'Sb^	מַשְׂכִּיל	pass2
@@ -163,7 +163,7 @@
 35	Dy^T	נְכֵה	pass2+heb-swap
 35	HD^	רַגְלַיִם	pass2+heb-swap
 35	sowZ	soul	witness
-35	The/or	The for	pass2
+35	The/or	The for	SKIP-定位不唯一
 35	nKH	הֶאָח	pass2
 36	TtitX\	יְהוָֹה	pass2
 36	DW	נְאֻם	pass2
@@ -181,7 +181,7 @@
 37	hj	by	witness
 38	oy/n	own	pass2
 38	/«r	far off	pass2
-38	phrase/rom	phrase from	pass2
+38	phrase/rom	phrase from	SKIP-定位不唯一
 38	ivait	wait	pass2
 38	v:hose	whose	pass2
 39	yny	my	witness
@@ -203,7 +203,7 @@
 40	t\jayytki'	εὐαγγελί	pass2
 40	^o	ζο	pass2
 40	iai	μαι,	pass2
-40	/or	for	pass2
+40	/or	for	SKIP-定位不唯一
 40	^p^	עֵקֶב	pass2
 40	ine	me,	witness
 41	4-9j	(4-9).	pass2
@@ -220,9 +220,9 @@
 43	2plead	plead	pass2
 43	D^iil	גוים	pass2
 43	th^	the	pass2
-44	The/or	The *for*	pass2
+44	The/or	The *for*	SKIP-定位不唯一
 44	\i	vi.	pass2
-44	The/or	The for	pass2
+44	The/or	The for	SKIP-定位不唯一
 44	u'e	we	witness
 44	th^u	thou	pass3
 45	soiuj	song	witness
@@ -247,7 +247,7 @@
 48	o£	of	pass2
 48	chm-ch	church	pass2
 48	a§	as	pass2
-48	The/or	The for	pass2
+48	The/or	The for	SKIP-定位不唯一
 48	Ht	זֶה	pass2
 49	>are	compare	pass2
 49	^ere	here	pass2
@@ -255,9 +255,9 @@
 49	gi-oss	gross	pass2
 49	yh''	ילין	pass2
 49	re/ram	refrain	pass2
-50	/rom	from	pass2
+50	/rom	from	SKIP-定位不唯一
 50	^ical	typical	pass2
-50	/or	for	pass2
+50	/or	for	SKIP-定位不唯一
 50	^ii	נָא	pass2
 50	fiom	from	pass2
 51	ordy	only	witness
@@ -294,7 +294,7 @@
 57	&s	as	pass2
 58	D7^^	אֵלֶם	pass2
 58	D7D	פֶּלֶס	pass2
-58	literally/row	literally *from*	pass2
+58	literally/row	literally *from*	SKIP-定位不唯一
 58	^m&lt	θυμός	pass2
 58	agi-ees	agrees	pass2
 58	emphatically^sf	emphatically *just*	pass2
@@ -306,17 +306,17 @@
 59	tmto	unto	witness
 59	M^^	עֻזִּי	pass2
 59	VTp	עֻזּוֹ	pass2
-59	/rom	from	pass2
+59	/rom	from	SKIP-定位不唯一
 60	ti-ibutary	tributary	pass2
 60	iis	us	witness
 60	TJiov	Thou	witness
 60	7ne	me	pass2
-60	/or	for	pass2
+60	/or	for	SKIP-定位不唯一
 60	^S	צר	pass2
 61	^TO	לְדָוִד	pass2
 61	J13^J^	נְגִינַת	pass2
-61	/ro?7i	from	pass2
-61	Ood	God	pass2
+61	/ro?7i	from	SKIP-定位不唯一
+61	Ood	God	SKIP-定位不唯一
 61	fo7-	for	pass2
 62	C?|l&lt	אַךְ	pass2
 62	C^TJ^	זו	pass2+heb-swap
@@ -325,7 +325,7 @@
 62	^T	אַךְ	pass2+heb-swap
 62	Da^dd	David	pass2
 63	vvj	my	witness
-63	/or	for	pass2
+63	/or	for	SKIP-定位不唯一
 63	xxx^i	xxxvi.	pass2
 63	tJwc	thee	witness
 64	sec7-et	secret	pass2
@@ -345,7 +345,7 @@
 66	Bni	(But)	witness
 68	HD^	קוּמָה	pass2
 68	D'lpl	יָקוּם	pass2
-68	/or	for	pass3
+68	/or	for	SKIP-定位不唯一
 68	Mai	Mal.	pass2
 68	orafilicted	or afflicted	pass2
 68	nj	upon	witness
@@ -381,7 +381,7 @@
 74	ha^t	hast	pass2
 74	v.rath	wrath	pass2
 74	pei^former	performer	pass2
-74	the/or	the for	pass2
+74	the/or	the for	SKIP-定位不唯一
 74	3Mount	Mount	pass2
 74	vvdth	with	witness
 74	«ograg	ἑορτάς	pass2
@@ -413,11 +413,11 @@
 78	Ayid	And	pass2
 78	w&s	(was)	pass2
 78	Enck	Rock	witness
-78	xed	fixed	pass2
+78	xed	fixed	SKIP-定位不唯一
 78	futm-e	future	pass2
 78	woi-d	word	pass2
 78	mea	means	pass2
-78	ns	means	SKIP-定位不唯一
+78	ns	means	pass2
 78	Er/ypt	Egypt	pass2
 78	2'hey	They	pass2
 78	he^rt	heart	pass2
@@ -439,11 +439,11 @@
 83	/s	(is)	pass2
 83	t.hoii	thou	pass2
 84	streng^	strength	pass2
-84	The/or	The *for*	pass2
+84	The/or	The *for*	SKIP-定位不唯一
 86	toioards	towards	pass2
 86	hang	lying	witness
 87	pm^ose	purpose	pass2
-88	be/ore	before thee.	pass3
+88	be/ore	before thee.	SKIP-定位不唯一
 88	lxxx^i	lxxxvi.	pass2
 88	evei-y	every	pass2
 88	TIio	The	witness
@@ -465,9 +465,9 @@
 91	7l«^	אֵל	pass2
 92	2'his	This,	pass2
 92	ma/t/ac^ors	malefactors	pass2
-93	literally/rom	from	pass3
-93	literally/rom	from,	pass3
-94	of/or	of *for*	pass2
+93	literally/rom	from	SKIP-定位不唯一
+93	literally/rom	from,	SKIP-定位不唯一
+94	of/or	of *for*	SKIP-定位不唯一
 94	V/ith	*With,*	pass2
 95	bdi	lxii	witness
 95	x\'ii	xvii	pass2
@@ -477,7 +477,7 @@
 96	expression/am&lt	expression families	pass2
 96	7/>s	families	pass2
 96	di\nne	divine	pass2
-96	literally/rowi	literally from	pass2
+96	literally/rowi	literally from	SKIP-定位不唯一
 97	xl\'ii	xlvii	pass2
 97	x\'iii	xviii	pass2
 97	xcri	xcvi	pass2
@@ -485,7 +485,7 @@
 98	^tolD	מִזְמוֹר	pass2
 98	10T	זמר	pass2
 98	TIDTD-	מזמור.	pass2
-98	'ful	joyful	pass2
+98	'ful	joyful	SKIP-定位不唯一
 98	case^	cases,	pass2
 99	2'Thou	Thou	pass2
 99	Ms	his	witness
@@ -505,9 +505,9 @@
 104	th€	the	pass2
 104	IG	16)	pass2
 104	withdraioest	withdrawest	pass2
-105	expected/rowi	expected from	pass2
+105	expected/rowi	expected from	SKIP-定位不唯一
 105	\n	in	pass2
-105	he/ore	before	pass2
+105	he/ore	before	SKIP-定位不唯一
 105	v^rb	verb	pass2
 105	Gr3n	Gen	pass2
 105	a^airs	affairs	pass2
@@ -526,10 +526,10 @@
 107	/M	אֶל	pass2
 107	Ivii	lvii	pass2
 107	th^y	they	pass2
-107	literally/rom	literally *from,*	pass2
-108	Ood	God	pass2
+107	literally/rom	literally *from,*	SKIP-定位不唯一
+108	Ood	God	SKIP-定位不唯一
 108	gloi~y	glory	pass3
-108	xicill	will	pass2
+108	xicill	will	SKIP-定位不唯一
 108	FW	For	witness
 108	great/win	great from	pass2
 108	Tfy	עַד	pass2
@@ -540,8 +540,8 @@
 109	Je	be	pass2
 109	Jbr	for	witness
 109	ivtaxoirriv	ἐπισκοπήν	pass2
-109	/rom	from	pass2
-109	Be/ore	Before	pass2
+109	/rom	from	SKIP-定位不唯一
+109	Be/ore	Before	SKIP-定位不唯一
 109	ujwn	(upon)	witness
 110	HISD	מַטֵּה	pass2
 110	ZOD^	שֵׁבֶט	pass2
@@ -553,7 +553,7 @@
 111	rerrhemher	remember	pass2
 111	Mai	Mal	pass2
 111	aflEinns	affirms	witness
-112	The/or	The for	pass2
+112	The/or	The for	SKIP-定位不唯一
 113	2'he	The	pass2
 113	Cn\	עֲקֶרֶת	pass2
 113	|p^	עֲקֶרֶת	pass2
@@ -578,7 +578,7 @@
 118	eter	eternity	pass2
 118	uty	eternity	pass2
 118	S3	נָא	pass2
-118	of/or	of for	pass2
+118	of/or	of for	SKIP-定位不唯一
 118	Il	It	witness
 118	D^il	גוֹיִם	pass2
 118	Kestoration	Restoration	pass2
@@ -598,7 +598,7 @@
 119	77ie	The	pass2
 119	C^TjT	(דֶּרֶךְ)	pass2
 119	Q?^	(דָּבַק)	pass2
-119	rendered/or	rendered *for*	pass2
+119	rendered/or	rendered *for*	SKIP-定位不唯一
 119	l^yn	הַעֲבֵר	pass2
 119	A?id	And	pass2
 119	tmto	unto	witness
@@ -641,8 +641,8 @@
 119	iSl	131	pass2
 120	DibyD	מַעֲלוֹת	pass2
 120	m&j	may	pass2
-120	/or	for	pass2
-120	only/or	only for	pass2
+120	/or	for	SKIP-定位不唯一
+120	only/or	only for	SKIP-定位不唯一
 121	^KD	מֵאַיִן	pass2
 123	iny	my	witness
 123	sei-wants	servants	pass2
@@ -661,11 +661,11 @@
 130	^i'^^i	אֲדֹנָי	pass2
 130	iVf^li	שָׁמַע	pass2
 130	Mai	Mal.	pass2
-130	The/or	The for	pass2
-130	wait/or	wait for	pass2
+130	The/or	The for	SKIP-定位不唯一
+130	wait/or	wait for	SKIP-定位不唯一
 130	JHy	My	witness
 130	31y	My	pass2
-130	/or	for	pass2
+130	/or	for	SKIP-定位不唯一
 132	^^T	זכר	pass3
 132	c\'i	cvi	pass2
 132	ni-JS	עֻנּוֹת	pass2
@@ -694,14 +694,14 @@
 137	i/1	if I	pass3
 137	o/Edom	of Edom	pass2
 137	The-	The last	pass2
-138	of/or	of *for*	pass2
+138	of/or	of *for*	SKIP-定位不唯一
 138	ilxe	the	witness
 139	cio	go	witness
 139	Jfl	If I	pass2
 139	rai^e	raise	pass2
 139	IG	16	pass2
 139	G-8	6–8	pass2
-139	literally/row	literally from	pass2
+139	literally/row	literally from	SKIP-定位不唯一
 139	X^S	פלא	pass2
 139	Itt^hJ	אֲשֶׁר	pass2
 139	x\i	xvi.	pass2
@@ -717,7 +717,7 @@
 141	HD^-	בְּכָה	pass2
 141	otm	own	witness
 142	uoy	way	witness
-143	the/or	the for	pass2
+143	the/or	the for	SKIP-定位不唯一
 143	m^^	my	pass2
 144	translated/ra«cZ	translated *fraud*	pass2
 144	heum	hewn	witness
@@ -739,7 +739,7 @@
 146	7N	אֵל	pass2
 146	nj^S	פָּקַח	pass2
 147	Ijy	by	witness
-147	/or	for	pass2
+147	/or	for	SKIP-定位不唯一
 147	t/tee	thee	pass2
 148	Ixviii	lxviii	pass2
 148	^oi	Not	pass2
