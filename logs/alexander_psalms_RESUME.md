@@ -144,3 +144,40 @@ python3 scripts/psalms_double_punct.py       # 应报「可疑双标点 0 处」
 剩下的活儿是**中译 11–150**（140 篇）。英文改过的篇若涉及 1–10，
 `translate_alexander_psalms.py --resume` 会自己重译受影响的段；
 本轮改到的篇里 **8、10 在 1–10 之内**，开中译前先 `--resume` 跑一遍。
+
+---
+
+## 六、2026-09-17 暂停点（整页比对做到一半）
+
+### 停在哪
+- **第一遍跑完**：558 页全判，$34.70，报了 1441 处 → `logs/alexander_psalms_page_round1.tsv`
+- **第二遍跑到 270/475 页**（$17.40）就按要求停了 → `logs/alexander_psalms_page_round2.tsv`
+  续跑：`python3 scripts/psalms_page_proofread.py --round 2 --only-hits`（会跳过已判的页）
+- 两遍都跑完之后：`python3 scripts/psalms_page_proofread.py --report` 出待落清单，
+  `--report --apply-fixes` 把「能在 raw 里唯一定位 + 改动够小 + 改完是真词」的直接落进
+  `en_chapters`，其余进 `logs/alexander_psalms_page_manual.tsv` 等人看。
+  **落完必须跑一遍 `chain_alexander_psalms.sh`**，再核幂等。
+
+### 这一轮已经落地的（都已提交推送）
+| 类 | 处数 | 查法 |
+|---|---|---|
+| 节号被读错（`3.`→`8.`、`31.`→`81.`；英文与希伯来两套） | 48 | 锚点序列单调性，已并进 `psalms_backlog.py` |
+| 呼格 O 读成数字 0 | 207 | repair 的 PRE 规则 |
+| 大写 I 读成数字 1 | 61 | 同上，要排除经卷号 `1 Sam.` |
+| `/` 是 f 或大写 I | 140 | 同上 |
+| 真词错（`hut`→`but`、`hone`→`bone`…） | 61 | `psalms_realword_witness.py`（证人 + 语料二元组闸） |
+| `}` 是 y（`bod}"`=body） | 19 | repair 的 PRE，y/u 都试、落词典才算 |
+| 词尾多余撇号、`j'`=y | 29 | repair 的 PRE |
+| 句末 `!` 读成 I/1/l | 33 | 全书扫，排除经卷号/代词/希伯来音译 |
+| 引号配对不上 | 42 | `psalms_quote_marks.py` + 裁图两遍 |
+
+### 还没做的
+1. **第二遍剩 205 页**（约 $13、1 小时）
+2. 第一遍那 1441 处里，两遍都报的才算数；目前中间统计约可落 98 处、要人看 53 处
+3. `logs/alexander_psalms_page_manual.tsv` 要人逐条看（模型抄引文会抄短、会打错字，
+   已有三道闸拦掉大半，剩下的得看影像）
+4. **整页覆盖率自查已做**：我们的字数 / PDF 文本层字数，全书合计 1.011，
+   五页滑窗最低 0.85——没有整段漏抽。单页比值低的（如书页 121 的 0.24）都是
+   `<!-- PAGE n -->` 标记差一段，相邻页会补回来，不是丢内容
+5. 斜体括号（1350 处，原书补词是正体）这个取舍仍未定
+6. 诗 69:22 三个希伯来派生词仍判不出
