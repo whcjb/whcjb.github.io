@@ -19,7 +19,7 @@ for f in sorted(pathlib.Path('davenant/colossians').rglob('*.md')):
     m = []
     if refs - defs: m.append(f'引用无定义 {len(refs-defs)}')
     if defs - refs: m.append(f'定义无引用 {len(defs-refs)}')
-    for tag in ('div', 'span', 'em', 'p'):
+    for tag in ('div', 'span', 'em', 'p', 'ul', 'ol', 'li'):
         if t.count(f'<{tag}') != t.count(f'</{tag}>'): m.append(f'<{tag}> 不配对')
     if '' in t or '' in t: m.append('私用码残留')
     ids = re.findall(r'id="([^"]+)"', t)
@@ -27,6 +27,9 @@ for f in sorted(pathlib.Path('davenant/colossians').rglob('*.md')):
     if m: print(f'  {f}: {m}'); bad += 1
 print(f'结构有问题的页面：{bad}')
 PY
+echo
+echo "══════ (4b) 花括号分析表 ══════"
+python3 scripts/qa_davenant_brace.py
 echo
 echo "══════ ⑤ 已识别错误类的残留普查 ══════"
 python3 - <<'PY'

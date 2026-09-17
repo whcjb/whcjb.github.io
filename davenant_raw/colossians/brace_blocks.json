@@ -1,0 +1,64 @@
+{
+ "_": "原书用花括号排的分析表，OCR 按基线读，把右栏各支拆成一行一段，还把左栏标签切进右栏文字中间（v2p246 的「What is to be sought?」就夹在第二支中间）。全书这一类落在四章正文里的只有 4 处，不值得为它写几何解析器——按 600 dpi 页面影像逐张手工重建，与 manual_votes 一样按位置定位。",
+ "__": "键是 卷|扫描页号；match 是被替换掉的连续 [BODY] 段原文（抽取时逐条核对，对不上直接报错）；html 是重建出来的块，publish 原样输出不再过 markdown 转义。",
+ "2|246": {
+  "match": [
+   "( The faculty, liberty, efficacy of",
+   "preaching ; A door of utter-",
+   "ance.",
+   "The use or exercise of this fa-",
+   "What is to besought? 4 culty; To speak the mystery",
+   "of Christ, &c.",
+   "The proper manner of exercis-",
+   "ing the same; as I ought to",
+   "(- speak."
+  ],
+  "html": "<div class=\"dv-brace\">\n<p class=\"dv-brace-label\">What is to be sought?</p>\n<ul class=\"dv-brace-list\">\n<li>The faculty, liberty, efficacy of preaching ; <em>A door of utterance.</em></li>\n<li>The use or exercise of this faculty ; <em>To speak the mystery of Christ,</em> &c.</li>\n<li>The proper manner of exercising the same ; <em>as I ought to speak.</em></li>\n</ul>\n</div>"
+ },
+ "2|275": {
+  "match": [
+   "1. The persons sent; namely, Tychicus, and Onesimus.",
+   "( 1. To make the affairs of Paul",
+   "known to the Colossians.",
+   "2. The causes of the 2, To know and look into the",
+   "mission ; affairs of the Colossians.",
+   "3. To comfort the hearts of the",
+   "Colossians.",
+   "3. The commendations of the Missionaries :",
+   "Of Tychicus; which are opened in the 7th",
+   "verse,",
+   "Of Onesimus; which are opened in the 9th",
+   "verse."
+  ],
+  "html": "<div class=\"dv-brace\">\n<ol class=\"dv-brace-outline\">\n<li>The persons sent ; namely, Tychicus, and Onesimus.</li>\n<li>The causes of the mission ;\n<ol class=\"dv-brace-list\">\n<li>To make the affairs of Paul known to the Colossians.</li>\n<li>To know and look into the affairs of the Colossians.</li>\n<li>To comfort the hearts of the Colossians.</li>\n</ol>\n</li>\n<li>The commendations of the Missionaries :\n<ul class=\"dv-brace-list\">\n<li>Of Tychicus ; which are opened in the 7th verse,</li>\n<li>Of Onesimus ; which are opened in the 9th verse.</li>\n</ul>\n</li>\n</ol>\n</div>"
+ },
+ "2|292": {
+  "match": [
+   "From their nation ; because they",
+   "( were Jews.",
+   "Now —— are 2 From their work ; and that of a",
+   "mensi twofold kind, \\ Deme",
+   "comforting."
+  ],
+  "html": "<div class=\"dv-brace\">\n<p class=\"dv-brace-label\">Now these three are extolled,</p>\n<ul class=\"dv-brace-list\">\n<li>From their nation ; because they were Jews.</li>\n<li>From their work ; and that of a twofold kind,\n<ul class=\"dv-brace-list\"><li>preaching,</li><li>comforting.</li></ul>\n</li>\n</ul>\n</div>"
+ },
+ "2|296": {
+  "match": [
+   "From being their countryman;",
+   "one of you.",
+   "He is commended to J From his eminent office ; a servant",
+   "them in a threefold of Christ.",
+   "manner : From his sincere love towards",
+   "them ; always labouring fervent’y",
+   "for you, &c."
+  ],
+  "html": "<div class=\"dv-brace\">\n<p class=\"dv-brace-label\">He is commended to them in a threefold manner :</p>\n<ul class=\"dv-brace-list\">\n<li>From being their countryman ; <em>one of you.</em></li>\n<li>From his eminent office ; <em>a servant of Christ.</em></li>\n<li>From his sincere love towards them ; <em>always labouring fervently for you,</em> &c.</li>\n</ul>\n</div>"
+ },
+ "2|228": {
+  "match": [
+   "From the fact, that even masters are subject",
+   "to rule."
+  ],
+  "html": "<p class=\"dv-synopsis\">From the fact, that even masters are subject to rule.</p>"
+ }
+}

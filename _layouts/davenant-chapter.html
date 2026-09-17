@@ -134,6 +134,26 @@ layout: default
 .dv-scripture-ref { font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
   color: var(--dv-ink-dark); font-weight: bold; }
 
+/* 花括号分析表：原书用一个大 `{` 把一个标签分成几支排版（歌 4:3 的
+   「What is to be sought?」是标本）。OCR 按基线读会把三支拍平成一行一段、
+   标签还切进右栏中间，所以这几处是按页面影像重建的（brace_blocks.json）。
+   这里不去画真的花括号——窄屏上撑不住；改成「标签 + 左侧竖线的分支列表」，
+   语义一样，手机上也读得通。 */
+.dv-brace { margin: 18px 0 20px; }
+.dv-brace-label { margin: 0 0 6px; font-weight: bold; color: var(--dv-ink-dark);
+  text-indent: 0; }
+.dv-brace-list, .dv-brace-outline { margin: 0 0 0 4px; padding: 0 0 0 18px;
+  border-left: 2px solid #d8d2be; }
+.dv-brace-outline { border-left: none; padding-left: 22px; }
+.dv-brace-list > li, .dv-brace-outline > li { margin: 4px 0; text-indent: 0; }
+.dv-brace-list { list-style: none; }
+.dv-brace-list > li::before { content: "—"; color: #b3a988; margin-right: .5em; }
+.dv-brace-outline { list-style: decimal; }
+.dv-brace-outline .dv-brace-list { margin-top: 4px; border-left: 2px solid #e3ddca; }
+.dv-brace-outline ol.dv-brace-list { list-style: decimal; padding-left: 24px; }
+.dv-brace-outline ol.dv-brace-list > li::before { content: none; }
+.dv-synopsis { text-align: center; text-indent: 0; margin: 10px 0; }
+
 /* 节号锚点：跳转时避开 fixed navbar */
 .dv-anchor { position: relative; top: -80px; display: block; height: 0; }
 

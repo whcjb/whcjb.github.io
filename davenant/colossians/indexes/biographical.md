@@ -80,7 +80,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx">Durandus … 38</p>
 <p class="dv-idx-letter">E</p>
 <p class="dv-idx">Ebionites … 410</p>
-<p class="dv-idx">CEcumenius T 154</p>
+<p class="dv-idx">Œcumenius T 154</p>
 <p class="dv-idx">Epicureans … 139</p>
 <p class="dv-idx">Epiphanius …<span class="dv-idx-b">92</span></p>
 <p class="dv-idx">Erasmus ... "T 87</p>
@@ -143,7 +143,7 @@ next_label: "Index of Subjects and Works in the Notes"
 <p class="dv-idx-letter">N</p>
 <p class="dv-idx">Nazianzen, Gregory... 128<span class="dv-idx-b">|</span></p>
 <p class="dv-idx">Nicephorus ... 200 3 oO.</p>
-<p class="dv-idx">CEcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
+<p class="dv-idx">Œcumenius... 2 … || Origen …<span class="dv-idx-b">18</span></p>
 <p class="dv-idx-caption">P. Vol. I.</p>
 <p class="dv-idx">Pareus …<span class="dv-idx-b">355</span></p>
 <p class="dv-idx">Parisiensis (William Bp. of Auverne) … 21</p>

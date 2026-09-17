@@ -569,7 +569,7 @@
 [E] <!--v2p600-->Durandus … 38
 [LETTER] E
 [E] <!--v2p600-->Ebionites … 410
-[E] <!--v2p600-->CEcumenius T 154
+[E] <!--v2p600-->Œcumenius T 154
 [E] <!--v2p600-->Epicureans … 139
 [E] <!--v2p600-->Epiphanius …¦92
 [E] <!--v2p600-->Erasmus ... "T 87
@@ -632,7 +632,7 @@
 [LETTER] N
 [E] <!--v2p600-->Nazianzen, Gregory... 128¦|
 [E] <!--v2p600-->Nicephorus ... 200 3 oO.
-[E] <!--v2p600-->CEcumenius... 2 … || Origen …¦18
+[E] <!--v2p600-->Œcumenius... 2 … || Origen …¦18
 [CAPTION] P. Vol. I.
 [E] <!--v2p601-->Pareus …¦355
 [E] <!--v2p601-->Parisiensis (William Bp. of Auverne) … 21
