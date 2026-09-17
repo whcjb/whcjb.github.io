@@ -29,6 +29,13 @@ HEADER_POOL = 'bridges-bg-{:02d}.jpg'
 
 
 def header_img(key):
+    """已发布过的章节沿用原配图——同 date，手工换过的图不能被重跑刷回默认分配
+    （第 8、20 章就是手工换过的）。"""
+    p = OUT / f'{key}.md'
+    if p.exists():
+        for line in p.read_text(encoding='utf-8').split('\n', 30):
+            if line.startswith('header-img:'):
+                return line.split(':', 1)[1].strip()
     order = seq()                      # ['preface', '1'..'31', 'summary']
     idx = order.index(key) + 2 if key in order else 1
     return HEADER_POOL.format(idx)
