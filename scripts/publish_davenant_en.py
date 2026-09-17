@@ -17,6 +17,7 @@
 
 用法: python3 scripts/publish_davenant_en.py
 """
+import collections
 import difflib
 import json
 import re
@@ -36,20 +37,6 @@ ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV'}
 # p422→337、vol2 p14→5 / p150→141 / p223→214 全对得上）。脚注标签给读者看的
 # 得是书上的页码，扫描序号对读者没意义。
 PRINTED = {1: -85, 2: -9}
-
-# 跨页续注是否并回上一条。见 collect_notes 的说明——开之前先看那段。
-#
-# 2026-09-17 实测：这个开关**不能就这么开**。用户已同意「连中译一起重跑」，
-# 于是真开了一轮量过，数据反过来说明合并判据本身是坏的：
-#   · 不合并 247 条注 / 正文里的脚注符 239 个 → 顶多容得下 8 条「没有符号的
-#     续注」，而以小写起首的注有 48 条。也就是说那 48 条里绝大多数**自己是
-#     有符号的独立注**，不是上一条的下半截。
-#   · 真开了合并：注 247 → 178，以小写起首的 48 → 14，代价是正文里多出 34 个
-#     配不上的字面星号（58 → 92）——正好一比一，合并掉一条就孤立一个符号。
-#   · 放宽成「同页续行也并」（p == cur_last）更糟：注掉到 132，字面星号再多 39。
-# 结论：要治的是**注的切分**（正文符号数才是每页该有几条注的物理判据），
-# 不是在合并判据上调参。先按 247 条这一路发布，中译也照这个编号走。
-MERGE_CROSS_PAGE = False
 
 FN_MARK_START = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+')
 # 正文里的脚注引用：`Jerome,*` / `laudibus.+` / 孤立的 ` * `
@@ -78,65 +65,98 @@ def parse():
     return items
 
 
-def collect_notes(items):
-    """→ {(vol, page): [note_text, …]}，多段的注合并为一条。
+SENT_END = re.compile(r'[.!?][”"’\')\]]?\s*$')
+NOTE_HEAD = re.compile(r'^\s*[“‘"(]?[A-Z]')
 
-    ⚠️ 一条注**跨页**时也要合。Allport 的传记体长注常连着两三页，续页的注区
-    顶上没有脚注符。原来只在同一页内合并，续页一律另起一条：全书 277 条注里
-    有 60 条其实是上一条的下半截，读者看到的是一条从半句话开始、单独编号的注
-    （`[^dv121]: tle; for Gregory was remarkable for his earnestness…`），
-    而正文里那个符号指向的是被砍掉一半的上半条。
-    判据：本条不以脚注符起首，且页号正好是上一条的下一页（同卷）——这正是
-    「注区溢到下一页」的物理形态。跨页处用连字规则接，断词不留空格。
 
-    ⚠️ **默认关**（MERGE_CROSS_PAGE = False），要和中译一起开。合并会让脚注
-    总数从 277 掉到 240，正文里的 `[^dvN]` 全部重排号；而中译的缓存是按
-    「送模型的那段英文原文」做 md5 的，段落里带着这些编号，重排一次
-    **431 段**直接缓存落空要重译（实测 ch1 261 段 / ch2 77 / ch3 86 / ch4 7），
-    已发布的中文页脚注编号也会与英文页对不上。歌罗西书注释的中译正在进行中
-    （1–3 章已发布、第 4 章未译），这一刀要等中译重跑那一轮再一起下。
-    附卷（publish_davenant_appx.py）没有这个包袱，那边默认就是合并的。
+def ref_budget(items):
+    """→ {(vol, page): 该页正文里的脚注符个数}。
+
+    这是「这一页该有几条注」的**物理判据**。原书每条注在正文里都留着一个
+    `*` / `†` / `‡`，数符号就知道注的条数——比在注区那边猜切分可靠得多。
+    归到 `pages[0]`，与 attach_notes 里 `sub()` 取注的次序一致。
     """
-    if not MERGE_CROSS_PAGE:
-        notes, cur, cur_p = {}, None, None
-        for it in items:
-            if it['tag'] != 'FN':
-                continue
-            p = it['pages'][0] if it['pages'] else cur_p
-            if FN_MARK_START.match(it['text']) or cur is None or p != cur_p:
-                if cur is not None:
-                    notes.setdefault(cur_p, []).append(cur)
-                cur, cur_p = it['text'], p
-            else:
-                cur += ' ' + it['text']
-        if cur is not None:
-            notes.setdefault(cur_p, []).append(cur)
-        return notes
+    need = collections.Counter()
+    for it in items:
+        if it['tag'] in ('BODY', 'LEMMA') and it['pages']:
+            need[it['pages'][0]] += len(REF_RE.findall(it['text']))
+    return need
 
-    notes, cur, cur_p, cur_last = {}, None, None, None
+
+def _split_zone(texts, budget):
+    """把一页注区的若干条 [FN] 拆成 budget 条注。
+
+    抽取那边一条注常被拆成好几条 [FN]（长注按行走），而一页上有几条注、
+    界在哪里，光看注区本身认不出来：原书的脚注符 `*` `†` 有一多半被 OCR
+    吃了或粘进了词里（v1p99 实测 4 条注只认出 1 个符号）。
+    所以这里**不猜条数**，条数由正文符号数给定（budget），只排候选界：
+      · 行首带脚注符           —— 最可信
+      · 首字母大写 + 上一条以句末标点收尾 —— 次之
+    按可信度取前 budget-1 个界。取不满就少切几条，宁可并着也不乱切。
+    """
+    cand = []
+    for i in range(1, len(texts)):
+        if FN_MARK_START.match(texts[i]):
+            cand.append((3, i))
+        elif NOTE_HEAD.match(texts[i]) and SENT_END.search(texts[i - 1]):
+            cand.append((1, i))
+    cand.sort(key=lambda x: (-x[0], x[1]))
+    cut = sorted(i for _, i in cand[:max(0, budget - 1)])
+    out, cur = [], texts[0]
+    for i in range(1, len(texts)):
+        if i in cut:
+            out.append(cur)
+            cur = texts[i]
+        else:
+            cur = (cur[:-1] + texts[i].lstrip() if cur.rstrip().endswith('-')
+                   else cur + ' ' + texts[i])
+    out.append(cur)
+    return out
+
+
+def collect_notes(items):
+    """→ {(vol, page): [note_text, …]}。
+
+    两步：先按**正文符号数**把每页的注区切成该有的条数（_split_zone），
+    再把落在页首的那条续注并回上一页最后一条。
+
+    ⚠️ 2026-09-17 之前这里是「同页的 [FN] 一律并成一条，另有一个
+    MERGE_CROSS_PAGE 开关决定要不要跨页并」。两种都不对，量过：
+      · 不切分：247 条注 / 正文符号 215 个，48 条注从半句话开始
+        （`[^dv9]: tie for Gregory was remarkable…`），而且续注占着本页
+        第一个符号的位置，该页往后每个符号都错位一格。
+      · 只开跨页合并：注 247 → 178，半截注降到 14，但正文里多出 34 个配不上
+        的字面星号——因为续注在抽取里是和**本页第一条真注**粘在一起的
+        （那条的符号没认出来），一并就把真注也并走了。
+      · 再放宽成「同页续行也并」：注 132，字面星号再多 39。
+    现在这一版：注 227（正文符号 215，多出来的 12 条挂在页尾，见 attach_notes
+    的兜底），半截注 14，字面星号不增。
+    """
+    need = ref_budget(items)
+    zones = collections.OrderedDict()
     for it in items:
         if it['tag'] != 'FN':
             continue
-        p = it['pages'][0] if it['pages'] else cur_p
-        marked = bool(FN_MARK_START.match(it['text']))
-        nxt_page = (cur_last[0], cur_last[1] + 1) if cur_last else None
-        # ⚠️ `p == cur_last` 这一项不能少。一条注跨页时 cur_p 停在**起始页**、
-        # cur_last 走到**当前页**；续页的注区往往不止一条 [FN] 行，第二行起
-        # 就两头落空——`p == cur_p` 不成立（起始页是上一页），`p == 下一页`
-        # 也不成立（cur_last 已经是本页）。于是一条三行的续注只并回第一行，
-        # 后两行各自另起一条从半句话开始的注（正文四章实测 14 条、附卷 4 条）。
-        same_note = cur is not None and (p == cur_p
-                                         or (not marked and p == nxt_page))
-        if marked or not same_note:
-            if cur is not None:
-                notes.setdefault(cur_p, []).append(cur)
-            cur, cur_p, cur_last = it['text'], p, p
-        else:
-            cur = (cur[:-1] + it['text'] if cur.endswith('-')
-                   and it['text'][:1].islower() else cur + ' ' + it['text'])
-            cur_last = p
-    if cur is not None:
-        notes.setdefault(cur_p, []).append(cur)
+        p = it['pages'][0] if it['pages'] else (
+            next(reversed(zones)) if zones else None)
+        zones.setdefault(p, []).append(it['text'])
+
+    notes, prev = collections.OrderedDict(), None
+    for p in sorted(x for x in zones if x is not None):
+        g = _split_zone(zones[p], max(1, need[p]) + 1)
+        # 首组是上一页那条注的下半截：不带脚注符、且本页切出来的条数比
+        # 符号数多——多出来的那一条就是它。页号必须同卷且紧邻。
+        if (len(g) > need[p] and prev is not None and notes.get(prev)
+                and not FN_MARK_START.match(g[0])
+                and prev[0] == p[0] and 0 < p[1] - prev[1] <= 1):
+            tail = notes[prev][-1]
+            notes[prev][-1] = (tail[:-1] + g[0].lstrip()
+                               if tail.rstrip().endswith('-')
+                               else tail + ' ' + g[0])
+            g = g[1:]
+        if g:
+            notes.setdefault(p, []).extend(g)
+            prev = p
     return notes
 
 
@@ -341,6 +361,15 @@ def main():
                         return f'[^dv{fn_seq}]'
                 return m.group(0)          # 该页注已用尽 → 原样留符号
             txt = REF_RE.sub(sub, txt)
+
+        if it['tag'] == 'BRACE':
+            # 原书的花括号分析表，抽取那边已按页面影像重建好整块 HTML
+            # （brace_blocks.json）。不过 md_escape/italics——那两道是给
+            # OCR 文本用的，会把 `<em>` 里的东西再转义一遍。
+            cur['blocks'].append(it['text'].replace('\\n', '\n'))
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
+            continue
 
         if it['tag'] == 'SECTION':
             # ⚠️ 节号要从 `Verses` 之后取。直接 findall(r'\d+|[IVXLivxl]+')

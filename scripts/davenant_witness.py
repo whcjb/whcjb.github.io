@@ -292,6 +292,8 @@ def manual_para(vol, pages, text):
             got = manual_repair(vol, pg, w, nxt)
             if got is not None:
                 break
+        if got == '':
+            continue                 # 票值为空＝删掉这个 token（扫描斑点）
         out.append(w if got is None else got)
     return ' '.join(out)
 

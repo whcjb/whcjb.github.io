@@ -60,8 +60,13 @@ RANGES = {1: (86, 631), 2: (14, 317)}
 # 页眉中间那句全大写的书名反而稳，且只在页眉出现（正文写的是 this Epistle），
 # 又只拿页首前几行来试，不会误伤正文。
 HEAD_RES = [
-    re.compile(r'[EKR]?P[Ii1l!|][SB5][TI1l][Ll][EF]\s+T[Oo0]\s+TH[EFRK]\s+C[Oo0][Ll]',
-               re.I),
+    # `TO THE` 的 H 被读成 I 或 II：`EPISTLE TO TIE COLOSSIANS. 385`、
+    # `EPISTLE TO TIIE COLOSSIANS. 101`。写死 TH 漏掉 4 行页眉，它们整行拼进
+    # 了正文（v1p468/474、v2p110、v2p302；v2p302 那行还把 `Vers. 13.` 留在
+    # 段首，读者看到的是「Vers. 13. when occasion offers…」）。
+    # 全书试跑：放宽后新命中正好这 4 行，都在第 0 行，没有误伤。
+    re.compile(r'[EKR]?P[Ii1l!|][SB5][TI1l][Ll][EF]\s+T[Oo0]\s+T[HIiLl1]{1,2}[EFRK]'
+               r'\s+C[Oo0][Ll]', re.I),
     re.compile(r'[Aa][Nn]\s+EXP[Oo0][Ss5][IiL1l]T[IiL1l][Oo0][Nn]\s+[Oo0]F\s+ST',
                re.I),
 ]
@@ -881,6 +886,58 @@ def kjv_repair(scr, chap, nums, kjv, vol, pages):
     return ' '.join(mine), fixes
 
 
+# ── 花括号分析表：按页面影像手工重建 ────────────────────────────────────────
+# 原书用一个大括号把一个标签分成三支排版。OCR 按**基线**读，于是右栏每一支
+# 被拆成一行一段，左栏那行标签还被切进右栏文字中间
+# （v2p246：`What is to besought? 4 culty; To speak the mystery`）。
+# 几何上是能认的（正文左边界 226，右栏 798-897），但全书这一类落在四章正文里
+# 只有 4 处，为它写一个几何解析器不划算也不稳。按 600 dpi 页面影像逐张手工
+# 重建，落进 brace_blocks.json，与 manual_votes 一样**按位置**定位。
+BRACE_TBL = RAW / 'brace_blocks.json'
+_brace = None
+
+
+def brace_blocks():
+    global _brace
+    if _brace is None:
+        _brace = ({k: v for k, v in
+                   json.loads(BRACE_TBL.read_text(encoding='utf-8')).items()
+                   if not k.startswith('_')} if BRACE_TBL.exists() else {})
+    return _brace
+
+
+def apply_brace(vol, paras):
+    """把表里记着的连续段落换成重建好的块。
+
+    ⚠️ 对不上就**报错**，不静默跳过。这条线上栽过的坑是「规则一改，按整串
+    匹配的人工表就静默失效」——157 条票只落实 90 条，是事后才查出来的。
+    """
+    tbl = {k.split('|')[1]: v for k, v in brace_blocks().items()
+           if k.split('|')[0] == str(vol)}
+    if not tbl:
+        return paras, 0
+    hit = 0
+    for page, rec in sorted(tbl.items(), key=lambda kv: int(kv[0])):
+        want = rec['match']
+        for i in range(len(paras) - len(want) + 1):
+            if [paras[i + k][0] for k in range(len(want))] != want:
+                continue
+            if str(int(page)) not in [str(x) for x in paras[i][1]]:
+                continue
+            pages = sorted({x for k in range(len(want)) for x in paras[i + k][1]})
+            paras[i:i + len(want)] = [(BRACE_MARK + rec['html'], pages)]
+            hit += 1
+            break
+        else:
+            raise SystemExit(
+                f'✗ brace_blocks v{vol}p{page}：对不上产物，表该重建了\n'
+                f'  表里第一段： {want[0]!r}')
+    return paras, hit
+
+
+BRACE_MARK = '\x00BRACE\x00'
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--vol', type=int, choices=(1, 2))
@@ -904,15 +961,24 @@ def main():
             pages = [r for r in load(vol) if RANGES[vol][0] <= r['page'] <= RANGES[vol][1]]
             fn_max, indent_min = calibrate(pages)
             paras, fns, st = build_paragraphs(vol, lo, hi, fn_max, indent_min)
+            paras, n_brace = apply_brace(vol, paras)
+            st['brace'] = n_brace
             total.update(st)
             print(f'  vol{vol}: 页 {lo}-{hi}  脚注字号上限 {fn_max} 缩进阈值 {indent_min}  '
-                  f'段落 {len(paras)}  含脚注页 {st["fn_pages"]}  剥页眉 {st["head"]}')
+                  f'段落 {len(paras)}  含脚注页 {st["fn_pages"]}  剥页眉 {st["head"]}  '
+                  f'花括号表 {st["brace"]}')
 
             seen_chap, cur_chap, pend = False, None, None
             i = 0
             while i < len(paras):
                 para, ppages = paras[i]
                 i += 1
+                if para.startswith(BRACE_MARK):
+                    pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
+                          else f'<!--v{vol}p{ppages[0]}-{ppages[-1]}-->') if ppages else ''
+                    out.append('[BRACE] ' + pg
+                               + para[len(BRACE_MARK):].replace('\n', '\\n'))
+                    continue
                 # 段落的页码跨度：脚注按页配对要用（publish_davenant_en.py）
                 # ⚠️ 必须带卷号。两卷的扫描页号区间重叠（vol1 86-631、
                 # vol2 14-317），发布脚本按页号配脚注，只写 pN 会让 3/4 章去抢

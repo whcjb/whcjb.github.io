@@ -178,7 +178,30 @@ PSALMS_PRE = [
     # 「非词」那一路也就永远轮不到。2026-09-16 实读诗 131 时才撞见。
     # 数字 0 在这本书里没有别的用处：把 207 处的下一个词全列出来看过，
     # 无一例外是 God / Jehovah / Lord / my / house / Jerusalem / sea / Jordan…
+    # 斜杠有两副面孔，按上下文分开：
+    #   词中间的 `/` 是 f —— `The/or assigns`(for)、`literally/rom`(from)
+    #   句首/斜体前的孤立 `/` 是大写 I —— `/ *will sing to Jehovah*`
+    # 这两类判词典都看不见：`/` 不是字母，token 正则在它那里断开。
+    # `/or`/`/rom` 后面就是词边界的，是**独立的一个词** for/from，要补词距：
+    #   `The/or assigns` → `The for assigns`、`literally/rom,` → `literally from,`
+    # 后面还连着字母的（`sent he/ore them`）是词**中间**的 f，不能补空格，
+    # 接上去成 `hefore`，再由 h→b 那条规则改成 before。
+    (r'(?<=[A-Za-z,)])/(?=(?:or|rom|ro|row|rowi)\b)', ' f'),
+    (r'(?<=\*)/(?=(?:or|rom|ro|row|rowi)\b)', 'f'),
+    # 收紧到 `or`/`ro` 开头，别去动希伯来/希腊乱码里的斜杠
+    # （`phrase/oiy^`、`(o^co/oxTjra)` 那些另有处理）
+    (r'(?<=[A-Za-z,)*])/(?=or|ro)', 'f'),
+    (r'(?<=[\s(\u2014])/ \*(?=[a-z])', '*I '),
+    (r'(?<=[\s(\u2014])/ (?=[a-z])', 'I '),
     (r'\*0/ ', '*Of '),                    # `0/` 是 Of（诗 37 两处、诗 119 一处）
+    # 大写 I 被读成数字 1：`*1 have watched*`、`until 1 make thine enemies`。
+    # 与 0/O 同一类，判词典同样看不见。**必须把经文出处排除掉**——
+    # `ver. 1 above`、`Ps. ciii. 1 shews`、`1 Sam. vii. 1 with` 里的 1 是真数字，
+    # 所以只认「前面不是 ver./Ps./罗马数字」且「后面紧跟一个小写词」的孤立 1。
+    (re.compile(r'(?P<pre>\b(?:ver|Ps|ch|chap|[ivxlcdmIVXLCDM]+)\.\s+)?'
+                r'(?<![\u0590-\u05ff])(?<![\u0590-\u05ff].)'
+                r'(?<=[\s*])1(?=\s+[a-z])'),   # 紧挨希伯来文的 1 是乱码，不是 I
+     lambda m: m.group(0) if m.group('pre') else 'I'),
     # 只认「两边都是空白或排版符号」的孤立 0。不能写成 `\b0\b`：
     # 希伯来乱码里也有 0（`0^2`、`y^0^^`、`0^21`），那些不是呼格。
     (r'(?<=[\s*(\u2014])0(?=\s)', 'O'),

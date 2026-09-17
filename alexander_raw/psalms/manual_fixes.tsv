@@ -1,7 +1,5 @@
 chapter	old	new	src
 2	Mai.	Mal.	crop2
-4	o/"	of"	crop2
-4	room/or	room *for*	crop2
 6	gener^	general	crop2
 8	*Gitti*	*Gitti,*	hand
 9	Musician^	Musician,	hand
@@ -55,7 +53,6 @@ chapter	old	new	src
 24	^&lt;^^^	לשוא	hand
 24	^&lt;ii.0; T T	ל	crop2
 25	Db'lVp,	מעולם,	crop2
-25	translation/ro?w.	translation *from*	crop2
 25	עגוים,	עֲנָוִים,	hand
 25	רַב),	פשע),	hand
 27	(יַאֲמֵץ)	(יאמץ)	hand
@@ -76,10 +73,8 @@ chapter	old	new	src
 36	depra\ity,	depravity,	hand
 37	*\verb	*verb	crop2
 37	D''l3	כרים	crop2
-37	upon/or	upon *for*	crop2
 38	W^^n*	חיים*	crop2
 39	(^li^lD)	(תושב)	crop2
-39	mean/row	mean *from*	crop2
 40	*יִרְאוּ)יִרְאוּ*	*יִרְאוּ)יראו*	hand
 40	וְיִירָאוּ).	וייראו).	hand
 41	(y^p")	(יקבץ")	crop2
@@ -119,12 +114,9 @@ chapter	old	new	src
 66	(צוּד,	(צוד,	hand
 68	(יָקוּם),	(יקום),	hand
 68	en\7	envy	crop2
-68	implication/rom	implication *from*	crop2-sim
 68	j^erhh	perish	crop2
-68	verse,/rom	verse,from	crop2-sim
 69	(D?l£^),	(שלם),	crop2
 69	describcs	describes	hand
-69	of/or	of *for*	crop2
 72	(>n^)	(יהי)	crop2
 72	(ienominatio.*	(denominatio.*	crop2-dictgate-manual
 72	heplentij	be plenty	crop2
@@ -149,15 +141,12 @@ chapter	old	new	src
 89	(D^2I1)	(רבים)	crop2
 89	(^}שָׁוא)	(^}שוא)	hand
 89	£fixed	fixed	crop2
-90	apr-yer,	a prayer,,	crop2
-91	means/rowi,	means *from*,,	crop2
 93	*\x.*	*lx.*	crop2
 95	(גַם)	(גם)	hand
 99	lx\a.	lxvi.	crop2
 100	(iniH)	(הודו)	crop2
 102	(h^")2)	(ברא")2)	crop2
 102	*Thouwilt	*Thou wilt	hand
-102	preposition/rom	preposition *from*	crop2
 103	(i'^rtdvfMiav,	(ἐπιθυμίαν,	crop2
 103	*auliendo,	*audiendo,	crop2-dictgate-manual
 104	(yiJ^)	(ארץ)	crop2
@@ -190,7 +179,6 @@ chapter	old	new	src
 132	CTifavov*	στέφανον*	crop2
 132	hasjhere	has here	crop2
 132	neighbournood	neighbourhood	crop2-dictgate-manual
-132	prayer/or	prayer *for*	crop2
 133	(גַּם)	(גם)	hand
 133	(יהי),	(יֹרֵד),	hand
 135	*sendelh	*sendeth	crop2
@@ -200,7 +188,6 @@ chapter	old	new	src
 139	(j^^)	(לא)	crop2
 139	foetus.	fœtus.	crop2-dictgate-manual
 139	literally/ear/i&lt;Z	literally *fearful*;Z	crop2
-139	omniscient,/or	omniscient,for	crop2
 139	דֶּרֶךְ?)	עולם?)	hand
 141	*3My	*My	crop2
 141	בְּכָה	בכה	hand
@@ -210,13 +197,11 @@ chapter	old	new	src
 145	(נֶאֱמָן	(נאמן	hand
 145	(צַדִּיק)	(צדיק)	hand
 145	*תְּהִלָּה)*	*תהלה)*	hand
-148	preposition/row	preposition *from*	crop2
 49	Gen. *xx\ii.* 36	Gen. xxvii. 36	hand-crop8: 裁图2026-09-16：印面为罗马体 Gen. xxvii. 36，斜体是 OCR 误加
 58	*{θυμός;i(jc„ furor),*	(θυμός, *furor*),	hand-crop8: 裁图2026-09-16：印面 (θυμός, furor)，furor 斜体
 66	and high* ^;/-itw« (exaltation)	and high praise* (exaltation)	hand-crop8: 裁图2026-09-16：1864 印面作 pruise（坏字），1850 三卷本作 praise，取 praise
 69	usage of \ • V V •• • the one before us *i^yuh'^)-*	usage of the one before us (שלומים).	hand-crop8: 裁图2026-09-16：两遍只差 lamed 的 dagesh，取两遍都认的辅音式；前面那串点是上一行元音点被 OCR 切成独立行
 74	(n|^n), twite translated	(חית), twice translated	hand-crop8: 裁图2026-09-16：同上，取辅音式；同一行的 twite 印面作 twice
-96	The phrase/rom *day to day*	The phrase *from day to day*	hand-crop8: 裁图2026-09-16：印面 from 在斜体内
 110	*prateritum phropheticum,*	*præteritum phropheticum,*	hand-crop8: 裁图2026-09-16：印面 præte-ritum 跨行连字；phropheticum 是原书误植，保留
 115	they/eel not	they feel not	hand-crop8: 裁图2026-09-16：下一页顶行印面作 they feel not
 17	description presentdanger is	description present danger is	hand-rescan: 2026-09-16 复扫残留：影像 present danger 两词，OCR 吞了词距
@@ -370,7 +355,6 @@ chapter	old	new	src
 86	thou,.	thou,	witness1850: 双标点并一个
 89	ever,,	ever, 	witness1850: 双标点并一个
 90	prayer,,	prayer,	witness1850: 双标点并一个
-91	from*,,	from*,	witness1850: 双标点并一个
 92	This,,	This,	witness1850: 双标点并一个
 93	from,,	from,	witness1850: 双标点并一个
 94	With,*,	With,*	witness1850: 双标点并一个
@@ -446,7 +430,6 @@ chapter	old	new	src
 136	him that smote great kings*—*-for	him that smote great kings*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
 62	first word זו)	first word (אַךְ)	hand-rescan2: image1864 影像作 (אַךְ)；抽取时这两个希伯来词与下文那个对调了
 62	pronoun (אַךְ) in ver. 12	pronoun (זו) in ver. 12	hand-rescan2: image1864 影像作 (זו)；见上一条
-3	*Absalom., his son*	*Absalom his son*	hand-rescan2: witness1850: 证人作 Absalom his son，两个标点都是多出来的
 25	by implication,..to abide	by implication, to abide	hand-rescan2: witness1850: 证人作 implication，那两个点是噪点
 74	prophecy had., been withdrawn	prophecy had been withdrawn	hand-rescan2: witness1850: 证人作 had，两个标点都是多出来的
 78	the preceding verse,; s used	the preceding verse, is used	hand-rescan2: 那个分号是 is 的 i 被读崩：证人作 verse, is used
@@ -534,3 +517,5 @@ chapter	old	new	src
 138	"With	With	image1864: 裁图两遍一致，标点级
 141	"When	When	image1864: 裁图两遍一致，标点级
 148	"Not	Not	image1864: 裁图两遍一致，标点级
+3	*Absalom., his son*	*Absalom, his son*	image1864: 整页比对——1864 印面作 Absalom, his son（此前照 1850 证人删掉了逗号，那是两版排印不同）
+96	The phrase from *day to day*	The phrase *from day to day*	hand-crop8: 裁图：印面 from 在斜体内（上游 / → f 规则接管后重新锚定）
