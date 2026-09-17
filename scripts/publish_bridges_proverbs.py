@@ -106,7 +106,10 @@ source_note: |
   Robert Carter &amp; Brothers, New York, 1850。<br>
   简体中文版 © 2023 改革宗翻译社（Reformation Translation Fellowship, RTF-USA），
   {TRANSLATOR} 译。原书标注「FOR FREE DISTRIBUTION ONLY – NOT FOR SALE」，
-  本站仅作免费分享之用。
+  本站仅作免费分享之用。<br>
+  正文一律照中译本录入，只修正 PDF 字体映射造成的错字。另有极少数句子，
+  因英文原文用了承前省略的对句、中译照搬后读来像缺字，本站对照英文原书补足了
+  谓语，不改用词，逐处记在下方「本站校订」里。
 ---
 
 <p>本书逐段解经，共 31 章、571 个解经单元，每单元先列箴言经文，再逐层解说，
@@ -114,6 +117,12 @@ source_note: |
 
 <p>作者的前言署「1846 年 10 月 7 日，落笔于老牛顿教区」；本站所据英文版为
 1850 年纽约 Robert Carter &amp; Brothers 版，中译为改革宗翻译社简体中文版。</p>
+
+<p><strong>本站校订</strong>（对照英文原书 1865 年 Robert Carter &amp; Brothers 版，
+仅补足省略的谓语，用词未动）：第 16 章 16:1 注释「我们的是媒介，他却苏醒生命」→
+「我们的是媒介，他<u>所赐的是</u>苏醒的生命」。英文原文作
+<em>Ours is the duty; his is the strength. Ours the agency; his the quickening life.</em>，
+后半句承前省略了系动词，中译照搬这个省略，读来像是缺字。</p>
 
 <p>逐章可读：</p>
 """
