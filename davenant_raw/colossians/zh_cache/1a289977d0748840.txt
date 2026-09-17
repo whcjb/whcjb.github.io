@@ -1,0 +1,9 @@
+<div class="dv-brace">
+<p class="dv-brace-label">今这三人所受的称扬，</p>
+<ul class="dv-brace-list">
+<li>就其民族而言；因他们是犹太人。</li>
+<li>就其工作而言；此工作有二端，
+<ul class="dv-brace-list"><li>传道，</li><li>安慰。</li></ul>
+</li>
+</ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="dv-cites">
+<p class="dv-cite">马可福音 13:35, 36，<em>所以你们要警醒，因为你们不知道家主什么时候来……</em></p>
+<p class="dv-cite">启示录 3:2，<em>你要警醒……</em></p>
+<p class="dv-cite">启示录 16:15，<em>那警醒、看守衣服的有福了……</em></p>
+<p class="dv-cite-label">保罗，</p>
+<p class="dv-cite">哥林多前书 16:13，<em>你们务要警醒，在真道上站立得稳……</em></p>
+<p class="dv-cite">帖撒罗尼迦前书 5:6，<em>我们不要睡觉，像别人一样，总要警醒……</em></p>
+<p class="dv-cite-label">彼得，</p>
+<p class="dv-cite">彼得前书 5:8，<em>务要警醒。因为你们的仇敌魔鬼……</em></p>
+</div>

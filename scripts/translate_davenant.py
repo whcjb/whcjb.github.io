@@ -56,7 +56,7 @@ SYSTEM = (
     "2. 原位保留所有 HTML 标签与实体不变：<span class=\"dv-lemma\"> <span class=\"dv-enum\">"
     " <strong> <em> <sup> <a …> 以及 &#x27; &quot; &amp; &lt; &gt; 等；"
     "标签的位置、属性、闭合一律照原样，只翻标签之间的文字\n"
-    "2b. 有一档整块是**花括号分析表**（<div class=\"dv-brace\"> 开头，里面是 <p>/<ul>/"
+    "2b. 有两档整块是**按原书版式重建的结构块**：花括号分析表（<div class=\"dv-brace\">）与缩进经文清单（<div class=\"dv-cites\">），里面是 <p>/<ul>/"
     "<ol>/<li>）——原书用一个大括号把一个标签分成几支。整块结构原样保留，"
     "一个 <li> 对一个 <li>，不合并不拆分，只翻里面的文字\n"
     "3. `dv-lemma` 里是本段所要注释的那一小节经文（以 `]` 收尾）。"
@@ -78,7 +78,12 @@ SYSTEM = (
     "Socinians→苏西尼派，Pelagians→柏拉糾派，Schoolmen→经院学者\n"
     "8. 教父与学者姓名首次出现保留原文并括注中文音译，"
     "如 Chrysostom(屈梭多模)、Jerome(耶柔米)、Augustine(奥古斯丁)、Aquinas(阿奎那)\n"
-    "9. 保留段首编号（如 1. 2. 10. 31.）与 Firstly/Secondly 之类次序词的层级不变"
+    "9. 保留段首编号（如 1. 2. 10. 31.）与 Firstly/Secondly 之类次序词的层级不变\n"
+    "10. 引文后的 `&c.` / `etc.` 表示引文在此截断，**一律译成省略号 ……，"
+    "放在引文（<em>…</em>）内部**，如 <em>Watch, for ye know not when,</em> &c. → "
+    "<em>所以你们要警醒，因为你们不知道家主什么时候来……</em>。"
+    "**不要**译成「等 / 等等 / 等语 / 云云」——那是机器直译 etc. 的败笔，"
+    "全站已统一用 ……"
 )
 
 # ── 简体和合本（供经文块参照）────────────────────────────────────────────────
@@ -292,9 +297,23 @@ def check_block(en, zh):
     if a != b:
         return f'脚注标记 {a} → {b}'
     ta, tb = _tags(en), _tags(zh)
-    if ta != tb:
-        d = {k: (ta.get(k, 0), tb.get(k, 0)) for k in set(ta) | set(tb)
-             if ta.get(k, 0) != tb.get(k, 0)}
+    # ⚠️ `<em>` 的**条数**不能硬卡。底本的斜体被 OCR 打碎成好几段——斜体的节号
+    # （`Wisd. vi. <em>7,</em> 8`）、被非斜体短词隔开的引文
+    # （`He <em>to whom the ministry</em> is committed, let him <em>wait</em> on`）、
+    # 一句经文断成两段斜体（`<em>If I please men,</em> … <em>I should not be the
+    # servant of Christ:</em>`）。中文按和合本是一整句，条数天然对不上；逼模型
+    # 凑数只会把译文拆坏（第四章实测 11 块，两轮重译都过不去，逐块看过全是这一类）。
+    # 所以 em 只卡**配平**与**不许整块丢失斜体**，条数交给人看；
+    # dv-lemma / dv-enum / strong / sup / a 这些结构性标签仍然逐条卡死。
+    if tb.get('em', 0) != tb.get('/em', 0):
+        return f"em 不配平 {tb.get('em', 0)}/{tb.get('/em', 0)}"
+    if ta.get('em', 0) and not tb.get('em', 0):
+        return f"斜体全丢（英文 {ta['em']} 段）"
+    ta2 = {k: v for k, v in ta.items() if k not in ('em', '/em')}
+    tb2 = {k: v for k, v in tb.items() if k not in ('em', '/em')}
+    if ta2 != tb2:
+        d = {k: (ta2.get(k, 0), tb2.get(k, 0)) for k in set(ta2) | set(tb2)
+             if ta2.get(k, 0) != tb2.get(k, 0)}
         return f'标签 {d}'
     return ''
 
@@ -334,6 +353,34 @@ def revise(texts, zh_list, rounds=2):
 def fmval(fm, key):
     m = re.search(rf'^{key}:\s*(.+)$', fm, re.M)
     return m.group(1).strip().strip('"') if m else ''
+
+
+# ── 引文后的 &c. 一律作 …… ──────────────────────────────────────────────────
+# 原书在引文开头后用 `&c.` 表示截断。模型会译成「等 / 等等 / 等语 / 云云」，
+# 读起来是机器直译 etc. 的败笔；全站已统一用省略号 ……，放在引文内部
+# （加尔文/希伯来书那边 2026-07 就定了这个约定，用户 2026-09-17 要求达文南特
+# 也照办）。提示词第 10 条从源头管住新译的，这个函数管住**已经在缓存里**的
+# ——zh_cache 保留模型的原始输出不动，每次落盘时重新归一，随时可推倒重来。
+ETC_IN_QUOTE = r'(?:等等?|等语|云云)'
+ETC_BARE = r'(?:等等|等语|云云)'
+# 标记后面要么跟着一个句读（连它一起吃掉），要么后面是一个开括号
+# （`<em>我不以福音为耻</em>等等（罗马书 1:16）。`——括号不能吃）。
+PUNCT = r'(?:[。，；、,;]|(?=[（(]))'
+
+
+def normalize_etc(body: str) -> str:
+    """把引文后的「等等」换成引文内部的 ……。"""
+    # 1) 引文里已经有省略号了 → 只把外面多余的标记删掉，不叠加
+    body = re.sub(rf'((?:……|⋯⋯)[，,]?</em>)[ \t]*[，,]?{ETC_IN_QUOTE}{PUNCT}',
+                  r'\1', body)
+    # 2) 斜体引文：…… 移进 <em>…</em>，顺手去掉引文末尾那个逗号
+    body = re.sub(rf'[，,]?(</em>)[ \t]*[，,]?{ETC_IN_QUOTE}{PUNCT}',
+                  r'……\1', body)
+    # 3) 没有斜体的（`随后又接着说，就可知道，等等；`）：标记本身换成 ……
+    #    只收「等等 / 等语 / 云云」这三个不会当真词用的形态，**不收光杆的「等」**
+    #    （相等。、对等，、等候 一碰就坏）。
+    body = re.sub(rf'[，,]?{ETC_BARE}{PUNCT}', '……', body)
+    return body
 
 
 def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool):
@@ -377,7 +424,7 @@ def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool
             out.append(t)
         else:
             out.append(it[1])
-    zh_body = '\n\n'.join(out)
+    zh_body = normalize_etc('\n\n'.join(out))
 
     ZH_RAW.mkdir(parents=True, exist_ok=True)
     zh_page_dir = PUB / str(n) / 'zh'

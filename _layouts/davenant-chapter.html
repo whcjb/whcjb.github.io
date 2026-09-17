@@ -154,6 +154,16 @@ layout: default
 .dv-brace-outline ol.dv-brace-list > li::before { content: none; }
 .dv-synopsis { text-align: center; text-indent: 0; margin: 10px 0; }
 
+/* 缩进经文清单：原书在一句领起语之后，把几条引文整体右移排成一块
+   （v2p243「To this vigilance of mind Christ calls us in」下面那八行）。
+   抽取器按「缩进＝新段落」判成一行一段，读者看到的是八段散落的引文加两个
+   孤零零的单词段，所以这一块也按页面影像重建（brace_blocks.json）。
+   呈现上要的是「贴在一起、左侧缩进」，不是段落间距。 */
+.dv-cites { margin: 14px 0 18px 1.6em; }
+.dv-cite, .dv-cite-label { margin: 2px 0; text-indent: -1.2em; padding-left: 1.2em; }
+.dv-cite-label { margin: 8px 0 2px 1.4em; text-indent: 0; padding-left: 0;
+  font-weight: bold; color: var(--dv-ink-dark); }
+
 /* 节号锚点：跳转时避开 fixed navbar */
 .dv-anchor { position: relative; top: -80px; display: block; height: 0; }
 

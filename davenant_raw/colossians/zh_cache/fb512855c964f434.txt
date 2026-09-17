@@ -1,0 +1,8 @@
+<div class="dv-brace">
+<p class="dv-brace-label">他从三方面被举荐与他们：</p>
+<ul class="dv-brace-list">
+<li>从他是他们的同乡；<em>你们那里的人</em>。</li>
+<li>从他尊贵的职分；<em>基督的仆人</em>。</li>
+<li>从他对他们诚挚的爱；<em>常为你们竭力地祈求</em>等语。</li>
+</ul>
+</div>

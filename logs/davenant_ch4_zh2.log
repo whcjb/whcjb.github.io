@@ -1,0 +1,15 @@
+ch4: 块 516  需译 460  缓存命中 459  英文 208,246 字符
+    [tok] #1 入 2,189（新缓存 2,187 / 读缓存 0） 出 349 = 2,538 | 累计 2,538 tok $0.032
+  已翻 1/1 段
+✓ 中文 raw → /Users/yanpeifa/Documents/whcjb.github.io/davenant_raw/colossians/zh_chapters/4.md  (chmod 444)
+✓ 中文页 → /Users/yanpeifa/Documents/whcjb.github.io/davenant/colossians/4/zh/index.md
+
+──────── claude CLI 用量汇总 ────────
+  调用      1 次
+  输入      2,189（未缓存 2 / 新建缓存 2,187 / 读缓存 0）
+  输出      349
+  合计      2,538 tok
+  均次      2,538 tok
+  费用      $0.0320
+  用时      0m09s
+────────────────────────────────────

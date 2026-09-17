@@ -1,0 +1,8 @@
+<div class="dv-brace">
+<p class="dv-brace-label">当求的是什么？</p>
+<ul class="dv-brace-list">
+<li>传道的才能、自由与功效；<em>传道的门。</em></li>
+<li>此才能的运用或施行；<em>讲基督的奥秘</em>等等。</li>
+<li>运用此才能的合宜方式；<em>按着所该说的话。</em></li>
+</ul>
+</div>

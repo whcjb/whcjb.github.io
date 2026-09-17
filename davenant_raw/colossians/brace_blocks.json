@@ -60,5 +60,19 @@
    "to rule."
   ],
   "html": "<p class=\"dv-synopsis\">From the fact, that even masters are subject to rule.</p>"
- }
+ },
+ "2|243": {
+  "match": [
+   "Mark xiii, 35, 36, Watch, for ye know not when, &c.",
+   "Rev. iii. 2, Be watchful, &c.",
+   "Rev. xvi. 15, Blessed is he that watcheth, and keepeth, &c.",
+   "Paul,",
+   "1 Cor. xvi. 13, Watch ye; stand fast in the faith, &c.",
+   "1 Thess. v. 6, Let us not sleep, but let us watch, &c.",
+   "Peter,",
+   "1 Epis. v. 8, Watch, because your adversary, &c."
+  ],
+  "html": "<div class=\"dv-cites\">\n<p class=\"dv-cite\">Mark xiii. 35, 36, <em>Watch, for ye know not when,</em> &c.</p>\n<p class=\"dv-cite\">Rev. iii. 2, <em>Be watchful,</em> &c.</p>\n<p class=\"dv-cite\">Rev. xvi. 15, <em>Blessed is he that watcheth, and keepeth,</em> &c.</p>\n<p class=\"dv-cite-label\">Paul,</p>\n<p class=\"dv-cite\">1 Cor. xvi. 13, <em>Watch ye ; stand fast in the faith,</em> &c.</p>\n<p class=\"dv-cite\">1 Thess. v. 6, <em>Let us not sleep, but let us watch,</em> &c.</p>\n<p class=\"dv-cite-label\">Peter,</p>\n<p class=\"dv-cite\">1 Epis. v. 8, <em>Watch, because your adversary,</em> &c.</p>\n</div>"
+ },
+ "___cites": "v2p243 不是花括号表，是**缩进的经文清单**：一句领起语之后，八行引文整体右移（正文左边界 229，清单行 271-279），其中 `Paul,` `Peter,` 更缩进一格（331/336），是领起下面两条引文的小标签。抽取器按「缩进＝新段落」判成 8 个独立段落，读者看到的是八段散落的引文加两个孤零零的单词段。按「连续 ≥3 行右移 + 行首是经卷缩写」扫两卷，全书只此一处，所以照花括号表的老办法按影像重建。"
 }
