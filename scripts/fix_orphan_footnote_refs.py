@@ -25,7 +25,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 REF = re.compile(r'\[\^([^\]\s]{1,12})\](?!:)')
-DEF = re.compile(r'^\[\^([^\]]+)\]:\s*(.*)$', re.M)
+# `\s*` 会吃掉换行：碰上空定义 `[^f4]:` 紧跟 `[^f5]: 正文`，f5 那一整行就被
+# 当成 f4 的正文，f5 自己进不了定义表——引用因此被误判成孤儿、退回死标记，
+# 和 fix_dead_marker_revive 来回打架。只吃行内空白。
+DEF = re.compile(r'^\[\^([^\]]+)\]:[ \t]*(.*)$', re.M)
 CODE = re.compile(r'^[A-Za-z]{0,3}\d+[A-Za-z]?$')
 # 已发布目录名 → calvin_raw 目录名（对不上就按同名找）
 RAW_DIR = {'1corinthians': '1cor', '2corinthians': '2cor', 'acts': 'acts'}

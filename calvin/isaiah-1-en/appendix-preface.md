@@ -801,6 +801,8 @@ date: 2026-06-02 18:13
 [^f670]: “Il devoit (ce semble) monstrer la vertu de bonne heure, et non pas declarer ce qu’il feroit apres le siege leve. He ought (one would think) to have shewn his power at an early period, and not to have declared what he would do after the siege had been raised.”
 
 
-[^f671]: See verse 28 <span style="color:#800000">FT672</span> “Pour l’amour de mon sainct nom,” “For the love of my holy name.”
+[^f671]: See verse 28
+
+[^f672]: “Pour l’amour de mon sainct nom,” “For the love of my holy name.”
 
 [^f672]: “Pour l’amour de mon sainct nom,” “For the love of my holy name.”

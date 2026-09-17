@@ -247,6 +247,8 @@ date: 2026-08-21 03:23
 
 [^f670]: 「Il devoit (ce semble) monstrer la vertu de bonne heure, et non pas declarer ce qu'il feroit apres le siege leve.」——「（人们会以为）他本当及早显出他的能力，而不是宣告在围城解除之后他要作什么。」
 
-[^f671]: 参看第28节 <span style="color:#800000">FT672</span> 「Pour l'amour de mon sainct nom,」「为我圣名的缘故。」
+[^f671]: 参看第28节
+
+[^f672]: 「Pour l'amour de mon sainct nom,」「为我圣名的缘故。」
 
 [^f672]: 「Pour l'amour de mon sainct nom,」「为我圣名的缘故。」
