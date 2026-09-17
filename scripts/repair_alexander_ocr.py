@@ -199,6 +199,7 @@ PSALMS_PRE = [
     # `ver. 1 above`、`Ps. ciii. 1 shews`、`1 Sam. vii. 1 with` 里的 1 是真数字，
     # 所以只认「前面不是 ver./Ps./罗马数字」且「后面紧跟一个小写词」的孤立 1。
     (re.compile(r'(?P<pre>\b(?:ver|Ps|ch|chap|[ivxlcdmIVXLCDM]+)\.\s+)?'
+                r'(?<!\\\*)'                      # `7J\*1` 是希伯来乱码
                 r'(?<![\u0590-\u05ff])(?<![\u0590-\u05ff].)'
                 r'(?<=[\s*])1(?=\s+[a-z])'),   # 紧挨希伯来文的 1 是乱码，不是 I
      lambda m: m.group(0) if m.group('pre') else 'I'),
@@ -518,6 +519,37 @@ def settle_stars(text, lex):
     return text.replace(LIT_STAR, r'\*')
 
 
+def drop_stray_apostrophe(text, lex):
+    """词尾平白多出来的撇号：`confined'`、`strong'`、`Compare'`、`ver'.`。
+
+    判词典看不见这一类——token 正则把撇号算进词里，`confined'` 由真词派生就放行了。
+    只在**剥掉撇号之后仍是真词**时才动手，所以希伯来/希腊乱码（`(imiU'`、
+    `(miiy')`）碰不到。三种不能动的：
+      · `saints'` `nations'` `kings'`——正经的复数所有格（s 结尾）
+      · `mercy.'` `roared,'`——引语的收尾（撇号前是标点）
+      · `memorj'` `crj'`——那是 y 被读成 j'，另有规则管，不是多余的撇号
+    """
+    def repl(m):
+        w = m.group(1)
+        if w[-1] in "jJ":
+            # `memorj'`=memory、`crj'`=cry：y 被读成 j'，把两个字符一起换掉
+            cand = w[:-1] + 'y'
+            return cand if is_word(cand, lex) else m.group(0)
+        if w[-1] in "sS" or not is_word(w, lex):
+            return m.group(0)
+        if any(c.isupper() for c in w[1:]):
+            return m.group(0)      # `INly'` 这种怪大小写是希伯来乱码的残留，别动
+        return w
+    text = re.sub(r"([A-Za-z]{2,})'(?=[\s,.;:)*])", repl, text)
+
+    # `j'` 在**词中间**同样是 y：`obj'ect`=object、`praj's`=prays、
+    # `everj'thing`=everything、`carrj'ing`=carrying、`Thej'`=They
+    def repl_mid(m):
+        cand = m.group(1) + 'y' + m.group(2)
+        return cand if is_word(cand, lex) else m.group(0)
+    return re.sub(r"([A-Za-z]{2,})j'([a-z]*)", repl_mid, text)
+
+
 def main(book='psalms'):
     cfg = BOOKS[book]
     src, logfile = cfg['src'], cfg['log']
@@ -592,6 +624,7 @@ def main(book='psalms'):
 
         for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
+        text = drop_stray_apostrophe(text, lex)
         text = split_apostrophe_gap(text, lex)
         text = space_after_punct(text, lex)
         text = rejoin_split_words(text, lex, vocab)

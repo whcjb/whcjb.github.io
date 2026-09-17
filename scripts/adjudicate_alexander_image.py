@@ -477,8 +477,15 @@ def _locate_by_similarity(text, it, img):
     tok = it['tok']
     ctx = it['ctx']
     spots = []
+    # 纯字母数字的残串只认整词。`xed` 若允许落在 `fixed` 里面，替换完就成了
+    # `fifixed`——上游把 `fi,xed` 修好之后正是这么撞的（2026-09-17）。
+    word = tok.isalnum()
     i = text.find(tok)
     while i >= 0:
+        if word and ((i and text[i - 1].isalnum())
+                     or (i + len(tok) < len(text) and text[i + len(tok)].isalnum())):
+            i = text.find(tok, i + 1)
+            continue
         window = text[max(0, i - 55):i + len(tok) + 55]
         spots.append((SequenceMatcher(None, ctx, window).ratio(), i))
         i = text.find(tok, i + 1)
