@@ -29,8 +29,11 @@ import re
 import subprocess
 import sys
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import alexander_lexicon as L
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
@@ -194,7 +197,87 @@ def norm(s):
     return re.sub(r'[^0-9a-zA-Z֐-׿]', '', s).lower()
 
 
-def report():
+def word_diff(a, b):
+    """两段引文里真正变了的那几个词。返回 [(我们的, 影像的)]。"""
+    import difflib
+    # 斜体标记不参与比对：模型被交代过「忽略 *…*」，它抄回来的引文里
+    # 星号有时带有时不带，不剥掉的话每一处都变成「不止一个改动」。
+    A = [w for w in re.split(r'[\s*]+', a) if w.strip()]
+    B = [w for w in re.split(r'[\s*]+', b) if w.strip()]
+    out = []
+    for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(None, A, B, autojunk=False).get_opcodes():
+        if tag == 'equal':
+            continue
+        out.append((' '.join(A[i1:i2]), ' '.join(B[j1:j2]), i1, A))
+    return out
+
+
+def raw_chapters(pg, index):
+    return sorted({sec for sec, _, _ in index.get(pg, [])})
+
+
+def locate(sec, ours, image, before):
+    """在 raw 里按上下文锚把这一处找出来。返回 (old, new) 或 None。"""
+    path = ROOT / f'alexander_raw/psalms/en_chapters/{sec}.md'
+    if not path.exists():
+        return None
+    t = path.read_text(encoding='utf-8')
+    inner = r'\*?\s+\*?'.join(re.escape(w) for w in ours.split())
+    for k in (3, 2, 1, 0):
+        head = before[-k:] if k else []
+        pre = (r'\*?\s+\*?'.join(re.escape(w) for w in head) + r'\*?\s+\*?') if head else ''
+        ms = list(re.finditer(pre + '(' + inner + ')', t))
+        if len(ms) == 1:
+            m = ms[0]
+            old = m.group(0)
+            # **只换变了的那几个词**，前后的斜体星号原样留着——
+            # 整段替换会把 `*purler.*` 的开头那个星号吃掉（模型抄引文时不带星号）
+            s, e = m.start(1) - m.start(0), m.end(1) - m.start(0)
+            return old, old[:s] + image.strip('*') + old[e:]
+    return None
+
+
+def vet(o, n, lex):
+    """这一处的改动够不够「小而明确」，能不能不看影像就落。
+
+    模型报的东西是线索不是结论：它会把引文抄短（`compare Ps,` → `pare Ps.`），
+    也会在重抄时打错字（`their` → `thcir`）。三道闸：
+      长度/编辑距离  只准改一两个字母，长度差不过 3
+      成词          改完必须是真词（或罗马数字、数字）；`thcir` 这种直接出局
+      不准缩水      改完若只是原词的一截（`compare`→`pare`），那是抄漏不是改错
+    过不去的不丢掉，进人工清单。
+    """
+    if not o or not n or len(o) > 30 or len(n) > 30:
+        return '改动太长'
+    if abs(len(o) - len(n)) > 3 or edit(o, n) > 3:
+        return '改动太大'
+    core = re.sub(r'[^A-Za-z]', '', n)
+    if core and not L.is_word(core, lex) and not ROMAN_RE.fullmatch(core):
+        return '改完不是词'
+    oc = re.sub(r'[^A-Za-z]', '', o)
+    if oc and core and core != oc and (core in oc):
+        return '改完只是原词的一截，像是抄漏'
+    return ''
+
+
+def edit(a, b):
+    if a == b:
+        return 0
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
+        prev = cur
+    return prev[-1]
+
+
+ROMAN_RE = re.compile(r'[ivxlcdmIVXLCDM]+')
+
+
+def candidates(apply=False):
+    lex = L.build()
+    """两遍都报的差异 → 能在 raw 里唯一定位、且改动够小的，出成待落清单。"""
     rounds = {}
     for rnd in (1, 2):
         d = defaultdict(list)
@@ -203,29 +286,72 @@ def report():
             continue
         for line in p.open(encoding='utf-8'):
             f = line.rstrip('\n').split('\t')
-            pg = f[0]
             for item in f[2:]:
                 if ' ||| ' in item:
                     a, b = item.split(' ||| ', 1)
-                    d[pg].append((a, b))
+                    d[f[0]].append((a, b))
         rounds[rnd] = d
     if len(rounds) < 2:
-        print('两遍还没都跑完'); return
-    both, only = [], 0
-    for pg, items in rounds[1].items():
+        print('两遍还没都跑完')
+        return
+    index = build_index()
+    stat, hits, manual = Counter(), [], []
+    for pg, items in sorted(rounds[1].items(), key=lambda x: int(x[0])):
         other = rounds[2].get(pg, [])
         for a, b in items:
-            m = [x for x in other if norm(x[0]) == norm(a) or norm(x[1]) == norm(b)]
-            if m:
-                both.append((pg, a, b, m[0][1]))
-            else:
-                only += 1
+            if not any(norm(x[0]) == norm(a) or norm(x[1]) == norm(b) for x in other):
+                stat['只有一遍报'] += 1
+                continue
+            if norm(a) == norm(b):
+                stat['只差排印'] += 1
+                continue
+            diffs = word_diff(a, b)
+            if len(diffs) != 1:
+                stat['不是单点改动'] += 1
+                manual.append((pg, a, b, '不是单点改动'))
+                continue
+            o, n, i1, A = diffs[0]
+            why = vet(o, n, lex)
+            if why:
+                stat[why] += 1
+                manual.append((pg, a, b, why))
+                continue
+            placed = None
+            for sec in raw_chapters(int(pg), index):
+                placed = locate(sec, o, n, A[:i1])
+                if placed:
+                    break
+            if not placed:
+                stat['raw 里定位不到'] += 1
+                manual.append((pg, a, b, 'raw 里定位不到'))
+                continue
+            stat['可落'] += 1
+            hits.append((pg, sec, placed[0], placed[1], a, b))
+    print('，'.join(f'{k} {v}' for k, v in stat.most_common()))
     out = ROOT / 'logs/alexander_psalms_page_candidates.tsv'
     with out.open('w', encoding='utf-8') as fh:
-        fh.write('书页\t我们\t一遍读数\t二遍读数\n')
-        for pg, a, b, b2 in both:
-            fh.write(f'{pg}\t{a}\t{b}\t{b2}\n')
-    print(f'两遍都报的 {len(both)} 处（只有一遍报的 {only} 处已丢弃）→ {out}')
+        fh.write('书页\t篇\traw原串\traw改成\t两遍引文我们\t两遍引文影像\n')
+        for r in hits:
+            fh.write('\t'.join(r) + '\n')
+    man = ROOT / 'logs/alexander_psalms_page_manual.tsv'
+    with man.open('w', encoding='utf-8') as fh:
+        fh.write('书页\t我们\t影像\t原因\n')
+        for r in manual:
+            fh.write('\t'.join(r) + '\n')
+    print(f'可落 {len(hits)} → {out}；要人看 {len(manual)} → {man}')
+    if not apply:
+        for pg, sec, o, n, *_ in hits[:30]:
+            print(f'  p{pg} [{sec}] {o[:46]!r} → {n[:46]!r}')
+        return
+    done = 0
+    for pg, sec, o, n, *_ in hits:
+        path = ROOT / f'alexander_raw/psalms/en_chapters/{sec}.md'
+        t = path.read_text(encoding='utf-8')
+        if t.count(o) != 1:
+            continue
+        path.write_text(t.replace(o, n, 1), encoding='utf-8')
+        done += 1
+    print(f'落盘 {done} 处（改的是 en_chapters，重跑链条即生效）')
 
 
 def main():
@@ -234,12 +360,14 @@ def main():
     ap.add_argument('--from', dest='lo', type=int, default=0)
     ap.add_argument('--to', dest='hi', type=int, default=9999)
     ap.add_argument('--report', action='store_true')
+    ap.add_argument('--apply-fixes', action='store_true',
+                    help='把能唯一定位、改动够小的直接落进 en_chapters')
     ap.add_argument('--only-hits', action='store_true',
                     help='只跑第一遍报过差异的页——第二遍的活儿是筛掉假阳性，'
                          '第一遍一句话没说的页没什么可筛的')
     a = ap.parse_args()
     if a.report:
-        report()
+        candidates(apply=a.apply_fixes)
     elif a.round:
         run(a.round, a.lo, a.hi, a.only_hits)
     else:

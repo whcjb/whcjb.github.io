@@ -59,6 +59,40 @@ def already_fixed():
     return out
 
 
+def verse_audit():
+    """节号自查：两套编号都必须在一篇之内单调递增。
+
+    `3.` 被读成 `8.`、`31.` 读成 `81.` 这一类，非词那一路一个也看不见
+    （数字不是词），可它坏掉的是 verse-nav 与经文索引，比错字更要命。
+    **两套编号都要查**：`8 (2).` 的英文号 2 是对的、希伯来号 8 是错的，
+    只查英文那一套会漏掉（2026-09-17 漏过一次，8 处）。
+    """
+    import re as _re
+    bad = 0
+    for p in sorted((ROOT / 'alexander_raw/psalms/en_chapters').glob('*.md')):
+        if p.stem == 'preface':
+            continue
+        heb, eng = [], []
+        for para in p.read_text(encoding='utf-8').split('\n\n'):
+            m = _re.match(r'^\*?(\d{1,3})(?:\s*\(\s*(\d{1,3})\s*\.?\s*\))?\s*[.,:]',
+                          para.strip())
+            if not m:
+                continue
+            if m.group(2):
+                heb.append((int(m.group(1)), m.group(0)))
+                eng.append((int(m.group(2)), m.group(0)))
+            else:
+                eng.append((int(m.group(1)), m.group(0)))
+        for name, seq in (('希伯来', heb), ('英文', eng)):
+            # 开头的题注段（英文那一套里光杆 1./2.）不参与
+            s = seq[1:] if name == '英文' and len(seq) > 1 and seq[0][0] >= seq[1][0] else seq
+            for k in range(1, len(s)):
+                if s[k][0] <= s[k - 1][0]:
+                    print(f'  !! 诗 {p.stem} {name}节号 {s[k-1][1]!r} 之后是 {s[k][1]!r}')
+                    bad += 1
+    print(f'节号自查：{"全部单调 ✓" if not bad else str(bad) + " 处乱序"}')
+
+
 def main(show=False):
     vocab = L.build()
     asis, fixed = printed_as_is(), already_fixed()
@@ -89,6 +123,7 @@ def main(show=False):
                 stat['待判'] += 1
                 pending.append((sec, core,
                                 re.sub(r'\s+', ' ', raw[max(0, m.start() - 45):m.end() + 45])))
+    verse_audit()
     total = sum(stat.values())
     print(f'非词 {total} 处：' + '，'.join(f'{k} {v}' for k, v in stat.most_common()))
     OUT.parent.mkdir(exist_ok=True)
