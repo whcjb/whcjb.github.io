@@ -50,7 +50,12 @@ def chapter_date(out_dir, n):
 
 
 def main():
-    want = set(int(a) for a in sys.argv[1:]) if len(sys.argv) > 1 else None
+    # 默认不覆盖已发布的章：产物上叠了多轮人工校准（经文框拆分、脚注引用修正…），
+    # 这些修复还没全部回到链条里，从 zh_chapters 全量重写会把它们抹平。
+    # 要重建加 --overwrite；收尾的附录切分/残条清理/markdown 属性三步照常跑（幂等）。
+    argv = [a for a in sys.argv[1:] if not a.startswith('--')]
+    overwrite = '--overwrite' in sys.argv
+    want = set(int(a) for a in argv) if argv else None
     for src_dir, out_dir, book_id, book_name, lo, hi in VOLS:
         out_dir.mkdir(parents=True, exist_ok=True)
         nums = sorted(int(p.stem) for p in src_dir.glob('*.md')
@@ -58,6 +63,7 @@ def main():
         translated = set(nums)
         # 前言与章节分开收：preface 不是数字，上面的 isdigit 过滤会漏掉它
         has_preface = (src_dir / 'preface.md').exists()
+        skipped = []
         for n in (['preface'] if has_preface else []) + nums:
             if want and n not in want:
                 continue
@@ -73,6 +79,9 @@ def main():
                 if lo in translated:
                     fm += [f'next_section: {lo}', f'next_label: "以赛亚书 {lo}"']
                 fm += ['---', '']
+                if (out_dir / 'preface.md').exists() and not overwrite:
+                    skipped.append('preface')
+                    continue
                 (out_dir / 'preface.md').write_text(
                     '\n'.join(fm) + '\n' + body + '\n', encoding='utf-8')
                 print(f'  published {book_id}/preface.md  前言')
@@ -88,10 +97,17 @@ def main():
             if n < hi and (n + 1) in translated:
                 fm += [f'next_section: {n+1}', f'next_label: "以赛亚书 {n+1}"']
             fm += ['---', '']
+            if (out_dir / f'{n}.md').exists() and not overwrite:
+                skipped.append(str(n))
+                continue
             (out_dir / f'{n}.md').write_text('\n'.join(fm) + '\n' + body + '\n',
                                              encoding='utf-8')
             print(f'  published {book_id}/{n}.md  以赛亚书 {n}')
-        if nums:
+        if skipped:
+            print(f'  {book_id}: 跳过已发布的 {len(skipped)} 章（要重建加 --overwrite）')
+        if nums and (out_dir / 'index.html').exists() and not overwrite:
+            print(f'  {book_id} index.html 已存在，保留（要重写加 --overwrite）')
+        elif nums:
             (out_dir / 'index.html').write_text(
                 '---\nlayout: calvin-book-modern\n'
                 f'book_id: {book_id}\nbook_name: {book_name}\n'

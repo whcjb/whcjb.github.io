@@ -547,7 +547,19 @@ def drop_stray_apostrophe(text, lex):
     def repl_mid(m):
         cand = m.group(1) + 'y' + m.group(2)
         return cand if is_word(cand, lex) else m.group(0)
-    return re.sub(r"([A-Za-z]{2,})j'([a-z]*)", repl_mid, text)
+    text = re.sub(r"([A-Za-z]{2,})j'([a-z]*)", repl_mid, text)
+
+    # `}` 多半是 y：`bod}"`=body、`cit}^`=city、`man}'`=many、`sa}'ing`=saying、
+    # `universall}^`=universally。但不总是（`rectit}ide`=rectitude 那里是 u），
+    # 所以 y 和 u 都试，**落进词典才算**。希伯来乱码里的 `}`（`Mi}ny`、`DV})`）
+    # 两个都试不出词，自动躲开。
+    def repl_brace(m):
+        for ch in 'yu':
+            cand = m.group(1) + ch + m.group(3)
+            if is_word(cand, lex):
+                return cand
+        return m.group(0)
+    return re.sub(r"([A-Za-z]{2,})\}([\'\"^,.;:\-]?)([a-z]*)", repl_brace, text)
 
 
 def main(book='psalms'):

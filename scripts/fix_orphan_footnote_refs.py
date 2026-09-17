@@ -31,10 +31,10 @@ CODE = re.compile(r'^[A-Za-z]{0,3}\d+[A-Za-z]?$')
 RAW_DIR = {'1corinthians': '1cor', '2corinthians': '2cor', 'acts': 'acts'}
 
 
-def book_defs(book: str) -> dict:
+def book_defs(book, extra_dir=None) -> dict:
     """全书（含 raw md）的定义表，用来给分了家的引用找回定义。"""
     out = {}
-    for p in sorted((ROOT / 'calvin' / book).glob('*.md')):
+    for p in sorted((extra_dir or (ROOT / 'calvin' / book)).glob('*.md')):
         for code, body in DEF.findall(p.read_text(encoding='utf-8')):
             out.setdefault(code, body.strip())
     raw = RAW_DIR.get(book.replace('-en', ''), book.replace('-en', ''))
@@ -47,8 +47,16 @@ def book_defs(book: str) -> dict:
 
 def main() -> int:
     apply = '--apply' in sys.argv
+    # 位置参数 = 只处理这些目录（发布脚本收尾、或拿临时目录比对时用）；
+    # 目录名不是书名时用 --book 指定，定义表要按书名去 calvin_raw 找。
+    argv = [a for a in sys.argv[1:] if not a.startswith('--')]
+    book_override = None
+    if '--book' in sys.argv:
+        book_override = sys.argv[sys.argv.index('--book') + 1]
+        argv = [a for a in argv if a != book_override]
+    dirs = [Path(a) for a in argv] or [d for d in sorted((ROOT / 'calvin').iterdir())]
     added = degraded = skipped = 0
-    for d in sorted((ROOT / 'calvin').iterdir()):
+    for d in dirs:
         if not d.is_dir():
             continue
         defs_all = None
@@ -66,7 +74,7 @@ def main() -> int:
             if not orphan:
                 continue
             if defs_all is None:
-                defs_all = book_defs(d.name)
+                defs_all = book_defs(book_override or d.name, extra_dir=d)
             new_defs, dead = [], []
             for c in dict.fromkeys(orphan):
                 if defs_all.get(c):

@@ -58,22 +58,25 @@ def fm(book_id, title, date):
             f'date: {date}\n---\n\n')
 
 
-def main(argv=None, only=None):
+def main(argv=None, only=None, out_dir=None):
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--only', help='只处理该 book_id（发布脚本收尾时用）')
+    ap.add_argument('--out-dir', help='末章不在 calvin/<book>/ 而在别处时指定（发布脚本 --out 比对用）')
     args = ap.parse_args(argv)
     only = only or args.only
+    out_dir = out_dir or args.out_dir
 
     for path, book_id, marks in JOBS:
         if only and book_id != only:
             continue
-        p = ROOT / path
+        p = Path(out_dir) / Path(path).name if out_dir else ROOT / path
         t = p.read_text(encoding='utf-8')
         head = re.match(r'^---\n.*?\n---\n', t, re.S)
         date = re.search(r'^date:\s*(.+)$', head.group(0), re.M).group(1).strip()
         # 找每个切分点
         cuts = []
+        missing = []
         for pat, suffix, title in marks:
             m = re.search(pat, t)
             if m:
@@ -87,10 +90,13 @@ def main(argv=None, only=None):
                     pos = nl + 2
                 cuts.append((pos, suffix, title))
             else:
-                print(f'  !! {path}: 找不到切分锚点 {suffix}，跳过该段')
+                missing.append(suffix)
         cuts.sort()
         if not cuts:
+            # 一个锚点都找不到 = 这本已经切过了，别每跑一次发布就刷一屏警告
             continue
+        if missing:
+            print(f'  !! {path}: 找不到切分锚点 {missing}，跳过这些段')
         body = t[:cuts[0][0]].rstrip() + '\n'
         segs = []
         for i, (pos, suffix, title) in enumerate(cuts):

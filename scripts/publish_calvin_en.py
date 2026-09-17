@@ -445,6 +445,10 @@ def main():
     ap.add_argument('--book-id', help='Override book_id (default: <book>-en)')
     # 每本书独立样式：owen/ bridges/ 各有自己的 layout，贺智同理，不共用
     # calvin-en，否则改加尔文的样式会连带动到贺智。
+    ap.add_argument('--overwrite', action='store_true',
+                    help='覆盖已发布的章。默认不覆盖——产物上叠了多轮人工校准'
+                         '（跨页段落合并、孤儿引用退死标记、脚注 def 尾部剥章标题…），'
+                         '这些修复还没全部回到链条里，从 raw 全量重建会把它们抹平。')
     ap.add_argument('--layout', default='calvin-en', help='章节页 layout（默认 calvin-en）')
     ap.add_argument('--book-layout', default='calvin-en-book', help='书首页 layout（默认 calvin-en-book）')
     args = ap.parse_args()
@@ -514,6 +518,7 @@ def main():
         section_bounds[key] = (start, end)
 
     # Step 6: write each section
+    skipped_existing = []
     for key in all_keys:
         start, end = section_bounds[key]
         body_md = render_section(lines[start:end], all_defs)
@@ -532,22 +537,32 @@ def main():
         fm += '---\n\n'
 
         out_path = out_dir / f'{key}.md'
+        if out_path.exists() and not args.overwrite:
+            skipped_existing.append(key)
+            continue
         out_path.write_text(fm + body_md, encoding='utf-8')
         print(f'  → {key}.md ({len(body_md):,} chars)')
 
+    if skipped_existing:
+        print(f'  跳过已发布的 {len(skipped_existing)} 节（要重建加 --overwrite）: '
+              f'{skipped_existing[:6]}{"…" if len(skipped_existing) > 6 else ""}')
+
     # Step 7: index.html (with has_preface: true)
     index_path = out_dir / 'index.html'
-    index_path.write_text(
-        f'---\n'
-        f'layout: {args.book_layout}\n'
-        f'book_id: {book_id}\n'
-        f'book_name: "{book_name}"\n'
-        f'chapters: {len(chapter_keys)}\n'
-        f'has_preface: true\n'
-        f'---\n',
-        encoding='utf-8',
-    )
-    print(f'  → index.html')
+    if index_path.exists() and not args.overwrite:
+        print('  index.html 已存在，保留（要重写加 --overwrite）')
+    else:
+        index_path.write_text(
+            f'---\n'
+            f'layout: {args.book_layout}\n'
+            f'book_id: {book_id}\n'
+            f'book_name: "{book_name}"\n'
+            f'chapters: {len(chapter_keys)}\n'
+            f'has_preface: true\n'
+            f'---\n',
+            encoding='utf-8',
+        )
+        print(f'  → index.html')
 
     # Step 8: 经文框被 PDF 行组切断的，把框外那半截收回框内。判据是框头
     # banner 写的节号范围 vs 框里实际有的节号，幂等；每次发布都跑一遍，
@@ -562,7 +577,7 @@ def main():
     if book_id in ('isaiah-1-en', 'isaiah-2-en'):
         sys.path.insert(0, str(ROOT / 'scripts'))
         import isaiah_split_appendix
-        isaiah_split_appendix.main(argv=[], only=book_id)
+        isaiah_split_appendix.main(argv=[], only=book_id, out_dir=str(out_dir))
 
     # Step 10: 页底脚注切章时归到邻章，同一条注会在正文里再留一份红字 ftN 残条。
     sys.path.insert(0, str(ROOT / 'scripts'))
