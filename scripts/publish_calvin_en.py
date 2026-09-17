@@ -41,6 +41,15 @@ def get_date() -> str:
     return subprocess.check_output(["date", "+%Y-%m-%d %H:%M"]).decode().strip()
 
 
+def existing_date(path: Path) -> str | None:
+    """已发布过的章沿用原 date。CLAUDE.md：date 是「这一章译完/做完的时刻」，
+    发布脚本每跑一次就把全书刷成同一个当前时间，等于没有信息。"""
+    if not path.exists():
+        return None
+    m = re.search(r'^date:\s*(.+)$', path.read_text(encoding='utf-8'), re.M)
+    return m.group(1).strip() if m else None
+
+
 def normalize_back_footnotes(lines: list[str]) -> list[str]:
     """Convert raw `FT### text` lines (Ages back-section) to `[^fN]: text`.
     Handles letter-suffix variants (FT29A, FT36A, ...) and same-line
@@ -515,7 +524,7 @@ def main():
         fm += f'book_id: {book_id}\n'
         fm += f'book_name: "{book_name}"\n'
         fm += f'title: "{labels[key]}"\n'
-        fm += f'date: {DATE}\n'
+        fm += f'date: {existing_date(out_dir / f"{key}.md") or DATE}\n'
         if prev_s:
             fm += f'prev_section: {prev_s}\nprev_label: "{prev_l}"\n'
         if next_s:
@@ -546,6 +555,19 @@ def main():
     subprocess.run([sys.executable,
                     str(ROOT / 'scripts/fix_split_scripture_box.py'),
                     '--apply', '--sweep', str(out_dir)], check=True)
+
+    # Step 9: 以赛亚书两卷的末章吞了整套卷末附录（译本 / 索引表 / 日晷 /
+    # 译文脚注），得切出去；这一步以前是发布后手工跑的，于是每重跑一次发布
+    # 附录就被倒回 37/66 章，和已切出去的 appendix-*.md 重复一份。
+    if book_id in ('isaiah-1-en', 'isaiah-2-en'):
+        sys.path.insert(0, str(ROOT / 'scripts'))
+        import isaiah_split_appendix
+        isaiah_split_appendix.main(argv=[], only=book_id)
+
+    # Step 10: 页底脚注切章时归到邻章，同一条注会在正文里再留一份红字 ftN 残条。
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from calvin_footnote_residue import drop_duplicate_footnote_residue
+    drop_duplicate_footnote_residue(out_dir)
 
 
 if __name__ == '__main__':

@@ -58,12 +58,16 @@ def fm(book_id, title, date):
             f'date: {date}\n---\n\n')
 
 
-def main():
+def main(argv=None, only=None):
     ap = argparse.ArgumentParser()
     ap.add_argument('--dry-run', action='store_true')
-    args = ap.parse_args()
+    ap.add_argument('--only', help='只处理该 book_id（发布脚本收尾时用）')
+    args = ap.parse_args(argv)
+    only = only or args.only
 
     for path, book_id, marks in JOBS:
+        if only and book_id != only:
+            continue
         p = ROOT / path
         t = p.read_text(encoding='utf-8')
         head = re.match(r'^---\n.*?\n---\n', t, re.S)

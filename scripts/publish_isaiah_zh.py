@@ -12,8 +12,12 @@
 用法: python3 scripts/publish_isaiah_zh.py          # 发布所有已翻译
       python3 scripts/publish_isaiah_zh.py 1 3      # 只发布指定章
 """
-import re, sys, datetime
+import re, sys, datetime, subprocess
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from calvin_footnote_residue import drop_duplicate_footnote_residue
 
 ROOT = Path('/Users/yanpeifa/Documents/whcjb.github.io')
 now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
@@ -95,6 +99,22 @@ def main():
             print(f'  {book_id} index.html 已写；该卷已译章: {nums}')
         else:
             print(f'  {book_id} 暂无译章, 跳过 index')
+
+    # 收尾：把末章吞下的卷末附录切出去。这一步必须留在发布链条里——
+    # 以前它是发布后手工跑的 isaiah_split_appendix.py，于是每重跑一次发布，
+    # 附录（译本 + 索引表 + 日晷 + 132 条译文脚注）就被原样倒回 37/66 章，
+    # 和已经切出去的 appendix-*.md 重复一份，正文里还留下 ftN 红字残条。
+    if not want:
+        import isaiah_split_appendix
+        for bid in ('isaiah-1', 'isaiah-2'):
+            isaiah_split_appendix.main(argv=[], only=bid)
+            drop_duplicate_footnote_residue(ROOT / 'calvin' / bid)
+            # 包着脚注引用的 <span> 要带 markdown="span"，否则 kramdown 原样
+            # 吐出 `[^f19]` 字面量。这一步同样必须在链条里：它以前是发布后
+            # 单跑的补丁脚本，重跑一次发布就被打回原形。
+            subprocess.run([sys.executable,
+                            str(ROOT / 'scripts/fix_footnote_markdown_attr.py'),
+                            '--apply', str(ROOT / 'calvin' / bid)], check=True)
 
 
 if __name__ == '__main__':
