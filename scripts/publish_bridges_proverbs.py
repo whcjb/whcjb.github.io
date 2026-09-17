@@ -119,10 +119,11 @@ source_note: |
 1850 年纽约 Robert Carter &amp; Brothers 版，中译为改革宗翻译社简体中文版。</p>
 
 <p><strong>本站校订</strong>（对照英文原书 1865 年 Robert Carter &amp; Brothers 版，
-仅补足省略的谓语，用词未动）：第 16 章 16:1 注释「我们的是媒介，他却苏醒生命」→
-「我们的是媒介，他<u>所赐的是</u>苏醒的生命」。英文原文作
+仅补足省略的谓语）：第 16 章 16:1 注释「我们的是媒介，他却苏醒生命」→
+「我们的是媒介<u>（即工具性的作为）</u>，他<u>所赐的是</u>苏醒的生命」。英文原文作
 <em>Ours is the duty; his is the strength. Ours the agency; his the quickening life.</em>，
-后半句承前省略了系动词，中译照搬这个省略，读来像是缺字。</p>
+后半句承前省略了系动词，中译照搬这个省略，读来像是缺字。括注中的「工具性的作为」
+是本站为 <em>agency</em> 所加的释义，非译者原文。</p>
 
 <p>逐章可读：</p>
 """
