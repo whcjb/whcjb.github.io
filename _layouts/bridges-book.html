@@ -37,6 +37,10 @@ layout: default
               <a href="{{ site.baseurl }}{{ extra.url }}" class="bridges-pill bridges-pill--wide">总结</a>
               {% endif %}{% endfor %}
             </div>
+
+            {% if page.revision_note %}
+            <div class="bridges-revision">{{ page.revision_note }}</div>
+            {% endif %}
           </div>
         </div>
 
@@ -48,6 +52,17 @@ layout: default
     </div>
   </div>
 </div>
+
+<style>
+/* 本站校订说明：章节按钮下方的小字块 */
+.bridges-revision{
+  margin-top:26px; padding-top:18px;
+  border-top:1px solid rgba(107,78,46,.18);
+  font-size:14px; line-height:1.9; color:#6B5A44;
+}
+.bridges-revision p{ margin:0 0 8px; font-size:14px; line-height:1.9; }
+.bridges-revision strong{ color:#6B4E2E; }
+</style>
 
 <style>
 /* ─────────────────────────────────────────────────────────
