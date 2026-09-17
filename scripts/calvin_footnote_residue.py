@@ -38,9 +38,10 @@ def drop_duplicate_footnote_residue(out_dir: Path, verbose: bool = True):
             orphans.append((f.name, m.group(1)))
             return m.group(0)
 
-        new = re.sub(r'\n{4,}', '\n\n\n', RESIDUE_RE.sub(rep, t))
-        if new != t:
-            f.write_text(new, encoding='utf-8')
+        new = RESIDUE_RE.sub(rep, t)
+        if new == t:
+            continue        # 没删东西就别碰这个文件：空行压缩会造出一堆无谓 diff
+        f.write_text(re.sub(r'\n{4,}', '\n\n\n', new), encoding='utf-8')
     if verbose:
         name = Path(out_dir).name
         if dropped:
