@@ -206,5 +206,12 @@
  "2|225|CEcon.": "Œcon.",
  "2|312|OEcumenius": "Œcumenius",
  "2|600|CEcumenius": "Œcumenius",
- "_oe_ligature": "Œ 连字被 OCR 读成 CE / OE：`CEcumenius` `OEcumenius` `CEcon.`，两卷共 7 处（第三章已有一处 `Œconom` 读对了，字形本身没问题）。按位置投票而不是全局替换——这三个形态虽然当不成英文词，但按这条线上的规矩，能按位置定就不做全局。"
+ "_oe_ligature": "Œ 连字被 OCR 读成 CE / OE：`CEcumenius` `OEcumenius` `CEcon.`，两卷共 7 处（第三章已有一处 `Œconom` 读对了，字形本身没问题）。按位置投票而不是全局替换——这三个形态虽然当不成英文词，但按这条线上的规矩，能按位置定就不做全局。",
+ "2|396|SION.": "",
+ "2|396|DN": "",
+ "2|146|eves": "……",
+ "2|512|eso": "……",
+ "1|357|Aet": "heu",
+ "1|357|2s>Aet,": "……",
+ "1|357|is>Aet,": "……"
 }

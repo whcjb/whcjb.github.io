@@ -611,8 +611,12 @@ def _fn_zone_tail(L, fn_max, gap_ratio=1.6, size_ratio=0.92, min_run=8):
     量得的字号偏小，会把起点往前拽一两行（v1p197 的
     `its fervid devotion, to pray and desire.` 是标本）。
     """
+    # 极短的行（`282.)` 5 个字符实测量到 54.7，比正文还大）字号量不准，
+    # 扫尾段时跳过不算界——不然注区末尾一个 `282.)` 就把整段 39 行注顶回
+    # 正文（附卷 v2p468 实测）。
     k0 = len(L)
-    while k0 > 0 and L[k0 - 1]['size'] < fn_max:
+    while k0 > 0 and (L[k0 - 1]['size'] < fn_max
+                      or len(L[k0 - 1]['text'].strip()) <= 8):
         k0 -= 1
     if len(L) - k0 < min_run or k0 < 2:
         return None

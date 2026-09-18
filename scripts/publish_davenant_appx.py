@@ -292,7 +292,13 @@ def build_units(items):
             # 标题末尾那个 `*` 是脚注符，不是文字。front matter 不过 markdown，
             # 留着会在页面副题上直接印出一个星号；该条注仍会照常输出，
             # 只是行内引用退到本页首段（见 attach_notes 的兜底）。
-            cur['sub'] = it['text'].rstrip('*+ ')
+            # ⚠️ 只有**头一个** H2 是这一篇的副题。法国之争篇中另起了一个居中
+            # 大题（`THE JUDGMENT OF BISHOP DAVENANT.`，p572），照旧覆盖的话
+            # 整页副题被它顶掉（实测）。篇中的题按页内小标题排。
+            if cur['sub']:
+                cur['blocks'].append(('H3', it['text'].rstrip('*+ ')))
+            else:
+                cur['sub'] = it['text'].rstrip('*+ ')
             continue
         cur['pages'].update(it['pages'])
         if it['tag'] in ('VERSE', 'CITE'):

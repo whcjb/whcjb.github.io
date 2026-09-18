@@ -168,7 +168,11 @@ def split_page(L):
     fallback = [g for g in gaps[:8] if g > 0]
     if not fallback:
         return L, []
-    lo = max(2, len(gaps) * 12 // 100)
+    # 下界 12% → 2 行：注区最高能起在第 6 行（p468 顶上只有 5 行正文，
+    # 39 行编者长注从上一页续下来，12% 那道坎差一行把它挡在外面，整段注
+    # 留在正文里）。偏早的切点由 ok_zone 的三道守卫（空隙、行距、字号比）
+    # 自己挡；全附卷试跑，放宽后只有 p468 一页变化。
+    lo = 2
 
     def head_stats(head):
         """→ (行距, 字号)，都取候选切点以上那一段的中位数。"""
@@ -294,8 +298,26 @@ def shape(body):
     rel = [(l['x0'] - left) / w for l in body]
     rag = [(right - l['x1']) / w for l in body]
     out = ['cite' if rel[i] > 0.5 else '' for i in range(len(body))]
-    ind = [0.08 < rel[i] <= 0.5 and not is_caps(body[i]['text'])
+    # 0.08 → 0.075：p512 那首引诗中间一行量到 0.0796，`>0.08` 差一点点把它
+    # 排掉，三行诗被切成「一行诗 + 一行正文 + 一行诗」，成块判据（≥2 行）
+    # 再也不成立。全附卷段首缩进的实测分布是 0.04 一坨、尾巴到 0.06，
+    # 0.07 只有 1 行、0.08 以上 7 行——0.075 落在这条空谷里。
+    ind = [0.075 <= rel[i] <= 0.5 and not is_caps(body[i]['text'])
            for i in range(len(body))]
+    # 居中／靠右的**小标题行**：法国之争里 `THE` / `JUDGMENT OF BISHOP
+    # DAVENANT.` 两行居中题、末尾 `JOANN. SARISBURIENSIS.` 靠右署名，原先
+    # 都是普通正文段落。判据：短的全大写行 + 左边离版心左界 >5%
+    # （`SION. DN` 这种页脚签名残行 rel 只有 0.034，挡在门外）。
+    # 居中还是靠右，看右余：但 `THE .` 这类行被页边斑点把 x1 拽到了右边界
+    # （5 个字符量出 798 px，是常态字宽的 4 倍多），这时 x1 不可信，按居中算。
+    cw = statistics.median([(l['x1'] - l['x0']) / max(len(l['text'].strip()), 1)
+                            for l in body]) or 1
+    for i, l in enumerate(body):
+        t = l['text'].strip()
+        if out[i] or not is_caps(t) or not (0.05 < rel[i]) or len(t) > 44:
+            continue
+        wide = (l['x1'] - l['x0']) / max(len(t), 1) > cw * 1.6
+        out[i] = 'cite' if (not wide and rag[i] < 0.10 and rel[i] > 0.35) else 'head'
     i = 0
     while i < len(body):
         if not ind[i]:
@@ -396,15 +418,14 @@ def run_piece(pc, pages, out, stats):
                 stats['chap'] += 1
                 pend_title = []
                 continue
-            if pend_title is not None and is_caps(t) and l['x0'] > 150 and not cur:
-                # CHAP 之后的全大写行是章标题，可能排成两三行
-                pend_title.append(t.rstrip('.,'))
-                continue
-            if pend_title:
-                out.append('[H2] ' + clean_heading(' '.join(pend_title)))
-                pend_title = []
+            # ⚠️ `PART`/`END` 这两条必须排在标题收集之前：它们也是全大写、
+            # 也居中，放在后面会被标题那条先抢走（实测 `PART I.` / `FINIS.` /
+            # `END OF THE DISSERTATION.` 全被吞成章标题）。
             m = PART_RE.match(t)
             if m:
+                if pend_title:
+                    out.append('[H2] ' + clean_heading(' '.join(pend_title)))
+                    pend_title = []
                 flush()
                 out.append(f'[H3] PART {m.group(1).upper().replace("L", "I")}.')
                 rest = E.clean(t[m.end():])
@@ -412,9 +433,28 @@ def run_piece(pc, pages, out, stats):
                     cur, cur_pages = rest, {p}
                 continue
             if END_RE.match(t):
+                if pend_title:
+                    out.append('[H2] ' + clean_heading(' '.join(pend_title)))
+                    pend_title = []
                 flush()
                 out.append(f'[END] {t}')
                 continue
+            # 全大写的标题行。老判据要求 `not cur`——只认「紧跟在 CHAP 之后」
+            # 那一档；篇中另起的小标题前面是正文，cur 不空，于是漏判：法国之争
+            # p572 的 `THE` / `JUDGMENT OF BISHOP DAVENANT.` 两行居中题就成了
+            # 两个正文段落。放宽成「或者它是段首、且几何上认作居中题」
+            # （shape 里的 'head'：短的全大写行 + 左边离版心左界 >5%，
+            # 页脚签名残行 `SION. DN` rel 只有 0.034，挡在门外）。
+            if pend_title is not None and is_caps(t) and l['x0'] > 150 and (
+                    not cur or (is_start and role == 'head')):
+                # CHAP 之后的全大写行是章标题，可能排成两三行
+                if cur:
+                    flush()
+                pend_title.append(t.rstrip('.,'))
+                continue
+            if pend_title:
+                out.append('[H2] ' + clean_heading(' '.join(pend_title)))
+                pend_title = []
             if is_start:
                 flush()
                 cur, cur_pages = t, {p}
