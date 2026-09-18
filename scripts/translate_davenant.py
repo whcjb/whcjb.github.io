@@ -273,6 +273,19 @@ def translate_batch(texts):
 #   · 整块没翻（返回原文）/ 混进别的语种（西里尔字母，实测 3 处）
 CYRILLIC_RE = re.compile(r'[\u0400-\u04ff]')
 
+# 中文块里夹着**没译的英文词**：`才properly称为` / `结为friendship之盟` /
+# `祂放下report的雷霆`（第三章实测 3 处）。判据是「两侧都紧贴汉字的小写拉丁
+# 词」——这个形态在合规的译文里不出现：拉丁原文与人名按提示词要括注中文
+# （`in solidum(整体地)`、`Prudentius(普鲁登修斯)`），后面跟的是括号不是汉字。
+# 罗马数字除外（`诗篇 xxxiv 篇` 这类引用照原样留着）。
+LEAK_RE = re.compile(r'[\u4e00-\u9fff]\s*([a-z]{3,})\s*[\u4e00-\u9fff]')
+ROMAN_ONLY = re.compile(r'^[ivxlcdm]+$')
+
+
+def _leaked_en(zh):
+    return [w for w in LEAK_RE.findall(re.sub(r'<[^>]+>', ' ', zh))
+            if not ROMAN_ONLY.match(w)]
+
 
 def _fnrefs(t):
     return sorted(re.findall(r'\[\^(dv\d+)\]', t))
@@ -293,6 +306,9 @@ def check_block(en, zh):
         return '空'
     if '<<<' in zh:
         return '残留编号标记'
+    leak = _leaked_en(zh)
+    if leak:
+        return '夹着未译的英文词 ' + ' '.join(dict.fromkeys(leak))
     if CYRILLIC_RE.search(zh):
         return '混入西里尔字母 ' + ' '.join(CYRILLIC_RE.pattern and
                                         re.findall(r'[\u0400-\u04ff]+', zh))
