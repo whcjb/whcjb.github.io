@@ -78,7 +78,8 @@ def ref_budget(items):
     """
     need = collections.Counter()
     for it in items:
-        if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE') and it['pages']:
+        if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE', 'HEAD', 'ATTRIB') \
+                and it['pages']:
             need[it['pages'][0]] += len(REF_RE.findall(it['text']))
     return need
 
@@ -358,10 +359,31 @@ def main():
             return m.group(0)              # 该页注已用尽 → 原样留符号
 
         txt = it['text']
-        if it['tag'] in ('BODY', 'LEMMA', 'SCRIPTURE'):
+        if it['tag'] in ('BODY', 'LEMMA', 'SCRIPTURE', 'HEAD', 'ATTRIB'):
             txt = mark_italics(txt, it['pages'])
-        if it['tag'] in ('BODY', 'LEMMA'):
+        if it['tag'] in ('BODY', 'LEMMA', 'HEAD', 'ATTRIB'):
             txt = REF_RE.sub(take_note, txt)
+
+        if it['tag'] == 'ATTRIB':
+            # 原书右对齐的出处行（`Duncan's Boethius, 1789.`），跟在引诗后面
+            cur['blocks'].append('<p class="dv-attrib" markdown="1">'
+                                 + italics(md_escape(txt)) + '</p>')
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
+            continue
+
+        if it['tag'] == 'HEAD':
+            # 原书居中的小鉴题（`Instructions.` `Corollaries.` `Observations.`、
+            # 三行的章题、章末 `FINIS.`）。抽取那边按左右边距对称认出来
+            # （extract_davenant.centered_heads），这里居中排，不进正文段流。
+            # `.dv-synopsis` 与手工重建的 v2p228 那一处同一个类。
+            # markdown="1"：块里偶尔带脚注引用 `[^dvN]`，不开这个开关
+            # kramdown 会把它当字面量印出来。
+            cur['blocks'].append('<p class="dv-synopsis" markdown="1">'
+                                 + italics(md_escape(txt)) + '</p>')
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
+            continue
 
         if it['tag'] == 'OUTLINE':
             # 原书整体右移排的一块（分析表的各支、清单、引诗）：一行一条，

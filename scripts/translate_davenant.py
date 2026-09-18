@@ -386,9 +386,21 @@ def normalize_etc(body: str) -> str:
     return body
 
 
+# 章题在原书是**居中排的三行**（`EXPOSITION` / `OF` / `THE FOURTH
+# CHAPTER.`），英文页照原样出三行。中文没有这种排法：逐块送翻会得到
+# 「注释 / —— / 第四章」三行，中间那个 `OF` 怎么译都不成话。
+# 三行合成一行，按章号确定性生成，不送模型。
+TITLE_TRIPLE = re.compile(
+    r'<p class="dv-synopsis"[^>]*>EXPOSITION</p>\s*\n\s*\n'
+    r'<p class="dv-synopsis"[^>]*>OF</p>\s*\n\s*\n'
+    r'<p class="dv-synopsis"[^>]*>THE [A-Z]+ CHAPTER\.?</p>')
+
+
 def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool):
     src = PUB / f'{n}.md'
     fm, body = split_page(src.read_text(encoding='utf-8'))
+    body = TITLE_TRIPLE.sub('<p class="dv-synopsis" markdown="1">'
+                            f'{CH_ZH.get(n, "")}注释</p>', body)
     items = blocks_of(body)
 
     send = [i for i, it in enumerate(items) if it[0] in ('body', 'scripture')]

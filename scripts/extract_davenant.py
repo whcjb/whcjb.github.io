@@ -339,13 +339,24 @@ def page_body_x0(lines):
 # 斑点只认这几个在本书里从不合法出现在行首的字符。
 HEAD_SPECK = re.compile(r"^\s*[.,;:'\u2019\u201c\u201d|/*+~^`\-]{1,2}\s+(?=[A-Za-z])")
 
+# 行末右边距上的孤立斑点（见 build_paragraphs 里的调用处）
+TAIL_SPECK = re.compile(r'[a-z] [-.]$')
+
 
 def unspeck(l):
-    """→ (去掉行首斑点的文本, 修正后的 x0)。按字符数比例把 x0 推回去。"""
+    """→ (去掉行首斑点的文本, 修正后的 x0)。按字符数比例把 x0 推回去。
+
+    ⚠️ 剥掉的前缀记进 `l['speck']`：`*` `+` 也在斑点字符表里，而脚注行
+    行首那个 `*` 是**脚注符**，不是斑点。unspeck 在 split_page 之前跑，
+    marks 被提前剥掉，注区判据里的 FN_MARK 就看不见它了
+    （v1p155 的 `* Vide p. 20, 21.` 因此整条留在正文里）。
+    把前缀留着，需要认脚注符的地方用 `had_fn_mark()` 复原来看。
+    """
     t = l['text']
     m = HEAD_SPECK.match(t)
     if not m:
         return t, l['x0']
+    l['speck'] = m.group(0)
     cut = m.end()
     x0 = l['x0'] + int((l['x1'] - l['x0']) * cut / max(len(t), 1))
     return t[cut:], x0
@@ -376,6 +387,14 @@ def para_starts(lines, x0, indent_min):
     return [d > indent_min for d in line_offsets(lines, x0, indent_min)]
 
 
+def indent_scale(ds, indent_min):
+    """→ (本页段首缩进, 右移块门槛, 孤身一行的门槛)。两个版式判据共用。"""
+    near = [d for d in ds if indent_min < d <= 2.5 * indent_min]
+    para = statistics.median(near) if len(near) >= 3 else 1.8 * indent_min
+    return para, max(2.2 * indent_min, 1.5 * para), max(3.0 * indent_min,
+                                                        2.0 * para)
+
+
 def _all_caps(t):
     L = [c for c in t if c.isalpha()]
     return bool(L) and all(c.isupper() for c in L)
@@ -403,13 +422,15 @@ def outline_items(lines, ds, indent_min):
     全大写的行一律不算：`EXPOSITION` / `THE FOURTH CHAPTER.` 是居中章题。
     宁可漏判（退回现状，一条一段）也不错判——错判会把居中标题拽进缩进块。
     """
-    near = [d for d in ds if indent_min < d <= 2.5 * indent_min]
-    para = statistics.median(near) if len(near) >= 3 else 1.8 * indent_min
-    deep_run = max(2.2 * indent_min, 1.5 * para)
-    deep_one = max(3.0 * indent_min, 2.0 * para)
+    para, deep_run, deep_one = indent_scale(ds, indent_min)
     cand = [d > deep_run and not _all_caps(l['text'])
             for l, d in zip(lines, ds)]
     acc = [False] * len(lines)
+    # ⚠️ 一段连续的候选行里可能**混着右对齐的出处行**（`Duncan's Boethius,
+    # 1789.` x0=798，紧挨着四行 x0≈270 的译诗）。早先要求「整段行行对齐」，
+    # 这一行不齐就把整段作废，v1p166/v1p285 两处引诗因此一条一段。
+    # 改成按左边界切小段：每段内部对齐（±25px），≥2 行的小段才认。
+    # 出处行自己落单，不成段，仍旧是普通段落——这是想要的。
     i = 0
     while i < len(lines):
         if not cand[i]:
@@ -418,11 +439,15 @@ def outline_items(lines, ds, indent_min):
         j = i
         while j + 1 < len(lines) and cand[j + 1]:
             j += 1
-        xs = [lines[k]['x0'] for k in range(i, j + 1)]
-        med = statistics.median(xs)
-        if j > i and all(abs(x - med) <= 25 for x in xs):
-            for k in range(i, j + 1):
-                acc[k] = True
+        g = i
+        while g <= j:
+            h = g
+            while h + 1 <= j and abs(lines[h + 1]['x0'] - lines[g]['x0']) <= 25:
+                h += 1
+            if h > g:
+                for k in range(g, h + 1):
+                    acc[k] = True
+            g = h + 1
         i = j + 1
     aligned = [lines[k]['x0'] for k in range(len(lines)) if acc[k]]
     for k in range(len(lines)):
@@ -433,6 +458,93 @@ def outline_items(lines, ds, indent_min):
                 prev.endswith((',', ':', ';')):
             acc[k] = True
     return acc
+
+
+SENT_TAIL = ('.', '!', '?', ':', ';', ',', '"', '”', '’', ')')
+
+# 19 世纪排长引文时每行行首重复的那个开引号。OCR 读成什么样都有：
+# `“` / `"` / `**` / `''` / `,,` / 反引号（v1p262 实测 `** `）。
+# 单个 `*` **不在**表里——那是脚注符。
+QUOTE_SPECK = re.compile(r'^(“|”|"|\*\*|\'\'|,,|``)$')
+
+
+def text_right(lines):
+    """正文的右边界：x1 **上半的中位数**，不是最大值。
+
+    最大值会被个别过界的行拉走（v1p418 实测 max 1447、真正的右边界 1311），
+    居中判据按它算出来的左右边距差 175 px，门槛 156 差一点就是过不去——
+    章题 `EXPOSITION / OF` 与 `DOGMATICAL OBSERVATIONS.` 这几行因此漏判。
+    """
+    xs = sorted(l['x1'] for l in lines)
+    return statistics.median(xs[len(xs) // 2:]) if xs else 0
+
+
+def centered_heads(lines, ds, starts, marks, left, right, indent_min):
+    """→ 每行的版式角色：'head'（居中小标题）/ 'attrib'（右对齐的出处行）/ ''。
+
+    达文南特的应用段前面常印一行居中的小鉴题——`Instructions.`
+    `Corollaries.` `Observations.` `Hence let us observe,`，章题
+    `EXPOSITION / OF / THE FOURTH CHAPTER.` 与章末 `FINIS.` 也是居中的。
+    抽取器只认缩进，这些行成了普通正文段落：短短一段顶在段首缩进位，
+    和它引出的那几条挤在一起，读者看不出它是标题（全书 30 余处）。
+
+    判据是**左右边距对称**（页面几何），不是字面清单——写死
+    `Instructions|Corollaries|…` 只能罩住数得出来的那几个词：
+      · 左右两侧各留出 >12% 版心宽，且两侧之差 ≤12% 版心宽
+      · 行长 ≤75% 版心宽（居中标题都短）
+      · 上一行以句末标点收尾，或上一行本身就是居中标题（章题是连着三行）
+      · 下一行是新段首，或上一行是居中标题（章题末行 `THE FOURTH
+        CHAPTER.` 底下那行是不缩进的正文，只看下一行会漏掉它）
+      · 至少有一个 ≥2 字母的词（挡掉 `1 2` 这种页面碎片）
+    右移块（outline_items 已认定的条目）优先：拉丁引诗、分析表的支本来就
+    短、也可能左右对称，但它们是块里的一条，不是标题。
+    """
+    W = max(right - left, 1)
+    _para, deep_run, _one = indent_scale(ds, indent_min)
+
+    def sym(l):
+        """纯几何的「居中」：左右边距都留够、两侧之差小、行不长。"""
+        lg, rg = l['x0'] - left, right - l['x1']
+        return (lg > 0.12 * W and rg > 0.12 * W and abs(lg - rg) <= 0.12 * W
+                and l['x1'] - l['x0'] <= 0.75 * W)
+
+    out = [''] * len(lines)
+    for i, l in enumerate(lines):
+        lg, rg = l['x0'] - left, right - l['x1']
+        w = l['x1'] - l['x0']
+        if not any(len(x) >= 2 and x.isalpha()
+                   for x in re.findall(r'[A-Za-z]+', l['text'])):
+            continue
+        prev_cen = i > 0 and out[i - 1] == 'head'
+        # 上一行行末的脚注符不算内容（`…rewards of vighteousness.*`），
+        # 剥掉再看它是不是以句末标点收尾。
+        prev = lines[i - 1]['text'].rstrip().rstrip('*+†‡ ') if i else ''
+        if not (i == 0 or prev_cen or prev.endswith(SENT_TAIL)):
+            continue
+        if not (i + 1 >= len(lines) or starts[i + 1] or prev_cen):
+            continue
+        # 下一行是**右移**的 → 这一行是一块缩进引文的头一行，不是居中标题
+        # （v2p146 的 `……What is the duty of Physicians,` 领起三行右移的
+        # 耶柔米引文，左右边距恰好对称，只看几何会当成标题）。
+        # 只卡居中那一档：右对齐的出处行后面接着另一块引诗是常事
+        # （v1p357 的 `ZEneid. x.` 底下就是英译）。
+        # 下一行若自己也是居中的（章题连着三行 `EXPOSITION / OF /
+        # THE FOURTH CHAPTER.`，第二行比第一行还靠右），不算「领起缩进块」。
+        next_deep = (i + 1 < len(lines) and ds[i + 1] > deep_run
+                     and not prev_cen and not sym(lines[i + 1]))
+        if not marks[i] and not next_deep and sym(l):
+            out[i] = 'head'
+        # 右对齐的出处行：引诗、引文之后单排一行的作者/篇名
+        # （`Prudent.` / `Duncan's Boethius, 1789.` / `Hor. Epist. lib. 1.
+        # Ep. 16.` / `Prudent. in Psychom.`，全书 4 处）。它贴着右边界、
+        # 左边留出一大片白，和居中标题是同一类「原书版式」，只是靠右。
+        # 行长卡到 45% 版心：再长的多半是被页边斑点把 x1 拽到右边界的
+        # 普通行（v2p254 的 `Corollaries. )` 实测 53%）。
+        # 右边距放到 15%：短的出处行并不顶到右边界（`In Hamart.` 实测离
+        # 边界 149 px、`ZEneid. x.` 136 px，版心 1160 左右）。
+        elif lg > 0.35 * W and rg < 0.15 * W and w <= 0.45 * W:
+            out[i] = 'attrib'
+    return out
 
 
 FN_MARK = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+(?=[A-Z(“"\d])')
@@ -474,6 +586,50 @@ def _fn_zone_by_size(L, fn_max, lead, gaps):
             continue
         return k
     return None
+
+
+# 章末标记：`END OF THE FIRST CHAPTER.` / `THE END OF THE SECOND CHAPTER.`
+# / `FINIS.`。OCR 把 CHAPTER 读成 CITAPTER/CHAPTEB 之类，所以尾巴放宽。
+CHAP_END_RE = re.compile(r'^\s*((THE\s+)?END\s+OF\s+THE\s+\w+\s+C\w{5,7}\.?'
+                         r'|FINIS\s*\.?)\s*$', re.I)
+
+
+def had_fn_mark(l):
+    """这一行原本是不是以脚注符起首（把 unspeck 剥掉的前缀接回去再看）。"""
+    return bool(FN_MARK.match(l.get('speck', '') + l['text']))
+
+
+def _fn_zone_tail(L, fn_max, gap_ratio=1.6, size_ratio=0.92, min_run=8):
+    """整页大半是编者长注的页面：按「页尾一整段小字」找注区起点，找不到返回 None。
+
+    判据全是**页内比值**，不依赖本页的参考行距（那把尺子在这种页面上本身
+    就被压短了，见调用处的注释）：
+      · 页尾连续 ≥min_run 行字号在界下——长注一定连到页脚；
+      · 切口 ≥ gap_ratio × 注区内部行距，或注区首行带脚注符；
+      · 注区中位字号 ≤ size_ratio × 上半中位字号。
+    切点在「小字起点」前后两行里取断口最大的那一个：正文末行常是短行，
+    量得的字号偏小，会把起点往前拽一两行（v1p197 的
+    `its fervid devotion, to pray and desire.` 是标本）。
+    """
+    k0 = len(L)
+    while k0 > 0 and L[k0 - 1]['size'] < fn_max:
+        k0 -= 1
+    if len(L) - k0 < min_run or k0 < 2:
+        return None
+    cand = [k for k in (k0, k0 + 1, k0 + 2) if 2 <= k <= len(L) - min_run]
+    if not cand:
+        return None
+    k = max(cand, key=lambda i: L[i]['y0'] - L[i - 1]['y0'])
+    zg = [L[i + 1]['y0'] - L[i]['y0'] for i in range(k, len(L) - 1)]
+    if len(zg) < 3:
+        return None
+    if L[k]['y0'] - L[k - 1]['y0'] < gap_ratio * statistics.median(zg) \
+            and not FN_MARK.match(L[k]['text']):
+        return None
+    if statistics.median([x['size'] for x in L[k:]]) > size_ratio * \
+            statistics.median([x['size'] for x in L[:k]]):
+        return None
+    return k
 
 
 def split_page(lines, fn_max):
@@ -552,13 +708,34 @@ def split_page(lines, fn_max):
         # 兜底一·b：只有一两行的短注（`* Egregias rationes—conclusives !`）。
         # 一行的注没有「区内行距」可比，只能靠上方那道空隙 + 字号：
         # vol1 p130 实测空隙 121px（正文行距 54）、字号 38（谷底 40.5）。
+        # ⚠️ 短行的 x_size 量不准（`* Vide p. 20, 21.` 实测 46，反而在界上），
+        # 所以**带脚注符**的那一行不再卡字号——空隙 1.7 倍 + 行首脚注符
+        # 已经足够硬。只放在这一道里：把 FN_MARK 全线复原会改掉主判据挑的
+        # 切点，实测 v1p104/p376 的注区反被缩小 8 行和 3 行。
         for i in range(len(gaps) - 1, len(gaps) * 55 // 100 - 1, -1):
             if gaps[i] < lead * 1.7:
                 continue
             zone = L[i + 1:]
-            if len(zone) <= 2 and all(x['size'] < fn_max for x in zone):
+            if len(zone) <= 2 and (all(x['size'] < fn_max for x in zone)
+                                   or had_fn_mark(zone[0])):
                 best = i + 1
             break
+    if best is None:
+        # 兜底一·c：**带脚注符**的短注，上方那道空隙没到 1.7 倍。原书排注时
+        # 页面排得满，注与正文之间只多留半行（v1p293 实测 76 px vs 正文行距
+        # 54、v1p557 71 px、v2p49 105 vs 67），1.7 倍的门槛够不着，整条注
+        # 留在正文里成了两三段莫名其妙的短段。
+        # 门槛降到 1.25 倍，但要求三条同时成立：行首有脚注符（unspeck 剥掉的
+        # 前缀接回来看）、该段到页尾**每一行**字号都在界下、且不超过 6 行。
+        # 全书只命中这 3 页。
+        for i in range(len(gaps) - 1, len(gaps) * 55 // 100 - 1, -1):
+            zone = L[i + 1:]
+            if len(zone) > 6:
+                break
+            if gaps[i] >= lead * 1.25 and had_fn_mark(zone[0]) and \
+                    all(x['size'] < fn_max for x in zone):
+                best = i + 1
+                break
     if best is None:
         # 兜底二：有些页注区上方**没有**额外空隙（vol1 p95/p99 实测，
         # 该行上方空隙 50/47 vs 正文行距 53.5/53）。此时只认「脚注符起首
@@ -586,6 +763,26 @@ def split_page(lines, fn_max):
             # 另外 30 行注文还留在正文里。全书 64 个「注区 <4 行」的页面里，
             # 这条判据只对 p99 提出覆盖，其余一律 None——不会乱动。
             best = alt
+    # 兜底四：整页大半是编者长注的页面。上面每一道都拿本页的参考行距 lead
+    # 当尺子，而 lead 取的是页顶前 8 行——这种页面页顶只剩三五行正文，那
+    # 8 个间隙里混着注区的紧行距，尺子本身就被压短了（p262 实测 45 vs 真正
+    # 的正文行距 54），「区内行距明显比正文紧」于是永远不成立。整条长注
+    # 留在正文里，还被一行一段地拆开，带着原书每行行首重复的 `“`
+    # （v1p99/197/255/256/262/268/366/370/620/621、v2p222 共 11 页 ~340 行）。
+    #
+    # 这一道换成**卷级**的正文行距（VOL_LEAD，只取字号在界上的相邻行对算，
+    # 与页面构成无关），判据是「页尾一整段小字 + 区内行距紧 + 切口看得见」：
+    #   · 页尾连续 ≥8 行字号在界下（长注一定连到页脚）
+    #   · 区内行距 < 0.9 × 卷级正文行距
+    #   · 切口 ≥ 1.3 × 卷级正文行距，或注区首行带脚注符
+    # 切点在「小字起点」前后两行里取断口最大的那一个——正文末行常是短行，
+    # 量得的字号偏小，会把切点往前拽一两行（v1p197 的
+    # `its fervid devotion, to pray and desire.` 实测）。
+    # 拿全书试跑：这一道认出 147 页，其中 136 页与现有产物**完全一致**，
+    # 另外 11 页就是上面那批漏判；11 处切点逐页对照 600 dpi 影像核过。
+    alt = _fn_zone_tail(L, fn_max)
+    if alt is not None and (best is None or alt < best):
+        best = alt
     if best is None:
         return [x for x in L if not JUNK_RE.match(x['text'])], []
     # 注区上提：整页几乎全是注的页面（长注跨了三四页），上面那道
@@ -602,6 +799,14 @@ def split_page(lines, fn_max):
             if FN_MARK.match(x['text']) and x['size'] <= fs * 1.05:
                 best = i
                 break
+    # 章末标记（`END OF THE FIRST CHAPTER.` / `FINIS.`）印在页脚上方、字号
+    # 与脚注一样小，会被一并划进注区，发布出来成了一条莫名其妙的脚注
+    # （全书 3 处：v1p417 / v1p630 / v2p222）。它是居中的章末标记，不是注，
+    # 划回正文交给居中标题那一路。
+    while len(L) > best and CHAP_END_RE.match(clean(L[-1]['text'])):
+        tail = L.pop()
+        L.insert(best, tail)
+        best += 1
     fns = [x for x in L[best:] if not JUNK_RE.match(x['text'])]
     body = [x for x in L[:best] if not JUNK_RE.match(x['text'])]
     return body, fns
@@ -778,7 +983,8 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
     """→ ([(文本, 页码, 是否缩进条)], footnotes, stats)"""
     paras, fns, stats = [], [], collections.Counter()
     cur, cur_pages = '', set()          # 段落跨了哪几页——脚注配对要按页对齐
-    cur_item = False                    # 本段是不是原书右移排的一条（见 outline_items）
+    cur_kind = ''                       # '' / 'item'（右移块的一条）/ 'head'（居中小标题）
+    last_kind = ''                      # 上一页最后一行的角色——版式块可能正好断在页末
     for rec in load(vol):
         p = rec['page']
         if not (lo <= p <= hi):
@@ -806,6 +1012,18 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             t2, x2 = unspeck(l)
             if t2 != l['text']:
                 l['text'], l['x0'] = t2, x2
+        # 行**末**右边距上的孤立斑点：`…but to the Son, and to -` / `…such
+        # readers as are .`，下一行接着往下排，产物里就成了句中的 ` - `／` . `
+        # （`the argument of this - Chapter` 是用户看到的那一处）。
+        # 英文排版里不会出现「小写词 + 空格 + 孤立短横／句点」收行——真正的
+        # 破折号不带前空格，真正的句号也不会以空格与前一个词隔开。
+        # 全书 `-` 31 处、`.` 80 处，`-` 的 31 处与 `.` 里下一行大写起首的
+        # 4 处**逐条读过**，无一例外都是斑点（`and to - the Holy Spirit`、
+        # `says . Bernard`）；`.` 的其余各处下一行都是小写起首，真句号不可能
+        # 后接小写。所以这里不再卡下一行。
+        for k in range(len(lines) - 1):
+            if TAIL_SPECK.search(lines[k]['text'].rstrip()):
+                lines[k]['text'] = lines[k]['text'].rstrip()[:-1].rstrip()
         body, fn = split_page(lines, fn_max)
         if fn:
             stats['fn_pages'] += 1
@@ -814,16 +1032,31 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         ds = line_offsets(body, x0, indent_min)
         starts = [d > indent_min for d in ds]
         marks = outline_items(body, ds, indent_min)
+        heads = centered_heads(body, ds, starts, marks, x0, text_right(body),
+                               indent_min)
         # 右移的块（引诗／经文／分析表）之后，正文接着往下排是**不缩进**的：
         # v2p298 两行引诗右移，接着 `But now among the many operations…` 顶格
         # 续排。只看缩进会把它读成引诗那一行的续行，整段散文黏在诗句后面。
         # 全书触发 2 处，另一处 v1p86（`THERE are four parts…` 接在经文末行
         # 之后）本来就被经文对齐那一步切开了，这里只是把它提到行一级。
+        # 居中标题底下的正文同样**不缩进**（章题 `THE FOURTH CHAPTER.` 底下
+        # 的 `I premise a few things…` 顶格起，还带大写首字），章题因此被
+        # 拼进第一段：页面上是三行居中的章题，产物里是
+        # `THE FOURTH CHAPTER. I premise a few things…` 一整段。
         for k in range(1, len(body)):
-            if marks[k - 1] and not marks[k] and not starts[k] \
-                    and body[k]['text'][:1].isupper():
+            if (marks[k - 1] or heads[k - 1] == 'head') and not marks[k] \
+                    and not starts[k] and body[k]['text'][:1].isupper():
                 starts[k] = True
-        for l, is_start, is_item in zip(body, starts, marks):
+        kinds = [h if h else ('item' if m else '')
+                 for h, m in zip(heads, marks)]
+        # 版式块断在页末时，下一页第一行的正文同样顶格续排，页内那条判据
+        # 看不见跨页的上一行（v1p357 的引诗末行在页末，`So Christ himself
+        # exclaims…` 落到下一页页顶，整段散文因此黏在诗句后面）。
+        if body and last_kind in ('item', 'head') and not marks[0] \
+                and not starts[0] and body[0]['text'][:1].isupper():
+            starts[0] = True
+        last_kind = kinds[-1] if kinds else ''
+        for l, is_start, kind in zip(body, starts, kinds):
             # 第二证人：拿 PDF 自带的 IA OCR 层校我们这一遍（见
             # scripts/davenant_witness.py）。两遍都是 tesseract，但版本、
             # 预处理、切页都不同，错处基本不重叠。只在「我方非词、对方是词、
@@ -833,21 +1066,23 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             if not txt:
                 continue
             if is_start and cur:
-                paras.append((cur, sorted(cur_pages), cur_item))
-                cur, cur_pages, cur_item = txt, {p}, is_item
+                paras.append((cur, sorted(cur_pages), cur_kind))
+                cur, cur_pages, cur_kind = txt, {p}, kind
             elif cur:
                 cur = dehyph(cur, txt)
                 cur_pages.add(p)
+                if cur_kind in ('head', 'attrib'):   # 吃进了续行 → 不再算标题
+                    cur_kind = ''
             else:
-                cur, cur_pages, cur_item = txt, {p}, is_item
+                cur, cur_pages, cur_kind = txt, {p}, kind
         stats['pages'] += 1
         stats['lines'] += n0
     if cur:
-        paras.append((cur, sorted(cur_pages), cur_item))
+        paras.append((cur, sorted(cur_pages), cur_kind))
     # 段落级再过一遍人工核定表：跨行断词的词（`distin-` + `euished`）
     # 只有在 dehyph 之后才成形，行级那一道看不到它。
-    paras = [(W.para_fix(vol, pg, W.manual_para(vol, pg, drop_stray(t))), pg, it)
-             for t, pg, it in paras]
+    paras = [(W.para_fix(vol, pg, W.manual_para(vol, pg, drop_stray(t))), pg, k)
+             for t, pg, k in paras]
     return paras, fns, stats
 
 
@@ -1042,7 +1277,7 @@ def apply_brace(vol, paras, lo=None, hi=None):
             if str(int(page)) not in [str(x) for x in paras[i][1]]:
                 continue
             pages = sorted({x for k in range(len(want)) for x in paras[i + k][1]})
-            paras[i:i + len(want)] = [(BRACE_MARK + rec['html'], pages, False)]
+            paras[i:i + len(want)] = [(BRACE_MARK + rec['html'], pages, '')]
             hit += 1
             break
         else:
@@ -1053,6 +1288,9 @@ def apply_brace(vol, paras, lo=None, hi=None):
 
 
 BRACE_MARK = '\x00BRACE\x00'
+
+# 经文块切出来的尾巴：`&c.` / `c.`（`&` 被 OCR 吃掉）/ 孤立的标点
+SCR_TAIL_RE = re.compile(r'(&\s*)?c\.?|[,;:.]')
 
 
 def main():
@@ -1088,7 +1326,7 @@ def main():
             seen_chap, cur_chap, pend = False, None, None
             i = 0
             while i < len(paras):
-                para, ppages, is_item = paras[i]
+                para, ppages, kind = paras[i]
                 i += 1
                 if para.startswith(BRACE_MARK):
                     pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
@@ -1180,12 +1418,47 @@ def main():
                         # split_scripture 的切点落在它前面，于是它被当成正文
                         # 甩出来，页面上多一段孤零零的 `&c.`（vol2 p233 实测，
                         # 原书印的是 "…with thanksgiving, &c."）。
-                        if rest and re.fullmatch(r'&\s*c\.?', rest.strip()):
+                        # `&` 掉了只剩 `c.`、或只剩一个逗号分号的，同样是经文的
+                        # 尾巴，不是段落（v1p195 的 `c.`、v1p295 的 `,`、
+                        # v2p306 的 `;` 实测，页面上就是三段孤零零的标点）。
+                        if rest and SCR_TAIL_RE.fullmatch(rest.strip()):
                             scr, rest = scr.rstrip() + ' ' + rest.strip(), ''
                         elif not rest and i < len(paras) and \
-                                re.fullmatch(r'&\s*c\.?', paras[i][0].strip()):
+                                SCR_TAIL_RE.fullmatch(paras[i][0].strip()):
                             scr = scr.rstrip() + ' ' + paras[i][0].strip()
                             i += 1
+                        # 原书的经文栏里常常连着印**下一节的开头**（`Vers. 9.`
+                        # 底下把第 10 节两行一并排进去、`Vers. 10.` 底下压着
+                        # `Where there is neither Greek, &c.`）。贪心增长按本节
+                        # 的 KJV 比相似度，多出来的那几行只会把相似度拉低，于是
+                        # 被甩成正文段落——页面上就是经文框底下挂着两段没头没尾
+                        # 的经文（v2p84 / v2p93 实测，全书 2 处）。
+                        # 这里按**下一节**的 KJV 前缀再贪心收一次，像了才收，
+                        # 收进来的节号一并记进块头。
+                        while cur_chap and i < len(paras):
+                            nv = used[-1] + 1
+                            key = f'{cur_chap}:{nv}'
+                            if key not in kjv:
+                                break
+                            pool2, j2, pick = [], i, None
+                            while len(pool2) < 4 and j2 < len(paras) and not (
+                                    CHAP_RE.match(paras[j2][0])
+                                    or SECTION_RE.match(paras[j2][0])):
+                                pool2.append(paras[j2][0]); j2 += 1
+                                c2 = _join(pool2)
+                                if len(c2) < 12:
+                                    continue
+                                r2 = sim(c2, kjv[key][:len(c2) + 10])
+                                if pick is None or r2 > pick[1]:
+                                    pick = (c2, r2, len(pool2))
+                            if pick is None or pick[1] < 0.8:
+                                break
+                            print(f'  [经文续节] {cur_chap}:{used} + {nv} '
+                                  f'（相似度 {pick[1]:.3f}）', flush=True)
+                            scr = scr.rstrip() + ' ' + pick[0].strip()
+                            used = used + [nv]
+                            i += pick[2]
+                            total['scr_next'] += 1
                         out.append(f'[SCRIPTURE] {pg}{cur_chap}:'
                                    f'{",".join(map(str, used))}|{r}| {scr}')
                         total['scr'] += 1
@@ -1199,7 +1472,8 @@ def main():
                     continue
                 m = CHAP_RE.match(para)
                 if not seen_chap and not m and re.match(
-                        r'^(AN EXPOSITION|OF THE|EPISTLE OF ST|COLOSSIANS\.?)\s*$', para):
+                        r'^(AN EXPOSITION|OF THE|EPISTLE OF ST\..*'
+                        r'|COLOSSIANS\.?)\s*$', para):
                     out.append(f'[TITLE] {para}')       # 卷首书名块，发布时不进正文
                     continue
                 if m:
@@ -1213,11 +1487,11 @@ def main():
                     # 退回队列交给 SECTION 分支，不要当成章首的 1,2 节
                     if rest and SECTION_RE.match(rest):
                         pend = None
-                        paras.insert(i, (rest, ppages, False))
+                        paras.insert(i, (rest, ppages, ''))
                     else:
                         pend = [1, 2] if cur_chap else None
                         if rest:
-                            paras.insert(i, (rest, ppages, False))
+                            paras.insert(i, (rest, ppages, ''))
                     continue
                 m = SECTION_RE.match(para)
                 if m:
@@ -1233,7 +1507,7 @@ def main():
                     # pend 分支，那里会按相似度贪心增长段数。
                     pend = nums
                     if rest:
-                        paras.insert(i, (rest, ppages, False))
+                        paras.insert(i, (rest, ppages, ''))
                     continue
                 m = LEMMA_RE.match(para)
                 if m and 0 < len(m.group(1).split()) <= 20 and '(' not in m.group(1):
@@ -1243,14 +1517,34 @@ def main():
                     if rest:
                         out.append(f'[BODY] {fix_label(rest)[0]}')
                     continue
-                out.append(f'[{"ITEM" if is_item else "BODY"}] '
-                           f'{pg}{fix_label(para)[0]}')
+                tag = {'item': 'ITEM', 'head': 'HEAD',
+                       'attrib': 'ATTRIB'}.get(kind, 'BODY')
+                out.append(f'[{tag}] {pg}{fix_label(para)[0]}')
 
             for p, fn in fns:
                 x0 = page_body_x0(fn)
                 cur = ''
                 for l, is_start in zip(fn, para_starts(fn, x0, indent_min)):
                     t = clean(W.fix_line(vol, p, l['text'])[0])
+                    # 原书排长引文时**每一行行首都重复一个开引号**（19 世纪
+                    # 惯例）：`“ proceeds from the disposition, so natural…`。
+                    # 这些行的文字整体缩了一格、引号顶在左边，按缩进读每一行
+                    # 都是段首，一条注被切成十几条，引号还一个个留在正文里
+                    # （v1p262/268 的尼西亚会议长注是标本）。
+                    # 判据是引号账：只有当前累积的注里还有**没闭合**的开引号时，
+                    # 才把行首这个引号当续行标记剥掉。
+                    # ⚠️ 行首那个引号多半已经被 unspeck 当斑点剥掉了（`“` 在
+                    # 斑点字符表里），而且 OCR 把它读成 `**` / `''` / `"` 各种
+                    # 花样（v1p262 实测 `** `）。所以看的是**剥掉的那个前缀**，
+                    # 并且按「注区里只有脚注符才起新条」定：前缀是引号一类的
+                    # 就一律算续行——真要起一条新注，行首是 `*` / `†`，
+                    # 单个符号不在这张表里。
+                    if QUOTE_SPECK.match(l.get('speck', '').strip()) or \
+                            QUOTE_SPECK.match(t[:2].strip()):
+                        if QUOTE_SPECK.match(t[:2].strip()):
+                            t = t[2:].lstrip() if t[:2].strip() in ('**', "''", '``', ',,') \
+                                else t[1:].lstrip()
+                        is_start = False
                     # 脚注符本身就是分条的界标，不能只看缩进：同页两条短注常常
                     # 首行缩进一模一样（vol1 p151 两条都是 x0=214），只看缩进会把
                     # 第二条当续行并进第一条，页面上就出现 `\* That is, indefinite…
