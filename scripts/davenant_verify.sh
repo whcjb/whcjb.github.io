@@ -31,6 +31,9 @@ echo
 echo "══════ (4b) 花括号分析表 ══════"
 python3 scripts/qa_davenant_brace.py
 echo
+echo "══════ (4c) 缩进块 ══════"
+python3 scripts/qa_davenant_outline.py
+echo
 echo "══════ ⑤ 已识别错误类的残留普查 ══════"
 python3 - <<'PY'
 import re, pathlib

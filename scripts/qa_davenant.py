@@ -68,8 +68,12 @@ def expected():
 
 
 def main():
-    prod = words(re.sub(r'<!--[^>]*-->|^\[[A-Z]+\]\s*|^\d+:[\d,]+\|[\d.]+\|',
-                        '', (RAW / 'davenant_colossians_structured.txt')
+    # `[BRACE]` / `[OUTLINE]` 两档块里带着版式本身：HTML 标签名与条间的 `\n`
+    # 转义都不是底本的词，先剥掉再比，否则 div/class/li/n 这些会当「多出的词」
+    # 白报一笔。剥的只有标签与转义，标签之间的文字一个不动。
+    prod = words(re.sub(r'<[^>]+>|\\n|<!--[^>]*-->|^\[[A-Z]+\]\s*'
+                        r'|^\d+:[\d,]+\|[\d.]+\|',
+                        ' ', (RAW / 'davenant_colossians_structured.txt')
                         .read_text(encoding='utf-8'), flags=re.M))
     exp = expected()
     miss, extra = exp - prod, prod - exp

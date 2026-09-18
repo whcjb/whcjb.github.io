@@ -78,7 +78,7 @@ def ref_budget(items):
     """
     need = collections.Counter()
     for it in items:
-        if it['tag'] in ('BODY', 'LEMMA') and it['pages']:
+        if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE') and it['pages']:
             need[it['pages'][0]] += len(REF_RE.findall(it['text']))
     return need
 
@@ -346,21 +346,39 @@ def main():
             continue
 
         # ── 行内脚注引用配对 ────────────────────────────────────────
+        def take_note(m):
+            nonlocal fn_seq
+            for p in it['pages']:
+                q = notes.get(p, [])
+                if used.get(p, 0) < len(q):
+                    fn_seq += 1
+                    cur['fns'].append((fn_seq, q[used[p]], p))
+                    used[p] += 1
+                    return f'[^dv{fn_seq}]'
+            return m.group(0)              # 该页注已用尽 → 原样留符号
+
         txt = it['text']
         if it['tag'] in ('BODY', 'LEMMA', 'SCRIPTURE'):
             txt = mark_italics(txt, it['pages'])
         if it['tag'] in ('BODY', 'LEMMA'):
-            def sub(m):
-                nonlocal fn_seq
-                for p in it['pages']:
-                    q = notes.get(p, [])
-                    if used.get(p, 0) < len(q):
-                        fn_seq += 1
-                        cur['fns'].append((fn_seq, q[used[p]], p))
-                        used[p] += 1
-                        return f'[^dv{fn_seq}]'
-                return m.group(0)          # 该页注已用尽 → 原样留符号
-            txt = REF_RE.sub(sub, txt)
+            txt = REF_RE.sub(take_note, txt)
+
+        if it['tag'] == 'OUTLINE':
+            # 原书整体右移排的一块（分析表的各支、清单、引诗）：一行一条，
+            # 行距是行距。抽取那边按几何认出来并成一条 [OUTLINE]
+            # （extract_davenant.outline_items），这里一条一行渲染。
+            # 逐条走 mark_italics / 脚注配对——与它们分散成独立段落时完全一样，
+            # 只有版式变了，文字与注的次序都不动。
+            # enum_lead 同正文：`1. That the reconciliation…` 这类条目不包起来，
+            # kramdown 会把整块变成 ol/li 并重排号（v1p319 的六条就是这样）。
+            rows = [enum_lead(italics(md_escape(REF_RE.sub(
+                take_note, mark_italics(t, it['pages'])))))
+                for t in txt.split('\\n')]
+            cur['blocks'].append('<div class="dv-outline" markdown="1">\n'
+                                 + '<br />\n'.join(rows) + '\n</div>')
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
+            continue
 
         if it['tag'] == 'BRACE':
             # 原书的花括号分析表，抽取那边已按页面影像重建好整块 HTML

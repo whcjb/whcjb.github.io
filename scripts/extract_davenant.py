@@ -351,24 +351,88 @@ def unspeck(l):
     return t[cut:], x0
 
 
-def para_starts(lines, x0, indent_min):
-    """→ 每行是否段首。基线取**最近几行续行**的中位数，不是整页众数。
+def line_offsets(lines, x0, indent_min):
+    """→ 每行的左缩进量（相对**最近几行续行**的基线），段首判据与缩进块判据共用。
 
     扫描件是歪的：vol1 p130 实测 x0 从页顶 80 漂到页尾 112（+32px），
     比缩进阈值 24 还大，整页众数一挡，页尾的续行全被判成段首——那一页
     末四行被切成四个独立段落，连字符还留在行尾（`is not re-` / `vealed in
     the word,`）。全书这样被切碎的段落 188 处。
-    局部基线跟着倾斜一起漂，判的是「相对左邻行凸出一个 em」，与整页倾斜无关。
+    局部基线跟着倾斜一起漂，量的是「相对左邻行凸出多少」，与整页倾斜无关。
     """
     recent = collections.deque(maxlen=5)
     out = []
     for l in lines:
         base = statistics.median(recent) if len(recent) >= 3 else x0
-        start = l['x0'] - base > indent_min
-        out.append(start)
-        if not start:                     # 只有续行进基线，段首行本就凸出
+        d = l['x0'] - base
+        out.append(d)
+        if d <= indent_min:               # 只有续行进基线，段首行本就凸出
             recent.append(l['x0'])
     return out
+
+
+def para_starts(lines, x0, indent_min):
+    """→ 每行是否段首（凸出超过一个 em）。"""
+    return [d > indent_min for d in line_offsets(lines, x0, indent_min)]
+
+
+def _all_caps(t):
+    L = [c for c in t if c.isalpha()]
+    return bool(L) and all(c.isupper() for c in L)
+
+
+def outline_items(lines, ds, indent_min):
+    """→ 每行是否「原书整体右移排的一条」：分析表的支、清单的一行、引诗的一句。
+
+    原书在一句领起语（`The principal divisions of this Chapter are three:`）
+    之后，把各支整体右移一大格排成一块，行距还是行距。抽取器按「缩进＝段首」
+    读，每一支都成了独立段落，发布出来是十几个孤零零的短段（v2p232 实测，
+    用户报的就是这一页）。花括号表那几处是按影像手工重建的
+    （brace_blocks.json），但**没画括号、只靠缩进**的这一类全书还有几十处，
+    手工表罩不住，只能按几何量。
+
+    判据分两档，因为两类错判的代价不一样：
+      · 连续 ≥2 行、左边界互相对齐（±25px）→ 门槛 max(2.2·em, 1.5·本页段首缩进)
+        取得低，v1p319 那张「1.–6.」的分析表只比段首深 45px，高了就漏。
+      · 孤身一行 → 门槛抬到 max(3·em, 2·本页段首缩进)，且要求它与本页已认定的
+        某一条左边界对齐、上一行以 `,` `:` `;` 收尾。
+        不加这两条，居中的小标题（v2p284 `Observations.`、v1p126
+        `From the Scriptures.`）会被当成缩进条；抬门槛是因为页面歪斜会让
+        普通段首量到 116px（v2p136 `From the Author God…` 实测，对照影像
+        它就排在正常段首缩进上）。
+    全大写的行一律不算：`EXPOSITION` / `THE FOURTH CHAPTER.` 是居中章题。
+    宁可漏判（退回现状，一条一段）也不错判——错判会把居中标题拽进缩进块。
+    """
+    near = [d for d in ds if indent_min < d <= 2.5 * indent_min]
+    para = statistics.median(near) if len(near) >= 3 else 1.8 * indent_min
+    deep_run = max(2.2 * indent_min, 1.5 * para)
+    deep_one = max(3.0 * indent_min, 2.0 * para)
+    cand = [d > deep_run and not _all_caps(l['text'])
+            for l, d in zip(lines, ds)]
+    acc = [False] * len(lines)
+    i = 0
+    while i < len(lines):
+        if not cand[i]:
+            i += 1
+            continue
+        j = i
+        while j + 1 < len(lines) and cand[j + 1]:
+            j += 1
+        xs = [lines[k]['x0'] for k in range(i, j + 1)]
+        med = statistics.median(xs)
+        if j > i and all(abs(x - med) <= 25 for x in xs):
+            for k in range(i, j + 1):
+                acc[k] = True
+        i = j + 1
+    aligned = [lines[k]['x0'] for k in range(len(lines)) if acc[k]]
+    for k in range(len(lines)):
+        if acc[k] or not cand[k] or ds[k] <= deep_one or not aligned:
+            continue
+        prev = lines[k - 1]['text'].rstrip() if k else ''
+        if any(abs(lines[k]['x0'] - x) <= 25 for x in aligned) and \
+                prev.endswith((',', ':', ';')):
+            acc[k] = True
+    return acc
 
 
 FN_MARK = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+(?=[A-Z(“"\d])')
@@ -711,9 +775,10 @@ def drop_stray(t):
 
 
 def build_paragraphs(vol, lo, hi, fn_max, indent_min):
-    """→ ([(kind, text)], footnotes, stats)  kind ∈ {para}"""
+    """→ ([(文本, 页码, 是否缩进条)], footnotes, stats)"""
     paras, fns, stats = [], [], collections.Counter()
     cur, cur_pages = '', set()          # 段落跨了哪几页——脚注配对要按页对齐
+    cur_item = False                    # 本段是不是原书右移排的一条（见 outline_items）
     for rec in load(vol):
         p = rec['page']
         if not (lo <= p <= hi):
@@ -746,8 +811,19 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             stats['fn_pages'] += 1
             fns.append((p, fn))
         x0 = page_body_x0(body)
-        starts = para_starts(body, x0, indent_min)
-        for l, is_start in zip(body, starts):
+        ds = line_offsets(body, x0, indent_min)
+        starts = [d > indent_min for d in ds]
+        marks = outline_items(body, ds, indent_min)
+        # 右移的块（引诗／经文／分析表）之后，正文接着往下排是**不缩进**的：
+        # v2p298 两行引诗右移，接着 `But now among the many operations…` 顶格
+        # 续排。只看缩进会把它读成引诗那一行的续行，整段散文黏在诗句后面。
+        # 全书触发 2 处，另一处 v1p86（`THERE are four parts…` 接在经文末行
+        # 之后）本来就被经文对齐那一步切开了，这里只是把它提到行一级。
+        for k in range(1, len(body)):
+            if marks[k - 1] and not marks[k] and not starts[k] \
+                    and body[k]['text'][:1].isupper():
+                starts[k] = True
+        for l, is_start, is_item in zip(body, starts, marks):
             # 第二证人：拿 PDF 自带的 IA OCR 层校我们这一遍（见
             # scripts/davenant_witness.py）。两遍都是 tesseract，但版本、
             # 预处理、切页都不同，错处基本不重叠。只在「我方非词、对方是词、
@@ -757,22 +833,60 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             if not txt:
                 continue
             if is_start and cur:
-                paras.append((cur, sorted(cur_pages)))
-                cur, cur_pages = txt, {p}
+                paras.append((cur, sorted(cur_pages), cur_item))
+                cur, cur_pages, cur_item = txt, {p}, is_item
             elif cur:
                 cur = dehyph(cur, txt)
                 cur_pages.add(p)
             else:
-                cur, cur_pages = txt, {p}
+                cur, cur_pages, cur_item = txt, {p}, is_item
         stats['pages'] += 1
         stats['lines'] += n0
     if cur:
-        paras.append((cur, sorted(cur_pages)))
+        paras.append((cur, sorted(cur_pages), cur_item))
     # 段落级再过一遍人工核定表：跨行断词的词（`distin-` + `euished`）
     # 只有在 dehyph 之后才成形，行级那一道看不到它。
-    paras = [(W.para_fix(vol, pg, W.manual_para(vol, pg, drop_stray(t))), pg)
-             for t, pg in paras]
+    paras = [(W.para_fix(vol, pg, W.manual_para(vol, pg, drop_stray(t))), pg, it)
+             for t, pg, it in paras]
     return paras, fns, stats
+
+
+# 连续的 `[ITEM]`（原书右移排的一条）并成一个 `[OUTLINE]` 块，条与条之间
+# 用 `\n` 转义分隔——与 `[BRACE]` 的落盘约定一致。发布那边一条一行渲染，
+# 行距是行距，不再是十几个孤零零的短段（v2p232）。
+PGMARK_RE = re.compile(r'^<!--v(\d+)p(\d+)(?:-(\d+))?-->')
+
+
+def merge_outline(lines):
+    out, buf = [], []
+
+    def flush():
+        if not buf:
+            return
+        vols, pgs, texts = set(), [], []
+        for body in buf:
+            m = PGMARK_RE.match(body)
+            if m:
+                vols.add(int(m.group(1)))
+                pgs += [int(m.group(2)), int(m.group(3) or m.group(2))]
+                body = body[m.end():]
+            texts.append(body)
+        pg = ''
+        if len(vols) == 1 and pgs:
+            lo, hi = min(pgs), max(pgs)
+            pg = f'<!--v{vols.pop()}p{lo}-->' if lo == hi \
+                else f'<!--v{vols.pop()}p{lo}-{hi}-->'
+        out.append('[OUTLINE] ' + pg + '\\n'.join(texts))
+        buf.clear()
+
+    for ln in lines:
+        if ln.startswith('[ITEM] '):
+            buf.append(ln[len('[ITEM] '):])
+            continue
+        flush()
+        out.append(ln)
+    flush()
+    return out
 
 
 def load(vol):
@@ -906,7 +1020,7 @@ def brace_blocks():
     return _brace
 
 
-def apply_brace(vol, paras):
+def apply_brace(vol, paras, lo=None, hi=None):
     """把表里记着的连续段落换成重建好的块。
 
     ⚠️ 对不上就**报错**，不静默跳过。这条线上栽过的坑是「规则一改，按整串
@@ -914,6 +1028,9 @@ def apply_brace(vol, paras):
     """
     tbl = {k.split('|')[1]: v for k, v in brace_blocks().items()
            if k.split('|')[0] == str(vol)}
+    # 试跑（--pages）只建一小段，表里别页的条目当然对不上——只核范围内的。
+    if lo is not None:
+        tbl = {k: v for k, v in tbl.items() if lo <= int(k) <= hi}
     if not tbl:
         return paras, 0
     hit = 0
@@ -925,7 +1042,7 @@ def apply_brace(vol, paras):
             if str(int(page)) not in [str(x) for x in paras[i][1]]:
                 continue
             pages = sorted({x for k in range(len(want)) for x in paras[i + k][1]})
-            paras[i:i + len(want)] = [(BRACE_MARK + rec['html'], pages)]
+            paras[i:i + len(want)] = [(BRACE_MARK + rec['html'], pages, False)]
             hit += 1
             break
         else:
@@ -961,7 +1078,7 @@ def main():
             pages = [r for r in load(vol) if RANGES[vol][0] <= r['page'] <= RANGES[vol][1]]
             fn_max, indent_min = calibrate(pages)
             paras, fns, st = build_paragraphs(vol, lo, hi, fn_max, indent_min)
-            paras, n_brace = apply_brace(vol, paras)
+            paras, n_brace = apply_brace(vol, paras, lo, hi)
             st['brace'] = n_brace
             total.update(st)
             print(f'  vol{vol}: 页 {lo}-{hi}  脚注字号上限 {fn_max} 缩进阈值 {indent_min}  '
@@ -971,7 +1088,7 @@ def main():
             seen_chap, cur_chap, pend = False, None, None
             i = 0
             while i < len(paras):
-                para, ppages = paras[i]
+                para, ppages, is_item = paras[i]
                 i += 1
                 if para.startswith(BRACE_MARK):
                     pg = (f'<!--v{vol}p{ppages[0]}-->' if len(ppages) == 1
@@ -1096,11 +1213,11 @@ def main():
                     # 退回队列交给 SECTION 分支，不要当成章首的 1,2 节
                     if rest and SECTION_RE.match(rest):
                         pend = None
-                        paras.insert(i, (rest, ppages))
+                        paras.insert(i, (rest, ppages, False))
                     else:
                         pend = [1, 2] if cur_chap else None
                         if rest:
-                            paras.insert(i, (rest, ppages))
+                            paras.insert(i, (rest, ppages, False))
                     continue
                 m = SECTION_RE.match(para)
                 if m:
@@ -1116,7 +1233,7 @@ def main():
                     # pend 分支，那里会按相似度贪心增长段数。
                     pend = nums
                     if rest:
-                        paras.insert(i, (rest, ppages))
+                        paras.insert(i, (rest, ppages, False))
                     continue
                 m = LEMMA_RE.match(para)
                 if m and 0 < len(m.group(1).split()) <= 20 and '(' not in m.group(1):
@@ -1126,7 +1243,8 @@ def main():
                     if rest:
                         out.append(f'[BODY] {fix_label(rest)[0]}')
                     continue
-                out.append(f'[BODY] {pg}{fix_label(para)[0]}')
+                out.append(f'[{"ITEM" if is_item else "BODY"}] '
+                           f'{pg}{fix_label(para)[0]}')
 
             for p, fn in fns:
                 x0 = page_body_x0(fn)
@@ -1151,7 +1269,7 @@ def main():
         # 余段等几条路径是在 build_paragraphs 之外拼出来的，绕过了那一道
         # （`philosophy and vain . deceit` 就漏在经文块里）。这里是所有
         # 落盘路径的必经之处。
-        return [drop_stray(x) for x in out], total
+        return merge_outline([drop_stray(x) for x in out]), total
 
     prev = None
     for _round in range(4):
@@ -1171,6 +1289,9 @@ def main():
                  else 'sample_structured.txt')
     dst.write_text('\n'.join(out) + '\n', encoding='utf-8')
     print(f'[ok] → {dst.name}  {dst.stat().st_size:,} 字节  {len(out)} 行')
+    n_out = sum(1 for x in out if x.startswith('[OUTLINE] '))
+    n_row = sum(x.count('\\n') + 1 for x in out if x.startswith('[OUTLINE] '))
+    print(f'  缩进块 {n_out}（共 {n_row} 条）')
     print(f'  CHAP {total["chap"]} · 节组 {total["sec"]} · 经文块 {total["scr"]}'
           f'（对不上 {total["scr_fail"]}）· lemma {total["lemma"]} · '
           f'共 {total["pages"]} 页 {total["lines"]} 行')

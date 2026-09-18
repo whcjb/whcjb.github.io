@@ -164,6 +164,16 @@ layout: default
 .dv-cite-label { margin: 8px 0 2px 1.4em; text-indent: 0; padding-left: 0;
   font-weight: bold; color: var(--dv-ink-dark); }
 
+/* 缩进块：原书在一句领起语之后，把各支／清单／引诗整体右移排成一块，
+   行距仍是行距（v2p232「The principal divisions of this Chapter are three:」
+   下面的 Exhortations / Commendations / Salutations 是标本）。抽取器按
+   「缩进＝新段落」读，一条一段，发布出来就成了十几个孤零零的短段。
+   现在由 extract_davenant.outline_items 按几何认出来并成一块，这里
+   一条一行、贴在一起排。`.dv-cites` 是同一形态里按影像手工重建的那几处，
+   两边分开各自为政，改一边不动另一边。 */
+.dv-outline { margin: 12px 0 16px 1.6em; }
+.dv-outline p { margin: 2px 0; text-indent: 0; }
+
 /* 节号锚点：跳转时避开 fixed navbar */
 .dv-anchor { position: relative; top: -80px; display: block; height: 0; }
 
