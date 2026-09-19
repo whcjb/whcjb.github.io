@@ -409,14 +409,20 @@ def normalize_etc(body: str) -> str:
 TITLE_TRIPLE = re.compile(
     r'<p class="dv-synopsis"[^>]*>EXPOSITION</p>\s*\n\s*\n'
     r'<p class="dv-synopsis"[^>]*>OF</p>\s*\n\s*\n'
-    r'<p class="dv-synopsis"[^>]*>THE [A-Z]+ CHAPTER\.?</p>')
+    r'<p class="dv-synopsis"[^>]*>THE ([A-Z]+) CHAPTER\.?</p>')
+# ⚠️ 章号要从**标题本身**取，不能拿「正在译第几章」顶替：原书把下一章的章题
+# 排在上一章末页，第一章页尾那一块写的是 `THE SECOND CHAPTER.`，按当前章号
+# 生成就成了「第一章注释」（实测）。
+ORD_ZH = {'FIRST': '第一章', 'SECOND': '第二章',
+          'THIRD': '第三章', 'FOURTH': '第四章'}
 
 
 def translate_chapter(n: int, resume: bool, publish: bool, limit: int, dry: bool):
     src = PUB / f'{n}.md'
     fm, body = split_page(src.read_text(encoding='utf-8'))
-    body = TITLE_TRIPLE.sub('<p class="dv-synopsis" markdown="1">'
-                            f'{CH_ZH.get(n, "")}注释</p>', body)
+    body = TITLE_TRIPLE.sub(
+        lambda m: ('<p class="dv-synopsis" markdown="1">'
+                   f'{ORD_ZH.get(m.group(1), CH_ZH.get(n, ""))}注释</p>'), body)
     items = blocks_of(body)
 
     send = [i for i, it in enumerate(items) if it[0] in ('body', 'scripture')]

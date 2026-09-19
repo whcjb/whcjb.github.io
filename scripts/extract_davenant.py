@@ -1096,6 +1096,58 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
 PGMARK_RE = re.compile(r'^<!--v(\d+)p(\d+)(?:-(\d+))?-->')
 
 
+ORD_N = {'FIRST': 1, 'SECOND': 2, 'THIRD': 3, 'FOURTH': 4}
+CHAP_TITLE_RE = re.compile(r'^\[HEAD\](?: <!--[^>]*-->)?\s*THE\s+(\w+)\s+C\w{5,7}\.?\s*$')
+H1_RE = re.compile(r'^\[H1\] CHAP\. ([IVX]+)\s*$')
+
+
+def lift_chapter_head(lines):
+    """把 `[H1] CHAP. N` 提到本章**章题**那一组之前。
+
+    原书每章开头是三行居中的章题（`EXPOSITION / OF / THE SECOND CHAPTER.`），
+    其后是几页总论（本章旨趣、四点分段、`OF THE EXORDIUM.`…），再往下才是
+    `Verse 1.`。而 `[H1]` 是按正文里那行 `CHAP. II.` 认的——它印在第一节释经
+    那一页上，于是章题连同四页总论（v1p418-421）全落进了上一章：发布出来
+    第一章页尾挂着第二章的章题与开篇（实测）。
+
+    判据：`[H1] CHAP. N` 往回扫，**不跨过 [SECTION]/[SCRIPTURE]/[H1]**，
+    遇到本章的 `THE <序数> CHAPTER.` 居中题就把 H1 移到该题那一组之前
+    （连着的 `EXPOSITION` / `OF` 两行一起算作一组）。
+    第三、四章不受影响：它们的 H1 本来就紧挨着自己的第一个节组，往回扫先
+    撞上 [SECTION]（第四章的章题排在 4:1 释经之后，属于章内容的一部分）。
+    """
+    out = list(lines)
+    for i, ln in enumerate(out):
+        m = H1_RE.match(ln)
+        if not m:
+            continue
+        want = {v: k for k, v in ROMAN.items()}.get(m.group(1)) if 'ROMAN' in globals() \
+            else None
+        want = want or {'I': 1, 'II': 2, 'III': 3, 'IV': 4}.get(m.group(1))
+        j = i - 1
+        hit = None
+        while j >= 0:
+            t = out[j]
+            if t.startswith(('[SECTION]', '[SCRIPTURE]', '[H1]')):
+                break
+            mt = CHAP_TITLE_RE.match(t)
+            if mt and ORD_N.get(mt.group(1).upper()) == want:
+                hit = j
+                break
+            j -= 1
+        if hit is None:
+            continue
+        # 往前把同一组的 `EXPOSITION` / `OF` 收进来，但**不要越过章末标记**
+        # ——`END OF THE FIRST CHAPTER.` 属于上一章，紧挨着下一章的章题。
+        k = hit
+        while k - 1 >= 0 and out[k - 1].startswith('[HEAD]') and \
+                not CHAP_END_RE.match(re.sub(r'^\[HEAD\](?: <!--[^>]*-->)?', '',
+                                             out[k - 1]).strip()):
+            k -= 1
+        out.insert(k, out.pop(i))
+    return out
+
+
 def merge_outline(lines):
     out, buf = [], []
 
@@ -1567,7 +1619,8 @@ def main():
         # 余段等几条路径是在 build_paragraphs 之外拼出来的，绕过了那一道
         # （`philosophy and vain . deceit` 就漏在经文块里）。这里是所有
         # 落盘路径的必经之处。
-        return merge_outline([drop_stray(x) for x in out]), total
+        return lift_chapter_head(merge_outline(
+            [drop_stray(x) for x in out])), total
 
     prev = None
     for _round in range(4):

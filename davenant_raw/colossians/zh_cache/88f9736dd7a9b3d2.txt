@@ -1,0 +1,8 @@
+<div class="dv-outline" markdown="1">
+<span class="dv-enum">1.</span> 和好已然成就。<br />
+<span class="dv-enum">2.</span> 此事是凭谁的定旨与权柄而成。<br />
+<span class="dv-enum">3.</span> 是以何物成就的。<br />
+<span class="dv-enum">4.</span> 是藉着谁成就的。<br />
+<span class="dv-enum">5.</span> 是以何等方式成就的。<br />
+<span class="dv-enum">6.</span> 是为谁而成就的。
+</div>
