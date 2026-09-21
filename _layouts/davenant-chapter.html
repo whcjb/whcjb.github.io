@@ -140,8 +140,8 @@ layout: default
    这里不去画真的花括号——窄屏上撑不住；改成「标签 + 左侧竖线的分支列表」，
    语义一样，手机上也读得通。 */
 .dv-brace { margin: 18px 0 20px; }
-.dv-brace-label { margin: 0 0 6px; font-weight: bold; color: var(--dv-ink-dark);
-  text-indent: 0; }
+.dv-content .dv-brace-label { margin: 0 0 6px; font-weight: bold;
+  color: var(--dv-ink-dark); text-indent: 0; }
 .dv-brace-list, .dv-brace-outline { margin: 0 0 0 4px; padding: 0 0 0 18px;
   border-left: 2px solid #d8d2be; }
 .dv-brace-outline { border-left: none; padding-left: 22px; }
@@ -152,9 +152,14 @@ layout: default
 .dv-brace-outline .dv-brace-list { margin-top: 4px; border-left: 2px solid #e3ddca; }
 .dv-brace-outline ol.dv-brace-list { list-style: decimal; padding-left: 24px; }
 .dv-brace-outline ol.dv-brace-list > li::before { content: none; }
-.dv-synopsis { text-align: center; text-indent: 0; margin: 10px 0; }
+/* ⚠️ 选择器必须带 `.dv-content` 前缀。上面 `.dv-content p` 是 (0,1,1)，
+   光写 `.dv-synopsis` 是 (0,1,0)，居中/靠右/紧贴全被 justify 与 15px
+   段距压掉——页面上这些版式块与普通段落一模一样（用户实测「乱」的那一页
+   就是 v1p126 的 `From the Scriptures.` 没居中）。同理下面 dv-cite /
+   dv-brace-label。 */
+.dv-content .dv-synopsis { text-align: center; text-indent: 0; margin: 10px 0; }
 /* 引诗、引文之后单排一行的出处（原书靠右排）*/
-.dv-attrib { text-align: right; text-indent: 0; margin: 2px 0 12px;
+.dv-content .dv-attrib { text-align: right; text-indent: 0; margin: 2px 0 12px;
   color: #55554c; font-size: 14.5px; }
 
 /* 缩进经文清单：原书在一句领起语之后，把几条引文整体右移排成一块
@@ -163,8 +168,9 @@ layout: default
    孤零零的单词段，所以这一块也按页面影像重建（brace_blocks.json）。
    呈现上要的是「贴在一起、左侧缩进」，不是段落间距。 */
 .dv-cites { margin: 14px 0 18px 1.6em; }
-.dv-cite, .dv-cite-label { margin: 2px 0; text-indent: -1.2em; padding-left: 1.2em; }
-.dv-cite-label { margin: 8px 0 2px 1.4em; text-indent: 0; padding-left: 0;
+.dv-content .dv-cite, .dv-content .dv-cite-label {
+  margin: 2px 0; text-indent: -1.2em; padding-left: 1.2em; }
+.dv-content .dv-cite-label { margin: 8px 0 2px 1.4em; text-indent: 0; padding-left: 0;
   font-weight: bold; color: var(--dv-ink-dark); }
 
 /* 缩进块：原书在一句领起语之后，把各支／清单／引诗整体右移排成一块，

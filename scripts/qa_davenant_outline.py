@@ -43,8 +43,12 @@ def geo_roles():
             ds = E.line_offsets(body, x0, indent_min)
             starts = [d > indent_min for d in ds]
             marks = E.outline_items(body, ds, indent_min)
-            roles = E.centered_heads(body, ds, starts, marks, x0,
-                                     E.text_right(body), indent_min)
+            right = E.text_right(body)
+            roles = E.centered_heads(body, ds, starts, marks, x0, right,
+                                     indent_min)
+            # 缩排（而非居中）的小鉴题也是「原书版式」的一档，同样要比
+            roles = E.indent_heads(body, ds, starts, marks, roles, right,
+                                   indent_min, (vol, rec['page']))
             d = out.setdefault((vol, rec['page']), collections.Counter())
             for r in roles:
                 if r:

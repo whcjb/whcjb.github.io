@@ -547,6 +547,82 @@ def centered_heads(lines, ds, starts, marks, left, right, indent_min):
     return out
 
 
+# 「第 N 条」的行首编号：`1.` `l.` `].` `1,`——OCR 把 `1` 读成 `l` `]` `|`
+# 是常态（产物里 `l. They are to be blamed…` 就是原书的 `1.`）。
+ENUM_LEAD = re.compile(r'^\s*[\dlI\]\[|]{1,3}\s*[.,;:)]\s')
+
+# 手工认定的小标题：按「卷|扫描页号」定位，值是该页要认成标题的**整行原文**。
+# 只收几何判据够不着、又对着影像逐处核过的那几处。
+MANUAL_HEADS = {
+    # v1p126：`…Now let us proceed to` 一句直接跑进标题行里（原书就是这么
+    # 排的，600 dpi 影像核过），所以「上一行以句末标点收尾」这条不成立；
+    # 底下跟的又不是「1. 2. 3.」的条目而是一段散文，`indent_heads` 的两道
+    # 主判据都够不着。它比段首缩进多缩 45 px、单独占一行、后面紧跟着居中的
+    # `From the Scriptures.`——与它是同一层的小标题，只是原书一个居中一个缩排。
+    (1, 126): ['The arguments of the Papists.'],
+}
+
+
+def indent_heads(lines, ds, starts, marks, heads, right, indent_min, key):
+    """→ 在 `heads` 上补「缩排（而非居中）的小鉴题」，原地改并返回。
+
+    `centered_heads` 按**左右边距对称**认标题，罩住的是原书居中排的那 43 处。
+    但同一个元素原书还有另一种排法：**不居中，只比段首多缩一格**——
+    `Corollaries.` `Instructions.` `Observations.` `Hence learn,`
+    `From the Author God, the peace of God.` 这些词两种排法都出现过
+    （v2p157 的 `Instructions.` 缩排、v2p284 的居中）。缩排那一批全书 29 处，
+    原先一律是普通正文段落：页面上读者看到的是一个孤零零的短段，和它领起的
+    「1. 2. 3.」挤在一起，看不出是标题。
+
+    判据仍然是几何，不是词表（写死 `Instructions|Corollaries` 只能罩住数得出
+    来的那几个）：
+      · 缩进 > 1.35 × 本页段首缩进（`ds` 已按行剥过行首斑点）
+      · 行短：右边留白 ≥15% 版心，**或**字符数 ≤ 本页中位数的一半
+        （两个都要是因为 x1 会被页边斑点拽到右边界——v2p138 的
+        `Instructions;` 实测右余 2%，只看几何量不出来）
+      · 上一行以句末标点收尾（或它本身是标题、或它是本页第一行）
+      · 下一行是段首、**且是「1.」这样的条目**（`ENUM_LEAD`）
+      · 上下两行都不是右移行
+    最后这两条是要害。去掉「下一行是条目」，进来的全是**经文块的末行**——
+    经文整块缩排，末行短、上一行以逗号收尾，几何上与缩排标题一模一样
+    （v1p313 的 `dwell.`、v2p168 的 `against them.`、v1p412 的
+    `which worketh in me mightily.`）。把经文末行认成标题，后面 KJV 对齐
+    那一步就再也拼不回整块经文。实测：不卡这一条 34 处里 5 处是经文末行，
+    卡上之后 29 处**逐条对影像核过**，无一例外都是小鉴题。
+    """
+    para, deep_run, _one = indent_scale(ds, indent_min)
+    T = para * 1.35
+    W = max(right - min((l['x0'] for l in lines), default=0), 1)
+    med = statistics.median([len(l['text']) for l in lines]) if lines else 0
+    manual = set(MANUAL_HEADS.get(key, ()))
+    for i, l in enumerate(lines):
+        if heads[i] or marks[i]:
+            continue
+        if l['text'].strip() in manual:
+            heads[i] = 'head'
+            continue
+        if _all_caps(l['text']) or ds[i] <= T:
+            continue
+        if SECTION_RE.match(l['text']) or CHAP_RE.match(l['text']):
+            continue
+        if not (right - l['x1'] >= 0.15 * W or len(l['text']) <= 0.5 * med):
+            continue
+        if not any(len(x) >= 2 and x.isalpha()
+                   for x in re.findall(r'[A-Za-z]+', l['text'])):
+            continue
+        if i + 1 >= len(lines) or not starts[i + 1] or ds[i + 1] > T:
+            continue
+        if not ENUM_LEAD.match(lines[i + 1]['text']):
+            continue
+        if i and (ds[i - 1] > T or marks[i - 1]):
+            continue
+        prev = lines[i - 1]['text'].rstrip().rstrip('*+\u2020\u2021 ') if i else ''
+        if not (i == 0 or heads[i - 1] == 'head' or prev.endswith(SENT_TAIL)):
+            continue
+        heads[i] = 'head'
+    return heads
+
+
 FN_MARK = re.compile(r'^\s*(\*|\+|†|‡|[ftJI])\s+(?=[A-Z(“"\d])')
 
 
@@ -1036,8 +1112,11 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         ds = line_offsets(body, x0, indent_min)
         starts = [d > indent_min for d in ds]
         marks = outline_items(body, ds, indent_min)
-        heads = centered_heads(body, ds, starts, marks, x0, text_right(body),
-                               indent_min)
+        right = text_right(body)
+        heads = centered_heads(body, ds, starts, marks, x0, right, indent_min)
+        # 同一个小鉴题，原书还有「不居中、只比段首多缩一格」的排法（29 处）
+        heads = indent_heads(body, ds, starts, marks, heads, right,
+                             indent_min, (vol, p))
         # 右移的块（引诗／经文／分析表）之后，正文接着往下排是**不缩进**的：
         # v2p298 两行引诗右移，接着 `But now among the many operations…` 顶格
         # 续排。只看缩进会把它读成引诗那一行的续行，整段散文黏在诗句后面。
