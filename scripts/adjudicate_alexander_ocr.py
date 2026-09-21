@@ -741,7 +741,6 @@ MANUAL_TEXT = [
     ('foiin', 'form'),
     ('makcth', 'maketh'),
     ('strengthenedsi', 'strengthenedst'),
-    ('. 1 icill dwe', '. 1 will dwe'),
     ('Jehovaii', 'Jehovah'),
     ('vihen', 'when'),
     ('hnowest', 'knowest'),
@@ -768,9 +767,7 @@ MANUAL_TEXT = [
     ('hfosCs', 'beasts'),
     ('godhj', 'godly'),
     ('sayiny', 'saying'),
-    (' *1 icill spe', ' *1 will spe'),
     ('hi)iiself', 'himself'),
-    (' / *icill bea', ' / *will bea'),
     ('tcill', 'will'),
     ('n> *lliou has', 'n> *Thou has'),
     ('compai-e', 'compare'),
@@ -809,7 +806,6 @@ MANUAL_TEXT = [
     ('thanksgi\\ing', 'thanksgiving'),
     ('gi-atitude', 'gratitude'),
     ('childi-en', 'children'),
-    ("an' tiquity.* B", "an' antiquity.* B"),
     ('ing fi-equent rep', 'ing frequent rep'),
     ('sufi"erers', 'sufferers'),
     ('de§criptive', 'descriptive'),
@@ -821,7 +817,8 @@ MANUAL_TEXT = [
     ('English, difi"er only', 'English, differ only'),      # "differ only in a single letter"
     ("*Shall serve ' iie,*", '*Shall serve me,*'),          # "Shall serve me, be employed by me"
     ('/ *urill not set before', '*I will not set before'),  # Ps. 101:3
-    ('*prceterita prophetica,*', '*pr\u00e6terita prophetica,*'),  # 原书是 æ 合字
+    # 上游 ce→ae 的规则先跑，到这里已经是 praeterita，锚要跟着改
+    ('*praeterita prophetica,*', '*pr\u00e6terita prophetica,*'),  # 原书是 æ 合字
     ('*Stones unddust* are here', '*Stones* and *dust* are here'),
     ('speaks in-everently of him', 'speaks irreverently of him'),
     ('he icill puff at them', 'he will puff at them'),
