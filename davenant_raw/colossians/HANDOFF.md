@@ -1,6 +1,6 @@
 # Davenant 校勘：当前进度与恢复指引
 
-最后更新：2026-09-21（第二轮）。产物**已重建并落库**，规则与产物同步。
+最后更新：2026-09-21（第三轮）。产物**已重建并落库**，规则与产物同步。
 
 ## 一句话状态
 
@@ -59,6 +59,33 @@
    O1/O3/O4 全绿；渲染层 0；连跑两次 publish 逐字节相同；
    Gate ⑤ 残留与改动前完全一致（84/1/1/1/3/1）。
 
+## 2026-09-21 第三轮：缩排的小鉴题不能排成居中
+
+用户看了上一轮的页面问「原文是这种格式吗」——不是。对着 400 dpi 影像重核
+v1p126：`From the Scriptures.` x0=496 x1=897、版心中线 684，**原书确实居中**；
+`The arguments of the Papists.` x0=202 x1=805，左边距只占版心 8%、右边空出
+47%，**原书是缩排不是居中**。第二轮把这 30 处一并出成 `[HEAD]`→`.dv-synopsis`
+（居中），等于拿一种排法盖掉了另一种。v2p61 的 `Corollaries.` 同样核过，
+比底下的 `1.` 还多缩一点，明显不居中。
+
+原书这个元素**两种排法都用**（同一个词 `Instructions.` v2p284 居中、v2p157
+缩排），所以分两个类，不合并：
+
+  · `[HEAD]`   → `.dv-synopsis`  居中，43 处（章题、`FINIS.`、居中那批小鉴题）
+  · `[RUBRIC]` → `.dv-rubric`    只左缩进不居中，30 处
+
+`indent_heads` 现在标 `'rubric'`；`build_paragraphs` 里凡按 `'head'` 判「版式块
+之后的正文顶格续排」「吃进续行就不算标题」的地方都要带上 `'rubric'`；
+`publish_davenant_en` 加 `RUBRIC` 分支，`ref_budget` / `mark_italics` /
+脚注配对的 tag 名单一并加；`qa_davenant_outline` 的 Gate O4 认三种角色。
+网页正文没有首行缩进，`.dv-rubric` 用 `margin-left: 2.2em` 还原「比正文多缩
+一格」。
+
+**验收**：结构化产物只差 30 行、全是 `[HEAD]` → `[RUBRIC]`；中译 30 块重发，
+逐条比过 diff——除了 `<p class>` 换掉，只有 v2p46 一处措辞微调
+（`从对象而言；肢体，` → `从对象而言，即肢体；`），没有退步；
+Gate W 词数不变、O1/O3/O4 全绿、渲染层 0、连跑两次 publish 逐字节相同。
+
 ## 2026-09-21：小鉴题的另一种排法 + 版式类 CSS 被压掉
 
 用户拿第一章中文页截图问「这块为什么这么乱」（歌 1:2 那一段，
@@ -77,7 +104,9 @@
    （`Corollaries.` `Instructions.` `Observations.` `Reproofs.`
    `From the Author God, the peace of God.`，同一个词两种排法都出现过：
    v2p157 缩排、v2p284 居中）。缩排那一批 29 处原先是普通正文段落。
-   新增 `extract_davenant.indent_heads`，判据见函数注释。**要害是「下一行
+   新增 `extract_davenant.indent_heads`，判据见函数注释。
+   （第三轮更正：这一批出 `[RUBRIC]`→`.dv-rubric` **缩排**，不是居中的
+   `.dv-synopsis`——原书这两种排法是分开的，见下面第三轮那一节。）**要害是「下一行
    必须是 `1.` 这样的条目」**：去掉它进来的全是**经文块的末行**——经文整块
    缩排，末行短、上一行以逗号收尾，几何上与缩排小标题一模一样
    （v1p313 `dwell.`、v2p168 `against them.`、v1p412

@@ -158,6 +158,13 @@ layout: default
    就是 v1p126 的 `From the Scriptures.` 没居中）。同理下面 dv-cite /
    dv-brace-label。 */
 .dv-content .dv-synopsis { text-align: center; text-indent: 0; margin: 10px 0; }
+/* 小鉴题的另一种排法：原书**不居中**，只把这一行整体右移一格
+   （v2p61 `Corollaries.`、v1p126 `The arguments of the Papists.`，
+   400 dpi 影像核过）。同一个元素书里两种排法都有，所以两个类各排各的：
+   居中那一批走 `.dv-synopsis`，缩排这一批走这里，不要合并。
+   网页正文没有首行缩进，所以用左外边距来还原「比正文多缩一格」。 */
+.dv-content .dv-rubric { text-align: left; text-indent: 0;
+  margin: 10px 0 10px 2.2em; }
 /* 引诗、引文之后单排一行的出处（原书靠右排）*/
 .dv-content .dv-attrib { text-align: right; text-indent: 0; margin: 2px 0 12px;
   color: #55554c; font-size: 14.5px; }

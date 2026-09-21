@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""原书版式块的体检：缩进块 [OUTLINE]、居中小标题 [HEAD]、右对齐出处 [ATTRIB]。
+"""原书版式块的体检：缩进块 [OUTLINE]、居中小鉴题 [HEAD]、缩排小鉴题 [RUBRIC]、
+右对齐出处 [ATTRIB]。
 
 原书在一句领起语之后，把各支／清单／引诗整体右移排成一块，行距仍是行距
 （v2p232「The principal divisions of this Chapter are three:」下面三条是标本）。
@@ -10,7 +11,8 @@ Gate O1  产物里的每个 [OUTLINE] 块，都是几何规则**现在**仍然�
          （规则改了而产物没重跑，或产物被手改过，都在这里露馅）
 Gate O2  产物里的每一条，都能在该页 OCR 行里按原样找到（不多字不少字）
 Gate O3  发布页的 <div class="dv-outline"> 开闭配对，条数 == 1 + <br /> 个数
-Gate O4  产物里的每个 [HEAD] / [ATTRIB]，几何规则**现在**仍然认它是居中／靠右
+Gate O4  产物里的每个 [HEAD] / [RUBRIC] / [ATTRIB]，几何规则**现在**仍然认它是
+         居中／缩排／靠右
 
 用法: python3 scripts/qa_davenant_outline.py
 """
@@ -148,10 +150,10 @@ def main():
     # 行有一部分会被 SECTION / 经文对齐吃掉（`Verse 15.` 是节号标题），
     # 所以要求的是「产物里的每一行都有几何撑着」，不是两边相等。
     roles = geo_roles()
-    want = {'HEAD': 'head', 'ATTRIB': 'attrib'}
+    want = {'HEAD': 'head', 'RUBRIC': 'rubric', 'ATTRIB': 'attrib'}
     prod = collections.Counter()
     n4 = 0
-    for m in re.finditer(r'^\[(HEAD|ATTRIB)\] (?:<!--v(\d+)p(\d+)(?:-\d+)?-->)?',
+    for m in re.finditer(r'^\[(HEAD|RUBRIC|ATTRIB)\] (?:<!--v(\d+)p(\d+)(?:-\d+)?-->)?',
                          txt, re.M):
         n4 += 1
         prod[(int(m.group(2) or 0), int(m.group(3) or 0), want[m.group(1)])] += 1

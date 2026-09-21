@@ -573,7 +573,14 @@ MANUAL_HEADS = {
 
 
 def indent_heads(lines, ds, starts, marks, heads, right, indent_min, key):
-    """→ 在 `heads` 上补「缩排（而非居中）的小鉴题」，原地改并返回。
+    """→ 在 `heads` 上补「缩排（而非居中）的小鉴题」，标成 `'rubric'`。
+
+    ⚠️ 角色是 `'rubric'` 不是 `'head'`：原书这一档**不居中**，只比段首多缩
+    一格（v2p61 `Corollaries.`、v1p126 `The arguments of the Papists.`，
+    400 dpi 影像核过）。早先一并出成 `[HEAD]`→`dv-synopsis`（居中），
+    页面上把缩排排成了居中，是偏离原书的——用户截图指出来的就是这个。
+    发布侧 `[RUBRIC]`→`.dv-rubric`（左缩进，不居中）。
+
 
     `centered_heads` 按**左右边距对称**认标题，罩住的是原书居中排的那 43 处。
     但同一个元素原书还有另一种排法：**不居中，只比段首多缩一格**——
@@ -608,7 +615,7 @@ def indent_heads(lines, ds, starts, marks, heads, right, indent_min, key):
         if heads[i] or marks[i]:
             continue
         if l['text'].strip() in manual:
-            heads[i] = 'head'
+            heads[i] = 'rubric'
             continue
         if _all_caps(l['text']) or ds[i] <= T:
             continue
@@ -626,9 +633,10 @@ def indent_heads(lines, ds, starts, marks, heads, right, indent_min, key):
         if i and (ds[i - 1] > T or marks[i - 1]):
             continue
         prev = lines[i - 1]['text'].rstrip().rstrip('*+\u2020\u2021 ') if i else ''
-        if not (i == 0 or heads[i - 1] == 'head' or prev.endswith(SENT_TAIL)):
+        if not (i == 0 or heads[i - 1] in ('head', 'rubric')
+                or prev.endswith(SENT_TAIL)):
             continue
-        heads[i] = 'head'
+        heads[i] = 'rubric'
     return heads
 
 
@@ -1154,7 +1162,8 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         # 拼进第一段：页面上是三行居中的章题，产物里是
         # `THE FOURTH CHAPTER. I premise a few things…` 一整段。
         for k in range(1, len(body)):
-            if (marks[k - 1] or heads[k - 1] == 'head') and not marks[k] \
+            if (marks[k - 1] or heads[k - 1] in ('head', 'rubric')) \
+                    and not marks[k] \
                     and not starts[k] and body[k]['text'][:1].isupper():
                 starts[k] = True
         kinds = [h if h else ('item' if m else '')
@@ -1162,7 +1171,7 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         # 版式块断在页末时，下一页第一行的正文同样顶格续排，页内那条判据
         # 看不见跨页的上一行（v1p357 的引诗末行在页末，`So Christ himself
         # exclaims…` 落到下一页页顶，整段散文因此黏在诗句后面）。
-        if body and last_kind in ('item', 'head') and not marks[0] \
+        if body and last_kind in ('item', 'head', 'rubric') and not marks[0] \
                 and not starts[0] and body[0]['text'][:1].isupper():
             starts[0] = True
         last_kind = kinds[-1] if kinds else ''
@@ -1181,7 +1190,7 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
             elif cur:
                 cur = dehyph(cur, txt)
                 cur_pages.add(p)
-                if cur_kind in ('head', 'attrib'):   # 吃进了续行 → 不再算标题
+                if cur_kind in ('head', 'rubric', 'attrib'):  # 吃进续行→不算
                     cur_kind = ''
             else:
                 cur, cur_pages, cur_kind = txt, {p}, kind
@@ -1679,7 +1688,7 @@ def main():
                     if rest:
                         out.append(f'[BODY] {fix_label(rest)[0]}')
                     continue
-                tag = {'item': 'ITEM', 'head': 'HEAD',
+                tag = {'item': 'ITEM', 'head': 'HEAD', 'rubric': 'RUBRIC',
                        'attrib': 'ATTRIB'}.get(kind, 'BODY')
                 out.append(f'[{tag}] {pg}{fix_label(para)[0]}')
 

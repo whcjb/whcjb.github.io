@@ -78,7 +78,8 @@ def ref_budget(items):
     """
     need = collections.Counter()
     for it in items:
-        if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE', 'HEAD', 'ATTRIB') \
+        if it['tag'] in ('BODY', 'LEMMA', 'OUTLINE', 'HEAD', 'RUBRIC',
+                         'ATTRIB') \
                 and it['pages']:
             need[it['pages'][0]] += len(REF_RE.findall(it['text']))
     return need
@@ -359,9 +360,10 @@ def main():
             return m.group(0)              # 该页注已用尽 → 原样留符号
 
         txt = it['text']
-        if it['tag'] in ('BODY', 'LEMMA', 'SCRIPTURE', 'HEAD', 'ATTRIB'):
+        if it['tag'] in ('BODY', 'LEMMA', 'SCRIPTURE', 'HEAD', 'RUBRIC',
+                         'ATTRIB'):
             txt = mark_italics(txt, it['pages'])
-        if it['tag'] in ('BODY', 'LEMMA', 'HEAD', 'ATTRIB'):
+        if it['tag'] in ('BODY', 'LEMMA', 'HEAD', 'RUBRIC', 'ATTRIB'):
             txt = REF_RE.sub(take_note, txt)
 
         if it['tag'] == 'ATTRIB':
@@ -380,6 +382,17 @@ def main():
             # markdown="1"：块里偶尔带脚注引用 `[^dvN]`，不开这个开关
             # kramdown 会把它当字面量印出来。
             cur['blocks'].append('<p class="dv-synopsis" markdown="1">'
+                                 + italics(md_escape(txt)) + '</p>')
+            for pp in it['pages']:
+                cur['last'][pp] = len(cur['blocks']) - 1
+            continue
+
+        if it['tag'] == 'RUBRIC':
+            # 原书**缩排**（而非居中）的小鉴题：`Corollaries.`
+            # `Instructions.` `Observations.` `The arguments of the Papists.`
+            # ——同一个元素书里两种排法都有，居中那一批走上面的 HEAD。
+            # 这里只左缩进、不居中（`.dv-rubric`），照原书的样子。
+            cur['blocks'].append('<p class="dv-rubric" markdown="1">'
                                  + italics(md_escape(txt)) + '</p>')
             for pp in it['pages']:
                 cur['last'][pp] = len(cur['blocks']) - 1
