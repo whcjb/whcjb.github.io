@@ -830,7 +830,13 @@ def nonword_witness_repair(w, other, other3, interior):
 
     守卫：
       · 我方 ≥5 个字母、全字母、不在词典、词干也不在词典、全书出现 ≤1 次
-      · 证人那个词在词典里，且与我方只差**一个**字符，这一对在 `LETTER_CONF` 里
+      · 证人那个词在词典里，且与我方只差**一个**字符
+        （不再要求这一对在 `LETTER_CONF` 里：那张表是第 ① 层「字形规则 +
+        词频」用的，靠它在**没有证人**时换字形猜词，往里加 `d↔l` `a↔h`
+        `n↔p` 这种会让第 ① 层到处乱换。这里有独立 OCR 在**同一位置**读出
+        词典词这条位置证据，错位读数不可能恰好只差一个字符，约束本身够硬。
+        从证人分歧里统计出的表外混淆对 54 处逐条看过，全是真错：
+        `Dishop`→Bishop、`BeAold`→Behold、`Zatin`→Latin、`erhort`→exhort…）
       · 不是屈折差异、不是截短
       · 只在**行内**（不是本行第一个/最后一个带字母的 token）——行首行尾那个
         词可能是跨行断词的一半，证人按整词对齐会给出别的词
@@ -858,12 +864,16 @@ def nonword_witness_repair(w, other, other3, interior):
         if olow == low or not attested(oc):
             continue
         d = [k for k, (x, y) in enumerate(zip(low, olow)) if x != y]
-        if len(d) != 1 or frozenset((low[d[0]], olow[d[0]])) not in LETTER_CONF:
+        if len(d) != 1:
             continue
         if _inflection(low, olow) or truncation(low, olow):
             continue
-        out = ''.join(b.upper() if a.isupper() else b for a, b in zip(core, olow))
-        return out + tail
+        # ⚠️ 大小写**照抄证人**，不要按位保留我方的大小写。被换掉的那个字形
+        # 本身就是读错的，它的大小写一样不可信：`Jaity` 的 `J` 是小写 `l`
+        # 读花的，按位保留会出 `Laity`（正解是句中的 `laity`）；`TAere` 的
+        # `A` 是 `h` 读花的，按位保留会出 `THere`（一个非词）。这两处原先由
+        # 后面的「第二证人」规则修得好好的，是这条规则抢在前面改坏的。
+        return oc + tail
     return None
 
 

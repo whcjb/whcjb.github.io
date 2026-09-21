@@ -3,7 +3,7 @@
 3	07i	on	pass2
 4	E.y	E. g.	pass2
 4	7more	more than the time,	pass2
-5	c/we	give ear	pass2
+5	c/we	give ear	SKIP-定位不唯一
 5	2G	26	pass2
 5	be/ore	before	SKIP-定位不唯一
 6	xx^	xxxi.	pass2
@@ -173,8 +173,8 @@
 36	tdlt	wilt	witness
 36	&lt	the	pass2
 36	som-ce	source	pass2
-36	v/hen	when	pass2
-37	T/ieir	Their	pass2
+36	v/hen	when	SKIP-定位不唯一
+37	T/ieir	Their	SKIP-定位不唯一
 37	2%e	The	pass2
 37	be^n	been	pass2
 37	y^^y	עָרִיץ	pass2
@@ -193,12 +193,12 @@
 39	mtin	man	pass2
 39	c?t/	cry	pass2
 39	aiu	away	witness
-39	govern/ace	govern *face*	pass2
-40	and/ear	and *fear*	pass3
+39	govern/ace	govern *face*	SKIP-定位不唯一
+40	and/ear	and *fear*	SKIP-定位不唯一
 40	i^	יִרְאוּ	pass2
 40	Xy	יִרְאוּ	pass2
 40	•INly'	וְיִירָאוּ	pass3
-40	The/ear	The *fear*	pass2
+40	The/ear	The *fear*	SKIP-定位不唯一
 40	ha^	hast	pass2
 40	t\jayytki'	εὐαγγελί	pass2
 40	^o	ζο	pass2
@@ -236,7 +236,7 @@
 45	ai\d	and	pass2
 45	cowj	companions	pass2
 45	2hey	They	pass2
-46	translated/oam	translated foam	pass2
+46	translated/oam	translated foam	SKIP-定位不唯一
 47	TVTiat	What	witness
 47	h^	he	pass2
 47	Mai	Mal.	pass2
@@ -254,7 +254,7 @@
 49	th^	the	pass2
 49	gi-oss	gross	pass2
 49	yh''	ילין	pass2
-49	re/ram	refrain	pass2
+49	re/ram	refrain	SKIP-定位不唯一
 50	/rom	from	SKIP-定位不唯一
 50	^ical	typical	pass2
 50	/or	for	SKIP-定位不唯一
@@ -264,11 +264,11 @@
 51	\dii	viii.	pass2
 51	pm-e	pure	pass2
 51	aivaij	away	witness
-51	translated/ree	translated free	pass2
+51	translated/ree	translated free	SKIP-定位不唯一
 51	lij^s	lips	pass2
 52	^nan	(man) ?	pass2
 52	xx\di	xxvii.	pass2
-52	and/ear	see and *fear*	pass2
+52	and/ear	see and *fear*	SKIP-定位不唯一
 52	oi	of	pass2
 52	\-ii	vii.	pass2
 53	variation3>the	variations, the	pass2
@@ -368,7 +368,7 @@
 71	^s	As	pass2
 71	Uii	liii.	pass2
 71	1x\t	lxvi.	pass2
-71	t/ie	the	pass2
+71	t/ie	the	SKIP-定位不唯一
 71	31y	My	pass2
 71	xxx\di	xxxvii.	pass2
 72	paj-ment	payment	pass2
@@ -387,13 +387,13 @@
 74	«ograg	ἑορτάς	pass2
 74	di^s	dies	pass2
 74	/or	for	pass2
-74	v/here	where	pass2
+74	v/here	where	SKIP-定位不唯一
 74	2'Thou	Thou	pass2
 74	Ulou	thou	witness
 74	Bemcmher	Remember	witness
 74	DQn	חָמָס	pass2
 74	vaeaxis	means	witness
-75	v/hich	which	pass2
+75	v/hich	which	SKIP-定位不唯一
 75	Q\	הָרִים	pass2
 75	acinaW-y	actually	pass2
 75	fidl	full	witness
@@ -418,7 +418,7 @@
 78	woi-d	word	pass2
 78	mea	means	pass2
 78	ns	means	pass2
-78	Er/ypt	Egypt	pass2
+78	Er/ypt	Egypt	SKIP-定位不唯一
 78	2'hey	They	pass2
 78	he^rt	heart	pass2
 79	kv	lxv.	witness
@@ -448,7 +448,7 @@
 88	evei-y	every	pass2
 88	TIio	The	witness
 89	e\'	For ever,	pass2
-89	be/eared	be feared	pass2
+89	be/eared	be feared	SKIP-定位不唯一
 89	lxx\'i	lxxvi.	pass2
 89	Da^^d	David	pass2
 89	a^ra^	ἅπαξ	pass2
@@ -468,7 +468,7 @@
 93	literally/rom	from	SKIP-定位不唯一
 93	literally/rom	from,	SKIP-定位不唯一
 94	of/or	of *for*	SKIP-定位不唯一
-94	V/ith	*With,*	pass2
+94	V/ith	*With,*	SKIP-定位不唯一
 95	bdi	lxii	witness
 95	x\'ii	xvii	pass2
 95	fii-st	first	pass2
@@ -536,7 +536,7 @@
 108	tmto	unto	pass2
 108	31Manasseh	Manasseh	pass2
 108	tw	us	witness
-109	T/iey	They	pass2
+109	T/iey	They	SKIP-定位不唯一
 109	Je	be	pass2
 109	Jbr	for	witness
 109	ivtaxoirriv	ἐπισκοπήν	pass2
@@ -549,7 +549,7 @@
 110	mi/	יַלְדוּת	pass2
 110	rd^iv	τάξιν	pass2
 110	t'^.rms	terms	pass2
-110	v/hole	whole	pass2
+110	v/hole	whole	SKIP-定位不唯一
 111	rerrhemher	remember	pass2
 111	Mai	Mal	pass2
 111	aflEinns	affirms	witness
@@ -583,7 +583,7 @@
 118	D^il	גוֹיִם	pass2
 118	Kestoration	Restoration	pass2
 118	3My	My	pass2
-118	T/ie	The	pass2
+118	T/ie	The	SKIP-定位不唯一
 118	xvii.l	xvii. 1,	pass2
 118	7s	Is	pass2
 118	^&lt	נָא	pass2
@@ -719,7 +719,7 @@
 142	uoy	way	witness
 143	the/or	the for	SKIP-定位不唯一
 143	m^^	my	pass2
-144	translated/ra«cZ	translated *fraud*	pass2
+144	translated/ra«cZ	translated *fraud*	SKIP-定位不唯一
 144	heum	hewn	witness
 144	JT'JU^	תַּבְנִית	pass2
 144	Kobinson's	Robinson's	pass2
@@ -740,7 +740,7 @@
 146	nj^S	פָּקַח	pass2
 147	Ijy	by	witness
 147	/or	for	SKIP-定位不唯一
-147	t/tee	thee	pass2
+147	t/tee	thee	SKIP-定位不唯一
 148	Ixviii	lxviii	pass2
 148	^oi	Not	pass2
 148	K^tSl	רֶמֶשׂ	pass2
