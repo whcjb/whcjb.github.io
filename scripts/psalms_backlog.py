@@ -72,7 +72,7 @@ def verse_audit():
     for p in sorted((ROOT / 'alexander_raw/psalms/en_chapters').glob('*.md')):
         if p.stem == 'preface':
             continue
-        heb, eng = [], []
+        heb, eng, pairs = [], [], []
         for para in p.read_text(encoding='utf-8').split('\n\n'):
             m = _re.match(r'^\*?(\d{1,3})(?:\s*\(\s*(\d{1,3})\s*\.?\s*\))?\s*[.,:]',
                           para.strip())
@@ -81,8 +81,19 @@ def verse_audit():
             if m.group(2):
                 heb.append((int(m.group(1)), m.group(0)))
                 eng.append((int(m.group(2)), m.group(0)))
+                pairs.append((int(m.group(1)), int(m.group(2)), m.group(0)))
             else:
                 eng.append((int(m.group(1)), m.group(0)))
+        # **两套编号的差必须在一篇之内恒定**（通常是 1，希伯来题注算第 1 节）。
+        # 只查单调性是不够的：一篇里第一个带括号的节号没有前驱可比，
+        # `8 (2.)` 这种（希伯来号错成 8）就溜过去了（2026-09-21 漏过 5 处）。
+        if pairs:
+            offs = Counter(h - e for h, e, _ in pairs)
+            base = offs.most_common(1)[0][0]
+            for h, e, lit in pairs:
+                if h - e != base:
+                    print(f'  !! 诗 {p.stem} {lit!r} 两套编号差 {h - e}，本篇通例是 {base}')
+                    bad += 1
         for name, seq in (('希伯来', heb), ('英文', eng)):
             # 开头的题注段（英文那一套里光杆 1./2.）不参与
             s = seq[1:] if name == '英文' and len(seq) > 1 and seq[0][0] >= seq[1][0] else seq
