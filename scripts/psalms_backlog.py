@@ -104,6 +104,40 @@ def verse_audit():
     print(f'节号自查：{"全部单调 ✓" if not bad else str(bad) + " 处乱序"}')
 
 
+def repeat_audit():
+    """重出自查：同一个词或它的碎片紧跟着又来一遍。
+
+    跨页／跨行时抽取端偶尔把词写两遍，形态有好几种，一种检测器只抓一种：
+      整词重出   `enemies, enemies` `the last last` `the the` `away ay`
+    试过第三条「词尾重出」（前词以后词结尾），噪声压不住——`this is`、
+    `join in`、`compassion on` 全中，一条真的也没多抓到，已去掉。
+
+      碎片重出   `eternity)eternity` `companions)anions` `surpass)ass`
+                 —— 这一类是**上游改写之后才产生**的，raw 里没有，
+                 只在已发布正文里，所以两处都要扫
+    `that that psalm`、`had had` 这类是正经英语，靠白名单放过。
+    """
+    import re as _re
+    OK = {'that that', 'had had', 'is is'}
+    word = _re.compile(r'\b([A-Za-z]{2,})\s+\1\b', _re.I)
+    frag = _re.compile(r'\b([A-Za-z]{2,})[)\];,.:]([a-z]{2,})\b')
+    bad = 0
+    for d in (ROOT / 'alexander_raw/psalms/en_chapters', SRC):
+        for p in sorted(d.glob('*.md')):
+            t = p.read_text(encoding='utf-8')
+            for m in word.finditer(t):
+                if m.group(0).lower() in OK:
+                    continue
+                print(f'  !! 整词重出 [{d.name}/{p.stem}] {m.group(0)!r}')
+                bad += 1
+            for m in frag.finditer(t):
+                a, b = m.group(1), m.group(2)
+                if a.lower().endswith(b) or b in a.lower():
+                    print(f'  !! 碎片重出 [{d.name}/{p.stem}] {m.group(0)!r}')
+                    bad += 1
+    print(f'重出自查：{"干净 ✓" if not bad else str(bad) + " 处"}')
+
+
 def main(show=False):
     vocab = L.build()
     asis, fixed = printed_as_is(), already_fixed()
@@ -135,6 +169,7 @@ def main(show=False):
                 pending.append((sec, core,
                                 re.sub(r'\s+', ' ', raw[max(0, m.start() - 45):m.end() + 45])))
     verse_audit()
+    repeat_audit()
     total = sum(stat.values())
     print(f'非词 {total} 处：' + '，'.join(f'{k} {v}' for k, v in stat.most_common()))
     OUT.parent.mkdir(exist_ok=True)
