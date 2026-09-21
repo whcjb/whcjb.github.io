@@ -40,7 +40,7 @@ RAW = ROOT / 'davenant_raw' / 'colossians'
 PDFS = {1: 'expositionofepis01dave.pdf', 2: 'expositionofepis02dave.pdf'}
 # 覆盖到卷二末尾：附卷《论基督之死》、法国之争与六种索引都在 318 页之后，
 # 只跑到 317 的话那一半书拿不到第三证人（附卷同样有词内数字与撇号的错）。
-RANGES = {1: (86, 631), 2: (14, 620)}
+RANGES = {1: (86, 631), 2: (12, 620)}   # vol2 首页是 12（见 extract_davenant.RANGES）
 
 
 def ocr_page(args):

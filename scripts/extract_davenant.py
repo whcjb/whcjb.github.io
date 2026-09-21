@@ -51,7 +51,12 @@ RAW = ROOT / 'davenant_raw' / 'colossians'
 # ⚠️ vol2 尾页是 317：318 是《论基督之死》的半标题页（"A DISSERTATION /
 # ON THE / DEATH OF CHRIST"），写 318 会把它拼到 4 章末尾（实测 4.md 末段
 # 出现 "FINIS. A DISSERTATION DEATH OF CHRIST,"）。
-RANGES = {1: (86, 631), 2: (14, 317)}
+# ⚠️ vol2 首页是 12，不是 14（2026-09-21 修）。p10 是卷二扉页、p11 是印工
+# 落款，p12 才是正文第一页（印本 p.3）——上面印着第三章的章题
+# `EXPOSITION / OF / THE THIRD CHAPTER.`，接着是两页总论（本章旨趣、
+# 两重劝勉的分段）。写 14 就把这两页整段丢掉：发布出来第三章从
+# `Verses 1, 2.` 直接开讲，一、二、四章都有的章题与开篇总论独独第三章没有。
+RANGES = {1: (86, 631), 2: (12, 317)}
 
 # 页眉：`Ver. 2.  EPISTLE TO THE COLOSSIANS.  35` / `214  AN EXPOSITION
 # OF ST. PAUL'S  Chap. iv.`
@@ -337,7 +342,11 @@ def page_body_x0(lines):
 # `. ARGUMENT 2.` 行首多一个点，x0 从 305 变成 240，比上一行还靠左，
 # 于是被判成续行、整条 ARGUMENT 并进了上一段（编号连续性闸抓到的）。
 # 斑点只认这几个在本书里从不合法出现在行首的字符。
-HEAD_SPECK = re.compile(r"^\s*[.,;:'\u2019\u201c\u201d|/*+~^`\-]{1,2}\s+(?=[A-Za-z])")
+# `!` 与 `_` 是 2026-09-21 补的：`! The first, comprehended…`（v2p13）
+# `_and the impostures…`（v2p12）——左边距上的斑点，`_` 还常常直接贴着词，
+# 所以单列一条不要求后面有空格。全书试跑只多认 12 行，逐条看过全是斑点。
+HEAD_SPECK = re.compile(r"^\s*[.,;:'\u2019\u201c\u201d|/*+~^`\-!]{1,2}\s+(?=[A-Za-z])"
+                        r"|^\s*_+\s*(?=[A-Za-z])")
 
 # 行末右边距上的孤立斑点（见 build_paragraphs 里的调用处）
 TAIL_SPECK = re.compile(r'[a-z] [-.]$')
@@ -1111,6 +1120,24 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         x0 = page_body_x0(body)
         ds = line_offsets(body, x0, indent_min)
         starts = [d > indent_min for d in ds]
+        # 行首斑点把段首缩进吃掉了。`unspeck` 按**字符数比例**把 x0 推回去，
+        # 而斑点与首词之间那一大片空白被 OCR 收成了一个空格，比例算不出来，
+        # 推不够（v2p13 `! The first, comprehended…` 实测推到 ds=25、门槛 31，
+        # 差 6 px；页面上它与底下的 `1.` 左边界齐平，是实打实的段首）。
+        # 只捞这一档：本行剥过斑点 + ds 落在半个门槛到门槛之间 + 首字母大写
+        # + 上一行以**句点**收尾。全书两处（v1p460 `Hence we may lay it down,`、
+        # v2p13 那一行），都对着 400 dpi 影像核过。
+        # ⚠️ 上一行放宽到 `:` `;` 收尾会多进来 v2p25——那是「…two things:
+        # How we are dead ; and, How much…」的续行，不是段首。
+        for k in range(1, len(body)):
+            if starts[k] or not body[k].get('speck'):
+                continue
+            if not (0.5 * indent_min <= ds[k] < indent_min):
+                continue
+            if not body[k]['text'][:1].isupper():
+                continue
+            if body[k - 1]['text'].rstrip().endswith('.'):
+                starts[k] = True
         marks = outline_items(body, ds, indent_min)
         right = text_right(body)
         heads = centered_heads(body, ds, starts, marks, x0, right, indent_min)

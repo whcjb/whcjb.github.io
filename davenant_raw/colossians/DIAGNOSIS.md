@@ -38,12 +38,20 @@ p84      CORRIGENDA ET EMENDATA
 p86      正文起：AN EXPOSITION OF THE EPISTLE OF ST. PAUL TO THE COLOSSIANS. CHAP. I.
 p422     CHAP. II
 ~p631    歌罗西书 2:23 末（末页眉 Ver. 23）
-p632     ADDENDA TO VOL. I
+p632     ADDENDA TO VOL. I（至 p634，Allport 挂在卷一 p.14/16/26/53/93
+         几条注上的三页补注）⚠️ **任何流水线都没覆盖**：正文 RANGES 到 631
+         为止，附卷／索引走的是 vol2。要发布得新开一个附卷条目。
 p636+    空白 / 扫描尾页
 ```
 
 **vol 2**
 ```
+p12      正文起：EXPOSITION OF THE THIRD CHAPTER.（印本 p.3）
+         ⚠️ 这一行 2026-09-21 才补上。早先这张表从 p14 起手，RANGES[2] 跟着
+         写成 (14, 317)，于是**第三章的章题与两页开篇总论（p12–13）整段丢掉**
+         ——发布出来第三章从 `Verses 1, 2.` 直接开讲，一、二、四章都有的
+         「章题 + 本章旨趣 + 分段」独独第三章没有。斜体／希腊文／词级三个
+         辅助 OCR 通道的 RANGES 也一并从 14 改到 12。
 p14      CHAP. III
 p223     CHAP. IV
 ~p318    注释正文结束（末页眉 Ver. 18）
@@ -53,7 +61,7 @@ p322     「KIND READER」序（Allport）
 p326     该论文正文起 CHAP. I，至 CHAPTER VII（p522）+ 附录
 ```
 
-→ **歌罗西书注释正文 ≈ 851 页**（vol1 p86–631 = 546 + vol2 p14–318 = 305）。
+→ **歌罗西书注释正文 ≈ 851 页**（vol1 p86–631 = 546 + vol2 p12–318 = 307）。
 
 vol2 后半还有三块独立文献，**2026-09-09 已作「附卷」补齐**（用户要求列在
 歌罗西书注释的书卷目录页上，不另立书目）：

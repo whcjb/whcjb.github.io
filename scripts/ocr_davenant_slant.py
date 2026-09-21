@@ -45,7 +45,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
 PDFS = {1: 'expositionofepis01dave.pdf', 2: 'expositionofepis02dave.pdf'}
-RANGES = {1: (86, 631), 2: (14, 620)}
+RANGES = {1: (86, 631), 2: (12, 620)}   # vol2 首页是 12（见 extract_davenant.RANGES）
 DPI = 400
 ANGLES = np.arange(-6.0, 25.0, 1.0)
 
