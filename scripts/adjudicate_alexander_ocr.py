@@ -556,7 +556,9 @@ MANUAL_TEXT = [
     # 落在这里而不是只改已发布正文：重跑 publish 会把正文冲回未修复状态。
     ('*Aiid in his heat',
      '*And in his heat'),
-    ('*And vow (0) klnr/s,*',
+    # 上游 `(0)`→`(O)` 的规则跑过之后这里已经是 `(O)`，锚要跟着改
+    # （2026-09-21 逐词回退判据抓到：不改这条，kings 会退回 klnr/s）
+    ('*And vow (O) klnr/s,*',
      '*And now (O) kings,*'),
     ('suited to yom- present situation',
      'suited to your present situation'),
