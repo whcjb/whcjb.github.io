@@ -349,7 +349,28 @@ HEAD_SPECK = re.compile(r"^\s*[.,;:'\u2019\u201c\u201d|/*+~^`\-!]{1,2}\s+(?=[A-Z
                         r"|^\s*_+\s*(?=[A-Za-z])")
 
 # 行末右边距上的孤立斑点（见 build_paragraphs 里的调用处）
-TAIL_SPECK = re.compile(r'[a-z] [-.]$')
+# 行末右边距上的孤立斑点。三条形态：
+#   · `[a-z] [-.]`      小写词 + 空格 + 孤立短横／句点（老判据，111 处）
+#   · `[a-z]- [标点]`   **断词连字符之后**的任何标点（`un- .` `righ- !`
+#     `de- ,` `Ma- ;`，35 处）——连字符断词后面不可能跟标点，一律是斑点，
+#     而且剥掉之后 dehyph 才接得上（`righ- ! teousness` → `righteousness`）
+#   · `[a-z] [°^~])([]`  右边距上的杂斑（`and °` `by ^`，44 处）——**只在
+#     下一行以小写起首时**才剥，见 TAIL_SPECK2
+# ⚠️ `;` `:` 单独收行是本书**自己的排法**（`…that office ;` 275 处、
+# `…of :` 192 处，19 世纪惯例），只在连字符之后才当斑点，别的一律不碰。
+TAIL_SPECK = re.compile(r'[a-z] [-.]$'
+                        r'|[a-z]- [!.,;:\u00b0^~\])(\[]$')
+
+# 右边距杂斑的第二档：**必须看下一行**。同一个形状既可能是斑点，也可能是
+# 被读花的字符——两处实测：
+#   · v2p139 `…in you richly, in all wisdom ]`，那个 `]` 是**被注释词句的
+#     收尾括号**（原书 lemma 一律以 `]` 收尾），剥掉整条 lemma 就散进正文；
+#   · v2p73 `…cast off, &c. And ]` + 下一行 `Thess. v. 5,6,`，那个 `]` 是
+#     `1 Thess.` 的 `1` 被读花，剥掉经文出处就少了卷次。
+# 这两处的共同点是**下一行以大写起首**（`In these words…` / `Thess.…`）：
+# 句子在这里断开了，行末那个符号属于本句。斑点则一律出现在句中，下一行
+# 接着往下排、以小写起首（全书 18 个 `]` 里 15 个如此，逐条看过）。
+TAIL_SPECK2 = re.compile(r'[a-z] [\u00b0^~\])(\[]$')
 
 
 def unspeck(l):
@@ -956,12 +977,24 @@ OCR_PLUS_TAIL = re.compile(r'\s\+\s*$')
 #     于是 `l. Itis` 与对方的 `1. It is` 变成 2→3 的替换，粘连词配不上
 #     （`Itis` 明明在采信表里却没被拆，实测）。
 # 所以这一步必须排在 fix_line 之前。
-ENUM_L = re.compile(r'^[l\]\[|I]\.(\s+)(?=[A-Z])')
+# 段首编号里的 `1` 被读花。本书这个字号的 `1` 上半那一小撇常常磨掉，剩下的
+# 形状 OCR 读成 `l` `]` `[` `|` `I` `J`，有时还把断掉的一撇单独读成一个字符，
+# 出来 `1l` `]l` `l]l` 这样的两三个字符。全书 17 处，逐处对 400 dpi 影像核过。
+# ⚠️ **只改字形，不动标点**。本书有的清单本来就用逗号编号（v1p155 影像上
+# 印的就是 `1, First, then,…`，同页 `2,` 也是逗号），把逗号一律改成句点就是
+# 按自己的习惯改原书。v1p257 那一处 OCR 把句点也读成了逗号（与下一行的
+# `2.` 并排放大比过，两个点一模一样）——它由既有的 `ENUM_COMMA` 顺手收掉：
+# 那一条本来就把段首的 `N, ` 归一成 `N. `（全书一贯做法），这里不另立规矩。
+ENUM_L = re.compile(r'^(?:1l|l1|ll|l\]l|\]l|l\]|[l\]\[|IJ}{])([.,])(\s+)(?=[A-Z])')
+# 行末斑点落在编号后面：`3.. The man who is not apt…`（v1p407，影像核过
+# 只有一个句点）。
+ENUM_DOT2 = re.compile(r'^(\d{1,2})\.\.(\s+)(?=[A-Z])')
 ENUM_COMMA = re.compile(r'^(\d{1,2}),(\s+)(?=[A-Z])')
 
 
 def fix_enum_head(t):
-    t = ENUM_L.sub(r'1.\1', t)
+    t = ENUM_L.sub(r'1\1\2', t)
+    t = ENUM_DOT2.sub(r'\1.\2', t)
     return ENUM_COMMA.sub(r'\1.\2', t)
 
 
@@ -1119,8 +1152,11 @@ def build_paragraphs(vol, lo, hi, fn_max, indent_min):
         # `says . Bernard`）；`.` 的其余各处下一行都是小写起首，真句号不可能
         # 后接小写。所以这里不再卡下一行。
         for k in range(len(lines) - 1):
-            if TAIL_SPECK.search(lines[k]['text'].rstrip()):
-                lines[k]['text'] = lines[k]['text'].rstrip()[:-1].rstrip()
+            t = lines[k]['text'].rstrip()
+            nxt = lines[k + 1]['text'].lstrip()
+            if TAIL_SPECK.search(t) or (TAIL_SPECK2.search(t)
+                                        and nxt[:1].islower()):
+                lines[k]['text'] = t[:-1].rstrip()
         body, fn = split_page(lines, fn_max)
         if fn:
             stats['fn_pages'] += 1

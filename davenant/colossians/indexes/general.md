@@ -378,7 +378,7 @@ next_label: "Index of Questions"
 <p class="dv-idx">Subjection, what, how useful and obligatory, II. 152. of a wife towards her husband, in what it consists, 153.</p>
 <p class="dv-idx">Succession local, of no avail without succession of doctrine, I. 20.</p>
 <p class="dv-idx">Sufferings of others claim our sympathy, 17. 108; 286. of believers, see Afflictions. of Christ, satisfactory, &amp;c. see Passion. of the Cross, the best means adapted for our redemption, 1. 242; 474.</p>
-<p class="dv-idx">Superiors to be oheyed in things indifferent, II. 171.</p>
+<p class="dv-idx">Superiors to be obeyed in things indifferent, II. 171.</p>
 <p class="dv-idx">Superstitious observances, 1. 400.</p>
 <p class="dv-idx-letter">T</p>
 <p class="dv-idx">Tabernacles, feast of, why instituted and what it signified, I. 491, 492.</p>

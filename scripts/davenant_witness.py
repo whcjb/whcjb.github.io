@@ -813,6 +813,60 @@ def letter_repair(w, other, other3, edge=False):
     return out + tail
 
 
+def nonword_witness_repair(w, other, other3, interior):
+    """我方是**非词**、某一个证人读出一个**词典词**、两者只差一个已知混淆
+    字形 → 采信证人。→ 改后的词，或 None。
+
+    为什么要单立一条：`letter_repair` 有两道闸各自合理、合起来却把这一大类
+    全挡在外面——
+      · `uni[cand] >= LETTER_TGT`（候选得在**本书语料里出现 ≥5 次**）：
+        `subjoins` 全书只有一次，够不着；
+      · 「证人同读就不动」：`subjoius` 我方与第三证人读的一样（两遍都花在
+        同一处），IA 那一层读的是 `subjoins`，于是这一票被自己的守卫否掉。
+    这两道闸是为「我方可能本来就是词」设的（`withdrew` `bidden` 这类真词
+    web2 查不到）。但这里的前提是**我方连词干都不在词典里**，那层顾虑不成立；
+    而证人独立读出的是一个干干净净的词典词，只差一个 OCR 常混的字形——
+    这是证据，不是猜。
+
+    守卫：
+      · 我方 ≥5 个字母、全字母、不在词典、词干也不在词典、全书出现 ≤1 次
+      · 证人那个词在词典里，且与我方只差**一个**字符，这一对在 `LETTER_CONF` 里
+      · 不是屈折差异、不是截短
+      · 只在**行内**（不是本行第一个/最后一个带字母的 token）——行首行尾那个
+        词可能是跨行断词的一半，证人按整词对齐会给出别的词
+        （v2p142 `interpre` + `tation,` 被 IA 读成 `talion`，就是这么错的）
+    全书试跑 193 处 / 128 种词形，逐条看过无一误判。
+    """
+    if not interior:
+        return None
+    core, tail = re.fullmatch(r'(.*?)([.,;:!?]*)$', w).groups()
+    if not core.isalpha() or len(core) < 5:
+        return None
+    low = core.lower()
+    _, uni = corpus()
+    if attested(core) or uni[low] > 1:
+        return None
+    if any(st in DICT for st in _stems(low)):
+        return None
+    for c in (other, other3):
+        if not (isinstance(c, str) and c.strip()):
+            continue
+        oc = re.fullmatch(r'(.*?)([.,;:!?]*)$', c).group(1)
+        if not oc.isalpha() or len(oc) != len(low):
+            continue
+        olow = oc.lower()
+        if olow == low or not attested(oc):
+            continue
+        d = [k for k, (x, y) in enumerate(zip(low, olow)) if x != y]
+        if len(d) != 1 or frozenset((low[d[0]], olow[d[0]])) not in LETTER_CONF:
+            continue
+        if _inflection(low, olow) or truncation(low, olow):
+            continue
+        out = ''.join(b.upper() if a.isupper() else b for a, b in zip(core, olow))
+        return out + tail
+    return None
+
+
 def stray_repair(w, prev, nxt, other, other3):
     """→ '' （删掉）或 None。"""
     if w not in STRAY_PUNCT:
@@ -1914,6 +1968,11 @@ def fix_line(vol, page, text, strict=False):
     ops3 = difflib.SequenceMatcher(
         None, [_norm(w) for w in toks],
         [_norm(w) for w in third]).get_opcodes() if third else None
+    # 本行第一个／最后一个带字母的 token：跨行断词的一半落在这两处，
+    # 证人按整词对齐会给出别的词，`nonword_witness_repair` 不碰它们。
+    _alpha = [k for k, t in enumerate(toks) if re.search(r'[A-Za-z]', t)]
+    _alpha_lo = _alpha[0] if _alpha else -1
+    _alpha_hi = _alpha[-1] if _alpha else -1
     out, log = list(toks), []
     for i, w in enumerate(toks):
         other, oseg = _at(ops, theirs, i)
@@ -1953,6 +2012,10 @@ def fix_line(vol, page, text, strict=False):
                            ('两证人一致', consensus(
                                w, other, other3,
                                latin=is_latin)),
+                           ('证人判词典', None if is_latin else
+                            nonword_witness_repair(
+                                w, other, other3,
+                                _alpha_lo < i < _alpha_hi)),
                            ('撇号', apos_repair(w, other, oseg)),
                            ('词内数字', digit_repair(w)),
                            ('数字位字形', numeral_repair(vol, page, w, other)),
