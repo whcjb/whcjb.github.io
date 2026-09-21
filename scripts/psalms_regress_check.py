@@ -25,7 +25,8 @@ import alexander_lexicon as L
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = 'alexander/psalms'
-WORD = re.compile(r"[A-Za-z][A-Za-z'’-]*")
+# æ œ 也是字母：`præterita` 不加它会被拆成 pr + terita，回退判据就误报
+WORD = re.compile(r"[A-Za-zæœÆŒ][A-Za-zæœÆŒ'’-]*")
 TAG = re.compile(r'<[^<>]+>')
 
 

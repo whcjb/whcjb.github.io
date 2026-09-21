@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
-WORD = re.compile(r"[A-Za-z][A-Za-z'’-]*")
+WORD = re.compile(r"[A-Za-zæœÆŒ][A-Za-zæœÆŒ'’-]*")
 TAG = re.compile(r'<[^<>]+>')
 EM = re.compile(r'<em>(.*?)</em>', re.S)
 LONG_EM = 400          # 一个 <em> 超过这么多字符，多半是少了一个闭合星号
