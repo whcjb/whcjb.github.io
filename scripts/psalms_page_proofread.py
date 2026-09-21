@@ -249,6 +249,13 @@ def vet(o, n, lex):
     """
     if not o or not n or len(o) > 30 or len(n) > 30:
         return '改动太长'
+    if '\t' in o + n or '\n' in o + n:
+        return '引文里带制表符，TSV 本身就坏了'
+    if re.fullmatch(r'\d{1,3}[.,)]?', o.strip()) and re.fullmatch(r'\d{1,3}[.,)]?', n.strip()):
+        # 光杆节号交给**锚点单调性**那道闸（psalms_backlog.py 的 verse_audit）。
+        # 模型看整页时容易把上一段的节号读串：诗 137 就报过「6. → 5.」，
+        # 而影像上 5 是「If I forget thee」、6 才是「Let my tongue cleave」。
+        return '光杆节号，交给锚点单调性那道闸'
     if abs(len(o) - len(n)) > 3 or edit(o, n) > 3:
         return '改动太大'
     core = re.sub(r'[^A-Za-z]', '', n)
