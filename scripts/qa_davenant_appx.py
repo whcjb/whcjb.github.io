@@ -78,7 +78,10 @@ def ocr_words(vol, lo, hi):
 
 
 def gate_a(name, got, vol, lo, hi):
-    exp = ocr_words(vol, lo, hi)
+    gate_a_counter(name, got, ocr_words(vol, lo, hi))
+
+
+def gate_a_counter(name, got, exp):
     miss, extra = exp - got, got - exp
     print(f'  Gate A 零丢失 {name}：产物 {sum(got.values()):,} 词 / '
           f'应有 {sum(exp.values()):,} 词')
@@ -247,10 +250,15 @@ def main():
 
     print('《论基督之死》+ 法国之争')
     got = words(' '.join(strip_pg(t)[0] for g, t in appx if g != 'SEC'))
-    for pc in A.PIECES:
-        pass
-    gate_a('附卷全体', got, A.VOL, min(p['lo'] for p in A.PIECES),
-           max(p['hi'] for p in A.PIECES))
+    # ⚠️ 按卷分开比。附卷绝大多数在卷二，但 Addenda 在卷一末尾（p632–634）；
+    # 早先这里用写死的 `A.VOL` 与全体 lo/hi，加进 Addenda 之后 lo 会变成
+    # 632、hi 还是 578，区间直接倒过来，Gate A 的「应有」成了空集。
+    exp_all = collections.Counter()
+    for v in sorted({pc['vol'] for pc in A.PIECES}):
+        lo = min(p['lo'] for p in A.PIECES if p['vol'] == v)
+        hi = max(p['hi'] for p in A.PIECES if p['vol'] == v)
+        exp_all += ocr_words(v, lo, hi)
+    gate_a_counter('附卷全体', got, exp_all)
     gate_b(appx)
     gate_c(appx)
 

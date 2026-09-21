@@ -33,7 +33,10 @@ OUT = ROOT / 'davenant' / 'colossians'
 BOOK_URL = '/davenant/colossians/'
 BOOK_LABEL = 'Davenant on Colossians'
 ROMAN = {1: 'I', 2: 'II', 3: 'III', 4: 'IV', 5: 'V', 6: 'VI', 7: 'VII'}
-PRINTED = -9        # 扫描页号 → 书上印的页码（vol2 实测：p327→318、p571→562）
+# 扫描页号 → 书上印的页码。**按卷分开**：vol2 实测 p327→318、p571→562；
+# vol1 末尾的 Addenda 实测 p632→546。早先写死一个 -9，Addenda 的书页号会
+# 报成 623–625（差 77 页）。
+PRINTED = {1: -86, 2: -9}
 
 DISS_KICKER = 'A Dissertation on the Death of Christ'
 CN = {                                   # 目录与导航上的中文题名
@@ -84,15 +87,16 @@ def _nrm(t):
     return re.sub(r'[^a-z0-9]', '', t.lower())
 
 
-def mark_italics(txt, pages):
+def mark_italics(txt, pages, vol=2):
     """把 txt 里原书排斜体的词圈上私用码。对不上就原样返回。
 
     倾角是按页面上的词量的，而 txt 已经过校勘（拆词、换字、接断词），
     所以按归一化词形对齐再贴，不按下标硬配。
     """
-    # 附卷这一路的 pages 是**纯页号**（整卷都在卷二），不是 (卷, 页) 对
+    # 附卷这一路的 pages 是**纯页号**，卷号单独传（Addenda 在卷一）
     stream = [w for pg in pages
-              for w in slant_words(*(pg if isinstance(pg, tuple) else (2, pg)))]
+              for w in slant_words(*(pg if isinstance(pg, tuple)
+                                     else (vol, pg)))]
     if not stream:
         return txt
     mine = txt.split()
@@ -207,7 +211,11 @@ def parse():
             a, b = int(pm.group(2)), int(pm.group(3) or pm.group(2))
             pages = list(range(a, b + 1))
             rest = rest[pm.end():]
-        items.append({'tag': tag, 'text': rest, 'pages': pages})
+        # ⚠️ 卷号要留着。附卷绝大多数在卷二，但 Addenda 在卷一；
+        # 斜体（slant）与印本页码都按卷取，丢了卷号就会去卷二找
+        # v1p632 的斜体——那一页在卷二根本不存在，整篇一个斜体都标不上。
+        items.append({'tag': tag, 'text': rest, 'pages': pages,
+                      'vol': int(pm.group(1)) if pm else 2})
     return items
 
 
@@ -301,10 +309,13 @@ def build_units(items):
                 cur['sub'] = it['text'].rstrip('*+ ')
             continue
         cur['pages'].update(it['pages'])
+        cur.setdefault('vol', it.get('vol', 2))
         if it['tag'] in ('VERSE', 'CITE'):
             cur['blocks'].append((it['tag'], it['text']))
         elif it['tag'] == 'H3':
             cur['blocks'].append(('H3', it['text']))
+        elif it['tag'] == 'SUBHEAD':
+            cur['blocks'].append(('SUB', it['text']))
         elif it['tag'] == 'END':
             cur['blocks'].append(('END', it['text']))
         else:
@@ -333,7 +344,8 @@ def attach_notes(units, notes):
                         return f'[^da{seq}]'
                 return m.group(0)              # 该页注已用尽 → 原样留符号
 
-            txt = REF_RE.sub(sub, mark_italics(it['text'], it['pages']))
+            txt = REF_RE.sub(sub, mark_italics(it['text'], it['pages'],
+                                              it.get('vol', 2)))
             u['blocks'][i] = ('P', txt)
             for p in it['pages']:
                 u['last'][p] = i
@@ -381,6 +393,13 @@ def render(u):
             out.append(f'<p class="dv-cite">{italics(md_escape(txt))}</p>')
         elif kind == 'H3':
             out.append(f'## {txt}')
+        elif kind == 'SUB':
+            # 原书居中斜体的小鉴题（`For Note p. 26.` 一类，卷一末尾
+            # 《Addenda》五条）。不用 `##`：它不是章一级，页内目录也不该收。
+            # markdown="1"：`For Note *, p. 14.` 里的 `*` 经 md_escape 成了
+            # `\*`，不开这个开关 kramdown 不进这个块，页面上直接印出反斜杠。
+            out.append('<p class="dv-subhead" markdown="1">'
+                       + italics(md_escape(txt)) + '</p>')
         elif kind == 'END':
             out.append(f'<p class="dv-end">{txt}</p>')
         else:
@@ -395,7 +414,9 @@ def render(u):
             if has_sym:
                 sym_seen[p] = sym_seen.get(p, 0) + 1
             out.append(f'[^da{seq}]: {esc}  '
-                       f'<span class="dv-fn-page">Vol. II. p. {p + PRINTED}</span>')
+                       f'<span class="dv-fn-page">'
+                       f'Vol. {"I" if u.get("vol", 2) == 1 else "II"}. '
+                       f'p. {p + PRINTED[u.get("vol", 2)]}</span>')
     return out
 
 
@@ -406,18 +427,22 @@ def main():
     n_fn, left = attach_notes(units, notes)
 
     # 页面顺序：序 → 论文 I–VII → 法国之争。上一篇/下一篇按这条链串。
-    order = ['preface'] + [f'diss{n}' for n in range(1, 8)] + ['gallican']
+    # 页面顺序：序 → 论文 I–VII → 法国之争 → 卷一末尾的 Addenda。
+    order = ['preface'] + [f'diss{n}' for n in range(1, 8)] + ['gallican',
+                                                               'addenda']
     by_key = {u['key']: u for u in units}
     chain = [k for k in order if k in by_key]
 
     def path_of(k):
         return ('dissertation/0.md' if k == 'preface'
                 else 'gallican.md' if k == 'gallican'
+                else 'addenda.md' if k == 'addenda'
                 else f'dissertation/{k[4:]}.md')
 
     def url_of(k):
         return (f'{BOOK_URL}dissertation/0/' if k == 'preface'
                 else f'{BOOK_URL}gallican/' if k == 'gallican'
+                else f'{BOOK_URL}addenda/' if k == 'addenda'
                 else f'{BOOK_URL}dissertation/{k[4:]}/')
 
     def label_of(k):
@@ -425,6 +450,8 @@ def main():
             return 'To the Kind Reader'
         if k == 'gallican':
             return 'The Gallican Controversy'
+        if k == 'addenda':
+            return 'Addenda to Vol. I'
         return f'Chapter {ROMAN[int(k[4:])]}'
 
     now = subprocess.run(['date', '+%Y-%m-%d %H:%M'], capture_output=True,
@@ -474,7 +501,8 @@ def main():
         dst = OUT / path_of(k)
         dst.write_text('\n'.join(fm) + '\n\n' + '\n\n'.join(body) + '\n',
                        encoding='utf-8')
-        pr = (f'{min(u["pages"]) + PRINTED}-{max(u["pages"]) + PRINTED}'
+        _off = PRINTED[u.get('vol', 2)]
+        pr = (f'{min(u["pages"]) + _off}-{max(u["pages"]) + _off}'
               if u['pages'] else '-')
         print(f'  → {dst.relative_to(OUT)}  段 {len(u["blocks"])}  '
               f'注 {len(u["fns"])}  书页 {pr}')
@@ -493,13 +521,12 @@ def main():
          '论基督之死的范围与特殊功效，改革宗「假设普救论」的经典文献。"',
          '    items:']
     for k in chain:
-        if k == 'gallican':
+        if k in ('gallican', 'addenda'):
             continue
         n = 0 if k == 'preface' else int(k[4:])
         y += [f'      - url: "{url_of(k)}"',
               f'        label: "{label_of(k)}"',
               f'        cn: "{CN[n]}"']
-    g = by_key.get('gallican')
     y += ['  - title: "On the Gallican Controversy"',
           '    cn: "论法国教会之争"',
           '    note: "法国改革宗内部就『神对罪人施恩得救的旨意』起争，英国神学家'
@@ -508,6 +535,15 @@ def main():
           f'      - url: "{BOOK_URL}gallican/"',
           '        label: "On the Gallican Controversy"',
           '        cn: "论法国教会之争"']
+    if 'addenda' in by_key:
+        y += ['  - title: "Addenda to Vol. I"',
+              '    cn: "卷一补注"',
+              '    note: "英译者 Allport 附在卷一末尾的三页补注，逐条挂在卷一'
+              '第 14、16、26、53、93 页的脚注上；多为教父与教会史的旁证。"',
+              '    items:',
+              f'      - url: "{BOOK_URL}addenda/"',
+              '        label: "Addenda to Vol. I"',
+              '        cn: "卷一补注"']
     data.write_text('\n'.join(y) + '\n', encoding='utf-8')
     print(f'  → _data/{data.name}')
 

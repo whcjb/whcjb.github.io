@@ -144,8 +144,10 @@ def main():
             fm += [f'prev_url: "{url(chain[i-1])}"',
                    f'prev_label: "{PAGES[chain[i-1]][1]}"']
         else:
-            fm += [f'prev_url: "{BOOK_URL}gallican/"',
-                   'prev_label: "The Gallican Controversy"']
+            # 附卷链条的末一篇现在是卷一末尾的 Addenda（2026-09-21 补），
+            # 不再是法国之争；索引首页的「上一篇」跟着改。
+            fm += [f'prev_url: "{BOOK_URL}addenda/"',
+                   'prev_label: "Addenda to Vol. I"']
         if i + 1 < len(chain):
             fm += [f'next_url: "{url(chain[i+1])}"',
                    f'next_label: "{PAGES[chain[i+1]][1]}"']

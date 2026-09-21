@@ -35,3 +35,10 @@ colossians:
       - url: "/davenant/colossians/gallican/"
         label: "On the Gallican Controversy"
         cn: "论法国教会之争"
+  - title: "Addenda to Vol. I"
+    cn: "卷一补注"
+    note: "英译者 Allport 附在卷一末尾的三页补注，逐条挂在卷一第 14、16、26、53、93 页的脚注上；多为教父与教会史的旁证。"
+    items:
+      - url: "/davenant/colossians/addenda/"
+        label: "Addenda to Vol. I"
+        cn: "卷一补注"

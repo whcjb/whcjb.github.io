@@ -114,6 +114,12 @@ layout: default
 .dv-content .dv-cite { text-align: right; font-size: 14px; color: #6a6a5c;
   margin: 0 0 16px !important; }
 
+/* 篇内居中斜体的小鉴题（`For Note p. 26.` 一类，卷一末尾《Addenda》五条）。
+   ⚠️ 与 dv-cite / dv-end 同理，选择器必须带 `.dv-content` 前缀压过
+   `.dv-content p`（0,1,1），裸类名 (0,1,0) 的 text-align 会被 justify 吃掉。*/
+.dv-content .dv-subhead { text-align: center; font-style: italic;
+  font-size: 15.5px; color: var(--dv-ink-dark); margin: 26px 0 10px; }
+
 /* 卷末的 END OF THE DISSERTATION. / FINIS. */
 .dv-content .dv-end { text-align: center; letter-spacing: .18em; font-size: 12.5px;
   color: #8a8a7c; margin: 34px 0 8px; }

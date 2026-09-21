@@ -49,18 +49,22 @@ import davenant_witness as W          # noqa: E402  第二证人（IA OCR 层）
 
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
-VOL = 2
 
 # ── 三块散文的扫描页范围（0-based，含两端）──────────────────────────────
 # 边界都按实测定：321/325/569 是空白页或扫描斑点页，318/320/326/570 是
 # 半标题与标题页（内容重复，正文里另行处理）。
+# ⚠️ `vol` 是每条自己的：附卷绝大多数在卷二，但 `addenda` 在**卷一**末尾
+# （p632–634，印本 pp.546–548）。早先这个脚本写死 `VOL = 2`，那三页
+# Allport 的补注因此任何流水线都不覆盖，整段没发布过。
 PIECES = [
-    {'id': 'preface',   'lo': 322, 'hi': 324, 'kind': 'plain',
+    {'id': 'preface',   'vol': 2, 'lo': 322, 'hi': 324, 'kind': 'plain',
      'title': 'To the Kind Reader'},
-    {'id': 'diss',      'lo': 326, 'hi': 567, 'kind': 'chaptered',
+    {'id': 'diss',      'vol': 2, 'lo': 326, 'hi': 567, 'kind': 'chaptered',
      'title': 'A Dissertation on the Death of Christ'},
-    {'id': 'gallican',  'lo': 570, 'hi': 578, 'kind': 'plain',
+    {'id': 'gallican',  'vol': 2, 'lo': 570, 'hi': 578, 'kind': 'plain',
      'title': 'On the Gallican Controversy'},
+    {'id': 'addenda',   'vol': 1, 'lo': 632, 'hi': 634, 'kind': 'plain',
+     'title': 'Addenda to Vol. I'},
 ]
 
 # ── 页眉 ────────────────────────────────────────────────────────────────
@@ -73,6 +77,12 @@ HEAD_RES = [
     re.compile(r'CONTROVERSY\s+AMONG\s+TH[EF]\s+FRENCH', re.I),
     re.compile(r'OP[Il1]N[Il1]ON\s+OF\s+B[Il1]SHOP\s+DAVENANT', re.I),
     re.compile(r'GALL[Il1]CAN\s+CONTROVERSY', re.I),
+    # 卷一末尾《Addenda》的书眉。⚠️ 必须**带页码**才算书眉：p632 页顶那行
+    # `ADDENDA TO VOL. l.` 是本篇的标题（无页码），剥掉就没标题了；
+    # p633 `547 ADDENDA TO VOL. 1.` 与 p634 `ADDENDA TO VOL. Tf. 548`
+    # 才是书眉。`l` / `1` / `Tf` 都是 `I` / `II` 被 OCR 读花。
+    re.compile(r'^\s*\d{3}\s+ADDENDA\s+TO\s+VOL|ADDENDA\s+TO\s+VOL[^\d]*\d{3}\s*$',
+               re.I),
 ]
 # 章首页重复排的半标题（`A DISSERTATION / ON THE / DEATH OF CHRIST.`）。
 # 只在页首 6 行内、居中（x0 > 250）时才剥，正文里同样的字不会误伤。
@@ -140,6 +150,48 @@ def strip_head(lines, at_chapter_start):
                 continue
             break
     return lines, n
+
+
+# 19 世纪排长引文的惯例：**每一行行首都重复一个开引号**。OCR 读成
+# `“` / `"` / `*` / `**` 各种花样（v1p633 的迦克墩会议引文实测 `*` 与 `**`）。
+# `E.unspeck` 会把它当行首斑点剥掉并把 x0 往右推——推完每一行都够着段首
+# 缩进，一段引文被切成七八个独立段落（正文那一侧在注区里用 QUOTE_SPECK
+# 处理过同一件事，附卷这一侧的**正文**里没有）。
+# 判据要成**串**看：单个 `*` 在别处是脚注符，只有连着 ≥2 行行首都带引号
+# 前缀时才当引文块；块内除第一行外一律按续行接上。
+QUOTE_LEAD = re.compile(r'^(?:\*{1,2}|“|”|"|\'\'|``|,,)$')
+
+
+def quote_block(lines):
+    """→ (每行是否「引文块里的续行」, 引文块首行的下标集合)。
+
+    首行要单独拿出来：每行行首那个引号被 `E.unspeck` 当斑点剥掉了，连**真正
+    的开引号**一起剥掉，产物里只剩收尾的 `”`（v1p633 的迦克墩会议引文实测）。
+    调用方按这个下标把 `“` 补回首行。
+    """
+    q = [bool(QUOTE_LEAD.match((l.get('speck') or '').strip())) for l in lines]
+    out = [False] * len(lines)
+    opens = set()
+    i = 0
+    while i < len(lines):
+        if not q[i]:
+            i += 1
+            continue
+        j = i
+        while j < len(lines) and q[j]:
+            j += 1
+        if j - i >= 2:                     # 成串才算；单独一个是脚注符
+            opens.add(i)
+            for k in range(i + 1, j):
+                out[k] = True
+        elif i and not lines[i - 1]['text'].rstrip().endswith(
+                ('.', '?', '!', ':', ';')):
+            # 引文块的**末行**常常只剩一两个词（v1p632 的 `“ Stephen.”`），
+            # 前后各只有它一行带引号前缀，成串判据够不着。这时看上一行：
+            # 上一行没有句末标点＝句子没完，这一行就是续行不是段首。
+            out[i] = True
+        i = j
+    return out, opens
 
 
 def split_page(L):
@@ -334,6 +386,45 @@ def shape(body):
     return out
 
 
+def mixed_heads(body, roles, starts):
+    """→ 在 `roles` 上补「**不全大写**的居中小标题」，原地改并返回。
+
+    `shape()` 的 head 判据要求 `is_caps`——罩得住法国之争那两行全大写的篇题，
+    罩不住卷一末尾《Addenda》里的五条小标题（`For Note *, p. 14.`
+    `Note to close of Section at top of page 16.` `For Note p. 26/53/93.`，
+    原书居中、斜体，400 dpi 影像核过）。判据与正文那一侧的 `centered_heads`
+    同形：左右边距对称、行短、上一行以句末标点收尾、下一行是段首。
+    全附卷（含索引以外的 322–578 与 632–634）试跑只多认这五条。
+    """
+    if len(body) < 6:
+        return roles
+    left = statistics.median([l['x0'] for l in body])
+    right = statistics.median([l['x1'] for l in body])
+    W = max(right - left, 1)
+    for i, l in enumerate(body):
+        if roles[i] or is_caps(l['text']):
+            continue
+        lg, rg = l['x0'] - left, right - l['x1']
+        w = l['x1'] - l['x0']
+        if not (lg > 0.12 * W and rg > 0.12 * W
+                and abs(lg - rg) <= 0.12 * W and w <= 0.75 * W):
+            continue
+        if not any(len(x) >= 2 and x.isalpha()
+                   for x in re.findall(r'[A-Za-z]+', l['text'])):
+            continue
+        prev = body[i - 1]['text'].rstrip() if i else ''
+        if not (i == 0 or prev.endswith(('.', '?', '!', ':', ';', ',', '”', '’'))):
+            continue
+        # ⚠️ 这里卡的是**本行自己**以句末标点收尾，不是「下一行是段首」。
+        # 本想用后者，但 `para_starts` 的基线取前 5 行 x0 的中位数，页顶两行
+        # 居中（标题 + 小标题）会把基线拽到正文左界上，紧跟的正文首行相对它
+        # 凸出 0 px，判不成段首（v1p632 实测），这条守卫就永远不成立。
+        if not l['text'].rstrip().endswith(('.', '?', '!', ':')):
+            continue
+        roles[i] = 'head'
+    return roles
+
+
 def page_indent(lines):
     """本页的段首缩进阈值 = 该页字号中位数 × 0.55。见模块 docstring §3。"""
     if not lines:
@@ -341,7 +432,9 @@ def page_indent(lines):
     return max(12, int(round(statistics.median([l['size'] for l in lines]) * 0.55)))
 
 
-def run_piece(pc, pages, out, stats):
+def run_piece(pc, pages_by_vol, out, stats):
+    vol = pc['vol']
+    pages = pages_by_vol[vol]
     chap_starts = set()
     if pc['kind'] == 'chaptered':
         for p in range(pc['lo'], pc['hi'] + 1):
@@ -357,12 +450,12 @@ def run_piece(pc, pages, out, stats):
     def flush():
         nonlocal cur, cur_pages
         if cur:
-            pg = (f'<!--v{VOL}p{min(cur_pages)}-->' if len(cur_pages) == 1
-                  else f'<!--v{VOL}p{min(cur_pages)}-{max(cur_pages)}-->')
+            pg = (f'<!--v{vol}p{min(cur_pages)}-->' if len(cur_pages) == 1
+                  else f'<!--v{vol}p{min(cur_pages)}-{max(cur_pages)}-->')
             # 段落级再过一遍人工核定表：跨行断词的词只有 dehyph 之后才成形
             out.append(f'[BODY] {pg}' + W.para_fix(
-                VOL, sorted(cur_pages),
-                W.manual_para(VOL, sorted(cur_pages),
+                vol, sorted(cur_pages),
+                W.manual_para(vol, sorted(cur_pages),
                               E.drop_stray(E.fix_label(cur)[0]))))
             stats['para'] += 1
         cur, cur_pages = '', set()
@@ -397,14 +490,21 @@ def run_piece(pc, pages, out, stats):
             stats['fn_pages'] += 1
         indent = page_indent(body)
         roles = shape(body)
-        for l, is_start, role in zip(body, para_starts(body, indent), roles):
+        starts = para_starts(body, indent)
+        cont, qopen = quote_block(body)
+        starts = [st and not c for st, c in zip(starts, cont)]
+        for k in qopen:                    # 把被当斑点剥掉的开引号补回首行
+            if not body[k]['text'].lstrip().startswith(('“', '"', '‘')):
+                body[k]['text'] = '“ ' + body[k]['text'].lstrip()
+        roles = mixed_heads(body, roles, starts)
+        for l, is_start, role in zip(body, starts, roles):
             raw = E.fix_enum_head(l['text']) if is_start else l['text']
-            t = E.drop_stray(E.clean(W.fix_line(VOL, p, raw)[0]))
+            t = E.drop_stray(E.clean(W.fix_line(vol, p, raw)[0]))
             if not t:
                 continue
             if role in ('verse', 'cite') and not pend_title:
                 flush()
-                out.append(f'[{role.upper()}] <!--v{VOL}p{p}-->{t}')
+                out.append(f'[{role.upper()}] <!--v{vol}p{p}-->{t}')
                 stats[role] += 1
                 continue
             m = CHAP_RE.match(t)
@@ -438,6 +538,16 @@ def run_piece(pc, pages, out, stats):
                     pend_title = []
                 flush()
                 out.append(f'[END] {t}')
+                continue
+            # 不全大写的居中小标题（`For Note p. 26.` 一类，原书居中斜体）。
+            # 全大写那一档走下面的 pend_title；这一档自己成块，出 [SUBHEAD]。
+            if role == 'head' and not is_caps(t):
+                if pend_title:
+                    out.append('[H2] ' + clean_heading(' '.join(pend_title)))
+                    pend_title = []
+                flush()
+                out.append(f'[SUBHEAD] <!--v{vol}p{p}-->{t}')
+                stats['subhead'] += 1
                 continue
             # 全大写的标题行。老判据要求 `not cur`——只认「紧跟在 CHAP 之后」
             # 那一档；篇中另起的小标题前面是正文，cur 不空，于是漏判：法国之争
@@ -473,12 +583,12 @@ def run_piece(pc, pages, out, stats):
         cur_fn = ''
         for l, is_start in zip(fn, para_starts(fn, indent)):
             raw = E.fix_enum_head(l['text']) if is_start else l['text']
-            t = E.clean(W.fix_line(VOL, p, raw)[0])
+            t = E.clean(W.fix_line(vol, p, raw)[0])
             if not t:
                 continue
             if (is_start or E.FN_MARK.match(t)) and cur_fn:
-                out.append(f'[FN] <!--v{VOL}p{p}--> '
-                           + W.manual_para(VOL, [p], E.drop_stray(cur_fn)))
+                out.append(f'[FN] <!--v{vol}p{p}--> '
+                           + W.manual_para(vol, [p], E.drop_stray(cur_fn)))
                 stats['fn'] += 1
                 cur_fn = t
             elif cur_fn:
@@ -486,8 +596,8 @@ def run_piece(pc, pages, out, stats):
             else:
                 cur_fn = t
         if cur_fn:
-            out.append(f'[FN] <!--v{VOL}p{p}--> '
-                       + W.manual_para(VOL, [p], E.drop_stray(cur_fn)))
+            out.append(f'[FN] <!--v{vol}p{p}--> '
+                       + W.manual_para(vol, [p], E.drop_stray(cur_fn)))
             stats['fn'] += 1
 
 
@@ -495,7 +605,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--pages', help='如 326-352，只跑落在该区间内的部分')
     a = ap.parse_args()
-    pages = {r['page']: r['lines'] for r in E.load(VOL)}
+    # 两卷都载：addenda 在卷一，其余在卷二
+    pages_by_vol = {v: {r['page']: r['lines'] for r in E.load(v)}
+                    for v in sorted({pc['vol'] for pc in PIECES})}
 
     plan = PIECES
     if a.pages:
@@ -505,14 +617,15 @@ def main():
 
     out, stats = [], collections.Counter()
     for pc in plan:
-        run_piece(pc, pages, out, stats)
+        run_piece(pc, pages_by_vol, out, stats)
 
     dst = RAW / ('davenant_colossians_appendix.txt' if not a.pages
                  else 'appendix_sample.txt')
     dst.write_text('\n'.join(out) + '\n', encoding='utf-8')
     print(f'[ok] → {dst.name}  {dst.stat().st_size:,} 字节  {len(out)} 行')
     print(f'  章 {stats["chap"]} · 段落 {stats["para"]} · 引诗 {stats["verse"]}'
-          f' · 出处行 {stats["cite"]} · 脚注 {stats["fn"]}'
+          f' · 出处行 {stats["cite"]} · 小标题 {stats["subhead"]}'
+          f' · 脚注 {stats["fn"]}'
           f'（{stats["fn_pages"]} 页）· 剥页眉 {stats["head"]} · '
           f'剥页脚 {stats["foot"]} · 共 {stats["pages"]} 页')
     return 0

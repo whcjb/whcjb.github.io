@@ -39,8 +39,9 @@ p86      正文起：AN EXPOSITION OF THE EPISTLE OF ST. PAUL TO THE COLOSSIANS.
 p422     CHAP. II
 ~p631    歌罗西书 2:23 末（末页眉 Ver. 23）
 p632     ADDENDA TO VOL. I（至 p634，Allport 挂在卷一 p.14/16/26/53/93
-         几条注上的三页补注）⚠️ **任何流水线都没覆盖**：正文 RANGES 到 631
-         为止，附卷／索引走的是 vol2。要发布得新开一个附卷条目。
+         几条注上的三页补注）→ 2026-09-21 已作附卷第四组发布
+         （/davenant/colossians/addenda/）。extract_davenant_appx 的
+         PIECES 每条自带 `vol`，这一组是**卷一**。
 p636+    空白 / 扫描尾页
 ```
 

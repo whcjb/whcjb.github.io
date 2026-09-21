@@ -27,14 +27,28 @@ layout: default
 
       <div class="dv-chrome cmp-nav" style="margin: 18px 0 22px;">
         <a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {%- comment -%}
+          ⚠️ 两个方向都要有。中文页的 front matter 给的是 `en_url`，早先这里
+          只认 `zh_url`，于是**中文页根本没有回英文版的链接**（四章全中招）。
+        {%- endcomment -%}
         {% if page.zh_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        {% if page.en_url %}<a class="dv-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
       </div>
 
       <h1 class="dv-title">{{ page.title }}</h1>
 
       <div class="dv-nav cmp-nav">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {%- comment -%}
+          ⚠️ 两套 front matter 都要认：英文页写 `prev_section`/`next_section`
+          （章号），中文页写 `prev_url`/`next_url`（整条路径，带 /zh/）。
+          早先只认 section，**中文页上下章导航整个是空的**。
+        {%- endcomment -%}
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% elsif page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% elsif page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
       </div>
 
       {%- comment -%}
@@ -61,8 +75,17 @@ layout: default
       {% endif %}
 
       <div class="dv-nav cmp-nav" style="margin-top:44px; padding-top:16px; border-top:1px solid var(--dv-rule);">
-        {% if page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
-        {% if page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+        {%- comment -%}
+          ⚠️ 两套 front matter 都要认：英文页写 `prev_section`/`next_section`
+          （章号），中文页写 `prev_url`/`next_url`（整条路径，带 /zh/）。
+          早先只认 section，**中文页上下章导航整个是空的**。
+        {%- endcomment -%}
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% elsif page.prev_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% elsif page.next_section %}<a href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
       </div>
 
     </div>
@@ -218,6 +241,14 @@ layout: default
   text-decoration: none !important; }
 </style>
 
+{%- comment -%}
+  经文引用弹层：只给中文页挂——组件认的是**中文书卷名**（「以弗所书 2:12」
+  「箴言 20:9」），英文页挂上去一条也匹配不上，白白多一份 JS。
+  accent/vnum 必须写字面量，Jekyll 3 的 include 参数不接受变量。
+  取本卷的橄榄绿 --dv-ink #556b2f / --dv-rule 一档的浅色 #8a9b6a。
+{%- endcomment -%}
+{% if page.zh %}{% include scripture-popup.html container_selector=".dv-content" accent="#556b2f" vnum="#8a9b6a" slide="down" %}{% endif %}
+
 <script>
 function toggleDavenantVerseNav() {
   var p = document.getElementById('verse-nav-pills');
@@ -243,8 +274,11 @@ function toggleDavenantVerseNav() {
     pills.appendChild(link);
   });
   if (first === null) return;
+  // 标签按页面语言：中文页印「第 N–N 节」，早先两边都是英文 `Verses N–N`
+  var zh = {% if page.zh %}true{% else %}false{% endif %};
   document.getElementById('verse-nav-label').textContent =
-    'Verses ' + first + '–' + last;
+    zh ? ('第 ' + first + '–' + last + ' 节')
+       : ('Verses ' + first + '–' + last);
   nav.style.display = '';
 })();
 </script>

@@ -7,8 +7,8 @@ kicker: "Indexes to the Original Edition"
 dense: true
 date: 2026-09-15 17:02
 subtitle: "of Subjects in the Exposition"
-prev_url: "/davenant/colossians/gallican/"
-prev_label: "The Gallican Controversy"
+prev_url: "/davenant/colossians/addenda/"
+prev_label: "Addenda to Vol. I"
 next_url: "/davenant/colossians/indexes/questions/"
 next_label: "Index of Questions"
 ---

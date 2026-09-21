@@ -1,6 +1,6 @@
 # Davenant 校勘：当前进度与恢复指引
 
-最后更新：2026-09-21（第三轮）。产物**已重建并落库**，规则与产物同步。
+最后更新：2026-09-21（第四轮）。产物**已重建并落库**，规则与产物同步。
 
 ## 一句话状态
 
@@ -58,6 +58,80 @@
    Gate W 词数 318,750 → 319,358（＝新增两页），缺/多的比例不变；
    O1/O3/O4 全绿；渲染层 0；连跑两次 publish 逐字节相同；
    Gate ⑤ 残留与改动前完全一致（84/1/1/1/3/1）。
+
+## 2026-09-21 第四轮：中英两侧一起过一遍（用户「歌罗西书全部修了，中英都修」）
+
+### 一、中文页有三处是**真断的**——layout 只认英文页的 front matter 字段
+
+中文页由 `translate_davenant.publish` 写，给的是 `prev_url` / `next_url` /
+`en_url`；而 `_layouts/davenant-chapter.html` 只读 `prev_section` /
+`next_section` / `zh_url`。结果四章中文页：
+
+  · 上下章导航（页顶页尾两处）**整个是空的**——`{% if page.prev_section %}`
+    永远不成立，渲出来两个空 `<span>`；
+  · **没有回英文版的链接**——`en_url` 写在 front matter 里从来没被读过；
+  · 章顶节号导航的标签印的是英文 `Verses 1–29`。
+
+三处都改了（两套字段都认 / 补 `English →` / 标签按 `page.zh` 分语言）。
+**新开一本书时这一条要连着查**：产物侧写的字段名与 layout 侧读的字段名
+对不上，页面不会报错，只是那一块**什么都不渲染**，很难看出来。
+
+### 二、经文弹层：davenant 是唯一没接的一本
+
+`{% include scripture-popup.html %}` calvin / mhenry / hodge / owen / manton /
+bridges / alexander 都接了，davenant 从开卷起就漏了。按 alexander 那一行的
+写法接上，`{% if page.zh %}` 只给中文页（组件认中文书卷名，英文页匹配不上），
+container `.dv-content`，accent 取本卷橄榄绿。
+
+### 三、入口
+
+  · `_data/compare_sources.yml` 里 davenant 中文版 `ch_to: 3`，而第四章中译
+    2026-09-17 就发了——对照面板里一直缺第四章。改成 4。
+  · 书首页的章卡片只指英文页，四章中译**在本页没有任何入口**（只能从
+    /commentaries/ 进）。按欧文那套改成「有中译就指中译」，中译清单扫
+    `site.pages` 里的 `<章>/zh/index.md`，不写死章号。
+
+### 四、卷一末尾的《Addenda》三页纳入流水线并发布
+
+`extract_davenant_appx.py` 写死 `VOL = 2`，而 Addenda 在**卷一** p632–634
+（印本 pp.546–548）。改成每条 piece 自带 `vol`，两卷都载入。过程中捞出三类
+本来就有的坑：
+
+1. **附卷的 `shape()` 只认全大写的居中标题**（`is_caps`），罩不住
+   `For Note *, p. 14.` 这类混合大小写的五条小鉴题（原书居中斜体）。
+   新增 `mixed_heads` + `[SUBHEAD]` → `.dv-subhead`。
+   ⚠️ 守卫用的是「**本行自己**以句末标点收尾」，不是「下一行是段首」：
+   `para_starts` 的基线取前 5 行 x0 的中位数，页顶两行居中会把基线拽到正文
+   左界上，紧跟的正文首行相对它凸出 0 px，判不成段首，那条守卫永远不成立。
+2. **行首重复开引号的引文块**（迦克墩会议引文，每行行首一个 `*`/`**`）：
+   `E.unspeck` 把它当行首斑点剥掉并把 x0 推右，推完每一行都够着段首缩进，
+   一段引文切成八段；**真正的开引号也一起剥掉了**。新增 `quote_block`：
+   成串（≥2 行）才算，块内除首行外一律续行，并把 `“` 补回首行。
+   末行只剩一两个词（`“ Stephen.”`）时成串判据够不着，按「上一行没有句末
+   标点」单独收一条。
+3. **`publish_davenant_appx.parse()` 丢了卷号**。斜体拿 `(2, page)` 去查，
+   v1p632 在卷二根本不存在，`stream` 为空 → 整篇一个斜体都标不上；
+   印本页码也用卷二的偏移 `-9`，Addenda 报成 623–625（实为 546–548）。
+   `PRINTED` 改成按卷的字典，`parse` 带上 `vol`，`mark_italics` 收 `vol` 参数。
+   `qa_davenant_appx` 的 Gate A 同理改成按卷分别算「应有」——不改的话
+   lo=632 / hi=578 区间倒过来，「应有」成了空集，闸子看着还是绿的。
+
+三页逐字对 400 dpi 影像读过，16 处 OCR 残字落成人工票（见 manual_votes 的
+`_round_2026_09_21_addenda`）。`Tt`→`It`、`ifs`→`its`、`Aonoured`→`honoured`
+在补了 v1p632–634 的第二证人（slant/grc/w3，三个 OCR 脚本的 RANGES 一并
+从 631 放到 634）之后由既有词规则自己修掉了，没有投票。
+
+导航链：法国之争 → 卷一补注 → 六种索引；`_data/davenant_appendix.yml`
+自动多出一组，书首页照着渲。
+
+### 五、验收
+
+`bundle exec jekyll build` 通过（EXIT=0，davenant 无新增告警），逐页核过渲染
+结果：中文页的上下章/English/弹层/「第 1–29 节」、书首页四张卡片都指
+`/zh/`、附卷目录列出卷一补注、`For Note *, p. 14.` 的 `\*` 正确还原成 `*`、
+Addenda 的斜体 18 处。逐词回退 0；Gate W 319,358 词不变；附卷 Gate A
+98,559 → 99,536（＝新增三页）；O1/O3/O4 全绿；渲染层 25 页 0 问题；
+连跑两次 publish（正文/附卷/索引）逐字节相同。
 
 ## 2026-09-21 第三轮：缩排的小鉴题不能排成居中
 

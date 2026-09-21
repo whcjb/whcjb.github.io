@@ -33,11 +33,23 @@ layout: default
         与达文南特正文一并列于章末脚注，末尾缀原书页码。</p>
       </div>
 
+      {%- comment -%}
+        章卡片指向**中译**（有中译时），与欧文那边同一套做法：中文页顶上有
+        `English →` 可切回原文。早先卡片一律只指英文页，四章中译在本页
+        没有任何入口，只能从 /commentaries/ 进去。
+        中译清单按 `site.pages` 里 `<章>/zh/index.md` 是否存在判，不写死章号：
+        将来补新章不用回来改这里。
+      {%- endcomment -%}
+      {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains '/zh/index.md'" -%}
+      {%- assign zh_paths = zh_pages | map: "path" | join: "," -%}
       <div class="dv-ch-grid">
         {% for i in (1..page.chapters) %}
-        <a class="dv-ch" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ i }}/">
+        {%- assign zk = "davenant/" | append: page.book_id | append: "/" | append: i | append: "/zh/index.md" -%}
+        {%- assign has_zh = false -%}{% if zh_paths contains zk %}{% assign has_zh = true %}{% endif %}
+        <a class="dv-ch" href="{{ site.baseurl }}/davenant/{{ page.book_id }}/{{ i }}/{% if has_zh %}zh/{% endif %}"
+           title="{% if has_zh %}中文版（页内可切回英文原文）{% else %}仅英文{% endif %}">
           <span class="dv-ch-n">CHAP. {% case i %}{% when 1 %}I{% when 2 %}II{% when 3 %}III{% when 4 %}IV{% else %}{{ i }}{% endcase %}</span>
-          <span class="dv-ch-cn">歌罗西书 第 {{ i }} 章</span>
+          <span class="dv-ch-cn">歌罗西书 第 {{ i }} 章{% unless has_zh %} · 仅英文{% endunless %}</span>
         </a>
         {% endfor %}
       </div>
@@ -58,8 +70,8 @@ layout: default
       {% if appx or idxs %}
       <div class="dv-appx">
         <h2 class="dv-appx-head">附卷 <span>Appendix</span></h2>
-        <p class="dv-appx-intro">以下几篇原刊于英译本第二卷歌罗西书注释正文之后，
-          与注释同属一书，主题各自独立。</p>
+        <p class="dv-appx-intro">以下几篇与注释同属一书，主题各自独立：前三组原刊于
+          英译本第二卷歌罗西书注释正文之后，《卷一补注》则在第一卷末尾。</p>
 
         {% for grp in appx %}
         <div class="dv-appx-grp">
