@@ -2,12 +2,10 @@
 2	"a	a	5 个锚一致
 4	2"	2	6 个锚一致
 5	uttered,"	uttered,"	证人印的就是这样
-10	thoughts."	This	剥掉引号后不一致，不采信
+10	thoughts."	thoughts.'	剥掉引号后不一致，不采信
 16	"their	their	5 个锚一致
 16	hasten,"	hasten	剥掉引号后不一致，不采信
 16	mouth."	mouth."	证人印的就是这样
-16	verse. "	verse.	2 个锚一致
-16	destroyer."	destroyer.'	剥掉引号后不一致，不采信
 17	me."	me.'	剥掉引号后不一致，不采信
 17	"from	"from	证人印的就是这样
 17	world."	world."	证人印的就是这样
@@ -31,6 +29,7 @@
 22	roaring? "	roaring	剥掉引号后不一致，不采信
 25	"1	while	剥掉引号后不一致，不采信
 28	"not	not	2 个锚一致
+29	says "	says	5 个锚一致
 34	being "		几个锚读数不一致：['being', 'i.']
 37	"1	1	2 个锚一致
 37	Israel. "	Israel.	1 个锚一致
@@ -44,14 +43,10 @@
 51	confession, "	confession,	2 个锚一致
 53	"ID	iD	剥掉引号后不一致，不采信
 57	"saints	saints.	剥掉引号后不一致，不采信
-58	off"	off,	剥掉引号后不一致，不采信
-58	off"	off,	剥掉引号后不一致，不采信
 59	night"	night'	剥掉引号后不一致，不采信
 59	"though	though	6 个锚一致
 59	night."	night.'	剥掉引号后不一致，不采信
-81	feast, \*"		几个锚读数不一致：['feast,', 'i.']
 84	Hi)"	ftp.)	剥掉引号后不一致，不采信
-87	me, "		几个锚读数不一致：['i.', 'me,']
 89	understood. "		几个锚读数不一致：['l', 'understood.']
 89	suffering? "		几个锚读数不一致：['Or,', 'suffering']
 89	Or, "		几个锚读数不一致：['Or,', 'l']
@@ -69,9 +64,4 @@
 90	wisdom,"	wisdom,'	剥掉引号后不一致，不采信
 105	live."	live."	证人印的就是这样
 107	"ly		几个锚读数不一致：['5)', 'literally']
-107	time, "		几个锚读数不一致：['i.', 'time,']
-126	when "	when	4 个锚一致
-126	joy "	joy"	证人印的就是这样
-126	16), "	16),	7 个锚一致
-126	Israel "	Israel"	证人印的就是这样
 139	"1111	D	剥掉引号后不一致，不采信
