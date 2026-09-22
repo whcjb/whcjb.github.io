@@ -29,6 +29,14 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
 FIXES = ROOT / 'alexander_raw/psalms/manual_fixes.tsv'
 
+NAMES = ['Gen', 'Exod', 'Lev', 'Num', 'Deut', 'Josh', 'Judg', 'Ruth', 'Sam',
+         'Kings', 'Chron', 'Ezra', 'Neh', 'Esth', 'Job', 'Prov', 'Eccles',
+         'Cant', 'Isa', 'Jer', 'Lam', 'Ezek', 'Dan', 'Hos', 'Joel', 'Amos',
+         'Obad', 'Jon', 'Mic', 'Nah', 'Hab', 'Zeph', 'Hag', 'Zech', 'Mal',
+         'Mat', 'Mark', 'Luke', 'John', 'Acts', 'Rom', 'Cor', 'Gal', 'Eph',
+         'Phil', 'Col', 'Thess', 'Tim', 'Tit', 'Heb', 'Jam', 'Pet', 'Jude',
+         'Rev']
+
 BOOK = (r'(?:Gen|Exod|Lev|Num|Deut|Josh|Judg|Ruth|Sam|Kings|Chron|Ezra|Neh|'
         r'Esth|Job|Ps|Prov|Eccles|Cant|Isa|Jer|Lam|Ezek|Dan|Hos|Joel|Amos|'
         r'Obad|Jon|Mic|Nah|Hab|Zeph|Hag|Zech|Mal|Mat|Mark|Luke|John|Acts|Rom|'
@@ -59,14 +67,52 @@ RULES = [
 ]
 
 
+CORPUS_MIN = 12          # 少于这么多用例，不敢说哪种是「体例」
+
+
+def corpus_rules():
+    """书卷缩写后面该不该有句点，**让全书自己说**。
+
+    不能照搬直觉：这本书里 `Kings`/`Job`/`Amos`/`Luke`/`Acts` 是**全名**，
+    一律不带句点（各 100 多处）；`Gen.`/`Deut.`/`Sam.` 是缩写，一律带。
+    写死一张表迟早写反——`Job. xxxv. 10` 与 `1 Kings iii. 14` 各错一半，
+    直觉反而会把 114 处对的改坏。
+
+    所以判据是**多数形态**：同一个名字两种写法都出现、且多数压倒少数
+    （≥12 例且占九成），就把少数那种当误读。
+    """
+    txt = ''.join(re.sub(r'<[^<>]+>', ' ', p.read_text(encoding='utf-8'))
+                  for p in SRC.glob('*.md'))
+    out = []
+    for nm in NAMES:
+        dot = len(re.findall(rf'\b{nm}\.\s+[ivxlcIVXLC]+\.\s+\d', txt))
+        bare = len(re.findall(rf'\b{nm}\s+[ivxlcIVXLC]+\.\s+\d', txt))
+        tot = dot + bare
+        if tot < CORPUS_MIN or min(dot, bare) == 0:
+            continue
+        if dot >= bare * 9:
+            out.append((f'{nm} 后漏了句点（全书 {dot}:{bare}）',
+                        re.compile(rf'\b({nm})(\s+[ivxlcIVXLC]+\.\s+\d)'),
+                        lambda m: m.group(1) + '.' + m.group(2)))
+        elif bare >= dot * 9:
+            out.append((f'{nm} 后多了句点（全书 {bare}:{dot}）',
+                        re.compile(rf'\b({nm})\.(\s+[ivxlcIVXLC]+\.\s+\d)'),
+                        lambda m: m.group(1) + m.group(2)))
+    # ver. 同理：全书 1224 处带句点，14 处不带
+    out.append(('ver 后漏了句点',
+                re.compile(r'\b(ver)(\s+\d)'), lambda m: 'ver.' + m.group(2)))
+    return out
+
+
 def main(apply=False):
     stat = Counter()
     rows = []
+    rules = RULES + corpus_rules()
     for p in sorted(SRC.glob('*.md'), key=lambda x: (x.stem != 'preface', x.stem)):
         t = p.read_text(encoding='utf-8')
         # 规则之间会互相踩上下文（`19,1. 44` 两条规则都想动），所以**单遍顺序**改，
         # 每条的 old/new 都按改动那一刻的正文取，落盘时一条一条按序应用。
-        for name, pat, rep in RULES:
+        for name, pat, rep in rules:
             while True:
                 m = pat.search(t)
                 if not m:
@@ -86,8 +132,9 @@ def main(apply=False):
                 t = t[:a] + new + t[b:]
                 stat[name] += 1
                 rows.append((p.stem, name, old, new))
-    for name, _, _ in RULES:
-        print(f'── {name}：{stat[name]} 处')
+    for name, _, _ in rules:
+        if stat[name]:
+            print(f'── {name}：{stat[name]} 处')
     print(f'合计 {len(rows)} 处')
     for sec, name, old, new in rows:
         print(f'  [{sec}] …{old}…\n        → …{new}…')
