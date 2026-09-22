@@ -37,6 +37,11 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
 FIXES = ROOT / 'alexander_raw/psalms/manual_fixes.tsv'
 OUT = ROOT / 'logs/alexander_psalms_quotes.tsv'
+# 印面自己就不配对的段落：已按 1864 影像实读定案，不再计入待判。
+# 「已有结论的桶不再被后续判据覆盖」——否则每轮都会把「查过、印面如此」
+# 重新记成「还没查」。
+VERIFIED = ROOT / 'alexander_raw/psalms/quote_print_unbalanced.tsv'
+PAGE_RE = re.compile(r'<!-- PAGE (\d+) -->')
 HEB = re.compile(r'[֐-׿Ͱ-Ͽἀ-῿]')
 QUOTE = '"“”'
 
@@ -46,9 +51,21 @@ def core(s):
     return re.sub(r'[\s"“”]', '', s)
 
 
+def load_verified():
+    d = {}
+    if not VERIFIED.exists():
+        return d
+    for line in VERIFIED.read_text(encoding='utf-8').splitlines():
+        if line.startswith('#') or not line.strip():
+            continue
+        f = line.split('\t')
+        d[(f[0], int(f[1]))] = int(f[2])
+    return d
+
+
 def scan():
     """段内引号配对不上的地方，逐个引号连同挨着它的那个词。"""
-    out = []
+    out, verified, skipped = [], load_verified(), [0]
     for sec in ['preface'] + [str(i) for i in range(1, 151)]:
         p = SRC / f'{sec}.md'
         if not p.exists():
@@ -60,10 +77,16 @@ def scan():
         masked = A._mask_markup(raw)
         toks = [(m.group(0), m.start(), m.end()) for m in WORD.finditer(masked)]
         body = masked[start:]
+        pages = [(m.start(), int(m.group(1))) for m in PAGE_RE.finditer(raw)]
         # 段落边界按空行切，位置换算回整篇
         pos = start
         for para in body.split('\n\n'):
             if para.count('"') % 2:
+                pg = next((v for o, v in reversed(pages) if o <= pos), None)
+                if verified.get((sec, pg)) == para.count('"'):
+                    skipped[0] += para.count('"')
+                    pos += len(para) + 2
+                    continue
                 for m in re.finditer('"', para):
                     at = pos + m.start()
                     if HEB.search(masked[max(0, at - 8):at + 8]):
@@ -74,7 +97,7 @@ def scan():
                     out.append(dict(sec=sec, raw=raw, masked=masked, toks=toks,
                                     tok=k, at=at))
             pos += len(para) + 2
-    return out
+    return out, skipped[0]
 
 
 def nearest(toks, at):
@@ -135,8 +158,10 @@ def wide_slice(text, toks, j):
 
 def main(apply=False):
     wtext, wtoks, wlow, widx = load_witness()
-    items = scan()
-    print(f'段内引号配对不上的地方 {len(items)} 处')
+    items, skipped = scan()
+    print(f'段内引号配对不上的地方 {len(items)} 处'
+          + (f'（另有 {skipped} 处已按影像核定「印面如此」，见 '
+             f'{VERIFIED.name}）' if skipped else ''))
     stat, rows, add = Counter(), [], []
     for it in items:
         span = span_of(it['raw'], it['toks'], it['tok'], it['at'])
