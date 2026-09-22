@@ -813,6 +813,77 @@ def letter_repair(w, other, other3, edge=False):
     return out + tail
 
 
+AE_TAIL = '.,;:!?)]'
+
+
+def ae_repair(w, other, other3):
+    """`æ` 连字被我方读成 `e`，而 IA 那层读成 `se` → 还原成 `æ`。
+
+    本书拉丁引文与教父人名里 `æ` 遍地都是（`Quæst.` `Cæsarea` `Manichæans`
+    `Præscript.` `hæres.` `Historiæ` `ecclesiæ` `Hexæm.` `Sæc.` `Væ` `quæ`
+    `Romæ` `Chaldæ` `Irenæus` `æra`）。我方 tesseract 把这个连字整个读成一个
+    `e`；IA 那一层读成 `se`——**这个 `se` 本身就是指纹**：它在英文里不会凭空
+    多出来，而去掉那个 `s` 恰好就是我方的串。
+
+    判据：某个证人的词比我方长一个字符，且删掉它某一位上的 `s` 之后与我方
+    逐字相同，而那个 `s` 后面紧跟着 `e`；则我方同一位上的 `e` 还原成 `æ`。
+
+    全书 56 处。**逐条对 400 dpi 影像抽查了 14 处，无一例外**：
+    `Quæst. disput.`（v1p266）、`Cæsarea`（v1p88）、`Romæ 1699`（v1p160）、
+    `Chaldæ paraphrast`（v2p51）、`Christian æra`（v2p221）、
+    `Manichæans`（v1p276）、`causæ, quæ dedit esse`（v1p285）、
+    `Væ captiosis`（v1p455）、`Sæc. xvi.`（v1p439）、`Irenæus`（v1p613）、
+    `Historiæ eccl.`（v1p624）、`ecclesiæ`（v1p125）、`De hæres.`（v1p198）、
+    `Hexæm. 5. 16.`（v2p179）。
+    ⚠️ 不能因为「我方那个串是常见英文词」就否决——`Rome` 在书里几百处，
+    而 v1p160 的 `Numis Pont. Romæ 1699` 是拉丁版权页，影像核过。
+    位置证据（证人在**这一处**读出 `se`）比词频硬。
+    """
+    core, tail = re.fullmatch(r'(.*?)([.,;:!?)\]]*)$', w).groups()
+    if len(core) < 2 or 'æ' in core or 'Æ' in core:
+        return None
+    # ⚠️ 另一个证人在这一处读出一个**干净的词典词**时一律让路：那说明我方
+    # 这个串整个读崩了，该由后面的证人规则整体换掉，不是在里面补一个 æ。
+    # v2p422 实测：我方 `OxsecTion.`（原书小型大写 OBJECTION 读崩），
+    # 第三证人读 `OxssecTion.` 正好比我方多一个 s，本规则把它改成
+    # `OxsæcTion.`，把 IA 那层读对的 `Objection.` 抢掉了。
+    def _se_form(oc2):
+        """oc2 是不是「在我方某一位插进一个 s、且其后紧跟 e」的那个形？"""
+        if len(oc2) != len(core) + 1:
+            return False
+        return any(ch in 'sS' and k + 1 < len(oc2) and oc2[k + 1] in 'eE'
+                   and (oc2[:k] + oc2[k + 1:]).lower() == core.lower()
+                   and core[k] in 'eE'
+                   for k, ch in enumerate(oc2))
+
+    for c in (other, other3):
+        if isinstance(c, str) and c.strip():
+            oc2 = re.fullmatch(r'(.*?)([.,;:!?)\]]*)$', c).group(1)
+            # ⚠️ 只排除**别的**读数。证人读出的那个 `se` 形本身就是证据，
+            # 它偶尔恰好也是个词典词（v2p221 我方 `era.`、第三证人 `sera.`），
+            # 不能因为「它是词」就把证据当成否决理由。
+            if _se_form(oc2):
+                continue
+            if oc2.lower() != core.lower() and attested(oc2):
+                return None
+    for c in (other, other3):
+        if not (isinstance(c, str) and c.strip()):
+            continue
+        oc = re.fullmatch(r'(.*?)([.,;:!?)\]]*)$', c).group(1)
+        if len(oc) != len(core) + 1:
+            continue
+        for k, ch in enumerate(oc):
+            if ch not in 'sS' or k + 1 >= len(oc) or oc[k + 1] not in 'eE':
+                continue
+            if (oc[:k] + oc[k + 1:]).lower() != core.lower():
+                continue
+            if core[k] not in 'eE':
+                continue
+            rep = 'Æ' if core[k] == 'E' else 'æ'
+            return core[:k] + rep + core[k + 1:] + tail
+    return None
+
+
 def nonword_witness_repair(w, other, other3, interior):
     """我方是**非词**、某一个证人读出一个**词典词**、两者只差一个已知混淆
     字形 → 采信证人。→ 改后的词，或 None。
@@ -2019,6 +2090,7 @@ def fix_line(vol, page, text, strict=False):
                                w, toks[i - 1] if i else '',
                                toks[i + 1] if i + 1 < len(toks) else '',
                                other, other3)),
+                           ('æ 连字', ae_repair(w, other, other3)),
                            ('两证人一致', consensus(
                                w, other, other3,
                                latin=is_latin)),

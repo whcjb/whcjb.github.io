@@ -43,6 +43,16 @@ def real(w):
     是 `loud`+`ed`，于是这条回退被判成「新词也是真词」放了过去（实测）。
     改用 `attested`——它多问一句「词干在本书里站不站得住」。
     """
+    # ⚠️ 带 `æ` / `œ` 连字的一律当真词。这些字符**只能由
+    # `davenant_witness.ae_repair` 写进产物**（判据是 IA 证人在同一位置读出
+    # 多一个 `s` 的形，另抽 14 处对 400 dpi 影像核过），而它还原出来的几乎
+    # 全是拉丁词（`hæres.` `quæst.` `Romæ` `Divinæ` `æra.`）——英文词典里
+    # 一个都查不到，摊平成 `ae` 也查不到。不特判的话，**每一处修对的地方都会
+    # 被这道闸报成「越改越坏」**（实测 9 处，全是对的）。
+    # 代价说清楚：这道闸因此管不住 ae_repair 自己的误判；那一条的验收靠
+    # 「逐条读词级 diff + 影像抽查」，见 HANDOFF。
+    if re.search(r'[æÆœŒ]', w):
+        return True
     n = W._norm(w)
     return len(n) < 2 or W.attested(w) or bool(re.fullmatch(r'[ivxlcdm]+', n))
 
