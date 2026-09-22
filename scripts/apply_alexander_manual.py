@@ -35,10 +35,19 @@ def load():
     with TSV.open(encoding='utf-8') as fh:
         head = next(fh).rstrip('\n').split('\t')
         assert head == ['chapter', 'old', 'new', 'src'], head
-        for line in fh:
+        for lineno, line in enumerate(fh, start=2):
             if not line.strip():
                 continue
-            ch, old, new, src = line.rstrip('\n').split('\t')
+            f = line.rstrip('\n').split('\t')
+            if len(f) != 4:
+                # 往这张表里写上下文时，只要切片跨了行，一行就被撑成两行，
+                # 这里原先直接抛 ValueError——链条 set -e 中止，但那一轮的
+                # publish 已经把正文覆盖过了，看上去就是「手工修正整批消失」。
+                # 报清楚是第几行、坏成什么样，别让人去猜。
+                raise SystemExit(
+                    f'✗ {TSV.name} 第 {lineno} 行不是 4 列（{len(f)} 列）：'
+                    f'{line[:90]!r}\n  多半是写表时上下文切片跨了行或含制表符。')
+            ch, old, new, src = f
             rules.setdefault(ch, []).append((old, new, src))
     return rules
 

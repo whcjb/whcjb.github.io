@@ -38,7 +38,10 @@ OUT = ROOT / 'logs/alexander_psalms_double_punct.tsv'
 # 两个标点之间只允许隔空白或斜体星号。**不能把右括号也算进来**：
 # `(cxx.-cxxxiv,), all bearing` 里那两个逗号一个在括号内一个在括号外，
 # 各有各的活儿，不是「同一个标点重了两次」——并掉哪个都是错的。
-CLUSTER = re.compile(r'[,;:.][*\s]{0,3}[,;:.]')
+# 前后都不许再挨着一个点：`Lord...` 里的 `..` 命中之后并成 `Lord..`，
+# 把印面上的省略号 `. . .` 啃掉一个点——判据按写法枚举，就要防它在更长的
+# 同类写法内部误命中。
+CLUSTER = re.compile(r'(?<!\.)[,;:.][*\s]{0,3}[,;:.](?!\.)')
 ROMAN = re.compile(r'^[ivxlcdm]+$', re.I)
 
 
@@ -46,6 +49,13 @@ def suspicious(prev_word, cluster):
     """这一处的双标点值不值得查。"""
     flat = re.sub(r'[^,;:.]', '', cluster)
     if flat in (',,', ';;', '::', ',;', ';,', ',.', ';.', ':,'):
+        return True
+    if flat == '..':
+        # `Ps.. xxxii. 8`、`ver.. 13-33`、`Mal.. iii. 1`——缩写的点被读了两遍。
+        # 这一支**原先漏了**，于是 44 处双句点在「双标点 0 处」的报告里一个也看不见：
+        # 判据按写法枚举，枚举漏一种就等于那一类不存在。
+        # 句末的点后面跟一个独立的点（省略号、`&c. .`）不在此列——那种前一个词
+        # 不是缩写，用同一条缩写判据挡掉。
         return True
     if flat == '.,':
         # `Ps. xcvii., but`、`&c., in our language`、`i. e., of its wilful

@@ -338,6 +338,31 @@ def norm(s):
     return re.sub(r'[^0-9a-zA-Zα-ωΑ-Ωἀ-ῼ֐-׿]', '', unpoint(s) or '').lower()
 
 
+
+def _absorb_dup_punct(t, hit, img):
+    """读数自带的句点与正文里原有的那个，别留成 `xxxi..`。
+
+    OCR 把 `Ps. xxxi.` 读成 `Ps. xx^.`，影像读数给的是**带句点**的 `xxxi.`，
+    而被替换的坏串 `xx^` 不含句点——换完就成了 `xxxi..`。全书 45 处都是这么来的，
+    正文层面看不出问题（`xxxi.` 是对的），只有数标点才看得见。
+
+    只吞**紧挨在后面、与读数末字符相同**的那一个标点，且：
+      · 后面跟着两个以上的点不动 —— 那是省略号 `. . .`，吞一个就毁了
+      · 只认 `.,;:`，引号括号一概不碰
+    """
+    if not img or img[-1] not in '.,;:':
+        return hit
+    pos = t.find(hit[0])
+    if pos < 0:
+        return hit
+    nxt = t[pos + len(hit[0]):pos + len(hit[0]) + 3]
+    if not nxt.startswith(img[-1]):
+        return hit
+    if img[-1] == '.' and nxt[:2] == '..':
+        return hit                      # 省略号，别动
+    return (hit[0] + img[-1], hit[1])
+
+
 def apply_gates(dry=True, replay=False):
     vocab = L.build()
     corpus = Counter()
@@ -450,6 +475,7 @@ def apply_gates(dry=True, replay=False):
                 if not hit:
                     fh.write(f'{sec}\t{it["tok"]}\t{img}\tSKIP-定位不唯一\n')
                     continue
+                hit = _absorb_dup_punct(t, hit, img)
                 t = t.replace(hit[0], hit[1], 1)
                 fh.write(f'{sec}\t{it["tok"]}\t{img}\t{src}\n')
                 n += 1

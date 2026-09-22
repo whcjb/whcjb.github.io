@@ -365,7 +365,7 @@ chapter	old	new	src
 132	Solomon,;	Solomon, 	witness1850: 双标点并一个
 135	Amorites,,	Amorites,	witness1850: 双标点并一个
 144	languages,,	languages,	witness1850: 双标点并一个
-89	David. For For ever, er,* literally	David.* *For ever,* literally	hand-rescan2: witness1850: 证人作「sure mercies of David. For ever, literally eternity」，我们这里 For 重出、ever 被切成两半
+89	David. For For ever,er,* literally	David.* *For ever,* literally	hand-rescan2: witness1850: 证人作「sure mercies of David. For ever, literally eternity」，我们这里 For 重出、ever 被切成两半（锚随「影像读数自带句点不再与原有句点重出」的修复重定）
 41	*Happy {the man] acting	*Happy (the man) acting	hand-rescan2: witness1850: 证人作 Happy (the man) acting wisely；{ ] 是括号被读崩
 93	*{. e.*	*i. e.*	hand-rescan2: witness1850: 证人作 begun to reign, i. e. manifested
 103	the {one) healing	the (one) healing	hand-rescan2: 同一句前半就是 *the (one) forgiving*，{ 是左括号被读崩
@@ -407,7 +407,7 @@ chapter	old	new	src
 142	\art	(art	image1864: 裁图两遍一致，标点级
 148	in.antithesis	in antithesis	image1864: 裁图两遍一致，标点级
 149	grace-	grace.	image1864: 裁图两遍一致，标点级
-4	*E. g..* Exod.xix. 25	*E. g.* Exod. xix. 25	hand-rescan2: image1864: 裁图一遍读 Exod. xix.；g.. 是重出的句点
+4	*E. g.* Exod.xix. 25	*E. g.* Exod. xix. 25	hand-rescan2: image1864: 裁图一遍读 Exod. xix.；g.. 是重出的句点（锚随「影像读数自带句点不再与原有句点重出」的修复重定）
 18	The verbs are- in the future	The verbs are in the future	hand-rescan2: image1864: 影像上 are 后面只是个脏点，不是标点
 19	(or *do^on to)*	(or *down to)*	hand-rescan2: image1864: 裁图两遍都读 down
 27	believe it,-he encourages	believe it, he encourages	hand-rescan2: image1864: 裁图两遍都读 it, he；那一横是噪点
@@ -544,7 +544,7 @@ chapter	old	new	src
 75	Idumæa and Arabia Petraea	Idumæa and Arabia Petræa	image1864: 整页比对两遍一致（碎片重出／标点，上游已被改写，落在已发布正文）
 118	xlvii. 2(l),with Ps. xvii. 1	xlvii. 2 (1), with Ps. xvii. 1	image1864: 整页比对两遍一致（碎片重出／标点，上游已被改写，落在已发布正文）
 37	the wicked shall he broken	the wicked shall be broken	image1864: 整页比对两遍一致（上游已改写，落在已发布正文）
-66	thine enemies lie lie to thee..	thine enemies lie to thee.	image1864: 整页比对两遍一致（上游已改写，落在已发布正文）
+66	thine enemies lie lie to thee.	thine enemies lie to thee.	image1864: 整页比对两遍一致（上游已改写，落在已发布正文）（锚随「影像读数自带句点不再与原有句点重出」的修复重定）
 45	her companions)anions, brought	her companions, brought	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
 73	*they surpass)ass the desires	*they surpass the desires	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
 96	The expression families;families	The expression families	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
@@ -628,3 +628,274 @@ chapter	old	new	src
 49	(]>2" ^^^ ילין)	(יבין and ילין)	image1864: 影像上是干净的希伯来词，此前是拉丁残渣：印面作 differ only in a single letter (יבין and ילין)
 22	(")אֲסַפֵּר)	(אֲסַפֵּר)	image1864: 影像上是干净的希伯来词，此前是拉丁残渣
 22	parted; my* no *heart	parted; my heart	image1864: 按 1864 影像逐处定案：跨页处混进一个 no，印面没有
+37	v..	v.	witness1850: 双标点并一个
+45	xxiii..	xxiii.	witness1850: 双标点并一个
+46	Isa..	Isa.	witness1850: 双标点并一个
+68	x..	x.	witness1850: 双标点并一个
+81	xvii..	xvii.	witness1850: 双标点并一个
+87	Psalm..	Psalm.	witness1850: 双标点并一个
+88	Psalm..	Psalm.	witness1850: 双标点并一个
+101	them..	them.	witness1850: 双标点并一个
+101	Ps..	Ps.	witness1850: 双标点并一个
+144	xxxix..	xxxix.	witness1850: 双标点并一个
+101	i. 1, lii. 4-7 (2-5), and compare Ps. XV. 3. The verb translated *sla	i. 1, lii. 4-7 (2-5), and compare Ps. xv. 3. The verb translated *sla	refs: 章节号是大写罗马数字（按全书引用体例）
+102	 haste* (and) *answer me* Compare Ps. X. 1, xiii. 1, xvii. 6, xviii.	 haste* (and) *answer me* Compare Ps. x. 1, xiii. 1, xvii. 6, xviii.	refs: 章节号是大写罗马数字（按全书引用体例）
+102	the purpose of removing it, as in Ps. XXX. 12 (11); then to the loosen	the purpose of removing it, as in Ps. xxx. 12 (11); then to the loosen	refs: 章节号是大写罗马数字（按全书引用体例）
+103	e is an unusual one borrowed from Deut, xxix. 21, where *sickness	e is an unusual one borrowed from Deut. xxix. 21, where *sickness	refs: 书卷缩写后是逗号（按全书引用体例）
+103	finite perfections. See above, on Ps. V. 12 (11), xxii. 4 (3).	finite perfections. See above, on Ps. v. 12 (11), xxii. 4 (3).	refs: 章节号是大写罗马数字（按全书引用体例）
+104	6 (15), lxxvi. 7 (6), and compare Isa. 1. 2. The Hebrew particle mean	6 (15), lxxvi. 7 (6), and compare Isa. l. 2. The Hebrew particle mean	refs: 罗马 50 读成数字 1（按全书引用体例）
+104	expression which occurs above, in Ps. 1. 10.	expression which occurs above, in Ps. l. 10.	refs: 罗马 50 读成数字 1（按全书引用体例）
+104	r cultivation, as in Exod. i. 14, Lev. XXV. 39, it has that of compulso	r cultivation, as in Exod. i. 14, Lev. xxv. 39, it has that of compulso	refs: 章节号是大写罗马数字（按全书引用体例）
+105	,* literally *cut;* see above, on Ps. 1. 5. *His oath* (which he swa	,* literally *cut;* see above, on Ps. l. 5. *His oath* (which he swa	refs: 罗马 50 读成数字 1（按全书引用体例）
+105	ypt is found also in the history, Gen. 1. 7. *At his pleasure,* liter	ypt is found also in the history, Gen. l. 7. *At his pleasure,* liter	refs: 罗马 50 读成数字 1（按全书引用体例）
+105	. 3, xxxv. 14, ci. 2, and compare Gen. V. 22, xvii. 1, xxiv. 6, 9, 40	. 3, xxxv. 14, ci. 2, and compare Gen. v. 22, xvii. 1, xxiv. 6, 9, 40	refs: 章节号是大写罗马数字（按全书引用体例）
+106	enant, propounded at the close of Ps, cv., is here acknowledged	enant, propounded at the close of Ps. cv., is here acknowledged	refs: 书卷缩写后是逗号（按全书引用体例）
+106	id. With the first clause compare Josh, xxiii. 12, 13, Judges iii	id. With the first clause compare Josh. xxiii. 12, 13, Judges iii	refs: 书卷缩写后是逗号（按全书引用体例）
+106	e Exod. xiv. 31; with the second, Exod. XV. 1.	e Exod. xiv. 31; with the second, Exod. xv. 1.	refs: 章节号是大写罗马数字（按全书引用体例）
+106	rm of expression is borrowed from Gen. XV. 6; but what is here meant i	rm of expression is borrowed from Gen. xv. 6; but what is here meant i	refs: 章节号是大写罗马数字（按全书引用体例）
+106	 10. With the last clause compare Num. XXXV. 33.	 10. With the last clause compare Num. xxxv. 33.	refs: 章节号是大写罗马数字（按全书引用体例）
+106	2; with the second. Num. xiv. 19, Ps. V. 8 (7), lxix. 14 (13), Neh. 	2; with the second. Num. xiv. 19, Ps. v. 8 (7), lxix. 14 (13), Neh. 	refs: 章节号是大写罗马数字（按全书引用体例）
+107	em. With the first clause compare Ps. 1. 14.	em. With the first clause compare Ps. l. 14.	refs: 罗马 50 读成数字 1（按全书引用体例）
+107	litical. Compare Isa. xliv. 26, 27, 1. 2, Jer. 1. 88, li. 36. It t	litical. Compare Isa. xliv. 26, 27, l. 2, Jer. 1. 88, li. 36. It t	refs: 罗马 50 读成数字 1（按全书引用体例）
+107	 Compare Isa. xliv. 26, 27, l. 2, Jer. 1. 88, li. 36. It thus prepare	 Compare Isa. xliv. 26, 27, l. 2, Jer. l. 88, li. 36. It thus prepare	refs: 罗马 50 读成数字 1（按全书引用体例）
+107	slated *craving* is borrowed from Isa, xxix. 8.	slated *craving* is borrowed from Isa. xxix. 8.	refs: 书卷缩写后是逗号（按全书引用体例）
+107	hteous are the true Israel, as in Ps, xxxiii, 1, Num. xxiii, 10	hteous are the true Israel, as in Ps. xxxiii, 1, Num. xxiii, 10	refs: 书卷缩写后是逗号（按全书引用体例）
+108	ble in this case than in those of Ps, xviii, liii., lxx. The be	ble in this case than in those of Ps. xviii, liii., lxx. The be	refs: 书卷缩写后是逗号（按全书引用体例）
+108	a period posterior to the date of Ps, lvii, and lx. The comment	a period posterior to the date of Ps. lvii, and lx. The comment	refs: 书卷缩写后是逗号（按全书引用体例）
+108	confined to the variations, as in Ps, liii. and lxx.	confined to the variations, as in Ps. liii. and lxx.	refs: 书卷缩写后是逗号（按全书引用体例）
+109	is scattered by the wind. Compare Exod. X. 19, Joel ii. 20, Nah. iii. 	is scattered by the wind. Compare Exod. x. 19, Joel ii. 20, Nah. iii. 	refs: 章节号是大写罗马数字（按全书引用体例）
+11	nd in Gen. i. 26, iii. 22, xi. 7, Job. XXXV. 10, Ps. lviii. 12, Eccles. 	nd in Gen. i. 26, iii. 22, xi. 7, Job. xxxv. 10, Ps. lviii. 12, Eccles. 	refs: 章节号是大写罗马数字（按全书引用体例）
+110	ce his sovereign and his son. See Rom, i. 3, 4. That the Lord he	ce his sovereign and his son. See Rom. i. 3, 4. That the Lord he	refs: 书卷缩写后是逗号（按全书引用体例）
+110	 the Father. See Mat. xxvi. 64, 1 Cor. XV. 25, Eph. i. 20-22, Phil. ii	 the Father. See Mat. xxvi. 64, 1 Cor. xv. 25, Eph. i. 20-22, Phil. ii	refs: 章节号是大写罗马数字（按全书引用体例）
+110	mon version, not only here but in Heb. V. 6, vii. 17, 21, in every on	mon version, not only here but in Heb. v. 6, vii. 17, 21, in every on	refs: 章节号是大写罗马数字（按全书引用体例）
+111	ressed in Ps. lxxxvi. 12. Compare Ps, cxix. 2. The word transla	ressed in Ps. lxxxvi. 12. Compare Ps. cxix. 2. The word transla	refs: 书卷缩写后是逗号（按全书引用体例）
+112	ith joy or triumph. See above, on Ps. 1. 23, liv. 9 (7). *Until* doe	ith joy or triumph. See above, on Ps. l. 23, liv. 9 (7). *Until* doe	refs: 罗马 50 读成数字 1（按全书引用体例）
+113	h.* With the first clause compare Ps. 1. 1. The last clause might be	h.* With the first clause compare Ps. l. 1. The last clause might be	refs: 罗马 50 读成数字 1（按全书引用体例）
+113	in his former acts. See above, on Ps. V. 12 (11). The wish expressed	in his former acts. See above, on Ps. v. 12 (11). The wish expressed	refs: 章节号是大写罗马数字（按全书引用体例）
+115	 vocation of the body. See above, Ps, xxii. 24 (23), cxi. 5.	 vocation of the body. See above, Ps. xxii. 24 (23), cxi. 5.	refs: 书卷缩写后是逗号（按全书引用体例）
+115	other, *i. e, nothing.* Compare 2 Kings, xviii. 24, Jer. xvi. 6, R	other, *i. e, nothing.* Compare 2 Kings. xviii. 24, Jer. xvi. 6, R	refs: 书卷缩写后是逗号（按全书引用体例）
+115	ing of the verb, both here and in Gen. XXX. 24, is clear from Deut. i. 	ing of the verb, both here and in Gen. xxx. 24, is clear from Deut. i. 	refs: 章节号是大写罗马数字（按全书引用体例）
+118	 compared with that in Ps. cxv. 12,13, are corroborations of 	 compared with that in Ps. cxv. 12, 13, are corroborations of 	refs: 数字之间逗号没空格（按全书引用体例）
+119	, on Ps. li. 18 (16), and compare Ps. 1. 14. The recurrence of the p	, on Ps. li. 18 (16), and compare Ps. l. 14. The recurrence of the p	refs: 罗马 50 读成数字 1（按全书引用体例）
+119	tructions, Jer. ix. 17, xiii. 17, Lam, i. 16, iii. 48, Ezek. vii	tructions, Jer. ix. 17, xiii. 17, Lam. i. 16, iii. 48, Ezek. vii	refs: 书卷缩写后是逗号（按全书引用体例）
+119	, but (אמרה), that used-in ver. 10,41, and derived from the v	, but (אמרה), that used-in ver. 10, 41, and derived from the v	refs: 数字之间逗号没空格（按全书引用体例）
+119	ghteousness itself, as in ver. 142,144. 178. *Let thy hand he	ghteousness itself, as in ver. 142, 144. 178. *Let thy hand he	refs: 数字之间逗号没空格（按全书引用体例）
+119	, their rightful sovereign, as in Ps. XXV. 8. The first verb is the re	, their rightful sovereign, as in Ps. xxv. 8. The first verb is the re	refs: 章节号是大写罗马数字（按全书引用体例）
+119	ve, ver. 25, 65, 107, and compare Deut. XXX. 6.	ve, ver. 25, 65, 107, and compare Deut. xxx. 6.	refs: 章节号是大写罗马数字（按全书引用体例）
+12	a stone* means " divers weights." Deut. XXV. 13. By a double heart we ar	a stone* means " divers weights." Deut. xxv. 13. By a double heart we ar	refs: 章节号是大写罗马数字（按全书引用体例）
+120	ral elevation. See Exod. xxxiv. 24,1 Kings xii. 27, 28. The H	ral elevation. See Exod. xxxiv. 24, 1 Kings xii. 27, 28. The H	refs: 数字之间逗号没空格（按全书引用体例）
+126	y. See Exod. xv. 1, Deut. iv. 41, Josh. X. 12. There is no need theref	y. See Exod. xv. 1, Deut. iv. 41, Josh. x. 12. There is no need theref	refs: 章节号是大写罗马数字（按全书引用体例）
+127	ess and diligence. See Prov. vi. 9,10, xxxi. 27. Another poss	ess and diligence. See Prov. vi. 9, 10, xxxi. 27. Another poss	refs: 数字之间逗号没空格（按全书引用体例）
+127	Leah, in naming her son Issachar, Gen. XXX. 18. In the same chapter (Ge	Leah, in naming her son Issachar, Gen. xxx. 18. In the same chapter (Ge	refs: 章节号是大写罗马数字（按全书引用体例）
+128	th joy and triumph. See above, on Ps, xxii. 18 (17), xxxvii. 14	th joy and triumph. See above, on Ps. xxii. 18 (17), xxxvii. 14	refs: 书卷缩写后是逗号（按全书引用体例）
+128	 of the last clause see above, on Ps, cxxv. 5.	 of the last clause see above, on Ps. cxxv. 5.	refs: 书卷缩写后是逗号（按全书引用体例）
+130	t variation of the older passage, Ps. XXV. 22, where the sufferings al	t variation of the older passage, Ps. xxv. 22, where the sufferings al	refs: 章节号是大写罗马数字（按全书引用体例）
+132	. 11, and compare 1 Sam. ii. 1, 2 Sam, xxi. 17, Ezek. xxix. 21. 	. 11, and compare 1 Sam. ii. 1, 2 Sam. xxi. 17, Ezek. xxix. 21. 	refs: 书卷缩写后是逗号（按全书引用体例）
+132	e the *ἀμαράντινον στέφανον* of 1 Pet. V. 4. Some prefer, however, to	e the *ἀμαράντινον στέφανον* of 1 Pet. v. 4. Some prefer, however, to	refs: 章节号是大写罗马数字（按全书引用体例）
+132	h are* convertible expressions (1 Sam. Xvii. 12, Micah v. 1), make Ephra	h are* convertible expressions (1 Sam. xvii. 12, Micah v. 1), make Ephra	refs: 章节号首字母误作大写（按全书引用体例）
+137	l of his kinsman Israel. See also Jer, xlix. 7-22, Lam. iv. 21, 	l of his kinsman Israel. See also Jer. xlix. 7-22, Lam. iv. 21, 	refs: 书卷缩写后是逗号（按全书引用体例）
+137	e 2 Kings viii. 12, Hosea xiv. 1, Nah, iii. 10, Isa. xiii. 16, 1	e 2 Kings viii. 12, Hosea xiv. 1, Nah. iii. 10, Isa. xiii. 16, 1	refs: 书卷缩写后是逗号（按全书引用体例）
+137	Jer. xlix. 7-22, Lam. iv. 21, 22, Ezek. XXV. 12-14.	Jer. xlix. 7-22, Lam. iv. 21, 22, Ezek. xxv. 12-14.	refs: 章节号是大写罗马数字（按全书引用体例）
+138	* To *quicken* or *revive,* as in Ps. XXX. 4 (3), lxxi. 20. *Upon the 	* To *quicken* or *revive,* as in Ps. xxx. 4 (3), lxxi. 20. *Upon the 	refs: 章节号是大写罗马数字（按全书引用体例）
+139	gure for calamity and danger. See Isa. 1. 10, Ps. cxxxviii. 7. Accord	gure for calamity and danger. See Isa. l. 10, Ps. cxxxviii. 7. Accord	refs: 罗马 50 读成数字 1（按全书引用体例）
+14	f, if not to others, as above, in Ps, x. 11. That the error is 	f, if not to others, as above, in Ps. x. 11. That the error is 	refs: 书卷缩写后是逗号（按全书引用体例）
+140	of the verb (גור) is justified by Ps. V. 5 (4), cv. 23, cxxv. 5. But	of the verb (גור) is justified by Ps. v. 5 (4), cv. 23, cxxv. 5. But	refs: 章节号是大写罗马数字（按全书引用体例）
+140	. 1. With the last clause compare Ps. XXXV. 5, xxxvi. 13 (12), hi. 14 (	. 1. With the last clause compare Ps. xxxv. 5, xxxvi. 13 (12), hi. 14 (	refs: 章节号是大写罗马数字（按全书引用体例）
+141	ple. See above, on Ps. lxxiii. 3-7,12.	ple. See above, on Ps. lxxiii. 3-7, 12.	refs: 数字之间逗号没空格（按全书引用体例）
+141	e, or the devouring jaws of hell (Isa. V. 14), as numerous and as lit	e, or the devouring jaws of hell (Isa. v. 14), as numerous and as lit	refs: 章节号是大写罗马数字（按全书引用体例）
+148	. 34 (33), and compare Deut. x. 14,1 Kings viii. 27, 2 Cor. x	. 34 (33), and compare Deut. x. 14, 1 Kings viii. 27, 2 Cor. x	refs: 数字之间逗号没空格（按全书引用体例）
+150	. See 2 Sam. vi. 5, Ezra iii. 10, Neh, xii, 27. The effect is st	. See 2 Sam. vi. 5, Ezra iii. 10, Neh. xii, 27. The effect is st	refs: 书卷缩写后是逗号（按全书引用体例）
+16	dowing object. See Judges ix. 15, Isa. XXX. 2, Ps. lvii. 2 (1), lxi. 5 	dowing object. See Judges ix. 15, Isa. xxx. 2, Ps. lvii. 2 (1), lxi. 5 	refs: 章节号是大写罗马数字（按全书引用体例）
+18	coronation of the Jewish kings (1 Sam. X. 24, 1 Kings i. 25, 39, 2 Ki	coronation of the Jewish kings (1 Sam. x. 24, 1 Kings i. 25, 39, 2 Ki	refs: 章节号是大写罗马数字（按全书引用体例）
+19	ed in words or not. See above, on Ps, v. 2 (1). The prayer or e	ed in words or not. See above, on Ps. v. 2 (1). The prayer or e	refs: 书卷缩写后是逗号（按全书引用体例）
+21	ed from the promise to Abraham in Gen, xii. 2, an allusion which	ed from the promise to Abraham in Gen. xii. 2, an allusion which	refs: 书卷缩写后是逗号（按全书引用体例）
+22	ompare the symbolical action in 1 Sam, vii. 6. The comparison wi	ompare the symbolical action in 1 Sam. vii. 6. The comparison wi	refs: 书卷缩写后是逗号（按全书引用体例）
+23	he use of the same Hebrew verb in Exod. XV. 13, 2 Chron. xxviii. 15. Th	he use of the same Hebrew verb in Exod. xv. 13, 2 Chron. xxviii. 15. Th	refs: 章节号是大写罗马数字（按全书引用体例）
+24	rowed from the third commandment (Exod. XX. 7), where the common versio	rowed from the third commandment (Exod. xx. 7), where the common versio	refs: 章节号是大写罗马数字（按全书引用体例）
+24	 his favour, Ps. xxvii. 8, cv. 4, Hos. V. 15, 2 Sam. xxi. 1. Our lang	 his favour, Ps. xxvii. 8, cv. 4, Hos. v. 15, 2 Sam. xxi. 1. Our lang	refs: 章节号是大写罗马数字（按全书引用体例）
+25	 on Ps. vii. 5 (4), and below, on Ps. XXXV. 19, xxxviii. 20 (19), lxix.	 on Ps. vii. 5 (4), and below, on Ps. xxxv. 19, xxxviii. 20 (19), lxix.	refs: 章节号是大写罗马数字（按全书引用体例）
+26	 God will hear his prayer, ver. 11,12. There is a certain sim	 God will hear his prayer, ver. 11, 12. There is a certain sim	refs: 数字之间逗号没空格（按全书引用体例）
+26	st clause seems to be copied from Gen. XI. 5, and the symbol or emblem	st clause seems to be copied from Gen. xi. 5, and the symbol or emblem	refs: 章节号是大写罗马数字（按全书引用体例）
+27	communion with him. See above, on Ps. XV. 1, xxiii. 6.—*Beauty,* love	communion with him. See above, on Ps. xv. 1, xxiii. 6.—*Beauty,* love	refs: 章节号是大写罗马数字（按全书引用体例）
+27	x. 4, Judges xix, 15, and compare Mat. XXV. 35, 43. The case described 	x. 4, Judges xix, 15, and compare Mat. xxv. 35, 43. The case described 	refs: 章节号是大写罗马数字（按全书引用体例）
+27	es, to hope in him. See above, on Ps. XXV. 3.—The optative and causati	es, to hope in him. See above, on Ps. xxv. 3.—The optative and causati	refs: 章节号是大写罗马数字（按全书引用体例）
+28	wider sense. (Compare Isa. xiv. 15,19.) *Those going down int	wider sense. (Compare Isa. xiv. 15, 19.) *Those going down int	refs: 数字之间逗号没空格（按全书引用体例）
+28	 of prayer. Exod. ix. 29, xvii. 11,12, 1 Kings viii. 22, 54, 	 of prayer. Exod. ix. 29, xvii. 11, 12, 1 Kings viii. 22, 54, 	refs: 数字之间逗号没空格（按全书引用体例）
+29	n Ps. xviii. 12 (11), and compare Jer. X. 13.	n Ps. xviii. 12 (11), and compare Jer. x. 13.	refs: 章节号是大写罗马数字（按全书引用体例）
+29	's royal residence. See above, on Ps. V. 8 (7). Throughout this pala	's royal residence. See above, on Ps. v. 8 (7). Throughout this pala	refs: 章节号是大写罗马数字（按全书引用体例）
+3	before, *Absalom, his son* (see 2 Sam. XV. 14, 17, 30). Such a psalm m	before, *Absalom, his son* (see 2 Sam. xv. 14, 17, 30). Such a psalm m	refs: 章节号是大写罗马数字（按全书引用体例）
+30	ch was mount Zion. See 2 Sam. v. 9,12, Neh. iii. 15, Micah iv	ch was mount Zion. See 2 Sam. v. 9, 12, Neh. iii. 15, Micah iv	refs: 数字之间逗号没空格（按全书引用体例）
+30	plexed. See above, on Ps. vi. 3, 4,11 (2, 3, 10), and compare	plexed. See above, on Ps. vi. 3, 4, 11 (2, 3, 10), and compare	refs: 数字之间逗号没空格（按全书引用体例）
+31	e." With the first clause compare Ps. XXV. 15, and with the last Ps. x	e." With the first clause compare Ps. xxv. 15, and with the last Ps. x	refs: 章节号是大写罗马数字（按全书引用体例）
+32	quity,* seems to be borrowed from Exod, xxxiv. 7, where the doctr	quity,* seems to be borrowed from Exod. xxxiv. 7, where the doctr	refs: 书卷缩写后是逗号（按全书引用体例）
+33	iency of all created help, ver. 15,16, with the security of t	iency of all created help, ver. 15, 16, with the security of t	refs: 数字之间逗号没空格（按全书引用体例）
+33	of those whom he protects, ver. 17,18, and the whole conclude	of those whom he protects, ver. 17, 18, and the whole conclude	refs: 数字之间逗号没空格（按全书引用体例）
+33	ce or twice in the New Testament, Rev. V. 9, xiv. 3.—*Play well,* lit	ce or twice in the New Testament, Rev. v. 9, xiv. 3.—*Play well,* lit	refs: 章节号是大写罗马数字（按全书引用体例）
+34	e above, Ps. xxxii. 3, and below, Ps. XXXV. 10.—The literal translation	e above, Ps. xxxii. 3, and below, Ps. xxxv. 10.—The literal translation	refs: 章节号是大写罗马数字（按全书引用体例）
+35	itary sense which the word has in Deut, i. 44, Josh. viii. 14, an	itary sense which the word has in Deut. i. 44, Josh. viii. 14, an	refs: 书卷缩写后是逗号（按全书引用体例）
+35	here and in Ps. xxxviii. 18 (17), Jer. XX. 10. They assembled not to c	here and in Ps. xxxviii. 18 (17), Jer. xx. 10. They assembled not to c	refs: 章节号是大写罗马数字（按全书引用体例）
+35	gested by the context. See above, Ps. XXV. 2, and below, ver. 24, Ps. 	gested by the context. See above, Ps. xxv. 2, and below, ver. 24, Ps. 	refs: 章节号是大写罗马数字（按全书引用体例）
+35	st the opposite of peace. Compare Isa. X. 15.	st the opposite of peace. Compare Isa. x. 15.	refs: 章节号是大写罗马数字（按全书引用体例）
+35	ion of the verses is like that in Ps. X. 13, 14, and the prayer in t	ion of the verses is like that in Ps. x. 13, 14, and the prayer in t	refs: 章节号是大写罗马数字（按全书引用体例）
+36	 xxix. 18 (19), and see above, on Ps. X. 6.	 xxix. 18 (19), and see above, on Ps. x. 6.	refs: 章节号是大写罗马数字（按全书引用体例）
+37	om its etymology and its use in 1 Sam, iv. 14, xiv. 19, 1 Kings 	om its etymology and its use in 1 Sam. iv. 14, xiv. 19, 1 Kings 	refs: 书卷缩写后是逗号（按全书引用体例）
+37	i. 16, 17 (15, 16), ix. 16, 17 (15,16), and below, Ps. lvii. 	i. 16, 17 (15, 16), ix. 16, 17 (15, 16), and below, Ps. lvii. 	refs: 数字之间逗号没空格（按全书引用体例）
+37	 his covenant. See above on ver. 3,9, 11, 30. *In the excisio	 his covenant. See above on ver. 3, 9, 11, 30. *In the excisio	refs: 数字之间逗号没空格（按全书引用体例）
+37	 analogy of Ps. xxxix. 7 (6), and Prov. XV. 16.—*Of many wicked,* whose	 analogy of Ps. xxxix. 7 (6), and Prov. xv. 16.—*Of many wicked,* whose	refs: 章节号是大写罗马数字（按全书引用体例）
+37	ty, to condemn (Exod. xxii. 8, 9, Deut. XXV. 1), *in his being judged,* 	ty, to condemn (Exod. xxii. 8, 9, Deut. xxv. 1), *in his being judged,* 	refs: 章节号是大写罗马数字（按全书引用体例）
+38	nt participial form (Lev. ii. 14, Josh. V. 11). On either supposition,	nt participial form (Lev. ii. 14, Josh. v. 11). On either supposition,	refs: 章节号是大写罗马数字（按全书引用体例）
+38	strongly, *crimes.* See above, on Ps. V. 10 (9). The reference may b	strongly, *crimes.* See above, on Ps. v. 10 (9). The reference may b	refs: 章节号是大写罗马数字（按全书引用体例）
+38	ilent or expressed. See above, on Ps. V. 2 (1), and compare Ps. iii.	ilent or expressed. See above, on Ps. v. 2 (1), and compare Ps. iii.	refs: 章节号是大写罗马数字（按全书引用体例）
+39	licted person. See Isa. lxvi. 16, Ezek, xxxviii. 22. The last ver	licted person. See Isa. lxvi. 16, Ezek. xxxviii. 22. The last ver	refs: 书卷缩写后是逗号（按全书引用体例）
+39	*in my meditation.* See above, on Ps. V. 2 (1). The future verb in t	*in my meditation.* See above, on Ps. v. 2 (1). The future verb in t	refs: 章节号是大写罗马数字（按全书引用体例）
+39	(it), and no other. See above, on Ps. XXX. 7 (6), xxxiii. 9.	(it), and no other. See above, on Ps. xxx. 7 (6), xxxiii. 9.	refs: 章节号是大写罗马数字（按全书引用体例）
+39	bjects and dependents of Jehovah (Lev. XXV. 23), and by David to himsel	bjects and dependents of Jehovah (Lev. xxv. 23), and by David to himsel	refs: 章节号是大写罗马数字（按全书引用体例）
+4	any work or labour (2 Chron. ii. 1,17, xxxiv. 12), and of the	any work or labour (2 Chron. ii. 1, 17, xxxiv. 12), and of the	refs: 数字之间逗号没空格（按全书引用体例）
+4	ant for subsistence (2 Sam. xvi. 1,2).	ant for subsistence (2 Sam. xvi. 1, 2).	refs: 数字之间逗号没空格（按全书引用体例）
+4	ext to the Pentateuch, e. *g.* to Lev. XXV. 18, 19, and Deut. xxxiii. 1	ext to the Pentateuch, e. *g.* to Lev. xxv. 18, 19, and Deut. xxxiii. 1	refs: 章节号是大写罗马数字（按全书引用体例）
+40	ring, awakening, the ear, &c. See Isa. 1. 4, 5; 1 Sam. ix. 15, XX. 2,	ring, awakening, the ear, &c. See Isa. l. 4, 5; 1 Sam. ix. 15, XX. 2,	refs: 罗马 50 读成数字 1（按全书引用体例）
+40	 *My cry* for help. See above, on Ps. V. 3 (2), xviii. 7 (6), xxxix.	 *My cry* for help. See above, on Ps. v. 3 (2), xviii. 7 (6), xxxix.	refs: 章节号是大写罗马数字（按全书引用体例）
+40	s. There is obvious allusion to 1 Sam. XV. 22, not only here but in th	s. There is obvious allusion to 1 Sam. xv. 22, not only here but in th	refs: 章节号是大写罗马数字（按全书引用体例）
+40	as bestowed on others. See above, Ps. XXXV. 27, and compare xxii. 24 (2	as bestowed on others. See above, Ps. xxxv. 27, and compare xxii. 24 (2	refs: 章节号是大写罗马数字（按全书引用体例）
+41	thered from the parallel passage, Ps. XXXV. 13, 14. The principle assum	thered from the parallel passage, Ps. xxxv. 13, 14. The principle assum	refs: 章节号是大写罗马数字（按全书引用体例）
+41	 that expressed by our Saviour in Mat. V. 7. See above, on Ps. xxxvii	 that expressed by our Saviour in Mat. v. 7. See above, on Ps. xxxvii	refs: 章节号是大写罗马数字（按全书引用体例）
+41	or repeated action. See above, on Ps. X. 18. The expression becomes 	or repeated action. See above, on Ps. x. 18. The expression becomes 	refs: 章节号是大写罗马数字（按全书引用体例）
+41	ied* or made great. See above, on Ps. XXXV. 26, xxxviii. 17 (16). The a	ied* or made great. See above, on Ps. xxxv. 26, xxxviii. 17 (16). The a	refs: 章节号是大写罗马数字（按全书引用体例）
+41	so an Old Testament doctrine (see Prov. XX. 22), as David himself recog	so an Old Testament doctrine (see Prov. xx. 22), as David himself recog	refs: 章节号是大写罗马数字（按全书引用体例）
+42	the burden, or *refrain* in ver. 6,12 (5, 11). In the first, 	the burden, or *refrain* in ver. 6, 12 (5, 11). In the first, 	refs: 数字之间逗号没空格（按全书引用体例）
+42	nce of Absalom's rebellion. See 2 Sam. XV. 25. The only doubt is wheth	nce of Absalom's rebellion. See 2 Sam. xv. 25. The only doubt is wheth	refs: 章节号是大写罗马数字（按全书引用体例）
+43	orm of expression 202 *Psalm 4 3:4,5* seems to be borrowed fr	orm of expression 202 *Psalm 4 3:4, 5* seems to be borrowed fr	refs: 数字之间逗号没空格（按全书引用体例）
+43	om a man of fraud.* See above, on Ps. V. 7 (6). *And iniquity,* or m	om a man of fraud.* See above, on Ps. v. 7 (6). *And iniquity,* or m	refs: 章节号是大写罗马数字（按全书引用体例）
+44	s in Gen. iii. 23, 1 Kings ix. 7, Isa. 1. 1. But as it is also used t	s in Gen. iii. 23, 1 Kings ix. 7, Isa. l. 1. But as it is also used t	refs: 罗马 50 读成数字 1（按全书引用体例）
+44	e, on Ps. iii. 2 (1), and compare Ps, xiii. 5 (4), xxvii. 2, 12	e, on Ps. iii. 2 (1), and compare Ps. xiii. 5 (4), xxvii. 2, 12	refs: 书卷缩写后是逗号（按全书引用体例）
+44	ust and abhorrence. See above; on Ps, xliii. 2. The other verb 	ust and abhorrence. See above; on Ps. xliii. 2. The other verb 	refs: 书卷缩写后是逗号（按全书引用体例）
+44	commander, and an ally. Compare 2 Sam, v. 24.	commander, and an ally. Compare 2 Sam. v. 24.	refs: 书卷缩写后是逗号（按全书引用体例）
+44	g)*, i. e.* always. See above, on Ps. XXV. 5, xlii. 11 (10). *Acknowle	g)*, i. e.* always. See above, on Ps. xxv. 5, xlii. 11 (10). *Acknowle	refs: 章节号是大写罗马数字（按全书引用体例）
+45	n of the words and the analogy of Ps. 1. 7. *Oil of joy* (or *gladne	n of the words and the analogy of Ps. l. 7. *Oil of joy* (or *gladne	refs: 罗马 50 读成数字 1（按全书引用体例）
+45	, from them* (or *thence) Psalm 45,9,10* 213 *have they gladd	, from them* (or *thence) Psalm 45, 9,10* 213 *have they gladd	refs: 数字之间逗号没空格（按全书引用体例）
+45	rom them* (or *thence) Psalm 45, 9,10* 213 *have they gladden	rom them* (or *thence) Psalm 45, 9, 10* 213 *have they gladden	refs: 数字之间逗号没空格（按全书引用体例）
+45	 bow down or prostrate herself (1 Sam. XXV. 41, 1 Kings i. 16, 31), a g	 bow down or prostrate herself (1 Sam. xxv. 41, 1 Kings i. 16, 31), a g	refs: 章节号是大写罗马数字（按全书引用体例）
+46	i. 20, and compare Isa. xxvii. 1, Dan, vii. 2, 3. This descripti	i. 20, and compare Isa. xxvii. 1, Dan. vii. 2, 3. This descripti	refs: 书卷缩写后是逗号（按全书引用体例）
+46	cy. See below, Ps. xlviii. 2, 3 (1,2). *The holy* (place) may	cy. See below, Ps. xlviii. 2, 3 (1, 2). *The holy* (place) may	refs: 数字之间逗号没空格（按全书引用体例）
+46	ging of the earth* (see above, on Ps. XV. 4), we may understand eithe	ging of the earth* (see above, on Ps. xv. 4), we may understand eithe	refs: 章节号是大写罗马数字（按全书引用体例）
+46	transition from grief to joy. See Ps. XXX. 6 (5), xlix. 15 (14), xc. 1	transition from grief to joy. See Ps. xxx. 6 (5), xlix. 15 (14), xc. 1	refs: 章节号是大写罗马数字（按全书引用体例）
+48	more probable, as we learn from 2 Chron. XX. 19, 27, that Jehoshaphat an	more probable, as we learn from 2 Chron. xx. 19, 27, that Jehoshaphat an	refs: 章节号是大写罗马数字（按全书引用体例）
+49	one in Deut. Xxxii. 1. See below, Ps. 1. 1, and compare];compare Isa	one in Deut. Xxxii. 1. See below, Ps. l. 1, and compare];compare Isa	refs: 罗马 50 读成数字 1（按全书引用体例）
+49	See Gen vii. 1, xviii. 19, XXXV. 2, 1. 4.	See Gen vii. 1, xviii. 19, XXXV. 2, l. 4.	refs: 罗马 50 读成数字 1（按全书引用体例）
+49	ense it is supposed to be used by Joel, iv. 13 (iii. 13). If this	ense it is supposed to be used by Joel. iv. 13 (iii. 13). If this	refs: 书卷缩写后是逗号（按全书引用体例）
+49	s, from the still stronger one in Deut. Xxxii. 1. See below, Ps. l. 1, and	s, from the still stronger one in Deut. xxxii. 1. See below, Ps. l. 1, and	refs: 章节号首字母误作大写（按全书引用体例）
+50	 the Mosaic ritual. See above, on Ps. XX. 4 (8), xl. 7 (6).	 the Mosaic ritual. See above, on Ps. xx. 4 (8), xl. 7 (6).	refs: 章节号是大写罗马数字（按全书引用体例）
+51	h them (Exod. xii. 22, Num. xix. 6,18). The second future in 	h them (Exod. xii. 22, Num. xix. 6, 18). The second future in 	refs: 数字之间逗号没空格（按全书引用体例）
+51	xvi. 1, 7, 13. Compare 1 Sam. X. 6,10, Isa. xi. 2.	xvi. 1, 7, 13. Compare 1 Sam. X. 6, 10, Isa. xi. 2.	refs: 数字之间逗号没空格（按全书引用体例）
+51	ilment is recorded in Ps. xxxii. 8,9. The effect of such inst	ilment is recorded in Ps. xxxii. 8, 9. The effect of such inst	refs: 数字之间逗号没空格（按全书引用体例）
+51	n 1 Sam. xvi. 1, 7, 13. Compare 1 Sam. X. 6, 10, Isa. xi. 2.	n 1 Sam. xvi. 1, 7, 13. Compare 1 Sam. x. 6, 10, Isa. xi. 2.	refs: 章节号是大写罗马数字（按全书引用体例）
+51	eference to murder. See above, on Ps. V. 7 (6). There may be an allu	eference to murder. See above, on Ps. v. 7 (6). There may be an allu	refs: 章节号是大写罗马数字（按全书引用体例）
+52	ficant. See above, on Ps. V. 5 (4), 1. 1. As if he had said, " Mig	ficant. See above, on Ps. V. 5 (4), l. 1. As if he had said, " Mig	refs: 罗马 50 读成数字 1（按全书引用体例）
+52	mercy. See above, on Ps. iv. 4 (3), 1. 5. It is here used simply a	mercy. See above, on Ps. iv. 4 (3), l. 5. It is here used simply a	refs: 罗马 50 读成数字 1（按全书引用体例）
+52	liarly significant. See above, on Ps. V. 5 (4), l. 1. As if he had s	liarly significant. See above, on Ps. v. 5 (4), l. 1. As if he had s	refs: 章节号是大写罗马数字（按全书引用体例）
+52	undance, greatness. See above, on Ps. V. 8 (7), li. 3 (1). The word 	undance, greatness. See above, on Ps. v. 8 (7), li. 3 (1). The word 	refs: 章节号是大写罗马数字（按全书引用体例）
+52	 his own household. See above, on Ps. XV. 1, xxii. 6, xxvii. 4, 6, xx	 his own household. See above, on Ps. xv. 1, xxii. 6, xxvii. 4, 6, xx	refs: 章节号是大写罗马数字（按全书引用体例）
+53	e occurs below, in ver. 5, 6, 7 (4,5,6). The name *Jehovah* i	e occurs below, in ver. 5, 6, 7 (4, 5,6). The name *Jehovah* i	refs: 数字之间逗号没空格（按全书引用体例）
+53	ccurs below, in ver. 5, 6, 7 (4, 5,6). The name *Jehovah* is 	ccurs below, in ver. 5, 6, 7 (4, 5, 6). The name *Jehovah* is 	refs: 数字之间逗号没空格（按全书引用体例）
+53	the sense of sickness or disease (Exod. XV. 26, Prov. xviii. 14, 2 Chro	the sense of sickness or disease (Exod. xv. 26, Prov. xviii. 14, 2 Chro	refs: 章节号是大写罗马数字（按全书引用体例）
+54	 this construction. See above, on Ps. 1. 23. This kind of satisfacti	 this construction. See above, on Ps. l. 23. This kind of satisfacti	refs: 罗马 50 读成数字 1（按全书引用体例）
+55	ew verb in Gen. xlv. 11, xlvii. 12, 1. 21. The common version of t	ew verb in Gen. xlv. 11, xlvii. 12, l. 21. The common version of t	refs: 罗马 50 读成数字 1（按全书引用体例）
+55	emption or pecuniary penalty. See Lev. V. 15, 18, xxvii. 12. The whol	emption or pecuniary penalty. See Lev. v. 15, 18, xxvii. 12. The whol	refs: 章节号是大写罗马数字（按全书引用体例）
+55	ential intercourse; See above, on Ps. XXV. 14. The other clause may po	ential intercourse; See above, on Ps. xxv. 14. The other clause may po	refs: 章节号是大写罗马数字（按全书引用体例）
+55	ver. 13 (12) above. See above, on Ps. X. 10. The word translated *al	ver. 13 (12) above. See above, on Ps. x. 10. The word translated *al	refs: 章节号是大写罗马数字（按全书引用体例）
+58	hrough. See Exod. XV, 7, xix. 21, Lev, xiv. 45, Judges vi. 30, 1	hrough. See Exod. XV, 7, xix. 21, Lev. xiv. 45, Judges vi. 30, 1	refs: 书卷缩写后是逗号（按全书引用体例）
+58	 with contempt, and is so used in Ps, xv, 9; but as two of its 	 with contempt, and is so used in Ps. xv, 9; but as two of its 	refs: 书卷缩写后是逗号（按全书引用体例）
+58	f real individuals. See above, on Ps, lvii, 4, 7 (3, 6), *He* (	f real individuals. See above, on Ps. lvii, 4, 7 (3, 6), *He* (	refs: 书卷缩写后是逗号（按全书引用体例）
+59	ii. 50 (49), lvii. 6, 10, 12 (5, 9,11), and compare his langu	ii. 50 (49), lvii. 6, 10, 12 (5, 9, 11), and compare his langu	refs: 数字之间逗号没空格（按全书引用体例）
+59	n at the close are the same as in Ps. XX. 2 (1). Compare Ps. xviii. 4	n at the close are the same as in Ps. xx. 2 (1). Compare Ps. xviii. 4	refs: 章节号是大写罗马数字（按全书引用体例）
+59	red repeatedly before. See above, Ps. V. 6 (5), vi. 9 (8), xiv. 4, x	red repeatedly before. See above, Ps. v. 6 (5), vi. 9 (8), xiv. 4, x	refs: 章节号是大写罗马数字（按全书引用体例）
+60	 forth with our hosts?" Compare 2 Sam, v. 24.	 forth with our hosts?" Compare 2 Sam. v. 24.	refs: 书卷缩写后是逗号（按全书引用体例）
+60	 on Ps. cviii. 14 (13), cxviii. 15,16, and compare Ezek. xxvi	 on Ps. cviii. 14 (13), cxviii. 15, 16, and compare Ezek. xxvi	refs: 数字之间逗号没空格（按全书引用体例）
+61	tition to be heard. See above, on Ps. V. 2, 3 (1, 2), xvii. 1, lv. 2	tition to be heard. See above, on Ps. v. 2, 3 (1, 2), xvii. 1, lv. 2	refs: 章节号是大写罗马数字（按全书引用体例）
+61	s a joyful shout or thankful song—Ps. XXX. 6 (5), xlii. 5 (4), xlvii. 	s a joyful shout or thankful song—Ps. xxx. 6 (5), xlii. 5 (4), xlvii. 	refs: 章节号是大写罗马数字（按全书引用体例）
+61	communion with him. See above, on Ps. XV. 1, xxiii. 6, xxvii. 4, 5. D	communion with him. See above, on Ps. xv. 1, xxiii. 6, xxvii. 4, 5. D	refs: 章节号是大写罗马数字（按全书引用体例）
+63	n Israel (1 Sam. xvii. 55, xxv. 26,2 Sam. xi. 11). If this we	n Israel (1 Sam. xvii. 55, xxv. 26, 2 Sam. xi. 11). If this we	refs: 数字之间逗号没空格（按全书引用体例）
+64	intensive form of the one used in Ps, xxxi. 12 (11), lv. 8 (7).	intensive form of the one used in Ps. xxxi. 12 (11), lv. 8 (7).	refs: 书卷缩写后是逗号（按全书引用体例）
+64	 to us, i. e.* regard us? Compare Ps. X. 11, lix. 8 (7).	 to us, i. e.* regard us? Compare Ps. x. 11, lix. 8 (7).	refs: 章节号是大写罗马数字（按全书引用体例）
+68	r kings and armies. See above, on Ps. 1. 23, and compare Isa. xl. 3,	r kings and armies. See above, on Ps. l. 23, and compare Isa. xl. 3,	refs: 罗马 50 读成数字 1（按全书引用体例）
+68	ined to be the lion (Jer. xlix. 19,1. 44, Zech. xi. 3), the croco	ined to be the lion (Jer. xlix. 19,l. 44, Zech. xi. 3), the croco	refs: 罗马 50 读成数字 1（按全书引用体例）
+68	e of Judah, Paul was of Benjamin (Phil, iii. 5), and the remainin	e of Judah, Paul was of Benjamin (Phil. iii. 5), and the remainin	refs: 书卷缩写后是逗号（按全书引用体例）
+68	See 1 Kings viii. 27, and compare Deut. X. 14, xxxiii. 26. *Of old* do	See 1 Kings viii. 27, and compare Deut. x. 14, xxxiii. 26. *Of old* do	refs: 章节号是大写罗马数字（按全书引用体例）
+69	ified. See above, on Ps. xl. 7 (6), 1. 8, li. 18 (16). The last wo	ified. See above, on Ps. xl. 7 (6), l. 8, li. 18 (16). The last wo	refs: 罗马 50 读成数字 1（按全书引用体例）
+69	Ps. xl. 13 (12); with the second, Ps. XXXV. 9, xxxviii. 20 (19); with t	Ps. xl. 13 (12); with the second, Ps. xxxv. 9, xxxviii. 20 (19); with t	refs: 章节号是大写罗马数字（按全书引用体例）
+69	in John ii. 17, and the second in Rom. XV. 3.	in John ii. 17, and the second in Rom. xv. 3.	refs: 章节号是大写罗马数字（按全书引用体例）
+69	e, on Ps. lv. 12 (11, and compare Josh. XX. 4, Ruth iv. 1, 2, Lam. v. 1	e, on Ps. lv. 12 (11, and compare Josh. xx. 4, Ruth iv. 1, 2, Lam. v. 1	refs: 章节号是大写罗马数字（按全书引用体例）
+69	e, tranquil and secure. Compare 1 Thess. V. 3. The ancient versions giv	e, tranquil and secure. Compare 1 Thess. v. 3. The ancient versions giv	refs: 章节号是大写罗马数字（按全书引用体例）
+69	dered *slain.* See Isa. lxvi. 16, Jer. XXV. 33. The preposition before 	dered *slain.* See Isa. lxvi. 16, Jer. xxv. 33. The preposition before 	refs: 章节号是大写罗马数字（按全书引用体例）
+70	n!* The first word 306 *Psalm? 1:1,2* of Ps. xl. 14 (13), *he	n!* The first word 306 *Psalm? 1:1, 2* of Ps. xl. 14 (13), *he	refs: 数字之间逗号没空格（按全书引用体例）
+71	, xxxii. 6, xxxvi. 7 (6). Compare Isa, viii. 7, 8. The verb *ret	, xxxii. 6, xxxvi. 7 (6). Compare Isa. viii. 7, 8. The verb *ret	refs: 书卷缩写后是逗号（按全书引用体例）
+71	llipsis here may be supplied from Ps. V. 8 (7) and lxvi. 13, in both	llipsis here may be supplied from Ps. v. 8 (7) and lxvi. 13, in both	refs: 章节号是大写罗马数字（按全书引用体例）
+72	brutes (Isa. xiii. 21, xxxiv. 14, Jer. 1. 39) and men (Ps. lxxiv. 14)	brutes (Isa. xiii. 21, xxxiv. 14, Jer. l. 39) and men (Ps. lxxiv. 14)	refs: 罗马 50 读成数字 1（按全书引用体例）
+73	 verse compare Ps. xxxix. 6, 12 (5,11).	 verse compare Ps. xxxix. 6, 12 (5, 11).	refs: 数字之间逗号没空格（按全书引用体例）
+73	 in this verse as it is in ver. 16,19, if interpreted in any 	 in this verse as it is in ver. 16, 19, if interpreted in any 	refs: 数字之间逗号没空格（按全书引用体例）
+73	 above on Ps. xlv. 1, and compare Lev. XX. 6, Num. xiv. 33. In the sam	 above on Ps. xlv. 1, and compare Lev. xx. 6, Num. xiv. 33. In the sam	refs: 章节号是大写罗马数字（按全书引用体例）
+74	rs were hereditary. See above, on Ps. 1. 1, and compare 2 Chron. xxx	rs were hereditary. See above, on Ps. l. 1, and compare 2 Chron. xxx	refs: 罗马 50 读成数字 1（按全书引用体例）
+74	pare Exod. xv. 7, Deut. xxxiii. 11,2 Sam. xxii. 49. All this 	pare Exod. xv. 7, Deut. xxxiii. 11, 2 Sam. xxii. 49. All this 	refs: 数字之间逗号没空格（按全书引用体例）
+74	s hopes and wishes. See above, on Ps. XXXV. 4, xl. 15 (14), lxix. 7 (6)	s hopes and wishes. See above, on Ps. xxxv. 4, xl. 15 (14), lxix. 7 (6)	refs: 章节号是大写罗马数字（按全书引用体例）
+75	her, will be judge. See above, on Ps. 1. 6. *Equitably,* literally *	her, will be judge. See above, on Ps. l. 6. *Equitably,* literally *	refs: 罗马 50 读成数字 1（按全书引用体例）
+75	nother* in English. See above, on Ps. XX. 8 (7).	nother* in English. See above, on Ps. xx. 8 (7).	refs: 章节号是大写罗马数字（按全书引用体例）
+77	 of its progenitor. See above, on Ps. 1. 1. There are several obviou	 of its progenitor. See above, on Ps. l. 1. There are several obviou	refs: 罗马 50 读成数字 1（按全书引用体例）
+77	d to the preference on account of Exod, xv. 11, to which place th	d to the preference on account of Exod. xv. 11, to which place th	refs: 书卷缩写后是逗号（按全书引用体例）
+78	 inspired psalmist. See above, on Ps. 1. 1. In this verse he invites	 inspired psalmist. See above, on Ps. l. 1. In this verse he invites	refs: 罗马 50 读成数字 1（按全书引用体例）
+78	*from above,* *above,* but see on Ps. 1. 4. The whole verse expresse	*from above,* *above,* but see on Ps. l. 4. The whole verse expresse	refs: 罗马 50 读成数字 1（按全书引用体例）
+78	 (he night by light of fire.* See Exod, xiii. 21, 22. The origina	 (he night by light of fire.* See Exod. xiii. 21, 22. The origina	refs: 书卷缩写后是逗号（按全书引用体例）
+78	me connection in the history. See Josh, xviii. 1, and compare Deu	me connection in the history. See Josh. xviii. 1, and compare Deu	refs: 书卷缩写后是逗号（按全书引用体例）
+78	. See Josh. xviii. 1, and compare Deut, xii. 11, where the sanctu	. See Josh. xviii. 1, and compare Deut. xii. 11, where the sanctu	refs: 书卷缩写后是逗号（按全书引用体例）
+78	ed by the whole race of Israel (2 Sam. V. 5), Its design is to impres	ed by the whole race of Israel (2 Sam. v. 5), Its design is to impres	refs: 章节号是大写罗马数字（按全书引用体例）
+78	se at the passage of the Red Sea, Exod. XV. 19, to which there is clear	se at the passage of the Red Sea, Exod. xv. 19, to which there is clear	refs: 章节号是大写罗马数字（按全书引用体例）
+79	)?* With the first clause compare Ps, xiii. 2 (1), lxxiv. 1, 10	)?* With the first clause compare Ps. xiii. 2 (1), lxxiv. 1, 10	refs: 书卷缩写后是逗号（按全书引用体例）
+80	heard and answered. See above, on Ps. 1. 1, and for the meaning of t	heard and answered. See above, on Ps. l. 1, and for the meaning of t	refs: 罗马 50 读成数字 1（按全书引用体例）
+80	translated *beast,* see above, on Ps. 1. 11, the only other place wh	translated *beast,* see above, on Ps. l. 11, the only other place wh	refs: 罗马 50 读成数字 1（按全书引用体例）
+81	temporary of David. See above, on Ps. 1. 1. The psalm before us was 	temporary of David. See above, on Ps. l. 1. The psalm before us was 	refs: 罗马 50 读成数字 1（按全书引用体例）
+81	esemblance between this verse and Ps. 1. 7. The conditional particle	esemblance between this verse and Ps. l. 7. The conditional particle	refs: 罗马 50 读成数字 1（按全书引用体例）
+81	 the analogy of Deut. xxviii. 49, Jer, v. 15, Ps, cxiv. 1. Compa	 the analogy of Deut. xxviii. 49, Jer. v. 15, Ps, cxiv. 1. Compa	refs: 书卷缩写后是逗号（按全书引用体例）
+81	 of Deut. xxviii. 49, Jer. v. 15, Ps, cxiv. 1. Compare my note 	 of Deut. xxviii. 49, Jer. v. 15, Ps. cxiv. 1. Compare my note 	refs: 书卷缩写后是逗号（按全书引用体例）
+81	above, on Ps. ii. 12, and compare Ps, lxxiii. 2. *To draw back 	above, on Ps. ii. 12, and compare Ps. lxxiii. 2. *To draw back 	refs: 书卷缩写后是逗号（按全书引用体例）
+81	sover was celebrated (Exod. xii. 1,2). Here, as in the Hebrew	sover was celebrated (Exod. xii. 1, 2). Here, as in the Hebrew	refs: 数字之间逗号没空格（按全书引用体例）
+81	t Sinai at the giving of the law (Exod. XX. 18). This is here anticipat	t Sinai at the giving of the law (Exod. xx. 18). This is here anticipat	refs: 章节号是大写罗马数字（按全书引用体例）
+82	d compare 2 Sam. xv. 4, Isa. V. 23, 1. 8. The word translated *wea	d compare 2 Sam. xv. 4, Isa. V. 23, l. 8. The word translated *wea	refs: 罗马 50 读成数字 1（按全书引用体例）
+82	xxv. 1, and compare 2 Sam. xv. 4, Isa. V. 23, l. 8. The word translat	xxv. 1, and compare 2 Sam. xv. 4, Isa. v. 23, l. 8. The word translat	refs: 章节号是大写罗马数字（按全书引用体例）
+83	g of the last verb, see above, on Ps. 1. 5. The preterite and future	g of the last verb, see above, on Ps. l. 5. The preterite and future	refs: 罗马 50 读成数字 1（按全书引用体例）
+84	 to do. See above, on Ps. V. 8 (7), 1. 15, 23, lxxix. 13.	 to do. See above, on Ps. V. 8 (7), l. 15, 23, lxxix. 13.	refs: 罗马 50 读成数字 1（按全书引用体例）
+84	gure to be identical with that in Ps. I. 23, Prov. xvi. 17, Isa. xl.	gure to be identical with that in Ps. l. 23, Prov. xvi. 17, Isa. xl.	refs: 罗马 50 读成数字 1（按全书引用体例）
+84	* (2 Kings xvii. 28, Prov. V. 13, Isa, XXX. 20),[has in one othe	* (2 Kings xvii. 28, Prov. V. 13, Isa. XXX. 20),[has in one othe	refs: 书卷缩写后是逗号（按全书引用体例）
+84	2 Sam. v. 23, 24, 1 Chron. xiv. 13,14), is now very commonly 	2 Sam. v. 23, 24, 1 Chron. xiv. 13, 14), is now very commonly 	refs: 数字之间逗号没空格（按全书引用体例）
+84	 the same words literally mean in Jer. XX. 5. For the spiritual or fig	 the same words literally mean in Jer. xx. 5. For the spiritual or fig	refs: 章节号是大写罗马数字（按全书引用体例）
+84	figurative meaning, see above, on Ps. XV. 1, xxiii. 6, xxiv. 3, xxvii	figurative meaning, see above, on Ps. xv. 1, xxiii. 6, xxiv. 3, xxvii	refs: 章节号是大写罗马数字（按全书引用体例）
+84	wed cause so to do. See above, on Ps. V. 8 (7), l. 15, 23, lxxix. 13	wed cause so to do. See above, on Ps. v. 8 (7), l. 15, 23, lxxix. 13	refs: 章节号是大写罗马数字（按全书引用体例）
+84	eans *teacher* (2 Kings xvii. 28, Prov. V. 13, Isa. XXX. 20),[has in o	eans *teacher* (2 Kings xvii. 28, Prov. v. 13, Isa. XXX. 20),[has in o	refs: 章节号是大写罗马数字（按全书引用体例）
+84	* (2 Kings xvii. 28, Prov. v. 13, Isa. XXX. 20),[has in one other place	* (2 Kings xvii. 28, Prov. v. 13, Isa. xxx. 20),[has in one other place	refs: 章节号是大写罗马数字（按全书引用体例）
+84	rfectly, uprightly. See above, on Ps. XV. 2, xviii. 24 (23), and comp	rfectly, uprightly. See above, on Ps. xv. 2, xviii. 24 (23), and comp	refs: 章节号是大写罗马数字（按全书引用体例）
+86	 which, however, is borrowed from Ps. XXV. 1. Here, as there, to raise	 which, however, is borrowed from Ps. xxv. 1. Here, as there, to raise	refs: 章节号是大写罗马数字（按全书引用体例）
+86	are used in a similar connection, Ps. V. 2, 3 (1, 2). The last word 	are used in a similar connection, Ps. v. 2, 3 (1, 2). The last word 	refs: 章节号是大写罗马数字（按全书引用体例）
+86	hem and trust them. See above, on Ps. XXV. 4, 5, xxvi. 3. That he may 	hem and trust them. See above, on Ps. xxv. 4, 5, xxvi. 3. That he may 	refs: 章节号是大写罗马数字（按全书引用体例）
+87	r of Western Asia. See my note on Isa, xxxix. 1. Compare the pro	r of Western Asia. See my note on Isa. xxxix. 1. Compare the pro	refs: 书卷缩写后是逗号（按全书引用体例）
+87	 11 (10), and compare my notes on Isa. XXX. 7, li. 9. *Babylon* is name	 11 (10), and compare my notes on Isa. xxx. 7, li. 9. *Babylon* is name	refs: 章节号是大写罗马数字（按全书引用体例）
+87	 below, on Ps. cl. 4. and compare Exod. XV. 20, 2 Sam. vi. 16. The *Sel	 below, on Ps. cl. 4. and compare Exod. xv. 20, 2 Sam. vi. 16. The *Sel	refs: 章节号是大写罗马数字（按全书引用体例）
+88	ctres of the dead. See my note on Isa, xiv. 9. *Do wonders,* lit	ctres of the dead. See my note on Isa. xiv. 9. *Do wonders,* lit	refs: 书卷缩写后是逗号（按全书引用体例）
+88	r, for the sake of an allusion to Lev. XXV. 23.	r, for the sake of an allusion to Lev. xxv. 23.	refs: 章节号是大写罗马数字（按全书引用体例）
+89	tified a covenant,* see above, on Ps. 1. 5. *With my chosen,* litera	tified a covenant,* see above, on Ps. l. 5. *With my chosen,* litera	refs: 罗马 50 读成数字 1（按全书引用体例）
+89	e above on Ps. v. 4 (3), xl. 6 (5), 1. 21. The *Sons of the Mighty	e above on Ps. v. 4 (3), xl. 6 (5), l. 21. The *Sons of the Mighty	refs: 罗马 50 读成数字 1（按全书引用体例）
+89	rn be high.* See above, on ver. 17,18 (16, 17). Faithfulness 	rn be high.* See above, on ver. 17, 18 (16, 17). Faithfulness 	refs: 数字之间逗号没空格（按全书引用体例）
+9	ons, when opposed to God. Compare Ps, ii. 1. The accessory idea	ons, when opposed to God. Compare Ps. ii. 1. The accessory idea	refs: 书卷缩写后是逗号（按全书引用体例）
+9	s (Exod. xvii. 14; Num. xxiv. 20; Deut. XXV. 19), which received their l	s (Exod. xvii. 14; Num. xxiv. 20; Deut. xxv. 19), which received their l	refs: 章节号是大写罗马数字（按全书引用体例）
+90	unt of the creation. See Gen. i. 1,9. The last clause may als	unt of the creation. See Gen. i. 1, 9. The last clause may als	refs: 数字之间逗号没空格（按全书引用体例）
+91	hes. With the last clause compare Ps. 1. 23, where we have the same 	hes. With the last clause compare Ps. l. 23, where we have the same 	refs: 罗马 50 读成数字 1（按全书引用体例）
+94	 certainly is in Deut. xxxiii. 2, Ps. 1. 2, lxxx. 2 (1). The meaning	 certainly is in Deut. xxxiii. 2, Ps. l. 2, lxxx. 2 (1). The meaning	refs: 罗马 50 读成数字 1（按全书引用体例）
+94	xii. 35, xxxiii. 2. See above, on Ps. 1. 2. The plural form (revenge	xii. 35, xxxiii. 2. See above, on Ps. l. 2. The plural form (revenge	refs: 罗马 50 读成数字 1（按全书引用体例）
+94	sumption is expressed in Ps. x. 11,13, xiv. 1, lix. 8 (7). Th	sumption is expressed in Ps. x. 11, 13, xiv. 1, lix. 8 (7). Th	refs: 数字之间逗号没空格（按全书引用体例）
+94	m, of men themselves, Ps. xxxix, 6,12 (5, 11); and because th	m, of men themselves, Ps. xxxix, 6, 12 (5, 11); and because th	refs: 数字之间逗号没空格（按全书引用体例）
+94	ion. See Ex. xxii. 20-23 (21-24), Deut. X. 18.	ion. See Ex. xxii. 20-23 (21-24), Deut. x. 18.	refs: 章节号是大写罗马数字（按全书引用体例）
+96	iation of the parallel passage (1 Chron, xvi. 24) is the insertion	iation of the parallel passage (1 Chron. xvi. 24) is the insertion	refs: 书卷缩写后是逗号（按全书引用体例）
+96	vely and admirable. See above, on Ps, lxxi. 8, *His holy place,	vely and admirable. See above, on Ps. lxxi. 8, *His holy place,	refs: 书卷缩写后是逗号（按全书引用体例）
+96	 14 (13). The parallel passage (1 Chron, xvi, 29) has *before him.	 14 (13). The parallel passage (1 Chron. xvi, 29) has *before him.	refs: 书卷缩写后是逗号（按全书引用体例）
+97	s.* With the first clause compare Ps. 1. 3; with the last, Isa. xlii	s.* With the first clause compare Ps. l. 3; with the last, Isa. xlii	refs: 罗马 50 读成数字 1（按全书引用体例）
+97	y.* With the first clause compare Ps. 1. 6, and with the last Isa. x	y.* With the first clause compare Ps. l. 6, and with the last Isa. x	refs: 罗马 50 读成数字 1（按全书引用体例）
+97	 first words of the verse compare Ps. V. 12 (11). *He keeps,* or rat	 first words of the verse compare Ps. v. 12 (11). *He keeps,* or rat	refs: 章节号是大写罗马数字（按全书引用体例）
+99	lways in a bad one. See above, on Ps, ix. 12 (11), xiv. 1, lxxv	lways in a bad one. See above, on Ps. ix. 12 (11), xiv. 1, lxxv	refs: 书卷缩写后是逗号（按全书引用体例）
+99	he feared,* epithets derived from Deut. X. 17, xxviii. 58. In the last	he feared,* epithets derived from Deut. x. 17, xxviii. 58. In the last	refs: 章节号是大写罗马数字（按全书引用体例）
