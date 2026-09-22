@@ -34,7 +34,7 @@ chapter	old	new	src
 22	(D\*1S3	(כארים*כארים	crop2
 22	(J^TjSt)	(אילת)	crop2
 22	(^HIO	(כארי	crop2
-22	*(wii)*	*(אלי)*	crop2
+22	(wii)	*(אלי)*	crop2
 22	D^S),	כרים),	crop2
 22	D^lhiD),	כארים),	crop2
 22	^"IKS	^"כארי	crop2
@@ -63,12 +63,12 @@ chapter	old	new	src
 35	D!)צוֹם.—The	D!)צום.—The	hand
 35	נֵכִים	נכים	hand
 35	רַגְלַיִם	נכה	hand
-36	(")23rT	(")הגבר	crop2
+36	(")*23rT	(")הגבר	crop2
 36	(yt£>l7)	(לרשע)	crop2
 36	*(^^B))*	*(פשע))*	crop2
 36	*(דָּוִד* נְאֻם) and	*(דָּוִד* נאם) and	hand
 36	*(יְהוָֹה**	*(יהוה**	hand
-36	*Di^i),*	*נאם),*	crop2
+36	Di^i),*	*נאם),*	crop2
 36	D^?2	נאם	crop2
 36	depra\ity,	depravity,	hand
 37	*\verb	*verb	crop2
@@ -85,7 +85,7 @@ chapter	old	new	src
 45	a.wife	a wife	hand
 46	u^.*	us.*	crop2
 47	(■IIDT);	(זמרו);	crop2
-48	(mizmor)*	(mizmôr)*	crop2-dictgate-manual
+48	(mizmor)	(mizmôr)*	crop2-dictgate-manual
 49	*/or	*for	crop2
 49	*iopraise*	*to *praise**	crop2
 49	*re/rain*	*refrain*	crop2
@@ -198,7 +198,7 @@ chapter	old	new	src
 145	(צַדִּיק)	(צדיק)	hand
 145	*תְּהִלָּה)*	*תהלה)*	hand
 49	Gen. *xx\ii.* 36	Gen. xxvii. 36	hand-crop8: 裁图2026-09-16：印面为罗马体 Gen. xxvii. 36，斜体是 OCR 误加
-58	*{θυμός;i(jc„ furor),*	(θυμός, *furor*),	hand-crop8: 裁图2026-09-16：印面 (θυμός, furor)，furor 斜体
+58	*{θυμός;i*(jc„ furor),	(θυμός, *furor*),	hand-crop8: 裁图2026-09-16：印面 (θυμός, furor)，furor 斜体
 66	and high* ^;/-itw« (exaltation)	and high praise* (exaltation)	hand-crop8: 裁图2026-09-16：1864 印面作 pruise（坏字），1850 三卷本作 praise，取 praise
 69	usage of \ • V V •• • the one before us *i^yuh'^)-*	usage of the one before us (שלומים).	hand-crop8: 裁图2026-09-16：两遍只差 lamed 的 dagesh，取两遍都认的辅音式；前面那串点是上一行元音点被 OCR 切成独立行
 74	(n|^n), twite translated	(חית), twice translated	hand-crop8: 裁图2026-09-16：同上，取辅音式；同一行的 twite 印面作 twice
@@ -420,7 +420,6 @@ chapter	old	new	src
 119	that the con- conservative or	that the conservative or	hand-rescan2: image1864: 影像上这一页末是 con-，下一页首是 servative；抽取时已经拼好了 conservative，con- 是留下的半截
 139	my pains and plea- 548 *pleasures 139:14 - 16* sures;	my pains and pleasures;	hand-rescan2: image1864: 影像上这一页末是 plea-，下一页首是 sures；中间那截是页眉「548  Psalm 139:14 – 16」串进了正文（Psakn 又被判读改成了 pleasures）
 119	pan> *Thine am I*—*save me*—*-for	pan> *Thine am I*—*save me*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
-119	e and my shield (art) thou*—*-for	e and my shield (art) thou*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
 136	nks unto the Lord of lords*—*-for	nks unto the Lord of lords*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
 136	ael from the midst of them*—*-for	ael from the midst of them*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
 136	ted the Bed Sea into parts*—*-for	ted the Bed Sea into parts*—*for	image1864: 裁图两遍一致 for；破折号已经印在斜体外面，那一横是多出来的
@@ -444,12 +443,10 @@ chapter	old	new	src
 66	the Hebrew word (רוֹמָם*)) is probably	the Hebrew word (רוֹמָם) is probably	hand-italic: image1864: 影像作 the Hebrew word (רוֹמָם) is probably a noun
 75	making (הָרִים*""!)!) the plural	making (הָרִים) the plural	hand-italic: image1864: 影像作 in making (הָרִים) the plural
 36	is *(יהוה** נְאֻם) *a dictum	is (נְאֻם יהוה) *a dictum	hand-italic: image1864: 影像作 The usual combination is (נְאֻם יְהוָֹה) *a dictum of Jehovah,*；希伯来两词被切反了序
-36	1 *(דָּוִד* נאם) and *the man*	1 (נְאֻם דָּוִד) and *the man*	hand-italic: image1864: 影像作 2 Sam. xxiii. 1 (נְאֻם דָּוִד) and *the man*
-36	xxx. 1 (")הגבר *נאם),* both	xxx. 1 (נְאֻם הַגֶּבֶר), both	hand-italic: image1864: 影像作 Prov. xxx. 1 (נְאֻם הַגֶּבֶר), both which appear
+36	1 *(דָּוִד* נאם) and *the man	1 (נְאֻם דָּוִד) and *the man*	hand-italic: image1864: 影像作 2 Sam. xxiii. 1 (נְאֻם דָּוִד) and *the man*
 36	Num. xxiv, 15, The constant	Num. xxiv. 15. The constant	hand-italic: image1864: 影像作 Num. xxiv. 15.  The constant use
 36	from sin *(פשע))* which here	from sin (פֶּשַׁע), which here	hand-italic: image1864: 影像作 but from sin (פֶּשַׁע), which here supplies their place
 36	version of יהוה נאם in the English	version of נְאֻם יְהוָֹה in the English	hand-italic: image1864: 影像作 familiar version of נְאֻם יְהוָֹה in the English Bible；两词被切反了序
-36	after *יהוה 0^2,* can only	after נְאֻם יְהוָֹה, can only	hand-italic: image1864: 影像作 where the same preposition, after נְאֻם יְהוָֹה, can only indicate
 36	to make ^^^"17 denote the subject	to make לְרָשָׁע denote the subject	hand-italic: image1864: 影像作 is to make לְרָשָׁע denote the subject
 36	analogy of Ps. ex. 1, where	analogy of Ps. cx. 1, where	hand-italic: image1864: 影像作 Ps. cx. 1；ex 是 cx 被读崩
 36	not supported by Ps. ex. 1, is	not supported by Ps. cx. 1, is	hand-italic: image1864: 同上
@@ -548,11 +545,9 @@ chapter	old	new	src
 118	xlvii. 2(l),with Ps. xvii. 1	xlvii. 2 (1), with Ps. xvii. 1	image1864: 整页比对两遍一致（碎片重出／标点，上游已被改写，落在已发布正文）
 37	the wicked shall he broken	the wicked shall be broken	image1864: 整页比对两遍一致（上游已改写，落在已发布正文）
 66	thine enemies lie lie to thee..	thine enemies lie to thee.	image1864: 整页比对两遍一致（上游已改写，落在已发布正文）
-118	eternity)eternity (is) his mercy	eternity (is) his mercy	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
 45	her companions)anions, brought	her companions, brought	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
 73	*they surpass)ass the desires	*they surpass the desires	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
 96	The expression families;families	The expression families	image1864: 整页比对——碎片重出（上游改写后产生，只在已发布正文里）
-52	mighty ((man) ?)! The mercy	mighty (man)? The mercy	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
 101	A Psalm. 31 Mercy and judgment	A Psalm. Mercy and judgment	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
 66	The word fatlings is especially	The word translated fatlings is especially	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
 42	*My enemies, enemies,* oppressors	*My enemies,* oppressors	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
@@ -560,3 +555,8 @@ chapter	old	new	src
 137	at large. The last last clause	at large. The last clause	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
 39	*Look away ay from me	*Look away from me	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
 91	the A Almighty he is lodged	the Almighty he is lodged	image1864: 整页比对——碎片/整词重出、标点（上游改写后产生）
+118	unto eter)eternity* (is) *his mercy.*	unto eternity* (is) *his mercy.*	image1864: 碎片重出（斜体括号断开之后重新锚定）
+119	my shield* (art) *thou*—*-for thy word	my shield* (art) *thou*—*for thy word	image1864: 破折号已在斜体外，那一横是多出来的（斜体括号断开之后重新锚定）
+36	after* יהוה 0^2,* can only indicate	after נְאֻם יְהוָֹה, can only indicate	image1864: 影像作 after נְאֻם יְהוָֹה, can only indicate（斜体括号断开之后重新锚定）
+36	in Prov. xxx. 1* (")הגבר* *נאם),* both	in Prov. xxx. 1 (נְאֻם הַגֶּבֶר), both	image1864: 影像作 Prov. xxx. 1 (נְאֻם הַגֶּבֶר), both（斜体括号断开之后重新锚定）
+52	mighty* ((man) ?)*! The mercy	mighty (man)? The mercy	image1864: 影像作 mighty (man)? The mercy（斜体括号断开之后重新锚定）
