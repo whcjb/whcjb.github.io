@@ -1,6 +1,6 @@
 # Davenant 校勘：当前进度与恢复指引
 
-最后更新：2026-09-23（第八轮）。产物**已重建并落库**，规则与产物同步。
+最后更新：2026-09-23（第九轮）。产物**已重建并落库**，规则与产物同步。
 
 ## 一句话状态
 
@@ -58,6 +58,43 @@
    Gate W 词数 318,750 → 319,358（＝新增两页），缺/多的比例不变；
    O1/O3/O4 全绿；渲染层 0；连跑两次 publish 逐字节相同；
    Gate ⑤ 残留与改动前完全一致（84/1/1/1/3/1）。
+
+## 2026-09-23 第九轮：d1/d2 批 13 处 + 用户批准的 9 处排字错；并堵住「流水线自己改坏」
+
+### 影像判读 13 处（两卷）
+
+`miaster`→master、`eranted`→granted、`con-denned`→con-demned、`dif-fereuce`→dif-ference、
+`sufli-ciently`→suffi-ciently、`cireumci-sion`→circumci-sion、`eter-mity`→eter-nity、
+`Javour`→favour、`ser-vaut`→ser-vant、`afllic-tions`→afflic-tions、`Sollows`→follows、
+`itse’f`→itself、`Jformed.`→formed。
+斜体 `f` 被读成 `J`/`S` 是本书反复出现的一个形（`Jirst` `Jlesh` `Javour` `Jformed` `Sollows`）。
+
+### ⚠️ 流水线自己改坏一处，并为此开了「原样登记」的口子
+
+v2p78 原书是 `con-` + `clude`（**本来就对**），IA 那层在这一位读成 `elude`——一个正经
+英文词，词典判据拦不住——兜底的「第二证人」就把它改成了 `conelude`。
+而人工票**插不进去**：票值与词形相同＝无改动，循环不 break，照样落到兜底里。
+所以给 `fix_line` 开了一道口子：**人工票值与词形相同 = 原样登记，跳过后面所有规则**
+（skill §3.3「已有结论的桶不再被后续判据覆盖」）。以后凡是「原始 OCR 本来是对的、
+被某条规则改坏」的，都用这个写法钉住。
+
+### 原书排字错 9 处：**逐条批准的个案，不是政策变更**
+
+⚠️ **默认仍然「照印不改」。** 2026-09-23 用户批准了这 9 处：
+`Pellarmin`→Bellarmin（v1p101，4 倍放大只有上半个碗，是 P）、
+`nothwithstanding`→notwithstanding（v1p146）、`Eqist.`→Epist.（v2p131，是 q 不是 p）、
+`autnority,`→authority,（v2p54，没有上升部，是 n）、`thsir`→their（v2p54）、
+`righteouness,`→righteousness,（v1p565）、`Levins,`→Lerins,（v2p334/v1p489，
+**书末勘误表里就写着**「for Levins, read Lerins」）、`withcrafts`→witchcrafts（v1p434）。
+**以后再发现排字错，报给用户等批准，不得拿这几条当先例自行套用。**
+形似但性质不同、一律不碰的：本书**一贯**的拼法（索引里 `Suares` 14 次 / `Suarez` 1 次、
+`Auverne` 3 次 / `Auvergne` 1 次）、19 世纪拼法（`shews` `connexion` `amongst` `woful`）、
+`æ` `œ` 连字。判据见 `manual_votes._compositor_policy`。
+
+### 验收
+
+产物只差 22 处、逐条核过；逐词回退 0；O1/O3/O4 全绿；连跑两次 publish 逐字节相同；
+Gate N 2,905 → 2,885。中译四章重发 14 块，逐块比长度差无异常。
 
 ## 2026-09-23 第八轮：第 ③ 层继续（c1–c3 批），并修好「修对一个词就掉出斜体」
 
