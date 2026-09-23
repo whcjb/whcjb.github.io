@@ -78,6 +78,22 @@ def main():
         print(f'    [{sec}] {w} → {a} + {b}')
     bad += bool(join)
 
+    heads = []
+    # 必须有「阿拉伯数字 + 冒号」：页眉写 `Psalm 113:1-3`，正文引用写
+    # `Ps. cxiii. 1`，而 `Psalms (xcvi. 7, 8)` 这种正常行文没有冒号。
+    HEAD = re.compile(r'\*?\s*Psalms?\s*[\]\[|)(}{]?\s*\d{1,3}\s*:\s*[\d\-–,\s]{1,12}\*?')
+    for f in files:
+        t2 = TAG.sub(' ', f.read_text(encoding='utf-8'))
+        for m in HEAD.finditer(t2):
+            heads.append((f.stem, m.group(0).strip()))
+    # 页眉的排法是 `Psalm 113:1-3`，正文里的引用一律写作 `Ps. cxiii. 1`，
+    # 所以「Psalm + 阿拉伯数字 + 冒号」出现在正文里就是页眉串进来了。
+    # 判据要认得 OCR 把它读坏的样子（`*Psalm] 13:1-3*`），只认冒号那一种会漏。
+    print(f'⑤ 页眉串进正文：{len(heads)} 处')
+    for sec, s in heads:
+        print(f'    [{sec}] {s!r}')
+    bad += bool(heads)
+
     mix = []
     for f in files:
         t = f.read_text(encoding='utf-8')
