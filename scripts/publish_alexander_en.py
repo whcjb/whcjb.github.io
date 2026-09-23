@@ -29,10 +29,18 @@ ROOT = Path(__file__).resolve().parent.parent
 #   g1  主编号，可能是范围或列表：'7'  '21, 22'  '31-33'
 #   g2  括号内的英文编号（可缺）：'6'  '30—32'
 #   g3  收尾标点
+# 三处 OCR 变体要一起认，否则**整节的锚点与编号一起消失**，而页面上看不出异常
+# （靠「显示的节号必须连号」这条才查得出来，全书 4 处）：
+#   `*5* (4).`   节号自己被斜体裹住（诗 31、69）
+#   `*24:* (23).` 斜体裹住 + 收尾是冒号（诗 44）
+#   `7^(6).`     括号前多一个 OCR 噪点 `^`（诗 140）
+# `close` 记下节号后面那个收尾星号：有它就说明斜体已经闭合，
+# 不能再照 `lead` 补一个 ` *`，否则整段被拖进斜体。
 PSALMS_VERSE = re.compile(
     r'^(?P<lead>\*?)'
     r'(?P<g1>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)'
-    r'(?:\s*\(\s*(?P<g2>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)\s*\.?\s*\))?'
+    r':?(?P<close>\*?)'
+    r'(?:[\s^]*\(\s*(?P<g2>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)\s*\.?\s*\))?'
     r'(?P<g3>[.,:])?(?=\s)')
 # 以赛亚书统一是 `V. 7.`；`V. 9, 10.` 这类连节也认。
 # 边角上要放宽三处，否则整节拿不到锚点（全书 4 处）：
@@ -86,7 +94,9 @@ def render_verse(m, book_id, chapter, num):
         inner += g3
     anchor = ('' if num is None else
               f'<span class="ax-anchor" id="{book_id}-{chapter}-{num}"></span>')
-    return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if m.group('lead') else '')
+    reopen = bool(m.group('lead')) and not (
+        'close' in m.groupdict() and m.group('close'))
+    return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if reopen else '')
 
 
 # 本流水线只产 `<span …>` 与 `<!-- … -->` 两种标记，别的都不是我们写的
@@ -116,7 +126,110 @@ def escape_stray_lt(line):
             i = j + 1
 
 
+
+# 节号标题永远另起一段。抽取阶段偶尔把段落断点吞掉，标题就粘在上一段末尾，
+# `transform` 的 `^` 锚匹配不到，**整节的锚点与编号一起消失**（诗 8 的第 3 节、
+# 诗 30 的第 4 节、诗 89 的第 30 节就是这么没的），而页面上看不出任何异常。
+#
+# 判据不能只看「句末 + 数字 + 括号数字 + 斜体」——那正是经文引用的样子
+# （`See above, on Ps. vii. 7 (6). *Raise thy hand,*`），一试跑命中 300 多处。
+# 加两道闸才准：
+#   ① 编号必须**正好接上本篇的下一节**（主号 +1 且括号英文号也 +1）
+#   ② 紧挨在前的不能是罗马数字或 `ver.`/`chap.` —— 那是引用的章节号
+# 两道闸一起，全书恰好命中 3 处，逐条核过影像。
+RUNON_HEAD = re.compile(
+    r'(?P<g1>\d{1,3})'
+    r'(?:\s*\(\s*(?P<g2>\d{1,3})\s*(?P<pin>\.?)\s*\))?'
+    r'\s*(?P<p>[.,:]?)\s*(?=\*)')
+RUNON_CITE = re.compile(r'\b(?:[ivxlcdm]+|ver|vers|chap)[.,]\s*[•·.,]?\s*$')
+# 句末与节号之间可能夹一粒墨点（诗 112 的 `disposition. • 2.`）
+RUNON_END = re.compile(r'[.!?]\s*[•·‘’\'"]?\s*$')
+# 前面必须是**正文**，不能只是另一个节号：`15. 16. *Let (such) give thanks*`
+# 印面作 `15, 16.`——他把两节合在一个标题下，逗号被读成了句点，
+# 那是「标点读错」，不是「段落断点丢了」，断开只会多出一个不存在的节。
+RUNON_ONLY_NUM = re.compile(r'^[\s*]*\d{1,3}\s*[.,:]?\s*$')
+
+
+
+RAW_FIXES = ROOT / 'alexander_raw/psalms/raw_fixes.tsv'
+
+
+def raw_fixes(chapter):
+    """发布之前先打的补丁：**节号本身**被 OCR 读坏的那几处。
+
+    节号读坏了，`transform` 认不出标题，整节的锚点与编号一起消失，而页面上
+    看不出任何异常——只有「显示的节号必须连号」那条判据查得出来。
+    坏法各不相同（`G (5).` 把 6 读成字母、`o20 (19).` 多一个噪点、
+    `178.` 是 173、`2. 6.` 把 5 读成 6 又粘进上一段），没有共同的形态可写规则，
+    只能按处落表。
+
+    补丁打在 **raw 之后、transform 之前**：en_chapters 保持原样（重新 extract
+    仍可复现），而锚点编号由 transform 统一分配，不会与后面的 manual_fixes 打架。
+    每条都要命中，命中不到就报错——上游一改，这张表会静默失效。
+    """
+    if not RAW_FIXES.exists():
+        return []
+    rows = []
+    for line in RAW_FIXES.read_text(encoding='utf-8').splitlines()[1:]:
+        if not line.strip():
+            continue
+        f = line.split('\t')
+        if len(f) != 4:
+            raise SystemExit(f'✗ raw_fixes.tsv 不是 4 列：{line[:80]!r}')
+        if f[0] == chapter:
+            rows.append((f[1], f[2].replace('\\n', '\n')))
+    return rows
+
+
+def split_runon_verse(body, verse_re):
+    """把粘在上一段末尾的节号标题拆成独立一段。"""
+    out, last1, last2 = [], None, None
+    for line in body.split('\n'):
+        if not line.strip() or line.startswith('<!--'):
+            out.append(line)
+            continue
+        m = verse_re.match(line)
+        if m:
+            last1 = max(int(x) for x in FIRST_NUM.findall(m.group('g1')))
+            last2 = (max(int(x) for x in FIRST_NUM.findall(m.group('g2')))
+                     if m.group('g2') else None)
+        cut = None
+        for h in RUNON_HEAD.finditer(line):
+            if h.start() == 0 or last1 is None:
+                continue
+            if not (h.group('pin') or h.group('p')):
+                continue                      # 节号后面总得有个收尾的点或逗号
+            a, b = int(h.group('g1')), h.group('g2')
+            if a != last1 + 1:
+                continue
+            # 两套编号要么都有、要么都没有：单套编号的篇（诗 112）不会突然多出括号
+            if (b is None) != (last2 is None):
+                continue
+            if b is not None and int(b) != last2 + 1:
+                continue
+            pre = line[:h.start()]
+            if (not RUNON_END.search(pre) or RUNON_CITE.search(pre)
+                    or RUNON_ONLY_NUM.match(pre)):
+                continue
+            cut = h.start()
+            last1, last2 = a, (int(b) if b else None)
+            break
+        if cut is None:
+            out.append(line)
+        else:
+            out.append(line[:cut].rstrip())
+            out.append('')
+            out.append(line[cut:])
+    return '\n'.join(out)
+
+
 def transform(body, book_id, chapter, verse_re):
+    for old, new in raw_fixes(chapter):
+        if body.count(old) != 1:
+            raise SystemExit(f'✗ raw_fixes 第 {chapter} 章命中 '
+                             f'{body.count(old)} 次（应为 1）：{old[:60]!r}')
+        body = body.replace(old, new, 1)
+    body = split_runon_verse(body, verse_re)
     # 希伯来文的题注在希伯来编号里算第 1 节，英译不算。锚点一律取英文节号，
     # 于是题注（只有 `1.`、没有括号里的英文号）与真正的第 1 节（`2 (1).`）
     # 会拿到同一个 id，全书六十来篇如此：HTML 里出现重复 id，章顶 verse-nav

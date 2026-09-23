@@ -2064,6 +2064,15 @@ def fix_line(vol, page, text, strict=False):
         # 一样能拆，实测 287 种候选里过半是这种误判。
         _prev = toks[i - 1] if i else ''
         _nxt = toks[i + 1] if i + 1 < len(toks) else ''
+        # 人工核定表里写「这个 token 就是对的」＝**原样登记**（票值等于词形本身），
+        # 一律跳过后面所有规则。没有这道口子时，同一个 token 会被后面的
+        # 「第二证人」兜底改掉，而人工票插不进去（票值与词形相同＝无改动，
+        # 循环不 break，照样落到兜底里）——v2p78 实测：`con-` + `clude` 本来
+        # 是对的，IA 那层在这一位读成 `elude`（一个正经英文词，词典判据拦不住），
+        # 产物里就成了 `conelude`。这类「流水线自己改坏」的账见 `_pipeline_damage`。
+        _hands = manual_repair(vol, page, w, _nxt)
+        if _hands is not None and _hands == w:
+            continue
         for _why, _fix in (('人工核定', manual_repair(vol, page, w, _nxt)),
                            ('引文粘连', glue_repair(w)),
                            ('前导引号', quote_repair(w)),

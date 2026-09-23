@@ -27,6 +27,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/psalms'
 CUV = ROOT / 'scripts/zh_cuv.json'
+# 已按影像核定「印面就是这么印的」——原书自己的笔误，或两套编号传统。
+# 「已有结论的桶不再被后续判据覆盖」：不记下来，每轮都会把查过的重新算成待判。
+AS_IS = ROOT / 'alexander_raw/psalms/ref_printed_as_is.tsv'
 
 # 亚历山大的缩写 → zh_cuv 的 abbrev。带数字前缀的卷单列。
 BOOKS = {
@@ -69,7 +72,26 @@ def roman(s):
     return n
 
 
+def norm_cite(s):
+    """台账的键：空白归一、去掉尾部标点。正则的贪婪边界会把 `46, ` 的逗号
+    和空格一起吃进来，台账不该跟着这种实现细节走。"""
+    return re.sub(r'\s+', ' ', s).strip().rstrip(',;.- ')
+
+
+def load_as_is():
+    d = set()
+    if AS_IS.exists():
+        for line in AS_IS.read_text(encoding='utf-8').splitlines():
+            if line.startswith('#') or not line.strip():
+                continue
+            f = line.split('\t')
+            if len(f) >= 2:
+                d.add((f[0], norm_cite(f[1])))
+    return d
+
+
 def main():
+    as_is = load_as_is()
     books = {b['abbrev']: b['chapters'] for b in
              json.loads(CUV.read_text(encoding='utf-8-sig'))}
     stat = Counter()
@@ -94,6 +116,10 @@ def main():
             chs = books[key]
             stat['查过的引用'] += 1
             slack_c = 1 if key in LOOSE_CHAP else 0
+            cite = norm_cite(m.group(0))
+            if (p.stem, cite) in as_is:
+                stat['已核定「印面如此」'] += 1
+                continue
             if ch < 1 or ch > len(chs) + slack_c:
                 stat['章号越界'] += 1
                 bad.append((p.stem, '章号越界', f'{key} 共 {len(chs)} 章，这里是 {ch}',
