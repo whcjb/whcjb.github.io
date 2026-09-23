@@ -24,6 +24,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import davenant_witness as W          # noqa: E402  人工核定表（倾角流要过同一张表）
+
 ROOT = Path(__file__).resolve().parent.parent
 RAW = ROOT / 'davenant_raw' / 'colossians'
 # 英文放主目录、中译日后进 zh/ 子路径 —— 与贺智/欧文/曼顿一致
@@ -284,6 +287,15 @@ def mark_italics(txt, pages):
     stream = [w for pg in pages for w in slant_words(*pg)]
     if not stream:
         return txt
+    # ⚠️ 倾角流与正文要**过同一张人工核定表**再对齐。校勘把
+    # `uuderstanding` 改成 `understanding` 之后，它与倾角流里的原串对不上，
+    # 整句被判成 replace，而 replace 的另一侧一直延伸到页尾，
+    # `all(seg)` 永远是 False —— **修对一个词的代价是它掉出斜体**
+    # （v1p200 的 lemma 实测：`…and spiritual</em> understanding`，
+    # 而原书这一整句都是斜体）。
+    # 只改流里的**词形**，倾角原样带着走。
+    stream = [(W.manual_repair(pages[0][0], pages[0][1], w) or w, s)
+              for w, s in stream] if len(pages) == 1 else stream
     mine = txt.split()
     sm = difflib.SequenceMatcher(None, [_nrm(t) for t in mine],
                                  [_nrm(w[0]) for w in stream], autojunk=False)

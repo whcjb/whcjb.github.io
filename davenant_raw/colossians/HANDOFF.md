@@ -1,6 +1,6 @@
 # Davenant 校勘：当前进度与恢复指引
 
-最后更新：2026-09-22（第七轮）。产物**已重建并落库**，规则与产物同步。
+最后更新：2026-09-23（第八轮）。产物**已重建并落库**，规则与产物同步。
 
 ## 一句话状态
 
@@ -58,6 +58,53 @@
    Gate W 词数 318,750 → 319,358（＝新增两页），缺/多的比例不变；
    O1/O3/O4 全绿；渲染层 0；连跑两次 publish 逐字节相同；
    Gate ⑤ 残留与改动前完全一致（84/1/1/1/3/1）。
+
+## 2026-09-23 第八轮：第 ③ 层继续（c1–c3 批），并修好「修对一个词就掉出斜体」
+
+### 判出来的 18 处（两卷都有）
+
+卷一：`chureh,`→church,（第二处）、`Jlesh`→flesh（斜体 f 读成 J）、`effeet.`→effect.、
+`sufli-cient`→suffi-cient（ffi 连字读成 fli）、`uuderstanding.]`→understanding.]、
+`viriues,`→virtues,、`preescript.`→præscript.、`heret.`→hæret.
+卷二：`Chiist.`→Christ.（斜体 r 读成 i）、`fuithful`→faithful（斜体 a 读成 u）、
+`Avain,`→Again,、`AMercy`→Mercy（多粘一个 A）、`const-dered`→consi-dered、
+`atque;impios,`→`atque impios,`、`squitatem,`→æquitatem,、`Sententie`→Sententiæ、
+`predestinatione,`→prædestinatione,、`tiá`→tiâ、`Daniclem`→Danielem
+
+后面这一串是**拉丁引文里的 `æ`，但 IA 那层也没读出 `se` 形**，`ae_repair` 够不着，
+只能逐处人工票。
+
+### ⚠️ 新发现：**非词不等于 OCR 错——这本书自己会捡错铅字**
+
+v2p54 `themselves under autnority` / `of thsir modern writers`，3.2 倍放大看：
+`autnority` 的第三个字母确实没有上升部（是 `n`），`thsir` 的第三个字母确实是 `s`。
+**原书排错，不是 OCR。** 与 `righteouness`（v1p565 少一个 s）、勘误表里记着的
+`Levins` 同类，按站内既有政策**照印不改**。
+影像核过判定不改的还有：`respon.`（in respon. ad 9mo.）、`Concil`（Tom. i. Concil. p.）、
+`seest`（赛 58:3）、`honore`（勘误表「for honore, read ponere」）、`Thoms.`、`Vevey`、
+`Pearson`、`Christianos`、`Senec.`、`Biscop`（Benedict Biscop）、`Petri`。
+
+### ⚠️ 修对一个词，它会**掉出斜体**
+
+`uuderstanding`→`understanding` 之后，v1p200 的 lemma 变成
+`…and spiritual</em> understanding.]`——原书这一整句都是斜体。根子在
+`mark_italics`：倾角流里还是旧串 `uuderstanding.]`，与正文对不上，整句被判成
+replace，而 replace 的另一侧一直延伸到页尾，`all(seg)` 永远是 False。
+
+**试过一版按位携带 flag，翻车**：全书 184 处斜体边界跟着动，其中一处把
+`<span class="dv-enum">1.</span>` 整个吃成了 `<em>1.</em>`。已撤。
+
+改成**让倾角流过同一张人工核定表**再对齐（只改流里的词形，倾角原样带着走）。
+改完全书只差 19 处：18 处是本轮的词，第 19 处是 `heu,`→`<em>heu,</em>`——
+那是早先人工票改过的词，现在对上了流，原书印的就是斜体。
+
+**教训**：产物侧做了词形校勘，**所有按词对齐的旁路数据（倾角/希腊文/词级）
+都要过同一张表**，否则「修对」会在别处变成「弄坏」。
+
+### 验收
+
+逐词回退 0；产物只差 19 处且逐条核过；O1/O3/O4 全绿；连跑两次 publish 逐字节
+相同；Gate N 2,915 → 2,905。中译四章重发 9 块，逐块比长度差无异常。
 
 ## 2026-09-22 第七轮：进第 ③ 层（页面影像），并清掉 `æ` 连字这一整类
 
