@@ -961,3 +961,37 @@ chapter	old	new	src
 89	<span class="ax-vnum">81-33 	<span class="ax-vnum">31-33 	image1864: 节号本身被读错——印面是 3，读成了 8（显示的节号夹在 2 与 4 之间，不单调）；这里是 31-33 被读成 81-33
 107	<span class="ax-vnum">15.</span> 16. *Let*	<span class="ax-vnum">15, 16.</span> *Let*	image1864: 印面作 `15, 16.`／`31, 32.`——他把两节合在一个标题下，逗号被读成了句点，于是第二个节号掉出标题、那一节没有锚点
 107	<span class="ax-vnum">31.</span> 32. *Let*	<span class="ax-vnum">31, 32.</span> *Let*	image1864: 印面作 `15, 16.`／`31, 32.`——他把两节合在一个标题下，逗号被读成了句点，于是第二个节号掉出标题、那一节没有锚点
+22	*I tell all my hones*	*I tell all my bones*	image1864: 印面作 I tell all my bones（h/b 互串，判词典与第二证人都拦不住这种真词错）
+22	stare upon. me.*	stare upon me.*	image1864: upon me 中间多一个句点
+40	*The volume of the hook,*	*The volume of the book,*	image1864: 印面作 in the volume of the book
+69	*hook of life*	*book of life*	image1864: 印面作 the phrase book of life
+48	literally *(hy palace,*	literally *thy palace,*	image1864: 印面作 literally thy palace
+87	*To* (or *hy) the Sons	*To* (or *by*) the Sons	image1864: 印面作 To (or by) the Sons of Korah
+14	*in the Lords returning, &c,*	*in the Lord's returning,* &c.,	image1864: 印面作 in the Lord’s returning, &c.,
+35	(or *ones self),*	(or *one's self*),	image1864: 印面作 (or one’s self)
+58	is it possible'? are you	is it possible? are you	image1864: 多一个撇号
+72	all kings how* (or ])*rostrate themselves), all nations shall serve him.*	all kings bow* (or *prostrate themselves*), *all nations shall serve him.*	image1864: 印面作 And to him shall all kings bow (or prostrate themselves), all nations shall serve him
+10	('?^^)	(אֵל)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+102	(^3)	(כִּי)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+103	(^33)	(נֶפֶשׁ)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+104	(7^)	(עַל)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+113	(7^)	(עַל)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+116	(\1^7-')תַּגְמוּלוֹהִי)	(תַּגְמוּלוֹהִי)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文；重扫时前缀残渣没清掉
+118	(1^)	(עַד)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+119	(3\*110)	(טוֹב)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文；同句后面那个是 (טוּב)，印面用元音点区分 good / goodness
+119	particle (^) *as*	particle (כ) *as*	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+119	(\*^)	(לִי)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+119	preposition (]D) *from	preposition (מן) *from	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+119	noun (]n) *favour	noun (חֵן) *favour	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+119	*(\*)DV}) to observe*	(שָׁמַר) *to observe*	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+144	(7^23,) *to build,* is here still T T mor	(בָּנָה) *to build,* is here still mor	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文；顺带清掉溢出的元音点 T T
+25	(^1)	(רַב)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+37	preposition (^), often	preposition (ב), often	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+41	(>^)	(לִי)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+44	(C]M)	(אַף)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+49	of the. particle (^3)	of the particle (כִּי)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文；顺带清掉 the 后面多出的句点
+78	(]D) *manna*	(מָן) *manna*	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+84	(C]D)	(סַף)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+89	(71^)	(אֵל)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+94	(70^)	(עָמָל)	image1864: 逐张裁图读印面上的希伯来词（原生 600 dpi），拉丁残渣换成原文
+45	See above, ^^.. *y ^^ 0-^)' ix.* ^ (^)- The same perpetuity	See above, on Ps. v. 12 (11), ix. 6 (5). The same perpetuity	image1864: 整串引用读崩，印面作 See above, on Ps. v. 12 (11), ix. 6 (5).
