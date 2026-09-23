@@ -177,7 +177,9 @@ def raw_fixes(chapter):
         if len(f) != 4:
             raise SystemExit(f'✗ raw_fixes.tsv 不是 4 列：{line[:80]!r}')
         if f[0] == chapter:
-            rows.append((f[1], f[2].replace('\\n', '\n')))
+            # 两列都要解码：有的补丁是**把被残渣劈开的段落接回去**，
+            # 被匹配的原串里就带换行（诗 119 的 `as in Ps.\\n\\n■»■ t • lxxxi.`）
+            rows.append((f[1].replace('\\n', '\n'), f[2].replace('\\n', '\n')))
     return rows
 
 

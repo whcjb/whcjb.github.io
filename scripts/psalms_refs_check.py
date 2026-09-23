@@ -58,6 +58,17 @@ RULES = [
     ('数字之间逗号没空格',
      re.compile(r'(?<=[0-9])(,)(?=[0-9])'),
      lambda m: ', '),
+    # 逗号后面永远要有空格——英文行文里没有例外，所以这条不必设闸
+    # （`See above,on Ps. lxxviii. 61`、`cvii. 20,Jer. xiv. 19`）
+    # 逗号前不能是**单字母词**：`because m,y enemy` 的真身是 `my`，
+    # 照「补一个空格」改会写出 `m, y enemy`——静默改坏，比原样还糟。
+    ('逗号后缺空格',
+     re.compile(r'(?<=[a-z0-9)])(?<![\s(][a-z]),(?=[A-Za-z])'),
+     lambda m: ', '),
+    # `xlii. 5(4)` —— 节号与括号里的英文节号之间也要有空格
+    ('节号与括号之间缺空格',
+     re.compile(r'(?<=[0-9])(\()(?=\d{1,3}\))'),
+     lambda m: ' ('),
     ('章节号是大写罗马数字',
      re.compile(rf'\b({BOOK}\.\s+)([IVXLC]{{1,7}})(\.\s+\d)'),
      lambda m: m.group(1) + m.group(2).lower() + m.group(3)),
