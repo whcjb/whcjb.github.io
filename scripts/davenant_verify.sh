@@ -34,6 +34,12 @@ echo
 echo "══════ (4c) 缩进块 ══════"
 python3 scripts/qa_davenant_outline.py
 echo
+echo "══════ (4d) 中译长度比（找译到一半就断掉的块）══════"
+python3 scripts/qa_davenant_zh_ratio.py | tail -3
+echo
+echo "══════ (4e) 非词普查（不依赖已知类型，看趋势）══════"
+python3 scripts/qa_davenant_nonword.py | head -2
+echo
 echo "══════ ⑤ 已识别错误类的残留普查 ══════"
 python3 - <<'PY'
 import re, pathlib
