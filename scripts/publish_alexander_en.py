@@ -223,7 +223,15 @@ def split_runon_verse(body, verse_re):
     return '\n'.join(out)
 
 
+# `i. e.` / `e. g.` 中间**有一个空格**是这本书的体例：全书 736 处带空格、
+# 165 处不带。少数形态是 OCR 把细空格吞了，影像上一律带空格（诗 11 的
+# `(i. e. bend)`、诗 76 的 `i. e.` 逐页对读时都核过）。
+# 纯排版归一，不涉及字形判读，所以直接在发布时统一，不占规则表。
+IE_SPACE = re.compile(r'\b([ie])\.([eg])\.')
+
+
 def transform(body, book_id, chapter, verse_re):
+    body = IE_SPACE.sub(lambda m: f'{m.group(1)}. {m.group(2)}.', body)
     for old, new in raw_fixes(chapter):
         if body.count(old) != 1:
             raise SystemExit(f'✗ raw_fixes 第 {chapter} 章命中 '
