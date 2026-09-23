@@ -30,6 +30,7 @@ SRC = ROOT / 'alexander/psalms'
 OUT = ROOT / 'logs/alexander_psalms_pagebreak.tsv'
 PAGE = re.compile(r'<!-- PAGE (\d+) -->')
 WORD = re.compile(r"[A-Za-zæœÆŒ][A-Za-zæœÆŒ'-]*")
+HEB = re.compile(r'[֐-׿Ͱ-Ͽἀ-῿]')
 SPAN = 6            # 边界两侧各取几个词
 ANCHOR = 3          # 几个词做锚
 MAX_HITS = 6        # 锚命中超过这么多次就太泛
@@ -56,6 +57,12 @@ def main():
         raw = p.read_text(encoding='utf-8')
         plain = re.sub(r'<(?!!--)[^<>]*>', ' ', raw)
         for m in PAGE.finditer(plain):
+            tail = plain[max(0, m.start() - 40):m.start()]
+            if HEB.search(tail):
+                # 我们这边页末是希伯来词，证人那边是它自己读崩的拉丁串
+                # （`(לְתוֹדָה)` ↔ `rninb`），差出来的不是我们丢的字
+                stat['页末是希伯来词'] += 1
+                continue
             before = WORD.findall(plain[max(0, m.start() - 260):m.start()])[-SPAN:]
             after = WORD.findall(plain[m.end():m.end() + 260])[:SPAN]
             if len(before) < SPAN or len(after) < SPAN:
