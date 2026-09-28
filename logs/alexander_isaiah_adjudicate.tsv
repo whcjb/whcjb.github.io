@@ -1248,14 +1248,15 @@ chapter	ours	witness	votes	polled	verdict
 18	Aurivillius	Aurivillius	4	4	confirm
 18	anno	anno	4	4	confirm
 18	absumi	absumi	4	4	confirm
+18	donec	donee	4	4	fix
 18	extendat	extendat	3	4	confirm
 18	wings	icings	3	4	realword?
 18	bs	vulgate	3	4	reject
 18	terrae	terrae	4	4	confirm
 18	Huet	Huet	4	4	confirm
-18	Kahne	Kahne	2	4	confirm
+18	Kähne	kahne	2	4	reject
 18	Wahl	Wahl	3	4	confirm
-18	Chiisistan	chu	4	4	reject
+18	Chusistan	chu	4	4	reject
 18	Turan	Turan	3	4	confirm
 18	Astaboras	Astaboras	4	4	confirm
 18	Astapus	Astapus	3	4	confirm
@@ -3166,6 +3167,7 @@ chapter	ours	witness	votes	polled	verdict
 37	amnes	amnes	3	4	confirm
 37	epotaque	epota	4	4	reject
 37	flumina	que	4	4	reject
+37	Medo	jlumina	2	4	reject
 37	pimsb	of	2	4	reject
 37	shall	shalt	3	3	realword?
 37	shouldt'st	should	2	4	reject
@@ -3894,7 +3896,6 @@ chapter	ours	witness	votes	polled	verdict
 46	downfal	downfal	5	5	confirm
 46	jn	jn	3	5	confirm
 46	Florus	Florus	5	5	confirm
-46	reddened	reddened'	5	5	realword?
 46	confundamini	confundamini	5	5	confirm
 46	fiiia	t'	2	5	reject
 46	avdoi	urd	2	5	reject
@@ -4086,7 +4087,7 @@ chapter	ours	witness	votes	polled	verdict
 49	bbo	ch	2	5	reject
 49	Philadelphia	Philadelphia	5	5	confirm
 49	facie	facie	5	5	confirm
-49	aifeHibjection	previous	5	5	reject
+49	east	cast	3	5	realword?
 49	France	France	5	5	confirm
 49	France	France	5	5	confirm
 49	r	n	2	2	realword?
@@ -4385,7 +4386,6 @@ chapter	ours	witness	votes	polled	verdict
 51	inx	ins	3	5	reject
 51	Michlal	Michlal	4	5	confirm
 51	Jophi	Jophi	5	5	confirm
-51	shall	shalt	2	3	realword?
 51	I'B	ia	2	5	reject
 51	Lactantius	Lactantius	5	5	confirm
 51	Sesostris	Sesostris	5	5	confirm
@@ -5363,7 +5363,6 @@ chapter	ours	witness	votes	polled	verdict
 63	Rosenmüller	rosenmiiller	5	5	realword?
 63	Rosenmüller	rosenmiiller	5	5	realword?
 63	pre	pre	4	5	confirm
-63	Hitzio	ilitzig	2	4	reject
 63	pre	pre	4	4	confirm
 63	Rosenmüller	rosenmiiller	3	4	realword?
 63	Deut	dent	2	3	realword?
@@ -5758,6 +5757,7 @@ chapter	ours	witness	votes	polled	verdict
 7	iim	are	4	4	reject
 7	nrs	and	3	4	reject
 7	novacula	novacula	4	4	confirm
+7	conductionis	conductionis	4	4	confirm
 7	MS	MS	4	4	confirm
 7	tEJ	understanding	3	4	reject
 7	Syrus	Syrus	4	4	confirm

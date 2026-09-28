@@ -11,6 +11,7 @@ chapter	token	witness	verdict	bucket
 17	Evaioi		无证据	待判·无证据
 17	itisa		无证据	待判·无证据
 17	nnfea	among	reject	待判·证人对不上
+18	donec	donee	fix	待判·证人还有话说
 21	nsiba		无证据	待判·无证据
 22	isirt		无证据	待判·无证据
 22	counsellor	and	reject	待判·证人对不上
@@ -27,7 +28,6 @@ chapter	token	witness	verdict	bucket
 3	refisal	words	reject	待判·证人还有话说
 30	afiiua		无证据	待判·无证据
 33	abana		无证据	待判·无证据
-33	rdictum		无证据	待判·无证据
 33	doctus		无证据	待判·无证据
 34	gramen		无证据	待判·无证据
 34	fovei	fovet	reject	待判·证人还有话说
