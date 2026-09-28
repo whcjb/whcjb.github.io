@@ -35,6 +35,9 @@ SRC = ROOT / 'alexander/isaiah'
 LOGS = [ROOT / 'logs/alexander_isaiah_page_round1.tsv',
         ROOT / 'logs/alexander_isaiah_page_oldprompt.tsv']
 FIXES = ROOT / 'alexander_raw/isaiah/manual_fixes.tsv'
+# 查过并否掉的线索。没有这张表，同一条线索每轮都会重新算进「待判」，
+# 「查过」就永远变不成「查完了」。
+REJECT = ROOT / 'alexander_raw/isaiah/page_rejected.tsv'
 WIT = {1: sorted(glob.glob(str(ROOT / 'alexander_raw/isaiah/src/earlier*.txt'))),
        2: sorted(glob.glob(str(ROOT / 'alexander_raw/isaiah/src/later*.txt')))}
 
@@ -264,6 +267,7 @@ def apply_edits(orig, ed):
         cur = cur.replace(a, b, 1)
     if cur == orig:
         return None
+    cur = re.sub(r'  +', ' ', cur)            # 删掉噪点字符后留下的双空格
     if DOUBLE_PUNCT.search(cur) and not DOUBLE_PUNCT.search(orig):
         return None                          # 改出了 `..` `,,`，一律不落
     if len(STAR.findall(cur)) != len(STAR.findall(orig)):
@@ -332,10 +336,17 @@ def undoes_earlier(orig, cur):
 
 
 def existing_fixes():
-    if not FIXES.exists():
-        return set()
-    return {l.split('\t')[0] for l in FIXES.read_text(encoding='utf-8').splitlines()
-            if l.strip() and not l.startswith('#')}
+    out = set()
+    for f in (FIXES, REJECT):
+        if f.exists():
+            out |= {l.split('\t')[0] for l in f.read_text(encoding='utf-8').splitlines()
+                    if l.strip() and not l.startswith('#')}
+    return out
+
+
+# 这些理由是**有证据的否决**，不是「还没看」：记进 page_rejected.tsv 收摊。
+CLOSABLE = ('支持**我们**的写法', '方括号占位', '以连字收尾',
+            '带 (i. e. …) 括注', '会把前面那条')
 
 
 def judge(vol, ours, img, pub, only_ch=None):
@@ -349,6 +360,22 @@ def judge(vol, ours, img, pub, only_ch=None):
     new = apply_edits(orig, edits(ours, img))
     if new is None:
         return 'anchor', '逐词改动落不回正文那一段（引得太松／纯插入／会改掉斜体标记）', None, None
+
+    # **不许把真词整个删掉。** 模型引的时候常常把开头几个词漏掉
+    # （`speech, to take it m pieces` 只引了 `to take it in pieces`），
+    # 照着落盘就把 `speech,` 从正文里抹了。判词典认得的词（三个字母以上）
+    # 只要在旧串里有、新串里没有，就退回人看。
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from alexander_lexicon import build, is_word
+    lex0 = _lex(build)
+    # 比的是**只留字母**之后的串：`writers`→`writer's` 这种只动标点的
+    # 不算丢词（字母序列还在），`speech,` 整个不见了才算。
+    flat_new = re.sub(r'[^A-Za-z]', '', new).lower()
+    lost = [w for w in WORD.findall(orig)
+            if len(w) >= 3 and is_word(w, lex0)
+            and re.sub(r'[^A-Za-z]', '', w).lower() not in flat_new]
+    if lost:
+        return 'review', f'会把真词 {lost[:3]} 从正文里删掉', orig, new
 
     back = undoes_earlier(orig, new)
     if back:
@@ -496,6 +523,18 @@ def main():
     if a.review:
         for vol, pg, ch, ours, img, why in buckets['review']:
             print(f'  v{vol} p{pg} ch{ch}  {ours!r}\n      → {img!r}\n      {why}')
+    if a.write:
+        closed = [r for r in buckets['review'] if any(c in r[5] for c in CLOSABLE)]
+        if closed:
+            new_file = not REJECT.exists()
+            with REJECT.open('a', encoding='utf-8') as fh:
+                if new_file:
+                    fh.write('# 整页比对报过、但已有证据否掉的线索。留着是为了不让它们\n'
+                             '# 每轮都重新算进「待判」——「查过」得变成「查完了」。\n'
+                             '# 线索原串\t模型的读数\t否掉的理由\n')
+                for vol, pg, ch, old, new, why in closed:
+                    fh.write(f'{old}\t{new}\t{why}\n')
+            print(f'已收摊 {len(closed)} 条 → {REJECT}')
     if a.write and buckets['accept']:
         with FIXES.open('a', encoding='utf-8') as fh:
             fh.write('\n# 整页比对自动定案（isaiah_page_adjudicate.py，三道闸见脚本注释）\n')
