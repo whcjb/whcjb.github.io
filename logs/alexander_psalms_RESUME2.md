@@ -71,21 +71,28 @@ bash scripts/chain_alexander_psalms.sh
    | 轮 | 覆盖 | 产物 |
    |---|---|---|
    | round 1 | **书页 14–572 全书 558 页** | `logs/alexander_psalms_page_round1.tsv` |
-   | round 2 | 475 页 | `logs/alexander_psalms_page_round2.tsv` |
+   | round 2 | 476 页 = round 1 报过差异的**全部** 475 页 + 书页 17 | `logs/alexander_psalms_page_round2.tsv` |
    | 两遍交集 → 单点候选 | 涉及 247 页、381 条 | `logs/alexander_psalms_page_candidates.tsv` |
    | 两遍交集 → 须人工的 | 涉及 173 页、232 条 | `logs/alexander_psalms_page_manual.tsv` |
 
-   **这一层的两个缺口**：
-   · **83 页只跑了 round 1**（17, 20, 28, 32, 36–38, 40, 43, 47, 48, 63, 69, 71, 77,
-     79, 80, 82, 93, 97, 110, 119, 121, 123, 152, 155, 162, 163, 165, 173, 179,
-     182, 183, 187, 189, 190, 193, 194, 209, 211, 224, 229, 231, 255, 276, 285,
-     293, 297, 305, 348, 349, 357, 367, 369, 371, 383, 384, 397, 404, 422 …
-     完整名单按 round1 减 round2 现算）。按「只取两遍都报的」这条规矩，
-     这 83 页等于**只有一遍证据，没有任何结论落盘**。补跑：
-     `python3 scripts/psalms_page_proofread.py --round 2 --from N --to N`
-   · **书页 24 两遍都没跑过** —— 它当时 `<!-- PAGE 24 -->` 标记整个丢了
-     （见 `13f5d1c87`，已补进 `raw_fixes.tsv`），抽页时按标记取页就取不到它。
-     标记补好了，**这一页至今没过任何影像比对**。
+   **两遍是这么分工的（2026-09-28 核实，改正前一版的误判）**：
+   round 2 是带 `--only-hits` 跑的——**只重跑 round 1 报过差异的那 475 页**。
+   round 1 报 NONE 的 83 页不跑 round 2，因为这一层只取两遍都报的，
+   交集必为空，跑了也出不来东西。核对过：round1 报过差异的 475 页
+   **一页不缺**都有 round 2。所以**这里没有覆盖缺口**。
+
+   真正的缺口只有一个，已补：
+   · **书页 24** —— 当时 `<!-- PAGE 24 -->` 标记整个丢了（见 `13f5d1c87`），
+     抽页按标记取页就取不到它，两轮都没跑过。标记补好后 2026-09-28 补跑两轮，
+     **捞到 1 处真错**：诗 2「第一节 (ver. 1-8)」印面是 `(ver. 1-3)`——
+     同一句里第二节写 4-6、第三节写 7-9，文内自证，属已知的「3 被读成 8」那一类
+     （`psalms_ref_range.py` 查不到它：诗 2 有 12 节，1-8 不越界）。
+     另 1 处 `Rom ix. 4.)` 印面无句点，按全书缩写句点的归一取舍留作现状。
+
+   **这一层剩下的软肋不是覆盖，是「NONE 不可信」**（见 memory
+   `feedback_model_none_unreliable`）：83 页靠 round 1 一家之言判定干净，
+   而诗 10 引号那次两遍都报 NONE、影像上印得清清楚楚。要加固就重跑这 83 页的
+   round 2（实测 $0.07/页、12 秒/页 → 约 $6、17 分钟），把它们也变成两证人。
 
    *（b）人眼逐字实读* —— 影像比对只报「对不上」，它读不出的类型（斜体丢失、
    缺空格、孤立字母）只能靠眼睛：
@@ -108,6 +115,26 @@ bash scripts/chain_alexander_psalms.sh
    `*Psalm N:M*` 与 `*Psalm] N:M*` 两种形态）。
 
 3. **中译 11–150**（140 篇）。`translate_alexander_psalms.py` → `publish_alexander_psalms_zh.py`。
+
+## 判读一次要花多少（2026-09-28 实测）
+
+`psalms_page_proofread.py` 的每次调用（300 dpi 整页图 + 该页正文 ~4.2k 字符）：
+
+| 项 | 量 |
+|---|---|
+| 输入 | 5,261 token（其中 **图约 3,130**、正文约 1,000、system prompt 约 450、CLI 前缀 265） |
+| 输出 | 1,038 token（**1,033 是 thinking**，正文答案就 "NONE" 5 个 token） |
+| 费用 | **$0.07 / 页**，12 秒 / 页 |
+
+**CLI 上下文已经砍干净**：四开关齐全（`--safe-mode --strict-mcp-config
+--disallowedTools '*' --system-prompt`），裸 prefix 实测 **265 token**，
+MCP 一个不加载、工具全禁。不砍的话是 2.9 万 token/次（见 memory
+`feedback_trim_claude_cli_for_translation`）。
+
+**还能省但不建议动的**：图按 300 dpi 渲染，服务端没有替我们缩小，
+按像素计费——降到 200 dpi 省约 1,100 token/页（成本降三成），
+但判读靠的就是字形细节，为省几块钱换判读质量不划算
+（见 memory `feedback_native_resolution_first`）。
 
 ## 一次性扫法（不在链条里，随手可跑）
 
