@@ -189,7 +189,7 @@ def parse(res):
     return out
 
 
-def run(vol, pages, rnd, dpi=300):
+def run(vol, pages, rnd, dpi=200):
     import fitz
     doc = fitz.open(PDF_DIR / VOL[vol]['pdf'])
     out = log_path(rnd)
@@ -251,7 +251,14 @@ def main():
     ap.add_argument('--vol', type=int, choices=(1, 2))
     ap.add_argument('--pages')
     ap.add_argument('--round', type=int, default=1, choices=(1, 2))
-    ap.add_argument('--dpi', type=int, default=300)
+    # 200 而不是 300：整页影像占输入 token 的七成，而且每页的图都不一样、
+    # 永远命中不了缓存，按「写缓存」计费（1 小时 TTL 是 2× 基础价），
+    # 每页开销的八成以上就是这一张图。
+    # 300→200 实测 token 少 22%，**召回没有变化**：拿 8 页已扫但未落盘的页
+    # 两个分辨率各跑一遍，共有 18 条，只 300 有 3 条、只 200 有 2 条——
+    # 差的那几条是同一页两次跑的随机波动（引的词长短不同），不是看不清。
+    # 再低没试过；裁掉页边白边只省 3%（文字块本来就占 74%），不值得做。
+    ap.add_argument('--dpi', type=int, default=200)
     ap.add_argument('--report', action='store_true')
     a = ap.parse_args()
     if a.report:
