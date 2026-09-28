@@ -1,2 +1,11 @@
 chapter	old	new	src
 42	V..2.	V. 2.	OCR 把节号头 V. 2. 读成 V..2.，transform 认不出就把它劈成孤立的 `V..` 一行 + 无锚点的 `2.` 段
+11	V. 1 1.	V. 11.	节号 11 被拆成 1 1（前后是 10 与 12，连号自证）；不修则与第 1 节同号，verse-nav 跳错
+51	V. 3..	V. 8.	3 是 8 的误读（前后是 7 与 9）；与第 3 节撞号
+65	V. 1 9.	V. 19.	节号 19 被拆成 1 9（前后是 18 与 20）；与第 1 节撞号
+66	V. 0.	V. 6.	0 是 6 的误读（前后是 5 与 7）
+65	V. 15. *And I have numbered you to the sword	V. 12. *And I have numbered you to the sword	赛 65:12「我要命定你们归在刀下」；这一处与真正的 15 节撞号，前后是 11 与 15
+59	V, 10. *We grope	V. 10. *We grope	节号头的句点被读成逗号，整节没有锚点（印面 V. 10.，同页 V. 9./V. 11. 都正常）
+47	V, 1. *Come down!*	V. 1. *Come down!*	同上；这一处是**第 1 节**，连号判据看不见（它只查 min..max 之间的缺口）
+28	V.I. *Woe to the high crown	V. 1. *Woe to the high crown	节号 1 被读成字母 I、句点也丢了；整章第 1 节没有锚点
+40	VI. *Comfort ye	V. 1. *Comfort ye	同上（`V. 1.` 塌成 `VI.`）——第 40 章第 1 节，全书最有名的一节

@@ -114,7 +114,15 @@ bash scripts/chain_alexander_psalms.sh
    但**词级的吞并没查**）；以及**页眉/页脚残留**（已清 5 处，判据现覆盖
    `*Psalm N:M*` 与 `*Psalm] N:M*` 两种形态）。
 
-3. **中译 11–150**（140 篇）。`translate_alexander_psalms.py` → `publish_alexander_psalms_zh.py`。
+3. **斜体没闭合 5 段**（2026-09-28 新判据照出来的，未修）：诗 36 / 48 / 51 / 87 / 127。
+   判据是「一段里未转义星号个数为奇数」——数星号分不清开闭，但**奇偶是硬的**，
+   奇数一定有一个落单的，页面上要么多出一个字面 `*`，要么半段话变成斜体。
+   既有的「`<em>` 过长」只抓跑飞很远的那种，这 5 段一段也没报。
+   跑 `python3 scripts/alexander_render_check.py` 就能看到落单星号的位置。
+   以赛亚那边同一道闸照出 13 段，其中 12 段是「希伯来乱码前多一个开斜体」，
+   已做成 publish 的 `balance_stray_italic` 规则；**诗篇这 5 段不是那个形状**，
+   要逐段看。
+4. **中译 11–150**（140 篇）。`translate_alexander_psalms.py` → `publish_alexander_psalms_zh.py`。
 
 ## 判读一次要花多少（2026-09-28 实测）
 

@@ -16,24 +16,38 @@
 印面自己就缺标题的（诗 26 把第 4、5 节合在一段讲）记在
 `alexander_raw/psalms/ref_printed_as_is.tsv`，不再计入。
 
-用法：python3 scripts/psalms_vnum_check.py
+诗篇与以赛亚共用。以赛亚原先没有这道闸，代价是四处节号读坏一直挂在页面上
+（`V. 1 1.`、`V. 3..`、`V. 1 9.` 拆号或误读，两节同号），章顶 verse-nav 点过去落空。
+
+用法：
+    python3 scripts/alexander_vnum_check.py            # 诗篇
+    python3 scripts/alexander_vnum_check.py isaiah     # 以赛亚
 """
 import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = ROOT / 'alexander/psalms'
-AS_IS = ROOT / 'alexander_raw/psalms/ref_printed_as_is.tsv'
-VNUM = re.compile(r'id="psalms-[a-z0-9]+-\d+"></span><span class="ax-vnum">([^<]*)<')
+BOOKS = {
+    # from_one：这本书每章的第一个显示节号是不是必定为 1。
+    # 以赛亚是（`V. 1.` 起头），诗篇不是——希伯来题注在希伯来编号里算第 1 节、
+    # 英译不算，于是多数篇的第一个英文号本来就是 2，硬查会报出 64 篇假阳性。
+    'psalms': dict(src=ROOT / 'alexander/psalms',
+                   as_is=ROOT / 'alexander_raw/psalms/ref_printed_as_is.tsv',
+                   from_one=False),
+    'isaiah': dict(src=ROOT / 'alexander/isaiah',
+                   as_is=ROOT / 'alexander_raw/isaiah/ref_printed_as_is.tsv',
+                   from_one=True),
+}
+VNUM_FMT = r'id="{0}-[a-z0-9-]+-\d+"></span><span class="ax-vnum">([^<]*)<'
 
 
-def known_gaps():
+def known_gaps(as_is):
     """已核定「印面如此」的缺号：篇 → {节号}"""
     d = {}
-    if not AS_IS.exists():
+    if not as_is.exists():
         return d
-    for line in AS_IS.read_text(encoding='utf-8').splitlines():
+    for line in as_is.read_text(encoding='utf-8').splitlines():
         if line.startswith('#') or not line.strip():
             continue
         f = line.split('\t')
@@ -43,13 +57,15 @@ def known_gaps():
     return d
 
 
-def main():
-    known = known_gaps()
+def main(book='psalms'):
+    cfg = BOOKS[book]
+    known = known_gaps(cfg['as_is'])
+    vnum = re.compile(VNUM_FMT.format(book))
     bad = 0
-    for p in sorted(SRC.glob('*.md'), key=lambda x: (x.stem != 'preface', x.stem)):
+    for p in sorted(cfg['src'].glob('*.md'), key=lambda x: (x.stem != 'preface', x.stem)):
         t = p.read_text(encoding='utf-8')
         flat = []
-        for m in VNUM.finditer(t):
+        for m in vnum.finditer(t):
             head = m.group(1).split('(')[0]          # 括号里是英文编号，另一套
             nums = [int(x) for x in re.findall(r'\d+', head)]
             if not nums:
@@ -60,7 +76,11 @@ def main():
             flat += sorted(rng)
         if not flat:
             continue
-        miss = sorted(set(range(min(flat), max(flat) + 1)) - set(flat)
+        # 从 1 起算，不是从 min 起算：**第 1 节丢了的话 min 就变成 2**，
+        # 「min..max 之间连号」这条判据对它完全是瞎的（以赛亚 47 章就是
+        # `V, 1.`——句点被读成逗号，整节没有锚点，闸子一声不吭）
+        lo = 1 if (cfg['from_one'] and p.stem.isdigit()) else min(flat)
+        miss = sorted(set(range(lo, max(flat) + 1)) - set(flat)
                       - known.get(p.stem, set()))
         dup = sorted({v for v in flat if flat.count(v) > 1})
         if miss or dup:
@@ -73,4 +93,5 @@ def main():
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 and sys.argv[1] in BOOKS
+                  else 'psalms'))

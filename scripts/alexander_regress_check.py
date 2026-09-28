@@ -64,6 +64,11 @@ def main(book='psalms', rev='HEAD'):
             if tag == 'equal':
                 continue
             o, n = ''.join(A[i1:i2]), ''.join(B[j1:j2])
+            # 新长出来的是我们自己发的锚点/节号标记（`class="ax-…"`）时跳过：
+            # diff 块常常只切到半个标签，TAG 正则剥不掉，`ax-anchor` 就被
+            # 当成「新冒出来的非词」报一次假阳性
+            if 'class="ax-' in n or 'ax-anchor' in n or 'ax-vnum' in n:
+                continue
             ow = WORD.findall(TAG.sub(' ', o))
             nw = WORD.findall(TAG.sub(' ', n))
             total += 1

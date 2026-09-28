@@ -43,15 +43,27 @@ PSALMS_VERSE = re.compile(
     r'(?:[\s^]*\(\s*(?P<g2>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)\s*\.?\s*\))?'
     r'(?P<g3>[.,:])?(?=\s)')
 # 以赛亚书统一是 `V. 7.`；`V. 9, 10.` 这类连节也认。
-# 边角上要放宽三处，否则整节拿不到锚点（全书 4 处）：
+# 边角上要放宽，否则整节拿不到锚点：
 #   `. V. 5.`   节号前多出一个 OCR 噪点句号
 #   `V. 20;`    收尾标点是分号
 #   `V. 3..For` `V. 4'.`  收尾多一个句点或撇号，后面直接接正文
+#   `*V.* 8.` `V. *3.` `^ *V.* 8.`  斜体星号插在节号头里、或前面多个 `^` 噪点
+#     ——这一类全书 6 处（21:8、29:11、36:3、50:8、52:3、66:4），认不出就
+#     **整节没有锚点**，章顶 verse-nav 点过去落空，而页面上看不出任何异常。
+#     三个星号位（lead / pre / mid）都单独成组：它们是不是一对要数着算，
+#     `*V.* 8.` 是自成一对（星号包的是 V），`V. *3.` 那个是**经文斜体的开头**，
+#     被节号头吃掉就得在 vnum 之后补回去（render_verse 的 reopen）。
+#   `Vs. 13, 14.` 合讲两节的标题（全书 9 处）。**必须跟「章节导语」区分开**：
+#     导语长的是 `Vs. 24-27 are regarded by the latest writers as…`——范围后面
+#     没有句点、直接接散文，而且 24–27 各节后面还有自己的 `V. 24.` 标题，
+#     照单收会发出一串重复锚点。判据就是这个句点：`(?(plural)(?=[.,:;]))`
+#     ——只要写的是 `Vs.`，号码后面就必须紧跟标点才算标题。
 ISAIAH_VERSE = re.compile(
-    r'^(?P<lead>\*?)[.,;]?\s*V+\s*\.\s*'
+    r'^(?P<lead>\*?)[\^.,;]?\s*(?P<pre>\*?)\s*V+(?P<plural>s)?\s*\.\s*(?P<mid>\*?)\s*'
     r'(?P<g1>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)'
     r"'?"
     r'(?:\s*\(\s*(?P<g2>\d{1,3}(?:\s*[-–—,]\s*\d{1,3})*)\s*\.?\s*\))?'
+    r'(?(plural)(?=[.,:;]))'
     r'(?P<g3>[.,:;])?(?=[\s*.,;)]|$)')
 
 BOOKS = {
@@ -94,7 +106,10 @@ def render_verse(m, book_id, chapter, num):
         inner += g3
     anchor = ('' if num is None else
               f'<span class="ax-anchor" id="{book_id}-{chapter}-{num}"></span>')
-    reopen = bool(m.group('lead')) and not (
+    # 头里一共吃掉几个星号：奇数才要补回一个（偶数说明它们自己配成了对）
+    stars = sum(1 for k in ('lead', 'pre', 'mid')
+                if k in m.groupdict() and m.group(k))
+    reopen = stars % 2 == 1 and not (
         'close' in m.groupdict() and m.group('close'))
     return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if reopen else '')
 
@@ -237,6 +252,55 @@ def split_runon_verse(body, verse_re):
 IE_SPACE = re.compile(r'\b([ie])\.([eg])\.')
 
 
+# 落单星号的形状：它后面隔着至多四个非星号字符就是一个转义星号
+STRAY_NEAR = re.compile(r'[^*]{0,4}\\\*')
+
+
+def balance_stray_italic(body):
+    """一段里未转义星号是奇数 = 斜体没闭合，会从那里一路吃到段尾。
+
+    这一类在页面上很显眼（半段话莫名其妙变成斜体），但正文层面看不出来——
+    数星号数不清开闭，而**奇偶是硬的**：奇数一定有一个落单的。
+
+    只修**判据唯一**的那一种，两条叠起来才算：
+      · 这个未转义星号后面隔着至多四个非星号字符就是一个转义星号
+        （`*\\*`、`*}>\\*`、`*3p.\\*`、`*™P\\*`）；
+      · 且它离下一个未转义星号超过 60 字符——**真的会跑飞**。
+    第二条是必须的：第 19 章同一段里还有个 `*&lt;\\*&lt;.&•*`，形状一样但
+    十几个字符后就闭合了，是正常的希伯来乱码斜体，不加这一条就两个候选、
+    判据不再唯一，整段被跳过。
+    那是 OCR 把希伯来词读成一串带星号的乱码之后，流水线给乱码里的星号加了转义、
+    却在它前面留下一个没人配对的开斜体。以赛亚 9 处都是这个形状，
+    五份证人在对应位置读出的都是各不相同的希伯来乱码（`p^Sri`、`^1t^l`…），
+    可见那里本来是希伯来词，不是斜体的拉丁文。
+
+    把那个落单的也转义掉：一个字不动，只是不再开斜体。以赛亚 12 段这么修完，
+    同一段里本来被挤错位的斜体（`*consolidating,*`、`*sparks,*`）也跟着复位。
+    判据不唯一的不碰，留给逐段看：以赛亚剩 1 段（57 章引语中间多一个星号，
+    走 manual_fixes），诗篇剩 5 段（127/36/48/51/87，都不是这个形状，未处理）。
+    """
+    out = []
+    for line in body.split('\n'):
+        if line.strip() and not line.startswith('<!--'):
+            pos = [m.start() for m in re.finditer(r'(?<!\\)\*', line)]
+            if len(pos) % 2:
+                cand = [q for k, q in enumerate(pos)
+                        if STRAY_NEAR.match(line[q + 1:])]
+                if len(cand) > 1:
+                    # 候选不止一个时才用「跑飞距离」筛：离下一个未转义星号
+                    # 超过 60 字符的才算真会跑飞。先无条件筛会误杀——多数段
+                    # 的落单星号离下一个星号本来就近
+                    far = [q for q in cand
+                           if (min([x for x in pos if x > q], default=len(line))
+                               - q) > 60]
+                    cand = far
+                if len(cand) == 1:
+                    q = cand[0]
+                    line = line[:q] + '\\*' + line[q + 1:]
+        out.append(line)
+    return '\n'.join(out)
+
+
 def transform(body, book_id, chapter, verse_re):
     body = IE_SPACE.sub(lambda m: f'{m.group(1)}. {m.group(2)}.', body)
     for old, new in raw_fixes(book_id, chapter):
@@ -244,6 +308,7 @@ def transform(body, book_id, chapter, verse_re):
             raise SystemExit(f'✗ raw_fixes 第 {chapter} 章命中 '
                              f'{body.count(old)} 次（应为 1）：{old[:60]!r}')
         body = body.replace(old, new, 1)
+    body = balance_stray_italic(body)
     body = split_runon_verse(body, verse_re)
     # 希伯来文的题注在希伯来编号里算第 1 节，英译不算。锚点一律取英文节号，
     # 于是题注（只有 `1.`、没有括号里的英文号）与真正的第 1 节（`2 (1).`）
