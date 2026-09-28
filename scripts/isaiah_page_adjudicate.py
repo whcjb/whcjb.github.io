@@ -65,6 +65,44 @@ def witness(vol):
     return _wit_cache[vol]
 
 
+def ctx_before(pub, ch, orig, words=8):
+    """正文里 `orig` 之前的若干个词，用来在证人里定位。"""
+    txt = pub[ch]
+    i = txt.find(orig)
+    if i < 0:
+        return ''
+    head = re.sub(r'<[^<>]+>', ' ', txt[max(0, i - 220):i])
+    return ' '.join(head.split()[-words:])
+
+
+def positional(vol, pub, ch, orig, ours, img):
+    """**按位置**问证人，而不是全书搜串。
+
+    全书搜串会把 48 条判成「两种写法证人都有」——证人是同一本书的另几份扫描，
+    某个短语在别处出现过根本不说明**这一处**该怎么写。
+    改成：拿正文里这一处**前面**的几个词在证人里定位，再读证人在那个位置
+    往后的一小段，看它长得更像读数还是更像我们。
+    返回 (支持读数的份数, 支持我们的份数, 定位成功的份数)。
+    """
+    a = norm(ctx_before(pub, ch, orig))
+    if len(a) < 18:
+        return 0, 0, 0
+    ni, no = norm(img), norm(ours)
+    span = max(len(ni), len(no)) + 12
+    hit_i = hit_o = located = 0
+    for _, w in witness(vol):
+        k = w.find(a)
+        if k < 0 or w.find(a, k + 1) >= 0:      # 找不到或不唯一，这份证人弃权
+            continue
+        located += 1
+        seg = w[k + len(a): k + len(a) + span]
+        if ni and seg.startswith(ni[:max(6, len(ni) - 2)]):
+            hit_i += 1
+        elif no and seg.startswith(no[:max(6, len(no) - 2)]):
+            hit_o += 1
+    return hit_i, hit_o, located
+
+
 def published():
     return {p.stem: p.read_text(encoding='utf-8') for p in SRC.glob('*.md')}
 
@@ -152,6 +190,9 @@ STAR = re.compile(r'(?<!\\)\*')
 NONLATIN = re.compile(r'[\u0590-\u05ff\u0370-\u03ff\u0600-\u06ff\ufb1d-\ufb4f]')
 
 
+DOUBLE_PUNCT = re.compile(r'([.,;:!?])\1')
+
+
 def apply_edits(orig, ed):
     """把逐词改动落到正文实际那一段上；任何一处不唯一就整条放弃。
 
@@ -170,6 +211,8 @@ def apply_edits(orig, ed):
         cur = cur.replace(a, b, 1)
     if cur == orig:
         return None
+    if DOUBLE_PUNCT.search(cur) and not DOUBLE_PUNCT.search(orig):
+        return None                          # 改出了 `..` `,,`，一律不落
     if len(STAR.findall(cur)) != len(STAR.findall(orig)):
         if orig.startswith('*') and not cur.startswith('*'):
             cur = '*' + cur
@@ -238,10 +281,19 @@ def judge(vol, ours, img, pub, only_ch=None):
     # 读数比我们多一道连字、去掉之后两边（忽略空格）相同＝行末断词。
     if img.rstrip().endswith('-'):
         return 'review', '读数以连字收尾，是页末断词', orig, new
-    if img.count('-') > ours.count('-'):
-        flat = lambda s: re.sub(r'[\s-]', '', s).lower()
-        if flat(img) == flat(ours):
-            return 'review', '读数只多一道连字，是行末断词（我们接成一个词才对）', orig, new
+    if re.search(r'[A-Za-z]-[A-Za-z]', img) and not re.search(r'[A-Za-z]-[A-Za-z]', ours):
+        # 词内连字，我们这边没有 → 一律退回人看。
+        # 先前只在「去掉连字两边相同」时才拦，`Shalmaneser`→`Shal-meneser`
+        # 就从旁边溜过去了（连字之外还差一个字母，等式不成立），
+        # 而它正是行末断词加上一处误读。真有该加连字的（`forest-trees`）
+        # 交给人判，代价小得多。
+        return 'review', '读数里有词内连字、我们没有，多半是行末断词', orig, new
+
+    # 读数里出现方括号占位、或者直接写 Hebrew/Greek 这类词，说明模型没读出来
+    # 在用说明文字顶替——落盘就等于把正文换成一句注解。
+    if re.search(r'\[[^\]]*\]', img) or re.search(r'\b(Hebrew|Greek|illegible|unclear)\b',
+                                                  img, re.I):
+        return 'review', '读数里是方括号占位/说明文字，不是印面上的字', orig, new
 
     # **读数里新冒出希伯来/希腊字母的，一律不自动采纳。**
     # 那等于让模型凭影像把一个希伯来词「写出来」——正是不许用生成式模型做 OCR
@@ -260,9 +312,33 @@ def judge(vol, ours, img, pub, only_ch=None):
     if ok_img and not ok_our:
         return 'accept', f'证人 {len(ok_img)}/{len(wit)} 支持读数', orig, new
     if ok_img and ok_our:
-        return 'review', f'两种写法证人都有（读数 {len(ok_img)}、我们 {len(ok_our)}）', orig, new
+        # 全书搜串分不出来，改成按位置问
+        pi, po, loc = positional(vol, pub, ch, orig, ours, img)
+        if loc >= 2 and pi > po:
+            # 证人本身也是 OCR，同一处各读各的很常见（`refisal`/`refusal`
+            # 两种写法全书都找得到）。按位置定位上两份以上、读数占多数就算数。
+            return 'accept', f'按位置比对：读数 {pi} : 我们 {po}（定位上 {loc}）', orig, new
+        if loc and po > pi:
+            return 'review', f'按位置比对：{po}/{loc} 份证人读作**我们**的写法', orig, new
+        return 'review', (f'两种写法证人都有（全书：读数 {len(ok_img)}、我们 {len(ok_our)}；'
+                          f'按位置：读数 {pi}、我们 {po}、定位上 {loc}）'), orig, new
     if ok_our and not ok_img:
         return 'review', f'证人 {len(ok_our)}/{len(wit)} 支持**我们**的写法，读数可疑', orig, new
+
+    # 证人指望不上时，判词典**只往一个方向**兜底：
+    # 「我们这边有非词、读数把它变成真词」＝安全（`refisal`→`refusal`、
+    # `Jong`→`long`、`composition was Jong posterior`）。反方向才是危险的，
+    # 那正是逐词回退闸盯的事。外文词不吃这一条（`tum`、`ducis` 判词典不认）。
+    sys.path.insert(0, str(ROOT / 'scripts'))
+    from alexander_lexicon import build, is_word
+    lex = _lex(build)
+    ow0 = WORD.findall(ours)
+    nw0 = WORD.findall(img)
+    if ow0 and nw0:
+        bad_o = [w for w in ow0 if not is_word(w, lex)]
+        bad_n = [w for w in nw0 if not is_word(w, lex)]
+        if bad_o and not bad_n:
+            return 'accept', f'非词 {bad_o[:2]} 改成真词（判词典单向兜底）', orig, new
 
     # 证人两边都不认：多半外文或乱码，交判词典兜底
     sys.path.insert(0, str(ROOT / 'scripts'))

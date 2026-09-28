@@ -817,3 +817,26 @@ He )who was a light	He who was a light	page-v1p198: 只动标点；证人支持�
 # 上面四条因「把行末连字当成正文连字」删掉，其中两条另有真错，按不带连字重写
 yet it s%ems very improbable	yet it seems very improbable	page-v1p115: 证人 4/4；原读数把行末的 impro- 也抄了进来
 though not only, unsupported	though not only unsupported	page-v1p190: 印面无逗号；原读数把行末的 unsup- 也抄了进来
+
+# 整页比对自动定案（isaiah_page_adjudicate.py，三道闸见脚本注释）
+metropolis),^// *of justice	metropolis), full *of justice	page-v1p16: 按位置比对：读数 2 : 我们 1（定位上 4）
+and it Lore wild grapes	and it bore wild grapes	page-v1p66: 按位置比对：读数 2 : 我们 0（定位上 2）
+refers to ch. 12: 1. 50: 2, an	refers to ch. 12: 1. 50: 2, and	page-v1p67: 按位置比对：读数 3 : 我们 0（定位上 4）
+Ew. Hendew. Renders. Hitz.	Ew. Hendew. Henders. Hitz.	page-v1p73: 按位置比对：读数 3 : 我们 1（定位上 4）
+composition was Jong posterior	composition was long posterior	page-v1p86: 按位置比对：读数 2 : 我们 1（定位上 3）
+(Num. 21: 6, 8. Dent. 8: 15)	(Num. 21: 6, 8. Deut. 8: 15)	page-v1p88: 按位置比对：读数 3 : 我们 1（定位上 4）
+Ego et Pater unurn sumus	Ego et Pater unum sumus	page-v1p94: 按位置比对：读数 1 : 我们 0（定位上 3）
+Vulgate (suscitemus earn)	Vulgate (suscitemus eam)	page-v1p106: 按位置比对：读数 4 : 我们 0（定位上 4）
+£he passage as a promise	the passage as a promise	page-v1p119: 按位置比对：读数 4 : 我们 0（定位上 4）
+verse— 'land my children trust	verse—'I and my children trust	page-v1p147: 按位置比对：读数 3 : 我们 1（定位上 4）
+is: omitted by the Vulgate	is omitted by the Vulgate	page-v1p149: 只动标点；证人支持读数 4/4
+*The, people* (just described	*The people* (just described	page-v1p154: 只动标点；证人支持读数 4/4
+but. gives the preposition	but gives the preposition	page-v1p157: 只动标点；证人支持读数 4/4
+*Wonder")* — *Counsellor*	*Wonder)*—*Counsellor*	page-v1p160: 只动标点；证人支持读数 4/4
+Ges. Ew. Hendew. Renders. Hitz.	Ges. Ew. Hendew. Henders. Hitz.	page-v1p73: 按位置比对：读数 3 : 我们 1（定位上 4）
+composition was Jong posterior to	composition was long posterior to	page-v1p86: 按位置比对：读数 2 : 我们 1（定位上 3）
+Dent. 8: 15	Deut. 8: 15	page-v1p88: 按位置比对：读数 3 : 我们 1（定位上 4）
+Vatablus, and Minister (jubent scribere)	Vatablus, and Munster (jubent scribere)	page-v1p183: 按位置比对：读数 2 : 我们 1（定位上 4）
+£o himself the two most	to himself the two most	page-v1p193: 按位置比对：读数 4 : 我们 0（定位上 4）
+(qui abigeret ala)	(qui abigeret alâ)	page-v1p195: 按位置比对：读数 3 : 我们 0（定位上 3）
+(divagans ala)	(divagans alâ)	page-v1p195: 按位置比对：读数 3 : 我们 0（定位上 3）
