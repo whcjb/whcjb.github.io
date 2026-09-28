@@ -85,7 +85,7 @@ chapter	old	new	src
 45	a.wife	a wife	hand
 46	u^.*	us.*	crop2
 47	(■IIDT);	(זמרו);	crop2
-48	(mizmor)	(mizmôr)*	crop2-dictgate-manual
+48	(mizmor)	(mizmôr)	crop2-dictgate-manual
 49	*/or	*for	crop2
 49	*iopraise*	*to *praise**	crop2
 49	*re/rain*	*refrain*	crop2
@@ -966,7 +966,7 @@ chapter	old	new	src
 40	*The volume of the hook,*	*The volume of the book,*	image1864: 印面作 in the volume of the book
 69	*hook of life*	*book of life*	image1864: 印面作 the phrase book of life
 48	literally *(hy palace,*	literally *thy palace,*	image1864: 印面作 literally thy palace
-87	*To* (or *hy) the Sons	*To* (or *by*) the Sons	image1864: 印面作 To (or by) the Sons of Korah
+87	*To* (or *hy) the Sons	*To* (or *by) the Sons	image1864: 印面「(or」是正体，其余（by 起到 His foundation）全是斜体；原先多补了一个收星号，把整条标题的斜体劈断了
 14	*in the Lords returning, &c,*	*in the Lord's returning,* &c.,	image1864: 印面作 in the Lord’s returning, &c.,
 35	(or *ones self),*	(or *one's self*),	image1864: 印面作 (or one’s self)
 58	is it possible'? are you	is it possible? are you	image1864: 多一个撇号
@@ -1148,3 +1148,5 @@ chapter	old	new	src
 35	Some explain f, סגר as	Some explain סגר as	image1864: 页末的 f, 是版式残渣，印面此处只到 Some explain
 91	*fowler s snare*	*fowler's snare*	image1864: 印面作 fowler’s snare
 2	stanza (ver. 1-8) closes	stanza (ver. 1-3) closes	page24-both-rounds: 印面作 (ver. 1-3)，且同句自证（第二节 4-6、第三节 7-9）
+36	and *the man* *there and also	and *the man* there and also	image1864: 影像上 there and also 是正体；上面那条把希伯来两词换回正序时，留下了一个没人配对的星号
+51	foregoing verse. *"If thou wilt open my lips	foregoing verse. "If thou wilt open my lips	image1864: 影像上 If thou wilt open my lips, my mouth 是正体（同页 open thou my lips / thou shalt open my lips, O Lord / Open my lips 才是斜体）
