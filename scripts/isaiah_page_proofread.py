@@ -151,27 +151,55 @@ def locate(hay_n, hay_i, needle, hay):
 
 
 def slice_our(vol, pg, doc):
-    """按印面头尾锚，从我们的正文里切出这一页。"""
+    """按印面头尾锚，从我们的正文里切出这一页。
+
+    三步，依次退让：
+      ① 头尾都落在同一章里 —— 最常见，直接取中间那一段。
+      ② 头在前一章、尾在后一章 —— **跨章页**。抽出来的正文是按章存的，
+         一张印面横跨两章时，头锚只能在前一章找到、尾锚只能在后一章找到，
+         原先按「必须同章」判就整页放弃了。卷一 429 页里 25 页栽在这里，
+         而且全是章界页（书页 22、38、56、85…），漏掉的正是新一章的开头。
+      ③ 只锚上一端 —— 按印面这一页的字母数量往那个方向截，放 15% 余量。
+         切多切少只会让模型多看少看几个词，提示词里写明了两端溢到邻页的不要报。
+    """
     pr = printed(doc, vol, pg)
     words = pr.split()
     if len(words) < 40:
         return None, None, f'印面文本太短（{len(words)} 词），跳过'
+    span = int(len(norm(pr)[0]) * 1.15) + 40
+    ends = []                                  # (章, 头锚, 尾锚, 正文, 归一化)
     for ch, t in chapter_of(vol, pg):
         hay = body(t)
         hay_n, hay_i = norm(hay)
         a = b = None
-        for k in range(0, 12):                  # 头锚：往后挪，躲开被切坏的首词
+        for k in range(0, 12):
             a = locate(hay_n, hay_i, ' '.join(words[k:k + 9]), hay)
             if a:
                 break
-        for k in range(0, 12):                  # 尾锚：往前挪，躲开页末断词
+        for k in range(0, 12):
             b = locate(hay_n, hay_i, ' '.join(words[-9 - k:len(words) - k]), hay)
             if b:
                 break
         if a and b and b[1] > a[0]:
-            return ch, hay[a[0]:b[1]], None
-        if a or b:
-            return ch, None, f'只锚上{"头" if a else "尾"}一端（ch{ch}）'
+            return ch, hay[a[0]:b[1]], None            # ①
+        ends.append((ch, a, b, hay, hay_n, hay_i))
+
+    head = next((e for e in ends if e[1]), None)
+    tail = next((e for e in ends if e[2]), None)
+    if head and tail and head[0] != tail[0]:           # ②
+        ch_h, a, _, hay_h, _, _ = head
+        ch_t, _, b, hay_t, _, _ = tail
+        return f'{ch_h}+{ch_t}', hay_h[a[0]:] + '\n\n' + hay_t[:b[1]], None
+
+    for ch, a, b, hay, hay_n, hay_i in ends:           # ③
+        if a:
+            k = hay_n.index(norm(hay[a[0]:a[1]])[0])
+            end = hay_i[min(len(hay_i) - 1, k + span)] + 1
+            return ch, hay[a[0]:end], None
+        if b:
+            k = hay_n.index(norm(hay[b[0]:b[1]])[0])
+            st = hay_i[max(0, k - span)]
+            return ch, hay[st:b[1]], None
     return None, None, '两端都锚不上'
 
 
