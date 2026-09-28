@@ -74,8 +74,27 @@ SYSTEM = (
     'changes the sense; text that belongs to a different place.\n'
     '5. Never guess. If you cannot read the printed form, do not report it.\n'
     '6. Keep the original 19th-century spelling (shews, connexion, sceptick) — '
-    'those are correct, not errors.'
+    'those are correct, not errors.\n\n'
+    'Work in TWO passes before you answer, and report the union of both:\n'
+    '  Pass 1 — read the printed page line by line against the transcription, '
+    'word by word.\n'
+    '  Pass 2 — go back to the top and re-check ONLY the things that are easy to '
+    'skim past: punctuation that changes the sense (? ! ; : , .), opening and '
+    'closing quotation marks, Latin / German / French words and their endings, '
+    'proper names, chapter-and-verse numbers, and single letters that could be a '
+    'different letter (b/l, c/e, n/u, i/j, 1/l).\n'
+    'Report every finding from either pass, once each. Do not mention the passes.'
 )
+# 为什么把「两遍」写进提示词，而不是真的跑两遍：
+# 同一配置独立跑两遍实测，单遍召回约 86–91%，第二遍每页只多出 0.3 条左右——
+# 确实该看第二遍。但**第二遍不该再发一次图**：图占输入的七成、占每页费用的八成，
+# 而第二遍要的只是多想一会儿。三条路量过：
+#   · 再发一次图（朴素两遍）      $0.090/页
+#   · `--resume` 续会话问第二遍    $0.068/页（图变成读缓存 0.1×，而不是写缓存 2×）
+#   · **提示词里要求分两段看**     $0.055/页 ← 采用
+# 第三条在 6 页上捞到 21 条，≥ 朴素两遍的并集 20 条（还多捞到
+# `scelus estjugulare`、`tum agite`、`nec conventum`），代价只是每页多几百
+# output token。所以**不需要第二轮扫描**。
 
 
 def log_path(rnd):
