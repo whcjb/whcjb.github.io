@@ -30,7 +30,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / 'alexander/isaiah'
-LOG = ROOT / 'logs/alexander_isaiah_page_round1.tsv'
+# 主日志 + 旧提示词那一批（2026-09-28 换成「两段看」的提示词之前扫的 205 页，
+# 线索仍然有效，只是召回略低，照样进判读）
+LOGS = [ROOT / 'logs/alexander_isaiah_page_round1.tsv',
+        ROOT / 'logs/alexander_isaiah_page_oldprompt.tsv']
 FIXES = ROOT / 'alexander_raw/isaiah/manual_fixes.tsv'
 WIT = {1: sorted(glob.glob(str(ROOT / 'alexander_raw/isaiah/src/earlier*.txt'))),
        2: sorted(glob.glob(str(ROOT / 'alexander_raw/isaiah/src/later*.txt')))}
@@ -144,22 +147,49 @@ def edits(ours, img):
     return out
 
 
+STAR = re.compile(r'(?<!\\)\*')
+# 希伯来／希腊／阿拉伯字母
+NONLATIN = re.compile(r'[\u0590-\u05ff\u0370-\u03ff\u0600-\u06ff\ufb1d-\ufb4f]')
+
+
 def apply_edits(orig, ed):
-    """把逐词改动落到正文实际那一段上；任何一处不唯一就整条放弃。"""
+    """把逐词改动落到正文实际那一段上；任何一处不唯一就整条放弃。
+
+    **斜体标记的个数必须不变**，这是一道硬闸。提示词里明说了「忽略 `*…*` 标记」，
+    所以模型给的读数是**剥掉标记的**（`*remove its hedge find it*` 读成
+    `remove its hedge and it`）。照着逐词落盘，会把那一对星号一起删掉——
+    页面上那句话就从「他自己的译文」变成了普通解说，而这本书最要紧的区分
+    恰恰是这个。首尾少掉的能补回来就补；内部对不上的一律退回人看。
+    """
     cur = orig
-    for old, new in ed:
-        if not old:
+    for a, b in ed:
+        if not a:
             return None                      # 纯插入，定位不了，人看
-        if cur.count(old) != 1:
+        if cur.count(a) != 1:
             return None
-        cur = cur.replace(old, new, 1)
-    return cur if cur != orig else None
+        cur = cur.replace(a, b, 1)
+    if cur == orig:
+        return None
+    if len(STAR.findall(cur)) != len(STAR.findall(orig)):
+        if orig.startswith('*') and not cur.startswith('*'):
+            cur = '*' + cur
+        if orig.endswith('*') and not cur.endswith('*'):
+            cur = cur + '*'
+        if len(STAR.findall(cur)) != len(STAR.findall(orig)):
+            return None
+    return cur
 
 
 def read_log():
     rows = []
-    if not LOG.exists():
-        return rows
+    for log in LOGS:
+        if log.exists():
+            rows += _read_one(log)
+    return rows
+
+
+def _read_one(LOG):
+    rows = []
     for line in LOG.read_text(encoding='utf-8').splitlines():
         f = line.split('\t')
         if len(f) < 4 or not f[1].isdigit():
@@ -191,7 +221,7 @@ def judge(vol, ours, img, pub, only_ch=None):
     ch, orig = got
     new = apply_edits(orig, edits(ours, img))
     if new is None:
-        return 'anchor', '逐词改动落不回正文那一段（引得太松或纯插入）', None, None
+        return 'anchor', '逐词改动落不回正文那一段（引得太松／纯插入／会改掉斜体标记）', None, None
 
     wit = witness(vol)
     no, ni = norm(ours), norm(img)
@@ -199,6 +229,27 @@ def judge(vol, ours, img, pub, only_ch=None):
         return 'review', '读数归一化后为空', orig, new
     ok_img = [n for n, t in wit if ni in t]
     ok_our = [n for n, t in wit if no in t]
+
+    # **行末连字不是正文连字。** 提示词里写明「跨行断开的词我们接成一个词，
+    # 别报」，模型照样会把印面上那一道连字抄进读数（`unsupported` 报成
+    # `unsup-ported`、`Madame` 报成 `Mad-ame`、`improbable` 报成 `impro-`）。
+    # 这一类落盘就是把对的改坏，而且判词典立刻报「真词改成非词」——12 条
+    # 疑似改坏里有 6 条是它。两条判据：读数以连字收尾＝页末截断；
+    # 读数比我们多一道连字、去掉之后两边（忽略空格）相同＝行末断词。
+    if img.rstrip().endswith('-'):
+        return 'review', '读数以连字收尾，是页末断词', orig, new
+    if img.count('-') > ours.count('-'):
+        flat = lambda s: re.sub(r'[\s-]', '', s).lower()
+        if flat(img) == flat(ours):
+            return 'review', '读数只多一道连字，是行末断词（我们接成一个词才对）', orig, new
+
+    # **读数里新冒出希伯来/希腊字母的，一律不自动采纳。**
+    # 那等于让模型凭影像把一个希伯来词「写出来」——正是不许用生成式模型做 OCR
+    # 的那条（它会写出形似而不同的词，而证人这一层对非拉丁字母是瞎的：
+    # 归一化只留 a-z0-9，希伯来串被抹成空，所谓「证人支持」支持的是周围的英文）。
+    # 希伯来要改只能走 tesseract heb + 逐张裁图那条线。
+    if NONLATIN.search(img) and not NONLATIN.search(ours):
+        return 'review', '读数里新出现希伯来/希腊字母，须走希伯来那条线', orig, new
 
     if punct_only(ours, img):
         # 只动标点：证人不反对就行（证人的标点本来也不可信）

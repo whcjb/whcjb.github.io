@@ -12,6 +12,7 @@ chapter	token	witness	verdict	bucket
 17	itisa		无证据	待判·无证据
 17	nnfea	among	reject	待判·证人对不上
 18	donec	donee	fix	待判·证人还有话说
+2	ducis		无证据	待判·无证据
 21	nsiba		无证据	待判·无证据
 22	isirt		无证据	待判·无证据
 22	counsellor	and	reject	待判·证人对不上
@@ -73,8 +74,9 @@ chapter	token	witness	verdict	bucket
 58	crives		无证据	待判·无证据
 59	iriti		无证据	待判·无证据
 59	flumus	fluvius	reject	待判·证人还有话说
-6	natur	naturally	reject	待判·证人还有话说
 6	Nordh	of	reject	待判·证人对不上
+6	audite	the	reject	待判·证人还有话说
+6	videte		无证据	待判·无证据
 60	pirnn		无证据	待判·无证据
 61	ttmas	the	reject	待判·证人对不上
 63	Parallelismus	parauelismus	reject	待判·证人还有话说
