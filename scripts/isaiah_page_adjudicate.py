@@ -103,6 +103,45 @@ def positional(vol, pub, ch, orig, ours, img):
     return hit_i, hit_o, located
 
 
+_raw_cache = {}
+
+
+def witness_raw(vol):
+    """证人原文（**保留换行**）。判「这一道连字是原有的还是行末断出来的」要用。"""
+    if vol not in _raw_cache:
+        _raw_cache[vol] = [re.sub(r'[ \t]+', ' ',
+                                  open(f, encoding='utf-8', errors='ignore').read())
+                           for f in WIT[vol]]
+    return _raw_cache[vol]
+
+
+def hyphen_verdict(vol, img):
+    """读数里的词内连字：原书就有，还是行末断出来的？
+
+    证人的 `_djvu.txt` 是**保留换行**的，于是这件事有硬证据可查：
+    `blood-thirsty` 四份证人都印在同一行里 → 原书就带连字；
+    `thorough- \n fare` 四份都断在行末 → 原书是一个词 `thoroughfare`，
+    那一道连字是排版断行加的，我们接成一个词才对。
+
+    返回 'keep'（保留连字）/ 'join'（接成一个词）/ None（证人说不清）。
+    """
+    mm = re.search(r'([A-Za-z]{2,})-([A-Za-z]{2,})', img)
+    if not mm:
+        return None
+    a, b = mm.group(1), mm.group(2)
+    inline = brk = 0
+    for w in witness_raw(vol):
+        if re.search(re.escape(a) + r'-' + re.escape(b), w, re.I):
+            inline += 1
+        elif re.search(re.escape(a) + r'-\s*\n\s*' + re.escape(b), w, re.I):
+            brk += 1
+    if inline > brk and inline >= 2:
+        return 'keep'
+    if brk > inline and brk >= 2:
+        return 'join'
+    return None
+
+
 def published():
     return {p.stem: p.read_text(encoding='utf-8') for p in SRC.glob('*.md')}
 
@@ -282,12 +321,34 @@ def judge(vol, ours, img, pub, only_ch=None):
     if img.rstrip().endswith('-'):
         return 'review', '读数以连字收尾，是页末断词', orig, new
     if re.search(r'[A-Za-z]-[A-Za-z]', img) and not re.search(r'[A-Za-z]-[A-Za-z]', ours):
+        v = hyphen_verdict(vol, img)
+        if v:
+            # 原书就带连字 → 照读数落；行末断出来的 → 接成一个词再落
+            img2 = img if v == 'keep' else re.sub(
+                r'([A-Za-z]{2,})-([A-Za-z]{2,})', r'\1\2', img, count=1)
+            # 「接成一个词」只许动空格和标点，不许顺带改字母：
+            # `Shalmaneser` 被接成 `Shalmeneser`（这本书两种拼法都出现过，
+            # 证人帮不上忙），我们原来那个才是对的。
+            letters = lambda s: re.sub(r'[^A-Za-z]', '', s).lower()
+            if v == 'join' and letters(img2) != letters(ours):
+                return 'review', '接成一个词之后字母也变了，不只是断行，要人看', orig, new
+            new2 = apply_edits(orig, edits(ours, img2))
+            if new2:
+                return ('accept',
+                        f'证人原文里这道连字{"就在行中" if v == "keep" else "断在行末"}，'
+                        f'按{"带连字" if v == "keep" else "接成一个词"}落',
+                        orig, new2)
         # 词内连字，我们这边没有 → 一律退回人看。
         # 先前只在「去掉连字两边相同」时才拦，`Shalmaneser`→`Shal-meneser`
         # 就从旁边溜过去了（连字之外还差一个字母，等式不成立），
         # 而它正是行末断词加上一处误读。真有该加连字的（`forest-trees`）
         # 交给人判，代价小得多。
         return 'review', '读数里有词内连字、我们没有，多半是行末断词', orig, new
+
+    # 模型有时不是在抄印面，而是在**解释**：`can-not (i.e. "cannot")`、
+    # `Zoroas-ter (i.e. Zoroaster)`。我们这边没有的 `i. e.` 括注，一律当解释。
+    if re.search(r'\(\s*i\.\s*e\.', img) and not re.search(r'\(\s*i\.\s*e\.', ours):
+        return 'review', '读数里带 (i. e. …) 括注，是模型在解释而不是在抄印面', orig, new
 
     # 读数里出现方括号占位、或者直接写 Hebrew/Greek 这类词，说明模型没读出来
     # 在用说明文字顶替——落盘就等于把正文换成一句注解。
