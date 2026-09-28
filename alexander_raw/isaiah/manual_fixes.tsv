@@ -474,3 +474,14 @@ monarchy. Pa.ulus and Rosenm	monarchy. Paulus and Rosenm	wit
 the place of my rest!* literally	the place of my rest?* literally	img+wit
 # 单引号两端被读成 *( 和 /，逗号一并吞掉
 indefinitely, *(*they i. e. men/ without	indefinitely, 'they i. e. men,' without	img+wit
+
+# 2026-09-28 b 被读成 l：这五处原先只改在已发布正文上，链条重跑就没了
+# （en_chapters 与判读器都是 le，判读器把 le 当真词放行）。落表才算落盘。
+there shall le five cities	there shall be five cities	ctx
+lest your bands le strong	lest your bands be strong	ctx
+there shall Jehovah le mighty	there shall Jehovah be mighty	ctx
+Zion's sake I will not le still	Zion's sake I will not be still	ctx
+shall return and le for a consuming	shall return and be for a consuming	ctx
+# raw 里就是 `praettritum prophetic.um`：句点把 token 劈成两半，判词典看不见它，
+# 前一个词修好了后一个没修。原先只改在已发布正文上，重跑就没了。
+*praeteritum prophetic.um,*	*praeteritum propheticum,*	ctx

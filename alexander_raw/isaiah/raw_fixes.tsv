@@ -1,0 +1,2 @@
+chapter	old	new	src
+42	V..2.	V. 2.	OCR 把节号头 V. 2. 读成 V..2.，transform 认不出就把它劈成孤立的 `V..` 一行 + 无锚点的 `2.` 段

@@ -276,11 +276,21 @@ BOOKS = {
     'psalms': dict(src=ROOT / 'alexander_raw/psalms/en_chapters',
                    log=ROOT / 'logs/alexander_ocr_repair.tsv',
                    manual=PSALMS_MANUAL, real=PSALMS_REAL_WORD, pre=PSALMS_PRE,
-                   short_len=3),
+                   short_len=3, stray_apostrophe=True),
     'isaiah': dict(src=ROOT / 'alexander_raw/isaiah/en_chapters',
                    log=ROOT / 'logs/alexander_isaiah_ocr_repair.tsv',
                    manual=ISAIAH_MANUAL, real=ISAIAH_REAL_WORD, pre=ISAIAH_PRE,
-                   short_len=4),
+                   short_len=4,
+                   # 以赛亚**不能开**。这一类在两本书上长得一样、意思却相反：
+                   # 诗篇里 `confined'` 的撇号确实是多余的墨点；以赛亚满篇用
+                   # 单引号引短语，收引号正好长成「真词 + 撇号 + 空格」。
+                   # 全书量过：规则命中 68 处，其中至少 64 处是收引号——
+                   # 有 20 处前面的开引号还在，另外几十处的开引号被 OCR 读成
+                   # `c` / `<` / `(` / `*l*`（`Umbreit (c new moon…bear')`、
+                   # `Henderson < all the vessels…appearance')`），于是「前面没有
+                   # 开引号」根本不能当判据。开着它＝把收引号一个个删掉，
+                   # 引号配对随之全毁，而只换来三四处真正多余的撇号。
+                   stray_apostrophe=False),
 }
 
 # 私用区哨兵必须靠拼接进正则：写在 r"..." 里 `\ue002` 不会被解释成那个字符，
@@ -639,7 +649,8 @@ def main(book='psalms'):
 
         for pat, rep in pre_fix:
             text = re.sub(pat, rep, text)
-        text = drop_stray_apostrophe(text, lex)
+        if cfg.get('stray_apostrophe', True):
+            text = drop_stray_apostrophe(text, lex)
         text = split_apostrophe_gap(text, lex)
         text = space_after_punct(text, lex)
         text = rejoin_split_words(text, lex, vocab)

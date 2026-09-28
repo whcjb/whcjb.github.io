@@ -13,7 +13,7 @@ bash scripts/chain_alexander_psalms.sh
 | 闸子 | 命令 | 现状（2026-09-28 复跑） |
 |---|---|---|
 | 链条幂等 | 连跑两次 `chain_alexander_psalms.sh` 后 `diff -rq` | 逐字节不变 |
-| 逐词回退 | `psalms_regress_check.py [rev]` | 无「真词改成非词」 |
+| 逐词回退 | `alexander_regress_check.py [rev]` | 无「真词改成非词」 |
 | 渲染层 | `psalms_render_check.py` | 全部通过，锚点 2446 |
 | 账目 | `psalms_backlog.py` | 非词 6（判读 3 + 已核实原样 3）；节号单调 ✓；重出干净 ✓ |
 | 双标点 | `psalms_double_punct.py` | 0 |

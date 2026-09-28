@@ -10,9 +10,15 @@
 
 **比对要对着上一个已知良好的提交**，不是 HEAD——HEAD 可能已经被别的会话改过。
 
+诗篇与以赛亚共用。以赛亚原先**没有**这道闸，代价是实打实的：2026-09-28 重跑
+链条时 `be` 被写成 `le` 五处（`there shall le five cities`、`lest your bands le
+strong`…），en_chapters 里本来就是 `le`、判读器把它当真词放行，页面上看不出
+任何异常，只有拿上一版逐词比才查得出。
+
 用法：
-    python3 scripts/psalms_regress_check.py            # 对着 HEAD
-    python3 scripts/psalms_regress_check.py b10deb7b7  # 对着指定提交
+    python3 scripts/alexander_regress_check.py                   # 诗篇，对着 HEAD
+    python3 scripts/alexander_regress_check.py isaiah            # 以赛亚，对着 HEAD
+    python3 scripts/alexander_regress_check.py isaiah b10deb7b7  # 对着指定提交
 """
 import difflib
 import re
@@ -24,7 +30,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import alexander_lexicon as L
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC = 'alexander/psalms'
+BOOKS = {'psalms': 'alexander/psalms', 'isaiah': 'alexander/isaiah'}
 # æ œ 也是字母：`præterita` 不加它会被拆成 pr + terita，回退判据就误报
 WORD = re.compile(r"[A-Za-zæœÆŒ][A-Za-zæœÆŒ'’-]*")
 TAG = re.compile(r'<[^<>]+>')
@@ -40,12 +46,13 @@ def body(t):
     return t.split('---', 2)[2] if t.startswith('---') else t
 
 
-def main(rev='HEAD'):
+def main(book='psalms', rev='HEAD'):
+    src = BOOKS[book]
     lex = L.build()
-    files = sorted((ROOT / SRC).glob('*.md'))
+    files = sorted((ROOT / src).glob('*.md'))
     total = suspect = 0
     for f in files:
-        old = at_rev(rev, f'{SRC}/{f.name}')
+        old = at_rev(rev, f'{src}/{f.name}')
         if old is None:
             continue
         a, b = body(old), body(f.read_text(encoding='utf-8'))
@@ -67,10 +74,12 @@ def main(rev='HEAD'):
                 suspect += 1
                 bad = [w for w in nw if not L.is_word(w, lex)]
                 print(f'  !! [{f.stem}] {o[:46]!r} → {n[:46]!r}   新出现的非词 {bad[:3]}')
-    print(f'对着 {rev} 比：改动 {total} 块；'
+    print(f'{book} 对着 {rev} 比：改动 {total} 块；'
           + ('疑似改坏 %d 块' % suspect if suspect else '没有「真词改成非词」的 ✓'))
     return 1 if suspect else 0
 
 
 if __name__ == '__main__':
-    sys.exit(main(sys.argv[1] if len(sys.argv) > 1 else 'HEAD'))
+    args = sys.argv[1:]
+    bk = args.pop(0) if args and args[0] in BOOKS else 'psalms'
+    sys.exit(main(bk, args[0] if args else 'HEAD'))

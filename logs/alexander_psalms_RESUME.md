@@ -188,7 +188,7 @@ python3 scripts/psalms_double_punct.py       # 应报「可疑双标点 0 处」
 
 ```bash
 python3 scripts/psalms_render_check.py            # §4.4 渲染层：丢词/斜体跑飞/重复锚点
-python3 scripts/psalms_regress_check.py <好提交>  # §4.1 逐词回退：真词改成非词 = 改坏了
+python3 scripts/alexander_regress_check.py <好提交>  # §4.1 逐词回退：真词改成非词 = 改坏了
 ```
 
 - 渲染层四项全书通过，锚点 2431。**在 markdown 里数星号是数不清开闭的**，
@@ -210,7 +210,7 @@ python3 scripts/psalms_regress_check.py <好提交>  # §4.1 逐词回退：真�
 **验收口径现在是六关**，每轮都跑：
 ```bash
 bash scripts/chain_alexander_psalms.sh          # 幂等：正文逐字节不变
-python3 scripts/psalms_regress_check.py <ref>   # 逐词回退：真词改成非词 = 改坏了
+python3 scripts/alexander_regress_check.py <ref>   # 逐词回退：真词改成非词 = 改坏了
 python3 scripts/psalms_render_check.py          # 渲染层：丢词/斜体跑飞/重复锚点
 python3 scripts/psalms_backlog.py               # 残留 + 节号自查 + 重出自查
 python3 scripts/psalms_double_punct.py          # 双标点
