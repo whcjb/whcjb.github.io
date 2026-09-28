@@ -229,13 +229,26 @@ def anchor(pub, ours, only_ch=None):
 
 
 def edits(ours, img):
-    """逐词对齐，取出最小改动对。"""
+    """逐词对齐，取出最小改动对。
+
+    纯插入（旧的那边是空）要把**前一个词**并进来当锚，否则落不了盘——
+    `considered a whole` → `considered as a whole` 这种「我们漏了一个词」
+    本来是最值得修的一类，原先全被当成「定位不了」扔掉了（22 条）。
+    """
     import difflib
     a, b = ours.split(), img.split()
     sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
     out = []
     for tag, i1, i2, j1, j2 in sm.get_opcodes():
         if tag == 'equal':
+            continue
+        if i1 == i2:                      # 纯插入
+            if i1 > 0:
+                out.append((' '.join(a[i1 - 1:i1]),
+                            ' '.join([a[i1 - 1]] + b[j1:j2])))
+            elif i2 < len(a):
+                out.append((' '.join(a[i2:i2 + 1]),
+                            ' '.join(b[j1:j2] + [a[i2]])))
             continue
         out.append((' '.join(a[i1:i2]), ' '.join(b[j1:j2])))
     return out
@@ -247,6 +260,7 @@ NONLATIN = re.compile(r'[\u0590-\u05ff\u0370-\u03ff\u0600-\u06ff\ufb1d-\ufb4f]')
 
 
 DOUBLE_PUNCT = re.compile(r'([.,;:!?])\1')
+ITALIC_GROUP = re.compile(r'(?<!\\)\*([^*]{1,40})(?<!\\)\*')
 
 
 def apply_edits(orig, ed):
@@ -267,6 +281,8 @@ def apply_edits(orig, ed):
         cur = cur.replace(a, b, 1)
     if cur == orig:
         return None
+    import sys as _s
+    _s.path.insert(0, str(ROOT / 'scripts'))
     cur = re.sub(r'  +', ' ', cur)            # 删掉噪点字符后留下的双空格
     if DOUBLE_PUNCT.search(cur) and not DOUBLE_PUNCT.search(orig):
         return None                          # 改出了 `..` `,,`，一律不落
@@ -275,8 +291,23 @@ def apply_edits(orig, ed):
             cur = '*' + cur
         if orig.endswith('*') and not cur.endswith('*'):
             cur = cur + '*'
-        if len(STAR.findall(cur)) != len(STAR.findall(orig)):
+    n_cur, n_org = len(STAR.findall(cur)), len(STAR.findall(orig))
+    if n_cur != n_org:
+        if n_cur % 2 != n_org % 2:
+            return None                      # 奇偶都变了＝斜体会跑飞，绝不放
+        # 个数成对地少掉，只在**被摘掉的那一对里面全是乱码**时才允许：
+        #   `*l*`→`'`、`*'*`→`'`、`*fa*`→`its`、`*S:*`→`8 :`、`*'22.*`→`22.`
+        #     ——那是「开引号被读成 *l*」之类，本来就不该是斜体
+        #   `*devours chaff*`→`devours chaff`、`*(quasi nihilum):*`→`(quasi nihilum)`
+        #     ——里面是真词／拉丁文，摘掉就等于把他的译文降成解说，绝不放
+        from alexander_lexicon import build, is_word
+        lx = _lex(build)
+        gone = [g for g in ITALIC_GROUP.findall(orig) if f'*{g}*' not in cur]
+        if not gone:
             return None
+        for g in gone:
+            if any(len(w) >= 2 and is_word(w, lx) for w in WORD.findall(g)):
+                return None
     return cur
 
 
@@ -357,7 +388,15 @@ def judge(vol, ours, img, pub, only_ch=None):
                else f'正文里出现 {n} 次，落盘会改错位置')
         return 'anchor', why, None, None
     ch, orig = got
-    new = apply_edits(orig, edits(ours, img))
+    # 锚被补到词边界之后，**读数也要跟着补**，否则逐词改动会落错。
+    # `…50: 2, an` 补成 `…50: 2, and`，而读数还是 `…, and`，
+    # 于是 `an`→`and` 落在 `and` 上，写出 `andd`。
+    if orig != ours:
+        if orig.startswith(ours):
+            img = img + orig[len(ours):]
+        elif orig.endswith(ours):
+            img = orig[:len(orig) - len(ours)] + img
+    new = apply_edits(orig, edits(orig if orig != ours else ours, img))
     if new is None:
         return 'anchor', '逐词改动落不回正文那一段（引得太松／纯插入／会改掉斜体标记）', None, None
 
