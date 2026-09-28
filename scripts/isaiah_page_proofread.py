@@ -28,6 +28,7 @@ import json
 import re
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -196,7 +197,7 @@ def run(vol, pages, rnd, dpi=300):
     if out.exists():
         done = {l.split('\t')[0] + l.split('\t')[1] for l in out.open(encoding='utf-8')
                 if len(l.split('\t')) > 1}
-    total = 0.0
+    total, fails, n = 0.0, 0, 0
     with out.open('a', encoding='utf-8') as fh:
         for pg in pages:
             if f'{vol}{pg}' in done:
@@ -209,14 +210,26 @@ def run(vol, pages, rnd, dpi=300):
                 fh.flush()
                 continue
             png = doc[pg + VOL[vol]['delta']].get_pixmap(dpi=dpi).tobytes('png')
-            res, cost = ask(png, text)
+            try:
+                res, cost = ask(png, text)
+                fails = 0
+            except Exception as e:                       # noqa: BLE001
+                # 跑几百页的批量必须扛得住偶发失败：单页失败不落盘、不记 done，
+                # 下次重跑自然补上；连续 5 次多半是会话额度用尽，整批中止
+                print(f'  v{vol} p{pg} 失败 {e}', flush=True)
+                fails += 1
+                if fails >= 5:
+                    sys.exit('✗ 连续 5 次失败，中止（已判的已落盘，重跑续上）')
+                time.sleep(4)
+                continue
             total += cost
             hits = parse(res)
             fh.write(f'{vol}\t{pg}\t{ch}\t{len(hits)}\t' +
                      '\t'.join(f'{a} ||| {b}' for a, b in hits) + '\n')
             fh.flush()
-            print(f'  v{vol} p{pg} (ch{ch}, {len(text)} 字符) → {len(hits)} 处 ${cost:.3f}',
-                  flush=True)
+            n += 1
+            print(f'  [{n}] v{vol} p{pg} (ch{ch}) → {len(hits)} 处 ${cost:.3f} '
+                  f'累计 ${total:.2f}', flush=True)
             for a, b in hits:
                 print(f'      我们「{a}」 ||| 印面「{b}」')
     print(f'合计 ${total:.2f} → {out}')
