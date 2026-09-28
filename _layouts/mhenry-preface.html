@@ -130,9 +130,6 @@ function resetFontSize() {
 (function(){ try { var d = parseInt(localStorage.getItem(_fsKey)||'0'); if(d) { _fsDelta=d; document.getElementById('mhenry-col').style.fontSize=(_fsBase+d)+'px'; } } catch(e){} })();
 
 
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
-}
 </script>
 
 {% assign mh_theme = site.data.mhenry_theme[page.book_id] %}

@@ -1,44 +1,28 @@
-// Service Worker — 缓存圣经经文数据（cuv.json）
-// 更新 cuv.json 时将版本号改为 v2、v3… 即可清除旧缓存
-var CACHE_NAME = 'mhenry-cuv-v1';
-var CUV_PATH   = '/assets/cuv.json';
+// Service Worker —— 已停用（kill switch）
+//
+// 原先这个 SW 预缓存 /assets/cuv.json（3.3MB）。但 _includes/head.html 从
+// 2026-05-08 起在每次页面加载时注销所有 SW 并清空 caches，而站点又在 footer
+// 与 mhenry 的三个 layout 里重新注册，形成「清空 → 重装 → 重下 3.3MB」的循环，
+// iOS Safari 因此反复弹出「增加储存空间大小？」。
+//
+// 注册端已全部关闭（_config.yml 的 service-worker: false）。这个文件保留为
+// 自注销版本：设备上仍装着旧 SW 的，在它下次拉取 /sw.js 更新时自行清缓存并注销。
+// cuv.json 改走普通 HTTP 缓存（GitHub Pages 带 ETag，命中即 304）。
 
-// 安装：预缓存 cuv.json（后台静默下载，不阻塞页面）
-self.addEventListener('install', function(e) {
-    e.waitUntil(
-        caches.open(CACHE_NAME).then(function(cache) {
-            return cache.add(CUV_PATH);
-        })
-    );
+self.addEventListener('install', function() {
     self.skipWaiting();
 });
 
-// 激活：清理旧版本缓存
 self.addEventListener('activate', function(e) {
     e.waitUntil(
-        caches.keys().then(function(keys) {
-            return Promise.all(
-                keys.filter(function(k) { return k !== CACHE_NAME; })
-                    .map(function(k) { return caches.delete(k); })
-            );
-        })
-    );
-    self.clients.claim();
-});
-
-// 拦截请求：只处理 cuv.json，其余请求正常走网络
-self.addEventListener('fetch', function(e) {
-    if (e.request.url.indexOf('/assets/cuv.json') === -1) return;
-
-    e.respondWith(
-        caches.match(e.request).then(function(cached) {
-            if (cached) return cached;
-            return fetch(e.request).then(function(response) {
-                return caches.open(CACHE_NAME).then(function(cache) {
-                    cache.put(e.request, response.clone());
-                    return response;
-                });
-            });
-        })
+        caches.keys()
+            .then(function(keys) {
+                return Promise.all(keys.map(function(k) { return caches.delete(k); }));
+            })
+            .then(function() { return self.registration.unregister(); })
+            .then(function() { return self.clients.matchAll(); })
+            .then(function(clients) {
+                clients.forEach(function(c) { c.navigate(c.url); });
+            })
     );
 });

@@ -137,7 +137,4 @@ layout: default
     var saved = parseInt(localStorage.getItem('reading-font-size'));
     if (saved) document.documentElement.style.setProperty('--reading-font-size', saved + 'px');
 })();
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('{{ site.baseurl }}/sw.js');
-}
 </script>

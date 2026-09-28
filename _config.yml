@@ -104,7 +104,9 @@ featured-condition-size: 1              # 相同标签数量大于这个数，�
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
-service-worker: true
+service-worker: false   # 已停用：head.html 每次加载都注销 SW 并清空 caches，
+                       # 再注册会造成「清空→重装→重下 3.3MB cuv.json」循环，
+                       # iOS Safari 因此反复弹「增加储存空间大小？」
 
 
 
