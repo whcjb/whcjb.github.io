@@ -146,6 +146,20 @@ def published():
     return {p.stem: p.read_text(encoding='utf-8') for p in SRC.glob('*.md')}
 
 
+def extend(txt, lo, hi):
+    """锚不许停在词中间。
+
+    `refers to ch. 12: 1. 50: 2, an` 这个锚，正文里后面跟的是 `d`——
+    把它换成 `…, and` 就写出了 `andd`。逐字替换是按字面来的，
+    锚的右边界落在词内就会这样静默地多出一截。两头都补到词边界为止。
+    """
+    while lo > 0 and txt[lo - 1].isalpha() and txt[lo].isalpha():
+        lo -= 1
+    while hi < len(txt) and txt[hi].isalpha() and txt[hi - 1].isalpha():
+        hi += 1
+    return txt[lo:hi]
+
+
 def nmap(s):
     """归一化串 + 到原串的下标映射。"""
     out, idx = [], []
@@ -181,7 +195,7 @@ def anchor(pub, ours, only_ch=None):
     if sum(c for _, c in lit) == 1:
         ch = lit[0][0]
         i = pub[ch].index(ours)
-        return (ch, pub[ch][i:i + len(ours)]), 1
+        return (ch, extend(pub[ch], i, i + len(ours))), 1
     key = nmap(ours)[0]
     if not key:
         return None, 0
@@ -201,7 +215,7 @@ def anchor(pub, ours, only_ch=None):
             n, idx = _PUBN[ch]
             lo = idx[max(0, a - grow * 12)]
             hi = idx[min(len(idx) - 1, b - 1 + grow * 12)] + 1
-            return (ch, pub[ch][lo:hi]), 1
+            return (ch, extend(pub[ch], lo, hi)), 1
         if not found:
             return None, 0
         # 不唯一：把锚往两边扩，用第一处的上下文当模板行不通
@@ -286,6 +300,37 @@ def _read_one(LOG):
     return rows
 
 
+def existing_pairs():
+    """已有的 (old, new) 对。新判读不许把它们改回去。"""
+    out = []
+    if FIXES.exists():
+        for l in FIXES.read_text(encoding='utf-8').splitlines():
+            if not l.strip() or l.startswith('#'):
+                continue
+            f = l.split('\t')
+            if len(f) >= 2:
+                out.append((f[0], f[1]))
+    return out
+
+
+_PAIRS = []
+
+
+def undoes_earlier(orig, cur):
+    """这一处改动是不是把前面某条修复原样改了回去。
+
+    `agravation`→`aggravation` 是早先逐条核过落的案；这一轮证人 4/4 读作
+    `agravation`（证人自己也是 OCR，同一个错四份都有），于是又要改回去。
+    修复表是按顺序落的，后一条赢，正文就在两轮之间来回翻。
+    """
+    if not _PAIRS:
+        _PAIRS.extend(existing_pairs())
+    for old_e, new_e in _PAIRS:
+        if new_e and new_e in orig and old_e in cur and old_e != new_e:
+            return f'会把前面那条 {old_e[:26]!r}→{new_e[:26]!r} 改回去'
+    return None
+
+
 def existing_fixes():
     if not FIXES.exists():
         return set()
@@ -304,6 +349,10 @@ def judge(vol, ours, img, pub, only_ch=None):
     new = apply_edits(orig, edits(ours, img))
     if new is None:
         return 'anchor', '逐词改动落不回正文那一段（引得太松／纯插入／会改掉斜体标记）', None, None
+
+    back = undoes_earlier(orig, new)
+    if back:
+        return 'review', back, orig, new
 
     wit = witness(vol)
     no, ni = norm(ours), norm(img)
