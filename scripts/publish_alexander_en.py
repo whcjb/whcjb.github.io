@@ -151,10 +151,14 @@ RUNON_ONLY_NUM = re.compile(r'^[\s*]*\d{1,3}\s*[.,:]?\s*$')
 
 
 
-RAW_FIXES = ROOT / 'alexander_raw/psalms/raw_fixes.tsv'
+def raw_fixes_path(book_id):
+    # 每本书一张表。曾经写死成诗篇那张，结果发布以赛亚时拿诗篇的补丁去匹配
+    # 以赛亚第 2 章，命中 0 次直接中止——整条以赛亚链条从此跑不动（2026-09-23
+    # 加这张表时带进来的，2026-09-28 发现）。
+    return ROOT / f'alexander_raw/{book_id}/raw_fixes.tsv'
 
 
-def raw_fixes(chapter):
+def raw_fixes(book_id, chapter):
     """发布之前先打的补丁：**节号本身**被 OCR 读坏的那几处。
 
     节号读坏了，`transform` 认不出标题，整节的锚点与编号一起消失，而页面上
@@ -167,10 +171,11 @@ def raw_fixes(chapter):
     仍可复现），而锚点编号由 transform 统一分配，不会与后面的 manual_fixes 打架。
     每条都要命中，命中不到就报错——上游一改，这张表会静默失效。
     """
-    if not RAW_FIXES.exists():
+    path = raw_fixes_path(book_id)
+    if not path.exists():
         return []
     rows = []
-    for line in RAW_FIXES.read_text(encoding='utf-8').splitlines()[1:]:
+    for line in path.read_text(encoding='utf-8').splitlines()[1:]:
         if not line.strip():
             continue
         f = line.split('\t')
@@ -234,7 +239,7 @@ IE_SPACE = re.compile(r'\b([ie])\.([eg])\.')
 
 def transform(body, book_id, chapter, verse_re):
     body = IE_SPACE.sub(lambda m: f'{m.group(1)}. {m.group(2)}.', body)
-    for old, new in raw_fixes(chapter):
+    for old, new in raw_fixes(book_id, chapter):
         if body.count(old) != 1:
             raise SystemExit(f'✗ raw_fixes 第 {chapter} 章命中 '
                              f'{body.count(old)} 次（应为 1）：{old[:60]!r}')

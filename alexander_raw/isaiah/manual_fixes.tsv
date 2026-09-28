@@ -456,3 +456,21 @@ the reference of the passage to a &lt;•'distantly future" event	the reference 
 # 开引号粘在前一个词尾上（instead ofc = instead of + 开引号），以及 pasty = past, gone
 *it is pasty gone,*	*it is past, gone,*	img
 instead ofc the whole of the idols	instead of ' the whole of the idols	img
+
+# 2026-09-28 抽查卷二书页 420/445/470/480/490/500（isaiah_page_proofread.py 对影像）
+# 数字 1 被读成 J（五份扫描件一致读出一个独立字形；卷一第 9 章正在书页 153-182，p.156 合）
+Earlier Prophecies, p. J56.)	Earlier Prophecies, p. 156.)	wit+ctx
+# 11 被拆成 1 I（证人读 II / 11 / 1 1；士师记 11:7 即耶弗他）
+Judges 10: 16. 1 I: 7	Judges 10: 16. 11: 7	wit
+# 拉丁文 tribulatione 尾巴被读成 tribulations
+*in omni tribulations eorum	*in omni tribulatione eorum	wit
+# 德文 offenbar 首字母 o 读成 p；且斜体该在括号里面，不是括号在斜体里面
+evident *(pffenbar)* that	evident (*offenbar*) that	img+wit
+# are 被读成 «re（补词的圆括号是正体，与全书体例一致）
+The heavens* («re) *my throne	The heavens* (are) *my throne	img+wit
+# Paulus 中间多一个句点
+monarchy. Pa.ulus and Rosenm	monarchy. Paulus and Rosenm	wit
+# 问号被读成叹号（赛 66:1「我安息的地方在哪里呢？」；1847 证人作 ?）
+the place of my rest!* literally	the place of my rest?* literally	img+wit
+# 单引号两端被读成 *( 和 /，逗号一并吞掉
+indefinitely, *(*they i. e. men/ without	indefinitely, 'they i. e. men,' without	img+wit
