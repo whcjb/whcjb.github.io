@@ -418,9 +418,36 @@ COMPOUNDS = frozenset(
 
 
 def apply_manual(raw):
+    """逐条落人工改正。
+
+    **规则必须幂等。** 这一步在链条里跑两遍、每遍内部还跑多轮，
+    而修复表里有 48 条「在句尾补一个句点」这类规则，旧串是新串的前缀
+    （`…sentence` → `…sentence.`）——朴素 `replace` 第二遍又匹配上一次，
+    正文里就多出 `..`（实测 12 处）。同理还有在前面补字符的那一类。
+    办法是给这两类加环视：补在后面的，右边已经是那一截就不动；
+    补在前面的，左边已经是那一截就不动。
+    """
     n = 0
     for a, b in MANUAL_TEXT + MANUAL_FILE:
-        if a in raw:
+        if a not in raw:
+            continue
+        if b.startswith(a) and len(b) > len(a):          # 在后面补
+            pat = re.compile(re.escape(a) + r'(?!' + re.escape(b[len(a):]) + r')')
+            raw, k = pat.subn(b, raw)
+            n += k
+        elif b.endswith(a) and len(b) > len(a):          # 在前面补
+            pat = re.compile(r'(?<!' + re.escape(b[:len(b) - len(a)]) + r')'
+                             + re.escape(a))
+            raw, k = pat.subn(b, raw)
+            n += k
+        else:
+            # 读数自带的句尾标点与正文原有的重出：规则把 `…ruin` 换成 `…ruin.`，
+            # 而正文里紧跟着本来就是句点，于是写出 `ruin..`（实测 12 处）。
+            # 落盘时看一眼右边：已经是同一个标点就不再补。
+            if b and b[-1] in '.,;:' and not a.endswith(b[-1]):
+                pat = re.compile(re.escape(a) + r'(?=' + re.escape(b[-1]) + r')')
+                raw, k = pat.subn(b[:-1], raw)
+                n += k
             n += raw.count(a)
             raw = raw.replace(a, b)
     for pat, rep in MANUAL_RE:

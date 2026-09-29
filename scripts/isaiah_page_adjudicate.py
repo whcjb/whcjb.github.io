@@ -51,6 +51,23 @@ def norm(s):
     return re.sub(r'[^a-z0-9]', '', s.lower())
 
 
+def deaccent(s):
+    import unicodedata
+    return ''.join(c for c in unicodedata.normalize('NFD', s)
+                   if unicodedata.category(c) != 'Mn')
+
+
+def only_accents(a, b):
+    """两边只差变音符。
+
+    **这种事证人作不了证**：`_djvu.txt` 是同一批 OCR 出来的，变音符一律丢，
+    四份证人齐刷刷读作 `Doderlein`，于是「证人 4/4 支持我们的写法」——
+    而印面上明明是 `Döderlein`（约翰·克里斯托弗·德德莱因）。
+    只差变音符时，直接跳过证人那一层。
+    """
+    return a != b and deaccent(a) == deaccent(b)
+
+
 def punct_only(a, b):
     """两边剥掉标点数字之外的字符后逐字相同 = 只动了标点。"""
     keep = lambda s: re.sub(r'[^A-Za-zæœÆŒ]', '', s).lower()
@@ -284,8 +301,26 @@ def apply_edits(orig, ed):
     import sys as _s
     _s.path.insert(0, str(ROOT / 'scripts'))
     cur = re.sub(r'  +', ' ', cur)            # 删掉噪点字符后留下的双空格
+
+    # 改完留下「半个词 + 半个词」的，接起来。读数里跨行断开的词常常带着
+    # 那个空格回来（`deriva lion` 修成 `deriva tion`，其实是 `derivation`）。
+    # 只在**两半各自都不是词、接起来是词**时才动。
+    from alexander_lexicon import build as _b, is_word as _iw
+    _lx = _lex(_b)
+
+    def _join(mm):
+        a, b = mm.group(1), mm.group(2)
+        if not _iw(a, _lx) and not _iw(b, _lx) and _iw(a + b, _lx):
+            return a + b
+        return mm.group(0)
+    cur = re.sub(r'\b([A-Za-z]{2,}) ([a-z]{2,})\b', _join, cur)
     if DOUBLE_PUNCT.search(cur) and not DOUBLE_PUNCT.search(orig):
         return None                          # 改出了 `..` `,,`，一律不落
+    if orig in cur:
+        # **规则必须幂等**：`…50: 2, an` → `…50: 2, and` 里旧串是新串的前缀，
+        # 链条里 adjudicate 跑两遍，第二遍又匹配上一次，写出 `andd`。
+        # 这个坑反复了三次，根子就在这里：旧串只要还出现在新串里，就不许落。
+        return None
     if len(STAR.findall(cur)) != len(STAR.findall(orig)):
         if orig.startswith('*') and not cur.startswith('*'):
             cur = '*' + cur
@@ -351,6 +386,36 @@ def existing_pairs():
 _PAIRS = []
 
 
+def _lev(a, b, cap=2):
+    """小编辑距离，超过 cap 就提前收手。"""
+    if abs(len(a) - len(b)) > cap:
+        return cap + 1
+    prev = list(range(len(b) + 1))
+    for i, ca in enumerate(a, 1):
+        cur = [i]
+        for j, cb in enumerate(b, 1):
+            cur.append(min(prev[j] + 1, cur[j - 1] + 1,
+                           prev[j - 1] + (ca != cb)))
+        if min(cur) > cap:
+            return cap + 1
+        prev = cur
+    return prev[-1]
+
+
+def substituted(word, new):
+    """这个词是被**换成了一个相近的词**，还是整个不见了。
+
+    「不许删真词」那条闸本来是防模型漏引开头几个词（`speech,` 整段消失）。
+    但它把一整类真修复也挡住了：`Doderlein`→`Döderlein`、`Seeker`→`Secker`
+    （坎特伯雷大主教）、`shall`→`shalt`、`arid`→`and`、`quern`→`quem`、
+    `hie`→`hic`、`nee`→`nec`、`lam`→`I am`——**都是判词典认得的英文词，
+    放在这里却是误读**，一共八十多处。
+    判据：新串里只要有一个词跟它编辑距离 ≤2（短词 ≤1），就算换掉而不是删掉。
+    """
+    cap = 1 if len(word) <= 4 else 2
+    return any(_lev(word.lower(), w.lower(), cap) <= cap for w in WORD.findall(new))
+
+
 def undoes_earlier(orig, cur):
     """这一处改动是不是把前面某条修复原样改了回去。
 
@@ -388,6 +453,10 @@ def judge(vol, ours, img, pub, only_ch=None):
                else f'正文里出现 {n} 次，落盘会改错位置')
         return 'anchor', why, None, None
     ch, orig = got
+    # 锚的右边界后面紧跟的那个字符——补标点时要看它，
+    # 否则「句尾补句点」会补在本来就有的句点旁边，写出 `ruin..`（实测 12 处）。
+    _i = pub[ch].find(orig)
+    nxt = pub[ch][_i + len(orig)] if _i >= 0 and _i + len(orig) < len(pub[ch]) else ''
     # 锚被补到词边界之后，**读数也要跟着补**，否则逐词改动会落错。
     # `…50: 2, an` 补成 `…50: 2, and`，而读数还是 `…, and`，
     # 于是 `an`→`and` 落在 `and` 上，写出 `andd`。
@@ -412,13 +481,20 @@ def judge(vol, ours, img, pub, only_ch=None):
     flat_new = re.sub(r'[^A-Za-z]', '', new).lower()
     lost = [w for w in WORD.findall(orig)
             if len(w) >= 3 and is_word(w, lex0)
-            and re.sub(r'[^A-Za-z]', '', w).lower() not in flat_new]
+            and re.sub(r'[^A-Za-z]', '', w).lower() not in flat_new
+            and not substituted(w, new)]
     if lost:
         return 'review', f'会把真词 {lost[:3]} 从正文里删掉', orig, new
+
+    if new and new[-1] in '.,;:' and new[-1] == nxt and not orig.endswith(new[-1]):
+        return 'review', f'正文里这一处后面本来就是 {nxt!r}，补上去会写出双标点', orig, new
 
     back = undoes_earlier(orig, new)
     if back:
         return 'review', back, orig, new
+
+    if only_accents(ours, img):
+        return 'accept', '只差变音符，证人的 OCR 一律丢变音符、作不了证', orig, new
 
     wit = witness(vol)
     no, ni = norm(ours), norm(img)
