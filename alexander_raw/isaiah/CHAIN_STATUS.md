@@ -368,7 +368,33 @@ kramdown（以及一切 CommonMark 实现）要求开的那个 `*` 右边**紧�
 | 词距（四类） | ✓ 0 |
 | 括号配对 + `*(*` | ✓ 0 |
 
-## 还开着的（第三轮时的记录，已由第四、五轮更新）
+## 第六轮（同日）：verse-index 建好了
+
+`scripts/build_alexander_verse_index.py` —— 扫发布时就有的
+`<span class="ax-anchor" id="<book>-<ch>-<v>">`，按章归拢成胶囊页：
+
+| | 章 | 胶囊 | 产物 |
+|---|---|---|---|
+| 以赛亚 | 66 | **1277** | `alexander/isaiah/verse-index/index.html` |
+| 诗篇 | 150 | **2446** | `alexander/psalms/verse-index/index.html` |
+
+入口按钮只放书卷首页（step 07 §5），诗篇那页是中英共用的 layout，
+按钮用 `{% if page.zh != true %}` 挡住——索引里的胶囊链的是英文章节页。
+
+**验收不能只看「生成了多少胶囊」**：锚点写在 markdown 里，渲染后在不在页面上
+是另一回事。所以脚本带 `--check`，照着 `_site/` 逐个胶囊找落点：
+
+```bash
+bundle exec jekyll build --quiet
+python3 scripts/build_alexander_verse_index.py --check
+# isaiah: 胶囊 1277 个，落空 0 个
+# psalms: 胶囊 2446 个，落空 0 个
+```
+
+赛 4:1、64:11 印面本来就没有节标题，因此没有胶囊——**宁可缺一节，
+也不要点过去落到隔壁节**。
+
+## 还开着的（第三轮时的记录，已由第四、五、六轮更新）
 
 1. **逐页实读**：1153 页读了 24 页（2%），实测 1.46 处/页，估计还有约 1600 处。
    `python3 scripts/isaiah_page_proofread.py --vol N --pages a,b,c --round 1`

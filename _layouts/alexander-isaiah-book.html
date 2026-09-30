@@ -80,6 +80,14 @@ layout: default
         <span><i class="ax-dot ax-dot-en"></i>浅色＝英文原著，点进英文页</span>
       </div>
 
+      {%- comment -%}
+        经文索引入口。按 step 07 §5，只放在书卷首页，不进全局书卷列表
+        （那是给「一本书」用的位置，索引页挤进去会打乱列表）。
+      {%- endcomment -%}
+      <a class="ax-vi-link" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/verse-index/">
+        📖 Verse Index<span>逐节检索，点节号直接落到该节注释</span>
+      </a>
+
       {% assign groups = "1,39,前部|40,66,后部" | split: "|" %}
       {% for g in groups %}
         {% assign gp = g | split: "," %}
@@ -126,6 +134,16 @@ layout: default
     </div>
   </div>
 </div>
+
+<style>
+.ax-vi-link { display: inline-flex; align-items: baseline; gap: 10px;
+  margin: 0 0 26px; padding: 8px 14px; border-radius: 4px;
+  background: #fdfaf7; border: 1px solid #e2d2cc; color: #7d2f2f;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none !important; }
+.ax-vi-link:hover { background: #7d2f2f; border-color: #7d2f2f; color: #fdfaf7; }
+.ax-vi-link span { font-size: 12px; opacity: .78; }
+.ax-vi-link:hover span { color: #fdfaf7; }
+</style>
 
 <style>
 .alexander-wrap {

@@ -43,6 +43,17 @@ layout: default
       {% endif %}
 
 
+      {%- comment -%}
+        经文索引入口。只在**英文**目录页出：索引里的胶囊链到英文章节页，
+        挂在中文页上点过去会跳出中文（中文那套要另建一份索引）。
+        按 step 07 §5，只放书卷首页，不进全局书卷列表。
+      {%- endcomment -%}
+      {% if page.zh != true %}
+      <a class="ax-vi-link" href="{{ site.baseurl }}/alexander/{{ page.book_id }}/verse-index/">
+        📖 Verse Index<span>逐节检索，点节号直接落到该节注释</span>
+      </a>
+      {% endif %}
+
       {% assign groups = "1,41,卷一|42,72,卷二|73,89,卷三|90,106,卷四|107,150,卷五" | split: "|" %}
       {% for g in groups %}
         {% assign gp = g | split: "," %}
@@ -91,6 +102,16 @@ layout: default
     </div>
   </div>
 </div>
+
+<style>
+.ax-vi-link { display: inline-flex; align-items: baseline; gap: 10px;
+  margin: 0 0 26px; padding: 8px 14px; border-radius: 4px;
+  background: #fdfaf7; border: 1px solid #e2d2cc; color: #7d2f2f;
+  font-family: Georgia, serif; font-size: 14px; text-decoration: none !important; }
+.ax-vi-link:hover { background: #7d2f2f; border-color: #7d2f2f; color: #fdfaf7; }
+.ax-vi-link span { font-size: 12px; opacity: .78; }
+.ax-vi-link:hover span { color: #fdfaf7; }
+</style>
 
 <style>
 .alexander-wrap {
