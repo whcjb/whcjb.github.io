@@ -27,9 +27,9 @@ import translate_filibi as tf                     # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 
 BOOK_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书',
-           'romans': '罗马书'}
+           'romans': '罗马书', 'ephesians': '以弗所书'}
 BOOK_EN = {'1corinthians': '1 Corinthians', '2corinthians': '2 Corinthians',
-           'romans': 'Romans'}
+           'romans': 'Romans', 'ephesians': 'Ephesians'}
 
 # {book_cn} 由 build_system() 按当前书卷填入（前书/后书用词不同，不能写死）。
 SYSTEM_TMPL = (
