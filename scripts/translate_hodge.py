@@ -54,7 +54,10 @@ SYSTEM_TMPL = (
     "5. 圣经引用的书卷章节号要译（{book_en} 3:5 → {book_cn} 3:5），"
     "章节数字本身不动。\n"
     "\n"
-    "红色 span 里是英文钦定本经文，按和合本语感译成庄重的经文体，仍留在原 span 内。"
+    "红色 span 里是英文钦定本经文，按和合本语感译成庄重的经文体，仍留在原 span 内。\n"
+    "\n"
+    "引号一律用弯引号“”（含嵌套时内层用‘’），不要用直角引号「」——"
+    "逐段翻译时两种混用，同一页上下两段就会不一致。"
 )
 
 
@@ -97,7 +100,15 @@ def translate_section(book: str, sec: str, resume: bool, publish: bool):
     zh_lines = tf.cached_translate([lines[i] for i in idxs], resume)
     out = list(lines)
     for i, zh in zip(idxs, zh_lines):
-        out[i] = re.sub(r'<<<[^>]*>>>', '', zh).strip()
+        zh = re.sub(r'<<<[^>]*>>>', '', zh).strip()
+        # 脚注定义的 `[^fN]:` 是 kramdown 的结构标记，不是标点——模型会顺手把
+        # 半角冒号译成全角 `：`，定义就此失效，正文里的引用变成孤儿
+        # （以弗所书 ch4 的 f12、林前 ch5 的一处都是这样，audit 第 8 项
+        # ref/def MISMATCH 抓得到，但要人去看）。按英文原行的标记强制还原。
+        m_def = re.match(r'^\s*(\[\^[Ff]?[Tt]?\d+[A-Za-z]?\])\s*:', lines[i])
+        if m_def:
+            zh = re.sub(r'^\s*\[\^[^\]]+\]\s*[:：]\s*', m_def.group(1) + ': ', zh)
+        out[i] = zh
 
     def fv(k, default=''):
         m = re.search(rf'^{k}:\s*(.+)$', fm, re.M)

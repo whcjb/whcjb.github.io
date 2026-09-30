@@ -70,6 +70,15 @@ HEAD_V_MULTI_RE = re.compile(
     r'^V[sS]\.\s*(\d{1,3}(?:\s*[.,]\s*\d{1,3})*)\s*\.?\s*(?=[\s<])')
 
 
+# 中文页的节号头：`第 1 节` / `第1节`（空格可有可无），复合写法
+# `第 1、2 节` / `第 1-2 节` 一并认。英文页是 `V. 1.`，翻译时按中文习惯改写成
+# 这个形态，所以中文页不能靠继承英文页的锚点——发布链条只要在「重发英文页」
+# 与「补锚点」之间翻译了某一章，那一章的中文页就一个锚点都没有
+# （以弗所书 ch4 只继承到 1 个、ch6 2 个，就是这么来的）。
+HEAD_CN_RE = re.compile(
+    r'^第\s*(\d{1,3}(?:\s*[、,，]\s*\d{1,3}|\s*[-–至]\s*\d{1,3})*)\s*节')
+
+
 def parse_verses(spec: str):
     """'6, 7' → [6,7]；'3-5' → [3,4,5]；'32 33' → [32,33]。"""
     verses = []
@@ -79,7 +88,7 @@ def parse_verses(spec: str):
             part = part.replace('l', '1')      # 见 HEAD_V_ONE_RE 上方注释
         if not part:
             continue
-        m = re.fullmatch(r'(\d{1,3})\s*[-–]\s*(\d{1,3})', part)
+        m = re.fullmatch(r'(\d{1,3})\s*[-–至]\s*(\d{1,3})', part)
         if m:
             lo, hi = int(m.group(1)), int(m.group(2))
             if lo <= hi and hi - lo <= 60:
@@ -105,7 +114,8 @@ def process(path: Path, book: str, ch: str, write: bool):
     n_anchor = 0
     for line in text.split('\n'):
         m = (HEAD_RE.match(line) or HEAD_VERSE_RE.match(line)
-             or HEAD_V_MULTI_RE.match(line) or HEAD_V_ONE_RE.match(line))
+             or HEAD_V_MULTI_RE.match(line) or HEAD_V_ONE_RE.match(line)
+             or HEAD_CN_RE.match(line))
         if m:
             for v in parse_verses(m.group(1)):
                 seen[v] = seen.get(v, 0) + 1
