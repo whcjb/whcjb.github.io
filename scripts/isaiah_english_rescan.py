@@ -181,7 +181,12 @@ def find_whole(flat, needle):
 
 
 def trim_reading(reading):
-    """读数两端剪到字母为止（与 isaiah_apply_hebrew 同一条口径）。"""
+    """读数两端剪到字母为止（与 isaiah_apply_hebrew 同一条口径）。
+
+    代价：读数自己带的**真**标点也会被剪掉。全书量过只有两处
+    （`firel → fire?`、`signl → sign?`），两处都是问号，都已由 manual_fixes
+    按影像补回。剪比不剪安全得多——不剪那一版把判读器刚清掉的双逗号又写了
+    回来（见 `apply_it` 里的注释），所以这条口径不动，只在表里补那两处。"""
     keep = lambda ch: ch.isalnum() or unicodedata.combining(ch)
     i, j = 0, len(reading)
     while i < j and not keep(reading[i]):
