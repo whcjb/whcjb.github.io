@@ -114,6 +114,16 @@ def render_verse(m, book_id, chapter, num):
     return f'{anchor}<span class="ax-vnum">{inner}</span>' + (' *' if reopen else '')
 
 
+# 开斜体后面贴着词距 = 这一段根本不会变成斜体。kramdown（以及一切
+# CommonMark 实现）要求开的那个 `*` 右边紧跟非空白，所以
+# `<span class="ax-vnum">3.</span> * Then came forth…` 渲染出来是
+# **一对原样印在页面上的星号**，整节译文的斜体全丢。来路是 `render_verse`
+# 补回的那个 `' *'` 后面又跟着原文自带的词距。
+# 星号左边是空白 → 它一定是「开」的那一个（闭的那一个左边永远是字母），
+# 转义过的 `\*`（希伯来残渣）不算。实测以赛亚 4 章、诗篇 6 篇中招。
+OPEN_STAR_SPACE = re.compile(r'(?<=\s)(?<!\\)\*[ \t]+')
+
+
 # 本流水线只产 `<span …>` 与 `<!-- … -->` 两种标记，别的都不是我们写的
 OURS = re.compile(r'</?span\b[^<>]*>|<!--')
 
@@ -342,7 +352,7 @@ def transform(body, book_id, chapter, verse_re):
             # kramdown 会把 `* ` 开头的行当无序列表。正文不该有，防一手。
             line = escape_stray_lt(line)
             out.append('\\' + line if line.startswith('* ') else line)
-    return '\n'.join(out), n_anchor
+    return OPEN_STAR_SPACE.sub('*', '\n'.join(out)), n_anchor
 
 
 def existing_date(path):

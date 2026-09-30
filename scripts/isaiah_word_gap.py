@@ -53,13 +53,19 @@ ABBREV = {a.lower() for a in A.ABBREV} | {'etc', 'ad', 'loc', 'ed', 'vo', 'fol'}
 HYPHEN = re.compile(r'\b([A-Za-z]{2,})-([a-z]{1,5})\b')
 JOIN = re.compile(r'\b([A-Za-z]{2,}\)?)([,;:])([A-Za-z][a-z]{1,})\b')
 DOT = re.compile(r'\b([A-Za-z]{2,})\.([A-Za-z][a-z]{1,})\b')
+# 引号顶掉词距的四种写法：词"词 / 词"）/ 词" *斜体 / *斜体 "词
+QUOTE = [re.compile(r'\b([A-Za-z]{2,})\*?"\*?([A-Za-z]{2,})\b'),
+         re.compile(r'\b([A-Za-z]{3,})"(\))'),
+         re.compile(r'\b([A-Za-z]{1,3})" (\*[A-Za-z]{2,})'),
+         re.compile(r'(\*[A-Za-z]{1,3}) "([A-Za-z]{2,})\b')]
 
 LEX = L.build()
 # 判词典对两字母串一律放行（`Ji`、`aa` 都算「词」），这三条判据两边都靠
 # 「是不是真词」立住，放行两字母串就等于把希伯来残串 `Ji:aa`、`'is-a`
 # 也收进来。两字母的真词是个封闭集合，直接列出来。
 TWO = {'of', 'to', 'in', 'is', 'it', 'as', 'at', 'by', 'be', 'he', 'we', 'or',
-       'on', 'an', 'no', 'so', 'do', 'if', 'us', 'my', 'me', 'up', 'am'}
+       'on', 'an', 'no', 'so', 'do', 'if', 'us', 'my', 'me', 'up', 'am',
+       'a', 'i', 'o'}
 
 
 def word(w):
@@ -102,6 +108,16 @@ def scan():
             if not word(right) or right[0].isupper() == right[1:].isupper():
                 continue
             out.append(row(m, '③ 墨点读成句点'))
+        for pat in QUOTE:
+            for m in pat.finditer(masked):
+                left = m.group(1).lstrip('*')
+                right = m.group(2).lstrip('*')
+                if right == ')':
+                    if not word(left):
+                        continue
+                elif not (word(left) and word(right)):
+                    continue
+                out.append(row(m, '④ 墨点读成引号'))
     return out
 
 
@@ -109,6 +125,7 @@ NOTE = {
     '① 墨点读成连字符': '墨点被读成连字符（影像：那一点比同行真连字符细得多、位置偏下）',
     '② 标点后缺词距': '标点后的词距整个丢了（英文排印里逗号后必有词距，两边又都是真词）',
     '③ 墨点读成句点': '墨点被读成句点（与连字符那一类同源，只是读成了句点）',
+    '④ 墨点读成引号': '墨点被读成双引号，顶掉了那个词距',
 }
 
 
@@ -118,6 +135,13 @@ def repair(token, kind):
         return token.replace('-', ' ', 1)
     if kind.startswith('③'):
         return token.replace('.', ' ', 1)
+    if kind.startswith('④'):
+        # 引号旁边本来就有词距或括号的（`cerastes")`、`a" *sign`、`*a "son`），
+        # 删掉引号即可；`idea"of` 这种引号自己占着词距的位置，才换成空格。
+        i = token.index('"')
+        near = token[i - 1:i] + token[i + 1:i + 2]
+        drop = any(c in ' )*' for c in near)
+        return token[:i] + ('' if drop else ' ') + token[i + 1:]
     i = min(j for j, c in enumerate(token) if c in ',;:')
     return token[:i + 1] + ' ' + token[i + 1:]
 

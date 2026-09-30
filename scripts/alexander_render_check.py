@@ -10,6 +10,8 @@ markdown 层面数星号是**数不清开闭的**——`*a* 正文 *b*` 里中�
               会从那里一路吃到下一个 `>`，中间的字在页面上直接消失
   斜体跑飞    `<em>` 内容首尾带空白 = 归一化没到不动点
   斜体过长    单个 `<em>` 跨越几百字 = 少了一个闭合星号，整段被拖进斜体
+  开斜体贴词距 `* Then came forth` —— markdown 不认它是斜体，整节译文的
+              星号原样印在页面上；前一条看不见它，因为这里根本没有 <em> 生出来
   锚点总数    每轮比对，数字必须稳定
   重复锚点    同一 id 出现多次，页内跳转会跳错位置
 
@@ -33,6 +35,7 @@ WORD = re.compile(r"[A-Za-zæœÆŒ][A-Za-zæœÆŒ'’-]*")
 TAG = re.compile(r'<[^<>]+>')
 EM = re.compile(r'<em>(.*?)</em>', re.S)
 LONG_EM = 400          # 一个 <em> 超过这么多字符，多半是少了一个闭合星号
+OPEN_STAR_SPACE = re.compile(r'(?<=\s)(?<!\\)\*[ \t]+')
 
 
 def render(md):
@@ -113,6 +116,17 @@ def main(book='psalms', only=None):
                 print(f'  [{f.stem}] 未转义星号是奇数：'
                       f'{TAG.sub("", line)[:60]!r}…')
                 break
+
+        # ③c 开斜体贴着词距：`<span class="ax-vnum">3.</span> * Then came forth…`
+        # kramdown（以及一切 CommonMark 实现）要求开的那个 `*` 右边紧跟非空白，
+        # 否则它根本不是强调——**整节译文的斜体全丢，两个星号原样印在页面上**。
+        # 上面那条「<em> 首尾带空白」看不见这一类：这里压根没有 <em> 生出来。
+        # 星号左边是空白 → 它一定是「开」的那一个（闭的左边永远是字母）。
+        for m in OPEN_STAR_SPACE.finditer(body):
+            bad['开斜体贴着词距'] += 1
+            print(f'  [{f.stem}] 开斜体后面是词距，这一段不会变成斜体：'
+                  f'{TAG.sub("", body[m.start():m.start() + 60])!r}…')
+            break
 
         # ④⑤ 锚点
         ids = re.findall(r'id="([^"]+)"', body)

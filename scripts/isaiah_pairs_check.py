@@ -36,6 +36,27 @@ FOREIGN = re.compile(r'[^\x00-\x7FÀ-ɏ]')
 PAGE_BREAK = re.compile(r'\n\n<!-- PAGE \d+ -->\n')
 
 
+QUOTE_AS_PAREN = re.compile(r'\*\(\* ?')
+
+
+def quote_as_paren():
+    """`*(*` —— 开引号被读成左括号，又被裹进一对星号。
+
+    段落级的括号计数**看不见它**：这些段里几乎都有希伯来残渣，被残渣闸放行了。
+    可它的形状是唯一的：全书 13 处，每一处的引文都在同一句里以 `'` 收尾，
+    影像也坐实（v1p47 `Knobel—'Say ye of the righteous`、
+    v1p105 `firebrands—'the tails`、v1p329 `unfinished: 'in the day`）。
+    形状唯一就不必绕过残渣闸，单独数一遍。
+    """
+    out = []
+    for p in sorted(SRC.glob('*.md'), key=lambda x: x.stem):
+        text = p.read_text(encoding='utf-8')
+        for m in QUOTE_AS_PAREN.finditer(text):
+            out.append((p.stem, text[max(0, m.start() - 45):m.end() + 40]
+                        .replace('\n', ' ')))
+    return out
+
+
 def printed_as_is():
     """已核定「印面本来就没有配对」的段落：章 → [那一截原文]。
 
@@ -74,6 +95,8 @@ def unmatched(body, pair):
 
 
 def main():
+    for sec, ctx in quote_as_paren():
+        print(f'[{sec}] `*(*` 开引号被读成左括号\t…{ctx}…')
     as_is = printed_as_is()
     rows = []
     for p in sorted(SRC.glob('*.md'), key=lambda x: x.stem):
@@ -110,6 +133,8 @@ def main():
             k = unmatched(body, pair)
             where = body[max(0, k - 45):k + 30].replace('\n', ' ') if k >= 0 else ''
             print(f'[{sec}] 第{i}段 {pair} 差 {diff:+d}\t…{where}…')
+    n_q = len(quote_as_paren())
+    print(f'`*(*` 开引号读成左括号：{n_q} 处')
     print(f'括号数不上的段落：{len(rows)} 段，其中不含外文残渣的 {len(clean)} 段'
           '（含残渣的那些多半是 OCR 读崩的活字，按原样保留）')
     return 0
