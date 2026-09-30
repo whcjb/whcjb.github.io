@@ -66,6 +66,14 @@ authors:
     work_cn: "马太福音注释"
     work_en: "The Gospel of the Kingdom"
     books: 1
+  - id: durham
+    name: "詹姆斯·达拉谟"
+    short: "达拉谟"
+    en: "James Durham"
+    years: "1622–1658"
+    work_cn: "启示录注释"
+    work_en: "A Commentary upon the Book of the Revelation"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -377,7 +385,7 @@ books:
     testament: nt
     chapters: 6
     links:
-      - {author: hodge, path: "/hodge/ephesians/", url_tpl: "/hodge/ephesians/__CH__/", title_cn: "以弗所书注释", title_en: "An Exposition of Ephesians", c0: "#152840", c1: "#2b5080"}
+      - {author: hodge, path: "/hodge/ephesians/zh/", url_tpl: "/hodge/ephesians/zh/__CH__/", title_cn: "以弗所书注释", title_en: "An Exposition of Ephesians", c0: "#152840", c1: "#2b5080"}
   - id: philippians
     name: "腓立比书"
     en: "Philippians"
@@ -483,5 +491,6 @@ books:
     testament: nt
     chapters: 22
     links:
+      - {author: durham, path: "/durham/revelation/", url_tpl: "/durham/revelation/__CH__/", title_cn: "启示录注释", title_en: "A Commentary upon the Book of the Revelation", c0: "#4a3566", c1: "#674c8e"}
 
 harmony:

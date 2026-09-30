@@ -79,6 +79,12 @@ AUTHORS = OrderedDict([
                       years='1834–1892', dir='spurgeon',
                       work_cn='马太福音注释',
                       work_en='The Gospel of the Kingdom')),
+    # 达拉谟：苏格兰盟约派，格拉斯哥牧师，与威斯敏斯特会议同期。
+    # 《启示录注释》1658 年初版，由生前讲章整理，22 章 94 讲。
+    ('durham',  dict(name='詹姆斯·达拉谟', short='达拉谟', en='James Durham',
+                     years='1622–1658', dir='durham',
+                     work_cn='启示录注释',
+                     work_en='A Commentary upon the Book of the Revelation')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -112,6 +118,10 @@ AUTHOR_COLORS = {
     # 深端 #3a3018 的最小 ΔE 30.9。同批算过的 #10708c 离站点 Hux 蓝只有 8.9、
     # #5a4828 离毕列志棕只有 21.5，都弃用。
     'spurgeon': ('#3a3018', '#4a3b22'),
+    # 达拉谟深紫：与既有九色的 ΔE 最小 27.4（曼顿梅 27.4 / 贺智靛蓝 27.7），
+    # 与站上先例同档（曼顿 27.3 / 亚历山大 26.9 / 达文南特 29.0）。
+    # 同批算过的 #543878(24.7) / #7c437f(22.0) 都离曼顿梅太近，弃用。
+    'durham':  ('#4a3566', '#674c8e'),
     'alexander': ('#5f2323', '#7d2f2f'),
 }
 
@@ -127,6 +137,8 @@ BOOK_TITLES = {
                                 'An Exposition of Ephesians'),
     ('spurgeon', 'matthew'):   ('马太福音注释',
                                 'The Gospel of the Kingdom'),
+    ('durham', 'revelation'):  ('启示录注释',
+                                'A Commentary upon the Book of the Revelation'),
     ('alexander', 'psalms'):   ('诗篇注释',
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',
@@ -152,13 +164,13 @@ BOOK_TITLES = {
 COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
-    'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22',
+    'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
-    'spurgeon': '司布真注释',
+    'spurgeon': '司布真注释', 'durham': '达拉谟注释',
 }
 
 
@@ -176,7 +188,7 @@ def _chapter_range(d: Path):
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
-                'alexander': 'en', 'spurgeon': 'en'}
+                'alexander': 'en', 'spurgeon': 'en', 'durham': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

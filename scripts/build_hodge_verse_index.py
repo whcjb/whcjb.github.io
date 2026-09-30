@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 # author → 目录名；司布真马太福音与贺智同型（同样的锚点 id 规则、同样的
 # chapter 页路由），所以共用本脚本，只把作者目录参数化。
 AUTHOR_OF = {'1corinthians': 'hodge', '2corinthians': 'hodge', 'romans': 'hodge',
-             'ephesians': 'hodge', 'matthew': 'spurgeon'}
+             'ephesians': 'hodge', 'matthew': 'spurgeon', 'revelation': 'durham'}
 
 BOOKS = {
     '1corinthians': {'cn': '哥林多前书', 'en': '1 Corinthians', 'chapters': 16},
@@ -34,6 +34,7 @@ BOOKS = {
     'romans': {'cn': '罗马书', 'en': 'Romans', 'chapters': 16},
     'ephesians': {'cn': '以弗所书', 'en': 'Ephesians', 'chapters': 6},
     'matthew': {'cn': '马太福音', 'en': 'Matthew', 'chapters': 28},
+    'revelation': {'cn': '启示录', 'en': 'Revelation', 'chapters': 22},
 }
 
 # 裸 per-verse id 才要；`-2`/`-3` 重复段后缀不进索引（\d+ 不吃 -，天然排除）

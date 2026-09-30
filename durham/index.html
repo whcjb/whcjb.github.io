@@ -1,0 +1,91 @@
+---
+layout: default
+title: 詹姆斯·达拉谟 启示录注释
+description: 詹姆斯·达拉谟（James Durham, 1622–1658）苏格兰盟约派牧师，《启示录注释》全文在线阅读，22 章 94 讲。
+---
+{%- comment -%}
+  达拉谟注释总目。自成一家，与 owen/ bridges/ hodge/ 同级。
+  样式与 durham-book / durham-chapter 同源（深紫 #674c8e）。
+{%- endcomment -%}
+
+<div class="container durham-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="durham-hero">
+        <h1>詹姆斯·达拉谟</h1>
+        <div class="durham-hero-en">James Durham · 1622&ndash;1658</div>
+        <div class="durham-hero-rule"><i></i></div>
+        <p class="durham-intro">
+          苏格兰盟约派牧师，格拉斯哥大教堂讲道者，与威斯敏斯特会议同期。
+          三十六岁病逝，著述多由讲章整理而成。
+          这部《启示录注释》是十七世纪改革宗释经的代表作之一，
+          逐讲解经之外另有三十余篇「离题论述」，专论教会治理、圣礼、良心等题。
+        </p>
+      </div>
+
+      <div class="durham-books">
+        <a class="durham-book" href="{{ site.baseurl }}/durham/revelation/">
+          <span class="durham-book-cn">启示录注释</span>
+          <span class="durham-book-en">A Commentary upon the Book of the Revelation</span>
+          <span class="durham-book-meta">1658 &middot; 22 章 94 讲 &middot; 仅英文</span>
+        </a>
+      </div>
+
+      <p class="durham-note" style="margin-top:18px;">
+        原书 1658 年初版于爱丁堡，由作者生前讲章整理，卷首致读者序署名 ROBERT BALIE（罗伯特·贝利），
+        他自述曾与达拉谟同工于格拉斯哥。中译尚未开始。
+      </p>
+
+      <p class="durham-note">
+        底本为 AGES Digital Library 电子版（Version 2.0, 1996&ndash;1997）。原书已进入公有领域。
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  :root { --durham-ink: #674c8e; --durham-rule: #d7cfe2; --durham-gold: #b08d57; }
+  body:has(.durham-wrap) { background: #fbfaf7; }
+  .durham-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }
+  .durham-hero { text-align: center; margin: 34px 0 12px; }
+  .durham-hero h1 {
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 30px; letter-spacing: .26em; text-indent: .26em;
+    color: var(--durham-ink); font-weight: 600; margin: 0 0 10px;
+  }
+  .durham-hero-en { font-style: italic; font-size: 13px; color: #8a8275; letter-spacing: .05em; }
+  .durham-hero-rule { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 16px 0 0; }
+  .durham-hero-rule::before, .durham-hero-rule::after { content: ''; height: 1px; width: 62px; background: var(--durham-rule); }
+  .durham-hero-rule i { width: 4px; height: 4px; background: var(--durham-gold); transform: rotate(45deg); display: block; }
+  .durham-intro {
+    max-width: 620px; margin: 24px auto 0; font-size: 14px; line-height: 1.95; color: #6d6a63;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+  .durham-books { display: grid; gap: 12px; margin: 38px 0 26px; }
+  .durham-book {
+    display: block; padding: 20px 22px; background: #fff;
+    border: 1px solid var(--durham-rule); border-left: 3px solid var(--durham-ink);
+    border-radius: 3px; text-decoration: none !important;
+    transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
+  }
+  .durham-book:hover {
+    background: linear-gradient(135deg, #152840, #2b5080);
+    transform: translateY(-1px); box-shadow: 0 5px 14px rgba(45,45,45,.24);
+  }
+  .durham-book-cn {
+    color: var(--durham-ink);
+    display: block; font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 18px; letter-spacing: .05em;
+  }
+  .durham-book-en { display: block; font-style: italic; font-size: 12.5px; color: #8a8275; margin-top: 4px; }
+  .durham-book-meta { display: block; font-size: 11.5px; color: #a89e8c; margin-top: 7px; letter-spacing: .06em; }
+  .durham-book:hover .durham-book-cn { color: #f4f1e8; }
+  .durham-book:hover .durham-book-en { color: rgba(244,241,232,.72); }
+  .durham-book:hover .durham-book-meta { color: rgba(244,241,232,.6); }
+  .durham-note {
+    font-size: 12px; color: #a89e8c; text-align: center; margin-top: 34px;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+</style>

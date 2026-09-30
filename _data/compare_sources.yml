@@ -140,6 +140,9 @@ sources:
   malachi:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/malachi/__CH__/", accent: "#800000", ch_from: 1, ch_to: 4}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/malachi/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
+  matthew:
+    - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/matthew/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 28}
+    - {key: spurgeon, author: spurgeon, lang: zh, label: "司布真注释", url_tpl: "/spurgeon/matthew/zh/__CH__/", accent: "#4a3b22", ch_from: 1, ch_to: 17}
   micah:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/micah/__CH__/", accent: "#800000", ch_from: 1, ch_to: 7}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/micah/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 7}
