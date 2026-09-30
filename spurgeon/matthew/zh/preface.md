@@ -14,7 +14,7 @@ zh: true
 
 <p class="title-block-h2" style="text-align:center; font-size:16px; font-weight:bold; margin:18px 0 12px;" markdown="1"><span style="color:#006411">引言</span></p>
 
-这本久盼的书,如今要送到许多欢迎它的朋友手中;引介之语,当简而少。
+这本久盼的书，如今要送到许多欢迎它的朋友手中；引介之语，当简而少。
 
 这位蒙爱的作者已归回永远的赏赐中，他是“永远蒙耶和华赐福的人”；然而他留给我们这最后一份宝贵的遗产，牵引我们的心随他一同向天。
 

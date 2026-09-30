@@ -327,7 +327,7 @@ books:
     testament: nt
     chapters: 28
     links:
-      - {author: spurgeon, path: "/spurgeon/matthew/", url_tpl: "/spurgeon/matthew/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
+      - {author: spurgeon, path: "/spurgeon/matthew/zh/", url_tpl: "/spurgeon/matthew/zh/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
   - id: mark
     name: "马可福音"
     en: "Mark"
@@ -491,6 +491,6 @@ books:
     testament: nt
     chapters: 22
     links:
-      - {author: durham, path: "/durham/revelation/", url_tpl: "/durham/revelation/__CH__/", title_cn: "启示录注释", title_en: "A Commentary upon the Book of the Revelation", c0: "#4a3566", c1: "#674c8e"}
+      - {author: durham, path: "/durham/revelation/zh/", url_tpl: "/durham/revelation/zh/__CH__/", title_cn: "启示录注释", title_en: "A Commentary upon the Book of the Revelation", c0: "#4a3566", c1: "#674c8e"}
 
 harmony:
