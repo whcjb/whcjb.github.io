@@ -27,8 +27,21 @@ layout: default
           没译到的章不给链接，免得点进 404。
         {%- endcomment -%}
         {%- assign zh_idx = site.pages | where_exp: "p", "p.path contains 'hodge/' " -%}
-        {% if page.zh %}<a class="hodge-lang" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/">English &rarr;</a>
-        {% else %}<a class="hodge-lang" href="{{ site.baseurl }}/hodge/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
+        {%- comment -%}
+          中英入口。默认沿用「英文在 /hodge/<book>/、中文在 …/zh/」的老结构；
+          以弗所书起改成「中文放书首页、英文退到 …/en/」，由 front matter 的
+          en_index / zh_index 覆盖（用户 2026-09-30 指定）。章节页不再放语言
+          入口，切换只在这一页发生。
+        {%- endcomment -%}
+        {%- comment -%}
+          ⚠️ 回退值必须先 assign 成变量再喂给 default：
+          `{{ a | default: b | append: c }}` 是「先 default 再 append」，
+          a 有值时也会被接上 book_id，链接就坏了。
+        {%- endcomment -%}
+        {%- assign en_fallback = '/hodge/' | append: page.book_id | append: '/' -%}
+        {%- assign zh_fallback = '/hodge/' | append: page.book_id | append: '/zh/' -%}
+        {% if page.zh %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.en_index | default: en_fallback }}">English &rarr;</a>
+        {% else %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.zh_index | default: zh_fallback }}">中文版 &rarr;</a>{% endif %}
       </div>
 
       <h1 class="hodge-title">{{ page.book_name }}</h1>

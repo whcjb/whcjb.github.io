@@ -49,6 +49,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# 中文版放在书首页、英文退到 …/en/ 的书卷（用户 2026-09-30 指定，从以弗所书起）。
+# 这一步必须写在发布脚本里：index.html 每次重发都会被重写，
+# 不认这个集合的话，一重发就把书首页打回英文，中文入口又没了。
+ZH_PRIMARY = {'ephesians'}
+
 # 段落里的章头：剥掉 HTML 标签与 markdown 粗体后整段是 `CHAPTER <罗马数字>`。
 # 字符集含 l/O：AGES 数字化时罗马数字里混进字母是老毛病（以弗所书 `CHAPTER Vl`）。
 _CHAP_TEXT_RE = re.compile(r'^CHAPTER\s+([IVXLCDMlO]+)\.?$')
@@ -152,6 +157,7 @@ def main():
     ap.add_argument('--src', help='源 md，默认 hodge_raw/<book>/hodge_<book>.md')
     ap.add_argument('--out-dir', help='输出目录，默认 hodge/<book>')
     ap.add_argument('--date', help='front matter 的 date（YYYY-MM-DD HH:MM），默认当前时刻')
+    ap.add_argument('--name-zh', help='中文 book_name（ZH_PRIMARY 的书卷用在书首页）')
     args = ap.parse_args()
 
     book = args.book
@@ -180,6 +186,9 @@ def main():
         fm = ['---', 'layout: hodge-chapter', f'book_id: {book}',
               f'book_name: "{book_name}"', f'title: "{titles[key]}"',
               f'zh_url: "/hodge/{book}/zh/{key}/"', f'date: {stamp}']
+        if book in ZH_PRIMARY:
+            # 英文章节的「← 书名」要回英文目录页，不能回中文书首页
+            fm.append(f'book_home: "/hodge/{book}/en/"')
         if idx > 0:
             prev = keys[idx - 1]
             fm += [f'prev_section: {prev}', f'prev_label: "{labels[prev]}"']
@@ -190,14 +199,24 @@ def main():
         (out_dir / f'{key}.md').write_text(
             '\n'.join(fm) + '\n\n' + bodies[key], encoding='utf-8')
 
-    (out_dir / 'index.html').write_text(
-        '---\n'
-        'layout: hodge-book\n'
-        f'book_id: {book}\n'
-        f'book_name: "{book_name}"\n'
-        f'chapters: {len(chapters)}\n'
-        'has_preface: true\n'
-        '---\n', encoding='utf-8')
+    def _index(path: Path, name: str, extra: str):
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text('---\n'
+                        'layout: hodge-book\n'
+                        f'book_id: {book}\n'
+                        f'book_name: "{name}"\n'
+                        f'chapters: {len(chapters)}\n'
+                        'has_preface: true\n'
+                        + extra + '---\n', encoding='utf-8')
+
+    if book in ZH_PRIMARY:
+        # 书首页 = 中文；英文退到 …/en/
+        _index(out_dir / 'index.html', args.name_zh or book_name,
+               f'zh: true\nen_index: /hodge/{book}/en/\n')
+        _index(out_dir / 'en' / 'index.html', book_name,
+               f'zh_index: /hodge/{book}/\n')
+    else:
+        _index(out_dir / 'index.html', book_name, '')
     print(f'  → {out_dir}/ 共 {len(keys)} 个页面 + index.html')
 
 

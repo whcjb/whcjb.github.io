@@ -4,7 +4,8 @@ book_id: ephesians
 book_name: "Hodge on Ephesians"
 title: "Preface"
 zh_url: "/hodge/ephesians/zh/preface/"
-date: 2026-09-30 10:35
+date: 2026-09-30 10:11
+book_home: "/hodge/ephesians/en/"
 next_section: 1
 next_label: "Chapter 1"
 ---

@@ -7,6 +7,7 @@ date: 2026-09-30 11:03
 next_section: 1
 next_label: "第 1 章"
 en_url: "/hodge/ephesians/preface/"
+book_home: "/hodge/ephesians/"
 zh: true
 ---
 

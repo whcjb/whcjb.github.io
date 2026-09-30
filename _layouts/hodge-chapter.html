@@ -27,17 +27,24 @@ layout: default
     <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="hodge-chrome hodge-bar cmp-nav" style="margin: 18px 0 22px;">
-        <a href="{{ site.baseurl }}/hodge/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%}
+          回书首页。默认按老结构推（英文 /hodge/<book>/、中文 …/zh/）；
+          「中文放书首页」的书卷（以弗所书起）由 front matter 的 book_home 覆盖，
+          否则中文章节会退到 …/zh/ 那个只作跳转的页面上，白绕一跳。
+        {%- endcomment -%}
+        {%- assign home_fallback = '/hodge/' | append: page.book_id | append: '/' -%}
+        {%- if page.zh %}{% assign home_fallback = home_fallback | append: 'zh/' %}{% endif -%}
+        <a href="{{ site.baseurl }}{{ page.book_home | default: home_fallback }}">&larr; {{ page.book_name }}</a>
         {%- comment -%}
           语言切换。英文页由 translate_hodge.py 回填 zh_url，中文页自带 en_url；
           没有对应译文的章就不显示，避免死链。
         {%- endcomment -%}
-        {% if page.zh_url %}<a class="hodge-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
         {%- comment -%}
-          中文页不再给「English →」入口（用户 2026-09-04 指定）：英文版已由
-          章顶对照抽屉的「对比英文版注释」提供，两个入口重复。
-          英文页的「中文版 →」保留。书卷目录页的中英切换也保留
-          （那里没有对照抽屉，去掉英文版就没入口了）。
+          章节页不放任何语言入口（用户 2026-09-30 指定）。中文页的「English →」
+          2026-09-04 已去掉（章顶对照抽屉里就有「对比英文版注释」，两个入口
+          重复）；这次把英文页的「中文版 →」也去掉，切换统一回到书首页。
+          front matter 里的 zh_url / en_url 仍然保留——对照抽屉与
+          build_commentaries_index 都靠它认对应页。
         {%- endcomment -%}
       </div>
 

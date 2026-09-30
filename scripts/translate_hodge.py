@@ -23,8 +23,13 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import translate_filibi as tf                     # noqa: E402
+from normalize_zh_quotes import normalize_text    # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+
+# 中文版放在书首页、英文退到 …/en/ 的书卷（用户 2026-09-30 指定，从以弗所书起）。
+# 章节页要据此写 book_home，否则「← 书名」会落到 …/zh/ 那个跳转页上。
+ZH_PRIMARY = {'ephesians'}
 
 BOOK_CN = {'1corinthians': '哥林多前书', '2corinthians': '哥林多后书',
            'romans': '罗马书', 'ephesians': '以弗所书'}
@@ -132,7 +137,9 @@ def translate_section(book: str, sec: str, resume: bool, publish: bool):
         if v:
             lb = fv(label)
             mm = re.match(r'Chapter (\d+)', lb)
-            nav += f'{k}: {v}\n{label}: "{"第 " + mm.group(1) + " 章" if mm else lb}"\n'
+            # 非章节的标签也要译，否则中文页的上一篇会写成 "Preface"
+            zh_lb = ('第 ' + mm.group(1) + ' 章') if mm else {'Preface': '导论'}.get(lb, lb)
+            nav += f'{k}: {v}\n{label}: "{zh_lb}"\n'
 
     zh_fm = ('---\n'
              'layout: hodge-chapter\n'
@@ -142,9 +149,17 @@ def translate_section(book: str, sec: str, resume: bool, publish: bool):
              f'date: {date}\n'
              + nav
              + f'en_url: "/hodge/{book}/{sec}/"\n'
-             'zh: true\n'
+             + (f'book_home: "/hodge/{book}/"\n' if book in ZH_PRIMARY else '')
+             + 'zh: true\n'
              '---\n')
     page = zh_fm + '\n'.join(out)
+    # 标点归一就在这里做，不要留到事后手动跑：--resume 重跑会把缓存里的
+    # 直角引号与半角标点再写回来（以弗所书实测重跑一次回来 22 对）。
+    page, n_q, n_h, warn = normalize_text(page)
+    if warn:
+        print(f'  ⚠ 标点归一跳过：{warn}', flush=True)
+    elif n_q or n_h:
+        print(f'  标点归一：引号 {n_q} 对 · 半角 {n_h} 处', flush=True)
 
     raw_dir = ROOT / 'hodge_raw' / book / 'zh'
     raw_dir.mkdir(parents=True, exist_ok=True)
