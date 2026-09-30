@@ -22,6 +22,7 @@ import re
 import os
 import sys
 import unicodedata
+from pathlib import Path
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # project root
 
@@ -279,6 +280,30 @@ VOLUMES = {
         'stop_page': 276,          # p276-277 是 AGES 出版说明
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_ephesians_ages.pdf',
         'out':  os.path.join(BASE, 'hodge_raw/ephesians/hodge_ephesians_structured.txt'),
+    },
+    # 司布真《天国的福音——马太福音通俗释经》(2026-09-30 诊断，
+    # 见 spurgeon_raw/matthew/DIAGNOSIS.md)。同为 AGES 410×626 单列，但与
+    # 贺智那批的结构差得远，三处都不能照抄：
+    #   · **没有脚注**。9pt span 全是小型大写的后半截（T+HE），不是脚注号，
+    #     所以 inline_sup_footnotes 必须关；开了会把版面里的数字误标成 [^fN]，
+    #     而全书没有任何 def 与之对应
+    #   · **正文不靠首行缩进分段**（全书顶格 x26，次峰 x144 只有 9 行、是节头），
+    #     para_indent 必须 0
+    #   · 分节头是 `CHAPTER 1:18-25`（阿拉伯数字 + 经文范围，size16 蓝 #0000d4），
+    #     副标题另起一行（size12 粗斜 绿 #006411）；全书 102 节对应马太 28 章
+    # 经文正文是**粗斜体暗红**（flags 22 / #800000）跟在粗体节号后，
+    # 与贺智的「红斜体只是引语」不同——这里红色块本身就是圣经经文。
+    'spurgeon-matthew': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': False,
+        'para_indent': 0,
+        'merge_adjacent_styles': True,    # 逐行切开的经文 span 要合回一整段
+        'collapse_double_spaces': True,   # 两端对齐经文的 `Now  the  birth`
+        'hyphen_dict': True,              # 行尾连字符按词表判「断字」还是「本就带杠」
+        'skip_pages': {0, 1, 4, 5, 6, 7, 8, 9},   # 封面 / 书名页 / 目录 6 页
+        'stop_page': 509,          # p509-510 是 AGES 出版说明
+        'pdf':  '/Users/yanpeifa/Documents/论文/spurgeon/spurgeon_matthew_ages.pdf',
+        'out':  os.path.join(BASE, 'spurgeon_raw/matthew/spurgeon_matthew_structured.txt'),
     },
     'acts': {
         # Ages Digital Library single-column English (Beveridge/Fetherstone tr).
@@ -3256,6 +3281,101 @@ def _page_latin_x_min(page, default=200, mode='auto'):
     return min(x for x in cands if abs(x - main) <= 12) - 2
 
 
+# ── emit 出口归一（两项都按卷开关，默认关，既有卷 raw 逐字节不变）──────────
+# 1) merge_adjacent_styles：PDF 一行一个 span，同一段经文被切成
+#    `<sty X>…his</sty> <sty X>mother…</sty>`，转 md 后成了
+#    `***…his** **mother…***` —— 星号配对全乱（principles §0.4 的同类问题，
+#    那条只处理紧贴的 `****`，这里中间隔着空格）。
+# 2) collapse_double_spaces：两端对齐的经文行被 PyMuPDF 读成
+#    `Now  the  birth`（司布真马太福音 23,725 处；贺智/加尔文各卷 0~9 处，
+#    所以这是本书特有的版式，不是通病）。折叠只在标签之外做，不碰属性。
+_EMIT_MERGE_STYLES = False
+_EMIT_COLLAPSE_SPACES = False
+_HYPHEN_KEEP = False
+
+_STY_MERGE_RE = re.compile(
+    r'<sty(\s[^>]*)?>((?:(?!</?sty)[\s\S])*?)</sty>(\s+)<sty\1>')
+
+# 同 style 的两段之间夹着一个**只有标点/空白**的异 style span：
+#   `<sty 红粗斜>…flood</sty><sty 黑粗>”</sty><sty 红粗斜>came…`
+# 转 md 就成了 `***…flood***</span>**”** <span …>***came…`，
+# 引号把一句经文劈成两半，audit 的 `*“*` 判据正是抓这个。
+# 那个引号在版面上本就属于这句经文，吸进来即可。司布真马太福音 114 处。
+_STY_PUNCT_BRIDGE_RE = re.compile(
+    r'<sty(\s[^>]*)?>((?:(?!</?sty)[\s\S])*?)</sty>(\s*)'
+    r'<sty(?:\s[^>]*)?>([“”"\'‘’,.;:!?\s—–-]+)</sty>(\s*)<sty\1>')
+
+
+def _collapse_spaces_outside_tags(text):
+    parts = re.split(r'(<[^>]*>)', text)
+    return ''.join(p if p.startswith('<') else re.sub(r'(?<=\S) {2,}(?=\S)', ' ', p)
+                   for p in parts)
+
+
+def _emit_clean(text):
+    if _EMIT_MERGE_STYLES:
+        prev = None
+        while prev != text:
+            prev = text
+            text = _STY_PUNCT_BRIDGE_RE.sub(r'<sty\1>\2\3\4\5', text)
+            text = _STY_MERGE_RE.sub(r'<sty\1>\2\3', text)
+    if _EMIT_COLLAPSE_SPACES:
+        text = _collapse_spaces_outside_tags(text)
+    return text
+
+
+# ── 行尾连字符：该接合还是该保留 ───────────────────────────────────────
+# 行尾 `X-` 接下一行 `Y`，两种情形长得一模一样：
+#   ① 排版断字      under- standing  → understanding（连字符该去掉）
+#   ② 本来就带连字符 self- denying    → self-denying （连字符该保留）
+# 一律接成 XY 是原来的做法，②会被写成 selfdenying。司布真马太福音被
+# Gate X 抓到 9 处（selfdenying / highminded / fellowhelpers / judgmentseat /
+# servantdebtor / fourhundred …）。
+# 判据用英文词表：合并形 XY 是词表里的词 → ①，接合；不是 → ②，保留连字符。
+# 实测这条判得很干净：understanding / notwithstanding / headquarters 在词表里，
+# 上面那 6 个一个都不在。
+# 语料自证那条（书里别处是否出现过 X-Y）只能判出 9 处里的 1~2 处，不够用。
+# 按卷开关（hyphen_dict），默认关；词表找不到时退回原行为并提示。
+_HYPHEN_DICT = None
+_HYPHEN_DICT_PATHS = [
+    Path(__file__).resolve().parent / 'words_alpha.txt',
+    Path.home() / 'Documents' / '论文' / 'hodge' / 'words_alpha.txt',
+    Path('/usr/share/dict/words'),
+]
+
+
+def _load_hyphen_dict():
+    global _HYPHEN_DICT
+    if _HYPHEN_DICT is not None:
+        return _HYPHEN_DICT
+    for p in _HYPHEN_DICT_PATHS:
+        if p.exists():
+            _HYPHEN_DICT = {w.strip().lower() for w in
+                            p.read_text(encoding='utf-8', errors='ignore').splitlines()
+                            if w.strip()}
+            print(f'  连字符词表: {p}（{len(_HYPHEN_DICT):,} 词）')
+            return _HYPHEN_DICT
+    print('  ⚠ 找不到英文词表，连字符一律接合（退回原行为）')
+    _HYPHEN_DICT = set()
+    return _HYPHEN_DICT
+
+
+def _join_hyphen(prev: str, nxt: str) -> str:
+    """prev 以 `-` 结尾、nxt 接在其后时的接合方式。"""
+    prev_r, nxt_l = prev.rstrip(), nxt.lstrip()
+    if not _HYPHEN_KEEP:
+        return prev_r[:-1] + nxt_l
+    # 取连字符两侧的**纯字母**片段来查词（两边都可能带 <sty> 标记与标点）
+    a = re.search(r'([A-Za-z]+)-$', re.sub(r'</?sty(?:\s[^>]*)?>', '', prev_r))
+    b = re.match(r'([A-Za-z]+)', re.sub(r'</?sty(?:\s[^>]*)?>', '', nxt_l))
+    if not (a and b):
+        return prev_r[:-1] + nxt_l
+    joined = (a.group(1) + b.group(1)).lower()
+    if joined in _load_hyphen_dict():
+        return prev_r[:-1] + nxt_l          # ① 排版断字
+    return prev_r + nxt_l                   # ② 本来就带连字符，连字符留着
+
+
 def phil_reconstruct_page(page, page_num=None):
     page_w = page.rect.width
     # 本页正文左边距 = 出现次数最多的行 x0（正文行远多于缩进行与标题行）
@@ -3735,14 +3855,14 @@ def phil_reconstruct_page(page, page_num=None):
                 texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
                 merged = ' '.join(t.strip() for t in texts if t.strip())
                 if merged.strip():
-                    output_lines.append(f'[{cur_cls}] {merged}')
+                    output_lines.append(f'[{cur_cls}] {_emit_clean(merged)}')
                 cur_cls, cur_texts = cls, txt
                 continue
             if cls == cur_cls:
                 prev = cur_texts[-1] if isinstance(cur_texts, list) else cur_texts
                 if (prev if isinstance(prev, str) else '').rstrip().endswith('-'):
                     cur_texts = (cur_texts[:-1] if isinstance(cur_texts, list) else []) + \
-                                [(prev if isinstance(prev, str) else '').rstrip()[:-1] + txt.lstrip()]
+                                [_join_hyphen(prev if isinstance(prev, str) else '', txt)]
                 else:
                     if isinstance(cur_texts, str):
                         cur_texts = [cur_texts]
@@ -3751,13 +3871,13 @@ def phil_reconstruct_page(page, page_num=None):
                 texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
                 merged = ' '.join(t.strip() for t in texts if t.strip())
                 if merged.strip():
-                    output_lines.append(f'[{cur_cls}] {merged}')
+                    output_lines.append(f'[{cur_cls}] {_emit_clean(merged)}')
                 cur_cls, cur_texts = cls, txt
 
         texts  = cur_texts if isinstance(cur_texts, list) else [cur_texts]
         merged = ' '.join(t.strip() for t in texts if t.strip())
         if merged.strip():
-            output_lines.append(f'[{cur_cls}] {merged}')
+            output_lines.append(f'[{cur_cls}] {_emit_clean(merged)}')
 
     # End of page — flush any pending scripture buffer
     flush_scripture_buffer()
@@ -3772,9 +3892,12 @@ def extract_ages_phil(cfg):
     _LATIN_X_MIN_OVERRIDE = cfg.get('latin_x_min')
     global _INLINE_SUP_FOOTNOTES
     _INLINE_SUP_FOOTNOTES = bool(cfg.get('inline_sup_footnotes'))
-    global _PARA_INDENT, _NOTES_HANGING
+    global _PARA_INDENT, _NOTES_HANGING, _EMIT_MERGE_STYLES, _EMIT_COLLAPSE_SPACES
     _PARA_INDENT = cfg.get('para_indent', 0)
     _NOTES_HANGING = cfg.get('notes_hanging_indent', False)
+    _EMIT_MERGE_STYLES = cfg.get('merge_adjacent_styles', False)
+    _EMIT_COLLAPSE_SPACES = cfg.get('collapse_double_spaces', False)
+    globals()['_HYPHEN_KEEP'] = cfg.get('hyphen_dict', False)
     doc   = fitz.open(cfg['pdf'])
     total = len(doc)
     _LATIN_X_MIN_FIXED = (_doc_latin_x_min(doc)

@@ -1466,9 +1466,25 @@ def convert(structured_path: Path, out_path: Path) -> None:
     # Collapse multiple blank lines to single
     result = '\n'.join(out)
     result = re.sub(r'\n{3,}', '\n\n', result)
+    result = _absorb_bold_quotes(result)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(result + '\n', encoding='utf-8')
+
+
+# 引号被排成「粗体但不斜体」、紧贴着粗斜体的诗行/引文时，两段标记会挤成
+# `**“*****诗行*****”**` —— 五连星号 kramdown 认不出来，渲染成字面星号
+# （principles §0.4 只处理紧贴的 `****`，§0.5 只处理 italic 包引号，都盖不到）。
+# 语义上引号本就属于这段引文，把它吸进粗斜体即可：`***“诗行”***`。
+# 频次实测：司布真马太福音 28 处；贺智三本 + 加尔文 john/romans 各 0 处，
+# 所以这条全局加也不会动到任何已发布书卷。
+_BQ_PUNCT = r'[“”"\'‘’,.;:!?\s]'
+
+
+def _absorb_bold_quotes(text: str) -> str:
+    text = re.sub(rf'\*\*({_BQ_PUNCT}+)\*\*\*\*\*', r'***\1', text)
+    text = re.sub(rf'\*\*\*\*\*({_BQ_PUNCT}+)\*\*', r'\1***', text)
+    return text
 
 
 def main() -> int:

@@ -58,6 +58,14 @@ authors:
     work_cn: "歌罗西书注释"
     work_en: "An Exposition of the Epistle of St. Paul to the Colossians"
     books: 1
+  - id: spurgeon
+    name: "查尔斯·司布真"
+    short: "司布真"
+    en: "Charles Haddon Spurgeon"
+    years: "1834–1892"
+    work_cn: "马太福音注释"
+    work_en: "The Gospel of the Kingdom"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -311,6 +319,7 @@ books:
     testament: nt
     chapters: 28
     links:
+      - {author: spurgeon, path: "/spurgeon/matthew/", url_tpl: "/spurgeon/matthew/__CH__/", title_cn: "马太福音注释", title_en: "The Gospel of the Kingdom", c0: "#3a3018", c1: "#4a3b22"}
   - id: mark
     name: "马可福音"
     en: "Mark"

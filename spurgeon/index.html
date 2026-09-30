@@ -1,0 +1,91 @@
+---
+layout: default
+title: 查尔斯·司布真 圣经注释
+description: 查尔斯·司布真（Charles Haddon Spurgeon, 1834–1892）伦敦大都会会幕牧师，《天国的福音——马太福音通俗释经》全文在线阅读。
+---
+{%- comment -%}
+  司布真注释总目。自成一家，与 owen/ bridges/ hodge/ 同级。
+  样式与 spurgeon-book / spurgeon-chapter 同源（古铜 #4a3b22）。
+{%- endcomment -%}
+
+<div class="container spurgeon-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="spurgeon-hero">
+        <h1>查尔斯·司布真</h1>
+        <div class="spurgeon-hero-en">Charles Haddon Spurgeon · 1834&ndash;1892</div>
+        <div class="spurgeon-hero-rule"><i></i></div>
+        <p class="spurgeon-intro">
+          十九世纪伦敦大都会会幕（Metropolitan Tabernacle）牧师，在伦敦牧会近四十年，
+          听众动辄数千，被称为「讲道王子」。他不是学院派释经家，
+          解经以直白、诚恳、面向会众见长。
+          本站现收其《天国的福音》——马太福音通俗释经，是他临终前最后一部作品。
+        </p>
+      </div>
+
+      <div class="spurgeon-books">
+        <a class="spurgeon-book" href="{{ site.baseurl }}/spurgeon/matthew/">
+          <span class="spurgeon-book-cn">马太福音注释</span>
+          <span class="spurgeon-book-en">The Gospel of the Kingdom &mdash; A Popular Exposition of the Gospel according to Matthew</span>
+          <span class="spurgeon-book-meta">1893 &middot; 28 章 &middot; 仅英文</span>
+        </a>
+      </div>
+
+      <p class="spurgeon-note" style="margin-top:18px;">
+        本书是司布真在病中与临终前写就，其妻在卷首「INTRODUCTORY NOTE」中说，
+        后半部写于「天国的边境上」。中译尚未开始。
+      </p>
+
+      <p class="spurgeon-note">
+        底本为 AGES Digital Library 电子版（Version 2.0, 1996&ndash;1997）。原书已进入公有领域。
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  :root { --spurgeon-ink: #4a3b22; --spurgeon-rule: #ded5c2; --spurgeon-gold: #b08d57; }
+  body:has(.spurgeon-wrap) { background: #fbfaf7; }
+  .spurgeon-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }
+  .spurgeon-hero { text-align: center; margin: 34px 0 12px; }
+  .spurgeon-hero h1 {
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 30px; letter-spacing: .26em; text-indent: .26em;
+    color: var(--spurgeon-ink); font-weight: 600; margin: 0 0 10px;
+  }
+  .spurgeon-hero-en { font-style: italic; font-size: 13px; color: #8a8275; letter-spacing: .05em; }
+  .spurgeon-hero-rule { display: flex; align-items: center; justify-content: center; gap: 9px; margin: 16px 0 0; }
+  .spurgeon-hero-rule::before, .spurgeon-hero-rule::after { content: ''; height: 1px; width: 62px; background: var(--spurgeon-rule); }
+  .spurgeon-hero-rule i { width: 4px; height: 4px; background: var(--spurgeon-gold); transform: rotate(45deg); display: block; }
+  .spurgeon-intro {
+    max-width: 620px; margin: 24px auto 0; font-size: 14px; line-height: 1.95; color: #6d6a63;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+  .spurgeon-books { display: grid; gap: 12px; margin: 38px 0 26px; }
+  .spurgeon-book {
+    display: block; padding: 20px 22px; background: #fff;
+    border: 1px solid var(--spurgeon-rule); border-left: 3px solid var(--spurgeon-ink);
+    border-radius: 3px; text-decoration: none !important;
+    transition: background .16s ease, box-shadow .16s ease, transform .16s ease;
+  }
+  .spurgeon-book:hover {
+    background: linear-gradient(135deg, #152840, #2b5080);
+    transform: translateY(-1px); box-shadow: 0 5px 14px rgba(45,45,45,.24);
+  }
+  .spurgeon-book-cn {
+    color: var(--spurgeon-ink);
+    display: block; font-family: 'Source Han Serif SC', 'Songti SC', serif;
+    font-size: 18px; letter-spacing: .05em;
+  }
+  .spurgeon-book-en { display: block; font-style: italic; font-size: 12.5px; color: #8a8275; margin-top: 4px; }
+  .spurgeon-book-meta { display: block; font-size: 11.5px; color: #a89e8c; margin-top: 7px; letter-spacing: .06em; }
+  .spurgeon-book:hover .spurgeon-book-cn { color: #f4f1e8; }
+  .spurgeon-book:hover .spurgeon-book-en { color: rgba(244,241,232,.72); }
+  .spurgeon-book:hover .spurgeon-book-meta { color: rgba(244,241,232,.6); }
+  .spurgeon-note {
+    font-size: 12px; color: #a89e8c; text-align: center; margin-top: 34px;
+    font-family: 'Source Han Serif SC', 'Songti SC', serif;
+  }
+</style>

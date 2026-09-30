@@ -91,14 +91,24 @@ def md_census(paths: list[str]) -> dict:
     bold = sum(len(m.group(1)) for m in re.finditer(r'\*\*([^*]+)\*\*', txt)
                if not re.fullmatch(r'\d+\.', m.group(1)))
     ital = sum(len(m.group(1)) for m in re.finditer(r'(?<!\*)\*([^*\n]+)\*(?!\*)', txt))
+    # `***X***` 是**粗体兼斜体**。bold 那条正则从第 2 个星号起就能匹到 X（已计），
+    # italic 这条被前后的 `(?<!\*)` / `(?!\*)` 挡住，一个都数不到。
+    # 司布真马太福音的经文正文全是粗斜体（829 处、约 15 万字符），不补这一条
+    # italic 会差 -72%，看着像「斜体被管道吃了」，其实是口径漏了。
+    # 贺智三本各 0~1 处，补这条对它们的读数没有影响。
+    ital += sum(len(m.group(1)) for m in re.finditer(r'\*\*\*([^*]+)\*\*\*', txt))
     red = sum(len(re.sub(r'<[^>]+>|\*', '', m.group(1)))
               for m in re.finditer(r'<span style="color:#800000">(.*?)</span>', txt, re.S))
     greek = len(re.findall(r'[Ͱ-Ͽἀ-῿]+', txt))    # 按词块数，与 PDF 的 span 数对应
     # 只数块级居中段：title-block-h1/h2 与独立 <p style="text-align:center">。
     # 不能把所有 text-align:center 都算进来——scripture-box 的表格单元格、
     # 发布阶段加的装饰块也带这个属性，会虚高 30%~50%。
+    # 隐藏的分节锚点 h2（`<h2 class="scripture-anchor" …>CHAPTER 1:18-25</h2>`）
+    # 在 PDF 里是居中的大字标题，也要算进来：司布真马太福音 102 处，
+    # 不算就差 -42%。贺智以弗所/林前 0 处、罗马书 3 处，影响可忽略。
     centered = (len(re.findall(r'class="title-block-h[12]"', txt))
-                + len(re.findall(r'^<p style="text-align:\s*center', txt, re.M)))
+                + len(re.findall(r'^<p style="text-align:\s*center', txt, re.M))
+                + len(re.findall(r'class="scripture-anchor"', txt)))
     return {'bold': bold, 'italic': ital, 'red': red,
             'greek': greek, 'centered_blocks': centered}
 

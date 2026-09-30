@@ -25,7 +25,13 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOKS = ['1corinthians', '2corinthians', 'romans', 'ephesians']
+# 注释家 → 书卷。司布真马太福音的节号头形态（`**11, 12.**` / `**4-6.**`）
+# 与贺智林前后完全同型，HEAD_RE 直接可用，所以共用本脚本，只把目录参数化。
+AUTHOR_BOOKS = {
+    'hodge':    ['1corinthians', '2corinthians', 'romans', 'ephesians'],
+    'spurgeon': ['matthew'],
+}
+BOOKS = AUTHOR_BOOKS['hodge']
 
 ANCHOR_RE = re.compile(r'^<div class="commentary-anchor" id="[^"]+"></div>\n', re.M)
 
@@ -120,14 +126,15 @@ def process(path: Path, book: str, ch: str, write: bool):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--book')
+    ap.add_argument('--author', default='hodge', choices=sorted(AUTHOR_BOOKS))
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
 
-    books = [a.book] if a.book else BOOKS
+    books = [a.book] if a.book else AUTHOR_BOOKS[a.author]
     total = 0
     for book in books:
         for sub, label in (('', 'en'), ('zh', 'zh')):
-            d = ROOT / 'hodge' / book / sub if sub else ROOT / 'hodge' / book
+            d = ROOT / a.author / book / sub if sub else ROOT / a.author / book
             if not d.is_dir():
                 continue
             files = sorted(d.glob('[0-9]*.md'), key=lambda p: int(p.stem))

@@ -1,0 +1,256 @@
+---
+layout: default
+---
+{%- comment -%}
+  司布真《天国的福音——马太福音通俗释经》章节页。
+
+  ⚠️ 不复用 calvin-en：每本书独立样式，共用会让改加尔文样式时连带动到这里。
+  字段与 publish_calvin_en.py 写出的 front matter 一致
+  （book_id / book_name / title / prev_section / next_section / *_label）。
+
+  配色取普林斯顿旧派的调子：深靛蓝 #4a3b22 主色 + 暖米底，与欧文的绿、
+  毕列志的棕区分开；希腊文 #0000d4、经文引语 #800000 是 AGES 原色，不改。
+{%- endcomment -%}
+
+{%- comment -%}
+  司布真全部书卷共用一个主题色（按注释家一色，用户 2026-08-31 指定；曾按卷
+  分色，已撤回）。取值与 _data/commentaries.yml 的 c0/c1 一致，见
+  build_commentaries_index.py 的 AUTHOR_COLORS —— 改色两处要一起改，
+  否则「历代解经」页与书卷页会对不上。
+{%- endcomment -%}
+{%- assign spurgeon_ink = '#4a3b22' -%}
+{%- assign spurgeon_ink_dark = '#16293f' -%}
+{%- assign spurgeon_rule = '#cfd8e4' -%}
+
+<div class="container spurgeon-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div id="cmpCol" class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="spurgeon-chrome spurgeon-bar cmp-nav" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%}
+          语言切换。英文页由 translate_spurgeon.py 回填 zh_url，中文页自带 en_url；
+          没有对应译文的章就不显示，避免死链。
+        {%- endcomment -%}
+        {% if page.zh_url %}<a class="spurgeon-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        {%- comment -%}
+          中文页不再给「English →」入口（用户 2026-09-04 指定）：英文版已由
+          章顶对照抽屉的「对比英文版注释」提供，两个入口重复。
+          英文页的「中文版 →」保留。书卷目录页的中英切换也保留
+          （那里没有对照抽屉，去掉英文版就没入口了）。
+        {%- endcomment -%}
+      </div>
+
+      <h1 class="spurgeon-title">{{ page.title }}</h1>
+
+      <div class="spurgeon-nav cmp-nav">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+      {%- comment -%}
+        章顶节号导航。胶囊由 JS 扫正文里的 .commentary-anchor 生成
+        （锚点由 scripts/add_spurgeon_verse_anchors.py 注入）；无锚点的页
+        （导论等）整条隐藏。
+      {%- endcomment -%}
+      <div id="verse-nav" style="display:none;">
+        <div id="verse-nav-toggle" onclick="toggleSpurgeonVerseNav()">
+          <span id="verse-nav-label"></span>
+          <span id="verse-nav-arrow">&#9660;</span>
+        </div>
+        <div id="verse-nav-pills" style="display:none;"></div>
+      </div>
+
+      {% assign cc_self = "spurgeon-en" %}{% if page.zh %}{% assign cc_self = "spurgeon" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="spurgeon-content" self_label="司布真" %}
+        {{ content }}
+      {% include compare-commentary-foot.html %}
+
+      {% if page.date %}
+      <div class="spurgeon-pubdate">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="spurgeon-nav spurgeon-nav-foot">
+        {% if page.prev_section %}<a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.prev_section }}/">&larr; {{ page.prev_label }}</a>{% else %}<span></span>{% endif %}
+        {% if page.next_section %}<a href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}{{ page.next_section }}/">{{ page.next_label }} &rarr;</a>{% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .spurgeon-pubdate { margin-top:32px; font-size:12px; color:#aaa; text-align:right; }
+
+  /* ── 节号导航（司布真专用配色：古铜 + 米底，不沿用 calvin 的绿）── */
+  #verse-nav { margin: 0 0 22px; position: relative; z-index: 2; }
+  #verse-nav-toggle {
+    display: flex; align-items: center; gap: 8px; width: fit-content;
+    padding: 7px 14px; cursor: pointer; user-select: none;
+    background: #f7f3ea; border: 1px solid #d8c9a4; border-radius: 4px;
+    font-family: 'Georgia', serif; font-size: 13px; color: var(--spurgeon-ink);
+  }
+  #verse-nav-toggle:hover { background: #f0e9d8; }
+  #verse-nav-arrow { font-size: 10px; transition: transform .2s; }
+  #verse-nav-arrow.open { transform: rotate(180deg); }
+  #verse-nav-pills {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; padding: 12px 14px;
+    background: #fdfbf6; border: 1px solid #e4d9bf; border-radius: 4px;
+  }
+  .verse-pill {
+    display: inline-block; padding: 3px 9px; border-radius: 12px;
+    background: #f3ecdc; border: 1px solid #d8c9a4; color: var(--spurgeon-ink);
+    font-family: 'Georgia', serif; font-size: 13px; text-decoration: none;
+    transition: background .15s;
+  }
+  .verse-pill:hover { background: var(--spurgeon-ink); border-color: var(--spurgeon-ink); color: #fff; text-decoration: none; }
+  .verse-pill--active { background: var(--spurgeon-ink-dark); border-color: var(--spurgeon-ink-dark); color: #fff; font-weight: bold; }
+
+  /* 锚点占 0 高度，scroll-margin 让跳转落点避开固定 navbar */
+  .spurgeon-content .commentary-anchor {
+    display: block; height: 0; line-height: 0; margin: 0; padding: 0;
+    overflow: hidden; visibility: hidden; scroll-margin-top: 80px;
+  }
+  /* 注释头可点（跳章顶导航条），但光标保持文本 I 型，不变手型 */
+  .spurgeon-content strong.verse-head { cursor: text; }
+  .spurgeon-wrap { --spurgeon-ink: {{ spurgeon_ink }}; --spurgeon-ink-dark: {{ spurgeon_ink_dark }};
+                --spurgeon-rule: {{ spurgeon_rule }}; }
+  body:has(.spurgeon-wrap) { background: #fbfaf7; }
+  .spurgeon-wrap {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    color: #2c2c2c; line-height: 1.85; font-size: 16.5px;
+  }
+  .spurgeon-chrome a, .spurgeon-nav a {
+    color: var(--spurgeon-ink); text-decoration: none; font-size: 13.5px; letter-spacing: .02em;
+  }
+  .spurgeon-chrome a:hover, .spurgeon-nav a:hover { text-decoration: underline; }
+  .spurgeon-title {
+    font-size: 26px; color: var(--spurgeon-ink); font-weight: 600; letter-spacing: .04em;
+    border-bottom: 2px solid var(--spurgeon-ink); padding-bottom: 9px; margin: 0 0 6px;
+  }
+  .spurgeon-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .spurgeon-lang {
+    border: 1px solid var(--spurgeon-rule); border-radius: 3px;
+    padding: 3px 11px; font-size: 12.5px; background: #fff;
+  }
+  .spurgeon-lang:hover { background: var(--spurgeon-ink); color: #f4f1e8 !important; text-decoration: none !important; }
+  .spurgeon-nav { display: flex; justify-content: space-between; margin: 14px 0 30px; }
+  .spurgeon-nav-foot { margin: 46px 0 10px; padding-top: 16px; border-top: 1px solid var(--spurgeon-rule); }
+  .spurgeon-content p { margin: 0 0 1.05em; text-align: justify; }
+  /* 列举项编号：主题色、不加粗，与经文号（加粗黑字）区分开。
+     PDF 里这两类字形完全相同，是网页上为了可读性刻意加的分辨度
+     （用户 2026-08-31 指定）。 */
+  .spurgeon-content .enum-num { color: var(--spurgeon-ink); font-weight: 600; }
+  .spurgeon-content h2 {
+    font-size: 18px; color: var(--spurgeon-ink-dark); font-weight: 600;
+    letter-spacing: .05em; margin: 34px 0 14px;
+  }
+  /* 章题解：AGES 里紧跟章标题的那段小字概述 */
+  .spurgeon-content .title-block-h2 { color: var(--spurgeon-ink) !important; }
+  /* 脚注区 */
+  .spurgeon-content .footnotes {
+    margin-top: 48px; padding-top: 14px; border-top: 1px solid var(--spurgeon-rule);
+    font-size: 13.5px; line-height: 1.7; color: #55504a;
+  }
+  .spurgeon-content .footnotes a { color: var(--spurgeon-ink); }
+  .spurgeon-content sup a { color: var(--spurgeon-ink); text-decoration: none; }
+  /* Gate 9：脚注 ref 要留出导航栏的高度，否则从脚注点 ↩ 跳回来时，
+     目标行正好被固定导航条盖住，用户会报「点击脚注无法跳转」。
+     与 calvin-en.html 同一规则（audit-gates Gate 9 / anti-pattern M22）。 */
+  .spurgeon-content sup[id^="fnref:"] { scroll-margin-top: 80px; }
+  .spurgeon-content .footnotes li { scroll-margin-top: 80px; }
+  @media (max-width: 768px) {
+    .spurgeon-wrap { font-size: 15.5px; line-height: 1.8; }
+    .spurgeon-title { font-size: 21px; }
+  }
+</style>
+
+<script>
+// ── 节号导航 ──────────────────────────────────────
+// 锚点 <div class="commentary-anchor" id="<book>-<ch>-<v>"> 由
+// scripts/add_spurgeon_verse_anchors.py 预先注入正文。这里只负责：
+//   1. 按锚点生成章顶胶囊（带 -2/-3 后缀的重复节不出胶囊）
+//   2. 点注释头 → 滚回章顶导航条并高亮该节（与 calvin 一致：不弹经文框）
+(function() {
+  var content = document.querySelector('.spurgeon-content');
+  if (!content) return;
+  var anchors = content.querySelectorAll('.commentary-anchor');
+  if (!anchors.length) return;
+
+  var pillsBox = document.getElementById('verse-nav-pills');
+  var entries = [];
+  anchors.forEach(function(a) {
+    var m = a.id.match(/^(.+)-(\d+)-(\d+)$/);   // 尾部再带 -2/-3 的不匹配 → 不出胶囊
+    if (!m) return;
+    entries.push({id: a.id, v: m[3]});
+  });
+  if (!entries.length) return;
+
+  entries.forEach(function(e) {
+    var link = document.createElement('a');
+    link.href = '#' + e.id;
+    link.className = 'verse-pill';
+    link.textContent = e.v;
+    link.addEventListener('click', function() { setTimeout(closeSpurgeonVerseNav, 200); });
+    pillsBox.appendChild(link);
+  });
+
+  var isZh = document.documentElement.lang === 'zh' || {{ page.zh | default: false }};
+  var label = document.getElementById('verse-nav-label');
+  var span = entries.length > 1
+    ? entries[0].v + '\u2013' + entries[entries.length - 1].v
+    : entries[0].v;
+  label.textContent = isZh ? ('\u7ecf\u6587\u5bfc\u822a  ' + span) : ('Jump to verse  ' + span);
+  document.getElementById('verse-nav').style.display = 'block';
+
+  // 注释头 → 章顶导航条
+  var byVerse = {};
+  entries.forEach(function(e) { if (!byVerse[e.v]) byVerse[e.v] = e.id; });
+  content.querySelectorAll('p > strong:first-child').forEach(function(s) {
+    var mm = s.textContent.trim().match(/^\s*(\d{1,3})/);
+    if (!mm || !byVerse[mm[1]]) return;
+    s.classList.add('verse-head');
+    s.dataset.anchor = byVerse[mm[1]];
+    s.addEventListener('click', function() {
+      var nav = document.getElementById('verse-nav');
+      var pills = document.getElementById('verse-nav-pills');
+      var arrow = document.getElementById('verse-nav-arrow');
+      if (pills && pills.style.display === 'none') {
+        pills.style.display = 'flex';
+        if (arrow) arrow.classList.add('open');
+      }
+      var want = '#' + this.dataset.anchor;
+      pills && pills.querySelectorAll('.verse-pill').forEach(function(pill) {
+        pill.classList.toggle('verse-pill--active', pill.getAttribute('href') === want);
+      });
+      if (nav) nav.scrollIntoView({behavior: 'smooth', block: 'start'});
+      else window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+  });
+})();
+
+function toggleSpurgeonVerseNav() {
+  var pills = document.getElementById('verse-nav-pills');
+  var arrow = document.getElementById('verse-nav-arrow');
+  var open = pills.style.display !== 'none';
+  pills.style.display = open ? 'none' : 'flex';
+  arrow.classList.toggle('open', !open);
+}
+function closeSpurgeonVerseNav() {
+  document.getElementById('verse-nav-pills').style.display = 'none';
+  document.getElementById('verse-nav-arrow').classList.remove('open');
+}
+</script>
+
+{%- comment -%}
+  经文引用弹层：正文里的经文引用渲染成可点的 inline span，点击弹和合本经文框。
+  **颜色必须走本书主题色**，不能用 include 的默认（那是加尔文酒红 #800000）——
+  司布真是古铜一系，落个酒红弹层等于把别人家的颜色贴到这本书上。
+  accent = spurgeon_ink #4a3b22（与 .verse-pill / .enum-num / 脚注链接同一支），
+  vnum 取 AUTHOR_COLORS 的浅端 #5f4a2a，与 spurgeon-book 卡片渐变的浅端一致。
+  ⚠️ 色值必须写**字面量**：Jekyll 3 的 include 参数不接受 Liquid 插值，
+  把 accent 写成变量引用会 Liquid Exception
+  「Invalid syntax for include tag」整站构建失败。所以这里与上面第 21 行的
+  spurgeon_ink 是两处同值，改主题色要一起改。
+{%- endcomment -%}
+{% include scripture-popup.html container_selector=".spurgeon-content" accent="#4a3b22" vnum="#5f4a2a" slide="down" %}

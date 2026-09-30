@@ -23,11 +23,17 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 
+# author → 目录名；司布真马太福音与贺智同型（同样的锚点 id 规则、同样的
+# chapter 页路由），所以共用本脚本，只把作者目录参数化。
+AUTHOR_OF = {'1corinthians': 'hodge', '2corinthians': 'hodge', 'romans': 'hodge',
+             'ephesians': 'hodge', 'matthew': 'spurgeon'}
+
 BOOKS = {
     '1corinthians': {'cn': '哥林多前书', 'en': '1 Corinthians', 'chapters': 16},
     '2corinthians': {'cn': '哥林多后书', 'en': '2 Corinthians', 'chapters': 13},
     'romans': {'cn': '罗马书', 'en': 'Romans', 'chapters': 16},
     'ephesians': {'cn': '以弗所书', 'en': 'Ephesians', 'chapters': 6},
+    'matthew': {'cn': '马太福音', 'en': 'Matthew', 'chapters': 28},
 }
 
 # 裸 per-verse id 才要；`-2`/`-3` 重复段后缀不进索引（\d+ 不吃 -，天然排除）
@@ -37,7 +43,7 @@ def anchor_re(book):
 
 
 def collect(book, zh):
-    d = ROOT / 'hodge' / book / ('zh' if zh else '')
+    d = ROOT / AUTHOR_OF[book] / book / ('zh' if zh else '')
     rx = anchor_re(book)
     out = defaultdict(list)
     if not d.is_dir():
@@ -63,7 +69,7 @@ def build_html(book, zh, anchors):
     rows = []
     for ch in sorted(anchors):
         pills = '\n        '.join(
-            f'<a class="vi-pill" href="{{{{ site.baseurl }}}}/hodge/{book}/{seg}{ch}/'
+            f'<a class="vi-pill" href="{{{{ site.baseurl }}}}/{AUTHOR_OF[book]}/{book}/{seg}{ch}/'
             f'#{book}-{ch}-{v}">{v}</a>'
             for v in anchors[ch])
         label = f'第 {ch} 章' if zh else f'Ch. {ch}'
@@ -120,7 +126,7 @@ sitemap: false
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="vi-back">
-        <a href="{{{{ site.baseurl }}}}/hodge/{book}/{seg}">{back}</a>
+        <a href="{{{{ site.baseurl }}}}/{AUTHOR_OF[book]}/{book}/{seg}">{back}</a>
       </div>
 
       <h1 class="vi-title">{title}</h1>
@@ -147,7 +153,7 @@ def main():
             if not anchors:
                 print(f'{book}/{"zh" if zh else "en"}: 无锚点，跳过')
                 continue
-            out = ROOT / 'hodge' / book / ('zh' if zh else '') / 'verse-index' / 'index.html'
+            out = ROOT / AUTHOR_OF[book] / book / ('zh' if zh else '') / 'verse-index' / 'index.html'
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(build_html(book, zh, anchors), encoding='utf-8')
             n = sum(len(v) for v in anchors.values())

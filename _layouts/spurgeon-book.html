@@ -1,0 +1,147 @@
+---
+layout: default
+---
+{%- comment -%}
+  司布真某一卷的首页：章节目录。字段来自 publish_calvin_en.py 写的
+  book_id / book_name / chapters / has_preface。样式与 spurgeon-chapter 同源。
+{%- endcomment -%}
+
+{%- comment -%}
+  司布真全部书卷共用一个主题色（按注释家一色，用户 2026-08-31 指定；曾按卷
+  分色，已撤回）。取值与 _data/commentaries.yml 的 c0/c1 一致，见
+  build_commentaries_index.py 的 AUTHOR_COLORS —— 改色两处要一起改，
+  否则「历代解经」页与书卷页会对不上。
+{%- endcomment -%}
+{%- assign spurgeon_ink = '#4a3b22' -%}
+{%- assign spurgeon_ink_dark = '#16293f' -%}
+{%- assign spurgeon_rule = '#cfd8e4' -%}
+
+<div class="container spurgeon-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="spurgeon-chrome spurgeon-bar" style="margin: 18px 0 22px;">
+        <a href="{{ site.baseurl }}/spurgeon/">&larr; 查尔斯·司布真</a>
+        {%- comment -%}
+          中英切换。中文版按「该章的 zh 页是否已生成」判断——翻译是逐章推进的，
+          没译到的章不给链接，免得点进 404。
+        {%- endcomment -%}
+        {%- assign zh_idx = site.pages | where_exp: "p", "p.path contains 'spurgeon/' " -%}
+        {% if page.zh %}<a class="spurgeon-lang" href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/">English &rarr;</a>
+        {% else %}<a class="spurgeon-lang" href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/zh/">中文版 &rarr;</a>{% endif %}
+      </div>
+
+      <h1 class="spurgeon-title">{{ page.book_name }}</h1>
+      <div class="spurgeon-sub">Charles Haddon Spurgeon · 1834–1892 · London</div>
+
+      {%- assign zh_seg = '' -%}{% if page.zh %}{% assign zh_seg = 'zh/' %}{% endif %}
+
+      {%- comment -%}
+        经文索引入口。索引页由 scripts/build_spurgeon_verse_index.py 生成，
+        中英各一份；页面不存在时（还没跑过生成器）不显示按钮，免得死链。
+      {%- endcomment -%}
+      {%- assign vi_path = 'spurgeon/' | append: page.book_id | append: '/' | append: zh_seg | append: 'verse-index/index.html' -%}
+      {%- assign vi_all = site.pages | map: "path" | join: "," -%}
+      {% if vi_all contains vi_path %}
+      <a class="spurgeon-verse-index-link" href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{{ zh_seg }}verse-index/">
+        📖 {% if page.zh %}经文索引 <span>按章逐节检索司布真注释</span>{% else %}Verse Index <span>jump to any verse&rsquo;s comment</span>{% endif %}
+      </a>
+      {% endif %}
+      {%- comment -%} 已生成的中文页清单，用来决定中文版里哪些章可点 {%- endcomment -%}
+      {%- assign zh_pages = site.pages | where_exp: "p", "p.path contains 'spurgeon/'" | map: "path" | join: "," -%}
+
+      {% if page.has_preface %}
+      {%- assign kp = 'spurgeon/' | append: page.book_id | append: '/zh/preface.md' -%}
+      {%- assign pre_zh = false -%}
+      {%- if zh_pages contains kp %}{% assign pre_zh = true %}{% endif -%}
+      {% if page.zh != true or pre_zh %}
+      <a class="spurgeon-tile spurgeon-tile-wide" href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{{ zh_seg }}preface/">
+        <span>{% if page.zh %}导论{% else %}Introduction{% endif %}</span>{% if page.zh %}Introduction{% else %}导论{% endif %}
+      </a>
+      {% endif %}
+      {% endif %}
+
+      <div class="spurgeon-grid">
+        {% for n in (1..page.chapters) %}
+        {%- comment -%}
+          ⚠️ Liquid 没有 `contains X == false` 这种写法（会被解析成别的东西，
+          实测算出「可点 10 / 虚线 7」这种与实际不符的数）。必须先 assign
+          成布尔量，再用 if/else。
+        {%- endcomment -%}
+        {%- assign k = 'spurgeon/' | append: page.book_id | append: '/zh/' | append: n | append: '.md' -%}
+        {%- assign has_zh = false -%}
+        {%- if zh_pages contains k %}{% assign has_zh = true %}{% endif -%}
+        {% if page.zh and has_zh == false %}
+        <span class="spurgeon-tile spurgeon-tile-pending" title="尚未翻译"><span>Chapter</span>{{ n }}</span>
+        {% else %}
+        <a class="spurgeon-tile" href="{{ site.baseurl }}/spurgeon/{{ page.book_id }}/{{ zh_seg }}{{ n }}/">
+          <span>Chapter</span>{{ n }}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .spurgeon-verse-index-link {
+    display: inline-flex; align-items: baseline; gap: 8px;
+    padding: 8px 14px; margin: 0 0 22px;
+    background: #f7f3ea; border: 1px solid #d8c9a4; border-radius: 4px;
+    color: #8a6d3b; font-size: 14px; text-decoration: none !important;
+    font-family: 'Georgia', serif;
+  }
+  .spurgeon-verse-index-link:hover { background: #f0e9d8; border-color: #b99a5e; color: #6f5529; }
+  .spurgeon-verse-index-link span { font-size: 12px; color: #8a6d3b; opacity: .85; }
+
+  .spurgeon-wrap { --spurgeon-ink: {{ spurgeon_ink }}; --spurgeon-rule: {{ spurgeon_rule }}; }
+  body:has(.spurgeon-wrap) { background: #fbfaf7; }
+  .spurgeon-wrap { font-family: 'Georgia', 'Times New Roman', serif; color: #2c2c2c; }
+  .spurgeon-chrome a { color: var(--spurgeon-ink); text-decoration: none; font-size: 13.5px; }
+  .spurgeon-chrome a:hover { text-decoration: underline; }
+  .spurgeon-title {
+    font-size: 27px; color: var(--spurgeon-ink); font-weight: 600; letter-spacing: .03em;
+    border-bottom: 2px solid var(--spurgeon-ink); padding-bottom: 9px; margin: 0 0 8px;
+  }
+  .spurgeon-sub { font-style: italic; font-size: 13px; color: #8a8275; margin-bottom: 28px; }
+  .spurgeon-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr));
+    gap: 10px; margin-bottom: 40px;
+  }
+  .spurgeon-tile {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 68px; border: 1px solid var(--spurgeon-rule); border-radius: 4px;
+    background: #fff; color: var(--spurgeon-ink) !important; font-size: 21px;
+    text-decoration: none !important; line-height: 1;
+    transition: background .15s ease, border-color .15s ease, transform .15s ease;
+  }
+  .spurgeon-tile span {
+    font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase;
+    opacity: .6; margin-bottom: 4px;
+  }
+  .spurgeon-tile:hover {
+    background: var(--spurgeon-ink); border-color: var(--spurgeon-ink);
+    color: #f4f1e8 !important; transform: translateY(-1px);
+  }
+  .spurgeon-bar { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .spurgeon-lang {
+    border: 1px solid var(--spurgeon-rule); border-radius: 3px;
+    padding: 3px 11px; font-size: 12.5px; background: #fff; text-decoration: none !important;
+    color: var(--spurgeon-ink);
+  }
+  .spurgeon-lang:hover { background: var(--spurgeon-ink); color: #f4f1e8 !important; }
+  /* 尚未翻译的章：虚线、不可点 */
+  .spurgeon-tile-pending {
+    border-style: dashed; color: #a8b2bd !important; cursor: default; background: transparent;
+  }
+  .spurgeon-tile-wide {
+    height: 58px; margin-bottom: 18px; font-size: 16px; letter-spacing: .08em;
+    background: #f5f2ea;
+  }
+  @media (max-width: 640px) {
+    .spurgeon-grid { grid-template-columns: repeat(auto-fill, minmax(64px, 1fr)); gap: 8px; }
+    .spurgeon-tile { height: 58px; font-size: 18px; }
+  }
+</style>

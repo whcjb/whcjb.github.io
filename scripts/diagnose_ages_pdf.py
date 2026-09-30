@@ -106,12 +106,25 @@ def main():
         top = xs_pagenum.most_common(3)
         print('  页顶（页码/页眉）: ' + ', '.join(f'x0={x}:{c}' for x, c in top))
     body_x = xs.most_common(1)[0][0] if xs else 26
-    indent_x = next((x for x, _ in xs.most_common(6) if x > body_x + 6), body_x + 18)
-    para_indent = max(8, indent_x - body_x - 6)
-    print(f'  → 正文 x={body_x} / 段首 x={indent_x}（实测缩进 {indent_x - body_x}）')
-    print(f'  → para_indent={para_indent}'
-          '  ← 配置里这个值是**下限阈值**，要比实测缩进小几个点，'
-          '否则临界行会被判成续行（1cor/2cor/romans 实测 18，配 12）')
+    body_n = xs.most_common(1)[0][1] if xs else 0
+    # 次峰要够**厚**才算「段首缩进」。司布真马太福音正文全顶格、靠块间距分段，
+    # x=144 那种只有 9 行（正文 2130 行的 0.4%）的噪声峰被当段首，会算出
+    # para_indent=112 这种离谱值，拆段规则从此一次都不触发。
+    # 贺智三本的真段首峰占比 2%~7%，阈值取 1.5% 两边都分得开。
+    cand = [(x, c) for x, c in xs.most_common(8)
+            if body_x + 6 < x <= body_x + 60 and c >= max(4, body_n * 0.015)]
+    if cand:
+        indent_x = min(x for x, _ in cand)
+        para_indent = max(8, indent_x - body_x - 6)
+        print(f'  → 正文 x={body_x} / 段首 x={indent_x}（实测缩进 {indent_x - body_x}，'
+              f'{dict(xs)[indent_x]} 行）')
+        print(f'  → para_indent={para_indent}'
+              '  ← 配置里这个值是**下限阈值**，要比实测缩进小几个点，'
+              '否则临界行会被判成续行（1cor/2cor/romans 实测 18，配 12）')
+    else:
+        indent_x, para_indent = body_x, 0
+        print(f'  → 正文 x={body_x}，**没有成规模的段首缩进峰**'
+              ' → para_indent=0（按缩进拆段关掉，段落靠块间距分）')
 
     # ── 字号谱 / 字体（诊断用，全书）─────────────────────────────────────
     sizes = collections.Counter()
@@ -169,7 +182,8 @@ def main():
     # 罗马数字里混进字母 l/O 是 AGES 数字化的老毛病（以弗所书 p240 就是
     # `CHAPTER Vl`，小写 L 冒充 I）。字符集必须放宽到 lO，否则整章检测不到，
     # 发布阶段会静默少一章。
-    chap_re = re.compile(r'^\s*CHAPTER\s+([IVXLClO]+)\.?\s*$', re.M)
+    # 罗马数字（贺智）与阿拉伯数字 + 经文范围（司布真 `CHAPTER 1:1-17`）两种都认
+    chap_re = re.compile(r'^\s*CHAPTER\s+([IVXLClO]+|\d+(?::\d+(?:-\d+)?)?)\.?\s*$', re.M)
     chapters = []
     for i in range(n):
         m = chap_re.search(doc[i].get_text())
@@ -178,7 +192,7 @@ def main():
     print()
     print(f'## 章起始页（{len(chapters)} 章）')
     print('  ' + '  '.join(f'{r}={p}' for r, p in chapters))
-    bad = [(r, p) for r, p in chapters if set(r) & set('lO')]
+    bad = [(r, p) for r, p in chapters if set(r) & set('lO') and not r[0].isdigit()]
     if bad:
         print('  ⚠ 罗马数字里有假字母（源里的错字，不是我们读错）: '
               + ', '.join(f'p{p} 写作 {r!r}' for r, p in bad))

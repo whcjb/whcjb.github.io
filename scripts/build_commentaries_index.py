@@ -73,6 +73,12 @@ AUTHORS = OrderedDict([
     # 本站据 1864 年 Scribner 单卷修订版的扫描件
     # 亚历山大：两部书名不同，work_* 只作「本页收录」那一栏的集合名，
     # 逐卷书名走 BOOK_TITLES
+    # 司布真：伦敦大都会会幕牧师。本书《天国的福音》是他临终前最后一部作品，
+    # 卷首 INTRODUCTORY NOTE 署 S. S.、落款 January, 1893。
+    ('spurgeon', dict(name='查尔斯·司布真', short='司布真', en='Charles Haddon Spurgeon',
+                      years='1834–1892', dir='spurgeon',
+                      work_cn='马太福音注释',
+                      work_en='The Gospel of the Kingdom')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -102,6 +108,10 @@ AUTHOR_COLORS = {
     # 亚历山大石榴石：与既有七色的 ΔE 最小 26.9（毕列志棕 27 / 曼顿梅 28），
     # 那两支一偏黄一偏紫，与这支正红分得开。同批算过的 #3f3a7a 离贺智靛蓝
     # 只有 23，弃用。
+    # 司布真古铜：与既有八色的 ΔE 最小 27.2（最近的是毕列志棕 #96613F），
+    # 深端 #3a3018 的最小 ΔE 30.9。同批算过的 #10708c 离站点 Hux 蓝只有 8.9、
+    # #5a4828 离毕列志棕只有 21.5，都弃用。
+    'spurgeon': ('#3a3018', '#4a3b22'),
     'alexander': ('#5f2323', '#7d2f2f'),
 }
 
@@ -115,6 +125,8 @@ BOOK_TITLES = {
                                 'An Exposition of the Second Epistle to the Corinthians'),
     ('hodge', 'ephesians'):    ('以弗所书注释',
                                 'An Exposition of Ephesians'),
+    ('spurgeon', 'matthew'):   ('马太福音注释',
+                                'The Gospel of the Kingdom'),
     ('alexander', 'psalms'):   ('诗篇注释',
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',
@@ -140,12 +152,13 @@ BOOK_TITLES = {
 COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
-    'davenant': '#556b2f', 'alexander': '#7d2f2f',
+    'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
+    'spurgeon': '司布真注释',
 }
 
 
@@ -163,7 +176,7 @@ def _chapter_range(d: Path):
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
-                'alexander': 'en'}
+                'alexander': 'en', 'spurgeon': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):
