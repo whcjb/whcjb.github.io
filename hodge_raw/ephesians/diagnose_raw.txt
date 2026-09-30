@@ -1,0 +1,82 @@
+# hodge-ephesians 诊断  以弗所书
+源 /Users/yanpeifa/Documents/论文/hodge/hodge_ephesians_ages.pdf
+
+## 起手清单
+  页数        278  (410×626)
+  title       Hodge - Commentary on Ephesians
+  producer    Acrobat PDFWriter 2.0 for Macintosh
+  creationDateD:19960810212141
+  AGES 指纹   封面含 "AGES DIGITAL LIBRARY": ✓
+  <NNNNNN> 锚点 0   （贺智三卷都是 0，这是 Calvin-AGES 的特征，别拿来当贺智判据）
+
+## x0 分布（正文页 40–120 行级，页顶另计）
+  x0=  26:  2462 行
+  x0=  44:   180 行
+  x0= 176:     4 行
+  x0= 160:     4 行
+  x0= 126:     2 行
+  x0= 130:     2 行
+  页顶（页码/页眉）: x0=200:59, x0=198:21
+  → 正文 x=26 / 段首 x=44（实测缩进 18）
+  → para_indent=12  ← 配置里这个值是**下限阈值**，要比实测缩进小几个点，否则临界行会被判成续行（1cor/2cor/romans 实测 18，配 12）
+
+## 字号谱（span 数）
+   12.0pt:  13262
+   10.0pt:    275
+    9.0pt:     41
+    8.0pt:     29
+   20.0pt:      5
+   16.0pt:      3
+   24.0pt:      3
+   28.0pt:      2
+
+## 字体（字符数）
+  TimesNewRomanPSMT                  559175
+  TimesNewRomanPS-ItalicMT            38682
+  Koine-Medium                        18811
+  TimesNewRomanPS-BoldMT               1480
+  Geneva                                 24
+
+## 字形基线（Gate T 口径，skip_head=3 skip_tail=2）
+  bold             1011
+  italic           38165
+  red              37913
+  greek            2571
+  centered_blocks  56
+  blue #0000d4 (全书)  19103    ← 标签蓝，与希腊文 Koine 同色，判标签必须排除 Koine 字体
+  green #006411 (全书) 193
+  hebrew Gideon (全书) 0
+
+## 卷首 5 页首行
+  p0: THE AGES DIGITAL LIBRARY
+  p1: 2
+  p2: 3
+  p3: 4
+  p4: 5
+
+## 卷尾 4 页首行
+  p274: 275
+  p275: 276
+  p276: PUBLISHERS NOTES
+  p277: have, however, attempted to retain the essential content and thoughts 
+
+## 章起始页（6 章）
+  I=18  II=67  III=108  IV=136  V=192  Vl=240
+  ⚠ 罗马数字里有假字母（源里的错字，不是我们读错）: p240 写作 'Vl'
+    → 发布阶段的章头正则必须认这个变体，否则少一章
+
+## 卷首应跳过 [0, 1]  （逐页判封面/TOC/纯书名页，勿照抄别卷）
+
+## 脚注区  p270  标题=NOTES
+## 卷尾 AGES 广告 2 页 → stop_page=276
+
+## 可粘贴的 VOLUMES 条目
+    'hodge-ephesians': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': True,
+        'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'skip_pages': {0, 1},   # 封面 / HYPERTEXT TOC
+        'stop_page': 276,          # 之后是 AGES 出版广告
+        'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_ephesians_ages.pdf',
+        'out':  os.path.join(BASE, 'hodge_raw/ephesians/hodge_ephesians_structured.txt'),
+    },

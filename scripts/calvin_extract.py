@@ -263,6 +263,22 @@ VOLUMES = {
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_romans_ages.pdf',
         'out':  os.path.join(BASE, 'hodge_raw/romans/hodge_romans_structured.txt'),
     },
+    # 以弗所书 (2026-09-30 诊断，见 hodge_raw/ephesians/DIAGNOSIS.md)
+    # 与 1cor/2cor/romans 同为 ages_phil 单列，两处**不能照抄**那三本：
+    #   · skip_pages 是 {0,1} 不是 {0,1,2}——本书 p2 是「书名 + INTRODUCTION
+    #     正文」同页（那三本 p2 是纯书名页），照抄会丢掉导论首页
+    #   · 第六章章头源里印成 `CHAPTER Vl`（小写 L 冒充 I，p240），
+    #     只认 [IVXLC]+ 的正则会漏掉整章
+    # 文末脚注区标题是 NOTES 不是 FOOTNOTES（p270），同 romans
+    'hodge-ephesians': {
+        'format': 'ages_phil',
+        'inline_sup_footnotes': True,
+        'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'skip_pages': {0, 1},      # 封面 / HYPERTEXT TOC
+        'stop_page': 276,          # p276-277 是 AGES 出版说明
+        'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_ephesians_ages.pdf',
+        'out':  os.path.join(BASE, 'hodge_raw/ephesians/hodge_ephesians_structured.txt'),
+    },
     'acts': {
         # Ages Digital Library single-column English (Beveridge/Fetherstone tr).
         # Diagnosed 2026-06-08: 410×626 page, 886 pages, x0 peak 30 (body);
