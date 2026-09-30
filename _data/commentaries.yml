@@ -41,7 +41,7 @@ authors:
     years: "1797–1878"
     work_cn: "罗马书、哥林多前后书注释"
     work_en: ""
-    books: 3
+    books: 4
   - id: manton
     name: "托马斯·曼顿"
     short: "曼顿"
@@ -368,6 +368,7 @@ books:
     testament: nt
     chapters: 6
     links:
+      - {author: hodge, path: "/hodge/ephesians/", url_tpl: "/hodge/ephesians/__CH__/", title_cn: "以弗所书注释", title_en: "An Exposition of Ephesians", c0: "#152840", c1: "#2b5080"}
   - id: philippians
     name: "腓立比书"
     en: "Philippians"

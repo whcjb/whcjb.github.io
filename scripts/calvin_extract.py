@@ -274,6 +274,7 @@ VOLUMES = {
         'format': 'ages_phil',
         'inline_sup_footnotes': True,
         'para_indent': 12,   # 正文 x26 / 段首 x44，实测
+        'notes_hanging_indent': True,   # 文末 NOTES 区是悬挂缩进（p270 实测）
         'skip_pages': {0, 1},      # 封面 / HYPERTEXT TOC
         'stop_page': 276,          # p276-277 是 AGES 出版说明
         'pdf':  '/Users/yanpeifa/Documents/论文/hodge/hodge_ephesians_ages.pdf',
@@ -3118,6 +3119,14 @@ _SUP_MAX_SIZE = 9.5      # 标记字号上限（贺智实测 9.0，正文 12.0�
 _PARA_INDENT = 0
 _para_body_left = 0.0
 
+# 文末 NOTES 区用「悬挂缩进」排版：条目首行顶在左边距、续行反而缩进，
+# 与正文段落（首行缩进、续行顶格）正好相反。此时按 `ind >= _PARA_INDENT`
+# 拆段的规则一次都不会触发，整页 20 多条注全并成一段，文末脚注定义就解析不出来。
+# 以弗所书 p270：条目首行 x=25.5、续行 x=43.5（罗马书是条目号单独成 span、
+# 正文挂在 x=52.5，天然分行，所以那本没暴露这个问题）。
+# 由 VOLUMES 的 `notes_hanging_indent: True` 打开，默认关。
+_NOTES_HANGING = False
+
 
 
 def _render_spans_with_italic(spans):
@@ -3713,8 +3722,16 @@ def phil_reconstruct_page(page, page_num=None):
             # 已结句——节号头前一句偶有跨页未结的情形。
             _verse_head = (_PARA_INDENT
                            and re.match(r'^VERSES?\s*[:.]?\s*\d', txt or ''))
+            # 悬挂缩进的脚注条目头：几何上「反缩进」（本行比本页主流左边距还
+            # 靠左，因为 NOTES 页的主流左边距是续行的 x43.5）+ 内容上以
+            # `N.` 起首。两个信号缺一不可（principles §0.3）：只看反缩进会切
+            # 到标题行，只看 `N.` 会切到正文里的枚举句。
+            _note_head = False
+            if _NOTES_HANGING and ind <= -_PARA_INDENT:
+                _bare = re.sub(r'</?sty(?:\s[^>]*)?>', '', txt or '').lstrip()
+                _note_head = bool(re.match(r'^\d{1,3}\.\s', _bare))
             if (_PARA_INDENT and cls == cur_cls == 'BODY'
-                    and (_verse_head or (ind >= _PARA_INDENT and _ended))):
+                    and (_verse_head or _note_head or (ind >= _PARA_INDENT and _ended))):
                 texts = cur_texts if isinstance(cur_texts, list) else [cur_texts]
                 merged = ' '.join(t.strip() for t in texts if t.strip())
                 if merged.strip():
@@ -3755,8 +3772,9 @@ def extract_ages_phil(cfg):
     _LATIN_X_MIN_OVERRIDE = cfg.get('latin_x_min')
     global _INLINE_SUP_FOOTNOTES
     _INLINE_SUP_FOOTNOTES = bool(cfg.get('inline_sup_footnotes'))
-    global _PARA_INDENT
+    global _PARA_INDENT, _NOTES_HANGING
     _PARA_INDENT = cfg.get('para_indent', 0)
+    _NOTES_HANGING = cfg.get('notes_hanging_indent', False)
     doc   = fitz.open(cfg['pdf'])
     total = len(doc)
     _LATIN_X_MIN_FIXED = (_doc_latin_x_min(doc)

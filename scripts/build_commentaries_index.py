@@ -113,6 +113,8 @@ BOOK_TITLES = {
                                 'An Exposition of the First Epistle to the Corinthians'),
     ('hodge', '2corinthians'): ('哥林多后书注释',
                                 'An Exposition of the Second Epistle to the Corinthians'),
+    ('hodge', 'ephesians'):    ('以弗所书注释',
+                                'An Exposition of Ephesians'),
     ('alexander', 'psalms'):   ('诗篇注释',
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',

@@ -126,6 +126,9 @@ _GREEK_SPAN_RE = re.compile(
     r'(<sty c="[0-9a-fA-F]{6}" i="[01]"(?: b="[01]")? g="1">)(.*?)(</sty>)', re.DOTALL)
 
 
+_GR_EDGE_PUNCT = ',.;:!?()"\'“”‘’·'
+
+
 def _force_greek_spans(text: str) -> str:
     """对提取层标了 g="1"（Koine 字体）的 span **无条件**做 AGES→Unicode。
 
@@ -139,8 +142,27 @@ def _force_greek_spans(text: str) -> str:
         for tok in re.split(r'(\s+)', inner):
             if not tok.strip():
                 out.append(tok); continue
-            c = _ages_token(tok.replace('\\|', '|'))
-            out.append(c if any('Ͱ' <= x <= 'Ͽ' or 'ἀ' <= x <= '῿' for x in c) else tok)
+            # 先把词首尾的**标点**摘下来再转，转完原样贴回。
+            # _ages_token 只认转写码，词尾的 `,` `.` `:` `;` `(` `)` 会被整个吃掉
+            # ——以弗所书一本就丢了 163 个标点（Gate X 的 -335 字符里大半是它）。
+            # 摘的字符集**绝不能**含 > < ~ | + [ ]：那六个是 AGES 的声调/气符/
+            # iota 下标标记，摘掉等于把重音抹了。
+            # 标点可能夹在词中间，不只在两头：罗马书有 `k.t.l.`（κ.τ.λ.）
+            # 和 `∆Epafro>diton....uJmw~n`，只摘两头这两处照样丢点。
+            pieces = re.split(rf'([{re.escape(_GR_EDGE_PUNCT)}]+)', tok)
+            conv, got_greek = [], False
+            for pc in pieces:
+                if not pc:
+                    continue
+                if re.fullmatch(rf'[{re.escape(_GR_EDGE_PUNCT)}]+', pc):
+                    conv.append(pc); continue
+                c = _ages_token(pc.replace('\\|', '|'))
+                if any('Ͱ' <= x <= 'Ͽ' or 'ἀ' <= x <= '῿' for x in c):
+                    got_greek = True
+                    conv.append(c)
+                else:
+                    conv.append(pc)
+            out.append(''.join(conv) if got_greek else tok)
         return m.group(1) + ''.join(out) + m.group(3)
     return _GREEK_SPAN_RE.sub(_one, text)
 
@@ -835,7 +857,16 @@ def convert(structured_path: Path, out_path: Path) -> None:
         # （p704）。默认只认 FOOTNOTES，别的卷用 --fn-section-title 显式指定，
         # 不放宽默认判定——NOTES 是个太常见的词，放进默认集会误吞正文小节。
         _bare = re.sub(r'</?sty(?:\s[^>]*)?>', '', content).strip().upper()
-        if tag in ('CENTERED_H2', 'CENTERED_H1') and _bare in FN_SECTION_TITLES:
+        _is_fn_title = _bare in FN_SECTION_TITLES
+        # 标题不一定居中：以弗所书的 NOTES 顶在左边距（p270，x=25.5 粗体），
+        # 进管道就是 [BODY] 而不是 [CENTERED_H2]，只认居中的话整个脚注区
+        # 退回普通段落、def 归零（本书 29 条全丢）。
+        # 放宽到 BODY 的三重限制，缺一不可：整行**恰好**是标题文字、整行是
+        # 粗体、且标题名是 --fn-section-title 显式配过的（默认只有 FOOTNOTES）。
+        _left_fn_title = (
+            tag == 'BODY' and _is_fn_title
+            and re.fullmatch(r'\s*<sty\s[^>]*b="1"[^>]*>[^<]*</sty>\s*', content or ''))
+        if _is_fn_title and (tag in ('CENTERED_H2', 'CENTERED_H1') or _left_fn_title):
             in_footnote_section = True
             i += 1
             continue

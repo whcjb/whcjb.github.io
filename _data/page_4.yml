@@ -1,50 +1,50 @@
-- type: mhenry
-  title: "启示录 第20章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/20/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第21章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/21/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第22章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/22/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第3章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/3/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第4章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/4/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第5章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/5/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第6章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/6/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第7章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/7/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第8章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/8/"
-  date: "2026-04-29 10:56"
-- type: mhenry
-  title: "启示录 第9章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/revelation/9/"
-  date: "2026-04-29 10:56"
+- type: hodge
+  title: "贺智《哥林多前书注释》导论"
+  subtitle: "查尔斯·贺智"
+  url: "/hodge/1corinthians/zh/preface/"
+  date: "2026-09-01 16:43"
+- type: calvin
+  title: "诗篇（卷一） 前言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/psalms-1/preface/"
+  date: "2026-08-27 18:29"
+- type: calvin
+  title: "约书亚记 前言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/joshua/preface/"
+  date: "2026-08-27 18:29"
+- type: calvin
+  title: "摩西五经合参（卷二） 序言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-2/preface/"
+  date: "2026-08-27 18:27"
+- type: calvin
+  title: "摩西五经合参（卷四） 序言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-4/preface/"
+  date: "2026-08-27 18:27"
+- type: calvin
+  title: "摩西五经合参（卷三） 序言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-3/preface/"
+  date: "2026-08-27 18:27"
+- type: calvin
+  title: "摩西五经合参（卷一） 序言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/preface/"
+  date: "2026-08-27 18:24"
+- type: calvin
+  title: "西番雅书 前言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/zephaniah/preface/"
+  date: "2026-08-27 18:22"
+- type: calvin
+  title: "哈该书 前言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/haggai/preface/"
+  date: "2026-08-27 18:22"
+- type: calvin
+  title: "约珥书 前言"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/joel/preface/"
+  date: "2026-08-27 18:22"

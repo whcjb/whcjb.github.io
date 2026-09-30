@@ -27,6 +27,7 @@ BOOKS = {
     '1corinthians': {'cn': '哥林多前书', 'en': '1 Corinthians', 'chapters': 16},
     '2corinthians': {'cn': '哥林多后书', 'en': '2 Corinthians', 'chapters': 13},
     'romans': {'cn': '罗马书', 'en': 'Romans', 'chapters': 16},
+    'ephesians': {'cn': '以弗所书', 'en': 'Ephesians', 'chapters': 6},
 }
 
 # 裸 per-verse id 才要；`-2`/`-3` 重复段后缀不进索引（\d+ 不吃 -，天然排除）

@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-BOOKS = ['1corinthians', '2corinthians', 'romans']
+BOOKS = ['1corinthians', '2corinthians', 'romans', 'ephesians']
 
 ANCHOR_RE = re.compile(r'^<div class="commentary-anchor" id="[^"]+"></div>\n', re.M)
 
@@ -51,11 +51,26 @@ HEAD_VERSE_RE = re.compile(
 )
 
 
+# 以弗所书的节号头是第三种形态：`V. 4.` / `Vs. 26. 27.` / `VS. 20, 21.`，
+# 既不是加粗数字（林前后）也不是小型大写 VERSE（罗马书）。全书 141 处，
+# 语料里单数前缀 `V.` **一次都没有**带多个节号（复合一律写成 `Vs.`/`VS.`），
+# 所以单数只取一个数字——放开成列表会把正文里 `V. 4. 1. In its primary
+# sense…` 这种「节号 + 列举项」连读成两节。
+# 数字位允许字母 l：AGES 数字化把 1 印成小写 L 是本书的老毛病（章头 `CHAPTER Vl`
+# 是同一种），以弗所书 6:1 的节号头就是 `V. l.`。全书只此 1 处，其余三本一处
+# 没有（那三本唯一的非数字是 `V. The`，字符类挡掉了）。
+HEAD_V_ONE_RE = re.compile(r'^V\.\s*([\dl]{1,3})\s*\.?\s*(?=[\s<])')
+HEAD_V_MULTI_RE = re.compile(
+    r'^V[sS]\.\s*(\d{1,3}(?:\s*[.,]\s*\d{1,3})*)\s*\.?\s*(?=[\s<])')
+
+
 def parse_verses(spec: str):
     """'6, 7' → [6,7]；'3-5' → [3,4,5]；'32 33' → [32,33]。"""
     verses = []
     for part in re.split(r'[,，、]|\s+AND\s+|\s+(?=\d)', spec):
-        part = part.strip()
+        part = part.strip().strip('.')
+        if part and re.fullmatch(r'[\dl]+', part):
+            part = part.replace('l', '1')      # 见 HEAD_V_ONE_RE 上方注释
         if not part:
             continue
         m = re.fullmatch(r'(\d{1,3})\s*[-–]\s*(\d{1,3})', part)
@@ -83,7 +98,8 @@ def process(path: Path, book: str, ch: str, write: bool):
     out, seen = [], {}
     n_anchor = 0
     for line in text.split('\n'):
-        m = HEAD_RE.match(line) or HEAD_VERSE_RE.match(line)
+        m = (HEAD_RE.match(line) or HEAD_VERSE_RE.match(line)
+             or HEAD_V_MULTI_RE.match(line) or HEAD_V_ONE_RE.match(line))
         if m:
             for v in parse_verses(m.group(1)):
                 seen[v] = seen.get(v, 0) + 1

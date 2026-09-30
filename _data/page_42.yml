@@ -1,50 +1,50 @@
-- type: mhenry
-  title: "但以理书 第2章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/2/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第3章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/3/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第4章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/4/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第5章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/5/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第6章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/6/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第7章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/7/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第8章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/8/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "但以理书 第9章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/daniel/9/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "马可福音 第1章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/mark/1/"
-  date: "2026-04-29 10:32"
-- type: mhenry
-  title: "马可福音 第10章"
-  subtitle: "马太亨利圣经注释"
-  url: "/mhenry/mark/10/"
-  date: "2026-04-29 10:32"
+- type: calvin
+  title: "摩西五经合参（卷三） The Ninth Commandment"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-3/9/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 出埃及记 1"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/1/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 申命记 1:9-18"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/10/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 申命记 30:11-14"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/11/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 出埃及记 13"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/13/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 出埃及记 5"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/2/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） Preface to the Law"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/21/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 出埃及记 11"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/3/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 出埃及记 4"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/4/"
+  date: "2026-08-18 11:17"
+- type: calvin
+  title: "摩西五经合参（卷一） 申命记 4"
+  subtitle: "加尔文圣经注释"
+  url: "/calvin/harmony-law-1/5/"
+  date: "2026-08-18 11:17"
