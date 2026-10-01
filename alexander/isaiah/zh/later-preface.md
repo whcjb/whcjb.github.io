@@ -4,8 +4,8 @@ book_id: isaiah
 book_name: "亚历山大《以赛亚书注释》"
 title: "卷二 著者序"
 date: 2026-09-15 16:39
-prev_section: 33
-prev_label: "以赛亚书 第 33 章"
+prev_section: 34
+prev_label: "以赛亚书 第 34 章"
 next_section: later-introduction
 next_label: "卷二 导论"
 en_url: "/alexander/isaiah/later-preface/"
