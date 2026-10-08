@@ -143,19 +143,20 @@ def parse(res):
     return out
 
 
-def run(rnd, lo, hi, only_hits=False):
+def run(rnd, lo, hi, only_hits=False, only_clean=False):
     import fitz
     index = build_index()
     keep = None
-    if only_hits:
+    if only_hits or only_clean:
+        want = (lambda n: n > 0) if only_hits else (lambda n: n == 0)
         keep = set()
         p1 = log_path(1)
         if p1.exists():
             for line in p1.open(encoding='utf-8'):
                 f = line.rstrip('\n').split('\t')
-                if len(f) >= 2 and f[1].isdigit() and int(f[1]) > 0:
+                if len(f) >= 2 and f[1].isdigit() and want(int(f[1])):
                     keep.add(int(f[0]))
-        print(f'第一遍报过差异的页：{len(keep)}')
+        print(f'第一遍{"报过差异" if only_hits else "一句话没说"}的页：{len(keep)}')
     doc = fitz.open(PDF)
     out = log_path(rnd)
     done = set()
@@ -282,11 +283,11 @@ def edit(a, b):
 ROMAN_RE = re.compile(r'[ivxlcdmIVXLCDM]+')
 
 
-def candidates(apply=False):
+def candidates(apply=False, pair=(1, 2)):
     lex = L.build()
     """两遍都报的差异 → 能在 raw 里唯一定位、且改动够小的，出成待落清单。"""
     rounds = {}
-    for rnd in (1, 2):
+    for rnd in pair:
         d = defaultdict(list)
         p = log_path(rnd)
         if not p.exists():
@@ -299,12 +300,12 @@ def candidates(apply=False):
                     d[f[0]].append((a, b))
         rounds[rnd] = d
     if len(rounds) < 2:
-        print('两遍还没都跑完')
+        print(f'第 {pair[0]}/{pair[1]} 遍还没都跑完')
         return
     index = build_index()
     stat, hits, manual = Counter(), [], []
-    for pg, items in sorted(rounds[1].items(), key=lambda x: int(x[0])):
-        other = rounds[2].get(pg, [])
+    for pg, items in sorted(rounds[pair[0]].items(), key=lambda x: int(x[0])):
+        other = rounds[pair[1]].get(pg, [])
         for a, b in items:
             if not any(norm(x[0]) == norm(a) or norm(x[1]) == norm(b) for x in other):
                 stat['只有一遍报'] += 1
@@ -335,12 +336,13 @@ def candidates(apply=False):
             stat['可落'] += 1
             hits.append((pg, sec, placed[0], placed[1], a, b))
     print('，'.join(f'{k} {v}' for k, v in stat.most_common()))
-    out = ROOT / 'logs/alexander_psalms_page_candidates.tsv'
+    sfx = '' if pair == (1, 2) else f'_r{pair[0]}{pair[1]}'
+    out = ROOT / f'logs/alexander_psalms_page_candidates{sfx}.tsv'
     with out.open('w', encoding='utf-8') as fh:
         fh.write('书页\t篇\traw原串\traw改成\t两遍引文我们\t两遍引文影像\n')
         for r in hits:
             fh.write('\t'.join(r) + '\n')
-    man = ROOT / 'logs/alexander_psalms_page_manual.tsv'
+    man = ROOT / f'logs/alexander_psalms_page_manual{sfx}.tsv'
     with man.open('w', encoding='utf-8') as fh:
         fh.write('书页\t我们\t影像\t原因\n')
         for r in manual:
@@ -363,20 +365,26 @@ def candidates(apply=False):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--round', type=int, choices=(1, 2))
+    ap.add_argument('--round', type=int, choices=(1, 2, 3))
     ap.add_argument('--from', dest='lo', type=int, default=0)
     ap.add_argument('--to', dest='hi', type=int, default=9999)
     ap.add_argument('--report', action='store_true')
     ap.add_argument('--apply-fixes', action='store_true',
                     help='把能唯一定位、改动够小的直接落进 en_chapters')
+    ap.add_argument('--only-clean', action='store_true',
+                    help='只跑第一遍一句话没说的页——那些页只有一家之言，'
+                         '补第二、第三遍让它们也变成两证人（NONE 不可信）')
+    ap.add_argument('--rounds', default='1,2',
+                    help='--report 时拿哪两遍取交集，如 2,3')
     ap.add_argument('--only-hits', action='store_true',
                     help='只跑第一遍报过差异的页——第二遍的活儿是筛掉假阳性，'
                          '第一遍一句话没说的页没什么可筛的')
     a = ap.parse_args()
     if a.report:
-        candidates(apply=a.apply_fixes)
+        pair = tuple(int(x) for x in a.rounds.split(','))
+        candidates(apply=a.apply_fixes, pair=pair)
     elif a.round:
-        run(a.round, a.lo, a.hi, a.only_hits)
+        run(a.round, a.lo, a.hi, a.only_hits, a.only_clean)
     else:
         ap.error('要 --round N 或 --report')
 
