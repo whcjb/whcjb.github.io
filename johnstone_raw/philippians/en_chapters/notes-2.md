@@ -28,7 +28,7 @@ The article in τῇ ταπεινοφροσύνῃ may perhaps mean ‘that whic
 
 , the reading of the Received Text, has some uncial authority ; but there is great preponderance in favour *of* φρονεῖτε. If we accept the latter, then there are two slight irregularities of construction in what follows. For ἐν ὑμῖν, connected with — a verb in the second person, strict grammar would require ἐν ὑμῖν αὐτοῖς, or, according to New Testament usage, ἐν ἑαυτοῖς. Again, the regular form of the relative clause after φρονεῖτε
 
-cH. π΄. 6.] *Motes on the Greck Text.* εἰ νόμος
+cH. π΄. 6.] *Motes on the Greek Text.* εἰ νόμος
 
 would obviously be ὃ καὶ Χριστὸς ᾿Ιησοῦς (éppdve),—whereas with ἐν Χριστῷ ᾿Ιησοῦ we must supply ἐφρονεῖτο. It was probably to obviate these irregularities that some early copyist substituted φρονείσθω for φρονεῖτε.
 
@@ -48,7 +48,7 @@ glory, to intensify the effect of the subsequent mention of His
 
 condescension. In this case, the sense of the participle ὑπάρχων
 
-, when fully exhibited, is ‘ *decause* He was.’ If we take ἁρπαγμὸς
+, when fully exhibited, is ‘ *because* He was.’ If we take ἁρπαγμὸς
 
 as equivalent to ἅρπαγμα, ‘something carried off,
 
@@ -80,7 +80,7 @@ denotes the *act;* but ecclesiastical writers have it more than once, and their 
 
 doubt, on the present passage, of bowing whenever the name ‘ Jesus’ occurs in the public prayers, is not merely a superstitious deference to the letter of Scripture, but to a misunderstanding of the letter.
 
-10. It may be doubted (see the lecture on the passage) whether ἐπουρανίων, ἐπιγείων, and καταχθονίων are masculine. Even admitting them to be masculine, it may be doubted whether, in what is so evidently simply a rhetorical expansion of the conception, ‘God’s moral creatures everywhere,’ it is necessary to define particularly the various classes. If we regard such definition as needful,—then, as it appears to me, the apostle’s reference is most naturally taken to be to angels and ‘the spirits of just men made perfect,—to men living on the earth,—and to the devils, and the spirits of lost men. Meyer, Ellicott, and others, make the classes to be, respectively, angels,—living men,—and dead men. But that the apostle, a very few verses after he has told us of his full conviction that for him ‘ to depart’ would be ‘to be *with Christ,* which is far better,’ should include departed *sazm¢s* in a class distinct from the *érovpaycor,*—and this, too, in a passage where we instinctively think, not of the body, but of the spirit,—seems to me in the very highest degree improbable. Meyer’s objection to the other view, that elsewhere in Paul’s wnitings (as in Eph. li. 2, vi. 12) he speaks of the evil spirits being situated otherwise than as καταχθόνιοι, has little weight. In a passage of this kind they are naturally spoken of in connection with their true home,—the abyss (Luke vill. 31).
+10. It may be doubted (see the lecture on the passage) whether ἐπουρανίων, ἐπιγείων, and καταχθονίων are masculine. Even admitting them to be masculine, it may be doubted whether, in what is so evidently simply a rhetorical expansion of the conception, ‘God’s moral creatures everywhere,’ it is necessary to define particularly the various classes. If we regard such definition as needful,—then, as it appears to me, the apostle’s reference is most naturally taken to be to angels and ‘the spirits of just men made perfect,—to men living on the earth,—and to the devils, and the spirits of lost men. Meyer, Ellicott, and others, make the classes to be, respectively, angels,—living men,—and dead men. But that the apostle, a very few verses after he has told us of his full conviction that for him ‘ to depart’ would be ‘to be *with Christ,* which is far better,’ should include departed *sazm¢s* in a class distinct from the *érovpaycor,*—and this, too, in a passage where we instinctively think, not of the body, but of the spirit,—seems to me in the very highest degree improbable. Meyer’s objection to the other view, that elsewhere in Paul’s writings (as in Eph. li. 2, vi. 12) he speaks of the evil spirits being situated otherwise than as καταχθόνιοι, has little weight. In a passage of this kind they are naturally spoken of in connection with their true home,—the abyss (Luke vill. 31).
 
 12. By some interpreters ὑπηκούσατε is thought to involve a reference to ὑπήκοος of ver. 8, and therefore to mean ‘obeyed *God.* The distance, however, makes the reference scarcely natural; and, looking at the clause which follows, ‘obeyed *me’* seems rather to be the sense. But, of course, — this means ‘ me, as God’s ambassador.’ Compare 2 Cor. ii. 9.
 
@@ -94,7 +94,7 @@ belongs to the imperative κατεργάζεσθε, not, as our translators have
 
 For Paul’s use of φόβος καὶ τρόμος with some such force as
 
-‘self-distrust and strong solicitude,’ compare 2 Cor. vil. 15 ; Eph. vi. 5. In the Septuagint use of the combination we find generally the full, strong, original sense of the words retained. See, for example, Gen. ix. 2; Ex. xv. 16; Deut. il. 25.
+‘self-distrust and strong solicitude,’ compare 2 Cor. vii. 15 ; Eph. vi. 5. In the Septuagint use of the combination we find generally the full, strong, original sense of the words retained. See, for example, Gen. ix. 2; Ex. xv. 16; Deut. ii. 25.
 
 15. As a rule, the active form φαίνειν is used in the sense of
 
@@ -104,9 +104,9 @@ For Paul’s use of φόβος καὶ τρόμος with some such force as
 
 the preceding ; compare James li. 18. The ‘yea, and’ of our version renders it well.
 
-Alford translates εἰ καὶ σπένδομαι, ‘if I am even being poured out,’—‘ because the danger was besetting him *wow,* and waxing onward to its accomplishment.’ The present with εἰ *may* have this force ; but it may simply exhibit a vivid realization of the supposition before the mind; compare Mark xi. 26; 1 Cor. Vil. 9. Πίστεως
+Alford translates εἰ καὶ σπένδομαι, ‘if I am even being poured out,’—‘ because the danger was besetting him *wow,* and waxing onward to its accomplishment.’ The present with εἰ *may* have this force ; but it may simply exhibit a vivid realization of the supposition before the mind; compare Mark xi. 26; 1 Cor. vii. 9. Πίστεως
 
-is governed by both θυσίᾳ and λειτουργίᾳ, standing related to the two, however, in somewhat different ways. With the former the genitive is one of apposition,—‘ the sacrifice which consists in your faith ;’ with the latter, one of somewhat loose connection,—‘ the priestly service relating to, or connected with, your faith.’ By some interpreters θυσία is taken here for the *act* of sacrificing ; but New Testament usage is in favour of giving it the sense of the *victim.* “Emi seems to mean ‘in addition to.’ The statement of Josephus *(Avfig.* ill. 9. 4), that in drink-offerings the wine was poured *avound* the altar, does not present any difficulty in the way of our translating it ‘upon,’ because, as Dr. Lightfoot notices, the Septuagint certainly uses ἐπὶ to describe these libations; which would be ample authority for thus picturing the scene in a figurative reference like the present. But it does not seem possible to give any distinct idea to ‘upon’ in connection with the second governed substantive, ‘ service.’ S
+is governed by both θυσίᾳ and λειτουργίᾳ, standing related to the two, however, in somewhat different ways. With the former the genitive is one of apposition,—‘ the sacrifice which consists in your faith ;’ with the latter, one of somewhat loose connection,—‘ the priestly service relating to, or connected with, your faith.’ By some interpreters θυσία is taken here for the *act* of sacrificing ; but New Testament usage is in favour of giving it the sense of the *victim.* “Emi seems to mean ‘in addition to.’ The statement of Josephus *(Avfig.* ill. 9. 4), that in drink-offerings the wine was poured *around* the altar, does not present any difficulty in the way of our translating it ‘upon,’ because, as Dr. Lightfoot notices, the Septuagint certainly uses ἐπὶ to describe these libations; which would be ample authority for thus picturing the scene in a figurative reference like the present. But it does not seem possible to give any distinct idea to ‘upon’ in connection with the second governed substantive, ‘ service.’ S
 
 vyxaipw sometimes means ‘congratulate,’ and such seems to be its sense here; for after the statement ‘I rejoice with you all,’—that is, ‘ You and I rejoice together,’—the counsel or injunction of the 18th verse would be superfluous. Now in ‘congratulation’ ‘reciprocation on the part of the person appealed to is not so much presupposed as invited’ (Lightfoot). In Luke i. 58 also the word may very well have this meaning.
 
@@ -124,7 +124,7 @@ belonging to a *c/ass* marked by certain qualities,—‘ of that kind who,’ �
 
 In the revised translation of the Epistle given in this volume, γνησίως has been rendered by ‘truly.’ This is inadequate ; but the word in this connection is difficult to translate. Tyndale has ‘with so pure affection.’ Our translators, in their ‘naturally,’ seem to have intended to bring out the idea of yev-, the root of γνησίως, ---- with the love of one who is *47z#* in Christ.’ ‘Genuinely,’ which, etymologically and otherwise, is the most exact English equivalent, they shunned,—probably © as being in their day used only in poetry. Now also, though sufficiently common in prose, it might sound oddly in the connection. Conybeare gives ‘in earnest.’ Ellicott renders verb and adverb together, ‘will have a true care.’
 
-22. In δοκιμὴ, as in the other words from the same root, the primary sense, ‘ proof,’ leads easily into a secondary, ‘ afproval.’ Compare, in English, *‘a pvoved* friend,’ ‘a *vied* friend.’ Here, therefore, the meaning may be, as in the Authorized Version, ‘the proof of him, that,’-—that is, ‘the proof of what kind of man he is, afforded by the fact that ;’ or ‘his proved character, his approved excellence, namely, that.’ Of this latter sense of δοκιμὴ there are, perhaps, instances in Rom. v. 4; 2 Cor. li. 9, ix. 13.
+22. In δοκιμὴ, as in the other words from the same root, the primary sense, ‘ proof,’ leads easily into a secondary, ‘ afproval.’ Compare, in English, *‘a proved* friend,’ ‘a *vied* friend.’ Here, therefore, the meaning may be, as in the Authorized Version, ‘the proof of him, that,’-—that is, ‘the proof of what kind of man he is, afforded by the fact that ;’ or ‘his proved character, his approved excellence, namely, that.’ Of this latter sense of δοκιμὴ there are, perhaps, instances in Rom. v. 4; 2 Cor. li. 9, ix. 13.
 
 Our translators have taken πατρὶ as governed by σὺν understood, the σὺν being expressed in the second member of the comparison, σὺν ἐμοί. But such a construction is found in poetry only ; see Jelf, ὃ 650. 2. It is probable, therefore, that there is a variation of construction in the two members, πατρὶ being governed by δουλεύει understood ; see Winer, ὃ 50. 7. As to the significance of this variation, see the lecture on the passage.
 
@@ -132,7 +132,7 @@ Our translators have taken πατρὶ as governed by σὺν understood, the σ
 
 CH. 11. 25-28.| *Moles on the Greek Text.* 457
 
-of cases in which, in this and other compounds of εἶδον, the aspirate is found in the oldest authorities. There is here, no ‘doubt, a relic of the digamma which the word had, and which has its representatives in the form the root takes in other languages,—in the w of the Latin *widere,* and the *w* of the German *wissen* and English *zit.*
+of cases in which, in this and other compounds of εἶδον, the aspirate is found in the oldest authorities. There is here, no ‘doubt, a relic of the digamma which the word had, and which has its representatives in the form the root takes in other languages,—in the w of the Latin *widere,* and the *w* of the German *wissen* and English *wit.*
 
 25. As Epaphroditus was evidently the bearer of the letter, it is plain that in ἡγησάμην, and in ἔπεμψα (ver. 28), we have cases of what is known as the *¢féstolary* aorist,—the writer placing himself in imagination at the point of time when his letter was *read,* and when consequently the thoughts and feelings of the time of writing would be past ; Winer, § 40. 5, *4, 2.* The imperfect ἦν, in the subordinate clause (ver. 26), is, of course, to be explained on the same principle. In Latin, the imperfect and perfect are similarly used in letters, the purely *formal* nature of the preterite being shown by the fact that the adverb *unc* may be joined with the verb, whilst a real preterite would require */unc;* for example, *novi nihil nunc erat apud nos,* —literally, ‘there *was* at present no news with us ; see Zumpt, ὃ 503. Our idiom, in such cases, uses either the present or the perfect. For the ‘supposed’ and ‘ sent’ of the Authorized Version, therefore, we must substitute either ‘suppose’ and ‘send,’ or ‘have supposed’ and ‘ have sent.’
 

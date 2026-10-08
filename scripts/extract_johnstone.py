@@ -109,6 +109,39 @@ def ocr_pages():
     return out
 
 
+def drop_duplicate_leaves(ocr, window=5, thresh=0.55):
+    """同一页被拍了两遍 → 丢掉糊的那一遍。
+
+    这份扫描件里 p.230–231 各拍了两次：leaf 246/247 是好的，leaf 248/249 是
+    补拍，**操作员的手压在正文右侧**，右边一截字被挡掉了（裁图确认过）。
+    不查出来的话这两页正文会在产物里**重复出现一遍**，而且重复的那一遍是
+    残的 —— `unaltered essenti , hatever varie` 就是它。
+
+    判据：相邻 5 页内正文高度相似（归一化后前 1500 字相似度 >0.55）即判为
+    重拍，保留**可识别词更多**的那一张。相邻页正常情况下相似度在 0.2 上下，
+    0.55 这条线离得很远。
+    """
+    keys, order = {}, sorted(ocr)
+    for leaf in order:
+        t = re.sub(r'[^a-z]', '', '\n'.join(ocr[leaf]).lower())
+        keys[leaf] = t
+    drop = set()
+    for i, a in enumerate(order):
+        if a in drop or len(keys[a]) < 400:
+            continue
+        for b in order[i + 1:i + 1 + window]:
+            if b in drop or len(keys[b]) < 400:
+                continue
+            r = difflib.SequenceMatcher(None, keys[a][:1500], keys[b][:1500],
+                                        autojunk=False).ratio()
+            if r > thresh:
+                worse = a if len(keys[a]) < len(keys[b]) else b
+                drop.add(worse)
+                print(f'  重拍页：leaf {a:04d} ↔ {b:04d}（相似 {r:.2f}）→ '
+                      f'丢 {worse:04d}', file=sys.stderr)
+    return drop
+
+
 def printed_number(lines):
     """从页眉读印刷页码。左页在行首，右页在行尾。读不出返回 None。"""
     for line in lines[:3]:
@@ -541,6 +574,8 @@ def main():
         ['Introduction'] + LECTURES + [t for _, _p, t in TAIL]
         + ['Lectures on Philippians', 'The Epistle to the Philippians',
            'Contents', 'Preface', 'Appendix'])]
+    for leaf in drop_duplicate_leaves(ocr):
+        del ocr[leaf]
     first, shapes = learn_heads(ocr)
     print(f'页眉形 {len(shapes)} 种（语料自证，≥3 次）', file=sys.stderr)
 
@@ -549,9 +584,12 @@ def main():
     for n, leaf in enumerate(leaves):
         if a.limit and n >= a.limit:
             break
-        if n >= len(ab):
+        # **按 leaf 号取 ABBYY 页，不按在列表里的位序**。
+        # 重拍页被丢掉之后位序就跟 leaf 号错开了，用位序会让后面 270 页的
+        # 版面与斜体整体漂移两页（实测斜体丢弃从 59 处暴涨到 607 处）。
+        if leaf >= len(ab):
             break
-        txt = page_text([p['text'] for p in ab[n]['pars']], ocr[leaf],
+        txt = page_text([p['text'] for p in ab[leaf]['pars']], ocr[leaf],
                         first.get(leaf, ''), shapes)
         if a.dump_page and leaf == a.dump_page:
             print(txt)
