@@ -1195,3 +1195,6 @@ chapter	old	new	src
 55	ver. 19 (13), so will he answer	ver. 19 (18), so will he answer	r2-clean+1850: 影像与 1850 皆作 19 (18)；希伯来 19＝英文 18
 131	by the later Writer to his own	by the later writer to his own	r2-clean+1850: 两边皆作小写 writer
 17	present danger is included, whereas	present danger is included; whereas	img1864: 700dpi 看清是分号（1850 作逗号，两版排印不同，以 1864 为准）
+22	when trouble was *so* near, so close	when trouble was so near, so close	img1864 800dpi: 两个 so 印面都是正体（字形与紧随的 so close 完全相同）；ABBYY 误判斜体
+37	wrought out *by* themselves	wrought out by themselves	img1864 700dpi: by 是正体（同句 from Jehovah 才是斜体）
+103	the universe, *to* πᾶν	the universe, τὸ πᾶν	img1864 700dpi: 印面是希腊文 τὸ πᾶν，ABBYY 把 τὸ 读成拉丁 to 又判成斜体
