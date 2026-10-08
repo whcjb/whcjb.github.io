@@ -73,7 +73,10 @@ def strip_sentinels(text):
         elif ch == IT_OFF:
             on = False
         elif ch == HYPH:
-            plain.append('-'); ital.append(on)
+            # 行末断词的接缝**原样留着**，不要在这里变成 '-'。
+            # 一变就跟 well-watered 这类本来带连字符的复合词再也分不开了；
+            # 到底留不留连字符，要等全书拼完拿语料自证（resolve_hyphens）。
+            plain.append(HYPH); ital.append(on)
         elif ch == BREAK:
             plain.append(' '); ital.append(on)
         else:
@@ -82,7 +85,8 @@ def strip_sentinels(text):
 
 
 _NORM = str.maketrans({'‘': "'", '’': "'", '“': '"', '”': '"',
-                       '—': '-', '–': '-', '‐': '-', ' ': ' '})
+                       '—': '-', '–': '-', '‐': '-', ' ': ' ',
+                       HYPH: '-'})      # 对齐时当连字符看，产物里仍是哨兵
 
 
 def _norm(s):
@@ -117,7 +121,7 @@ def italic_runs(text):
     return runs
 
 
-_WORD = re.compile(r"[A-Za-zͰ-Ͽἀ-῿'’-]+")
+_WORD = re.compile(r"[A-Za-zͰ-Ͽἀ-῿'’\-" + HYPH + r"]+")
 
 
 def _snap_to_words(text, ital):
@@ -150,6 +154,59 @@ def _drop_greek(text, ital):
     return ital
 
 
+def _tidy_runs(text, ital):
+    """收边：把区间修到词界上，清掉没内容的区间，合并只隔着空白的相邻区间。
+
+    `*veigious *`（尾吞空格）、`* *`、`*, *`（整段只有标点）、
+    `*the day* *of Christ,*`（跨行被切成两段）—— 都是对齐抖出来的毛边，
+    不收会直接写进 markdown。
+    """
+    ital = list(ital)
+    n = len(ital)
+
+    i = 0                                   # 相邻区间之间只隔空白 → 合一
+    while i < n:
+        if ital[i]:
+            j = i
+            while j < n and ital[j]:
+                j += 1
+            k = j
+            while k < n and text[k].isspace():
+                k += 1
+            if k < n and k > j and ital[k]:
+                for t in range(j, k):
+                    ital[t] = True
+                continue
+            i = j
+        else:
+            i += 1
+
+    i = 0                                   # 掐头去尾的空白；没字就整段清掉
+    while i < n:
+        if not ital[i]:
+            i += 1
+            continue
+        j = i
+        while j < n and ital[j]:
+            j += 1
+        if not any(c.isalnum() for c in text[i:j]):
+            for t in range(i, j):
+                ital[t] = False
+        else:
+            for t in range(i, j):
+                if text[t].isspace():
+                    ital[t] = False
+                else:
+                    break
+            for t in range(j - 1, i - 1, -1):
+                if text[t].isspace():
+                    ital[t] = False
+                else:
+                    break
+        i = j
+    return ital
+
+
 def _par_italic(abbyy_par, ocr_chunk, dropped):
     """单段：ABBYY 的斜体区间 → OCR 字流的斜体标志表。
 
@@ -172,22 +229,20 @@ def _par_italic(abbyy_par, ocr_chunk, dropped):
     def scan(x, stop, step):
         for t in range(x, stop, step):
             if t in amap:
-                return amap[t], t
-        return None, None
+                return amap[t]
+        return None
 
     ital = [False] * len(b_plain)
     for s, e in italic_runs(abbyy_par):
-        # ① 外侧卡：区间前最近的匹配位 + 1，区间后最近的匹配位 − 1
-        lo, _a = scan(s - 1, max(s - 40, -1), -1)
-        hi, _b = scan(e, min(e + 40, len(a_plain)), 1)
+        lo = scan(s - 1, max(s - 40, -1), -1)
+        hi = scan(e, min(e + 40, len(a_plain)), 1)
         js = 0 if lo is None else lo + 1
         je = (len(b_plain) if hi is None else hi) - 1
         if lo is None and hi is None:
             js = je = None
-        # ② 外侧卡出来的区间若明显不合理（空的或比原文长一倍），退回内侧锚点
         if js is None or je < js or (je - js + 1) > 2 * (e - s) + 8:
-            js, _ = scan(s, min(s + 12, len(a_plain)), 1)
-            je, _ = scan(e - 1, max(e - 13, -1), -1)
+            js = scan(s, min(s + 12, len(a_plain)), 1)
+            je = scan(e - 1, max(e - 13, -1), -1)
         if js is None or je is None or je < js:
             dropped.append(a_plain[s:e])
             continue
@@ -200,75 +255,49 @@ def _par_italic(abbyy_par, ocr_chunk, dropped):
     return b_plain, ital
 
 
-def _tidy_runs(text, ital):
-    """收边：把区间修到词界上，清掉没内容的区间，合并只隔着空白的相邻区间。
+def restore_dropcap(abbyy_plain, chunk, log=None):
+    """首字下沉的那个大写字母，tesseract 读不出来，ABBYY 读得到。
 
-    `*veigious *`（尾吞空格）、`* *`、`*, *`（整段只有标点）、
-    `*the day* *of Christ,*`（跨行被切成两段）—— 都是对齐抖出来的毛边，
-    不收会直接写进 markdown。
+    每篇讲章正文第一段都是下沉首字。tesseract 的两种败法都见过：
+        THE Epistle begins…   → `HE Epistle begins…`        （整个吞掉）
+        WITH the free discur… → `Ἶ | Ww" H the free discur…`（糊成一团乱码）
+    字虽然从 tesseract 取，这一处必须从 ABBYY 补。
+
+    判据：拿两边开头 60 个字做最长公共块，公共块之前 ABBYY 那一小截
+    （≤6 个字、全大写）就是被吞掉的下沉首字，用它换掉 OCR 那一截。
+    公共块短于 14 个字就不动 —— 对不牢的时候宁可留着错字。
     """
-    ital = list(ital)
-    n = len(ital)
-
-    # 相邻区间之间只隔空白 → 合一
-    i = 0
-    while i < n:
-        if ital[i]:
-            j = i
-            while j < n and ital[j]:
-                j += 1
-            k = j
-            while k < n and text[k].isspace():
-                k += 1
-            if k < n and k > j and ital[k]:
-                for t in range(j, k):
-                    ital[t] = True
-                continue
-            i = j
-        else:
-            i += 1
-
-    # 掐头去尾的空白；整段没有字母数字就整段清掉
-    i = 0
-    while i < n:
-        if not ital[i]:
-            i += 1
-            continue
-        j = i
-        while j < n and ital[j]:
-            j += 1
-        seg = text[i:j]
-        if not any(c.isalnum() for c in seg):
-            for t in range(i, j):
-                ital[t] = False
-        else:
-            for t in range(i, j):
-                if text[t].isspace():
-                    ital[t] = False
-                else:
-                    break
-            for t in range(j - 1, i - 1, -1):
-                if text[t].isspace():
-                    ital[t] = False
-                else:
-                    break
-        i = j
-    return ital
+    a, b = abbyy_plain.lstrip(), chunk.lstrip()
+    if len(a) < 30 or len(b) < 30:
+        return chunk
+    ha, hb = _norm(a[:60]), _norm(b[:60])
+    m = difflib.SequenceMatcher(None, ha, hb, autojunk=False) \
+        .find_longest_match(0, len(ha), 0, len(hb))
+    if m.size < 14 or m.a > 6 or m.b > 14 or (m.a == 0 and m.b == 0):
+        return chunk
+    pre = a[:m.a]
+    if pre and not all(c.isupper() or c.isspace() for c in pre):
+        return chunk
+    if log is not None:
+        log.append((b[:m.b], pre))
+    pad = chunk[:len(chunk) - len(b)]
+    return pad + pre + b[m.b:]
 
 
-def transfer_page(pars, ocr_text, dropped=None):
+def transfer_page(pars, ocr_text, dropped=None, dropcaps=None):
     """一页：ABBYY 的段落结构与斜体 → OCR 的字流，出 markdown。
 
     两步走 —— 先整页粗对一次只为切出段落边界，再**按段细对**搬斜体。
     """
     if dropped is None:
         dropped = []
+    if dropcaps is None:
+        dropcaps = []
     ab_plains = [strip_sentinels(p)[0] for p in pars]
     ab_all = ''.join(ab_plains)
     ocr_plain, _ = strip_sentinels(ocr_text)
     amap = _charmap(ab_all, ocr_plain)
 
-    # 段落起点：ABBYY 偏移 → OCR 偏移
     cuts, off = [], 0
     for t in ab_plains:
         pos = None
@@ -289,6 +318,11 @@ def transfer_page(pars, ocr_text, dropped=None):
         chunk = ocr_plain[lo:hi]
         if not chunk.strip():
             continue
+        # 每一段都试。下沉首字不只在页内第一段 —— 讲章开篇那一页，前面还排着
+        # 罗马数字、讲题、经文题记三段，限定「页内第一段」会让 30 篇全部漏掉
+        # （实测只有导论一篇补上了）。判据本身够紧：ABBYY 那一小截必须 ≤6 个字
+        # 且全大写，公共块还得 ≥14 个字，正常段落两边开头一致时根本不触发。
+        chunk = restore_dropcap(ab_plains[i], chunk, dropcaps)
         text, ital = _par_italic(par, chunk, dropped)
         out.append(_emit(text, ital))
     return '\n\n'.join(out)
@@ -305,3 +339,32 @@ def _emit(text, ital):
     if on:
         buf.append('*')
     return ''.join(buf).strip()
+
+
+RE_SEAM = re.compile(r'([A-Za-z]+)' + HYPH + r'([A-Za-z]+)')
+RE_INLINE = re.compile(r'\b([A-Za-z]{2,})-([a-z]{2,})\b')
+
+
+def learn_compounds(texts):
+    """全书的**行内**连字符 → 复合词表。
+
+    `self-sacrificing` / `fellow-men` / `to-day` / `yoke-fellow` 这些，原书本来
+    就带连字符；正好断在连字符上时不能把它吃掉。凭据只能是同一部书别处行内
+    怎么写 —— 不查词典，不凭直觉（feedback_measure_before_applying_rule）。
+    """
+    seen = set()
+    for t in texts:
+        for m in RE_INLINE.finditer(t):
+            seen.add((m.group(1).lower(), m.group(2).lower()))
+    return seen
+
+
+def resolve_hyphens(text, compounds, log=None):
+    """接缝哨兵 → 连字符或直接拼上。"""
+    def repl(m):
+        a, b = m.group(1), m.group(2)
+        keep = (a.lower(), b.lower()) in compounds
+        if log is not None:
+            log.append((a + '-' + b, a + ('-' if keep else '') + b, keep))
+        return a + ('-' if keep else '') + b
+    return RE_SEAM.sub(repl, text).replace(HYPH, '')

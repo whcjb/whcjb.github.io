@@ -1,0 +1,7 @@
+# 可再生的中间物，不进库：
+#   images/          从 lecturesexegeti00john_jp2.zip 解出来的页图，168M
+#   abbyy1875.xml    abbyy1875.xml.gz 解压后的缓存，237M
+# 进库的是 abbyy1875.xml.gz（底本）和两遍 OCR 的文本产物
+# （ocr_eng / ocr_grc，各约 2M，重跑一次要半小时，不可丢）。
+images/
+abbyy1875.xml
