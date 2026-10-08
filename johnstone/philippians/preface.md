@@ -66,7 +66,7 @@ In studying the Epistle, the author has used the aid of Calvin, Beza, Bengel, Pe
 
 At the end of the volume is given a translation of Polycarp’s letter to the Christians of Philippi,—which seems to form a suitable appendix to an exposition of Paul’s Epistle to that
 
-church, as affording a most interesting glimpse of their spiritual condition half a century, or thereby, after the apostle had gone to his reward. ‘The translation has been made from the text of Jacobson *(Patres Apostolici,* Oxford, 1847); and has been compared with the versions of Cave, Wake, and Chevallier, and with that given in the *Ante-icene Christian Library.*
+church, as affording a most interesting glimpse of their spiritual condition half a century, or thereby, after the apostle had gone to his reward. ‘The translation has been made from the text of Jacobson *(Patres Apostolici,* Oxford, 1847); and has been compared with the versions of Cave, Wake, and Chevallier, and with that given in the *Ante-Nicene Christian Library.*
 
 The author has to acknowledge, with very hearty thanks, the kindness of his friend, the Rev. David Kinnear, B.A. Lond., of Dalbeattie, who has aided him in the revision of the proof-sheets.
 

@@ -42,17 +42,11 @@ In ἔργον ἀγαθὸν there is obviously a reference to ‘ the fellowsh
 
 <span class="jh-vref">7.</span> The subject of ἔχειν may *be* either pe or ὑμᾶς. The latter view is supported by Rosenmiiller, Storr, Conybeare, Alford, in one of his books,! and others; and is certainly tenable, in so far as the language merely is concerned. But the former construction is the more natural according to the arrangement of the words, and seems to accord better with the line of thought,—as to which, see the lecture on the passage.
 
-The words from ἔν τε τοῖς δεσμοῖς to εὐαγγελίου may be joined with ἔχειν pe or with ὑμᾶς ὄντας. Chrysostom, Neander, De Wette, Meyer, Alford, and others, approve of the former connection, regarding the words as intended to bring out still more clearly the depth of Paul’s affection for the Philippians, seeing that even ‘this condition of suffering, and the great duty which he had to discharge in it, could not dislodge them from his heart’ (Meyer). But the clause seems to have more relevancy and force, when connected, as in our version, with ὑμᾶς ὄντας
-
-.
-
-We may regard the pov between συγκοινωνοὺς and τῆς χάριτος as governed by χάριτος, or take συγκοινωνοὺς Ἃ5 governing both genitives,—the one of the person, the other of the thing. This latter construction is perhaps slightly preferable. The meaning then is, ‘ partakers with me of the grace’ which God gives me for suffering, and for the defence and confirmation of the gospel.
+The words from ἔν τε τοῖς δεσμοῖς to εὐαγγελίου may be joined with ἔχειν pe or with ὑμᾶς ὄντας. Chrysostom, Neander, De Wette, Meyer, Alford, and others, approve of the former connection, regarding the words as intended to bring out still more clearly the depth of Paul’s affection for the Philippians, seeing that even ‘this condition of suffering, and the great duty which he had to discharge in it, could not dislodge them from his heart’ (Meyer). But the clause seems to have more relevancy and force, when connected, as in our version, with ὑμᾶς ὄντας We may regard the pov between συγκοινωνοὺς and τῆς χάριτος as governed by χάριτος, or take συγκοινωνοὺς Ἃ5 governing both genitives,—the one of the person, the other of the thing. This latter construction is perhaps slightly preferable. The meaning then is, ‘ partakers with me of the grace’ which God gives me for suffering, and for the defence and confirmation of the gospel.
 
 <span class="jh-vref">8.</span> ‘The σπλάγχνα are properly the nobler viscera, the heart, lungs, liver, etc., as distinguished from the ἔντερα, the lower viscera, the intestines’ (Lightfoot). As here employed, the expression ἐν σπλάγχνοις is equivalent to ἐν τῇ καρδίᾳ of the preceding verse,—only that, according to New Testament use, 1
 
 In his *Commentary,* Alford says that ‘the context clearly shows’ Rosenmiiller’s construction to be wrong. But in his *Authorized Version Revised* (published in 1870), he renders the clause, ‘because you have me in your heart.’ This may be supposed to exhibit his final judgment on the question.
-
-2E
 
 the idea of *tenderness* is in this even more prominent than in the other.
 
@@ -71,8 +65,6 @@ occurs in the New Testament in only two places besides the present,—in Acts xx
 Eis ἡμέραν Χριστοῦ does not seem to mean ‘ #i// the day of Christ,’ but ‘against,’ ‘ with a view to,’ ‘looking towards’ it,— that is to say, practically, as Chrysostom puts it, ‘ that ye may be found faultless in that day.’ This force of eis—which is obviously closely connected with the frequent use of the preposition to express purpose, or is indeed but a case of that use—is very common in the New Testament ; whilst a careful examination will show that its use in the sense of ‘till’ simply, as in John xiii. 1, is rare.
 
 <span class="jh-vref">11.</span> *Kapwov* — which is unquestionably the true reading, καρπῶν, of the Received Text, having no uncial authority— is an accusative of reference,—the exact meaning, therefore, being, ‘filled, or ‘fully stored,’ ‘as to fruit of righteousness.’ Col. i. 9 contains a similar construction.
-
-Δικαιοσύνης
 
 may be taken as a genitive either of apposition or of origin. The former is, perhaps, the more natural ; but the sense is substantially the same either way,—the image, however, being differently conceived. See the lecture on the passage.
 
@@ -138,11 +130,7 @@ vwpifew means ‘to discern,—or ‘to make known.’ In classical writers the 
 
 vii. 36; 2 Cor. vii. 13. See Winer, § 35.
 
-<span class="jh-vref">25.</span> For the construction τοῦτο πεποιθὼς, compare note on ver. 6 above. Some commentators, joining πεποιθὼς closely to
-
-οἶδα
-
-, make τοῦτο the object of o%a,—thus, ‘of this I am confidently persuaded, that,’ etc. The construction adopted by our translators appears by far the more natural.
+<span class="jh-vref">25.</span> For the construction τοῦτο πεποιθὼς, compare note on ver. 6 above. Some commentators, joining πεποιθὼς closely to , make τοῦτο the object of o%a,—thus, ‘of this I am confidently persuaded, that,’ etc. The construction adopted by our translators appears by far the more natural.
 
 Mévev is ‘to stay ;’ παραμένειν, ‘ to stay with,’ or ‘at.’ Having no similar compound in English, we cannot adequately exhibit the beauty of the transition, prompted by the apostle’s loving heart, from the absolute ‘stay,’ to the relative ‘stay with you.’ In 1 Cor. xvi. 6, παραμένειν is construed with πρὸς ; but in Gen. xliv. *33,* the LXX. has it with the dative, as here.
 
@@ -162,11 +150,7 @@ In the second clause there are slight irregularities of construction. Carried on
 
 Lightfoot, following Erasmus, regards πίστει as personified, and as governed by the σὺν of cvvafAodvres,—translating thus, ‘ striving in concert with the faith. The construction adopted by our translators, according to which πίστει is a dative of advantage, appears to me very much more simple and natural. The general Pauline usage suggests that ‘ faith’ is probably to be taken here as subjective, not objective.
 
-<span class="jh-vref">28.</span> The antecedent of ἥτις is the previous clause, μὴ πτυρόμενοι; x.7.A., the gender being through attraction to the predicate ἔνδειξις : compare Mark xv. 16; 1 Tim. ii. 15. The compound relative has here, as occasionally, something of the force of ‘since, seeing that ;’ compare Eph. iii. 13. On Gal. iv. 24, Ellicott has a long and very excellent note on the uses
-
-of ὅστις..
-
-<span class="jh-vref">29.</span> In the aorist ἐχαρίσθη the apostle looks back to the first bestowment of the boon, and refers to it simply as an historical ‘ 1 { .
+<span class="jh-vref">28.</span> The antecedent of ἥτις is the previous clause, μὴ πτυρόμενοι; x.7.A., the gender being through attraction to the predicate ἔνδειξις : compare Mark xv. 16; 1 Tim. ii. 15. The compound relative has here, as occasionally, something of the force of ‘since, seeing that ;’ compare Eph. iii. 13. On Gal. iv. 24, Ellicott has a long and very excellent note on the uses of 29. In the aorist ἐχαρίσθη the apostle looks back to the first bestowment of the boon, and refers to it simply as an historical ‘ 1 { .
 
 fact. According to our idiom, however, in a case like this, the natural translation is by the perfect, ‘has been given.’ Compare i. 6, 13; iv. 10.
 

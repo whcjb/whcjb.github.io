@@ -122,6 +122,13 @@ layout: default
   color: var(--jh-ink); text-align: right; font-variant: small-caps;
 }
 
+/* 发布时间戳。**这一条曾经漏掉**，于是它掉回站点默认的无衬线体，
+   在一整页衬线正文里格外扎眼（用户指出）。 */
+.johnstone-wrap .jh-stamp {
+  margin-top: 32px; font-size: 12px; color: #9aa4ad; text-align: right;
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .03em;
+}
+
 /* 书名页与题献：原书居中排，每行一段。行距收紧，不然一行一段会散开。 */
 .johnstone-wrap .jh-titlepage {
   text-align: center; margin: 0 0 34px; padding-bottom: 24px;

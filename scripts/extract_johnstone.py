@@ -589,6 +589,27 @@ THE AUTHOR."""
 # 这十来处留着，交给通读时按影像处理。宁可留噪声，不可删正文
 # （feedback_fix_table_makes_errors：修复表自己会制造错误）。
 
+# 导论前面还有一张**半扉页**（leaf 0017），同样是花体大字 + 对页透印，
+# OCR 读成 `ON THE eeror` / `LE TO THE PHILIPPIANS.` ——`EPISTLE` 被拆成
+# `eeror`（那是透印）和 `LE`。照影像重录。
+HALF_TITLE = """LECTURES
+
+ON THE
+
+EPISTLE TO THE PHILIPPIANS."""
+
+
+def rebuild_intro(paras, log):
+    """导论：丢掉糊掉的半扉页，换成重录的那三行。"""
+    k = next((i for i, p in enumerate(paras[:6])
+              if re.match(r'^\W*INTRODUCTION\b', p.strip('* '), re.I)), None)
+    if k is None:
+        return paras
+    for p in paras[:k]:
+        log.append(('introduction', 'half-title', p[:110]))
+    return [HALF_TITLE] + paras[k:]
+
+
 def rebuild_front(paras, log):
     """书前：重录的书名页 + 题献 + 序的正文。目录整段不要。
 
@@ -652,6 +673,65 @@ def is_scan_noise(par):
     return True
 
 
+# ── 被碎屑劈开的段落 ────────────────────────────────────────
+#
+# 页脚的印张标记（`B` `M` `2A`…，装订用的，不是正文）和扫描噪点（`_` `~`
+# `χ` `΄`）会**夹在一段话中间自成一段**，把一句话劈成两半：
+#     …his light waxing ⟨_⟩ brighter and brighter until…
+#     …to which ⟨$s⟩ the poor are exposed…
+# 结果页面上一句话断成两段，中间还杵着一个孤零零的符号。
+#
+# 处理分四档，**没有一档会丢字**：
+#   ① 印张标记（\d?[A-Z]）→ 丢掉。它不是正文。
+#   ② 不含拉丁字母的碎屑 → 丢掉。
+#   ③ 碎屑里有两个以上真词 → 那是正文（`come quickly.’`、`of ὅστις.`），
+#      原样并进去。
+#   ④ 其余字母碎片（`tru` `p` `we`）→ **保留字母**并进去。宁可留一个怪词，
+#      不可凭猜删字母。
+# 前一段若已经以句末标点收尾，说明两段本来就该分开，只丢碎屑不合并。
+RE_SIGNATURE = re.compile(r'^\W*\d?[A-Z]\.?\W*$')
+RE_SENT_END = re.compile(r"[.!?][’'\"”)\]*]*$")
+RE_CITE_PAR = re.compile(r"^[\s\d'*\\]*(?:[1-3]\s*)?[A-Z][A-Za-z]{1,9}[.,]")
+
+
+def mend_split_paragraphs(paras, lex_check, slug, log):
+    out = []
+    i = 0
+    while i < len(paras):
+        p = paras[i]
+        prev_ok = bool(out) and len(out[-1]) >= 40
+        nxt = paras[i + 1] if i + 1 < len(paras) else ''
+        if (prev_ok and len(p) <= 15 and len(nxt) >= 40
+                and not p.startswith('#')
+                and not RE_CITE_PAR.match(p)
+                and not re.match(r'^\W*[IVXL]{1,6}[.,]?\W*$', p)):
+            letters = re.sub(r"[^A-Za-z']", ' ', p).split()
+            real = [w for w in letters if len(w) > 1 and lex_check(w)]
+            if RE_SIGNATURE.match(p) or not letters:
+                keep = ''                                   # ①②
+            elif len(real) >= 2:
+                keep = p                                    # ③
+            else:
+                keep = ' '.join(letters)                    # ④
+            if RE_SENT_END.search(out[-1].rstrip('*')):
+                log.append((slug, 'speck', p[:60]))
+                if keep:
+                    out.append(keep)
+                i += 1
+                continue
+            merged = out[-1] + (' ' + keep if keep else '') + ' ' + nxt
+            log.append((slug, 'mend', f'…{out[-1][-34:]} ⟨{p}⟩ {nxt[:34]}…'))
+            out[-1] = merged
+            i += 2
+            continue
+        out.append(p)
+        i += 1
+    return out
+
+
+LEX_CHECK = None          # main() 填：判一个 token 是不是真词
+
+
 def split_sections(pages, leaf_sec):
     """[(leaf, markdown)] → [(slug, 标题, 正文)]"""
     titles = dict([('front', 'Preface'), ('introduction', 'Introduction')]
@@ -676,6 +756,8 @@ def split_sections(pages, leaf_sec):
         paras = buckets[sec]
         if sec == 'front':
             paras = rebuild_front(paras, GARBAGE)
+        if sec == 'introduction':
+            paras = rebuild_intro(paras, GARBAGE)
         if sec == 'tail':
             for slug, title, body in split_tail(
                     paras, [_key(p.strip().strip('*')) for p in paras]):
@@ -700,6 +782,7 @@ def split_sections(pages, leaf_sec):
             if is_scan_noise(p):
                 GARBAGE.append((slug, 'scan-noise', p[:110])); continue
             keep.append(p)
+        keep = mend_split_paragraphs(keep, LEX_CHECK, slug, GARBAGE)
         swept.append((slug, title, '\n\n'.join(keep)))
     return swept
 
@@ -728,6 +811,13 @@ def main():
            'Contents', 'Preface', 'Appendix'])]
     for leaf in drop_duplicate_leaves(ocr):
         del ocr[leaf]
+    global LEX_CHECK
+    try:
+        from alexander_lexicon import build as _build, is_word as _isw
+        _lex = _build()
+        LEX_CHECK = lambda w: _isw(w, _lex)
+    except Exception:
+        LEX_CHECK = lambda w: len(w) > 3
     first, shapes = learn_heads(ocr)
     print(f'页眉形 {len(shapes)} 种（语料自证，≥3 次）', file=sys.stderr)
 

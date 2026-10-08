@@ -157,7 +157,7 @@ def render(paras, fallback_ch, slug=''):
 
     # 书名页与题献原书是**居中**排的（leaf 0007 / 0009 影像），
     # 每行单独一段，照直出就成了左对齐的一串短行。这里整块包起来居中。
-    if slug == 'preface':
+    if slug in ('preface', 'introduction'):
         prose = next((i for i, p in enumerate(paras[start:]) if len(p) > 200), None)
         if prose:
             block = '\n\n'.join(paras[start:start + prose])

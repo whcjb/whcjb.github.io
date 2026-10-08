@@ -52,11 +52,7 @@ Kara in καταλαμβάνειν seems to have, as often in composition, a str
 
 13. Regarding *é* δὲ, and the image in ἐπεκτεινόμενος, see the lecture on the passage.
 
-14. Ἐν Χριστῷ Ἰησοῦ may be joined either with διώκω or with κλήσεως. No difficulty in the way of this latter construction arises from the absence of a connecting τῆς; because to substantives like κλῆσις, in which the notion of the verb they are derived from presents itself very prominently, adverbial
-
-2G
-
-combinations of words are often attached immediately, just as to the verb itself. Compare the connection of ἀπὸ πρώτης ἡμέρας With κοινωνίᾳ, in chap. 1. 5, and the note.
+14. Ἐν Χριστῷ Ἰησοῦ may be joined either with διώκω or with κλήσεως. No difficulty in the way of this latter construction arises from the absence of a connecting τῆς; because to substantives like κλῆσις, in which the notion of the verb they are derived from presents itself very prominently, adverbial combinations of words are often attached immediately, just as to the verb itself. Compare the connection of ἀπὸ πρώτης ἡμέρας With κοινωνίᾳ, in chap. 1. 5, and the note.
 
 16. The fact that the most ancient Mss., A B &, omit κανόνι, τὸ αὐτὸ φρονεῖν, and that in the others there are variations in words or order, renders it in the highest degree probable that these words do not belong to the true text, but are a copyist’s gloss, derived from chap. ii. 2 and Gal. vi. 16. The meaning of the words which remain is, ‘ Nevertheless’ (or better perhaps, ‘Only’), ‘whereto we have (now, and at any time) attained, by the same let us walk.’ With knowledge of duty, practice is always to correspond.
 
@@ -76,11 +72,7 @@ imitation,’ is given here simply by the connection. In Rom. xvi. 17, the apost
 
 that this, the Christian’s daily life,—not, ‘is regulated, according to the measure of his faith, by principles taught him from heaven,’ or ‘ by the spirit becoming one who hopes for heaven,’ but—‘ *is in heaven’* (and this with the strong word ὑπάρχει), is certainly remarkable, and does not seem to have anything very closely resembling it elsewhere in Scripture. Πολέτευμα is found not unfrequently in the sense of ‘state, commonwealth, country,’ to which men belong as πολῖται ; and this is the meaning attached to it here by Meyer, Ellicott, and others. The sense of ‘citizenship,’ adopted by Wiesinger, Braune, and others, appears to me preferable,—the express exhibition of the *relation* of believers to the heavenly Jerusalem seeming to accord more perfectly with the natural course of thought than the simple objective exhibition of the city or country itself. It is true that no instance has been adduced of the use of the word in this sense,—but it is certainly a sense most naturally suggested by the form; and the use, in Latin, of *civifas* for ‘a state,’ or for ‘citizenship in a state,’ and, in Greek, similarly, of πολιτεία, shows how easily one word could represent both ideas. Πολιτεία occurs only twice in the New Testament,—in Eph. ii. 12, and in Acts xxii. 28 ; and in the one place it bears the one meaning, ‘commonwealth,’ in the other, the other, ‘citizenship.’ Then the idea of ‘citizenship in heayen’ was one familiar to religious thinkers of various schools ; and both Philo and the author of the *Epistle to Diognetus* use the verb πολιτεύεσθαι in this connection. It seems to me, therefore, to be the sense which attaches itself most readily and naturally to the substantive here.
 
-On ὑπάρχειν, see note on chap. 11. 6. No one who has at all looked into the use of this verb will entertain any doubt that it was always intended to bear some shade of meaning additional to that of the simple substantive verb εἶναι, though it is difficult occasionally to determine with precision what that shade is. In this verse the thought may be, ‘is even now, is already,’ or ‘is, let me remind you.’ On this latter use of
-
-ὑπάρχειν,
-
-to exhibit something as new, or, at least, as probably not obvious to readers at the moment, or not recognised by them in its full significance, see Alford’s note on Acts xvi. 20.
+On ὑπάρχειν, see note on chap. 11. 6. No one who has at all looked into the use of this verb will entertain any doubt that it was always intended to bear some shade of meaning additional to that of the simple substantive verb εἶναι, though it is difficult occasionally to determine with precision what that shade is. In this verse the thought may be, ‘is even now, is already,’ or ‘is, let me remind you.’ On this latter use of to exhibit something as new, or, at least, as probably not obvious to readers at the moment, or not recognised by them in its full significance, see Alford’s note on Acts xvi. 20.
 
 If πολίτευμα be taken to mean ‘state, country,’ then the relative οὗ may agree with it as its antecedent. But, on the other hand, whatever be the sense of πολίτευμα, ἐξ οὗ may be looked on as simply an adverbial phrase, meaning ‘ whence,’— with the relative not in strict construction at all. See Winer, § 21. 3.
 

@@ -67,6 +67,7 @@ VERIFIED = {
     'ves': 'lives',           # yet he «lives» spiritually through the loving contemplation
     'rst': 'first',           # just after that «first» verse had been written
     'GLAsGow': 'GLASGOW',     # 序末落款，原书排小型大写（leaf 0013 影像确认）
+    'icene': 'Nicene',        # *Ante-Nicene Christian Library*（leaf 0013 影像确认）
                               #   ——不是 1st：两边读的 ist/rst 都不对
 }
 
@@ -368,34 +369,32 @@ def main():
 
     log = os.path.join(ROOT, 'logs', 'johnstone_repair.tsv')
     hits = Counter()
-    if a.apply:
-        for f, t in texts.items():
-            def repl(m):
-                w = m.group(0)
-                fix = table.get(norm_tok(w))
-                if not fix:
-                    return w
-                hits[w] += 1
-                return fix[0]
-            new = TOKEN.sub(repl, t)
-            if new != t:
-                open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
-    else:
-        for f, t in texts.items():
-            for w in TOKEN.findall(t):
-                if norm_tok(w) in table:
-                    hits[w] += 1
 
-    # 版面伤两类：连字符夹垃圾、该有空格却粘住
+    def apply_witness(t):
+        def repl(m):
+            w = m.group(0)
+            fix = table.get(norm_tok(w))
+            if not fix:
+                return w
+            hits[w] += 1
+            return fix[0]
+        return TOKEN.sub(repl, t)
+
+    # ⚠️ 所有修复**串在同一个字符串上跑，最后只写一次盘**。
+    # 早先是「第二证人那一遍写一次，版面伤那一遍从 texts 原文再写一次」，
+    # 后者把前者的改动整个盖掉了 —— 表里明明有 `zs → is` 命中 19 处，
+    # 产物里 zs 却原样还在 17 处。只有连跑两次 --apply 才看起来是对的。
     bigrams = count_bigrams(texts.values())
     gap_log, glue_log, ord_log, lig_log = [], [], [], []
     for f, t in texts.items():
-        new = rejoin_hyphen_gap(t, lex, vocab, gap_log)
+        new = apply_witness(t)
+        new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
         new = split_glued(new, lex, vocab, bigrams, glue_log)
         new = fix_ordinals(new, ord_log)
         new = fix_ligatures(new, lig_log)
-        if new != t and a.apply:
+        if a.apply and new != t:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
+
     print(f'连字符夹垃圾 {len(gap_log)} 处，粘词 {len(glue_log)} 处，'
           f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处',
           file=sys.stderr)
