@@ -116,13 +116,13 @@ XXV.—Stedfastness in the Lord, ‘ yp xXxvi
 
 XXVI.—Brotherly-Kindness, . Ξ π΄ -
 
-XXVII.—Prayerfulness and the Peaceof God, .,, iv. 4-7,
+XXVII.—Prayerfulness and the Peace of God, .,, iv. 4-7,
 
 XXVIII.— Summary of Duty, I ft οὐ ) Te
 
 XXIX.—Christian Contentment, . : εν Ae xXxx.—
 
-Christian Liberality andits Reward, ,, iv. 14-23, REVISED TRANSLATION OF THE EPISTLE, NOTES ON THE GREEK TEXT OF CHAPTER L., ‘ ς Ὲ 33 7? ΕΣ] II.,
+Christian Liberality and its Reward, ,, iv. 14-23, REVISED TRANSLATION OF THE EPISTLE, NOTES ON THE GREEK TEXT OF CHAPTER L., ‘ ς Ὲ 33 7? ΕΣ] II.,
 
 33 39 9» Ill
 

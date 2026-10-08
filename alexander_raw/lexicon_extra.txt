@@ -202,3 +202,27 @@ dishonesty overran propelling waggon-road meatoffering deathshade butterings
 hyperbolical
 # 诗篇复扫第二轮：拉丁/法文引文与音译（2026-09-16）
 aestus æstus æstas Idumæa Petraea præterita praeteritum præteritum praeterita mizmôr shîr le roi vive
+# —— 约翰斯通《腓立比书讲疏》(1875) 补：web2 缺的真词 ——
+# 这些全是**真词**，不是 OCR 错。收进来只为让判词典别再把它们当错字，
+# 从而挡住下游的「修复」去动它们。逐个核过才加。
+# 19 世纪 / 英式拼法与钦定本词形
+candour ardour demeanour odour humour valour civilised dulness amphitheatre
+stedfast stedfastly stedfastness disputings wranglings buffetings
+stumblingblocks loveableness illtemper foreshown thraldom jailor
+seeth sitteth dieth committeth excelleth stablish
+# web2 本身的缺口（它收了 hanging 却没收 hang）
+hang meantime undergone overthrown equipped
+# 学术缩写
+mss pp
+# 本书出现的专名（出现不足 3 次，自证闸够不着）
+Miletus Bunyan Demas Cowper Agrippa Westminster Rajpootana Beethoven
+Meshach Abednego Doddridge Illyricum Berea Socrates Galashiels Troas
+Peirce Gaius Lillie Kingston Diotrephes Urim Thummim Biggar Milton
+Praetorian Pretorian Caesar Polycarp Epaphroditus Euodia Syntyche Clement
+Philippi Philippian Philippians Macedonia Thessalonica Ephesus Smyrna
+Lightfoot Ellicott Alford Meyer Eadie Jelf Chrysostom Conybeare Hackett
+Wiesinger Schenkel Braune Bengel Beza Storr Hengstenberg Neander Vaughan
+Johnstone Oliphant Kinnear Dalbeattie Jacobson Daille
+
+# 诗体缩写与合字词（约翰斯通，影像确认）
+o'er e'er ne'er 'tis 'twas Cæsar Cæsarea Prætorian prætorium prætorian

@@ -30,7 +30,7 @@ through Jesus Christ, unto the glory and praise of God.
 
 12 But I would have you know, brethren, that my matters have fallen out rather unto the furtherance of
 
-13 the gospel ; so that in all the pretorium, and to all the
+13 the gospel ; so that in all the prætorium, and to all the
 
 14 rest, my bonds are become manifest *as* in Christ, and that the more part of the brethren, being confident in the Lord through my bonds, are more exceedingly bold
 
@@ -46,13 +46,13 @@ galling to my bonds. What then? Notwithstanding, every way, whether in pretence 
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
-21,22 For to me to live *is* Christ, and to die *is* gain. Butif — I live in the flesh, this *is* to me fruit of labour ; and what
+21,22 For to me to live *is* Christ, and to die *is* gain. But if — I live in the flesh, this *is* to me fruit of labour ; and what
 
 23 I shall choose I wot not; but I am in a strait betwixt the two, having my desire toward departing and being
 
 24 with Christ, for it *is* better by very far; but to abide in
 
-25 the flesh *is* more needful on your account. And, being persuaded of this, I know that I shall abide and con- © tinue with you all for your furtherance and joy in your
+25 the flesh *is* more needful on your account. And, being persuaded of this, I know that I shall abide and continue with you all for your furtherance and joy in your
 
 26 faith ; that your matter of glorying’ may abound in Christ Jesus through me, by my presence with you again.
 
@@ -198,7 +198,7 @@ Finally, brethren, whatsoever things are true, whatsoever things *ave* seemly, w
 
 *a It 12 14 15 16 17 18 10 20 21 22 23 Epistle of Paul to the Philippians.* 427
 
-whatsoever things *ave* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw inme. These things do, and the God of peace shall be with you.
+whatsoever things *ave* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
 
 But I rejoiced in the Lord greatly, that now at length ye have flourished again as to your care for me; for which ye were also careful, but lacked opportunity.
 
@@ -224,6 +224,6 @@ in Christ Jesus. Now unto our God and Father *de* the glory for ever and ever. A
 
 Salute every saint in Christ Jesus. The brethren which
 
-are with me salute you. All the saints salute you, but especially they that are of Czsar’s household.
+are with me salute you. All the saints salute you, but especially they that are of Cæsar’s household.
 
 The grace of the Lord Jesus Christ *be* with your spirit. Amen.
