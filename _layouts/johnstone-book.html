@@ -1,0 +1,80 @@
+---
+layout: default
+---
+{%- comment -%}
+  约翰斯通《腓立比书讲疏》书卷首页。配色与章节页同源（钴蓝 #106ab2）。
+  目录分四组，照原书的编排走：导论 / 三十篇讲章 / 修订译文与希腊文注 / 附录。
+{%- endcomment -%}
+
+<div class="container johnstone-wrap johnstone-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="jh-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="jh-hero-author">{{ page.author }}</p>
+        <p class="jh-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.johnstone-book {
+  --jh-ink: #106ab2;
+  --jh-ink-dark: #0d5690;
+  --jh-rule: #d4dde6;
+  --jh-paper: #fbfcfd;
+}
+.johnstone-book .jh-hero {
+  background: linear-gradient(135deg, #0d5690 0%, #106ab2 55%, #4f93cf 100%);
+  color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
+  font-family: Georgia, "Times New Roman", serif; text-align: center;
+}
+.johnstone-book .jh-hero h1 {
+  margin: 0 0 10px; font-size: 30px; font-weight: normal; line-height: 1.35;
+}
+.johnstone-book .jh-hero-author { margin: 0 0 4px; font-size: 15px; opacity: .92; }
+.johnstone-book .jh-hero-meta { margin: 0; font-size: 13px; opacity: .78; }
+
+.johnstone-book .jh-group {
+  font-family: Georgia, "Times New Roman", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--jh-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--jh-rule);
+}
+.johnstone-book .jh-group small { color: #9aa4ad; letter-spacing: 0; font-size: 12px; }
+
+.johnstone-book .jh-toc {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 8px;
+}
+.johnstone-book .jh-toc li { margin: 0; }
+.johnstone-book .jh-toc a {
+  display: block; padding: 10px 14px; border: 1px solid var(--jh-rule);
+  border-radius: 4px; background: var(--jh-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif; font-size: 15px;
+  color: #2d3238; line-height: 1.45;
+}
+.johnstone-book .jh-toc a:hover {
+  border-color: var(--jh-ink); background: #fff; color: var(--jh-ink-dark);
+}
+.johnstone-book .jh-toc .jh-no {
+  color: var(--jh-ink); font-size: 12px; letter-spacing: .06em;
+  display: block; margin-bottom: 2px;
+}
+.johnstone-book .jh-toc .jh-ref { color: #98a2aa; font-size: 12.5px; }
+
+.johnstone-book .jh-note {
+  font-family: Georgia, "Times New Roman", serif; font-size: 13.5px;
+  color: #6f7982; line-height: 1.8; margin: 34px 0 0;
+  padding-top: 16px; border-top: 1px solid var(--jh-rule);
+}
+@media (max-width: 767px) {
+  .johnstone-book .jh-hero h1 { font-size: 23px; }
+  .johnstone-book .jh-toc { grid-template-columns: 1fr; }
+}
+</style>

@@ -201,8 +201,11 @@ def decide(pairs, lex, vocab):
 #     direc- ‘tion      posi- — tion      appear- _ ance      com- _pleteness
 # 判据里的「中间必须有东西」不能省 —— 没它会把 co-operate、pre-incarnate
 # 这类**原书本来就带连字符**的复合词一起拼掉。
+# 中间那截垃圾里**不许包含 `*` 和 `\`**：那是 markdown 的斜体标记，
+# 吃掉一个就让整段的标记错位，kramdown 会把后面的星号原样打印出来
+# （实测 `re- * garding` 吞掉一个斜体开关，30.md 的星号从此成了奇数）。
 HYPH_GAP = re.compile(
-    r'\b([A-Za-z]{2,})-(?:[ \t]*[^\s A-Za-z][^\sA-Za-z]{0,3}[ \t]*|[ \t]+)([a-z]{2,})\b')
+    r'\b([A-Za-z]{2,})-(?:[ \t]*[^\s A-Za-z*\\][^\sA-Za-z*\\]{0,3}[ \t]*|[ \t]+)([a-z]{2,})\b')
 
 
 def rejoin_hyphen_gap(text, lex, vocab, log):

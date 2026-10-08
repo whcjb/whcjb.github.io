@@ -1,0 +1,140 @@
+---
+layout: default
+---
+{%- comment -%}
+  约翰斯通《腓立比书讲疏》(1875) 章节页。
+
+  ⚠️ 不复用别家 layout：每本书独立样式（用户既定规矩），共用会让改一处
+  连带动到别人。
+
+  配色取钴蓝 #106ab2 —— 与「历代解经」已登记的十色加站点 Hux 蓝相比，
+  最小 ΔE 26.8（最近的是达拉谟紫 #674c8e），次近 27.9（贺智靛蓝 #1f3a5f），
+  与站上先例同档（曼顿 27.3 / 亚历山大 26.9 / 达文南特 29.0）。
+  同批算过的 #4f6d8a(22.2) / #1a5f9e(21.4) / #24608f(17.2) 都离贺智靛蓝
+  太近，弃用。深浅两端 #0d5690 / #4f93cf，与首页资源卡一致按 135° 渐变。
+
+  本书版式与其他各卷的不同之处：
+  - **不是逐节注释，是讲章**。30 篇讲章各自对应一段经文，没有节号，
+    所以这里没有 verse-nav，也没有接「历代解经」的逐节对照。
+  - 每篇开头有一段被讲解的经文（题记），渲染为 `.jh-epigraph`。
+  - 书末「希腊文注」四章才是逐节的，节号形如 `Ver. 1.`，
+    渲染为 `.jh-vref`。
+  - 希腊文是 Unicode，用衬线体直接排；原书用的 Porson 体字形本身是斜的，
+    **不要**再加 italic（那是字体不是强调，见 johnstone_common._drop_greek）。
+{%- endcomment -%}
+
+<div class="container johnstone-wrap" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      <div class="jh-chrome">
+        <a href="{{ site.baseurl }}/johnstone/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
+        {% if page.zh_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+      </div>
+
+      <h1 class="jh-title">{{ page.title }}</h1>
+      {% if page.subtitle %}<p class="jh-subtitle">{{ page.subtitle }}</p>{% endif %}
+
+      <div class="jh-nav">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+      <div class="jh-content">
+        {{ content }}
+      </div>
+
+      {% if page.date %}
+      <div class="jh-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      {% endif %}
+
+      <div class="jh-nav jh-nav-foot">
+        {% if page.prev_url %}<a href="{{ site.baseurl }}{{ page.prev_url }}">&larr; {{ page.prev_label }}</a>
+        {% else %}<span></span>{% endif %}
+        {% if page.next_url %}<a href="{{ site.baseurl }}{{ page.next_url }}">{{ page.next_label }} &rarr;</a>
+        {% else %}<span></span>{% endif %}
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+.johnstone-wrap {
+  --jh-ink: #106ab2;
+  --jh-ink-dark: #0d5690;
+  --jh-rule: #d4dde6;
+  --jh-paper: #fbfcfd;
+  --jh-body: #2d3238;
+}
+.johnstone-wrap .jh-chrome,
+.johnstone-wrap .jh-nav {
+  font-size: 13px; display: flex; justify-content: space-between;
+  align-items: center; font-family: Georgia, "Times New Roman", serif;
+}
+.johnstone-wrap .jh-chrome { margin: 18px 0 22px; }
+.johnstone-wrap .jh-chrome a,
+.johnstone-wrap .jh-nav a { color: var(--jh-ink); text-decoration: none; }
+.johnstone-wrap .jh-chrome a:hover,
+.johnstone-wrap .jh-nav a:hover { color: var(--jh-ink-dark); text-decoration: underline; }
+.johnstone-wrap .jh-lang {
+  border: 1px solid var(--jh-rule); border-radius: 4px; padding: 4px 10px;
+}
+.johnstone-wrap .jh-lang:hover {
+  background: var(--jh-ink); color: var(--jh-paper) !important; text-decoration: none;
+}
+.johnstone-wrap .jh-title {
+  font-family: Georgia, "Times New Roman", serif; font-size: 30px;
+  font-weight: normal; color: var(--jh-ink-dark); text-align: center;
+  margin: 10px 0 4px; line-height: 1.3;
+}
+.johnstone-wrap .jh-subtitle {
+  text-align: center; font-size: 14px; color: #8b949c; margin: 0 0 6px;
+  font-family: Georgia, "Times New Roman", serif; font-style: italic;
+}
+.johnstone-wrap .jh-nav { margin: 14px 0 26px; }
+.johnstone-wrap .jh-nav-foot {
+  margin-top: 44px; padding-top: 16px; border-top: 1px solid var(--jh-rule);
+}
+
+/* 正文。衬线体一路到底 —— 希腊文也走同一族，原书就是一套字排下来的。 */
+.johnstone-wrap .jh-content {
+  font-family: Georgia, "Times New Roman", "Songti SC", STSong, serif;
+  font-size: 17px; line-height: 1.85; color: var(--jh-body);
+}
+.johnstone-wrap .jh-content p { margin: 0 0 16px; text-align: justify; }
+.johnstone-wrap .jh-content em { font-style: italic; }
+.johnstone-wrap .jh-content a { color: var(--jh-ink); }
+
+/* 讲章开头被讲解的那段经文。不是引文块，是题记 —— 原书排在讲题下、
+   正文上，字号小一号，整段缩进。 */
+.johnstone-wrap .jh-epigraph {
+  background: var(--jh-paper);
+  border-left: 3px solid var(--jh-ink);
+  padding: 14px 18px; margin: 0 0 26px; font-size: 15.5px;
+  line-height: 1.7; color: #46525c;
+}
+.johnstone-wrap .jh-epigraph p { margin: 0; text-align: left; }
+.johnstone-wrap .jh-epigraph .jh-ref {
+  display: block; margin-top: 8px; font-size: 13px; letter-spacing: .04em;
+  color: var(--jh-ink); text-align: right; font-variant: small-caps;
+}
+
+/* 书末「希腊文注」的节号：`Ver. 1.` */
+.johnstone-wrap .jh-vref {
+  font-weight: bold; color: var(--jh-ink-dark);
+}
+
+/* 修订译文那一节：原书排成双栏带边码的圣经体例，这里只保留分段。 */
+.johnstone-wrap .jh-content .jh-verse-no {
+  color: var(--jh-ink); font-size: 12px; vertical-align: super;
+  margin-right: 3px; font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .johnstone-wrap .jh-title { font-size: 24px; }
+  .johnstone-wrap .jh-content { font-size: 16px; line-height: 1.8; }
+}
+</style>

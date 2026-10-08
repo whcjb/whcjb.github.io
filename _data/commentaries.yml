@@ -74,6 +74,14 @@ authors:
     work_cn: "启示录注释"
     work_en: "A Commentary upon the Book of the Revelation"
     books: 1
+  - id: johnstone
+    name: "罗伯特·约翰斯通"
+    short: "约翰斯通"
+    en: "Robert Johnstone"
+    years: ""
+    work_cn: "腓立比书讲疏"
+    work_en: "Lectures Exegetical and Practical on the Epistle of Paul to the Philippians"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -224,7 +232,7 @@ books:
     testament: ot
     chapters: 66
     links:
-      - {author: alexander, path: "/alexander/isaiah/", url_tpl: "/alexander/isaiah/__CH__/", title_cn: "以赛亚书注释", title_en: "The Earlier and Later Prophecies of Isaiah", c0: "#5f2323", c1: "#7d2f2f"}
+      - {author: alexander, path: "/alexander/isaiah/zh/", url_tpl: "/alexander/isaiah/zh/__CH__/", title_cn: "以赛亚书注释", title_en: "The Earlier and Later Prophecies of Isaiah", c0: "#5f2323", c1: "#7d2f2f"}
   - id: jeremiah
     name: "耶利米书"
     en: "Jeremiah"
@@ -392,6 +400,7 @@ books:
     testament: nt
     chapters: 4
     links:
+      - {author: johnstone, path: "/johnstone/philippians/", url_tpl: "/johnstone/philippians/__CH__/", title_cn: "腓立比书讲疏", title_en: "Lectures Exegetical and Practical on the Epistle of Paul to the Philippians", c0: "#0d5690", c1: "#106ab2"}
   - id: colossians
     name: "歌罗西书"
     en: "Colossians"

@@ -85,6 +85,15 @@ AUTHORS = OrderedDict([
                      years='1622–1658', dir='durham',
                      work_cn='启示录注释',
                      work_en='A Commentary upon the Book of the Revelation')),
+    # 约翰斯通：苏格兰联合长老会（United Presbyterian Church）神学院教授，
+    # 1876 年接替以迪（John Eadie）任新约文学与释经讲席。
+    # **生卒年查不到可靠出处**（DNB、UP 教会名录、Wikipedia 均无此人条目，
+    # 同名者甚多易混），所以 years 留空——宁可不写，不编（feedback_no_fabrication）。
+    ('johnstone', dict(name='罗伯特·约翰斯通', short='约翰斯通', en='Robert Johnstone',
+                       years='', dir='johnstone',
+                       work_cn='腓立比书讲疏',
+                       work_en='Lectures Exegetical and Practical on the Epistle '
+                               'of Paul to the Philippians')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -123,6 +132,9 @@ AUTHOR_COLORS = {
     # 同批算过的 #543878(24.7) / #7c437f(22.0) 都离曼顿梅太近，弃用。
     'durham':  ('#4a3566', '#674c8e'),
     'alexander': ('#5f2323', '#7d2f2f'),
+    # 约翰斯通钴蓝：与既有十色的 ΔE 最小 26.8（达拉谟紫 26.8 / 贺智靛蓝 27.9），
+    # 与先例同档。同批算过的 #4f6d8a(22.2) / #1a5f9e(21.4) 都离贺智靛蓝太近。
+    'johnstone': ('#0d5690', '#106ab2'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -143,6 +155,9 @@ BOOK_TITLES = {
                                 'The Psalms Translated and Explained'),
     ('alexander', 'isaiah'):   ('以赛亚书注释',
                                 'The Earlier and Later Prophecies of Isaiah'),
+    ('johnstone', 'philippians'): ('腓立比书讲疏',
+                                  'Lectures Exegetical and Practical on the '
+                                  'Epistle of Paul to the Philippians'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -165,12 +180,13 @@ COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
+    'johnstone': '#106ab2',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
-    'spurgeon': '司布真注释', 'durham': '达拉谟注释',
+    'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
 }
 
 
@@ -188,7 +204,8 @@ def _chapter_range(d: Path):
 # 欧文与贺智的主目录是英文原著（中译在子路径里）。
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
-                'alexander': 'en', 'spurgeon': 'en', 'durham': 'en'}
+                'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
+                'johnstone': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

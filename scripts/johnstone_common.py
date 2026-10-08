@@ -329,8 +329,22 @@ def transfer_page(pars, ocr_text, dropped=None, dropcaps=None):
 
 
 def _emit(text, ital):
+    """斜体标志表 → markdown。
+
+    **正文里原有的星号必须转义。** 原书拿 `*` 当脚注符，扫描噪点也会吐出
+    星号；它们跟我们加的斜体标记混在一起，kramdown 按奇偶配对，一个落单
+    就把后面整段的标记全部错位、原样打印出来。
+    判据只有一条「星号个数必须成对」看得见这类（feedback_fix_table_makes_errors）。
+    """
     buf, on = [], False
     for k, ch in enumerate(text):
+        if ch == '*':
+            if ital[k] and not on:
+                buf.append('*'); on = True
+            elif not ital[k] and on:
+                buf.append('*'); on = False
+            buf.append('\\*')
+            continue
         if ital[k] and not on:
             buf.append('*'); on = True
         elif not ital[k] and on:
