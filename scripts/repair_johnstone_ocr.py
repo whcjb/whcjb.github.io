@@ -66,6 +66,7 @@ VERIFIED = {
     'ove': 'love',            # Him who rests in His «love»（番 3:17）——ABBYY 给的 one 是错的
     'ves': 'lives',           # yet he «lives» spiritually through the loving contemplation
     'rst': 'first',           # just after that «first» verse had been written
+    'GLAsGow': 'GLASGOW',     # 序末落款，原书排小型大写（leaf 0013 影像确认）
                               #   ——不是 1st：两边读的 ist/rst 都不对
 }
 

@@ -14,8 +14,6 @@ necessarily imply that the subject in his mind was in itself a *disagreeable* on
 
 The primary sense of the words ἔ ἔχων πεποίθησιν ἐν σαρκὶ, ‘having confidence in the flesh, —is clearly not the here ; because such a statement would be directly contradictory of that made in the immediately preceding clause. We
 
-cu. π|. 4.) *Motes on the Greek Text.* 461
-
 with Van Hengel, take the time of the participle to be past,— or, more exactly, hold the participle to be used almost as a substantive or an adjective, the time being given by the context —‘though I (was once) a truster in the flesh.’ Compare διώκων in ver. 6, which apparently must be explained somewhat in this way ; see also the use of ὧν in John ix. 25. Or, with Beza and others, we may regard πεποίθησιν as denoting ‘a ground of confidence, a right to trust,’—the apostle in this case, as often, placing himself on the ground occupied by his adversaries: ‘Supposing—what is not true—that, under any circumstances, a man might place confidence in the flesh, then I have ground for doing so.’ In Ps. lxx. 7, Symmachus has πεποίθησις in this sense, representing the Hebrew ΠΌΤ, Compare the use of ἐλπὶς and χαρὰ in 1 Thess. ii. 19. Indeed, the use of such nouns as ‘trust,’ ‘hope,’ ‘joy,’ for the ground of the feeling, is so natural, that probably in all languages it is found to some extent. This, I apprehend, is the true explanation. Most recent commentators put it aside, and content themselves with saying that in ἔχων the apostle is to be regarded as declaring that he *‘has,’ ‘ possesses,’* but does not *‘use’* the confidence. But I think Beza’s sense of πεποίθησιν is here really assumed ; for, whilst ‘to have, but not use, a *ground* of confidence’ has a distinct meaning, I cannot see that ‘to have, but not use, *a fee/ing* of confidence,’ has any.
 
 Having used ἔχων πεποίθησιν in this sense, the apostle not unnaturally, in the 2nd clause of the verse, gives πεποιθέναι the same or a similar sense, ‘to trust (with good ground).’ Even apart from the evidence afforded by the general line of argument, the use of δοκεῖ shows that some such meaning must be given to πεποιθέναι. ‘If any other man *regards himself* as having *the feeding* of confidence,’ would not be a natural mode of expression; while ‘if any other man regards himself as having a *ground* of confidence,’ or, ‘as trusting *with good ground,* is a clear and natural thought. Ellicott renders, ‘if any other man deemeth that he can put confidence in the
@@ -68,8 +66,6 @@ has the force of στοιχῶμεν, ‘let us walk.’ This use of the infinit
 
 17. To the verb σκοπεῖν, ‘to look at, mark,’ the idea, ‘ for
 
-*cH. m1,* 18-20.] *Notes on the Greek Text.* 467
-
 imitation,’ is given here simply by the connection. In Rom. xvi. 17, the apostle, using this same verb, says, ‘Mark, *and avoid.* Compare note on the use of βλέπειν *in* the 2nd verse of this chapter.
 
 18. With περιπατοῦσι we expect an adverb or adverbial clause,—‘ wickedly,’ ‘in a way to prove themselves enemies of the cross of Christ,’ or the like. In his earnestness, however, the apostle hastens on into the relative clause, and takes into it the thought which, according to exactness of composition, would have been expressed in immediate connection with περιπατοῦσι. Storr and others give περιπατοῦσι the sense of ‘go about, itinerate,’—as in 1 Pet. v. 8; but this is altogether unnatural. The word must unquestionably have the same meaning here as in the previous verse.
@@ -99,5 +95,3 @@ the words εἰς τὸ γενέσθαι αὐτὸ, which are found in the Text
 Kara τὴν ἐνέργειαν τοῦ δύνασθαι αὐτὸν is, ‘according to the exercise of His power.’ On the force given by the introduction of ἐνέργειαν, see the last paragraph of the lecture on the passage. The form of expression with the infinitive does not differ in meaning from δύναμις otherwise than as setting forth, ‘perhaps a little more forcibly, the enduring nature and latitude of that power’ (Ellicott).
 
 For ἑαντῷ, of the Received Text, the recent critical editions, following the most ancient ss., read airé,—as in many similar cases in the New Testament, where the reference is to the subject of the mainverb. In classical Greek ἑαυτῷ would have been necessary, just as ‘ Himse/f’ is in English ; but in the later Greek the forms of the simple αὐτὸς were very commonly employed instead of those strictly reflective.
-
-CH. Iv. 2-4.] *Votes on the Greek Text.* 471

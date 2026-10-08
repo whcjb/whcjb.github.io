@@ -10,6 +10,10 @@ next_url: "/johnstone/philippians/notes-1/"
 next_label: "Notes on the Greek Text · Chapter I"
 ---
 
+REVISED TRANSLATION
+
+OF THE
+
 I NW "» —~>—_ Pau. and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons. Grace δέ unto you, and peace, from God our Father and the Lord Jesus Christ.
 
 I thank my God on all my remembrance of you, always, in every supplication of mine for you all, presenting the
@@ -50,21 +54,19 @@ galling to my bonds. What then? Notwithstanding, every way, whether in pretence 
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
-21,22 For to me to live *zs* Christ, and to die *zs* gain. But if — I live in the flesh, this *zs* to me fruit of labour ; and what
+21,22 For to me to live *is* Christ, and to die *is* gain. But if — I live in the flesh, this *is* to me fruit of labour ; and what
 
 23 I shall choose I wot not; but I am in a strait betwixt the two, having my desire toward departing and being
 
-24 with Christ, for it *zs* better by very far; but to abide in
+24 with Christ, for it *is* better by very far; but to abide in
 
-25 the flesh *zs* more needful on your account. And, being persuaded of this, I know that I shall abide and continue with you all for your furtherance and joy in your
+25 the flesh *is* more needful on your account. And, being persuaded of this, I know that I shall abide and continue with you all for your furtherance and joy in your
 
 26 faith ; that your matter of glorying’ may abound in Christ Jesus through me, by my presence with you again.
 
 22 Only, live as becometh the gospel of Christ, that whether I come and see you, or be absent, I may hear I “I οο Ι 1
 
 In the oldest manuscripts the 16th and 17th verses are found in the reverse order from that followed in our Authorized Version.
-
-*Epistle of Paul to the Philippians.* 423
 
 of your affairs, that ye are standing fast in one spirit, with one soul striving together for the faith of the
 
@@ -86,15 +88,15 @@ looking not each on your own things, but each also on
 
 6 aon 9 Ιο II 12 13 *was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God,
 
-but emptied Himself, taking *ujon Him* the form of a
+but emptied Himself, taking *upon Him* the form of a
 
 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
 
 wherefore also God highly exalted Him, and gave Him
 
-a name which is above every name, that in the name of Jesus every knee should bow, of *¢#znmgs* in heaven, and
+a name which is above every name, that in the name of Jesus every knee should bow, of *¢#things* in heaven, and
 
-*things* on earth, and *¢hzmgs* under the earth, and *shat* every tongue should confess that Jesus Christ *zs* Lord, to the glory of God the Father.
+*things* on earth, and *¢things* under the earth, and *shat* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
 
 Wherefore, my beloved, as ye always obeyed, *so,* not as in my presence only, but now much more in my absence, work out your own salvation with fear and
 
@@ -103,8 +105,6 @@ trembling ; for it is God which worketh in you both to
 14 will and to work, of His good pleasure. Do all things
 
 15 without murmurings and disputings, that ye may ap-
-
-18 19 20 21 22 23 24 25 26 27 28 29 20 *Revised Translation of the*
 
 prove yourselves blameless and guileless, children of God without rebuke, in the midst of a crooked and perverse generation, among whom ye shine as lights in the
 
@@ -138,9 +138,7 @@ self may be the less sorrowful. Receive him, therefore, in the Lord with all gla
 
 tion; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
 
-*Ill. 1* ων *un ~ Io* ΞΕ *12 13 14 Epistle of Paul to the Philippians.* 425
-
-Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *és* not irksome, and for you *zs* safe.
+Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *és* not irksome, and for you *is* safe.
 
 Beware of the dogs; beware of the evil workers;
 
@@ -168,8 +166,6 @@ Christ. Brethren, I count not myself to have laid hold; but one thing,—forgett
 
 before, I press toward the mark, for the prize of the high calling of God in Christ Jesus.
 
-IV. 18 my 20 21 | *Revised Translation of the*
-
 Let us, therefore, as many as are perfect, be thus minded ; and, if in anything ye are otherwise minded,
 
 this also God shall reveal unto you. Only, whereto we have attained, by the same let us walk.
@@ -178,11 +174,11 @@ Be followers together of me, brethren, and mark them
 
 which walk so as ye have us for an ensample. For many walk, of whom I often told you, and now tell you even weeping,—the enemies of the cross of Christ ;
 
-whose end *zs* destruction, whose god *7s* their belly, and their glory in their shame, who mind the earthly things.
+whose end *is* destruction, whose god *7s* their belly, and their glory in their shame, who mind the earthly things.
 
 For our citizenship is in the heavens, from whence also
 
-we look for the Lord Jesus Christ *as* a Saviour; who shall change the body of our humiliation, *that zt may be* fashioned like unto the body of His glory, according to the working of His power even to subdue all things
+we look for the Lord Jesus Christ *as* a Saviour; who shall change the body of our humiliation, *that it may be* fashioned like unto the body of His glory, according to the working of His power even to subdue all things
 
 unto Himself. Wherefore, my brethren, beloved and longed for, my joy and crown, so stand fast in the Lord, beloved.
 
@@ -194,13 +190,11 @@ Rejoice in the Lord alway: again I will say, Rejoice.
 
 Let your forbearance be known unto all men. The
 
-Lord *zs* at hand. Be anxious about nothing; but in © everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
+Lord *is* at hand. Be anxious about nothing; but in © everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
 
 God: and the peace of God, which passeth all understanding, shall keep your hearts and your thoughts in Christ Jesus.
 
-Finally, brethren, whatsoever things are true, whatsoever things *ave* seemly, whatsoever things *ave* just, whatsoever things *ave* pure, whatsoever things *aze* lovely,
-
-*a It 12 14 15 16 17 18 10 20 21 22 23 Epistle of Paul to the Philippians.* 427
+Finally, brethren, whatsoever things are true, whatsoever things *ave* seemly, whatsoever things *ave* just, whatsoever things *ave* pure, whatsoever things *are* lovely,
 
 whatsoever things *ave* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
 
@@ -208,7 +202,7 @@ But I rejoiced in the Lord greatly, that now at length ye have flourished again 
 
 Not that I speak in respect of want, for I have
 
-learned, in what state I am, *¢Aerein* to be content. I know both *ow* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
+learned, in what state I am, *¢therein* to be content. I know both *ow* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
 
 want. I can do all things in Him which strengtheneth me.
 
@@ -220,7 +214,7 @@ but ye only. For even in Thessalonica ye sent once
 
 and again unto my need. Not that I seek your gift,— but I seek the fruit which aboundeth to your account.
 
-But I have all things, and abound; I am full, having received from Epaphroditus the things *whzch were sent* from you, an odour of a sweet smell, a sacrifice ac
+But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice ac
 
 ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory,
 
@@ -230,4 +224,4 @@ Salute every saint in Christ Jesus. The brethren which
 
 are with me salute you. All the saints salute you, but especially they that are of Cæsar’s household.
 
-The grace of the Lord Jesus Christ *Je* with your spirit. Amen.
+The grace of the Lord Jesus Christ *be* with your spirit. Amen.

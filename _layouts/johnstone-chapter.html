@@ -122,6 +122,21 @@ layout: default
   color: var(--jh-ink); text-align: right; font-variant: small-caps;
 }
 
+/* 书名页与题献：原书居中排，每行一段。行距收紧，不然一行一段会散开。 */
+.johnstone-wrap .jh-titlepage {
+  text-align: center; margin: 0 0 34px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--jh-rule);
+  font-family: Georgia, "Times New Roman", serif; letter-spacing: .04em;
+}
+.johnstone-wrap .jh-titlepage p {
+  margin: 0 0 9px; text-align: center; font-size: 15px; color: #4a5560;
+}
+.johnstone-wrap .jh-titlepage p:first-child {
+  font-size: 23px; letter-spacing: .14em; color: var(--jh-ink-dark);
+  margin-bottom: 14px;
+}
+.johnstone-wrap .jh-titlepage em { color: #6b7681; }
+
 /* 书末「希腊文注」的节号：`Ver. 1.` */
 .johnstone-wrap .jh-vref {
   font-weight: bold; color: var(--jh-ink-dark);

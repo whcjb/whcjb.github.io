@@ -1,69 +1,38 @@
 verdict	from	to	pairs	hits
-fix	zs	is	18	19
-fix	ts	is	11	12
+fix	zs	is	18	17
 fix	im	in	4	9
-fix	il	ii	4	6
-fix	nght	right	6	6
-fix	iz	in	2	5
-fix	decause	because	3	4
+fix	ts	is	11	7
+fix	nght	right	6	5
+fix	iz	in	2	4
 fix	ferfect	perfect	3	4
-fix	rst	first	0	4
+fix	il	ii	4	3
 fix	nghtful	rightful	3	3
-fix	dy	by	3	3
-fix	Chnist	Christ	2	3
-fix	ili	iii	1	3
-fix	ig	is	1	2
-fix	vil	vii	1	2
-fix	wth	with	2	2
-fix	spint	spirit	2	2
-fix	Preetorian	Praetorian	2	2
-fix	whith	which	2	2
-fix	nghteousness	righteousness	1	2
-fix	ef	of	2	2
+fix	rst	first	0	3
+fix	dy	by	3	2
+fix	Chnist	Christ	2	2
 fix	Zord	Lord	2	2
-fix	fazth	faith	1	2
 fix	Aas	has	2	2
-fix	Vil	vii	2	2
-fix	Il	II	1	2
 fix	ove	love	0	2
 fix	ves	lives	0	2
-fix	vil1	VIII	1	1
-fix	x1	XI	1	1
-fix	XI11	XIII	1	1
-fix	x1v	XIV	1	1
-fix	Xv1	XVI	1	1
-fix	XvilI	XVIII	1	1
-fix	XXI1	XXII	1	1
+fix	ig	is	1	1
 fix	PHILTPPIANS	PHILIPPIANS	1	1
 fix	mvested	invested	1	1
-fix	radica	radical	1	1
-fix	Hs	His	1	1
-fix	dzshops	bishops	1	1
-fix	eace	peace	1	1
-fix	charaeteristics	characteristics	1	1
-fix	Hven	Even	1	1
-fix	wel	well	1	1
-fix	Zaboured	laboured	1	1
+fix	decause	because	3	1
+fix	spint	spirit	2	1
 fix	vowledge	knowledge	1	1
 fix	veigious	religious	2	1
 fix	szncere	sincere	1	1
-fix	Przetorian	Praetorian	1	1
 fix	sfiritual	spiritual	1	1
 fix	dihigent	diligent	1	1
 fix	jire	fire	2	1
 fix	waction	unction	0	1
 fix	piace	place	1	1
 fix	Tose	rose	2	1
-fix	bomds	bonds	1	1
-fix	ive	live	1	1
-fix	ws	us	2	1
-fix	ozce	once	2	1
-fix	Seriptures	Scriptures	1	1
-fix	Aoliness	holiness	1	1
-fix	Jollow	follow	1	1
+fix	whith	which	2	1
 fix	hzs	this	1	1
 fix	adour	labour	1	1
 fix	ferception	perception	1	1
+fix	nghteousness	righteousness	1	1
 fix	Azd	And	1	1
 fix	detter	better	2	1
 fix	ept	except	0	1
@@ -94,6 +63,7 @@ fix	feebieness	feebleness	1	1
 fix	Zosszble	possible	2	1
 fix	afostles	apostles	1	1
 fix	sazzts	saints	1	1
+fix	ef	of	2	1
 fix	decoming	becoming	1	1
 fix	ded	died	1	1
 fix	decame	became	1	1
@@ -101,7 +71,6 @@ fix	Ve	VERS	1	1
 fix	fis	His	1	1
 fix	carth	earth	2	1
 fix	Zvery	Every	1	1
-fix	sfeccal	special	2	1
 fix	mnghteousness	righteousness	1	1
 fix	suileless	guileless	1	1
 fix	vefection	reflection	2	1
@@ -109,6 +78,7 @@ fix	Zgfts	lights	2	1
 fix	Chnst	Christ	1	1
 fix	dabouring	labouring	1	1
 fix	ufon	upon	1	1
+fix	fazth	faith	1	1
 fix	fride	pride	1	1
 fix	Jdeieved	believed	2	1
 fix	uf	if	1	1
@@ -127,16 +97,6 @@ fix	hfe	life	1	1
 fix	rejoic	rejoice	1	1
 fix	frends	friends	1	1
 fix	zmportant	important	1	1
-fix	nghteous	righteous	2	1
-fix	Aumility	humility	1	1
-fix	tq	to	1	1
-fix	mghteousness	righteousness	1	1
-fix	Jf	If	1	1
-fix	circumeised	circumcised	1	1
-fix	fersecuting	persecuting	1	1
-fix	Zouching	touching	1	1
-fix	fersonal	personal	1	1
-fix	avd	and	1	1
 fix	frofession	profession	1	1
 fix	itsel	itself	1	1
 fix	Rasards	hazards	2	1
@@ -146,6 +106,7 @@ fix	sartakers	partakers	1	1
 fix	mofives	motives	2	1
 fix	grzmary	primary	2	1
 fix	XXITI	XXIII	1	1
+fix	ili	iii	1	1
 fix	immora	immoral	1	1
 fix	az	an	1	1
 fix	Fokn	John	2	1
@@ -161,7 +122,6 @@ fix	Aasseth	passeth	1	1
 fix	urt	heart	0	1
 fix	Zearned	learned	2	1
 fix	howeyer	however	1	1
-fix	orfor	torpor	0	1
 fix	Azmsedf	himself	2	1
 fix	yarious	various	1	1
 fix	gustice	justice	1	1
@@ -181,20 +141,9 @@ fix	Je	be	1	1
 fix	swbstance	substance	1	1
 fix	rmghteousness	righteousness	1	1
 fix	examp	example	1	1
-fix	Prztorian	Praetorian	1	1
 fix	xil	xii	1	1
 fix	xvil	xvii	1	1
 fix	Zfistle	Epistle	1	1
-fix	Greck	Greek	1	1
-fix	wnitings	writings	1	1
-fix	avound	around	1	1
-fix	pvoved	proved	1	1
-fix	zit	wit	1	1
-fix	spintual	spiritual	1	1
-fix	contradi	contradictory	0	1
-fix	zow	now	1	1
-fix	Outhnes	Outlines	1	1
-fix	Zzstle	Epistle	1	1
 fix	iil	iii	1	1
 fix	wmiversality	universality	1	1
 fix	fresent	present	1	1
@@ -203,17 +152,65 @@ fix	pfu	helpful	0	1
 fix	cifizens	citizens	1	1
 fix	phendix	Appendix	2	1
 fix	Jrom	from	1	1
+fix	GLAsGow	GLASGOW	0	1
+fix	vil	vii	1	0
+fix	vil1	VIII	1	0
+fix	x1	XI	1	0
+fix	XI11	XIII	1	0
+fix	x1v	XIV	1	0
+fix	Xv1	XVI	1	0
+fix	XvilI	XVIII	1	0
+fix	XXI1	XXII	1	0
+fix	radica	radical	1	0
+fix	Hs	His	1	0
+fix	dzshops	bishops	1	0
+fix	eace	peace	1	0
+fix	charaeteristics	characteristics	1	0
+fix	wth	with	2	0
+fix	Hven	Even	1	0
+fix	wel	well	1	0
+fix	Zaboured	laboured	1	0
 fix	donds'	bonds'	1	0
 fix	Chnist'	Christ'	1	0
 fix	Zve'	live	2	0
+fix	bomds	bonds	1	0
+fix	ive	live	1	0
+fix	ws	us	2	0
+fix	ozce	once	2	0
+fix	Seriptures	Scriptures	1	0
+fix	Aoliness	holiness	1	0
+fix	Jollow	follow	1	0
+fix	sfeccal	special	2	0
 fix	adoured'	laboured	2	0
 fix	rghteous	righteous	1	0
 fix	iz'	in'	1	0
+fix	nghteous	righteous	2	0
+fix	Aumility	humility	1	0
+fix	tq	to	1	0
+fix	mghteousness	righteousness	1	0
+fix	Jf	If	1	0
+fix	circumeised	circumcised	1	0
+fix	fersecuting	persecuting	1	0
+fix	Zouching	touching	1	0
+fix	fersonal	personal	1	0
+fix	avd	and	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Vever	Never	1	0
+fix	orfor	torpor	0	0
 fix	Tefer	refer	1	0
+fix	Greck	Greek	1	0
+fix	wnitings	writings	1	0
+fix	Vil	vii	2	0
+fix	avound	around	1	0
+fix	pvoved	proved	1	0
+fix	zit	wit	1	0
+fix	spintual	spiritual	1	0
+fix	contradi	contradictory	0	0
+fix	zow	now	1	0
+fix	Outhnes	Outlines	1	0
 fix	heayen'	heaven'	1	0
+fix	Zzstle	Epistle	1	0
 fix	Joun	John	1	0
 fix	Witttam	William	1	0
 fix	Principat	Principal	1	0
@@ -221,117 +218,9 @@ fix	PUNISHMEN	PUNISHMENT	1	0
 fix	Wituiam	William	1	0
 fix	conelusive	conclusive	1	0
 fix	Critica	Critical	1	0
+fix	Il	II	1	0
 fix	hea	hearers	0	0
 fix	thil	things	0	0
-hyphen-gap	direc- ‘tion	direction		
-hyphen-gap	appear- _ ance	appearance		
-hyphen-gap	men- _ tioned	mentioned		
-hyphen-gap	Chris- — tian	Christian		
-hyphen-gap	posi- — tion	position		
-hyphen-gap	con- | stituted	constituted		
-hyphen-gap	com- - munity	community		
-hyphen-gap	par- — ticular	particular		
-hyphen-gap	Cor- ᾿ς inthians	Corinthians		
-hyphen-gap	con- = tinued	continued		
-hyphen-gap	per- _ fections	perfections		
-hyphen-gap	ex-— ceedingly	exceedingly		
-hyphen-gap	posi- _ tion	position		
-hyphen-gap	re- : garding	regarding		
-hyphen-gap	be- ᾿ς lievers	believers		
-hyphen-gap	pre- _ ferable	preferable		
-hyphen-gap	unobtru-— sively	unobtrusively		
-hyphen-gap	satis-. faction	satisfaction		
-hyphen-gap	notwith- — standing	notwithstanding		
-hyphen-gap	com- _pleteness	completeness		
-hyphen-gap	imme- _ diate	immediate		
-hyphen-gap	per- -sonally	personally		
-hyphen-gap	reflec- ‘tion	reflection		
-hyphen-gap	beauti-— ful	beautiful		
-hyphen-gap	connec- ‘tion	connection		
-hyphen-gap	pre-— dicate	predicate		
-hyphen-gap	Com- _ pare	Compare		
-hyphen-gap	con- © tinue	continue		
-glued	alltheir	all their		
-glued	mindin	mind in		
-glued	tothe	to the		
-glued	Weare	We are		
-glued	mannerof	manner of		
-glued	Ifwe	If we		
-glued	Ifit	If it		
-glued	selfseeking	self-seeking		
-glued	Itis	It is		
-glued	aman	a man		
-glued	andthe	and the		
-glued	howit	how it		
-glued	aman	a man		
-glued	havetold	have told		
-glued	Onecan	One can		
-glued	witha	with a		
-glued	saveus	save us		
-glued	forus	for us		
-glued	witha	with a		
-glued	uponit	upon it		
-glued	joyand	joy and		
-glued	Itis	It is		
-glued	likea	like a		
-glued	wasthe	was the		
-glued	orfor	or for		
-glued	ButI	But I		
-glued	Iwill	I will		
-glued	ForI	For I		
-glued	solong	so long		
-glued	Christin	Christ in		
-glued	initself	in itself		
-glued	hisfriends	his friends		
-glued	itseems	it seems		
-glued	givento	given to		
-glued	Peaceof	Peace of		
-glued	andits	and its		
-glued	Butif	But if		
-glued	inme	in me		
-ordinal	roth	10th		
-ordinal	roth	10th		
-ordinal	roth	19th		
-ordinal	roth	19th		
-ordinal	roth	19th		
-ordinal	gth	9th		
-ordinal	znd	2nd		
-ordinal	gth	9th		
-ordinal	oth	9th		
-ordinal	znd	2nd		
-ordinal	gth	9th		
-ligature	Ceesar	Cæsar		
-ligature	Czsar	Cæsar		
-ligature	Casar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Czesar	Cæsar		
-ligature	Ceesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Praetorian	Prætorian		
-ligature	Preetorian	Prætorian		
-ligature	Preetorian	Prætorian		
-ligature	Pretorian	Prætorian		
-ligature	Pretorian	Prætorian		
-ligature	Przetorian	Prætorian		
-ligature	Praetorian	Prætorian		
-ligature	Cesar	Cæsar		
-ligature	Czsar	Cæsar		
-ligature	Czesarea	Cæsarea		
-ligature	Caesarea	Cæsarea		
-ligature	Ceesarea	Cæsarea		
-ligature	pretorium	prætorium		
-ligature	Cesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Prztorian	Prætorian		
-ligature	pretorian	Prætorian		
-ligature	fretorium	prætorium		
-ligature	fretorium	prætorium		
-ligature	pretorium	prætorium		
-ligature	Czsar	Cæsar		
-ligature	pretorium	prætorium		
 reject	the	the	41	① tesseract 侧本来就是词
 reject	Christ	Christ	28	① tesseract 侧本来就是词
 reject	PHIL	Phil	27	① tesseract 侧本来就是词
@@ -599,6 +488,7 @@ reject	What	lVhath	2	① tesseract 侧本来就是词
 reject	sufferings	suffcrinj	2	① tesseract 侧本来就是词
 reject	Ceesar'	Caesar'	2	③ 全书只正确出现 0 次
 reject	where	wlicrc	2	① tesseract 侧本来就是词
+reject	Preetorian	Praetorian	2	③ 全书只正确出现 0 次
 reject	persons	persons	2	① tesseract 侧本来就是词
 reject	himself	himself	2	① tesseract 侧本来就是词
 reject	brethren'	brethren	2	① tesseract 侧本来就是词
@@ -1060,7 +950,7 @@ reject	happy	happy	1	① tesseract 侧本来就是词
 reject	Wow	How	1	① tesseract 侧本来就是词
 reject	valid	vaHd	1	① tesseract 侧本来就是词
 reject	all'	all	1	① tesseract 侧本来就是词
-reject	decause'	because'	1	③ 全书只正确出现 0 次
+reject	decause'	because'	1	③ 全书只正确出现 1 次
 reject	proved	proi'cd	1	① tesseract 侧本来就是词
 reject	suffered	suffered	1	① tesseract 侧本来就是词
 reject	feeling'	feelin	1	① tesseract 侧本来就是词
@@ -1139,6 +1029,7 @@ reject	xxvii	xxviii	1	① tesseract 侧本来就是词
 reject	officials	ofificials	1	① tesseract 侧本来就是词
 reject	palace	palace	1	① tesseract 侧本来就是词
 reject	ordinary	ordinaryN	1	① tesseract 侧本来就是词
+reject	Przetorian	Praetorian	1	③ 全书只正确出现 0 次
 reject	Augustus'	Augustus	1	① tesseract 侧本来就是词
 reject	Preetorians	Praetorians	1	③ 全书只正确出现 0 次
 reject	officers	officers	1	① tesseract 侧本来就是词
@@ -2315,6 +2206,7 @@ reject	eis	ct	1	① ABBYY 侧也不是词
 reject	Kapwov	Kapirov	1	① ABBYY 侧也不是词
 reject	oles	Nolcs	1	① tesseract 侧本来就是词
 reject	Text	Tt'Xt	1	① tesseract 侧本来就是词
+reject	Prztorian	Praetorian	1	③ 全书只正确出现 0 次
 reject	pretoriani	prcBtoriani	1	① ABBYY 侧也不是词
 reject	pretorian	prcXtorian	1	① tesseract 侧本来就是词
 reject	To	To	1	① tesseract 侧本来就是词

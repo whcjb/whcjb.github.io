@@ -28,8 +28,6 @@ The article in τῇ ταπεινοφροσύνῃ may perhaps mean ‘that whic
 
 , the reading of the Received Text, has some uncial authority ; but there is great preponderance in favour *of* φρονεῖτε. If we accept the latter, then there are two slight irregularities of construction in what follows. For ἐν ὑμῖν, connected with — a verb in the second person, strict grammar would require ἐν ὑμῖν αὐτοῖς, or, according to New Testament usage, ἐν ἑαυτοῖς. Again, the regular form of the relative clause after φρονεῖτε
 
-cH. π΄. 6.] *Motes on the Greek Text.* εἰ νόμος
-
 would obviously be ὃ καὶ Χριστὸς ᾿Ιησοῦς (éppdve),—whereas with ἐν Χριστῷ ᾿Ιησοῦ we must supply ἐφρονεῖτο. It was probably to obviate these irregularities that some early copyist substituted φρονείσθω for φρονεῖτε.
 
 6. The verb ὑπάρχειν----ἰη the participle at least, which is the form mainly used by Paul—appears to differ from εἶναι chiefly in that it calls particular attention to its predicate, as being specially important in itself, or in the argument; compare 1 Cor. xi. 7 ; Gal. i. 14, ii. 14.
@@ -86,8 +84,6 @@ doubt, on the present passage, of bowing whenever the name ‘ Jesus’ occurs i
 
 The use of the subjective particle of negation, μὴ, seems to — show clearly that the combination of words introduced by it
 
-CH. 1.15, 17.] *Votes on the Greek Text.* 453
-
 belongs to the imperative κατεργάζεσθε, not, as our translators have thought, to the indicative ὑπηκούσατε. Compare Winer, § 55. 1, *a,* remark on Eph. v. 15. The whole sentence gains much in point, too, by adopting this connection.
 
 *‘Qs* means obviously, *‘as if you thought it right* to obey in my presence only.’
@@ -130,8 +126,6 @@ Our translators have taken πατρὶ as governed by σὺν understood, the σ
 
 23. Ἐξαυτῆς belongs closely to ὡς ἂν*, x.7.4.,* ‘immediately on my seeing.’ The form ἀφίδω, for ἀπίδω of the ordinary text, is supported by the most ancient mss., and has been received — by the chief recent editors. Lightfoot has a list of a number
 
-CH. 11. 25-28.| *Moles on the Greek Text.* 457
-
 of cases in which, in this and other compounds of εἶδον, the aspirate is found in the oldest authorities. There is here, no ‘doubt, a relic of the digamma which the word had, and which has its representatives in the form the root takes in other languages,—in the w of the Latin *widere,* and the *w* of the German *wissen* and English *wit.*
 
 25. As Epaphroditus was evidently the bearer of the letter, it is plain that in ἡγησάμην, and in ἔπεμψα (ver. 28), we have cases of what is known as the *¢féstolary* aorist,—the writer placing himself in imagination at the point of time when his letter was *read,* and when consequently the thoughts and feelings of the time of writing would be past ; Winer, § 40. 5, *4, 2.* The imperfect ἦν, in the subordinate clause (ver. 26), is, of course, to be explained on the same principle. In Latin, the imperfect and perfect are similarly used in letters, the purely *formal* nature of the preterite being shown by the fact that the adverb *unc* may be joined with the verb, whilst a real preterite would require */unc;* for example, *novi nihil nunc erat apud nos,* —literally, ‘there *was* at present no news with us ; see Zumpt, ὃ 503. Our idiom, in such cases, uses either the present or the perfect. For the ‘supposed’ and ‘ sent’ of the Authorized Version, therefore, we must substitute either ‘suppose’ and ‘send,’ or ‘have supposed’ and ‘ have sent.’
@@ -147,5 +141,3 @@ this connection, moreover, the thought seems, perhaps, richer and more forcible.
 30. It is doubtful whether *rod* Χριστοῦ belongs to the true text. The mss. have a considerable variety of readings,— Χριστοῦ, τοῦ Χριστοῦ, and Κυρίου ; and one uncial, C, has no genitive at all. It is not improbable that this last manuscript exhibits the real state of the case, the various genitives being glosses by copyists to fill up what seemed to them the somewhat bald διὰ τὸ ἔργον. But a similar use of τὸ ἔργον alone, for ‘the work of Christ,’ occurs in Acts xv. 38. Compare also τὸ ἐν in ver. 2 above, with the note.
 
 The mss. are divided also between παραβουλευσάμενος and παραβολευσάμενος, but with a great preponderance of authority in favour of the latter. The verb παραβουλεύεσθαι has the sense of the Latin *male consulere,* ‘to make poor provision for,’ ‘have little regard for,—rapa here, as in many compounds, having the force of ‘amiss’—strictly, ‘going *aside* or *beyond,’* missing the mark. The other verb παραβολεύεσθαι does not occur elsewhere, but is a form which—in the same way as περπερεύεσθαι (1 Cor. xiii. 4), from πέρπερος, and others—may be derived from the adjective παράβολος, ‘gambling, reckless.’ Παραβολεύεσθαι, then, will mean ‘to play the gambler,—*7r7* ψυχῇ, ‘with his life. ‘Hazard’ excellently represents the thought, the original meaning of this word (which is probably derived from the Latin */essera,* ‘a die,’ through the Italian *azzardo,* a corruption of *a-tsar,* for *tessar,-do)* being ‘a game of chance.’ Obviously, as used by the apostle, παραβολεύεσθαι has nothing of blame in it, but simply sets forth, with much liveliness, the utter lack of care for himself which Epaphroditus had shown in his zeal to serve Christ by ministering to His servant.
-
-cu. ut 1.7 *Notes on the Greek Text.* 459

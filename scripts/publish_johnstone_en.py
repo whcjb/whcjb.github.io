@@ -121,6 +121,7 @@ def split_paras(text):
 
 
 def render(paras, fallback_ch, slug=''):
+    lecture = slug.isdigit()
     """段落 → 正文，并顺带取出经文出处与题记。
 
     题记不一定只占一段：第 9 讲的经文与出处被排版拆成了两段
@@ -140,15 +141,29 @@ def render(paras, fallback_ch, slug=''):
             break
 
     out, start = [], 0
-    for i, p in enumerate(paras[:3]):
-        if RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(p.strip('* ')):
-            start = i + 1                 # 序号行、讲题行：已在 title 里
+    # 只对**讲章**剥开头的序号行与全大写讲题行 —— 它们已经写进 front matter
+    # 的 title。书前那一节开头正是书名页，`LECTURES` / `EXEGETICAL AND
+    # PRACTICAL` 也是全大写，一视同仁就把书名页的头两行剥没了（实测）。
+    if lecture:
+        for i, p in enumerate(paras[:3]):
+            if RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(p.strip('* ')):
+                start = i + 1
     if ref_at is not None and ref_at >= start:
         head = '\n\n'.join(paras[start:ref_at + 1])
         head = RE_REF.sub('', head.replace('\n', ' ')).rstrip(' —–-.,')
         out.append('<div class="jh-epigraph" markdown="1">\n\n' + head
                    + f'\n\n<span class="jh-ref">{ref}</span>\n\n</div>')
         start = ref_at + 1
+
+    # 书名页与题献原书是**居中**排的（leaf 0007 / 0009 影像），
+    # 每行单独一段，照直出就成了左对齐的一串短行。这里整块包起来居中。
+    if slug == 'preface':
+        prose = next((i for i, p in enumerate(paras[start:]) if len(p) > 200), None)
+        if prose:
+            block = '\n\n'.join(paras[start:start + prose])
+            out.append('<div class="jh-titlepage" markdown="1">\n\n'
+                       + block + '\n\n</div>')
+            start += prose
 
     notes = slug.startswith('notes-')
     for p in paras[start:]:

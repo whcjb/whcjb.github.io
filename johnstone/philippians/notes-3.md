@@ -10,6 +10,8 @@ next_url: "/johnstone/philippians/notes-4/"
 next_label: "Notes on the Greek Text · Chapter IV"
 ---
 
+CHAPTER III.
+
 <span class="jh-vref">Ver. 1.</span> We naturally refer ra αὐτὰ to the precept just given, χαίρετε ἐν Kupiw. It is true that this precept has not occurred — in the Epistle before in the same words, or in as general a form ; but, besides the injunction of chap. ii. 18, there have been several references to spiritual joy, of a kind to impress every thoughtful reader with the conviction that to the apostle the cultivation of such a spirit seemed of the very highest moment,—references, therefore, equivalent to precepts. See chap. i. 4, 18, 25, 26; ii. 2, 17, 28. Some commentators have imagined that there is an allusion to a repeated occurrence of this precept (or of that of the second verse, with which, though not so naturally, the clause may be connected) in some previous and now lost letter from the apostle to the Philippians,’ or in his oral teaching when with them. But there seems to be no reason whatever for our going out of the Epistle itself to find a sufficient explanation of the reference. Lightfoot objects to making τὰ αὐτὰ point back to χαίρετε ἐν Κυρίῳ, on the grounds that ‘such an injunction has no very direct bearing on the *safety* of the Philippians,’ and that ‘its repetition could hardly be suspected of being *zrésome’* (grievous) ‘ to the apostle.’ To the former of these objections the apostle himself seems to furnish a sufficient reply in chap. iv. 7, where he says, ‘The peace of God’—an expression which is very nearly equivalent to ‘joy in the Lord’—‘shall *eep* (φρουρήσει, “ garrison”) your hearts and minds.’ Neither does the second objection appear valid, because the apostle’s word ὀκνηρὸν does not 1
 
 The idea that the apostle wrote more than one letter to this church is supposed to find support in the Epistle of Polycarp, § 3; but see note on the passage.
@@ -21,8 +23,6 @@ necessarily imply that the subject in his mind was in itself a *disagreeable* on
 <span class="jh-vref">4.</span> The construction is easily explained. Καέπερ is regularly construed with a participle. Had the reference of the statement in the first clause of this verse been as wide as that of the 3rd verse—namely to all believers, whether Jews or Gentiles,—the apostle would have written καίπερ ἔχοντες ; but seeing that the statement made here was true of himself, but ' not of the Philippian Christians, he takes *Aimsel/f* out of the whole subject ἡμεῖς, retaining the participial construction, *xairep* > & δ ἐγὼ ἔχων.
 
 The primary sense of the words ἔ ἔχων πεποίθησιν ἐν σαρκὶ, ‘having confidence in the flesh, —is clearly not the here ; because such a statement would be directly contradictory of that made in the immediately preceding clause. We
-
-cu. π|. 4.) *Motes on the Greek Text.* 461
 
 with Van Hengel, take the time of the participle to be past,— or, more exactly, hold the participle to be used almost as a substantive or an adjective, the time being given by the context —‘though I (was once) a truster in the flesh.’ Compare διώκων in ver. 6, which apparently must be explained somewhat in this way ; see also the use of ὧν in John ix. 25. Or, with Beza and others, we may regard πεποίθησιν as denoting ‘a ground of confidence, a right to trust,’—the apostle in this case, as often, placing himself on the ground occupied by his adversaries: ‘Supposing—what is not true—that, under any circumstances, a man might place confidence in the flesh, then I have ground for doing so.’ In Ps. lxx. 7, Symmachus has πεποίθησις in this sense, representing the Hebrew ΠΌΤ, Compare the use of ἐλπὶς and χαρὰ in 1 Thess. ii. 19. Indeed, the use of such nouns as ‘trust,’ ‘hope,’ ‘joy,’ for the ground of the feeling, is so natural, that probably in all languages it is found to some extent. This, I apprehend, is the true explanation. Most recent commentators put it aside, and content themselves with saying that in ἔχων the apostle is to be regarded as declaring that he *‘has,’ ‘ possesses,’* but does not *‘use’* the confidence. But I think Beza’s sense of πεποίθησιν is here really assumed ; for, whilst ‘to have, but not use, a *ground* of confidence’ has a distinct meaning, I cannot see that ‘to have, but not use, *a fee/ing* of confidence,’ has any.
 
@@ -76,8 +76,6 @@ has the force of στοιχῶμεν, ‘let us walk.’ This use of the infinit
 
 <span class="jh-vref">17.</span> To the verb σκοπεῖν, ‘to look at, mark,’ the idea, ‘ for
 
-*cH. m1,* 18-20.] *Notes on the Greek Text.* 467
-
 imitation,’ is given here simply by the connection. In Rom. xvi. 17, the apostle, using this same verb, says, ‘Mark, *and avoid.* Compare note on the use of βλέπειν *in* the 2nd verse of this chapter.
 
 <span class="jh-vref">18.</span> With περιπατοῦσι we expect an adverb or adverbial clause,—‘ wickedly,’ ‘in a way to prove themselves enemies of the cross of Christ,’ or the like. In his earnestness, however, the apostle hastens on into the relative clause, and takes into it the thought which, according to exactness of composition, would have been expressed in immediate connection with περιπατοῦσι. Storr and others give περιπατοῦσι the sense of ‘go about, itinerate,’—as in 1 Pet. v. 8; but this is altogether unnatural. The word must unquestionably have the same meaning here as in the previous verse.
@@ -107,5 +105,3 @@ the words εἰς τὸ γενέσθαι αὐτὸ, which are found in the Text
 Kara τὴν ἐνέργειαν τοῦ δύνασθαι αὐτὸν is, ‘according to the exercise of His power.’ On the force given by the introduction of ἐνέργειαν, see the last paragraph of the lecture on the passage. The form of expression with the infinitive does not differ in meaning from δύναμις otherwise than as setting forth, ‘perhaps a little more forcibly, the enduring nature and latitude of that power’ (Ellicott).
 
 For ἑαντῷ, of the Received Text, the recent critical editions, following the most ancient ss., read airé,—as in many similar cases in the New Testament, where the reference is to the subject of the mainverb. In classical Greek ἑαυτῷ would have been necessary, just as ‘ Himse/f’ is in English ; but in the later Greek the forms of the simple αὐτὸς were very commonly employed instead of those strictly reflective.
-
-CH. Iv. 2-4.] *Votes on the Greek Text.* 471

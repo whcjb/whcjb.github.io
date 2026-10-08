@@ -523,6 +523,135 @@ def trim_edges(paras, slug):
     return paras[lo:hi]
 
 
+# ── 书前杂页 ─────────────────────────────────────────────────
+#
+# 扫描件最前面十几页是：藏书票、IA 插页、书名页、书名页背面（图书馆编号 +
+# 借书日期戳）、题献页、序、目录。其中两页根本不是「文字页」：
+#   leaf 0008 是书名页**背面**，正面的字透过纸背印过来，OCR 拿它当正文读，
+#            吐出 `“ἄνω, Ἢ κι ὦ “ a 144 , Ἵ ν he : 7 ᾿ Lae ot…` 这样 241 个
+#            字符的纯乱码（裁图确认，见 PROVENANCE.md）
+#   leaf 0007 是书名页，花体大字 + 大量字距，OCR 读成
+#            `ON THE ΠΟΤΕ TO- THE PHILIPPIANS.` / `mee EPISTLE OF PAUL TO
+#            Pris Fite i Pri Ans`
+# 这两页不是「修一修就能用」，**照影像重新录入**才对 —— 下面两段是逐字
+# 对着 leaf 0007 / 0009 的页图敲的，不是从 OCR 改出来的。
+TITLE_PAGE = """LECTURES
+
+EXEGETICAL AND PRACTICAL
+
+ON
+
+THE EPISTLE OF PAUL TO THE PHILIPPIANS
+
+*WITH A REVISED TRANSLATION OF THE EPISTLE*
+
+*AND NOTES ON THE GREEK TEXT*
+
+BY THE
+
+REV. ROBERT JOHNSTONE, LL.B.
+
+GLASGOW
+
+EDINBURGH
+
+WILLIAM OLIPHANT AND CO.
+
+1875"""
+
+DEDICATION = """TO THE
+
+UNITED PRESBYTERIAN CONGREGATION
+
+OF
+
+PARLIAMENTARY ROAD, GLASGOW,
+
+*This Book is Inscribed,*
+
+WITH MUCH AFFECTION,
+
+BY
+
+THEIR FRIEND AND MINISTER,
+
+THE AUTHOR."""
+
+
+# ⚠️ 段尾噪点**不做自动裁剪**（试过，撤了）。
+#
+# `…Greek Anthology. eee ee ee Se` 这类段尾残渣确实有十来处，但按「末尾连续
+# 的短残片」去掐，会把脚注里的经文出处一起掐掉 —— 实测 49 处裁剪里有
+# `Heb. iv. 12.`、`Rom. xii. 10; Eph. v. 21; 1 Pet. v. 5.`、`(Rom. xv. 15, 16).`
+# 这些**正文**。书卷缩写与罗马数字天生就是「≤3 个字母、不在词典里」，
+# 跟噪点在形态上分不开。
+#
+# 这十来处留着，交给通读时按影像处理。宁可留噪声，不可删正文
+# （feedback_fix_table_makes_errors：修复表自己会制造错误）。
+
+def rebuild_front(paras, log):
+    """书前：重录的书名页 + 题献 + 序的正文。目录整段不要。
+
+    目录那两页是双栏带点线引导的表格，OCR 把页码与条目拆得七零八落
+    （`INTRODUCTION, 11` / `III.— Prayer for Spiritual Discernment, 1v`
+    ——后面那个 `1v` 是罗马数字页码不是节号）。站内书卷首页本身就是目录，
+    条目与经文出处都是对的，留着这份残表只会多一堆错。
+    """
+    # 锚点要「长**且干净**」。只看长度会落到书名页背面那段 241 字的透印乱码
+    # 上（`“ἄνω, Ἢ κι ὦ “ a 144 …`），于是整张书名页又被当成正文留下来。
+    body = next((i for i, p in enumerate(paras)
+                 if len(p) > 200 and junk_score(p) >= 0.6), None)
+    end = next((i for i, p in enumerate(paras)
+                if re.match(r'^\W*CONTENTS\b', p, re.I)), len(paras))
+    if body is None or body >= end:
+        return paras
+    for p in paras[:body] + paras[end:]:
+        log.append(('front', 'front-matter', p[:110]))
+    return [TITLE_PAGE, DEDICATION] + paras[body:end]
+
+
+# 正文中段漏下的页眉。页眉只在页顶出现，但 OCR 常在它上面吐一两行残渣
+# （`Ἵ ᾿ VER. 8.] *Summary of Duty.* 381 ον`），把它挤出「头三行」那个窗口，
+# 于是整条留在正文里。这里做一次全局兜底：短行 + 带页码 + 跟某个节标题
+# 高度相似 = 页眉。正文段落没有这么短，也不会整段长得像节标题。
+RE_ROMAN_FOLIO = re.compile(r'(?<![A-Za-z])[ivxlIVXL]{2,7}(?![A-Za-z])')
+GREEK_RE = re.compile(r'[Ͱ-Ͽἀ-῿]')
+
+
+def inner_head_score(par, titles):
+    t = re.sub(r'\s+', ' ', par.strip())
+    # 书前几页的页码是**罗马数字**（`Vill Preface.` = VIII、`Preface. ix`），
+    # 只认阿拉伯数字的话这两条页眉会一直留在序里。
+    if len(t) > 86 or not (has_folio(t) or RE_ROMAN_FOLIO.search(t)):
+        return 0.0
+    k = _key(t)
+    if len(k) < 8:
+        return 0.0
+    return max(difflib.SequenceMatcher(None, k, s).ratio() for s in titles)
+
+
+# 扫描噪点段：整段没有一个像样的词。**不能只看 junk_score** ——
+# 脚注里的经文出处（`1 Tim. v. 17.`、`Ps. xcviii. 8; Isa. lv. 12.`）、
+# 全大写的讲题行（`VI. THE SAINT'S LIFE—CHRIST.`）、题记出处
+# （`'To me to die is gain.'—PHIL. i. 21, 2nd clause.`）分数一样低，
+# 删掉就是删正文。下面三条白名单把它们挡在外面。
+RE_CITATION = re.compile(
+    r'^[\s\d*\\]*(?:[1-3]\s*)?[A-Z][a-z]{1,4}\.?\s*[ivxlcIVXLC]+\.?\s*[\d,\s.;:–—-]*$')
+RE_CAPS_LINE = re.compile(r'^[^a-z]{5,}$')
+RE_EPIGRAPH_REF = re.compile(r'PHIL\.|—\s*PHIL', re.I)
+
+
+def is_scan_noise(par):
+    t = par.strip().strip('*')
+    if len(t) < 13 or t.startswith('#'):
+        return False
+    if junk_score(t) >= 0.3:
+        return False
+    if RE_CITATION.match(t) or RE_CAPS_LINE.match(t) or RE_EPIGRAPH_REF.search(t):
+        return False
+    return True
+
+
 def split_sections(pages, leaf_sec):
     """[(leaf, markdown)] → [(slug, 标题, 正文)]"""
     titles = dict([('front', 'Preface'), ('introduction', 'Introduction')]
@@ -537,9 +666,16 @@ def split_sections(pages, leaf_sec):
             if p.strip():
                 buckets[sec].append(p)
 
+    head_titles = [_key(t) for t in (
+        ['Introduction', 'Lectures on Philippians', 'Contents', 'Preface',
+         'The Epistle to the Philippians', 'Notes on the Greek Text',
+         'Appendix', 'Epistle of Polycarp', 'Revised Translation of the Epistle']
+        + LECTURES)]
     out = []
     for sec in order:
         paras = buckets[sec]
+        if sec == 'front':
+            paras = rebuild_front(paras, GARBAGE)
         if sec == 'tail':
             for slug, title, body in split_tail(
                     paras, [_key(p.strip().strip('*')) for p in paras]):
@@ -549,7 +685,23 @@ def split_sections(pages, leaf_sec):
             slug = 'preface' if sec == 'front' else sec
             out.append((slug, titles.get(sec, sec),
                         '\n\n'.join(trim_edges(paras, slug))))
-    return out
+
+    # 兜底清扫放在**分节之后**：书末那几节的标题页本身就长得像页眉
+    # （`EPISTLE OF PAUL TO THE PHILIPPIANS. _ LS) 3» 4`，相似度 0.81），
+    # 分节前扫会把切分锚点一起扫掉——实测「修订译文」整节因此找不到起头。
+    swept = []
+    for slug, title, body in out:
+        keep = []
+        for p in body.split('\n\n'):
+            if not p.strip():
+                continue
+            if inner_head_score(p, head_titles) >= 0.65:
+                GARBAGE.append((slug, 'inner-head', p[:110])); continue
+            if is_scan_noise(p):
+                GARBAGE.append((slug, 'scan-noise', p[:110])); continue
+            keep.append(p)
+        swept.append((slug, title, '\n\n'.join(keep)))
+    return swept
 
 
 def main():
@@ -622,7 +774,7 @@ def main():
         for was, now, keep in seams:
             f.write(f'seam-{"keep" if keep else "join"}\t{was}\t{now}\n')
         for slug, where, txt in GARBAGE:
-            f.write(f'edge-junk/{where}\t{slug}\t{txt}\n')
+            f.write(f'drop/{where}\t{slug}\t{txt}\n')
     print(f'下沉首字补回 {len(DROPCAPS)} 处，斜体区间对不上丢弃 '
           f'{len(DROPPED_ITALIC)} 处 → {log}', file=sys.stderr)
     print(f'{len(sections)} 节 → {OUT_DIR}', file=sys.stderr)
