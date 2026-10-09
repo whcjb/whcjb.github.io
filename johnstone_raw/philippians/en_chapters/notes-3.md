@@ -10,7 +10,7 @@ necessarily imply that the subject in his mind was in itself a *disagreeable* on
 
 2. The sense of ‘ Beware’ is given here to βλέπειν with the accusative, by the context merely. Compare, for example, Col. iv. 17. Βλέπειν ἀπὸ means ‘to beware of,’ ‘to give heed to, in such a way as to separate ourselves from ;’ see Mark Vill. 15, xii. 38.
 
-4. The construction is easily explained. Καίπερ is regularly construed with a participle. Had the reference of the statement in the first clause of this verse been as wide as that of the 3rd verse—namely to all believers, whether Jews or Gentiles,—the apostle would have written καίπερ ἔχοντες ; but seeing that the statement made here was true of himself, but not of the Philippian Christians, he takes *himself* out of the whole subject ἡμεῖς, retaining the participial construction, *xairep* > & δ ἐγὼ ἔχων.
+4. The construction is easily explained. Καίπερ is regularly construed with a participle. Had the reference of the statement in the first clause of this verse been as wide as that of the 3rd verse—namely to all believers, whether Jews or Gentiles,—the apostle would have written καίπερ ἔχοντες ; but seeing that the statement made here was true of himself, but not of the Philippian Christians, he takes *himself* out of the whole subject ἡμεῖς, retaining the participial construction, καίπερ ἐγὼ ἔχων.
 
 The primary sense of the words ἔχων πεποίθησιν ἐν σαρκὶ, ‘having confidence in the flesh, —is clearly not the meaning here ; because such a statement would be directly contradictory of that made in the immediately preceding clause. We
 

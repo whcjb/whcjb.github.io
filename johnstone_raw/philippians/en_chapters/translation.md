@@ -10,19 +10,19 @@ I. 1 PAUL and Timothy, servants of Christ Jesus, to all the saints in Christ Jes
 
 5 supplication with joy, for your fellowship with regard to
 
-the gospel from the first day until now ; being confident of this very thing, that He which hath begun a good work in you will perfect it until the day of Christ Jesus;
+6 the gospel from the first day until now ; being confident of this very thing, that He which hath begun a good work in you will perfect it until the day of Christ Jesus;
 
 7 even as it is meet for me to think this of you all, because I have you in my heart, inasmuch as both in my bonds and in the defence and confirmation of the
 
 8 gospel ye are all partakers with me of my grace. For God is my witness, how I long after you all in the tender heart of Christ Jesus.
 
-And this I pray, that your love may abound yet more and more in knowledge and all discernment, so
+9 And this I pray, that your love may abound yet 10 more and more in knowledge and all discernment, so
 
 that ye may try the things which differ, that ye may be
 
 pure and free from stumbling against the day of Christ,
 
-II being filled with the fruit of righteousness, which 15
+II 11 being filled with the fruit of righteousness, which 15
 
 through Jesus Christ, unto the glory and praise of God.
 
@@ -36,9 +36,9 @@ through Jesus Christ, unto the glory and praise of God.
 
 16 will. The\* ¹ one *party* of love, knowing that I am set
 
-for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up
+17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up
 
-galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re-
+18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re-
 
 19 joice; for I know that this shall issue to me unto salvation, through your supplication and the supply of the
 
@@ -60,35 +60,35 @@ In the oldest manuscripts the 16th and 17th verses are found in the reverse orde
 
 of your affairs, that ye are standing fast in one spirit, with one soul striving together for the faith of the
 
-gospel, and in nothing terrified by your adversaries ; the which is to them a-token of perdition, but of your
+28 gospel, and in nothing terrified by your adversaries ; the which is to them a-token of perdition, but of your
 
-salvation, and this of God: for unto you it hath been given in the behalf of Christ, not only to believe on
+29 salvation, and this of God: for unto you it hath been given in the behalf of Christ, not only to believe on
 
-Him, but also to suffer in His behalf, having the same conflict as ye saw in me, and now hear of in me.
+30 Him, but also to suffer in His behalf, having the same conflict as ye saw in me, and now hear of in me.
 
-*If there be,* therefore, any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any
+*II. 1 If there be,* therefore, any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any
 
-tender-heartedness and compassions, fill ye up my joy, that ye be of the same mind, having the same love, with
+2 tender-heartedness and compassions, fill ye up my joy, that ye be of the same mind, having the same love, with
 
-united souls minding the one thing ; *doing* nothing according to factiousness or vainglory, but in lowliness of mind esteeming each other better than yourselves ;
+3 united souls minding the one thing ; *doing* nothing according to factiousness or vainglory, but in lowliness of mind esteeming each other better than yourselves ;
 
-looking not each on your own things, but each also on
+4 looking not each on your own things, but each also on
 
 5 the things of others. For have that mind in you, which
 
-6 aon 9 Ιο II 12 13 *was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God,
+6 aon 9 Ιο II 12 13 *6 was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God,
 
-but emptied Himself, taking *upon Him* the form of a
+7 but emptied Himself, taking *upon Him* the form of a
 
-servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
+8 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
 
-wherefore also God highly exalted Him, and gave Him
+9 wherefore also God highly exalted Him, and gave Him
 
-a name which is above every name, that in the name of Jesus every knee should bow, of *things* in heaven, and
+10 a name which is above every name, that in the name of Jesus every knee should bow, of *things* in heaven, and
 
 *things* on earth, and *things* under the earth, and *that* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
 
-Wherefore, my beloved, as ye always obeyed, *so,* not as in my presence only, but now much more in my absence, work out your own salvation with fear and
+12 Wherefore, my beloved, as ye always obeyed, *so,* not as in my presence only, but now much more in my absence, work out your own salvation with fear and
 
 trembling ; for it is God which worketh in you both to
 
@@ -98,120 +98,120 @@ trembling ; for it is God which worketh in you both to
 
 prove yourselves blameless and guileless, children of God without rebuke, in the midst of a crooked and perverse generation, among whom ye shine as lights in the
 
-world, holding forth the word of life ; that I may have matter of glorying *laid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
+16 world, holding forth the word of life ; that I may have matter of glorying *laid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
 
-Yea, and if, besides the sacrifice and service of your faith, I be poured forth, I joy, and congratulate you all ;
+17 Yea, and if, besides the sacrifice and service of your faith, I be poured forth, I joy, and congratulate you all ;
 
-and for the same cause do ye also joy, and congratulate me.
+18 and for the same cause do ye also joy, and congratulate me.
 
-But I hope in the Lord Jesus to send Timothy shortly unto you, that I also may be of good comfort,
+19 But I hope in the Lord Jesus to send Timothy shortly unto you, that I also may be of good comfort,
 
-when I know your state. For I have no man like
+20 when I know your state. For I have no man like
 
-minded, who will truly care for your state. For all *of them* seek their own, not the things which are Jesus
+21 minded, who will truly care for your state. For all *of them* seek their own, not the things which are Jesus
 
-Christ’s. But ye know the proof of him, that, as a child *serveth* a father, he served with me for the furtherance
+22 Christ’s. But ye know the proof of him, that, as a child *serveth* a father, he served with me for the furtherance
 
-of the gospel. Him, therefore, I hope to send imme
+23 of the gospel. Him, therefore, I hope to send imme
 
-diately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
+24 diately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
 
-But I have thought it necessary to send to you Epaphroditus, my brother, and fellow-labourer, and fellow-soldier, but your messenger and minister to my
+25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow-labourer, and fellow-soldier, but your messenger and minister to my
 
-need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been
+26 need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been
 
-sick. For indeed he was sick nigh unto death; but God had mercy on him, and not on him only, but on me also, that I should not have sorrow upon sorrow.
+27 sick. For indeed he was sick nigh unto death; but God had mercy on him, and not on him only, but on me also, that I should not have sorrow upon sorrow.
 
-I have been, therefore, the more earnest to send him, that, seeing him, ye may rejoice again, and that I my
+28 I have been, therefore, the more earnest to send him, that, seeing him, ye may rejoice again, and that I my
 
-self may be the less sorrowful. Receive him, therefore, in the Lord with all gladness ; and hold such in reputa
+29 self may be the less sorrowful. Receive him, therefore, in the Lord with all gladness ; and hold such in reputa
 
 tion; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
 
-Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *is* not irksome, and for you *is* safe.
+1 III. Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *is* not irksome, and for you *is* safe.
 
-Beware of the dogs; beware of the evil workers;
+2 Beware of the dogs; beware of the evil workers;
 
-beware of the concision. For we are the circumcision, which worship by the Spirit of God, and glory in Christ Jesus, and have no confidence in the
+3 beware of the concision. For we are the circumcision, which worship by the Spirit of God, and glory in Christ Jesus, and have no confidence in the
 
-flesh ;—though I myself might have confidence in the flesh also. If any other man thinketh that he might
+4 flesh ;—though I myself might have confidence in the flesh also. If any other man thinketh that he might
 
-put confidence in the flesh, I more: circumcised the eighth day, of the race of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; as touching the
+5 put confidence in the flesh, I more: circumcised the eighth day, of the race of Israel, of the tribe of Benjamin, a Hebrew of Hebrews; as touching the
 
-law, a Pharisee; as touching zeal, persecuting the church ; as touching the righteousness which is in the
+6 law, a Pharisee; as touching zeal, persecuting the church ; as touching the righteousness which is in the
 
-law, having approved myself blameless. But what things were gains to me, those for Christ I have counted
+7 law, having approved myself blameless. But what things were gains to me, those for Christ I have counted
 
-loss. Yea, doubtless, and I *still* count them all to be loss, for the excellency of the knowledge of Christ Jesus my Lord: for whom I suffered the loss of all, and count them to be dung, that I may win Christ,
+8 loss. Yea, doubtless, and I *still* count them all to be loss, for the excellency of the knowledge of Christ Jesus my Lord: for whom I suffered the loss of all, and count them to be dung, that I may win Christ,
 
-and be found in Him, not having mine own righteousness, which is of the law, but that which is through faith in Christ, the righteousness which is of God,
+9 and be found in Him, not having mine own righteousness, which is of the law, but that which is through faith in Christ, the righteousness which is of God,
 
-*resting* on faith ; that I may know Him, and the power of His resurrection, and the fellowship of His sufferings,
+*10 resting* on faith ; that I may know Him, and the power of His resurrection, and the fellowship of His sufferings,
 
-being fashioned after the likeness of His death,—if by any means I may attain unto the resurrection from the
+11 being fashioned after the likeness of His death,—if by any means I may attain unto the resurrection from the
 
-dead. Not that I have already taken hold, either am already perfected ; but I follow after, if that I may even lay hold on that for which also I was laid hold on by
+12 dead. Not that I have already taken hold, either am already perfected ; but I follow after, if that I may even lay hold on that for which also I was laid hold on by
 
-Christ. Brethren, I count not myself to have laid hold; but one thing,—forgetting those things which are behind, and reaching forth unto those things which are
+13 Christ. Brethren, I count not myself to have laid hold; but one thing,—forgetting those things which are behind, and reaching forth unto those things which are
 
-before, I press toward the mark, for the prize of the high calling of God in Christ Jesus.
+14 before, I press toward the mark, for the prize of the high calling of God in Christ Jesus.
 
-Let us, therefore, as many as are perfect, be thus minded ; and, if in anything ye are otherwise minded,
+15 Let us, therefore, as many as are perfect, be thus minded ; and, if in anything ye are otherwise minded,
 
-this also God shall reveal unto you. Only, whereto we have attained, by the same let us walk.
+16 this also God shall reveal unto you. Only, whereto we have attained, by the same let us walk.
 
-Be followers together of me, brethren, and mark them
+17 Be followers together of me, brethren, and mark them
 
-which walk so as ye have us for an ensample. For many walk, of whom I often told you, and now tell you even weeping,—the enemies of the cross of Christ ;
+18 which walk so as ye have us for an ensample. For many walk, of whom I often told you, and now tell you even weeping,—the enemies of the cross of Christ ;
 
-whose end *is* destruction, whose god *is* their belly, and their glory in their shame, who mind the earthly things.
+19 whose end *is* destruction, whose god *is* their belly, and their glory in their shame, who mind the earthly things.
 
-For our citizenship is in the heavens, from whence also
+20 For our citizenship is in the heavens, from whence also
 
-we look for the Lord Jesus Christ *as* a Saviour; who shall change the body of our humiliation, *that it may be* fashioned like unto the body of His glory, according to the working of His power even to subdue all things
+21 we look for the Lord Jesus Christ *as* a Saviour; who shall change the body of our humiliation, *that it may be* fashioned like unto the body of His glory, according to the working of His power even to subdue all things
 
-unto Himself. Wherefore, my brethren, beloved and longed for, my joy and crown, so stand fast in the Lord, beloved.
+1 IV. unto Himself. Wherefore, my brethren, beloved and longed for, my joy and crown, so stand fast in the Lord, beloved.
 
-I beseech Euodia, and I beseech Syntyche, to be of
+2 I beseech Euodia, and I beseech Syntyche, to be of
 
-the same mind in the Lord. Yea, I entreat thee also, true yoke-fellow, help them, seeing that they laboured with me in the gospel, along with Clement also, and my other fellow-workers, whose names *are* in the book of life.
+3 the same mind in the Lord. Yea, I entreat thee also, true yoke-fellow, help them, seeing that they laboured with me in the gospel, along with Clement also, and my other fellow-workers, whose names *are* in the book of life.
 
-Rejoice in the Lord alway: again I will say, Rejoice.
+4 Rejoice in the Lord alway: again I will say, Rejoice.
 
-Let your forbearance be known unto all men. The
+5 Let your forbearance be known unto all men. The
 
-Lord *is* at hand. Be anxious about nothing; but in everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
+6 Lord *is* at hand. Be anxious about nothing; but in everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
 
-God: and the peace of God, which passeth all understanding, shall keep your hearts and your thoughts in Christ Jesus.
+7 God: and the peace of God, which passeth all understanding, shall keep your hearts and your thoughts in Christ Jesus.
 
-Finally, brethren, whatsoever things are true, whatsoever things *are* seemly, whatsoever things *are* just, whatsoever things *are* pure, whatsoever things *are* lovely,
+8 Finally, brethren, whatsoever things are true, whatsoever things *are* seemly, whatsoever things *are* just, whatsoever things *are* pure, whatsoever things *are* lovely,
 
-whatsoever things *are* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
+whatsoever things *are* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— 9 which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
 
-But I rejoiced in the Lord greatly, that now at length ye have flourished again as to your care for me; for which ye were also careful, but lacked opportunity.
+10 But I rejoiced in the Lord greatly, that now at length ye have flourished again as to your care for me; for which ye were also careful, but lacked opportunity.
 
-Not that I speak in respect of want, for I have
+11 Not that I speak in respect of want, for I have
 
-learned, in what state I am, *therein* to be content. I know both *how* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
+12 learned, in what state I am, *therein* to be content. I know both *how* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
 
-want. I can do all things in Him which strengtheneth me.
+13 want. I can do all things in Him which strengtheneth me.
 
-Notwithstanding, ye did well that ye had fellowship
+14 Notwithstanding, ye did well that ye had fellowship
 
-with my affliction. And ye yourselves also know, Philippians, that in the beginning of the gospel, when I departed from Macedonia, no church had fellowship with me as touching an account of giving and receiving,
+15 with my affliction. And ye yourselves also know, Philippians, that in the beginning of the gospel, when I departed from Macedonia, no church had fellowship with me as touching an account of giving and receiving,
 
-but ye only. For even in Thessalonica ye sent once
+16 but ye only. For even in Thessalonica ye sent once
 
-and again unto my need. Not that I seek your gift,— but I seek the fruit which aboundeth to your account.
+17 and again unto my need. Not that I seek your gift,— but I seek the fruit which aboundeth to your account.
 
-But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice ac
+18 But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice ac
 
-ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory,
+19 ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory,
 
-in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
+20 in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
 
-Salute every saint in Christ Jesus. The brethren which
+21 Salute every saint in Christ Jesus. The brethren which
 
-are with me salute you. All the saints salute you, but especially they that are of Cæsar’s household.
+22 are with me salute you. All the saints salute you, but especially they that are of Cæsar’s household.
 
-The grace of the Lord Jesus Christ *be* with your spirit. Amen.
+23 The grace of the Lord Jesus Christ *be* with your spirit. Amen.

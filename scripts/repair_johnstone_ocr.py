@@ -86,6 +86,23 @@ MANUAL_CONTEXT = [
     # （归一化时星号被抹掉）。连同闭合一起补。
     ('‘*when I departed from Macedonia,’ \\*lead us',
      '‘*when I departed from Macedonia,*’ lead us'),
+
+    # ── 印面比对报出来、但替换区间压着斜体标记的 11 条 ──
+    # 自动回填一律跳过这种（删区间会连标记一起删），改为逐条手写，
+    # 标记位置照原样保留。每条都是 OCR 把**斜体字母**读错：
+    #   d→b  K→F  £→k  z→wh  A→th  22→in  d/→bl
+    ('be ολίγον*» unto the Lord,*', 'be *Holiness unto the Lord,*'),
+    ('‘ *Kor unto you', '‘ *For unto you'),
+    ('‘ *deing like-minded,*', '‘ *being like-minded,*'),
+    ('‘ *d/ameless and harmless', '‘ *blameless and harmless'),
+    ('‘ *d/ameless’*', '‘ *blameless’*'),
+    ('‘ *de of the same mind.', '‘ *be of the same mind.'),
+    ('‘ *22: everything.*', '‘ *in everything.*'),
+    ('‘ *£eep’*', '‘ *keep’*'),
+    ('‘ *zwhatsoever things are pure.*', '‘ *whatsoever things are pure.*'),
+    ('‘ *Ais’*', '‘ *this’*'),
+    # 希腊文不打斜体（Porson 体本身就是斜的），所以这条连标记一起去掉
+    ('*xairep* > & δ ἐγὼ ἔχων', 'καίπερ ἐγὼ ἔχων'),
 ]
 
 
@@ -525,6 +542,10 @@ def count_bigrams(texts):
 # 在归一化串上定位、算差异，再按对照表把差异片段映射回原文下标，
 # 从后往前 splice。星号落在两个映射点之间，原样留着。
 FIX_TBL = os.path.join(ROOT, 'johnstone_raw', 'philippians', 'manual_fixes.tsv')
+# 「修订译文」那一节的边码单独一张表：它不是「改错字」，是**补回被当噪点
+# 清掉的节号**，来源也不同（单独问影像左侧页边那一列），分开放便于复核。
+FIX_TBL_EXTRA = os.path.join(ROOT, 'johnstone_raw', 'philippians',
+                             'manual_fixes_extra.tsv')
 FIX_QUOTE = str.maketrans({'‘': "'", '’': "'", '“': '"', '”': '"',
                            '′': "'", '—': '-', '–': '-'})
 
@@ -548,15 +569,16 @@ def norm_map(text):
 
 
 def load_fixes():
-    if not os.path.exists(FIX_TBL):
-        return {}
     out = {}
-    for line in open(FIX_TBL, encoding='utf-8'):
-        if line.startswith('#'):
+    for tbl in (FIX_TBL, FIX_TBL_EXTRA):
+        if not os.path.exists(tbl):
             continue
-        p = line.rstrip('\n').split('\t')
-        if len(p) >= 4:
-            out.setdefault(p[0], []).append((p[2], p[3], p[1]))
+        for line in open(tbl, encoding='utf-8'):
+            if line.startswith('#'):
+                continue
+            p = line.rstrip('\n').split('\t')
+            if len(p) >= 4:
+                out.setdefault(p[0], []).append((p[2], p[3], p[1]))
     return out
 
 
