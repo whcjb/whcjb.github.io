@@ -44,7 +44,7 @@ With regard to ἐφ᾽ ᾧ, ‘ for which,’ compare note on chap. iii. 12. Ha
 
 , ‘also,’ before ἐφρονεῖτε, has relation to the *fenmse* of the verb. The apostle had expressed his joy that their care of
 
-him had ‘ *xow at /ast* flourished again.’ No sooner has he written or dictated the words, than it occurs to him that his statement might easily be misconstrued into one of reproach for their conduct in the past; and accordingly he adds,—‘a matter for which ye *were* careful also’ before this, ‘ but lacked opportunity’ of practically showing your affection.
+him had ‘ *xow at last* flourished again.’ No sooner has he written or dictated the words, than it occurs to him that his statement might easily be misconstrued into one of reproach for their conduct in the past; and accordingly he adds,—‘a matter for which ye *were* careful also’ before this, ‘ but lacked opportunity’ of practically showing your affection.
 
 11. Καθ᾿ ὑστέρησιν means ‘in consequence of want.’ For this force of κατὰ, compare Matt. xix. 3; Acts iii. 17; and see Winer, ὃ 49. ἡ, b. ὁ.
 

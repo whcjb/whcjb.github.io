@@ -4,7 +4,7 @@ REVISED TRANSLATION
 
 OF THE
 
-I NW "» —~>—_ Pau. and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons. Grace δέ unto you, and peace, from God our Father and the Lord Jesus Christ.
+I NW "» —~>—_ Paul. and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons. Grace δέ unto you, and peace, from God our Father and the Lord Jesus Christ.
 
 I thank my God on all my remembrance of you, always, in every supplication of mine for you all, presenting the
 

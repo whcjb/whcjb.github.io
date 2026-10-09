@@ -67,6 +67,7 @@ VERIFIED = {
     'ves': 'lives',           # yet he «lives» spiritually through the loving contemplation
     'rst': 'first',           # just after that «first» verse had been written
     'GLAsGow': 'GLASGOW',     # 序末落款，原书排小型大写（leaf 0013 影像确认）
+    'Zhe': 'The',             # 斜体 T 读成 Z；长度不够走不到字形回扫
     'icene': 'Nicene',        # *Ante-Nicene Christian Library*（leaf 0013 影像确认）
                               #   ——不是 1st：两边读的 ist/rst 都不对
 }
@@ -168,7 +169,12 @@ def decide(pairs, lex, vocab):
         cands.sort(reverse=True)
         c, a = cands[0]
         why = None
-        if is_word(b, lex):
+        if is_word(b, lex) and not (
+                vocab.get(b.lower(), 0) <= 1 and vocab.get(a.lower(), 0) >= 5
+                and difflib.SequenceMatcher(None, b.lower(), a.lower()).ratio() >= 0.8):
+            # 真词错误（`edders`＝web2 收的一个僻词，实为 elders）规则抓不到，
+            # 判词典自己先把它当成合法词放行了。唯一的凭据是**语料**：
+            # 错的那个形全书只出现一两次，对的那个出现几十次，而且形很近。
             why = '① tesseract 侧本来就是词'
         elif not is_word(a, lex):
             why = '① ABBYY 侧也不是词'
@@ -340,6 +346,114 @@ def fix_ligatures(text, log):
     return text
 
 
+# ── 第四道：从已确认的修正里**学**字形混淆，再回扫全书 ────────
+#
+# 到这一步，第二证人已经确认了两百多条修正。把每条拿 difflib 对齐，就能把
+# tesseract 在这份扫描件上的字形混淆**统计出来**，不必凭直觉写规则：
+#     f→p 17 次   z→i 13 次   d→b 11 次   z→n 8 次   m→n 7 次
+#     v→r 5 次    A→h 3 次    w→u 3 次    Z→l/T/p 各 2 次
+# 再拿这张表去扫剩下的非词。闸子四道，少一道都会改坏（实测）：
+#   ① 判词典：原词不是词、改出来的是词
+#   ② 语料自证：改出来的词在本书正确出现过 ≥3 次
+#   ③ **只许一次替换，且原词 ≥5 个字母**
+#      —— 少了这条，`pre`→`pro`（11 处！）、`cer`→`cor`、`com`→`con`、
+#         `ence`→`once` 全会过。它们是连字符前缀和断词碎片，不是错字。
+#   ④ **连字符旁边的 token 一律不碰**：`pre-eminence` 的 `pre` 被切成独立
+#      token，看着像非词，其实是正文。
+#
+# 斜杠另算一支。词里出现 `/` 在英文里不可能是对的（`e/ders`、`radical/`、
+# `know/edge`、`a/ways` —— 斜体的 l 被读成斜杠，或多吐一个斜杠）。
+# 只试「删掉」和「换成 l/t/i」，结果必须 ≥3 个字母、且全书出现过 ≥3 次
+# （不卡长度的话 `A/y` 会变成 `Ay`，而它其实是 `My`）。
+SLASH_TRY = ['', 'l', 't', 'i']
+
+# 字形回扫自动给出的解不对、但人核得出来的，写死在这里。
+# 这两条都是**原词只剩两三个字母**，自动解没有足够信息。
+GLYPH_FIX = {
+    'd/e': 'Me',    # `a word of wondering praise: ‘*Me*—who was a persecutor,
+                    #  a blasphemer, and injurious’`（ABBYY 读作 `^Me—`，
+                    #  且提前 1:13 原文如此）。自动解给的是 die，错。
+                    #  第二证人那一遍本来认得出，被「ABBYY 侧不得更短」挡了。
+    'se/': 'self',  # `a firm *se/(-restraint`＝self-restraint。自动解给 set，错。
+}
+MIN_SUB = 2          # 一条字形混淆至少在确认表里出现过几次
+MIN_LEN = 5          # 原词至少几个字母才允许按字形改
+MIN_VOCAB = 3        # 改出来的词在本书至少正确出现过几次
+
+
+def learn_confusions(table):
+    """{错→对} → [(错字形, 对字形)]，按 difflib 对齐统计。"""
+    cnt = Counter()
+    for a, (b, _n) in table.items():
+        for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(
+                None, a, b, autojunk=False).get_opcodes():
+            if tag == 'replace' and i2 - i1 <= 2 and j2 - j1 <= 2:
+                cnt[(a[i1:i2], b[j1:j2])] += 1
+            elif tag == 'delete' and i2 - i1 <= 1:
+                cnt[(a[i1:i2], '')] += 1
+    return [(x, y) for (x, y), c in cnt.items() if c >= MIN_SUB and x]
+
+
+def glyph_sweep(text, lex, vocab, rules, log):
+    def once(w):
+        out = set()
+        for x, y in rules:
+            i = 0
+            while True:
+                i = w.find(x, i)
+                if i < 0:
+                    break
+                out.add(w[:i] + y + w[i + len(x):])
+                i += 1
+        return out
+
+    def repl(m):
+        w = m.group(0)
+        lo, hi = m.start(), m.end()
+        if (lo and text[lo - 1] == '-') or (hi < len(text) and text[hi] == '-'):
+            return w                      # ④ 连字符旁边的碎片不碰
+        if is_word(norm_tok(w), lex):
+            return w
+        if w in GLYPH_FIX:
+            log.append((w, GLYPH_FIX[w]))
+            return GLYPH_FIX[w]
+        if '/' in w:
+            # 斜杠词常常**还带着另一个字形错**（`d/ameless` 要先把斜杠还原成
+            # l，再把 d 还原成 b 才成 blameless）。所以允许「斜杠一步 +
+            # 学来的混淆一步」，闸子不变。
+            # 词里出现斜杠在英文里不可能是对的，所以这一支不卡「全书出现
+            # ≥3 次」那条硬线（`radical` 全书只出现 2 次，卡死就修不掉），
+            # 改成**取语料里出现最多的那个解，且要甩开第二名一倍**。
+            step1 = {w.replace('/', y) for y in SLASH_TRY}
+            cand = [v for v in step1
+                    if len(re.sub(r"[^A-Za-z]", '', v)) >= 3 and is_word(v, lex)]
+            if not cand:
+                cand = [v2 for v in step1 for v2 in once(v)
+                        if len(re.sub(r"[^A-Za-z]", '', v2)) >= 4 and is_word(v2, lex)]
+            ranked = sorted(cand, key=lambda v: -vocab.get(v.lower(), 0))
+            good = set()
+            if ranked and vocab.get(ranked[0].lower(), 0) >= 1:
+                second = vocab.get(ranked[1].lower(), 0) if len(ranked) > 1 else 0
+                if vocab.get(ranked[0].lower(), 0) >= max(1, 2 * second):
+                    good = {ranked[0]}
+        elif len(re.sub(r"[^A-Za-z]", '', w)) >= MIN_LEN:
+            good = {v for v in once(w)
+                    if is_word(v, lex) and vocab.get(v.lower(), 0) >= MIN_VOCAB}
+        else:
+            return w
+        if len(good) != 1:
+            return w
+        fix = good.pop()
+        log.append((w, fix))
+        return fix
+    return GLYPH_TOKEN.sub(repl, text)
+
+
+# 斜杠也可能在**词首**（`/eads`＝leads、`/ast`＝last），所以 token 允许以
+# 斜杠开头 —— 只认字母开头的话这一支整类都扫不到（实测漏 8 处）。
+GLYPH_TOKEN = re.compile(r"/?[A-Za-z][A-Za-z0-9'/]*")
+
+
 def count_bigrams(texts):
     big = Counter()
     for t in texts:
@@ -385,20 +499,23 @@ def main():
     # 后者把前者的改动整个盖掉了 —— 表里明明有 `zs → is` 命中 19 处，
     # 产物里 zs 却原样还在 17 处。只有连跑两次 --apply 才看起来是对的。
     bigrams = count_bigrams(texts.values())
-    gap_log, glue_log, ord_log, lig_log = [], [], [], []
+    rules = learn_confusions(table)
+    gap_log, glue_log, ord_log, lig_log, glyph_log = [], [], [], [], []
     for f, t in texts.items():
         new = apply_witness(t)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
         new = split_glued(new, lex, vocab, bigrams, glue_log)
         new = fix_ordinals(new, ord_log)
         new = fix_ligatures(new, lig_log)
+        new = glyph_sweep(new, lex, vocab, rules, glyph_log)
         if a.apply and new != t:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
     print(f'连字符夹垃圾 {len(gap_log)} 处，粘词 {len(glue_log)} 处，'
-          f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处',
+          f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处，'
+          f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆）',
           file=sys.stderr)
-    for was, now in gap_log + glue_log + ord_log + lig_log:
+    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log:
         print(f'    {was!r} → {now}', file=sys.stderr)
 
     os.makedirs(os.path.dirname(log), exist_ok=True)
@@ -414,6 +531,8 @@ def main():
             fh.write(f'ordinal\t{was}\t{now}\t\t\n')
         for was, now in lig_log:
             fh.write(f'ligature\t{was}\t{now}\t\t\n')
+        for was, now in glyph_log:
+            fh.write(f'glyph\t{was}\t{now}\t\t\n')
         for b, c_a, c, why in sorted(rejected, key=lambda r: -r[2]):
             fh.write(f'reject\t{b}\t{c_a}\t{c}\t{why}\n')
     print(f'{"落盘" if a.apply else "试跑"}：命中 {sum(hits.values())} 处 → {log}',
