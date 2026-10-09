@@ -68,7 +68,7 @@ Evidently a variation of Paul’s figure, ‘ Ye are the temple of the living Go
 
 Strictly ‘deacons,’ the original word from which ‘deacon’ is derived meaning ‘servant.’ \*
 
-There seems to be a reference here to Phil. i, 27, the peculiar word meaning strictly ‘to live as citizens’ being employed in both. It is not improbable, as Dr. Lightfoot suggests, that, in the connection in which Polycarp here places the word, he intended this thought to come out distinctly: thus, ‘ If we live as *citizens* in a way worthy of Him, we shall by and by be Aivgs with Him.’ \*2 Tim, iam .
+There seems to be a reference here to Phil. i, 27, the peculiar word meaning strictly ‘to live as citizens’ being employed in both. It is not improbable, as Dr. Lightfoot suggests, that, in the connection in which Polycarp here places the word, he intended this thought to come out distinctly: thus, ‘ If we live as *citizens* in a way worthy of Him, we shall by and by be Aivgs with Him.’ \*2 Tim, i am .
 
 Likewise also let the younger men be blameless in all things, caring before everything for purity, and reining themselves in from every evil. For it is good to cut ourselves off from the lusts which are in the world ; because every lust warreth against the Spirit, and ‘neither fornicators, nor effeminate, nor abusers of themselves with mankind, shall inherit the kingdom of God ;’? neither they that do perversely. Wherefore it is needful to abstain from all these things, submitting yourselves to the elders and deacons, as to God and Christ.
 

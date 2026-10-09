@@ -208,6 +208,7 @@ fix	cifizens	citizens	1	1
 fix	phendix	Appendix	2	1
 fix	Jrom	from	1	1
 fix	GLAsGow	GLASGOW	0	1
+fix	Luodia	Euodia	0	1
 fix	icene	Nicene	0	1
 fix	vil1	VIII	1	0
 fix	x1	XI	1	0
@@ -274,15 +275,21 @@ hyphen-gap	con- © tinue	continue
 glued	alltheir	all their		
 glued	mindin	mind in		
 glued	tothe	to the		
+glued	ina	in a		
 glued	Weare	We are		
 glued	mannerof	manner of		
+glued	Iam	I am		
 glued	Ifwe	If we		
 glued	Ifit	If it		
 glued	selfseeking	self-seeking		
 glued	Itis	It is		
 glued	aman	a man		
 glued	andthe	and the		
+glued	ofa	of a		
+glued	Iam	I am		
 glued	howit	how it		
+glued	Iam	I am		
+glued	Ina	In a		
 glued	aman	a man		
 glued	havetold	have told		
 glued	Onecan	One can		
@@ -297,12 +304,16 @@ glued	likea	like a
 glued	wasthe	was the		
 glued	ButI	But I		
 glued	Iwill	I will		
+glued	ina	in a		
 glued	ForI	For I		
+glued	ina	in a		
 glued	solong	so long		
+glued	ina	in a		
 glued	Christin	Christ in		
 glued	initself	in itself		
 glued	hisfriends	his friends		
 glued	itseems	it seems		
+glued	iam	i am		
 glued	givento	given to		
 glued	Butif	But if		
 glued	inme	in me		
@@ -439,6 +450,31 @@ glyph	Himse/f	Himself
 glyph	a//	all		
 glyph	/ast	last		
 glyph	/razsed	raised		
+italic-I	J	I		
+italic-I	7	I		
+italic-I	J	I		
+italic-I	Z	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	J	I		
+italic-I	J	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	Z	I		
+italic-I	77	I		
+italic-I	J	I		
+italic-I	7	I		
+italic-I	Z	I		
+italic-I	J	I		
+italic-I	7	I		
+italic-I	TJ	I		
+italic-I	7	I		
+italic-I	Z	I		
+italic-I	7	I		
+italic-I	J	I		
+italic-I	7	I		
+italic-I	7	I		
 reject	the	the	41	① tesseract 侧本来就是词
 reject	Christ	Christ	28	① tesseract 侧本来就是词
 reject	PHIL	Phil	27	① tesseract 侧本来就是词

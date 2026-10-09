@@ -68,9 +68,19 @@ VERIFIED = {
     'rst': 'first',           # just after that «first» verse had been written
     'GLAsGow': 'GLASGOW',     # 序末落款，原书排小型大写（leaf 0013 影像确认）
     'Zhe': 'The',             # 斜体 T 读成 Z；长度不够走不到字形回扫
+    'Luodia': 'Euodia',       # 斜体 E 读成 L（p.349 影像确认）
     'icene': 'Nicene',        # *Ante-Nicene Christian Library*（leaf 0013 影像确认）
                               #   ——不是 1st：两边读的 ist/rst 都不对
 }
+
+# 只能按**上下文**定位的人工条目：同一个词在别处是对的，不能全局替换。
+# 每条都注明在哪一页的影像上核的。
+MANUAL_CONTEXT = [
+    # p.103（leaf 0119）：印面是 *never* to despond。读成 ever **把意思读反了**，
+    # 而 ever 本身是真词、全书到处都是，任何全局判据都碰不得它。
+    ('important, *ever* to despond', 'important, *never* to despond'),
+]
+
 
 # 第二证人提了但核下来是错的，明确拒掉，免得下次又被提出来。
 NEVER = {
@@ -244,9 +254,14 @@ def split_glued(text, lex, vocab, bigrams, log):
     """
     def repl(m):
         w = m.group(0)
-        if len(w) < 4 or is_word(norm_tok(w), lex):
+        # 长度下限 3 不是 4：`ina`（in a）正好是 3 个字母，卡 4 就永远改不掉
+        # ——p.103 的 `labouring ina field` 实读才发现（4 处）。
+        if len(w) < 3 or is_word(norm_tok(w), lex):
             return w
-        if vocab.get(w.lower(), 0) >= 2:
+        # 只有**粘着的那个形本身是个真词**才放过（Lightfoot 39 次、meantime 3 次）。
+        # 早先只看「出现 ≥2 次」，于是 `ina`（4 次，不是词）也被放过，
+        # p.103 的 `labouring ina field` 一直没改掉（实读查出）。
+        if is_word(norm_tok(w), lex) and vocab.get(w.lower(), 0) >= 2:
             return w
         best, bc = None, 0
         for i in range(1, len(w)):
@@ -454,6 +469,35 @@ def glyph_sweep(text, lex, vocab, rules, log):
 GLYPH_TOKEN = re.compile(r"/?[A-Za-z][A-Za-z0-9'/]*")
 
 
+# ── 斜体大写 I ───────────────────────────────────────────────
+#
+# **这一类是实读印面才查出来的，所有检测器都看不见**：原书斜体的大写 I
+# 字形带衬线、略带弧度，tesseract 读成 `7` / `J` / `Z` / `77`。
+#     `*J may rejoice in the day of Christ, that 7 have not run in vain*`
+#     `‘ Z *beseech Euodia,*—*and 77 beseech Syntyche.*`
+#     `*‘but 7 desire fruit that may abound to your account*`
+# 它们全是**合法 token**（数字、大写字母），非词率、星号奇偶、页眉判据
+# 一条都报不出来。只有把页面影像和正文摆到一起逐句看才看得见
+# （feedback_page_image_is_final_authority）。
+#
+# 判据：token 独立成词（两边都是空白或引号/星号），后面紧跟一个小写词，
+# 而且前面不是经文出处里的数字（`2 Thess. i. 4-7` 的那个 7 要留着）。
+RE_ITALIC_I = re.compile(
+    r"(?:(?<=^)|(?<=[\s‘’“”\"\*—–\(\[:;,]))(?P<tok>Z|J|7{1,2}|TJ)"
+    r"(?P<post>\*?\s+\*?)(?P<next>[a-z]{2,})", re.M)
+RE_CITATION_LEAD = re.compile(r'[0-9ivxlcIVXLC]\s*[.\-–,]\s*$|\d\s*$')
+
+
+def fix_italic_i(text, log):
+    def repl(m):
+        lead = text[max(0, m.start() - 16):m.start('tok')]
+        if RE_CITATION_LEAD.search(lead):
+            return m.group(0)
+        log.append((m.group('tok'), 'I'))
+        return 'I' + m.group('post') + m.group('next')
+    return RE_ITALIC_I.sub(repl, text)
+
+
 def count_bigrams(texts):
     big = Counter()
     for t in texts:
@@ -501,6 +545,7 @@ def main():
     bigrams = count_bigrams(texts.values())
     rules = learn_confusions(table)
     gap_log, glue_log, ord_log, lig_log, glyph_log = [], [], [], [], []
+    ital_i_log, manual_log = [], []
     for f, t in texts.items():
         new = apply_witness(t)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
@@ -508,14 +553,20 @@ def main():
         new = fix_ordinals(new, ord_log)
         new = fix_ligatures(new, lig_log)
         new = glyph_sweep(new, lex, vocab, rules, glyph_log)
+        new = fix_italic_i(new, ital_i_log)
+        for before, after in MANUAL_CONTEXT:
+            if before in new:
+                new = new.replace(before, after)
+                manual_log.append((before[:46], after[:46]))
         if a.apply and new != t:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
     print(f'连字符夹垃圾 {len(gap_log)} 处，粘词 {len(glue_log)} 处，'
           f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处，'
-          f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆）',
+          f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆），'
+          f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处',
           file=sys.stderr)
-    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log:
+    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log:
         print(f'    {was!r} → {now}', file=sys.stderr)
 
     os.makedirs(os.path.dirname(log), exist_ok=True)
@@ -533,6 +584,8 @@ def main():
             fh.write(f'ligature\t{was}\t{now}\t\t\n')
         for was, now in glyph_log:
             fh.write(f'glyph\t{was}\t{now}\t\t\n')
+        for was, now in ital_i_log:
+            fh.write(f'italic-I\t{was}\t{now}\t\t\n')
         for b, c_a, c, why in sorted(rejected, key=lambda r: -r[2]):
             fh.write(f'reject\t{b}\t{c_a}\t{c}\t{why}\n')
     print(f'{"落盘" if a.apply else "试跑"}：命中 {sum(hits.values())} 处 → {log}',
