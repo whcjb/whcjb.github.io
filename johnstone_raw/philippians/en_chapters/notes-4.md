@@ -6,7 +6,7 @@ Ver. 2. The first name in this verse, looking simply at the form, might designat
 
 3. Failing, as has been observed in the previous note, to see the reference of αὐταῖς to the women mentioned in the 2nd verse, our translators have given the pronoun the force of a demonstrative, and thus made the apostle speak generally of the women who had been helpful to him in his Christian work at Philippi; whilst the real meaning is, ‘Help them (Euodia and Syntyche), seeing that they laboured.’ With regard to this force of the compound relative ὅστις, as equivalent to the Latin *guippe gui,* or *utpote gui,* compare chap. i. 28, with note.
 
-Lightfoot would join pera καὶ Κλήμεντος, κιτιλ., with συλ- AapBavov, rather than with *ovv7bAncav,*— supposing that the apostle’s object is ‘to engage *a// in* the work of conciliation.’ But this does not appear natural. In particular, the clause ὧν τὰ ὀνόματα ἐν βίβλῳ ζωῆς would lack relevancy and point with this connection. .
+Lightfoot would join pera καὶ Κλήμεντος, κιτιλ., with συλ- AapBavov, rather than with *ovv7bAncav,*— supposing that the apostle’s object is ‘to engage *all in* the work of conciliation.’ But this does not appear natural. In particular, the clause ὧν τὰ ὀνόματα ἐν βίβλῳ ζωῆς would lack relevancy and point with this connection. .
 
 4. ’Ep@ (from a present εἴρω, used by Homer) is always a *future* in the New Testament, as in classical writers: *‘z7d/ say,’*
 

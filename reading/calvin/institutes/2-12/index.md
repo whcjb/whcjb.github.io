@@ -90,7 +90,7 @@ c 若有人问为什么必须同时是神和人，我的答案是这必须性不
 <div class="inst-fn">② 参阅 Comm. Hebrews 4：15。</div>
 <div class="inst-fn">③ 奥西安德尔在他的 An filius Dei fuerit incarnandus (1550)，K 2a，2b 中，以及塞尔维特在他的 Christianismi restituto；De regeneratione superma I，pp. 370，382 中，都支持这一立场。加尔文在第五和第六节中再次提到这观点。</div>
 <div class="inst-fn">④ 这里指的是奥西安德尔的话，op. cit., loc. cit.</div>
-<div class="inst-fn">⑤ 这里表示加尔文主张堕落前神选说，而不是堕落后神选说。在加尔文去世不久后，这教义开始在荷兰教会引起争议。参阅 McNeill, The History and Character of Calvinism, pp. 263 f. 请参阅改革宗信仰的 ordo salutis, Heppе RD, pp. 146 ff.</div>
+<div class="inst-fn">⑤ 这里表示加尔文主张堕落前神选说，而不是堕落后神选说。在加尔文去世不久后，这教义开始在荷兰教会引起争议。参阅 McNeill, The History and Character of Calvinism, pp. 263 f. 请参阅改革宗信仰的 ordo salutis, Heppe RD, pp. 146 ff.</div>
 <div class="inst-fn">⑥ 奥西安德尔（op. cit.，fo. A 4a–B 1a）说哈勒的亚历山大（Alexander of Hales），司各脱（Duns Scotus），特别是皮科·德拉·米兰多拉（John Pico della Mirandola）都和他的立场相同。参阅 OS III. 443。在注释2中这些作者的文章被引用处。</div>
 <div class="inst-fn">⑦ 奥卡姆的威廉（William of Ockham）（d. ca. 1349），Centilogium theologicum（Lyons，1495）（这部作品在奥卡姆的 commentary on Lombard’s Sentences 同一个版本中），concl. 7. A。</div>
 <div class="inst-fn">⑧ 奥西安德尔，op. cit. 加尔文在第六和第七节中所批评的话在这部作品的folios C 3a to I 3a。</div>
