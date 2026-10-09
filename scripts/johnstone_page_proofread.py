@@ -56,7 +56,12 @@ SYSTEM = (
     'missing numbers, words in the wrong order, text present in the image but '
     'absent from the transcription (and vice versa).\n'
     '5. Pay special attention to italic words — the OCR misreads them most.\n'
-    '6. If everything matches, answer exactly:  OK\n'
+    '6. The transcription may carry a few words from the previous or the next '
+    'page at its very beginning and its very end. IGNORE any mismatch that '
+    'falls in the first line or the last line.\n'
+    '7. The lecture number and the all-capitals lecture title are moved '
+    'elsewhere in our edition; do NOT report them as missing.\n'
+    '8. If everything matches, answer exactly:  OK\n'
     'Answer with nothing but the findings (or OK).'
 )
 
@@ -79,9 +84,24 @@ def slice_for(raw, whole, w_words, w_pos):
     m = sm.find_longest_match(0, len(w_words), 0, len(pw))
     if m.size < 12:
         return None
-    lo = max(0, m.a - m.b - 8)
-    hi = min(len(w_words) - 1, m.a + (len(pw) - m.b) + 8)
-    return whole[w_pos[lo][0]:w_pos[hi][1]]
+    # 窗口只放宽 2 个词。早先放 8 个，切片两头各带进小半句邻页的话，
+    # 模型照实报「这句印面上没有」—— 先导 12 页里 5 页中招，全是我自己
+    # 切出来的假阳性。
+    lo = max(0, m.a - m.b - 2)
+    hi = min(len(w_words) - 1, m.a + (len(pw) - m.b) + 2)
+    return strip_markup(whole[w_pos[lo][0]:w_pos[hi][1]])
+
+
+RE_TAG = re.compile(r'<[^<>]{1,200}>')
+
+
+def strip_markup(t):
+    """发布层的东西不要送进去比对：`<span class="jh-ref">…</span>`、
+    `<div class="jh-epigraph">`、markdown 标题。它们印面上当然没有，
+    送进去只换来一堆「印面上没有这一行」。"""
+    t = RE_TAG.sub('', t)
+    t = re.sub(r'^#{1,6} .*$', '', t, flags=re.M)
+    return re.sub(r'\n{3,}', '\n\n', t).strip()
 
 
 def ask(png, text):
