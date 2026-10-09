@@ -1655,6 +1655,42 @@ class SessionLimitError(RuntimeError):
 SESSION_LIMIT_RE = re.compile(r'session limit|usage limit|rate limit', re.I)
 
 
+# 译文里**模型自己的话**与**串进来的别种文字**。两类都不是翻译，必须重来。
+#
+# 为什么单列一道闸：各书的 structural_diff 只查星号/注释/锚点这类**可对照的硬
+# 结构**，而这两类毛病不动结构，一路绿灯。2026-10-09 用户截图查出诗篇 40:5(4)
+# 发布正文留着「*有福啊，那以耶和华为его* — 不，重来。」，顺藤全库摸出 180 余处：
+#   1. 自我纠错：模型译了半句自己否了重写，前半句连同自语留在正文里
+#      （「— 不，重来。」「抱歉，重作：」「Wait—output must be clean Chinese.」）。
+#      已有的 CHATTY_RE 只认「请提供原文 / as an AI / I cannot」这类**对着你说话**
+#      的话术，自言自语的措辞完全不同，从来没命中过。
+#   2. 俄语词元：长篇中文里偶尔采到语义等价的俄语词干（его / общ / влия /
+#      как / держ），或把希腊字母换成形近的西里尔字母（παράдείγμα、Heppе）。
+#      全库中译正文**不含任何西里尔字母**，所以这条判据零假阳性。
+LEAK_CYRILLIC_RE = re.compile(r'[\u0400-\u04FF]')
+#      「翻译如下」「译文如下」在正文里是正当说法（「霍斯利对全节的翻译如下：…」，
+#      全库 10 处），只有出现在**整段开头**时才是模型的开场白，故分两条判据。
+LEAK_SELFTALK_RE = re.compile(
+    r'(不，重来|抱歉，(?:重作|重来)|让我重新(?:翻?译|来)|重新翻译一遍|'
+    r'output must be|wait[—\-]\s*output)', re.I)
+LEAK_PREAMBLE_RE = re.compile(
+    r'\A\s*(好的[，,]|以下是(?:译文|翻译)|译文如下|翻译如下|这是我的翻译)')
+
+
+def output_leak(text: str) -> str:
+    """返回泄漏说明；空字符串表示干净。structural_diff 与 call_claude 共用。"""
+    bad = []
+    cyr = LEAK_CYRILLIC_RE.findall(text or '')
+    if cyr:
+        m = LEAK_CYRILLIC_RE.search(text)
+        seg = text[max(0, m.start() - 12):m.start() + 12].replace('\n', ' ')
+        bad.append(f'混入西里尔字母 {len(cyr)} 个（…{seg}…）')
+    m = LEAK_SELFTALK_RE.search(text or '') or LEAK_PREAMBLE_RE.match(text or '')
+    if m:
+        bad.append(f'模型自语「{m.group(0).strip()}」')
+    return '；'.join(bad)
+
+
 def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
                 label: str = '') -> str:
     """调用 claude CLI；遇到失败重试 max_retries 次（退避 5/15/45/90/180s）。
@@ -1669,6 +1705,7 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
     """
     import time
     last_err = ''
+    leak_retries = 0
     for attempt in range(max_retries):
         if attempt:
             wait = min(5 * (3 ** (attempt - 1)), 180)
@@ -1690,7 +1727,18 @@ def call_claude(prompt: str, timeout: int = 300, max_retries: int = 6,
                 raise SessionLimitError(last_err)
             continue
         if out:
-            return out
+            leak = output_leak(out)
+            if not leak:
+                return out
+            # 自语/串字属于可重采样的毛病，换一次采样多半就干净了。但不能无限
+            # 重试：真卡住时宁可把译文交出去留给 structural_diff 记账，也好过
+            # 整章中止（见上面 jeremiah-2 ch50 空转 3.5 小时的教训）。
+            leak_retries += 1
+            if leak_retries > 2:
+                print(f'    [leak-giveup] {label}: {leak[:110]}', flush=True)
+                return out
+            last_err = f'输出不干净：{leak}'
+            continue
         last_err = 'CLI 返回空响应'
     raise RuntimeError(f'claude CLI failed after {max_retries} retries: {last_err}')
 
@@ -1740,7 +1788,15 @@ def cached_translate(texts: list, resume: bool) -> list:
     for i, t in enumerate(texts):
         f = CACHE_DIR / f'{md5key(t)}.txt'
         if resume and f.exists() and f.stat().st_size > 2:
-            results[i] = f.read_text(encoding='utf-8')
+            cached = f.read_text(encoding='utf-8')
+            # 早先存下的坏译文（模型自语 / 串进来的西里尔字母）当缓存未命中处理，
+            # 重译一次；否则每次发布都照原样再抄一遍（诗篇 40:5(4) 就是这么上线的）。
+            leak = output_leak(cached)
+            if leak:
+                print(f'    [cache-reject] {md5key(t)}: {leak[:90]}', flush=True)
+                pending_idx.append(i)
+            else:
+                results[i] = cached
         else:
             pending_idx.append(i)
 

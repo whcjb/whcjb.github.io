@@ -106,6 +106,12 @@ def structural_diff(en: str, zh: str):
         problems.append(f'HTML 注释不符 {en_c} → {zh_c}')
     if CHATTY_RE.search(zh):
         problems.append('模型在对话而非翻译')
+    # 自语与串进来的西里尔字母：判据在 tf 里统一维护（见 tf.output_leak 的注释）。
+    # 放这里是为了让**缓存**也过这道闸——早先存下的坏译文重跑时会被 cache-reject
+    # 自动重译，而不是又一次照原样发布。
+    leak = tf.output_leak(zh)
+    if leak:
+        problems.append(leak)
     if re.search(r'[A-Za-z]', en) and not re.search(r'[一-鿿]', zh) and len(en) > 40:
         problems.append('译文无汉字')
     return '；'.join(problems)
