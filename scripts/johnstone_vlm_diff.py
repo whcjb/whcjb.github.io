@@ -68,6 +68,8 @@ def main():
                     choices=['all', 'text', 'italic', 'margin'])
     ap.add_argument('--leaves', default='')
     ap.add_argument('--show', type=int, default=40)
+    ap.add_argument('--emit', default='',
+                    help='把 text 差异写成 manual_fixes 格式的表')
     a = ap.parse_args()
 
     ab = A.parse_pages(E.load_xml())
@@ -102,25 +104,32 @@ def main():
         stat['比对页'] += 1
 
         if a.check in ('all', 'text'):
-            # token 两头的引号剥掉再比：转录时单引号时有时无
-            # （`church members'` vs `church members`），那是引号样式不是错字。
-            trim = lambda ws: [w.strip("'’‘") for w in ws]
-            ow = trim(WORD.findall(norm(ours)))
-            vw = trim(WORD.findall(norm(vt)))
+            # **比对用纯词，输出取原文区间**。
+            # 只拿纯词比：标点前后的空格（1875 年排 `Rome ;`，转录按现代排法
+            # 并掉）、引号后的空格、数字间距、脚注上标 —— 这些全是排版样式，
+            # 不并掉的话假阳性能把真差异淹掉（实测 2262 vs 真的几百处）。
+            # 但输出必须带标点，否则回不到正文里定位。
+            def toks(t):
+                n = norm(t)
+                ws = [(m.group(0).strip("'’‘").lower(), m.start(), m.end())
+                      for m in WORD.finditer(n)]
+                return n, [w[0] for w in ws], [(w[1], w[2]) for w in ws]
+
+            on, ow, osp = toks(ours)
+            vn, vw, vsp = toks(vt)
             sm = difflib.SequenceMatcher(None, ow, vw, autojunk=False)
             for tag, i1, i2, j1, j2 in sm.get_opcodes():
                 if tag == 'equal':
                     continue
-                if i2 - i1 > 6 or j2 - j1 > 6:      # 大段不一致多半是切片边界
+                if i2 - i1 > 6 or j2 - j1 > 6:
                     continue
-                # 切片两头各带进几个邻页的词，那里的差异不算
-                # （印面比对那一遍也栽在这上面，5/12 页是假阳性）
-                if i1 < 5 or i2 > len(ow) - 5:
+                if i1 < 5 or i2 > len(ow) - 5:    # 切片两头是邻页，不算
                     continue
                 stat['text'] += 1
-                rows.append(('text', leaf,
-                             ' '.join(ow[max(0, i1 - 3):i2 + 3]),
-                             ' '.join(vw[max(0, j1 - 3):j2 + 3])))
+                lo = osp[max(0, i1 - 4)][0]; hi = osp[min(len(osp) - 1, i2 + 3)][1]
+                vlo = vsp[max(0, j1 - 4)][0] if vsp else 0
+                vhi = vsp[min(len(vsp) - 1, j2 + 3)][1] if vsp else 0
+                rows.append(('text', leaf, on[lo:hi], vn[vlo:vhi]))
 
         if a.check in ('all', 'italic'):
             oi, vi = ital_runs(ours), ital_runs(vt)
@@ -131,6 +140,28 @@ def main():
                 stat['italic'] += 1
                 rows.append(('italic', leaf, ' | '.join(oi[i1:i2]) or '(无)',
                              ' | '.join(vi[j1:j2]) or '(无)'))
+
+    if a.emit:
+        # 第三证人的差异 → 与印面比对同格式的修正表，交给 repair 阶段消费。
+        # 两条滤网：
+        #   · 我们自己生成的经文出处（`Philippians i. 1, 2` vs 印面 `PHIL.`）
+        #     印面上本来就没有，34 处全是假阳性
+        #   · 上下文不足 12 个字的不要，定位不住
+        import collections
+        seen, out = set(), []
+        for kind, leaf, x, y in rows:
+            if kind != 'text':
+                continue
+            if 'Philippians' in x and 'PHIL' in y:
+                continue
+            if len(x) < 12 or (x, y) in seen:
+                continue
+            seen.add((x, y))
+            out.append((leaf, x, y))
+        with open(a.emit, 'w', encoding='utf-8') as fh:
+            for leaf, x, y in out:
+                fh.write(f'{leaf}\t{x}\t{y}\n')
+        print(f'→ {a.emit}（{len(out)} 条）')
 
     print('  '.join(f'{k} {v}' for k, v in stat.most_common()))
     for kind, leaf, x, y in rows[:a.show]:

@@ -1,72 +1,58 @@
 
 # Created by https://www.gitignore.io/api/macos
-
+# Directories potentially created on remote AFP share
+# End of https://www.gitignore.io/api/macos
+# Files that might appear in the root of a volume
+# Icon must end with two \r
+# OCR per-page intermediates (large, resumable; only commit the assembled
+# OCR 判读运行日志与明细（可重跑，不入库）
+# Thumbnails
+# calvin_<book>_zh.md)
+# debug file
+# extract 之后、repair 之前的快照，纯本地便利：调修复规则时回到干净起点用。
+# scripts/extract_manton_james.py 顶部 docstring 的下载地址。
+# （item id 见 alexander_raw/psalms/PROVENANCE.md）。
+# 合计 1GB 量级，且全部可从 Internet Archive 重新取得
+# 重跑 extract_alexander_psalms.py 即可再生（约 30 秒），不必进库。
+# 抽取产物 en_chapters/ 与 chapters_raw/ 是文本，照常入库。
+# 曼顿雅各书：CCEL 下载的底本（pdf/txt/epub + epub 解包目录）不入库。
+# 判读结果本身在 logs/alexander_psalms_residue_round{1,2}.tsv 里，那才是要入库的。
+# 本仓库不跟踪任何 pdf/epub 源文件；重新获取见
+# 诗篇残留判读的裁图（19M，70 张）。跑 psalms_residue_crop.py --build 即可再生，
+# 达文南特扫描件底本（39M + 37M，可从 archive.org 重新下载，不入库）
+# 亚历山大《诗篇注释》的 IA 原始件（ABBYY XML/gz、PDF、pickle 缓存）。
+# 曼顿雅各书翻译运行日志（缓存与译稿入库，日志不入库）
 ### macOS ###
 *.DS_Store
+.AppleDB
+.AppleDesktop
 .AppleDouble
-.LSOverride
-
-# Icon must end with two \r
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear in the root of a volume
 .DocumentRevisions-V100
-.fseventsd
+.LSOverride
 .Spotlight-V100
 .TemporaryItems
 .Trashes
 .VolumeIcon.icns
+._*
+.apdisk
 .com.apple.timemachine.donotpresent
-
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
+.fseventsd
+Icon
 Network Trash Folder
 Temporary Items
-.apdisk
-
-# End of https://www.gitignore.io/api/macos
-
-# debug file
 _site
-
-# OCR per-page intermediates (large, resumable; only commit the assembled
-# calvin_<book>_zh.md)
+alexander_raw/isaiah/en_chapters.bak/
+alexander_raw/isaiah/src/
+alexander_raw/psalms/en_chapters.bak/
+alexander_raw/psalms/src/
 calvin_raw/*-scan/ocr/
-
-# 曼顿雅各书：CCEL 下载的底本（pdf/txt/epub + epub 解包目录）不入库。
-# 本仓库不跟踪任何 pdf/epub 源文件；重新获取见
-# scripts/extract_manton_james.py 顶部 docstring 的下载地址。
-manton_raw/james/source/
-
-# 曼顿雅各书翻译运行日志（缓存与译稿入库，日志不入库）
-logs/manton_james_zh.log
-manton_raw/james/zh_translate_issues.log
-
-# OCR 判读运行日志与明细（可重跑，不入库）
-logs/adj_*.log
-logs/adjudicate_*.md
-
-# 达文南特扫描件底本（39M + 37M，可从 archive.org 重新下载，不入库）
 davenant_raw/colossians/*.pdf
 davenant_raw/colossians/diag/
-
-# 亚历山大《诗篇注释》的 IA 原始件（ABBYY XML/gz、PDF、pickle 缓存）。
-# 合计 1GB 量级，且全部可从 Internet Archive 重新取得
-# （item id 见 alexander_raw/psalms/PROVENANCE.md）。
-# 抽取产物 en_chapters/ 与 chapters_raw/ 是文本，照常入库。
-alexander_raw/psalms/src/
-alexander_raw/isaiah/src/
-# extract 之后、repair 之前的快照，纯本地便利：调修复规则时回到干净起点用。
-# 重跑 extract_alexander_psalms.py 即可再生（约 30 秒），不必进库。
-alexander_raw/psalms/en_chapters.bak/
-alexander_raw/isaiah/en_chapters.bak/
-
-# 诗篇残留判读的裁图（19M，70 张）。跑 psalms_residue_crop.py --build 即可再生，
-# 判读结果本身在 logs/alexander_psalms_residue_round{1,2}.tsv 里，那才是要入库的。
-logs/residue_crops/
+johnstone_raw/philippians/src/vlm/
+logs/adj_*.log
+logs/adjudicate_*.md
+logs/manton_james_zh.log
 logs/quote_crops/
+logs/residue_crops/
+manton_raw/james/source/
+manton_raw/james/zh_translate_issues.log

@@ -570,7 +570,9 @@ def norm_map(text):
 
 def load_fixes():
     out = {}
-    for tbl in (FIX_TBL, FIX_TBL_EXTRA):
+    for tbl in (FIX_TBL, FIX_TBL_EXTRA,
+                os.path.join(ROOT, 'johnstone_raw', 'philippians',
+                             'manual_fixes_vlm.tsv')):
         if not os.path.exists(tbl):
             continue
         for line in open(tbl, encoding='utf-8'):

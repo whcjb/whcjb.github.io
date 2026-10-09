@@ -22,7 +22,7 @@ that ye may try the things which differ, that ye may be
 
 pure and free from stumbling against the day of Christ,
 
-II 11 being filled with the fruit of righteousness, which 15
+II 11 being filled with the fruit of righteousness, which is
 
 through Jesus Christ, unto the glory and praise of God.
 
@@ -38,9 +38,8 @@ through Jesus Christ, unto the glory and praise of God.
 
 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up
 
-18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re-
-
-19 joice; for I know that this shall issue to me unto salvation, through your supplication and the supply of the
+18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
+19 joice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
@@ -60,7 +59,7 @@ In the oldest manuscripts the 16th and 17th verses are found in the reverse orde
 
 of your affairs, that ye are standing fast in one spirit, with one soul striving together for the faith of the
 
-28 gospel, and in nothing terrified by your adversaries ; the which is to them a-token of perdition, but of your
+28 gospel, and in nothing terrified by your adversaries ; the which is to them a token of perdition, but of your
 
 29 salvation, and this of God: for unto you it hath been given in the behalf of Christ, not only to believe on
 
@@ -116,7 +115,7 @@ prove yourselves blameless and guileless, children of God without rebuke, in the
 
 24 diately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
 
-25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow-labourer, and fellow-soldier, but your messenger and minister to my
+25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow - labourer, and fellow-soldier, but your messenger and minister to my
 
 26 need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been
 
@@ -124,9 +123,9 @@ prove yourselves blameless and guileless, children of God without rebuke, in the
 
 28 I have been, therefore, the more earnest to send him, that, seeing him, ye may rejoice again, and that I my
 
-29 self may be the less sorrowful. Receive him, therefore, in the Lord with all gladness ; and hold such in reputa
+29 self may be the less sorrowful. Receive him, therefore, in the Lord with all gladness ; and hold such in reputa-30
 
-tion; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
+tion ; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
 
 1 III. Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *is* not irksome, and for you *is* safe.
 
