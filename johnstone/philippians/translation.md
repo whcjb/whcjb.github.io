@@ -14,17 +14,17 @@ REVISED TRANSLATION
 
 OF THE
 
-I NW "» —~>—_ Paul. and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons. Grace δέ unto you, and peace, from God our Father and the Lord Jesus Christ.
+I. 1 PAUL and Timothy, servants of Christ Jesus, to all the saints in Christ Jesus which are at Philippi, with the bishops and deacons. Grace be unto you, and peace, from God our Father and the Lord Jesus Christ.
 
-I thank my God on all my remembrance of you, always, in every supplication of mine for you all, presenting the
+3, 4 I thank my God on all my remembrance of you, always, in every supplication of mine for you all, presenting the
 
-supplication with joy, for your fellowship with regard to
+5 supplication with joy, for your fellowship with regard to
 
 the gospel from the first day until now ; being confident of this very thing, that He which hath begun a good work in you will perfect it until the day of Christ Jesus;
 
-even as it is meet for me to think this of you all, because I have you in my heart, inasmuch as both in my bonds and in the defence and confirmation of the
+7 even as it is meet for me to think this of you all, because I have you in my heart, inasmuch as both in my bonds and in the defence and confirmation of the
 
-gospel ye are all partakers with me of my grace. For God is my witness, how I long after you all in the tender heart of Christ Jesus.
+8 gospel ye are all partakers with me of my grace. For God is my witness, how I long after you all in the tender heart of Christ Jesus.
 
 And this I pray, that your love may abound yet more and more in knowledge and all discernment, so
 
@@ -44,7 +44,7 @@ through Jesus Christ, unto the glory and praise of God.
 
 15 to speak the word without fear. Some indeed preach Christ even for envy and strife, but some also for good
 
-16 will. The\* one *arty* of love, knowing that I am set
+16 will. The\* ¹ one *party* of love, knowing that I am set
 
 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up
 
@@ -54,7 +54,7 @@ galling to my bonds. What then? Notwithstanding, every way, whether in pretence 
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
-21,22 For to me to live *is* Christ, and to die *is* gain. But if — I live in the flesh, this *is* to me fruit of labour ; and what
+21,22 For to me to live *is* Christ, and to die *is* gain. But if I live in the flesh, this *is* to me fruit of labour ; and what
 
 23 I shall choose I wot not; but I am in a strait betwixt the two, having my desire toward departing and being
 
@@ -64,7 +64,7 @@ galling to my bonds. What then? Notwithstanding, every way, whether in pretence 
 
 26 faith ; that your matter of glorying’ may abound in Christ Jesus through me, by my presence with you again.
 
-22 Only, live as becometh the gospel of Christ, that whether I come and see you, or be absent, I may hear I “I οο Ι 1
+27 Only, live as becometh the gospel of Christ, that whether I come and see you, or be absent, I may hear
 
 In the oldest manuscripts the 16th and 17th verses are found in the reverse order from that followed in our Authorized Version.
 
@@ -94,9 +94,9 @@ servant, being made in the likeness of men ; and, being found in fashion as a ma
 
 wherefore also God highly exalted Him, and gave Him
 
-a name which is above every name, that in the name of Jesus every knee should bow, of *¢#things* in heaven, and
+a name which is above every name, that in the name of Jesus every knee should bow, of *things* in heaven, and
 
-*things* on earth, and *¢things* under the earth, and *shat* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
+*things* on earth, and *things* under the earth, and *that* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
 
 Wherefore, my beloved, as ye always obeyed, *so,* not as in my presence only, but now much more in my absence, work out your own salvation with fear and
 
@@ -108,7 +108,7 @@ trembling ; for it is God which worketh in you both to
 
 prove yourselves blameless and guileless, children of God without rebuke, in the midst of a crooked and perverse generation, among whom ye shine as lights in the
 
-world, holding forth the word of life ; that I may have matter of glorying */aid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
+world, holding forth the word of life ; that I may have matter of glorying *laid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
 
 Yea, and if, besides the sacrifice and service of your faith, I be poured forth, I joy, and congratulate you all ;
 
@@ -138,7 +138,7 @@ self may be the less sorrowful. Receive him, therefore, in the Lord with all gla
 
 tion; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
 
-Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *és* not irksome, and for you *is* safe.
+Finally, my brethren, rejoice in the Lord. To write the same things to you, to me *is* not irksome, and for you *is* safe.
 
 Beware of the dogs; beware of the evil workers;
 
@@ -152,9 +152,9 @@ law, a Pharisee; as touching zeal, persecuting the church ; as touching the righ
 
 law, having approved myself blameless. But what things were gains to me, those for Christ I have counted
 
-loss. Yea, doubtless, and I *s¢i/7* count them all to be loss, for the excellency of the knowledge of Christ Jesus my Lord: for whom I suffered the loss of all, and count them to be dung, that I may win Christ,
+loss. Yea, doubtless, and I *still* count them all to be loss, for the excellency of the knowledge of Christ Jesus my Lord: for whom I suffered the loss of all, and count them to be dung, that I may win Christ,
 
-and be found in Him, not having mine own mrighteousness, which is of the law, but that which is through faith in Christ, the righteousness which is of God,
+and be found in Him, not having mine own righteousness, which is of the law, but that which is through faith in Christ, the righteousness which is of God,
 
 *resting* on faith ; that I may know Him, and the power of His resurrection, and the fellowship of His sufferings,
 
@@ -174,7 +174,7 @@ Be followers together of me, brethren, and mark them
 
 which walk so as ye have us for an ensample. For many walk, of whom I often told you, and now tell you even weeping,—the enemies of the cross of Christ ;
 
-whose end *is* destruction, whose god *7s* their belly, and their glory in their shame, who mind the earthly things.
+whose end *is* destruction, whose god *is* their belly, and their glory in their shame, who mind the earthly things.
 
 For our citizenship is in the heavens, from whence also
 
@@ -184,25 +184,25 @@ unto Himself. Wherefore, my brethren, beloved and longed for, my joy and crown, 
 
 I beseech Euodia, and I beseech Syntyche, to be of
 
-the same mind in the Lord. Yea, I entreat thee also, true yoke-fellow, help them, seeing that they laboured with me in the gospel, along with Clement also, and my other fellow-workers, whose names *ave* in the book of life.
+the same mind in the Lord. Yea, I entreat thee also, true yoke-fellow, help them, seeing that they laboured with me in the gospel, along with Clement also, and my other fellow-workers, whose names *are* in the book of life.
 
 Rejoice in the Lord alway: again I will say, Rejoice.
 
 Let your forbearance be known unto all men. The
 
-Lord *is* at hand. Be anxious about nothing; but in © everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
+Lord *is* at hand. Be anxious about nothing; but in everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto
 
 God: and the peace of God, which passeth all understanding, shall keep your hearts and your thoughts in Christ Jesus.
 
-Finally, brethren, whatsoever things are true, whatsoever things *ave* seemly, whatsoever things *ave* just, whatsoever things *ave* pure, whatsoever things *are* lovely,
+Finally, brethren, whatsoever things are true, whatsoever things *are* seemly, whatsoever things *are* just, whatsoever things *are* pure, whatsoever things *are* lovely,
 
-whatsoever things *ave* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
+whatsoever things *are* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
 
 But I rejoiced in the Lord greatly, that now at length ye have flourished again as to your care for me; for which ye were also careful, but lacked opportunity.
 
 Not that I speak in respect of want, for I have
 
-learned, in what state I am, *¢therein* to be content. I know both *ow* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
+learned, in what state I am, *therein* to be content. I know both *how* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer
 
 want. I can do all things in Him which strengtheneth me.
 
@@ -218,7 +218,7 @@ But I have all things, and abound; I am full, having received from Epaphroditus 
 
 ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory,
 
-in Christ Jesus. Now unto our God and Father *de* the glory for ever and ever. Amen.
+in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
 
 Salute every saint in Christ Jesus. The brethren which
 

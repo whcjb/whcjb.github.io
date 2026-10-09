@@ -79,6 +79,13 @@ MANUAL_CONTEXT = [
     # p.103（leaf 0119）：印面是 *never* to despond。读成 ever **把意思读反了**，
     # 而 ever 本身是真词、全书到处都是，任何全局判据都碰不得它。
     ('important, *ever* to despond', 'important, *never* to despond'),
+    # p.407：OCR 把 lead 的 l 读成星号，印面比对把 lead 补回来了，
+    # 但那个被转义的字面星号留在原地（归一化定位看不见它）。
+    # p.407：OCR 把 lead 的 l 读成星号，于是这段斜体**只有开头没有结尾**。
+    # 印面比对把 lead 补回来了，但那个字面星号与缺失的闭合标记它看不见
+    # （归一化时星号被抹掉）。连同闭合一起补。
+    ('‘*when I departed from Macedonia,’ \\*lead us',
+     '‘*when I departed from Macedonia,*’ lead us'),
 ]
 
 
@@ -507,6 +514,85 @@ def count_bigrams(texts):
     return big
 
 
+# ── 印面比对落下来的人工条目 ──────────────────────────────
+#
+# manual_fixes.tsv 每行：文件 \t leaf \t 我们的 \t 印面的（都已归一化）。
+# 归一化抹掉了引号样式、破折号样式和**斜体标记**，所以回填时
+# **只能把真正不同的那几个片段塞回去，不能整段替换** ——
+# 整段替换会把 `*…*` 一起抹掉，等于拿修正去毁斜体。
+#
+# 做法：原文归一化时记下「归一化下标 → 原文下标」的对照表，
+# 在归一化串上定位、算差异，再按对照表把差异片段映射回原文下标，
+# 从后往前 splice。星号落在两个映射点之间，原样留着。
+FIX_TBL = os.path.join(ROOT, 'johnstone_raw', 'philippians', 'manual_fixes.tsv')
+FIX_QUOTE = str.maketrans({'‘': "'", '’': "'", '“': '"', '”': '"',
+                           '′': "'", '—': '-', '–': '-'})
+
+
+def norm_map(text):
+    """归一化 + 下标对照表。"""
+    out, idx = [], []
+    prev_space = False
+    for i, ch in enumerate(text):
+        c = ch.translate(FIX_QUOTE)
+        if c in '*\\':
+            continue
+        if c.isspace():
+            if prev_space or not out:
+                continue
+            out.append(' '); idx.append(i); prev_space = True
+            continue
+        prev_space = False
+        out.append(c); idx.append(i)
+    return ''.join(out), idx
+
+
+def load_fixes():
+    if not os.path.exists(FIX_TBL):
+        return {}
+    out = {}
+    for line in open(FIX_TBL, encoding='utf-8'):
+        if line.startswith('#'):
+            continue
+        p = line.rstrip('\n').split('\t')
+        if len(p) >= 4:
+            out.setdefault(p[0], []).append((p[2], p[3], p[1]))
+    return out
+
+
+def apply_fixes(text, items, log):
+    flat, idx = norm_map(text)
+    edits = []
+    for before, after, leaf in items:
+        at = flat.find(before)
+        if at < 0 or flat.find(before, at + 1) >= 0:
+            log.append((f'leaf {leaf} 落不下', before[:52]))
+            continue
+        for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(
+                None, before, after, autojunk=False).get_opcodes():
+            if tag == 'equal':
+                continue
+            lo = idx[at + i1] if at + i1 < len(idx) else len(text)
+            hi = (idx[at + i2 - 1] + 1) if i2 > i1 else lo
+            edits.append((lo, hi, after[j1:j2], before[i1:i2], leaf))
+    edits.sort(key=lambda e: -e[0])
+    done, last = [], len(text) + 1
+    for lo, hi, rep, was, leaf in edits:
+        if hi > last:                 # 片段重叠，跳过后到的那个
+            log.append((f'leaf {leaf} 片段重叠', was[:40])); continue
+        # ⚠️ 替换区间里夹着斜体标记就**整条跳过**。
+        # 归一化时星号被抹掉了，它落在两个映射点「之间」，
+        # 一旦被圈进 [lo,hi) 就会跟着被删 —— 实测 12 个文件的星号因此成了
+        # 奇数，整段斜体错位。宁可少改一处，不可毁掉标记
+        # （feedback_fix_table_makes_errors）。
+        if '*' in text[lo:hi] or '\\' in text[lo:hi]:
+            log.append((f'leaf {leaf} 区间含斜体标记，跳过', was[:40])); continue
+        text = text[:lo] + rep + text[hi:]
+        last = lo
+        done.append((was, rep))
+    return text, done
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--apply', action='store_true', help='落盘；不给就是试跑')
@@ -545,7 +631,8 @@ def main():
     bigrams = count_bigrams(texts.values())
     rules = learn_confusions(table)
     gap_log, glue_log, ord_log, lig_log, glyph_log = [], [], [], [], []
-    ital_i_log, manual_log = [], []
+    ital_i_log, manual_log, fix_log, fix_fail = [], [], [], []
+    FIXES = load_fixes()
     for f, t in texts.items():
         new = apply_witness(t)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
@@ -554,6 +641,9 @@ def main():
         new = fix_ligatures(new, lig_log)
         new = glyph_sweep(new, lex, vocab, rules, glyph_log)
         new = fix_italic_i(new, ital_i_log)
+        if f in FIXES:
+            new, applied = apply_fixes(new, FIXES[f], fix_fail)
+            fix_log.extend(applied)
         for before, after in MANUAL_CONTEXT:
             if before in new:
                 new = new.replace(before, after)
@@ -564,9 +654,10 @@ def main():
     print(f'连字符夹垃圾 {len(gap_log)} 处，粘词 {len(glue_log)} 处，'
           f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处，'
           f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆），'
-          f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处',
+          f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
+          f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条）',
           file=sys.stderr)
-    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log:
+    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log + fix_log:
         print(f'    {was!r} → {now}', file=sys.stderr)
 
     os.makedirs(os.path.dirname(log), exist_ok=True)

@@ -25,6 +25,16 @@ LOG = os.path.join(ROOT, 'logs', 'johnstone_pageproof.tsv')
 PAIR = re.compile(r'MISMATCH:\s*(.+?)\s*\|\|\|\s*(.+?)\s*$')
 
 
+# 引号样式不算错：我们用弯引号、印面是直的或反过来，系统提示里已说忽略，
+# 模型还是会报。在归并这一层滤掉，比在提示里反复强调便宜。
+QUOTE = str.maketrans({'\u2018': "'", '\u2019': "'", '\u201c': '"',
+                       '\u201d': '"', '\u2032': "'"})
+
+
+def is_quote_noise(a, b):
+    return a.translate(QUOTE) == b.translate(QUOTE)
+
+
 def edits(ours, printed):
     """两边对齐，取出「谁变成了谁」。只留真正不同的片段。"""
     out = []
@@ -33,7 +43,7 @@ def edits(ours, printed):
         if tag == 'equal':
             continue
         a, b = ours[i1:i2].strip(), printed[j1:j2].strip()
-        if a or b:
+        if (a or b) and not is_quote_noise(a, b):
             out.append((a, b))
     return out
 
