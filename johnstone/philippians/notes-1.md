@@ -36,9 +36,7 @@ In ἔργον ἀγαθὸν there is obviously a reference to ‘ the fellowsh
 
 The words from ἔν τε τοῖς δεσμοῖς to εὐαγγελίου may be joined with ἔχειν με or with ὑμᾶς ὄντας. Chrysostom, Neander, De Wette, Meyer, Alford, and others, approve of the former connection, regarding the words as intended to bring out still more clearly the depth of Paul’s affection for the Philippians, seeing that even ‘this condition of suffering, and the great duty which he had to discharge in it, could not dislodge them from his heart’ (Meyer). But the clause seems to have more relevancy and force, when connected, as in our version, with ὑμᾶς ὄντας We may regard the μου between συγκοινωνοὺς and τῆς χάριτος as governed by χάριτος, or take συγκοινωνοὺς as governing both genitives,—the one of the person, the other of the thing. This latter construction is perhaps slightly preferable. The meaning then is, ‘ partakers with me of the grace’ which God gives me for suffering, and for the defence and confirmation of the gospel.
 
-<span class="jh-vref">8.</span> ‘The σπλάγχνα are properly the nobler viscera, the heart, lungs, liver, etc., as distinguished from the ἔντερα, the lower viscera, the intestines’ (Lightfoot). As here employed, the expression ἐν σπλάγχνοις is equivalent to ἐν τῇ καρδίᾳ of the preceding verse,—only that, according to New Testament use, 1
-
-2E the idea of *tenderness* is in this even more prominent than in the other.
+<span class="jh-vref">8.</span> ‘The σπλάγχνα are properly the nobler viscera, the heart, lungs, liver, etc., as distinguished from the ἔντερα, the lower viscera, the intestines’ (Lightfoot). As here employed, the expression ἐν σπλάγχνοις is equivalent to ἐν τῇ καρδίᾳ of the preceding verse,—only that, according to New Testament use, 1 2E the idea of *tenderness* is in this even more prominent than in the other.
 
 <span class="jh-vref">9.</span> The clause with ἵνα obviously explains the τοῦτο, stating the substance of the apostle’s prayer. It gives us the *purpose* and the *purport* of the prayer conjoined. There is thus a manifest, but a most natural, departure from the pure *telic* force of ἵνα ; and there are numerous cases in the New Testament in which the divergence from this original use is much greater. See, for example, John xv. 8; Gal. v. 17. Meyer, Alford, and others, who maintain the telic force of the particle everywhere, are driven often to most artificial explanations. Thus on the present passage Alford observes: ‘ There is an ellipsis in the sense between τοῦτο and ἵνα,—τοῦτο intro-ducing the *substance* of the prayer, ἵνα its *aim.’* This appears to me wholly unnatural. Beyond doubt aim is set forth, but involved inseparably with substance. See Winer, § 44. 8; Green, p. 170, foll.
 
@@ -49,7 +47,7 @@ In the connection in which ἡ ἀγάπη occurs here, it is naturally taken in
 
 Εἰς ἡμέραν Χριστοῦ does not seem to mean ‘till the day of Christ,’ but ‘against,’ ‘ with a view to,’ ‘looking towards’ it,— that is to say, practically, as Chrysostom puts it, ‘ that ye may be found faultless in that day.’ This force of εἰς—which is obviously closely connected with the frequent use of the preposition to express purpose, or is indeed but a case of that use—is very common in the New Testament ; whilst a careful examination will show that its use in the sense of ‘till’ simply, as in John xiii. 1, is rare.
 
-<span class="jh-vref">11.</span> *Καρπὸν* — which is unquestionably the true reading, καρπῶν, of the Received Text, having no uncial authority— is an accusative of reference,—the exact meaning, therefore, being, ‘filled, or ‘fully stored,’ ‘as to fruit of righteousness.’ Col. i. 9 contains a similar construction.
+<span class="jh-vref">11.</span> *Καρπὸν* — which is unquestionably the true reading, καρπῶν, of the Received Text, having no uncial authority— is an accusative of reference,—the exact meaning, therefore, being, ‘filled, or ‘fully stored,’ ‘as to fruit of righteousness.’ Col. i. contains a similar construction.
 
 Δικαιοσύνης
 
@@ -95,7 +93,7 @@ As ἐν πάσῃ παῤῥησίᾳ μεγαλυνθήσεται Χριστ�
 
 <span class="jh-vref">23.</span> Ἔκ τῶν δύο means ‘ in consequence of the two.’ Double comparatives, like μᾶλλον κρεῖσσον, occur in Mark vii. 36; 2 Cor. vii. 13. See Winer, § 35.
 
-<span class="jh-vref">25.</span> For the construction τοῦτο πεποιθὼς, compare note on ver. 6 above. Some commentators, joining πεποιθὼς closely to
+<span class="jh-vref">25.</span> For the construction τοῦτο πεποιθὼς, compare note on ver. above. Some commentators, joining πεποιθὼς closely to
 
 οἶδα
 
@@ -124,3 +122,11 @@ fact. According to our idiom, however, in a case like this, the natural translat
 Ὑπὲρ Χριστοῦ belongs to πάσχειν ; but, a clause being interjected, in a way very characteristic of the apostle’s style, to bring out with force the specialty of the grace given to the Philippians, ὑπὲρ αὐτοῦ is afterwards inserted for clearness.
 
 <span class="jh-vref">30.</span> Supposing this verse to be in close connection with the 29th, strict grammar requires the participle to be in the dative, in agreement with ὑμῖν. Some commentators clear the construction by regarding from ἥτις, of the 28th verse, to the end of the 29th, as a parenthesis. In this case ἔχοντες, like συναθλοῦντες and. πτυρόμενοι, would agree with the subject of στήκετε in ver. 27. On this view, however, the sentence is stiff and artificial, and thus unlike the style of the apostle. It is better to suppose an irregularity.’ Illustrations of this particular kind of irregularity—that of using a participle in the nominative, where strict construction would require an oblique case—are not uncommon in Paul’s writings ; compare, for example, Eph. iv. 2; Col. iii. 16 ; and see Winer, § 63. I. 2. 1
+
+<div class="jh-notes" markdown="1">
+
+In his *Commentary,* Alford says that ‘the context clearly shows’ Rosenmiiller’s construction to be wrong. But in his *Authorized Version Revised* (published in 1870), he renders the clause, ‘because you have me in your heart.’ This may be supposed to exhibit his final judgment on the question.
+
+Through a curious oversight, Alford (in his second edition at least), whilst in his note on the passage arguing strongly against the parenthetical construction, has the parenthesis marked in his text.
+
+</div>

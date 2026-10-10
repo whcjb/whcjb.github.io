@@ -15,6 +15,7 @@
 对，不按序号对 —— 两边各自从页眉里读出印刷页码，对不上就报错不硬跑。
 """
 import argparse
+import difflib
 import collections
 import difflib
 import gzip
@@ -529,6 +530,8 @@ def trim_edges(paras, slug):
         t = p.strip()
         if not t:
             return True
+        if t.startswith(FN_MARK):
+            return False
         if NOT_THE_BOOK.search(t):
             return True
         return edges_only and junk_score(t) < 0.35
@@ -749,6 +752,9 @@ def mend_split_paragraphs(paras, lex_check, slug, log):
         nxt = paras[i + 1] if i + 1 < len(paras) else ''
         if (prev_ok and len(p) <= 15 and len(nxt) >= 40
                 and not p.startswith('#')
+                and not p.startswith(FN_MARK)
+                and not nxt.startswith(FN_MARK)
+                and not out[-1].startswith(FN_MARK)
                 and not RE_CITE_PAR.match(p)
                 # 全大写的短段是**节标题**（`CHAPTER II.`、`APPENDIX.`），
                 # 不是碎屑。被当碎屑并掉的话，书末那一节就再也找不到起头
@@ -814,6 +820,8 @@ def is_continuation(prev_par, next_par):
     # 一次被碎屑合并吃掉，一次被跨页合并吃掉）。
     if RE_ALLCAPS_ANCHOR.match(next_par.strip()):
         return False
+    if prev_par.startswith(FN_MARK) or next_par.startswith(FN_MARK):
+        return False
     if len(prev_par) < 40 or len(next_par) < 40:
         return False
     if prev_par.lstrip().startswith('#'):
@@ -838,6 +846,10 @@ def is_continuation(prev_par, next_par):
 # 这里只用它判「这一段是不是脚注」，一个字都不从它那边抄。
 # 转录目录不在时自动退回原行为，不让链条依赖它。
 VLM_DIR = os.path.join(RAW, 'src', 'vlm')
+# 脚注段带着这个前缀在流水线里走完全程，最后才摘到本节末尾。
+# 一开始是判出来就 `continue` 丢掉的——那不是「挪位置」，是**删正文**，
+# 60 条脚注一条都没落盘（提交信息里却写着已移到 .jh-notes）。
+FN_MARK = '\x01'
 RE_FN_LINE = re.compile(r'^\s*\[FN:[^\]]*\]\s*(.+)$')
 
 
@@ -852,11 +864,157 @@ def load_footnotes():
         for line in open(os.path.join(VLM_DIR, f), encoding='utf-8'):
             m = RE_FN_LINE.match(line)
             if m and len(m.group(1).strip()) >= 8:
-                fns.append(set(w.lower() for w in
-                               re.findall(r"[A-Za-z']{3,}", m.group(1))))
+                fns.append([w.lower() for w in
+                            re.findall(r"[A-Za-z']+", m.group(1))])
         if fns:
-            out[int(f[:-4])] = fns
+            out[int(f[:-4])] = [x for x in fns if len(x) >= 3]
     return out
+
+
+RE_WORD_OFF = re.compile(r"[A-Za-z']+")
+TWO_LETTER = set('am an as at be by do go he if in is it me my no of on or '
+                 'so to up us we ye oh ah lo ox ye'.split())
+
+# 页缝上的裸数字。原书印成上标脚注号（`…biblical knowledge,¹`），OCR 落成
+# 正文里一个孤零零的数字——用户问「这里的 1 是干啥的」就是它。
+# 同一个位置也会落页码和书帖签名（`B 2`），两者长得一样，只能靠**那一页
+# 有没有脚注**分：号码不超过该页脚注条数的才是脚注号，其余是残渣。
+RE_FN_REF = re.compile(r"(?<=[a-z’'\"])([,.;:]?)\s+([1-9])(?=\s+[a-z‘“]|\s*$)")
+
+
+def mark_fn_refs(text, nfn, log, sec):
+    def sub(m):
+        if int(m.group(2)) <= nfn:
+            return m.group(1) + '<sup class="jh-fn">' + m.group(2) + '</sup>'
+        log.append((sec, 'fn-ref-junk', m.group(0).strip()))
+        return m.group(1)
+    return RE_FN_REF.sub(sub, text)
+
+
+def excise_footnotes(text, fns, log, sec):
+    """把脚注从这一页的正文里切出来，按**词序列对齐**定位。
+
+    上一版只认「整段就是一条脚注」。可 ABBYY 常把短脚注直接并进正文段里，
+    于是句子被从中间劈开，判据一条也看不见：
+        …where combined ⟨' See, for example, 1 Thess. v. 23 and Heb. iv. 12.⟩
+          action is desired…
+    按段落量永远捞不到这种，必须能在段内定位到**一段连续的词**。
+
+    两边 OCR 不一样，所以不按字面比，按词序列求最长公共块（difflib），
+    覆盖率六成以上且跨度不比脚注本身长太多才算——跨度那一条是防它把
+    零散的公共词连成一大片，把正文一起切走。
+    """
+    if not fns:
+        return text, []
+    got = []
+    for fw in fns:
+        words = [(m.group(0).lower(), m.start(), m.end())
+                 for m in RE_WORD_OFF.finditer(text)]
+        if len(words) < 3:
+            break
+        tw = [w for w, _a, _b in words]
+        sm = difflib.SequenceMatcher(None, fw, tw, autojunk=False)
+        blocks = [b for b in sm.get_matching_blocks() if b.size]
+        if not blocks:
+            continue
+        cov = sum(b.size for b in blocks) / len(fw)
+        lo, hi = blocks[0].b, blocks[-1].b + blocks[-1].size
+        if cov < 0.6 or (hi - lo) > len(fw) * 1.6 + 4:
+            continue
+        a, b = words[lo][1], words[hi - 1][2]
+        # 左右各吃掉紧贴的标点与引号；脚注号（`, 1` 里的裸数字）留在正文，
+        # 由 publish 转上标 —— 它是**正文里的引用记号**，不是脚注的一部分。
+        while b < len(text) and text[b] in '.,;:)]’\'"”*\\ ':
+            b += 1
+        # 脚注尾巴上的页码/节号（`Heb. iv. 12.` 的 `12.`）：词序列对齐只认
+        # 字母，数字落在对齐之外会留在正文里（`where combined ' 12. action`）。
+        # 只吃数字和标点，且最多 12 个字符，不许越过下一个词。
+        m2 = re.match(r'[\s\d.,;:)\]’\'"”-]{1,12}(?=\s|$)', text[b:])
+        if m2:
+            b += m2.end()
+        while a > 0 and text[a - 1] in '‘\'"“([*\\':
+            a -= 1
+        got.append(text[a:b].strip())
+        log.append((sec, 'footnote', text[a:b].strip()[:90]))
+        text = (text[:a].rstrip() + ' ' + text[b:].lstrip()).strip()
+        text = _wipe_rule(text, a, log, sec)
+    # 横线印在**页底**，OCR 常把它读在整页末尾，离切口很远
+    # （`…biblical knowledge, 1 Ss *YS Se and*`，实测）。页底位置同样确定，
+    # 再从末尾扫一次。只对有脚注的页做——没脚注的页底不该有横线。
+    text = _wipe_rule(text, len(text), log, sec)
+    return text, got
+
+
+def _wipe_rule(text, at, log, sec):
+    """抹掉切口上的**脚注横线残渣**（`biblical knowledge, 1 Ss *YS Se and*`）。
+
+    三条收口，每一条都是试出来的：
+
+    ① **只在讲章里做，书末注疏整节跳过。** 希腊文注里 `§ 63. I. 2. 1`、
+       `24. 31 & 4` 这类是真引文，长得跟残渣一模一样；我分不出来，就不碰
+       （17 处候选里 12 处在那儿，全是误伤）。
+    ② **按词删，不按区间删。** 上一版整段切，把 `and` 一起吃了——那是
+       下一句的真词，残渣只有 `Ss YS Se`。
+    ③ **专名和断词前半截要护。** `Cicero.?`、`com-` 不在词典里，第一版当
+       残渣删掉了。但护「首字母大写」会连 `Ss` 一起护住，所以还要求它
+       **有元音**——OCR 碎块基本没有。
+
+    改动含 markdown 标记，星号个数必须对得上，否则是修复表自己制造斜体
+    断裂（feedback_fix_table_makes_errors）。
+    """
+    if sec == 'tail' or LEX_CHECK is None:
+        return text
+    toks = [(m.group(0), m.start(), m.end()) for m in re.finditer(r'\S+', text)]
+    if not toks:
+        return text
+
+    def real(t):
+        w = re.sub(r"[^A-Za-z']", '', t)
+        if len(w) < 2:
+            return False
+        if t.rstrip('*\\').endswith('-'):
+            return True
+        # 要三个字母以上：`Cicero` 护得住，`Se`/`Ss` 这种 OCR 碎块护不住
+        # （只要两个字母时，读烂的页眉 `Ss *YS Se` 整串都被当成专名）。
+        if w[0].isupper() and len(w) >= 3 and re.search(r'[aeiouyAEIOUY]', w):
+            return True
+        # 两个字母的不查词典：`se`、`ss`、`ye` 这类在词表里查得到，于是读烂
+        # 的页眉碎块 `Se` 被当真词留在正文里。两字母真词就那么几十个，列死。
+        if len(w) <= 2:
+            return w.lower() in TWO_LETTER
+        return LEX_CHECK(w.lower())
+
+    k = next((i for i, (_t, _a, b) in enumerate(toks) if b > at), len(toks))
+    lo = hi = k
+    while hi < len(toks) and not real(toks[hi][0]) and hi - k < 8:
+        hi += 1
+    while lo > 0 and not real(toks[lo - 1][0]) and k - lo < 8:
+        lo -= 1
+    # 残渣常半截压在斜体区里；把整个区并进来，不然只切一半留下单只星号。
+    # **必须有上界**：没上界时它会一路找到下一个星号，把中间整句正文
+    # 一起划进待删区间（`*| the carth ; and that every tongue should…`，
+    # 实测删掉了一整句）。最多再吃三个词，吃不平就整次放弃。
+    grow = 0
+    while (hi < len(toks) and grow < 3
+           and len(re.findall(r'(?<!\\)\*',
+                              text[toks[lo][1]:toks[hi - 1][2]])) % 2):
+        hi += 1
+        grow += 1
+    if hi - lo < 2:
+        return text
+    la, hb = toks[lo][1], toks[hi - 1][2]
+    run = text[la:hb]
+    if len(re.findall(r'(?<!\\)\*', run)) % 2:
+        return text
+    noise = [t for t, _a, _b in toks[lo:hi] if not real(t)
+             and not re.fullmatch(r"[\d.,;:'’]+", t)]
+    if len(noise) < 2:
+        return text
+    kept = ' '.join(t.replace('*', '') for t, _a, _b in toks[lo:hi]
+                    if t not in noise)
+    log.append((sec, 'fn-rule', run[:70] + ' → ' + kept[:30]))
+    return (text[:la].rstrip() + (' ' + kept if kept else '')
+            + ' ' + text[hb:].lstrip()).strip()
 
 
 def looks_like_footnote(par, fns):
@@ -886,13 +1044,23 @@ def split_sections(pages, leaf_sec):
     titles = dict([('front', 'Preface'), ('introduction', 'Introduction')]
                   + [(str(i + 1), t) for i, t in enumerate(LECTURES)])
     footnotes = load_footnotes()
-    notes = {}
     buckets, order = {}, []
     for leaf, text, cont in pages:
         sec = leaf_sec.get(leaf, 'front')
         if sec not in buckets:
             buckets[sec] = []
             order.append(sec)
+        # 页眉读烂了就粘在页顶，`learn_heads` 的页眉形认不出来，还会把
+        # 下一句的首词一起裹进去（`Ss *YS Se and*` —— `and` 是正文）。
+        # 只对**续页**做：讲章起头那页的页顶是篇号和全大写讲题，按
+        # 「像不像词」去量一律是 0，会被整行掐掉（trim_edges 栽过这个跟头）。
+        if cont:
+            text = _wipe_rule(text, 0, GARBAGE, sec)
+        if leaf in footnotes:
+            text, got = excise_footnotes(text, footnotes[leaf], GARBAGE, sec)
+            for g in got:
+                buckets[sec].append(FN_MARK + g)
+        text = mark_fn_refs(text, len(footnotes.get(leaf, ())), GARBAGE, sec)
         first = True
         for p in text.split('\n\n'):
             if not p.strip():
@@ -902,24 +1070,28 @@ def split_sections(pages, leaf_sec):
             # startIndent 当主判据（全书 418 页里 399 页是续行），
             # 文本判据当**否决权**：上一段已经以句末标点收尾、且这一段大写
             # 起头，那就是新段落，ABBYY 漏了缩进也不并。
-            merge = is_continuation(buckets[sec][-1], p.strip()) if buckets[sec] else False
-            if (first and cont and buckets[sec] and not merge
-                    and not RE_ALLCAPS_ANCHOR.match(p.strip())):
-                prev = buckets[sec][-1]
+            # 要接回去的是最后一段**正文**，不是最后一段。脚注印在页脚、
+            # 按页序排在该页正文之后，可那页的正文还要接到下一页去——
+            # 拿 buckets[-1] 当落点，跨页的那半句就会卡在脚注后面接不上
+            # （`…biblical knowledge, 1` 后面永远少半句，实测）。
+            tgt = next((k for k in range(len(buckets[sec]) - 1, -1, -1)
+                        if not buckets[sec][k].startswith(FN_MARK)), None)
+            merge = (is_continuation(buckets[sec][tgt], p.strip())
+                     if tgt is not None else False)
+            if (first and cont and tgt is not None and not merge
+                    and not RE_ALLCAPS_ANCHOR.match(p.strip())
+                    and not p.startswith(FN_MARK)):
+                prev = buckets[sec][tgt]
                 if not (RE_PARA_END.search(prev.rstrip('*\\ '))
                         and re.match(r'^\**[‘’\'"“]?[A-Z]', p.strip())):
                     merge = True
-            if first and buckets[sec] and merge:
+            if first and tgt is not None and merge:
                 GARBAGE.append((sec, 'merge-page',
-                                buckets[sec][-1][-46:] + ' ⟂ ' + p.strip()[:46]))
-                buckets[sec][-1] = buckets[sec][-1].rstrip() + ' ' + p.strip()
+                                buckets[sec][tgt][-46:] + ' ⟂ ' + p.strip()[:46]))
+                buckets[sec][tgt] = buckets[sec][tgt].rstrip() + ' ' + p.strip()
                 first = False
                 continue
             # 脚注抽出正文流，攒到本节末尾。抽走之后上下两段才接得上。
-            if leaf in footnotes and looks_like_footnote(p, footnotes[leaf]):
-                notes.setdefault(sec, []).append(strip_pipes(p, GARBAGE, sec))
-                GARBAGE.append((sec, 'footnote', p[:90]))
-                continue
             first = False
             buckets[sec].append(p)
 
@@ -954,6 +1126,8 @@ def split_sections(pages, leaf_sec):
         for p in body.split('\n\n'):
             if not p.strip():
                 continue
+            if p.startswith(FN_MARK):
+                keep.append(FN_MARK + strip_pipes(p[1:], GARBAGE, slug)); continue
             if inner_head_score(p, head_titles) >= 0.65:
                 GARBAGE.append((slug, 'inner-head', p[:110])); continue
             if is_scan_noise(p):
@@ -965,14 +1139,21 @@ def split_sections(pages, leaf_sec):
         # 再扫一遍，把它们接回去。
         merged = []
         for p in keep:
-            if merged and is_continuation(merged[-1], p.strip()):
+            t = next((k for k in range(len(merged) - 1, -1, -1)
+                      if not merged[k].startswith(FN_MARK)), None)
+            if t is not None and is_continuation(merged[t], p.strip()):
                 GARBAGE.append((slug, 'merge-inner',
-                                merged[-1][-40:] + ' ⟂ ' + p.strip()[:40]))
-                merged[-1] = merged[-1].rstrip() + ' ' + p.strip()
+                                merged[t][-40:] + ' ⟂ ' + p.strip()[:40]))
+                merged[t] = merged[t].rstrip() + ' ' + p.strip()
             else:
                 merged.append(p)
         keep = merged
-        swept.append((slug, title, '\n\n'.join(keep)))
+        body = [x for x in keep if not x.startswith(FN_MARK)]
+        fns = [x[1:].strip() for x in keep if x.startswith(FN_MARK)]
+        if fns:
+            body.append('<div class="jh-notes" markdown="1">\n\n'
+                        + '\n\n'.join(fns) + '\n\n</div>')
+        swept.append((slug, title, '\n\n'.join(body)))
     return swept
 
 

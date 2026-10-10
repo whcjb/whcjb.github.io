@@ -694,7 +694,22 @@ def main():
             if len(_p) >= 4:
                 ITALIC_FIX.setdefault(_p[0], []).append((_p[2], _p[3]))
     ital_fix_log = []
+    # HTML 标签整段屏蔽。不屏蔽的话 `</sup>` 会被当成「带斜杠的错字」——
+    # 斜杠支认定词里有斜杠在英文里不可能对，于是把它改成 `<sup>`，一个
+    # 闭合标签就这样变成了开标签（用户截图里 `1` 后面那半截）。
+    def mask(t):
+        tags = []
+
+        def grab(m):
+            tags.append(m.group(0))
+            return '\x02%d\x03' % (len(tags) - 1)
+        return re.sub(r'</?[A-Za-z][^<>]*>', grab, t), tags
+
+    def unmask(t, tags):
+        return re.sub(r'\x02(\d+)\x03', lambda m: tags[int(m.group(1))], t)
+
     for f, t in texts.items():
+        t, _tags = mask(t)
         new = apply_witness(t)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
         new = split_glued(new, lex, vocab, bigrams, glue_log)
@@ -714,6 +729,7 @@ def main():
             if before in new:
                 new = new.replace(before, after)
                 manual_log.append((before[:46], after[:46]))
+        new, t = unmask(new, _tags), unmask(t, _tags)
         if a.apply and new != t:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 

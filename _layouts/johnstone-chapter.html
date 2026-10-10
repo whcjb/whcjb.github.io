@@ -144,6 +144,29 @@ layout: default
 }
 .johnstone-wrap .jh-titlepage em { color: #6b7681; }
 
+/* 脚注号。原书印成上标 ¹，OCR 落成正文里一个裸数字（用户问「这里的 1
+   是干啥的」）。 */
+.johnstone-wrap .jh-fn {
+  color: var(--jh-ink); font-size: .68em; vertical-align: super;
+  line-height: 0; margin-left: 1px; font-weight: bold;
+}
+
+/* 脚注。原书印在**页脚**，按页序读出来就落在该页正文之后 —— 而那段正文
+   往往还要接到下一页去，于是脚注横插在一句话中间（用户截图指出）。
+   抽出来排到本篇末尾，字号小一号，上面一道横线隔开。 */
+.johnstone-wrap .jh-notes {
+  margin: 40px 0 0; padding-top: 14px;
+  border-top: 1px solid var(--jh-rule);
+  font-size: 14.5px; line-height: 1.75; color: #5d6771;
+}
+.johnstone-wrap .jh-notes p { margin: 0 0 11px; text-align: justify; }
+.johnstone-wrap .jh-notes p:last-child { margin-bottom: 0; }
+.johnstone-wrap .jh-notes::before {
+  content: "NOTES"; display: block; margin-bottom: 10px;
+  font-size: 11.5px; letter-spacing: .14em; color: var(--jh-ink);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 /* 书末「希腊文注」的节号：`Ver. 1.` */
 .johnstone-wrap .jh-vref {
   font-weight: bold; color: var(--jh-ink-dark);

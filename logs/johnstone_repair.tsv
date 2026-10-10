@@ -1,9 +1,9 @@
 verdict	from	to	pairs	hits
 fix	zs	is	18	19
 fix	ts	is	11	11
-fix	il	ii	4	6
+fix	im	in	4	9
 fix	nght	right	6	6
-fix	im	in	4	6
+fix	il	ii	4	5
 fix	iz	in	2	5
 fix	decause	because	3	4
 fix	ferfect	perfect	3	4
@@ -14,6 +14,7 @@ fix	Chnist	Christ	2	3
 fix	Zhe	The	0	3
 fix	wth	with	2	2
 fix	spint	spirit	2	2
+fix	Preetorian	Praetorian	2	2
 fix	whith	which	2	2
 fix	nghteousness	righteousness	1	2
 fix	ef	of	2	2
@@ -39,6 +40,7 @@ fix	Zaboured	laboured	1	1
 fix	vowledge	knowledge	1	1
 fix	veigious	religious	2	1
 fix	szncere	sincere	1	1
+fix	Przetorian	Praetorian	1	1
 fix	sfiritual	spiritual	1	1
 fix	dihigent	diligent	1	1
 fix	jire	fire	2	1
@@ -93,7 +95,6 @@ fix	sazzts	saints	1	1
 fix	decoming	becoming	1	1
 fix	ded	died	1	1
 fix	decame	became	1	1
-fix	Ve	VERS	1	1
 fix	fis	His	1	1
 fix	carth	earth	2	1
 fix	Zvery	Every	1	1
@@ -142,10 +143,12 @@ fix	strenuc	strenuous	1	1
 fix	sartakers	partakers	1	1
 fix	mofives	motives	2	1
 fix	grzmary	primary	2	1
+fix	XXITI	XXIII	1	1
 fix	ili	iii	1	1
 fix	immora	immoral	1	1
 fix	az	an	1	1
 fix	diving	living	1	1
+fix	Fokn	John	2	1
 fix	Jody	body	1	1
 fix	spiritu	spiritually	0	1
 fix	drethren	brethren	1	1
@@ -180,6 +183,7 @@ fix	Je	be	1	1
 fix	swbstance	substance	1	1
 fix	rmghteousness	righteousness	1	1
 fix	examp	example	1	1
+fix	Prztorian	Praetorian	1	1
 fix	xil	xii	1	1
 fix	dad	dead	2	1
 fix	xvil	xvii	1	1
@@ -200,10 +204,13 @@ fix	wmiversality	universality	1	1
 fix	fresent	present	1	1
 fix	imsfired	inspired	2	1
 fix	pfu	helpful	0	1
+fix	cifizens	citizens	1	1
+fix	phendix	Appendix	2	1
 fix	Jrom	from	1	1
 fix	GLAsGow	GLASGOW	0	1
 fix	Luodia	Euodia	0	1
 fix	icene	Nicene	0	1
+fix	vil1	VIII	1	0
 fix	x1	XI	1	0
 fix	XI11	XIII	1	0
 fix	x1v	XIV	1	0
@@ -214,6 +221,7 @@ fix	PHILTPPIANS	PHILIPPIANS	1	0
 fix	donds'	bonds'	1	0
 fix	Chnist'	Christ'	1	0
 fix	Zve'	live	2	0
+fix	Ve	VERS	1	0
 fix	adoured'	laboured	2	0
 fix	rghteous	righteous	1	0
 fix	friest	priest	1	0
@@ -221,11 +229,8 @@ fix	iz'	in'	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Vever	Never	1	0
-fix	Fokn	John	2	0
 fix	Tefer	refer	1	0
 fix	heayen'	heaven'	1	0
-fix	cifizens	citizens	1	0
-fix	phendix	Appendix	2	0
 fix	Joun	John	1	0
 fix	al	all	1	0
 fix	Witttam	William	1	0
@@ -321,6 +326,7 @@ glued	Christin	Christ in
 glued	initself	in itself		
 glued	hisfriends	his friends		
 glued	itseems	it seems		
+glued	iam	i am		
 glued	givento	given to		
 glued	Butif	But if		
 glued	inme	in me		
@@ -334,6 +340,7 @@ ordinal	znd	2nd
 ordinal	gth	9th		
 ordinal	oth	9th		
 ordinal	znd	2nd		
+ordinal	gth	9th		
 ligature	Ceesar	Cæsar		
 ligature	Czsar	Cæsar		
 ligature	Casar	Cæsar		
@@ -345,15 +352,21 @@ ligature	Cesar	Cæsar
 ligature	Cesar	Cæsar		
 ligature	Cesar	Cæsar		
 ligature	Praetorian	Prætorian		
-ligature	Preetorian	Prætorian		
-ligature	Preetorian	Prætorian		
+ligature	Praetorian	Prætorian		
+ligature	Praetorian	Prætorian		
 ligature	Pretorian	Prætorian		
 ligature	Pretorian	Prætorian		
-ligature	Przetorian	Prætorian		
+ligature	Praetorian	Prætorian		
+ligature	Praetorian	Prætorian		
+ligature	Cesar	Cæsar		
+ligature	Czsar	Cæsar		
+ligature	Czesarea	Cæsarea		
+ligature	Caesarea	Cæsarea		
+ligature	Ceesarea	Cæsarea		
+ligature	pretorium	prætorium		
 ligature	Cesar	Cæsar		
 ligature	Cesar	Cæsar		
-ligature	Cesar	Cæsar		
-ligature	Prztorian	Prætorian		
+ligature	Praetorian	Prætorian		
 ligature	pretorian	Prætorian		
 ligature	fretorium	prætorium		
 ligature	fretorium	prætorium		
@@ -474,26 +487,21 @@ glyph	/razsed	raised
 glyph	¢things	things		
 glyph	¢therein	therein		
 italic-I	J	I		
-italic-I	7	I		
 italic-I	J	I		
 italic-I	Z	I		
 italic-I	7	I		
-italic-I	7	I		
 italic-I	J	I		
 italic-I	J	I		
 italic-I	J	I		
-italic-I	7	I		
 italic-I	7	I		
 italic-I	7	I		
 italic-I	Z	I		
 italic-I	77	I		
 italic-I	J	I		
-italic-I	7	I		
 italic-I	Z	I		
 italic-I	J	I		
 italic-I	7	I		
 italic-I	TJ	I		
-italic-I	7	I		
 italic-I	Z	I		
 italic-I	7	I		
 italic-I	J	I		
@@ -766,7 +774,6 @@ reject	What	lVhath	2	① tesseract 侧本来就是词
 reject	sufferings	suffcrinj	2	① tesseract 侧本来就是词
 reject	Ceesar'	Caesar'	2	③ 全书只正确出现 0 次
 reject	where	wlicrc	2	① tesseract 侧本来就是词
-reject	Preetorian	Praetorian	2	③ 全书只正确出现 1 次
 reject	persons	persons	2	① tesseract 侧本来就是词
 reject	himself	himself	2	① tesseract 侧本来就是词
 reject	brethren'	brethren	2	① tesseract 侧本来就是词
@@ -1109,7 +1116,6 @@ reject	PLACE	Place	1	① tesseract 侧本来就是词
 reject	INTRODUCTION	Introduction	1	① tesseract 侧本来就是词
 reject	Bright	Brigh	1	① tesseract 侧本来就是词
 reject	vi	VI	1	① tesseract 侧本来就是词
-reject	vil1	VIII	1	③ 全书只正确出现 0 次
 reject	x11	XII	1	② 形差太远
 reject	Salvation	Salvation	1	① tesseract 侧本来就是词
 reject	XxI	XXI	1	① tesseract 侧本来就是词
@@ -1293,7 +1299,7 @@ reject	obstructed	obstructed	1	① tesseract 侧本来就是词
 reject	happened	hap	1	① tesseract 侧本来就是词
 reject	than	hdSi	1	① tesseract 侧本来就是词
 reject	manifest	matiifest	1	① tesseract 侧本来就是词
-reject	palace'	palace	1	② ABBYY 侧更短，多半是粘词只给了前半
+reject	palace'	palace	1	① tesseract 侧本来就是词
 reject	Czesar'	Caesar'	1	③ 全书只正确出现 0 次
 reject	court	court'	1	① tesseract 侧本来就是词
 reject	Praetorian	Prwtorian	1	① tesseract 侧本来就是词
@@ -1304,7 +1310,6 @@ reject	xxvii	xxviii	1	① tesseract 侧本来就是词
 reject	officials	ofificials	1	① tesseract 侧本来就是词
 reject	palace	palace	1	① tesseract 侧本来就是词
 reject	ordinary	ordinaryN	1	① tesseract 侧本来就是词
-reject	Przetorian	Praetorian	1	③ 全书只正确出现 1 次
 reject	Augustus'	Augustus	1	① tesseract 侧本来就是词
 reject	Preetorians	Praetorians	1	③ 全书只正确出现 0 次
 reject	officers	officers	1	① tesseract 侧本来就是词
@@ -1662,7 +1667,7 @@ reject	Ps	Ps	1	① tesseract 侧本来就是词
 reject	heavens	heavens	1	① tesseract 侧本来就是词
 reject	lv	Iv	1	① tesseract 侧本来就是词
 reject	abyss'	abyss	1	① tesseract 侧本来就是词
-reject	deep'	deep	1	② ABBYY 侧更短，多半是粘词只给了前半
+reject	deep'	deep	1	① tesseract 侧本来就是词
 reject	summed	summed	1	① tesseract 侧本来就是词
 reject	Apart	A	1	① tesseract 侧本来就是词
 reject	prosper	prosper	1	① tesseract 侧本来就是词
@@ -2096,7 +2101,6 @@ reject	drawn	drawTi	1	① tesseract 侧本来就是词
 reject	icy	remembering	1	① tesseract 侧本来就是词
 reject	sanctification'	sanctification	1	① tesseract 侧本来就是词
 reject	Each	Kach	1	① tesseract 侧本来就是词
-reject	XXITI	XXIII	1	③ 全书只正确出现 1 次
 reject	havetold	have	1	② ABBYY 侧更短，多半是粘词只给了前半
 reject	views	views	1	① tesseract 侧本来就是词
 reject	wholly	wholly	1	① tesseract 侧本来就是词
@@ -2473,7 +2477,6 @@ reject	eis	ct	1	① ABBYY 侧也不是词
 reject	Kapwov	Kapirov	1	① ABBYY 侧也不是词
 reject	oles	Nolcs	1	① tesseract 侧本来就是词
 reject	Text	Tt'Xt	1	① tesseract 侧本来就是词
-reject	Prztorian	Praetorian	1	③ 全书只正确出现 1 次
 reject	pretoriani	prcBtoriani	1	① ABBYY 侧也不是词
 reject	pretorian	prcXtorian	1	① tesseract 侧本来就是词
 reject	To	To	1	① tesseract 侧本来就是词
