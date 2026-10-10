@@ -66,6 +66,10 @@ RE_VER_BARE = re.compile(r'^(\d{1,3}(?:\s*[,-]\s*\d{1,3})*\.)(?=\s)')
 # front matter 的 title，正文里不再重复。
 RE_ROMAN_ONLY = re.compile(r'^\W{0,3}[IVXLivxl]{1,6}[.,]?\W{0,3}$')
 RE_CAPS_ONLY = re.compile(r'^[^a-z]{5,}$')
+# 篇号行常带一小截 OCR 残渣：第 4 讲印的是 `IV. THE GOSPEL IN ROME.`，
+# 读出来是 `nal IN. THE GOSPEL IN ROME.`。开头那三个小写字母让「整行无
+# 小写」的判据失效，于是整条讲题漏进了题记框里（用户截图）。
+RE_HEAD_JUNK = re.compile(r'^[a-z]{1,4}[\s.,]+')
 
 
 def parse_ref(tail, fallback_ch):
@@ -146,7 +150,8 @@ def render(paras, fallback_ch, slug=''):
     # PRACTICAL` 也是全大写，一视同仁就把书名页的头两行剥没了（实测）。
     if lecture:
         for i, p in enumerate(paras[:3]):
-            if RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(p.strip('* ')):
+            q = RE_HEAD_JUNK.sub('', p.strip('* '))
+            if RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(q):
                 start = i + 1
     if ref_at is not None and ref_at >= start:
         head = '\n\n'.join(paras[start:ref_at + 1])
@@ -166,10 +171,17 @@ def render(paras, fallback_ch, slug=''):
             start += prose
 
     notes = slug.startswith('notes-')
+    # 原书每篇开头是**下沉首字**：头一个字母占两三行高，其余字母仍是
+    # 大写（影像 leaf 0035 `THIS first paragraph…`，T 压着下面两行）。
+    # 只给第一段**正文**，不给题记——题记在它前面，已经单独成块。
+    dropcap = lecture or slug == 'introduction'
     for p in paras[start:]:
         m = RE_VER.match(p) or (RE_VER_BARE.match(p) if notes else None)
         if m:
             p = f'<span class="jh-vref">{m.group(1)}</span>' + p[m.end():]
+        if dropcap and len(p) > 120 and re.match(r'^[A-Z]{2,}\s', p):
+            p = f'<span class="jh-dropcap">{p[0]}</span>' + p[1:]
+            dropcap = False
         out.append(p)
     return '\n\n'.join(out), ref, ch
 

@@ -144,6 +144,13 @@ layout: default
 }
 .johnstone-wrap .jh-titlepage em { color: #6b7681; }
 
+/* 下沉首字。原书每篇开头那个字母压着下面两行，其余字母仍是大写。 */
+.johnstone-wrap .jh-dropcap {
+  float: left; font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.15em; line-height: .84; margin: 3px 7px 0 0;
+  color: var(--jh-ink-dark);
+}
+
 /* 脚注号。原书印成上标 ¹，OCR 落成正文里一个裸数字（用户问「这里的 1
    是干啥的」）。 */
 .johnstone-wrap .jh-fn {
@@ -161,6 +168,16 @@ layout: default
 }
 .johnstone-wrap .jh-notes p { margin: 0 0 11px; text-align: justify; }
 .johnstone-wrap .jh-notes p:last-child { margin-bottom: 0; }
+.johnstone-wrap .jh-notes .jh-note { padding-left: 22px; text-indent: -22px; }
+.johnstone-wrap .jh-back {
+  display: inline-block; width: 22px; color: var(--jh-ink);
+  font-size: 11.5px; font-weight: bold; text-decoration: none;
+  vertical-align: super; line-height: 1;
+}
+.johnstone-wrap a.jh-back:hover { text-decoration: underline; }
+.johnstone-wrap .jh-fn a { color: inherit; text-decoration: none; }
+.johnstone-wrap .jh-fn a:hover { text-decoration: underline; }
+.johnstone-wrap :target { background: #fff6cc; transition: background .4s; }
 .johnstone-wrap .jh-notes::before {
   content: "NOTES"; display: block; margin-bottom: 10px;
   font-size: 11.5px; letter-spacing: .14em; color: var(--jh-ink);

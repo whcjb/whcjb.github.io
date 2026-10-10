@@ -86,8 +86,6 @@ For the reading of the Received Text, and the more usual construction, ἐπὶ 
 
 The mss. are divided also between παραβουλευσάμενος and παραβολευσάμενος, but with a great preponderance of authority in favour of the latter. The verb παραβουλεύεσθαι has the sense of the Latin *male consulere,* ‘to make poor provision for,’ ‘have little regard for,'—παρὰ here, as in many compounds, having the force of ‘amiss’—strictly, ‘going *aside* or *beyond,’* missing the mark. The other verb παραβολεύεσθαι does not occur elsewhere, but is a form which — in the same way as περπερεύεσθαι (1 Cor. xiii. 4), from πέρπερος, and others—may be derived from the adjective παράβολος, ‘gambling, reckless.’ Παραβολεύεσθαι, then, will mean ‘to play the gambler,'—*τῇ* ψυχῇ, ‘with his life. ‘Hazard’ excellently represents the thought, the original meaning of this word (which is probably derived from the Latin *tessera,* ‘a die,’ through the Italian *azzardo,* a corruption of *a-tsar,* for *tessar,-do)* being ‘a game of chance.’ Obviously, as used by the apostle, παραβολεύεσθαι has nothing of blame in it, but simply sets forth, with much liveliness, the utter lack of care for himself which Epaphroditus had shown in his zeal to serve Christ by ministering to His servant. cu. ut 1.7 *Notes on the Greek Text.* 459
 
-<div class="jh-notes" markdown="1">
-
-The idea that the apostle wrote more than one letter to this church is supposed to find support in the Epistle of Polycarp, § 3; but see note on the passage.
-
+<div class="jh-notes">
+<p class="jh-note" id="fn-1" markdown="span"><span class="jh-back">1</span>The idea that the apostle wrote more than one letter to this church is supposed to find support in the Epistle of Polycarp, § 3; but see note on the passage.</p>
 </div>

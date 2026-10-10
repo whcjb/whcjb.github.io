@@ -76,6 +76,10 @@ VERIFIED = {
 # 只能按**上下文**定位的人工条目：同一个词在别处是对的，不能全局替换。
 # 每条都注明在哪一页的影像上核的。
 MANUAL_CONTEXT = [
+    # p.113（leaf 0127）：第 9 讲开篇的下沉首字 W。两份 OCR 都糊了——
+    # ABBYY 读成 `T \\ ^ITH`，tesseract 读成 `Ἶ | Ww" H`——所以自动补不回来。
+    # 裁影像核过：是大写 W 压着下面两行，`WITH the free discursiveness`。
+    ('ITH the free discursiveness', 'WITH the free discursiveness'),
     # p.103（leaf 0119）：印面是 *never* to despond。读成 ever **把意思读反了**，
     # 而 ever 本身是真词、全书到处都是，任何全局判据都碰不得它。
     ('important, *ever* to despond', 'important, *never* to despond'),

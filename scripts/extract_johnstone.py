@@ -16,8 +16,8 @@
 """
 import argparse
 import difflib
+from collections import Counter
 import collections
-import difflib
 import gzip
 import os
 import re
@@ -850,7 +850,7 @@ VLM_DIR = os.path.join(RAW, 'src', 'vlm')
 # 一开始是判出来就 `continue` 丢掉的——那不是「挪位置」，是**删正文**，
 # 60 条脚注一条都没落盘（提交信息里却写着已移到 .jh-notes）。
 FN_MARK = '\x01'
-RE_FN_LINE = re.compile(r'^\s*\[FN:[^\]]*\]\s*(.+)$')
+RE_FN_LINE = re.compile(r'^\s*\[FN:(\d+)\]\s*(.+)$')
 
 
 def load_footnotes():
@@ -860,23 +860,65 @@ def load_footnotes():
     for f in os.listdir(VLM_DIR):
         if not f.endswith('.txt'):
             continue
-        fns, refs = [], []
+        fns, short, refs, sig = [], [], [], None
         for line in open(os.path.join(VLM_DIR, f), encoding='utf-8'):
             m = RE_FN_LINE.match(line)
-            if m and len(m.group(1).strip()) >= 8:
-                fns.append([w.lower() for w in
-                            re.findall(r"[A-Za-z']+", m.group(1))])
+            if m and len(m.group(2).strip()) >= 8:
+                ws = [w.lower() for w in re.findall(r"[A-Za-z']+", m.group(2))]
+                # 四个词以上才够词序列对齐用；短的（`Chrysostom.`、
+                # `Acts ii. 24.`）留**字面**，走另一条判据。
+                # 号码一路带着走，正文记号与脚注靠它配对。
+                (fns if len(ws) >= 4 else short).append(
+                    (m.group(1), ws if len(ws) >= 4 else m.group(2).strip()))
                 continue
+            ms = re.search(r'\[SIG:(\S{1,3}?)\]', line)
+            if ms:
+                sig = ms.group(1)
             for mk in re.finditer(r'\[FN:(\d+)\]', line):
                 ctx = re.findall(r"[A-Za-z']+", line[:mk.start()])[-8:]
                 if len(ctx) >= 4:
                     refs.append((mk.group(1), [w.lower() for w in ctx]))
-        if fns or refs:
-            out[int(f[:-4])] = ([x for x in fns if len(x) >= 3], refs)
+        if fns or short or refs or sig:
+            out[int(f[:-4])] = (fns, short, refs, sig)
     return out
 
 
-def place_fn_refs(text, refs, log, sec):
+GREEK_LOOKALIKE = str.maketrans(
+    'ΑΒΕΖΗΙΚΜΝΟΡΤΥΧ', 'ABEZHIKMNOPTYX')
+
+
+def drop_signature(text, sig, log, sec):
+    """抹掉页底的**书帖签名**（`A`、`B`、`C`……）。
+
+    印刷装订用的记号，不是正文。它落在页底，跨页续句一合并就横在句子
+    中间：`…would not be` ⟨D⟩ `to hinder the growth of the church.`
+    （用户截图）。全书 31 页有，证人标成 `[SIG:x]`——拿的是版面标签，
+    删哪个字仍看页底那一小截本身。
+
+    不能拿硬正则去套，尾巴有三种变体，一刀切只认得出一半：
+        `…the older English the C` ⟨c⟩   小写
+        `…both in the Old Testa- ` ⟨Ζ⟩   希腊字形的 Zeta
+        `…result would not be ’` ⟨D⟩     前面还粘着一个假引号
+    所以按**归一化后的末尾词**判：大小写不敏感、希腊同形字折回拉丁。
+    """
+    if not sig:
+        return text
+    body = text.rstrip()
+    m = re.search(r'(\S+)\s*$', body)
+    if not m:
+        return text
+    tok = m.group(1).strip('.,;:')
+    if len(tok) > 2 or tok.translate(GREEK_LOOKALIKE).upper() != sig.upper():
+        return text
+    cut = body[:m.start(1)]
+    # 签名那一行自己的噪声（假引号）紧贴着它，一起抹
+    cut2 = re.sub(r"[\s‘’\'\"]{1,3}$", '', cut)
+    log.append((sec, 'signature', tok + (' +' + cut[len(cut2):].strip()
+                                         if cut2 != cut else '')))
+    return cut2.rstrip()
+
+
+def place_fn_refs(text, refs, log, sec, leaf):
     """把脚注号插回**引用处**，位置取自证人的 `[FN:n]` 标注。
 
     先前是拿「页缝上的裸数字」猜的，猜反了：证人里 `[FN:1]` 标在
@@ -919,7 +961,8 @@ def place_fn_refs(text, refs, log, sec):
         if m4:
             tail = tail[m4.end():]
             log.append((sec, 'fn-mark-glyph', m4.group(0).strip()))
-        text = head + '<sup class="jh-fn">' + num + '</sup>' + tail
+        text = (head + f'<sup class="jh-fn" data-fn="{leaf}-{num}">'
+                + num + '</sup>' + tail)
         log.append((sec, 'fn-ref', ' '.join(ctx[-4:]) + ' ⟨' + num + '⟩'))
     return text
 
@@ -942,7 +985,17 @@ def strip_seam_digits(text, log, sec):
     return RE_FN_REF.sub(sub, text)
 
 
-def excise_footnotes(text, fns, log, sec):
+def _one_par(s):
+    """切出来的脚注压成**一段**。
+
+    切口可能跨段落分隔（`1\n\nHenry Ward Beecher.`）。带着空行存进去，
+    后面按空行重新切段时就裂成两段，前半截带着哨兵、后半截不带——那条
+    脚注于是原样留在正文里，体检还报「已摘出」（实测 p.77）。
+    """
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def excise_footnotes(text, fns, short, log, sec):
     """把脚注从这一页的正文里切出来，按**词序列对齐**定位。
 
     上一版只认「整段就是一条脚注」。可 ABBYY 常把短脚注直接并进正文段里，
@@ -955,10 +1008,74 @@ def excise_footnotes(text, fns, log, sec):
     覆盖率六成以上且跨度不比脚注本身长太多才算——跨度那一条是防它把
     零散的公共词连成一大片，把正文一起切走。
     """
-    if not fns:
+    if not fns and not short:
         return text, []
     got = []
-    for fw in fns:
+    # 一两个词的短脚注（`Chrysostom.`、`Acts ii. 24.`）：词序列对齐在两个
+    # 词上不可靠，会在全页找到一堆巧合。改用两条一起卡——
+    #   ① 字面模糊匹配（词之间允许 OCR 噪声）
+    #   ② 前面必须紧跟**记号残痕**：孤立的数字或误读符号
+    # 这两条单用都不够，合起来才认得出 `…as ‘a  1 *Pro Rab.* 5. servant’…`
+    # 这种把句子从中间劈开的短脚注。
+    for num, lit in short:
+        lw = re.findall(r"[A-Za-z']+", lit)
+        if not lw:
+            continue
+        # 两种进场方式：
+        #   ① 前面有记号残痕（`…as ‘a  1 *Pro Rab.* 5. servant’…`）
+        #   ② 记号在 OCR 里整个丢了，只剩脚注本身横在两句之间
+        #      （`…requirements of the passage.  Henry Ward Beecher.  In their…`）
+        # ② 单靠字面很容易误伤——`Dr. Eadie` 正文里本来也提到——所以它只在
+        # **本页脚注列表里有这条**时才走，页级这层限定就是它的凭据。
+        pat = re.compile(r'(?:(?<=\s)[\d!?|^_*\\,;:.‘’\'"\-]{1,4}\s*'
+                         r'|(?<=[.!?’\'"]) )\s*'
+                         + r'\W{0,6}'.join(re.escape(w) for w in lw)
+                         # 引文的数字尾巴（`Acts ii.` 后面的 `24.`）不在词表
+                         # 里，不一起吃掉就会留在正文中间。限长 8 个字符，
+                         # 免得越过下一条脚注的记号。
+                         + r'[\s.,;:)\]’\'"*\\]{0,4}[\s\d.,;:&–-]{0,8}', re.I)
+        m = pat.search(text)
+        if not m or m.start() == 0:
+            continue
+        # 切口把**记号**也带进来了，它不是脚注正文的一部分：
+        #   `11 Tim. v. 17.` 其实是记号 `1` + 脚注 `1 Tim. v. 17.`
+        # 号码是已知的，照它剥；剥不掉就剥掉开头那串非字母数字的残符。
+        cut = _one_par(m.group(0))
+        if cut.startswith(num):
+            cut = cut[len(num):].lstrip()
+        else:
+            # 星号和反斜杠不能剥：剥掉 `*Pro Rab.* 5.` 的开头那只星号，
+            # 这条脚注就只剩一只闭合星号，整篇的斜体奇偶立刻报错。
+            cut = re.sub(r"^[^0-9A-Za-z‘“*\\]+", '', cut).lstrip()
+        got.append((num, cut))
+        log.append((sec, 'footnote-short',
+                    '⟨' + lit[:46] + '⟩ ← 切出 ⟨' + m.group(0).strip()[:46] + '⟩'))
+        text = (text[:m.start()].rstrip() + ' ' + text[m.end():].lstrip()).strip()
+    # 先按**段**搬：页脚那一串短脚注常被 OCR 并成一段
+    #   `Literally, ‘endured to go.’ ? Acts ii. 24. 31 Pet. i. & 4 Eph. ii.
+    #    8, 9. ©: Pet. i. 13. 6 1 Pet. iii. 9. 7 Matt. vii. 1. 8 These two…`
+    # 逐条按词序列切只会把其中一条摘走，剩下的留在正文（p.500 实测）。
+    # 判据：这一段的词几乎全来自本页脚注（按重数算，七成五以上）。
+    pool = Counter(w for _n, fw in fns for w in fw)
+    rest = []
+    for par in text.split('\n\n'):
+        pwords = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", par)]
+        if len(pwords) >= 3:
+            have = Counter(pwords)
+            cov = sum(min(c, pool.get(w, 0)) for w, c in have.items()) / len(pwords)
+            if cov >= 0.75:
+                # 这一整段对应哪一条脚注：取覆盖率最高的那条的号码
+                best, bn = 0.0, None
+                for n, fw in fns:
+                    c = sum(min(have.get(w, 0), 1) for w in set(fw)) / len(set(fw))
+                    if c > best:
+                        best, bn = c, n
+                got.append((bn, _one_par(par)))
+                log.append((sec, 'footnote', par.strip()[:90]))
+                continue
+        rest.append(par)
+    text = '\n\n'.join(rest)
+    for num, fw in fns:
         words = [(m.group(0).lower(), m.start(), m.end())
                  for m in RE_WORD_OFF.finditer(text)]
         if len(words) < 3:
@@ -968,9 +1085,17 @@ def excise_footnotes(text, fns, log, sec):
         blocks = [b for b in sm.get_matching_blocks() if b.size]
         if not blocks:
             continue
-        cov = sum(b.size for b in blocks) / len(fw)
-        lo, hi = blocks[0].b, blocks[-1].b + blocks[-1].size
-        if cov < 0.6 or (hi - lo) > len(fw) * 1.6 + 4:
+        # **拿最长块当锚，只收锚点附近的块**。直接取首尾块会被页首的
+        # `a`/`the`/`to` 这类虚词带偏：首块落在正文开头，跨度一下子涨到
+        # 几百词，跨度判据就把真脚注否掉了（p.23 那条 32 词的脚注整段
+        # 留在正文里，就是这么丢的）。
+        span = len(fw) * 1.6 + 4
+        anchor = max(blocks, key=lambda b: b.size).b
+        near = [b for b in blocks if abs(b.b - anchor) <= span]
+        cov = sum(b.size for b in near) / len(fw)
+        lo = min(b.b for b in near)
+        hi = max(b.b + b.size for b in near)
+        if cov < 0.6 or (hi - lo) > span:
             continue
         a, b = words[lo][1], words[hi - 1][2]
         # 左右各吃掉紧贴的标点与引号；脚注号（`, 1` 里的裸数字）留在正文，
@@ -985,7 +1110,7 @@ def excise_footnotes(text, fns, log, sec):
             b += m2.end()
         while a > 0 and text[a - 1] in '‘\'"“([*\\':
             a -= 1
-        got.append(text[a:b].strip())
+        got.append((num, _one_par(text[a:b])))
         log.append((sec, 'footnote', text[a:b].strip()[:90]))
         text = (text[:a].rstrip() + ' ' + text[b:].lstrip()).strip()
         text = _wipe_rule(text, a, log, sec)
@@ -1108,14 +1233,15 @@ def split_sections(pages, leaf_sec):
         if cont:
             text = _wipe_rule(text, 0, GARBAGE, sec)
         if leaf in footnotes:
-            fns, refs = footnotes[leaf]
-            text, got = excise_footnotes(text, fns, GARBAGE, sec)
-            for g in got:
-                buckets[sec].append(FN_MARK + g)
+            fns, short, refs, sig = footnotes[leaf]
+            text = drop_signature(text, sig, GARBAGE, sec)
+            text, got = excise_footnotes(text, fns, short, GARBAGE, sec)
+            for num, g in got:
+                buckets[sec].append(f'{FN_MARK}{leaf}-{num}\x1f{g}')
             # 页缝上的裸数字全是残渣：脚注自己的编号印在页脚，页码和书帖
             # 签名也落在同一位置。真正的引用记号由证人的标注定位。
             text = strip_seam_digits(text, GARBAGE, sec)
-            text = place_fn_refs(text, refs, GARBAGE, sec)
+            text = place_fn_refs(text, refs, GARBAGE, sec, leaf)
         first = True
         for p in text.split('\n\n'):
             if not p.strip():
@@ -1204,12 +1330,120 @@ def split_sections(pages, leaf_sec):
                 merged.append(p)
         keep = merged
         body = [x for x in keep if not x.startswith(FN_MARK)]
-        fns = [x[1:].strip() for x in keep if x.startswith(FN_MARK)]
-        if fns:
-            body.append('<div class="jh-notes" markdown="1">\n\n'
-                        + '\n\n'.join(fns) + '\n\n</div>')
+        notes = []
+        for x in keep:
+            if x.startswith(FN_MARK):
+                k, _, t = x[1:].partition('\x1f')
+                notes.append((k, t.strip()))
+        if notes:
+            body.append(_render_notes(body, notes))
         swept.append((slug, title, '\n\n'.join(body)))
     return swept
+
+
+RE_SUP_KEY = re.compile(r'<sup class="jh-fn" data-fn="([^"]+)">\d+</sup>')
+RE_DROPCAP = re.compile(r'(?<![A-Za-z])([A-Z]{2,5})(?= [a-z])')
+
+
+def mend_dropcaps(md, pars, log):
+    """下沉首字被 tesseract 吞掉，从 ABBYY 补——**按页**补，不按段首补。
+
+    `johnstone_common.restore_dropcap` 只看每段开头。可 ABBYY 常把题记和
+    正文并成一段（讲章开篇那页就是），下沉首字于是落在段中间，判据够不着：
+        产物  `…—PHIL. i. 3-8.` ⟦HIS⟧ first paragraph, or, more exactly…
+        ABBYY `…—PHIL. i. 3-8.` ⟦THIS⟧ first paragraph^ or, more exactly…
+    对位要**按词**，不能按字面：同一处两边的标点常常不一样（这例里 ABBYY
+    把逗号读成了 `^`），字面 find 一次都对不上。
+
+    只在 ABBYY 的写法**以 OCR 这串结尾且更长**时才补（`THIS` 以 `HIS`
+    结尾）——补回去的永远只是开头掉的那几个字母，不改词。
+    """
+    ab = ' '.join(J.strip_sentinels(p['text'])[0] for p in pars)
+    aw = [(m.group(0), m.start()) for m in re.finditer(r'\S+', ab)]
+    alow = [w.lower().strip('.,;:^’\'"*\\()[]') for w, _ in aw]
+    out, last = [], 0
+    for m in RE_DROPCAP.finditer(md):
+        cap = m.group(1)
+        nxt = re.findall(r"[A-Za-z']+", md[m.end():m.end() + 70])[:5]
+        if len(nxt) < 4:
+            continue
+        nxt = [w.lower() for w in nxt]
+        sm = difflib.SequenceMatcher(None, nxt, alow, autojunk=False)
+        blk = sm.find_longest_match(0, len(nxt), 0, len(alow))
+        if blk.size < 3 or blk.a != 0 or blk.b == 0:
+            continue
+        prev = aw[blk.b - 1][0].strip('.,;:^’\'"*\\()[]')
+        if prev == cap or not prev.endswith(cap) or not prev.isupper():
+            continue
+        out.append(md[last:m.start()] + prev)
+        last = m.end()
+        log.append((cap, prev))
+    md = ''.join(out) + md[last:] if out else md
+
+    # 第二种败法：下沉首字没被吞掉，而是**糊成一团乱码**
+    #   ABBYY `WITH the free discursiveness of a familiar letter…`
+    #   产物  `Ἶ Ww" H the free discursiveness of a familiar letter…`
+    # 上面那条判据要求开头是干净的全大写词，认不出这种。这里改从段首的
+    # 小写词往回找：拿后面四个小写词去 ABBYY 对位置，取它前面那个全大写
+    # 词，换掉段首那一小截乱码。只换 ≤16 个字符的一小截，换不准就不换。
+    pars_out = []
+    for par in md.split('\n\n'):
+        m = re.match(r'^(.{1,16}?)((?:[a-z’\']+\s+){4})', par)
+        # 「段首这一小截是不是乱码」要按**乱码字符**判，不能按「有标点」判：
+        # 第一版拿 `[^A-Za-z\s]` 当判据，把正常的 `The mss.` 也当乱码，
+        # 换成了 ABBYY 的 `MSS`，`The` 就这么没了。
+        if m and re.search(r'[^\x00-\x7f|"^~_*\\]|[|"^~_*\\]', m.group(1)):
+            nxt = [w.lower() for w in re.findall(r"[A-Za-z']+", m.group(2))][:4]
+            sm = difflib.SequenceMatcher(None, nxt, alow, autojunk=False)
+            blk = sm.find_longest_match(0, len(nxt), 0, len(alow))
+            if blk.size >= 3 and blk.a == 0 and blk.b > 0:
+                prev = aw[blk.b - 1][0].strip('.,;:^’\'"*\\()[]')
+                if prev.isupper() and 2 <= len(prev) <= 8 and prev.isalpha():
+                    log.append((m.group(1).strip(), prev))
+                    par = prev + ' ' + par[m.end(1):].lstrip()
+        pars_out.append(par)
+    return '\n\n'.join(pars_out)
+
+
+def _render_notes(body, notes):
+    """脚注编号 + 正文记号与脚注互相跳转。
+
+    原书每页从 1 起编，一篇讲章横跨十几页，号码会重复好几轮；网页上一篇
+    就是一页，所以**按篇重编**。配对不能靠出现次序——有的记号在 OCR 里
+    整个丢了，次序一错后面全错——靠的是 `{页}-{页内号}` 这把键。
+    正文里没找到记号的脚注仍然排进来，接在后面，只是没有回跳箭头。
+    """
+    have = {k for k, _t in notes}
+    seq, n = {}, 0
+    for p in body:
+        for m in RE_SUP_KEY.finditer(p):
+            if m.group(1) in have and m.group(1) not in seq:
+                n += 1
+                seq[m.group(1)] = n
+    for k, _t in notes:
+        if k not in seq:
+            n += 1
+            seq[k] = n
+
+    def renum(p):
+        return RE_SUP_KEY.sub(
+            lambda m: (f'<sup class="jh-fn" id="fnref-{seq[m.group(1)]}">'
+                       f'<a href="#fn-{seq[m.group(1)]}">{seq[m.group(1)]}</a>'
+                       f'</sup>') if m.group(1) in seq else m.group(0), p)
+
+    for i, p in enumerate(body):
+        body[i] = renum(p)
+    rows = []
+    for k, t in sorted(notes, key=lambda kt: seq[kt[0]]):
+        num = seq[k]
+        back = (f'<a class="jh-back" href="#fnref-{num}">{num}</a>'
+                if any(f'id="fnref-{num}"' in p for p in body)
+                else f'<span class="jh-back">{num}</span>')
+        # 号码与正文之间**不留空格**：这一段是两端对齐的，空格会被拉开，
+        # 号码跟正文之间裂出老远（用户截图）。间距交给 CSS 的 margin。
+        rows.append(f'<p class="jh-note" id="fn-{num}" markdown="span">'
+                    f'{back}{t}</p>')
+    return '<div class="jh-notes">\n' + '\n'.join(rows) + '\n</div>'
 
 
 def main():
@@ -1258,6 +1492,7 @@ def main():
             break
         txt, cont = page_text(ab[leaf]['pars'], ocr[leaf],
                               first.get(leaf, ''), shapes)
+        txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         if a.dump_page and leaf == a.dump_page:
             print(txt)
             return

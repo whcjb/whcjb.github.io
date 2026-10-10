@@ -20,7 +20,7 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 15 to speak the word without fear. Some indeed preach Christ even for envy and strife, but some also for good
 
-16 will. The<sup class="jh-fn">1</sup> one *arty* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
+16 will. The<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> one *arty* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
 19 joice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
@@ -107,8 +107,6 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 23 The grace of the Lord Jesus Christ *be* with your spirit. Amen.
 
-<div class="jh-notes" markdown="1">
-
-In the oldest manuscripts the 16th and 17th verses are found in the reverse order from that followed in our Authorized Version.
-
+<div class="jh-notes">
+<p class="jh-note" id="fn-1" markdown="span"><a class="jh-back" href="#fnref-1">1</a>In the oldest manuscripts the 16th and 17th verses are found in the reverse order from that followed in our Authorized Version.</p>
 </div>
