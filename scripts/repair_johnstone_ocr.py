@@ -657,6 +657,16 @@ def main():
     gap_log, glue_log, ord_log, lig_log, glyph_log = [], [], [], [], []
     ital_i_log, manual_log, fix_log, fix_fail = [], [], [], []
     FIXES = load_fixes()
+    ITALIC_FIX = {}
+    _it = os.path.join(ROOT, 'johnstone_raw', 'philippians', 'manual_italic.tsv')
+    if os.path.exists(_it):
+        for _l in open(_it, encoding='utf-8'):
+            if _l.startswith('#'):
+                continue
+            _p = _l.rstrip('\n').split('\t')
+            if len(_p) >= 4:
+                ITALIC_FIX.setdefault(_p[0], []).append((_p[2], _p[3]))
+    ital_fix_log = []
     for f, t in texts.items():
         new = apply_witness(t)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
@@ -665,6 +675,11 @@ def main():
         new = fix_ligatures(new, lig_log)
         new = glyph_sweep(new, lex, vocab, rules, glyph_log)
         new = fix_italic_i(new, ital_i_log)
+        # 斜体边界表是**逐字面替换**：星号位置要动，走不了归一化那条路。
+        for lit, fixed in ITALIC_FIX.get(f, []):
+            if new.count(lit) == 1:
+                new = new.replace(lit, fixed)
+                ital_fix_log.append((lit[:40], fixed[:40]))
         if f in FIXES:
             new, applied = apply_fixes(new, FIXES[f], fix_fail)
             fix_log.extend(applied)
@@ -679,9 +694,10 @@ def main():
           f'旧式数字序数 {len(ord_log)} 处，æ 合字 {len(lig_log)} 处，'
           f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆），'
           f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
-          f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条）',
+          f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
+          f'斜体边界 {len(ital_fix_log)} 处',
           file=sys.stderr)
-    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log + fix_log:
+    for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log + fix_log + ital_fix_log:
         print(f'    {was!r} → {now}', file=sys.stderr)
 
     os.makedirs(os.path.dirname(log), exist_ok=True)

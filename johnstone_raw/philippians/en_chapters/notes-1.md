@@ -129,7 +129,7 @@ selves,—but strictly, ‘exercise your (Christian) citizenship.’ The peculia
 
 In the second clause there are slight irregularities of construction. Carried on according to its beginning, it would have run thus: iva, εἴτε ἐλθὼν καὶ ἰδὼν ὑμᾶς, εἴτε ἀπὼν καὶ ἀκούων, μάθω, κ.τ.λ., or the like. Again, for ‘that I may hear of your affairs, that ye stand fast,’ we expect rather something like, ‘that, as regards your affairs, I may hear this, that,’ etc. Some commentators accordingly explain τὰ as equivalent to ταῦτα ; others, as an accusative of reference, ‘as regards your affairs.’ But neither is natural; and the true explanation seems to be, that the apostle’s love takes it as certain that their spiritual state will be such as he is about to describe,— so that to ‘your affairs’ the ‘ that,’ or ‘namely that, attaches itself directly. Στήκω
 
-, as used by Paul, has the idea *of firmness* very prominent ; see 1 Cor. xvi. 13; Gal. v. 1; 1 Thess. iii. 8.
+, as used by Paul, has the idea of *firmness* very prominent ; see 1 Cor. xvi. 13; Gal. v. 1; 1 Thess. iii. 8.
 
 Lightfoot, following Erasmus, regards πίστει as personified, and as governed by the σὺν of συναθλοῦντες,—translating thus, ‘ striving in concert with the faith. The construction adopted by our translators, according to which πίστει is a dative of advantage, appears to me very much more simple and natural. The general Pauline usage suggests that ‘ faith’ is probably to be taken here as subjective, not objective.
 

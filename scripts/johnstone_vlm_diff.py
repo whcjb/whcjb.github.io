@@ -53,12 +53,18 @@ def norm(t, keep_italic=False):
 
 
 def ital_runs(t):
-    """`*…*` 区间 → 用首尾各两个词表示，便于两边对位。"""
+    """`*…*` 区间 → 词序列，便于两边对位。
+
+    **两端的引号要剥掉再比**：印面上闭引号在不在斜体里，肉眼几乎看不出，
+    转录与我们的约定也不一致（`being Romans’` vs `being Romans`、
+    `bishop’` vs `bishop`）。不剥的话 237 处「范围不同」里绝大多数是这个，
+    把真正的范围错淹掉。
+    """
     out = []
     for m in re.finditer(r'\*([^*]{1,200})\*', t):
-        w = WORD.findall(m.group(1))
+        w = WORD.findall(m.group(1).strip(" '’‘\"“”.,;:—-"))
         if w:
-            out.append(' '.join(w))
+            out.append(' '.join(x.strip("'’‘").lower() for x in w))
     return out
 
 
@@ -132,7 +138,15 @@ def main():
                 rows.append(('text', leaf, on[lo:hi], vn[vlo:vhi]))
 
         if a.check in ('all', 'italic'):
-            oi, vi = ital_runs(ours), ital_runs(vt)
+            # 转录把脚注挪到页尾并打了 [FN:]，clean_vlm 整行剥掉了，
+            # 于是**脚注里的斜体在转录侧一个都不剩**——不把我们这边的脚注
+            # 也排除，47 处「我们标了转录没标」里大半是这个假象
+            # （`Dictionary of the Bible`、`Commentary on Philippians` 都是
+            # 脚注里的书名）。按「段落以脚注号起头」粗略剔。
+            body = '\n\n'.join(
+                p for p in ours.split('\n\n')
+                if not re.match(r'^\s*[\d¹²³*†‡]{1,3}[\s.]', p))
+            oi, vi = ital_runs(body), ital_runs(vt)
             sm = difflib.SequenceMatcher(None, oi, vi, autojunk=False)
             for tag, i1, i2, j1, j2 in sm.get_opcodes():
                 if tag == 'equal':
