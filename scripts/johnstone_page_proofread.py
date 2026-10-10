@@ -191,7 +191,7 @@ def main():
     fh = open(LOG, 'a', encoding='utf-8')
     total = 0.0
     for n, leaf in enumerate(leaves, 1):
-        raw = E.page_text([p['text'] for p in ab[leaf]['pars']], ocr[leaf],
+        raw, _ = E.page_text(ab[leaf]['pars'], ocr[leaf],
                           first.get(leaf, ''), shapes)
         text = slice_for(raw, whole, w_words, w_pos)
         if not text:

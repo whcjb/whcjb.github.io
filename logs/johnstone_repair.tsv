@@ -189,6 +189,7 @@ fix	xil	xii	1	1
 fix	dad	dead	2	1
 fix	xvil	xvii	1	1
 fix	Zfistle	Epistle	1	1
+fix	Greck	Greek	1	1
 fix	wnitings	writings	1	1
 fix	avound	around	1	1
 fix	pvoved	proved	1	1
@@ -228,10 +229,7 @@ fix	iz'	in'	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Vever	Never	1	0
-fix	Motes	Notes	6	0
-fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
-fix	Greck	Greek	1	0
 fix	heayen'	heaven'	1	0
 fix	Joun	John	1	0
 fix	al	all	1	0
@@ -244,24 +242,38 @@ fix	Critica	Critical	1	0
 fix	Il	II	1	0
 fix	hea	hearers	0	0
 fix	thil	things	0	0
+hyphen-gap	ac- curately	accurately		
+hyphen-gap	cer- tainly	certainly		
 hyphen-gap	direc- ‘tion	direction		
 hyphen-gap	appear- _ ance	appearance		
 hyphen-gap	men- _ tioned	mentioned		
+hyphen-gap	adminis- tration	administration		
 hyphen-gap	Chris- — tian	Christian		
 hyphen-gap	posi- — tion	position		
-hyphen-gap	con- | stituted	constituted		
+hyphen-gap	them- selves	themselves		
+hyphen-gap	con- stituted	constituted		
+hyphen-gap	prin- ciple	principle		
 hyphen-gap	com- - munity	community		
 hyphen-gap	par- — ticular	particular		
 hyphen-gap	Cor- ᾿ς inthians	Corinthians		
 hyphen-gap	con- = tinued	continued		
 hyphen-gap	per- _ fections	perfections		
 hyphen-gap	ex-— ceedingly	exceedingly		
+hyphen-gap	resurrec- tion	resurrection		
+hyphen-gap	guid- ance	guidance		
+hyphen-gap	pre- vious	previous		
 hyphen-gap	posi- _ tion	position		
+hyphen-gap	experi- ence	experience		
 hyphen-gap	re- : garding	regarding		
 hyphen-gap	be- ᾿ς lievers	believers		
 hyphen-gap	pre- _ ferable	preferable		
+hyphen-gap	Thes- salonians	Thessalonians		
+hyphen-gap	tempta- tion	temptation		
 hyphen-gap	unobtru-— sively	unobtrusively		
 hyphen-gap	satis-. faction	satisfaction		
+hyphen-gap	occur- rences	occurrences		
+hyphen-gap	cer- tainty	certainty		
+hyphen-gap	endur- ance	endurance		
 hyphen-gap	notwith- — standing	notwithstanding		
 hyphen-gap	com- _pleteness	completeness		
 hyphen-gap	imme- _ diate	immediate		
@@ -269,6 +281,7 @@ hyphen-gap	per- -sonally	personally
 hyphen-gap	reflec- ‘tion	reflection		
 hyphen-gap	beauti-— ful	beautiful		
 hyphen-gap	connec- ‘tion	connection		
+hyphen-gap	your- selves	yourselves		
 hyphen-gap	pre-— dicate	predicate		
 hyphen-gap	Com- _ pare	Compare		
 hyphen-gap	con- © tinue	continue		
@@ -362,9 +375,15 @@ ligature	Czsar	Cæsar
 ligature	pretorium	prætorium		
 glyph	radical/	radical		
 glyph	e/ders	elders		
+glyph	¢he	the		
 glyph	a/ways	always		
+glyph	¢therefore	therefore		
+glyph	¢he	the		
 glyph	/ikeness	likeness		
 glyph	fownd	found		
+glyph	¢he	the		
+glyph	¢hose	those		
+glyph	¢hose	those		
 glyph	deloved	beloved		
 glyph	a/ways	always		
 glyph	a//	all		
@@ -372,9 +391,12 @@ glyph	feace	peace
 glyph	/ike	like		
 glyph	delieve	believe		
 glyph	Zerseveringly	perseveringly		
+glyph	¢he	the		
 glyph	s/ave	save		
 glyph	wz//	will		
 glyph	ferform	perform		
+glyph	¢hat	that		
+glyph	¢he	the		
 glyph	Zights	lights		
 glyph	/adoured	laboured		
 glyph	venunciation	renunciation		
@@ -383,14 +405,17 @@ glyph	a//	all
 glyph	we//	well		
 glyph	a//	all		
 glyph	a//	all		
+glyph	fas¢	fast		
 glyph	/eads	leads		
 glyph	a//	all		
 glyph	Ao/d	hold		
 glyph	/lives	lives		
+glyph	lives¢	lives		
 glyph	zmmediate	immediate		
 glyph	a//	all		
 glyph	d/e	Me		
 glyph	a/ways	always		
+glyph	¢he	the		
 glyph	g/adness	gladness		
 glyph	degun	begun		
 glyph	donds	bonds		
@@ -399,7 +424,6 @@ glyph	free/y	freely
 glyph	/onging	longing		
 glyph	know/edge	knowledge		
 glyph	Zerfect	perfect		
-glyph	Vevertheless	Nevertheless		
 glyph	/eads	leads		
 glyph	wa/k	walk		
 glyph	/ory	ory		
@@ -413,7 +437,10 @@ glyph	fa//	fall
 glyph	Ao/iness	holiness		
 glyph	/aw	law		
 glyph	deloved	beloved		
+glyph	e¢ernal	eternal		
 glyph	a/way	away		
+glyph	first¢	first		
+glyph	¢emporal	temporal		
 glyph	special/	special		
 glyph	God/	God		
 glyph	d/ack	back		
@@ -428,17 +455,24 @@ glyph	wzthout	without
 glyph	rightcousness	righteousness		
 glyph	a//	all		
 glyph	affiiction	affliction		
+glyph	¢urn	turn		
 glyph	wi//	will		
 glyph	a/ways	always		
 glyph	/live	live		
 glyph	a//	all		
 glyph	know/edge	knowledge		
+glyph	¢this	this		
 glyph	/labour	labour		
 glyph	a/ways	always		
 glyph	g/orying	glorying		
+glyph	¢hrough	through		
+glyph	¢hrough	through		
 glyph	a//	all		
+glyph	¢hing	thing		
 glyph	i//	iii		
 glyph	resudt	result		
+glyph	s¢a¢e	state		
+glyph	¢hrough	through		
 glyph	Teference	reference		
 glyph	Jeginning	beginning		
 glyph	c/ass	class		
@@ -450,12 +484,15 @@ glyph	Himse/f	Himself
 glyph	a//	all		
 glyph	/ast	last		
 glyph	/razsed	raised		
+glyph	¢things	things		
+glyph	¢therein	therein		
 italic-I	J	I		
 italic-I	7	I		
 italic-I	J	I		
 italic-I	Z	I		
 italic-I	7	I		
 italic-I	7	I		
+italic-I	J	I		
 italic-I	J	I		
 italic-I	J	I		
 italic-I	7	I		
@@ -531,6 +568,7 @@ reject	men	men	6	① tesseract 侧本来就是词
 reject	thing	thing	6	① tesseract 侧本来就是词
 reject	but	hut	6	① tesseract 侧本来就是词
 reject	roth	loth	6	① ABBYY 侧也不是词
+reject	Motes	Notes	6	① tesseract 侧本来就是词
 reject	THE	THE	5	① tesseract 侧本来就是词
 reject	TO	TO	5	① tesseract 侧本来就是词
 reject	AND	AND	5	① tesseract 侧本来就是词
@@ -663,6 +701,7 @@ reject	medicamento	medicanutito	3	① ABBYY 侧也不是词
 reject	prudence	priidcnrc	3	① tesseract 侧本来就是词
 reject	whatever	wliatcvcr	3	① tesseract 侧本来就是词
 reject	fretorium	prcetoritim	3	① ABBYY 侧也不是词
+reject	Votes	Notes	3	① tesseract 侧本来就是词
 reject	Mss	mss	3	① tesseract 侧本来就是词
 reject	Matt	Matt	3	① tesseract 侧本来就是词
 reject	Jeginning	bcgiimiJig	3	① ABBYY 侧也不是词

@@ -98,7 +98,7 @@ def main():
     for leaf in have:
         vt = clean_vlm(open(os.path.join(VLM, f'{leaf:04d}.txt'),
                             encoding='utf-8').read())
-        raw = E.page_text([p['text'] for p in ab[leaf]['pars']], ocr[leaf],
+        raw, _ = E.page_text(ab[leaf]['pars'], ocr[leaf],
                           first.get(leaf, ''), shapes)
         ours = P.slice_for(raw, whole, w_words, w_pos)
         if ours:

@@ -87,7 +87,9 @@ MANUAL_CONTEXT = [
     # p.407：OCR 把 I 读成 `7)`、把 lead 的 l 读成星号，于是这段斜体**只有
     # 开头没有结尾**。两处一起补。（合并段落后上下文变了，印面比对那张表
     # 定位不到，只能写死。）
-    ('‘*when 7) departed from Macedonia,’ \\*ead us',
+    # p.407：这段斜体**只有开头没有结尾**——闭合标记的位置原本被 OCR 读成
+    # 了 lead 的首字母。字形回扫已把 7)→I、\*ead→lead 修好，只剩闭合要补。
+    ('‘*when I departed from Macedonia,’ \\*lead us',
      '‘*when I departed from Macedonia,*’ lead us'),
 
     # ── 印面比对报出来、但替换区间压着斜体标记的 11 条 ──
@@ -138,8 +140,8 @@ def collect_pairs():
             break
         # 页眉必须先剔。不剔的话 `[CH. II.` 这类页眉残片会配出
         # `IL → ii`、`cu → ch` 这种假对（实测 10 组以上）。
-        txt = E.page_text([p['text'] for p in ab[leaf]['pars']], ocr[leaf],
-                          first.get(leaf, ''), shapes)
+        txt, _ = E.page_text(ab[leaf]['pars'], ocr[leaf],
+                             first.get(leaf, ''), shapes)
         if not txt.strip():
             continue
         keep, seen = [], False
@@ -459,6 +461,23 @@ def glyph_sweep(text, lex, vocab, rules, log):
         if w in GLYPH_FIX:
             log.append((w, GLYPH_FIX[w]))
             return GLYPH_FIX[w]
+        if any(c in w for c in GLYPH_NOISE):
+            # 噪点字符逐个试「删掉」与「换成学来的那些字形」，闸子同斜杠支
+            cand = []
+            for ch in GLYPH_NOISE:
+                if ch not in w:
+                    continue
+                for y in ('', 't', 'l', 'i', 'c', 'e', 's'):
+                    v = w.replace(ch, y)
+                    if len(re.sub(r"[^A-Za-z]", '', v)) >= 3 and is_word(v, lex):
+                        cand.append(v)
+            ranked = sorted(cand, key=lambda v: -vocab.get(v.lower(), 0))
+            if ranked and vocab.get(ranked[0].lower(), 0) >= MIN_VOCAB:
+                second = vocab.get(ranked[1].lower(), 0) if len(ranked) > 1 else 0
+                if vocab.get(ranked[0].lower(), 0) >= max(1, 2 * second):
+                    log.append((w, ranked[0]))
+                    return ranked[0]
+            return w
         if '/' in w:
             # 斜杠词常常**还带着另一个字形错**（`d/ameless` 要先把斜杠还原成
             # l，再把 d 还原成 b 才成 blameless）。所以允许「斜杠一步 +
@@ -493,7 +512,12 @@ def glyph_sweep(text, lex, vocab, rules, log):
 
 # 斜杠也可能在**词首**（`/eads`＝leads、`/ast`＝last），所以 token 允许以
 # 斜杠开头 —— 只认字母开头的话这一支整类都扫不到（实测漏 8 处）。
-GLYPH_TOKEN = re.compile(r"/?[A-Za-z][A-Za-z0-9'/]*")
+# 词里夹着的**非 ASCII 噪点字符**也要算进 token，否则分词器根本看不见它：
+# `¢he` 会被切成 `he`，而 `he` 是真词，于是永远修不掉（全书 24 处）。
+# 这些字符在本书正文里不可能是对的（¢ £ © « » § µ ¶ ſ 都是字形误读）。
+GLYPH_NOISE = "¢£©«»§µ¶ſ†‡°"
+GLYPH_TOKEN = re.compile(r"[/" + GLYPH_NOISE + r"]?[A-Za-z]["
+                         + GLYPH_NOISE + r"A-Za-z0-9'/]*")
 
 
 # ── 斜体大写 I ───────────────────────────────────────────────

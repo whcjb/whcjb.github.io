@@ -677,6 +677,26 @@ RE_CAPS_LINE = re.compile(r'^[^a-z]{5,}$')
 RE_EPIGRAPH_REF = re.compile(r'PHIL\.|—\s*PHIL', re.I)
 
 
+RE_PIPE = re.compile(r'\s*\|+\s*')
+
+
+def strip_pipes(par, log, slug=''):
+    """竖线一律去掉。
+
+    **这不是「看着像噪点」，是 kramdown 的语法字符**：一行里出现 `|`
+    就被当成表格，整段连同邻段被框进 <table>，页面上看是一个带框的方块
+    外加右侧一格孤零零的词（用户截图指出，全书 25 个页面中招）。
+
+    这本书的正文里不存在真正的竖线——印面比对那一遍把它们逐个报成
+    `| → 空`（页边划痕、栏线、折痕）。去掉而不是转义：转义只是让噪点
+    原样显示出来，一样是错的。
+    """
+    if '|' not in par:
+        return par
+    log.append((slug, 'pipe', par[max(0, par.find('|') - 30):par.find('|') + 30]))
+    return RE_PIPE.sub(' ', par).strip()
+
+
 def is_scan_noise(par):
     t = par.strip().strip('*')
     if len(t) < 13 or t.startswith('#'):
@@ -849,7 +869,7 @@ def split_sections(pages, leaf_sec):
                 GARBAGE.append((slug, 'inner-head', p[:110])); continue
             if is_scan_noise(p):
                 GARBAGE.append((slug, 'scan-noise', p[:110])); continue
-            keep.append(p)
+            keep.append(strip_pipes(p, GARBAGE, slug))
         keep = mend_split_paragraphs(keep, LEX_CHECK, slug, GARBAGE)
         # 页**内**也会被切开：ABBYY 把引号起头当成新段，残留页眉夹在段中
         # 把一段劈成两段。同一条判据（上段无句末标点 + 下段小写起头）全局
