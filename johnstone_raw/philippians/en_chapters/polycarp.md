@@ -20,27 +20,11 @@ Polycarp, and the elders which are with him, to the church of God sojourning at 
 
 I congratulate! you greatly in our Lord Jesus Christ, that ye received the ensamples of true love, and, as became you, accompanied on their way those who were
 
-10Or, ‘ rejoice with you.’ The tense in the original is the *epistolary* aorist, often best rendered in our idiom by the present.
-
-2H bound with the chains which adorn saints,—the which are diadems of the true elect of God and our Lord ; and because the firm root of your faith, spoken of from ancient times, continueth until now, and bringeth forth fruit unto our Lord Jesus Christ, who endured’ for our sins even unto death: whom God raised up, ‘ having loosed the pains of death;’2 in whom, having seen Him not, ye believe, ‘and believing rejoice with joy unspeakable and full of glory,’’—into which *joy* many desire to enter, knowing that ‘ by grace ye are saved,’ ‘not of works,’\* but by the will of God, through Jesus Christ. II. ‘Wherefore, girding up your loins,’5 serve God in fear and truth, forsaking empty and foolish talking, and the error of the multitude, believing in Him that raised up our Lord Jesus Christ from the dead, and gave Him glory, and a throne at His right hand; to whom all things were made subject, which are in heaven and which are on earth; whom all breath worshippeth ; who cometh as Judge of quick and dead ; whose blood God shall require of them that believe not on Him. Now He that raised Him up from the dead, shall raise up us also, if we do His will, and walk in His commandments, and love what things He loved, abstaining from all unrighteousness, greediness, love of money, evil-speaking, false witness, ‘not rendering evil for evil, or railing for railing,’ ® or blow for blow, or curse for curse, but remembering the things which the Lord said in His teaching, ‘Judge not, that ye be not judged ;’’ Forgive, and ye shall be forgiven ; Show mercy, that mercy may be shown to you;\* ‘With what measure ye mete, 1
-
-Literally, ‘endured to go.’ ? Acts ii. 24. 1 Pet. i. 8. 4
-
-Eph. ii. 8, 9. 1 Pet. i. 13. 6 1 Pet. iii. 9. 7 Matt. vii. 1. 8
-
-These two references to the Sermon on the Mount (Luke vi. 37; Matt. — v. 7) are made freely, the words in the original being different. it shall be measured to you again ;’! and ‘ Blessed are the poor,’ and they which are persecuted for righteousness’ sake, for theirs is the kingdom of God.’ 3
+2H bound with the chains which adorn saints,—the which are diadems of the true elect of God and our Lord ; and because the firm root of your faith, spoken of from ancient times, continueth until now, and bringeth forth fruit unto our Lord Jesus Christ, who endured’ for our sins even unto death: whom God raised up, ‘ having loosed the pains of death;’2 in whom, having seen Him not, ye believe, ‘and believing rejoice with joy unspeakable and full of glory,’’—into which *joy* many desire to enter, knowing that ‘ by grace ye are saved,’ ‘not of works,’\* but by the will of God, through Jesus Christ. II. ‘Wherefore, girding up your loins,’5 serve God in fear and truth, forsaking empty and foolish talking, and the error of the multitude, believing in Him that raised up our Lord Jesus Christ from the dead, and gave Him glory, and a throne at His right hand; to whom all things were made subject, which are in heaven and which are on earth; whom all breath worshippeth ; who cometh as Judge of quick and dead ; whose blood God shall require of them that believe not on Him. Now He that raised Him up from the dead, shall raise up us also, if we do His will, and walk in His commandments, and love what things He loved, abstaining from all unrighteousness, greediness, love of money, evil-speaking, false witness, ‘not rendering evil for evil, or railing for railing,’ ® or blow for blow, or curse for curse, but remembering the things which the Lord said in His teaching, ‘Judge not, that ye be not judged ;’’ Forgive, and ye shall be forgiven ; Show mercy, that mercy may be shown to you;\* ‘With what measure ye mete, 1 it shall be measured to you again ;’! and ‘ Blessed are the poor,’ and they which are persecuted for righteousness’ sake, for theirs is the kingdom of God.’ 3
 
 III. These things, brethren, I write to you concerning righteousness, not having taken this charge upon myself, but because ye first called on me to do it. For neither am I, nor is any other like me, able to follow the wisdom of the blessed and illustrious Paul: who, when he was among you, in the presence of the men that then were, taught with exactness and certainty the word concerning the truth; who also, when he was absent, wrote to you Epistles,‘ into the which if ye look closely, ye will be able to be built up into the faith given unto you, ‘ which is the mother of us all,’°—hope following, love leading the way, *even love* to God and Christ and to our neighbour. For if any one have these within him,\* he hath fulfilled the commandment of righteousness; for he that hath love is far from all sin.
 
 IV. The love of money is the beginning of all mischiefs. Knowing, therefore, that ‘we brought nothing into this world,’ but neither have we power to ‘carry anything out,’? let us arm ourselves with the armour of righteousness ; and teach ourselves, in the first place, to walk in 1
-
-Matt. vii. 2. ? Luke vi. 20. 3 Matt. v. 10. 4
-
-Polycarp’s reference in the 11th paragraph to ‘the beginning of his (Paul’s) *Epistle’* seems to show clearly that he knew of only one letter of the apostle to the Philippians,—that which has come down to us. The word ‘ Epistles,’ in the place before us, was used by him, perhaps, through some doubt whether they might not have received others, though he knew ‘of only one. The likelihood is, however, that the plural is only a rhetorical roundness of expression, the singular being really meant. There is abundant evidence that the Greeks often used ἐπιστολαὶ with reference merely to one letter. See Lightfoot’s *Commentary on Philippians,* p. 138. >
-
-An evident quotation from Gal. iv. 26, somewhat quaintly applied. ®
-
-Or, ‘be within these.’ The reading is doubtful.
 
 71 Tim. vi. 7. the commandment of the Lord; then your wives also *to walk* in the faith and love and purity given to them, loving their own husbands with all truth, and cherishing affection to all *others* equally, with all self-restraint ; and *let us teach ourselves’* to train our children with the training of the fear of God.
 
@@ -48,53 +32,25 @@ Let the widows be discreet with regard to the faith of the Lord, making interces
 
 Likewise let the deacons be blameless in the presence of His righteousness, as servants\* of God and Christ, and not of men,—not slanderers, not double-tongued, not lovers of money, temperate with regard to all things, compassionate, careful, walking according to the truth of the Lord, who became the servant of all: whom if we please in the world which now is, we shall receive also the world to come, according as He promised us to raise us up from the dead, and that, if we have a conversation worthy of Him,°® we ‘shall also reign with Him,’ °—if we believe. 1
 
-Or the supplement may be, ‘let us teach our wives.’ \*
-
-Evidently a variation of Paul’s figure, ‘ Ye are the temple of the living God ’ (2 Cor. vi. 16). ³ Gal. vi. 7. 4
-
-Strictly ‘deacons,’ the original word from which ‘deacon’ is derived meaning ‘servant.’ \*
-
-There seems to be a reference here to Phil. i, 27, the peculiar word meaning strictly ‘to live as citizens’ being employed in both. It is not improbable, as Dr. Lightfoot suggests, that, in the connection in which Polycarp here places the word, he intended this thought to come out distinctly: thus, ‘ If we live as *citizens* in a way worthy of Him, we shall by and by be kings with Him.’ \*⁶ 2 Tim. ii. 12.
-
 Likewise also let the younger men be blameless in all things, caring before everything for purity, and reining themselves in from every evil. For it is good to cut ourselves off from the lusts which are in the world ; because every lust warreth against the Spirit, and ‘neither fornicators, nor effeminate, nor abusers of themselves with mankind, shall inherit the kingdom of God;’¹ neither they that do perversely. Wherefore it is needful to abstain from all these things, submitting yourselves to the elders and deacons, as to God and Christ.
 
 Let the virgins walk in a blameless and pure conscience. VI. And let the elders² also be compassionate, merciful towards all, turning back those that have been led astray, visiting all the sick, neglecting no widow, or orphan, or person in poverty, but providing always for what is seemly before God and men; keeping themselves from all anger, respect of persons, unrighteous judgment; being far removed from all love of money ; not hastily believing evil against any one; not harsh in judgment, knowing that we are all sinners.³ If, there-fore, we pray the Lord to forgive us, we ought also to forgive ; for we are before the eyes of our Lord and God, and ‘must all stand before the judgment seat of Christ,’ and ‘every one give account of himself.’\* Let
 
 1 1 Cor. vi. 9, 10.
 
-2 It will be observed that not the slightest evidence presents itself in this letter, of any approach in the constitution of the church at Philippi towards prelatical episcopacy. The office-bearers in Polycarp’s days were still, as in Paul’s (Phil. i. 1), ‘the bishops’—otherwise called ‘ elders’—‘ and deacons.’ 3
-
-Literally, ‘debtors of sin.” Compare Luke xiii. 4, in the original, and the parallel in ver. 2. Taking this expression here along with the first clause of the next sentence, we cannot fail to see a reference by Polycarp to Matt. vi. 12. 4
-
-Rom. xiv. 10, 12.
-
-VII. ... VIII. ... ¹ 1 John iv. 3. 21 Pet. iv. 7. This quotation is made freely, a different word being used for ‘ prayer.’ 3 Matt. vi. 13. 4 Matt. xxvi. 41. 5 1 Pet. ii. 24. 6 1 Pet. ii. 22. 7 1 John iv. 9. *A Appendix.*
-
-us, therefore, so serve Him with fear and all reverence, as He Himself commanded,—and the apostles who preached the gospel unto us, and the prophets who announced beforehand the coming of our Lord ; zealous for what is good, keeping ourselves from the stumbling-blocks, and the false brethren, and those that carry about on their lips the name of the Lord in hypocrisy, who VII. lead away vain men. For every one ‘that confesseth not that Jesus Christ is come in the flesh,’ is an anti-Christ ; and whosoever confesseth not the testimony of the cross is of the devil; and whosoever perverteth the oracles of the Lord according to his own lusts, and saith that there is neither resurrection nor judgment, this is the first-born of Satan. Wherefore, leaving the vanity of the multitude, and their false teachings, let us turn to the word which hath been handed down to us from the beginning ; ‘ watching unto prayer,’? and persevering in fastings ; in supplications asking God, who seeth all things, to ‘lead us not into temptation :’® as saith the Lord, ‘ The spirit indeed is willing, but the flesh is weak.’ VIII. Let us, then, without ceasing, cleave to our Hope, and to the Earnest of our righteousness, which is Christ Jesus,—‘ who bare our sins in His own body to the tree,’ °—‘who did no sin, neither was guile found in His mouth,’® but endured all things for us, ‘that we might live in Him.’’ Let us therefore be imitators of His patience ; and if we suffer for His name, let us glorify Him ; for in Himself He set us this example,— and we have believed this.
+Rom. xiv. 10, 12. us, therefore, so serve Him with fear and all reverence, as He Himself commanded,—and the apostles who preached the gospel unto us, and the prophets who announced beforehand the coming of our Lord ; zealous for what is good, keeping ourselves from the stumbling-blocks, and the false brethren, and those that carry about on their lips the name of the Lord in hypocrisy, who VII. lead away vain men. For every one ‘that confesseth not that Jesus Christ is come in the flesh,’ is an anti-Christ ; and whosoever confesseth not the testimony of the cross is of the devil; and whosoever perverteth the oracles of the Lord according to his own lusts, and saith that there is neither resurrection nor judgment, this is the first-born of Satan. Wherefore, leaving the vanity of the multitude, and their false teachings, let us turn to the word which hath been handed down to us from the beginning ; ‘ watching unto prayer,’? and persevering in fastings ; in supplications asking God, who seeth all things, to ‘lead us not into temptation :’® as saith the Lord, ‘ The spirit indeed is willing, but the flesh is weak.’ VIII. Let us, then, without ceasing, cleave to our Hope, and to the Earnest of our righteousness, which is Christ Jesus,—‘ who bare our sins in His own body to the tree,’ °—‘who did no sin, neither was guile found in His mouth,’® but endured all things for us, ‘that we might live in Him.’’ Let us therefore be imitators of His patience ; and if we suffer for His name, let us glorify Him ; for in Himself He set us this example,— and we have believed this.
 
 IX. I beseech you all, therefore, to obey the word of righteousness, and to practise all patience, which ye have also seen! *set forth* before your eyes, not only in the blessed Ignatius, and Zosimus, and Rufus,\*? but also in others, some of your own number, and in Paul himself and the rest of the apostles ; being fully persuaded that all these ‘ did not run in vain,’® but in faith and righteousness, and that they are *gone* to the place due to them, *to be* with the Lord, with whom also they suffered, —for they loved not the present world, but Him who died for us, and for our sakes was raised up by God. X. Stand‘ fast therefore in these things, and follow the example of the Lord ; firm and unchangeable in faith, ‘lovers of the brotherhood,’® ‘kindly affectioned one to another,’\* joined together in the truth, displaying to one another the gentleness of the Lord, despising no one. When ye can do good, defer it not, for ‘ alms doth deliver from death.’’ ‘ All of you be subject one to another,’® ‘ having your conversation irreproachable among the Gentiles,’\*—that from your good works both *ye yourselves* may receive praise, and the Lord may not 1
 
-Or, according to Jacobson’s text, an imperative,—‘ which also see.’ This seems unnatural. The sounds of « and « have often been confounded by the transcribers of Greek Mss. In the case of this very word εἴδετε or ἴδετε, see illustrations in Phil. i. 30 ; James v. 11. 2
-
-Of the latter two martyrs nothing is known. From the connection in which their names occur here, we may infer that they were taken to Rome to suffer along with Ignatius.
-
 3 Phil. ii. 16. 4
-
-From this point to the end of the Epistle, the original Greek is not extant, except in the larger part of the 13th paragraph, which has been preserved by the ‘ecclesiastical historian Eusebius. Here, therefore, we are obliged to follow an old Latin version. In this part, of course, we cannot feel so certain regarding the exact wording of references to the New Testament, as in the earlier portion.
 
 1 Pet. ii. 17. 6 Rom. xii. 10. 7
 
-This is a quotation from the apocryphal Book of Tobit, iv. 10, xii. 9.
-
 1 Pet. v. 5. 1 Pet. ii. 12. be blasphemed among you. But woe to him through whom the name of the Lord is. blasphemed! Therefore teach all men sobriety, in which live also yourselves. XI. I have been grieved exceedingly for Valens, who was once made an elder among you;! because he is so ignorant of the place which was given to him. I advise, therefore, that ye keep yourselves from covetousness ; and be chaste and truthful. Keep yourselves from all evil. But he who cannot govern himself in these things, how doth he declare this *duty* unto another? If any one have not kept himself from covetousness, he will be defiled with idolatry,2 and judged as if among the heathen. But who *of you* are ignorant of the judgment of the Lord? ‘Do we not know that the saints shall judge the world?’\* as Paul teacheth. But I have perceived or heard of no such thing in you, among whom. the blessed Paul laboured ; who *are praised\** in the beginning of his Epistle. For he glorieth of you in all the churches which alone at that time knew God,—but we\* did not yet know Him. I am greatly grieved therefore, brethren, for Valens,\* and for his wife,—to whom the Lord grant true repentance! Be ye also, therefore, sober-minded in this matter ; and do not think of such as enemies, but call them back, as weak and erring members, that ye may save the body of you all. For, \*
-
-Valens and his wife, it would seem, had given some very distressing evidences of avarice, of which Polycarp had heard. This fact probably accounts for the emphasis laid by him, throughout the letter, on the needfulness of shunning this vice. He says, however, a little below, that, so far as he knew, the case of Valens was exceptional among the Philippian Christians. ?
 
 An evident reference to Col. iii. 5.
 
 \*\* 1 Cor. vi. 2. 4
-
-Some such word as ‘ praised’ has, no doubt, been accidentally omitted by a copyist of the version. 5
 
 The people of Smyrna,
 
@@ -106,22 +62,14 @@ Now the God and Father of our Lord Jesus Christ, and the Eternal Priest Himself,
 
 Pray for all the saints. Pray also for kings, and authorities, and princes ; and for them that persecute and hate you ; and for ‘the enemies of the cross,’\* that your fruit may be manifest among all,5—that ye may be perfect in Him. XIII. Ye wrote to me, and Ignatius also, that if any one went *from hence* into Syria, he should take also the letter from you ;® which I will see to, if I obtain an opportunity,— 1
 
-The text of the Latin version appears to be corrupt here. By the supplement given above, however,—in accordance with a suggestion of Jacobson,—the sense runs smoothly. ²
+Acts vili. 21. 4 Phil. iii. 18. 5
 
-The former of these precepts occurs in Ps. iv. 4 (as given in the Septuagint and Vulgate), and also in Eph. iv. 26,—where alone the second precept is found. The mode of citation shows distinctly, whether we regard both as quoted from the Epistle to the Ephesians, or the one from Psalms, that Polycarp, and the Philippians, to whom he wrote, held the books of the New Testament to belong, in the fullest serse, to the ‘Holy Scriptures.’ ³
-
-Acts viii. 21. 4 Phil. iii. 18. 5
-
-Or, ‘in all things.’ ⁶
-
-The reference seems to be to a letter addressed to the church of Antioch, and forwarded through Polycarp.
-
-XIV. Appendix. either in person, or by one whom I shall send to act also as your deputy.
+Or, ‘in all things.’ 5 XIV. Appendix. either in person, or by one whom I shall send to act also as your deputy.
 
 The letters of Ignatius—those which were sent to us by him, and others, as many as we have with us—we send to you, as ye desired ; the which are subjoined to this letter. And from them ye will be able to obtain much help; for they treat of faith and patience, and all upbuilding as concerneth our Lord. ;
 
 Regarding Ignatius himself also, and those that were with him,! make ye known to me what ye have learned with any certainty. XIV. These things I write to you by Crescens, whom up to the present day I have commended to you, and now commend, for he hath lived with us free from blame; as, I believe, likewise with you. Moreover, ye will hold his sister commended when she cometh to you. Be ye safe in the Lord Jesus Christ. Grace *be* with you all. Amen! !
 
-The Latin version has a present tense here, *qui cum eo sunt ;* but, no doubt, this isa mistranslation of Polycarp’s τῶν σὺν αὐτᾷ. We see from the 9th paragraph that he knew of Ignatius’s death.
-
 THE END.
+
+MURRAY AND GIBB, EDINBURGH, PRINTERS TO HER MAJESTY’'S STATIONERY OFFICE,

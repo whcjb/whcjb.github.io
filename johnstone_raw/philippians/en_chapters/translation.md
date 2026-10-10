@@ -35,11 +35,7 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 26 faith ; that your matter of glorying’ may abound in Christ Jesus through me, by my presence with you again.
 
-27 Only, live as becometh the gospel of Christ, that whether I come and see you, or be absent, I may hear
-
-In the oldest manuscripts the 16th and 17th verses are found in the reverse order from that followed in our Authorized Version.
-
-of your affairs, that ye are standing fast in one spirit, with one soul striving together for the faith of the 28 gospel, and in nothing terrified by your adversaries ; the which is to them a token of perdition, but of your 29 salvation, and this of God: for unto you it hath been given in the behalf of Christ, not only to believe on
+27 Only, live as becometh the gospel of Christ, that whether I come and see you, or be absent, I may hear *Epistle of Paul to the Philippians.* 423 of your affairs, that ye are standing fast in one spirit, with one soul striving together for the faith of the 28 gospel, and in nothing terrified by your adversaries ; the which is to them a token of perdition, but of your 29 salvation, and this of God: for unto you it hath been given in the behalf of Christ, not only to believe on
 
 30 Him, but also to suffer in His behalf, having the same conflict as ye saw in me, and now hear of in me.
 

@@ -452,8 +452,19 @@ def split_tail(paras, keys):
                 acc += keys[j]
                 cands.append(acc)
             r = max(difflib.SequenceMatcher(None, want, c).ratio() for c in cands)
-            if r >= 0.90:          # 够准就取**最早**的 —— CHAPTER II./III./IV.
-                hit = i            # 彼此相似度 0.94，取「最像」会切错章
+            # `Chapter II.` 与 `Chapter III.` 的相似度是 0.947——光靠阈值分不开。
+            # 真缺了一个（比如 CHAPTER II. 被别的判据吃掉），notes-2 就会匹配到
+            # CHAPTER III.、notes-3 匹配到 CHAPTER IV.，notes-4 整节落空（实测）。
+            # 所以凡是 `Chapter <罗马数字>` 这种探针，**章号必须一字不差**。
+            mw = re.fullmatch(r'chapter([ivx]+)', want)
+            if mw:
+                mk = re.fullmatch(r'chapter([ivx]+)', keys[i])
+                if not mk or mk.group(1) != mw.group(1):
+                    continue
+                hit = i
+                break
+            if r >= 0.90:
+                hit = i
                 break
             if r > best:
                 best, best_i = r, i
@@ -739,6 +750,10 @@ def mend_split_paragraphs(paras, lex_check, slug, log):
         if (prev_ok and len(p) <= 15 and len(nxt) >= 40
                 and not p.startswith('#')
                 and not RE_CITE_PAR.match(p)
+                # 全大写的短段是**节标题**（`CHAPTER II.`、`APPENDIX.`），
+                # 不是碎屑。被当碎屑并掉的话，书末那一节就再也找不到起头
+                # ——notes-2 整节因此落空（实测）。
+                and not re.fullmatch(r'[^a-z]{3,}', p.strip())
                 and not re.match(r'^\W*[IVXL]{1,6}[.,]?\W*$', p)):
             letters = re.sub(r"[^A-Za-z']", ' ', p).split()
             real = [w for w in letters if len(w) > 1 and lex_check(w)]
@@ -788,8 +803,16 @@ RE_PARA_END = re.compile(r"[.!?:;][’'\"”)\]*…]*$")
 RE_CONT_HEAD = re.compile(r'^\**[‘’\'"“]?[a-z]')
 
 
+RE_ALLCAPS_ANCHOR = re.compile(r'^[^a-z]{3,}$')
+
+
 def is_continuation(prev_par, next_par):
     if not prev_par or not next_par:
+        return False
+    # 全大写短段是**节标题**（`CHAPTER II.`、`APPENDIX.`），任何合并都不许
+    # 碰它——并掉的话那一节就再也找不到起头（notes-2 整节落空，实测两次：
+    # 一次被碎屑合并吃掉，一次被跨页合并吃掉）。
+    if RE_ALLCAPS_ANCHOR.match(next_par.strip()):
         return False
     if len(prev_par) < 40 or len(next_par) < 40:
         return False
@@ -800,10 +823,70 @@ def is_continuation(prev_par, next_par):
     return bool(RE_CONT_HEAD.match(next_par))
 
 
+# ── 脚注 ────────────────────────────────────────────────────
+#
+# 脚注印在**页脚**，所以按页序读出来就落在该页正文之后；而那段正文往往
+# 还要接到下一页去。结果脚注横插在一句话中间，页面上是这样：
+#     …most fully used his opportunities of obtaining general as well as
+#     biblical knowledge, 1
+#     （脚注：According to a precept ascribed by early writers to our Lord…）
+#     in whom true Christian wisdom, contemplating all the knowledge…
+# 句子被劈开，脚注又混在正文里（用户截图指出）。
+#
+# 识别靠**整页转录里的 `[FN:n]` 标注**。拿生成式模型出「版面标签」是
+# SKILL.md §2.6 明确允许的一档——标签错了看得见，文字错了才看不见；
+# 这里只用它判「这一段是不是脚注」，一个字都不从它那边抄。
+# 转录目录不在时自动退回原行为，不让链条依赖它。
+VLM_DIR = os.path.join(RAW, 'src', 'vlm')
+RE_FN_LINE = re.compile(r'^\s*\[FN:[^\]]*\]\s*(.+)$')
+
+
+def load_footnotes():
+    out = {}
+    if not os.path.isdir(VLM_DIR):
+        return out
+    for f in os.listdir(VLM_DIR):
+        if not f.endswith('.txt'):
+            continue
+        fns = []
+        for line in open(os.path.join(VLM_DIR, f), encoding='utf-8'):
+            m = RE_FN_LINE.match(line)
+            if m and len(m.group(1).strip()) >= 8:
+                fns.append(set(w.lower() for w in
+                               re.findall(r"[A-Za-z']{3,}", m.group(1))))
+        if fns:
+            out[int(f[:-4])] = fns
+    return out
+
+
+def looks_like_footnote(par, fns):
+    """这一段是不是该页的某条脚注。
+
+    按**词集合重合度**判，不按字面——两边的 OCR 不一样。
+    脚注一侧的实词有六成以上出现在这一段里，且两边长度相仿，就算。
+    """
+    # 太短的不碰：书末几节的切分锚点就是 `CHAPTER IV.` 这样的短行，
+    # 词集合重合度很容易把它判成脚注，整节会因此找不到起头（实测 notes-4）。
+    if len(par.strip()) < 40:
+        return False
+    pw = set(w.lower() for w in re.findall(r"[A-Za-z']{3,}", par))
+    if not pw:
+        return False
+    for fw in fns:
+        if not fw:
+            continue
+        hit = len(fw & pw) / len(fw)
+        if hit >= 0.6 and len(pw) <= len(fw) * 2.5 + 6:
+            return True
+    return False
+
+
 def split_sections(pages, leaf_sec):
     """[(leaf, markdown)] → [(slug, 标题, 正文)]"""
     titles = dict([('front', 'Preface'), ('introduction', 'Introduction')]
                   + [(str(i + 1), t) for i, t in enumerate(LECTURES)])
+    footnotes = load_footnotes()
+    notes = {}
     buckets, order = {}, []
     for leaf, text, cont in pages:
         sec = leaf_sec.get(leaf, 'front')
@@ -820,7 +903,8 @@ def split_sections(pages, leaf_sec):
             # 文本判据当**否决权**：上一段已经以句末标点收尾、且这一段大写
             # 起头，那就是新段落，ABBYY 漏了缩进也不并。
             merge = is_continuation(buckets[sec][-1], p.strip()) if buckets[sec] else False
-            if first and cont and buckets[sec] and not merge:
+            if (first and cont and buckets[sec] and not merge
+                    and not RE_ALLCAPS_ANCHOR.match(p.strip())):
                 prev = buckets[sec][-1]
                 if not (RE_PARA_END.search(prev.rstrip('*\\ '))
                         and re.match(r'^\**[‘’\'"“]?[A-Z]', p.strip())):
@@ -830,6 +914,11 @@ def split_sections(pages, leaf_sec):
                                 buckets[sec][-1][-46:] + ' ⟂ ' + p.strip()[:46]))
                 buckets[sec][-1] = buckets[sec][-1].rstrip() + ' ' + p.strip()
                 first = False
+                continue
+            # 脚注抽出正文流，攒到本节末尾。抽走之后上下两段才接得上。
+            if leaf in footnotes and looks_like_footnote(p, footnotes[leaf]):
+                notes.setdefault(sec, []).append(strip_pipes(p, GARBAGE, sec))
+                GARBAGE.append((sec, 'footnote', p[:90]))
                 continue
             first = False
             buckets[sec].append(p)
