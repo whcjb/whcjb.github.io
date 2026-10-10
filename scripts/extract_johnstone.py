@@ -261,6 +261,14 @@ DROPCAPS = []
 DROPPED_ITALIC = []
 
 
+def pars_attrs(par):
+    """这一段有没有首行缩进。par 这里是**原始 dict**（带 attrs），
+    不是已经拆出来的 text —— 调用方要把 dict 传进来。"""
+    if isinstance(par, dict):
+        return par.get('attrs', {}).get('startIndent')
+    return None
+
+
 def page_text(pars, lines, first_line, shapes):
     """一页 → markdown。先剔页眉，再合流。
 
@@ -285,18 +293,25 @@ def page_text(pars, lines, first_line, shapes):
         body.append(l)
     ocr = J.join_ocr_lines(body)
 
-    keep, dropped_head = [], False
-    for p in pars:
+    keep, keep0, dropped_head = [], None, False
+    for par in pars:
+        # ⚠️ pars 是**原始 par 字典**，不是 text 串：续行判据要读 attrs
+        p = par['text'] if isinstance(par, dict) else par
         plain = J.strip_sentinels(p)[0].strip()
         if not dropped_head and plain:
             dropped_head = True
             head0 = plain.split('\n')[0]
             if is_head(head0) or (has_folio(head0) and head_shape(plain) in shapes):
                 continue
+        if keep0 is None and plain:
+            keep0 = par
         keep.append(p)
     if not keep or not ocr.strip():
-        return ''
-    return J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS)
+        return '', False
+    # ABBYY 的 startIndent：首行缩进＝新段落；没有缩进＝上一页的续行。
+    # 全书 418 页里 399 页是续行——这正是按页拼接会切错的地方。
+    cont = not pars_attrs(keep0)
+    return J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS), cont
 
 
 def _key(s):
@@ -732,19 +747,72 @@ def mend_split_paragraphs(paras, lex_check, slug, log):
 LEX_CHECK = None          # main() 填：判一个 token 是不是真词
 
 
+# ── 跨页续段 ────────────────────────────────────────────────
+#
+# 一段话写到页底没完、翻页接着写，是书里最常见的情形。我按页出段落、
+# 页间直接空行拼接，于是**每一个这样的地方都被切成两段**——全书 307 处，
+# 页面上读起来就是一句话从中间断开：
+#     …cursory reader cannot fail to observe them. This genuine human
+#     （空行）
+#     element in the Word of God, appealing as it does to…
+#
+# ABBYY 本来就给了信号（alexander_abbyy 的文档里写着）：
+#     startIndent 首行缩进 → 新段落
+#     无 startIndent 且是页内第一段 → 上一页的续行
+# 这里两条判据一起用，必须**同时**成立才合并：
+#   ① 上一段结尾没有句末标点
+#   ② 本页第一段以小写起头（或引号后接小写）
+# 只有 ① 会把「段末正好没标点」的真段落错并；只有 ② 会把「新段落碰巧
+# 小写起头」错并。两条一起，宁可少并几处。
+RE_PARA_END = re.compile(r"[.!?:;][’'\"”)\]*…]*$")
+RE_CONT_HEAD = re.compile(r'^\**[‘’\'"“]?[a-z]')
+
+
+def is_continuation(prev_par, next_par):
+    if not prev_par or not next_par:
+        return False
+    if len(prev_par) < 40 or len(next_par) < 40:
+        return False
+    if prev_par.lstrip().startswith('#'):
+        return False
+    if RE_PARA_END.search(prev_par.rstrip('*\\ ')):
+        return False
+    return bool(RE_CONT_HEAD.match(next_par))
+
+
 def split_sections(pages, leaf_sec):
     """[(leaf, markdown)] → [(slug, 标题, 正文)]"""
     titles = dict([('front', 'Preface'), ('introduction', 'Introduction')]
                   + [(str(i + 1), t) for i, t in enumerate(LECTURES)])
     buckets, order = {}, []
-    for leaf, text in pages:
+    for leaf, text, cont in pages:
         sec = leaf_sec.get(leaf, 'front')
         if sec not in buckets:
             buckets[sec] = []
             order.append(sec)
+        first = True
         for p in text.split('\n\n'):
-            if p.strip():
-                buckets[sec].append(p)
+            if not p.strip():
+                continue
+            # 页内第一段若是上一页的续行，接回去，不另起一段。
+            # 不接的话全书 307 处段落被从句子中间切开（用户截图指出）。
+            # startIndent 当主判据（全书 418 页里 399 页是续行），
+            # 文本判据当**否决权**：上一段已经以句末标点收尾、且这一段大写
+            # 起头，那就是新段落，ABBYY 漏了缩进也不并。
+            merge = is_continuation(buckets[sec][-1], p.strip()) if buckets[sec] else False
+            if first and cont and buckets[sec] and not merge:
+                prev = buckets[sec][-1]
+                if not (RE_PARA_END.search(prev.rstrip('*\\ '))
+                        and re.match(r'^\**[‘’\'"“]?[A-Z]', p.strip())):
+                    merge = True
+            if first and buckets[sec] and merge:
+                GARBAGE.append((sec, 'merge-page',
+                                buckets[sec][-1][-46:] + ' ⟂ ' + p.strip()[:46]))
+                buckets[sec][-1] = buckets[sec][-1].rstrip() + ' ' + p.strip()
+                first = False
+                continue
+            first = False
+            buckets[sec].append(p)
 
     head_titles = [_key(t) for t in (
         ['Introduction', 'Lectures on Philippians', 'Contents', 'Preface',
@@ -783,6 +851,18 @@ def split_sections(pages, leaf_sec):
                 GARBAGE.append((slug, 'scan-noise', p[:110])); continue
             keep.append(p)
         keep = mend_split_paragraphs(keep, LEX_CHECK, slug, GARBAGE)
+        # 页**内**也会被切开：ABBYY 把引号起头当成新段，残留页眉夹在段中
+        # 把一段劈成两段。同一条判据（上段无句末标点 + 下段小写起头）全局
+        # 再扫一遍，把它们接回去。
+        merged = []
+        for p in keep:
+            if merged and is_continuation(merged[-1], p.strip()):
+                GARBAGE.append((slug, 'merge-inner',
+                                merged[-1][-40:] + ' ⟂ ' + p.strip()[:40]))
+                merged[-1] = merged[-1].rstrip() + ' ' + p.strip()
+            else:
+                merged.append(p)
+        keep = merged
         swept.append((slug, title, '\n\n'.join(keep)))
     return swept
 
@@ -831,12 +911,12 @@ def main():
         # 版面与斜体整体漂移两页（实测斜体丢弃从 59 处暴涨到 607 处）。
         if leaf >= len(ab):
             break
-        txt = page_text([p['text'] for p in ab[leaf]['pars']], ocr[leaf],
-                        first.get(leaf, ''), shapes)
+        txt, cont = page_text(ab[leaf]['pars'], ocr[leaf],
+                              first.get(leaf, ''), shapes)
         if a.dump_page and leaf == a.dump_page:
             print(txt)
             return
-        pages.append((leaf, txt))
+        pages.append((leaf, txt, cont))
 
     os.makedirs(OUT_DIR, exist_ok=True)
     sections = split_sections(pages, assign_leaves(ocr))

@@ -84,7 +84,10 @@ MANUAL_CONTEXT = [
     # p.407：OCR 把 lead 的 l 读成星号，于是这段斜体**只有开头没有结尾**。
     # 印面比对把 lead 补回来了，但那个字面星号与缺失的闭合标记它看不见
     # （归一化时星号被抹掉）。连同闭合一起补。
-    ('‘*when I departed from Macedonia,’ \\*lead us',
+    # p.407：OCR 把 I 读成 `7)`、把 lead 的 l 读成星号，于是这段斜体**只有
+    # 开头没有结尾**。两处一起补。（合并段落后上下文变了，印面比对那张表
+    # 定位不到，只能写死。）
+    ('‘*when 7) departed from Macedonia,’ \\*ead us',
      '‘*when I departed from Macedonia,*’ lead us'),
 
     # ── 印面比对报出来、但替换区间压着斜体标记的 11 条 ──
