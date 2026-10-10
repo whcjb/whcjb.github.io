@@ -861,7 +861,16 @@ def load_footnotes():
         if not f.endswith('.txt'):
             continue
         fns, short, refs, sig = [], [], [], None
-        for line in open(os.path.join(VLM_DIR, f), encoding='utf-8'):
+        lines = open(os.path.join(VLM_DIR, f), encoding='utf-8').read().split('\n')
+        k = next((i for i, l in enumerate(lines) if RE_FN_LINE.match(l)), None)
+        # 脚注一旦起头就一直排到页底：**第一条 `[FN:` 之后的全部文字**都是
+        # 页脚内容。原书的脚注常跨好几段（引文 + 希腊诗行 + 下接的英文），
+        # 证人只给头一行打标签，只认标签就会把后面几段留在正文里，读起来
+        # 缺了引子（用户截图 p.102）。这里取的是**边界**，文字仍用自己的。
+        foot_pool = Counter(w.lower() for w in
+                            re.findall(r"[A-Za-z]{2,}", '\n'.join(lines[k:]))) \
+            if k is not None else Counter()
+        for line in lines:
             m = RE_FN_LINE.match(line)
             if m and len(m.group(2).strip()) >= 8:
                 ws = [w.lower() for w in re.findall(r"[A-Za-z']+", m.group(2))]
@@ -879,7 +888,7 @@ def load_footnotes():
                 if len(ctx) >= 4:
                     refs.append((mk.group(1), [w.lower() for w in ctx]))
         if fns or short or refs or sig:
-            out[int(f[:-4])] = (fns, short, refs, sig)
+            out[int(f[:-4])] = (fns, short, refs, sig, foot_pool)
     return out
 
 
@@ -985,6 +994,25 @@ def strip_seam_digits(text, log, sec):
     return RE_FN_REF.sub(sub, text)
 
 
+RE_DUP_REF = re.compile(r'(</sup>)([\s,.;:’\'"]*)([1-9])(?![0-9])'
+                        r'(?=[\s,.;:’\'"]|$)')
+
+
+def _dedup_fn_ref(text, log, sec):
+    """上标旁边那个重复的裸数字。
+
+    脚注自己的编号印在页脚，OCR 把它读在页缝上，跟我们按证人插进去的
+    上标挨在一起，页面上就出现两个 1（用户截图）：
+        `…or a Cicero.`⟦1⟧` 1`
+    `strip_seam_digits` 的后瞻只认「后面跟小写拉丁词」，这处后面是希腊文
+    另起一段，够不着。插完上标之后再按**紧贴上标**这个位置清一次。
+    """
+    def sub(m):
+        log.append((sec, 'dup-fn-ref', m.group(3)))
+        return m.group(1) + m.group(2)
+    return RE_DUP_REF.sub(sub, text)
+
+
 def _one_par(s):
     """切出来的脚注压成**一段**。
 
@@ -995,7 +1023,7 @@ def _one_par(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 
-def excise_footnotes(text, fns, short, log, sec):
+def excise_footnotes(text, fns, short, foot_pool, log, sec):
     """把脚注从这一页的正文里切出来，按**词序列对齐**定位。
 
     上一版只认「整段就是一条脚注」。可 ABBYY 常把短脚注直接并进正文段里，
@@ -1118,6 +1146,42 @@ def excise_footnotes(text, fns, short, log, sec):
     # （`…biblical knowledge, 1 Ss *YS Se and*`，实测）。页底位置同样确定，
     # 再从末尾扫一次。只对有脚注的页做——没脚注的页底不该有横线。
     text = _wipe_rule(text, len(text), log, sec)
+
+    # 跨段的脚注：前面按条切走了头一段，后面的续段（希腊诗行、下接的
+    # 英文）还留在正文里。从**页末往回**收，词几乎全来自页脚就接到上一条
+    # 脚注后面——接而不是另起一条，不然一条脚注会被编成好几个号。
+    if foot_pool and got:
+        pars = text.split('\n\n')
+        tail = []
+        while pars:
+            # 希腊诗行按拉丁词去量永远对不上（`Τίς οἶδεν…` 在页脚词表里
+            # 是希腊字母，OCR 出来的 `Tis`/`tors` 两边都不认）。整段以希腊
+            # 文为主的，直接算续段——第一行诗就是这么被挡在外面的。
+            greek = len(re.findall(r'[Ͱ-Ͽἀ-῿]', pars[-1]))
+            latin = len(re.findall(r'[A-Za-z]', pars[-1]))
+            pw = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", pars[-1])]
+            if tail and greek >= 3 and greek >= latin:
+                tail.insert(0, pars.pop())
+                continue
+            if len(pw) < 2:
+                # 希腊诗行里一个拉丁词都没有，照收，但只在它上面还有
+                # 页脚内容时才算数（下面的 `tail` 非空判据兜住）
+                if not tail:
+                    break
+                tail.insert(0, pars.pop())
+                continue
+            have = Counter(pw)
+            cov = sum(min(c, foot_pool.get(w, 0)) for w, c in have.items()) / len(pw)
+            if cov < 0.7:
+                break
+            tail.insert(0, pars.pop())
+        if tail:
+            num, head = got[-1]
+            got[-1] = (num, head + '<br>'
+                       + '<br>'.join(_one_par(t) for t in tail))
+            for t in tail:
+                log.append((sec, 'footnote-cont', _one_par(t)[:70]))
+            text = '\n\n'.join(pars)
     return text, got
 
 
@@ -1233,15 +1297,17 @@ def split_sections(pages, leaf_sec):
         if cont:
             text = _wipe_rule(text, 0, GARBAGE, sec)
         if leaf in footnotes:
-            fns, short, refs, sig = footnotes[leaf]
+            fns, short, refs, sig, foot_pool = footnotes[leaf]
             text = drop_signature(text, sig, GARBAGE, sec)
-            text, got = excise_footnotes(text, fns, short, GARBAGE, sec)
+            text, got = excise_footnotes(text, fns, short, foot_pool,
+                                         GARBAGE, sec)
             for num, g in got:
                 buckets[sec].append(f'{FN_MARK}{leaf}-{num}\x1f{g}')
             # 页缝上的裸数字全是残渣：脚注自己的编号印在页脚，页码和书帖
             # 签名也落在同一位置。真正的引用记号由证人的标注定位。
             text = strip_seam_digits(text, GARBAGE, sec)
             text = place_fn_refs(text, refs, GARBAGE, sec, leaf)
+            text = _dedup_fn_ref(text, GARBAGE, sec)
         first = True
         for p in text.split('\n\n'):
             if not p.strip():

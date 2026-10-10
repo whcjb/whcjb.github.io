@@ -382,7 +382,6 @@ seam-join	righteous-ness	righteousness
 seam-join	fre-quently	frequently
 seam-join	dis-tress	distress
 seam-join	cer-tainly	certainly
-seam-join	im-mortales	immortales
 seam-join	occu-pations	occupations
 seam-join	reve-lation	revelation
 seam-join	promi-nently	prominently
@@ -420,6 +419,7 @@ seam-join	Chris-tian	Christian
 seam-join	proposi-tion	proposition
 seam-join	mor-tality	mortality
 seam-join	exceed-ingly	exceedingly
+seam-join	im-mortales	immortales
 seam-join	confi-dence	confidence
 seam-join	fur-therance	furtherance
 seam-join	per-plexity	perplexity
@@ -1557,6 +1557,7 @@ drop/seam-digit	introduction	. 1
 drop/fn-mark-glyph	introduction	!
 drop/fn-ref	introduction	paul's imprisonment at rome ⟨1⟩
 drop/fn-ref	introduction	first visit to philippi ⟨2⟩
+drop/dup-fn-ref	introduction	2
 drop/merge-page	introduction	n of Macedonia stood beside him, and entreated ⟂ him, saying, ‘Come over into Macedonia and hel
 drop/footnote-short	introduction	⟨Dr. Lightfoot.⟩ ← 切出 ⟨3 Dr. Lightfoot.⟩
 drop/footnote	introduction	' Mr. Bullock, in Smith’s *Dictionary of the Bible;* article, ‘ Epistle to the Philippians
@@ -1639,6 +1640,7 @@ drop/merge-page	4	oubt whether its immediate result would not be ⟂ to hinder t
 drop/merge-page	4	guards to keep in custody all accused persons” ⟂ who were to be tried before the emperor himsel
 drop/footnote	4	There is probability in the view maintained by Wieseler, Howson, and Alford, that the ‘ Au
 drop/fn-ref	4	the stay at malta ⟨1⟩
+drop/dup-fn-ref	4	1
 drop/merge-page	4	ely fail to talk of their extraordinary com- 1 ⟂ *p*
 drop/fn-rule	4	i et *ee* σ- → 
 drop/merge-page	4	cause news of interest will be welcomed from — ⟂ any one, advice on matters of moment and delic
@@ -1680,10 +1682,17 @@ drop/merge-page	6	F ox ⟂ All of us who are truly His, are in some degre
 drop/merge-page	7	t from religious considerations, there is very ⟂ much in and about death to scare the imaginati
 drop/merge-page	7	hile the great world goes on as before, oF 4 j ⟂ buying and selling, planting and building, mar
 drop/footnote	7	The utterances of the wiser heathen on the subject of death are exceedingly touching. Eur
+drop/footnote-cont	7	*Tis* οἶδεν εἰ πὸ ζῆν μέν *tors* καπθανεῖν,
+drop/footnote-cont	7	*To* κατθανεῖν δὲ ζῆν ;--- ‘
+drop/footnote-cont	7	Who knows if living be not death, and dying life?’ Yet this remains fo
+drop/footnote-cont	7	\* *Animula vagula, blandula, Flospes comesque corporis, Que nunc abib
+drop/footnote-cont	7	Poor little fluttering, pleasing sprite, My bosom’s friend and guest, 
 drop/fn-mark-glyph	7	?
 drop/fn-ref	7	plato or a cicero ⟨1⟩
+drop/dup-fn-ref	7	1
 drop/merge-page	7	ever. We cannot return to live them over again ⟂ ΄
 drop/fn-rule	7	= *= SE* → 
+drop/merge-page	7	ro.<sup class="jh-fn" data-fn="102-1">1</sup>  ⟂ On this dark background, then, of human fear, 
 drop/merge-page	7	rding to the teaching of Scripture, the endur- ⟂ ance by the Son of God of the punishment of si
 drop/merge-page	7	hat ἐξ *stood in the very closest relation to* ⟂ *the resolution in the other clause of the ver
 drop/merge-page	7	 of our Lord Jesus Christ, which, according to ⟂ His abundant mercy, hath begotten us again unt
@@ -2055,6 +2064,7 @@ drop/footnote	27	The author having had occasion, in his *Lectures on the Epistle
 drop/fn-mark-glyph	27	\*
 drop/fn-ref	27	wrongs will be righted ⟨1⟩
 drop/fn-ref	27	lord draweth nigh ' ⟨2⟩
+drop/dup-fn-ref	27	2
 drop/merge-page	27	venge himself, to withhold his hand, and leave ⟂ the matter with the Lord Jesus. When He comes 
 drop/merge-page	27	arriage.’ The ‘sign of the Son of man’ has not ⟂ yet appeared in the sky. Scoffers say, ‘Where 
 drop/merge-page	27	 His coming. Paul, too, finding that the Thes- ⟂ salonians had misconceived the principle of th
@@ -2220,6 +2230,7 @@ drop/fn-ref	tail	railing for railing ' ⟨6⟩
 drop/fn-ref	tail	be not judged ' ⟨7⟩
 drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	be shown to you ⟨8⟩
+drop/dup-fn-ref	tail	2
 drop/merge-page	tail	2H ⟂ bound with the chains which adorn saints,—the 
 drop/footnote-short	tail	⟨Matt. vii. 2.⟩ ← 切出 ⟨1
 
@@ -2239,6 +2250,7 @@ drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	have these within him ⟨6⟩
 drop/fn-mark-glyph	tail	?
 drop/fn-ref	tail	'carry anything out ' ⟨7⟩
+drop/dup-fn-ref	tail	4
 drop/merge-page	tail	Pet. i. 13. 6 1 Pet. iii. 9. 7 Matt. vii. 1. 8 ⟂ it shall be measured to you again<sup class="j
 drop/footnote-short	tail	⟨Gal. vi. 7.⟩ ← 切出 ⟨5. Gal. vi. 7. 4⟩
 drop/footnote	tail	Or the supplement may be, ‘let us teach our wives.’ \*
@@ -2279,6 +2291,7 @@ drop/fn-ref	tail	flesh is weak ' ⟨4⟩
 drop/fn-ref	tail	to the tree ' ⟨5⟩
 drop/fn-ref	tail	in his mouth ' ⟨6⟩
 drop/fn-ref	tail	live in him ' ⟨7⟩
+drop/dup-fn-ref	tail	4
 drop/merge-page	tail	<sup class="jh-fn" data-fn="503-4">4</sup> Let ⟂ VIL. VIII. δὲ Pet. ii, 24. $13 Pet. ii. 22. 7 
 drop/footnote-short	tail	⟨Phil. ii. 16.⟩ ← 切出 ⟨3 Phil. ii. 16. 4⟩
 drop/footnote-short	tail	⟨Rom. xii. 10.⟩ ← 切出 ⟨6 Rom. xii. 10. 7⟩
@@ -2302,6 +2315,7 @@ drop/footnote	tail	An evident reference to Col. iii. 5.
 drop/footnote	tail	Some such word as ‘ praised’ has, no doubt, been accidentally omitted by a copyist of the 
 drop/footnote	tail	The people of Smyrna,
 drop/footnote	tail	6\* Him’ in the version.
+drop/footnote-cont	tail	\*\* Cor. vi. 2. 4
 drop/fn-mark-glyph	tail	!
 drop/fn-ref	tail	an elder among you ⟨1⟩
 drop/fn-ref	tail	be defiled with idolatry ⟨2⟩
@@ -2312,6 +2326,7 @@ drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	knew god but we ⟨5⟩
 drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	therefore brethren for valens ⟨6⟩
+drop/dup-fn-ref	tail	2
 drop/merge-page	tail	-P Pet. v. §. ὦ Pet. ize. ⟂ be blasphemed among you. But woe to him throug
 drop/footnote-short	tail	⟨Phil. iii. 18.⟩ ← 切出 ⟨4 Phil. iii. 18. 5⟩
 drop/footnote	tail	The text of the Latin version appears to be corrupt here. By the supplement given above, h
@@ -2327,7 +2342,7 @@ drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	of the cross ' ⟨4⟩
 drop/fn-ref	tail	be manifest among all ⟨5⟩
 drop/fn-ref	tail	the letter from you ⟨6⟩
-drop/merge-page	tail	\*\* Cor. vi. 2. 4 ⟂ XII. doing this, ye build yourselves up. For I
+drop/merge-page	tail	 that ye may save the body of you all. For, \* ⟂ XII. doing this, ye build yourselves up. For I
 drop/footnote	tail	The Latin version has a present tense here, *gud cum co sunt ;* but, no doubt, this isa mi
 drop/fn-mark-glyph	tail	!
 drop/fn-ref	tail	that were with him ⟨1⟩
