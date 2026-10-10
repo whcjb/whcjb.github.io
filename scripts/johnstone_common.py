@@ -284,7 +284,7 @@ def restore_dropcap(abbyy_plain, chunk, log=None):
     return pad + pre + b[m.b:]
 
 
-def transfer_page(pars, ocr_text, dropped=None, dropcaps=None):
+def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None):
     """一页：ABBYY 的段落结构与斜体 → OCR 的字流，出 markdown。
 
     两步走 —— 先整页粗对一次只为切出段落边界，再**按段细对**搬斜体。
@@ -324,8 +324,55 @@ def transfer_page(pars, ocr_text, dropped=None, dropcaps=None):
         # 且全大写，公共块还得 ≥14 个字，正常段落两边开头一致时根本不触发。
         chunk = restore_dropcap(ab_plains[i], chunk, dropcaps)
         text, ital = _par_italic(par, chunk, dropped)
-        out.append(_emit(text, ital))
+        md = _emit(text, ital)
+        v = verse[i] if verse and i < len(verse) else None
+        if v:
+            md = _as_verse(md, v)
+        out.append(md)
     return '\n\n'.join(out)
+
+
+def _as_verse(md, lines):
+    """一段诗拆回一行一句，包成 `.jh-verse`。
+
+    哪一段是诗由 ABBYY 的行坐标定（见 extract_johnstone.verse_pars），
+    这里只管**切点**：按原书各行的字数比例摊，落点就近找空格。不拿
+    ABBYY 的行文字去匹配——它那份 OCR 更糊（`Animula vagula` 读成
+    `Animiila vagiila`），匹配不上就整块丢了。
+
+    切点可能落在斜体区中间，那会留下落单的星号。所以每切一刀就数一次
+    未转义星号，奇数就补上闭合、下一行开头补回开启。
+    """
+    total = sum(len(x) for x in lines)
+    if total < 20 or len(lines) < 2 or len(md) < 20:
+        return md
+    cuts, acc = [], 0
+    for x in lines[:-1]:
+        acc += len(x)
+        k = int(round(len(md) * acc / total))
+        k = md.rfind(' ', 0, min(k + 1, len(md)))
+        if k > 0 and (not cuts or k > cuts[-1] + 4):
+            cuts.append(k)
+    if not cuts:
+        return md
+    parts, prev = [], 0
+    for k in cuts:
+        parts.append(md[prev:k].strip())
+        prev = k + 1
+    parts.append(md[prev:].strip())
+    parts = [x for x in parts if x]
+    if len(parts) < 2:
+        return md
+    fixed, open_it = [], False
+    for x in parts:
+        if open_it:
+            x = '*' + x
+        n = len(re.findall(r'(?<!\\)\*', x))
+        open_it = n % 2 == 1
+        if open_it:
+            x += '*'
+        fixed.append(x)
+    return '<span class="jh-verse">' + '<br>'.join(fixed) + '</span>'
 
 
 def _emit(text, ital):

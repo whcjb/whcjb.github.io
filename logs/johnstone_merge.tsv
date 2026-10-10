@@ -1685,8 +1685,8 @@ drop/footnote	7	The utterances of the wiser heathen on the subject of death are 
 drop/footnote-cont	7	*Tis* οἶδεν εἰ πὸ ζῆν μέν *tors* καπθανεῖν,
 drop/footnote-cont	7	*To* κατθανεῖν δὲ ζῆν ;--- ‘
 drop/footnote-cont	7	Who knows if living be not death, and dying life?’ Yet this remains fo
-drop/footnote-cont	7	\* *Animula vagula, blandula, Flospes comesque corporis, Que nunc abib
-drop/footnote-cont	7	Poor little fluttering, pleasing sprite, My bosom’s friend and guest, 
+drop/footnote-cont	7	<span class="jh-verse">\* *Animula vagula, blandula,*<br>*Flospes come
+drop/footnote-cont	7	<span class="jh-verse">Poor little fluttering, pleasing sprite,<br>My 
 drop/fn-mark-glyph	7	?
 drop/fn-ref	7	plato or a cicero ⟨1⟩
 drop/dup-fn-ref	7	1
@@ -2137,7 +2137,6 @@ drop/merge-page	29	es are beaten out with a staff, and the cummin ⟂ with a rod
 drop/footnote-short	29	⟨Mrs. Browning.⟩ ← 切出 ⟨!
 
 Mrs. Browning.⟩
-drop/fn-mark-glyph	29	!
 drop/fn-ref	29	thank thee god ' ⟨1⟩
 drop/merge-page	29	history of all men is made up of little occur- ⟂ rences ; and the sum of the influence of these
 drop/fn-rule	29	— = *= uw* → 
@@ -2518,7 +2517,7 @@ drop/pipe	17	is followed by a statement of | his reasons for doing so ; a
 drop/pipe	17	ur, a workman, very efficient | and seemingly much needed, i
 drop/pipe	17	hrist’s ;’ and the fervour of | zeal, and grand self-forgetf
 drop/merge-inner	17	to be a Christian energetic and brave, _ ⟂ one to whom I am bound by the closest ti
-drop/merge-inner	17	ed Either man’s work or His own gifts,’— ⟂ that even those instruments which He has
+drop/merge-inner	17	er man’s work or His own gifts,’—</span> ⟂ that even those instruments which He has
 drop/merge-inner	17	- 228 *Lectures on Philippians. (*cH. πὶ ⟂ labour and suffering, is willing, ‘for t
 drop/inner-head	18	XVIII. JOY IN THE LORD. \*
 drop/pipe	18	Lord,—such as become saints.’ |

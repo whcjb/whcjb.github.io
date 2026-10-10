@@ -26,6 +26,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import xml.etree.ElementTree as ET
 import alexander_abbyy as A
 import johnstone_common as J
 
@@ -259,6 +260,8 @@ def looks_like_head_title(line):
 
 
 DROPCAPS = []
+VERSE = {}
+VERSE_LOG = []
 DROPPED_ITALIC = []
 
 
@@ -270,7 +273,7 @@ def pars_attrs(par):
     return None
 
 
-def page_text(pars, lines, first_line, shapes):
+def page_text(pars, lines, first_line, shapes, vflags=None):
     """一页 → markdown。先剔页眉，再合流。
 
     页眉只剔**本页第一行**那一处。整页逐行比对会把正文里碰巧同形的句子
@@ -294,8 +297,8 @@ def page_text(pars, lines, first_line, shapes):
         body.append(l)
     ocr = J.join_ocr_lines(body)
 
-    keep, keep0, dropped_head = [], None, False
-    for par in pars:
+    keep, keep_v, keep0, dropped_head = [], [], None, False
+    for pi, par in enumerate(pars):
         # ⚠️ pars 是**原始 par 字典**，不是 text 串：续行判据要读 attrs
         p = par['text'] if isinstance(par, dict) else par
         plain = J.strip_sentinels(p)[0].strip()
@@ -307,12 +310,14 @@ def page_text(pars, lines, first_line, shapes):
         if keep0 is None and plain:
             keep0 = par
         keep.append(p)
+        keep_v.append(vflags[pi] if vflags and pi < len(vflags) else None)
     if not keep or not ocr.strip():
         return '', False
     # ABBYY 的 startIndent：首行缩进＝新段落；没有缩进＝上一页的续行。
     # 全书 418 页里 399 页是续行——这正是按页拼接会切错的地方。
     cont = not pars_attrs(keep0)
-    return J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS), cont
+    return (J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS, keep_v),
+            cont)
 
 
 def _key(s):
@@ -977,6 +982,17 @@ def place_fn_refs(text, refs, log, sec, leaf):
 
 
 RE_WORD_OFF = re.compile(r"[A-Za-z']+")
+RE_TAG = re.compile(r'<[^>]+>')
+
+
+def _plain_words(s, n=2):
+    """量词频前先剥 HTML 标签。
+
+    诗块包了 `<span class="jh-verse">`，`span`/`class`/`verse`/`br` 都会
+    被当成正文词，「这一段的词是不是全来自页脚」立刻失真——p.102 的
+    Animula 四行因此没被收进脚注（体检从 117 退回 116）。
+    """
+    return [w.lower() for w in re.findall(r'[A-Za-z]{%d,}' % n, RE_TAG.sub(' ', s))]
 TWO_LETTER = set('am an as at be by do go he if in is it me my no of on or '
                  'so to up us we ye oh ah lo ox ye'.split())
 
@@ -1087,7 +1103,7 @@ def excise_footnotes(text, fns, short, foot_pool, log, sec):
     pool = Counter(w for _n, fw in fns for w in fw)
     rest = []
     for par in text.split('\n\n'):
-        pwords = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", par)]
+        pwords = _plain_words(par)
         if len(pwords) >= 3:
             have = Counter(pwords)
             cov = sum(min(c, pool.get(w, 0)) for w, c in have.items()) / len(pwords)
@@ -1158,8 +1174,8 @@ def excise_footnotes(text, fns, short, foot_pool, log, sec):
             # 是希腊字母，OCR 出来的 `Tis`/`tors` 两边都不认）。整段以希腊
             # 文为主的，直接算续段——第一行诗就是这么被挡在外面的。
             greek = len(re.findall(r'[Ͱ-Ͽἀ-῿]', pars[-1]))
-            latin = len(re.findall(r'[A-Za-z]', pars[-1]))
-            pw = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", pars[-1])]
+            latin = len(re.findall(r'[A-Za-z]', RE_TAG.sub(' ', pars[-1])))
+            pw = _plain_words(pars[-1])
             if tail and greek >= 3 and greek >= latin:
                 tail.insert(0, pars.pop())
                 continue
@@ -1512,6 +1528,61 @@ def _render_notes(body, notes):
     return '<div class="jh-notes">\n' + '\n'.join(rows) + '\n</div>'
 
 
+def verse_pars(xml_path):
+    """按 ABBYY 的**行坐标**标出哪些段是诗，顺带记下每段的行。
+
+    原书把引用的诗排成缩进的一行一句（用户截图 p.102 的 Animula 四行）。
+    我们按段出文字，四行并成一段流水句子，诗的样子就没了。ABBYY 给了行
+    的左边界，判据一眼可见：正文行 l≈164，诗行 l≈571…710。拿整页正文行的
+    **众数左边界**当基线，缩进超过页宽 12% 的算诗行；不拿固定像素，页与
+    页的版心会差几格。
+
+    **按段标，不在文字里找位置**。先前两版都是拿 ABBYY 的行文本去我们的
+    文字里模糊定位，可 ABBYY 那份 OCR 更糊（`Animula vagula` 它读成
+    `Animiila vagiila`），一个词都对不上，整块就丢了。而段落本来就是
+    一一对应的——`transfer_page` 已经按段切好了——顺着这层对应走，
+    一次模糊匹配都不用做。
+    """
+    out = {}
+    ctx = ET.iterparse(xml_path, events=('end',))
+    idx = -1
+    for _, el in ctx:
+        if el.tag != A.NS + 'page':
+            continue
+        idx += 1
+        width = int(el.get('width') or 0)
+        pars, lefts = [], []
+        for blk in el.iter(A.NS + 'block'):
+            if blk.get('blockType') != 'Text':
+                continue
+            for par in blk.iter(A.NS + 'par'):
+                lines = list(par.iter(A.NS + 'line'))
+                if not lines:
+                    continue
+                pars.append([(int(l.get('l') or 0), A._line_text(l))
+                             for l in lines])
+                lefts += [int(l.get('l') or 0) for l in lines]
+        el.clear()
+        if not lefts or not width:
+            continue
+        base = collections.Counter(lefts).most_common(1)[0][0]
+        cut = base + width * 0.12
+        flags = []
+        for lines in pars:
+            # 只数**够长的行**。脚注的首行也是缩进的，不加这条就会把
+            # `Compare Heb. iii. 1.` 连同页底那个书帖签名 `T` 一起当成
+            # 两行诗（实测 p.307）。诗是整句整句排的，行不会只有一两个字。
+            real = [(l, t) for l, t in lines if len(t.strip()) > 8]
+            ind = sum(1 for l, _t in real if l > cut)
+            body_n = len([1 for _l2, t2 in lines if len(t2.strip()) > 2])
+            ok = (len(real) >= 2 and len(real) == body_n
+                  and ind >= len(real) * 0.8)
+            flags.append([t for _l, t in real] if ok else None)
+        if any(flags):
+            out[idx] = flags
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=0, help='只处理前 N 页（试水）')
@@ -1543,6 +1614,11 @@ def main():
         LEX_CHECK = lambda w: _isw(w, _lex)
     except Exception:
         LEX_CHECK = lambda w: len(w) > 3
+    global VERSE
+    VERSE = verse_pars(load_xml())
+    print(f'诗段（按 ABBYY 行坐标）'
+          f'{sum(sum(1 for x in v if x) for v in VERSE.values())} 段',
+          file=sys.stderr)
     first, shapes = learn_heads(ocr)
     print(f'页眉形 {len(shapes)} 种（语料自证，≥3 次）', file=sys.stderr)
 
@@ -1557,7 +1633,8 @@ def main():
         if leaf >= len(ab):
             break
         txt, cont = page_text(ab[leaf]['pars'], ocr[leaf],
-                              first.get(leaf, ''), shapes)
+                              first.get(leaf, ''), shapes,
+                              VERSE.get(leaf))
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         if a.dump_page and leaf == a.dump_page:
             print(txt)

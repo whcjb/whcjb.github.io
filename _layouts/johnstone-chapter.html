@@ -144,6 +144,16 @@ layout: default
 }
 .johnstone-wrap .jh-titlepage em { color: #6b7681; }
 
+/* 引用的诗。原书排成缩进的一行一句，我们按段出文字会并成一条流水句，
+   行由 ABBYY 的行坐标切回来（extract_johnstone.verse_pars）。 */
+.johnstone-wrap .jh-verse {
+  display: block; text-align: center; margin: 14px 0;
+  font-size: .95em; line-height: 1.6; color: #46525c;
+}
+.johnstone-wrap .jh-notes .jh-verse {
+  margin: 8px 0; text-indent: 0; font-size: 1em;
+}
+
 /* 下沉首字。原书每篇开头那个字母压着下面两行，其余字母仍是大写。 */
 .johnstone-wrap .jh-dropcap {
   float: left; font-family: Georgia, "Times New Roman", serif;

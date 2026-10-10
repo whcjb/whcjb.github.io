@@ -18,6 +18,7 @@
 手抄目录是另一处可能抄错的地方，底本自己给得出来就不要手抄。
 """
 import argparse
+import difflib
 import json
 import re
 import subprocess
@@ -124,7 +125,22 @@ def split_paras(text):
     return [p.strip() for p in body.split('\n\n') if p.strip()]
 
 
-def render(paras, fallback_ch, slug=''):
+def like_title(line, head):
+    """这一行是不是本篇的讲题（OCR 读花了也要认得出）。"""
+    # 长度上限是必须的：第 9 讲的经文本身就含 conversation / gospel
+    # 几个词，跟讲题「Conversation becoming the Gospel」的字母相似度
+    # 压过了阈值，整条经文被当讲题剥掉，题记框里只剩一个出处。
+    # 讲题排一行，不会有六十个字符。
+    if not head or len(line) < 6 or len(line) > 56:
+        return False
+    a = re.sub(r'[^a-z]', '', line.lower())
+    b = re.sub(r'[^a-z]', '', head.lower())
+    if not a or not b:
+        return False
+    return difflib.SequenceMatcher(None, a, b).ratio() >= 0.62
+
+
+def render(paras, fallback_ch, slug='', head=''):
     lecture = slug.isdigit()
     """段落 → 正文，并顺带取出经文出处与题记。
 
@@ -151,7 +167,12 @@ def render(paras, fallback_ch, slug=''):
     if lecture:
         for i, p in enumerate(paras[:3]):
             q = RE_HEAD_JUNK.sub('', p.strip('* '))
-            if RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(q):
+            # 讲题被 OCR 读花了就认不出：第 8 讲印的是
+            # `A STRAIT BETWIXT TWO.`，读成 `A STRAIT BETWIXT, TWaG, ‘`，
+            # 里头混了小写字母，「整行无小写」的判据失效，整条讲题漏进
+            # 题记框（用户截图）。已知讲题就在手上，拿它做相似度比对。
+            if (RE_ROMAN_ONLY.match(p) or RE_CAPS_ONLY.match(q)
+                    or like_title(q, head)):
                 start = i + 1
     if ref_at is not None and ref_at >= start:
         head = '\n\n'.join(paras[start:ref_at + 1])
@@ -212,7 +233,9 @@ def main():
     pages, ch = [], None
     for s in seq:
         paras = split_paras((SRC / f'{s}.md').read_text(encoding='utf-8'))
-        body, ref, got = render(paras, ch if s.isdigit() else None, s)
+        head = (SRC / f'{s}.md').read_text(encoding='utf-8') \
+            .split('\n', 1)[0].lstrip('# ').strip()
+        body, ref, got = render(paras, ch if s.isdigit() else None, s, head)
         if got:
             ch = got
         if s.isdigit():
