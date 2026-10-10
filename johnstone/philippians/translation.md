@@ -30,7 +30,7 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 15 to speak the word without fear. Some indeed preach Christ even for envy and strife, but some also for good
 
-16 will. The\* ¹ one *party* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
+16 will. The<sup class="jh-fn">1</sup> one *arty* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
 19 joice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the
 
 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
@@ -51,7 +51,11 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 *II. 1 If there be,* therefore, any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any 2 tender-heartedness and compassions, fill ye up my joy, that ye be of the same mind, having the same love, with 3 united souls minding the one thing ; *doing* nothing according to factiousness or vainglory, but in lowliness of mind esteeming each other better than yourselves ;
 
-4 looking not each on your own things, but each also on the things of others. For have that mind in you, which aon 9 Ιο II 12 13 *6 was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God, 7 but emptied Himself, taking *upon Him* the form of a 8 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
+4 looking not each on your own things, but each also on
+
+5 the things of others. For have that mind in you, which
+
+6 aon 9 Ιο II 12 13 *6 was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God, 7 but emptied Himself, taking *upon Him* the form of a 8 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
 
 9 wherefore also God highly exalted Him, and gave Him 10 a name which is above every name, that in the name of Jesus every knee should bow, of *things* in heaven, and *11 things* on earth, and *things* under the earth, and *that* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
 

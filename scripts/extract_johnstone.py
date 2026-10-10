@@ -860,15 +860,68 @@ def load_footnotes():
     for f in os.listdir(VLM_DIR):
         if not f.endswith('.txt'):
             continue
-        fns = []
+        fns, refs = [], []
         for line in open(os.path.join(VLM_DIR, f), encoding='utf-8'):
             m = RE_FN_LINE.match(line)
             if m and len(m.group(1).strip()) >= 8:
                 fns.append([w.lower() for w in
                             re.findall(r"[A-Za-z']+", m.group(1))])
-        if fns:
-            out[int(f[:-4])] = [x for x in fns if len(x) >= 3]
+                continue
+            for mk in re.finditer(r'\[FN:(\d+)\]', line):
+                ctx = re.findall(r"[A-Za-z']+", line[:mk.start()])[-8:]
+                if len(ctx) >= 4:
+                    refs.append((mk.group(1), [w.lower() for w in ctx]))
+        if fns or refs:
+            out[int(f[:-4])] = ([x for x in fns if len(x) >= 3], refs)
     return out
+
+
+def place_fn_refs(text, refs, log, sec):
+    """把脚注号插回**引用处**，位置取自证人的 `[FN:n]` 标注。
+
+    先前是拿「页缝上的裸数字」猜的，猜反了：证人里 `[FN:1]` 标在
+    `spiritual traffickers.` 后面，而页末那个 `1` 是脚注**自己的编号**印在
+    页脚，于是上标插到了下一句的 `biblical knowledge,` 上（用户截图）。
+    标记位置是版面事实，看得见对错；正文一个字仍不从证人那边抄。
+    """
+    for num, ctx in refs:
+        words = [(m.group(0).lower(), m.start(), m.end())
+                 for m in RE_WORD_OFF.finditer(text)]
+        tw = [w for w, _a, _b in words]
+        sm = difflib.SequenceMatcher(None, ctx, tw, autojunk=False)
+        blocks = [b for b in sm.get_matching_blocks() if b.size]
+        if not blocks:
+            continue
+        cov = sum(b.size for b in blocks) / len(ctx)
+        end = blocks[-1].b + blocks[-1].size
+        if cov < 0.75 or end > len(words):
+            continue
+        at = words[end - 1][2]
+        while at < len(text) and text[at] in '.,;:!?’\'"”)]*\\':
+            at += 1
+        # 上标数字本身也被 OCR 读错了，就留在插入点上：
+        #   `of the Lord.’!` 的 `!` 是 ¹，`the abyss.’?` 的 `?` 是 ²，
+        #   `for His.’\*` 的 `\*` 是 ¹。影像核过（0056 页 `traffickers.¹`）。
+        # 记号的权威位置已经由证人给出，这里把读错的那一个字符抹掉。
+        # 只抹**绝不会出现在句末的**那几个：`.`、`,`、`’` 一律不动。
+        head = text[:at]
+        m3 = re.search(r'(?:\\\*|[!?^_|}])$', head)
+        if m3:
+            head = head[:m3.start()]
+            log.append((sec, 'fn-mark-glyph', m3.group(0)))
+        # 引号形的误读**不抹**。`traffickers.¹` 影像上确实没有引号，可
+        # 同样形态的 `them for His.’¹`（p.143）影像上那个引号是真的——
+        # 两边 OCR 都给了 `’`，分不开。我写过一道「本段引号落单就抹」的
+        # 自证闸，27 处里就把 p.143 这个真引号删了。证据不够就留着：
+        # 宁可留噪声，不可删正文（feedback_preserve_pdf_artifacts）。
+        tail = text[at:]
+        m4 = re.match(r'[\s]*(?:\\\*|[!?^_|}])(?=[\s]|$)', tail)
+        if m4:
+            tail = tail[m4.end():]
+            log.append((sec, 'fn-mark-glyph', m4.group(0).strip()))
+        text = head + '<sup class="jh-fn">' + num + '</sup>' + tail
+        log.append((sec, 'fn-ref', ' '.join(ctx[-4:]) + ' ⟨' + num + '⟩'))
+    return text
 
 
 RE_WORD_OFF = re.compile(r"[A-Za-z']+")
@@ -882,11 +935,9 @@ TWO_LETTER = set('am an as at be by do go he if in is it me my no of on or '
 RE_FN_REF = re.compile(r"(?<=[a-z’'\"])([,.;:]?)\s+([1-9])(?=\s+[a-z‘“]|\s*$)")
 
 
-def mark_fn_refs(text, nfn, log, sec):
+def strip_seam_digits(text, log, sec):
     def sub(m):
-        if int(m.group(2)) <= nfn:
-            return m.group(1) + '<sup class="jh-fn">' + m.group(2) + '</sup>'
-        log.append((sec, 'fn-ref-junk', m.group(0).strip()))
+        log.append((sec, 'seam-digit', m.group(0).strip()))
         return m.group(1)
     return RE_FN_REF.sub(sub, text)
 
@@ -1057,10 +1108,14 @@ def split_sections(pages, leaf_sec):
         if cont:
             text = _wipe_rule(text, 0, GARBAGE, sec)
         if leaf in footnotes:
-            text, got = excise_footnotes(text, footnotes[leaf], GARBAGE, sec)
+            fns, refs = footnotes[leaf]
+            text, got = excise_footnotes(text, fns, GARBAGE, sec)
             for g in got:
                 buckets[sec].append(FN_MARK + g)
-        text = mark_fn_refs(text, len(footnotes.get(leaf, ())), GARBAGE, sec)
+            # 页缝上的裸数字全是残渣：脚注自己的编号印在页脚，页码和书帖
+            # 签名也落在同一位置。真正的引用记号由证人的标注定位。
+            text = strip_seam_digits(text, GARBAGE, sec)
+            text = place_fn_refs(text, refs, GARBAGE, sec)
         first = True
         for p in text.split('\n\n'):
             if not p.strip():
