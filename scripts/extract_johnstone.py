@@ -261,6 +261,7 @@ def looks_like_head_title(line):
 
 DROPCAPS = []
 VERSE = {}
+WITNESS = {}
 VERSE_LOG = []
 DROPPED_ITALIC = []
 
@@ -1583,6 +1584,83 @@ def verse_pars(xml_path):
     return out
 
 
+RE_STAR_QUOTE = re.compile(r'(^|\n\n)\\\*(\s+)(?=[A-Z])')
+
+
+def mend_open_quote(md, log, sec):
+    """段首那只落单的星号其实是**开引号**。
+
+    ABBYY 把 `‘` 读成了 `*`（影像 leaf 0127 `‘ Only let your conversation…`
+    核过），落盘时又转义成 `\\*` 免得被当斜体，页面上就显示成一个星号
+    （用户截图）。只改段首这一处，且要求**本段里有闭引号**——没有配对
+    就说不准，宁可留着。
+    """
+    out, last = [], 0
+    for m in RE_STAR_QUOTE.finditer(md):
+        end = md.find('\n\n', m.end())
+        par = md[m.end():end if end > 0 else len(md)]
+        if '’' not in par and "'" not in par:
+            continue
+        out.append(md[last:m.start()] + m.group(1) + '‘' + m.group(2))
+        last = m.end()
+        log.append((sec, 'star-open-quote', par[:46]))
+    return ''.join(out) + md[last:] if out else md
+
+
+# 白名单体检捞出来的全部游离符号。黑名单判据天生看不见单个游离符号，
+# 必须反过来列**允许出现的字符**、其余一律报——两轮各捞出一批。
+# `§` 不收：`Winer, *Gram.* § 20. 2` 里它是真的节号。
+STRAY = '—–¢©»®°£¥«¶†‡µſ~=>+{}|^_`@#$%¥·•'
+RE_STRAY = re.compile(r'(?<=\s)[' + STRAY + r']+(?=\s)')
+
+
+def drop_stray(md, wit, log, sec):
+    """独立成词的噪点与破折号，**按位置向证人取证**后才删。
+
+    `confident, © and restful`、`Him,—how — impressive`（用户两次截图）
+    都是扫描噪点被读成了字符。语料自证只能说明它可疑——全书紧贴前词的
+    破折号 1737 个、两侧带空格的 182 个（9.5%），比例低不等于每一个都错。
+
+    所以逐个取证：拿前后各四个词去证人那份转录里定位，证人在**同一位置**
+    没有这个符号才删。定不了位就留着——证据不够不动手。
+
+    `§` 不在清理之列：`Winer, *Gram.* § 20. 2` 里它是真的节号。
+    """
+    if not wit:
+        return md
+    ww = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", wit)]
+    out, last = [], 0
+    for m in RE_STRAY.finditer(md):
+        pre = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", md[:m.start()])][-4:]
+        post = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", md[m.end():])][:4]
+        if len(pre) < 3 or len(post) < 3:
+            continue
+        seq = pre + post
+        sm = difflib.SequenceMatcher(None, seq, ww, autojunk=False)
+        blk = sm.find_longest_match(0, len(seq), 0, len(ww))
+        if blk.size < len(seq) - 1 or blk.a != 0:
+            continue
+        # 证人里这两个词之间有没有同样的符号
+        a = blk.b + len(pre)
+        gap = _wit_gap(wit, ww, blk.b, len(pre))
+        if any(c in gap for c in STRAY):
+            continue
+        out.append(md[last:m.start()].rstrip() + ' ')
+        last = m.end() + 1
+        log.append((sec, 'stray', m.group(0) + ' ⟨' + ' '.join(pre[-2:])
+                    + ' ⟂ ' + ' '.join(post[:2]) + '⟩'))
+    return ''.join(out) + md[last:] if out else md
+
+
+def _wit_gap(wit, ww, b, npre):
+    """证人文本里第 b+npre-1 个词与第 b+npre 个词之间的那一小截。"""
+    offs = [(m.start(), m.end()) for m in re.finditer(r"[A-Za-z]{2,}", wit)]
+    i = b + npre
+    if i <= 0 or i >= len(offs):
+        return ''
+    return wit[offs[i - 1][1]:offs[i][0]]
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=0, help='只处理前 N 页（试水）')
@@ -1614,6 +1692,13 @@ def main():
         LEX_CHECK = lambda w: _isw(w, _lex)
     except Exception:
         LEX_CHECK = lambda w: len(w) > 3
+    global WITNESS
+    WITNESS = {}
+    if os.path.isdir(VLM_DIR):
+        for _f in os.listdir(VLM_DIR):
+            if _f.endswith('.txt'):
+                WITNESS[int(_f[:-4])] = open(
+                    os.path.join(VLM_DIR, _f), encoding='utf-8').read()
     global VERSE
     VERSE = verse_pars(load_xml())
     print(f'诗段（按 ABBYY 行坐标）'
@@ -1636,6 +1721,8 @@ def main():
                               first.get(leaf, ''), shapes,
                               VERSE.get(leaf))
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
+        txt = mend_open_quote(txt, GARBAGE, '')
+        txt = drop_stray(txt, WITNESS.get(leaf, ''), GARBAGE, str(leaf))
         if a.dump_page and leaf == a.dump_page:
             print(txt)
             return
