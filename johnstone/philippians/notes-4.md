@@ -22,7 +22,7 @@ Lightfoot would join μετὰ καὶ Κλήμεντος, κ.τ.λ., with συ�
 
 <span class="jh-vref">5.</span> As to the exact meaning of ἐπιείκεια*, Or* TO ἐπιεικὲς, See Trench’s *Synonyms, 1*st series, § 43.
 
-<span class="jh-vref">6.</span> As to the distinction of meaning between προσευχὴ and δέησις, see Trench’s *Synonyms,* 2nd series, § 1.
+<span class="jh-vref">6.</span> As to the distinction of meaning between προσευχὴ and δέησις, see Trench’s *Synonyms,* 2nd series, 1.
 
 <span class="jh-vref">7.</span> Meyer and Lightfoot take ἡ ὑπερέχουσα πάντα νοῦν to mean ‘ which surpasseth every counsel, or device’ (of man), as a defence for the soul. This thought is in itself true and pertinent ; but a comparison of Eph. iii. 20 naturally leads one to think it more probable that the ordinary view of the meaning was that intended by the apostle.
 
@@ -38,7 +38,7 @@ With regard to ἐφ᾽ ᾧ, ‘ for which,’ compare note on chap. iii. 12. Ha
 
 , ‘also,’ before ἐφρονεῖτε, has relation to the *tense* of the verb. The apostle had expressed his joy that their care of CH. 1v.11,12.] *Motes on the Greek Text.* 475 him had ‘ *xow at last* flourished again.’ No sooner has he written or dictated the words, than it occurs to him that his statement might easily be misconstrued into one of reproach for their conduct in the past; and accordingly he adds,—‘a matter for which ye *were* careful also’ before this, ‘ but lacked opportunity’ of practically showing your affection.
 
-<span class="jh-vref">11.</span> Καθ᾿ ὑστέρησιν means ‘in consequence of want.’ For this force of κατὰ, compare Matt. xix. 3; Acts iii. 17; and see Winer, § 49. d, b. b.
+<span class="jh-vref">11.</span> Καθ᾿ ὑστέρησιν means ‘in consequence of want.’ For this force of κατὰ, compare Matt. xix. 3; Acts iii. 17; and see Winer, 49. ἡ, b. ὁ.
 
 For an admirable statement of the meaning of αὐτάρκης, see Barrow, Sermon xxxvii., near the beginning.
 

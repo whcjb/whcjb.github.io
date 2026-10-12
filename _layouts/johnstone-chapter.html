@@ -178,11 +178,17 @@ layout: default
 }
 .johnstone-wrap .jh-notes p { margin: 0 0 11px; text-align: justify; }
 .johnstone-wrap .jh-notes p:last-child { margin-bottom: 0; }
-.johnstone-wrap .jh-notes .jh-note { padding-left: 22px; text-indent: -22px; }
+/* 脚注号挂在左侧。**不能用负缩进**（`padding-left:22px; text-indent:-22px`）
+   ——负缩进把首行整体左移，窄屏上容器几乎没有外边距可以接住，号码就被推
+   到视口外裁掉了，手机上一个都看不见（用户反馈）。改成绝对定位：号码待在
+   padding 之内，不依赖容器外边距。 */
+.johnstone-wrap .jh-notes .jh-note {
+  position: relative; padding-left: 24px; text-indent: 0;
+}
 .johnstone-wrap .jh-back {
-  display: inline-block; width: 22px; color: var(--jh-ink);
-  font-size: 11.5px; font-weight: bold; text-decoration: none;
-  vertical-align: super; line-height: 1;
+  position: absolute; left: 0; top: .12em;
+  color: var(--jh-ink); font-size: 11.5px; font-weight: bold;
+  text-decoration: none; line-height: 1.6;
 }
 .johnstone-wrap a.jh-back:hover { text-decoration: underline; }
 .johnstone-wrap .jh-fn a { color: inherit; text-decoration: none; }

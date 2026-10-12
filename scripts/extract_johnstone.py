@@ -262,6 +262,7 @@ def looks_like_head_title(line):
 DROPCAPS = []
 VERSE = {}
 WITNESS = {}
+SMALLFONT = {}
 VERSE_LOG = []
 DROPPED_ITALIC = []
 
@@ -962,7 +963,10 @@ def place_fn_refs(text, refs, log, sec, leaf):
         # 记号的权威位置已经由证人给出，这里把读错的那一个字符抹掉。
         # 只抹**绝不会出现在句末的**那几个：`.`、`,`、`’` 一律不动。
         head = text[:at]
-        m3 = re.search(r'(?:\\\*|[!?^_|}])$', head)
+        # 读错的记号也有**希腊字形**：`humility.’` 后面那个 `ἢ` 就是上标 ²
+        # （用户截图）。它在页末，后面没有词可取证，游离判据够不着；但它的
+        # 位置是确定的——紧贴记号——所以在这里按位置清。
+        m3 = re.search(r'(?:\\\*|[!?^_|}]|(?<=\s)[Ͱ-Ͽἀ-῿]{1,2})$', head)
         if m3:
             head = head[:m3.start()]
             log.append((sec, 'fn-mark-glyph', m3.group(0)))
@@ -972,7 +976,7 @@ def place_fn_refs(text, refs, log, sec, leaf):
         # 自证闸，27 处里就把 p.143 这个真引号删了。证据不够就留着：
         # 宁可留噪声，不可删正文（feedback_preserve_pdf_artifacts）。
         tail = text[at:]
-        m4 = re.match(r'[\s]*(?:\\\*|[!?^_|}])(?=[\s]|$)', tail)
+        m4 = re.match(r'[\s]*(?:\\\*|[!?^_|}]|[Ͱ-Ͽἀ-῿]{1,2})(?=[\s]|$)', tail)
         if m4:
             tail = tail[m4.end():]
             log.append((sec, 'fn-mark-glyph', m4.group(0).strip()))
@@ -1040,7 +1044,7 @@ def _one_par(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 
-def excise_footnotes(text, fns, short, foot_pool, log, sec):
+def excise_footnotes(text, fns, short, foot_pool, small, log, sec):
     """把脚注从这一页的正文里切出来，按**词序列对齐**定位。
 
     上一版只认「整段就是一条脚注」。可 ABBYY 常把短脚注直接并进正文段里，
@@ -1053,9 +1057,32 @@ def excise_footnotes(text, fns, short, foot_pool, log, sec):
     覆盖率六成以上且跨度不比脚注本身长太多才算——跨度那一条是防它把
     零散的公共词连成一大片，把正文一起切走。
     """
-    if not fns and not short:
+    if not fns and not short and not small:
         return text, []
     got = []
+    # 先按**字号**搬整段（ABBYY 认得出的脚注段，含没有标签的跨页续写）
+    for sm in small:
+        sw = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", sm)]
+        if len(sw) < 5:
+            continue
+        pars = text.split('\n\n')
+        best, bi = 0.0, None
+        for i, par in enumerate(pars):
+            pw = _plain_words(par)
+            if len(pw) < 4:
+                continue
+            m2 = difflib.SequenceMatcher(None, sw, pw, autojunk=False)
+            cov = sum(b.size for b in m2.get_matching_blocks()) / len(sw)
+            if cov > best:
+                best, bi = cov, i
+        if bi is None or best < 0.6:
+            continue
+        # 小写起头＝上一条脚注的续写，用 None 当号码，交给调用方接上去
+        cont = bool(re.match(r"[\s‘’'\"*\\]*[a-z]", pars[bi]))
+        got.append((None if cont else '', _one_par(pars.pop(bi))))
+        log.append((sec, 'footnote-fs' + ('-cont' if cont else ''),
+                    pars and sm[:80] or sm[:80]))
+        text = '\n\n'.join(pars)
     # 一两个词的短脚注（`Chrysostom.`、`Acts ii. 24.`）：词序列对齐在两个
     # 词上不可靠，会在全页找到一堆巧合。改用两条一起卡——
     #   ① 字面模糊匹配（词之间允许 OCR 噪声）
@@ -1317,8 +1344,16 @@ def split_sections(pages, leaf_sec):
             fns, short, refs, sig, foot_pool = footnotes[leaf]
             text = drop_signature(text, sig, GARBAGE, sec)
             text, got = excise_footnotes(text, fns, short, foot_pool,
-                                         GARBAGE, sec)
+                                         SMALLFONT.get(leaf, ()), GARBAGE, sec)
             for num, g in got:
+                if num is None:
+                    # 跨页续写：接到上一条脚注后面，不另起一条
+                    k = next((i for i in range(len(buckets[sec]) - 1, -1, -1)
+                              if buckets[sec][i].startswith(FN_MARK)), None)
+                    if k is not None:
+                        buckets[sec][k] = buckets[sec][k].rstrip() + ' ' + g
+                        continue
+                    num = ''
                 buckets[sec].append(f'{FN_MARK}{leaf}-{num}\x1f{g}')
             # 页缝上的裸数字全是残渣：脚注自己的编号印在页脚，页码和书帖
             # 签名也落在同一位置。真正的引用记号由证人的标注定位。
@@ -1529,6 +1564,58 @@ def _render_notes(body, notes):
     return '<div class="jh-notes">\n' + '\n'.join(rows) + '\n</div>'
 
 
+def small_font_pars(xml_path):
+    """按**字号**挑出脚注段：原书脚注排小一号字。
+
+    证人只给脚注的**起头**打 `[FN:n]`。一条脚注写到页底没完、翻页在下一页
+    的页脚区接着写，那半截**没有标签**，于是落进正文，还被跨页续句接上，
+    读出来是 `…as ‘ others.’ [δα gospel, the tidings of love.`（用户截图）。
+
+    ABBYY 的 `fs` 是更硬的信号：同一页上正文 12、脚注 10、页眉 14。
+    和证人各有遗漏（一致 404 页，字号多判 81、少判 24），所以**两者并用**。
+
+    多判的那 81 页基本是书前题名页、目录、题献——那里本来就字号杂乱。
+    用内容条件挡掉：要有八个以上拉丁词，且小写字母占多数。
+    """
+    out = {}
+    pg, buf = -1, []
+
+    def flush(idx, chunk):
+        pars = []
+        for pm in re.finditer(r'<par\b[^>]*>(.*?)</par>', chunk, re.S):
+            b = pm.group(1)
+            fs = [float(x) for x in re.findall(r'fs="([\d.]+)"', b)]
+            txt = ''.join(re.findall(r'>([^<])</charParams>', b))
+            if fs and txt.strip():
+                pars.append((collections.Counter(fs).most_common(1)[0][0], txt))
+        if not pars:
+            return
+        body = collections.Counter(
+            f for f, t in pars for _ in range(len(t))).most_common(1)[0][0]
+        got = []
+        for f, t in pars:
+            if f > body - 1.5:
+                continue
+            words = re.findall(r"[A-Za-z]{2,}", t)
+            low = sum(1 for c in t if c.islower())
+            up = sum(1 for c in t if c.isupper())
+            if len(words) >= 8 and low > up:
+                got.append(t)
+        if got:
+            out[idx] = got
+
+    for ln in open(xml_path, encoding='utf-8'):
+        if '<page ' in ln:
+            pg += 1
+            if buf:
+                flush(pg - 1, ''.join(buf))
+            buf = []
+        buf.append(ln)
+    if buf:
+        flush(pg, ''.join(buf))
+    return out
+
+
 def verse_pars(xml_path):
     """按 ABBYY 的**行坐标**标出哪些段是诗，顺带记下每段的行。
 
@@ -1611,7 +1698,11 @@ def mend_open_quote(md, log, sec):
 # 必须反过来列**允许出现的字符**、其余一律报——两轮各捞出一批。
 # `§` 不收：`Winer, *Gram.* § 20. 2` 里它是真的节号。
 STRAY = '—–¢©»®°£¥«¶†‡µſ~=>+{}|^_`@#$%¥·•'
-RE_STRAY = re.compile(r'(?<=\s)[' + STRAY + r']+(?=\s)')
+RE_GREEK = re.compile(r'[Ͱ-Ͽἀ-῿]')
+# 游离的**单个希腊字母**也算一类。白名单体检整类跳过了希腊文范围——
+# 希腊文是正文的一部分——于是这种看不见（用户截图 `…great humility.’² ἢ`）。
+# 「跳过一整类」正是白名单自己的盲区，要单列判据补上。
+RE_STRAY = re.compile(r'(?<=\s)(?:[' + STRAY + r']+|[Ͱ-Ͽἀ-῿]{1,2})(?=\s)')
 
 
 def drop_stray(md, wit, log, sec):
@@ -1643,7 +1734,10 @@ def drop_stray(md, wit, log, sec):
         # 证人里这两个词之间有没有同样的符号
         a = blk.b + len(pre)
         gap = _wit_gap(wit, ww, blk.b, len(pre))
-        if any(c in gap for c in STRAY):
+        # 证人在同一位置有没有**同类**的符号：希腊 token 查希腊，其余查噪点表
+        if (RE_GREEK.search(m.group(0)) and RE_GREEK.search(gap)) or \
+                (not RE_GREEK.search(m.group(0))
+                 and any(c in gap for c in STRAY)):
             continue
         out.append(md[last:m.start()].rstrip() + ' ')
         last = m.end() + 1
@@ -1659,6 +1753,71 @@ def _wit_gap(wit, ww, b, npre):
     if i <= 0 or i >= len(offs):
         return ''
     return wit[offs[i - 1][1]:offs[i][0]]
+
+
+def _norm_w(x):
+    return re.sub(r"[^A-Za-z']", '', x).lower()
+
+
+def mend_greek_garble(md, pars, wit, log, leaf):
+    """夹在英文句子中间的**希腊形乱码**，换回真词。
+
+    `The truth which awakens it is [δα gospel`——那个 `[δα` 是 `the`
+    （影像 p.157 核过）。tesseract 把一个英文词读成了希腊字形，游离判据
+    够不着（它两侧都黏着正文），非词率也不报（希腊字符被整类排除）。
+
+    **候选取 ABBYY**（非生成式，本来就是我们两条字流之一），证人只用来
+    **印证**：两家在同一位置给出同一个词才换。生成式模型的字一个都不进
+    产物，这条线不破。实测 15 处可定位、14 处两家一致。
+    """
+    if not wit:
+        return md
+    abp = ' '.join(J.strip_sentinels(x['text'])[0] for x in pars)
+    aw = re.findall(r'\S+', abp)
+    alow = [_norm_w(x) for x in aw]
+    ww = re.findall(r'\S+', wit)
+    wlow = [_norm_w(x) for x in ww]
+    toks = [(m.group(0), m.start(), m.end()) for m in re.finditer(r'\S+', md)]
+    out, last = [], 0
+    for i, (w, a, b) in enumerate(toks):
+        if not RE_GREEK.search(w) or a < last:
+            continue
+        # **三个以上希腊字母的不碰**：那是真希腊文。没有这条闸，
+        # `Θεῷ,` 被换成 `robbery`、`σπένδομαι,--the` 换成 `the`、
+        # `περισσεύειν,` 换成一个引号——拿修复器去毁正文（实测三处）。
+        # 乱码都是一两个字母的残形（`ἢ`、`ΟΠ`、`[δα`）。
+        if len(RE_GREEK.findall(w)) >= 3:
+            continue
+        pre = [_norm_w(toks[k][0]) for k in range(max(0, i - 3), i)]
+        post = [_norm_w(toks[k][0]) for k in range(i + 1, min(len(toks), i + 5))]
+        # 页首那个词的前文在**上一页**，本页取不到——`[δα gospel, the tidings`
+        # 就是这么漏掉的。前文不够时改用后文单独定位，取它前面那个词。
+        if len([c for c in post if len(c) > 1]) < 3:
+            continue
+        head_only = len([c for c in pre if len(c) > 1]) < 2
+        seq = post if head_only else pre + post
+        npre = 0 if head_only else len(pre)
+
+        def pick(low, words):
+            sm = difflib.SequenceMatcher(None, seq, low, autojunk=False)
+            bl = sm.find_longest_match(0, len(seq), 0, len(low))
+            if bl.size < len(seq) - 1 or bl.a != 0:
+                return None
+            k = bl.b + npre - (1 if head_only else 0)
+            return words[k] if 0 <= k < len(words) else None
+
+        pa, pw = pick(alow, aw), pick(wlow, ww)
+        if not pa or not pw:
+            continue
+        na = _norm_w(pa)
+        if not na or na != _norm_w(pw) or RE_GREEK.search(pa):
+            continue
+        if LEX_CHECK is not None and not LEX_CHECK(na) and na[:1].islower():
+            continue
+        out.append(md[last:a] + pa)
+        last = b
+        log.append((str(leaf), 'greek-garble', w + ' → ' + pa))
+    return ''.join(out) + md[last:] if out else md
 
 
 def main():
@@ -1692,6 +1851,10 @@ def main():
         LEX_CHECK = lambda w: _isw(w, _lex)
     except Exception:
         LEX_CHECK = lambda w: len(w) > 3
+    global SMALLFONT
+    SMALLFONT = small_font_pars(load_xml())
+    print(f'小字号脚注段（按 ABBYY fs）'
+          f'{sum(len(v) for v in SMALLFONT.values())} 段', file=sys.stderr)
     global WITNESS
     WITNESS = {}
     if os.path.isdir(VLM_DIR):
@@ -1722,6 +1885,8 @@ def main():
                               VERSE.get(leaf))
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         txt = mend_open_quote(txt, GARBAGE, '')
+        txt = mend_greek_garble(txt, ab[leaf]['pars'], WITNESS.get(leaf, ''),
+                                GARBAGE, leaf)
         txt = drop_stray(txt, WITNESS.get(leaf, ''), GARBAGE, str(leaf))
         if a.dump_page and leaf == a.dump_page:
             print(txt)
