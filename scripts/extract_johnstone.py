@@ -275,7 +275,38 @@ def pars_attrs(par):
     return None
 
 
-def page_text(pars, lines, first_line, shapes, vflags=None):
+def _head_by_witness(lines, wit):
+    """按证人的 `[HEAD]` 行，在我们的行里找出页眉那一行。"""
+    if not wit:
+        return None
+    m = re.search(r'^\s*\[HEAD\]\s*(.+)$', wit, re.M)
+    if not m:
+        return None
+    hw = [w.lower() for w in re.findall(r'[A-Za-z]{3,}', m.group(1))]
+    if len(hw) < 2:
+        return None
+    seen = 0
+    for i, l in enumerate(lines):
+        if not l.strip():
+            continue
+        seen += 1
+        if seen > 10:
+            break
+        lw = [w.lower() for w in re.findall(r'[A-Za-z]{3,}', l)]
+        if not lw or len(lw) > len(hw) + 3:
+            continue
+        sm = difflib.SequenceMatcher(None, hw, lw, autojunk=False)
+        hit = sum(b.size for b in sm.get_matching_blocks())
+        # **双向**覆盖率都要够。只看页眉一侧时，正文里碰巧含讲题几个词的
+        # 那一行会被当成页眉删掉——p.135 的
+        # `conversation be as it becometh the gospel of Christ. Thus — 7`
+        # 对上了讲题 `Conversation becoming the Gospel`，是真正文。
+        if hit / len(hw) >= 0.6 and hit / len(lw) >= 0.6:
+            return i
+    return None
+
+
+def page_text(pars, lines, first_line, shapes, vflags=None, wit=''):
     """一页 → markdown。先剔页眉，再合流。
 
     页眉只剔**本页第一行**那一处。整页逐行比对会把正文里碰巧同形的句子
@@ -309,6 +340,14 @@ def page_text(pars, lines, first_line, shapes, vflags=None):
         if is_head(l):
             cut = i
             break
+    if cut is None:
+        # 页眉**本身被读花**时形状判据认不出：
+        #   印面  `VERS. 9–11.]  The Great Example.  157`
+        #   读成  `VERS. 9-11.} 7) he Great Example. . 157`
+        # 整条漏进正文，跨页一合并就劈开句子（用户截图）。全书 47 页如此。
+        # 证人给了 `[HEAD]` 标签——这是版面标签，SKILL §2.6 允许的一档。
+        # 拿它的词去定位**我们这边**的那一行，文字一个字不从证人取。
+        cut = _head_by_witness(lines, wit)
     body = list(lines) if cut is None else lines[:cut] + lines[cut + 1:]
     ocr = J.join_ocr_lines(body)
 
@@ -2107,7 +2146,7 @@ def main():
             break
         txt, cont = page_text(ab[leaf]['pars'], ocr[leaf],
                               first.get(leaf, ''), shapes,
-                              VERSE.get(leaf))
+                              VERSE.get(leaf), WITNESS.get(leaf, ''))
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         txt = mend_open_quote(txt, GARBAGE, '')
         txt = trim_page_head(txt, WITNESS.get(leaf, ''), GARBAGE, leaf)

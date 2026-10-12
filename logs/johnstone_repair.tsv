@@ -186,6 +186,7 @@ fix	swbstance	substance	1	1
 fix	rmghteousness	righteousness	1	1
 fix	examp	example	1	1
 fix	Prztorian	Praetorian	1	1
+fix	Motes	Notes	6	1
 fix	xil	xii	1	1
 fix	dad	dead	2	1
 fix	xvil	xvii	1	1
@@ -231,6 +232,7 @@ fix	iz'	in'	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Vever	Never	1	0
+fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
 fix	heayen'	heaven'	1	0
 fix	Joun	John	1	0
@@ -429,6 +431,7 @@ glyph	free/y	freely
 glyph	/onging	longing		
 glyph	know/edge	knowledge		
 glyph	Zerfect	perfect		
+glyph	Vevertheless	Nevertheless		
 glyph	/eads	leads		
 glyph	wa/k	walk		
 glyph	/ory	ory		
@@ -574,7 +577,6 @@ reject	men	men	6	① tesseract 侧本来就是词
 reject	thing	thing	6	① tesseract 侧本来就是词
 reject	but	hut	6	① tesseract 侧本来就是词
 reject	roth	loth	6	① ABBYY 侧也不是词
-reject	Motes	Notes	6	① tesseract 侧本来就是词
 reject	THE	THE	5	① tesseract 侧本来就是词
 reject	TO	TO	5	① tesseract 侧本来就是词
 reject	AND	AND	5	① tesseract 侧本来就是词
@@ -706,7 +708,6 @@ reject	medicamento	medicanutito	3	① ABBYY 侧也不是词
 reject	prudence	priidcnrc	3	① tesseract 侧本来就是词
 reject	whatever	wliatcvcr	3	① tesseract 侧本来就是词
 reject	fretorium	prcetoritim	3	① ABBYY 侧也不是词
-reject	Votes	Notes	3	① tesseract 侧本来就是词
 reject	Mss	mss	3	① tesseract 侧本来就是词
 reject	Matt	Matt	3	① tesseract 侧本来就是词
 reject	Jeginning	bcgiimiJig	3	① ABBYY 侧也不是词
