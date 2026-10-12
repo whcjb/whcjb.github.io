@@ -119,7 +119,6 @@ fix	Fhe	The	1	1
 fix	Jomged	longed	2	1
 fix	sed	send	1	1
 fix	resKlence	residence	1	1
-fix	inte	into	1	1
 fix	Resozce	Rejoice	2	1
 fix	hfe	life	1	1
 fix	rejoic	rejoice	1	1
@@ -225,6 +224,7 @@ fix	Zve'	live	2	0
 fix	adoured'	laboured	2	0
 fix	rghteous	righteous	1	0
 fix	friest	priest	1	0
+fix	inte	into	1	0
 fix	iz'	in'	1	0
 fix	Fatth	Faith	1	0
 fix	ferfect'	perfect'	1	0
@@ -245,42 +245,26 @@ fix	Critica	Critical	1	0
 fix	Il	II	1	0
 fix	hea	hearers	0	0
 fix	thil	things	0	0
-hyphen-gap	ac- curately	accurately		
 hyphen-gap	evi- dently	evidently		
-hyphen-gap	cer- tainly	certainly		
 hyphen-gap	direc- ‘tion	direction		
 hyphen-gap	appear- _ ance	appearance		
 hyphen-gap	men- _ tioned	mentioned		
-hyphen-gap	adminis- tration	administration		
 hyphen-gap	Chris- — tian	Christian		
 hyphen-gap	posi- — tion	position		
-hyphen-gap	them- selves	themselves		
-hyphen-gap	con- stituted	constituted		
 hyphen-gap	Chris- 1 tianity	Christianity		
-hyphen-gap	prin- ciple	principle		
 hyphen-gap	com- - munity	community		
 hyphen-gap	par- — ticular	particular		
 hyphen-gap	Cor- ᾿ς inthians	Corinthians		
 hyphen-gap	con- = tinued	continued		
 hyphen-gap	per- _ fections	perfections		
 hyphen-gap	ex-— ceedingly	exceedingly		
-hyphen-gap	resurrec- tion	resurrection		
-hyphen-gap	incon- sistent	inconsistent		
-hyphen-gap	guid- ance	guidance		
-hyphen-gap	pre- vious	previous		
 hyphen-gap	posi- _ tion	position		
-hyphen-gap	experi- ence	experience		
 hyphen-gap	re- : garding	regarding		
 hyphen-gap	be- ᾿ς lievers	believers		
 hyphen-gap	pre- _ ferable	preferable		
-hyphen-gap	Thes- salonians	Thessalonians		
-hyphen-gap	tempta- tion	temptation		
 hyphen-gap	unobtru-— sively	unobtrusively		
 hyphen-gap	con- stitute	constitute		
 hyphen-gap	satis-. faction	satisfaction		
-hyphen-gap	occur- rences	occurrences		
-hyphen-gap	cer- tainty	certainty		
-hyphen-gap	endur- ance	endurance		
 hyphen-gap	notwith- — standing	notwithstanding		
 hyphen-gap	com- _pleteness	completeness		
 hyphen-gap	imme- _ diate	immediate		
@@ -288,7 +272,6 @@ hyphen-gap	per- -sonally	personally
 hyphen-gap	reflec- ‘tion	reflection		
 hyphen-gap	beauti-— ful	beautiful		
 hyphen-gap	connec- ‘tion	connection		
-hyphen-gap	your- selves	yourselves		
 hyphen-gap	pre-— dicate	predicate		
 hyphen-gap	Com- _ pare	Compare		
 hyphen-gap	con- © tinue	continue		

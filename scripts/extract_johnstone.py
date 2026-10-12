@@ -264,6 +264,7 @@ VERSE = {}
 WITNESS = {}
 SMALLFONT = {}
 VERSE_LOG = []
+STREAM_SWAP = []
 DROPPED_ITALIC = []
 
 
@@ -376,7 +377,8 @@ def page_text(pars, lines, first_line, shapes, vflags=None, wit=''):
     # ABBYY 的 startIndent：首行缩进＝新段落；没有缩进＝上一页的续行。
     # 全书 418 页里 399 页是续行——这正是按页拼接会切错的地方。
     cont = not pars_attrs(keep0)
-    return (J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS, keep_v),
+    return (J.transfer_page(keep, ocr, DROPPED_ITALIC, DROPCAPS, keep_v,
+                            STREAM_SWAP),
             cont)
 
 
@@ -1328,6 +1330,11 @@ def _wipe_rule(text, at, log, sec):
         return text
 
     def real(t):
+        # **三个字母以上的 token 一律当真词**，不管哪种文字。残渣都是
+        # 一两个字母的碎形；按词典判时 `ἴοι`（其实是 `tation`）被当成
+        # 噪点连着删掉了，正文少了一个词（用户发现 `expec- that`）。
+        if len(re.sub(r"[^A-Za-zͰ-Ͽἀ-῿']", '', t)) >= 3:
+            return True
         w = re.sub(r"[^A-Za-z']", '', t)
         if len(w) < 2:
             return False
@@ -2075,12 +2082,15 @@ def mend_greek_garble(md, pars, wit, log, leaf):
     for i, (w, a, b) in enumerate(toks):
         if not RE_GREEK.search(w) or a < last:
             continue
-        # **三个以上希腊字母的不碰**：那是真希腊文。没有这条闸，
-        # `Θεῷ,` 被换成 `robbery`、`σπένδομαι,--the` 换成 `the`、
-        # `περισσεύειν,` 换成一个引号——拿修复器去毁正文（实测三处）。
-        # 乱码都是一两个字母的残形（`ἢ`、`ΟΠ`、`[δα`）。
-        if len(RE_GREEK.findall(w)) >= 3:
-            continue
+        # 三个以上希腊字母的**多半是真希腊文**，但也有例外——`ἴοι` 其实是
+        # 断词后半截 `tation`。一律放过会漏，一律换会毁正文（没有闸的
+        # 第一版把 `Θεῷ,` 换成 `robbery`、`σπένδομαι,--the` 换成 `the`）。
+        # 折中：对它们要求**上下文完全对齐**，差一个词都不动手。
+        # 三个以上希腊字母的多半是**真希腊文**，一律不碰——没有这条闸时
+        # `Θεῷ,` 被换成 `robbery`、`σπένδομαι,--the` 换成 `the`，拿修复器
+        # 去毁正文（反复实测两次）。唯一的例外是**页首**：断词的后半截
+        # 会被读成希腊形（`ἴοι` ← `expec-tation`），而它只可能出现在页首。
+        long_greek = len(RE_GREEK.findall(w)) >= 3
         pre = [_norm_w(toks[k][0]) for k in range(max(0, i - 3), i)]
         post = [_norm_w(toks[k][0]) for k in range(i + 1, min(len(toks), i + 5))]
         # 页首那个词的前文在**上一页**，本页取不到——`[δα gospel, the tidings`
@@ -2088,13 +2098,35 @@ def mend_greek_garble(md, pars, wit, log, leaf):
         if len([c for c in post if len(c) > 1]) < 3:
             continue
         head_only = len([c for c in pre if len(c) > 1]) < 2
+        # 长希腊 token 只在两个条件同时成立时才动：在**页首**（断词后半截
+        # 只可能出现在那儿），且**上下文全是拉丁文**。后一条是必须的——
+        # `εἰ καὶ σπένδομαι,—the course of thought` 里前文就是希腊文，
+        # 那是真希腊，没有这条闸它被整个吃掉（实测）。
+        if long_greek:
+            # 「上下文是不是真希腊语境」要看有没有**长希腊词**，不能看有没有
+            # 希腊字母——页顶噪点本身就带着希腊字形（`ΝΜ"` 里 Ν、Μ 都是），
+            # 按字母判会把 `ἴοι` ← `expec-tation` 这类一并挡掉。
+            ctx_greek = any(
+                len(RE_GREEK.findall(toks[k][0])) >= 3
+                for k in range(max(0, i - 3), min(len(toks), i + 5)) if k != i)
+            if not head_only or ctx_greek:
+                continue
+        strict = long_greek
         seq = post if head_only else pre + post
         npre = 0 if head_only else len(pre)
 
         def pick(low, words):
             sm = difflib.SequenceMatcher(None, seq, low, autojunk=False)
             bl = sm.find_longest_match(0, len(seq), 0, len(low))
-            if bl.size < len(seq) - 1 or bl.a != 0:
+            if bl.size < (len(seq) if strict else len(seq) - 1) or bl.a != 0:
+                return None
+            # **上下文必须在这一页里只出现一次**。`to be equal with God` 在
+            # 这一页出现了好几回，对齐取到了别处那一回，于是真希腊文
+            # `Θεῷ,` 被换成了前一处的 `robbery`——拿修复器毁正文。
+            key = low[bl.b:bl.b + bl.size]
+            hits = sum(1 for i in range(len(low) - len(key) + 1)
+                       if low[i:i + len(key)] == key)
+            if hits != 1:
                 return None
             k = bl.b + npre - (1 if head_only else 0)
             return words[k] if 0 <= k < len(words) else None
@@ -2105,12 +2137,33 @@ def mend_greek_garble(md, pars, wit, log, leaf):
         na = _norm_w(pa)
         if not na or na != _norm_w(pw) or RE_GREEK.search(pa):
             continue
-        if LEX_CHECK is not None and not LEX_CHECK(na) and na[:1].islower():
+        # 候选不必是词典词：断词的后半截（`tation` ← `expec-tation`）本来
+        # 就查不到。两条**独立引擎**在同一位置逐字给出同一个词，这本身就是
+        # 证据；只挡掉明显不成词的（单字母、带数字）。
+        if len(na) < 2 or re.search(r'\d', pa):
             continue
         out.append(md[last:a] + pa)
         last = b
         log.append((str(leaf), 'greek-garble', w + ' → ' + pa))
     return ''.join(out) + md[last:] if out else md
+
+
+RE_PAGE_HYPH = re.compile(r'\b([A-Za-z]{2,})-[ \t]+([a-z]{2,})\b')
+
+
+def mend_page_hyphen(text, compounds, log):
+    def repl(m):
+        a, b = m.group(1), m.group(2)
+        if (a.lower(), b.lower()) in compounds:
+            # 真复合词（`pre-eminence`、`sober-minded`）连字符留着，
+            # 但跨页留下的那个空格要去掉。
+            log.append((a + '- ' + b, a + '-' + b))
+            return a + '-' + b
+        if LEX_CHECK is None or not LEX_CHECK((a + b).lower()):
+            return m.group(0)
+        log.append((a + '- ' + b, a + b))
+        return a + b
+    return RE_PAGE_HYPH.sub(repl, text)
 
 
 def main():
@@ -2144,6 +2197,7 @@ def main():
         LEX_CHECK = lambda w: _isw(w, _lex)
     except Exception:
         LEX_CHECK = lambda w: len(w) > 3
+    J.LEX_OK = LEX_CHECK
     global SMALLFONT
     SMALLFONT = small_font_pars(load_xml())
     print(f'小字号脚注段（按 ABBYY fs）'
@@ -2194,6 +2248,14 @@ def main():
     # 行末断词的裁决放在**全书拼完之后**：复合词表要拿整本书的行内写法当凭据，
     # 一页一页做的时候还看不全。
     compounds = J.learn_compounds(b for _, _, b in sections)
+    # **跨页**断词：`ex-` 排在页底、`tension` 在下一页页顶。行内拼合那条
+    # 判据只认同一页里的行尾连字符，这种够不着（全书 11 处，拼起来全是
+    # 真词）。规矩照旧：拼合后得是真词，且这个组合没在书里以带连字符的
+    # 写法出现过（复合词表自证）。
+    seam_x = []
+    sections = [(sl, ti, mend_page_hyphen(b, compounds, seam_x))
+                for sl, ti, b in sections]
+    print(f'跨页断词拼合 {len(seam_x)} 处', file=sys.stderr)
     seams = []
     sections = [(s, t, J.resolve_hyphens(b, compounds, seams))
                 for s, t, b in sections]
@@ -2209,6 +2271,8 @@ def main():
         f.write('kind\tfrom\tto\n')
         for was, now in DROPCAPS:
             f.write(f'dropcap\t{was}\t{now}\n')
+        for was, now in STREAM_SWAP:
+            f.write(f'stream-swap\t{was}\t{now}\n')
         for run in DROPPED_ITALIC:
             f.write(f'italic-dropped\t{run}\t\n')
         for was, now, keep in seams:

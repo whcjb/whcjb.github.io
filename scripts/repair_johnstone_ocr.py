@@ -76,6 +76,10 @@ VERIFIED = {
 # 只能按**上下文**定位的人工条目：同一个词在别处是对的，不能全局替换。
 # 每条都注明在哪一页的影像上核的。
 MANUAL_CONTEXT = [
+    # 页缝：上一页末 `sudden impulse sub-`，下一页首 `stituted σπλάγχνα…`，
+    # 页顶那个 `s` 被 OCR 吞了，跨页断词拼合因此拼成 `subtituted`（非词）。
+    # 证人在两侧都给出 substituted。
+    ('impulse sub- tituted', 'impulse substituted'),
     # p.(leaf 0101 页缝)：`extraordinary com-` ⟂ 下一页 `panion in such a way`。
     # 那个 `p` 被读成了星号，空强调清掉之后只剩 `anion`。证人与断词两侧
     # 都确认是 companion。

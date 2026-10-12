@@ -284,7 +284,67 @@ def restore_dropcap(abbyy_plain, chunk, log=None):
     return pad + pre + b[m.b:]
 
 
-def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None):
+LEX_OK = None          # extract_johnstone 填：判一个词是不是真词
+
+
+def _words(t):
+    return re.findall(r"[A-Za-z]{2,}", re.sub(r'[Ͱ-Ͽἀ-῿]+', ' ', t))
+
+
+def _nonword(t, lo=8):
+    w = _words(t)
+    if len(w) < lo or LEX_OK is None:
+        return None
+    return sum(1 for x in w if not LEX_OK(x.lower())) / len(w)
+
+
+def _better_stream(ab_text, chunk, log):
+    """两条字流里挑读得对的那一条——**按段**挑，不按页。
+
+    正文的字一向取 tesseract，版面与斜体取 ABBYY。可扫描件有局部受损时，
+    一条流会在某几段上整段读废，另一条却好好的：
+        tesseract  `. or ων μος the Coane pe sar to them a very gloomy one.`
+        ABBYY      `tension of Christianity among the Gentiles, could not but
+                    appear to them a very gloomy one.`
+    （leaf 215，用户截图）。**页级判据看不见它**——整页的非词率被正常段落
+    拉平了，全书只报出 1 页，且不含这一页。
+
+    判据：两边都 ≥8 个词，且 tesseract 的非词率比 ABBYY 高 20 个百分点
+    以上。两条都是非生成式引擎，换的是「读得对的那一份」，不是猜。
+    """
+    ra = _nonword(ab_text)
+    if ra is None or ra > 0.1:
+        return chunk
+    ro = _nonword(chunk, 4)
+    if ro is None:
+        return chunk
+    # 两条路都要 ABBYY 这一侧干净（非词率 ≤10%）：
+    #   ① 非词率高出 20 个百分点；
+    #   ② **词数骤降**——tesseract 把整段读没了，剩下的几个字连 8 个词
+    #      都凑不齐，光看非词率的最小词数闸就把它挡在外面（leaf 215 实测：
+    #      `. er κοὐ» 4 Sr or ων μος the Coane` 只有 5 个拉丁词）。
+    drop = len(_words(chunk)) < len(_words(ab_text)) * 0.6
+    # ③ **真词错字**非词率看不见：`pe sar` ← `appear`，两个都在词表里，
+    #    两边的非词率都是 0。可两条字流在同一段上本该说同一句话，差得太
+    #    多就说明有一条读错了。只在「ABBYY 这侧干净、而 tesseract 并不
+    #    更干净」时才按 ABBYY 走——tesseract 更干净的那些段不碰
+    #    （诗那一段就是 tesseract 对、ABBYY 糊）。
+    wo, wa = [w.lower() for w in _words(chunk)], [w.lower() for w in _words(ab_text)]
+    far = (ro >= ra and len(wa) >= 8
+           and difflib.SequenceMatcher(None, wo, wa, autojunk=False).ratio() < 0.8)
+    if not (ro > ra + 0.2 or (drop and ro > 0.3) or far):
+        return chunk
+    log.append((chunk.strip()[:60], ab_text.strip()[:60]))
+    # ABBYY 的行内多空格要压掉，直撇号要转成弯引号——不然搬过来的那段
+    # 在满页弯引号里一眼就看得出来。
+    t = re.sub(r'[ \t]{2,}', ' ', ab_text)
+    t = re.sub(r"(?<=[A-Za-z,.;:!?])'", '’', t)
+    t = re.sub(r"'(?=[A-Za-z‘])", '‘', t)
+    return t
+
+
+def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None,
+                  swapped=None):
     """一页：ABBYY 的段落结构与斜体 → OCR 的字流，出 markdown。
 
     两步走 —— 先整页粗对一次只为切出段落边界，再**按段细对**搬斜体。
@@ -293,6 +353,8 @@ def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None):
         dropped = []
     if dropcaps is None:
         dropcaps = []
+    if swapped is None:
+        swapped = []
     ab_plains = [strip_sentinels(p)[0] for p in pars]
     ab_all = ''.join(ab_plains)
     ocr_plain, _ = strip_sentinels(ocr_text)
@@ -318,6 +380,8 @@ def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None):
         chunk = ocr_plain[lo:hi]
         if not chunk.strip():
             continue
+        # 这一段 tesseract 是不是读废了：废了就改用 ABBYY 的字。
+        chunk = _better_stream(ab_plains[i], chunk, swapped)
         # 每一段都试。下沉首字不只在页内第一段 —— 讲章开篇那一页，前面还排着
         # 罗马数字、讲题、经文题记三段，限定「页内第一段」会让 30 篇全部漏掉
         # （实测只有导论一篇补上了）。判据本身够紧：ABBYY 那一小截必须 ≤6 个字
