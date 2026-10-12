@@ -10,7 +10,7 @@ next_url: "/johnstone/philippians/polycarp/"
 next_label: "Appendix · Epistle of Polycarp to the Philippians"
 ---
 
-CHAPTER IV. ‘
+CHAPTER IV.
 
 <span class="jh-vref">Ver. 2.</span> The first name in this verse, looking simply at the form, might designate a *man,* as has been supposed by our translators. The name Euodianus occurs occasionally,—of which Euodias might be a shortening. Tyndale took the other also to be a man’s name, giving it as ‘Sintiches,—a form for which there seems to be no authority. But when we look at the verse in its connection with the next, it becomes clear that both names designate *women;* because for αὐταῖς of the 3rd verse there is no possible reference except the two persons here named. The true forms, then, are ‘ Euodia’ and ‘ Syntyche,’— both of which occur in inscriptions.
 

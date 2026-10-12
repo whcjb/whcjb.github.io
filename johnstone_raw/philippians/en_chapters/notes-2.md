@@ -30,9 +30,7 @@ The article in τῇ ταπεινοφροσύνῃ may perhaps mean ‘that whic
 
 If ἁρπαγμὸς here be taken, according to the ordinary sense of nouns in -μος, to mean ‘an act of plundering,’ then the meaning of the clause is exactly as in our version, and we have in it a continuation of the statement of our Lord’s pre-incarnate glory, to intensify the effect of the subsequent mention of His condescension. In this case, the sense of the participle ὑπάρχων
 
-, when fully exhibited, is ‘ *because* He was.’ If we take ἁρπαγμὸς as equivalent to ἅρπαγμα, ‘something carried off, booty, then—the phrase ἅρπαγμα ἡγεῖσθαι, ποιεῖσθαι, or the like, occurring not unfrequently in the secondary sense of ‘ to reckon something as a prize,’ ‘to set great store by ’—the force of the clause is, ‘did not regard it as a prize to be on equality with God.’ In this case the clause begins the statement of the
-
-Saviour’s condescension; and ὑπάρχων means *‘ though* He was.’
+, when fully exhibited, is ‘ *because* He was.’ If we take ἁρπαγμὸς as equivalent to ἅρπαγμα, ‘something carried off, booty, then—the phrase ἅρπαγμα ἡγεῖσθαι, ποιεῖσθαι, or the like, occurring not unfrequently in the secondary sense of ‘ to reckon something as a prize,’ ‘to set great store by ’—the force of the clause is, ‘did not regard it as a prize to be on equality with God.’ In this case the clause begins the statement of the Saviour’s condescension; and ὑπάρχων means *‘ though* He was.’
 
 The form ἁρπαγμὸς occurs very rarely. Only one instance has been observed in a classical writer (Plutarch), and there it
 

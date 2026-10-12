@@ -241,6 +241,22 @@ element in the Word of God, appealing as it does to…
 约翰斯通那本全书 **307 处**，而且**所有既有闸子都测不到**——非词率不变、
 星号配对不变、页眉判据不报、渲染层 `<em>` 对得上。它不是错字，是结构。
 
+#### 「下段小写起头」只是续段的**一种**形
+
+那条判据碰到下段以**引号加大写**起头就失效，可句子明明没完：
+```
+…in such statements as ‘ The Son of man came not to be ministered unto,
+but to minister,’ and
+（空行）
+‘I am among you as he that serveth.’ This thought of lowliness…
+```
+补一条从**上段**看的判据：最后一个词是连词／介词（and、of、to、which、
+when…）、又没有句末标点，就是没说完。只收语法上不可能收尾的虚词——
+实词不收，`…the Lord` 完全可以是一句话的结尾。
+
+判句末标点前要先**剥掉尾部的引号**：`translated ‘upon.’` 是收了尾的，
+不剥就会把它也当成没完。
+
 #### 从正文里切出来的片段，一律压成一段
 
 切口可能跨过段落分隔符（`1\n\n Henry Ward Beecher.`）。带着空行存进去，
@@ -343,6 +359,11 @@ startIndent 首行缩进         → 新段落
 
 白名单里要**留出真用到的符号**：`§` 在 `Winer, *Gram.* § 20. 2` 里是真的
 节号，收进清理清单就删错了。
+
+**引号形的噪点只能逐个取证，不能按形态清。** 段末孤零零一个引号，全书
+12 处——一半是噪点（`…the example of the Lord Jesus. ‘`），另一半是题记的
+**开引号**（`XIX. JUSTIFICATION BY FAITH. ‘`，后面接的经文才是被引的话）。
+两者形态完全一样，只有按位置问证人才分得开（证了之后删 3 留 9）。
 
 ### 3.2c 证人只许当「印证」，候选必须来自非生成式字流
 

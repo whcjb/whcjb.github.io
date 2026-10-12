@@ -830,6 +830,12 @@ RE_CONT_HEAD = re.compile(r'^\**[‘’\'"“]?[a-z]')
 
 
 RE_ALLCAPS_ANCHOR = re.compile(r'^[^a-z]{3,}$')
+# 以这些词收尾＝这句话没说完。只收**语法上不可能收尾**的虚词，
+# 实词不收（`…the Lord` 可以是一句话的结尾）。
+CONT_TAIL_WORDS = set(
+    'and or but nor yet so with of to in on at by as that which who whom '
+    'whose than if when while because though although from into upon unto '
+    'for the a an his her its their our your my these those this'.split())
 
 
 def is_continuation(prev_par, next_par):
@@ -848,7 +854,18 @@ def is_continuation(prev_par, next_par):
         return False
     if RE_PARA_END.search(prev_par.rstrip('*\\ ')):
         return False
-    return bool(RE_CONT_HEAD.match(next_par))
+    if RE_CONT_HEAD.match(next_par):
+        return True
+    # 下段以**引号加大写**起头时，上面那条「下段小写起头」的判据失效，
+    # 可句子明明没完：`…but to minister,’ and` ⟂ `‘I am among you…`
+    # （用户截图）。上段最后一个词是连词／介词、又没有句末标点，就是没完。
+    # 判句末标点前要先剥掉尾部的引号：`translated ‘upon.’` 是收尾的，
+    # 不剥就会把它也当成没完。
+    tail = re.sub(r"[\s*\\‘’\'\"“”)\]]+$", '', prev_par)
+    if re.search(r'[.!?:;]$', tail):
+        return False
+    w = re.findall(r"[A-Za-z']+", tail)
+    return bool(w and w[-1].lower() in CONT_TAIL_WORDS)
 
 
 # ── 脚注 ────────────────────────────────────────────────────
@@ -1814,6 +1831,43 @@ def trim_page_head(md, wit, log, leaf):
     return md[cut:]
 
 
+RE_TAIL_Q = re.compile(r'(?<=[.!?])\s+([‘’\'"“”])\s*(?=\n\n|$)')
+
+
+def drop_tail_quote(md, wit, log, leaf):
+    """段末孤零零的一个引号，取证后删。
+
+    `…the example of the Lord Jesus. ‘`（用户截图）——证人那里句子就结束
+    在 `Jesus.`，那个引号是扫描噪点。
+
+    **不能一刀切**：同样形态的 `XIX. JUSTIFICATION BY FAITH. ‘` 是题记的
+    开引号，后面接的经文才是被引的话。12 处里有一半是真的。
+    所以逐个按位置向证人取证：拿前面四个词定位，证人在同一处没有引号
+    才删。
+    """
+    if not wit:
+        return md
+    ww = re.findall(r'\S+', wit)
+    wlow = [_norm_w(x) for x in ww]
+    out, last = [], 0
+    for m in RE_TAIL_Q.finditer(md):
+        pre = [_norm_w(x) for x in re.findall(r'\S+', md[:m.start()])][-4:]
+        if len([c for c in pre if len(c) > 1]) < 3:
+            continue
+        sm = difflib.SequenceMatcher(None, pre, wlow, autojunk=False)
+        blk = sm.find_longest_match(0, len(pre), 0, len(wlow))
+        if blk.size < len(pre) - 1 or blk.a != 0:
+            continue
+        k = blk.b + len(pre)
+        nxt = ww[k] if k < len(ww) else ''
+        if nxt[:1] in '‘’\'"“”':
+            continue
+        out.append(md[:m.start()][last:])
+        last = m.end()
+        log.append((str(leaf), 'tail-quote', md[max(0, m.start() - 40):m.end()]))
+    return ''.join(out) + md[last:] if out else md
+
+
 def _norm_w(x):
     return re.sub(r"[^A-Za-z']", '', x).lower()
 
@@ -1945,6 +1999,7 @@ def main():
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         txt = mend_open_quote(txt, GARBAGE, '')
         txt = trim_page_head(txt, WITNESS.get(leaf, ''), GARBAGE, leaf)
+        txt = drop_tail_quote(txt, WITNESS.get(leaf, ''), GARBAGE, leaf)
         txt = mend_greek_garble(txt, ab[leaf]['pars'], WITNESS.get(leaf, ''),
                                 GARBAGE, leaf)
         txt = drop_stray(txt, WITNESS.get(leaf, ''), GARBAGE, str(leaf))
