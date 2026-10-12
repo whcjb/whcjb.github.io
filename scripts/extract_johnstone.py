@@ -330,16 +330,22 @@ def page_text(pars, lines, first_line, shapes, vflags=None, wit=''):
     # 第一版按「这几行是不是噪点」连带剔，`CONTENTS.` / `INTRODUCTION,`
     # 这种一行一个真词的目录条目也被当噪点删掉了——判据太粗。
     # 噪点自有页顶清理那条判据管，这里只做一件确定的事。
-    body, seen, cut = [], 0, None
-    for i, l in enumerate(lines):
-        if not l.strip():
-            continue
-        seen += 1
-        if seen > 10:
-            break
-        if is_head(l):
-            cut = i
-            break
+    # **证人优先**。形状判据会被页顶噪点骗：leaf 173 的第二行就是一个
+    # 孤零零的 `2`，`has_folio` + 页眉形都成立，于是它被当成页眉剔掉，
+    # 真页眉 `VERS. 9-11.} 7) he Great Example. . 157` 原样留在正文里，
+    # 兜底那条因为「已经找到页眉」而根本没进（用户两次截图同一处）。
+    cut = _head_by_witness(lines, wit)
+    body, seen = [], 0
+    if cut is None:
+        for i, l in enumerate(lines):
+            if not l.strip():
+                continue
+            seen += 1
+            if seen > 10:
+                break
+            if is_head(l):
+                cut = i
+                break
     if cut is None:
         # 页眉**本身被读花**时形状判据认不出：
         #   印面  `VERS. 9–11.]  The Great Example.  157`
@@ -1892,27 +1898,42 @@ def trim_page_head(md, wit, log, leaf):
             re.findall(r"[A-Za-z]{2,}", wit_clean(body[0]))][:6]
     if len(head) < 4:
         return md
-    toks = [(m.group(0), m.start()) for m in re.finditer(r'\S+', md)]
-    low = [_norm_w(t) for t, _a in toks]
+    # 两边都只取**词**（跳过标点与噪点符号），口径一致才对得上。
+    toks = [(m.group(0).lower(), m.start())
+            for m in re.finditer(r'[A-Za-z]{2,}', md[:400])]
+    if len(toks) < 4:
+        return md
+    low = [t for t, _a in toks]
     sm = difflib.SequenceMatcher(None, head, low, autojunk=False)
     blk = sm.find_longest_match(0, len(head), 0, len(low))
-    if blk.size < len(head) - 1 or blk.a != 0 or blk.b == 0:
+    # **不要求匹配块从第一个词开始**：页顶正文里只要有一个错字
+    # （`the carth` ← `the earth`），对齐就从第二个词才接上，
+    # 强求 `blk.a == 0` 会让整次定位失败（leaf 173 实测）。
+    # 按块的偏移反推页首第一个词落在哪里。
+    if blk.size < 3:
         return md
-    cut = toks[blk.b][1]
+    start = blk.b - blk.a
+    # 判的是**切点有没有东西可切**，不是首词下标是否为 0：噪点（`*| 2 `）
+    # 不是词，首词仍可能落在下标 0，而它前面正有一截要切。
+    if start < 0 or start >= len(toks):
+        return md
+    cut = toks[start][1]
+    if cut == 0:
+        return md
     pre = md[:cut]
     # 噪点常被空行拆成好几小段（`a .` / `all` / `᾿` / `<«@` / `»`），
     # 不能要求前缀只有一段。限长度与真词数即可。
     if len(pre) > 70:
         return md
-    # 前缀里有落单的星号就不切：切掉半个斜体区，整篇的奇偶闸立刻报错
-    # （第一版切坏了 3 篇）。改动含 markdown 标记必须先比标记个数。
-    if len(re.findall(r'(?<!\\)\*', pre)) % 2:
-        return md
+    # 噪点常**被包在斜体区里**（`*| 2 the carth…`，那个 `*` 是上一页
+    # 续下来的经文斜体）。一刀切会留下落单星号，奇偶闸报错；直接不切
+    # 又清不掉噪点。所以**切字不切标记**：把前缀里的未转义星号原样留下。
+    marks = ''.join(re.findall(r'(?<!\\)\*', pre))
     if LEX_CHECK is not None and sum(
             1 for w in re.findall(r"[A-Za-z]{2,}", pre) if LEX_CHECK(w.lower())) > 2:
         return md
     log.append((str(leaf), 'page-head-junk', pre.strip()[:60]))
-    return md[cut:]
+    return marks + md[cut:]
 
 
 RE_TAIL_Q = re.compile(r'(?<=[.!?])\s+([‘’\'"“”])\s*(?=\n\n|$)')

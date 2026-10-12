@@ -22,7 +22,7 @@ The non-repetition of the article τῇ before εἰς τὸ εὐαγγέλιο
 
 6. Αὐτὸ τοῦτο is an accusative of reference, — ‘with regard to this very thing.’ Often in the New Testament, in the writings of Paul and John particularly, we find a demonstrative pronoun placed, as here, before a clause with ὅτι, *ἵνα,* or the like, to give it special prominence: Winer, § 23. 5. The αὐτὸ added to τοῦτο suggests a reference to something expressed or implied in what has preceded ; compare Col. iv. 8; Gal. ii. 10; 2 Pet. i. 5. Here, I apprehend, the reference is to the subject of the prayer spoken of in the 4th verse. The apostle is continuing his statement of the ground of his ‘ joy’ in praying for them, and of his gratitude to God for them ; and the course of thought is this,—‘ With joy, I say, I present my prayer for you, being confident with regard to this very thing for which chiefly, as you well know, I ask God on your behalf, namely that,’ etc.
 
-In ἔργον ἀγαθὸν there is obviously a reference to ‘ the fellowship for the furtherance of the gospel,’ spoken of in the 5th verse. The omission of the article shows distinctly enough, however, as it appears to me, that the reference is not meant to be definite and exclusive. Rather, by the general expression, ‘a good work,’ the apostle designates that of which the ‘fellowship’ is one very beautiful fruit,—vital godliness. 4 ( 7. The subject of ἔχειν may *be* either με or ὑμᾶς. The latter view is supported by Rosenmüller, Storr, Conybeare, Alford, in one of his books,<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> and others; and is certainly tenable, in so far as the language merely is concerned. But the former construction is the more natural according to the arrangement of the words, and seems to accord better with the line of thought,—as to which, see the lecture on the passage.
+In ἔργον ἀγαθὸν there is obviously a reference to ‘ the fellowship for the furtherance of the gospel,’ spoken of in the 5th verse. The omission of the article shows distinctly enough, however, as it appears to me, that the reference is not meant to be definite and exclusive. Rather, by the general expression, ‘a good work,’ the apostle designates that of which the ‘fellowship’ is one very beautiful fruit,—vital godliness. 4 ( The subject of ἔχειν may *be* either με or ὑμᾶς. The latter view is supported by Rosenmüller, Storr, Conybeare, Alford, in one of his books,<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> and others; and is certainly tenable, in so far as the language merely is concerned. But the former construction is the more natural according to the arrangement of the words, and seems to accord better with the line of thought,—as to which, see the lecture on the passage.
 
 The words from ἔν τε τοῖς δεσμοῖς to εὐαγγελίου may be joined with ἔχειν με or with ὑμᾶς ὄντας. Chrysostom, Neander, De Wette, Meyer, Alford, and others, approve of the former connection, regarding the words as intended to bring out still more clearly the depth of Paul’s affection for the Philippians, seeing that even ‘this condition of suffering, and the great duty which he had to discharge in it, could not dislodge them from his heart’ (Meyer). But the clause seems to have more relevancy and force, when connected, as in our version, with ὑμᾶς ὄντας We may regard the μου between συγκοινωνοὺς and τῆς χάριτος as governed by χάριτος, or take συγκοινωνοὺς as governing both genitives,—the one of the person, the other of the thing. This latter construction is perhaps slightly preferable. The meaning then is, ‘ partakers with me of the grace’ which God gives me for suffering, and for the defence and confirmation of the gospel.
 
@@ -39,11 +39,7 @@ In the connection in which ἡ ἀγάπη occurs here, it is naturally taken in
 
 Εἰς ἡμέραν Χριστοῦ does not seem to mean ‘till the day of Christ,’ but ‘against,’ ‘ with a view to,’ ‘looking towards’ it,— that is to say, practically, as Chrysostom puts it, ‘ that ye may be found faultless in that day.’ This force of εἰς—which is obviously closely connected with the frequent use of the preposition to express purpose, or is indeed but a case of that use—is very common in the New Testament ; whilst a careful examination will show that its use in the sense of ‘till’ simply, as in John xiii. 1, is rare.
 
-11. *Καρπὸν* — which is unquestionably the true reading, καρπῶν, of the Received Text, having no uncial authority— is an accusative of reference,—the exact meaning, therefore, being, ‘filled, or ‘fully stored,’ ‘as to fruit of righteousness.’ Col. i. 9 contains a similar construction.
-
-Δικαιοσύνης
-
-may be taken as a genitive either of apposition or of origin. The former is, perhaps, the more natural ; but the sense is substantially the same either way,—the image, however, being differently conceived. See the lecture on the passage.
+11. *Καρπὸν* — which is unquestionably the true reading, καρπῶν, of the Received Text, having no uncial authority— is an accusative of reference,—the exact meaning, therefore, being, ‘filled, or ‘fully stored,’ ‘as to fruit of righteousness.’ Col. i. 9 contains a similar construction. may be taken as a genitive either of apposition or of origin. The former is, perhaps, the more natural ; but the sense is substantially the same either way,—the image, however, being differently conceived. See the lecture on the passage.
 
 When, as here, δόξα and ἔπαινος are distinguished, the former must be regarded as designating ‘the manifestation of the divine majesty and excellence,’ the latter ‘its recognition and acknowledgment’ by God’s moral creatures.
 
@@ -81,11 +77,7 @@ Various constructions of this verse have been proposed. Of these, two only seem 
 
 23. Ἔκ τῶν δύο means ‘ in consequence of the two.’ Double comparatives, like μᾶλλον κρεῖσσον, occur in Mark vii. 36; 2 Cor. vii. 13. See Winer, § 35.
 
-25. For the construction τοῦτο πεποιθὼς, compare note on ver. 6 above. Some commentators, joining πεποιθὼς closely to
-
-οἶδα
-
-, make τοῦτο the object of οἶδα,—thus, ‘of this I am confidently persuaded, that,’ etc. The construction adopted by our translators appears by far the more natural.
+25. For the construction τοῦτο πεποιθὼς, compare note on ver. 6 above. Some commentators, joining πεποιθὼς closely to make τοῦτο the object of οἶδα,—thus, ‘of this I am confidently persuaded, that,’ etc. The construction adopted by our translators appears by far the more natural.
 
 Μένειν is ‘to stay;’ παραμένειν, ‘to stay with,’ or ‘at.’ Having no similar compound in English, we cannot adequately exhibit the beauty of the transition, prompted by the apostle’s loving heart, from the absolute ‘stay,’ to the relative ‘stay with you.’ In 1 Cor. xvi. 6, παραμένειν is construed with πρὸς ; but in Gen. xliv. *33,* the LXX. has it with the dative, as here.
 
