@@ -1477,7 +1477,7 @@ def split_sections(pages, leaf_sec):
             else:
                 merged.append(p)
         keep = merged
-        body = [x for x in keep if not x.startswith(FN_MARK)]
+        body = move_open_quote([x for x in keep if not x.startswith(FN_MARK)])
         notes = []
         for x in keep:
             if x.startswith(FN_MARK):
@@ -1551,6 +1551,42 @@ def mend_dropcaps(md, pars, log):
                     par = prev + ' ' + par[m.end(1):].lstrip()
         pars_out.append(par)
     return '\n\n'.join(pars_out)
+
+
+RE_HANGING_Q = re.compile(r'(?<=[.!?])\s+([‘“])\s*$')
+
+
+def move_open_quote(pars):
+    """段末那个孤零零的**开引号**，挪到下一段开头去。
+
+    它本来就属于下一段：`…a true and rightful possession.` ⟨`‘`⟩
+    ⟂ `Being in the form of God,’ then,…`（用户截图）。原书这里**确实分段**
+    （证人与我们的 OCR 一致），错的只是引号站错了段——分段是按 ABBYY 的
+    段界切的，切点落在引号之后，于是它跟着上一段走了。
+
+    题记那几处同样是这个毛病：`XIX. JUSTIFICATION BY FAITH.` ⟨`‘`⟩
+    ⟂ `Beware of dogs;…` ——引号引的正是后面那段经文。
+
+    只**挪**不删：噪点引号已经在页级按证人取证清掉了，到这里剩下的都是
+    真引号。落点要避开行首的 HTML 标签（诗块包着 `<span>`）。
+    """
+    out = list(pars)
+    for i in range(len(out) - 1):
+        m = RE_HANGING_Q.search(out[i])
+        if not m or out[i].lstrip().startswith('<'):
+            continue
+        nxt = out[i + 1]
+        if nxt.lstrip().startswith(('#',)):
+            continue
+        at = 0
+        while True:
+            t = re.match(r'<[^>]+>', nxt[at:])
+            if not t:
+                break
+            at += t.end()
+        out[i] = out[i][:m.start()].rstrip()
+        out[i + 1] = nxt[:at] + m.group(1) + nxt[at:].lstrip()
+    return out
 
 
 def _render_notes(body, notes):

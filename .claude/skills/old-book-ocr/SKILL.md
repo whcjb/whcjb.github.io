@@ -257,6 +257,23 @@ when…）、又没有句末标点，就是没说完。只收语法上不可能�
 判句末标点前要先**剥掉尾部的引号**：`translated ‘upon.’` 是收了尾的，
 不剥就会把它也当成没完。
 
+#### 开引号会站错段
+
+按版面层的段界切段时，切点可能落在**段首那个开引号之后**，引号于是跟着
+上一段走了，页面上就是上一段末尾挂着一个孤零零的 `‘`：
+```
+…unless this equality of glory were a true and rightful possession. ‘
+（空行）
+Being in the form of God,’ then, ‘He yet esteemed not His equality…
+```
+这里原书**确实分段**（证人与我们的 OCR 一致），错的只是引号的归属。
+题记那几处同形：`XIX. JUSTIFICATION BY FAITH. ‘` ⟂ `Beware of dogs;…`
+——引号引的正是后面那段经文。
+
+收尾时统一**挪**（不是删）：段末孤立的 `‘`/`“` 一律移到下一段开头。
+落点要避开行首的 HTML 标签。做这一步之前，噪点引号得先在页级按证人
+取证清掉——剩下的才都是真引号。
+
 #### 从正文里切出来的片段，一律压成一段
 
 切口可能跨过段落分隔符（`1\n\n Henry Ward Beecher.`）。带着空行存进去，
