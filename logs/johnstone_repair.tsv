@@ -1,7 +1,7 @@
 verdict	from	to	pairs	hits
 fix	zs	is	18	19
 fix	ts	is	11	11
-fix	im	in	4	9
+fix	im	in	4	10
 fix	nght	right	6	6
 fix	il	ii	4	5
 fix	iz	in	2	5
@@ -275,6 +275,7 @@ hyphen-gap	pre- _ ferable	preferable
 hyphen-gap	Thes- salonians	Thessalonians		
 hyphen-gap	tempta- tion	temptation		
 hyphen-gap	unobtru-— sively	unobtrusively		
+hyphen-gap	con- stitute	constitute		
 hyphen-gap	satis-. faction	satisfaction		
 hyphen-gap	occur- rences	occurrences		
 hyphen-gap	cer- tainty	certainty		
@@ -290,6 +291,7 @@ hyphen-gap	your- selves	yourselves
 hyphen-gap	pre-— dicate	predicate		
 hyphen-gap	Com- _ pare	Compare		
 hyphen-gap	con- © tinue	continue		
+hyphen-gap	reputa-30 tion	reputation		
 glued	alltheir	all their		
 glued	mindin	mind in		
 glued	tothe	to the		
@@ -390,6 +392,7 @@ glyph	fownd	found
 glyph	¢he	the		
 glyph	¢hose	those		
 glyph	¢hose	those		
+glyph	/those	those		
 glyph	deloved	beloved		
 glyph	a/ways	always		
 glyph	a//	all		
@@ -517,6 +520,12 @@ italic-I	7	I
 italic-I	Z	I		
 italic-I	7	I		
 italic-I	J	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	7	I		
+italic-I	7	I		
 italic-I	7	I		
 italic-I	7	I		
 reject	the	the	41	① tesseract 侧本来就是词

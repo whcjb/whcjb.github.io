@@ -712,9 +712,8 @@ def main():
     def unmask(t, tags):
         return re.sub(r'\x02(\d+)\x03', lambda m: tags[int(m.group(1))], t)
 
-    for f, t in texts.items():
-        t, _tags = mask(t)
-        new = apply_witness(t)
+    def one_pass(f, txt):
+        new = apply_witness(txt)
         new = rejoin_hyphen_gap(new, lex, vocab, gap_log)
         new = split_glued(new, lex, vocab, bigrams, glue_log)
         new = fix_ordinals(new, ord_log)
@@ -733,6 +732,21 @@ def main():
             if before in new:
                 new = new.replace(before, after)
                 manual_log.append((before[:46], after[:46]))
+        return new
+
+    # ⚠️ 一遍跑不到**不动点**：排在后面的手工表会改出新的可修对象，而字形
+    # 回扫已经过去了。实测 `*/hose*` —— 字形回扫拿不准（`hose` 本身是真词，
+    # 跟 `those` 两个候选分不开）于是原样留着，随后手工表把 `hose` 改成
+    # `those`，产出 `*/those*`；非得再跑一遍整条链才清掉。用户截图看到的
+    # 就是这个中间态。所以在**一次调用里**迭代到稳定，最多三轮。
+    for f, t in texts.items():
+        t, _tags = mask(t)
+        new = t
+        for _ in range(3):
+            nxt = one_pass(f, new)
+            if nxt == new:
+                break
+            new = nxt
         new, t = unmask(new, _tags), unmask(t, _tags)
         if a.apply and new != t:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)

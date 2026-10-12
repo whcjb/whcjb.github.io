@@ -1787,7 +1787,11 @@ def verse_pars(xml_path):
     return out
 
 
-RE_STAR_QUOTE = re.compile(r'(^|\n\n)\\\*(\s+)(?=[A-Z])')
+# 开引号后面不一定有空格（`\*Do all things…`），也可能后面**已经有**一个
+# 真引号（`\*‘ *And* (so)…`）——后者那个 `\*` 是多余的，该删不该换。
+# 被引的话也可能**小写起头**（`\*compasseth our path…` ← `‘compasseth`），
+# 所以前瞻放到字母；「本段里有闭引号」那道闸仍在，不会误伤。
+RE_STAR_QUOTE = re.compile(r'(^|\n\n)\\\*(\s*)(?=[‘“A-Za-z])')
 
 
 def mend_open_quote(md, log, sec):
@@ -1804,7 +1808,11 @@ def mend_open_quote(md, log, sec):
         par = md[m.end():end if end > 0 else len(md)]
         if '’' not in par and "'" not in par:
             continue
-        out.append(md[last:m.start()] + m.group(1) + '‘' + m.group(2))
+        # 后面紧跟着已经有引号 → 这个 `\*` 是多余的噪点，删掉；
+        # 否则它本身就是被读错的开引号，换成 `‘`。
+        dup = par.lstrip()[:1] in '‘“'
+        out.append(md[last:m.start()] + m.group(1)
+                   + ('' if dup else '‘') + m.group(2))
         last = m.end()
         log.append((sec, 'star-open-quote', par[:46]))
     return ''.join(out) + md[last:] if out else md
