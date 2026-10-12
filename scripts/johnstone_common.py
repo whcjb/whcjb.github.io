@@ -375,6 +375,48 @@ def _as_verse(md, lines):
     return '<span class="jh-verse">' + '<br>'.join(fixed) + '</span>'
 
 
+def tighten_italics(par):
+    """斜体标记贴着空格时，把标记往里收。
+
+    markdown 的强调**开标记后面不许跟空白、闭标记前面不许有空白**，否则
+    那一只星号成了字面星号，而配对的另一只反倒去开一段新的强调：
+        源文  `In ‘* all things ’*—ecclesiastical procedure…`
+        页面  `In ‘* all things ’—ecclesiastical…`（后面整段都成了斜体）
+    星号奇偶闸看不见它——数目是对的，位置不对（用户截图）。
+
+    标记位置本来就是从 ABBYY 的斜体区间搬过来的，边界差一个空格很正常；
+    把空格挪到标记外面，意思不变。开闭按出现次序配对，只动贴着空白的那些。
+    """
+    # 相邻的两只星号是**空强调**，渲染出来什么都不是，只会把中间的字
+    # 挤掉。全书 3 处，都落在页缝上（`extraordinary com-` ⟂ `**anion`），
+    # 是页顶噪点被当成了斜体标记。成对删掉，奇偶不受影响。
+    par = re.sub(r'(?<!\\)\*(?<!\\)\*', '', par)
+    pos = [m.start() for m in re.finditer(r'(?<!\\)\*', par)]
+    if len(pos) < 2:
+        return par
+    cuts = []
+    for k in range(0, len(pos) - 1, 2):
+        a, b = pos[k], pos[k + 1]
+        na = a
+        while na + 1 < b and par[na + 1].isspace():
+            na += 1
+        nb = b
+        while nb - 1 > na and par[nb - 1].isspace():
+            nb -= 1
+        if nb <= na + 1:          # 区间里只剩空白，整对放弃
+            continue
+        if na != a or nb != b:
+            cuts.append((a, na, nb, b))
+    if not cuts:
+        return par
+    out, last = [], 0
+    for a, na, nb, b in cuts:
+        out.append(par[last:a] + par[a + 1:na + 1] + '*' + par[na + 1:nb]
+                   + '*' + par[nb:b])
+        last = b + 1
+    return ''.join(out) + par[last:]
+
+
 def _emit(text, ital):
     """斜体标志表 → markdown。
 

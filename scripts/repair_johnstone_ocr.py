@@ -76,6 +76,10 @@ VERIFIED = {
 # 只能按**上下文**定位的人工条目：同一个词在别处是对的，不能全局替换。
 # 每条都注明在哪一页的影像上核的。
 MANUAL_CONTEXT = [
+    # p.(leaf 0101 页缝)：`extraordinary com-` ⟂ 下一页 `panion in such a way`。
+    # 那个 `p` 被读成了星号，空强调清掉之后只剩 `anion`。证人与断词两侧
+    # 都确认是 companion。
+    ('com- 1 anion in such a way', 'companion in such a way'),
     # p.113（leaf 0127）：第 9 讲开篇的下沉首字 W。两份 OCR 都糊了——
     # ABBYY 读成 `T \\ ^ITH`，tesseract 读成 `Ἶ | Ww" H`——所以自动补不回来。
     # 裁影像核过：是大写 W 压着下面两行，`WITH the free discursiveness`。
@@ -732,6 +736,10 @@ def main():
             if before in new:
                 new = new.replace(before, after)
                 manual_log.append((before[:46], after[:46]))
+        # 斜体标记贴空格的归一**放在最后**：前面那些字面替换表里存的就是
+        # 带空格的旧形态，放在前面会被它们改回去（实测 `‘* all things ’*`
+        # 在抽取端修好、到这里又被还原）。
+        new = '\n\n'.join(J.tighten_italics(x) for x in new.split('\n\n'))
         return new
 
     # ⚠️ 一遍跑不到**不动点**：排在后面的手工表会改出新的可修对象，而字形
