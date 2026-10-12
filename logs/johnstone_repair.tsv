@@ -127,6 +127,7 @@ fix	frends	friends	1	1
 fix	zmportant	important	1	1
 fix	nghteous	righteous	2	1
 fix	Aumility	humility	1	1
+fix	Fatth	Faith	1	1
 fix	tq	to	1	1
 fix	mghteousness	righteousness	1	1
 fix	Jf	If	1	1
@@ -143,6 +144,7 @@ fix	strenuc	strenuous	1	1
 fix	sartakers	partakers	1	1
 fix	mofives	motives	2	1
 fix	grzmary	primary	2	1
+fix	Drue	True	1	1
 fix	XXITI	XXIII	1	1
 fix	ili	iii	1	1
 fix	immora	immoral	1	1
@@ -243,6 +245,7 @@ fix	Il	II	1	0
 fix	hea	hearers	0	0
 fix	thil	things	0	0
 hyphen-gap	ac- curately	accurately		
+hyphen-gap	evi- dently	evidently		
 hyphen-gap	cer- tainly	certainly		
 hyphen-gap	direc- ‘tion	direction		
 hyphen-gap	appear- _ ance	appearance		
@@ -260,6 +263,7 @@ hyphen-gap	con- = tinued	continued
 hyphen-gap	per- _ fections	perfections		
 hyphen-gap	ex-— ceedingly	exceedingly		
 hyphen-gap	resurrec- tion	resurrection		
+hyphen-gap	incon- sistent	inconsistent		
 hyphen-gap	guid- ance	guidance		
 hyphen-gap	pre- vious	previous		
 hyphen-gap	posi- _ tion	position		
@@ -373,6 +377,7 @@ ligature	fretorium	prætorium
 ligature	pretorium	prætorium		
 ligature	Czsar	Cæsar		
 ligature	pretorium	prætorium		
+glyph	Philippt	Philippi		
 glyph	radical/	radical		
 glyph	e/ders	elders		
 glyph	¢he	the		
@@ -474,6 +479,7 @@ glyph	resudt	result
 glyph	s¢a¢e	state		
 glyph	¢hrough	through		
 glyph	Teference	reference		
+glyph	subordtnate	subordinate		
 glyph	Jeginning	beginning		
 glyph	c/ass	class		
 glyph	afproval	approval		
@@ -620,7 +626,6 @@ reject	hands	hands	4	① tesseract 侧本来就是词
 reject	J	I	4	① tesseract 侧本来就是词
 reject	body	body	4	① tesseract 侧本来就是词
 reject	hand	hand	4	① tesseract 侧本来就是词
-reject	Stedfastness	Stcdfdstncssfor	4	① tesseract 侧本来就是词
 reject	element	clement	4	① tesseract 侧本来就是词
 reject	holiness	holiness	4	① tesseract 侧本来就是词
 reject	Saviour	Saviour	4	① tesseract 侧本来就是词
@@ -660,6 +665,7 @@ reject	labour	labour	3	① tesseract 侧本来就是词
 reject	kingdom	kingdom	3	① tesseract 侧本来就是词
 reject	children	children	3	① tesseract 侧本来就是词
 reject	own	own	3	① tesseract 侧本来就是词
+reject	becoming	dcconiinQ	3	① tesseract 侧本来就是词
 reject	prayerless	pniycrlcss	3	① tesseract 侧本来就是词
 reject	ah	ah	3	① tesseract 侧本来就是词
 reject	for	for	3	① tesseract 侧本来就是词
@@ -692,7 +698,6 @@ reject	daw	law	3	① tesseract 侧本来就是词
 reject	sins	sins	3	① tesseract 侧本来就是词
 reject	ieicieardine	treacherous	3	② 形差太远
 reject	Testament	Testament	3	① tesseract 侧本来就是词
-reject	Pressing	Prcsshig	3	① tesseract 侧本来就是词
 reject	perfect'	bepcrfccf	3	① tesseract 侧本来就是词
 reject	Luodia	Euoifiti	3	① ABBYY 侧也不是词
 reject	however	liowcvcr	3	① tesseract 侧本来就是词
@@ -933,6 +938,7 @@ reject	wisdom	wisdom	2	① tesseract 侧本来就是词
 reject	Bible	Iiil	2	① tesseract 侧本来就是词
 reject	probably	probably	2	① tesseract 侧本来就是词
 reject	sight	sight	2	① tesseract 侧本来就是词
+reject	Fustification	yustificatlon	2	① ABBYY 侧也不是词
 reject	deceiving	dccciving	2	① tesseract 侧本来就是词
 reject	soul	soul	2	① tesseract 侧本来就是词
 reject	adopted	iidopterl	2	① tesseract 侧本来就是词
@@ -992,6 +998,7 @@ reject	Clement	CUmmt	2	① tesseract 侧本来就是词
 reject	labourers	labourcrs	2	① tesseract 侧本来就是词
 reject	dof	book	2	② 形差太远
 reject	alway	alway	2	① tesseract 侧本来就是词
+reject	vER	VER	2	① tesseract 侧本来就是词
 reject	Prayerfulness	Praycyfulncss	2	① tesseract 侧本来就是词
 reject	equability	ccjuabilily	2	① tesseract 侧本来就是词
 reject	something	soinctliing	2	① tesseract 侧本来就是词
@@ -1526,7 +1533,6 @@ reject	becometh	beco7neth	1	① tesseract 侧本来就是词
 reject	becometh'	becometh	1	① tesseract 侧本来就是词
 reject	Jaramount	paramount	1	③ 全书只正确出现 0 次
 reject	conversation'	com'crsation'	1	① tesseract 侧本来就是词
-reject	becoming	becotning	1	① tesseract 侧本来就是词
 reject	influences	intluences	1	① tesseract 侧本来就是词
 reject	animal	animal	1	① tesseract 侧本来就是词
 reject	forgetfulness	diforgdfulness	1	① tesseract 侧本来就是词
@@ -1589,7 +1595,9 @@ reject	given	given	1	① tesseract 侧本来就是词
 reject	ree	freely	1	① tesseract 侧本来就是词
 reject	suffer	suffer13	1	① tesseract 侧本来就是词
 reject	behalf'	behalf	1	② ABBYY 侧更短，多半是粘词只给了前半
-reject	VERS	VKRS	1	① tesseract 侧本来就是词
+reject	pe	xc	1	① tesseract 侧本来就是词
+reject	hs	Stcdfdstncssfor	1	① ABBYY 侧也不是词
+reject	es	Stcdfdstncssfor	1	① tesseract 侧本来就是词
 reject	afflictions	afttictions	1	① tesseract 侧本来就是词
 reject	heat	heat	1	① tesseract 侧本来就是词
 reject	Having	JLiving	1	① tesseract 侧本来就是词
@@ -1797,8 +1805,6 @@ reject	noinformation	no	1	② 形差太远
 reject	Mammon	Mamfnon	1	① tesseract 侧本来就是词
 reject	answer	answer	1	① tesseract 侧本来就是词
 reject	do	do	1	① tesseract 侧本来就是词
-reject	Foy	Joy	1	① tesseract 侧本来就是词
-reject	Martyrdom	Martyrdom	1	① tesseract 侧本来就是词
 reject	forth	fortii	1	① tesseract 侧本来就是词
 reject	supporting	ortin	1	① tesseract 侧本来就是词
 reject	departure	dcjjarture	1	① tesseract 侧本来就是词
@@ -1893,7 +1899,8 @@ reject	solicitude	soUcitude	1	① tesseract 侧本来就是词
 reject	welcome	welcome	1	① tesseract 侧本来就是词
 reject	brotherly	brotlierly	1	① tesseract 侧本来就是词
 reject	came	came	1	① tesseract 侧本来就是词
-reject	cH	en	1	① tesseract 侧本来就是词
+reject	lied	Lectures	1	① tesseract 侧本来就是词
+reject	mel	on	1	① tesseract 侧本来就是词
 reject	grief	grief	1	① tesseract 侧本来就是词
 reject	subject	suljject	1	① tesseract 侧本来就是词
 reject	write	lurite	1	① tesseract 侧本来就是词
@@ -2044,7 +2051,6 @@ reject	Romans	Romans	1	① tesseract 侧本来就是词
 reject	unregenerate	unregenerate	1	① tesseract 侧本来就是词
 reject	gooda	good	1	② ABBYY 侧更短，多半是粘词只给了前半
 reject	imaginations	imaginations	1	① tesseract 侧本来就是词
-reject	toward	toivard	1	① tesseract 侧本来就是词
 reject	sistent	sistcnt	1	① ABBYY 侧也不是词
 reject	free	freely	1	① tesseract 侧本来就是词
 reject	tendency	tendency	1	① tesseract 侧本来就是词
@@ -2270,7 +2276,6 @@ reject	ames	jfameSy	1	① tesseract 侧本来就是词
 reject	creation	rcation	1	① tesseract 侧本来就是词
 reject	impatient	imj	1	① tesseract 侧本来就是词
 reject	hoary	hoar	1	① tesseract 侧本来就是词
-reject	vER	VER	1	① tesseract 侧本来就是词
 reject	precept	recej	1	① tesseract 侧本来就是词
 reject	exquisite	exciuisite	1	① tesseract 侧本来就是词
 reject	seek	sttV	1	① tesseract 侧本来就是词
@@ -2338,6 +2343,7 @@ reject	talking	talking	1	① tesseract 侧本来就是词
 reject	institutions	institutions	1	① tesseract 侧本来就是词
 reject	vwth	imt	1	① ABBYY 侧也不是词
 reject	se	self	1	① tesseract 侧本来就是词
+reject	Summary	Sumynary	1	① tesseract 侧本来就是词
 reject	physician	j	1	① tesseract 侧本来就是词
 reject	portant	jiortant	1	① ABBYY 侧也不是词
 reject	lovely	lovely	1	① tesseract 侧本来就是词
@@ -2465,7 +2471,6 @@ reject	pera	xcra	1	① ABBYY 侧也不是词
 reject	structure	stmcture	1	① tesseract 侧本来就是词
 reject	wardness'	wardness	1	① tesseract 侧本来就是词
 reject	prominence	prominence	1	① tesseract 侧本来就是词
-reject	pe	xc	1	① tesseract 侧本来就是词
 reject	Rosenmiiller	Rosenmiillcr	1	① tesseract 侧本来就是词
 reject	books	books	1	① tesseract 侧本来就是词
 reject	pov	xov	1	① ABBYY 侧也不是词
@@ -2521,6 +2526,7 @@ reject	stand	Stand	1	① tesseract 侧本来就是词
 reject	gives	gives	1	① tesseract 侧本来就是词
 reject	distinctive	distinctive	1	① tesseract 侧本来就是词
 reject	authority	authority	1	① tesseract 侧本来就是词
+reject	cH	en	1	① tesseract 侧本来就是词
 reject	obviously	ol	1	① tesseract 侧本来就是词
 reject	implies	impHes	1	① tesseract 侧本来就是词
 reject	sense	senseof	1	① tesseract 侧本来就是词

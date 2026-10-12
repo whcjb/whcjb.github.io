@@ -290,13 +290,26 @@ def page_text(pars, lines, first_line, shapes, vflags=None):
             return True
         return J.is_running_head(s)
 
-    body, seen = [], 0
-    for l in lines:
-        if l.strip() and seen < 3:
-            seen += 1
-            if is_head(l):
-                continue
-        body.append(l)
+    # 页眉不一定在第一行：扫描边缘的噪点会插在它前面（实测 12 页，最多
+    # 隔了 5 行）。`VER. 8.] *The Great Example.* 151` 因此漏进正文，横在
+    # `mode` 和 `of life` 中间（用户截图）。
+    # 往后多找几行，但**只有当它前面那几行全是噪点时**才连带剔除——
+    # 目录页第 6 行也长得像页眉，前面却是真内容（`CONTENTS.` 那一页）。
+    # **只剔除认定为页眉的那一行**，前面的噪点不连带删。
+    # 第一版按「这几行是不是噪点」连带剔，`CONTENTS.` / `INTRODUCTION,`
+    # 这种一行一个真词的目录条目也被当噪点删掉了——判据太粗。
+    # 噪点自有页顶清理那条判据管，这里只做一件确定的事。
+    body, seen, cut = [], 0, None
+    for i, l in enumerate(lines):
+        if not l.strip():
+            continue
+        seen += 1
+        if seen > 10:
+            break
+        if is_head(l):
+            cut = i
+            break
+    body = list(lines) if cut is None else lines[:cut] + lines[cut + 1:]
     ocr = J.join_ocr_lines(body)
 
     keep, keep_v, keep0, dropped_head = [], [], None, False
@@ -1755,6 +1768,52 @@ def _wit_gap(wit, ww, b, npre):
     return wit[offs[i - 1][1]:offs[i][0]]
 
 
+RE_WIT_TAG = re.compile(r'^\s*\[(?:HEAD|FN:\d+|SIG:[^\]]*|M:\d+)\]')
+
+
+def trim_page_head(md, wit, log, leaf):
+    """切掉页顶的扫描噪点，边界由证人给。
+
+    页眉前面常粘着一串边缘噪点（`a . all ᾿ <«@ »`）。它们穿插着真词，
+    「连着几个非真词」那条判据会被中间的 `all` 打断，一个也清不掉；
+    跨页一合并就横在句子中间：`…and mode` ⟨噪点⟩ `of life.`（用户截图）。
+
+    证人那份转录里 `[HEAD]` 之后的第一行就是本页正文的开头。拿它定
+    **边界**——文字仍用自己的——把它之前的东西切掉。
+    只切短前缀（≤60 字符、真词不超过两个），切多了宁可不切。
+    """
+    if not wit:
+        return md
+    body = [l for l in wit.split('\n')
+            if l.strip() and not RE_WIT_TAG.match(l)]
+    if not body:
+        return md
+    head = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", body[0])][:6]
+    if len(head) < 4:
+        return md
+    toks = [(m.group(0), m.start()) for m in re.finditer(r'\S+', md)]
+    low = [_norm_w(t) for t, _a in toks]
+    sm = difflib.SequenceMatcher(None, head, low, autojunk=False)
+    blk = sm.find_longest_match(0, len(head), 0, len(low))
+    if blk.size < len(head) - 1 or blk.a != 0 or blk.b == 0:
+        return md
+    cut = toks[blk.b][1]
+    pre = md[:cut]
+    # 噪点常被空行拆成好几小段（`a .` / `all` / `᾿` / `<«@` / `»`），
+    # 不能要求前缀只有一段。限长度与真词数即可。
+    if len(pre) > 70:
+        return md
+    # 前缀里有落单的星号就不切：切掉半个斜体区，整篇的奇偶闸立刻报错
+    # （第一版切坏了 3 篇）。改动含 markdown 标记必须先比标记个数。
+    if len(re.findall(r'(?<!\\)\*', pre)) % 2:
+        return md
+    if LEX_CHECK is not None and sum(
+            1 for w in re.findall(r"[A-Za-z]{2,}", pre) if LEX_CHECK(w.lower())) > 2:
+        return md
+    log.append((str(leaf), 'page-head-junk', pre.strip()[:60]))
+    return md[cut:]
+
+
 def _norm_w(x):
     return re.sub(r"[^A-Za-z']", '', x).lower()
 
@@ -1885,6 +1944,7 @@ def main():
                               VERSE.get(leaf))
         txt = mend_dropcaps(txt, ab[leaf]['pars'], DROPCAPS)
         txt = mend_open_quote(txt, GARBAGE, '')
+        txt = trim_page_head(txt, WITNESS.get(leaf, ''), GARBAGE, leaf)
         txt = mend_greek_garble(txt, ab[leaf]['pars'], WITNESS.get(leaf, ''),
                                 GARBAGE, leaf)
         txt = drop_stray(txt, WITNESS.get(leaf, ''), GARBAGE, str(leaf))

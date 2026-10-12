@@ -48,9 +48,7 @@ Now the God and Father of our Lord Jesus Christ, and the Eternal Priest Himself,
 
 Pray for all the saints. Pray also for kings, and authorities, and princes ; and for them that persecute and hate you ; and for ‘the enemies of the cross,’<sup class="jh-fn" id="fnref-13"><a href="#fn-13">13</a></sup> that your fruit may be manifest among all,<sup class="jh-fn" id="fnref-14"><a href="#fn-14">14</a></sup>5—that ye may be perfect in Him. XIII. Ye wrote to me, and Ignatius also, that if any one went *from hence* into Syria, he should take also the letter from you<sup class="jh-fn" data-fn="507-6">6</sup> ;® which I will see to, if I obtain an opportunity,— 1
 
-Acts vili. 21.
-
-XIV. Appendix. either in person, or by one whom I shall send to act also as your deputy.
+Acts vili. 21. either in person, or by one whom I shall send to act also as your deputy.
 
 The letters of Ignatius—those which were sent to us by him, and others, as many as we have with us—we send to you, as ye desired ; the which are subjoined to this letter. And from them ye will be able to obtain much help; for they treat of faith and patience, and all upbuilding as concerneth our Lord. ;
 

@@ -20,7 +20,7 @@ Lightfoot would join μετὰ καὶ Κλήμεντος, κ.τ.λ., with συ�
 
 <span class="jh-vref">4.</span> Ἐρῶ (from a present εἴρω, used by Homer) is always a *future* in the New Testament, as in classical writers: *‘will say,’* therefore,—not ‘say,’ as in the Authorized Version.
 
-<span class="jh-vref">5.</span> As to the exact meaning of ἐπιείκεια*, Or* TO ἐπιεικὲς, See Trench’s *Synonyms, 1*st series, § 43.
+As to the exact meaning of ἐπιείκεια*, Or* TO ἐπιεικὲς, See Trench’s *Synonyms, 1*st series, § 43.
 
 <span class="jh-vref">6.</span> As to the distinction of meaning between προσευχὴ and δέησις, see Trench’s *Synonyms,* 2nd series, 1.
 

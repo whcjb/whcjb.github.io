@@ -51,9 +51,7 @@ II 11 being filled with the fruit of righteousness, which is through Jesus Chris
 
 12 Wherefore, my beloved, as ye always obeyed, *so,* not as in my presence only, but now much more in my absence, work out your own salvation with fear and trembling ; for it is God which worketh in you both to
 
-14 will and to work, of His good pleasure. Do all things
-
-15 without murmurings and disputings, that ye may ap- 18 19 20 21 22 23 24 25 26 27 28 29 20 *Revised Translation of the* prove yourselves blameless and guileless, children of God without rebuke, in the midst of a crooked and perverse generation, among whom ye shine as lights in the 16 world, holding forth the word of life ; that I may have matter of glorying *laid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
+14 will and to work, of His good pleasure. Do all things prove yourselves blameless and guileless, children of God without rebuke, in the midst of a crooked and perverse generation, among whom ye shine as lights in the 16 world, holding forth the word of life ; that I may have matter of glorying *laid up* for me against the day of Christ, that I did not run in vain, neither labour in vain.
 
 17 Yea, and if, besides the sacrifice and service of your faith, I be poured forth, I joy, and congratulate you all ;
 

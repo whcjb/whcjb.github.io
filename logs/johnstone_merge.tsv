@@ -29,8 +29,10 @@ dropcap		T
 dropcap	- 	
 dropcap		T
 dropcap		T
+dropcap	δ ie Πα * 	
 dropcap		B
 dropcap		A
+dropcap	=< “~ v ἣ Υ̓͂ 	
 dropcap	| 	
 dropcap		I
 dropcap	᾿ 	
@@ -58,7 +60,7 @@ dropcap		T
 dropcap		T
 dropcap		T
 dropcap		II 
-dropcap	Il. tN w 4 	
+dropcap	Il. 29 tN w 4 	
 dropcap	a 	
 dropcap		P
 dropcap	XI. Appendix. 	
@@ -74,6 +76,10 @@ italic-dropped
 italic-dropped	 	
 italic-dropped	SiiIfcrings turnijii^ to Salvation.	
 italic-dropped	 	
+italic-dropped	TJic Sainfs Life	
+italic-dropped	Christ.	
+italic-dropped	 	
+italic-dropped	yj	
 italic-dropped	Lectures on PJiilippia^is.	
 italic-dropped	 	
 italic-dropped	Lectures on PJiilippians.	
@@ -90,7 +96,6 @@ italic-dropped	A Strait betwixt Two,
 italic-dropped	 	
 italic-dropped	A Strait bctiuixt Two.	
 italic-dropped	 	
-italic-dropped	Conversation dcconiinQ the Gospel.       	
 italic-dropped	Lectures on PJiilippia7is.	
 italic-dropped	 	
 italic-dropped	Christian Concord.	
@@ -102,8 +107,6 @@ italic-dropped	Lechcres on Philippians.
 italic-dropped	 	
 italic-dropped	 	
 italic-dropped	Mission of Epaphroditus.	
-italic-dropped	yustificatlon by Faith.	
-italic-dropped	 	
 italic-dropped	Pressing toward the Mark.        	
 italic-dropped	True Wisdom proved by God Ii)icss.    	
 italic-dropped	Tnic Wisdom proved by Godliness.    	
@@ -1542,13 +1545,17 @@ seam-join	can-not	cannot
 seam-join	need-fulness	needfulness
 seam-join	Septua-gint	Septuagint
 seam-join	pre-cept	precept
+drop/page-head-junk	11	P Reis F-ACC E: |
+drop/page-head-junk	12	Vill *Preface.*
 drop/stray	19	_ ⟨the progress ⟂ of the⟩
 drop/stray	19	_ ⟨missionary consuming ⟂ passion his⟩
 drop/stray	21	— ⟨his physical ⟂ strength gave⟩
-drop/greek-garble	44	χ → i.
+drop/page-head-junk	44	χ
 drop/stray	44	~ ⟨christ glorious ⟂ body to⟩
 drop/stray	46	| ⟨those under ⟂ their care⟩
+drop/page-head-junk	49	a
 drop/stray	50	» ⟨to god ⟂ will advance⟩
+drop/page-head-junk	52	-
 drop/stray	52	— ⟨verse regarding ⟂ his love⟩
 drop/stray	53	_ ⟨each other ⟂ with all⟩
 drop/stray	53	| ⟨of the ⟂ gospel yielded⟩
@@ -1556,18 +1563,21 @@ drop/stray	57	᾿ ⟨introductory that ⟂ meaning to⟩
 drop/stray	60	» ⟨but love ⟂ abounding in⟩
 drop/stray	60	© ⟨was made ⟂ offend and⟩
 drop/stray	61	_ ⟨growingly by ⟂ christian activity⟩
-drop/greek-garble	64	Ἂν → i.
+drop/page-head-junk	63	a
+drop/page-head-junk	64	“~ Ἂν
 drop/stray	64	᾿ ⟨made manifest ⟂ praise which⟩
 drop/stray	65	_ ⟨the palace ⟂ and in⟩
 drop/stray	67	_ ⟨the palace ⟂ buildings the⟩
 drop/stray	69	_ ⟨that knew ⟂ anything of⟩
 drop/stray	70	~ ⟨private conversations ⟂ on religion⟩
+drop/page-head-junk	71	i et *ee* σ-
+drop/page-head-junk	73	age *ela* δ
 drop/stray	73	_ ⟨as it ⟂ may seem⟩
 drop/stray	74	— ⟨all christians ⟂ should observe⟩
 drop/stray	76	| ⟨character was ⟂ they expected⟩
 drop/stray	81	_ ⟨from the ⟂ bondage of⟩
 drop/stray	83	_ ⟨unto you ⟂ to this⟩
-drop/greek-garble	85	ΝΣ. → Salvation.
+drop/page-head-junk	85	ΝΣ. “
 drop/stray	85	_ ⟨men like ⟂ flock as⟩
 drop/greek-garble	86	ἃ → a
 drop/stray	87	_ ⟨man to ⟂ whom god⟩
@@ -1578,9 +1588,11 @@ drop/stray	89	_ ⟨in many ⟂ ways no⟩
 drop/stray	89	_ ⟨altogether overpowered ⟂ by this⟩
 drop/stray	89	_ ⟨of the ⟂ type of⟩
 drop/star-open-quote		Fear not, for I am with thee ; be not dismayed
+drop/page-head-junk	93	4 .
 drop/greek-garble	93	᾿ς → and
 drop/stray	93	_ ⟨we desire ⟂ besides thee⟩
 drop/stray	93	_ ⟨of association ⟂ with sinners⟩
+drop/page-head-junk	94	~
 drop/stray	94	_ ⟨and energy ⟂ and beauty⟩
 drop/stray	95	_ ⟨the inhabitants ⟂ were born⟩
 drop/stray	97	__ ⟨of god ⟂ how single⟩
@@ -1595,7 +1607,8 @@ drop/stray	100	~ ⟨us now ⟂ so well⟩
 drop/stray	101	_ ⟨the cottages ⟂ of the⟩
 drop/stray	101	_ ⟨sendeth them ⟂ away there⟩
 drop/stray	101	_ ⟨wisdom and ⟂ energy are⟩
-drop/greek-garble	102	΄ → i.
+drop/page-head-junk	102	΄
+drop/page-head-junk	103	= *= SE*
 drop/stray	106	~ ⟨and sighing ⟂ shall flee⟩
 drop/stray	107	_ ⟨as matter ⟂ of fact⟩
 drop/stray	107	_ ⟨load of ⟂ clay now⟩
@@ -1606,6 +1619,7 @@ drop/stray	112	— ⟨the hands ⟂ which hang⟩
 drop/stray	112	— ⟨shudder instinctively ⟂ at the⟩
 drop/stray	113	| ⟨more and ⟂ more distinctly⟩
 drop/stray	114	— ⟨might therefore ⟂ reasonably think⟩
+drop/page-head-junk	115	ἵ
 drop/stray	115	_ ⟨into the ⟂ passage by⟩
 drop/stray	115	_ ⟨of labour ⟂ paul intimates⟩
 drop/greek-garble	116	ἢ → in
@@ -1614,6 +1628,7 @@ drop/stray	116	— ⟨that end ⟂ to work⟩
 drop/stray	116	— ⟨our example ⟂ the highest⟩
 drop/stray	116	— ⟨holy patience ⟂ to show⟩
 drop/stray	116	© ⟨out of ⟂ darkness into⟩
+drop/page-head-junk	117	/
 drop/stray	117	_ ⟨love of ⟂ christ constraineth⟩
 drop/stray	118	— ⟨dealing will ⟂ succeed yet⟩
 drop/stray	118	— ⟨he said ⟂ so is⟩
@@ -1652,11 +1667,15 @@ drop/stray	131	_ ⟨earnest and ⟂ persistent struggle⟩
 drop/stray	132	— ⟨things that ⟂ are above⟩
 drop/stray	135	— ⟨christ thus ⟂ god will⟩
 drop/stray	135	— ⟨distinct and ⟂ comforting to⟩
+drop/page-head-junk	144	‘
+drop/page-head-junk	147	" “pe. ἃ ".-- *> hs* ν *= Py es .* ὧν + ͵
+drop/page-head-junk	151	_— - = _— ee g
 drop/stray	151	_ ⟨exactly rendered ⟂ by the⟩
 drop/stray	152	— ⟨the kingdom ⟂ of jesus⟩
 drop/stray	152	| ⟨and beauty ⟂ looking back⟩
 drop/stray	152	~ ⟨faithful church ⟂ at philippi⟩
 drop/stray	153	_ ⟨me that ⟂ you have⟩
+drop/page-head-junk	155	᾿
 drop/greek-garble	156	Ὁ → away
 drop/greek-garble	157	[δα → the
 drop/stray	161	_ ⟨the cultivation ⟂ of self⟩
@@ -1664,16 +1683,19 @@ drop/stray	161	_ ⟨to the ⟂ heart of⟩
 drop/stray	161	_ ⟨refers is ⟂ that god⟩
 drop/stray	161	_ ⟨to the ⟂ saviour which⟩
 drop/greek-garble	162	ΟΠ → reveals
+drop/page-head-junk	165	_
 drop/stray	165	— ⟨of men ⟂ of men⟩
 drop/stray	165	£ ⟨of men ⟂ of men⟩
 drop/stray	165	_ ⟨mysteries set ⟂ before us⟩
 drop/stray	165	_ ⟨his face ⟂ shining as⟩
 drop/stray	165	_ ⟨of celestial ⟂ glory glittered⟩
+drop/page-head-junk	167	a . all ᾿ <«@ »
 drop/stray	169	_ ⟨to which ⟂ the idea⟩
 drop/stray	169	_ ⟨suffered directly ⟂ under jewish⟩
 drop/stray	170	— ⟨god had ⟂ humbled himself⟩
 drop/stray	170	© ⟨obedience in ⟂ which he⟩
 drop/stray	170	— ⟨even the ⟂ death of⟩
+drop/page-head-junk	171	Ve" SS ee
 drop/stray	175	| ⟨its redeemer ⟂ looking back⟩
 drop/stray	176	_ ⟨are summed ⟂ up in⟩
 drop/stray	176	_ ⟨supplement unnecessary ⟂ and not⟩
@@ -1686,8 +1708,9 @@ drop/stray	180	~ ⟨foundation to ⟂ make eternal⟩
 drop/greek-garble	181	τ → grace,
 drop/greek-garble	181	Ὶ → legitimate
 drop/greek-garble	181	ἢ → offered
+drop/page-head-junk	184	‘
 drop/stray	185	© ⟨and death ⟂ way broad⟩
-drop/greek-garble	201	ὟΣ → World.
+drop/page-head-junk	201	-. © ὟΣ γε
 drop/stray	204	© ⟨surrender anything ⟂ which we⟩
 drop/stray	206	> ⟨our own ⟂ day it⟩
 drop/stray	217	_ ⟨the statement ⟂ before us⟩
@@ -1746,11 +1769,14 @@ drop/star-open-quote		Not as though I had already attained, either w
 drop/stray	296	© ⟨confidence in ⟂ which the⟩
 drop/stray	297	| ⟨attained in ⟂ the beginning⟩
 drop/stray	297	_ ⟨in your ⟂ bibles that⟩
+drop/page-head-junk	301	| | | ed) J a mn ee
 drop/stray	302	— ⟨apostle paul ⟂ in seeking⟩
+drop/page-head-junk	305	a a \* % εε- ‘a “((( ᾿
 drop/stray	305	~ ⟨who has ⟂ not found⟩
 drop/stray	306	_ ⟨good works ⟂ with the⟩
 drop/stray	308	| ⟨whole the ⟂ sea will⟩
 drop/stray	308	— ⟨no man ⟂ has right⟩
+drop/page-head-junk	309	| |
 drop/stray	310	| ⟨god shall ⟂ reveal which⟩
 drop/stray	311	_ ⟨of this ⟂ for those⟩
 drop/stray	311	_ ⟨which have ⟂ just expressed⟩
@@ -1761,6 +1787,7 @@ drop/stray	311	_ ⟨the passage ⟂ with the⟩
 drop/stray	312	— ⟨sin and ⟂ make us⟩
 drop/stray	313	_ ⟨christian wisdom ⟂ ripens conviction⟩
 drop/stray	314	| ⟨thus minded ⟂ the apostle⟩
+drop/page-head-junk	315	_
 drop/stray	315	___ ⟨the thought ⟂ of him⟩
 drop/stray	315	_ ⟨to pursue ⟂ with eagerness⟩
 drop/stray	316	— ⟨strengthens and ⟂ is followed⟩
@@ -1798,10 +1825,13 @@ drop/stray	328	— ⟨him and ⟂ meantime he⟩
 drop/greek-garble	329	«ὦ → Examples,
 drop/stray	329	_ ⟨are raging ⟂ waves of⟩
 drop/stray	330	— ⟨shame will ⟂ find that⟩
+drop/page-head-junk	331	LL a -ὀ-ὄ-.:ὕὄ..ὕ
 drop/stray	332	— ⟨doom will ⟂ be so⟩
 drop/stray	336	— ⟨most manifest ⟂ that he⟩
 drop/stray	337	_ ⟨the same ⟂ time tender⟩
+drop/page-head-junk	339	΄
 drop/stray	340	— ⟨safety his ⟂ position gave⟩
+drop/page-head-junk	343	Γ *il*
 drop/stray	343	_ ⟨and in ⟂ consequence our⟩
 drop/stray	344	— ⟨the prince ⟂ of this⟩
 drop/greek-garble	346	ἡ → out
@@ -1810,6 +1840,7 @@ drop/stray	354	— ⟨apostle in ⟂ another place⟩
 drop/stray	354	— ⟨be reasonable ⟂ service and⟩
 drop/stray	354	~ ⟨this holy ⟂ christlike life⟩
 drop/stray	354	— ⟨and in ⟂ recreation with⟩
+drop/page-head-junk	355	ἊΨ x,
 drop/stray	355	_ ⟨of great ⟂ britain or⟩
 drop/stray	356	© ⟨the instruments ⟂ of frivolity⟩
 drop/stray	356	~ ⟨is the ⟂ temple of⟩
@@ -1819,8 +1850,10 @@ drop/stray	358	— ⟨you in ⟂ the day⟩
 drop/stray	358	~ ⟨was in ⟂ all things⟩
 drop/stray	361	_ ⟨connection of ⟂ thought between⟩
 drop/stray	361	_ ⟨apostle to ⟂ the relations⟩
+drop/page-head-junk	365	‘
 drop/star-open-quote		Rejoice in the Lord alway: and again I say, Re
 drop/stray	378	— ⟨of the ⟂ th is⟩
+drop/page-head-junk	382	‘
 drop/stray	382	— ⟨vengefulness against ⟂ which the⟩
 drop/stray	382	— ⟨up in ⟂ the corrupt⟩
 drop/stray	384	~ ⟨us the ⟂ love of⟩
@@ -1831,6 +1864,7 @@ drop/stray	392	— ⟨brought up ⟂ many of⟩
 drop/stray	392	— ⟨very hard ⟂ strive then⟩
 drop/stray	392	— ⟨blamelessness and ⟂ patience and⟩
 drop/stray	394	— ⟨in their ⟂ relations to⟩
+drop/page-head-junk	395	_
 drop/stray	395	_ ⟨truthfulness of ⟂ god is⟩
 drop/stray	395	_ ⟨enter into ⟂ the consideration⟩
 drop/greek-garble	397	᾿ → inconsistent
@@ -1859,6 +1893,7 @@ drop/stray	407	_ ⟨minds here ⟂ we have⟩
 drop/star-open-quote		But I rejoiced in the Lord greatly, that now a
 drop/stray	410	— ⟨himself however ⟂ in consequence⟩
 drop/stray	414	— ⟨inheritance of ⟂ earthly good⟩
+drop/page-head-junk	419	— = *= uw*
 drop/stray	419	ἢ ⟨more reasonable ⟂ whilst beginning⟩
 drop/stray	428	~ ⟨confidence in ⟂ the christian⟩
 drop/stray	430	© ⟨builded an ⟂ altar unto⟩
@@ -1876,6 +1911,7 @@ drop/stray	454	| ⟨and sublimity ⟂ the precise⟩
 drop/stray	456	— ⟨cor xiii ⟂ to all⟩
 drop/stray	456	| ⟨in cor ⟂ meyer takes⟩
 drop/stray	458	— ⟨the spirit ⟂ and the⟩
+drop/page-head-junk	460	22.
 drop/stray	460	— ⟨bear any ⟂ sense but⟩
 drop/stray	461	ὃ ⟨see winer ⟂ into this⟩
 drop/stray	462	— ⟨may hear ⟂ of your⟩
@@ -1896,8 +1932,11 @@ drop/stray	480	ὃ ⟨see winer ⟂ green jelf⟩
 drop/stray	480	ὃ ⟨green jelf ⟂ and this⟩
 drop/stray	480	ὃ ⟨jelf and ⟂ this genitive⟩
 drop/stray	481	ὃ ⟨and winer ⟂ yet the⟩
+drop/page-head-junk	483	a
 drop/stray	484	ὃ ⟨done jelf ⟂ for the⟩
+drop/page-head-junk	487	ὑπάρχειν,
 drop/stray	487	@ ⟨with exhibiting ⟂ change of⟩
+drop/page-head-junk	490	5.
 drop/stray	490	ὃ ⟨nd series ⟂ meyer and⟩
 drop/stray	492	| ⟨former clause ⟂ also before⟩
 drop/stray	493	ὃ ⟨see winer ⟂ for an⟩
@@ -1909,11 +1948,12 @@ drop/stray	504	| ⟨leaving the ⟂ vanity of⟩
 drop/stray	504	| ⟨let us ⟂ turn to⟩
 drop/stray	505	« ⟨sounds of ⟂ and have⟩
 drop/stray	505	« ⟨of and ⟂ have often⟩
+drop/page-head-junk	508	XIV. Appendix.
 drop/fn-rule	front	- ᾿ς oe Fp ΕΕΞΣ Πἰ > ay → 
 drop/merge-page	front	MARY SINCLAIR ⟂ Digitized by the Internet Archive
 drop/fn-rule	front	ig Dy al ἐνὶ 2... ιν → 2...
 drop/fn-rule	front	PI OS! → 
-drop/merge-page	front	nsion, as seemed needful in view of publishing ⟂ Vill *Preface.*
+drop/merge-page	front	nsion, as seemed needful in view of publishing ⟂ them. In all of them the authors endeavour has
 drop/merge-page	front	dix to an exposition of Paul’s Epistle to that ⟂ *Preface.* ix
 drop/merge-page	front	45 162 175 186 200 213 229 242 263 278 292 306 ⟂ ΧΙ
 drop/signature	introduction	A +
@@ -1971,18 +2011,18 @@ drop/fn-ref	2	to look back upon ⟨1⟩
 drop/merge-page	2	ill it.’ True Christian wisdom is to obey this ⟂ gracious command, and on mercies past to build
 drop/merge-page	2	se we found Paul using the word ‘saints’ as \* ⟂ equivalent to ‘church.’ We have here another v
 drop/merge-page	2	ered that the wise and loving Saviour had sent ⟂ forth His apostles and His seventy disciples ‘
-drop/merge-page	2	who through the dealings of His Spirit are led ⟂ i.
+drop/merge-page	2	who through the dealings of His Spirit are led ⟂ to give themselves to Christ, are through the 
 drop/merge-page	2	ations of the divine Word, death, which we are ⟂ apt to keep so prominently before our minds, p
 drop/merge-page	2	future which he can confidently anticipate for ⟂ them. He has given us, too, his reasons for th
 drop/merge-page	2	I love *you as wel/-proved Salles Christians,* ⟂ By some expositors the other words of the clau
 drop/merge-page	2	 him to count, in a special manner, a ‘gift of ⟂ grace.’ Such is the very expression of Paul in
 drop/signature	2	c +
-drop/merge-page	2	h of the martyrs could discern, for themselves ⟂ a chariot of fire waiting to bear them home to
+drop/merge-page	2	h of the martyrs could discern, for themselves ⟂ chariot of fire waiting to bear them home to t
 drop/footnote-fs	2	* In the Authorized Version there are many instances of its use in thesense of  
 drop/fn-ref	2	witness who gave it ⟨1⟩
 drop/merge-page	2	re means ‘witness.’ In the older English the C ⟂ word had not its meaning limited to testimony 
 drop/merge-page	2	,’ he says, ‘ *how greatly I long after you 1* ⟂ all
-drop/merge-page	2	e of Christ? This.is the practical question on ⟂ -
+drop/merge-page	2	e of Christ? This.is the practical question on ⟂ the subject for us. What impression of the Sav
 drop/merge-page	3	 him the most exquisite delight. Now that this ⟂ love, already so ardent, may grow, may have ev
 drop/footnote	3	According to a precept ascribed by early writers to our Lord, γίνεσθε τραπεζίται δόκιμοι, 
 drop/seam-digit	3	, 1
@@ -1998,8 +2038,7 @@ drop/fn-ref	3	blameless and useful life ⟨1⟩
 drop/merge-page	3	 itself fully at last, and the river flows on, ⟂ its colour still blue, but sadly changed from 
 drop/merge-page	3	, shows impressively with what vividness and ! ⟂ constancy it was present to the thoughts of th
 drop/merge-page	3	teousness’* here may designate either holiness ⟂ of heart or holiness of life. If the former be
-drop/merge-page	3	umstances, now ‘such an one as Paul the aged,’ ⟂ a prisoner, and uncertain whether his imprison
-drop/fn-rule	3	“~ i. → 
+drop/merge-page	3	umstances, now ‘such an one as Paul the aged,’ ⟂ prisoner, and uncertain whether his imprisonme
 drop/merge-page	3	nation and sufferings and mediatorial reign of ⟂ His Son. Now the chief element in the salvatio
 drop/signature	4	D +'
 drop/footnote-fs	4	 Hut I would ye should understand, brethren, that the things which hap-pened unt
@@ -2009,10 +2048,9 @@ drop/footnote-fs	4	 There is probability in the view maintained by Wieseler, How
 drop/fn-ref	4	the stay at malta ⟨1⟩
 drop/dup-fn-ref	4	1
 drop/merge-page	4	ely fail to talk of their extraordinary com- 1 ⟂ *p*
-drop/fn-rule	4	i et *ee* σ- → 
 drop/merge-page	4	cause news of interest will be welcomed from — ⟂ any one, advice on matters of moment and delic
 drop/merge-page	4	as spoken of throughout the whole world.’ Most ⟂ of these Christians were, no doubt, poor men, 
-drop/merge-page	4	 Italy was opened to the gospel, the Waldenses ⟂ age *ela* δ
+drop/merge-page	4	 Italy was opened to the gospel, the Waldenses ⟂ were ready to enter in rejoicingly and proclai
 drop/merge-page	4	nd strife, and* (rather “ but”) *some also of* ⟂ *good will,*—from hearty interest in my happin
 drop/merge-page	4	 rite of circumcision and the other ordinances ⟂ of the old covenant. ‘To this class, we may re
 drop/merge-page	4	as on the present occasion displayed, will not ⟂ appear strange to careful students of history.
@@ -2027,7 +2065,7 @@ drop/merge-page	5	act that ‘every way, whether in pretence or in ⟂ truth, Ch
 drop/merge-page	5	everlasting life is salvation. But the word is ⟂ generally in Scripture applied to the state of
 drop/merge-page	5	things, my brethren, ‘what manner of persons,” ⟂ think you, ‘ ought we to be, in all holy conve
 drop/merge-page	5	l and happy. Spiritual wisdom and strength and ⟂ joy are all from Him. Only through Him, theref
-drop/merge-page	5	l did habitually ‘ask’ God. Powerful aid, how- ⟂ Salvation. “
+drop/merge-page	5	l did habitually ‘ask’ God. Powerful aid, how- ⟂ ever, was given him by the prayers of his frie
 drop/footnote-fs	5	 Sucli is the ex.ict thouj^ht conveyed by the somewhat peculiar word ofthe origi
 drop/seam-digit	5	1
 drop/fn-mark-glyph	5	!
@@ -2038,7 +2076,7 @@ drop/merge-page	5	 matter is sustained by memory ; *‘as a/ways,* ⟂ *so now a
 drop/merge-page	6	 love, what is the purpose to which he devotes ⟂ his mental and bodily powers, that one word an
 drop/merge-page	6	he pardoning, saving grace of God in Christ he ⟂ knew to be a rock on which he could stand safe
 drop/merge-page	6	 at the grave of Lazarus. Believing that Jesus ⟂ died and rose again, he knew that ‘even so the
-drop/merge-page	6	rance of his heart, written legibly on all the ⟂ ~
+drop/merge-page	6	rance of his heart, written legibly on all the ⟂ ‘issues of life,’ is, ‘This is my Beloved, and
 drop/merge-page	6	f itself, except it abide in the vine, no more ⟂ can ye, except ye abide in Me.’ Here was the s
 drop/fn-rule	6	_ *F* → 
 drop/merge-page	6	ricum he fully preached the gospel of Christ.’ ⟂ rom the discharge of the commission which Chri
@@ -2057,8 +2095,7 @@ drop/footnote-cont	7	<span class="jh-verse">Poor little fluttering, pleasing spr
 drop/fn-mark-glyph	7	?
 drop/fn-ref	7	plato or a cicero ⟨1⟩
 drop/dup-fn-ref	7	1
-drop/merge-page	7	ever. We cannot return to live them over again ⟂ i.
-drop/fn-rule	7	= *= SE* → 
+drop/merge-page	7	ever. We cannot return to live them over again ⟂ more wisely. The gate of the invisible world o
 drop/merge-page	7	ro.<sup class="jh-fn" data-fn="102-1">1</sup>  ⟂ On this dark background, then, of human fear, 
 drop/merge-page	7	rding to the teaching of Scripture, the endur- ⟂ ance by the Son of God of the punishment of si
 drop/merge-page	7	hat ἐξ *stood in the very closest relation to* ⟂ *the resolution in the other clause of the ver
@@ -2076,9 +2113,9 @@ drop/fn-ref	7	a perfect humanity ' ⟨1⟩
 drop/merge-page	7	ved and delighted in far more intensely than ! ⟂ here, because far better known, ‘seen as He is
 drop/merge-page	7	nection in which the apostle makes the present ⟂ statement implies, you will remember, that by 
 drop/merge-page	7	has discrowned the king of terrors, has Ν' ᾿ ; ⟂ we
-drop/merge-page	8	confident, therefore, that he would be left on ⟂ ἵ
+drop/merge-page	8	confident, therefore, that he would be left on ⟂ earth, and meekly and lovingly acquiesced in t
 drop/merge-page	8	ted by his beams, drinks up water from Ὶ j J , ⟂ the sea. The clouds journey far inland, bearin
-drop/merge-page	8	 the advancement of the Saviour’s kingdom, And ⟂ /
+drop/merge-page	8	 the advancement of the Saviour’s kingdom, And ⟂ as this is duty, so is it the direction in whi
 drop/merge-page	8	ive in the flesh, this means labour,’ but that ⟂ it means *‘fruit* of labour’—success in the wo
 drop/merge-page	8	he full corn in the ear: but when the fruit is ⟂ brought forth, immediately he putteth in the s
 drop/footnote	8	of the Authorized Version, is an unhappy rendering.
@@ -2103,7 +2140,7 @@ drop/footnote-fs	9	Light to newly opened eyes,Water-springs in deserts dreary,Is
 drop/seam-digit	9	5
 drop/merge-page	9	 the influences of the lowest—the animal | 4 ᾿ ⟂ lement of our being, which ought to be subject
 drop/merge-page	9	he Christian soul, mounting up on the wings of ⟂ faith and hope. Life will be a song of praise,
-drop/merge-page	9	 flames roaring around him even i a  ἶν. —_ “a ⟂ μ
+drop/merge-page	9	 flames roaring around him even i a  ἶν. —_ “a ⟂ μ VER. 27. *Conversation becoming the Gospel.*
 drop/merge-page	9	 love the Lord thy God with all thy heart, | | ⟂ and with all thy soul, and with all thy streng
 drop/merge-page	9	sincere and wise and active. He will doubtless ⟂ not be perfect here below, for ‘ the law of si
 drop/merge-page	9	uring and heavy laden—‘ say, Come.’ The silent ⟂ influence of a holy life, whereby the Christia
@@ -2123,14 +2160,12 @@ drop/seam-digit	10	1
 drop/fn-mark-glyph	10	\*
 drop/fn-ref	10	them for his ' ⟨1⟩
 drop/merge-page	10	in the end perish miserably, whilst to you a Ἢ ⟂ shall be granted a glorious salvation. A thoug
-drop/merge-page	10	a-fn="143-1">1</sup> One can hardly doubt that ⟂ ‘
+drop/merge-page	10	a-fn="143-1">1</sup> One can hardly doubt that ⟂ the pricks’ of conscience against which Paul h
 drop/signature	10	I +
 drop/merge-page	10	ries an evident token of perdition, but to you ⟂ of salvation,—*and that of God.” ‘*You are to 
 drop/merge-page	10	s favour, His purpose is to ripen and beautify ⟂ your religious character thereby, and at the r
-drop/fn-rule	10	" “pe. ἃ ".-- > hs ν = → 
-drop/merge-page	10	 which that has brought with it,—there is evi- ⟂ Py es . ὧν + ͵ VERS. 29, 30.] *Stedfastness fo
+drop/merge-page	10	 which that has brought with it,—there is evi- ⟂ dently an element of likeness to Him. The seve
 drop/merge-page	11	s and daughters, be utterly wanting, then cer- ⟂ tainly he himself knows not that precious ‘sec
-drop/fn-rule	11	_— - = _— ee g → 
 drop/merge-page	11	 vital moment. In common, Christians see God’s ⟂ supreme right to their love and obedience,—hav
 drop/merge-page	11	 more closely a congregation or a denomination ⟂ approaches the character of a monastery in ina
 drop/merge-page	11	or their concord, as a kindness to himself, is ⟂ presented with a solemnity and fervid intensit
@@ -2138,7 +2173,7 @@ drop/merge-page	11	 as this, my friends, shows us clearly the in- ⟂ tensity of
 drop/footnote-fs	11	 Other here, as several times in the Authorized Version,  is plural.See, for exa
 drop/fn-mark-glyph	11	\*
 drop/fn-ref	11	let each esteem other ⟨1⟩
-drop/merge-page	11	thers” ‘*The great causes of dissension in — ᾿ ⟂ ᾿
+drop/merge-page	11	thers” ‘*The great causes of dissension in — ᾿ ⟂ societies of any kind are those here indicated
 drop/footnote-fs-cont	11	this Epistle. In the age wlicn our translation was made, this form wasemployed f
 drop/footnote-fs	11	 Collect of the Church of England, for the Sunday before Easter.
 drop/fn-mark-glyph	11	ἢ
@@ -2159,16 +2194,14 @@ drop/footnote-fs	12	 Let this mind be in you, which was also in Christ Jesus: 6 
 drop/merge-page	12	 taking human nature into association with the ⟂ divine, therefore, there is nothing even appro
 drop/merge-page	12	ation may be illustrated by the use of our own ⟂ _ English word ‘capture,’ a word of very simil
 drop/merge-page	12	rpretation of the clause, as you see, the doc- ⟂ trine of our Lord’s true and supreme divinity 
-drop/merge-page	12	m’ of a subject or servant of the Divine King. ⟂ _
 drop/merge-page	12	o jewelled breastplate, with Urim and Thummim, ⟂ indicated Him to be the world’s great High Pri
-drop/merge-page	12	re intended outward guise, demeanour, and mode ⟂ a . all ᾿ <«@ » | VER. 8.] *The Great Example.
+drop/merge-page	12	re intended outward guise, demeanour, and mode ⟂ of life. Still, you observe, as before in the 
 drop/merge-page	12	seen, is implied in His being obedient—a truth ⟂ which, I fear, is often but very dimly before 
 drop/merge-page	12	 middle projection, with his hands fastened to ⟂ the transverse beam by large bolts or nails dr
 drop/footnote-short	12	⟨*Pro Rab.* 5.⟩ ← 切出 ⟨*Pro Rab.* 5.⟩
 drop/seam-digit	12	1
 drop/fn-ref	12	thoughts eyes ears ' ⟨1⟩
 drop/merge-page	12	xion was regarded as equivalent to an exposure ⟂ of this kind,—an exposure which was held to be
-drop/fn-rule	12	Ve" SS ee → 
 drop/merge-page	12	ss.’ In His voluntarily assumed position as ‘a ⟂ servant’ of God, He had a great work assigned 
 drop/merge-page	12	n of the Spirit, and the providential adminis- ⟂ tration of the affairs of the world with a vie
 drop/footnote-short	12	⟨Ps. cxlviii.⟩ ← 切出 ⟨1
@@ -2176,7 +2209,7 @@ drop/footnote-short	12	⟨Ps. cxlviii.⟩ ← 切出 ⟨1
 Ps, cxlviii.⟩
 drop/fn-mark-glyph	12	!
 drop/fn-ref	12	of the lord ' ⟨1⟩
-drop/merge-page	12	heaven, and things in earth, and things under* ⟂ *| the carth ; and that every tongue should co
+drop/merge-page	12	heaven, and things in earth, and things under* ⟂ *| VERS. 9-11.} 7) he Great Example. . 157 the
 drop/footnote-fs	12	* See Luke viii. 31 ; Rev. ix. 11. For the deep of the English Ver-sion, in the 
 drop/footnote	12	Ps. xcviii. 8; Isa. lv. 12. 2
 drop/seam-digit	12	1
@@ -2198,7 +2231,7 @@ drop/fn-rule	13	tru
 
 stworthy → 
 drop/merge-page	13	the new birth, both are present ; and the only ⟂ evidence of a man’s being in Christ, and there
-drop/merge-page	13	nst all seducing and perverting influences,—to ⟂ ‘
+drop/merge-page	13	nst all seducing and perverting influences,—to ⟂ put on the whole armour of God, that we may be
 drop/merge-page	13	qually and utterly hopeless. The cry of Israel ⟂ to Moses is, ‘ Because there were no graves in
 drop/merge-page	13	ur respect and love for your teacher naturally ⟂ pleaded with you to follow that course of life
 drop/merge-page	13	ng to another figure, even stronger, we are by ⟂ nature *‘dead* in trespasses and sins,’—as utt
@@ -2217,8 +2250,7 @@ drop/fn-mark-glyph	14	}
 drop/fn-ref	14	with the sun ' ⟨1⟩
 drop/merge-page	14	ed up, till there is presented at last a broad ⟂ and complete surface of light. They appear clo
 drop/merge-page	14	t endeavours to speak for Christ, as God gives ⟂ him ability and opportunity—be it to his littl
-drop/fn-rule	14	-. © → 
-drop/merge-page	14	er the fervent cry of the noble heart, full of ⟂ World. γε love and pity for his fellow-men,—‘ 
+drop/merge-page	14	er the fervent cry of the noble heart, full of ⟂ love and pity for his fellow-men,—‘ God grant 
 drop/footnote-fs	15	* Yea, and if I be offered upon the sacrifice and ser\ice of your faith, I joy,a
 drop/footnote-fs	15	 The same word occurs also in 2 Tim. iv. 6,  I am now ready to beoffcred—* poure
 drop/fn-ref	15	more exactly poured out ⟨1⟩
@@ -2231,8 +2263,7 @@ drop/merge-page	15	ble barrier is thereby raised up in the way of ⟂ wilful vio
 drop/merge-page	15	ou see, introduces a variation of the ordinary ⟂ figure, to bring out the relation which divine
 drop/merge-page	15	und to seek the conversion and confirmation of ⟂ other souls, and thus ‘ present’ them to God. 
 drop/merge-page	15	 cheerful, thankful and happy,—this bears most ⟂ stirring testimony to the Saviour’s grace. But
-drop/fn-rule	15	δ ie Πα \* → 
-drop/merge-page	15	also reign with Him.’ In a passage familiar to ⟂ VER. 18.] Foy in Prospect of Martyrdom. 197 us
+drop/merge-page	15	also reign with Him.’ In a passage familiar to ⟂ us all, and written very shortly before his de
 drop/merge-page	15	feelings connected with his martyrdom: ‘I joy, ⟂ *and I congratulate you all,* —for this seems 
 drop/fn-rule	15	. er κοὐ» Sr → .
 drop/merge-page	15	seemed so needful for the confirmation and ex- ⟂ . or ων μος the Coane
@@ -2248,9 +2279,8 @@ drop/footnote-fs	16	^ The original word in Col. iv. lo, rendered in our version 
 drop/fn-mark-glyph	16	!
 drop/fn-ref	16	way john mark cousin ⟨1⟩
 drop/merge-page	16	 success depends largely on the existence of ’ ⟂ affection and confidence between the labourers
-drop/fn-rule	16	=< “~ v ἣ Υ̓͂ → 
 drop/signature	16	O +
-drop/merge-page	16	 all the right-minded among us cannot but most ⟂ vERS. 19-24.] Mission of Timothy. 209 earnestl
+drop/merge-page	16	 all the right-minded among us cannot but most ⟂ earnestly desire to see mirrored in ourselves,
 drop/merge-page	16	r, are by baptism members of the great visible ⟂ community of saints—a ‘church in the house,’ f
 drop/merge-page	16	ers. _We never know how much we need to know,— ⟂ how little we know clearly and exactly,—how mu
 drop/merge-page	16	itable seasons, take the members of the family ⟂ apart, and deal with them individually, plainl
@@ -2276,7 +2306,7 @@ drop/merge-page	17	ess. Paul does not call it such, and evidently ⟂ does not t
 drop/merge-page	17	Δα Cor. xvi. 17. bs ⟂ how much he owes to Epaphroditus, and to comme
 drop/merge-page	17	ladness’*—not merely to give him the welcome _ ⟂ ; of
 drop/fn-rule	17	f° - → 
-drop/merge-page	17	 to him, the aged servant of Christ, worn with ⟂ "lied ake » as Pile ΟΣ 4 Gi 5 ἘΣ fi: a Ὑ. a ba
+drop/merge-page	17	 to him, the aged servant of Christ, worn with ⟂ "*lied ake » as Pile* ΟΣ *4 Gi 5* ἘΣ *fi: a* Ὑ
 drop/merge-page	18	ith Him.’ They are sharers in this new life of ⟂ have entered into ‘glorious liberty.’ They kno
 drop/footnote-fs	18	^ Generally, in chap. i. 25, 26 ; in special connections, ii. iS, 2S.
 drop/seam-digit	18	1
@@ -2294,7 +2324,7 @@ drop/merge-page	19	e personal Revelation of God, there is some- — ⟂ thing si
 drop/merge-page	19	 them, come successively into view,—Valleys of ⟂ Humiliation and of the Shadow of Death, Delect
 drop/merge-page	19	 say to his Philippian friends, whilst in fact ⟂ almost half the letter is yet before us,—it se
 drop/merge-page	19	thought and feeling—has at every point what is ⟂ calculated to lead us to view God alone as the
-drop/merge-page	19	stian teaching is to some extent accepted, the ⟂ J
+drop/merge-page	19	stian teaching is to some extent accepted, the ⟂ J vers. 2-9.| *Fustification by Fatth.* 247
 drop/merge-page	19	nant with hell shall be disannulled, and their ⟂ agreement with hell shall not stand.’ But the 
 drop/merge-page	19	he tendency of their system—as of every system ⟂ which draws away men from spiritual religion—t
 drop/merge-page	19	came a living soul,—so in the new. But for the ⟂ breath of the Spirit of God, man would continu
@@ -2337,19 +2367,17 @@ drop/merge-page	21	 continue in sin, that grace may abound,’ Into ⟂ such bla
 drop/merge-page	21	 was hardly intended to bear; but the truth is ⟂ directly and most vividly suggested by the who
 drop/merge-page	21	htness, patience, and benevolence; we ] ee eee ⟂ may be diligent in availing ourselves of the p
 drop/merge-page	21	n that Iam! who shall deliver me from the body ⟂ of this death ?’ (Rom. vii. 18, 19, 21-24.) Th
-drop/fn-rule	21	| | | ed) J a mn ee → 
 drop/footnote	21	Cardiphonia,—Fifth Letter to a Nobleman.
 drop/seam-digit	21	. 1
 drop/fn-mark-glyph	21	?
 drop/fn-ref	21	the very chief ' ⟨1⟩
-drop/merge-page	21	rd and confusion is introduced, utterly incon- ⟂ vers. 12-14.] Pressing toward the Mark. 4283 s
+drop/merge-page	21	rd and confusion is introduced, utterly incon- ⟂ sistent with, and contradictory to, the intend
 drop/merge-page	21	e faith of the truth, new desires are awakened ⟂ in the soul, the tendency of which, as God gra
-drop/fn-rule	21	a a \* % εε- ‘a “((( ᾿ → 
 drop/footnote	21	F. W. Robertson, of Brighton,
 drop/seam-digit	21	1
 drop/fn-mark-glyph	21	?
 drop/fn-ref	21	of this life ' ⟨1⟩
-drop/merge-page	21	o the will of God, to the image of Christ. The ⟂ VERS. 12-14.] Pressing toward the Mark. 287 ch
+drop/merge-page	21	o the will of God, to the image of Christ. The ⟂ child of God longs to have everything that def
 drop/merge-page	21	gainst the current of worldly influence, while ⟂ now we are but indolently dipping the oars, an
 drop/fn-rule	21	ea —”6~—C _ → 
 drop/signature	21	T +
@@ -2357,15 +2385,14 @@ drop/footnote-short	21	⟨Compare Heb. iii. 1.⟩ ← 切出 ⟨?
 
 Compare Heb. iii. 1.⟩
 drop/merge-page	21	ace unsummoned! The ‘calling’ by God implies a ⟂ promise of all needed guidance and help ; and 
-drop/fn-rule	21	| | → 
 drop/merge-page	21	onclude that his neighbour is not a true 4 1 ' ⟂ Christian, because he sees what appears to him
 drop/merge-page	22	et forth by the apostle himself only three — ὴ ⟂ verses before, where he says that he did not s
 drop/merge-page	22	of justification through faith in Se a Pe a oh ⟂ Christ. Now recoil from trust in fancied obedi
 drop/merge-page	22	, the antinomians had special υεσυνυ. . wes ry ⟂ delight in summing up their claims to manly ri
 drop/merge-page	22	ties of our nature, ‘we shall be like Him, for ⟂ we shall see Him as He is.’ ‘Let us therefore,
-drop/merge-page	22	ace, grow in spiritual wisdom—his light waxing ⟂ _
+drop/merge-page	22	ace, grow in spiritual wisdom—his light waxing ⟂ brighter and brighter until the glories of the
 drop/merge-page	22	the study of the revelation which He has given ⟂ of Himself,—and to watch with attention and th
-drop/merge-page	22	 the Apostle Paul, to ‘ press toward a = -— =. ⟂ the mark, for the prize of the high calling of
+drop/merge-page	22	 the Apostle Paul, to ‘ press toward a = -— =. ⟂ πὶ 15. Drue Wisdom proved by Godliness. 299 th
 drop/merge-page	22	ians generally. He designates by it that guid- ⟂ ance into all needed truth which the Divine Sp
 drop/merge-page	22	our sense of His nearness, and of our constant ⟂ dependence on Him,—then assuredly we permit ou
 drop/merge-page	22	portant. The apostle has said, ‘Let us all ; . ⟂ cherish convictions of the needfulness of prog
@@ -2379,7 +2406,6 @@ drop/merge-page	23	eved, is calculated to form; but in many a a ‘ ⟂ respects
 drop/merge-page	23	;’ and declares that ‘no drunkard, nor unclean ⟂ person, shall inherit the kingdom of God.’ But
 drop/merge-page	23	he abusers of the doctrines of divine grace in ⟂ “κ΄. Examples, =~ days felt *‘¢/ory in their s
 drop/merge-page	23	 the will of God abideth for ever.’ Hence pro- ⟂ sperity of the *sou/*—prosperity as regards hi
-drop/fn-rule	23	LL a -ὀ-ὄ-.:ὕὄ..ὕ → 
 drop/merge-page	23	heir aim, and nothing more than this, God, and ⟂ holiness, and heaven, are ideas which have lit
 drop/merge-page	23	ribes here, show by their lives that they have ⟂ no sympathy with these lessons of the cross,—n
 drop/merge-page	23	at of the professed friend of the cross who is ⟂ really its enemy. Wherever the gospel comes, i
@@ -2389,11 +2415,10 @@ drop/merge-page	23	niversal—and this, shameless, flagrant, loath- ⟂ some, be
 drop/footnote-fs	23	* In his Life of Dr. John Iuncan (p. 197, note^. Dr. David Brown,speaking of goo
 drop/merge-page	23	 ; andtotem- EE Δικ δον ee oe ee en SE ἊῚ “Ὁ - ⟂ perance, patience ; and to patience, godliness
 drop/signature	24	x +
-drop/merge-page	24	ry,’ or ‘ one’s relation — ὌΝ << =  ὙὙΥσΝΝ a Γ ⟂ ΄ to his country,’ ‘citizenship.’ Now this mea
+drop/merge-page	24	ry,’ or ‘ one’s relation — ὌΝ << =  ὙὙΥσΝΝ a Γ ⟂ to his country,’ ‘citizenship.’ Now this meani
 drop/merge-page	24	t the same time, being well assured that their ⟂ bodies as well as their souls are in union wit
 drop/merge-page	24	ns ‘see their King in His beauty,’ and experi- ⟂ ence the full blessedness and glory of their r
 drop/merge-page	24	ty beats lovingly for us, that no joy there is ⟂ increased by our presence, or would be even fo
-drop/fn-rule	24	Γ *il* → 
 drop/merge-page	24	His throne.’ Angels, too, will be our will = Ϊ ⟂ associates. ‘They who rejoiced over us, when w
 drop/merge-page	24	ant of acquaintance practically with any- Ἰ "7 ⟂ thing else, we fail to notice it, or adequatel
 drop/merge-page	24	napproached below, ‘Blessed be the Lord, a a ΄ ⟂ who hath not given our souls for a prey. Our s
@@ -2405,7 +2430,6 @@ drop/fn-rule	24	v 7 7 a : ὅἥνα« —., ¥ → 7 7 :
 drop/merge-page	24	to Himself, *nothing* is im- 7 a “- 2 A! ae Fe ⟂ 7 7 : "ἢ .- τυ τον τ.,,..5. ee 2 *ee* Π
 drop/merge-page	25	of no account. See to it, therefore, that — ee ⟂ ye “
 drop/merge-page	25	of the gospel by which, according to God’s ap- ⟂ pointment, we enter actually into the legal re
-drop/fn-rule	25	ἊΨ x, → 
 drop/signature	25	Y +
 drop/merge-page	25	h servants and with superiors—a man is shown — ⟂ to be ‘in Christ.’ It is true that the most sp
 drop/merge-page	25	m any desert on their part, but simply through ⟂ the kindness of their King. Ardent gratitude f
@@ -2417,7 +2441,7 @@ drop/merge-page	26	is Father to dwell as a servant among sinful \ ⟂ men, and s
 drop/footnote-short	26	⟨Bushnell.⟩ ← 切出 ⟨' Bushnell.⟩
 drop/fn-ref	26	fretted or ruffled ' ⟨1⟩
 drop/merge-page	26	 the dissension between Euodia and Syntyche is ⟂ not mentioned. It was possibly something altog
-drop/merge-page	26	views on everything. Differences of tempera- — ⟂ ‘
+drop/merge-page	26	views on everything. Differences of tempera- — ⟂ ment, training, intellectual power, acquiremen
 drop/merge-page	26	achers,—nay, before they found their own names ⟂ employed as instruments to bring dishonour on 
 drop/merge-page	26	 continuance of the coldness ; but the apostle ⟂ treats them with exactly the same consideratio
 drop/merge-page	26	 large class of women in the early church, who ⟂ not merely for themselves ‘chose that good par
@@ -2445,7 +2469,7 @@ drop/merge-page	27	—in the disappointment of cherished hopes, the ⟂ thwartin
 drop/merge-page	27	r the nature of his petitions may be, he has — ⟂ always something *sfecia/* to thank God for. I
 drop/merge-page	27	wn in sloth,—to say ‘ Lead us not into tempta- ⟂ tion,’ and at the same time to go needlessly i
 drop/merge-page	27	irm utterance of the name in which she trusts, ⟂ ‘The Lord our Righteousness,’ can put their te
-drop/merge-page	27	2A ⟂ Sun of righteousness, or understand why Christ
+drop/merge-page	27	2A ⟂ 370 Lectures on Philippians. [CH. IV. Sun of r
 drop/merge-page	27	r them, will, by the peace He inbreathes, be ἢ ⟂ shielded from tormenting fear and from apostas
 drop/fn-rule	27	᾿ Γ. Ε *x* → 
 drop/merge-page	27	eeling the power of all these things—experi- — ⟂ their truth and eater and blonetneen ‘His reli
@@ -2458,7 +2482,7 @@ drop/footnote-short	28	⟨Chrysostom.⟩ ← 切出 ⟨1
 Chrysostom.⟩
 drop/fn-mark-glyph	28	!
 drop/fn-ref	28	to the foot ' ⟨1⟩
-drop/merge-page	28	ach other. If God were not absolutely true, we ⟂ _
+drop/merge-page	28	ach other. If God were not absolutely true, we ⟂ could have no reasonable peace or hope in Him 
 drop/footnote	28	See 1 Tim. iii, 8, 11 ; Titus ii. 2:
 drop/seam-digit	28	1
 drop/fn-ref	28	rendered by 'grave ' ⟨1⟩
@@ -2468,7 +2492,7 @@ drop/merge-page	28	ities,—such calm, quiet dignity as beseems one ⟂ who, in 
 drop/fn-rule	28	Ἵ ᾿ → 
 drop/merge-page	28	oes not take advantage of obvious slips of the ⟂ VER. 8.] *Summary of Duty.* 381 pen,
 drop/merge-page	28	e undefiled in the way, who walk in the law of ⟂ the Lord.’ ‘Ye were sometimes darkness,’ says 
-drop/merge-page	28	ained, evinces clearly to thoughtful observers ⟂ the working of the Divine Spirit, and is emine
+drop/merge-page	28	ained, evinces clearly to thoughtful observers ⟂ vER. 8.] Summary of Duty. 383 the working of t
 drop/footnote-fs	28	 In a note, Doddridge quotes an interesting parallel from Seneca(Ep. 9),—Tibi mo
 drop/seam-digit	28	1
 drop/fn-mark-glyph	28	!
@@ -2488,7 +2512,7 @@ drop/footnote-fs	28	^ Some remarks on the becomingness of such references by the
 drop/fn-rule	28	μ᾿ 4 a 3 - 1 → 4 3 1
 drop/fn-mark-glyph	28	?
 drop/fn-ref	28	and of good report ⟨1⟩
-drop/merge-page	28	st* question of a good man will be, not ‘ What ⟂ will please those around me?’ but, ‘What is ri
+drop/merge-page	28	st* question of a good man will be, not ‘ What ⟂ 388 Lectures on Philippians. [ CH. Iv. will pl
 drop/footnote-fs-cont	28	to his own example will be found in the comment on the 17th verse of the3rd chap
 drop/merge-page	28	s="jh-fn" data-fn="406-1">1</sup> I need 4 3 1 ⟂ now, therefore, enter into any detailed exposi
 drop/merge-page	28	ing the two, we obtain this teaching : ‘ Vital ⟂ religion, in healthy activity, gives, and can 
@@ -2511,7 +2535,6 @@ drop/footnote-short	29	⟨Mrs. Browning.⟩ ← 切出 ⟨!
 
 Mrs. Browning.⟩
 drop/merge-page	29	history of all men is made up of little occur- ⟂ rences ; and the sum of the influence of these
-drop/fn-rule	29	— = *= uw* → 
 drop/merge-page	29	spoiling of their goods, knowing in themselves ⟂ that they had in heaven a better and an enduri
 drop/merge-page	29	$s ⟂ the poor are exposed, are apt to ‘choke’ the g
 drop/merge-page	29	worldly circumstances—calm and restful in Him, ⟂ He gives us, in His providence, fields for pro
@@ -2537,7 +2560,7 @@ drop/fn-mark-glyph	tail	\*
 drop/fn-ref	tail	good m will the ⟨1⟩
 drop/merge-page	tail	esus Christ, unto the glory and praise of God. ⟂ 12 But I would have you know, brethren, that m
 drop/merge-page	tail	 see you, or be absent, I may hear I “I οο Ι 1 ⟂ *Epistle of Paul to the Philippians.* 423
-drop/merge-page	tail	out murmurings and disputings, that ye may ap- ⟂ 18 19 20 21 22 23 24 25 26 27 28 29 20 *Revise
+drop/merge-page	tail	out murmurings and disputings, that ye may ap- ⟂ 16 17 18 19 20 21 22 23 24 25 26 27 28 29 20 *
 drop/merge-page	tail	gs *ave* pure, whatsoever things *aze* lovely, ⟂ *a It 12 14 15 16 17 18 10 20 21 22 23 Epistle
 drop/merge-page	tail	nce of the article in πάσῃ τῇ μνείᾳ ὑμῶν makes ⟂ it necessary to translate, not, as in our vers
 drop/merge-page	tail	me, with all believers, for the advancement of ⟂ the Saviour’s cause,—all springing from fellow
@@ -2575,10 +2598,11 @@ drop/merge-page	tail	d, because the apostle’s word ὀκνηρὸν does not �
 drop/merge-page	tail	t made in the immediately preceding clause. We ⟂ cu. π|. 4.) *Motes on the Greek Text.* 461
 drop/merge-page	tail	 man deemeth that he can put confidence in the ⟂ flesh ; Conybeare, ‘if any other man thinks th
 drop/merge-page	tail	tyle. It is much more natural to take the roth ⟂ verse as *subordinate* to the clause with iva,
-drop/merge-page	tail	ersion, is an unhappy rendering, as suggesting ⟂ a connection with ‘attain’ of the previous ver
+drop/merge-page	tail	ersion, is an unhappy rendering, as suggesting ⟂ connection with ‘attain’ of the previous verse
 drop/merge-page	tail	2G ⟂ combinations of words are often attached immed
 drop/merge-page	tail	b σκοπεῖν, ‘to look at, mark,’ the idea, ‘ for ⟂ *cH. m1,* 18-20.] *Notes on the Greek Text.* 4
 drop/merge-page	tail	es daily conduct in its details, The statement ⟂ that this, the Christian’s daily life,—not, ‘i
+drop/merge-page	tail	‘is, let me remind you.’ On this latter use of ⟂ to exhibit something as new, or, at least, as 
 drop/merge-page	tail	med,’ the connection being accurately given by ⟂ the words εἰς τὸ γενέσθαι αὐτὸ, which are foun
 drop/merge-page	tail	, moral duties are the subject, a definite aim ⟂ CH. Iv.9,10.] *Motes on the Greek Text.* 473
 drop/merge-page	tail	 to make the blooming of kind attention to the ⟂ apostle dependent on the τοῦ of the Philippian
@@ -2714,6 +2738,7 @@ drop/merge-page	tail	 that ye may save the body of you all. For, \* ⟂ XII. doi
 drop/footnote-fs	tail	 The Latin version has a present tense here, qtii cum eo sunt; but, nodoubt, thi
 drop/fn-mark-glyph	tail	!
 drop/fn-ref	tail	that were with him ⟨1⟩
+drop/merge-page	tail	Acts vili. 21. ⟂ either in person, or by one whom I shall send 
 drop/merge-page	tail	UNIVERSITY OF TORONTO LIBRARY ⟂ CovHH EE EERR ERNE EE ESO ὁ ee fir on-tee-e ee
 drop/merge-page	tail	Ἦν ᾿ Ἴ : “" ae Sere Η - ’ 4 ᾿. “in aah ΄ “ . " ⟂ is re
 drop/front-matter	front	firesented to Che Library of the University of Toronte by
@@ -2742,7 +2767,6 @@ drop/front-matter	front	PARLIAMENTARY ROAD, GLASGOW, Chis Book ts Enscribed,
 drop/front-matter	front	WITH MUCH AFFECTION,
 drop/front-matter	front	BY
 drop/front-matter	front	THEIR FRIEND AND MINISTER, THE AUTHOR.
-drop/front-matter	front	P Reis F-ACC E: |
 drop/front-matter	front	CONTENTS.
 drop/front-matter	front	INTRODUCTION, 11
 drop/front-matter	front	II.—Pleasant Memories and Bright Hopes, 111
@@ -2832,38 +2856,26 @@ drop/ads	polycarp	J57 Lectures
 drop/merge-inner	preface	 of Paul’s Epistle to that *Preface.* ix ⟂ church, as affording a most interesting 
 drop/merge-inner	1	 a church, you see, ‘church members’ and ⟂ ‘saints’ are exchangeable terms. The rad
 drop/merge-inner	1	els used in the sanctuary services, were ⟂ ‘holy.’ In the prayer recorded in the 17
-drop/merge-inner	2	ist? This.is the practical question on - ⟂ the subject for us. What impression of t
 drop/pipe	4	| nal IN. THE GOSPEL IN ROME.
 drop/pipe	4	class, we may reasonably sup- | pose, belonged the men whom 
 drop/merge-inner	4	o talk of their extraordinary com- 1 *p* ⟂ anion in such a way as to direct special
-drop/merge-inner	4	to the gospel, the Waldenses age *ela* δ ⟂ were ready to enter in rejoicingly and p
 drop/merge-inner	4	es,—his statement being, therefore, that ⟂ ‘through his bonds the brethren waxed co
 drop/merge-inner	4	s of a violent death. But the man who is ⟂ ‘in Christ,’ however clearly he may see 
-drop/merge-inner	5	sk’ God. Powerful aid, how- Salvation. “ ⟂ ever, was given him by the prayers of hi
 drop/inner-head	6	VI. THE SAINT’S LIFE—CHRIST.
 drop/merge-inner	6	 in regard to our own religious life. Wh ⟂ en Paul said, ‘To me to live is Christ,’
 drop/merge-inner	6	ady to be offered,’ says the man of God, ⟂ ‘and the time of my departure is at hand
-drop/merge-inner	6	 his heart, written legibly on all the ~ ⟂ ‘issues of life,’ is, ‘This is my Belove
 drop/merge-inner	6	ayerfully and vigilantly to be no longer ⟂ ‘conformed to this world, but transforme
 drop/pipe	7	ction, \*To me to die is gain |’
 drop/merge-inner	7	owned the king of terrors, has Ν' ᾿ ; we ⟂ ged the curse into a ‘gain,’—yea, ‘hath 
 drop/inner-head	8	VIII. A STRAIT BETWIXT, TWaG, ‘
 drop/pipe	8	 Christian dies prematurely ? |*
-drop/merge-inner	8	t, therefore, that he would be left on ἵ ⟂ earth, and meekly and lovingly acquiesce
-drop/merge-inner	8	ancement of the Saviour’s kingdom, And / ⟂ as this is duty, so is it the direction 
 drop/pipe	9	nces of the lowest—the animal | 4 ᾿ lement of our being, whi
 drop/pipe	9	d thy God with all thy heart, | | and with all thy soul, and
 drop/pipe	9	d sufferings on your behalf.’ | wa 4 -) 1. ee
-drop/merge-inner	9	roaring around him even i a  ἶν. —_ “a μ ⟂ the bed-chamber: ah! brethren, in times 
-drop/merge-inner	10	3-1">1</sup> One can hardly doubt that ‘ ⟂ the pricks’ of conscience against which 
-drop/merge-inner	10	 29, 30.] *Stedfastness for Christ.* 131 ⟂ dently an element of likeness to Him. Th
-drop/merge-inner	11	*The great causes of dissension in — ᾿ ᾿ ⟂ societies of any kind are those here ind
+drop/merge-inner	9	 *Conversation becoming the Gospel.* τις ⟂ the bed-chamber: ah! brethren, in times 
 drop/inner-head	12	XII. THE GREAT EXAMPLE. \*
-drop/pipe	12	our, and mode a . all ᾿ <«@ » | VER. 8.] *The Great Example.
-drop/pipe	12	 in earth, and things under* *| the carth ; and that every t
+drop/pipe	12	 in earth, and things under* *| VERS. 9-11.} 7) he Great Exa
 drop/merge-inner	12	any mere creature should be spoken of as ⟂ ‘in the form of God’—taking these words 
-drop/merge-inner	12	 <«@ » VER. 8.] *The Great Example.* 151 ⟂ of life. Still, you observe, as before i
-drop/merge-inner	13	seducing and perverting influences,—to ‘ ⟂ put on the whole armour of God, that we 
 drop/inner-head	14	XIV. LIGHTS IN THE WORLD.
 drop/merge-inner	14	a full and gracious acknowledgment ; and ⟂ ‘he that sowed and he that reaped shall 
 drop/inner-head	15	XV, JOY IN PROSPECT OF MARTYRDOM.
@@ -2874,13 +2886,14 @@ drop/inner-head	17	XVII. MISSION OF EPAPHRODITUS.
 drop/merge-inner	17	to be a Christian energetic and brave, _ ⟂ one to whom I am bound by the closest ti
 drop/merge-inner	17	er man’s work or His own gifts,’—</span> ⟂ that even those instruments which He has
 drop/merge-inner	17	ot merely to give him the welcome _ ; of ⟂ a friend, but to rejoice over him with f
-drop/merge-inner	17	- 228 *Lectures on Philippians. (*cH. πὶ ⟂ labour and suffering, is willing, ‘for t
+drop/merge-inner	17	Gi 5* ἘΣ *fi: a* Ὑ*. a ba lee es, mel a* ⟂ labour and suffering, is willing, ‘for t
 drop/inner-head	18	XVIII. JOY IN THE LORD. \*
 drop/pipe	18	ing love and care. Jesus died | for sin once ; but having, b
 drop/pipe	18	ritual gloom, we move slowly, | ofa kind naturally tending t
 drop/merge-inner	18	hat his readers might have spiritual — ὦ ⟂ joy ;' but a sense of its importance so 
 drop/merge-inner	18	 oe ραν»... ae : ἜΝ το ων Ee οἷ ἜΣ - Ὃ p ⟂ ours specially impressive, where outward
-drop/merge-inner	19	aching is to some extent accepted, the J ⟂ acceptance is, through the self-deceivin
+drop/pipe	19	ent accepted, the J vers. 2-9.| *Fustification by Fatth.* 24
+drop/merge-inner	19	vers. 2-9. *Fustification by Fatth.* 247 ⟂ acceptance is, through the self-deceivin
 drop/merge-inner	20	 ‘the children of the resurrection.’ “T ⟂ *f by any means’* is expressive of inten
 drop/inner-head	21	XXI. PRESSING TOWARD THE MARK.
 drop/merge-inner	21	s’ have been granted to us to the intent ⟂ ‘that by these we might be *sartakers of
@@ -2893,7 +2906,6 @@ drop/merge-inner	21	impotence, and when, in the light of the ⟂ glory of the pr
 drop/merge-inner	21	sed reward, he sees most clearly his un ⟂ worthiness,—how cheering to remember tha
 drop/merge-inner	21	ring to remember that he has not entered ⟂ on the race unsummoned! The ‘calling’ by
 drop/inner-head	22	XXII. TRUE WISDOM PROVED BY GODLINESS.
-drop/merge-inner	22	w in spiritual wisdom—his light waxing _ ⟂ brighter and brighter until the glories 
 drop/merge-inner	22	through Thy truth,’ brings with it - the ⟂ assurance that all who, looking to Jesus
 drop/merge-inner	22	at all adequately to accord with our Sei ⟂ ge of duty,—if, ‘whereto we have attaine
 drop/merge-inner	23	st,’ but, with the voice of their lives, ⟂ ‘glory in their shame,’ ‘ crucify the So
@@ -2906,7 +2918,6 @@ drop/merge-inner	24	 7 7 : "ἢ .- τυ τον τ.,,..5. ee 2 *ee* Π ⟂ ible t
 drop/merge-inner	25	nt. See to it, therefore, that — ee ye “ ⟂ *stand fast in the Lord,”*—maintaining, 
 drop/merge-inner	25	n your body, and in your spirit, which ‘ ⟂ regarding their present position, and su
 drop/inner-head	26	XXVI. BROTHERLY-KINDNESS.
-drop/merge-inner	26	 everything. Differences of tempera- — ‘ ⟂ ment, training, intellectual power, acqu
 drop/merge-inner	26	ressed a reality,—that they had in truth ⟂ ‘passed from death unto life,’ and were 
 drop/merge-inner	26	iples, was true of these brethren also,— ⟂ ‘their names were written in heaven.’ ‘T
 drop/merge-inner	26	 certainty that to every one of them His ⟂ ‘exceeding great and precious promises’ 
@@ -2927,7 +2938,6 @@ drop/merge-inner	27	t points decidedly to that other meaning ⟂ which I have al
 drop/merge-inner	27	indicated,—‘ The *advent* of the Lord is ⟂ at hand.’ As James has it, ‘The coming o
 drop/merge-inner	27	 has it, ‘The coming of the Lord draweth ⟂ nigh.’<sup class="jh-fn" data-fn="376-2"
 drop/pipe	28	 procure respect ; but love a | is likely to win love.
-drop/merge-inner	28	r. If God were not absolutely true, we _ ⟂ could have no reasonable peace or hope i
 drop/merge-inner	28	very little help, too, for cleaving to ‘ ⟂ whatsoever things are true,’ from popula
 drop/merge-inner	28	o *property,* meant in the older English ⟂ ‘honourable’ generally, and this is its 
 drop/merge-inner	28	the VER. 8.] *Summary of Duty.* 381 pen, ⟂ pen, of the accidental invalidity of doc
@@ -2938,8 +2948,9 @@ drop/merge-inner	29	er kinds he bruises with the iron wheel, ⟂ ‘but the fitc
 drop/inner-head	30	XXX. CHRISTIAN LIBERALITY AND ITS REWARD. ‘
 drop/merge-inner	30	ccupied from the 11th to the 13th verse, ⟂ he returns at the 14th to the main cours
 drop/inner-head	translation	EPISTLE OF PAUL TO THE PHILIPPIANS. _ LS) 3» 4
-drop/inner-head	translation	*Ill. 1* ων *un ~ Io* ΞΕ *12 13 14 Epistle of Paul to the Philippians.* 425
-drop/inner-head	translation	IV. 18 my 20 21 | *Revised Translation of the*
+drop/scan-noise	translation	15 without murmurings and disputings, that ye may ap- 16 17 18 19 20 21 22 23 24 25 26 27 28 29 20 *Revised Tr
+drop/inner-head	translation	*Ill. 1* ων *un ~ Io* ΞΕ *13 14 Epistle of Paul to the Philippians.* 425
+drop/inner-head	translation	IV. 17 18 my 20 21 | *Revised Translation of the*
 drop/merge-inner	translation	tion of mine for you all, presenting the ⟂ supplication with joy, for your fellowsh
 drop/merge-inner	translation	 joy, for your fellowship with regard to ⟂ the gospel from the first day until now 
 drop/merge-inner	translation	d in the defence and confirmation of the ⟂ gospel ye are all partakers with me of m
@@ -2958,7 +2969,7 @@ drop/merge-inner	translation	Himself, taking *ujon Him* the form of a ⟂ servan
 drop/merge-inner	translation	lso God highly exalted Him, and gave Him ⟂ a name which is above every name, that i
 drop/merge-inner	translation	 should bow, of *¢#znmgs* in heaven, and ⟂ *things* on earth, and *¢hzmgs* under th
 drop/merge-inner	translation	ork out your own salvation with fear and ⟂ trembling ; for it is God which worketh 
-drop/merge-inner	translation	27 28 29 20 *Revised Translation of the* ⟂ prove yourselves blameless and guileless
+drop/merge-inner	translation	ork, of His good pleasure. Do all things ⟂ prove yourselves blameless and guileless
 drop/merge-inner	translation	on, among whom ye shine as lights in the ⟂ world, holding forth the word of life ; 
 drop/merge-inner	translation	you, that I also may be of good comfort, ⟂ when I know your state. For I have no ma
 drop/merge-inner	translation	know your state. For I have no man like ⟂ minded, who will truly care for your sta
