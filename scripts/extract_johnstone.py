@@ -1390,6 +1390,7 @@ def split_sections(pages, leaf_sec):
             text = strip_seam_digits(text, GARBAGE, sec)
             text = place_fn_refs(text, refs, GARBAGE, sec, leaf)
             text = _dedup_fn_ref(text, GARBAGE, sec)
+            text = scrub_marker_junk(text, WITNESS.get(leaf, ''), GARBAGE, sec)
         first = True
         for p in text.split('\n\n'):
             if not p.strip():
@@ -1477,6 +1478,9 @@ def split_sections(pages, leaf_sec):
             else:
                 merged.append(p)
         keep = merged
+        # `ears.’.` —— 引号外面又多一个句点。形态上确定是错的（句子已经
+        # 由引号内的句点收了尾），全书 2 处。只动标点，不碰字。
+        keep = [RE_DOT_QUOTE_DOT.sub(r'.\1', x) for x in keep]
         body = move_open_quote([x for x in keep if not x.startswith(FN_MARK)])
         notes = []
         for x in keep:
@@ -1554,6 +1558,7 @@ def mend_dropcaps(md, pars, log):
 
 
 RE_HANGING_Q = re.compile(r'(?<=[.!?])\s+([‘“])\s*$')
+RE_DOT_QUOTE_DOT = re.compile(r'\.([’”])\.(?!\.)')
 
 
 def move_open_quote(pars):
@@ -1785,6 +1790,7 @@ def drop_stray(md, wit, log, sec):
     """
     if not wit:
         return md
+    wit = wit_clean(wit)
     ww = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", wit)]
     out, last = [], 0
     for m in RE_STRAY.finditer(md):
@@ -1837,11 +1843,14 @@ def trim_page_head(md, wit, log, leaf):
     """
     if not wit:
         return md
+    # 这一处**不能先剥标签**：要靠 `[HEAD]` 把页眉那行认出来再跳过。
+    # 剥了之后页眉就混进正文行，首行取错，42 处一下子掉到 3 处（实测）。
     body = [l for l in wit.split('\n')
             if l.strip() and not RE_WIT_TAG.match(l)]
     if not body:
         return md
-    head = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", body[0])][:6]
+    head = [w.lower() for w in
+            re.findall(r"[A-Za-z]{2,}", wit_clean(body[0]))][:6]
     if len(head) < 4:
         return md
     toks = [(m.group(0), m.start()) for m in re.finditer(r'\S+', md)]
@@ -1883,6 +1892,7 @@ def drop_tail_quote(md, wit, log, leaf):
     """
     if not wit:
         return md
+    wit = wit_clean(wit)
     ww = re.findall(r'\S+', wit)
     wlow = [_norm_w(x) for x in ww]
     out, last = [], 0
@@ -1904,8 +1914,73 @@ def drop_tail_quote(md, wit, log, leaf):
     return ''.join(out) + md[last:] if out else md
 
 
+RE_WIT_MARK = re.compile(r'\[(?:FN:\d+|M:\d+|SIG:[^\]]*|HEAD)\]')
+
+
+def wit_clean(wit):
+    """向证人取证前先剥掉它的**版面标签**。
+
+    标签常常和正文粘成一个 token：`ears.’[FN:1]` 是一个词，归一化之后
+    成了 `earsfn`，与我们的 `ears` 对不上，词序列一断，整次取证就失败
+    （`}_` 那处实测匹配长度 3、需要 6）。所有向证人取证的判据都走这一步。
+    """
+    return RE_WIT_MARK.sub(' ', wit)
+
+
+RE_SUP_TAG = re.compile(r'<sup class="jh-fn"[^>]*>\d+</sup>')
+MARK_NOISE = '}{_|^®°!?~=«»¢©£¥§\\'
+
+
+def scrub_marker_junk(md, wit, log, sec):
+    """脚注记号两侧的残符，按位置向证人取证后删。
+
+    `…eyes, ears.’.¹` ⟨`}_`⟩ ` Now Paul was a Roman citizen.`（用户截图）
+    ——记号本身是对的，紧跟着的 `}_` 是噪点。
+
+    **不能按形态一刀切**：同一位置上 `—`（破折号）、`*`（斜体起头）、`;’`
+    都是真的，27 处里一多半不能动。只删**噪点集合里、且证人那处没有**的
+    字符，其余原样留着。
+    """
+    if not wit:
+        return md
+    wit = wit_clean(wit)
+    ww = re.findall(r'\S+', wit)
+    wlow = [_norm_w(x) for x in ww]
+    woff = [(m.start(), m.end()) for m in re.finditer(r'\S+', wit)]
+    out, last = [], 0
+    for m in RE_SUP_TAG.finditer(md):
+        tail = md[m.end():m.end() + 12]
+        if not any(c in MARK_NOISE for c in tail):
+            continue
+        pre = [_norm_w(x) for x in re.findall(r'\S+', md[:m.start()])][-4:]
+        post = [_norm_w(x) for x in
+                re.findall(r"[A-Za-z']{2,}", md[m.end():m.end() + 70])][:3]
+        if len([c for c in pre if len(c) > 1]) < 3 or len(post) < 2:
+            continue
+        seq = pre + post
+        sm = difflib.SequenceMatcher(None, seq, wlow, autojunk=False)
+        blk = sm.find_longest_match(0, len(seq), 0, len(wlow))
+        if blk.size < len(seq) - 1 or blk.a != 0:
+            continue
+        i = blk.b + len(pre)
+        if i <= 0 or i >= len(woff):
+            continue
+        gap = wit[woff[i - 1][1]:woff[i][0]]
+        keep = ''.join(c for c in tail
+                       if c not in MARK_NOISE or c in gap)
+        if keep == tail:
+            continue
+        out.append(md[last:m.end()] + keep)
+        last = m.end() + len(tail)
+        log.append((sec, 'marker-junk', repr(tail) + ' → ' + repr(keep)))
+    return ''.join(out) + md[last:] if out else md
+
+
 def _norm_w(x):
-    return re.sub(r"[^A-Za-z']", '', x).lower()
+    # **撇号也要剥**。留着它时证人的 `ears.'` 归一成 `ears'`，而我们那边
+    # 用的是弯撇号、归一成 `ears`，两边对不上——词序列一断，取证就失败
+    # （`}_` 那处实测如此）。
+    return re.sub(r'[^A-Za-z]', '', x).lower()
 
 
 def mend_greek_garble(md, pars, wit, log, leaf):
@@ -1921,6 +1996,7 @@ def mend_greek_garble(md, pars, wit, log, leaf):
     """
     if not wit:
         return md
+    wit = wit_clean(wit)
     abp = ' '.join(J.strip_sentinels(x['text'])[0] for x in pars)
     aw = re.findall(r'\S+', abp)
     alow = [_norm_w(x) for x in aw]
