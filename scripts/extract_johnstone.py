@@ -895,6 +895,13 @@ def is_continuation(prev_par, next_par):
         return False
     if prev_par.startswith(FN_MARK) or next_par.startswith(FN_MARK):
         return False
+    # 页末断在**词中间**：`…to send to you *Epaphrodit*` ⟂ `us we know
+    # nothing…`（用户截图）。这种上一段很短，长度闸直接把它挡了。
+    # 判据：上段以字母收尾（没有标点）、下段小写起头——词被劈成了两半。
+    if (len(prev_par) <= 60 and len(next_par) >= 40
+            and re.search(r'[A-Za-z]$', prev_par.rstrip('*\\ '))
+            and re.match(r'^[a-z]', next_par.lstrip())):
+        return True
     if len(prev_par) < 40 or len(next_par) < 40:
         return False
     if prev_par.lstrip().startswith('#'):
@@ -2148,6 +2155,42 @@ def mend_greek_garble(md, pars, wit, log, leaf):
     return ''.join(out) + md[last:] if out else md
 
 
+RE_TAIL_ECHO = re.compile(r'\b([A-Za-z]{5,})([,.;:]?)[ \t]+([a-z]{3,})([,.;:]?)(?=\s|$)')
+
+
+def drop_tail_echo(text):
+    """补全截断词之后，原来的后半截成了紧跟其后的孤儿，删掉它。
+
+    `appear-` 的后半截 `ance` 落在**下一段**里，补全那一步在本页看不见，
+    于是写出 `…bodily appearance ance something of the glory…`（实测 10 处）。
+    判据很窄：后一个词是前一个词的词尾、而且它自己不是真词。
+
+    **不能用一条正则一次匹配一对**：扫描器会先吃掉前面那一对
+    （`bodily appearance`），真正该查的 `appearance ance` 就跳过去了。
+    逐词对走一遍。
+    """
+    if LEX_CHECK is None:
+        return text
+    toks = [(m.group(0), m.start(), m.end())
+            for m in re.finditer(r"[A-Za-z]+", text)]
+    cut = []
+    for k in range(len(toks) - 1):
+        a, b = toks[k][0], toks[k + 1][0]
+        if len(a) < 5 or len(b) < 3 or not b.islower():
+            continue
+        if text[toks[k][2]:toks[k + 1][1]].strip(' \t,.;:'):
+            continue
+        if a.lower().endswith(b.lower()) and not LEX_CHECK(b.lower()):
+            cut.append((toks[k][2], toks[k + 1][2]))
+    if not cut:
+        return text
+    out, last = [], 0
+    for a, b in cut:
+        out.append(text[last:a])
+        last = b
+    return ''.join(out) + text[last:]
+
+
 RE_PAGE_HYPH = re.compile(r'\b([A-Za-z]{2,})-[ \t]+([a-z]{2,})\b')
 
 
@@ -2257,7 +2300,10 @@ def main():
                 for sl, ti, b in sections]
     print(f'跨页断词拼合 {len(seam_x)} 处', file=sys.stderr)
     seams = []
-    sections = [(s, t, J.resolve_hyphens(b, compounds, seams))
+    # 孤儿后半截的清理要排在 **resolve_hyphens 之后**：在那之前接缝处还
+    # 插着哨兵字符，`appearance` 与 `ance` 之间隔着它，逐词对那条判据
+    # 看不出它们相邻。
+    sections = [(s, t, drop_tail_echo(J.resolve_hyphens(b, compounds, seams)))
                 for s, t, b in sections]
     kept = sum(1 for _, _, k in seams if k)
     print(f'行末断词 {len(seams)} 处：拼合 {len(seams) - kept}，'

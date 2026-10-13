@@ -298,6 +298,97 @@ def _nonword(t, lo=8):
     return sum(1 for x in w if not LEX_OK(x.lower())) / len(w)
 
 
+FUNC_WORDS = set(
+    'the a an and or but of to in on at by as if is it he we they that this '
+    'not for with from into all his her its our your my be been was were '
+    'had has have will would shall should may might can could do did'.split())
+
+
+def _fill_gaps(ab_text, chunk, log):
+    """ABBYY 有、我们这边**整个漏掉**的词，补回去。
+
+    tesseract 偶尔会吞词：`a bereaved ⟨heart,⟩ even amid the deepest`、
+    `with profoundest thankful-⟨ness.⟩`（用户截图）。整段换流看不见它——
+    漏词的那一段 tesseract 反而比 ABBYY 更干净（0.013 vs 0.075）。
+
+    三道闸，少一道就会把 OCR 错字当成「缺词」补成重复：
+    ① 缺口两侧必须是**完全对齐**的长块（各 ≥3 个词）——词只是拼错时，
+       两侧不会同时对齐（`ποΐ` ← `not`、`411.` ← `all.'` 都是这么滤掉的）；
+    ② 缺的每个词要么 ≥4 个字母、要么是常见虚词——`lo`/`ver`/`J` 这类是
+       ABBYY 自己的碎片，不是真缺词；
+    ③ 一次最多补 6 个词。
+    """
+    wa = [(m.group(0), m.start(), m.end()) for m in re.finditer(r'\S+', ab_text)]
+    wc = [(m.group(0), m.start(), m.end()) for m in re.finditer(r'\S+', chunk)]
+    na = [re.sub(r'[^A-Za-z]', '', x[0]).lower() for x in wa]
+    nc = [re.sub(r'[^A-Za-z]', '', x[0]).lower() for x in wc]
+    if len(na) < 20 or LEX_OK is None:
+        return chunk
+    ops = difflib.SequenceMatcher(None, na, nc, autojunk=False).get_opcodes()
+    ins = []
+    for k, (tag, i1, i2, j1, j2) in enumerate(ops):
+        if tag != 'delete' or not (1 <= i2 - i1 <= 6):
+            continue
+        prev = ops[k - 1] if k else None
+        nxt = ops[k + 1] if k + 1 < len(ops) else None
+        if not prev or prev[0] != 'equal' or prev[2] - prev[1] < 3:
+            continue
+        if not nxt or nxt[0] != 'equal' or nxt[2] - nxt[1] < 3:
+            continue
+        seg = na[i1:i2]
+        if not all(w and LEX_OK(w) and (len(w) >= 4 or w in FUNC_WORDS)
+                   for w in seg):
+            continue
+        ins.append((wc[j1][1], ab_text[wa[i1][1]:wa[i2 - 1][2]], 0))
+
+    # 词被**截断**：我们这边停在连字符上（`thankful-`），ABBYY 给出整词
+    # （`thankfulness.`）。这是「替换」不是「缺失」，上面那条判据看不见。
+    # 只认一对一、且我们这半截是对方的前缀——补的永远是词尾那几个字母。
+    # 词被**截断**：我们这边停在连字符上（`thankful-`），ABBYY 给出整词
+    # （`thankfulness.`）。这是「替换」不是「缺失」，上面那条判据看不见。
+    # 截断处前后常常还夹着别的错字（`profoundcst` ← `profoundest`），所以
+    # 在整个替换块里找配对，而不是要求一对一。
+    # 只认「我们这半截是对方的前缀」——补的永远是词尾那几个字母。
+    for tag, i1, i2, j1, j2 in ops:
+        if tag != 'replace' or i2 - i1 > 3 or j2 - j1 > 4:
+            continue
+        for jj in range(j1, j2):
+            ours = wc[jj][0].rstrip('*\\ ')
+            if not ours.endswith('-') or len(ours) < 4:
+                continue
+            stem = re.sub(r'[^A-Za-z]', '', ours).lower()
+            hit = [ii for ii in range(i1, i2)
+                   if na[ii].startswith(stem) and len(na[ii]) > len(stem)
+                   and LEX_OK(na[ii])]
+            if len(hit) != 1:
+                continue
+            # **后半截还在的，是断词不是截断**：补全会写出
+            # `appearance ance`、`immediate diate` 这样的重复（实测 13 处）。
+            # 直接看紧邻的下一个词是不是正好是缺的那几个字母。
+            rest = na[hit[0]][len(stem):]
+            if jj + 1 < len(wc) and nc[jj + 1].startswith(rest[:3]):
+                continue
+            end = jj + 1
+            if end < j2 and not re.search(r'[A-Za-z]', wc[end][0]):
+                end += 1
+            ins.append((wc[jj][1], re.sub(r'[ \t]{2,}', ' ', wa[hit[0]][0]),
+                        wc[end - 1][2] - wc[jj][1]))
+            break
+
+    if not ins:
+        return chunk
+    ins.sort()
+    out, last = [], 0
+    for at, text, skip in ins:
+        if at < last:
+            continue
+        out.append(chunk[last:at] + re.sub(r'[ \t]{2,}', ' ', text)
+                   + ('' if skip else ' '))
+        last = at + skip
+        log.append(('⟨截断⟩' if skip else '⟨缺⟩', text.strip()[:60]))
+    return ''.join(out) + chunk[last:]
+
+
 def _better_stream(ab_text, chunk, log):
     """两条字流里挑读得对的那一条——**按段**挑，不按页。
 
@@ -314,7 +405,7 @@ def _better_stream(ab_text, chunk, log):
     """
     ra = _nonword(ab_text)
     if ra is None or ra > 0.1:
-        return chunk
+        return _fill_gaps(ab_text, chunk, log)
     ro = _nonword(chunk, 4)
     if ro is None:
         return chunk
@@ -333,7 +424,7 @@ def _better_stream(ab_text, chunk, log):
     far = (ro >= ra and len(wa) >= 8
            and difflib.SequenceMatcher(None, wo, wa, autojunk=False).ratio() < 0.8)
     if not (ro > ra + 0.2 or (drop and ro > 0.3) or far):
-        return chunk
+        return _fill_gaps(ab_text, chunk, log)
     log.append((chunk.strip()[:60], ab_text.strip()[:60]))
     # ABBYY 的行内多空格要压掉，直撇号要转成弯引号——不然搬过来的那段
     # 在满页弯引号里一眼就看得出来。

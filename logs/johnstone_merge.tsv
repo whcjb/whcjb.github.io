@@ -68,10 +68,53 @@ dropcap		P
 dropcap	XI. Appendix. 	
 dropcap		H
 dropcap		I
+stream-swap	⟨截断⟩	Philippian
+stream-swap	⟨缺⟩	the
+stream-swap	⟨截断⟩	contention,
+stream-swap	⟨截断⟩	suppose,
+stream-swap	⟨缺⟩	as
+stream-swap	⟨缺⟩	all.'
+stream-swap	⟨截断⟩	throughout
+stream-swap	⟨截断⟩	knowledge.'
+stream-swap	⟨截断⟩	promises
+stream-swap	⟨截断⟩	notwithstanding
+stream-swap	⟨截断⟩	immediate
+stream-swap	⟨截断⟩	himself
+stream-swap	⟨缺⟩	If
+stream-swap	⟨截断⟩	knowledge
+stream-swap	⟨截断⟩	Himself
+stream-swap	⟨缺⟩	to
+stream-swap	⟨截断⟩	appearance
+stream-swap	⟨截断⟩	mentioned,
+stream-swap	⟨截断⟩	paraphrase
+stream-swap	⟨截断⟩	Christian
+stream-swap	⟨截断⟩	position
+stream-swap	⟨截断⟩	constituted
 stream-swap	. er κοὐ» Sr or ων μος the Coane	tension  of Christianity  among  the   Gentiles,  could   no
 stream-swap	pe sar to them a very gloomy one. At the a ‘	appear to them a very gloomy one.    At the first,
+stream-swap	⟨缺⟩	the
+stream-swap	⟨缺⟩	heart,
+stream-swap	⟨截断⟩	thankfulness.
+stream-swap	⟨截断⟩	community
+stream-swap	⟨截断⟩	particular
+stream-swap	⟨截断⟩	Corinthians,
 stream-swap	labour and suffering, is willing, ‘for the work of Christ,’ 	labour and suffering, is willing, 'for the work of Christ,' 
+stream-swap	⟨截断⟩	Lawgiver,
+stream-swap	⟨截断⟩	perfections
 stream-swap	In other believers, again, spiritual gloom is caused by de- 	In other believers, again, spiritual gloom is caused by de-
+stream-swap	⟨缺⟩	to
+stream-swap	⟨缺⟩	but
+stream-swap	⟨截断⟩	movements
+stream-swap	⟨截断⟩	'fearing
+stream-swap	⟨截断⟩	position
+stream-swap	⟨截断⟩	somewhat
+stream-swap	⟨截断⟩	preferable
+stream-swap	⟨截断⟩	according
+stream-swap	⟨截断⟩	distinctness
+stream-swap	⟨缺⟩	all
+stream-swap	⟨截断⟩	continue
+stream-swap	⟨缺⟩	many
+stream-swap	⟨截断⟩	Compare
 italic-dropped	^Icasant Memories and Bright Hopes.  	
 italic-dropped	Lechi7'es on Philippians.	
 italic-dropped	 	
@@ -258,6 +301,7 @@ seam-join	pro-vide	provide
 seam-join	know-ledge	knowledge
 seam-join	com-plicated	complicated
 seam-join	Philip-pian	Philippian
+seam-join	Philip-pian	Philippian
 seam-join	Chris-tian	Christian
 seam-join	mani-festations	manifestations
 seam-join	ow-ledge	owledge
@@ -323,6 +367,7 @@ seam-join	gain-saying	gainsaying
 seam-join	men-tioned	mentioned
 seam-join	Ad-miration	Admiration
 seam-join	de-stroyed	destroyed
+seam-join	sup-pose	suppose
 seam-join	factious-ness	factiousness
 seam-join	de-plorably	deplorably
 seam-join	sup-posed	supposed
@@ -340,6 +385,7 @@ seam-join	hearted-ness	heartedness
 seam-join	stimu-lus	stimulus
 seam-join	them-selves	themselves
 seam-join	hap-pened	happened
+seam-join	con-tention	contention
 seam-join	what-ever	whatever
 seam-join	hopeful-ness	hopefulness
 seam-join	salva-tion	salvation
@@ -409,8 +455,10 @@ seam-join	de-rived	derived
 seam-join	inherit-ance	inheritance
 seam-join	misunderstand-ings	misunderstandings
 seam-join	won-ders	wonders
+seam-join	through-out	throughout
 seam-join	unsatis-fying	unsatisfying
 seam-join	impos-sible	impossible
+seam-join	know-ledge	knowledge
 seam-join	weak-ness	weakness
 seam-join	con-fined	confined
 seam-join	know-ledge	knowledge
@@ -431,10 +479,12 @@ seam-join	instru-mentality	instrumentality
 seam-join	Chris-tian	Christian
 seam-join	proposi-tion	proposition
 seam-join	mor-tality	mortality
+seam-join	pro-mises	promises
 seam-join	exceed-ingly	exceedingly
 seam-join	im-mortales	immortales
 seam-join	confi-dence	confidence
 seam-join	fur-therance	furtherance
+seam-join	notwith-standing	notwithstanding
 seam-join	per-plexity	perplexity
 seam-join	convic-tion	conviction
 seam-join	peculi-arity	peculiarity
@@ -455,6 +505,7 @@ seam-join	help-ful	helpful
 seam-join	reflec-tions	reflections
 seam-join	wilder-ness	wilderness
 seam-join	build-ing	building
+seam-join	imme-diate	immediate
 seam-join	will-ing	willing
 seam-join	con-tend	contend
 seam-join	publish-ing	publishing
@@ -468,6 +519,7 @@ seam-join	seem-ingly	seemingly
 seam-join	ob-servers	observers
 seam-join	abun-dant	abundant
 seam-join	par-ticular	particular
+seam-join	him-self	himself
 seam-join	Re-deemer	Redeemer
 seam-join	pro-claims	proclaims
 seam-join	con-fidence	confidence
@@ -545,6 +597,7 @@ seam-join	culti-vate	cultivate
 seam-keep	like-minded	like-minded
 seam-join	admir-ably	admirably
 seam-join	him-self	himself
+seam-join	know-ledge	knowledge
 seam-join	consola-tion	consolation
 seam-join	con-solation	consolation
 seam-join	un-believers	unbelievers
@@ -565,11 +618,13 @@ seam-join	ac-companies	accompanies
 seam-join	reason-ably	reasonably
 seam-join	expres-sion	expression
 seam-join	con-siderably	considerably
+seam-join	Him-self	Himself
 seam-join	men-tion	mention
 seam-join	Him-self	Himself
 seam-join	anti-thesis	antithesis
 seam-join	lowli-ness	lowliness
 seam-keep	self-surrender	self-surrender
+seam-join	appear-ance	appearance
 seam-join	com-mon	common
 seam-join	regard-ing	regarding
 seam-join	back-ground	background
@@ -579,6 +634,7 @@ seam-join	Fore-runner	Forerunner
 seam-join	perfec-tion	perfection
 seam-join	harm-less	harmless
 seam-join	descrip-tions	descriptions
+seam-join	men-tioned	mentioned
 seam-join	sys-tem	system
 seam-join	ston-ing	stoning
 seam-join	declara-tion	declaration
@@ -630,6 +686,7 @@ seam-join	regard-ing	regarding
 seam-join	teach-ing	teaching
 seam-join	ele-ment	element
 seam-join	tempta-tion	temptation
+seam-join	para-phrase	paraphrase
 seam-join	salva-tion	salvation
 seam-join	voca-tion	vocation
 seam-join	im-mediately	immediately
@@ -673,6 +730,7 @@ seam-join	out-side	outside
 seam-join	Greek-translation	Greektranslation
 seam-join	pro-bable	probable
 seam-join	dark-ness	darkness
+seam-join	Chris-tian	Christian
 seam-join	im-pressively	impressively
 seam-join	re-ceived	received
 seam-join	ex-tension	extension
@@ -692,6 +750,7 @@ seam-join	sacri-fice	sacrifice
 seam-join	how-ever	however
 seam-join	pro-bable	probable
 seam-join	some-what	somewhat
+seam-join	posi-tion	position
 seam-join	thank-fulness	thankfulness
 seam-join	pre-sented	presented
 seam-join	affec-tions	affections
@@ -714,6 +773,7 @@ seam-join	follow-ing	following
 seam-join	devo-tion	devotion
 seam-join	dark-ness	darkness
 seam-join	Philip-pians	Philippians
+seam-join	con-stituted	constituted
 seam-join	subse-quent	subsequent
 seam-join	minister-ing	ministering
 seam-join	striv-ing	striving
@@ -728,6 +788,7 @@ seam-join	in-terest	interest
 seam-join	con-viction	conviction
 seam-join	use-fulness	usefulness
 seam-join	suffer-ings	sufferings
+seam-join	thankful-ness	thankfulness
 seam-join	pre-sently	presently
 seam-join	rely-ing	relying
 seam-join	substi-tuted	substituted
@@ -774,6 +835,7 @@ seam-join	privi-lege	privilege
 seam-join	conspicu-ously	conspicuously
 seam-join	ac-cording	according
 seam-join	state-ment	statement
+seam-join	com-munity	community
 seam-join	Philip-pians	Philippians
 seam-join	single-ness	singleness
 seam-join	natur-ally	naturally
@@ -800,10 +862,12 @@ seam-join	disci-pline	discipline
 seam-join	afflic-tion	affliction
 seam-join	Tro-phimus	Trophimus
 seam-join	weak-ness	weakness
+seam-join	par-ticular	particular
 seam-join	Epa-phroditus	Epaphroditus
 seam-join	soft-ness	softness
 seam-join	beau-tifully	beautifully
 seam-join	satisfac-tion	satisfaction
+seam-join	Cor-inthians	Corinthians
 seam-join	preach-ing	preaching
 seam-join	some-thing	something
 seam-join	con-stitution	constitution
@@ -820,6 +884,8 @@ seam-join	congre-gations	congregations
 seam-join	soul-humbling	soulhumbling
 seam-join	pre-cept	precept
 seam-join	un-intelligible	unintelligible
+seam-join	Law-giver	Lawgiver
+seam-join	per-fections	perfections
 seam-join	ran-somed	ransomed
 seam-join	cha-racter	character
 seam-join	sorrow-ful	sorrowful
@@ -998,6 +1064,7 @@ seam-join	transcen-dent	transcendent
 seam-join	enlighten-ment	enlightenment
 seam-join	exem-plified	exemplified
 seam-join	dis-appear	disappear
+seam-join	move-ments	movements
 seam-join	Every-thing	Everything
 seam-join	accord-ing	according
 seam-join	pre-vails	prevails
@@ -1026,6 +1093,7 @@ seam-join	tem-perament	temperament
 seam-join	im-possible	impossible
 seam-join	su-premely	supremely
 seam-join	what-ever	whatever
+seam-join	fear-ing	fearing
 seam-join	Chris-tians	Christians
 seam-join	im-portant	important
 seam-join	exhibi-tion	exhibition
@@ -1039,6 +1107,7 @@ seam-keep	self-restraint	self-restraint
 seam-join	salva-tion	salvation
 seam-join	self-destroyed	selfdestroyed
 seam-join	moun-tains	mountains
+seam-join	posi-tion	position
 seam-join	direc-tion	direction
 seam-join	mind-ing	minding
 seam-keep	low-toned	low-toned
@@ -1124,6 +1193,7 @@ seam-join	Thessa-lonians	Thessalonians
 seam-join	Philip-pians	Philippians
 seam-join	anticipa-tion	anticipation
 seam-join	Epaphro-ditus	Epaphroditus
+seam-join	some-what	somewhat
 seam-join	influ-ence	influence
 seam-join	atten-tion	attention
 seam-join	some-thing	something
@@ -1164,6 +1234,7 @@ seam-join	Not-withstanding	Notwithstanding
 seam-join	for-bearance	forbearance
 seam-join	para-phrase	paraphrase
 seam-join	tem-perance	temperance
+seam-join	pre-ferable	preferable
 seam-join	en-joins	enjoins
 seam-join	pos-sible	possible
 seam-join	righteous-ness	righteousness
@@ -1224,6 +1295,7 @@ seam-join	holi-ness	holiness
 seam-join	con-formity	conformity
 seam-join	pre-cedes	precedes
 seam-join	exist-ence	existence
+seam-join	accord-ing	according
 seam-join	appear-ance	appearance
 seam-join	law-fulness	lawfulness
 seam-join	pecu-liarly	peculiarly
@@ -1341,6 +1413,7 @@ seam-join	re-garded	regarded
 seam-join	sup-pose	suppose
 seam-join	Philip-pian	Philippian
 seam-join	con-sequence	consequence
+seam-join	distinct-ness	distinctness
 seam-join	suffi-ciency	sufficiency
 seam-join	de-stroyed	destroyed
 seam-join	world-liness	worldliness
@@ -1379,6 +1452,7 @@ seam-join	gover-nor	governor
 seam-join	be-cause	because
 seam-join	factious-ness	factiousness
 seam-join	salva-tion	salvation
+seam-join	con-tinue	continue
 seam-join	ac-cording	according
 seam-join	becom-ing	becoming
 seam-join	per-verse	perverse
@@ -1442,6 +1516,7 @@ seam-join	connec-tion	connection
 seam-join	Com-pare	Compare
 seam-join	con-struction	construction
 seam-join	pro-minent	prominent
+seam-join	Com-pare	Compare
 seam-join	inter-jected	interjected
 seam-join	con-struction	construction
 seam-join	Rosen-miiller	Rosenmiiller
@@ -2933,7 +3008,6 @@ drop/merge-inner	1	 a church, you see, ‘church members’ and ⟂ ‘saints’
 drop/merge-inner	1	els used in the sanctuary services, were ⟂ ‘holy.’ In the prayer recorded in the 17
 drop/merge-inner	3	ral as well as biblical knowledge, *and* ⟂ in whom true Christian wisdom, contempla
 drop/pipe	4	| nal IN. THE GOSPEL IN ROME.
-drop/pipe	4	class, we may reasonably sup- | pose, belonged the men whom 
 drop/merge-inner	4	es,—his statement being, therefore, that ⟂ ‘through his bonds the brethren waxed co
 drop/merge-inner	4	s of a violent death. But the man who is ⟂ ‘in Christ,’ however clearly he may see 
 drop/inner-head	6	VI. THE SAINT’S LIFE—CHRIST.
@@ -2953,10 +3027,10 @@ drop/merge-inner	12	e ministered unto, but to minister,’ and ⟂ ‘I am among
 drop/inner-head	14	XIV. LIGHTS IN THE WORLD.
 drop/merge-inner	14	a full and gracious acknowledgment ; and ⟂ ‘he that sowed and he that reaped shall 
 drop/inner-head	15	XV, JOY IN PROSPECT OF MARTYRDOM.
-drop/pipe	15	n which divine grace had con- | stituted between him and the
 drop/merge-inner	15	ianity among the Gentiles, could not but ⟂ appear to them a very gloomy one. At the
 drop/merge-inner	16	ve no means whatever of determining. ΟΥ̓ ⟂ these the apostle declares that *‘a// se
 drop/inner-head	17	XVII. MISSION OF EPAPHRODITUS.
+drop/merge-inner	17	*Epaphrodit* ⟂ us we know nothing except what is mentio
 drop/merge-inner	17	red him from his old modes of work, that ⟂ <span class="jh-verse">‘God doth not nee
 drop/merge-inner	17	er man’s work or His own gifts,’—</span> ⟂ that even those instruments which He has
 drop/merge-inner	17	ot merely to give him the welcome _ ; of ⟂ a friend, but to rejoice over him with f
