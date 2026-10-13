@@ -46,7 +46,7 @@ Regarding Ignatius himself also, and those that were with him,<sup class="jh-fn"
 
 THE END.
 
-MURRAY AND GIBB, EDINBURGH, PRINTERS TO HER MAJESTY’'S STATIONERY OFFICE,
+<span class="jh-verse">MURRAY AND GIBB, EDINBURGH,<br>PRINTERS TO HER MAJESTY’S STATIONERY OFFICE.</span>
 
 <div class="jh-notes">
 <p class="jh-note" id="fn-1" markdown="span"><a class="jh-back" href="#fnref-1">1</a>Or, ‘rejoice with you.’ The tense in the original is the *epistolary* aorist, often best rendered in our idiom by the present.</p>

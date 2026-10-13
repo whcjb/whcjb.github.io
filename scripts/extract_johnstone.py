@@ -1645,7 +1645,14 @@ def split_sections(pages, leaf_sec):
         for p in keep:
             t = next((k for k in range(len(merged) - 1, -1, -1)
                       if not merged[k].startswith(FN_MARK)), None)
-            if t is not None and is_continuation(merged[t], p.strip()):
+            # 诗块自成一段（原书缩进另起，诗后 `—the pleasure…` 才接回正文）。
+            # 上段以 `when,` 收尾照样满足「无句末标点」，不拦就并成
+            # `when, <span class="jh-verse">…`（p.236 用户截图）。
+            # 反过来也一样：诗后小写起头的接续句（`that even those…`，p.220）
+            # 原书另起一行顶格，不并进诗块。
+            if (t is not None and not p.lstrip().startswith('<span class="jh-verse">')
+                    and not merged[t].startswith('<span class="jh-verse">')
+                    and is_continuation(merged[t], p.strip())):
                 GARBAGE.append((slug, 'merge-inner',
                                 merged[t][-40:] + ' ⟂ ' + p.strip()[:40]))
                 merged[t] = merged[t].rstrip() + ' ' + p.strip()
@@ -1905,7 +1912,7 @@ def verse_pars(xml_path):
             continue
         idx += 1
         width = int(el.get('width') or 0)
-        pars, lefts = [], []
+        pars, lefts, rights = [], [], []
         for blk in el.iter(A.NS + 'block'):
             if blk.get('blockType') != 'Text':
                 continue
@@ -1913,25 +1920,36 @@ def verse_pars(xml_path):
                 lines = list(par.iter(A.NS + 'line'))
                 if not lines:
                     continue
-                pars.append([(int(l.get('l') or 0), A._line_text(l))
-                             for l in lines])
+                pars.append([(int(l.get('l') or 0), A._line_text(l),
+                              int(l.get('r') or 0)) for l in lines])
                 lefts += [int(l.get('l') or 0) for l in lines]
+                rights += [int(l.get('r') or 0) for l in lines]
         el.clear()
         if not lefts or not width:
             continue
         base = collections.Counter(lefts).most_common(1)[0][0]
         cut = base + width * 0.12
+        # 长句诗（p.236 `In blindness, we remained unconscious of the guiding,`）
+        # 只缩进页宽 6–7%，过不了 12% 那道线，就并进了上一段，页面上下一段
+        # 开头的 `—the pleasure…` 像是凭空多了个破折号（用户截图）。降低缩进
+        # 线会把经文题记、坡旅甲分节一起捞进来，那些是**两端对齐**的散文；
+        # 诗是参差的。所以第二条路：每行都缩进 >4% **且**右端离版心右缘也
+        # >4%——两头都不贴边才算。
+        right = collections.Counter(rights).most_common(1)[0][0]
+        lo_cut = base + width * 0.04
+        r_cut = right - width * 0.04
         flags = []
         for lines in pars:
             # 只数**够长的行**。脚注的首行也是缩进的，不加这条就会把
             # `Compare Heb. iii. 1.` 连同页底那个书帖签名 `T` 一起当成
             # 两行诗（实测 p.307）。诗是整句整句排的，行不会只有一两个字。
-            real = [(l, t) for l, t in lines if len(t.strip()) > 8]
-            ind = sum(1 for l, _t in real if l > cut)
-            body_n = len([1 for _l2, t2 in lines if len(t2.strip()) > 2])
+            real = [(l, t, r) for l, t, r in lines if len(t.strip()) > 8]
+            ind = sum(1 for l, _t, _r in real if l > cut)
+            body_n = len([1 for _l2, t2, _r2 in lines if len(t2.strip()) > 2])
+            ragged = all(l > lo_cut and r < r_cut for l, _t, r in real)
             ok = (len(real) >= 2 and len(real) == body_n
-                  and ind >= len(real) * 0.8)
-            flags.append([t for _l, t in real] if ok else None)
+                  and (ind >= len(real) * 0.8 or ragged))
+            flags.append([t for _l, t, _r in real] if ok else None)
         if any(flags):
             out[idx] = flags
     return out
