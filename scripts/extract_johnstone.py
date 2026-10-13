@@ -2285,6 +2285,17 @@ def mend_greek_garble(md, pars, wit, log, leaf):
         # 证据；只挡掉明显不成词的（单字母、带数字）。
         if len(na) < 2 or re.search(r'\d', pa):
             continue
+        # 候选正好是**后面紧跟的那个词**：这个希腊形 token 在两条字流里都
+        # 没有对应，是页边噪点多出来的，不是读坏的词。换上去就写出重复
+        # （`strong in the ἢ behalf` → `behalf behalf`、`goodness. ὌΝ We`
+        # → `We We`，用户截图 p.234）。删掉它，不换。
+        if i + 1 < len(toks) and na == _norm_w(toks[i + 1][0]):
+            out.append(md[last:a].rstrip() + ' ')
+            last = b
+            while last < len(md) and md[last] == ' ':
+                last += 1
+            log.append((str(leaf), 'greek-junk', w + ' ⟂ ' + toks[i + 1][0]))
+            continue
         out.append(md[last:a] + pa)
         last = b
         log.append((str(leaf), 'greek-garble', w + ' → ' + pa))
@@ -2314,9 +2325,19 @@ def drop_tail_echo(text):
         a, b = toks[k][0], toks[k + 1][0]
         if len(a) < 5 or len(b) < 3 or not b.islower():
             continue
-        if text[toks[k][2]:toks[k + 1][1]].strip(' \t,.;:'):
+        gap = text[toks[k][2]:toks[k + 1][1]]
+        if not a.lower().endswith(b.lower()):
             continue
-        if a.lower().endswith(b.lower()) and not LEX_CHECK(b.lower()):
+        if not gap.strip(' \t,.;:') and not LEX_CHECK(b.lower()):
+            cut.append((toks[k][2], toks[k + 1][2]))
+            continue
+        # 后半截**本身是真词**的也是残留：`know-`⏎`ledge` 拼成 `knowledge`
+        # 之后 `ledge` 还在（`self`、`pose`、`phrase`、`standing`、`what`、
+        # `pare`，全书 13 处，用户截图那页的 `behalf behalf` 是同一族）。
+        # 真词放行会误伤，所以卡得更窄：半截 ≥4 字母、前半截 ≥3 字母；中间
+        # 允许夹页缝杂点（`_ | —`），但**不许夹星号**——删掉会拆坏斜体。
+        if (len(b) >= 4 and len(a) - len(b) >= 3 and '*' not in gap
+                and not gap.strip(' \t,.;:_|—–-’\'”\\')):
             cut.append((toks[k][2], toks[k + 1][2]))
     if not cut:
         return text

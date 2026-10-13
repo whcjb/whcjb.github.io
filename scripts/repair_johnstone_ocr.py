@@ -658,6 +658,42 @@ def load_literal_fixes():
     return out
 
 
+TRIM_LOG = []
+
+
+def _trim_overhang(before, after, prev, nxt):
+    """「印面的」比「我们的」多带了窗口外的整词，而原文紧挨着的就是那个词——剪掉。
+
+    第三证人比对表按滑动窗口出条目，相邻两条窗口重叠，「印面的」一侧又常
+    多带一个邻词（`…party spirit'-` → `…party spirit'-'or`，原文后面紧跟
+    `or vainglory`）。两条先后落下，那个词就插了两遍：`'or or vainglory`、
+    `for the the excellency`、`to be'—be'-as regards`（用户截图同一族）。
+    只剪**整词**、且只在原文相邻处正好是它时剪。
+    """
+    n = nxt.lstrip()
+    for k in range(min(len(after), 40), 1, -1):
+        suf = after[-k:]
+        if (suf[0].isalnum() and not after[-k - 1:-k].isalnum()
+                and not before.endswith(suf) and n.startswith(suf)
+                and (len(n) == k or not n[k].isalnum())):
+            TRIM_LOG.append(('tail', after[-60:], suf))
+            after = after[:-k]
+            # 原文那个词前面自带空格，这边再留一个就成了双空格（`'of  the`）
+            if nxt[:1].isspace():
+                after = after.rstrip()
+            break
+    p = prev.rstrip()
+    for k in range(min(len(after), 40), 1, -1):
+        pre = after[:k]
+        if (pre[-1].isalnum() and not after[k:k + 1].isalnum()
+                and not before.startswith(pre) and p.endswith(pre)
+                and (len(p) == k or not p[-k - 1].isalnum())):
+            TRIM_LOG.append(('head', after[:60], pre))
+            after = after[k:].lstrip()
+            break
+    return after
+
+
 def apply_fixes(text, items, log):
     flat, idx = norm_map(text)
     edits = []
@@ -671,6 +707,7 @@ def apply_fixes(text, items, log):
         if at < 0 or flat.find(before, at + 1) >= 0:
             log.append((f'leaf {leaf} 落不下', before[:52]))
             continue
+        after = _trim_overhang(before, after, flat[:at], flat[at + len(before):])
         for tag, i1, i2, j1, j2 in difflib.SequenceMatcher(
                 None, before, after, autojunk=False).get_opcodes():
             if tag == 'equal':
@@ -831,6 +868,11 @@ def main():
           f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
           f'斜体边界 {len(ital_fix_log)} 处',
           file=sys.stderr)
+    # 影像判读的逐字面条目是手写的，落不下＝抽取端变了、条目过期，必须看见。
+    # （先前只计数不打印，验收时 grep 日志拿到 0，其实什么也没查。）
+    for tag, lit in fix_fail:
+        if '逐字面' in tag:
+            print(f'⚠️  {tag}: {lit!r}', file=sys.stderr)
     for was, now in gap_log + glue_log + ord_log + lig_log + glyph_log + ital_i_log + manual_log + fix_log + ital_fix_log:
         print(f'    {was!r} → {now}', file=sys.stderr)
 

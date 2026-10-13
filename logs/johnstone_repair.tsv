@@ -121,7 +121,6 @@ fix	sed	send	1	1
 fix	resKlence	residence	1	1
 fix	Resozce	Rejoice	2	1
 fix	hfe	life	1	1
-fix	rejoic	rejoice	1	1
 fix	frends	friends	1	1
 fix	zmportant	important	1	1
 fix	nghteous	righteous	2	1
@@ -221,6 +220,7 @@ fix	rghteous	righteous	1	0
 fix	friest	priest	1	0
 fix	inte	into	1	0
 fix	iz'	in'	1	0
+fix	rejoic	rejoice	1	0
 fix	Fatth	Faith	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
@@ -248,8 +248,6 @@ fix	thil	things	0	0
 hyphen-gap	evi- dently	evidently		
 hyphen-gap	direc- ‘tion	direction		
 hyphen-gap	Chris- 1 tianity	Christianity		
-hyphen-gap	con- = tinued	continued		
-hyphen-gap	ex-— ceedingly	exceedingly		
 hyphen-gap	re- : garding	regarding		
 hyphen-gap	be- ᾿ς lievers	believers		
 hyphen-gap	unobtru-— sively	unobtrusively		
@@ -275,7 +273,6 @@ glued	Ifwe	If we
 glued	Ifit	If it		
 glued	selfseeking	self-seeking		
 glued	Itis	It is		
-glued	andthe	and the		
 glued	Iam	I am		
 glued	howit	how it		
 glued	Iam	I am		
