@@ -62,7 +62,7 @@ MURRAY AND GIBB, EDINBURGH, PRINTERS TO HER MAJESTY’'S STATIONERY OFFICE,
 <p class="jh-note" id="fn-9" markdown="span"><a class="jh-back" href="#fnref-9">9</a>Rom. xii. 10. 7 -</p>
 <p class="jh-note" id="fn-10" markdown="span"><a class="jh-back" href="#fnref-10">10</a>An evident reference to Col. iii. 5.</p>
 <p class="jh-note" id="fn-11" markdown="span"><a class="jh-back" href="#fnref-11">11</a>The people of Smyrna,</p>
-<p class="jh-note" id="fn-12" markdown="span"><a class="jh-back" href="#fnref-12">12</a>6\* Him’ in the version.<br>\*\* 1 1 1 Cor. vi. 2. 4</p>
+<p class="jh-note" id="fn-12" markdown="span"><a class="jh-back" href="#fnref-12">12</a>6\* Him’ in the version.<br>\*\* 1 Cor. vi. 2. 4</p>
 <p class="jh-note" id="fn-13" markdown="span"><a class="jh-back" href="#fnref-13">13</a>Phil. iii. 18. 5</p>
 <p class="jh-note" id="fn-14" markdown="span"><a class="jh-back" href="#fnref-14">14</a>Or, ‘in all things.’ 5</p>
 <p class="jh-note" id="fn-15" markdown="span"><span class="jh-back">15</span>10Or, ‘ rejoice with you.’ The tense in the original is the *epistolary* aorist, often best rendered in our idiom by the present.</p>

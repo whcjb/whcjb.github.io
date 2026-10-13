@@ -611,7 +611,10 @@ def load_fixes():
     out = {}
     for tbl in (FIX_TBL, FIX_TBL_EXTRA,
                 os.path.join(ROOT, 'johnstone_raw', 'philippians',
-                             'manual_fixes_vlm.tsv')):
+                             'manual_fixes_vlm.tsv'),
+                # 页缝噪点影像判读，手写，不由脚本生成
+                os.path.join(ROOT, 'johnstone_raw', 'philippians',
+                             'manual_fixes_image.tsv')):
         if not os.path.exists(tbl):
             continue
         for line in open(tbl, encoding='utf-8'):
@@ -627,6 +630,11 @@ def apply_fixes(text, items, log):
     flat, idx = norm_map(text)
     edits = []
     for before, after, leaf in items:
+        # 「印面的」包含「我们的」（边码表：`gospel…` → `28 gospel…`）的条目
+        # 改完之后 before 仍然找得到，迭代到不动点那三轮会把它插三遍
+        # （`8 8 8 gospel`）。after 已经在了就是落过了，不再落。
+        if before in after and after in flat:
+            continue
         at = flat.find(before)
         if at < 0 or flat.find(before, at + 1) >= 0:
             log.append((f'leaf {leaf} 落不下', before[:52]))
