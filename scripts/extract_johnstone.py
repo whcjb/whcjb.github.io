@@ -983,6 +983,71 @@ def load_footnotes():
     return out
 
 
+MANUAL_FN_TBL = os.path.join(RAW, 'manual_footnotes.tsv')
+
+
+def load_manual_footnotes():
+    """影像录入的脚注表（坡旅甲书信附录）。
+
+    `leaf \t 号 \t 正文`：该页脚注一律以表为准；
+    `ref \t leaf \t 号 \t 原样 \t 换成`：正文上标号读成了杂符、放不上的，
+    按原样找、在 `{SUP}` 处插上标。
+    """
+    notes, refs = {}, []
+    if not os.path.exists(MANUAL_FN_TBL):
+        return notes, refs
+    for line in open(MANUAL_FN_TBL, encoding='utf-8'):
+        if line.startswith('#') or not line.strip():
+            continue
+        p = line.rstrip('\n').split('\t')
+        if p[0] == 'ref' and len(p) >= 5:
+            refs.append((f'{int(p[1])}-{p[2]}', p[3].replace('⏎', '\n'),
+                         p[4].replace('⏎', '\n')))
+        elif len(p) >= 3 and p[0].isdigit():
+            notes.setdefault(int(p[0]), []).append((p[1], p[2]))
+    return notes, refs
+
+
+def number_unkeyed(got, fns, refs, log, sec, leaf):
+    """按字号搬出来的脚注**没有号码**（`''`），补上。
+
+    没号码的脚注键成了 `376-`，跟正文上标 `376-1` 配不上：脚注区显示的
+    号码与正文对不上、不能互跳，同页两条没号的还共用一个键、显示成同一个
+    号（第 27 讲两个 `fn-1`、坡旅甲书信连着四个 19）。全书 30 条。
+
+    号码从证人那页的 `[FN:n]` 来：拿这条脚注的词去跟证人每一条脚注比，
+    取覆盖率最高、且还没被占用的号。比不上的，若本页只剩一个没占用的
+    引用号、也只剩这一条没号的脚注，就给它；否则留空，不猜。
+    """
+    used = {n for n, _t in got if n}
+    out = []
+    for n, t in got:
+        if n == '':
+            tw = {w.lower() for w in re.findall(r"[A-Za-z']+", t)}
+            best, bn = 0.0, None
+            for fn_num, fw in fns:
+                fs = set(fw)
+                if fn_num in used or not fs:
+                    continue
+                c = len(tw & fs) / len(fs)
+                if c > best:
+                    best, bn = c, fn_num
+            if bn is not None and best >= 0.5:
+                n = bn
+                used.add(n)
+                log.append((sec, 'fn-number', f'{leaf}-{n} ← {t[:50]}'))
+        out.append([n, t])
+    free = sorted({r for r, _c in refs} - used, key=int)
+    blank = [o for o in out if o[0] == '']
+    if len(blank) == 1 and len(free) == 1:
+        blank[0][0] = free[0]
+        log.append((sec, 'fn-number', f'{leaf}-{free[0]} ← {blank[0][1][:50]}（唯一空位）'))
+    return [tuple(o) for o in out]
+
+
+MANUAL_NOTES, MANUAL_REFS = load_manual_footnotes()
+
+
 GREEK_LOOKALIKE = str.maketrans(
     'ΑΒΕΖΗΙΚΜΝΟΡΤΥΧ', 'ABEZHIKMNOPTYX')
 
@@ -1149,6 +1214,16 @@ def excise_footnotes(text, fns, short, foot_pool, small, log, sec):
         sw = [w.lower() for w in re.findall(r"[A-Za-z]{2,}", sm)]
         if len(sw) < 5:
             continue
+        # 小一号字的**不全是脚注**：讲章开头的经文题记、正文里的引诗也排小字，
+        # 照搬会把它们挪到章末脚注区（第 12 讲题记、第 29 讲整首诗都被搬走过）。
+        # 要求这一段的词大半落在证人标出的**页脚区**（第一条 `[FN:` 之后）里。
+        # 跨页续写的脚注（小写起头，接上一页那条）不过这道闸：证人只从第一条
+        # `[FN:` 起算页脚，续写排在它**上面**，词不在池里（p.140 实测）。
+        # 题记和引诗都是大写起头，挡得住。
+        fc = sum(1 for w in sw if foot_pool.get(w)) / len(sw)
+        if fc < 0.5 and not re.match(r"[\s‘’'\"*\\]*[a-z]", sm):
+            log.append((sec, 'footnote-fs-reject', f'{fc:.2f} ' + sm[:80]))
+            continue
         pars = text.split('\n\n')
         best, bi = 0.0, None
         for i, par in enumerate(pars):
@@ -1160,6 +1235,12 @@ def excise_footnotes(text, fns, short, foot_pool, small, log, sec):
             if cov > best:
                 best, bi = cov, i
         if bi is None or best < 0.6:
+            continue
+        # 段落比这条小字长出一大截＝脚注跟正文被 OCR 并成了一段，整段搬就把
+        # 正文一起搬走了（导论 p.7 一整页正文成了第 6 号脚注）。不整段搬，
+        # 交给后面按词序列定位的那一步，只切脚注那一截。
+        if len(_plain_words(pars[bi])) > len(sw) * 1.6 + 8:
+            log.append((sec, 'footnote-fs-toolong', sm[:80]))
             continue
         # 小写起头＝上一条脚注的续写，用 None 当号码，交给调用方接上去
         cont = bool(re.match(r"[\s‘’'\"*\\]*[a-z]", pars[bi]))
@@ -1434,6 +1515,12 @@ def split_sections(pages, leaf_sec):
             text = drop_signature(text, sig, GARBAGE, sec)
             text, got = excise_footnotes(text, fns, short, foot_pool,
                                          SMALLFONT.get(leaf, ()), GARBAGE, sec)
+            got = number_unkeyed(got, fns, refs, GARBAGE, sec, leaf)
+            if leaf in MANUAL_NOTES:
+                # 影像录入的整组为准；OCR 切出来的（含跨页续写）一律丢弃
+                for _n, g in got:
+                    GARBAGE.append((sec, 'fn-manual-drop', g[:80]))
+                got = MANUAL_NOTES[leaf]
             for num, g in got:
                 if num is None:
                     # 跨页续写：接到上一条脚注后面，不另起一条
@@ -1450,6 +1537,10 @@ def split_sections(pages, leaf_sec):
             text = place_fn_refs(text, refs, GARBAGE, sec, leaf)
             text = _dedup_fn_ref(text, GARBAGE, sec)
             text = scrub_marker_junk(text, WITNESS.get(leaf, ''), GARBAGE, sec)
+        elif leaf in MANUAL_NOTES:
+            # 没有证人转录的页（0391），表里录的脚注照样落
+            for num, g in MANUAL_NOTES[leaf]:
+                buckets[sec].append(f'{FN_MARK}{leaf}-{num}\x1f{g}')
         first = True
         for p in text.split('\n\n'):
             if not p.strip():
@@ -1509,6 +1600,30 @@ def split_sections(pages, leaf_sec):
     # 兜底清扫放在**分节之后**：书末那几节的标题页本身就长得像页眉
     # （`EPISTLE OF PAUL TO THE PHILIPPIANS. _ LS) 3» 4`，相似度 0.81），
     # 分节前扫会把切分锚点一起扫掉——实测「修订译文」整节因此找不到起头。
+    # 脚注**跟着它的上标走**。脚注按页归节，可一页能横跨两节（希腊文注
+    # 第 2、3 部分在 p.461 接排）：上标落在后一节，脚注却跟着页首进了前一节，
+    # 两边都成了孤儿。按 `{页}-{号}` 找到上标所在的节，挪过去。
+    where = {}
+    for idx, (_s, _t, body) in enumerate(out):
+        for m in RE_SUP_KEY.finditer(body):
+            where.setdefault(m.group(1), idx)
+    moved = [[] for _ in out]
+    staged = []
+    for idx, (slug, title, body) in enumerate(out):
+        stay = []
+        for p in body.split('\n\n'):
+            if p.startswith(FN_MARK):
+                k = p[1:].partition('\x1f')[0]
+                j = where.get(k)
+                if j is not None and j != idx:
+                    moved[j].append(p)
+                    GARBAGE.append((slug, 'fn-move', k + ' → ' + out[j][0]))
+                    continue
+            stay.append(p)
+        staged.append((slug, title, stay))
+    out = [(sl, ti, '\n\n'.join(st + moved[i]))
+           for i, (sl, ti, st) in enumerate(staged)]
+
     swept = []
     for slug, title, body in out:
         keep = []
@@ -1541,6 +1656,18 @@ def split_sections(pages, leaf_sec):
         # 由引号内的句点收了尾），全书 2 处。只动标点，不碰字。
         keep = [RE_DOT_QUOTE_DOT.sub(r'.\1', x) for x in keep]
         body = move_open_quote([x for x in keep if not x.startswith(FN_MARK)])
+        joined = '\n\n'.join(body)
+        for key, find, repl in MANUAL_REFS:
+            # 已有这个上标就不再插——除非这一行本来就是来**挪**它的
+            # （`temptation¹ :’®` → `temptation :’¹`，找的串里含着它）
+            if ((f'data-fn="{key}"' in joined and f'data-fn="{key}"' not in find)
+                    or joined.count(find) != 1):
+                continue
+            sup = f'<sup class="jh-fn" data-fn="{key}">{key.split("-")[1]}</sup>'
+            # 在**拼起来的全文**上换：找的串可以跨段（`from death.’⏎⏎This`）
+            joined = joined.replace(find, repl.replace('{SUP}', sup))
+            body = joined.split('\n\n')
+            GARBAGE.append((slug, 'fn-ref-manual', key + ' ' + find))
         notes = []
         for x in keep:
             if x.startswith(FN_MARK):
@@ -1684,6 +1811,15 @@ def _render_notes(body, notes):
     rows = []
     for k, t in sorted(notes, key=lambda kt: seq[kt[0]]):
         num = seq[k]
+        # 脚注自己的号码印在页脚行首，OCR 常读成直撇号或星号（`' This point…`、
+        # `\* The whole letter…`）。全书正文用的是弯引号，行首一个**直撇号加
+        # 空格**不会是真引号；号码已由 `jh-back` 给出，这一截剥掉。
+        t = re.sub(r"^(?:'|\\\*)\s+", '', t)
+        # 号码本身也会原样留在行首（`1 “Other” here…`）：等于页内号、后面
+        # 跟的又不是书卷名（`1 Pet.`、`2 Tim.` 是正文）才剥。
+        pn = k.split('-')[-1]
+        if pn and re.match(re.escape(pn) + r' (?![A-Z][a-z]{1,4}\.)', t):
+            t = t[len(pn) + 1:]
         back = (f'<a class="jh-back" href="#fnref-{num}">{num}</a>'
                 if any(f'id="fnref-{num}"' in p for p in body)
                 else f'<span class="jh-back">{num}</span>')

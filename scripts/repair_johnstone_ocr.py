@@ -623,7 +623,13 @@ def load_fixes():
             if len(p) >= 5 and p[4] == 'lit':
                 continue              # 逐字面条目，见 load_literal_fixes
             if len(p) >= 4:
-                out.setdefault(p[0], []).append((p[2], p[3], p[1]))
+                # 印面比对表里的**裸上标数字**（`death.’ ¹`、`¹ A document…`）
+                # 一律剥掉：脚注号走的是 `<sup class="jh-fn">` 那条道，由抽取端
+                # 按证人插、按页配对；这里再塞一个 `¹` 就是页面上的第二个号，
+                # 而且点不了（第 2 讲、导论、第 27 讲共 7 处双号）。
+                after = re.sub(r' ?[⁰¹²³⁴⁵⁶⁷⁸⁹]+', '', p[3]).strip()
+                if after != p[2]:
+                    out.setdefault(p[0], []).append((p[2], after, p[1]))
     return out
 
 

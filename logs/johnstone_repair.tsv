@@ -201,8 +201,6 @@ fix	wmiversality	universality	1	1
 fix	fresent	present	1	1
 fix	imsfired	inspired	2	1
 fix	pfu	helpful	0	1
-fix	cifizens	citizens	1	1
-fix	phendix	Appendix	2	1
 fix	Jrom	from	1	1
 fix	GLAsGow	GLASGOW	0	1
 fix	Luodia	Euodia	0	1
@@ -234,6 +232,8 @@ fix	urt	heart	0	0
 fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
 fix	heayen'	heaven'	1	0
+fix	cifizens	citizens	1	0
+fix	phendix	Appendix	2	0
 fix	Joun	John	1	0
 fix	al	all	1	0
 fix	Witttam	William	1	0
@@ -303,7 +303,6 @@ glued	initself	in itself
 glued	hisfriends	his friends		
 glued	itseems	it seems		
 glued	givento	given to		
-glued	iam	i am		
 glued	Butif	But if		
 glued	inme	in me		
 ordinal	roth	10th		
@@ -316,7 +315,6 @@ ordinal	znd	2nd
 ordinal	gth	9th		
 ordinal	oth	9th		
 ordinal	znd	2nd		
-ordinal	gth	9th		
 ligature	Ceesar	Cæsar		
 ligature	Czsar	Cæsar		
 ligature	Casar	Cæsar		
@@ -1033,7 +1031,7 @@ reject	rod	rov	2	① tesseract 侧本来就是词
 reject	xairep	rtpThe	2	① ABBYY 侧也不是词
 reject	frvevenire	nrvenire	2	① ABBYY 侧也不是词
 reject	frst	Jirsf	2	① ABBYY 侧也不是词
-reject	gui	qui	2	③ 全书只正确出现 0 次
+reject	gui	qui	2	③ 全书只正确出现 1 次
 reject	fenmse	tense	2	② ABBYY 侧更短，多半是粘词只给了前半
 reject	peutnuo	fiefivrjfiaL	2	① ABBYY 侧也不是词
 reject	pvety	fivelv	2	① ABBYY 侧也不是词
@@ -2630,7 +2628,7 @@ reject	NOTICE	NOTICE	1	① tesseract 侧本来就是词
 reject	wrong	vrong	1	① tesseract 侧本来就是词
 reject	numerous	numerous	1	① tesseract 侧本来就是词
 reject	congratulate	congratulate	1	① tesseract 侧本来就是词
-reject	efistolary	epistolary	1	③ 全书只正确出现 0 次
+reject	efistolary	epistolary	1	③ 全书只正确出现 1 次
 reject	endured'	endured	1	② ABBYY 侧更短，多半是粘词只给了前半
 reject	worshippeth	worshippeth	1	① ABBYY 侧也不是词
 reject	blood	blood	1	① tesseract 侧本来就是词
