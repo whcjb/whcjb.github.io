@@ -613,16 +613,42 @@ def load_fixes():
                 os.path.join(ROOT, 'johnstone_raw', 'philippians',
                              'manual_fixes_vlm.tsv'),
                 # 页缝噪点影像判读，手写，不由脚本生成
-                os.path.join(ROOT, 'johnstone_raw', 'philippians',
-                             'manual_fixes_image.tsv')):
+                IMG_TBL):
         if not os.path.exists(tbl):
             continue
         for line in open(tbl, encoding='utf-8'):
             if line.startswith('#'):
                 continue
             p = line.rstrip('\n').split('\t')
+            if len(p) >= 5 and p[4] == 'lit':
+                continue              # 逐字面条目，见 load_literal_fixes
             if len(p) >= 4:
                 out.setdefault(p[0], []).append((p[2], p[3], p[1]))
+    return out
+
+
+IMG_TBL = os.path.join(ROOT, 'johnstone_raw', 'philippians',
+                       'manual_fixes_image.tsv')
+
+
+def load_literal_fixes():
+    """影像判读表里第五列标 `lit` 的条目：**逐字面**替换原文（带星号）。
+
+    页缝噪点里常夹着成对的斜体星号（`worn with "*lied ake » as Pile* ΟΣ
+    *4 Gi 5*…`），走归一化那条路时区间含星号会被整条跳过——那道闸是防
+    把真斜体删坏的，对整段都是垃圾的噪点不适用。所以这类条目照原样写
+    「我们的」，原样匹配、唯一才落。
+    """
+    out = {}
+    if os.path.exists(IMG_TBL):
+        for line in open(IMG_TBL, encoding='utf-8'):
+            if line.startswith('#'):
+                continue
+            p = line.rstrip('\n').split('\t')
+            if len(p) >= 5 and p[4] == 'lit':
+                # 跨段条目里的换行在表里写作 ⏎
+                out.setdefault(p[0], []).append(
+                    (p[2].replace('⏎', '\n'), p[3].replace('⏎', '\n'), p[1]))
     return out
 
 
@@ -704,6 +730,7 @@ def main():
     gap_log, glue_log, ord_log, lig_log, glyph_log = [], [], [], [], []
     ital_i_log, manual_log, fix_log, fix_fail = [], [], [], []
     FIXES = load_fixes()
+    LITERAL = load_literal_fixes()
     ITALIC_FIX = {}
     _it = os.path.join(ROOT, 'johnstone_raw', 'philippians', 'manual_italic.tsv')
     if os.path.exists(_it):
@@ -759,7 +786,27 @@ def main():
     # 跟 `those` 两个候选分不开）于是原样留着，随后手工表把 `hose` 改成
     # `those`，产出 `*/those*`；非得再跑一遍整条链才清掉。用户截图看到的
     # 就是这个中间态。所以在**一次调用里**迭代到稳定，最多三轮。
+    def apply_literal(f, txt):
+        """影像判读的逐字面条目：**遮标签之前、迭代之外**，每个文件只落一次。
+
+        它写的是抽取端原样的噪点，排在后面的字形回扫、证人回填会先去改噪点
+        里的字，改过就对不上了，所以排最前。也不能进迭代：条目会**插入 HTML**
+        （补脚注），进了 one_pass 就是没遮罩的裸标签，字形回扫把 `</span>`
+        改成 `<span>`，插入型防护比对不上，一轮插一次（实测 Bradley 脚注三遍）。
+        """
+        for lit, fixed, leaf in LITERAL.get(f, []):
+            if lit in fixed and fixed in txt:
+                continue              # 插入型条目已落过（同 apply_fixes）
+            if txt.count(lit) == 1:
+                txt = txt.replace(lit, fixed)
+                fix_log.append((lit[:40], fixed[:40]))
+            elif fixed not in txt:
+                fix_fail.append((f'leaf {leaf} 逐字面落不下', lit[:52]))
+        return txt
+
     for f, t in texts.items():
+        t0 = t
+        t = apply_literal(f, t)
         t, _tags = mask(t)
         new = t
         for _ in range(3):
@@ -768,7 +815,7 @@ def main():
                 break
             new = nxt
         new, t = unmask(new, _tags), unmask(t, _tags)
-        if a.apply and new != t:
+        if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
     print(f'连字符夹垃圾 {len(gap_log)} 处，粘词 {len(glue_log)} 处，'

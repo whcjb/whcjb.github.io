@@ -1,7 +1,7 @@
 verdict	from	to	pairs	hits
 fix	zs	is	18	19
 fix	ts	is	11	11
-fix	im	in	4	10
+fix	im	in	4	8
 fix	nght	right	6	6
 fix	il	ii	4	5
 fix	iz	in	2	5
@@ -144,12 +144,10 @@ fix	mofives	motives	2	1
 fix	grzmary	primary	2	1
 fix	XXITI	XXIII	1	1
 fix	ili	iii	1	1
-fix	immora	immoral	1	1
 fix	az	an	1	1
 fix	diving	living	1	1
 fix	Fokn	John	2	1
 fix	Jody	body	1	1
-fix	spiritu	spiritually	0	1
 fix	drethren	brethren	1	1
 fix	imd	kind	1	1
 fix	firs	first	1	1
@@ -158,7 +156,6 @@ fix	vange	range	0	1
 fix	sfecia	special	2	1
 fix	azd	and	1	1
 fix	Aasseth	passeth	1	1
-fix	urt	heart	0	1
 fix	Zearned	learned	2	1
 fix	howeyer	however	1	1
 fix	orfor	torpor	0	1
@@ -231,6 +228,9 @@ fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Drue	True	1	0
 fix	Vever	Never	1	0
+fix	immora	immoral	1	0
+fix	spiritu	spiritually	0	0
+fix	urt	heart	0	0
 fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
 fix	heayen'	heaven'	1	0
@@ -275,9 +275,7 @@ glued	Ifwe	If we
 glued	Ifit	If it		
 glued	selfseeking	self-seeking		
 glued	Itis	It is		
-glued	aman	a man		
 glued	andthe	and the		
-glued	ofa	of a		
 glued	Iam	I am		
 glued	howit	how it		
 glued	Iam	I am		
@@ -292,7 +290,6 @@ glued	witha	with a
 glued	uponit	upon it		
 glued	joyand	joy and		
 glued	Itis	It is		
-glued	likea	like a		
 glued	wasthe	was the		
 glued	ButI	But I		
 glued	Iwill	I will		
@@ -379,7 +376,6 @@ glyph	ferform	perform
 glyph	¢hat	that		
 glyph	¢he	the		
 glyph	Zights	lights		
-glyph	/adoured	laboured		
 glyph	venunciation	renunciation		
 glyph	venunciation	renunciation		
 glyph	a//	all		
@@ -408,7 +404,6 @@ glyph	Zerfect	perfect
 glyph	Vevertheless	Nevertheless		
 glyph	/eads	leads		
 glyph	wa/k	walk		
-glyph	/ory	ory		
 glyph	sou/	soul		
 glyph	a/ways	always		
 glyph	/for	for		
