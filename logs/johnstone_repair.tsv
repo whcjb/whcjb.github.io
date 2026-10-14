@@ -9,11 +9,11 @@ fix	decause	because	3	4
 fix	ferfect	perfect	3	4
 fix	rst	first	0	4
 fix	nghtful	rightful	3	3
-fix	dy	by	3	3
 fix	Chnist	Christ	2	3
 fix	Zhe	The	0	3
 fix	wth	with	2	2
 fix	spint	spirit	2	2
+fix	dy	by	3	2
 fix	Preetorian	Praetorian	2	2
 fix	whith	which	2	2
 fix	nghteousness	righteousness	1	2
@@ -167,7 +167,6 @@ fix	worshif	worship	1	1
 fix	Przvilege	privilege	2	1
 fix	mecessity	necessity	1	1
 fix	Pau	Paul	1	1
-fix	ujon	upon	1	1
 fix	znmgs	things	2	1
 fix	hzmgs	things	1	1
 fix	zt	it	1	1
@@ -229,6 +228,7 @@ fix	Vever	Never	1	0
 fix	immora	immoral	1	0
 fix	spiritu	spiritually	0	0
 fix	urt	heart	0	0
+fix	ujon	upon	1	0
 fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
 fix	heayen'	heaven'	1	0
@@ -364,7 +364,6 @@ glyph	feace	peace
 glyph	/ike	like		
 glyph	delieve	believe		
 glyph	Zerseveringly	perseveringly		
-glyph	¢he	the		
 glyph	s/ave	save		
 glyph	wz//	will		
 glyph	ferform	perform		
@@ -467,7 +466,6 @@ italic-I	7	I
 italic-I	7	I		
 italic-I	J	I		
 italic-I	J	I		
-italic-I	7	I		
 italic-I	7	I		
 italic-I	7	I		
 italic-I	Z	I		

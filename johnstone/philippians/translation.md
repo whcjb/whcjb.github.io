@@ -37,7 +37,7 @@ I I 7 even as it is meet for me to think this of you all, because I have you in 
 
 II. 1 If *there be,* therefore, any consolation in Christ, if any comfort of love, if any fellowship of the Spirit, if any 2 tender-heartedness and compassions, fill ye up my joy, that ye be of the same mind, having the same love, with 3 united souls minding the one thing ; *doing* nothing according to factiousness or vainglory, but in lowliness of mind esteeming each other better than yourselves ;
 
-4 looking not each on your own things, but each also on 5 the things of others. For have that mind in you, which 6 aon 9 Ιο II 12 13 *6 was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God, I I 7 but emptied Himself, taking *upon Him* the form of a 8 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
+4 looking not each on your own things, but each also on 5 the things of others. For have that mind in you, which 6 *was* also in Christ Jesus; who, being in the form of God, thought it not a prize to be on equality with God, I I 7 but emptied Himself, taking *upon Him* the form of a 8 servant, being made in the likeness of men ; and, being found in fashion as a man, He humbled Himself, becoming obedient even unto death, yea the death of the cross;
 
 9 wherefore also God highly exalted Him, and gave Him 10 a name which is above every name, that in the name of Jesus every knee should bow, of *things* in heaven, and *11 things* on earth, and *things* under the earth, and *that* every tongue should confess that Jesus Christ *is* Lord, to the glory of God the Father.
 
@@ -81,7 +81,7 @@ II. 1 If *there be,* therefore, any consolation in Christ, if any comfort of lov
 
 11 Not that I speak in respect of want, for I have 12 learned, in what state I am, *therein* to be content. I know both *how* to be abased,—I know also *how* to abound ; in all and everything I am instructed both to be full and to be hungry, both to abound and to suffer 13 want. I can do all things in Him which strengtheneth me.
 
-14 Notwithstanding, ye did well that ye had fellowship 15 with my affliction. And ye yourselves also know, Philippians, that in the beginning of the gospel, when I departed from Macedonia, no church had fellowship with me as touching an account of giving and receiving, 16 but ye only. For even in Thessalonica ye sent once 17 and again unto my need. Not that I seek your gift,— but I seek the fruit which aboundeth to your account.
+14 Notwithstanding, ye did well that ye had fellowship 15 with my affliction. And ye yourselves also know, Philippians, that in the beginning of the gospel, when I departed from Macedonia, no church had fellowship with me as touching an account of giving and receiving, 16 but ye only. For even in Thessalonica ye sent once 17 and again unto my need. Not that I seek your gift,—but I seek the fruit which aboundeth to your account.
 
 18 But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice ac19 ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory, 20 in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
 

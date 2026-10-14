@@ -694,6 +694,21 @@ def _trim_overhang(before, after, prev, nxt):
     return after
 
 
+# 破折号紧贴前面的标点：全书 `,—` 1121 处、`, —` 83 处（用户截图 p.237–238
+# `Thessalonica, —‘Are`、`Father,’ —Oh`）。那 83 处的空格是行首破折号接行时
+# 补进来的接缝，或者是闭引号被读成了空格（`thee, —` ← `thee,’—`，后者按
+# 影像逐处落在 manual_fixes_image.tsv）。这里只收空格，不补引号。
+# 破折号后面紧跟数字的不收：译文页的边码节号（`things,— 9 wherefore`）。
+RE_SPACED_DASH = re.compile(r"([,;:’!?.]\*?)[ \t]*—[ \t]+(?=[^\s\d])|([,;:’!?.]\*?)[ \t]+—(?=[^\s\d])")
+
+
+def close_dash(text, log):
+    def sub(m):
+        log.append(m.group(0))
+        return (m.group(1) or m.group(2)) + '—'
+    return RE_SPACED_DASH.sub(sub, text)
+
+
 def apply_fixes(text, items, log):
     flat, idx = norm_map(text)
     edits = []
@@ -829,6 +844,8 @@ def main():
     # 跟 `those` 两个候选分不开）于是原样留着，随后手工表把 `hose` 改成
     # `those`，产出 `*/those*`；非得再跑一遍整条链才清掉。用户截图看到的
     # 就是这个中间态。所以在**一次调用里**迭代到稳定，最多三轮。
+    dash_log = []
+
     def apply_literal(f, txt):
         """影像判读的逐字面条目：**遮标签之前、迭代之外**，每个文件只落一次。
 
@@ -858,6 +875,7 @@ def main():
                 break
             new = nxt
         new, t = unmask(new, _tags), unmask(t, _tags)
+        new = close_dash(new, dash_log)
         if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
@@ -866,7 +884,7 @@ def main():
           f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆），'
           f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
           f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
-          f'斜体边界 {len(ital_fix_log)} 处',
+          f'斜体边界 {len(ital_fix_log)} 处，破折号收空格 {len(dash_log)} 处',
           file=sys.stderr)
     # 影像判读的逐字面条目是手写的，落不下＝抽取端变了、条目过期，必须看见。
     # （先前只计数不打印，验收时 grep 日志拿到 0，其实什么也没查。）

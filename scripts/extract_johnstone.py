@@ -107,8 +107,16 @@ def ocr_pages():
             continue
         leaf = int(os.path.splitext(name)[0])
         with open(os.path.join(OCR_DIR, name), encoding='utf-8') as f:
-            out[leaf] = f.read().split('\n')
+            txt = f.read()
+        # tesseract eng+grc 把节号 `§` 读成希腊字母 `ὃ`（`Winer, ὃ 19. 2`，
+        # 影像 leaf 449/480/484 核过，全书 12 处），随后被当游离希腊字母清掉，
+        # 注释里 9 处语法书出处丢了 `§`。只认「孤立的 ὃ + 数字」。
+        txt = RE_SECTION_SIGN.sub('§ ', txt)
+        out[leaf] = txt.split('\n')
     return out
+
+
+RE_SECTION_SIGN = re.compile(r'(?<![\u0370-\u03ff\u1f00-\u1fff\w])ὃ ?(?=\d)')
 
 
 def drop_duplicate_leaves(ocr, window=5, thresh=0.55):
