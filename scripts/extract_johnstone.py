@@ -814,6 +814,7 @@ def is_scan_noise(par):
 #      不可凭猜删字母。
 # 前一段若已经以句末标点收尾，说明两段本来就该分开，只丢碎屑不合并。
 RE_SIGNATURE = re.compile(r'^\W*\d?[A-Z]\.?\W*$')
+RE_ORPHAN_LEAD = re.compile(r'^[,.] (?![A-Z’\'\s—,.-]{8})')   # 全大写 = 讲题，不碰
 RE_SIG_HEAD = re.compile(r'^\d[A-Z] (?=[a-z])')
 RE_SENT_END = re.compile(r"[.!?][’'\"”)\]*]*$")
 RE_CITE_PAR = re.compile(r"^[\s\d'*\\]*(?:[1-3]\s*)?[A-Z][A-Za-z]{1,9}[.,]")
@@ -1682,6 +1683,31 @@ def split_sections(pages, leaf_sec):
             else:
                 merged.append(p)
         keep = merged
+        # 段首词被甩到上一段段尾：`…directly. Στήκω⏎⏎, as used by Paul…`
+        # （注释页按段起头的希腊词条、注释号 `*11*`，全书 4 处，影像核过）。
+        # 下段以 `,`/`.` 起头 = 它缺了打头的那个词，词就是上段最后一个 token。
+        # 那个 token 前面是句末 → 它是下段段首，挪过去；否则同一句被劈开，接回。
+        fixed = []
+        for p in keep:
+            if (fixed and RE_ORPHAN_LEAD.match(p)
+                    and not p.startswith(FN_MARK)
+                    and not fixed[-1].startswith(FN_MARK)):
+                prev = fixed[-1].rstrip()
+                m_tok = re.search(r'(\s)(\S+)$', prev)
+                if m_tok:
+                    head = prev[:m_tok.start()].rstrip()
+                    tok = m_tok.group(2)
+                    if re.search(r"[.!?;:’”*]$", head):
+                        lead = tok.strip('*') if re.fullmatch(r'\*?\d+\*?', tok) else tok
+                        GARBAGE.append((slug, 'lead-move', tok + ' ⟶ ' + p[:30]))
+                        fixed[-1] = head
+                        p = lead + p
+                    else:
+                        GARBAGE.append((slug, 'lead-join', prev[-30:] + ' ⟂ ' + p[:30]))
+                        fixed[-1] = prev + p
+                        continue
+            fixed.append(p)
+        keep = fixed
         # `ears.’.` —— 引号外面又多一个句点。形态上确定是错的（句子已经
         # 由引号内的句点收了尾），全书 2 处。只动标点，不碰字。
         keep = [RE_DOT_QUOTE_DOT.sub(r'.\1', x) for x in keep]
