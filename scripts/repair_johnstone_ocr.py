@@ -734,16 +734,32 @@ RE_HALF_ITAL_Q = re.compile(r"‘\*([^*‘’\n]{1,80}?)’\*")
 RE_WORD_DASH_SP = re.compile(r"(?<=[A-Za-z])—[ \t]+(?=[a-z])")
 
 
+# 直引号残留：manual_fixes 表的「印面的」一栏抄自 VLM 证人，用的是 ASCII `'`，
+# 落进正文后全书剩 ~110 个（`life.'*`、`*'to be`、`Christ's`）。按两侧定弯向：
+# 字母夹着＝撇号 ’；左贴字/标点/星号、右是空白/标点/星号/行尾＝闭 ’；
+# 左是行首/空白/破折号/括号/星号、右贴字母或星号＝开 ‘。两侧都是空格的
+# （`aforetime ' was`）不归这里，按影像定。
+RE_SQ_APOS = re.compile(r"(?<=[A-Za-z])'(?=[A-Za-z])")
+RE_SQ_CLOSE = re.compile(r"(?<=[A-Za-z0-9.,;:!?*)])'(?=[\s*.,;:!?)—\-]|$)", re.M)
+RE_SQ_OPEN = re.compile(r"(?:(?<=^)|(?<=[\s—(*‘]))'(?=[A-Za-z*])", re.M)
+# 开引号进了斜体、闭引号在外：`*‘to know Christ.*’` → `‘*to know Christ.*’`
+RE_HALF_ITAL_Q2 = re.compile(r"\*‘([^*‘’\n]{1,80}?)\*’")
+
+
 def tidy_quotes(text, log):
     def sub(repl):
         def f(m):
             log.append(m.group(0))
             return m.expand(repl)
         return f
+    text = RE_SQ_APOS.sub(sub('’'), text)
+    text = RE_SQ_CLOSE.sub(sub('’'), text)
+    text = RE_SQ_OPEN.sub(sub('‘'), text)
     text = RE_OPEN_Q_SP.sub(sub('‘'), text)
     text = RE_CLOSE_Q_SP.sub(sub('’'), text)
     text = RE_WORD_DASH_SP.sub(sub('—'), text)
-    return RE_HALF_ITAL_Q.sub(sub(r'‘*\1*’'), text)
+    text = RE_HALF_ITAL_Q.sub(sub(r'‘*\1*’'), text)
+    return RE_HALF_ITAL_Q2.sub(sub(r'‘*\1*’'), text)
 
 
 def apply_fixes(text, items, log):
