@@ -52,7 +52,6 @@ fix	bomds	bonds	1	1
 fix	mor	more	1	1
 fix	ive	live	1	1
 fix	ws	us	2	1
-fix	ozce	once	2	1
 fix	Seriptures	Scriptures	1	1
 fix	Aoliness	holiness	1	1
 fix	Jollow	follow	1	1
@@ -92,7 +91,6 @@ fix	feebieness	feebleness	1	1
 fix	Zosszble	possible	2	1
 fix	afostles	apostles	1	1
 fix	sazzts	saints	1	1
-fix	decoming	becoming	1	1
 fix	ded	died	1	1
 fix	decame	became	1	1
 fix	fis	His	1	1
@@ -127,7 +125,6 @@ fix	nghteous	righteous	2	1
 fix	Aumility	humility	1	1
 fix	tq	to	1	1
 fix	mghteousness	righteousness	1	1
-fix	Jf	If	1	1
 fix	circumeised	circumcised	1	1
 fix	fersecuting	persecuting	1	1
 fix	Zouching	touching	1	1
@@ -212,6 +209,8 @@ fix	PHILTPPIANS	PHILIPPIANS	1	0
 fix	donds'	bonds'	1	0
 fix	Chnist'	Christ'	1	0
 fix	Zve'	live	2	0
+fix	ozce	once	2	0
+fix	decoming	becoming	1	0
 fix	adoured'	laboured	2	0
 fix	rghteous	righteous	1	0
 fix	friest	priest	1	0
@@ -219,6 +218,7 @@ fix	inte	into	1	0
 fix	iz'	in'	1	0
 fix	rejoic	rejoice	1	0
 fix	Fatth	Faith	1	0
+fix	Jf	If	1	0
 fix	ferfect'	perfect'	1	0
 fix	Zerfect'	perfect'	1	0
 fix	Drue	True	1	0
