@@ -178,12 +178,10 @@ fix	swbstance	substance	1	1
 fix	rmghteousness	righteousness	1	1
 fix	examp	example	1	1
 fix	Prztorian	Praetorian	1	1
-fix	Motes	Notes	6	1
 fix	xil	xii	1	1
 fix	dad	dead	2	1
 fix	xvil	xvii	1	1
 fix	Zfistle	Epistle	1	1
-fix	Greck	Greek	1	1
 fix	wnitings	writings	1	1
 fix	avound	around	1	1
 fix	pvoved	proved	1	1
@@ -229,8 +227,10 @@ fix	immora	immoral	1	0
 fix	spiritu	spiritually	0	0
 fix	urt	heart	0	0
 fix	ujon	upon	1	0
+fix	Motes	Notes	6	0
 fix	Votes	Notes	3	0
 fix	Tefer	refer	1	0
+fix	Greck	Greek	1	0
 fix	heayen'	heaven'	1	0
 fix	cifizens	citizens	1	0
 fix	phendix	Appendix	2	0

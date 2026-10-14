@@ -814,6 +814,7 @@ def is_scan_noise(par):
 #      不可凭猜删字母。
 # 前一段若已经以句末标点收尾，说明两段本来就该分开，只丢碎屑不合并。
 RE_SIGNATURE = re.compile(r'^\W*\d?[A-Z]\.?\W*$')
+RE_SIG_HEAD = re.compile(r'^\d[A-Z] (?=[a-z])')
 RE_SENT_END = re.compile(r"[.!?][’'\"”)\]*]*$")
 RE_CITE_PAR = re.compile(r"^[\s\d'*\\]*(?:[1-3]\s*)?[A-Z][A-Za-z]{1,9}[.,]")
 
@@ -1653,6 +1654,14 @@ def split_sections(pages, leaf_sec):
         for p in keep:
             t = next((k for k in range(len(merged) - 1, -1, -1)
                       if not merged[k].startswith(FN_MARK)), None)
+            # 书帖签名（`2B`…`2H`，页脚中线的折标）粘在下一页段首，那一段又被
+            # 当成新段：`…the sexes⏎⏎2B respectively, and…`（全书 6 处，影像
+            # leaf 451 `2 E` 核过）。上段没收尾、签名后小写起头 → 去签名再接。
+            m_sig = RE_SIG_HEAD.match(p)
+            if (m_sig and t is not None
+                    and not RE_SENT_END.search(merged[t].rstrip('*'))):
+                GARBAGE.append((slug, 'signature', p[:m_sig.end()]))
+                p = p[m_sig.end():]
             # 诗块自成一段（原书缩进另起，诗后 `—the pleasure…` 才接回正文）。
             # 上段以 `when,` 收尾照样满足「无句末标点」，不拦就并成
             # `when, <span class="jh-verse">…`（p.236 用户截图）。
