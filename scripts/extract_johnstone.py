@@ -915,6 +915,12 @@ def is_continuation(prev_par, next_par):
         return False
     if prev_par.lstrip().startswith('#'):
         return False
+    # 页末断在**括号出处中间**：`…glory’ (1 Thess.` ⟂ `ii. 12). You will…`
+    # （用户截图 p.282）。`Thess.` 的句点骗过了句末判据；括号没闭、下段小写
+    # 或数字起头且先闭上括号 → 接回去。
+    if (prev_par.count('(') > prev_par.count(')')
+            and re.match(r'^[a-z0-9][^()]{0,30}\)', next_par.lstrip())):
+        return True
     if RE_PARA_END.search(prev_par.rstrip('*\\ ')):
         return False
     if RE_CONT_HEAD.match(next_par):
