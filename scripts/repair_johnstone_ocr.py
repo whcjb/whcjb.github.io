@@ -264,13 +264,21 @@ def decide(pairs, lex, vocab):
 # 吃掉一个就让整段的标记错位，kramdown 会把后面的星号原样打印出来
 # （实测 `re- * garding` 吞掉一个斜体开关，30.md 的星号从此成了奇数）。
 HYPH_GAP = re.compile(
-    r'\b([A-Za-z]{2,})-(?:[ \t]*[^\s A-Za-z*\\][^\sA-Za-z*\\]{0,3}[ \t]*|[ \t]+)([a-z]{2,})\b')
+    r'\b([A-Za-z]{2,})-(?:[ \t]*([^\s A-Za-z*\\][^\sA-Za-z*\\]{0,3})[ \t]*|[ \t]+)([a-z]{2,})\b')
+# 中间夹的是破折号/下划线这类纯版面残渣时，两半都成词也拼：`tempera- — ment`
+# （tempera、ment 都在词典里）、`some- — thing`（用户截图 p.346）。数字不算
+# 残渣（译文页 `my-29 self` 是边码节号），整词须在本书别处出现过 ≥3 次。
+HYPH_JUNK = set('—–_~|•')
 
 
 def rejoin_hyphen_gap(text, lex, vocab, log):
     def repl(m):
-        x, y = m.group(1), m.group(2)
+        x, gap, y = m.group(1), m.group(2), m.group(3)
         j = x + y
+        if (gap and set(gap) <= HYPH_JUNK and is_word(j, lex)
+                and vocab.get(j.lower(), 0) >= 3):
+            log.append((m.group(0), j))
+            return j
         if is_word(x, lex) and is_word(y, lex):
             return m.group(0)          # 两半都是词，没证据说该拼
         if not is_word(j, lex):
@@ -720,6 +728,12 @@ RE_CLOSE_Q_SP = re.compile(r"(?<=[A-Za-z.,;:!?])[ \t]+’(?=\*|—|$|[,.;:)!?])"
 RE_HALF_ITAL_Q = re.compile(r"‘\*([^*‘’\n]{1,80}?)’\*")
 
 
+# 行末破折号接行多出空格：`deafen us to Him— to put away`（p.300）、`rest— could`、
+# `authority— is`。印本行末破折号与下一行首词之间没有空格；全书只剩这 3 处
+# 漏网，判据只认「字母—空格—小写字母」。
+RE_WORD_DASH_SP = re.compile(r"(?<=[A-Za-z])—[ \t]+(?=[a-z])")
+
+
 def tidy_quotes(text, log):
     def sub(repl):
         def f(m):
@@ -728,6 +742,7 @@ def tidy_quotes(text, log):
         return f
     text = RE_OPEN_Q_SP.sub(sub('‘'), text)
     text = RE_CLOSE_Q_SP.sub(sub('’'), text)
+    text = RE_WORD_DASH_SP.sub(sub('—'), text)
     return RE_HALF_ITAL_Q.sub(sub(r'‘*\1*’'), text)
 
 
