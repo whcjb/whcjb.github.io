@@ -746,6 +746,29 @@ RE_SQ_OPEN = re.compile(r"(?:(?<=^)|(?<=[\s—(*‘]))'(?=[A-Za-z*])", re.M)
 RE_HALF_ITAL_Q2 = re.compile(r"\*‘([^*‘’\n]{1,80}?)\*’")
 
 
+# 希腊文被包进斜体：印本希腊文是希腊字体，没有斜体一说，但 OCR 常把整词
+# 标成斜体（`*τὸ*`、`*ἵνα*`、`*κ.τ.λ.*`、`*Ἄλλα γὰρ*`）。逐段把未转义的星号
+# **按出现顺序两两配对**，只拆「配对内容全是希腊字母/空格/标点」的那一对
+# —— 不能直接拿正则配 `\*希腊\*`，那样会把「上一段斜体的收星 + 希腊 + 下一段
+# 斜体的开星」误认成一对。
+RE_GREEK_CH = re.compile(r'[\u0370-\u03ff\u1f00-\u1fff]')
+RE_GREEK_ONLY = re.compile(r'^[\u0370-\u03ff\u1f00-\u1fff\s.,;:·’᾽()-]+$')
+
+
+def unitalic_greek(text, log):
+    out = []
+    for para in text.split('\n\n'):
+        stars = [m.start() for m in re.finditer(r'(?<!\\)\*', para)]
+        drop = set()
+        for a, b in zip(stars[0::2], stars[1::2]):
+            inner = para[a + 1:b]
+            if RE_GREEK_CH.search(inner) and RE_GREEK_ONLY.match(inner):
+                drop.update((a, b))
+                log.append(para[a:b + 1])
+        out.append(''.join(c for i, c in enumerate(para) if i not in drop))
+    return '\n\n'.join(out)
+
+
 def tidy_quotes(text, log):
     def sub(repl):
         def f(m):
@@ -899,6 +922,7 @@ def main():
     # 就是这个中间态。所以在**一次调用里**迭代到稳定，最多三轮。
     dash_log = []
     quote_log = []
+    greek_ital_log = []
 
     def apply_literal(f, txt):
         """影像判读的逐字面条目：**遮标签之前、迭代之外**，每个文件只落一次。
@@ -931,6 +955,7 @@ def main():
         new, t = unmask(new, _tags), unmask(t, _tags)
         new = close_dash(new, dash_log)
         new = tidy_quotes(new, quote_log)
+        new = unitalic_greek(new, greek_ital_log)
         if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
@@ -940,7 +965,7 @@ def main():
           f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
           f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
           f'斜体边界 {len(ital_fix_log)} 处，破折号收空格 {len(dash_log)} 处，'
-          f'引号收空格 {len(quote_log)} 处',
+          f'引号收空格 {len(quote_log)} 处，希腊文去斜体 {len(greek_ital_log)} 处',
           file=sys.stderr)
     # 影像判读的逐字面条目是手写的，落不下＝抽取端变了、条目过期，必须看见。
     # （先前只计数不打印，验收时 grep 日志拿到 0，其实什么也没查。）
