@@ -1938,6 +1938,11 @@ def small_font_pars(xml_path):
     return out
 
 
+class VLines(list):
+    """一段诗的各行文字；`cont` 为真＝紧接上一段诗、同属一节。"""
+    cont = False
+
+
 def verse_pars(xml_path):
     """按 ABBYY 的**行坐标**标出哪些段是诗，顺带记下每段的行。
 
@@ -1961,7 +1966,7 @@ def verse_pars(xml_path):
             continue
         idx += 1
         width = int(el.get('width') or 0)
-        pars, lefts, rights = [], [], []
+        pars, lefts, rights, tops, pitch, ppar = [], [], [], [], [], []
         for blk in el.iter(A.NS + 'block'):
             if blk.get('blockType') != 'Text':
                 continue
@@ -1971,6 +1976,12 @@ def verse_pars(xml_path):
                     continue
                 pars.append([(int(l.get('l') or 0), A._line_text(l),
                               int(l.get('r') or 0)) for l in lines])
+                tops.append((int(lines[0].get('t') or 0),
+                             int(lines[-1].get('t') or 0)))
+                ppar.append([int(b.get('t') or 0) - int(a.get('t') or 0)
+                             for a, b in zip(lines, lines[1:])
+                             if int(b.get('t') or 0) > int(a.get('t') or 0)])
+                pitch += ppar[-1]
                 lefts += [int(l.get('l') or 0) for l in lines]
                 rights += [int(l.get('r') or 0) for l in lines]
         el.clear()
@@ -1998,7 +2009,39 @@ def verse_pars(xml_path):
             ragged = all(l > lo_cut and r < r_cut for l, _t, r in real)
             ok = (len(real) >= 2 and len(real) == body_n
                   and (ind >= len(real) * 0.8 or ragged))
-            flags.append([t for _l, t, _r in real] if ok else None)
+            flags.append(VLines(t for _l, t, _r in real) if ok else None)
+        # 一节诗 ABBYY 常拆成好几段（p.396 Archilochus 两节被切成五段），
+        # 我们按段包 `.jh-verse`，节就断在 ABBYY 的段界上；每节首行那个带
+        # 悬挂开引号的单行段（`‘Tossed on a sea…`）还过不了「≥2 行」那道闸，
+        # 落成了正文段（用户截图）。按**行距**认节：上一段末行到这一段首行
+        # 的行距不超过诗行常规行距 1.12 倍，就是同一节的续段（cont）；单行段
+        # 夹在这样的诗段旁、自己又缩进过了诗线，也算诗。
+        # 行距取**诗行自己的**：诗多用小一号字，拿整页（正文行占多数）的
+        # 众数当基准，节与节之间的空行也会被当成「近」（p.396 两节、p.102
+        # Animula 拉丁原文与英译被并成一块）。
+        pp = sorted(x for f, xs in zip(flags, ppar) if f is not None for x in xs)
+        if not pp:
+            pp = sorted(x for x in pitch if x > 0)
+        # 实测：同节续段 0.98–1.03 倍，节间空隙 1.18 倍起（p.102 Animula
+        # 拉丁与英译之间只空了小半行）。取 1.12。
+        gap = pp[len(pp) // 2] * 1.12 if pp else 0
+
+        def near(i, j):
+            return (0 <= i < len(pars) and 0 <= j < len(pars) and gap
+                    and 0 < tops[j][0] - tops[i][1] <= gap)
+        for i, lines in enumerate(pars):
+            if flags[i] is not None:
+                continue
+            real = [(l, t, r) for l, t, r in lines if len(t.strip()) > 8]
+            if (len(real) == 1 and len(lines) == 1 and real[0][0] > cut
+                    and ((i + 1 < len(flags) and flags[i + 1] is not None
+                          and near(i, i + 1))
+                         or (i > 0 and flags[i - 1] is not None
+                             and near(i - 1, i)))):
+                flags[i] = VLines([real[0][1]])
+        for i in range(1, len(flags)):
+            if flags[i] is not None and flags[i - 1] is not None and near(i - 1, i):
+                flags[i].cont = True
         if any(flags):
             out[idx] = flags
     return out

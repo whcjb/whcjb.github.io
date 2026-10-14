@@ -483,6 +483,13 @@ def transfer_page(pars, ocr_text, dropped=None, dropcaps=None, verse=None,
         v = verse[i] if verse and i < len(verse) else None
         if v:
             md = _as_verse(md, v)
+            # 同一节诗被 ABBYY 拆成的续段，并回上一段诗块（见 verse_pars）
+            if (getattr(v, 'cont', False) and out
+                    and out[-1].startswith('<span class="jh-verse">')
+                    and out[-1].endswith('</span>')
+                    and md.startswith('<span class="jh-verse">')):
+                out[-1] = out[-1][:-len('</span>')] + '<br>' + md[len('<span class="jh-verse">'):]
+                continue
         out.append(md)
     return '\n\n'.join(out)
 
@@ -498,6 +505,8 @@ def _as_verse(md, lines):
     切点可能落在斜体区中间，那会留下落单的星号。所以每切一刀就数一次
     未转义星号，奇数就补上闭合、下一行开头补回开启。
     """
+    if len(lines) == 1 and len(md) >= 8:
+        return '<span class="jh-verse">' + md + '</span>'
     total = sum(len(x) for x in lines)
     if total < 20 or len(lines) < 2 or len(md) < 20:
         return md
@@ -505,7 +514,32 @@ def _as_verse(md, lines):
     for x in lines[:-1]:
         acc += len(x)
         k = int(round(len(md) * acc / total))
-        k = md.rfind(' ', 0, min(k + 1, len(md)))
+        # 按字数比例摊的切点会差一两个词（`bear in / mind How` ← 印面
+        # `bear in mind / How`）。在比例点附近的空格里挑「前一个词跟 ABBYY
+        # 这一行末词最像」的那个；ABBYY 的字糊，用相似度不用相等。
+        words = [w for w in x.split() if re.search(r'[A-Za-z]', w)]
+        tail = re.sub(r'[^a-z]', '', words[-1].lower()) if words else ''
+        best, bs = md.rfind(' ', 0, min(k + 1, len(md))), -1.0
+        if len(tail) >= 2:
+            for mm in re.finditer(' ', md):
+                j = mm.start()
+                if abs(j - k) > max(12, len(x) // 3):
+                    continue
+                w = md[:j].split()[-1] if md[:j].split() else ''
+                w = re.sub(r'[^a-z]', '', w.lower())
+                sc = difflib.SequenceMatcher(None, w, tail).ratio() - abs(j - k) / 400
+                if sc > bs:
+                    best, bs = j, sc
+            if bs < 0.6:
+                best = md.rfind(' ', 0, min(k + 1, len(md)))
+            else:
+                # 行末孤立的标点（`control ;`、`three, —`）跟着本行走
+                while True:
+                    m2 = re.match(r' ([^\sA-Za-z0-9*]+)(?= |$)', md[best:])
+                    if not m2 or best + m2.end() >= len(md):
+                        break
+                    best += m2.end()
+        k = best
         if k > 0 and (not cuts or k > cuts[-1] + 4):
             cuts.append(k)
     if not cuts:

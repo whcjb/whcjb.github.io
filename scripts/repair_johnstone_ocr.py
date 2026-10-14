@@ -769,12 +769,29 @@ def unitalic_greek(text, log):
     return '\n\n'.join(out)
 
 
+# 诗每节首行的开引号是**悬挂**在版心左边的（p.396 `‘Tossed`、`‘Thine`），
+# 流文字里却常被排到上一行行尾：`sing,— ‘⏎⏎<span…>Tossed`、
+# `fight. ‘</span>⏎⏎<span…>Thine`、`nudula ?’* ‘</span><br><span…>Poor`。
+# 行尾/段尾落单的 ‘ 挪到下一行行首；下一行是希腊文的，那个 ‘ 其实是
+# 希腊词的气号（`caballing.’ ‘⏎⏎Τὸν`），删掉。破折号后的那只空格会先被
+# close_dash 收掉（`sing,—‘⏎⏎`），所以紧贴破折号的也算。
+RE_DANGLE_OPEN = re.compile(
+    r"(?:[ \t]|(?<=—))‘((?:</span>)?(?:<br>|\n\n)(?:<span class=\"jh-verse\">)?)(?=(\S))")
+
+
+def _dangle(m):
+    if RE_GREEK_CH.match(m.group(2)):
+        return m.group(1)
+    return m.group(1) + '‘'
+
+
 def tidy_quotes(text, log):
     def sub(repl):
         def f(m):
             log.append(m.group(0))
             return m.expand(repl)
         return f
+    text = RE_DANGLE_OPEN.sub(lambda m: (log.append(m.group(0)), _dangle(m))[1], text)
     text = RE_SQ_APOS.sub(sub('’'), text)
     text = RE_SQ_CLOSE.sub(sub('’'), text)
     text = RE_SQ_OPEN.sub(sub('‘'), text)
