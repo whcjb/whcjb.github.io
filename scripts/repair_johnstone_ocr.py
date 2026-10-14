@@ -709,6 +709,28 @@ def close_dash(text, log):
     return RE_SPACED_DASH.sub(sub, text)
 
 
+# 引号贴字：印本开引号后排了个细空（`‘ Citizenship’`），OCR 读成整空格，网页上
+# 就是 `‘ great voices`（全书 ~1086 处）；闭引号前同理（`help ’*`）。闭引号的
+# 空格只收后面跟标点/星号/行尾的：`existence of ’ affection` 这类后接字母的
+# 其实是开引号读成了 ’，要按影像定，不归这里。
+# 斜体半包引号 `‘*Citizenship’*`（用户截图 p.322）：开引号在斜体外、闭引号在
+# 斜体里，渲染出来一正一斜。开引号既在外，闭引号也挪到外面。
+RE_OPEN_Q_SP = re.compile(r"(?<![A-Za-z0-9])‘[ \t]+(?=[A-Za-z*‘“(])")
+RE_CLOSE_Q_SP = re.compile(r"(?<=[A-Za-z.,;:!?])[ \t]+’(?=\*|—|$|[,.;:)!?])", re.M)
+RE_HALF_ITAL_Q = re.compile(r"‘\*([^*‘’\n]{1,80}?)’\*")
+
+
+def tidy_quotes(text, log):
+    def sub(repl):
+        def f(m):
+            log.append(m.group(0))
+            return m.expand(repl)
+        return f
+    text = RE_OPEN_Q_SP.sub(sub('‘'), text)
+    text = RE_CLOSE_Q_SP.sub(sub('’'), text)
+    return RE_HALF_ITAL_Q.sub(sub(r'‘*\1*’'), text)
+
+
 def apply_fixes(text, items, log):
     flat, idx = norm_map(text)
     edits = []
@@ -845,6 +867,7 @@ def main():
     # `those`，产出 `*/those*`；非得再跑一遍整条链才清掉。用户截图看到的
     # 就是这个中间态。所以在**一次调用里**迭代到稳定，最多三轮。
     dash_log = []
+    quote_log = []
 
     def apply_literal(f, txt):
         """影像判读的逐字面条目：**遮标签之前、迭代之外**，每个文件只落一次。
@@ -876,6 +899,7 @@ def main():
             new = nxt
         new, t = unmask(new, _tags), unmask(t, _tags)
         new = close_dash(new, dash_log)
+        new = tidy_quotes(new, quote_log)
         if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
@@ -884,7 +908,8 @@ def main():
           f'字形回扫 {len(glyph_log)} 处（{len(rules)} 条学来的混淆），'
           f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
           f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
-          f'斜体边界 {len(ital_fix_log)} 处，破折号收空格 {len(dash_log)} 处',
+          f'斜体边界 {len(ital_fix_log)} 处，破折号收空格 {len(dash_log)} 处，'
+          f'引号收空格 {len(quote_log)} 处',
           file=sys.stderr)
     # 影像判读的逐字面条目是手写的，落不下＝抽取端变了、条目过期，必须看见。
     # （先前只计数不打印，验收时 grep 日志拿到 0，其实什么也没查。）
