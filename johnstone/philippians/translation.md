@@ -8,6 +8,7 @@ prev_url: "/johnstone/philippians/30/"
 prev_label: "Lecture XXX · Christian Liberality and its Reward"
 next_url: "/johnstone/philippians/notes-1/"
 next_label: "Notes on the Greek Text · Chapter I"
+zh_url: "/johnstone/philippians/zh/translation/"
 ---
 
 REVISED TRANSLATION
