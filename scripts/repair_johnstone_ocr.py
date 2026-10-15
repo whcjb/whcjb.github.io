@@ -666,6 +666,43 @@ def load_literal_fixes():
     return out
 
 
+FINAL_TBL = os.path.join(ROOT, 'johnstone_raw', 'philippians',
+                         'manual_fixes_final.tsv')
+
+
+def load_final_fixes():
+    """收尾表：对**修复链跑完之后**的文本逐字面替换（引号配对那批，2026-10-15）。
+
+    引号缺失/错读（`*X,* or` 缺 ’、`Lord”` 实为 `Lord.’`、`‘‘in”` 实为 `“in”`）
+    要按影像逐处定，判读时对着的是成品；抽取端那一层同一处常还夹着别的残字
+    （`‘ *`、`Sather`），按成品写最省事也最不易错。所以这张表排在全部规则
+    之后、对成品落：唯一匹配才落；新文本已在、旧文本已不在＝落过了，跳过。
+    列：文件	旧	新（换行写作 ⏎）。
+    """
+    out = {}
+    if os.path.exists(FINAL_TBL):
+        for line in open(FINAL_TBL, encoding='utf-8'):
+            if line.startswith('#') or not line.strip():
+                continue
+            f, old, new = line.rstrip('\n').split('\t')[:3]
+            out.setdefault(f, []).append((old.replace('⏎', '\n'),
+                                          new.replace('⏎', '\n')))
+    return out
+
+
+def apply_final(f, text, table, log, fail):
+    for old, new in table.get(f, []):
+        n = text.count(old)
+        if n == 1:
+            text = text.replace(old, new)
+            log.append(old)
+        elif new in text and (old not in text or old in new):
+            continue
+        else:
+            fail.append((f, n, old[:60]))
+    return text
+
+
 TRIM_LOG = []
 
 
@@ -766,6 +803,32 @@ def unitalic_greek(text, log):
                 drop.update((a, b))
                 log.append(para[a:b + 1])
         out.append(''.join(c for i, c in enumerate(para) if i not in drop))
+    return '\n\n'.join(out)
+
+
+# 引号进了斜体：`*‘with the bishops and deacons.’*`、`*‘deacon,’*`、`*overseers’*`。
+# 印本引号一律正体，斜体只包引文本身；全书多数写法是 `‘*X.*’`（标点随斜体、
+# 引号在外，90 : 14）。同 unitalic_greek 逐段按出现顺序两两配对星号，配对
+# 内容以 ‘/“ 开头的把引号挪到开星外，以 ’/” 结尾的挪到收星外。只换星号与
+# 引号的先后，不增删任何字符（实测 193 开 + 242 闭，全书无奇数星号段）。
+def ital_quote_out(text, log):
+    out = []
+    for para in text.split('\n\n'):
+        stars = [m.start() for m in re.finditer(r'(?<!\\)\*', para)]
+        if len(stars) % 2:
+            out.append(para)
+            continue
+        s = list(para)
+        for a, b in zip(stars[0::2], stars[1::2]):
+            if b - a < 3:
+                continue
+            if para[a + 1] in '‘“':
+                s[a], s[a + 1] = s[a + 1], s[a]
+                log.append(para[a:a + 30])
+            if para[b - 1] in '’”':
+                s[b - 1], s[b] = s[b], s[b - 1]
+                log.append(para[max(a, b - 30):b + 1])
+        out.append(''.join(s))
     return '\n\n'.join(out)
 
 
@@ -940,6 +1003,9 @@ def main():
     dash_log = []
     quote_log = []
     greek_ital_log = []
+    ital_q_log = []
+    final_log, final_fail = [], []
+    FINAL = load_final_fixes()
 
     def apply_literal(f, txt):
         """影像判读的逐字面条目：**遮标签之前、迭代之外**，每个文件只落一次。
@@ -973,6 +1039,8 @@ def main():
         new = close_dash(new, dash_log)
         new = tidy_quotes(new, quote_log)
         new = unitalic_greek(new, greek_ital_log)
+        new = ital_quote_out(new, ital_q_log)
+        new = apply_final(f, new, FINAL, final_log, final_fail)
         if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 
@@ -982,8 +1050,11 @@ def main():
           f'斜体大写 I {len(ital_i_log)} 处，按上下文的人工条目 {len(manual_log)} 处，'
           f'印面比对条目 {len(fix_log)} 处（落不下 {len(fix_fail)} 条），'
           f'斜体边界 {len(ital_fix_log)} 处，破折号收空格 {len(dash_log)} 处，'
-          f'引号收空格 {len(quote_log)} 处，希腊文去斜体 {len(greek_ital_log)} 处',
+          f'引号收空格 {len(quote_log)} 处，希腊文去斜体 {len(greek_ital_log)} 处，'
+          f'引号挪出斜体 {len(ital_q_log)} 处，收尾表 {len(final_log)} 处',
           file=sys.stderr)
+    for ff, n, o in final_fail:
+        print(f'⚠️  收尾表落不下 {ff} ×{n}: {o!r}', file=sys.stderr)
     # 影像判读的逐字面条目是手写的，落不下＝抽取端变了、条目过期，必须看见。
     # （先前只计数不打印，验收时 grep 日志拿到 0，其实什么也没查。）
     for tag, lit in fix_fail:
