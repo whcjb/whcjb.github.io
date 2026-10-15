@@ -8,6 +8,7 @@ prev_url: "/johnstone/philippians/translation/"
 prev_label: "Revised Translation of the Epistle"
 next_url: "/johnstone/philippians/notes-2/"
 next_label: "Notes on the Greek Text · Chapter II"
+zh_url: "/johnstone/philippians/zh/notes-1/"
 ---
 
 NOTES ON THE GREEK TEXT.

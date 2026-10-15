@@ -6,6 +6,8 @@ title: "腓立比书修订译文"
 date: 2026-10-15 21:20
 prev_url: "/johnstone/philippians/zh/30/"
 prev_label: "第三十讲 · 基督徒的慷慨及其赏赐"
+next_url: "/johnstone/philippians/zh/notes-1/"
+next_label: "希腊文经文注释 · 第一章"
 en_url: "/johnstone/philippians/translation/"
 zh: true
 ---
