@@ -6,6 +6,8 @@ title: "希腊文经文注释 · 第一章"
 date: 2026-10-15 21:31
 prev_url: "/johnstone/philippians/zh/translation/"
 prev_label: "腓立比书修订译文"
+next_url: "/johnstone/philippians/zh/notes-2/"
+next_label: "希腊文经文注释 · 第二章"
 en_url: "/johnstone/philippians/notes-1/"
 zh: true
 ---
