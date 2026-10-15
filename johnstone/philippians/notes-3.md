@@ -8,6 +8,7 @@ prev_url: "/johnstone/philippians/notes-2/"
 prev_label: "Notes on the Greek Text · Chapter II"
 next_url: "/johnstone/philippians/notes-4/"
 next_label: "Notes on the Greek Text · Chapter IV"
+zh_url: "/johnstone/philippians/zh/notes-3/"
 ---
 
 CHAPTER III.
