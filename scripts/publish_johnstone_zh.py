@@ -96,6 +96,21 @@ def label(sec: str, title_zh: str) -> str:
     return LABELS.get(sec, title_zh)
 
 
+# 「第 1 章 13 节」——作者说 chap. i. 13 指的就是腓立比书本身，译文照规矩写成
+# 「第 N 章 M 节」，经文弹层不认（它要书卷名）。发布时改写成和合本格式。
+# 两道闸：前面紧挨书卷名的不动（「罗马书第 8 章」是别的书），章号只认 1–4
+# （腓立比书只有四章）。
+REL_REF = re.compile(r'(?<![书记传篇言歌音录])第\s?([1-4])\s?章\s?(\d{1,2})'
+                     r'(?:\s?[-–至]\s?(\d{1,2}))?\s?节')
+
+
+def absolutize_refs(body: str) -> str:
+    def sub(m):
+        vs = m.group(2) + (f'-{m.group(3)}' if m.group(3) else '')
+        return f'腓立比书 {m.group(1)}:{vs}'
+    return REL_REF.sub(sub, body)
+
+
 def existing_date(path: Path):
     if not path.exists():
         return None
@@ -123,7 +138,7 @@ def main(only=None):
         title_zh = m.group(1).strip() if m else sec
         body = raw[m.end():] if m else raw
         sub = FM_SUB.search(en_fm(sec))
-        info[sec] = dict(label=label(sec, title_zh), body=body.strip(),
+        info[sec] = dict(label=label(sec, title_zh), body=absolutize_refs(body.strip()),
                          ref=zh_ref(sub.group(1)) if sub else None)
 
     written = kept = 0
