@@ -23,13 +23,15 @@ layout: default
     **不要**再加 italic（那是字体不是强调，见 johnstone_common._drop_greek）。
 {%- endcomment -%}
 
-<div class="container johnstone-wrap" style="padding-top: 70px;">
+<div class="container johnstone-wrap{% if page.zh %} jh-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="jh-chrome">
-        <a href="{{ site.baseurl }}/johnstone/{{ page.book_id }}/">&larr; {{ page.book_name }}</a>
-        {% if page.zh_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}
+        <a href="{{ site.baseurl }}/johnstone/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%} 中文页自带 en_url；英文页有对应中文版才出 zh_url，免得点进 404。{%- endcomment -%}
+        {% if page.zh %}{% if page.en_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
       </div>
 
       <h1 class="jh-title">{{ page.title }}</h1>
@@ -47,7 +49,7 @@ layout: default
       </div>
 
       {% if page.date %}
-      <div class="jh-stamp">Published {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
+      <div class="jh-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
       {% endif %}
 
       <div class="jh-nav jh-nav-foot">
@@ -60,6 +62,15 @@ layout: default
     </div>
   </div>
 </div>
+
+{%- comment -%}
+  经文引用弹层：**只给中文页**——模块认的是中文书卷名（腓立比书 2:5），英文页的
+  `Rom. viii. 28` 挂了也匹配不上。accent/vnum 必须写字面量（Jekyll 3 的 include
+  参数不接受变量），取本书的钴蓝两端。
+{%- endcomment -%}
+{% if page.zh %}
+{% include scripture-popup.html container_selector=".jh-content" accent="#106ab2" vnum="#0d5690" slide="down" %}
+{% endif %}
 
 <style>
 .johnstone-wrap {
@@ -210,6 +221,17 @@ layout: default
   color: var(--jh-ink); font-size: 12px; vertical-align: super;
   margin-right: 3px; font-weight: bold;
 }
+
+/* 中文页：正文宋体为主（英文页的 Georgia 排中文会落到系统默认字）；
+   脚注区标题换成「注」。希腊文、拉丁文仍走衬线体。 */
+.johnstone-wrap.jh-zh .jh-content {
+  font-family: "Songti SC", STSong, "Noto Serif CJK SC", "Source Han Serif SC",
+               Georgia, serif;
+  text-align: justify;
+}
+.johnstone-wrap.jh-zh .jh-title { font-family: "Songti SC", STSong, Georgia, serif; }
+.johnstone-wrap.jh-zh .jh-notes::before { content: "注"; letter-spacing: .3em; }
+.johnstone-wrap.jh-zh .jh-epigraph .jh-ref { font-variant: normal; }
 
 @media (max-width: 767px) {
   .johnstone-wrap .jh-title { font-size: 24px; }

@@ -273,6 +273,10 @@ def main():
         if pg['next']:
             fm += [f'next_url: "/johnstone/{BOOK_ID}/{pg["next"]["slug"]}/"',
                    f'next_label: "{label(pg["next"])}"']
+        # 中文版已发布的篇，英文页右上角出「中文版 →」（publish_johnstone_zh.py
+        # 发完会回调本脚本；两边按文件是否存在各自决定，幂等）
+        if (OUT / 'zh' / f'{slug}.md').exists():
+            fm.append(f'zh_url: "/johnstone/{BOOK_ID}/zh/{slug}/"')
         fm.append('---')
         text = '\n'.join(fm) + '\n\n' + pg['body'] + '\n'
         path = OUT / f'{slug}.md'
@@ -306,7 +310,10 @@ def build_index(pages):
     out = ['---', 'layout: johnstone-book', f'book_id: {BOOK_ID}',
            f'book_name: "{BOOK_NAME}"', f'author: "{AUTHOR}"',
            f'edition: "{EDITION}"',
-           'title: "Johnstone on Philippians"', '---', '']
+           'title: "Johnstone on Philippians"']
+    if (OUT / 'zh' / 'index.html').exists():
+        out.append(f'zh_url: "/johnstone/{BOOK_ID}/zh/"')
+    out += ['---', '']
     for group, slugs in GROUPS:
         slugs = [s for s in slugs if s in by]
         if not slugs:

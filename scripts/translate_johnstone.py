@@ -350,7 +350,7 @@ def stamp_meta(sec: str, called: bool) -> None:
                                sort_keys=True) + '\n', encoding='utf-8')
 
 
-def run_section(sec: str, resume: bool, dry: bool) -> None:
+def run_section(sec: str, resume: bool, dry: bool, publish: bool = True) -> None:
     if not (SRC / f'{sec}.md').exists():
         sys.exit(f'找不到 {SRC / sec}.md')
     units = units_of(sec)
@@ -389,6 +389,42 @@ def run_section(sec: str, resume: bool, dry: bool) -> None:
     after = sum(1 for k in keys if (CACHE / f'{k}.txt').exists())
     stamp_meta(sec, called=after > hit or not resume)
     print(f'✓ 写入 {dst}（{dst.stat().st_size:,} bytes，已 chmod 444）', flush=True)
+    if publish:
+        autopublish(sec)
+
+
+def autopublish(sec: str) -> None:
+    """译完一篇立刻发布 + commit + push。
+
+    别攒到最后：全书译完以小时计，中途撞额度 / 被 kill 都可能发生，攒着不发
+    等于把已译好的成果一直悬在未发布状态。发布失败只告警不中断——翻译进度在
+    缓存里，发布随时可补跑。git 只加约翰斯通这几条路径，不碰工作区别的改动。
+    """
+    try:
+        r = subprocess.run([sys.executable, 'scripts/publish_johnstone_zh.py'],
+                           cwd=ROOT, capture_output=True, text=True, timeout=600)
+        print('    ' + r.stdout.strip(), flush=True)
+        if r.returncode != 0:
+            print(f'    [autopublish] 发布失败 {r.stderr[-300:]}', flush=True)
+            return
+        subprocess.run(['git', 'add', 'johnstone/philippians',
+                        'johnstone_raw/philippians/zh_chapters',
+                        'johnstone_raw/philippians/zh_cache',
+                        'johnstone_raw/philippians/zh_meta.json'],
+                       cwd=ROOT, check=False, timeout=120)
+        c = subprocess.run(['git', 'commit', '-q', '-m',
+                            f'feat(johnstone): 腓立比书讲章中译 · {sec}（自动发布）\n\n'
+                            'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>'],
+                           cwd=ROOT, capture_output=True, text=True, timeout=120)
+        if c.returncode == 0:
+            ps = subprocess.run(['git', 'push', '-q', 'origin', 'master'],
+                                cwd=ROOT, capture_output=True, text=True, timeout=300)
+            print('    [autopublish] 已提交' + ('并推送' if ps.returncode == 0
+                  else f'，推送失败 {ps.stderr[:160]}'), flush=True)
+        else:
+            print(f'    [autopublish] 无改动可提交 {c.stdout.strip()[:80]}', flush=True)
+    except Exception as e:                                   # noqa: BLE001
+        print(f'    [autopublish] 异常，已跳过：{e}', flush=True)
 
 
 def main():
@@ -398,6 +434,7 @@ def main():
     ap.add_argument('--all', action='store_true')
     ap.add_argument('--resume', action='store_true', help='命中缓存则不重调模型')
     ap.add_argument('--dry-run', action='store_true')
+    ap.add_argument('--no-publish', action='store_true', help='只译不发布')
     a = ap.parse_args()
 
     if a.section:
@@ -414,7 +451,7 @@ def main():
     tf.SYSTEM = SYSTEM
     for sec in targets:
         try:
-            run_section(sec, a.resume, a.dry_run)
+            run_section(sec, a.resume, a.dry_run, publish=not (a.no_publish or a.dry_run))
         except tf.SessionLimitError as e:
             # 额度用尽时重试只会空转计费。逐段缓存已落盘，恢复后 --resume 续跑。
             print(f'\n✗ 会话额度用尽，于 [{sec}] 中止：{str(e)[:160]}\n'

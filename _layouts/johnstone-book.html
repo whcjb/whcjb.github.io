@@ -10,6 +10,10 @@ layout: default
   <div class="row">
     <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
 
+      <div class="jh-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
       <div class="jh-hero">
         <h1>{{ page.book_name }}</h1>
         <p class="jh-hero-author">{{ page.author }}</p>
@@ -29,6 +33,11 @@ layout: default
   --jh-rule: #d4dde6;
   --jh-paper: #fbfcfd;
 }
+.johnstone-book .jh-booklang { text-align: right; margin: 0 0 10px; font-size: 13px;
+  font-family: Georgia, "Times New Roman", serif; }
+.johnstone-book .jh-booklang a { color: var(--jh-ink); border: 1px solid var(--jh-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.johnstone-book .jh-booklang a:hover { background: var(--jh-ink); color: #fff; }
 .johnstone-book .jh-hero {
   background: linear-gradient(135deg, #0d5690 0%, #106ab2 55%, #4f93cf 100%);
   color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
