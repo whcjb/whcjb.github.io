@@ -27,6 +27,28 @@ def norm(s):
     return re.sub(r'\s+', ' ', s.translate(QUOTE).replace('*', '')).strip()
 
 
+def merge_same_anchor(rows):
+    """同一锚点的章号与节号合成一条：`III.` + `1` → `III. 1 Finally…`。
+
+    分成两条时，先落的那条（`III. Finally…`）被后一条插进 `1` 之后，自己的
+    「印面的」就不在正文里了，repair 迭代到不动点的下一轮会把它再插一次，
+    写出 `1 III. 1 III. Finally`（2026-10-15 第二遍 repair 才暴露）。
+    """
+    out, seen = [], {}
+    for f, leaf, na, after in rows:
+        fig = after[:-len(na)].strip()
+        if na in seen:
+            i = seen[na]
+            prev = out[i][3][:-len(na)].strip()
+            # 罗马数字章号在前，阿拉伯节号在后
+            figs = sorted([prev, fig], key=lambda x: not re.fullmatch(r'[IVX]+\.', x))
+            out[i] = (f, out[i][1], na, ' '.join(figs) + ' ' + na)
+            continue
+        seen[na] = len(out)
+        out.append((f, leaf, na, after))
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--src', required=True)
@@ -58,6 +80,7 @@ def main():
             skip.append((fig, anchor, '已经有了')); continue
         rows.append(('translation.md', leaf, na, f'{fig} {na}'))
 
+    rows = merge_same_anchor(rows)
     print(f'可插 {len(rows)} 个边码，跳过 {len(skip)} 个')
     for fig, anchor, why in skip:
         print(f'  跳过 {fig:>6s}  {why:10s}  {anchor[:46]}')

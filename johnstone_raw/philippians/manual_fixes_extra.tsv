@@ -1,5 +1,6 @@
 # 「修订译文」一节的边码。每行：文件	leaf	我们的	印面的
 # 由 scripts/johnstone_margins_to_fixes.py 生成。
+# 2026-10-15：同锚点章号+节号已合并为一条（merge_same_anchor）；I. PAUL 条与 manual_fixes.tsv:635 重复已删。
 translation.md	441	gospel, and in nothing terrified	28 gospel, and in nothing terrified
 translation.md	441	salvation, and this of God	29 salvation, and this of God
 translation.md	441	Him, but also to suffer	30 Him, but also to suffer
@@ -22,14 +23,12 @@ translation.md	442	when I know your state.	20 when I know your state.
 translation.md	442	minded, who will truly care	21 minded, who will truly care
 translation.md	442	Christ's. But ye know the	22 Christ's. But ye know the
 translation.md	442	of the gospel. Him, therefore,	23 of the gospel. Him, therefore,
-translation.md	442	diately on my seeing how	24 diately on my seeing how
 translation.md	442	But I have thought it	25 But I have thought it
 translation.md	442	need ; seeing that he was	26 need ; seeing that he was
 translation.md	442	sick. For indeed he was	27 sick. For indeed he was
 translation.md	442	I have been, therefore, the	28 I have been, therefore, the
 translation.md	442	self may be the less	29 self may be the less
-translation.md	443	Finally, my brethren, rejoice in	III. Finally, my brethren, rejoice in
-translation.md	443	Finally, my brethren, rejoice in	1 Finally, my brethren, rejoice in
+translation.md	443	Finally, my brethren, rejoice in	III. 1 Finally, my brethren, rejoice in
 translation.md	443	Beware of the dogs; beware	2 Beware of the dogs; beware
 translation.md	443	beware of the concision. For	3 beware of the concision. For
 translation.md	443	flesh ;-though I myself might	4 flesh ;-though I myself might
@@ -50,8 +49,7 @@ translation.md	444	which walk so as ye	18 which walk so as ye
 translation.md	444	whose end is destruction, whose	19 whose end is destruction, whose
 translation.md	444	For our citizenship is in	20 For our citizenship is in
 translation.md	444	we look for the Lord	21 we look for the Lord
-translation.md	444	unto Himself. Wherefore, my brethren,	IV. unto Himself. Wherefore, my brethren,
-translation.md	444	unto Himself. Wherefore, my brethren,	1 unto Himself. Wherefore, my brethren,
+translation.md	444	unto Himself. Wherefore, my brethren,	IV. 1 unto Himself. Wherefore, my brethren,
 translation.md	444	I beseech Euodia, and I	2 I beseech Euodia, and I
 translation.md	444	the same mind in the	3 the same mind in the
 translation.md	444	Rejoice in the Lord alway	4 Rejoice in the Lord alway
@@ -69,12 +67,10 @@ translation.md	445	with my affliction. And ye	15 with my affliction. And ye
 translation.md	445	but ye only. For even	16 but ye only. For even
 translation.md	445	and again unto my need.	17 and again unto my need.
 translation.md	445	But I have all things,	18 But I have all things,
-translation.md	445	ceptable, well-pleasing to God. But	19 ceptable, well-pleasing to God. But
 translation.md	445	in Christ Jesus. Now unto	20 in Christ Jesus. Now unto
 translation.md	445	Salute every saint in Christ	21 Salute every saint in Christ
 translation.md	445	are with me salute you.	22 are with me salute you.
 translation.md	445	The grace of the Lord	23 The grace of the Lord
-translation.md	439	PAUL and Timothy, servants of	I. PAUL and Timothy, servants of
 translation.md	439	bishops and deacons. Grace be	2 bishops and deacons. Grace be
 translation.md	439	the gospel from the first	6 the gospel from the first
 translation.md	439	And this I pray, that	9 And this I pray, that

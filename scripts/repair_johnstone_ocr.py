@@ -747,6 +747,25 @@ def _trim_overhang(before, after, prev, nxt):
 RE_SPACED_DASH = re.compile(r"([,;:’!?.]\*?)[ \t]*—[ \t]+(?=[^\s\d])|([,;:’!?.]\*?)[ \t]+—(?=[^\s\d])")
 
 
+# 破折号两侧的空格一律收掉：全书紧贴写法 1763 处、带空格的 32 处
+# （2026-10-15 量过），印本破折号不留空。只留「破折号后接数字」——修订译文
+# 的边码节号（`things,— 9 wherefore`）。close_dash 只收「标点＋破折号」，
+# `them —for`、`this— ‘that` 这类是早先 VLM 表逐条压掉的，那批条目删了之后
+# 统一由这里收。诗行（jh-verse）不动。
+# 两侧一次收：写成 `[ ]+—|—[ ]+` 的二选一时，` — ` 只收得掉前一个空格
+# （匹配吃掉了破折号，后一个空格要等下一次 repair），不到不动点。
+RE_DASH_ANY = re.compile(r"[ \t]*—(?:[ \t]+(?=[^\s\d]))?")
+
+
+def close_dash_all(text, log):
+    def sub(m):
+        if m.group(0) != '—':
+            log.append(m.group(0))
+        return '—'
+    return '\n'.join(ln if 'jh-verse' in ln else RE_DASH_ANY.sub(sub, ln)
+                      for ln in text.split('\n'))
+
+
 def close_dash(text, log):
     def sub(m):
         log.append(m.group(0))
@@ -976,7 +995,11 @@ def main():
         new = fix_ordinals(new, ord_log)
         new = fix_ligatures(new, lig_log)
         new = glyph_sweep(new, lex, vocab, rules, glyph_log)
-        new = fix_italic_i(new, ital_i_log)
+        # 修订译文的边码节号紧挨小写正文（`7 even as it is meet`、`God, 7 but
+        # emptied`），正好落进这条判据，第 7 节节号被改成 I，再与边码表插入的
+        # 节号叠成 `I I 7`（第二遍 repair 才暴露：规则互相打架）。该节不跑。
+        if f != 'translation.md':
+            new = fix_italic_i(new, ital_i_log)
         # 斜体边界表是**逐字面替换**：星号位置要动，走不了归一化那条路。
         for lit, fixed in ITALIC_FIX.get(f, []):
             if new.count(lit) == 1:
@@ -986,6 +1009,10 @@ def main():
             new, applied = apply_fixes(new, FIXES[f], fix_fail)
             fix_log.extend(applied)
         for before, after in MANUAL_CONTEXT:
+            # 「改成的」包含「原来的」（`ITH the free` → `WITH the free`）时，
+            # 改完 before 仍找得到，迭代到不动点那三轮会叠成 `WWWITH`。已落过就跳过。
+            if before in after and after in new:
+                continue
             if before in new:
                 new = new.replace(before, after)
                 manual_log.append((before[:46], after[:46]))
@@ -1041,6 +1068,12 @@ def main():
         new = unitalic_greek(new, greek_ital_log)
         new = ital_quote_out(new, ital_q_log)
         new = apply_final(f, new, FINAL, final_log, final_fail)
+        # 引号挪出斜体、收尾表都会露出新的「破折号/引号贴空格」（`’— *Christian*`），
+        # 而这两步排在 close_dash/tidy_quotes 之后——再收一遍，否则要第二次 repair
+        # 才收得掉（skill §4.1b：一次调用内到不动点）。
+        new = close_dash(new, dash_log)
+        new = tidy_quotes(new, quote_log)
+        new = close_dash_all(new, dash_log)   # tidy_quotes 会把 ` - ` 换成 `— `，排它后面
         if a.apply and new != t0:
             open(os.path.join(src, f), 'w', encoding='utf-8').write(new)
 

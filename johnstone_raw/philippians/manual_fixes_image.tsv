@@ -93,7 +93,7 @@ notes-3.md	478	confidence in the flesh, —is	confidence in the flesh,’—is	l
 30.md	436	Still further, “αὐ *all the saints’*	Still further, ‘*all the saints’*	lit
 translation.md	441	which 6 aon 9 Ιο II 12 13 *was*	which 6 *was*	lit
 translation.md	441	*ujon Him*	*upon Him*	lit
-notes-3.md	479	the Hebrew ΠΌΤ, Compare	the Hebrew מבטח. Compare	lit
+notes-3.md	479	the Hebrew ΠΌΤ, Compare	the Hebrew מַחְסֶה. Compare	lit
 24.md	342	will be our will = Ϊ **associates.	will be our sweet associates.	lit
 notes-1.md	449	Winer, § 19. 2, ὁ.	Winer, § 19. 2, *b*.	lit
 notes-1.md	449	*Gram.* § 20. 2, *6.*	*Gram.* § 20. 2, *b*.	lit
@@ -261,3 +261,9 @@ polycarp.md	0	you, _and peace	you, and peace	lit
 polycarp.md	0	Rufus,\*<sup	Rufus,<sup	lit
 27.md	0	stablish our hearts,—for ‘the Lord is at hand,’—\*‘ the Judge	stablish our hearts,’—for ‘the Lord is at hand,’—‘the Judge	lit
 polycarp.md	0	among whom. the blessed Paul laboured ; who *are<sup class="jh-fn" id="fnref-46"><a href="#fn-46">46</a></sup> /razsed\** in the be	among whom the blessed Paul laboured ; who are *praised*<sup class="jh-fn" id="fnref-46"><a href="#fn-46">46</a></sup> in the be	lit
+# 2026-10-15 自 manual_fixes.tsv 迁来：归一化回填会把补的 l 落在斜体星号外（*sou*l），带星号的条目改逐字面。p.365 影像 soul 斜体。
+27.md	383	perhaps his *sou* might live	perhaps his *soul* might live	lit
+# 2026-10-15 修订译文跨行断词 + 边码：原先 VLM 表把节号插进断词中间（imme24 diately），边码表再插一次、收尾表又拼回去，三表打架（第二遍 repair 才暴露）。改为这里一次写成，删掉那三处的旧条目。
+translation.md	442	I hope to send imme diately on my seeing	I hope to send 24 immediately on my seeing	lit
+translation.md	445	a sacrifice ac ceptable, well-pleasing	a sacrifice 19 acceptable, well-pleasing	lit
+translation.md	440	yea, and shall re-⏎⏎19 joice; for I know	yea, and shall 19 rejoice; for I know	lit

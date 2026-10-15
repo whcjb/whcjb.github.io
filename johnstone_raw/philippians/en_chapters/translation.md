@@ -16,8 +16,7 @@ I. 1 PAUL and Timothy, servants of Christ Jesus, to all the saints in Christ Jes
 
 15 to speak the word without fear. Some indeed preach Christ even for envy and strife, but some also for good
 
-16 will. The<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> one *party* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall
-19 rejoice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
+16 will. The<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> one *party* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall 19 rejoice; for I know that this shall issue to me unto salvation, through your supplication and the supply of the 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
 21,22 For to me to live *is* Christ, and to die *is* gain. But if I live in the flesh, this *is* to me fruit of labour ; and what
 
@@ -43,7 +42,7 @@ II. 1 If *there be,* therefore, any consolation in Christ, if any comfort of lov
 
 22 Christ’s. But ye know the proof of him, that, as a child *serveth* a father, he served with me for the furtherance 23 of the gospel. Him, therefore, I hope to send 24 immediately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
 
-25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow - labourer, and fellow-soldier, but your messenger and minister to my 26 need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been 27 sick. For indeed he was sick nigh unto death; but God had mercy on him, and not on him only, but on me also, that I should not have sorrow upon sorrow.
+25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow-labourer, and fellow-soldier, but your messenger and minister to my 26 need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been 27 sick. For indeed he was sick nigh unto death; but God had mercy on him, and not on him only, but on me also, that I should not have sorrow upon sorrow.
 
 28 I have been, therefore, the more earnest to send him, that, seeing him, ye may rejoice again, and that I my-29 self may be the less sorrowful. Receive him, therefore, in the Lord with all gladness ; and hold such in reputation ; because for the work of Christ he came nigh unto death, having hazarded his life to supply your lack in your service toward me.
 
