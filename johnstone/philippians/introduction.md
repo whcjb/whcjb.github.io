@@ -8,6 +8,7 @@ prev_url: "/johnstone/philippians/preface/"
 prev_label: "Preface"
 next_url: "/johnstone/philippians/1/"
 next_label: "Lecture I · Address and Salutation"
+zh_url: "/johnstone/philippians/zh/introduction/"
 ---
 
 <div class="jh-titlepage" markdown="1">

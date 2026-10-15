@@ -4,6 +4,8 @@ book_id: philippians
 book_name: "约翰斯通《腓立比书讲章》"
 title: "序言"
 date: 2026-10-15 18:16
+next_url: "/johnstone/philippians/zh/introduction/"
+next_label: "导论"
 en_url: "/johnstone/philippians/preface/"
 zh: true
 ---
