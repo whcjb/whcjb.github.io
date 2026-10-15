@@ -6,6 +6,7 @@ title: "Appendix · Epistle of Polycarp to the Philippians"
 date: 2026-10-08 16:02
 prev_url: "/johnstone/philippians/notes-4/"
 prev_label: "Notes on the Greek Text · Chapter IV"
+zh_url: "/johnstone/philippians/zh/polycarp/"
 ---
 
 THE EPISTLE OF POLYCARP TO THE PHILIPPIANS.
