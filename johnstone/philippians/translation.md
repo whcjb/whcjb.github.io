@@ -76,7 +76,7 @@ III. 1 Finally, my brethren, rejoice in the Lord. To write the same things to yo
 
 5 Let your forbearance be known unto all men. The 6 Lord *is* at hand. Be anxious about nothing; but in everything by your prayer and your supplication, with thanksgiving, let your requests be made known unto 7 God: and the peace of God, which passeth all understanding, shall keep your hearts and your thoughts in Christ Jesus.
 
-8 Finally, brethren, whatsoever things are true, whatsoever things *are* seemly, whatsoever things *are* just, whatsoever things *are* pure, whatsoever things *are* lovely, *a It 12 14 15 16 17 18 10 20 21 22 23 Epistle of Paul to the Philippians.* 427 whatsoever things *are* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— 9 which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
+8 Finally, brethren, whatsoever things are true, whatsoever things *are* seemly, whatsoever things *are* just, whatsoever things *are* pure, whatsoever things *are* lovely, whatsoever things *are* of good report ; whatever virtue *there is,* and whatever praise ; think on these things,— 9 which also ye learned and received, and heard and saw in me. These things do, and the God of peace shall be with you.
 
 10 But I rejoiced in the Lord greatly, that now at length ye have flourished again as to your care for me; for which ye were also careful, but lacked opportunity.
 
