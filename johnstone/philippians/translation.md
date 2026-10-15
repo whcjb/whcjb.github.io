@@ -24,8 +24,8 @@ I I 7 even as it is meet for me to think this of you all, because I have you in 
 
 15 to speak the word without fear. Some indeed preach Christ even for envy and strife, but some also for good
 
-16 will. The<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> one *arty* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall re
-19 joice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
+16 will. The<sup class="jh-fn" id="fnref-1"><a href="#fn-1">1</a></sup> one *arty* of love, knowing that I am set 17 for the defence of the gospel, but the other of factiousness proclaim Christ, not sincerely, thinking to raise up 18 galling to my bonds. What then? Notwithstanding, every way, whether in pretence or in truth, Christ is proclaimed ; and therein I rejoice, yea, and shall
+19 rejoice ; for I know that this shall issue to me unto salvation, through your supplication and the supply of the 20 Spirit of Jesus Christ,—according to my earnest longing and hope that in nothing I shall be put to shame, but *that* in all boldness, as always, *so* now also, Christ shall be magnified in my body, whether by life or by death.
 
 21,22 For to me to live *is* Christ, and to die *is* gain. But if I live in the flesh, this *is* to me fruit of labour ; and what
 
@@ -49,7 +49,7 @@ II. 1 If *there be,* therefore, any consolation in Christ, if any comfort of lov
 
 19 But I hope in the Lord Jesus to send Timothy shortly unto you, that I also may be of good comfort, 20 when I know your state. For I have no man like-21 minded, who will truly care for your state. For all *of them* seek their own, not the things which are Jesus
 
-22 Christ’s. But ye know the proof of him, that, as a child *serveth* a father, he served with me for the furtherance 23 of the gospel. Him, therefore, I hope to send imme24 diately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
+22 Christ’s. But ye know the proof of him, that, as a child *serveth* a father, he served with me for the furtherance 23 of the gospel. Him, therefore, I hope to send 24 immediately on my seeing how it will go with me. But I trust in the Lord that I also myself shall come shortly.
 
 25 But I have thought it necessary to send to you Epaphroditus, my brother, and fellow - labourer, and fellow-soldier, but your messenger and minister to my 26 need ; seeing that he was longing after you all, and full of heaviness because ye had heard that he had been 27 sick. For indeed he was sick nigh unto death; but God had mercy on him, and not on him only, but on me also, that I should not have sorrow upon sorrow.
 
@@ -83,7 +83,7 @@ II. 1 If *there be,* therefore, any consolation in Christ, if any comfort of lov
 
 14 Notwithstanding, ye did well that ye had fellowship 15 with my affliction. And ye yourselves also know, Philippians, that in the beginning of the gospel, when I departed from Macedonia, no church had fellowship with me as touching an account of giving and receiving, 16 but ye only. For even in Thessalonica ye sent once 17 and again unto my need. Not that I seek your gift,—but I seek the fruit which aboundeth to your account.
 
-18 But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice ac19 ceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory, 20 in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
+18 But I have all things, and abound; I am full, having received from Epaphroditus the things *which were sent* from you, an odour of a sweet smell, a sacrifice 19 acceptable, well-pleasing to God. But my God shall fully supply all your need, according to His riches in glory, 20 in Christ Jesus. Now unto our God and Father *be* the glory for ever and ever. Amen.
 
 21 Salute every saint in Christ Jesus. The brethren which 22 are with me salute you. All the saints salute you, but especially they that are of Cæsar’s household.
 
