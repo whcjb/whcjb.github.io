@@ -6,6 +6,7 @@ title: "Preface"
 date: 2026-10-08 16:02
 next_url: "/johnstone/philippians/introduction/"
 next_label: "Introduction"
+zh_url: "/johnstone/philippians/zh/preface/"
 ---
 
 <div class="jh-titlepage" markdown="1">
