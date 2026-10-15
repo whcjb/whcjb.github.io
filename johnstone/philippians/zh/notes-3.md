@@ -6,6 +6,8 @@ title: "希腊文经文注释 · 第三章"
 date: 2026-10-15 21:50
 prev_url: "/johnstone/philippians/zh/notes-2/"
 prev_label: "希腊文经文注释 · 第二章"
+next_url: "/johnstone/philippians/zh/notes-4/"
+next_label: "希腊文经文注释 · 第四章"
 en_url: "/johnstone/philippians/notes-3/"
 zh: true
 ---

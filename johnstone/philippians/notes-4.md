@@ -8,6 +8,7 @@ prev_url: "/johnstone/philippians/notes-3/"
 prev_label: "Notes on the Greek Text · Chapter III"
 next_url: "/johnstone/philippians/polycarp/"
 next_label: "Appendix · Epistle of Polycarp to the Philippians"
+zh_url: "/johnstone/philippians/zh/notes-4/"
 ---
 
 CHAPTER IV.
