@@ -25,7 +25,7 @@ layout: default
 
 <div class="container perkins-wrap{% if page.zh %} pk-zh{% endif %}" style="padding-top: 70px;">
   <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" id="cmpCol">
 
       <div class="pk-chrome">
         <a href="{{ site.baseurl }}/perkins/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
@@ -55,9 +55,18 @@ layout: default
         {% else %}<span></span>{% endif %}
       </div>
 
+      {%- comment -%}
+        对比注释抽屉（点章顶空白热区 → 对照其他注释）：只给正文章节页（有 page.chapter）。
+        self 把本书自己排除，中英两版 key 不同；数据来自 _data/compare_sources.yml。
+      {%- endcomment -%}
+      {% if page.chapter %}
+      {% assign cc_self = "perkins-en" %}{% if page.zh %}{% assign cc_self = "perkins" %}{% endif %}
+      {% include compare-commentary-head.html self=cc_self content_class="pk-content" self_label="珀金斯" %}
+      {% endif %}
       <div class="pk-content">
         {{ content }}
       </div>
+      {% if page.chapter %}{% include compare-commentary-foot.html %}{% endif %}
 
       {% if page.date %}
       <div class="pk-stamp">{% if page.zh %}译于{% else %}Published{% endif %} {{ page.date | date: "%Y-%m-%d %H:%M" }}</div>
@@ -190,6 +199,13 @@ function closePerkinsVerseNav() {
   text-align: center; color: var(--pk-ink-dark); margin: 10px 0 22px; line-height: 1.5;
 }
 .perkins-wrap .pk-content a { color: var(--pk-ink); }
+
+/* 章目录页（/perkins/galatians/<章>/）：本章各讲解段 */
+.perkins-wrap .pk-chtoc { list-style: none; padding: 0; margin: 10px 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+.perkins-wrap .pk-chtoc a { display: block; padding: 9px 13px; border: 1px solid var(--pk-rule);
+  border-radius: 4px; background: var(--pk-paper); text-decoration: none; color: #2f2a2c; }
+.perkins-wrap .pk-chtoc a:hover { border-color: var(--pk-ink); color: var(--pk-ink-dark); }
 
 /* 被讲解的经文段：原书独立成段、通段斜体。 */
 .perkins-wrap .pk-text {

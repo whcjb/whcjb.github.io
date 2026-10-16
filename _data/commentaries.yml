@@ -82,6 +82,14 @@ authors:
     work_cn: "腓立比书讲疏"
     work_en: "Lectures Exegetical and Practical on the Epistle of Paul to the Philippians"
     books: 1
+  - id: perkins
+    name: "威廉·珀金斯"
+    short: "珀金斯"
+    en: "William Perkins"
+    years: "1558–1602"
+    work_cn: "加拉太书注释"
+    work_en: "A Commentarie or Exposition vpon the Fiue First Chapters of the Epistle to the Galatians"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -387,6 +395,7 @@ books:
     testament: nt
     chapters: 6
     links:
+      - {author: perkins, path: "/perkins/galatians/", url_tpl: "/perkins/galatians/__CH__/", title_cn: "加拉太书注释", title_en: "A Commentarie or Exposition vpon the Fiue First Chapters of the Epistle to the Galatians", c0: "#7a2249", c1: "#9b2d5f"}
   - id: ephesians
     name: "以弗所书"
     en: "Ephesians"

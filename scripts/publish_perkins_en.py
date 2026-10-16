@@ -170,6 +170,27 @@ def main():
         PAGES.write_text(json.dumps([{k: v for k, v in p.items() if k not in ('body', 'prev', 'next')}
                                      for p in pages], ensure_ascii=False, indent=1) + '\n',
                          encoding='utf-8')
+        # 章目录页 /perkins/galatians/<章>/：「历代解经」与对照抽屉按章号找页面
+        # （build_commentaries_index 认 <N>.md），本书按经文段分页，所以每章另出一页目录。
+        for ch in range(1, 7):
+            secs = [p for p in pages if p.get('ch') == ch]
+            slug = str(ch)
+            meta.setdefault(slug, stamp)
+            fm = ['---', 'layout: perkins-chapter', f'book_id: {BOOK_ID}',
+                  f'book_name: "{BOOK_NAME}"', f'title: "Galatians {ch}"',
+                  f'subtitle: "{author(ch)}"', f'date: {meta[slug]}', f'chapter: {ch}',
+                  f'verse_from: 1', f'verse_to: {NV[ch]}']
+            if ch > 1:
+                fm += [f'prev_url: "/perkins/{BOOK_ID}/{ch - 1}/"', f'prev_label: "Galatians {ch - 1}"']
+            if ch < 6:
+                fm += [f'next_url: "/perkins/{BOOK_ID}/{ch + 1}/"', f'next_label: "Galatians {ch + 1}"']
+            if (OUT / 'zh' / f'{slug}.md').exists():
+                fm.append(f'zh_url: "/perkins/{BOOK_ID}/zh/{slug}/"')
+            fm.append('---')
+            lst = '\n'.join(f'<li><a href="{{{{ site.baseurl }}}}/perkins/{BOOK_ID}/{p["slug"]}/">{p["title"]}</a></li>'
+                            for p in secs)
+            (OUT / f'{slug}.md').write_text('\n'.join(fm) + f'\n\n<ul class="pk-chtoc">\n{lst}\n</ul>\n',
+                                            encoding='utf-8')
         # 章顶 verse-nav 数据：每章全部节号 → 所在页（跨页导航）
         nav = {}
         for pg in pages:
@@ -178,6 +199,7 @@ def main():
                     nav.setdefault(str(pg['ch']), []).append({'v': int(v), 'slug': pg['slug']})
         (ROOT / '_data' / 'perkins_galatians.json').write_text(
             json.dumps(nav, ensure_ascii=False, indent=1) + '\n', encoding='utf-8')
+        META.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         (OUT / 'en').mkdir(exist_ok=True)
         (OUT / 'en' / 'index.html').write_text(build_index(pages), encoding='utf-8')
         # 中文目录未出之前，书的首页先指向英文目录

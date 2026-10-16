@@ -94,6 +94,13 @@ AUTHORS = OrderedDict([
                        work_cn='腓立比书讲疏',
                        work_en='Lectures Exegetical and Practical on the Epistle '
                                'of Paul to the Philippians')),
+    # 珀金斯：生卒年取 TCP 编目（Perkins, William, 1558-1602）。第 6 章与结语是
+    # Ralph Cudworth 续写，书卷卡片仍挂珀金斯名下（原书扉页即以珀金斯署名）。
+    ('perkins', dict(name='威廉·珀金斯', short='珀金斯', en='William Perkins',
+                     years='1558–1602', dir='perkins',
+                     work_cn='加拉太书注释',
+                     work_en='A Commentarie or Exposition vpon the Fiue First '
+                             'Chapters of the Epistle to the Galatians')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -135,6 +142,9 @@ AUTHOR_COLORS = {
     # 约翰斯通钴蓝：与既有十色的 ΔE 最小 26.8（达拉谟紫 26.8 / 贺智靛蓝 27.9），
     # 与先例同档。同批算过的 #4f6d8a(22.2) / #1a5f9e(21.4) 都离贺智靛蓝太近。
     'johnstone': ('#0d5690', '#106ab2'),
+    # 珀金斯暗酒红：与既有十一色的 ΔE 最小 27.1（亚历山大石榴石 #7d2f2f），
+    # 次近 28.2（曼顿梅 #5b2f4a），与先例同档。
+    'perkins': ('#7a2249', '#9b2d5f'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -158,6 +168,9 @@ BOOK_TITLES = {
     ('johnstone', 'philippians'): ('腓立比书讲疏',
                                   'Lectures Exegetical and Practical on the '
                                   'Epistle of Paul to the Philippians'),
+    ('perkins', 'galatians'):  ('加拉太书注释',
+                                'A Commentarie or Exposition vpon the Fiue First '
+                                'Chapters of the Epistle to the Galatians'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -180,13 +193,14 @@ COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
-    'johnstone': '#106ab2',
+    'johnstone': '#106ab2', 'perkins': '#9b2d5f',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
+    'perkins': '珀金斯注释',
 }
 
 
@@ -205,7 +219,7 @@ def _chapter_range(d: Path):
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
-                'johnstone': 'en'}
+                'johnstone': 'en', 'perkins': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

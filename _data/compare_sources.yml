@@ -79,6 +79,7 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/galatians-en/__CH__/", accent: "#800000", ch_from: 1, ch_to: 6}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/galatians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
     - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/galatians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 6}
+    - {key: perkins-en, author: perkins, lang: en, label: "珀金斯注释（英文版）", url_tpl: "/perkins/galatians/__CH__/", accent: "#9b2d5f", ch_from: 1, ch_to: 6}
   genesis:
     - {key: calvin, author: calvin, lang: zh, label: "加尔文注释", url_tpl: "/calvin/genesis/__CH__/", accent: "#800000", ch_from: 1, ch_to: 50}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/genesis/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 50}
@@ -162,6 +163,7 @@ sources:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/philippians/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
     - {key: mhenry-en, author: mhenry, lang: en, label: "马太亨利注释（英文版）", url_tpl: "/mhenry/philippians-en/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 4}
     - {key: johnstone-en, author: johnstone, lang: en, label: "约翰斯通讲疏（英文版）", url_tpl: "/johnstone/philippians/__CH__/", accent: "#106ab2", ch_from: 1, ch_to: 30}
+    - {key: johnstone, author: johnstone, lang: zh, label: "约翰斯通讲疏", url_tpl: "/johnstone/philippians/zh/__CH__/", accent: "#106ab2", ch_from: 1, ch_to: 30}
   proverbs:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/proverbs/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 31}
     - {key: bridges, author: bridges, lang: zh, label: "毕列志注释", url_tpl: "/bridges/proverbs/__CH__/", accent: "#96613F", ch_from: 1, ch_to: 31}
@@ -172,7 +174,7 @@ sources:
     - {key: calvin-en, author: calvin, lang: en, label: "加尔文注释（英文版）", url_tpl: "/calvin/psalms-2-en/__CH__/", accent: "#800000", ch_from: 79, ch_to: 150}
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/psalms/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 150}
     - {key: alexander-en, author: alexander, lang: en, label: "亚历山大注释（英文版）", url_tpl: "/alexander/psalms/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
-    - {key: alexander, author: alexander, lang: zh, label: "亚历山大注释", url_tpl: "/alexander/psalms/zh/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 10}
+    - {key: alexander, author: alexander, lang: zh, label: "亚历山大注释", url_tpl: "/alexander/psalms/zh/__CH__/", accent: "#7d2f2f", ch_from: 1, ch_to: 150}
   revelation:
     - {key: mhenry, author: mhenry, lang: zh, label: "马太亨利注释", url_tpl: "/mhenry/revelation/__CH__/", accent: "#C9922A", ch_from: 1, ch_to: 22}
     - {key: durham, author: durham, lang: zh, label: "达拉谟注释", url_tpl: "/durham/revelation/zh/__CH__/", accent: "#674c8e", ch_from: 1, ch_to: 22}
