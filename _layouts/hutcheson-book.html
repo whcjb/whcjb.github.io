@@ -1,0 +1,67 @@
+---
+layout: default
+---
+{%- comment -%}
+  赫奇森《约翰福音释义》书卷首页。配色与章节页同源（苏格兰绿 #2f8f46）。
+  目录按原书：书名页 / Calamy 序 / 献辞 / 致读者 → 论旨 → 第 1–21 章 → 勘误表。
+{%- endcomment -%}
+
+<div class="container hutcheson-book" style="padding-top: 70px;">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+      <div class="hc-booklang">
+        {% if page.zh %}{% if page.en_url %}<a href="{{ site.baseurl }}{{ page.en_url }}">English edition &rarr;</a>{% endif %}
+        {% else %}{% if page.zh_url %}<a href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
+      </div>
+      <div class="hc-hero">
+        <h1>{{ page.book_name }}</h1>
+        <p class="hc-hero-author">{{ page.author }}</p>
+        <p class="hc-hero-meta">{{ page.edition }}</p>
+      </div>
+
+      {{ content }}
+
+    </div>
+  </div>
+</div>
+
+<style>
+.hutcheson-book { --hc-ink: #2f8f46; --hc-ink-dark: #24753a; --hc-rule: #d3e6d8; --hc-paper: #f9fcfa; }
+.hutcheson-book .hc-booklang { text-align: right; margin: 0 0 10px; font-size: 13px; font-family: Georgia, serif; }
+.hutcheson-book .hc-booklang a { color: var(--hc-ink); border: 1px solid var(--hc-rule);
+  border-radius: 4px; padding: 4px 10px; text-decoration: none; }
+.hutcheson-book .hc-booklang a:hover { background: var(--hc-ink); color: #fff; }
+.hutcheson-book .hc-hero {
+  background: linear-gradient(135deg, #24753a 0%, #2f8f46 55%, #6fb382 100%);
+  color: #fff; border-radius: 6px; padding: 34px 28px; margin-bottom: 30px;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; text-align: center;
+}
+.hutcheson-book .hc-hero h1 { margin: 0 0 10px; font-size: 30px; font-weight: normal; line-height: 1.35; }
+.hutcheson-book .hc-hero-author { margin: 0 0 4px; font-size: 15px; opacity: .92; }
+.hutcheson-book .hc-hero-meta { margin: 0; font-size: 13px; opacity: .78; font-style: italic; }
+.hutcheson-book .hc-group {
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; margin: 30px 0 12px;
+  font-size: 15px; color: var(--hc-ink-dark); letter-spacing: .05em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--hc-rule);
+}
+.hutcheson-book .hc-toc { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 8px; }
+.hutcheson-book .hc-toc li { margin: 0; }
+.hutcheson-book .hc-toc a { display: block; padding: 9px 13px; border: 1px solid var(--hc-rule);
+  border-radius: 4px; background: var(--hc-paper); text-decoration: none;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; color: #2a2f2b; line-height: 1.45; }
+.hutcheson-book .hc-toc a:hover { border-color: var(--hc-ink); background: #fff; color: var(--hc-ink-dark); }
+.hutcheson-book .hc-note { font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 13.5px;
+  color: #6f7b72; line-height: 1.8; margin: 34px 0 0; padding-top: 16px; border-top: 1px solid var(--hc-rule); }
+.hutcheson-book .hc-chgrid { list-style: none; padding: 0; margin: 0; display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.hutcheson-book .hc-chgrid a { display: block; text-align: center; padding: 10px 6px; border: 1px solid var(--hc-rule);
+  border-radius: 4px; background: var(--hc-paper); text-decoration: none; color: #2a2f2b;
+  font-family: Georgia, "Times New Roman", "Songti SC", serif; font-size: 15px; }
+.hutcheson-book .hc-chgrid a:hover { border-color: var(--hc-ink); background: #fff; color: var(--hc-ink-dark); }
+@media (max-width: 767px) {
+  .hutcheson-book .hc-hero h1 { font-size: 23px; }
+  .hutcheson-book .hc-toc { grid-template-columns: 1fr 1fr; }
+}
+</style>

@@ -1,0 +1,5868 @@
+[
+{
+"slug": "calamy",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"page": null,
+"facs": "2"
+},
+{
+"slug": "calamy",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"page": null,
+"facs": "2"
+},
+{
+"slug": "calamy",
+"kind": "foreign",
+"tok": "〈Greek〉",
+"page": null,
+"facs": "2"
+},
+{
+"slug": "dedication",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "4"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "2",
+"facs": "6"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "5",
+"facs": "7"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "6",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "6",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "6",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "6",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "7",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "7",
+"facs": "8"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"page": "8",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "8",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "9",
+"facs": "9"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "10",
+"facs": "10"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "14",
+"facs": "12"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "15",
+"facs": "12"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "15",
+"facs": "12"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "17",
+"facs": "13"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "18",
+"facs": "14"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "18",
+"facs": "14"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "19",
+"facs": "14"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "19",
+"facs": "14"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "19",
+"facs": "14"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "20",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "21",
+"facs": "15"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "22",
+"facs": "16"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "••",
+"page": "22",
+"facs": "16"
+},
+{
+"slug": "1",
+"kind": "letter",
+"tok": "•",
+"page": "22",
+"facs": "16"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "27",
+"facs": "18"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "27",
+"facs": "18"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "27",
+"facs": "18"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "29",
+"facs": "19"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "••",
+"page": "29",
+"facs": "19"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "29",
+"facs": "19"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "29",
+"facs": "19"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "29",
+"facs": "19"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "30",
+"facs": "20"
+},
+{
+"slug": "2",
+"kind": "letter",
+"tok": "•",
+"page": "31",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "31",
+"facs": "20"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "33",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "33",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "33",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "33",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•••",
+"page": "33",
+"facs": "21"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "35",
+"facs": "22"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "36",
+"facs": "23"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "36",
+"facs": "23"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "36",
+"facs": "23"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "38",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "38",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "39",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "39",
+"facs": "24"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "40",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "40",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "40",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "40",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "41",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "41",
+"facs": "25"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "43",
+"facs": "26"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "43",
+"facs": "26"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "45",
+"facs": "27"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "46",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "46",
+"facs": "28"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "48",
+"facs": "29"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "48",
+"facs": "29"
+},
+{
+"slug": "3",
+"kind": "letter",
+"tok": "•",
+"page": "48",
+"facs": "29"
+},
+{
+"slug": "4",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "span",
+"tok": "〈…〉",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "span",
+"tok": "〈…〉",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••••",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•••",
+"page": "50",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "51",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"page": "51",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "51",
+"facs": "30"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "52",
+"facs": "31"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "53",
+"facs": "31"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "57",
+"facs": "33"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "60",
+"facs": "35"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "61",
+"facs": "35"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "62",
+"facs": "36"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "63",
+"facs": "36"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "63",
+"facs": "36"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "••",
+"page": "64",
+"facs": "37"
+},
+{
+"slug": "4",
+"kind": "letter",
+"tok": "•",
+"page": "64",
+"facs": "37"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "64",
+"facs": "37"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "64",
+"facs": "37"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "64",
+"facs": "37"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "65",
+"facs": "37"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "66",
+"facs": "38"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "67",
+"facs": "38"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "73",
+"facs": "41"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "75",
+"facs": "42"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "76",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "76",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "77",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "77",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "77",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "77",
+"facs": "43"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "79",
+"facs": "44"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "82",
+"facs": "46"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "83",
+"facs": "46"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "85",
+"facs": "47"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "85",
+"facs": "47"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "85",
+"facs": "47"
+},
+{
+"slug": "5",
+"kind": "letter",
+"tok": "•",
+"page": "87",
+"facs": "48"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "88",
+"facs": "49"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "88",
+"facs": "49"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "91",
+"facs": "50"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "92",
+"facs": "51"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "94",
+"facs": "52"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "96",
+"facs": "53"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "97",
+"facs": "53"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "100",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "100",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "101",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "101",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "101",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "101",
+"facs": "55"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "102",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "102",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "103",
+"facs": "57"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "105",
+"facs": "58"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "109",
+"facs": "60"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "111",
+"facs": "61"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "112",
+"facs": "62"
+},
+{
+"slug": "6",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••••",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "114",
+"facs": "63"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "116",
+"facs": "64"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•••",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•••",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "119",
+"facs": "65"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "120",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "••",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "121",
+"facs": "66"
+},
+{
+"slug": "6",
+"kind": "letter",
+"tok": "•",
+"page": "122",
+"facs": "67"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "125",
+"facs": "68"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "129",
+"facs": "70"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "131",
+"facs": "71"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "132",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "132",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "132",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "132",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "133",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "133",
+"facs": "72"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "135",
+"facs": "73"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "136",
+"facs": "74"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "138",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "••",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "139",
+"facs": "75"
+},
+{
+"slug": "7",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "140",
+"facs": "76"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "140",
+"facs": "76"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "140",
+"facs": "76"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "141",
+"facs": "76"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "144",
+"facs": "79"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "144",
+"facs": "79"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "147",
+"facs": "80"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "147",
+"facs": "80"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "•",
+"page": "147",
+"facs": "80"
+},
+{
+"slug": "7",
+"kind": "letter",
+"tok": "••",
+"page": "148",
+"facs": "81"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "152",
+"facs": "82"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "154",
+"facs": "84"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "156",
+"facs": "85"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "157",
+"facs": "85"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "159",
+"facs": "86"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "87"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "••",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "162",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "163",
+"facs": "88"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "164",
+"facs": "89"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "164",
+"facs": "89"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "164",
+"facs": "89"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "166",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "166",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "••",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "167",
+"facs": "90"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "168",
+"facs": "91"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "168",
+"facs": "91"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•••",
+"page": "171",
+"facs": "92"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "171",
+"facs": "92"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "171",
+"facs": "92"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "172",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "punc",
+"tok": "▪",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "••",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "••",
+"page": "173",
+"facs": "93"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "174",
+"facs": "94"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "174",
+"facs": "94"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "175",
+"facs": "94"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "••",
+"page": "175",
+"facs": "94"
+},
+{
+"slug": "8",
+"kind": "letter",
+"tok": "•",
+"page": "176",
+"facs": "95"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "176",
+"facs": "95"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "177",
+"facs": "95"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "179",
+"facs": "96"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "180",
+"facs": "97"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "180",
+"facs": "97"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "••",
+"page": "181",
+"facs": "97"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "181",
+"facs": "97"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "182",
+"facs": "98"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "182",
+"facs": "98"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "183",
+"facs": "98"
+},
+{
+"slug": "9",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "183",
+"facs": "98"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "183",
+"facs": "98"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "184",
+"facs": "99"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "184",
+"facs": "99"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "187",
+"facs": "100"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "187",
+"facs": "100"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "187",
+"facs": "100"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "187",
+"facs": "100"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "189",
+"facs": "101"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "191",
+"facs": "102"
+},
+{
+"slug": "9",
+"kind": "punc",
+"tok": "▪",
+"page": "191",
+"facs": "102"
+},
+{
+"slug": "9",
+"kind": "letter",
+"tok": "•",
+"page": "192",
+"facs": "103"
+},
+{
+"slug": "9",
+"kind": "punc",
+"tok": "▪",
+"page": "193",
+"facs": "103"
+},
+{
+"slug": "10",
+"kind": "punc",
+"tok": "▪",
+"page": "193",
+"facs": "103"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "193",
+"facs": "103"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "195",
+"facs": "104"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "196",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "197",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "197",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "197",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•••",
+"page": "197",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•••",
+"page": "197",
+"facs": "105"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "201",
+"facs": "107"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "201",
+"facs": "107"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "202",
+"facs": "108"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "202",
+"facs": "108"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "206",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "207",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "207",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "••",
+"page": "207",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "••",
+"page": "207",
+"facs": "111"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "208",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "208",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "10",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "209",
+"facs": "112"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "210",
+"facs": "113"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "210",
+"facs": "113"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "210",
+"facs": "113"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "210",
+"facs": "113"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "211",
+"facs": "113"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "212",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "212",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "213",
+"facs": "114"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "214",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "214",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "214",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "214",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "215",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "215",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "215",
+"facs": "115"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "216",
+"facs": "116"
+},
+{
+"slug": "11",
+"kind": "punc",
+"tok": "▪",
+"page": "216",
+"facs": "116"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "217",
+"facs": "116"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "217",
+"facs": "116"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "217",
+"facs": "116"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "219",
+"facs": "117"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "221",
+"facs": "118"
+},
+{
+"slug": "11",
+"kind": "span",
+"tok": "〈…〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "222",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "span",
+"tok": "〈…〉",
+"page": "223",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "223",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "punc",
+"tok": "▪",
+"page": "223",
+"facs": "119"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "225",
+"facs": "120"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "226",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "227",
+"facs": "121"
+},
+{
+"slug": "11",
+"kind": "punc",
+"tok": "▪",
+"page": "228",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "••",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "letter",
+"tok": "•",
+"page": "229",
+"facs": "122"
+},
+{
+"slug": "11",
+"kind": "punc",
+"tok": "▪",
+"page": "231",
+"facs": "123"
+},
+{
+"slug": "11",
+"kind": "punc",
+"tok": "▪",
+"page": "233",
+"facs": "124"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "233",
+"facs": "124"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "233",
+"facs": "124"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "235",
+"facs": "125"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "235",
+"facs": "125"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "235",
+"facs": "125"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "235",
+"facs": "125"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "235",
+"facs": "125"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "236",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "236",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "236",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "237",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "237",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "237",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "237",
+"facs": "126"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•••",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "238",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•••••••",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "239",
+"facs": "127"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "240",
+"facs": "129"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "242",
+"facs": "130"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "242",
+"facs": "130"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•••",
+"page": "243",
+"facs": "130"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "243",
+"facs": "130"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "244",
+"facs": "131"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "244",
+"facs": "131"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "246",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "247",
+"facs": "132"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "248",
+"facs": "133"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "249",
+"facs": "133"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "249",
+"facs": "133"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "249",
+"facs": "133"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "249",
+"facs": "133"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "250",
+"facs": "134"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "250",
+"facs": "134"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "250",
+"facs": "134"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "251",
+"facs": "134"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "251",
+"facs": "134"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "252",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "253",
+"facs": "135"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "255",
+"facs": "136"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "punc",
+"tok": "▪",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "••",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "12",
+"kind": "letter",
+"tok": "•",
+"page": "256",
+"facs": "137"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "258",
+"facs": "138"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "259",
+"facs": "138"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "259",
+"facs": "138"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "259",
+"facs": "138"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "260",
+"facs": "139"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "260",
+"facs": "139"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "265",
+"facs": "141"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "266",
+"facs": "142"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "267",
+"facs": "142"
+},
+{
+"slug": "13",
+"kind": "punc",
+"tok": "▪",
+"page": "267",
+"facs": "142"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "269",
+"facs": "143"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "269",
+"facs": "143"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "270",
+"facs": "144"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "271",
+"facs": "144"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "274",
+"facs": "147"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "274",
+"facs": "147"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "274",
+"facs": "147"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "274",
+"facs": "147"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "274",
+"facs": "147"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•••",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•••",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "277",
+"facs": "148"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "••",
+"page": "278",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "279",
+"facs": "149"
+},
+{
+"slug": "13",
+"kind": "letter",
+"tok": "•",
+"page": "279",
+"facs": "149"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "280",
+"facs": "150"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "285",
+"facs": "152"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "287",
+"facs": "153"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "289",
+"facs": "154"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "290",
+"facs": "155"
+},
+{
+"slug": "14",
+"kind": "punc",
+"tok": "▪",
+"page": "292",
+"facs": "156"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "293",
+"facs": "156"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "295",
+"facs": "157"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•••",
+"page": "295",
+"facs": "157"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "••",
+"page": "295",
+"facs": "157"
+},
+{
+"slug": "14",
+"kind": "letter",
+"tok": "•",
+"page": "296",
+"facs": "158"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "299",
+"facs": "159"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "300",
+"facs": "160"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "301",
+"facs": "160"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "302",
+"facs": "161"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "302",
+"facs": "161"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "304",
+"facs": "162"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "305",
+"facs": "162"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "306",
+"facs": "163"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "307",
+"facs": "163"
+},
+{
+"slug": "15",
+"kind": "punc",
+"tok": "▪",
+"page": "310",
+"facs": "165"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "311",
+"facs": "165"
+},
+{
+"slug": "15",
+"kind": "punc",
+"tok": "▪",
+"page": "312",
+"facs": "166"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "312",
+"facs": "166"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "313",
+"facs": "166"
+},
+{
+"slug": "15",
+"kind": "letter",
+"tok": "•",
+"page": "313",
+"facs": "166"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "314",
+"facs": "167"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "315",
+"facs": "167"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "315",
+"facs": "167"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "315",
+"facs": "167"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "••",
+"page": "315",
+"facs": "167"
+},
+{
+"slug": "16",
+"kind": "punc",
+"tok": "▪",
+"page": "316",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "317",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "317",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "317",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "317",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "••",
+"page": "317",
+"facs": "168"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "318",
+"facs": "169"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "320",
+"facs": "170"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "320",
+"facs": "170"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "320",
+"facs": "170"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "321",
+"facs": "170"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•••",
+"page": "321",
+"facs": "170"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "punc",
+"tok": "▪",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "323",
+"facs": "171"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "326",
+"facs": "173"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "173"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "173"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "173"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "173"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "328",
+"facs": "174"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "329",
+"facs": "174"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "329",
+"facs": "174"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "••",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "••",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•••",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "punc",
+"tok": "▪",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "330",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "331",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•",
+"page": "331",
+"facs": "175"
+},
+{
+"slug": "16",
+"kind": "letter",
+"tok": "•••",
+"page": "331",
+"facs": "175"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "335",
+"facs": "177"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•••",
+"page": "336",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "337",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "337",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "337",
+"facs": "178"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "338",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "338",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "339",
+"facs": "179"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "340",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "341",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "341",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "341",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "341",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "341",
+"facs": "180"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "342",
+"facs": "181"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "342",
+"facs": "181"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "344",
+"facs": "182"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "344",
+"facs": "182"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "344",
+"facs": "182"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "344",
+"facs": "182"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "344",
+"facs": "182"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "346",
+"facs": "183"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "348",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "349",
+"facs": "184"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "350",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "350",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "350",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "351",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "351",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "••",
+"page": "351",
+"facs": "185"
+},
+{
+"slug": "17",
+"kind": "letter",
+"tok": "•",
+"page": "353",
+"facs": "186"
+},
+{
+"slug": "18",
+"kind": "punc",
+"tok": "▪",
+"page": "354",
+"facs": "187"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "355",
+"facs": "187"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "355",
+"facs": "187"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "356",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "356",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "357",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "••",
+"page": "357",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "357",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "357",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "357",
+"facs": "188"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "358",
+"facs": "189"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "358",
+"facs": "189"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "359",
+"facs": "189"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "359",
+"facs": "189"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "360",
+"facs": "190"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "361",
+"facs": "190"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "363",
+"facs": "191"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "363",
+"facs": "191"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "366",
+"facs": "193"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "367",
+"facs": "193"
+},
+{
+"slug": "18",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "367",
+"facs": "193"
+},
+{
+"slug": "18",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "367",
+"facs": "193"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "369",
+"facs": "194"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "369",
+"facs": "194"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "371",
+"facs": "195"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•••",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "18",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "••",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "18",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "18",
+"kind": "letter",
+"tok": "•",
+"page": "372",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "373",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "punc",
+"tok": "▪",
+"page": "373",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "373",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "373",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "373",
+"facs": "196"
+},
+{
+"slug": "19",
+"kind": "punc",
+"tok": "▪",
+"page": "374",
+"facs": "197"
+},
+{
+"slug": "19",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "374",
+"facs": "197"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "374",
+"facs": "197"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "377",
+"facs": "198"
+},
+{
+"slug": "19",
+"kind": "punc",
+"tok": "▪",
+"page": "378",
+"facs": "199"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "••",
+"page": "379",
+"facs": "199"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "383",
+"facs": "201"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "383",
+"facs": "201"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "384",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "384",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "385",
+"facs": "202"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "386",
+"facs": "203"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "386",
+"facs": "203"
+},
+{
+"slug": "19",
+"kind": "letter",
+"tok": "•",
+"page": "386",
+"facs": "203"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "391",
+"facs": "205"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "••",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•••",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "••••",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "word",
+"tok": "〈◊〉",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "393",
+"facs": "206"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•••",
+"page": "395",
+"facs": "208"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "397",
+"facs": "209"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "••",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "••",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "400",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "401",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "••••",
+"page": "401",
+"facs": "211"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "403",
+"facs": "212"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "403",
+"facs": "212"
+},
+{
+"slug": "20",
+"kind": "letter",
+"tok": "•",
+"page": "403",
+"facs": "212"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "410",
+"facs": "216"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "413",
+"facs": "217"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "417",
+"facs": "219"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "••",
+"page": "417",
+"facs": "219"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "417",
+"facs": "219"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "417",
+"facs": "219"
+},
+{
+"slug": "21",
+"kind": "letter",
+"tok": "•",
+"page": "417",
+"facs": "219"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+},
+{
+"slug": "errata",
+"kind": "letter",
+"tok": "•",
+"page": null,
+"facs": "220"
+}
+]

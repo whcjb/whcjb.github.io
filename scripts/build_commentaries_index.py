@@ -101,6 +101,13 @@ AUTHORS = OrderedDict([
                      work_cn='加拉太书注释',
                      work_en='A Commentarie or Exposition vpon the Fiue First '
                              'Chapters of the Epistle to the Galatians')),
+    # 赫奇森：苏格兰盟约派，爱丁堡牧师。生卒年取 TCP 编目（Hutcheson, George,
+    # 1615-1674）。本书 1657 年伦敦初版，卷首有 Edmund Calamy 的序。
+    ('hutcheson', dict(name='乔治·赫奇森', short='赫奇森', en='George Hutcheson',
+                       years='1615–1674', dir='hutcheson',
+                       work_cn='约翰福音注释',
+                       work_en='An Exposition of the Gospel of Jesus Christ '
+                               'according to John')),
     ('alexander', dict(name='约瑟·亚历山大', short='亚历山大', en='Joseph Addison Alexander',
                        years='1809–1860', dir='alexander',
                        work_cn='诗篇、以赛亚书注释',
@@ -145,6 +152,10 @@ AUTHOR_COLORS = {
     # 珀金斯暗酒红：与既有十一色的 ΔE 最小 27.1（亚历山大石榴石 #7d2f2f），
     # 次近 28.2（曼顿梅 #5b2f4a），与先例同档。
     'perkins': ('#7a2249', '#9b2d5f'),
+    # 赫奇森苏格兰绿：与既有十二色及加尔文酒红、马太亨利金、站点 Hux 蓝的
+    # ΔE 最小 27.4（达文南特橄榄绿 #556b2f），次近欧文绿 39.3，与先例同档。
+    # 同批算过的 #2e7d4f(21.2) / #2b7a45(20.1) 离达文南特太近，弃用。
+    'hutcheson': ('#24753a', '#2f8f46'),
 }
 
 # 逐卷书名（同一注释家的不同分册书名不同时用）。取各卷扉页的实际书名。
@@ -171,6 +182,9 @@ BOOK_TITLES = {
     ('perkins', 'galatians'):  ('加拉太书注释',
                                 'A Commentarie or Exposition vpon the Fiue First '
                                 'Chapters of the Epistle to the Galatians'),
+    ('hutcheson', 'john'):     ('约翰福音注释',
+                                'An Exposition of the Gospel of Jesus Christ '
+                                'according to John'),
     ('manton', 'james'):       ('雅各书注释',
                                 'A Practical Commentary, or an Exposition with Notes '
                                 'on the Epistle of James'),
@@ -193,14 +207,14 @@ COMPARE_ACCENT = {
     'calvin': '#800000', 'mhenry': '#C9922A', 'owen': '#1f5a4b',
     'bridges': '#96613F', 'hodge': '#1f3a5f', 'manton': '#5b2f4a',
     'davenant': '#556b2f', 'alexander': '#7d2f2f', 'spurgeon': '#4a3b22', 'durham': '#674c8e',
-    'johnstone': '#106ab2', 'perkins': '#9b2d5f',
+    'johnstone': '#106ab2', 'perkins': '#9b2d5f', 'hutcheson': '#2f8f46',
 }
 COMPARE_LABEL = {
     'calvin': '加尔文注释', 'mhenry': '马太亨利注释', 'owen': '约翰欧文注释',
     'bridges': '毕列志注释', 'hodge': '贺智注释', 'manton': '曼顿注释',
     'davenant': '达文南特注释', 'alexander': '亚历山大注释',
     'spurgeon': '司布真注释', 'durham': '达拉谟注释', 'johnstone': '约翰斯通讲疏',
-    'perkins': '珀金斯注释',
+    'perkins': '珀金斯注释', 'hutcheson': '赫奇森注释',
 }
 
 
@@ -219,7 +233,7 @@ def _chapter_range(d: Path):
 PRIMARY_LANG = {'calvin': 'zh', 'mhenry': 'zh', 'bridges': 'zh',
                 'owen': 'en', 'hodge': 'en', 'manton': 'en', 'davenant': 'en',
                 'alexander': 'en', 'spurgeon': 'en', 'durham': 'en',
-                'johnstone': 'en', 'perkins': 'en'}
+                'johnstone': 'en', 'perkins': 'en', 'hutcheson': 'en'}
 
 
 def _lang_variants(aid, d: Path, name: str):

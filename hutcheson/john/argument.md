@@ -1,0 +1,21 @@
+---
+layout: hutcheson-chapter
+book_id: john
+book_name: "Hutcheson on John"
+title: "The Argument"
+subtitle: "George Hutcheson"
+date: 2026-10-16 13:38
+prev_url: "/hutcheson/john/reader/"
+prev_label: "To the Reader"
+next_url: "/hutcheson/john/1-1/"
+next_label: "John 1:1"
+---
+
+## The *ARGUMENT.*
+
+<span class="hc-dropcap">J</span>*OHN* the son of *Zebedee,* being called from the fisher-trade to be an Apostle, *Matth.* 4.21, 22. was in a special way favoured of Christ, during the time of his abode in the world; being admitted to be one of the witnesses of some of his special miracles, *Mark* 5.37. of his transfiguration, *Matth.* 17.12. and of his agonie in the garden, *Matth.* 26.37. He was likewise entrusted by Christ upon the Crosse, with the care of his mother, *John* 19.26, 27. and (which is above all) he was one specially beloved of Christ, and very intimate with him, *John* 13.23. and 21.20, 24. After Christs ascension, and the pouring out of the Spirit, he is employed with the rest, in proclaiming the glad tidings of salvation, and was joynt with *Peter* in healing of the creple, and enduring of the trials which followed thereupon, *Acts* 3. and 4. After that, we finde him sent with *Peter* to *Samaria, Acts* 8.14. &c. Afterward, as histories record, he went to *Asia* the lesser, where he did propagate the Kingdome of Christ, not onely by preaching unto them, but by writing, at the direction of the Holy Ghost, to the edification of the whole Church, as appeareth by his *Epistles,* the *Revelation,* and this *Gospel,* whereof he declareth he was the Penman. *John* 21.20, 24.
+
+His scope in this Narration of the History of Christ, is to prove that Christ-man is also the very Son of God, and to clear up the way of salvation through faith in his Name, as he declareth, *Chap.* 20. 31. And more particularly, the time, and occasion of his writing of it, as is (recorded in Ecclesiastical history) was, That, during the time of his exile in *Pathmos,* (where he wrote the *Revelation*) the Churches in *Asia* were infested with many seducers, publishing their pernicious errors, as may be gathered also from his Epistles to the seven Churches there, *Rev.* 2. and 3. and namely with *Ebion* and *Cerinthus,* who denied the divinity of Christ; Therefore, after his return, (and so long after all the rest of the Apostles were dead) he is set on work by Christ to write this Gospel, and adde this witnesse to the other three, to make up a most perfect narration for the use of the Church in all ages; Wherin he doth in a very sublime way describe and <span class="hc-pb" id="p2" data-p="2" data-facs="6"></span> assert the person, natures, and offices of Jesus Christ, against all the errors of that time, or which might afterward trouble the Church; and, as the beloved Disciple that had lien in his Masters bosome, he soareth very high in speaking of the great mystery of godlinesse. In his narration he doth not insist to repeat what had been sufficiently recorded by the other Evangelists, but pitcheth chiefly upon some noted, and special actions of Christ, adding thereto divers of his excellent Sermons, upon the chief points of Christian Religion, together with his solemn Prayer before his passion; which in the Lords holy and wise providence had been reserved for such a time and such a Penman; and wherein the deepest mysteries of saith, and the rich treasures of the godlies comfort, are clearly and satisfactorily pointed out.
+
+The parts of this History are, 1. A descrition of Christ to *ver.* 37. of *Chap.* 1. 2. A narration of the execution of his offices, in his doctrine, and actions, during the time of his life and ministry, to *Chap.* 18. 3. The history of his death and sufferings. *Chap,* 18. and 19. 4. The history of his resurrection, with some passages confirming the same, *Chap.* 20. *&* 21.
+

@@ -90,6 +90,14 @@ authors:
     work_cn: "加拉太书注释"
     work_en: "A Commentarie or Exposition vpon the Fiue First Chapters of the Epistle to the Galatians"
     books: 1
+  - id: hutcheson
+    name: "乔治·赫奇森"
+    short: "赫奇森"
+    en: "George Hutcheson"
+    years: "1615–1674"
+    work_cn: "约翰福音注释"
+    work_en: "An Exposition of the Gospel of Jesus Christ according to John"
+    books: 1
   - id: alexander
     name: "约瑟·亚历山大"
     short: "亚历山大"
@@ -362,6 +370,7 @@ books:
     testament: nt
     chapters: 21
     links:
+      - {author: hutcheson, path: "/hutcheson/john/", url_tpl: "/hutcheson/john/__CH__/", title_cn: "约翰福音注释", title_en: "An Exposition of the Gospel of Jesus Christ according to John", c0: "#24753a", c1: "#2f8f46"}
   - id: acts
     name: "使徒行传"
     en: "Acts"

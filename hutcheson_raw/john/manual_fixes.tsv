@@ -1,0 +1,266 @@
+# 由 hutcheson_gapfill.py 从 gap_decisions.tsv 导出，勿手改；手工判读另加在文件末尾 MANUAL 段之后
+1	2	nee•s	needs	lex:needs×62
+1	3	sinne•s	sinners	lex:sinners×233
+1	4	A•ts,	Acts,	lex:acts×99
+1	8	e••th,	earth,	lex:earth×108
+1	14	•amb	Lamb	ctx:the lamb of×8
+1	18	Nathan•el	Nathaneel	lex:nathaneel×30
+1	21	ve•y	very	lex:very×445
+1	22	bi•th,	birth,	lex:birth×34
+2	3	s•ek	seek	lex:seek×211
+2	7	•uthority,	authority,	lex:authority×146
+2	8	thereaf•er;	thereafter;	lex:thereafter×3
+3	9	agg•eage	aggreage	lex:aggreage×4
+3	15	dit•ay	dittay	lex:dittay×6
+3	18	wo•ul	woful	lex:woful×16
+3	21	Sov•raignty	Soveraignty	lex:soveraignty×5
+3	23	aff•ction;	affection;	lex:affection×121
+3	25	•ever	never	ctx:is never rightly×3
+4	8	b••ds	bonds	ctx:the bonds of×7
+4	10	ag•inst	against	lex:against×503
+4	12	the•efore,	therefore,	lex:therefore×1449
+4	13	Ministe•s	Ministers	lex:ministers×141
+4	14	naugh•inesse	naughtinesse	lex:naughtinesse×10
+4	15	Messenge•s	Messengers	lex:messengers×35
+4	18	••rks,	works,	ctx:christs works and×2
+4	19	ma•ked	marked	ctx:is marked that×16
+5	1	•est	rest	ctx:the rest had×4
+5	6	Ch•ists	Christs	lex:christs×1467
+5	7	•onne	Sonne	ctx:the sonne of×101
+5	13	b•dies)	bodies)	lex:bodies×36
+5	14	contra•y	contrary	lex:contrary×111
+5	16	Scripture•,	Scriptures,	ctx:the scriptures that×3
+5	20	w•itings,	writings,	lex:writings×12
+6	3	promi•ed	promised	lex:promised×61
+6	5	de•ling,	dealing,	lex:dealing×91
+6	8	decei•ful,	deceitful,	lex:deceitful×3
+6	9	th•y	they	lex:they×6419
+6	13	Ch•ists	Christs	lex:christs×1467
+6	14	signifie•h,	signifieth,	lex:signifieth×18
+6	15	sle•ght	sleight	lex:sleight×19
+6	22	d•ne	done	ctx:injury done to×2
+6	23	desi•ing	desiring	lex:desiring×27
+6	24	charg•	charge	lex:charge×65
+6	30	•losed	closed	lex:closed×13
+6	35	th•se	these	ctx:of these to×2
+6	39	gui•ty	guilty	lex:guilty×48
+6	40	C•••sts	Christs	lex:christs×1467
+6	43	give•h	giveth	lex:giveth×83
+6	47	wha•ever	whatever	lex:whatever×339
+6	48	betra•	betray	ctx:should betray him×10
+6	51	sl•ight,	sleight,	lex:sleight×19
+7	1	doct•ine	doctrine	ctx:christs doctrine and×8
+7	2	unde•standing	understanding	lex:understanding×53
+7	6	s•eking	seeking	lex:seeking×89
+7	7	er•ed	erred	lex:erred×5
+7	13	sai•h;	saith;	lex:saith×605
+7	16	vi••ble	visible	lex:visible×107
+7	17	p•ovidence	providence	lex:providence×99
+7	22	Scriptu•e,	Scripture,	lex:scripture×164
+7	23	ref•eshment,	refreshment,	lex:refreshment×26
+7	25	behalf•,	behalfe,	lex:behalfe×18
+7	26	Therefo•e	Therefore	lex:therefore×1449
+7	27	judica••ry,	judicatory,	lex:judicatory×4
+8	0	equi•y	equity	lex:equity×7
+8	1	Therefo•e	Therefore	lex:therefore×1449
+8	3	Chri•t	Christ	lex:christ×4748
+8	5	mee•s	meets	lex:meets×11
+8	7	w•cked,	wicked,	lex:wicked×149
+8	9	acqui•sce	acquiesce	lex:acquiesce×6
+8	10	pai•s	pains	lex:pains×79
+8	11	Ch•ist	Christ	ctx:doth christ so×10
+8	12	cle•ve	cleave	lex:cleave×28
+8	14	intima•e	intimate	lex:intimate×42
+8	15	promi•e	promise	lex:promise×154
+8	19	se•vice,	service,	lex:service×117
+8	20	h•ld	held	ctx:are held out×4
+8	21	h•ld	hold	ctx:laid hold on×6
+8	22	th•ir	their	lex:their×4828
+8	24	M•ssiah,	Messiah,	lex:messiah×140
+8	27	wi•h	with	ctx:up with the×6
+8	28	judicia•ly	judicially	lex:judicially×8
+8	31	th•ir	their	lex:their×4828
+8	32	religiou•	religious	lex:religious×10
+8	33	advan•age	advantage	lex:advantage×98
+8	34	The•efore	Therefore	lex:therefore×1449
+8	37	heare•s,	hearers,	lex:hearers×51
+8	38	p•ove	prove	lex:prove×204
+8	46	Abr•ham	Abraham	lex:abraham×58
+8	49	n•ne	none	ctx:were none of×2
+8	55	preferr•	preferre	lex:preferre×13
+8	59	desi•ing	desiring	lex:desiring×27
+8	61	b•idled.	bridled.	lex:bridled×4
+9	2	•his	this	lex:this×4169
+9	4	th•n	then	ctx:and then to×5
+9	5	••yst	tryst	lex:tryst×12
+9	9	avo•ed	avowed	lex:avowed×12
+9	14	who•ver	whoever	lex:whoever×29
+9	16	d•ift,	drift,	lex:drift×7
+9	21	re•pects	respects	lex:respects×53
+10	5	mee•s	meets	lex:meets×11
+10	10	de•il,	devil,	ctx:a devil and×4
+10	12	te•ching	teaching	lex:teaching×33
+10	14	rewa•ded	rewarded	lex:rewarded×3
+10	17	suffere•s,	sufferers,	lex:sufferers×21
+10	19	whe•eby	whereby	lex:whereby×173
+10	21	p•etence	pretence	lex:pretence×30
+10	32	pe•secuted	persecuted	lex:persecuted×19
+10	33	wh•rein	wherein	lex:wherein×399
+11	1	wroug•t,	wrought,	lex:wrought×131
+11	5	exemp•ed	exempted	lex:exempted×4
+11	10	sl•ight,	sleight,	lex:sleight×19
+11	13	neede•	needed	ctx:he needed not×8
+11	19	m•et	meet	lex:meet×146
+11	30	effi•acy	efficacy	lex:efficacy×23
+11	47	•p•ritu••	spiritual	lex:spiritual×282
+11	57	•istempers,	distempers,	lex:distempers×14
+11	58	mou•ners	mourners	lex:mourners×5
+11	62	exp•••••th	expresseth	lex:expresseth×12
+11	63	a••aul•s	assaults	lex:assaults×8
+11	68	•••strips	outstrips	lex:outstrips×3
+11	72	••iends	friends	lex:friends×120
+11	73	••rrows;	sorrows;	lex:sorrows×26
+11	87	aff••ted	affected	lex:affected×73
+12	2	ba•est	basest	lex:basest×7
+12	3	•ffection	affection	lex:affection×121
+12	4	bu••d,	build,	lex:build×7
+12	6	bu•ial,	burial,	lex:burial×19
+12	10	appe•reth	appeareth	lex:appeareth×63
+12	13	mult•tude	multitude	lex:multitude×48
+12	15	blessi•g	blessing	lex:blessing×42
+12	16	•ubjects,	subjects,	lex:subjects×9
+12	18	co•solation	consolation	lex:consolation×65
+12	19	Church•s	Churches	lex:churches×20
+12	21	The•efore	Therefore	lex:therefore×1449
+12	38	endu•e	endure	lex:endure×56
+12	39	wi•l	will	ctx:enemies will be×2
+12	43	cou•se,	course,	lex:course×94
+12	44	disappointmen•s	disappointments	lex:disappointments×14
+12	45	b•eath	breath	lex:breath×5
+12	48	abho•re	abhorre	lex:abhorre×7
+12	54	suffering•	sufferings	lex:sufferings×230
+12	57	followe•h	followeth	lex:followeth×148
+12	58	r•st	rest	ctx:the rest of×51
+12	66	sad•er,	sadder,	lex:sadder×15
+12	70	reve•led	revealed	lex:revealed×72
+12	71	ar•e	arme	ctx:the arme of×3
+12	73	ma•ter	matter	ctx:is matter of×5
+12	76	S•vi•ur	Saviour	lex:saviour×29
+12	89	Follow•th	Followeth	lex:followeth×148
+12	90	c•ncerning	concerning	lex:concerning×312
+12	94	insinua•es	insinuates	lex:insinuates×9
+12	96	in••lcate.	inculcate.	lex:inculcate×36
+12	98	ze•l	zeal	lex:zeal×65
+12	104	endeav•u•ed	endeavoured	lex:endeavoured×4
+12	109	word•	words	ctx:these words as×2
+12	110	Scriptu•es,	Scriptures,	lex:scriptures×111
+12	111	b•azen	brazen	lex:brazen×3
+12	114	threatning•	threatnings	lex:threatnings×22
+12	116	ro•me	roome	lex:roome×27
+12	120	joy•ed	joyned	lex:joyned×30
+13	12	exe•ce	exerce	lex:exerce×7
+13	13	g•eat	great	lex:great×655
+13	14	necessi•ies	necessities	lex:necessities×27
+13	15	conce•ning	concerning	lex:concerning×312
+13	18	•reachery;	treachery;	lex:treachery×30
+13	22	Ch••stians	Christians	lex:christians×18
+13	27	p•esent	present	lex:present×173
+13	29	t•sted	tasted	ctx:have tasted of×6
+13	33	thei•	their	lex:their×4828
+13	34	we•kness,	weakness,	lex:weakness×5
+14	1	u•ity	unity	lex:unity×40
+14	4	st•ad	stead	ctx:in stead of×17
+15	0	fru•tfulnesse;	fruitfulnesse;	lex:fruitfulnesse×43
+15	1	profi•	profit	lex:profit×31
+15	2	refl•ct	reflect	lex:reflect×6
+15	3	b•anches,	branches,	lex:branches×42
+15	5	fin•e	finde	lex:finde×281
+15	7	wh•m	whom	ctx:with whom they×3
+15	12	surp•sse	surpasse	lex:surpasse×4
+15	13	be•n	been	ctx:hath been said×7
+15	14	bea•eth	beareth	lex:beareth×19
+16	0	affl•ctions	afflictions	lex:afflictions×44
+16	2	f•retold	foretold	lex:foretold×22
+16	9	d•th	doth	lex:doth×1596
+16	11	re•rehends,	reprehends,	lex:reprehends×4
+16	13	•ook	look	ctx:we look upon×4
+16	15	ab•olution	absolution	lex:absolution×9
+16	17	sin•ul	sinful	lex:sinful×45
+16	18	g•neral	general	lex:general×171
+16	19	•hey	they	ctx:which they will×8
+16	21	•pirit	Spirit	lex:spirit×444
+16	25	powe•	power	lex:power×441
+16	26	abso•ved	absolved	lex:absolved×10
+16	27	ju•gement	judgement	lex:judgement×144
+16	28	branche•	branched	ctx:be branched out×2
+16	29	provi•g	proving	lex:proving×21
+16	30	be•eever,	beleever,	lex:beleever×32
+16	31	fi•de	finde	lex:finde×281
+16	34	S•tan	Satan	lex:satan×165
+16	35	P•ince	Prince	lex:prince×28
+16	36	g•eat	great	lex:great×655
+16	38	thi•	this	ctx:is this that×5
+16	41	•hich	which	lex:which×2276
+16	42	af•er	after	lex:after×625
+16	47	•educed	reduced	ctx:be reduced to×5
+16	49	•xciting	exciting	lex:exciting×4
+17	3	hea•en	heaven	lex:heaven×283
+17	4	b•essing	blessing	lex:blessing×42
+17	7	breth•en	brethren	lex:brethren×36
+17	8	th•o•g	throng	lex:throng×14
+17	10	ha•h	hath	ctx:christ hath a×8
+17	11	p••ssing	pressing	lex:pressing×44
+17	13	activ•	active	lex:active×15
+17	15	glorifi•••ion	glorification	lex:glorification×9
+17	18	b•inging	bringing	lex:bringing×44
+17	19	committ•d	committed	lex:committed×52
+17	22	natu•e	nature	lex:nature×283
+17	23	wo•k	work	ctx:the work of×57
+17	24	R•demption,	Redemption,	lex:redemption×64
+17	25	h•th	hath	lex:hath×935
+17	26	R•demption,	Redemption,	lex:redemption×64
+17	27	peculia•	peculiar	lex:peculiar×56
+17	29	•cope	scope	lex:scope×122
+17	31	Beleever•	Beleevers	lex:beleevers×319
+17	32	ob•cure	obscure	lex:obscure×37
+17	33	Ch•ists	Christs	lex:christs×1467
+17	34	The•efore	Therefore	lex:therefore×1449
+17	35	a•ter	after	ctx:even after they×2
+17	36	wi•hout	without	lex:without×405
+17	39	p•eservation	preservation	lex:preservation×48
+17	42	encou•age	encourage	lex:encourage×50
+17	43	thei•	their	lex:their×4828
+17	44	g••atest	greatest	lex:greatest×93
+17	45	p•eservation;	preservation;	lex:preservation×48
+17	46	lu•ts	lusts	lex:lusts×32
+17	47	•eleevers,	beleevers,	lex:beleevers×319
+17	48	Ch•ist	Christ	ctx:betwixt christ and×40
+17	51	Ch•ists	Christs	lex:christs×1467
+17	53	s•nctified	sanctified	lex:sanctified×61
+18	7	fea•ing	fearing	lex:fearing×5
+18	8	con•emptible	contemptible	lex:contemptible×10
+18	9	s•eing	seeing	lex:seeing×214
+18	11	Chr•st,	Christ,	lex:christ×4748
+18	14	th•t	that	lex:that×8944
+18	16	wo•ship	worship	lex:worship×102
+18	18	incess•ntly	incessantly	lex:incessantly×3
+18	23	par•	part	ctx:this part of×44
+18	28	in••terate	inveterate	lex:inveterate×6
+18	30	g•ip	grip	lex:grip×8
+19	0	up•n	upon	lex:upon×1154
+19	4	•lready	already	lex:already×72
+19	8	•ill	will	ctx:men will not×11
+19	13	mothe•s	mothers	lex:mothers×5
+19	15	p•ediction	prediction	lex:prediction×50
+19	19	toge•her	together	lex:together×120
+19	23	mar•ed	marked	ctx:is marked on×2
+20	7	ob•••ved	observed	lex:observed×41
+20	8	m•stakes	mistakes	lex:mistakes×45
+20	10	bod••y	bodily	lex:bodily×160
+20	11	p•esence,	presence,	lex:presence×151
+20	12	e•pect,	expect,	lex:expect×160
+20	15	aff•ction	affection	lex:affection×121
+20	17	W•ence	Whence	lex:whence×336
+20	18	whe•eby	whereby	lex:whereby×173
+20	21	abou•	about	lex:about×366
+21	2	entert•in	entertain	lex:entertain×33
