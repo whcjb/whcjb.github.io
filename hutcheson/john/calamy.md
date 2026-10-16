@@ -9,6 +9,7 @@ prev_url: "/hutcheson/john/title/"
 prev_label: "Title Page"
 next_url: "/hutcheson/john/dedication/"
 next_label: "The Epistle Dedicatory"
+zh_url: "/hutcheson/john/zh/calamy/"
 ---
 
 <p class="hc-salute" markdown="1">CHRISTIAN READER,</p>
