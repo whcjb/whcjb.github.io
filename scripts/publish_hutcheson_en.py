@@ -241,6 +241,94 @@ def main():
     print('  最长：' + '  '.join(f"{p['slug']}({len(p['body']) // 1000}k)" for p in big), file=sys.stderr)
 
 
+# ── 书首页「最后 29 处缺字」逐条说明 ─────────────────────────────────
+CONJ_TSV = RAW / 'gap_review_conj.tsv'
+ERRATA_TSV = RAW / 'manual_errata.tsv'
+REV1841 = RAW / 'gap_review_1841.tsv'
+# 这两处原在推补之列，复查时在 1841 本里找到了吻合的读法，改为 1841 判出（不加括号）
+MOVED_TO_1841 = {('13', 31), ('9', 22)}
+ZH_BOOK = {'calamy': '卡拉米序', 'errata': '书末勘误表', 'dedication': '献辞', 'reader': '致读者', 'argument': '论旨'}
+
+
+def _locate(slug, needle_pos, pages):
+    """缺字在 en_chapters/<slug>.md 里的位置 → (显示位置, 页面 slug)。"""
+    if not slug.isdigit():
+        return ZH_BOOK.get(slug, slug), slug
+    raw = (hc.SRC / f'{slug}.md').read_text(encoding='utf-8')
+    vs = re.findall(r'id="v(\d+)"', raw[:needle_pos])
+    ch = int(slug)
+    v = int(vs[-1]) if vs else None
+    secs = [p for p in pages if p.get('ch') == ch]
+    if v is None:
+        return f'约翰福音第 {ch} 章章首提要', secs[0]['slug']
+    pg = next((p for p in secs if p['v1'] <= v <= p['v2']), secs[-1])
+    rng = f"{pg['v1']}" if pg['v1'] == pg['v2'] else f"{pg['v1']}–{pg['v2']}"
+    return f'约翰福音 {ch}:{rng} 讲解', pg['slug']
+
+
+def conj_table(pages):
+    """→ HTML 表格行。数据只从三张表取（推补表、errata 表、1841 复核表中移入的两条），
+    表里改了，首页说明自动跟着变，不会两处说法不一。"""
+    rows = []
+
+    def esc(x):
+        return x.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+
+    def show(x):
+        return esc(x).replace('⟦', '<span class="hc-conj">[').replace('⟧', ']</span>')
+    for ln in CONJ_TSV.read_text(encoding='utf-8').splitlines():
+        if not ln or ln.startswith('#'):
+            continue
+        slug, o, tcp, fixed, ev = ln.split('\t')
+        raw = (hc.SRC / f'{slug}.md').read_text(encoding='utf-8')
+        m = list(hc.TOK.finditer(raw))[int(o)]
+        loc, pg = _locate(slug, m.start(), pages)
+        grade, why = ev.split('｜', 1)
+        # ⟦⟧（空推补）＝删去：删去的是标点就写「（删去标点）」，整个记号删就写「（删去）」
+        if fixed == '⟦⟧':
+            now = '（删去）'
+        elif fixed.endswith('⟦⟧'):
+            now = esc(fixed[:-2]) + '（删去标点）'
+        else:
+            now = show(fixed)
+        rows.append((slug, m.start(), loc, pg, esc(tcp), now, grade, esc(why)))
+    for ln in ERRATA_TSV.read_text(encoding='utf-8').splitlines():
+        if not ln or ln.startswith('#'):
+            continue
+        slug, old, new, ev = ln.split('\t')
+        raw = (hc.SRC / f'{slug}.md').read_text(encoding='utf-8')
+        pos = raw.find(old.split('•')[0][-12:]) if '•' in old else raw.find(old)
+        loc, pg = _locate(slug, max(pos, 0), pages)
+        grade, why = ev.split('｜', 1)
+        rows.append((slug, max(pos, 0), loc, pg, esc(old), show(new), grade, esc(why)))
+    for ln in REV1841.read_text(encoding='utf-8').splitlines():
+        if not ln or ln.startswith('#'):
+            continue
+        f = ln.split('\t')
+        if (f[0], int(f[1])) not in MOVED_TO_1841:
+            continue
+        raw = (hc.SRC / f'{f[0]}.md').read_text(encoding='utf-8')
+        m = list(hc.TOK.finditer(raw))[int(f[1])]
+        loc, pg = _locate(f[0], m.start(), pages)
+        why = ('复查时在 1841 本里找到对应文字：' + f[4].replace('img 1841 ', '', 1)
+               + '，与录入本残字吻合，按 1841 本补出，不加括号。')
+        rows.append((f[0], m.start(), loc, pg, esc(f[2]), esc(f[3]), '1841 本吻合', esc(why)))
+
+    def key(r):
+        s = r[0]
+        return (0, int(s), r[1]) if s.isdigit() else ((-1 if s == 'calamy' else 1), 0, r[1])
+    rows.sort(key=key)
+    out = ['<table class="hc-conjtab">',
+           '<tr><th>#</th><th>位置</th><th>录入本原样</th><th>现在作</th><th>把握</th><th>依据</th></tr>']
+    for i, (slug, o, loc, pg, tcp, now, grade, why) in enumerate(rows, 1):
+        why = re.sub(r'（PA(\d+)）', r'（第 \1 页）', why)
+        why = re.sub(r'PA(\d+) ', r'1841 本第 \1 页作 ', why)
+        out.append(f'<tr><td>{i}</td><td><a href="{{{{ site.baseurl }}}}/hutcheson/{BOOK_ID}/{pg}/">{loc}</a></td>'
+                   f'<td><code>{tcp}</code></td><td>{now}</td><td class="hc-grade">{grade}</td><td>{why}</td></tr>')
+    out.append('</table>')
+    return '\n'.join(out), len(rows)
+
+
 def build_index(pages):
     out = ['---', 'layout: hutcheson-book', f'book_id: {BOOK_ID}',
            f'book_name: "{BOOK_NAME}"', f'title: "{BOOK_NAME}"',
@@ -274,16 +362,27 @@ def build_index(pages):
                '\u201cReprinted from the Edition of 1657\u201d; Google Books, British Library copy), keeping the 1657 spelling; '
                '(3) where neither applies, from the context or the cited source. Readings of the third kind that the '
                'evidence does not fix are shown <span class="hc-conj">[in brackets]</span>: they are editorial conjectures, '
-               'not the words of the 1657 edition (22 places). Four illegible punctuation marks absent from the 1841 reprint, and one apparently stray letter, '
-               'have been dropped. The EarlyPrint machine-filled readings were checked and not used.</p>')
+               'not the words of the 1657 edition. Every one of the last 29 illegible marks is listed with its evidence in the table below. '
+               'The EarlyPrint machine-filled readings were checked and not used.</p>')
     out.append('<p class="hc-note-zh"><b>文本说明。</b>本书据 EEBO-TCP A45241，即 1657 年伦敦初版（剑桥大学图书馆藏本缩微胶片）的人工录入本，保留原书拼写与斜体，长 ſ 作 s。'
                '录入本有 838 处胶片上读不出的字，依证据强弱分三步补出：① 本书自身用词只容一种读法的；'
                '② 逐处对照 1841 年伦敦 T. Ward 重印本（扉页注明「据 1657 年版重印」，大英图书馆藏本）的页面影像判读，拼写仍按 1657 年；'
                '③ 以上都无从判定的，据上下文或所引出处推补。'
-               '<b>凡用 <span class="hc-conj">[方括号]</span> 另色标出的，都是编者推补，不是 1657 年原书的文字</b>，共 22 处，鼠标移上去可见说明；'
-               '另有 4 处录入本标为「认不清的标点」、而 1841 年本该处并无标点的，按 1841 年本删去，另 1 处疑为衍文的单字亦删去，均记录在案；'
-               '其中卡拉米序里一处希腊文无从推断，只注明「原书希腊字不可辨」。'
+               '<b>凡用 <span class="hc-conj">[方括号]</span> 另色标出的，都是编者推补，不是 1657 年原书的文字</b>；鼠标移上去可见说明。'
+               '这最后一步怎么补的，下表逐条交代。'
                'EarlyPrint 项目的机器补字经比对错误较多，未采用。逐条依据见 <code>hutcheson_raw/john/PROVENANCE.md</code>。</p>')
+    tab, n = conj_table(pages)
+    out.append(f'<h3 class="hc-conjhead">最后 29 个缺字记号逐条说明（共 {n} 个位置）</h3>')
+    out.append('<p class="hc-note-zh">前两步（本书用词、1841 年本影像）补完之后，录入本里还剩 29 个缺字记号，分布在下表 '
+               f'{n} 个位置（有的位置一个词里有两个记号）。下表逐条列出：在哪里、录入本原来是什么样（<code>•</code> 是一个读不出的字母，'
+               '<code>▪</code> 是一个认不清的标点，<code>〈Greek〉</code> 是一段没录的希腊文）、现在作什么、把握多大、依据是什么。'
+               '「把握」一栏：<b>1841 本吻合</b>＝重印本该处文字与残字完全吻合；<b>1841 本为据</b>＝按重印本补，残字无冲突；'
+               '<b>1841 本为据·字母不合</b>＝按重印本的词义补，但残字字母与之不完全相合，1657 年原拼法不明；'
+               '<b>经文为据</b>＝被引的经文原句；<b>回查正文</b>＝勘误表条目，按它所指的正文位置核出；'
+               '<b>推断</b>＝没有直接证据，据上下文推定；<b>无依据</b>＝无法推定，只作说明。'
+               '除「1841 本吻合」两条外，其余在正文里都以 <span class="hc-conj">[方括号]</span> 另色标出。'
+               '点「位置」可跳到该页。</p>')
+    out.append(tab)
     out.append('</div>')
     return '\n'.join(out) + '\n'
 
