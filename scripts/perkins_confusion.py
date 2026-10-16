@@ -5,7 +5,7 @@
 
 只列候选，不改字。落盘须逐条对 1604 影像（第 ③ 层）——印本自身的排印错（`religon`）
 也会被列出来，那是原书原样，不改。
-混淆对取录入员读 1604 罗马体最常混的：ſ/f、c/e、n/u、m/rn、i/l、h/b、t/r。
+混淆对取录入员读 1604 罗马体最常混的：ſ/f（双向：f 录成 s 也有，通读第 1 章发现 `insringe`）、c/e、n/u、m/rn、i/l、h/b、t/r。
 """
 import collections
 import json
@@ -16,7 +16,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import perkins_common as pc  # noqa: E402
 
-PAIRS = [('f', 's'), ('c', 'e'), ('e', 'c'), ('n', 'u'), ('u', 'n'), ('rn', 'm'), ('m', 'rn'),
+PAIRS = [('f', 's'), ('s', 'f'), ('c', 'e'), ('e', 'c'), ('n', 'u'), ('u', 'n'), ('rn', 'm'), ('m', 'rn'),
          ('l', 'i'), ('i', 'l'), ('b', 'h'), ('h', 'b'), ('t', 'r'), ('r', 't'), ('o', 'e'), ('e', 'o')]
 
 
