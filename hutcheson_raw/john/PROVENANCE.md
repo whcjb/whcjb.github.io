@@ -91,6 +91,14 @@ TCP 标出的缺口 838 处：读不出的字母 946 个（`•`）、整词 35�
 
 ### 找过但用不了的
 
+- **EarlyPrint**（Northwestern / WashU，bitbucket `eads004/A45` 里的 A45241.xml，2026-10-16 查）：
+  在 TCP 文本上补了约 320 处缺字，但**不是对照影像校的**——与本书看过 1841 影像的 137 处
+  对比，24 处不合且错得离谱（`•wful`→awful〔影像 lawful〕、`•utable`→mutable〔sutable〕、
+  `ang•ed`→angled〔angered〕、`I• ••ay`→Ilklay〔If I say〕），是按字母模式自动猜的。
+  **不可作证据**，剩余 29 处它给的 suffer / for / Mediatours 等读数也不采。XML 里不标来源。
+- Amazon 上的 ProQuest「EEBO Editions」按需印本（ISBN 9781171258599）：翻印的是 TCP
+  所用的同一份缩微胶片，不多出信息。
+
 - IA 的 EEBO 影像集未收此书；IA 1971 Sovereign Grace / 1972 Banner of Truth 重印本借阅限制，
   全文与书内检索 403。
 
