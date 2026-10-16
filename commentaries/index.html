@@ -84,6 +84,8 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
   .cx-who-davenant{ border-left-color: #556b2f; }
   .cx-who-alexander { border-left-color: #7d2f2f; }
   .cx-who:hover { background: #f4efe2; }
+  .cx-who-go { float: right; font-size: 11.5px; font-weight: normal; color: #b0a68d; letter-spacing: .06em; }
+  .cx-who:hover .cx-who-go { color: var(--cx-primary); }
   .cx-who-name { font-size: 15px; color: var(--cx-primary); font-weight: 600; letter-spacing: .04em; }
   .cx-who-meta {
     font-family: 'Georgia', 'Times New Roman', serif; font-size: 11px;
@@ -242,14 +244,21 @@ description: 加尔文与马太亨利之外的历代改革宗注释——欧文�
       <div class="cx-roster">
         {%- for a in author_map -%}
         {%- unless a.id == "calvin" or a.id == "mhenry" -%}
-        <div class="cx-who cx-who-{{ a.id }}">
-          <div class="cx-who-name">{{ a.name }}</div>
-          <div class="cx-who-meta">{{ a.en }} · {{ a.years }}</div>
+        {%- comment -%} 左侧色标取该注释家书卷链接的主题色（_data 里的 c1），不再在 CSS 里逐家手写——
+          以前只写了六家，后加的司布真、达拉谟、约翰斯通、珀金斯都没有色标（用户截图）。{%- endcomment -%}
+        {%- assign who_c = "transparent" -%}
+        {%- for b in site.data.commentaries.books -%}{%- for l in b.links -%}
+          {%- if l.author == a.id and l.c1 -%}{%- assign who_c = l.c1 -%}{%- endif -%}
+        {%- endfor -%}{%- endfor -%}
+        <a class="cx-who cx-who-{{ a.id }}" href="{{ site.baseurl }}/commentaries/authors/{{ a.id }}/"
+           style="border-left-color: {{ who_c }};" title="{{ a.name }}生平">
+          <div class="cx-who-name">{{ a.name }}<span class="cx-who-go">生平 &rsaquo;</span></div>
+          <div class="cx-who-meta">{{ a.en }}{% if a.years != "" %} · {{ a.years }}{% endif %}</div>
           <div class="cx-who-work">
             《{{ a.work_cn }}》
             {%- if a.work_en != "" %}<em>{{ a.work_en }}</em>{% endif -%}
           </div>
-        </div>
+        </a>
         {%- endunless -%}
         {%- endfor -%}
       </div>

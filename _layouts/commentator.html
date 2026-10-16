@@ -1,0 +1,97 @@
+---
+layout: default
+---
+{%- comment -%}
+  「历代解经」注释家生平页（/commentaries/authors/<id>/）。
+  色板与 /commentaries/ 总目同源（cx- 变量照抄，改这里不波及那一页）。
+
+  front matter：author_id（对应 _data/commentaries.yml 的 authors[].id）。
+  姓名、英文名、生卒年、主题色、「本站收录」书目一律从 _data/commentaries.yml 取，
+  页面只写生平正文——新增一卷书重跑 build_commentaries_index.py，这里自动多一条。
+
+  生平正文的规矩：**只写查得到出处的事实**，各页末尾列资料来源；查不到的
+  （约翰斯通的生卒年）明说查不到，不凭印象补（feedback_no_fabrication）。
+{%- endcomment -%}
+
+{%- assign me = site.data.commentaries.authors | where: "id", page.author_id | first -%}
+{%- assign c0 = "#2c4a3e" -%}{%- assign c1 = "#3d6152" -%}
+{%- for b in site.data.commentaries.books -%}{%- for l in b.links -%}
+  {%- if l.author == page.author_id and l.c1 -%}{%- assign c0 = l.c0 -%}{%- assign c1 = l.c1 -%}{%- endif -%}
+{%- endfor -%}{%- endfor -%}
+
+<div class="cb-wrap" style="--cb-c0: {{ c0 }}; --cb-c1: {{ c1 }};">
+  <div class="container" style="padding-top: 70px;">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+        <div class="cb-back"><a href="{{ site.baseurl }}/commentaries/">&larr; 历代解经</a></div>
+
+        <header class="cb-hero">
+          <h1>{{ me.name }}</h1>
+          <p class="cb-en">{{ me.en }}{% if me.years != "" %} · {{ me.years }}{% endif %}</p>
+          {% if page.tagline %}<p class="cb-tag">{{ page.tagline }}</p>{% endif %}
+        </header>
+
+        <article class="cb-body">
+          {{ content }}
+        </article>
+
+        <section class="cb-works">
+          <h2>本站收录</h2>
+          <ul>
+          {%- for b in site.data.commentaries.books -%}{%- for l in b.links -%}
+            {%- if l.author == page.author_id -%}
+            <li><a href="{{ site.baseurl }}{{ l.path }}"><span class="cb-wk-cn">《{{ l.title_cn }}》</span>
+              {%- if l.title_en and l.title_en != "" %}<span class="cb-wk-en">{{ l.title_en }}</span>{% endif -%}</a></li>
+            {%- endif -%}
+          {%- endfor -%}{%- endfor -%}
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.cb-wrap { background: #faf7f0; padding-bottom: 60px;
+  --cb-ink: #3a342c; --cb-light: #8a8275; --cb-rule: #e2d9c3; }
+.cb-wrap .cb-back { margin: 18px 0 18px; font-size: 13px; font-family: Georgia, serif; }
+.cb-wrap .cb-back a { color: var(--cb-c1); text-decoration: none; }
+.cb-wrap .cb-back a:hover { text-decoration: underline; }
+.cb-wrap .cb-hero {
+  background: linear-gradient(135deg, var(--cb-c0) 0%, var(--cb-c1) 100%);
+  color: #fff; border-radius: 6px; padding: 32px 28px 26px; text-align: center; margin-bottom: 30px;
+}
+.cb-wrap .cb-hero h1 { margin: 0 0 8px; font-size: 30px; font-weight: 600; letter-spacing: .12em;
+  font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', serif; }
+.cb-wrap .cb-en { margin: 0; font-family: Georgia, serif; font-size: 15px; opacity: .9; }
+.cb-wrap .cb-tag { margin: 12px 0 0; font-size: 14px; opacity: .85; letter-spacing: .04em; }
+.cb-wrap .cb-body {
+  font-family: 'Source Han Serif SC', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+  font-size: 16.5px; line-height: 1.95; color: var(--cb-ink);
+}
+.cb-wrap .cb-body h2, .cb-wrap .cb-works h2 {
+  font-size: 17px; font-weight: 600; letter-spacing: .14em; color: var(--cb-c1);
+  border-bottom: 1px solid var(--cb-rule); padding-bottom: 7px; margin: 34px 0 14px;
+}
+.cb-wrap .cb-body p { margin: 0 0 14px; text-align: justify; }
+.cb-wrap .cb-body ul { padding-left: 1.2em; }
+.cb-wrap .cb-body li { margin: 4px 0; }
+.cb-wrap .cb-body em { font-family: Georgia, serif; }
+.cb-wrap .cb-body .cb-src { font-size: 13px; color: var(--cb-light); line-height: 1.8; }
+.cb-wrap .cb-body .cb-src a { color: var(--cb-light); }
+.cb-wrap .cb-timeline { list-style: none; padding: 0 !important; border-left: 2px solid var(--cb-rule); margin-left: 4px; }
+.cb-wrap .cb-timeline li { position: relative; padding: 2px 0 6px 18px; margin: 0; }
+.cb-wrap .cb-timeline li::before { content: ""; position: absolute; left: -6px; top: 12px;
+  width: 10px; height: 10px; border-radius: 50%; background: var(--cb-c1); }
+.cb-wrap .cb-timeline b { font-family: Georgia, serif; color: var(--cb-c1); margin-right: 8px; }
+.cb-wrap .cb-works ul { list-style: none; padding: 0; margin: 0; }
+.cb-wrap .cb-works li { margin: 0 0 8px; }
+.cb-wrap .cb-works a { display: block; padding: 11px 15px; background: #fdfbf6; border: 1px solid var(--cb-rule);
+  border-left: 3px solid var(--cb-c1); text-decoration: none; color: var(--cb-ink); }
+.cb-wrap .cb-works a:hover { background: #f4efe2; }
+.cb-wrap .cb-wk-cn { font-size: 15px; }
+.cb-wrap .cb-wk-en { display: block; font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #b0a68d; margin-top: 2px; }
+@media (max-width: 767px) { .cb-wrap .cb-hero h1 { font-size: 24px; } .cb-wrap .cb-body { font-size: 16px; } }
+</style>
