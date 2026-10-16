@@ -135,8 +135,8 @@ def match(ids):
             L = [gc.fold(w) for w in A[:h]]
             R = [gc.fold(w) for w in A[h:]]
         else:
-            L = [gc.fold(w) for w in s['left'][-8:]]
-            R = [gc.fold(w) for w in s['right'][:8]]
+            L = [gc.fold(w) for w in s['left'][-12:]]
+            R = [gc.fold(w) for w in s['right'][:12]]
         frac = int(s['facs']) * 2 / 755
         out = {}
         for ed in EDS:
@@ -147,22 +147,29 @@ def match(ids):
                 b = vote(lv[leaf], L, R)
                 if b and (best is None or b[0] > best[0]):
                     best = (b[0], leaf, b[1], b[2])
-            if not best or best[0] < 3:
+            if not best or best[0] < MIN_SCORE:
                 continue
             sc, leaf, lj, rj = best
             ws = lv[leaf]
             if note:
-                ay = ws[lj]['y']
-                body = [w for w in ws if w['w'] > 0]
-                xs = sorted(w['x'] for w in body)
-                bl, br = xs[len(xs) // 10], sorted(w['x'] + w['w'] for w in body)[len(xs) * 9 // 10]
-                near = [w for w in ws if abs(w['y'] - ay) < 600]
-                nl = sum(1 for w in near if w['x'] + w['w'] < bl + 30)
-                nr = sum(1 for w in near if w['x'] > br - 30)
-                W = max(w['x'] + w['w'] for w in ws) + 200
-                xa, xb = (max(0, bl - 950), bl + 300) if nl >= nr else (br - 300, br + 950)
-                out[ed] = {'leaf': leaf, 'score': sc, 'mid': f'(margin {"L" if nl >= nr else "R"})',
-                           'box': [xa, ay - 300, xb, ay + 380], 'native': True}
+                # 页已由正文锚点定下；旁注在页上的位置用**旁注自己的词**找
+                # （只用正文行的 y 去猜，左右栏、上下行都常错——ed_009~012 几乎全空）
+                nw = [gc.fold(w) for w in s['left'] + s['right'] if len(gc.fold(w)) >= 4]
+                bestn = None
+                for lf in (leaf - 1, leaf, leaf + 1):
+                    if not (0 <= lf < len(lv)):
+                        continue
+                    pts = [lv[lf][j] for k in nw for j in hits(lv[lf], k)]
+                    if len(pts) >= max(1, min(2, len(nw))) and (bestn is None or len(pts) > len(bestn[1])):
+                        bestn = (lf, pts)
+                if not bestn:
+                    continue
+                lf, pts = bestn
+                ys = sorted(w['y'] for w in pts)
+                xs = sorted(w['x'] for w in pts)
+                cy, cx = ys[len(ys) // 2], xs[len(xs) // 2]
+                out[ed] = {'leaf': lf, 'score': sc + len(pts), 'mid': f'(note words {len(pts)})',
+                           'box': [cx - 500, cy - 260, cx + 700, cy + 420], 'native': True}
             else:
                 mid = ws[lj + 1:rj]
                 span = ws[max(0, lj - 3):rj + 4]
@@ -189,6 +196,8 @@ def fetch(ed, leaf):
 
 
 ONLY = set()
+# 实测 3–4 分的匹配大半落到别段（ed_004 五条错四条），收紧到 5
+MIN_SCORE = 5
 
 
 def sheets(ids, per=4, width=1500):
@@ -218,8 +227,11 @@ def sheets(ids, per=4, width=1500):
                 cv2.putText(head, f"#{i} {s['kind']} {'NOTE ' if s['in_note'] else ''}{gc.ascii_safe(s['tcp'])[:115]}",
                             (6, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.68, 0, 2)
                 rows.append(head)
-            for ed, v in res[str(gid[0])].items():
-                if ONLY and ed not in ONLY:
+            cand = res[str(gid[0])]
+            # 只出分最高的那一版：同一处两版都看是重复劳动
+            top = max(cand, key=lambda e: cand[e]['score'])
+            for ed, v in cand.items():
+                if ed != top or (ONLY and ed not in ONLY):
                     continue
                 im = cv2.imread(str(fetch(ed, v['leaf'])), cv2.IMREAD_GRAYSCALE)
                 H, W = im.shape

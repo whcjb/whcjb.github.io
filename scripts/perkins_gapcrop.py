@@ -36,7 +36,7 @@ LOCS = RAW / 'gap_locs.json'
 ID = 'bim_early-english-books-1475-1640_a-commentarie-_perkins-william_1604'
 
 TOK = re.compile(r'•+|〈◊〉|〈…〉|〈Greek〉|▪')
-CTX = 6
+CTX = 12
 
 
 def fold(w):
