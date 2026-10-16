@@ -6,7 +6,6 @@ title: "附录 · 坡旅甲致腓立比人书"
 date: 2026-10-15 22:06
 prev_url: "/johnstone/philippians/zh/notes-4/"
 prev_label: "希腊文经文注释 · 第四章"
-en_url: "/johnstone/philippians/polycarp/"
 zh: true
 ---
 

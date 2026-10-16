@@ -160,11 +160,16 @@ def main(only=None):
         if k + 1 < len(names):
             fm += [f'next_url: "/johnstone/philippians/zh/{names[k + 1]}/"',
                    f'next_label: "{info[names[k + 1]]["label"]}"']
-        fm += [f'en_url: "/johnstone/philippians/{sec}/"', 'zh: true', '---']
+        # 章节页不放英文入口：英文版只从首页进（用户 2026-10-16 定）
+        fm += ['zh: true', '---']
         path.write_text('\n'.join(fm) + '\n\n' + pg['body'] + '\n', encoding='utf-8')
         written += 1
 
-    (OUT / 'index.html').write_text(build_index(names, info), encoding='utf-8')
+    # 中文目录就是这本书的首页 /johnstone/philippians/；英文目录在 /en/。
+    (EN / 'index.html').write_text(build_index(names, info), encoding='utf-8')
+    old_idx = OUT / 'index.html'
+    if old_idx.exists():
+        old_idx.unlink()
     print(f'发布中文 {written} 篇（已译共 {len(names)}/{len(ORDER)}），'
           f'date 取自译完时刻 {kept} 篇 → {OUT}')
 
@@ -182,7 +187,7 @@ def build_index(names, info):
            f'book_name: "{BOOK_NAME_ZH}"',
            'author: "罗伯特·约翰斯通（Robert Johnstone），1875"',
            'edition: "《腓立比书讲章：释经与实践》· 爱丁堡 William Oliphant，1875"',
-           f'title: "{BOOK_NAME_ZH}"', 'en_url: "/johnstone/philippians/"',
+           f'title: "{BOOK_NAME_ZH}"', 'en_url: "/johnstone/philippians/en/"',
            'zh: true', '---', '']
     for group, slugs in GROUPS:
         slugs = [s for s in slugs if s in names]

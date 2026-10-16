@@ -287,7 +287,10 @@ def main():
     if a.apply:
         META.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n',
                         encoding='utf-8')
-        (OUT / 'index.html').write_text(build_index(pages), encoding='utf-8')
+        # 书的首页（/johnstone/philippians/）是中文目录，由 publish_johnstone_zh.py
+        # 生成；英文目录落在 /en/，从中文首页的「English edition」进入（用户 2026-10-16 定）。
+        (OUT / 'en').mkdir(exist_ok=True)
+        (OUT / 'en' / 'index.html').write_text(build_index(pages), encoding='utf-8')
 
     print(f'{"写入" if a.apply else "试跑"} {wrote} 篇 → {OUT}', file=sys.stderr)
     for pg in pages:
@@ -310,10 +313,8 @@ def build_index(pages):
     out = ['---', 'layout: johnstone-book', f'book_id: {BOOK_ID}',
            f'book_name: "{BOOK_NAME}"', f'author: "{AUTHOR}"',
            f'edition: "{EDITION}"',
-           'title: "Johnstone on Philippians"']
-    if (OUT / 'zh' / 'index.html').exists():
-        out.append(f'zh_url: "/johnstone/{BOOK_ID}/zh/"')
-    out += ['---', '']
+           'title: "Johnstone on Philippians"',
+           f'zh_url: "/johnstone/{BOOK_ID}/"', '---', '']
     for group, slugs in GROUPS:
         slugs = [s for s in slugs if s in by]
         if not slugs:

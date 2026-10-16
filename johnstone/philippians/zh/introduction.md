@@ -8,7 +8,6 @@ prev_url: "/johnstone/philippians/zh/preface/"
 prev_label: "序言"
 next_url: "/johnstone/philippians/zh/1/"
 next_label: "第一讲 · 称呼与问安"
-en_url: "/johnstone/philippians/introduction/"
 zh: true
 ---
 

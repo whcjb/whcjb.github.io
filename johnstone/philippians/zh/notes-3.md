@@ -8,7 +8,6 @@ prev_url: "/johnstone/philippians/zh/notes-2/"
 prev_label: "希腊文经文注释 · 第二章"
 next_url: "/johnstone/philippians/zh/notes-4/"
 next_label: "希腊文经文注释 · 第四章"
-en_url: "/johnstone/philippians/notes-3/"
 zh: true
 ---
 

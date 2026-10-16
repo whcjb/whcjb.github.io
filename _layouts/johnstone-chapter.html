@@ -28,8 +28,9 @@ layout: default
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
       <div class="jh-chrome">
-        <a href="{{ site.baseurl }}/johnstone/{{ page.book_id }}/{% if page.zh %}zh/{% endif %}">&larr; {{ page.book_name }}</a>
-        {%- comment -%} 中文页自带 en_url；英文页有对应中文版才出 zh_url，免得点进 404。{%- endcomment -%}
+        <a href="{{ site.baseurl }}/johnstone/{{ page.book_id }}/{% unless page.zh %}en/{% endunless %}">&larr; {{ page.book_name }}</a>
+        {%- comment -%} 首页（/johnstone/philippians/）是中文目录，英文目录在 /en/。中文章节页
+          不放英文入口（英文版只从首页进，用户 2026-10-16 定）；英文页有对应中文版才出 zh_url。{%- endcomment -%}
         {% if page.zh %}{% if page.en_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.en_url }}">English &rarr;</a>{% endif %}
         {% else %}{% if page.zh_url %}<a class="jh-lang" href="{{ site.baseurl }}{{ page.zh_url }}">中文版 &rarr;</a>{% endif %}{% endif %}
       </div>

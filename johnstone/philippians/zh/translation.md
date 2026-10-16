@@ -8,7 +8,6 @@ prev_url: "/johnstone/philippians/zh/30/"
 prev_label: "第三十讲 · 基督徒的慷慨及其赏赐"
 next_url: "/johnstone/philippians/zh/notes-1/"
 next_label: "希腊文经文注释 · 第一章"
-en_url: "/johnstone/philippians/translation/"
 zh: true
 ---
 

@@ -8,7 +8,6 @@ prev_url: "/johnstone/philippians/zh/notes-3/"
 prev_label: "希腊文经文注释 · 第三章"
 next_url: "/johnstone/philippians/zh/polycarp/"
 next_label: "附录 · 坡旅甲致腓立比人书"
-en_url: "/johnstone/philippians/notes-4/"
 zh: true
 ---
 
