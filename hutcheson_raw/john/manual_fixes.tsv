@@ -1,7 +1,7 @@
 # 由 hutcheson_gapfill.py 从 gap_decisions.tsv 导出，勿手改；手工判读另加在文件末尾 MANUAL 段之后
 1	2	nee•s	needs	lex:needs×62
 1	3	sinne•s	sinners	lex:sinners×233
-1	4	A•ts,	Acts,	lex:acts×99
+1	4	A•ts,	Arts,	img 1841 PA14 "all the light of arts, sciences, and inventions"（复查语料补字：原补 Acts 错，残字 A•ts 合 Arts）
 1	8	e••th,	earth,	lex:earth×108
 1	14	•amb	Lamb	ctx:the lamb of×8
 1	18	Nathan•el	Nathaneel	lex:nathaneel×30
