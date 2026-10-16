@@ -323,6 +323,87 @@ def match():
           f'B {sum(r.get("stream") == ".b" for r in hit)}）', file=sys.stderr)
 
 
+def relocate():
+    """第二轮定位：未定位 / 锚点覆盖低的，按同篇前后已定位缺字的页码夹出候选页
+    （±1 页），在这几页的两套词流里逐位置算「左文 + 右文」与窗口的相似度，取最高者。
+    三词组精确命中做不到时（两侧都有 OCR 读坏的词）靠这一轮。结果写回 witness_locs.json，
+    标 `relocated: true`，判读图上照样逐条看图定夺。"""
+    locs = json.loads((RAW / 'witness_locs.json').read_text(encoding='utf-8'))
+    streams = [Stream(''), Stream('.b')]
+    pids = json.loads((W / 'pids.json').read_text())
+    order = {p: i for i, p in enumerate(pids)}
+    by_slug = collections.defaultdict(list)
+    for r in locs:
+        if 'wit' in r and r['score'] >= 0.5:
+            by_slug[r['slug']].append((r['ord'], order.get(r['pid'], 0)))
+    n_new = 0
+    for r in locs:
+        if 'wit' in r and r['score'] >= 0.5:
+            continue
+        known = sorted(by_slug.get(r['slug'], []))
+        before = [p for o, p in known if o < r['ord']]
+        after = [p for o, p in known if o > r['ord']]
+        if before or after:
+            lo = (before[-1] if before else after[0]) - 1
+            hi = (after[0] if after else before[-1]) + 1
+        else:
+            lo, hi = 0, len(pids) - 1
+        if hi - lo > 12:
+            continue
+        cand_pages = set(pids[max(0, lo):hi + 1])
+        L = [fold(w) for w in r['left'] if not TOK.search(w) and fold(w)]
+        R = [fold(w) for w in r['right'] if not TOK.search(w) and fold(w)]
+        if len(L) + len(R) < 6:
+            continue
+        best = None
+        for st in streams:
+            idx = [k for k, w in enumerate(st.ws) if w['pid'] in cand_pages]
+            if not idx:
+                continue
+            a0, a1 = idx[0], idx[-1]
+            for k in range(a0, a1):
+                # 窗口：左文 len(L) 词 + 缺口 0–3 词 + 右文 len(R) 词，三种缺口宽度都试
+                for gap in (0, 1, 2, 3):
+                    wl = st.keys[k:k + len(L)]
+                    wr = st.keys[k + len(L) + gap:k + len(L) + gap + len(R)]
+                    sl = SequenceMatcher(None, wl, L, autojunk=False).ratio()
+                    sr = SequenceMatcher(None, wr, R, autojunk=False).ratio()
+                    sc = min(sl, sr)
+                    if not best or sc > best[0]:
+                        best = (sc, st, k + len(L), k + len(L) + gap)
+        if not best or best[0] < 0.35:
+            # 单侧兜底：1841 在缺字一侧改写了句子（`so the original also b•` → `as the original…`），
+            # 两侧不可能同时对上；只用一侧找，门槛提高。裁出来的图照样逐条看。
+            one = None
+            for st in streams:
+                idx = [k for k, w in enumerate(st.ws) if w['pid'] in cand_pages]
+                if not idx:
+                    continue
+                for k in range(idx[0], idx[-1]):
+                    for side, seq in (('L', L), ('R', R)):
+                        if len(seq) < 5:
+                            continue
+                        win = st.keys[k:k + len(seq)]
+                        sc = SequenceMatcher(None, win, seq, autojunk=False).ratio()
+                        if not one or sc > one[0]:
+                            pos = k + len(seq) if side == 'L' else max(0, k - 1)
+                            one = (sc, st, pos, pos)
+            if one and one[0] >= 0.6:
+                best = (0.35, one[1], one[2], one[3])
+        if best and best[0] >= 0.35:      # 每条都看图定夺，门槛只用来挡明显无关的位置
+            sc, st, i, j = best
+            ws = st.ws
+            g = ws[min(i, len(ws) - 1)]
+            span = [x for x in range(max(0, i - 3), min(len(ws), j + 3)) if ws[x]['pid'] == g['pid']]
+            r.update(wit=' '.join(w['t'] for w in ws[i:j]), score=round(sc, 2), stream=st.name,
+                     pid=g['pid'], gy=g['y'], gx=g['x'], relocated=True,
+                     box=[min(ws[x]['x'] for x in span), min(ws[x]['y'] for x in span),
+                          max(ws[x]['x'] + ws[x]['w'] for x in span), max(ws[x]['y'] + ws[x]['h'] for x in span)])
+            n_new += 1
+    (RAW / 'witness_locs.json').write_text(json.dumps(locs, ensure_ascii=False, indent=0), encoding='utf-8')
+    print(f'第二轮定位 {n_new} 处', file=sys.stderr)
+
+
 # ── judge ────────────────────────────────────────────────────────────
 DEC = RAW / 'gap_decisions_witness.tsv'
 ROMAN = {'i': 1, 'v': 5, 'x': 10, 'l': 50, 'c': 100}
@@ -459,6 +540,13 @@ def sheets(only=None):
             if ln and not ln.startswith('#'):
                 f = ln.split('\t')
                 reviewed.add((f[0], int(f[1])))
+    fixed_keys = set()
+    mf = RAW / 'manual_fixes.tsv'
+    if mf.exists():
+        for ln in mf.read_text(encoding='utf-8').splitlines():
+            if ln and not ln.startswith('#'):
+                f = ln.split('\t')
+                fixed_keys.add((f[0], int(f[1])))
     sh = W / 'sheets'
     sh.mkdir(exist_ok=True)
     for f in sh.glob(f'{only or "all"}_*.jpg'):
@@ -478,12 +566,14 @@ def sheets(only=None):
             continue
         if only == 'todo' and rec.get('score', 0) < 0.5:   # 锚点覆盖低的十有八九是错位
             continue
+        if only == 'rest' and (rec['slug'], rec['ord']) in fixed_keys:
+            continue
         items.append((n, rec, d))
     rows, idx = [], []
     for n, rec, d in items:
         head = Image.new('L', (width, 64), 255)
         dr = ImageDraw.Draw(head)
-        ctx = ' '.join(rec['left'][-6:]) + ' [[' + rec['tcp'] + ']] ' + ' '.join(rec['right'][:6])
+        ctx = ' '.join(rec['left'][-7:]) + ' [[' + rec['tcp'] + ']] ' + ' '.join(rec['right'][:7])
         dr.text((6, 4), f"#{n} {rec['slug']}  {ctx}"[:150], font=font, fill=0)
         dr.text((6, 34), f"→ {d[0]}    {d[1]}"[:150], font=font, fill=90)
         rows.append(np.array(head))
@@ -495,8 +585,8 @@ def sheets(only=None):
             (a0, a1), (b0, b1) = _split_cols(im)
             c0, c1 = (0, a1 + 12) if cx < a1 else (max(0, b0 - 12), im.shape[1])
             # 锚点框可能跨栏、跨段（#333 框高 4000px，缩下来看不清）：框太高就以缺字词为中心裁
-            if y1 - y0 > 260 and 'gy' in rec:
-                y0, y1 = rec['gy'] - 90, rec['gy'] + 120
+            if 'gy' in rec and (y1 - y0 > 260 or only == 'rest'):
+                y0, y1 = (rec['gy'] - 150, rec['gy'] + 170) if only == 'rest' else (rec['gy'] - 90, rec['gy'] + 120)
                 cx = rec['gx']
                 c0, c1 = (0, a1 + 12) if cx < a1 else (max(0, b0 - 12), im.shape[1])
             crop = im[max(0, y0 - 45):min(im.shape[0], y1 + 45), c0:c1]
@@ -521,12 +611,13 @@ def sheets(only=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('cmd', choices=['fetch', 'ocr', 'build', 'match', 'judge', 'sheets'])
-    ap.add_argument('--only', choices=['auto', 'pending', 'todo'])
+    ap.add_argument('cmd', choices=['fetch', 'ocr', 'build', 'match', 'judge', 'sheets', 'relocate'])
+    ap.add_argument('--only', choices=['auto', 'pending', 'todo', 'rest'])
     a = ap.parse_args()
     if a.cmd == 'sheets':
         return sheets(a.only)
-    {'fetch': fetch, 'ocr': ocr, 'build': build, 'match': match, 'judge': judge}[a.cmd]()
+    {'fetch': fetch, 'ocr': ocr, 'build': build, 'match': match, 'judge': judge,
+     'relocate': relocate}[a.cmd]()
 
 
 if __name__ == '__main__':

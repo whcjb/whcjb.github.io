@@ -175,8 +175,9 @@ def main():
     # 他版证人（1841 Ward 重印本）：语料判不了的那些，按位置裁出 1841 页图**人工逐条看过**
     # 的结论（gap_review_1841.tsv，hutcheson_review.py 录入）一并导出。judge 的自动判读
     # 只是预填值，不直接落盘。语料档已判的不被覆盖。
-    wit = RAW / 'gap_review_1841.tsv'
-    if wit.exists():
+    for wit in (RAW / 'gap_review_1841.tsv', RAW / 'gap_review_ctx.tsv'):
+        if not wit.exists():
+            continue
         have = {(r[0], int(r[1])) for r in done}
         for ln in wit.read_text(encoding='utf-8').splitlines():
             if not ln or ln.startswith('#'):
@@ -184,7 +185,7 @@ def main():
             f = ln.split('\t')
             if f[3] != '?' and (f[0], int(f[1])) not in have:
                 done.append((f[0], int(f[1]), f[2], f[3], f[4]))
-        print(f'  并入他版判读后共 {len(done)} 条', file=sys.stderr)
+    print(f'  并入复核表后共 {len(done)} 条', file=sys.stderr)
     if a.apply:
         DEC.write_text('# slug\tord\ttcp_word\t判读(?=不判)\t证据\n'
                        + '\n'.join('\t'.join(map(str, r)) for r in rows) + '\n', encoding='utf-8')

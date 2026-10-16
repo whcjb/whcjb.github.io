@@ -21,12 +21,12 @@
 2	2	cur•ant	?	w1841:读数 'current' 与残字 'cur•ant' 不相容或候选多
 2	4	••ing	?	w1841:读数非单词 ''
 2	5	no•	nor	w1841:nor→语料nor×621
-2	6	wi•h	?	w1841:锚点覆盖低 0.38
-2	9	bo•h;	?	w1841:未定位
+2	6	wi•h	?	w1841:锚点覆盖低 0.35
+2	9	bo•h;	?	w1841:锚点覆盖低 0.38
 3	0	f•r	for	w1841:for→语料for×6433
 3	1	•e•	new	w1841:new→语料new×147
 3	3	•rawn	?	w1841:锚点覆盖低 0.38
-3	4	b•	?	w1841:未定位
+3	4	b•	?	w1841:锚点覆盖低 0.35
 3	5	•••th,	?	w1841:未定位
 3	6	•and	?	w1841:读数 'and' 与残字 '•and' 不相容或候选多
 3	7	•utable;	?	w1841:未定位
@@ -39,12 +39,12 @@
 3	19	underval•ing	undervaluing	w1841:undervaluing→语料undervaluing×2
 3	20	c•rie	?	w1841:读数 'carry' 与残字 'c•rie' 不相容或候选多
 3	22	h•d	had	w1841:had→语料had×1455
-3	24	fa•re	?	w1841:未定位
+3	24	fa•re	?	w1841:锚点覆盖低 0.38
 3	26	b•d	bed	w1841:bed→语料bed×18
 3	27	in•upportable,	?	w1841:读数非单词 ''
 4	0	〈◊〉	the	w1841:the（整词，拼写按本书语料回映）
-4	1	〈…〉	?	w1841:未定位
-4	2	Davi•	?	w1841:未定位
+4	1	〈…〉	house of	w1841:house of（整词，拼写按本书语料回映）
+4	2	Davi•	?	w1841:读数非单词 'house of'
 4	3	〈…〉	heathen Nations	w1841:heathen nations,（整词，拼写按本书语料回映）
 4	4	N••••s,	?	w1841:读数非单词 'heathen nations,'
 4	5	pos•e•••	?	w1841:读数非单词 ''
@@ -52,13 +52,13 @@
 4	9	impo•t,	?	w1841:读数 'imports' 与残字 'impo•t' 不相容或候选多
 4	11	•ight	?	w1841:读数 'cight' 与残字 '•ight' 不相容或候选多
 4	16	•i•h,	?	w1841:读数 'faith' 与残字 '•i•h' 不相容或候选多
-5	0	Sabbath-brea•er,	?	w1841:未定位
+5	0	Sabbath-brea•er,	?	w1841:类型待人工（'Sabbath-brea•er' ← ''）
 5	2	34.•3.	34.23.	w1841:xxxiv. 23. | | 3,（罗马数字换算）
 5	3	〈◊〉	am	w1841:am（整词，拼写按本书语料回映）
 5	4	〈◊〉	is	w1841:is（整词，拼写按本书语料回映）
 5	5	Th•n	?	w1841:读数非单词 '12. Then'
 5	8	〈◊〉	for	w1841:for（整词，拼写按本书语料回映）
-5	9	〈◊〉	?	w1841:未定位
+5	9	〈◊〉	for	w1841:for（整词，拼写按本书语料回映）
 5	10	l•st,	lost,	w1841:lost→语料lost×107
 5	11	compe•rance;	?	w1841:读数非单词 'the godly;'
 5	12	sha•l	shall	w1841:shall→语料shall×726
@@ -89,10 +89,10 @@
 6	31	do••ed	doated	w1841:doated→语料doated×10
 6	32	i•	it	w1841:it→语料it×6848
 6	33	5•.	52.	w1841:|| ver. 52, 3.（罗马数字换算）
-6	34	f•r,	?	w1841:未定位
+6	34	f•r,	?	w1841:锚点覆盖低 0.35
 6	36	〈◊〉	?	w1841:读数长度不合 'always prove'
 6	37	••ove	?	w1841:读数非单词 'always prove'
-6	38	he••e	?	w1841:未定位
+6	38	he••e	?	w1841:读数非单词 'therefore doth he'
 6	41	w••k•••	?	w1841:读数非单词 'weak or'
 6	44	ye•	yet	w1841:yet→语料yet×2397
 6	45	b•th	both	w1841:both→语料both×311
@@ -104,7 +104,7 @@
 7	4	impo•t.	?	w1841:读数非单词 'import. . 3.'
 7	5	M•ns	?	w1841:读数非单词 "3. Men's"
 7	8	gro•er	?	w1841:读数 'grosser' 与残字 'gro•er' 不相容或候选多
-7	9	•o	?	w1841:锚点覆盖低 0.29
+7	9	•o	?	w1841:读数非单词 ''
 7	10	ye•,	yea,	w1841:yea→语料yea×131
 7	11	c•vil.	?	w1841:读数非单词 'cavil ;'
 7	12	•eap	reap	w1841:reap→语料reap×29
@@ -127,14 +127,14 @@
 8	25	M•n,	?	w1841:读数非单词 'xxiii. 13.) 2. Men,'
 8	26	ca•ping,	carping,	w1841:carping→语料carping×11
 8	29	be•co•s	?	w1841:读数 'beacons' 与残字 'be•co•s' 不相容或候选多
-8	35	sl•t•er	?	w1841:未定位
+8	35	sl•t•er	?	w1841:读数非单词 'or flatter'
 8	39	progenitou•s	?	w1841:读数非单词 'progenitors | if'
 8	40	••en	seen	w1841:seen→语料seen×163
 8	41	progeniton•s,	?	w1841:读数非单词 'progenitors, lt'
 8	42	G•d;	?	w1841:读数非单词 'God ;'
 8	43	l•ve	love	w1841:love→语料love×728
 8	44	tain•ed	?	w1841:读数 'tainted' 与残字 'tain•ed' 不相容或候选多
-8	45	carp•••in:	?	w1841:未定位
+8	45	carp•••in:	?	w1841:锚点覆盖低 0.35
 8	47	sh•weth	sheweth	w1841:sheweth→语料sheweth×79
 8	48	f•ile	?	w1841:读数 'fil' 与残字 'f•ile' 不相容或候选多
 8	50	•e	?	w1841:读数非单词 '2. He'
@@ -142,7 +142,7 @@
 8	52	so•th,	?	w1841:读数 'forth' 与残字 'so•th' 不相容或候选多
 8	53	〈◊〉	clears	w1841:clears（整词，拼写按本书语料回映）
 8	54	p••ves	?	w1841:锚点覆盖低 0.38
-8	56	••e	?	w1841:锚点覆盖低 0.12
+8	56	••e	?	w1841:锚点覆盖低 0.35
 8	57	pu•s•er	pursuer	w1841:pursuer→语料pursuer×2
 8	60	ha••e	?	w1841:读数 'balf' 与残字 'ha••e' 不相容或候选多
 9	0	Th•	?	w1841:读数 "I'he" 与残字 'Th•' 不相容或候选多
@@ -153,13 +153,13 @@
 9	10	〈◊〉	?	w1841:读数长度不合 ''
 9	11	w•ll	will	w1841:will→语料will×2615
 9	12	he•e,	here,	w1841:here→语料here×817
-9	13	impost•r	?	w1841:锚点覆盖低 0.12
+9	13	impost•r	?	w1841:锚点覆盖低 0.38
 9	15	•ut-weary	?	w1841:类型待人工（'•ut-weary' ← 'outweary'）
 9	17	i•	is	w1841:is→语料is×7899
 9	18	•mprove	improve	w1841:improve→语料improve×5
 9	19	de•re	?	w1841:读数 'desire' 与残字 'de•re' 不相容或候选多
 9	20	them▪	?	w1841:类型待人工（'them▪' ← 'them ;'）
-9	22	▪	?	w1841:未定位
+9	22	▪	?	w1841:锚点覆盖低 0.35
 10	0	Chapter▪	?	w1841:类型待人工（'Chapter▪' ← ''）
 10	1	ordinan•y	?	w1841:读数 'ordinary' 与残字 'ordinan•y' 不相容或候选多
 10	2	vo•ce	?	w1841:读数 'voice' 与残字 'vo•ce' 不相容或候选多 ['voice', 'voyce']
@@ -169,12 +169,12 @@
 10	7	p•••.	?	w1841:读数非单词 'ff _ &.'
 10	8	•••ded	?	w1841:读数非单词 ''
 10	9	•efined	?	w1841:读数 'refuted' 与残字 '•efined' 不相容或候选多
-10	11	•or	?	w1841:未定位
+10	11	•or	?	w1841:锚点覆盖低 0.35
 10	13	•n	an	w1841:an→语料an×974
 10	15	w•y,	way,	w1841:way→语料way×912
 10	16	sl•nder	slander	w1841:slander（逐字母相容）
 10	18	wi•l	will	w1841:will→语料will×2615
-10	20	ca•ped	?	w1841:未定位
+10	20	ca•ped	?	w1841:锚点覆盖低 0.35
 10	22	d•ssatisfied	?	w1841:未定位
 10	23	La•?	?	w1841:读数非单词 'law ?” | 8.'
 10	24	•4	24	w1841:xxiv. 44,（罗马数字换算）
@@ -190,7 +190,7 @@
 11	2	•.	?	w1841:读数非单词 '43,44. 3.'
 11	3	•f	of	w1841:of→语料of×16468
 11	4	he•s,	hers,	w1841:hers（逐字母相容）
-11	6	ba•k	?	w1841:锚点覆盖低 0.25
+11	6	ba•k	?	w1841:锚点覆盖低 0.38
 11	7	pre•enting	presenting	w1841:Presenting→语料presenting×1
 11	8	(a•	(as	w1841:as→语料as×5659
 11	9	•eedy	needy	w1841:needy→语料needy×22
@@ -203,7 +203,7 @@
 11	18	••ay,	?	w1841:读数非单词 'I say,'
 11	20	•ith	?	w1841:读数 'meet' 与残字 '•ith' 不相容或候选多
 11	21	de•mably;	?	w1841:读数非单词 ''
-11	22	•e	?	w1841:锚点覆盖低 0.14
+11	22	•e	?	w1841:读数非单词 ''
 11	23	be•s	?	w1841:读数 'bears' 与残字 'be•s' 不相容或候选多
 11	24	3•.	32.	w1841:21, 32. Po. body ast（罗马数字换算）
 11	25	•o	?	w1841:读数非单词 '}} so'
@@ -220,22 +220,22 @@
 11	37	fi••e	finde	w1841:find→语料finde×281
 11	38	••ise	raise	w1841:raise→语料raise×55
 11	39	p•••••tly.	presently.	w1841:presently→语料presently×18
-11	40	o••	?	w1841:锚点覆盖低 0.17
+11	40	o••	?	w1841:锚点覆盖低 0.35
 11	41	f••	?	w1841:读数非单词 'eajures for bis'
-11	42	pe•••e,	?	w1841:锚点覆盖低 0.33
+11	42	pe•••e,	?	w1841:锚点覆盖低 0.35
 11	43	a•e	?	w1841:读数非单词 'are as'
 11	44	〈◊〉	?	w1841:读数长度不合 'are as'
 11	45	•s	as	w1841:as→语料as×5659
 11	46	•••m	from	w1841:from→语料from×2316
 11	50	mea•	mean	w1841:mean→语料mean×156
 11	51	〈◊〉.	9.	w1841:9.（整词，拼写按本书语料回映）
-11	52	〈◊〉	?	w1841:未定位
-11	53	•••e	?	w1841:锚点覆盖低 0.29
-11	54	•p,	?	w1841:锚点覆盖低 0.43
-11	55	o•	?	w1841:未定位
-11	56	〈◊〉	?	w1841:未定位
+11	52	〈◊〉	?	w1841:锚点覆盖低 0.35
+11	53	•••e	?	w1841:锚点覆盖低 0.35
+11	54	•p,	?	w1841:锚点覆盖低 0.35
+11	55	o•	?	w1841:锚点覆盖低 0.35
+11	56	〈◊〉	?	w1841:锚点覆盖低 0.35
 11	59	〈…〉	recorded	w1841:recorded.（整词，拼写按本书语料回映）
-11	60	•••rate	?	w1841:未定位
+11	60	•••rate	?	w1841:读数非单词 ''
 11	61	•er.	?	w1841:读数非单词 'ver. 21, :'
 11	65	•e,	?	w1841:读数非单词 'assaults one'
 11	66	p••••sse	possesse	w1841:possess→语料possesse×5
@@ -260,7 +260,7 @@
 11	91	tr••••e	?	w1841:读数非单词 'trouble sweet to'
 11	92	〈◊〉	?	w1841:读数长度不合 'trouble sweet to'
 11	93	sympath•zer.	?	w1841:锚点覆盖低 0.4
-11	94	A••••	?	w1841:未定位
+11	94	A••••	?	w1841:读数非单词 '7. Albeit Chrbt'
 11	95	cu•e	?	w1841:锚点覆盖低 0.4
 11	96	•e	he	w1841:he→语料he×8190
 11	97	afflicte•	afflicted	w1841:afflicted→语料afflicted×31
@@ -283,8 +283,8 @@
 11	115	here▪	?	w1841:类型待人工（'here▪' ← 'here?'）
 11	116	•ustle	?	w1841:读数非单词 'justle ons'
 11	117	〈◊〉	?	w1841:读数长度不合 ''
-11	118	Ca•aphas	?	w1841:锚点覆盖低 0.2
-11	119	•axing	?	w1841:锚点覆盖低 0.2
+11	118	Ca•aphas	?	w1841:锚点覆盖低 0.35
+11	119	•axing	?	w1841:锚点覆盖低 0.4
 11	120	••o	?	w1841:读数非单词 'alao Acts, iv.'
 11	121	•hey	they	w1841:they→语料they×6419
 11	122	•he	the	w1841:the→语料the×20558
@@ -300,8 +300,8 @@
 12	1	•6.3,	?	w1841:数字对不上 'xxyi. 3—5,'
 12	5	••voury	savoury	w1841:savoury→语料savoury×2
 12	7	••ts,	?	w1841:读数非单词 ''
-12	8	sl•p;	?	w1841:锚点覆盖低 0.12
-12	9	ve•ing	?	w1841:未定位
+12	8	sl•p;	?	w1841:读数非单词 ''
+12	9	ve•ing	?	w1841:锚点覆盖低 0.35
 12	11	the•,	thee,	w1841:thee→语料thee×158
 12	12	hea•ing	hearing	w1841:hearing→语料hearing×60
 12	14	hi•	his	w1841:his→语料his×8092
@@ -313,7 +313,7 @@
 12	26	••t	?	w1841:读数非单词 'te get gory'
 12	27	•l•ay	?	w1841:读数非单词 'te get gory'
 12	29	•h••	that	w1841:that→语料that×8944
-12	31	I•	?	w1841:未定位
+12	31	I•	?	w1841:读数非单词 'about | OTe'
 12	32	w•ak	weak	w1841:weak→语料weak×118
 12	33	s••ing	?	w1841:读数非单词 ''
 12	34	i•.	?	w1841:读数非单词 ''
@@ -358,8 +358,8 @@
 12	92	G•e•k	Greek	w1841:Greek→语料greek×10
 12	95	G•d:	God:	w1841:God→语料god×1881
 12	97	men•	mens	w1841:men’s→语料mens×222
-12	99	b•t	?	w1841:锚点覆盖低 0.14
-12	100	•ather	?	w1841:锚点覆盖低 0.12
+12	99	b•t	?	w1841:锚点覆盖低 0.35
+12	100	•ather	?	w1841:锚点覆盖低 0.35
 12	101	g••e	?	w1841:读数非单词 'generation. 3.'
 12	102	••i•n.	?	w1841:读数非单词 'generation. 3.'
 12	106	a•d	and	w1841:and→语料and×19756
@@ -379,15 +379,15 @@
 13	5	•igh	high	w1841:high→语料high×136
 13	6	cho•cest	?	w1841:未定位
 13	7	mar•e	marre	w1841:mar→语料marre×9
-13	8	•est	?	w1841:锚点覆盖低 0.12
-13	9	exigents▪	?	w1841:未定位
+13	8	•est	?	w1841:锚点覆盖低 0.38
+13	9	exigents▪	?	w1841:锚点覆盖低 0.38
 13	10	••pe,	?	w1841:读数非单词 ''
 13	11	pa••e;	passe;	w1841:pass→语料passe×54
 13	16	h•	?	w1841:读数非单词 'he looked'
 13	17	lo•ked	?	w1841:读数非单词 'he looked'
 13	19	S•••s	?	w1841:读数 'sects' 与残字 'S•••s' 不相容或候选多
 13	20	•wful	?	w1841:读数 'wfal' 与残字 '•wful' 不相容或候选多
-13	21	o•	?	w1841:锚点覆盖低 0.25
+13	21	o•	?	w1841:锚点覆盖低 0.35
 13	23	m•••wayes	?	w1841:读数 'ranaways' 与残字 'm•••wayes' 不相容或候选多
 13	24	wi••	will	w1841:will→语料will×2615
 13	25	〈◊〉	rash	w1841:rash（整词，拼写按本书语料回映）
@@ -395,7 +395,7 @@
 13	28	i•;	it;	w1841:it→语料it×6848
 13	30	sl•sh	?	w1841:读数 'flesh' 与残字 'sl•sh' 不相容或候选多
 13	31	budding•	?	w1841:未定位
-13	32	••e	?	w1841:锚点覆盖低 0.29
+13	32	••e	?	w1841:锚点覆盖低 0.35
 13	35	g••s	?	w1841:读数 'neice' 与残字 'g••s' 不相容或候选多
 13	36	ven•ed	vented	w1841:vented→语料vented×2
 13	37	•ame	same	w1841:same→语料same×313
@@ -429,31 +429,31 @@
 16	22	a•cension.	?	w1841:读数非单词 'Christ by bis'
 16	23	c•st	cast	w1841:cast→语料cast×142
 16	24	infi•mities,	infirmities,	w1841:infirmities→语料infirmities×48
-16	32	•o	?	w1841:锚点覆盖低 0.25
+16	32	•o	?	w1841:读数非单词 'he fa to'
 16	33	wo•k	work	w1841:work→语料work×515
 16	37	hea•ers	hearers	w1841:hearers→语料hearers×51
-16	39	Ch•ist	?	w1841:锚点覆盖低 0.12
+16	39	Ch•ist	?	w1841:锚点覆盖低 0.35
 16	40	•heir	?	w1841:读数非单词 'their CO'
-16	43	outst•ip	?	w1841:未定位
+16	43	outst•ip	?	w1841:读数非单词 'the 8. y'
 16	44	sen•e	sense	w1841:sense→语料sense×161
 16	45	a•e	are	w1841:are→语料are×2778
 16	46	••d	and	w1841:and→语料and×19756
-16	48	verse•	?	w1841:锚点覆盖低 0.25
+16	48	verse•	?	w1841:读数非单词 ''
 16	50	go••	?	w1841:锚点覆盖低 0.38
 16	51	〈◊〉	departure	w1841:departure.（整词，拼写按本书语料回映）
 16	52	•••e.	?	w1841:读数 'departure' 与残字 '•••e' 不相容或候选多
 16	53	receive▪	?	w1841:类型待人工（'receive▪' ← 'receive.'）
-16	54	j•y	?	w1841:锚点覆盖低 0.29
+16	54	j•y	?	w1841:锚点覆盖低 0.35
 16	55	f•ll	fall	w1841:fall→语料fall×115
 16	56	f•rther	further	w1841:further→语料further×229
-16	57	•nd•••akes	?	w1841:锚点覆盖低 0.12
+16	57	•nd•••akes	?	w1841:锚点覆盖低 0.38
 17	0	praye•	?	w1841:读数非单词 'Y gf'
 17	1	〈◊〉	21	w1841:21,（整词，拼写按本书语料回映）
 17	2	•2.	22.	w1841:22,（罗马数字换算）
 17	5	•e	he	w1841:he→语料he×8190
 17	6	row•	?	w1841:读数 'rouse' 与残字 'row•' 不相容或候选多
 17	12	w•en	when	w1841:when→语料when×1658
-17	14	••e	?	w1841:未定位
+17	14	••e	?	w1841:读数非单词 ''
 17	16	give•	gives	w1841:gives→语料gives×74
 17	17	I•	?	w1841:读数非单词 'OF JOHN. 333 | 9. It'
 17	20	tha•	?	w1841:读数非单词 '“ that'
@@ -475,20 +475,20 @@
 17	61	le••	?	w1841:读数 'let' 与残字 'le••' 不相容或候选多
 17	62	b•r	bar	w1841:bar→语料bar×2
 18	0	them▪	?	w1841:未定位
-18	1	o•t	?	w1841:未定位
+18	1	o•t	?	w1841:锚点覆盖低 0.4
 18	2	wi•h	?	w1841:锚点覆盖低 0.25
 18	3	14.•3.)	14.23.)	w1841:xiv. 23,)（罗马数字换算）
-18	4	thing•,	?	w1841:锚点覆盖低 0.12
-18	5	i•	?	w1841:锚点覆盖低 0.25
-18	6	••e	?	w1841:锚点覆盖低 0.14
+18	4	thing•,	?	w1841:锚点覆盖低 0.35
+18	5	i•	?	w1841:读数非单词 ''
+18	6	••e	?	w1841:读数 'might' 与残字 '••e' 不相容或候选多
 18	10	exemp•ing	?	w1841:读数 'exempting' 与残字 'exemp•ing' 不相容或候选多
 18	12	coun•el	counsel	w1841:counsel→语料counsel×47
 18	13	F•r	For	w1841:For→语料for×6433
 18	15	Ob•diah	?	w1841:读数 'Obadiah' 与残字 'Ob•diah' 不相容或候选多
-18	17	5.2•.	?	w1841:未定位
+18	17	5.2•.	?	w1841:锚点覆盖低 0.4
 18	19	tak•	?	w1841:读数非单词 'take ; it ill'
 18	20	〈◊〉	?	w1841:读数长度不合 'take ; it ill'
-18	21	〈◊〉	?	w1841:锚点覆盖低 0.12
+18	21	〈◊〉	?	w1841:读数长度不合 ''
 18	22	•art	tart	w1841:tart→语料tart×1
 18	24	O•,	Or,	w1841:or→语料or×1672
 18	25	pre•••ing	?	w1841:读数 'preferring' 与残字 'pre•••ing' 不相容或候选多
@@ -522,13 +522,13 @@
 20	9	u•most,	utmost,	w1841:utmost→语料utmost×9
 20	13	•e•ling,	dealing,	w1841:dealing→语料dealing×91
 20	16	••e,	?	w1841:读数非单词 ''
-20	19	fu••••e	?	w1841:未定位
+20	19	fu••••e	?	w1841:锚点覆盖低 0.35
 20	20	•loosing,	?	w1841:读数非单词 'loosing, Matt, xviii. 18.'
 20	22	O•	?	w1841:读数非单词 'a, or'
 21	0	wilf•ll	wilfull	w1841:wilful→语料wilfull×1
 21	1	sl•ps,	slips,	w1841:slips→语料slips×1
 21	3	••u•e	?	w1841:读数 'refute' 与残字 '••u•e' 不相容或候选多
-21	5	sp•ke	?	w1841:锚点覆盖低 0.12
+21	5	sp•ke	?	w1841:锚点覆盖低 0.38
 21	6	L•st	?	w1841:读数非单词 '24. 32. Lest'
 calamy	0	〈Greek〉,	?	w1841:未定位
 calamy	1	〈Greek〉.	?	w1841:未定位

@@ -321,7 +321,7 @@
 ],
 "gy": 1762,
 "gx": 668,
-"wit": "unprepared",
+"wit": "",
 "score": 0.43,
 "stream": ".b",
 "pid": "PA22",
@@ -329,8 +329,9 @@
 0,
 1762,
 856,
-1825
-]
+1805
+],
+"relocated": true
 },
 {
 "slug": "1",
@@ -839,8 +840,8 @@
 ],
 "gy": 1674,
 "gx": 207,
-"wit": "and",
-"score": 0.38,
+"wit": "",
+"score": 0.35,
 "stream": "A",
 "pid": "PA38",
 "box": [
@@ -848,7 +849,8 @@
 1616,
 828,
 1713
-]
+],
+"relocated": true
 },
 {
 "slug": "2",
@@ -873,6 +875,19 @@
 "and",
 "the",
 "word"
+],
+"wit": "matters, being compared",
+"score": 0.38,
+"stream": "A",
+"pid": "PA39",
+"gy": 2018,
+"gx": 548,
+"relocated": true,
+"box": [
+96,
+2018,
+727,
+2091
 ]
 },
 {
@@ -973,9 +988,9 @@
 "that",
 "faith"
 ],
-"gy": 1570,
-"gx": 946,
-"wit": "drawn",
+"gy": 1542,
+"gx": 1264,
+"wit": "",
 "score": 0.38,
 "stream": ".b",
 "pid": "PA41",
@@ -983,8 +998,9 @@
 826,
 1542,
 1362,
-1605
-]
+1603
+],
+"relocated": true
 },
 {
 "slug": "3",
@@ -1009,6 +1025,19 @@
 "born-from",
 "above.",
 "7."
+],
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA40",
+"gy": 1374,
+"gx": 1208,
+"relocated": true,
+"box": [
+1025,
+1374,
+1442,
+1414
 ]
 },
 {
@@ -1122,9 +1151,9 @@
 "of",
 "the"
 ],
-"gy": 986,
-"gx": 978,
-"wit": "",
+"gy": 602,
+"gx": 1350,
+"wit": "with these",
 "score": 0.38,
 "stream": "A",
 "pid": "PA44",
@@ -1133,7 +1162,8 @@
 602,
 1501,
 1020
-]
+],
+"relocated": true
 },
 {
 "slug": "3",
@@ -1454,6 +1484,19 @@
 "state",
 "of",
 "Christ"
+],
+"wit": "partly",
+"score": 0.38,
+"stream": "A",
+"pid": "PA57",
+"gy": 877,
+"gx": 526,
+"relocated": true,
+"box": [
+79,
+877,
+684,
+947
 ]
 },
 {
@@ -1590,6 +1633,19 @@
 "when",
 "〈…〉",
 "N••••s,"
+],
+"wit": "house of",
+"score": 0.57,
+"stream": ".b",
+"pid": "PA59",
+"gy": 1486,
+"gx": 672,
+"relocated": true,
+"box": [
+126,
+1486,
+739,
+1551
 ]
 },
 {
@@ -1615,6 +1671,19 @@
 "〈…〉",
 "N••••s,",
 "with"
+],
+"wit": "house of",
+"score": 0.67,
+"stream": ".b",
+"pid": "PA59",
+"gy": 1486,
+"gx": 672,
+"relocated": true,
+"box": [
+126,
+1486,
+739,
+1551
 ]
 },
 {
@@ -1899,6 +1968,19 @@
 "death,",
 "when",
 "they"
+],
+"wit": "",
+"score": 0.75,
+"stream": "A",
+"pid": "PA72",
+"gy": 1239,
+"gx": 853,
+"relocated": true,
+"box": [
+853,
+1212,
+1187,
+1279
 ]
 },
 {
@@ -2109,6 +2191,19 @@
 "Father",
 "hath",
 "given"
+],
+"wit": "for",
+"score": 0.88,
+"stream": "A",
+"pid": "PA84",
+"gy": 2033,
+"gx": 1313,
+"relocated": true,
+"box": [
+920,
+2033,
+1481,
+2091
 ]
 },
 {
@@ -3244,6 +3339,19 @@
 "to",
 "wit,",
 "in"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA126",
+"gy": 2111,
+"gx": 992,
+"relocated": true,
+"box": [
+860,
+1956,
+1566,
+2147
 ]
 },
 {
@@ -3343,6 +3451,19 @@
 "in",
 "himselfe",
 "they"
+],
+"wit": "therefore doth he",
+"score": 0.5,
+"stream": ".b",
+"pid": "PA127",
+"gy": 2011,
+"gx": 286,
+"relocated": true,
+"box": [
+64,
+2008,
+702,
+2067
 ]
 },
 {
@@ -3764,18 +3885,19 @@
 "this,",
 "as"
 ],
-"gy": 1511,
-"gx": 214,
-"wit": "so",
-"score": 0.29,
-"stream": ".b",
+"gy": 1536,
+"gx": 73,
+"wit": "",
+"score": 0.57,
+"stream": "A",
 "pid": "PA143",
 "box": [
-71,
+73,
 1507,
-697,
-1626
-]
+698,
+1598
+],
+"relocated": true
 },
 {
 "slug": "7",
@@ -4602,6 +4724,19 @@
 "deliver",
 "the",
 "truth"
+],
+"wit": "or flatter",
+"score": 0.57,
+"stream": ".b",
+"pid": "PA174",
+"gy": 2093,
+"gx": 1000,
+"relocated": true,
+"box": [
+842,
+2074,
+1503,
+2127
 ]
 },
 {
@@ -4849,6 +4984,19 @@
 "Prophets",
 "were",
 "dead,"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA179",
+"gy": 1236,
+"gx": 555,
+"relocated": true,
+"box": [
+555,
+1205,
+715,
+1269
 ]
 },
 {
@@ -5097,18 +5245,19 @@
 "their",
 "exception,"
 ],
-"gy": 1296,
-"gx": 118,
-"wit": "having sufficiently informed",
+"gy": 1818,
+"gx": 500,
+"wit": "matter, and proves",
 "score": 0.38,
-"stream": "A",
-"pid": "PA279",
+"stream": ".b",
+"pid": "PA181",
 "box": [
-118,
-1272,
-738,
-1335
-]
+77,
+1818,
+728,
+1910
+],
+"relocated": true
 },
 {
 "slug": "8",
@@ -5134,18 +5283,19 @@
 "it",
 "he"
 ],
-"gy": 334,
-"gx": 262,
-"wit": "bear witness, and who is",
-"score": 0.12,
-"stream": ".b",
-"pid": "PA427",
+"gy": 1437,
+"gx": 972,
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA180",
 "box": [
-262,
-306,
-793,
-368
-]
+842,
+1403,
+1465,
+1476
+],
+"relocated": true
 },
 {
 "slug": "8",
@@ -5541,18 +5691,19 @@
 "his",
 "calling"
 ],
-"gy": 600,
-"gx": 659,
-"wit": "time; for so did the",
-"score": 0.12,
+"gy": 933,
+"gx": 847,
+"wit": "they did indeed",
+"score": 0.38,
 "stream": "A",
-"pid": "PA342",
+"pid": "PA194",
 "box": [
-199,
-600,
-816,
-668
-]
+847,
+908,
+1469,
+976
+],
+"relocated": true
 },
 {
 "slug": "9",
@@ -5762,6 +5913,19 @@
 "pardon",
 "it,",
 "and"
+],
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA200",
+"gy": 738,
+"gx": 895,
+"relocated": true,
+"box": [
+895,
+685,
+1402,
+760
 ]
 },
 {
@@ -6120,6 +6284,19 @@
 "had",
 "built",
 "or"
+],
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA209",
+"gy": 1408,
+"gx": 1578,
+"relocated": true,
+"box": [
+777,
+1408,
+1582,
+1491
 ]
 },
 {
@@ -6293,6 +6470,19 @@
 "and",
 "take",
 "hold"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA214",
+"gy": 1890,
+"gx": 581,
+"relocated": true,
+"box": [
+298,
+1890,
+824,
+1929
 ]
 },
 {
@@ -6850,18 +7040,19 @@
 "yet",
 "they"
 ],
-"gy": 1301,
-"gx": 1119,
+"gy": 560,
+"gx": 614,
 "wit": "",
-"score": 0.25,
+"score": 0.38,
 "stream": "A",
-"pid": "PA218",
+"pid": "PA219",
 "box": [
-892,
-1301,
-1347,
-1340
-]
+99,
+555,
+712,
+626
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -7331,18 +7522,19 @@
 "12",
 "Then"
 ],
-"gy": 530,
-"gx": 1270,
-"wit": "that tabernacle, Exodus, xl.",
-"score": 0.14,
-"stream": "A",
-"pid": "PA17",
+"gy": 395,
+"gx": 333,
+"wit": "",
+"score": 0.5,
+"stream": ".b",
+"pid": "PA223",
 "box": [
-878,
-529,
-1363,
-585
-]
+81,
+395,
+643,
+429
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -7950,8 +8142,8 @@
 ],
 "gy": 1280,
 "gx": 0,
-"wit": "| Se tee",
-"score": 0.17,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
 "pid": "PA228",
 "box": [
@@ -7959,7 +8151,8 @@
 1240,
 843,
 1325
-]
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -8023,17 +8216,18 @@
 "within"
 ],
 "gy": 1268,
-"gx": 527,
-"wit": "for bis people,",
-"score": 0.33,
+"gx": 623,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
 "pid": "PA228",
 "box": [
-0,
+436,
 1268,
 839,
 1325
-]
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -8280,6 +8474,19 @@
 "to",
 "•••e",
 "them"
+],
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA228",
+"gy": 1730,
+"gx": 225,
+"relocated": true,
+"box": [
+225,
+1672,
+843,
+1768
 ]
 },
 {
@@ -8306,18 +8513,19 @@
 "the",
 "very"
 ],
-"gy": 524,
-"gx": 902,
-"wit": "little",
-"score": 0.29,
+"gy": 1730,
+"gx": 266,
+"wit": "",
+"score": 0.35,
 "stream": "A",
-"pid": "PA105",
+"pid": "PA228",
 "box": [
-757,
-496,
-1369,
-552
-]
+225,
+1672,
+843,
+1768
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -8343,18 +8551,19 @@
 "dead",
 "to"
 ],
-"gy": 1742,
-"gx": 424,
-"wit": "up;",
-"score": 0.43,
+"gy": 1730,
+"gx": 348,
+"wit": "",
+"score": 0.35,
 "stream": "A",
 "pid": "PA228",
 "box": [
 225,
-1730,
-840,
+1672,
+843,
 1768
-]
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -8379,6 +8588,19 @@
 "exercise",
 "of",
 "infused"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA228",
+"gy": 1939,
+"gx": 408,
+"relocated": true,
+"box": [
+283,
+1935,
+844,
+1999
 ]
 },
 {
@@ -8404,6 +8626,19 @@
 "and",
 "misery,",
 "terrour,"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA228",
+"gy": 2055,
+"gx": 207,
+"relocated": true,
+"box": [
+207,
+1992,
+843,
+2085
 ]
 },
 {
@@ -8466,6 +8701,19 @@
 "only",
 "she",
 "exp•••••th"
+],
+"wit": "",
+"score": 0.6,
+"stream": "A",
+"pid": "PA231",
+"gy": 277,
+"gx": 610,
+"relocated": true,
+"box": [
+160,
+272,
+673,
+337
 ]
 },
 {
@@ -9354,7 +9602,8 @@
 1458,
 1323,
 1541
-]
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -9379,6 +9628,19 @@
 "cu•e",
 "the",
 "troubles"
+],
+"wit": "7. Albeit Chrbt",
+"score": 0.57,
+"stream": ".b",
+"pid": "PA231",
+"gy": 1512,
+"gx": 737,
+"relocated": true,
+"box": [
+735,
+1478,
+1071,
+1541
 ]
 },
 {
@@ -9407,16 +9669,17 @@
 ],
 "gy": 1515,
 "gx": 1145,
-"wit": "cure",
+"wit": "",
 "score": 0.4,
 "stream": ".b",
 "pid": "PA231",
 "box": [
-770,
+995,
 1478,
 1321,
-1571
-]
+1541
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -10219,18 +10482,19 @@
 "See",
 "1"
 ],
-"gy": 1266,
-"gx": 1212,
-"wit": "the nature",
-"score": 0.2,
-"stream": "A",
-"pid": "PA328",
+"gy": 1531,
+"gx": 798,
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA238",
 "box": [
-833,
-1266,
-1450,
-1326
-]
+228,
+1531,
+840,
+1623
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -10256,18 +10520,19 @@
 "Cor",
 "1.5."
 ],
-"gy": 1266,
-"gx": 1264,
-"wit": "nature of",
-"score": 0.2,
-"stream": "A",
-"pid": "PA328",
+"gy": 1531,
+"gx": 742,
+"wit": "may ap-",
+"score": 0.4,
+"stream": ".b",
+"pid": "PA238",
 "box": [
-833,
-1266,
-1450,
-1333
-]
+228,
+1531,
+840,
+1623
+],
+"relocated": true
 },
 {
 "slug": "11",
@@ -10848,18 +11113,19 @@
 "me",
 "ye"
 ],
-"gy": 438,
-"gx": 261,
-"wit": "without sin ;",
-"score": 0.12,
+"gy": 1698,
+"gx": 831,
+"wit": "",
+"score": 0.62,
 "stream": "A",
-"pid": "PA17",
+"pid": "PA245",
 "box": [
-101,
-414,
-718,
-481
-]
+831,
+1667,
+1377,
+1732
+],
+"relocated": true
 },
 {
 "slug": "12",
@@ -10884,6 +11150,19 @@
 "then",
 "they",
 "are"
+],
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA246",
+"gy": 1907,
+"gx": 490,
+"relocated": true,
+"box": [
+8,
+1907,
+628,
+2030
 ]
 },
 {
@@ -11304,6 +11583,19 @@
 "the",
 "praise",
 "of"
+],
+"wit": "about | OTe",
+"score": 0.5,
+"stream": ".b",
+"pid": "PA249",
+"gy": 1446,
+"gx": 651,
+"relocated": true,
+"box": [
+5,
+1446,
+721,
+1546
 ]
 },
 {
@@ -12934,18 +13226,19 @@
 "herein",
 "Christ"
 ],
-"gy": 1442,
-"gx": 725,
-"wit": "yet",
-"score": 0.14,
+"gy": 1471,
+"gx": 784,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
 "pid": "PA266",
 "box": [
-217,
-1442,
-834,
-1533
-]
+216,
+1471,
+831,
+1535
+],
+"relocated": true
 },
 {
 "slug": "12",
@@ -12971,18 +13264,19 @@
 "Christ",
 "is"
 ],
-"gy": 1941,
-"gx": 443,
-"wit": "at. 5. The pro - of",
-"score": 0.12,
-"stream": "A",
-"pid": "PA151",
+"gy": 1471,
+"gx": 784,
+"wit": "",
+"score": 0.35,
+"stream": ".b",
+"pid": "PA266",
 "box": [
-156,
-1931,
-730,
-1999
-]
+216,
+1471,
+831,
+1535
+],
+"relocated": true
 },
 {
 "slug": "12",
@@ -13699,18 +13993,19 @@
 "as",
 "may"
 ],
-"gy": 948,
-"gx": 727,
-"wit": "a 9 te opened ls rest",
-"score": 0.12,
+"gy": 890,
+"gx": 586,
+"wit": "members",
+"score": 0.38,
 "stream": "A",
-"pid": "PA279",
+"pid": "PA278",
 "box": [
-120,
-948,
-743,
-1043
-]
+296,
+885,
+840,
+921
+],
+"relocated": true
 },
 {
 "slug": "13",
@@ -13735,6 +14030,19 @@
 "what",
 "is",
 "understood"
+],
+"wit": "",
+"score": 0.38,
+"stream": ".b",
+"pid": "PA279",
+"gy": 2114,
+"gx": 214,
+"relocated": true,
+"box": [
+120,
+2088,
+739,
+2176
 ]
 },
 {
@@ -13985,8 +14293,8 @@
 ],
 "gy": 1935,
 "gx": 1018,
-"wit": "of",
-"score": 0.25,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
 "pid": "PA289",
 "box": [
@@ -13994,7 +14302,8 @@
 1910,
 1383,
 1989
-]
+],
+"relocated": true
 },
 {
 "slug": "13",
@@ -14268,17 +14577,18 @@
 "be"
 ],
 "gy": 1016,
-"gx": 1328,
-"wit": "are",
-"score": 0.29,
+"gx": 1275,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
 "pid": "PA290",
 "box": [
-860,
+1068,
 1016,
 1485,
-1111
-]
+1049
+],
+"relocated": true
 },
 {
 "slug": "13",
@@ -15513,18 +15823,19 @@
 "to",
 "the"
 ],
-"gy": 1153,
-"gx": 372,
-"wit": "method of curing",
-"score": 0.25,
+"gy": 1522,
+"gx": 282,
+"wit": "he fa to",
+"score": 0.5,
 "stream": ".b",
-"pid": "PA71",
+"pid": "PA339",
 "box": [
-84,
-1151,
-684,
-1214
-]
+236,
+1494,
+756,
+1613
+],
+"relocated": true
 },
 {
 "slug": "16",
@@ -15625,9 +15936,9 @@
 "repeating"
 ],
 "gy": 1375,
-"gx": 975,
+"gx": 845,
 "wit": "",
-"score": 0.12,
+"score": 0.35,
 "stream": ".b",
 "pid": "PA342",
 "box": [
@@ -15635,7 +15946,8 @@
 1350,
 1462,
 1440
-]
+],
+"relocated": true
 },
 {
 "slug": "16",
@@ -15697,6 +16009,19 @@
 "of",
 "the",
 "wicked,"
+],
+"wit": "the 8. y",
+"score": 0.5,
+"stream": ".b",
+"pid": "PA344",
+"gy": 1688,
+"gx": 1415,
+"relocated": true,
+"box": [
+842,
+1657,
+1459,
+1750
 ]
 },
 {
@@ -15834,18 +16159,19 @@
 "encouragements,",
 "concerning"
 ],
-"gy": 689,
-"gx": 1169,
-"wit": "verse,) after a preface, wherein",
-"score": 0.25,
-"stream": "A",
-"pid": "PA421",
+"gy": 1318,
+"gx": 608,
+"wit": "",
+"score": 0.5,
+"stream": ".b",
+"pid": "PA346",
 "box": [
-860,
-688,
-1407,
-740
-]
+378,
+1318,
+792,
+1397
+],
+"relocated": true
 },
 {
 "slug": "16",
@@ -15871,8 +16197,8 @@
 "to",
 "guard"
 ],
-"gy": 1486,
-"gx": 178,
+"gy": 1457,
+"gx": 392,
 "wit": "",
 "score": 0.38,
 "stream": ".b",
@@ -15880,9 +16206,10 @@
 "box": [
 178,
 1457,
-718,
-1521
-]
+567,
+1519
+],
+"relocated": true
 },
 {
 "slug": "16",
@@ -16019,18 +16346,19 @@
 "is",
 "a"
 ],
-"gy": 184,
-"gx": 686,
-"wit": "GOSPEI",
-"score": 0.29,
+"gy": 1517,
+"gx": 1326,
+"wit": "",
+"score": 0.35,
 "stream": "A",
-"pid": "PA367",
+"pid": "PA346",
 "box": [
-196,
-183,
-800,
-282
-]
+820,
+1486,
+1334,
+1553
+],
+"relocated": true
 },
 {
 "slug": "16",
@@ -16130,18 +16458,19 @@
 "giveth",
 "them"
 ],
-"gy": 692,
-"gx": 1041,
-"wit": "with thee ;’ whereby he not",
-"score": 0.12,
-"stream": "A",
-"pid": "PA199",
+"gy": 1837,
+"gx": 1019,
+"wit": "be",
+"score": 0.38,
+"stream": ".b",
+"pid": "PA347",
 "box": [
-739,
-691,
-1352,
-750
-]
+815,
+1835,
+1316,
+1914
+],
+"relocated": true
 },
 {
 "slug": "17",
@@ -16388,6 +16717,19 @@
 "the",
 "Father",
 "also;"
+],
+"wit": "",
+"score": 0.71,
+"stream": ".b",
+"pid": "PA352",
+"gy": 1311,
+"gx": 1111,
+"relocated": true,
+"box": [
+945,
+1311,
+1242,
+1346
 ]
 },
 {
@@ -16943,7 +17285,8 @@
 2220,
 611,
 2260
-]
+],
+"relocated": true
 },
 {
 "slug": "17",
@@ -17178,6 +17521,19 @@
 "Christ,",
 "v.",
 "38."
+],
+"wit": "",
+"score": 0.4,
+"stream": ".b",
+"pid": "PA372",
+"gy": 1655,
+"gx": 1067,
+"relocated": true,
+"box": [
+862,
+1600,
+1480,
+1690
 ]
 },
 {
@@ -17278,18 +17634,19 @@
 "his",
 "sufferings"
 ],
-"gy": 501,
-"gx": 1111,
-"wit": "seeth me no more,” not",
-"score": 0.12,
+"gy": 1164,
+"gx": 1150,
+"wit": "",
+"score": 0.35,
 "stream": ".b",
-"pid": "PA305",
+"pid": "PA374",
 "box": [
-758,
-501,
-1371,
-560
-]
+1011,
+1164,
+1348,
+1214
+],
+"relocated": true
 },
 {
 "slug": "18",
@@ -17315,18 +17672,19 @@
 "so",
 "they"
 ],
-"gy": 664,
-"gx": 207,
-"wit": "gathered together",
-"score": 0.25,
+"gy": 2194,
+"gx": 1301,
+"wit": "",
+"score": 0.62,
 "stream": ".b",
-"pid": "PA241",
+"pid": "PA374",
 "box": [
-51,
-647,
-592,
-725
-]
+845,
+2194,
+1399,
+2258
+],
+"relocated": true
 },
 {
 "slug": "18",
@@ -17352,18 +17710,19 @@
 "to",
 "wrong"
 ],
-"gy": 960,
-"gx": 749,
-"wit": "stop; but",
-"score": 0.14,
-"stream": "A",
-"pid": "PA249",
+"gy": 2224,
+"gx": 1266,
+"wit": "might",
+"score": 0.57,
+"stream": ".b",
+"pid": "PA374",
 "box": [
-749,
-928,
-1364,
-986
-]
+1107,
+2224,
+1461,
+2260
+],
+"relocated": true
 },
 {
 "slug": "18",
@@ -17536,6 +17895,19 @@
 "21.",
 "Learn,",
 "1."
+],
+"wit": "v. 22; 2",
+"score": 0.4,
+"stream": "A",
+"pid": "PA381",
+"gy": 1301,
+"gx": 1102,
+"relocated": true,
+"box": [
+947,
+1301,
+1347,
+1339
 ]
 },
 {
@@ -17636,18 +18008,19 @@
 "trick",
 "of"
 ],
-"gy": 662,
-"gx": 350,
-"wit": "people doated on him. Whence",
-"score": 0.12,
-"stream": "A",
-"pid": "PA155",
+"gy": 1944,
+"gx": 803,
+"wit": "",
+"score": 0.86,
+"stream": ".b",
+"pid": "PA385",
 "box": [
-105,
-662,
-733,
-759
-]
+803,
+1880,
+1387,
+1964
+],
+"relocated": true
 },
 {
 "slug": "18",
@@ -18881,6 +19254,19 @@
 "his",
 "shewing",
 "them"
+],
+"wit": "",
+"score": 0.35,
+"stream": "A",
+"pid": "PA421",
+"gy": 1759,
+"gx": 319,
+"relocated": true,
+"box": [
+140,
+1737,
+758,
+1804
 ]
 },
 {
@@ -19092,18 +19478,19 @@
 "Jesus",
 "said"
 ],
-"gy": 1572,
-"gx": 1320,
-"wit": "was thither, but",
-"score": 0.12,
-"stream": "A",
-"pid": "PA382",
+"gy": 1335,
+"gx": 772,
+"wit": "die,” whereas he",
+"score": 0.38,
+"stream": ".b",
+"pid": "PA438",
 "box": [
-860,
-1572,
-1365,
-1639
-]
+216,
+1333,
+830,
+1395
+],
+"relocated": true
 },
 {
 "slug": "21",
