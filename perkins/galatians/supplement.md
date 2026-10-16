@@ -9,6 +9,7 @@ prev_url: "/perkins/galatians/5-26/"
 prev_label: "Galatians 5:26"
 next_url: "/perkins/galatians/6-1/"
 next_label: "Galatians 6:1"
+zh_url: "/perkins/galatians/zh/supplement/"
 ---
 
 <div class="pk-title-page" markdown="1">
