@@ -9,6 +9,7 @@ prev_url: "/hutcheson/john/dedication/"
 prev_label: "The Epistle Dedicatory"
 next_url: "/hutcheson/john/argument/"
 next_label: "The Argument"
+zh_url: "/hutcheson/john/zh/reader/"
 ---
 
 ## To the READER.

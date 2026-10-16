@@ -7,8 +7,8 @@ subtitle: "致韦姆斯与巴克卢两位伯爵夫人"
 date: 2026-10-16 20:02
 prev_url: "/hutcheson/john/zh/calamy/"
 prev_label: "致基督徒读者"
-next_url: "/hutcheson/john/zh/1-1/"
-next_label: "约翰福音 1:1"
+next_url: "/hutcheson/john/zh/reader/"
+next_label: "致读者"
 en_url: "/hutcheson/john/dedication/"
 zh: true
 ---
