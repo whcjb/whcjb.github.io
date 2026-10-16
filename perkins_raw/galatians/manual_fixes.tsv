@@ -17,6 +17,8 @@ reader	2	Phil•m.	Philem.	#20 leaf - 1607 leaf 10
 reader	3	•8.	18.	#21 leaf - 1607 leaf 10：Philem. v. 18.
 reader	5	As•lepiodorus	Asclepiodorus	#23 leaf 10 img
 reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（1604 拼法）
+reader	7	Qu•rendo	Quarendo	#25 leaf - band 1604 leaf 12 勘误表
+reader	8	th•	ths	#26 leaf - band 1604 leaf 12 勘误表（Fault 栏印作 ths）
 1	1	•he	the	#28 leaf 20 img
 1	2	〈◊〉.	8. 28.	#29 leaf - 1607 leaf 20：Rom. 8. 28.
 1	3	Reuo•t,	Reuolt,	#30 leaf 32 img
@@ -57,7 +59,7 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 2	24	l•st	lost	#69 leaf 127 img 行段 leaf 127
 2	25	st•nding,	standing,	#70 leaf 127 img
 2	26	aduersa•ie,	aduersarie,	#71 leaf 129 img
-2	27	〈…〉	iu+	#72 leaf 130 img 影像 the word iu-｜stifie（行末断词），拼成 iustifie
+2	27	〈…〉stifie,	iustifie,	#72 leaf 130 img 影像 the word iu-｜stifie（行末断词），拼成 iustifie
 2	28	as••nded	ascended	#73 leaf 131 1607 leaf 117
 2	29	〈◊〉,	men,	#74 leaf 131 1607 leaf 117：gifts to men（弗 4:8）
 2	30	intercession•	intercession	#75 leaf 133 img
@@ -85,10 +87,12 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 3	16	Apostl〈…〉	Apostles:	#100 leaf 258 1607 leaf 227
 3	17	cleanse•th	cleanseth	#101 leaf 258 img
 3	18	〈…〉as	it was	#102 leaf 259 1607 leaf 228
+3	19	inward▪	inward.	#103 leaf 261 phrase 1607 leaf 230 + 1617 leaf 228（1604 leaf 261 墨渍）
 3	20	••pt.	nupt.	#104 leaf - 1607 leaf 231：Aug. de nupt. & concup.
 3	22	•3.	13.	#106 leaf - 1607 leaf 231：c. 13.（同条 l. 〈◊〉 的卷号 1607 无，仍挂起）
 3	24	pro•esse	pronesse	#108 leaf 265 img
 3	26	here••ke,	heretike,	#110 leaf 271 1607 leaf 239
+3	27	H▪	H.	#111 leaf 276 band 1604 leaf 276（the H. Ghost）
 3	28	seal•d	sealed	#112 leaf 277 img
 3	29	•0.	30.	#113 leaf 281 img 残 :0.；林前 1:30
 3	30	1•.	11.	#114 leaf 284 img 赛 11:9
@@ -98,6 +102,7 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 4	2	•ooke	tooke	#118 leaf 295 img
 4	3	vn•ted	vnited	#119 leaf 296 img
 4	4	•edde	redde	#120 leaf 296 img
+4	5	father•	father:	#121 leaf 306 phrase 1617 leaf 269（1604 leaf 306 标点处糊）
 4	6	〈◊〉	at	#122 leaf 324 1617 leaf 289
 4	7	•in	is	#123 leaf 325 1617 leaf 290
 4	8	(〈Greek〉)	(καιροὺς)	#124 leaf 326 greek 1604 leaf 326 + 1617（加 4:10）
@@ -122,7 +127,7 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 4	28	hypo••ites,	hypocrites,	#144 leaf 376 img
 4	29	no•	not	#145 leaf 376 img
 4	30	iust•fied	iustified	#146 leaf 376 img
-5	0	punis••	punish+	#147 leaf 378 img 行末 punish- ｜ ment，拼合
+5	0	punis••ment	punishment	#147 leaf 378 img 行末 punish- ｜ ment，拼合
 5	1	•o	to	#148 leaf 391 img
 5	2	lif•,	life,	#149 leaf 391 img
 5	3	•auour	fauour	#150 leaf 392 img
@@ -138,7 +143,7 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 5	13	•o	so	#160 leaf 402 img
 5	14	Phari•ies	Pharisies	#161 leaf 402 img
 5	15	•iot,	riot,	#162 leaf 404 img
-5	16	v•	vi+	#163 leaf 404 img 行末 vi ｜ ces.，无连字符，拼合
+5	16	v•ces.	vices.	#163 leaf 404 img 行末 vi ｜ ces.，无连字符，拼合
 5	17	A•han	Achan	#164 leaf 404 img
 5	18	Martyrs▪	Martyrs,	#165 leaf 404 img 逗号
 5	19	a••iance	affiance	#166 leaf 405 img
@@ -152,6 +157,7 @@ reader	6	〈…〉nne	begunne	#24 leaf 10 1607 leaf 11 begun + TCP 残字 nne（
 5	27	ber•aues	bereaues	#174 leaf 410 img
 5	28	ins•tion	insition	#175 leaf 412 img
 5	29	so•	soe	#176 leaf 414 img
+5	30	res〈…〉t	respect	#177 leaf 418 phrase 1604 leaf 418（resp- 可见）
 5	31	i•	if	#178 leaf 418 img 页边墨渍压住 f；i? 后接 by any occasion，只能是 if
 5	32	〈◊〉,	table,	#179 leaf 419 1617 leaf 373
 5	33	•ish,	+tish,	#180 leaf 420 img 行末 bru- ｜ tish,；+ 起头 = 与前一词拼合
@@ -203,10 +209,12 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	30	•orm.	Serm.	#236 leaf - 1607 leaf 443：De verb. Dom. Serm. 16.
 6	32	si•ister	sinister	#238 leaf 499 img
 6	33	admonitio•s	admonitions	#239 leaf 499 img
+6	34	Clo•,	Cloe,	#240 leaf - phrase 1604 leaf 499 + 1617 leaf 449
 6	35	le•t	lest	#241 leaf 500 img
 6	43	l•st	lest	#249 leaf 500 img
 6	44	Cato••,	Catoes,	#250 leaf 500 img
 6	45	sm••e	smite	#251 leaf 500 img
+6	46	o•le:	oyle:	#252 leaf 500 phrase 1604 leaf 500
 6	47	fistula•e,	fistulare,	#253 leaf 501 img
 6	48	th•	the	#254 leaf 501 1617 leaf 451
 6	49	vs•ion	vstion	#255 leaf 502 img
@@ -214,6 +222,7 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	51	2▪	2.	#257 leaf 503 1607 leaf 448：2. Kings 5. 13.
 6	52	〈◊〉.	5.	#258 leaf 503 1617 leaf 452：1. Tim. 5. 1.
 6	53	reprooued▪	reprooued,	#259 leaf 503 1617 leaf 452
+6	54	〈Greek〉,	ἢ ἑκοῦσα, ἢ ἀκοῦσα,	#260 leaf 503 phrase 1604 leaf 503 + 1607 leaf 448 + 1617 leaf 452 三版一致
 6	55	Cretian•,	Cretians,	#261 leaf 503 1617 leaf 453
 6	56	〈Greek〉,	ἀποτόμως,	#262 leaf 503 1617 leaf 453 影像清晰（多 1:13 ἀποτόμως）
 6	57	chas•isment	chastisment	#263 leaf 503 img
@@ -224,38 +233,52 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	62	causes▪	causes:	#268 leaf 505 img 冒号
 6	63	•wise	twise	#269 leaf 506 img
 6	64	reca•t	recant	#270 leaf 506 img
+6	65	〈Greek〉,	αὐτοκατάκριτος,	#271 leaf - phrase 1604 leaf 507? + 1607 leaf 451 + 1617 leaf 455（多 3:11）
 6	66	delay▪	delay:	#272 leaf 506 img 冒号
 6	67	pa•tie	partie	#273 leaf 506 img
 6	76	si▪	si+	#282 leaf 506 img 行末 si ｜ sters，拼合
 6	79	weep••	weepe:	#285 leaf 508 img
+6	80	them▪	them.	#286 leaf 508 phrase 1604 leaf 508
 6	81	•he	he	#287 leaf 508 img
 6	82	〈◊〉.	5.	#288 leaf 509 img
 6	87	no•	non	#293 leaf - 1617 leaf 458：Duro con duro non fa bon muro.
 6	88	〈…〉o.	muro.	#294 leaf - 1617 leaf 458
 6	89	mor•er	morter	#295 leaf 510 img
+6	96	•s,	ὡς,	#302 leaf - phrase 1617 leaf 462（希腊 ὡς）
+6	98	〈◊〉	a	#304 leaf 514 phrase 1604 leaf 514（i. a cōmandement）
 6	99	diuer•,	diuers,	#305 leaf - 1607 leaf 459
 6	102	n•we	newe	#308 leaf 515 img
 6	103	•eruent	feruent	#309 leaf 515 img
+6	104	4▪	4	#310 leaf 516 phrase 1604 leaf 516 影像 4 后无标点（他版改为 5.）
 6	105	th•s	thus	#311 leaf 516 img
+6	106	you▪	you,	#312 leaf 516 phrase 1607 leaf 460
 6	107	••se	life	#313 leaf 516 img（TCP 残字 se 实为 fe）
 6	108	inchoa•e	inchoate	#314 leaf 517 img
 6	109	falli•	fall in	#315 leaf 517 img 两词
+6	110	God▪	God,	#316 leaf 517 phrase 1617 leaf 465
 6	111	sinn•	sinne	#317 leaf 517 img
+6	112	vni•st	vniust	#318 leaf - phrase 1607 leaf 461
 6	113	wi••	wilt	#319 leaf 518 img
 6	114	book•	booke	#320 leaf 518 img
+6	117	t〈…〉	that	#323 leaf 520 phrase 1604 leaf 520 + 1617 leaf 468
 6	119	•esting,	iesting,	#325 leaf 522 img
 6	121	do•e	dote	#327 leaf 526 img
 6	125	ene•y	euery	#331 leaf 532 img
+6	130	to•e:	tome:	#336 leaf 539 phrase 1604 leaf 539（印本 bot-｜tome:；TCP 前一词录作 bot. 见 tcp_errata_seen）
 6	131	sand▪	sand-+	#337 leaf 539 img sand·blind 中间是连字符（sand-blind 半盲）
 6	132	conde••nation.	condemnation.	#338 leaf 539 img
+6	143	ta•ght,	taught,	#349 leaf 540 phrase 1617 leaf 485（1604 leaf 540 印作 tanght，u 倒排）
 6	144	th•	thy	#350 leaf 540 img
 6	147	th••	that	#353 leaf 541 img
 6	148	r•ther	rather	#354 leaf 541 img
+6	149	Sime•nites,	Simeonites,	#355 leaf 542 band 1604 leaf 542
 6	150	C•sbie	Cosbie	#356 leaf 542 img
+6	151	Madianitis•	Madianitish	#357 leaf 542 band 1604 leaf 542
 6	152	contrarieti•	contrarietie	#358 leaf 542 img
 6	153	〈Greek〉	ἁμάρτημα μνημονικὸν	#359 leaf 542 greek 1604 leaf 542
 6	154	innoc••ts,	innocents,	#360 leaf 542 img
 6	155	•ath	hath	#361 leaf 543 img
+6	156	•urie.	furie.	#362 leaf - phrase 1604 leaf 543 + 1617 leaf 489
 6	157	bodie▪	bodie;	#363 leaf 543 img 分号
 6	162	•osh.	Iosh.	#368 leaf 544 img
 6	163	gri••ous	grieuous	#369 leaf 545 img
@@ -265,10 +288,12 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	167	•orment	torment	#373 leaf 545 img
 6	168	•east	ieast	#374 leaf 546 img
 6	169	•us	+nus	#375 leaf 546 img 行末 o- ｜ nus（拉丁 onus），拼合
+6	170	a•	as	#376 leaf 546 phrase 1604 leaf 546 + 1617 leaf 491
 6	171	pro•esse	professe	#377 leaf 546 img
 6	172	hal•e	halfe	#378 leaf 546 img
 6	173	gul•e	gulfe	#379 leaf 546 img
 6	174	pressing▪	pressing,	#380 leaf 546 img
+6	182	raimen•;	raiment;	#388 leaf 555 phrase 1617 leaf 499
 6	183	Ti〈…〉	Thus	#389 leaf 555 img
 6	184	ga〈…〉e,	gaine,	#390 leaf 555 img
 6	185	c•oake,	cloake,	#391 leaf 555 img
@@ -284,10 +309,15 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	212	•inne	sinne	#418 leaf 563 img
 6	213	aggraua•e	aggrauate	#419 leaf 564 img
 6	214	fi•th	filth	#420 leaf 564 img
+6	215	1•.	11.	#421 leaf 564 phrase 1604 leaf 564 + 1607 leaf 504
 6	216	counterfaitet•	counterfaiteth	#422 leaf 571 img
+6	217	crim•in	crimsin	#423 leaf 571 phrase 1604 leaf 571
+6	218	ska•let	skarlet	#424 leaf 571 phrase 1604 leaf 571
 6	219	life▪	life.	#425 leaf 571 img 影像为句点
+6	220	seede▪	seede-+	#426 leaf 572 band 1604 leaf 571：seede-time（连字符，与后词拼合）
 6	221	corruption▪	corruption:	#427 leaf 572 img
 6	222	•e	he	#428 leaf 572 img
+6	223	9▪	9	#429 leaf 572 phrase 1604 leaf 572 影像 9 后无标点（1607/1617 同）
 6	224	mo•es,	motes,	#430 leaf 572 img
 6	225	Sodo•	Sodom	#431 leaf 573 img
 6	226	sund••e	sundrie	#432 leaf 573 img
@@ -304,6 +334,10 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	240	••ue,	fiue,	#446 leaf 574 img
 6	241	quantitie▪	quantitie.	#447 leaf 574 img 影像为句点
 6	242	iudg•,	iudge,	#448 leaf 574 img
+6	243	〈◊〉.	2.	#449 leaf - phrase 1617 leaf 519：Matth. 7. 2.
+6	248	〈…〉th:	truth:	#454 leaf 578 phrase 1604 leaf 577 + 1607/1617
+6	249	〈◊〉,	taking,	#455 leaf - phrase 1604 leaf 577 + 1607/1617
+6	250	decl•ning	declining	#456 leaf - phrase 1607 leaf 515 + 1617 leaf 521
 6	251	assidu•tie,	assiduitie,	#457 leaf 577 img
 6	252	h•d	hid	#458 leaf 577 img
 6	253	himsel•e,	himselfe,	#459 leaf 578 img
@@ -314,6 +348,7 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	261	no•e	none	#467 leaf 582 img
 6	262	affi••e	affirme	#468 leaf 582 img
 6	279	〈Greek〉	ἀνταπόδοσις	#485 leaf 588 greek 1604 leaf 588（西 3:24）
+6	280	〈Greek〉,	δόσις,	#486 leaf 588 phrase 1617 leaf 531（1604 leaf 588 同形）
 6	285	〈◊〉	fruits	#491 leaf 599 img
 6	288	s•nsles	sensles	#494 leaf 601 img
 6	290	•some)	some)	#496 leaf 601 img 词首是墨渍不是字母
@@ -327,26 +362,36 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	315	sp〈…〉t,	spirit,	#521 leaf 620 img
 6	316	sw•ne,	swine,	#522 leaf 620 img
 6	317	go•ly	godly	#523 leaf 620 img
+6	322	do〈…〉torted,	do: extorted,	#528 leaf 620 phrase 1607 leaf 553 + 1617 leaf 559
 6	323	•2.	12.	#529 leaf 621 img 启 12:12
 6	325	〈Greek〉,	φαίνεσθε,	#531 leaf 622 greek 1604 leaf 622（腓 2:15）
 6	328	H•imo	Haimo	#534 leaf 622 img
+6	335	〈Greek〉,	ἰδιόχειρον ἐπιστολήν,	#541 leaf 623 phrase 1604 leaf 624 + 1607 leaf 557
 6	337	•1.	11.	#543 leaf 625 img
+6	338	〈Greek〉;	δοξολογίαις;	#544 leaf 629 phrase 1617 leaf 567
 6	339	〈Greek〉,	πιθανολογίᾳ,	#545 leaf 629 greek 1604 leaf 629（西 2:4）
+6	340	〈Greek〉,	χρηστολογία,	#546 leaf 629 phrase 1604 leaf 629 + 1617 leaf 567
 6	342	••stos	custos	#548 leaf 631 img
 6	343	deuo•ion.	deuotion.	#549 leaf 632 img
+6	349	cogend••,	cogendos,	#555 leaf - phrase 1604 leaf 632 + 1607/1617
 6	350	counterfai•,	counterfait,	#556 leaf 633 img
 6	351	o•	of	#557 leaf 633 img
 6	352	p•rts	parts	#558 leaf 634 img
+6	353	seducers▪	seducers,	#559 leaf 634 phrase 1607 leaf 566 + 1617 leaf 572
 6	354	Len•	Lent	#560 leaf 634 img
 6	355	commi••ing	committing	#561 leaf 634 img
 6	356	seipsos•	seipsos:	#562 leaf 636 img
+6	357	Bembu•:	Bembus:	#563 leaf - phrase 1604 leaf 640 + 1617 leaf 577
 6	364	〈Greek〉,	εἰ μὴ,	#570 leaf 647 greek 1604 leaf 647（启 21:27）
 6	366	〈Greek〉,	εἰ μὴ,	#572 leaf 647 greek 1604 leaf 647
 6	368	trans•torie	transitorie	#574 leaf 648 img
 6	370	〈Greek〉,	δι' οὗ,	#576 leaf 649 greek 1604 leaf 649（加 6:14）
+6	371	renounc•	renounce	#577 leaf - phrase 1607 leaf 580 + 1617 leaf 586
+6	372	saluation▪	saluation:	#578 leaf 651 phrase 1607 leaf 581 + 1617 leaf 587（1604 墨渍）
 6	373	husband•.	husbands.	#579 leaf 652 img
 6	374	•••ylable	auaylable	#580 leaf 653 img
 6	375	ne•rer,	nearer,	#581 leaf 653 img
+6	376	••aileth	auaileth	#582 leaf 653 phrase 1604 leaf 653
 6	377	[〈Greek〉]	[καινὴ κτίσις]	#583 leaf 655 greek 1604 leaf 655（加 6:15）
 6	378	iniu•ious	iniurious	#584 leaf 655 img
 6	380	hypoc••tes,	hypocrites,	#586 leaf 657 img
@@ -356,25 +401,35 @@ supplement	11	Skep••kes:	Skeptikes:	#205 leaf 477 img
 6	385	•earers	hearers	#591 leaf 659 img
 6	386	sea••les	seameles	#592 leaf 659 img
 6	387	•os	eos	#593 leaf 660 img
+6	388	Christ•,	Christo,	#594 leaf - phrase 1604 leaf 660 + 1617 leaf 595
+6	389	•cclesiam	ecclesiam	#595 leaf - phrase 1604 leaf 660
+6	390	sequest•ing	sequestring	#596 leaf 660 phrase 1604 leaf 660 + 1617 leaf 595
 6	391	E•emites	Eremites	#597 leaf 660 img
 6	392	p•operly	properly	#598 leaf 660 img
 6	398	Colos•.	Coloss.	#604 leaf 661 img
 6	399	〈Greek〉,	ἐπ' αὐτοὺς,	#605 leaf 662 greek 1604 leaf 662（加 6:16）
+6	400	〈Greek〉,	τὰ λοιπὰ,	#606 leaf 664 phrase 1604 leaf 664 + 1617 leaf 598
 6	401	matter•	matters	#607 leaf 664 img
 6	404	〈◊〉.	2.	#610 leaf 665 img
 6	405	indel•ble	indeleble	#611 leaf 665 img
 6	406	se•	set	#612 leaf 666 img
+6	407	ska•res,	skarres,	#613 leaf 666 phrase 1604 leaf 666（1607/1617 scarres）
 conclusion	0	Philippi▪	Philippi:	#621 leaf 672 img
 conclusion	1	•om.	tom.	#622 leaf 673 img
 conclusion	2	Antuerp▪	Antuerp.	#623 leaf 673 img
 conclusion	3	T•tus	Titus	#624 leaf 673 img
 conclusion	4	Emman••i	Emmanuel	#625 leaf 673 img 斜体 u/n 同形；人名 Emmanuel Sa（耶稣会士）
+conclusion	5	2•.	28.	#626 leaf 674 phrase 1604 leaf 674 + 1607/1617：l. 28.
 conclusion	6	L•odicea	Laodicea	#627 leaf 674 img
 conclusion	7	argumen•,	argument,	#628 leaf 674 img
 conclusion	8	L•odicca,	Laodicea,	#629 leaf 674 img 印本 Laodicea（TCP 录作 odicca）
 conclusion	9	trouble▪	trouble.	#630 leaf 674 img
 conclusion	10	Pl•nie	Plinie	#631 leaf 674 img
+conclusion	11	vnto▪	vnto	#632 leaf 674 phrase 1604 leaf 674 影像无标点
 conclusion	12	Euang•list,	Euangelist,	#633 leaf 674 img
+conclusion	13	T•tus,	Titus,	#634 leaf 674 phrase 1604 leaf 674 + 1617 leaf 608
 conclusion	14	•iligent	diligent	#635 leaf 674 img
 conclusion	15	Nicopolis▪	Nicopolis,	#636 leaf 674 img
 conclusion	16	〈Greek〉,	ἁγιόγραφα,	#637 leaf 676 greek 1604 leaf 676
+conclusion	21	pleb•	plebs	#642 leaf - phrase 1604 leaf 677 + 1617 leaf 611
+conclusion	22	p•stulabat,	postulabat,	#643 leaf - phrase 1604 leaf 677 + 1617 leaf 611

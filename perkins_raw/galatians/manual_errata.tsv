@@ -1,0 +1,22 @@
+# TCP 录入错（非缺字）修正表：slug	原串（须在该篇唯一）	改后	依据
+# 长 s（ſ）被录成 f：每条都对过 1604 影像（witness_1604 sheets fs_00），并有语料自证（改后形态书中常见）。
+3	made a curfe for vs	made a curse for vs	1604 影像 curſe
+3	a will and defire to	a will and desire to	1604 影像 deſire
+3	first it is faide,	first it is saide,	1604 影像 ſaide
+3	in the prefence of God	in the presence of God	1604 影像 preſence
+5	in leffer matters	in lesser matters	1604 影像 leſſer
+5	carnall, and finnefull,	carnall, and sinnefull,	1604 影像 ſinnefull
+6	a forcerer,	a sorcerer,	1604 影像 ſorcerer
+6	two first forts,	two first sorts,	1604 影像 ſorts
+6	Therefore confidering that	Therefore considering that	1604 影像 conſidering
+6	threefold confideration,	threefold consideration,	1604 影像 conſideration
+6	giueth his feruant something	giueth his seruant something	1604 影像 ſeruant
+6	Master, and feruant:	Master, and seruant:	1604 影像 ſeruant
+6	vpon it owne bot. tome:	vpon it owne bottome:	1604 leaf 539 bot-｜tome（行末连字符被录成句点）
+1	 is to be lear ned of them t	 is to be learned of them t	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+1	rist were tain ted. IV. They	rist were tainted. IV. They	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+1	d. 4. 24. Da uid is annoin	d. 4. 24. Dauid is annoin	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+3	es by the Israe lites in the wi	es by the Israelites in the wi	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+6	 of which coue nant runneth v	 of which couenant runneth v	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+6	eniamin,* circum cised the 8. da	eniamin,* circumcised the 8. da	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）
+2	genious & ho nest minde. Wh	genious & honest minde. Wh	行末断词漏标 EOLhyphen（语料自证：拼合形态书中常见；检测器 split-word）

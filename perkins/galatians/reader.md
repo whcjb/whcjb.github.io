@@ -48,10 +48,10 @@ Touching the Supplement: it was my purpose at the first to have made a supplie o
 <tr><td>469</td><td>23</td><td>notes</td><td>motes</td></tr>
 <tr><td>472</td><td>38</td><td>Recidauation</td><td>Recidiuatiō.</td></tr>
 <tr><td>473</td><td>7</td><td>the thiefe</td><td>thiefe</td></tr>
-<tr><td>478</td><td>30</td><td><em>Quaerenda</em></td><td><em>Qu<span class="pk-gap" title="TCP: illegible in source">•</span>rendo</em></td></tr>
+<tr><td>478</td><td>30</td><td><em>Quaerenda</em></td><td><em>Quarendo</em></td></tr>
 <tr><td>480</td><td>17</td><td>Supposes</td><td>Supposals</td></tr>
 <tr><td>482</td><td>25</td><td>perfunctorie</td><td>defunctorie</td></tr>
-<tr><td>482</td><td>37</td><td>th<span class="pk-gap" title="TCP: illegible in source">•</span></td><td>the</td></tr>
+<tr><td>482</td><td>37</td><td>ths</td><td>the</td></tr>
 <tr><td>490</td><td>38</td><td>heard</td><td>hard</td></tr>
 <tr><td>505</td><td>36</td><td>thought</td><td>though</td></tr>
 <tr><td>556</td><td>23</td><td>equall</td><td>equall</td></tr>

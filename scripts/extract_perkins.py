@@ -123,7 +123,13 @@ class R:
             elif t == 'g':
                 ref = c.get('ref')
                 if ref in ('char:EOLhyphen', 'char:EOLunhyphen'):
-                    pass
+                    # 行末断词：断点前若是 XML 排版换行（缩写横线 <g> 恰在行尾时出现，
+                    # 全书 46 处），那是排版空白不是词间空格，拼合时一并去掉
+                    # （通读第 1 章发现 `dispē sation`）。
+                    while out and out[-1].strip() == '' and '\n' in out[-1]:
+                        out.pop()
+                    if out and out[-1].endswith(('\n', ' ', '\t')) and '\n' in out[-1]:
+                        out[-1] = out[-1].rstrip()
                 elif ref == 'char:punc':
                     out.append(self.site('punc', PUNC))
                 else:

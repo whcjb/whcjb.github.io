@@ -44,7 +44,7 @@
 69	?	定位错行，重定位
 70	standing,	img
 71	aduersarie,	img
-72	iu+	img 影像 the word iu-｜stifie（行末断词），拼成 iustifie
+72	iustifie,	img 影像 the word iu-｜stifie（行末断词），拼成 iustifie
 73	?	定位错行，重定位
 75	intercession	img
 76	is,	img
@@ -73,7 +73,6 @@
 102	?ED	img 墨渍盖整词
 103	?ED	img 墨渍压在标点上
 108	pronesse	img
-111	?	定位错行，重定位
 112	sealed	img
 113	30.	img 残 :0.；林前 1:30
 114	11.	img 赛 11:9
@@ -105,7 +104,7 @@
 144	hypocrites,	img
 145	not	img
 146	iustified	img
-147	punish+	img 行末 punish- ｜ ment，拼合
+147	punishment	img 行末 punish- ｜ ment，拼合
 148	to	img
 149	life,	img
 150	fauour	img
@@ -121,7 +120,7 @@
 160	so	img
 161	Pharisies	img
 162	riot,	img
-163	vi+	img 行末 vi ｜ ces.，无连字符，拼合
+163	vices.	img 行末 vi ｜ ces.，无连字符，拼合
 164	Achan	img
 165	Martyrs,	img 逗号
 166	affiance	img
@@ -263,7 +262,6 @@
 423	?	定位错行，重定位
 424	?	定位错行，重定位
 425	life.	img 影像为句点
-426	?	定位错行，重定位
 427	corruption:	img
 428	he	img
 430	motes,	img
@@ -329,7 +327,6 @@
 572	?	希腊文挂起放大
 574	transitorie	img
 576	?	希腊文挂起放大
-578	?ED	img 墨渍压在标点上
 579	husbands.	img
 580	auaylable	img
 581	nearer,	img
@@ -358,15 +355,12 @@
 623	Antuerp.	img
 624	Titus	img
 625	Emmanuel	img 斜体 u/n 同形；人名 Emmanuel Sa（耶稣会士）
-626	?Z	img 影像该处读作 l.1.，与 TCP 2• 不符，放大
 627	Laodicea	img
 628	argument,	img
 629	Laodicea,	img 印本 Laodicea（TCP 录作 odicca）
 630	trouble.	img
 631	Plinie	img
-632	?	定位错行，重定位
 633	Euangelist,	img
-634	?	定位错行，重定位
 635	diligent	img
 636	Nicopolis,	img
 637	?	希腊文挂起放大
@@ -455,19 +449,69 @@
 209	ἑκουσίως,	greek 1604 leaf 481 + 1617（来 10:26）
 210	παραπτώματα,	greek 1604 leaf 481（加 6:1 παράπτωμα 之复数）
 211	ἁμαρτήματα,	greek 1604 leaf 481
-260	?Z	greek 1604 leaf 503 + 1607/1617：ἢ ἑκοῦσα, ἢ ἄκουσα 重音待核
 359	ἁμάρτημα μνημονικὸν	greek 1604 leaf 542
 485	ἀνταπόδοσις	greek 1604 leaf 588（西 3:24）
-486	?Z	greek 1604 leaf 588 仅见词尾 δοσις
 501	εὐεργέται,	greek 1604 leaf 605（路 22:25）
 531	φαίνεσθε,	greek 1604 leaf 622（腓 2:15）
-544	?Z	greek 1604 leaf 629 δοξολογί- 词尾格待核
 545	πιθανολογίᾳ,	greek 1604 leaf 629（西 2:4）
-546	?Z	greek 1604 leaf 629 χρηστολογί- 词尾待核
 570	εἰ μὴ,	greek 1604 leaf 647（启 21:27）
 572	εἰ μὴ,	greek 1604 leaf 647
 576	δι' οὗ,	greek 1604 leaf 649（加 6:14）
 583	[καινὴ κτίσις]	greek 1604 leaf 655（加 6:15）
 605	ἐπ' αὐτοὺς,	greek 1604 leaf 662（加 6:16）
-606	?Z	greek 1604 leaf 664 λοιπ- 词形待核
 637	ἁγιόγραφα,	greek 1604 leaf 676
+103	inward.	phrase 1607 leaf 230 + 1617 leaf 228（1604 leaf 261 墨渍）
+121	father:	phrase 1617 leaf 269（1604 leaf 306 标点处糊）
+240	Cloe,	phrase 1604 leaf 499 + 1617 leaf 449
+177	respect	phrase 1604 leaf 418（resp- 可见）
+252	oyle:	phrase 1604 leaf 500
+271	αὐτοκατάκριτος,	phrase 1604 leaf 507? + 1607 leaf 451 + 1617 leaf 455（多 3:11）
+286	them.	phrase 1604 leaf 508
+302	ὡς,	phrase 1617 leaf 462（希腊 ὡς）
+304	a	phrase 1604 leaf 514（i. a cōmandement）
+310	4	phrase 1604 leaf 516 影像 4 后无标点（他版改为 5.）
+312	you,	phrase 1607 leaf 460
+316	God,	phrase 1617 leaf 465
+318	vniust	phrase 1607 leaf 461
+323	that	phrase 1604 leaf 520 + 1617 leaf 468
+336	tome:	phrase 1604 leaf 539（印本 bot-｜tome:；TCP 前一词录作 bot. 见 tcp_errata_seen）
+349	taught,	phrase 1617 leaf 485（1604 leaf 540 印作 tanght，u 倒排）
+362	furie.	phrase 1604 leaf 543 + 1617 leaf 489
+376	as	phrase 1604 leaf 546 + 1617 leaf 491
+388	raiment;	phrase 1617 leaf 499
+421	11.	phrase 1604 leaf 564 + 1607 leaf 504
+423	crimsin	phrase 1604 leaf 571
+424	skarlet	phrase 1604 leaf 571
+429	9	phrase 1604 leaf 572 影像 9 后无标点（1607/1617 同）
+449	2.	phrase 1617 leaf 519：Matth. 7. 2.
+454	truth:	phrase 1604 leaf 577 + 1607/1617
+455	taking,	phrase 1604 leaf 577 + 1607/1617
+456	declining	phrase 1607 leaf 515 + 1617 leaf 521
+486	δόσις,	phrase 1617 leaf 531（1604 leaf 588 同形）
+528	do: extorted,	phrase 1607 leaf 553 + 1617 leaf 559
+541	ἰδιόχειρον ἐπιστολήν,	phrase 1604 leaf 624 + 1607 leaf 557
+544	δοξολογίαις;	phrase 1617 leaf 567
+546	χρηστολογία,	phrase 1604 leaf 629 + 1617 leaf 567
+555	cogendos,	phrase 1604 leaf 632 + 1607/1617
+559	seducers,	phrase 1607 leaf 566 + 1617 leaf 572
+563	Bembus:	phrase 1604 leaf 640 + 1617 leaf 577
+577	renounce	phrase 1607 leaf 580 + 1617 leaf 586
+578	saluation:	phrase 1607 leaf 581 + 1617 leaf 587（1604 墨渍）
+582	auaileth	phrase 1604 leaf 653
+594	Christo,	phrase 1604 leaf 660 + 1617 leaf 595
+595	ecclesiam	phrase 1604 leaf 660
+596	sequestring	phrase 1604 leaf 660 + 1617 leaf 595
+606	τὰ λοιπὰ,	phrase 1604 leaf 664 + 1617 leaf 598
+613	skarres,	phrase 1604 leaf 666（1607/1617 scarres）
+626	28.	phrase 1604 leaf 674 + 1607/1617：l. 28.
+632	vnto	phrase 1604 leaf 674 影像无标点
+634	Titus,	phrase 1604 leaf 674 + 1617 leaf 608
+642	plebs	phrase 1604 leaf 677 + 1617 leaf 611
+643	postulabat,	phrase 1604 leaf 677 + 1617 leaf 611
+111	H.	band 1604 leaf 276（the H. Ghost）
+355	Simeonites,	band 1604 leaf 542
+357	Madianitish	band 1604 leaf 542
+426	seede-+	band 1604 leaf 571：seede-time（连字符，与后词拼合）
+25	Quarendo	band 1604 leaf 12 勘误表
+26	ths	band 1604 leaf 12 勘误表（Fault 栏印作 ths）
+260	ἢ ἑκοῦσα, ἢ ἀκοῦσα,	phrase 1604 leaf 503 + 1607 leaf 448 + 1617 leaf 452 三版一致

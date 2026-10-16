@@ -3741,7 +3741,7 @@
 "line": 0,
 "id": 72,
 "ord": 27,
-"word": "〈…〉",
+"word": "〈…〉stifie,",
 "left": [
 "be",
 "acquit,",
@@ -3757,7 +3757,6 @@
 "word,"
 ],
 "right": [
-"stifie,",
 "import.",
 "Thus",
 "came",
@@ -3768,15 +3767,16 @@
 "Luk.",
 "18,",
 "when",
-"he"
+"he",
+"said,"
 ],
 "in_note": false,
-"tcp": "be acquit, or iustified from all sinner. Thus much doth the word, 【〈…〉】 stifie, import. Thus came the Publican before God, Luk. 18, when he",
+"tcp": "be acquit, or iustified from all sinner. Thus much doth the word, 【〈…〉stifie,】 import. Thus came the Publican before God, Luk. 18, when he said,",
 "loc": {
 "leaf": 130,
-"score": 14,
+"score": 15,
 "nl": 7,
-"nr": 7,
+"nr": 8,
 "ocr_mid": "se- be",
 "box": [
 580,
@@ -8043,7 +8043,7 @@
 "line": 10,
 "id": 147,
 "ord": 0,
-"word": "punis••",
+"word": "punis••ment",
 "left": [
 "Iam.",
 "1.",
@@ -8059,7 +8059,6 @@
 "all"
 ],
 "right": [
-"ment",
 "both",
 "temporall",
 "and",
@@ -8070,16 +8069,17 @@
 "three",
 "parts.",
 "The",
-"first"
+"first",
+"is,"
 ],
 "in_note": false,
-"tcp": "Iam. 1. 14. The second thing, is obligation or subiection to all 【punis••】 ment both temporall and eternall. And it hath three parts. The first",
+"tcp": "Iam. 1. 14. The second thing, is obligation or subiection to all 【punis••ment】 both temporall and eternall. And it hath three parts. The first is,",
 "loc": {
 "leaf": 378,
 "score": 10,
 "nl": 4,
 "nr": 6,
-"ocr_mid": "punifh-|",
+"ocr_mid": "punifh-| ment",
 "box": [
 389,
 1961,
@@ -8087,10 +8087,10 @@
 2189
 ],
 "mid_box": [
-2516,
+389,
 1961,
 2855,
-2080
+2167
 ]
 }
 },
@@ -9003,7 +9003,7 @@
 "line": 5,
 "id": 163,
 "ord": 16,
-"word": "v•",
+"word": "v•ces.",
 "left": [
 "are",
 "to",
@@ -9019,7 +9019,6 @@
 "many"
 ],
 "right": [
-"ces.",
 "On",
 "the",
 "contrarie,",
@@ -9030,27 +9029,28 @@
 "euill",
 "doctrine",
 "brings",
-"with"
+"with",
+"it"
 ],
 "in_note": false,
-"tcp": "are to be suppressed in euery societie, as the breeders of many 【v•】 ces. On the contrarie, as one point of euill doctrine brings with",
+"tcp": "are to be suppressed in euery societie, as the breeders of many 【v•ces.】 On the contrarie, as one point of euill doctrine brings with it",
 "loc": {
 "leaf": 404,
 "score": 7,
 "nl": 3,
 "nr": 4,
-"ocr_mid": "vi",
+"ocr_mid": "vi ces. 10, Onthe",
 "box": [
-414,
+283,
 1594,
 2821,
-1797
+1927
 ],
 "mid_box": [
-2746,
+283,
 1630,
 2821,
-1679
+1911
 ]
 }
 },
@@ -22014,9 +22014,9 @@
 "mammillas",
 "dū",
 "durius",
-"press•",
-"rnnt,",
-"sanguinē"
+"press•rnnt,",
+"sanguinē",
+"pro"
 ],
 "in_note": true,
 "anchor": [
@@ -22037,7 +22037,7 @@
 "Scriptures,",
 "the"
 ],
-"tcp": "【Volusi•n.】 epist. 1. ad Nichol. 1. Scripturarum mammillas dū durius press• rnnt, sanguinē",
+"tcp": "【Volusi•n.】 epist. 1. ad Nichol. 1. Scripturarum mammillas dū durius press•rnnt, sanguinē pro",
 "loc": null
 },
 {
@@ -22049,7 +22049,7 @@
 "line": 15,
 "id": 414,
 "ord": 208,
-"word": "press•",
+"word": "press•rnnt,",
 "left": [
 "Volusi•n.",
 "epist.",
@@ -22063,7 +22063,6 @@
 "durius"
 ],
 "right": [
-"rnnt,",
 "sanguinē",
 "pro",
 "lacte",
@@ -22088,7 +22087,7 @@
 "Scriptures,",
 "the"
 ],
-"tcp": "Volusi•n. epist. 1. ad Nichol. 1. Scripturarum mammillas dū durius 【press•】 rnnt, sanguinē pro lacte biberunt.",
+"tcp": "Volusi•n. epist. 1. ad Nichol. 1. Scripturarum mammillas dū durius 【press•rnnt,】 sanguinē pro lacte biberunt.",
 "loc": null
 },
 {
@@ -25714,8 +25713,7 @@
 "sed",
 "〈Greek〉",
 "fiue",
-"cō",
-"sequativé."
+"cōsequativé."
 ],
 "in_note": true,
 "anchor": [
@@ -25736,7 +25734,7 @@
 "as",
 "following"
 ],
-"tcp": "Non 【〈Greek〉】 vel causaliter: sed 〈Greek〉 fiue cō sequativé.",
+"tcp": "Non 【〈Greek〉】 vel causaliter: sed 〈Greek〉 fiue cōsequativé.",
 "loc": null
 },
 {
@@ -25758,8 +25756,7 @@
 ],
 "right": [
 "fiue",
-"cō",
-"sequativé."
+"cōsequativé."
 ],
 "in_note": true,
 "anchor": [
@@ -25780,7 +25777,7 @@
 "as",
 "following"
 ],
-"tcp": "Non 〈Greek〉 vel causaliter: sed 【〈Greek〉】 fiue cō sequativé.",
+"tcp": "Non 〈Greek〉 vel causaliter: sed 【〈Greek〉】 fiue cōsequativé.",
 "loc": null
 },
 {

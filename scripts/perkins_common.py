@@ -88,9 +88,45 @@ def apply_fixes(slug, md, fixes=None, report=None):
     return md, len(edits)
 
 
+ERRATA = RAW / 'manual_errata.tsv'
+
+
+def load_errata():
+    """TCP 录入错（非缺字）修正表：slug \t 原串（含足够上下文，须在该篇唯一）\t 改后 \t 依据。"""
+    rows = []
+    if not ERRATA.exists():
+        return rows
+    for n, ln in enumerate(ERRATA.read_text(encoding='utf-8').splitlines(), 1):
+        if not ln.strip() or ln.startswith('#'):
+            continue
+        f = ln.split('\t')
+        rows.append((f[0], f[1], f[2], n))
+    return rows
+
+
+def apply_errata(slug, md, rows, report=None):
+    n = 0
+    for sl, old, new, line in rows:
+        if sl != slug:
+            continue
+        c = md.count(old)
+        if c != 1:
+            if md.count(new) == 1 and c == 0:
+                continue          # 已是改后形态（幂等）
+            msg = f'manual_errata.tsv:{line} {slug} 原串出现 {c} 次（须唯一）：{old!r}'
+            if report is not None:
+                report.append(msg)
+                continue
+            raise ValueError(msg)
+        md = md.replace(old, new)
+        n += 1
+    return md, n
+
+
 def load(slug, fixes=None):
     md = (SRC / f'{slug}.md').read_text(encoding='utf-8')
-    return apply_fixes(slug, md, fixes)[0]
+    md = apply_fixes(slug, md, fixes)[0]
+    return apply_errata(slug, md, load_errata())[0]
 
 
 if __name__ == '__main__':
@@ -102,7 +138,13 @@ if __name__ == '__main__':
         md = (SRC / f'{slug}.md').read_text(encoding='utf-8')
         _, n = apply_fixes(slug, md, fx, errs)
         total += n
+    er = load_errata()
+    m = 0
+    for slug in sorted({r[0] for r in er}):
+        md = apply_fixes(slug, (SRC / f'{slug}.md').read_text(encoding='utf-8'), fx)[0]
+        m += apply_errata(slug, md, er, errs)[1]
     for e in errs:
         print(e, file=sys.stderr)
-    print(f'manual_fixes.tsv：{len(fx)} 条，落下 {total}，对不上 {len(errs)}', file=sys.stderr)
+    print(f'manual_fixes.tsv：{len(fx)} 条，落下 {total}；manual_errata.tsv：{len(er)} 条，落下 {m}；'
+          f'对不上 {len(errs)}', file=sys.stderr)
     sys.exit(1 if errs else 0)
