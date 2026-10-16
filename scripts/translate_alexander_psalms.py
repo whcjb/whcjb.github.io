@@ -458,7 +458,10 @@ def autopublish() -> None:
                         'alexander_raw/psalms/zh_cache'],
                        cwd=ROOT, check=False, timeout=60)
         c = subprocess.run(['git', 'commit', '-q', '-m',
-                            'feat(alexander/psalms): 诗篇注释中译（自动发布）'],
+                            'feat(alexander/psalms): 诗篇注释中译（自动发布）',
+                            # 只提交自己这几条路径：不带路径的 commit 会把别的会话
+                            # 暂存的文件一起带走（2026-10-16 赫奇森整批被带进珀金斯的提交）
+                            '--', 'alexander/psalms', 'alexander_raw/psalms/zh_chapters', 'alexander_raw/psalms/zh_cache'],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
             p = subprocess.run(['git', 'push', '-q', 'origin', 'master'],

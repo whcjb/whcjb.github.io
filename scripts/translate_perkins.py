@@ -289,7 +289,10 @@ def autopublish(slug: str) -> None:
                        cwd=ROOT, check=False, timeout=120)
         c = subprocess.run(['git', 'commit', '-q', '-m',
                             f'feat(perkins): 加拉太书注释中译 · {slug}（自动发布）\n\n'
-                            'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>'],
+                            'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>',
+                            # 只提交自己这几条路径：不带路径的 commit 会把别的会话
+                            # 暂存的文件一起带走（2026-10-16 赫奇森整批被带进珀金斯的提交）
+                            '--', 'perkins/galatians', 'perkins_raw/galatians/zh_chapters', 'perkins_raw/galatians/zh_cache', 'perkins_raw/galatians/zh_meta.json', '_data/perkins_galatians.json'],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
             ps = subprocess.run(['git', 'push', '-q', 'origin', 'master'], cwd=ROOT,

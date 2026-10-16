@@ -449,7 +449,10 @@ def autopublish(sec: str) -> None:
                        cwd=ROOT, check=False, timeout=120)
         c = subprocess.run(['git', 'commit', '-q', '-m',
                             f'feat(johnstone): 腓立比书讲章中译 · {sec}（自动发布）\n\n'
-                            'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>'],
+                            'Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>',
+                            # 只提交自己这几条路径：不带路径的 commit 会把别的会话
+                            # 暂存的文件一起带走（2026-10-16 赫奇森整批被带进珀金斯的提交）
+                            '--', 'johnstone/philippians', 'johnstone_raw/philippians/zh_chapters', 'johnstone_raw/philippians/zh_cache', 'johnstone_raw/philippians/zh_meta.json'],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
             ps = subprocess.run(['git', 'push', '-q', 'origin', 'master'],

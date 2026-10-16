@@ -249,7 +249,10 @@ def autopublish(name: str) -> None:
         subprocess.run(['git', 'add', 'manton/james', 'manton_raw/james/zh_chapters'],
                        cwd=ROOT, check=False, timeout=60)
         msg = f'feat(manton): 雅各书中译 {name}（自动发布）'
-        c = subprocess.run(['git', 'commit', '-q', '-m', msg],
+        c = subprocess.run(['git', 'commit', '-q', '-m', msg,
+                            # 只提交自己这几条路径：不带路径的 commit 会把别的会话
+                            # 暂存的文件一起带走（2026-10-16 赫奇森整批被带进珀金斯的提交）
+                            '--', 'manton/james', 'manton_raw/james/zh_chapters'],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
             p = subprocess.run(['git', 'push', '-q', 'origin', 'master'],

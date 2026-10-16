@@ -488,7 +488,10 @@ def autopublish() -> None:
                         'alexander_raw/isaiah/zh_meta.json'],
                        cwd=ROOT, check=False, timeout=60)
         c = subprocess.run(['git', 'commit', '-q', '-m',
-                            'feat(alexander/isaiah): 以赛亚书注释中译（自动发布）'],
+                            'feat(alexander/isaiah): 以赛亚书注释中译（自动发布）',
+                            # 只提交自己这几条路径：不带路径的 commit 会把别的会话
+                            # 暂存的文件一起带走（2026-10-16 赫奇森整批被带进珀金斯的提交）
+                            '--', 'alexander/isaiah', 'alexander_raw/isaiah/zh_chapters', 'alexander_raw/isaiah/zh_cache', 'alexander_raw/isaiah/zh_meta.json'],
                            cwd=ROOT, capture_output=True, text=True, timeout=120)
         if c.returncode == 0:
             p = subprocess.run(['git', 'push', '-q', 'origin', 'master'],
